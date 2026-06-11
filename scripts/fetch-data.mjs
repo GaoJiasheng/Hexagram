@@ -305,6 +305,7 @@ async function main() {
     if (!m) allErrors.push(`缺 authored 元数据: ${record.id} ${record.name}`)
     hexagram.pinyin = m?.pinyin ?? null
     hexagram.summary = m?.summary ?? null
+    hexagram.guazhu = m?.guazhu ?? null  // 卦主 { line, note }(v2 §4,渐进补)
 
     const tr = translations[String(record.id)]
     if (tr) {
@@ -317,19 +318,68 @@ async function main() {
           hexagram.lines[i].xiaoxiang.translation = lt.xiaoxiang ?? null
         }
       })
+      // 乾坤的用九/用六(extra.use)
+      if (tr.use && hexagram.extra?.use) {
+        hexagram.extra.use.translation = tr.use.text ?? null
+        if (hexagram.extra.use.xiaoxiang) {
+          hexagram.extra.use.xiaoxiang.translation = tr.use.xiaoxiang ?? null
+        }
+      }
+      // 乾坤的文言传(按段对位)
+      if (tr.wenyan && hexagram.extra?.wenyan) {
+        tr.wenyan.forEach((s, i) => {
+          if (hexagram.extra.wenyan[i]) hexagram.extra.wenyan[i].translation = s ?? null
+        })
+      }
     }
     hexagrams.push(hexagram)
   }
 
-  // 4. 解析经传
+  // 4. 解析经传(并合并人工译文 scripts/authored/classics-translations.json)
+  const classicsTrPath = path.join(ROOT, 'scripts/authored/classics-translations.json')
+  const classicsTranslations = fs.existsSync(classicsTrPath)
+    ? JSON.parse(fs.readFileSync(classicsTrPath, 'utf8'))
+    : {}
   fs.mkdirSync(OUT_CLASSICS_DIR, { recursive: true })
+  const wingData = {}
   for (const book of WING_BOOKS) {
     const chapters = parseWingPage(pages[book.page])
     if (!chapters.length) allErrors.push(`${book.page}: 未解析出任何章节`)
+    const trBook = classicsTranslations[book.key] || {}
+    let trCount = 0
+    for (const c of chapters) {
+      const trs = trBook[String(c.no)]
+      if (!trs) continue
+      c.paragraphs.forEach((p, i) => {
+        if (trs[i] != null) { p.translation = trs[i]; trCount++ }
+      })
+    }
+    wingData[book.key] = chapters
     const out = { book: book.key, title: book.title, chapters }
     fs.writeFileSync(path.join(OUT_CLASSICS_DIR, `${book.key}.json`), JSON.stringify(out, null, 2) + '\n')
-    console.log(`${book.title}: ${chapters.length} 章,${chapters.reduce((n, c) => n + c.paragraphs.length, 0)} 段`)
+    console.log(`${book.title}: ${chapters.length} 章,${chapters.reduce((n, c) => n + c.paragraphs.length, 0)} 段,译文 ${trCount} 段`)
   }
+
+  // 4.5 从序卦/杂卦全文切出按卦引文(自动填 hexagram.xugua / zagua)
+  const xuguaParas = (wingData.xugua || []).flatMap((c) => c.paragraphs.map((p) => p.original))
+  const zaguaParas = (wingData.zagua || []).flatMap((c) => c.paragraphs.map((p) => p.original))
+  let quoteCount = 0
+  const xiaPianFirst = wingData.xugua?.[1]?.paragraphs?.[0]?.original ?? null
+  for (const hexagram of hexagrams) {
+    // 序卦:取含「受之以X」的段(底本偶作「受之X」,如既济);
+    // 乾坤无此句取上篇开篇段,咸为下篇首卦取下篇开篇段
+    hexagram.xugua = (hexagram.name === '乾' || hexagram.name === '坤')
+      ? xuguaParas[0] ?? null
+      : hexagram.name === '咸'
+        ? xiaPianFirst
+        : xuguaParas.find((p) => p.includes(`受之以${hexagram.name}`) || p.includes(`受之${hexagram.name}`)) ?? null
+    // 杂卦:每卦名全篇仅出现一次,取含卦名的段
+    hexagram.zagua = zaguaParas.find((p) => p.includes(hexagram.name)) ?? null
+    if (hexagram.xugua && hexagram.zagua) quoteCount++
+    if (!hexagram.xugua) allWarnings.push(`序卦引文缺失: ${hexagram.id} ${hexagram.name}`)
+    if (!hexagram.zagua) allWarnings.push(`杂卦引文缺失: ${hexagram.id} ${hexagram.name}`)
+  }
+  console.log(`序卦/杂卦引文: ${quoteCount}/64 卦齐备`)
 
   // 5. 报告与落盘
   if (allWarnings.length) {

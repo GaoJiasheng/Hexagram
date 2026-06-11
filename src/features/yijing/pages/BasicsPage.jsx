@@ -58,6 +58,15 @@ export const LEARN_TOPICS = [
     usedKeys: ['jinqian'],
   },
   {
+    id: 'yuanliu',
+    to: '/basics/yuanliu',
+    title: '易学源流',
+    desc: '从伏羲画卦到程朱集成——易学三千年脉络与本站功能的出处地图',
+    time: '约 5 分钟',
+    quiz: false,
+    usedKeys: null,
+  },
+  {
     id: 'glossary',
     to: '/basics/glossary',
     title: '名词表',

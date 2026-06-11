@@ -1,10 +1,10 @@
-# hexagram — 观象 · 易经研习站
+# hexagram — 观象 · 个人学习站
 
-个人学习站集合,当前唯一模块是易经研习。纯前端(React 19 + Vite),无后端,用户数据只存 localStorage,可静态托管。
+个人学习站集合,双模块:易经研习(yijing,默认)+ 道藏研读(dao,框架期)。模块间不互链,唯一切换点是整屏门户(v4 §3)。纯前端(React 19 + Vite),无后端,用户数据只存 localStorage,可静态托管。
 
 ## 唯一规格来源
 
-**docs/yijing-design.md(一期 M1–M3)、docs/yijing-design-v2.md(二期 M4–M6)与 docs/yijing-design-v3.md(三期 P0–P5)是页面、交互、视觉、推演规则、数据结构的唯一规格。** v2/v3 是增量稿,视觉/组件/数据约定沿用 v1。实现任何页面前先读对应章节,不要自行发明视觉风格或交互;引擎规则(八宫/纳甲/梅花/大衍/金钱卦)必须照设计稿的规则表实现,严禁凭记忆补规则。每个里程碑完成后逐条核对其验收清单。
+**docs/yijing-design.md(一期 M1–M3)、docs/yijing-design-v2.md(二期 M4–M6)、docs/yijing-design-v3.md(三期 P0–P5)与 docs/design-v4.md(四期:注释层/源流/多模块门户与道藏框架)是页面、交互、视觉、推演规则、数据结构的唯一规格。** v2–v4 是增量稿,视觉/组件/数据约定沿用 v1。实现任何页面前先读对应章节,不要自行发明视觉风格或交互;引擎规则(八宫/纳甲/梅花/大衍/金钱卦)必须照设计稿的规则表实现,严禁凭记忆补规则。每个里程碑完成后逐条核对其验收清单。
 
 ## 当前状态(随进度更新此节)
 
@@ -16,7 +16,9 @@
 - [x] M5 宫:八宫纳甲引擎(bagong/najia)+ 详情页纳甲节 + 总览八宫视图(v2 §5)
 - [x] M6 占:梅花易数(meihua + lunarAdapter)+ 学堂改版(河洛/消息卦/大衍/名词表)(v2 §6–§7)
 - [x] 三期 P0–P5 读练用体系:金钱卦(jinqian)、工作台六法(梅花引导/大衍/金钱三入口)、学堂七篇(新增梅花/金钱教学页)、QuizCard 练习、学算双向跳转、研习进度(progress)(v3 全文)
-- [ ] 内容:63 卦译文待补(见下方「译文工序」),xugua/zagua 按卦引文待填,卦主(guazhu)渐进补
+- [x] 四期:64 卦译文全部完成(含用九/用六)、经文字词注释层(zhushi.json + AnnotatedText)、易学源流页、多模块门户 + 道藏框架(六部经典占位)(v4 全文)
+- [x] 易经内容收官:经传 204 段全译(scripts/authored/classics-translations.json,按 book→章号→段序合并)、乾坤文言传 35 段全译(translations.json 的 wenyan 数组)、序卦/杂卦按卦引文(fetch-data 自动解析,64/64)、卦主 64 卦标注(hexagram-meta.json 的 guazhu 字段 + LineRow 赭石小章)
+- [ ] 道藏内容:六部经文待录入(管线照易经模块:维基文库+繁转简+校验),先《道德经》
 
 ## 常用命令
 
@@ -35,14 +37,16 @@ npm run check-data   # 数据校验,任何数据变更后必须通过
 3. `scripts/lib/hexagram-table.mjs` 是 64 卦基准表(卦序/卦名/上下卦/binary),它与抓取内容互相校验。binary 一律**自下而上**(下标 0 = 初爻),这是全项目约定,任何组件和引擎都不得违反。
 4. 全角标点注意:工具链可能把输出里的全角逗号/冒号静默转成半角。代码里匹配全角标点必须用 `：`(:)、`，`(,)、`；`(;)转义,不要写字面量;中文数据文件写完后检查标点。
 
-## 译文工序(M1 内容任务)
+## 译文工序(已完成,修订时仍照此)
 
-给 63 个未译卦补白话译文时:
+64 卦译文已全部完成。日后修订单卦译文时:
 
 1. 打开 `src/data/yijing/hexagrams.json` 找到该卦,**对照每个 original 字段直译**——译文必须从眼前的原文译出,不是从记忆里背。
-2. 写进 `scripts/authored/translations.json`(格式照屯卦「3」的现成模板:judgment/tuan/daxiang/lines×6,乾坤另有 extra)。
+2. 改 `scripts/authored/translations.json`(judgment/tuan/daxiang/lines×6;乾坤另有 use 字段为用九/用六)。
 3. 风格按设计稿 §9:平实直译、一段对一段、禁算命口吻、歧义取程朱主流注解。
 4. 重跑 `npm run data:fetch && npm run check-data`。
+
+经文字词注释在 `src/data/yijing/zhushi.json`(人工维护,长词优先收录),由 AnnotatedText 组件挂在卦辞与爻辞原文上。
 
 ## 代码组织
 

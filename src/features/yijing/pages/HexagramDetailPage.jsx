@@ -6,6 +6,7 @@ import ClassicText from '../components/ClassicText.jsx'
 import LineRow from '../components/LineRow.jsx'
 import DerivationStrip from '../components/DerivationStrip.jsx'
 import TermTip from '../components/TermTip.jsx'
+import AnnotatedText from '../components/AnnotatedText.jsx'
 import NoteEditor from '../components/NoteEditor.jsx'
 import { getHexagram, hexagramByBinary } from '../data.js'
 import { getBianGua, lineTitle } from '../engine/transforms.js'
@@ -212,7 +213,7 @@ export default function HexagramDetailPage() {
         {/* ② 卦辞 */}
         <section id="judgment" className="detail-section">
           <h2 className="detail-section__title">卦辞</h2>
-          <ClassicText original={hex.judgment.original} translation={hex.judgment.translation} />
+          <ClassicText original={hex.judgment.original} translation={hex.judgment.translation} annotate />
         </section>
 
         {/* ③ 彖传 */}
@@ -245,6 +246,7 @@ export default function HexagramDetailPage() {
                 binary={hex.binary}
                 onHover={setHoveredLine}
                 isHighlighted={hoveredLine === i + 1}
+                guazhu={hex.guazhu}
               />
             ))}
             {/* 用九/用六 */}
@@ -253,9 +255,17 @@ export default function HexagramDetailPage() {
                 <div className="line-row__header">
                   <span className="line-row__title">{hex.extra.use.title}</span>
                 </div>
-                <p className="line-row__text">{hex.extra.use.original}</p>
+                <p className="line-row__text"><AnnotatedText text={hex.extra.use.original} /></p>
                 {hex.extra.use.xiaoxiang?.original && (
                   <p className="line-row__xiaoxiang">{hex.extra.use.xiaoxiang.original}</p>
+                )}
+                {settings.showTranslation && (
+                  <>
+                    {hex.extra.use.translation && <p className="line-row__translation">〔译〕{hex.extra.use.translation}</p>}
+                    {hex.extra.use.xiaoxiang?.translation && (
+                      <p className="line-row__translation line-row__translation--xiang">〔象〕{hex.extra.use.xiaoxiang.translation}</p>
+                    )}
+                  </>
                 )}
               </div>
             )}

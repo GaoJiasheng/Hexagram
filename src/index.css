@@ -2575,3 +2575,79 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 /* 工作台六法标签换行 */
 .workbench-methods { flex-wrap: wrap; }
 .workbench-methods .seg-btn { flex: 1 0 30%; }
+
+/* ═══ v4 注释层 · 易学源流 · 多模块门户与道藏 ═══════════ */
+
+/* 经文字词注释(AnnotatedText) */
+.zhushi { position: relative; display: inline; }
+.zhushi__trigger { border-bottom: 1px dotted var(--ink-faint); cursor: help; }
+.zhushi__trigger:hover, .zhushi__trigger:focus { border-bottom-color: var(--cinnabar); color: var(--cinnabar); outline: none; }
+.zhushi__popover { position: absolute; left: 50%; bottom: calc(100% + 8px); transform: translateX(-50%); z-index: 50; display: flex; flex-direction: column; gap: 4px; width: max-content; max-width: 260px; padding: 10px 12px; background: var(--paper-raised); border: 1px solid var(--line); border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); font-size: 0.8rem; line-height: 1.6; white-space: normal; }
+.zhushi__term { font-family: var(--font-serif); color: var(--ink); font-weight: 600; }
+.zhushi__reading { font-weight: 400; color: var(--ink-soft); font-size: 0.9em; }
+.zhushi__note { color: var(--ink); }
+.zhushi__source { color: var(--ink-faint); font-size: 0.72rem; }
+
+/* 易学源流时间线 */
+.yuanliu-timeline { margin-top: 24px; }
+.yuanliu-node { display: flex; gap: 16px; }
+.yuanliu-node__marker { display: flex; flex-direction: column; align-items: center; flex: none; width: 14px; }
+.yuanliu-node__dot { width: 10px; height: 10px; border-radius: 50%; background: var(--cinnabar); margin-top: 6px; flex: none; }
+.yuanliu-node__line { width: 1px; flex: 1; background: var(--line); margin: 4px 0; }
+.yuanliu-node__body { padding-bottom: 28px; min-width: 0; }
+.yuanliu-node__head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.yuanliu-node__era { font-size: 0.75rem; color: var(--cinnabar); border: 1px solid currentColor; border-radius: 3px; padding: 1px 6px; flex: none; }
+.yuanliu-node__who { font-family: var(--font-serif); font-size: 1.02rem; color: var(--ink); }
+.yuanliu-node__text { font-size: 0.88rem; line-height: 1.8; color: var(--ink); margin: 8px 0; }
+.yuanliu-node__tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.yuanliu-tag { font-size: 0.72rem; color: var(--ink-soft); background: var(--paper-raised); border: 1px solid var(--line); border-radius: 3px; padding: 1px 7px; }
+.yuanliu-disclaimer { margin-top: 8px; font-size: 0.75rem; }
+
+/* 模块切换章 */
+.module-switch { margin-left: 4px; padding: 3px 8px; font-size: 0.72rem; font-family: var(--font-serif); color: var(--ink-soft); background: transparent; border: 1px solid var(--line); border-radius: 4px; cursor: pointer; white-space: nowrap; }
+.module-switch:hover { color: var(--cinnabar); border-color: var(--cinnabar); }
+
+/* 整屏门户 */
+.module-portal { position: fixed; inset: 0; z-index: 200; background: var(--paper); display: flex; align-items: center; justify-content: center; }
+.module-portal__inner { text-align: center; padding: 24px; }
+.module-portal__hint { color: var(--ink-faint); font-size: 0.82rem; letter-spacing: 0.3em; margin-bottom: 32px; }
+.module-portal__cards { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+.module-portal__card { position: relative; display: flex; flex-direction: column; align-items: center; gap: 10px; width: 240px; padding: 36px 24px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper-raised); text-decoration: none; transition: border-color 0.15s, transform 0.15s; }
+.module-portal__card:hover { border-color: var(--cinnabar); transform: translateY(-2px); }
+.module-portal__card--current { border-color: var(--ink-faint); }
+.module-portal__seal { width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: var(--cinnabar); color: #fdfbf6; font-family: var(--font-serif); font-size: 1.1rem; border-radius: 6px; }
+.module-portal__card:last-child .module-portal__seal { background: var(--azure); }
+.module-portal__title { font-family: var(--font-serif); font-size: 1.15rem; color: var(--ink); }
+.module-portal__desc { font-size: 0.78rem; color: var(--ink-soft); line-height: 1.6; }
+.module-portal__badge { position: absolute; top: 10px; right: 10px; font-size: 0.68rem; color: var(--cinnabar); border: 1px solid currentColor; border-radius: 3px; padding: 0 5px; }
+.module-portal__close { margin-top: 32px; background: none; border: none; color: var(--ink-faint); font-size: 0.78rem; cursor: pointer; }
+.module-portal__close:hover { color: var(--ink); }
+
+/* 道藏模块换肤:同一张纸,换一方印(v4 §3.4) */
+.app-shell--dao { --cinnabar: var(--azure); --cinnabar-bg: color-mix(in srgb, var(--azure) 9%, transparent); }
+
+/* 道藏书架 */
+.dao-home { max-width: var(--content-w); margin: 0 auto; }
+.dao-shelf { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.dao-book { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 22px 24px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper-raised); text-decoration: none; transition: border-color 0.15s, transform 0.15s; }
+.dao-book:hover { border-color: var(--cinnabar); transform: translateY(-2px); }
+.dao-book__title { font-family: var(--font-serif); font-size: 1.3rem; color: var(--ink); }
+.dao-book__alias { font-size: 0.78rem; color: var(--ink-soft); }
+.dao-book__meta { display: flex; gap: 12px; font-size: 0.74rem; color: var(--ink-faint); }
+.dao-book__brief { font-size: 0.84rem; line-height: 1.7; color: var(--ink); margin: 6px 0 0; }
+.dao-book__status { position: absolute; top: 14px; right: 14px; font-size: 0.68rem; padding: 1px 7px; border-radius: 3px; border: 1px solid var(--line); color: var(--ink-faint); }
+.dao-book__status--done { color: var(--cinnabar); border-color: currentColor; }
+
+/* 道藏文本框架页 */
+.dao-text-page { max-width: var(--read-w); margin: 0 auto; }
+.dao-text-header { margin-bottom: 32px; }
+.dao-text-title { font-family: var(--font-serif); font-size: 2rem; color: var(--ink); margin: 0 0 8px; }
+.dao-text-meta { color: var(--ink-soft); font-size: 0.85rem; margin: 0 0 12px; }
+.dao-text-brief { font-size: 0.95rem; line-height: 1.9; color: var(--ink); }
+.dao-text-sections__title { font-family: var(--font-serif); font-size: 1.1rem; color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 8px; margin-bottom: 16px; }
+.dao-section-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+.dao-section-cell { display: inline-flex; align-items: center; justify-content: center; min-width: 34px; height: 34px; padding: 0 6px; border: 1px solid var(--line); border-radius: 4px; color: var(--ink-faint); font-size: 0.8rem; background: var(--paper-raised); cursor: not-allowed; }
+.dao-section-note { margin-top: 14px; font-size: 0.78rem; }
+
+/* 卦主小章(v2 §4,赭石描边) */
+.line-chip--guazhu { color: var(--ochre); border: 1px solid var(--ochre); background: transparent; cursor: help; }
