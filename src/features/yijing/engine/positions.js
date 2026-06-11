@@ -1,8 +1,11 @@
-// 爻位分析 — 当位/得中/相应/乘承
+// 爻位分析 — 当位/得中/相应/乘承/三才/爻位身份/贞悔
 
 import { lineTitle } from './transforms.js'
 
 const CORRES = { 1: 4, 2: 5, 3: 6, 4: 1, 5: 2, 6: 3 }
+
+const SANCAI = { 1: '地', 2: '地', 3: '人', 4: '人', 5: '天', 6: '天' }
+const SHENFEN = { 1: '元士', 2: '大夫', 3: '三公', 4: '诸侯', 5: '天子', 6: '宗庙' }
 
 export function analyzePosition(pos, binary) {
   const i = pos - 1
@@ -33,6 +36,9 @@ export function analyzePosition(pos, binary) {
     chengGang,
     chengYang,
     title: lineTitle(pos, isYang),
+    sancai: SANCAI[pos],
+    shenfen: SHENFEN[pos],
+    zhenHui: pos <= 3 ? '贞' : '悔',
   }
 }
 
@@ -68,6 +74,14 @@ export function describePosition(a) {
   }
   if (a.deZhong && !a.zhongZheng) desc += '居卦中，得中。'
   if (a.chengGang) desc += '阴乘刚下，势位不安。'
+  desc += `居${a.sancai}位，${a.shenfen}之象。`
 
   return { chips, desc }
+}
+
+// 贞悔一句：内卦为贞(主)，外卦为悔(客)
+export function describeZhenHui(hexagram) {
+  const { lowerTrigram, upperTrigram } = hexagram
+  // trigramById 在调用处传入以避免循环依赖
+  return null // 调用方自行取 trigramById
 }

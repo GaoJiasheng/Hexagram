@@ -1,10 +1,11 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useEffect, useRef } from 'react'
+import { Link, useSearchParams } from 'react-router-dom'
 import HexagramFigure from '../components/HexagramFigure.jsx'
 import TrigramBadge from '../components/TrigramBadge.jsx'
 import { allHexagrams, allTrigrams, TABLE, TRIGRAM_ORDER, trigramById } from '../data.js'
 import { getZongGua, getCuoGua } from '../engine/transforms.js'
 import { hexagramByBinary } from '../data.js'
+import { getAllPalaces, GENERATION_NAMES } from '../engine/bagong.js'
 
 const hexById = Object.fromEntries(allHexagrams.map(h => [h.id, h]))
 
@@ -148,10 +149,73 @@ function SequenceView() {
   )
 }
 
+const PALACES = getAllPalaces()
+
+function BagongView({ highlightPalace }) {
+  const rowRefs = useRef({})
+
+  useEffect(() => {
+    if (highlightPalace && rowRefs.current[highlightPalace]) {
+      rowRefs.current[highlightPalace].scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+    }
+  }, [highlightPalace])
+
+  return (
+    <div className="bagong-scroll">
+      <table className="bagong-table">
+        <thead>
+          <tr>
+            <th className="bagong-th bagong-th--head">宫</th>
+            {GENERATION_NAMES.map(g => (
+              <th key={g} className="bagong-th">{g}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {PALACES.map(({ trigram, name, element, sequence }) => (
+            <tr
+              key={trigram}
+              ref={el => rowRefs.current[trigram] = el}
+              className={`bagong-row ${highlightPalace === trigram ? 'bagong-row--active' : ''}`}
+            >
+              <td className="bagong-head">
+                <span className="bagong-name">{name}</span>
+                <span className="bagong-element">· {element}</span>
+              </td>
+              {sequence.map((binary, i) => {
+                const hex = hexagramByBinary.get(binary)
+                if (!hex) return <td key={i} />
+                return (
+                  <td key={i} className="bagong-cell">
+                    <Link to={`/hexagram/${hex.id}`} className="bagong-cell__link">
+                      <HexagramFigure binary={hex.binary} size="sm" label={hex.fullName} />
+                      <span className="bagong-cell__name">{hex.name}</span>
+                    </Link>
+                  </td>
+                )
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
 export default function HexagramsPage() {
-  const [view, setView] = useState('matrix') // 'matrix' | 'sequence'
+  const [params, setParams] = useSearchParams()
+  const viewParam = params.get('view') ?? 'matrix'
+  const palaceParam = params.get('palace') ?? ''
   const [filterUpper, setFilterUpper] = useState('')
   const [filterLower, setFilterLower] = useState('')
+
+  function setView(v) {
+    const p = {}
+    if (v !== 'matrix') p.view = v
+    setParams(p, { replace: true })
+  }
+
+  const view = viewParam
 
   return (
     <div className="hexagrams-page">
@@ -161,6 +225,7 @@ export default function HexagramsPage() {
           <div className="seg-control">
             <button className={`seg-btn ${view === 'matrix' ? 'seg-btn--active' : ''}`} onClick={() => setView('matrix')}>卦象矩阵</button>
             <button className={`seg-btn ${view === 'sequence' ? 'seg-btn--active' : ''}`} onClick={() => setView('sequence')}>序卦次序</button>
+            <button className={`seg-btn ${view === 'bagong' ? 'seg-btn--active' : ''}`} onClick={() => setView('bagong')}>八宫</button>
           </div>
           {view === 'matrix' && (
             <div className="filter-row">
@@ -177,9 +242,9 @@ export default function HexagramsPage() {
         </div>
       </div>
 
-      {view === 'matrix'
-        ? <MatrixView filterUpper={filterUpper} filterLower={filterLower} />
-        : <SequenceView />}
+      {view === 'matrix' && <MatrixView filterUpper={filterUpper} filterLower={filterLower} />}
+      {view === 'sequence' && <SequenceView />}
+      {view === 'bagong' && <BagongView highlightPalace={palaceParam} />}
     </div>
   )
 }

@@ -88,22 +88,60 @@ export function addRecentHexagram(id) {
   set('recentHexagrams', [id, ...list].slice(0, 10))
 }
 
+// ── Learning progress(读/练/用,v3 §7.3)─────────────────
+const EMPTY_PROGRESS = { read: {}, quiz: {}, used: {} }
+
+export function getProgress() {
+  const p = get('progress', null)
+  return { ...EMPTY_PROGRESS, ...(p || {}) }
+}
+
+export function markRead(topic) {
+  const p = getProgress()
+  if (p.read[topic]) return p
+  p.read = { ...p.read, [topic]: new Date().toISOString() }
+  set('progress', p)
+  return p
+}
+
+export function markQuizResult(topic, correct, total) {
+  const p = getProgress()
+  const prev = p.quiz[topic] || { passed: false, best: 0 }
+  p.quiz = {
+    ...p.quiz,
+    [topic]: {
+      passed: prev.passed || correct === total,  // 只升不降
+      best: Math.max(prev.best, correct),
+      total,
+      at: new Date().toISOString(),
+    },
+  }
+  set('progress', p)
+  return p
+}
+
+export function markMethodUsed(methodKey) {
+  const p = getProgress()
+  p.used = { ...p.used, [methodKey]: new Date().toISOString() }
+  set('progress', p)
+  return p
+}
+
 // ── Export / Import ───────────────────────────────────────
+const DATA_KEYS = ['settings', 'bookmarks', 'notes', 'divinations', 'reading', 'recentHexagrams', 'progress']
+
 export function exportData() {
-  const keys = ['settings', 'bookmarks', 'notes', 'divinations', 'reading', 'recentHexagrams']
   const data = {}
-  for (const k of keys) data[k] = get(k)
+  for (const k of DATA_KEYS) data[k] = get(k)
   return data
 }
 
 export function importData(data) {
-  const keys = ['settings', 'bookmarks', 'notes', 'divinations', 'reading', 'recentHexagrams']
-  for (const k of keys) {
+  for (const k of DATA_KEYS) {
     if (data[k] !== undefined) set(k, data[k])
   }
 }
 
 export function clearAllData() {
-  const keys = ['settings', 'bookmarks', 'notes', 'divinations', 'reading', 'recentHexagrams']
-  for (const k of keys) remove(k)
+  for (const k of DATA_KEYS) remove(k)
 }

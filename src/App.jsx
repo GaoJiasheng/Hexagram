@@ -11,13 +11,20 @@ import WorkbenchPage from './features/yijing/pages/WorkbenchPage.jsx'
 import ClassicsListPage from './features/yijing/pages/ClassicsListPage.jsx'
 import ClassicsReadPage from './features/yijing/pages/ClassicsReadPage.jsx'
 import BasicsPage from './features/yijing/pages/BasicsPage.jsx'
+import YinYangPage from './features/yijing/pages/YinYangPage.jsx'
+import HetuLuoshuPage from './features/yijing/pages/HetuLuoshuPage.jsx'
+import XiaoxiPage from './features/yijing/pages/XiaoxiPage.jsx'
+import ShicaoPage from './features/yijing/pages/ShicaoPage.jsx'
+import MeihuaBasicsPage from './features/yijing/pages/MeihuaBasicsPage.jsx'
+import JinqianBasicsPage from './features/yijing/pages/JinqianBasicsPage.jsx'
+import GlossaryPage from './features/yijing/pages/GlossaryPage.jsx'
 import MePage from './features/yijing/pages/MePage.jsx'
 
 const NAV_LINKS = [
   { to: '/hexagrams', label: '六十四卦' },
   { to: '/workbench', label: '推演' },
   { to: '/classics', label: '经传' },
-  { to: '/basics', label: '基础' },
+  { to: '/basics', label: '学堂' },
 ]
 
 const MOBILE_NAV = [
@@ -129,6 +136,13 @@ function AppContent() {
           <Route path="/classics" element={<ClassicsListPage />} />
           <Route path="/classics/:book/:chapter" element={<ClassicsReadPage />} />
           <Route path="/basics" element={<BasicsPage />} />
+          <Route path="/basics/yinyang" element={<YinYangPage />} />
+          <Route path="/basics/hetu-luoshu" element={<HetuLuoshuPage />} />
+          <Route path="/basics/xiaoxi" element={<XiaoxiPage />} />
+          <Route path="/basics/shicao" element={<ShicaoPage />} />
+          <Route path="/basics/meihua" element={<MeihuaBasicsPage />} />
+          <Route path="/basics/jinqian" element={<JinqianBasicsPage />} />
+          <Route path="/basics/glossary" element={<GlossaryPage />} />
           <Route path="/me" element={<MePage />} />
           <Route path="*" element={
             <div style={{ textAlign: 'center', paddingTop: '80px' }}>

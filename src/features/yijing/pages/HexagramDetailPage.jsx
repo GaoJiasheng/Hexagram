@@ -5,11 +5,72 @@ import TrigramBadge from '../components/TrigramBadge.jsx'
 import ClassicText from '../components/ClassicText.jsx'
 import LineRow from '../components/LineRow.jsx'
 import DerivationStrip from '../components/DerivationStrip.jsx'
+import TermTip from '../components/TermTip.jsx'
 import NoteEditor from '../components/NoteEditor.jsx'
 import { getHexagram, hexagramByBinary } from '../data.js'
 import { getBianGua, lineTitle } from '../engine/transforms.js'
+import { getPalace } from '../engine/bagong.js'
+import { getNajia } from '../engine/najia.js'
 import { addRecentHexagram, getBookmarks, toggleBookmark } from '../storage.js'
 import { useSettings } from '../SettingsContext.jsx'
+
+function NajiaSection({ binary }) {
+  const [open, setOpen] = useState(false)
+  const palace = getPalace(binary)
+  const najia = getNajia(binary)
+  if (!palace || !najia) return null
+
+  // 显示顺序：上爻在上（6→1）
+  const rows = [...najia].reverse()
+
+  return (
+    <section id="najia" className="detail-section">
+      <button className="detail-section__toggle" onClick={() => setOpen(o => !o)}>
+        <h2 className="detail-section__title">
+          纳甲
+          <span className="detail-section__subtitle">——给每一爻配上天干地支，是汉代六爻占法的底盘</span>
+        </h2>
+        <span>{open ? '▲' : '▼'}</span>
+      </button>
+      {open && (
+        <div className="najia-body">
+          <table className="najia-table">
+            <thead>
+              <tr>
+                <th><TermTip term="shiyao">爻位</TermTip></th>
+                <th>纳干支</th>
+                <th>五行</th>
+                <th><TermTip term="liuqin">六亲</TermTip></th>
+                <th><TermTip term="shiyao">世</TermTip><span className="najia-sep">/</span><TermTip term="yingyao">应</TermTip></th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map(({ pos, gan, zhi, element, liuqin }) => {
+                const isShi = pos === palace.shi
+                const isYing = pos === palace.ying
+                return (
+                  <tr key={pos} className={isShi ? 'najia-row--shi' : isYing ? 'najia-row--ying' : ''}>
+                    <td>{lineTitle(pos, binary[pos - 1] === '1')}</td>
+                    <td>{gan}{zhi}</td>
+                    <td>{element}</td>
+                    <td>{liuqin}</td>
+                    <td>
+                      {isShi && <span className="najia-shi">世</span>}
+                      {isYing && <span className="najia-ying">应</span>}
+                    </td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+          <p className="najia-note">
+            纳甲依京房八宫体系，由算法生成；六爻实占（用神、六神）不在本站范围。
+          </p>
+        </div>
+      )}
+    </section>
+  )
+}
 
 export default function HexagramDetailPage() {
   const { id } = useParams()
@@ -75,6 +136,7 @@ export default function HexagramDetailPage() {
         <a href="#xiang">象</a>
         <a href="#lines">六爻</a>
         {hex.extra?.wenyan && <a href="#wenyan">文言</a>}
+        <a href="#najia">纳甲</a>
         <a href="#related">关联</a>
         <a href="#note">笔记</a>
       </nav>
@@ -217,7 +279,10 @@ export default function HexagramDetailPage() {
           </section>
         )}
 
-        {/* ⑥ 关联 */}
+        {/* ⑥ 纳甲（默认折叠） */}
+        <NajiaSection binary={hex.binary} />
+
+        {/* ⑦ 关联 */}
         <section id="related" className="detail-section">
           <h2 className="detail-section__title">关联</h2>
           {hex.xugua && <p className="related-text"><span className="related-label">序卦：</span>{hex.xugua}</p>}

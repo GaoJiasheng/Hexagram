@@ -150,7 +150,69 @@ for (const bad of ['干道', '干卦', '干元', '遯', '無', '當', '見', '�
   if (corpus.includes(bad)) err(`正文残留繁体/误转字: ${bad}`)
 }
 
-// ---------- 5. 信息项 ----------
+// ---------- 5. glossary.json ----------
+const glossaryPath = path.join(ROOT, 'src/data/yijing/glossary.json')
+if (fs.existsSync(glossaryPath)) {
+  const glossary = JSON.parse(fs.readFileSync(glossaryPath, 'utf8'))
+  const keys = new Set()
+  for (const g of glossary) {
+    if (!g.key) { err('glossary 词条缺 key'); continue }
+    if (keys.has(g.key)) err(`glossary key 重复: ${g.key}`)
+    keys.add(g.key)
+    if (!g.name) err(`glossary[${g.key}] 缺 name`)
+    if (!g.brief) err(`glossary[${g.key}] 缺 brief`)
+    if (g.brief && [...g.brief].length > 40) err(`glossary[${g.key}].brief 超过 40 字(${[...g.brief].length})`)
+    if (!Array.isArray(g.aliases)) err(`glossary[${g.key}].aliases 应为数组`)
+  }
+  infos.push(`glossary: ${glossary.length} 条术语，key 全部唯一`)
+} else {
+  infos.push('glossary.json 不存在，跳过校验')
+}
+
+// ---------- 6. 八宫纳甲自检 ----------
+{
+  const enginePath = path.resolve(ROOT, 'src/features/yijing/engine')
+  const { getPalace, getAllPalaces } = await import(path.join(enginePath, 'bagong.js'))
+  const { getNajia } = await import(path.join(enginePath, 'najia.js'))
+
+  const VALID_ZHI = new Set(['子','丑','寅','卯','辰','巳','午','未','申','酉','戌','亥'])
+  const VALID_LIUQIN = new Set(['兄弟','父母','子孙','官鬼','妻财'])
+
+  const palaces = getAllPalaces()
+  if (palaces.length !== 8) err(`八宫数量应为 8，实为 ${palaces.length}`)
+
+  const allPalaceBinaries = new Set()
+  const palateCounts = {}
+  for (const { name, sequence } of palaces) {
+    if (sequence.length !== 8) err(`${name} 序列长度应为 8，实为 ${sequence.length}`)
+    palateCounts[name] = 0
+    for (const b of sequence) {
+      if (allPalaceBinaries.has(b)) err(`八宫 binary 重复: ${b}`)
+      allPalaceBinaries.add(b)
+      palateCounts[name]++
+    }
+  }
+  if (allPalaceBinaries.size !== 64) err(`八宫覆盖 ${allPalaceBinaries.size} 卦，应为 64`)
+
+  // 纳甲：64 卦全量检查干支合法性
+  for (const h of hexagrams) {
+    const najia = getNajia(h.binary)
+    if (!najia || najia.length !== 6) { err(`${h.name} 纳甲返回非 6 条`); continue }
+    for (const row of najia) {
+      if (!VALID_ZHI.has(row.zhi)) err(`${h.name} 第${row.pos}爻地支非法: ${row.zhi}`)
+      if (!VALID_LIUQIN.has(row.liuqin)) err(`${h.name} 第${row.pos}爻六亲非法: ${row.liuqin}`)
+    }
+  }
+
+  // 已知断言
+  const tunPalace = getPalace('100010')
+  if (tunPalace?.generation !== '二世') err(`屯卦应为二世，实为 ${tunPalace?.generation}`)
+  if (tunPalace?.shi !== 2) err(`屯卦世爻应为 2，实为 ${tunPalace?.shi}`)
+
+  infos.push(`八宫: 64 卦均分 8 宫，纳甲干支六亲全部合法`)
+}
+
+// ---------- 7. 信息项 ----------
 const translated = hexagrams.filter((h) => h.judgment?.translation).length
 infos.push(`译文覆盖: ${translated}/64 卦(其余待补,见 scripts/authored/translations.json)`)
 if (trigrams.length !== 8) err(`经卦应为 8,实为 ${trigrams.length}`)
@@ -162,4 +224,4 @@ if (errors.length) {
   for (const e of errors) console.error('  -', e)
   process.exit(1)
 }
-console.log(`✓ 校验通过:64 卦结构完整,内容抽查与卦变自检全部命中`)
+console.log(`✓ 校验通过:64 卦结构完整，内容抽查、卦变自检、glossary、八宫纳甲全部命中`)

@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import HexagramCard from '../components/HexagramCard.jsx'
 import EmptyState from '../components/EmptyState.jsx'
-import { getBookmarks, getNotes, getDivinations, deleteDivination, saveDivinations, exportData, importData, clearAllData, saveSettings } from '../storage.js'
+import { getBookmarks, getNotes, getDivinations, deleteDivination, saveDivinations, exportData, importData, clearAllData, saveSettings, getProgress } from '../storage.js'
 import { getHexagram, hexagramById } from '../data.js'
 import { useSettings } from '../SettingsContext.jsx'
 import { lineTitle } from '../engine/transforms.js'
+import { LEARN_TOPICS, topicStatus } from './BasicsPage.jsx'
 
-const TABS = ['收藏', '笔记', '推演历史', '设置']
+const TABS = ['收藏', '笔记', '推演历史', '研习', '设置']
 
 export default function MePage() {
   const [tab, setTab] = useState('收藏')
@@ -156,6 +157,29 @@ export default function MePage() {
             }
           </div>
         )}
+
+        {/* 研习 */}
+        {tab === '研习' && (() => {
+          const progress = getProgress()
+          return (
+            <div className="study-progress">
+              <p className="text-soft study-progress__hint">读=看完教学页 · 练=练习全对 · 用=在工作台用该法起过卦</p>
+              {LEARN_TOPICS.map(t => {
+                const st = topicStatus(t, progress)
+                return (
+                  <Link key={t.id} to={t.to} className="study-progress__row">
+                    <span className="study-progress__title">{t.title}</span>
+                    <span className="topic-dots">
+                      <span className={`topic-dot ${st.read ? 'topic-dot--on' : ''}`}>读</span>
+                      {st.quiz !== null && <span className={`topic-dot ${st.quiz ? 'topic-dot--on' : ''}`}>练</span>}
+                      {st.used !== null && <span className={`topic-dot ${st.used ? 'topic-dot--on' : ''}`}>用</span>}
+                    </span>
+                  </Link>
+                )
+              })}
+            </div>
+          )
+        })()}
 
         {/* 设置 */}
         {tab === '设置' && (
