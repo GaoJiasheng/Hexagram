@@ -180,13 +180,16 @@ const daoData = {}
   for (const bad of ['遯', '無', '當', '見', '龍', '萬', '隂', '干坤']) {
     if (daoCorpus.includes(bad)) err(`道藏正文残留繁体/异体/误转字: ${bad}`)
   }
-  const dd = daoData.daodejing
-  if (dd) {
-    const total = dd.chapters.reduce((n, c) => n + c.paragraphs.length, 0)
-    const done = dd.chapters.reduce((n, c) => n + c.paragraphs.filter((p) => p.translation).length, 0)
-    const chDone = dd.chapters.filter((c) => c.paragraphs.every((p) => p.translation)).length
-    infos.push(`道德经译文: ${chDone}/81 章(${done}/${total} 段)`)
+  // 五部译文覆盖仪表(v7 §0:断点续作依据)
+  const trCover = []
+  for (const [slug] of DAO_BOOKS) {
+    const book = daoData[slug]
+    if (!book) continue
+    const total = book.chapters.reduce((n, c) => n + c.paragraphs.length, 0)
+    const done = book.chapters.reduce((n, c) => n + c.paragraphs.filter((p) => p.translation).length, 0)
+    trCover.push(`${book.title} ${done}/${total}`)
   }
+  infos.push(`道藏译文(段): ${trCover.join(' · ')}`)
 }
 
 // ---------- 5. glossary.json ----------
@@ -357,28 +360,31 @@ if (fs.existsSync(glossaryPath)) {
     classicCover.push(`${bookData.title ?? key} ${covered}/${total}`)
   }
 
-  // 7.3 道藏锚定注疏(v6 §5,禁 ref);易经覆盖行只计易经条目
+  // 7.3 道藏锚定注疏(v6 §5,禁 ref;v7 起五部循环);易经覆盖行只计易经条目
   const yiEntryCount = entryCount
   {
-    const entryBase = yiEntryCount
-    const daoFile = path.join(ROOT, 'src/data/dao/zhushi-anchored/daodejing.json')
-    let daoCovered = 0
-    let daoTotal = 0
-    if (fs.existsSync(daoFile) && daoData.daodejing) {
+    const daoCover = []
+    for (const [slug] of DAO_BOOKS) {
+      const daoFile = path.join(ROOT, `src/data/dao/zhushi-anchored/${slug}.json`)
+      const book = daoData[slug]
+      if (!fs.existsSync(daoFile) || !book) continue
+      const entryBase = entryCount
+      let covered = 0
       const anchored = JSON.parse(fs.readFileSync(daoFile, 'utf8'))
-      const byChapter = new Map(daoData.daodejing.chapters.map((c) => [String(c.no), c]))
-      for (const c of daoData.daodejing.chapters) daoTotal += c.paragraphs.length
+      const byChapter = new Map(book.chapters.map((c) => [String(c.no), c]))
+      const total = book.chapters.reduce((n, c) => n + c.paragraphs.length, 0)
       for (const [chNo, paras] of Object.entries(anchored)) {
         const chapter = byChapter.get(chNo)
-        if (!chapter) { err(`dao/zhushi-anchored/daodejing: 章号非法 ${chNo}`); continue }
+        if (!chapter) { err(`dao/zhushi-anchored/${slug}: 章号非法 ${chNo}`); continue }
         for (const [pIdx, entries] of Object.entries(paras)) {
           const text = chapter.paragraphs[Number(pIdx)]?.original
-          if (text == null) { err(`dao/daodejing 第${chNo}章 段下标非法: ${pIdx}`); continue }
-          if (checkEntries(entries, text, `道德经·${chNo}章[${pIdx}]`, { forbidRef: true })) daoCovered++
+          if (text == null) { err(`dao/${slug} 第${chNo}章 段下标非法: ${pIdx}`); continue }
+          if (checkEntries(entries, text, `${book.title}·${chNo}章[${pIdx}]`, { forbidRef: true })) covered++
         }
       }
-      infos.push(`道德经注疏: ${daoCovered}/${daoTotal} 段(${entryCount - entryBase} 条锚注)`)
+      daoCover.push(`${book.title} ${covered}/${total}(${entryCount - entryBase} 条)`)
     }
+    if (daoCover.length) infos.push(`道藏注疏(段): ${daoCover.join(' · ')}`)
   }
 
   // 覆盖率报告(信息项,断点续作的进度仪表;分母为可注单元总数)
