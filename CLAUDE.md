@@ -1,10 +1,10 @@
 # hexagram — 观象 · 个人学习站
 
-个人学习站集合,双模块:易经研习(yijing,默认)+ 道藏研读(dao,框架期)。模块间不互链,唯一切换点是整屏门户(v4 §3)。纯前端(React 19 + Vite),无后端,用户数据只存 localStorage,可静态托管。
+个人学习站集合,双模块:易经研习(yijing,默认)+ 道藏研读(dao)。模块间不互链,唯一切换点是整屏门户(v4 §3);**唯一例外是「桥」(v8)**:参同契/阴符经注疏气泡内的卦名可单向跳转易经卦页,易经侧零反向链接。纯前端(React 19 + Vite),无后端,用户数据只存 localStorage,可静态托管。
 
 ## 唯一规格来源
 
-**docs/yijing-design.md(一期 M1–M3)、docs/yijing-design-v2.md(二期 M4–M6)、docs/yijing-design-v3.md(三期 P0–P5)、docs/design-v4.md(四期:注释层/源流/多模块门户与道藏框架)、docs/design-v5.md(五期:经传逐段注疏层)与 docs/design-v6.md(六期:道藏内容期)是页面、交互、视觉、推演规则、数据结构的唯一规格。** v2–v4 是增量稿,视觉/组件/数据约定沿用 v1。实现任何页面前先读对应章节,不要自行发明视觉风格或交互;引擎规则(八宫/纳甲/梅花/大衍/金钱卦)必须照设计稿的规则表实现,严禁凭记忆补规则。每个里程碑完成后逐条核对其验收清单。
+**docs/yijing-design.md(一期 M1–M3)、docs/yijing-design-v2.md(二期 M4–M6)、docs/yijing-design-v3.md(三期 P0–P5)、docs/design-v4.md(四期:注释层/源流/多模块门户与道藏框架)、docs/design-v5.md(五期:经传逐段注疏层)、docs/design-v6.md(六期:道藏内容期)、docs/design-v7.md(七期:道藏译注收官)与 docs/design-v8.md(八期:道藏→易经桥)是页面、交互、视觉、推演规则、数据结构的唯一规格。** v2–v4 是增量稿,视觉/组件/数据约定沿用 v1。实现任何页面前先读对应章节,不要自行发明视觉风格或交互;引擎规则(八宫/纳甲/梅花/大衍/金钱卦)必须照设计稿的规则表实现,严禁凭记忆补规则。每个里程碑完成后逐条核对其验收清单。
 
 ## 当前状态(随进度更新此节)
 
@@ -20,6 +20,7 @@
 - [x] 易经内容收官:经传 204 段全译(scripts/authored/classics-translations.json,按 book→章号→段序合并)、乾坤文言传 35 段全译(translations.json 的 wenyan 数组)、序卦/杂卦按卦引文(fetch-data 自动解析,64/64)、卦主 64 卦标注(hexagram-meta.json 的 guazhu 字段 + LineRow 赭石小章)
 - [x] 五期:经传逐段注疏层(v5 全文,已发 v1.4.0)——753 单元 18 批全部审毕,762 条锚注(彖 61/64·大象 55/64·小象 243/386·文言 21/35·系辞 57/60·说卦 37/50·序卦 6/63·杂卦 9/31,未注单元为审后无拦路词留空);数据在 src/data/yijing/zhushi-anchored/(人工维护),组件 AnnotatedText anchors 锚定模式 + ref 复用全局词条,check-data 锚点校验兜底。**修订注疏照 v5 §5 风格规范,改完必过 check-data**
 - [x] 六期:道藏内容期(v6 全文,已发 v1.5.0)——六部原文录入(scripts/fetch-dao.mjs + scripts/lib/wikisource.mjs 共享库,与易经管线同缓存);章节阅读器 DaoReadPage(/dao/:slug/:chapter,复用经传阅读器模式);道德经 81 章全译(scripts/authored/dao-translations.json)+ 190 条锚定注疏(src/data/dao/zhushi-anchored/daodejing.json,**无 ref**,模块不互链)。其余五部仅原文(status: partial),译注照 v6 §4–§5 工序逐部展开
+- [x] 八期:道藏→易经桥(docs/design-v8.md,已发 v1.7.0)——参同契 45 处+阴符经 1 处卦名桥点(注疏条目 hex/to 字段),气泡尾部单向跳转易经卦页;check-data 校验 hex 1–64、易经侧禁用桥字段。**新增桥点照 v8 §2 规则(仅道藏侧、段内首次出现、不与既有锚点重叠)**
 - [x] 七期:道藏译注收官(docs/design-v7.md,已发 v1.6.0)——五部译注全齐:清静经 6 段/感应篇 14 段/阴符经 3 段(管线修复:校对页断行致句子腰斩,每章合并为一段)/庄子内篇 53 段/参同契 45 段,六部 status 全部 done;道藏译文 562 段全覆盖,锚注共 550 条。**修订工序照 v6 §4–§5 与 v7 §2 分书风格,改完必过 check-data**
 
 ## 常用命令
