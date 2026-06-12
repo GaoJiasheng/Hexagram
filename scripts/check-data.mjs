@@ -212,7 +212,117 @@ if (fs.existsSync(glossaryPath)) {
   infos.push(`八宫: 64 卦均分 8 宫，纳甲干支六亲全部合法`)
 }
 
-// ---------- 7. 信息项 ----------
+// ---------- 7. 逐段注疏锚点校验(v5 §4) ----------
+{
+  const anchoredDir = path.join(ROOT, 'src/data/yijing/zhushi-anchored')
+  const zhushiGlobal = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/yijing/zhushi.json'), 'utf8'))
+  const globalTerms = new Set()
+  for (const z of zhushiGlobal) {
+    if (globalTerms.has(z.term)) err(`zhushi.json 词条重复: ${z.term}`)
+    globalTerms.add(z.term)
+  }
+
+  // term 第 n 次出现的下标;不足 n 次返回 -1
+  const nthIndex = (text, term, n) => {
+    let idx = -1
+    let from = 0
+    for (let k = 0; k < n; k++) {
+      idx = text.indexOf(term, from)
+      if (idx === -1) return -1
+      from = idx + 1
+    }
+    return idx
+  }
+
+  let entryCount = 0
+  // 校验一个单元(一段原文)的全部条目;返回是否有有效条目
+  const checkEntries = (entries, text, where) => {
+    if (!Array.isArray(entries)) {
+      err(`${where} 条目应为数组`)
+      return false
+    }
+    const ranges = []
+    for (const e of entries) {
+      entryCount++
+      if (!e.term) { err(`${where} 有条目缺 term`); continue }
+      const label = `${where}「${e.term}」`
+      const n = e.n ?? 1
+      if (!text) { err(`${label} 目标原文不存在`); continue }
+      const idx = nthIndex(text, e.term, n)
+      if (idx === -1) { err(`${label} 锚点未命中(第 ${n} 次出现)`); continue }
+      if (e.ref) {
+        if (!globalTerms.has(e.term)) err(`${label} ref 词条不在全局词表`)
+      } else if (!e.note) {
+        err(`${label} 缺 note(且非 ref)`)
+      }
+      if (e.note && [...e.note].length > 40) err(`${label} note 超 40 字(${[...e.note].length})`)
+      const range = [idx, idx + e.term.length]
+      for (const r of ranges) {
+        if (range[0] < r[1] && r[0] < range[1]) err(`${label} 锚定区间与同段其他条目重叠`)
+      }
+      ranges.push(range)
+    }
+    return entries.length > 0
+  }
+
+  // 7.1 卦系传文(hexagrams.json)
+  const HEX_SECTIONS = new Set(['tuan', 'daxiang', 'xiaoxiang', 'wenyan'])
+  const cover = { tuan: 0, daxiang: 0, xiaoxiang: 0, wenyan: 0 }
+  const hexAnchored = JSON.parse(fs.readFileSync(path.join(anchoredDir, 'hexagrams.json'), 'utf8'))
+  for (const [idStr, sections] of Object.entries(hexAnchored)) {
+    const h = byId.get(Number(idStr))
+    if (!h) { err(`zhushi-anchored/hexagrams: 未知卦序 ${idStr}`); continue }
+    for (const [sec, val] of Object.entries(sections)) {
+      if (!HEX_SECTIONS.has(sec)) { err(`zhushi-anchored ${h.name} 未知节: ${sec}`); continue }
+      if (sec === 'tuan' || sec === 'daxiang') {
+        if (checkEntries(val, h[sec]?.original, `${h.name}·${sec === 'tuan' ? '彖' : '大象'}`)) cover[sec]++
+      } else if (sec === 'xiaoxiang') {
+        for (const [k, entries] of Object.entries(val)) {
+          const text = k === 'use'
+            ? h.extra?.use?.xiaoxiang?.original
+            : (/^[1-6]$/.test(k) ? h.lines[Number(k) - 1]?.xiaoxiang?.original : null)
+          if (text == null) { err(`zhushi-anchored ${h.name}·小象 键非法: ${k}`); continue }
+          if (checkEntries(entries, text, `${h.name}·小象${k === 'use' ? '(用)' : k}`)) cover.xiaoxiang++
+        }
+      } else {
+        for (const [k, entries] of Object.entries(val)) {
+          const text = h.extra?.wenyan?.[Number(k)]?.original
+          if (text == null) { err(`zhushi-anchored ${h.name}·文言 段下标非法: ${k}`); continue }
+          if (checkEntries(entries, text, `${h.name}·文言[${k}]`)) cover.wenyan++
+        }
+      }
+    }
+  }
+
+  // 7.2 经传(五文件,章号→段下标)
+  const classicCover = []
+  for (const [key] of BOOKS) {
+    const anchored = JSON.parse(fs.readFileSync(path.join(anchoredDir, `${key}.json`), 'utf8'))
+    const bookData = JSON.parse(fs.readFileSync(path.join(ROOT, `src/data/yijing/classics/${key}.json`), 'utf8'))
+    let covered = 0
+    let total = 0
+    const byChapter = new Map(bookData.chapters.map((c) => [String(c.no), c]))
+    for (const c of bookData.chapters) total += c.paragraphs.length
+    for (const [chNo, paras] of Object.entries(anchored)) {
+      const chapter = byChapter.get(chNo)
+      if (!chapter) { err(`zhushi-anchored/${key}: 章号非法 ${chNo}`); continue }
+      for (const [pIdx, entries] of Object.entries(paras)) {
+        const text = chapter.paragraphs[Number(pIdx)]?.original
+        if (text == null) { err(`zhushi-anchored/${key} 第${chNo}章 段下标非法: ${pIdx}`); continue }
+        if (checkEntries(entries, text, `${key}·${chNo}章[${pIdx}]`)) covered++
+      }
+    }
+    classicCover.push(`${bookData.title ?? key} ${covered}/${total}`)
+  }
+
+  // 覆盖率报告(信息项,断点续作的进度仪表;分母为可注单元总数)
+  const xiaoxiangTotal = 64 * 6 + 2
+  infos.push(
+    `注疏覆盖: 彖 ${cover.tuan}/64 · 大象 ${cover.daxiang}/64 · 小象 ${cover.xiaoxiang}/${xiaoxiangTotal} · 文言 ${cover.wenyan}/35 | ${classicCover.join(' · ')}(共 ${entryCount} 条锚注)`
+  )
+}
+
+// ---------- 8. 信息项 ----------
 const translated = hexagrams.filter((h) => h.judgment?.translation).length
 infos.push(`译文覆盖: ${translated}/64 卦(其余待补,见 scripts/authored/translations.json)`)
 if (trigrams.length !== 8) err(`经卦应为 8,实为 ${trigrams.length}`)
