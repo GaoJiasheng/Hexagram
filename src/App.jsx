@@ -20,6 +20,7 @@ import JinqianBasicsPage from './features/yijing/pages/JinqianBasicsPage.jsx'
 import YuanliuPage from './features/yijing/pages/YuanliuPage.jsx'
 import ShiliListPage from './features/yijing/pages/ShiliListPage.jsx'
 import ShiliDetailPage from './features/yijing/pages/ShiliDetailPage.jsx'
+import ShishiPage from './features/yijing/pages/ShishiPage.jsx'
 import GlossaryPage from './features/yijing/pages/GlossaryPage.jsx'
 import MePage from './features/yijing/pages/MePage.jsx'
 // Pages — 道藏研读模块
@@ -236,6 +237,7 @@ function AppContent() {
           <Route path="/basics/yuanliu" element={<YuanliuPage />} />
           <Route path="/shili" element={<ShiliListPage />} />
           <Route path="/shili/:id" element={<ShiliDetailPage />} />
+          <Route path="/basics/shishi" element={<ShishiPage />} />
           <Route path="/basics/glossary" element={<GlossaryPage />} />
           <Route path="/me" element={<MePage />} />
           {/* 道藏研读 */}

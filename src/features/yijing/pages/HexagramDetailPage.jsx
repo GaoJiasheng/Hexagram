@@ -15,6 +15,7 @@ import { getNajia } from '../engine/najia.js'
 import { addRecentHexagram, getBookmarks, toggleBookmark } from '../storage.js'
 import { getHexAnchors } from '../zhushiAnchored.js'
 import shili from '../../../data/yijing/shili.json'
+import shishi from '../../../data/yijing/shishi.json'
 import { useSettings } from '../SettingsContext.jsx'
 
 function NajiaSection({ binary }) {
@@ -313,6 +314,20 @@ export default function HexagramDetailPage() {
                   <span key={s.id}>
                     {i > 0 && ' · '}
                     <Link to={`/shili/${s.id}`} className="related-shili-link">{s.title}</Link>
+                  </span>
+                ))}
+              </p>
+            )
+          })()}
+          {(() => {
+            const refs = shishi.filter(s => s.hexRefs.some(r => r.hex === hex.id))
+            return refs.length > 0 && (
+              <p className="related-text">
+                <span className="related-label">史事：</span>
+                {refs.map((s, i) => (
+                  <span key={s.id}>
+                    {i > 0 && ' · '}
+                    <Link to={`/basics/shishi#${s.id}`} className="related-shili-link">{s.title}</Link>
                   </span>
                 ))}
               </p>

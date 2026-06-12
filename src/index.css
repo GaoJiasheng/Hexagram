@@ -2616,6 +2616,11 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .related-shili-link { color: var(--cinnabar); text-decoration: none; }
 .related-shili-link:hover { text-decoration: underline; }
 
+/* 爻辞商周史事(v9 §3) */
+.shishi-refs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
+.shishi-ref { font-size: 0.8rem; color: var(--cinnabar); border: 1px solid currentColor; border-radius: 3px; padding: 1px 8px; text-decoration: none; }
+.shishi-ref:hover { background: var(--cinnabar); color: var(--paper); }
+
 /* 易学源流时间线 */
 .yuanliu-timeline { margin-top: 24px; }
 .yuanliu-node { display: flex; gap: 16px; }

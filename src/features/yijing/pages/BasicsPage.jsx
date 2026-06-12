@@ -76,6 +76,15 @@ export const LEARN_TOPICS = [
     usedKeys: null,
   },
   {
+    id: 'shishi',
+    to: '/basics/shishi',
+    title: '爻辞中的商周史事',
+    desc: '王亥丧牛、高宗伐鬼方、帝乙归妹——藏在爻辞里的历史化石',
+    time: '约 10 分钟',
+    quiz: false,
+    usedKeys: null,
+  },
+  {
     id: 'glossary',
     to: '/basics/glossary',
     title: '名词表',
