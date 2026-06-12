@@ -18,7 +18,7 @@
 - [x] 三期 P0–P5 读练用体系:金钱卦(jinqian)、工作台六法(梅花引导/大衍/金钱三入口)、学堂七篇(新增梅花/金钱教学页)、QuizCard 练习、学算双向跳转、研习进度(progress)(v3 全文)
 - [x] 四期:64 卦译文全部完成(含用九/用六)、经文字词注释层(zhushi.json + AnnotatedText)、易学源流页、多模块门户 + 道藏框架(六部经典占位)(v4 全文)
 - [x] 易经内容收官:经传 204 段全译(scripts/authored/classics-translations.json,按 book→章号→段序合并)、乾坤文言传 35 段全译(translations.json 的 wenyan 数组)、序卦/杂卦按卦引文(fetch-data 自动解析,64/64)、卦主 64 卦标注(hexagram-meta.json 的 guazhu 字段 + LineRow 赭石小章)
-- [ ] 五期:经传逐段注疏层(v5 全文)——753 单元分 18 批,zhushi-anchored/ 数据 + AnnotatedText 锚定模式 + check-data 锚点校验;**断点续作看 v5 §0 协议(git log 批次 commit + check-data 覆盖率报告)**
+- [x] 五期:经传逐段注疏层(v5 全文,已发 v1.4.0)——753 单元 18 批全部审毕,762 条锚注(彖 61/64·大象 55/64·小象 243/386·文言 21/35·系辞 57/60·说卦 37/50·序卦 6/63·杂卦 9/31,未注单元为审后无拦路词留空);数据在 src/data/yijing/zhushi-anchored/(人工维护),组件 AnnotatedText anchors 锚定模式 + ref 复用全局词条,check-data 锚点校验兜底。**修订注疏照 v5 §5 风格规范,改完必过 check-data**
 - [ ] 道藏内容:六部经文待录入(管线照易经模块:维基文库+繁转简+校验),先《道德经》
 
 ## 常用命令
