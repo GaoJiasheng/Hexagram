@@ -150,6 +150,45 @@ for (const bad of ['干道', '干卦', '干元', '遯', '無', '當', '見', '�
   if (corpus.includes(bad)) err(`正文残留繁体/误转字: ${bad}`)
 }
 
+// ---------- 4b. 道藏六部(v6 §1.3) ----------
+const DAO_BOOKS = [
+  ['daodejing', 81],
+  ['qingjingjing', 1],
+  ['ganyingpian', 1],
+  ['zhuangzi-neipian', 7],
+  ['yinfujing', 3],
+  ['cantongqi', 35], // 维基文库底本按 35 章分法,texts.json sections 以此为准
+]
+const daoData = {}
+{
+  let daoCorpus = ''
+  for (const [slug, exact] of DAO_BOOKS) {
+    const file = path.join(ROOT, `src/data/dao/classics/${slug}.json`)
+    if (!fs.existsSync(file)) {
+      err(`缺道藏文件: ${slug}.json`)
+      continue
+    }
+    const book = JSON.parse(fs.readFileSync(file, 'utf8'))
+    daoData[slug] = book
+    daoCorpus += JSON.stringify(book)
+    if ((book.chapters?.length ?? 0) !== exact) err(`道藏 ${slug} 章数 ${book.chapters?.length ?? 0},应为 ${exact}`)
+    for (const c of book.chapters ?? []) {
+      if (!c.paragraphs?.length) err(`道藏 ${slug} 第 ${c.no} 章无段落`)
+      for (const p of c.paragraphs ?? []) if (!p.original) err(`道藏 ${slug} 第 ${c.no} 章有空段落`)
+    }
+  }
+  for (const bad of ['遯', '無', '當', '見', '龍', '萬', '隂', '干坤']) {
+    if (daoCorpus.includes(bad)) err(`道藏正文残留繁体/异体/误转字: ${bad}`)
+  }
+  const dd = daoData.daodejing
+  if (dd) {
+    const total = dd.chapters.reduce((n, c) => n + c.paragraphs.length, 0)
+    const done = dd.chapters.reduce((n, c) => n + c.paragraphs.filter((p) => p.translation).length, 0)
+    const chDone = dd.chapters.filter((c) => c.paragraphs.every((p) => p.translation)).length
+    infos.push(`道德经译文: ${chDone}/81 章(${done}/${total} 段)`)
+  }
+}
+
 // ---------- 5. glossary.json ----------
 const glossaryPath = path.join(ROOT, 'src/data/yijing/glossary.json')
 if (fs.existsSync(glossaryPath)) {
@@ -236,7 +275,8 @@ if (fs.existsSync(glossaryPath)) {
 
   let entryCount = 0
   // 校验一个单元(一段原文)的全部条目;返回是否有有效条目
-  const checkEntries = (entries, text, where) => {
+  // opts.forbidRef:道藏注疏禁用 ref(v6 §5,模块不互链)
+  const checkEntries = (entries, text, where, opts = {}) => {
     if (!Array.isArray(entries)) {
       err(`${where} 条目应为数组`)
       return false
@@ -250,7 +290,9 @@ if (fs.existsSync(glossaryPath)) {
       if (!text) { err(`${label} 目标原文不存在`); continue }
       const idx = nthIndex(text, e.term, n)
       if (idx === -1) { err(`${label} 锚点未命中(第 ${n} 次出现)`); continue }
-      if (e.ref) {
+      if (e.ref && opts.forbidRef) {
+        err(`${label} 道藏注疏不支持 ref(模块不互链)`)
+      } else if (e.ref) {
         if (!globalTerms.has(e.term)) err(`${label} ref 词条不在全局词表`)
       } else if (!e.note) {
         err(`${label} 缺 note(且非 ref)`)
@@ -313,6 +355,29 @@ if (fs.existsSync(glossaryPath)) {
       }
     }
     classicCover.push(`${bookData.title ?? key} ${covered}/${total}`)
+  }
+
+  // 7.3 道藏锚定注疏(v6 §5,禁 ref)
+  {
+    const entryBase = entryCount
+    const daoFile = path.join(ROOT, 'src/data/dao/zhushi-anchored/daodejing.json')
+    let daoCovered = 0
+    let daoTotal = 0
+    if (fs.existsSync(daoFile) && daoData.daodejing) {
+      const anchored = JSON.parse(fs.readFileSync(daoFile, 'utf8'))
+      const byChapter = new Map(daoData.daodejing.chapters.map((c) => [String(c.no), c]))
+      for (const c of daoData.daodejing.chapters) daoTotal += c.paragraphs.length
+      for (const [chNo, paras] of Object.entries(anchored)) {
+        const chapter = byChapter.get(chNo)
+        if (!chapter) { err(`dao/zhushi-anchored/daodejing: 章号非法 ${chNo}`); continue }
+        for (const [pIdx, entries] of Object.entries(paras)) {
+          const text = chapter.paragraphs[Number(pIdx)]?.original
+          if (text == null) { err(`dao/daodejing 第${chNo}章 段下标非法: ${pIdx}`); continue }
+          if (checkEntries(entries, text, `道德经·${chNo}章[${pIdx}]`, { forbidRef: true })) daoCovered++
+        }
+      }
+      infos.push(`道德经注疏: ${daoCovered}/${daoTotal} 段(${entryCount - entryBase} 条锚注)`)
+    }
   }
 
   // 覆盖率报告(信息项,断点续作的进度仪表;分母为可注单元总数)

@@ -6,91 +6,20 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import * as OpenCCNS from 'opencc-js'
 import { TRIGRAMS, TABLE, buildHexagramIndex, TRAD_TRIGRAM_CHAR, lineTitle } from './lib/hexagram-table.mjs'
+import { t2s, clean, isJunk as isJunkBase, apiGet, createFetcher } from './lib/wikisource.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const CACHE_FILE = path.join(ROOT, 'scripts/.cache/wikisource.json')
 const OUT_HEX = path.join(ROOT, 'src/data/yijing/hexagrams.json')
 const OUT_CLASSICS_DIR = path.join(ROOT, 'src/data/yijing/classics')
 
-const API = 'https://zh.wikisource.org/w/api.php'
-
-// ---------- 繁转简(保护「乾」,周易语料中一律读 qián,不得转作「干」) ----------
-const OpenCC = OpenCCNS.Converter ? OpenCCNS : OpenCCNS.default
-const t2sRaw = OpenCC.Converter({ from: 't', to: 'cn' })
-const t2s = (s) => t2sRaw(s.replaceAll('乾', '')).replaceAll('', '乾').replaceAll('遯', '遁')
+// 抓取/繁简/清洗工具来自共享库(v6 §1.1);此处只保留周易专属的垃圾行规则
+const { fetchPages } = createFetcher(CACHE_FILE)
+const isJunk = (text) => isJunkBase(text) || /^周易/.test(text) // 「周易 第三卦」一类导航行
 
 // 页面名繁简差异的兜底别名(t2s 覆盖不到时)
 const NAME_ALIAS = { 遯: '遁' }
-
-// ---------- 抓取(带缓存) ----------
-const cache = fs.existsSync(CACHE_FILE) ? JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8')) : {}
-function saveCache() {
-  fs.mkdirSync(path.dirname(CACHE_FILE), { recursive: true })
-  fs.writeFileSync(CACHE_FILE, JSON.stringify(cache))
-}
-
-async function apiGet(params) {
-  const qs = new URLSearchParams({ format: 'json', formatversion: '2', ...params })
-  const res = await fetch(`${API}?${qs}`, { headers: { 'User-Agent': 'hexagram-learning-site/0.1 (personal study project)' } })
-  if (!res.ok) throw new Error(`HTTP ${res.status} for ${qs}`)
-  return res.json()
-}
-
-async function fetchPages(titles) {
-  const result = {}
-  const missing = titles.filter((t) => !(t in cache))
-  for (let i = 0; i < missing.length; i += 40) {
-    const batch = missing.slice(i, i + 40)
-    const data = await apiGet({
-      action: 'query',
-      prop: 'revisions',
-      rvprop: 'content',
-      rvslots: 'main',
-      redirects: '1',
-      titles: batch.join('|'),
-    })
-    const redirectMap = {}
-    for (const r of data.query.redirects ?? []) redirectMap[r.to] = r.from
-    for (const page of data.query.pages ?? []) {
-      const content = page.revisions?.[0]?.slots?.main?.content
-      if (!content) throw new Error(`页面无内容: ${page.title}`)
-      const requested = redirectMap[page.title] ?? page.title
-      cache[requested] = content
-    }
-    saveCache()
-    await new Promise((r) => setTimeout(r, 300))
-  }
-  for (const t of titles) {
-    if (!(t in cache)) throw new Error(`抓取失败,缺页面: ${t}`)
-    result[t] = cache[t]
-  }
-  return result
-}
-
-// ---------- wikitext 清洗 ----------
-function clean(raw) {
-  let s = raw
-  s = s.replace(/-\{([^{}]*?)\}-/g, (_, inner) => inner.replace(/^[A-Za-z]\|/, '')) // -{乾}- / -{T|xx}-
-  for (let i = 0; i < 4; i++) s = s.replace(/\{\{[^{}]*\}\}/g, '') // 模板(含 {{gap}}、{{*|注}})
-  s = s.replace(/\[\[(?:File|Image):[^\]]*\]\]/gi, '')
-  s = s.replace(/\[\[(?:[^\][|]*\|)?([^\][]*)\]\]/g, '$1') // 链接取显示文本
-  s = s.replace(/<[^>]+>/g, '') // span 等行内标签
-  s = s.replace(/<[^>]*$/, '') // 被断行的开标签(如行尾的 <span)
-  s = s.replace(/^[^<>]*>/, '') // 上一行开标签的残余(如行首的 style=...>)
-  s = s.replace(/'''?/g, '')
-  return s.trim()
-}
-
-function isJunk(text) {
-  if (!text) return true
-  if (/^[{}|=']/.test(text)) return true
-  if (/^(Category|分类|分類)[:\uFF1A]/i.test(text)) return true
-  if (/^周易/.test(text)) return true // 「周易 第三卦」一类导航行
-  if (/^(previous|next|title|section|author)\s*=/.test(text)) return true
-  return false
-}
 
 // ---------- 卦页面解析 ----------
 const LINE_TITLE_RE = /^(初[九六]|[九六][二三四五]|上[九六]|用[九六])[:\uFF1A,\uFF0C]\s*/
