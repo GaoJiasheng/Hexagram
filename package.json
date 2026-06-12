@@ -11,7 +11,8 @@
     "test": "vitest run --passWithNoTests",
     "data:fetch": "node scripts/fetch-data.mjs",
     "check-data": "node scripts/check-data.mjs",
-    "data:fetch-dao": "node scripts/fetch-dao.mjs"
+    "data:fetch-dao": "node scripts/fetch-dao.mjs",
+    "data:fetch-shili": "node scripts/fetch-shili.mjs"
   },
   "dependencies": {
     "lunar-javascript": "^1.7.7",

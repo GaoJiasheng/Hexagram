@@ -192,6 +192,31 @@ const daoData = {}
   infos.push(`道藏译文(段): ${trCover.join(' · ')}`)
 }
 
+// ---------- 4c. 筮例(v9 §1) ----------
+{
+  const shiliPath = path.join(ROOT, 'src/data/yijing/shili.json')
+  if (fs.existsSync(shiliPath)) {
+    const shili = JSON.parse(fs.readFileSync(shiliPath, 'utf8'))
+    if (shili.length < 19) err(`筮例应不少于 19 条,实为 ${shili.length}`)
+    const ids = new Set()
+    for (const s of shili) {
+      if (ids.has(s.id)) err(`筮例 id 重复: ${s.id}`)
+      ids.add(s.id)
+      if (!s.paragraphs?.length || s.paragraphs.some((p) => !p.original)) err(`筮例 ${s.id} 原文为空`)
+      if (!['shi', 'yin'].includes(s.kind)) err(`筮例 ${s.id} kind 非法: ${s.kind}`)
+      for (const c of s.casts ?? []) {
+        if (!(Number.isInteger(c.ben) && c.ben >= 1 && c.ben <= 64)) err(`筮例 ${s.id} 本卦卦序非法: ${c.ben}`)
+        if (c.zhi !== null && !(Number.isInteger(c.zhi) && c.zhi >= 1 && c.zhi <= 64)) err(`筮例 ${s.id} 之卦卦序非法: ${c.zhi}`)
+      }
+      if (!s.casts?.length) err(`筮例 ${s.id} 无卦例`)
+    }
+    const bg = shili.filter((s) => s.background).length
+    const tr = shili.filter((s) => s.paragraphs.every((p) => p.translation)).length
+    const rd = shili.filter((s) => s.reading?.length).length
+    infos.push(`筮例: ${shili.length} 条;背景 ${bg} · 全译 ${tr} · 解读 ${rd}`)
+  }
+}
+
 // ---------- 5. glossary.json ----------
 const glossaryPath = path.join(ROOT, 'src/data/yijing/glossary.json')
 if (fs.existsSync(glossaryPath)) {
