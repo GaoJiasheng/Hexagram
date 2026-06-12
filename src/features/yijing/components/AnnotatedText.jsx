@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useLayoutEffect } from 'react'
 import zhushiData from '../../../data/yijing/zhushi.json'
 
 // 按首字索引,同首字内长词优先(v4 §1.3 最长优先扫描)
@@ -38,7 +38,26 @@ function segment(text) {
 
 function ZhuTerm({ entry }) {
   const [open, setOpen] = useState(false)
+  // 视口钳位:dx 为水平回移量,below 表示顶部放不下、翻到触发词下方
+  const [adjust, setAdjust] = useState({ dx: 0, below: false })
   const ref = useRef(null)
+  const popRef = useRef(null)
+  // 真实点按(含移动端轻点)会先触发 mouseover/focus 把气泡打开,紧跟的 click 不应再切换关闭;
+  // 此标记记录「本次手势由悬停/聚焦打开」,由 click 消费
+  const gestureOpenedRef = useRef(false)
+
+  useLayoutEffect(() => {
+    if (!open) { setAdjust({ dx: 0, below: false }); return }
+    const el = popRef.current
+    if (!el) return
+    const r = el.getBoundingClientRect()
+    const margin = 8
+    let dx = 0
+    if (r.left < margin) dx = margin - r.left
+    else if (r.right > window.innerWidth - margin) dx = window.innerWidth - margin - r.right
+    const below = r.top < margin
+    if (dx !== 0 || below) setAdjust({ dx, below })
+  }, [open])
 
   useEffect(() => {
     if (!open) return
@@ -66,17 +85,25 @@ function ZhuTerm({ entry }) {
         role="button"
         aria-expanded={open}
         aria-label={`注释：${entry.term}`}
-        onMouseEnter={() => setOpen(true)}
-        onMouseLeave={() => setOpen(false)}
-        onFocus={() => setOpen(true)}
-        onBlur={() => setOpen(false)}
-        onClick={() => setOpen(o => !o)}
+        onMouseEnter={() => { gestureOpenedRef.current = !open; setOpen(true) }}
+        onMouseLeave={() => { gestureOpenedRef.current = false; setOpen(false) }}
+        onFocus={() => { gestureOpenedRef.current = !open; setOpen(true) }}
+        onBlur={() => { gestureOpenedRef.current = false; setOpen(false) }}
+        onClick={() => {
+          if (gestureOpenedRef.current) { gestureOpenedRef.current = false; return }
+          setOpen(o => !o)
+        }}
         onKeyDown={onKey}
       >
         {entry.term}
       </span>
       {open && (
-        <span className="zhushi__popover" role="tooltip">
+        <span
+          ref={popRef}
+          className={`zhushi__popover ${adjust.below ? 'zhushi__popover--below' : ''}`}
+          role="tooltip"
+          style={adjust.dx !== 0 ? { transform: `translateX(calc(-50% + ${adjust.dx}px))` } : undefined}
+        >
           <span className="zhushi__term">
             {entry.term}
             {entry.reading && <span className="zhushi__reading">（{entry.reading}）</span>}
