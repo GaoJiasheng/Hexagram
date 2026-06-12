@@ -49,7 +49,8 @@ const BOOKS = [
     perPageChapter: true,
     exactChapters: 7,
   },
-  { slug: 'yinfujing', title: '阴符经', pages: YINFU_PAGES, dropPreface: true, exactChapters: 3, junkRe: /^黄帝阴符经$/ },
+  // mergeParagraphs:校对页按物理行断行,句子跨行被切;每章合并为一段(阴符经各章本为连续短文)
+  { slug: 'yinfujing', title: '阴符经', pages: YINFU_PAGES, dropPreface: true, exactChapters: 3, junkRe: /^黄帝阴符经$/, mergeParagraphs: true },
   { slug: 'cantongqi', title: '周易参同契', pages: CANTONGQI_PAGES, exactChapters: 35 },
 ]
 
@@ -140,6 +141,12 @@ async function main() {
     }
     if (book.mergeChapters && chapters.length > 1) {
       chapters = [{ no: 1, title: null, paragraphs: chapters.flatMap((c) => c.paragraphs) }]
+    }
+    if (book.mergeParagraphs) {
+      chapters = chapters.map((c) => ({
+        ...c,
+        paragraphs: [{ original: c.paragraphs.map((p) => p.original).join(''), translation: null }],
+      }))
     }
     chapters = chapters.map((c, i) => ({ no: i + 1, title: c.title, paragraphs: c.paragraphs }))
 
