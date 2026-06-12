@@ -190,6 +190,12 @@ const daoData = {}
     trCover.push(`${book.title} ${done}/${total}`)
   }
   infos.push(`道藏译文(段): ${trCover.join(' · ')}`)
+
+  // 题解撰人小传(v9 §3:authorNote 六部齐备)
+  const textsMeta = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/dao/texts.json'), 'utf8'))
+  for (const t of textsMeta) {
+    if (!t.authorNote) err(`道藏 ${t.slug} 缺 authorNote 撰人小传`)
+  }
 }
 
 // ---------- 4c. 筮例(v9 §1) ----------
@@ -214,6 +220,48 @@ const daoData = {}
     const tr = shili.filter((s) => s.paragraphs.every((p) => p.translation)).length
     const rd = shili.filter((s) => s.reading?.length).length
     infos.push(`筮例: ${shili.length} 条;背景 ${bg} · 全译 ${tr} · 解读 ${rd}`)
+  }
+}
+
+// ---------- 4d. 史事与人物志(v9 §3,人工 registry) ----------
+{
+  const shishiPath = path.join(ROOT, 'src/data/yijing/shishi.json')
+  if (fs.existsSync(shishiPath)) {
+    const shishi = JSON.parse(fs.readFileSync(shishiPath, 'utf8'))
+    const ids = new Set()
+    let refCount = 0
+    for (const s of shishi) {
+      if (ids.has(s.id)) err(`史事 id 重复: ${s.id}`)
+      ids.add(s.id)
+      if (!s.title) err(`史事 ${s.id} 缺 title`)
+      if (!s.paragraphs?.length || s.paragraphs.some((p) => !p)) err(`史事 ${s.id} 段落为空`)
+      for (const r of s.hexRefs ?? []) {
+        refCount++
+        if (!(Number.isInteger(r.hex) && r.hex >= 1 && r.hex <= 64)) err(`史事 ${s.id} 卦序非法: ${r.hex}`)
+        if (r.line !== null && !(Number.isInteger(r.line) && r.line >= 1 && r.line <= 6)) err(`史事 ${s.id} 爻位非法: ${r.line}`)
+      }
+    }
+    infos.push(`史事: ${shishi.length} 节;卦爻回链 ${refCount} 处`)
+  }
+
+  const renwuPath = path.join(ROOT, 'src/data/yijing/renwu.json')
+  if (fs.existsSync(renwuPath)) {
+    const renwu = JSON.parse(fs.readFileSync(renwuPath, 'utf8'))
+    if (renwu.length < 10) err(`人物志应不少于 10 家,实为 ${renwu.length}`)
+    const ids = new Set()
+    let linkCount = 0
+    for (const p of renwu) {
+      if (ids.has(p.id)) err(`人物 id 重复: ${p.id}`)
+      ids.add(p.id)
+      if (!p.name || !p.era) err(`人物 ${p.id} 缺 name/era`)
+      if (!p.paragraphs?.length || p.paragraphs.some((t) => !t)) err(`人物 ${p.id} 小传为空`)
+      for (const l of p.links ?? []) {
+        linkCount++
+        if (!l.to || !l.to.startsWith('/') || l.to.startsWith('/dao')) err(`人物 ${p.id} 链接非法(须站内易经侧): ${l.to}`)
+        if (!l.label) err(`人物 ${p.id} 链接缺 label`)
+      }
+    }
+    infos.push(`人物志: ${renwu.length} 家;站内互指 ${linkCount} 处`)
   }
 }
 

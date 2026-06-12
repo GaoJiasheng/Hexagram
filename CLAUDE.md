@@ -4,7 +4,7 @@
 
 ## 唯一规格来源
 
-**docs/yijing-design.md(一期 M1–M3)、docs/yijing-design-v2.md(二期 M4–M6)、docs/yijing-design-v3.md(三期 P0–P5)、docs/design-v4.md(四期:注释层/源流/多模块门户与道藏框架)、docs/design-v5.md(五期:经传逐段注疏层)、docs/design-v6.md(六期:道藏内容期)、docs/design-v7.md(七期:道藏译注收官)与 docs/design-v8.md(八期:道藏→易经桥)是页面、交互、视觉、推演规则、数据结构的唯一规格。** v2–v4 是增量稿,视觉/组件/数据约定沿用 v1。实现任何页面前先读对应章节,不要自行发明视觉风格或交互;引擎规则(八宫/纳甲/梅花/大衍/金钱卦)必须照设计稿的规则表实现,严禁凭记忆补规则。每个里程碑完成后逐条核对其验收清单。
+**docs/yijing-design.md(一期 M1–M3)、docs/yijing-design-v2.md(二期 M4–M6)、docs/yijing-design-v3.md(三期 P0–P5)、docs/design-v4.md(四期:注释层/源流/多模块门户与道藏框架)、docs/design-v5.md(五期:经传逐段注疏层)、docs/design-v6.md(六期:道藏内容期)、docs/design-v7.md(七期:道藏译注收官)、docs/design-v8.md(八期:道藏→易经桥)与 docs/design-v9.md(九期:筮例与故事)是页面、交互、视觉、推演规则、数据结构的唯一规格。** v2–v4 是增量稿,视觉/组件/数据约定沿用 v1。实现任何页面前先读对应章节,不要自行发明视觉风格或交互;引擎规则(八宫/纳甲/梅花/大衍/金钱卦)必须照设计稿的规则表实现,严禁凭记忆补规则。每个里程碑完成后逐条核对其验收清单。
 
 ## 当前状态(随进度更新此节)
 
@@ -22,6 +22,7 @@
 - [x] 六期:道藏内容期(v6 全文,已发 v1.5.0)——六部原文录入(scripts/fetch-dao.mjs + scripts/lib/wikisource.mjs 共享库,与易经管线同缓存);章节阅读器 DaoReadPage(/dao/:slug/:chapter,复用经传阅读器模式);道德经 81 章全译(scripts/authored/dao-translations.json)+ 190 条锚定注疏(src/data/dao/zhushi-anchored/daodejing.json,**无 ref**,模块不互链)。其余五部仅原文(status: partial),译注照 v6 §4–§5 工序逐部展开
 - [x] 八期:道藏→易经桥(docs/design-v8.md,已发 v1.7.0)——参同契 45 处+阴符经 1 处卦名桥点(注疏条目 hex/to 字段),气泡尾部单向跳转易经卦页;check-data 校验 hex 1–64、易经侧禁用桥字段。**新增桥点照 v8 §2 规则(仅道藏侧、段内首次出现、不与既有锚点重叠)**
 - [x] 七期:道藏译注收官(docs/design-v7.md,已发 v1.6.0)——五部译注全齐:清静经 6 段/感应篇 14 段/阴符经 3 段(管线修复:校对页断行致句子腰斩,每章合并为一段)/庄子内篇 53 段/参同契 45 段,六部 status 全部 done;道藏译文 562 段全覆盖,锚注共 550 条。**修订工序照 v6 §4–§5 与 v7 §2 分书风格,改完必过 check-data**
+- [x] 九期:筮例与故事(docs/design-v9.md,已发 v1.8.0)——春秋筮例 21 条(左传 18+国语 3,筮占 15·引易 6):原文走摘录式管线 scripts/fetch-shili.mjs(page+起止 mark 切片,标点各公不一,**严禁手改原文**),背景/全译/解读为人工内容(scripts/authored/shili.json),页面 /shili 列表+详情(卦例图 movingLines=binary 异或)+卦页关联回链;爻辞商周史事 8 节(src/data/yijing/shishi.json 人工 registry+/basics/shishi+卦页「史事:」回链);人物志易学十家(renwu.json+源流页时间线扩明代节点+同页小传锚点+站内互指 15 处,**链接禁入 /dao**);道藏 texts.json 六部 authorNote 撰人小传(DaoTextPage 题解展示,纯文本)。**筮例/史事/人物的脱锚叙述照 v9 §4 四级分级(共识直写/考证标出处/存疑明示/宁缺毋滥);check-data 校验筮例≥19·史事卦爻位·人物≥10 家**
 
 ## 常用命令
 
