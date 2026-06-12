@@ -2,7 +2,7 @@ import { useSettings } from '../SettingsContext.jsx'
 import { analyzePosition, describePosition } from '../engine/positions.js'
 import AnnotatedText from './AnnotatedText.jsx'
 
-export default function LineRow({ line, pos, binary, onHover, isHighlighted, guazhu }) {
+export default function LineRow({ line, pos, binary, onHover, isHighlighted, guazhu, xiaoxiangAnchors }) {
   const { settings } = useSettings()
   const analysis = analyzePosition(pos, binary)
   const { chips, desc } = describePosition(analysis)
@@ -25,7 +25,11 @@ export default function LineRow({ line, pos, binary, onHover, isHighlighted, gua
       </div>
       <p className="line-row__text"><AnnotatedText text={line.original} /></p>
       {line.xiaoxiang?.original && (
-        <p className="line-row__xiaoxiang">{line.xiaoxiang.original}</p>
+        <p className="line-row__xiaoxiang">
+          {xiaoxiangAnchors?.length
+            ? <AnnotatedText text={line.xiaoxiang.original} anchors={xiaoxiangAnchors} />
+            : line.xiaoxiang.original}
+        </p>
       )}
       {settings.showTranslation && (
         <>

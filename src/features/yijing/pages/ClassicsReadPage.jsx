@@ -4,6 +4,7 @@ import { loadClassics, CLASSICS_META, hexagramById } from '../data.js'
 import ClassicText from '../components/ClassicText.jsx'
 import { saveReadingProgress } from '../storage.js'
 import { useSettings } from '../SettingsContext.jsx'
+import { getClassicAnchors } from '../zhushiAnchored.js'
 
 const HEX_NAMES = new Set()
 for (const [, h] of hexagramById) HEX_NAMES.add(h.name)
@@ -136,6 +137,7 @@ export default function ClassicsReadPage() {
                 key={i}
                 original={p.original}
                 translation={p.translation}
+                anchors={getClassicAnchors(book, currentChapter.no, i)}
               />
             ))}
           </>

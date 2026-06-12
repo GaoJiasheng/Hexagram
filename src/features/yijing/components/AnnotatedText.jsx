@@ -116,11 +116,40 @@ function ZhuTerm({ entry }) {
   )
 }
 
-/** 经文字词注释(v4 §1):对原文做最长优先匹配,命中词悬停出注。
- *  只用于卦辞与爻辞原文;译文与彖象传不挂。 */
-export default function AnnotatedText({ text }) {
+// 锚定模式(v5 §3):只标注 anchors 指定的词在第 n 次出现的那一处。
+// 区间重叠由 check-data 校验,此处防御性跳过;未命中条目静默忽略。
+function segmentAnchored(text, anchors) {
+  const placed = []
+  for (const a of anchors) {
+    const n = a.n ?? 1
+    let idx = -1
+    let from = 0
+    for (let k = 0; k < n; k++) {
+      idx = text.indexOf(a.term, from)
+      if (idx === -1) break
+      from = idx + 1
+    }
+    if (idx === -1) continue
+    placed.push({ start: idx, end: idx + a.term.length, entry: a })
+  }
+  placed.sort((x, y) => x.start - y.start)
+  const segs = []
+  let pos = 0
+  for (const p of placed) {
+    if (p.start < pos) continue
+    if (p.start > pos) segs.push({ text: text.slice(pos, p.start) })
+    segs.push({ entry: p.entry })
+    pos = p.end
+  }
+  if (pos < text.length) segs.push({ text: text.slice(pos) })
+  return segs
+}
+
+/** 经文字词注释。词典模式(v4 §1):对全文做最长优先匹配,用于卦辞与爻辞原文。
+ *  锚定模式(v5 §3):传入 anchors 时只标注指定位置,用于传文逐段注疏。 */
+export default function AnnotatedText({ text, anchors }) {
   if (!text) return null
-  const segs = segment(text)
+  const segs = anchors?.length ? segmentAnchored(text, anchors) : segment(text)
   return (
     <>
       {segs.map((s, i) =>

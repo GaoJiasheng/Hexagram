@@ -13,6 +13,7 @@ import { getBianGua, lineTitle } from '../engine/transforms.js'
 import { getPalace } from '../engine/bagong.js'
 import { getNajia } from '../engine/najia.js'
 import { addRecentHexagram, getBookmarks, toggleBookmark } from '../storage.js'
+import { getHexAnchors } from '../zhushiAnchored.js'
 import { useSettings } from '../SettingsContext.jsx'
 
 function NajiaSection({ binary }) {
@@ -222,7 +223,7 @@ export default function HexagramDetailPage() {
             <h2 className="detail-section__title">彖传</h2>
             <span>{tuanOpen ? '▲' : '▼'}</span>
           </button>
-          {tuanOpen && <ClassicText original={hex.tuan.original} translation={hex.tuan.translation} />}
+          {tuanOpen && <ClassicText original={hex.tuan.original} translation={hex.tuan.translation} anchors={getHexAnchors(hex.id, 'tuan')} />}
         </section>
 
         {/* ③ 大象传 */}
@@ -231,7 +232,7 @@ export default function HexagramDetailPage() {
             <h2 className="detail-section__title">象传</h2>
             <span>{xiangOpen ? '▲' : '▼'}</span>
           </button>
-          {xiangOpen && <ClassicText original={hex.daxiang.original} translation={hex.daxiang.translation} />}
+          {xiangOpen && <ClassicText original={hex.daxiang.original} translation={hex.daxiang.translation} anchors={getHexAnchors(hex.id, 'daxiang')} />}
         </section>
 
         {/* ④ 六爻 — 初爻在上方(按阅读顺序) */}
@@ -247,6 +248,7 @@ export default function HexagramDetailPage() {
                 onHover={setHoveredLine}
                 isHighlighted={hoveredLine === i + 1}
                 guazhu={hex.guazhu}
+                xiaoxiangAnchors={getHexAnchors(hex.id, 'xiaoxiang', i + 1)}
               />
             ))}
             {/* 用九/用六 */}
@@ -257,7 +259,11 @@ export default function HexagramDetailPage() {
                 </div>
                 <p className="line-row__text"><AnnotatedText text={hex.extra.use.original} /></p>
                 {hex.extra.use.xiaoxiang?.original && (
-                  <p className="line-row__xiaoxiang">{hex.extra.use.xiaoxiang.original}</p>
+                  <p className="line-row__xiaoxiang">
+                    {getHexAnchors(hex.id, 'xiaoxiang', 'use')
+                      ? <AnnotatedText text={hex.extra.use.xiaoxiang.original} anchors={getHexAnchors(hex.id, 'xiaoxiang', 'use')} />
+                      : hex.extra.use.xiaoxiang.original}
+                  </p>
                 )}
                 {settings.showTranslation && (
                   <>
@@ -282,7 +288,7 @@ export default function HexagramDetailPage() {
             {wenyangOpen && (
               <div className="wenyan-body">
                 {hex.extra.wenyan.map((para, i) => (
-                  <ClassicText key={i} original={para.original} translation={para.translation} />
+                  <ClassicText key={i} original={para.original} translation={para.translation} anchors={getHexAnchors(hex.id, 'wenyan', i)} />
                 ))}
               </div>
             )}
