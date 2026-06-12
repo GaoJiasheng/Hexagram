@@ -20,7 +20,7 @@
 - [x] 易经内容收官:经传 204 段全译(scripts/authored/classics-translations.json,按 book→章号→段序合并)、乾坤文言传 35 段全译(translations.json 的 wenyan 数组)、序卦/杂卦按卦引文(fetch-data 自动解析,64/64)、卦主 64 卦标注(hexagram-meta.json 的 guazhu 字段 + LineRow 赭石小章)
 - [x] 五期:经传逐段注疏层(v5 全文,已发 v1.4.0)——753 单元 18 批全部审毕,762 条锚注(彖 61/64·大象 55/64·小象 243/386·文言 21/35·系辞 57/60·说卦 37/50·序卦 6/63·杂卦 9/31,未注单元为审后无拦路词留空);数据在 src/data/yijing/zhushi-anchored/(人工维护),组件 AnnotatedText anchors 锚定模式 + ref 复用全局词条,check-data 锚点校验兜底。**修订注疏照 v5 §5 风格规范,改完必过 check-data**
 - [x] 六期:道藏内容期(v6 全文,已发 v1.5.0)——六部原文录入(scripts/fetch-dao.mjs + scripts/lib/wikisource.mjs 共享库,与易经管线同缓存);章节阅读器 DaoReadPage(/dao/:slug/:chapter,复用经传阅读器模式);道德经 81 章全译(scripts/authored/dao-translations.json)+ 190 条锚定注疏(src/data/dao/zhushi-anchored/daodejing.json,**无 ref**,模块不互链)。其余五部仅原文(status: partial),译注照 v6 §4–§5 工序逐部展开
-- [ ] 道藏译注后续:清静经/感应篇/阴符经/庄子内篇/参同契 五部译文与注疏(工序照 v6,数据照 dao-translations.json 与 zhushi-anchored/ 增量扩展)
+- [x] 七期:道藏译注收官(docs/design-v7.md,已发 v1.6.0)——五部译注全齐:清静经 6 段/感应篇 14 段/阴符经 3 段(管线修复:校对页断行致句子腰斩,每章合并为一段)/庄子内篇 53 段/参同契 45 段,六部 status 全部 done;道藏译文 562 段全覆盖,锚注共 550 条。**修订工序照 v6 §4–§5 与 v7 §2 分书风格,改完必过 check-data**
 
 ## 常用命令
 
