@@ -28,6 +28,7 @@ export default function DaoTextPage() {
         <h1 className="dao-text-title">{text.title}</h1>
         <p className="dao-text-meta">{text.alias} · {text.era} · {text.attribution}</p>
         <p className="dao-text-brief">{text.brief}</p>
+        {text.authorNote && <p className="dao-text-authornote">{text.authorNote}</p>}
       </div>
 
       <section className="dao-text-sections">

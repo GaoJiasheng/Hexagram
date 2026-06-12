@@ -1261,7 +1261,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   margin-bottom: 24px;
 }
 
-.detail-section { margin-bottom: 32px; }
+.detail-section { margin-bottom: 32px; scroll-margin-top: 70px; }
 
 .detail-section__title {
   margin: 0;
@@ -2620,6 +2620,18 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .shishi-refs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
 .shishi-ref { font-size: 0.8rem; color: var(--cinnabar); border: 1px solid currentColor; border-radius: 3px; padding: 1px 8px; text-decoration: none; }
 .shishi-ref:hover { background: var(--cinnabar); color: var(--paper); }
+
+/* 人物小传(v9 §3) */
+.yuanliu-person-link { font-size: 0.74rem; color: var(--cinnabar); text-decoration: none; padding: 1px 8px; border: 1px dashed currentColor; border-radius: 10px; }
+.yuanliu-person-link:hover { border-style: solid; }
+.renwu-entry { padding: 18px 0 6px; border-top: 1px solid var(--line); scroll-margin-top: 70px; }
+.renwu-entry__head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+.renwu-entry__name { font-family: var(--font-serif); font-size: 1.15rem; color: var(--ink); }
+.renwu-entry__era { font-size: 0.8rem; color: var(--ink-faint); }
+.renwu-entry .shishi-refs { margin-bottom: 8px; }
+
+/* 道藏题解撰人小传(v9 §3,authorNote) */
+.dao-text-authornote { font-size: 0.88rem; line-height: 1.8; color: var(--ink-soft); margin: 14px 0 0; padding-top: 12px; border-top: 1px dashed var(--line); }
 
 /* 易学源流时间线 */
 .yuanliu-timeline { margin-top: 24px; }
