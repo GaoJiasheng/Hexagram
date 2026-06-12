@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, useLayoutEffect } from 'react'
+import { Link } from 'react-router-dom'
 import zhushiData from '../../../data/yijing/zhushi.json'
 
 // 按首字索引,同首字内长词优先(v4 §1.3 最长优先扫描)
@@ -108,8 +109,11 @@ function ZhuTerm({ entry }) {
             {entry.term}
             {entry.reading && <span className="zhushi__reading">（{entry.reading}）</span>}
           </span>
-          <span className="zhushi__note">{entry.note}</span>
+          {entry.note && <span className="zhushi__note">{entry.note}</span>}
           {entry.source && <span className="zhushi__source">——{entry.source}</span>}
+          {entry.qiao && (
+            <Link to={entry.qiao.to} className="zhushi__qiao">{entry.qiao.label}</Link>
+          )}
         </span>
       )}
     </span>

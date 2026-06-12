@@ -297,8 +297,18 @@ if (fs.existsSync(glossaryPath)) {
         err(`${label} 道藏注疏不支持 ref(模块不互链)`)
       } else if (e.ref) {
         if (!globalTerms.has(e.term)) err(`${label} ref 词条不在全局词表`)
-      } else if (!e.note) {
-        err(`${label} 缺 note(且非 ref)`)
+      } else if (!e.note && !e.hex && !e.to) {
+        err(`${label} 缺 note(且非 ref/桥条目)`)
+      }
+      // v8 桥字段:仅道藏侧可用,hex 须为合法卦序
+      if (e.hex !== undefined || e.to !== undefined) {
+        if (!opts.allowQiao) err(`${label} 桥字段(hex/to)仅道藏注疏可用`)
+        if (e.hex !== undefined && !(Number.isInteger(e.hex) && e.hex >= 1 && e.hex <= 64)) {
+          err(`${label} hex 应为 1–64 的卦序,实为 ${e.hex}`)
+        }
+        if (e.to !== undefined && !/^\/(hexagram|hexagrams|basics|classics)/.test(e.to)) {
+          err(`${label} to 应为易经模块路由,实为 ${e.to}`)
+        }
       }
       if (e.note && [...e.note].length > 40) err(`${label} note 超 40 字(${[...e.note].length})`)
       const range = [idx, idx + e.term.length]
@@ -379,7 +389,7 @@ if (fs.existsSync(glossaryPath)) {
         for (const [pIdx, entries] of Object.entries(paras)) {
           const text = chapter.paragraphs[Number(pIdx)]?.original
           if (text == null) { err(`dao/${slug} 第${chNo}章 段下标非法: ${pIdx}`); continue }
-          if (checkEntries(entries, text, `${book.title}·${chNo}章[${pIdx}]`, { forbidRef: true })) covered++
+          if (checkEntries(entries, text, `${book.title}·${chNo}章[${pIdx}]`, { forbidRef: true, allowQiao: true })) covered++
         }
       }
       daoCover.push(`${book.title} ${covered}/${total}(${entryCount - entryBase} 条)`)
