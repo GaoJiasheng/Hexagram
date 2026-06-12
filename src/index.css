@@ -2648,6 +2648,10 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .dao-text-sections__title { font-family: var(--font-serif); font-size: 1.1rem; color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 8px; margin-bottom: 16px; }
 .dao-section-grid { display: flex; flex-wrap: wrap; gap: 6px; }
 .dao-section-cell { display: inline-flex; align-items: center; justify-content: center; min-width: 34px; height: 34px; padding: 0 6px; border: 1px solid var(--line); border-radius: 4px; color: var(--ink-faint); font-size: 0.8rem; background: var(--paper-raised); cursor: not-allowed; }
+.dao-section-cell--link { cursor: pointer; color: var(--ink-soft); text-decoration: none; transition: border-color 0.15s, color 0.15s; }
+.dao-section-cell--link:hover { border-color: var(--cinnabar); color: var(--cinnabar); }
+.read-toc__back { color: inherit; text-decoration: none; }
+.read-toc__back:hover { color: var(--cinnabar); }
 .dao-section-note { margin-top: 14px; font-size: 0.78rem; }
 
 /* 卦主小章(v2 §4,赭石描边) */

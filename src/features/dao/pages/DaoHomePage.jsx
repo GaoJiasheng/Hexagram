@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import texts from '../../../data/dao/texts.json'
 
-const STATUS_LABEL = { pending: '整理中', partial: '部分可读', done: '可阅读' }
+const STATUS_LABEL = { pending: '整理中', partial: '可读·译注中', done: '可阅读' }
 
 // 道藏模块首页 — 书架(v4 §3.6)
 export default function DaoHomePage() {
@@ -9,7 +9,7 @@ export default function DaoHomePage() {
     <div className="dao-home">
       <div className="page-header">
         <h1 className="page-title">道藏研读</h1>
-        <p className="page-subtitle">六部入门经典，自《道德经》始。经文整理中，将循易经模块同一套管线录入。</p>
+        <p className="page-subtitle">六部入门经典，原文俱已录入，自《道德经》始逐部补全译注。</p>
       </div>
 
       <div className="dao-shelf">

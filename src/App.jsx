@@ -23,6 +23,7 @@ import MePage from './features/yijing/pages/MePage.jsx'
 // Pages — 道藏研读模块
 import DaoHomePage from './features/dao/pages/DaoHomePage.jsx'
 import DaoTextPage from './features/dao/pages/DaoTextPage.jsx'
+import DaoReadPage from './features/dao/pages/DaoReadPage.jsx'
 
 // 模块注册(v4 §3):唯一切换点是门户,模块间不互链
 const MODULES = {
@@ -236,6 +237,7 @@ function AppContent() {
           {/* 道藏研读 */}
           <Route path="/dao" element={<DaoHomePage />} />
           <Route path="/dao/:slug" element={<DaoTextPage />} />
+          <Route path="/dao/:slug/:chapter" element={<DaoReadPage />} />
           <Route path="*" element={
             <div style={{ textAlign: 'center', paddingTop: '80px' }}>
               <p style={{ color: 'var(--ink-faint)' }}>页面不存在</p>
