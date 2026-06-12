@@ -357,9 +357,10 @@ if (fs.existsSync(glossaryPath)) {
     classicCover.push(`${bookData.title ?? key} ${covered}/${total}`)
   }
 
-  // 7.3 道藏锚定注疏(v6 §5,禁 ref)
+  // 7.3 道藏锚定注疏(v6 §5,禁 ref);易经覆盖行只计易经条目
+  const yiEntryCount = entryCount
   {
-    const entryBase = entryCount
+    const entryBase = yiEntryCount
     const daoFile = path.join(ROOT, 'src/data/dao/zhushi-anchored/daodejing.json')
     let daoCovered = 0
     let daoTotal = 0
@@ -383,7 +384,7 @@ if (fs.existsSync(glossaryPath)) {
   // 覆盖率报告(信息项,断点续作的进度仪表;分母为可注单元总数)
   const xiaoxiangTotal = 64 * 6 + 2
   infos.push(
-    `注疏覆盖: 彖 ${cover.tuan}/64 · 大象 ${cover.daxiang}/64 · 小象 ${cover.xiaoxiang}/${xiaoxiangTotal} · 文言 ${cover.wenyan}/35 | ${classicCover.join(' · ')}(共 ${entryCount} 条锚注)`
+    `注疏覆盖: 彖 ${cover.tuan}/64 · 大象 ${cover.daxiang}/64 · 小象 ${cover.xiaoxiang}/${xiaoxiangTotal} · 文言 ${cover.wenyan}/35 | ${classicCover.join(' · ')}(共 ${yiEntryCount} 条锚注)`
   )
 }
 
