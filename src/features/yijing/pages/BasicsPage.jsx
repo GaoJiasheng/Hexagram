@@ -67,6 +67,15 @@ export const LEARN_TOPICS = [
     usedKeys: null,
   },
   {
+    id: 'shili',
+    to: '/shili',
+    title: '春秋筮例',
+    desc: '左传/国语二十余条占筮与引易实录——现存最早的周易应用现场',
+    time: '约 20 分钟',
+    quiz: false,
+    usedKeys: null,
+  },
+  {
     id: 'glossary',
     to: '/basics/glossary',
     title: '名词表',

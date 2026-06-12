@@ -14,6 +14,7 @@ import { getPalace } from '../engine/bagong.js'
 import { getNajia } from '../engine/najia.js'
 import { addRecentHexagram, getBookmarks, toggleBookmark } from '../storage.js'
 import { getHexAnchors } from '../zhushiAnchored.js'
+import shili from '../../../data/yijing/shili.json'
 import { useSettings } from '../SettingsContext.jsx'
 
 function NajiaSection({ binary }) {
@@ -303,6 +304,20 @@ export default function HexagramDetailPage() {
           <h2 className="detail-section__title">关联</h2>
           {hex.xugua && <p className="related-text"><span className="related-label">序卦：</span>{hex.xugua}</p>}
           {hex.zagua && <p className="related-text"><span className="related-label">杂卦：</span>{hex.zagua}</p>}
+          {(() => {
+            const refs = shili.filter(s => s.casts.some(c => c.ben === hex.id || c.zhi === hex.id))
+            return refs.length > 0 && (
+              <p className="related-text">
+                <span className="related-label">筮例：</span>
+                {refs.map((s, i) => (
+                  <span key={s.id}>
+                    {i > 0 && ' · '}
+                    <Link to={`/shili/${s.id}`} className="related-shili-link">{s.title}</Link>
+                  </span>
+                ))}
+              </p>
+            )
+          })()}
         </section>
 
         {/* ⑦ 笔记 */}

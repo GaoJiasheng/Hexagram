@@ -2591,6 +2591,31 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .zhushi__qiao { display: inline-block; margin-top: 2px; color: var(--cinnabar); font-size: 0.78rem; text-decoration: none; border-top: 1px dashed var(--line); padding-top: 4px; }
 .zhushi__qiao:hover { text-decoration: underline; }
 
+/* ---------- 九期:春秋筮例(v9 §2) ---------- */
+.shili-page { max-width: var(--read-w, 720px); margin: 0 auto; }
+.shili-group { margin-bottom: 32px; }
+.shili-group__title { font-size: 0.85rem; color: var(--ink-faint); letter-spacing: 0.1em; border-bottom: 1px solid var(--line); padding-bottom: 8px; margin: 0 0 14px; }
+.shili-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.shili-card { display: flex; flex-direction: column; gap: 6px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper-raised); text-decoration: none; transition: border-color 0.15s, transform 0.15s; }
+.shili-card:hover { border-color: var(--cinnabar); transform: translateY(-2px); }
+.shili-card__title { font-family: var(--font-serif); font-size: 1.05rem; color: var(--ink); }
+.shili-card__meta { display: flex; gap: 8px; align-items: center; font-size: 0.74rem; color: var(--ink-soft); }
+.shili-card__kind { padding: 1px 6px; border-radius: 3px; border: 1px solid var(--line); }
+.shili-card__kind--shi { color: var(--cinnabar); border-color: currentColor; }
+.shili-card__casts { font-size: 0.78rem; color: var(--ink-faint); }
+.shili-background { font-size: 0.95rem; line-height: 1.9; color: var(--ink); }
+.shili-casts { display: flex; flex-wrap: wrap; gap: 24px; }
+.shili-cast { display: flex; flex-direction: column; gap: 8px; align-items: center; }
+.shili-cast__label { font-size: 0.78rem; color: var(--ink-soft); }
+.shili-cast__figures { display: flex; align-items: center; gap: 14px; }
+.shili-cast__hex { display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; }
+.shili-cast__name { font-size: 0.85rem; color: var(--ink); }
+.shili-cast__hex:hover .shili-cast__name { color: var(--cinnabar); }
+.shili-cast__arrow { color: var(--ink-faint); }
+.shili-reading { font-size: 0.95rem; line-height: 1.9; color: var(--ink); margin: 0 0 12px; }
+.related-shili-link { color: var(--cinnabar); text-decoration: none; }
+.related-shili-link:hover { text-decoration: underline; }
+
 /* 易学源流时间线 */
 .yuanliu-timeline { margin-top: 24px; }
 .yuanliu-node { display: flex; gap: 16px; }
