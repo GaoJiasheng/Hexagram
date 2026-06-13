@@ -15,6 +15,23 @@ const RULE_TERM_MAP = {
   '用六': 'dongyao',
 }
 
+// 断卦传文(彖/小象):只释卦象,不断吉凶
+function Commentary({ commentary }) {
+  if (!commentary) return null
+  return (
+    <div className="rule-card__commentary">
+      <span className="rule-card__commentary-tag">
+        {commentary.kind === 'tuan' ? '彖传释卦' : '小象释爻'}
+      </span>
+      <ClassicText
+        original={commentary.original}
+        translation={commentary.translation}
+        className="classic-text--commentary"
+      />
+    </div>
+  )
+}
+
 export default function RuleCard({ result }) {
   const [expanded, setExpanded] = useState({})
   if (!result) return null
@@ -42,6 +59,7 @@ export default function RuleCard({ result }) {
             translation={item.text?.translation}
             emphasis
           />
+          <Commentary commentary={item.commentary} />
         </div>
       ))}
       {secondaryTexts.length > 0 && (
@@ -53,10 +71,13 @@ export default function RuleCard({ result }) {
                 <span>{expanded[item.label] ? '收起' : '展开'}</span>
               </button>
               {expanded[item.label] && (
-                <ClassicText
-                  original={item.text?.original || ''}
-                  translation={item.text?.translation}
-                />
+                <>
+                  <ClassicText
+                    original={item.text?.original || ''}
+                    translation={item.text?.translation}
+                  />
+                  <Commentary commentary={item.commentary} />
+                </>
               )}
             </div>
           ))}

@@ -653,6 +653,12 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .rule-card__primary { margin-bottom: 12px; }
 .rule-card__item-label { font-size: 0.8rem; color: var(--ink-faint); margin-bottom: 6px; }
 
+/* 断卦传文(彖/小象,只释卦象不断吉凶) */
+.rule-card__commentary { margin: 8px 0 0 10px; padding-left: 12px; border-left: 2px solid var(--line); }
+.rule-card__commentary-tag { display: inline-block; font-size: 0.7rem; color: var(--ochre); letter-spacing: 0.05em; margin-bottom: 4px; }
+.classic-text--commentary .classic-text__original { font-size: 0.92rem; color: var(--ink-soft); line-height: 1.8; }
+.classic-text--commentary .classic-text__translation { font-size: 0.82rem; }
+
 .rule-card__secondary { margin-top: 12px; border-top: 1px solid var(--line); padding-top: 12px; }
 .rule-card__collapsible { margin-bottom: 8px; }
 
