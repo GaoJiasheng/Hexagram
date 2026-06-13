@@ -28,7 +28,13 @@ const CHAPTER_MARK_RE = /^[一二三四五六七八九十百]+之[一二三四�
 const STOP_RE = /有聲文獻|Spoken_?Wikisource|ximalaya/i
 // 横线分隔(----)与纯数字卷次行(孟子各卷页尾的导航残留)
 const NAV_LINE_RE = /^(?:[-－—]{2,}|\d{1,3})$/
-// 含字校勘模板 {{另|主|注}} / {{另2|主|注}}:取首参(主读),先于通用模板清洗
+// 先解析行内链接与繁简转换标记,使 {{另}} 模板首参(经文)不再内含 | 和 { }
+// (如 {{另2|《[[尚書|書]]》-{云}-…|校勘}} 的首参含 [[..|..]] 与 -{..}-,否则下面取首参会失败、经文被整段删)
+const preResolve = (s) => s
+  .replace(/-\{([^{}]*?)\}-/g, (_, inner) => inner.replace(/^[A-Za-z]\|/, ''))
+  .replace(/\[\[(?:File|Image):[^\]]*\]\]/gi, '')
+  .replace(/\[\[(?:[^\][|]*\|)?([^\][]*)\]\]/g, '$1')
+// 含字校勘模板 {{另|主|注}} / {{另2|主|注}}:取首参(主读、即经文),先于通用模板清洗
 const replaceAnother = (s) => s.replace(/\{\{另\d?\|([^|{}]*)(?:\|[^{}]*)*\}\}/g, '$1')
 // 行内 <ref>…</ref> 校勘注(常含外链),整段剔除——经文只留正文(论语各篇为单行,无跨行 ref)
 const stripRef = (s) => s.replace(/<ref[^>]*\/>/gi, '').replace(/<ref[^>]*>[\s\S]*?<\/ref>/gi, '')
@@ -41,7 +47,7 @@ function parsePageParas(wikitext, warnings, pageName) {
     const trimmed = raw.trim()
     if (/^=+.*=+$/.test(trimmed)) continue           // == 标题 == / === N === 章标记行
     if (/^\*+\s*\[\[/.test(trimmed)) continue          // *[[…]] 导航链接行
-    const text = clean(replaceAnother(stripRef(raw)).replace(/^[*#:;]+/, ''))
+    const text = clean(replaceAnother(preResolve(stripRef(raw))).replace(/^[*#:;]+/, ''))
     if (isJunk(text)) continue
     const simp = t2s(text).replaceAll('愼', '慎')   // OpenCC 未规范的异体字补正(慎)
     if (!simp || CHAPTER_MARK_RE.test(simp) || NAV_LINE_RE.test(simp)) continue   // 空行 / 章号 / 横线 / 卷次
