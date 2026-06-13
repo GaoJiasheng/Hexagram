@@ -1,11 +1,11 @@
 # hexagram — 观象 · 个人学习站
 
-个人学习站集合,**配置驱动的分站平台**(v14):当前两站——易经研习(yijing,默认)+ 道藏研读(dao);站点在 `src/sites/registry.js` 注册,加站零改平台代码。站间不互链,唯一切换点是整屏门户(v4 §3);**唯一例外是「桥」(v8)**:参同契/阴符经注疏气泡内的卦名可单向跳转易经卦页,易经侧零反向链接。纯前端(React 19 + Vite),无后端,用户数据只存 localStorage,可静态托管。
+个人学习站集合,**配置驱动的分站平台**(v14)+ **分组隔离**(v15):三组——易道(易经研习 yijing 默认 + 道藏研读 dao,门户互切)/ 佛(释典 fo,独立)/ 儒(儒典 ru,独立)。站点在 `src/sites/registry.js` 注册(含 `group` 字段),加站零改平台代码。**门户只列当前站所属组,跨组零可见链接**(佛/儒 与道·易两两不互链);`activeGroup` 域名优先(HOST_GROUPS,用户填真实域名)路径兜底,一份构建多域名指向。组内不互链,唯一切换点是门户(v4 §3);**唯一例外是「桥」(v8,易道组内)**:参同契/阴符经注疏气泡内的卦名可单向跳转易经卦页。纯前端(React 19 + Vite),无后端,用户数据只存 localStorage,可静态托管。佛/儒经文内容整理中(脚手架已立,texts.json status pending)。
 
 ## 如何加一个新站(v14 §1·§4)
 
 平台已抽成「壳(manifest)+ 通用阅读器 + registry 管线」,加一家读经类新站(如儒/佛)≈ 纯内容,**不碰平台代码**:
-1. `src/sites/registry.js` 加一条 `{key, brand, portalTitle, portalDesc, home, prefix, accent, switchLabel, hasSearch, nav, mobileNav, mobileSwitch}`。
+1. `src/sites/registry.js` 加一条 `{key, group, brand, portalTitle, portalDesc, home, prefix, accent, switchLabel, hasSearch, nav, mobileNav, mobileSwitch}`。**group 决定隔离**:与谁同门户填同 group,要独立则单独 group;独立域名访问填 `HOST_GROUPS['域名']='该group'`。
 2. `src/index.css` 加 `[data-site="新key"] { --cinnabar: var(--某色) … }` 换肤(主色)。
 3. 数据:原文走管线(仿 fetch-dao,抓取源+切片配置写脚本)、白话译文/字词注疏/每章延伸为人工内容;书目元数据仿 `src/data/dao/texts.json`(slug/title/sections/…),check-data 的书单从它派生,加书免改校验。
 4. 阅读页:薄包装调 `src/features/reader/ClassicReader.jsx`(paged/single 两模式),传各自 loader/anchors/yanyi/header;首页/书架仿 DaoHomePage。
@@ -14,7 +14,7 @@
 
 ## 唯一规格来源
 
-**docs/yijing-design.md(一期 M1–M3)、docs/yijing-design-v2.md(二期 M4–M6)、docs/yijing-design-v3.md(三期 P0–P5)、docs/design-v4.md(四期:注释层/源流/多模块门户与道藏框架)、docs/design-v5.md(五期:经传逐段注疏层)、docs/design-v6.md(六期:道藏内容期)、docs/design-v7.md(七期:道藏译注收官)、docs/design-v8.md(八期:道藏→易经桥)、docs/design-v9.md(九期:筮例与故事)、docs/design-v10.md(十期:工具与交互期)、docs/design-v11.md(十一期:工程打磨期)、docs/design-v12.md(十二期:推演上手引导)、docs/design-v13.md(十三期:道藏单页阅读与每章延伸)与 docs/design-v14.md(十四期:分站平台化)是页面、交互、视觉、推演规则、数据结构的唯一规格。** v2–v4 是增量稿,视觉/组件/数据约定沿用 v1。实现任何页面前先读对应章节,不要自行发明视觉风格或交互;引擎规则(八宫/纳甲/梅花/大衍/金钱卦)必须照设计稿的规则表实现,严禁凭记忆补规则。每个里程碑完成后逐条核对其验收清单。
+**docs/yijing-design.md(一期 M1–M3)、docs/yijing-design-v2.md(二期 M4–M6)、docs/yijing-design-v3.md(三期 P0–P5)、docs/design-v4.md(四期:注释层/源流/多模块门户与道藏框架)、docs/design-v5.md(五期:经传逐段注疏层)、docs/design-v6.md(六期:道藏内容期)、docs/design-v7.md(七期:道藏译注收官)、docs/design-v8.md(八期:道藏→易经桥)、docs/design-v9.md(九期:筮例与故事)、docs/design-v10.md(十期:工具与交互期)、docs/design-v11.md(十一期:工程打磨期)、docs/design-v12.md(十二期:推演上手引导)、docs/design-v13.md(十三期:道藏单页阅读与每章延伸)、docs/design-v14.md(十四期:分站平台化)与 docs/design-v15.md(十五期:三教分站与分组隔离)是页面、交互、视觉、推演规则、数据结构的唯一规格。** v2–v4 是增量稿,视觉/组件/数据约定沿用 v1。实现任何页面前先读对应章节,不要自行发明视觉风格或交互;引擎规则(八宫/纳甲/梅花/大衍/金钱卦)必须照设计稿的规则表实现,严禁凭记忆补规则。每个里程碑完成后逐条核对其验收清单。
 
 ## 当前状态(随进度更新此节)
 
@@ -32,6 +32,7 @@
 - [x] 六期:道藏内容期(v6 全文,已发 v1.5.0)——六部原文录入(scripts/fetch-dao.mjs + scripts/lib/wikisource.mjs 共享库,与易经管线同缓存);章节阅读器 DaoReadPage(/dao/:slug/:chapter,复用经传阅读器模式);道德经 81 章全译(scripts/authored/dao-translations.json)+ 190 条锚定注疏(src/data/dao/zhushi-anchored/daodejing.json,**无 ref**,模块不互链)。其余五部仅原文(status: partial),译注照 v6 §4–§5 工序逐部展开
 - [x] 八期:道藏→易经桥(docs/design-v8.md,已发 v1.7.0)——参同契 45 处+阴符经 1 处卦名桥点(注疏条目 hex/to 字段),气泡尾部单向跳转易经卦页;check-data 校验 hex 1–64、易经侧禁用桥字段。**新增桥点照 v8 §2 规则(仅道藏侧、段内首次出现、不与既有锚点重叠)**
 - [x] 七期:道藏译注收官(docs/design-v7.md,已发 v1.6.0)——五部译注全齐:清静经 6 段/感应篇 14 段/阴符经 3 段(管线修复:校对页断行致句子腰斩,每章合并为一段)/庄子内篇 53 段/参同契 45 段,六部 status 全部 done;道藏译文 562 段全覆盖,锚注共 550 条。**修订工序照 v6 §4–§5 与 v7 §2 分书风格,改完必过 check-data**
+- [x] 十五期:三教分站与分组隔离(docs/design-v15.md,已发 v1.16.0)——架构段(佛/儒经文内容另起内容期):registry 每站加 `group`,门户/切换按钮/移动切换只列当前组(`sitesInGroup`),**佛(fo,观空,缁黄)/儒(ru,观仁,苍绿)各为独立单站组,与易道·彼此两两零可见链接**;`activeGroup` 域名优先(`HOST_GROUPS` 占位待填真实域名)路径兜底,HOST_GROUPS 命中则着陆重定向本组首页;`src/features/reader/ScriptureShelf.jsx` 通用书架,佛/儒 texts.json 骨架(佛:心经/金刚经/坛经;儒:四书)status pending。**经文内容接入照 v9 §4,佛站守研习不宣化、不下吉凶断语;加新站照头部「如何加一个新站」并按 group 隔离**
 - [x] 十四期:分站平台化(docs/design-v14.md,已发 v1.15.0)——零内容零功能语义变化的重构:站点注册迁至 **src/sites/registry.js**(SITES manifest,App.jsx 读它驱动品牌/导航/门户/移动栏/搜索);主题从 .app-shell--dao 特例改 **[data-site] 驱动**(app-shell 挂 data-site={key},新站加 `[data-site=x]` 主色块);三阅读器(经传/道藏逐章/短经单页)抽成**通用 src/features/reader/ClassicReader.jsx**(paged/single 两模式),各页改薄包装传 loader/anchors/yanyi/header;check-data 书单从 texts.json 派生(加书免改校验)。**加新站照 CLAUDE.md 头部「如何加一个新站」六步,平台代码零改动**
 - [x] 十三期:道藏单页阅读与每章延伸(docs/design-v13.md,已发 v1.13.0→v1.14.0)——短经(清静经/感应篇/阴符经,texts.json singlePage 标记)走 DaoSinglePage 单页阅读器(题解+全文一页铺开+左章节锚点+字号译文工具条),长经保留逐章 DaoReadPage;**每章延伸 src/data/dao/yanyi.json**(人工脱锚 registry,slug→章号→段落,照 v9 §4 分级,只讲思想/故事/源流不作信仰宣化吉凶断语),YanyiBlock 组件(azure 玄青)挂两处阅读器章末,六部 128 章全覆盖(道德经81+庄子7+参同契35+清静经1+感应篇1+阴符经3);check-data 校验+覆盖仪表。**新增/改延伸照 v9 §4,改完必过 check-data**
 - [x] 推演上手引导(docs/design-v12.md,已发 v1.12.1→v1.13.0)——降低工作台门槛,零数据新增:**操作指导**=常驻步骤条(①起卦→②标动爻→③读断法,按 hex/动爻状态点亮)+「示范一卦」走查(载入乾·九五动,GuideTour 自写组件逐区描边讲解,瞬时滚动+立即量+rAF校准定位);**知识讲解**=学堂「推演入门」专篇(/basics/tuiyan,起卦/四词/六法两类/变占规则表引《易学启蒙》/三层解卦)+工作台引导框 TermTip 内联概念(本卦/动爻)。**新增起卦法/断法须同步更新推演入门篇与步骤条语义**
