@@ -55,6 +55,15 @@ export const LEARN_TOPICS = [
     usedKeys: ['jinqian'],
   },
   {
+    id: 'guahua',
+    to: '/basics/guahua',
+    title: '六十四卦认读',
+    desc: '看卦画认卦名、看卦名识卦画——错综与一爻之差的形近卦混在一起练',
+    time: '约 5 分钟',
+    quiz: true,
+    usedKeys: null,
+  },
+  {
     id: 'yuanliu',
     to: '/basics/yuanliu',
     title: '易学源流',

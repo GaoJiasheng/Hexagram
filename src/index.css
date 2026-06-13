@@ -1939,6 +1939,19 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .shili-cast__replay { font-size: 0.78rem; color: var(--cinnabar); text-decoration: none; border: 1px dashed currentColor; border-radius: 3px; padding: 1px 8px; }
 .shili-cast__replay:hover { border-style: solid; }
 
+/* 卦画闪卡(v10 §4) */
+.guahua-modes { display: flex; gap: 12px; margin: 12px 0; flex-wrap: wrap; }
+.guahua-mode-btn { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; padding: 14px 20px; background: var(--paper); border: 1px solid var(--line); border-radius: 6px; cursor: pointer; font: inherit; color: var(--ink); }
+.guahua-mode-btn:hover { border-color: var(--cinnabar); }
+.guahua-prompt { display: flex; justify-content: center; padding: 18px 0; }
+.guahua-prompt--name { font-family: var(--font-serif); font-size: 1.5rem; text-align: center; color: var(--ink); margin: 0; }
+.guahua-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(96px, 1fr)); gap: 10px; max-width: 520px; }
+.guahua-option { display: flex; justify-content: center; padding: 12px 8px; background: var(--paper); border: 1px solid var(--line); border-radius: 6px; cursor: pointer; }
+.guahua-option:hover:not(:disabled) { border-color: var(--cinnabar); }
+.guahua-option--correct { border-color: var(--cinnabar); background: var(--cinnabar-bg, rgba(154, 59, 46, 0.08)); }
+.guahua-option--wrong { border-color: var(--ink-faint); opacity: 0.85; outline: 2px solid var(--ink-faint); }
+.guahua-option--dim { opacity: 0.4; }
+
 .div-item__main {
   flex: 1;
   display: flex;
