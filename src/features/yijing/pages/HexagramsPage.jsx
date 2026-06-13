@@ -6,6 +6,7 @@ import { allHexagrams, allTrigrams, TABLE, TRIGRAM_ORDER, trigramById } from '..
 import { getZongGua, getCuoGua } from '../engine/transforms.js'
 import { hexagramByBinary } from '../data.js'
 import { getAllPalaces, GENERATION_NAMES } from '../engine/bagong.js'
+import FangyuanView from '../components/FangyuanView.jsx'
 
 const hexById = Object.fromEntries(allHexagrams.map(h => [h.id, h]))
 
@@ -226,6 +227,7 @@ export default function HexagramsPage() {
             <button className={`seg-btn ${view === 'matrix' ? 'seg-btn--active' : ''}`} onClick={() => setView('matrix')}>卦象矩阵</button>
             <button className={`seg-btn ${view === 'sequence' ? 'seg-btn--active' : ''}`} onClick={() => setView('sequence')}>序卦次序</button>
             <button className={`seg-btn ${view === 'bagong' ? 'seg-btn--active' : ''}`} onClick={() => setView('bagong')}>八宫</button>
+            <button className={`seg-btn ${view === 'fangyuan' ? 'seg-btn--active' : ''}`} onClick={() => setView('fangyuan')}>方圆</button>
           </div>
           {view === 'matrix' && (
             <div className="filter-row">
@@ -245,6 +247,7 @@ export default function HexagramsPage() {
       {view === 'matrix' && <MatrixView filterUpper={filterUpper} filterLower={filterLower} />}
       {view === 'sequence' && <SequenceView />}
       {view === 'bagong' && <BagongView highlightPalace={palaceParam} />}
+      {view === 'fangyuan' && <FangyuanView />}
     </div>
   )
 }

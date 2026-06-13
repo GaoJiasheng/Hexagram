@@ -1952,6 +1952,14 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .guahua-option--wrong { border-color: var(--ink-faint); opacity: 0.85; outline: 2px solid var(--ink-faint); }
 .guahua-option--dim { opacity: 0.4; }
 
+/* 先天方圆图(v10 §5) */
+.fangyuan-view { max-width: 760px; margin: 0 auto; }
+.fangyuan-svg { width: 100%; height: auto; display: block; }
+.fangyuan-node { cursor: pointer; }
+.fangyuan-compass { font-size: 22px; fill: var(--ink-faint); font-family: var(--font-serif); }
+.fangyuan-hover-label { font-size: 24px; fill: var(--cinnabar); font-family: var(--font-serif); }
+.fangyuan-note { margin-top: 12px; line-height: 1.8; }
+
 .div-item__main {
   flex: 1;
   display: flex;
