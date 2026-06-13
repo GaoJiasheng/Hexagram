@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import shili from '../../../data/yijing/shili.json'
 import { markRead } from '../storage.js'
+import { usePageTitle } from '../hooks/usePageTitle.js'
 
 const GROUPS = ['庄闵僖', '成襄', '昭哀', '国语']
 const GROUP_LABEL = {
@@ -13,6 +14,7 @@ const GROUP_LABEL = {
 
 // 春秋筮例列表(v9 §2)——左传/国语占筮与引易实录,按时代分组
 export default function ShiliListPage() {
+  usePageTitle('春秋筮例')
   useEffect(() => { markRead('shili') }, [])
 
   return (

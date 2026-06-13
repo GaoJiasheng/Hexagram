@@ -7,6 +7,7 @@ import { getZongGua, getCuoGua } from '../engine/transforms.js'
 import { hexagramByBinary } from '../data.js'
 import { getAllPalaces, GENERATION_NAMES } from '../engine/bagong.js'
 import FangyuanView from '../components/FangyuanView.jsx'
+import { usePageTitle } from '../hooks/usePageTitle.js'
 
 const hexById = Object.fromEntries(allHexagrams.map(h => [h.id, h]))
 
@@ -204,6 +205,7 @@ function BagongView({ highlightPalace }) {
 }
 
 export default function HexagramsPage() {
+  usePageTitle('六十四卦')
   const [params, setParams] = useSearchParams()
   const viewParam = params.get('view') ?? 'matrix'
   const palaceParam = params.get('palace') ?? ''

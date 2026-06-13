@@ -7,6 +7,7 @@ import { getHexagram, hexagramById } from '../data.js'
 import { useSettings } from '../SettingsContext.jsx'
 import { lineTitle } from '../engine/transforms.js'
 import { LEARN_TOPICS, topicStatus } from '../learnTopics.js'
+import { usePageTitle } from '../hooks/usePageTitle.js'
 
 const TABS = ['收藏', '笔记', '推演历史', '研习', '设置']
 
@@ -68,6 +69,7 @@ function OutcomeEditor({ div, onSaved }) {
 }
 
 export default function MePage() {
+  usePageTitle('我的')
   const [tab, setTab] = useState('收藏')
   const [bookmarks, setBookmarks] = useState(getBookmarks)
   const [notes, setNotes] = useState(getNotes)

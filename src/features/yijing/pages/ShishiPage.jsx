@@ -4,6 +4,7 @@ import shishi from '../../../data/yijing/shishi.json'
 import { getHexagram } from '../data.js'
 import { markRead } from '../storage.js'
 import { lineTitle } from '../engine/transforms.js'
+import { usePageTitle } from '../hooks/usePageTitle.js'
 
 function refLabel(ref) {
   if (ref.label) return ref.label
@@ -14,6 +15,7 @@ function refLabel(ref) {
 
 // 爻辞中的商周史事(v9 §3)——学堂篇,脱锚史实照 v9 §4 分级规范撰写
 export default function ShishiPage() {
+  usePageTitle('爻辞中的商周史事')
   const { hash } = useLocation()
 
   useEffect(() => { markRead('shishi') }, [])

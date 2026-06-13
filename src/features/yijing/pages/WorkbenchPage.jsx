@@ -15,6 +15,7 @@ import { qiGuaByTime, qiGuaByNumber, calcTiYong, paramDuan, hourToShiZhi } from 
 import { castHexagram, cryptoRng, LINE_LABELS } from '../engine/dayan.js'
 import { tossLine, tossHexagram, linesToGua, COIN_LABELS, COIN_CHOICES } from '../engine/jinqian.js'
 import { saveDivination, markMethodUsed } from '../storage.js'
+import { usePageTitle } from '../hooks/usePageTitle.js'
 
 const ZHI_NAMES = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥']
 const LINE_NAMES = ['初', '二', '三', '四', '五', '上']
@@ -589,6 +590,7 @@ function originBadge(method) {
 }
 
 export default function WorkbenchPage() {
+  usePageTitle('推演工作台')
   const [params, setParams] = useSearchParams()
   const navigate = useNavigate()
 

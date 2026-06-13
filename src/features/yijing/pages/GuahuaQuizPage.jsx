@@ -4,6 +4,7 @@ import HexagramFigure from '../components/HexagramFigure.jsx'
 import { allHexagrams, hexagramByBinary } from '../data.js'
 import { getCuoGua, getZongGua } from '../engine/transforms.js'
 import { markRead, markQuizResult, getProgress } from '../storage.js'
+import { usePageTitle } from '../hooks/usePageTitle.js'
 
 const ROUND = 10
 
@@ -48,6 +49,7 @@ const MODES = [
 
 // 六十四卦认读闪卡(v10 §4):运行时出题,全对通过(沿用学堂规则)
 export default function GuahuaQuizPage() {
+  usePageTitle('六十四卦认读')
   const [mode, setMode] = useState('shigua')
   const [session, setSession] = useState(null)
   const [cur, setCur] = useState(0)

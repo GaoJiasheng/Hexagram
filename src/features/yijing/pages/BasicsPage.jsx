@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { getProgress } from '../storage.js'
 import { LEARN_TOPICS, topicStatus } from '../learnTopics.js'
+import { usePageTitle } from '../hooks/usePageTitle.js'
 
 function ProgressDots({ topic, progress }) {
   const st = topicStatus(topic, progress)
@@ -19,6 +20,7 @@ function ProgressDots({ topic, progress }) {
 }
 
 export default function BasicsPage() {
+  usePageTitle('学堂')
   const progress = getProgress()
   return (
     <div className="basics-index-page">

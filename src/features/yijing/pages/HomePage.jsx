@@ -5,6 +5,7 @@ import HexagramCard from '../components/HexagramCard.jsx'
 import { getTodayHexagramId, getDateString } from '../engine/today.js'
 import { getHexagram, formatDateChinese, CLASSICS_META } from '../data.js'
 import { getRecentHexagrams, getDivinations, getReadingProgress } from '../storage.js'
+import { usePageTitle } from '../hooks/usePageTitle.js'
 
 const ENTRIES = [
   { title: '原文研读', to: '/hexagrams', desc: '六十四卦经文与彖象六爻', icon: '☰' },
@@ -14,6 +15,7 @@ const ENTRIES = [
 ]
 
 export default function HomePage() {
+  usePageTitle(null)
   const today = getDateString()
   const todayId = getTodayHexagramId(today)
   const todayHex = getHexagram(todayId)

@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { markRead } from '../storage.js'
 import renwu from '../../../data/yijing/renwu.json'
+import { usePageTitle } from '../hooks/usePageTitle.js'
 
 // 易学源流时间线(v4 §2,定稿照录;v9 §3 扩展:节点挂人物锚点+同页小传)
 const NODES = [
@@ -77,6 +78,7 @@ const NODES = [
 const RENWU_BY_ID = Object.fromEntries(renwu.map(p => [p.id, p]))
 
 export default function YuanliuPage() {
+  usePageTitle('易学源流')
   const { hash } = useLocation()
 
   useEffect(() => { markRead('yuanliu') }, [])

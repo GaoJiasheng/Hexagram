@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
 import { CLASSICS_META } from '../data.js'
 import { getReadingProgress } from '../storage.js'
+import { usePageTitle } from '../hooks/usePageTitle.js'
 
 export default function ClassicsListPage() {
+  usePageTitle('经传通读')
   const progress = getReadingProgress()
 
   return (

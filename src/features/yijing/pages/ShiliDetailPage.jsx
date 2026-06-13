@@ -4,6 +4,7 @@ import HexagramFigure from '../components/HexagramFigure.jsx'
 import ClassicText from '../components/ClassicText.jsx'
 import shili from '../../../data/yijing/shili.json'
 import { getHexagram } from '../data.js'
+import { usePageTitle } from '../hooks/usePageTitle.js'
 
 // 本卦→之卦的动爻:binary 异或(下标 0 = 初爻,全项目约定)
 function movingLines(benBinary, zhiBinary) {
@@ -50,6 +51,7 @@ export default function ShiliDetailPage() {
   const { id } = useParams()
   const idx = shili.findIndex((s) => s.id === id)
   const item = shili[idx]
+  usePageTitle(item?.title)
 
   useEffect(() => { window.scrollTo(0, 0) }, [id])
 

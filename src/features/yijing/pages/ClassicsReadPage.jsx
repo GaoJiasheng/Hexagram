@@ -5,6 +5,7 @@ import ClassicText from '../components/ClassicText.jsx'
 import { saveReadingProgress } from '../storage.js'
 import { useSettings } from '../SettingsContext.jsx'
 import { getClassicAnchors } from '../zhushiAnchored.js'
+import { usePageTitle } from '../hooks/usePageTitle.js'
 
 const HEX_NAMES = new Set()
 for (const [, h] of hexagramById) HEX_NAMES.add(h.name)
@@ -67,6 +68,7 @@ export default function ClassicsReadPage() {
   const tocRef = useRef(null)
 
   const meta = CLASSICS_META.find(m => m.key === book)
+  usePageTitle(meta ? `${meta.title}·第${chapterParam}章` : null)
 
   useEffect(() => {
     setLoading(true)

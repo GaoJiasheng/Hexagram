@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import glossaryData from '../../../data/yijing/glossary.json'
 import { markRead } from '../storage.js'
+import { usePageTitle } from '../hooks/usePageTitle.js'
 
 const GROUPS = [
   { title: '卦际关系', keys: ['bengua', 'biangua', 'hugua', 'cuogua', 'zonggua'] },
@@ -14,6 +15,7 @@ const GROUPS = [
 const glossaryMap = new Map(glossaryData.map(g => [g.key, g]))
 
 export default function GlossaryPage() {
+  usePageTitle('名词表')
   const [filterQ, setFilterQ] = useState('')
   const q = filterQ.trim().toLowerCase()
 

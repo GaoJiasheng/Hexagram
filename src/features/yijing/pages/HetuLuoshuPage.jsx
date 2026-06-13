@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import QuizCard from '../components/QuizCard.jsx'
 import { markRead } from '../storage.js'
+import { usePageTitle } from '../hooks/usePageTitle.js'
 
 // 河图：每组 { label, positions:[{cx,cy}], odd } 其中 odd=true 为阳（白点）
 const HETU_GROUPS = [
@@ -118,6 +119,7 @@ function LuoshuSvg({ highlighted }) {
 }
 
 export default function HetuLuoshuPage() {
+  usePageTitle('河图洛书')
   const [hetuHL, setHetuHL] = useState(null)
   const [luoshuHL, setLuoshuHL] = useState(null)
 

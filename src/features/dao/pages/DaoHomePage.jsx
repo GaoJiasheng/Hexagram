@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom'
 import texts from '../../../data/dao/texts.json'
 import { getReadingProgress } from '../../yijing/storage.js'
+import { usePageTitle } from '../../yijing/hooks/usePageTitle.js'
 
 const STATUS_LABEL = { pending: '整理中', partial: '可读·译注中', done: '可阅读' }
 
 // 道藏模块首页 — 书架(v4 §3.6;v10 §6 续读入口)
 export default function DaoHomePage() {
+  usePageTitle(null, '观道')
   const progress = getReadingProgress()
   return (
     <div className="dao-home">

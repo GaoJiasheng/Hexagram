@@ -4,6 +4,7 @@ import HexagramFigure from '../components/HexagramFigure.jsx'
 import QuizCard from '../components/QuizCard.jsx'
 import { markRead } from '../storage.js'
 import { XIAOXI_SEQUENCE } from '../engine/xiaoxi.js'
+import { usePageTitle } from '../hooks/usePageTitle.js'
 
 const RADIUS = 130
 const CENTER = 160
@@ -15,6 +16,7 @@ function polarToCart(angleDeg, r) {
 }
 
 export default function XiaoxiPage() {
+  usePageTitle('十二消息卦')
   const [hovered, setHovered] = useState(null)
   const hoveredItem = XIAOXI_SEQUENCE.find(h => h.id === hovered)
 

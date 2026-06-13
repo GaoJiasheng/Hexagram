@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { allTrigrams, trigramById, TRIGRAM_ORDER } from '../data.js'
 import QuizCard from '../components/QuizCard.jsx'
 import { markRead } from '../storage.js'
+import { usePageTitle } from '../hooks/usePageTitle.js'
 
 const XIANTIAN_ORDER = ['qian', 'dui', 'li', 'zhen', 'xun', 'kan', 'gen', 'kun']
 
@@ -89,6 +90,7 @@ function TrigramCard({ trigram }) {
 }
 
 export default function YinYangPage() {
+  usePageTitle('阴阳八卦')
   const [hovered, setHovered] = useState(null)
 
   useEffect(() => { markRead('yinyang') }, [])

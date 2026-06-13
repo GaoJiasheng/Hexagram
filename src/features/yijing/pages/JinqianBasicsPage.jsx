@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import QuizCard from '../components/QuizCard.jsx'
 import TermTip from '../components/TermTip.jsx'
 import { markRead } from '../storage.js'
+import { usePageTitle } from '../hooks/usePageTitle.js'
 
 const COIN_TABLE = [
   { combo: '三背', sum: '3+3+3=9', value: 9, name: '老阳（重）', yinyang: '阳 ○', moving: '动' },
@@ -12,6 +13,7 @@ const COIN_TABLE = [
 ]
 
 export default function JinqianBasicsPage() {
+  usePageTitle('金钱卦')
   useEffect(() => { markRead('jinqian') }, [])
 
   return (

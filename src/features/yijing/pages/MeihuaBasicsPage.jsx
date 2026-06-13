@@ -4,8 +4,10 @@ import XianTianTable from '../components/XianTianTable.jsx'
 import QuizCard from '../components/QuizCard.jsx'
 import TermTip from '../components/TermTip.jsx'
 import { markRead } from '../storage.js'
+import { usePageTitle } from '../hooks/usePageTitle.js'
 
 export default function MeihuaBasicsPage() {
+  usePageTitle('梅花易数')
   useEffect(() => { markRead('meihua') }, [])
 
   return (

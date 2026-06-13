@@ -17,6 +17,7 @@ import { getHexAnchors } from '../zhushiAnchored.js'
 import shili from '../../../data/yijing/shili.json'
 import shishi from '../../../data/yijing/shishi.json'
 import { useSettings } from '../SettingsContext.jsx'
+import { usePageTitle } from '../hooks/usePageTitle.js'
 
 function NajiaSection({ binary }) {
   const [open, setOpen] = useState(false)
@@ -79,6 +80,7 @@ function NajiaSection({ binary }) {
 export default function HexagramDetailPage() {
   const { id } = useParams()
   const hex = getHexagram(Number(id))
+  usePageTitle(hex?.fullName)
   const navigate = useNavigate()
   const { settings, setSettings } = useSettings()
 

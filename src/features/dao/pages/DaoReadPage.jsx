@@ -5,6 +5,7 @@ import { useSettings } from '../../yijing/SettingsContext.jsx'
 import { saveReadingProgress } from '../../yijing/storage.js'
 import { loadDaoText, getDaoMeta } from '../data.js'
 import { getDaoAnchors } from '../daoAnchored.js'
+import { usePageTitle } from '../../yijing/hooks/usePageTitle.js'
 
 const FONT_SCALES = [0.9, 1, 1.15]
 
@@ -16,6 +17,7 @@ export default function DaoReadPage() {
   const [loading, setLoading] = useState(true)
   const chapter = Number(chapterParam) || 1
   const meta = getDaoMeta(slug)
+  usePageTitle(meta ? `${meta.title}·第${chapterParam}${meta.sectionUnit || '章'}` : null, '观道')
 
   useEffect(() => {
     setLoading(true)
