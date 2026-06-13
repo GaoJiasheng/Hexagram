@@ -56,6 +56,24 @@ const replaceAnother = (s) => s.replace(/\{\{另\d?\|([^|{}]*)(?:\|[^{}]*)*\}\}/
 // 行内 <ref>…</ref> 校勘注(常含外链),整段剔除——经文只留正文(论语各篇为单行,无跨行 ref)
 const stripRef = (s) => s.replace(/<ref[^>]*\/>/gi, '').replace(/<ref[^>]*>[\s\S]*?<\/ref>/gi, '')
 
+// 维基文库页首 {{header ... }} 元数据块:整块剔除。其多行字段(如 override_author =
+// [[作者:孟子|孟轲\n]]及其弟子公孙丑、万章等人)的断行会让闭合 ]] 那一行漏出残文——
+// 该行不以 {|}= 起首,逃过 isJunk(孟子告子上/下曾各漏出一段)。按花括号配平扫描整块切除,
+// 容忍字段内嵌套模板({{gap}} 等);切前置于逐行解析,paras/chapters 两路共用。
+function stripHeaderBlock(wikitext) {
+  const m = /\{\{\s*header\b/i.exec(wikitext)
+  if (!m) return wikitext
+  const start = m.index
+  let depth = 0
+  let i = start
+  while (i < wikitext.length) {
+    if (wikitext.startsWith('{{', i)) { depth++; i += 2; continue }
+    if (wikitext.startsWith('}}', i)) { depth--; i += 2; if (depth === 0) break; continue }
+    i++
+  }
+  return wikitext.slice(0, start) + wikitext.slice(i)
+}
+
 // 行清洗 → 简体正文;若为导航/标题/标记/空行返回 null
 function cleanLine(raw) {
   if (/^\*+\s*\[\[/.test(raw.trim())) return null          // *[[…]] 导航链接行
@@ -69,7 +87,7 @@ function cleanLine(raw) {
 // 单页 → 段落数组(各源页即一章)
 function parsePageParas(wikitext, warnings, pageName) {
   const paras = []
-  for (const raw of wikitext.split('\n')) {
+  for (const raw of stripHeaderBlock(wikitext).split('\n')) {
     if (STOP_RE.test(raw)) break                       // 页尾诵读块,其后不再有正文
     if (/^=+.*=+$/.test(raw.trim())) continue          // == 标题 == 行
     const simp = cleanLine(raw)
@@ -84,7 +102,7 @@ function parsePageParas(wikitext, warnings, pageName) {
 function parsePageChapters(wikitext, warnings, pageName) {
   const chapters = []
   let cur = null
-  for (const raw of wikitext.split('\n')) {
+  for (const raw of stripHeaderBlock(wikitext).split('\n')) {
     if (STOP_RE.test(raw)) break
     const h = raw.trim().match(/^=+\s*(.+?)\s*=+$/)
     if (h) {

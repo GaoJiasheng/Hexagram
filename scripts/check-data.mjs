@@ -167,7 +167,14 @@ function checkReadingCorpus(label, key, yanyiUnit) {
     if ((book.chapters?.length ?? 0) !== t.sections) err(`${label} ${t.slug} 章数 ${book.chapters?.length ?? 0},应为 ${t.sections}`)
     for (const c of book.chapters ?? []) {
       if (!c.paragraphs?.length) err(`${label} ${t.slug} 第 ${c.no} ${t.sectionUnit}无段落`)
-      for (const p of c.paragraphs ?? []) if (!p.original) err(`${label} ${t.slug} 第 ${c.no} ${t.sectionUnit}有空段落`)
+      for (const p of c.paragraphs ?? []) {
+        if (!p.original) err(`${label} ${t.slug} 第 ${c.no} ${t.sectionUnit}有空段落`)
+        // 管线残文哨兵:正文段不应以 wiki 标记起首(]] [[ | { } = * #,如断行 override_author 漏出的
+        // 「]]及其弟子…」),也不应含页脚导航(「上一篇/回目录/下一篇」)。命中即管线漏切,修 fetch-corpus 后重抓。
+        else if (/^[\]\[|{}=*#]/.test(p.original) || /回目[录錄]|^(?:上|下)一[篇章卷]/.test(p.original)) {
+          err(`${label} ${t.slug} 第 ${c.no} ${t.sectionUnit}残留管线/导航残文: ${p.original.slice(0, 20)}`)
+        }
+      }
     }
     if (!t.authorNote) err(`${label} ${t.slug} 缺 authorNote 撰人小传`)
   }
