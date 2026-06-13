@@ -196,6 +196,30 @@ const daoData = {}
   for (const t of textsMeta) {
     if (!t.authorNote) err(`道藏 ${t.slug} 缺 authorNote 撰人小传`)
   }
+
+  // 每章延伸(v13 §2:yanyi.json 人工 registry,脱锚叙述)
+  const yanyiPath = path.join(ROOT, 'src/data/dao/yanyi.json')
+  if (fs.existsSync(yanyiPath)) {
+    const yanyi = JSON.parse(fs.readFileSync(yanyiPath, 'utf8'))
+    const yanyiCover = []
+    for (const [slug, total] of DAO_BOOKS) {
+      const book = daoData[slug]
+      if (!book) continue
+      const chapters = yanyi[slug] || {}
+      for (const [no, paras] of Object.entries(chapters)) {
+        const n = Number(no)
+        if (!(n >= 1 && n <= total)) err(`道藏延伸 ${slug} 章号越界: ${no}`)
+        if (!Array.isArray(paras) || !paras.length || paras.some((p) => !p)) err(`道藏延伸 ${slug} 第 ${no} 章段落为空`)
+      }
+      // slug 必属六部(键名合法性)
+      const done = Object.keys(chapters).length
+      yanyiCover.push(`${book.title} ${done}/${total}`)
+    }
+    for (const slug of Object.keys(yanyi)) {
+      if (!DAO_BOOKS.some(([s]) => s === slug)) err(`道藏延伸 slug 非六部: ${slug}`)
+    }
+    infos.push(`道藏延伸(章): ${yanyiCover.join(' · ')}`)
+  }
 }
 
 // ---------- 4c. 筮例(v9 §1) ----------

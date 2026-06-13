@@ -2727,6 +2727,18 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 /* 道藏题解撰人小传(v9 §3,authorNote) */
 .dao-text-authornote { font-size: 0.88rem; line-height: 1.8; color: var(--ink-soft); margin: 14px 0 0; padding-top: 12px; border-top: 1px dashed var(--line); }
 
+/* 每章延伸(v13 §2) */
+.yanyi-block { margin: 18px 0 8px; padding: 14px 16px; background: var(--paper); border-left: 2px solid var(--azure); border-radius: 0 4px 4px 0; }
+.yanyi-block__tag { font-size: 0.74rem; color: var(--azure); letter-spacing: 0.05em; margin-bottom: 8px; }
+.yanyi-block__para { font-size: 0.9rem; line-height: 1.95; color: var(--ink-soft); margin: 0 0 10px; }
+.yanyi-block__para:last-child { margin-bottom: 0; }
+
+/* 短经单页阅读器(v13 §1) */
+.dao-single .dao-text-header { margin-bottom: 18px; }
+.dao-single__chapter { scroll-margin-top: 70px; margin-bottom: 12px; }
+.dao-single__chapter:not(:last-child) { border-bottom: 1px solid var(--line); padding-bottom: 18px; }
+.read-toc__item[href^="#"] { cursor: pointer; }
+
 /* 易学源流时间线 */
 .yuanliu-timeline { margin-top: 24px; }
 .yuanliu-node { display: flex; gap: 16px; }

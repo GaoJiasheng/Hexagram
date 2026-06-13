@@ -2,12 +2,18 @@ import { useParams, Link } from 'react-router-dom'
 import EmptyState from '../../yijing/components/EmptyState.jsx'
 import texts from '../../../data/dao/texts.json'
 import { usePageTitle } from '../../yijing/hooks/usePageTitle.js'
+import DaoSinglePage from './DaoSinglePage.jsx'
 
 // 文本页 — 题解 + 章节入口(v4 §3.6 框架;v6 §3 内容期:status≠pending 时网格即阅读入口)
+// 短经(singlePage)走单页阅读器(v13 §1):题解+全文一页铺开
 export default function DaoTextPage() {
   const { slug } = useParams()
   const text = texts.find(t => t.slug === slug)
   usePageTitle(text?.title, '观道')
+
+  if (text?.singlePage && text.status !== 'pending') {
+    return <DaoSinglePage slug={slug} text={text} />
+  }
 
   if (!text) {
     return (
