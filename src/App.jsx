@@ -149,7 +149,10 @@ function Nav({ module, onSearch, onPortal }) {
               aria-label="搜索（/）"
               title="搜索（/）"
             >
-              ◌
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
+                <circle cx="7.5" cy="7.5" r="5" />
+                <line x1="11.5" y1="11.5" x2="16" y2="16" />
+              </svg>
             </button>
             <NavLink
               to="/me"
