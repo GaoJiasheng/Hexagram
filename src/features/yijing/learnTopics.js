@@ -28,6 +28,15 @@ export const LEARN_TOPICS = [
     usedKeys: null,
   },
   {
+    id: 'tuiyan',
+    to: '/basics/tuiyan',
+    title: '推演入门',
+    desc: '起卦/本卦·动爻·变卦/六法分类/解卦流程——推演工作台总纲,新手先读这篇',
+    time: '约 8 分钟',
+    quiz: false,
+    usedKeys: null,
+  },
+  {
     id: 'shicao',
     to: '/basics/shicao',
     title: '揲蓍成卦',

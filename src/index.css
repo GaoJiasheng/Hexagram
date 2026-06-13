@@ -1401,6 +1401,19 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .workbench-howto { font-size: 0.84rem; line-height: 1.75; color: var(--ink-soft); margin: 0; padding: 10px 12px; background: var(--paper); border-left: 2px solid var(--ochre); border-radius: 0 4px 4px 0; }
 .workbench-howto-actions { display: flex; flex-wrap: wrap; gap: 14px; }
 .workbench-howto-actions .btn-text { color: var(--cinnabar); }
+
+/* 推演入门页(v12 §3) */
+.intro-terms { margin: 8px 0; padding-left: 1.2em; }
+.intro-terms li { line-height: 1.9; margin-bottom: 4px; }
+.intro-group-label { font-weight: 600; color: var(--ink); margin: 14px 0 2px; }
+.intro-rule-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.9rem; }
+.intro-rule-table th, .intro-rule-table td { border: 1px solid var(--line); padding: 7px 12px; text-align: left; }
+.intro-rule-table th { background: var(--paper); color: var(--ink-soft); font-weight: 600; }
+.intro-rule-table td:first-child { white-space: nowrap; color: var(--cinnabar); }
+.intro-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px; }
+.intro-disclaimer { margin-top: 16px; }
+.learn-inline { color: var(--cinnabar); text-decoration: none; font-size: 0.88rem; white-space: nowrap; }
+.learn-inline:hover { text-decoration: underline; }
 .workbench-howto strong { color: var(--ink); font-weight: 600; }
 .workbench-method-group { display: flex; flex-direction: column; gap: 6px; }
 .workbench-method-group__label { font-size: 0.74rem; color: var(--ink-faint); letter-spacing: 0.03em; }

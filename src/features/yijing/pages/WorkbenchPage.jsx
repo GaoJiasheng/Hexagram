@@ -759,10 +759,11 @@ export default function WorkbenchPage() {
           <div className="workbench-section-title">起卦</div>
           <StepBar hex={hex} movingLines={movingLines} />
           <p className="workbench-howto">
-            这里帮你<strong>推演一卦</strong>：选定一个<strong>本卦</strong>，点卦画上的爻标出<strong>动爻</strong>（也可不标），右侧便自动给出卦变与断法。先在下面挑一种起卦方式——
+            这里帮你<strong>推演一卦</strong>：选定一个<strong><TermTip term="bengua">本卦</TermTip></strong>，点卦画上的爻标出<strong><TermTip term="dongyao">动爻</TermTip></strong>（也可不标），右侧便自动给出卦变与断法。先在下面挑一种起卦方式——
           </p>
           <div className="workbench-howto-actions">
             <button className="btn-text" onClick={startDemo}>示范一卦 →</button>
+            <Link to="/basics/tuiyan" className="btn-text">第一次用？读推演入门 →</Link>
           </div>
           {METHOD_GROUPS.map(group => (
             <div key={group.label} className="workbench-method-group">

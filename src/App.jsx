@@ -25,6 +25,7 @@ const ShiliListPage = lazy(() => import('./features/yijing/pages/ShiliListPage.j
 const ShiliDetailPage = lazy(() => import('./features/yijing/pages/ShiliDetailPage.jsx'))
 const ShishiPage = lazy(() => import('./features/yijing/pages/ShishiPage.jsx'))
 const GuahuaQuizPage = lazy(() => import('./features/yijing/pages/GuahuaQuizPage.jsx'))
+const TuiyanIntroPage = lazy(() => import('./features/yijing/pages/TuiyanIntroPage.jsx'))
 const GlossaryPage = lazy(() => import('./features/yijing/pages/GlossaryPage.jsx'))
 const MePage = lazy(() => import('./features/yijing/pages/MePage.jsx'))
 // Pages — 道藏研读模块
@@ -244,6 +245,7 @@ function AppContent() {
           <Route path="/shili/:id" element={<ShiliDetailPage />} />
           <Route path="/basics/shishi" element={<ShishiPage />} />
           <Route path="/basics/guahua" element={<GuahuaQuizPage />} />
+          <Route path="/basics/tuiyan" element={<TuiyanIntroPage />} />
           <Route path="/basics/glossary" element={<GlossaryPage />} />
           <Route path="/me" element={<MePage />} />
           {/* 道藏研读 */}
