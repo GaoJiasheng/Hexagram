@@ -26,9 +26,20 @@ export default defineConfig({
         ],
       },
       workbox: {
+        // woff2 不进 precache(全集分片数 MB),走下方 runtime CacheFirst
         globPatterns: ['**/*.{js,css,html,svg,png,json}'],
         // 数据 chunk 较大,放宽单文件上限
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
+        runtimeCaching: [
+          {
+            urlPattern: ({ url, sameOrigin }) => sameOrigin && url.pathname.endsWith('.woff2'),
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'fonts',
+              expiration: { maxEntries: 64, maxAgeSeconds: 30 * 24 * 3600 },
+            },
+          },
+        ],
       },
     }),
   ],
