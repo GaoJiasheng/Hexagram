@@ -26,8 +26,8 @@ const isJunk = (text) => isJunkBase(text) || /^\[http/.test(text) || /^-\{/.test
 const CHAPTER_MARK_RE = /^[一二三四五六七八九十百]+之[一二三四五六七八九十百]+$/
 // 页尾「有声文献」诵读块(链接+录制说明+「更多有声文献」),命中即停止解析本页
 const STOP_RE = /有聲文獻|Spoken_?Wikisource|ximalaya/i
-// 横线分隔(----)与纯数字卷次行(孟子各卷页尾的导航残留)
-const NAV_LINE_RE = /^(?:[-－—]{2,}|\d{1,3})$/
+// 横线分隔(----)、纯数字卷次行、「上一篇 回目录 下一篇」页脚导航(孟子各卷页尾的残留)
+const NAV_LINE_RE = /^(?:[-－—]{2,}|\d{1,3})$|回目[录錄]|^(?:上|下)一[篇章卷]/
 // 解析 -{…}- 繁简转换标记:多变体语法 -{zh:X;zh-hans:Y;zh-hant:Z}- 取简体(zh-hans/zh-cn),
 // 单体 -{乾}- / -{T|乾}- 取本字。
 const pickConv = (inner) => {
