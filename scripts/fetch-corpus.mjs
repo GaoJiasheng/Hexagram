@@ -28,10 +28,23 @@ const CHAPTER_MARK_RE = /^[一二三四五六七八九十百]+之[一二三四�
 const STOP_RE = /有聲文獻|Spoken_?Wikisource|ximalaya/i
 // 横线分隔(----)与纯数字卷次行(孟子各卷页尾的导航残留)
 const NAV_LINE_RE = /^(?:[-－—]{2,}|\d{1,3})$/
+// 解析 -{…}- 繁简转换标记:多变体语法 -{zh:X;zh-hans:Y;zh-hant:Z}- 取简体(zh-hans/zh-cn),
+// 单体 -{乾}- / -{T|乾}- 取本字。
+const pickConv = (inner) => {
+  if (/(?:^|;)\s*zh[\w-]*\s*:/.test(inner)) {
+    const map = {}
+    for (const seg of inner.split(';')) {
+      const m = seg.match(/^\s*([\w-]+)\s*:\s*([\s\S]*)$/)
+      if (m) map[m[1]] = m[2].trim()
+    }
+    return map['zh-hans'] ?? map['zh-cn'] ?? map['zh'] ?? map['zh-hant'] ?? Object.values(map)[0] ?? inner
+  }
+  return inner.replace(/^[A-Za-z]\|/, '')
+}
 // 先解析行内链接与繁简转换标记,使 {{另}} 模板首参(经文)不再内含 | 和 { }
 // (如 {{另2|《[[尚書|書]]》-{云}-…|校勘}} 的首参含 [[..|..]] 与 -{..}-,否则下面取首参会失败、经文被整段删)
 const preResolve = (s) => s
-  .replace(/-\{([^{}]*?)\}-/g, (_, inner) => inner.replace(/^[A-Za-z]\|/, ''))
+  .replace(/-\{([^{}]*?)\}-/g, (_, inner) => pickConv(inner))
   .replace(/\[\[(?:File|Image):[^\]]*\]\]/gi, '')
   .replace(/\[\[(?:[^\][|]*\|)?([^\][]*)\]\]/g, '$1')
 // 含字校勘模板 {{另|主|注}} / {{另2|主|注}}:取首参(主读、即经文),先于通用模板清洗
