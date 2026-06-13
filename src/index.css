@@ -1756,6 +1756,12 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   max-width: var(--read-w);
 }
 
+/* 语录章号小标(论语等;主色随 [data-site] 主题) */
+.read-para { display: flex; gap: 12px; align-items: baseline; }
+.read-para__num { flex: 0 0 1.8em; text-align: right; font-size: 0.72rem; color: var(--cinnabar); font-family: var(--font-serif); opacity: 0.55; user-select: none; }
+.read-para__body { flex: 1 1 auto; min-width: 0; }
+@media (max-width: 640px) { .read-para { gap: 8px; } .read-para__num { flex-basis: 1.4em; } }
+
 .read-toolbar {
   display: flex;
   justify-content: flex-end;

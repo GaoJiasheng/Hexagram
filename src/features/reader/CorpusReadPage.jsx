@@ -55,6 +55,7 @@ export default function CorpusReadPage({ corpus }) {
       chapterHref={(no) => `${site.home}/${slug}/${no}`}
       getAnchors={(no, i) => getAnchors(corpus, slug, no, i)}
       renderYanyi={(no) => <YanyiBlock corpus={corpus} slug={slug} chapter={no} />}
+      paraLabel={corpus === 'ru' && slug === 'lunyu' ? (no, i) => String(i + 1) : undefined}
     />
   )
 }

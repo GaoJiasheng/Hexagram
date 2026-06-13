@@ -20,6 +20,7 @@ export default function ClassicReader({
   anchorId = (no) => `ch-${no}`,
   getAnchors = () => null,
   renderYanyi = () => null,
+  paraLabel = () => null,
   header = null,
   sectionUnit = '章',
 }) {
@@ -63,9 +64,17 @@ export default function ClassicReader({
     </div>
   )
 
-  const Para = (no, p, i) => (
-    <ClassicText key={i} original={p.original} translation={p.translation} anchors={getAnchors(no, i)} />
-  )
+  const Para = (no, p, i) => {
+    const label = paraLabel(no, i)
+    const text = <ClassicText original={p.original} translation={p.translation} anchors={getAnchors(no, i)} />
+    if (!label) return <ClassicText key={i} original={p.original} translation={p.translation} anchors={getAnchors(no, i)} />
+    return (
+      <div key={i} className="read-para">
+        <span className="read-para__num">{label}</span>
+        <div className="read-para__body">{text}</div>
+      </div>
+    )
+  }
 
   return (
     <div className={`read-page ${single ? 'dao-single' : ''}`}>
