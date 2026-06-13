@@ -150,15 +150,10 @@ for (const bad of ['干道', '干卦', '干元', '遯', '無', '當', '見', '�
   if (corpus.includes(bad)) err(`正文残留繁体/误转字: ${bad}`)
 }
 
-// ---------- 4b. 道藏六部(v6 §1.3) ----------
-const DAO_BOOKS = [
-  ['daodejing', 81],
-  ['qingjingjing', 1],
-  ['ganyingpian', 1],
-  ['zhuangzi-neipian', 7],
-  ['yinfujing', 3],
-  ['cantongqi', 35], // 维基文库底本按 35 章分法,texts.json sections 以此为准
-]
+// ---------- 4b. 道藏诸经(v6 §1.3;v14 §4:书目从 texts.json 派生,加书免改校验) ----------
+// DAO_BOOKS = [slug, 章数];章数取 texts.json 的 sections(单一来源,与硬编码不再重复)
+const DAO_TEXTS_META = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/dao/texts.json'), 'utf8'))
+const DAO_BOOKS = DAO_TEXTS_META.map((t) => [t.slug, t.sections])
 const daoData = {}
 {
   let daoCorpus = ''
@@ -191,9 +186,8 @@ const daoData = {}
   }
   infos.push(`道藏译文(段): ${trCover.join(' · ')}`)
 
-  // 题解撰人小传(v9 §3:authorNote 六部齐备)
-  const textsMeta = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/dao/texts.json'), 'utf8'))
-  for (const t of textsMeta) {
+  // 题解撰人小传(v9 §3:authorNote 各部齐备)
+  for (const t of DAO_TEXTS_META) {
     if (!t.authorNote) err(`道藏 ${t.slug} 缺 authorNote 撰人小传`)
   }
 

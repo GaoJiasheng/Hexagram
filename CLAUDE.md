@@ -1,6 +1,16 @@
 # hexagram — 观象 · 个人学习站
 
-个人学习站集合,双模块:易经研习(yijing,默认)+ 道藏研读(dao)。模块间不互链,唯一切换点是整屏门户(v4 §3);**唯一例外是「桥」(v8)**:参同契/阴符经注疏气泡内的卦名可单向跳转易经卦页,易经侧零反向链接。纯前端(React 19 + Vite),无后端,用户数据只存 localStorage,可静态托管。
+个人学习站集合,**配置驱动的分站平台**(v14):当前两站——易经研习(yijing,默认)+ 道藏研读(dao);站点在 `src/sites/registry.js` 注册,加站零改平台代码。站间不互链,唯一切换点是整屏门户(v4 §3);**唯一例外是「桥」(v8)**:参同契/阴符经注疏气泡内的卦名可单向跳转易经卦页,易经侧零反向链接。纯前端(React 19 + Vite),无后端,用户数据只存 localStorage,可静态托管。
+
+## 如何加一个新站(v14 §1·§4)
+
+平台已抽成「壳(manifest)+ 通用阅读器 + registry 管线」,加一家读经类新站(如儒/佛)≈ 纯内容,**不碰平台代码**:
+1. `src/sites/registry.js` 加一条 `{key, brand, portalTitle, portalDesc, home, prefix, accent, switchLabel, hasSearch, nav, mobileNav, mobileSwitch}`。
+2. `src/index.css` 加 `[data-site="新key"] { --cinnabar: var(--某色) … }` 换肤(主色)。
+3. 数据:原文走管线(仿 fetch-dao,抓取源+切片配置写脚本)、白话译文/字词注疏/每章延伸为人工内容;书目元数据仿 `src/data/dao/texts.json`(slug/title/sections/…),check-data 的书单从它派生,加书免改校验。
+4. 阅读页:薄包装调 `src/features/reader/ClassicReader.jsx`(paged/single 两模式),传各自 loader/anchors/yanyi/header;首页/书架仿 DaoHomePage。
+5. 在 App.jsx 加该站的 `<Route>`(每站页面是各自代码,路由需显式列)。
+6. 跑 `check-data`——覆盖仪表自动纳入新书。
 
 ## 唯一规格来源
 
