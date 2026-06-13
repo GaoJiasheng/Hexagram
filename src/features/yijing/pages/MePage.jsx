@@ -6,7 +6,7 @@ import { getBookmarks, getNotes, getDivinations, deleteDivination, saveDivinatio
 import { getHexagram, hexagramById } from '../data.js'
 import { useSettings } from '../SettingsContext.jsx'
 import { lineTitle } from '../engine/transforms.js'
-import { LEARN_TOPICS, topicStatus } from './BasicsPage.jsx'
+import { LEARN_TOPICS, topicStatus } from '../learnTopics.js'
 
 const TABS = ['收藏', '笔记', '推演历史', '研习', '设置']
 
