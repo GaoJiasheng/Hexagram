@@ -79,9 +79,15 @@ export const SITES = [
 
 export const SITE_MAP = Object.fromEntries(SITES.map(s => [s.key, s]))
 
-// hostname → group 映射(v15 §1):用户填真实域名即生效;留空则按路径分组(dev/主域名)。
-// 例:'fo.example.com': 'fo', 'ru.example.com': 'ru'
-export const HOST_GROUPS = {}
+// hostname → group 映射(v15 §1):配了真实域名即生效(域名着陆+硬隔离),localhost/未列按路径分组(dev)。
+export const HOST_GROUPS = {
+  'tao.gavingao.cn': 'yidao',
+  'con.gavingao.cn': 'ru',
+  'bud.gavingao.cn': 'fo',
+}
+
+// 隐藏的三教门户路径(仅 owner 知道;无任何可见链接指向它,域名着陆对它豁免)。可改。
+export const MASTER_PORTAL_PATH = '/sanjiao'
 
 // 按 prefix 最长匹配定当前站;无前缀者为默认兜底
 export function siteForPath(pathname) {
@@ -99,4 +105,24 @@ export function activeGroup(pathname, hostname) {
 // 某组内的站(门户与切换按钮的数据源)
 export function sitesInGroup(group) {
   return SITES.filter(s => s.group === group)
+}
+
+// 全部分组(去重,保 SITES 出场序)
+export function allGroups() {
+  return [...new Set(SITES.map(s => s.group))]
+}
+
+// 某组首页
+export function groupHome(group) {
+  const s = sitesInGroup(group)[0]
+  return s ? s.home : '/'
+}
+
+// 三教门户的跨域入口:在配了 HOST_GROUPS 的生产域名上用绝对 URL 跨域;dev/未配置用相对路径
+export function groupEntryHref(group, protocol, hostname) {
+  if (HOST_GROUPS[hostname]) {
+    const host = Object.keys(HOST_GROUPS).find(h => HOST_GROUPS[h] === group)
+    if (host) return `${protocol}//${host}${groupHome(group)}`
+  }
+  return groupHome(group)
 }

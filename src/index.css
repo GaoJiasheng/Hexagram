@@ -2780,6 +2780,16 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .module-portal__close { margin-top: 32px; background: none; border: none; color: var(--ink-faint); font-size: 0.78rem; cursor: pointer; }
 .module-portal__close:hover { color: var(--ink); }
 
+/* 三教门户(v15 隐藏入口 /sanjiao)——仅 owner 入口,简素卡片跨域跳转 */
+.master-portal { min-height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; padding: 48px 24px; }
+.master-portal__hint { font-size: 0.78rem; color: var(--ink-faint); letter-spacing: 0.08em; }
+.master-portal__cards { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+.master-portal__card { display: flex; flex-direction: column; align-items: center; gap: 12px; min-width: 200px; padding: 32px 28px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper-raised); text-decoration: none; transition: border-color 0.15s, transform 0.15s; }
+.master-portal__card:hover { border-color: var(--cinnabar); transform: translateY(-2px); }
+.master-portal__seals { display: flex; gap: 8px; }
+.master-portal__seal { width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; background: var(--cinnabar); color: #fdfbf6; font-family: var(--font-serif); font-size: 1rem; border-radius: 6px; }
+.master-portal__titles { font-family: var(--font-serif); font-size: 0.95rem; color: var(--ink-soft); }
+
 /* 分站换肤:同一张纸,换一方印(v4 §3.4;v14 §2 data-site 驱动) */
 [data-site="dao"] { --cinnabar: var(--azure); --cinnabar-bg: color-mix(in srgb, var(--azure) 9%, transparent); }
 [data-site="fo"] { --cinnabar: var(--buddha); --cinnabar-bg: color-mix(in srgb, var(--buddha) 9%, transparent); }

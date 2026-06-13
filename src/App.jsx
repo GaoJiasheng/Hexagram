@@ -1,7 +1,7 @@
 import { BrowserRouter, NavLink, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import { useState, useEffect, useCallback, lazy, Suspense } from 'react'
 import { SettingsProvider } from './features/yijing/SettingsContext.jsx'
-import { siteForPath, activeGroup, sitesInGroup, HOST_GROUPS } from './sites/registry.js'
+import { siteForPath, activeGroup, sitesInGroup, HOST_GROUPS, MASTER_PORTAL_PATH } from './sites/registry.js'
 
 // 搜索面板连同其多源索引数据按需加载(v11 §2)
 const SearchPalette = lazy(() => import('./features/yijing/components/SearchPalette.jsx'))
@@ -36,6 +36,7 @@ const DaoReadPage = lazy(() => import('./features/dao/pages/DaoReadPage.jsx'))
 // Pages — 释典 / 儒典(v15 脚手架)
 const FoHomePage = lazy(() => import('./features/fo/pages/FoHomePage.jsx'))
 const RuHomePage = lazy(() => import('./features/ru/pages/RuHomePage.jsx'))
+const MasterPortalPage = lazy(() => import('./features/MasterPortalPage.jsx'))
 
 // 站点注册迁至 src/sites/registry.js(v14):平台读 manifest,加站零改平台代码
 
@@ -191,6 +192,7 @@ function AppContent() {
   // 域名着陆(v15 §1):配了 HOST_GROUPS 的域名访问别组路径时,落回本组首页。
   // HOST_GROUPS 为空(dev/主域名)时不触发,按路径分组即可。
   useEffect(() => {
+    if (location.pathname === MASTER_PORTAL_PATH) return  // 隐藏门户豁免域名着陆
     const host = typeof window !== 'undefined' ? window.location.hostname : ''
     const hostGroup = HOST_GROUPS[host]
     if (hostGroup && module.group !== hostGroup) {
@@ -234,6 +236,8 @@ function AppContent() {
           {/* 释典 / 儒典(v15:经文阅读路由待内容期接 ClassicReader) */}
           <Route path="/fo" element={<FoHomePage />} />
           <Route path="/ru" element={<RuHomePage />} />
+          {/* 隐藏的三教门户(v15):仅 owner 经秘密路径访问,无站内链接指向 */}
+          <Route path={MASTER_PORTAL_PATH} element={<MasterPortalPage />} />
           <Route path="*" element={
             <div style={{ textAlign: 'center', paddingTop: '80px' }}>
               <p style={{ color: 'var(--ink-faint)' }}>页面不存在</p>
