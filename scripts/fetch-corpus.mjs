@@ -49,7 +49,7 @@ function parsePageParas(wikitext, warnings, pageName) {
     if (/^\*+\s*\[\[/.test(trimmed)) continue          // *[[…]] 导航链接行
     const text = clean(replaceAnother(preResolve(stripRef(raw))).replace(/^[*#:;]+/, ''))
     if (isJunk(text)) continue
-    const simp = t2s(text).replaceAll('愼', '慎')   // OpenCC 未规范的异体字补正(慎)
+    const simp = t2s(text).replaceAll('愼', '慎').replaceAll('擧', '举')   // OpenCC 未规范的异体字补正(慎/举)
     if (!simp || CHAPTER_MARK_RE.test(simp) || NAV_LINE_RE.test(simp)) continue   // 空行 / 章号 / 横线 / 卷次
     paras.push({ original: simp, translation: null })
   }
