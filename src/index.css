@@ -748,6 +748,18 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   backdrop-filter: blur(2px);
 }
 
+/* 示范走查(v12 §2) */
+.tour { position: fixed; inset: 0; z-index: 300; }
+.tour__backdrop { position: absolute; inset: 0; background: transparent; }
+.tour__ring { position: fixed; border: 2px solid var(--cinnabar); border-radius: 8px; box-shadow: 0 0 0 9999px rgba(0,0,0,0.42), 0 0 16px rgba(160,58,42,0.5); pointer-events: none; transition: all 0.25s ease; }
+.tour__tip { position: fixed; width: 320px; max-width: calc(100vw - 24px); background: var(--paper-raised); border: 1px solid var(--line); border-radius: 8px; padding: 16px; box-shadow: 0 8px 28px rgba(0,0,0,0.22); }
+.tour__tip-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.tour__tip-title { font-family: var(--font-serif); font-size: 1.05rem; color: var(--ink); }
+.tour__tip-count { font-size: 0.74rem; color: var(--ink-faint); }
+.tour__tip-body { font-size: 0.88rem; line-height: 1.8; color: var(--ink-soft); margin: 0 0 14px; }
+.tour__tip-actions { display: flex; justify-content: space-between; align-items: center; }
+.tour__next { padding: 5px 16px; }
+
 .search-palette {
   width: 560px;
   max-width: calc(100vw - 32px);
@@ -1374,8 +1386,21 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 
 .workbench-methods .seg-btn { font-size: 0.8rem; padding: 5px 12px; }
 
+/* 常驻步骤条(v12 §1) */
+.wb-steps { display: flex; align-items: center; gap: 0; list-style: none; margin: 0; padding: 0; }
+.wb-step { display: flex; align-items: center; gap: 5px; flex: 1; min-width: 0; }
+.wb-step:not(:last-child)::after { content: '›'; margin: 0 4px 0 auto; color: var(--ink-faint); }
+.wb-step__no { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 50%; font-size: 0.7rem; border: 1px solid var(--line); color: var(--ink-faint); flex: none; }
+.wb-step__label { font-size: 0.78rem; color: var(--ink-faint); white-space: nowrap; }
+.wb-step--cur .wb-step__no { border-color: var(--cinnabar); color: var(--cinnabar); }
+.wb-step--cur .wb-step__label { color: var(--cinnabar); }
+.wb-step--done .wb-step__no { background: var(--ochre); border-color: var(--ochre); color: var(--paper); }
+.wb-step--done .wb-step__label { color: var(--ink-soft); }
+
 /* 起卦新手引导 */
 .workbench-howto { font-size: 0.84rem; line-height: 1.75; color: var(--ink-soft); margin: 0; padding: 10px 12px; background: var(--paper); border-left: 2px solid var(--ochre); border-radius: 0 4px 4px 0; }
+.workbench-howto-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.workbench-howto-actions .btn-text { color: var(--cinnabar); }
 .workbench-howto strong { color: var(--ink); font-weight: 600; }
 .workbench-method-group { display: flex; flex-direction: column; gap: 6px; }
 .workbench-method-group__label { font-size: 0.74rem; color: var(--ink-faint); letter-spacing: 0.03em; }

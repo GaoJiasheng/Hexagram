@@ -7,6 +7,7 @@ import EmptyState from '../components/EmptyState.jsx'
 import DayanCast from '../components/DayanCast.jsx'
 import TermTip from '../components/TermTip.jsx'
 import XianTianTable from '../components/XianTianTable.jsx'
+import GuideTour from '../components/GuideTour.jsx'
 import { allHexagrams, trigramById, TRIGRAM_ORDER, hexagramById, hexagramByBinary } from '../data.js'
 import { getBianGua, getHuGua, getCuoGua, getZongGua, lineTitle } from '../engine/transforms.js'
 import { getDivinationResult } from '../engine/divination.js'
@@ -49,6 +50,34 @@ const METHOD_GROUPS = [
   },
 ]
 const METHOD_HINT = Object.fromEntries(METHOD_GROUPS.flatMap(g => g.methods.map(([k, , hint]) => [k, hint])))
+
+// 常驻步骤条(v12 §1):按 hex/动爻 状态点亮,纯指示不可点
+function StepBar({ hex, movingLines }) {
+  const steps = ['起卦', '标动爻', '读断法']
+  return (
+    <ol className="wb-steps" aria-label="推演三步">
+      {steps.map((s, i) => {
+        // ① 无卦时进行中、有卦打勾;②③ 有卦即可进行
+        const state = i === 0 ? (hex ? 'done' : 'cur') : hex ? 'cur' : 'todo'
+        return (
+          <li key={s} className={`wb-step wb-step--${state}`}>
+            <span className="wb-step__no">{state === 'done' ? '✓' : i + 1}</span>
+            <span className="wb-step__label">{s}{i === 1 ? '·可选' : ''}</span>
+          </li>
+        )
+      })}
+    </ol>
+  )
+}
+
+// 「示范一卦」走查:乾·九五动(乾之大有,一爻变,爻辞「飞龙在天」)
+const DEMO_GUA = 1
+const DEMO_DONG = [5]
+const DEMO_TOUR = [
+  { selector: '.workbench-gua', title: '① 这是本卦', body: '示范起出的是乾卦。卦画上标红的「九五」就是动爻——动爻是占断的关键。' },
+  { selector: '.bianhua-row', title: '② 动则成变卦', body: '九五一动，乾就变成了大有。右边那一卦即变卦，箭头上标着是哪一爻动的。' },
+  { selector: '.rule-card', title: '③ 读断法', body: '一爻变，依《易学启蒙》以变爻之辞占——这里取乾九五「飞龙在天」。下面还附小象传与字词注疏，悬停即看。' },
+]
 
 // 时间输入行
 function TimeField({ label, value, onChange, min, max }) {
@@ -629,6 +658,7 @@ export default function WorkbenchPage() {
   const [noteText, setNoteText] = useState('')
   const [savedMsg, setSavedMsg] = useState(false)
   const [origin, setOrigin] = useState(null)  // null | { method, upper?, lower?, dongYao?, inputs }
+  const [tourOn, setTourOn] = useState(false)  // 「示范一卦」走查
 
   useEffect(() => {
     const p = {}
@@ -692,6 +722,13 @@ export default function WorkbenchPage() {
     selectHex(r)
   }
 
+  // 「示范一卦」:载入乾·九五动并启动走查
+  function startDemo() {
+    selectHex(hexagramById.get(DEMO_GUA), DEMO_DONG)
+    setMethod('trigram')
+    setTourOn(true)
+  }
+
   function saveHistory() {
     if (!hex) return
     const bianBinary = movingLines.length ? getBianGua(hex.binary, movingLines) : hex.binary
@@ -720,9 +757,13 @@ export default function WorkbenchPage() {
       <aside className="workbench-left">
         <div className="workbench-left__inner">
           <div className="workbench-section-title">起卦</div>
+          <StepBar hex={hex} movingLines={movingLines} />
           <p className="workbench-howto">
             这里帮你<strong>推演一卦</strong>：选定一个<strong>本卦</strong>，点卦画上的爻标出<strong>动爻</strong>（也可不标），右侧便自动给出卦变与断法。先在下面挑一种起卦方式——
           </p>
+          <div className="workbench-howto-actions">
+            <button className="btn-text" onClick={startDemo}>示范一卦 →</button>
+          </div>
           {METHOD_GROUPS.map(group => (
             <div key={group.label} className="workbench-method-group">
               <div className="workbench-method-group__label">{group.label}</div>
@@ -921,6 +962,7 @@ export default function WorkbenchPage() {
           </div>
         )}
       </main>
+      {tourOn && <GuideTour steps={DEMO_TOUR} onClose={() => setTourOn(false)} />}
     </div>
   )
 }
