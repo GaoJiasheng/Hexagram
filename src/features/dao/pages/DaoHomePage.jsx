@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom'
 import texts from '../../../data/dao/texts.json'
+import { getReadingProgress } from '../../yijing/storage.js'
 
 const STATUS_LABEL = { pending: '整理中', partial: '可读·译注中', done: '可阅读' }
 
-// 道藏模块首页 — 书架(v4 §3.6)
+// 道藏模块首页 — 书架(v4 §3.6;v10 §6 续读入口)
 export default function DaoHomePage() {
+  const progress = getReadingProgress()
   return (
     <div className="dao-home">
       <div className="page-header">
@@ -13,18 +15,24 @@ export default function DaoHomePage() {
       </div>
 
       <div className="dao-shelf">
-        {texts.map(t => (
-          <Link key={t.slug} to={`/dao/${t.slug}`} className="dao-book">
-            <div className="dao-book__title">{t.title}</div>
-            <div className="dao-book__alias">{t.alias}</div>
-            <div className="dao-book__meta">
-              <span>{t.era}</span>
-              <span>{t.sections} {t.sectionUnit}</span>
-            </div>
-            <p className="dao-book__brief">{t.brief}</p>
-            <span className={`dao-book__status dao-book__status--${t.status}`}>{STATUS_LABEL[t.status]}</span>
-          </Link>
-        ))}
+        {texts.map(t => {
+          const done = progress[t.slug] || 0
+          return (
+            <Link key={t.slug} to={`/dao/${t.slug}`} className="dao-book">
+              <div className="dao-book__title">{t.title}</div>
+              <div className="dao-book__alias">{t.alias}</div>
+              <div className="dao-book__meta">
+                <span>{t.era}</span>
+                <span>{t.sections} {t.sectionUnit}</span>
+              </div>
+              <p className="dao-book__brief">{t.brief}</p>
+              <span className={`dao-book__status dao-book__status--${t.status}`}>{STATUS_LABEL[t.status]}</span>
+              {done > 0 && t.sections > 1 && (
+                <span className="dao-book__continue">读至第 {done} {t.sectionUnit}</span>
+              )}
+            </Link>
+          )
+        })}
       </div>
     </div>
   )

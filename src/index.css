@@ -1960,6 +1960,9 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .fangyuan-hover-label { font-size: 24px; fill: var(--cinnabar); font-family: var(--font-serif); }
 .fangyuan-note { margin-top: 12px; line-height: 1.8; }
 
+/* 续读(v10 §6) */
+.dao-book__continue { font-size: 0.74rem; color: var(--ink-faint); margin-top: 4px; }
+
 .div-item__main {
   flex: 1;
   display: flex;

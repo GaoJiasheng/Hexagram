@@ -16,7 +16,7 @@ export default function ClassicsListPage() {
           const done = progress[book.key] || 0
           const pct = Math.min(100, Math.round((done / book.chapters) * 100))
           return (
-            <Link key={book.key} to={`/classics/${book.key}/1`} className="classics-card">
+            <Link key={book.key} to={`/classics/${book.key}/${done || 1}`} className="classics-card">
               <div className="classics-card__header">
                 <h2 className="classics-card__title">{book.title}</h2>
                 <span className="classics-card__chapters">{book.chapters}章</span>
@@ -26,7 +26,7 @@ export default function ClassicsListPage() {
                 <div className="classics-card__progress-bar" style={{ width: `${pct}%` }} />
               </div>
               {done > 0 && (
-                <p className="classics-card__progress-text text-faint">已读至第{done}章</p>
+                <p className="classics-card__progress-text text-faint">继续读:第{done}章 →</p>
               )}
             </Link>
           )

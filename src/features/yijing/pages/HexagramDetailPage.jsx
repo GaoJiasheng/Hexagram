@@ -97,6 +97,43 @@ export default function HexagramDetailPage() {
     }
   }, [id])
 
+  // 翻页(v10 §6):桌面 ←→ 键;移动端横滑(横向>60 且纵向<30,避开内部横向滚动元素)
+  useEffect(() => {
+    if (!hex) return
+    const goPrev = () => hex.id > 1 && navigate(`/hexagram/${hex.id - 1}`)
+    const goNext = () => hex.id < 64 && navigate(`/hexagram/${hex.id + 1}`)
+
+    function onKey(e) {
+      const tag = e.target.tagName
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || e.target.isContentEditable) return
+      if (e.key === 'ArrowLeft') goPrev()
+      if (e.key === 'ArrowRight') goNext()
+    }
+
+    let touchStart = null
+    function onTouchStart(e) {
+      if (e.touches.length !== 1) { touchStart = null; return }
+      if (e.target.closest('.bagong-scroll, .najia-body, input, textarea')) { touchStart = null; return }
+      touchStart = { x: e.touches[0].clientX, y: e.touches[0].clientY }
+    }
+    function onTouchEnd(e) {
+      if (!touchStart) return
+      const dx = e.changedTouches[0].clientX - touchStart.x
+      const dy = e.changedTouches[0].clientY - touchStart.y
+      touchStart = null
+      if (Math.abs(dx) > 60 && Math.abs(dy) < 30) (dx > 0 ? goPrev : goNext)()
+    }
+
+    window.addEventListener('keydown', onKey)
+    window.addEventListener('touchstart', onTouchStart, { passive: true })
+    window.addEventListener('touchend', onTouchEnd, { passive: true })
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      window.removeEventListener('touchstart', onTouchStart)
+      window.removeEventListener('touchend', onTouchEnd)
+    }
+  }, [id])
+
   if (!hex) {
     return (
       <div className="page-content">
