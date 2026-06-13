@@ -1963,6 +1963,9 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 /* 续读(v10 §6) */
 .dao-book__continue { font-size: 0.74rem; color: var(--ink-faint); margin-top: 4px; }
 
+/* 路由懒加载占位(v11 §2) */
+.route-loading { text-align: center; padding-top: 120px; color: var(--ink-faint); font-size: 1.4rem; letter-spacing: 0.3em; }
+
 .div-item__main {
   flex: 1;
   display: flex;

@@ -1,33 +1,36 @@
 import { BrowserRouter, NavLink, Route, Routes, useLocation } from 'react-router-dom'
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, lazy, Suspense } from 'react'
 import { SettingsProvider } from './features/yijing/SettingsContext.jsx'
-import SearchPalette from './features/yijing/components/SearchPalette.jsx'
 
+// 搜索面板连同其多源索引数据按需加载(v11 §2)
+const SearchPalette = lazy(() => import('./features/yijing/components/SearchPalette.jsx'))
+
+// 页面全部按路由懒加载(v11 §2),首包只留壳与搜索
 // Pages — 易经研习模块
-import HomePage from './features/yijing/pages/HomePage.jsx'
-import HexagramsPage from './features/yijing/pages/HexagramsPage.jsx'
-import HexagramDetailPage from './features/yijing/pages/HexagramDetailPage.jsx'
-import WorkbenchPage from './features/yijing/pages/WorkbenchPage.jsx'
-import ClassicsListPage from './features/yijing/pages/ClassicsListPage.jsx'
-import ClassicsReadPage from './features/yijing/pages/ClassicsReadPage.jsx'
-import BasicsPage from './features/yijing/pages/BasicsPage.jsx'
-import YinYangPage from './features/yijing/pages/YinYangPage.jsx'
-import HetuLuoshuPage from './features/yijing/pages/HetuLuoshuPage.jsx'
-import XiaoxiPage from './features/yijing/pages/XiaoxiPage.jsx'
-import ShicaoPage from './features/yijing/pages/ShicaoPage.jsx'
-import MeihuaBasicsPage from './features/yijing/pages/MeihuaBasicsPage.jsx'
-import JinqianBasicsPage from './features/yijing/pages/JinqianBasicsPage.jsx'
-import YuanliuPage from './features/yijing/pages/YuanliuPage.jsx'
-import ShiliListPage from './features/yijing/pages/ShiliListPage.jsx'
-import ShiliDetailPage from './features/yijing/pages/ShiliDetailPage.jsx'
-import ShishiPage from './features/yijing/pages/ShishiPage.jsx'
-import GuahuaQuizPage from './features/yijing/pages/GuahuaQuizPage.jsx'
-import GlossaryPage from './features/yijing/pages/GlossaryPage.jsx'
-import MePage from './features/yijing/pages/MePage.jsx'
+const HomePage = lazy(() => import('./features/yijing/pages/HomePage.jsx'))
+const HexagramsPage = lazy(() => import('./features/yijing/pages/HexagramsPage.jsx'))
+const HexagramDetailPage = lazy(() => import('./features/yijing/pages/HexagramDetailPage.jsx'))
+const WorkbenchPage = lazy(() => import('./features/yijing/pages/WorkbenchPage.jsx'))
+const ClassicsListPage = lazy(() => import('./features/yijing/pages/ClassicsListPage.jsx'))
+const ClassicsReadPage = lazy(() => import('./features/yijing/pages/ClassicsReadPage.jsx'))
+const BasicsPage = lazy(() => import('./features/yijing/pages/BasicsPage.jsx'))
+const YinYangPage = lazy(() => import('./features/yijing/pages/YinYangPage.jsx'))
+const HetuLuoshuPage = lazy(() => import('./features/yijing/pages/HetuLuoshuPage.jsx'))
+const XiaoxiPage = lazy(() => import('./features/yijing/pages/XiaoxiPage.jsx'))
+const ShicaoPage = lazy(() => import('./features/yijing/pages/ShicaoPage.jsx'))
+const MeihuaBasicsPage = lazy(() => import('./features/yijing/pages/MeihuaBasicsPage.jsx'))
+const JinqianBasicsPage = lazy(() => import('./features/yijing/pages/JinqianBasicsPage.jsx'))
+const YuanliuPage = lazy(() => import('./features/yijing/pages/YuanliuPage.jsx'))
+const ShiliListPage = lazy(() => import('./features/yijing/pages/ShiliListPage.jsx'))
+const ShiliDetailPage = lazy(() => import('./features/yijing/pages/ShiliDetailPage.jsx'))
+const ShishiPage = lazy(() => import('./features/yijing/pages/ShishiPage.jsx'))
+const GuahuaQuizPage = lazy(() => import('./features/yijing/pages/GuahuaQuizPage.jsx'))
+const GlossaryPage = lazy(() => import('./features/yijing/pages/GlossaryPage.jsx'))
+const MePage = lazy(() => import('./features/yijing/pages/MePage.jsx'))
 // Pages — 道藏研读模块
-import DaoHomePage from './features/dao/pages/DaoHomePage.jsx'
-import DaoTextPage from './features/dao/pages/DaoTextPage.jsx'
-import DaoReadPage from './features/dao/pages/DaoReadPage.jsx'
+const DaoHomePage = lazy(() => import('./features/dao/pages/DaoHomePage.jsx'))
+const DaoTextPage = lazy(() => import('./features/dao/pages/DaoTextPage.jsx'))
+const DaoReadPage = lazy(() => import('./features/dao/pages/DaoReadPage.jsx'))
 
 // 模块注册(v4 §3):唯一切换点是门户,模块间不互链
 const MODULES = {
@@ -220,6 +223,7 @@ function AppContent() {
     <div className={`app-shell ${module.key === 'dao' ? 'app-shell--dao' : ''}`}>
       <Nav module={module} onSearch={openSearch} onPortal={openPortal} />
       <main className="app-main page-fade-in">
+        <Suspense fallback={<div className="route-loading" aria-label="加载中">⋯</div>}>
         <Routes>
           {/* 易经研习 */}
           <Route path="/" element={<HomePage />} />
@@ -253,13 +257,18 @@ function AppContent() {
             </div>
           } />
         </Routes>
+        </Suspense>
       </main>
       <footer className="app-footer">
         <span>观象 · 个人易学研习</span>
         <span>本站为个人学习用途，解读内容仅供研习参考</span>
       </footer>
       <MobileNav module={module} onPortal={openPortal} />
-      {module.key === 'yijing' && <SearchPalette open={searchOpen} onClose={() => setSearchOpen(false)} />}
+      {module.key === 'yijing' && searchOpen && (
+        <Suspense fallback={null}>
+          <SearchPalette open onClose={() => setSearchOpen(false)} />
+        </Suspense>
+      )}
       {portalOpen && <ModulePortal current={module.key} onClose={() => setPortalOpen(false)} />}
     </div>
   )
