@@ -27,7 +27,7 @@ npm run check-data     # 数据校验(结构/繁简哨兵/译注覆盖/注疏锚
 
 ## 文档与数据
 
-- 设计稿(唯一规格,按期增量):[一期](docs/yijing-design.md) · [二期](docs/yijing-design-v2.md) · [三期](docs/yijing-design-v3.md) · [四期](docs/design-v4.md) · [五期](docs/design-v5.md) · [六期](docs/design-v6.md) · [七期](docs/design-v7.md) · [八期](docs/design-v8.md) · [九期](docs/design-v9.md) · [十期](docs/design-v10.md)
+- 设计稿(唯一规格,按期增量):[一期](docs/yijing-design.md) · [二期](docs/yijing-design-v2.md) · [三期](docs/yijing-design-v3.md) · [四期](docs/design-v4.md) · [五期](docs/design-v5.md) · [六期](docs/design-v6.md) · [七期](docs/design-v7.md) · [八期](docs/design-v8.md) · [九期](docs/design-v9.md) · [十期](docs/design-v10.md) · [十一期](docs/design-v11.md)
 - 实现者指引:[CLAUDE.md](CLAUDE.md)
 - 经文原文一律来自数据管线(维基文库,繁转简),不可手改;白话译文与注疏为人工内容,存于 `scripts/authored/` 与 `src/data/*/zhushi*`。
 
