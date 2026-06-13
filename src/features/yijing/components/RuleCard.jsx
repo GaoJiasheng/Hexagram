@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ClassicText from './ClassicText.jsx'
 import TermTip from './TermTip.jsx'
+import { getHexAnchors } from '../zhushiAnchored.js'
 
 // 断法名称到 glossary key 的映射（动爻数 → 涉及核心术语）
 const RULE_TERM_MAP = {
@@ -15,9 +16,30 @@ const RULE_TERM_MAP = {
   '用六': 'dongyao',
 }
 
-// 断卦传文(彖/小象):只释卦象,不断吉凶
+// 所占经文:卦辞/爻辞挂词典模式字词注释(annotate),传文挂锚定注疏(anchorRef)
+function ScriptureText({ item, emphasis = false }) {
+  const anchors = item.anchorRef
+    ? getHexAnchors(item.anchorRef.hexId, item.anchorRef.section, item.anchorRef.key)
+    : null
+  return (
+    <ClassicText
+      original={item.text?.original || ''}
+      translation={item.text?.translation}
+      emphasis={emphasis}
+      annotate={!!item.annotate}
+      anchors={anchors}
+    />
+  )
+}
+
+// 断卦传文(彖/小象):只释卦象不断吉凶;原文挂逐句锚定注疏
 function Commentary({ commentary }) {
   if (!commentary) return null
+  const anchors = getHexAnchors(
+    commentary.hexId,
+    commentary.kind === 'tuan' ? 'tuan' : 'xiaoxiang',
+    commentary.key,
+  )
   return (
     <div className="rule-card__commentary">
       <span className="rule-card__commentary-tag">
@@ -26,6 +48,7 @@ function Commentary({ commentary }) {
       <ClassicText
         original={commentary.original}
         translation={commentary.translation}
+        anchors={anchors}
         className="classic-text--commentary"
       />
     </div>
@@ -54,11 +77,7 @@ export default function RuleCard({ result }) {
       {primaryTexts.map((item, i) => (
         <div key={i} className="rule-card__primary">
           <div className="rule-card__item-label">{item.label}</div>
-          <ClassicText
-            original={item.text?.original || ''}
-            translation={item.text?.translation}
-            emphasis
-          />
+          <ScriptureText item={item} emphasis />
           <Commentary commentary={item.commentary} />
         </div>
       ))}
@@ -72,10 +91,7 @@ export default function RuleCard({ result }) {
               </button>
               {expanded[item.label] && (
                 <>
-                  <ClassicText
-                    original={item.text?.original || ''}
-                    translation={item.text?.translation}
-                  />
+                  <ScriptureText item={item} />
                   <Commentary commentary={item.commentary} />
                 </>
               )}
