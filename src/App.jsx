@@ -1,7 +1,7 @@
-import { BrowserRouter, NavLink, Route, Routes, useLocation } from 'react-router-dom'
+import { BrowserRouter, NavLink, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import { useState, useEffect, useCallback, lazy, Suspense } from 'react'
 import { SettingsProvider } from './features/yijing/SettingsContext.jsx'
-import { SITES, siteForPath } from './sites/registry.js'
+import { siteForPath, activeGroup, sitesInGroup, HOST_GROUPS } from './sites/registry.js'
 
 // 搜索面板连同其多源索引数据按需加载(v11 §2)
 const SearchPalette = lazy(() => import('./features/yijing/components/SearchPalette.jsx'))
@@ -33,11 +33,14 @@ const MePage = lazy(() => import('./features/yijing/pages/MePage.jsx'))
 const DaoHomePage = lazy(() => import('./features/dao/pages/DaoHomePage.jsx'))
 const DaoTextPage = lazy(() => import('./features/dao/pages/DaoTextPage.jsx'))
 const DaoReadPage = lazy(() => import('./features/dao/pages/DaoReadPage.jsx'))
+// Pages — 释典 / 儒典(v15 脚手架)
+const FoHomePage = lazy(() => import('./features/fo/pages/FoHomePage.jsx'))
+const RuHomePage = lazy(() => import('./features/ru/pages/RuHomePage.jsx'))
 
 // 站点注册迁至 src/sites/registry.js(v14):平台读 manifest,加站零改平台代码
 
-// 整屏门户 — 「网站之间切换」的体感(v4 §3.2)
-function ModulePortal({ current, onClose }) {
+// 整屏门户 — 「网站之间切换」的体感(v4 §3.2);v15:只列当前组的站,跨组零可见链接
+function ModulePortal({ current, group, onClose }) {
   useEffect(() => {
     function onKey(e) { if (e.key === 'Escape') onClose() }
     window.addEventListener('keydown', onKey)
@@ -49,7 +52,7 @@ function ModulePortal({ current, onClose }) {
       <div className="module-portal__inner" onClick={e => e.stopPropagation()}>
         <p className="module-portal__hint">观象 · 个人学习站</p>
         <div className="module-portal__cards">
-          {SITES.map(m => (
+          {sitesInGroup(group).map(m => (
             <NavLink
               key={m.key}
               to={m.home}
@@ -69,7 +72,7 @@ function ModulePortal({ current, onClose }) {
   )
 }
 
-function Nav({ module, onSearch, onPortal }) {
+function Nav({ module, canSwitch, onSearch, onPortal }) {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -132,15 +135,17 @@ function Nav({ module, onSearch, onPortal }) {
             </NavLink>
           </>
         )}
-        <button className="module-switch" onClick={onPortal} aria-label="切换站点" title="切换站点">
-          {module.switchLabel} ⇄
-        </button>
+        {canSwitch && (
+          <button className="module-switch" onClick={onPortal} aria-label="切换站点" title="切换站点">
+            {module.switchLabel} ⇄
+          </button>
+        )}
       </div>
     </nav>
   )
 }
 
-function MobileNav({ module, onPortal }) {
+function MobileNav({ module, canSwitch, onPortal }) {
   const location = useLocation()
 
   return (
@@ -160,7 +165,7 @@ function MobileNav({ module, onPortal }) {
             </NavLink>
           )
         })}
-        {module.mobileSwitch && (
+        {module.mobileSwitch && canSwitch && (
           <button className="mobile-nav__item" onClick={onPortal} aria-label="切换站点">
             <span className="mobile-nav__icon" aria-hidden="true">⇄</span>
             <span>切换</span>
@@ -177,12 +182,26 @@ function AppContent() {
   const openSearch = useCallback(() => setSearchOpen(true), [])
   const openPortal = useCallback(() => setPortalOpen(true), [])
   const location = useLocation()
+  const navigate = useNavigate()
 
   const module = siteForPath(location.pathname)
+  const group = activeGroup(location.pathname, typeof window !== 'undefined' ? window.location.hostname : '')
+  const canSwitch = sitesInGroup(group).length > 1
+
+  // 域名着陆(v15 §1):配了 HOST_GROUPS 的域名访问别组路径时,落回本组首页。
+  // HOST_GROUPS 为空(dev/主域名)时不触发,按路径分组即可。
+  useEffect(() => {
+    const host = typeof window !== 'undefined' ? window.location.hostname : ''
+    const hostGroup = HOST_GROUPS[host]
+    if (hostGroup && module.group !== hostGroup) {
+      const dest = sitesInGroup(hostGroup)[0]
+      if (dest) navigate(dest.home, { replace: true })
+    }
+  }, [location.pathname, module.group, navigate])
 
   return (
     <div className="app-shell" data-site={module.key}>
-      <Nav module={module} onSearch={openSearch} onPortal={openPortal} />
+      <Nav module={module} canSwitch={canSwitch} onSearch={openSearch} onPortal={openPortal} />
       <main className="app-main page-fade-in">
         <Suspense fallback={<div className="route-loading" aria-label="加载中">⋯</div>}>
         <Routes>
@@ -212,6 +231,9 @@ function AppContent() {
           <Route path="/dao" element={<DaoHomePage />} />
           <Route path="/dao/:slug" element={<DaoTextPage />} />
           <Route path="/dao/:slug/:chapter" element={<DaoReadPage />} />
+          {/* 释典 / 儒典(v15:经文阅读路由待内容期接 ClassicReader) */}
+          <Route path="/fo" element={<FoHomePage />} />
+          <Route path="/ru" element={<RuHomePage />} />
           <Route path="*" element={
             <div style={{ textAlign: 'center', paddingTop: '80px' }}>
               <p style={{ color: 'var(--ink-faint)' }}>页面不存在</p>
@@ -225,13 +247,13 @@ function AppContent() {
         <span>观象 · 个人易学研习</span>
         <span>本站为个人学习用途，解读内容仅供研习参考</span>
       </footer>
-      <MobileNav module={module} onPortal={openPortal} />
+      <MobileNav module={module} canSwitch={canSwitch} onPortal={openPortal} />
       {module.key === 'yijing' && searchOpen && (
         <Suspense fallback={null}>
           <SearchPalette open onClose={() => setSearchOpen(false)} />
         </Suspense>
       )}
-      {portalOpen && <ModulePortal current={module.key} onClose={() => setPortalOpen(false)} />}
+      {portalOpen && <ModulePortal current={module.key} group={group} onClose={() => setPortalOpen(false)} />}
     </div>
   )
 }
