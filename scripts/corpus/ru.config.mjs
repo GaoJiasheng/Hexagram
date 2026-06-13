@@ -22,4 +22,6 @@ export const BOOKS = [
   { slug: 'mengzi', title: '孟子', pages: MENGZI_PAGES, exactChapters: 14 },
   { slug: 'daxue', title: '大学', pages: ['禮記/大學'], exactChapters: 1 },
   { slug: 'zhongyong', title: '中庸', pages: ['禮記/中庸'], exactChapters: 1 },
+  // 儒扩:今文《孝经》18 章(==开宗明义章·第一== 切章)
+  { slug: 'xiaojing', title: '孝经', pages: ['今文孝經'], splitHeadings: true, exactChapters: 18 },
 ]

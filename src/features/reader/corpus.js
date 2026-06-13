@@ -4,12 +4,13 @@
 // glob 限定 {fo,ru} 两组,道藏数据不被牵入本 chunk;某 corpus 尚无文件时安全返回空。
 import foTexts from '../../data/fo/texts.json'
 import ruTexts from '../../data/ru/texts.json'
+import xinTexts from '../../data/xin/texts.json'
 
-const TEXTS = { fo: foTexts, ru: ruTexts }
+const TEXTS = { fo: foTexts, ru: ruTexts, xin: xinTexts }
 
-const classicsLoaders = import.meta.glob('../../data/{fo,ru}/classics/*.json')
-const anchoredMods = import.meta.glob('../../data/{fo,ru}/zhushi-anchored/*.json', { eager: true })
-const yanyiMods = import.meta.glob('../../data/{fo,ru}/yanyi.json', { eager: true })
+const classicsLoaders = import.meta.glob('../../data/{fo,ru,xin}/classics/*.json')
+const anchoredMods = import.meta.glob('../../data/{fo,ru,xin}/zhushi-anchored/*.json', { eager: true })
+const yanyiMods = import.meta.glob('../../data/{fo,ru,xin}/yanyi.json', { eager: true })
 
 const cache = {}
 

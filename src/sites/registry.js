@@ -65,7 +65,7 @@ export const SITES = [
     group: 'ru',           // 儒:独立单站组
     brand: '观仁',         // 暂定
     portalTitle: '儒典研读',
-    portalDesc: '论语 · 孟子 · 大学 · 中庸（整理中）',
+    portalDesc: '论语 · 孟子 · 大学 · 中庸 · 孝经',
     home: '/ru',
     prefix: '/ru',
     accent: 'confucian',
@@ -73,6 +73,21 @@ export const SITES = [
     hasSearch: false,
     nav: [{ to: '/ru', label: '经典' }],
     mobileNav: [{ to: '/ru', label: '经典', icon: '☶', exact: false }],
+    mobileSwitch: false,
+  },
+  {
+    key: 'xin',
+    group: 'xin',          // 心学(阳明):从儒拆出的独立单站组
+    brand: '观心',
+    portalTitle: '阳明心学',
+    portalDesc: '传习录 · 致良知 · 知行合一',
+    home: '/xin',
+    prefix: '/xin',
+    accent: 'xinxue',
+    switchLabel: '心',
+    hasSearch: false,
+    nav: [{ to: '/xin', label: '经典' }],
+    mobileNav: [{ to: '/xin', label: '经典', icon: '☲', exact: false }],
     mobileSwitch: false,
   },
 ]

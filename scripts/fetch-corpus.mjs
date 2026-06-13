@@ -80,7 +80,7 @@ function cleanLine(raw) {
   const text = clean(replaceAnother(preResolve(stripRef(raw))).replace(/^[*#:;]+/, ''))
   if (isJunk(text)) return null
   const simp = t2s(text).replaceAll('愼', '慎').replaceAll('擧', '举')   // OpenCC 未规范的异体字补正(慎/举)
-  if (!simp || CHAPTER_MARK_RE.test(simp) || NAV_LINE_RE.test(simp) || PIN_TITLE_RE.test(simp)) return null
+  if (!simp || CHAPTER_MARK_RE.test(simp) || NAV_LINE_RE.test(simp) || PIN_TITLE_RE.test(simp) || /^__\w+__$/.test(simp)) return null
   return simp
 }
 

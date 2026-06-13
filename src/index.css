@@ -13,6 +13,7 @@
   --azure: #3d5a73;
   --buddha: #9c7b4d;
   --confucian: #4f6f52;
+  --xinxue: #6b5b8c;
   --ochre: #b08d57;
   --line: #e4ddce;
   --font-serif: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
@@ -33,6 +34,7 @@
   --azure: #7e9cb5;
   --buddha: #c4a06a;
   --confucian: #84a888;
+  --xinxue: #9b8bc0;
   --ochre: #c2a36e;
   --line: #37322a;
 }
@@ -49,6 +51,7 @@
     --azure: #7e9cb5;
     --buddha: #c4a06a;
     --confucian: #84a888;
+  --xinxue: #9b8bc0;
     --ochre: #c2a36e;
     --line: #37322a;
   }
@@ -2800,6 +2803,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 [data-site="dao"] { --cinnabar: var(--azure); --cinnabar-bg: color-mix(in srgb, var(--azure) 9%, transparent); }
 [data-site="fo"] { --cinnabar: var(--buddha); --cinnabar-bg: color-mix(in srgb, var(--buddha) 9%, transparent); }
 [data-site="ru"] { --cinnabar: var(--confucian); --cinnabar-bg: color-mix(in srgb, var(--confucian) 9%, transparent); }
+[data-site="xin"] { --cinnabar: var(--xinxue); --cinnabar-bg: color-mix(in srgb, var(--xinxue) 9%, transparent); }
 
 /* 书架·整理中卡片(v15) */
 .dao-book--pending { opacity: 0.72; cursor: default; }

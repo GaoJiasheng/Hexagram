@@ -219,6 +219,7 @@ function checkReadingCorpus(label, key, yanyiUnit) {
 const daoBooks = checkReadingCorpus('道藏', 'dao', '章')
 const ruBooks = checkReadingCorpus('儒典', 'ru', '篇')
 const foBooks = checkReadingCorpus('释典', 'fo', '品')
+const xinBooks = checkReadingCorpus('心学', 'xin', '卷')
 
 // ---------- 4c. 筮例(v9 §1) ----------
 {
@@ -495,6 +496,7 @@ if (fs.existsSync(glossaryPath)) {
   checkCorpusAnchors('道藏', 'dao', daoBooks, true)
   checkCorpusAnchors('儒典', 'ru', ruBooks, false)
   checkCorpusAnchors('释典', 'fo', foBooks, false)
+  checkCorpusAnchors('心学', 'xin', xinBooks, false)
 
   // 覆盖率报告(信息项,断点续作的进度仪表;分母为可注单元总数)
   const xiaoxiangTotal = 64 * 6 + 2

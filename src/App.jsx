@@ -36,6 +36,7 @@ const DaoReadPage = lazy(() => import('./features/dao/pages/DaoReadPage.jsx'))
 // Pages — 释典 / 儒典(v15 脚手架)
 const FoHomePage = lazy(() => import('./features/fo/pages/FoHomePage.jsx'))
 const RuHomePage = lazy(() => import('./features/ru/pages/RuHomePage.jsx'))
+const XinHomePage = lazy(() => import('./features/xin/pages/XinHomePage.jsx'))
 const CorpusTextPage = lazy(() => import('./features/reader/CorpusTextPage.jsx'))
 const CorpusReadPage = lazy(() => import('./features/reader/CorpusReadPage.jsx'))
 const MasterPortalPage = lazy(() => import('./features/MasterPortalPage.jsx'))
@@ -242,6 +243,9 @@ function AppContent() {
           <Route path="/ru" element={<RuHomePage />} />
           <Route path="/ru/:slug" element={<CorpusTextPage corpus="ru" />} />
           <Route path="/ru/:slug/:chapter" element={<CorpusReadPage corpus="ru" />} />
+          <Route path="/xin" element={<XinHomePage />} />
+          <Route path="/xin/:slug" element={<CorpusTextPage corpus="xin" />} />
+          <Route path="/xin/:slug/:chapter" element={<CorpusReadPage corpus="xin" />} />
           {/* 隐藏的三教门户(v15):仅 owner 经秘密路径访问,无站内链接指向 */}
           <Route path={MASTER_PORTAL_PATH} element={<MasterPortalPage />} />
           <Route path="*" element={

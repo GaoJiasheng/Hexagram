@@ -19,4 +19,6 @@ export const BOOKS = [
   { slug: 'xinjing', title: '心经', pages: ['Page:SSID-10510986 大正新修 大藏經 第8卷·般若部四.pdf/864'], splitHeadings: true, exactChapters: 1 },
   { slug: 'jingangjing', title: '金刚经', pages: ['金剛般若波羅蜜經 (鳩摩羅什)'], splitHeadings: true, exactChapters: 32 },
   { slug: 'tanjing', title: '坛经', pages: TANJING_PAGES, exactChapters: 10 },
+  // 佛扩:《佛说四十二章经》后汉迦叶摩腾、竺法兰译,高丽藏古本(最合古本);序 + 42「佛言」章,单页铺排
+  { slug: 'sishierzhang', title: '四十二章经', pages: ['佛說四十二章經（高麗版大藏經本）'], exactChapters: 1 },
 ]
