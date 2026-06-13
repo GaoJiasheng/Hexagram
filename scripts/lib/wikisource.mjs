@@ -68,10 +68,15 @@ export function createFetcher(cacheFile) {
       })
       const redirectMap = {}
       for (const r of data.query.redirects ?? []) redirectMap[r.to] = r.from
+      // API 可能先规范化标题(下划线↔空格、特殊字符等)再处理:normalized.from 是请求名,to 是规范名。
+      const normalizedMap = {}
+      for (const n of data.query.normalized ?? []) normalizedMap[n.to] = n.from
       for (const page of data.query.pages ?? []) {
         const content = page.revisions?.[0]?.slots?.main?.content
         if (!content) throw new Error(`页面无内容: ${page.title}`)
-        const requested = redirectMap[page.title] ?? page.title
+        // 先解重定向、再解规范化,映射回最初请求名,作缓存键
+        const afterRedirect = redirectMap[page.title] ?? page.title
+        const requested = normalizedMap[afterRedirect] ?? afterRedirect
         cache[requested] = content
       }
       saveCache()

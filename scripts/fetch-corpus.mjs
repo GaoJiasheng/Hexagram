@@ -30,8 +30,8 @@ const STOP_RE = /有聲文獻|Spoken_?Wikisource|ximalaya/i
 const NAV_LINE_RE = /^(?:[-－—]{2,}|\d{1,3})$|回目[录錄]|^(?:上|下)一[篇章卷]/
 // 品/分题独立成行(坛经各品页正文里重复的「行由品第一」等),作标记行剔除
 const PIN_TITLE_RE = /^.{1,7}[品分]第[一二三四五六七八九十]+$/
-// splitHeadings 模式下需跳过的非经文标题(金刚经的「正文」「外部链接」等)
-const HEADING_SKIP_RE = /^(正文|外部連結|外部链接|參考|参考|附錄|附录|注釋|注释|序|目錄|目录)$/
+// splitHeadings 模式下需跳过的非经文标题(金刚经「正文/外部链接」、心经 djvu 页的明太祖序等)
+const HEADING_SKIP_RE = /^(正文|外部連結|外部链接|參考|参考|附錄|附录|注釋|注释|目錄|目录)$|序$/
 // 解析 -{…}- 繁简转换标记:多变体语法 -{zh:X;zh-hans:Y;zh-hant:Z}- 取简体(zh-hans/zh-cn),
 // 单体 -{乾}- / -{T|乾}- 取本字。
 const pickConv = (inner) => {
@@ -113,7 +113,7 @@ function parsePageChapters(wikitext, warnings, pageName) {
       continue
     }
     const simp = cleanLine(raw)
-    if (simp && cur) cur.paragraphs.push({ original: simp, translation: null })
+    if (simp && cur && simp !== cur.title) cur.paragraphs.push({ original: simp, translation: null }) // 丢章末重复的经题
   }
   const kept = chapters.filter((c) => c.paragraphs.length)
   if (!kept.length) warnings.push(`${pageName}: 切章后无内容`)

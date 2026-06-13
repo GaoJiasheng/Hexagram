@@ -13,7 +13,10 @@ const TANJING_PAGES = [
 ]
 
 export const BOOKS = [
-  { slug: 'xinjing', title: '心经', pages: ['般若波羅蜜多心經 (法成)'], exactChapters: 1 },
+  // 心经:流传最广的玄奘略本。其单行页为 djvu 转嵌,经文实在大正藏第8卷 djvu 第864页
+  // (明太祖序之后);splitHeadings 跳过「…序」标题、只取「般若波羅蜜多心經」一章,章末重复经题由
+  // parsePageChapters 自动剔除。
+  { slug: 'xinjing', title: '心经', pages: ['Page:SSID-10510986 大正新修 大藏經 第8卷·般若部四.pdf/864'], splitHeadings: true, exactChapters: 1 },
   { slug: 'jingangjing', title: '金刚经', pages: ['金剛般若波羅蜜經 (鳩摩羅什)'], splitHeadings: true, exactChapters: 32 },
   { slug: 'tanjing', title: '坛经', pages: TANJING_PAGES, exactChapters: 10 },
 ]
