@@ -28,6 +28,10 @@ const CHAPTER_MARK_RE = /^[一二三四五六七八九十百]+之[一二三四�
 const STOP_RE = /有聲文獻|Spoken_?Wikisource|ximalaya/i
 // 横线分隔(----)、纯数字卷次行、「上一篇 回目录 下一篇」页脚导航(孟子各卷页尾的残留)
 const NAV_LINE_RE = /^(?:[-－—]{2,}|\d{1,3})$|回目[录錄]|^(?:上|下)一[篇章卷]/
+// 品/分题独立成行(坛经各品页正文里重复的「行由品第一」等),作标记行剔除
+const PIN_TITLE_RE = /^.{1,7}[品分]第[一二三四五六七八九十]+$/
+// splitHeadings 模式下需跳过的非经文标题(金刚经的「正文」「外部链接」等)
+const HEADING_SKIP_RE = /^(正文|外部連結|外部链接|參考|参考|附錄|附录|注釋|注释|序|目錄|目录)$/
 // 解析 -{…}- 繁简转换标记:多变体语法 -{zh:X;zh-hans:Y;zh-hant:Z}- 取简体(zh-hans/zh-cn),
 // 单体 -{乾}- / -{T|乾}- 取本字。
 const pickConv = (inner) => {
@@ -52,22 +56,50 @@ const replaceAnother = (s) => s.replace(/\{\{另\d?\|([^|{}]*)(?:\|[^{}]*)*\}\}/
 // 行内 <ref>…</ref> 校勘注(常含外链),整段剔除——经文只留正文(论语各篇为单行,无跨行 ref)
 const stripRef = (s) => s.replace(/<ref[^>]*\/>/gi, '').replace(/<ref[^>]*>[\s\S]*?<\/ref>/gi, '')
 
+// 行清洗 → 简体正文;若为导航/标题/标记/空行返回 null
+function cleanLine(raw) {
+  if (/^\*+\s*\[\[/.test(raw.trim())) return null          // *[[…]] 导航链接行
+  const text = clean(replaceAnother(preResolve(stripRef(raw))).replace(/^[*#:;]+/, ''))
+  if (isJunk(text)) return null
+  const simp = t2s(text).replaceAll('愼', '慎').replaceAll('擧', '举')   // OpenCC 未规范的异体字补正(慎/举)
+  if (!simp || CHAPTER_MARK_RE.test(simp) || NAV_LINE_RE.test(simp) || PIN_TITLE_RE.test(simp)) return null
+  return simp
+}
+
 // 单页 → 段落数组(各源页即一章)
 function parsePageParas(wikitext, warnings, pageName) {
   const paras = []
   for (const raw of wikitext.split('\n')) {
     if (STOP_RE.test(raw)) break                       // 页尾诵读块,其后不再有正文
-    const trimmed = raw.trim()
-    if (/^=+.*=+$/.test(trimmed)) continue           // == 标题 == / === N === 章标记行
-    if (/^\*+\s*\[\[/.test(trimmed)) continue          // *[[…]] 导航链接行
-    const text = clean(replaceAnother(preResolve(stripRef(raw))).replace(/^[*#:;]+/, ''))
-    if (isJunk(text)) continue
-    const simp = t2s(text).replaceAll('愼', '慎').replaceAll('擧', '举')   // OpenCC 未规范的异体字补正(慎/举)
-    if (!simp || CHAPTER_MARK_RE.test(simp) || NAV_LINE_RE.test(simp)) continue   // 空行 / 章号 / 横线 / 卷次
-    paras.push({ original: simp, translation: null })
+    if (/^=+.*=+$/.test(raw.trim())) continue          // == 标题 == 行
+    const simp = cleanLine(raw)
+    if (simp) paras.push({ original: simp, translation: null })
   }
   if (!paras.length) warnings.push(`${pageName}: 解析后无任何段落`)
   return paras
+}
+
+// 单页按 == 标题 == 切多章(金刚经 32 分):标题去『…』夹注;跳过「正文/外部链接」等非经文标题;
+// 首个有效标题前的内容(开经偈、礼佛文等)丢弃。
+function parsePageChapters(wikitext, warnings, pageName) {
+  const chapters = []
+  let cur = null
+  for (const raw of wikitext.split('\n')) {
+    if (STOP_RE.test(raw)) break
+    const h = raw.trim().match(/^=+\s*(.+?)\s*=+$/)
+    if (h) {
+      const title = t2s(clean(h[1]).replace(/『[^』]*』/g, '').replace(/「[^」]*」/g, '')).trim()
+      if (!title || HEADING_SKIP_RE.test(title)) { cur = null; continue }
+      cur = { title, paragraphs: [] }
+      chapters.push(cur)
+      continue
+    }
+    const simp = cleanLine(raw)
+    if (simp && cur) cur.paragraphs.push({ original: simp, translation: null })
+  }
+  const kept = chapters.filter((c) => c.paragraphs.length)
+  if (!kept.length) warnings.push(`${pageName}: 切章后无内容`)
+  return kept
 }
 
 async function main() {
@@ -85,9 +117,16 @@ async function main() {
   const summary = []
 
   for (const book of BOOKS) {
-    const single = book.pages.length === 1
+    const single = book.pages.length === 1 && !book.splitHeadings
     const chapters = []
     for (const page of book.pages) {
+      if (book.splitHeadings) {
+        // 单页按标题切多章(金刚经 32 分)
+        for (const c of parsePageChapters(pages[page], warnings, page)) {
+          chapters.push({ no: chapters.length + 1, title: c.title, paragraphs: c.paragraphs })
+        }
+        continue
+      }
       const paras = parsePageParas(pages[page], warnings, page)
       const seg = page.includes('/') ? page.slice(page.indexOf('/') + 1) : page
       const title = single ? null : t2s(seg)
