@@ -2774,8 +2774,8 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .module-portal__close { margin-top: 32px; background: none; border: none; color: var(--ink-faint); font-size: 0.78rem; cursor: pointer; }
 .module-portal__close:hover { color: var(--ink); }
 
-/* 道藏模块换肤:同一张纸,换一方印(v4 §3.4) */
-.app-shell--dao { --cinnabar: var(--azure); --cinnabar-bg: color-mix(in srgb, var(--azure) 9%, transparent); }
+/* 分站换肤:同一张纸,换一方印(v4 §3.4;v14 §2 data-site 驱动) */
+[data-site="dao"] { --cinnabar: var(--azure); --cinnabar-bg: color-mix(in srgb, var(--azure) 9%, transparent); }
 
 /* 道藏书架 */
 .dao-home { max-width: var(--content-w); margin: 0 auto; }

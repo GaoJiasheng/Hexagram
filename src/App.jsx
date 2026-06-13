@@ -1,6 +1,7 @@
 import { BrowserRouter, NavLink, Route, Routes, useLocation } from 'react-router-dom'
 import { useState, useEffect, useCallback, lazy, Suspense } from 'react'
 import { SettingsProvider } from './features/yijing/SettingsContext.jsx'
+import { SITES, siteForPath } from './sites/registry.js'
 
 // 搜索面板连同其多源索引数据按需加载(v11 §2)
 const SearchPalette = lazy(() => import('./features/yijing/components/SearchPalette.jsx'))
@@ -33,40 +34,7 @@ const DaoHomePage = lazy(() => import('./features/dao/pages/DaoHomePage.jsx'))
 const DaoTextPage = lazy(() => import('./features/dao/pages/DaoTextPage.jsx'))
 const DaoReadPage = lazy(() => import('./features/dao/pages/DaoReadPage.jsx'))
 
-// 模块注册(v4 §3):唯一切换点是门户,模块间不互链
-const MODULES = {
-  yijing: {
-    key: 'yijing',
-    brand: '观象',
-    portalTitle: '易经研习',
-    portalDesc: '六十四卦 · 推演工作台 · 经传 · 学堂',
-    home: '/',
-    nav: [
-      { to: '/hexagrams', label: '六十四卦' },
-      { to: '/workbench', label: '推演' },
-      { to: '/classics', label: '经传' },
-      { to: '/basics', label: '学堂' },
-    ],
-  },
-  dao: {
-    key: 'dao',
-    brand: '观道',
-    portalTitle: '道藏研读',
-    portalDesc: '道德经 · 南华 · 丹道诸经（整理中）',
-    home: '/dao',
-    nav: [
-      { to: '/dao', label: '经典' },
-    ],
-  },
-}
-
-const MOBILE_NAV = [
-  { to: '/', label: '首页', icon: '☰', exact: true },
-  { to: '/hexagrams', label: '卦', icon: '☵' },
-  { to: '/workbench', label: '推演', icon: '☲' },
-  { to: '/classics', label: '经传', icon: '☷' },
-  { to: '/me', label: '我的', icon: '☶' },
-]
+// 站点注册迁至 src/sites/registry.js(v14):平台读 manifest,加站零改平台代码
 
 // 整屏门户 — 「网站之间切换」的体感(v4 §3.2)
 function ModulePortal({ current, onClose }) {
@@ -81,7 +49,7 @@ function ModulePortal({ current, onClose }) {
       <div className="module-portal__inner" onClick={e => e.stopPropagation()}>
         <p className="module-portal__hint">观象 · 个人学习站</p>
         <div className="module-portal__cards">
-          {Object.values(MODULES).map(m => (
+          {SITES.map(m => (
             <NavLink
               key={m.key}
               to={m.home}
@@ -110,9 +78,9 @@ function Nav({ module, onSearch, onPortal }) {
     return () => window.removeEventListener('scroll', handler)
   }, [])
 
-  // '/' key triggers search(仅易经模块)
+  // '/' key triggers search(仅声明 hasSearch 的站)
   useEffect(() => {
-    if (module.key !== 'yijing') return
+    if (!module.hasSearch) return
     function onKey(e) {
       if (e.key === '/' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
         e.preventDefault()
@@ -121,7 +89,7 @@ function Nav({ module, onSearch, onPortal }) {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [onSearch, module.key])
+  }, [onSearch, module.hasSearch])
 
   return (
     <nav className={`app-nav ${scrolled ? 'app-nav--scrolled' : ''}`} role="navigation" aria-label="主导航">
@@ -141,7 +109,7 @@ function Nav({ module, onSearch, onPortal }) {
         ))}
       </div>
       <div className="app-nav__actions">
-        {module.key === 'yijing' && (
+        {module.hasSearch && (
           <>
             <button
               className="nav-icon-btn"
@@ -165,7 +133,7 @@ function Nav({ module, onSearch, onPortal }) {
           </>
         )}
         <button className="module-switch" onClick={onPortal} aria-label="切换站点" title="切换站点">
-          {module.key === 'yijing' ? '易' : '道'} ⇄
+          {module.switchLabel} ⇄
         </button>
       </div>
     </nav>
@@ -175,27 +143,10 @@ function Nav({ module, onSearch, onPortal }) {
 function MobileNav({ module, onPortal }) {
   const location = useLocation()
 
-  if (module.key === 'dao') {
-    return (
-      <div className="mobile-nav" role="navigation" aria-label="底部导航">
-        <div className="mobile-nav__inner">
-          <NavLink to="/dao" className={`mobile-nav__item ${location.pathname.startsWith('/dao') ? 'active' : ''}`} aria-label="经典">
-            <span className="mobile-nav__icon" aria-hidden="true">☱</span>
-            <span>经典</span>
-          </NavLink>
-          <button className="mobile-nav__item" onClick={onPortal} aria-label="切换站点">
-            <span className="mobile-nav__icon" aria-hidden="true">⇄</span>
-            <span>切换</span>
-          </button>
-        </div>
-      </div>
-    )
-  }
-
   return (
     <div className="mobile-nav" role="navigation" aria-label="底部导航">
       <div className="mobile-nav__inner">
-        {MOBILE_NAV.map(({ to, label, icon, exact }) => {
+        {module.mobileNav.map(({ to, label, icon, exact }) => {
           const isActive = exact ? location.pathname === to : location.pathname.startsWith(to)
           return (
             <NavLink
@@ -209,6 +160,12 @@ function MobileNav({ module, onPortal }) {
             </NavLink>
           )
         })}
+        {module.mobileSwitch && (
+          <button className="mobile-nav__item" onClick={onPortal} aria-label="切换站点">
+            <span className="mobile-nav__icon" aria-hidden="true">⇄</span>
+            <span>切换</span>
+          </button>
+        )}
       </div>
     </div>
   )
@@ -221,10 +178,10 @@ function AppContent() {
   const openPortal = useCallback(() => setPortalOpen(true), [])
   const location = useLocation()
 
-  const module = location.pathname.startsWith('/dao') ? MODULES.dao : MODULES.yijing
+  const module = siteForPath(location.pathname)
 
   return (
-    <div className={`app-shell ${module.key === 'dao' ? 'app-shell--dao' : ''}`}>
+    <div className="app-shell" data-site={module.key}>
       <Nav module={module} onSearch={openSearch} onPortal={openPortal} />
       <main className="app-main page-fade-in">
         <Suspense fallback={<div className="route-loading" aria-label="加载中">⋯</div>}>
