@@ -19,10 +19,10 @@
 
 ## 1b. 隐藏门户(批次 2,owner 自用)
 
-- 三域名互不可见,owner 自己跨组只能手敲 URL。为省事另设一个**无任何站内链接指向**的隐藏门户:`MASTER_PORTAL_PATH = '/sanjiao'`(可改)。
+- 三域名互不可见,owner 自己跨组只能手敲 URL。为省事另设一个**无任何站内链接指向**的隐藏门户:`MASTER_PORTAL_PATH = '/hexagram'`(可改;取项目代号,别人难联想到是总入口)。
 - `MasterPortalPage`(`src/features/MasterPortalPage.jsx`):列全部三组卡片(易道/儒/佛),`<a href>` 而非 Router Link——跨域需整页加载。
 - `groupEntryHref(group, protocol, hostname)`:当前在生产域名(`HOST_GROUPS[host]` 命中)→ 返回目标组域名的绝对 URL 跨域跳;dev/localhost → 相对路径(`/`、`/fo`、`/ru`)。
-- 域名着陆重定向对 `/sanjiao` **豁免**(否则在 con/bud 域名上会被弹回本组首页),门户得以在任一域名打开。
+- 域名着陆重定向对 `/hexagram` **豁免**(否则在 con/bud 域名上会被弹回本组首页),门户得以在任一域名打开。
 
 ## 2. 佛/儒站脚手架(批次 1)
 
@@ -39,6 +39,6 @@
 
 - [ ] 易道门户 {易,道}+切换;佛/儒 solo 无切换、门户无别组、无跨组链接(双向)
 - [ ] activeGroup 域名优先、路径兜底;HOST_GROUPS 填真实三域名;着陆重定向锁组
-- [ ] 隐藏门户 /sanjiao 列三组卡片、dev 相对 / 生产绝对跨域、着陆重定向豁免
+- [ ] 隐藏门户 /hexagram 列三组卡片、dev 相对 / 生产绝对跨域、着陆重定向豁免
 - [ ] 佛/儒「整理中」首页、主题色、移动栏正常;桥不受影响
 - [ ] test/build/check-data 全过;CLAUDE.md 三组分站说明;tag 推送

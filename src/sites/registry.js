@@ -87,7 +87,7 @@ export const HOST_GROUPS = {
 }
 
 // 隐藏的三教门户路径(仅 owner 知道;无任何可见链接指向它,域名着陆对它豁免)。可改。
-export const MASTER_PORTAL_PATH = '/sanjiao'
+export const MASTER_PORTAL_PATH = '/hexagram'
 
 // 按 prefix 最长匹配定当前站;无前缀者为默认兜底
 export function siteForPath(pathname) {
