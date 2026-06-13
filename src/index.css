@@ -1374,6 +1374,13 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 
 .workbench-methods .seg-btn { font-size: 0.8rem; padding: 5px 12px; }
 
+/* 起卦新手引导 */
+.workbench-howto { font-size: 0.84rem; line-height: 1.75; color: var(--ink-soft); margin: 0; padding: 10px 12px; background: var(--paper); border-left: 2px solid var(--ochre); border-radius: 0 4px 4px 0; }
+.workbench-howto strong { color: var(--ink); font-weight: 600; }
+.workbench-method-group { display: flex; flex-direction: column; gap: 6px; }
+.workbench-method-group__label { font-size: 0.74rem; color: var(--ink-faint); letter-spacing: 0.03em; }
+.workbench-method-hint { font-size: 0.82rem; line-height: 1.7; color: var(--ink-soft); margin: 0; }
+
 /* 经卦选择器 */
 .trigram-picker { display: flex; flex-direction: column; gap: 12px; }
 .trigram-picker__row { display: flex; align-items: center; gap: 10px; }

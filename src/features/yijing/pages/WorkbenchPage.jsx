@@ -29,6 +29,27 @@ const LEARN_LINKS = {
   jinqian: ['/basics/jinqian', '学金钱卦'],
 }
 
+// 起卦六法分两类:已知卦直接输入 / 现场起卦占问;每法一句白话用法(新手引导)
+const METHOD_GROUPS = [
+  {
+    label: '① 已经知道是哪一卦',
+    methods: [
+      ['trigram', '上下卦', '分别点上卦、下卦两个三爻符号，拼成一卦。'],
+      ['line', '逐爻', '从初爻到上爻逐条点阴/阳，调成你要的卦。'],
+      ['search', '检索', '输入卦名、拼音或卦序，直接找到那一卦。'],
+    ],
+  },
+  {
+    label: '② 现场起一卦来占问',
+    methods: [
+      ['meihua', '梅花', '梅花易数：按时间或数字起卦，自带一个动爻。'],
+      ['dayan', '大衍', '大衍揲蓍：模拟四十九根蓍草十八变，古法正宗。'],
+      ['jinqian', '金钱', '金钱卦：六次掷三枚铜钱，背面记数定爻。'],
+    ],
+  },
+]
+const METHOD_HINT = Object.fromEntries(METHOD_GROUPS.flatMap(g => g.methods.map(([k, , hint]) => [k, hint])))
+
 // 时间输入行
 function TimeField({ label, value, onChange, min, max }) {
   return (
@@ -699,11 +720,22 @@ export default function WorkbenchPage() {
       <aside className="workbench-left">
         <div className="workbench-left__inner">
           <div className="workbench-section-title">起卦</div>
-          <div className="seg-control workbench-methods">
-            {METHODS.map(([k, v]) => (
-              <button key={k} className={`seg-btn ${method === k ? 'seg-btn--active' : ''}`} onClick={() => setMethod(k)}>{v}</button>
-            ))}
-          </div>
+          <p className="workbench-howto">
+            这里帮你<strong>推演一卦</strong>：选定一个<strong>本卦</strong>，点卦画上的爻标出<strong>动爻</strong>（也可不标），右侧便自动给出卦变与断法。先在下面挑一种起卦方式——
+          </p>
+          {METHOD_GROUPS.map(group => (
+            <div key={group.label} className="workbench-method-group">
+              <div className="workbench-method-group__label">{group.label}</div>
+              <div className="seg-control workbench-methods">
+                {group.methods.map(([k, v]) => (
+                  <button key={k} className={`seg-btn ${method === k ? 'seg-btn--active' : ''}`} onClick={() => setMethod(k)}>{v}</button>
+                ))}
+              </div>
+            </div>
+          ))}
+          {METHOD_HINT[method] && !(method === 'line' && !hex) && (
+            <p className="workbench-method-hint">{METHOD_HINT[method]}</p>
+          )}
           {learnLink && (
             <div className="workbench-learn-row">
               <Link to={learnLink[0]} className="learn-link">{learnLink[1]} →</Link>
@@ -731,6 +763,9 @@ export default function WorkbenchPage() {
             </div>
           )}
 
+          {method === 'line' && !hex && (
+            <p className="workbench-method-hint text-soft">逐爻是在一卦的基础上微调。先用上面的「上下卦」或「检索」起出一卦，再切回逐爻调整。</p>
+          )}
           {method === 'line' && hex && (
             <div className="line-picker">
               {[6, 5, 4, 3, 2, 1].map(pos => {
