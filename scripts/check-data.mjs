@@ -150,71 +150,68 @@ for (const bad of ['干道', '干卦', '干元', '遯', '無', '當', '見', '�
   if (corpus.includes(bad)) err(`正文残留繁体/误转字: ${bad}`)
 }
 
-// ---------- 4b. 道藏诸经(v6 §1.3;v14 §4:书目从 texts.json 派生,加书免改校验) ----------
-// DAO_BOOKS = [slug, 章数];章数取 texts.json 的 sections(单一来源,与硬编码不再重复)
-const DAO_TEXTS_META = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/dao/texts.json'), 'utf8'))
-const DAO_BOOKS = DAO_TEXTS_META.map((t) => [t.slug, t.sections])
-const daoData = {}
-{
-  let daoCorpus = ''
-  for (const [slug, exact] of DAO_BOOKS) {
-    const file = path.join(ROOT, `src/data/dao/classics/${slug}.json`)
-    if (!fs.existsSync(file)) {
-      err(`缺道藏文件: ${slug}.json`)
-      continue
-    }
+// ---------- 4b. 读经类 corpus(道藏/儒/佛 共用一套;v6 §1.3;v14 §4 书目从 texts.json 派生;v16 §1 泛化) ----------
+// 校验某 corpus:章数=texts.json sections、空段、繁体哨兵、译文/延伸覆盖、authorNote。
+// status=pending 的书尚未录原文,跳过(不要求 classics 文件)。返回 {meta, data} 供 §7.3 锚注校验复用。
+function checkReadingCorpus(label, key, yanyiUnit) {
+  const meta = JSON.parse(fs.readFileSync(path.join(ROOT, `src/data/${key}/texts.json`), 'utf8'))
+  const data = {}
+  let str = ''
+  for (const t of meta) {
+    if (t.status === 'pending') continue
+    const file = path.join(ROOT, `src/data/${key}/classics/${t.slug}.json`)
+    if (!fs.existsSync(file)) { err(`缺${label}文件: ${t.slug}.json`); continue }
     const book = JSON.parse(fs.readFileSync(file, 'utf8'))
-    daoData[slug] = book
-    daoCorpus += JSON.stringify(book)
-    if ((book.chapters?.length ?? 0) !== exact) err(`道藏 ${slug} 章数 ${book.chapters?.length ?? 0},应为 ${exact}`)
+    data[t.slug] = book
+    str += JSON.stringify(book)
+    if ((book.chapters?.length ?? 0) !== t.sections) err(`${label} ${t.slug} 章数 ${book.chapters?.length ?? 0},应为 ${t.sections}`)
     for (const c of book.chapters ?? []) {
-      if (!c.paragraphs?.length) err(`道藏 ${slug} 第 ${c.no} 章无段落`)
-      for (const p of c.paragraphs ?? []) if (!p.original) err(`道藏 ${slug} 第 ${c.no} 章有空段落`)
+      if (!c.paragraphs?.length) err(`${label} ${t.slug} 第 ${c.no} ${t.sectionUnit}无段落`)
+      for (const p of c.paragraphs ?? []) if (!p.original) err(`${label} ${t.slug} 第 ${c.no} ${t.sectionUnit}有空段落`)
     }
+    if (!t.authorNote) err(`${label} ${t.slug} 缺 authorNote 撰人小传`)
   }
   for (const bad of ['遯', '無', '當', '見', '龍', '萬', '隂', '干坤']) {
-    if (daoCorpus.includes(bad)) err(`道藏正文残留繁体/异体/误转字: ${bad}`)
+    if (str.includes(bad)) err(`${label}正文残留繁体/异体/误转字: ${bad}`)
   }
-  // 五部译文覆盖仪表(v7 §0:断点续作依据)
+  // 译文覆盖仪表(断点续作依据)
   const trCover = []
-  for (const [slug] of DAO_BOOKS) {
-    const book = daoData[slug]
+  for (const t of meta) {
+    const book = data[t.slug]
     if (!book) continue
     const total = book.chapters.reduce((n, c) => n + c.paragraphs.length, 0)
     const done = book.chapters.reduce((n, c) => n + c.paragraphs.filter((p) => p.translation).length, 0)
     trCover.push(`${book.title} ${done}/${total}`)
   }
-  infos.push(`道藏译文(段): ${trCover.join(' · ')}`)
+  if (trCover.length) infos.push(`${label}译文(段): ${trCover.join(' · ')}`)
 
-  // 题解撰人小传(v9 §3:authorNote 各部齐备)
-  for (const t of DAO_TEXTS_META) {
-    if (!t.authorNote) err(`道藏 ${t.slug} 缺 authorNote 撰人小传`)
-  }
-
-  // 每章延伸(v13 §2:yanyi.json 人工 registry,脱锚叙述)
-  const yanyiPath = path.join(ROOT, 'src/data/dao/yanyi.json')
+  // 每章/篇延伸(v13 §2:yanyi.json 人工 registry,脱锚叙述)
+  const yanyiPath = path.join(ROOT, `src/data/${key}/yanyi.json`)
   if (fs.existsSync(yanyiPath)) {
     const yanyi = JSON.parse(fs.readFileSync(yanyiPath, 'utf8'))
     const yanyiCover = []
-    for (const [slug, total] of DAO_BOOKS) {
-      const book = daoData[slug]
+    for (const t of meta) {
+      const book = data[t.slug]
       if (!book) continue
-      const chapters = yanyi[slug] || {}
+      const chapters = yanyi[t.slug] || {}
       for (const [no, paras] of Object.entries(chapters)) {
         const n = Number(no)
-        if (!(n >= 1 && n <= total)) err(`道藏延伸 ${slug} 章号越界: ${no}`)
-        if (!Array.isArray(paras) || !paras.length || paras.some((p) => !p)) err(`道藏延伸 ${slug} 第 ${no} 章段落为空`)
+        if (!(n >= 1 && n <= t.sections)) err(`${label}延伸 ${t.slug} 章号越界: ${no}`)
+        if (!Array.isArray(paras) || !paras.length || paras.some((p) => !p)) err(`${label}延伸 ${t.slug} 第 ${no} 章段落为空`)
       }
-      // slug 必属六部(键名合法性)
-      const done = Object.keys(chapters).length
-      yanyiCover.push(`${book.title} ${done}/${total}`)
+      yanyiCover.push(`${book.title} ${Object.keys(chapters).length}/${t.sections}`)
     }
     for (const slug of Object.keys(yanyi)) {
-      if (!DAO_BOOKS.some(([s]) => s === slug)) err(`道藏延伸 slug 非六部: ${slug}`)
+      if (!meta.some((t) => t.slug === slug)) err(`${label}延伸 slug 非书目: ${slug}`)
     }
-    infos.push(`道藏延伸(章): ${yanyiCover.join(' · ')}`)
+    if (yanyiCover.length) infos.push(`${label}延伸(${yanyiUnit}): ${yanyiCover.join(' · ')}`)
   }
+  return { meta, data }
 }
+
+const daoBooks = checkReadingCorpus('道藏', 'dao', '章')
+const ruBooks = checkReadingCorpus('儒典', 'ru', '篇')
+const foBooks = checkReadingCorpus('释典', 'fo', '品')
 
 // ---------- 4c. 筮例(v9 §1) ----------
 {
@@ -461,32 +458,36 @@ if (fs.existsSync(glossaryPath)) {
     classicCover.push(`${bookData.title ?? key} ${covered}/${total}`)
   }
 
-  // 7.3 道藏锚定注疏(v6 §5,禁 ref;v7 起五部循环);易经覆盖行只计易经条目
+  // 7.3 读经类 corpus 锚定注疏(v6 §5 禁 ref;v16 §1 泛化:道藏/儒/佛 共用);易经覆盖行只计易经条目
+  // 桥(qiao/hex)仅道藏侧允许(allowQiao);佛/儒禁桥。
   const yiEntryCount = entryCount
-  {
-    const daoCover = []
-    for (const [slug] of DAO_BOOKS) {
-      const daoFile = path.join(ROOT, `src/data/dao/zhushi-anchored/${slug}.json`)
-      const book = daoData[slug]
-      if (!fs.existsSync(daoFile) || !book) continue
+  function checkCorpusAnchors(label, key, corpus, allowQiao) {
+    const cover = []
+    for (const t of corpus.meta) {
+      const file = path.join(ROOT, `src/data/${key}/zhushi-anchored/${t.slug}.json`)
+      const book = corpus.data[t.slug]
+      if (!fs.existsSync(file) || !book) continue
       const entryBase = entryCount
       let covered = 0
-      const anchored = JSON.parse(fs.readFileSync(daoFile, 'utf8'))
+      const anchored = JSON.parse(fs.readFileSync(file, 'utf8'))
       const byChapter = new Map(book.chapters.map((c) => [String(c.no), c]))
       const total = book.chapters.reduce((n, c) => n + c.paragraphs.length, 0)
       for (const [chNo, paras] of Object.entries(anchored)) {
         const chapter = byChapter.get(chNo)
-        if (!chapter) { err(`dao/zhushi-anchored/${slug}: 章号非法 ${chNo}`); continue }
+        if (!chapter) { err(`${key}/zhushi-anchored/${t.slug}: 章号非法 ${chNo}`); continue }
         for (const [pIdx, entries] of Object.entries(paras)) {
           const text = chapter.paragraphs[Number(pIdx)]?.original
-          if (text == null) { err(`dao/${slug} 第${chNo}章 段下标非法: ${pIdx}`); continue }
-          if (checkEntries(entries, text, `${book.title}·${chNo}章[${pIdx}]`, { forbidRef: true, allowQiao: true })) covered++
+          if (text == null) { err(`${key}/${t.slug} 第${chNo}章 段下标非法: ${pIdx}`); continue }
+          if (checkEntries(entries, text, `${book.title}·${chNo}章[${pIdx}]`, { forbidRef: true, allowQiao })) covered++
         }
       }
-      daoCover.push(`${book.title} ${covered}/${total}(${entryCount - entryBase} 条)`)
+      cover.push(`${book.title} ${covered}/${total}(${entryCount - entryBase} 条)`)
     }
-    if (daoCover.length) infos.push(`道藏注疏(段): ${daoCover.join(' · ')}`)
+    if (cover.length) infos.push(`${label}注疏(段): ${cover.join(' · ')}`)
   }
+  checkCorpusAnchors('道藏', 'dao', daoBooks, true)
+  checkCorpusAnchors('儒典', 'ru', ruBooks, false)
+  checkCorpusAnchors('释典', 'fo', foBooks, false)
 
   // 覆盖率报告(信息项,断点续作的进度仪表;分母为可注单元总数)
   const xiaoxiangTotal = 64 * 6 + 2

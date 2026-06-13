@@ -12,6 +12,8 @@
     "data:fetch": "node scripts/fetch-data.mjs",
     "check-data": "node scripts/check-data.mjs",
     "data:fetch-dao": "node scripts/fetch-dao.mjs",
+    "data:fetch-ru": "node scripts/fetch-corpus.mjs ru",
+    "data:fetch-fo": "node scripts/fetch-corpus.mjs fo",
     "data:fetch-shili": "node scripts/fetch-shili.mjs"
   },
   "dependencies": {

@@ -36,6 +36,8 @@ const DaoReadPage = lazy(() => import('./features/dao/pages/DaoReadPage.jsx'))
 // Pages — 释典 / 儒典(v15 脚手架)
 const FoHomePage = lazy(() => import('./features/fo/pages/FoHomePage.jsx'))
 const RuHomePage = lazy(() => import('./features/ru/pages/RuHomePage.jsx'))
+const CorpusTextPage = lazy(() => import('./features/reader/CorpusTextPage.jsx'))
+const CorpusReadPage = lazy(() => import('./features/reader/CorpusReadPage.jsx'))
 const MasterPortalPage = lazy(() => import('./features/MasterPortalPage.jsx'))
 
 // 站点注册迁至 src/sites/registry.js(v14):平台读 manifest,加站零改平台代码
@@ -235,7 +237,11 @@ function AppContent() {
           <Route path="/dao/:slug/:chapter" element={<DaoReadPage />} />
           {/* 释典 / 儒典(v15:经文阅读路由待内容期接 ClassicReader) */}
           <Route path="/fo" element={<FoHomePage />} />
+          <Route path="/fo/:slug" element={<CorpusTextPage corpus="fo" />} />
+          <Route path="/fo/:slug/:chapter" element={<CorpusReadPage corpus="fo" />} />
           <Route path="/ru" element={<RuHomePage />} />
+          <Route path="/ru/:slug" element={<CorpusTextPage corpus="ru" />} />
+          <Route path="/ru/:slug/:chapter" element={<CorpusReadPage corpus="ru" />} />
           {/* 隐藏的三教门户(v15):仅 owner 经秘密路径访问,无站内链接指向 */}
           <Route path={MASTER_PORTAL_PATH} element={<MasterPortalPage />} />
           <Route path="*" element={
