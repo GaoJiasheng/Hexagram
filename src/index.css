@@ -1915,13 +1915,29 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 
 .div-item {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+  gap: 8px;
   padding: 12px 14px;
   background: var(--paper-raised);
   border: 1px solid var(--line);
   border-radius: 4px;
 }
+.div-item__row { display: flex; align-items: center; gap: 12px; }
+
+/* 验占回填(v10 §2) */
+.div-stats { font-size: 0.85rem; margin: 0 0 8px; }
+.div-outcome { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 0.82rem; }
+.div-outcome__badge { padding: 0 8px; border-radius: 3px; border: 1px solid currentColor; font-size: 0.74rem; }
+.div-outcome__badge--ying { color: var(--cinnabar); }
+.div-outcome__badge--partial { color: var(--ochre); }
+.div-outcome__badge--bu { color: var(--ink-soft); }
+.div-outcome__badge--pending { color: var(--ochre); border-style: dashed; }
+.div-outcome__note { color: var(--ink-soft); }
+.div-outcome__input { flex: 1; min-width: 160px; padding: 4px 8px; font: inherit; font-size: 0.82rem; background: var(--paper); border: 1px solid var(--line); border-radius: 4px; color: var(--ink); }
+
+/* 筮例重演(v10 §3) */
+.shili-cast__replay { font-size: 0.78rem; color: var(--cinnabar); text-decoration: none; border: 1px dashed currentColor; border-radius: 3px; padding: 1px 8px; }
+.shili-cast__replay:hover { border-style: solid; }
 
 .div-item__main {
   flex: 1;

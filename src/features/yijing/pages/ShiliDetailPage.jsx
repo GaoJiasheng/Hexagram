@@ -35,6 +35,12 @@ function CastFigure({ cast }) {
           </>
         )}
       </div>
+      <Link
+        to={`/workbench?gua=${ben.id}${moving.length ? '&dong=' + moving.join(',') : ''}`}
+        className="shili-cast__replay"
+      >
+        在工作台重演 →
+      </Link>
     </div>
   )
 }

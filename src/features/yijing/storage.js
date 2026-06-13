@@ -73,6 +73,14 @@ export function deleteDivination(id) {
   set('divinations', getDivinations().filter(d => d.id !== id))
 }
 export function saveDivinations(list) { set('divinations', list) }
+// 验占回填(v10 §2):outcome = { verdict: 'ying'|'partial'|'bu', note, recordedAt };旧条目无此字段视同待验
+export function setDivinationOutcome(id, verdict, note) {
+  const list = getDivinations()
+  const d = list.find(x => x.id === id)
+  if (!d) return
+  d.outcome = verdict ? { verdict, note: note || '', recordedAt: new Date().toISOString() } : null
+  set('divinations', list)
+}
 
 // ── Reading progress ──────────────────────────────────────
 export function getReadingProgress() { return get('reading', {}) }

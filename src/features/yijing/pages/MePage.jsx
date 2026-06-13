@@ -2,13 +2,70 @@ import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import HexagramCard from '../components/HexagramCard.jsx'
 import EmptyState from '../components/EmptyState.jsx'
-import { getBookmarks, getNotes, getDivinations, deleteDivination, saveDivinations, exportData, importData, clearAllData, saveSettings, getProgress } from '../storage.js'
+import { getBookmarks, getNotes, getDivinations, deleteDivination, saveDivinations, setDivinationOutcome, exportData, importData, clearAllData, saveSettings, getProgress } from '../storage.js'
 import { getHexagram, hexagramById } from '../data.js'
 import { useSettings } from '../SettingsContext.jsx'
 import { lineTitle } from '../engine/transforms.js'
 import { LEARN_TOPICS, topicStatus } from '../learnTopics.js'
 
 const TABS = ['收藏', '笔记', '推演历史', '研习', '设置']
+
+// 验占结论(v10 §2)
+const VERDICTS = [
+  ['ying', '应验'],
+  ['partial', '部分'],
+  ['bu', '未应'],
+]
+const VERDICT_LABEL = Object.fromEntries(VERDICTS)
+
+// 单条占例的验占回填编辑器
+function OutcomeEditor({ div, onSaved }) {
+  const [editing, setEditing] = useState(false)
+  const [verdict, setVerdict] = useState(div.outcome?.verdict || '')
+  const [note, setNote] = useState(div.outcome?.note || '')
+
+  function save() {
+    if (!verdict) return
+    setDivinationOutcome(div.id, verdict, note.trim())
+    setEditing(false)
+    onSaved()
+  }
+
+  if (!editing) {
+    return div.outcome ? (
+      <div className="div-outcome">
+        <span className={`div-outcome__badge div-outcome__badge--${div.outcome.verdict}`}>{VERDICT_LABEL[div.outcome.verdict]}</span>
+        {div.outcome.note && <span className="div-outcome__note">{div.outcome.note}</span>}
+        <button className="btn-text" onClick={() => setEditing(true)}>改</button>
+      </div>
+    ) : (
+      <div className="div-outcome">
+        <span className="div-outcome__badge div-outcome__badge--pending">待验</span>
+        <button className="btn-text" onClick={() => setEditing(true)}>回填应验</button>
+      </div>
+    )
+  }
+
+  return (
+    <div className="div-outcome div-outcome--editing">
+      <div className="seg-control">
+        {VERDICTS.map(([v, l]) => (
+          <button key={v} className={`seg-btn ${verdict === v ? 'seg-btn--active' : ''}`} onClick={() => setVerdict(v)}>{l}</button>
+        ))}
+      </div>
+      <input
+        className="div-outcome__input"
+        value={note}
+        onChange={e => setNote(e.target.value)}
+        onKeyDown={e => { if (e.key === 'Enter') save() }}
+        placeholder="一句复盘(可空)"
+        maxLength={60}
+      />
+      <button className="btn-text" onClick={save} disabled={!verdict}>存</button>
+      <button className="btn-text" onClick={() => setEditing(false)}>取消</button>
+    </div>
+  )
+}
 
 export default function MePage() {
   const [tab, setTab] = useState('收藏')
@@ -132,28 +189,42 @@ export default function MePage() {
             )}
             {divinations.length === 0
               ? <EmptyState icon="☲" text="还没有推演记录，去工作台推演一卦" action={{ label: '前往工作台', onClick: () => navigate('/workbench') }} />
-              : <div className="div-list">
-                  {divinations.map(d => {
-                    const hex = getHexagram(d.gua)
-                    const bianHex = d.bianGua ? getHexagram(d.bianGua) : null
-                    const dongLabels = (d.dong || []).map(p => lineTitle(p, hex?.binary?.[p - 1] === '1')).join('·')
-                    return (
-                      <div key={d.id} className="div-item">
-                        <Link
-                          to={`/workbench?gua=${d.gua}${d.dong?.length ? '&dong=' + d.dong.join(',') : ''}`}
-                          className="div-item__main"
-                        >
-                          <span className="div-item__name">{hex?.name || '?'}</span>
-                          {d.dong?.length > 0 && <span className="div-item__dong">·动{dongLabels}·</span>}
-                          {bianHex && <span className="div-item__bian">变{bianHex.name}</span>}
-                          {d.note && <span className="div-item__note">{d.note}</span>}
-                          <span className="div-item__date text-faint">{d.createdAt?.slice(0, 10)}</span>
-                        </Link>
-                        <button className="btn-danger" onClick={() => handleDelete(d.id)} aria-label="删除">删</button>
-                      </div>
-                    )
-                  })}
-                </div>
+              : (() => {
+                  const verified = divinations.filter(d => d.outcome)
+                  const count = v => verified.filter(d => d.outcome.verdict === v).length
+                  return (
+                    <div className="div-list">
+                      <p className="div-stats text-soft">
+                        {divinations.length} 例
+                        {verified.length > 0 && ` · 已验 ${verified.length}(应 ${count('ying')} · 部分 ${count('partial')} · 未应 ${count('bu')})`}
+                        {verified.length < divinations.length && ` · 待验 ${divinations.length - verified.length}`}
+                      </p>
+                      {divinations.map(d => {
+                        const hex = getHexagram(d.gua)
+                        const bianHex = d.bianGua ? getHexagram(d.bianGua) : null
+                        const dongLabels = (d.dong || []).map(p => lineTitle(p, hex?.binary?.[p - 1] === '1')).join('·')
+                        return (
+                          <div key={d.id} className="div-item">
+                            <div className="div-item__row">
+                              <Link
+                                to={`/workbench?gua=${d.gua}${d.dong?.length ? '&dong=' + d.dong.join(',') : ''}`}
+                                className="div-item__main"
+                              >
+                                <span className="div-item__name">{hex?.name || '?'}</span>
+                                {d.dong?.length > 0 && <span className="div-item__dong">·动{dongLabels}·</span>}
+                                {bianHex && <span className="div-item__bian">变{bianHex.name}</span>}
+                                {d.note && <span className="div-item__note">{d.note}</span>}
+                                <span className="div-item__date text-faint">{d.createdAt?.slice(0, 10)}</span>
+                              </Link>
+                              <button className="btn-danger" onClick={() => handleDelete(d.id)} aria-label="删除">删</button>
+                            </div>
+                            <OutcomeEditor div={d} onSaved={refreshDivinations} />
+                          </div>
+                        )
+                      })}
+                    </div>
+                  )
+                })()
             }
           </div>
         )}
