@@ -220,6 +220,10 @@ const daoBooks = checkReadingCorpus('道藏', 'dao', '章')
 const ruBooks = checkReadingCorpus('儒典', 'ru', '篇')
 const foBooks = checkReadingCorpus('释典', 'fo', '品')
 const xinBooks = checkReadingCorpus('心学', 'xin', '卷')
+const faBooks = checkReadingCorpus('法家', 'fa', '篇')
+const moBooks = checkReadingCorpus('墨家', 'mo', '篇')
+const bingBooks = checkReadingCorpus('兵家', 'bing', '篇')
+const zongBooks = checkReadingCorpus('纵横', 'zong', '篇')
 
 // ---------- 4c. 筮例(v9 §1) ----------
 {
@@ -497,6 +501,10 @@ if (fs.existsSync(glossaryPath)) {
   checkCorpusAnchors('儒典', 'ru', ruBooks, false)
   checkCorpusAnchors('释典', 'fo', foBooks, false)
   checkCorpusAnchors('心学', 'xin', xinBooks, false)
+  checkCorpusAnchors('法家', 'fa', faBooks, false)
+  checkCorpusAnchors('墨家', 'mo', moBooks, false)
+  checkCorpusAnchors('兵家', 'bing', bingBooks, false)
+  checkCorpusAnchors('纵横', 'zong', zongBooks, false)
 
   // 覆盖率报告(信息项,断点续作的进度仪表;分母为可注单元总数)
   const xiaoxiangTotal = 64 * 6 + 2

@@ -37,6 +37,11 @@ const DaoReadPage = lazy(() => import('./features/dao/pages/DaoReadPage.jsx'))
 const FoHomePage = lazy(() => import('./features/fo/pages/FoHomePage.jsx'))
 const RuHomePage = lazy(() => import('./features/ru/pages/RuHomePage.jsx'))
 const XinHomePage = lazy(() => import('./features/xin/pages/XinHomePage.jsx'))
+// Pages — 诸子百家:法/墨/兵/纵横(v18 脚手架)
+const FaHomePage = lazy(() => import('./features/fa/pages/FaHomePage.jsx'))
+const MoHomePage = lazy(() => import('./features/mo/pages/MoHomePage.jsx'))
+const BingHomePage = lazy(() => import('./features/bing/pages/BingHomePage.jsx'))
+const ZongHomePage = lazy(() => import('./features/zong/pages/ZongHomePage.jsx'))
 const CorpusTextPage = lazy(() => import('./features/reader/CorpusTextPage.jsx'))
 const CorpusReadPage = lazy(() => import('./features/reader/CorpusReadPage.jsx'))
 const MasterPortalPage = lazy(() => import('./features/MasterPortalPage.jsx'))
@@ -246,6 +251,18 @@ function AppContent() {
           <Route path="/xin" element={<XinHomePage />} />
           <Route path="/xin/:slug" element={<CorpusTextPage corpus="xin" />} />
           <Route path="/xin/:slug/:chapter" element={<CorpusReadPage corpus="xin" />} />
+          <Route path="/fa" element={<FaHomePage />} />
+          <Route path="/fa/:slug" element={<CorpusTextPage corpus="fa" />} />
+          <Route path="/fa/:slug/:chapter" element={<CorpusReadPage corpus="fa" />} />
+          <Route path="/mo" element={<MoHomePage />} />
+          <Route path="/mo/:slug" element={<CorpusTextPage corpus="mo" />} />
+          <Route path="/mo/:slug/:chapter" element={<CorpusReadPage corpus="mo" />} />
+          <Route path="/bing" element={<BingHomePage />} />
+          <Route path="/bing/:slug" element={<CorpusTextPage corpus="bing" />} />
+          <Route path="/bing/:slug/:chapter" element={<CorpusReadPage corpus="bing" />} />
+          <Route path="/zong" element={<ZongHomePage />} />
+          <Route path="/zong/:slug" element={<CorpusTextPage corpus="zong" />} />
+          <Route path="/zong/:slug/:chapter" element={<CorpusReadPage corpus="zong" />} />
           {/* 隐藏的三教门户(v15):仅 owner 经秘密路径访问,无站内链接指向 */}
           <Route path={MASTER_PORTAL_PATH} element={<MasterPortalPage />} />
           <Route path="*" element={

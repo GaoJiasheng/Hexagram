@@ -14,6 +14,10 @@
   --buddha: #9c7b4d;
   --confucian: #4f6f52;
   --xinxue: #6b5b8c;
+  --legalist: #54596a;
+  --mohist: #38525c;
+  --military: #7a4434;
+  --zongheng: #7e6a28;
   --ochre: #b08d57;
   --line: #e4ddce;
   --font-serif: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
@@ -35,6 +39,10 @@
   --buddha: #c4a06a;
   --confucian: #84a888;
   --xinxue: #9b8bc0;
+  --legalist: #9fa6ba;
+  --mohist: #84a8b3;
+  --military: #c2876f;
+  --zongheng: #c2a955;
   --ochre: #c2a36e;
   --line: #37322a;
 }
@@ -52,6 +60,10 @@
     --buddha: #c4a06a;
     --confucian: #84a888;
   --xinxue: #9b8bc0;
+    --legalist: #9fa6ba;
+    --mohist: #84a8b3;
+    --military: #c2876f;
+    --zongheng: #c2a955;
     --ochre: #c2a36e;
     --line: #37322a;
   }
@@ -2804,6 +2816,10 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 [data-site="fo"] { --cinnabar: var(--buddha); --cinnabar-bg: color-mix(in srgb, var(--buddha) 9%, transparent); }
 [data-site="ru"] { --cinnabar: var(--confucian); --cinnabar-bg: color-mix(in srgb, var(--confucian) 9%, transparent); }
 [data-site="xin"] { --cinnabar: var(--xinxue); --cinnabar-bg: color-mix(in srgb, var(--xinxue) 9%, transparent); }
+[data-site="fa"] { --cinnabar: var(--legalist); --cinnabar-bg: color-mix(in srgb, var(--legalist) 9%, transparent); }
+[data-site="mo"] { --cinnabar: var(--mohist); --cinnabar-bg: color-mix(in srgb, var(--mohist) 9%, transparent); }
+[data-site="bing"] { --cinnabar: var(--military); --cinnabar-bg: color-mix(in srgb, var(--military) 9%, transparent); }
+[data-site="zong"] { --cinnabar: var(--zongheng); --cinnabar-bg: color-mix(in srgb, var(--zongheng) 9%, transparent); }
 
 /* 书架·整理中卡片(v15) */
 .dao-book--pending { opacity: 0.72; cursor: default; }

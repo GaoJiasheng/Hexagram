@@ -5,12 +5,16 @@
 import foTexts from '../../data/fo/texts.json'
 import ruTexts from '../../data/ru/texts.json'
 import xinTexts from '../../data/xin/texts.json'
+import faTexts from '../../data/fa/texts.json'
+import moTexts from '../../data/mo/texts.json'
+import bingTexts from '../../data/bing/texts.json'
+import zongTexts from '../../data/zong/texts.json'
 
-const TEXTS = { fo: foTexts, ru: ruTexts, xin: xinTexts }
+const TEXTS = { fo: foTexts, ru: ruTexts, xin: xinTexts, fa: faTexts, mo: moTexts, bing: bingTexts, zong: zongTexts }
 
-const classicsLoaders = import.meta.glob('../../data/{fo,ru,xin}/classics/*.json')
-const anchoredMods = import.meta.glob('../../data/{fo,ru,xin}/zhushi-anchored/*.json', { eager: true })
-const yanyiMods = import.meta.glob('../../data/{fo,ru,xin}/yanyi.json', { eager: true })
+const classicsLoaders = import.meta.glob('../../data/{fo,ru,xin,fa,mo,bing,zong}/classics/*.json')
+const anchoredMods = import.meta.glob('../../data/{fo,ru,xin,fa,mo,bing,zong}/zhushi-anchored/*.json', { eager: true })
+const yanyiMods = import.meta.glob('../../data/{fo,ru,xin,fa,mo,bing,zong}/yanyi.json', { eager: true })
 
 const cache = {}
 
