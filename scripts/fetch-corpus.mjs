@@ -76,6 +76,30 @@ function stripHeaderBlock(wikitext) {
   return wikitext.slice(0, start) + wikitext.slice(i)
 }
 
+// 战国策(士礼居叢書本)校注模板 {{*|姚本…}} / {{*|鮑本…}} / {{*|補曰…}}:整段剔除。
+// 括号配平扫描(容嵌套 {{gap}} 等与跨行),只去校注、保经文。仅含 `{{*` 的书受影响,他经无此标记。
+function stripStarTemplates(wikitext) {
+  if (!wikitext.includes('{{*')) return wikitext
+  let out = ''
+  let i = 0
+  while (i < wikitext.length) {
+    if (wikitext.startsWith('{{*', i)) {
+      let depth = 0
+      let j = i
+      while (j < wikitext.length) {
+        if (wikitext.startsWith('{{', j)) { depth++; j += 2; continue }
+        if (wikitext.startsWith('}}', j)) { depth--; j += 2; if (depth === 0) break; continue }
+        j++
+      }
+      i = j
+      continue
+    }
+    out += wikitext[i]
+    i++
+  }
+  return out
+}
+
 // 行清洗 → 简体正文;若为导航/标题/标记/空行返回 null
 function cleanLine(raw) {
   if (/^\*+\s*\[\[/.test(raw.trim())) return null          // *[[…]] 导航链接行
@@ -89,7 +113,7 @@ function cleanLine(raw) {
 // 单页 → 段落数组(各源页即一章)
 function parsePageParas(wikitext, warnings, pageName) {
   const paras = []
-  for (const raw of stripHeaderBlock(wikitext).split('\n')) {
+  for (const raw of stripHeaderBlock(stripStarTemplates(wikitext)).split('\n')) {
     if (STOP_RE.test(raw)) break                       // 页尾诵读块,其后不再有正文
     if (/^=+.*=+$/.test(raw.trim())) continue          // == 标题 == 行
     const simp = cleanLine(raw)
@@ -104,11 +128,12 @@ function parsePageParas(wikitext, warnings, pageName) {
 function parsePageChapters(wikitext, warnings, pageName) {
   const chapters = []
   let cur = null
-  for (const raw of stripHeaderBlock(wikitext).split('\n')) {
+  for (const raw of stripHeaderBlock(stripStarTemplates(wikitext)).split('\n')) {
     if (STOP_RE.test(raw)) break
     const h = raw.trim().match(/^=+\s*(.+?)\s*=+$/)
     if (h) {
-      const title = t2s(clean(h[1]).replace(/『[^』]*』/g, '').replace(/「[^」]*」/g, '')).trim()
+      const rawTitle = h[1].replace(/<ref[^>]*>[\s\S]*?<\/ref>/gi, '').replace(/<ref[^>]*\/>/gi, '')  // 剔标题内 <ref> 校勘
+      const title = t2s(clean(rawTitle).replace(/『[^』]*』/g, '').replace(/「[^」]*」/g, '')).trim()
       if (!title || HEADING_SKIP_RE.test(title)) { cur = null; continue }
       cur = { title, paragraphs: [] }
       chapters.push(cur)
@@ -139,6 +164,16 @@ async function main() {
   for (const book of BOOKS) {
     const single = book.pages.length === 1 && !book.splitHeadings
     const chapters = []
+    // 摘录式(战国策):跨卷切章后,按 pickHeadings 顺序挑选指定章并改用友好标题(v18 §1 纵横)
+    if (book.pickHeadings) {
+      const all = book.pages.flatMap((p) => parsePageChapters(pages[p], warnings, p).map((c) => ({ ...c, page: p })))
+      for (const pick of book.pickHeadings) {
+        const matched = all.filter((c) => c.title.includes(pick.match) && (!pick.page || c.page === pick.page))
+        if (!matched.length) { errors.push(`${book.title}: 未找到摘录章「${pick.match}」`); continue }
+        if (matched.length > 1) warnings.push(`${book.title}: 摘录「${pick.match}」命中 ${matched.length} 章,取第一`)
+        chapters.push({ no: chapters.length + 1, title: pick.title, paragraphs: matched[0].paragraphs })
+      }
+    } else
     for (const page of book.pages) {
       if (book.splitHeadings) {
         // 单页按标题切多章(金刚经 32 分)
