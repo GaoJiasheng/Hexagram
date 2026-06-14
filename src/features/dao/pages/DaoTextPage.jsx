@@ -1,15 +1,28 @@
+import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import EmptyState from '../../yijing/components/EmptyState.jsx'
 import texts from '../../../data/dao/texts.json'
 import { usePageTitle } from '../../yijing/hooks/usePageTitle.js'
+import { loadDaoText } from '../data.js'
+import { tocTitle } from '../../reader/tocTitle.js'
 import DaoSinglePage from './DaoSinglePage.jsx'
 
 // 文本页 — 题解 + 章节入口(v4 §3.6 框架;v6 §3 内容期:status≠pending 时网格即阅读入口)
+// 篇目优先显示各章标题(逍遥游、大易总叙章第一…);道德经为纯序数(一章/二章)回退序号格。
 // 短经(singlePage)走单页阅读器(v13 §1):题解+全文一页铺开
 export default function DaoTextPage() {
   const { slug } = useParams()
   const text = texts.find(t => t.slug === slug)
   usePageTitle(text?.title, '观道')
+  const [chapters, setChapters] = useState(null)
+
+  const readable = !!text && !text.singlePage && text.status !== 'pending'
+  useEffect(() => {
+    let alive = true
+    if (readable) loadDaoText(slug).then((b) => { if (alive) setChapters(b?.chapters || null) })
+    else setChapters(null)
+    return () => { alive = false }
+  }, [slug, readable])
 
   if (text?.singlePage && text.status !== 'pending') {
     return <DaoSinglePage slug={slug} text={text} />
@@ -51,6 +64,20 @@ export default function DaoTextPage() {
               ))}
             </div>
             <p className="text-faint dao-section-note">经文整理中——录入后此处即为{text.sectionUnit}节阅读入口。</p>
+          </>
+        ) : chapters && chapters.length && chapters.some((c) => tocTitle(c.title)) ? (
+          <>
+            <div className="dao-section-grid dao-section-grid--titled" aria-label={`共 ${text.sections} ${text.sectionUnit}`}>
+              {chapters.map((c) => (
+                <Link key={c.no} to={`/dao/${text.slug}/${c.no}`} className="dao-section-cell dao-section-cell--link dao-section-cell--titled">
+                  <span className="dao-section-cell__no">{c.no}</span>
+                  <span className="dao-section-cell__title">{tocTitle(c.title)}</span>
+                </Link>
+              ))}
+            </div>
+            {text.status === 'partial' && (
+              <p className="text-faint dao-section-note">原文已录入，白话译注整理中。</p>
+            )}
           </>
         ) : (
           <>

@@ -4,6 +4,7 @@ import EmptyState from '../yijing/components/EmptyState.jsx'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import { SITE_MAP } from '../../sites/registry.js'
 import { getMeta, loadText } from './corpus.js'
+import { tocTitle } from './tocTitle.js'
 import CorpusSinglePage from './CorpusSinglePage.jsx'
 
 // 通用文本页(v16 §1)——题解 + 章节入口;短经(singlePage)走单页阅读器。
@@ -39,7 +40,7 @@ export default function CorpusTextPage({ corpus }) {
     )
   }
 
-  const titled = chapters && chapters.length && chapters.some((c) => c.title)
+  const titled = chapters && chapters.length && chapters.some((c) => tocTitle(c.title))
 
   return (
     <div className="dao-text-page">
@@ -72,7 +73,7 @@ export default function CorpusTextPage({ corpus }) {
             {chapters.map((c) => (
               <Link key={c.no} to={`${site.home}/${slug}/${c.no}`} className="dao-section-cell dao-section-cell--link dao-section-cell--titled">
                 <span className="dao-section-cell__no">{c.no}</span>
-                <span className="dao-section-cell__title">{c.title || `第${c.no}${text.sectionUnit}`}</span>
+                <span className="dao-section-cell__title">{tocTitle(c.title) || `第${c.no}${text.sectionUnit}`}</span>
               </Link>
             ))}
           </div>
