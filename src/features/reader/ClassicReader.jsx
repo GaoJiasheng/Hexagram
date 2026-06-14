@@ -1,7 +1,8 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import ClassicText from '../yijing/components/ClassicText.jsx'
 import { useSettings } from '../yijing/SettingsContext.jsx'
+import { getCorpusMarks, toggleCorpusMark, getCorpusNotes, saveCorpusNote } from '../yijing/storage.js'
 
 const FONT_SCALES = [0.9, 1, 1.15]
 
@@ -49,12 +50,27 @@ export default function ClassicReader({
   paraLabel = () => null,
   header = null,
   sectionUnit = '章',
+  markCtx = null,   // {corpus, slug}:启用读经站段落收藏/笔记(Tier 2);null 则关闭
 }) {
   const { settings, setSettings } = useSettings()
   const { hash } = useLocation()
   const navigate = useNavigate()
   const single = mode === 'single'
   const multi = chapters.length > 1
+
+  // 段落收藏 / 笔记(仅 markCtx 存在时)
+  const [marks, setMarks] = useState(() => (markCtx ? getCorpusMarks() : {}))
+  const [notes, setNotes] = useState(() => (markCtx ? getCorpusNotes() : {}))
+  const [editing, setEditing] = useState(null)
+  const [draft, setDraft] = useState('')
+  function toggleMark(no, i, snippet) {
+    setMarks({ ...toggleCorpusMark(markCtx.corpus, markCtx.slug, no, i, snippet) })
+  }
+  function openEdit(key, text) { setEditing(key); setDraft(text) }
+  function saveNote(no, i, snippet) {
+    setNotes({ ...saveCorpusNote(markCtx.corpus, markCtx.slug, no, i, draft, snippet) })
+    setEditing(null)
+  }
 
   // 单页:hash 锚点定位(目录点击跳章);rAF 等布局完成再定位,长经更稳
   useEffect(() => {
@@ -137,11 +153,62 @@ export default function ClassicReader({
   const Para = (no, p, i) => {
     const label = paraLabel(no, i)
     const text = <ClassicText original={p.original} translation={p.translation} anchors={getAnchors(no, i)} />
-    if (!label) return <ClassicText key={i} original={p.original} translation={p.translation} anchors={getAnchors(no, i)} />
+    if (!markCtx) {
+      if (!label) return <ClassicText key={i} original={p.original} translation={p.translation} anchors={getAnchors(no, i)} />
+      return (
+        <div key={i} className="read-para">
+          <span className="read-para__num">{label}</span>
+          <div className="read-para__body">{text}</div>
+        </div>
+      )
+    }
+    // 读经站:每段可收藏(★)/ 笔记(✎)
+    const key = `${markCtx.corpus}:${markCtx.slug}:${no}:${i}`
+    const marked = !!marks[key]
+    const note = notes[key]
+    const isEditing = editing === key
     return (
-      <div key={i} className="read-para">
-        <span className="read-para__num">{label}</span>
-        <div className="read-para__body">{text}</div>
+      <div key={i} className={`read-para read-para--markable ${marked ? 'read-para--marked' : ''}`}>
+        {label && <span className="read-para__num">{label}</span>}
+        <div className="read-para__body">
+          {text}
+          {note && !isEditing && (
+            <button className="para-note" onClick={() => openEdit(key, note.text)} title="点击编辑批注">
+              <span className="para-note__icon" aria-hidden="true">✎</span>{note.text}
+            </button>
+          )}
+          {isEditing && (
+            <div className="para-note-editor">
+              <textarea
+                className="para-note-editor__input"
+                value={draft}
+                onChange={(e) => setDraft(e.target.value)}
+                placeholder="写点批注…"
+                rows={3}
+                autoFocus
+              />
+              <div className="para-note-editor__actions">
+                <button className="btn btn--secondary" onClick={() => saveNote(no, i, p.original)}>保存</button>
+                <button className="btn btn--ghost" onClick={() => setEditing(null)}>取消</button>
+              </div>
+            </div>
+          )}
+        </div>
+        <div className="para-actions">
+          <button
+            className={`para-act ${marked ? 'para-act--on' : ''}`}
+            onClick={() => toggleMark(no, i, p.original)}
+            aria-label={marked ? '取消收藏' : '收藏此段'}
+            aria-pressed={marked}
+            title={marked ? '取消收藏' : '收藏此段'}
+          >★</button>
+          <button
+            className={`para-act ${note ? 'para-act--on' : ''}`}
+            onClick={() => openEdit(key, note?.text || '')}
+            aria-label="批注"
+            title="写批注"
+          >✎</button>
+        </div>
       </div>
     )
   }

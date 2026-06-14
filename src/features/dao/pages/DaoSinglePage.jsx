@@ -53,6 +53,7 @@ export default function DaoSinglePage({ slug, text }) {
       anchorId={(no) => `dao-ch-${no}`}
       getAnchors={(no, i) => getDaoAnchors(slug, no, i)}
       renderYanyi={(no) => <YanyiBlock slug={slug} chapter={no} />}
+      markCtx={{ corpus: 'dao', slug }}
       header={header}
     />
   )

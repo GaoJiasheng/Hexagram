@@ -1801,6 +1801,24 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .read-para__body { flex: 1 1 auto; min-width: 0; }
 @media (max-width: 640px) { .read-para { gap: 8px; } .read-para__num { flex-basis: 1.4em; } }
 
+/* 读经站段落收藏/笔记(Tier 2) */
+.read-para--markable { position: relative; }
+.read-para--marked .read-para__body { box-shadow: inset 2px 0 0 var(--cinnabar); padding-left: 10px; }
+.para-actions { flex: 0 0 auto; display: flex; gap: 4px; align-self: flex-start; opacity: 0; transition: opacity 0.15s; }
+.read-para--markable:hover .para-actions, .read-para--markable:focus-within .para-actions, .read-para--marked .para-actions { opacity: 1; }
+@media (hover: none) { .para-actions { opacity: 0.55; } }
+.para-act { width: 26px; height: 26px; flex: none; border: 1px solid var(--line); border-radius: 5px; background: var(--paper-raised); color: var(--ink-faint); cursor: pointer; font-size: 0.82rem; line-height: 1; display: inline-flex; align-items: center; justify-content: center; }
+.para-act:hover { border-color: var(--cinnabar); color: var(--cinnabar); }
+.para-act--on { color: var(--cinnabar); border-color: var(--cinnabar); background: var(--cinnabar-bg); }
+.para-note { display: block; width: 100%; text-align: left; margin-top: 10px; padding: 8px 12px; background: var(--cinnabar-bg); border: none; border-left: 2px solid var(--cinnabar); border-radius: 0 4px 4px 0; font-size: 0.85rem; line-height: 1.6; color: var(--ink-soft); cursor: pointer; font-family: var(--font-serif); }
+.para-note__icon { color: var(--cinnabar); margin-right: 6px; }
+.para-note-editor { margin-top: 10px; }
+.para-note-editor__input { width: 100%; border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; font-family: var(--font-serif); font-size: 0.9rem; line-height: 1.6; resize: vertical; background: var(--paper); color: var(--ink); }
+.para-note-editor__actions { display: flex; gap: 8px; margin-top: 6px; }
+.para-note-editor__actions .btn { padding: 5px 16px; font-size: 0.85rem; }
+.btn--ghost { background: transparent; border-color: transparent; color: var(--ink-soft); }
+.btn--ghost:hover { color: var(--ink); background: var(--paper-raised); }
+
 .read-toolbar {
   display: flex;
   justify-content: flex-end;
@@ -1886,6 +1904,19 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .chapter-notes__item { display: flex; gap: 12px; margin-bottom: 10px; font-size: 0.85rem; line-height: 1.65; }
 .chapter-notes__term { flex: 0 0 auto; min-width: 3.2em; color: var(--cinnabar); font-family: var(--font-serif); font-weight: 600; margin: 0; }
 .chapter-notes__note { flex: 1; min-width: 0; margin: 0; color: var(--ink-soft); }
+
+/* 读经站「我的」(Tier 2) */
+.corpus-me { max-width: var(--read-w); margin: 0 auto; }
+.corpus-me__empty { padding: 36px 0; text-align: center; line-height: 1.7; }
+.corpus-me__section { margin-top: 28px; }
+.corpus-me__title { font-size: 0.95rem; color: var(--ink-soft); margin: 0 0 12px; font-weight: 600; }
+.corpus-me__list { display: flex; flex-direction: column; gap: 8px; }
+.corpus-me__row { display: flex; flex-direction: column; gap: 4px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper-raised); text-decoration: none; transition: border-color 0.15s; }
+.corpus-me__row:hover { border-color: var(--cinnabar); }
+.corpus-me__book { font-family: var(--font-serif); font-size: 1rem; color: var(--ink); }
+.corpus-me__snippet { font-family: var(--font-serif); font-size: 0.92rem; color: var(--ink); line-height: 1.6; }
+.corpus-me__note-text { font-size: 0.9rem; color: var(--ink); line-height: 1.6; }
+.corpus-me__meta { font-size: 0.78rem; color: var(--cinnabar); }
 
 /* ── Basics Page ────────────────────────────────────────────── */
 

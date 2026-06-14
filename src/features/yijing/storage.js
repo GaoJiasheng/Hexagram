@@ -96,6 +96,30 @@ export function setDivinationOutcome(id, verdict, note) {
   set('divinations', list)
 }
 
+// ── 读经站段落收藏 / 笔记(Tier 2)──────────────────────────
+// 锚 key = corpus:slug:章:段(slug 全站唯一,不跨站碰撞)。dao 站 corpus 传 'dao'。
+function markKey(corpus, slug, ch, i) { return `${corpus}:${slug}:${ch}:${i}` }
+
+export function getCorpusMarks() { return get('corpusMarks', {}) }
+export function toggleCorpusMark(corpus, slug, ch, i, snippet) {
+  const m = getCorpusMarks()
+  const k = markKey(corpus, slug, ch, i)
+  if (m[k]) delete m[k]
+  else m[k] = { corpus, slug, ch, i, snippet: (snippet || '').slice(0, 60), at: new Date().toISOString() }
+  set('corpusMarks', m)
+  return m
+}
+
+export function getCorpusNotes() { return get('corpusNotes', {}) }
+export function saveCorpusNote(corpus, slug, ch, i, text, snippet) {
+  const n = getCorpusNotes()
+  const k = markKey(corpus, slug, ch, i)
+  if (!text.trim()) delete n[k]
+  else n[k] = { corpus, slug, ch, i, text, snippet: (snippet || '').slice(0, 60), at: new Date().toISOString() }
+  set('corpusNotes', n)
+  return n
+}
+
 // ── Reading progress ──────────────────────────────────────
 export function getReadingProgress() { return get('reading', {}) }
 export function saveReadingProgress(book, chapter) {
@@ -150,7 +174,7 @@ export function markMethodUsed(methodKey) {
 }
 
 // ── Export / Import ───────────────────────────────────────
-const DATA_KEYS = ['settings', 'bookmarks', 'notes', 'divinations', 'reading', 'recentHexagrams', 'progress']
+const DATA_KEYS = ['settings', 'bookmarks', 'notes', 'divinations', 'reading', 'recentHexagrams', 'progress', 'corpusMarks', 'corpusNotes']
 
 export function exportData() {
   const data = {}

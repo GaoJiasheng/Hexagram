@@ -51,6 +51,7 @@ const ZhongyiHomePage = lazy(() => import('./features/zhongyi/pages/ZhongyiHomeP
 const MoulueHomePage = lazy(() => import('./features/moulue/pages/MoulueHomePage.jsx'))
 const CorpusTextPage = lazy(() => import('./features/reader/CorpusTextPage.jsx'))
 const CorpusReadPage = lazy(() => import('./features/reader/CorpusReadPage.jsx'))
+const CorpusMePage = lazy(() => import('./features/reader/CorpusMePage.jsx'))
 const MasterPortalPage = lazy(() => import('./features/MasterPortalPage.jsx'))
 // 全站设置浮层(Tier 0):任何站 nav 齿轮就地打开(主题/字号/译文 + 数据导出导入)
 const SettingsSheet = lazy(() => import('./features/SettingsSheet.jsx'))
@@ -151,9 +152,9 @@ function Nav({ module, canSwitch, onSearch, onPortal, onSettings }) {
             <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V15z" />
           </svg>
         </button>
-        {module.key === 'yijing' && (
+        {module.hasSearch && (
           <NavLink
-            to="/me"
+            to={module.key === 'yijing' ? '/me' : `${module.home}/me`}
             className={({ isActive }) => `nav-icon-btn ${isActive ? 'active' : ''}`}
             aria-label="我的"
             style={{ textDecoration: 'none', fontSize: '1.1rem' }}
@@ -298,6 +299,10 @@ function AppContent() {
           <Route path="/moulue" element={<MoulueHomePage />} />
           <Route path="/moulue/:slug" element={<CorpusTextPage corpus="moulue" />} />
           <Route path="/moulue/:slug/:chapter" element={<CorpusReadPage corpus="moulue" />} />
+          {/* 读经站「我的」(Tier 2):续读 + 收藏 + 批注;静态段优先于 /:slug,顺序无关 */}
+          {['fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'dao'].map((c) => (
+            <Route key={c} path={`/${c}/me`} element={<CorpusMePage corpus={c} />} />
+          ))}
           {/* 诸学总门户(v15):左上角 logo 全站可达的公开总入口,列全部分组 */}
           <Route path={MASTER_PORTAL_PATH} element={<MasterPortalPage />} />
           <Route path="*" element={

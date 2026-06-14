@@ -56,6 +56,7 @@ export default function DaoReadPage() {
       chapterHref={(no) => `/dao/${slug}/${no}`}
       getAnchors={(no, i) => getDaoAnchors(slug, no, i)}
       renderYanyi={(no) => <YanyiBlock slug={slug} chapter={no} />}
+      markCtx={{ corpus: 'dao', slug }}
     />
   )
 }

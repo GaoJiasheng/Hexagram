@@ -67,6 +67,7 @@ export default function CorpusReadPage({ corpus }) {
       getAnchors={(no, i) => getAnchors(corpus, slug, no, i)}
       renderYanyi={(no) => <YanyiBlock corpus={corpus} slug={slug} chapter={no} />}
       paraLabel={numberParas ? (no, i) => String(i + 1) : undefined}
+      markCtx={{ corpus, slug }}
     />
   )
 }

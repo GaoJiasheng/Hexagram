@@ -60,6 +60,7 @@ export default function CorpusSinglePage({ corpus, slug, text }) {
       getAnchors={(no, i) => getAnchors(corpus, slug, no, i)}
       renderYanyi={(no) => <YanyiBlock corpus={corpus} slug={slug} chapter={no} />}
       paraLabel={paraLabel}
+      markCtx={{ corpus, slug }}
       header={header}
     />
   )
