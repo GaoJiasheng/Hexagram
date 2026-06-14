@@ -5,6 +5,9 @@ import { siteForPath, activeGroup, sitesInGroup, HOST_GROUPS, MASTER_PORTAL_PATH
 
 // 搜索面板连同其多源索引数据按需加载(v11 §2)
 const SearchPalette = lazy(() => import('./features/yijing/components/SearchPalette.jsx'))
+// 读经类站(corpus)各自的全站检索面板(C1);分组隔离:只搜本组
+const CorpusSearchPalette = lazy(() => import('./features/reader/CorpusSearchPalette.jsx'))
+const CORPUS_SEARCH_SITES = new Set(['fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong'])
 
 // 页面全部按路由懒加载(v11 §2),首包只留壳与搜索
 // Pages — 易经研习模块
@@ -282,6 +285,11 @@ function AppContent() {
       {module.key === 'yijing' && searchOpen && (
         <Suspense fallback={null}>
           <SearchPalette open onClose={() => setSearchOpen(false)} />
+        </Suspense>
+      )}
+      {CORPUS_SEARCH_SITES.has(module.key) && searchOpen && (
+        <Suspense fallback={null}>
+          <CorpusSearchPalette corpus={module.key} open onClose={() => setSearchOpen(false)} />
         </Suspense>
       )}
       {portalOpen && <ModulePortal current={module.key} group={group} onClose={() => setPortalOpen(false)} />}
