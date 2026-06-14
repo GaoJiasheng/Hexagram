@@ -26,10 +26,12 @@ export default defineConfig({
         ],
       },
       workbox: {
-        // woff2 不进 precache(全集分片数 MB),走下方 runtime CacheFirst
-        globPatterns: ['**/*.{js,css,html,svg,png,json}'],
-        // 数据 chunk 较大,放宽单文件上限
-        maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
+        // 只预缓存「壳」(html/css/图标)——小而稳;JS/JSON/数据分片改 runtime 按需缓存。
+        // 旧配置把全部 11 分站的 js/json(~数 MB)一次性预缓存:单站访客首装拉满带宽,
+        // 且在网络层打穿了分组隔离(别组数据全下到本地)。现仅按实际访问逐片缓存。
+        globPatterns: ['**/*.{css,html,svg,webmanifest}', 'hexagram.svg', 'pwa-*.png', 'apple-touch-icon*.png'],
+        navigateFallback: 'index.html',
+        cleanupOutdatedCaches: true,
         runtimeCaching: [
           {
             urlPattern: ({ url, sameOrigin }) => sameOrigin && url.pathname.endsWith('.woff2'),
@@ -37,6 +39,16 @@ export default defineConfig({
             options: {
               cacheName: 'fonts',
               expiration: { maxEntries: 64, maxAgeSeconds: 30 * 24 * 3600 },
+            },
+          },
+          {
+            // 路由/数据分片:按需取、就近缓存,后台再校验更新。单站只缓存本站访问过的内容。
+            urlPattern: ({ url, sameOrigin }) =>
+              sameOrigin && (url.pathname.endsWith('.js') || url.pathname.endsWith('.json')),
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'app-chunks',
+              expiration: { maxEntries: 400, maxAgeSeconds: 30 * 24 * 3600 },
             },
           },
         ],

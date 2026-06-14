@@ -1,6 +1,7 @@
 import { BrowserRouter, NavLink, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import { useState, useEffect, useCallback, lazy, Suspense } from 'react'
 import { SettingsProvider } from './features/yijing/SettingsContext.jsx'
+import ErrorBoundary from './features/ErrorBoundary.jsx'
 import { siteForPath, activeGroup, sitesInGroup, HOST_GROUPS, MASTER_PORTAL_PATH } from './sites/registry.js'
 
 // 搜索面板连同其多源索引数据按需加载(v11 §2)
@@ -219,6 +220,7 @@ function AppContent() {
     <div className="app-shell" data-site={module.key}>
       <Nav module={module} canSwitch={canSwitch} onSearch={openSearch} onPortal={openPortal} />
       <main className="app-main page-fade-in">
+        <ErrorBoundary key={location.pathname}>
         <Suspense fallback={<div className="route-loading" aria-label="加载中">⋯</div>}>
         <Routes>
           {/* 易经研习 */}
@@ -285,6 +287,7 @@ function AppContent() {
           } />
         </Routes>
         </Suspense>
+        </ErrorBoundary>
       </main>
       <footer className="app-footer">
         <span>观象 · 个人学习站</span>
