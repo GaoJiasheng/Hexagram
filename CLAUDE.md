@@ -14,7 +14,7 @@
 
 ## 唯一规格来源
 
-**docs/yijing-design.md(一期 M1–M3)、docs/yijing-design-v2.md(二期 M4–M6)、docs/yijing-design-v3.md(三期 P0–P5)、docs/design-v4.md(四期:注释层/源流/多模块门户与道藏框架)、docs/design-v5.md(五期:经传逐段注疏层)、docs/design-v6.md(六期:道藏内容期)、docs/design-v7.md(七期:道藏译注收官)、docs/design-v8.md(八期:道藏→易经桥)、docs/design-v9.md(九期:筮例与故事)、docs/design-v10.md(十期:工具与交互期)、docs/design-v11.md(十一期:工程打磨期)、docs/design-v12.md(十二期:推演上手引导)、docs/design-v13.md(十三期:道藏单页阅读与每章延伸)、docs/design-v14.md(十四期:分站平台化)、docs/design-v15.md(十五期:三教分站与分组隔离)、docs/design-v16.md(十六期:儒典四书译注与延伸,已落稿待开工)与 docs/design-v17.md(十七期:释典三经译注与延伸,已落稿待开工)是页面、交互、视觉、推演规则、数据结构的唯一规格。** v2–v4 是增量稿,视觉/组件/数据约定沿用 v1。实现任何页面前先读对应章节,不要自行发明视觉风格或交互;引擎规则(八宫/纳甲/梅花/大衍/金钱卦)必须照设计稿的规则表实现,严禁凭记忆补规则。每个里程碑完成后逐条核对其验收清单。
+**docs/yijing-design.md(一期 M1–M3)、docs/yijing-design-v2.md(二期 M4–M6)、docs/yijing-design-v3.md(三期 P0–P5)、docs/design-v4.md(四期:注释层/源流/多模块门户与道藏框架)、docs/design-v5.md(五期:经传逐段注疏层)、docs/design-v6.md(六期:道藏内容期)、docs/design-v7.md(七期:道藏译注收官)、docs/design-v8.md(八期:道藏→易经桥)、docs/design-v9.md(九期:筮例与故事)、docs/design-v10.md(十期:工具与交互期)、docs/design-v11.md(十一期:工程打磨期)、docs/design-v12.md(十二期:推演上手引导)、docs/design-v13.md(十三期:道藏单页阅读与每章延伸)、docs/design-v14.md(十四期:分站平台化)、docs/design-v15.md(十五期:三教分站与分组隔离)、docs/design-v16.md(十六期:儒典四书译注与延伸,已落稿待开工)、docs/design-v17.md(十七期:释典三经译注与延伸)、docs/design-v18.md(十八期:诸子百家——法/墨/兵/纵横,计划稿待开工)与 docs/design-v19.md(十九期:中医典籍,计划稿待开工)是页面、交互、视觉、推演规则、数据结构的唯一规格。** v2–v4 是增量稿,视觉/组件/数据约定沿用 v1。实现任何页面前先读对应章节,不要自行发明视觉风格或交互;引擎规则(八宫/纳甲/梅花/大衍/金钱卦)必须照设计稿的规则表实现,严禁凭记忆补规则。每个里程碑完成后逐条核对其验收清单。
 
 ## 当前状态(随进度更新此节)
 
