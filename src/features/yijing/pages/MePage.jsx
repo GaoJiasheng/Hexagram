@@ -234,8 +234,23 @@ export default function MePage() {
         {/* 研习 */}
         {tab === '研习' && (() => {
           const progress = getProgress()
+          const total = LEARN_TOPICS.length
+          const readN = LEARN_TOPICS.filter(t => progress.read[t.id]).length
+          const quizTopics = LEARN_TOPICS.filter(t => t.quiz)
+          const quizN = quizTopics.filter(t => progress.quiz[t.id]?.passed).length
+          const usedTopics = LEARN_TOPICS.filter(t => t.usedKeys)
+          const usedN = usedTopics.filter(t => t.usedKeys.some(k => progress.used[k])).length
+          const nextTopic = LEARN_TOPICS.find(t => !progress.read[t.id]) || null
           return (
             <div className="study-progress">
+              <div className="study-dashboard">
+                <div className="study-dashboard__stats">
+                  <span>读 <strong>{readN}</strong>/{total}</span>
+                  <span>练 <strong>{quizN}</strong>/{quizTopics.length}</span>
+                  <span>用 <strong>{usedN}</strong>/{usedTopics.length}</span>
+                </div>
+                {nextTopic && <Link to={nextTopic.to} className="study-dashboard__next">建议下一步：{nextTopic.title} →</Link>}
+              </div>
               <p className="text-soft study-progress__hint">读=看完教学页 · 练=练习全对 · 用=在工作台用该法起过卦</p>
               {LEARN_TOPICS.map(t => {
                 const st = topicStatus(t, progress)

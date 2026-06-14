@@ -5,6 +5,32 @@ import { useSettings } from '../yijing/SettingsContext.jsx'
 
 const FONT_SCALES = [0.9, 1, 1.15]
 
+// 本章注疏一览(Tier 1):遍历该章各段 anchors,折叠列出,替逐词悬停。
+function ChapterNotes({ chapter, getAnchors }) {
+  const notes = []
+  chapter.paragraphs.forEach((p, i) => {
+    const ents = getAnchors(chapter.no, i)
+    if (ents) ents.forEach((e) => notes.push(e))
+  })
+  if (!notes.length) return null
+  return (
+    <details className="chapter-notes">
+      <summary className="chapter-notes__summary">本章注疏 · {notes.length} 条</summary>
+      <dl className="chapter-notes__list">
+        {notes.map((e, k) => (
+          <div key={k} className="chapter-notes__item">
+            <dt className="chapter-notes__term">{e.term}</dt>
+            <dd className="chapter-notes__note">
+              {e.note}
+              {e.qiao && <Link to={e.qiao.to} className="zhu-qiao-link"> {e.qiao.label}</Link>}
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </details>
+  )
+}
+
 // 通用经典阅读器(v14 §3)——平台级,跨站共用。
 // 易经经传 / 道藏逐章 / 短经单页 三处皆以此为核,差异全由 props 注入:
 //   mode 'paged'|'single';chapters;chapter(逐章当前);tocBack(目录头);
@@ -93,6 +119,18 @@ export default function ClassicReader({
           {settings.showTranslation ? '开' : '关'}
         </button>
       </label>
+      {settings.showTranslation && (
+        <label className="toggle-label">
+          <span>对照</span>
+          <button
+            className={`toggle-btn ${settings.transLayout === 'side' ? 'toggle-btn--on' : ''}`}
+            onClick={() => setSettings({ transLayout: settings.transLayout === 'side' ? 'stack' : 'side' })}
+            title="原文/译文 上下 ⇄ 左右对照"
+          >
+            {settings.transLayout === 'side' ? '左右' : '上下'}
+          </button>
+        </label>
+      )}
     </div>
   )
 
@@ -152,6 +190,7 @@ export default function ClassicReader({
             <section key={c.no} id={anchorId(c.no)} className="dao-single__chapter">
               {multi && <h2 className="read-chapter-title">{chapterLabel(c)}</h2>}
               {c.paragraphs.map((p, i) => Para(c.no, p, i))}
+              <ChapterNotes chapter={c} getAnchors={getAnchors} />
               {renderYanyi(c.no)}
             </section>
           ))
@@ -174,6 +213,7 @@ export default function ClassicReader({
             <>
               <h2 className="read-chapter-title">{chapterLabel(cur)}</h2>
               {cur.paragraphs.map((p, i) => Para(cur.no, p, i))}
+              <ChapterNotes chapter={cur} getAnchors={getAnchors} />
               {renderYanyi(cur.no)}
               <div className="read-nav">
                 {prev ? (

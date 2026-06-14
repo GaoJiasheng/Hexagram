@@ -7,8 +7,9 @@ import AnnotatedText from './AnnotatedText.jsx'
 // anchors: 逐段锚定注疏(传文使用,v5 §3);与 annotate 互斥,anchors 优先
 export default function ClassicText({ original, translation, emphasis = false, annotate = false, anchors = null, className = '' }) {
   const { settings } = useSettings()
+  const side = settings.showTranslation && settings.transLayout === 'side' && !!translation
   return (
-    <div className={`classic-text ${emphasis ? 'classic-text--emphasis' : ''} ${className}`}>
+    <div className={`classic-text ${emphasis ? 'classic-text--emphasis' : ''} ${side ? 'classic-text--side' : ''} ${className}`}>
       <p className="classic-text__original">
         {anchors?.length ? <AnnotatedText text={original} anchors={anchors} /> : annotate ? <AnnotatedText text={original} /> : original}
       </p>
