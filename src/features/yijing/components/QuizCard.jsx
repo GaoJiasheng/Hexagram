@@ -27,24 +27,29 @@ export default function QuizCard({ topic }) {
   const [cur, setCur] = useState(0)
   const [chosen, setChosen] = useState(null)     // 本题已选索引
   const [correctCount, setCorrectCount] = useState(0)
+  const [wrong, setWrong] = useState([])         // 本轮答错的题(洗后形态,可再洗)
   const [done, setDone] = useState(false)
 
   if (!quiz) return null
-  const total = quiz.questions.length
+  const fullCount = quiz.questions.length
+  const total = session ? session.questions.length : fullCount
   const passedBefore = getProgress().quiz[topic]?.passed
 
-  function start() {
-    setSession({ questions: shuffleQuestions(quiz.questions) })
+  function begin(questions) {
+    setSession({ questions: shuffleQuestions(questions) })
     setCur(0)
     setChosen(null)
     setCorrectCount(0)
+    setWrong([])
     setDone(false)
   }
+  function start() { begin(quiz.questions) }
 
   function choose(i) {
     if (chosen !== null) return
     setChosen(i)
     if (i === session.questions[cur].answer) setCorrectCount(c => c + 1)
+    else setWrong(w => [...w, session.questions[cur]])
   }
 
   function next() {
@@ -53,7 +58,8 @@ export default function QuizCard({ topic }) {
       setChosen(null)
     } else {
       setDone(true)
-      markQuizResult(topic, correctCount, total)
+      // 「通过」只在做满全卷时判定;错题重练(子集)不计入,免少题蒙混
+      if (total === fullCount) markQuizResult(topic, correctCount, total)
     }
   }
 
@@ -106,8 +112,19 @@ export default function QuizCard({ topic }) {
       {session && done && (
         <div className="quiz-card__result">
           <p className="quiz-card__score">{correctCount} / {total}</p>
-          <p className="text-soft">{correctCount === total ? '全对，通过！这一篇可以放心进入实操了。' : '差一点——回看上文再练一次，全对即通过。'}</p>
-          <button className="btn btn--secondary" onClick={start}>再练一次</button>
+          <p className="text-soft">
+            {correctCount === total
+              ? (total === fullCount ? '全对，通过！这一篇可以放心进入实操了。' : '错题全清！回去做满全卷即通过。')
+              : correctCount >= total - 1
+                ? `就差 ${total - correctCount} 道，再清掉就过！`
+                : `答对 ${correctCount}/${total}，把错的几道攻克一下。`}
+          </p>
+          <div className="quiz-card__result-actions">
+            {wrong.length > 0 && (
+              <button className="btn btn--primary" onClick={() => begin(wrong)}>只练错的 {wrong.length} 题</button>
+            )}
+            <button className="btn btn--secondary" onClick={start}>{wrong.length > 0 ? '重练全部' : '再练一次'}</button>
+          </div>
         </div>
       )}
     </section>

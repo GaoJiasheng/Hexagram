@@ -2690,6 +2690,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .quiz-card__result { text-align: center; padding: 8px 0; }
 .quiz-card__score { font-family: var(--font-serif); font-size: 1.8rem; color: var(--ink); margin: 0 0 6px; }
 .quiz-card__result p { margin: 0 0 12px; font-size: 0.88rem; }
+.quiz-card__result-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
 
 /* 先天卦数表 */
 .xiantian-table { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; margin: 12px 0; }
