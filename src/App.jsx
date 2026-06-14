@@ -52,6 +52,8 @@ const MoulueHomePage = lazy(() => import('./features/moulue/pages/MoulueHomePage
 const CorpusTextPage = lazy(() => import('./features/reader/CorpusTextPage.jsx'))
 const CorpusReadPage = lazy(() => import('./features/reader/CorpusReadPage.jsx'))
 const MasterPortalPage = lazy(() => import('./features/MasterPortalPage.jsx'))
+// 全站设置浮层(Tier 0):任何站 nav 齿轮就地打开(主题/字号/译文 + 数据导出导入)
+const SettingsSheet = lazy(() => import('./features/SettingsSheet.jsx'))
 
 // 站点注册迁至 src/sites/registry.js(v14):平台读 manifest,加站零改平台代码
 
@@ -88,7 +90,7 @@ function ModulePortal({ current, group, onClose }) {
   )
 }
 
-function Nav({ module, canSwitch, onSearch, onPortal }) {
+function Nav({ module, canSwitch, onSearch, onPortal, onSettings }) {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -114,7 +116,7 @@ function Nav({ module, canSwitch, onSearch, onPortal }) {
   return (
     <nav className={`app-nav ${scrolled ? 'app-nav--scrolled' : ''}`} role="navigation" aria-label="主导航">
       {/* 左上角 logo → 诸学总门户(公开总入口,全站可达;列全部分组) */}
-      <NavLink to={MASTER_PORTAL_PATH} className="app-nav__brand" aria-label="诸学门户·全部分组">
+      <NavLink to={MASTER_PORTAL_PATH} className="app-nav__brand" aria-label="诸学门户·全部分组" title="诸学门户 · 全部分组">
         <span className="brand-seal" aria-hidden="true">{module.brand}</span>
       </NavLink>
       <div className="app-nav__links">
@@ -131,27 +133,33 @@ function Nav({ module, canSwitch, onSearch, onPortal }) {
       </div>
       <div className="app-nav__actions">
         {module.hasSearch && (
-          <>
-            <button
-              className="nav-icon-btn"
-              onClick={onSearch}
-              aria-label="搜索（/）"
-              title="搜索（/）"
-            >
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
-                <circle cx="7.5" cy="7.5" r="5" />
-                <line x1="11.5" y1="11.5" x2="16" y2="16" />
-              </svg>
-            </button>
-            <NavLink
-              to="/me"
-              className={({ isActive }) => `nav-icon-btn ${isActive ? 'active' : ''}`}
-              aria-label="我的"
-              style={{ textDecoration: 'none', fontSize: '1.1rem' }}
-            >
-              ☯
-            </NavLink>
-          </>
+          <button
+            className="nav-icon-btn"
+            onClick={onSearch}
+            aria-label="搜索（/）"
+            title="搜索（/）"
+          >
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
+              <circle cx="7.5" cy="7.5" r="5" />
+              <line x1="11.5" y1="11.5" x2="16" y2="16" />
+            </svg>
+          </button>
+        )}
+        <button className="nav-icon-btn" onClick={onSettings} aria-label="设置" title="设置">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="3" />
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V15z" />
+          </svg>
+        </button>
+        {module.key === 'yijing' && (
+          <NavLink
+            to="/me"
+            className={({ isActive }) => `nav-icon-btn ${isActive ? 'active' : ''}`}
+            aria-label="我的"
+            style={{ textDecoration: 'none', fontSize: '1.1rem' }}
+          >
+            ☯
+          </NavLink>
         )}
         {canSwitch && (
           <button className="module-switch" onClick={onPortal} aria-label="切换站点" title="切换站点">
@@ -199,8 +207,10 @@ function MobileNav({ module, canSwitch, onPortal }) {
 function AppContent() {
   const [searchOpen, setSearchOpen] = useState(false)
   const [portalOpen, setPortalOpen] = useState(false)
+  const [settingsOpen, setSettingsOpen] = useState(false)
   const openSearch = useCallback(() => setSearchOpen(true), [])
   const openPortal = useCallback(() => setPortalOpen(true), [])
+  const openSettings = useCallback(() => setSettingsOpen(true), [])
   const location = useLocation()
   const navigate = useNavigate()
 
@@ -212,8 +222,8 @@ function AppContent() {
   // 搜索面板种类由 registry 派生(缺省 corpus),单一来源,免硬编码站名集漏改
   const searchKind = module.hasSearch ? (module.searchKind || 'corpus') : null
 
-  // 路由切换关闭搜索/切站浮层,避免状态在跨站导航后残留
-  useEffect(() => { setSearchOpen(false); setPortalOpen(false) }, [location.pathname])
+  // 路由切换关闭搜索/切站/设置浮层,避免状态在跨站导航后残留
+  useEffect(() => { setSearchOpen(false); setPortalOpen(false); setSettingsOpen(false) }, [location.pathname])
 
   // 域名着陆(v15 §1):配了 HOST_GROUPS 的域名访问别组路径时,落回本组首页。
   // HOST_GROUPS 为空(dev/主域名)时不触发,按路径分组即可。
@@ -229,7 +239,7 @@ function AppContent() {
 
   return (
     <div className="app-shell" data-site={isPortal ? 'portal' : module.key}>
-      {!isPortal && <Nav module={module} canSwitch={canSwitch} onSearch={openSearch} onPortal={openPortal} />}
+      {!isPortal && <Nav module={module} canSwitch={canSwitch} onSearch={openSearch} onPortal={openPortal} onSettings={openSettings} />}
       <main className="app-main page-fade-in">
         <ErrorBoundary key={location.pathname}>
         <Suspense fallback={<div className="route-loading" aria-label="加载中">⋯</div>}>
@@ -323,6 +333,11 @@ function AppContent() {
         </Suspense>
       )}
       {!isPortal && portalOpen && <ModulePortal current={module.key} group={group} onClose={() => setPortalOpen(false)} />}
+      {settingsOpen && (
+        <Suspense fallback={null}>
+          <SettingsSheet open onClose={() => setSettingsOpen(false)} />
+        </Suspense>
+      )}
     </div>
   )
 }

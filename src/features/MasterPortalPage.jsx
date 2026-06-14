@@ -22,6 +22,9 @@ export default function MasterPortalPage() {
               <span className="master-portal__titles">
                 {sites.map(s => s.portalTitle).join(' · ')}
               </span>
+              <span className="master-portal__desc">
+                {sites.map(s => s.portalDesc).join(' / ')}
+              </span>
             </a>
           )
         })}

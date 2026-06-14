@@ -5,6 +5,7 @@ import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import { SITE_MAP } from '../../sites/registry.js'
 import { getMeta, loadText } from './corpus.js'
 import { tocTitle } from './tocTitle.js'
+import { getReadingProgress } from '../yijing/storage.js'
 import CorpusSinglePage from './CorpusSinglePage.jsx'
 
 // 通用文本页(v16 §1)——题解 + 章节入口;短经(singlePage)走单页阅读器。
@@ -42,6 +43,7 @@ export default function CorpusTextPage({ corpus }) {
 
   const titled = chapters && chapters.length && chapters.some((c) => tocTitle(c.title))
   const loadingChapters = readable && chapters === null  // 章名异步载入中,先出骨架免重排
+  const resumeCh = (text.sections > 1 && getReadingProgress()[slug]) || 0  // 续读章号(0=无)
 
   return (
     <div className="dao-text-page">
@@ -55,6 +57,11 @@ export default function CorpusTextPage({ corpus }) {
         <p className="dao-text-brief">{text.brief}</p>
         {text.dubious && <p className="dubious-badge">⚠ 托名·真伪存疑：学界多判为现代伪作。本站作文献批判材料研读，非处世权术教程。</p>}
         {text.authorNote && <p className="dao-text-authornote">{text.authorNote}</p>}
+        {resumeCh > 0 && (
+          <Link to={`${site.home}/${slug}/${resumeCh}`} className="dao-text-resume">
+            继续读 · 第 {resumeCh} {text.sectionUnit} →
+          </Link>
+        )}
       </div>
 
       <section className="dao-text-sections">
@@ -79,7 +86,7 @@ export default function CorpusTextPage({ corpus }) {
         ) : titled ? (
           <div className="dao-section-grid dao-section-grid--titled" aria-label={`共 ${text.sections} ${text.sectionUnit}`}>
             {chapters.map((c) => (
-              <Link key={c.no} to={`${site.home}/${slug}/${c.no}`} className="dao-section-cell dao-section-cell--link dao-section-cell--titled">
+              <Link key={c.no} to={`${site.home}/${slug}/${c.no}`} className={`dao-section-cell dao-section-cell--link dao-section-cell--titled ${c.no === resumeCh ? 'dao-section-cell--current' : ''}`}>
                 <span className="dao-section-cell__no">{c.no}</span>
                 <span className="dao-section-cell__title">{tocTitle(c.title) || `第${c.no}${text.sectionUnit}`}</span>
               </Link>
@@ -88,7 +95,7 @@ export default function CorpusTextPage({ corpus }) {
         ) : (
           <div className="dao-section-grid" aria-label={`共 ${text.sections} ${text.sectionUnit}`}>
             {Array.from({ length: text.sections }, (_, i) => (
-              <Link key={i} to={`${site.home}/${slug}/${i + 1}`} className="dao-section-cell dao-section-cell--link">
+              <Link key={i} to={`${site.home}/${slug}/${i + 1}`} className={`dao-section-cell dao-section-cell--link ${i + 1 === resumeCh ? 'dao-section-cell--current' : ''}`}>
                 {text.sections > 1 ? i + 1 : '全'}
               </Link>
             ))}

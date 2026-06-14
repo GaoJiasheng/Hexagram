@@ -44,6 +44,12 @@ export default function CorpusSinglePage({ corpus, slug, text }) {
     </div>
   )
 
+  // 长品/长分(>3 段,如坛经机缘品)段号编号,便于定位
+  const paraLabel = (no, i) => {
+    const c = book.chapters.find((x) => x.no === no)
+    return c && c.paragraphs.length > 3 ? String(i + 1) : null
+  }
+
   return (
     <ClassicReader
       mode="single"
@@ -53,6 +59,7 @@ export default function CorpusSinglePage({ corpus, slug, text }) {
       anchorId={(no) => `${corpus}-ch-${no}`}
       getAnchors={(no, i) => getAnchors(corpus, slug, no, i)}
       renderYanyi={(no) => <YanyiBlock corpus={corpus} slug={slug} chapter={no} />}
+      paraLabel={paraLabel}
       header={header}
     />
   )

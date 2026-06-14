@@ -50,6 +50,10 @@ export default function CorpusReadPage({ corpus }) {
 
   const multi = book.chapters.length > 1
   const label = (c) => c.title ?? (multi ? `第${c.no}${meta.sectionUnit}` : '全文')
+  // 段号:论语逐章语录素来编号;其余书的长章(>3 段,如伤寒论/坛经)默认编号,便于定位/引用
+  const isLunyu = corpus === 'ru' && slug === 'lunyu'
+  const curChapter = book.chapters.find((c) => c.no === chapter)
+  const numberParas = isLunyu || (curChapter && curChapter.paragraphs.length > 3)
 
   return (
     <ClassicReader
@@ -62,7 +66,7 @@ export default function CorpusReadPage({ corpus }) {
       chapterHref={(no) => `${site.home}/${slug}/${no}`}
       getAnchors={(no, i) => getAnchors(corpus, slug, no, i)}
       renderYanyi={(no) => <YanyiBlock corpus={corpus} slug={slug} chapter={no} />}
-      paraLabel={corpus === 'ru' && slug === 'lunyu' ? (no, i) => String(i + 1) : undefined}
+      paraLabel={numberParas ? (no, i) => String(i + 1) : undefined}
     />
   )
 }

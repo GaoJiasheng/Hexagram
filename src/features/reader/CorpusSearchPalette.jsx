@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useDeferredValue, Fragment } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { searchCorpus, ensureCorpusIndexed } from './corpusSearch.js'
+import { corpusTexts } from './corpus.js'
 
 // 读经类站的全站检索面板(C1)——复用易经 SearchPalette 的样式与交互,数据源换成 corpusSearch。
 // corpus 决定隔离:只搜当前组自己的书。
@@ -18,7 +19,8 @@ function highlight(text, query) {
 }
 
 // searchFn/indexFn 可注入:默认走 corpus,dao 站注入自己的 searchDao/ensureDaoIndexed(批D)。
-export default function CorpusSearchPalette({ corpus, open, onClose, searchFn, indexFn }) {
+// books:空状态展示的经名 chips(dao 站由 DaoSearchPalette 注入;corpus 站默认取本站书目)。
+export default function CorpusSearchPalette({ corpus, open, onClose, searchFn, indexFn, books }) {
   const [query, setQuery] = useState('')
   const [selected, setSelected] = useState(0)
   const [indexed, setIndexed] = useState(false)
@@ -28,6 +30,7 @@ export default function CorpusSearchPalette({ corpus, open, onClose, searchFn, i
 
   const doSearch = searchFn || ((q) => searchCorpus(corpus, q))
   const doIndex = indexFn || (() => ensureCorpusIndexed(corpus))
+  const bookChips = books || corpusTexts(corpus).filter((t) => t.status !== 'pending').slice(0, 6).map((t) => t.title)
 
   const deferredQuery = useDeferredValue(query)   // 大 corpus:延迟查询,免每键同步全表扫卡顿
   const groups = doSearch(deferredQuery)
@@ -112,6 +115,16 @@ export default function CorpusSearchPalette({ corpus, open, onClose, searchFn, i
         )}
         {indexing && flat.length === 0 && <p className="search-palette__empty">正在建立全文索引…</p>}
         {!indexing && query && flat.length === 0 && <p className="search-palette__empty">无匹配结果</p>}
+        {!query.trim() && bookChips.length > 0 && (
+          <div className="search-empty-hint">
+            <p className="search-empty-hint__scope">搜正文 / 译文 / 注疏 / 延伸 —— 输入 2 字以上检索全文。</p>
+            <div className="search-chips">
+              {bookChips.map((b) => (
+                <button key={b} type="button" className="search-chip" onClick={() => { setQuery(b); inputRef.current?.focus() }}>{b}</button>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )

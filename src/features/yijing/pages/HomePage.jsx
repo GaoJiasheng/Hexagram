@@ -73,6 +73,9 @@ export default function HomePage() {
               </div>
             </div>
           </Link>
+          <div className="today-card__actions">
+            <Link to={`/workbench?gua=${todayHex.id}`} className="today-card__action">以此卦推演 →</Link>
+          </div>
         </section>
       )}
 

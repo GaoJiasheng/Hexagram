@@ -660,6 +660,7 @@ export default function WorkbenchPage() {
   const [searchResults, setSearchResults] = useState([])
   const [noteText, setNoteText] = useState('')
   const [savedMsg, setSavedMsg] = useState(false)
+  const [copiedMsg, setCopiedMsg] = useState(false)
   const [origin, setOrigin] = useState(null)  // null | { method, upper?, lower?, dongYao?, inputs }
   const [tourOn, setTourOn] = useState(false)  // 「示范一卦」走查
 
@@ -744,6 +745,15 @@ export default function WorkbenchPage() {
     })
     setSavedMsg(true)
     setTimeout(() => setSavedMsg(false), 2000)
+  }
+
+  function copyLink() {
+    // URL 已带 ?gua&dong&method,直接是可分享/可重演的链接
+    try {
+      navigator.clipboard?.writeText(window.location.href)
+      setCopiedMsg(true)
+      setTimeout(() => setCopiedMsg(false), 2000)
+    } catch { /* clipboard 不可用 */ }
   }
 
   const bianBinary = hex && movingLines.length ? getBianGua(hex.binary, movingLines) : hex?.binary
@@ -963,6 +973,7 @@ export default function WorkbenchPage() {
               <div className="save-row">
                 <input className="save-input" value={noteText} onChange={e => setNoteText(e.target.value)} placeholder="所研之事（可选）" />
                 <button className="btn btn--secondary" onClick={saveHistory}>{savedMsg ? '已保存 ✓' : '存入推演历史'}</button>
+                <button className="btn btn--secondary" onClick={copyLink} title="复制本卦链接，可分享或日后重演">{copiedMsg ? '已复制 ✓' : '复制链接'}</button>
               </div>
             </div>
           </div>

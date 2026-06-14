@@ -865,6 +865,16 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   font-size: 0.875rem;
   color: var(--ink-faint);
 }
+.search-empty-hint { padding: 14px 16px 18px; }
+.search-empty-hint__scope { margin: 0 0 12px; font-size: 0.8rem; color: var(--ink-faint); text-align: center; }
+.search-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.search-chip {
+  padding: 5px 12px; font-family: var(--font-serif); font-size: 0.85rem;
+  color: var(--ink-soft); background: var(--paper-raised);
+  border: 1px solid var(--line); border-radius: 14px; cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.search-chip:hover, .search-chip:focus-visible { border-color: var(--cinnabar); color: var(--cinnabar); }
 
 /* ── Home Page ──────────────────────────────────────────────── */
 
@@ -960,6 +970,9 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   font-size: 0.8rem;
   color: var(--ink-soft);
 }
+.today-card__actions { display: flex; justify-content: flex-end; margin-top: 10px; }
+.today-card__action { font-size: 0.85rem; color: var(--cinnabar); text-decoration: none; padding: 4px 2px; }
+.today-card__action:hover { text-decoration: underline; }
 
 /* 继续研习 */
 .history-row {
@@ -2120,6 +2133,12 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 
 /* Settings */
 .settings-page { max-width: 500px; }
+/* 全站设置浮层(Tier 0) */
+.settings-overlay { position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.3); display: flex; align-items: flex-start; justify-content: center; padding: 10vh 16px 16px; backdrop-filter: blur(2px); overflow-y: auto; }
+.settings-sheet { width: 100%; max-width: 460px; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 20px 24px 8px; box-shadow: 0 12px 40px rgba(0,0,0,0.25); }
+.settings-sheet__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.settings-sheet__title { font-family: var(--font-serif); font-size: 1.1rem; color: var(--ink); }
+.settings-privacy { font-size: 0.78rem; color: var(--ink-faint); line-height: 1.6; margin: 0 0 12px; }
 .settings-section { margin-bottom: 24px; }
 .settings-section__title { font-size: 0.875rem; color: var(--ink-soft); margin: 0 0 12px; }
 
@@ -2482,6 +2501,11 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
    ============================================================ */
 
 .basics-index-page { max-width: var(--content-w); margin: 0 auto; padding: 24px 16px 80px; }
+.basics-progress-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 20px; padding: 12px 16px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper-raised); font-size: 0.85rem; color: var(--ink-soft); }
+.basics-progress-stat strong { color: var(--cinnabar); font-size: 1.05em; }
+.basics-progress-next { margin-left: auto; color: var(--cinnabar); text-decoration: none; font-size: 0.85rem; }
+.basics-progress-next:hover { text-decoration: underline; }
+.basics-index-card--next { border-color: var(--cinnabar); }
 .basics-index-list { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
 .basics-index-card {
   display: flex; align-items: center; gap: 16px;
@@ -2855,6 +2879,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .master-portal__seals { display: flex; gap: 8px; }
 .master-portal__seal { width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; background: var(--cinnabar); color: #fdfbf6; font-family: var(--font-serif); font-size: 1rem; border-radius: 6px; }
 .master-portal__titles { font-family: var(--font-serif); font-size: 0.95rem; color: var(--ink-soft); }
+.master-portal__desc { font-size: 0.78rem; color: var(--ink-faint); line-height: 1.5; text-align: center; max-width: 17em; }
 
 /* 分站换肤:同一张纸,换一方印(v4 §3.4;v14 §2 data-site 驱动) */
 [data-site="dao"] { --cinnabar: var(--azure); --cinnabar-bg: color-mix(in srgb, var(--azure) 9%, transparent); }
@@ -2899,6 +2924,9 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .dao-section-grid { display: flex; flex-wrap: wrap; gap: 6px; }
 .dao-section-cell { display: inline-flex; align-items: center; justify-content: center; min-width: 34px; height: 34px; padding: 0 6px; border: 1px solid var(--line); border-radius: 4px; color: var(--ink-faint); font-size: 0.8rem; background: var(--paper-raised); cursor: not-allowed; }
 .dao-section-cell--link { cursor: pointer; color: var(--ink-soft); text-decoration: none; transition: border-color 0.15s, color 0.15s; }
+.dao-section-cell--current { border-color: var(--cinnabar); background: var(--cinnabar-bg); color: var(--cinnabar); }
+.dao-text-resume { display: inline-block; margin-top: 12px; padding: 6px 14px; border: 1px solid var(--cinnabar); border-radius: 6px; color: var(--cinnabar); background: var(--cinnabar-bg); text-decoration: none; font-size: 0.85rem; transition: background 0.15s; }
+.dao-text-resume:hover { background: color-mix(in srgb, var(--cinnabar) 16%, transparent); }
 .dao-section-cell--link:hover { border-color: var(--cinnabar); color: var(--cinnabar); }
 /* 带标题的篇目格(图国第一、初见秦…):序号徽 + 篇名,自适应宽度换行 */
 .dao-section-grid--titled { gap: 8px; }
