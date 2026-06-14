@@ -2848,6 +2848,12 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .dao-section-cell { display: inline-flex; align-items: center; justify-content: center; min-width: 34px; height: 34px; padding: 0 6px; border: 1px solid var(--line); border-radius: 4px; color: var(--ink-faint); font-size: 0.8rem; background: var(--paper-raised); cursor: not-allowed; }
 .dao-section-cell--link { cursor: pointer; color: var(--ink-soft); text-decoration: none; transition: border-color 0.15s, color 0.15s; }
 .dao-section-cell--link:hover { border-color: var(--cinnabar); color: var(--cinnabar); }
+/* 带标题的篇目格(图国第一、初见秦…):序号徽 + 篇名,自适应宽度换行 */
+.dao-section-grid--titled { gap: 8px; }
+.dao-section-cell--titled { min-width: 0; height: auto; padding: 7px 12px 7px 8px; gap: 7px; justify-content: flex-start; font-size: 0.9rem; line-height: 1.35; }
+.dao-section-cell__no { flex: none; display: inline-flex; align-items: center; justify-content: center; min-width: 20px; height: 20px; padding: 0 4px; border-radius: 3px; background: var(--cinnabar-bg); color: var(--cinnabar); font-size: 0.72rem; }
+.dao-section-cell__title { white-space: nowrap; }
+@media (max-width: 560px) { .dao-section-cell--titled { font-size: 0.85rem; } }
 .read-toc__back { color: inherit; text-decoration: none; }
 .read-toc__back:hover { color: var(--cinnabar); }
 .dao-section-note { margin-top: 14px; font-size: 0.78rem; }
