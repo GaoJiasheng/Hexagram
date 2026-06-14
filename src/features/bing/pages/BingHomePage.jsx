@@ -7,7 +7,7 @@ export default function BingHomePage() {
     <ScriptureShelf
       texts={texts}
       title="兵家研读"
-      subtitle="武经七书选:孙子、吴子、司马法、尉缭子、三略。论形势虚实奇正,以思想史视角研读。"
+      subtitle="武经七书选：孙子、吴子、司马法、尉缭子、三略。论形势虚实奇正，以兵学思想史视角研读。"
       basePath="/bing"
       brand="观兵"
     />

@@ -26,7 +26,7 @@ export default function CorpusSinglePage({ corpus, slug, text }) {
   if (!book || !meta) {
     return (
       <div className="page-content">
-        <p className="text-faint">没有这部经典: {slug}</p>
+        <p className="text-faint">没有这部经典</p>
         <Link to={site.home} className="btn btn--secondary">返回{site.portalTitle}</Link>
       </div>
     )

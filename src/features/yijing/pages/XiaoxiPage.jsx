@@ -31,8 +31,8 @@ export default function XiaoxiPage() {
       <section className="basics-section">
         <h2 className="basics-section__title">十二消息卦</h2>
         <div className="basics-text">
-          <p>消息卦，又称"十二辟卦"。以复卦（一阳生于子月）起，阳气逐渐增长（息）至乾（六阳），再由姤卦（一阴生于午月）起，阴气逐渐增长（消）至坤（六阴），共十二卦，对应十二月与十二地支。</p>
-          <p>消息卦把六十四卦与时间的流转贯通，是"卦气"学说的核心。hover 任意卦可见月份、地支与节气中气。</p>
+          <p>消息卦，又称「十二辟卦」。以复卦（一阳生于子月）起，阳气逐渐增长（息）至乾（六阳），再由姤卦（一阴生于午月）起，阴气逐渐增长（消）至坤（六阴），共十二卦，对应十二月与十二地支。</p>
+          <p>消息卦把六十四卦与时间的流转贯通，是「卦气」学说的核心。悬停任意卦可见月份、地支与节气中气。</p>
         </div>
 
         <div className="xiaoxi-layout">

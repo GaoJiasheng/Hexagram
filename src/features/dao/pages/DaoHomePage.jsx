@@ -13,7 +13,7 @@ export default function DaoHomePage() {
     <div className="dao-home">
       <div className="page-header">
         <h1 className="page-title">道藏研读</h1>
-        <p className="page-subtitle">六部入门经典，原文俱已录入，自《道德经》始逐部补全译注。</p>
+        <p className="page-subtitle">道德经、南华内篇、参同契等六部道家入门经典——原文、白话译注、每章延伸俱全。</p>
       </div>
 
       <div className="dao-shelf">

@@ -287,7 +287,7 @@ function AppContent() {
         </Suspense>
       </main>
       <footer className="app-footer">
-        <span>观象 · 个人易学研习</span>
+        <span>观象 · 个人学习站</span>
         <span>本站为个人学习用途，解读内容仅供研习参考</span>
       </footer>
       <MobileNav module={module} canSwitch={canSwitch} onPortal={openPortal} />

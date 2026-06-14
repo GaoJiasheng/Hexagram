@@ -169,6 +169,15 @@ async function main() {
   for (const book of BOOKS) {
     const single = book.pages.length === 1 && !book.splitHeadings
     const chapters = []
+    // 内联卷题切章(韬晦术:单页无 == 标题,卷题「隐晦卷一」等内联成行,按 markPattern 切)
+    if (book.markPattern) {
+      const re = new RegExp(book.markPattern)
+      let cur = null
+      for (const p of parsePageParas(pages[book.pages[0]], warnings, book.pages[0])) {
+        if (re.test(p.original)) { cur = { no: chapters.length + 1, title: p.original, paragraphs: [] }; chapters.push(cur) }
+        else if (cur) cur.paragraphs.push(p)
+      }
+    } else
     // 摘录式(战国策):跨卷切章后,按 pickHeadings 顺序挑选指定章并改用友好标题(v18 §1 纵横)
     if (book.pickHeadings) {
       const all = book.pages.flatMap((p) => parsePageChapters(pages[p], warnings, p).map((c) => ({ ...c, page: p })))

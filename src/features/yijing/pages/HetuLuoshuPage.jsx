@@ -170,7 +170,7 @@ export default function HetuLuoshuPage() {
         <h2 className="basics-section__title">洛书</h2>
         <div className="basics-text">
           <p>洛书以九宫排列一至九数：戴九履一（上九下一）、左三右七、二四为肩、六八为足、五居中央。任意一行、一列或对角线之和均为十五。</p>
-          <p>洛书与后天八卦相配，象万物流行运化之序。hover 任意格可见行列高亮。</p>
+          <p>洛书与后天八卦相配，象万物流行运化之序。悬停任意格可见行列高亮。</p>
         </div>
         <div className="luoshu-container">
           <div>

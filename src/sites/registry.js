@@ -48,9 +48,9 @@ export const SITES = [
   {
     key: 'fo',
     group: 'fo',           // 佛:独立单站组,与易道·儒互不可见
-    brand: '观空',         // 暂定
+    brand: '观空',
     portalTitle: '释典研读',
-    portalDesc: '心经 · 金刚经 · 坛经（整理中）',
+    portalDesc: '心经 · 金刚经 · 坛经 · 四十二章经',
     home: '/fo',
     prefix: '/fo',
     accent: 'buddha',
@@ -63,7 +63,7 @@ export const SITES = [
   {
     key: 'ru',
     group: 'ru',           // 儒:独立单站组
-    brand: '观仁',         // 暂定
+    brand: '观仁',
     portalTitle: '儒典研读',
     portalDesc: '论语 · 孟子 · 大学 · 中庸 · 孝经',
     home: '/ru',

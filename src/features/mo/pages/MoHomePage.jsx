@@ -7,7 +7,7 @@ export default function MoHomePage() {
     <ScriptureShelf
       texts={texts}
       title="墨家研读"
-      subtitle="兼爱、非攻、尚贤、天志:先秦与儒并称的显学,兼重逻辑论证与科技。"
+      subtitle="兼爱、非攻、尚贤、天志：先秦与儒并称的显学，兼重名辩逻辑与科学技术。"
       basePath="/mo"
       brand="观兼"
     />

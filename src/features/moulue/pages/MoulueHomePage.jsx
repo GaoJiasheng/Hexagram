@@ -8,7 +8,7 @@ export default function MoulueHomePage() {
     <ScriptureShelf
       texts={texts}
       title="谋略杂纂"
-      subtitle="《天下无谋·秘卷八书》之五种。⚠ 这些托名古人的谋略书,学界多判为后世托名或现代伪作——本站作为「伪书现象」与世态心理的文献材料研读,显著标明真伪存疑,取文献批判与思想史视角,不作处世权术教程。"
+      subtitle="《天下无谋·秘卷八书》之五种，学界多判为后世托名或现代伪作。本站作伪书现象与世态心理的文献材料研读，取文献批判视角，不作处世权术教程。"
       basePath="/moulue"
       brand="观谋"
     />

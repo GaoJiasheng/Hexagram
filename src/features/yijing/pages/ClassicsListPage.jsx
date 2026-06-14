@@ -11,7 +11,7 @@ export default function ClassicsListPage() {
     <div className="classics-list-page">
       <div className="page-header">
         <h1 className="page-title">经传通读</h1>
-        <p className="page-subtitle text-soft">系辞·说卦·序卦·杂卦，十翼经典通读</p>
+        <p className="page-subtitle text-soft">系辞·说卦·序卦·杂卦，易传通读（彖/象/文言见各卦页）</p>
       </div>
       <div className="classics-list">
         {CLASSICS_META.map(book => {

@@ -10,6 +10,8 @@ export const BOOKS = [
   { slug: 'luozhijing', title: '罗织经', pages: Array.from({ length: 12 }, (_, i) => `羅織經/${String(i + 1).padStart(2, '0')}`), chapterTitles: LUOZHI_TITLES, exactChapters: 12 },
   { slug: 'rongkujian', title: '小人经', pages: ['榮枯鑒'], splitHeadings: true, exactChapters: 10 },
   { slug: 'quanmou', title: '权谋术', pages: ['權謀'], splitHeadings: true, exactChapters: 13 },
-  { slug: 'taohuishu', title: '韬晦术', pages: ['韜晦術'], exactChapters: 1 },
+  // 韬晦术:单页无 == 标题,8 卷题(隐晦卷一…用晦卷八)内联成行,markPattern 切 8 章。
+  { slug: 'taohuishu', title: '韬晦术', pages: ['韜晦術'], markPattern: '晦卷[一二三四五六七八]$', exactChapters: 8 },
+  // 止学:单页扁平格言,无卷题,作单页(singlePage)。
   { slug: 'zhixue', title: '止学', pages: ['止学'], exactChapters: 1 },
 ]

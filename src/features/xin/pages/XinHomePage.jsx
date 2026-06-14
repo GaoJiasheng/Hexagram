@@ -7,7 +7,7 @@ export default function XinHomePage() {
     <ScriptureShelf
       texts={texts}
       title="阳明心学"
-      subtitle="《传习录》:心即理、知行合一、致良知——王阳明讲学语录与论学书信。"
+      subtitle="《传习录》：心即理、知行合一、致良知——王阳明讲学语录与论学书信。"
       basePath="/xin"
       brand="观心"
     />

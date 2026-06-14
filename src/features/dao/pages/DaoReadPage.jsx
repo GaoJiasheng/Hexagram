@@ -35,7 +35,7 @@ export default function DaoReadPage() {
   if (!book || !meta) {
     return (
       <div className="page-content">
-        <p className="text-faint">没有这部经典: {slug}</p>
+        <p className="text-faint">没有这部经典</p>
         <Link to="/dao" className="btn btn--secondary">返回道藏</Link>
       </div>
     )

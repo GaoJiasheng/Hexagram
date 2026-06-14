@@ -21,7 +21,7 @@ function shuffle(arr) {
   return a
 }
 
-// 干扰项优先取形近卦:错卦/综卦/一爻之差(v10 §4)
+// 干扰项优先取形近卦：错卦/综卦/一爻之差(v10 §4)
 function pickDistractors(hex) {
   const near = new Set([getCuoGua(hex.binary), getZongGua(hex.binary)])
   for (let i = 0; i < 6; i++) near.add(flipLine(hex.binary, i))
@@ -43,11 +43,11 @@ function makeRound() {
 }
 
 const MODES = [
-  ['shigua', '识卦', '看卦画,认卦名'],
-  ['huagua', '画卦', '看卦名,识卦画'],
+  ['shigua', '识卦', '看卦画，认卦名'],
+  ['huagua', '画卦', '看卦名，识卦画'],
 ]
 
-// 六十四卦认读闪卡(v10 §4):运行时出题,全对通过(沿用学堂规则)
+// 六十四卦认读闪卡(v10 §4)：运行时出题，全对通过（沿用学堂规则）
 export default function GuahuaQuizPage() {
   usePageTitle('六十四卦认读')
   const [mode, setMode] = useState('shigua')
@@ -105,7 +105,7 @@ export default function GuahuaQuizPage() {
       </div>
       <div className="page-header">
         <h1 className="page-title">六十四卦认读</h1>
-        <p className="page-subtitle">卦画与卦名互认——干扰项混入错卦、综卦与一爻之差的形近卦,认熟了它们,六十四卦就认全了。</p>
+        <p className="page-subtitle">卦画与卦名互认——干扰项混入错卦、综卦与一爻之差的形近卦，认熟了它们，六十四卦就认全了。</p>
       </div>
 
       {!session && (
@@ -122,7 +122,7 @@ export default function GuahuaQuizPage() {
               </button>
             ))}
           </div>
-          <p className="text-faint">每轮 {ROUND} 题,全对通过。</p>
+          <p className="text-faint">每轮 {ROUND} 题，全对通过。</p>
         </section>
       )}
 
@@ -164,7 +164,7 @@ export default function GuahuaQuizPage() {
               <p className={chosen === q.answer ? 'quiz-feedback--right' : 'quiz-feedback--wrong'}>
                 {chosen === q.answer ? '答对了。' : '不对。'}这是
                 <Link to={`/hexagram/${q.target.id}`} className="related-shili-link">{q.target.fullName}</Link>
-                (第 {q.target.id} 卦)。
+                （第 {q.target.id} 卦）。
               </p>
               <button className="btn btn--primary" onClick={next}>{cur + 1 < ROUND ? '下一题' : '看成绩'}</button>
             </div>
@@ -176,7 +176,7 @@ export default function GuahuaQuizPage() {
         <section className="quiz-card">
           <div className="quiz-card__result">
             <p className="quiz-card__score">{correctCount} / {ROUND}</p>
-            <p className="text-soft">{correctCount === ROUND ? '全对,通过!' : '形近卦最容易栽——再来一轮。'}</p>
+            <p className="text-soft">{correctCount === ROUND ? '全对，通过！' : '形近卦最容易栽——再来一轮。'}</p>
             <div className="guahua-modes">
               {MODES.map(([m, label]) => (
                 <button key={m} className="btn btn--secondary" onClick={() => start(m)}>{label}再练</button>

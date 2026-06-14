@@ -31,7 +31,7 @@ export const LEARN_TOPICS = [
     id: 'tuiyan',
     to: '/basics/tuiyan',
     title: '推演入门',
-    desc: '起卦/本卦·动爻·变卦/六法分类/解卦流程——推演工作台总纲,新手先读这篇',
+    desc: '起卦/本卦·动爻·变卦/六法分类/解卦流程——推演工作台总纲，新手先读这篇',
     time: '约 8 分钟',
     quiz: false,
     usedKeys: null,
@@ -110,7 +110,7 @@ export const LEARN_TOPICS = [
   },
 ]
 
-// 计算某主题的读/练/用状态(无该层则为 null)
+// 计算某主题的读/练/用状态（无该层则为 null)
 export function topicStatus(topic, progress) {
   return {
     read: !!progress.read[topic.id],

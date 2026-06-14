@@ -7,7 +7,7 @@ export default function FaHomePage() {
     <ScriptureShelf
       texts={texts}
       title="法家研读"
-      subtitle="法、术、势之学:韩非子集大成,商君书言变法。以思想史视角研读,如实呈现,不作影射。"
+      subtitle="法、术、势之学：韩非子集大成，商君书言变法。以思想史视角研读，如实呈现，不作影射。"
       basePath="/fa"
       brand="观法"
     />
