@@ -191,13 +191,14 @@ export const HOST_GROUPS = {
   'bud.gavingao.cn': 'fo',
 }
 
-// 隐藏的三教门户路径(仅 owner 知道;无任何可见链接指向它,域名着陆对它豁免)。可改。
+// 诸学总门户路径:左上角 logo 全站可达的公开总入口,列全部分组(域名着陆对它豁免)。可改。
 export const MASTER_PORTAL_PATH = '/hexagram'
 
-// 按 prefix 最长匹配定当前站;无前缀者为默认兜底
+// 按 prefix 最长匹配定当前站;无前缀者为默认兜底。
+// 边界判断(=prefix 或 prefix+'/'):/foo 不再误命中 /fo,404 不套别组外壳。
 export function siteForPath(pathname) {
   const matched = SITES
-    .filter(s => s.prefix && pathname.startsWith(s.prefix))
+    .filter(s => s.prefix && (pathname === s.prefix || pathname.startsWith(s.prefix + '/')))
     .sort((a, b) => b.prefix.length - a.prefix.length)
   return matched[0] || SITES[0]
 }

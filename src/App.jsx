@@ -111,8 +111,8 @@ function Nav({ module, canSwitch, onSearch, onPortal }) {
 
   return (
     <nav className={`app-nav ${scrolled ? 'app-nav--scrolled' : ''}`} role="navigation" aria-label="主导航">
-      {/* 左上角 logo → 总门户(owner 自用全局导航;点印章跳九组总入口) */}
-      <NavLink to={MASTER_PORTAL_PATH} className="app-nav__brand" aria-label="总门户·全部分组">
+      {/* 左上角 logo → 诸学总门户(公开总入口,全站可达;列全部分组) */}
+      <NavLink to={MASTER_PORTAL_PATH} className="app-nav__brand" aria-label="诸学门户·全部分组">
         <span className="brand-seal" aria-hidden="true">{module.brand}</span>
       </NavLink>
       <div className="app-nav__links">
@@ -203,11 +203,16 @@ function AppContent() {
   const module = siteForPath(location.pathname)
   const group = activeGroup(location.pathname, typeof window !== 'undefined' ? window.location.hostname : '')
   const canSwitch = sitesInGroup(group).length > 1
+  // 总门户:中立全组枢纽,不套任一分站外壳(无 module nav / 搜索 / 底栏 / 主色偏向)
+  const isPortal = location.pathname === MASTER_PORTAL_PATH
+
+  // 路由切换关闭搜索/切站浮层,避免状态在跨站导航后残留
+  useEffect(() => { setSearchOpen(false); setPortalOpen(false) }, [location.pathname])
 
   // 域名着陆(v15 §1):配了 HOST_GROUPS 的域名访问别组路径时,落回本组首页。
   // HOST_GROUPS 为空(dev/主域名)时不触发,按路径分组即可。
   useEffect(() => {
-    if (location.pathname === MASTER_PORTAL_PATH) return  // 隐藏门户豁免域名着陆
+    if (location.pathname === MASTER_PORTAL_PATH) return  // 总门户(中立全组枢纽)豁免域名着陆
     const host = typeof window !== 'undefined' ? window.location.hostname : ''
     const hostGroup = HOST_GROUPS[host]
     if (hostGroup && module.group !== hostGroup) {
@@ -217,8 +222,8 @@ function AppContent() {
   }, [location.pathname, module.group, navigate])
 
   return (
-    <div className="app-shell" data-site={module.key}>
-      <Nav module={module} canSwitch={canSwitch} onSearch={openSearch} onPortal={openPortal} />
+    <div className="app-shell" data-site={isPortal ? 'portal' : module.key}>
+      {!isPortal && <Nav module={module} canSwitch={canSwitch} onSearch={openSearch} onPortal={openPortal} />}
       <main className="app-main page-fade-in">
         <ErrorBoundary key={location.pathname}>
         <Suspense fallback={<div className="route-loading" aria-label="加载中">⋯</div>}>
@@ -277,7 +282,7 @@ function AppContent() {
           <Route path="/moulue" element={<MoulueHomePage />} />
           <Route path="/moulue/:slug" element={<CorpusTextPage corpus="moulue" />} />
           <Route path="/moulue/:slug/:chapter" element={<CorpusReadPage corpus="moulue" />} />
-          {/* 隐藏的三教门户(v15):仅 owner 经秘密路径访问,无站内链接指向 */}
+          {/* 诸学总门户(v15):左上角 logo 全站可达的公开总入口,列全部分组 */}
           <Route path={MASTER_PORTAL_PATH} element={<MasterPortalPage />} />
           <Route path="*" element={
             <div style={{ textAlign: 'center', paddingTop: '80px' }}>
@@ -289,22 +294,24 @@ function AppContent() {
         </Suspense>
         </ErrorBoundary>
       </main>
-      <footer className="app-footer">
-        <span>观象 · 个人学习站</span>
-        <span>本站为个人学习用途，解读内容仅供研习参考</span>
-      </footer>
-      <MobileNav module={module} canSwitch={canSwitch} onPortal={openPortal} />
-      {module.key === 'yijing' && searchOpen && (
+      {!isPortal && (
+        <footer className="app-footer">
+          <span>观象 · 个人学习站</span>
+          <span>本站为个人学习用途，解读内容仅供研习参考</span>
+        </footer>
+      )}
+      {!isPortal && <MobileNav module={module} canSwitch={canSwitch} onPortal={openPortal} />}
+      {!isPortal && module.key === 'yijing' && searchOpen && (
         <Suspense fallback={null}>
           <SearchPalette open onClose={() => setSearchOpen(false)} />
         </Suspense>
       )}
-      {CORPUS_SEARCH_SITES.has(module.key) && searchOpen && (
+      {!isPortal && CORPUS_SEARCH_SITES.has(module.key) && searchOpen && (
         <Suspense fallback={null}>
           <CorpusSearchPalette corpus={module.key} open onClose={() => setSearchOpen(false)} />
         </Suspense>
       )}
-      {portalOpen && <ModulePortal current={module.key} group={group} onClose={() => setPortalOpen(false)} />}
+      {!isPortal && portalOpen && <ModulePortal current={module.key} group={group} onClose={() => setPortalOpen(false)} />}
     </div>
   )
 }

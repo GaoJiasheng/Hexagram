@@ -645,7 +645,10 @@ export default function WorkbenchPage() {
   const navigate = useNavigate()
 
   const initGua = Number(params.get('gua')) || null
-  const initDong = params.get('dong') ? params.get('dong').split(',').map(Number).filter(n => n >= 1 && n <= 6) : []
+  // 动爻:去重 + 取整 + 限 1–6,挡 ?dong=5,5,5 或 5.5 等非法分享 URL 致变卦/断法 NaN
+  const initDong = params.get('dong')
+    ? [...new Set(params.get('dong').split(',').map(Number).filter(n => Number.isInteger(n) && n >= 1 && n <= 6))]
+    : []
   const initMethod = VALID_METHODS.includes(params.get('method')) ? params.get('method') : 'trigram'
 
   const [hex, setHex] = useState(() => initGua ? hexagramById.get(initGua) : null)
@@ -664,8 +667,9 @@ export default function WorkbenchPage() {
     const p = {}
     if (hex) p.gua = hex.id
     if (movingLines.length) p.dong = movingLines.join(',')
+    if (method && method !== 'trigram') p.method = method  // 保留起卦法,刷新/分享不丢
     setParams(p, { replace: true })
-  }, [hex, movingLines])
+  }, [hex, movingLines, method])
 
   useEffect(() => {
     if (upperTrigram && lowerTrigram) {
@@ -682,10 +686,11 @@ export default function WorkbenchPage() {
 
   useEffect(() => {
     function onKey(e) {
+      if (!hex || e.isComposing) return  // 无卦不响应,免空台累积动爻;输入法组字不误触
+      const t = e.target
+      if (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable) return
       const n = parseInt(e.key, 10)
-      if (n >= 1 && n <= 6 && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
-        toggleMoving(n)
-      }
+      if (n >= 1 && n <= 6) toggleMoving(n)
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)

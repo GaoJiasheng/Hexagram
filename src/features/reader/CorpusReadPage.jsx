@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { saveReadingProgress } from '../yijing/storage.js'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
@@ -10,12 +10,18 @@ import YanyiBlock from './YanyiBlock.jsx'
 // 通用逐章阅读器(v16 §1)——佛/儒共用,薄包装通用 ClassicReader 的 paged 模式。
 export default function CorpusReadPage({ corpus }) {
   const site = SITE_MAP[corpus]
+  const navigate = useNavigate()
   const { slug, chapter: chapterParam } = useParams()
   const [book, setBook] = useState(null)
   const [loading, setLoading] = useState(true)
   const chapter = Number(chapterParam) || 1
   const meta = getMeta(corpus, slug)
   usePageTitle(meta ? `${meta.title}·第${chapterParam}${meta.sectionUnit || '章'}` : null, site?.brand)
+
+  // 单页书被章路由深链命中(如 /fo/jingangjing/5):重定向到单页阅读器,保单一阅读形态
+  useEffect(() => {
+    if (meta?.singlePage) navigate(`${site.home}/${slug}`, { replace: true })
+  }, [meta, site, slug, navigate])
 
   useEffect(() => {
     setLoading(true)
@@ -25,9 +31,10 @@ export default function CorpusReadPage({ corpus }) {
   }, [corpus, slug])
 
   useEffect(() => {
-    if (book) {
+    window.scrollTo(0, 0)
+    // 仅当章存在时记进度,避免越界章号(/x/slug/999)污染续读
+    if (book && book.chapters.some((c) => c.no === chapter)) {
       saveReadingProgress(slug, chapter)
-      window.scrollTo(0, 0)
     }
   }, [slug, chapter, book])
 
