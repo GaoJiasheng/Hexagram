@@ -73,10 +73,16 @@ export default function FangyuanView() {
               {/* 圆图节点 */}
               <g
                 className="fangyuan-node"
+                role="link"
+                tabIndex={0}
+                aria-label={`${h.fullName} 第 ${h.id} 卦`}
                 transform={`translate(${circle.x}, ${circle.y})`}
                 onMouseEnter={() => setHovered(h.id)}
                 onMouseLeave={() => setHovered(null)}
+                onFocus={() => setHovered(h.id)}
+                onBlur={() => setHovered(null)}
                 onClick={() => navigate(`/hexagram/${h.id}`)}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); navigate(`/hexagram/${h.id}`) } }}
               >
                 <title>{`${h.fullName}(第 ${h.id} 卦 · 先天第 ${xiantianIndex(h.binary)})`}</title>
                 {hl && <circle r="20" fill="var(--cinnabar)" opacity="0.12" />}

@@ -1818,9 +1818,48 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 
 .read-nav__prev:hover, .read-nav__next:hover { color: var(--azure); }
 
+/* 移动端章节下拉(侧栏目录 @≤768px 隐藏后的替代入口) */
+.read-toc-mobile { display: none; }
+.read-toc-mobile__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  flex-shrink: 0;
+}
+.read-toc-mobile__select {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  color: var(--ink);
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 7px 10px;
+}
+
+/* 长单页经(坛经/金刚经/心经等整书一页铺开)按章跳过离屏渲染,
+   保留 DOM 故锚点/查找/搜索仍可达;auto 让浏览器记住实际高度免抖动 */
+.dao-single__chapter {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
 @media (max-width: 768px) {
   .read-toc { display: none; }
+  .read-toc-mobile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+  }
 }
+
+.read-notfound { padding: 24px 0; }
+.read-notfound__links { margin-top: 10px; }
+.read-notfound__sep { color: var(--ink-faint); }
 
 /* ── Basics Page ────────────────────────────────────────────── */
 

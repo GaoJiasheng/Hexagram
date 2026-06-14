@@ -150,8 +150,11 @@ export default function HetuLuoshuPage() {
               <button
                 key={n}
                 className={`hetu-legend__item ${hetuHL === n ? 'hetu-legend__item--active' : ''}`}
+                aria-pressed={hetuHL === n}
                 onMouseEnter={() => setHetuHL(n)}
                 onMouseLeave={() => setHetuHL(null)}
+                onFocus={() => setHetuHL(n)}
+                onClick={() => setHetuHL((h) => (h === n ? null : n))}
               >
                 <span className={`hetu-dot ${yang ? 'hetu-dot--yang' : 'hetu-dot--yin'}`} />
                 <span>{n} — {yang ? '阳' : '阴'}</span>
@@ -170,7 +173,7 @@ export default function HetuLuoshuPage() {
         <h2 className="basics-section__title">洛书</h2>
         <div className="basics-text">
           <p>洛书以九宫排列一至九数：戴九履一（上九下一）、左三右七、二四为肩、六八为足、五居中央。任意一行、一列或对角线之和均为十五。</p>
-          <p>洛书与后天八卦相配，象万物流行运化之序。悬停任意格可见行列高亮。</p>
+          <p>洛书与后天八卦相配，象万物流行运化之序。点选或悬停任意格可见行列高亮。</p>
         </div>
         <div className="luoshu-container">
           <div>
@@ -182,7 +185,10 @@ export default function HetuLuoshuPage() {
                     className="luoshu-cell-btn"
                     onMouseEnter={() => setLuoshuHL(n)}
                     onMouseLeave={() => setLuoshuHL(null)}
-                    aria-label={`洛书 ${n}`}
+                    onFocus={() => setLuoshuHL(n)}
+                    onClick={() => setLuoshuHL((h) => (h === n ? null : n))}
+                    aria-label={`洛书第 ${n} 格`}
+                    aria-pressed={luoshuHL === n}
                   />
                 ))}
               </div>

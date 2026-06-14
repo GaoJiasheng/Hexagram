@@ -50,10 +50,17 @@ export default function XiaoxiPage() {
               return (
                 <g
                   key={item.id}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`${item.name}卦 ${item.month}`}
+                  aria-pressed={isHovered}
                   transform={`translate(${x}, ${y}) scale(${scale})`}
                   style={{ transformOrigin: `${x}px ${y}px`, cursor: 'pointer', transition: 'transform 0.15s' }}
                   onMouseEnter={() => setHovered(item.id)}
                   onMouseLeave={() => setHovered(null)}
+                  onClick={() => setHovered((h) => (h === item.id ? null : item.id))}
+                  onFocus={() => setHovered(item.id)}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setHovered((h) => (h === item.id ? null : item.id)) } }}
                 >
                   {/* 背景圆 */}
                   <circle
@@ -92,7 +99,7 @@ export default function XiaoxiPage() {
                 </div>
               </div>
             ) : (
-              <p className="text-faint xiaoxi-hint">hover 环上任意卦<br />查看月份与节气</p>
+              <p className="text-faint xiaoxi-hint">点选或悬停环上任意卦<br />查看月份与节气<br /><span className="text-faint" style={{ fontSize: '0.85em' }}>(下方表格亦列全部信息)</span></p>
             )}
           </div>
         </div>

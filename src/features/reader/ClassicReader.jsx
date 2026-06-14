@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import ClassicText from '../yijing/components/ClassicText.jsx'
 import { useSettings } from '../yijing/SettingsContext.jsx'
@@ -26,18 +26,34 @@ export default function ClassicReader({
 }) {
   const { settings, setSettings } = useSettings()
   const { hash } = useLocation()
+  const navigate = useNavigate()
   const single = mode === 'single'
   const multi = chapters.length > 1
 
-  // 单页:hash 锚点定位(目录点击跳章)
+  // 单页:hash 锚点定位(目录点击跳章);rAF 等布局完成再定位,长经更稳
   useEffect(() => {
     if (!single || !hash) return
-    const t = setTimeout(() => {
-      const el = document.querySelector(hash)
-      if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' })
-    }, 50)
-    return () => clearTimeout(t)
+    let raf2 = 0
+    const raf1 = requestAnimationFrame(() => {
+      raf2 = requestAnimationFrame(() => {
+        const el = document.getElementById(decodeURIComponent(hash.slice(1)))
+        if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' })
+      })
+    })
+    return () => { cancelAnimationFrame(raf1); cancelAnimationFrame(raf2) }
   }, [single, hash])
+
+  // 移动端章节下拉(桌面侧栏目录 @≤768px 被隐藏时的替代入口)
+  const jumpTo = (no) => {
+    if (!no) return
+    if (single) {
+      const el = document.getElementById(anchorId(no))
+      if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' })  // 同章再选也能滚
+      navigate(`#${anchorId(no)}`)
+    } else {
+      navigate(chapterHref(no))
+    }
+  }
 
   const Toolbar = (
     <div className="read-toolbar">
@@ -97,6 +113,22 @@ export default function ClassicReader({
 
       <main className="read-content">
         {header}
+        {multi && (
+          <div className="read-toc-mobile">
+            <label htmlFor="read-toc-select" className="read-toc-mobile__label">{single ? '跳转章节' : '章节'}</label>
+            <select
+              id="read-toc-select"
+              className="read-toc-mobile__select"
+              value={single ? '' : chapter}
+              onChange={(e) => jumpTo(Number(e.target.value))}
+            >
+              {single && <option value="">选择章节…</option>}
+              {chapters.map((c) => (
+                <option key={c.no} value={c.no}>{chapterLabel(c)}</option>
+              ))}
+            </select>
+          </div>
+        )}
         {Toolbar}
 
         {single ? (
@@ -109,7 +141,16 @@ export default function ClassicReader({
           ))
         ) : (() => {
           const cur = chapters.find((c) => c.no === chapter)
-          if (!cur) return <p className="text-faint">第{chapter}{sectionUnit}不存在</p>
+          if (!cur) return (
+            <div className="read-notfound">
+              <p className="text-faint">没有第 {chapter} {sectionUnit}（本篇共 {chapters.length} {sectionUnit}）。</p>
+              <p className="read-notfound__links">
+                <Link to={chapterHref(1)} className="read-toc__back">去第一{sectionUnit}</Link>
+                <span className="read-notfound__sep"> · </span>
+                {tocBack}
+              </p>
+            </div>
+          )
           const idx = chapters.findIndex((c) => c.no === chapter)
           const prev = chapters[idx - 1]
           const next = chapters[idx + 1]
