@@ -92,7 +92,7 @@ export const SITES = [
   },
   {
     key: 'fa',
-    group: 'zhuzi',        // 诸子百家:法/墨/兵/纵横 同组,门户互切(v18 §0 方案 A)
+    group: 'fa',           // 诸子各家各为独立组(同儒/佛/心),门户列为平级卡片,与他组两两零链接
     brand: '观法',
     portalTitle: '法家研读',
     portalDesc: '韩非子 · 商君书',
@@ -103,11 +103,11 @@ export const SITES = [
     hasSearch: false,
     nav: [{ to: '/fa', label: '经典' }],
     mobileNav: [{ to: '/fa', label: '经典', icon: '☰', exact: false }],
-    mobileSwitch: true,    // 诸子组内可切 4 家
+    mobileSwitch: false,
   },
   {
     key: 'mo',
-    group: 'zhuzi',
+    group: 'mo',
     brand: '观兼',
     portalTitle: '墨家研读',
     portalDesc: '墨子:兼爱 · 非攻 · 尚贤 · 天志',
@@ -118,11 +118,11 @@ export const SITES = [
     hasSearch: false,
     nav: [{ to: '/mo', label: '经典' }],
     mobileNav: [{ to: '/mo', label: '经典', icon: '☵', exact: false }],
-    mobileSwitch: true,
+    mobileSwitch: false,
   },
   {
     key: 'bing',
-    group: 'zhuzi',
+    group: 'bing',
     brand: '观兵',
     portalTitle: '兵家研读',
     portalDesc: '孙子 · 吴子 · 司马法 · 尉缭子 · 三略',
@@ -133,11 +133,11 @@ export const SITES = [
     hasSearch: false,
     nav: [{ to: '/bing', label: '经典' }],
     mobileNav: [{ to: '/bing', label: '经典', icon: '☶', exact: false }],
-    mobileSwitch: true,
+    mobileSwitch: false,
   },
   {
     key: 'zong',
-    group: 'zhuzi',
+    group: 'zong',
     brand: '观衡',
     portalTitle: '纵横研读',
     portalDesc: '鬼谷子 · 战国策选',
@@ -148,7 +148,7 @@ export const SITES = [
     hasSearch: false,
     nav: [{ to: '/zong', label: '经典' }],
     mobileNav: [{ to: '/zong', label: '经典', icon: '☴', exact: false }],
-    mobileSwitch: true,
+    mobileSwitch: false,
   },
 ]
 
