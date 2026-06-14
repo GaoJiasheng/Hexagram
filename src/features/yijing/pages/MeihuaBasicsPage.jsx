@@ -5,6 +5,7 @@ import QuizCard from '../components/QuizCard.jsx'
 import TermTip from '../components/TermTip.jsx'
 import { markRead } from '../storage.js'
 import { usePageTitle } from '../hooks/usePageTitle.js'
+import LearnNextLink from '../components/LearnNextLink.jsx'
 
 export default function MeihuaBasicsPage() {
   usePageTitle('梅花易数')
@@ -74,6 +75,7 @@ export default function MeihuaBasicsPage() {
         <p className="text-soft">工作台的「梅花」标签有快速与引导两种模式——引导模式逐步演算，每一步都是上面这套规则。</p>
         <Link to="/workbench?method=meihua" className="btn btn--primary">去工作台实操 →</Link>
       </div>
+      <LearnNextLink id="meihua" />
     </div>
   )
 }

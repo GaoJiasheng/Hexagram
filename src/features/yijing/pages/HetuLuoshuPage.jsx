@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import QuizCard from '../components/QuizCard.jsx'
 import { markRead } from '../storage.js'
 import { usePageTitle } from '../hooks/usePageTitle.js'
+import LearnNextLink from '../components/LearnNextLink.jsx'
 
 // 河图：每组 { label, positions:[{cx,cy}], odd } 其中 odd=true 为阳（白点）
 const HETU_GROUPS = [
@@ -209,6 +210,7 @@ export default function HetuLuoshuPage() {
         <p className="text-soft">这套数字正是梅花易数取数的依据——先天卦数即由此而来。</p>
         <Link to="/basics/meihua" className="btn btn--primary">学梅花易数 →</Link>
       </div>
+      <LearnNextLink id="hetu-luoshu" />
     </div>
   )
 }

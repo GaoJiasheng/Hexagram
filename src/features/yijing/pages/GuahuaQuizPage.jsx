@@ -5,6 +5,7 @@ import { allHexagrams, hexagramByBinary } from '../data.js'
 import { getCuoGua, getZongGua } from '../engine/transforms.js'
 import { markRead, markQuizResult, getProgress } from '../storage.js'
 import { usePageTitle } from '../hooks/usePageTitle.js'
+import LearnNextLink from '../components/LearnNextLink.jsx'
 
 const ROUND = 10
 
@@ -185,6 +186,7 @@ export default function GuahuaQuizPage() {
           </div>
         </section>
       )}
+      <LearnNextLink id="guahua" />
     </div>
   )
 }

@@ -4,6 +4,7 @@ import QuizCard from '../components/QuizCard.jsx'
 import TermTip from '../components/TermTip.jsx'
 import { markRead } from '../storage.js'
 import { usePageTitle } from '../hooks/usePageTitle.js'
+import LearnNextLink from '../components/LearnNextLink.jsx'
 
 const COIN_TABLE = [
   { combo: '三背', sum: '3+3+3=9', value: 9, name: '老阳（重）', yinyang: '阳 ○', moving: '动' },
@@ -79,6 +80,7 @@ export default function JinqianBasicsPage() {
         <p className="text-soft">工作台的「金钱」标签有三种用法：一键掷卦、逐掷引导，或掷实物铜钱后逐爻录入。</p>
         <Link to="/workbench?method=jinqian" className="btn btn--primary">去工作台实操 →</Link>
       </div>
+      <LearnNextLink id="jinqian" />
     </div>
   )
 }

@@ -96,6 +96,15 @@ export default function SettingsSheet({ open, onClose }) {
         </div>
 
         <div className="settings-section">
+          <h3 className="settings-section__title">正文行宽</h3>
+          <div className="seg-control">
+            {[['narrow', '窄'], ['normal', '中'], ['wide', '宽']].map(([v, l]) => (
+              <button key={v} className={`seg-btn ${settings.readWidth === v ? 'seg-btn--active' : ''}`} onClick={() => setSettings({ readWidth: v })}>{l}</button>
+            ))}
+          </div>
+        </div>
+
+        <div className="settings-section">
           <h3 className="settings-section__title">数据管理</h3>
           <p className="settings-privacy">全部数据(收藏/笔记/推演历史/研习进度)仅存于本浏览器,不上传;清缓存或换设备会丢失,请定期导出备份。</p>
           <div className="data-actions">

@@ -5,6 +5,7 @@ import QuizCard from '../components/QuizCard.jsx'
 import { markRead } from '../storage.js'
 import { XIAOXI_SEQUENCE } from '../engine/xiaoxi.js'
 import { usePageTitle } from '../hooks/usePageTitle.js'
+import LearnNextLink from '../components/LearnNextLink.jsx'
 
 const RADIUS = 130
 const CENTER = 160
@@ -134,6 +135,7 @@ export default function XiaoxiPage() {
       </section>
 
       <QuizCard topic="xiaoxi" />
+      <LearnNextLink id="xiaoxi" />
     </div>
   )
 }

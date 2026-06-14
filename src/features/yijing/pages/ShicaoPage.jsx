@@ -4,6 +4,7 @@ import DayanCast from '../components/DayanCast.jsx'
 import QuizCard from '../components/QuizCard.jsx'
 import { markRead } from '../storage.js'
 import { usePageTitle } from '../hooks/usePageTitle.js'
+import LearnNextLink from '../components/LearnNextLink.jsx'
 
 const XICI_QUOTE = '大衍之数五十，其用四十有九。分而为二以象两，挂一以象三，揲之以四以象四时，归奇于扐以象闰；五岁再闰，故再扐而后挂。'
 
@@ -42,6 +43,7 @@ export default function ShicaoPage() {
         <p className="text-soft">工作台的「大衍」标签也能随时揲蓍——一键成卦或逐步引导。</p>
         <Link to="/workbench?method=dayan" className="btn btn--primary">去工作台实操 →</Link>
       </div>
+      <LearnNextLink id="shicao" />
     </div>
   )
 }

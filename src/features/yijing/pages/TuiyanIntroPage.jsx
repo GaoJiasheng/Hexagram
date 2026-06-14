@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import TermTip from '../components/TermTip.jsx'
 import { markRead } from '../storage.js'
 import { usePageTitle } from '../hooks/usePageTitle.js'
+import LearnNextLink from '../components/LearnNextLink.jsx'
 
 // 推演入门(v12 §3)：起卦与解卦的总纲，串起本卦/动爻/变卦/贞悔与六法、变占规则
 export default function TuiyanIntroPage() {
@@ -89,6 +90,7 @@ export default function TuiyanIntroPage() {
         </div>
         <p className="text-faint intro-disclaimer">本站为研习用途：推演呈现的是卦象、卦变与历代经传义理，判断与取舍仍在读者自己。</p>
       </section>
+      <LearnNextLink id="tuiyan" />
     </div>
   )
 }

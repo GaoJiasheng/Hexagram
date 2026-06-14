@@ -30,15 +30,18 @@ export const DEFAULT_SETTINGS = {
   theme: 'system', // 'light' | 'dark' | 'system'
   showTranslation: true,
   fontScale: 1, // 0.9 | 1 | 1.15
+  readWidth: 'normal', // 'narrow' | 'normal' | 'wide'
 }
 const VALID_THEMES = ['light', 'dark', 'system']
 const VALID_FONT_SCALES = [0.9, 1, 1.15]
+const VALID_READ_WIDTHS = ['narrow', 'normal', 'wide']
 
 // 白名单校验:旧结构/损坏值不直接进 state(防非法 fontScale 写入 --font-scale 等)
 export function getSettings() {
   const s = { ...DEFAULT_SETTINGS, ...get('settings') }
   if (!VALID_THEMES.includes(s.theme)) s.theme = DEFAULT_SETTINGS.theme
   if (!VALID_FONT_SCALES.includes(s.fontScale)) s.fontScale = DEFAULT_SETTINGS.fontScale
+  if (!VALID_READ_WIDTHS.includes(s.readWidth)) s.readWidth = DEFAULT_SETTINGS.readWidth
   s.showTranslation = !!s.showTranslation
   return s
 }

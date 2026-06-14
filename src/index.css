@@ -2503,6 +2503,10 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .basics-index-page { max-width: var(--content-w); margin: 0 auto; padding: 24px 16px 80px; }
 .basics-progress-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 20px; padding: 12px 16px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper-raised); font-size: 0.85rem; color: var(--ink-soft); }
 .basics-progress-stat strong { color: var(--cinnabar); font-size: 1.05em; }
+/* 学堂篇间接力 */
+.learn-next { margin-top: 32px; padding-top: 18px; border-top: 1px solid var(--line); text-align: right; }
+.learn-next__link { color: var(--cinnabar); text-decoration: none; font-size: 0.95rem; font-family: var(--font-serif); }
+.learn-next__link:hover { text-decoration: underline; }
 .basics-progress-next { margin-left: auto; color: var(--cinnabar); text-decoration: none; font-size: 0.85rem; }
 .basics-progress-next:hover { text-decoration: underline; }
 .basics-index-card--next { border-color: var(--cinnabar); }

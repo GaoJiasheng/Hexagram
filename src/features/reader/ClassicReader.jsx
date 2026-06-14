@@ -43,6 +43,22 @@ export default function ClassicReader({
     return () => { cancelAnimationFrame(raf1); cancelAnimationFrame(raf2) }
   }, [single, hash])
 
+  // 逐章模式 ←→ 键翻章(移植卦页交互);有浮层打开时让位
+  useEffect(() => {
+    if (single) return
+    function onKey(e) {
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return
+      const t = e.target
+      if (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable) return
+      if (document.querySelector('.search-overlay, .settings-overlay, .module-portal, .tour')) return
+      const idx = chapters.findIndex((c) => c.no === chapter)
+      const dest = e.key === 'ArrowLeft' ? chapters[idx - 1] : chapters[idx + 1]
+      if (dest) navigate(chapterHref(dest.no))
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [single, chapters, chapter, navigate, chapterHref])
+
   // 移动端章节下拉(桌面侧栏目录 @≤768px 被隐藏时的替代入口)
   const jumpTo = (no) => {
     if (!no) return

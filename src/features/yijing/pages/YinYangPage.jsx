@@ -4,6 +4,7 @@ import { allTrigrams, trigramById, TRIGRAM_ORDER } from '../data.js'
 import QuizCard from '../components/QuizCard.jsx'
 import { markRead } from '../storage.js'
 import { usePageTitle } from '../hooks/usePageTitle.js'
+import LearnNextLink from '../components/LearnNextLink.jsx'
 
 const XIANTIAN_ORDER = ['qian', 'dui', 'li', 'zhen', 'xun', 'kan', 'gen', 'kun']
 
@@ -205,6 +206,7 @@ export default function YinYangPage() {
         <p className="text-soft">认得八卦符号了？去工作台用上下卦拼出你的第一卦。</p>
         <Link to="/workbench?method=trigram" className="btn btn--primary">去工作台实操 →</Link>
       </div>
+      <LearnNextLink id="yinyang" />
     </div>
   )
 }
