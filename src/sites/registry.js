@@ -165,6 +165,21 @@ export const SITES = [
     mobileNav: [{ to: '/zhongyi', label: '经典', icon: '☳', exact: false }],
     mobileSwitch: false,
   },
+  {
+    key: 'moulue',
+    group: 'moulue',       // 谋略杂纂:独立单站组(v20),收《天下无谋》托名伪书,显著框注
+    brand: '观谋',
+    portalTitle: '谋略杂纂',
+    portalDesc: '罗织经 · 小人经 · 权谋术 · 韬晦术 · 止学（托名·真伪存疑）',
+    home: '/moulue',
+    prefix: '/moulue',
+    accent: 'moulue',
+    switchLabel: '谋',
+    hasSearch: true,
+    nav: [{ to: '/moulue', label: '经典' }],
+    mobileNav: [{ to: '/moulue', label: '经典', icon: '☷', exact: false }],
+    mobileSwitch: false,
+  },
 ]
 
 export const SITE_MAP = Object.fromEntries(SITES.map(s => [s.key, s]))

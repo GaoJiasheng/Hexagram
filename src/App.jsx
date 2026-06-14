@@ -7,7 +7,7 @@ import { siteForPath, activeGroup, sitesInGroup, HOST_GROUPS, MASTER_PORTAL_PATH
 const SearchPalette = lazy(() => import('./features/yijing/components/SearchPalette.jsx'))
 // 读经类站(corpus)各自的全站检索面板(C1);分组隔离:只搜本组
 const CorpusSearchPalette = lazy(() => import('./features/reader/CorpusSearchPalette.jsx'))
-const CORPUS_SEARCH_SITES = new Set(['fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi'])
+const CORPUS_SEARCH_SITES = new Set(['fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue'])
 
 // 页面全部按路由懒加载(v11 §2),首包只留壳与搜索
 // Pages — 易经研习模块
@@ -46,6 +46,7 @@ const MoHomePage = lazy(() => import('./features/mo/pages/MoHomePage.jsx'))
 const BingHomePage = lazy(() => import('./features/bing/pages/BingHomePage.jsx'))
 const ZongHomePage = lazy(() => import('./features/zong/pages/ZongHomePage.jsx'))
 const ZhongyiHomePage = lazy(() => import('./features/zhongyi/pages/ZhongyiHomePage.jsx'))
+const MoulueHomePage = lazy(() => import('./features/moulue/pages/MoulueHomePage.jsx'))
 const CorpusTextPage = lazy(() => import('./features/reader/CorpusTextPage.jsx'))
 const CorpusReadPage = lazy(() => import('./features/reader/CorpusReadPage.jsx'))
 const MasterPortalPage = lazy(() => import('./features/MasterPortalPage.jsx'))
@@ -109,7 +110,8 @@ function Nav({ module, canSwitch, onSearch, onPortal }) {
 
   return (
     <nav className={`app-nav ${scrolled ? 'app-nav--scrolled' : ''}`} role="navigation" aria-label="主导航">
-      <NavLink to={module.home} className="app-nav__brand" aria-label={`${module.portalTitle}·回首页`}>
+      {/* 左上角 logo → 总门户(owner 自用全局导航;点印章跳九组总入口) */}
+      <NavLink to={MASTER_PORTAL_PATH} className="app-nav__brand" aria-label="总门户·全部分组">
         <span className="brand-seal" aria-hidden="true">{module.brand}</span>
       </NavLink>
       <div className="app-nav__links">
@@ -270,6 +272,9 @@ function AppContent() {
           <Route path="/zhongyi" element={<ZhongyiHomePage />} />
           <Route path="/zhongyi/:slug" element={<CorpusTextPage corpus="zhongyi" />} />
           <Route path="/zhongyi/:slug/:chapter" element={<CorpusReadPage corpus="zhongyi" />} />
+          <Route path="/moulue" element={<MoulueHomePage />} />
+          <Route path="/moulue/:slug" element={<CorpusTextPage corpus="moulue" />} />
+          <Route path="/moulue/:slug/:chapter" element={<CorpusReadPage corpus="moulue" />} />
           {/* 隐藏的三教门户(v15):仅 owner 经秘密路径访问,无站内链接指向 */}
           <Route path={MASTER_PORTAL_PATH} element={<MasterPortalPage />} />
           <Route path="*" element={

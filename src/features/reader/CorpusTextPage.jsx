@@ -52,6 +52,7 @@ export default function CorpusTextPage({ corpus }) {
         <h1 className="dao-text-title">{text.title}</h1>
         <p className="dao-text-meta">{text.alias} · {text.era} · {text.attribution}</p>
         <p className="dao-text-brief">{text.brief}</p>
+        {text.dubious && <p className="dubious-badge">⚠ 托名·真伪存疑(学界多判为现代伪作)——作伪书现象与文献批判材料研读,非处世权术教程</p>}
         {text.authorNote && <p className="dao-text-authornote">{text.authorNote}</p>}
       </div>
 

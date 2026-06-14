@@ -10,6 +10,7 @@ const BOOKS = [
   ['bing', 'sunzi'], ['bing', 'wuzi'], ['bing', 'simafa'], ['bing', 'weiliaozi'], ['bing', 'sanlue'],
   ['zong', 'guiguzi'], ['zong', 'zhanguoce'],
   ['zhongyi', 'suwen'], ['zhongyi', 'lingshu'], ['zhongyi', 'shanghanlun'], ['zhongyi', 'bencaojing'],
+  ['moulue', 'luozhijing'], ['moulue', 'rongkujian'], ['moulue', 'quanmou'], ['moulue', 'taohuishu'], ['moulue', 'zhixue'],
 ]
 const ONLY = process.argv[2]          // 可选:只为某 slug 或某 corpus 生成(如 zhanguoce / zhongyi)
 const SEL = ONLY ? BOOKS.filter(([c, s]) => s === ONLY || c === ONLY) : BOOKS
@@ -52,19 +53,24 @@ const SCHEMA = {
 
 const UNITS = ${JSON.stringify(units, null, 0)}
 
-const CN = { hanfeizi: '韩非子', shangjunshu: '商君书', mozi: '墨子', sunzi: '孙子兵法', wuzi: '吴子', simafa: '司马法', weiliaozi: '尉缭子', sanlue: '三略', guiguzi: '鬼谷子', zhanguoce: '战国策', suwen: '黄帝内经·素问', lingshu: '黄帝内经·灵枢', shanghanlun: '伤寒论', bencaojing: '神农本草经' }
+const CN = { hanfeizi: '韩非子', shangjunshu: '商君书', mozi: '墨子', sunzi: '孙子兵法', wuzi: '吴子', simafa: '司马法', weiliaozi: '尉缭子', sanlue: '三略', guiguzi: '鬼谷子', zhanguoce: '战国策', suwen: '黄帝内经·素问', lingshu: '黄帝内经·灵枢', shanghanlun: '伤寒论', bencaojing: '神农本草经', luozhijing: '罗织经', rongkujian: '小人经', quanmou: '权谋术', taohuishu: '韬晦术', zhixue: '止学' }
 const REF = {
   fa: '陈奇猷《韩非子集释》、王先慎《韩非子集解》、蒋礼鸿《商君书锥指》',
   mo: '孙诒让《墨子间诂》、吴毓江《墨子校注》',
   bing: '曹操等十一家注《孙子》、施子美《武经七书讲义》',
   zong: '许富宏《鬼谷子集校集注》、俞棪《鬼谷子新注》',
   zhongyi: '王冰次注《素问》、张介宾《类经》、张志聪《黄帝内经集注》;成无己《注解伤寒论》;孙星衍辑《神农本草经》',
+  moulue: '各书真伪考辨(百度百科/维基/腾讯短史记等)——本组为托名伪书,无可靠古注',
 }
 const TIELU = '【铁律·思想史视角】诸子取思想史与文献研习视角:译文平实直译字面义,如实呈现其说(法家之严刻、纵横之机变照译不讳),但不作现代政治影射、不作厚黑/权术/帝王术教程式发挥、不借古讽今、不下现实政治褒贬;注疏作字词名物训诂,延伸讲思想/人物/源流。'
 const TIELU_YI = '【铁律·研习不诊疗】中医典籍取医学史与文献研习视角:译文平实直译经文字面义(含本草经/伤寒论原文里的主治、方剂,属原典照译,非医嘱);但注疏与延伸一律不作诊疗、不述方药功效用法用量宜忌、不下病症/疗效断语、不教自我诊断施治或养生导引;注疏作字词名物术语训诂,延伸讲医学史、人物(扁鹊/仓公/华佗/张仲景/皇甫谧/孙思邈/李时珍等)、学派源流、概念思想史(阴阳五行入医、藏象、运气)。内容为古籍研习、非医疗建议。'
+const TIELU_MOU = '【铁律·伪书批判】本组为《天下无谋》托名谋略书,学界多判为后世托名或现代伪作(罗织经更被揭为今人伪造)。译文平实直译其字面义,如实呈现其权术、构陷、厚黑之说以见其面目;但**注疏作字词训诂、延伸取文献批判与思想史视角**(讲此书何时出现、为何托名古人、映照何种世态人心、与真史/真人著作不合之处),**绝不作处世权术/厚黑/构陷之教程、不教人施用、不为其术张目、不下「高明」之褒**;延伸须点出真伪存疑。内容为伪书现象与文献研究,非处世指南。'
 const FILE = (c, b) => '/Users/gavin/work/hexagram/src/data/' + c + '/classics/' + b + '.json'
 
 function styleRule(u) {
+  if (u.corpus === 'moulue') {
+    return TIELU_MOU + ' 本书《' + CN[u.book] + '》旧题托名、真伪存疑;直译其辞,延伸批判性指出托名与世态,不教施用、不褒其术。'
+  }
   if (u.corpus === 'zhongyi') {
     const base = TIELU_YI + ' 参' + REF.zhongyi + '。'
     if (u.book === 'bencaojing') return base + ' 本草经经文逐药含「主治…」,属原典须照译;但注疏只释药名/别名/产地/类属源流,绝不展开功效、用法、剂量、宜忌,延伸只讲本草学史不荐用。'
@@ -97,9 +103,9 @@ function verifyPrompt(u, draft) {
   return '校对修正《' + CN[u.book] + '·' + u.title + '》(原文第 ' + u.start + '–' + u.end + ' 段)译注草稿,返回修正后完整结构。' + styleRule(u) + '\\n\\n' +
     '先 Read ' + FILE(u.corpus, u.book) + ' 中 no===' + u.no + ' 的章,核对其第 ' + u.start + '..' + u.end + ' 段。草稿:\\n' + JSON.stringify(draft) + '\\n\\n' +
     '逐项改正后按 schema 返回:\\n' +
-    '- translations 长度必须恰为 ' + len + ',与第 ' + u.start + '.. 段逐一对齐;漏译/臆增/错解/把注混入译文者改正;' + (u.corpus === 'zhongyi' ? '注疏/延伸中删去诊疗指导、方药功效用法用量、病症/疗效断语、养生医嘱' : '删去鸡汤、拔高、现代政治影射、权术/厚黑发挥') + ';口吻平实。\\n' +
+    '- translations 长度必须恰为 ' + len + ',与第 ' + u.start + '.. 段逐一对齐;漏译/臆增/错解/把注混入译文者改正;' + (u.corpus === 'zhongyi' ? '注疏/延伸中删去诊疗指导、方药功效用法用量、病症/疗效断语、养生医嘱' : u.corpus === 'moulue' ? '注疏/延伸中删去处世权术教程式发挥、为伪书张目或褒扬其术的措辞,延伸须存真伪批判' : '删去鸡汤、拔高、现代政治影射、权术/厚黑发挥') + ';口吻平实。\\n' +
     '- zhushi:key 为片段内相对下标("0".."' + (len - 1) + '");每条 term 必须是对应段 original 的精确子串,否则删或改;note≤40;删 ref/链接;每段≤4 条。\\n' +
-    '- yanyi:' + (u.yanyi ? ('保持 1–2 段,删空泛说教与' + (u.corpus === 'zhongyi' ? '诊疗医嘱/功效宣称' : '现实政治影射') + ',确保实质、出处可靠。') : '空数组 []。') + '\\n\\n' +
+    '- yanyi:' + (u.yanyi ? ('保持 1–2 段,删空泛说教与' + (u.corpus === 'zhongyi' ? '诊疗医嘱/功效宣称' : u.corpus === 'moulue' ? '处世权术教程或为伪书张目之辞' : '现实政治影射') + ',确保实质、出处可靠。') : '空数组 []。') + '\\n\\n' +
     '只返回修正后的结构化结果。'
 }
 

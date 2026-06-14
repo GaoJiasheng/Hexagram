@@ -51,6 +51,11 @@ const pickConv = (inner) => {
 // (如 {{另2|《[[尚書|書]]》-{云}-…|校勘}} 的首参含 [[..|..]] 与 -{..}-,否则下面取首参会失败、经文被整段删)
 const preResolve = (s) => s
   .replace(/-\{([^{}]*?)\}-/g, (_, inner) => pickConv(inner))
+  .replace(/<\/?onlyinclude>/gi, '')                                          // 罗织经等 <onlyinclude> 包裹标记
+  .replace(/__[A-Z]+__/g, '')                                                 // __TOC__/__NOTOC__ 魔术字(行内)
+  .replace(/\{\{ProperNoun\|([^|}]*)(?:\|[^}]*)?\}\}/gi, '$1')                 // {{ProperNoun|左丘明}} → 左丘明
+  .replace(/\{\{(?:Novel|footer|header2?|Textquality|PD-old|NoteTA|检索|檢索|gap|reflist|DEFAULTSORT)[^{}]*\}\}/gi, '')  // 元/导航模板
+  .replace(/\{\{[^{}]*?作品\}\}/g, '')                                         // {{唐朝作品}} 等版权模板
   .replace(/\[\[(?:File|Image):[^\]]*\]\]/gi, '')
   .replace(/\[\[(?:[^\][|]*\|)?([^\][]*)\]\]/g, '$1')
 // 含字校勘模板 {{另|主|注}} / {{另2|主|注}}:取首参(主读、即经文),先于通用模板清洗
@@ -106,7 +111,7 @@ function cleanLine(raw) {
   const text = clean(replaceAnother(preResolve(stripRef(raw))).replace(/^[*#:;]+/, ''))
   if (isJunk(text)) return null
   const simp = t2s(text).replaceAll('愼', '慎').replaceAll('擧', '举')   // OpenCC 未规范的异体字补正(慎/举)
-  if (!simp || CHAPTER_MARK_RE.test(simp) || NAV_LINE_RE.test(simp) || PIN_TITLE_RE.test(simp) || LOSS_NOTE_RE.test(simp) || /^__\w+__$/.test(simp)) return null
+  if (!simp || CHAPTER_MARK_RE.test(simp) || NAV_LINE_RE.test(simp) || PIN_TITLE_RE.test(simp) || LOSS_NOTE_RE.test(simp) || /^__\w+__$/.test(simp) || /^目\s*[录錄]/.test(simp)) return null
   return simp
 }
 
@@ -188,6 +193,9 @@ async function main() {
       if (paras.length) chapters.push({ no: chapters.length + 1, title, paragraphs: paras })
       else warnings.push(`${page}: 无正文段落`)
     }
+
+    // 子页书友好章名覆盖(罗织经 01..12 → 阅人卷一 等),按序赋予
+    if (book.chapterTitles) chapters.forEach((c, i) => { if (book.chapterTitles[i]) c.title = book.chapterTitles[i] })
 
     if (book.exactChapters && chapters.length !== book.exactChapters) {
       errors.push(`${book.title}: 应恰 ${book.exactChapters} 章,实得 ${chapters.length}`)

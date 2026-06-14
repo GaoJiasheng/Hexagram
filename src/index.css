@@ -19,6 +19,7 @@
   --military: #7a4434;
   --zongheng: #7e6a28;
   --zhongyi: #a9683f;
+  --moulue: #6b6478;
   --ochre: #b08d57;
   --line: #e4ddce;
   --font-serif: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
@@ -45,6 +46,7 @@
   --military: #c2876f;
   --zongheng: #c2a955;
   --zhongyi: #c89274;
+  --moulue: #9b96a8;
   --ochre: #c2a36e;
   --line: #37322a;
 }
@@ -67,6 +69,7 @@
     --military: #c2876f;
     --zongheng: #c2a955;
     --zhongyi: #c89274;
+    --moulue: #9b96a8;
     --ochre: #c2a36e;
     --line: #37322a;
   }
@@ -2824,6 +2827,10 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 [data-site="bing"] { --cinnabar: var(--military); --cinnabar-bg: color-mix(in srgb, var(--military) 9%, transparent); }
 [data-site="zong"] { --cinnabar: var(--zongheng); --cinnabar-bg: color-mix(in srgb, var(--zongheng) 9%, transparent); }
 [data-site="zhongyi"] { --cinnabar: var(--zhongyi); --cinnabar-bg: color-mix(in srgb, var(--zhongyi) 9%, transparent); }
+[data-site="moulue"] { --cinnabar: var(--moulue); --cinnabar-bg: color-mix(in srgb, var(--moulue) 9%, transparent); }
+/* 伪书真伪徽标(谋略杂纂):题解/书架卡片显著标「托名·疑现代伪作」 */
+.dubious-badge { display: inline-block; margin: 8px 0 0; padding: 3px 10px; border: 1px solid color-mix(in srgb, var(--cinnabar) 40%, var(--line)); border-radius: 4px; background: var(--cinnabar-bg); color: var(--cinnabar); font-size: 0.78rem; letter-spacing: 0.02em; }
+.dao-book__dubious { display: inline-block; margin-top: 4px; font-size: 0.72rem; color: var(--cinnabar); opacity: 0.85; }
 
 /* 书架·整理中卡片(v15) */
 .dao-book--pending { opacity: 0.72; cursor: default; }
