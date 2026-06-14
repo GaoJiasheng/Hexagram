@@ -8,11 +8,13 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const BOOKS = [
   ['fa', 'hanfeizi'], ['fa', 'shangjunshu'], ['mo', 'mozi'],
   ['bing', 'sunzi'], ['bing', 'wuzi'], ['bing', 'simafa'], ['bing', 'weiliaozi'], ['bing', 'sanlue'],
-  ['zong', 'guiguzi'],
+  ['zong', 'guiguzi'], ['zong', 'zhanguoce'],
 ]
+const ONLY = process.argv[2]          // 可选:只为某 slug 生成(如 zhanguoce 单独补)
+const SEL = ONLY ? BOOKS.filter(([, s]) => s === ONLY) : BOOKS
 const SPLIT = 50 // 单元最大段;>55 段的章按此切片
 const units = []
-for (const [corpus, slug] of BOOKS) {
+for (const [corpus, slug] of SEL) {
   const book = JSON.parse(fs.readFileSync(path.join(ROOT, `src/data/${corpus}/classics/${slug}.json`), 'utf8'))
   for (const c of book.chapters) {
     const n = c.paragraphs.length
@@ -49,7 +51,7 @@ const SCHEMA = {
 
 const UNITS = ${JSON.stringify(units, null, 0)}
 
-const CN = { hanfeizi: '韩非子', shangjunshu: '商君书', mozi: '墨子', sunzi: '孙子兵法', wuzi: '吴子', simafa: '司马法', weiliaozi: '尉缭子', sanlue: '三略', guiguzi: '鬼谷子' }
+const CN = { hanfeizi: '韩非子', shangjunshu: '商君书', mozi: '墨子', sunzi: '孙子兵法', wuzi: '吴子', simafa: '司马法', weiliaozi: '尉缭子', sanlue: '三略', guiguzi: '鬼谷子', zhanguoce: '战国策' }
 const REF = {
   fa: '陈奇猷《韩非子集释》、王先慎《韩非子集解》、蒋礼鸿《商君书锥指》',
   mo: '孙诒让《墨子间诂》、吴毓江《墨子校注》',
@@ -107,8 +109,9 @@ log('完成 ' + ok.filter((r) => r.data).length + '/' + UNITS.length + ' 单元'
 return ok
 `
 
-fs.writeFileSync(path.join(ROOT, 'scripts/.zhuzi-translate-wf.js'), script)
-console.log(`生成 ${units.length} 单元 → scripts/.zhuzi-translate-wf.js`)
+const outName = `scripts/.${ONLY || 'zhuzi'}-translate-wf.js`
+fs.writeFileSync(path.join(ROOT, outName), script)
+console.log(`生成 ${units.length} 单元 → ${outName}`)
 const byCorpus = {}
 for (const u of units) byCorpus[u.corpus] = (byCorpus[u.corpus] || 0) + 1
 console.log('单元分布:', JSON.stringify(byCorpus))
