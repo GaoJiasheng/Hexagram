@@ -10,7 +10,6 @@ const SearchPalette = lazy(() => import('./features/yijing/components/SearchPale
 const CorpusSearchPalette = lazy(() => import('./features/reader/CorpusSearchPalette.jsx'))
 // 道藏检索面板(批D):复用 CorpusSearchPalette,注入 dao 检索函数(单独懒加载,不入主包)
 const DaoSearchPalette = lazy(() => import('./features/dao/DaoSearchPalette.jsx'))
-const CORPUS_SEARCH_SITES = new Set(['fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue'])
 
 // 页面全部按路由懒加载(v11 §2),首包只留壳与搜索
 // Pages — 易经研习模块
@@ -170,8 +169,10 @@ function MobileNav({ module, canSwitch, onPortal }) {
   return (
     <div className="mobile-nav" role="navigation" aria-label="底部导航">
       <div className="mobile-nav__inner">
-        {module.mobileNav.map(({ to, label, icon, exact }) => {
-          const isActive = exact ? location.pathname === to : location.pathname.startsWith(to)
+        {module.mobileNav.map(({ to, label, icon, exact, match }) => {
+          const isActive = match
+            ? match.some((p) => location.pathname === p || location.pathname.startsWith(p))
+            : exact ? location.pathname === to : location.pathname.startsWith(to)
           return (
             <NavLink
               key={to}
@@ -208,6 +209,8 @@ function AppContent() {
   const canSwitch = sitesInGroup(group).length > 1
   // 总门户:中立全组枢纽,不套任一分站外壳(无 module nav / 搜索 / 底栏 / 主色偏向)
   const isPortal = location.pathname === MASTER_PORTAL_PATH
+  // 搜索面板种类由 registry 派生(缺省 corpus),单一来源,免硬编码站名集漏改
+  const searchKind = module.hasSearch ? (module.searchKind || 'corpus') : null
 
   // 路由切换关闭搜索/切站浮层,避免状态在跨站导航后残留
   useEffect(() => { setSearchOpen(false); setPortalOpen(false) }, [location.pathname])
@@ -304,17 +307,17 @@ function AppContent() {
         </footer>
       )}
       {!isPortal && <MobileNav module={module} canSwitch={canSwitch} onPortal={openPortal} />}
-      {!isPortal && module.key === 'yijing' && searchOpen && (
+      {!isPortal && searchOpen && searchKind === 'yijing' && (
         <Suspense fallback={null}>
           <SearchPalette open onClose={() => setSearchOpen(false)} />
         </Suspense>
       )}
-      {!isPortal && CORPUS_SEARCH_SITES.has(module.key) && searchOpen && (
+      {!isPortal && searchOpen && searchKind === 'corpus' && (
         <Suspense fallback={null}>
           <CorpusSearchPalette corpus={module.key} open onClose={() => setSearchOpen(false)} />
         </Suspense>
       )}
-      {!isPortal && module.key === 'dao' && searchOpen && (
+      {!isPortal && searchOpen && searchKind === 'dao' && (
         <Suspense fallback={null}>
           <DaoSearchPalette open onClose={() => setSearchOpen(false)} />
         </Suspense>

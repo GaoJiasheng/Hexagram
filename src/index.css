@@ -2506,7 +2506,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
    ============================================================ */
 
 .hetu-container { display: flex; gap: 32px; align-items: flex-start; flex-wrap: wrap; margin: 20px 0; }
-.hetu-svg, .luoshu-svg { display: block; border-radius: 6px; border: 1px solid var(--line); }
+.hetu-svg, .luoshu-svg { display: block; border-radius: 6px; border: 1px solid var(--line); max-width: 100%; height: auto; }
 .hetu-legend { display: flex; flex-direction: column; gap: 6px; }
 .hetu-legend__item {
   display: flex; align-items: center; gap: 8px; padding: 4px 8px;
@@ -2527,7 +2527,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
    ============================================================ */
 
 .xiaoxi-layout { display: flex; gap: 32px; align-items: flex-start; flex-wrap: wrap; margin: 24px 0 16px; }
-.xiaoxi-svg { display: block; }
+.xiaoxi-svg { display: block; max-width: 100%; height: auto; }
 .xiaoxi-detail { min-width: 160px; }
 .xiaoxi-detail__card { display: flex; align-items: flex-start; gap: 16px; }
 .xiaoxi-detail__info { display: flex; flex-direction: column; gap: 6px; }
@@ -2871,7 +2871,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 [data-site="portal"] { --cinnabar: var(--ink-soft); --cinnabar-bg: color-mix(in srgb, var(--ink-soft) 8%, transparent); }
 /* 伪书真伪徽标(谋略杂纂):题解/书架卡片显著标「托名·疑现代伪作」 */
 .dubious-badge { display: inline-block; margin: 8px 0 0; padding: 3px 10px; border: 1px solid color-mix(in srgb, var(--cinnabar) 40%, var(--line)); border-radius: 4px; background: var(--cinnabar-bg); color: var(--cinnabar); font-size: 0.78rem; letter-spacing: 0.02em; }
-.dao-book__dubious { display: inline-block; margin-top: 4px; font-size: 0.72rem; color: var(--cinnabar); opacity: 0.85; }
+.dao-book__dubious { display: inline-block; margin-top: 4px; font-size: 0.72rem; color: var(--cinnabar); font-weight: 600; }
 
 /* 书架·整理中卡片(v15) */
 .dao-book--pending { opacity: 0.72; cursor: default; }

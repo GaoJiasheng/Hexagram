@@ -49,7 +49,7 @@ export default function GuideTour({ steps, onClose }) {
       {rect && (
         <div
           className="tour__ring"
-          style={{ top: rect.top - 6, left: rect.left - 6, width: rect.width + 12, height: rect.height + 12 }}
+          style={{ top: rect.top - 6, left: rect.left - 6, width: rect.width + 12, height: rect.height + 12, pointerEvents: 'none' }}
         />
       )}
       <div className="tour__tip" style={tipStyle}>

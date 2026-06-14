@@ -92,7 +92,7 @@ export default function MePage() {
     if (!deleteUndo) return
     const list = getDivinations()
     list.push(deleteUndo)
-    list.sort((a, b) => b.createdAt?.localeCompare(a.createdAt || ''))
+    list.sort((a, b) => (b.id || 0) - (a.id || 0))  // 按 id(=Date.now)排序,旧条目无 createdAt 也稳
     saveDivinations(list)
     refreshDivinations()
     setDeleteUndo(null)

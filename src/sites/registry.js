@@ -15,6 +15,8 @@ export const SITES = [
     accent: 'cinnabar',
     switchLabel: '易',
     hasSearch: true,
+    searchKind: 'yijing',  // 搜索面板种类(缺省 corpus);驱动 App 挂哪个面板,免硬编码站名集
+
     nav: [
       { to: '/hexagrams', label: '六十四卦' },
       { to: '/workbench', label: '推演' },
@@ -23,7 +25,7 @@ export const SITES = [
     ],
     mobileNav: [
       { to: '/', label: '首页', icon: '☰', exact: true },
-      { to: '/hexagrams', label: '卦', icon: '☵' },
+      { to: '/hexagrams', label: '卦', icon: '☵', match: ['/hexagrams', '/hexagram/'] },
       { to: '/workbench', label: '推演', icon: '☲' },
       { to: '/classics', label: '经传', icon: '☷' },
       { to: '/me', label: '我的', icon: '☶' },
@@ -41,6 +43,7 @@ export const SITES = [
     accent: 'azure',
     switchLabel: '道',
     hasSearch: true,
+    searchKind: 'dao',
     nav: [{ to: '/dao', label: '经典' }],
     mobileNav: [{ to: '/dao', label: '经典', icon: '☱', exact: false }],
     mobileSwitch: true,
