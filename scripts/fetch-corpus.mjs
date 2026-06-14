@@ -30,8 +30,10 @@ const STOP_RE = /有聲文獻|Spoken_?Wikisource|ximalaya/i
 const NAV_LINE_RE = /^(?:[-－—]{2,}|\d{1,3})$|回目[录錄]|^(?:上|下)一[篇章卷]/
 // 品/分题独立成行(坛经各品页正文里重复的「行由品第一」等),作标记行剔除
 const PIN_TITLE_RE = /^.{1,7}[品分]第[一二三四五六七八九十]+$/
+// 亡篇占位注(商君书御盗「[内容及篇目俱亡]」、他书「(闕)」「篇亡」等),整行为编者注非经文,剔除
+const LOSS_NOTE_RE = /^[【\[（(].{0,24}[亡闕阙缺佚].{0,24}[】\])）]$/
 // splitHeadings 模式下需跳过的非经文标题(金刚经「正文/外部链接」、心经 djvu 页的明太祖序等)
-const HEADING_SKIP_RE = /^(正文|外部連結|外部链接|參考|参考|附錄|附录|注釋|注释|目錄|目录)$|序$/
+const HEADING_SKIP_RE = /^(正文|外部連結|外部链接|參考|参考|附錄|附录|注釋|注释|目錄|目录|答話|答话)$|序$/
 // 解析 -{…}- 繁简转换标记:多变体语法 -{zh:X;zh-hans:Y;zh-hant:Z}- 取简体(zh-hans/zh-cn),
 // 单体 -{乾}- / -{T|乾}- 取本字。
 const pickConv = (inner) => {
@@ -80,7 +82,7 @@ function cleanLine(raw) {
   const text = clean(replaceAnother(preResolve(stripRef(raw))).replace(/^[*#:;]+/, ''))
   if (isJunk(text)) return null
   const simp = t2s(text).replaceAll('愼', '慎').replaceAll('擧', '举')   // OpenCC 未规范的异体字补正(慎/举)
-  if (!simp || CHAPTER_MARK_RE.test(simp) || NAV_LINE_RE.test(simp) || PIN_TITLE_RE.test(simp) || /^__\w+__$/.test(simp)) return null
+  if (!simp || CHAPTER_MARK_RE.test(simp) || NAV_LINE_RE.test(simp) || PIN_TITLE_RE.test(simp) || LOSS_NOTE_RE.test(simp) || /^__\w+__$/.test(simp)) return null
   return simp
 }
 
