@@ -6,6 +6,21 @@
 
 ---
 
+## 实施状态(v1.25.0 已落地)
+
+owner 定调:**保留全局 logo、放弃硬隔离**;**全部按批次推进 A→E**。已全部实施并发版:
+
+- **批A 移动端读经急救**:`.read-toc` @≤768px 隐藏后补「章节下拉」;消息卦/河图洛书/方圆图脱离 hover-only(补 onClick/onFocus/tabIndex/键盘);长单页经 `content-visibility:auto`;越界章号带返回链接。
+- **批B PWA 部署稳健**:precache 7.7MB→330KB(数据 chunk 改 runtime 缓存,恢复网络层隔离);根 ErrorBoundary + `vite:preloadError→reload` 根治发版白屏。
+- **批C 路由/工作台**:`siteForPath` 边界(404 不套别组皮);singlePage 章路由重定向;`?dong=` 去重取整、`?method` 持久化、数字键无卦不响应。
+- **门户取舍**:`/hexagram` 中性外壳(data-site=portal,无分站导航/搜索);过时「隐藏门户·仅 owner」注释改口为「公开总入口」。
+- **批D 搜索/一致性**:搜索面板锁滚动+还焦+aria-modal+debounce+命中定位;**道藏接全站搜索**(此前独缺);`/` 键 guard 补全;localStorage 白名单校验+跨标签同步;singlePage 续读语义;篇目网格骨架。
+- **批E 打磨**:搜索挂载改 registry `searchKind` 单一来源;移动端单卦详情底栏高亮;互动页 SVG 自适应;撤销删除按 id 排序;走查环 `pointer-events:none`;伪书徽标暗色加粗。
+
+**未实施(低优先、已记录为「可接受/隐患」)**:搜索 GROUP_CAP「更多」提示;续读 key 加 corpus 前缀(当前 slug 全局唯一无 bug,改格式反会孤立既有进度);锚点未命中 dev warn;配置域名 404→组首页(语义可接受)。
+
+---
+
 ## 一、摘要:最该先治的五条(系统性 / 影响移动端核心)
 
 | # | 一句话 | 类型 | 为何排前 |
