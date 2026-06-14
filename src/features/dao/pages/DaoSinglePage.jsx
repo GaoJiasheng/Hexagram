@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { saveReadingProgress } from '../../yijing/storage.js'
 import { loadDaoText, getDaoMeta } from '../data.js'
 import { getDaoAnchors } from '../daoAnchored.js'
 import { usePageTitle } from '../../yijing/hooks/usePageTitle.js'
@@ -17,8 +16,9 @@ export default function DaoSinglePage({ slug, text }) {
 
   useEffect(() => {
     setLoading(true)
+    // 单页短经整篇铺开,不写续读进度(免书架显示误导的「读至末章」)
     loadDaoText(slug)
-      .then((data) => { setBook(data); setLoading(false); saveReadingProgress(slug, data.chapters.length) })
+      .then((data) => { setBook(data); setLoading(false) })
       .catch(() => setLoading(false))
   }, [slug])
 

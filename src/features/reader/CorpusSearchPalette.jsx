@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, Fragment } from 'react'
+import { useState, useEffect, useRef, useDeferredValue, Fragment } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { searchCorpus, ensureCorpusIndexed } from './corpusSearch.js'
 
@@ -17,26 +17,45 @@ function highlight(text, query) {
   )
 }
 
-export default function CorpusSearchPalette({ corpus, open, onClose }) {
+// searchFn/indexFn 可注入:默认走 corpus,dao 站注入自己的 searchDao/ensureDaoIndexed(批D)。
+export default function CorpusSearchPalette({ corpus, open, onClose, searchFn, indexFn }) {
   const [query, setQuery] = useState('')
   const [selected, setSelected] = useState(0)
+  const [indexed, setIndexed] = useState(false)
   const [, setIndexTick] = useState(0)
   const inputRef = useRef(null)
   const navigate = useNavigate()
 
-  const groups = searchCorpus(corpus, query)
+  const doSearch = searchFn || ((q) => searchCorpus(corpus, q))
+  const doIndex = indexFn || (() => ensureCorpusIndexed(corpus))
+
+  const deferredQuery = useDeferredValue(query)   // 大 corpus:延迟查询,免每键同步全表扫卡顿
+  const groups = doSearch(deferredQuery)
   const flat = groups.flatMap((g) => g.items)
+  const indexing = query.trim().length >= 2 && !indexed
 
   useEffect(() => {
     if (open) {
       setQuery('')
       setSelected(0)
-      ensureCorpusIndexed(corpus).then(() => setIndexTick((t) => t + 1))
+      doIndex().then(() => { setIndexed(true); setIndexTick((t) => t + 1) })
       setTimeout(() => inputRef.current?.focus(), 50)
     }
   }, [open, corpus])
 
-  useEffect(() => { setSelected(0) }, [query])
+  // 打开时锁背景滚动 + 关闭还原焦点(避免穿透滚动与焦点丢失)
+  useEffect(() => {
+    if (!open) return
+    const prevFocus = document.activeElement
+    const prevOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = prevOverflow
+      if (prevFocus && typeof prevFocus.focus === 'function') prevFocus.focus()
+    }
+  }, [open])
+
+  useEffect(() => { setSelected(0) }, [deferredQuery])
 
   function go(r) { navigate(r.to); onClose() }
 
@@ -52,7 +71,7 @@ export default function CorpusSearchPalette({ corpus, open, onClose }) {
   let cursor = -1
   return (
     <div className="search-overlay" onClick={(e) => { if (e.target === e.currentTarget) onClose() }}>
-      <div className="search-palette" role="dialog" aria-label="全站搜索">
+      <div className="search-palette" role="dialog" aria-modal="true" aria-label="全站搜索">
         <div className="search-palette__input-row">
           <span className="search-palette__icon">◌</span>
           <input
@@ -82,7 +101,7 @@ export default function CorpusSearchPalette({ corpus, open, onClose }) {
                       aria-selected={selected === idx}
                       onClick={() => go(r)}
                     >
-                      <span className="search-result__label">{highlight(r.label, query)}</span>
+                      <span className="search-result__label">{highlight(r.label, deferredQuery)}</span>
                       <span className="search-result__sub">{r.sub}</span>
                     </li>
                   )
@@ -91,7 +110,8 @@ export default function CorpusSearchPalette({ corpus, open, onClose }) {
             ))}
           </ul>
         )}
-        {query && flat.length === 0 && <p className="search-palette__empty">无匹配结果</p>}
+        {indexing && flat.length === 0 && <p className="search-palette__empty">正在建立全文索引…</p>}
+        {!indexing && query && flat.length === 0 && <p className="search-palette__empty">无匹配结果</p>}
       </div>
     </div>
   )

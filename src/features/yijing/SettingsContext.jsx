@@ -14,6 +14,15 @@ export function SettingsProvider({ children }) {
     })
   }, [])
 
+  // 跨标签同步:另一标签改了设置(主题/字号/译文),本标签随动,免后写覆盖与界面不一致
+  useEffect(() => {
+    function onStorage(e) {
+      if (e.key === 'guanxiang.v1.settings') setSettingsState(getSettings())
+    }
+    window.addEventListener('storage', onStorage)
+    return () => window.removeEventListener('storage', onStorage)
+  }, [])
+
   // 主题应用
   useEffect(() => {
     const { theme } = settings

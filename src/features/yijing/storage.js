@@ -17,7 +17,8 @@ function get(k, fallback = null) {
 function set(k, value) {
   try {
     localStorage.setItem(key(k), JSON.stringify(value))
-  } catch { /* quota exceeded — silently ignore */ }
+    return true
+  } catch { return false /* 配额满 / 隐私模式不可写 */ }
 }
 
 function remove(k) {
@@ -30,9 +31,16 @@ export const DEFAULT_SETTINGS = {
   showTranslation: true,
   fontScale: 1, // 0.9 | 1 | 1.15
 }
+const VALID_THEMES = ['light', 'dark', 'system']
+const VALID_FONT_SCALES = [0.9, 1, 1.15]
 
+// 白名单校验:旧结构/损坏值不直接进 state(防非法 fontScale 写入 --font-scale 等)
 export function getSettings() {
-  return { ...DEFAULT_SETTINGS, ...get('settings') }
+  const s = { ...DEFAULT_SETTINGS, ...get('settings') }
+  if (!VALID_THEMES.includes(s.theme)) s.theme = DEFAULT_SETTINGS.theme
+  if (!VALID_FONT_SCALES.includes(s.fontScale)) s.fontScale = DEFAULT_SETTINGS.fontScale
+  s.showTranslation = !!s.showTranslation
+  return s
 }
 
 export function saveSettings(s) {

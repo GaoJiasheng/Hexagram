@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, Fragment } from 'react'
+import { useState, useEffect, useRef, useDeferredValue, Fragment } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { searchAll, ensureClassicsIndexed } from '../searchIndex.js'
 
@@ -24,7 +24,8 @@ export default function SearchPalette({ open, onClose }) {
   const inputRef = useRef(null)
   const navigate = useNavigate()
 
-  const groups = searchAll(query)
+  const deferredQuery = useDeferredValue(query)
+  const groups = searchAll(deferredQuery)
   const flat = groups.flatMap(g => g.items)
 
   useEffect(() => {
@@ -36,9 +37,21 @@ export default function SearchPalette({ open, onClose }) {
     }
   }, [open])
 
+  // 打开时锁背景滚动 + 关闭还原焦点
+  useEffect(() => {
+    if (!open) return
+    const prevFocus = document.activeElement
+    const prevOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = prevOverflow
+      if (prevFocus && typeof prevFocus.focus === 'function') prevFocus.focus()
+    }
+  }, [open])
+
   useEffect(() => {
     setSelected(0)
-  }, [query])
+  }, [deferredQuery])
 
   function go(r) {
     navigate(r.to)
@@ -57,7 +70,7 @@ export default function SearchPalette({ open, onClose }) {
   let cursor = -1
   return (
     <div className="search-overlay" onClick={e => { if (e.target === e.currentTarget) onClose() }}>
-      <div className="search-palette" role="dialog" aria-label="全局搜索">
+      <div className="search-palette" role="dialog" aria-modal="true" aria-label="全局搜索">
         <div className="search-palette__input-row">
           <span className="search-palette__icon">◌</span>
           <input
@@ -87,7 +100,7 @@ export default function SearchPalette({ open, onClose }) {
                       aria-selected={selected === idx}
                       onClick={() => go(r)}
                     >
-                      <span className="search-result__label">{highlight(r.label, query)}</span>
+                      <span className="search-result__label">{highlight(r.label, deferredQuery)}</span>
                       <span className="search-result__sub">{r.sub}</span>
                     </li>
                   )

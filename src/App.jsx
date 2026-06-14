@@ -8,6 +8,8 @@ import { siteForPath, activeGroup, sitesInGroup, HOST_GROUPS, MASTER_PORTAL_PATH
 const SearchPalette = lazy(() => import('./features/yijing/components/SearchPalette.jsx'))
 // 读经类站(corpus)各自的全站检索面板(C1);分组隔离:只搜本组
 const CorpusSearchPalette = lazy(() => import('./features/reader/CorpusSearchPalette.jsx'))
+// 道藏检索面板(批D):复用 CorpusSearchPalette,注入 dao 检索函数(单独懒加载,不入主包)
+const DaoSearchPalette = lazy(() => import('./features/dao/DaoSearchPalette.jsx'))
 const CORPUS_SEARCH_SITES = new Set(['fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue'])
 
 // 页面全部按路由懒加载(v11 §2),首包只留壳与搜索
@@ -100,10 +102,11 @@ function Nav({ module, canSwitch, onSearch, onPortal }) {
   useEffect(() => {
     if (!module.hasSearch) return
     function onKey(e) {
-      if (e.key === '/' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
-        e.preventDefault()
-        onSearch()
-      }
+      if (e.key !== '/' || e.isComposing) return  // 输入法组字中按 / 不触发
+      const t = e.target
+      if (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT' || t.isContentEditable) return
+      e.preventDefault()
+      onSearch()
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
@@ -309,6 +312,11 @@ function AppContent() {
       {!isPortal && CORPUS_SEARCH_SITES.has(module.key) && searchOpen && (
         <Suspense fallback={null}>
           <CorpusSearchPalette corpus={module.key} open onClose={() => setSearchOpen(false)} />
+        </Suspense>
+      )}
+      {!isPortal && module.key === 'dao' && searchOpen && (
+        <Suspense fallback={null}>
+          <DaoSearchPalette open onClose={() => setSearchOpen(false)} />
         </Suspense>
       )}
       {!isPortal && portalOpen && <ModulePortal current={module.key} group={group} onClose={() => setPortalOpen(false)} />}

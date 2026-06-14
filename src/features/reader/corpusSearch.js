@@ -43,7 +43,8 @@ export function searchCorpus(corpus, query) {
   if (!q) return []
   const metas = corpusTexts(corpus)
   const sp = Object.fromEntries(metas.map((t) => [t.slug, !!t.singlePage]))
-  const link = (slug, ch) => (sp[slug] ? `/${corpus}/${slug}` : `/${corpus}/${slug}/${ch}`)
+  // 单页书带章锚点(命中定位到该章),分章书落该章路由顶部
+  const link = (slug, ch) => (sp[slug] ? `/${corpus}/${slug}#${corpus}-ch-${ch}` : `/${corpus}/${slug}/${ch}`)
   const groups = []
 
   // 经名(同步,含别名)

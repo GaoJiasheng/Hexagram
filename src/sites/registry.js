@@ -40,7 +40,7 @@ export const SITES = [
     prefix: '/dao',
     accent: 'azure',
     switchLabel: '道',
-    hasSearch: false,
+    hasSearch: true,
     nav: [{ to: '/dao', label: '经典' }],
     mobileNav: [{ to: '/dao', label: '经典', icon: '☱', exact: false }],
     mobileSwitch: true,

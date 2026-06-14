@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { saveReadingProgress } from '../yijing/storage.js'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import { SITE_MAP } from '../../sites/registry.js'
 import { loadText, getMeta, getAnchors } from './corpus.js'
@@ -17,8 +16,9 @@ export default function CorpusSinglePage({ corpus, slug, text }) {
 
   useEffect(() => {
     setLoading(true)
+    // 单页书整篇一页铺开,无「读到第几章」概念,不写续读进度(免书架显示误导的「读至末章」)
     loadText(corpus, slug)
-      .then((data) => { setBook(data); setLoading(false); saveReadingProgress(slug, data.chapters.length) })
+      .then((data) => { setBook(data); setLoading(false) })
       .catch(() => setLoading(false))
   }, [corpus, slug])
 

@@ -25,9 +25,10 @@ export default function DaoReadPage() {
   }, [slug])
 
   useEffect(() => {
-    if (book) {
+    window.scrollTo(0, 0)
+    // 仅当章存在时记进度,免越界章号污染续读
+    if (book && book.chapters.some((c) => c.no === chapter)) {
       saveReadingProgress(slug, chapter)
-      window.scrollTo(0, 0)
     }
   }, [slug, chapter, book])
 

@@ -41,6 +41,7 @@ export default function CorpusTextPage({ corpus }) {
   }
 
   const titled = chapters && chapters.length && chapters.some((c) => tocTitle(c.title))
+  const loadingChapters = readable && chapters === null  // 章名异步载入中,先出骨架免重排
 
   return (
     <div className="dao-text-page">
@@ -69,6 +70,12 @@ export default function CorpusTextPage({ corpus }) {
             </div>
             <p className="text-faint dao-section-note">经文整理中——录入后此处即为{text.sectionUnit}节阅读入口。</p>
           </>
+        ) : loadingChapters ? (
+          <div className="dao-section-grid" aria-label="目录载入中" aria-busy="true">
+            {Array.from({ length: text.sections }, (_, i) => (
+              <span key={i} className="dao-section-cell dao-section-cell--skeleton" aria-hidden="true" />
+            ))}
+          </div>
         ) : titled ? (
           <div className="dao-section-grid dao-section-grid--titled" aria-label={`共 ${text.sections} ${text.sectionUnit}`}>
             {chapters.map((c) => (
