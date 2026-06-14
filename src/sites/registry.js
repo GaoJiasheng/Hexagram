@@ -150,6 +150,21 @@ export const SITES = [
     mobileNav: [{ to: '/zong', label: '经典', icon: '☴', exact: false }],
     mobileSwitch: false,
   },
+  {
+    key: 'zhongyi',
+    group: 'zhongyi',      // 中医:独立单站组(v19)
+    brand: '观和',
+    portalTitle: '中医典籍',
+    portalDesc: '黄帝内经 · 伤寒论 · 神农本草经',
+    home: '/zhongyi',
+    prefix: '/zhongyi',
+    accent: 'zhongyi',
+    switchLabel: '医',
+    hasSearch: true,
+    nav: [{ to: '/zhongyi', label: '经典' }],
+    mobileNav: [{ to: '/zhongyi', label: '经典', icon: '☳', exact: false }],
+    mobileSwitch: false,
+  },
 ]
 
 export const SITE_MAP = Object.fromEntries(SITES.map(s => [s.key, s]))

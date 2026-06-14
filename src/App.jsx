@@ -7,7 +7,7 @@ import { siteForPath, activeGroup, sitesInGroup, HOST_GROUPS, MASTER_PORTAL_PATH
 const SearchPalette = lazy(() => import('./features/yijing/components/SearchPalette.jsx'))
 // 读经类站(corpus)各自的全站检索面板(C1);分组隔离:只搜本组
 const CorpusSearchPalette = lazy(() => import('./features/reader/CorpusSearchPalette.jsx'))
-const CORPUS_SEARCH_SITES = new Set(['fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong'])
+const CORPUS_SEARCH_SITES = new Set(['fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi'])
 
 // 页面全部按路由懒加载(v11 §2),首包只留壳与搜索
 // Pages — 易经研习模块
@@ -45,6 +45,7 @@ const FaHomePage = lazy(() => import('./features/fa/pages/FaHomePage.jsx'))
 const MoHomePage = lazy(() => import('./features/mo/pages/MoHomePage.jsx'))
 const BingHomePage = lazy(() => import('./features/bing/pages/BingHomePage.jsx'))
 const ZongHomePage = lazy(() => import('./features/zong/pages/ZongHomePage.jsx'))
+const ZhongyiHomePage = lazy(() => import('./features/zhongyi/pages/ZhongyiHomePage.jsx'))
 const CorpusTextPage = lazy(() => import('./features/reader/CorpusTextPage.jsx'))
 const CorpusReadPage = lazy(() => import('./features/reader/CorpusReadPage.jsx'))
 const MasterPortalPage = lazy(() => import('./features/MasterPortalPage.jsx'))
@@ -266,6 +267,9 @@ function AppContent() {
           <Route path="/zong" element={<ZongHomePage />} />
           <Route path="/zong/:slug" element={<CorpusTextPage corpus="zong" />} />
           <Route path="/zong/:slug/:chapter" element={<CorpusReadPage corpus="zong" />} />
+          <Route path="/zhongyi" element={<ZhongyiHomePage />} />
+          <Route path="/zhongyi/:slug" element={<CorpusTextPage corpus="zhongyi" />} />
+          <Route path="/zhongyi/:slug/:chapter" element={<CorpusReadPage corpus="zhongyi" />} />
           {/* 隐藏的三教门户(v15):仅 owner 经秘密路径访问,无站内链接指向 */}
           <Route path={MASTER_PORTAL_PATH} element={<MasterPortalPage />} />
           <Route path="*" element={

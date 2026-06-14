@@ -18,6 +18,7 @@
   --mohist: #38525c;
   --military: #7a4434;
   --zongheng: #7e6a28;
+  --zhongyi: #a9683f;
   --ochre: #b08d57;
   --line: #e4ddce;
   --font-serif: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
@@ -43,6 +44,7 @@
   --mohist: #84a8b3;
   --military: #c2876f;
   --zongheng: #c2a955;
+  --zhongyi: #c89274;
   --ochre: #c2a36e;
   --line: #37322a;
 }
@@ -64,6 +66,7 @@
     --mohist: #84a8b3;
     --military: #c2876f;
     --zongheng: #c2a955;
+    --zhongyi: #c89274;
     --ochre: #c2a36e;
     --line: #37322a;
   }
@@ -2820,6 +2823,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 [data-site="mo"] { --cinnabar: var(--mohist); --cinnabar-bg: color-mix(in srgb, var(--mohist) 9%, transparent); }
 [data-site="bing"] { --cinnabar: var(--military); --cinnabar-bg: color-mix(in srgb, var(--military) 9%, transparent); }
 [data-site="zong"] { --cinnabar: var(--zongheng); --cinnabar-bg: color-mix(in srgb, var(--zongheng) 9%, transparent); }
+[data-site="zhongyi"] { --cinnabar: var(--zhongyi); --cinnabar-bg: color-mix(in srgb, var(--zhongyi) 9%, transparent); }
 
 /* 书架·整理中卡片(v15) */
 .dao-book--pending { opacity: 0.72; cursor: default; }

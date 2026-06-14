@@ -224,6 +224,7 @@ const faBooks = checkReadingCorpus('法家', 'fa', '篇')
 const moBooks = checkReadingCorpus('墨家', 'mo', '篇')
 const bingBooks = checkReadingCorpus('兵家', 'bing', '篇')
 const zongBooks = checkReadingCorpus('纵横', 'zong', '篇')
+const zhongyiBooks = checkReadingCorpus('中医', 'zhongyi', '篇')
 
 // ---------- 4c. 筮例(v9 §1) ----------
 {
@@ -505,6 +506,7 @@ if (fs.existsSync(glossaryPath)) {
   checkCorpusAnchors('墨家', 'mo', moBooks, false)
   checkCorpusAnchors('兵家', 'bing', bingBooks, false)
   checkCorpusAnchors('纵横', 'zong', zongBooks, false)
+  checkCorpusAnchors('中医', 'zhongyi', zhongyiBooks, false)
 
   // 覆盖率报告(信息项,断点续作的进度仪表;分母为可注单元总数)
   const xiaoxiangTotal = 64 * 6 + 2
