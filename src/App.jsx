@@ -53,6 +53,7 @@ const CorpusTextPage = lazy(() => import('./features/reader/CorpusTextPage.jsx')
 const CorpusReadPage = lazy(() => import('./features/reader/CorpusReadPage.jsx'))
 const CorpusMePage = lazy(() => import('./features/reader/CorpusMePage.jsx'))
 const MasterPortalPage = lazy(() => import('./features/MasterPortalPage.jsx'))
+const AboutPage = lazy(() => import('./features/AboutPage.jsx'))
 // 全站设置浮层(Tier 0):任何站 nav 齿轮就地打开(主题/字号/译文 + 数据导出导入)
 const SettingsSheet = lazy(() => import('./features/SettingsSheet.jsx'))
 
@@ -305,6 +306,7 @@ function AppContent() {
           ))}
           {/* 诸学总门户(v15):左上角 logo 全站可达的公开总入口,列全部分组 */}
           <Route path={MASTER_PORTAL_PATH} element={<MasterPortalPage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={
             <div style={{ textAlign: 'center', paddingTop: '80px' }}>
               <p style={{ color: 'var(--ink-faint)' }}>页面不存在</p>
@@ -318,7 +320,7 @@ function AppContent() {
       {!isPortal && (
         <footer className="app-footer">
           <span>观象 · 个人学习站</span>
-          <span>本站为个人学习用途，解读内容仅供研习参考</span>
+          <span>本站为个人学习用途，解读内容仅供研习参考 · <NavLink to="/about" className="app-footer__link">关于本站</NavLink></span>
         </footer>
       )}
       {!isPortal && <MobileNav module={module} canSwitch={canSwitch} onPortal={openPortal} />}

@@ -1804,6 +1804,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 /* 读经站段落收藏/笔记(Tier 2) */
 .read-para--markable { position: relative; }
 .read-para--marked .read-para__body { box-shadow: inset 2px 0 0 var(--cinnabar); padding-left: 10px; }
+.read-para--markable:target { background: var(--cinnabar-bg); border-radius: 4px; transition: background 0.4s; scroll-margin-top: 76px; }
 .para-actions { flex: 0 0 auto; display: flex; gap: 4px; align-self: flex-start; opacity: 0; transition: opacity 0.15s; }
 .read-para--markable:hover .para-actions, .read-para--markable:focus-within .para-actions, .read-para--marked .para-actions { opacity: 1; }
 @media (hover: none) { .para-actions { opacity: 0.55; } }
@@ -2882,6 +2883,8 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .yanyi-block { margin: 18px 0 8px; padding: 14px 16px; background: var(--paper); border-left: 2px solid var(--azure); border-radius: 0 4px 4px 0; }
 .yanyi-block__tag { font-size: 0.74rem; color: var(--azure); letter-spacing: 0.05em; margin-bottom: 8px; }
 .yanyi-block__para { font-size: 0.9rem; line-height: 1.95; color: var(--ink-soft); margin: 0 0 10px; }
+.yanyi-xref { color: var(--cinnabar); text-decoration: none; border-bottom: 1px dotted var(--cinnabar); }
+.yanyi-xref:hover { border-bottom-style: solid; }
 .yanyi-block__para:last-child { margin-bottom: 0; }
 
 /* 短经单页阅读器(v13 §1) */
@@ -2935,6 +2938,19 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .master-portal__seal { width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; background: var(--cinnabar); color: #fdfbf6; font-family: var(--font-serif); font-size: 1rem; border-radius: 6px; }
 .master-portal__titles { font-family: var(--font-serif); font-size: 0.95rem; color: var(--ink-soft); }
 .master-portal__desc { font-size: 0.78rem; color: var(--ink-faint); line-height: 1.5; text-align: center; max-width: 17em; }
+.master-portal__about { margin-top: 28px; text-align: center; }
+.master-portal__about-link { font-size: 0.82rem; color: var(--ink-faint); text-decoration: none; }
+.master-portal__about-link:hover { color: var(--cinnabar); text-decoration: underline; }
+/* 关于本站页 */
+.about-section { margin-top: 28px; }
+.about-section__title { font-size: 1.05rem; color: var(--ink); margin: 0 0 12px; font-family: var(--font-serif); }
+.about-page p { line-height: 1.9; color: var(--ink-soft); margin: 0 0 12px; }
+.about-list { margin: 0; padding-left: 1.3em; }
+.about-list li { line-height: 1.9; color: var(--ink-soft); margin-bottom: 8px; }
+.about-list kbd { padding: 1px 6px; border: 1px solid var(--line); border-radius: 4px; background: var(--paper-raised); font-size: 0.85em; }
+.about-back { margin-top: 32px; }
+.app-footer__link { color: inherit; text-decoration: underline; }
+.app-footer__link:hover { color: var(--cinnabar); }
 
 /* 分站换肤:同一张纸,换一方印(v4 §3.4;v14 §2 data-site 驱动) */
 [data-site="dao"] { --cinnabar: var(--azure); --cinnabar-bg: color-mix(in srgb, var(--azure) 9%, transparent); }
@@ -2959,6 +2975,12 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 
 /* 道藏书架 */
 .dao-home { max-width: var(--content-w); margin: 0 auto; }
+/* 今日一章卡(读经站/道藏首页) */
+.shelf-today { display: flex; align-items: center; gap: 12px; margin: 0 0 22px; padding: 13px 18px; border: 1px solid var(--cinnabar); border-radius: 8px; background: var(--cinnabar-bg); text-decoration: none; transition: transform 0.15s; }
+.shelf-today:hover { transform: translateY(-1px); }
+.shelf-today__badge { flex: none; font-size: 0.72rem; padding: 3px 10px; border-radius: 12px; background: var(--cinnabar); color: #fdfbf6; letter-spacing: 0.04em; }
+.shelf-today__book { font-family: var(--font-serif); font-size: 1rem; color: var(--ink); }
+.shelf-today__arrow { margin-left: auto; color: var(--cinnabar); font-size: 1.1rem; }
 .dao-shelf { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
 .dao-book { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 22px 24px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper-raised); text-decoration: none; transition: border-color 0.15s, transform 0.15s; }
 .dao-book:hover { border-color: var(--cinnabar); transform: translateY(-2px); }

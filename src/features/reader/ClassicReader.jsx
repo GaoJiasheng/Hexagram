@@ -63,6 +63,15 @@ export default function ClassicReader({
   const [notes, setNotes] = useState(() => (markCtx ? getCorpusNotes() : {}))
   const [editing, setEditing] = useState(null)
   const [draft, setDraft] = useState('')
+  const [copiedSeg, setCopiedSeg] = useState(null)
+  function copyLink(no, i) {
+    const url = `${window.location.origin}${window.location.pathname}#seg-${no}-${i}`
+    try {
+      navigator.clipboard?.writeText(url)
+      setCopiedSeg(`${no}-${i}`)
+      setTimeout(() => setCopiedSeg(null), 1500)
+    } catch { /* clipboard 不可用 */ }
+  }
   function toggleMark(no, i, snippet) {
     setMarks({ ...toggleCorpusMark(markCtx.corpus, markCtx.slug, no, i, snippet) })
   }
@@ -72,9 +81,10 @@ export default function ClassicReader({
     setEditing(null)
   }
 
-  // 单页:hash 锚点定位(目录点击跳章);rAF 等布局完成再定位,长经更稳
+  // hash 锚点定位(目录跳章 / 段落深链 #seg-章-段);rAF 等布局完成再定位,长经更稳。
+  // 单页与逐章模式皆适用(逐章深链 #seg-N-i)。
   useEffect(() => {
-    if (!single || !hash) return
+    if (!hash) return
     let raf2 = 0
     const raf1 = requestAnimationFrame(() => {
       raf2 = requestAnimationFrame(() => {
@@ -167,8 +177,9 @@ export default function ClassicReader({
     const marked = !!marks[key]
     const note = notes[key]
     const isEditing = editing === key
+    const copied = copiedSeg === `${no}-${i}`
     return (
-      <div key={i} className={`read-para read-para--markable ${marked ? 'read-para--marked' : ''}`}>
+      <div key={i} id={`seg-${no}-${i}`} className={`read-para read-para--markable ${marked ? 'read-para--marked' : ''}`}>
         {label && <span className="read-para__num">{label}</span>}
         <div className="read-para__body">
           {text}
@@ -208,6 +219,12 @@ export default function ClassicReader({
             aria-label="批注"
             title="写批注"
           >✎</button>
+          <button
+            className={`para-act ${copied ? 'para-act--on' : ''}`}
+            onClick={() => copyLink(no, i)}
+            aria-label="复制本段链接"
+            title="复制本段链接"
+          >{copied ? '✓' : '🔗'}</button>
         </div>
       </div>
     )

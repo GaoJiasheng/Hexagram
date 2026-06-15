@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { allGroups, sitesInGroup, groupEntryHref } from '../sites/registry.js'
 import { usePageTitle } from './yijing/hooks/usePageTitle.js'
 
@@ -29,6 +30,9 @@ export default function MasterPortalPage() {
           )
         })}
       </div>
+      <p className="master-portal__about">
+        <Link to="/about" className="master-portal__about-link">关于本站 · 研读铁律与数据说明</Link>
+      </p>
     </div>
   )
 }
