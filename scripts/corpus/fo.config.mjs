@@ -21,4 +21,13 @@ export const BOOKS = [
   { slug: 'tanjing', title: '坛经', pages: TANJING_PAGES, exactChapters: 10 },
   // 佛扩:《佛说四十二章经》后汉迦叶摩腾、竺法兰译,高丽藏古本(最合古本);序 + 42「佛言」章,单页铺排
   { slug: 'sishierzhang', title: '四十二章经', pages: ['佛說四十二章經（高麗版大藏經本）'], exactChapters: 1 },
+  // 佛扩 Wave 2(遗教三经齐 + 阿弥陀 + 禅宗短偈),皆单页短经,整页一章、段按行切:
+  // 遗教三经 = 四十二章经(已收) + 佛遗教经 + 八大人觉经
+  { slug: 'yijiaojing', title: '佛遗教经', pages: ['佛遺教經'], exactChapters: 1 },
+  { slug: 'badaren', title: '八大人觉经', pages: ['佛說八大人覺經'], exactChapters: 1 },
+  // 阿弥陀经:取罗什译正文(终「作礼而去」);其后经题「佛说阿弥陀经」所附往生咒(音译梵咒)、译咒题记、卷题非正文,stopParaRe 截除。
+  { slug: 'amituojing', title: '阿弥陀经', pages: ['佛說阿彌陀經'], exactChapters: 1, stopParaRe: '^佛说阿弥陀经$' },
+  { slug: 'xinxinming', title: '信心铭', pages: ['信心銘'], exactChapters: 1 },
+  // 证道歌:首段标题「永嘉大师证道歌」、次段撰人题「唐慎水沙门玄觉撰」非正文,dropParaRe 剔除。
+  { slug: 'zhengdaoge', title: '永嘉证道歌', pages: ['永嘉證道歌'], exactChapters: 1, dropParaRe: '^(永嘉大师证道歌|唐慎水沙门玄觉撰)$' },
 ]

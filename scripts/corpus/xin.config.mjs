@@ -4,4 +4,6 @@
 // 原文一律来自抓取,严禁手改。
 export const BOOKS = [
   { slug: 'chuanxilu', title: '传习录', pages: ['傳習錄/卷上', '傳習錄/卷中', '傳習錄/卷下'], exactChapters: 3 },
+  // 心学扩(Wave 3):《大学问》王阳明晚年纲领,钱德洪录,问答体单页一章。
+  { slug: 'daxuewen', title: '大学问', pages: ['大學問'], exactChapters: 1 },
 ]

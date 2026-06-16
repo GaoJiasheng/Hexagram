@@ -209,6 +209,17 @@ async function main() {
       else warnings.push(`${page}: 无正文段落`)
     }
 
+    // dropParaRe:逐段丢弃匹配的非正文段(经题/卷题/撰人题等,如证道歌首标题与撰人题)
+    if (book.dropParaRe) {
+      const re = new RegExp(book.dropParaRe)
+      for (const c of chapters) c.paragraphs = c.paragraphs.filter((p) => !re.test(p.original))
+    }
+    // stopParaRe:章内遇首个匹配段即截断(含其后),剔除正文后的附录(如阿弥陀经正文末「佛说阿弥陀经」经题后所附往生咒、译咒题记)
+    if (book.stopParaRe) {
+      const re = new RegExp(book.stopParaRe)
+      for (const c of chapters) { const idx = c.paragraphs.findIndex((p) => re.test(p.original)); if (idx >= 0) c.paragraphs = c.paragraphs.slice(0, idx) }
+    }
+
     // 子页书友好章名覆盖(罗织经 01..12 → 阅人卷一 等),按序赋予
     if (book.chapterTitles) chapters.forEach((c, i) => { if (book.chapterTitles[i]) c.title = book.chapterTitles[i] })
 
