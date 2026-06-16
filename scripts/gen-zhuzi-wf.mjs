@@ -7,13 +7,14 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 
 const BOOKS = [
   ['fa', 'hanfeizi'], ['fa', 'shangjunshu'], ['mo', 'mozi'],
-  ['bing', 'sunzi'], ['bing', 'wuzi'], ['bing', 'simafa'], ['bing', 'weiliaozi'], ['bing', 'sanlue'],
+  ['bing', 'sunzi'], ['bing', 'wuzi'], ['bing', 'simafa'], ['bing', 'weiliaozi'], ['bing', 'sanlue'], ['bing', 'liutao'],
   ['zong', 'guiguzi'], ['zong', 'zhanguoce'],
-  ['zhongyi', 'suwen'], ['zhongyi', 'lingshu'], ['zhongyi', 'shanghanlun'], ['zhongyi', 'bencaojing'],
+  ['zhongyi', 'suwen'], ['zhongyi', 'lingshu'], ['zhongyi', 'shanghanlun'], ['zhongyi', 'bencaojing'], ['zhongyi', 'jinkui'],
   ['moulue', 'luozhijing'], ['moulue', 'rongkujian'], ['moulue', 'quanmou'], ['moulue', 'taohuishu'], ['moulue', 'zhixue'],
 ]
-const ONLY = process.argv[2]          // 可选:只为某 slug 或某 corpus 生成(如 zhanguoce / zhongyi)
-const SEL = ONLY ? BOOKS.filter(([c, s]) => s === ONLY || c === ONLY) : BOOKS
+const ONLY = process.argv[2]          // 可选:只为某 slug 或某 corpus 生成(逗号可多选,如 liutao,jinkui)
+const ONLY_SET = ONLY ? new Set(ONLY.split(',')) : null
+const SEL = ONLY_SET ? BOOKS.filter(([c, s]) => ONLY_SET.has(s) || ONLY_SET.has(c)) : BOOKS
 const SPLIT = 50 // 单元最大段;>55 段的章按此切片
 const units = []
 for (const [corpus, slug] of SEL) {
@@ -53,7 +54,7 @@ const SCHEMA = {
 
 const UNITS = ${JSON.stringify(units, null, 0)}
 
-const CN = { hanfeizi: '韩非子', shangjunshu: '商君书', mozi: '墨子', sunzi: '孙子兵法', wuzi: '吴子', simafa: '司马法', weiliaozi: '尉缭子', sanlue: '三略', guiguzi: '鬼谷子', zhanguoce: '战国策', suwen: '黄帝内经·素问', lingshu: '黄帝内经·灵枢', shanghanlun: '伤寒论', bencaojing: '神农本草经', luozhijing: '罗织经', rongkujian: '小人经', quanmou: '权谋术', taohuishu: '韬晦术', zhixue: '止学' }
+const CN = { hanfeizi: '韩非子', shangjunshu: '商君书', mozi: '墨子', sunzi: '孙子兵法', wuzi: '吴子', simafa: '司马法', weiliaozi: '尉缭子', sanlue: '三略', guiguzi: '鬼谷子', zhanguoce: '战国策', suwen: '黄帝内经·素问', lingshu: '黄帝内经·灵枢', shanghanlun: '伤寒论', bencaojing: '神农本草经', luozhijing: '罗织经', rongkujian: '小人经', quanmou: '权谋术', taohuishu: '韬晦术', zhixue: '止学', liutao: '六韬', jinkui: '金匮要略' }
 const REF = {
   fa: '陈奇猷《韩非子集释》、王先慎《韩非子集解》、蒋礼鸿《商君书锥指》',
   mo: '孙诒让《墨子间诂》、吴毓江《墨子校注》',
@@ -74,7 +75,7 @@ function styleRule(u) {
   if (u.corpus === 'zhongyi') {
     const base = TIELU_YI + ' 参' + REF.zhongyi + '。'
     if (u.book === 'bencaojing') return base + ' 本草经经文逐药含「主治…」,属原典须照译;但注疏只释药名/别名/产地/类属源流,绝不展开功效、用法、剂量、宜忌,延伸只讲本草学史不荐用。'
-    if (u.book === 'shanghanlun') return base + ' 伤寒论方剂只随经文录方名与组成,注疏/延伸不述主治、用法、用量;六经辨证、脉证作文献训诂,不导向「对照自诊」。'
+    if (u.book === 'shanghanlun' || u.book === 'jinkui') return base + ' 伤寒论/金匮方剂只随经文录方名与组成,注疏/延伸不述主治、用法、用量;辨证、脉证作文献训诂,不导向「对照自诊」。'
     return base + ' 内经问答体(黄帝问、岐伯对)逐段直译,人名(黄帝/岐伯/雷公等)保留;藏象、经络、脉证、运气等作文献训诂,不导向自查自疗。'
   }
   const base = TIELU + ' 参' + REF[u.corpus] + '。'
