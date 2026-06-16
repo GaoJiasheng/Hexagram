@@ -17,6 +17,17 @@ const MENGZI_PAGES = [
   '孟子/告子上', '孟子/告子下', '孟子/盡心上', '孟子/盡心下',
 ]
 
+// 荀子 32 篇(子页 荀子/X篇,跳「荀子序」杨倞序;每篇一页一章,同论语模式)。
+const XUNZI_PAGES = [
+  '荀子/勸學篇', '荀子/修身篇', '荀子/不苟篇', '荀子/榮辱篇', '荀子/非相篇',
+  '荀子/非十二子篇', '荀子/仲尼篇', '荀子/儒效篇', '荀子/王制篇', '荀子/富國篇',
+  '荀子/王霸篇', '荀子/君道篇', '荀子/臣道篇', '荀子/致士篇', '荀子/議兵篇',
+  '荀子/彊國篇', '荀子/天論篇', '荀子/正論篇', '荀子/禮論篇', '荀子/樂論篇',
+  '荀子/解蔽篇', '荀子/正名篇', '荀子/性惡篇', '荀子/君子篇', '荀子/成相篇',
+  '荀子/賦篇', '荀子/大略篇', '荀子/宥坐篇', '荀子/子道篇', '荀子/法行篇',
+  '荀子/哀公篇', '荀子/堯問篇',
+]
+
 export const BOOKS = [
   { slug: 'lunyu', title: '论语', pages: LUNYU_PAGES, exactChapters: 20 },
   { slug: 'mengzi', title: '孟子', pages: MENGZI_PAGES, exactChapters: 14 },
@@ -24,4 +35,6 @@ export const BOOKS = [
   { slug: 'zhongyong', title: '中庸', pages: ['禮記/中庸'], exactChapters: 1 },
   // 儒扩:今文《孝经》18 章(==开宗明义章·第一== 切章)
   { slug: 'xiaojing', title: '孝经', pages: ['今文孝經'], splitHeadings: true, exactChapters: 18 },
+  // 儒扩(Wave 4):荀子 32 篇,儒家最大缺口,与孟子性善对举性恶,隆礼重法。
+  { slug: 'xunzi', title: '荀子', pages: XUNZI_PAGES, exactChapters: 32 },
 ]

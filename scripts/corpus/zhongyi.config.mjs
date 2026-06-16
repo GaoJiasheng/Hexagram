@@ -43,4 +43,6 @@ export const BOOKS = [
   // 伤寒杂病论补全(扩展):金匮要略单页,25 == 病/食禁篇;===附方/附注=== 经 mergeHeadingRe 并入前篇(不另起章)。
   // 方剂照原典录,守研习不诊疗——注疏/延伸不述功效用法用量、不下疗效断语。
   { slug: 'jinkui', title: '金匮要略', pages: ['金匱要略'], splitHeadings: true, mergeHeadingRe: '附方|附注', exactChapters: 25 },
+  // 难经补全(扩展):《黄帝八十一难经》单页,81 == 难 标题,splitHeadings 切;问答体,守研习不诊疗。
+  { slug: 'nanjing', title: '难经', pages: ['難經'], splitHeadings: true, exactChapters: 81 },
 ]

@@ -108,7 +108,9 @@ function stripStarTemplates(wikitext) {
 // 行清洗 → 简体正文;若为导航/标题/标记/空行返回 null
 function cleanLine(raw) {
   if (/^\*+\s*\[\[/.test(raw.trim())) return null          // *[[…]] 导航链接行
-  const text = clean(replaceAnother(preResolve(stripRef(raw))).replace(/^[*#:;]+/, ''))
+  if (/^\[\d+\][^[]{0,16}[：:]/.test(raw.trim())) return null  // 校勘脚注行(如难经「[1]字：原作…据《…》改」),整行剔除
+  // 剥离正文内联校注锚 [数字](难经经文如「其脉浮[1]在…」);经典正文不用 [数字] 故他书 no-op
+  const text = clean(replaceAnother(preResolve(stripRef(raw))).replace(/^[*#:;]+/, '').replace(/\[\d+\]/g, ''))
   if (isJunk(text)) return null
   const simp = t2s(text).replaceAll('愼', '慎').replaceAll('擧', '举')   // OpenCC 未规范的异体字补正(慎/举)
   if (!simp || CHAPTER_MARK_RE.test(simp) || NAV_LINE_RE.test(simp) || PIN_TITLE_RE.test(simp) || LOSS_NOTE_RE.test(simp) || /^__\w+__$/.test(simp) || /^目\s*[录錄]/.test(simp)) return null
