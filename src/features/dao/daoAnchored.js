@@ -10,10 +10,11 @@ import zhuangziNeipian from '../../data/dao/zhushi-anchored/zhuangzi-neipian.jso
 import zhuangziWaipian from '../../data/dao/zhushi-anchored/zhuangzi-waipian.json'
 import zhuangziZapian from '../../data/dao/zhushi-anchored/zhuangzi-zapian.json'
 import liezi from '../../data/dao/zhushi-anchored/liezi.json'
+import wenzi from '../../data/dao/zhushi-anchored/wenzi.json'
 import cantongqi from '../../data/dao/zhushi-anchored/cantongqi.json'
 import { getHexagram } from '../yijing/data.js'
 
-const BOOKS = { daodejing, qingjingjing, ganyingpian, yinfujing, 'zhuangzi-neipian': zhuangziNeipian, 'zhuangzi-waipian': zhuangziWaipian, 'zhuangzi-zapian': zhuangziZapian, liezi, cantongqi }
+const BOOKS = { daodejing, qingjingjing, ganyingpian, yinfujing, 'zhuangzi-neipian': zhuangziNeipian, 'zhuangzi-waipian': zhuangziWaipian, 'zhuangzi-zapian': zhuangziZapian, liezi, wenzi, cantongqi }
 
 function resolve(entries) {
   if (!entries?.length) return null

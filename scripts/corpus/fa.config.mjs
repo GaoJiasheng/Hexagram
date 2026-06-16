@@ -18,4 +18,9 @@ export const BOOKS = [
   // 商君书:5 卷,splitHeadings 跨卷切篇。篇数待 fetch 实测(亡篇剔除后约 24),实测后锁 exactChapters。
   // 商君书:5 卷,splitHeadings 跨卷切篇;刑约第十六、御盗第二十一亡篇有目无文自动剔除,实得 24 篇。
   { slug: 'shangjunshu', title: '商君书', pages: ['商君書/卷一', '商君書/卷二', '商君書/卷三', '商君書/卷四', '商君書/卷五'], splitHeadings: true, exactChapters: 24 },
+  // 法扩(Wave 6):慎子,势治代表,残篇。单页 ==9 标题(威德/因循/民杂/知忠/德立/君人/君臣/慎子逸文/慎子跋),
+  // 知忠·君臣原刻全脱依《群书治要》补(标题内 {{*|…}} 注由 clean 剔);慎子跋为后人题跋,dropChapterRe 剔 → 8 章。
+  { slug: 'shenzi', title: '慎子', pages: ['慎子'], splitHeadings: true, dropChapterRe: '跋$', exactChapters: 8 },
+  // 法扩(Wave 6):尹文子,名法家,取大道上/下二篇(跳「序」「佚文」)。
+  { slug: 'yinwenzi', title: '尹文子', pages: ['尹文子/大道上', '尹文子/大道下'], exactChapters: 2 },
 ]
