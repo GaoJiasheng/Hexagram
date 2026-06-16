@@ -52,6 +52,29 @@ const BOOKS = [
   // mergeParagraphs:校对页按物理行断行,句子跨行被切;每章合并为一段(阴符经各章本为连续短文)
   { slug: 'yinfujing', title: '阴符经', pages: YINFU_PAGES, dropPreface: true, exactChapters: 3, junkRe: /^黄帝阴符经$/, mergeParagraphs: true },
   { slug: 'cantongqi', title: '周易参同契', pages: CANTONGQI_PAGES, exactChapters: 35 },
+  // 庄子补全(拓展 Wave 1b):外篇 15 + 杂篇 11,凑全《庄子》33 篇;子页 莊子/篇名,同内篇 perPageChapter。
+  {
+    slug: 'zhuangzi-waipian',
+    title: '庄子外篇',
+    pages: ['莊子/駢拇', '莊子/馬蹄', '莊子/胠篋', '莊子/在宥', '莊子/天地', '莊子/天道', '莊子/天運', '莊子/刻意', '莊子/繕性', '莊子/秋水', '莊子/至樂', '莊子/達生', '莊子/山木', '莊子/田子方', '莊子/知北遊'],
+    perPageChapter: true,
+    exactChapters: 15,
+  },
+  {
+    slug: 'zhuangzi-zapian',
+    title: '庄子杂篇',
+    pages: ['莊子/庚桑楚', '莊子/徐無鬼', '莊子/則陽', '莊子/外物', '莊子/寓言', '莊子/讓王', '莊子/盜跖', '莊子/說劍', '莊子/漁父', '莊子/列禦寇', '莊子/天下'],
+    perPageChapter: true,
+    exactChapters: 11,
+  },
+  // 列子(冲虚真经)8 篇,凑道家「老·庄·列」三经;子页 列子/X篇(带「篇」,张湛注本通行)。
+  {
+    slug: 'liezi',
+    title: '列子',
+    pages: ['列子/天瑞篇', '列子/黃帝篇', '列子/周穆王篇', '列子/仲尼篇', '列子/湯問篇', '列子/力命篇', '列子/楊朱篇', '列子/說符篇'],
+    perPageChapter: true,
+    exactChapters: 8,
+  },
 ]
 
 // ---------- 单页解析 ----------
