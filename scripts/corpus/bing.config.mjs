@@ -10,4 +10,7 @@ export const BOOKS = [
   // 尉缭子:全覽合页中 伍制令/分塞令/束伍令/經卒令 四篇有目无文(底本阙),取有文的 20 篇(同墨子取现存篇)。
   { slug: 'weiliaozi', title: '尉缭子', pages: ['尉繚子/全覽'], splitHeadings: true, exactChapters: 20 },
   { slug: 'sanlue', title: '三略', pages: ['三略'], splitHeadings: true, exactChapters: 3 },
+  // 武经七书补全(扩展):六韬单页 ==卷题==/===篇题=== 二级,parsePageChapters 丢无正文卷题→60 篇。
+  { slug: 'liutao', title: '六韬', pages: ['六韜'], splitHeadings: true, dropChapterRe: '^(文韬|武韬|龙韬|虎韬|豹韬|犬韬)$', exactChapters: 60 },
+  // 李卫公问对:维基子页 /卷下空缺(只卷上/卷中有文),底本不全,待另寻全本后再收。
 ]

@@ -40,4 +40,7 @@ export const BOOKS = [
   { slug: 'shanghanlun', title: '伤寒论', pages: ['傷寒論'], splitHeadings: true, exactChapters: 22 },
   // 神农本草经:单页,上/中/下经(==)空、各部(===)有药(6 部×3 品=18 类,359 药);序$ 跳。
   { slug: 'bencaojing', title: '神农本草经', pages: ['神農本草經'], splitHeadings: true, exactChapters: 18 },
+  // 伤寒杂病论补全(扩展):金匮要略单页,25 == 病/食禁篇;===附方/附注=== 经 mergeHeadingRe 并入前篇(不另起章)。
+  // 方剂照原典录,守研习不诊疗——注疏/延伸不述功效用法用量、不下疗效断语。
+  { slug: 'jinkui', title: '金匮要略', pages: ['金匱要略'], splitHeadings: true, mergeHeadingRe: '附方|附注', exactChapters: 25 },
 ]

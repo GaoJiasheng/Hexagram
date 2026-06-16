@@ -130,7 +130,11 @@ function parsePageParas(wikitext, warnings, pageName) {
 
 // 单页按 == 标题 == 切多章(金刚经 32 分):标题去『…』夹注;跳过「正文/外部链接」等非经文标题;
 // 首个有效标题前的内容(开经偈、礼佛文等)丢弃。
-function parsePageChapters(wikitext, warnings, pageName) {
+function parsePageChapters(wikitext, warnings, pageName, book = {}) {
+  // mergeHeadingRe:匹配的标题不另起章,内容并入上一章(如金匮附方并入前篇);
+  // dropChapterRe:切章后丢弃标题匹配的整章(如六韬卷题章「文韬」等只含卷标无正文)。
+  const mergeRe = book.mergeHeadingRe ? new RegExp(book.mergeHeadingRe) : null
+  const dropRe = book.dropChapterRe ? new RegExp(book.dropChapterRe) : null
   const chapters = []
   let cur = null
   for (const raw of stripHeaderBlock(stripStarTemplates(wikitext)).split('\n')) {
@@ -140,6 +144,7 @@ function parsePageChapters(wikitext, warnings, pageName) {
       const rawTitle = h[1].replace(/<ref[^>]*>[\s\S]*?<\/ref>/gi, '').replace(/<ref[^>]*\/>/gi, '')  // 剔标题内 <ref> 校勘
       const title = t2s(clean(rawTitle).replace(/『[^』]*』/g, '').replace(/「[^」]*」/g, '')).trim()
       if (!title || HEADING_SKIP_RE.test(title)) { cur = null; continue }
+      if (mergeRe && mergeRe.test(title) && chapters.length) { cur = chapters[chapters.length - 1]; continue }
       cur = { title, paragraphs: [] }
       chapters.push(cur)
       continue
@@ -147,7 +152,8 @@ function parsePageChapters(wikitext, warnings, pageName) {
     const simp = cleanLine(raw)
     if (simp && cur && simp !== cur.title) cur.paragraphs.push({ original: simp, translation: null }) // 丢章末重复的经题
   }
-  const kept = chapters.filter((c) => c.paragraphs.length)
+  let kept = chapters.filter((c) => c.paragraphs.length)
+  if (dropRe) kept = kept.filter((c) => !dropRe.test(c.title))
   if (!kept.length) warnings.push(`${pageName}: 切章后无内容`)
   return kept
 }
@@ -191,7 +197,7 @@ async function main() {
     for (const page of book.pages) {
       if (book.splitHeadings) {
         // 单页按标题切多章(金刚经 32 分)
-        for (const c of parsePageChapters(pages[page], warnings, page)) {
+        for (const c of parsePageChapters(pages[page], warnings, page, book)) {
           chapters.push({ no: chapters.length + 1, title: c.title, paragraphs: c.paragraphs })
         }
         continue
