@@ -28,6 +28,12 @@ const XUNZI_PAGES = [
   '荀子/哀公篇', '荀子/堯問篇',
 ]
 
+// 颜氏家训 20 篇分 7 卷,每卷子页含 ==篇名第N== 标题,splitHeadings 跨卷切 20 篇。
+const YANSHI_PAGES = ['顏氏家訓/卷第1', '顏氏家訓/卷第2', '顏氏家訓/卷第3', '顏氏家訓/卷第4', '顏氏家訓/卷第5', '顏氏家訓/卷第6', '顏氏家訓/卷第7']
+// 近思录 14 卷,子页 近思錄/卷01…卷14(序跋页不取);卷无 == 标题,一卷一章,chapterTitles 映卷名。
+const JINSI_PAGES = ['近思錄/卷01', '近思錄/卷02', '近思錄/卷03', '近思錄/卷04', '近思錄/卷05', '近思錄/卷06', '近思錄/卷07', '近思錄/卷08', '近思錄/卷09', '近思錄/卷10', '近思錄/卷11', '近思錄/卷12', '近思錄/卷13', '近思錄/卷14']
+const JINSI_TITLES = ['道体', '为学', '致知', '存养', '克己', '家道', '出处', '治体', '制度', '处事', '教学', '警戒', '辨异端', '观圣贤']
+
 export const BOOKS = [
   { slug: 'lunyu', title: '论语', pages: LUNYU_PAGES, exactChapters: 20 },
   { slug: 'mengzi', title: '孟子', pages: MENGZI_PAGES, exactChapters: 14 },
@@ -37,4 +43,8 @@ export const BOOKS = [
   { slug: 'xiaojing', title: '孝经', pages: ['今文孝經'], splitHeadings: true, exactChapters: 18 },
   // 儒扩(Wave 4):荀子 32 篇,儒家最大缺口,与孟子性善对举性恶,隆礼重法。
   { slug: 'xunzi', title: '荀子', pages: XUNZI_PAGES, exactChapters: 32 },
+  // 儒扩(Wave 6b):颜氏家训 20 篇(splitHeadings 跨 7 卷)、近思录 14 卷(一卷一章,chapterTitles 映卷名)。
+  { slug: 'yanshi', title: '颜氏家训', pages: YANSHI_PAGES, splitHeadings: true, exactChapters: 20 },
+  // 近思录:卷首泄漏的卷名单词段(道体/为学…)dropParaRe 剔;卷首提要(此卷论…)为注本所加、底本含,保留。
+  { slug: 'jinsilu', title: '近思录', pages: JINSI_PAGES, chapterTitles: JINSI_TITLES, dropParaRe: '^(道体|为学|致知|存养|克己|家道|出处|治体|制度|处事|教学|警戒|辨异端|观圣贤)$', exactChapters: 14 },
 ]

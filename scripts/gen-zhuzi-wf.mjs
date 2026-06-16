@@ -14,7 +14,7 @@ const BOOKS = [
   ['dao', 'zhuangzi-waipian'], ['dao', 'zhuangzi-zapian'], ['dao', 'liezi'], ['dao', 'wenzi'],
   ['fo', 'yijiaojing'], ['fo', 'badaren'], ['fo', 'amituojing'], ['fo', 'xinxinming'], ['fo', 'zhengdaoge'],
   ['xin', 'daxuewen'],
-  ['ru', 'xunzi'],
+  ['ru', 'xunzi'], ['ru', 'yanshi'], ['ru', 'jinsilu'],
 ]
 const ONLY = process.argv[2]          // 可选:只为某 slug 或某 corpus 生成(逗号可多选,如 liutao,jinkui)
 const ONLY_SET = ONLY ? new Set(ONLY.split(',')) : null
@@ -58,7 +58,7 @@ const SCHEMA = {
 
 const UNITS = ${JSON.stringify(units, null, 0)}
 
-const CN = { hanfeizi: '韩非子', shangjunshu: '商君书', shenzi: '慎子', yinwenzi: '尹文子', wenzi: '文子', mozi: '墨子', sunzi: '孙子兵法', wuzi: '吴子', simafa: '司马法', weiliaozi: '尉缭子', sanlue: '三略', guiguzi: '鬼谷子', zhanguoce: '战国策', suwen: '黄帝内经·素问', lingshu: '黄帝内经·灵枢', shanghanlun: '伤寒论', bencaojing: '神农本草经', luozhijing: '罗织经', rongkujian: '小人经', quanmou: '权谋术', taohuishu: '韬晦术', zhixue: '止学', liutao: '六韬', jinkui: '金匮要略', nanjing: '难经', 'zhuangzi-waipian': '庄子外篇', 'zhuangzi-zapian': '庄子杂篇', liezi: '列子', yijiaojing: '佛遗教经', badaren: '八大人觉经', amituojing: '阿弥陀经', xinxinming: '信心铭', zhengdaoge: '永嘉证道歌', daxuewen: '大学问', xunzi: '荀子' }
+const CN = { hanfeizi: '韩非子', shangjunshu: '商君书', shenzi: '慎子', yinwenzi: '尹文子', wenzi: '文子', mozi: '墨子', sunzi: '孙子兵法', wuzi: '吴子', simafa: '司马法', weiliaozi: '尉缭子', sanlue: '三略', guiguzi: '鬼谷子', zhanguoce: '战国策', suwen: '黄帝内经·素问', lingshu: '黄帝内经·灵枢', shanghanlun: '伤寒论', bencaojing: '神农本草经', luozhijing: '罗织经', rongkujian: '小人经', quanmou: '权谋术', taohuishu: '韬晦术', zhixue: '止学', liutao: '六韬', jinkui: '金匮要略', nanjing: '难经', 'zhuangzi-waipian': '庄子外篇', 'zhuangzi-zapian': '庄子杂篇', liezi: '列子', yijiaojing: '佛遗教经', badaren: '八大人觉经', amituojing: '阿弥陀经', xinxinming: '信心铭', zhengdaoge: '永嘉证道歌', daxuewen: '大学问', xunzi: '荀子', yanshi: '颜氏家训', jinsilu: '近思录' }
 const REF = {
   fa: '陈奇猷《韩非子集释》、王先慎《韩非子集解》、蒋礼鸿《商君书锥指》',
   mo: '孙诒让《墨子间诂》、吴毓江《墨子校注》',
@@ -69,7 +69,7 @@ const REF = {
   dao: '郭象《庄子注》、成玄英《庄子疏》、王先谦《庄子集解》、郭庆藩《庄子集释》;张湛《列子注》',
   fo: '鸠摩罗什译本;天亲《佛遗教经论》、智旭《阿弥陀经要解》、丁福保《佛学大辞典》;禅宗灯录',
   xin: '陈荣捷《王阳明传习录详注集评》、邓艾民《传习录注疏》;《王文成公全书》',
-  ru: '王先谦《荀子集解》、梁启雄《荀子简释》、王天海《荀子校释》',
+  ru: '王先谦《荀子集解》、梁启雄《荀子简释》;王利器《颜氏家训集解》;江永/茅星来《近思录集注》、叶采《近思录集解》',
 }
 const TIELU = '【铁律·思想史视角】诸子取思想史与文献研习视角:译文平实直译字面义,如实呈现其说(法家之严刻、纵横之机变照译不讳),但不作现代政治影射、不作厚黑/权术/帝王术教程式发挥、不借古讽今、不下现实政治褒贬;注疏作字词名物训诂,延伸讲思想/人物/源流。'
 const TIELU_YI = '【铁律·研习不诊疗】中医典籍取医学史与文献研习视角:译文平实直译经文字面义(含本草经/伤寒论原文里的主治、方剂,属原典照译,非医嘱);但注疏与延伸一律不作诊疗、不述方药功效用法用量宜忌、不下病症/疗效断语、不教自我诊断施治或养生导引;注疏作字词名物术语训诂,延伸讲医学史、人物(扁鹊/仓公/华佗/张仲景/皇甫谧/孙思邈/李时珍等)、学派源流、概念思想史(阴阳五行入医、藏象、运气)。内容为古籍研习、非医疗建议。'
@@ -90,7 +90,10 @@ function styleRule(u) {
     return base + ' 内经问答体(黄帝问、岐伯对)逐段直译,人名(黄帝/岐伯/雷公等)保留;藏象、经络、脉证、运气等作文献训诂,不导向自查自疗。'
   }
   if (u.corpus === 'ru') {
-    return '【研习·儒家】儒典取义理与思想史视角:译文平实直译,仁义礼智、性恶、天论、正名、隆礼重法等概念注疏释之(0–4 条/段、≤40 字、无 ref),延伸讲学派源流(荀子与孟子性善性恶之辨、对韩非李斯之影响、汉儒传经)、与孔孟异同,如实呈现荀子之说不作现代借用。参' + REF.ru + '。荀子多长篇论说,直译不缩写不臆补;《成相》为弹词体韵文、《赋》为隐语赋,存其体例直译。'
+    const base = '【研习·儒家】儒典取义理与思想史视角:译文平实直译,仁义礼智、性命理气等概念注疏释之(0–4 条/段、≤40 字、无 ref),延伸讲义理/学派源流/与孔孟程朱异同,如实呈现不作现代借用。参' + REF.ru + '。'
+    if (u.book === 'yanshi') return base + '颜氏家训为家训体,平实直译;家庭教化/治学/处世/南北朝史事名物注疏释之,延伸讲家训源流与颜之推身世,不作现代育儿/成功学发挥。'
+    if (u.book === 'jinsilu') return base + '近思录为朱熹、吕祖谦辑周敦颐张载二程语录,直译其理学语录(卷首「此卷论…」为注本提要照译);理/气/性/命/敬/格物致知等概念注疏释之,延伸讲程朱理学源流与编纂体例。'
+    return base + '荀子多长篇论说,直译不缩写不臆补,如实呈现性恶/隆礼重法之说;《成相》弹词、《赋》隐语存其体例。'
   }
   if (u.corpus === 'xin') {
     return '【研习·心学】阳明心学取义理与思想史视角:译文平实直译,致良知/知行合一/心即理/万物一体/格物诚意等名相注疏释之(0–4 条/段、≤40 字、无 ref),延伸讲心学源流(象山—阳明)、与朱子学异同、王门后学,不作现代成功学/心灵鸡汤式发挥。参' + REF.xin + '。《大学问》为问答体,「大人者以天地万物为一体」诸句直译;末「德洪曰」一段为钱德洪后记,如实译并注其为录者跋语。'
