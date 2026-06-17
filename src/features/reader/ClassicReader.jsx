@@ -50,6 +50,7 @@ export default function ClassicReader({
   paraLabel = () => null,
   header = null,
   sectionUnit = '章',
+  verse = false,    // 诗体经按句读换行(黄庭等,#143)
   markCtx = null,   // {corpus, slug}:启用读经站段落收藏/笔记(Tier 2);null 则关闭
 }) {
   const { settings, setSettings } = useSettings()
@@ -176,9 +177,9 @@ export default function ClassicReader({
 
   const Para = (no, p, i) => {
     const label = paraLabel(no, i)
-    const text = <ClassicText original={p.original} translation={p.translation} anchors={getAnchors(no, i)} />
+    const text = <ClassicText original={p.original} translation={p.translation} anchors={getAnchors(no, i)} verse={verse} />
     if (!markCtx) {
-      if (!label) return <ClassicText key={i} original={p.original} translation={p.translation} anchors={getAnchors(no, i)} />
+      if (!label) return <ClassicText key={i} original={p.original} translation={p.translation} anchors={getAnchors(no, i)} verse={verse} />
       return (
         <div key={i} className="read-para">
           <span className="read-para__num">{label}</span>

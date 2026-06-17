@@ -149,16 +149,32 @@ function segmentAnchored(text, anchors) {
   return segs
 }
 
+const VERSE_PUNCT = /[，。；！？]/
+
 /** 经文字词注释。词典模式(v4 §1):对全文做最长优先匹配,用于卦辞与爻辞原文。
- *  锚定模式(v5 §3):传入 anchors 时只标注指定位置,用于传文逐段注疏。 */
-export default function AnnotatedText({ text, anchors }) {
+ *  锚定模式(v5 §3):传入 anchors 时只标注指定位置,用于传文逐段注疏。
+ *  verse(#143):诗体经(黄庭等)按句读换行——在纯文本段内逢句读插 <br/>,注释词跨行不受影响。 */
+export default function AnnotatedText({ text, anchors, verse = false }) {
   if (!text) return null
   const segs = anchors?.length ? segmentAnchored(text, anchors) : segment(text)
-  return (
-    <>
-      {segs.map((s, i) =>
-        s.entry ? <ZhuTerm key={i} entry={s.entry} /> : <span key={i}>{s.text}</span>
-      )}
-    </>
-  )
+  if (!verse) {
+    return (
+      <>
+        {segs.map((s, i) =>
+          s.entry ? <ZhuTerm key={i} entry={s.entry} /> : <span key={i}>{s.text}</span>
+        )}
+      </>
+    )
+  }
+  const out = []
+  segs.forEach((s, i) => {
+    if (s.entry) { out.push(<ZhuTerm key={i} entry={s.entry} />); return }
+    // 纯文本段:按句读切片,逢句末标点插换行(含段-注释边界处的标点)
+    for (const [j, pc] of s.text.split(/(?<=[，。；！？])/).filter(Boolean).entries()) {
+      out.push(<span key={`${i}-${j}`}>{pc}</span>)
+      if (VERSE_PUNCT.test(pc[pc.length - 1])) out.push(<br key={`${i}-${j}-br`} />)
+    }
+  })
+  while (out.length && out[out.length - 1]?.type === 'br') out.pop()   // 去末尾多余换行
+  return <>{out}</>
 }

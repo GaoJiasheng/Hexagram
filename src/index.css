@@ -1904,6 +1904,16 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   contain-intrinsic-size: auto 600px;
 }
 
+/* 分章长章(坛经机缘品 175 段、荀子大略 109 段…)逐段跳过离屏渲染,免字号/译文切换掉帧。
+   仅 paged(非单页,单页已由 .dao-single__chapter 处理);锚点/搜索仍可达(#144) */
+.read-page:not(.dao-single) .read-para {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 160px;
+}
+
+/* 诗体经(黄庭等)按句读换行排版(#143)——句间略加行距,显诗行节奏 */
+.classic-text__original--verse { line-height: 2.2; }
+
 @media (max-width: 768px) {
   .read-toc { display: none; }
   .read-toc-mobile {
