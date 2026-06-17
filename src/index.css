@@ -3005,6 +3005,13 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .portal-trail__hint { color: var(--ink-faint); }
 .master-portal__links { margin-top: 18px; text-align: center; }
 
+/* 金句卡(#147) */
+.quote-overlay { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 20px; background: rgba(0, 0, 0, 0.5); overflow-y: auto; }
+.quote-modal { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.quote-card { max-width: 100%; height: auto; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); border-radius: 4px; }
+.quote-modal__actions { display: flex; gap: 10px; }
+.quote-modal__hint { font-size: 0.78rem; margin: 0; }
+
 /* 义理专题 · 跨派概念页(#150/#151) */
 .concepts-page { max-width: 720px; margin: 0 auto; }
 .concepts-list { display: flex; flex-direction: column; gap: 18px; margin-top: 8px; }

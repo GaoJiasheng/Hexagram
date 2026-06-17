@@ -52,6 +52,7 @@ export default function DaoReadPage() {
       chapter={chapter}
       sectionUnit={meta.sectionUnit}
       verse={!!meta.verse}
+      bookTitle={meta.title}
       tocBack={<Link to={`/dao/${slug}`} className="read-toc__back">{book.title}</Link>}
       chapterLabel={label}
       chapterHref={(no) => `/dao/${slug}/${no}`}

@@ -1,6 +1,7 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import ClassicText from '../yijing/components/ClassicText.jsx'
+import QuoteCard from './QuoteCard.jsx'
 import { useSettings } from '../yijing/SettingsContext.jsx'
 import { getCorpusMarks, toggleCorpusMark, getCorpusNotes, saveCorpusNote } from '../yijing/storage.js'
 
@@ -51,6 +52,7 @@ export default function ClassicReader({
   header = null,
   sectionUnit = '章',
   verse = false,    // 诗体经按句读换行(黄庭等,#143)
+  bookTitle = '',   // 金句卡署名用(#147)
   markCtx = null,   // {corpus, slug}:启用读经站段落收藏/笔记(Tier 2);null 则关闭
 }) {
   const { settings, setSettings } = useSettings()
@@ -65,6 +67,7 @@ export default function ClassicReader({
   const [editing, setEditing] = useState(null)
   const [draft, setDraft] = useState('')
   const [copiedSeg, setCopiedSeg] = useState(null)
+  const [cardSeg, setCardSeg] = useState(null)   // 金句卡(#147):{original, translation, source}
   // 单页长经(金刚经 32 分/黄庭 36 章铺一页)scroll-spy:点亮侧栏当前章 + 回显移动端 select(#145)。
   // 当前章 = 顶部已越过工具条线(130px)的最后一章;rAF 节流,挂载即同步算一次(不依赖后台 rAF)。
   const [activeAnchor, setActiveAnchor] = useState(null)
@@ -262,9 +265,22 @@ export default function ClassicReader({
             aria-label="复制本段链接"
             title="复制本段链接"
           >{copied ? '✓' : '🔗'}</button>
+          <button
+            className="para-act"
+            onClick={() => setCardSeg({ original: p.original, translation: p.translation, source: cardSource(no) })}
+            aria-label="生成金句卡"
+            title="生成金句卡"
+          >🖼</button>
         </div>
       </div>
     )
+  }
+
+  // 金句卡署名:《书名》· 章名(分章书)
+  const cardSource = (no) => {
+    const c = chapters.find((x) => x.no === no)
+    const lbl = c && multi ? ` · ${chapterLabel(c)}` : ''
+    return bookTitle ? `《${bookTitle}》${lbl}` : lbl
   }
 
   return (
@@ -349,6 +365,7 @@ export default function ClassicReader({
           )
         })()}
       </main>
+      {cardSeg && <QuoteCard {...cardSeg} onClose={() => setCardSeg(null)} />}
     </div>
   )
 }
