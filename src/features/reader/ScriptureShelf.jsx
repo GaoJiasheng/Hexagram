@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import { getReadingProgress } from '../yijing/storage.js'
+import { sizeTier } from './bookSizes.js'
 
 const STATUS_LABEL = { pending: '整理中', partial: '可读·译注中', done: '可阅读' }
 
@@ -52,6 +53,7 @@ export default function ScriptureShelf({ texts, title, subtitle, basePath, brand
               <div className="dao-book__meta">
                 <span>{t.era}</span>
                 <span>{t.sections} {t.sectionUnit}</span>
+                {sizeTier(t.slug) && <span className={`book-tier book-tier--${sizeTier(t.slug).cls}`}>{sizeTier(t.slug).label}</span>}
               </div>
               <p className="dao-book__brief">{t.brief}</p>
               <span className={`dao-book__status dao-book__status--${t.status}`}>{STATUS_LABEL[t.status]}</span>

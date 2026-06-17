@@ -3045,8 +3045,14 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .dao-book:hover { border-color: var(--cinnabar); transform: translateY(-2px); }
 .dao-book__title { font-family: var(--font-serif); font-size: 1.3rem; color: var(--ink); }
 .dao-book__alias { font-size: 0.78rem; color: var(--ink-soft); }
-.dao-book__meta { display: flex; gap: 12px; font-size: 0.74rem; color: var(--ink-faint); }
+.dao-book__meta { display: flex; gap: 12px; align-items: center; font-size: 0.74rem; color: var(--ink-faint); }
 .dao-book__brief { font-size: 0.84rem; line-height: 1.7; color: var(--ink); margin: 6px 0 0; }
+
+/* 篇幅档 pill(#148)——短/中/长 读时信号,弱色描边,不抢主色 */
+.book-tier { font-size: 0.66rem; padding: 0 6px; border-radius: 8px; border: 1px solid var(--line); line-height: 1.5; }
+.book-tier--short { color: #5b8a5b; border-color: color-mix(in srgb, #5b8a5b 40%, var(--line)); }
+.book-tier--mid { color: var(--ink-soft); }
+.book-tier--long { color: #9a6b4f; border-color: color-mix(in srgb, #9a6b4f 40%, var(--line)); }
 .dao-book__status { position: absolute; top: 14px; right: 14px; font-size: 0.68rem; padding: 1px 7px; border-radius: 3px; border: 1px solid var(--line); color: var(--ink-faint); }
 .dao-book__status--done { color: var(--cinnabar); border-color: currentColor; }
 

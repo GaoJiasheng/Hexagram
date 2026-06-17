@@ -9,7 +9,7 @@ export const SITES = [
     group: 'yidao',        // 易+道 同组,门户互切
     brand: '观象',
     portalTitle: '易经研习',
-    portalDesc: '六十四卦 · 推演工作台 · 经传 · 学堂',
+    portalDesc: '六十四卦 · 推演工作台 · 经传 · 学堂 · 筮例（全站唯一含推演的组）',
     home: '/',
     prefix: '',            // 默认站(无前缀),兜底
     accent: 'cinnabar',
