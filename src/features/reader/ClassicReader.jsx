@@ -65,6 +65,28 @@ export default function ClassicReader({
   const [editing, setEditing] = useState(null)
   const [draft, setDraft] = useState('')
   const [copiedSeg, setCopiedSeg] = useState(null)
+  // 单页长经(金刚经 32 分/黄庭 36 章铺一页)scroll-spy:点亮侧栏当前章 + 回显移动端 select(#145)。
+  // 当前章 = 顶部已越过工具条线(130px)的最后一章;rAF 节流,挂载即同步算一次(不依赖后台 rAF)。
+  const [activeAnchor, setActiveAnchor] = useState(null)
+  useEffect(() => {
+    if (!single) return
+    let raf = 0
+    const compute = () => {
+      raf = 0
+      const secs = [...document.querySelectorAll('.dao-single__chapter')]
+      if (!secs.length) return
+      let cur = Number(secs[0].dataset.no)
+      for (const s of secs) {
+        if (s.getBoundingClientRect().top <= 130) cur = Number(s.dataset.no)
+        else break
+      }
+      setActiveAnchor(cur)
+    }
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(compute) }
+    compute()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => { window.removeEventListener('scroll', onScroll); if (raf) cancelAnimationFrame(raf) }
+  }, [single, chapters])
   // 长目录(道德经/难经 81 章…)章变化时把侧栏当前章滚入视野,免手动找高亮项。
   // ref 挂在 <nav> 上(plain DOM 稳),querySelector 取 active 项;直接算容器 scrollTop
   // (避免 scrollIntoView 的窗口副作用),仅在不可见时居中。useLayoutEffect 于 DOM commit 后、
@@ -78,7 +100,7 @@ export default function ClassicReader({
     if (er.top < tr.top || er.bottom > tr.bottom) {
       toc.scrollTop += (er.top - tr.top) - tr.height / 2 + er.height / 2
     }
-  }, [chapter])
+  }, [chapter, activeAnchor])
   function copyLink(no, i) {
     const url = `${window.location.origin}${window.location.pathname}#seg-${no}-${i}`
     try {
@@ -251,7 +273,8 @@ export default function ClassicReader({
         <div className="read-toc__title">{tocBack}</div>
         {chapters.map((c) =>
           single ? (
-            <a key={c.no} href={`#${anchorId(c.no)}`} className="read-toc__item">{chapterLabel(c)}</a>
+            <a key={c.no} href={`#${anchorId(c.no)}`}
+              className={`read-toc__item ${c.no === activeAnchor ? 'read-toc__item--active' : ''}`}>{chapterLabel(c)}</a>
           ) : (
             <Link
               key={c.no}
@@ -272,10 +295,10 @@ export default function ClassicReader({
             <select
               id="read-toc-select"
               className="read-toc-mobile__select"
-              value={single ? '' : chapter}
+              value={single ? (activeAnchor || '') : chapter}
               onChange={(e) => jumpTo(Number(e.target.value))}
             >
-              {single && <option value="">选择章节…</option>}
+              {single && !activeAnchor && <option value="">选择章节…</option>}
               {chapters.map((c) => (
                 <option key={c.no} value={c.no}>{chapterLabel(c)}</option>
               ))}
@@ -286,7 +309,7 @@ export default function ClassicReader({
 
         {single ? (
           chapters.map((c) => (
-            <section key={c.no} id={anchorId(c.no)} className="dao-single__chapter">
+            <section key={c.no} id={anchorId(c.no)} data-no={c.no} className="dao-single__chapter">
               {multi && <h2 className="read-chapter-title">{chapterLabel(c)}</h2>}
               {c.paragraphs.map((p, i) => Para(c.no, p, i))}
               <ChapterNotes chapter={c} getAnchors={getAnchors} />
