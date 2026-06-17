@@ -3003,6 +3003,18 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .portal-trail__meta { margin-left: auto; font-size: 0.74rem; color: var(--ink-faint); flex: none; }
 .portal-trail__stats { display: flex; gap: 16px; justify-content: center; font-size: 0.8rem; color: var(--ink-soft); margin: 4px 0 18px; }
 .portal-trail__hint { color: var(--ink-faint); }
+.master-portal__links { margin-top: 18px; text-align: center; }
+
+/* 义理专题 · 跨派概念页(#150/#151) */
+.concepts-page { max-width: 720px; margin: 0 auto; }
+.concepts-list { display: flex; flex-direction: column; gap: 18px; margin-top: 8px; }
+.concept-card { padding: 16px 18px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper-raised); }
+.concept-card__term { font-family: var(--font-serif); font-size: 1.1rem; margin: 0 0 6px; color: var(--ink); }
+.concept-card__gloss { font-size: 0.88rem; line-height: 1.8; color: var(--ink-soft); margin: 0 0 12px; }
+.concept-card__loci { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.concept-card__locus { font-size: 0.86rem; color: var(--cinnabar); text-decoration: none; border-bottom: 1px dotted var(--cinnabar); }
+.concept-card__locus:hover { border-bottom-style: solid; }
+.concepts-page__note { margin-top: 22px; font-size: 0.8rem; line-height: 1.7; text-align: center; }
 /* 关于本站页 */
 .about-section { margin-top: 28px; }
 .about-section__title { font-size: 1.05rem; color: var(--ink); margin: 0 0 12px; font-family: var(--font-serif); }

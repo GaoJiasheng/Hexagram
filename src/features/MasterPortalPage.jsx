@@ -45,6 +45,9 @@ export default function MasterPortalPage() {
         })}
       </div>
       <PortalStudyTrail />
+      <p className="master-portal__links">
+        <Link to="/concepts" className="master-portal__about-link">义理专题 · 跨派概念</Link>
+      </p>
       <p className="master-portal__about">
         <Link to="/about" className="master-portal__about-link">关于本站 · 研读铁律与数据说明</Link>
       </p>
