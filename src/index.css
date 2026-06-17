@@ -2909,6 +2909,15 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .yanyi-xref:hover { border-bottom-style: solid; }
 .yanyi-block__para:last-child { margin-bottom: 0; }
 
+/* 义理互见 see-also(#141)——章末跨派概念互参,与延伸同框、虚线分隔 */
+.seealso-block { margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--line); }
+.seealso-block__group + .seealso-block__group { margin-top: 10px; }
+.seealso-block__tag { font-size: 0.74rem; color: var(--cinnabar); letter-spacing: 0.05em; }
+.seealso-block__gloss { font-size: 0.82rem; line-height: 1.8; color: var(--ink-soft); margin: 4px 0 6px; }
+.seealso-block__links { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.seealso-block__link { font-size: 0.82rem; color: var(--cinnabar); text-decoration: none; border-bottom: 1px dotted var(--cinnabar); }
+.seealso-block__link:hover { border-bottom-style: solid; }
+
 /* 短经单页阅读器(v13 §1) */
 .dao-single .dao-text-header { margin-bottom: 18px; }
 .dao-single__chapter { scroll-margin-top: 70px; margin-bottom: 12px; }

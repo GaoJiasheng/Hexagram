@@ -1,0 +1,51 @@
+{
+  "_note": "义理概念互见(#141/B2)——跨派核心概念聚类,每聚类列各书代表性章节(loci)。所有 locus 均经原文 grep 验证含该概念。一表喂三处:章末「义理互见」see-also(已用)、后续术语表(#151)、义理专题(#150)。loci.ch 对应阅读路由的章号(c.no)。新增聚类务必 grep 确认目标章确含该概念,且取该书该概念最经典之篇。",
+  "clusters": [
+    {
+      "term": "人性之辨",
+      "gloss": "性善(孟子)、性恶(荀子)、良知即性(阳明)——先秦至宋明对人性善恶的三种判教。",
+      "loci": [
+        { "corpus": "ru", "slug": "mengzi", "ch": 11, "label": "孟子·告子上" },
+        { "corpus": "ru", "slug": "xunzi", "ch": 23, "label": "荀子·性恶篇" },
+        { "corpus": "xin", "slug": "chuanxilu", "ch": 2, "label": "传习录·卷中" }
+      ]
+    },
+    {
+      "term": "格物致知",
+      "gloss": "《大学》八条目之始。朱子主即物穷理,阳明主正心致良知,工夫入手处分歧由此。",
+      "loci": [
+        { "corpus": "ru", "slug": "daxue", "ch": 1, "label": "大学·经" },
+        { "corpus": "ru", "slug": "jinsilu", "ch": 3, "label": "近思录·致知" },
+        { "corpus": "xin", "slug": "daxuewen", "ch": 1, "label": "大学问" },
+        { "corpus": "xin", "slug": "chuanxilu", "ch": 1, "label": "传习录·卷上" }
+      ]
+    },
+    {
+      "term": "兼爱与仁爱",
+      "gloss": "墨家兼爱、爱无差等;儒家仁爱、亲亲有杀。孟子辟墨「无父」之讥即由此出。",
+      "loci": [
+        { "corpus": "mo", "slug": "mozi", "ch": 14, "label": "墨子·兼爱上" },
+        { "corpus": "ru", "slug": "lunyu", "ch": 12, "label": "论语·颜渊" },
+        { "corpus": "ru", "slug": "mengzi", "ch": 6, "label": "孟子·滕文公下" }
+      ]
+    },
+    {
+      "term": "无为",
+      "gloss": "道家政治与修养的枢机。老子「道常无为而无不为」,庄子言无为而治,黄老《文子》承之。",
+      "loci": [
+        { "corpus": "dao", "slug": "daodejing", "ch": 37, "label": "道德经·三十七章" },
+        { "corpus": "dao", "slug": "zhuangzi-neipian", "ch": 7, "label": "庄子·应帝王" },
+        { "corpus": "dao", "slug": "wenzi", "ch": 1, "label": "文子·卷一" }
+      ]
+    },
+    {
+      "term": "仁与四端",
+      "gloss": "孔子言仁(克己复礼、爱人),孟子推四端(恻隐为仁之端),程朱归于克己复礼。",
+      "loci": [
+        { "corpus": "ru", "slug": "lunyu", "ch": 4, "label": "论语·里仁" },
+        { "corpus": "ru", "slug": "mengzi", "ch": 3, "label": "孟子·公孙丑上" },
+        { "corpus": "ru", "slug": "jinsilu", "ch": 5, "label": "近思录·克己" }
+      ]
+    }
+  ]
+}
