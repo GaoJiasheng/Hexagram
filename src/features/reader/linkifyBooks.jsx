@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
-// 组内跨书参引(#5):把延伸文本里同组其他书名自动链到该书。
-// refs:[{title,to}] 长名优先;earliest-then-longest 避免重叠误切。守分组隔离——只在本组书目内匹配。
+// 跨书参引:把延伸文本里出现的书名自动链到该书。refs 由 booksIndex.globalBookRefs 提供(全站,#139)。
+// refs:[{title,to}] 长名优先;earliest-then-longest 避免重叠误切(如「大学问」不被「大学」截断)。
 export function linkifyBooks(text, refs) {
   if (!Array.isArray(refs) || !refs.length || typeof text !== 'string') return text
   const nodes = []
@@ -21,13 +21,4 @@ export function linkifyBooks(text, refs) {
     rest = rest.slice(best.idx + best.title.length)
   }
   return nodes
-}
-
-// 构建某组的参引表(跳当前书);剥书名尾部括注(如「战国策(选)」→「战国策」)便于匹配。
-export function buildRefs(books, homeBase, currentSlug) {
-  return books
-    .filter((b) => b.slug !== currentSlug && b.title)
-    .map((b) => ({ title: b.title.replace(/[（(][^）)]*[)）]\s*$/, ''), to: `${homeBase}/${b.slug}` }))
-    .filter((r) => r.title.length >= 2)
-    .sort((a, b) => b.title.length - a.title.length)
 }
