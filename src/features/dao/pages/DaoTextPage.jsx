@@ -5,6 +5,7 @@ import texts from '../../../data/dao/texts.json'
 import { usePageTitle } from '../../yijing/hooks/usePageTitle.js'
 import { loadDaoText } from '../data.js'
 import { tocTitle } from '../../reader/tocTitle.js'
+import { getReadingProgress } from '../../yijing/storage.js'
 import DaoSinglePage from './DaoSinglePage.jsx'
 
 // 文本页 — 题解 + 章节入口(v4 §3.6 框架;v6 §3 内容期:status≠pending 时网格即阅读入口)
@@ -39,6 +40,8 @@ export default function DaoTextPage() {
     )
   }
 
+  const resumeCh = (text.sections > 1 && getReadingProgress()[slug]) || 0  // 续读章号(0=无)
+
   return (
     <div className="dao-text-page">
       <div className="basics-breadcrumb">
@@ -49,7 +52,13 @@ export default function DaoTextPage() {
         <h1 className="dao-text-title">{text.title}</h1>
         <p className="dao-text-meta">{text.alias} · {text.era} · {text.attribution}</p>
         <p className="dao-text-brief">{text.brief}</p>
+        {text.caveat && <p className="caveat-badge">⚠ {text.caveat}——详见撰人小传，本站作文献存疑研读。</p>}
         {text.authorNote && <p className="dao-text-authornote">{text.authorNote}</p>}
+        {resumeCh > 0 && (
+          <Link to={`/dao/${text.slug}/${resumeCh}`} className="dao-text-resume">
+            继续读 · 第 {resumeCh} {text.sectionUnit} →
+          </Link>
+        )}
       </div>
 
       <section className="dao-text-sections">
@@ -69,7 +78,7 @@ export default function DaoTextPage() {
           <>
             <div className="dao-section-grid dao-section-grid--titled" aria-label={`共 ${text.sections} ${text.sectionUnit}`}>
               {chapters.map((c) => (
-                <Link key={c.no} to={`/dao/${text.slug}/${c.no}`} className="dao-section-cell dao-section-cell--link dao-section-cell--titled">
+                <Link key={c.no} to={`/dao/${text.slug}/${c.no}`} className={`dao-section-cell dao-section-cell--link dao-section-cell--titled ${c.no === resumeCh ? 'dao-section-cell--current' : ''}`}>
                   <span className="dao-section-cell__no">{c.no}</span>
                   <span className="dao-section-cell__title">{tocTitle(c.title)}</span>
                 </Link>
@@ -83,7 +92,7 @@ export default function DaoTextPage() {
           <>
             <div className="dao-section-grid" aria-label={`共 ${text.sections} ${text.sectionUnit}`}>
               {Array.from({ length: text.sections }, (_, i) => (
-                <Link key={i} to={`/dao/${text.slug}/${i + 1}`} className="dao-section-cell dao-section-cell--link">
+                <Link key={i} to={`/dao/${text.slug}/${i + 1}`} className={`dao-section-cell dao-section-cell--link ${i + 1 === resumeCh ? 'dao-section-cell--current' : ''}`}>
                   {text.sections > 1 ? i + 1 : '全'}
                 </Link>
               ))}

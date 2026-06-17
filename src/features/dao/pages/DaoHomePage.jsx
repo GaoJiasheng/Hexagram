@@ -53,6 +53,7 @@ export default function DaoHomePage() {
                 <span>{t.sections} {t.sectionUnit}</span>
               </div>
               <p className="dao-book__brief">{t.brief}</p>
+              {t.caveat && <div className="dao-book__caveat">⚠ {t.caveat}</div>}
               <span className={`dao-book__status dao-book__status--${t.status}`}>{STATUS_LABEL[t.status]}</span>
               {done > 0 && t.sections > 1 && (
                 <span className="dao-book__continue">读至第 {done} {t.sectionUnit}</span>

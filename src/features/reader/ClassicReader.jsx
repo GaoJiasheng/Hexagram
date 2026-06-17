@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import ClassicText from '../yijing/components/ClassicText.jsx'
 import { useSettings } from '../yijing/SettingsContext.jsx'
 import { getCorpusMarks, toggleCorpusMark, getCorpusNotes, saveCorpusNote } from '../yijing/storage.js'
@@ -64,6 +64,20 @@ export default function ClassicReader({
   const [editing, setEditing] = useState(null)
   const [draft, setDraft] = useState('')
   const [copiedSeg, setCopiedSeg] = useState(null)
+  // 长目录(道德经/难经 81 章…)章变化时把侧栏当前章滚入视野,免手动找高亮项。
+  // ref 挂在 <nav> 上(plain DOM 稳),querySelector 取 active 项;直接算容器 scrollTop
+  // (避免 scrollIntoView 的窗口副作用),仅在不可见时居中。useLayoutEffect 于 DOM commit 后、
+  // paint 前同步执行,布局已准且不依赖 rAF(后台标签 rAF 会被节流)。
+  const tocRef = useRef(null)
+  useLayoutEffect(() => {
+    const toc = tocRef.current
+    const el = toc && toc.querySelector('.read-toc__item--active')
+    if (!toc || !el || getComputedStyle(toc).display === 'none') return
+    const tr = toc.getBoundingClientRect(), er = el.getBoundingClientRect()
+    if (er.top < tr.top || er.bottom > tr.bottom) {
+      toc.scrollTop += (er.top - tr.top) - tr.height / 2 + er.height / 2
+    }
+  }, [chapter])
   function copyLink(no, i) {
     const url = `${window.location.origin}${window.location.pathname}#seg-${no}-${i}`
     try {
@@ -232,7 +246,7 @@ export default function ClassicReader({
 
   return (
     <div className={`read-page ${single ? 'dao-single' : ''}`}>
-      <nav className="read-toc" aria-label="章节目录">
+      <nav className="read-toc" aria-label="章节目录" ref={tocRef}>
         <div className="read-toc__title">{tocBack}</div>
         {chapters.map((c) =>
           single ? (

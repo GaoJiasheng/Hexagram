@@ -48,6 +48,7 @@ export default function ScriptureShelf({ texts, title, subtitle, basePath, brand
               <div className="dao-book__title">{t.title}</div>
               {t.alias && <div className="dao-book__alias">{t.alias}</div>}
               {t.dubious && <div className="dao-book__dubious">⚠ 托名·疑现代伪作</div>}
+              {t.caveat && !t.dubious && <div className="dao-book__caveat">⚠ {t.caveat}</div>}
               <div className="dao-book__meta">
                 <span>{t.era}</span>
                 <span>{t.sections} {t.sectionUnit}</span>

@@ -2968,6 +2968,9 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 /* 伪书真伪徽标(谋略杂纂):题解/书架卡片显著标「托名·疑现代伪作」 */
 .dubious-badge { display: inline-block; margin: 8px 0 0; padding: 3px 10px; border: 1px solid color-mix(in srgb, var(--cinnabar) 40%, var(--line)); border-radius: 4px; background: var(--cinnabar-bg); color: var(--cinnabar); font-size: 0.78rem; letter-spacing: 0.02em; }
 .dao-book__dubious { display: inline-block; margin-top: 4px; font-size: 0.72rem; color: var(--cinnabar); font-weight: 600; }
+/* caveat:中性存疑标记(托名/今本辑佚),弱于 dubious 的伪书强批判 */
+.caveat-badge { display: inline-block; margin: 8px 0 0; padding: 3px 10px; border: 1px solid var(--line); border-radius: 4px; background: color-mix(in srgb, var(--ink) 4%, transparent); color: var(--ink-soft); font-size: 0.78rem; letter-spacing: 0.02em; }
+.dao-book__caveat { display: inline-block; margin-top: 4px; font-size: 0.72rem; color: var(--ink-soft); }
 
 /* 书架·整理中卡片(v15) */
 .dao-book--pending { opacity: 0.72; cursor: default; }
