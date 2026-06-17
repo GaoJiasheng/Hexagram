@@ -28,6 +28,7 @@ function rec(site, t) {
     title: t.title,
     alias: t.alias || null,      // texts.json 原始副题(展示用)
     aliases,                     // 可参与匹配的干净别名
+    singlePage: !!t.singlePage,  // 短经单页(章链接走 #锚点而非 /章号)
     href: `${site.home}/${t.slug}`,
     era: t.era || null,
     attribution: t.attribution || null,
@@ -70,6 +71,17 @@ const BY_NAME = (() => {
 
 export function bookByTitle(name) {
   return BY_NAME.get(name) || null
+}
+
+// slug → 书目记录(slug 全站唯一)。供「我的研读」聚合把 reading/收藏/批注 的 slug 解析回书。
+const BY_SLUG = new Map(ALL_BOOKS.filter((b) => b.slug).map((b) => [b.slug, b]))
+export function bookBySlug(slug) {
+  return BY_SLUG.get(slug) || null
+}
+
+// 某书某章的阅读链接:短经单页走 #锚点,分章书走 /章号。
+export function chapterHref(book, ch) {
+  return book.singlePage ? `${book.href}#${book.corpus}-ch-${ch}` : `${book.href}/${ch}`
 }
 
 // 剥书名尾部括注(战国策(选)→ 战国策)便于在散文里匹配。

@@ -3,6 +3,7 @@ import { allGroups, sitesInGroup, groupEntryHref } from '../sites/registry.js'
 import { usePageTitle } from './yijing/hooks/usePageTitle.js'
 import { corpusTexts } from './reader/corpus.js'
 import daoTexts from '../data/dao/texts.json'
+import PortalStudyTrail from './reader/PortalStudyTrail.jsx'
 
 // 卡片描述由 texts.json 派生(已收书目+计数),根治「加书忘改 portalDesc 文案」;
 // 易经非书目制(64 卦 + 工具),保留其 portalDesc tagline。
@@ -43,6 +44,7 @@ export default function MasterPortalPage() {
           )
         })}
       </div>
+      <PortalStudyTrail />
       <p className="master-portal__about">
         <Link to="/about" className="master-portal__about-link">关于本站 · 研读铁律与数据说明</Link>
       </p>
