@@ -11,8 +11,8 @@ const BOOKS = [
   ['zong', 'guiguzi'], ['zong', 'zhanguoce'],
   ['zhongyi', 'suwen'], ['zhongyi', 'lingshu'], ['zhongyi', 'shanghanlun'], ['zhongyi', 'bencaojing'], ['zhongyi', 'jinkui'], ['zhongyi', 'nanjing'],
   ['moulue', 'luozhijing'], ['moulue', 'rongkujian'], ['moulue', 'quanmou'], ['moulue', 'taohuishu'], ['moulue', 'zhixue'],
-  ['dao', 'zhuangzi-waipian'], ['dao', 'zhuangzi-zapian'], ['dao', 'liezi'], ['dao', 'wenzi'],
-  ['fo', 'yijiaojing'], ['fo', 'badaren'], ['fo', 'amituojing'], ['fo', 'xinxinming'], ['fo', 'zhengdaoge'],
+  ['dao', 'zhuangzi-waipian'], ['dao', 'zhuangzi-zapian'], ['dao', 'liezi'], ['dao', 'wenzi'], ['dao', 'huangting'],
+  ['fo', 'yijiaojing'], ['fo', 'badaren'], ['fo', 'amituojing'], ['fo', 'xinxinming'], ['fo', 'zhengdaoge'], ['fo', 'weimojie'],
   ['xin', 'daxuewen'],
   ['ru', 'xunzi'], ['ru', 'yanshi'], ['ru', 'jinsilu'],
 ]
@@ -58,7 +58,7 @@ const SCHEMA = {
 
 const UNITS = ${JSON.stringify(units, null, 0)}
 
-const CN = { hanfeizi: '韩非子', shangjunshu: '商君书', shenzi: '慎子', yinwenzi: '尹文子', wenzi: '文子', mozi: '墨子', sunzi: '孙子兵法', wuzi: '吴子', simafa: '司马法', weiliaozi: '尉缭子', sanlue: '三略', guiguzi: '鬼谷子', zhanguoce: '战国策', suwen: '黄帝内经·素问', lingshu: '黄帝内经·灵枢', shanghanlun: '伤寒论', bencaojing: '神农本草经', luozhijing: '罗织经', rongkujian: '小人经', quanmou: '权谋术', taohuishu: '韬晦术', zhixue: '止学', liutao: '六韬', jinkui: '金匮要略', nanjing: '难经', 'zhuangzi-waipian': '庄子外篇', 'zhuangzi-zapian': '庄子杂篇', liezi: '列子', yijiaojing: '佛遗教经', badaren: '八大人觉经', amituojing: '阿弥陀经', xinxinming: '信心铭', zhengdaoge: '永嘉证道歌', daxuewen: '大学问', xunzi: '荀子', yanshi: '颜氏家训', jinsilu: '近思录' }
+const CN = { hanfeizi: '韩非子', shangjunshu: '商君书', shenzi: '慎子', yinwenzi: '尹文子', wenzi: '文子', mozi: '墨子', sunzi: '孙子兵法', wuzi: '吴子', simafa: '司马法', weiliaozi: '尉缭子', sanlue: '三略', guiguzi: '鬼谷子', zhanguoce: '战国策', suwen: '黄帝内经·素问', lingshu: '黄帝内经·灵枢', shanghanlun: '伤寒论', bencaojing: '神农本草经', luozhijing: '罗织经', rongkujian: '小人经', quanmou: '权谋术', taohuishu: '韬晦术', zhixue: '止学', liutao: '六韬', jinkui: '金匮要略', nanjing: '难经', 'zhuangzi-waipian': '庄子外篇', 'zhuangzi-zapian': '庄子杂篇', liezi: '列子', yijiaojing: '佛遗教经', badaren: '八大人觉经', amituojing: '阿弥陀经', xinxinming: '信心铭', zhengdaoge: '永嘉证道歌', daxuewen: '大学问', xunzi: '荀子', yanshi: '颜氏家训', jinsilu: '近思录', weimojie: '维摩诘经', huangting: '黄庭内景经' }
 const REF = {
   fa: '陈奇猷《韩非子集释》、王先慎《韩非子集解》、蒋礼鸿《商君书锥指》',
   mo: '孙诒让《墨子间诂》、吴毓江《墨子校注》',
@@ -101,6 +101,7 @@ function styleRule(u) {
   if (u.corpus === 'fo') {
     const base = TIELU_FO + ' 参' + REF.fo + '。'
     if (u.book === 'amituojing') return base + ' 阿弥陀经述极乐依正庄严、持名,照译原文;注疏释名相(舍利弗/阿耨多罗三藐三菩提/极乐等),延伸讲净土思想源流,绝不作往生劝信。'
+    if (u.book === 'weimojie') return base + ' 维摩诘经为大乘居士说法,演不二法门、烦恼即菩提、不舍世间而行佛道;译文照译,名相(维摩诘/文殊/声闻/不二法门/芥子须弥等)、人名注疏释之,延伸讲居士佛教与僧肇等注疏源流,守研习不宣化、不下果报断语。'
     if (u.book === 'xinxinming' || u.book === 'zhengdaoge') return base + ' 禅宗偈颂(信心铭四言/证道歌七言长短句)直译其禅理,「至道无难」「绝学无为」等取主流解;延伸讲禅宗源流、一宿觉等典故,不作宗门玄谈、不劝修。'
     return base + ' 遗教经/八大人觉经为佛临终教诫与修学纲目,直译经文;持戒、四大、五阴、少欲等名相注疏释之,延伸讲遗教三经源流。'
   }
@@ -108,6 +109,7 @@ function styleRule(u) {
     const base = TIELU_DAO + ' 参' + REF.dao + '。'
     if (u.book === 'liezi') return base + ' 列子今本经晋张湛辑注、杂魏晋玄佛语,延伸宜如实标真伪存疑;寓言(愚公移山/杞人忧天/纪昌学射/薛谭学讴等)译文存名、注疏点其旨。'
     if (u.book === 'wenzi') return base + ' 文子(通玄真经)为黄老道家,多「老子曰」演申道德之旨,直译其说;道/德/无为/精诚等概念注疏释之,延伸讲黄老源流、与《老子》《淮南子》之关系,今本真伪(旧疑伪托、1973 定州汉简证有古本而今本多异)如实点出。'
+    if (u.book === 'huangting') return base + ' 黄庭内景经为上清派七言韵语存思养生经,丹道隐语(黄庭/三宫/三部八景/泥丸/丹田/脏神名)平实直译取字面义;注疏释名物术语,延伸讲存思养生学说与上清派源流,不演工法、不下成仙断语。'
     return base + ' 庄子外杂篇以寓言、论辩为主,直译不缩写不臆补,以郭象注、成玄英疏为主流参照;论辩段(秋水/天下等)存其思理结构,《天下》评诸家如实直译。'
   }
   const base = TIELU + ' 参' + REF[u.corpus] + '。'
