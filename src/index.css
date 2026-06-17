@@ -834,6 +834,28 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   font-family: var(--font-mono);
 }
 
+/* 检索范围切换(#140):本站 / 全站 段控 */
+.search-scope {
+  display: inline-flex;
+  margin: 0 8px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  flex: none;
+}
+.search-scope__btn {
+  background: transparent;
+  border: none;
+  color: var(--ink-faint);
+  font-size: 0.74rem;
+  padding: 3px 9px;
+  font-family: var(--font-serif);
+  cursor: pointer;
+  letter-spacing: 0.02em;
+}
+.search-scope__btn + .search-scope__btn { border-left: 1px solid var(--line); }
+.search-scope__btn.is-active { background: var(--cinnabar); color: var(--paper); }
+
 .search-results {
   list-style: none;
   margin: 0;

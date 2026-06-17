@@ -1,7 +1,10 @@
 import { useState, useEffect, useRef, useDeferredValue, Fragment } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { searchCorpus, ensureCorpusIndexed } from './corpusSearch.js'
+import { searchCorpus, ensureCorpusIndexed, searchAllCorpora, ensureAllIndexed } from './corpusSearch.js'
 import { corpusTexts } from './corpus.js'
+
+// 全站模式空状态:跨派核心概念 chips(点击即全站检索),呼应「织成网」的用法
+const ALL_SCOPE_CHIPS = ['无为', '格物', '致良知', '兼爱', '中道', '性', '仁', '理']
 
 // 读经类站的全站检索面板(C1)——复用易经 SearchPalette 的样式与交互,数据源换成 corpusSearch。
 // corpus 决定隔离:只搜当前组自己的书。
@@ -25,26 +28,37 @@ export default function CorpusSearchPalette({ corpus, open, onClose, searchFn, i
   const [selected, setSelected] = useState(0)
   const [indexed, setIndexed] = useState(false)
   const [, setIndexTick] = useState(0)
+  const [scope, setScope] = useState('local')   // 'local' 本站 | 'all' 全站(#140/B1)
   const inputRef = useRef(null)
   const navigate = useNavigate()
 
-  const doSearch = searchFn || ((q) => searchCorpus(corpus, q))
-  const doIndex = indexFn || (() => ensureCorpusIndexed(corpus))
-  const bookChips = books || corpusTexts(corpus).filter((t) => t.status !== 'pending').slice(0, 6).map((t) => t.title)
+  const allMode = scope === 'all'
+  const doSearch = allMode ? searchAllCorpora : (searchFn || ((q) => searchCorpus(corpus, q)))
+  const doIndex = allMode ? ensureAllIndexed : (indexFn || (() => ensureCorpusIndexed(corpus)))
+  const localChips = books || corpusTexts(corpus).filter((t) => t.status !== 'pending').slice(0, 6).map((t) => t.title)
+  const bookChips = allMode ? ALL_SCOPE_CHIPS : localChips
 
   const deferredQuery = useDeferredValue(query)   // 大 corpus:延迟查询,免每键同步全表扫卡顿
   const groups = doSearch(deferredQuery)
   const flat = groups.flatMap((g) => g.items)
   const indexing = query.trim().length >= 2 && !indexed
 
+  // 开面板:清空、复位为本站、聚焦
   useEffect(() => {
     if (open) {
       setQuery('')
       setSelected(0)
-      doIndex().then(() => { setIndexed(true); setIndexTick((t) => t + 1) })
+      setScope('local')
       setTimeout(() => inputRef.current?.focus(), 50)
     }
   }, [open, corpus])
+
+  // 建索引:开面板或切换范围时(全站首切会动态拉道藏数据层,故先置 indexing 态)
+  useEffect(() => {
+    if (!open) return
+    setIndexed(false)
+    doIndex().then(() => { setIndexed(true); setIndexTick((t) => t + 1) })
+  }, [open, corpus, scope])
 
   // 打开时锁背景滚动 + 关闭还原焦点(避免穿透滚动与焦点丢失)
   useEffect(() => {
@@ -86,6 +100,14 @@ export default function CorpusSearchPalette({ corpus, open, onClose, searchFn, i
             placeholder="搜索经名、正文、译文、注疏、延伸…"
             aria-label="搜索"
           />
+          <div className="search-scope" role="tablist" aria-label="检索范围">
+            <button type="button" role="tab" aria-selected={!allMode}
+              className={`search-scope__btn ${!allMode ? 'is-active' : ''}`}
+              onClick={() => setScope('local')}>本站</button>
+            <button type="button" role="tab" aria-selected={allMode}
+              className={`search-scope__btn ${allMode ? 'is-active' : ''}`}
+              onClick={() => setScope('all')}>全站</button>
+          </div>
           <button className="search-palette__close" onClick={onClose} aria-label="关闭">Esc</button>
         </div>
         {flat.length > 0 && (
@@ -113,11 +135,15 @@ export default function CorpusSearchPalette({ corpus, open, onClose, searchFn, i
             ))}
           </ul>
         )}
-        {indexing && flat.length === 0 && <p className="search-palette__empty">正在建立全文索引…</p>}
+        {indexing && flat.length === 0 && <p className="search-palette__empty">{allMode ? '正在建立全站索引…' : '正在建立全文索引…'}</p>}
         {!indexing && query && flat.length === 0 && <p className="search-palette__empty">无匹配结果</p>}
         {!query.trim() && bookChips.length > 0 && (
           <div className="search-empty-hint">
-            <p className="search-empty-hint__scope">搜正文 / 译文 / 注疏 / 延伸 —— 输入 2 字以上检索全文。</p>
+            <p className="search-empty-hint__scope">
+              {allMode
+                ? '全站检索九站经藏,结果按组分栏 —— 搜跨派概念,一面看遍诸家。'
+                : '搜正文 / 译文 / 注疏 / 延伸 —— 输入 2 字以上检索全文。'}
+            </p>
             <div className="search-chips">
               {bookChips.map((b) => (
                 <button key={b} type="button" className="search-chip" onClick={() => { setQuery(b); inputRef.current?.focus() }}>{b}</button>
