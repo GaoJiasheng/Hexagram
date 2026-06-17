@@ -3,7 +3,16 @@ import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import { SITE_MAP } from '../../sites/registry.js'
 import { corpusTexts } from './corpus.js'
 import { DAO_TEXTS } from '../dao/data.js'
-import { getCorpusMarks, getCorpusNotes, getReadingProgress } from '../yijing/storage.js'
+import { getCorpusMarks, getCorpusNotes, getReadingProgress, getStudyStats } from '../yijing/storage.js'
+
+// 收藏/批注累积里程碑文案(#149)——按总数给一句鼓励,温故之意
+function milestoneText(total) {
+  if (total >= 100) return `蔚然成观——已积收藏批注 ${total} 处,可成一家之读。`
+  if (total >= 50) return `积学已富——已积 ${total} 处,温故而知新。`
+  if (total >= 20) return `渐有所积——已收藏批注 ${total} 处。`
+  if (total >= 10) return `已积 ${total} 处收藏批注,日拱一卒。`
+  return null
+}
 
 // 读经站「我的」(Tier 2)——本站续读 + 收藏段落 + 笔记。锚 corpus:slug:章:段 回链原文。
 export default function CorpusMePage({ corpus }) {
@@ -20,6 +29,7 @@ export default function CorpusMePage({ corpus }) {
 
   const marks = Object.values(getCorpusMarks()).filter((m) => m.corpus === corpus).sort((a, b) => (b.at || '').localeCompare(a.at || ''))
   const notes = Object.values(getCorpusNotes()).filter((n) => n.corpus === corpus).sort((a, b) => (b.at || '').localeCompare(a.at || ''))
+  const stats = getStudyStats()
   const progress = getReadingProgress()
   const resume = metas
     .filter((t) => t.status !== 'pending' && !t.singlePage && t.sections > 1 && progress[t.slug] > 0)
@@ -35,7 +45,14 @@ export default function CorpusMePage({ corpus }) {
       <div className="page-header">
         <h1 className="page-title">我的 · {site.portalTitle}</h1>
         <p className="page-subtitle text-soft">本站的续读、收藏与批注(仅存本机)。</p>
+        {milestoneText(stats.total) && <p className="me-milestone">{milestoneText(stats.total)}</p>}
       </div>
+
+      {!stats.exported && stats.total >= 8 && (
+        <p className="me-backup" role="note">
+          ⚠ 你已积累 {stats.total} 处收藏 / 批注,且只存于此浏览器。建议到<strong>设置(顶栏齿轮)→ 数据管理</strong>导出备份,以防清缓存或换设备丢失。
+        </p>
+      )}
 
       {empty && <p className="text-faint corpus-me__empty">还没有续读或收藏。阅读时点段落右侧的 ★ 收藏、✎ 写批注,这里就会出现。</p>}
 

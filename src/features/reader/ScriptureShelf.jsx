@@ -21,7 +21,7 @@ function pickToday(texts, basePath) {
   return { book, ch, to }
 }
 
-export default function ScriptureShelf({ texts, title, subtitle, basePath, brand }) {
+export default function ScriptureShelf({ texts, title, subtitle, basePath, brand, disclaimer }) {
   usePageTitle(null, brand)
   const progress = getReadingProgress()
   const today = pickToday(texts, basePath)
@@ -31,6 +31,8 @@ export default function ScriptureShelf({ texts, title, subtitle, basePath, brand
         <h1 className="page-title">{title}</h1>
         <p className="page-subtitle">{subtitle}</p>
       </div>
+
+      {disclaimer && <div className="shelf-disclaimer" role="note">⚠ {disclaimer}</div>}
 
       {today && (
         <Link to={today.to} className="shelf-today">

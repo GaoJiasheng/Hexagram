@@ -1942,6 +1942,12 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .corpus-me { max-width: var(--read-w); margin: 0 auto; }
 .corpus-me__empty { padding: 36px 0; text-align: center; line-height: 1.7; }
 .corpus-me__section { margin-top: 28px; }
+/* 里程碑 + 备份提示(#149) */
+.me-milestone { margin: 4px 0 0; font-size: 0.9rem; color: var(--cinnabar); }
+.me-backup { margin: 12px 0 0; padding: 10px 14px; border: 1px solid color-mix(in srgb, var(--cinnabar) 35%, var(--line)); border-radius: 6px; background: color-mix(in srgb, var(--cinnabar) 5%, transparent); font-size: 0.84rem; line-height: 1.7; color: var(--ink-soft); }
+
+/* 铁律/真伪声明横幅(#149)——从 page-subtitle 一行升为独立横幅,权重够、不被略过 */
+.shelf-disclaimer { margin: 4px 0 18px; padding: 10px 14px; border-left: 3px solid var(--cinnabar); border-radius: 0 5px 5px 0; background: color-mix(in srgb, var(--cinnabar) 6%, transparent); font-size: 0.84rem; line-height: 1.7; color: var(--ink-soft); }
 .corpus-me__title { font-size: 0.95rem; color: var(--ink-soft); margin: 0 0 12px; font-weight: 600; }
 .corpus-me__list { display: flex; flex-direction: column; gap: 8px; }
 .corpus-me__row { display: flex; flex-direction: column; gap: 4px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper-raised); text-decoration: none; transition: border-color 0.15s; }

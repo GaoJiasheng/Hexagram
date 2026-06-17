@@ -179,7 +179,15 @@ const DATA_KEYS = ['settings', 'bookmarks', 'notes', 'divinations', 'reading', '
 export function exportData() {
   const data = {}
   for (const k of DATA_KEYS) data[k] = get(k)
+  set('lastExportAt', new Date().toISOString())   // 记录导出时点(不入 DATA_KEYS,不参与导出/清空)
   return data
+}
+
+// 研读足迹统计(#149)——收藏/批注总数 + 是否曾导出备份。供「我的」里程碑文案与备份提示。
+export function getStudyStats() {
+  const marks = Object.keys(get('corpusMarks', {})).length
+  const notes = Object.keys(get('corpusNotes', {})).length
+  return { marks, notes, total: marks + notes, exported: !!get('lastExportAt') }
 }
 
 export function importData(data) {
