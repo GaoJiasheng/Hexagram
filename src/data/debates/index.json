@@ -9,6 +9,42 @@
         { "label": "荀子", "group": "ru", "seal": "观仁", "stance": "性恶" },
         { "label": "阳明", "group": "xin", "seal": "观心", "stance": "良知·心体" }
       ]
+    },
+    {
+      "id": "jianai", "title": "兼爱与仁爱", "category": "伦理 · 义利 · 爱孝", "concept": "兼爱与仁爱",
+      "question": "爱当无差等地兼及天下,还是亲亲有别、推之以及人?", "turns": 6, "status": "done",
+      "schools": [
+        { "label": "墨子", "group": "mo", "seal": "观兼", "stance": "兼爱" },
+        { "label": "孔子", "group": "ru", "seal": "观仁", "stance": "仁爱·有等" },
+        { "label": "孟子", "group": "ru", "seal": "观仁", "stance": "辟兼爱" }
+      ]
+    },
+    {
+      "id": "gewu", "title": "格物致知", "category": "工夫与学", "concept": "格物致知",
+      "question": "「格物」是即物穷其理,还是正心去其非?", "turns": 6, "status": "done",
+      "schools": [
+        { "label": "《大学》", "group": "ru", "seal": "观仁", "stance": "八条目之始" },
+        { "label": "朱子", "group": "ru", "seal": "观仁", "stance": "即物穷理" },
+        { "label": "阳明", "group": "xin", "seal": "观心", "stance": "正心·致良知" }
+      ]
+    },
+    {
+      "id": "wuwei", "title": "无为", "category": "天人 · 形上 · 道", "concept": "无为",
+      "question": "「无为」是任物自化的玄默,还是不先物为以治世的术?", "turns": 5, "status": "done",
+      "schools": [
+        { "label": "老子", "group": "dao", "seal": "观道", "stance": "无为而无不为" },
+        { "label": "庄子", "group": "dao", "seal": "观道", "stance": "顺物自然" },
+        { "label": "文子", "group": "dao", "seal": "观道", "stance": "黄老·治世" }
+      ]
+    },
+    {
+      "id": "siduan", "title": "仁与四端", "category": "性与心", "concept": "仁与四端",
+      "question": "为仁,是安仁守之、扩端充之,还是克己复礼?", "turns": 5, "status": "done",
+      "schools": [
+        { "label": "孔子", "group": "ru", "seal": "观仁", "stance": "安仁·不违" },
+        { "label": "孟子", "group": "ru", "seal": "观仁", "stance": "四端·扩充" },
+        { "label": "程朱", "group": "ru", "seal": "观仁", "stance": "克己复礼" }
+      ]
     }
   ],
   "planned": [
@@ -21,7 +57,6 @@
     { "category": "工夫与学", "items": [
       { "title": "知与行", "parties": "阳明·荀子·老子" },
       { "title": "顿与渐", "parties": "坛经·渐修" },
-      { "title": "格物之解", "parties": "朱子·阳明" },
       { "title": "为学之道", "parties": "荀子·老子·孔子" },
       { "title": "工夫入手", "parties": "程朱·阳明·庄子" }
     ]},
@@ -38,7 +73,6 @@
     ]},
     { "category": "伦理 · 义利 · 爱孝", "items": [
       { "title": "义利之辨", "parties": "孟子·墨子·韩非" },
-      { "title": "爱有差等否", "parties": "墨子·孟子·孔子" },
       { "title": "丧期与孝", "parties": "孔子·墨子" },
       { "title": "报怨以德否", "parties": "老子·孔子" },
       { "title": "言信与权变", "parties": "墨子·孟子·纵横" },
@@ -70,7 +104,6 @@
       { "title": "乐之用", "parties": "荀孔·墨子·老子" }
     ]},
     { "category": "组内多方", "items": [
-      { "title": "道家三调", "parties": "老子·庄子·文子" },
       { "title": "兵家三家", "parties": "孙子·吴子·尉缭" },
       { "title": "儒门性论流变", "parties": "孟·荀·程朱·陆王" }
     ]},

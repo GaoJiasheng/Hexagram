@@ -1,0 +1,41 @@
+{
+  "id": "wuwei",
+  "title": "无为",
+  "category": "天人 · 形上 · 道",
+  "concept": "无为",
+  "question": "「无为」是任物自化的玄默,还是不先物为以治世的术?",
+  "framing": "老子言道常无为而无不为,庄子言顺物自然而游心于淡,黄老《文子》承之以无为而治世。一脉相承而各有侧重。此为会讲,不判胜负。",
+  "schools": [
+    { "key": "lao", "label": "老子", "group": "dao", "seal": "观道", "stance": "无为而无不为" },
+    { "key": "zhuang", "label": "庄子", "group": "dao", "seal": "观道", "stance": "顺物自然" },
+    { "key": "wenzi", "label": "文子", "group": "dao", "seal": "观道", "stance": "黄老·治世" }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        { "school": "lao", "rebut": null,
+          "point": "道常无为而无不为;侯王若能守之,则万物自化,不待施为而成。",
+          "cite": { "corpus": "dao", "slug": "daodejing", "ch": 37, "quote": "道常无为而无不为", "label": "道德经·三十七章" } },
+        { "school": "zhuang", "rebut": null,
+          "point": "至人游心于淡、合气于漠,顺物之自然而不容私,则天下自治——无为乃任其自尔。",
+          "cite": { "corpus": "dao", "slug": "zhuangzi-neipian", "ch": 7, "quote": "顺物自然而无容私焉，而天下治矣", "label": "庄子·应帝王" } },
+        { "school": "wenzi", "rebut": null,
+          "point": "无为非不为:无为而无不为,无治而无不治——以无为为术,正所以成治。",
+          "cite": { "corpus": "dao", "slug": "wenzi", "ch": 1, "quote": "无为而无不为也，无治而无不治也", "label": "文子·卷一" } }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        { "school": "wenzi", "rebut": "zhuang",
+          "point": "顺物自然非弃世独逍遥:所谓无为者,不先物为也——因物之性而治,故无不治。",
+          "cite": { "corpus": "dao", "slug": "wenzi", "ch": 1, "quote": "所谓无为者，不先物为也", "label": "文子·卷一" } },
+        { "school": "zhuang", "rebut": null,
+          "point": "无为名尸、无为谋府,体尽无穷而游于无朕——所重在忘己,非以为治术。",
+          "cite": { "corpus": "dao", "slug": "zhuangzi-neipian", "ch": 7, "quote": "无为名尸，无为谋府", "label": "庄子·应帝王" } }
+      ]
+    }
+  ],
+  "coda": "同一「无为」:老子为道之枢、庄子为忘己之游、黄老为治世之术。由玄默而逍遥而经世,一名而三向,正见道家之广。"
+}

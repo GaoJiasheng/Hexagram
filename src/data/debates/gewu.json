@@ -1,0 +1,49 @@
+{
+  "id": "gewu",
+  "title": "格物致知",
+  "category": "工夫与学",
+  "concept": "格物致知",
+  "question": "「格物」是即物穷其理,还是正心去其非?",
+  "framing": "《大学》以格物为入手,朱子解作即物穷理,阳明解作正心致良知。同一「格物」,工夫入手处遂分。此为会讲,不判胜负。",
+  "schools": [
+    { "key": "daxue", "label": "《大学》", "group": "ru", "seal": "观仁", "stance": "八条目之始" },
+    { "key": "zhu", "label": "朱子", "group": "ru", "seal": "观仁", "stance": "即物穷理" },
+    { "key": "wang", "label": "阳明", "group": "xin", "seal": "观心", "stance": "正心·致良知" }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        { "school": "daxue", "rebut": null,
+          "point": "欲诚意正心,必先致知;而致知在格物——格物乃八条目之始,此为公案所自起。",
+          "cite": { "corpus": "ru", "slug": "daxue", "ch": 1, "quote": "欲诚其意者，先致其知，致知在格物", "label": "大学·经" } },
+        { "school": "zhu", "rebut": null,
+          "point": "格物即就事事物物穷其理:今日格一件、明日格一件,积习既多,然后豁然贯通。",
+          "cite": { "corpus": "ru", "slug": "jinsilu", "ch": 3, "quote": "须是今日格一件，明日又格一件", "label": "近思录·致知" } },
+        { "school": "wang", "rebut": null,
+          "point": "格者,正也——正其不正以归于正。格物乃格去心之非,而非逐外物之理。",
+          "cite": { "corpus": "xin", "slug": "daxuewen", "ch": 1, "quote": "格者，正也，正其不正以归于正之谓也", "label": "大学问" } }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        { "school": "wang", "rebut": "zhu",
+          "point": "逐物穷理,则析心与理为二;心外无物,理不在物而在吾心之良知。",
+          "cite": { "corpus": "xin", "slug": "chuanxilu", "ch": 1, "quote": "心外无物", "label": "传习录·卷上" } },
+        { "school": "zhu", "rebut": "wang",
+          "point": "不即物以穷理,则理无所丽;穷理多端,读书论事皆所以致其知,非徒求诸心。",
+          "cite": { "corpus": "ru", "slug": "jinsilu", "ch": 3, "quote": "穷理亦多端", "label": "近思录·致知" } }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        { "school": "wang", "rebut": null,
+          "point": "意之所在便是物:意在事亲即事亲为一物,格之正在此心之诚——致良知而已。",
+          "cite": { "corpus": "xin", "slug": "chuanxilu", "ch": 1, "quote": "意之所在便是物", "label": "传习录·卷上" } }
+      ]
+    }
+  ],
+  "coda": "朱子向外即物以穷理,阳明返内正心以致知——同据《大学》一语,而一主道问学、一主尊德性。工夫异路,皆求知之至。"
+}

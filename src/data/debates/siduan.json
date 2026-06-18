@@ -1,0 +1,41 @@
+{
+  "id": "siduan",
+  "title": "仁与四端",
+  "category": "性与心",
+  "concept": "仁与四端",
+  "question": "为仁,是安仁守之、扩端充之,还是克己复礼?",
+  "framing": "孔子言仁者安仁、君子不违仁,孟子推四端、知扩而充之,程朱归于克己复礼以胜私。儒门论仁,工夫相承。此为会讲,不判胜负。",
+  "schools": [
+    { "key": "kong", "label": "孔子", "group": "ru", "seal": "观仁", "stance": "安仁·不违" },
+    { "key": "meng", "label": "孟子", "group": "ru", "seal": "观仁", "stance": "四端·扩充" },
+    { "key": "cheng", "label": "程朱", "group": "ru", "seal": "观仁", "stance": "克己复礼" }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        { "school": "kong", "rebut": null,
+          "point": "仁者安仁、知者利仁——里仁为美,君子无终食之间违仁,守之而已。",
+          "cite": { "corpus": "ru", "slug": "lunyu", "ch": 4, "quote": "仁者安仁，知者利仁", "label": "论语·里仁" } },
+        { "school": "meng", "rebut": null,
+          "point": "仁有其端:恻隐之心,仁之端也;非外铄,乃我固有,扩之则不可胜用。",
+          "cite": { "corpus": "ru", "slug": "mengzi", "ch": 3, "quote": "恻隐之心，仁之端也", "label": "孟子·公孙丑上" } },
+        { "school": "cheng", "rebut": null,
+          "point": "为仁工夫在克己复礼:非礼勿视、听、言、动,胜其私则天理复,仁在其中。",
+          "cite": { "corpus": "ru", "slug": "jinsilu", "ch": 5, "quote": "非礼勿视，非礼勿听，非礼勿言，非礼勿动", "label": "近思录·克己" } }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        { "school": "meng", "rebut": null,
+          "point": "凡有四端于我者,知皆扩而充之,若火之始然、泉之始达——养之而日充。",
+          "cite": { "corpus": "ru", "slug": "mengzi", "ch": 3, "quote": "知皆扩而充之", "label": "孟子·公孙丑上" } },
+        { "school": "kong", "rebut": null,
+          "point": "君子去仁,恶乎成名?造次必于是,颠沛必于是——仁不可须臾离也。",
+          "cite": { "corpus": "ru", "slug": "lunyu", "ch": 4, "quote": "君子去仁，恶乎成名", "label": "论语·里仁" } }
+      ]
+    }
+  ],
+  "coda": "孔言安仁以守、孟言扩端以养、程朱言克己以复,皆求全此一仁。守、养、克非异道,乃一仁之工夫,前后相承。"
+}

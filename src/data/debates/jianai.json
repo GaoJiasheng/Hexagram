@@ -1,0 +1,49 @@
+{
+  "id": "jianai",
+  "title": "兼爱与仁爱",
+  "category": "伦理 · 义利 · 爱孝",
+  "concept": "兼爱与仁爱",
+  "question": "爱当无差等地兼及天下,还是亲亲有别、推之以及人?",
+  "framing": "墨家言兼爱、爱无差等;儒家言仁爱、亲亲有杀。孟子辟墨「无父」之讥即由此出。此为会讲,不判胜负。",
+  "schools": [
+    { "key": "mo", "label": "墨子", "group": "mo", "seal": "观兼", "stance": "兼爱" },
+    { "key": "kong", "label": "孔子", "group": "ru", "seal": "观仁", "stance": "仁爱·有等" },
+    { "key": "meng", "label": "孟子", "group": "ru", "seal": "观仁", "stance": "辟兼爱" }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        { "school": "mo", "rebut": null,
+          "point": "天下兼相爱则治,交相恶则乱;爱不分亲疏,视人之身若己之身,故倡兼爱。",
+          "cite": { "corpus": "mo", "slug": "mozi", "ch": 14, "quote": "天下兼相爱则治，交相恶则乱", "label": "墨子·兼爱上" } },
+        { "school": "kong", "rebut": null,
+          "point": "仁者爱人,其本在克己复礼、推己及人,自亲亲始而后及众,非一概齐平。",
+          "cite": { "corpus": "ru", "slug": "lunyu", "ch": 12, "quote": "克己复礼为仁", "label": "论语·颜渊" } }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        { "school": "meng", "rebut": "mo",
+          "point": "爱无差等,则视己父如路人,是无父也;人伦之序由此而坏。",
+          "cite": { "corpus": "ru", "slug": "mengzi", "ch": 6, "quote": "墨氏兼爱，是无父也", "label": "孟子·滕文公下" } },
+        { "school": "mo", "rebut": "meng",
+          "point": "兼爱非弃亲:爱人若爱其身,则孝慈亦在其中,何尝无父?",
+          "cite": { "corpus": "mo", "slug": "mozi", "ch": 14, "quote": "兼相爱，爱人若爱其身", "label": "墨子·兼爱上" } }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        { "school": "kong", "rebut": null,
+          "point": "仁之方在己所不欲、勿施于人——爱有差等而能推之,则及于人。",
+          "cite": { "corpus": "ru", "slug": "lunyu", "ch": 12, "quote": "己所不欲，勿施于人", "label": "论语·颜渊" } },
+        { "school": "meng", "rebut": null,
+          "point": "杨氏为我是无君,墨氏兼爱是无父;距此二端,正所以存亲亲之仁。",
+          "cite": { "corpus": "ru", "slug": "mengzi", "ch": 6, "quote": "杨氏为我，是无君也", "label": "孟子·滕文公下" } }
+      ]
+    }
+  ],
+  "coda": "墨家求兼爱以救乱、儒家持差等以全伦,分歧在「爱之施」有别无别。墨重普爱之公,儒重亲亲之渐推——各有所救,亦各有所偏。"
+}
