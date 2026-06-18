@@ -1,0 +1,157 @@
+{
+  "id": "shengsi",
+  "title": "生死之态",
+  "category": "生死 · 身 · 苦乐",
+  "concept": "生死之态",
+  "question": "生死之际,当如何安之?",
+  "framing": "生死之际,各家所安者异:庄子安于化,孔子笃于生,金刚经照见其空。",
+  "schools": [
+    {
+      "key": "zhuang",
+      "label": "庄子",
+      "group": "dao",
+      "seal": "观道",
+      "stance": "死生一条·安时处顺"
+    },
+    {
+      "key": "kong",
+      "label": "孔子",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "未知生焉知死"
+    },
+    {
+      "key": "fo",
+      "label": "金刚经",
+      "group": "fo",
+      "seal": "观空",
+      "stance": "无常·如梦幻泡影"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "死与生本是一体两面,如昼夜更替、四时运行,是天地常理。把生死看作一条,便无可惊惧。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 6,
+            "quote": "死生，命也；其有夜旦之常，天也。",
+            "label": "庄子·大宗师"
+          }
+        },
+        {
+          "school": "kong",
+          "rebut": null,
+          "point": "问死之先,且尽人事于当下。生之道尚未尽明,死之事不必急究;事人在前,事鬼在后。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 11,
+            "quote": "未能事人，焉能事鬼？",
+            "label": "论语·先进"
+          }
+        },
+        {
+          "school": "fo",
+          "rebut": null,
+          "point": "一切因缘造作之相皆迁流不住,如梦如幻、如泡如影。于生死起处,正应作如是观照。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "jingangjing",
+            "ch": 32,
+            "quote": "一切有为法，如梦幻泡影，",
+            "label": "金刚经·应化非真分"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "kong",
+          "rebut": "zhuang",
+          "point": "以死生为一固可达观,然生者之恸不可废。亲丧致其哀,哀尽而止,情之正也,不必强同生死而忘哀。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 19,
+            "quote": "丧致乎哀而止。",
+            "label": "论语·子张"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": "kong",
+          "point": "得之是时,失之是顺;安于时而顺于变,则哀乐不入于心。哀非可废,但不为哀所系。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 6,
+            "quote": "安时而处顺，哀乐不能入也，",
+            "label": "庄子·大宗师"
+          }
+        },
+        {
+          "school": "fo",
+          "rebut": "zhuang",
+          "point": "言生死一条,仍是于相而求一;若于相而不取于相,如如不动,则一与不一俱不可得。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "jingangjing",
+            "ch": 32,
+            "quote": "不取于相，如如不动。",
+            "label": "金刚经·应化非真分"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "善养生者亦善待死。大块以形载我、以生劳我、以死息我,生死同出一源,故各安其分。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 6,
+            "quote": "故善吾生者，乃所以善吾死也。",
+            "label": "庄子·大宗师"
+          }
+        },
+        {
+          "school": "kong",
+          "rebut": null,
+          "point": "生之理尚未尽知,死之理更难遽断;非避而不问,乃先笃于所能行者。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 11,
+            "quote": "未知生，焉知死？",
+            "label": "论语·先进"
+          }
+        },
+        {
+          "school": "fo",
+          "rebut": null,
+          "point": "不止于幻泡之喻,更须如观露电之倏忽,常作此观,则于生灭之间不生执着。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "jingangjing",
+            "ch": 32,
+            "quote": "如露亦如电，应作如是观。",
+            "label": "金刚经·应化非真分"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "三家所安各有落点:庄子安于天地之化,以死生为一而不为哀乐所系;孔子笃于当下人事,以生之未尽而存敬于死;金刚经照见有为之无常,以不取于相而不生执着。一安于化、一笃于生、一照其空,皆于生死之际各得其安顿之方。"
+}

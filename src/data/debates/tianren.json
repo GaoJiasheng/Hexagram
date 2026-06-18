@@ -1,0 +1,174 @@
+{
+  "id": "tianren",
+  "title": "天人关系",
+  "category": "天人 · 形上 · 道",
+  "concept": "天人关系",
+  "question": "人于天，当畏顺、当制用，还是顺其自然？",
+  "framing": "天行有常，而人各以其道应之：或分而制之，或顺而忘之，或畏而奉之。",
+  "schools": [
+    {
+      "key": "xun",
+      "label": "荀子",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "制天命而用之"
+    },
+    {
+      "key": "zhuang",
+      "label": "庄子",
+      "group": "dao",
+      "seal": "观道",
+      "stance": "顺天知命"
+    },
+    {
+      "key": "mo",
+      "label": "墨子",
+      "group": "mo",
+      "seal": "观兼",
+      "stance": "天志为法"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        {
+          "school": "xun",
+          "rebut": null,
+          "point": "天道恒常，自有其职，不因人事而改；明白天与人各有分际，便不向天求祸福，而专于人所能治之事。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 17,
+            "quote": "故明于天人之分，则可谓至人矣",
+            "label": "荀子·天论"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "知天所为、知人所为，乃认识之极；天之所为是自然而生，二者不可强为分判，先有真人之境方有真知。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 6,
+            "quote": "知天之所为，知人之所为者，至矣",
+            "label": "庄子·大宗师"
+          }
+        },
+        {
+          "school": "mo",
+          "rebut": null,
+          "point": "天有其意向：欲义而恶不义。天意不愿大国攻打小国、强者欺凌弱者，人当以此天志为衡量是非的准绳。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 24,
+            "quote": "天之意，不欲大国之攻小国也",
+            "label": "墨子·天志中"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "xun",
+          "rebut": "zhuang",
+          "point": "星坠木鸣是天地阴阳之变，以之为奇可以，因之而畏惧则不当；若一味顺天而忘人之治，恐失其在己者。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 17,
+            "quote": "怪之，可也；而畏之，非也",
+            "label": "荀子·天论"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": "xun",
+          "point": "死生本是命，如昼夜之常，乃天然之事；若执意以人力去助益天、强分而制之，便已离了真人忘化之境。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 6,
+            "quote": "不以人助天，是之谓真人",
+            "label": "庄子·大宗师"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "mo",
+          "rebut": "xun",
+          "point": "天志如轮人之规、匠人之矩，是度量天下方圆是非的法度；若只论天人之分而置天意于不顾，则义无所准。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 23,
+            "quote": "我有天志，譬若轮人之有规，匠人之有矩",
+            "label": "墨子·天志上"
+          }
+        },
+        {
+          "school": "xun",
+          "rebut": "mo",
+          "point": "君子敬重在自己身上可尽之事，而不羡慕系于天者；治乱在礼义人为，与其望天意赏罚，不如制天命而为我所用。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 17,
+            "quote": "从天而颂之，孰与制天命而用之",
+            "label": "荀子·天论"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "安于时遇、顺其变化，哀乐便不能扰心；与其分天人、立法度，不如两忘而化，游于造化之常。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 6,
+            "quote": "安时而处顺，哀乐不能入也",
+            "label": "庄子·大宗师"
+          }
+        },
+        {
+          "school": "mo",
+          "rebut": null,
+          "point": "顺天意者兼相爱、交相利而得赏，反之则相恶相贼；奉天之志非为畏天，而是以天为公义之归。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 23,
+            "quote": "顺天意者，兼相爱、交相利，必得赏",
+            "label": "墨子·天志上"
+          }
+        },
+        {
+          "school": "xun",
+          "rebut": null,
+          "point": "敬其在己、不慕在天，则日有所进；天人各守其分，人尽其治而天功自全，非与天争，亦非待天。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 17,
+            "quote": "君子敬其在己者，而不慕其在天者",
+            "label": "荀子·天论"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "三家皆从「天行有常」起步，而所归各异：荀子分天人而尽其在己，以理物制用为人之能事；庄子泯天人之界，以安命忘化、不助天为真；墨子立天志为公法，以顺天兼爱为是非之衡。分歧落在「常」之后人当如何自处——是制之、顺之，还是奉之。会讲至此并陈其旨，各存其义而不归一。"
+}

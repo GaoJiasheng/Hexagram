@@ -1,0 +1,157 @@
+{
+  "id": "yili",
+  "title": "义利之辨",
+  "category": "伦理 · 义利 · 爱孝",
+  "concept": "义利之辨",
+  "question": "立身治国,当先义,还是因利?",
+  "framing": "三家同坐,各从其所宗之经,辨「义」与「利」孰为立身治国之本。",
+  "schools": [
+    {
+      "key": "meng",
+      "label": "孟子",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "何必曰利"
+    },
+    {
+      "key": "mo",
+      "label": "墨子",
+      "group": "mo",
+      "seal": "观兼",
+      "stance": "兼相爱而交相利"
+    },
+    {
+      "key": "han",
+      "label": "韩非",
+      "group": "fa",
+      "seal": "观法",
+      "stance": "因人之好利恶害"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        {
+          "school": "meng",
+          "rebut": null,
+          "point": "治国之首语不应问利。一旦上下各求其利,君臣相争,国势便危;唯仁义可立其本。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "mengzi",
+            "ch": 1,
+            "quote": "上下交征利而国危矣",
+            "label": "孟子·梁惠王上"
+          }
+        },
+        {
+          "school": "mo",
+          "rebut": null,
+          "point": "仁人所务在兴天下之利、除天下之害;以兼相爱、交相利之法,易去相攻相篡之乱。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 15,
+            "quote": "以兼相爱、交相利之法易之",
+            "label": "墨子·兼爱中"
+          }
+        },
+        {
+          "school": "han",
+          "rebut": null,
+          "point": "治国当循人情。人皆好利恶害,故法之道虽先苦而能致长利,不可恃空言之德。",
+          "cite": {
+            "corpus": "fa",
+            "slug": "hanfeizi",
+            "ch": 46,
+            "quote": "故法之为道，前苦而长利",
+            "label": "韩非子·六反"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "meng",
+          "rebut": "han",
+          "point": "以利驭下,亲疏皆从利转。如此则君臣无骨肉之恩,徒以势相缚,终启相疑之祸。",
+          "cite": {
+            "corpus": "fa",
+            "slug": "hanfeizi",
+            "ch": 17,
+            "quote": "人主之患在于信人",
+            "label": "韩非子·备内"
+          }
+        },
+        {
+          "school": "mo",
+          "rebut": "meng",
+          "point": "言义而废利,则天下之害无从除。爱人者人亦爱之,利人者人亦利之,义本不外于利。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 15,
+            "quote": "利人者，人亦从而利之",
+            "label": "墨子·兼爱中"
+          }
+        },
+        {
+          "school": "han",
+          "rebut": "mo",
+          "point": "兼爱交利责人皆能爱人如己,然治国不能恃人自善;故用众舍寡,务法而不务德。",
+          "cite": {
+            "corpus": "fa",
+            "slug": "hanfeizi",
+            "ch": 50,
+            "quote": "为治者用众而舍寡，故不务德而务法",
+            "label": "韩非子·显学"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        {
+          "school": "meng",
+          "rebut": null,
+          "point": "若一味后义先利,贪夺无餍。仁者不遗其亲,义者不后其君,此乃立身治国之根。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "mengzi",
+            "ch": 1,
+            "quote": "苟为后义而先利，不夺不餍",
+            "label": "孟子·梁惠王上"
+          }
+        },
+        {
+          "school": "mo",
+          "rebut": null,
+          "point": "兼则相爱而天下治,别则相恶而天下乱。所谓义,正在使万民交相爱、交相利。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 14,
+            "quote": "天下兼相爱则治，交相恶则乱",
+            "label": "墨子·兼爱上"
+          }
+        },
+        {
+          "school": "han",
+          "rebut": null,
+          "point": "圣人权衡轻重,出其大利。立法因人之情,非弃义,而是不以空德求治。",
+          "cite": {
+            "corpus": "fa",
+            "slug": "hanfeizi",
+            "ch": 46,
+            "quote": "圣人权其轻重，出其大利",
+            "label": "韩非子·六反"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "三家分歧落在「义」「利」之先后与体用:孟子以仁义为本、戒上下交征其利;墨子以交相利为义之实、欲兴天下之公利;韩非因人好利而立法、求长利大利于治。一重义之优先,一合义利为一,一据人情而权其利,各陈其旨,会讲而不议短长。"
+}

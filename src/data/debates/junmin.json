@@ -1,0 +1,174 @@
+{
+  "id": "junmin",
+  "title": "君民关系",
+  "category": "治道与政治",
+  "concept": "君民关系",
+  "question": "君与民,孰为贵、孰为本?",
+  "framing": "同问邦国之所系，孟子归之于民、韩非系之于法度、老子托之于卑下，各陈一本。",
+  "schools": [
+    {
+      "key": "meng",
+      "label": "孟子",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "民贵君轻"
+    },
+    {
+      "key": "han",
+      "label": "韩非",
+      "group": "fa",
+      "seal": "观法",
+      "stance": "尊主安国"
+    },
+    {
+      "key": "lao",
+      "label": "老子",
+      "group": "dao",
+      "seal": "观道",
+      "stance": "贵以贱为本"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        {
+          "school": "meng",
+          "rebut": null,
+          "point": "邦国之中，百姓最重，土谷之神次之，君位反居其轻；故得天下者必先得万民之心。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "mengzi",
+            "ch": 14,
+            "quote": "民为贵，社稷次之，君为轻",
+            "label": "孟子·尽心下"
+          }
+        },
+        {
+          "school": "han",
+          "rebut": null,
+          "point": "国之强弱不系一人之贤，而系奉法之严：群臣循法则兵强国治，君执法度居于其上。",
+          "cite": {
+            "corpus": "fa",
+            "slug": "hanfeizi",
+            "ch": 6,
+            "quote": "奉法者强，则国强；奉法者弱，则国弱",
+            "label": "韩非·有度"
+          }
+        },
+        {
+          "school": "lao",
+          "rebut": null,
+          "point": "凡高贵者皆以卑贱为根、以低下为基；侯王自称孤寡不谷，正是认下贱为本。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 39,
+            "quote": "贵以贱为本，高以下为基",
+            "label": "老子·三十九章"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "han",
+          "rebut": "meng",
+          "point": "若一味重民轻君，则君无以驭下；当君自掌赏罚二柄，群臣畏威慕利，秩序方立。",
+          "cite": {
+            "corpus": "fa",
+            "slug": "hanfeizi",
+            "ch": 7,
+            "quote": "明主之所导制其臣者，二柄而已矣",
+            "label": "韩非·二柄"
+          }
+        },
+        {
+          "school": "meng",
+          "rebut": "han",
+          "point": "桀纣之亡天下，正因失其民、失其心；民心归仁如水就下，非法度威势所能强留。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "mengzi",
+            "ch": 7,
+            "quote": "桀纣之失天下也，失其民也",
+            "label": "孟子·离娄上"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "lao",
+          "rebut": "han",
+          "point": "治国之要在中央执要而处下，使万事自正；上若以法令威权迫之，反失自然之化。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 57,
+            "quote": "我无为而民自化，我好静而民自正",
+            "label": "老子·五十七章"
+          }
+        },
+        {
+          "school": "han",
+          "rebut": "lao",
+          "point": "无为非弃法，乃君守要不亲细务：要在中央，圣人执要而四方自来效命。",
+          "cite": {
+            "corpus": "fa",
+            "slug": "hanfeizi",
+            "ch": 8,
+            "quote": "事在四方，要在中央。圣人执要",
+            "label": "韩非·扬权"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        {
+          "school": "meng",
+          "rebut": null,
+          "point": "得天下有其道：得民则得天下，故为政之本终落在能否聚民所欲、去民所恶。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "mengzi",
+            "ch": 14,
+            "quote": "得乎丘民而为天子",
+            "label": "孟子·尽心下"
+          }
+        },
+        {
+          "school": "lao",
+          "rebut": null,
+          "point": "江海善处下方能为百谷之王；欲在民上者必以言自下、以身居后，居上而民不觉其重。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 66,
+            "quote": "处上而民不重，处前而民不害",
+            "label": "老子·六十六章"
+          }
+        },
+        {
+          "school": "han",
+          "rebut": null,
+          "point": "去私就公则民安国治；君之尊不在凌民，而在以公法立信、使私曲无所容。",
+          "cite": {
+            "corpus": "fa",
+            "slug": "hanfeizi",
+            "ch": 6,
+            "quote": "去私曲就公法者，民安而国治",
+            "label": "韩非·有度"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "三家同问邦国所系而各执一本：孟子以民心向背为社稷之根，韩非以公法二柄为尊主安国之枢，老子以处下不争为居上之基。一重民、一重法、一重谦下，所立之「本」各异，会于此处，并陈而不相归一。"
+}
