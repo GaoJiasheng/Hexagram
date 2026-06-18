@@ -1,0 +1,58 @@
+{
+  "id": "renxing",
+  "title": "人性之辨",
+  "category": "性与心",
+  "concept": "人性之辨",
+  "question": "人性本善、本恶,还是善恶之上别有本体?",
+  "framing": "孟子道性善,荀子言性恶,阳明谓至善者心之本体——同一「人性」,三家各执一词,正可对看。此为会讲,不判胜负。",
+  "schools": [
+    { "key": "meng", "label": "孟子", "group": "ru", "seal": "观仁", "stance": "性善" },
+    { "key": "xun", "label": "荀子", "group": "ru", "seal": "观仁", "stance": "性恶" },
+    { "key": "yang", "label": "阳明", "group": "xin", "seal": "观心", "stance": "良知·心体" }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        { "school": "meng", "rebut": null,
+          "point": "就人之本情而言,自然可以为善;人之不善,是放失了本心,非天生材质之罪。故曰性善。",
+          "cite": { "corpus": "ru", "slug": "mengzi", "ch": 11, "quote": "乃若其情则可以为善矣，乃所谓善也", "label": "孟子·告子上" } },
+        { "school": "xun", "rebut": null,
+          "point": "人生来好利、有疾恶,顺其性则争夺残贼而辞让亡;所谓善,是后天人为(伪)化成的。故曰性恶。",
+          "cite": { "corpus": "ru", "slug": "xunzi", "ch": 23, "quote": "人之性恶，其善者伪也", "label": "荀子·性恶篇" } },
+        { "school": "yang", "rebut": null,
+          "point": "善恶之争,落在第二义。心之本体即是天理,良知本自知善知恶,不假外求——此乃至善。",
+          "cite": { "corpus": "xin", "slug": "chuanxilu", "ch": 2, "quote": "心之本体即是天理", "label": "传习录·卷中" } }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        { "school": "xun", "rebut": "meng",
+          "point": "若性本善,何以一顺其性,便争夺生而辞让亡?可见善不出于性,而成于师法礼义之化。",
+          "cite": { "corpus": "ru", "slug": "xunzi", "ch": 23, "quote": "今人之性，生而有好利焉，顺是，故争夺生而辞让亡焉", "label": "荀子·性恶篇" } },
+        { "school": "meng", "rebut": "xun",
+          "point": "乍见孺子将入井,人皆有怵惕恻隐——此非为名为利的伪饰,正是性之端绪。故知性善。",
+          "cite": { "corpus": "ru", "slug": "mengzi", "ch": 11, "quote": "恻隐之心，人皆有之", "label": "孟子·告子上" } },
+        { "school": "yang", "rebut": "xun",
+          "point": "二公各见一边:孟子从本原上说性善,荀子就气质习染上说恶——非争一物,乃指两层。",
+          "cite": { "corpus": "xin", "slug": "chuanxilu", "ch": 2, "quote": "孟子「性善」，是从本原上说", "label": "传习录·卷中" } }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        { "school": "xun", "rebut": null,
+          "point": "纵有善端,无师法礼义则偏险不正;故工夫在化性起伪、隆礼重法,使之然后正、然后治。",
+          "cite": { "corpus": "ru", "slug": "xunzi", "ch": 23, "quote": "必将待师法然后正，得礼义然后治", "label": "荀子·性恶篇" } },
+        { "school": "meng", "rebut": null,
+          "point": "故工夫无他,只在养其善端、求其放失之本心,扩而充之即是。",
+          "cite": { "corpus": "ru", "slug": "mengzi", "ch": 11, "quote": "学问之道无他，求其放心而已矣", "label": "孟子·告子上" } },
+        { "school": "yang", "rebut": null,
+          "point": "故工夫只在致良知:致吾心之良知于事事物物,则物各得其理,善恶自明。",
+          "cite": { "corpus": "xin", "slug": "chuanxilu", "ch": 2, "quote": "致吾心良知之「天理」于事事物物，则事事物物皆得其理矣", "label": "传习录·卷中" } }
+      ]
+    }
+  ],
+  "coda": "三家分歧,在「性」字所指不同:孟子言其端绪,荀子言其资质,阳明言其本体。工夫遂分「扩充」「化性」「致良知」。非争对错,乃各就一节,相发而相成。"
+}

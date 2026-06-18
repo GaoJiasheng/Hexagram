@@ -55,6 +55,13 @@ const CorpusMePage = lazy(() => import('./features/reader/CorpusMePage.jsx'))
 const MasterPortalPage = lazy(() => import('./features/MasterPortalPage.jsx'))
 const AboutPage = lazy(() => import('./features/AboutPage.jsx'))
 const ConceptsPage = lazy(() => import('./features/ConceptsPage.jsx'))
+const DebateListPage = lazy(() => import('./features/debates/DebateListPage.jsx'))
+const DebatePage = lazy(() => import('./features/debates/DebatePage.jsx'))
+
+// 中立外壳路径(总门户 / 义理专题 / 百家争鸣):不套分站 nav/搜索/底栏,域名着陆豁免
+function isNeutralPath(p) {
+  return p === MASTER_PORTAL_PATH || p === '/concepts' || p === '/debates' || p.startsWith('/debates/')
+}
 // 全站设置浮层(Tier 0):任何站 nav 齿轮就地打开(主题/字号/译文 + 数据导出导入)
 const SettingsSheet = lazy(() => import('./features/SettingsSheet.jsx'))
 
@@ -220,9 +227,8 @@ function AppContent() {
   const module = siteForPath(location.pathname)
   const group = activeGroup(location.pathname, typeof window !== 'undefined' ? window.location.hostname : '')
   const canSwitch = sitesInGroup(group).length > 1
-  // 中立枢纽(总门户 + 跨派义理专题):不套任一分站外壳(无 module nav / 搜索 / 底栏 / 主色偏向)
-  const NEUTRAL_PATHS = new Set([MASTER_PORTAL_PATH, '/concepts'])
-  const isPortal = NEUTRAL_PATHS.has(location.pathname)
+  // 中立枢纽(总门户 / 义理专题 / 百家争鸣):不套任一分站外壳(无 module nav / 搜索 / 底栏 / 主色偏向)
+  const isPortal = isNeutralPath(location.pathname)
   // 搜索面板种类由 registry 派生(缺省 corpus),单一来源,免硬编码站名集漏改
   const searchKind = module.hasSearch ? (module.searchKind || 'corpus') : null
 
@@ -232,7 +238,7 @@ function AppContent() {
   // 域名着陆(v15 §1):配了 HOST_GROUPS 的域名访问别组路径时,落回本组首页。
   // HOST_GROUPS 为空(dev/主域名)时不触发,按路径分组即可。
   useEffect(() => {
-    if (NEUTRAL_PATHS.has(location.pathname)) return  // 中立枢纽(总门户/义理专题)豁免域名着陆
+    if (isNeutralPath(location.pathname)) return  // 中立枢纽(总门户/义理专题/百家争鸣)豁免域名着陆
     const host = typeof window !== 'undefined' ? window.location.hostname : ''
     const hostGroup = HOST_GROUPS[host]
     if (hostGroup && module.group !== hostGroup) {
@@ -309,6 +315,8 @@ function AppContent() {
           {/* 诸学总门户(v15):左上角 logo 全站可达的公开总入口,列全部分组 */}
           <Route path={MASTER_PORTAL_PATH} element={<MasterPortalPage />} />
           <Route path="/concepts" element={<ConceptsPage />} />
+          <Route path="/debates" element={<DebateListPage />} />
+          <Route path="/debates/:id" element={<DebatePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={
             <div style={{ textAlign: 'center', paddingTop: '80px' }}>

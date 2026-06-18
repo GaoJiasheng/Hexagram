@@ -517,6 +517,56 @@ if (fs.existsSync(glossaryPath)) {
   )
 }
 
+// ---------- 8b. 《赛博:百家争鸣》(v21)校验 ----------
+{
+  const dir = path.join(ROOT, 'src/data/debates')
+  if (fs.existsSync(dir)) {
+    const BANNED = new Set(['zhongyi', 'moulue'])              // 中医/谋略不入场
+    const WIN_RE = /(胜负|输赢|赢了|碾压|击败|完胜|败北|谁赢|分高下|谁对谁错)/  // 论点禁评胜负
+    const chCache = {}
+    const chapterText = (corpus, slug, ch) => {
+      const k = `${corpus}/${slug}`
+      if (!(k in chCache)) {
+        const f = path.join(ROOT, `src/data/${corpus}/classics/${slug}.json`)
+        chCache[k] = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null
+      }
+      const book = chCache[k]
+      if (!book) return null
+      const c = book.chapters.find((x) => x.no === ch)
+      return c ? c.paragraphs.map((p) => p.original).join('') : null
+    }
+    const dbIndex = JSON.parse(fs.readFileSync(path.join(dir, 'index.json'), 'utf8'))
+    const files = fs.readdirSync(dir).filter((f) => f.endsWith('.json') && f !== 'index.json')
+    let turnTotal = 0, partyTotal = 0
+    for (const f of files) {
+      const id = f.replace(/\.json$/, '')
+      const d = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'))
+      const keys = new Set(d.schools.map((s) => s.key))
+      for (const s of d.schools) {
+        if (BANNED.has(s.group)) err(`debate ${id}: 禁入场组「${s.group}」(${s.label})`)
+        if (!s.seal) err(`debate ${id}: ${s.label} 缺 seal`)
+      }
+      const turns = d.rounds.flatMap((r) => r.turns)
+      if (turns.length > 100) err(`debate ${id}: 轮数 ${turns.length} 超 100`)
+      turnTotal += turns.length; partyTotal += d.schools.length
+      for (const t of turns) {
+        if (!keys.has(t.school)) err(`debate ${id}: 未知发言家 ${t.school}`)
+        if (t.rebut && !keys.has(t.rebut)) err(`debate ${id}: rebut 指向未知家 ${t.rebut}`)
+        if (WIN_RE.test(t.point || '')) err(`debate ${id}: 论点含评胜负字样`)
+        const c = t.cite
+        if (BANNED.has(c.corpus)) err(`debate ${id}: 引文出自禁入场组 ${c.corpus}`)
+        const text = chapterText(c.corpus, c.slug, c.ch)
+        if (text === null) err(`debate ${id}: 引文章节缺失 ${c.corpus}/${c.slug}#${c.ch}`)
+        else if (!text.includes(c.quote)) err(`debate ${id}: 引文非原文子串「${c.quote.slice(0, 14)}…」(${c.corpus}/${c.slug}#${c.ch})`)
+      }
+      const topic = (dbIndex.topics || []).find((tp) => tp.id === id)
+      if (!topic) err(`debate ${id}: index.json 未登记`)
+      else if (topic.turns !== turns.length) err(`debate ${id}: index turns(${topic.turns}) ≠ 实际 ${turns.length}`)
+    }
+    infos.push(`百家争鸣: ${files.length} 辩 · ${turnTotal} 轮 · 参辩 ${partyTotal} 家次`)
+  }
+}
+
 // ---------- 8. 信息项 ----------
 const translated = hexagrams.filter((h) => h.judgment?.translation).length
 infos.push(`译文覆盖: ${translated}/64 卦(其余待补,见 scripts/authored/translations.json)`)

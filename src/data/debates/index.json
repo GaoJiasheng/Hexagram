@@ -1,0 +1,81 @@
+{
+  "epigraph": { "text": "天下同归而殊途，一致而百虑", "source": "系辞下" },
+  "topics": [
+    {
+      "id": "renxing", "title": "人性之辨", "category": "性与心",
+      "question": "人性本善、本恶,还是善恶之上别有本体?", "turns": 9, "status": "done",
+      "schools": [
+        { "label": "孟子", "group": "ru", "seal": "观仁", "stance": "性善" },
+        { "label": "荀子", "group": "ru", "seal": "观仁", "stance": "性恶" },
+        { "label": "阳明", "group": "xin", "seal": "观心", "stance": "良知·心体" }
+      ]
+    }
+  ],
+  "planned": [
+    { "category": "性与心", "items": [
+      { "title": "心之本体", "parties": "阳明·程朱·庄子" },
+      { "title": "情与欲", "parties": "荀子·孟子·老庄" },
+      { "title": "性即理 vs 心即理", "parties": "程朱·陆王" },
+      { "title": "善之根源", "parties": "孟子·荀子·墨子" }
+    ]},
+    { "category": "工夫与学", "items": [
+      { "title": "知与行", "parties": "阳明·荀子·老子" },
+      { "title": "顿与渐", "parties": "坛经·渐修" },
+      { "title": "格物之解", "parties": "朱子·阳明" },
+      { "title": "为学之道", "parties": "荀子·老子·孔子" },
+      { "title": "工夫入手", "parties": "程朱·阳明·庄子" }
+    ]},
+    { "category": "治道与政治", "items": [
+      { "title": "治国总纲", "parties": "孔孟·韩商·老子·墨子" },
+      { "title": "法与德孰先", "parties": "韩非·孔子·荀子" },
+      { "title": "尚贤与否", "parties": "墨子·老子·孔子" },
+      { "title": "君民关系", "parties": "孟子·韩非·老子" },
+      { "title": "法术势", "parties": "商鞅·慎到·申韩" },
+      { "title": "富国之道", "parties": "商君·孔子·墨子·老子" },
+      { "title": "节用 vs 礼乐", "parties": "墨子·荀子" },
+      { "title": "战争观", "parties": "墨子·孙子·孟子·吴子" },
+      { "title": "纵横之术 vs 仁义", "parties": "鬼谷·孟子" }
+    ]},
+    { "category": "伦理 · 义利 · 爱孝", "items": [
+      { "title": "义利之辨", "parties": "孟子·墨子·韩非" },
+      { "title": "爱有差等否", "parties": "墨子·孟子·孔子" },
+      { "title": "丧期与孝", "parties": "孔子·墨子" },
+      { "title": "报怨以德否", "parties": "老子·孔子" },
+      { "title": "言信与权变", "parties": "墨子·孟子·纵横" },
+      { "title": "忠孝之先", "parties": "儒家·法家" }
+    ]},
+    { "category": "天人 · 形上 · 道", "items": [
+      { "title": "天人关系", "parties": "荀子·孔子·庄子·墨子" },
+      { "title": "道之为道", "parties": "老子·系辞·荀子" },
+      { "title": "有无之辨", "parties": "老子·庄子" },
+      { "title": "命与力", "parties": "孔子·墨子" },
+      { "title": "鬼神之辨", "parties": "墨子·孔子·老子" },
+      { "title": "变与常", "parties": "系辞·老子·荀子" }
+    ]},
+    { "category": "名实 · 言辩 · 知", "items": [
+      { "title": "正名", "parties": "孔子·荀子·尹文" },
+      { "title": "言辩有用否", "parties": "庄子·墨子·荀子" },
+      { "title": "言与意", "parties": "庄子·系辞·儒家" },
+      { "title": "是非有定否", "parties": "墨子·庄子" }
+    ]},
+    { "category": "生死 · 身 · 苦乐", "items": [
+      { "title": "生死之态", "parties": "庄子·孔子·佛" },
+      { "title": "身之态度", "parties": "庄子·孔子·金刚经" },
+      { "title": "苦与乐", "parties": "佛·孔颜·庄子" },
+      { "title": "出处 · 隐与仕", "parties": "庄子·孔子·韩非" }
+    ]},
+    { "category": "礼 · 文 · 乐", "items": [
+      { "title": "礼之本", "parties": "荀子·老子·韩非" },
+      { "title": "文与质", "parties": "孔子·老子·墨子" },
+      { "title": "乐之用", "parties": "荀孔·墨子·老子" }
+    ]},
+    { "category": "组内多方", "items": [
+      { "title": "道家三调", "parties": "老子·庄子·文子" },
+      { "title": "兵家三家", "parties": "孙子·吴子·尉缭" },
+      { "title": "儒门性论流变", "parties": "孟·荀·程朱·陆王" }
+    ]},
+    { "category": "会通", "items": [
+      { "title": "三不朽 vs 无名 vs 取势", "parties": "儒家·老庄·纵横" }
+    ]}
+  ]
+}

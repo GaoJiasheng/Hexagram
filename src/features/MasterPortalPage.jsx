@@ -46,6 +46,8 @@ export default function MasterPortalPage() {
       </div>
       <PortalStudyTrail />
       <p className="master-portal__links">
+        <Link to="/debates" className="master-portal__about-link">赛博 · 百家争鸣</Link>
+        <span className="master-portal__links-sep"> · </span>
         <Link to="/concepts" className="master-portal__about-link">义理专题 · 跨派概念</Link>
       </p>
       <p className="master-portal__about">
