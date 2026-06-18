@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import HexagramFigure from '../components/HexagramFigure.jsx'
+import DailyDebate from '../../debates/DailyDebate.jsx'
 import HexagramCard from '../components/HexagramCard.jsx'
 import { getTodayHexagramId, getDateString } from '../engine/today.js'
 import { getHexagram, formatDateChinese, CLASSICS_META } from '../data.js'
@@ -116,6 +117,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+      <DailyDebate />
     </div>
   )
 }

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import concepts from '../data/concepts.json'
 import { bookBySlug, chapterHref } from './reader/booksIndex.js'
 import { usePageTitle } from './yijing/hooks/usePageTitle.js'
+import { TOPICS as DEBATES } from './debates/debates.js'
 
 // 义理专题 · 跨派概念(#150/#151)——复用 concepts.json(义理互见的同一份策展数据),
 // 把每个概念聚类铺成一题:概念释 + 各书最具代表的一章链接,跨组对读。挂总门户(天然跨组,
@@ -19,9 +20,11 @@ export default function ConceptsPage() {
       </div>
 
       <div className="concepts-list">
-        {concepts.clusters.map((c) => (
+        {concepts.clusters.map((c) => {
+          const debate = DEBATES.find((t) => t.concept === c.term)
+          return (
           <section key={c.term} className="concept-card">
-            <h2 className="concept-card__term">{c.term}</h2>
+            <h2 className="concept-card__term">{c.term}{debate && <Link to={`/debates/${debate.id}`} className="concept-card__debate">→ 入争鸣</Link>}</h2>
             <p className="concept-card__gloss">{c.gloss}</p>
             <div className="concept-card__loci">
               {c.loci.map((l) => {
@@ -32,7 +35,8 @@ export default function ConceptsPage() {
               })}
             </div>
           </section>
-        ))}
+          )
+        })}
       </div>
 
       <p className="concepts-page__note text-faint">

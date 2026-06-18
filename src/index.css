@@ -3083,6 +3083,27 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   .debate-edge { transition: none; }
   .debate-node__ring { animation: none; opacity: 0.4; }
 }
+
+/* 每日一辩弹窗(v21 §3.4) */
+.daily-debate { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(26, 22, 16, 0.55); animation: dd-fade 0.2s ease both; }
+.daily-debate__card { position: relative; width: 384px; max-width: 100%; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 26px 30px 20px; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.32); animation: dd-pop 0.28s ease both; }
+.daily-debate__x { position: absolute; top: 12px; right: 14px; background: transparent; border: none; color: var(--ink-faint); font-size: 20px; line-height: 1; cursor: pointer; }
+.daily-debate__tag { font-size: 0.74rem; letter-spacing: 0.12em; color: var(--cinnabar); }
+.daily-debate__title { font-family: var(--font-serif); font-size: 1.7rem; margin: 12px 0 6px; }
+.daily-debate__q { font-size: 0.88rem; line-height: 1.7; color: var(--ink-soft); }
+.daily-debate__meta { font-size: 0.72rem; color: var(--ink-faint); margin: 12px 0 14px; letter-spacing: 0.04em; }
+.daily-debate__seals { display: flex; gap: 14px; margin-bottom: 20px; }
+.daily-debate__seat { flex: 1; text-align: center; }
+.daily-debate__seal { width: 46px; height: 46px; margin: 0 auto 6px; border-radius: 9px; color: #f3f1e6; font-size: 0.86rem; display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); }
+.daily-debate__name { font-size: 0.84rem; }
+.daily-debate__stance { font-size: 0.68rem; color: var(--ink-faint); }
+.daily-debate__actions { display: flex; gap: 10px; align-items: stretch; }
+.daily-debate__go { flex: 1; background: var(--cinnabar); color: var(--paper); border: none; padding: 10px; border-radius: 9px; font-size: 0.95rem; font-family: var(--font-serif); cursor: pointer; }
+.daily-debate__epigraph { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 0.72rem; color: var(--ink-faint); text-align: center; letter-spacing: 0.04em; }
+.concept-card__debate { margin-left: 12px; font-size: 0.78rem; color: var(--cinnabar); text-decoration: none; border-bottom: 1px dotted var(--cinnabar); vertical-align: middle; }
+@keyframes dd-pop { from { opacity: 0; transform: translateY(10px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes dd-fade { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .daily-debate, .daily-debate__card { animation: none; } }
 /* 关于本站页 */
 .about-section { margin-top: 28px; }
 .about-section__title { font-size: 1.05rem; color: var(--ink); margin: 0 0 12px; font-family: var(--font-serif); }

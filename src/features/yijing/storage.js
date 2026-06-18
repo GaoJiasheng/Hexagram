@@ -183,6 +183,10 @@ export function exportData() {
   return data
 }
 
+// 每日一辩弹窗(v21 批2)——记当日已弹日期(不入 DATA_KEYS,不导出/清空)
+export function getDailyDebateSeen() { return get('dailyDebateSeen', null) }
+export function markDailyDebateSeen(day) { set('dailyDebateSeen', day) }
+
 // 研读足迹统计(#149)——收藏/批注总数 + 是否曾导出备份。供「我的」里程碑文案与备份提示。
 export function getStudyStats() {
   const marks = Object.keys(get('corpusMarks', {})).length
