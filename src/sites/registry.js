@@ -235,3 +235,12 @@ export function groupEntryHref(group, protocol, hostname) {
   }
   return groupHome(group)
 }
+
+// 某具体站的入口(门户多站组每站各一可点入口用):同组各站共用本组域名,故拼 group 域名 + 站 home
+export function siteEntryHref(site, protocol, hostname) {
+  if (HOST_GROUPS[hostname]) {
+    const host = Object.keys(HOST_GROUPS).find(h => HOST_GROUPS[h] === site.group)
+    if (host) return `${protocol}//${host}${site.home}`
+  }
+  return site.home
+}

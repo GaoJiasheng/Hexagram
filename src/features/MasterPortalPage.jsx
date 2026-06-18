@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { allGroups, sitesInGroup, groupEntryHref } from '../sites/registry.js'
+import { allGroups, sitesInGroup, siteEntryHref } from '../sites/registry.js'
 import { usePageTitle } from './yijing/hooks/usePageTitle.js'
 import { corpusTexts } from './reader/corpus.js'
 import daoTexts from '../data/dao/texts.json'
@@ -30,18 +30,29 @@ export default function MasterPortalPage() {
       <div className="master-portal__cards">
         {allGroups().map(group => {
           const sites = sitesInGroup(group)
+          // 单站组:整卡一链接。多站组(易道):每站各一可点入口,道藏不再埋在易经底下。
+          if (sites.length === 1) {
+            const s = sites[0]
+            return (
+              <a key={group} href={siteEntryHref(s, protocol, hostname)} className="master-portal__card">
+                <span className="master-portal__seals"><span className="master-portal__seal">{s.brand}</span></span>
+                <span className="master-portal__titles">{s.portalTitle}</span>
+                <span className="master-portal__desc">{siteDesc(s)}</span>
+              </a>
+            )
+          }
           return (
-            <a key={group} href={groupEntryHref(group, protocol, hostname)} className="master-portal__card">
-              <span className="master-portal__seals">
-                {sites.map(s => <span key={s.key} className="master-portal__seal">{s.brand}</span>)}
-              </span>
-              <span className="master-portal__titles">
-                {sites.map(s => s.portalTitle).join(' · ')}
-              </span>
-              <span className="master-portal__desc">
-                {sites.map(siteDesc).join(' / ')}
-              </span>
-            </a>
+            <div key={group} className="master-portal__card master-portal__card--multi">
+              {sites.map(s => (
+                <a key={s.key} href={siteEntryHref(s, protocol, hostname)} className="master-portal__site">
+                  <span className="master-portal__seal">{s.brand}</span>
+                  <span className="master-portal__site-text">
+                    <span className="master-portal__titles">{s.portalTitle}</span>
+                    <span className="master-portal__desc">{siteDesc(s)}</span>
+                  </span>
+                </a>
+              ))}
+            </div>
           )
         })}
       </div>

@@ -2956,7 +2956,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .yuanliu-disclaimer { margin-top: 8px; font-size: 0.75rem; }
 
 /* 模块切换章 */
-.module-switch { margin-left: 4px; padding: 3px 8px; font-size: 0.72rem; font-family: var(--font-serif); color: var(--ink-soft); background: transparent; border: 1px solid var(--line); border-radius: 4px; cursor: pointer; white-space: nowrap; }
+.module-switch { display: inline-block; margin-left: 4px; padding: 3px 8px; font-size: 0.72rem; font-family: var(--font-serif); color: var(--ink-soft); background: transparent; border: 1px solid var(--line); border-radius: 4px; cursor: pointer; white-space: nowrap; text-decoration: none; }
 .module-switch:hover { color: var(--cinnabar); border-color: var(--cinnabar); }
 
 /* 整屏门户 */
@@ -2985,6 +2985,15 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .master-portal__seal { width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; background: var(--cinnabar); color: #fdfbf6; font-family: var(--font-serif); font-size: 1rem; border-radius: 6px; }
 .master-portal__titles { font-family: var(--font-serif); font-size: 0.95rem; color: var(--ink-soft); }
 .master-portal__desc { font-size: 0.78rem; color: var(--ink-faint); line-height: 1.5; text-align: center; max-width: 17em; }
+/* 多站组(易道):整卡不抬升,卡内每站各一可点行,道藏不再埋在易经底下 */
+.master-portal__card--multi { padding: 0; gap: 0; align-items: stretch; overflow: hidden; }
+.master-portal__card--multi:hover { transform: none; border-color: var(--line); }
+.master-portal__site { display: flex; align-items: center; gap: 14px; padding: 22px 24px; text-decoration: none; transition: background 0.15s; }
+.master-portal__site + .master-portal__site { border-top: 1px solid var(--line); }
+.master-portal__site:hover { background: var(--paper-sunken, rgba(0,0,0,0.03)); }
+.master-portal__site .master-portal__seal { flex-shrink: 0; }
+.master-portal__site-text { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
+.master-portal__site-text .master-portal__desc { text-align: left; }
 .master-portal__about { margin-top: 28px; text-align: center; }
 .master-portal__about-link { font-size: 0.82rem; color: var(--ink-faint); text-decoration: none; }
 .master-portal__about-link:hover { color: var(--cinnabar); text-decoration: underline; }

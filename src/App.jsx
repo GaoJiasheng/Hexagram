@@ -100,7 +100,10 @@ function ModulePortal({ current, group, onClose }) {
   )
 }
 
-function Nav({ module, canSwitch, onSearch, onPortal, onSettings }) {
+// 站名去「研读/研习」尾 → 切换钮显的目标站名(道藏研读→道藏、易经研习→易经)
+const switchTargetName = (site) => site.portalTitle.replace(/(研读|研习)$/, '')
+
+function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings }) {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -171,7 +174,12 @@ function Nav({ module, canSwitch, onSearch, onPortal, onSettings }) {
             ☯
           </NavLink>
         )}
-        {canSwitch && (
+        {otherSite ? (
+          // 恰两站的组(易道):直接互切到另一站,钮上显目标站名(道藏 ⇄ / 易经 ⇄)
+          <NavLink to={otherSite.home} className="module-switch" title={`切到${switchTargetName(otherSite)}`}>
+            {switchTargetName(otherSite)} ⇄
+          </NavLink>
+        ) : canSwitch && (
           <button className="module-switch" onClick={onPortal} aria-label="切换站点" title="切换站点">
             {module.switchLabel} ⇄
           </button>
@@ -181,7 +189,7 @@ function Nav({ module, canSwitch, onSearch, onPortal, onSettings }) {
   )
 }
 
-function MobileNav({ module, canSwitch, onPortal }) {
+function MobileNav({ module, canSwitch, otherSite, onPortal }) {
   const location = useLocation()
 
   return (
@@ -203,12 +211,17 @@ function MobileNav({ module, canSwitch, onPortal }) {
             </NavLink>
           )
         })}
-        {module.mobileSwitch && canSwitch && (
+        {module.mobileSwitch && (otherSite ? (
+          <NavLink to={otherSite.home} className="mobile-nav__item" aria-label={`切到${switchTargetName(otherSite)}`}>
+            <span className="mobile-nav__icon" aria-hidden="true">⇄</span>
+            <span>{switchTargetName(otherSite)}</span>
+          </NavLink>
+        ) : canSwitch && (
           <button className="mobile-nav__item" onClick={onPortal} aria-label="切换站点">
             <span className="mobile-nav__icon" aria-hidden="true">⇄</span>
             <span>切换</span>
           </button>
-        )}
+        ))}
       </div>
     </div>
   )
@@ -226,7 +239,10 @@ function AppContent() {
 
   const module = siteForPath(location.pathname)
   const group = activeGroup(location.pathname, typeof window !== 'undefined' ? window.location.hostname : '')
-  const canSwitch = sitesInGroup(group).length > 1
+  const groupSites = sitesInGroup(group)
+  const canSwitch = groupSites.length > 1
+  // 恰两站的组(易道):切换钮直接互切到另一站并显其名;>2 站才弹切换层(C)
+  const otherSite = groupSites.length === 2 ? groupSites.find(s => s.key !== module.key) : null
   // 中立枢纽(总门户 / 义理专题 / 百家争鸣):不套任一分站外壳(无 module nav / 搜索 / 底栏 / 主色偏向)
   const isPortal = isNeutralPath(location.pathname)
   // 搜索面板种类由 registry 派生(缺省 corpus),单一来源,免硬编码站名集漏改
@@ -249,7 +265,7 @@ function AppContent() {
 
   return (
     <div className="app-shell" data-site={isPortal ? 'portal' : module.key}>
-      {!isPortal && <Nav module={module} canSwitch={canSwitch} onSearch={openSearch} onPortal={openPortal} onSettings={openSettings} />}
+      {!isPortal && <Nav module={module} canSwitch={canSwitch} otherSite={otherSite} onSearch={openSearch} onPortal={openPortal} onSettings={openSettings} />}
       <main className="app-main page-fade-in">
         <ErrorBoundary key={location.pathname}>
         <Suspense fallback={<div className="route-loading" aria-label="加载中">⋯</div>}>
@@ -334,7 +350,7 @@ function AppContent() {
           <span>本站为个人学习用途，解读内容仅供研习参考 · <NavLink to="/about" className="app-footer__link">关于本站</NavLink></span>
         </footer>
       )}
-      {!isPortal && <MobileNav module={module} canSwitch={canSwitch} onPortal={openPortal} />}
+      {!isPortal && <MobileNav module={module} canSwitch={canSwitch} otherSite={otherSite} onPortal={openPortal} />}
       {!isPortal && searchOpen && searchKind === 'yijing' && (
         <Suspense fallback={null}>
           <SearchPalette open onClose={() => setSearchOpen(false)} />

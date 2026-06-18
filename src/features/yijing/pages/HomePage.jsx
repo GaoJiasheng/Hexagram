@@ -13,6 +13,7 @@ const ENTRIES = [
   { title: '卦变推演', to: '/workbench', desc: '动爻变卦与断辞依据', icon: '☵' },
   { title: '经传通读', to: '/classics', desc: '系辞说卦序卦杂卦', icon: '☷' },
   { title: '八卦基础', to: '/basics', desc: '阴阳爻象与经卦取象', icon: '☶' },
+  { title: '道藏研读', to: '/dao', desc: '道德经·南华·丹道诸经', icon: '☯' },
 ]
 
 export default function HomePage() {
