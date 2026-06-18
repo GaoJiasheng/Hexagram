@@ -1,0 +1,138 @@
+{
+  "id": "zhmrenyi",
+  "title": "纵横之术 vs 仁义",
+  "category": "治道与政治",
+  "concept": "纵横之术 vs 仁义",
+  "question": "取天下,凭揣摩纵横之术,还是凭仁义?",
+  "framing": "一问游说揣摩之能,一问仁义不忍之心,二者各陈所宗。",
+  "schools": [
+    {
+      "key": "gui",
+      "label": "鬼谷子",
+      "group": "zong",
+      "seal": "观衡",
+      "stance": "揣摩捭阖"
+    },
+    {
+      "key": "meng",
+      "label": "孟子",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "仁者无敌"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        {
+          "school": "gui",
+          "rebut": null,
+          "point": "开合阴阳是天地运转之道,游说也循此理;先审虚实、量轻重,事之吉凶大局便系于此处。",
+          "cite": {
+            "corpus": "zong",
+            "slug": "guiguzi",
+            "ch": 1,
+            "quote": "捭阖者，天地之道",
+            "label": "鬼谷子·捭阖"
+          }
+        },
+        {
+          "school": "meng",
+          "rebut": null,
+          "point": "君王开口便问何以利国,上下争相逐利,国家就危险了;治国只需讲仁义。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "mengzi",
+            "ch": 1,
+            "quote": "王！何必曰利？亦有仁义而已矣",
+            "label": "孟子·梁惠王上"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "meng",
+          "rebut": "gui",
+          "point": "若上下都以揣摩计利相驱,争利不止,正是致危之由;舍仁义而专务权谋,适足以乱国。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "mengzi",
+            "ch": 1,
+            "quote": "上下交征利而国危矣",
+            "label": "孟子·梁惠王上"
+          }
+        },
+        {
+          "school": "gui",
+          "rebut": "meng",
+          "point": "量度天下之权、揣度诸侯之情,本是谋事根本;不审虚实而空言仁义,无从着手于实务。",
+          "cite": {
+            "corpus": "zong",
+            "slug": "guiguzi",
+            "ch": 7,
+            "quote": "必量天下之权，而揣诸侯之情",
+            "label": "鬼谷子·揣篇"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        {
+          "school": "meng",
+          "rebut": null,
+          "point": "地不过百里也能成王业:施行仁政、轻刑薄税、深耕,民自归附,这才是取天下的本。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "mengzi",
+            "ch": 1,
+            "quote": "王如施仁政于民，省刑罚，薄税敛",
+            "label": "孟子·梁惠王上"
+          }
+        },
+        {
+          "school": "gui",
+          "rebut": null,
+          "point": "先审定有无、辨其虚实,顺其所欲以见其志,如此游说可及一国乃至天下之事。",
+          "cite": {
+            "corpus": "zong",
+            "slug": "guiguzi",
+            "ch": 1,
+            "quote": "审定有无，与其实虚",
+            "label": "鬼谷子·捭阖"
+          }
+        },
+        {
+          "school": "meng",
+          "rebut": null,
+          "point": "能定天下者,在于一统,而能一统的是不嗜杀人之君;民心所向,自然归之。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "mengzi",
+            "ch": 1,
+            "quote": "不嗜杀人者能一之",
+            "label": "孟子·梁惠王上"
+          }
+        },
+        {
+          "school": "gui",
+          "rebut": null,
+          "point": "揣度人情最难把握,须待时而谋;故揣情饰言乃谋断之大本,亦是游说之法。",
+          "cite": {
+            "corpus": "zong",
+            "slug": "guiguzi",
+            "ch": 7,
+            "quote": "此谋之大本也，而说之法也",
+            "label": "鬼谷子·揣篇"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "分歧落在取天下之凭:鬼谷子归于量权揣情、捭阖游说,视审情度势为谋事之本;孟子归于发政施仁、不嗜杀人,视民心归附为王道之始。一重审势之能,一重不忍之心,各陈其所宗而旨归两存。"
+}

@@ -1,0 +1,157 @@
+{
+  "id": "yanbian",
+  "title": "言辩有用否",
+  "category": "名实 · 言辩 · 知",
+  "concept": "言辩有用否",
+  "question": "言辩,能明是非,还是辩无定准?",
+  "framing": "「辩也者,有不见也」与「君子必辩」之间,三家各执其衡。",
+  "schools": [
+    {
+      "key": "zhuang",
+      "label": "庄子",
+      "group": "dao",
+      "seal": "观道",
+      "stance": "辩无定准"
+    },
+    {
+      "key": "mo",
+      "label": "墨子",
+      "group": "mo",
+      "seal": "观兼",
+      "stance": "言必有仪"
+    },
+    {
+      "key": "xun",
+      "label": "荀子",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "正名以辨"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "是非彼此本无定偶,辩到极处反落一隅之见;立此非彼者,正自有所不见。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 2,
+            "quote": "辩也者，有不见也",
+            "label": "庄子·齐物论"
+          }
+        },
+        {
+          "school": "mo",
+          "rebut": null,
+          "point": "立言不可无准绳:无仪而论,如转动的陶钧上定方位,是非利害遂不可明知。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 28,
+            "quote": "言必立仪，言而毋仪",
+            "label": "墨子·非命上"
+          }
+        },
+        {
+          "school": "xun",
+          "rebut": null,
+          "point": "名定则实有分辨,道得施行而心志相通,辩说正所以正名而通治理。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 22,
+            "quote": "名定而实辨，道行而志通",
+            "label": "荀子·正名"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "zhuang",
+          "rebut": "mo",
+          "point": "纵使两人相辩,辩成者未必真是、辩屈者未必真非;旁人各囿所同,终无人能为之裁正。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 2,
+            "quote": "既使我与若辩矣，若胜我",
+            "label": "庄子·齐物论"
+          }
+        },
+        {
+          "school": "mo",
+          "rebut": "zhuang",
+          "point": "言有三表可验:上本于古圣王之事,下察百姓耳目之实,用之刑政观其利,非无可依凭。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 28,
+            "quote": "有本之者，有原之者，有用之者",
+            "label": "墨子·非命上"
+          }
+        },
+        {
+          "school": "xun",
+          "rebut": "zhuang",
+          "point": "辨说是不更改实与名而申明动静之理;以正道辨别奸说,如拉直绳墨以校曲直,自有定准。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 22,
+            "quote": "以正道而辨奸，犹引绳以持曲直",
+            "label": "荀子·正名"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "是非一显,大道即随之亏损;执于昭明此是彼非,反成偏曲。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 2,
+            "quote": "是非之彰也，道之所以亏也",
+            "label": "庄子·齐物论"
+          }
+        },
+        {
+          "school": "xun",
+          "rebut": null,
+          "point": "圣王已没,名守松弛,奇辞乱实,故须辨说;期命辨说乃大文之具、王业之始。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 22,
+            "quote": "期命辨说也者，用之大文也",
+            "label": "荀子·正名"
+          }
+        },
+        {
+          "school": "mo",
+          "rebut": null,
+          "point": "对执命害义之说不可不加明辨,辨明方能立义于上、利及万民。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 28,
+            "quote": "不可不明辨",
+            "label": "墨子·非命上"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "分歧落在「辩之所止」:庄子向内消解彼是之偶,以为大辩不言、辩则有所不见;墨子向外立三表之仪,以本原用验言之是非利害;荀子由正名而辨说,视辨为通治、息奸、成王业之具。一者求泯是非以全道,二者求验是非以致用,三者求定名实以正辨——各有其衡,不相为断。"
+}

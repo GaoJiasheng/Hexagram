@@ -438,186 +438,875 @@
           "stance": "贵以贱为本"
         }
       ]
+    },
+    {
+      "id": "xinti",
+      "title": "心之本体",
+      "category": "性与心",
+      "concept": "心之本体",
+      "question": "心之本体,是天理、是良知,还是虚静?",
+      "turns": 8,
+      "status": "done",
+      "schools": [
+        {
+          "label": "程朱",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "性即理"
+        },
+        {
+          "label": "阳明",
+          "group": "xin",
+          "seal": "观心",
+          "stance": "心即理·良知"
+        },
+        {
+          "label": "庄子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "虚静·心斋"
+        }
+      ]
+    },
+    {
+      "id": "qingyu",
+      "title": "情与欲",
+      "category": "性与心",
+      "concept": "情与欲",
+      "question": "情欲当节、当寡,还是任其自然?",
+      "turns": 7,
+      "status": "done",
+      "schools": [
+        {
+          "label": "荀子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "化性节欲"
+        },
+        {
+          "label": "孟子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "养心寡欲"
+        },
+        {
+          "label": "老子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "少私寡欲·自然"
+        }
+      ]
+    },
+    {
+      "id": "lixin",
+      "title": "性即理 vs 心即理",
+      "category": "性与心",
+      "concept": "性即理 vs 心即理",
+      "question": "天理究竟安顿在「性」中,还是当下即在「心」上?求理是向所禀之性、事事物物上格穷,还是返求此心之本体?",
+      "turns": 7,
+      "status": "done",
+      "schools": [
+        {
+          "label": "程朱",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "性即理"
+        },
+        {
+          "label": "阳明",
+          "group": "xin",
+          "seal": "观心",
+          "stance": "心即理"
+        }
+      ]
+    },
+    {
+      "id": "shangen",
+      "title": "善之根源",
+      "category": "性与心",
+      "concept": "善之根源",
+      "question": "善，源于内在本心，还是外铄人为、上法于天？",
+      "turns": 7,
+      "status": "done",
+      "schools": [
+        {
+          "label": "孟子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "善端在我"
+        },
+        {
+          "label": "荀子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "善者伪也"
+        },
+        {
+          "label": "墨子",
+          "group": "mo",
+          "seal": "观兼",
+          "stance": "法仪取天"
+        }
+      ]
+    },
+    {
+      "id": "dunjian",
+      "title": "顿与渐",
+      "category": "工夫与学",
+      "concept": "顿与渐",
+      "question": "悟道,是当下顿了,还是渐次修习?",
+      "turns": 6,
+      "status": "done",
+      "schools": [
+        {
+          "label": "惠能·顿",
+          "group": "fo",
+          "seal": "观空",
+          "stance": "顿悟·自性"
+        },
+        {
+          "label": "神秀·渐",
+          "group": "fo",
+          "seal": "观空",
+          "stance": "渐修·拂拭"
+        }
+      ]
+    },
+    {
+      "id": "weixue",
+      "title": "为学之道",
+      "category": "工夫与学",
+      "concept": "为学之道",
+      "question": "为学,贵积、贵思,还是贵损?",
+      "turns": 7,
+      "status": "done",
+      "schools": [
+        {
+          "label": "荀子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "积学不舍"
+        },
+        {
+          "label": "孔子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "学思并进"
+        },
+        {
+          "label": "老子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "为道日损"
+        }
+      ]
+    },
+    {
+      "id": "gongfu",
+      "title": "工夫入手",
+      "category": "工夫与学",
+      "concept": "工夫入手",
+      "question": "修养工夫,究竟从主敬穷理入手,还是从致良知入手,抑或归于坐忘心斋?",
+      "turns": 7,
+      "status": "done",
+      "schools": [
+        {
+          "label": "程朱",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "主敬穷理"
+        },
+        {
+          "label": "阳明",
+          "group": "xin",
+          "seal": "观心",
+          "stance": "致良知"
+        },
+        {
+          "label": "庄子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "坐忘心斋"
+        }
+      ]
+    },
+    {
+      "id": "fade",
+      "title": "法与德孰先",
+      "category": "治道与政治",
+      "concept": "法与德孰先",
+      "question": "治民,当以德礼为先,还是以法刑为本?",
+      "turns": 8,
+      "status": "done",
+      "schools": [
+        {
+          "label": "韩非",
+          "group": "fa",
+          "seal": "观法",
+          "stance": "务法不务德"
+        },
+        {
+          "label": "孔子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "德礼为先"
+        },
+        {
+          "label": "荀子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "隆礼重法"
+        }
+      ]
+    },
+    {
+      "id": "shangxian",
+      "title": "尚贤与否",
+      "category": "治道与政治",
+      "concept": "尚贤与否",
+      "question": "治国，当尚贤使能，还是不尚贤使民不争？",
+      "turns": 6,
+      "status": "done",
+      "schools": [
+        {
+          "label": "墨子",
+          "group": "mo",
+          "seal": "观兼",
+          "stance": "尚贤为政本"
+        },
+        {
+          "label": "老子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "不尚贤"
+        },
+        {
+          "label": "孔子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "举贤才"
+        }
+      ]
+    },
+    {
+      "id": "fashushi",
+      "title": "法术势",
+      "category": "治道与政治",
+      "concept": "法术势",
+      "question": "君主治国,所恃在法、在术,还是在势?",
+      "turns": 8,
+      "status": "done",
+      "schools": [
+        {
+          "label": "商鞅",
+          "group": "fa",
+          "seal": "观法",
+          "stance": "任法"
+        },
+        {
+          "label": "慎到",
+          "group": "fa",
+          "seal": "观法",
+          "stance": "任势"
+        },
+        {
+          "label": "韩非",
+          "group": "fa",
+          "seal": "观法",
+          "stance": "法术势兼"
+        }
+      ]
+    },
+    {
+      "id": "fuguo",
+      "title": "富国之道",
+      "category": "治道与政治",
+      "concept": "富国之道",
+      "question": "富国,在耕战、节用、先富后教,还是寡欲?",
+      "turns": 9,
+      "status": "done",
+      "schools": [
+        {
+          "label": "商鞅",
+          "group": "fa",
+          "seal": "观法",
+          "stance": "农战"
+        },
+        {
+          "label": "孔子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "富而后教"
+        },
+        {
+          "label": "墨子",
+          "group": "mo",
+          "seal": "观兼",
+          "stance": "节用"
+        }
+      ]
+    },
+    {
+      "id": "jieyong",
+      "title": "节用 vs 礼乐",
+      "category": "治道与政治",
+      "concept": "节用 vs 礼乐",
+      "question": "财用,当节俭非乐,还是以礼乐养情?",
+      "turns": 6,
+      "status": "done",
+      "schools": [
+        {
+          "label": "墨子",
+          "group": "mo",
+          "seal": "观兼",
+          "stance": "节用非乐"
+        },
+        {
+          "label": "荀子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "礼乐养情"
+        }
+      ]
+    },
+    {
+      "id": "zhmrenyi",
+      "title": "纵横之术 vs 仁义",
+      "category": "治道与政治",
+      "concept": "纵横之术 vs 仁义",
+      "question": "取天下,凭揣摩纵横之术,还是凭仁义?",
+      "turns": 8,
+      "status": "done",
+      "schools": [
+        {
+          "label": "鬼谷子",
+          "group": "zong",
+          "seal": "观衡",
+          "stance": "揣摩捭阖"
+        },
+        {
+          "label": "孟子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "仁者无敌"
+        }
+      ]
+    },
+    {
+      "id": "sangqi",
+      "title": "丧期与孝",
+      "category": "伦理 · 义利 · 爱孝",
+      "concept": "丧期与孝",
+      "question": "丧亲之际，当守三年之丧以尽哀,还是节葬短丧以恤生?",
+      "turns": 4,
+      "status": "done",
+      "schools": [
+        {
+          "label": "孔子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "三年之丧"
+        },
+        {
+          "label": "墨子",
+          "group": "mo",
+          "seal": "观兼",
+          "stance": "节葬短丧"
+        }
+      ]
+    },
+    {
+      "id": "baoyuan",
+      "title": "报怨以德否",
+      "category": "伦理 · 义利 · 爱孝",
+      "concept": "报怨以德否",
+      "question": "报怨,当以德,还是以直?",
+      "turns": 6,
+      "status": "done",
+      "schools": [
+        {
+          "label": "老子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "报怨以德"
+        },
+        {
+          "label": "孔子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "以直报怨"
+        }
+      ]
+    },
+    {
+      "id": "yanxin",
+      "title": "言信与权变",
+      "category": "伦理 · 义利 · 爱孝",
+      "concept": "言信与权变",
+      "question": "言出必信,还是惟义所在、因势权变?",
+      "turns": 6,
+      "status": "done",
+      "schools": [
+        {
+          "label": "墨子",
+          "group": "mo",
+          "seal": "观兼",
+          "stance": "言必信行必果"
+        },
+        {
+          "label": "孟子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "言不必信·义之与比"
+        }
+      ]
+    },
+    {
+      "id": "zhongxiao",
+      "title": "忠孝之先",
+      "category": "伦理 · 义利 · 爱孝",
+      "concept": "忠孝之先",
+      "question": "忠君与孝亲,孰为先?",
+      "turns": 6,
+      "status": "done",
+      "schools": [
+        {
+          "label": "孔子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "孝悌为本"
+        },
+        {
+          "label": "韩非",
+          "group": "fa",
+          "seal": "观法",
+          "stance": "尽忠于君"
+        }
+      ]
+    },
+    {
+      "id": "daowei",
+      "title": "道之为道",
+      "category": "天人 · 形上 · 道",
+      "concept": "道之为道",
+      "question": "道,是法自然之常,是有情有信之化,还是人之所道?",
+      "turns": 8,
+      "status": "done",
+      "schools": [
+        {
+          "label": "老子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "道法自然"
+        },
+        {
+          "label": "庄子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "道·有情有信"
+        },
+        {
+          "label": "荀子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "人之所道"
+        }
+      ]
+    },
+    {
+      "id": "youwu",
+      "title": "有无之辨",
+      "category": "天人 · 形上 · 道",
+      "concept": "有无之辨",
+      "question": "万物,生于无,还是自生自化?",
+      "turns": 6,
+      "status": "done",
+      "schools": [
+        {
+          "label": "老子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "有生于无"
+        },
+        {
+          "label": "庄子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "万物自生"
+        }
+      ]
+    },
+    {
+      "id": "mingli",
+      "title": "命与力",
+      "category": "天人 · 形上 · 道",
+      "concept": "命与力",
+      "question": "成败,系于天命,还是系于强力?",
+      "turns": 5,
+      "status": "done",
+      "schools": [
+        {
+          "label": "孔子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "死生有命"
+        },
+        {
+          "label": "墨子",
+          "group": "mo",
+          "seal": "观兼",
+          "stance": "非命·强力"
+        }
+      ]
+    },
+    {
+      "id": "bianchang",
+      "title": "变与常",
+      "category": "天人 · 形上 · 道",
+      "concept": "变与常",
+      "question": "世道,以变为枢、以反为动,还是守其常?",
+      "turns": 9,
+      "status": "done",
+      "schools": [
+        {
+          "label": "老子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "反者道之动"
+        },
+        {
+          "label": "庄子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "物化无常"
+        },
+        {
+          "label": "荀子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "天行有常"
+        }
+      ]
+    },
+    {
+      "id": "yanbian",
+      "title": "言辩有用否",
+      "category": "名实 · 言辩 · 知",
+      "concept": "言辩有用否",
+      "question": "言辩,能明是非,还是辩无定准?",
+      "turns": 9,
+      "status": "done",
+      "schools": [
+        {
+          "label": "庄子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "辩无定准"
+        },
+        {
+          "label": "墨子",
+          "group": "mo",
+          "seal": "观兼",
+          "stance": "言必有仪"
+        },
+        {
+          "label": "荀子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "正名以辨"
+        }
+      ]
+    },
+    {
+      "id": "yanyi",
+      "title": "言与意",
+      "category": "名实 · 言辩 · 知",
+      "concept": "言与意",
+      "question": "言能尽意否？",
+      "turns": 8,
+      "status": "done",
+      "schools": [
+        {
+          "label": "庄子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "得意忘言"
+        },
+        {
+          "label": "孔子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "辞达而已"
+        },
+        {
+          "label": "荀子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "辨说指实"
+        }
+      ]
+    },
+    {
+      "id": "shifei",
+      "title": "是非有定否",
+      "category": "名实 · 言辩 · 知",
+      "concept": "是非有定否",
+      "question": "是非,有真定之准,还是彼亦一是非?",
+      "turns": 6,
+      "status": "done",
+      "schools": [
+        {
+          "label": "墨子",
+          "group": "mo",
+          "seal": "观兼",
+          "stance": "言有三表"
+        },
+        {
+          "label": "庄子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "彼亦一是非"
+        }
+      ]
+    },
+    {
+      "id": "shenti",
+      "title": "身之态度",
+      "category": "生死 · 身 · 苦乐",
+      "concept": "身之态度",
+      "question": "于此身,当全生养之,杀身成仁,还是观其无我?",
+      "turns": 9,
+      "status": "done",
+      "schools": [
+        {
+          "label": "庄子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "全生养身"
+        },
+        {
+          "label": "孔子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "杀身成仁"
+        },
+        {
+          "label": "金刚经",
+          "group": "fo",
+          "seal": "观空",
+          "stance": "无我相"
+        }
+      ]
+    },
+    {
+      "id": "kule",
+      "title": "苦与乐",
+      "category": "生死 · 身 · 苦乐",
+      "concept": "苦与乐",
+      "question": "人生,是苦海,是安贫之乐,还是逍遥之乐?",
+      "turns": 7,
+      "status": "done",
+      "schools": [
+        {
+          "label": "孔颜",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "安贫乐道"
+        },
+        {
+          "label": "庄子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "逍遥之乐"
+        },
+        {
+          "label": "金刚经",
+          "group": "fo",
+          "seal": "观空",
+          "stance": "如梦幻泡影"
+        }
+      ]
+    },
+    {
+      "id": "chuchu",
+      "title": "出处 · 隐与仕",
+      "category": "生死 · 身 · 苦乐",
+      "concept": "出处 · 隐与仕",
+      "question": "士之出处,当逍遥辞世,知不可而为,还是尽用其能?",
+      "turns": 9,
+      "status": "done",
+      "schools": [
+        {
+          "label": "庄子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "逍遥辞世"
+        },
+        {
+          "label": "孔子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "知不可而为"
+        },
+        {
+          "label": "韩非",
+          "group": "fa",
+          "seal": "观法",
+          "stance": "尽用其能"
+        }
+      ]
+    },
+    {
+      "id": "wenzhi",
+      "title": "文与质",
+      "category": "礼 · 文 · 乐",
+      "concept": "文与质",
+      "question": "立身处世,当以文质相称为美,还是返朴去饰、先实用而后文采?",
+      "turns": 7,
+      "status": "done",
+      "schools": [
+        {
+          "label": "孔子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "文质彬彬"
+        },
+        {
+          "label": "老子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "见素抱朴"
+        },
+        {
+          "label": "墨子",
+          "group": "mo",
+          "seal": "观兼",
+          "stance": "先质后文"
+        }
+      ]
+    },
+    {
+      "id": "yueyong",
+      "title": "乐之用",
+      "category": "礼 · 文 · 乐",
+      "concept": "乐之用",
+      "question": "乐,能化民成俗,徒费无用,还是大音希声?",
+      "turns": 9,
+      "status": "done",
+      "schools": [
+        {
+          "label": "荀子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "乐以治心"
+        },
+        {
+          "label": "墨子",
+          "group": "mo",
+          "seal": "观兼",
+          "stance": "非乐"
+        },
+        {
+          "label": "老子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "大音希声"
+        }
+      ]
+    },
+    {
+      "id": "bingjia",
+      "title": "兵家三家",
+      "category": "组内多方",
+      "concept": "兵家三家",
+      "question": "用兵之要，在诡道、在治军，还是在形势刑赏？",
+      "turns": 8,
+      "status": "done",
+      "schools": [
+        {
+          "label": "孙子",
+          "group": "bing",
+          "seal": "观兵",
+          "stance": "诡道"
+        },
+        {
+          "label": "吴子",
+          "group": "bing",
+          "seal": "观兵",
+          "stance": "内修文德"
+        },
+        {
+          "label": "尉缭子",
+          "group": "bing",
+          "seal": "观兵",
+          "stance": "刑赏形势"
+        }
+      ]
+    },
+    {
+      "id": "ruxing",
+      "title": "儒门性论流变",
+      "category": "组内多方",
+      "concept": "儒门性论流变",
+      "question": "儒门论性:性善、性恶、性即理、心即理,流变如何?",
+      "turns": 9,
+      "status": "done",
+      "schools": [
+        {
+          "label": "孟子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "性善"
+        },
+        {
+          "label": "荀子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "性恶"
+        },
+        {
+          "label": "程朱",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "性即理"
+        },
+        {
+          "label": "阳明",
+          "group": "xin",
+          "seal": "观心",
+          "stance": "心即理"
+        }
+      ]
+    },
+    {
+      "id": "buxiu",
+      "title": "名与无名",
+      "category": "会通",
+      "concept": "名与无名",
+      "question": "人生在世,当求扬名不朽,守无名之朴,还是取势致富贵?",
+      "turns": 8,
+      "status": "done",
+      "schools": [
+        {
+          "label": "孔子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "疾没世名不称"
+        },
+        {
+          "label": "庄子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "圣人无名"
+        },
+        {
+          "label": "纵横",
+          "group": "zong",
+          "seal": "观衡",
+          "stance": "取卿相之尊"
+        }
+      ]
     }
   ],
-  "planned": [
-    {
-      "category": "性与心",
-      "items": [
-        {
-          "title": "心之本体",
-          "parties": "阳明·程朱·庄子"
-        },
-        {
-          "title": "情与欲",
-          "parties": "荀子·孟子·老庄"
-        },
-        {
-          "title": "性即理 vs 心即理",
-          "parties": "程朱·陆王"
-        },
-        {
-          "title": "善之根源",
-          "parties": "孟子·荀子·墨子"
-        }
-      ]
-    },
-    {
-      "category": "工夫与学",
-      "items": [
-        {
-          "title": "顿与渐",
-          "parties": "坛经·渐修"
-        },
-        {
-          "title": "为学之道",
-          "parties": "荀子·老子·孔子"
-        },
-        {
-          "title": "工夫入手",
-          "parties": "程朱·阳明·庄子"
-        }
-      ]
-    },
-    {
-      "category": "治道与政治",
-      "items": [
-        {
-          "title": "法与德孰先",
-          "parties": "韩非·孔子·荀子"
-        },
-        {
-          "title": "尚贤与否",
-          "parties": "墨子·老子·孔子"
-        },
-        {
-          "title": "法术势",
-          "parties": "商鞅·慎到·申韩"
-        },
-        {
-          "title": "富国之道",
-          "parties": "商君·孔子·墨子·老子"
-        },
-        {
-          "title": "节用 vs 礼乐",
-          "parties": "墨子·荀子"
-        },
-        {
-          "title": "纵横之术 vs 仁义",
-          "parties": "鬼谷·孟子"
-        }
-      ]
-    },
-    {
-      "category": "伦理 · 义利 · 爱孝",
-      "items": [
-        {
-          "title": "丧期与孝",
-          "parties": "孔子·墨子"
-        },
-        {
-          "title": "报怨以德否",
-          "parties": "老子·孔子"
-        },
-        {
-          "title": "言信与权变",
-          "parties": "墨子·孟子·纵横"
-        },
-        {
-          "title": "忠孝之先",
-          "parties": "儒家·法家"
-        }
-      ]
-    },
-    {
-      "category": "天人 · 形上 · 道",
-      "items": [
-        {
-          "title": "道之为道",
-          "parties": "老子·系辞·荀子"
-        },
-        {
-          "title": "有无之辨",
-          "parties": "老子·庄子"
-        },
-        {
-          "title": "命与力",
-          "parties": "孔子·墨子"
-        },
-        {
-          "title": "变与常",
-          "parties": "系辞·老子·荀子"
-        }
-      ]
-    },
-    {
-      "category": "名实 · 言辩 · 知",
-      "items": [
-        {
-          "title": "言辩有用否",
-          "parties": "庄子·墨子·荀子"
-        },
-        {
-          "title": "言与意",
-          "parties": "庄子·系辞·儒家"
-        },
-        {
-          "title": "是非有定否",
-          "parties": "墨子·庄子"
-        }
-      ]
-    },
-    {
-      "category": "生死 · 身 · 苦乐",
-      "items": [
-        {
-          "title": "身之态度",
-          "parties": "庄子·孔子·金刚经"
-        },
-        {
-          "title": "苦与乐",
-          "parties": "佛·孔颜·庄子"
-        },
-        {
-          "title": "出处 · 隐与仕",
-          "parties": "庄子·孔子·韩非"
-        }
-      ]
-    },
-    {
-      "category": "礼 · 文 · 乐",
-      "items": [
-        {
-          "title": "文与质",
-          "parties": "孔子·老子·墨子"
-        },
-        {
-          "title": "乐之用",
-          "parties": "荀孔·墨子·老子"
-        }
-      ]
-    },
-    {
-      "category": "组内多方",
-      "items": [
-        {
-          "title": "兵家三家",
-          "parties": "孙子·吴子·尉缭"
-        },
-        {
-          "title": "儒门性论流变",
-          "parties": "孟·荀·程朱·陆王"
-        }
-      ]
-    },
-    {
-      "category": "会通",
-      "items": [
-        {
-          "title": "三不朽 vs 无名 vs 取势",
-          "parties": "儒家·老庄·纵横"
-        }
-      ]
-    }
-  ]
+  "planned": []
 }

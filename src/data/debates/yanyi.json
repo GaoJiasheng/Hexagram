@@ -1,0 +1,145 @@
+{
+  "id": "yanyi",
+  "title": "言与意",
+  "category": "名实 · 言辩 · 知",
+  "concept": "言与意",
+  "question": "言能尽意否？",
+  "framing": "书不尽言，言不尽意；然圣人立象以尽意，设辞以尽其变——三家各执其端。",
+  "schools": [
+    {
+      "key": "zhuang",
+      "label": "庄子",
+      "group": "dao",
+      "seal": "观道",
+      "stance": "得意忘言"
+    },
+    {
+      "key": "kong",
+      "label": "孔子",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "辞达而已"
+    },
+    {
+      "key": "xun",
+      "label": "荀子",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "辨说指实"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "大道无封、本不可言尽；言一旦逐于浮华巧饰，真意反被遮蔽，是非由此而起。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 2,
+            "quote": "道隐于小成，言隐于荣华",
+            "label": "庄子·齐物论"
+          }
+        },
+        {
+          "school": "kong",
+          "rebut": null,
+          "point": "言辞之责在于把意思传达明白，能达意即可，不必雕琢繁缛、徒逞文采。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 15,
+            "quote": "辞，达而已矣",
+            "label": "论语·卫灵公"
+          }
+        },
+        {
+          "school": "xun",
+          "rebut": null,
+          "point": "辨说是心对道的摹写;制名立辞正所以指认实物、明贵贱辨同异，言可承载心志之道。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 22,
+            "quote": "辨说也者，心之象道也",
+            "label": "荀子·正名"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "zhuang",
+          "rebut": "xun",
+          "point": "辨析愈密、名相愈繁，言反够不着真际;最高的明辩恰在于不假言说。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 2,
+            "quote": "大辩不言",
+            "label": "庄子·齐物论"
+          }
+        },
+        {
+          "school": "xun",
+          "rebut": "zhuang",
+          "point": "若废名舍辨,则实无以喻、志无以通;唯有为之分别制名以指实，物事方不混淆。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 22,
+            "quote": "知者为之分别制名以指实",
+            "label": "荀子·正名"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        {
+          "school": "kong",
+          "rebut": null,
+          "point": "言不在多寡华质，而在能否使名实相符、意旨通达;达则止，过则赘。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 15,
+            "quote": "辞，达而已矣",
+            "label": "论语·卫灵公"
+          }
+        },
+        {
+          "school": "xun",
+          "rebut": null,
+          "point": "名一立而实即得喻,这正是名的功用所在;名实相称,言便足以尽其所指。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 22,
+            "quote": "名闻而实喻，名之用也",
+            "label": "荀子·正名"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "言辩纵极尽巧妙，终究触不到那不可言之处;知止于所不知，才是极致。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 2,
+            "quote": "言辩而不及",
+            "label": "庄子·齐物论"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "三家同坐于「言」前而趣向各异：庄子从道之浑全处看,见言之有所不及，故贵忘言而得意;孔子从应世传达处看,以达意为辞之本分，不务繁华;荀子从正名治世处看,信辨说能象道指实、名定而实辨。一向无言之境敞开，一就达意立界，一以辨实为用——分歧落在「言所能至之边际」何在，而非言之当废当存。"
+}

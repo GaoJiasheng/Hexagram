@@ -1,0 +1,121 @@
+{
+  "id": "shangxian",
+  "title": "尚贤与否",
+  "category": "治道与政治",
+  "concept": "尚贤与否",
+  "question": "治国，当尚贤使能，还是不尚贤使民不争？",
+  "framing": "同问治本，墨子求贤之进、老子求争之息、孔子求举之正，各执一端而皆系于民心。",
+  "schools": [
+    {
+      "key": "mo",
+      "label": "墨子",
+      "group": "mo",
+      "seal": "观兼",
+      "stance": "尚贤为政本"
+    },
+    {
+      "key": "lao",
+      "label": "老子",
+      "group": "dao",
+      "seal": "观道",
+      "stance": "不尚贤"
+    },
+    {
+      "key": "kong",
+      "label": "孔子",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "举贤才"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        {
+          "school": "mo",
+          "rebut": null,
+          "point": "贤良之士多则国治厚，少则国治薄；故举贤使能正是为政之根本。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 8,
+            "quote": "夫尚贤者，政之本也",
+            "label": "墨子·尚贤上"
+          }
+        },
+        {
+          "school": "lao",
+          "rebut": null,
+          "point": "标榜贤名反而挑动争竞，不崇尚贤名，民才不去争夺攀比。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 3,
+            "quote": "不尚贤，使民不争",
+            "label": "道德经·三章"
+          }
+        },
+        {
+          "school": "kong",
+          "rebut": null,
+          "point": "为政先各专其职、宽宥小过，再选拔有才德之人任事。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 13,
+            "quote": "先有司。赦小过。举贤才",
+            "label": "论语·子路"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "lao",
+          "rebut": "mo",
+          "point": "以富贵荣誉招引众贤，正是把贤名抬成众人争逐之物，反失清静。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 3,
+            "quote": "常使民无知无欲",
+            "label": "道德经·三章"
+          }
+        },
+        {
+          "school": "mo",
+          "rebut": "lao",
+          "point": "若执政者不以尚贤使能为政，国治便日趋浇薄，此乃失本之由。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 8,
+            "quote": "不能以尚贤事能为政也",
+            "label": "墨子·尚贤上"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        {
+          "school": "kong",
+          "rebut": "lao",
+          "point": "举用正直之人置于邪枉之上，民心自然归服，举贤不必引争。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 2,
+            "quote": "举直错诸枉，则民服",
+            "label": "论语·为政"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "三家同悬「民」于心而分途：墨子以举贤为治国之本、惟恐贤者不进，老子忧贤名启争、欲息竞复朴，孔子折中于举直正枉、求贤而归于民服。分歧落在「贤」当显扬抑或隐没、治在进贤抑或止争，各成一家之言，并存而不相掩。"
+}

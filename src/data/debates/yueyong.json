@@ -1,0 +1,157 @@
+{
+  "id": "yueyong",
+  "title": "乐之用",
+  "category": "礼 · 文 · 乐",
+  "concept": "乐之用",
+  "question": "乐,能化民成俗,徒费无用,还是大音希声?",
+  "framing": "声音动静之间,三家各问:此声所成者何?",
+  "schools": [
+    {
+      "key": "xun",
+      "label": "荀子",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "乐以治心"
+    },
+    {
+      "key": "mo",
+      "label": "墨子",
+      "group": "mo",
+      "seal": "观兼",
+      "stance": "非乐"
+    },
+    {
+      "key": "lao",
+      "label": "老子",
+      "group": "dao",
+      "seal": "观道",
+      "stance": "大音希声"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        {
+          "school": "xun",
+          "rebut": null,
+          "point": "乐本是人情不可免的喜悦,先王立雅颂以正其声,使其感动人之善心而不流于邪乱。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 20,
+            "quote": "夫乐者，乐也，人情之所必不免也",
+            "label": "荀子·乐论"
+          }
+        },
+        {
+          "school": "mo",
+          "rebut": null,
+          "point": "上不合圣王之事,下不合万民之利,聚敛百姓之财以为钟鼓琴笙,故判定为乐是不可取的。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 27,
+            "quote": "下度之不中万民之利。是故子墨子曰：为乐非也",
+            "label": "墨子·非乐上"
+          }
+        },
+        {
+          "school": "lao",
+          "rebut": null,
+          "point": "最大的声不在耳可闻的繁响,最大的象不在目可见的形貌,大成之物反似简朴未足。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 41,
+            "quote": "大音希声，",
+            "label": "道德经·四十一章"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "mo",
+          "rebut": "xun",
+          "point": "百姓有饥寒劳三患:饥者无食、寒者无衣、劳者无息,此时撞钟击鼓,衣食之财从何而来。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 27,
+            "quote": "饥者不得食，寒者不得衣，劳者不得息",
+            "label": "墨子·非乐上"
+          }
+        },
+        {
+          "school": "xun",
+          "rebut": "mo",
+          "point": "乐能感人至深、移风易俗,故先王以礼乐导民而和睦,非徒费,正所以善养民心。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 20,
+            "quote": "可以善民心，其感人深，其移风易俗",
+            "label": "荀子·乐论"
+          }
+        },
+        {
+          "school": "lao",
+          "rebut": "xun",
+          "point": "成器待时而晚就,大方反无棱角,凡求其极致者,皆离开外在的繁饰与可见之形。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 41,
+            "quote": "大方无隅，",
+            "label": "道德经·四十一章"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        {
+          "school": "xun",
+          "rebut": null,
+          "point": "乐行则心志清明,礼修则德行有成,以道制欲故乐而不乱,乐之归宿在治心而非纵欲。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 20,
+            "quote": "故乐行而志清，礼修而行成",
+            "label": "荀子·乐论"
+          }
+        },
+        {
+          "school": "mo",
+          "rebut": null,
+          "point": "仁者为天下谋,不为耳目口体之美而亏夺民众衣食之财,凡夺民所需者仁者不为。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 27,
+            "quote": "以此亏夺民衣食之财，仁者弗为也",
+            "label": "墨子·非乐上"
+          }
+        },
+        {
+          "school": "lao",
+          "rebut": null,
+          "point": "大象无形,道隐于无名,真正广大者不落于一声一象,故不在有声处争其有用无用。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 41,
+            "quote": "大象无形，",
+            "label": "道德经·四十一章"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "荀子问乐能否治心成俗,墨子问乐是否夺民之利,老子则把目光移向有声之外的大音希声。三家所执非在一处:一论其化育之功,一论其耗费之实,一指其形声之表与道隐之里。声音动静之间,各守其旨,会而不判。"
+}

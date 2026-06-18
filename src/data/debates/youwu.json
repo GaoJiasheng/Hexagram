@@ -1,0 +1,114 @@
+{
+  "id": "youwu",
+  "title": "有无之辨",
+  "category": "天人 · 形上 · 道",
+  "concept": "有无之辨",
+  "question": "万物,生于无,还是自生自化?",
+  "framing": "同出于道家一脉,而问万物所自:一溯其本于无,一观其化于自然。",
+  "schools": [
+    {
+      "key": "lao",
+      "label": "老子",
+      "group": "dao",
+      "seal": "观道",
+      "stance": "有生于无"
+    },
+    {
+      "key": "zhuang",
+      "label": "庄子",
+      "group": "dao",
+      "seal": "观道",
+      "stance": "万物自生"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        {
+          "school": "lao",
+          "rebut": null,
+          "point": "万物有其本根,可见之有又源出于不可见之无,故无是有之所自来。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 40,
+            "quote": "天下万物生于有，有生于无。",
+            "label": "道德经·四十章"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "万物各凭自身而成,各取其所是,鼓动者并无主名,不待外有所生。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 2,
+            "quote": "夫吹万不同，而使其自己也",
+            "label": "庄子·齐物论"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "zhuang",
+          "rebut": "lao",
+          "point": "若推到极处,本无所谓物,有与无之分亦未可定,何必立无为有之先?",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 2,
+            "quote": "有以为未始有物者，至矣",
+            "label": "庄子·齐物论"
+          }
+        },
+        {
+          "school": "lao",
+          "rebut": "zhuang",
+          "point": "有无本相待而显,不是各自孤立;言自生,亦须就有无相生处看其相成。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 2,
+            "quote": "故有无相生，难易相成",
+            "label": "道德经·二章"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "试言有无之层层向上,终至连有无之辨亦未尝起,则万物与我并生一体。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 2,
+            "quote": "天地与我并生，而万物与我为一",
+            "label": "庄子·齐物论"
+          }
+        },
+        {
+          "school": "lao",
+          "rebut": null,
+          "point": "道之运作返于其反,以柔弱为用;万物之兴皆顺其自然而不加宰制。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 2,
+            "quote": "万物作焉而不辞，生而不有",
+            "label": "道德经·二章"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "两家同归于道家,而问处不同:老子溯万物所自,立无为有之本,见生成有其根源;庄子观万物所化,泯有无之执,见各自取而无所待。一重其所从来,一重其所自尔,分歧落在「本根」与「自然」两种看法之间。"
+}

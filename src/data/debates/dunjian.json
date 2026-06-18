@@ -1,0 +1,114 @@
+{
+  "id": "dunjian",
+  "title": "顿与渐",
+  "category": "工夫与学",
+  "concept": "顿与渐",
+  "question": "悟道,是当下顿了,还是渐次修习?",
+  "framing": "法本一宗,见有迟疾——同居菩提树下,一问拂拭可勤,一问尘埃何在。",
+  "schools": [
+    {
+      "key": "dun",
+      "label": "惠能·顿",
+      "group": "fo",
+      "seal": "观空",
+      "stance": "顿悟·自性"
+    },
+    {
+      "key": "jian",
+      "label": "神秀·渐",
+      "group": "fo",
+      "seal": "观空",
+      "stance": "渐修·拂拭"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        {
+          "school": "jian",
+          "rebut": null,
+          "point": "心如明镜,本自光明,却日染尘劳;唯有时时擦拭、念念修持,方能保此明净不昧。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "tanjing",
+            "ch": 1,
+            "quote": "身是菩提树心如明镜台时时勤拂拭",
+            "label": "坛经·行由品"
+          }
+        },
+        {
+          "school": "dun",
+          "rebut": null,
+          "point": "自性本来清净,迷悟只在一念之间;此心一悟,当下即是佛,不须层层积累。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "tanjing",
+            "ch": 2,
+            "quote": "一念悟时，众生是佛",
+            "label": "坛经·般若品"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "dun",
+          "rebut": "jian",
+          "point": "诘渐修者:若本性清净本无一物,镜台尘埃皆是妄设,日日拂拭岂非反在心上添一重执着?",
+          "cite": {
+            "corpus": "fo",
+            "slug": "tanjing",
+            "ch": 2,
+            "quote": "何不从心中顿见真如本性",
+            "label": "坛经·般若品"
+          }
+        },
+        {
+          "school": "jian",
+          "rebut": "dun",
+          "point": "诘顿悟者:不假安住观照之功,妄言一悟便了,恐流于口说而身不行,故须长坐摄心、循序而进。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "tanjing",
+            "ch": 8,
+            "quote": "住心观净，长坐不卧",
+            "label": "坛经·顿渐品"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        {
+          "school": "dun",
+          "rebut": "jian",
+          "point": "申辩:于五祖处一闻便契,顿见真如,可证悟在言下、不待渐积;此非废修,乃修在见性之后。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "tanjing",
+            "ch": 2,
+            "quote": "一闻言下便开悟，顿见真如本性",
+            "label": "坛经·般若品"
+          }
+        },
+        {
+          "school": "jian",
+          "rebut": "dun",
+          "point": "申辩:利钝有别,顿契者少而渐修者多;为众生立拂拭之方便,正所以护持其将明未明之心。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "tanjing",
+            "ch": 1,
+            "quote": "勿使惹尘埃",
+            "label": "坛经·行由品"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "两偈同悬于菩提树下:一说时时拂拭以护明镜,一说本无一物何处惹尘。分歧落在「悟」是渐次积功的果、还是当下见性的因——是先修后悟,抑或悟后起修。坛经自言「法无顿渐,人有利钝」,顿渐之名本为应机而立,各成一门见性之路。"
+}

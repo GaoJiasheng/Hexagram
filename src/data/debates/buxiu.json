@@ -1,0 +1,145 @@
+{
+  "id": "buxiu",
+  "title": "名与无名",
+  "category": "会通",
+  "concept": "名与无名",
+  "question": "人生在世,当求扬名不朽,守无名之朴,还是取势致富贵?",
+  "framing": "名者,或为德之表,或为实之宾,或为势之资——一名而三义,各家由此分途。",
+  "schools": [
+    {
+      "key": "kong",
+      "label": "孔子",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "疾没世名不称"
+    },
+    {
+      "key": "zhuang",
+      "label": "庄子",
+      "group": "dao",
+      "seal": "观道",
+      "stance": "圣人无名"
+    },
+    {
+      "key": "gui",
+      "label": "纵横",
+      "group": "zong",
+      "seal": "观衡",
+      "stance": "取卿相之尊"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        {
+          "school": "kong",
+          "rebut": null,
+          "point": "君子最忧心的,是终其一生而名声不被人称道——名是德行所成、当之无愧的回响。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 15,
+            "quote": "君子疾没世而名不称焉",
+            "label": "论语·卫灵公"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "修养至极者,至人忘己、神人无所建功、圣人不立名号——名是身外多余的负累。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 1,
+            "quote": "至人无己，神人无功，圣人无名",
+            "label": "庄子·逍遥游"
+          }
+        },
+        {
+          "school": "gui",
+          "rebut": null,
+          "point": "苏秦发愤揣摩,自问:游说君主而不能换来金玉锦绣、卿相高位,这样的口才有何用?",
+          "cite": {
+            "corpus": "zong",
+            "slug": "zhanguoce",
+            "ch": 1,
+            "quote": "安有说人主不能出其金玉锦绣，取卿相之尊者乎",
+            "label": "战国策·秦策"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "zhuang",
+          "rebut": "kong",
+          "point": "对孔子说:尧让天下,许由辞而不受,直言名不过是实的附庸——名既为宾,何必终身忧它不彰?",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 1,
+            "quote": "名者，实之宾也",
+            "label": "庄子·逍遥游"
+          }
+        },
+        {
+          "school": "kong",
+          "rebut": "gui",
+          "point": "对纵横说:富贵人人想要,但不由正道得来便不可安处;离了仁,又凭什么成就名声?",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 4,
+            "quote": "君子去仁，恶乎成名",
+            "label": "论语·里仁"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        {
+          "school": "gui",
+          "rebut": "zhuang",
+          "point": "回应世态炎凉:苏秦贫困时父母不认,显贵后嫂蛇行下拜——问她何以前倨后卑,答曰因你位尊多金。名位之实,不容轻看。",
+          "cite": {
+            "corpus": "zong",
+            "slug": "zhanguoce",
+            "ch": 1,
+            "quote": "何前倨而后卑也",
+            "label": "战国策·秦策"
+          }
+        },
+        {
+          "school": "kong",
+          "rebut": null,
+          "point": "求名当转而求己:君子只忧自己无能,不忧别人不知——名应是反求诸己之后的自然结果。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 15,
+            "quote": "君子病无能焉，不病人之不己知也",
+            "label": "论语·卫灵公"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "落到养生处世:做善事不要近于求名,做恶事不要近于刑戮,循中道而行,如此可全身尽年。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 3,
+            "quote": "为善无近名，为恶无近刑",
+            "label": "庄子·养生主"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "三家分歧不在于名是否真实,而在于把名安放在何处:孔子以名为德之外显,故疾没世不称、反求诸己;庄子以名为实之宾客,故神人无名、为善不近名;纵横家以名位为势之凭借,故揣摩以取卿相、直面世情冷暖。一为成德,一为全生,一为济世进取,各承其所重而行,本场只列三途并陈,各存其义而已。"
+}

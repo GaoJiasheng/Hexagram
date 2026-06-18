@@ -1,0 +1,114 @@
+{
+  "id": "shifei",
+  "title": "是非有定否",
+  "category": "名实 · 言辩 · 知",
+  "concept": "是非有定否",
+  "question": "是非,有真定之准,还是彼亦一是非?",
+  "framing": "言而毋仪,譬犹运钧之上而立朝夕者也——立言究竟有无可凭之准?墨庄各陈所见。",
+  "schools": [
+    {
+      "key": "mo",
+      "label": "墨子",
+      "group": "mo",
+      "seal": "观兼",
+      "stance": "言有三表"
+    },
+    {
+      "key": "zhuang",
+      "label": "庄子",
+      "group": "dao",
+      "seal": "观道",
+      "stance": "彼亦一是非"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        {
+          "school": "mo",
+          "rebut": null,
+          "point": "立言不可无凭。当以本于古圣王之事、原察百姓耳目之实、用于国家百姓之利三者为准,是非利害方可明知。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 28,
+            "quote": "有本之者，有原之者，有用之者",
+            "label": "墨子·非命上"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "是非随立场而生,自彼则彼是,自此则此是,两边各执一套是非,本无定准可分。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 2,
+            "quote": "彼亦一是非，此亦一是非",
+            "label": "庄子·齐物论"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "mo",
+          "rebut": "zhuang",
+          "point": "若言而无准,如立于转动的陶钧上画朝夕方位,是非利害终不可明,治乱赏罚亦无从分辨。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 28,
+            "quote": "言必立仪，言而毋仪",
+            "label": "墨子·非命上"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": "mo",
+          "point": "欲肯定对方所否、否定对方所肯,这般争辩没有出路;不如以空明之心观照,听其两行。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 2,
+            "quote": "欲是其所非而非其所是，则莫若以明",
+            "label": "庄子·齐物论"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        {
+          "school": "mo",
+          "rebut": null,
+          "point": "三表非空谈:验之于民众见闻之实,用之于政刑,看是否合于百姓人民的实利,准在效验。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 28,
+            "quote": "观其中国家百姓人民之利",
+            "label": "墨子·非命上"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "我与你相辩,谁也无法判定谁,请第三者来也各有所偏——彼此原难相知,何必强争一是。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 2,
+            "quote": "我与若不能相知也",
+            "label": "庄子·齐物论"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "分歧落在「准」的有无与所在:墨子求一可公验的尺度,以本原用三表立言、以民利为衡,使是非可辨、政教可行;庄子则照见是非随观点而转,主张息辩照天、和之以是非而两行,使心不滞于一偏。一者立准以致用,一者去执以养神,各为「是非」一题留下不同的安顿。"
+}

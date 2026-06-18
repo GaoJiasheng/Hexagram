@@ -1,0 +1,157 @@
+{
+  "id": "shenti",
+  "title": "身之态度",
+  "category": "生死 · 身 · 苦乐",
+  "concept": "身之态度",
+  "question": "于此身,当全生养之,杀身成仁,还是观其无我?",
+  "framing": "同坐而论身:或护其全,或舍其全,或照见其本无可执——各述所安,不较短长。",
+  "schools": [
+    {
+      "key": "zhuang",
+      "label": "庄子",
+      "group": "dao",
+      "seal": "观道",
+      "stance": "全生养身"
+    },
+    {
+      "key": "kong",
+      "label": "孔子",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "杀身成仁"
+    },
+    {
+      "key": "jin",
+      "label": "金刚经",
+      "group": "fo",
+      "seal": "观空",
+      "stance": "无我相"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "顺中道而行,无近名无近刑,如此可护全身躯、养尽天年,身是当善守的根本。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 3,
+            "quote": "缘督以为经，可以保身，可以全生",
+            "label": "庄子·养生主"
+          }
+        },
+        {
+          "school": "kong",
+          "rebut": null,
+          "point": "志士仁人不会为求活命而损害仁,反倒肯以舍身来成全仁,身可让位于义。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 15,
+            "quote": "无求生以害仁，有杀身以成仁",
+            "label": "论语·卫灵公"
+          }
+        },
+        {
+          "school": "jin",
+          "rebut": null,
+          "point": "菩萨若执有我相人相众生相寿者相,便不成其为菩萨——身本无一定的我可执。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "jingangjing",
+            "ch": 3,
+            "quote": "若菩萨有我相、人相、众生相、寿者相，即非菩萨",
+            "label": "金刚经·大乘正宗分"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "zhuang",
+          "rebut": "kong",
+          "point": "若以舍身相期,岂非如泽中野雉宁愿樊笼?身得其天年自在,方是顺生之道。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 3,
+            "quote": "泽雉十步一啄，百步一饮，不蕲畜乎樊中",
+            "label": "庄子·养生主"
+          }
+        },
+        {
+          "school": "kong",
+          "rebut": "zhuang",
+          "point": "弘道在人不在身,当仁之际连师长亦不相让,身只是行道之具而非所守之极。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 15,
+            "quote": "当仁，不让于师",
+            "label": "论语·卫灵公"
+          }
+        },
+        {
+          "school": "jin",
+          "rebut": "kong",
+          "point": "纵度无量众生,实无一众生可度;成仁舍身之念里,那能成、所成之相亦当照空。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "jingangjing",
+            "ch": 3,
+            "quote": "如是灭度无量无数无边众生，实无众生得灭度者",
+            "label": "金刚经·大乘正宗分"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        {
+          "school": "kong",
+          "rebut": null,
+          "point": "弘道者是人,非道来抬举人;唯其如此,人方须以身担道,身之存舍皆系于此一担当。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 15,
+            "quote": "人能弘道，非道弘人",
+            "label": "论语·卫灵公"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": "jin",
+          "point": "安于所遇、顺其所往,哀乐便不入于心;身之去来既如是,守养与执取本可两忘。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 3,
+            "quote": "安时而处顺，哀乐不能入也",
+            "label": "庄子·养生主"
+          }
+        },
+        {
+          "school": "jin",
+          "rebut": null,
+          "point": "若通达无我、无法,如来才说他是真菩萨;护身、舍身之外,更有照见身本无实的一层。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "jingangjing",
+            "ch": 17,
+            "quote": "若菩萨通达无我、法者，如来说名真是菩萨",
+            "label": "金刚经·究竟无我分"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "三家分歧落在对身的安顿处:庄子以全生养身为顺天之常,孔子以舍身成仁为担道之极,金刚经则照见身相本空、能舍所舍俱不可执。一护其全、一让于义、一观其无我,各安所是,并存而不相摄。"
+}

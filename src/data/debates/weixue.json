@@ -1,0 +1,133 @@
+{
+  "id": "weixue",
+  "title": "为学之道",
+  "category": "工夫与学",
+  "concept": "为学之道",
+  "question": "为学,贵积、贵思,还是贵损?",
+  "framing": "同问为学，而积、思、损三说各执一端，会而通之。",
+  "schools": [
+    {
+      "key": "xun",
+      "label": "荀子",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "积学不舍"
+    },
+    {
+      "key": "kong",
+      "label": "孔子",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "学思并进"
+    },
+    {
+      "key": "lao",
+      "label": "老子",
+      "group": "dao",
+      "seal": "观道",
+      "stance": "为道日损"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        {
+          "school": "xun",
+          "rebut": null,
+          "point": "学是终身不可停歇之事，须靠点滴累积成就，如积土成山、积水成渊，功夫全在日积不舍。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 1,
+            "quote": "积土成山，风雨兴焉；积水成渊，蛟龙生焉",
+            "label": "荀子·劝学篇"
+          }
+        },
+        {
+          "school": "kong",
+          "rebut": null,
+          "point": "为学须学与思两端并用，只学不思则茫然无得，只思不学则疑而不安，二者不可偏废。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 2,
+            "quote": "学而不思则罔，思而不学则殆",
+            "label": "论语·为政"
+          }
+        },
+        {
+          "school": "lao",
+          "rebut": null,
+          "point": "求知识在于日日增益，而体道则在于日日减损，损去机巧成见以至于无为，所求与为学相反。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 48,
+            "quote": "为学日益，为道日损",
+            "label": "道德经·四十八章"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "lao",
+          "rebut": "xun",
+          "point": "一味累积增益，恐徒增拖累与机巧；若能减损至极，反归于自然无为而无所不成。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 48,
+            "quote": "损之又损，以至于无为",
+            "label": "道德经·四十八章"
+          }
+        },
+        {
+          "school": "kong",
+          "rebut": "xun",
+          "point": "只顾堆积旧闻而不加思索贯通，难以生出新意；温习旧学而能悟出新理，方足为师。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 2,
+            "quote": "温故而知新，可以为师矣",
+            "label": "论语·为政"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        {
+          "school": "xun",
+          "rebut": "lao",
+          "point": "才具平庸不要紧，只要驾车十日不停歇，终能远行；学之成就正在于持续不舍，而非求一时之损。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 1,
+            "quote": "驽马十驾，功在不舍",
+            "label": "荀子·劝学篇"
+          }
+        },
+        {
+          "school": "lao",
+          "rebut": "kong",
+          "point": "若能绝弃那些徒增分别计较的俗学，心反得安然无所忧扰，这正是减损的旨趣。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 20,
+            "quote": "绝学无忧",
+            "label": "道德经·二十章"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "三家同言为学而旨归各别：荀子重在积、贵日久不舍，孔子重在学思相济、温故知新，老子则就体道言损、绝俗学而归无为。一主增益累功，一主两端互发，一主减损返朴，所对治者与所向往者各异，并立可观，不归于一。"
+}

@@ -1,0 +1,114 @@
+{
+  "id": "baoyuan",
+  "title": "报怨以德否",
+  "category": "伦理 · 义利 · 爱孝",
+  "concept": "报怨以德否",
+  "question": "报怨,当以德,还是以直?",
+  "framing": "人有怨于我,我当何以报之——这一问,道与儒各有所安。",
+  "schools": [
+    {
+      "key": "lao",
+      "label": "老子",
+      "group": "dao",
+      "seal": "观道",
+      "stance": "报怨以德"
+    },
+    {
+      "key": "kong",
+      "label": "孔子",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "以直报怨"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        {
+          "school": "lao",
+          "rebut": null,
+          "point": "待人当化大为小、化多为少,以德意去回报怨仇,不与之相争相结。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 63,
+            "quote": "大小多少，报怨以德。",
+            "label": "道德经·六十三章"
+          }
+        },
+        {
+          "school": "kong",
+          "rebut": null,
+          "point": "若以恩德报怨,则恩德反无可施;故当以正直待怨、以恩德酬恩。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 14,
+            "quote": "以直报怨，以德报德。",
+            "label": "论语·宪问"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "kong",
+          "rebut": "lao",
+          "point": "若一概以德报怨,则报德将无所凭,恩怨之间便混而难辨。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 14,
+            "quote": "以德报怨，何如？",
+            "label": "论语·宪问"
+          }
+        },
+        {
+          "school": "lao",
+          "rebut": "kong",
+          "point": "轻易许诺、急于分判,反多生纷扰;不如以宽柔为本,使怨自消于细微。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 63,
+            "quote": "夫轻诺必寡信，多易必多难。",
+            "label": "道德经·六十三章"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        {
+          "school": "kong",
+          "rebut": null,
+          "point": "以直非以怨报怨,乃持公正之心相待,使是非各得其当。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 14,
+            "quote": "以直报怨，以德报德。",
+            "label": "论语·宪问"
+          }
+        },
+        {
+          "school": "lao",
+          "rebut": null,
+          "point": "圣人处事以无为为本,不张声势,故怨结不深、终归于平。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 63,
+            "quote": "为无为，事无事，味无味。",
+            "label": "道德经·六十三章"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "老子主报怨以德,意在以宽柔化解、使怨消于无形;孔子主以直报怨,意在持公正而分恩怨、不使是非相混。一重消弭于先,一重持平于中,各安其所重而旨归不同。"
+}

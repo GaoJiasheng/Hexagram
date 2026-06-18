@@ -1,0 +1,133 @@
+{
+  "id": "wenzhi",
+  "title": "文与质",
+  "category": "礼 · 文 · 乐",
+  "concept": "文与质",
+  "question": "立身处世,当以文质相称为美,还是返朴去饰、先实用而后文采?",
+  "framing": "文犹质也,质犹文也——三家同论修身立国之本,而文饰与质朴孰先孰重,各陈所见。",
+  "schools": [
+    {
+      "key": "kong",
+      "label": "孔子",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "文质彬彬"
+    },
+    {
+      "key": "lao",
+      "label": "老子",
+      "group": "dao",
+      "seal": "观道",
+      "stance": "见素抱朴"
+    },
+    {
+      "key": "mo",
+      "label": "墨子",
+      "group": "mo",
+      "seal": "观兼",
+      "stance": "先质后文"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        {
+          "school": "kong",
+          "rebut": null,
+          "point": "质朴过于文采则粗野,文采过于质朴则浮华;惟文质均衡相称,方成君子。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 6,
+            "quote": "质胜文则野，文胜质则史。文质彬彬，然后君子。",
+            "label": "论语·雍也"
+          }
+        },
+        {
+          "school": "lao",
+          "rebut": null,
+          "point": "显现本真、守住质朴,减少私心欲望;三者徒为文饰不足,故令人有所归属。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 19,
+            "quote": "此三者以为文不足，故令有所属﹕见素抱朴，少私寡欲。",
+            "label": "道德经·十九章"
+          }
+        },
+        {
+          "school": "mo",
+          "rebut": null,
+          "point": "衣食器用以实用为度:用财有节、自养俭约,则民富而国治。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 6,
+            "quote": "其用财节，其自养俭，民富国治。",
+            "label": "墨子·辞过"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "lao",
+          "rebut": "kong",
+          "point": "真实之言不华美,华美之言不真实;一味讲求文采相称,恐离本真愈远。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 81,
+            "quote": "信言不美，美言不信。",
+            "label": "道德经·八十一章"
+          }
+        },
+        {
+          "school": "mo",
+          "rebut": "kong",
+          "point": "俭节则昌盛,淫佚则败亡;文饰若超出实用,正是淫佚之始。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 6,
+            "quote": "俭节则昌，淫佚则亡。",
+            "label": "墨子·辞过"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        {
+          "school": "kong",
+          "rebut": "lao",
+          "point": "行礼与其奢侈不如俭约——文未尝废质;但去其奢非去其文,中道在相称而非偏废。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 3,
+            "quote": "礼，与其奢也，宁俭",
+            "label": "论语·八佾"
+          }
+        },
+        {
+          "school": "kong",
+          "rebut": "mo",
+          "point": "绘画之事后于素底——文采须以质朴为根基,质立而后可施文,二者本相承。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 3,
+            "quote": "绘事后素",
+            "label": "论语·八佾"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "三家同重质朴之本而所主各异:孔子求文质相称、文以承质,老子主见素抱朴、返于本真,墨子主先足实用、节俭去奢。分歧落在\"文饰\"于立身之地位——是相称之美、当减之累,还是实用之余。各陈其旨,并存而观。"
+}

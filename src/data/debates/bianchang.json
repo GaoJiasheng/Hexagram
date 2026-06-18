@@ -1,0 +1,157 @@
+{
+  "id": "bianchang",
+  "title": "变与常",
+  "category": "天人 · 形上 · 道",
+  "concept": "变与常",
+  "question": "世道,以变为枢、以反为动,还是守其常?",
+  "framing": "同坐论变常:有人见万物循环而返、有人见物我俱化无定、有人见天道恒常不移。",
+  "schools": [
+    {
+      "key": "lao",
+      "label": "老子",
+      "group": "dao",
+      "seal": "观道",
+      "stance": "反者道之动"
+    },
+    {
+      "key": "zhuang",
+      "label": "庄子",
+      "group": "dao",
+      "seal": "观道",
+      "stance": "物化无常"
+    },
+    {
+      "key": "xun",
+      "label": "荀子",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "天行有常"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        {
+          "school": "lao",
+          "rebut": null,
+          "point": "变化自有方向:事物走到极处便向反面回返,这循环往复正是道的运行方式,守柔守弱才合道之用。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 40,
+            "quote": "反者道之动，弱者道之用",
+            "label": "道德经·四十章"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "是非彼此本无定准,生灭随观点流转,圣人不站定一边而照之于天,万物只是不断相化,没有固定的形迹可执。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 2,
+            "quote": "方生方死，方死方生",
+            "label": "庄子·齐物论"
+          }
+        },
+        {
+          "school": "xun",
+          "rebut": null,
+          "point": "天的运行有恒常法则,不因明君而存、不因暴君而废;吉凶不在天变,而在人以治还是以乱去应它。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 17,
+            "quote": "天行有常，不为尧存，不为桀亡",
+            "label": "荀子·天论"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "xun",
+          "rebut": "lao",
+          "point": "诘老子:若一切凭道自反自动、专守柔弱,便把治乱都推给天道循环;天命当由人去制用,不可坐待其反。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 17,
+            "quote": "从天而颂之，孰与制天命而用之",
+            "label": "荀子·天论"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": "xun",
+          "point": "诘荀子:你立天为常、分定治乱吉凶,仍是执着彼此是非;一旦不再两边对立,才得道的枢纽,以应无穷之变。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 2,
+            "quote": "彼是莫得其偶，谓之道枢",
+            "label": "庄子·齐物论"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        {
+          "school": "lao",
+          "rebut": "xun",
+          "point": "答荀子:守柔非坐待,正因祸福相倚、正反相生,见其将反而先处下,正是顺常而用,不是放任。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 58,
+            "quote": "祸兮福之所倚，福兮祸之所伏",
+            "label": "道德经·五十八章"
+          }
+        },
+        {
+          "school": "xun",
+          "rebut": "zhuang",
+          "point": "答庄子:治乱之应确有定验,以治应之则吉、以乱应之则凶;泯是非可游心,却难安人事之常。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 17,
+            "quote": "应之以治则吉，应之以乱则凶",
+            "label": "荀子·天论"
+          }
+        },
+        {
+          "school": "lao",
+          "rebut": null,
+          "point": "补说:万物纷纭终各归其根,归根而静叫复命,复命才叫常;故变中之返,正通向那个不变的常。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 16,
+            "quote": "复命曰常",
+            "label": "道德经·十六章"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "补说:庄周梦蝶醒来已难分谁是谁,周与蝶必有别而界限可融,这相通相转便叫物化,无定即是其常态。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 2,
+            "quote": "此之谓物化",
+            "label": "庄子·齐物论"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "三家分歧落在「常」安放何处:老子把常放进变的循环里,变以反为动而终归根复命;庄子取消固定的彼此是非,以无定之化为常,游心于道枢以应无穷;荀子将常立于天行之恒,把变的应对交还人事之治乱。一者见变中有返、一者见物我俱化、一者见天道不移,各成一脉,并存而不相掩。"
+}

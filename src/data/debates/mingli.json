@@ -1,0 +1,102 @@
+{
+  "id": "mingli",
+  "title": "命与力",
+  "category": "天人 · 形上 · 道",
+  "concept": "命与力",
+  "question": "成败,系于天命,还是系于强力?",
+  "framing": "同问一事之成败，一以为有所不可强求，一以为唯强力可致。",
+  "schools": [
+    {
+      "key": "kong",
+      "label": "孔子",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "死生有命"
+    },
+    {
+      "key": "mo",
+      "label": "墨子",
+      "group": "mo",
+      "seal": "观兼",
+      "stance": "非命·强力"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        {
+          "school": "kong",
+          "rebut": null,
+          "point": "死生贫富自有定分，非人力所能强求；君子安于所遇而尽其在己，故须先知命。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 12,
+            "quote": "死生有命，富贵在天",
+            "label": "论语·颜渊"
+          }
+        },
+        {
+          "school": "mo",
+          "rebut": null,
+          "point": "信有命便上不勤治、下不力作，乱贫由此而生；执有命之说是天下大害，必当非之。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 28,
+            "quote": "执有命者之言不可不非，此天下之大害也",
+            "label": "墨子·非命上"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "mo",
+          "rebut": "kong",
+          "point": "言命者使人怠于事而诿过于命，乱政废业皆托命而安，故命之说乃覆没天下之义。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 28,
+            "quote": "是覆天下之义",
+            "label": "墨子·非命上"
+          }
+        },
+        {
+          "school": "kong",
+          "rebut": "mo",
+          "point": "知命非教人惰怠，而是辨别可求与不可求；不知此分际，便无以自立为君子。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 20,
+            "quote": "不知命，无以为君子也",
+            "label": "论语·尧曰"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        {
+          "school": "mo",
+          "rebut": "kong",
+          "point": "以命为有，是暴王所造、惰民所述，非行仁义者之言；当强力以求天下之利。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 30,
+            "quote": "命者，暴王所作，穷人所术，非仁者之言也",
+            "label": "墨子·非命下"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "两家分歧落在「成败之根」：孔子分判可求与不可求，于不可强者安之以命而尽力于己；墨子则忧托命废事，唯恐定分之说销蚀人力，故倡强力以兴利。一重知分自立，一重力作济世，各成其旨。"
+}

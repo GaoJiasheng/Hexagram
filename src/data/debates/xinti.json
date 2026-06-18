@@ -1,0 +1,145 @@
+{
+  "id": "xinti",
+  "title": "心之本体",
+  "category": "性与心",
+  "concept": "心之本体",
+  "question": "心之本体,是天理、是良知,还是虚静?",
+  "framing": "三家同向心源处问\"本体\"二字,而所指各异:或归之性理,或归之良知,或归之虚静。",
+  "schools": [
+    {
+      "key": "cheng",
+      "label": "程朱",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "性即理"
+    },
+    {
+      "key": "wang",
+      "label": "阳明",
+      "group": "xin",
+      "seal": "观心",
+      "stance": "心即理·良知"
+    },
+    {
+      "key": "zhuang",
+      "label": "庄子",
+      "group": "dao",
+      "seal": "观道",
+      "stance": "虚静·心斋"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        {
+          "school": "cheng",
+          "rebut": null,
+          "point": "心之本体在那超乎善恶之先的性,而性即是天理,故凡所禀之理本无不善。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "jinsilu",
+            "ch": 1,
+            "quote": "性即理也。天下之理，原其所自，未有不善",
+            "label": "近思录·道体"
+          }
+        },
+        {
+          "school": "wang",
+          "rebut": null,
+          "point": "理不在身外事物上求,此心即是理;离了此心别无所谓天理可循。",
+          "cite": {
+            "corpus": "xin",
+            "slug": "chuanxilu",
+            "ch": 1,
+            "quote": "心即理也。天下又有心外之事、心外之理乎",
+            "label": "传习录·卷上"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "心之极致不在持守某理,而在虚而待物;唯虚空处道乃汇集,此即心斋。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 4,
+            "quote": "气也者，虚而待物者也。唯道集虚。虚者，心斋也",
+            "label": "庄子·人间世"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "wang",
+          "rebut": "cheng",
+          "point": "若把性理另立于心外去格,便成支离;其实只在此心无私欲处,天理自现,不待外添。",
+          "cite": {
+            "corpus": "xin",
+            "slug": "chuanxilu",
+            "ch": 1,
+            "quote": "此心无私欲之蔽，即是天理，不须外面添一分",
+            "label": "传习录·卷上"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": "wang",
+          "point": "知善知恶之知仍是有知;若耳目内通而外于心知,反更能虚以纳物。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 4,
+            "quote": "徇耳目内通而外于心知",
+            "label": "庄子·人间世"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        {
+          "school": "cheng",
+          "rebut": "wang",
+          "point": "就名分言,在天为命、在物为理、在人为性、主身为心,其实一体;言性即理正为指点这本然之善,非外加。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "jinsilu",
+            "ch": 1,
+            "quote": "在人为性，主于身为心，其实一也",
+            "label": "近思录·道体"
+          }
+        },
+        {
+          "school": "wang",
+          "rebut": null,
+          "point": "良知正是心之本体,见父知孝、见孺子知恻隐,自然能知而不假外求。",
+          "cite": {
+            "corpus": "xin",
+            "slug": "chuanxilu",
+            "ch": 1,
+            "quote": "知是心之本体，心自然会知",
+            "label": "传习录·卷上"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "更进一步,堕肢体、黜聪明、离形去知,与大通为一,此坐忘之境亦本体之事。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 6,
+            "quote": "堕枝体，黜聪明，离形去知，同于大通",
+            "label": "庄子·大宗师"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "三家皆从心源处立言:程朱指其本然之性理,阳明指其能知之良知,庄子指其虚明之斋忘。分歧落在\"本体\"究是有所具(理、知)还是无所待(虚),以及功夫是格致存养、致良知,抑或坐忘心斋——各成一路,并立而观。"
+}

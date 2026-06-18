@@ -1,0 +1,133 @@
+{
+  "id": "kule",
+  "title": "苦与乐",
+  "category": "生死 · 身 · 苦乐",
+  "concept": "苦与乐",
+  "question": "人生,是苦海,是安贫之乐,还是逍遥之乐?",
+  "framing": "同问人生何以为乐,三家各指一处安顿:或乐在道中,或乐忘哀乐,或视乐如幻。",
+  "schools": [
+    {
+      "key": "kong",
+      "label": "孔颜",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "安贫乐道"
+    },
+    {
+      "key": "zhuang",
+      "label": "庄子",
+      "group": "dao",
+      "seal": "观道",
+      "stance": "逍遥之乐"
+    },
+    {
+      "key": "jin",
+      "label": "金刚经",
+      "group": "fo",
+      "seal": "观空",
+      "stance": "如梦幻泡影"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        {
+          "school": "kong",
+          "rebut": null,
+          "point": "乐不系于贫富。颜回箪食陋巷而不改其乐,所乐者在内心的安顿,外境不能夺。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 6,
+            "quote": "一箪食，一瓢飮，在陋巷，人不堪其忧，回也不改其乐",
+            "label": "论语·雍也"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "乐当从顺应中得。既来不拒、既去不留,顺应时势变化,哀与乐便都侵不进心里。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 6,
+            "quote": "安时而处顺，哀乐不能入也",
+            "label": "庄子·大宗师"
+          }
+        },
+        {
+          "school": "jin",
+          "rebut": null,
+          "point": "凡有造作之事,皆如梦如幻、如露如电。所谓苦乐之相,本无实可执,应这样去观照。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "jingangjing",
+            "ch": 32,
+            "quote": "一切有为法，如梦幻泡影，如露亦如电",
+            "label": "金刚经·应化非真分"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "zhuang",
+          "rebut": "kong",
+          "point": "既守乐道,仍在求与不求之间用力。何不连忧乐的分别一并放下,任生老死各得其所。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 6,
+            "quote": "劳我以生，佚我以老，息我以死",
+            "label": "庄子·大宗师"
+          }
+        },
+        {
+          "school": "jin",
+          "rebut": "zhuang",
+          "point": "既以安时处顺为乐,这顺与逍遥仍是取一相。于相而不被相牵,不动于中,方为彻底。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "jingangjing",
+            "ch": 32,
+            "quote": "不取于相，如如不动",
+            "label": "金刚经·应化非真分"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        {
+          "school": "kong",
+          "rebut": "zhuang",
+          "point": "乐道不是有所外求。粗食饮水、曲臂而枕,乐自在其中;非义的富贵,看它如浮云罢了。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 7,
+            "quote": "饭疏食，飮水，曲肱而枕之，乐亦在其中矣",
+            "label": "论语·述而"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": "jin",
+          "point": "言相为幻固是一路;而逍遥所重不在执相,只在无用之地从容寝卧,何处更有困苦。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 1,
+            "quote": "彷徨乎无为其侧，逍遥乎寝卧其下",
+            "label": "庄子·逍遥游"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "三家同辨苦乐而所安各异:孔颜把乐落在道中,贫富不改;庄子把乐化于顺应,哀乐两忘;金刚经则照见诸相如幻,不取不执。一在守、一在化、一在观,各成一路安顿,会而不判。"
+}

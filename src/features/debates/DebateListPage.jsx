@@ -29,19 +29,23 @@ export default function DebateListPage() {
         ))}
       </div>
 
-      <h2 className="debates-roadmap-title">辩题库 · 陆续上线</h2>
-      <div className="debates-roadmap">
-        {PLANNED.map((cat) => (
-          <div key={cat.category} className="debates-cat">
-            <div className="debates-cat__name">{cat.category}</div>
-            <ul className="debates-cat__items">
-              {cat.items.map((it, i) => (
-                <li key={i} className="debates-planned"><span className="debates-planned__t">{it.title}</span><span className="debates-planned__p"> · {it.parties}</span></li>
-              ))}
-            </ul>
+      {PLANNED.length > 0 && (
+        <>
+          <h2 className="debates-roadmap-title">辩题库 · 陆续上线</h2>
+          <div className="debates-roadmap">
+            {PLANNED.map((cat) => (
+              <div key={cat.category} className="debates-cat">
+                <div className="debates-cat__name">{cat.category}</div>
+                <ul className="debates-cat__items">
+                  {cat.items.map((it, i) => (
+                    <li key={i} className="debates-planned"><span className="debates-planned__t">{it.title}</span><span className="debates-planned__p"> · {it.parties}</span></li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      )}
     </div>
   )
 }

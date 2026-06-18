@@ -1,0 +1,145 @@
+{
+  "id": "bingjia",
+  "title": "兵家三家",
+  "category": "组内多方",
+  "concept": "兵家三家",
+  "question": "用兵之要，在诡道、在治军，还是在形势刑赏？",
+  "framing": "兵者，国之大事，死生之地，存亡之道，不可不察也——三家各陈用兵根本所系。",
+  "schools": [
+    {
+      "key": "sun",
+      "label": "孙子",
+      "group": "bing",
+      "seal": "观兵",
+      "stance": "诡道"
+    },
+    {
+      "key": "wu",
+      "label": "吴子",
+      "group": "bing",
+      "seal": "观兵",
+      "stance": "内修文德"
+    },
+    {
+      "key": "wei",
+      "label": "尉缭子",
+      "group": "bing",
+      "seal": "观兵",
+      "stance": "刑赏形势"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        {
+          "school": "sun",
+          "rebut": null,
+          "point": "用兵之根本在虚实变化:示形误敌、因利制权,乘其无备而动,这是临阵取效之处。",
+          "cite": {
+            "corpus": "bing",
+            "slug": "sunzi",
+            "ch": 1,
+            "quote": "兵者，诡道也",
+            "label": "孙子·始计"
+          }
+        },
+        {
+          "school": "wu",
+          "rebut": null,
+          "point": "用兵先于国内立本:对内修养文教德义、对外整治武备,根基立而后能当敌。",
+          "cite": {
+            "corpus": "bing",
+            "slug": "wuzi",
+            "ch": 1,
+            "quote": "必内修文德，外治武备",
+            "label": "吴子·图国"
+          }
+        },
+        {
+          "school": "wei",
+          "rebut": null,
+          "point": "成败不系于天时吉凶,而在人事:号令分明、法制周审,刑赏立则士可使之向前。",
+          "cite": {
+            "corpus": "bing",
+            "slug": "weiliaozi",
+            "ch": 3,
+            "quote": "号令明，法制审，故能使之前",
+            "label": "尉缭子·制谈"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "wu",
+          "rebut": "sun",
+          "point": "诈术乃临阵之用;若军未经训练、士不知耻,纵有奇谋亦无所施。问以何者为本,答在治军。",
+          "cite": {
+            "corpus": "bing",
+            "slug": "wuzi",
+            "ch": 3,
+            "quote": "兵以何为胜？」起对曰：「以治为胜",
+            "label": "吴子·治兵"
+          }
+        },
+        {
+          "school": "wei",
+          "rebut": "sun",
+          "point": "权变须有所附丽:进有重赏、退有决罚,赏罚立于前后,士卒方能发而中利。",
+          "cite": {
+            "corpus": "bing",
+            "slug": "weiliaozi",
+            "ch": 3,
+            "quote": "明赏于前，决罚于后",
+            "label": "尉缭子·制谈"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        {
+          "school": "sun",
+          "rebut": "wu",
+          "point": "治军固为前提,然成效之机仍在知与不知:能审五事七计而后能因敌制变。",
+          "cite": {
+            "corpus": "bing",
+            "slug": "sunzi",
+            "ch": 1,
+            "quote": "知之者胜，不知者不胜",
+            "label": "孙子·始计"
+          }
+        },
+        {
+          "school": "wei",
+          "rebut": null,
+          "point": "既不取吉凶卜筮,则一切归于制度:明法审令而事自利,人事重于时日之占。",
+          "cite": {
+            "corpus": "bing",
+            "slug": "weiliaozi",
+            "ch": 4,
+            "quote": "明法审令，不卜筮而事吉",
+            "label": "尉缭子·战威"
+          }
+        },
+        {
+          "school": "wu",
+          "rebut": null,
+          "point": "治之根本仍在赏罚有信:进则重赏、退则重刑,贯之以信,方为克敌之主。",
+          "cite": {
+            "corpus": "bing",
+            "slug": "wuzi",
+            "ch": 3,
+            "quote": "进有重赏，退有重刑，行之以信",
+            "label": "吴子·治兵"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "三家同出兵门而各执一端:孙子重临阵之诡道权变,以知敌制变为效验所系;吴子先国内之文德礼义、以治军为本,视赏罚为治之一节;尉缭子去天时吉凶之说,归于号令刑赏与形势制度。诡道、治军、刑赏形势非相排斥,而是各自落眼于用兵之不同层面——一在变、一在本、一在制。会其旨而不论先后轻重。"
+}

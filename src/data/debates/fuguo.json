@@ -1,0 +1,157 @@
+{
+  "id": "fuguo",
+  "title": "富国之道",
+  "category": "治道与政治",
+  "concept": "富国之道",
+  "question": "富国,在耕战、节用、先富后教,还是寡欲?",
+  "framing": "三家同问邦国何以厚其财、足其民,而各指一条不同的入手处。",
+  "schools": [
+    {
+      "key": "shang",
+      "label": "商鞅",
+      "group": "fa",
+      "seal": "观法",
+      "stance": "农战"
+    },
+    {
+      "key": "kong",
+      "label": "孔子",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "富而后教"
+    },
+    {
+      "key": "mo",
+      "label": "墨子",
+      "group": "mo",
+      "seal": "观兼",
+      "stance": "节用"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立论",
+      "turns": [
+        {
+          "school": "shang",
+          "rebut": null,
+          "point": "国之兴衰系于农与战:民力专注于耕织与征伐,则国库实而兵强,这才是富国的根本入手处。",
+          "cite": {
+            "corpus": "fa",
+            "slug": "shangjunshu",
+            "ch": 3,
+            "quote": "国之所以兴者，农战也",
+            "label": "商君书·农战"
+          }
+        },
+        {
+          "school": "kong",
+          "rebut": null,
+          "point": "治民有次第:人口既众,先使之富足,而后施以教化,富与教不可偏废,富只是起点而非终点。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 13,
+            "quote": "既富矣，又何加焉？」曰：「教之。",
+            "label": "论语·子路"
+          }
+        },
+        {
+          "school": "mo",
+          "rebut": null,
+          "point": "富国不必外取土地,只须就本国去除一切无用之费,省下来的便可使国用加倍。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 20,
+            "quote": "因其国家，去其无用，足以倍之",
+            "label": "墨子·节用上"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘难",
+      "turns": [
+        {
+          "school": "shang",
+          "rebut": "kong",
+          "point": "反诘儒者:若举国习诗书、好辩说而怠于耕战,农者寡而游食者众,纵有教化,粮从何来、兵从何强。",
+          "cite": {
+            "corpus": "fa",
+            "slug": "shangjunshu",
+            "ch": 8,
+            "quote": "能事本而禁末者富",
+            "label": "商君书·壹言"
+          }
+        },
+        {
+          "school": "mo",
+          "rebut": "shang",
+          "point": "反诘耕战之论:兴师攻伐使男女久不相见、城野多死,徒耗民财人力;省去无用之务、不妄动干戈,利天下更大。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 20,
+            "quote": "去无用之务，行圣王之道，天下之大利也",
+            "label": "墨子·节用上"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "申辩",
+      "turns": [
+        {
+          "school": "kong",
+          "rebut": "shang",
+          "point": "为政重在上行下效:在上者好礼好义好信,则四方之民携子而来,不必驱民唯务农战。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 13,
+            "quote": "上好礼，则民莫敢不敬",
+            "label": "论语·子路"
+          }
+        },
+        {
+          "school": "kong",
+          "rebut": "mo",
+          "point": "足食固然要紧,然食、兵、信三者之中,民信尤为立国之本,财用之外更有不可去者。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 12,
+            "quote": "去食。自古皆有死，民无信不立",
+            "label": "论语·颜渊"
+          }
+        },
+        {
+          "school": "shang",
+          "rebut": "mo",
+          "point": "重申农战:民壹于本业则国富,富而后能治,这是成王业之道,非节俭一端所能尽。",
+          "cite": {
+            "corpus": "fa",
+            "slug": "shangjunshu",
+            "ch": 3,
+            "quote": "壹务则国富，国富而治，王之道也",
+            "label": "商君书·农战"
+          }
+        },
+        {
+          "school": "mo",
+          "rebut": "kong",
+          "point": "申明节用之效:凡发令兴事、用民用财,皆使之有所加益而不虚耗,则财不费、民不劳而兴利自多。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 20,
+            "quote": "用财不费，民德不劳，其兴利多矣",
+            "label": "墨子·节用上"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "三家皆求邦国之富,而入手处殊途:商鞅向外驱力于耕战,以本业兵备厚其国;墨子向内省其耗费,以去无用倍其用;孔子则以富为序,富足之上更悬教化与民信。一重生产、一重节流、一重次第与人心,分歧落在\"富从何来、富之所止\"的取径不同,各成一家之言。"
+}
