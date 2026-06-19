@@ -328,8 +328,8 @@ export default function ClassicReader({
           chapters.map((c) => (
             <section key={c.no} id={anchorId(c.no)} data-no={c.no} className="dao-single__chapter">
               {multi && <h2 className="read-chapter-title">{chapterLabel(c)}</h2>}
-              {renderBaihua(c.no)}
               {c.paragraphs.map((p, i) => Para(c.no, p, i))}
+              {renderBaihua(c.no)}
               <ChapterNotes chapter={c} getAnchors={getAnchors} />
               {renderYanyi(c.no)}
             </section>
@@ -352,8 +352,8 @@ export default function ClassicReader({
           return (
             <>
               <h2 className="read-chapter-title">{chapterLabel(cur)}</h2>
-              {renderBaihua(cur.no)}
               {cur.paragraphs.map((p, i) => Para(cur.no, p, i))}
+              {renderBaihua(cur.no)}
               <ChapterNotes chapter={cur} getAnchors={getAnchors} />
               {renderYanyi(cur.no)}
               <div className="read-nav">

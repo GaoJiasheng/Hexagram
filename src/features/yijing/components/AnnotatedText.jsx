@@ -61,10 +61,10 @@ function ZhuTerm({ entry }) {
     const halfW = pr.width / 2
     if (left - halfW < margin) left = margin + halfW
     else if (left + halfW > window.innerWidth - margin) left = window.innerWidth - margin - halfW
-    // 默认浮于触发词下方(不遮挡正在读的原文行);下方放不下才翻到上方
-    let below = true
-    let top = tr.bottom + gap
-    if (tr.bottom + pr.height + gap > window.innerHeight - margin) { below = false; top = tr.top - gap }
+    // 默认浮于触发词上方;上方放不下(近视口顶)才翻到下方
+    let below = false
+    let top = tr.top - gap
+    if (tr.top - pr.height - gap < margin) { below = true; top = tr.bottom + gap }
     const site = trig.closest('[data-site]')?.getAttribute('data-site') || undefined
     setPos({ left, top, below, site })
   }, [open])
