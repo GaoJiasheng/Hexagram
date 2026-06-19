@@ -2978,22 +2978,27 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 /* 三教门户(v15 隐藏入口 /hexagram)——仅 owner 入口,简素卡片跨域跳转 */
 .master-portal { min-height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; padding: 48px 24px; }
 .master-portal__hint { font-size: 0.78rem; color: var(--ink-faint); letter-spacing: 0.08em; }
-.master-portal__cards { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
-.master-portal__card { display: flex; flex-direction: column; align-items: center; gap: 12px; min-width: 200px; padding: 32px 28px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper-raised); text-decoration: none; transition: border-color 0.15s, transform 0.15s; }
+.master-portal__cards { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; width: 100%; max-width: 800px; margin: 0 auto; }
+.master-portal__card { flex: 0 1 calc((100% - 48px) / 3); display: flex; flex-direction: column; align-items: center; gap: 12px; min-width: 200px; padding: 32px 28px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper-raised); text-decoration: none; transition: border-color 0.15s, transform 0.15s; }
 .master-portal__card:hover { border-color: var(--cinnabar); transform: translateY(-2px); }
 .master-portal__seals { display: flex; gap: 8px; }
 .master-portal__seal { width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; background: var(--cinnabar); color: #fdfbf6; font-family: var(--font-serif); font-size: 1rem; border-radius: 6px; }
 .master-portal__titles { font-family: var(--font-serif); font-size: 0.95rem; color: var(--ink-soft); }
 .master-portal__desc { font-size: 0.78rem; color: var(--ink-faint); line-height: 1.5; text-align: center; max-width: 17em; }
-/* 多站组(易道):整卡不抬升,卡内每站各一可点行,道藏不再埋在易经底下 */
-.master-portal__card--multi { padding: 0; gap: 0; align-items: stretch; overflow: hidden; }
+/* 多站组(易道):独占一行,易经/道藏左右并置、连成一卡(整卡不抬升),与下方诸卡分隔 */
+.master-portal__card--multi { flex: 0 0 100%; flex-direction: row; padding: 0; gap: 0; align-items: stretch; overflow: hidden; }
 .master-portal__card--multi:hover { transform: none; border-color: var(--line); }
-.master-portal__site { display: flex; align-items: center; gap: 14px; padding: 22px 24px; text-decoration: none; transition: background 0.15s; }
-.master-portal__site + .master-portal__site { border-top: 1px solid var(--line); }
+.master-portal__site { flex: 1; display: flex; align-items: center; gap: 14px; padding: 26px 30px; text-decoration: none; transition: background 0.15s; }
+.master-portal__site + .master-portal__site { border-left: 1px solid var(--line); }
 .master-portal__site:hover { background: var(--paper-sunken, rgba(0,0,0,0.03)); }
 .master-portal__site .master-portal__seal { flex-shrink: 0; }
 .master-portal__site-text { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
 .master-portal__site-text .master-portal__desc { text-align: left; }
+/* 窄屏:易道横幅退回上下堆叠,分隔线转横向 */
+@media (max-width: 560px) {
+  .master-portal__card--multi { flex-direction: column; }
+  .master-portal__site + .master-portal__site { border-left: none; border-top: 1px solid var(--line); }
+}
 .master-portal__about { margin-top: 28px; text-align: center; }
 .master-portal__about-link { font-size: 0.82rem; color: var(--ink-faint); text-decoration: none; }
 .master-portal__about-link:hover { color: var(--cinnabar); text-decoration: underline; }
