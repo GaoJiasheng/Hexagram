@@ -33,8 +33,9 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
-# 生成的临时 workflow 脚本(由 gen-zhuzi-wf.mjs 产出,可重生)
+# 生成的临时 workflow 脚本(由 gen-zhuzi-wf.mjs / gen-baihua-wf.mjs 产出,可重生)
 scripts/.*-translate-wf.js
+scripts/.baihua-*-wf.js
 
 # Stray root-level fetch cache (recon)
 .cache/

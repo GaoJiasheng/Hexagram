@@ -261,7 +261,7 @@
 - 单章 4-agent 流水（起草~6–10k 字 + 制图 + 校对 + 编者）≈ **数十万 token**；全量 **数亿 token**。
 - **结论：必须分书串行、owner 按书 gate；不存在「一次铺完」。** 内容工序经验：勿大 workflow 齐发，串行/小批避 API 限流。
 
-### 8.2 Phase A — 基建收口（先做，一个版本 v1.60.0）
+### 8.2 Phase A — 基建收口（✅ 已发 v1.60.0）
 - **A1 接全阅读器**：`renderBaihua` 接进 `CorpusReadPage`（9 读经站 paged）+ `CorpusSinglePage` + `DaoSinglePage`（单页短经）。→ 白话在所有读章页可达（现仅道藏 paged）。
 - **A2 整页研读路由** `/<corpus>/<slug>/baihua/:ch`：独立页（整屏阅读、可收藏/分享/深链、刷新仍在），抽屉 ⤢ 改为链到它；App 路由 + 懒加载 + ErrorBoundary + usePageTitle。
 - **A3 check-data 白话校验**：每章 ① 脊柱段齐备 ② `quote.original` 逐字命中站内原文（子串，仿 debate cite）③ 红线词扫描（按组 §3.6）④ 篇幅区间 ⑤ figure SVG 不写死前景色 + ftype 合法；+ 覆盖仪表（各书 白话章/总章）。
