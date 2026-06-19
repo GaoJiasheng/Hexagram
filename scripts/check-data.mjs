@@ -12,9 +12,13 @@ import { TRIGRAMS, buildHexagramIndex, lineTitle } from './lib/hexagram-table.mj
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const errors = []
 const infos = []
+const warns = []
 
 function err(msg) {
   errors.push(msg)
+}
+function warn(msg) {
+  warns.push(msg)
 }
 
 // ---------- 读取 ----------
@@ -567,6 +571,75 @@ if (fs.existsSync(glossaryPath)) {
   }
 }
 
+// ---------- 8c. 白话模块(design-v22)校验 ----------
+{
+  const corpora = ['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue']
+  const chCache = {}
+  const chapterText = (corpus, slug, ch) => {
+    const k = `${corpus}/${slug}`
+    if (!(k in chCache)) {
+      const f = path.join(ROOT, `src/data/${corpus}/classics/${slug}.json`)
+      chCache[k] = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null
+    }
+    const book = chCache[k]
+    if (!book) return null
+    const c = book.chapters.find((x) => x.no === Number(ch))
+    return c ? c.paragraphs.map((p) => p.original).join('') : null
+  }
+  // 各组红线触发词(软警告,人工复核;workflow 校对 agent 是主防线)
+  const REDLINE = {
+    zhongyi: /(包治|药到病除|立竿见影|疗效显著|可治愈|用法用量为|每日.{0,4}服用|建议服用|对照自诊|照方自疗)/,
+    moulue: /(教你如何驭|实操技巧|职场必备|学会这招|驭人之术值得|照着用就能)/,
+    dao: /(长生不老|羽化登仙|修炼成仙|包你成仙|烧符念咒可)/,
+    fo: /(消业障|保佑你|必得往生|皈依方能|烧香拜佛即可)/,
+  }
+  let nArt = 0, nFig = 0, nBadCite = 0
+  const cover = {}
+  for (const corpus of corpora) {
+    const dir = path.join(ROOT, `src/data/${corpus}/baihua`)
+    if (!fs.existsSync(dir)) continue
+    for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.json'))) {
+      const slug = f.replace(/\.json$/, '')
+      const book = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'))
+      for (const ch of Object.keys(book)) {
+        const a = book[ch]
+        const tag = `白话 ${corpus}/${slug}#${ch}`
+        nArt++
+        cover[`${corpus}/${slug}`] = (cover[`${corpus}/${slug}`] || 0) + 1
+        // 脊柱:中心思想/hero + 分节 + 逐句引文
+        if (!a.centralIdea && !a.hero) err(`${tag}: 缺中心思想/hero`)
+        const blocks = Array.isArray(a.blocks) ? a.blocks : []
+        if (blocks.length < 3) err(`${tag}: blocks 过少(${blocks.length})`)
+        if (blocks.filter((b) => b.type === 'h2').length < 1) err(`${tag}: 无分节(h2)`)
+        const quotes = blocks.filter((b) => b.type === 'quote')
+        if (quotes.length < 1) err(`${tag}: 无逐句引文(quote)`)
+        // 引文逐字命中站内原文(仿 debate cite)
+        const text = chapterText(corpus, slug, ch)
+        if (text === null) err(`${tag}: 章节原文缺失,无法校引文`)
+        else for (const q of quotes) {
+          if (q.original && !text.includes(q.original)) { err(`${tag}: 引文非原文子串「${q.original.slice(0, 14)}…」`); nBadCite++ }
+        }
+        // 配图:有 svg、不写死前景色
+        for (const b of blocks) {
+          if (b.type !== 'figure') continue
+          nFig++
+          if (!b.svg || !b.svg.includes('<svg')) err(`${tag}: figure 缺 svg`)
+          else if (/(fill|stroke)\s*=\s*['"]#[0-9a-fA-F]/.test(b.svg) || /(fill|stroke)\s*:\s*#[0-9a-fA-F]/.test(b.svg)) {
+            warn(`${tag}: figure SVG 疑写死颜色(应用 var()/currentColor)`)
+          }
+        }
+        // 红线软扫描(整篇)
+        const re = REDLINE[corpus]
+        if (re && re.test(JSON.stringify(a))) warn(`${tag}: 疑触组红线词,请人工复核`)
+      }
+    }
+  }
+  if (nArt) {
+    const parts = Object.entries(cover).sort().map(([k, n]) => `${k} ${n}`).join(' · ')
+    infos.push(`白话覆盖: ${nArt} 章 · ${nFig} 图 · ${nBadCite} 坏引文 | ${parts}`)
+  }
+}
+
 // ---------- 8. 信息项 ----------
 const translated = hexagrams.filter((h) => h.judgment?.translation).length
 infos.push(`译文覆盖: ${translated}/64 卦(其余待补,见 scripts/authored/translations.json)`)
@@ -574,6 +647,7 @@ if (trigrams.length !== 8) err(`经卦应为 8,实为 ${trigrams.length}`)
 
 // ---------- 输出 ----------
 for (const i of infos) console.log('ℹ', i)
+for (const w of warns) console.warn('⚠', w)
 if (errors.length) {
   console.error(`\n✗ 校验失败,${errors.length} 个错误:`)
   for (const e of errors) console.error('  -', e)
