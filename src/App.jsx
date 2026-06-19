@@ -51,6 +51,7 @@ const ZhongyiHomePage = lazy(() => import('./features/zhongyi/pages/ZhongyiHomeP
 const MoulueHomePage = lazy(() => import('./features/moulue/pages/MoulueHomePage.jsx'))
 const CorpusTextPage = lazy(() => import('./features/reader/CorpusTextPage.jsx'))
 const CorpusReadPage = lazy(() => import('./features/reader/CorpusReadPage.jsx'))
+const BaihuaPage = lazy(() => import('./features/reader/BaihuaPage.jsx'))
 const CorpusMePage = lazy(() => import('./features/reader/CorpusMePage.jsx'))
 const MasterPortalPage = lazy(() => import('./features/MasterPortalPage.jsx'))
 const AboutPage = lazy(() => import('./features/AboutPage.jsx'))
@@ -327,6 +328,10 @@ function AppContent() {
           {/* 读经站「我的」(Tier 2):续读 + 收藏 + 批注;静态段优先于 /:slug,顺序无关 */}
           {['fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'dao'].map((c) => (
             <Route key={c} path={`/${c}/me`} element={<CorpusMePage corpus={c} />} />
+          ))}
+          {/* 白话「整页研读」(design-v22 A2):/<corpus>/:slug/baihua/:chapter,4 段路由不与逐章 :chapter(3 段)冲突 */}
+          {['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue'].map((c) => (
+            <Route key={`${c}-baihua`} path={`/${c}/:slug/baihua/:chapter`} element={<BaihuaPage corpus={c} />} />
           ))}
           {/* 诸学总门户(v15):左上角 logo 全站可达的公开总入口,列全部分组 */}
           <Route path={MASTER_PORTAL_PATH} element={<MasterPortalPage />} />

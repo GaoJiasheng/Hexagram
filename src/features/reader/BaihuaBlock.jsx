@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
+import { useNavigate } from 'react-router-dom'
 import { getBaihua } from './baihua.js'
 import { SITE_MAP } from '../../sites/registry.js'
 
@@ -40,12 +41,37 @@ function Block({ block }) {
   }
 }
 
-// 白话模块：章内一个低调折叠入口条 → 点开为侧抽屉（桌面）/ 全屏浮层（移动）。
-// 打开后持久（仅手动关），可「整页」放大（design-v22 §2）。
+// 文章正文（抽屉与整页研读共用）：总纲章 hero 封面 / 普通章中心思想 → 内容块 → 尾注
+export function BaihuaArticle({ data }) {
+  return (
+    <>
+      {data.hero ? (
+        /* 总纲章「封面」(区别于其他章):徽标 + 大字金句 + 中心思想 + 题词 */
+        <div className="baihua-hero">
+          {data.hero.badge && <span className="baihua-hero__badge">{data.hero.badge}</span>}
+          {data.hero.headline && <h1 className="baihua-hero__headline">{data.hero.headline}</h1>}
+          <span className="baihua-hero__rule" aria-hidden="true">❖</span>
+          {data.centralIdea && <p className="baihua-hero__idea">{data.centralIdea}</p>}
+          {data.hero.tagline && <p className="baihua-hero__tagline">{data.hero.tagline}</p>}
+        </div>
+      ) : data.centralIdea && (
+        <div className="baihua-idea">
+          <span className="baihua-idea__tag">中心思想</span>
+          <span>{data.centralIdea}</span>
+        </div>
+      )}
+      {data.blocks.map((b, i) => <Block key={i} block={b} />)}
+      <p className="baihua-drawer__foot">— 白话研读，重在体会思想；引文出处见上。—</p>
+    </>
+  )
+}
+
+// 白话模块：章末一个低调折叠入口条 → 点开为侧抽屉（桌面）/ 全屏浮层（移动）。
+// 打开后持久（仅手动关）；⤢ 切到「整页研读」独立页（design-v22 §2）。
 export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionUnit = '章' }) {
   const data = getBaihua(corpus, slug, chapter)
   const [open, setOpen] = useState(false)
-  const [maxi, setMaxi] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (!open) return
@@ -61,6 +87,8 @@ export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionU
   const seal = SITE_MAP[corpus]?.brand || ''
   const entryLabel = `白话${bookTitle}`
   const chapterName = `第${chapter}${sectionUnit}`
+  const fullPath = `${SITE_MAP[corpus]?.home || ''}/${slug}/baihua/${chapter}`
+  const goFullPage = () => { setOpen(false); navigate(fullPath) }
 
   return (
     <>
@@ -78,7 +106,7 @@ export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionU
 
       {open && createPortal(
         <div
-          className={`baihua-overlay ${maxi ? 'baihua-overlay--max' : ''}`}
+          className="baihua-overlay"
           data-site={corpus}
           role="dialog"
           aria-modal="true"
@@ -95,30 +123,12 @@ export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionU
                 </span>
               </div>
               <div className="baihua-drawer__actions">
-                <button onClick={() => setMaxi((m) => !m)} aria-label="整页 / 抽屉" title={maxi ? '收回抽屉' : '展开整页研读'}>
-                  {maxi ? '⤡' : '⤢'}
-                </button>
+                <button onClick={goFullPage} aria-label="整页研读" title="整页研读（独立页 · 可收藏分享）">⤢</button>
                 <button onClick={() => setOpen(false)} aria-label="关闭" title="关闭（Esc）">✕</button>
               </div>
             </header>
             <div className="baihua-drawer__body">
-              {data.hero ? (
-                /* 总纲章的特殊「封面」(区别于其他章):徽标 + 大字金句 + 中心思想 + 题词 */
-                <div className="baihua-hero">
-                  {data.hero.badge && <span className="baihua-hero__badge">{data.hero.badge}</span>}
-                  {data.hero.headline && <h1 className="baihua-hero__headline">{data.hero.headline}</h1>}
-                  <span className="baihua-hero__rule" aria-hidden="true">❖</span>
-                  {data.centralIdea && <p className="baihua-hero__idea">{data.centralIdea}</p>}
-                  {data.hero.tagline && <p className="baihua-hero__tagline">{data.hero.tagline}</p>}
-                </div>
-              ) : data.centralIdea && (
-                <div className="baihua-idea">
-                  <span className="baihua-idea__tag">中心思想</span>
-                  <span>{data.centralIdea}</span>
-                </div>
-              )}
-              {data.blocks.map((b, i) => <Block key={i} block={b} />)}
-              <p className="baihua-drawer__foot">— 白话研读，重在体会思想；引文出处见上。—</p>
+              <BaihuaArticle data={data} />
             </div>
           </aside>
         </div>,

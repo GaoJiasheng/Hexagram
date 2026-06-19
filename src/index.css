@@ -3266,6 +3266,14 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .baihua-refs li { font-size: .78rem; line-height: 1.75; color: var(--ink-faint); }
 .baihua-drawer__foot { margin: 30px 0 0; text-align: center; font-size: .76rem; color: var(--ink-faint); }
 
+/* 整页研读(A2):独立路由,复用上面所有 .baihua-* 内容样式,只多一层页框 */
+.baihua-page { max-width: 768px; margin: 0 auto; padding: 4px 0 64px; }
+.baihua-page__bar { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.baihua-page__back { flex-shrink: 0; font-size: .85rem; color: var(--ink-soft); text-decoration: none; }
+.baihua-page__back:hover { color: var(--cinnabar); }
+.baihua-page__seal { flex-shrink: 0; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; background: var(--cinnabar); color: var(--paper-raised); font-family: var(--font-serif); font-size: .78rem; border-radius: 6px; }
+.baihua-page__title { font-family: var(--font-serif); font-size: 1rem; color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
 @keyframes baihua-fade { from { opacity: 0 } to { opacity: 1 } }
 @keyframes baihua-slide { from { transform: translateX(26px); opacity: .5 } to { transform: none; opacity: 1 } }
 @media (max-width: 768px) {
