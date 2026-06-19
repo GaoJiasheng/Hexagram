@@ -3239,6 +3239,14 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .baihua-drawer__body { flex: 1; overflow-y: auto; padding: 28px clamp(20px, 5vw, 56px) 56px; }
 .baihua-overlay--max .baihua-drawer__body > * { max-width: 760px; margin-left: auto; margin-right: auto; }
 
+/* 总纲章「封面」hero(区别于其他章,强化视觉) */
+.baihua-hero { position: relative; margin: 0 0 30px; padding: 36px 28px 28px; text-align: center; border: 1px solid color-mix(in srgb, var(--cinnabar) 32%, var(--line)); border-radius: 14px; background: linear-gradient(165deg, color-mix(in srgb, var(--cinnabar) 10%, var(--paper-raised)), var(--paper-raised) 70%); overflow: hidden; }
+.baihua-hero::before { content: "☯"; position: absolute; right: -16px; top: -26px; font-size: 130px; line-height: 1; color: var(--cinnabar); opacity: .06; pointer-events: none; }
+.baihua-hero__badge { position: relative; display: inline-block; font-family: var(--font-serif); font-size: .72rem; letter-spacing: .18em; text-indent: .18em; color: var(--cinnabar); border: 1px solid color-mix(in srgb, var(--cinnabar) 42%, transparent); border-radius: 20px; padding: 4px 15px; }
+.baihua-hero__headline { position: relative; margin: 18px 0 0; font-family: var(--font-serif); font-weight: 600; font-size: 2rem; letter-spacing: .14em; text-indent: .14em; color: var(--ink); }
+.baihua-hero__rule { display: block; margin: 12px auto 0; font-size: .8rem; color: var(--cinnabar); opacity: .7; }
+.baihua-hero__idea { position: relative; margin: 14px auto 0; max-width: 26em; font-size: .92rem; line-height: 1.85; color: var(--ink-soft); }
+.baihua-hero__tagline { position: relative; margin: 16px auto 0; max-width: 24em; font-size: .8rem; line-height: 1.7; color: var(--ink-faint); }
 .baihua-idea { display: flex; gap: 10px; align-items: baseline; margin: 0 0 26px; padding: 14px 16px; background: color-mix(in srgb, var(--cinnabar) 7%, transparent); border-radius: 9px; font-size: .96rem; line-height: 1.75; color: var(--ink); }
 .baihua-idea__tag { flex-shrink: 0; font-size: .72rem; color: var(--paper-raised); background: var(--cinnabar); padding: 2px 8px; border-radius: 5px; font-family: var(--font-serif); }
 .baihua-lead { margin: 0 0 24px; padding-left: 14px; border-left: 2px solid var(--cinnabar); font-size: .96rem; line-height: 1.85; color: var(--ink-soft); }

@@ -64,10 +64,13 @@ export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionU
 
   return (
     <>
-      <button className="baihua-entry" onClick={() => setOpen(true)} aria-expanded={open}>
+      <button className={`baihua-entry ${data.featured ? 'baihua-entry--featured' : ''}`} onClick={() => setOpen(true)} aria-expanded={open}>
         {seal && <span className="baihua-entry__seal">{seal}</span>}
         <span className="baihua-entry__text">
-          <span className="baihua-entry__title">{entryLabel} · {chapterName}</span>
+          <span className="baihua-entry__title">
+            {entryLabel} · {chapterName}
+            {data.featured && <span className="baihua-entry__flag">总纲</span>}
+          </span>
           <span className="baihua-entry__hint">大白话 + 配图，把这一章讲给完全没读过的人 · 点开</span>
         </span>
         <span className="baihua-entry__chev" aria-hidden="true">▸</span>
@@ -99,7 +102,16 @@ export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionU
               </div>
             </header>
             <div className="baihua-drawer__body">
-              {data.centralIdea && (
+              {data.hero ? (
+                /* 总纲章的特殊「封面」(区别于其他章):徽标 + 大字金句 + 中心思想 + 题词 */
+                <div className="baihua-hero">
+                  {data.hero.badge && <span className="baihua-hero__badge">{data.hero.badge}</span>}
+                  {data.hero.headline && <h1 className="baihua-hero__headline">{data.hero.headline}</h1>}
+                  <span className="baihua-hero__rule" aria-hidden="true">❖</span>
+                  {data.centralIdea && <p className="baihua-hero__idea">{data.centralIdea}</p>}
+                  {data.hero.tagline && <p className="baihua-hero__tagline">{data.hero.tagline}</p>}
+                </div>
+              ) : data.centralIdea && (
                 <div className="baihua-idea">
                   <span className="baihua-idea__tag">中心思想</span>
                   <span>{data.centralIdea}</span>
