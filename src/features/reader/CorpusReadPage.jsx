@@ -6,6 +6,7 @@ import { SITE_MAP } from '../../sites/registry.js'
 import { loadText, getMeta, getAnchors } from './corpus.js'
 import ClassicReader from './ClassicReader.jsx'
 import YanyiBlock from './YanyiBlock.jsx'
+import BaihuaBlock from './BaihuaBlock.jsx'
 
 // 通用逐章阅读器(v16 §1)——佛/儒共用,薄包装通用 ClassicReader 的 paged 模式。
 export default function CorpusReadPage({ corpus }) {
@@ -68,6 +69,7 @@ export default function CorpusReadPage({ corpus }) {
       chapterHref={(no) => `${site.home}/${slug}/${no}`}
       getAnchors={(no, i) => getAnchors(corpus, slug, no, i)}
       renderYanyi={(no) => <YanyiBlock corpus={corpus} slug={slug} chapter={no} />}
+      renderBaihua={(no) => <BaihuaBlock corpus={corpus} slug={slug} chapter={no} bookTitle={meta.title} sectionUnit={meta.sectionUnit || '章'} />}
       paraLabel={numberParas ? (no, i) => String(i + 1) : undefined}
       markCtx={{ corpus, slug }}
     />

@@ -5,6 +5,7 @@ import { SITE_MAP } from '../../sites/registry.js'
 import { loadText, getMeta, getAnchors } from './corpus.js'
 import ClassicReader from './ClassicReader.jsx'
 import YanyiBlock from './YanyiBlock.jsx'
+import BaihuaBlock from './BaihuaBlock.jsx'
 
 // 通用短经单页阅读器(v16 §1)——题解 + 全文一页铺开 + 章末延伸 + 左侧锚点。
 export default function CorpusSinglePage({ corpus, slug, text }) {
@@ -59,6 +60,7 @@ export default function CorpusSinglePage({ corpus, slug, text }) {
       anchorId={(no) => `${corpus}-ch-${no}`}
       getAnchors={(no, i) => getAnchors(corpus, slug, no, i)}
       renderYanyi={(no) => <YanyiBlock corpus={corpus} slug={slug} chapter={no} />}
+      renderBaihua={(no) => <BaihuaBlock corpus={corpus} slug={slug} chapter={no} bookTitle={meta.title} sectionUnit={meta.sectionUnit || '章'} />}
       paraLabel={paraLabel}
       markCtx={{ corpus, slug }}
       header={header}
