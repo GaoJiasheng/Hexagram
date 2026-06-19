@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, useLayoutEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { Link } from 'react-router-dom'
 import zhushiData from '../../../data/yijing/zhushi.json'
 
@@ -39,8 +40,10 @@ function segment(text) {
 
 function ZhuTerm({ entry }) {
   const [open, setOpen] = useState(false)
-  // 视口钳位:dx 为水平回移量,below 表示顶部放不下、翻到触发词下方
-  const [adjust, setAdjust] = useState({ dx: 0, below: false })
+  // 气泡经 portal 渲染到 body——逃出 content-visibility/overflow 容器的绘制裁剪
+  // (#144 在 .read-para 上加 content-visibility:auto,其隐含 paint 包含会把溢出本段的气泡裁掉,致 tooltip 不可见)。
+  // pos 为 fixed 坐标 {left, top, below, site};null 时先隐藏测量、再算定位。
+  const [pos, setPos] = useState(null)
   const ref = useRef(null)
   const popRef = useRef(null)
   // 真实点按(含移动端轻点)会先触发 mouseover/focus 把气泡打开,紧跟的 click 不应再切换关闭;
@@ -48,28 +51,38 @@ function ZhuTerm({ entry }) {
   const gestureOpenedRef = useRef(false)
 
   useLayoutEffect(() => {
-    if (!open) { setAdjust({ dx: 0, below: false }); return }
-    const el = popRef.current
-    if (!el) return
-    const r = el.getBoundingClientRect()
-    const margin = 8
-    let dx = 0
-    if (r.left < margin) dx = margin - r.left
-    else if (r.right > window.innerWidth - margin) dx = window.innerWidth - margin - r.right
-    const below = r.top < margin
-    if (dx !== 0 || below) setAdjust({ dx, below })
+    if (!open) { setPos(null); return }
+    const trig = ref.current, pop = popRef.current
+    if (!trig || !pop) return
+    const tr = trig.getBoundingClientRect()
+    const pr = pop.getBoundingClientRect()
+    const margin = 8, gap = 8
+    let left = tr.left + tr.width / 2
+    const halfW = pr.width / 2
+    if (left - halfW < margin) left = margin + halfW
+    else if (left + halfW > window.innerWidth - margin) left = window.innerWidth - margin - halfW
+    // 默认浮于触发词上方;上方放不下则翻到下方
+    let below = false
+    let top = tr.top - gap
+    if (tr.top - pr.height - gap < margin) { below = true; top = tr.bottom + gap }
+    const site = trig.closest('[data-site]')?.getAttribute('data-site') || undefined
+    setPos({ left, top, below, site })
   }, [open])
 
   useEffect(() => {
     if (!open) return
-    function handler(e) {
-      if (ref.current && !ref.current.contains(e.target)) setOpen(false)
+    const onOutside = (e) => {
+      if (ref.current?.contains(e.target) || popRef.current?.contains(e.target)) return
+      setOpen(false)
     }
-    document.addEventListener('mousedown', handler)
-    document.addEventListener('touchstart', handler)
+    const onScroll = () => setOpen(false)  // fixed 气泡不随文滚动,滚动即关、避免错位
+    document.addEventListener('mousedown', onOutside)
+    document.addEventListener('touchstart', onOutside)
+    window.addEventListener('scroll', onScroll, true)
     return () => {
-      document.removeEventListener('mousedown', handler)
-      document.removeEventListener('touchstart', handler)
+      document.removeEventListener('mousedown', onOutside)
+      document.removeEventListener('touchstart', onOutside)
+      window.removeEventListener('scroll', onScroll, true)
     }
   }, [open])
 
@@ -98,12 +111,20 @@ function ZhuTerm({ entry }) {
       >
         {entry.term}
       </span>
-      {open && (
+      {open && createPortal(
         <span
           ref={popRef}
-          className={`zhushi__popover ${adjust.below ? 'zhushi__popover--below' : ''}`}
+          className="zhushi__popover zhushi__popover--portal"
           role="tooltip"
-          style={adjust.dx !== 0 ? { transform: `translateX(calc(-50% + ${adjust.dx}px))` } : undefined}
+          data-site={pos?.site}
+          style={{
+            position: 'fixed',
+            left: pos ? `${pos.left}px` : '-9999px',
+            top: pos ? `${pos.top}px` : '0px',
+            bottom: 'auto',
+            transform: pos && pos.below ? 'translate(-50%, 0)' : 'translate(-50%, -100%)',
+            visibility: pos ? 'visible' : 'hidden',
+          }}
         >
           <span className="zhushi__term">
             {entry.term}
@@ -114,7 +135,8 @@ function ZhuTerm({ entry }) {
           {entry.qiao && (
             <Link to={entry.qiao.to} className="zhushi__qiao">{entry.qiao.label}</Link>
           )}
-        </span>
+        </span>,
+        document.body,
       )}
     </span>
   )

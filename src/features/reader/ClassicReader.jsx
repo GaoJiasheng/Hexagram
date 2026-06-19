@@ -252,25 +252,25 @@ export default function ClassicReader({
             onClick={() => toggleMark(no, i, p.original)}
             aria-label={marked ? '取消收藏' : '收藏此段'}
             aria-pressed={marked}
-            title={marked ? '取消收藏' : '收藏此段'}
+            data-tip={marked ? '取消收藏' : '收藏此段'}
           >★</button>
           <button
             className={`para-act ${note ? 'para-act--on' : ''}`}
             onClick={() => openEdit(key, note?.text || '')}
             aria-label="批注"
-            title="写批注"
+            data-tip={note ? '编辑批注' : '写批注'}
           >✎</button>
           <button
             className={`para-act ${copied ? 'para-act--on' : ''}`}
             onClick={() => copyLink(no, i)}
             aria-label="复制本段链接"
-            title="复制本段链接"
+            data-tip={copied ? '已复制链接' : '复制本段链接'}
           >{copied ? '✓' : '🔗'}</button>
           <button
             className="para-act"
             onClick={() => setCardSeg({ original: p.original, translation: p.translation, source: cardSource(no) })}
             aria-label="生成金句卡"
-            title="生成金句卡"
+            data-tip="生成金句卡"
           >🖼</button>
         </div>
       </div>
