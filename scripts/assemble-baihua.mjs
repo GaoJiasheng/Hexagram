@@ -51,17 +51,23 @@ for (const [key, list] of Object.entries(byBook)) {
     const d = u.data
     const text = chapterText(corpus, slug, u.no)
     const blocks = Array.isArray(d.blocks) ? d.blocks : []
-    // 自校:每个 quote.original 须为原文子串(报坏,不丢弃 —— 留待 check-data 硬卡)
+    // 自校:每个 quote.original 标点回吸为原文子串;仍对不上者 = 坏引文(常是校对失败章的跨章幻引)
+    let figHere = 0, bad = 0
     for (const b of blocks) {
-      if (b.type === 'figure') nFig++
+      if (b.type === 'figure') figHere++
       if (b.type === 'quote' && b.original && text) {
-        b.original = snapQuote(b.original, text)   // 标点回吸为原文精确子串
-        if (!text.includes(b.original)) {
-          nBadCite++
-          console.warn(`  ⚠ 坏引文 ${corpus}/${slug}#${u.no}: 「${b.original.slice(0, 16)}…」非原文子串`)
-        }
+        b.original = snapQuote(b.original, text)
+        if (!text.includes(b.original)) bad++
       }
     }
+    // 有坏引文的章一律丢弃(不写入、删除既有),留待重生 —— 保证落盘数据永远过 check-data
+    if (bad > 0) {
+      nBadCite += bad
+      delete existing[String(u.no)]
+      console.warn(`  ⚠ 丢弃 ${corpus}/${slug}#${u.no}:${bad} 处坏引文(校对失败章,待重生)`)
+      continue
+    }
+    nFig += figHere
     const article = { title: d.title, subtitle: d.subtitle, centralIdea: d.centralIdea, blocks }
     // featured/hero 仅认单元(书首章)标记 —— agent 常给非首章误加 hero,一律以 u.featured 为准
     if (u.featured) {
@@ -79,5 +85,4 @@ for (const [key, list] of Object.entries(byBook)) {
   console.log(`写 ${outFile}  (${list.length} 章)`)
 }
 
-console.log(`\n装配完成:${nCh} 章 · ${nFig} 图 · ${nBadCite} 坏引文。`)
-if (nBadCite) console.log('⚠ 有坏引文,跑 npm run check-data 会硬卡,需修后再 commit。')
+console.log(`\n装配完成:写入 ${nCh} 章 · ${nFig} 图。坏引文丢弃 ${nBadCite} 处(对应章未写,gen 重跑会自动补)。`)

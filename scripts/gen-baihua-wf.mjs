@@ -23,14 +23,19 @@ const bookTitle = meta.title
 const unit = meta.sectionUnit || '章'
 
 const firstNo = book.chapters[0]?.no
+// 已有白话的章跳过(断点续跑/补缺只生成缺章,不重做)
+const existPath = path.join(ROOT, `src/data/${corpus}/baihua/${slug}.json`)
+const done = fs.existsSync(existPath) ? new Set(Object.keys(JSON.parse(fs.readFileSync(existPath, 'utf8')))) : new Set()
 const units = book.chapters
   .filter((c) => (chFrom == null || c.no >= chFrom) && (chTo == null || c.no <= chTo))
+  .filter((c) => !done.has(String(c.no)))
   .map((c) => ({
     corpus, book: slug, no: c.no,
     title: c.title || `第${c.no}${unit}`,
     chars: c.paragraphs.map((p) => p.original).join('').length,
     featured: c.no === firstNo,        // 书首章 = 总纲,给 hero
   }))
+if (!units.length) { console.log(`${bookTitle}:[${chFrom ?? 1}–${chTo ?? '末'}] 该范围已全有白话,无需生成。`); process.exit(0) }
 
 // ── 各组红线(design-v22 §3.6)──
 const RED = {
