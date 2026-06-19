@@ -6,6 +6,7 @@ import { getDaoAnchors } from '../daoAnchored.js'
 import { usePageTitle } from '../../yijing/hooks/usePageTitle.js'
 import ClassicReader from '../../reader/ClassicReader.jsx'
 import YanyiBlock from '../components/YanyiBlock.jsx'
+import BaihuaBlock from '../../reader/BaihuaBlock.jsx'
 import { Link } from 'react-router-dom'
 
 // 道藏逐章阅读器(v14 §3:薄包装,核心走通用 ClassicReader)
@@ -58,6 +59,7 @@ export default function DaoReadPage() {
       chapterHref={(no) => `/dao/${slug}/${no}`}
       getAnchors={(no, i) => getDaoAnchors(slug, no, i)}
       renderYanyi={(no) => <YanyiBlock slug={slug} chapter={no} />}
+      renderBaihua={(no) => <BaihuaBlock corpus="dao" slug={slug} chapter={no} bookTitle={meta.title} sectionUnit={meta.sectionUnit || '章'} />}
       markCtx={{ corpus: 'dao', slug }}
     />
   )

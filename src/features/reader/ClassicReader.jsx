@@ -48,6 +48,7 @@ export default function ClassicReader({
   anchorId = (no) => `ch-${no}`,
   getAnchors = () => null,
   renderYanyi = () => null,
+  renderBaihua = () => null,   // 白话模块入口条（design-v22），挂在章题之下
   paraLabel = () => null,
   header = null,
   sectionUnit = '章',
@@ -327,6 +328,7 @@ export default function ClassicReader({
           chapters.map((c) => (
             <section key={c.no} id={anchorId(c.no)} data-no={c.no} className="dao-single__chapter">
               {multi && <h2 className="read-chapter-title">{chapterLabel(c)}</h2>}
+              {renderBaihua(c.no)}
               {c.paragraphs.map((p, i) => Para(c.no, p, i))}
               <ChapterNotes chapter={c} getAnchors={getAnchors} />
               {renderYanyi(c.no)}
@@ -350,6 +352,7 @@ export default function ClassicReader({
           return (
             <>
               <h2 className="read-chapter-title">{chapterLabel(cur)}</h2>
+              {renderBaihua(cur.no)}
               {cur.paragraphs.map((p, i) => Para(cur.no, p, i))}
               <ChapterNotes chapter={cur} getAnchors={getAnchors} />
               {renderYanyi(cur.no)}
