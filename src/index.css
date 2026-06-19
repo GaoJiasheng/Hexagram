@@ -2977,26 +2977,32 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 
 /* 三教门户(v15 隐藏入口 /hexagram)——仅 owner 入口,简素卡片跨域跳转 */
 .master-portal { min-height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; padding: 48px 24px; }
-.master-portal__hint { font-size: 0.78rem; color: var(--ink-faint); letter-spacing: 0.08em; }
-.master-portal__cards { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; width: 100%; max-width: 800px; margin: 0 auto; }
-.master-portal__card { flex: 0 1 calc((100% - 48px) / 3); display: flex; flex-direction: column; align-items: center; gap: 12px; min-width: 200px; padding: 32px 28px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper-raised); text-decoration: none; transition: border-color 0.15s, transform 0.15s; }
-.master-portal__card:hover { border-color: var(--cinnabar); transform: translateY(-2px); }
+.master-portal__hint { font-size: 0.74rem; color: var(--ink-faint); letter-spacing: 0.22em; text-indent: 0.22em; text-transform: none; }
+/* 等宽等高网格(CSS Grid):彻底消除宽度/高度参差。易道横幅独占首行,余 9 组 3 列 */
+.master-portal__cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; width: 100%; max-width: 720px; margin: 0 auto; }
+.master-portal__card { --card-accent: var(--ink-soft); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 13px; min-height: 172px; padding: 26px 20px; border: 1px solid var(--line); border-radius: 11px; background: var(--paper-raised); text-decoration: none; transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; }
+.master-portal__card:hover { border-color: var(--card-accent); transform: translateY(-3px); box-shadow: 0 8px 22px -12px color-mix(in srgb, var(--card-accent) 55%, transparent); }
 .master-portal__seals { display: flex; gap: 8px; }
-.master-portal__seal { width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; background: var(--cinnabar); color: #fdfbf6; font-family: var(--font-serif); font-size: 1rem; border-radius: 6px; }
-.master-portal__titles { font-family: var(--font-serif); font-size: 0.95rem; color: var(--ink-soft); }
-.master-portal__desc { font-size: 0.78rem; color: var(--ink-faint); line-height: 1.5; text-align: center; max-width: 17em; }
-/* 多站组(易道):独占一行,易经/道藏左右并置、连成一卡(整卡不抬升),与下方诸卡分隔 */
-.master-portal__card--multi { flex: 0 0 100%; flex-direction: row; padding: 0; gap: 0; align-items: stretch; overflow: hidden; }
-.master-portal__card--multi:hover { transform: none; border-color: var(--line); }
-.master-portal__site { flex: 1; display: flex; align-items: center; gap: 14px; padding: 26px 30px; text-decoration: none; transition: background 0.15s; }
+/* 朱印式徽章:每组自有的沉静色;印文用纸色,随明暗自动反转保对比 */
+.master-portal__seal { width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; background: var(--card-accent); color: var(--paper-raised); font-family: var(--font-serif); font-size: 1rem; letter-spacing: 0.04em; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1), 0 1px 2px rgba(0,0,0,0.12); }
+.master-portal__titles { font-family: var(--font-serif); font-size: 0.98rem; color: var(--ink); letter-spacing: 0.03em; }
+.master-portal__desc { font-size: 0.75rem; color: var(--ink-faint); line-height: 1.55; text-align: center; max-width: 15em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+/* 多站组(易道):独占首行的全宽横幅,易经/道藏各半幅、内容居中,中缝竖线相连。
+   两半与下方诸卡同一「印—名—述」结构,只是更宽更高、印章稍大,作门户之首的主次区分。 */
+.master-portal__card--multi { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 0; min-height: 0; padding: 0; overflow: hidden; }
+.master-portal__card--multi:hover { transform: none; box-shadow: none; border-color: var(--line); }
+.master-portal__site { --card-accent: var(--ink-soft); display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 16px; padding: 30px 24px; text-decoration: none; transition: background 0.2s ease; }
 .master-portal__site + .master-portal__site { border-left: 1px solid var(--line); }
-.master-portal__site:hover { background: var(--paper-sunken, rgba(0,0,0,0.03)); }
-.master-portal__site .master-portal__seal { flex-shrink: 0; }
-.master-portal__site-text { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
-.master-portal__site-text .master-portal__desc { text-align: left; }
-/* 窄屏:易道横幅退回上下堆叠,分隔线转横向 */
-@media (max-width: 560px) {
-  .master-portal__card--multi { flex-direction: column; }
+.master-portal__site:hover { background: color-mix(in srgb, var(--card-accent) 7%, transparent); }
+.master-portal__site .master-portal__seal { width: 52px; height: 52px; font-size: 1.1rem; flex-shrink: 0; }
+.master-portal__site-text { display: flex; flex-direction: column; gap: 5px; align-items: flex-start; }
+.master-portal__site-text .master-portal__titles { font-size: 1.08rem; }
+.master-portal__site-text .master-portal__desc { text-align: left; max-width: 14em; }
+/* 窄屏:网格转单列,易道横幅退回上下堆叠、竖线转横线 */
+@media (max-width: 600px) {
+  .master-portal__cards { grid-template-columns: 1fr; max-width: 360px; }
+  .master-portal__card--multi { grid-template-columns: 1fr; }
+  .master-portal__site { justify-content: flex-start; }
   .master-portal__site + .master-portal__site { border-left: none; border-top: 1px solid var(--line); }
 }
 .master-portal__about { margin-top: 28px; text-align: center; }

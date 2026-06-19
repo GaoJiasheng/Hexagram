@@ -17,6 +17,9 @@ function siteDesc(site) {
   return done.length > 4 ? `${titles} 等 ${done.length} 部` : titles
 }
 
+// 每组以自有的沉静色驱动徽章/悬停(--card-accent);易经的 cinnabar 在门户外壳被映射为墨色。
+const accentStyle = (site) => ({ '--card-accent': `var(--${site.accent})` })
+
 // 诸学门户(总入口)——左上角 logo 全站可达,列全部分组(易道/儒/佛/心/法/墨/兵/纵横/中医/谋略)。
 // 生产域名上卡片链向各组绝对 URL(跨域),dev 用相对路径。
 export default function MasterPortalPage() {
@@ -34,7 +37,7 @@ export default function MasterPortalPage() {
           if (sites.length === 1) {
             const s = sites[0]
             return (
-              <a key={group} href={siteEntryHref(s, protocol, hostname)} className="master-portal__card">
+              <a key={group} href={siteEntryHref(s, protocol, hostname)} className="master-portal__card" style={accentStyle(s)}>
                 <span className="master-portal__seals"><span className="master-portal__seal">{s.brand}</span></span>
                 <span className="master-portal__titles">{s.portalTitle}</span>
                 <span className="master-portal__desc">{siteDesc(s)}</span>
@@ -44,7 +47,7 @@ export default function MasterPortalPage() {
           return (
             <div key={group} className="master-portal__card master-portal__card--multi">
               {sites.map(s => (
-                <a key={s.key} href={siteEntryHref(s, protocol, hostname)} className="master-portal__site">
+                <a key={s.key} href={siteEntryHref(s, protocol, hostname)} className="master-portal__site" style={accentStyle(s)}>
                   <span className="master-portal__seal">{s.brand}</span>
                   <span className="master-portal__site-text">
                     <span className="master-portal__titles">{s.portalTitle}</span>
