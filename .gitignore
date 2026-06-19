@@ -39,3 +39,6 @@ scripts/.baihua-*-wf.js
 
 # Stray root-level fetch cache (recon)
 .cache/
+
+# 白话通宵编排尝试计数(run-state,可重生)
+scripts/.baihua-attempts.json
