@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { allGroups, sitesInGroup, siteEntryHref } from '../sites/registry.js'
 import { usePageTitle } from './yijing/hooks/usePageTitle.js'
@@ -27,37 +28,40 @@ export default function MasterPortalPage() {
   const protocol = typeof window !== 'undefined' ? window.location.protocol : 'https:'
   const hostname = typeof window !== 'undefined' ? window.location.hostname : ''
 
+  // 所有卡同一形态、同一固定宽——单站组直接成卡;多站组(易道)的两站亦是普通卡,
+  // 只是同居首行、以小太极桥相连(相系而不并合)。
+  const groups = allGroups()
+  const featuredGroup = groups.find(g => sitesInGroup(g).length > 1) // 易道
+  const singleGroups = groups.filter(g => sitesInGroup(g).length === 1)
+  const renderCard = (s) => (
+    <a key={s.key} href={siteEntryHref(s, protocol, hostname)} className="master-portal__card" style={accentStyle(s)}>
+      <span className="master-portal__seals"><span className="master-portal__seal">{s.brand}</span></span>
+      <span className="master-portal__titles">{s.portalTitle}</span>
+      <span className="master-portal__desc">{siteDesc(s)}</span>
+    </a>
+  )
+
   return (
     <div className="master-portal">
       <p className="master-portal__hint">观象 · 诸学门户</p>
+      {featuredGroup && (
+        <div className="master-portal__featured">
+          {sitesInGroup(featuredGroup).map((s, i) => (
+            <Fragment key={s.key}>
+              {i > 0 && (
+                <span className="master-portal__bond" aria-hidden="true">
+                  <span className="master-portal__bond-line" />
+                  <span className="master-portal__bond-node">☯</span>
+                  <span className="master-portal__bond-line" />
+                </span>
+              )}
+              {renderCard(s)}
+            </Fragment>
+          ))}
+        </div>
+      )}
       <div className="master-portal__cards">
-        {allGroups().map(group => {
-          const sites = sitesInGroup(group)
-          // 单站组:整卡一链接。多站组(易道):每站各一可点入口,道藏不再埋在易经底下。
-          if (sites.length === 1) {
-            const s = sites[0]
-            return (
-              <a key={group} href={siteEntryHref(s, protocol, hostname)} className="master-portal__card" style={accentStyle(s)}>
-                <span className="master-portal__seals"><span className="master-portal__seal">{s.brand}</span></span>
-                <span className="master-portal__titles">{s.portalTitle}</span>
-                <span className="master-portal__desc">{siteDesc(s)}</span>
-              </a>
-            )
-          }
-          return (
-            <div key={group} className="master-portal__card master-portal__card--multi">
-              {sites.map(s => (
-                <a key={s.key} href={siteEntryHref(s, protocol, hostname)} className="master-portal__site" style={accentStyle(s)}>
-                  <span className="master-portal__seal">{s.brand}</span>
-                  <span className="master-portal__site-text">
-                    <span className="master-portal__titles">{s.portalTitle}</span>
-                    <span className="master-portal__desc">{siteDesc(s)}</span>
-                  </span>
-                </a>
-              ))}
-            </div>
-          )
-        })}
+        {singleGroups.map(g => renderCard(sitesInGroup(g)[0]))}
       </div>
       <PortalStudyTrail />
       <p className="master-portal__links">
