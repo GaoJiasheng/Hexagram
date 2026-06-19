@@ -70,7 +70,7 @@ const draftPrompt = (u) => {
     `篇幅:${band}。\n\n按 schema 产出一篇白话文章:\n` +
     `- title:"白话${bookTitle} · ${u.title}";subtitle:一句副题;centralIdea:一句话中心思想。\n` +
     `- blocks:有序数组,块类型 lead(导语)/p(段落)/h2(小节标题)/quote{original,translation}(逐句引文,original 必为该章原文段精确子串、translation 与站内译文一致)/figure{ftype,svg,caption}(内联 SVG 图)/refs{items:[…]}(出处与参考)。按脊柱顺序铺;逐句走读用 quote+p 穿插;金句卡等图穿插在合适处;末尾一个 refs 块。\n` +
-    (u.featured ? `- 这是全书开篇总纲章:额外给 featured:true 和 hero:{badge:"开篇 · 全书总纲",headline:本章关键句,tagline:一句题词};正文不必再单列与 hero 重复的金句卡。\n` : '') +
+    (u.featured ? `- 这是全书开篇总纲章:额外给 featured:true 和 hero:{badge:"开篇 · 全书总纲",headline:本章关键句,tagline:一句题词};正文不必再单列与 hero 重复的金句卡。\n` : `- 本章非开篇,**不要**输出 featured 或 hero 字段。\n`) +
     `\n只返回结构化结果。`
 }
 

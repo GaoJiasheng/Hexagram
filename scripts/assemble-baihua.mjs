@@ -12,6 +12,16 @@ if (!resultPath) { console.error('用法: node scripts/assemble-baihua.mjs <resu
 const result = JSON.parse(fs.readFileSync(resultPath, 'utf8'))
 const units = (Array.isArray(result) ? result : result.result || []).filter((u) => u && u.data)
 
+// 标点规范化(全角→半角,1:1 等长)——工具链常把 agent 输出的全角逗号/分号/问号静默转半角,
+// 致引文与全角原文不匹配。snap:按规范化匹配定位,再从真原文按下标切出 → 引文回吸为原文精确子串。
+const W2H = { '，': ',', '。': '.', '；': ';', '：': ':', '？': '?', '！': '!', '（': '(', '）': ')', '、': ',', '「': '"', '」': '"', '『': '"', '』': '"' }
+const norm = (s) => s.replace(/[，。；：？！（）、「」『』]/g, (c) => W2H[c] || c)
+function snapQuote(q, text) {
+  if (!q || !text || text.includes(q)) return q
+  const idx = norm(text).indexOf(norm(q))
+  return idx >= 0 ? text.slice(idx, idx + q.length) : q
+}
+
 const chCache = {}
 const chapterText = (corpus, slug, no) => {
   const k = `${corpus}/${slug}`
@@ -44,13 +54,17 @@ for (const [key, list] of Object.entries(byBook)) {
     // 自校:每个 quote.original 须为原文子串(报坏,不丢弃 —— 留待 check-data 硬卡)
     for (const b of blocks) {
       if (b.type === 'figure') nFig++
-      if (b.type === 'quote' && b.original && text && !text.includes(b.original)) {
-        nBadCite++
-        console.warn(`  ⚠ 坏引文 ${corpus}/${slug}#${u.no}: 「${b.original.slice(0, 16)}…」非原文子串`)
+      if (b.type === 'quote' && b.original && text) {
+        b.original = snapQuote(b.original, text)   // 标点回吸为原文精确子串
+        if (!text.includes(b.original)) {
+          nBadCite++
+          console.warn(`  ⚠ 坏引文 ${corpus}/${slug}#${u.no}: 「${b.original.slice(0, 16)}…」非原文子串`)
+        }
       }
     }
     const article = { title: d.title, subtitle: d.subtitle, centralIdea: d.centralIdea, blocks }
-    if (u.featured || d.featured) {
+    // featured/hero 仅认单元(书首章)标记 —— agent 常给非首章误加 hero,一律以 u.featured 为准
+    if (u.featured) {
       article.featured = true
       if (d.hero) article.hero = d.hero
     }
