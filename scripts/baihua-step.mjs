@@ -10,7 +10,7 @@ import { execSync } from 'node:child_process'
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const sh = (cmd) => execSync(cmd, { cwd: ROOT, encoding: 'utf8' })
 
-const CORPORA = ['dao', 'ru', 'fo', 'xin']   // 通宵范围:四教
+const CORPORA = ['fa', 'mo', 'bing', 'zong']   // 当前组:诸子四家(法/墨/兵/纵横);铺完一个模块停下确认,再换下一组
 const CAP = 10                                // 每批最多章数(越小→单 workflow 并发越少→越少撞 API 限流;夜间限流紧,取 10)
 const MAXATT = 3                              // 单章最多重试次数(防顽固章死循环)
 const ATT_FILE = path.join(ROOT, 'scripts/.baihua-attempts.json')
