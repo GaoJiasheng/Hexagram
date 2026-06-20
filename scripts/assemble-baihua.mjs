@@ -80,30 +80,29 @@ for (const [key, list] of Object.entries(byBook)) {
     const d = u.data
     const text = chapterText(corpus, slug, u.no)
     const blocks = Array.isArray(d.blocks) ? d.blocks : []
-    // 自校:每个 quote.original 标点回吸为原文子串;仍对不上者 = 坏引文(常是校对失败章的跨章幻引)
-    let figHere = 0, bad = 0
+    // 自校:逐 quote 回吸为原文子串;**只剔除仍对不上的坏引文块、保留整章其余**
+    // (根治个别坏引文致整卦反复重生乃至永久缺口;剩 ≥1 有效引文就落盘,带一处小缺远胜整卦没白话)
+    const cleanBlocks = []
+    let figHere = 0, dropped = 0
     for (const b of blocks) {
-      if (b.type === 'figure') figHere++
       if (b.type === 'quote' && b.original && text) {
-        b.original = snapQuote(b.original, text)
-        if (!text.includes(b.original)) bad++
+        const snapped = snapQuote(b.original, text)
+        if (!text.includes(snapped)) { dropped++; continue }   // 坏引文块:不带进正文
+        b.original = snapped
       }
+      if (b.type === 'figure') figHere++
+      cleanBlocks.push(b)
     }
-    // 有坏引文的章一律丢弃(不写入、删除既有),留待重生 —— 保证落盘数据永远过 check-data
-    if (bad > 0) {
-      nBadCite += bad
+    const goodQuotes = cleanBlocks.filter((b) => b.type === 'quote' && b.original).length
+    // 仅当全章 0 有效引文(check-data 要求 ≥1)才整章丢弃→重生;否则保留
+    if (goodQuotes < 1) {
       delete existing[String(u.no)]
-      console.warn(`  ⚠ 丢弃 ${corpus}/${slug}#${u.no}:${bad} 处坏引文(校对失败章,待重生)`)
+      console.warn(`  ⚠ 丢弃 ${corpus}/${slug}#${u.no}:无有效引文,待重生`)
       continue
     }
-    // 无逐句引文(quote)的章也丢弃 —— check-data 要求 ≥1 引文,否则落盘即失败;丢弃→重生
-    if (!blocks.some((b) => b.type === 'quote' && b.original)) {
-      delete existing[String(u.no)]
-      console.warn(`  ⚠ 丢弃 ${corpus}/${slug}#${u.no}:无逐句引文(quote),待重生`)
-      continue
-    }
+    if (dropped > 0) { nBadCite += dropped; console.warn(`  ℹ ${corpus}/${slug}#${u.no}:剔除 ${dropped} 处坏引文块(保留其余 ${goodQuotes} 引文)`) }
     nFig += figHere
-    const article = { title: d.title, subtitle: d.subtitle, centralIdea: d.centralIdea, blocks }
+    const article = { title: d.title, subtitle: d.subtitle, centralIdea: d.centralIdea, blocks: cleanBlocks }
     // featured/hero 仅认单元(书首章)标记 —— agent 常给非首章误加 hero,一律以 u.featured 为准
     if (u.featured) {
       article.featured = true
