@@ -10,7 +10,7 @@ import { execSync } from 'node:child_process'
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const sh = (cmd) => execSync(cmd, { cwd: ROOT, encoding: 'utf8' })
 
-const CORPORA = ['fa']   // 当前组:法家(韩非子/商君书/慎子/尹文子);跑完停下 → 易经(提前,需基建)→ 墨/兵/纵横 → 谋略 → 中医
+const CORPORA = ['yijing', 'fa']   // 先把易经 64 卦填满(owner:易经全完成后再法家)→ 再续法家剩余 → 之后墨/兵/纵横/谋略/中医
 const CAP = 10                                // 每批最多章数(越小→单 workflow 并发越少→越少撞 API 限流;夜间限流紧,取 10)
 const MAXATT = 3                              // 单章最多重试次数(防顽固章死循环)
 const ATT_FILE = path.join(ROOT, 'scripts/.baihua-attempts.json')
@@ -60,22 +60,28 @@ const att = fs.existsSync(ATT_FILE) ? JSON.parse(fs.readFileSync(ATT_FILE, 'utf8
 let totalDone = 0, totalAll = 0, next = null
 const gaps = []   // 报告:已 3 次失败、放弃的章
 for (const corpus of CORPORA) {
-  const texts = JSON.parse(fs.readFileSync(path.join(ROOT, `src/data/${corpus}/texts.json`), 'utf8')).filter((t) => t.status === 'done')
-  for (const t of texts) {
-    const cls = JSON.parse(fs.readFileSync(path.join(ROOT, `src/data/${corpus}/classics/${t.slug}.json`), 'utf8'))
-    const nos = cls.chapters.map((c) => c.no)
-    const bp = path.join(ROOT, `src/data/${corpus}/baihua/${t.slug}.json`)
+  // 各 corpus 的书目→章号列表;易经形态不同(hexagrams.json 64 卦,slug 固定 hexagrams)
+  let books
+  if (corpus === 'yijing') {
+    const hexes = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/yijing/hexagrams.json'), 'utf8'))
+    books = [{ slug: 'hexagrams', nos: hexes.map((q) => q.id) }]
+  } else {
+    const texts = JSON.parse(fs.readFileSync(path.join(ROOT, `src/data/${corpus}/texts.json`), 'utf8')).filter((t) => t.status === 'done')
+    books = texts.map((t) => ({ slug: t.slug, nos: JSON.parse(fs.readFileSync(path.join(ROOT, `src/data/${corpus}/classics/${t.slug}.json`), 'utf8')).chapters.map((c) => c.no) }))
+  }
+  for (const b of books) {
+    const bp = path.join(ROOT, `src/data/${corpus}/baihua/${b.slug}.json`)
     const bh = fs.existsSync(bp) ? JSON.parse(fs.readFileSync(bp, 'utf8')) : {}
-    totalAll += nos.length
-    totalDone += nos.filter((no) => String(no) in bh).length
-    const missing = nos.filter((no) => !(String(no) in bh))
+    totalAll += b.nos.length
+    totalDone += b.nos.filter((no) => String(no) in bh).length
+    const missing = b.nos.filter((no) => !(String(no) in bh))
     for (const no of missing) {
-      const k = `${corpus}/${t.slug}#${no}`
+      const k = `${corpus}/${b.slug}#${no}`
       if ((att[k] || 0) >= MAXATT) gaps.push(k)
     }
     if (!next) {
-      const tryable = missing.filter((no) => (att[`${corpus}/${t.slug}#${no}`] || 0) < MAXATT)
-      if (tryable.length) next = { corpus, slug: t.slug, batch: tryable.slice(0, CAP) }
+      const tryable = missing.filter((no) => (att[`${corpus}/${b.slug}#${no}`] || 0) < MAXATT)
+      if (tryable.length) next = { corpus, slug: b.slug, batch: tryable.slice(0, CAP) }
     }
   }
 }
