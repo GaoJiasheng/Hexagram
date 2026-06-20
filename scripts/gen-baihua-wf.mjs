@@ -15,26 +15,54 @@ const chFrom = process.argv[4] ? Number(process.argv[4]) : null
 const chTo = process.argv[5] ? Number(process.argv[5]) : null
 if (!corpus || !slug) { console.error('用法: node scripts/gen-baihua-wf.mjs <corpus> <slug> [chFrom] [chTo]'); process.exit(1) }
 
-const texts = JSON.parse(fs.readFileSync(path.join(ROOT, `src/data/${corpus}/texts.json`), 'utf8'))
-const meta = texts.find((t) => t.slug === slug)
-if (!meta) { console.error(`texts.json 无 slug=${slug}`); process.exit(1) }
-const book = JSON.parse(fs.readFileSync(path.join(ROOT, `src/data/${corpus}/classics/${slug}.json`), 'utf8'))
-const bookTitle = meta.title
-const unit = meta.sectionUnit || '章'
+const IS_YIJING = corpus === 'yijing'   // 易经数据形态不同(hexagrams.json 64 卦,非 corpus 章),走 yijing 加厚支线
 
-const firstNo = book.chapters[0]?.no
-// 已有白话的章跳过(断点续跑/补缺只生成缺章,不重做)
-const existPath = path.join(ROOT, `src/data/${corpus}/baihua/${slug}.json`)
-const done = fs.existsSync(existPath) ? new Set(Object.keys(JSON.parse(fs.readFileSync(existPath, 'utf8')))) : new Set()
-const units = book.chapters
-  .filter((c) => (chFrom == null || c.no >= chFrom) && (chTo == null || c.no <= chTo))
-  .filter((c) => !done.has(String(c.no)))
-  .map((c) => ({
-    corpus, book: slug, no: c.no,
-    title: c.title || `第${c.no}${unit}`,
-    chars: c.paragraphs.map((p) => p.original).join('').length,
-    featured: c.no === firstNo,        // 书首章 = 总纲,给 hero
-  }))
+// 一卦的全部经传原文(供 chars 估算 + 引文子串校验池):卦辞+彖+大象+爻辞+小象+用九六+文言+序卦杂卦
+function hexAllOriginal(q) {
+  const parts = [q.judgment?.original, q.tuan?.original, q.daxiang?.original]
+  for (const l of q.lines || []) { parts.push(l.original, l.xiaoxiang?.original) }
+  if (q.extra?.use) { parts.push(q.extra.use.original, q.extra.use.xiaoxiang?.original) }
+  for (const w of q.extra?.wenyan || []) parts.push(w.original)
+  parts.push(q.xugua, q.zagua)
+  return parts.filter(Boolean).join('')
+}
+
+let bookTitle, unit, units
+if (IS_YIJING) {
+  bookTitle = '易经'; unit = '卦'
+  const hexes = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/yijing/hexagrams.json'), 'utf8'))
+  const existPath = path.join(ROOT, 'src/data/yijing/baihua/hexagrams.json')
+  const done = fs.existsSync(existPath) ? new Set(Object.keys(JSON.parse(fs.readFileSync(existPath, 'utf8')))) : new Set()
+  units = hexes
+    .filter((q) => (chFrom == null || q.id >= chFrom) && (chTo == null || q.id <= chTo))
+    .filter((q) => !done.has(String(q.id)))
+    .map((q) => ({
+      corpus: 'yijing', book: 'hexagrams', no: q.id,
+      title: `${q.name}（${q.fullName}）`,
+      chars: hexAllOriginal(q).length,
+      featured: q.id === 1,            // 乾为全书总纲,给 hero
+    }))
+} else {
+  const texts = JSON.parse(fs.readFileSync(path.join(ROOT, `src/data/${corpus}/texts.json`), 'utf8'))
+  const meta = texts.find((t) => t.slug === slug)
+  if (!meta) { console.error(`texts.json 无 slug=${slug}`); process.exit(1) }
+  const book = JSON.parse(fs.readFileSync(path.join(ROOT, `src/data/${corpus}/classics/${slug}.json`), 'utf8'))
+  bookTitle = meta.title
+  unit = meta.sectionUnit || '章'
+  const firstNo = book.chapters[0]?.no
+  // 已有白话的章跳过(断点续跑/补缺只生成缺章,不重做)
+  const existPath = path.join(ROOT, `src/data/${corpus}/baihua/${slug}.json`)
+  const done = fs.existsSync(existPath) ? new Set(Object.keys(JSON.parse(fs.readFileSync(existPath, 'utf8')))) : new Set()
+  units = book.chapters
+    .filter((c) => (chFrom == null || c.no >= chFrom) && (chTo == null || c.no <= chTo))
+    .filter((c) => !done.has(String(c.no)))
+    .map((c) => ({
+      corpus, book: slug, no: c.no,
+      title: c.title || `第${c.no}${unit}`,
+      chars: c.paragraphs.map((p) => p.original).join('').length,
+      featured: c.no === firstNo,        // 书首章 = 总纲,给 hero
+    }))
+}
 if (!units.length) { console.log(`${bookTitle}:[${chFrom ?? 1}–${chTo ?? '末'}] 该范围已全有白话,无需生成。`); process.exit(0) }
 
 // ── 各组红线(design-v22 §3.6)──
@@ -49,6 +77,7 @@ const RED = {
   zong: '【红线·纵横】思想史视角;不作权术/游说话术教程、不作政治影射。',
   zhongyi: '【红线·中医·最严】研习不诊疗:只作医史/字词训读,绝不教自疗、不述功效用法用量、不下病症/疗效断语;每篇带「⚠ 本文为古籍研习、非医疗建议」。',
   moulue: '【红线·谋略】伪书批判:译白其权术面目,但点真伪、指其偷换史实/泯善恶,绝不为伪书张目、不教施用。',
+  yijing: '【红线·易】释卦象义理,不算命;爻辞「吉/凶/悔/吝/厉/无咎」照原典训读其本义(是古人对处境的判语),绝不引申为对今日读者的命运预言、不教占卜趋避、不下宿命断语。象数(错综/卦变/爻位)只讲能从卦象稳妥推出的,纳甲/八宫拿不准宁略不可杜撰。',
 }
 const FILE = (c, b) => `${ROOT}/src/data/${c}/classics/${b}.json`
 
@@ -68,7 +97,52 @@ const FIGSPEC = [
   '- 每图配 caption(讲清它在说什么 + 出处)。',
 ].join('\n')
 
+// ── 易经加厚支线(owner:一卦一厚文 + 三传必含 + 周边关联成网 + 更白更多生活实例,每卦 5–8 图)──
+const Y_FILE = `${ROOT}/src/data/yijing/hexagrams.json`
+const SPEC_Y = [
+  '这是为易经研习站写的整卦「白话」深读 —— **首先是一篇能让小白读懂的公众号文章,不是逐句翻译作业**。',
+  '灵魂:大白话把这一卦讲透 + 人人跟得上的「脑回路」(把古人对处境的思路翻成现代推理链)+ 接地气的比喻。',
+  '**关键(易经最易写成术语堆砌,务必避免)**:每一处抽象义理(爻位、当位、中正、刚柔、进退、盈亏、应比承乘…)都要落到一个**今人日常的场景或实例**(职场进退、攒钱花钱、熬夜、排队、考试、家庭关系、新人入职、创业守成…)+ 一个**接地气的比喻**,把卦象/爻义讲到「下里巴人也秒懂」。判准:一个没读过易经、不懂阴阳爻的普通人,读完能用大白话复述这一卦在讲什么、并联系到自己生活里的某件事。',
+  '语言:大白话第一;术语(初九/中正/应)出现即随手用一句人话解释;比喻是魂(抽象处必有比喻落地)。',
+  '诚实:引文必须逐字取站内经传原文(quote.original 须为本卦某段经传原文的精确连续子串);白话与站内译文一致;象数只讲能稳妥推出的,异解如实标分歧;不杜撰史实、不编卦名/纳甲。',
+].join('\n')
+const FIGSPEC_Y = [
+  '配图(每卦 5–8 张,远多于一般章;卦本身可视化潜力大,图比文直观处就上):',
+  '- 必出:① **卦画六爻图**(六条爻自下而上:阳爻画一条实心长横、阴爻画中间断开的两段短横,初爻在最下、上爻在最上,爻旁可标爻题如「初九」);② **上下经卦分解**(上卦/下卦各是八经卦之一,标卦名与取象,如 ☰ 乾为天、☷ 坤为地);③ **金句卡**(卦辞或彖传题眼,1 张)。',
+  '- 按内容出:④ **爻位身份图**(六爻位置 + 标当位/中正/与谁相应);⑤ **错综/卦变图**(若正文讲了错卦综卦);⑥ **六爻爻义一览**(列举:每爻一句大白话主旨)。涉方位/消息卦才加,拿不准不画。',
+  '- 一律内联 SVG:<svg viewBox=... style="width:100%;height:auto;font-family:var(--font-serif)">…;颜色只用 style="fill:var(--ink)"/"stroke:var(--line)"/"fill:var(--cinnabar)"(强调)等 CSS 变量,**绝不写死 #hex**;text-anchor 居中;每图配 caption(讲清它在说什么+出处)。',
+].join('\n')
+const yijingDraft = (u) => {
+  const band = u.no <= 2
+    ? '约 9000–14000 字(乾/坤含文言传,须最厚;文言传不可略)'
+    : '约 7000–11000 字(一卦一厚文,逐爻铺 + 周边关联;宁详勿凑数)'
+  return `你在为「观象」易经研习站写《易经·${u.title}》整卦「白话」深读。${RED.yijing}\n\n` +
+    `【取数据 —— 务必逐个 Read/Grep,以站内原文为底】\n` +
+    `1. Read ${Y_FILE},找到数组里 id===${u.no} 的那一卦。字段:name/fullName(卦名)、binary(六位,下标0=初爻,自下而上)、upperTrigram/lowerTrigram(上下经卦)、summary/imagery(卦象提要)、judgment(卦辞{original,translation})、tuan(彖传)、daxiang(大象传)、lines[6](六爻,每爻{title如「初九」,original 爻辞,translation,xiaoxiang 小象{original,translation}})、extra.use(乾坤的用九/用六)、extra.wenyan(文言传,仅乾坤有,逐段{original,translation})、xugua(序卦传引文)、zagua(杂卦传引文)、guazhu(卦主{line,note})。\n` +
+    `2. 周边关联(有则带、无则略,自然穿插不堆砌、勿编造):\n` +
+    `   - 筮例:Grep ${ROOT}/src/data/yijing/shili.json 找提到本卦的左传/国语占筮故事,讲「古人怎么用这一卦」。\n` +
+    `   - 史事:Grep ${ROOT}/src/data/yijing/shishi.json 找本卦爻辞背后的商周史事。\n` +
+    `   - 错综卦:错卦=六爻阴阳全反、综卦=整体上下颠倒;可在 hexagrams.json 里按 binary 找出对应卦名,点出本卦与哪些卦相反相成(拿不准只讲卦象本身,勿编卦名)。\n` +
+    `   - 卦序:用 xugua/zagua 讲此卦为何排在第 ${u.no} 位、与前后卦怎样承接。\n` +
+    `   - 成语典故:由本卦/爻生出的成语(确有才写,如乾「飞龙在天/亢龙有悔」、谦「谦谦君子」),勾连今天语用。八宫/纳甲拿不准不要写。\n\n` +
+    SPEC_Y + '\n\n' + FIGSPEC_Y + '\n\n' +
+    `篇幅:${band}。\n\n按 schema 产出文章:\n` +
+    `- title:"白话易经 · ${u.title}";subtitle:一句副题;centralIdea:一句话中心思想。\n` +
+    `- blocks 顺序(脊柱):①lead 导语 hook + 共情入口(一个谁都遇到过的现代瞬间)②卦名与卦象(上下两经卦取象 + 大象传「君子以…」修身落点;配卦画六爻图、上下经卦分解图)③卦辞 + 彖传(整卦主旨;配金句卡)④**六爻逐爻走读**——每爻一段:引爻辞(quote)→大白话→该爻小象(quote)怎么补充→爻位身份(初/二/三/四/五/上,当位/中正/应比/承乘,随手用人话解释)→**落到一个今人日常场景或比喻**;用九/用六若有也讲(配爻位身份图、六爻爻义一览图)⑤(仅乾坤)文言传逐节白话,把文言整段织进⑥周边关联(卦序/错综/卦主/筮例/史事/成语,有则带)⑦中心思想贯通(重头戏)⑧落地启发(1–3 条,守不算命红线、不宿命预言)⑨收束首尾呼应⑩refs 出处与参考。\n` +
+    `- quote{original,translation}:original 必为本卦经传原文(卦辞/爻辞/彖/大象/小象/用九六/文言/序卦/杂卦)的精确连续子串,translation 与站内译文一致。\n` +
+    (u.featured ? `- 这是全书开篇总纲(乾卦):额外给 featured:true 和 hero:{badge:"开篇 · 易之门户",headline:本卦关键句(如「天行健,君子以自强不息」),tagline:一句题词}。\n` : `- **不要**输出 featured 或 hero 字段。\n`) +
+    `\n只返回结构化结果。`
+}
+const yijingVerify = (u, draft) => `校对修正《易经·${u.title}》整卦白话草稿,返回修正后完整结构。${RED.yijing}\n\n` +
+  `先 Read ${Y_FILE} 中 id===${u.no} 的卦核对经传原文。草稿:\n${draft}\n\n` +
+  `逐项改正:\n- 每个 quote.original 必须是本卦经传原文(卦辞/爻辞/彖/大象/小象/用九六/文言/序卦/杂卦)的精确连续子串,否则改对或删;translation 与站内译文一致。\n` +
+  `- 守不算命红线:吉凶悔吝只作古人对处境的判语训读,删去任何「对读者命运的预言/占卜趋避/宿命」措辞;象数(错综/卦变/纳甲/八宫)凡无据或编造一律删。\n` +
+  `- 三传齐:确认彖传、大象、每爻小象都讲到了;乾坤须含文言传逐节。六爻须逐爻铺、每爻有现代场景或比喻,不沦为逐字翻译清单。\n` +
+  `- 每张 figure 的 svg:颜色只用 var(--…),不得写死 #hex;有 viewBox 与 caption;卦画图阴阳爻按本卦 binary(自下而上)画对。每卦应有 5–8 图。\n` +
+  `- 周边关联(卦序/错综/卦主/筮例/史事/成语)有则保留、错则删;末尾保留 refs 块。\n\n只返回修正后的结构化结果。`
+
 const draftPrompt = (u) => {
+  if (IS_YIJING) return yijingDraft(u)
   const band = u.chars < 120 ? '约 2500–4500 字(短章,宁短不注水)' : u.chars < 600 ? '约 5000–8000 字' : '约 7000–10000 字(长篇,过长可只覆盖前半并在收束点明)'
   return `你在为研习站写《${bookTitle}·${u.title}》的「白话」整章深读。${RED[corpus] || ''}\n\n${SPEC}\n\n${FIGSPEC}\n\n` +
     `第一步:用 Read 读 ${FILE(corpus, slug)},找到 chapters 里 no===${u.no} 的那一章(paragraphs 为原文段,每段含 original 与 translation)。以这章原文为底成文。\n\n` +
@@ -79,7 +153,7 @@ const draftPrompt = (u) => {
     `\n只返回结构化结果。`
 }
 
-const verifyPrompt = (u, draft) => `校对修正《${bookTitle}·${u.title}》白话草稿,返回修正后完整结构。${RED[corpus] || ''}\n\n` +
+const verifyPrompt = (u, draft) => IS_YIJING ? yijingVerify(u, draft) : `校对修正《${bookTitle}·${u.title}》白话草稿,返回修正后完整结构。${RED[corpus] || ''}\n\n` +
   `先 Read ${FILE(corpus, slug)} 中 no===${u.no} 的章核对。草稿:\n${draft}\n\n` +
   `逐项改正:\n- 每个 quote.original 必须是该章某原文段的精确连续子串,否则改对或删;translation 与站内译文一致。\n` +
   `- 守红线:删去违红线的措辞(${corpus === 'zhongyi' ? '诊疗/功效用法用量/疗效断语' : corpus === 'moulue' ? '为伪书张目/教施用' : corpus === 'fo' ? '果报/往生劝信' : '鸡汤/成功学/权术/政治影射'})。\n` +

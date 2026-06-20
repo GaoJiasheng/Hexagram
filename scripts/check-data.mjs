@@ -573,10 +573,27 @@ if (fs.existsSync(glossaryPath)) {
 
 // ---------- 8c. 白话模块(design-v22)校验 ----------
 {
-  const corpora = ['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue']
+  const corpora = ['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'yijing']
   const chCache = {}
+  // 一卦全经传原文(卦辞+彖+大象+爻辞+小象+用九六+文言+序卦杂卦)——易经引文子串校验池
+  const hexAllOriginal = (q) => {
+    const parts = [q.judgment?.original, q.tuan?.original, q.daxiang?.original]
+    for (const l of q.lines || []) { parts.push(l.original, l.xiaoxiang?.original) }
+    if (q.extra?.use) { parts.push(q.extra.use.original, q.extra.use.xiaoxiang?.original) }
+    for (const w of q.extra?.wenyan || []) parts.push(w.original)
+    parts.push(q.xugua, q.zagua)
+    return parts.filter(Boolean).join('')
+  }
   const chapterText = (corpus, slug, ch) => {
     const k = `${corpus}/${slug}`
+    if (corpus === 'yijing') {
+      if (!(k in chCache)) {
+        const f = path.join(ROOT, 'src/data/yijing/hexagrams.json')
+        chCache[k] = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null
+      }
+      const q = chCache[k]?.find((x) => x.id === Number(ch))
+      return q ? hexAllOriginal(q) : null
+    }
     if (!(k in chCache)) {
       const f = path.join(ROOT, `src/data/${corpus}/classics/${slug}.json`)
       chCache[k] = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null
@@ -592,6 +609,7 @@ if (fs.existsSync(glossaryPath)) {
     moulue: /(教你如何驭|实操技巧|职场必备|学会这招|驭人之术值得|照着用就能)/,
     dao: /(长生不老|羽化登仙|修炼成仙|包你成仙|烧符念咒可)/,
     fo: /(消业障|保佑你|必得往生|皈依方能|烧香拜佛即可)/,
+    yijing: /(预示你|预示着你|你的运势|你将.{0,4}(大吉|大凶|有难)|必有.{0,3}之(灾|祸)|趋吉避凶之法|算出你|占得此卦.{0,8}(宜|忌|大吉|大凶)|你的命运)/,
   }
   let nArt = 0, nFig = 0, nBadCite = 0
   const cover = {}

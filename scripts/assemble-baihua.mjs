@@ -22,9 +22,27 @@ function snapQuote(q, text) {
   return idx >= 0 ? text.slice(idx, idx + q.length) : q
 }
 
+// 一卦全经传原文(卦辞+彖+大象+爻辞+小象+用九六+文言+序卦杂卦)——易经引文子串校验池
+function hexAllOriginal(q) {
+  const parts = [q.judgment?.original, q.tuan?.original, q.daxiang?.original]
+  for (const l of q.lines || []) { parts.push(l.original, l.xiaoxiang?.original) }
+  if (q.extra?.use) { parts.push(q.extra.use.original, q.extra.use.xiaoxiang?.original) }
+  for (const w of q.extra?.wenyan || []) parts.push(w.original)
+  parts.push(q.xugua, q.zagua)
+  return parts.filter(Boolean).join('')
+}
+
 const chCache = {}
 const chapterText = (corpus, slug, no) => {
   const k = `${corpus}/${slug}`
+  if (corpus === 'yijing') {
+    if (!(k in chCache)) {
+      const f = path.join(ROOT, 'src/data/yijing/hexagrams.json')
+      chCache[k] = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null
+    }
+    const q = chCache[k]?.find((x) => x.id === Number(no))
+    return q ? hexAllOriginal(q) : null
+  }
   if (!(k in chCache)) {
     const f = path.join(ROOT, `src/data/${corpus}/classics/${slug}.json`)
     chCache[k] = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null
