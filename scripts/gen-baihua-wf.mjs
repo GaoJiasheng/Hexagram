@@ -97,6 +97,19 @@ const FIGSPEC = [
   '- 每图配 caption(讲清它在说什么 + 出处)。',
 ].join('\n')
 
+// ── corpus 加厚档(owner:佛经按易经标准——更厚、更多图、更多生活场景;短章逐句、长章摘录精华)──
+const THICK = new Set(['fo'])   // 这些 corpus 走加厚档:5–8 图 + 更多场景比喻生活实例 + 更长;红线照旧
+const THICK_EXTRA = [
+  '【加厚要求(本书按易经白话标准)】白话占比再提高、讲得更厚:',
+  '- 每一处义理都落到一个今人日常场景或实例(通勤/加班/还房贷/带孩子/考试/和人相处/独处…)+ 一个接地气比喻,讲到完全没读过的人也秒懂;共情入口要强。',
+  '- 纵深层尽量都铺(源流/版本/比喻系统/当代回响/跨典互见),有料就展开。守本组红线不变。',
+].join('\n')
+const FIGSPEC_THICK = [
+  '配图(本章按加厚标准,每章 5–8 张,远多于常规;图比文直观处就上):',
+  '- 金句卡每章必出 1 张;对比/古今义对比/结构图/列举按内容多上;时间线仅当确有版本流变/历史脉络才出(没有不编)。',
+  '- 一律内联 SVG:颜色只用 style="fill:var(--ink)"/"stroke:var(--line)"/"fill:var(--cinnabar)" 等 CSS 变量,**绝不写死 #hex**;viewBox + text-anchor 居中 + 每图 caption(讲清+出处)。',
+].join('\n')
+
 // ── 易经加厚支线(owner:一卦一厚文 + 三传必含 + 周边关联成网 + 更白更多生活实例,每卦 5–8 图)──
 const Y_FILE = `${ROOT}/src/data/yijing/hexagrams.json`
 const SPEC_Y = [
@@ -143,12 +156,22 @@ const yijingVerify = (u, draft) => `校对修正《易经·${u.title}》整卦�
 
 const draftPrompt = (u) => {
   if (IS_YIJING) return yijingDraft(u)
-  const band = u.chars < 120 ? '约 2500–4500 字(短章,宁短不注水)' : u.chars < 600 ? '约 5000–8000 字' : '约 7000–10000 字(长篇,过长可只覆盖前半并在收束点明)'
-  return `你在为研习站写《${bookTitle}·${u.title}》的「白话」整章深读。${RED[corpus] || ''}\n\n${SPEC}\n\n${FIGSPEC}\n\n` +
+  const thick = THICK.has(corpus)
+  const longCh = u.chars >= 1500   // 长章阈值:超过则分段摘录精华句,不逐句翻全篇(owner:坛经/金刚经那类)
+  const band = thick
+    ? (longCh ? '约 7000–11000 字(加厚·长章:分段摘录精华句逐一深读,不必逐句翻全篇)' : '约 6000–9000 字(加厚·短章:全文逐句展开)')
+    : (u.chars < 120 ? '约 2500–4500 字(短章,宁短不注水)' : u.chars < 600 ? '约 5000–8000 字' : '约 7000–10000 字(长篇,过长可只覆盖前半并在收束点明)')
+  const spec = thick ? `${SPEC}\n${THICK_EXTRA}` : SPEC
+  const figspec = thick ? FIGSPEC_THICK : FIGSPEC
+  // owner 长短分流:短章逐句展开;长章分段摘录精华句
+  const approach = !thick ? '' : longCh
+    ? '\n\n【本章较长——分段摘录】把本章**分成几段**,每段挑出**精华/关键的句子**(quote)逐一深读解释;次要的叙述/重复句可并讲带过,**不必逐句翻每一句**。引文仍须精确子串。'
+    : '\n\n【本章较短——全文逐句】**全文逐句展开**:每个原文句子都引(quote)并讲透,不漏句。'
+  return `你在为研习站写《${bookTitle}·${u.title}》的「白话」整章深读。${RED[corpus] || ''}\n\n${spec}\n\n${figspec}${approach}\n\n` +
     `第一步:用 Read 读 ${FILE(corpus, slug)},找到 chapters 里 no===${u.no} 的那一章(paragraphs 为原文段,每段含 original 与 translation)。以这章原文为底成文。\n\n` +
     `篇幅:${band}。\n\n按 schema 产出一篇白话文章:\n` +
     `- title:"白话${bookTitle} · ${u.title}";subtitle:一句副题;centralIdea:一句话中心思想。\n` +
-    `- blocks:有序数组,块类型 lead(导语)/p(段落)/h2(小节标题)/quote{original,translation}(逐句引文,original 必为该章原文段精确子串、translation 与站内译文一致)/figure{ftype,svg,caption}(内联 SVG 图)/refs{items:[…]}(出处与参考)。按脊柱顺序铺;逐句走读用 quote+p 穿插;金句卡等图穿插在合适处;末尾一个 refs 块。\n` +
+    `- blocks:有序数组,块类型 lead(导语)/p(段落)/h2(小节标题)/quote{original,translation}(引文,original 必为该章原文段精确子串、translation 与站内译文一致)/figure{ftype,svg,caption}(内联 SVG 图)/refs{items:[…]}(出处与参考)。按脊柱顺序铺;走读用 quote+p 穿插;金句卡等图穿插在合适处;末尾一个 refs 块。\n` +
     (u.featured ? `- 这是全书开篇总纲章:额外给 featured:true 和 hero:{badge:"开篇 · 全书总纲",headline:本章关键句,tagline:一句题词};正文不必再单列与 hero 重复的金句卡。\n` : `- 本章非开篇,**不要**输出 featured 或 hero 字段。\n`) +
     `\n只返回结构化结果。`
 }
@@ -157,7 +180,8 @@ const verifyPrompt = (u, draft) => IS_YIJING ? yijingVerify(u, draft) : `校对�
   `先 Read ${FILE(corpus, slug)} 中 no===${u.no} 的章核对。草稿:\n${draft}\n\n` +
   `逐项改正:\n- 每个 quote.original 必须是该章某原文段的精确连续子串,否则改对或删;translation 与站内译文一致。\n` +
   `- 守红线:删去违红线的措辞(${corpus === 'zhongyi' ? '诊疗/功效用法用量/疗效断语' : corpus === 'moulue' ? '为伪书张目/教施用' : corpus === 'fo' ? '果报/往生劝信' : '鸡汤/成功学/权术/政治影射'})。\n` +
-  `- 每张 figure 的 svg:颜色只用 var(--…)/currentColor,**不得写死 #hex**;有 viewBox 与 caption。\n` +
+  `- 每张 figure 的 svg:颜色只用 var(--…)/currentColor,**不得写死 #hex**;有 viewBox 与 caption。${THICK.has(corpus) ? '本书按加厚标准,应有 5–8 张图、每处义理都落到日常场景+比喻;' : ''}\n` +
+  (THICK.has(corpus) && u.chars >= 1500 ? `- 本章较长:应是「分段 + 摘录精华句逐一深读」,不必逐句翻全篇;确认未遗漏关键句、也未沦为流水账。\n` : THICK.has(corpus) ? `- 本章较短:应「全文逐句展开」,确认无漏句。\n` : '') +
   `- 中心思想突出、脑回路与比喻到位、不沦为逐字翻译清单;篇幅合宜。\n- 末尾保留 refs 块。\n\n只返回修正后的结构化结果。`
 
 const script = `export const meta = {
