@@ -85,6 +85,12 @@ for (const [key, list] of Object.entries(byBook)) {
       console.warn(`  ⚠ 丢弃 ${corpus}/${slug}#${u.no}:${bad} 处坏引文(校对失败章,待重生)`)
       continue
     }
+    // 无逐句引文(quote)的章也丢弃 —— check-data 要求 ≥1 引文,否则落盘即失败;丢弃→重生
+    if (!blocks.some((b) => b.type === 'quote' && b.original)) {
+      delete existing[String(u.no)]
+      console.warn(`  ⚠ 丢弃 ${corpus}/${slug}#${u.no}:无逐句引文(quote),待重生`)
+      continue
+    }
     nFig += figHere
     const article = { title: d.title, subtitle: d.subtitle, centralIdea: d.centralIdea, blocks }
     // featured/hero 仅认单元(书首章)标记 —— agent 常给非首章误加 hero,一律以 u.featured 为准
