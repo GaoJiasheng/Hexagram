@@ -16,10 +16,21 @@ const units = (Array.isArray(result) ? result : result.result || []).filter((u) 
 // 致引文与全角原文不匹配。snap:按规范化匹配定位,再从真原文按下标切出 → 引文回吸为原文精确子串。
 const W2H = { '，': ',', '。': '.', '；': ';', '：': ':', '？': '?', '！': '!', '（': '(', '）': ')', '、': ',', '「': '"', '」': '"', '『': '"', '』': '"' }
 const norm = (s) => s.replace(/[，。；：？！（）、「」『』]/g, (c) => W2H[c] || c)
+const isCJK = (c) => c >= '一' && c <= '鿿'
 function snapQuote(q, text) {
   if (!q || !text || text.includes(q)) return q
+  // ① 全角→半角标点规范化后定位,按真原文下标切出
   const idx = norm(text).indexOf(norm(q))
-  return idx >= 0 ? text.slice(idx, idx + q.length) : q
+  if (idx >= 0) return text.slice(idx, idx + q.length)
+  // ② 仅按汉字匹配(忽略标点/空白差异),命中后取原文对应字符区间 —— 救「标点不同/个别符号增删」的引文
+  const map = []; let stripped = ''
+  for (let i = 0; i < text.length; i++) { if (isCJK(text[i])) { stripped += text[i]; map.push(i) } }
+  const qC = [...q].filter(isCJK).join('')
+  if (qC.length >= 4) {                          // ≥4 字才用,避免短串误命中
+    const s = stripped.indexOf(qC)
+    if (s >= 0) return text.slice(map[s], map[s + qC.length - 1] + 1)  // 含区间内原文标点
+  }
+  return q
 }
 
 // 一卦全经传原文(卦辞+彖+大象+爻辞+小象+用九六+文言+序卦杂卦)——易经引文子串校验池
