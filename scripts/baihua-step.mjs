@@ -10,7 +10,7 @@ import { execSync } from 'node:child_process'
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const sh = (cmd) => execSync(cmd, { cwd: ROOT, encoding: 'utf8' })
 
-const CORPORA = ['yijing', 'fa']   // 先把易经 64 卦填满(owner:易经全完成后再法家)→ 再续法家剩余 → 之后墨/兵/纵横/谋略/中医
+const CORPORA = ['yijing']   // owner 2026-06-21:只跑完易经 64 卦即停(留 token 给开发);法家停在 20 章、佛家等都延后
 const CAP = 10                                // 每批最多章数(越小→单 workflow 并发越少→越少撞 API 限流;夜间限流紧,取 10)
 const MAXATT = 3                              // 单章最多重试次数(防顽固章死循环)
 const ATT_FILE = path.join(ROOT, 'scripts/.baihua-attempts.json')
