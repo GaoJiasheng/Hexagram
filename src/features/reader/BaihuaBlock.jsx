@@ -68,7 +68,7 @@ export function BaihuaArticle({ data }) {
 
 // 白话模块：章末一个低调折叠入口条 → 点开为侧抽屉（桌面）/ 全屏浮层（移动）。
 // 打开后持久（仅手动关）；⤢ 切到「整页研读」独立页（design-v22 §2）。
-export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionUnit = '章' }) {
+export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionUnit = '章', chapterLabel }) {
   const data = getBaihua(corpus, slug, chapter)
   const [open, setOpen] = useState(false)
   const navigate = useNavigate()
@@ -86,8 +86,9 @@ export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionU
 
   const seal = SITE_MAP[corpus]?.brand || ''
   const entryLabel = `白话${bookTitle}`
-  const chapterName = `第${chapter}${sectionUnit}`
-  const fullPath = `${SITE_MAP[corpus]?.home || ''}/${slug}/baihua/${chapter}`
+  const chapterName = chapterLabel || `第${chapter}${sectionUnit}`
+  // 易经走卦详情整页路由 /hexagram/:id/baihua(数据形态不同);其余 corpus 走 /<home>/<slug>/baihua/<ch>
+  const fullPath = corpus === 'yijing' ? `/hexagram/${chapter}/baihua` : `${SITE_MAP[corpus]?.home || ''}/${slug}/baihua/${chapter}`
   const goFullPage = () => { setOpen(false); navigate(fullPath) }
 
   return (

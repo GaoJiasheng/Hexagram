@@ -275,6 +275,8 @@ function AppContent() {
           <Route path="/" element={<HomePage />} />
           <Route path="/hexagrams" element={<HexagramsPage />} />
           <Route path="/hexagram/:id" element={<HexagramDetailPage />} />
+          {/* 易经白话整页研读(design-v22:一卦一厚文)——3 段路由,更具体于 /hexagram/:id */}
+          <Route path="/hexagram/:id/baihua" element={<BaihuaPage corpus="yijing" />} />
           <Route path="/workbench" element={<WorkbenchPage />} />
           <Route path="/classics" element={<ClassicsListPage />} />
           <Route path="/classics/:book/:chapter" element={<ClassicsReadPage />} />

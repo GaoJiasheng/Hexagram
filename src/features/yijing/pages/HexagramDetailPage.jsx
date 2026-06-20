@@ -16,6 +16,7 @@ import { addRecentHexagram, getBookmarks, toggleBookmark } from '../storage.js'
 import { getHexAnchors } from '../zhushiAnchored.js'
 import shili from '../../../data/yijing/shili.json'
 import shishi from '../../../data/yijing/shishi.json'
+import BaihuaBlock from '../../reader/BaihuaBlock.jsx'
 import { useSettings } from '../SettingsContext.jsx'
 import { usePageTitle } from '../hooks/usePageTitle.js'
 
@@ -373,6 +374,9 @@ export default function HexagramDetailPage() {
             )
           })()}
         </section>
+
+        {/* 白话深读（design-v22:一卦一厚文 + 周边关联 + 五至八图）——有该卦白话才显示 */}
+        <BaihuaBlock corpus="yijing" slug="hexagrams" chapter={hex.id} bookTitle="易经" sectionUnit="卦" chapterLabel={`${hex.name}卦（第${hex.id}卦）`} />
 
         {/* ⑦ 笔记 */}
         <section id="note" className="detail-section">
