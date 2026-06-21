@@ -4,7 +4,15 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/hexagram.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- PWA「加到主屏幕」全屏运行(iOS + 安卓):独立 standalone、隐藏浏览器壳 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="观象" />
+    <!-- 浏览器壳/状态栏配色,跟随明暗 -->
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f4ec" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#191713" />
     <title>观象 · 易经研习</title>
     <meta name="description" content="观象 · 个人古籍学习站——易经、道藏、儒释道、诸子百家、中医、谋略等十组典籍的原文、白话译注与每章延伸。纯前端、无账号、可离线。" />
     <!-- 分享卡 meta(#147,站点级静态;分享任一页链接皆出此卡。逐页动态需预渲染,后续再议) -->
