@@ -122,6 +122,8 @@ npm run check-data   # 数据校验,任何数据变更后必须通过
 
 默认按根路径托管(Vercel/Netlify/Cloudflare Pages 直接可用)。如改用 GitHub Pages 子路径,需同时设 vite.config.js 的 `base` 和 Router 的 `basename`。
 
+**生产(自有云主机)**:已部署到 `119.23.77.106`(阿里云 Ubuntu 24.04 + nginx,80 端口,根目录 `/var/www/hexagram`),线上 http://119.23.77.106/。**一键发布**:`./deploy.sh`(构建 → rsync 增量同步 → reload nginx,免密走 SSH key `~/.ssh/hexagram_deploy` + 别名 `hexagram-prod`)。nginx 缓存策略:`/assets/`(带 hash)永久 immutable、index.html/sw.js 不缓存 → 发布即生效;SPA 深链由 `try_files … /index.html` 回退。换机器发布需先备好该 key + `~/.ssh/config` 别名(见 deploy.sh 头注)。
+
 ## 已知差异与待办
 
 - 系辞下底本为九章分法(孔颖达),与设计稿写的十二章不同,以数据为准,check-data 已按 9 章校验。
