@@ -1834,6 +1834,11 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .para-actions { flex: 0 0 auto; display: flex; gap: 4px; align-self: flex-start; opacity: 0; transition: opacity 0.15s; }
 .read-para--markable:hover .para-actions, .read-para--markable:focus-within .para-actions, .read-para--marked .para-actions { opacity: 1; }
 @media (hover: none) { .para-actions { opacity: 0.55; } }
+/* 触屏/窄屏:操作按钮不再挤在正文右侧,换到段落下方一行、右对齐(不占正文宽、不压字) */
+@media (hover: none), (max-width: 640px) {
+  .read-para--markable { flex-wrap: wrap; }
+  .read-para--markable .para-actions { flex-basis: 100%; justify-content: flex-end; align-self: auto; margin-top: 3px; }
+}
 .para-act { position: relative; width: 26px; height: 26px; flex: none; border: 1px solid var(--line); border-radius: 5px; background: var(--paper-raised); color: var(--ink-faint); cursor: pointer; font-size: 0.82rem; line-height: 1; display: inline-flex; align-items: center; justify-content: center; }
 .para-act:hover { border-color: var(--cinnabar); color: var(--cinnabar); }
 /* 即时悬停提示:浮于按钮左侧(横向越过正文、纵向居中),故在段内不被 content-visibility 裁剪 */
