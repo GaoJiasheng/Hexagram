@@ -128,12 +128,16 @@ button { cursor: pointer; font-family: var(--font-serif); }
   z-index: 100;
   display: flex;
   align-items: center;
-  height: 56px;
-  padding: 0 24px;
+  /* 安全区(刘海/状态栏):顶部让出,导航不被遮(Capacitor / PWA standalone 全屏) */
+  height: calc(56px + env(safe-area-inset-top));
+  padding: env(safe-area-inset-top) 24px 0;
+  box-sizing: border-box;
   background: var(--paper);
   border-bottom: 1px solid var(--line);
   transition: backdrop-filter 0.2s;
 }
+/* 门户/中立页(无 app-nav,如争鸣/义理专题)顶部也让出安全区 */
+.app-shell[data-site="portal"] .app-main { padding-top: env(safe-area-inset-top); }
 
 .app-nav--scrolled {
   backdrop-filter: blur(8px);

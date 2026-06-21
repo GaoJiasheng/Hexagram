@@ -14,9 +14,19 @@
     "data:fetch-dao": "node scripts/fetch-dao.mjs",
     "data:fetch-ru": "node scripts/fetch-corpus.mjs ru",
     "data:fetch-fo": "node scripts/fetch-corpus.mjs fo",
-    "data:fetch-shili": "node scripts/fetch-shili.mjs"
+    "data:fetch-shili": "node scripts/fetch-shili.mjs",
+    "build:cap": "VITE_CAP=1 vite build",
+    "cap:sync": "VITE_CAP=1 vite build && npx cap sync",
+    "cap:ios": "VITE_CAP=1 vite build && npx cap sync ios && npx cap open ios"
   },
   "dependencies": {
+    "@capacitor/android": "^8.4.1",
+    "@capacitor/app": "^8.1.0",
+    "@capacitor/cli": "^8.4.1",
+    "@capacitor/core": "^8.4.1",
+    "@capacitor/ios": "^8.4.1",
+    "@capacitor/splash-screen": "^8.0.1",
+    "@capacitor/status-bar": "^8.0.2",
     "@fontsource/noto-serif-sc": "^5.2.9",
     "lunar-javascript": "^1.7.7",
     "react": "^19.1.0",

@@ -4,11 +4,15 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // Vite config — https://vite.dev/config/
 // The React plugin enables JSX and Fast Refresh (instant updates while you edit).
+// VITE_CAP=1 时为 Capacitor 原生壳构建:禁用 PWA service worker
+// (壳内由原生 WebView 本地服务托管 + 资源已打包进 app,离线天然成立;SW 会与本地服务冲突致白屏)
+const isCapacitor = process.env.VITE_CAP === '1'
+
 export default defineConfig({
   plugins: [
     react(),
-    // PWA(v10 §7):纯静态站,precache 构建产物,首访后全站离线
-    VitePWA({
+    // PWA(v10 §7):纯静态站,precache 构建产物,首访后全站离线。原生构建跳过。
+    ...(isCapacitor ? [] : [VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['hexagram.svg'],
       manifest: {
@@ -53,6 +57,6 @@ export default defineConfig({
           },
         ],
       },
-    }),
+    })]),
   ],
 })
