@@ -125,7 +125,9 @@ npm run check-data   # 数据校验,任何数据变更后必须通过
 
 默认按根路径托管(Vercel/Netlify/Cloudflare Pages 直接可用)。如改用 GitHub Pages 子路径,需同时设 vite.config.js 的 `base` 和 Router 的 `basename`。
 
-**生产(自有云主机)**:已部署到 `119.23.77.106`(阿里云 Ubuntu 24.04 + nginx,80 端口,根目录 `/var/www/hexagram`),线上 http://119.23.77.106/。**一键发布**:`./deploy.sh`(构建 → rsync 增量同步 → reload nginx,免密走 SSH key `~/.ssh/hexagram_deploy` + 别名 `hexagram-prod`)。nginx 缓存策略:`/assets/`(带 hash)永久 immutable、index.html/sw.js 不缓存 → 发布即生效;SPA 深链由 `try_files … /index.html` 回退。换机器发布需先备好该 key + `~/.ssh/config` 别名(见 deploy.sh 头注)。
+**生产 ①(自有云主机)**:已部署到 `119.23.77.106`(阿里云 Ubuntu 24.04 + nginx,80 端口,根目录 `/var/www/hexagram`),线上 http://119.23.77.106/。**一键发布**:`./deploy.sh`(构建 → rsync 增量同步 → reload nginx,免密走 SSH key `~/.ssh/hexagram_deploy` + 别名 `hexagram-prod`)。nginx 缓存策略:`/assets/`(带 hash)永久 immutable、index.html/sw.js 不缓存 → 发布即生效;SPA 深链由 `try_files … /index.html` 回退。换机器发布需先备好该 key + `~/.ssh/config` 别名(见 deploy.sh 头注)。
+
+**生产 ②(Cloudflare Pages,owner 2026-06-22 加,主入口)**:`https://hexa.gavin.pub`(Pages 项目 `hexa-gavin-pub` → `hexa-gavin-pub.pages.dev`,自定义域 `hexa.gavin.pub`,HTTPS 自动签)。**owner 用 CF 后台拖 `dist/` 上传部署**(不走 wrangler CLI——npx wrangler 那条被 owner 否过,见 [[deploy-cloudflare-dashboard]])。CF 专属文件已入 `public/`:`_redirects`(`/* /index.html 200` SPA 回退)+ `_headers`(/assets/* immutable、index/sw no-cache),build 自动拷进 dist。`npm run deploy:cf`(=build + `wrangler pages deploy dist`)脚本备着但需先 `wrangler login`。**坑**:自定义域必须**在 Pages 项目「自定义域」里登记**(只在 DNS 加 CNAME 会 `ERR_SSL_VERSION_OR_CIPHER_MISMATCH`——边缘无该域证书);登记后等证书签发变 Active。**hexa.gavin.pub 不在 `HOST_GROUPS` → 全站路径分组、落地易经,无需改码。** 注:两个生产入口内容可能不同步——CF 是 owner 手动拖 dist(已有 v1.65/v1.66 加厚),IP 需另跑 `./deploy.sh`。
 
 ## 已知差异与待办
 
