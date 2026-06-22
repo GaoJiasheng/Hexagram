@@ -3236,7 +3236,8 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .baihua-overlay__backdrop { position: absolute; inset: 0; background: rgba(20,16,12,.42); animation: baihua-fade .2s ease; }
 .baihua-drawer { position: relative; display: flex; flex-direction: column; width: clamp(360px, 52vw, 680px); max-width: 100%; height: 100%; background: var(--paper); border-left: 1px solid var(--line); box-shadow: -12px 0 44px -18px rgba(0,0,0,.45); animation: baihua-slide .26s cubic-bezier(.2,.7,.3,1); }
 .baihua-overlay--max .baihua-drawer { width: 100%; }
-.baihua-drawer__head { flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 20px; border-bottom: 1px solid var(--line); background: var(--paper-raised); }
+/* 顶部让出 iOS 安全区(刘海/状态栏):抽屉 createPortal 到 body、不在带安全区的 app 壳内,故头部须自带 env(safe-area-inset-top)。非独立/非刘海 env=0 不影响 */
+.baihua-drawer__head { flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: calc(13px + env(safe-area-inset-top)) 20px 13px; border-bottom: 1px solid var(--line); background: var(--paper-raised); }
 .baihua-drawer__titles { display: flex; align-items: center; gap: 10px; min-width: 0; }
 .baihua-drawer__seal { flex-shrink: 0; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; background: var(--cinnabar); color: var(--paper-raised); font-family: var(--font-serif); font-size: .82rem; border-radius: 6px; }
 .baihua-drawer__titletext { display: flex; flex-direction: column; min-width: 0; }
