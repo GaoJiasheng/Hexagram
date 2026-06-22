@@ -117,7 +117,10 @@ const FIGSPEC = [
 ].join('\n')
 
 // ── corpus 加厚档(owner:佛经按易经标准——更厚、更多图、更多生活场景;短章逐句、长章摘录精华)──
-const THICK = new Set(['fo'])   // 这些 corpus 走加厚档:5–8 图 + 更多场景比喻生活实例 + 更长;红线照旧
+const THICK = new Set(['fo'])   // 这些 corpus 整组走加厚档:5–8 图 + 更多场景比喻生活实例 + 更长;红线照旧
+// 按「书」加厚(只升某 corpus 里的部分书,其余书保留普通档)——owner 2026-06-22:道只升核心三部
+const THICK_BOOKS = new Set(['dao/daodejing', 'dao/zhuangzi-neipian', 'dao/zhuangzi-waipian', 'dao/zhuangzi-zapian', 'dao/cantongqi'])
+const IS_THICK = THICK.has(corpus) || THICK_BOOKS.has(`${corpus}/${slug}`)
 const THICK_EXTRA = [
   '【加厚要求(本书按易经白话标准)】白话占比再提高、讲得更厚:',
   '- 每一处义理都落到一个今人日常场景或实例(通勤/加班/还房贷/带孩子/考试/和人相处/独处…)+ 一个接地气比喻,讲到完全没读过的人也秒懂;共情入口要强。',
@@ -211,7 +214,7 @@ const jzVerify = (u, draft) => `校对修正《${bookTitle}·${u.title}》白话
 const draftPrompt = (u) => {
   if (IS_HEX) return yijingDraft(u)
   if (IS_JZ) return jzDraft(u)
-  const thick = THICK.has(corpus)
+  const thick = IS_THICK
   const longCh = u.chars >= 1500   // 长章阈值:超过则分段摘录精华句,不逐句翻全篇(owner:坛经/金刚经那类)
   const band = thick
     ? (longCh ? '约 7000–11000 字(加厚·长章:分段摘录精华句逐一深读,不必逐句翻全篇)' : '约 6000–9000 字(加厚·短章:全文逐句展开)')
@@ -235,8 +238,8 @@ const verifyPrompt = (u, draft) => IS_HEX ? yijingVerify(u, draft) : IS_JZ ? jzV
   `先 Read ${FILE(corpus, slug)} 中 no===${u.no} 的章核对。草稿:\n${draft}\n\n` +
   `逐项改正:\n- 每个 quote.original 必须是该章某原文段的精确连续子串,否则改对或删;translation 与站内译文一致。\n` +
   `- 守红线:删去违红线的措辞(${corpus === 'zhongyi' ? '诊疗/功效用法用量/疗效断语' : corpus === 'moulue' ? '为伪书张目/教施用' : corpus === 'fo' ? '果报/往生劝信' : '鸡汤/成功学/权术/政治影射'})。\n` +
-  `- 每张 figure 的 svg:颜色只用 var(--…)/currentColor,**不得写死 #hex**;有 viewBox 与 caption。${THICK.has(corpus) ? '本书按加厚标准,应有 5–8 张图、每处义理都落到日常场景+比喻;' : ''}\n` +
-  (THICK.has(corpus) && u.chars >= 1500 ? `- 本章较长:应是「分段 + 摘录精华句逐一深读」,不必逐句翻全篇;确认未遗漏关键句、也未沦为流水账。\n` : THICK.has(corpus) ? `- 本章较短:应「全文逐句展开」,确认无漏句。\n` : '') +
+  `- 每张 figure 的 svg:颜色只用 var(--…)/currentColor,**不得写死 #hex**;有 viewBox 与 caption。${IS_THICK ? '本书按加厚标准,应有 5–8 张图、每处义理都落到日常场景+比喻;' : ''}\n` +
+  (IS_THICK && u.chars >= 1500 ? `- 本章较长:应是「分段 + 摘录精华句逐一深读」,不必逐句翻全篇;确认未遗漏关键句、也未沦为流水账。\n` : IS_THICK ? `- 本章较短:应「全文逐句展开」,确认无漏句。\n` : '') +
   `- 中心思想突出、脑回路与比喻到位、不沦为逐字翻译清单;篇幅合宜。\n- 末尾保留 refs 块。\n\n只返回修正后的结构化结果。`
 
 const script = `export const meta = {

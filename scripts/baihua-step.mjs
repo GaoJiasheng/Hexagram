@@ -10,7 +10,7 @@ import { execSync } from 'node:child_process'
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const sh = (cmd) => execSync(cmd, { cwd: ROOT, encoding: 'utf8' })
 
-const CORPORA = ['yijing']   // owner 2026-06-22:阶段1 易经经传(卦已满,自动跳到经传:系辞上→系辞下→说卦→序卦→杂卦)
+const CORPORA = ['dao']   // owner 2026-06-22:阶段2 道升级加厚(只核心三部:道德经/庄子内外杂/参同契,见 gen THICK_BOOKS;清这 5 slug 旧白话即重填,余书普通档不动)
 const CAP = 14                                // 每批最多章数→单 workflow 并发(实际同时跑数由 runtime 封顶 min(16,核数-2))。owner 2026-06-22:经传短章轻、白天 quota 宽,提到 14;有坏引文丢块+3 次重试+断点续跑兜底,撞限流可恢复
 const MAXATT = 3                              // 单章最多重试次数(防顽固章死循环)
 const ATT_FILE = path.join(ROOT, 'scripts/.baihua-attempts.json')
