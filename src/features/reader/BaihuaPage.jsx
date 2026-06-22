@@ -9,17 +9,19 @@ import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 // 整屏阅读、可收藏/分享/深链、刷新仍在。复用 BaihuaArticle（与抽屉同一渲染）。
 export default function BaihuaPage({ corpus }) {
   const params = useParams()
-  // 易经走 /hexagram/:id/baihua(slug 固定 hexagrams、ch 取 :id);其余 corpus 走 /<corpus>/:slug/baihua/:chapter
+  // 易经:卦 /hexagram/:id/baihua(slug=hexagrams、ch=:id)、经传 /classics/:book/:chapter/baihua(slug=:book、ch=:chapter);
+  // 其余 corpus 走 /<corpus>/:slug/baihua/:chapter
   const isYijing = corpus === 'yijing'
-  const slug = isYijing ? 'hexagrams' : params.slug
-  const ch = Number(isYijing ? params.id : params.chapter) || 1
+  const isJingzhuan = isYijing && !!params.book   // 经传整页路由带 :book
+  const slug = isJingzhuan ? params.book : isYijing ? 'hexagrams' : params.slug
+  const ch = Number(isJingzhuan ? params.chapter : isYijing ? params.id : params.chapter) || 1
   const data = getBaihua(corpus, slug, ch)
   const site = SITE_MAP[corpus]
   usePageTitle(data?.title || '白话', site?.brand)
 
   useEffect(() => { window.scrollTo(0, 0) }, [slug, ch])
 
-  const backToChapter = isYijing ? `/hexagram/${ch}` : `${site?.home || ''}/${slug}/${ch}`
+  const backToChapter = isJingzhuan ? `/classics/${slug}/${ch}` : isYijing ? `/hexagram/${ch}` : `${site?.home || ''}/${slug}/${ch}`
   if (!data) {
     return (
       <div className="page-content">

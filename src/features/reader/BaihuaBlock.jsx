@@ -87,8 +87,10 @@ export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionU
   const seal = SITE_MAP[corpus]?.brand || ''
   const entryLabel = `白话${bookTitle}`
   const chapterName = chapterLabel || `第${chapter}${sectionUnit}`
-  // 易经走卦详情整页路由 /hexagram/:id/baihua(数据形态不同);其余 corpus 走 /<home>/<slug>/baihua/<ch>
-  const fullPath = corpus === 'yijing' ? `/hexagram/${chapter}/baihua` : `${SITE_MAP[corpus]?.home || ''}/${slug}/baihua/${chapter}`
+  // 易经:卦走 /hexagram/:id/baihua、经传走 /classics/:book/:ch/baihua;其余 corpus 走 /<home>/<slug>/baihua/<ch>
+  const fullPath = corpus === 'yijing'
+    ? (slug === 'hexagrams' ? `/hexagram/${chapter}/baihua` : `/classics/${slug}/${chapter}/baihua`)
+    : `${SITE_MAP[corpus]?.home || ''}/${slug}/baihua/${chapter}`
   const goFullPage = () => { setOpen(false); navigate(fullPath) }
 
   return (

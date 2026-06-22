@@ -15,7 +15,9 @@ const chFrom = process.argv[4] ? Number(process.argv[4]) : null
 const chTo = process.argv[5] ? Number(process.argv[5]) : null
 if (!corpus || !slug) { console.error('用法: node scripts/gen-baihua-wf.mjs <corpus> <slug> [chFrom] [chTo]'); process.exit(1) }
 
-const IS_YIJING = corpus === 'yijing'   // 易经数据形态不同(hexagrams.json 64 卦,非 corpus 章),走 yijing 加厚支线
+const IS_YIJING = corpus === 'yijing'
+const IS_HEX = IS_YIJING && slug === 'hexagrams'   // 64 卦(hexagrams.json,形态特殊),走整卦加厚支线
+const IS_JZ = IS_YIJING && slug !== 'hexagrams'    // 经传/十翼(classics/<slug>.json,与 corpus 同构),走经传加厚支线
 
 // 一卦的全部经传原文(供 chars 估算 + 引文子串校验池):卦辞+彖+大象+爻辞+小象+用九六+文言+序卦杂卦
 function hexAllOriginal(q) {
@@ -28,7 +30,7 @@ function hexAllOriginal(q) {
 }
 
 let bookTitle, unit, units
-if (IS_YIJING) {
+if (IS_HEX) {
   bookTitle = '易经'; unit = '卦'
   const hexes = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/yijing/hexagrams.json'), 'utf8'))
   const existPath = path.join(ROOT, 'src/data/yijing/baihua/hexagrams.json')
@@ -41,6 +43,23 @@ if (IS_YIJING) {
       title: `${q.name}（${q.fullName}）`,
       chars: hexAllOriginal(q).length,
       featured: q.id === 1,            // 乾为全书总纲,给 hero
+    }))
+} else if (IS_JZ) {
+  // 易经经传/十翼:classics/<slug>.json(章/段结构,与 corpus 同构)
+  unit = '章'
+  const book = JSON.parse(fs.readFileSync(path.join(ROOT, `src/data/yijing/classics/${slug}.json`), 'utf8'))
+  bookTitle = `易经·${book.title}`
+  const firstNo = book.chapters[0]?.no
+  const existPath = path.join(ROOT, `src/data/yijing/baihua/${slug}.json`)
+  const done = fs.existsSync(existPath) ? new Set(Object.keys(JSON.parse(fs.readFileSync(existPath, 'utf8')))) : new Set()
+  units = book.chapters
+    .filter((c) => (chFrom == null || c.no >= chFrom) && (chTo == null || c.no <= chTo))
+    .filter((c) => !done.has(String(c.no)))
+    .map((c) => ({
+      corpus: 'yijing', book: slug, no: c.no,
+      title: c.title || `第${c.no}章`,
+      chars: c.paragraphs.map((p) => p.original).join('').length,
+      featured: slug === 'xici-shang' && c.no === firstNo,   // 系辞上首章 = 十翼义理总纲,给 hero
     }))
 } else {
   const texts = JSON.parse(fs.readFileSync(path.join(ROOT, `src/data/${corpus}/texts.json`), 'utf8'))
@@ -154,8 +173,44 @@ const yijingVerify = (u, draft) => `校对修正《易经·${u.title}》整卦�
   `- 每张 figure 的 svg:颜色只用 var(--…),不得写死 #hex;有 viewBox 与 caption;卦画图阴阳爻按本卦 binary(自下而上)画对。每卦应有 5–8 图。\n` +
   `- 周边关联(卦序/错综/卦主/筮例/史事/成语)有则保留、错则删;末尾保留 refs 块。\n\n只返回修正后的结构化结果。`
 
+// ── 易经经传(十翼)加厚支线:义理散论/取象/卦序,非卦爻;系辞/说卦/序卦/杂卦各配专图 ──
+const JZ_FILE = (b) => `${ROOT}/src/data/yijing/classics/${b}.json`
+const JZ_FIG = {
+  'xici-shang': '系辞上配图:太极生两仪→四象→八卦的衍生树图、大衍之数(大衍之数五十/其用四十有九/分二挂一揲四)推演图、阴阳刚柔对比、「易有圣人之道四焉」(辞变象占)列举、金句卡——按本章内容出 5–8 张。',
+  'xici-xia': '系辞下配图:八卦取象造物(结绳→网罟、刳木→舟楫…「制器尚象」)列举图、刚柔相推/阴阳消息结构图、忧患九卦阶梯、金句卡——按本章内容出 5–8 张。',
+  'shuogua': '说卦配图:**八卦取象图**(☰乾·天/父、☷坤·地/母、☳震·雷、☴巽·风、☵坎·水、☲离·火、☶艮·山、☱兑·泽——卦符 + 所象之物列举)、**先天(伏羲)八卦方位图**、**后天(文王)八卦方位图**、金句卡——取象章配图要足,5–8 张。',
+  'xugua': '序卦配图:**卦序流程图**(本章涉及的若干卦依「物极必反/相因相生」首尾相衔成链,标卦名 + 承接之由)、金句卡——按内容出。',
+  'zagua': '杂卦配图:**卦义对比图**(成对卦相反相成,如乾刚坤柔、比乐师忧、临观之义「或与或求」)列举/对照、金句卡——按内容出。',
+}
+const jzDraft = (u) => {
+  const longCh = u.chars >= 1500   // 序卦/杂卦整篇为一章(卦序长链)→分段摘录;系辞/说卦短章→逐句
+  const band = longCh
+    ? '约 7000–10000 字(加厚·长章:把卦序/卦义按卦群分组,逐组摘关键句深读,不必逐句翻全篇)'
+    : '约 6000–9000 字(加厚·短章:全文逐句展开;义理总纲章宁详勿凑)'
+  const approach = longCh
+    ? '\n\n【本章较长——分段摘录】把本章按卦群/义理**分成几组**,每组挑关键句(quote)深读;次要重复处并讲带过,引文仍须精确子串。'
+    : '\n\n【本章较短——全文逐句】**全文逐句展开**:每个原文句子都引(quote)讲透,不漏句。'
+  return `你在为「观象」易经研习站写《${bookTitle}·${u.title}》的「白话」整章加厚深读 —— 这是易经「十翼」之经传(义理散论/取象/卦序),不是某一卦的卦爻。${RED.yijing}\n\n` +
+    `第一步:用 Read 读 ${JZ_FILE(slug)},找到 chapters 里 no===${u.no} 的那一章(paragraphs 为原文段,每段含 original 与 translation)。以这章原文为底成文。\n` +
+    (slug !== 'xici-shang' && slug !== 'xici-xia' ? `如需卦名/卦象/取象/卦序,可 Grep ${Y_FILE} 查证(name/binary/upperTrigram/lowerTrigram/xugua/zagua),八卦符号与卦名务必与原文一致,勿凭记忆编造。\n` : '') +
+    `\n${SPEC}\n${THICK_EXTRA}\n\n${FIGSPEC_THICK}\n${JZ_FIG[slug] || ''}${approach}\n\n` +
+    `篇幅:${band}。\n\n按 schema 产出文章:\n` +
+    `- title:"白话${bookTitle} · ${u.title}";subtitle:一句副题;centralIdea:一句话中心思想。\n` +
+    `- blocks:lead/p/h2/quote{original,translation}/figure{ftype,svg,caption}/refs。quote.original 必为该章原文段精确连续子串、translation 与站内译文一致。脊柱顺序铺;走读用 quote+p 穿插;金句卡每章必出;末尾一个 refs 块。\n` +
+    (u.featured ? `- 这是系辞开篇(全经传义理总纲):额外给 featured:true 和 hero:{badge:"十翼 · 义理总纲",headline:本章关键句(如「天尊地卑,乾坤定矣」),tagline:一句题词}。\n` : `- 本章非开篇,**不要**输出 featured 或 hero 字段。\n`) +
+    `\n只返回结构化结果。`
+}
+const jzVerify = (u, draft) => `校对修正《${bookTitle}·${u.title}》白话草稿,返回修正后完整结构。${RED.yijing}\n\n` +
+  `先 Read ${JZ_FILE(slug)} 中 no===${u.no} 的章核对原文。草稿:\n${draft}\n\n` +
+  `逐项改正:\n- 每个 quote.original 必为该章某原文段的精确连续子串,否则改对或删;translation 与站内译文一致。\n` +
+  `- 守不算命红线:删去任何对读者命运的预言/占卜趋避/宿命措辞;吉凶悔吝只作古人对处境的判语训读。\n` +
+  `- 卦象/八卦符号(☰☷☳☴☵☶☱☲)/方位/卦序如出现于图或文,须与原文及 ${Y_FILE} 一致,无据或编造一律删(可 Grep 查证)。\n` +
+  `- 每张 figure 的 svg:颜色只用 var(--…)不写死 #hex;有 viewBox 与 caption;本章按加厚标准应有 5–8 图。\n` +
+  `- 中心思想突出、脑回路与比喻到位、不沦为逐字翻译清单;末尾保留 refs 块。\n\n只返回修正后的结构化结果。`
+
 const draftPrompt = (u) => {
-  if (IS_YIJING) return yijingDraft(u)
+  if (IS_HEX) return yijingDraft(u)
+  if (IS_JZ) return jzDraft(u)
   const thick = THICK.has(corpus)
   const longCh = u.chars >= 1500   // 长章阈值:超过则分段摘录精华句,不逐句翻全篇(owner:坛经/金刚经那类)
   const band = thick
@@ -176,7 +231,7 @@ const draftPrompt = (u) => {
     `\n只返回结构化结果。`
 }
 
-const verifyPrompt = (u, draft) => IS_YIJING ? yijingVerify(u, draft) : `校对修正《${bookTitle}·${u.title}》白话草稿,返回修正后完整结构。${RED[corpus] || ''}\n\n` +
+const verifyPrompt = (u, draft) => IS_HEX ? yijingVerify(u, draft) : IS_JZ ? jzVerify(u, draft) : `校对修正《${bookTitle}·${u.title}》白话草稿,返回修正后完整结构。${RED[corpus] || ''}\n\n` +
   `先 Read ${FILE(corpus, slug)} 中 no===${u.no} 的章核对。草稿:\n${draft}\n\n` +
   `逐项改正:\n- 每个 quote.original 必须是该章某原文段的精确连续子串,否则改对或删;translation 与站内译文一致。\n` +
   `- 守红线:删去违红线的措辞(${corpus === 'zhongyi' ? '诊疗/功效用法用量/疗效断语' : corpus === 'moulue' ? '为伪书张目/教施用' : corpus === 'fo' ? '果报/往生劝信' : '鸡汤/成功学/权术/政治影射'})。\n` +

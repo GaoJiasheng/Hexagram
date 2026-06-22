@@ -586,7 +586,7 @@ if (fs.existsSync(glossaryPath)) {
   }
   const chapterText = (corpus, slug, ch) => {
     const k = `${corpus}/${slug}`
-    if (corpus === 'yijing') {
+    if (corpus === 'yijing' && slug === 'hexagrams') {   // 64 卦;经传 slug 落下方 corpus 分支(classics/<slug>.json 通用)
       if (!(k in chCache)) {
         const f = path.join(ROOT, 'src/data/yijing/hexagrams.json')
         chCache[k] = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null

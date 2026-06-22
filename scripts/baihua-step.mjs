@@ -10,7 +10,7 @@ import { execSync } from 'node:child_process'
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const sh = (cmd) => execSync(cmd, { cwd: ROOT, encoding: 'utf8' })
 
-const CORPORA = ['fa']   // owner 2026-06-21:易经已完;现把韩非子做完(21–55)。韩非子满 55 后到商君书边界即停(只要韩非子)
+const CORPORA = ['yijing']   // owner 2026-06-22:阶段1 易经经传(卦已满,自动跳到经传:系辞上→系辞下→说卦→序卦→杂卦)
 const CAP = 10                                // 每批最多章数(越小→单 workflow 并发越少→越少撞 API 限流;夜间限流紧,取 10)
 const MAXATT = 3                              // 单章最多重试次数(防顽固章死循环)
 const ATT_FILE = path.join(ROOT, 'scripts/.baihua-attempts.json')
@@ -65,6 +65,11 @@ for (const corpus of CORPORA) {
   if (corpus === 'yijing') {
     const hexes = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/yijing/hexagrams.json'), 'utf8'))
     books = [{ slug: 'hexagrams', nos: hexes.map((q) => q.id) }]
+    // 经传/十翼(章序即处理序:系辞上→系辞下→说卦→序卦→杂卦)
+    for (const jz of ['xici-shang', 'xici-xia', 'shuogua', 'xugua', 'zagua']) {
+      const cf = path.join(ROOT, `src/data/yijing/classics/${jz}.json`)
+      if (fs.existsSync(cf)) books.push({ slug: jz, nos: JSON.parse(fs.readFileSync(cf, 'utf8')).chapters.map((c) => c.no) })
+    }
   } else {
     const texts = JSON.parse(fs.readFileSync(path.join(ROOT, `src/data/${corpus}/texts.json`), 'utf8')).filter((t) => t.status === 'done')
     books = texts.map((t) => ({ slug: t.slug, nos: JSON.parse(fs.readFileSync(path.join(ROOT, `src/data/${corpus}/classics/${t.slug}.json`), 'utf8')).chapters.map((c) => c.no) }))

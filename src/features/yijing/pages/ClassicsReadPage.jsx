@@ -5,6 +5,7 @@ import { saveReadingProgress } from '../storage.js'
 import { getClassicAnchors } from '../zhushiAnchored.js'
 import { usePageTitle } from '../hooks/usePageTitle.js'
 import ClassicReader from '../../reader/ClassicReader.jsx'
+import BaihuaBlock from '../../reader/BaihuaBlock.jsx'
 
 // 经传阅读器(v14 §3:薄包装,核心走通用 ClassicReader)
 export default function ClassicsReadPage() {
@@ -41,6 +42,16 @@ export default function ClassicsReadPage() {
       chapterLabel={(c) => `第${c.no}章`}
       chapterHref={(no) => `/classics/${book}/${no}`}
       getAnchors={(no, i) => getClassicAnchors(book, no, i)}
+      renderBaihua={(no) => (
+        <BaihuaBlock
+          corpus="yijing"
+          slug={book}
+          chapter={no}
+          bookTitle={`易经·${meta?.title || classics.title}`}
+          sectionUnit="章"
+          chapterLabel={`第${no}章`}
+        />
+      )}
     />
   )
 }

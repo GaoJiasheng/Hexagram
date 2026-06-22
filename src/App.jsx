@@ -280,6 +280,8 @@ function AppContent() {
           <Route path="/workbench" element={<WorkbenchPage />} />
           <Route path="/classics" element={<ClassicsListPage />} />
           <Route path="/classics/:book/:chapter" element={<ClassicsReadPage />} />
+          {/* 易经经传白话整页研读(design-v22)——4 段,更具体于 /classics/:book/:chapter */}
+          <Route path="/classics/:book/:chapter/baihua" element={<BaihuaPage corpus="yijing" />} />
           <Route path="/basics" element={<BasicsPage />} />
           <Route path="/basics/yinyang" element={<YinYangPage />} />
           <Route path="/basics/hetu-luoshu" element={<HetuLuoshuPage />} />

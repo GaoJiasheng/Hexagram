@@ -46,7 +46,7 @@ function hexAllOriginal(q) {
 const chCache = {}
 const chapterText = (corpus, slug, no) => {
   const k = `${corpus}/${slug}`
-  if (corpus === 'yijing') {
+  if (corpus === 'yijing' && slug === 'hexagrams') {   // 64 卦(经传 slug 落下方 corpus 分支,路径 src/data/yijing/classics/<slug>.json 通用)
     if (!(k in chCache)) {
       const f = path.join(ROOT, 'src/data/yijing/hexagrams.json')
       chCache[k] = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null
