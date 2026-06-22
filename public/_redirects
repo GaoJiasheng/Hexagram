@@ -1,0 +1,4 @@
+# Cloudflare Pages — SPA 深链回退:任何非静态文件的路径都交给前端路由
+# (/dao/daodejing/1、/classics/xici-shang/1/baihua 等刷新/直达不再 404)
+# 真实存在的文件(/assets/*、/sw.js、/manifest.webmanifest…)仍按原样直接服务,不走此回退。
+/*    /index.html    200

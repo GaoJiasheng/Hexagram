@@ -1,0 +1,12 @@
+# Cloudflare Pages — 缓存策略(对齐 nginx:带 hash 的资源永久 immutable、入口/SW 不缓存,发布即生效)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/index.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/manifest.webmanifest
+  Cache-Control: no-cache
