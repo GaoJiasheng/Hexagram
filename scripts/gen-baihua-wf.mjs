@@ -118,8 +118,8 @@ const FIGSPEC = [
 
 // ── corpus 加厚档(owner:佛经按易经标准——更厚、更多图、更多生活场景;短章逐句、长章摘录精华)──
 const THICK = new Set(['fo'])   // 这些 corpus 整组走加厚档:5–8 图 + 更多场景比喻生活实例 + 更长;红线照旧
-// 按「书」加厚(只升某 corpus 里的部分书,其余书保留普通档)——owner 2026-06-22:道只升核心三部
-const THICK_BOOKS = new Set(['dao/daodejing', 'dao/zhuangzi-neipian', 'dao/zhuangzi-waipian', 'dao/zhuangzi-zapian', 'dao/cantongqi'])
+// 按「书」加厚(只升某 corpus 里的部分书,其余书保留普通档)——owner 2026-06-22:道只升道德经(庄子/参同契等维持原普通档)
+const THICK_BOOKS = new Set(['dao/daodejing'])
 const IS_THICK = THICK.has(corpus) || THICK_BOOKS.has(`${corpus}/${slug}`)
 const THICK_EXTRA = [
   '【加厚要求(本书按易经白话标准)】白话占比再提高、讲得更厚:',
