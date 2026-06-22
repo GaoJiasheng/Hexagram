@@ -117,7 +117,7 @@ const FIGSPEC = [
 ].join('\n')
 
 // ── corpus 加厚档(owner:佛经按易经标准——更厚、更多图、更多生活场景;短章逐句、长章摘录精华)──
-const THICK = new Set(['fo'])   // 这些 corpus 整组走加厚档:5–8 图 + 更多场景比喻生活实例 + 更长;红线照旧
+const THICK = new Set(['zong'])   // 整组走加厚档:5–8 图 + 更多场景比喻生活实例 + 更长;红线照旧。纵横全新铺→直接加厚(无删重写浪费)。佛 upgrade 取消(已有普通档,清旧重跑费 token,owner 2026-06-22),故 'fo' 移出
 // 按「书」加厚(只升某 corpus 里的部分书,其余书保留普通档)——owner 2026-06-22:道只升道德经(庄子/参同契等维持原普通档)
 const THICK_BOOKS = new Set(['dao/daodejing'])
 const IS_THICK = THICK.has(corpus) || THICK_BOOKS.has(`${corpus}/${slug}`)
