@@ -10,7 +10,7 @@ import { execSync } from 'node:child_process'
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const sh = (cmd) => execSync(cmd, { cwd: ROOT, encoding: 'utf8' })
 
-const CORPORA = ['bing']   // owner 2026-06-23:兵家收尾——六韬 60 章普通档(孙子/吴子/司马法/尉缭子/三略已成,从六韬接上;不在 THICK_BOOKS→普通)
+const CORPORA = ['bing', 'mo']   // owner:兵家收官(六韬60)后接墨家(墨子42,普通档,思想史视角);法家先放后续。链条按数组序——bing 全 done 后自动流到 mo
 const CAP = 6                                 // 每批最多章数→单 workflow 并发(实际同时跑数由 runtime 封顶 min(16,核数-2))。owner 2026-06-23:服务端限流,降并发到 6 缓解(批次更多但更稳);限流过去可再调回 14
 const MAXATT = 3                              // 单章最多重试次数(防顽固章死循环)
 const ATT_FILE = path.join(ROOT, 'scripts/.baihua-attempts.json')
