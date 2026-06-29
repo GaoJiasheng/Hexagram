@@ -4,20 +4,32 @@ import { useNavigate } from 'react-router-dom'
 import { getBaihuaMeta, loadBaihua } from './baihua.js'
 import { SITE_MAP } from '../../sites/registry.js'
 
+// 内联富文本:把 **加粗** 渲染成 <strong>(React 安全的 split，不用 dangerouslySetInnerHTML)。
+// 只认成对的 **…**;落单的 ** 原样保留。无 ** 时直接返回原串（零开销）。
+function rich(text) {
+  if (typeof text !== 'string' || !text.includes('**')) return text
+  const parts = text.split(/(\*\*[^*]+?\*\*)/g)
+  return parts.map((p, i) =>
+    p.length > 4 && p.startsWith('**') && p.endsWith('**')
+      ? <strong key={i}>{p.slice(2, -2)}</strong>
+      : p,
+  )
+}
+
 // 单个内容块渲染器（design-v22 §3 的块结构）
 function Block({ block }) {
   switch (block.type) {
     case 'lead':
-      return <p className="baihua-lead">{block.text}</p>
+      return <p className="baihua-lead">{rich(block.text)}</p>
     case 'h2':
-      return <h2 className="baihua-h2">{block.text}</h2>
+      return <h2 className="baihua-h2">{rich(block.text)}</h2>
     case 'p':
-      return <p className="baihua-p">{block.text}</p>
+      return <p className="baihua-p">{rich(block.text)}</p>
     case 'quote':
       return (
         <div className="baihua-quote">
           <p className="baihua-quote__orig">{block.original}</p>
-          {block.translation && <p className="baihua-quote__trans">{block.translation}</p>}
+          {block.translation && <p className="baihua-quote__trans">{rich(block.translation)}</p>}
         </div>
       )
     case 'figure':
@@ -33,7 +45,7 @@ function Block({ block }) {
       return (
         <div className="baihua-refs">
           <p className="baihua-refs__title">原文出处与参考</p>
-          <ul>{block.items.map((t, i) => <li key={i}>{t}</li>)}</ul>
+          <ul>{block.items.map((t, i) => <li key={i}>{rich(t)}</li>)}</ul>
         </div>
       )
     default:
@@ -51,13 +63,13 @@ export function BaihuaArticle({ data }) {
           {data.hero.badge && <span className="baihua-hero__badge">{data.hero.badge}</span>}
           {data.hero.headline && <h1 className="baihua-hero__headline">{data.hero.headline}</h1>}
           <span className="baihua-hero__rule" aria-hidden="true">❖</span>
-          {data.centralIdea && <p className="baihua-hero__idea">{data.centralIdea}</p>}
-          {data.hero.tagline && <p className="baihua-hero__tagline">{data.hero.tagline}</p>}
+          {data.centralIdea && <p className="baihua-hero__idea">{rich(data.centralIdea)}</p>}
+          {data.hero.tagline && <p className="baihua-hero__tagline">{rich(data.hero.tagline)}</p>}
         </div>
       ) : data.centralIdea && (
         <div className="baihua-idea">
           <span className="baihua-idea__tag">中心思想</span>
-          <span>{data.centralIdea}</span>
+          <span>{rich(data.centralIdea)}</span>
         </div>
       )}
       {data.blocks.map((b, i) => <Block key={i} block={b} />)}

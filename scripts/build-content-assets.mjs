@@ -158,13 +158,14 @@ function indexBaihuaArticle(records, manifest, corpus, slug, ch, article, bookTi
     title: article.title || '',
     subtitle: article.subtitle || '',
     featured: !!article.featured || !!article.hero,
-    path: `/content/baihua/${corpus}/${slug}/${ch}.json`,
+    // 按书一文件:同书各章共用此 path（前端 loadBook 缓存整本，首开载全书、之后秒开），
+    // 文件数从「一章一文件」收回「一书一文件」，便于 CF 后台拖拽（≤1000 文件）。
+    path: `/content/baihua/${corpus}/${slug}.json`,
   }
   manifest.baihua[corpus] ??= {}
   manifest.baihua[corpus][slug] ??= { chapters: {}, count: 0 }
   manifest.baihua[corpus][slug].chapters[String(ch)] = meta
   manifest.baihua[corpus][slug].count += 1
-  writeJson(path.join(OUT_BAIHUA, corpus, slug, `${ch}.json`), article)
 }
 
 function buildBaihuaAssets(records, manifest) {
@@ -178,6 +179,8 @@ function buildBaihuaAssets(records, manifest) {
       for (const ch of Object.keys(book).sort((a, b) => Number(a) - Number(b))) {
         indexBaihuaArticle(records, manifest, corpus, slug, ch, book[ch], bookTitle)
       }
+      // 按书写一个文件 = { 章号: article }（源 baihua json 本就是这个结构，直接落盘）
+      writeJson(path.join(OUT_BAIHUA, corpus, `${slug}.json`), book)
     }
   }
 }
