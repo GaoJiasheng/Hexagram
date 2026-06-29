@@ -5,8 +5,10 @@
   "type": "module",
   "description": "观象 — 个人学习站(首个模块:易经研习)",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "content:build": "node scripts/build-content-assets.mjs",
+    "check-links": "npm run content:build && node scripts/check-links.mjs",
+    "dev": "npm run content:build && vite",
+    "build": "npm run content:build && vite build",
     "preview": "vite preview",
     "test": "vitest run --passWithNoTests",
     "data:fetch": "node scripts/fetch-data.mjs",
@@ -15,10 +17,10 @@
     "data:fetch-ru": "node scripts/fetch-corpus.mjs ru",
     "data:fetch-fo": "node scripts/fetch-corpus.mjs fo",
     "data:fetch-shili": "node scripts/fetch-shili.mjs",
-    "build:cap": "VITE_CAP=1 vite build",
-    "cap:sync": "VITE_CAP=1 vite build && npx cap sync",
-    "cap:ios": "VITE_CAP=1 vite build && npx cap sync ios && npx cap open ios",
-    "deploy:cf": "vite build && npx wrangler pages deploy dist --project-name=hexagram"
+    "build:cap": "npm run content:build && VITE_CAP=1 vite build",
+    "cap:sync": "npm run content:build && VITE_CAP=1 vite build && npx cap sync",
+    "cap:ios": "npm run content:build && VITE_CAP=1 vite build && npx cap sync ios && npx cap open ios",
+    "deploy:cf": "npm run build && npx wrangler pages deploy dist --project-name=hexagram"
   },
   "dependencies": {
     "@capacitor/android": "^8.4.1",

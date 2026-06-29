@@ -16,7 +16,7 @@ const ENTRIES = [
   { title: '道藏研读', to: '/dao', desc: '道德经·南华·丹道诸经', icon: '☯' },
 ]
 
-export default function HomePage() {
+export default function HomePage({ onSearch }) {
   usePageTitle(null)
   const today = getDateString()
   const todayId = getTodayHexagramId(today)
@@ -50,6 +50,11 @@ export default function HomePage() {
         <div className="home-hero__actions">
           <Link to="/hexagrams" className="btn btn--primary">浏览六十四卦</Link>
           <Link to="/workbench" className="btn btn--secondary">开始推演</Link>
+          {onSearch && (
+            <button type="button" className="btn btn--secondary home-hero__search" onClick={onSearch}>
+              ⌕ 全站搜索
+            </button>
+          )}
         </div>
       </section>
 

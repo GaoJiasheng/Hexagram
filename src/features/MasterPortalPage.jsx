@@ -23,7 +23,7 @@ const accentStyle = (site) => ({ '--card-accent': `var(--${site.accent})` })
 
 // 诸学门户(总入口)——左上角 logo 全站可达,列全部分组(易道/儒/佛/心/法/墨/兵/纵横/中医/谋略)。
 // 生产域名上卡片链向各组绝对 URL(跨域),dev 用相对路径。
-export default function MasterPortalPage() {
+export default function MasterPortalPage({ onSearch }) {
   usePageTitle('门户')
   const protocol = typeof window !== 'undefined' ? window.location.protocol : 'https:'
   const hostname = typeof window !== 'undefined' ? window.location.hostname : ''
@@ -44,6 +44,13 @@ export default function MasterPortalPage() {
   return (
     <div className="master-portal">
       <p className="master-portal__hint">观象 · 诸学门户</p>
+      {onSearch && (
+        <button type="button" className="master-portal__search" onClick={onSearch}>
+          <span aria-hidden="true">⌕</span>
+          <span>全站搜索</span>
+          <kbd>/</kbd>
+        </button>
+      )}
       {featuredGroup && (
         <div className="master-portal__featured">
           {sitesInGroup(featuredGroup).map((s, i) => (

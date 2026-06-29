@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
-import { useEffect } from 'react'
-import { getBaihua } from './baihua.js'
+import { useEffect, useState } from 'react'
+import { loadBaihua } from './baihua.js'
 import { BaihuaArticle } from './BaihuaBlock.jsx'
 import { SITE_MAP } from '../../sites/registry.js'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
@@ -15,13 +15,27 @@ export default function BaihuaPage({ corpus }) {
   const isJingzhuan = isYijing && !!params.book   // 经传整页路由带 :book
   const slug = isJingzhuan ? params.book : isYijing ? 'hexagrams' : params.slug
   const ch = Number(isJingzhuan ? params.chapter : isYijing ? params.id : params.chapter) || 1
-  const data = getBaihua(corpus, slug, ch)
+  const [data, setData] = useState(undefined)
   const site = SITE_MAP[corpus]
   usePageTitle(data?.title || '白话', site?.brand)
 
   useEffect(() => { window.scrollTo(0, 0) }, [slug, ch])
 
+  useEffect(() => {
+    let alive = true
+    setData(undefined)
+    loadBaihua(corpus, slug, ch).then((article) => { if (alive) setData(article) })
+    return () => { alive = false }
+  }, [corpus, slug, ch])
+
   const backToChapter = isJingzhuan ? `/classics/${slug}/${ch}` : isYijing ? `/hexagram/${ch}` : `${site?.home || ''}/${slug}/${ch}`
+  if (data === undefined) {
+    return (
+      <div className="page-content">
+        <p className="text-faint">正在载入白话…</p>
+      </div>
+    )
+  }
   if (!data) {
     return (
       <div className="page-content">

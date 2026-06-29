@@ -4,12 +4,8 @@ import { SettingsProvider } from './features/yijing/SettingsContext.jsx'
 import ErrorBoundary from './features/ErrorBoundary.jsx'
 import { siteForPath, activeGroup, sitesInGroup, HOST_GROUPS, MASTER_PORTAL_PATH } from './sites/registry.js'
 
-// 搜索面板连同其多源索引数据按需加载(v11 §2)
-const SearchPalette = lazy(() => import('./features/yijing/components/SearchPalette.jsx'))
-// 读经类站(corpus)各自的全站检索面板(C1);分组隔离:只搜本组
-const CorpusSearchPalette = lazy(() => import('./features/reader/CorpusSearchPalette.jsx'))
-// 道藏检索面板(批D):复用 CorpusSearchPalette,注入 dao 检索函数(单独懒加载,不入主包)
-const DaoSearchPalette = lazy(() => import('./features/dao/DaoSearchPalette.jsx'))
+// 全站搜索面板按需加载:搜索页面、经典、正文、白话、注疏、专题。
+const GlobalSearchPalette = lazy(() => import('./features/search/GlobalSearchPalette.jsx'))
 
 // 页面全部按路由懒加载(v11 §2),首包只留壳与搜索
 // Pages — 易经研习模块
@@ -113,20 +109,6 @@ function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings }) {
     return () => window.removeEventListener('scroll', handler)
   }, [])
 
-  // '/' key triggers search(仅声明 hasSearch 的站)
-  useEffect(() => {
-    if (!module.hasSearch) return
-    function onKey(e) {
-      if (e.key !== '/' || e.isComposing) return  // 输入法组字中按 / 不触发
-      const t = e.target
-      if (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT' || t.isContentEditable) return
-      e.preventDefault()
-      onSearch()
-    }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [onSearch, module.hasSearch])
-
   return (
     <nav className={`app-nav ${scrolled ? 'app-nav--scrolled' : ''}`} role="navigation" aria-label="主导航">
       {/* 左上角 logo → 诸学总门户(公开总入口,全站可达;列全部分组) */}
@@ -146,19 +128,17 @@ function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings }) {
         ))}
       </div>
       <div className="app-nav__actions">
-        {module.hasSearch && (
-          <button
-            className="nav-icon-btn"
-            onClick={onSearch}
-            aria-label="搜索（/）"
-            title="搜索（/）"
-          >
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
-              <circle cx="7.5" cy="7.5" r="5" />
-              <line x1="11.5" y1="11.5" x2="16" y2="16" />
-            </svg>
-          </button>
-        )}
+        <button
+          className="nav-icon-btn"
+          onClick={onSearch}
+          aria-label="全站搜索（/ 或 ⌘K）"
+          title="全站搜索（/ 或 ⌘K）"
+        >
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
+            <circle cx="7.5" cy="7.5" r="5" />
+            <line x1="11.5" y1="11.5" x2="16" y2="16" />
+          </svg>
+        </button>
         <button className="nav-icon-btn" onClick={onSettings} aria-label="设置" title="设置">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="3" />
@@ -190,7 +170,7 @@ function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings }) {
   )
 }
 
-function MobileNav({ module, canSwitch, otherSite, onPortal }) {
+function MobileNav({ module, canSwitch, otherSite, onPortal, onSearch }) {
   const location = useLocation()
 
   return (
@@ -212,6 +192,10 @@ function MobileNav({ module, canSwitch, otherSite, onPortal }) {
             </NavLink>
           )
         })}
+        <button className="mobile-nav__item" onClick={onSearch} aria-label="全站搜索">
+          <span className="mobile-nav__icon" aria-hidden="true">⌕</span>
+          <span>搜索</span>
+        </button>
         {module.mobileSwitch && (otherSite ? (
           <NavLink to={otherSite.home} className="mobile-nav__item" aria-label={`切到${switchTargetName(otherSite)}`}>
             <span className="mobile-nav__icon" aria-hidden="true">⇄</span>
@@ -246,11 +230,24 @@ function AppContent() {
   const otherSite = groupSites.length === 2 ? groupSites.find(s => s.key !== module.key) : null
   // 中立枢纽(总门户 / 义理专题 / 百家争鸣):不套任一分站外壳(无 module nav / 搜索 / 底栏 / 主色偏向)
   const isPortal = isNeutralPath(location.pathname)
-  // 搜索面板种类由 registry 派生(缺省 corpus),单一来源,免硬编码站名集漏改
-  const searchKind = module.hasSearch ? (module.searchKind || 'corpus') : null
-
   // 路由切换关闭搜索/切站/设置浮层,避免状态在跨站导航后残留
   useEffect(() => { setSearchOpen(false); setPortalOpen(false); setSettingsOpen(false) }, [location.pathname])
+
+  // 全站搜索快捷键: / 或 Cmd/Ctrl+K。输入框/可编辑区内不截获。
+  useEffect(() => {
+    function onKey(e) {
+      const t = e.target
+      const editable = t?.tagName === 'INPUT' || t?.tagName === 'TEXTAREA' || t?.tagName === 'SELECT' || t?.isContentEditable
+      if (editable || e.isComposing) return
+      const slash = e.key === '/'
+      const commandK = e.key.toLowerCase() === 'k' && (e.metaKey || e.ctrlKey)
+      if (!slash && !commandK) return
+      e.preventDefault()
+      setSearchOpen(true)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
 
   // 域名着陆(v15 §1):配了 HOST_GROUPS 的域名访问别组路径时,落回本组首页。
   // HOST_GROUPS 为空(dev/主域名)时不触发,按路径分组即可。
@@ -272,7 +269,7 @@ function AppContent() {
         <Suspense fallback={<div className="route-loading" aria-label="加载中">⋯</div>}>
         <Routes>
           {/* 易经研习 */}
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage onSearch={openSearch} />} />
           <Route path="/hexagrams" element={<HexagramsPage />} />
           <Route path="/hexagram/:id" element={<HexagramDetailPage />} />
           {/* 易经白话整页研读(design-v22:一卦一厚文)——3 段路由,更具体于 /hexagram/:id */}
@@ -338,7 +335,7 @@ function AppContent() {
             <Route key={`${c}-baihua`} path={`/${c}/:slug/baihua/:chapter`} element={<BaihuaPage corpus={c} />} />
           ))}
           {/* 诸学总门户(v15):左上角 logo 全站可达的公开总入口,列全部分组 */}
-          <Route path={MASTER_PORTAL_PATH} element={<MasterPortalPage />} />
+          <Route path={MASTER_PORTAL_PATH} element={<MasterPortalPage onSearch={openSearch} />} />
           <Route path="/concepts" element={<ConceptsPage />} />
           <Route path="/debates" element={<DebateListPage />} />
           <Route path="/debates/:id" element={<DebatePage />} />
@@ -359,20 +356,10 @@ function AppContent() {
           <span>本站为个人学习用途，解读内容仅供研习参考 · <NavLink to="/about" className="app-footer__link">关于本站</NavLink></span>
         </footer>
       )}
-      {!isPortal && <MobileNav module={module} canSwitch={canSwitch} otherSite={otherSite} onPortal={openPortal} />}
-      {!isPortal && searchOpen && searchKind === 'yijing' && (
+      {!isPortal && <MobileNav module={module} canSwitch={canSwitch} otherSite={otherSite} onPortal={openPortal} onSearch={openSearch} />}
+      {searchOpen && (
         <Suspense fallback={null}>
-          <SearchPalette open onClose={() => setSearchOpen(false)} />
-        </Suspense>
-      )}
-      {!isPortal && searchOpen && searchKind === 'corpus' && (
-        <Suspense fallback={null}>
-          <CorpusSearchPalette corpus={module.key} open onClose={() => setSearchOpen(false)} />
-        </Suspense>
-      )}
-      {!isPortal && searchOpen && searchKind === 'dao' && (
-        <Suspense fallback={null}>
-          <DaoSearchPalette open onClose={() => setSearchOpen(false)} />
+          <GlobalSearchPalette open onClose={() => setSearchOpen(false)} />
         </Suspense>
       )}
       {!isPortal && portalOpen && <ModulePortal current={module.key} group={group} onClose={() => setPortalOpen(false)} />}

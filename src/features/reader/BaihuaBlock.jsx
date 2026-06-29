@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { useNavigate } from 'react-router-dom'
-import { getBaihua } from './baihua.js'
+import { getBaihuaMeta, loadBaihua } from './baihua.js'
 import { SITE_MAP } from '../../sites/registry.js'
 
 // 单个内容块渲染器（design-v22 §3 的块结构）
@@ -69,9 +69,31 @@ export function BaihuaArticle({ data }) {
 // 白话模块：章末一个低调折叠入口条 → 点开为侧抽屉（桌面）/ 全屏浮层（移动）。
 // 打开后持久（仅手动关）；⤢ 切到「整页研读」独立页（design-v22 §2）。
 export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionUnit = '章', chapterLabel }) {
-  const data = getBaihua(corpus, slug, chapter)
+  const [meta, setMeta] = useState(undefined)
+  const [data, setData] = useState(null)
+  const [loading, setLoading] = useState(false)
   const [open, setOpen] = useState(false)
   const navigate = useNavigate()
+
+  useEffect(() => {
+    let alive = true
+    setMeta(undefined)
+    setData(null)
+    getBaihuaMeta(corpus, slug, chapter).then((m) => { if (alive) setMeta(m) })
+    return () => { alive = false }
+  }, [corpus, slug, chapter])
+
+  useEffect(() => {
+    if (!open || data || !meta) return
+    let alive = true
+    setLoading(true)
+    loadBaihua(corpus, slug, chapter).then((article) => {
+      if (!alive) return
+      setData(article)
+      setLoading(false)
+    })
+    return () => { alive = false }
+  }, [open, data, meta, corpus, slug, chapter])
 
   useEffect(() => {
     if (!open) return
@@ -82,7 +104,7 @@ export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionU
     return () => { document.body.style.overflow = prev; window.removeEventListener('keydown', onKey) }
   }, [open])
 
-  if (!data) return null
+  if (meta === undefined || meta === null) return null
 
   const seal = SITE_MAP[corpus]?.brand || ''
   const entryLabel = `白话${bookTitle}`
@@ -92,15 +114,16 @@ export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionU
     ? (slug === 'hexagrams' ? `/hexagram/${chapter}/baihua` : `/classics/${slug}/${chapter}/baihua`)
     : `${SITE_MAP[corpus]?.home || ''}/${slug}/baihua/${chapter}`
   const goFullPage = () => { setOpen(false); navigate(fullPath) }
+  const display = data || meta
 
   return (
     <>
-      <button className={`baihua-entry ${data.featured ? 'baihua-entry--featured' : ''}`} onClick={() => setOpen(true)} aria-expanded={open}>
+      <button className={`baihua-entry ${meta.featured ? 'baihua-entry--featured' : ''}`} onClick={() => setOpen(true)} aria-expanded={open}>
         {seal && <span className="baihua-entry__seal">{seal}</span>}
         <span className="baihua-entry__text">
           <span className="baihua-entry__title">
             {entryLabel} · {chapterName}
-            {data.featured && <span className="baihua-entry__flag">总纲</span>}
+            {meta.featured && <span className="baihua-entry__flag">总纲</span>}
           </span>
           <span className="baihua-entry__hint">大白话 + 配图，把这一章讲给完全没读过的人 · 点开</span>
         </span>
@@ -122,7 +145,7 @@ export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionU
                 {seal && <span className="baihua-drawer__seal">{seal}</span>}
                 <span className="baihua-drawer__titletext">
                   <span className="baihua-drawer__brand">{entryLabel}</span>
-                  <span className="baihua-drawer__chap">{chapterName}{data.subtitle ? ` · ${data.subtitle}` : ''}</span>
+                  <span className="baihua-drawer__chap">{chapterName}{display.subtitle ? ` · ${display.subtitle}` : ''}</span>
                 </span>
               </div>
               <div className="baihua-drawer__actions">
@@ -131,7 +154,9 @@ export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionU
               </div>
             </header>
             <div className="baihua-drawer__body">
-              <BaihuaArticle data={data} />
+              {loading && <p className="text-faint">正在载入白话…</p>}
+              {!loading && data && <BaihuaArticle data={data} />}
+              {!loading && !data && <p className="text-faint">这一章白话暂时无法载入。</p>}
             </div>
           </aside>
         </div>,
