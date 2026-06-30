@@ -10,6 +10,7 @@
   --ink-faint: #a89f93;
   --cinnabar: #a03a2a;
   --cinnabar-bg: #a03a2a14;
+  --cinnabar-pure: #a03a2a;  /* 不被门户 muted 覆盖的真朱砂——招牌入口用 */
   --azure: #3d5a73;
   --buddha: #9c7b4d;
   --confucian: #4f6f52;
@@ -37,6 +38,7 @@
   --ink-faint: #6b6157;
   --cinnabar: #c75b49;
   --cinnabar-bg: #c75b4920;
+  --cinnabar-pure: #c75b49;
   --azure: #7e9cb5;
   --buddha: #c4a06a;
   --confucian: #84a888;
@@ -3066,6 +3068,36 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .portal-trail__stats { display: flex; gap: 16px; justify-content: center; font-size: 0.8rem; color: var(--ink-soft); margin: 4px 0 18px; }
 .portal-trail__hint { color: var(--ink-faint); }
 .master-portal__links { margin-top: 18px; text-align: center; }
+
+/* 招牌入口:赛博·百家争鸣(会持续增补内容,单列醒目横幅;用真朱砂 --cinnabar-pure 跳出门户 muted 调) */
+.master-portal__debates {
+  display: flex; align-items: center; gap: 14px;
+  width: min(100%, 500px);
+  padding: 15px 18px;
+  border: 1px solid color-mix(in srgb, var(--cinnabar-pure) 45%, var(--line));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--cinnabar-pure) 9%, var(--paper-raised));
+  text-decoration: none;
+  transition: transform 0.16s, border-color 0.16s, box-shadow 0.16s;
+}
+.master-portal__debates:hover {
+  transform: translateY(-2px);
+  border-color: var(--cinnabar-pure);
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--cinnabar-pure) 28%, transparent);
+}
+.master-portal__debates-seal {
+  flex: none; width: 46px; height: 46px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--cinnabar-pure); color: #fdfbf6;
+  font-family: var(--font-serif); font-size: 0.92rem; letter-spacing: 0.04em;
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12), 0 1px 3px rgba(0, 0, 0, 0.16);
+}
+.master-portal__debates-body { display: flex; flex-direction: column; gap: 3px; flex: 1 1 auto; }
+.master-portal__debates-title { font-family: var(--font-serif); font-size: 1.05rem; color: var(--ink); letter-spacing: 0.02em; }
+.master-portal__debates-sub { font-size: 0.76rem; color: var(--ink-soft); }
+.master-portal__debates-go { flex: none; font-size: 1.4rem; color: var(--cinnabar-pure); transition: transform 0.16s; }
+.master-portal__debates:hover .master-portal__debates-go { transform: translateX(3px); }
 
 /* 金句卡(#147) */
 .quote-overlay { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 20px; background: rgba(0, 0, 0, 0.5); overflow-y: auto; }

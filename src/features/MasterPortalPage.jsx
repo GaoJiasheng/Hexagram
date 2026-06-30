@@ -71,10 +71,17 @@ export default function MasterPortalPage({ onSearch }) {
       <div className="master-portal__cards">
         {singleGroups.map(g => renderCard(sitesInGroup(g)[0]))}
       </div>
+      {/* 招牌入口:赛博·百家争鸣(诸子跨派对辩,内容持续增补)——单列醒目横幅,不再混在小字链里 */}
+      <Link to="/debates" className="master-portal__debates" aria-label="赛博 · 百家争鸣">
+        <span className="master-portal__debates-seal" aria-hidden="true">争鸣</span>
+        <span className="master-portal__debates-body">
+          <span className="master-portal__debates-title">赛博 · 百家争鸣</span>
+          <span className="master-portal__debates-sub">诸子隔空对辩 · 跨派交锋,持续增补</span>
+        </span>
+        <span className="master-portal__debates-go" aria-hidden="true">›</span>
+      </Link>
       <PortalStudyTrail />
       <p className="master-portal__links">
-        <Link to="/debates" className="master-portal__about-link">赛博 · 百家争鸣</Link>
-        <span className="master-portal__links-sep"> · </span>
         <Link to="/concepts" className="master-portal__about-link">义理专题 · 跨派概念</Link>
       </p>
       <p className="master-portal__about">
