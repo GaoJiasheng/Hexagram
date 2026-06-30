@@ -3003,31 +3003,9 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .module-portal__close:hover { color: var(--ink); }
 
 /* 三教门户(v15 隐藏入口 /hexagram)——仅 owner 入口,简素卡片跨域跳转 */
-.master-portal { --portal-card-w: 222px; position: relative; min-height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; padding: 48px 24px; }
+.master-portal { --portal-card-w: 222px; min-height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; padding: 48px 24px; }
 .master-portal__hint { font-size: 0.74rem; color: var(--ink-faint); letter-spacing: 0.22em; text-indent: 0.22em; text-transform: none; }
-/* 全站搜索:右上角小放大镜,脱离居中流、不占首页版面(与各分站 nav 搜索图标一致;/ 或 ⌘K 仍可触发) */
-.master-portal__search {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--paper-raised);
-  color: var(--ink-soft);
-  cursor: pointer;
-  transition: border-color 0.15s, color 0.15s, background 0.15s;
-}
-.master-portal__search:hover,
-.master-portal__search:focus-visible {
-  border-color: var(--ink-faint);
-  color: var(--ink);
-  background: var(--paper);
-}
+/* 门户不放搜索按钮(owner 觉得突兀);搜索靠 / 或 ⌘K,各分站顶栏亦有图标 */
 /* 首行:易经 / 道藏 两枚同宽卡居中,中以小太极桥相系而不并合 */
 .master-portal__featured { display: flex; justify-content: center; align-items: center; gap: 0; }
 .master-portal__bond { display: flex; align-items: center; gap: 6px; padding: 0 12px; flex-shrink: 0; }

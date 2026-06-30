@@ -44,14 +44,6 @@ export default function MasterPortalPage({ onSearch }) {
   return (
     <div className="master-portal">
       <p className="master-portal__hint">观象 · 诸学门户</p>
-      {onSearch && (
-        <button type="button" className="master-portal__search" onClick={onSearch} aria-label="全站搜索（/）" title="全站搜索（/ 或 ⌘K）">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
-            <circle cx="7.5" cy="7.5" r="5" />
-            <line x1="11.5" y1="11.5" x2="16" y2="16" />
-          </svg>
-        </button>
-      )}
       {featuredGroup && (
         <div className="master-portal__featured">
           {sitesInGroup(featuredGroup).map((s, i) => (
