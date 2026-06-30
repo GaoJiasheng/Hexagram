@@ -16,6 +16,14 @@ const GROUP_ACCENT = {
 }
 export function groupAccent(group) { return GROUP_ACCENT[group] || 'var(--ink-soft)' }
 
+// 头像印章用「派名」(owner:不用门户的观X品牌,直接儒家/道家/法家…),按 group 映射;
+// 均 2 字、与原观X字数一致、布局不变。数据里的 s.seal 不再用于显示(新辩自动适配)。
+const GROUP_SEAL = {
+  ru: '儒家', xin: '心学', dao: '道家', fo: '佛家',
+  fa: '法家', mo: '墨家', bing: '兵家', zong: '纵横', yijing: '易家',
+}
+export function schoolSeal(group) { return GROUP_SEAL[group] || group }
+
 export function debateById(id) { return TOPICS.find((t) => t.id === id) || null }
 
 export async function loadDebate(id) {

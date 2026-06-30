@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
-import { TOPICS, PLANNED, EPIGRAPH, groupAccent } from './debates.js'
+import { TOPICS, PLANNED, EPIGRAPH, groupAccent, schoolSeal } from './debates.js'
 
 // 《赛博:百家争鸣》辩题库——已开辩题成卡(可点),46 题路线图按类列出(陆续上线)。
 export default function DebateListPage() {
@@ -21,7 +21,7 @@ export default function DebateListPage() {
             <div className="debate-card__q">{t.question}</div>
             <div className="debate-card__seals">
               {t.schools.map((s, i) => (
-                <span key={i} className="debate-card__seal" style={{ background: groupAccent(s.group) }} title={`${s.label}·${s.stance}`}>{s.seal}</span>
+                <span key={i} className="debate-card__seal" style={{ background: groupAccent(s.group) }} title={`${s.label}·${s.stance}`}>{schoolSeal(s.group)}</span>
               ))}
             </div>
             <div className="debate-card__meta">{t.schools.map((s) => s.label).join(' · ')} · {t.turns} 轮</div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useNavigate } from 'react-router-dom'
-import { pickDailyDebate, groupAccent } from './debates.js'
+import { pickDailyDebate, groupAccent, schoolSeal } from './debates.js'
 import { getDailyDebateSeen, markDailyDebateSeen } from '../yijing/storage.js'
 
 // 每日一辩弹窗(v21 §3.4)——首页/门户当日首访自动弹一次(纸色卡 + 遮罩)。
@@ -34,7 +34,7 @@ export default function DailyDebate() {
         <div className="daily-debate__seals">
           {topic.schools.map((s, i) => (
             <div key={i} className="daily-debate__seat">
-              <div className="daily-debate__seal" style={{ background: groupAccent(s.group) }}>{s.seal}</div>
+              <div className="daily-debate__seal" style={{ background: groupAccent(s.group) }}>{schoolSeal(s.group)}</div>
               <div className="daily-debate__name">{s.label}</div>
               <div className="daily-debate__stance">{s.stance}</div>
             </div>

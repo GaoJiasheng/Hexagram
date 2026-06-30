@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
-import { loadDebate, groupAccent, EPIGRAPH } from './debates.js'
+import { loadDebate, groupAccent, schoolSeal, EPIGRAPH } from './debates.js'
 import { bookBySlug, chapterHref } from '../reader/booksIndex.js'
 
 // 圆桌节点坐标:n 家匀布于圆周(自顶部顺时针)
@@ -97,7 +97,7 @@ export default function DebatePage() {
             style={{ animationDelay: `${180 + i * 110}ms` }} transform={`translate(${pos[i].x},${pos[i].y})`}>
             {activeKey === s.key && <circle className="debate-node__ring" r="30" />}
             <rect x="-24" y="-24" width="48" height="48" rx="9" style={{ fill: groupAccent(s.group) }} />
-            <text className="debate-node__seal" textAnchor="middle" dominantBaseline="central" y="1">{s.seal}</text>
+            <text className="debate-node__seal" textAnchor="middle" dominantBaseline="central" y="1">{schoolSeal(s.group)}</text>
             <text className="debate-node__name" textAnchor="middle" y="42">{s.label}</text>
             <text className="debate-node__stance" textAnchor="middle" y="58">{s.stance}</text>
           </g>
@@ -127,7 +127,7 @@ export default function DebatePage() {
               {header && <div className="debate-phase">{t.phase}</div>}
               <div className="debate-turn" style={{ '--seat': groupAccent(s.group) }}>
                 <div className="debate-turn__head">
-                  <span className="debate-turn__seal" style={{ background: groupAccent(s.group) }}>{s.seal}</span>
+                  <span className="debate-turn__seal" style={{ background: groupAccent(s.group) }}>{schoolSeal(s.group)}</span>
                   <span className="debate-turn__name">{s.label}</span>
                   {t.rebut && <span className="debate-turn__rebut">驳 · {byKey[t.rebut]?.label}</span>}
                 </div>
