@@ -10,8 +10,8 @@ export const SITES = [
     brand: '观象',
     portalTitle: '易经研习',
     portalDesc: '六十四卦 · 推演工作台 · 经传 · 学堂 · 筮例（全站唯一含推演的组）',
-    home: '/',
-    prefix: '',            // 默认站(无前缀),兜底
+    home: '/yijing',       // owner:网站入口 / 改为诸学门户,易经首页挪到 /yijing
+    prefix: '',            // 默认站(无前缀),兜底(/yijing 及所有根级易经子路由归此)
     accent: 'cinnabar',
     switchLabel: '易',
     hasSearch: true,
@@ -24,7 +24,7 @@ export const SITES = [
       { to: '/basics', label: '学堂' },
     ],
     mobileNav: [
-      { to: '/', label: '首页', icon: '☰', exact: true },
+      { to: '/yijing', label: '首页', icon: '☰', exact: true },
       { to: '/hexagrams', label: '卦', icon: '☵', match: ['/hexagrams', '/hexagram/'] },
       { to: '/workbench', label: '推演', icon: '☲' },
       { to: '/classics', label: '经传', icon: '☷' },

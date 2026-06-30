@@ -57,7 +57,7 @@ const DebatePage = lazy(() => import('./features/debates/DebatePage.jsx'))
 
 // 中立外壳路径(总门户 / 义理专题 / 百家争鸣):不套分站 nav/搜索/底栏,域名着陆豁免
 function isNeutralPath(p) {
-  return p === MASTER_PORTAL_PATH || p === '/concepts' || p === '/debates' || p.startsWith('/debates/')
+  return p === '/' || p === MASTER_PORTAL_PATH || p === '/concepts' || p === '/debates' || p.startsWith('/debates/')
 }
 // 全站设置浮层(Tier 0):任何站 nav 齿轮就地打开(主题/字号/译文 + 数据导出导入)
 const SettingsSheet = lazy(() => import('./features/SettingsSheet.jsx'))
@@ -268,8 +268,10 @@ function AppContent() {
         <ErrorBoundary key={location.pathname}>
         <Suspense fallback={<div className="route-loading" aria-label="加载中">⋯</div>}>
         <Routes>
+          {/* 网站入口 = 诸学门户(owner:/ 不再直接进易经);易经首页挪到 /yijing */}
+          <Route path="/" element={<MasterPortalPage onSearch={openSearch} />} />
           {/* 易经研习 */}
-          <Route path="/" element={<HomePage onSearch={openSearch} />} />
+          <Route path="/yijing" element={<HomePage onSearch={openSearch} />} />
           <Route path="/hexagrams" element={<HexagramsPage />} />
           <Route path="/hexagram/:id" element={<HexagramDetailPage />} />
           {/* 易经白话整页研读(design-v22:一卦一厚文)——3 段路由,更具体于 /hexagram/:id */}
