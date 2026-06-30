@@ -50,11 +50,7 @@ export default function HomePage({ onSearch }) {
         <div className="home-hero__actions">
           <Link to="/hexagrams" className="btn btn--primary">浏览六十四卦</Link>
           <Link to="/workbench" className="btn btn--secondary">开始推演</Link>
-          {onSearch && (
-            <button type="button" className="btn btn--secondary home-hero__search" onClick={onSearch}>
-              ⌕ 全站搜索
-            </button>
-          )}
+          {/* 全站搜索不在首页占位:顶栏已有放大镜图标,/ 或 ⌘K 亦可触发 */}
         </div>
       </section>
 
