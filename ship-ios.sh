@@ -12,4 +12,5 @@ xcodebuild -project ios/App/App.xcodeproj -scheme App -configuration Release -de
 echo "▶ 导出 .ipa"; rm -rf /tmp/HexaExport
 xcodebuild -exportArchive -archivePath /tmp/Hexa.xcarchive -exportPath /tmp/HexaExport -exportOptionsPlist ios/ExportOptions.plist "${A[@]}"
 echo "▶ 上传"; xcrun altool --upload-app -f /tmp/HexaExport/App.ipa -t ios --apiKey "$ASC_KEY_ID" --apiIssuer "$ASC_ISSUER_ID"
-echo "✅ 已上传 → App Store Connect / TestFlight 看处理"
+echo "✅ 已上传 → 轮询处理完后自动加入内部测试组(否则 build VALID 也看不到/装不了)"
+echo "▶ 加内部测试组"; node scripts/tf-attach.mjs || echo "⚠ 自动加组失败,稍后手动:node scripts/tf-attach.mjs <build号>"
