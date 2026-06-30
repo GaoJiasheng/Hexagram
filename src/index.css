@@ -3075,7 +3075,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 
 /* 金句卡(#147) */
 .quote-overlay { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 20px; background: rgba(0, 0, 0, 0.5); overflow-y: auto; }
-.quote-modal { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.quote-modal { display: flex; flex-direction: column; align-items: center; gap: 14px; background: var(--paper); padding: 16px 16px 14px; border-radius: 14px; box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4); max-width: 100%; }
 .quote-card { max-width: 100%; height: auto; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); border-radius: 4px; }
 .quote-modal__actions { display: flex; gap: 10px; }
 .quote-modal__hint { font-size: 0.78rem; margin: 0; }

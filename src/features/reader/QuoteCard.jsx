@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 
 // 金句卡(#147)——把一段原文 + 译文 + 书名渲成可分享的图。SVG 现卡 + 转 PNG 下载
 // (await fonts.ready 保中文衬线已就绪;失败则用户仍可直接截图本卡)。无账号站的低成本传播面。
@@ -49,7 +50,9 @@ export default function QuoteCard({ original, translation, source, onClose }) {
   }
 
   const FF = "'Noto Serif SC', serif"
-  return (
+  // createPortal 到 body:逃出阅读器里带 content-visibility/transform 的祖先，
+  // 否则 .quote-overlay 的 position:fixed 遮罩盖不满视口、按钮区会透出页面正文（与注释气泡/白话抽屉同款修法）。
+  return createPortal(
     <div className="quote-overlay" onClick={(e) => { if (e.target === e.currentTarget) onClose() }}>
       <div className="quote-modal" role="dialog" aria-modal="true" aria-label="金句卡">
         <svg ref={svgRef} className="quote-card" width={W} height={H} viewBox={`0 0 ${W} ${H}`} xmlns="http://www.w3.org/2000/svg">
@@ -70,6 +73,7 @@ export default function QuoteCard({ original, translation, source, onClose }) {
         </div>
         <p className="quote-modal__hint text-faint">下载图片,或直接截图本卡分享。</p>
       </div>
-    </div>
+    </div>,
+    document.body,
   )
 }
