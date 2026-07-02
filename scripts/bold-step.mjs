@@ -14,7 +14,7 @@ const BOOKS = [
   ['yijing', 'hexagrams'], ['yijing', 'xici-shang'], ['yijing', 'xici-xia'], ['yijing', 'shuogua'], ['yijing', 'xugua'], ['yijing', 'zagua'],
   ['dao', 'daodejing'], ['dao', 'zhuangzi-neipian'], ['dao', 'zhuangzi-waipian'], ['dao', 'zhuangzi-zapian'], ['dao', 'liezi'], ['dao', 'wenzi'], ['dao', 'huangting'], ['dao', 'cantongqi'], ['dao', 'qingjingjing'], ['dao', 'ganyingpian'], ['dao', 'yinfujing'],
 ]
-const BATCH = 40   // 每批章数(→ BATCH/CHUNK 个并发代理)
+const BATCH = 15   // 每批章数(→ BATCH/CHUNK 个并发代理);受 workflow 脚本 512KB 上限约束,厚章约 22KB/章
 const CHUNK = 5    // 每代理章数
 const PROG = path.join(ROOT, 'scripts/.bold-progress.json')
 const prog = fs.existsSync(PROG) ? JSON.parse(fs.readFileSync(PROG, 'utf8')) : {}
