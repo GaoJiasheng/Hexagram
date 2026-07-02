@@ -39,7 +39,7 @@ const SCHEMA = {
 const UNITS = ${JSON.stringify(units)}
 const RULES = ${JSON.stringify(RULES)}
 const out = await Promise.all(UNITS.map(u => (async () => {
-  const r = await agent(RULES + '\\n\\n【章 JSON(块带下标 i)】\\n' + u.payload, { label: 'polish:${slug}#' + u.ch, phase: '打磨', schema: SCHEMA })
+  const r = await agent(RULES + '\\n\\n【章 JSON(块带下标 i)】\\n' + u.payload, { label: 'polish:${slug}#' + u.ch, phase: '打磨', schema: SCHEMA, effort: 'low' })
   return { corpus: '${corpus}', slug: '${slug}', ch: u.ch, edits: r ? r.edits : null }
 })()))
 return out
