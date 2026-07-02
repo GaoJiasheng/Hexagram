@@ -52,7 +52,7 @@ export default function AboutPage() {
 
       <section className="about-section">
         <h2 className="about-section__title">你的数据</h2>
-        <p>收藏、笔记、推演历史、研习进度等<strong>全部只存于此浏览器的 localStorage,不上传任何服务器</strong>。清浏览器缓存或更换设备会丢失——请在<strong>设置 → 数据管理</strong>里定期「导出全部数据」做备份,换设备时再导入。</p>
+        <p>收藏、笔记、推演历史、研习进度等<strong>全部只存于此浏览器的 localStorage,不上传任何服务器</strong>。清浏览器缓存或更换设备会丢失——请在<strong>设置 → 数据管理</strong>里定期「导出全部数据」做备份,换设备时再导入。详见 <Link to="/privacy">隐私政策</Link>。</p>
       </section>
 
       <div className="about-back">
