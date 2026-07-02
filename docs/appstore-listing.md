@@ -97,13 +97,35 @@ Guanxiang is an offline reader for the Chinese classics — the I Ching (all 64 
 无数据收集:所有用户数据仅存于设备本地,不上传服务器。隐私政策:https://hexa.gavin.pub/privacy
 ```
 
-## 六、截图规格（需自备)
+## 六、截图规格 + 模拟器捕获配方
 
-首发通用 App 至少要两套:
-- **iPhone 6.9″**:1290 × 2796 px(竖)——iPhone 16 Pro Max 尺寸,现为必需基准。
-- **iPad 13″**:2064 × 2752 px(竖)。
-- 每套 3–10 张。建议 5 张:①总门户/易经首页 ②卦详情(卦画+爻辞+注释) ③白话深读(hero+配图) ④推演工作台 ⑤学堂/义理专题。
-- 可直接用模拟器 `xcrun simctl io booted screenshot` 出准确像素图;或加文案边框做营销图(尺寸不变)。
+首发通用 App 至少要两套(每套 3–10 张,建议 5 张):
+- **iPhone 6.9″**:必需。用 **iPhone 17 Pro Max** 模拟器出图(6.9″ 类,ASC 接受)。
+- **iPad 13″**:必需(因通用 App)。用 **iPad Pro 13-inch** 模拟器出图。
+
+建议 5 屏(明暗随意,内容自选):①易经首页/总门户 ②卦详情(卦画+爻辞+悬停注释,挑个漂亮卦如乾/未济) ③白话深读整页(hero 封面+配图,挑加粗密的章) ④推演工作台(起卦+断法) ⑤学堂/义理专题。
+
+**捕获配方**(在本仓库根目录):
+```bash
+# 1) 构建原生档 web + 同步进 iOS 壳
+npm run build:cap && npx cap sync ios
+
+# 2) 启动目标模拟器(二选一,逐台来)
+xcrun simctl boot "iPhone 17 Pro Max"     # 6.9″
+#   或
+xcrun simctl boot "iPad Pro 13-inch (M5)" # iPad 13″
+open -a Simulator
+
+# 3) 在 Xcode 里 Run 到该模拟器(scheme=App),或:
+npx cap run ios      # 选中对应模拟器
+
+# 4) App 里手动点到想要的那一屏,然后逐张存图(准确像素、直接可上传):
+xcrun simctl io booted screenshot ~/Desktop/hexa-1.png
+#   … 点到下一屏,重复,改文件名 hexa-2.png / hexa-3.png …
+```
+`simctl io booted screenshot` 直接出模拟器分辨率的 PNG(iPhone 17 Pro Max = 1320×2868,iPad 13″ = 2064×2752),**尺寸即 App Store 所需,无需再改**。若要加中文标题边框做营销图,用任意工具套模板但保持画布尺寸不变。
+
+> 想让我替你挑屏逐张拍,可单独开一轮:我会装 App、逐屏截图给你选,你定明/暗与卦目即可。
 
 ## 七、提交前自检清单
 
