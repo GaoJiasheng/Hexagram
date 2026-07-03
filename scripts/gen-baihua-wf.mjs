@@ -274,11 +274,11 @@ const VERIFY_HEAD = ${JSON.stringify(Object.fromEntries(units.map((u) => [u.no, 
 phase('Draft')
 const results = await pipeline(
   UNITS,
-  (u) => agent(DRAFT[u.no], { label: '草:${bookTitle}·' + u.title, phase: 'Draft', schema: SCHEMA, model: 'fable' }),
+  (u) => agent(DRAFT[u.no], { label: '草:${bookTitle}·' + u.title, phase: 'Draft', schema: SCHEMA, model: 'opus' }),
   (draft, u) => {
     if (!draft) return { ...u, data: null }
     const vp = VERIFY_HEAD[u.no].replace('__DRAFT__', JSON.stringify(draft).slice(0, 60000))
-    return agent(vp, { label: '校:${bookTitle}·' + u.title, phase: 'Verify', schema: SCHEMA, model: 'fable' })
+    return agent(vp, { label: '校:${bookTitle}·' + u.title, phase: 'Verify', schema: SCHEMA, model: 'opus' })
       .then((v) => ({ ...u, data: v || draft }))
   },
 )
