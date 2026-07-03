@@ -10,7 +10,7 @@ import { execSync } from 'node:child_process'
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const sh = (cmd) => execSync(cmd, { cwd: ROOT, encoding: 'utf8' })
 
-const CORPORA = ['fa']   // owner:兵家(107)、墨家(42)已收官,接法家(韩非子续15+商君书24+慎子8+尹文子2=49,普通档,不作权术教程/政治影射、真伪如实:慎子辑补/尹文子伪托疑)。中医最后单跑
+const CORPORA = ['xin', 'fo']   // owner 2026-07-03:阳明(传习录/大学问)+ 佛(心经/坛经/金刚经)升级加厚。这 5 本已加进 gen 的 THICK_BOOKS 并清空旧普通档白话,其余已完成的 fo 书(维摩诘/阿弥陀等)baihua 满故自动跳过
 const CAP = 6                                 // 每批最多章数→单 workflow 并发(实际同时跑数由 runtime 封顶 min(16,核数-2))。owner 2026-06-23:服务端限流,降并发到 6 缓解(批次更多但更稳);限流过去可再调回 14
 const MAXATT = 3                              // 单章最多重试次数(防顽固章死循环)
 const ATT_FILE = path.join(ROOT, 'scripts/.baihua-attempts.json')

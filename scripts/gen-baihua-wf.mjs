@@ -119,7 +119,7 @@ const FIGSPEC = [
 // ── corpus 加厚档(owner:佛经按易经标准——更厚、更多图、更多生活场景;短章逐句、长章摘录精华)──
 const THICK = new Set([])   // 整组走加厚档的 corpus(空:当前无整组加厚;按书加厚见 THICK_BOOKS)
 // 按「书」加厚(只某 corpus 里的部分书走加厚,其余书普通档)——owner 2026-06-22:道只道德经、纵横只鬼谷子(战国策选普通档)
-const THICK_BOOKS = new Set(['dao/daodejing', 'zong/guiguzi'])
+const THICK_BOOKS = new Set(['dao/daodejing', 'zong/guiguzi', 'xin/chuanxilu', 'xin/daxuewen', 'fo/xinjing', 'fo/tanjing', 'fo/jingangjing'])
 const IS_THICK = THICK.has(corpus) || THICK_BOOKS.has(`${corpus}/${slug}`)
 const THICK_EXTRA = [
   '【加厚要求(本书按易经白话标准)】白话占比再提高、讲得更厚:',
@@ -274,11 +274,11 @@ const VERIFY_HEAD = ${JSON.stringify(Object.fromEntries(units.map((u) => [u.no, 
 phase('Draft')
 const results = await pipeline(
   UNITS,
-  (u) => agent(DRAFT[u.no], { label: '草:${bookTitle}·' + u.title, phase: 'Draft', schema: SCHEMA }),
+  (u) => agent(DRAFT[u.no], { label: '草:${bookTitle}·' + u.title, phase: 'Draft', schema: SCHEMA, model: 'fable' }),
   (draft, u) => {
     if (!draft) return { ...u, data: null }
     const vp = VERIFY_HEAD[u.no].replace('__DRAFT__', JSON.stringify(draft).slice(0, 60000))
-    return agent(vp, { label: '校:${bookTitle}·' + u.title, phase: 'Verify', schema: SCHEMA })
+    return agent(vp, { label: '校:${bookTitle}·' + u.title, phase: 'Verify', schema: SCHEMA, model: 'fable' })
       .then((v) => ({ ...u, data: v || draft }))
   },
 )
