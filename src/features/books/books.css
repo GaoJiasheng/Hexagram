@@ -1,0 +1,71 @@
+/* 私人书房「观书」 /books —— 复用观象 tokens(朱/纸/墨/衬线,明暗自适应) */
+
+.books-page { max-width: 1000px; margin: 0 auto; padding: 24px 20px 64px; }
+.books-head { text-align: center; margin-bottom: 22px; }
+.books-title { font-family: var(--font-serif); font-size: 1.8rem; color: var(--ink); margin: 0; }
+.books-sub { color: var(--ink-faint); font-size: .92rem; margin-top: 6px; }
+
+/* 标签筛选 */
+.books-tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 18px 0 24px; }
+.books-tag { font-size: .85rem; padding: 5px 14px; border-radius: 999px; border: 0.5px solid var(--line);
+  background: transparent; color: var(--ink-soft); cursor: pointer; font-family: var(--font-serif); }
+.books-tag--on { background: var(--cinnabar); color: var(--paper-raised); border-color: var(--cinnabar); }
+
+/* 书架网格 */
+.books-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+.book-card { display: block; text-decoration: none; background: var(--paper-raised); border: 0.5px solid var(--line);
+  border-radius: 12px; padding: 16px 18px; transition: border-color .15s, box-shadow .15s; position: relative; overflow: hidden; }
+.book-card:hover { border-color: color-mix(in srgb, var(--card-accent, var(--cinnabar)) 55%, var(--line)); box-shadow: 0 2px 14px rgba(0,0,0,.05); text-decoration: none; }
+.book-card__spine { position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--card-accent, var(--cinnabar)); }
+.book-card__title { font-family: var(--font-serif); font-size: 1.15rem; color: var(--ink); margin: 0 0 2px; }
+.book-card__meta { font-size: .8rem; color: var(--ink-faint); margin-bottom: 10px; }
+.book-card__one { font-size: .9rem; color: var(--ink-soft); line-height: 1.55; }
+.book-card__tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+.book-card__tag { font-size: .72rem; color: var(--ink-faint); border: 0.5px solid var(--line); border-radius: 999px; padding: 1px 8px; }
+.books-empty { text-align: center; color: var(--ink-faint); padding: 48px 0; }
+
+/* 书主页 */
+.book-home { max-width: 1000px; margin: 0 auto; padding: 20px 20px 64px; }
+.book-home__head { text-align: center; margin-bottom: 8px; }
+.book-home__title { font-family: var(--font-serif); font-size: 2rem; color: var(--ink); margin: 0; }
+.book-home__by { color: var(--ink-faint); font-size: .95rem; margin-top: 4px; }
+.book-home__one { max-width: 640px; margin: 12px auto 0; color: var(--ink-soft); font-size: 1rem; line-height: 1.7; text-align: center; }
+
+/* 脑图 */
+.mm-wrap { margin: 20px 0 8px; }
+.mm-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; gap: 8px; }
+.mm-hint { font-size: .8rem; color: var(--ink-faint); }
+.mm-ctl { font-size: .78rem; padding: 3px 11px; border: 0.5px solid var(--line); background: transparent; border-radius: 999px;
+  color: var(--ink-soft); cursor: pointer; margin-left: 6px; font-family: var(--font-serif); }
+.mm-ctl:active { transform: scale(.98); }
+.mm-canvas { background: var(--paper-raised); border: 0.5px solid var(--line); border-radius: 14px; overflow: hidden; }
+.mm-svg { width: 100%; height: auto; display: block; cursor: grab; touch-action: none; }
+.mm-svg:active { cursor: grabbing; }
+.mm-tap { cursor: pointer; }
+.mm-node { animation: mm-fade .3s ease both; }
+.mm-node rect, .mm-node circle { transition: filter .15s; }
+.mm-node:hover rect, .mm-node:hover circle { filter: brightness(1.06); }
+.mm-branch { animation: mm-draw .5s ease both; }
+@keyframes mm-fade { from { opacity: 0 } to { opacity: 1 } }
+@keyframes mm-draw { from { stroke-dashoffset: 1 } to { stroke-dashoffset: 0 } }
+.mm-foot { margin-top: 12px; min-height: 46px; font-size: .9rem; color: var(--ink-soft); line-height: 1.65; }
+.mm-foot b { font-weight: 500; color: var(--ink); }
+.mm-ref { color: var(--ink-faint); }
+.mm-note { margin-top: 2px; }
+.mm-go { margin-top: 8px; font-size: .85rem; padding: 6px 13px; border: 0.5px solid var(--line); background: transparent;
+  border-radius: 999px; color: var(--cinnabar); cursor: pointer; font-family: var(--font-serif); }
+.mm-go:active { transform: scale(.98); }
+
+/* 章节列表 */
+.book-toc { margin-top: 28px; }
+.book-toc__h { font-family: var(--font-serif); font-size: 1.1rem; color: var(--ink); margin: 0 0 12px; text-align: center; }
+.book-toc__list { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+.book-toc__item { display: flex; gap: 10px; align-items: baseline; text-decoration: none; padding: 10px 14px;
+  border: 0.5px solid var(--line); border-radius: 10px; background: var(--paper-raised); color: var(--ink); transition: border-color .15s; }
+.book-toc__item:hover { border-color: var(--cinnabar); text-decoration: none; }
+.book-toc__no { color: var(--cinnabar); font-family: var(--font-serif); font-size: .85rem; flex: 0 0 auto; }
+.book-toc__t { font-family: var(--font-serif); font-size: .95rem; }
+
+@media (max-width: 640px) {
+  .books-grid, .book-toc__list { grid-template-columns: 1fr; }
+}
