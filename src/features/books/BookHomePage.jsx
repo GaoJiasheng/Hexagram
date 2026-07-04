@@ -1,6 +1,6 @@
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
-import RadialMindmap from './RadialMindmap.jsx'
+import MindTree from './MindTree.jsx'
 import books from '../../data/books/index.json'
 import './books.css'
 
@@ -29,7 +29,7 @@ export default function BookHomePage() {
         <p className="book-home__one">{book.oneLine}</p>
       </div>
 
-      <RadialMindmap data={mind} onOpenChapter={(n) => n.ref && nav(`/books/${slug}/${n.ref.ch}`)} />
+      <MindTree data={mind} onOpenChapter={(n) => n.ref && nav(`/books/${slug}/${n.ref.ch}`)} />
 
       <div className="book-toc">
         <h2 className="book-toc__h">章节 · 逐章详读</h2>
