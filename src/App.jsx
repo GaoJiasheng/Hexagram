@@ -57,7 +57,7 @@ const DebateListPage = lazy(() => import('./features/debates/DebateListPage.jsx'
 const DebatePage = lazy(() => import('./features/debates/DebatePage.jsx'))
 const BooksIndexPage = lazy(() => import('./features/books/BooksIndexPage.jsx'))
 const BookHomePage = lazy(() => import('./features/books/BookHomePage.jsx'))
-const BookChapterPage = lazy(() => import('./features/books/BookChapterPage.jsx'))
+const BookArticlePage = lazy(() => import('./features/books/BookArticlePage.jsx'))
 
 // 中立外壳路径(总门户 / 义理专题 / 百家争鸣):不套分站 nav/搜索/底栏,域名着陆豁免
 function isNeutralPath(p) {
@@ -350,7 +350,8 @@ function AppContent() {
           {/* 私人书房「观书」(隐藏入口,不外链,中性外壳):all-in-one 书架 + 书主页放射脑图 + 逐章详读 */}
           <Route path="/books" element={<BooksIndexPage />} />
           <Route path="/books/:slug" element={<BookHomePage />} />
-          <Route path="/books/:slug/:chapter" element={<BookChapterPage />} />
+          <Route path="/books/:slug/overview" element={<BookArticlePage kind="overview" />} />
+          <Route path="/books/:slug/:chapter" element={<BookArticlePage />} />
           <Route path="*" element={
             <div style={{ textAlign: 'center', paddingTop: '80px' }}>
               <p style={{ color: 'var(--ink-faint)' }}>页面不存在</p>

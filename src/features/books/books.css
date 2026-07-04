@@ -66,6 +66,33 @@
 .book-toc__no { color: var(--cinnabar); font-family: var(--font-serif); font-size: .85rem; flex: 0 0 auto; }
 .book-toc__t { font-family: var(--font-serif); font-size: .95rem; }
 
+/* 书主页「全书总览」入口 */
+.book-overview-cta { display: block; max-width: 640px; margin: 22px auto 0; text-align: center; padding: 14px 18px;
+  border: 0.5px solid var(--line); border-radius: 12px; background: var(--paper-raised); text-decoration: none; transition: border-color .15s; }
+.book-overview-cta:hover { border-color: var(--cinnabar); text-decoration: none; }
+.book-overview-cta__t { font-family: var(--font-serif); font-size: 1.05rem; color: var(--cinnabar); }
+.book-overview-cta__h { font-size: .82rem; color: var(--ink-faint); margin-top: 2px; }
+
+/* 章 / 总览详读页:左 TOC + 右文章 */
+.book-article { max-width: 1040px; margin: 0 auto; padding: 20px 20px 64px; display: grid; grid-template-columns: 210px 1fr; gap: 28px; }
+.book-article__toc { align-self: start; position: sticky; top: 16px; display: flex; flex-direction: column; gap: 2px; }
+.book-article__back { font-family: var(--font-serif); color: var(--ink-soft); font-size: .92rem; padding: 4px 8px; margin-bottom: 8px; }
+.book-article__back:hover { color: var(--cinnabar); text-decoration: none; }
+.book-article__tocsep { height: 1px; background: var(--line); margin: 6px 8px; }
+.book-article__tocitem { display: block; font-size: .88rem; color: var(--ink-soft); padding: 6px 10px; border-radius: 8px;
+  border-left: 2px solid transparent; text-decoration: none; line-height: 1.4; }
+.book-article__tocitem:hover { color: var(--ink); background: var(--paper-raised); text-decoration: none; }
+.book-article__tocitem.is-cur { color: var(--cinnabar); border-left-color: var(--cinnabar); background: var(--paper-raised); }
+.book-article__tocno { color: var(--cinnabar); font-family: var(--font-serif); margin-right: 8px; }
+.book-article__main { min-width: 0; }
+.book-article__nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 36px; padding-top: 16px; border-top: 0.5px solid var(--line); font-family: var(--font-serif); font-size: .92rem; }
+.book-article__nav a { color: var(--ink-soft); } .book-article__nav a:hover { color: var(--cinnabar); }
+
+@media (max-width: 720px) {
+  .book-article { grid-template-columns: 1fr; }
+  .book-article__toc { position: static; flex-direction: row; flex-wrap: wrap; gap: 4px; }
+  .book-article__tocsep { display: none; }
+}
 @media (max-width: 640px) {
   .books-grid, .book-toc__list { grid-template-columns: 1fr; }
 }

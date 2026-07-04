@@ -45,7 +45,7 @@ function Block({ block }) {
       return (
         <div className="baihua-refs">
           <p className="baihua-refs__title">原文出处与参考</p>
-          <ul>{block.items.map((t, i) => <li key={i}>{rich(t)}</li>)}</ul>
+          <ul>{(block.items || []).map((t, i) => <li key={i}>{rich(t)}</li>)}</ul>
         </div>
       )
     default:

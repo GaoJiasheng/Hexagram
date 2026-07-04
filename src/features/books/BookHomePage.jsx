@@ -31,6 +31,11 @@ export default function BookHomePage() {
 
       <MindTree data={mind} onOpenChapter={(n) => n.ref && nav(`/books/${slug}/${n.ref.ch}`)} />
 
+      <Link to={`/books/${slug}/overview`} className="book-overview-cta">
+        <div className="book-overview-cta__t">全书总览 · 一篇读懂这本书 ↗</div>
+        <div className="book-overview-cta__h">中心论点 + 核心概念的加厚白话导读</div>
+      </Link>
+
       <div className="book-toc">
         <h2 className="book-toc__h">章节 · 逐章详读</h2>
         <div className="book-toc__list">
