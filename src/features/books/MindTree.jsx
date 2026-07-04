@@ -1,10 +1,22 @@
 import { useMemo, useRef, useState } from 'react'
 
-// 从左到右的层级思想树(书主页门面)。根在左、逐列右展、每叶独占一行(tidy-tree,不重叠)、
-// 展开时整棵树重排腾地方;连线为两端水平切线的平滑贝塞尔(参 XMind / MindNode)。
+// 从左到右的层级思想树（书主页门面）。支持句子节点（多行自动换行）、任意深度（第四级+）、
+// 变高 tidy-tree 布局（按每个节点实际高度分配纵向空间，展开时整树重排、零重叠）、平滑贝塞尔连线、
+// ± 折叠泡。目标：不是大纲，而是能完整铺开全书思想的脑图。参 XMind / MindNode。
 const HUES = ['#b0553c', '#3f7d6e', '#b3873a', '#7a5a9c', '#5b8046', '#4a6b8a']
-const COL = 208, ROW = 40, X0 = 78, CW = 680, CH = 500, CY = CH / 2
-const estW = (label, fs) => Math.min(label.length * fs * 0.98 + 26, 208)
+const FS = [15, 13, 12.5, 12, 11.5]
+const COL = 186, X0 = 64, CW = 760, CH = 520, CY = CH / 2
+const MAXW = 150, PADH = 13, PADV = 12, VGAP = 13
+const fsOf = (d) => FS[Math.min(d, FS.length - 1)]
+const lhOf = (fs) => fs + 5
+
+function wrap(text, fs) {
+  const per = Math.max(5, Math.floor(MAXW / fs))
+  if (text.length <= per) return [text]
+  const lines = []
+  for (let i = 0; i < text.length; i += per) lines.push(text.slice(i, i + per))
+  return lines.length > 4 ? [...lines.slice(0, 3), lines.slice(3).join('').slice(0, per - 1) + '…'] : lines
+}
 
 export default function MindTree({ data, onOpenChapter }) {
   const [open, setOpen] = useState(() => new Set())
@@ -14,35 +26,34 @@ export default function MindTree({ data, onOpenChapter }) {
 
   const layout = useMemo(() => {
     const nodes = [], byId = {}
-    let slot = 0
-    // 一次后序遍历:叶/收起节点各占一行,展开节点居其子节点中点 —— 保证纵向不重叠
+    let cursor = 0
     function walk(n, depth, hue) {
+      const fs = fsOf(depth), lines = wrap(n.label, fs)
+      const w = Math.min(Math.max(...lines.map((l) => l.length)) * fs * 0.98, MAXW) + PADH * 2
+      const h = lines.length * lhOf(fs) + PADV
       const isOpen = depth === 0 || open.has(n.id)
       const kids = isOpen && n.children ? n.children : null
-      let y
+      let cy
       if (kids && kids.length) {
-        const ys = kids.map((c, i) => walk(c, depth + 1, depth === 0 ? HUES[i % HUES.length] : hue))
-        y = (ys[0] + ys[ys.length - 1]) / 2
-      } else { y = slot; slot += 1 }
-      const fs = depth === 0 ? 15 : depth === 1 ? 13 : 12
-      const rec = { n, depth, hue: depth === 0 ? null : hue, slotY: y, fs, w: estW(n.label, fs), h: fs + 17 }
+        const cys = kids.map((c, i) => walk(c, depth + 1, depth === 0 ? HUES[i % HUES.length] : hue))
+        cy = (cys[0] + cys[cys.length - 1]) / 2
+      } else { cy = cursor + h / 2; cursor += h + VGAP }
+      const rec = { n, depth, hue: depth === 0 ? null : hue, x: X0 + depth * COL, y: cy, w, h, lines, fs }
       nodes.push(rec); byId[n.id] = rec
-      return y
+      return cy
     }
     walk(data, 0, null)
-    const rootY = byId[data.id].slotY
-    const yOff = CY - rootY * ROW          // 根恒居画布纵向中线 → 展开时视图不跳
-    nodes.forEach((nd) => { nd.x = X0 + nd.depth * COL; nd.y = yOff + nd.slotY * ROW })
+    const yOff = CY - byId[data.id].y
+    nodes.forEach((nd) => (nd.y += yOff))
     const edges = []
-    function ew(n) {
+    ;(function ew(n) {
       const p = byId[n.id]; const isOpen = p.depth === 0 || open.has(n.id)
       if (isOpen && n.children) n.children.forEach((c) => {
         const cd = byId[c.id]; if (!cd) return
         edges.push({ id: 'e-' + c.id, x1: p.x + p.w / 2, y1: p.y, x2: cd.x - cd.w / 2, y2: cd.y, hue: cd.hue })
         ew(c)
       })
-    }
-    ew(data)
+    })(data)
     return { nodes, edges }
   }, [data, open])
 
@@ -52,6 +63,7 @@ export default function MindTree({ data, onOpenChapter }) {
     }
     setSel(rec.n.id)
   }
+  function allIds(n, s = new Set()) { (n.children || []).forEach((c) => { if (c.children) { s.add(c.id); allIds(c, s) } }); return s }
   function onDown(e) { drag.current = { x: e.clientX, y: e.clientY, px: pan.x, py: pan.y } }
   function onMove(e) {
     if (!drag.current) return
@@ -59,15 +71,14 @@ export default function MindTree({ data, onOpenChapter }) {
     setPan({ x: drag.current.px + (e.clientX - drag.current.x) * s, y: drag.current.py + (e.clientY - drag.current.y) * s })
   }
   function onUp() { drag.current = null }
-
   const selNode = findNode(data, sel)
 
   return (
     <div className="mm-wrap">
       <div className="mm-bar">
-        <span className="mm-hint">点节点 → 向右展开 · 拖动平移 · 点叶看要点</span>
+        <span className="mm-hint">点节点 → 向右展开 · 拖动平移 · 点节点看要点</span>
         <span>
-          <button className="mm-ctl" onClick={() => setOpen(new Set((data.children || []).map((p) => p.id)))}>展开全部</button>
+          <button className="mm-ctl" onClick={() => setOpen(allIds(data))}>展开全部</button>
           <button className="mm-ctl" onClick={() => { setOpen(new Set()); setSel(data.id); setPan({ x: 0, y: 0 }) }}>复位</button>
         </span>
       </div>
@@ -78,21 +89,30 @@ export default function MindTree({ data, onOpenChapter }) {
               const mx = (e.x1 + e.x2) / 2
               return <path key={e.id} className="mm-branch" pathLength="1"
                 d={`M${e.x1},${e.y1} C${mx},${e.y1} ${mx},${e.y2} ${e.x2},${e.y2}`}
-                fill="none" stroke={e.hue} strokeWidth="2" strokeLinecap="round" style={{ strokeDasharray: 1, opacity: 0.55 }} />
+                fill="none" stroke={e.hue} strokeWidth="1.8" strokeLinecap="round" style={{ strokeDasharray: 1, opacity: 0.5 }} />
             })}</g>
-            <g>{layout.nodes.map((rec) => {
-              const isRoot = rec.depth === 0, isP = rec.depth === 1
-              const has = rec.n.children && rec.n.children.length, opened = open.has(rec.n.id)
-              const fill = isRoot ? 'var(--cinnabar)' : isP ? rec.hue : 'var(--paper-raised)'
+            <g>{layout.nodes.map((r) => {
+              const isRoot = r.depth === 0, isP = r.depth === 1
+              const has = r.n.children && r.n.children.length, opened = open.has(r.n.id)
+              const fill = isRoot ? 'var(--cinnabar)' : isP ? r.hue
+                : r.depth === 2 ? `color-mix(in srgb, ${r.hue} 16%, var(--paper-raised))`
+                : `color-mix(in srgb, ${r.hue} 7%, var(--paper-raised))`
               const txt = isRoot || isP ? '#fff' : 'var(--ink)'
+              const top = r.y - (r.lines.length - 1) * lhOf(r.fs) / 2
               return (
-                <g key={rec.n.id} className="mm-node mm-tap" onPointerDown={(ev) => ev.stopPropagation()} onClick={() => tap(rec)}>
-                  <rect x={rec.x - rec.w / 2} y={rec.y - rec.h / 2} width={rec.w} height={rec.h} rx={rec.h / 2}
-                    fill={fill} stroke={isRoot ? 'var(--cinnabar)' : rec.hue} strokeWidth={isP ? 1.2 : 1} />
-                  <text x={rec.x} y={rec.y + rec.fs * 0.35} textAnchor="middle" fontSize={rec.fs} fontFamily="var(--font-serif)" fontWeight="500" fill={txt}>
-                    {(has && !opened && !isRoot ? '＋ ' : '') + rec.n.label}
-                  </text>
-                  {rec.n.id === sel && <rect x={rec.x - rec.w / 2 - 3} y={rec.y - rec.h / 2 - 3} width={rec.w + 6} height={rec.h + 6} rx={(rec.h + 6) / 2} fill="none" stroke="var(--cinnabar)" strokeWidth="1.5" />}
+                <g key={r.n.id} className="mm-node mm-tap" onPointerDown={(ev) => ev.stopPropagation()} onClick={() => tap(r)}>
+                  {r.n.id === sel && <rect x={r.x - r.w / 2 - 3} y={r.y - r.h / 2 - 3} width={r.w + 6} height={r.h + 6} rx={10} fill="none" stroke="var(--cinnabar)" strokeWidth="1.5" />}
+                  <rect x={r.x - r.w / 2} y={r.y - r.h / 2} width={r.w} height={r.h} rx={Math.min(r.h / 2, 14)}
+                    fill={fill} stroke={isRoot ? 'var(--cinnabar)' : r.hue} strokeWidth={isP ? 1.2 : 1} />
+                  {r.lines.map((ln, i) => (
+                    <text key={i} x={r.x} y={top + i * lhOf(r.fs) + r.fs * 0.34} textAnchor="middle" fontSize={r.fs} fontFamily="var(--font-serif)" fontWeight="500" fill={txt}>{ln}</text>
+                  ))}
+                  {has && !isRoot && (
+                    <g>
+                      <circle cx={r.x + r.w / 2} cy={r.y} r="7" fill="var(--paper-raised)" stroke={r.hue} strokeWidth="1" />
+                      <text x={r.x + r.w / 2} y={r.y + 3.5} textAnchor="middle" fontSize="11" fill={r.hue}>{opened ? '–' : '+'}</text>
+                    </g>
+                  )}
                 </g>
               )
             })}</g>
@@ -102,7 +122,7 @@ export default function MindTree({ data, onOpenChapter }) {
       {selNode && (
         <div className="mm-foot">
           <div><b>{selNode.label}</b>{selNode.ref && <span className="mm-ref"> · 第{selNode.ref.ch}章</span>}</div>
-          <div className="mm-note">{selNode.note}</div>
+          {selNode.note && <div className="mm-note">{selNode.note}</div>}
           {selNode.ref && onOpenChapter && <button className="mm-go" onClick={() => onOpenChapter(selNode)}>打开该章详读 ↗</button>}
         </div>
       )}
