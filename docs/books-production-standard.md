@@ -141,7 +141,8 @@ src/data/books/
 **隐藏入口(怎么进 `/books`)**:
 - **web**:直接访问 `/books`(全站无公开链接指向,靠"不给链接"隐藏)。
 - **iOS App**(无地址栏):**长按主屏 App 图标 →「书房」快捷入口 → `/books`**。实现 = `@capawesome/capacitor-app-shortcuts` 插件 + `src/native/appShortcuts.js`(仅 iOS 生效:`AppShortcuts.set` 注册"书房"、`addListener('click')` 收到 `shortcutId==='books'` 时 `navigate('/books')`;动态 import,web/Android 短路无操作),在 `App.jsx` 的 `AppContent` 里挂一个 effect。
-- **注意**:这是首个 Capacitor JS 集成。以后凡加原生插件,须 `npx cap sync ios` 同步进 iOS 工程(SPM,非 pod),并 **`./ship-ios.sh` 重发一版 TestFlight** 才到 owner 手机;纯 web 改动不需要。设备上的长按行为在开发环境无法验证,以真机/下一个 TestFlight build 为准。
+- **必需的原生接线**:该插件要求在 `ios/App/App/AppDelegate.swift` 里手动转发 shortcut——`didFinishLaunching`(冷启动)+ `application(_:performActionFor:)`(热启动)各 `NotificationCenter.post` 一条 `handleAppShortcutNotification`(userInfo key `shortcutItem`)。**`cap sync` 不会自动加、重建 iOS 工程会丢,勿删**;冷启动靠插件 `retainUntilConsumed` 缓存到 JS 监听就绪。为免 SPM 模块名歧义,AppDelegate 直接用通知契约字符串常量、不 `import` 插件模块。
+- **注意**:这是首个 Capacitor JS 集成。以后凡加原生插件,须 `npx cap sync ios` 同步进 iOS 工程(SPM,非 pod),并 **`./ship-ios.sh` 重发一版 TestFlight** 才到 owner 手机;纯 web 改动不需要。改原生后先 `xcodebuild ... -sdk iphonesimulator build` 编译自检(本次已过);设备上的长按行为在开发环境无法验证,以真机/下一个 TestFlight build 为准。
 
 ---
 
