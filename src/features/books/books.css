@@ -57,21 +57,24 @@
 .mm-go:active { transform: scale(.98); }
 
 /* 章节列表 */
-.book-toc { margin-top: 28px; }
-.book-toc__h { font-family: var(--font-serif); font-size: 1.1rem; color: var(--ink); margin: 0 0 12px; text-align: center; }
-.book-toc__list { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
-.book-toc__item { display: flex; gap: 10px; align-items: baseline; text-decoration: none; padding: 10px 14px;
-  border: 0.5px solid var(--line); border-radius: 10px; background: var(--paper-raised); color: var(--ink); transition: border-color .15s; }
+.book-toc { margin-top: 34px; }
+.book-toc__h { font-family: var(--font-serif); font-size: 1.1rem; color: var(--ink); margin: 0 0 16px; text-align: center; }
+/* 一行一个、居中的单列 TOC(像一本书的目录) */
+.book-toc__list { display: flex; flex-direction: column; gap: 8px; max-width: 480px; margin: 0 auto; }
+.book-toc__item { display: flex; gap: 10px; align-items: baseline; justify-content: center; text-align: center;
+  text-decoration: none; padding: 11px 16px; border: 1px solid var(--line); border-radius: 10px;
+  background: var(--paper-raised); color: var(--ink); transition: border-color .15s; }
 .book-toc__item:hover { border-color: var(--cinnabar); text-decoration: none; }
 .book-toc__no { color: var(--cinnabar); font-family: var(--font-serif); font-size: .85rem; flex: 0 0 auto; }
-.book-toc__t { font-family: var(--font-serif); font-size: .95rem; }
+.book-toc__t { font-family: var(--font-serif); font-size: .98rem; }
 
-/* 书主页「全书总览」入口 */
-.book-overview-cta { display: block; max-width: 640px; margin: 22px auto 0; text-align: center; padding: 14px 18px;
-  border: 0.5px solid var(--line); border-radius: 12px; background: var(--paper-raised); text-decoration: none; transition: border-color .15s; }
-.book-overview-cta:hover { border-color: var(--cinnabar); text-decoration: none; }
-.book-overview-cta__t { font-family: var(--font-serif); font-size: 1.05rem; color: var(--cinnabar); }
-.book-overview-cta__h { font-size: .82rem; color: var(--ink-faint); margin-top: 2px; }
+/* 书主页「全书总览」入口(样式向白话文章看齐:纸面 + 衬线 + 清晰边框) */
+.book-overview-cta { display: block; max-width: 560px; margin: 26px auto 0; text-align: center; padding: 20px 24px;
+  border: 1px solid var(--line); border-radius: 12px; background: var(--paper-raised); text-decoration: none;
+  transition: border-color .15s, box-shadow .15s; }
+.book-overview-cta:hover { border-color: var(--cinnabar); box-shadow: 0 2px 14px rgba(0,0,0,.05); text-decoration: none; }
+.book-overview-cta__t { font-family: var(--font-serif); font-size: 1.12rem; color: var(--cinnabar); }
+.book-overview-cta__h { font-size: .85rem; color: var(--ink-faint); margin-top: 4px; }
 
 /* 章 / 总览详读页:左 TOC + 右文章 */
 .book-article { max-width: 1040px; margin: 0 auto; padding: 20px 20px 64px; display: grid; grid-template-columns: 210px 1fr; gap: 28px; }
