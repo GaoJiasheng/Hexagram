@@ -138,6 +138,11 @@ src/data/books/
 - **文章一律先弹抽屉图层**(白话同款,`BookArticleDrawer`),点 **⤢** 再进整页 URL;`⌘/Ctrl/中键`点击保留"新标签打开该 URL"。
 - 全站配色规范:书内朱色用 `--cinnabar-pure`(门户主题下 `--cinnabar` 被 muted 成褐黑,招牌/悬停一律用 pure)。
 
+**隐藏入口(怎么进 `/books`)**:
+- **web**:直接访问 `/books`(全站无公开链接指向,靠"不给链接"隐藏)。
+- **iOS App**(无地址栏):**长按主屏 App 图标 →「书房」快捷入口 → `/books`**。实现 = `@capawesome/capacitor-app-shortcuts` 插件 + `src/native/appShortcuts.js`(仅 iOS 生效:`AppShortcuts.set` 注册"书房"、`addListener('click')` 收到 `shortcutId==='books'` 时 `navigate('/books')`;动态 import,web/Android 短路无操作),在 `App.jsx` 的 `AppContent` 里挂一个 effect。
+- **注意**:这是首个 Capacitor JS 集成。以后凡加原生插件,须 `npx cap sync ios` 同步进 iOS 工程(SPM,非 pod),并 **`./ship-ios.sh` 重发一版 TestFlight** 才到 owner 手机;纯 web 改动不需要。设备上的长按行为在开发环境无法验证,以真机/下一个 TestFlight build 为准。
+
 ---
 
 ## 10. 上新一本书 · 步骤清单

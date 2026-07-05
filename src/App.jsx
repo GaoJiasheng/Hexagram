@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback, lazy, Suspense } from 'react'
 import { SettingsProvider } from './features/yijing/SettingsContext.jsx'
 import ErrorBoundary from './features/ErrorBoundary.jsx'
 import { siteForPath, activeGroup, sitesInGroup, HOST_GROUPS, MASTER_PORTAL_PATH } from './sites/registry.js'
+import { registerBookShortcut } from './native/appShortcuts.js'
 
 // 全站搜索面板按需加载:搜索页面、经典、正文、白话、注疏、专题。
 const GlobalSearchPalette = lazy(() => import('./features/search/GlobalSearchPalette.jsx'))
@@ -236,6 +237,13 @@ function AppContent() {
   const isPortal = isNeutralPath(location.pathname)
   // 路由切换关闭搜索/切站/设置浮层,避免状态在跨站导航后残留
   useEffect(() => { setSearchOpen(false); setPortalOpen(false); setSettingsOpen(false) }, [location.pathname])
+
+  // iOS「App 图标长按 → 书房」快捷入口 → 观书隐藏入口 /books(web/Android 无操作)
+  useEffect(() => {
+    let dispose
+    registerBookShortcut(() => navigate('/books')).then((d) => { dispose = d })
+    return () => { dispose?.() }
+  }, [navigate])
 
   // 全站搜索快捷键: / 或 Cmd/Ctrl+K。输入框/可编辑区内不截获。
   useEffect(() => {
