@@ -25,6 +25,7 @@ export default function BookHomePage() {
 
   return (
     <div className="book-home" data-site="portal">
+      <Link to="/books" className="book-home__back">← 书房</Link>
       <div className="book-home__head">
         <h1 className="book-home__title">{book.title}</h1>
         <div className="book-home__by">{book.subtitle ? `${book.subtitle} · ` : ''}{book.author}</div>
