@@ -17,6 +17,24 @@ function TwoMountains() {
   )
 }
 
+// 母题:振动波纹——从一点向外扩散的同心圆(呼应「万物皆振动·同类相吸」)。
+function Ripples() {
+  return (
+    <g fill="none" stroke={CREAM}>
+      {[34, 74, 116, 162, 212].map((r, i) => (
+        <circle key={r} cx="150" cy="300" r={r} strokeWidth={i === 0 ? 1.7 : 1.2} strokeOpacity={0.44 - i * 0.075} />
+      ))}
+      <circle cx="150" cy="300" r="8" fill={CINNABAR} stroke="none" />
+    </g>
+  )
+}
+
+function Motif({ motif }) {
+  if (motif === 'two-mountains') return <TwoMountains />
+  if (motif === 'ripples') return <Ripples />
+  return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
+}
+
 export default function BookCover({ title = '', subtitle = '', author = '', accent = '#3f7d6e', motif, className }) {
   const chars = [...title].slice(0, 5)
   const step = 54
@@ -25,9 +43,7 @@ export default function BookCover({ title = '', subtitle = '', author = '', acce
     <svg viewBox="0 0 300 420" className={className} role="img" aria-label={`${title} · 封面`} preserveAspectRatio="xMidYMid meet">
       <rect width="300" height="420" fill={accent} />
       <rect width="300" height="205" fill="rgba(255,255,255,0.05)" />
-      {motif === 'two-mountains'
-        ? <TwoMountains />
-        : <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />}
+      <Motif motif={motif} />
       <rect x="11" y="11" width="278" height="398" rx="4" fill="none" stroke={CREAM} strokeOpacity="0.28" strokeWidth="1" />
       {/* 朱印 */}
       <rect x="26" y="26" width="34" height="34" rx="6" fill={CINNABAR} />
