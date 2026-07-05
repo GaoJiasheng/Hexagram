@@ -29,9 +29,27 @@ function Ripples() {
   )
 }
 
+// 母题:螺旋——一圈套一圈、层层向内(呼应连载系列与「秘密之内还有秘密」)。
+function Spiral() {
+  const cx = 136, cy = 296, turns = 3.2, steps = 200, maxR = 162
+  let d = ''
+  for (let i = 0; i <= steps; i++) {
+    const t = i / steps
+    const ang = t * turns * 2 * Math.PI
+    d += (i === 0 ? 'M' : 'L') + (cx + t * maxR * Math.cos(ang)).toFixed(1) + ',' + (cy + t * maxR * Math.sin(ang)).toFixed(1) + ' '
+  }
+  return (
+    <g>
+      <path d={d} fill="none" stroke={CREAM} strokeWidth="1.5" strokeOpacity="0.4" strokeLinecap="round" />
+      <circle cx={cx} cy={cy} r="7" fill={CINNABAR} />
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'two-mountains') return <TwoMountains />
   if (motif === 'ripples') return <Ripples />
+  if (motif === 'spiral') return <Spiral />
   return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
 }
 
