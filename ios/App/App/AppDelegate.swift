@@ -1,14 +1,30 @@
 import UIKit
 import Capacitor
 
+// AppShortcuts 插件的通知契约(见 @capawesome/capacitor-app-shortcuts 的 AppShortcutsPlugin:
+// notificationName / userInfoShortcutItemKey)。直接用字符串常量,免 import 插件模块(SPM 模块名歧义)。
+private let appShortcutNotificationName = "handleAppShortcutNotification"
+private let appShortcutItemKey = "shortcutItem"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // App 图标长按快捷入口「书房」:冷启动(app 未在运行)时,把 shortcut 交给 AppShortcuts 插件。
+        // 插件用 retainUntilConsumed 缓存 click 事件,直到 JS 端 addListener 就绪再投递 → navigate('/books')。
+        if let shortcutItem = launchOptions?[.shortcutItem] as? UIApplicationShortcutItem {
+            NotificationCenter.default.post(name: NSNotification.Name(appShortcutNotificationName), object: nil, userInfo: [appShortcutItemKey: shortcutItem])
+            return true
+        }
         return true
+    }
+
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        // App 图标长按快捷入口「书房」:热启动(app 在后台)时,把 shortcut 交给 AppShortcuts 插件。
+        NotificationCenter.default.post(name: NSNotification.Name(appShortcutNotificationName), object: nil, userInfo: [appShortcutItemKey: shortcutItem])
+        completionHandler(true)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
