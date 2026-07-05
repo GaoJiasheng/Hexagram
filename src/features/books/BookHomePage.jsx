@@ -5,8 +5,9 @@ import books from '../../data/books/index.json'
 import './books.css'
 
 const MAPS = import.meta.glob('../../data/books/*/mindmap.json', { eager: true })
-function mapFor(slug) {
-  const hit = Object.entries(MAPS).find(([p]) => p.includes(`/${slug}/`))
+const OVERVIEWS = import.meta.glob('../../data/books/*/overview.json', { eager: true })
+function pickFor(glob, slug) {
+  const hit = Object.entries(glob).find(([p]) => p.includes(`/${slug}/`))
   return hit ? (hit[1].default || hit[1]) : null
 }
 
@@ -14,7 +15,8 @@ export default function BookHomePage() {
   const { slug } = useParams()
   const nav = useNavigate()
   const book = books.find((b) => b.slug === slug)
-  const mind = mapFor(slug)
+  const mind = pickFor(MAPS, slug)
+  const overview = pickFor(OVERVIEWS, slug)
   usePageTitle(book ? `${book.title} · 观书` : '观书')
 
   if (!book || !mind) {
@@ -32,8 +34,8 @@ export default function BookHomePage() {
       <MindTree data={mind} onOpenChapter={(n) => n.ref && nav(`/books/${slug}/${n.ref.ch}`)} />
 
       <Link to={`/books/${slug}/overview`} className="book-overview-cta">
-        <div className="book-overview-cta__t">全书总览 · 一篇读懂这本书 ↗</div>
-        <div className="book-overview-cta__h">中心论点 + 核心概念的加厚白话导读</div>
+        <div className="book-overview-cta__t">一篇文章读懂《{book.title}》 ↗</div>
+        {overview?.title && <div className="book-overview-cta__h">{overview.title}</div>}
       </Link>
 
       <div className="book-toc">
