@@ -36,27 +36,41 @@
 
 /* 脑图 */
 .mm-wrap { margin: 20px 0 8px; }
-.mm-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; gap: 8px; }
-.mm-hint { font-size: .8rem; color: var(--ink-faint); }
-.mm-ctl { font-size: .78rem; padding: 3px 11px; border: 0.5px solid var(--line); background: transparent; border-radius: 999px;
-  color: var(--ink-soft); cursor: pointer; margin-left: 6px; font-family: var(--font-serif); }
-.mm-ctl:active { transform: scale(.98); }
-.mm-canvas { background: var(--paper-raised); border: 0.5px solid var(--line); border-radius: 14px; overflow: hidden; }
+.mm-canvas { position: relative; background: var(--paper-raised); border: 0.5px solid var(--line); border-radius: 14px; overflow: hidden; }
 .mm-svg { width: 100%; height: auto; display: block; cursor: grab; touch-action: none; }
 .mm-svg:active { cursor: grabbing; }
 .mm-tap { cursor: pointer; }
+
+/* 工具条:浮在脑图框内(左上提示 / 右上控制),不占外部版面 */
+.mm-bar { position: absolute; top: 10px; left: 14px; right: 12px; z-index: 2; display: flex;
+  justify-content: space-between; align-items: flex-start; gap: 10px; pointer-events: none; }
+.mm-hint { font-size: .78rem; color: var(--ink-faint); background: color-mix(in srgb, var(--paper-raised) 80%, transparent);
+  padding: 2px 7px; border-radius: 6px; }
+.mm-tools { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; pointer-events: auto; }
+.mm-ctl { font-size: .78rem; padding: 3px 11px; border: 0.5px solid var(--line); background: var(--paper-raised);
+  border-radius: 999px; color: var(--ink-soft); cursor: pointer; font-family: var(--font-serif); }
+.mm-ctl:hover { border-color: var(--cinnabar-pure); color: var(--cinnabar-pure); }
+.mm-ctl:active { transform: scale(.98); }
+
+/* 全屏:铺满视口(层级压在文章图层 1000 之下,方便从脑图里再开文章抽屉) */
+.mm-wrap--fs { position: fixed; inset: 0; z-index: 900; margin: 0; padding: 12px 16px; background: var(--paper); display: flex; flex-direction: column; }
+.mm-wrap--fs .mm-canvas { flex: 1; min-height: 0; border-radius: 12px; }
+.mm-wrap--fs .mm-svg { height: 100%; }
+.mm-wrap--fs .mm-foot { flex-shrink: 0; }
 .mm-node { animation: mm-fade .3s ease both; }
 .mm-node rect, .mm-node circle { transition: filter .15s; }
 .mm-node:hover rect, .mm-node:hover circle { filter: brightness(1.06); }
 .mm-branch { animation: mm-draw .5s ease both; }
 @keyframes mm-fade { from { opacity: 0 } to { opacity: 1 } }
 @keyframes mm-draw { from { stroke-dashoffset: 1 } to { stroke-dashoffset: 0 } }
-.mm-foot { margin-top: 12px; min-height: 46px; font-size: .9rem; color: var(--ink-soft); line-height: 1.65; }
+/* 选中节点详情:脑图框下方(不遮挡节点) */
+.mm-foot { margin-top: 12px; min-height: 40px; font-size: .9rem; color: var(--ink-soft); line-height: 1.6; }
 .mm-foot b { font-weight: 500; color: var(--ink); }
 .mm-ref { color: var(--ink-faint); }
 .mm-note { margin-top: 2px; }
-.mm-go { margin-top: 8px; font-size: .85rem; padding: 6px 13px; border: 0.5px solid var(--line); background: transparent;
-  border-radius: 999px; color: var(--cinnabar); cursor: pointer; font-family: var(--font-serif); }
+.mm-go { margin-top: 8px; display: inline-block; font-size: .85rem; padding: 6px 13px; border: 0.5px solid var(--line);
+  background: transparent; border-radius: 999px; color: var(--cinnabar-pure); cursor: pointer; font-family: var(--font-serif); }
+.mm-go:hover { border-color: var(--cinnabar-pure); }
 .mm-go:active { transform: scale(.98); }
 
 /* 章节列表 */
@@ -100,5 +114,7 @@
   .book-article__tocsep { display: none; }
 }
 @media (max-width: 640px) {
-  .books-grid, .book-toc__list { grid-template-columns: 1fr; }
+  .books-grid { grid-template-columns: 1fr; }
+  .mm-hint { display: none; }
+  .mm-bar { justify-content: flex-end; }
 }

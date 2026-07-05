@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 
 // 从左到右的层级思想树（书主页门面）。支持句子节点（多行自动换行）、任意深度（第四级+）、
 // 变高 tidy-tree 布局（按每个节点实际高度分配纵向空间，展开时整树重排、零重叠）、平滑贝塞尔连线、
@@ -22,6 +22,8 @@ export default function MindTree({ data, onOpenChapter }) {
   const [open, setOpen] = useState(() => new Set())
   const [sel, setSel] = useState(data.id)
   const [pan, setPan] = useState({ x: 0, y: 0 })
+  const [zoom, setZoom] = useState(1)
+  const [fs, setFs] = useState(false)
   const drag = useRef(null)
 
   const layout = useMemo(() => {
@@ -71,20 +73,37 @@ export default function MindTree({ data, onOpenChapter }) {
     setPan({ x: drag.current.px + (e.clientX - drag.current.x) * s, y: drag.current.py + (e.clientY - drag.current.y) * s })
   }
   function onUp() { drag.current = null }
+  function zoomBy(f) {
+    const nz = Math.min(2.4, Math.max(0.5, zoom * f)), k = nz / zoom
+    setPan({ x: CW / 2 - (CW / 2 - pan.x) * k, y: CH / 2 - (CH / 2 - pan.y) * k })
+    setZoom(nz)
+  }
+  function reset() { setOpen(new Set()); setSel(data.id); setPan({ x: 0, y: 0 }); setZoom(1) }
+  useEffect(() => {
+    if (!fs) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    const onKey = (e) => { if (e.key === 'Escape') setFs(false) }
+    window.addEventListener('keydown', onKey)
+    return () => { document.body.style.overflow = prev; window.removeEventListener('keydown', onKey) }
+  }, [fs])
   const selNode = findNode(data, sel)
 
   return (
-    <div className="mm-wrap">
-      <div className="mm-bar">
-        <span className="mm-hint">点节点 → 向右展开 · 拖动平移 · 点节点看要点</span>
-        <span>
-          <button className="mm-ctl" onClick={() => setOpen(allIds(data))}>展开全部</button>
-          <button className="mm-ctl" onClick={() => { setOpen(new Set()); setSel(data.id); setPan({ x: 0, y: 0 }) }}>复位</button>
-        </span>
-      </div>
+    <div className={`mm-wrap${fs ? ' mm-wrap--fs' : ''}`}>
       <div className="mm-canvas">
-        <svg viewBox={`0 0 ${CW} ${CH}`} className="mm-svg" onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerLeave={onUp}>
-          <g transform={`translate(${pan.x},${pan.y})`}>
+        <div className="mm-bar">
+          <span className="mm-hint">点节点 → 向右展开 · 拖动平移 · 点节点看要点</span>
+          <span className="mm-tools">
+            <button className="mm-ctl" onClick={() => zoomBy(1 / 1.2)} aria-label="缩小" title="缩小">－</button>
+            <button className="mm-ctl" onClick={() => zoomBy(1.2)} aria-label="放大" title="放大">＋</button>
+            <button className="mm-ctl" onClick={() => setOpen(allIds(data))}>展开全部</button>
+            <button className="mm-ctl" onClick={reset}>复位</button>
+            <button className="mm-ctl" onClick={() => setFs((v) => !v)}>{fs ? '退出全屏' : '全屏'}</button>
+          </span>
+        </div>
+        <svg viewBox={`0 0 ${CW} ${CH}`} preserveAspectRatio="xMidYMid meet" className="mm-svg" onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerLeave={onUp}>
+          <g transform={`translate(${pan.x},${pan.y}) scale(${zoom})`}>
             <g>{layout.edges.map((e) => {
               const mx = (e.x1 + e.x2) / 2
               return <path key={e.id} className="mm-branch" pathLength="1"
