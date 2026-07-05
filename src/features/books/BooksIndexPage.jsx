@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
+import BookCover from './BookCover.jsx'
 import books from '../../data/books/index.json'
 import './books.css'
 
@@ -32,11 +33,13 @@ export default function BooksIndexPage() {
         <div className="books-grid">
           {list.map((b) => (
             <Link key={b.slug} to={`/books/${b.slug}`} className="book-card" style={{ '--card-accent': b.accent }}>
-              <span className="book-card__spine" />
-              <h2 className="book-card__title">{b.title}</h2>
-              <div className="book-card__meta">{b.author}{b.finishedAt ? ` · 读毕 ${b.finishedAt}` : ''}</div>
-              <div className="book-card__one">{b.oneLine}</div>
-              <div className="book-card__tags">{(b.tags || []).map((t) => <span key={t} className="book-card__tag">{t}</span>)}</div>
+              <BookCover className="book-card__cover" title={b.title} subtitle={b.subtitle} author={b.author} accent={b.accent} motif={b.cover?.motif} />
+              <div className="book-card__body">
+                <h2 className="book-card__title">{b.title}</h2>
+                <div className="book-card__meta">{b.author}{b.finishedAt ? ` · 读毕 ${b.finishedAt}` : ''}</div>
+                <div className="book-card__one">{b.oneLine}</div>
+                <div className="book-card__tags">{(b.tags || []).map((t) => <span key={t} className="book-card__tag">{t}</span>)}</div>
+              </div>
             </Link>
           ))}
         </div>

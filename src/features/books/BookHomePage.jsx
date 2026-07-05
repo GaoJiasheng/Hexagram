@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import MindTree from './MindTree.jsx'
+import BookCover from './BookCover.jsx'
 import BookArticleDrawer from './BookArticleDrawer.jsx'
 import books from '../../data/books/index.json'
 import './books.css'
@@ -43,6 +44,7 @@ export default function BookHomePage() {
     <div className="book-home" data-site="portal">
       <Link to="/books" className="book-home__back">← 书房</Link>
       <div className="book-home__head">
+        <BookCover className="book-home__cover" title={book.title} subtitle={book.subtitle} author={book.author} accent={book.accent} motif={book.cover?.motif} />
         <h1 className="book-home__title">{book.title}</h1>
         <div className="book-home__by">{book.subtitle ? `${book.subtitle} · ` : ''}{book.author}</div>
         <p className="book-home__one">{book.oneLine}</p>
