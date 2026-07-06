@@ -42,7 +42,7 @@ export default function BookHomePage() {
 
   return (
     <div className="book-home" data-site="portal">
-      <Link to="/books" className="book-home__back">← 书房</Link>
+      <Link to="/books" className="book-home__back">← Gavin 的书房</Link>
       <div className="book-home__head">
         <BookCover className="book-home__cover" title={book.title} subtitle={book.subtitle} author={book.author} accent={book.accent} motif={book.cover?.motif} />
         <h1 className="book-home__title">{book.title}</h1>

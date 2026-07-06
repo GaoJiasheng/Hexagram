@@ -9,14 +9,14 @@ import './books.css'
 const TAGS = ['哲学', '人生', '管理', '心理', '经济', '政治']
 
 export default function BooksIndexPage() {
-  usePageTitle('观书 · 私人书房')
+  usePageTitle('观书 · Gavin 的书房')
   const [active, setActive] = useState(null)
   const list = active ? books.filter((b) => (b.tags || []).includes(active)) : books
 
   return (
     <div className="books-page" data-site="portal">
       <div className="books-head">
-        <h1 className="books-title">观书 · 私人书房</h1>
+        <h1 className="books-title">观书 · Gavin 的书房</h1>
         <p className="books-sub">读过的书，整理成一篇文章 + 一张脑图，随时回来复习</p>
       </div>
 
