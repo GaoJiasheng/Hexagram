@@ -46,10 +46,33 @@ function Spiral() {
   )
 }
 
+// 母题:曼陀罗——方与圆、十二辐、向中心收束(呼应荣格的自性/整合象征)。
+function Mandala() {
+  const cx = 150, cy = 292, R = 128, N = 12
+  const spokes = []
+  for (let i = 0; i < N; i++) {
+    const a = (i / N) * Math.PI * 2
+    spokes.push('M' + (cx + Math.cos(a) * 26).toFixed(1) + ',' + (cy + Math.sin(a) * 26).toFixed(1) + ' L' + (cx + Math.cos(a) * R).toFixed(1) + ',' + (cy + Math.sin(a) * R).toFixed(1))
+  }
+  const d = R * 0.62
+  const diamond = `M${cx},${cy - d} L${cx + d},${cy} L${cx},${cy + d} L${cx - d},${cy} Z`
+  return (
+    <g fill="none" stroke={CREAM} strokeWidth="1.1">
+      <circle cx={cx} cy={cy} r={R} strokeOpacity="0.42" />
+      <circle cx={cx} cy={cy} r={R * 0.72} strokeOpacity="0.42" />
+      <circle cx={cx} cy={cy} r={R * 0.44} strokeOpacity="0.42" />
+      <path d={diamond} strokeOpacity="0.4" />
+      <path d={spokes.join(' ')} strokeOpacity="0.26" />
+      <circle cx={cx} cy={cy} r="8" fill={CINNABAR} stroke="none" />
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'two-mountains') return <TwoMountains />
   if (motif === 'ripples') return <Ripples />
   if (motif === 'spiral') return <Spiral />
+  if (motif === 'mandala') return <Mandala />
   return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
 }
 
