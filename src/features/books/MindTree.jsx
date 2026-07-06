@@ -5,8 +5,8 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 // ± 折叠泡。目标：不是大纲，而是能完整铺开全书思想的脑图。参 XMind / MindNode。
 const HUES = ['#b0553c', '#3f7d6e', '#b3873a', '#7a5a9c', '#5b8046', '#4a6b8a']
 const FS = [15, 13, 12.5, 12, 11.5]
-const COL = 186, X0 = 64, CW = 760, CH = 520, CY = CH / 2
-const MAXW = 150, PADH = 13, PADV = 12, VGAP = 13
+const COL = 186, X0 = 64, CW = 760, MIN_CH = 520
+const MAXW = 150, PADH = 13, PADV = 12, VGAP = 13, PAD_V = 24
 const fsOf = (d) => FS[Math.min(d, FS.length - 1)]
 const lhOf = (fs) => fs + 5
 
@@ -45,7 +45,12 @@ export default function MindTree({ data, onOpenChapter }) {
       return cy
     }
     walk(data, 0, null)
-    const yOff = CY - byId[data.id].y
+    // 画布高度按实际内容动态撑开(一级枝多——比如 13 章——时固定高度会把首尾节点挤出可见范围)
+    let minY = Infinity, maxY = -Infinity
+    nodes.forEach((nd) => { minY = Math.min(minY, nd.y - nd.h / 2); maxY = Math.max(maxY, nd.y + nd.h / 2) })
+    const ch = Math.max(MIN_CH, maxY - minY + PAD_V * 2)
+    const cy = ch / 2
+    const yOff = cy - byId[data.id].y
     nodes.forEach((nd) => (nd.y += yOff))
     const edges = []
     ;(function ew(n) {
@@ -56,7 +61,7 @@ export default function MindTree({ data, onOpenChapter }) {
         ew(c)
       })
     })(data)
-    return { nodes, edges }
+    return { nodes, edges, ch }
   }, [data, open])
 
   function tap(rec) {
@@ -75,7 +80,8 @@ export default function MindTree({ data, onOpenChapter }) {
   function onUp() { drag.current = null }
   function zoomBy(f) {
     const nz = Math.min(2.4, Math.max(0.5, zoom * f)), k = nz / zoom
-    setPan({ x: CW / 2 - (CW / 2 - pan.x) * k, y: CH / 2 - (CH / 2 - pan.y) * k })
+    const cy = layout.ch / 2
+    setPan({ x: CW / 2 - (CW / 2 - pan.x) * k, y: cy - (cy - pan.y) * k })
     setZoom(nz)
   }
   function reset() { setOpen(new Set()); setSel(data.id); setPan({ x: 0, y: 0 }); setZoom(1) }
@@ -102,7 +108,7 @@ export default function MindTree({ data, onOpenChapter }) {
             <button className="mm-ctl" onClick={() => setFs((v) => !v)}>{fs ? '退出全屏' : '全屏'}</button>
           </span>
         </div>
-        <svg viewBox={`0 0 ${CW} ${CH}`} preserveAspectRatio="xMidYMid meet" className="mm-svg" onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerLeave={onUp}>
+        <svg viewBox={`0 0 ${CW} ${layout.ch}`} preserveAspectRatio="xMidYMid meet" className="mm-svg" onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerLeave={onUp}>
           <g transform={`translate(${pan.x},${pan.y}) scale(${zoom})`}>
             <g>{layout.edges.map((e) => {
               const mx = (e.x1 + e.x2) / 2

@@ -68,11 +68,34 @@ function Mandala() {
   )
 }
 
+// 母题:群像点阵——整齐排列、面目模糊的小人形轮廓,只一个突兀地亮起(呼应「个体消融进群体」)。
+function CrowdGrid() {
+  const cols = 7, rows = 9, x0 = 34, y0 = 108, gx = 33, gy = 33
+  const heads = []
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const x = x0 + c * gx, y = y0 + r * gy
+      heads.push({ x, y, hi: r === 5 && c === 3 })
+    }
+  }
+  return (
+    <g>
+      {heads.map((h, i) => (
+        <g key={i} transform={`translate(${h.x},${h.y})`}>
+          <circle r="7.5" fill={h.hi ? CINNABAR : CREAM} fillOpacity={h.hi ? 1 : 0.3} />
+          <path d="M-9,15 Q0,2 9,15 L9,19 L-9,19 Z" fill={h.hi ? CINNABAR : CREAM} fillOpacity={h.hi ? 1 : 0.3} />
+        </g>
+      ))}
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'two-mountains') return <TwoMountains />
   if (motif === 'ripples') return <Ripples />
   if (motif === 'spiral') return <Spiral />
   if (motif === 'mandala') return <Mandala />
+  if (motif === 'crowd-grid') return <CrowdGrid />
   return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
 }
 
