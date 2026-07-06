@@ -16,7 +16,9 @@
 .book-card { display: flex; gap: 15px; width: 350px; text-decoration: none; background: var(--paper-raised);
   border: 0.5px solid var(--line); border-radius: 12px; padding: 15px; transition: border-color .15s, box-shadow .15s; }
 .book-card:hover { border-color: color-mix(in srgb, var(--card-accent, var(--cinnabar)) 55%, var(--line)); box-shadow: 0 2px 14px rgba(0,0,0,.05); text-decoration: none; }
-.book-card__cover { width: 96px; height: auto; flex: 0 0 auto; border-radius: 7px; display: block;
+/* align-self:flex-start——内联 <svg> 不是 CSS 替换元素,align-items:stretch 会无视 height:auto
+   把它拉伸到卡片满高,viewBox 的「xMidYMid meet」再把画面居中留白,露出上下两条空白;显式排除拉伸即解 */
+.book-card__cover { width: 96px; height: auto; flex: 0 0 auto; align-self: flex-start; border-radius: 7px; display: block;
   box-shadow: 0 4px 14px -5px rgba(0,0,0,.42); }
 .book-card__body { min-width: 0; display: flex; flex-direction: column; }
 .book-card__title { font-family: var(--font-serif); font-size: 1.15rem; color: var(--ink); margin: 0 0 2px; }
