@@ -1,7 +1,9 @@
 /* 私人书房「观书」 /books —— 复用观象 tokens(朱/纸/墨/衬线,明暗自适应) */
 
-/* 左上角「观象」印章→回首页(诸学门户);门户主题下 --cinnabar 被 muted 成灰褐,这里用真朱砂 */
-.books-home-seal { display: inline-block; text-decoration: none !important; margin-bottom: 14px; }
+/* 顶部条:左「返回」、右「观书」印章→回首页(诸学门户);门户主题下 --cinnabar 被 muted 成灰褐,印章用真朱砂 */
+.books-topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.books-topbar--end { justify-content: flex-end; }
+.books-home-seal { display: inline-block; text-decoration: none !important; }
 [data-site="portal"] .brand-seal { background: var(--cinnabar-pure); }
 
 .books-page { max-width: 1000px; margin: 0 auto; padding: 24px 20px 64px; }
@@ -34,8 +36,6 @@
 
 /* 书主页 */
 .book-home { max-width: 1000px; margin: 0 auto; padding: 20px 20px 64px; }
-.book-home__topbar { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
-.book-home__topbar .books-home-seal { margin-bottom: 0; }
 .book-home__back { display: inline-block; font-family: var(--font-serif); color: var(--ink-soft); font-size: .92rem;
   text-decoration: none; }
 .book-home__back:hover { color: var(--cinnabar-pure); text-decoration: none; }
@@ -111,9 +111,10 @@
 
 /* 章 / 总览详读页:左 TOC + 右文章 */
 .book-article { max-width: 1040px; margin: 0 auto; padding: 20px 20px 64px; display: grid; grid-template-columns: 210px 1fr; gap: 28px; }
+.book-article__topbar { grid-column: 1 / -1; }
 .book-article__toc { align-self: start; position: sticky; top: 16px; display: flex; flex-direction: column; gap: 2px; }
-.book-article__back { font-family: var(--font-serif); color: var(--ink-soft); font-size: .92rem; padding: 4px 8px; margin-bottom: 8px; }
-.book-article__back:hover { color: var(--cinnabar); text-decoration: none; }
+.book-article__back { font-family: var(--font-serif); color: var(--ink-soft); font-size: .92rem; padding: 4px 8px; }
+.book-article__back:hover { color: var(--cinnabar-pure); text-decoration: none; }
 .book-article__tocsep { height: 1px; background: var(--line); margin: 6px 8px; }
 .book-article__tocitem { display: block; font-size: .88rem; color: var(--ink-soft); padding: 6px 10px; border-radius: 8px;
   border-left: 2px solid transparent; text-decoration: none; line-height: 1.4; }

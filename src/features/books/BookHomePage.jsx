@@ -30,7 +30,7 @@ export default function BookHomePage() {
   usePageTitle(book ? `${book.title} · 观书` : '观书')
 
   if (!book || !mind) {
-    return <div className="book-home" data-site="portal"><HomeSeal /><p className="books-empty">没有这本书。<Link to="/books">返回书房</Link></p></div>
+    return <div className="book-home" data-site="portal"><div className="books-topbar books-topbar--end"><HomeSeal /></div><p className="books-empty">没有这本书。<Link to="/books">返回书房</Link></p></div>
   }
 
   const openOverview = () => setDrawer({ href: `/books/${slug}/overview`, brand: `一篇文章读懂《${book.title}》`, chap: '全书总览', data: overview })
@@ -43,9 +43,9 @@ export default function BookHomePage() {
 
   return (
     <div className="book-home" data-site="portal">
-      <div className="book-home__topbar">
-        <HomeSeal />
+      <div className="books-topbar">
         <Link to="/books" className="book-home__back">← Gavin 的书房</Link>
+        <HomeSeal />
       </div>
       <div className="book-home__head">
         <BookCover className="book-home__cover" title={book.title} subtitle={book.subtitle} author={book.author} accent={book.accent} motif={book.cover?.motif} />

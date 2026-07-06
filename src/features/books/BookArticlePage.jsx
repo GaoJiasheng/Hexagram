@@ -19,7 +19,7 @@ export default function BookArticlePage({ kind }) {
   const ch = book && !isOverview && (book.chapters || []).find((c) => String(c.no) === String(chapter))
   usePageTitle(book ? `${isOverview ? '全书总览' : (ch ? ch.title : '第' + chapter + '章')} · ${book.title}` : '观书')
 
-  if (!book) return <div className="book-home" data-site="portal"><HomeSeal /><p className="books-empty">没有这本书。<Link to="/books">返回书房</Link></p></div>
+  if (!book) return <div className="book-home" data-site="portal"><div className="books-topbar books-topbar--end"><HomeSeal /></div><p className="books-empty">没有这本书。<Link to="/books">返回书房</Link></p></div>
 
   const chapters = book.chapters || []
   const idx = isOverview ? -1 : chapters.findIndex((c) => String(c.no) === String(chapter))
@@ -28,9 +28,12 @@ export default function BookArticlePage({ kind }) {
 
   return (
     <div className="book-article" data-site="portal">
-      <aside className="book-article__toc">
-        <HomeSeal />
+      <div className="books-topbar book-article__topbar">
         <Link to={`/books/${slug}`} className="book-article__back">← {book.title}</Link>
+        <HomeSeal />
+      </div>
+
+      <aside className="book-article__toc">
         <Link to={`/books/${slug}/overview`} className={'book-article__tocitem' + (isOverview ? ' is-cur' : '')}>全书总览</Link>
         <div className="book-article__tocsep" />
         {chapters.map((c) => (
