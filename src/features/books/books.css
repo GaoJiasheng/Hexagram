@@ -1,5 +1,9 @@
 /* 私人书房「观书」 /books —— 复用观象 tokens(朱/纸/墨/衬线,明暗自适应) */
 
+/* 左上角「观象」印章→回首页(诸学门户);门户主题下 --cinnabar 被 muted 成灰褐,这里用真朱砂 */
+.books-home-seal { display: inline-block; text-decoration: none !important; margin-bottom: 14px; }
+[data-site="portal"] .brand-seal { background: var(--cinnabar-pure); }
+
 .books-page { max-width: 1000px; margin: 0 auto; padding: 24px 20px 64px; }
 .books-head { text-align: center; margin-bottom: 22px; }
 .books-title { font-family: var(--font-serif); font-size: 1.8rem; color: var(--ink); margin: 0; }
@@ -30,8 +34,10 @@
 
 /* 书主页 */
 .book-home { max-width: 1000px; margin: 0 auto; padding: 20px 20px 64px; }
+.book-home__topbar { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.book-home__topbar .books-home-seal { margin-bottom: 0; }
 .book-home__back { display: inline-block; font-family: var(--font-serif); color: var(--ink-soft); font-size: .92rem;
-  text-decoration: none; margin-bottom: 10px; }
+  text-decoration: none; }
 .book-home__back:hover { color: var(--cinnabar-pure); text-decoration: none; }
 .book-home__head { text-align: center; margin-bottom: 8px; }
 .book-home__cover { width: 138px; height: auto; display: block; margin: 4px auto 16px; border-radius: 9px;

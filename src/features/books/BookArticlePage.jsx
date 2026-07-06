@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import { BaihuaArticle } from '../reader/BaihuaBlock.jsx'
+import HomeSeal from './HomeSeal.jsx'
 import books from '../../data/books/index.json'
 import './books.css'
 
@@ -18,7 +19,7 @@ export default function BookArticlePage({ kind }) {
   const ch = book && !isOverview && (book.chapters || []).find((c) => String(c.no) === String(chapter))
   usePageTitle(book ? `${isOverview ? '全书总览' : (ch ? ch.title : '第' + chapter + '章')} · ${book.title}` : '观书')
 
-  if (!book) return <div className="book-home" data-site="portal"><p className="books-empty">没有这本书。<Link to="/books">返回书房</Link></p></div>
+  if (!book) return <div className="book-home" data-site="portal"><HomeSeal /><p className="books-empty">没有这本书。<Link to="/books">返回书房</Link></p></div>
 
   const chapters = book.chapters || []
   const idx = isOverview ? -1 : chapters.findIndex((c) => String(c.no) === String(chapter))
@@ -28,6 +29,7 @@ export default function BookArticlePage({ kind }) {
   return (
     <div className="book-article" data-site="portal">
       <aside className="book-article__toc">
+        <HomeSeal />
         <Link to={`/books/${slug}`} className="book-article__back">← {book.title}</Link>
         <Link to={`/books/${slug}/overview`} className={'book-article__tocitem' + (isOverview ? ' is-cur' : '')}>全书总览</Link>
         <div className="book-article__tocsep" />

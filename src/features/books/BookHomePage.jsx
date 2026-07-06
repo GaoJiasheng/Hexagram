@@ -4,6 +4,7 @@ import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import MindTree from './MindTree.jsx'
 import BookCover from './BookCover.jsx'
 import BookArticleDrawer from './BookArticleDrawer.jsx'
+import HomeSeal from './HomeSeal.jsx'
 import books from '../../data/books/index.json'
 import './books.css'
 
@@ -29,7 +30,7 @@ export default function BookHomePage() {
   usePageTitle(book ? `${book.title} · 观书` : '观书')
 
   if (!book || !mind) {
-    return <div className="book-home" data-site="portal"><p className="books-empty">没有这本书。<Link to="/books">返回书房</Link></p></div>
+    return <div className="book-home" data-site="portal"><HomeSeal /><p className="books-empty">没有这本书。<Link to="/books">返回书房</Link></p></div>
   }
 
   const openOverview = () => setDrawer({ href: `/books/${slug}/overview`, brand: `一篇文章读懂《${book.title}》`, chap: '全书总览', data: overview })
@@ -42,7 +43,10 @@ export default function BookHomePage() {
 
   return (
     <div className="book-home" data-site="portal">
-      <Link to="/books" className="book-home__back">← Gavin 的书房</Link>
+      <div className="book-home__topbar">
+        <HomeSeal />
+        <Link to="/books" className="book-home__back">← Gavin 的书房</Link>
+      </div>
       <div className="book-home__head">
         <BookCover className="book-home__cover" title={book.title} subtitle={book.subtitle} author={book.author} accent={book.accent} motif={book.cover?.motif} />
         <h1 className="book-home__title">{book.title}</h1>

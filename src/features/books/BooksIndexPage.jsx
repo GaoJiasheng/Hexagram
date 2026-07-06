@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import BookCover from './BookCover.jsx'
+import HomeSeal from './HomeSeal.jsx'
 import books from '../../data/books/index.json'
 import './books.css'
 
@@ -15,6 +16,7 @@ export default function BooksIndexPage() {
 
   return (
     <div className="books-page" data-site="portal">
+      <HomeSeal />
       <div className="books-head">
         <h1 className="books-title">观书 · Gavin 的书房</h1>
         <p className="books-sub">读过的书，整理成一篇文章 + 一张脑图，随时回来复习</p>
