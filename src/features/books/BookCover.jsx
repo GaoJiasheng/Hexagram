@@ -170,6 +170,21 @@ function PsycheStrata() {
   )
 }
 
+// 母题:攀升点阵——一串从低到高的结点,末端朱色放大(呼应「自卑起点→追求超越的终点」)。
+function RisingSteps() {
+  const n = 7, x0 = 52, y0 = 362, dx = 30, ddy = 26
+  const pts = []
+  for (let i = 0; i < n; i++) pts.push([x0 + i * dx, y0 - i * ddy])
+  const path = pts.map(([x, y], i) => (i === 0 ? 'M' : 'L') + x + ',' + y).join(' ')
+  return (
+    <g>
+      <path d={path} fill="none" stroke={CREAM} strokeOpacity="0.36" strokeWidth="1.3" strokeLinecap="round" />
+      {pts.slice(0, -1).map(([x, y], i) => <circle key={i} cx={x} cy={y} r="6" fill={CREAM} fillOpacity="0.5" />)}
+      <circle cx={pts[pts.length - 1][0]} cy={pts[pts.length - 1][1]} r="11" fill={CINNABAR} />
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'two-mountains') return <TwoMountains />
   if (motif === 'ripples') return <Ripples />
@@ -180,6 +195,7 @@ function Motif({ motif }) {
   if (motif === 'fracture-ring') return <FractureRing />
   if (motif === 'dream-gate') return <DreamGate />
   if (motif === 'psyche-strata') return <PsycheStrata />
+  if (motif === 'rising-steps') return <RisingSteps />
   return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
 }
 
