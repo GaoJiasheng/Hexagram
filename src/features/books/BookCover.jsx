@@ -185,6 +185,93 @@ function RisingSteps() {
   )
 }
 
+// 母题:礁石与浪——一块稳固的岩石轮廓,几道波浪冲来又被弹开(呼应斯多葛「像礁石一样任浪拍打,自己巍然不动」)。
+function RockAndWaves() {
+  const cx = 150
+  const rock = `M${cx - 55},360 L${cx - 60},300 L${cx - 30},270 L${cx + 20},265 L${cx + 58},295 L${cx + 52},360 Z`
+  const waves = [220, 240, 260].map((y) => `M40,${y} Q90,${y - 12} 130,${y} T${cx - 40},${y + 4}`)
+  return (
+    <g>
+      <path d={rock} fill="none" stroke={CREAM} strokeOpacity="0.42" strokeWidth="1.3" />
+      {waves.map((d, i) => <path key={i} d={d} fill="none" stroke={CREAM} strokeOpacity={0.3 - i * 0.06} strokeWidth="1.1" />)}
+      <circle cx={cx - 15} cy={310} r="9" fill={CINNABAR} />
+    </g>
+  )
+}
+
+// 母题:洞穴与光——洞穴拱形轮廓,几个背对洞口的囚徒剪影,洞口透进一点朱光(呼应柏拉图洞穴喻)。
+function CaveLight() {
+  const archPath = 'M50,380 L50,260 Q50,200 110,200 L190,200 Q250,200 250,260 L250,380'
+  const prisoners = [[90, 340], [120, 350], [150, 345]]
+  return (
+    <g>
+      <path d={archPath} fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.3" />
+      {prisoners.map(([x, y], i) => <circle key={i} cx={x} cy={y} r="6" fill={CREAM} fillOpacity="0.45" />)}
+      <circle cx={210} cy={230} r="13" fill={CINNABAR} opacity="0.9" />
+    </g>
+  )
+}
+
+// 母题:深渊凝视——两侧崖壁裂开一道峡谷,中间一点朱色的「眼」(呼应尼采「凝视深渊,深渊也凝视你」)。
+function AbyssGaze() {
+  const cx = 150
+  const leftCliff = 'M30,200 L90,260 L60,380 L20,380 L20,220 Z'
+  const rightCliff = 'M270,200 L210,260 L240,380 L280,380 L280,220 Z'
+  return (
+    <g>
+      <path d={leftCliff} fill="none" stroke={CREAM} strokeOpacity="0.35" strokeWidth="1.2" />
+      <path d={rightCliff} fill="none" stroke={CREAM} strokeOpacity="0.35" strokeWidth="1.2" />
+      <circle cx={cx} cy={290} r="10" fill={CINNABAR} />
+    </g>
+  )
+}
+
+// 母题:意志之幕——几层半透明垂帘的波浪线,中间隐约透出一点朱色核心(呼应叔本华「摩耶之幕」,表象遮住意志本体)。
+function VeilOfMaya() {
+  const cx = 150
+  const veils = [0, 1, 2, 3].map((i) => {
+    const y0 = 200 + i * 15
+    return `M${60 - i * 8},${y0} Q${cx},${y0 + 25} ${240 + i * 8},${y0}`
+  })
+  return (
+    <g>
+      {veils.map((d, i) => <path key={i} d={d} fill="none" stroke={CREAM} strokeOpacity={0.4 - i * 0.07} strokeWidth="1.2" />)}
+      <circle cx={cx} cy={320} r="11" fill={CINNABAR} opacity="0.9" />
+    </g>
+  )
+}
+
+// 母题:微光之窗——一扇简单的窗框轮廓,窗外透出一点朱色微光(呼应弗兰克尔在集中营劳动时望向窗外、想象所爱之人的瞬间)。
+function LightWindow() {
+  const y0 = 200
+  const frame = `M70,${y0} L230,${y0} L230,${y0 + 180} L70,${y0 + 180} Z M150,${y0} L150,${y0 + 180} M70,${y0 + 90} L230,${y0 + 90}`
+  return (
+    <g>
+      <path d={frame} fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.3" />
+      <circle cx={185} cy={y0 + 45} r="11" fill={CINNABAR} opacity="0.9" />
+    </g>
+  )
+}
+
+// 母题:齿轮方格——一圈齿轮外框套住同心圆,中心一点朱色(呼应阿伦特笔下原子化个体被卷入意识形态机器)。
+function GearGrid() {
+  const cx = 150, cy = 300, R = 70, teeth = 12
+  let gearPath = ''
+  for (let i = 0; i < teeth; i++) {
+    const a1 = (i / teeth) * Math.PI * 2, a2 = ((i + 0.5) / teeth) * Math.PI * 2
+    const x1 = cx + Math.cos(a1) * R, y1 = cy + Math.sin(a1) * R
+    const x2 = cx + Math.cos(a2) * (R + 10), y2 = cy + Math.sin(a2) * (R + 10)
+    gearPath += (i === 0 ? 'M' : 'L') + x1 + ',' + y1 + ' L' + x2 + ',' + y2 + ' '
+  }
+  return (
+    <g>
+      <path d={gearPath + 'Z'} fill="none" stroke={CREAM} strokeOpacity="0.32" strokeWidth="1.2" />
+      <circle cx={cx} cy={cy} r={R * 0.5} fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1" />
+      <circle cx={cx} cy={cy} r="10" fill={CINNABAR} />
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'two-mountains') return <TwoMountains />
   if (motif === 'ripples') return <Ripples />
@@ -196,6 +283,12 @@ function Motif({ motif }) {
   if (motif === 'dream-gate') return <DreamGate />
   if (motif === 'psyche-strata') return <PsycheStrata />
   if (motif === 'rising-steps') return <RisingSteps />
+  if (motif === 'rock-waves') return <RockAndWaves />
+  if (motif === 'cave-light') return <CaveLight />
+  if (motif === 'abyss-gaze') return <AbyssGaze />
+  if (motif === 'veil-of-maya') return <VeilOfMaya />
+  if (motif === 'light-window') return <LightWindow />
+  if (motif === 'gear-grid') return <GearGrid />
   return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
 }
 
