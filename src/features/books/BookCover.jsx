@@ -135,6 +135,21 @@ function FractureRing() {
   )
 }
 
+// 母题:梦之门——一道拱门轮廓,门内几点微光(呼应弗洛伊德名言「梦是通向无意识的康庄大道」)。
+function DreamGate() {
+  const cx = 150, cy = 320, doorW = 100, doorH = 190, archR = 50
+  const left = cx - doorW / 2, right = cx + doorW / 2, top = cy - doorH / 2
+  const doorPath = `M${left},${cy + doorH / 2} L${left},${top + archR} A${archR},${archR} 0 0 1 ${right},${top + archR} L${right},${cy + doorH / 2}`
+  const stars = [[-20, -60, 1.6], [16, -92, 2.1], [-4, -32, 1.4], [26, -46, 1.8]]
+  return (
+    <g>
+      <path d={doorPath} fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.4" />
+      {stars.map(([dx, dy, r], i) => <circle key={i} cx={cx + dx} cy={cy + dy} r={r} fill={CREAM} fillOpacity="0.6" />)}
+      <circle cx={cx} cy={cy + 26} r="11" fill={CINNABAR} />
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'two-mountains') return <TwoMountains />
   if (motif === 'ripples') return <Ripples />
@@ -143,6 +158,7 @@ function Motif({ motif }) {
   if (motif === 'crowd-grid') return <CrowdGrid />
   if (motif === 'hub-spokes') return <HubSpokes />
   if (motif === 'fracture-ring') return <FractureRing />
+  if (motif === 'dream-gate') return <DreamGate />
   return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
 }
 
