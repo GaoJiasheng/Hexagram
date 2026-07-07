@@ -150,6 +150,26 @@ function DreamGate() {
   )
 }
 
+// 母题:三层结构——本我最宽在底(原始驱力)、自我居中(现实调停者)、超我最窄在顶
+// (朱色监视之眼,呼应「良心/自我理想」),呼应本我-自我-超我三层人格结构。
+function PsycheStrata() {
+  const cx = 150
+  const bands = [
+    { y: 340, h: 68, w: 208 },
+    { y: 262, h: 54, w: 152 },
+    { y: 198, h: 40, w: 92 },
+  ]
+  return (
+    <g>
+      {bands.map((b, i) => (
+        <rect key={i} x={cx - b.w / 2} y={b.y} width={b.w} height={b.h} rx="12"
+          fill="none" stroke={CREAM} strokeOpacity={i === 2 ? 0.6 : 0.32} strokeWidth={i === 2 ? 1.5 : 1.1} />
+      ))}
+      <circle cx={cx} cy={198 + 20} r="7" fill={CINNABAR} />
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'two-mountains') return <TwoMountains />
   if (motif === 'ripples') return <Ripples />
@@ -159,6 +179,7 @@ function Motif({ motif }) {
   if (motif === 'hub-spokes') return <HubSpokes />
   if (motif === 'fracture-ring') return <FractureRing />
   if (motif === 'dream-gate') return <DreamGate />
+  if (motif === 'psyche-strata') return <PsycheStrata />
   return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
 }
 
