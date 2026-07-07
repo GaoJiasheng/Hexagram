@@ -110,6 +110,31 @@ function HubSpokes() {
   )
 }
 
+// 母题:裂环——一圈相互靠拢的结点(文明·厄洛斯的束缚力),边界几处被朱线崩裂向外
+// (攻击本能/死本能挣破文明的克制),呼应「文明靠压抑换秩序,压不住处就崩裂」。
+function FractureRing() {
+  const cx = 150, cy = 300, R = 82, N = 9
+  const ring = []
+  for (let i = 0; i < N; i++) {
+    const a = (i / N) * Math.PI * 2
+    ring.push([cx + Math.cos(a) * R, cy + Math.sin(a) * R])
+  }
+  const fractureAngles = [0.35, 2.15, 4.05]
+  const fractures = fractureAngles.map((a) => {
+    const x1 = cx + Math.cos(a) * R, y1 = cy + Math.sin(a) * R
+    const x2 = cx + Math.cos(a) * (R + 58), y2 = cy + Math.sin(a) * (R + 58)
+    return `M${x1.toFixed(1)},${y1.toFixed(1)} L${x2.toFixed(1)},${y2.toFixed(1)}`
+  })
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={R} fill="none" stroke={CREAM} strokeOpacity="0.34" strokeWidth="1.2" />
+      {ring.map(([x, y], i) => <circle key={i} cx={x} cy={y} r="6.5" fill={CREAM} fillOpacity="0.5" />)}
+      <path d={fractures.join(' ')} fill="none" stroke={CINNABAR} strokeWidth="1.7" strokeOpacity="0.88" strokeLinecap="round" />
+      <circle cx={cx} cy={cy} r="10" fill={CINNABAR} />
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'two-mountains') return <TwoMountains />
   if (motif === 'ripples') return <Ripples />
@@ -117,6 +142,7 @@ function Motif({ motif }) {
   if (motif === 'mandala') return <Mandala />
   if (motif === 'crowd-grid') return <CrowdGrid />
   if (motif === 'hub-spokes') return <HubSpokes />
+  if (motif === 'fracture-ring') return <FractureRing />
   return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
 }
 
