@@ -1,0 +1,463 @@
+{
+  "id": "root",
+  "label": "群体心理学与自我的分析",
+  "note": "弗洛伊德，1921。正面回应勒庞《乌合之众》：勒庞描述了群体的样子，弗洛伊德要解释群体为什么会这样——答案是一条纵向的爱与一片横向的认同。理论建构宏大，实证基础薄弱，宜研读而非照单全收。",
+  "children": [
+    {
+      "id": "ch1",
+      "label": "导言",
+      "ref": { "ch": 1 },
+      "children": [
+        {
+          "id": "individual-is-social",
+          "label": "个体心理学从一开始就同时是社会心理学",
+          "children": [
+            {
+              "id": "individual-is-social-others",
+              "label": "他人总是以榜样、对象、帮助者、对手的身份出现在个体的心理生活里，所以「个体心理 vs 社会心理」的对立从起点就站不住。"
+            },
+            {
+              "id": "individual-is-social-no-new-instinct",
+              "label": "弗洛伊德由此拒绝为群体另立一种神秘的「社会本能」——他打算只用个体心理学已有的机制，把群体现象解释到底。"
+            }
+          ]
+        },
+        {
+          "id": "guiding-question",
+          "label": "全书要回答的问题：人一进群体，为什么感受、思考、行动都变了样？",
+          "children": [
+            {
+              "id": "guiding-question-gap",
+              "label": "单看每个成员都是讲道理的普通人，聚成群却可能轻信、极端、既能舍身也能残暴——这个落差才是需要解释的东西。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch2",
+      "label": "勒庞的群体心理描述",
+      "ref": { "ch": 2 },
+      "children": [
+        {
+          "id": "lebon-portrait",
+          "label": "勒庞笔下的群体画像：冲动、易变、轻信、只认形象不认逻辑",
+          "children": [
+            {
+              "id": "lebon-portrait-three",
+              "label": "匿名带来「无所不能」感，责任心随之松绑；情绪像传染病一样在人群里蔓延；人变得像被催眠一样易受暗示——这是勒庞归纳的三大特征。"
+            },
+            {
+              "id": "lebon-portrait-regress",
+              "label": "勒庞说群体在心智上退回原始人和儿童：不会怀疑、不知折中，要么全信要么全不信，只被夸张的形象和断言打动。"
+            }
+          ]
+        },
+        {
+          "id": "freud-verdict",
+          "label": "弗洛伊德的评价：画像出色，解释缺席",
+          "children": [
+            {
+              "id": "freud-verdict-label",
+              "label": "「暗示」「威望」这些词只是给现象贴了标签，并没有回答群体的黏合力究竟从哪里来——这正是本书要接手的活。"
+            },
+            {
+              "id": "freud-verdict-scope",
+              "label": "勒庞谈的多是街头那种短命的乌合之众，而教会、军队这类稳定持久的群体，他几乎没有碰。"
+            }
+          ]
+        },
+        {
+          "id": "vs-wuhezhizhong",
+          "label": "与《乌合之众》对读：一个描述现象，一个解释机制",
+          "note": "两本书是接力关系，不是推翻关系。",
+          "children": [
+            {
+              "id": "vs-wuhezhizhong-howto",
+              "label": "勒庞回答「群体是什么样」，弗洛伊德回答「群体为什么会这样」——读完前者再读本书，正好补上机制这一环。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch3",
+      "label": "其他解释（麦独孤）",
+      "ref": { "ch": 3 },
+      "children": [
+        {
+          "id": "emotion-contagion",
+          "label": "情绪的「原始交感」：看到别人激动，自己不由自主跟着激动",
+          "children": [
+            {
+              "id": "emotion-contagion-snowball",
+              "label": "麦独孤指出，情绪的外在表现会自动在旁观者身上引发同样的情绪，人越多滚得越大——恐惧和愤怒就是这样在人群里滚成雪球的。"
+            }
+          ]
+        },
+        {
+          "id": "organized-group",
+          "label": "麦独孤的补救方案：高组织化群体的五个条件",
+          "children": [
+            {
+              "id": "organized-group-five",
+              "label": "群体要有连续性、共同的自我观念、与其他群体的竞争、传统惯例、内部分工——满足这些条件，群体导致的心智下降就能被组织拉回来。"
+            },
+            {
+              "id": "organized-group-freud-twist",
+              "label": "弗洛伊德的转译很妙：所谓「组织化」，其实就是让群体重新获得原本属于个体的那些禀性——问题于是又被引回个体心理学。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch4",
+      "label": "暗示与力比多",
+      "ref": { "ch": 4 },
+      "children": [
+        {
+          "id": "critique-suggestion",
+          "label": "对「暗示」的批判：它被当成了不需要再解释的魔法词",
+          "children": [
+            {
+              "id": "critique-suggestion-tyranny",
+              "label": "弗洛伊德回忆三十年前「暗示能解释一切」的专横风气，反问：那暗示本身又由什么解释？一个什么都能解释的概念，其实什么都没解释。"
+            }
+          ]
+        },
+        {
+          "id": "libido-hypothesis",
+          "label": "力比多假说：群体靠「爱的能量」黏合",
+          "children": [
+            {
+              "id": "libido-hypothesis-def",
+              "label": "力比多指一切可以归入「爱」的本能能量——性爱、亲子之情、友谊、对事业的献身，在弗洛伊德看来是同一种能量的不同去向。"
+            },
+            {
+              "id": "libido-hypothesis-bond",
+              "label": "群体的本质是情感纽带：人在群体里放弃自己的独特性、跟别人步调一致，说到底是「为了他们的爱」而这么做。"
+            }
+          ]
+        },
+        {
+          "id": "caveat-theory",
+          "label": "研读提醒：这是理论建构，不是实证证据",
+          "children": [
+            {
+              "id": "caveat-theory-note",
+              "label": "「力比多」无法被直接观察或测量，它的说服力来自解释的融贯与覆盖面，而非实验数据——宜当作一套强解释框架来读，别当作已被证明的科学定论。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch5",
+      "label": "教会与军队",
+      "ref": { "ch": 5 },
+      "children": [
+        {
+          "id": "artificial-groups",
+          "label": "两个「人工群体」样本：有外力维系、不许随意进出",
+          "children": [
+            {
+              "id": "artificial-groups-why",
+              "label": "特意挑教会和军队，因为它们稳定、高度组织化，恰好是勒庞略过的那一类群体——机制在稳定样本里看得最清楚。"
+            }
+          ]
+        },
+        {
+          "id": "shared-illusion",
+          "label": "共同的幻觉：领袖平等地爱着每一个成员",
+          "children": [
+            {
+              "id": "shared-illusion-father",
+              "label": "基督之于信众、统帅之于士兵，都像一位平等爱着所有孩子的父亲——群体的一切要求与温情，都以这份「被平等地爱着」的信念为前提。"
+            },
+            {
+              "id": "shared-illusion-meaning",
+              "label": "「幻觉」在弗洛伊德那里指由愿望驱动的信念，不等于骂它是骗局；但他强调，整个群体确实系在这条信念上。"
+            }
+          ]
+        },
+        {
+          "id": "double-bond",
+          "label": "双重纽带：先有对领袖的纵向之爱，才有成员间的横向联结",
+          "children": [
+            {
+              "id": "double-bond-collapse",
+              "label": "每个成员一头系着领袖、一头系着彼此；军队溃散的战例表明，一旦对领袖的纽带断了，成员之间的纽带也随之崩解。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch6",
+      "label": "进一步的问题",
+      "ref": { "ch": 6 },
+      "children": [
+        {
+          "id": "panic",
+          "label": "恐慌的真相：不是危险变大，而是纽带断裂",
+          "children": [
+            {
+              "id": "panic-mechanism",
+              "label": "恐慌中命令失灵、人人只顾自己，说明相互间的情感联系已经死了；那种铺天盖地的恐惧，其实是纽带断裂的结果而不是原因。"
+            }
+          ]
+        },
+        {
+          "id": "hostility-outward",
+          "label": "群体的爱向内，攻击性向外",
+          "children": [
+            {
+              "id": "hostility-outward-religion",
+              "label": "宗教纽带把信众连成兄弟，却常常对圈外人冷酷严苛——内部纽带扎得越紧，向外的排斥往往越强。"
+            },
+            {
+              "id": "hostility-outward-substitute",
+              "label": "弗洛伊德补了一句冷眼旁观：就不宽容而言，任何把人紧紧绑在一起的理念——民族、党派、甚至某种「科学世界观」——都能顶替宗教发挥同样的功能。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch7",
+      "label": "认同作用",
+      "ref": { "ch": 7 },
+      "children": [
+        {
+          "id": "identification-def",
+          "label": "认同：对他人最早的情感纽带——想「成为他」，而非想「占有他」",
+          "children": [
+            {
+              "id": "identification-def-two-paths",
+              "label": "小男孩把父亲当榜样，想长成他那样（认同）；同时把母亲当对象，想拥有她（对象贯注）——两条情感路径并行，性质完全不同。"
+            }
+          ]
+        },
+        {
+          "id": "identification-symptom",
+          "label": "认同经由症状显形",
+          "children": [
+            {
+              "id": "identification-symptom-cases",
+              "label": "女孩发出和母亲一模一样的痛苦咳嗽；寄宿学校里一封情书能让一群姑娘集体「发作」——只要能在某一点上把自己放到对方的位置，情感就能移植过来。"
+            }
+          ]
+        },
+        {
+          "id": "identification-partial",
+          "label": "认同是「部分的」：借取对方的一个特征就够",
+          "children": [
+            {
+              "id": "identification-partial-trait",
+              "label": "认同不必复制整个人，抓住一个共同点就能建立联结——这为后面「一群互不相识的人也能彼此认同」做好了铺垫。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch8",
+      "label": "恋爱与催眠",
+      "ref": { "ch": 8 },
+      "children": [
+        {
+          "id": "idealization",
+          "label": "恋爱中的理想化：对象被放到「自我理想」的位置",
+          "children": [
+            {
+              "id": "idealization-blind",
+              "label": "情人眼里出西施：对象免于一切批评、占尽美德，自我却越来越谦卑——弗洛伊德的说法是「对象吞掉了自我」。"
+            },
+            {
+              "id": "idealization-contrast",
+              "label": "关键区分：认同是把对象放进自我（想成为他），痴恋是让对象取代自我理想（拿他来衡量和审判自己）。"
+            }
+          ]
+        },
+        {
+          "id": "hypnosis-two",
+          "label": "催眠 = 只有两个人的群体",
+          "children": [
+            {
+              "id": "hypnosis-two-structure",
+              "label": "催眠者占据了自我理想的位置，被催眠者对他百依百顺、现实检验让位——结构与痴恋相同，只是性满足被完全排除在外。"
+            }
+          ]
+        },
+        {
+          "id": "core-formula",
+          "label": "全书核心公式",
+          "note": "第 8 章末尾，一句话装下整本书。",
+          "children": [
+            {
+              "id": "core-formula-text",
+              "label": "「一群个体，把同一个对象放到他们自我理想的位置上，并因此在彼此的自我中相互认同」——对领袖的纵向之爱，产生成员之间的横向认同，这就是群体。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch9",
+      "label": "群居本能",
+      "ref": { "ch": 9 },
+      "children": [
+        {
+          "id": "trotter-view",
+          "label": "特罗特的主张：人天生有「群居本能」，离群即不安",
+          "children": [
+            {
+              "id": "trotter-view-instinct",
+              "label": "特罗特把群居性列为与自保、营养、性并列的原初本能，人像群居动物一样怕落单——群体现象于是成了生物本性的直接表达。"
+            }
+          ]
+        },
+        {
+          "id": "freud-critique-herd",
+          "label": "弗洛伊德的反驳：群居性是后天发展出来的，不是天生的",
+          "children": [
+            {
+              "id": "freud-critique-herd-child",
+              "label": "婴儿独处时的恐惧指向母亲而不指向「人群」；儿童对弟弟妹妹的嫉妒，被迫转化为集体的「公平感」——既然谁也别想独占宠爱，那就必须人人平等。"
+            },
+            {
+              "id": "freud-critique-herd-today",
+              "label": "按这个思路，班级、粉丝群里的「团结一致」都带着这层底色：公平要求是嫉妒的反转，而不是天使般的友爱。"
+            }
+          ]
+        },
+        {
+          "id": "herd-vs-horde",
+          "label": "修正：人不是「群居动物」，而是「部落动物」——群体离不开头领",
+          "children": [
+            {
+              "id": "herd-vs-horde-caveat",
+              "label": "提醒：这一整段发生学论证同样是理论推演，机智自洽但无法直接检验，不宜当作定论引用——它是假说，不是发现。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch10",
+      "label": "群体与原始部落",
+      "ref": { "ch": 10 },
+      "children": [
+        {
+          "id": "primal-horde",
+          "label": "原父假说：群体心理是原始部落的复活，领袖 = 令人又爱又怕的原父",
+          "children": [
+            {
+              "id": "primal-horde-story",
+              "label": "沿用《图腾与禁忌》的叙事：专横的原父独占一切，诸子在被支配中一律平等——弗洛伊德说，群体一形成，这幅太古图景就在人心里苏醒。"
+            }
+          ]
+        },
+        {
+          "id": "hypnosis-explained",
+          "label": "顺手解开催眠之谜：催眠者唤起的是古老的原父意象",
+          "children": [
+            {
+              "id": "hypnosis-explained-gaze",
+              "label": "凝视、命令、意志被剥夺——催眠那股说不清的「诡异感」，在弗洛伊德看来是对原父的太古恐惧被重新激活了。"
+            }
+          ]
+        },
+        {
+          "id": "caveat-anthropology",
+          "label": "重要提醒：原始部落假说今天争议极大",
+          "children": [
+            {
+              "id": "caveat-anthropology-evidence",
+              "label": "「诸子弑父食父」的原始部落叙事缺乏人类学证据，现代人类学多数不予采信；弗洛伊德自己后来也称它是一则「科学神话」。"
+            },
+            {
+              "id": "caveat-anthropology-howto",
+              "label": "读法建议：把第 10 章当作一场大胆的思想实验——它的解释力最惊人，证据基础却最薄弱，这两点要同时看到。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch11",
+      "label": "自我的补充说明",
+      "ref": { "ch": 11 },
+      "children": [
+        {
+          "id": "ego-ideal-agency",
+          "label": "自我理想是自我内部分化出的一个「机构」（超我概念的伏笔）",
+          "children": [
+            {
+              "id": "ego-ideal-agency-jobs",
+              "label": "它负责自我观察、道德良心、梦的稽查和压抑——两年后的《自我与本我》里，这个机构被正式定名为「超我」。"
+            }
+          ]
+        },
+        {
+          "id": "restate-states",
+          "label": "用「自我 / 自我理想」这套结构重述各种心理状态",
+          "children": [
+            {
+              "id": "restate-states-mania",
+              "label": "躁狂像自我与自我理想合一的庆典，忧郁像自我理想对自我的严酷审判——各民族的节日狂欢，可以看作制度化的「合一时刻」。"
+            }
+          ]
+        },
+        {
+          "id": "state-spectrum",
+          "label": "一张谱系表：恋爱、催眠、群体、神经症的异同",
+          "children": [
+            {
+              "id": "state-spectrum-combo",
+              "label": "它们都是「对象关系 + 自我理想」的不同排列组合；群体的独特之处，在于多出了成员之间那一层横向认同。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch12",
+      "label": "后记",
+      "ref": { "ch": 12 },
+      "children": [
+        {
+          "id": "leader-narcissism",
+          "label": "补遗一：领袖自己可以谁都不爱",
+          "children": [
+            {
+              "id": "leader-narcissism-selfsufficient",
+              "label": "成员需要相信领袖平等地爱着大家，领袖本人却可能自恋自足、只爱自己——那种「绝对的自信」恰恰是领袖魅力的一部分。"
+            }
+          ]
+        },
+        {
+          "id": "aim-inhibited-love",
+          "label": "补遗二：被抑制目标的温情比直接的性爱更适合做群体纽带",
+          "children": [
+            {
+              "id": "aim-inhibited-love-why",
+              "label": "直接的性满足一到手能量就泄掉，而且两人世界天然反群体；「点到为止」的温情却可以长期维系、可以同时投向许多人——群体正是用这种材料织成的。"
+            }
+          ]
+        },
+        {
+          "id": "first-individual",
+          "label": "补遗三：第一个「个体」是在神话里诞生的",
+          "children": [
+            {
+              "id": "first-individual-poet",
+              "label": "史诗诗人在幻想中把自己放上原父的位置，编出单枪匹马的英雄神话——个体心理学竟是从群体心理学中脱胎的，正好呼应第 1 章的开篇论断。"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

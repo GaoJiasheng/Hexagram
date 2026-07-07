@@ -90,12 +90,33 @@ function CrowdGrid() {
   )
 }
 
+// 母题:轮辐图——中心一个「领袖」结点,外圈成员结点各一条辐线连向中心(呼应本书核心论点:
+// 群体成员靠「都把领袖当自我理想」这条共同纽带互相绑定,不是靠彼此直接联系)。
+function HubSpokes() {
+  const cx = 150, cy = 300, R = 118, N = 10
+  const spokes = [], nodes = []
+  for (let i = 0; i < N; i++) {
+    const a = (i / N) * Math.PI * 2 - Math.PI / 2
+    const x = cx + Math.cos(a) * R, y = cy + Math.sin(a) * R
+    spokes.push(`M${cx},${cy} L${x.toFixed(1)},${y.toFixed(1)}`)
+    nodes.push([x, y])
+  }
+  return (
+    <g>
+      <path d={spokes.join(' ')} fill="none" stroke={CREAM} strokeOpacity="0.3" strokeWidth="1.1" />
+      {nodes.map(([x, y], i) => <circle key={i} cx={x} cy={y} r="7" fill={CREAM} fillOpacity="0.5" />)}
+      <circle cx={cx} cy={cy} r="15" fill={CINNABAR} />
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'two-mountains') return <TwoMountains />
   if (motif === 'ripples') return <Ripples />
   if (motif === 'spiral') return <Spiral />
   if (motif === 'mandala') return <Mandala />
   if (motif === 'crowd-grid') return <CrowdGrid />
+  if (motif === 'hub-spokes') return <HubSpokes />
   return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
 }
 
