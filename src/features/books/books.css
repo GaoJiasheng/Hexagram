@@ -18,7 +18,7 @@
 .books-tag--on { background: var(--cinnabar); color: var(--paper-raised); border-color: var(--cinnabar); }
 
 /* 书架:封面 + 文字的横排卡 */
-.books-grid { display: flex; flex-wrap: wrap; gap: 18px; }
+.books-grid { display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; }
 .book-card { display: flex; gap: 15px; width: 350px; text-decoration: none; background: var(--paper-raised);
   border: 0.5px solid var(--line); border-radius: 12px; padding: 15px; transition: border-color .15s, box-shadow .15s; }
 .book-card:hover { border-color: color-mix(in srgb, var(--card-accent, var(--cinnabar)) 55%, var(--line)); box-shadow: 0 2px 14px rgba(0,0,0,.05); text-decoration: none; }
