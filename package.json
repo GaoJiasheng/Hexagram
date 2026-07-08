@@ -20,7 +20,7 @@
     "build:cap": "npm run content:build && VITE_CAP=1 vite build",
     "cap:sync": "npm run content:build && VITE_CAP=1 vite build && npx cap sync",
     "cap:ios": "npm run content:build && VITE_CAP=1 vite build && npx cap sync ios && npx cap open ios",
-    "deploy:cf": "npm run build && npx wrangler pages deploy dist --project-name=hexagram"
+    "deploy:cf": "npm run build && npx wrangler pages deploy dist --project-name=hexa-gavin-pub"
   },
   "dependencies": {
     "@capacitor/android": "^8.4.1",
