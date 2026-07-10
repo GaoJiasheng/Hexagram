@@ -1,0 +1,146 @@
+{
+  "title": "再好好想想",
+  "subtitle": "别急着站队「援助有用/没用」——先学会问一个能被回答的问题",
+  "centralIdea": "关于「怎么消除全球贫困」,世界吵了几十年:一派说穷国陷在贫困陷阱里,必须靠大规模援助推一把;另一派说援助本身就是毒药,得靠市场和好制度。本章是全书的方法论总纲:两派都在用意识形态、直觉和轶事说话,却很少俯身去看穷人真实面对的选择与约束。作者主张像医生问诊、像新药做临床试验那样,用随机对照试验(RCT)一件事一件事地检验「什么真的有效」;而扶贫真正的敌人,是无知、意识形态与惰性这「三个I」。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "地铁口有人向你募捐,给非洲的孩子买蚊帐。你脑子里大概率会同时响起两个声音:一个说「几十块钱就能救一条命,不捐说不过去」;另一个说「这钱八成喂了中间环节,捐了也白捐」。有意思的是,这两个声音并不只是你的纠结——过去几十年,整个世界关于「如何消除贫困」的公共争论,基本就是这两个声音的放大版,吵到诺奖得主、畅销书、联合国峰会的级别,谁也没说服谁。《贫穷的本质》第一章要做的事很简单,也很不客气:请两边都先停一停,再好好想想——你们吵的这个问题,可能从一开始就问错了。"
+    },
+    {
+      "type": "h2",
+      "text": "这一章在全书的什么位置"
+    },
+    {
+      "type": "p",
+      "text": "《贫穷的本质》一共十章,后面九章分别钻进穷人生活的一个具体领域:吃饭、看病、上学、生育、风险与保险、贷款、储蓄、创业、政治。而第一章不谈任何具体领域,它是全书的**方法论总纲**——先把「我们该怎么讨论贫困」这件事本身掰扯清楚。读懂了这一章,你会发现后面九章的套路高度一致:每进一个领域,作者都不先站队,而是先问「证据说了什么」。"
+    },
+    {
+      "type": "p",
+      "text": "所以这一章值得读得慢一点。它给你的不是关于贫困的结论,而是一套**过滤器**:以后再看到任何「一招消除贫困」的宏大方案,你都能用这套过滤器把它拆开来检查。"
+    },
+    {
+      "type": "quote",
+      "original": "每年,有900万儿童在5岁之前死去。",
+      "translation": "第一章开篇摆出的数字。作者用它说明的不是「快捐钱」,恰恰相反——正因为赌注如此之重,我们才更没有资格靠感觉和立场来决定「怎么帮」,而必须较真到证据层面。"
+    },
+    {
+      "type": "h2",
+      "text": "吵了几十年的两派:推一把,还是别添乱"
+    },
+    {
+      "type": "p",
+      "text": "先交代背景。关于全球贫困,公共讨论长期被两套宏大叙事把持。一派以经济学家**杰弗里·萨克斯**为代表:穷国之所以穷,是因为陷在**「贫困陷阱」**里——穷到没钱治病、没钱买化肥、没钱让孩子读完书,于是生产率永远上不去,明天比今天更穷,循环往复。既然自己爬不出来,就必须靠外部力量推一把:大幅增加国际援助,一次性把梯子递到位,让穷国踩着梯子跳出陷阱。"
+    },
+    {
+      "type": "p",
+      "text": "另一派以**威廉·伊斯特利**和**丹比萨·莫约**为代表,结论截然相反:援助不是解药,援助本身就是问题的一部分。钱从外面源源不断流进来,滋生腐败、扭曲市场激励、养出依赖,还让本地政府不必对自己的纳税人负责——反正账单有别人付。真正让国家脱贫的从来不是施舍,而是市场与好制度;最好的帮忙,是别添乱。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "两派各有一流的头脑与顺手的案例,却都极少俯下身去看穷人真实面对的选择——本书从「换一个问题」开始。",
+      "svg": "<svg viewBox='0 0 560 330' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='28' text-anchor='middle' style='font-size:15px;font-weight:bold;fill:var(--ink)'>「如何消除贫困」——吵了几十年的两派</text><rect x='22' y='48' width='245' height='150' rx='8' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1'/><text x='144' y='74' text-anchor='middle' style='font-size:13.5px;font-weight:bold;fill:var(--cinnabar)'>萨克斯:大推动援助论</text><line x1='50' y1='86' x2='239' y2='86' style='stroke:var(--line);stroke-width:1'/><text x='144' y='110' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>穷国陷在「贫困陷阱」里</text><text x='144' y='131' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>穷到无力自我积累,爬不出来</text><text x='144' y='152' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>必须靠外部力量推一把</text><text x='144' y='180' text-anchor='middle' style='font-size:12.5px;font-weight:bold;fill:var(--ink)'>药方:大幅增加援助</text><rect x='293' y='48' width='245' height='150' rx='8' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1'/><text x='415' y='74' text-anchor='middle' style='font-size:13.5px;font-weight:bold;fill:var(--cinnabar)'>伊斯特利/莫约:援助有害论</text><line x1='321' y1='86' x2='510' y2='86' style='stroke:var(--line);stroke-width:1'/><text x='415' y='110' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>援助滋生腐败,扭曲激励</text><text x='415' y='131' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>养出依赖,政府不对内负责</text><text x='415' y='152' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>真正管用的是市场与好制度</text><text x='415' y='180' text-anchor='middle' style='font-size:12.5px;font-weight:bold;fill:var(--ink)'>药方:少援助,别添乱</text><text x='280' y='128' text-anchor='middle' style='font-size:13px;font-weight:bold;fill:var(--ink-faint)'>VS</text><line x1='144' y1='198' x2='144' y2='234' style='stroke:var(--ink-faint);stroke-width:1'/><polygon points='144,240 139,231 149,231' style='fill:var(--ink-faint)'/><line x1='415' y1='198' x2='415' y2='234' style='stroke:var(--ink-faint);stroke-width:1'/><polygon points='415,240 410,231 420,231' style='fill:var(--ink-faint)'/><rect x='60' y='240' width='440' height='68' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='280' y='266' text-anchor='middle' style='font-size:13.5px;font-weight:bold;fill:var(--ink)'>本书:这个问题本身问错了</text><text x='280' y='291' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>别问「援助好不好」,要问「哪项措施、对哪类人、在什么情境下有效」</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "听起来都挺有道理,对吧?这正是麻烦所在。两派都有一流的头脑、漂亮的逻辑和顺手的案例:援助派会指着某个疫苗项目救了多少人,反援助派会指着某个挥霍援助款的独裁政权。**双方都在用意识形态、直觉和零散轶事说话**,而对同一个基本问题——穷人到底面对什么样的选择、卡在什么样的约束里——都没有真正俯下身认真看过。"
+    },
+    {
+      "type": "h2",
+      "text": "贫困陷阱:一个不该用嗓门解决的问题"
+    },
+    {
+      "type": "p",
+      "text": "注意,两派分歧的核心其实是一个可以检验的事实问题:**贫困陷阱到底存不存在?**如果存在——今天太穷会导致明天更穷,像滚雪球一样越陷越深——那「推一把」就是必要的;如果不存在——只要有机会,人们靠自己也能一点点攒出上升通道——那大水漫灌式的援助确实可能帮倒忙。"
+    },
+    {
+      "type": "p",
+      "text": "而本书的立场是:这个问题**没有统一答案,也不需要统一答案**。在有的领域、有的地方、有的人群里,陷阱真实存在;换一个领域、换一个地方,它可能就不存在。所以正确的问法不是「贫困陷阱存在吗」,而是「在这件具体的事情上,这里的人是否陷在陷阱里」——比如,某地的农民是不是因为一时拿不出化肥钱,而年复一年错过高回报的投资?这样的问题,才是证据能够回答的。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "S形曲线与对角线的交点是「临界点」:陷阱是否存在、某群人处在临界点哪一侧,是经验问题,不是立场问题——这正是全书反复使用的一张图。",
+      "svg": "<svg viewBox='0 0 560 330' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='26' text-anchor='middle' style='font-size:15px;font-weight:bold;fill:var(--ink)'>贫困陷阱示意:今天的收入如何决定明天</text><text x='90' y='66' style='font-size:11.5px;fill:var(--ink-soft)'>· 起点在临界点左侧:明天更穷,滑回陷阱底</text><text x='90' y='86' style='font-size:11.5px;fill:var(--ink-soft)'>· 起点在临界点右侧:明天更富,自我积累</text><line x1='70' y1='280' x2='525' y2='280' style='stroke:var(--ink-soft);stroke-width:1.2'/><polygon points='532,280 522,275 522,285' style='fill:var(--ink-soft)'/><line x1='70' y1='280' x2='70' y2='45' style='stroke:var(--ink-soft);stroke-width:1.2'/><polygon points='70,38 65,48 75,48' style='fill:var(--ink-soft)'/><text x='515' y='300' text-anchor='end' style='font-size:12px;fill:var(--ink-soft)'>今天的收入</text><text x='80' y='52' style='font-size:12px;fill:var(--ink-soft)'>明天的收入</text><line x1='70' y1='280' x2='500' y2='60' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:5 4'/><text x='500' y='48' text-anchor='end' style='font-size:11px;fill:var(--ink-faint)'>对角线:明天=今天(原地踏步)</text><path d='M78 276 C160 268,220 240,300 162 C350 113,420 88,505 82' style='fill:none;stroke:var(--cinnabar);stroke-width:2.5'/><circle cx='80' cy='275' r='4' style='fill:var(--ink-soft)'/><text x='96' y='268' style='font-size:11px;fill:var(--ink-soft)'>陷阱底</text><circle cx='300' cy='162' r='5' style='fill:var(--cinnabar)'/><text x='300' y='142' text-anchor='middle' style='font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>临界点</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "像医生问诊,别像法官判案"
+    },
+    {
+      "type": "p",
+      "text": "作者给出的替代方案,说穿了就是把姿态从法官换成医生。法官的工作是给「援助」这个被告判个有罪无罪;医生不这么干——病人说浑身难受,医生不会当场宣布「药物整体上是好的」或「药物整体上是坏的」,而是先做**细致的诊断**:哪里不舒服?什么时候开始的?先查哪个指标?然后针对这个病、这个人,开这一副药,再盯着疗效调整。"
+    },
+    {
+      "type": "p",
+      "text": "把这个姿态平移到扶贫上:别问「援助有没有用」,要问「**这项**干预,对**这类**人群,在**这种**情境下,有没有用」。免费发蚊帐,会不会让人反而不珍惜?给学校发教科书,能不能提高成绩?把疫苗接种点搬近一点,接种率会涨多少?每一个问题都具体、有限、可检验——也正因为如此,答案才可能真的指导行动,而不是沦为下一轮站队的口号。"
+    },
+    {
+      "type": "quote",
+      "original": "穷人往往被简化成漫画式的人物形象,连许多用心帮助他们的人也不例外。",
+      "translation": "要么是坐等拯救的懒惰受害者,要么是坚韧不拔的天生企业家——两种刻板印象都省去了「去看真人」的麻烦。本书的底层态度就是反漫画化:穷人是和你我一样会权衡、会犯错、被环境约束的普通人。"
+    },
+    {
+      "type": "h2",
+      "text": "RCT:给扶贫政策做「临床试验」"
+    },
+    {
+      "type": "p",
+      "text": "诊断需要工具。本书最重要的方法论工具,是从医学里借来的——**随机对照试验**(RCT)。一款新药上市前,不能光听吃过的人说「感觉好多了」:也许是心理作用(安慰剂效应),也许病本来就快好了,也许愿意尝试新药的人恰好病得轻(选择性偏差)。所以要把患者**随机**分成两组,一组吃真药,一组吃安慰剂,两组之间唯一的系统差别就是药本身——结果的差异,才能归功(或归罪)于药。"
+    },
+    {
+      "type": "p",
+      "text": "把这个逻辑平移到扶贫:想知道某个项目有没有用,就在符合条件的人群里随机抽出一部分接受干预,另一部分暂不接受,过段时间对比两组。因为分组是抽签定的,两组人在其他方面平均说来一模一样,结果的差异就是干预的**真实效果**——而不是「参加项目的人本来就更上进」「活下来的项目本来就选在好地方」这类假象。"
+    },
+    {
+      "type": "figure",
+      "ftype": "流程图",
+      "caption": "随机对照试验(RCT):用抽签排除「参加者本来就不一样」的干扰,让两组结果的差异只能归因于干预本身。",
+      "svg": "<svg viewBox='0 0 560 320' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><rect x='180' y='16' width='200' height='40' rx='8' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1'/><text x='280' y='41' text-anchor='middle' style='font-size:13px;font-weight:bold;fill:var(--ink)'>符合条件的人群</text><line x1='280' y1='56' x2='280' y2='74' style='stroke:var(--ink-faint);stroke-width:1'/><polygon points='280,80 275,71 285,71' style='fill:var(--ink-faint)'/><rect x='170' y='82' width='220' height='40' rx='20' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='280' y='107' text-anchor='middle' style='font-size:13px;font-weight:bold;fill:var(--cinnabar)'>随机分组(抽签,不挑人)</text><text x='402' y='98' style='font-size:11px;fill:var(--ink-faint)'>抽签保证两组</text><text x='402' y='114' style='font-size:11px;fill:var(--ink-faint)'>其他条件平均相同</text><path d='M280 122 L280 140 L155 140 L155 152' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><polygon points='155,158 150,149 160,149' style='fill:var(--ink-faint)'/><path d='M280 140 L405 140 L405 152' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><polygon points='405,158 400,149 410,149' style='fill:var(--ink-faint)'/><rect x='60' y='160' width='190' height='52' rx='8' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1'/><text x='155' y='181' text-anchor='middle' style='font-size:13px;font-weight:bold;fill:var(--ink)'>A组:接受干预</text><text x='155' y='201' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>例:发放免费蚊帐</text><rect x='310' y='160' width='190' height='52' rx='8' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1'/><text x='405' y='181' text-anchor='middle' style='font-size:13px;font-weight:bold;fill:var(--ink)'>B组:不接受(对照)</text><text x='405' y='201' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>其余一切照旧</text><path d='M155 212 L155 232 L272 232' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><path d='M405 212 L405 232 L288 232' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><line x1='280' y1='232' x2='280' y2='244' style='stroke:var(--ink-faint);stroke-width:1'/><polygon points='280,250 275,241 285,241' style='fill:var(--ink-faint)'/><rect x='120' y='250' width='320' height='54' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='280' y='272' text-anchor='middle' style='font-size:13px;font-weight:bold;fill:var(--ink)'>一段时间后,对比两组结果</text><text x='280' y='293' text-anchor='middle' style='font-size:12px;fill:var(--cinnabar)'>差异 = 这项干预的真实效果</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "不过要立刻泼一盆冷水:**RCT 不是万能药**。它能回答的天然是具体、局部的问题——「这个补贴方案在这批村子里提高了入学率」;它回答不了「资本主义好不好」「民主是否促进增长」这类宏观争论,一个试验的结论从肯尼亚搬到印度也未必照样成立。作者对这些边界并不讳言。RCT 的价值不在于终结所有争论,而在于把讨论的重心从「你站哪边」拉回到「什么管用」——一次回答一小块,像拼图一样拼出关于贫穷的知识。"
+    },
+    {
+      "type": "h2",
+      "text": "真正的敌人:三个 I"
+    },
+    {
+      "type": "p",
+      "text": "那么,既然方法是现成的,为什么糟糕的扶贫政策还满地都是?作者给出一个贯穿全书的诊断框架——政策失败的病根,往往不是钱不够,也不一定是有人使坏,而是**三个 I**。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "三个I:政策失败更常见的原因,是没人知道、没人想知道、或者知道了也懒得改——这是贯穿全书十章的复盘工具。",
+      "svg": "<svg viewBox='0 0 560 330' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='28' text-anchor='middle' style='font-size:15px;font-weight:bold;fill:var(--ink)'>扶贫真正的敌人——三个 I</text><rect x='22' y='52' width='165' height='112' rx='8' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1'/><text x='104' y='82' text-anchor='middle' style='font-size:14px;font-weight:bold;fill:var(--cinnabar)'>无知 Ignorance</text><text x='104' y='108' text-anchor='middle' style='font-size:11.5px;fill:var(--ink-soft)'>不知道什么措施</text><text x='104' y='126' text-anchor='middle' style='font-size:11.5px;fill:var(--ink-soft)'>真正有效</text><text x='104' y='150' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>例:凭想当然定政策</text><rect x='197' y='52' width='165' height='112' rx='8' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1'/><text x='280' y='82' text-anchor='middle' style='font-size:14px;font-weight:bold;fill:var(--cinnabar)'>意识形态 Ideology</text><text x='280' y='108' text-anchor='middle' style='font-size:11.5px;fill:var(--ink-soft)'>带着立场找证据</text><text x='280' y='126' text-anchor='middle' style='font-size:11.5px;fill:var(--ink-soft)'>而非让证据说话</text><text x='280' y='150' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>例:先站队再挑案例</text><rect x='372' y='52' width='165' height='112' rx='8' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1'/><text x='455' y='82' text-anchor='middle' style='font-size:14px;font-weight:bold;fill:var(--cinnabar)'>惰性 Inertia</text><text x='455' y='108' text-anchor='middle' style='font-size:11.5px;fill:var(--ink-soft)'>机构照旧办事</text><text x='455' y='126' text-anchor='middle' style='font-size:11.5px;fill:var(--ink-soft)'>路径依赖,不愿改变</text><text x='455' y='150' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>例:无效项目年年续</text><line x1='104' y1='164' x2='266' y2='218' style='stroke:var(--ink-faint);stroke-width:1'/><line x1='280' y1='164' x2='280' y2='212' style='stroke:var(--ink-faint);stroke-width:1'/><polygon points='280,218 275,209 285,209' style='fill:var(--ink-faint)'/><line x1='455' y1='164' x2='294' y2='218' style='stroke:var(--ink-faint);stroke-width:1'/><rect x='205' y='220' width='150' height='44' rx='8' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar);stroke-width:1.5'/><text x='280' y='247' text-anchor='middle' style='font-size:14px;font-weight:bold;fill:var(--cinnabar)'>政策失败</text><text x='280' y='296' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>全书复盘工具:每见一个失败的扶贫案例,先问一句</text><text x='280' y='318' text-anchor='middle' style='font-size:12.5px;font-weight:bold;fill:var(--ink)'>「这里是哪个 I 在作怪?」</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**无知**(Ignorance):不知道什么真正有效。不是装傻,是真不知道——在实验方法兴起之前,连「多发教科书能不能提高成绩」这种基础问题都没人认真验证过,大量政策建立在想当然之上。**意识形态**(Ideology):带着立场找证据。先信了「援助万能」或「市场万能」,再回头挑对自己有利的故事——证据成了弹药,而不是裁判。**惰性**(Inertia):机构照旧办事。一个项目哪怕早就被证明无效,只要它昨天在做、预算里有它、没人愿意承担撤掉它的责任,它明天就还会继续做下去。"
+    },
+    {
+      "type": "quote",
+      "original": "意识形态、无知与惰性——这三个「I」——常常能解释政策为什么失败。",
+      "translation": "这是贯穿全书的分析工具。后面九章每讲到一个失败案例,都可以回头问一句:这里是哪个 I 在作怪?多数时候,不止一个。"
+    },
+    {
+      "type": "p",
+      "text": "这个框架的好处在于,它把「政策失败」从一出道德剧变成了一个工程问题。失败不一定需要坏人,更常见的是没人知道、没人想知道、或者知道了也懒得改。相应地,改进也不必等一场制度革命——**把无知换成证据,把立场换成好奇,把惯性换成一次次小规模的试错**,边际上的改善就会一点点累积起来。这也是整本书的基调:不许诺终结贫困的银弹,只积累「在这件事上,这样做更有效」的可靠知识。"
+    },
+    {
+      "type": "h2",
+      "text": "带着什么往下读"
+    },
+    {
+      "type": "p",
+      "text": "最后一个研读提醒。这本书写于 2011 年前后,它批评的萨克斯与伊斯特利之争,代表的是那个年代国际援助辩论的语境;此后发展经济学在这条路上继续演进——两位作者与合作者克雷默在 2019 年因这套实验方法获得诺贝尔经济学奖,而 RCT 本身也持续收到方法论上的批评(外部效度、伦理边界、成本)。所以不必把这一章当「终极答案」,把它当**一代研究者对上一代辩论方式的纠偏**,更为准确。"
+    },
+    {
+      "type": "p",
+      "text": "但那套过滤器不会过时:遇到宏大叙事,先问它背后是哪件具体的事;遇到「有效/无效」的断言,先问证据长什么样;遇到失败,先问是哪个 I 在作怪。带着这三个习惯,就可以进入下一章了——第一站是最古老的直觉:穷人吃不饱饭,真的是因为买不起食物吗?"
+    }
+  ]
+}

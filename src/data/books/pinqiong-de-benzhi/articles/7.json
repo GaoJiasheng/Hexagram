@@ -1,0 +1,146 @@
+{
+ "title": "贷款给穷人：不那么简单的经济学",
+ "subtitle": "从「喀布尔来的人」到格莱珉银行——小额信贷的神话与实证｜《贫穷的本质》第7章解读",
+ "centralIdea": "穷人不是不需要贷款，而是被正规金融拒之门外：没有抵押、没有信用记录，银行不愿伸手，他们只能求助利率高得惊人的民间放贷人。高利贷的「贵」，一半是信息不对称与催收成本堆出来的风险溢价，一半是压在穷人身上的真实重负。格莱珉银行式的小额信贷曾被讲成「一笔小贷款让穷人创业翻身」的奇迹，但严谨的随机对照试验测出来的效果要平淡得多：它确实帮穷人平滑消费、维持小生意，却没有普遍造就企业家。小额信贷是一件有用的金融工具，不是脱贫神器——认清它的作用边界，才是对它真正的尊重。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "清晨四点，印度金奈的菜贩从批发商手里赊来一千卢比的蔬菜，傍晚收摊时连本带息还回去——利息将近百分之五。不是年息，不是月息，是**一天**百分之五，折成年利率是个天文数字。你大概会问：她为什么不去银行贷一笔便宜钱？为什么不咬牙攒下本钱，摆脱这种日复一日的盘剥？这一章，班纳吉和迪弗洛就从这个问题讲起：穷人的借贷世界如何运转，高利贷为什么高得离谱却禁而不绝，以及那个曾经拿到诺贝尔和平奖的著名答案——小额信贷——到底灵不灵。"
+  },
+  {
+   "type": "h2",
+   "text": "喀布尔来的人：穷人的借贷世界"
+  },
+  {
+   "type": "p",
+   "text": "先解释章题里两个奇怪的名字。「喀布尔来的人」是南亚对一类流动放贷人的旧称——泰戈尔写过同名小说，来自阿富汗的行商走村串户，卖干果，也放债收息；「太监讨债人」则是印度一些地方真实存在的行当：放贷人雇佣海吉拉（变性人群体）上门讨债，他们往债户门口一站、当众喧闹，借社会的羞辱心理逼人还钱。这两个形象合在一起，勾勒出穷人借贷世界的底色：**没有法院、没有抵押物，债务靠人情、声誉和羞耻心来执行**。"
+  },
+  {
+   "type": "p",
+   "text": "作者的调查数据也印证了这一点：在他们访问的贫困家庭里，负债的比例很高，但债主几乎都不是银行，而是亲戚、店主、雇主和职业放贷人。正规银行的大门对穷人形同虚设：没有地契这样的抵押物，没有工资单和信用记录，一笔几百卢比的小贷款，银行光是审核和跟进的人力成本就不划算；信贷员也不愿为一堆注定麻烦的小额账户担上坏账的责任。于是一个悖论出现了：**越是穷、越是急需资金的人，能借到的钱越贵**。"
+  },
+  {
+   "type": "p",
+   "text": "也不是没人试过让银行下乡。印度政府曾强制银行在农村设点、向「优先部门」放贷，但效果不佳：信贷员发放小额贷款吃力不讨好，坏账一堆；每逢选举，政客还热衷于承诺「免除农民债务」，一句话就能把银行的账本变成废纸。银行学到的教训是离穷人越远越安全，而穷人学到的教训是：真正靠得住的，还是村口那个利息吓人、但随叫随到的放贷人。"
+  },
+  {
+   "type": "figure",
+   "ftype": "阶梯图",
+   "caption": "同一笔周转钱，四种价格：正规信贷够不着的地方，利率一级级抬上去——越穷的人，借钱越贵。",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='26' text-anchor='middle' style='fill:var(--ink)' font-size='16'>穷人的借钱价目表</text><line x1='30' y1='248' x2='530' y2='248' style='stroke:var(--line)' stroke-width='1.5'/><rect x='45' y='218' width='90' height='30' rx='4' style='fill:none;stroke:var(--line)' stroke-width='1.5' stroke-dasharray='5 4'/><text x='90' y='238' text-anchor='middle' style='fill:var(--ink-faint)' font-size='12'>够不着</text><text x='90' y='266' text-anchor='middle' style='fill:var(--ink)' font-size='13'>正规银行</text><text x='90' y='284' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>要抵押·要信用记录</text><rect x='170' y='188' width='90' height='60' rx='4' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='215' y='178' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12'>年化约两三成</text><text x='215' y='266' text-anchor='middle' style='fill:var(--ink)' font-size='13'>小额信贷</text><text x='215' y='284' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>小组联保·无需抵押</text><rect x='295' y='128' width='90' height='120' rx='4' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='340' y='118' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12'>年化几十到翻倍</text><text x='340' y='266' text-anchor='middle' style='fill:var(--ink)' font-size='13'>民间放贷人</text><text x='340' y='284' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>熟人盯梢·上门催收</text><rect x='420' y='58' width='90' height='190' rx='4' style='fill:var(--cinnabar);opacity:0.82'/><text x='465' y='48' text-anchor='middle' style='fill:var(--cinnabar)' font-size='12'>日息近 5%</text><text x='465' y='266' text-anchor='middle' style='fill:var(--ink)' font-size='13'>菜贩隔夜赊购</text><text x='465' y='284' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>年化是天文数字</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "高利贷的经济学：贵得有道理，也贵得沉重"
+  },
+  {
+   "type": "p",
+   "text": "面对动辄年化百分之四五十、甚至翻倍的民间利率，最顺口的解释是「放贷人贪婪」。但作者算了一笔更冷静的账：放贷给穷人，贵有贵的道理。放出一笔贷款，要打听借款人的底细、盯着钱的去向、赖账时上门催收——这些功夫几乎是固定的，贷一百块和贷一万块花的力气差不多。摊到小额贷款上，这笔固定成本的占比就高得吓人。这也解释了为什么放贷人多是本村本地的熟人：只有他们摸得清你的底细，收得回你的钱。"
+  },
+  {
+   "type": "p",
+   "text": "更麻烦的是一个自我强化的循环：利率越高，借款人越还不起、也越想赖账；放贷人越怕赖账，就越要花钱盯梢；盯梢的成本，又只能加回到利率里。所以高利贷的「高」，一大半是**信息不对称加执行成本堆出来的风险溢价**，而不单纯是垄断者的黑心。"
+  },
+  {
+   "type": "quote",
+   "original": "利率越高，借款人越想赖账；越怕赖账，就越要花钱盯着；盯得越紧，成本越高——利率只好再往上加。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "但「有道理」不等于「不沉重」。理解高利贷的成本逻辑，不是替它开脱：对借款人而言，天价利息实实在在地吞噬着本已微薄的收入——一场急病、一次歉收借下的债，可能要用几年时间去还。穷人比富人更需要信贷来熨平生活的颠簸，却要为它付出高得多的价格，这正是贫穷陷阱的又一道闸门。"
+  },
+  {
+   "type": "figure",
+   "ftype": "循环图",
+   "caption": "高利贷为什么降不下来：信息不对称与催收成本互相喂养，把利率一圈圈推高。",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><defs><marker id='pq7arrow' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto-start-reverse'><path d='M0 0 L10 5 L0 10 z' style='fill:var(--cinnabar)'/></marker></defs><text x='280' y='158' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>高利贷的自我强化循环</text><rect x='185' y='30' width='190' height='44' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='280' y='57' text-anchor='middle' style='fill:var(--ink)' font-size='14'>没抵押·没信用记录</text><rect x='370' y='128' width='170' height='44' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='455' y='149' text-anchor='middle' style='fill:var(--ink)' font-size='14'>违约风险高</text><text x='455' y='166' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>放贷人不敢轻信</text><rect x='185' y='226' width='190' height='44' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='280' y='247' text-anchor='middle' style='fill:var(--ink)' font-size='14'>盯梢与催收成本高</text><text x='280' y='264' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>成本摊进利息</text><rect x='20' y='128' width='170' height='44' rx='8' style='fill:none;stroke:var(--cinnabar)' stroke-width='2'/><text x='105' y='149' text-anchor='middle' style='fill:var(--cinnabar)' font-size='14'>利率被抬得更高</text><text x='105' y='166' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>还款更难·更想赖账</text><path d='M378 55 Q470 70 458 124' fill='none' style='stroke:var(--cinnabar)' stroke-width='1.8' marker-end='url(#pq7arrow)'/><path d='M452 175 Q450 240 380 246' fill='none' style='stroke:var(--cinnabar)' stroke-width='1.8' marker-end='url(#pq7arrow)'/><path d='M182 246 Q105 238 104 176' fill='none' style='stroke:var(--cinnabar)' stroke-width='1.8' marker-end='url(#pq7arrow)'/><path d='M108 124 Q112 62 181 54' fill='none' style='stroke:var(--cinnabar)' stroke-width='1.8' marker-end='url(#pq7arrow)'/></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "格莱珉的故事：27 美元与诺贝尔和平奖"
+  },
+  {
+   "type": "p",
+   "text": "既然症结是「银行不愿贷、高利贷太贵」，那能不能造一种专为穷人设计的银行？一九七六年，孟加拉经济学教授穆罕默德·尤努斯在乔布拉村掏出 27 美元，借给 42 位做竹凳的妇女，让她们摆脱中间商的盘剥——这就是格莱珉（乡村）银行的起点。它的设计精巧地绕开了正规银行的死结：**不要抵押物，让借款人几人一组互相担保**；贷款专门面向穷人、尤其是农村妇女；每周小额还款，违约率据称低到接近于零。"
+  },
+  {
+   "type": "p",
+   "text": "这个模式随后在全球复制开来：到本书写作时，世界各地的小额信贷机构已经服务着上亿借款人，数以亿计从未被银行正眼看过的穷人，第一次拿到了比高利贷便宜得多的正规贷款。二〇〇六年，尤努斯与格莱珉银行同获诺贝尔和平奖，「给穷人一笔小贷款，他们就能靠双手创业翻身」的故事传遍世界，小额信贷被捧成了「消除贫困的银行学革命」，各国政要、明星与捐款人趋之若鹜。"
+  },
+  {
+   "type": "quote",
+   "original": "这个故事太动人了：一笔小小的贷款，就能唤醒沉睡在每个穷人身上的企业家。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "证据说话：RCT 测出来的小额信贷"
+  },
+  {
+   "type": "p",
+   "text": "但故事动人，不等于事实如此。还记得第 1 章批评的「意识形态」陷阱吗——带着「一定有效」的信念做事，而不是让证据说话。小额信贷恰好撞在这个问题上：它高歌猛进扩张了三十年，竟然一直没有一个严谨的效果评估。作者的团队与印度小额信贷机构斯潘达纳合作，在海得拉巴做了第一批随机对照试验：一百多个街区随机分成两组，一半开设信贷网点，一半暂不进入，一两年后比较两边家庭的变化。"
+  },
+  {
+   "type": "p",
+   "text": "结果既不是奇迹，也不是灾难。拿到贷款的街区里，确实有更多家庭开起小生意、添置了缝纫机之类的耐用品，一些家庭削减了烟酒零食的开销，把钱挪去还贷和投资——小额信贷显然**被用起来了，而且用得相当理性**。但另一面：平均消费没有显著提高；健康、教育、女性地位这些「脱贫叙事」里的招牌指标，短期内几乎纹丝不动。真正靠贷款把生意做大、收入明显上台阶的，只是少数本来就有经营能力和市场机会的人。对大多数借款人来说，小额信贷是雪中送炭的周转工具，而不是命运的转折点。"
+  },
+  {
+   "type": "p",
+   "text": "这个结论发表时，在小额信贷业界掀起了不小的风波——从业者觉得被泼了冷水，有人干脆质疑评估本身。但作者的态度很清楚：承认真实效果，才是一个行业走向成熟的起点。事后看，这项研究也经受住了检验：后来在多个国家重复的同类随机试验，结论与海得拉巴大体一致——温和、有限、因人而异，唯独没有奇迹。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "caption": "美好叙事与严谨证据的落差：小额信贷真实有用，但远没有故事讲得那么戏剧化。",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><rect x='25' y='20' width='245' height='260' rx='10' style='fill:none;stroke:var(--cinnabar)' stroke-width='2' stroke-dasharray='6 4'/><text x='147' y='50' text-anchor='middle' style='fill:var(--cinnabar)' font-size='15'>故事里的小额信贷</text><text x='147' y='72' text-anchor='middle' style='fill:var(--ink-faint)' font-size='11'>美好叙事</text><text x='147' y='110' text-anchor='middle' style='fill:var(--ink)' font-size='13'>一笔小贷款</text><text x='147' y='134' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12'>↓</text><text x='147' y='158' text-anchor='middle' style='fill:var(--ink)' font-size='13'>人人创业当老板</text><text x='147' y='182' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12'>↓</text><text x='147' y='206' text-anchor='middle' style='fill:var(--ink)' font-size='13'>收入跃升</text><text x='147' y='230' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12'>↓</text><text x='147' y='254' text-anchor='middle' style='fill:var(--ink)' font-size='13'>快速脱贫</text><rect x='290' y='20' width='245' height='260' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='412' y='50' text-anchor='middle' style='fill:var(--ink)' font-size='15'>RCT 测到的小额信贷</text><text x='412' y='72' text-anchor='middle' style='fill:var(--ink-faint)' font-size='11'>严谨证据</text><text x='412' y='110' text-anchor='middle' style='fill:var(--ink)' font-size='13'>平滑消费·应对急用 ✓</text><text x='412' y='146' text-anchor='middle' style='fill:var(--ink)' font-size='13'>小生意维持·小幅扩张 ✓</text><text x='412' y='182' text-anchor='middle' style='fill:var(--ink)' font-size='13'>少数能人显著获益 ✓</text><text x='412' y='218' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>平均收入短期无显著变化</text><text x='412' y='254' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>健康·教育指标几乎不动</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "为什么造不出企业家大军"
+  },
+  {
+   "type": "p",
+   "text": "为什么会这样？作者给出的解释很有意思：小额信贷的成功秘诀，恰恰限制了它的想象空间。近乎零违约靠的是**纪律**——放款没几天就开始还款、每周小组当面缴款、谁赖账全组连坐。这套纪律筛选出的是稳妥的借款人和稳妥的用途：进货、周转、修屋顶。而真正的创业是要冒险的——钱砸下去几个月没有回头钱，还可能血本无归。一个不容许失败的贷款制度，天然容不下需要失败空间的创业。"
+  },
+  {
+   "type": "p",
+   "text": "这里还有一个扎心的对照：民间放贷人贵归贵，却**灵活**——这个月手头紧可以晚几天还，谈得拢还能再借一笔；小额信贷便宜，纪律却铁板一块，还款日就是还款日。这份灵活对生活动荡的穷人来说太重要了，以至于不少借款人一边用着小额贷款，一边照旧找放贷人周转。可小额信贷机构也没法学这份灵活：一旦允许通融，零违约的纪律就会松动，低利率也就维持不住——便宜与灵活，两头难以兼得。"
+  },
+  {
+   "type": "p",
+   "text": "所以小额信贷更像什么？更像**一件顺手的金融工具**：它把高利贷从穷人的生活里挤出去一截，让急用钱时有处可借、让小生意转得动。对世世代代只能求告放贷人的家庭来说，这已经是了不起的贡献——只是离「人人创业、批量脱贫」的神话，还隔着很远的距离。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "把期待放对位置：小额信贷是金融工具，不是脱贫神器——认清边界不是贬低，而是实事求是。",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='34' text-anchor='middle' style='fill:var(--ink)' font-size='16'>小额信贷的作用边界</text><rect x='150' y='52' width='260' height='40' rx='20' style='fill:var(--cinnabar);opacity:0.85'/><text x='280' y='78' text-anchor='middle' style='fill:var(--paper-raised)' font-size='14'>金融工具，而非脱贫神器</text><line x1='280' y1='92' x2='150' y2='122' style='stroke:var(--line)' stroke-width='1.5'/><line x1='280' y1='92' x2='410' y2='122' style='stroke:var(--line)' stroke-width='1.5'/><rect x='40' y='122' width='220' height='150' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='150' y='150' text-anchor='middle' style='fill:var(--ink)' font-size='14'>它擅长的</text><text x='150' y='184' text-anchor='middle' style='fill:var(--ink)' font-size='13'>✓ 替代高利贷，借钱更便宜</text><text x='150' y='214' text-anchor='middle' style='fill:var(--ink)' font-size='13'>✓ 平滑消费，应对突发开支</text><text x='150' y='244' text-anchor='middle' style='fill:var(--ink)' font-size='13'>✓ 维持既有小生意的周转</text><rect x='300' y='122' width='220' height='150' rx='10' style='fill:none;stroke:var(--line)' stroke-width='1.5' stroke-dasharray='6 4'/><text x='410' y='150' text-anchor='middle' style='fill:var(--ink)' font-size='14'>别指望它的</text><text x='410' y='184' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>✕ 批量造就成功企业家</text><text x='410' y='214' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>✕ 收入普遍大幅跃升</text><text x='410' y='244' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>✕ 一笔贷款快速脱贫</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "有用，但不是神器"
+  },
+  {
+   "type": "p",
+   "text": "这一章最值得带走的，是那种**不站队的清醒**。小额信贷风靡世界的时候，被捧成消除贫困的万灵药；后来印度安得拉邦爆出过度放贷与借款人自杀的风波，它又被骂成穿西装的高利贷。作者两边都不跟：证据显示它有用——为从未享受过正规信贷的亿万人群打开了一扇门，这本身就是重要的金融普惠创新；证据也显示它有限——别指望它批量制造企业家。把它放回「有用的工具」这个位置，恰恰是对它最公道的评价。"
+  },
+  {
+   "type": "quote",
+   "original": "小额信贷没有创造奇迹，也没有酿成灾难；它只是没能成为人们希望它成为的那种东西。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "研读提醒：本章批评的对象，是「小额信贷=脱贫神器」这种过度简化的公众叙事，而不是小额信贷机构本身——格莱珉模式至今仍是金融普惠史上的重要创新，只是它的效果需要用更审慎、更符合实证的眼光看待。读这一章，练的还是全书从头到尾的那门看家功夫：**对再动人的故事，也要多问一句——证据呢？**"
+  },
+  {
+   "type": "refs",
+   "items": [
+    "阿比吉特·班纳吉、埃斯特·迪弗洛《贫穷的本质》（Poor Economics, 2011）第7章「贷款给穷人：不那么简单的经济学」",
+    "班纳吉、迪弗洛等人与印度小额信贷机构斯潘达纳（Spandana）合作的海得拉巴随机对照试验",
+    "穆罕默德·尤努斯与格莱珉银行（2006 年诺贝尔和平奖）"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,150 @@
+{
+ "title": "节省一砖一瓦",
+ "subtitle": "穷人不是不想存钱,是没有称手的存钱工具",
+ "centralIdea": "「穷人不储蓄」是个误解:很多贫困家庭为盖房、子女教育、应急攒钱的意愿明确而强烈,真正的障碍是环境——银行网点缺失、开户门槛把小储户挡在门外、现金放在手边既不安全又考验自制力,还有最隐蔽的「人情税」:财富一旦外显,就很难拒绝亲友的借钱请求,攒了也保不住,干脆不攒。应对之道是各种「承诺装置」:轮转储蓄会靠社会压力、锁盒与惩罚账户靠取款成本、手机银行靠低门槛和隐私,本质都是让自己更难反悔、让钱更不显眼。而「一砖一瓦」攒钱盖房——现金一到手就换成砖囤起来——正是普通人自己发明的最朴素的承诺装置。储蓄难的根源不在意愿,而在工具与机制。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "在很多发展中国家的村庄和城郊,你会看到一种奇怪的风景:到处是盖了一半的房子——墙砌到一人高就停了,钢筋裸露在外,窗洞空着,一放就是好几年。外来者看了常常摇头:穷人真是没规划,钱没攒够就开工。班纳吉和迪弗洛在这一章里给出的答案恰恰相反:**那堵没砌完的墙,可能是你能看到的最聪明的储蓄账户。**这一章要讲的就是:穷人不是不想存钱、不会存钱,而是他们存钱的环境,处处是漏洞。"
+  },
+  {
+   "type": "h2",
+   "text": "先摆位置:上一章讲借钱,这一章讲存钱"
+  },
+  {
+   "type": "p",
+   "text": "上一章讲的是穷人借钱有多难、多贵——小额信贷为什么帮得上忙,又为什么没有想象中神奇。这一章翻到硬币的另一面:存钱。按理说,存钱应该比借钱容易得多:借钱得有人肯借给你,存钱只需要你自己把钱留下来,不用任何人批准。可作者用大量田野调查告诉我们一个反直觉的事实:**对穷人来说,存钱有时比借钱还难。**难点不在于「没钱可存」,而在于「存下的钱守不住」。"
+  },
+  {
+   "type": "h2",
+   "text": "「穷人不储蓄」是个误解"
+  },
+  {
+   "type": "p",
+   "text": "流行的说法是:穷人过一天算一天,挣多少花多少,「没有能力储蓄」,所以才穷。但作者在各国的调查里看到的是另一幅图景:**贫困家庭往往有非常明确、非常强烈的储蓄意愿**——为盖一间自己的房子,为孩子的学费,为婚丧嫁娶,为一场说来就来的疾病。问题从来不是「想不想存」,而是「有没有地方好好存」。"
+  },
+  {
+   "type": "p",
+   "text": "先数外部的坎。第一道是**网点**:偏远的村庄方圆几十公里没有一家正规银行,存一笔钱要搭上一天的路费和工时。第二道是**门槛**:即便有银行,开户手续、最低存款额、账户管理费,对一个每天生活费只有一两美元的家庭来说,等于银行在门口挂了块牌子——「本店不欢迎小额储户」。于是,大多数穷人的「储蓄账户」只剩一个:把现金藏在家里。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "存钱路上的四道坎:前两道挡在门外,后两道藏在身边",
+   "svg": "<svg viewBox=\"0 0 640 280\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"320\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">存钱路上的四道坎</text><g font-size=\"15\"><rect x=\"36\" y=\"60\" width=\"128\" height=\"104\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"100\" y=\"95\" text-anchor=\"middle\" style=\"fill:var(--ink)\">没有网点</text><text x=\"100\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">最近的银行</text><text x=\"100\" y=\"140\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">远在几十公里外</text><rect x=\"190\" y=\"60\" width=\"128\" height=\"104\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"254\" y=\"95\" text-anchor=\"middle\" style=\"fill:var(--ink)\">开户门槛</text><text x=\"254\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">手续繁琐</text><text x=\"254\" y=\"140\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">最低存款额挡路</text><rect x=\"344\" y=\"60\" width=\"128\" height=\"104\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"408\" y=\"95\" text-anchor=\"middle\" style=\"fill:var(--ink)\">自制力</text><text x=\"408\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">现金在手边</text><text x=\"408\" y=\"140\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">诱惑随时招手</text><rect x=\"498\" y=\"60\" width=\"128\" height=\"104\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"2\"/><text x=\"562\" y=\"95\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\">人情税</text><text x=\"562\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">藏不住的钱</text><text x=\"562\" y=\"140\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">很难守得住</text></g><line x1=\"36\" y1=\"184\" x2=\"318\" y2=\"184\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"177\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">外部的坎:银行把小储户挡在门外</text><line x1=\"344\" y1=\"184\" x2=\"626\" y2=\"184\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"485\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">内部与人际的坎:钱在手边留不住</text><text x=\"320\" y=\"248\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"13\">意愿从来不是问题——工具和环境才是</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "而现金放在家里,又撞上第三道坎:**它太容易消失了。**会被偷,会被家人挪用,更多时候是被自己花掉——手头一有闲钱,一杯茶、一点糖、一件小东西,诱惑随时在招手。作者反复强调,这不是穷人特有的道德缺陷,而是**所有人共有的人性弱点**。区别在于:我们身边装满了替我们挡诱惑的装置——工资自动进卡、养老金自动扣款、定期存款取出来麻烦;而他们的钱,就赤裸裸地躺在枕头底下,和人性短兵相接。"
+  },
+  {
+   "type": "h2",
+   "text": "人情税:最隐蔽的一道坎"
+  },
+  {
+   "type": "p",
+   "text": "第四道坎最微妙,也最有社会学味道。在关系紧密的贫困社区,几乎没有财务隐私可言:谁家卖了牲口、领了工钱、收了汇款,消息半天就能传遍全村。而一旦大家知道你手头宽裕,亲戚朋友的借钱请求就会接踵而至——碍于人情,你几乎不可能拒绝,因为你也有求到别人头上的一天。这张互相借来借去的关系网,平时是穷人重要的非正式保险,但对储蓄来说,它像一种**「人情税」**:攒下的钱,一旦被看见,就开始漏。"
+  },
+  {
+   "type": "p",
+   "text": "换成我们熟悉的场景:你悄悄涨了工资,消息传开后,总有朋友来找你「周转一下」,你不好意思开口拒绝,借出去的钱七零八落回不来。几次之后你学乖了——**干脆装穷**,谁问都说「我最近也紧张」。贫困社区里的人做的是同一道题,只是他们的题目难得多:村庄那么小,装穷装不了多久。"
+  },
+  {
+   "type": "quote",
+   "original": "攒钱最大的敌人,有时不是没钱,而是所有人都知道你有钱。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "这就带来一个反直觉的结论:**人情税抑制了储蓄本身。**既然攒下来也保不住,不如趁早花掉——修修房子、办一场像样的仪式、买点耐用的东西;或者干脆把钱藏到谁也不知道的地方。很多在外人看来「不理性」的消费,其实是对人情税的理性回避。"
+  },
+  {
+   "type": "figure",
+   "ftype": "循环图",
+   "caption": "人情税的循环:财富一外显,储蓄的动力就被一圈圈消耗掉",
+   "svg": "<svg viewBox=\"0 0 560 330\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"pq8f2\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" style=\"fill:var(--cinnabar)\"/></marker></defs><g font-size=\"14\"><rect x=\"205\" y=\"28\" width=\"150\" height=\"52\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"50\" text-anchor=\"middle\" style=\"fill:var(--ink)\">手头宽裕</text><text x=\"280\" y=\"70\" text-anchor=\"middle\" style=\"fill:var(--ink)\">被大家看见</text><rect x=\"400\" y=\"140\" width=\"142\" height=\"56\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"471\" y=\"163\" text-anchor=\"middle\" style=\"fill:var(--ink)\">亲友开口</text><text x=\"471\" y=\"185\" text-anchor=\"middle\" style=\"fill:var(--ink)\">借钱周转</text><rect x=\"205\" y=\"252\" width=\"150\" height=\"52\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"274\" text-anchor=\"middle\" style=\"fill:var(--ink)\">碍于情面</text><text x=\"280\" y=\"294\" text-anchor=\"middle\" style=\"fill:var(--ink)\">很难拒绝</text><rect x=\"18\" y=\"140\" width=\"150\" height=\"56\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"93\" y=\"163\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">攒了也保不住</text><text x=\"93\" y=\"185\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">花掉或藏起来</text></g><text x=\"280\" y=\"168\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"20\">人情税</text><text x=\"280\" y=\"192\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">财富一外显,储蓄就开始漏</text><path d=\"M362 66 Q448 84 466 134\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1.8\" marker-end=\"url(#pq8f2)\"/><path d=\"M468 202 Q446 254 362 278\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1.8\" marker-end=\"url(#pq8f2)\"/><path d=\"M198 278 Q112 254 92 202\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1.8\" marker-end=\"url(#pq8f2)\"/><path d=\"M92 134 Q112 84 198 66\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1.8\" marker-end=\"url(#pq8f2)\"/></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "承诺装置:把未来那个意志薄弱的自己捆住"
+  },
+  {
+   "type": "p",
+   "text": "面对内有诱惑、外有人情的夹击,穷人和研究者们各自摸索出了一类聪明的办法,行为经济学管它叫**「承诺装置」(commitment device)**——主动给自己套上枷锁,让「反悔」变得困难。"
+  },
+  {
+   "type": "p",
+   "text": "最古老的一种是**轮转储蓄互助会**(ROSCA),在世界各地的贫困社区被反复独立发明:一群人定期凑一笔钱,每期由其中一人取走全部,轮流坐庄。它没有利息,甚至有风险,却经久不衰——因为它解决的不是收益问题,而是自制力问题:**你可以对自己赖账,但没法对全村人赖账。**每到缴款日,社会压力替你挡住了那些诱惑。"
+  },
+  {
+   "type": "p",
+   "text": "第二类是**锁盒和带惩罚机制的储蓄账户**:钱放进去,取出来要么物理上麻烦(比如锁盒的钥匙交给别人保管),要么心理上有代价(不到约定期限取款就要蒙受损失)。听起来像自虐,但人们愿意用——**人是清楚自己意志薄弱的,所以宁可花钱购买「不自由」。**"
+  },
+  {
+   "type": "p",
+   "text": "第三类是**移动银行、手机存款**这类技术手段:不用跑几十公里,存款门槛低到几乎为零;更妙的是它自带隐私——钱进了手机账户,不像现金和牲口那样显眼,人情税自然就轻了。技术在这里做到的不只是方便,而是**替储蓄穿上了一层隐身衣**。"
+  },
+  {
+   "type": "quote",
+   "original": "承诺装置的本质,是趁清醒的时候,把未来那个意志薄弱的自己捆住。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "caption": "三种承诺装置各锁一个漏洞,共享同一个设计逻辑",
+   "svg": "<svg viewBox=\"0 0 640 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"320\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">三种承诺装置,各锁一个漏洞</text><g font-size=\"15\"><rect x=\"24\" y=\"52\" width=\"184\" height=\"158\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"116\" y=\"82\" text-anchor=\"middle\" style=\"fill:var(--ink)\">轮转储蓄会</text><text x=\"116\" y=\"108\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">一群人定期凑钱</text><text x=\"116\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">轮流取走整笔</text><line x1=\"44\" y1=\"144\" x2=\"188\" y2=\"144\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"116\" y=\"168\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"12\">靠:社会压力</text><text x=\"116\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"12\">锁:半途而废</text><rect x=\"228\" y=\"52\" width=\"184\" height=\"158\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"320\" y=\"82\" text-anchor=\"middle\" style=\"fill:var(--ink)\">锁盒·惩罚账户</text><text x=\"320\" y=\"108\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">取钱不方便</text><text x=\"320\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">提前取有代价</text><line x1=\"248\" y1=\"144\" x2=\"392\" y2=\"144\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"320\" y=\"168\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"12\">靠:取款成本</text><text x=\"320\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"12\">锁:冲动消费</text><rect x=\"432\" y=\"52\" width=\"184\" height=\"158\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"524\" y=\"82\" text-anchor=\"middle\" style=\"fill:var(--ink)\">手机银行</text><text x=\"524\" y=\"108\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">存钱不用跑网点</text><text x=\"524\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">账户里的钱不显眼</text><line x1=\"452\" y1=\"144\" x2=\"596\" y2=\"144\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"524\" y=\"168\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"12\">靠:低门槛·隐私</text><text x=\"524\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"12\">锁:人情税</text></g><rect x=\"100\" y=\"236\" width=\"440\" height=\"34\" rx=\"17\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.2\"/><text x=\"320\" y=\"258\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"13\">共同逻辑:趁清醒时,把未来那个意志薄弱的自己捆住</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "把这三样摆在一起,你会看到同一个设计逻辑:**不假设人是完美理性的**,承认自制力有限、社会压力真实存在,然后用机制去补。这正是行为经济学「助推」思路在储蓄领域的落地——而且值得注意的是,穷人自己早就在用这些办法了,只是没人给它们起过学名。"
+  },
+  {
+   "type": "h2",
+   "text": "一砖一瓦:普通人发明的朴素金融学"
+  },
+  {
+   "type": "p",
+   "text": "现在可以回到开头那堵没砌完的墙了。很多贫困家庭盖房子,不是攒够整笔建房款再开工,而是**每攒够买几十块砖的钱,就先把砖买回来囤着**。砖有三个现金没有的好处:搬不走(小偷看不上),花不掉(集市不收砖),借不出去(亲戚开口,也没法借你两块砖去应急)。它是一种「锁死」的储蓄——本章的标题「节省一砖一瓦」,说的就是这个。"
+  },
+  {
+   "type": "quote",
+   "original": "那堵没砌完的墙不是烂尾,而是一本存折——每一块砖,都是一笔取不出来的存款。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "caption": "现金处处在漏,砖头把储蓄锁死——半拉子房子其实是一本存折",
+   "svg": "<svg viewBox=\"0 0 640 310\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"pq8f4\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" style=\"fill:var(--ink-soft)\"/></marker></defs><text x=\"165\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">现金放在手边</text><rect x=\"110\" y=\"64\" width=\"110\" height=\"56\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><text x=\"165\" y=\"97\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">现金</text><path d=\"M130 120 L90 170\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.5\" marker-end=\"url(#pq8f4)\"/><path d=\"M165 120 L165 172\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.5\" marker-end=\"url(#pq8f4)\"/><path d=\"M200 120 L240 170\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.5\" marker-end=\"url(#pq8f4)\"/><text x=\"78\" y=\"194\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">被偷走</text><text x=\"165\" y=\"196\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">被自己花掉</text><text x=\"252\" y=\"194\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">被亲友借走</text><text x=\"165\" y=\"240\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">钱在手边,处处在漏</text><line x1=\"320\" y1=\"28\" x2=\"320\" y2=\"282\" style=\"stroke:var(--line)\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/><text x=\"480\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\">换成砖囤起来</text><path d=\"M372 148 L372 96 L490 56 L608 96 L608 220\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\"/><text x=\"490\" y=\"130\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">每攒一笔,就多一块砖</text><g style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.5\"><rect x=\"372\" y=\"152\" width=\"56\" height=\"20\"/><rect x=\"432\" y=\"152\" width=\"56\" height=\"20\"/><rect x=\"402\" y=\"176\" width=\"56\" height=\"20\"/><rect x=\"462\" y=\"176\" width=\"56\" height=\"20\"/><rect x=\"522\" y=\"176\" width=\"56\" height=\"20\"/><rect x=\"372\" y=\"200\" width=\"56\" height=\"20\"/><rect x=\"432\" y=\"200\" width=\"56\" height=\"20\"/><rect x=\"492\" y=\"200\" width=\"56\" height=\"20\"/><rect x=\"552\" y=\"200\" width=\"56\" height=\"20\"/></g><text x=\"490\" y=\"250\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"12\">搬不走·花不掉·借不出——锁死的储蓄</text><text x=\"320\" y=\"296\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">把现金尽快换成不好变现的实物,是最朴素的承诺装置</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "顺带一提,这本书的封面用的是经济学里「贫困陷阱曲线」那个专业意象——S 形曲线、均衡点,学院派的语言;而这一章的主角,却是普通人在日常生活里自己发明的朴素金融学:凑会、锁盒、囤砖。两者摆在一起是个有趣的对照——**理解贫穷,既需要看得懂曲线,也需要看得见砖头。**"
+  },
+  {
+   "type": "h2",
+   "text": "这一章能给普通人什么"
+  },
+  {
+   "type": "p",
+   "text": "第一,**换一个解释储蓄差异的框架**。看到别人存不下钱(包括看到自己存不下钱),先别急着归因于「意志力差」。这一章递过来的镜子是:你能存下钱,很大程度上是因为别人替你装好了承诺装置——工资自动进卡、公积金强制缴存、定期存款取出来麻烦。环境和工具的差别,往往比意志的差别大得多。"
+  },
+  {
+   "type": "p",
+   "text": "第二,**给自己造承诺装置**。发薪日自动转一笔进不常动的账户;把想存的钱换成「取出来麻烦」的形态;把储蓄目标告诉一个会盯着你的朋友——这些做法和轮转储蓄会、锁盒、囤砖,在原理上一模一样:让反悔变难,让钱离手边远一点。"
+  },
+  {
+   "type": "p",
+   "text": "第三,一句研读提醒:本章写作于移动支付大规模普及之前,里面的具体障碍——网点、开户门槛、现金的显眼——在今天不少地方已经被一部手机深刻改写(这恰恰印证了作者当年对移动银行的判断)。读这一章,**把案例当成理解「储蓄行为背后心理与社会机制」的素材**,而不是当下各地现实的写照。机制是长寿的,案例会过时。"
+  },
+  {
+   "type": "h2",
+   "text": "收束:看见那堵墙"
+  },
+  {
+   "type": "p",
+   "text": "再看一眼那堵砌了一半的墙。它曾经被当成「穷人没规划」的证据;如今你知道,它是一个没有银行、没有隐私、没有自动扣款的人,能想出的最稳妥的存钱办法。**穷人和我们的差别,不在人性,也不在意愿,而在于谁的身边装了更多「帮你把钱留住」的装置。**看懂这一点,既是看懂贫穷的本质,也是看懂我们自己每一笔存款背后,那些沉默运转的机制。"
+  }
+ ]
+}
