@@ -272,6 +272,35 @@ function GearGrid() {
   )
 }
 
+// 母题:河流——几道横向水纹、一叶小舟漂在水面、一点朱色微光(呼应悉达多在河边听懂万物合一、成为船夫的顿悟)。
+function RiverFlow() {
+  const waves = [230, 262, 294, 326].map((y, i) => `M20,${y} Q95,${y - (13 - i * 2)} 160,${y} T280,${y + (i % 2 ? -5 : 5)}`)
+  const boat = 'M172,272 Q193,261 216,272 L207,280 L181,280 Z'
+  return (
+    <g>
+      {waves.map((d, i) => <path key={i} d={d} fill="none" stroke={CREAM} strokeOpacity={0.42 - i * 0.07} strokeWidth={i === 0 ? 1.5 : 1.1} />)}
+      <path d={boat} fill={CREAM} fillOpacity="0.55" />
+      <circle cx="218" cy="222" r="12" fill={CINNABAR} opacity="0.92" />
+    </g>
+  )
+}
+
+// 母题:贫困陷阱曲线——S 形曲线三次穿过 45° 对角参考线(经济学「贫困陷阱」经典图示:
+// 低位与高位是稳定均衡,中间朱点是决定命运的不稳定阈值),呼应全书对「穷人是否被困住」的核心追问。
+function PovertyCurve() {
+  const axis = 'M60,180 L60,380 L270,380'
+  const diag = 'M65,375 L255,195'
+  const sCurve = 'M78,368 C112,366 128,318 150,296 C186,258 216,232 250,206'
+  return (
+    <g>
+      <path d={axis} fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.3" strokeLinecap="round" />
+      <path d={diag} fill="none" stroke={CREAM} strokeOpacity="0.26" strokeWidth="1" strokeDasharray="3 5" />
+      <path d={sCurve} fill="none" stroke={CREAM} strokeOpacity="0.58" strokeWidth="1.6" strokeLinecap="round" />
+      <circle cx="150" cy="296" r="9" fill={CINNABAR} />
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'two-mountains') return <TwoMountains />
   if (motif === 'ripples') return <Ripples />
@@ -289,6 +318,8 @@ function Motif({ motif }) {
   if (motif === 'veil-of-maya') return <VeilOfMaya />
   if (motif === 'light-window') return <LightWindow />
   if (motif === 'gear-grid') return <GearGrid />
+  if (motif === 'river-flow') return <RiverFlow />
+  if (motif === 'poverty-curve') return <PovertyCurve />
   return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
 }
 
