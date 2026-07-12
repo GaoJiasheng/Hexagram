@@ -1,0 +1,134 @@
+{
+ "title": "双循环假说：肝与胰的脂肪",
+ "subtitle": "两处本不该长脂肪的器官各积了一点油，两台引擎便互相点火，把人一步步锁进 2 型糖尿病",
+ "centralIdea": "Taylor 整本书要回答的核心问题是：2 型糖尿病为什么一旦缠上就甩不掉？他给出的机制答案，是一个叫「双循环假说」（twin cycle hypothesis）的模型——故事里有两台互相点火的引擎。第一台是肝循环：长年热量过剩，多余的能量先在肝脏里堆成脂肪，肝脏一旦「泡在油里」，就对胰岛素不再听话，反而把葡萄糖源源不断往血里排，于是空腹血糖偏高。第二台是胰循环：肝脏把消化不掉的脂肪打包成 VLDL 颗粒往外送，其中一部分漂到胰腺、沉积下来，压制住负责分泌胰岛素的 β 细胞，让它渐渐停工；β 细胞一偷懒，血糖更高，又反过来把更多脂肪逼回肝脏。两个恶性循环彼此喂养，把人推进、并牢牢锁在 2 型糖尿病里。这一章最关键的启示是：病根不在血糖本身，而在肝与胰这两处「长错了地方」的异位脂肪；只要把这两处的油清掉，就有机会把循环从根上打断。要提醒的分寸是：双循环是 Taylor 提出、并有影像与减重干预证据撑腰的主流理论，但它终究是一个「模型」——读时把它当作一幅解释力很强、有硬证据支持的假说图，而非铁板钉钉的定论，最稳妥。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "一个让无数人困惑的问题是：2 型糖尿病为什么这么「黏人」？很多病一场发作、治好就走，它却像扎了根，年复一年跟着你，药越吃越多，很少听说谁真把它甩掉。Roy Taylor 这本书的野心，就是把这个「为什么甩不掉」讲清楚——而他给出的答案，出人意料地既简单又具体：问题出在两个器官里，各自长了一点本不该有的脂肪。这一章，我们跟着他把这台机器拆开，看清那两处脂肪到底是怎么把人锁进糖尿病的。"
+  },
+  {
+   "type": "h2",
+   "text": "先问一句：血糖为什么一直下不来"
+  },
+  {
+   "type": "p",
+   "text": "要看懂 Taylor 的机制，得先把「血糖高」这件事拆开。健康人的血糖，白天靠吃饭升、靠胰岛素压；到了夜里不吃东西那几个钟头，还有一位「默默供糖」的角色在稳住底线——那就是**肝脏**。肝脏像家里的备用粮仓，你睡着、没进食的时候，靠它一点点往血里放葡萄糖，保证大脑不断粮。正常情况下，这个「放粮」的龙头拧得恰到好处：够用，但绝不过量。"
+  },
+  {
+   "type": "p",
+   "text": "2 型糖尿病人身上，最先出问题的一处，恰恰是这个龙头。他们**空腹时**（比如清早还没吃饭）血糖就偏高——这不是因为刚吃多了，而是因为肝脏这台备用粮仓「放粮」放过了头：明明血里不缺糖，它还在不停地往里灌。好端端的肝脏为什么会失手？Taylor 的答案只有一句：因为它**泡在油里**了。"
+  },
+  {
+   "type": "h2",
+   "text": "第一台引擎：肝脏循环"
+  },
+  {
+   "type": "p",
+   "text": "故事从「热量过剩」开始。一个人长年吃进去的能量超过用掉的，多出来的那部分总得找地方存。皮下脂肪是正规仓库，可仓库总有装满的一天；一旦装不下，多余的脂肪就开始往「不该去的地方」堆——首当其冲的就是肝脏。肝细胞里塞满脂肪，就是我们常说的**脂肪肝**。"
+  },
+  {
+   "type": "p",
+   "text": "肝脏一旦被脂肪浸泡，它对胰岛素的「听话程度」就直线下降——这叫**胰岛素抵抗**。胰岛素本来是给肝脏下的一道命令：「够了，别再放葡萄糖了。」可满是脂肪的肝脏对这道命令充耳不闻，继续我行我素地往血里排糖，空腹血糖就被顶了上去。血糖一高，身体只好逼胰腺分泌更多胰岛素去压它；胰岛素常年居高不下，又反过来促使肝脏把更多能量转成脂肪、存进自己体内——脂肪更多、抵抗更重、排糖更凶。这就是第一个恶性循环：**肝脏里的脂肪，自己喂养自己**。"
+  },
+  {
+   "type": "p",
+   "text": "而肝脏装不下的那部分脂肪，它会打包外运。方式是把脂肪做成一种叫 **VLDL（极低密度脂蛋白）** 的颗粒，像一艘艘小油船，满载着甘油三酯驶进血液、运往全身。血里的这些「油船」越来越多——这一步很关键，因为它把麻烦从肝脏一路捎到了下一个器官。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "第一台引擎：肝脏里那个自我喂养的循环",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"18\">肝脏这台引擎：脂肪自己喂养自己</text><text x=\"195\" y=\"50\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">长年热量过剩</text><line x1=\"195\" y1=\"56\" x2=\"195\" y2=\"64\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><path d=\"M190 62 L195 70 L200 62 Z\" style=\"fill:var(--ink-soft)\"/><rect x=\"135\" y=\"72\" width=\"120\" height=\"30\" rx=\"6\" fill=\"none\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.3\"/><text x=\"195\" y=\"92\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">肝脏脂肪堆积</text><line x1=\"195\" y1=\"102\" x2=\"195\" y2=\"118\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><path d=\"M190 116 L195 124 L200 116 Z\" style=\"fill:var(--ink-soft)\"/><rect x=\"135\" y=\"126\" width=\"120\" height=\"30\" rx=\"6\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"195\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">肝胰岛素抵抗</text><line x1=\"195\" y1=\"156\" x2=\"195\" y2=\"172\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><path d=\"M190 170 L195 178 L200 170 Z\" style=\"fill:var(--ink-soft)\"/><rect x=\"118\" y=\"180\" width=\"154\" height=\"34\" rx=\"6\" fill=\"none\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.3\"/><text x=\"195\" y=\"201\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">过度排糖 · 空腹血糖高</text><path d=\"M118 197 C54 197 54 87 130 87\" fill=\"none\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.2\"/><path d=\"M124 82 L131 88 L123 93 Z\" style=\"fill:var(--ink-faint)\"/><text x=\"46\" y=\"138\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">胰岛素</text><text x=\"46\" y=\"154\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">升高逼脂</text><line x1=\"255\" y1=\"87\" x2=\"332\" y2=\"87\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><path d=\"M330 82 L338 87 L330 92 Z\" style=\"fill:var(--ink-soft)\"/><rect x=\"340\" y=\"72\" width=\"128\" height=\"30\" rx=\"6\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"404\" y=\"92\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">VLDL 送往胰腺</text><text x=\"280\" y=\"252\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">脂肪越多 → 抵抗越重 → 排糖越凶 → 又催更多脂肪</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "第二台引擎：胰腺循环"
+  },
+  {
+   "type": "p",
+   "text": "那些满载脂肪的 VLDL 油船开进血液后，会把甘油三酯一路卸到各个组织。问题在于，其中一部分会漂到、并沉积进**胰腺**——正是那个负责分泌胰岛素的器官。胰腺深处有一群叫 **β 细胞**的「分泌工人」，血糖一升，它们本该麻利地放出胰岛素去压糖。可当胰腺里也开始积起脂肪，这群工人就被「油」泡得越来越迟钝。"
+  },
+  {
+   "type": "p",
+   "text": "Taylor 的看法是：胰腺里的脂肪会直接压制 β 细胞，让它们**停止正常分泌胰岛素**——不是彻底死掉，更像是被油腻裹住、罢了工、装睡。β 细胞一偷懒，能压血糖的胰岛素就不够用了，血糖于是进一步窜高。而升高的血糖，又会逼着肝脏和身体去处理更多能量，兜兜转转，把更多脂肪逼回肝里——**第二个恶性循环，就此闭合**。"
+  },
+  {
+   "type": "quote",
+   "original": "胰腺里积起的脂肪，会让分泌胰岛素的 β 细胞渐渐停工。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "双循环流程图：肝与胰互相喂养，把人锁进糖尿病",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"24\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"18\">双循环：肝与胰互相喂养</text><text x=\"150\" y=\"46\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">肝循环</text><text x=\"410\" y=\"46\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">胰循环</text><rect x=\"88\" y=\"56\" width=\"124\" height=\"30\" rx=\"6\" fill=\"none\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.3\"/><text x=\"150\" y=\"76\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">肝脏脂肪</text><rect x=\"348\" y=\"56\" width=\"124\" height=\"30\" rx=\"6\" fill=\"none\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.3\"/><text x=\"410\" y=\"76\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">胰腺脂肪</text><line x1=\"212\" y1=\"71\" x2=\"344\" y2=\"71\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\"/><path d=\"M342 66 L350 71 L342 76 Z\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"279\" y=\"63\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"11\">VLDL 外送脂肪</text><line x1=\"150\" y1=\"86\" x2=\"150\" y2=\"116\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><path d=\"M145 114 L150 122 L155 114 Z\" style=\"fill:var(--ink-soft)\"/><rect x=\"72\" y=\"124\" width=\"156\" height=\"46\" rx=\"6\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"150\" y=\"143\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">胰岛素抵抗</text><text x=\"150\" y=\"161\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">肝脏过度排糖</text><line x1=\"410\" y1=\"86\" x2=\"410\" y2=\"116\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><path d=\"M405 114 L410 122 L415 114 Z\" style=\"fill:var(--ink-soft)\"/><rect x=\"332\" y=\"124\" width=\"156\" height=\"46\" rx=\"6\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"410\" y=\"143\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">β 细胞停工</text><text x=\"410\" y=\"161\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">胰岛素不足</text><line x1=\"150\" y1=\"170\" x2=\"230\" y2=\"204\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><path d=\"M224 200 L233 205 L225 210 Z\" style=\"fill:var(--ink-soft)\"/><line x1=\"410\" y1=\"170\" x2=\"330\" y2=\"204\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><path d=\"M335 210 L327 205 L336 200 Z\" style=\"fill:var(--ink-soft)\"/><rect x=\"214\" y=\"206\" width=\"132\" height=\"34\" rx=\"6\" fill=\"none\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\"/><text x=\"280\" y=\"228\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">血糖升高</text><path d=\"M214 223 C112 244 40 202 40 142 C40 92 62 70 86 71\" fill=\"none\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.2\"/><path d=\"M83 66 L90 72 L82 77 Z\" style=\"fill:var(--ink-faint)\"/><text x=\"44\" y=\"196\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">逼脂肪回肝</text><text x=\"280\" y=\"262\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">两个恶性循环彼此点火 · 把人锁进糖尿病</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "两台引擎，互相点火"
+  },
+  {
+   "type": "p",
+   "text": "把两台引擎摆到一块儿看，Taylor 这幅图的精妙就出来了。肝循环让**空腹血糖**偏高，胰循环让**餐后血糖**压不下去；肝脏往外送脂肪，喂胖了胰腺；胰腺一停工，血糖更高，又逼着更多脂肪回流肝脏。两个循环不是各转各的，而是像两台并排的引擎——一台的排气，正好去点燃另一台，彼此借力、越烧越旺。"
+  },
+  {
+   "type": "quote",
+   "original": "两个循环像并排的引擎，一台的排气正好点燃另一台。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "这正解释了「为什么甩不掉」。一旦两台引擎都点着、互相供火，系统就进入一种**自我锁定**的状态：血糖高维持着脂肪堆积，脂肪堆积又维持着血糖高。人被稳稳地卡在这个平衡点上动弹不得——这就是 2 型糖尿病「一旦缠上就赖着不走」的机理。你可以把它想成两个漏水又互相灌水的水池，或者换句更糙的大白话：**油堵住了两个关键的器官，而这两处的堵，还在互相加码。**"
+  },
+  {
+   "type": "h2",
+   "text": "关键启示：病根是那两处脂肪"
+  },
+  {
+   "type": "p",
+   "text": "顺着这套机制往下想，一个很不一样的结论就冒了出来。既然把人锁进糖尿病的，是肝与胰这两处器官里的**异位脂肪**（异位，就是「长错了地方」——脂肪本该待在皮下，却跑进了肝和胰），那么真正的病根，就**不是血糖本身**。血糖高，只是仪表盘上的一个读数；油堵在两个器官里，才是引擎盖底下的实况。"
+  },
+  {
+   "type": "p",
+   "text": "这一步转念意义重大。多年来的常规思路，是盯着「血糖」这个读数去压——用药物、用胰岛素，想方设法把数字摁下去。但 Taylor 说：读数不是病根。如果病根是肝胰里那点脂肪，那么办法就顺理成章——**把这两处的脂肪清掉**。清掉肝脂，肝脏重新听胰岛素的话，空腹血糖回落；清掉胰脂，β 细胞松了绑、重新上工，胰岛素又够用了。两台引擎一旦熄火，那个自我锁定的循环，就有机会被从根上打断。"
+  },
+  {
+   "type": "quote",
+   "original": "病根不在血糖，而在肝与胰里那两处长错了地方的脂肪。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "至于「怎么才能清掉这两处脂肪」——答案是**减重**，而且是够分量的减重，这也正是后面几章（个人脂肪阈值、DiRECT 试验、具体方案）要一步步展开的。这一章先把「为什么」讲透：只有先信服病根在那两处脂肪，后面「靠减重逆转」的整套方案，才立得住脚。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比",
+   "caption": "清掉两处脂肪，互锁的循环就断开",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"18\">清掉两处脂肪，循环就断</text><line x1=\"280\" y1=\"44\" x2=\"280\" y2=\"284\" style=\"stroke:var(--line)\" stroke-width=\"0.8\" stroke-dasharray=\"4 4\"/><text x=\"140\" y=\"70\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">锁定态 · 两环互扣</text><circle cx=\"116\" cy=\"152\" r=\"46\" fill=\"none\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.4\"/><circle cx=\"164\" cy=\"152\" r=\"46\" fill=\"none\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.4\"/><text x=\"92\" y=\"148\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">肝脂高</text><text x=\"188\" y=\"148\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">胰脂高</text><text x=\"140\" y=\"170\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">互相供火</text><text x=\"140\" y=\"228\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">血糖高 · 甩不掉</text><text x=\"140\" y=\"252\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">2 型糖尿病锁定</text><text x=\"420\" y=\"70\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">清脂后 · 环断开</text><text x=\"420\" y=\"92\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"11\">靠减重清掉肝 · 胰脂肪</text><circle cx=\"384\" cy=\"160\" r=\"38\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.4\"/><circle cx=\"470\" cy=\"160\" r=\"38\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"384\" y=\"156\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">肝脂降</text><text x=\"470\" y=\"156\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">胰脂降</text><text x=\"427\" y=\"152\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"18\">╱╱</text><text x=\"420\" y=\"228\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">β 细胞复工 · 血糖回落</text><text x=\"420\" y=\"252\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">循环从根上打断</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "循证一读：它是「假说」，不是「定论」"
+  },
+  {
+   "type": "p",
+   "text": "最后要给这套动人的机制，加一句冷静的注脚。「双循环」名字里就带着「假说」（hypothesis）二字，这不是谦辞，而是它准确的身份。Taylor 并非凭空想象——他和团队用磁共振等**影像手段**，实实在在量到了 2 型糖尿病人肝脏和胰腺里的脂肪含量偏高；更有说服力的是，他们发现让病人**大幅减重之后，这两处的脂肪会随之下降，血糖也跟着好转**。影像证据加上干预证据，让这幅图远比一般的「假说」结实。"
+  },
+  {
+   "type": "p",
+   "text": "但结实，不等于盖棺定论。双循环终究是一个**模型**——一幅用来解释现象、组织证据的图。它抓住了主线，却未必是故事的全部：为什么有人脂肪肝很重却始终不得糖尿病、个体之间的差异究竟从何而来（这正是下一章「个人脂肪阈值」要补的那一块），学界仍在讨论。所以读这一章最稳妥的姿势是：把双循环当成一幅**解释力很强、且有硬证据撑腰**的主流图景收下，同时记得它是「模型」而非「铁律」，给未来的修正留一分余地。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比",
+   "caption": "双循环：有硬证据撑腰的假说，但仍是模型",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">有硬证据的假说，仍不是最终定论</text><line x1=\"280\" y1=\"44\" x2=\"280\" y2=\"284\" style=\"stroke:var(--line)\" stroke-width=\"0.8\" stroke-dasharray=\"4 4\"/><text x=\"140\" y=\"70\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">证据撑腰 · 可放心收下</text><line x1=\"40\" y1=\"84\" x2=\"240\" y2=\"84\" style=\"stroke:var(--line)\" stroke-width=\"0.8\"/><text x=\"140\" y=\"116\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">影像量到肝 · 胰脂肪偏高</text><text x=\"140\" y=\"148\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">减重后两处脂肪随之下降</text><text x=\"140\" y=\"180\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">脂肪一降 · 血糖跟着好转</text><text x=\"140\" y=\"216\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">影像 + 干预 · 双重证据</text><text x=\"420\" y=\"70\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">仍是「模型」· 留一分余地</text><line x1=\"320\" y1=\"84\" x2=\"520\" y2=\"84\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"0.8\"/><text x=\"420\" y=\"116\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">有人脂肪肝重却不患病</text><text x=\"420\" y=\"148\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">个体差异何来（见下章）</text><text x=\"420\" y=\"180\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">抓住主线 · 未必是全部</text><text x=\"420\" y=\"216\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">当解释图 · 非铁律</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "照例提醒一句：这一章讲的是一套疾病机制的科学模型，**不是给你个人的诊断或治疗方案**。肝脂、胰脂、双循环，都值得当作知识去理解——它能帮你看懂「2 型糖尿病到底在体内发生了什么」；但具体到你自己该怎么办，尤其是身上已经带着糖尿病、或正在用药的话，任何饮食与减重的调整，都请先和你的医生商量，切勿拿一本书里的机制，径直往自己身上套。先看懂机器，再动手——这才是稳妥的顺序。"
+  }
+ ]
+}
