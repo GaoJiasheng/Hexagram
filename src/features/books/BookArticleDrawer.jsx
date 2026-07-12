@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { BaihuaArticle } from '../reader/BaihuaBlock.jsx'
+import FontScaleControl from '../reader/FontScaleControl.jsx'
 
 // 书文章图层:与白话文章同款抽屉——先弹层预览,点 ⤢ 再进整页 URL(可收藏/分享/刷新保留)。
 export default function BookArticleDrawer({ open, accent, brand, chap, data, onFull, onClose }) {
@@ -31,6 +32,10 @@ export default function BookArticleDrawer({ open, accent, brand, chap, data, onF
             <button onClick={onClose} aria-label="关闭" title="关闭(Esc)">✕</button>
           </div>
         </header>
+        <div className="baihua-drawer__toolbar">
+          <span className="baihua-drawer__toolbar-label">字号</span>
+          <FontScaleControl />
+        </div>
         <div className="baihua-drawer__body">
           {data ? <BaihuaArticle data={data} /> : <p className="text-faint">这篇暂时无法载入。</p>}
         </div>

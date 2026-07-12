@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { useNavigate } from 'react-router-dom'
 import { getBaihuaMeta, loadBaihua } from './baihua.js'
+import FontScaleControl from './FontScaleControl.jsx'
 import { SITE_MAP } from '../../sites/registry.js'
 
 // 内联富文本:把 **加粗** 渲染成 <strong>(React 安全的 split，不用 dangerouslySetInnerHTML)。
@@ -165,6 +166,10 @@ export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionU
                 <button onClick={() => setOpen(false)} aria-label="关闭" title="关闭（Esc）">✕</button>
               </div>
             </header>
+            <div className="baihua-drawer__toolbar">
+              <span className="baihua-drawer__toolbar-label">字号</span>
+              <FontScaleControl />
+            </div>
             <div className="baihua-drawer__body">
               {loading && <p className="text-faint">正在载入白话…</p>}
               {!loading && data && <BaihuaArticle data={data} />}
