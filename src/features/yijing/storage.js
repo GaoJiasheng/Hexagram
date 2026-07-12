@@ -29,12 +29,12 @@ function remove(k) {
 export const DEFAULT_SETTINGS = {
   theme: 'system', // 'light' | 'dark' | 'system'
   showTranslation: true,
-  fontScale: 1, // 0.9 | 1 | 1.15
+  fontScale: 1, // 0.9 | 1 | 1.15 | 1.35
   readWidth: 'normal', // 'narrow' | 'normal' | 'wide'
   transLayout: 'stack', // 'stack'(译文在下) | 'side'(原文/译文左右对照)
 }
 const VALID_THEMES = ['light', 'dark', 'system']
-const VALID_FONT_SCALES = [0.9, 1, 1.15]
+const VALID_FONT_SCALES = [0.9, 1, 1.15, 1.35]
 const VALID_READ_WIDTHS = ['narrow', 'normal', 'wide']
 const VALID_TRANS_LAYOUTS = ['stack', 'side']
 

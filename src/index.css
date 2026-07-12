@@ -25,15 +25,22 @@
   --line: #e4ddce;
   --font-serif: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
   --font-mono: ui-monospace, monospace;
-  --font-scale: 1;
+  --font-scale: 1;                 /* 用户字号档位(SettingsContext 内联设于 :root):0.9/1/1.15/1.35 */
+  --read-boost: 1;                 /* 窄屏默认略大(见下方 media query);桌面为 1 */
+  --read-scale: calc(var(--font-scale) * var(--read-boost)); /* 读经/白话正文实际缩放系数 */
   --content-w: 960px;
   --read-w: 680px;
+}
+
+/* 手机(窄屏)正文默认略大一档,不动设置也更舒服;桌面不受影响 */
+@media (max-width: 640px) {
+  :root { --read-boost: 1.06; }
 }
 
 [data-theme='dark'] {
   --paper: #191713;
   --paper-raised: #211e19;
-  --ink: #e8e2d6;
+  --ink: #f1ece1;
   --ink-soft: #a89f93;
   --ink-faint: #6b6157;
   --cinnabar: #c75b49;
@@ -57,7 +64,7 @@
   :root:not([data-theme='light']):not([data-theme='dark']) {
     --paper: #191713;
     --paper-raised: #211e19;
-    --ink: #e8e2d6;
+    --ink: #f1ece1;
     --ink-soft: #a89f93;
     --ink-faint: #6b6157;
     --cinnabar: #c75b49;
@@ -88,7 +95,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { font-size: 16px; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 
 body {
   margin: 0;
@@ -525,15 +532,15 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 
 .classic-text__original {
   margin: 0 0 8px;
-  font-size: calc(1.25rem * var(--font-scale));
+  font-size: calc(1.25rem * var(--read-scale));
   line-height: 1.9;
   color: var(--ink);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .classic-text__translation {
   margin: 0;
-  font-size: calc(0.9rem * var(--font-scale));
+  font-size: calc(0.9rem * var(--read-scale));
   color: var(--ink-soft);
   line-height: 1.75;
 }
@@ -587,14 +594,15 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 
 .line-row__text {
   margin: 0 0 6px;
-  font-size: calc(1.25rem * var(--font-scale));
+  font-size: calc(1.25rem * var(--read-scale));
   line-height: 1.9;
   color: var(--ink);
+  font-weight: 500;
 }
 
 .line-row__xiaoxiang {
   margin: 0 0 6px;
-  font-size: calc(0.9rem * var(--font-scale));
+  font-size: calc(0.9rem * var(--read-scale));
   color: var(--ink-soft);
   line-height: 1.75;
 }
@@ -694,8 +702,8 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 /* 断卦传文(彖/小象,只释卦象不断吉凶) */
 .rule-card__commentary { margin: 8px 0 0 10px; padding-left: 12px; border-left: 2px solid var(--line); }
 .rule-card__commentary-tag { display: inline-block; font-size: 0.7rem; color: var(--ochre); letter-spacing: 0.05em; margin-bottom: 4px; }
-.classic-text--commentary .classic-text__original { font-size: 0.92rem; color: var(--ink-soft); line-height: 1.8; }
-.classic-text--commentary .classic-text__translation { font-size: 0.82rem; }
+.classic-text--commentary .classic-text__original { font-size: calc(0.92rem * var(--read-scale)); color: var(--ink-soft); line-height: 1.8; font-weight: 400; }
+.classic-text--commentary .classic-text__translation { font-size: calc(0.82rem * var(--read-scale)); }
 
 .rule-card__secondary { margin-top: 12px; border-top: 1px solid var(--line); padding-top: 12px; }
 .rule-card__collapsible { margin-bottom: 8px; }
@@ -1869,11 +1877,17 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 
 .read-toolbar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
+  align-items: center;
   gap: 12px;
   margin-bottom: 24px;
   padding-bottom: 16px;
   border-bottom: 1px solid var(--line);
+}
+/* 窄屏:字号档位增至 4 档后收紧段内间距,避免工具条溢出 */
+@media (max-width: 640px) {
+  .read-toolbar .seg-btn { padding: 6px 12px; }
 }
 
 .read-chapter-title {
@@ -3298,16 +3312,16 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .baihua-hero__badge { position: relative; display: inline-block; font-family: var(--font-serif); font-size: .72rem; letter-spacing: .18em; text-indent: .18em; color: var(--cinnabar); border: 1px solid color-mix(in srgb, var(--cinnabar) 42%, transparent); border-radius: 20px; padding: 4px 15px; }
 .baihua-hero__headline { position: relative; margin: 18px 0 0; font-family: var(--font-serif); font-weight: 600; font-size: 2rem; letter-spacing: .14em; text-indent: .14em; color: var(--ink); }
 .baihua-hero__rule { display: block; margin: 12px auto 0; font-size: .8rem; color: var(--cinnabar); opacity: .7; }
-.baihua-hero__idea { position: relative; margin: 14px auto 0; max-width: 26em; font-size: .92rem; line-height: 1.85; color: var(--ink-soft); }
+.baihua-hero__idea { position: relative; margin: 14px auto 0; max-width: 26em; font-size: calc(.92rem * var(--read-scale)); line-height: 1.85; color: var(--ink-soft); }
 .baihua-hero__tagline { position: relative; margin: 16px auto 0; max-width: 24em; font-size: .8rem; line-height: 1.7; color: var(--ink-faint); }
-.baihua-idea { display: flex; gap: 10px; align-items: baseline; margin: 0 0 26px; padding: 14px 16px; background: color-mix(in srgb, var(--cinnabar) 7%, transparent); border-radius: 9px; font-size: .96rem; line-height: 1.75; color: var(--ink); }
+.baihua-idea { display: flex; gap: 10px; align-items: baseline; margin: 0 0 26px; padding: 14px 16px; background: color-mix(in srgb, var(--cinnabar) 7%, transparent); border-radius: 9px; font-size: calc(.96rem * var(--read-scale)); line-height: 1.75; color: var(--ink); }
 .baihua-idea__tag { flex-shrink: 0; font-size: .72rem; color: var(--paper-raised); background: var(--cinnabar); padding: 2px 8px; border-radius: 5px; font-family: var(--font-serif); }
-.baihua-lead { margin: 0 0 24px; padding-left: 14px; border-left: 2px solid var(--cinnabar); font-size: .96rem; line-height: 1.85; color: var(--ink-soft); }
-.baihua-h2 { margin: 36px 0 14px; font-family: var(--font-serif); font-size: 1.18rem; color: var(--ink); }
-.baihua-p { margin: 0 0 16px; font-size: .98rem; line-height: 1.9; color: var(--ink); }
+.baihua-lead { margin: 0 0 24px; padding-left: 14px; border-left: 2px solid var(--cinnabar); font-size: calc(.96rem * var(--read-scale)); line-height: 1.85; color: var(--ink-soft); }
+.baihua-h2 { margin: 36px 0 14px; font-family: var(--font-serif); font-size: calc(1.18rem * var(--read-scale)); color: var(--ink); }
+.baihua-p { margin: 0 0 16px; font-size: calc(.98rem * var(--read-scale)); line-height: 1.9; color: var(--ink); font-weight: 500; }
 .baihua-quote { margin: 18px 0; padding: 13px 18px; background: var(--paper-raised); border: 1px solid var(--line); border-radius: 9px; }
-.baihua-quote__orig { margin: 0; font-family: var(--font-serif); font-size: 1.02rem; line-height: 1.9; color: var(--ink); }
-.baihua-quote__trans { margin: 8px 0 0; font-size: .86rem; line-height: 1.7; color: var(--ink-soft); }
+.baihua-quote__orig { margin: 0; font-family: var(--font-serif); font-size: calc(1.02rem * var(--read-scale)); line-height: 1.9; color: var(--ink); font-weight: 500; }
+.baihua-quote__trans { margin: 8px 0 0; font-size: calc(.86rem * var(--read-scale)); line-height: 1.7; color: var(--ink-soft); }
 .baihua-figure { margin: 28px 0; }
 .baihua-figure__tag { display: inline-block; font-size: .7rem; color: var(--cinnabar); border: 1px solid color-mix(in srgb, var(--cinnabar) 40%, transparent); border-radius: 5px; padding: 1px 7px; margin-bottom: 9px; }
 .baihua-figure__svg { width: 100%; padding: 10px 0; }
