@@ -1,0 +1,137 @@
+{
+ "title": "决策的要素",
+ "subtitle": "什么是有效决策：判断而非解题，结构而非灵感",
+ "centralIdea": "德鲁克认为，卓有成效的管理者不做很多决策，只做少数重大而根本的决策；决策是关于「做什么」的判断，不是有标准答案的解题。有效决策有一套结构：先分清问题是反复出现的通则还是真正的例外——通则问题用原则、政策、制度一劳永逸地解决，真例外才个案处理；再界定边界条件，想清楚这项决策最低必须达成什么才算成功；然后先求完全正确的方案，再考虑执行中的妥协；最后把决策落实为具体的人、行动与期限，并内建「亲自去看」的反馈以检验决策是否仍符合现实。有效决策靠的不是灵感或和稀泥，而是这套有结构的判断过程。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "看看你的一天：上午批了六份申请，中午定了活动方案，下午拍板了一个客诉的赔偿——你觉得自己整天都在「做决策」。德鲁克会摇摇头：这些多半只是处理事务。在他看来，真正的决策没有那么多，也不该那么多。这一章讲第五项习惯「有效决策」的上半：一个有效的决策由哪些要素构成——它是一套有结构的判断过程，不是灵光一现，更不是和稀泥。"
+  },
+  {
+   "type": "h2",
+   "text": "决策是判断，不是解题"
+  },
+  {
+   "type": "p",
+   "text": "数学题有标准答案，套公式推演，谁做结果都一样。决策不是解题：它是**关于「做什么」的判断**，是在几个各有道理、各有代价的方案之间承担风险做取舍。既然是判断，就没有「算出来」的正确答案可躲，你必须押上自己的名字。也正因为如此，德鲁克观察到，卓有成效的管理者有个共同点：**他们不做很多决策，只做重大的决策**。他们不追求「日理万机」的快感，而是把力气省下来，花在少数根本性的问题上，并且尽量在最高的理解层次上做判断——一次把一类事想透，而不是一事一议。"
+  },
+  {
+   "type": "quote",
+   "original": "有效的管理者不做很多决策。他们集中精力，只做那些少数重要的决策。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "德鲁克举的样板是贝尔电话公司的维尔（Theodore Vail）。执掌公司近二十年，他真正称得上「决策」的只有四个：把公司的生意定义为「服务」而不是电话机、主动拥抱公共管制、创建贝尔实验室、为公司设计出面向普通大众的股票融资——每一个都是根本性的大判断，管了几十年。通用汽车的斯隆也一样，一个「分权制」的组织决策，定下了此后半个世纪大公司的骨架。重大决策慢一点没关系——它们本来就该慢。"
+  },
+  {
+   "type": "h2",
+   "text": "先问：这是老问题，还是真例外？"
+  },
+  {
+   "type": "p",
+   "text": "接到一个问题，别急着想对策，先给它**定性**：它是**经常性的通则问题**（generic）——同一类事反复发生，眼前这件不过是又一次冒头；还是**真正的例外**（exceptional）——独一无二，以后大概率不会再有？这一问是决策的第一要素，因为两类问题的解法截然不同。通则问题要用**原则、政策、制度**来解：定一条规则，把这一类问题整个兜住，往后每次出现，按规则办就是，不必再劳动决策。只有真正的例外，才值得当成个案，就事论事地处理。"
+  },
+  {
+   "type": "p",
+   "text": "最常见的低效根源，恰恰是**把反复出现的老问题当成一连串「新麻烦」来救火**：库存月月告急，月月开会特批；同一种客诉换个客户又来一遍，每次都现想说法。表面上每次都「解决」了，实际上什么也没解决——治的是症状，不是病。真正该做的决策是那一条制度：库存为什么月月告急？补货规则错在哪里？反过来的错误也有：把真例外硬塞进老规则，削足适履。定性错了，后面再努力都是白费。"
+  },
+  {
+   "type": "quote",
+   "original": "最常见的错误，是把经常出现的通则问题，当成一连串独一无二的偶发事件来处理。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "对照图",
+   "caption": "决策的第一要素是给问题定性：通则问题用制度一次解决，真例外才个案处理",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"195\" y=\"14\" width=\"170\" height=\"34\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--ink)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"36\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">一个问题冒出来</text><line x1=\"280\" y1=\"48\" x2=\"145\" y2=\"82\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><line x1=\"280\" y1=\"48\" x2=\"415\" y2=\"82\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><rect x=\"40\" y=\"84\" width=\"210\" height=\"54\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"145\" y=\"106\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">经常性问题（generic）</text><text x=\"145\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">同一类事反复出现，眼前只是又一次</text><rect x=\"310\" y=\"84\" width=\"210\" height=\"54\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"415\" y=\"106\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">真正的例外（exceptional）</text><text x=\"415\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">独一无二，以后大概率不再有</text><line x1=\"145\" y1=\"138\" x2=\"145\" y2=\"157\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><polygon points=\"140,156 150,156 145,165\" style=\"fill:var(--line)\"/><line x1=\"415\" y1=\"138\" x2=\"415\" y2=\"157\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><polygon points=\"410,156 420,156 415,165\" style=\"fill:var(--line)\"/><rect x=\"40\" y=\"168\" width=\"210\" height=\"56\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><text x=\"145\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">用原则、政策、制度解决</text><text x=\"145\" y=\"210\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">定一条规则，一劳永逸兜住一整类</text><rect x=\"310\" y=\"168\" width=\"210\" height=\"56\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"415\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">个案处理</text><text x=\"415\" y=\"210\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">就事论事，不必为它立规矩</text><rect x=\"40\" y=\"244\" width=\"480\" height=\"42\" rx=\"6\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1\" stroke-dasharray=\"5 4\"/><text x=\"280\" y=\"270\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">✗ 常见错误：把反复出现的老问题当成一连串新麻烦，天天救火、次次特批</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "边界条件：这个决定必须满足什么？"
+  },
+  {
+   "type": "p",
+   "text": "定性之后，第二个要素是想清楚**边界条件**（boundary conditions）：这项决策**最低限度必须达成什么目的、必须满足哪些条件，才算成功**？听着像废话，做起来最难，也最常被跳过。同样是招人，「补一个能独立带项目的骨干」和「先找个帮手顶两个月」是两个完全不同的决策，正确答案也完全不同；同样是降成本，「不许伤及交付质量」这一条写不写进边界，选出来的方案会差之千里。边界条件不清，决策必然走样——执行到一半才发现，各方对「成了」的定义根本不是一回事。"
+  },
+  {
+   "type": "p",
+   "text": "边界条件还有第二个用处：它是决策的**报废标准**。形势变了，原先必须满足的条件如今满足不了了，这项决策就已经失效，该换，而不是硬扛。事先写下边界条件的人，能第一时间看出「地基塌了」；没写下来的人，只会觉得「再坚持坚持」。"
+  },
+  {
+   "type": "quote",
+   "original": "对边界条件想得不清楚，几乎注定要做出一项错误的决策。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "先画出「及格线」再比较方案：够不着边界条件的选项，再省事也不能选",
+   "svg": "<svg viewBox=\"0 0 560 280\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">把每个备选方案，拿到同一条「及格线」前量一量</text><rect x=\"170\" y=\"84\" width=\"70\" height=\"148\" rx=\"4\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"205\" y=\"72\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">满足 ✓</text><rect x=\"300\" y=\"170\" width=\"70\" height=\"62\" rx=\"4\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1.2\" stroke-dasharray=\"4 3\"/><text x=\"335\" y=\"158\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">不满足 ✗</text><rect x=\"430\" y=\"100\" width=\"70\" height=\"132\" rx=\"4\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"465\" y=\"88\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">满足 ✓</text><line x1=\"40\" y1=\"132\" x2=\"520\" y2=\"132\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/><text x=\"40\" y=\"120\" text-anchor=\"start\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">边界条件（及格线）</text><text x=\"40\" y=\"150\" text-anchor=\"start\" style=\"fill:var(--cinnabar-pure)\" font-size=\"11\">最低必须达成什么</text><line x1=\"150\" y1=\"232\" x2=\"520\" y2=\"232\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"205\" y=\"252\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">方案A</text><text x=\"335\" y=\"252\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">方案B</text><text x=\"465\" y=\"252\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">方案C</text><text x=\"280\" y=\"272\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">及格线之下的方案不能选；形势变了、及格线挪了，旧决策就该重议而不是硬扛</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "先求正确，再谈妥协"
+  },
+  {
+   "type": "p",
+   "text": "第三个要素是顺序：**先想清楚什么是「正确」的方案——完全满足边界条件的方案——然后再考虑为了推行它，需要做哪些妥协、让步与折中**。多数人反着来：一上来就琢磨「老板能接受什么」「兄弟部门肯让几分」，方案还没出门就先打了七折。结果往往两头落空——该让的执行环节照样得让，又打一遍折；而叠加的折扣早已跌破边界条件，做成了也等于没做。"
+  },
+  {
+   "type": "p",
+   "text": "德鲁克用一个古老的对照区分**两种妥协**：「半片面包总比没有面包好」——分量打了折，但面包仍是面包，能充饥，这是正确的妥协；而所罗门王断案故事里的「半个孩子」，不是半个活孩子，而是一具尸体——这种妥协违背了边界条件，各方再满意也是错的。关键在于：**你若没先想清楚什么是正确的，就根本分不清手里这份妥协是半片面包，还是半个孩子**。"
+  },
+  {
+   "type": "quote",
+   "original": "先想清楚什么是正确的，而不是什么是能被接受的——反正你最终总得妥协。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "对比",
+   "caption": "两种妥协：满足边界条件的让步是半片面包，牺牲边界条件的让步是半个孩子",
+   "svg": "<svg viewBox=\"0 0 560 260\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">妥协之前先问一句：让完这一步，边界条件还满足吗？</text><rect x=\"30\" y=\"52\" width=\"240\" height=\"150\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><text x=\"150\" y=\"82\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">正确的妥协</text><text x=\"150\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">「半片面包，仍是面包」</text><text x=\"150\" y=\"138\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">分量打了折，但仍能充饥</text><text x=\"150\" y=\"156\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">——边界条件依然满足</text><text x=\"150\" y=\"186\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">可以接受 ✓</text><rect x=\"290\" y=\"52\" width=\"240\" height=\"150\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\"/><text x=\"410\" y=\"82\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">错误的妥协</text><text x=\"410\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">「半个孩子，不是活孩子」</text><text x=\"410\" y=\"138\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">各方都让了步，目的却落空</text><text x=\"410\" y=\"156\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">——边界条件已被牺牲</text><text x=\"410\" y=\"186\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">再体面也不能要 ✗</text><text x=\"280\" y=\"238\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">典出所罗门王断案：真母亲宁可整个让出，也不要「公平的」半个</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "不落到行动的决策，只是良好愿望"
+  },
+  {
+   "type": "p",
+   "text": "第四个要素：把决策**转化为行动**。决策做出的那一刻，就要逐条回答：**谁必须知道这项决策？需要采取什么行动？谁去做？何时完成？**而且行动要求必须与执行者的能力相称——把事派给做不到的人，等于没做决策。多少会议纪要写着「原则通过」「加强落实」，三个月后原地踏步，就是因为这四问一个都没回答。"
+  },
+  {
+   "type": "quote",
+   "original": "除非把执行变成某个具体的人的工作和责任，并且定下期限，否则决策只是一个良好的愿望。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "第五个要素：在决策里**内建反馈**。人会错，形势会变，决策所依据的前提总有一天不再成立。所以做决策时就要安排好：拿什么来检验它在现实中是否仍然站得住？德鲁克对「看报告」深表怀疑——报告是抽象的、被层层过滤过的。他开的方子土得掉渣，却最可靠：**亲自去现场看**。军队早就懂得这个道理：命令下达之后，指挥官要亲自去检查执行，而不是坐在指挥部里等汇报。不肯亲自去看的决策者，会一天天脱离现实而不自知。"
+  },
+  {
+   "type": "quote",
+   "original": "亲自出去看一看，是检验一项决策的前提是否依然有效的、唯一可靠的办法。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "流程图",
+   "caption": "有效决策的五个要素：顺序本身就是纪律",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">有效决策的五个要素——顺序本身就是纪律</text><circle cx=\"52\" cy=\"63\" r=\"13\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"52\" y=\"68\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\" font-size=\"12\">1</text><rect x=\"76\" y=\"46\" width=\"190\" height=\"34\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"171\" y=\"68\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">分清问题性质</text><text x=\"282\" y=\"68\" text-anchor=\"start\" style=\"fill:var(--ink-soft)\" font-size=\"11\">通则问题用原则制度解，真例外才个案处理</text><line x1=\"171\" y1=\"80\" x2=\"171\" y2=\"88\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><polygon points=\"166,87 176,87 171,95\" style=\"fill:var(--line)\"/><circle cx=\"52\" cy=\"113\" r=\"13\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"52\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\" font-size=\"12\">2</text><rect x=\"76\" y=\"96\" width=\"190\" height=\"34\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"171\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">界定边界条件</text><text x=\"282\" y=\"118\" text-anchor=\"start\" style=\"fill:var(--ink-soft)\" font-size=\"11\">最低必须达成什么目的，才算成功</text><line x1=\"171\" y1=\"130\" x2=\"171\" y2=\"138\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><polygon points=\"166,137 176,137 171,145\" style=\"fill:var(--line)\"/><circle cx=\"52\" cy=\"163\" r=\"13\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"52\" y=\"168\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\" font-size=\"12\">3</text><rect x=\"76\" y=\"146\" width=\"190\" height=\"34\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"171\" y=\"168\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">先求正确，再谈妥协</text><text x=\"282\" y=\"168\" text-anchor=\"start\" style=\"fill:var(--ink-soft)\" font-size=\"11\">先想清楚完全正确的方案，再考虑让步</text><line x1=\"171\" y1=\"180\" x2=\"171\" y2=\"188\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><polygon points=\"166,187 176,187 171,195\" style=\"fill:var(--line)\"/><circle cx=\"52\" cy=\"213\" r=\"13\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"52\" y=\"218\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\" font-size=\"12\">4</text><rect x=\"76\" y=\"196\" width=\"190\" height=\"34\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"171\" y=\"218\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">转化为行动</text><text x=\"282\" y=\"218\" text-anchor=\"start\" style=\"fill:var(--ink-soft)\" font-size=\"11\">谁去做、怎么做、何时完成，与能力相称</text><line x1=\"171\" y1=\"230\" x2=\"171\" y2=\"238\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><polygon points=\"166,237 176,237 171,245\" style=\"fill:var(--line)\"/><circle cx=\"52\" cy=\"263\" r=\"13\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"52\" y=\"268\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\" font-size=\"12\">5</text><rect x=\"76\" y=\"246\" width=\"190\" height=\"34\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"171\" y=\"268\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">内建反馈</text><text x=\"282\" y=\"268\" text-anchor=\"start\" style=\"fill:var(--ink-soft)\" font-size=\"11\">亲自去现场看，检验前提是否依然成立</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "一套有结构的判断"
+  },
+  {
+   "type": "p",
+   "text": "五个要素连起来，就是有效决策的全貌：**分清问题性质 → 界定边界条件 → 先求正确 → 落实行动 → 内建反馈**。它既不是拍脑袋——靠胆子大；也不是和稀泥——靠人人让一步；而是一套约束思考顺序的纪律。这套纪律并不只属于管理者：年年都想辞职，该解决的就不是「这次辞不辞」，而是「为什么年年想辞」这个通则问题；换城市定居，先写下「新生活最低必须满足什么」，再谈可以放弃什么——同样的结构，处处可用。"
+  },
+  {
+   "type": "p",
+   "text": "当然也要留个分寸：这是二十世纪中叶写下的方法论，维尔与斯隆的案例带着那个时代大公司的底色；五要素也不是一张填完就自动吐出正确答案的表格——它规定的是思考的顺序，代替不了思考本身。而且德鲁克紧接着就要说：有效的决策，恰恰不是从「事实」出发的，而是从**意见**出发的——这句听上去离经叛道的话，正是下一章的主题。"
+  }
+ ]
+}

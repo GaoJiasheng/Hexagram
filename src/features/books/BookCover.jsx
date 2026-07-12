@@ -498,6 +498,20 @@ function AbacusGap() {
   )
 }
 
+// 母题:沙漏——沙自朱色细流落下、堆在底部(呼应《卓有成效的管理者》第一要务:认识并管理最稀缺的资源——时间)。
+function Hourglass() {
+  return (
+    <g>
+      <line x1="106" y1="232" x2="194" y2="232" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.6" strokeLinecap="round" />
+      <line x1="106" y1="360" x2="194" y2="360" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M110,232 L190,232 L150,296 Z" fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.3" />
+      <path d="M150,296 L190,360 L110,360 Z" fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.3" />
+      <line x1="150" y1="296" x2="150" y2="332" stroke={CINNABAR} strokeWidth="1.6" />
+      <path d="M126,360 L174,360 L150,340 Z" fill={CINNABAR} opacity="0.85" />
+    </g>
+  )
+}
+
 // 母题:罗盘——指针朝北(朱色),四向刻度(呼应《七个习惯》以原则为中心、朝向"真北"的价值坐标)。
 function Compass() {
   const cx = 150, cy = 293, R = 62, ticks = []
@@ -590,6 +604,7 @@ function Motif({ motif }) {
   if (motif === 'lattice') return <Lattice />
   if (motif === 'feedback-loop') return <FeedbackLoop />
   if (motif === 'compass') return <Compass />
+  if (motif === 'hourglass') return <Hourglass />
   if (motif === 'rabbit-hat') return <RabbitHat />
   if (motif === 'continental-axis') return <ContinentalAxis />
   if (motif === 'footsteps') return <Footsteps />
