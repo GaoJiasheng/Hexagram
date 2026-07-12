@@ -1,0 +1,96 @@
+{
+  "title": "代谢到底是什么",
+  "subtitle": "在谈论减肥、健康之前,先把这个天天挂在嘴边、却很少有人说得清的词,踏踏实实弄明白",
+  "centralIdea": "代谢听起来玄乎,拆开却很朴素:它就是你全身细胞把食物这种燃料烧成能量、再用这股能量驱动一切生命活动的总和。人一天的总消耗由三块拼成——基础代谢(维持心跳、呼吸、体温等,占最大头,约六到七成)、身体活动、以及消化食物本身要花掉的「食物热效应」。这一章要破除一个流传极广的误会:所谓「某人代谢快、某人代谢慢」的差异,远没有大家想的那么大;身体也不是一口任你添柴就旺的炉子,而是一位为活命精打细算、时刻维持平衡的会计。看懂身体这本能量账怎么记、怎么花,是理解胖瘦与健康的第一步,也为后文「多运动为何不等于多消耗」埋下伏笔。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "「他这人代谢快,怎么吃都不胖。」——这句话你一定听过,说不定还偷偷羡慕过。我们把「代谢」当成一个能解释胖瘦、甚至决定命运的神秘开关,谁的开关拧得大,谁就能敞开吃还不长肉。可奇怪的是,几乎没人能说清这个开关到底是什么、藏在哪、又凭什么运转。彭策尔的《燃烧》开篇就要先做一件朴素得近乎笨拙的事:把「代谢」这个天天挂在嘴边的词,老老实实讲明白。因为不先弄懂身体这台机器是怎么烧钱的,后面所有关于运动、减肥、健康的讨论,都会像盖在沙子上的楼——看着热闹,一推就倒。"
+    },
+    {
+      "type": "h2",
+      "text": "代谢,就是身体在不停「烧钱」"
+    },
+    {
+      "type": "p",
+      "text": "抛开玄乎的包装,代谢的本质其实很朴素:它是你全身几十万亿个细胞,把食物这种「燃料」烧成「能量」、再拿这股能量去驱动一切生命活动的总和。你吃下的糖、脂肪、蛋白质,被消化系统拆成小分子、运进细胞,在细胞里的「小锅炉」线粒体中像柴火一样被一点点氧化,释放出能量。身体再拿这股能量去干各种活:让心脏一下一下地跳、让肺一张一合地喘、把体温死死稳在三十七度上下、让大脑能思考、让双腿能走路、让磨损的组织日夜不停地被修补。这一整套「进料—燃烧—做功」的循环,合起来就叫代谢。它不是身体某个角落里的一个部件,而是身上每一个细胞、每时每刻都在进行的事。"
+    },
+    {
+      "type": "p",
+      "text": "衡量这股能量的单位,就是我们在食品包装背面见惯了的卡路里(严格说是千卡)。所以「代谢」一点都不神秘,它说白了就是身体每天的能量收支;再打个更直白的比方——你的身体是一家一刻也不停歇、时时刻刻都在烧钱的公司,而卡路里就是它唯一的货币。食物是进账,一切生命活动是花销。一个普通成年人一天下来,大约要花掉两千千卡上下(具体数字因人而异,与体型、性别、活动量都有关);这笔钱怎么进、怎么出、又攒下多少,直接写在了你的体重和健康上。所以想看懂胖瘦,第一步不是急着去研究哪种食物是「坏的」,而是先搞清楚一件更基本的事:这家能量公司,每天到底把钱花在了哪里。"
+    },
+    {
+      "type": "figure",
+      "ftype": "机制图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='30' text-anchor='middle' style='fill:var(--ink);font-size:16px;font-weight:bold'>代谢:细胞把「食物」烧成「能量」</text><rect x='24' y='108' width='120' height='74' rx='8' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1.5'/><text x='84' y='140' text-anchor='middle' style='fill:var(--ink);font-size:14px'>食物·燃料</text><text x='84' y='162' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>糖 · 脂肪 · 蛋白</text><line x1='150' y1='145' x2='204' y2='145' style='stroke:var(--ink-soft);stroke-width:1.6'/><path d='M204 139 L216 145 L204 151 Z' style='fill:var(--ink-soft)'/><circle cx='280' cy='145' r='52' style='fill:var(--cinnabar-pure);opacity:.12'/><circle cx='280' cy='145' r='52' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='280' y='140' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:14px;font-weight:bold'>细胞燃烧</text><text x='280' y='161' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>线粒体·产能</text><line x1='344' y1='145' x2='398' y2='145' style='stroke:var(--ink-soft);stroke-width:1.6'/><path d='M398 139 L410 145 L398 151 Z' style='fill:var(--ink-soft)'/><rect x='416' y='108' width='120' height='74' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='476' y='140' text-anchor='middle' style='fill:var(--ink);font-size:14px'>能量</text><text x='476' y='162' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>以卡路里计</text><path d='M476 182 Q476 214 342 220' style='fill:none;stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 3'/><text x='280' y='232' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>这股能量,驱动着——</text><text x='280' y='258' text-anchor='middle' style='fill:var(--ink);font-size:12.5px'>心跳 · 呼吸 · 体温 · 思考 · 走路 · 修复</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "一天的能量,花在三个地方"
+    },
+    {
+      "type": "p",
+      "text": "那么这家公司每天到底把钱花去了哪儿?现代生理学把人一天的总能量消耗,拆成清清楚楚的三大块。这三块的名字听着专业,意思却都很好懂。"
+    },
+    {
+      "type": "p",
+      "text": "第一块,也是最大的一块,叫基础代谢(BMR,basal metabolic rate)。它指的是你彻底躺平、什么都不干——不运动、也不在消化食物、清醒地静静躺着——时,身体单为了「维持活着」这件事本身就要烧掉的能量:心脏跳动、肺部呼吸、维持体温、大脑运转、肝肾等器官日夜不停地工作。这一块,通常要占到一天总消耗的六到七成。换句话说,你绝大部分的卡路里,根本不是花在跑步撸铁上,而是花在「安安静静地活着」这件事上。一个概念感受一下:一个成年人哪怕在床上躺一整天、一步不迈,光是基础代谢也可能烧掉一千三到一千六百千卡——这几乎相当于一顿丰盛正餐再加几份点心的热量,而它全在你毫无察觉时,被器官们默默用掉了。原来「什么都没做」,身体也一直在大手笔花钱。"
+    },
+    {
+      "type": "p",
+      "text": "第二块是身体活动,涵盖一切主动的动作:走路、爬楼、上班通勤、运动健身,也包括那些你压根没意识到的小动作——抖腿、来回踱步、坐不住地扭来扭去。这一块因人而异、也因每天的忙闲而变,大致占到两三成。第三块最小,叫食物热效应:消化、吸收、搬运和储存你吃下去的食物,这个过程本身也得耗掉能量,约占一成上下。也就是说,连「吃」这件事,身体都得先垫上一笔不小的手续费——你不是白吃的,吃本身也在花钱。"
+    },
+    {
+      "type": "p",
+      "text": "把这三块摆在一起,一张出人意料的账单就清楚了:占大头的从来不是你在健身房里挥汗如雨的那部分,而是那笔你完全感觉不到、日夜自动扣款的基础代谢。这也是为什么很多人「明明每周都去跑步,体重却纹丝不动」——他们盯着的,恰恰是这本账里份额较小、还最容易被身体偷偷调节的一栏。想真正理解体重,就得先把目光从「多动一点」挪开,去看那笔最大、最沉默的开销:身体单单为了活着,就已经花掉了多少。"
+    },
+    {
+      "type": "quote",
+      "original": "你一天里最大一笔能量开销,是「安静地活着」,而不是运动。",
+      "translation": "基础代谢常占到总消耗的六到七成——这个比例,颠覆了很多人对「消耗」的直觉,也正是全书往下走的起点。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='30' text-anchor='middle' style='fill:var(--ink);font-size:16px;font-weight:bold'>你一天烧掉的能量,分成三块</text><rect x='40' y='58' width='312' height='52' style='fill:var(--cinnabar-pure);opacity:.85'/><rect x='352' y='58' width='120' height='52' style='fill:var(--ink-soft);opacity:.55'/><rect x='472' y='58' width='48' height='52' style='fill:var(--ink-faint);opacity:.5'/><rect x='40' y='58' width='480' height='52' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='196' y='90' text-anchor='middle' style='fill:var(--paper-raised);font-size:15px;font-weight:bold'>约 60–70%</text><text x='412' y='90' text-anchor='middle' style='fill:var(--ink);font-size:12.5px'>约 25%</text><text x='496' y='90' text-anchor='middle' style='fill:var(--ink);font-size:10.5px'>≈10%</text><rect x='40' y='150' width='14' height='14' style='fill:var(--cinnabar-pure);opacity:.85'/><text x='64' y='162' style='fill:var(--ink);font-size:13px;font-weight:bold'>基础代谢(BMR)</text><text x='64' y='182' style='fill:var(--ink-soft);font-size:11.5px'>什么都不做也在烧:维持心跳、呼吸、体温、器官运转</text><rect x='40' y='200' width='14' height='14' style='fill:var(--ink-soft);opacity:.55'/><text x='64' y='212' style='fill:var(--ink);font-size:13px;font-weight:bold'>身体活动</text><text x='64' y='232' style='fill:var(--ink-soft);font-size:11.5px'>走路、运动,乃至抖腿踱步等坐不住的小动作</text><rect x='40' y='250' width='14' height='14' style='fill:var(--ink-faint);opacity:.5'/><text x='64' y='262' style='fill:var(--ink);font-size:13px;font-weight:bold'>食物热效应</text><text x='64' y='282' style='fill:var(--ink-soft);font-size:11.5px'>消化吸收食物本身,也要花掉一小笔能量</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "「代谢快慢」,其实没你想的差那么多"
+    },
+    {
+      "type": "p",
+      "text": "弄清了这三块,就能拆穿一个流传极广的误会:「有人天生代谢快,怎么吃都不胖;有人代谢慢,喝口凉水都长肉。」这话把代谢想象成一个天差地别、还能被随便调快调慢的炉子——似乎有人炉膛烧得旺、有人烧得蔫。可真拿仪器去量一大群人,得出的结论会让人有点扫兴:在把体型的差异扣掉之后,健康成年人之间的代谢率差异,远比坊间传闻里小得多,根本不是「快一倍、慢一半」那种夸张的差距。"
+    },
+    {
+      "type": "p",
+      "text": "关键在于,一个人代谢率的高低,绝大部分是由身体的「体量」决定的,尤其是瘦体重——也就是肌肉、器官这些活跃组织的重量。个子大、肌肉多的人,要供养的细胞多,基础代谢自然就高;个子小的人则低。这就好比一栋大楼的电费,主要看它有多少层、多少间办公室日夜亮着灯,而不是看它「性格」急不急。真正剩下的、与体型无关的那点「个人天赋」差异,只占很小一部分。所以那个「怎么吃都不胖」的朋友,更可能是吃得没你以为的多、或者一天到晚闲不住、动得比你勤,而不是体内藏着一台开了外挂的炉子。把胖瘦一股脑推给「代谢天生慢」,多半是记错了、或者根本没细记自己那本能量账。"
+    },
+    {
+      "type": "p",
+      "text": "更要紧的是,身体压根不是一台任你添柴就旺、抽柴就熄的炉子,它更像一位极其精明的会计。能量吃紧时,它会悄悄调低各处的开销来省钱——让你怕冷、犯困、连坐着都少动几下;能量宽裕时,它又把多出来的收进「储蓄账户」(也就是脂肪)。它无时无刻不在为「活下去」精打细算、努力维持收支的平衡。正因如此,你没法简单地朝它下命令说「给我烧快一点」——这也为后面那个反直觉的大发现埋下了伏笔:你多流的那些汗,未必换来账面上多烧的卡路里。"
+    },
+    {
+      "type": "quote",
+      "original": "身体不是一口能随便添柴烧旺的炉子,而是一位为活命精打细算的会计。",
+      "translation": "把代谢想成可以任意调快慢的炉子,是最大的误区;它更像一套时刻维持收支平衡的能量管理系统。"
+    },
+    {
+      "type": "h2",
+      "text": "为什么要先算清这本能量账"
+    },
+    {
+      "type": "p",
+      "text": "把一天的消耗拆成基础代谢、身体活动、食物热效应这三块,不只是一个知识点,而是这本书往下走的地基。因为一旦你把身体看成一家精算的能量公司,一个尖锐的问题就自己浮了上来:如果你在「身体活动」这一栏拼命加码——每天多跑五公里、多练一小时——公司的总支出,真的会等量地跟着水涨船高吗?直觉几乎不假思索地喊「那当然」。但彭策尔用一群叫哈扎的现代狩猎采集者的实测数据,给出了一个大大出乎意料的答案。"
+    },
+    {
+      "type": "figure",
+      "ftype": "伏笔图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='30' text-anchor='middle' style='fill:var(--ink);font-size:16px;font-weight:bold'>把身体看成一家精算的能量公司</text><rect x='40' y='66' width='210' height='150' rx='10' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1.5'/><text x='145' y='98' text-anchor='middle' style='fill:var(--ink);font-size:14px;font-weight:bold'>收入</text><text x='145' y='128' text-anchor='middle' style='fill:var(--ink-soft);font-size:12px'>吃进去的食物能量</text><text x='145' y='150' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>(卡路里进账)</text><rect x='310' y='66' width='210' height='150' rx='10' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='415' y='98' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:14px;font-weight:bold'>支出</text><text x='415' y='126' text-anchor='middle' style='fill:var(--ink-soft);font-size:11.5px'>基础代谢</text><text x='415' y='148' text-anchor='middle' style='fill:var(--ink-soft);font-size:11.5px'>身体活动 · 食物热效应</text><circle cx='280' cy='141' r='22' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='149' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:20px;font-weight:bold'>?</text><text x='280' y='258' text-anchor='middle' style='fill:var(--ink);font-size:12.5px'>多在「活动」上花力气,总支出就会等量变大吗?</text><text x='280' y='282' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:11.5px'>——这正是后面几章要拆穿的悬念</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "那个答案,要留到后面几章才揭晓。这一章你只需要带走一件事:想理解肥胖、想理解健康,都得先理解身体这本能量账是怎么记、怎么花的。代谢不是一个能让你逃开热量的魔法开关,也不是一台你想拧多快就多快的炉子,而是一套被进化打磨了几百万年、极其擅长维持平衡的精算系统。先看懂它把钱花在了哪、又为什么这么花,你才有可能真正看清——自己的体重和健康,到底被什么在悄悄决定。带着这本「能量账」的意识往下读,你会发现许多曾经想当然的减肥、健身常识,都要被重新算一遍。"
+    }
+  ]
+}

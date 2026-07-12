@@ -1,0 +1,165 @@
+{
+ "title": "证据之争:关联还是因果",
+ "subtitle": "营养科学很难有铁证,但「等 100% 确定再行动」本身就是产业乐见的拖延",
+ "centralIdea": "这一章是全书循证的良心秤,专讲一件难事:怎么诚实地衡量「UPF 有害」的证据强度。指控 UPF 的证据,绝大多数是观察性的流行病学关联——吃 UPF 多的人各种病更多,但关联不等于因果,因为这群人往往也更穷、更少运动、压力更大,这些混杂因素难以完全排除。不过因果链正在变结实:有说得通的机制,有 Kevin Hall 的随机对照试验证明「UPF 本身导致过食、增重」,还有剂量-反应关系,三股证据彼此补位。与此同时,产业像当年的烟草业一样,靠强调「还没百分百证实」来制造怀疑、拖延监管——「制造怀疑」本身就是一门生意。作者的态度是科学的诚实:把「已相当确证的」(UPF 与过食增重、与多种慢病风险升高)和「仍在研究、尚未定论的」(某些具体添加剂的确切危害、食物成瘾的界定)分得清清楚楚,既不夸大,也不因存疑而放任。核心是:营养科学难有绝对铁证,但「等完全确定再动」正中产业下怀——现有证据的总重量,已足够让人警惕并推动改变。目的不是制造饮食恐慌,而是教人理性看待「关联 vs 因果」这类论证。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "读到这一章,你大概已经攒下不少「UPF 有害」的印象。但只要把这些说法端上饭桌、或者念给一位挑剔的科学家听,几乎一定会撞上同一句反问:「这些真是 UPF 害的,还是吃 UPF 的人本来日子就过得更糟?」这句反问并不刻薄,它恰恰点中了这门学问最难、也最诚实的地方。所以这一章不急着给 UPF 定罪,而是把证据一层层摊开:哪些已经相当扎实,哪些还悬在半空,以及一个更要紧的问题——在没有百分百铁证之前,我们到底该不该动。"
+  },
+  {
+   "type": "h2",
+   "text": "先分清两个词:关联,还是因果"
+  },
+  {
+   "type": "p",
+   "text": "眼下指控 UPF 的证据,绝大多数来自同一类研究:流行病学的「观察」。研究者找来成千上万、乃至十几万人,记下他们平时吃多少 UPF,再追踪好些年,数一数谁得了心脏病、糖尿病、癌症,谁更早离世。这类研究在世界各地做过许多轮,反复出现同一个结果:UPF 吃得越多的那一群,几乎各种慢病的比例都更高,总死亡风险也更高。数字很吓人,方向也高度一致——正因为一致,才让人忍不住想直接下结论。"
+  },
+  {
+   "type": "p",
+   "text": "但这里有一道过不去的坎——**关联不等于因果**。两件事一起出现,不代表其中一个是另一个的原因。最经典的比喻是:夏天冰淇淋卖得多,溺水的人也多;可没人会说冰淇淋害人淹死,真正的幕后推手是「天热」,它同时推高了这两件事。"
+  },
+  {
+   "type": "p",
+   "text": "放到 UPF 身上,这个「天热」可能是一长串东西。爱吃 UPF 的人,往往同时更穷、工作更累、睡得更少、更少运动、压力更大,抽烟喝酒的比例也更高。这些因素统称**混杂因素**:它们既让人更依赖便宜方便的 UPF,又各自独立地把人推向疾病。于是当你看到「UPF 多的人病更多」,你没法一口咬定是 UPF 干的,还是这一串坏运气一起干的。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "关联看得见,因果未必——第三者常在暗处同时推高两边",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">关联 &#8800; 因果:常有第三者在捣鬼</text><rect x=\"30\" y=\"66\" width=\"160\" height=\"58\" rx=\"8\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"110\" y=\"101\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">UPF 吃得多</text><rect x=\"370\" y=\"66\" width=\"160\" height=\"58\" rx=\"8\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"450\" y=\"101\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">各种病更多</text><line x1=\"190\" y1=\"95\" x2=\"370\" y2=\"95\" style=\"stroke:var(--ink-faint)\" stroke-width=\"2\" stroke-dasharray=\"6 5\"/><text x=\"280\" y=\"85\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">看得到的关联</text><text x=\"280\" y=\"116\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">真是它害的吗?</text><rect x=\"163\" y=\"204\" width=\"234\" height=\"66\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><text x=\"280\" y=\"231\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\">真正的推手:混杂因素</text><text x=\"280\" y=\"253\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">更穷 · 少运动 · 压力大 · 常熬夜</text><line x1=\"212\" y1=\"204\" x2=\"122\" y2=\"126\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><line x1=\"348\" y1=\"204\" x2=\"440\" y2=\"126\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"292\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"11\">它同时推高两边,于是两边看起来「相关」</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "研究者当然会用统计手段去「扣掉」这些混杂——把年龄、收入、运动量、吸烟一项项调整一遍。但谁都清楚:你能想到、又测得准的因素才扣得掉,那些没测到的、测不准的(比如长期慢性压力究竟有多大),永远像水底的暗礁。这就是为什么严谨的科学家会说,观察性研究能给出强烈的怀疑,却给不出定案。"
+  },
+  {
+   "type": "p",
+   "text": "还有一层更绕的麻烦叫**反向因果**:也许并不是 UPF 让人生了病,而是本来就身体不适、活动变少的人,更容易图省事去吃现成的、软烂好入口的 UPF。到底是吃出了病,还是病了才这么吃,单凭一张横断面的「照片」根本分不清先后。种种缠夹叠在一起,就是为什么再漂亮的关联数字,也只能算「线索」,不能当「判决」——这不是吹毛求疵,而是这门学问必须守住的底线。"
+  },
+  {
+   "type": "h2",
+   "text": "那为什么不干脆做个实验?"
+  },
+  {
+   "type": "p",
+   "text": "你可能会想:证明因果最干净的办法,不就是做**随机对照试验**(RCT)吗?把人随机分成两组,一组吃 UPF、一组不吃,别的都一样,过几年比一比。随机分组的妙处正在于,它能把那些混杂因素——已知的、未知的——大致均匀地打散到两组里,剩下的差别就更能算到 UPF 头上。"
+  },
+  {
+   "type": "p",
+   "text": "问题是,饮食的 RCT 极难做。你没法把几百人关起来几十年、盯着他们每一口吃什么;你也没法像发糖丸那样让人「不知道自己吃的是 UPF 还是真食物」——嘴一尝就穿帮了。让人长期严格照吃某一种饭,这件事本身就筛掉了大部分普通人。所以营养学里,能一锤定音的长期大型 RCT 少之又少。这不是科学家偷懒,是这件事天生就难。"
+  },
+  {
+   "type": "h2",
+   "text": "转折:一个把因果钉住的实验"
+  },
+  {
+   "type": "p",
+   "text": "正因为难,美国国立卫生研究院的 Kevin Hall 做的那项 RCT 才格外重要。它不追问「几十年后谁生病」,而是回答一个更小、却更能钉死的问题:**在热量、糖、盐、脂肪、纤维都尽量配平的前提下,单单「是不是 UPF」这一点,会不会让人多吃、变重?**"
+  },
+  {
+   "type": "p",
+   "text": "做法是这样:一小群志愿者住进代谢病房,先吃两周 UPF 餐,再吃两周未加工餐(或者反过来),两套餐单的营养成分被刻意调到接近,三餐加零食都随便吃、管饱,吃多少全凭自己。因为是同一批人先后吃两种饭,每个人都成了自己的对照,连「个体差异」这个最顽固的混杂也被压到了最低。"
+  },
+  {
+   "type": "quote",
+   "ftype": "金句",
+   "original": "让同一个人在两种饭之间来回,身体自己会告诉你,哪一种更容易吃过量。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "Kevin Hall 的交叉设计:同一批人,各自当自己的对照",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">把因果钉下来:同一批人,两种饭</text><rect x=\"35\" y=\"64\" width=\"215\" height=\"82\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><text x=\"142\" y=\"96\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">阶段一:UPF 餐(两周)</text><text x=\"142\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">三餐加零食,管饱随便吃</text><text x=\"285\" y=\"113\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"22\">&#8594;</text><rect x=\"310\" y=\"64\" width=\"215\" height=\"82\" rx=\"8\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"417\" y=\"96\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">阶段二:未加工餐(两周)</text><text x=\"417\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">营养刻意配平后作对照</text><rect x=\"66\" y=\"178\" width=\"428\" height=\"88\" rx=\"10\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"280\" y=\"206\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\">每个人都当自己的对照</text><text x=\"280\" y=\"232\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">UPF 那两周:平均每天多吃约 500 千卡,体重上升</text><text x=\"280\" y=\"253\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">热量、糖、盐配平后,差别只剩「加工与否」</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "结果很干脆:吃 UPF 那两周,人们平均每天多摄入约五百千卡,两周下来体重也涨了;换成未加工餐,又自己吃回去、瘦回去。营养成分明明配平了,差别只剩「加工与否」——这就把「UPF 本身导致过食、增重」从一句猜测,变成了一个能在实验里重复看到的**因果**。它规模不大、时间不长,却难得地干净。"
+  },
+  {
+   "type": "p",
+   "text": "五百千卡是什么概念?差不多是一顿像样午饭的分量,或者两三罐含糖饮料。同样一群人、同样想吃就吃,只因为食物换成了 UPF,每天就不知不觉多塞进这么多——长年累月,足够解释很多人身上那点「不知从哪冒出来」的体重。这可不是靠意志力咬咬牙就能轻松抵消的小数目,它更像是被食物的设计悄悄拨动的一根杠杆。"
+  },
+  {
+   "type": "p",
+   "text": "把这项 RCT、前几章讲过的**机制**(UPF 又软又快、绕过饱腹信号,某些添加剂扰动肠道),再加上观察研究里反复出现的**剂量-反应**关系(吃得越多、风险越高,是一道向上的坡,而非随机散落的点),三股证据指向同一个方向。单看任何一股都有软肋,但它们彼此补位:机制解释了「为什么会」,RCT 证明了「确实会」,大人群关联说明了「在真实世界里也如此」。因果链就是这样,从悬空一节一节落到地面。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "三层证据各有短长,合在一起才立得住",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">掂证据的分量:三层互相补位</text><polygon points=\"72,258 488,258 414,198 146,198\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"280\" y=\"226\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">观察性关联</text><text x=\"280\" y=\"246\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">数量最多,却只到「相关」</text><polygon points=\"147,195 413,195 356,135 204,135\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"280\" y=\"170\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">机制 · 剂量-反应</text><polygon points=\"205,132 355,132 280,74\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><text x=\"280\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">RCT · 证因果</text><line x1=\"44\" y1=\"256\" x2=\"44\" y2=\"86\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\"/><polygon points=\"38,96 50,96 44,80\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"28\" y=\"176\" text-anchor=\"middle\" transform=\"rotate(-90 28 176)\" style=\"fill:var(--ink-soft)\" font-size=\"11\">越往上,越接近因果</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "其实科学家判断一件事够不够格叫「因果」,靠的从来不是某一项决定性实验,而是一整套朴素的追问:关联够不够强、在不同人群里是否反复出现(**一致性**)?吃得越多是不是越糟(**剂量-反应**)?先吃 UPF 再生病、顺序对不对(**时序**)?有没有讲得通的身体机制?能不能在实验里重现?UPF 这几项差不多都占上了。这套追问方式,恰恰是当年把「吸烟致癌」钉死的同一副框架——它提醒我们:苛求一个「百分百铁证」往往不现实,但当证据从多个彼此独立的角度会师,分量就足够沉了。你我看新闻时也可以借这几把尺子,给任何「某某有害/有益」的说法量一量。"
+  },
+  {
+   "type": "h2",
+   "text": "有人偏偏靠「还没证实」赚钱"
+  },
+  {
+   "type": "p",
+   "text": "讲到这里得插一段不那么科学、却很现实的话。「证据还不够铁」这句话本身,是有人愿意花大价钱去维护的。"
+  },
+  {
+   "type": "p",
+   "text": "这一幕并不新鲜。上世纪的烟草公司早就演过一遍:它们心里清楚香烟致癌,对外却不停强调「科学界还有争议」「因果尚未证实」,资助各种研究去搅浑水,硬是把「制造怀疑」做成了一门生意。有一句被反复引用、出自烟草业内部备忘录的话是——"
+  },
+  {
+   "type": "quote",
+   "ftype": "金句",
+   "original": "怀疑就是我们的产品,因为它是与公众心里那团「事实」抗衡的最好办法。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "食品行业未必这么赤裸,但套路相通:强调不确定、资助立场友好的研究、把矛头引向「是你不运动、意志力差」。这几招都指向同一个目的——让「关联不等于因果」这句本来严谨的科学告诫,被扭成「所以你不用担心」的挡箭牌。只要监管一天说「证据还不足」,货就能一天照卖。所以当你听到「UPF 有害还没有百分百证实」时,值得多问一句:说这话的人,屁股坐在哪一边?这句话是在提醒你审慎,还是在替谁拖时间?"
+  },
+  {
+   "type": "h2",
+   "text": "诚实地摊在桌上:哪些已定,哪些还悬"
+  },
+  {
+   "type": "p",
+   "text": "但揭穿产业的把戏,不等于可以反过来把话说满。这本书真正让人信服的地方,恰恰是作者作为医生和科学家的那份**诚实**:该确定的确定,该存疑的存疑,两边都不含糊。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照",
+   "caption": "把「知道」和「还不知道」清清楚楚分开,才是科学的样子",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">诚实分栏:哪些已定,哪些还悬</text><rect x=\"34\" y=\"56\" width=\"232\" height=\"224\" rx=\"10\" style=\"fill:none;stroke:var(--azure)\" stroke-width=\"2\"/><text x=\"150\" y=\"86\" text-anchor=\"middle\" style=\"fill:var(--azure)\" font-size=\"15\">已相当确证</text><line x1=\"54\" y1=\"98\" x2=\"246\" y2=\"98\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"54\" y=\"128\" style=\"fill:var(--ink)\" font-size=\"12.5\">· UPF &#8594; 过食、增重(有 RCT)</text><text x=\"54\" y=\"162\" style=\"fill:var(--ink)\" font-size=\"12.5\">· 与多种慢病、死亡风险相关</text><text x=\"70\" y=\"183\" style=\"fill:var(--ink-soft)\" font-size=\"11\">且吃得越多、风险越高</text><text x=\"54\" y=\"217\" style=\"fill:var(--ink)\" font-size=\"12.5\">· 有说得通的生理机制</text><rect x=\"294\" y=\"56\" width=\"232\" height=\"224\" rx=\"10\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"2\" stroke-dasharray=\"5 4\"/><text x=\"410\" y=\"86\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">仍在研究</text><line x1=\"314\" y1=\"98\" x2=\"506\" y2=\"98\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"314\" y=\"128\" style=\"fill:var(--ink)\" font-size=\"12.5\">· 具体哪种添加剂、怎么致害</text><text x=\"314\" y=\"162\" style=\"fill:var(--ink)\" font-size=\"12.5\">· 「食物成瘾」该如何界定</text><text x=\"314\" y=\"196\" style=\"fill:var(--ink)\" font-size=\"12.5\">· 个体反应差异有多大</text><text x=\"410\" y=\"252\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"11\">承认空白,不是替 UPF 开脱</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "已经相当扎实的一头是:UPF 吃得多,与过食、增重之间有实验支持的因果关系;与多种慢病、更高的死亡风险之间,存在稳定且随剂量变化的关联;背后也有说得通的生理机制。这些加起来,已经足够让一个理性的人对 UPF 保持警惕——不是因为哪一项铁证如山,而是因为好几路证据齐刷刷指着同一个方向。"
+  },
+  {
+   "type": "p",
+   "text": "仍然悬而未决的另一头,也得老实讲:具体是哪一种乳化剂、哪一种添加剂、经由什么通路致害,很多还停在动物实验和初步研究;「食物成瘾」到底算不算严格意义上的成瘾、该怎么界定,学界还在争;不同人对 UPF 的反应差多少,也远没搞清。承认这些空白,不是替 UPF 开脱,而是科学本来的样子——把「我们知道」和「我们还不知道」分得清清楚楚。"
+  },
+  {
+   "type": "h2",
+   "text": "「等完全确定再说」,正中谁的下怀"
+  },
+  {
+   "type": "p",
+   "text": "于是落到最后一个问题:证据既然不是百分百,那要不要现在就动?"
+  },
+  {
+   "type": "p",
+   "text": "这里藏着一个常被偷换的逻辑。营养这种事,几乎永远等不到「绝对铁证」——你没法把一个人的一生锁进实验室几十年。如果非要等到 100% 确定才肯改、才肯管,那这一天大概永远不会来;而这份「永远的等待」,恰恰是最希望你继续买单的那一方乐见的结果。合理的态度不是等到无可辩驳,而是掂一掂证据的**总重量**够不够让人先谨慎起来——就像你不会等到统计出「这栋楼一定会塌」才肯搬,苗头够多、代价够重,提前避一避就是理性。"
+  },
+  {
+   "type": "p",
+   "text": "说回你我。学会分辨「关联」和「因果」,不是为了从此草木皆兵、看见包装食品就恐慌——那种饮食焦虑本身也是一种伤害。它是给你换一副更清醒的眼镜:看到「常吃某某的人更长寿」这类新闻,先问一句这是关联还是因果、背后有没有人替它买单;看到 UPF 的证据,既不因为「还没完全证实」就放心大吃,也不因为几条耸动标题就吓得不敢下咽。把证据的分量掂在自己手里,再决定怎么吃——这份不慌也不盲的判断力,或许比记住任何一条现成结论都更值钱。"
+  },
+  {
+   "type": "quote",
+   "ftype": "金句",
+   "original": "科学很少给你「绝对确定」,它给你的是:证据够不够重,值不值得现在就动。",
+   "translation": ""
+  }
+ ]
+}

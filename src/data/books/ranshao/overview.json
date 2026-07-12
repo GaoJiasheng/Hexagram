@@ -1,0 +1,216 @@
+{
+  "title": "白话《燃烧》· 全书总览",
+  "subtitle": "进化人类学家 Herman Pontzer 用测量真实能量消耗的金标准「双标水」,大规模测量人与动物到底烧了多少热量,又以坦桑尼亚的哈扎(Hadza)狩猎采集者为关键证据,推翻了一个几乎人人默认的常识——「动得越多,就一定烧得越多」。这本书讲的是身体这台炉子如何精打细算地花能量,以及这件事怎样改写了我们对减肥、运动、进化与人类自身的理解。",
+  "centralIdea": "《燃烧》的核心是一个反直觉却证据扎实的发现:身体会把每天烧掉的总热量「锁」在一个相对狭窄的区间里,而不是「你动得越多就烧得越多」的简单加法。Pontzer 用测量真实能量消耗的金标准——双标水——大规模测人,又以坦桑尼亚的哈扎(Hadza)狩猎采集者为关键证据:他们每天走很多、体力活动远超久坐的西方人,可校正体型后,每天的总热量消耗竟和西方人相差无几。他由此提出「受限的总能量消耗(constrained total energy expenditure)」模型——多运动时,身体会在别处(慢性炎症、应激、生殖等)悄悄省下能量来补偿,把总账维持在一个窄区间里。两条推论随之而来:运动不是可靠的减肥工具(减肥主要由「吃」决定),但运动对健康极其重要(它把过剩的能量从慢性炎症等有害用途上引开)。研读时要守住底线:「运动不减肥」绝不等于「不该运动」,受限模型虽然有力、也被广泛讨论,但细节与边界仍在研究、勿绝对化;本文更不是给你个人的减重或医疗处方。",
+  "featured": true,
+  "hero": {
+    "badge": "全书 · 核心",
+    "headline": "你以为跑步烧掉的那点热量,身体会在你看不见的地方偷偷省回来——所以减肥的胜负手在餐桌,不在跑步机。",
+    "tagline": "进化人类学家用双标水与哈扎人,改写了「管住嘴、迈开腿」里被误解的那半句。"
+  },
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "几乎每个减过肥的人,心里都装着一道简单的算术题:今天多跑了五公里,大概烧掉三百多大卡,那就等于给身体的「热量账户」多支出了三百多——只要动得够多,总能把吃进去的抵消掉。这套「热量进、热量出」的加法,听上去天经地义,也是无数健身房、跑步机和运动手环卖给我们的承诺。可写《燃烧》(Burn)的 Herman Pontzer,一位常年在非洲丛林里追着狩猎采集者做测量的进化人类学家,却带着一整套硬数据告诉你:这道算术题,在关键的地方算错了。身体不是一个诚实记账的钱包,而是一个会精打细算、暗中挪腾的「预算大师」——你在运动上多花的,它常常会在你根本看不见的地方,悄悄省回来。这本书,就是要讲清楚这台名叫「代谢」的炉子,到底是怎么烧钱的。"
+    },
+    {
+      "type": "h2",
+      "text": "一、代谢到底是什么:身体这台永不熄火的炉子"
+    },
+    {
+      "type": "p",
+      "text": "要看懂这本书,先得把「代谢」这个词从健身房的黑话里解放出来。**代谢,说白了就是身体把食物换成生命活动的全过程**——它不是「胖子慢、瘦子快」的那点玄学,而是一台从你出生到咽气都没熄过火的炉子。你可能以为只有跑步、搬东西才「烧热量」,其实身体里最费能量的,恰恰是那些你毫无知觉的事:心脏一刻不停地跳、肺不停地呼吸、肝肾日夜过滤、免疫系统巡逻剿敌、伤口悄悄愈合、神经元噼里啪啦地放电思考、乃至孕育一个新生命——**每一件都要花能量,而且是硬开销**。热量(卡路里)不过是给这些活动记账用的「能量货币」,代谢就是这本总账。"
+    },
+    {
+      "type": "p",
+      "text": "把一天的总开销拆开看,大致分成几块:**基础代谢(BMR)**,也就是你整天躺着一动不动、光维持生命运转就要烧掉的那部分,它往往是大头,占了每日总消耗的一多半;**体力活动**,包括运动,也包括走路、站立、坐立不安地抖腿这些零碎;还有**消化食物本身的开销**(吃进去也要花钱去处理);对小孩、孕妇则还有**生长与生育**这一大项。把这些加起来,就是营养学里说的「**每日总能量消耗(total energy expenditure)**」。这本书从头到尾追问的,正是这个「总消耗」到底由什么决定——而答案,远比那道加法题微妙。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "一天烧掉的热量,构成大致如此:光维持生命运转的「基础代谢」往往就占一多半,体力活动(含运动)只是其中一块,消化食物本身也要花钱。搞清这张饼,才明白为什么「多运动」撬动的其实是有限的一角。",
+      "svg": "<svg viewBox='0 0 600 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='300' y='34' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>每日总能量消耗的构成</text><rect x='60' y='70' width='300' height='44' rx='6' style='fill:var(--cinnabar-pure)'/><rect x='360' y='70' width='120' height='44' rx='0' style='fill:var(--ink-soft)'/><rect x='480' y='70' width='60' height='44' rx='6' style='fill:var(--ink-faint)'/><text x='210' y='98' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--paper-raised)'>基础代谢 BMR</text><text x='420' y='98' text-anchor='middle' font-size='12.5' style='fill:var(--paper-raised)'>体力活动</text><text x='510' y='98' text-anchor='middle' font-size='11' style='fill:var(--paper-raised)'>消化</text><text x='210' y='140' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>约占一多半:心跳/呼吸/器官/免疫/修复/思考</text><text x='420' y='140' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>含运动+日常</text><line x1='60' y1='170' x2='540' y2='170' style='stroke:var(--line)' stroke-width='1'/><text x='300' y='202' text-anchor='middle' font-size='13' style='fill:var(--ink)'>你以为运动是账单的大头——其实它只是右边这一小块</text><text x='300' y='232' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>而全书要证明的是:就连这一小块,身体也会在别处「找补」回来</text><text x='300' y='268' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>(小孩、孕妇还有「生长与生育」一大项,此处从略)</text></svg>"
+    },
+    {
+      "type": "quote",
+      "original": "你身体里的每一件事——心跳、呼吸、思考、免疫、修复、生育——都要花能量;代谢,就是这台炉子把食物换成生命活动的总账。",
+      "translation": "对全书起点的转述。先把「代谢」从减肥黑话里拉回本义:它是维持你活着的全部能量开销,运动只占其中一部分。"
+    },
+    {
+      "type": "h2",
+      "text": "二、双标水:第一次真正「称」出身体烧了多少"
+    },
+    {
+      "type": "p",
+      "text": "这本书之所以有底气推翻常识,不是靠嘴皮子,而是靠一件很硬的工具——**双标水(doubly labeled water)**。在它出现之前,想知道一个人一天到底烧了多少热量,基本靠估:填问卷、戴计步器、进代谢舱憋一天……要么不准,要么脱离真实生活。双标水改变了这一切,它是测量「自由活动状态下真实每日总能量消耗」的**金标准**。原理巧妙得像侦探破案:让你喝下一杯经过特殊标记的水——水里的氢和氧都换成了可安全追踪的「重」同位素;接下来的一两周里,只需定期取一点尿样,就能算出你烧了多少。"
+    },
+    {
+      "type": "p",
+      "text": "关键的机关在于:**被标记的氢,只能随水分排出身体;而被标记的氧,既能随水排出,也能随你呼出的二氧化碳(CO₂)排出。** 两者消失速度的差,恰好对应你产生了多少 CO₂——而 CO₂ 正是身体「烧」能量的废气,产得越多,说明烧得越旺。于是,一杯水加上几管尿,就能相当准确地回推出这段时间里身体消耗的总热量。它不打扰你的正常生活,你该上班上班、该锻炼锻炼,数字却真实可靠。正是靠着把这套方法用到成百上千个不同人群身上——从久坐的城市白领,到丛林里的猎人,再到动物园的猿——Pontzer 手里才攒起了一副别人没有的牌,也才敢向那道人人默认的加法算术叫板。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "双标水的巧思:喝下标记了「重」氢与「重」氧的水,氢只随水排出,氧却能随水和呼出的 CO₂ 一起排出。两者消失速度之差,就是你产生的 CO₂——也就是你真实烧掉的能量。一杯水几管尿,不打扰生活地称出总消耗。",
+      "svg": "<svg viewBox='0 0 620 320' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='310' y='32' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>双标水:怎么称出真实消耗</text><rect x='230' y='54' width='160' height='46' rx='10' style='fill:var(--cinnabar-pure)'/><text x='310' y='83' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--paper-raised)'>喝下标记水(²H · ¹⁸O)</text><line x1='270' y1='100' x2='150' y2='150' style='stroke:var(--ink-faint)' stroke-width='1.5'/><line x1='350' y1='100' x2='470' y2='150' style='stroke:var(--ink-faint)' stroke-width='1.5'/><rect x='40' y='152' width='220' height='84' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='150' y='182' text-anchor='middle' font-size='13.5' font-weight='bold' style='fill:var(--ink)'>标记的「氢」</text><text x='150' y='206' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>只随「水」排出</text><text x='150' y='226' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>(尿、汗、呼吸中的水)</text><rect x='360' y='152' width='220' height='84' rx='9' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='2'/><text x='470' y='182' text-anchor='middle' font-size='13.5' font-weight='bold' style='fill:var(--ink)'>标记的「氧」</text><text x='470' y='206' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>随水 + 随 CO₂ 排出</text><text x='470' y='226' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar-pure)'>多出来的那份 = CO₂</text><rect x='190' y='262' width='240' height='42' rx='10' style='fill:var(--ink-soft)'/><text x='310' y='289' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--paper-raised)'>两者之差 → 真实烧掉的能量</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "三、哈扎人的震撼:走那么多路,却没多烧热量"
+    },
+    {
+      "type": "p",
+      "text": "全书最重的一块砝码,来自坦桑尼亚北部的**哈扎人(Hadza)**——地球上所剩不多、仍以狩猎采集为生的族群之一。他们没有超市、没有代步车,吃的每一口几乎都要靠双腿去挣:女人成天在灌木丛里挖块茎、采浆果,男人背着弓箭一走就是十几公里去追猎物、爬树掏蜂蜜。按常识,这样一个「行走的马拉松族群」,每天烧掉的热量理应远远甩开成天坐在椅子上的西方人。Pontzer 团队扛着双标水设备住进哈扎营地,原本也是抱着验证这个「显而易见」结论的心态去的。"
+    },
+    {
+      "type": "p",
+      "text": "结果,数据给了所有人当头一棒:**在校正了体型(哈扎人普遍更瘦更小)之后,哈扎成年人每天的总能量消耗,竟然和久坐的欧美成年人差不多。** 明明活动量天差地别,总账却几乎持平。这不是测量误差,而是在不同人群里反复出现的稳定图景。它意味着:那道「体力活动越多 → 每日总消耗越高」的朴素加法,在真实的身体上根本不成立。哈扎人多走的那些路、多花的那些力气,并没有让他们每天的热量账单水涨船高——身体一定在某个地方,把这笔多出来的开销给「吃掉」了。这个反常的发现,正是下一步整套新理论的引信。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "全书的关键证据:哈扎人每天的身体活动量,远远高于久坐的西方人(左);可一旦校正体型,两者每天的总能量消耗却几乎持平(右)。活动量的巨大鸿沟,并没有变成总消耗的鸿沟——这一反常,推翻了「加法」直觉。",
+      "svg": "<svg viewBox='0 0 620 340' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='310' y='30' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>哈扎人 vs 西方人</text><text x='160' y='58' text-anchor='middle' font-size='13.5' font-weight='bold' style='fill:var(--ink-soft)'>每日身体活动量</text><line x1='60' y1='250' x2='270' y2='250' style='stroke:var(--line)' stroke-width='1.5'/><rect x='90' y='96' width='54' height='154' rx='4' style='fill:var(--cinnabar-pure)'/><rect x='188' y='210' width='54' height='40' rx='4' style='fill:var(--ink-faint)'/><text x='117' y='270' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>哈扎</text><text x='215' y='270' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>西方</text><text x='165' y='294' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>差距悬殊</text><text x='460' y='58' text-anchor='middle' font-size='13.5' font-weight='bold' style='fill:var(--ink)'>校正体型后·每日总消耗</text><line x1='360' y1='250' x2='570' y2='250' style='stroke:var(--line)' stroke-width='1.5'/><rect x='390' y='128' width='54' height='122' rx='4' style='fill:var(--cinnabar-pure)'/><rect x='488' y='134' width='54' height='116' rx='4' style='fill:var(--ink-soft)'/><text x='417' y='270' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>哈扎</text><text x='515' y='270' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>西方</text><text x='465' y='294' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar-pure)'>竟然相近</text><text x='310' y='324' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>活动量的鸿沟,没有变成总消耗的鸿沟——多花的力气,被身体在别处「吃」掉了</text></svg>"
+    },
+    {
+      "type": "quote",
+      "original": "哈扎人整天在走、在挖、在追猎物,一天烧掉的总热量却和坐办公室的美国人差不多——这个结果,逼我们从头重想「运动烧热量」这件事。",
+      "translation": "对核心证据的转述。校正体型后两群人的每日总消耗相近,是「受限模型」得以立论的经验地基。"
+    },
+    {
+      "type": "h2",
+      "text": "四、受限的总能量消耗:身体会「偷偷省下」"
+    },
+    {
+      "type": "p",
+      "text": "为了解释哈扎人的反常,Pontzer 提出了这本书最重要的概念——「**受限的总能量消耗(constrained total energy expenditure)**」模型。它和传统的「**加法模型**」针锋相对。加法模型说:总消耗 = 基础代谢 + 活动开销,你多动一分,总账就多一分,像往一个不封顶的桶里加水。受限模型却说:**身体倾向于把每天的总消耗维持在一个相对狭窄的区间里**,它更像一个有固定预算的家庭——这个月在旅游上超支了,就会在别的开销上悄悄砍一刀,好让月底的总账仍然落在预算内。所以当你增加运动、在「活动」这一项上多花钱时,身体并不会老老实实地把它加到总账上,而是会**在别处减少开支来补偿**。"
+    },
+    {
+      "type": "p",
+      "text": "那省下来的能量,是从哪些地方「抠」出来的?这正是受限模型最耐人寻味、也最有健康含义的地方。身体会调低那些平时你毫无知觉的「隐性开销」——比如压低**慢性炎症**的水平、收敛过度的**应激反应**(如常年偏高的皮质醇)、调节**生殖系统**的投入(这也解释了为什么运动量极大的女性有时月经会紊乱)、乃至微调免疫与其他背景代谢活动。**换句话说,你以为运动是在「多烧热量」,身体听到的却是「预算紧张,该省则省」的信号,于是把资源从这些后台进程里挪走。** 总消耗因此被牢牢摁在窄区间里——这就是哈扎人虽走遍山野、账单却不见涨的谜底。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "两种模型的对决:加法模型(灰)认为活动越多、总消耗越高,一路直线上扬;受限模型(朱)认为总消耗先随活动上升,很快就撞上「预算天花板」而走平——多出来的活动,被身体在别处的省吃俭用抵消了。哈扎人的数据,站在朱线这一边。",
+      "svg": "<svg viewBox='0 0 620 340' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='310' y='30' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>加法模型 vs 受限模型</text><line x1='80' y1='276' x2='560' y2='276' style='stroke:var(--ink-soft)' stroke-width='2'/><line x1='80' y1='276' x2='80' y2='70' style='stroke:var(--ink-soft)' stroke-width='2'/><text x='320' y='308' text-anchor='middle' font-size='12.5' style='fill:var(--ink-faint)'>身体活动量 →</text><text x='58' y='170' text-anchor='middle' font-size='12.5' style='fill:var(--ink-faint)' transform='rotate(-90 58 170)'>每日总消耗 →</text><line x1='80' y1='250' x2='540' y2='96' style='stroke:var(--ink-faint)' stroke-width='2.5' stroke-dasharray='7 5'/><text x='470' y='108' font-size='12.5' style='fill:var(--ink-soft)'>加法:一路上扬</text><path d='M80 250 C 180 150, 300 118, 540 112' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='3'/><text x='372' y='138' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>受限:很快走平</text><line x1='80' y1='120' x2='540' y2='120' style='stroke:var(--cinnabar-pure)' stroke-width='1' stroke-dasharray='3 5' opacity='0.55'/><text x='118' y='112' font-size='11' style='fill:var(--cinnabar-pure)'>预算天花板</text><text x='310' y='330' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>多出的活动被「别处省下」抵消,总账被摁在窄区间里</text></svg>"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "省下的能量去了哪:当你增加运动,身体听到的是「预算紧张」的信号,于是把资源从这些后台进程里挪走——压低慢性炎症、收敛过度应激、调节生殖投入。总账因此保持稳定。这也埋下了「运动为何护健康」的伏笔。",
+      "svg": "<svg viewBox='0 0 620 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='310' y='32' text-anchor='middle' font-size='18' font-weight='bold' style='fill:var(--ink)'>多运动 → 身体在别处省下</text><rect x='215' y='52' width='190' height='46' rx='10' style='fill:var(--cinnabar-pure)'/><text x='310' y='81' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--paper-raised)'>运动↑ = 预算收紧信号</text><line x1='260' y1='98' x2='120' y2='146' style='stroke:var(--ink-faint)' stroke-width='1.5'/><line x1='310' y1='98' x2='310' y2='146' style='stroke:var(--ink-faint)' stroke-width='1.5'/><line x1='360' y1='98' x2='500' y2='146' style='stroke:var(--ink-faint)' stroke-width='1.5'/><rect x='34' y='148' width='172' height='72' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='120' y='178' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--ink)'>慢性炎症 ↓</text><text x='120' y='200' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>后台开销被压低</text><rect x='224' y='148' width='172' height='72' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='310' y='178' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--ink)'>应激反应 ↓</text><text x='310' y='200' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>皮质醇趋于收敛</text><rect x='414' y='148' width='172' height='72' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='500' y='178' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--ink)'>生殖投入 · 调节</text><text x='500' y='200' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>激素随之微调</text><text x='310' y='258' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>结果:总消耗稳定 —— 而这些「被省下」的项,恰恰是伤身的慢性过程</text><text x='310' y='282' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar-pure)'>「减不了肥」与「护健康」,是同一个机制的一体两面</text></svg>"
+    },
+    {
+      "type": "quote",
+      "original": "身体不是把活动的开销老实地加进账单,而是像一个有预算的家庭:这头多花了,就在别处悄悄省回来。",
+      "translation": "对「受限模型」的转述。总消耗被维持在窄区间,是理解全书一切推论的枢纽。"
+    },
+    {
+      "type": "h2",
+      "text": "五、两个反直觉的推论:运动不减肥,却极其重要"
+    },
+    {
+      "type": "p",
+      "text": "受限模型一旦成立,两个乍看矛盾、实则并行的推论就水落石出。**第一个:运动不是有效的减肥工具。** 因为身体会把你「多烧」的那部分,靠别处的省吃俭用给补偿掉,所以你以为跑步机上甩掉的三百大卡,并没有真的从每日总账里扣走多少。这解释了一个折磨过无数人的现象:办了健身卡、每周挥汗如雨,体重却纹丝不动。**「跑步抵不过一张嘴」**——单靠加大运动量来减重,效果往往远低于预期,因为你烧掉的窟窿,身体会不动声色地填上。这不是你不够努力,而是这台炉子本就被设计成擅长「维持平衡」。"
+    },
+    {
+      "type": "p",
+      "text": "**第二个推论,方向截然相反,却同样重要:运动对健康极其重要,甚至是你能为身体做的最好的事之一。** 关键恰恰藏在上一节那张「省下的能量去了哪」的图里:当运动逼着身体在预算里腾挪,它优先压缩的,往往正是慢性炎症、过度应激这些**长期伤身的有害进程**。也就是说,运动虽然没帮你把总热量烧下去,却帮你把过剩的能量**从有害用途上引开了**——它改善心血管功能、优化血糖与代谢、调节激素与情绪、压低慢性炎症。所以「运动减不了多少肥」和「运动对健康好处巨大」,不是互相拆台的两句话,而是**同一个机制的一体两面**:身体不把能量加到账单上,而是把它从伤身的地方挪走。这也正是为什么,把这两句话拆开听都会误导,合起来才是全貌。"
+    },
+    {
+      "type": "quote",
+      "original": "运动几乎减不了多少肥,却依然是你能为健康做的最好的事之一——这两句话同时为真,并不矛盾。",
+      "translation": "对全书最易被误读之处的转述。两个推论并行不悖:减肥看嘴,健康靠动。"
+    },
+    {
+      "type": "h2",
+      "text": "六、减肥的真正战场在餐桌"
+    },
+    {
+      "type": "p",
+      "text": "如果运动这条路在减重上事倍功半,那真正管用的杠杆在哪?Pontzer 的答案很直接:**减肥主要由「摄入」——也就是吃——决定。** 既然身体擅长把总消耗摁在窄区间里、让你很难靠多动来「烧」出赤字,那么想制造能量缺口、让体重下降,更可靠的着力点就落在了「进」这一端:吃了多少、吃了什么、以及那些让你不知不觉吃过量的东西。书里由此把矛头指向了现代食物环境——尤其是那些被精心设计得「让人停不下来」的高度加工食品,它们轻易就能把你的摄入推高到远超身体所需,而身体那套「省着花」的本事,在过量的输入面前根本兜不住底。"
+    },
+    {
+      "type": "p",
+      "text": "要特别说清楚的是,「减肥看嘴」**不是**在鼓吹某一种时髦的节食法,也不是让你从此把运动扔到一边。它想纠正的,是一个被健身产业放大了的错觉——**以为可以靠拼命运动来「抵消」乱吃**。真相是:管住输入这一端,才是撬动体重最有效的支点;而运动的价值,要到「健康」那本账上去兑现,而不该拿减肥的秤去称它。至于具体怎么吃、吃多少,那是因人而异、需要结合个人情况的事——**这本书给的是「战场在哪」的判断,不是一份可以照抄的食谱或减重处方。**"
+    },
+    {
+      "type": "quote",
+      "original": "想减重,真正的战场在餐桌;跑得再多,也抵不过一张管不住的嘴。",
+      "translation": "对减重结论的转述。身体擅长补偿运动带来的赤字,故能量缺口更可靠地来自「摄入」端。"
+    },
+    {
+      "type": "h2",
+      "text": "七、人为什么是一台「高通量」的猿"
+    },
+    {
+      "type": "p",
+      "text": "讲完减肥,这本书把镜头拉到更宏大的尺度——进化。Pontzer 也把双标水用到了黑猩猩、大猩猩等猿类身上,得出一个漂亮的发现:**和亲缘最近的猿相比,人类进化出了一种「高通量」的代谢**。这里的「高通量」不是指人更省油,恰恰相反——**人类既烧得更多,也吃得更多**,像一台流量更大的引擎:进料更猛,输出也更猛。我们每天消耗的能量,校正体型后明显高于猿类。这多出来的一大笔预算,身体拿去投资了几件对「人之为人」至关重要的事。"
+    },
+    {
+      "type": "p",
+      "text": "这笔额外的能量,主要供养了三样奢侈品:一颗**又大又贵的大脑**(大脑是出了名的耗能大户)、一种**更高的生育速度**(人类母亲能比猿类更密地生养后代)、以及一段**格外漫长的寿命**。烧得多、吃得多,才养得起「聪明 + 多产 + 长寿」这套在动物界罕见的组合。而人类之所以能维持这么高的能量吞吐,靠的不是单打独斗,而是两样进化利器:**合作觅食**——大家分工采集、狩猎、共享食物,把找吃的风险摊平、把回报做大;以及**烹饪**——用火把食物「预先消化」,让同样的食材释放出更多可吸收的能量。是协作与灶火,一起撑起了这台高通量的引擎。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "人是一台「高通量」的猿:校正体型后,人类每天既烧得比猿多、也吃得比猿多——像一台进料更猛、输出也更猛的引擎。多出来的这笔预算,投资给了大脑、多产与长寿;而支撑它的,是合作觅食与烹饪。",
+      "svg": "<svg viewBox='0 0 620 330' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='310' y='30' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>人类 vs 猿类:高通量代谢</text><line x1='90' y1='210' x2='300' y2='210' style='stroke:var(--line)' stroke-width='1.5'/><rect x='110' y='96' width='58' height='114' rx='4' style='fill:var(--cinnabar-pure)'/><rect x='210' y='150' width='58' height='60' rx='4' style='fill:var(--ink-faint)'/><text x='139' y='230' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>人</text><text x='239' y='230' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>猿</text><text x='195' y='256' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink)'>每日消耗 · 更高</text><line x1='330' y1='210' x2='540' y2='210' style='stroke:var(--line)' stroke-width='1.5'/><rect x='350' y='104' width='58' height='106' rx='4' style='fill:var(--cinnabar-pure)'/><rect x='450' y='156' width='58' height='54' rx='4' style='fill:var(--ink-faint)'/><text x='379' y='230' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>人</text><text x='479' y='230' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>猿</text><text x='435' y='256' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink)'>每日进食 · 更多</text><line x1='60' y1='282' x2='560' y2='282' style='stroke:var(--ink-soft)' stroke-width='2.5'/><text x='310' y='306' text-anchor='middle' font-size='12.5' style='fill:var(--cinnabar-pure)'>多出的预算 → 供养大脑 · 多产 · 长寿(靠合作觅食 + 烹饪撑起)</text></svg>"
+    },
+    {
+      "type": "quote",
+      "original": "人类这台机器的特别之处,不是省油,而是既烧得更旺、也吃得更多——用高吞吐供养一颗大脑、一窝孩子和一段长寿。",
+      "translation": "对进化视角的转述。高通量代谢是理解人类大脑、生育与寿命的能量学底座。"
+    },
+    {
+      "type": "h2",
+      "text": "八、代谢的天花板:耐力的极限"
+    },
+    {
+      "type": "p",
+      "text": "既然身体的能量花销这么会算计,那它有没有一个「花不动」的上限?这本书的最后一块拼图,就是**代谢的天花板**。Pontzer 发现,人体长期可持续的能量消耗有一个天花板——**大约是基础代谢的 2.5 倍**。你在短时间里当然能爆发到更高(冲刺、极限运动),但若要**持续数周、数月**地维持,身体就撑不住那么高的燃烧速率了。而这堵墙的位置,主要由一个很朴素的瓶颈决定:**你的肠道每天能从食物里吸收进来的能量是有限的**。烧钱的速度,终究被「进货」的速度卡住——花得再快,也快不过肠子把能量搬进来的速度。"
+    },
+    {
+      "type": "p",
+      "text": "这个「2.5 倍」的天花板,在几个看似八竿子打不着的场景里同时现身,反而印证了它的真实。**环法自行车赛**的选手,连日翻山越岭,长期消耗率正逼近这条线;**跨大陆、跨越数月的极限耐力赛**参赛者,身体也被摁在同一堵墙前,再想多烧也烧不动;而最出人意料的是——**孕期**。孕育一个孩子,原来是一项在能量上极其昂贵、逼近人体持续代谢上限的「耐力赛」,母亲的身体差不多是在这堵天花板下,长跑了九个月。从环法冠军到孕育生命,竟撞在同一条代谢红线上,这个巧合本身,就是身体能量法则的一记漂亮注脚。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "代谢的天花板:短时间可以爆发到很高,但持续得越久,可维持的燃烧速率就越低,最终落在约「基础代谢 2.5 倍」的红线上——受肠道每日吸收能量的上限所限。环法、跨月极限耐力赛、乃至孕期,都撞在同一堵墙前。",
+      "svg": "<svg viewBox='0 0 620 330' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='310' y='30' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>持续越久,烧得越有上限</text><line x1='80' y1='262' x2='560' y2='262' style='stroke:var(--ink-soft)' stroke-width='2'/><line x1='80' y1='262' x2='80' y2='70' style='stroke:var(--ink-soft)' stroke-width='2'/><text x='320' y='294' text-anchor='middle' font-size='12.5' style='fill:var(--ink-faint)'>持续时长 → (分钟 · 小时 · 天 · 周 · 月)</text><text x='58' y='166' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)' transform='rotate(-90 58 166)'>可维持消耗率 →</text><path d='M80 92 C 200 150, 340 208, 560 224' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='3'/><line x1='80' y1='224' x2='560' y2='224' style='stroke:var(--ink-soft)' stroke-width='1.2' stroke-dasharray='4 5'/><text x='90' y='216' font-size='11.5' font-weight='bold' style='fill:var(--ink)'>≈ 基础代谢的 2.5 倍(可持续天花板)</text><circle cx='420' cy='218' r='4.5' style='fill:var(--cinnabar-pure)'/><text x='420' y='246' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>环法</text><circle cx='500' cy='222' r='4.5' style='fill:var(--cinnabar-pure)'/><text x='500' y='246' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>极限耐力赛</text><circle cx='545' cy='223' r='4.5' style='fill:var(--cinnabar-pure)'/><text x='545' y='210' text-anchor='middle' font-size='11' style='fill:var(--cinnabar-pure)'>孕期</text><text x='310' y='318' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>瓶颈:肠道每天能吸收的能量有限——烧钱快不过「进货」</text></svg>"
+    },
+    {
+      "type": "quote",
+      "original": "无论你多能练,长期可持续的消耗都撞在同一堵墙上——大约是基础代谢的两倍半,连孕育一个孩子也逼近这个上限。",
+      "translation": "对「代谢天花板」的转述。环法、极限耐力赛与孕期撞上同一条线,佐证了肠道吸收上限这个瓶颈。"
+    },
+    {
+      "type": "h2",
+      "text": "九、怎么读这本书:守住循证的底线"
+    },
+    {
+      "type": "p",
+      "text": "读到这里,几句要紧的提醒必须带上,免得把一本严谨的科普读拧了。**第一,也是最容易被误读的一条:「运动不减肥」绝不等于「不该运动」。** 准确的说法是——运动不是一个**可靠的减重手段**,但它对健康的益处是**独立而巨大的**。把前半句拿出来当「不动的借口」,恰恰是这本书最不愿看到的误读:身体在你运动时省下的,往往正是慢性炎症、过度应激这些伤身的开销;放弃运动,等于把这份保护也一并扔掉。减肥去餐桌上找答案,但运动这件事,一天都不该停。"
+    },
+    {
+      "type": "p",
+      "text": "**第二,受限模型虽然有力、也被学界广泛讨论,但它仍是一个在发展中的框架,不宜绝对化。** 「总消耗被维持在窄区间」是一个强有力的整体图景,可具体的补偿在哪些人、哪些强度、哪些生理过程上发生多少,边界与细节都还在研究与争论之中。所以请把它读成「**一个正在被反复检验、颇具解释力的模型**」,而不是「已经盖棺定论的铁律」;个体之间也存在差异,不必把书里的平均规律硬套到某一个具体的人身上。"
+    },
+    {
+      "type": "p",
+      "text": "**第三,这本书给的是一套理解身体的科学框架,不是给你个人的减重或医疗方案。** 它能帮你想通「为什么拼命运动却不掉秤」「为什么还是得动」「减肥的杠杆到底在哪」这些大方向,但它替代不了针对你个人情况的专业评估。**具体该怎么吃、怎么练、如何管理体重与代谢相关的健康问题,尤其是当你已有相关疾病或特殊状况时,请咨询医生或注册营养师,而不要拿一本科普书给自己开处方。** 说到底,《燃烧》真正想留下的,不是一份照抄就灵的减肥秘籍,而是一次认知的翻新:别再把身体当成一个诚实记账的钱包——它是一位精于补偿、擅长维持平衡的预算大师;看懂了它花钱的逻辑,你才会把力气(和期待)放对地方——减肥的功夫下在餐桌,运动的价值兑现在健康。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "Herman Pontzer《燃烧》(Burn: New Research Blows the Lid Off How We Really Burn Calories, Lose Weight, and Stay Healthy, 2021):受限的总能量消耗模型、双标水测量、哈扎人研究、高通量代谢与代谢天花板的原始框架",
+        "关键词速查:doubly labeled water(双标水,测真实每日总能量消耗的金标准)/ total energy expenditure(每日总能量消耗)/ BMR(基础代谢)/ constrained total energy expenditure(受限的总能量消耗模型)/ Hadza(哈扎狩猎采集者)/ metabolic ceiling(代谢天花板,约 2.5× BMR)",
+        "两条核心推论:① 运动不是可靠的减重工具(身体会补偿掉运动带来的赤字,减重主要由『摄入』决定);② 运动对健康益处巨大且独立(把过剩能量从慢性炎症等有害用途上引开)——两者并行不悖",
+        "研读定位:受限模型是有力且被广泛讨论的框架,但细节与边界(补偿发生的人群/强度/生理过程)仍在研究,勿绝对化;「运动不减肥」≠「不该运动」,切勿断章取义",
+        "本文为原创转述与导读,非个人减重或医疗建议;涉及体重管理、代谢相关疾病或特殊生理状况(如孕期),请咨询医生或注册营养师,勿据本文自我诊断或自我处方"
+      ]
+    }
+  ]
+}

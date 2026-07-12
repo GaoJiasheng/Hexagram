@@ -1,0 +1,138 @@
+{
+ "title": "绕过饱腹信号：被架空的那一脚刹车",
+ "subtitle": "UPF 又软、又快、又密，让你在「饱」的信号送到之前就冲过了线——而 Kevin Hall 的随机对照试验，把这件事从推理钉成了实验证据",
+ "centralIdea": "这一章要回答一个朴素却要命的问题：就算你没上瘾、没嘴馋，为什么一坐下来吃 UPF，还是会不知不觉吃过量？van Tulleken 的答案不在「好不好吃」，而在食物的物理形态本身——UPF 被做得又软、又滑、又密，恰好能绕过身体那套「吃饱了该停」的刹车系统。这套刹车本来就有延迟：从「其实够了」到「大脑收到饱的通知」，中间隔着十几分钟。而 UPF 从三个方向一起下手把它架空：①又软又滑、几乎不用嚼，吃得飞快，等饱足信号追上来，你早已冲过了线；②能量密度高，同样体积热量翻几倍，胃按「装了多少」报饱、却没算进多少卡路里，于是「看着没吃多少」其实热量爆表；③纤维和蛋白质相对少，饱腹感又弱又短，没多久又饿。真正把这套推理钉成实验证据的，是 Kevin Hall 2019 年那项随机对照试验：两套餐单的糖、脂、盐、纤维和总热量被刻意配平，唯一差别是「是不是超加工」；结果吃 UPF 那组敞开吃，平均每天多摄入约 500 千卡、体重上升，换到未加工饮食就自动少吃、体重下降。这有力地证明了：让你吃多的不只是高糖高脂，还有 UPF 那副专门绕过饱腹刹车的身板。分寸上要记得，这是一项样本不大、时间不长的严格对照试验，证明了机制、但仍需更多更长、更贴近真实生活的研究反复验证；本章讲的是食欲调节的科学机制，不是给你的饮食处方。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "上一章讲了 UPF 被设计得让人「停不下来」——那是从奖赏和上瘾的角度说的。这一章要问一个更朴素、也更要命的问题：就算你没上瘾、没嘴馋，为什么一坐下来吃 UPF，还是会不知不觉吃过量？van Tulleken 给出的答案，不在「好不好吃」，而在食物的物理形态本身。他的核心论点是：UPF 被做得又软、又滑、又密，恰好能绕过你身体里那套「吃饱了该停」的刹车系统。这一章，我们就把这套刹车拆开，看它是怎么被一步步架空的。"
+  },
+  {
+   "type": "h2",
+   "text": "饱腹，是一脚有延迟的刹车"
+  },
+  {
+   "type": "p",
+   "text": "先得明白一件事：身体判断「吃饱了没」，从来不是实时的。你嚼、你咽、食物落进胃、胃被撑开、肠道尝到营养，一连串激素（像 GLP-1、PYY 这些「饱足信号」）才慢慢释放，再顺着血液和神经报告给大脑——这一整套流程，短则十几分钟，长则更久。也就是说，从「其实已经够了」到「大脑收到吃饱的通知」，中间隔着一段不小的延迟。"
+  },
+  {
+   "type": "p",
+   "text": "把这段延迟想成汽车的刹车距离：你踩下刹车，车不会当场停住，还要往前溜一段。正常吃饭时这没什么问题——天然食物又要嚼、又占地方，你吃得慢，等信号追上来，刚好停在「饱」这条线上。可一旦食物被改造得能让你吃得飞快，刹车距离就不够用了：等「饱」的信号终于送到，你早已冲过了那条线，多吃的那些，全砸在延迟里了。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "吃饭像一场赛跑：你和饱足信号，而信号总慢一拍",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"18\">饱腹信号，总是慢一拍</text><rect x=\"200\" y=\"132\" width=\"230\" height=\"36\" style=\"fill:var(--cinnabar-pure)\" opacity=\"0.10\"/><line x1=\"60\" y1=\"150\" x2=\"512\" y2=\"150\" style=\"stroke:var(--line)\" stroke-width=\"1.4\"/><path d=\"M508 144 L520 150 L508 156 Z\" style=\"fill:var(--ink-soft)\"/><text x=\"524\" y=\"154\" style=\"fill:var(--ink-faint)\" font-size=\"11\">时间</text><circle cx=\"80\" cy=\"150\" r=\"4\" style=\"fill:var(--ink-soft)\"/><text x=\"80\" y=\"186\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">开始吃</text><line x1=\"200\" y1=\"122\" x2=\"200\" y2=\"178\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><circle cx=\"200\" cy=\"150\" r=\"4\" style=\"fill:var(--ink)\"/><text x=\"200\" y=\"114\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">身体其实够了</text><line x1=\"300\" y1=\"124\" x2=\"300\" y2=\"178\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1\"/><circle cx=\"300\" cy=\"150\" r=\"4.5\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"300\" y=\"200\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">你已吃完（UPF 太快）</text><line x1=\"430\" y1=\"122\" x2=\"430\" y2=\"178\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><circle cx=\"430\" cy=\"150\" r=\"4\" style=\"fill:var(--ink)\"/><text x=\"430\" y=\"114\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">大脑才收到「饱」</text><text x=\"315\" y=\"238\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">这段延迟里，多吃的全砸进去了</text><text x=\"280\" y=\"268\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">吃得越快，越容易在信号到达前冲过「饱」线</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "第一板斧：又软又滑，吃得飞快"
+  },
+  {
+   "type": "p",
+   "text": "UPF 最要命的一个特征，是它几乎不用你费劲。经过研磨、乳化、挤压、复水，很多 UPF 入口即化，软到几乎不用嚼，几口就滑下去了。van Tulleken 特意做过对比：同样的一餐，UPF 让人吃得明显更快——每分钟送进嘴里的热量，比天然食物高出一大截。"
+  },
+  {
+   "type": "p",
+   "text": "吃得快，坏就坏在它和那段「刹车延迟」正面撞车。你三下五除二把一份吃完，饱足信号还在半路上；等它终于到站，盘子早空了，甚至第二份都下肚了。天然的一顿饭，硬、粗、需要咀嚼，等于给你的进食速度装了个天然限速器；UPF 把这个限速器拆掉了——你吃得越快，越容易在信号到来之前，冲过了饱的那条线。"
+  },
+  {
+   "type": "quote",
+   "original": "饱足信号还在半路上，你已经吃完了第二包。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "第二板斧：能量密度高，看着没吃多少"
+  },
+  {
+   "type": "p",
+   "text": "第二招藏在「能量密度」里——也就是每一口食物里塞了多少热量。UPF 普遍又干、又油、又甜，水分和纤维这些「不占热量却占地方」的成分被挤掉，剩下的几乎全是高热量的精炼淀粉、糖和脂肪。结果是同样一口、同样的体积，UPF 的热量常常是天然食物的好几倍。"
+  },
+  {
+   "type": "p",
+   "text": "偏偏，人的胃很大程度上是按「体积」和「重量」来报饱的——它感觉到的是「装了多少」，而不是「装进了多少卡路里」。于是就出现了那种熟悉的错觉：你明明觉得「没吃多少啊」，一小袋、一小盒就打发了，热量却早已爆表。天然食物靠体积把你填饱、顺便把热量控制住；UPF 反过来，让你在「感觉刚好」的时候，已经吃进了远超所需的能量。"
+  },
+  {
+   "type": "p",
+   "text": "拿个日常的例子体会一下：一小包薯片，捏在手里没多少分量，几分钟就见了底，热量可能相当于满满一大盘蔬菜加半碗米饭——可后者你得嚼上好一阵，肚子实实在在被填满，前者却像没吃过似的，很快又想再来一包。同样的热量，一个把胃塞得饱饱、一个几乎不占地方，身体收到的「饱」信号天差地别。UPF 的高能量密度，等于让你在不知不觉中，用「不占肚子」的方式把热量偷偷灌了进来。"
+  },
+  {
+   "type": "h2",
+   "text": "第三板斧：纤维和蛋白少，扛不住饿"
+  },
+  {
+   "type": "p",
+   "text": "还有第三层。纤维和蛋白质是公认最「扛饿」的两种成分：纤维占地方、延缓吸收，蛋白质能实实在在地压住食欲、让饱腹感维持得更久。而 UPF 在加工中往往把纤维磨没了、把廉价的糖和脂肪顶上来，蛋白质的比例也常常偏低。于是它带来的饱腹感又弱又短——吃的时候滑溜好咽，没过多久又饿了，转头再去找下一口。把这三板斧合起来看，UPF 等于从多个方向一起下手，把身体那套「吃够了就停」的调节，整个搅乱了。"
+  },
+  {
+   "type": "figure",
+   "ftype": "机制图",
+   "caption": "三条暗道，一起架空你的饱腹刹车",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"18\">三条暗道，绕过你的饱腹刹车</text><rect x=\"28\" y=\"50\" width=\"152\" height=\"52\" rx=\"6\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"104\" y=\"74\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">又软又滑</text><text x=\"104\" y=\"92\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">吃得飞快，信号追不上</text><rect x=\"204\" y=\"50\" width=\"152\" height=\"52\" rx=\"6\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"280\" y=\"74\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">能量密度高</text><text x=\"280\" y=\"92\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">一口顶三口，胃没觉得多</text><rect x=\"380\" y=\"50\" width=\"152\" height=\"52\" rx=\"6\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"456\" y=\"74\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">纤维蛋白少</text><text x=\"456\" y=\"92\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">饱得又弱又短，很快又饿</text><line x1=\"104\" y1=\"102\" x2=\"212\" y2=\"156\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1\"/><path d=\"M206 150 L215 157 L205 160 Z\" style=\"fill:var(--ink-faint)\"/><line x1=\"280\" y1=\"102\" x2=\"280\" y2=\"154\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1\"/><path d=\"M275 152 L280 160 L285 152 Z\" style=\"fill:var(--ink-faint)\"/><line x1=\"456\" y1=\"102\" x2=\"348\" y2=\"156\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1\"/><path d=\"M354 150 L345 157 L355 160 Z\" style=\"fill:var(--ink-faint)\"/><rect x=\"170\" y=\"160\" width=\"220\" height=\"42\" rx=\"6\" fill=\"none\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.3\"/><text x=\"280\" y=\"186\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">身体的饱腹刹车被架空</text><line x1=\"280\" y1=\"202\" x2=\"280\" y2=\"228\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.2\"/><path d=\"M275 226 L280 234 L285 226 Z\" style=\"fill:var(--cinnabar-pure)\"/><rect x=\"186\" y=\"236\" width=\"188\" height=\"40\" rx=\"6\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"280\" y=\"261\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\" font-size=\"15\">不知不觉吃过量</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "决定性的实验：Kevin Hall 的随机对照"
+  },
+  {
+   "type": "p",
+   "text": "讲到这里，都还只是机制上的推理。真正把这件事从「听着有道理」钉成「有实验证据」的，是美国国立卫生研究院的 Kevin Hall 在 2019 年做的一项随机对照试验——这也是全书最关键的一块证据。"
+  },
+  {
+   "type": "p",
+   "text": "实验设计得极其严格。他把志愿者请进代谢病房里住下，分两段各吃两周：一段吃 UPF 为主的饮食，一段吃未加工食物为主的饮食。要害在于，两套餐单的营养被刻意「配平」了——总热量供应、糖、脂肪、盐、纤维的含量都尽量对齐，端上桌的量也一样多。唯一的差别，就是食物「是不是超加工」这一点。然后，两组都被允许「随便吃、想吃多少吃多少」，研究者只在背后精确记录他们实际吃下了多少、体重怎么变。"
+  },
+  {
+   "type": "p",
+   "text": "结果一边倒。吃 UPF 那两周，人们平均每天多摄入约 500 千卡，体重跟着往上走；换到未加工饮食，同样是敞开吃，他们却自动少吃了那么多、体重不升反降。营养配平了、量也管够了，仅仅因为食物换成了超加工的形态，人就每天不知不觉多吞下五百千卡。"
+  },
+  {
+   "type": "p",
+   "text": "别小看这每天五百千卡。它不是偶尔一次的放纵，而是同样敞开吃、毫不勉强的情况下，天天如此。这个量长期累积下来，正是许多人「明明没觉得自己贪吃、体重却一年年往上爬」的隐形推手。你没有做错什么、也不缺自制力，只是餐桌上的食物换了形态，就悄悄把你的每日进食量往上顶了一截。"
+  },
+  {
+   "type": "quote",
+   "original": "营养都配平了，只因为换成 UPF，人每天就自动多吃约五百千卡。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "数据图",
+   "caption": "Hall 2019 随机对照试验：同样敞开吃，UPF 组每天多摄入约 500 千卡",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">同样敞开吃：UPF 组每天多吃约 500 千卡</text><line x1=\"90\" y1=\"52\" x2=\"90\" y2=\"252\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><line x1=\"90\" y1=\"252\" x2=\"524\" y2=\"252\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"80\" y=\"256\" text-anchor=\"end\" style=\"fill:var(--ink-faint)\" font-size=\"11\">0</text><rect x=\"150\" y=\"74\" width=\"96\" height=\"178\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"198\" y=\"66\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\">约 3000 千卡/天</text><text x=\"198\" y=\"272\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">UPF 饮食</text><rect x=\"340\" y=\"104\" width=\"96\" height=\"148\" style=\"fill:var(--ink-soft)\"/><text x=\"388\" y=\"96\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">约 2500 千卡/天</text><text x=\"388\" y=\"272\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">未加工饮食</text><line x1=\"246\" y1=\"74\" x2=\"300\" y2=\"74\" style=\"stroke:var(--ink-faint)\" stroke-width=\"0.8\" stroke-dasharray=\"3 3\"/><line x1=\"300\" y1=\"104\" x2=\"340\" y2=\"104\" style=\"stroke:var(--ink-faint)\" stroke-width=\"0.8\" stroke-dasharray=\"3 3\"/><line x1=\"300\" y1=\"74\" x2=\"300\" y2=\"104\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.2\"/><path d=\"M296 80 L300 74 L304 80 Z\" style=\"fill:var(--cinnabar-pure)\"/><path d=\"M296 98 L300 104 L304 98 Z\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"293\" y=\"127\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">多约 500 千卡</text><text x=\"307\" y=\"292\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">并且：UPF 组体重上升 · 未加工组体重下降</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "让你吃多的，不只是高糖高脂"
+  },
+  {
+   "type": "p",
+   "text": "Hall 这个实验之所以分量重，是因为它把一个常见的误会掰正了。我们总以为，UPF 让人发胖，无非是因为它「高糖、高脂、高热量」——问题出在营养成分上。可 Hall 把糖、脂、盐、纤维、总热量都配平了，差别照样出现。这说明，除了成分，食物的「形态」本身就在推着你多吃：那种又软、又快、又密、饱腹感又弱的物理设计，专门冲着你的饱腹刹车去。换句话说，UPF 不是简单地「让你吃了更胖」，而是从设计上「让你吃得更多」。"
+  },
+  {
+   "type": "figure",
+   "ftype": "金句",
+   "caption": "本章一句话",
+   "svg": "<svg viewBox=\"0 0 560 240\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"20\" y=\"20\" width=\"520\" height=\"200\" rx=\"10\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"470\" y=\"40\" width=\"34\" height=\"34\" rx=\"4\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"487\" y=\"64\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\" font-size=\"20\">观</text><text x=\"280\" y=\"104\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"22\">让你吃多的，不只是高糖高脂</text><text x=\"280\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"17\">还有那副又快、又软、又密的身板</text><text x=\"280\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">——它是冲着你的饱腹刹车设计的</text></svg>"
+  },
+  {
+   "type": "quote",
+   "original": "让你吃多的，不只是高糖高脂，还有那副又快又软又密、专门绕过饱腹刹车的身板。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "循证一读：一个实验能说明多少"
+  },
+  {
+   "type": "p",
+   "text": "最后照例给这块结实的证据，加一句冷静的边注。Hall 的试验设计精巧、结论有力，但它终究只是「一个」实验：受试者只有二十人，在病房里被严格管控着吃了短短四周。样本小、时间短、又是在人工环境里做的，这些都意味着，它有力地证明了「UPF 的形态本身能驱动短期过食」，却还需要更多、更长、更贴近真实生活的研究去反复验证。van Tulleken 自己也把它当作「关键一环」，而非「最终定论」。"
+  },
+  {
+   "type": "p",
+   "text": "也得说清楚：这一章讲的是食欲调节的科学机制，不是给你的饮食处方。看懂 UPF 如何绕过饱腹信号，是为了让你多一分警觉——明白「停不下来」多半不是你意志力差，而是食物被设计成这样；但具体到自己该怎么吃、要不要调整，尤其是身上有健康状况时，还请你结合自身情况、必要时咨询专业人士，别把一本书里的机制，直接当成给自己的医嘱。先看懂机器，再动手——这才是稳妥的顺序。"
+  }
+ ]
+}

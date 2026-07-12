@@ -1,0 +1,130 @@
+{
+  "title": "第四章 · 受限的能量消耗模型",
+  "subtitle": "身体不是一台老实的计价器，而是一位替你限额管账的会计",
+  "centralIdea": "上一章的哈扎悖论逼出一个新理论：受限的总能量消耗模型（constrained total energy expenditure）。我们的直觉是「加法」——总消耗 = 基础 + 活动，多动多少就多烧多少；但证据指向另一幅图景：身体会把每日总消耗动态地维持在一个较窄的区间里，你在运动上多花的，它就在别处（慢性炎症、应激反应、部分生殖与免疫活动、无意识的小动作）悄悄省回来，于是总账变化不大。能量不是被动相加，而是一份被身体主动限额、大体封顶的预算。这个模型解释力强、讨论也多，但仍在检验中、边界未定，别把它当成铁律。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "你把跑步机的速度调快一档，屏幕上的卡路里数字就跟着往上跳——多动，多烧，天经地义。可上一章那群哈扎人偏偏不认这个账：他们整天在稀树草原上奔走、狩猎、挖块茎，一天下来的总能量消耗，却和整天坐办公室、开车通勤的现代美国人差不多。数字对不上，不是双标水的仪器坏了，而是我们脑子里那张「多动就多烧」的账本，本身可能就画错了。这一章，Pontzer 要把那张账本换掉。"
+    },
+    {
+      "type": "h2",
+      "text": "我们默认的那张账本：加法模型"
+    },
+    {
+      "type": "p",
+      "text": "先说清楚被换掉的是什么。几乎所有人——包括健身房的教练、手机里的卡路里 App、很多营养学教科书——脑子里装的都是同一张账本，可以叫它**加法模型**：一天的总消耗，等于**基础代谢**（心跳、呼吸、维持体温这些「什么都不干也要烧」的底子）加上**消化的开销**，再加上**活动**。这里的关键假设是最后一项：活动像往账本上一笔笔叠加，你今天多走一万步，账本上就该整整齐齐多出那一截。"
+    },
+    {
+      "type": "p",
+      "text": "这套模型的诱人之处，是它算起来干脆、听起来公道。它预测的图景是一条**笔直上扬的线**：横轴是你动得多勤，纵轴是你一天烧掉多少，动得越多，线就越往上走，一分不差。多动一小时，就多减一份体重——「管住嘴、迈开腿」里「迈开腿」那半句，底气全在这张账本上。"
+    },
+    {
+      "type": "quote",
+      "original": "按加法模型，身体就该是一台诚实的计价器：你多动多少，它就多跳多少个数字，童叟无欺。",
+      "translation": ""
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "加法模型的直觉：总消耗 = 基础代谢 + 活动；活动像往上叠的一层，多动就把总数整整齐齐顶高一截",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='30' text-anchor='middle' font-size='14' style='fill:var(--ink);font-family:var(--font-serif);font-weight:bold'>加法模型：身体像一台诚实的计价器</text><line x1='90' y1='250' x2='470' y2='250' style='stroke:var(--line);stroke-width:1'/><rect x='140' y='130' width='80' height='120' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><rect x='140' y='90' width='80' height='40' style='fill:var(--cinnabar-pure)'/><rect x='340' y='130' width='80' height='120' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><rect x='340' y='50' width='80' height='80' style='fill:var(--cinnabar-pure)'/><text x='180' y='196' text-anchor='middle' font-size='11' style='fill:var(--ink-soft);font-family:var(--font-serif)'>基础代谢</text><text x='380' y='196' text-anchor='middle' font-size='11' style='fill:var(--ink-soft);font-family:var(--font-serif)'>基础代谢</text><text x='180' y='114' text-anchor='middle' font-size='11' style='fill:var(--paper-raised);font-family:var(--font-serif)'>活动</text><text x='380' y='94' text-anchor='middle' font-size='11' style='fill:var(--paper-raised);font-family:var(--font-serif)'>活动</text><text x='180' y='272' text-anchor='middle' font-size='12' style='fill:var(--ink);font-family:var(--font-serif)'>平常的一天</text><text x='380' y='272' text-anchor='middle' font-size='12' style='fill:var(--ink);font-family:var(--font-serif)'>多动的一天</text><path d='M232 88 C 275 60, 300 60, 336 52' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5;stroke-dasharray:5 4'/><path d='M338 51 l-11 0 l5 -9 z' style='fill:var(--ink-faint)'/><text x='284' y='46' text-anchor='middle' font-size='11' style='fill:var(--ink-faint);font-family:var(--font-serif)'>多动，就往上加</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "可账，怎么都对不上"
+    },
+    {
+      "type": "p",
+      "text": "麻烦在于，真实的身体不肯照这张账本走。哈扎人是第一个刺穿它的反例：论体力活，他们是现代久坐人群的好几倍，可双标水测出来的一天总消耗，扣掉体型差异后跟我们几乎没差别。如果加法模型成立，他们的账面数字应该高出一大截才对。"
+    },
+    {
+      "type": "p",
+      "text": "而且这不只是哈扎人一处的孤例。Pontzer 和同行把测量摊大，收集了数百名成年人、跨越不同人群与生活方式的总消耗与活动量数据，一起摆上桌来看。结果画出的不是那条笔直上扬的线，而是一条会**拐弯**的曲线：从久坐到适度活动，总消耗确实抬了一截——所以「别一直瘫着」是对的；可一旦越过中等强度，再往上加运动，这条线就慢慢拐平了，动得最猛的那批人，并没有按比例烧掉更多。多出来的运动，没换来多出来的总消耗。"
+    },
+    {
+      "type": "p",
+      "text": "这正是许多人减肥受挫时最想不通的地方。你办了健身卡、逼着自己每周跑上几次，体重秤却纹丝不动，于是怀疑是不是自己练得还不够狠。加法模型只会催你「再加量」；而这条拐弯的曲线给出的是另一种解释——不是你练得不够，而是身体那台会计机器早已开始在别处对冲你多花的力气。问题不出在你的意志力，而出在那张画错的账本。"
+    },
+    {
+      "type": "quote",
+      "original": "从久坐到适度活动，总消耗会抬一截；可再往上使劲加运动，这条线就拐弯、走平——账，就是对不上。",
+      "translation": ""
+    },
+    {
+      "type": "h2",
+      "text": "换一张账本：受限模型"
+    },
+    {
+      "type": "p",
+      "text": "对不上的账，逼出了另一张账本，Pontzer 把它叫作**受限模型**（constrained model）。它的主张只有一句，却和加法模型针锋相对：身体不会任由每日总消耗随活动量一路飙高，而是把它**动态地维持在一个较窄的区间里**。跨越很大一段活动强度，一天烧掉的总量都大体稳定，像被一只看不见的手按住了上限。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "加法模型 vs 受限模型：横轴是活动量，纵轴是每日总消耗。加法模型预测一条笔直上扬的线；实测更像受限模型——先升，随后拐弯走平",
+      "svg": "<svg viewBox='0 0 560 320' xmlns='http://www.w3.org/2000/svg'><line x1='72' y1='262' x2='524' y2='262' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='72' y1='262' x2='72' y2='58' style='stroke:var(--ink-soft);stroke-width:1.5'/><text x='298' y='300' text-anchor='middle' font-size='12' style='fill:var(--ink-soft);font-family:var(--font-serif)'>活动量（久坐 → 高强度）→</text><text x='40' y='160' text-anchor='middle' font-size='12' transform='rotate(-90 40 160)' style='fill:var(--ink-soft);font-family:var(--font-serif)'>每日总消耗 →</text><circle cx='84' cy='238' r='3.5' style='fill:var(--ink)'/><line x1='84' y1='238' x2='516' y2='78' style='stroke:var(--ink-faint);stroke-width:2;stroke-dasharray:6 5'/><text x='452' y='96' text-anchor='middle' font-size='12' style='fill:var(--ink-soft);font-family:var(--font-serif)'>加法模型的预测</text><path d='M84 238 C 168 176, 224 150, 300 138 C 388 124, 456 120, 516 118' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2.5'/><text x='454' y='150' text-anchor='middle' font-size='12' style='fill:var(--cinnabar-pure);font-family:var(--font-serif);font-weight:bold'>实测 · 受限模型</text><text x='250' y='128' text-anchor='middle' font-size='11' style='fill:var(--ink-faint);font-family:var(--font-serif)'>拐弯、走平</text><path d='M226 138 C 244 130, 250 128, 268 126' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/></svg>"
+    },
+    {
+      "type": "p",
+      "text": "受限模型一旦成立，接下来是一道简单的算术题。假设总消耗被大体封住了，而你确实在运动上花掉了更多能量——那这些多花的钱是从哪儿挤出来的？答案只剩一个：**身体一定在别的地方，悄悄地少花了。**"
+    },
+    {
+      "type": "h2",
+      "text": "身体在你看不见的地方省钱"
+    },
+    {
+      "type": "p",
+      "text": "省在哪儿？省在那些你根本感觉不到、却一直在偷偷耗能的项目上。你多动之后，身体会在幕后调低一批开销：**慢性炎症**（免疫系统长期的低水平燃烧，本身很费能量，规律运动的人往往更低）、**应激反应**（应激激素与那套「随时准备战斗」的状态）、**一部分生殖相关的活动**（比如运动量极大的人，某些性激素水平会偏低）、**部分免疫活动**，还有最不起眼的一项——**无意识的小动作**：抖腿、坐立不安、来回踱步这类你压根没在计的能量支出，也会被相应压下去。"
+    },
+    {
+      "type": "p",
+      "text": "这就是受限模型的机关所在：你在跑步机上多花的那笔钱，并不是凭空「加」进总账，更像是被**「挪」**了一笔——从炎症、应激、小动作这些看不见的科目里克扣出来，转投到你看得见的运动上。总账，于是变化不大。"
+    },
+    {
+      "type": "p",
+      "text": "值得留意的是，这笔「挪」有它的两面。往坏处说，它解释了为什么单靠运动很难在体重秤上兑现——身体把你省下的坑，从别处悄悄填平了。但往好处说，被调低的那几项——长期炎症、过高的应激反应——恰恰是很多现代慢性病的温床。换句话说，运动可能没帮你烧掉多少总热量，却把能量从一批有害的过度开支上抽走了。这一点先按下不表，它正是下一章为运动翻案的伏笔。"
+    },
+    {
+      "type": "quote",
+      "original": "运动更像是把预算挪了一笔：从炎症、应激这些看不见的开支上省下来，转投到你能看见的活动里。",
+      "translation": ""
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "预算的内部再分配：从少动到多动，总量那条封顶线不动；活动这块变大，「其他开支」（炎症·应激·生殖免疫·小动作）就相应缩小",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' font-size='14' style='fill:var(--ink);font-family:var(--font-serif);font-weight:bold'>总量不变，预算在内部重新分配</text><text x='58' y='104' text-anchor='end' font-size='12' style='fill:var(--ink-soft);font-family:var(--font-serif)'>少动</text><rect x='70' y='84' width='250' height='34' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.2'/><rect x='320' y='84' width='42' height='34' style='fill:var(--cinnabar-pure)'/><rect x='362' y='84' width='138' height='34' style='fill:var(--azure);opacity:0.55'/><text x='58' y='190' text-anchor='end' font-size='12' style='fill:var(--ink-soft);font-family:var(--font-serif)'>多动</text><rect x='70' y='170' width='250' height='34' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.2'/><rect x='320' y='170' width='102' height='34' style='fill:var(--cinnabar-pure)'/><rect x='422' y='170' width='78' height='34' style='fill:var(--azure);opacity:0.55'/><line x1='500' y1='72' x2='500' y2='216' style='stroke:var(--ink-faint);stroke-width:1.5;stroke-dasharray:5 4'/><text x='500' y='232' text-anchor='middle' font-size='11' style='fill:var(--ink-faint);font-family:var(--font-serif)'>总量封顶</text><rect x='128' y='250' width='13' height='13' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1'/><text x='147' y='261' font-size='11' style='fill:var(--ink-soft);font-family:var(--font-serif)'>基础代谢</text><rect x='232' y='250' width='13' height='13' style='fill:var(--cinnabar-pure)'/><text x='251' y='261' font-size='11' style='fill:var(--ink-soft);font-family:var(--font-serif)'>活动</text><rect x='300' y='250' width='13' height='13' style='fill:var(--azure);opacity:0.55'/><text x='319' y='261' font-size='11' style='fill:var(--ink-soft);font-family:var(--font-serif)'>其他开支（炎症·应激·生殖免疫·小动作）</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "一份封顶的预算"
+    },
+    {
+      "type": "p",
+      "text": "打个比方最好懂：把身体的每日能量想成一个**大体封顶的家庭预算**。月收入就那么多，这个月你多花在旅行上，就得从别的地方省——伙食紧一紧、娱乐砍一砍——不然就要透支。身体管理每日总消耗，走的正是这套逻辑：不是把各项开销**被动地相加**，而是主动地把总数**限在一个额度里**，在内部腾挪。多花在运动上，就少花在别处。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "封顶的预算：总消耗有一条大体固定的天花板；想在活动上多花，就得从「其他开支」里让出空间，否则会顶到天花板",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='30' text-anchor='middle' font-size='14' style='fill:var(--ink);font-family:var(--font-serif);font-weight:bold'>身体把每天的能量当成一份封顶的预算</text><line x1='170' y1='66' x2='390' y2='66' style='stroke:var(--cinnabar-pure);stroke-width:2;stroke-dasharray:7 5'/><text x='400' y='70' font-size='11' style='fill:var(--cinnabar-pure);font-family:var(--font-serif)'>天花板 · 大体固定</text><rect x='210' y='150' width='140' height='96' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.2'/><rect x='210' y='110' width='140' height='40' style='fill:var(--cinnabar-pure)'/><rect x='210' y='70' width='140' height='40' style='fill:var(--azure);opacity:0.55'/><text x='280' y='204' text-anchor='middle' font-size='11' style='fill:var(--ink-soft);font-family:var(--font-serif)'>基础代谢</text><text x='280' y='135' text-anchor='middle' font-size='11' style='fill:var(--paper-raised);font-family:var(--font-serif)'>活动</text><text x='280' y='95' text-anchor='middle' font-size='11' style='fill:var(--ink);font-family:var(--font-serif)'>其他开支</text><path d='M150 150 L150 116' style='stroke:var(--cinnabar-pure);stroke-width:2'/><path d='M150 112 l-4 10 l8 0 z' style='fill:var(--cinnabar-pure)'/><text x='150' y='168' text-anchor='middle' font-size='11' style='fill:var(--cinnabar-pure);font-family:var(--font-serif)'>活动↑</text><path d='M410 78 L410 108' style='stroke:var(--ink-soft);stroke-width:2'/><path d='M410 112 l-4 -10 l8 0 z' style='fill:var(--ink-soft)'/><text x='410' y='128' text-anchor='middle' font-size='11' style='fill:var(--ink-soft);font-family:var(--font-serif)'>其他↓</text><text x='280' y='280' text-anchor='middle' font-size='12' style='fill:var(--ink-soft);font-family:var(--font-serif)'>想多花在运动上，就得从别处省，否则会撞到天花板</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "为什么演化会把身体造成这样一位抠门的会计？因为在人类祖先生活的世界里，能量从来是稀缺、要精打细算的东西。一个懂得把总开支控制在安全区间、不轻易透支的身体，更容易熬过食物短缺的季节，把有限的资源留给最要紧的用途。所谓「限额管理」，不是什么现代养生智慧，而是几百万年抠出来的本能。"
+    },
+    {
+      "type": "h2",
+      "text": "别把它当成一条铁律"
+    },
+    {
+      "type": "p",
+      "text": "受限模型的解释力确实很强：它一口气把哈扎悖论、以及下一章那个扫兴的结论「运动很难让你瘦」都串了起来，所以这些年被反复讨论、也被反复引用。但研读一个理论，得看清它站在哪儿——它仍在检验的路上。身体到底能补偿多少、补偿有没有封顶、不同人之间差多少、在极端活动量下这条线又会怎么走（第八章那个「代谢天花板」正是它的边界），都还没有盖棺定论。所以稳妥的说法是：总消耗被身体**主动地限额、大体封顶**，而不是斩钉截铁的「一分都不会多」。把它当成一幅有力、但仍在勾勒中的图景，别当成一条铁律。"
+    },
+    {
+      "type": "p",
+      "text": "还要防一个顺手的误读：受限模型**绝不是说「运动没用」**。它说的是，运动改变的主要不是你烧掉多少**总**热量，而是你把能量**花在哪儿**——把预算从炎症、应激这些有害的过度开支上挪走。这一挪，对健康到底意味着什么、既然不太能减肥那还值不值得动——正是下一章要接着算的账。（本文只做阅读研习，不构成任何医疗或健身建议；具体到个人，请咨询专业人士。）"
+    }
+  ]
+}

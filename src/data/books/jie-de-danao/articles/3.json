@@ -1,0 +1,88 @@
+{
+ "title": "为荒年设计的身体,活在了丰年",
+ "subtitle": "《饥饿的大脑》第三章「经济性:省力与热量的进化」导读——你不是嘴馋又懒,你只是带着一套匮乏时代的老程序",
+ "centralIdea": "从进化经济学看吃饭这件事:在长达数百万年的匮乏史里,能活下来、能把基因传下去的祖先,几乎都是「用最小力气获取最多热量」的高手。自然选择因此在大脑里刻下了两条本能——第一,偏爱高热量密度的食物,同样一口,热量越高越「划算」;第二,惜力,本能地避免不必要的能量消耗。在食物稀缺、每一卡路里都要靠奔走觅食换来的年代,这两条本能是救命的智慧:它让人本能地扑向最顶饱的东西,又本能地不做无谓的消耗,把攒下的能量留给活命和繁衍。可一旦把这套古老程序原封不动地搬进今天——热量唾手可得、又便宜又密集,体力活动几乎可有可无——它就变成了「本能地贪吃 + 本能地懒动」的双重错配。核心信息只有一句:我们不是堕落、不是意志薄弱,而是带着一套「为荒年调校的省力与囤热量程序」活在了丰年;程序本身没有错,只是它赖以生效的环境,已经被我们自己彻底改写了。理解这一点,是后面几章讨论食物环境、也是善待自己而非苛责自己的起点。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "把吃饭当成一道经济题,是这一章看待食欲的角度。经济学研究的是「稀缺条件下怎么分配有限资源」,而在人类祖先的绝大部分历史里,最稀缺、最要命的资源不是别的,正是**热量**。谁能用更少的力气换来更多的能量,谁就更可能熬过饥荒、养大后代、把自己的基因传下去。几百万年下来,自然选择像一位极其抠门的会计,把「省力」和「囤热量」这两条算计,一笔一笔刻进了我们的大脑。今天你在超市货架前那些说不清、道不明的冲动——为什么明明吃饱了还惦记那块奶油蛋糕,为什么宁可多走两步都嫌累——追到根上,很多都是这位老会计留下的账。"
+  },
+  {
+   "type": "h2",
+   "text": "一场持续了数百万年的「热量竞赛」"
+  },
+  {
+   "type": "p",
+   "text": "先要把祖先所处的世界还原一下。在农业出现之前那漫长得难以想象的岁月里,人类靠采集和狩猎过活。食物不会自己送上门:一把浆果要弯腰翻找半天,一块肉要追一整天、还未必追得上,一窝蜂蜜要冒着被蜇的风险爬上树。**获取热量这件事本身,就要先付出大量热量。**在这样的世界里,活下来的从来不是那些最能吃苦、最爱瞎折腾的人,而是最会「算账」的人——用最小的力气,换回最多的能量。这不是道德品质,而是一道冷冰冰的生存算式:吃进来的热量,减去为觅食付出的力气,若长期是负数,人就会一点点垮掉;只有净值为正、还能攒下一点余粮的人,才有本钱扛过下一个食物断档的寒冬、才有余力生养后代。一代又一代,那些「算得精」的基因被留了下来,「算不清」的则悄悄消失在饥荒里。我们每个人,都是这场持续数百万年的热量竞赛里,胜出者的后代。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "svg": "<svg viewBox=\"0 0 560 240\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink);font-weight:bold\">匮乏时代的生存算式</text><rect x=\"24\" y=\"96\" width=\"132\" height=\"58\" rx=\"9\" style=\"fill:none;stroke:var(--cinnabar-pure);stroke-width:2\"/><text x=\"90\" y=\"122\" text-anchor=\"middle\" font-size=\"12.5\" style=\"fill:var(--ink);font-weight:bold\">吃进的热量</text><text x=\"90\" y=\"142\" text-anchor=\"middle\" font-size=\"10.5\" style=\"fill:var(--ink-soft)\">浆果 · 猎物 · 蜂蜜</text><text x=\"172\" y=\"131\" text-anchor=\"middle\" font-size=\"22\" style=\"fill:var(--ink-soft)\">−</text><rect x=\"188\" y=\"96\" width=\"132\" height=\"58\" rx=\"9\" style=\"fill:none;stroke:var(--ink-soft);stroke-width:1.5\"/><text x=\"254\" y=\"122\" text-anchor=\"middle\" font-size=\"12.5\" style=\"fill:var(--ink);font-weight:bold\">觅食的力气</text><text x=\"254\" y=\"142\" text-anchor=\"middle\" font-size=\"10.5\" style=\"fill:var(--ink-soft)\">奔走 · 追猎 · 攀爬</text><text x=\"336\" y=\"131\" text-anchor=\"middle\" font-size=\"22\" style=\"fill:var(--ink-soft)\">=</text><rect x=\"352\" y=\"96\" width=\"184\" height=\"58\" rx=\"9\" style=\"fill:none;stroke:var(--cinnabar-pure);stroke-width:2\"/><text x=\"444\" y=\"122\" text-anchor=\"middle\" font-size=\"12.5\" style=\"fill:var(--ink);font-weight:bold\">生存盈余</text><text x=\"444\" y=\"142\" text-anchor=\"middle\" font-size=\"10.5\" style=\"fill:var(--ink-soft)\">正数才熬得过荒年</text><text x=\"280\" y=\"196\" text-anchor=\"middle\" font-size=\"11.5\" style=\"fill:var(--ink-soft)\">谁把这道算式算得更精,谁就更可能活下来、把基因传下去</text><text x=\"280\" y=\"220\" text-anchor=\"middle\" font-size=\"10.5\" style=\"fill:var(--ink-faint)\">我们都是这场热量竞赛里,胜出者的后代</text></svg>",
+   "caption": "在匮乏的世界里,生存取决于一道冷算式:吃进的热量减去觅食的力气,长期为负就会垮掉。会「算账」的人被自然选择留了下来。"
+  },
+  {
+   "type": "h2",
+   "text": "本能一:偏爱「热量密度」——同一口,谁更划算"
+  },
+  {
+   "type": "p",
+   "text": "既然目标是「用最小力气换最多热量」,大脑就演化出了第一条精明的本能:**偏爱热量密度高的食物**。所谓热量密度,通俗说就是「同样一口,里头藏了多少卡路里」。一口生菜和一口坚果,体积差不多,可坚果里的热量是生菜的几十倍;油脂、坚果、含糖的成熟果实、动物的肥肉、蜂蜜——这些在自然界里都属于「一口顶好几口」的高密度能量包。对一个每一卡都来之不易的祖先来说,能一眼认出并优先扑向这些东西,是天大的优势:同样是弯一次腰、伸一次手,吃到高密度食物,攒下的能量就多得多。于是大脑把「油脂的丰腴」「糖的甜」「肉的鲜」都设成了强烈的正向信号,尝到就觉得「值」、就想再来。**我们对甜和油的偏爱,不是嘴馋没出息,而是一套在稀缺年代帮人高效攒能量的雷达。**那时候,这套雷达指到哪儿,哪儿就是活命的宝藏。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "svg": "<svg viewBox=\"0 0 560 260\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink);font-weight:bold\">同样一口,谁更「划算」</text><text x=\"532\" y=\"52\" text-anchor=\"end\" font-size=\"10.5\" style=\"fill:var(--ink-faint)\">条越长 = 同体积下热量越高</text><text x=\"126\" y=\"80\" text-anchor=\"end\" font-size=\"12\" style=\"fill:var(--ink-soft)\">叶菜</text><rect x=\"136\" y=\"70\" width=\"26\" height=\"14\" rx=\"3\" style=\"fill:var(--ink-faint)\"/><text x=\"126\" y=\"116\" text-anchor=\"end\" font-size=\"12\" style=\"fill:var(--ink-soft)\">水果</text><rect x=\"136\" y=\"106\" width=\"72\" height=\"14\" rx=\"3\" style=\"fill:var(--ink-soft)\"/><text x=\"126\" y=\"152\" text-anchor=\"end\" font-size=\"12\" style=\"fill:var(--ink-soft)\">瘦肉</text><rect x=\"136\" y=\"142\" width=\"120\" height=\"14\" rx=\"3\" style=\"fill:var(--ink-soft)\"/><text x=\"126\" y=\"188\" text-anchor=\"end\" font-size=\"12\" style=\"fill:var(--ink);font-weight:bold\">坚果</text><rect x=\"136\" y=\"178\" width=\"300\" height=\"14\" rx=\"3\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"126\" y=\"224\" text-anchor=\"end\" font-size=\"12\" style=\"fill:var(--ink);font-weight:bold\">油脂</text><rect x=\"136\" y=\"214\" width=\"384\" height=\"14\" rx=\"3\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"280\" y=\"250\" text-anchor=\"middle\" font-size=\"10.5\" style=\"fill:var(--ink-faint)\">示意比例,非精确数值;大脑天生偏爱条更长的那一类</text></svg>",
+   "caption": "热量密度=同体积食物含多少热量。油脂、坚果远高于叶菜、水果。祖先的大脑天生偏爱「条更长」的高密度食物,因为那是攒能量的捷径。"
+  },
+  {
+   "type": "h2",
+   "text": "本能二:能省则省——刻在骨子里的「惜力」"
+  },
+  {
+   "type": "p",
+   "text": "算式的另一头是力气。既然攒下的能量宝贵得要命,那么**避免不必要的消耗,和多吃一口一样重要**。于是大脑演化出第二条本能:惜力。身体有一种「能坐着就不站着、能站着就不走动」的天然倾向——不是懒惰这种道德毛病,而是一台精打细算的机器在默认省电模式。在祖先的世界里,这套倾向同样是智慧:多余的奔跑、无谓的折腾,都是在白白烧掉好不容易攒下的救命口粮。真正该动的时候——追猎物、逃天敌、搬营地——身体自然会调动全力;可一旦这些任务完成,它就本能地回落到最省的状态,把能量死死攥住。你可以把这条本能想成身体里一个一直在低声劝你的声音:「没必要就别动了,省着点。」在一个每一份力气都可能换不回来的年代,听这个声音的人,活得更稳。"
+  },
+  {
+   "type": "quote",
+   "original": "身体不是懒,它只是一台被匮乏调校过的机器——默认省电,把每一分力气都当成救命的余粮攥着。",
+   "translation": "所谓「懒得动」并非道德缺陷,而是进化在匮乏年代给身体设下的节能默认值:非必要不消耗,以便把宝贵的能量留到关键时刻。"
+  },
+  {
+   "type": "h2",
+   "text": "当省力程序撞上丰裕环境:一场错配"
+  },
+  {
+   "type": "p",
+   "text": "问题在于,这两条本能是为一个早已消失的世界写的程序。**它们本身没坏,坏的是它们赖以生效的环境被彻底改写了。**今天的食物环境和祖先的恰好倒了个个儿:高热量密度的东西不再稀罕,反而最便宜、最易得、最触手可及——曾经要冒险爬树才够得着的甜与油,如今在便利店随手就是一整排,而且被特意做得比自然界任何食物都更浓、更密、更好吃。与此同时,体力活动从「活命的必修课」退化成了「可有可无的选修课」:祖先必须靠奔走才能换来的每一卡,我们坐着点几下屏幕就送到家门口。于是那台精明的老机器彻底看走了眼——它仍在忠实地执行古老指令:见到高密度食物就扑上去(反正稀罕,多攒点没错)、能省力就省力(反正力气金贵,别乱花)。可这一次,「多攒」变成了停不下来的贪吃,「省力」变成了理直气壮的久坐。**同一套曾经救命的程序,搬进丰裕环境后,字字都在帮倒忙。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "机制图",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink);font-weight:bold\">匮乏程序 × 丰裕环境 = 错配</text><rect x=\"22\" y=\"56\" width=\"180\" height=\"186\" rx=\"10\" style=\"fill:none;stroke:var(--ink-soft);stroke-width:1.5\"/><text x=\"112\" y=\"82\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink);font-weight:bold\">古老的程序</text><text x=\"112\" y=\"100\" text-anchor=\"middle\" font-size=\"10\" style=\"fill:var(--ink-faint)\">为荒年而写</text><line x1=\"42\" y1=\"114\" x2=\"182\" y2=\"114\" style=\"stroke:var(--line);stroke-width:1\"/><text x=\"112\" y=\"140\" text-anchor=\"middle\" font-size=\"11.5\" style=\"fill:var(--ink-soft);font-weight:bold\">① 偏爱高热量</text><text x=\"112\" y=\"158\" text-anchor=\"middle\" font-size=\"10\" style=\"fill:var(--ink-faint)\">见到就想多攒</text><text x=\"112\" y=\"196\" text-anchor=\"middle\" font-size=\"11.5\" style=\"fill:var(--ink-soft);font-weight:bold\">② 能省力就省</text><text x=\"112\" y=\"214\" text-anchor=\"middle\" font-size=\"10\" style=\"fill:var(--ink-faint)\">非必要不消耗</text><text x=\"258\" y=\"152\" text-anchor=\"middle\" font-size=\"22\" style=\"fill:var(--cinnabar-pure)\">×</text><rect x=\"296\" y=\"56\" width=\"240\" height=\"186\" rx=\"10\" style=\"fill:none;stroke:var(--ink-soft);stroke-width:1.5\"/><text x=\"416\" y=\"82\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink);font-weight:bold\">今天的环境</text><text x=\"416\" y=\"100\" text-anchor=\"middle\" font-size=\"10\" style=\"fill:var(--ink-faint)\">却是丰年</text><line x1=\"316\" y1=\"114\" x2=\"516\" y2=\"114\" style=\"stroke:var(--line);stroke-width:1\"/><text x=\"416\" y=\"140\" text-anchor=\"middle\" font-size=\"11.5\" style=\"fill:var(--cinnabar-pure);font-weight:bold\">→ 停不下来的贪吃</text><text x=\"416\" y=\"158\" text-anchor=\"middle\" font-size=\"10\" style=\"fill:var(--ink-faint)\">高密度食物又多又便宜</text><text x=\"416\" y=\"196\" text-anchor=\"middle\" font-size=\"11.5\" style=\"fill:var(--cinnabar-pure);font-weight:bold\">→ 理所当然的久坐</text><text x=\"416\" y=\"214\" text-anchor=\"middle\" font-size=\"10\" style=\"fill:var(--ink-faint)\">体力活动可有可无</text><text x=\"280\" y=\"276\" text-anchor=\"middle\" font-size=\"11.5\" style=\"fill:var(--ink-soft)\">程序没错,环境变了——两条救命本能,如今字字帮倒忙</text></svg>",
+   "caption": "错配不在人,而在程序与环境的错位:同一套「偏爱高热量 + 能省则省」的救命本能,搬进食物过剩、活动可选的丰裕环境后,就成了贪吃与久坐。"
+  },
+  {
+   "type": "p",
+   "text": "把这场错配落到一个再普通不过的现代日子里,画面会格外清楚。一个坐办公室的人,一整天几乎不需要动用什么力气:上下楼有电梯,出门有车,晚饭动动手指就送到门口——祖先要奔波一整天才可能换来的一餐,他坐着就得到了,惜力的本能一路畅行无阻,身体乐得省电。可就在这台省着不动的身体里,那条偏爱高热量的雷达却半点没歇:午后加餐的第一反应是甜点而不是黄瓜,深夜嘴馋想到的是薯片、奶茶、炸鸡,而不是一把生菜。**两条本能各自都在忠实工作,合在一起却成了「吃得越来越密、动得越来越少」的双向下坡。**更棘手的是,今天的许多食物和场景,恰恰是被人精心设计来讨好这两条本能的——把糖和油调到最诱人的比例,把一切安排得越省力越好。本能没变,只是它面对的,是一个处处顺着它、又处处放大它的世界。"
+  },
+  {
+   "type": "h2",
+   "text": "我们不是堕落,是身体没赶上环境变太快"
+  },
+  {
+   "type": "p",
+   "text": "这个视角最解气、也最宽慰人的一点,是它替我们摘掉了「堕落」「没自制力」这顶帽子。当一个人管不住嘴、迈不开腿时,主流的说法总爱把矛头指向个人品性——意志薄弱、贪图享受、自甘懒惰。可进化经济学给出的解释完全不同:这不是品性出了问题,而是**一具为荒年精心设计的身体,阴差阳错地活在了丰年**。演化的钟摆走得极慢,要几万、几十万年才拨动一格;而我们亲手改造食物环境,只用了短短几百年——从饥荒常态到超市琳琅,不过是进化尺度上的一瞬。身体这套硬件还停留在旧世界,新世界却已换了天地,错配几乎是必然的。想通这一层,很多自责就可以放下了:你惦记那块蛋糕、你不想去跑步,不是因为你这个人不行,而是因为一套曾经无比正确的古老程序,在一个它从未预见过的环境里,依旧尽职尽责地运转着。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "svg": "<svg viewBox=\"0 0 560 220\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink);font-weight:bold\">为荒年设计,活在了丰年</text><rect x=\"30\" y=\"58\" width=\"228\" height=\"120\" rx=\"10\" style=\"fill:none;stroke:var(--ink-soft);stroke-width:1.5\"/><text x=\"144\" y=\"86\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink);font-weight:bold\">身体所在的旧世界</text><text x=\"144\" y=\"112\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-soft)\">食物稀缺 · 每卡来之不易</text><text x=\"144\" y=\"134\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-soft)\">觅食全靠奔走攀爬</text><text x=\"144\" y=\"160\" text-anchor=\"middle\" font-size=\"10.5\" style=\"fill:var(--ink-faint)\">演化用了数百万年调校</text><rect x=\"302\" y=\"58\" width=\"228\" height=\"120\" rx=\"10\" style=\"fill:none;stroke:var(--cinnabar-pure);stroke-width:2\"/><text x=\"416\" y=\"86\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink);font-weight:bold\">身体撞上的新世界</text><text x=\"416\" y=\"112\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-soft)\">热量过剩 · 又浓又便宜</text><text x=\"416\" y=\"134\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-soft)\">体力活动可有可无</text><text x=\"416\" y=\"160\" text-anchor=\"middle\" font-size=\"10.5\" style=\"fill:var(--ink-faint)\">我们只用几百年就造好了</text><text x=\"280\" y=\"204\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-soft)\">硬件停在旧世界,环境换到新世界——错配几乎是必然</text></svg>",
+   "caption": "演化的钟摆几万年才拨一格,我们却只用几百年就把食物环境从荒年改成了丰年。身体这套硬件没跟上,错配便成了必然,而非个人的失败。"
+  },
+  {
+   "type": "p",
+   "text": "当然,「理解」不等于「放任」——看清程序不是为了从此摆烂,而是为了换一种更聪明的应对。既然错配的根子在「古老本能 × 现代环境」的相乘,那么真正有效的着力点,往往不在拼命跟本能死磕(那几乎注定败下阵来),而在改造那个把本能放大的环境。这也正是这本书后面几章要展开的线索:当高热量、诱人的食物被特意做得越来越难以抗拒,当整个生活被设计得越来越不需要动弹,单靠「管住自己」为什么如此艰难?又能从哪里入手,给这套失灵的老程序松松绑?这一章先把地基铺好——**你带着一套匮乏时代的省力与囤热量程序,活在了一个丰裕的世界里。程序没有错,错的是它再也遇不到当初那个世界了。**把这件事想明白,你就能少一点自我苛责,多一点对策上的清醒。"
+  }
+ ]
+}
