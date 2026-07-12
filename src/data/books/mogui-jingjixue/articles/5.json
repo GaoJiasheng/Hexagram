@@ -1,0 +1,109 @@
+{
+  "title": "罪犯都去哪了:一个惊人且有争议的解释",
+  "subtitle": "《魔鬼经济学》第五章导读——犯罪率为何大跌?数据给出的答案越惊人,越要用批判的秤去称",
+  "centralIdea": "1990 年代的美国,犯罪率大幅下降,把预言「血雨腥风」的专家们集体打了脸。事后冒出的解释五花八门:创新警务、经济繁荣、控枪、监禁、快克退潮……Levitt 把它们逐一放上数据的秤:监禁扩大、警力增加、快克市场退潮确有贡献,而媒体最爱引用的几项被严重高估。他抛出的最惊人假说是:1973 年「罗诉韦德案」使堕胎合法化,大量本会出生在高风险环境的孩子没有出生,约二十年后犯罪适龄人口的构成随之改变,犯罪率于是下降。必须说清:这是一个远未成定论的争议假说——后续研究指其统计分析存在编码与口径问题,修正后效应大减;它又触及堕胎这一最敏感的伦理议题,作者再三申明这是实证分析而非政策倡导。读这一章,学的正是「数据能提出惊人假说,但相关不等于因果,结论必须经得起同行反复拷打」。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "1990 年代初的美国,犯罪学家们几乎众口一词:更凶残的少年犯正在长大成人,一场「犯罪风暴」即将来临。结果风暴没有如约而至——犯罪率不升反降,而且是全线暴跌,跌得连最乐观的人都不敢相信。于是专家们转过身来,开始解释「为什么会跌」,理由列了一长串。Levitt 在本章做的事情简单而冒犯:把这些解释一个个放到数据的秤上称,然后抛出一个几乎无人敢碰的假说——犯罪率的下降,可能与二十年前一桩关于堕胎的最高法院判决有关。**这是全书最惊人、也最有争议的一章;恰恰因此,它是练习「批判性地读数据」的最好教材。**"
+    },
+    {
+      "type": "h2",
+      "text": "一场没有如约而至的「血雨腥风」"
+    },
+    {
+      "type": "p",
+      "text": "先回到 1990 年前后。彼时美国的暴力犯罪已经恶化了几十年,凶杀率处在历史高位,而几乎所有权威的预测都是:**还会更糟**。犯罪学家警告,一批「少年超级掠食者」(superpredator)即将成年,青少年凶杀案将再翻上去;悲观与乐观阵营的分歧,仅仅在于未来是「变糟」还是「糟透」。这种恐慌一路蔓延进政治语言,成了当时美国社会的共识背景音。"
+    },
+    {
+      "type": "p",
+      "text": "然后,现实拐了个弯。从 1990 年代初开始,各类犯罪——凶杀、抢劫、盗窃——在全国范围内掉头向下,且一跌再跌:到 2000 年前后,凶杀率降到了约三十五年来的最低点。没有任何一位主流专家事先押中这个走势;而当年预言「血雨腥风」的人,几乎不必为错误付出任何代价。等尘埃落定,报纸上开始出现各种事后解释。Levitt 做了一件很「魔鬼经济学」的事:统计大报引用各类解释的频率,再逐一检验它们与数据是否相符——**一个解释被引用得多,不代表它是真的。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>专家的预言与现实的走势(示意)</text><line x1='60' y1='250' x2='520' y2='250' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='60' y1='50' x2='60' y2='250' style='stroke:var(--ink-soft);stroke-width:1.5'/><text x='62' y='44' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>犯罪率(示意,非精确数据)</text><text x='85' y='268' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>1985</text><text x='260' y='268' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>约1991</text><text x='495' y='268' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>2000</text><path d='M 80 135 C 140 115, 200 95, 260 86' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2.5'/><path d='M 260 86 C 330 105, 410 165, 500 205' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2.5'/><path d='M 260 86 C 340 66, 420 52, 500 42' style='fill:none;stroke:var(--ink-faint);stroke-width:2;stroke-dasharray:6 5'/><circle cx='260' cy='86' r='4' style='fill:var(--cinnabar-pure)'/><text x='392' y='40' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>专家预言:「少年犯罪风暴」将至</text><text x='408' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>实际:全线大跌,降至数十年低点</text><text x='280' y='292' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>预言与现实在 1990 年代初分道扬镳——预言错了,且几乎无人为此付出代价</text></svg>",
+      "caption": "几乎所有权威预测都指向「更糟」,现实却掉头向下。这一集体走眼,是本章一切追问的起点。"
+    },
+    {
+      "type": "h2",
+      "text": "把流行的解释逐一过秤"
+    },
+    {
+      "type": "p",
+      "text": "先看**被高估的**。「经济繁荣」听着顺理成章,但数据不配合:失业率与财产犯罪只有微弱关联,与暴力犯罪几乎无关——90 年代凶杀率跌得最狠,恰是经济与它相关性最弱的一类。「人口老龄化」变化太缓,解释不了几年之内的骤降。最风光的「创新警务战略」——纽约的「破窗」执法与精细化管理——被媒体捧为头号功臣,但 Levitt 指出两个不便的事实:纽约的犯罪率**在新政推行之前就已开始下降**;没搞这些创新的许多城市,犯罪率同样在大跌。他并不否认纽约大幅扩充警力有实效,但把「战略创新」当作首功,更像是把时间上的巧合当成了因果。至于更严的控枪法、死刑与买枪回购,在数据里几乎称不出重量。"
+    },
+    {
+      "type": "p",
+      "text": "再看**称得住的**。其一,监禁规模:90 年代美国囚犯人数急剧膨胀,把大量高频犯罪者关在监狱里,Levitt 估计这大约能解释跌幅的三分之一——有效,但社会代价高昂,属于「把问题关起来」而非治本。其二,警力增加:警察人数上升约一成,对压低犯罪有实打实的贡献。其三,快克可卡因市场退潮:80 年代末快克交易催生的地盘火并曾把年轻人凶杀率推上尖峰,随着这门生意利润变薄、市场萎缩,那一波暴力潮自行消退。三项加起来,仍然解释不完那道深深的下降曲线。剩下的缺口,Levitt 指向了一个此前几乎无人提及的因素。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>犯罪下降的候选解释:Levitt 的过秤</text><rect x='40' y='46' width='230' height='198' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='155' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>数据称得住</text><text x='58' y='104' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 监禁规模扩大(约占三分之一)</text><text x='58' y='134' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 警察人数增加</text><text x='58' y='164' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 快克市场退潮</text><text x='58' y='194' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 堕胎合法化(本章假说)</text><text x='58' y='214' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>  ——争议最大,详见下文</text><rect x='290' y='46' width='230' height='198' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='405' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink-soft)'>被高估(与媒体热度相反)</text><text x='308' y='104' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 创新警务战略(纽约奇迹)</text><text x='308' y='134' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 经济繁荣</text><text x='308' y='164' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 人口老龄化</text><text x='308' y='194' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 控枪法 / 死刑 / 买枪回购</text><text x='280' y='282' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>注意:这杆秤本身也是一家之言,各项权重在学界仍有分歧</text></svg>",
+      "caption": "解释的流行程度与解释力无关:媒体引用最多的「创新警务」,恰恰在 Levitt 的秤上称不出重量。"
+    },
+    {
+      "type": "h2",
+      "text": "最惊人的解释:二十年前的一桩判决"
+    },
+    {
+      "type": "p",
+      "text": "本章其实是从大西洋另一头讲起的。1966 年,罗马尼亚独裁者齐奥塞斯库为了增加人口,突然全面禁止堕胎,一年之内出生率翻倍。研究者追踪发现,禁令后出生的这批孩子,平均而言学业更差、就业更难、犯罪率更高——他们中的许多人,出生在并不想要、也无力抚养他们的家庭里。二十多年后的 1989 年,走上街头推翻齐奥塞斯库的,恰恰以这一代年轻人为主力。Levitt 把这当作一面镜子:**一个国家用强制手段「多生下不被期待的孩子」,二十年后收到了账单。那么,方向反过来的美国,会发生什么?**"
+    },
+    {
+      "type": "p",
+      "text": "1970 年,纽约、加州等五个州率先允许堕胎;1973 年,最高法院「罗诉韦德案」(Roe v. Wade)使其在全美合法化。数据显示,最可能选择堕胎的女性,往往正处于最难给孩子提供稳定成长环境的境况——未成年、未婚、经济困窘;而大量研究表明,「不被期待而出生」的孩子,长大后走上犯罪道路的风险显著更高。合法化之后,恰恰是这一高风险群体的出生减少了。约二十年后,当这批「本会进入犯罪高发年龄」的人口没有如期出现时,犯罪率随之下降。Levitt 的推理浓缩成一个三段式:"
+    },
+    {
+      "type": "quote",
+      "original": "堕胎合法化减少了「不被期待的出生」;不被期待的成长环境助长犯罪;因此,堕胎合法化降低了犯罪率。",
+      "translation": "这是 Levitt 论证的三段式骨架。注意每一环都是统计意义上的「平均而言」,绝不是对任何个体命运的断言;也请记住:三段式再工整,也只是一个待检验的假说,不是被证明的定律。"
+    },
+    {
+      "type": "p",
+      "text": "支撑它的证据环环相扣:率先合法化的那五个州,犯罪率也**率先**开始下降,比全国早了约三年;堕胎率高的州,90 年代的犯罪降幅明显更大;而且下降只出现在**合法化之后出生**的世代身上——年长世代的犯罪率并没有同步变化。再加上罗马尼亚那面反向的镜子,这个假说看上去相当有力。但请务必把下一节读完,再决定信多少。"
+    },
+    {
+      "type": "figure",
+      "ftype": "时间线",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>一对镜像的「自然实验」(示意)</text><text x='50' y='84' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>美国</text><line x1='95' y1='110' x2='530' y2='110' style='stroke:var(--ink-soft);stroke-width:1.5'/><circle cx='130' cy='110' r='4' style='fill:var(--cinnabar-pure)'/><text x='130' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;font-weight:bold;fill:var(--ink)'>1970</text><text x='130' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>五州先行合法化</text><circle cx='235' cy='110' r='4' style='fill:var(--cinnabar-pure)'/><text x='235' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;font-weight:bold;fill:var(--ink)'>1973</text><text x='235' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>罗诉韦德案</text><circle cx='380' cy='110' r='4' style='fill:var(--ink-soft)'/><text x='380' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;font-weight:bold;fill:var(--ink)'>约1990</text><text x='380' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>该世代到达犯罪高发年龄</text><circle cx='500' cy='110' r='4' style='fill:var(--cinnabar-pure)'/><text x='500' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;font-weight:bold;fill:var(--ink)'>90年代</text><text x='500' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>犯罪率大跌</text><text x='280' y='165' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>同一机制,两个方向</text><text x='50' y='204' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>罗马尼亚</text><line x1='95' y1='230' x2='530' y2='230' style='stroke:var(--ink-soft);stroke-width:1.5'/><circle cx='130' cy='230' r='4' style='fill:var(--ink-soft)'/><text x='130' y='218' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;font-weight:bold;fill:var(--ink)'>1966</text><text x='130' y='248' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>强制禁止堕胎</text><circle cx='250' cy='230' r='4' style='fill:var(--ink-soft)'/><text x='250' y='248' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>出生率翻倍</text><circle cx='380' cy='230' r='4' style='fill:var(--ink-soft)'/><text x='380' y='248' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>该世代平均境遇更差</text><circle cx='500' cy='230' r='4' style='fill:var(--ink-soft)'/><text x='500' y='218' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;font-weight:bold;fill:var(--ink)'>1989</text><text x='500' y='248' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>政权被推翻</text><text x='280' y='288' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>时间上的吻合是提示,不是证明——恰恰在这里,最需要因果检验</text></svg>",
+      "caption": "美国与罗马尼亚构成一对方向相反的「自然实验」。但自然实验不等于受控实验:同期还有太多别的事情在发生。"
+    },
+    {
+      "type": "h2",
+      "text": "批判的秤:这个假说离定论有多远"
+    },
+    {
+      "type": "p",
+      "text": "第一重批判来自学界内部,而且相当致命地具体。2005 年,波士顿联储的两位经济学家 Foote 与 Goetz 复核了 Donohue 与 Levitt 的原始论文,发现关键回归里**漏掉了作者自己声称加入的控制变量**(一处编码疏漏),而且对逮捕数据未按人均口径处理;把这两处修正之后,堕胎与犯罪之间的效应**大幅缩水,甚至不再显著**。Donohue 与 Levitt 承认了疏漏,调整数据后回应称结论依然成立;此后双方往复交锋十余年,各自补充证据,谁也没能说服谁。与此同时,竞争解释也登了场——例如「汽油除铅」假说:儿童铅暴露的下降,与二十年后犯罪率的下降在时间上同样吻合。**同一条下降曲线,能同时「喂饱」好几个互不相干的假说——这正是「相关不等于因果」最好的活教材。**"
+    },
+    {
+      "type": "p",
+      "text": "第二重批判关乎伦理。堕胎是美国道德、宗教与政治撕裂最深的议题之一,这个假说天然带着被误读的风险:它很容易被曲解成某种冰冷的社会工程主张,甚至被拿去为任何一方的政治立场背书。作者对此再三设防:解释「犯罪率为什么下降」,**不等于**主张「用堕胎去降低犯罪」——前者是对已发生之事的实证分析,后者是政策倡导与价值判断,两者之间隔着一条不可跨越的线。本篇导读同样只做前者:陈述论证与争议,不站任何一队,不替任何立场说话。"
+    },
+    {
+      "type": "quote",
+      "original": "道德代表的是人们希望世界如何运转,而经济学代表的是世界实际如何运转。",
+      "translation": "出自本书引言,却是读这一章的钥匙:作者自认只描述「实际如何」,把「应该如何」留给读者。读者也应守住同一条线——从这一章的数据里,读不出任何道德结论或政策立场。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>假说的证据 vs 学界的质疑</text><rect x='40' y='46' width='230' height='196' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='155' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>Levitt 提出的证据</text><text x='58' y='104' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>· 先行合法化五州,犯罪先降</text><text x='58' y='134' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>· 堕胎率高的州,降幅更大</text><text x='58' y='164' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>· 效应只见于合法化后世代</text><text x='58' y='194' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>· 罗马尼亚禁令是反向镜像</text><rect x='290' y='46' width='230' height='196' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='405' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink-soft)'>同行的挑战</text><text x='308' y='104' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>· Foote 与 Goetz:编码疏漏</text><text x='308' y='134' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>· 修正口径后,效应大幅缩水</text><text x='308' y='164' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>· 除铅等竞争假说时序同样吻合</text><text x='308' y='194' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>· 往复交锋,至今未成定论</text><text x='280' y='280' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>被挑战不是丑闻——可检验、可修正,正是实证研究区别于断言的地方</text></svg>",
+      "caption": "两栏并排看才完整:左栏单独读会觉得铁证如山,右栏单独读会觉得不值一驳——真实的科学争论在两栏之间。"
+    },
+    {
+      "type": "h2",
+      "text": "这一章真正教会我们的"
+    },
+    {
+      "type": "p",
+      "text": "把收获分开装进四个口袋。**其一,专家会集体走眼,而且几乎不付代价**——「犯罪风暴」的预言者们没有一个因此失业,对权威预测多留一分警惕不算多。**其二,解释的流行度与解释力无关**——媒体引用最多的「创新警务」,恰是被数据称出最轻的一项。**其三,惊人假说的价值在于可检验**——堕胎—犯罪假说被同行揪出编码问题、被竞争假说围攻、被迫反复修订,这不是丑闻,而是实证研究的正常运作;真正可疑的,反倒是那些从不接受检验的漂亮说法。**其四,议题越敏感,分析者与读者都越需要克制**——分析者不越界做道德裁断,读者不拿未决的结论去站队。至于犯罪率下降的真正原因,最诚实的回答是:多因素叠加,而堕胎假说至今仍是其中「有力但未决」的一项。"
+    },
+    {
+      "type": "p",
+      "text": "如果说前几章教你「用数据揭穿别人的谎言」,这一章教的是更难的一课:**当数据似乎指向一个你不敢说出口的结论时,该怎么办?** Levitt 的答案是——照说不误,但把每一步论证摊开,交给所有人检验。二十年过去,这场检验仍在进行,双方的论文还在往来。一个假说敢于把自己放上解剖台,任人挑错、随证据修订,这份姿态本身,比它最终的对错更值得带走。"
+    }
+  ]
+}

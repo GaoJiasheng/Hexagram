@@ -498,6 +498,23 @@ function AbacusGap() {
   )
 }
 
+// 母题:苹果里的橙子——外形是苹果、剖开却是橙瓣(呼应《魔鬼经济学》"事物的隐藏面":看着是这个,里子是那个)。
+function AppleOrange() {
+  const apple = 'M150,238 C120,222 96,242 98,282 C100,322 128,352 150,352 C172,352 200,322 202,282 C204,242 180,222 150,238 Z'
+  const stem = 'M150,240 Q152,222 160,214'
+  const cx = 150, cy = 293, segs = []
+  for (let i = 0; i < 8; i++) { const a = (i / 8) * Math.PI * 2; segs.push(`M${cx},${cy} L${(cx + Math.cos(a) * 44).toFixed(1)},${(cy + Math.sin(a) * 44).toFixed(1)}`) }
+  return (
+    <g>
+      <path d={apple} fill="none" stroke={CREAM} strokeOpacity="0.44" strokeWidth="1.4" />
+      <path d={stem} fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.3" />
+      <circle cx={cx} cy={cy} r="44" fill="none" stroke={CREAM} strokeOpacity="0.3" strokeWidth="1" />
+      <path d={segs.join(' ')} stroke={CREAM} strokeOpacity="0.26" strokeWidth="1" />
+      <circle cx={cx} cy={cy} r="6" fill={CINNABAR} />
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'two-mountains') return <TwoMountains />
   if (motif === 'ripples') return <Ripples />
@@ -525,6 +542,7 @@ function Motif({ motif }) {
   if (motif === 'setpoint-dial') return <SetpointDial />
   if (motif === 'flame') return <Flame />
   if (motif === 'barcode') return <Barcode />
+  if (motif === 'apple-orange') return <AppleOrange />
   if (motif === 'rabbit-hat') return <RabbitHat />
   if (motif === 'continental-axis') return <ContinentalAxis />
   if (motif === 'footsteps') return <Footsteps />

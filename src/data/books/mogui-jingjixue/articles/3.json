@@ -1,0 +1,103 @@
+{
+  "title": "三K党与房产中介:信息就是权力",
+  "subtitle": "《魔鬼经济学》第三章导读——「专家」的威风从哪里来,又是怎么在阳光下垮掉的",
+  "centralIdea": "这一章把「专家」拉下神坛:无论是兜帽底下的三K党,还是笑容可掬的房产中介,权力的共同来源都是信息不对称——我知道,而你不知道。三K党的恐怖靠暗号、仪式与黑话的神秘感保鲜,活动家 Stetson Kennedy 把这些秘密大量泄露给公众(流行的版本里甚至进了《超人》广播剧,成了小孩的游戏口令),神秘感一破产,威风随之瓦解;房产中介卖自己房子时比替客户卖多挂约十天、贵约 3%,暴露出「你请的专家」与你的利益并不同向;而互联网比价让定期寿险应声降价,又从反面证明:信息一旦公开,靠信息差撑起的溢价就守不住。核心公式只有一行——信息垄断造就专家权力,信息公开瓦解它;阳光是最好的均衡器。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "问一个不太礼貌的问题:一个白人至上的恐怖组织,和帮你卖房子的中介,能有什么共同点?列维特和都伯纳的答案是:**他们都靠「你不知道、而我知道」吃饭。** 三K党的威风,一半来自兜帽底下的暗号与仪式;中介的佣金,有一部分来自你看不懂的行情与话术。这一章要讲的,就是信息这种最软的东西如何变成最硬的权力——以及,一旦有人把秘密摊到阳光底下,这种权力垮得有多快。"
+    },
+    {
+      "type": "figure",
+      "ftype": "链条图",
+      "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>本章一根主线:权力随信息走</text><rect x='40' y='52' width='190' height='62' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='135' y='78' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>信息不对称</text><text x='135' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>我知道,你不知道</text><path d='M234,83 L326,83' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='326,83 314,77 314,89' style='fill:var(--ink-soft)'/><text x='280' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>暗号·术语·行情</text><rect x='330' y='52' width='190' height='62' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='425' y='78' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>「专家」权力</text><text x='425' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>恐惧 · 溢价 · 权威</text><rect x='40' y='158' width='190' height='62' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><text x='135' y='184' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>信息公开</text><text x='135' y='206' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>泄密 · 比价 · 报道</text><path d='M234,189 L326,189' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><polygon points='326,189 314,183 314,195' style='fill:var(--cinnabar-pure)'/><text x='280' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>阳光照进来</text><rect x='330' y='158' width='190' height='62' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><text x='425' y='184' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>权力瓦解</text><text x='425' y='206' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>祛魅 · 降价 · 平权</text><path d='M425,118 L425,154' style='fill:none;stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 3'/><polygon points='425,154 420,144 430,144' style='fill:var(--ink-faint)'/></svg>",
+      "caption": "上一行是三K党与中介的生意模型,下一行是 Kennedy 与互联网做的事——本章两组案例,走的是同一条链。"
+    },
+    {
+      "type": "h2",
+      "text": "恐惧的生意:三K党最值钱的家当是秘密"
+    },
+    {
+      "type": "p",
+      "text": "三K党起家于南北战争后的田纳西州,最初不过是六个无所事事的退伍青年搞的秘密会社,此后几度沉浮:1920 年代膨胀到数百万成员,二战后又死灰复燃。书里有个容易被忽略的论点:对照逐十年的私刑统计,到 1940 年代,三K党实际动手的暴力比公众想象的要少——它的统治工具与其说是绳索和火把,不如说是**恐惧的名声**。而恐惧要保鲜,靠的是神秘感:兜帽、焚烧的十字架、一整套荒诞的黑话(内部词汇几乎都要加上「Kl」字头),还有接头暗号——问一句「AYAK?」(你是党员吗),答一句「AKIA」(我是党员),自己人便相认了。会员为这套神秘感缴纳会费,外人则为这套神秘感付出恐惧。"
+    },
+    {
+      "type": "quote",
+      "original": "信息是一盏灯,也是一根大棒;是橄榄枝,也是威慑——全看它握在谁手里、怎么用。",
+      "translation": "本章的总纲。信息本身无所谓善恶,不对称才是权力的来源:一方知道、另一方不知道,知道的一方就握住了支配的筹码——无论他戴的是兜帽,还是工牌。"
+    },
+    {
+      "type": "h2",
+      "text": "Stetson Kennedy:把暗号变成小孩的游戏口令"
+    },
+    {
+      "type": "p",
+      "text": "佛罗里达作家、人权活动家 Stetson Kennedy 把三K党视为心腹之患。二战后他设法混入组织内部,把密码、仪式、缴费内幕源源不断地递出去——递给检察官,递给媒体,而按流传最广的版本,还递给了《超人》广播剧剧组:编剧把真实的暗号和黑话写进「超人大战三K党」的连播剧情,于是全美的小孩披着毛巾斗篷,在院子里用三K党的真实切口玩「超人抓坏蛋」。做父亲的晚上去参加秘密集会,发现自家儿子白天已经把接头暗号当游戏口令喊遍了整条街——神秘感当场破产。据当时的记载,泄密之后入会申请锐减,集会出席率大跌。最深的秘密没有变,变的只是:人人都知道了。"
+    },
+    {
+      "type": "quote",
+      "original": "Kennedy 把三K党的秘密武器倒转过来对准它自己:把机密,变成了取笑它的弹药。",
+      "translation": "祛魅的机制所在。秘密只在无人知晓时才是资产;一旦变成公开的笑料,它兑换恐惧的能力立刻归零,组织最值钱的「威慑资产」瞬间清空。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "svg": "<svg viewBox='0 0 560 270' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>同一套暗号,两种命运</text><rect x='30' y='50' width='230' height='180' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='145' y='78' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>捂在兜帽里</text><text x='145' y='108' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>AYAK? · AKIA · Kl 字头黑话</text><text x='145' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>↓</text><text x='145' y='160' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>神秘感 → 恐惧的名声</text><text x='145' y='186' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>↓</text><text x='145' y='212' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>威慑力 · 会费 · 招募力</text><path d='M264,140 L296,140' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><polygon points='296,140 284,134 284,146' style='fill:var(--cinnabar-pure)'/><text x='280' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar-pure)'>泄密</text><rect x='300' y='50' width='230' height='180' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><text x='415' y='78' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>摊在阳光下</text><text x='415' y='108' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>广播剧台词 · 小孩的游戏口令</text><text x='415' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>↓</text><text x='415' y='160' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>神秘感破产 → 变成笑柄</text><text x='415' y='186' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>↓</text><text x='415' y='212' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>出席骤降 · 申请锐减</text></svg>",
+      "caption": "秘密只在无人知晓时才值钱。同一句切口,从接头暗号变成儿童游戏口令,恐惧就再也收不回来了。"
+    },
+    {
+      "type": "p",
+      "text": "这里必须诚实地补一笔。本书出版后,有研究者追查史料,两位作者自己也在 2006 年撰文跟进:Kennedy 的卧底故事有相当的水分——他笔下不少「亲历」,其实来自另一位线人的经历,被他归到了自己名下;「超人剧组直接采用他提供的暗号」也更接近传说而非确证(《超人》广播剧确实在 1946 年播过影射三K党的《火十字帮》系列,但素材来源比他讲的复杂)。机制是真的:公开秘密确实能瓦解神秘组织的权力;可这个讲机制的故事本身,也被讲故事的人加工过。这几乎是本书精神的一次自我示范——**对一切好听的故事保持核查的习惯,包括这一个。**"
+    },
+    {
+      "type": "h2",
+      "text": "你请的中介,在替谁打算盘?"
+    },
+    {
+      "type": "p",
+      "text": "从恐怖组织跳到房产中介,不是修辞上的挑衅,而是同一个模型:**专家的权力 = 信息优势 × 你的恐惧。** 卖房的人怕两件事:卖得太便宜,和房子砸在手里。中介恰好在每一处都比你知道得多——真实行情、买家的底牌、话术的门道。他是你花钱雇来的,可他的激励和你的,并不指向同一个方向。"
+    },
+    {
+      "type": "p",
+      "text": "证据不靠指控,靠数据。作者们分析了芝加哥郊区约十万套住宅的成交记录,其中恰好包含中介**卖自己房子**的样本——这是天然的对照组。结果:中介卖自己的房子,平均比替客户卖多挂牌约十天,成交价高出 3% 上下;按 30 万美元的房子算,就是约 1 万美元。谜底藏在佣金结构里:6% 的佣金先由买卖两边的代理公司平分,再由公司与经手中介分成——你的房子多卖 1 万美元,落进你这位中介个人口袋的,只有 150 美元上下。为这点钱陪你多等几周、多谈几轮?不划算。可如果是他自己的房子,多出来的 1 万全归自己——那就值得等。"
+    },
+    {
+      "type": "quote",
+      "original": "多卖一万美元,你的中介个人只多分约一百五十美元——催你尽快接受第一个像样的报价,才符合他的利益。",
+      "translation": "不是中介人坏,是账本如此。评估任何专家的建议之前,先把他的分成结构算一遍,比琢磨他的话术有用得多。"
+    },
+    {
+      "type": "figure",
+      "ftype": "账本图",
+      "svg": "<svg viewBox='0 0 560 290' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>多卖 1 万美元,你的中介能分到多少?</text><rect x='36' y='50' width='200' height='44' rx='7' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='136' y='77' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>多卖的 10,000 美元</text><path d='M136,94 L136,116' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><polygon points='136,116 131,107 141,107' style='fill:var(--ink-faint)'/><text x='150' y='110' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>佣金 6%</text><rect x='36' y='118' width='200' height='40' rx='7' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><text x='136' y='143' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>600 美元</text><path d='M136,158 L136,180' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><polygon points='136,180 131,171 141,171' style='fill:var(--ink-faint)'/><text x='150' y='174' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>两家代理公司平分</text><rect x='36' y='182' width='200' height='40' rx='7' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><text x='136' y='207' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>300 美元</text><path d='M136,222 L136,244' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><polygon points='136,244 131,235 141,235' style='fill:var(--ink-faint)'/><text x='150' y='238' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>中介与公司再分成</text><rect x='36' y='246' width='200' height='40' rx='7' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><text x='136' y='271' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>约 150 美元 · 归你的中介</text><rect x='310' y='70' width='214' height='128' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><text x='417' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>若卖的是他自己的房子</text><text x='417' y='130' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>多卖的 10,000 美元全归自己</text><text x='417' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>——多等十天,值得</text><text x='417' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>自售:多挂约 10 天 · 贵约 3%</text><text x='417' y='234' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>数据:芝加哥郊区约 10 万套</text><text x='417' y='254' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>住宅成交记录(书中样本)</text></svg>",
+      "caption": "同一个人,两本账:替你卖,多谈一万只落一百五;卖自己,多谈一万全进腰包——挂牌时长与成交价的差异,由此而来。"
+    },
+    {
+      "type": "p",
+      "text": "信息优势还写在广告里。两位作者统计了房产广告的用词,发现它们自成一套暗号:与**高成交价**相伴的词,都具体而可验证——「花岗岩台面」「枫木地板」「美食级厨房」「最新式装修」;与**低成交价**相伴的词,都空泛而热情——「极好的」「宽敞」「迷人」「好社区」,外加成串的感叹号。空泛的热情其实是行话里的信号弹,同行一看便懂:这房子没什么硬货可夸,房主也急着脱手,可以放心压价。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照表",
+      "svg": "<svg viewBox='0 0 560 270' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>房产广告的暗号:哪些词在描述,哪些词在打掩护</text><rect x='36' y='50' width='240' height='176' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><text x='156' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>与高成交价相伴 · 具体可验证</text><text x='156' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>花岗岩台面</text><text x='156' y='130' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>枫木地板</text><text x='156' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>美食级厨房</text><text x='156' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>最新式装修</text><text x='156' y='208' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>可丽耐台面</text><rect x='292' y='50' width='240' height='176' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='412' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>与低成交价相伴 · 空泛而热情</text><text x='412' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>极好的!</text><text x='412' y='130' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>宽敞</text><text x='412' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>迷人</text><text x='412' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>好社区</text><text x='412' y='208' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>成串的感叹号!!</text><text x='280' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>具体的词在描述房子,空泛的词在向同行发信号:可以压价了</text></svg>",
+      "caption": "热情的形容词,常常是「没别的可夸」的暗号——读懂这张表,你就窃取了一小块中介的信息优势。"
+    },
+    {
+      "type": "h2",
+      "text": "阳光是最好的均衡器"
+    },
+    {
+      "type": "p",
+      "text": "信息差不必总靠英雄卧底来削平——互联网做的就是这门生意的批发版。书里最干净的例子是**定期寿险**:1990 年代末,几家比价网站把各家保险公司的报价摆上同一张网页。产品本身没有任何变化,价格却应声大跌,一年为美国消费者省下约 10 亿美元。保险没有变,变的只有一件事:你知道了别家卖多少钱。同样的力量也在压平二手车、机票、房源信息的水面——专家没有消失,但他能靠「你查不到」赚的那部分钱,正在缩水。"
+    },
+    {
+      "type": "quote",
+      "original": "互联网最擅长的,就是把信息从捂着它的人手里,搬到需要它的人手里。",
+      "translation": "对本章机制的现代注脚:Kennedy 靠潜伏一年才泄出的那种秘密,今天一个比价页面就能批量拆除——只要信息真的流通起来。"
+    },
+    {
+      "type": "p",
+      "text": "最后留一句研读的分寸。这一章容易被读成「专家皆奸商」,那就读偏了。作者的本意更冷静:专家多数时候确实比你懂,值得付费;问题只出在**信息不对称与激励错位同时成立**的那些角落——他知道你不知道,而他多赚的钱恰好来自你的不知道。所以这一章送你的不是敌意,而是两个习惯性的问题。第一问:「他知道什么我不知道?」——问出这个,你就知道该去补哪块信息,哪怕只补一张广告用词对照表。第二问:「他的利益和我的,指向同一个方向吗?」——分成结构、回扣、考核指标,比笑容诚实。至于三K党的故事,教训还要更大一号:凡是靠神秘感和术语活着的权力——不止组织,也包括某些行业、某些「大师」——最怕的从来不是对抗,而是被人平平常常地说明白。"
+    }
+  ]
+}
