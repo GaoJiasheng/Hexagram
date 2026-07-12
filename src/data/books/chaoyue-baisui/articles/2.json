@@ -1,0 +1,130 @@
+{
+ "title": "医学 3.0:为慢病时代重设医学",
+ "subtitle": "从「确诊了才治」到「提前几十年下注」——一场医学范式的换代",
+ "centralIdea": "医学 1.0 靠观察加猜测,医学 2.0 靠实证革命驯服了「快死」,却对慢病始终被动救火;Attia 主张的医学 3.0 是一次范式换代——提前几十年主动预防、按个体而非人群平均定方案、把「风险」而非「确诊」当治疗对象、以数十年为时间视野、患者亲自掌舵,并愿意在不完美证据下审慎行动。这套范式的威力与争议同源:它把预防提为医学主业,也押注在尚无铁证的判断上。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "今年体检,你的糖化血红蛋白是 6.4%——差 0.1 个百分点,不算糖尿病,医生说「注意饮食,明年复查」。第二年,6.5%,过线,确诊,开药。荒诞的地方在于:这一年里你的身体并没有发生什么质变,代谢的坍塌早在十几年前就开始了,医学却要等它踩过那条人为画出的线,才肯出手。Peter Attia 说,这不是哪个医生失职,而是整套医学「操作系统」就是这么设计的。这一章,他给这套系统起了个名字——**医学 2.0**,然后给出他心目中的换代方案:**医学 3.0**。"
+  },
+  {
+   "type": "h2",
+   "text": "这一章在全书的什么位置"
+  },
+  {
+   "type": "p",
+   "text": "上一章 Attia 讲了死亡方式的变迁:医学驯服了「快死」(外伤、感染),却把现代人交到了「慢死」——心脏病、癌症、神经退行性疾病、2 型糖尿病这「四骑士」——手里。这一章回答一个自然的追问:**既然慢病成了主战场,医学为什么还打不好这一仗?** 他的答案是:不是武器不行,是整套作战思想过时了。这一章是全书的方法论地基,后面所有关于四骑士、运动、营养、睡眠的章节,全都站在「医学 3.0」这块地基上。"
+  },
+  {
+   "type": "figure",
+   "ftype": "金句卡",
+   "caption": "这一章的题眼",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"14\" y=\"14\" width=\"532\" height=\"272\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"26\" y=\"26\" width=\"508\" height=\"248\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"0.6\"/><text x=\"280\" y=\"98\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"28\">慢病不是治不好</text><text x=\"280\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"32\" font-weight=\"bold\">是出手太晚</text><line x1=\"200\" y1=\"176\" x2=\"360\" y2=\"176\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"280\" y=\"212\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"17\">医学 3.0:把战场提前几十年</text><text x=\"280\" y=\"248\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">——《超越百岁》第2章</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "医学 1.0 到 2.0:两次革命的功与限"
+  },
+  {
+   "type": "p",
+   "text": "Attia 把医学史粗分成三个版本。**医学 1.0** 从希波克拉底算起,统治了差不多两千年:靠肉眼观察加猜测行医,把疾病归因于体液失衡乃至神明降罚,放血、催吐是常规操作。它不是一无是处——直接观察病人的习惯、「不伤害」的医德雏形都从这里来——但本质上它是**前科学**的:没有任何办法区分「我觉得有效」和「真的有效」。"
+  },
+  {
+   "type": "p",
+   "text": "**医学 2.0** 是一场真正的革命,标志是 19 世纪中叶的细菌学说。书里讲了塞麦尔维斯(Semmelweis)的故事:维也纳的产科病房里,产妇成批死于产褥热,他注意到医生接生的病区死亡率远高于助产士的病区——因为医生常常刚解剖完尸体就来接生。他推行洗手,死亡率应声暴跌;可当时没人能解释「为什么」,同行把他当疯子,他最后死在精神病院里,没能等到巴斯德和细菌学说替他平反。"
+  },
+  {
+   "type": "p",
+   "text": "细菌学说之后,科学方法全面进驻医学:消毒、疫苗、抗生素、现代外科、随机对照试验(RCT)。战绩是压倒性的——人类平均寿命在 20 世纪几乎翻倍。但 Attia 提醒你看清这份战绩的成色:**增量几乎全部来自对传染病与急性病的胜利**。把这部分刨掉,一百年来我们在慢病死亡率上的进步少得可怜。医学 2.0 是一支为「快死」建成的军队——反应快、火力猛、擅长把人从鬼门关拉回来——却被派去打一场完全不同的战争。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "医学的三个版本:每一次换代,都是对上一版盲区的回应",
+   "svg": "<svg viewBox=\"0 0 560 320\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"19\">医学的三个版本</text><rect x=\"20\" y=\"64\" width=\"155\" height=\"190\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"98\" y=\"94\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\" font-weight=\"bold\">医学 1.0</text><text x=\"98\" y=\"116\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"12\">前科学时代</text><text x=\"98\" y=\"148\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">观察 + 猜测</text><text x=\"98\" y=\"172\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">体液说 · 放血</text><text x=\"98\" y=\"196\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">从希波克拉底起</text><text x=\"98\" y=\"218\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">统治约两千年</text><path d=\"M177 159 L197 159\" fill=\"none\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.2\"/><path d=\"M197 154 L205 159 L197 164 Z\" style=\"fill:var(--ink-faint)\"/><rect x=\"203\" y=\"64\" width=\"155\" height=\"190\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"281\" y=\"94\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\" font-weight=\"bold\">医学 2.0</text><text x=\"281\" y=\"116\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"12\">实证革命</text><text x=\"281\" y=\"148\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">细菌学说 · 抗生素</text><text x=\"281\" y=\"172\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">外科 · RCT</text><text x=\"281\" y=\"196\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">擅长急性病与快死</text><text x=\"281\" y=\"218\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">对慢病被动救火</text><path d=\"M360 159 L380 159\" fill=\"none\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.2\"/><path d=\"M380 154 L388 159 L380 164 Z\" style=\"fill:var(--ink-faint)\"/><rect x=\"386\" y=\"64\" width=\"155\" height=\"190\" fill=\"none\" style=\"stroke:var(--cinnabar)\" stroke-width=\"1.5\"/><text x=\"464\" y=\"94\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\" font-weight=\"bold\">医学 3.0</text><text x=\"464\" y=\"116\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"12\">Attia 的主张</text><text x=\"464\" y=\"148\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">主动预防 · 个性化</text><text x=\"464\" y=\"172\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">盯风险 · 长视野</text><text x=\"464\" y=\"196\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">患者掌舵</text><text x=\"464\" y=\"218\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">为慢病时代而设</text><text x=\"280\" y=\"292\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"12.5\">1.0 → 2.0 用了两千年;Attia 认为 2.0 → 3.0 已经迟到</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "医学 2.0 对慢病为什么失灵"
+  },
+  {
+   "type": "p",
+   "text": "失灵的核心,在于 2.0 的作战方式是**「确诊了才治」**:先等疾病显形、够格拿到一个诊断名分,然后针对诊断开火。这套逻辑对肺炎、骨折完全成立——病来得快,治得也快。可慢病不是「事件」,是**连续谱**:动脉粥样硬化可能从二十几岁就开始铺路,癌细胞在被发现前也许已潜行多年,2 型糖尿病更是一条平滑上升的曲线,却被一条 6.5% 的线硬切成「没病」和「有病」两段。线前医学几乎袖手,线后才全力开火——**等到出手,仗往往已经输了大半**。"
+  },
+  {
+   "type": "quote",
+   "original": "医学 2.0 的问题不在于治不了慢性病，而在于它总是出手太晚——错的时机，错的时间尺度。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "Attia 对这一点的痛感,来自他自己的弯路。他当过外科住院医,最享受的正是 2.0 的高光时刻:枪伤刀伤的病人濒死送进来,手术台上抢回一条命。可面对晚期癌症病人,他发现自己能做的少得屈辱——疾病早在十几二十年前就埋下了,手术刀再快也追不回时间。他一度心灰意冷离开医学,去麦肯锡做信贷风险评估,恰好赶上 2008 年金融危机:银行如何为多年以后的违约定价、如何在不确定中管理风险,这套精算思维后来被他原样搬回医学——**慢病是一笔长达几十年的风险敞口,该用风险管理的方式对付,而不是等「违约」发生了再去催收**。"
+  },
+  {
+   "type": "h2",
+   "text": "医学 3.0:五个转向"
+  },
+  {
+   "type": "p",
+   "text": "那换代之后的医学长什么样?Attia 给医学 3.0 画了几条清晰的分界线。**第一,从被动治疗转向主动预防**:不等疾病显形,提前十年、二十年甚至更早,在风险刚冒头时就开始干预——预防不再是体检手册上的客套话,而是医学的主业。**第二,个性化**:2.0 治的是「平均病人」,拿人群统计出来的均值套每一个人;3.0 认为你不是平均数——同一个胆固醇读数、同一份家族史,落在两个人身上,风险可以天差地别,方案也该不同。"
+  },
+  {
+   "type": "p",
+   "text": "**第三,把风险而不只是「确诊」当作治疗对象**:诊断名分只是行政手续,真正该盯住的是那条连续上升的风险曲线;而且要诚实地把「什么都不做」也当作一个有风险的选项,一起摆上台面算账。**第四,更长的时间视野**:2.0 关心你这次能不能出院,3.0 关心你八十岁那年过得怎么样,愿意为几十年后的健康在今天下注。**第五,患者从乘客变成掌舵者**:在 3.0 里,你不再是被动接受处置的对象,而是要读懂自己的身体数据、参与每一个取舍的**主动参与者**——医生更像领航员,方向盘有一半在你手里。"
+  },
+  {
+   "type": "quote",
+   "original": "医学 2.0 的目标是不让你死；医学 3.0 的目标，是让你活得长，也活得好。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "对比表",
+   "caption": "医学 2.0 与医学 3.0:六个维度的分野",
+   "svg": "<svg viewBox=\"0 0 560 330\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"18\">医学 2.0 vs 医学 3.0</text><rect x=\"20\" y=\"46\" width=\"520\" height=\"266\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><line x1=\"180\" y1=\"46\" x2=\"180\" y2=\"312\" style=\"stroke:var(--line)\" stroke-width=\"0.8\"/><line x1=\"368\" y1=\"46\" x2=\"368\" y2=\"312\" style=\"stroke:var(--line)\" stroke-width=\"0.8\"/><line x1=\"20\" y1=\"84\" x2=\"540\" y2=\"84\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"274\" y=\"71\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\" font-weight=\"bold\">医学 2.0</text><text x=\"454\" y=\"71\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"15\" font-weight=\"bold\">医学 3.0</text><line x1=\"20\" y1=\"122\" x2=\"540\" y2=\"122\" style=\"stroke:var(--line)\" stroke-width=\"0.6\"/><line x1=\"20\" y1=\"160\" x2=\"540\" y2=\"160\" style=\"stroke:var(--line)\" stroke-width=\"0.6\"/><line x1=\"20\" y1=\"198\" x2=\"540\" y2=\"198\" style=\"stroke:var(--line)\" stroke-width=\"0.6\"/><line x1=\"20\" y1=\"236\" x2=\"540\" y2=\"236\" style=\"stroke:var(--line)\" stroke-width=\"0.6\"/><line x1=\"20\" y1=\"274\" x2=\"540\" y2=\"274\" style=\"stroke:var(--line)\" stroke-width=\"0.6\"/><text x=\"100\" y=\"108\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13.5\">出手时机</text><text x=\"274\" y=\"108\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13.5\">确诊之后</text><text x=\"454\" y=\"108\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13.5\">提前几十年</text><text x=\"100\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13.5\">治疗对象</text><text x=\"274\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13.5\">已成形的疾病</text><text x=\"454\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13.5\">风险本身</text><text x=\"100\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13.5\">判断依据</text><text x=\"274\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13.5\">人群平均值</text><text x=\"454\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13.5\">个体差异</text><text x=\"100\" y=\"222\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13.5\">时间视野</text><text x=\"274\" y=\"222\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13.5\">眼前这一仗</text><text x=\"454\" y=\"222\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13.5\">未来数十年</text><text x=\"100\" y=\"260\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13.5\">患者角色</text><text x=\"274\" y=\"260\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13.5\">被动接受</text><text x=\"454\" y=\"260\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13.5\">主动掌舵</text><text x=\"100\" y=\"298\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13.5\">对待证据</text><text x=\"274\" y=\"298\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13.5\">等 RCT 铁证</text><text x=\"454\" y=\"298\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">不完美证据下审慎行动</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "最有争议的一条:证据不完美,动不动手?"
+  },
+  {
+   "type": "p",
+   "text": "对比表的最后一行,是整套主张里**最有争议**的一条:对证据的**风险容忍度**不同。医学 2.0 的黄金标准是 RCT——没有随机对照试验的铁证,不轻举妄动。这条纪律来之不易,它挡住了无数江湖偏方,是 2.0 最值得尊敬的遗产。但 Attia 指出一个死结:**预防慢病需要的那种证据,常常永远等不到**。没有人能做一个跟踪四十年、严格控制几万人饮食起居的完美试验——它太贵、太长,也不可能真正「控制」人的一生。对慢病预防而言,坚持「铁证才动手」,实际效果往往等于「永远不动手」。"
+  },
+  {
+   "type": "p",
+   "text": "于是 3.0 的立场是:**面对不完美的证据,审慎地行动,好过在等待完美中错过整个窗口**。打个比方:2.0 像等房子着火了才去买灭火器——火灾千真万确,证据完美,但代价已经烧成了现实;3.0 像提前装上烟雾报警器——绝大多数日子它一声不吭,看起来像白装了,可它买到的,是别人要用火光才换得来的提前量。"
+  },
+  {
+   "type": "quote",
+   "original": "等待完美的证据，本身就是一种下注——赌的是「什么都不做」恰好是对的。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "比喻图",
+   "caption": "两种风险哲学:同一场火,两个出手时机",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"18\">两种风险哲学</text><line x1=\"280\" y1=\"52\" x2=\"280\" y2=\"246\" style=\"stroke:var(--line)\" stroke-width=\"0.8\" stroke-dasharray=\"4 4\"/><text x=\"145\" y=\"66\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\" font-weight=\"bold\">医学 2.0</text><text x=\"145\" y=\"88\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">等火烧起来再买灭火器</text><path d=\"M145 108 C133 128 126 141 126 154 C126 170 134 181 145 181 C156 181 164 170 164 154 C164 141 157 128 145 108 Z\" style=\"fill:var(--cinnabar)\"/><path d=\"M145 134 C139 145 136 152 136 160 C136 168 140 173 145 173 C150 173 154 168 154 160 C154 152 151 145 145 134 Z\" style=\"fill:var(--paper-raised)\"/><text x=\"145\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">证据完美——火灾千真万确</text><text x=\"145\" y=\"230\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">但代价已经烧成现实</text><text x=\"415\" y=\"66\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"15\" font-weight=\"bold\">医学 3.0</text><text x=\"415\" y=\"88\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">提前几十年装上烟感</text><circle cx=\"415\" cy=\"150\" r=\"26\" fill=\"none\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><circle cx=\"415\" cy=\"150\" r=\"9\" fill=\"none\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1\"/><circle cx=\"415\" cy=\"150\" r=\"3\" style=\"fill:var(--cinnabar)\"/><path d=\"M402 114 Q415 106 428 114\" fill=\"none\" style=\"stroke:var(--cinnabar)\" stroke-width=\"1.5\"/><path d=\"M395 105 Q415 94 435 105\" fill=\"none\" style=\"stroke:var(--cinnabar)\" stroke-width=\"1.5\"/><text x=\"415\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">多数日子一声不吭</text><text x=\"415\" y=\"230\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">买到的是几十年的提前量</text><text x=\"280\" y=\"274\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"12\">比喻只讲出手时机——行动本身仍须逐项权衡伤害与收益</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "这套主张的争议,Attia 自己没有回避,读者更不该跳过。批评者的担心并非多余:**绕开铁证行事,是一条容易滑坡的路**——更多筛查意味着更多假阳性,带来不必要的焦虑、活检乃至过度治疗;有些查出来的「病灶」也许一辈子都不会惹事,治疗反而是净伤害;昂贵的检测与干预,还可能把医疗进一步变成富人的游戏。而且「3.0」这面旗帜本身就容易被商业滥用——市面上打着「精准」「抗衰」旗号的万灵丹,巴不得你相信「不必等证据」。"
+  },
+  {
+   "type": "p",
+   "text": "Attia 的回应不是否认这些代价,而是把重音压在**「审慎」**二字上:在证据不完美处行动,不等于在没有证据处蛮干;每一项干预依然要老老实实地算伤害与收益,只是把「不作为的风险」也放进同一架天平。这场争论在医学界远没有终审判决——你该清楚,自己读的是一份**有立场的主张**,而不是一份共识指南。"
+  },
+  {
+   "type": "h2",
+   "text": "合上这一章"
+  },
+  {
+   "type": "p",
+   "text": "「医学 3.0」的力量,不在于发明了什么新药新术,而在于换了一套看问题的坐标:**把医学从「修理厂」变成「领航塔」**——不是等零件坏了再修,而是提前几十年规划航线。哪怕你不打算全盘接受 Attia 后面章节里的具体战术(那些都该和自己的医生讨论,而不是照书执行),「用几十年的视野看健康、盯风险而不是等确诊」这个视角转换,本身已经值回票价。"
+  },
+  {
+   "type": "p",
+   "text": "当然,理念不能当饭吃。宣布「我们需要医学 3.0」很容易,难的是把它落成可执行的东西:目标到底是什么?策略怎么定?具体到每一天做什么?这正是下一章的任务——Attia 要把这套范式,翻译成一份「目标—策略—战术」的作战框架。"
+  }
+ ]
+}

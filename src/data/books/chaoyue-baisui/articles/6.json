@@ -1,0 +1,159 @@
+{
+ "title": "心脏病:头号杀手可以预防",
+ "subtitle": "斑块是几十年慢慢结的水垢:真正的元凶是含 apoB 的颗粒「越多越久越糟」,所以要尽早查、尽早降,把防线提前几十年",
+ "centralIdea": "这一章讲《超越百岁》四骑士中的头号——动脉粥样硬化性心血管病(ASCVD)。核心信息是:心脏病并非「突然」发作,而是从二三十岁就开始、在血管里悄悄积累几十年的过程(Attia 常以水管水垢作比),因而在很大程度上可以预防,关键是把干预窗口往前挪几十年。Attia 纠正一个常见误会:驱动斑块的不是笼统的「胆固醇总量」,而是含 apoB 的脂蛋白颗粒(以 LDL 为主)的「数量」,且风险随「颗粒数 × 暴露时间」累积——越多越久,越糟。由此他主张尽早、尽力降低 apoB / LDL(「提前下注」的预防哲学),并主动检测常被忽视的 Lp(a)(基因决定、终身基本不变、一辈子测一次)与冠脉钙化积分 CAC(直接看血管里有无钙化斑块)。循证底线:Attia 的激进早期降脂目标比部分主流临床指南更前卫、学界有争议,全文明确标注为「作者主张、非共识」,只提供一副提前防线的眼光和几个该了解的指标,不构成个人用药或医疗建议,具体检查与治疗一律遵医嘱、与医生共同决定。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "先说一个反直觉的事实。心脏病——准确说是「动脉粥样硬化性心血管病」(ASCVD),全球头号杀手,每年夺走的人比任何一种病都多——它几乎从来不是「突然」发作的。那个在办公室、在球场、在睡梦里毫无征兆倒下的人,他的血管其实已经默默坏了几十年。斑块不是一夜结成的,它像老房子水管内壁的水垢,从你二三十岁、身体感觉最棒的时候就开始,一点一点、一层一层地结,结了三四十年,直到某天堵到一个临界点,才「爆」给你看。**这一章 Attia 要讲的核心只有一句:头号杀手,其实在很大程度上是可以预防的——前提是,你得把防它的时间,往前挪几十年。**"
+  },
+  {
+   "type": "p",
+   "text": "我们把《超越百岁》的第六章从头捋一遍。这本书的主线,是狙击 Attia 说的「四骑士」——心脏病、癌症、神经退行、2 型糖尿病这四类会「慢慢要命」的慢性病。心脏病排在第一个讲,因为它杀人最多,却也是四个里面「最有把握预防」的一个。Attia 本是心内科背景出身,这一章他几乎是带着点着急的语气在说:我们对付心脏病的老办法,时间点整个错了——总是等到人到中老年、指标已经一塌糊涂、甚至已经犯过一次事,才手忙脚乱地介入。而真正该动手的时候,是几十年前,那管「水垢」刚开始结的时候。"
+  },
+  {
+   "type": "h2",
+   "text": "一、先纠正一个致命误会:心脏病不是「老了才得的病」"
+  },
+  {
+   "type": "p",
+   "text": "大多数人心里,心脏病是一件「老年人的事」。四五十岁之前,几乎没人会为它操心——体检报告上血脂那几行,红了也就红了,医生不紧张,自己更不当回事。Attia 说,这个「等老了再说」的直觉,恰恰是最致命的误会。因为病理学早就看得清清楚楚:动脉里的斑块,在很多人二三十岁的时候就已经开始形成了。有解剖研究发现,不少年纪轻轻、因意外去世的年轻人,血管壁上已经能看到早期的脂质条纹——那正是斑块的雏形。"
+  },
+  {
+   "type": "p",
+   "text": "换句话说,心脏病不是一个「事件」,是一个「过程」。你以为的那次「发作」,只是这个漫长过程露出水面的最后一秒。前面几十年,它一直在水面下悄悄进行,不痛、不痒、不给你任何提醒。这就是它最阴险的地方:等到你有感觉了——胸痛、胸闷、喘不上气——往往血管已经堵得很厉害了。**它给你的「预警」,常常就是发作本身。**"
+  },
+  {
+   "type": "p",
+   "text": "Attia 特别爱用一个比喻,我们借来用:斑块就像老房子水管内壁结的水垢。你打开水龙头,水流小了一点,你不会在意;又过几年,水更小了,你还是凑合用;直到某天彻底不出水了,你才发现管壁早被水垢糊得只剩一条缝。血管也是这样——它有很强的「代偿」本事,会一边被堵、一边悄悄把管腔撑大来维持供血,所以你在很长时间里一点感觉都没有。等到它撑不住了,就是急性事件。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "svg": "<svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><text x=\"280\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"19\" letter-spacing=\"2\">斑块,是几十年慢慢结出来的</text><line x1=\"50\" y1=\"238\" x2=\"524\" y2=\"238\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><path d=\"M52,236 C170,231 290,210 400,160 C455,135 495,98 514,66\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"2.6\"/><circle cx=\"514\" cy=\"66\" r=\"6\" style=\"fill:var(--cinnabar)\"/><text x=\"514\" y=\"50\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"13\">发作</text><text x=\"60\" y=\"260\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">20岁</text><text x=\"210\" y=\"260\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">30岁</text><text x=\"360\" y=\"260\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">45岁</text><text x=\"500\" y=\"260\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">60岁</text><text x=\"150\" y=\"210\" style=\"fill:var(--ink-faint)\" font-size=\"13\">悄无声息地积……</text><text x=\"280\" y=\"288\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">从二三十岁就开始,几十年后才「突然」发作</text></svg>",
+   "caption": "心脏病不是一次「事件」,是一段几十年的「过程」:斑块从二三十岁就开始悄悄结,像水管里的水垢一层层加厚,直到某天堵过临界点才露出水面——它给的预警,常常就是发作本身。"
+  },
+  {
+   "type": "h2",
+   "text": "二、真正的元凶,不是笼统的「胆固醇」,是颗粒的「数量」"
+  },
+  {
+   "type": "p",
+   "text": "「胆固醇高不好」——这句话人人会背,但 Attia 说,它糊得几乎没用,甚至会误导人。问题出在,我们平时说的「胆固醇」,是个太笼统的词。体检单上那个「总胆固醇」,把好的坏的搅在一起算了个总数,信息量很低。要真看懂风险,得往下钻一层,看**是谁在运输这些胆固醇,又运了多少「趟」。**"
+  },
+  {
+   "type": "p",
+   "text": "这里要请出一个关键角色:脂蛋白。胆固醇不溶于血,它没法自己在血里漂,得靠一种叫「脂蛋白」的颗粒像卡车一样装着它跑。这些「卡车」里,惹麻烦的主力是 LDL(低密度脂蛋白);而不管是 LDL 还是它的几个「坏亲戚」,车头上都挂着同一块牌照,叫 **apoB**。你可以把 apoB 理解成:每一辆有可能钻进血管壁、结成斑块的「肇事卡车」,都带着这块牌照。所以数一数血里挂 apoB 的颗粒有多少,就等于数一数路上跑着多少辆潜在的肇事卡车。"
+  },
+  {
+   "type": "p",
+   "text": "关键的洞见就在这:**决定风险的,主要不是每辆卡车装了多少货(胆固醇的「量」),而是路上到底跑了多少辆卡车(颗粒的「数」)。**两个人的「总胆固醇」可能一模一样,但一个是少数几辆大卡车装满了货,另一个是一大群小卡车稀稀拉拉地跑——后者颗粒数(apoB)高得多,风险也大得多,可他们的体检总数看起来却差不多。这就是为什么 Attia 反复强调:别只盯着总胆固醇,要去测 **apoB**,那才是更贴近真相的那个数。"
+  },
+  {
+   "type": "p",
+   "text": "而且风险不只看「多少辆」,还要看「跑了多久」。Attia 把它讲成一个特别朴素的道理:**含 apoB 的颗粒越多、暴露的年头越久,风险就越高——越多越久,越糟。**这就像水垢——水里矿物质越多、水管用的年头越长,结的垢就越厚。一个从二十岁起 apoB 就偏高的人,到五十岁,他血管「泡」在高颗粒里的总时长,远远超过一个四十岁才开始高的人。所以真正的风险,是「颗粒数 × 暴露时间」这笔累积账,而不是某一次体检的瞬时快照。"
+  },
+  {
+   "type": "quote",
+   "original": "推动斑块的不是笼统的『胆固醇』,而是含 apoB 的颗粒有多少、又泡了多久——越多越久,越糟。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "svg": "<svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><text x=\"280\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"19\" letter-spacing=\"2\">真正推动斑块的,是颗粒的「数量」</text><rect x=\"40\" y=\"118\" width=\"480\" height=\"66\" rx=\"33\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.3\"/><circle cx=\"82\" cy=\"150\" r=\"6\" style=\"fill:var(--cinnabar)\"/><circle cx=\"116\" cy=\"140\" r=\"6\" style=\"fill:var(--cinnabar)\"/><circle cx=\"150\" cy=\"162\" r=\"6\" style=\"fill:var(--cinnabar)\"/><circle cx=\"190\" cy=\"146\" r=\"6\" style=\"fill:var(--cinnabar)\"/><circle cx=\"228\" cy=\"160\" r=\"6\" style=\"fill:var(--cinnabar)\"/><circle cx=\"262\" cy=\"142\" r=\"6\" style=\"fill:var(--cinnabar)\"/><circle cx=\"300\" cy=\"158\" r=\"6\" style=\"fill:var(--cinnabar)\"/><circle cx=\"338\" cy=\"146\" r=\"6\" style=\"fill:var(--cinnabar)\"/><circle cx=\"376\" cy=\"162\" r=\"6\" style=\"fill:var(--cinnabar)\"/><circle cx=\"414\" cy=\"144\" r=\"6\" style=\"fill:var(--cinnabar)\"/><circle cx=\"452\" cy=\"158\" r=\"6\" style=\"fill:var(--cinnabar)\"/><circle cx=\"486\" cy=\"148\" r=\"6\" style=\"fill:var(--cinnabar)\"/><text x=\"280\" y=\"216\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">每个挂着 apoB 的颗粒,都是一辆可能钻进血管壁的「肇事卡车」</text><text x=\"280\" y=\"250\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\" letter-spacing=\"1\">颗粒越多 × 泡得越久 = 累积伤害越大</text><text x=\"280\" y=\"282\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">看的是颗粒的「数」,不是每辆车装了多少「货」</text></svg>",
+   "caption": "Attia 眼中的真正元凶:不是笼统的「胆固醇总量」,而是含 apoB 的颗粒「数量」。每个颗粒都是一辆可能钻进血管壁的肇事卡车——颗粒越多、泡得越久,累积伤害越大。"
+  },
+  {
+   "type": "h2",
+   "text": "三、于是 Attia 的主张:尽早、尽力,把 apoB / LDL 降下来"
+  },
+  {
+   "type": "p",
+   "text": "把上面两点连起来,Attia 的结论就顺理成章了:既然伤害是「颗粒数 × 时间」的累积账,那对付它最有效的办法,就是**尽早、尽力地把 apoB(以及它背后的 LDL)降下来**——降得越早,少「泡」的年头就越多;压得越低,每一年攒下的伤害就越小。这跟传统「等指标坏到一定程度、人到一定岁数才干预」的思路,几乎是反着来的。"
+  },
+  {
+   "type": "p",
+   "text": "他打的比方是:传统做法像是眼看着水垢结了三十年、水快不出了,才想起来通管道——不但为时已晚,而且通得再狠,前三十年结下的垢也已经在那儿了。而他主张的,是趁水垢还薄、甚至还没怎么结的时候,就先把水质调好,让它压根别结那么厚。放到人身上,就是不必等到五六十岁血管已经千疮百孔,而是在三四十岁、甚至更早,就把那笔累积账的「斜率」压平。"
+  },
+  {
+   "type": "quote",
+   "original": "与其等水垢结满三十年再去通管,不如趁它还薄,先把水质调好。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "这套思路背后是一种预防哲学,可以叫它「提前下注」:与其等坏事发生了再抢救,不如在风险刚露头、代价还很小的时候就下手,把未来几十年的累积伤害提前削掉一大块。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比",
+   "svg": "<svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><text x=\"280\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"19\" letter-spacing=\"2\">两种时钟:亡羊补牢 vs 提前下注</text><line x1=\"280\" y1=\"58\" x2=\"280\" y2=\"252\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"145\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">旧时钟 · 等坏了再管</text><text x=\"145\" y=\"128\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">拖到五六十岁</text><text x=\"145\" y=\"158\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">指标已坏、甚至犯过事</text><text x=\"145\" y=\"188\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">才手忙脚乱介入</text><text x=\"145\" y=\"222\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">水垢早已结厚——太晚</text><text x=\"415\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\">Attia · 提前几十年下注</text><text x=\"415\" y=\"128\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">三四十岁,甚至更早</text><text x=\"415\" y=\"158\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">趁颗粒还没泡久</text><text x=\"415\" y=\"188\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">压平累积账的斜率</text><text x=\"415\" y=\"222\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"13\">趁垢还薄——提前</text><text x=\"280\" y=\"282\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">伤害是「颗粒数 × 时间」的累积账,越早动手越划算</text></svg>",
+   "caption": "两种时钟的对照:旧办法拖到人老、指标坏透才手忙脚乱地补救,水垢早已结厚;Attia 主张趁颗粒还没泡久就提前几十年下注,把累积账的斜率压平。"
+  },
+  {
+   "type": "p",
+   "text": "这里必须诚实地插一句,免得你读得太上头。Attia 主张的这种「尽早、尽力、把指标压得很低」的激进策略,比目前不少主流临床指南要**更前卫、更激进**。指南通常会先按年龄和综合风险评估,达到一定门槛才建议用药干预;而 Attia 更倾向于对更年轻、风险看似还没那么高的人,就提前、加力干预。这是他基于「累积暴露」逻辑做出的个人判断,**学界对此是有争议的**,并不是板上钉钉的共识。所以请记住:这一章讲的是一种思路和一场仍在进行的辩论,**不是针对你个人的用药建议**。要不要查、要不要降、用什么方式降,一定得结合你自己的具体情况,和你的医生商量着来——别拿着一本书就给自己开药。"
+  },
+  {
+   "type": "h2",
+   "text": "四、两个常被忽视的检查:Lp(a) 和冠脉钙化积分"
+  },
+  {
+   "type": "p",
+   "text": "除了 apoB,Attia 还点名两个他认为「几乎人人该知道、却常年被漏掉」的指标。"
+  },
+  {
+   "type": "p",
+   "text": "第一个是 **Lp(a)**(读作「Lp 小 a」)。它是一种特殊的脂蛋白颗粒,坏就坏在:它高不高,**主要由基因决定**,几乎和你怎么吃、怎么练关系不大;而它一旦偏高,又是心脏病和中风的一个很强的独立风险因素。偏偏它不在常规体检的默认项目里,于是大量 Lp(a) 天生偏高的人,一辈子都不知道自己「牌不好」。Attia 的建议很简单:这个指标,**一辈子至少测一次**——因为它基本终身不变,测一次就知道自己是不是拿到了一手需要格外小心的牌。"
+  },
+  {
+   "type": "p",
+   "text": "第二个是**冠脉钙化积分(CAC)**。前面说的都是在算「风险有多大」,而 CAC 是一种能**直接去看血管里到底有没有货**的检查——用一次低剂量的 CT,扫一扫心脏的冠状动脉,看上面有没有已经钙化的斑块,并打出一个分数。分数为零,是个相当让人安心的信号;分数偏高,说明斑块已经实实在在地存在,那就得当回事。它的价值在于:把「你可能有风险」这种抽象推算,变成了「你现在到底有没有、有多少」的直接证据。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "svg": "<svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><text x=\"280\" y=\"36\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"19\" letter-spacing=\"2\">三个该主动去了解的数</text><rect x=\"35\" y=\"72\" width=\"140\" height=\"34\" rx=\"17\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"105\" y=\"94\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"17\">apoB</text><rect x=\"210\" y=\"72\" width=\"140\" height=\"34\" rx=\"17\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"280\" y=\"94\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"17\">Lp(a)</text><rect x=\"385\" y=\"72\" width=\"140\" height=\"34\" rx=\"17\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"455\" y=\"94\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"17\">CAC</text><text x=\"105\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">颗粒总数</text><text x=\"105\" y=\"174\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">比总胆固醇更贴近真相</text><text x=\"280\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">基因决定的牌</text><text x=\"280\" y=\"174\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">一辈子测一次就够</text><text x=\"455\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">冠脉钙化积分</text><text x=\"455\" y=\"174\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">直接看血管里有没有货</text><line x1=\"70\" y1=\"212\" x2=\"490\" y2=\"212\" style=\"stroke:var(--line)\" stroke-width=\"0.8\" stroke-dasharray=\"4 4\"/><text x=\"280\" y=\"248\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">这些不是玄学,是和医生一起把风险看清的工具</text><text x=\"280\" y=\"278\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">查不查、怎么用,请结合自身情况遵医嘱</text></svg>",
+   "caption": "Attia 点名的三个数:apoB(颗粒总数,比总胆固醇更准)、Lp(a)(基因牌,一辈子测一次)、CAC(冠脉钙化积分,直接看血管里有没有货)。它们是和医生把风险看清的工具——查不查、怎么用,请结合自身遵医嘱。"
+  },
+  {
+   "type": "h2",
+   "text": "五、落地:一个普通人能带走什么"
+  },
+  {
+   "type": "p",
+   "text": "这一章信息量不小,但对没读过书的普通人,真正该带走的其实就几条,而且都不需要你去背医学名词。"
+  },
+  {
+   "type": "p",
+   "text": "**第一,把心脏病从「老年病」这个格子里挪出来。**它不是老了才得的,是几十年慢慢结出来的。所以关注它的最佳时机,不是等你体检报告开始飘红的那天,而是越早越好——哪怕你现在很年轻、很健康,恰恰正处在「趁水垢还没结」的黄金窗口。"
+  },
+  {
+   "type": "p",
+   "text": "**第二,别只满足于「总胆固醇正常」,去了解更能说明问题的那几个数。**apoB、Lp(a),还有必要时的冠脉钙化积分——这些不是玄学,是能让你和医生把风险看得更清楚的工具。尤其 Lp(a),既然一辈子测一次就够、又是张基因牌,实在没理由一直蒙在鼓里。"
+  },
+  {
+   "type": "p",
+   "text": "**第三,也是最要紧的——把「知道」交给专业的人一起判断,别自己吓自己、也别自己给自己开方。**Attia 那套激进降脂的主张有它的道理,也有它的争议;它是一个值得你和医生认真讨论的选项,而不是一道你抄回家就能照做的公式。日常那些老生常谈——好好吃、动起来、别抽烟、把血压血糖照看好——依然是地基;但具体到查什么、降不降、怎么降,请一定交给你和你的医生。这一章给你的,是一副「把窗口往前挪几十年」的眼光,和几个该主动去了解的指标,不是一张药方。"
+  },
+  {
+   "type": "figure",
+   "ftype": "金句卡",
+   "svg": "<svg viewBox=\"0 0 560 280\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><rect x=\"14\" y=\"14\" width=\"532\" height=\"252\" rx=\"10\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"26\" y=\"26\" width=\"508\" height=\"228\" rx=\"6\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"0.8\"/><text x=\"280\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"40\" letter-spacing=\"6\">越多越久,越糟</text><line x1=\"180\" y1=\"140\" x2=\"380\" y2=\"140\" style=\"stroke:var(--cinnabar)\" stroke-width=\"1.2\"/><text x=\"280\" y=\"178\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"17\">心脏病可预防——但防它的钟,得往前拨几十年</text><text x=\"280\" y=\"210\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">颗粒(apoB)越多、泡得越久,斑块结得越厚</text><text x=\"512\" y=\"242\" text-anchor=\"end\" style=\"fill:var(--cinnabar)\" font-size=\"14\">超越百岁 · 第六章</text></svg>",
+   "caption": "这一章可以浓缩成的一句话:含 apoB 的颗粒越多、泡得越久,斑块结得越厚——越多越久,越糟。头号杀手可以预防,但防它的钟,得往前拨几十年。"
+  },
+  {
+   "type": "h2",
+   "text": "六、收束:回到那管水垢"
+  },
+  {
+   "type": "p",
+   "text": "我们从一管水垢讲起。心脏病最吓人的地方,从来不是它来得多凶,而是它来得多「静」——它在你毫无察觉的几十年里,一层一层地结,直到某天露出水面。但也正因为它是「慢慢结出来的」,它才格外**可防**:一件用几十年攒出来的坏事,理论上也就有几十年的时间可以去拦它。"
+  },
+  {
+   "type": "p",
+   "text": "Attia 这一章想扭转的,就是那个「等老了、等坏了再管」的旧时钟。他把头号杀手重新定义成一件「可以提前几十年下手」的事:早点知道自己的那几个数,早点和医生一起把那笔累积账的斜率压平。**头号杀手可以预防——但预防它的钟,得往前拨几十年。**最后再说一次那句最重要的话:这是一副眼光和一场仍在进行的讨论,不是给你个人的医嘱;真正的决定,请你带着这份眼光,去和懂你身体的医生一起做。"
+  }
+ ]
+}

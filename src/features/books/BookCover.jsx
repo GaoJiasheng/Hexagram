@@ -301,6 +301,106 @@ function PovertyCurve() {
   )
 }
 
+// 母题:长寿之弧——一条长基线上扬起的健康曲线,延伸到远端一点朱色(呼应《超越百岁》延长「健康寿命」)。
+function LongevityArc() {
+  return (
+    <g>
+      <path d="M40,360 L260,360" fill="none" stroke={CREAM} strokeOpacity="0.3" strokeWidth="1.1" />
+      <path d="M46,352 C110,348 152,300 200,252 C224,228 244,216 256,210" fill="none" stroke={CREAM} strokeOpacity="0.52" strokeWidth="1.6" strokeLinecap="round" />
+      <circle cx="256" cy="210" r="9" fill={CINNABAR} />
+    </g>
+  )
+}
+
+// 母题:心电波——一道横贯的 ECG 波形,中间一个朱色 R 峰(呼应《心脏简史》)。
+function PulseLine() {
+  const d = 'M36,290 L112,290 L124,290 L134,264 L146,324 L158,240 L170,300 L182,290 L210,290 L264,290'
+  return (
+    <g>
+      <path d={d} fill="none" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="158" cy="240" r="7" fill={CINNABAR} />
+    </g>
+  )
+}
+
+// 母题:血管与叶——两道同心血管环内一枚朱色叶片(呼应植物性全食逆转心脏病)。
+function VesselLeaf() {
+  return (
+    <g>
+      <circle cx="150" cy="292" r="74" fill="none" stroke={CREAM} strokeOpacity="0.32" strokeWidth="1.2" />
+      <circle cx="150" cy="292" r="48" fill="none" stroke={CREAM} strokeOpacity="0.26" strokeWidth="1.1" />
+      <path d="M150,262 Q168,280 150,304 Q132,280 150,262 Z" fill={CINNABAR} opacity="0.9" />
+      <path d="M150,262 L150,304" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1" />
+    </g>
+  )
+}
+
+// 母题:神经元——胞体放射树突,中心一点朱色突触火花(呼应《大脑健康书》脑可塑)。
+function Neuron() {
+  const cx = 150, cy = 290
+  const dend = []
+  for (let i = 0; i < 7; i++) { const a = (i / 7) * Math.PI * 2; dend.push(`M${(cx + Math.cos(a) * 15).toFixed(1)},${(cy + Math.sin(a) * 15).toFixed(1)} L${(cx + Math.cos(a) * 66).toFixed(1)},${(cy + Math.sin(a) * 66).toFixed(1)}`) }
+  return (
+    <g>
+      <path d={dend.join(' ')} fill="none" stroke={CREAM} strokeOpacity="0.3" strokeWidth="1.1" strokeLinecap="round" />
+      <circle cx={cx} cy={cy} r="13" fill="none" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.4" />
+      <circle cx={cx} cy={cy} r="5" fill={CINNABAR} />
+    </g>
+  )
+}
+
+// 母题:血糖曲线归平——剧烈尖峰逐渐抚平成一条缓线,落定处一点朱色(呼应《告别糖尿病》可缓解)。
+function GlucoseFlatten() {
+  const d = 'M40,300 L70,300 L86,236 L104,300 L120,252 L140,300 L166,286 L200,290 L260,290'
+  return (
+    <g>
+      <path d="M40,340 L260,340" fill="none" stroke={CREAM} strokeOpacity="0.24" strokeWidth="1" />
+      <path d={d} fill="none" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="230" cy="290" r="7" fill={CINNABAR} />
+    </g>
+  )
+}
+
+// 母题:调定点表盘——半圆刻度盘 + 一根朱色指针(呼应《饥饿的大脑》脂肪调定点)。
+function SetpointDial() {
+  const cx = 150, cy = 312, R = 80
+  const arc = `M${cx - R},${cy} A${R},${R} 0 0 1 ${cx + R},${cy}`
+  const ticks = []
+  for (let i = 0; i <= 6; i++) { const a = Math.PI + (i / 6) * Math.PI; ticks.push(`M${(cx + Math.cos(a) * R).toFixed(1)},${(cy + Math.sin(a) * R).toFixed(1)} L${(cx + Math.cos(a) * (R - 9)).toFixed(1)},${(cy + Math.sin(a) * (R - 9)).toFixed(1)}`) }
+  const na = Math.PI + 0.66 * Math.PI
+  return (
+    <g>
+      <path d={arc} fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.3" />
+      <path d={ticks.join(' ')} stroke={CREAM} strokeOpacity="0.28" strokeWidth="1" />
+      <path d={`M${cx},${cy} L${(cx + Math.cos(na) * R * 0.82).toFixed(1)},${(cy + Math.sin(na) * R * 0.82).toFixed(1)}`} stroke={CINNABAR} strokeWidth="1.9" strokeLinecap="round" />
+      <circle cx={cx} cy={cy} r="5" fill={CINNABAR} />
+    </g>
+  )
+}
+
+// 母题:火焰——一簇代谢之火,内焰朱色(呼应《燃烧》能量消耗)。
+function Flame() {
+  const outer = 'M150,212 C184,250 192,288 172,316 C163,328 152,332 150,348 C148,332 137,328 128,316 C108,288 116,250 150,212 Z'
+  const inner = 'M150,268 C165,286 167,308 156,322 C152,328 150,330 150,338 C150,330 148,328 144,322 C133,308 135,286 150,268 Z'
+  return (
+    <g>
+      <path d={outer} fill="none" stroke={CREAM} strokeOpacity="0.46" strokeWidth="1.4" />
+      <path d={inner} fill={CINNABAR} opacity="0.9" />
+    </g>
+  )
+}
+
+// 母题:条形码——工业化包装的条码,其中一根朱色(呼应《超加工人群》工业食品)。
+function Barcode() {
+  let x = 66; const bars = []
+  for (let i = 0; i < 22; i++) { const w = (i % 3 === 0) ? 4 : (i % 2 === 0 ? 2 : 1.5); bars.push({ x, w, hi: i === 11 }); x += w + 5 }
+  return (
+    <g>
+      {bars.map((b, i) => <rect key={i} x={b.x} y="238" width={b.w} height="104" fill={b.hi ? CINNABAR : CREAM} fillOpacity={b.hi ? 0.95 : 0.42} />)}
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'two-mountains') return <TwoMountains />
   if (motif === 'ripples') return <Ripples />
@@ -320,6 +420,14 @@ function Motif({ motif }) {
   if (motif === 'gear-grid') return <GearGrid />
   if (motif === 'river-flow') return <RiverFlow />
   if (motif === 'poverty-curve') return <PovertyCurve />
+  if (motif === 'longevity-arc') return <LongevityArc />
+  if (motif === 'pulse-line') return <PulseLine />
+  if (motif === 'vessel-leaf') return <VesselLeaf />
+  if (motif === 'neuron') return <Neuron />
+  if (motif === 'glucose-flatten') return <GlucoseFlatten />
+  if (motif === 'setpoint-dial') return <SetpointDial />
+  if (motif === 'flame') return <Flame />
+  if (motif === 'barcode') return <Barcode />
   return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
 }
 

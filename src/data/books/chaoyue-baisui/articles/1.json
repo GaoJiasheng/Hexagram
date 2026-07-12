@@ -1,0 +1,104 @@
+{
+ "title": "人类的死法，悄悄换了剧本",
+ "subtitle": "《超越百岁》第一章「慢病时代：从『快死』到『慢死』」导读——为什么预防要提前几十年",
+ "centralIdea": "Attia 开篇立起全书的根本转变：人类的死法在过去一百年里悄悄换了剧本。从前人多死于「快死」——外伤、感染、分娩，一朝毙命；现代医学靠抗生素、疫苗、卫生与外科几乎降服了这些急症（医学 1.0/2.0 的胜利），平均寿命因此暴涨。但取而代之的是「慢死」——心脏病、癌症、神经退行、2 型糖尿病这「四骑士」拖上几十年的慢病，如今几乎人人由此谢幕。麻烦在于：我们把「寿命」拉长了，「健康寿命」（活着且无病无残的年头）却没跟上，许多人生命的最后一二十年困在慢病与失能里。于是 Attia 立下全书使命：把战场从「治已病」提前到「防慢病」，目标不是单纯多活几年，而是多活几年好日子。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "设想两种告别人世的方式。一种是「一瞬间」：一场车祸、一次凶险的感染、一回大出血，人在几天甚至几小时里由生转死，来不及反应。另一种是「一场漫长的下坡」：一种病在你身体里悄悄住下，五年、十年、二十年，先偷走一点体力，再偷走一点记性，最后偷走你自理的能力。Peter Attia 在《超越百岁》开篇就把这两种死法摆到台面上——他叫它们**「快死」与「慢死」**。理解了这两个词一百多年里此消彼长的历史，你就理解了这本书为什么要写。"
+  },
+  {
+   "type": "h2",
+   "text": "「快死」曾经是人类的主要死因"
+  },
+  {
+   "type": "p",
+   "text": "把时钟拨回一百多年前。那时一个普通人最可能的死因是什么？不是心脏病，也不是癌症，而是**来势汹汹的急症**：肺炎、肺结核、痢疾、伤寒这类传染病，产妇分娩时的大出血与感染，一道没处理好的伤口引发的败血症，还有此起彼伏的天花、霍乱。这些病的共同点是**「快」**——从发作到夺命，常常只是几天到几周。人们并非不会得慢病，而是多半还没等慢病找上门，就先被一场急症带走了。用一句略显残酷的话说：那个年代的人，**多半没能活到「慢慢死」的岁数**。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "svg": "<svg viewBox=\"0 0 560 250\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"150\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink);font-weight:bold\">快死 · Fast Death</text><text x=\"410\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--cinnabar);font-weight:bold\">慢死 · Slow Death</text><line x1=\"40\" y1=\"55\" x2=\"40\" y2=\"195\" style=\"stroke:var(--line);stroke-width:1\"/><line x1=\"40\" y1=\"195\" x2=\"270\" y2=\"195\" style=\"stroke:var(--line);stroke-width:1\"/><text x=\"32\" y=\"66\" text-anchor=\"end\" font-size=\"10\" style=\"fill:var(--ink-faint)\">健康</text><path d=\"M40 74 L184 74 L186 195\" style=\"fill:none;stroke:var(--ink);stroke-width:2.5\"/><circle cx=\"186\" cy=\"195\" r=\"4\" style=\"fill:var(--ink)\"/><text x=\"118\" y=\"66\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-soft)\">外伤·感染·分娩</text><text x=\"204\" y=\"132\" font-size=\"10\" style=\"fill:var(--ink-faint)\">几天</text><text x=\"204\" y=\"146\" font-size=\"10\" style=\"fill:var(--ink-faint)\">~几周</text><line x1=\"300\" y1=\"55\" x2=\"300\" y2=\"195\" style=\"stroke:var(--line);stroke-width:1\"/><line x1=\"300\" y1=\"195\" x2=\"540\" y2=\"195\" style=\"stroke:var(--line);stroke-width:1\"/><text x=\"292\" y=\"66\" text-anchor=\"end\" font-size=\"10\" style=\"fill:var(--ink-faint)\">健康</text><path d=\"M310 74 Q 402 86 448 138 Q 492 184 520 195\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:2.5\"/><circle cx=\"520\" cy=\"195\" r=\"4\" style=\"fill:var(--cinnabar)\"/><text x=\"382\" y=\"66\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-soft)\">四骑士慢慢啃噬</text><text x=\"472\" y=\"126\" font-size=\"10\" style=\"fill:var(--ink-faint)\">10~30 年</text><text x=\"150\" y=\"228\" text-anchor=\"middle\" font-size=\"10\" style=\"fill:var(--ink-faint)\">一朝毙命，来不及反应</text><text x=\"410\" y=\"228\" text-anchor=\"middle\" font-size=\"10\" style=\"fill:var(--ink-faint)\">漫长下坡，先失能再失去</text></svg>",
+   "caption": "快死与慢死：一个是短促而分明的急症，一个是潜伏数十年的慢病。两种死法，对应两种完全不同的应对思路。"
+  },
+  {
+   "type": "p",
+   "text": "然后，人类打赢了一场硬仗。十九世纪末到二十世纪，几样东西彻底改写了死因清单：**干净的自来水和下水道**切断了霍乱、伤寒的传播；**疫苗**驯服了天花、脊髓灰质炎；**抗生素**——从青霉素开始——让原本致命的细菌感染变成吃几天药就好的小事；**无菌手术与麻醉**让外科从「赌命」变成常规治疗。Attia 借用一种流行的分期法，把这套以「找到病因、精准打击」为核心的现代医学叫作**「医学 2.0」**（此前靠经验和猜测的传统医学是「医学 1.0」）。它的战绩辉煌：发达国家的人均预期寿命，在一百多年里从四十来岁一路涨到近八十岁。"
+  },
+  {
+   "type": "h2",
+   "text": "我们赢了「快死」，却撞上「慢死」"
+  },
+  {
+   "type": "p",
+   "text": "但胜利留下一个意想不到的后果。当急性传染病不再轻易杀人，人们得以活得更久——久到足以让另一批病有时间在体内慢慢成形。这批病，就是 Attia 反复强调的主角。他给它们起了个带着中世纪画面感的名字：**「四骑士」**（Four Horsemen），分别是：**心血管与脑血管疾病**（心脏病、中风）、**癌症**、**神经退行性疾病**（以阿尔茨海默症为代表）、以及以 **2 型糖尿病为核心的代谢功能障碍**。今天在发达国家，绝大多数人最终都是被这四位中的某一位——或几位联手——带走的。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "svg": "<svg viewBox=\"0 0 560 210\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--cinnabar);font-weight:bold\">慢死时代的「四骑士」</text><rect x=\"20\" y=\"52\" width=\"118\" height=\"98\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:1.8\"/><text x=\"79\" y=\"92\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink);font-weight:bold\">心脉·脑血管</text><text x=\"79\" y=\"118\" text-anchor=\"middle\" font-size=\"10.5\" style=\"fill:var(--ink-soft)\">心脏病·中风</text><rect x=\"160\" y=\"52\" width=\"118\" height=\"98\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:1.8\"/><text x=\"219\" y=\"92\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink);font-weight:bold\">癌症</text><text x=\"219\" y=\"118\" text-anchor=\"middle\" font-size=\"10.5\" style=\"fill:var(--ink-soft)\">失控增生的细胞</text><rect x=\"300\" y=\"52\" width=\"118\" height=\"98\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:1.8\"/><text x=\"359\" y=\"92\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink);font-weight:bold\">神经退行</text><text x=\"359\" y=\"118\" text-anchor=\"middle\" font-size=\"10.5\" style=\"fill:var(--ink-soft)\">阿尔茨海默等</text><rect x=\"440\" y=\"52\" width=\"118\" height=\"98\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:1.8\"/><text x=\"499\" y=\"92\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink);font-weight:bold\">代谢障碍</text><text x=\"499\" y=\"118\" text-anchor=\"middle\" font-size=\"10.5\" style=\"fill:var(--ink-soft)\">2型糖尿病为核心</text><text x=\"280\" y=\"188\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">共同点：潜伏数十年，发作前多无声无息</text></svg>",
+   "caption": "Attia 把代表慢死时代的四大慢病称为「四骑士」。它们共享一个致命特点：发作前已静静潜伏数十年。"
+  },
+  {
+   "type": "p",
+   "text": "这四类病和当年的传染病是两个物种。传染病是「快死」：一个外来的病原体突然入侵，战斗短促而分明。四骑士则是**不折不扣的「慢死」**：它们往往在你毫无觉察时就已经起步——动脉里慢慢堆积的斑块、失控生长的细胞、大脑里悄悄沉积的异常蛋白、一步步失灵的血糖调节，大多要**酝酿几十年**才显出症状。等到胸痛、确诊、忘事、指标爆表这些「事件」发生时，病程其实早已走了大半。这个「潜伏几十年」的特点极其关键，Attia 后面整本书的策略都建立在它之上。"
+  },
+  {
+   "type": "p",
+   "text": "值得停下来想一想：这个「潜伏几十年」既是坏消息，也藏着一个好消息。坏消息显而易见——等你有感觉时，病往往已经很深。但翻过来看，一段长达几十年、悄无声息的潜伏期，同时也意味着有一个同样长达几十年的**窗口期**摆在那里：在这段时间里，斑块还没彻底堵死血管，代谢紊乱还没演成糖尿病，许多轨迹**在原理上仍有被扳弯的余地**。传染病那种「几天定生死」的节奏根本不给你这个机会；慢病漫长得可怕，却也漫长得留有转圜。Attia 之所以敢把整本书押在「预防」上，底气正来自这条几十年的长跑道——**慢，是敌人，某种意义上也是我们唯一的盟友**。"
+  },
+  {
+   "type": "h2",
+   "text": "关键区分：「寿命」不等于「健康寿命」"
+  },
+  {
+   "type": "p",
+   "text": "到这里，Attia 引入了全书最核心的一对概念，也是理解这本书的钥匙。第一个是**「寿命」（lifespan）**——你活了多少年，从出生到死亡的总长度，一个简单的数字。第二个是**「健康寿命」（healthspan）**——你在**身体和头脑都还健康、没被疾病和失能拖累**的状态下，活了多少年。两者听起来相近，差别却是天壤：寿命只问「活没活着」，健康寿命问的是「活得好不好、能不能自己照顾自己、还做不做得动想做的事」。"
+  },
+  {
+   "type": "p",
+   "text": "要澄清一点：健康寿命并不只是「暂时没被确诊某种病」那么简单，Attia 强调的是**功能**。身体上，你还拧不拧得开瓶盖、爬不爬得动楼梯、抱不抱得动孙辈、走不走得了想去的路；头脑上，记性还够不够用、思路还清不清楚；乃至情绪与关系上，人是否还活得有劲、有牵挂。一个体检指标全「正常」、却虚弱到下不了床、糊涂到认不出家人的人，寿命仍在延续，健康寿命却早已见底。**衡量一个人老得好不好，看的不是还剩几口气，而是还剩多少「能自己做主」的生活。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "svg": "<svg viewBox=\"0 0 560 220\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink);font-weight:bold\">寿命 ≠ 健康寿命</text><text x=\"120\" y=\"78\" text-anchor=\"end\" font-size=\"12\" style=\"fill:var(--ink)\">寿命</text><text x=\"120\" y=\"94\" text-anchor=\"end\" font-size=\"9.5\" style=\"fill:var(--ink-faint)\">lifespan</text><rect x=\"132\" y=\"62\" width=\"368\" height=\"30\" rx=\"4\" style=\"fill:none;stroke:var(--ink);stroke-width:2\"/><text x=\"316\" y=\"82\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-soft)\">从出生到死亡的总年数</text><text x=\"120\" y=\"140\" text-anchor=\"end\" font-size=\"12\" style=\"fill:var(--cinnabar)\">健康寿命</text><text x=\"120\" y=\"156\" text-anchor=\"end\" font-size=\"9.5\" style=\"fill:var(--ink-faint)\">healthspan</text><rect x=\"132\" y=\"124\" width=\"248\" height=\"30\" rx=\"4\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:2\"/><text x=\"256\" y=\"144\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-soft)\">无病无残、能自理的年数</text><rect x=\"380\" y=\"124\" width=\"120\" height=\"30\" rx=\"4\" style=\"fill:none;stroke:var(--ink-faint);stroke-width:1.4;stroke-dasharray:5 4\"/><line x1=\"380\" y1=\"100\" x2=\"380\" y2=\"176\" style=\"stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:3 3\"/><line x1=\"500\" y1=\"100\" x2=\"500\" y2=\"176\" style=\"stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:3 3\"/><text x=\"440\" y=\"144\" text-anchor=\"middle\" font-size=\"10.5\" style=\"fill:var(--cinnabar)\">带病·失能</text><text x=\"440\" y=\"198\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">↑ 多出来的年头，大多在慢病里度过</text></svg>",
+   "caption": "寿命量的是「活了多久」，健康寿命量的是「好好地活了多久」。两条之间的那段缺口，就是在病痛与失能中度过的岁月。"
+  },
+  {
+   "type": "p",
+   "text": "医学 2.0 在延长「寿命」上成绩斐然，却在延长「健康寿命」上大大掉队。结果就是我们这个时代一个普遍而少被言说的窘境：很多人确实活得更久了，但**多出来的那些年，相当一部分是在慢病和失能里度过的**。心脏搭了支架、癌症治了一轮又一轮、记忆一点点消散、糖尿病牵出一串并发症——人还在，好日子却提前打了烊。Attia 把这段时光看作生命最后一二十年的漫长**「衰亡边缘」**：人还活着，却常伴着药盒、复诊、失能与他人照护。"
+  },
+  {
+   "type": "quote",
+   "original": "我们成功地延长了寿命，却没能同样地延长健康寿命。",
+   "translation": "现代医学让人活得更久，但「多活的年头」里有太多是在与慢病、失能纠缠中度过的。"
+  },
+  {
+   "type": "p",
+   "text": "更扎心的是，医学 2.0 对四骑士几乎是「守株待兔」的打法。它极擅长处理**已经爆发的急性事件**——心梗来了送导管室、癌症确诊了上手术和化疗、糖尿病严重了打胰岛素。但对于这些病**发作之前那漫长的几十年**，主流医疗体系基本是沉默的：指标不越过某条红线，就算「没病」，不必处理。Attia 认为这恰恰是最大的错位：**慢病真正能被扭转的窗口，恰恰在它还没被诊断出来的那几十年里**，而那正是现行体系最不作为的地方。"
+  },
+  {
+   "type": "h2",
+   "text": "换个打法：把「维修工」换成「保养工」"
+  },
+  {
+   "type": "p",
+   "text": "于是有了这本书的立意。Attia 主张：面对慢死时代，医学需要一次角色转换。他打了个好懂的比方——医学 2.0 像一位技艺高超的**维修工**：平时不登门，等你的「机器」彻底坏了（心梗、卒中、确诊）才紧急上门抢修，而且往往只能修个七七八八。他呼吁的新范式（书里称为**「医学 3.0」**）更像一位常年在场的**保养工**：趁机器还在正常运转，就定期检查、提前更换易损件、把小隐患摁在萌芽里，让它尽可能久地别出大故障。战场，要从「病发之后的抢救」大幅前移到「病发之前几十年的预防」。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "svg": "<svg viewBox=\"0 0 560 240\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink);font-weight:bold\">战场前移：维修工 → 保养工</text><line x1=\"40\" y1=\"120\" x2=\"520\" y2=\"120\" style=\"stroke:var(--ink);stroke-width:2\"/><polygon points=\"520,120 508,114 508,126\" style=\"fill:var(--ink)\"/><text x=\"40\" y=\"146\" font-size=\"10.5\" style=\"fill:var(--ink-faint)\">健康</text><text x=\"360\" y=\"146\" text-anchor=\"middle\" font-size=\"10.5\" style=\"fill:var(--ink-faint)\">病变潜伏发展（数十年）</text><text x=\"520\" y=\"146\" text-anchor=\"end\" font-size=\"10.5\" style=\"fill:var(--cinnabar)\">病发（心梗·确诊）</text><line x1=\"470\" y1=\"120\" x2=\"470\" y2=\"70\" style=\"stroke:var(--ink-soft);stroke-width:1.4;stroke-dasharray:4 3\"/><circle cx=\"470\" cy=\"120\" r=\"5\" style=\"fill:var(--ink-soft)\"/><text x=\"470\" y=\"60\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-soft)\">医学2.0·维修工</text><text x=\"470\" y=\"184\" text-anchor=\"middle\" font-size=\"10\" style=\"fill:var(--ink-faint)\">坏了才抢修</text><line x1=\"150\" y1=\"120\" x2=\"150\" y2=\"70\" style=\"stroke:var(--cinnabar);stroke-width:1.6;stroke-dasharray:4 3\"/><circle cx=\"150\" cy=\"120\" r=\"5\" style=\"fill:var(--cinnabar)\"/><text x=\"150\" y=\"60\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--cinnabar);font-weight:bold\">医学3.0·保养工</text><text x=\"150\" y=\"184\" text-anchor=\"middle\" font-size=\"10\" style=\"fill:var(--ink-faint)\">提前几十年预防</text><text x=\"280\" y=\"216\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">同一条病程，两种介入时机——越早介入，能扭转的余地越大</text></svg>",
+   "caption": "同一条慢病的几十年病程，医学 2.0 等到尽头才抢修，医学 3.0 主张把介入大幅前移。越早动手，能扭转的余地越大。"
+  },
+  {
+   "type": "p",
+   "text": "这个转变落到目标上，就是一句话：**别只盯着「多活几年」，要盯着「多活几年好日子」**——把重心从单纯拉长寿命，转向尽力延长健康寿命，让人不只是「不死」，而是能自理、能行动、头脑清明地一直走到很后面。这不是要否定医学 2.0——抗生素、急救、外科依然是文明的基石，救命时刻一样都不能少；而是说，**光靠「等病发了再救」这一手，赢不了慢病**。"
+  },
+  {
+   "type": "p",
+   "text": "需要坦白交代的是，书里这套框架带着 Attia 鲜明的个人主张。「医学 3.0」并非一个有统一定义的官方学科，而是他对「预防应大幅前置」这一理念的概括与提倡；不同专家对「该多早介入、介入到什么程度、哪些筛查真正划算」看法并不一致。**本文与本书都不构成任何个人医疗建议**——具体到某个人该做什么检查、吃什么药、如何调整生活，都应交给了解你完整情况的专业医生。第一章真正想让你记住的，不是某个具体方案，而是一次**视角的翻转**：人类的主要死法已经从「快」变成了「慢」，而对付慢死，等它找上门再动手，几乎注定太晚。这，就是《超越百岁》全部内容的出发点。"
+  }
+ ]
+}
