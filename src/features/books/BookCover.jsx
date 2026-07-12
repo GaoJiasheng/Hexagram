@@ -498,6 +498,21 @@ function AbacusGap() {
   )
 }
 
+// 母题:罗盘——指针朝北(朱色),四向刻度(呼应《七个习惯》以原则为中心、朝向"真北"的价值坐标)。
+function Compass() {
+  const cx = 150, cy = 293, R = 62, ticks = []
+  for (let i = 0; i < 4; i++) { const a = i * Math.PI / 2; ticks.push(`M${(cx + Math.cos(a) * R).toFixed(1)},${(cy + Math.sin(a) * R).toFixed(1)} L${(cx + Math.cos(a) * (R - 9)).toFixed(1)},${(cy + Math.sin(a) * (R - 9)).toFixed(1)}`) }
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={R} fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.3" />
+      <path d={ticks.join(' ')} stroke={CREAM} strokeOpacity="0.35" strokeWidth="1.2" />
+      <path d={`M${cx},${cy - 46} L${cx - 9},${cy} L${cx},${cy + 6} Z`} fill={CINNABAR} />
+      <path d={`M${cx},${cy + 46} L${cx + 9},${cy} L${cx},${cy - 6} Z`} fill={CREAM} fillOpacity="0.42" />
+      <circle cx={cx} cy={cy} r="3.5" fill={CREAM} fillOpacity="0.85" />
+    </g>
+  )
+}
+
 // 母题:反馈回路——一道循环的箭头绕成闭环,中心一枚朱核(呼应《第五项修炼》系统思考:结构成环、因果回授)。
 function FeedbackLoop() {
   return (
@@ -574,6 +589,7 @@ function Motif({ motif }) {
   if (motif === 'apple-orange') return <AppleOrange />
   if (motif === 'lattice') return <Lattice />
   if (motif === 'feedback-loop') return <FeedbackLoop />
+  if (motif === 'compass') return <Compass />
   if (motif === 'rabbit-hat') return <RabbitHat />
   if (motif === 'continental-axis') return <ContinentalAxis />
   if (motif === 'footsteps') return <Footsteps />
