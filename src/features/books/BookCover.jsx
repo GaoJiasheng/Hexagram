@@ -401,6 +401,103 @@ function Barcode() {
   )
 }
 
+// 母题:兔子帽——全书核心比喻(宇宙是从帽子里拉出的一只白兔,多数人满足于舒服地
+// 坐在兔毛表面,只有哲学家愿意顺着兔毛往深处爬,去看清这场戏法是怎么变的)。
+function RabbitHat() {
+  const earL = 'M124,222 Q112,178 120,148 Q136,182 136,222'
+  const earR = 'M176,222 Q188,178 180,148 Q164,182 164,222'
+  const crown = 'M92,344 L100,220 Q150,204 200,220 L208,344'
+  const brim = 'M58,344 Q150,370 242,344 Q150,324 58,344 Z'
+  const furLine = 'M150,212 L150,332'
+  const climbers = [[150, 246, false], [150, 282, false], [150, 318, true]]
+  return (
+    <g>
+      <path d={earL} fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.3" />
+      <path d={earR} fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.3" />
+      <path d={crown} fill="none" stroke={CREAM} strokeOpacity="0.42" strokeWidth="1.3" />
+      <path d={brim} fill="none" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.4" />
+      <path d={furLine} fill="none" stroke={CREAM} strokeOpacity="0.28" strokeWidth="1" strokeDasharray="2 5" />
+      {climbers.map(([x, y, hi], i) => <circle key={i} cx={x} cy={y} r={hi ? 9 : 5} fill={hi ? CINNABAR : CREAM} fillOpacity={hi ? 1 : 0.5} />)}
+    </g>
+  )
+}
+
+// 母题:大陆轴线——东西向大陆(欧亚)一条通畅的朱线横贯,南北向大陆(非洲/美洲)
+// 同样的路径被气候带截断(呼应全书核心论点:大陆轴线方向决定农作物、技术传播的快慢)。
+function ContinentalAxis() {
+  return (
+    <g>
+      <ellipse cx="150" cy="234" rx="112" ry="30" fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.2" />
+      <line x1="56" y1="234" x2="226" y2="234" stroke={CINNABAR} strokeWidth="1.7" strokeOpacity="0.85" />
+      <polygon points="238,234 224,227 224,241" fill={CINNABAR} opacity="0.85" />
+      <ellipse cx="150" cy="336" rx="30" ry="72" fill="none" stroke={CREAM} strokeOpacity="0.3" strokeWidth="1.1" />
+      <line x1="150" y1="276" x2="150" y2="308" stroke={CREAM} strokeOpacity="0.42" strokeWidth="1.2" />
+      <line x1="150" y1="364" x2="150" y2="396" stroke={CREAM} strokeOpacity="0.42" strokeWidth="1.2" />
+      <circle cx="150" cy="336" r="6.5" fill={CREAM} fillOpacity="0.55" />
+    </g>
+  )
+}
+
+// 母题:脚印小径——一串脚印由浅入深地走向右侧,最后一枚朱色脚印后分出几条细枝
+// (呼应全书从智人走出非洲、到成为改写地球的物种,一路岔出的诸多后果)。
+function Footsteps() {
+  const n = 8
+  const steps = []
+  for (let i = 0; i < n; i++) {
+    steps.push({ x: 46 + i * 26, y: 330 + (i % 2 === 0 ? -8 : 8), op: 0.16 + (i / (n - 1)) * 0.4 })
+  }
+  const last = steps[steps.length - 1]
+  const forks = [-22, 0, 22].map((dy) => `M${last.x},${last.y} L${last.x + 44},${last.y + dy}`)
+  return (
+    <g>
+      {steps.slice(0, -1).map((s, i) => (
+        <ellipse key={i} cx={s.x} cy={s.y} rx="7" ry="11" fill={CREAM} fillOpacity={s.op} transform={`rotate(${i % 2 === 0 ? -8 : 8} ${s.x} ${s.y})`} />
+      ))}
+      <path d={forks.join(' ')} fill="none" stroke={CINNABAR} strokeOpacity="0.55" strokeWidth="1.3" />
+      <ellipse cx={last.x} cy={last.y} rx="9" ry="13" fill={CINNABAR} />
+    </g>
+  )
+}
+
+// 母题:收窄的门洞——一串嵌套的门框由外向内收窄,最内一层朱色(呼应历代制度一路
+// 收紧、相权与地方权力一步步被中央与皇权收走,直至孤家寡人)。
+function NarrowingGates() {
+  const gates = [
+    { w: 220, h: 148, y: 210 },
+    { w: 178, h: 120, y: 226 },
+    { w: 138, h: 94, y: 240 },
+    { w: 100, h: 70, y: 252 },
+    { w: 64, h: 48, y: 262 },
+  ]
+  return (
+    <g fill="none" strokeWidth="1.2">
+      {gates.map((g, i) => (
+        <rect key={i} x={150 - g.w / 2} y={g.y} width={g.w} height={g.h} rx="6"
+          stroke={i === gates.length - 1 ? CINNABAR : CREAM}
+          strokeOpacity={i === gates.length - 1 ? 0.9 : 0.36 - i * 0.02} />
+      ))}
+      <circle cx="150" cy={262 + 24} r="5" fill={CINNABAR} />
+    </g>
+  )
+}
+
+// 母题:算盘缺档——一具算盘,唯独中间一档珠子散落、只剩一枚朱色孤珠悬在半空
+// (呼应全书论点:帝国缺的不是道德,是一套「数目字管理」——缺失的那一档)。
+function AbacusGap() {
+  const x0 = 66, x1 = 234, top = 214, bar = 268, bottom = 356
+  const rods = [90, 128, 166, 204]
+  return (
+    <g>
+      <rect x={x0} y={top} width={x1 - x0} height={bottom - top} rx="4" fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.3" />
+      <line x1={x0} y1={bar} x2={x1} y2={bar} stroke={CREAM} strokeOpacity="0.34" strokeWidth="1.1" />
+      {rods.map((x, i) => <line key={i} x1={x} y1={top} x2={x} y2={bottom} stroke={CREAM} strokeOpacity="0.22" strokeWidth="0.9" />)}
+      {rods.map((x, i) => i !== 2 && [top + 20, top + 34].map((y, j) => <circle key={`t${i}-${j}`} cx={x} cy={y} r="6" fill={CREAM} fillOpacity="0.4" />))}
+      {rods.map((x, i) => i !== 2 && [bar + 18, bar + 32, bar + 46].map((y, j) => <circle key={`b${i}-${j}`} cx={x} cy={y} r="6" fill={CREAM} fillOpacity="0.4" />))}
+      <circle cx={rods[2]} cy={(top + bottom) / 2} r="8" fill={CINNABAR} opacity="0.92" />
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'two-mountains') return <TwoMountains />
   if (motif === 'ripples') return <Ripples />
@@ -428,13 +525,41 @@ function Motif({ motif }) {
   if (motif === 'setpoint-dial') return <SetpointDial />
   if (motif === 'flame') return <Flame />
   if (motif === 'barcode') return <Barcode />
+  if (motif === 'rabbit-hat') return <RabbitHat />
+  if (motif === 'continental-axis') return <ContinentalAxis />
+  if (motif === 'footsteps') return <Footsteps />
+  if (motif === 'narrowing-gates') return <NarrowingGates />
+  if (motif === 'abacus-gap') return <AbacusGap />
   return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
 }
 
+// 竖排书名自适应:短名(≤5)沿用大字单列(与既有封面像素级一致);6–7 字缩小单列;
+// 8 字及以上自动折成两列、右起竖读(右列在前),字号随列长再缩,保证长书名也放得下、不出框。
+function titleColumns(title) {
+  const all = [...title].slice(0, 16)
+  const n = all.length
+  if (n <= 5) {
+    const step = 54
+    return [{ x: 250, fontSize: 46, step, startY: 100 - (n - 4) * (step / 2), chars: all }]
+  }
+  if (n <= 7) {
+    const step = 42, fontSize = 36
+    return [{ x: 250, fontSize, step, startY: 210 - (n - 1) * (step / 2), chars: all }]
+  }
+  // 8+ :两列(右起),右列排前半、左列排后半;字号按较长列收
+  const half = Math.ceil(n / 2)
+  const step = Math.min(42, Math.floor(300 / half))
+  const fontSize = Math.round(step * 0.82)
+  const startY = 210 - (half - 1) * (step / 2)
+  const gap = Math.round(fontSize * 1.34)
+  return [
+    { x: 250, fontSize, step, startY, chars: all.slice(0, half) },
+    { x: 250 - gap, fontSize, step, startY, chars: all.slice(half) },
+  ]
+}
+
 export default function BookCover({ title = '', subtitle = '', author = '', accent = '#3f7d6e', motif, className }) {
-  const chars = [...title].slice(0, 5)
-  const step = 54
-  const startY = 100 - (chars.length - 4) * (step / 2)
+  const columns = titleColumns(title)
   return (
     <svg viewBox="0 0 300 420" className={className} role="img" aria-label={`${title} · 封面`} preserveAspectRatio="xMidYMid meet">
       <rect width="300" height="420" fill={accent} />
@@ -444,10 +569,10 @@ export default function BookCover({ title = '', subtitle = '', author = '', acce
       {/* 朱印 */}
       <rect x="26" y="26" width="34" height="34" rx="6" fill={CINNABAR} />
       <text x="43" y="50.5" textAnchor="middle" fontSize="19" fill={CREAM} style={SERIF}>观</text>
-      {/* 竖排书名 */}
-      {chars.map((c, i) => (
-        <text key={i} x="250" y={startY + i * step} textAnchor="middle" fontSize="46" fill={CREAM} style={{ ...SERIF, fontWeight: 600 }}>{c}</text>
-      ))}
+      {/* 竖排书名(长名自动缩字/折两列) */}
+      {columns.map((col, ci) => col.chars.map((c, i) => (
+        <text key={`${ci}-${i}`} x={col.x} y={col.startY + i * col.step} textAnchor="middle" fontSize={col.fontSize} fill={CREAM} style={{ ...SERIF, fontWeight: 600 }}>{c}</text>
+      )))}
       {/* 英文题 + 作者 */}
       {subtitle && <text x="27" y="384" fontSize="9.5" letterSpacing="1.6" fill={CREAM} fillOpacity="0.72" style={SERIF}>{subtitle.toUpperCase()}</text>}
       {author && <text x="27" y="400.5" fontSize="9.5" letterSpacing="1" fill={CREAM} fillOpacity="0.72" style={SERIF}>{author}</text>}
