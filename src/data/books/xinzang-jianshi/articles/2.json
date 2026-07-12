@@ -1,0 +1,141 @@
+{
+ "title": "循环：哈维发现血液如何流动",
+ "subtitle": "一把算盘、一根带子，如何推翻统治西方医学一千五百年的权威",
+ "centralIdea": "在哈维之前，医学界信奉盖伦：血在肝脏里造出、被全身当燃料烧光、心脏只是加温的炉子——血是一次性的耗材。William Harvey 用一道近乎笨拙的算术（每搏血量 × 心跳次数，算出的血量之巨根本不可能被不停地造了又耗），再补上结扎手臂与静脉瓣膜的实验，证明血液是同一批血在体内一圈圈循环、心脏是推动这场循环的泵。从此心脏第一次被当作一台可以用力学理解的机器，现代心脏医学的一切——量血压、搭桥、起搏、移植——都从这道算术开始。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "一个人如果想推翻一条统治了西方医学一千五百年的定论，你猜他需要什么？不是更强的显微镜，也不是解剖出什么前人没见过的器官——他需要的，也许只是**一把算盘**。1628 年，一位英国医生 William Harvey（哈维）就是靠一道小学生都算得来的乘法，把「血液到底在身体里怎么流动」这件事，彻底翻了个个儿。"
+  },
+  {
+   "type": "h2",
+   "text": "在哈维之前：血液是一种「耗材」"
+  },
+  {
+   "type": "p",
+   "text": "要看清哈维有多颠覆，得先知道他推翻的是什么。故事的另一头站着 Galen（盖伦），公元二世纪的罗马御医、后世一千多年医学界的绝对权威。他画出的人体是这样运转的：食物在肝脏里被「煮」成血液，血像燃料一样顺着血管淌到全身，被各处的肌肉、器官一点点烧掉、用光；用光了，肝脏再造新的。也就是说，**血是一次性的**——身体不停地造，又不停地耗，像往灶膛里添柴。"
+  },
+  {
+   "type": "p",
+   "text": "那心脏是干什么的？在盖伦的图里，心脏不是泵，倒更像一口炉子——它给血加「温」、掺进从肺吸来的「生命精气」。左右两个心室之间那道厚厚的隔墙（室间隔），盖伦说上面有肉眼看不见的小孔，血就从右边悄悄「渗」到左边。这套说法今天听来漏洞百出，却整整统治了一千五百年。"
+  },
+  {
+   "type": "p",
+   "text": "为什么这么难撼动？一来盖伦著作等身、被奉为经典，质疑他约等于质疑教科书本身；二来那个年代解剖人体处处受掣肘，没人敢、也没条件去动真格地核验。**权威一旦坐稳，惯性大得惊人**——哪怕它错了一千年，也没人去问一句「你算过吗」。"
+  },
+  {
+   "type": "p",
+   "text": "这套错误还不只停在书本上。既然血是「造了又耗、多了会淤积生病」，那顺理成章的疗法就是**放血**——身体哪里不舒服，就割开静脉、放掉一些被认为「多余败坏」的血。这种做法在盖伦体系的加持下盛行了一千多年，无数病人被放得虚弱不堪，甚至因此送命。一个关于「血怎么流」的错误图景，实实在在地改变了千百万人被对待的方式。所以哈维要翻的，从来不只是一条学术定论。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比",
+   "caption": "两套血液观：哈维要翻的这桩千年旧案",
+   "svg": "<svg viewBox=\"0 0 560 320\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"19\">两套血液观：一千五百年的翻案</text><line x1=\"280\" y1=\"46\" x2=\"280\" y2=\"300\" style=\"stroke:var(--line)\" stroke-width=\"0.8\" stroke-dasharray=\"4 4\"/><text x=\"140\" y=\"72\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"16\">盖伦旧说（约 2 世纪）</text><line x1=\"40\" y1=\"86\" x2=\"240\" y2=\"86\" style=\"stroke:var(--line)\" stroke-width=\"0.8\"/><text x=\"140\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">血在肝脏里「造」出来</text><text x=\"140\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">被全身当燃料烧光</text><text x=\"140\" y=\"182\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">心脏是加温的「炉子」</text><text x=\"140\" y=\"214\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">隔墙上有小孔渗血</text><text x=\"140\" y=\"252\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">血是一次性耗材</text><text x=\"140\" y=\"278\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">直线单程 · 造了又耗</text><text x=\"420\" y=\"72\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\">哈维循环（1628）</text><line x1=\"320\" y1=\"86\" x2=\"520\" y2=\"86\" style=\"stroke:var(--cinnabar)\" stroke-width=\"0.8\"/><text x=\"420\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">同一批血反复使用</text><text x=\"420\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">不被消耗，只是流转</text><text x=\"420\" y=\"182\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">心脏是推动的「泵」</text><text x=\"420\" y=\"214\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">动脉出 · 静脉回</text><text x=\"420\" y=\"252\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"13\">血循环流动</text><text x=\"420\" y=\"278\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"13\">闭合回路 · 周而复始</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "哈维的杀手锏：一道乘法"
+  },
+  {
+   "type": "p",
+   "text": "Harvey 是剑桥和帕多瓦（当时意大利的解剖学圣地）训练出来的医生，后来做了英王的御医。面对盖伦，他没有先摆理论、跟人辩，而是先拿起了算盘。他的推理简单得近乎粗暴。"
+  },
+  {
+   "type": "p",
+   "text": "心脏每跳一下，大约挤出两盎司、约 60 毫升的血；一分钟跳七十来下。把这几个数字乘起来看看——**仅仅一小时，心脏推出去的血，重量就远远超过一个成年人的整个体重，是体重的好几倍。**"
+  },
+  {
+   "type": "p",
+   "text": "这个数字一算出来，盖伦那套立刻就崩了。如果血真是「造出来、烧光、再造」，那肝脏得在一个钟头里凭空造出好几个人份的血，身体又得把这么多血统统烧掉——这在物质上根本讲不通，无中不能生有。哈维于是得出唯一站得住的结论：血没有被用光，**它是同一批血，在体内一圈一圈地循环，反复经过心脏。**"
+  },
+  {
+   "type": "p",
+   "text": "这道推理最见功夫的，是它的**克制**。哈维刻意把每一个数字都往小里估——每搏血量取得保守、心率也不往高了算。他的意思是：就算我处处让着你、用最保守的数，得出来的血量照样大到荒谬。这一手堵死了所有讨价还价的余地。你没法反驳一道用你自己都能接受的数字算出来的账，这正是量化推理的厉害之处：它把「我觉得」换成了「你自己算」。"
+  },
+  {
+   "type": "quote",
+   "original": "血液在一个圆圈里不停地运动，周而复始，永无止境。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "金句卡",
+   "caption": "整章的题眼，就藏在这道算术里",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"19\">哈维的那道乘法</text><line x1=\"120\" y1=\"52\" x2=\"440\" y2=\"52\" style=\"stroke:var(--line)\" stroke-width=\"0.8\"/><text x=\"280\" y=\"92\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">每搏挤出 ≈ 60 毫升血</text><text x=\"280\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">×  每分钟约 72 次心跳</text><text x=\"280\" y=\"152\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">×  一小时</text><line x1=\"150\" y1=\"170\" x2=\"410\" y2=\"170\" style=\"stroke:var(--cinnabar)\" stroke-width=\"1.2\"/><text x=\"280\" y=\"200\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"18\" font-weight=\"bold\">= 远超全身血量的好几倍</text><text x=\"280\" y=\"240\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">肝脏不可能凭空造出这么多血，</text><text x=\"280\" y=\"264\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">身体也烧不掉——只能是同一批血在循环</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "光算不够：他还动了刀和绳子"
+  },
+  {
+   "type": "p",
+   "text": "哈维心里清楚，一道算术说服不了满脑子盖伦的同行，于是他补上了实验——而且是任何人都能上手复核的那种。"
+  },
+  {
+   "type": "p",
+   "text": "第一个实验人人可做：拿一根带子勒住上臂。勒得很紧，动脉血都过不来，手就发白发凉；松一档，让动脉血进得来、静脉血回不去，前臂的静脉立刻鼓起来，憋成一条条青筋。这说明什么？**血是从动脉这头进、从静脉那头回的**——它有明确的方向，走的是一条单向的环路，不是随涨随落的一潭死水。"
+  },
+  {
+   "type": "p",
+   "text": "第二个证据藏在血管里。静脉里长着一个个小瓣膜（前人也见过，却没想明白它管什么用）。哈维发现，这些瓣膜全是**单向阀**：只许血朝着心脏的方向流，反方向一顶就关死。你拿手指想把静脉里的血往远端推，推不动——瓣膜在挡。这等于血管自己在开口作证：血只能往回、向着心脏走。方向、算术、实验，三样严丝合缝地对上了。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "两个亲手能验证的实验：结扎与瓣膜",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"19\">两个亲手做的实验</text><line x1=\"280\" y1=\"46\" x2=\"280\" y2=\"286\" style=\"stroke:var(--line)\" stroke-width=\"0.8\" stroke-dasharray=\"4 4\"/><text x=\"140\" y=\"72\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\">结扎手臂</text><ellipse cx=\"140\" cy=\"120\" rx=\"52\" ry=\"16\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><line x1=\"140\" y1=\"104\" x2=\"140\" y2=\"96\" style=\"stroke:var(--cinnabar)\" stroke-width=\"2\"/><text x=\"140\" y=\"160\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">勒住上臂，前臂静脉</text><text x=\"140\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">立刻鼓成青筋</text><text x=\"140\" y=\"220\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">血从动脉进、静脉回</text><text x=\"140\" y=\"244\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">方向单一，是环路</text><text x=\"420\" y=\"72\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\">静脉瓣膜</text><path d=\"M372 120 L468 120\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><path d=\"M420 112 L430 120 L420 128\" fill=\"none\" style=\"stroke:var(--cinnabar)\" stroke-width=\"1.6\"/><text x=\"420\" y=\"160\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">血管里的小瓣膜</text><text x=\"420\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">是一个个单向阀</text><text x=\"420\" y=\"220\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">只许血朝心脏方向流</text><text x=\"420\" y=\"244\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">反向一顶就关死</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "心脏，一台泵"
+  },
+  {
+   "type": "p",
+   "text": "拼到最后，哈维给出的图景干净利落：心脏是一台**泵**。它收缩，把血压进动脉、送往全身；血穿过身体，再从静脉一路返回；右心把血打进肺、左心把血打向周身，首尾相接，是一个闭合的大圈。血不生不灭，只是不停地转。"
+  },
+  {
+   "type": "p",
+   "text": "他当时还差最后一环——动脉里的血究竟怎么过渡到静脉？这道缝隙要等几十年后，人们在显微镜下看见细如发丝的毛细血管，才算真正补上。但循环的大框架，哈维已经稳稳立住了。"
+  },
+  {
+   "type": "p",
+   "text": "这一步的分量，怎么强调都不为过。从这一刻起，**心脏不再是灵魂的居所、精气的炉子，而是一件可以用力学去理解的机器**：有压力、有流量、有阀门、有回路。后世一切关于心脏的医学——量血压、搭桥、装起搏器、做移植——都建立在「心脏是一台泵」这个前提上。哈维一辈子没治好过一个心脏病人，却给整门心脏医学**打下了地基**。"
+  },
+  {
+   "type": "p",
+   "text": "而且这个「泵」的比喻，到今天都没有过时。一颗心脏一天大约要泵送七千升血、跳十万次，一辈子累计跳动数十亿下，把同一批血在你身上转了又转、从不真正歇脚。当代医生谈论心脏，用的仍是哈维那套语言：流量、压力、阻力、回流。换句话说，我们和心脏打交道的整个方式，都还活在哈维那道算术划定的框架里——他不只解决了一个旧问题，他给出了此后人类思考心脏的**那副眼镜**。"
+  },
+  {
+   "type": "quote",
+   "original": "心脏是生命的开端，是身体这个小宇宙的太阳。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "闭合的循环：血不生不灭，只是流转",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"19\">一个闭合的圈：心脏这台泵</text><circle cx=\"280\" cy=\"170\" r=\"92\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><path d=\"M340 100 A92 92 0 0 1 372 170\" fill=\"none\" style=\"stroke:var(--cinnabar)\" stroke-width=\"1.6\"/><path d=\"M366 156 L373 172 L358 168\" style=\"fill:var(--cinnabar)\"/><circle cx=\"280\" cy=\"78\" r=\"26\" style=\"fill:var(--cinnabar)\"/><text x=\"280\" y=\"83\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\" font-size=\"15\">心</text><text x=\"408\" y=\"176\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">动脉</text><text x=\"280\" y=\"290\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">全身组织</text><text x=\"150\" y=\"176\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">静脉</text><text x=\"280\" y=\"174\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">收缩即压出</text><text x=\"280\" y=\"196\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">血不生不灭，只是转</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "值得一提的是，真理并没有当场获胜。《心血运动论》出版后，哈维遭到不少同行的嘲讽，有人给他起了个外号叫「循环贩子」，把他当成不知天高地厚的异想天开者；据说有一阵他的行医生意还因此清淡了下来。**推翻一千五百年的权威，代价是先被这权威的信徒们围攻。**好在算术和实验都摆在那里，任谁都能复核——时间站在证据这一边，哈维终究在有生之年看到自己的学说被广泛接受。"
+  },
+  {
+   "type": "h2",
+   "text": "收束：算术之美"
+  },
+  {
+   "type": "p",
+   "text": "回头看，哈维这场革命最动人的地方，不在于他用了多高级的工具，恰恰在于他用的工具有多朴素——一把算盘、一根带子、一双肯亲手去核验的手。他没有被「盖伦说过」这四个字唬住，而是问了一个最笨、也最要命的问题：**如果照你说的算，数字对得上吗？**"
+  },
+  {
+   "type": "p",
+   "text": "对不上。于是一千五百年的定论，就被一道乘法送进了历史。这是科学方法第一次在心脏这件事上显出它的锋利：再高的权威，也得向可核对的证据低头。哈维之后，人类才算真正开始「驯服」这颗泵——而这本书接下来要讲的每一次缝合、每一根导管、每一颗被换掉的心，都是从他这道算术起步的。"
+  },
+  {
+   "type": "p",
+   "text": "更值得记住的，是这套思路留给后人的东西。哈维给的不只是一个正确答案，更是一种做学问的姿态：面对再权威的说法，也先老老实实问一句「和事实对得上吗」，然后亲手去量、去算、去验。这种「凡结论必须经得起核对」的精神，正是现代医学一路走来的底色——它让治病从背诵经典，慢慢变成了一门肯认错、能自我更正的科学。一颗心脏怎么工作的谜题，就是在这样的姿态下，被人类一点一点解开的。"
+  }
+ ]
+}
