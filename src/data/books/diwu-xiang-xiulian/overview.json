@@ -1,0 +1,229 @@
+{
+ "title": "白话《第五项修炼》· 全书总览",
+ "subtitle": "Peter Senge 用「五项修炼」回答一个问题:为什么一群聪明人,会组成一个学不会的组织——答案多半藏在结构里,而不是人身上。",
+ "centralIdea": "圣吉提出「学习型组织」:一个能持续学习、自我更新的组织,建立在五项修炼之上——自我超越、心智模式、共同愿景、团队学习,以及居于核心、把前四项整合起来的系统思考。系统思考要求看整体而非局部、看反馈回路而非线性因果、看长期模式而非孤立事件。啤酒游戏证明了「结构决定行为」:问题多半出在系统结构,而不是个人的能力或品德,所以责怪个人是最没用的管理动作。真正的改变靠找杠杆点——在系统的关键小处发力,撬动全局。但须记住:这是一套理念框架与愿景,不是照做必成的公式,落地极难、成效因组织而异;最值得带走的,是系统思考这种思维方式。",
+ "featured": true,
+ "hero": {
+  "badge": "全书 · 核心",
+  "headline": "问题很少出在人身上——是结构,让谁坐上去都犯同一个错。",
+  "tagline": "麻省理工的圣吉,用系统思考讲透「学习型组织」:看整体、看回路、找杠杆。"
+ },
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "先看一个你多半眼熟的场景。一家公司,单拎出来谁都不笨:老板勤奋,中层敬业,员工加班。可这家公司整体上却蠢得惊人——同一个坑,每年准时掉进去一次;这个季度的救火英雄,救的正是他自己上个季度亲手埋的雷;人人都说「这样下去不行」,然后一起眼睁睁看着它继续下去。**为什么一群聪明人凑在一起,会组成一个愚蠢的组织?** 这就是《第五项修炼》要回答的问题。"
+  },
+  {
+   "type": "p",
+   "text": "写这本书的彼得·圣吉(Peter Senge),是麻省理工学院斯隆管理学院的学者,出身系统动力学一脉。1990 年,他把多年在企业里的研究与实验写成此书,提出了一个后来被说滥、但在当时相当新鲜的词:**学习型组织(learning organization)**——一个能持续学习、自我更新的组织。这篇总览,把全书骨架俯瞰一遍:组织为什么学不会、啤酒游戏证明了什么、系统思考到底在看什么、另外四项修炼各自修的是什么,以及这套框架该怎么用、不该怎么用。"
+  },
+  {
+   "type": "quote",
+   "original": "学习型组织,是人们在其中不断扩展能力、创造自己真心渴望的成果,并不断学会「如何共同学习」的组织。",
+   "translation": "全书对「学习型组织」的定义。注意两个关键词:「创造」而非应付,「共同」而非各自。"
+  },
+  {
+   "type": "p",
+   "text": "圣吉开出的药方是**五项修炼**:自我超越、心智模式、共同愿景、团队学习,以及居于核心、把前四项整合为一体的**系统思考**。前四项分别修个人的志向、脑中的假设、集体的方向和团队的对话;第五项修的是一双看见整体的眼睛——为什么它是基石,后文自会分明。先把地图挂出来,下面逐一走过。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "五项修炼的关系:四项各修一面,系统思考居中,把它们整合成一个整体——这正是书名把它叫「第五项」的原因。",
+   "svg": "<svg viewBox='0 0 640 420' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='32' text-anchor='middle' style='fill:var(--ink)' font-size='19' font-weight='bold'>五项修炼 · 系统思考居中整合</text><line x1='210' y1='128' x2='262' y2='172' style='stroke:var(--line)' stroke-width='1.5'/><line x1='430' y1='128' x2='378' y2='172' style='stroke:var(--line)' stroke-width='1.5'/><line x1='210' y1='306' x2='262' y2='262' style='stroke:var(--line)' stroke-width='1.5'/><line x1='430' y1='306' x2='378' y2='262' style='stroke:var(--line)' stroke-width='1.5'/><circle cx='320' cy='217' r='82' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='2.5'/><text x='320' y='205' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='19' font-weight='bold'>系统思考</text><text x='320' y='228' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12'>第五项修炼 · 基石</text><text x='320' y='248' text-anchor='middle' style='fill:var(--ink-faint)' font-size='11'>看整体 · 看回路 · 看模式</text><rect x='40' y='66' width='170' height='62' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='125' y='92' text-anchor='middle' style='fill:var(--ink)' font-size='15' font-weight='bold'>自我超越</text><text x='125' y='112' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>愿景×现实的创造性张力</text><rect x='430' y='66' width='170' height='62' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='515' y='92' text-anchor='middle' style='fill:var(--ink)' font-size='15' font-weight='bold'>心智模式</text><text x='515' y='112' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>浮现并检验脑中的假设</text><rect x='40' y='306' width='170' height='62' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='125' y='332' text-anchor='middle' style='fill:var(--ink)' font-size='15' font-weight='bold'>共同愿景</text><text x='125' y='352' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>发自内心共有的图景</text><rect x='430' y='306' width='170' height='62' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='515' y='332' text-anchor='middle' style='fill:var(--ink)' font-size='15' font-weight='bold'>团队学习</text><text x='515' y='352' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>深度汇谈,一起思考</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "一、组织为什么学不会:七种学习智障"
+  },
+  {
+   "type": "p",
+   "text": "圣吉的第一张诊断书,不是「你们不够努力」,而是「你们有病,而且是七种」。他把组织里普遍存在的学习障碍叫作**「学习智障」(learning disabilities)**——不是哪个人的毛病,而是长在组织身上、让整个组织学不会的病根。通行的归纳是七种。"
+  },
+  {
+   "type": "p",
+   "text": "**「我就是我的职位。」** 每个人只认自己那一段流水线,把身份等同于岗位:我是做销售的,我是搞生产的。于是没有人对整体结果负责——出了问题,每个环节都能证明自己没错,而系统整体错得一塌糊涂。**「敌人在外面。」** 这是上一条的直接后果:既然我这段没错,那错的一定在别处——市场太差、对手太狠、隔壁部门太蠢。圣吉提醒:「外面」和「里面」往往属于同一个系统,你今天痛骂的敌人,常常是你昨天的行为在系统另一头折出来的影子。"
+  },
+  {
+   "type": "p",
+   "text": "**「主动积极的幻觉。」** 管理者最爱讲主动出击,但很多所谓主动,不过是对「外面的敌人」更用力地反击,本质仍是被动;真正的主动,是看清自己如何参与制造了眼前的问题。**「专注于个别事件。」** 组织的注意力被一件件突发事件占满——这个月销量掉了、哪个骨干辞职了——而真正致命的威胁几乎从来不是事件,而是缓慢演变的趋势。这就接上了著名的**煮青蛙寓言**:把青蛙丢进沸水它会立刻跳出来,放进慢慢加热的温水里,它会舒服地待到被煮熟(生物学上未必如此,当寓言听)。组织对渐变的适应力,好到足以杀死自己。"
+  },
+  {
+   "type": "p",
+   "text": "**「从经验中学习的错觉。」** 我们最信「吃一堑长一智」,但它有个隐藏前提:后果必须来得又快又近,你才尝得到那一堑。而组织里最重要的决策,后果往往在几年之后、出现在系统的另一端,决策者根本没机会「亲身体验」自己种下的果。最需要学习的事,恰恰无法从直接经验中学到。**「管理团队的迷思。」** 高管团队看上去精明强干,实则常常把精力花在维持一团和气、守住地盘、避免当众露怯上:真正的分歧被摁下去,复杂的问题被包装成人人点头的平庸方案。团队越「和谐」,组织越学不到东西。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "七种学习智障一览:每一种单看都情有可原,合在一起,就是「聪明人组成愚蠢组织」的完整配方。",
+   "svg": "<svg viewBox='0 0 640 430' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='30' text-anchor='middle' style='fill:var(--ink)' font-size='19' font-weight='bold'>七种学习智障 · 组织学不会的病根</text><circle cx='52' cy='78' r='12' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.5'/><text x='52' y='83' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='12.5' font-weight='bold'>1</text><text x='78' y='83' style='fill:var(--ink)' font-size='14.5' font-weight='bold'>我就是我的职位</text><text x='315' y='83' style='fill:var(--ink-soft)' font-size='12'>只守自己那段流水线,无人对整体负责</text><circle cx='52' cy='128' r='12' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.5'/><text x='52' y='133' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='12.5' font-weight='bold'>2</text><text x='78' y='133' style='fill:var(--ink)' font-size='14.5' font-weight='bold'>敌人在外面</text><text x='315' y='133' style='fill:var(--ink-soft)' font-size='12'>错的永远是市场、对手、隔壁部门</text><circle cx='52' cy='178' r='12' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.5'/><text x='52' y='183' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='12.5' font-weight='bold'>3</text><text x='78' y='183' style='fill:var(--ink)' font-size='14.5' font-weight='bold'>主动积极的幻觉</text><text x='315' y='183' style='fill:var(--ink-soft)' font-size='12'>对外反击更猛,不等于看清了系统</text><circle cx='52' cy='228' r='12' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.5'/><text x='52' y='233' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='12.5' font-weight='bold'>4</text><text x='78' y='233' style='fill:var(--ink)' font-size='14.5' font-weight='bold'>专注于个别事件</text><text x='315' y='233' style='fill:var(--ink-soft)' font-size='12'>盯着突发事件,看不见缓慢的趋势</text><circle cx='52' cy='278' r='12' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.5'/><text x='52' y='283' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='12.5' font-weight='bold'>5</text><text x='78' y='283' style='fill:var(--ink)' font-size='14.5' font-weight='bold'>煮青蛙</text><text x='315' y='283' style='fill:var(--ink-soft)' font-size='12'>对渐变的致命威胁浑然不觉</text><circle cx='52' cy='328' r='12' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.5'/><text x='52' y='333' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='12.5' font-weight='bold'>6</text><text x='78' y='333' style='fill:var(--ink)' font-size='14.5' font-weight='bold'>经验学习的错觉</text><text x='315' y='333' style='fill:var(--ink-soft)' font-size='12'>重要决策的后果,落在时空的远处</text><circle cx='52' cy='378' r='12' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.5'/><text x='52' y='383' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='12.5' font-weight='bold'>7</text><text x='78' y='383' style='fill:var(--ink)' font-size='14.5' font-weight='bold'>管理团队的迷思</text><text x='315' y='383' style='fill:var(--ink-soft)' font-size='12'>一团和气,真分歧被摁在桌面之下</text></svg>"
+  },
+  {
+   "type": "quote",
+   "original": "把一头大象切成两半,你得到的不是两头小象。",
+   "translation": "论「我就是我的职位」:系统被部门切开之后,每一块都活不出整体的功能——可组织偏偏习惯按块追责。"
+  },
+  {
+   "type": "h2",
+   "text": "二、啤酒游戏:结构决定行为"
+  },
+  {
+   "type": "p",
+   "text": "诊断完病症,圣吉端出全书最有名的实验:**啤酒游戏(beer game)**。这是麻省理工用了几十年的供应链模拟:玩家分别扮演零售商、批发商和啤酒厂,彼此只能通过订单沟通,发货有延迟,谁也看不到全链条。剧情永远从一个微小的扰动开始——某款啤酒的顾客需求,略微上升了一点。"
+  },
+  {
+   "type": "p",
+   "text": "然后,几乎每一局都会上演同一出戏。零售商发现库存吃紧,多订一点;批发商看到订单上涨,更多订一点,还得给自己留些余量;啤酒厂看到订单暴涨,开足马力扩产。等货真的层层压下来,终端需求早已回稳,于是所有人又猛砍订单——最后整条链先经历疯狂缺货,再被堆成山的库存活埋。**成千上万人玩过这个游戏,行业、背景、性格各异,结局大同小异。** 没有人捣乱,没有人愚蠢,每个人在自己的位置上都做了「合理」的决定,而这些局部合理加起来,就是全局灾难。"
+  },
+  {
+   "type": "p",
+   "text": "这就是全书的地基:**结构决定行为(structure influences behavior)**。同样的结构,放进不同的人,产出大体相似的结果。所以当系统反复出同一种问题时,最没用的动作就是找个人来背锅——把他换掉,结构自会安排下一个人重蹈覆辙。要改变结果,不是换人、不是喊口号、不是搞动员,而是**看见并改变结构**:比如缩短信息延迟,让每个环节都看得到终端的真实需求。这听起来平淡,却是管理里最难的一课,因为结构是看不见的——我们天生只看得见人。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "啤酒游戏的典型走势:顾客需求只小涨了一次,订单却逐级放大,越靠上游摆得越凶——先疯抢,后崩掉。",
+   "svg": "<svg viewBox='0 0 640 380' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='28' text-anchor='middle' style='fill:var(--ink)' font-size='19' font-weight='bold'>啤酒游戏 · 一次小波动,逐级放大成灾</text><line x1='60' y1='300' x2='600' y2='300' style='stroke:var(--line)' stroke-width='1.5'/><line x1='60' y1='60' x2='60' y2='300' style='stroke:var(--line)' stroke-width='1.5'/><text x='64' y='54' style='fill:var(--ink-faint)' font-size='11'>订货量</text><text x='600' y='320' text-anchor='end' style='fill:var(--ink-faint)' font-size='11'>时间(周)</text><path d='M60 250 L220 250 L235 232 L600 232' style='fill:none;stroke:var(--ink-faint)' stroke-width='1.5' stroke-dasharray='5 4'/><path d='M60 250 C140 250 200 248 240 225 C270 208 290 210 310 232 C330 250 360 240 400 234 C450 228 520 232 600 232' style='fill:none;stroke:var(--ink-soft)' stroke-width='2'/><path d='M60 250 C150 250 210 246 250 212 C285 178 302 108 332 96 C356 88 372 128 388 195 C402 252 418 296 448 297 C472 298 492 268 518 248 C548 226 572 233 600 231' style='fill:none;stroke:var(--cinnabar-pure)' stroke-width='2.5'/><text x='390' y='222' style='fill:var(--ink-faint)' font-size='11.5'>顾客需求:只小涨一次</text><text x='236' y='198' style='fill:var(--ink-soft)' font-size='11.5'>零售商订单</text><text x='300' y='82' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='12.5' font-weight='bold'>工厂端订单</text><text x='330' y='348' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12.5'>每一层都放大上一层的恐慌——结构不变,换谁来玩都一样</text></svg>"
+  },
+  {
+   "type": "quote",
+   "original": "不同的人置身于同一个结构之中,倾向于产生性质相似的结果。",
+   "translation": "「结构决定行为」——系统思考的第一块基石。先问结构出了什么问题,再问人出了什么问题,顺序不能反。"
+  },
+  {
+   "type": "h2",
+   "text": "三、第五项修炼:系统思考"
+  },
+  {
+   "type": "p",
+   "text": "书名里的「第五项」,指的就是**系统思考(systems thinking)**。圣吉把它排在第五,却称它为整合其余四项的基石——没有它,另外四项各自都好,合起来还是散的。系统思考修的是一双眼睛,概括起来是三个「看」:**看整体而非局部**,别把大象切成两半;**看关系与反馈回路而非线性因果**,别再问「是谁引起了这件事」,改问「什么样的结构让这类事不断发生」;**看长期模式而非孤立事件**,从今天的新闻里抬起头,去看几年尺度上缓慢成形的趋势。圣吉的说法是:**见树,又见林。**"
+  },
+  {
+   "type": "p",
+   "text": "反馈回路是这双眼睛的基本语法,而且只有两种。**增强回路**像滚雪球:业绩好→口碑好→客户多→业绩更好——顺的时候是奇迹,逆的时候是崩盘,它自己不会停。**调节回路**像恒温器:系统里藏着一个目标,一旦偏离,就有一股力量把你拉回去——所以很多改革推不动,不是人懒,而是你在跟一条看不见的调节回路掰手腕。而让一切变得诡异的,是**时间延迟**:行动与后果之间隔着一段距离。人在延迟里最容易用力过猛,于是过冲、震荡,像在调一个反应迟钝的淋浴龙头,一会儿烫一会儿冰——啤酒游戏的暴涨暴跌,正是延迟叠加恐慌的产物。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "系统思考的语法:增强回路自我放大,调节回路锚定目标;任何一条回路带上延迟,都会出现过冲与震荡。",
+   "svg": "<svg viewBox='0 0 640 360' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='30' text-anchor='middle' style='fill:var(--ink)' font-size='19' font-weight='bold'>两种回路,一个捣蛋鬼</text><circle cx='170' cy='175' r='62' style='fill:none;stroke:var(--cinnabar-pure)' stroke-width='2'/><polygon points='164,105 178,113 164,121' style='fill:var(--cinnabar-pure)'/><text x='170' y='170' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='17' font-weight='bold'>增强回路</text><text x='170' y='192' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11.5'>滚雪球</text><text x='170' y='95' text-anchor='middle' style='fill:var(--ink)' font-size='12'>业绩好</text><text x='260' y='180' text-anchor='start' style='fill:var(--ink)' font-size='12'>口碑传开</text><text x='170' y='262' text-anchor='middle' style='fill:var(--ink)' font-size='12'>客户更多</text><text x='170' y='300' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12.5'>自我放大:顺逆皆然,自己不会停</text><circle cx='470' cy='175' r='62' style='fill:none;stroke:var(--ink-soft)' stroke-width='2'/><polygon points='464,105 478,113 464,121' style='fill:var(--ink-soft)'/><text x='470' y='170' text-anchor='middle' style='fill:var(--ink)' font-size='17' font-weight='bold'>调节回路</text><text x='470' y='192' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11.5'>恒温器</text><text x='470' y='95' text-anchor='middle' style='fill:var(--ink)' font-size='12'>偏离目标</text><text x='558' y='180' text-anchor='start' style='fill:var(--ink)' font-size='12'>纠正</text><text x='470' y='262' text-anchor='middle' style='fill:var(--ink)' font-size='12'>拉回目标</text><text x='470' y='300' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12.5'>锚定隐含目标:默默抵抗一切改变</text><line x1='523' y1='139' x2='534' y2='122' style='stroke:var(--cinnabar-pure)' stroke-width='2'/><line x1='533' y1='145' x2='544' y2='128' style='stroke:var(--cinnabar-pure)' stroke-width='2'/><text x='556' y='124' style='fill:var(--cinnabar-pure)' font-size='11.5' font-weight='bold'>延迟</text><text x='320' y='340' text-anchor='middle' style='fill:var(--ink-faint)' font-size='12'>行动与后果隔着延迟,人就会用力过猛——过冲,震荡,循环往复</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "在这套语法之上,圣吉总结了一组「系统法则」,挑几条最扎人的。**今天的问题,来自昨天的解决方案**——你现在拼命救的火,常常是上一轮救火留下的火种;**越用力推,系统反弹越大**——这叫补偿反馈,蛮力换来的往往是系统更顽强的抵抗;**快就是慢**——一切自然生长都有其内在节奏,强行提速的下场常常是整体崩掉;**因与果在时间和空间上并不相邻**——症状在这里冒头,病根多半在别处、在早先,盯着症状使劲,注定劳而无功。这些法则没有一条复杂,难的是在情绪上来的时候还记得它们。"
+  },
+  {
+   "type": "p",
+   "text": "圣吉还给了一把随手可用的尺子:对任何一件事,解释有三层。**事件层**——「上月销量掉了 5%」,只能引出应激反应;**行为模式层**——「近三年销量在波动中缓慢下滑」,开始能看趋势;**结构层**——「是什么样的回路,在持续制造这个下滑」,到这一层才谈得上根治。大多数组织终日活在第一层,新闻式地对每个事件做出反应;学习型组织的分水岭,就在于有没有人肯往下挖到第三层。"
+  },
+  {
+   "type": "quote",
+   "original": "今天的问题,来自昨天的「解决方案」。",
+   "translation": "系统法则第一条。追问任何顽疾的来历,常会发现它正是当年某个见效很快的好办法。"
+  },
+  {
+   "type": "quote",
+   "original": "你越用力推,系统反弹得越厉害。",
+   "translation": "补偿反馈:系统会用自己的方式抵消你的努力。感觉「越努力越糟」时,先别加码,先去找那条正在抵消你的回路。"
+  },
+  {
+   "type": "h2",
+   "text": "四、系统原型与杠杆点:剧本与巧劲"
+  },
+  {
+   "type": "p",
+   "text": "反馈回路组合起来,会形成一些反复出现的经典结构,圣吉叫它们**系统原型(systems archetypes)**——组织世界里的常见剧本,数量不多,却在无数公司循环上演。最值得记住的两个:其一是**成长上限**——一台增强回路驱动的增长引擎轰鸣向前,迟早撞上某个隐形的限制因素(产能、管理带宽、市场饱和),增长莫名放缓;这时多数人的本能是给引擎加更多油,而正解是去找到并松开那个限制。其二是**舍本逐末**(又译「转移负担」)——问题冒头,根本解见效慢,症状解见效快,于是人们一次次选择止痛;止痛越勤,根治的能力越萎缩,最后整个系统对症状解上瘾。个人靠止痛药硬扛着不体检、公司靠打折续命而不改产品、组织靠空降救火队长而不建体系,全是这个剧本。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "「舍本逐末」原型:症状解见效快,根本解带延迟;走捷径的次数越多,根治能力被侵蚀得越狠,直到对捷径上瘾。",
+   "svg": "<svg viewBox='0 0 640 410' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='30' text-anchor='middle' style='fill:var(--ink)' font-size='19' font-weight='bold'>系统原型 · 舍本逐末(转移负担)</text><rect x='255' y='64' width='130' height='46' rx='6' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='2'/><text x='320' y='92' text-anchor='middle' style='fill:var(--ink)' font-size='14.5' font-weight='bold'>问题症状</text><rect x='455' y='170' width='155' height='56' rx='6' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='532' y='193' text-anchor='middle' style='fill:var(--ink)' font-size='14' font-weight='bold'>症状解</text><text x='532' y='213' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11.5'>止痛 · 见效快</text><rect x='30' y='170' width='155' height='56' rx='6' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='107' y='193' text-anchor='middle' style='fill:var(--ink)' font-size='14' font-weight='bold'>根本解</text><text x='107' y='213' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11.5'>治本 · 见效慢</text><path d='M388 88 C480 88 528 118 535 168' style='fill:none;stroke:var(--ink-soft)' stroke-width='1.8'/><polygon points='529,158 536,172 541,157' style='fill:var(--ink-soft)'/><path d='M470 172 C430 140 405 122 390 106' style='fill:none;stroke:var(--ink-soft)' stroke-width='1.8'/><polygon points='387,114 386,101 397,106' style='fill:var(--ink-soft)'/><text x='478' y='138' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11.5'>止痛回路 · 快</text><path d='M252 88 C160 88 112 118 105 168' style='fill:none;stroke:var(--ink-soft)' stroke-width='1.8'/><polygon points='99,158 106,172 111,157' style='fill:var(--ink-soft)'/><path d='M170 172 C210 140 235 122 250 106' style='fill:none;stroke:var(--ink-soft)' stroke-width='1.8'/><polygon points='253,114 254,101 243,106' style='fill:var(--ink-soft)'/><text x='162' y='138' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11.5'>治本回路 · 慢</text><line x1='150' y1='84' x2='142' y2='104' style='stroke:var(--cinnabar-pure)' stroke-width='2'/><line x1='163' y1='86' x2='155' y2='106' style='stroke:var(--cinnabar-pure)' stroke-width='2'/><text x='150' y='72' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='11' font-weight='bold'>延迟</text><rect x='240' y='310' width='160' height='52' rx='6' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.5' stroke-dasharray='5 4'/><text x='320' y='332' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='13.5' font-weight='bold'>依赖加深</text><text x='320' y='351' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>越止痛,越离不开止痛</text><path d='M520 228 C500 282 445 320 405 332' style='fill:none;stroke:var(--cinnabar-pure)' stroke-width='1.8' stroke-dasharray='5 4'/><polygon points='412,325 400,335 414,338' style='fill:var(--cinnabar-pure)'/><path d='M238 332 C168 318 118 278 104 232' style='fill:none;stroke:var(--cinnabar-pure)' stroke-width='1.8' stroke-dasharray='5 4'/><polygon points='99,242 102,228 111,238' style='fill:var(--cinnabar-pure)'/><text x='152' y='300' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='11.5'>根治能力被侵蚀</text><text x='320' y='394' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12.5'>止痛越勤,治本越弱——最后系统对症状解上瘾</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "看懂原型,是为了找**杠杆点(leverage)**:系统里存在一些关键的小地方,在那里发力,小小的改变能撬动全局。系统思考的要义,恰恰不是「使更大的劲」,而是「找更巧的位置」。麻烦在于,**高杠杆解几乎从不待在症状旁边**——它在时间上更早、在空间上更远、在样子上更不起眼,所以永远竞争不过那些声势浩大的低杠杆动作:重组、动员、口号、全员加班。啤酒游戏里,杠杆不是逼各个环节「订得再准一点」,而是改掉信息结构本身,让真实需求穿透整条链。找杠杆没有公式,但有方向:去看结构,而不是去看谁最该挨骂。"
+  },
+  {
+   "type": "quote",
+   "original": "小而聚焦的行动,只要用对了地方,能带来可观而持久的改善。",
+   "translation": "杠杆原理。它的反面同样成立:声势浩大的动作用错了地方,只会让系统更用力地反弹。"
+  },
+  {
+   "type": "h2",
+   "text": "五、另外四项修炼:人、假设、愿景与对话"
+  },
+  {
+   "type": "p",
+   "text": "系统思考是「看」的功夫,另外四项修炼解决「人」的问题——结构终究要靠人去看见、去改变,而人自己也是结构的一部分。"
+  },
+  {
+   "type": "p",
+   "text": "**自我超越(personal mastery)**修个人,核心就两件事:不断厘清**你真正想要什么**——个人愿景,不是「别人觉得你该要什么」;同时**如实看清你现在在哪**——现实,不加美化,也不加悲情。愿景与现实之间的差距,会绷出一股**创造性张力**:它不舒服,但它是成长的能量来源。人消解这股张力有两条路:把现实一点点拉向愿景,或者把愿景悄悄调低去迁就现实。后者轻松得多,所以多数人一生都在不知不觉地调低愿景。组织层面同理——一个由不断降低标准的人组成的组织,谈不上任何学习。"
+  },
+  {
+   "type": "quote",
+   "original": "愿景与现实之间的差距,不是敌人,而是能量之源。",
+   "translation": "创造性张力。消灭差距有两种方式——提升现实,或调低愿景;这项修炼的全部内容,就是顶住第二种诱惑。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "创造性张力像一根绷紧的橡皮筋:同一股力,既可以把现实拉向愿景,也可以把愿景拽向现实——修炼在于选哪头松手。",
+   "svg": "<svg viewBox='0 0 560 360' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='30' text-anchor='middle' style='fill:var(--ink)' font-size='19' font-weight='bold'>自我超越 · 创造性张力</text><rect x='180' y='58' width='200' height='50' rx='6' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='2'/><text x='280' y='80' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='15' font-weight='bold'>愿景</text><text x='280' y='99' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11.5'>我真正想要的</text><rect x='180' y='250' width='200' height='50' rx='6' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='280' y='272' text-anchor='middle' style='fill:var(--ink)' font-size='15' font-weight='bold'>现实</text><text x='280' y='291' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11.5'>我此刻真实的位置</text><path d='M280 112 L292 130 L268 148 L292 166 L268 184 L292 202 L268 220 L280 238' style='fill:none;stroke:var(--cinnabar-pure)' stroke-width='2'/><text x='312' y='172' style='fill:var(--cinnabar-pure)' font-size='13' font-weight='bold'>创造性张力</text><text x='312' y='192' style='fill:var(--ink-soft)' font-size='11'>差距即能量</text><line x1='120' y1='250' x2='120' y2='122' style='stroke:var(--cinnabar-pure)' stroke-width='2'/><polygon points='114,128 120,112 126,128' style='fill:var(--cinnabar-pure)'/><text x='108' y='178' text-anchor='end' style='fill:var(--cinnabar-pure)' font-size='12' font-weight='bold'>拉现实向上</text><text x='108' y='196' text-anchor='end' style='fill:var(--ink-soft)' font-size='11'>创造 · 成长</text><line x1='445' y1='112' x2='445' y2='240' style='stroke:var(--ink-faint)' stroke-width='2' stroke-dasharray='5 4'/><polygon points='439,234 445,250 451,234' style='fill:var(--ink-faint)'/><text x='452' y='178' style='fill:var(--ink-soft)' font-size='12'>把愿景调低</text><text x='452' y='196' style='fill:var(--ink-faint)' font-size='11'>妥协 · 目标侵蚀</text><text x='280' y='338' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12.5'>同一股张力,两种释放——修炼,是顶住第二种诱惑</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "**心智模式(mental models)**修假设。每个人脑子里都装着一套根深蒂固的图景:对客户的假设、对下属的成见、对「事情从来如此」的信念。它们的危险不在于错,而在于**看不见**——你以为你在看世界,其实你在看你的模型。修炼的方法,是把这些假设「浮现」出来,摆到桌面上检视、挑战:多问自己「我凭什么这么认为」,也让别人有机会这样问你。圣吉举过底特律汽车业的例子:「顾客买车看的是造型」这条没人说出口的信念,统治了决策几十年,直到市场用惨败来替他们纠正它。"
+  },
+  {
+   "type": "quote",
+   "original": "问题不在于心智模式对不对,而在于它藏在意识之下,从不接受检验。",
+   "translation": "未经浮现的假设最危险:世界变了,模型没变,而你根本不知道自己脑子里有一个模型。"
+  },
+  {
+   "type": "p",
+   "text": "**共同愿景(shared vision)**修方向。它不是老板贴在墙上的标语,也不是年会上齐声喊的口号——那些顶多换来**遵从**:上面盯着就做,不盯就停。真正的共同愿景,是成员发自内心共有的图景,回答的是「我们究竟想一起创造什么」,它换来的是**投入**:不用人盯,大家自己会想办法。圣吉强调,共同愿景没法靠宣贯「推销」出来,只能从一个个真实的个人愿景里生长、汇流而成——这也是它必须排在自我超越之后的原因:一群连自己想要什么都没想清楚的人,共有不了任何东西。"
+  },
+  {
+   "type": "quote",
+   "original": "共同愿景不是一个想法,而是人们心中一股具有感召力的力量。",
+   "translation": "检验真假愿景的土办法:领导不在场时,大家还按它行事吗?贴在墙上的,多半只是标语。"
+  },
+  {
+   "type": "p",
+   "text": "**团队学习(team learning)**修对话。圣吉有个尖锐的观察:为什么一群智商 120 的经理,凑成一个智商 63 的团队?因为多数会议是**讨论(discussion)**——各自带着立场进场,把观点像乒乓球一样打过去打回来,赢的是人,输的是问题。他从物理学家玻姆那里借来另一种形态:**深度汇谈(dialogue)**——参与者「悬挂」各自的假设(不是放弃,而是拎出来挂在那儿,让所有人都看得见),把彼此当同事而不是对手,让思想在人与人之间自由流动,直到团队开始「一起思考」,浮现出任何个人单独达不到的理解。讨论用来收敛决策,汇谈用来打开视野——两者都需要,但后者,几乎所有组织都不会。"
+  },
+  {
+   "type": "quote",
+   "original": "为什么一群个人智商都在 120 以上的管理者,凑在一起集体智商只有 63?",
+   "translation": "团队学习要治的病。答案不在个人素质,而在互动方式:防卫、抢分、和稀泥,把彼此的智慧抵消掉了。"
+  },
+  {
+   "type": "p",
+   "text": "顺带说明书名里的用词。圣吉把这五件事叫**「修炼」(discipline)**,而不是「工具」或「方法」,用词是认真的:工具拿来就用,用完就放;修炼是终身在练的功课,只有「在路上」,没有「练成了」。这也预告了这本书的正确打开方式——它给的不是五个按钮,而是五门需要长期下功夫的课。"
+  },
+  {
+   "type": "h2",
+   "text": "六、怎么用这本书:提醒与边界"
+  },
+  {
+   "type": "p",
+   "text": "最后交代几句这本书的成色与用法。其一,**它有年代**。初版于 1990 年,是公认的管理思想经典,但案例多取自当年的美国大企业,组织形态与商业语境都带着那个时代的印记;读的时候要做一层换算——取其结构性的洞见,别纠结案例本身的新旧。其二,**它被口号化伤害过**。九十年代「学习型组织」红遍全球,无数机构把它做成了横幅、评比和培训运动——恰恰活成了圣吉所批评的样子:把愿景做成标语,把修炼做成表格。别让这些二手印象,替你判断原书。"
+  },
+  {
+   "type": "p",
+   "text": "其三,也是最要紧的一条:**这是一套理念框架与愿景,不是操作手册,更不是照做必成的公式**。五项修炼落地极难,成效因组织而异,几十年来真正长成「学习型组织」的案例寥寥,圣吉自己也说修炼没有终点。所以别把它当灵丹,也别照着清单打勾。这本书最耐用的部分,是**系统思考这种思维方式**:遇到反复发作的问题,先找回路,再找责任人;见到高歌猛进的增长,先问哪里藏着上限;伸手去拿见效快的办法之前,先想想它是不是在舍本逐末。这双眼睛,组织用得上,个人过日子同样用得上——这也是三十多年过去,这本书仍然值得读的原因。"
+  },
+  {
+   "type": "refs",
+   "items": [
+    "原书:Peter M. Senge, The Fifth Discipline: The Art and Practice of the Learning Organization(1990,2006 年修订扩充版)。中文译本《第五项修炼:学习型组织的艺术与实践》有多个版次(郭进隆、张成林等译)。本文为原创转述,引文为意译,字句与原书及各译本或有出入。",
+    "作者背景:圣吉为麻省理工学院斯隆管理学院高级讲师,系统动力学开创者福瑞斯特(Jay Forrester)的学生,组织学习协会(SoL)创始主席。「啤酒游戏」是 MIT 系统动力学小组自 1960 年代起使用的教学模拟,书中据其阐发「结构决定行为」。",
+    "同系作品:《第五项修炼·实践篇》(The Fifth Discipline Fieldbook, 1994)、《变革之舞》(The Dance of Change, 1999)、《学习型学校》(Schools That Learn, 2000)等——正典立骨架,实践篇给工具与案例。",
+    "地位与批评:《哈佛商业评论》曾将本书列为近七十五年最具开创性的管理著作之一;批评者则指出「学习型组织」界定松散、成效难以实证检验,九十年代的流行又使其一度沦为口号。宜取其系统思考之法,存其落地之难——本书是愿景与框架,不是保证书。",
+    "煮青蛙是寓言:生物学上青蛙未必坐以待毙。书中取其譬喻——组织对缓慢渐变的威胁最不敏感——不必当作实验事实引用。"
+   ]
+  }
+ ]
+}

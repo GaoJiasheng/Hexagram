@@ -498,6 +498,18 @@ function AbacusGap() {
   )
 }
 
+// 母题:反馈回路——一道循环的箭头绕成闭环,中心一枚朱核(呼应《第五项修炼》系统思考:结构成环、因果回授)。
+function FeedbackLoop() {
+  return (
+    <g>
+      <path d="M150,235 A58,58 0 1 1 138,236" fill="none" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M150,235 l-9,-5 l1,11 z" fill={CREAM} fillOpacity="0.6" />
+      <circle cx="150" cy="293" r="30" fill="none" stroke={CREAM} strokeOpacity="0.22" strokeWidth="1" />
+      <circle cx="150" cy="293" r="7" fill={CINNABAR} />
+    </g>
+  )
+}
+
 // 母题:思维格栅——一张网格,交点挂着来自各学科的模型,一枚朱色节点(呼应芒格"多元思维模型的 latticework")。
 function Lattice() {
   const x0 = 104, y0 = 238, cols = 5, rows = 6, g = 22, seg = [], dots = []
@@ -561,6 +573,7 @@ function Motif({ motif }) {
   if (motif === 'barcode') return <Barcode />
   if (motif === 'apple-orange') return <AppleOrange />
   if (motif === 'lattice') return <Lattice />
+  if (motif === 'feedback-loop') return <FeedbackLoop />
   if (motif === 'rabbit-hat') return <RabbitHat />
   if (motif === 'continental-axis') return <ContinentalAxis />
   if (motif === 'footsteps') return <Footsteps />

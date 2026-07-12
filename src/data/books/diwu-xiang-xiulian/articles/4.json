@@ -1,0 +1,110 @@
+{
+ "title": "啤酒游戏：换谁来玩，都是灾难",
+ "subtitle": "结构决定行为——供应链模拟、系统原型与杠杆点：《第五项修炼》第4章",
+ "centralIdea": "圣吉用一个玩了几十年的模拟——啤酒游戏——证明一件反直觉的事：一条只有零售商、批发商、酿酒厂三环的供应链，终端需求只小幅上升了一次，却因为信息延迟、局部视野和层层加码，酿成订单暴涨、库存暴跌的大灾难（牛鞭效应）；而且换谁来玩、无论多聪明，结果都惊人地相似。所以问题不在人，而在结构：结构决定行为。现实里反复坑人的结构可以归纳成几个「系统原型」——如成长上限、舍本逐末——认出原型，再在远离症状的「杠杆点」上小小发力，远胜过怪人与救火。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "项目黄了，复盘会上的第一件事往往是找人：谁没盯紧、谁反应慢、谁太贪。圣吉在这一章里做了一件釜底抽薪的事——他让成千上万人玩同一个游戏，然后发现：不管换谁上场、多聪明多资深，都会把一条简单得不能再简单的供应链，玩成一场灾难。既然换谁都一样，那出问题的就不是「谁」。这一章要递给你的，是一副新眼镜：**别盯着人，盯结构**。"
+  },
+  {
+   "type": "h2",
+   "text": "一杯啤酒，怎么玩成一场灾难"
+  },
+  {
+   "type": "p",
+   "text": "啤酒游戏（the beer game）是 MIT 斯隆管理学院用了几十年的课堂模拟。三个玩家分别扮演**零售商、批发商、酿酒厂**，串成一条供应链。规则简单得不像话：每周看一眼自己收到的订单和手上的库存，决定向上游订多少货。约束只有两条——你**只能看到自己这一环**的数字（零售商不知道顾客在想什么，酿酒厂更不知道终端卖得怎样），而且**下单和到货之间隔着几周的延迟**。目标也朴素：别断货，也别压一仓库卖不掉的啤酒。"
+  },
+  {
+   "type": "p",
+   "text": "剧情的起点小得可怜：一款「情人啤酒」忽然好卖了一点——终端需求只是**一次性小幅上升，之后一直平稳**。但看看接下来发生了什么。零售商发现卖得快了，多订一点；批发商看到各家零售订单都在涨、自己手上又缺货（货还在路上），于是加码多订，再留点「保险量」；酿酒厂收到暴涨的订单，加班扩产。几周后，前面滚雪球般下出去的订单一齐到货——零售商的仓库满了，立刻把订单砍到零；这个「零」再一层层传回上游，酿酒厂刚扩完产能，订单没了。终端只涨了一小截，供应链上游却坐了一趟暴涨暴跌的过山车。这就是后来管理学里著名的**「牛鞭效应」**：手腕只轻轻一抖，鞭梢甩出巨浪。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "啤酒游戏：终端需求只动了一小步，订单沿着链条层层放大，最后在酿酒厂变成暴涨暴跌。",
+   "svg": "<svg viewBox='0 0 560 322' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='20' text-anchor='middle' style='font-size:14px;font-weight:bold;fill:var(--ink)'>终端需求只抖了一下，越往上游浪越大</text><rect x='30' y='42' width='85' height='30' rx='5' style='fill:var(--paper-raised);stroke:var(--ink-soft)'/><text x='72' y='61' text-anchor='middle' style='font-size:12px;fill:var(--ink)'>顾客</text><rect x='152' y='42' width='90' height='30' rx='5' style='fill:var(--paper-raised);stroke:var(--ink-soft)'/><text x='197' y='61' text-anchor='middle' style='font-size:12px;fill:var(--ink)'>零售商</text><rect x='289' y='42' width='90' height='30' rx='5' style='fill:var(--paper-raised);stroke:var(--ink-soft)'/><text x='334' y='61' text-anchor='middle' style='font-size:12px;fill:var(--ink)'>批发商</text><rect x='426' y='42' width='90' height='30' rx='5' style='fill:var(--paper-raised);stroke:var(--ink-soft)'/><text x='471' y='61' text-anchor='middle' style='font-size:12px;fill:var(--ink)'>酿酒厂</text><line x1='118' y1='51' x2='140' y2='51' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='140,47 148,51 140,55' style='fill:var(--ink-soft)'/><line x1='149' y1='63' x2='126' y2='63' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='126,59 118,63 126,67' style='fill:var(--ink-faint)'/><line x1='245' y1='51' x2='277' y2='51' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='277,47 285,51 277,55' style='fill:var(--ink-soft)'/><line x1='286' y1='63' x2='256' y2='63' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='256,59 248,63 256,67' style='fill:var(--ink-faint)'/><line x1='382' y1='51' x2='414' y2='51' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='414,47 422,51 414,55' style='fill:var(--ink-soft)'/><line x1='423' y1='63' x2='393' y2='63' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='393,59 385,63 393,67' style='fill:var(--ink-faint)'/><text x='280' y='90' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>上排：订单向上游传　·　下排：货物向下游运——每一环之间都隔着几周延迟</text><line x1='50' y1='300' x2='530' y2='300' style='stroke:var(--ink-faint);stroke-width:1'/><text x='500' y='294' text-anchor='middle' style='font-size:10px;fill:var(--ink-faint)'>时间→</text><path d='M50 262 L150 262 L160 252 L530 252' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5;stroke-dasharray:5 4'/><path d='M50 260 L150 260 C175 260 185 234 205 228 C224 223 232 252 252 264 C270 274 288 254 315 251 L530 251' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><path d='M50 264 L165 264 C192 264 202 204 227 194 C250 185 258 256 283 272 C302 284 322 256 350 253 L530 253' style='fill:none;stroke:var(--ink);stroke-width:1.5'/><path d='M50 266 L185 266 C217 266 227 152 257 140 C283 130 293 260 318 284 C336 296 356 258 385 255 L530 255' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2.5'/><text x='150' y='240' text-anchor='middle' style='font-size:10px;fill:var(--ink-faint)'>只涨了一小步</text><text x='262' y='132' text-anchor='middle' style='font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>暴涨</text><text x='345' y='293' text-anchor='middle' style='font-size:11px;fill:var(--cinnabar-pure)'>暴跌·库存山积</text><line x1='378' y1='138' x2='403' y2='138' style='stroke:var(--ink-faint);stroke-width:1.5;stroke-dasharray:5 4'/><text x='409' y='142' style='font-size:10.5px;fill:var(--ink-soft)'>终端需求（几乎没动）</text><line x1='378' y1='156' x2='403' y2='156' style='stroke:var(--ink-soft);stroke-width:1.5'/><text x='409' y='160' style='font-size:10.5px;fill:var(--ink-soft)'>零售商订单</text><line x1='378' y1='174' x2='403' y2='174' style='stroke:var(--ink);stroke-width:1.5'/><text x='409' y='178' style='font-size:10.5px;fill:var(--ink-soft)'>批发商订单</text><line x1='378' y1='192' x2='403' y2='192' style='stroke:var(--cinnabar-pure);stroke-width:2.5'/><text x='409' y='196' style='font-size:10.5px;fill:var(--ink-soft)'>酿酒厂产量</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "换谁来玩，结局都一样"
+  },
+  {
+   "type": "p",
+   "text": "这个游戏最惊人的不是灾难本身，而是它的**可复制性**。几十年里，玩过的人有大学生、有企业高管、有政府官员，成千上万场下来，结果曲线惊人地相似：先是缺货恐慌、疯狂下单，然后库存山积、怨声载道。游戏结束时，几乎每个人都在骂另外两方——「都是批发商乱下单」「零售商疯了吧」。可把每个人的决策单拿出来看，他在自己那一环里做得都**相当理性**：卖得快就多订，缺货就加码，谁做都会这么做。"
+  },
+  {
+   "type": "quote",
+   "original": "结构决定行为。置身于同一个系统中的人，无论彼此多么不同，往往会产生相似的结果。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "灾难的配方是结构性的，一共三味药：一是**延迟**——你今天的决定要几周后才见效，等你看到后果时，早已追加了好几轮猛药；二是**局部视野**——每个人只看得到自己环节的数字，没有人看得见全局，酿酒厂离真正的顾客隔着两层黑箱；三是**各自加码**——每个人都为防缺货多订一点「保险量」，层层叠上去，就成了集体疯狂。这三样没有一样是性格缺陷，它们是**游戏桌本身的形状**。所以圣吉说，啤酒游戏是「结构决定行为」最有力的证明：想改变结果，换人没用，得换桌子。"
+  },
+  {
+   "type": "p",
+   "text": "圣吉借此给出解释世界的三个层次。最浅的是**事件层**：「上周三批发商又砍单了」——在这一层打转，你只能被动应付，越忙越乱。深一点是**行为模式层**：「订单每隔几周就大起大落一次」——看到趋势，你至少能提前防备。最深的才是**结构层**：「是延迟加局部视野，把每个人的理性都拧成了集体震荡」——只有到了这一层，才谈得上真正的改变。日常管理中绝大多数解释都停在事件层，所以绝大多数「解决方案」都是在救火。"
+  },
+  {
+   "type": "figure",
+   "ftype": "金句卡",
+   "caption": "这一章的题眼：先看结构，再谈对错。",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><rect x='14' y='14' width='532' height='272' rx='4' style='fill:none;stroke:var(--line);stroke-width:1.5'/><rect x='24' y='24' width='512' height='252' rx='3' style='fill:none;stroke:var(--ink-faint);stroke-width:0.6;stroke-dasharray:3 4'/><rect x='262' y='46' width='36' height='36' rx='4' style='fill:var(--cinnabar-pure)'/><text x='280' y='72' text-anchor='middle' style='font-size:20px;fill:var(--paper)'>观</text><text x='280' y='162' text-anchor='middle' style='font-size:40px;font-weight:bold;letter-spacing:6px;fill:var(--ink)'>结构决定行为</text><text x='280' y='200' text-anchor='middle' style='font-size:15px;fill:var(--ink-soft)'>换谁来玩，结果都惊人地相似——问题不在人，在框住人的系统</text><line x1='160' y1='242' x2='226' y2='242' style='stroke:var(--line);stroke-width:1'/><line x1='334' y1='242' x2='400' y2='242' style='stroke:var(--line);stroke-width:1'/><text x='280' y='247' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>《第五项修炼》· 啤酒游戏</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "系统原型：乱局里反复上演的老剧本"
+  },
+  {
+   "type": "p",
+   "text": "看清「结构决定行为」之后，下一个问题是：现实里的结构千头万绪，怎么看？圣吉给的答案很省力：反复坑人的结构其实就那么几种，他把它们整理成**「系统原型」**（systems archetypes）——就像棋手背定式、医生认症候群。认得原型，你就能在一团乱麻里认出「这个剧本我见过」，不必每次都从零开始迷路。这一章重点讲了两个最常见的。"
+  },
+  {
+   "type": "p",
+   "text": "**原型一：成长上限。**一件事起初越做越顺——新产品口碑传开、销量猛涨，你学英语头三个月突飞猛进。可增长引擎轰轰作响的时候，总有一个**看不见的制约**在旁边悄悄逼近：产能跟不上，交货开始拖，口碑反噬；难度上了台阶，热情被耗干。于是增长莫名其妙地停滞。这时候几乎所有人的本能反应都是**更用力地踩油门**——加大推广、逼自己更拼。但圣吉说：油门早就到底了，停滞不是推力不够，是刹车一直踩着。正解是掉头去**找到并松开那个制约**：扩产能、修口碑、给学习换个方法。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "成长上限：左边的增强环让你飞速起步，右边的调节环让你莫名停滞——杠杆在制约上，不在油门上。",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='20' text-anchor='middle' style='font-size:14px;font-weight:bold;fill:var(--ink)'>成长上限：油门旁边，蹲着一脚看不见的刹车</text><rect x='42' y='133' width='104' height='34' rx='6' style='fill:var(--paper-raised);stroke:var(--ink-soft)'/><text x='94' y='154' text-anchor='middle' style='font-size:12px;fill:var(--ink)'>增长行动</text><rect x='228' y='133' width='104' height='34' rx='6' style='fill:var(--paper-raised);stroke:var(--ink-soft)'/><text x='280' y='154' text-anchor='middle' style='font-size:12px;fill:var(--ink)'>成果·增长</text><rect x='414' y='133' width='110' height='34' rx='6' style='fill:var(--paper-raised);stroke:var(--ink-soft)'/><text x='469' y='154' text-anchor='middle' style='font-size:12px;fill:var(--ink)'>减缓力量</text><path d='M148 133 C180 108 244 108 272 130' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='272,130 261,125 265,136' style='fill:var(--ink-soft)'/><path d='M226 168 C196 193 148 193 150 172' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='150,172 147,183 158,177' style='fill:var(--ink-soft)'/><text x='187' y='157' text-anchor='middle' style='font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>R 增强环</text><text x='187' y='104' text-anchor='middle' style='font-size:10px;fill:var(--ink-faint)'>投入带来成果</text><text x='187' y='205' text-anchor='middle' style='font-size:10px;fill:var(--ink-faint)'>成果鼓励更多投入</text><path d='M334 133 C364 108 430 108 458 130' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='458,130 447,125 451,136' style='fill:var(--ink-soft)'/><path d='M412 168 C382 193 334 193 336 172' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='336,172 333,183 344,177' style='fill:var(--ink-soft)'/><text x='375' y='157' text-anchor='middle' style='font-size:12px;font-weight:bold;fill:var(--ink)'>B 调节环</text><text x='375' y='104' text-anchor='middle' style='font-size:10px;fill:var(--ink-faint)'>越成功，越逼近制约</text><text x='375' y='205' text-anchor='middle' style='font-size:10px;fill:var(--ink-faint)'>制约发作，增长放缓</text><rect x='364' y='228' width='176' height='32' rx='5' style='fill:none;stroke:var(--ink-faint);stroke-dasharray:4 3'/><text x='452' y='248' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>隐藏的制约：产能·口碑·心力</text><line x1='452' y1='228' x2='452' y2='174' style='stroke:var(--ink-faint);stroke-width:1.2;stroke-dasharray:4 3'/><polygon points='448,176 452,168 456,176' style='fill:var(--ink-faint)'/><line x1='50' y1='270' x2='250' y2='270' style='stroke:var(--ink-faint);stroke-width:1'/><path d='M52 266 C110 262 130 226 162 221 L248 219' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><text x='150' y='208' text-anchor='middle' style='font-size:10px;fill:var(--ink-faint)'>先飞速……后停滞</text><text x='280' y='285' style='font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>杠杆：去松开制约，别再猛踩油门</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "**原型二：舍本逐末**（shifting the burden，转移负担）。问题冒头时，面前摆着两条路。一条是**症状解**——快、立竿见影：头疼吃止痛药，系统一出故障就喊那位救火天才，项目缺人就外包。另一条是**根本解**——慢、有延迟：查病因、重构系统、培养自己的人。麻烦在于，症状解每一次都「有效」，于是根本解一拖再拖；更阴的是它的**副作用**：止痛药越吃越离不开，救火英雄越救越被需要，外包用得越久、自己的队伍越废。负担悄悄从「解决问题」转移到了「维持快招」上——这是一个标准的上瘾结构。"
+  },
+  {
+   "type": "quote",
+   "original": "今日的问题，来自昨日的解决方案。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "舍本逐末：上环快而治标，下环慢而治本；那条竖着的虚线副作用，让你一步步吃上瘾。",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='20' text-anchor='middle' style='font-size:14px;font-weight:bold;fill:var(--ink)'>舍本逐末：快招每赢一次，治本就输一分</text><rect x='60' y='133' width='96' height='34' rx='6' style='fill:var(--paper-raised);stroke:var(--ink-soft)'/><text x='108' y='154' text-anchor='middle' style='font-size:12px;fill:var(--ink)'>问题症状</text><rect x='330' y='52' width='170' height='34' rx='6' style='fill:var(--paper-raised);stroke:var(--ink-soft)'/><text x='415' y='73' text-anchor='middle' style='font-size:12px;fill:var(--ink)'>症状解（快·立竿见影）</text><rect x='330' y='214' width='170' height='34' rx='6' style='fill:var(--paper-raised);stroke:var(--ink-soft)'/><text x='415' y='235' text-anchor='middle' style='font-size:12px;fill:var(--ink)'>根本解（慢·有延迟）</text><path d='M150 135 C210 92 280 74 324 70' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='324,70 313,66 314,77' style='fill:var(--ink-soft)'/><text x='230' y='84' text-anchor='middle' style='font-size:10px;fill:var(--ink-faint)'>一疼就用</text><path d='M330 88 C272 110 202 130 162 142' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='162,142 173,145 170,134' style='fill:var(--ink-soft)'/><text x='242' y='126' text-anchor='middle' style='font-size:10px;fill:var(--ink-faint)'>暂时压下去</text><text x='250' y='105' text-anchor='middle' style='font-size:11px;font-weight:bold;fill:var(--ink)'>B1 快环</text><path d='M152 163 C215 192 280 212 324 222' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='324,222 314,215 313,226' style='fill:var(--ink-soft)'/><text x='228' y='185' text-anchor='middle' style='font-size:10px;fill:var(--ink-faint)'>本该去治</text><path d='M328 246 C250 264 172 222 150 172' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='150,172 149,184 159,178' style='fill:var(--ink-soft)'/><text x='236' y='258' text-anchor='middle' style='font-size:10px;fill:var(--ink-faint)'>真正消除（‖ 要等）</text><text x='250' y='210' text-anchor='middle' style='font-size:11px;font-weight:bold;fill:var(--ink)'>B2 慢环</text><line x1='415' y1='90' x2='415' y2='206' style='stroke:var(--cinnabar-pure);stroke-width:1.5;stroke-dasharray:5 4'/><polygon points='411,204 415,213 419,204' style='fill:var(--cinnabar-pure)'/><text x='425' y='138' style='font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>副作用（R）</text><text x='425' y='156' style='font-size:10.5px;fill:var(--cinnabar-pure)'>越依赖快招，</text><text x='425' y='172' style='font-size:10.5px;fill:var(--cinnabar-pure)'>治本能力越萎缩</text><text x='280' y='288' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>例：止痛药↔查病因　·　救火英雄↔重构系统　·　外包↔练自己的队伍</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "杠杆点：别在最疼的地方使劲"
+  },
+  {
+   "type": "p",
+   "text": "认出原型，是为了找到**杠杆点**（leverage）——系统里那个「小小发力就能撬动全局」的位置。关于杠杆有一个坏消息：它几乎从不在问题最疼、最显眼的地方。啤酒游戏里，杠杆不是把零售商骂冷静，而是**缩短延迟、让终端销量对全链条透明、每一环管住自己加码的手**——改的是信息和规则，不是人。成长上限的杠杆不在增长引擎上，在制约因素上；舍本逐末的杠杆不在把快招做得更快，而在**咬牙给根本解留出时间**——必要时可以用症状解争取喘息，但绝不能让它变成生活方式。"
+  },
+  {
+   "type": "quote",
+   "original": "小而专注的行动，只要用在正确的地方，就能产生重大而持久的改善。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "合上书：把「怪谁」换成「画结构」"
+  },
+  {
+   "type": "p",
+   "text": "这一章可以带走三个动作。第一，出了问题先别开批斗会，**先画结构**：这条链上有哪些延迟？谁看不见什么信息？大家各自的「理性小算盘」叠加起来会变成什么？第二，**认剧本**：眼前这团乱，是增长撞上了隐形天花板（成长上限），还是快招吃上瘾了（舍本逐末）？认出老剧本，就不必再在里面即兴演出。第三，**找杠杆**：在症状上使的劲，大多喂了系统的惯性；真正的着力点往往又远、又不直观，但一旦按对，四两拨千斤。这三个动作合起来，就是「系统思考」从口号落到手上的样子——也是全书第五项修炼真正的入门式。"
+  }
+ ]
+}
