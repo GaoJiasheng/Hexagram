@@ -498,6 +498,18 @@ function AbacusGap() {
   )
 }
 
+// 母题:叠石(cairn)——一摞平衡堆叠、逐层收窄的石头,顶石朱色(呼应《原则》:一条条原则在一生中累积、平衡地叠起来)。
+function Cairn() {
+  const stones = [
+    { y: 346, rx: 44, ry: 15 }, { y: 316, rx: 36, ry: 13 }, { y: 290, rx: 28, ry: 11 }, { y: 268, rx: 20, ry: 9 }, { y: 250, rx: 13, ry: 7, hi: true },
+  ]
+  return (
+    <g>
+      {stones.map((s, i) => <ellipse key={i} cx="150" cy={s.y} rx={s.rx} ry={s.ry} fill={s.hi ? CINNABAR : 'none'} fillOpacity={s.hi ? 0.9 : 1} stroke={s.hi ? 'none' : CREAM} strokeOpacity="0.45" strokeWidth="1.3" />)}
+    </g>
+  )
+}
+
 // 母题:沙漏——沙自朱色细流落下、堆在底部(呼应《卓有成效的管理者》第一要务:认识并管理最稀缺的资源——时间)。
 function Hourglass() {
   return (
@@ -605,6 +617,7 @@ function Motif({ motif }) {
   if (motif === 'feedback-loop') return <FeedbackLoop />
   if (motif === 'compass') return <Compass />
   if (motif === 'hourglass') return <Hourglass />
+  if (motif === 'cairn') return <Cairn />
   if (motif === 'rabbit-hat') return <RabbitHat />
   if (motif === 'continental-axis') return <ContinentalAxis />
   if (motif === 'footsteps') return <Footsteps />
