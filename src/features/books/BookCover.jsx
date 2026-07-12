@@ -498,6 +498,23 @@ function AbacusGap() {
   )
 }
 
+// 母题:思维格栅——一张网格,交点挂着来自各学科的模型,一枚朱色节点(呼应芒格"多元思维模型的 latticework")。
+function Lattice() {
+  const x0 = 104, y0 = 238, cols = 5, rows = 6, g = 22, seg = [], dots = []
+  for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+    const x = x0 + c * g, y = y0 + r * g
+    dots.push({ x, y, hi: r === 3 && c === 2 })
+    if (c < cols - 1) seg.push(`M${x},${y} L${x + g},${y}`)
+    if (r < rows - 1) seg.push(`M${x},${y} L${x},${y + g}`)
+  }
+  return (
+    <g>
+      <path d={seg.join(' ')} fill="none" stroke={CREAM} strokeOpacity="0.26" strokeWidth="1" />
+      {dots.map((d, i) => <circle key={i} cx={d.x} cy={d.y} r={d.hi ? 5 : 2.4} fill={d.hi ? CINNABAR : CREAM} fillOpacity={d.hi ? 1 : 0.5} />)}
+    </g>
+  )
+}
+
 // 母题:苹果里的橙子——外形是苹果、剖开却是橙瓣(呼应《魔鬼经济学》"事物的隐藏面":看着是这个,里子是那个)。
 function AppleOrange() {
   const apple = 'M150,238 C120,222 96,242 98,282 C100,322 128,352 150,352 C172,352 200,322 202,282 C204,242 180,222 150,238 Z'
@@ -543,6 +560,7 @@ function Motif({ motif }) {
   if (motif === 'flame') return <Flame />
   if (motif === 'barcode') return <Barcode />
   if (motif === 'apple-orange') return <AppleOrange />
+  if (motif === 'lattice') return <Lattice />
   if (motif === 'rabbit-hat') return <RabbitHat />
   if (motif === 'continental-axis') return <ContinentalAxis />
   if (motif === 'footsteps') return <Footsteps />
