@@ -7,7 +7,7 @@ import books from '../../data/books/index.json'
 import './books.css'
 
 // 私人书房索引:all-in-one 一个总索引 + 标签筛选(owner 决定)。隐藏入口 /books。
-const TAGS = ['哲学', '人生', '管理', '心理', '经济', '政治']
+const TAGS = ['哲学', '人生', '管理', '心理', '经济', '政治', '健康']
 
 export default function BooksIndexPage() {
   usePageTitle('观书 · Gavin 的书房')
