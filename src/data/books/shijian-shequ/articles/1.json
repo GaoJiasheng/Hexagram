@@ -1,0 +1,152 @@
+{
+ "title": "什么是实践社区:一种特别的共同体",
+ "subtitle": "一群人因共同的专业与热爱而聚、在持续互动中把一件事越做越好——温格《打造实践社区》第1章导读",
+ "centralIdea": "实践社区(Community of Practice),是一群因为共同关注某个领域、共同的问题、或对某件事的热情,而自发相聚、并在持续互动中把这件事越做越好的人。它自古就有(手工业行会便是),温格只是替它命名、把它系统化。它有三个内核:共同的关注、持续的互动、越做越好。它不同于「正式团队」——团队因被分配的任务而聚、由行政安排、任务完即解散、交付一个具体成果;实践社区因共同的知识与热爱而聚、基本自愿、随兴趣有机生长、沉淀下来的是知识、能力与关系。它也不同于只是「喜欢同一话题聊聊天」的兴趣小组——它围绕真实的实践,大家真的在做、并一起琢磨怎么做得更好,因而能带来真实的能力提升。它之所以特别,是因为它填补了正式组织的空白:很多真正有用的知识,不在流程手册和数据库里,而在同行之间的持续交流中,而实践社区正是承载这种交流的容器。它自愿、有机的本性,也预告了全书的落点——这样的共同体只能培育,不能命令。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "你多半见过这样的场景:公司里几个工程师,并不归同一个领导管,却隔三差五凑到一块儿,咖啡一泡,把最近踩的坑、修不好的 bug、听说的新工具倒来倒去,聊完各自回去干活,手艺却悄悄见了长。没人给他们排这个「会」,也没人考核他们聊得好不好,可这群人一年年地聚,愣是把一门手艺越磨越精。**这样一群人,温格给了它一个名字——「实践社区」(Community of Practice)。** 这本书要讲的,就是怎么看懂、怎么养出这种组织里最鲜活的东西。"
+  },
+  {
+   "type": "h2",
+   "text": "先看看它长什么样"
+  },
+  {
+   "type": "p",
+   "text": "别急着抠定义,先在脑子里过几个画面。一群医生,定期把各自手上棘手的病例摊出来,你一言我一语地会诊,谁也没规定必须来,但来的人都长本事;一个行业里的匠人,农闲时凑到一起切磋手艺,谁有了新窍门,不藏着,拿出来大家一起琢磨;一群新手爸妈,天天在群里交流哄睡、辅食、发烧怎么办,踩过的坑彼此提个醒。**这些看起来八竿子打不着的场景,骨子里是同一种东西**:一群人因为在乎同一件事,自愿聚在一起,靠持续的你来我往,把这件事做得越来越好。"
+  },
+  {
+   "type": "p",
+   "text": "所以实践社区不是温格发明的新玩意儿。中世纪的手工业行会,师傅带徒弟、同行定规矩、彼此传手艺,就是活生生的实践社区,它比「公司」「部门」这些现代组织形态还古老得多。**温格做的,不是造了个新东西,而是给这个自古就有、却一直没名字的东西,起了名、讲清了它的构造**——于是我们才第一次能有意识地去认它、护它、养它。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "共同的关注 → 持续的互动 → 越做越好:三个词咬在一起,才是一个实践社区,缺一环便不成。",
+   "svg": "<svg viewBox=\"0 0 560 250\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">实践社区的三个关键词</text><rect x=\"25\" y=\"70\" width=\"150\" height=\"96\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><text x=\"100\" y=\"113\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"17\">共同的关注</text><text x=\"100\" y=\"140\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">在乎同一件事</text><rect x=\"205\" y=\"70\" width=\"150\" height=\"96\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><text x=\"280\" y=\"113\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"17\">持续的互动</text><text x=\"280\" y=\"140\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">常来常往地交流</text><rect x=\"385\" y=\"70\" width=\"150\" height=\"96\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><text x=\"460\" y=\"113\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"17\">越做越好</text><text x=\"460\" y=\"140\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">一起打磨手艺</text><path d=\"M178 118 L201 118\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><polygon points=\"201,118 193,114 193,122\" style=\"fill:var(--ink-soft)\"/><path d=\"M358 118 L381 118\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><polygon points=\"381,118 373,114 373,122\" style=\"fill:var(--ink-soft)\"/><text x=\"280\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12.5\">三者缺一,便不成其为实践社区</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "一句话说清:什么是实践社区"
+  },
+  {
+   "type": "p",
+   "text": "把上面那些画面拧成一句话,温格的定义是:**实践社区,就是一群因为共同关注某个领域、共同的问题、或对某件事的热情,而自发聚在一起、并通过持续互动把这件事越做越好的人。** 这句话不长,但字字都在点上,拆开来其实是三个关键词。"
+  },
+  {
+   "type": "p",
+   "text": "**第一个词,「共同的关注」**——大家在乎的是同一件事,可能是同一门专业、同一类难题、同一份热爱。这是把人吸到一起的磁石。**第二个词,「持续的互动」**——不是一次性的见面,而是常来常往、你来我往地交流,今天你帮我解个惑,明天我给你提个醒,关系和信任就在这来回里长出来。**第三个词,「越做越好」**——他们凑一起不是纯为社交,而是真奔着「把这件事做得更精」去的,交流之后,每个人的本事都往上走了一截。这三个词咬合在一起,才叫实践社区;少了任何一个,就成了别的东西。"
+  },
+  {
+   "type": "p",
+   "text": "举个具体的:一家大公司里,分散在各个项目组的十来个数据分析师,谁也不归同一个经理管。他们每两周自愿凑一次,把手上遇到的怪问题、试出来的新写法、掉进去的坑,摆出来交换——这就齐了三个词:大家「共同关注」的,是「怎么把数据分析做得更好」;每两周雷打不动的一次碰头,是「持续互动」;而每个人聊完都带走点新东西、手艺见长,就是「越做越好」。**这三样但凡缺一个**,它要么散成一盘沙,要么退化成纯吐槽的午餐局,就不再是那个能让人长本事的实践社区了。"
+  },
+  {
+   "type": "quote",
+   "original": "实践社区,是一群因共同的关注、共同的问题、或对同一件事的热情,而自发相聚、并在持续互动中把它越做越好的人。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "它跟「正式团队」不是一回事"
+  },
+  {
+   "type": "p",
+   "text": "读到这儿你可能会嘀咕:这不就是个「小组」「团队」吗?公司里一抓一大把。别急,**实践社区和我们熟悉的「正式团队、部门」,看着像,内核完全两样**,分清这一点,是理解全书的地基。差别主要在四处。"
+  },
+  {
+   "type": "p",
+   "text": "**一是「因何而聚」。** 团队是因为一个被分配下来的任务、一个项目而聚——上头说「你们几个负责这事」,于是成团;实践社区是因为共同的知识与热爱而聚——「我们都想把这门手艺做得更好、都想跟同好切磋」,于是相聚。**二是「是否自愿」。** 团队是行政安排,你被编进去,由不得你;实践社区基本是自愿的,人们是自己想来的,没人来了也没损失,来了是因为在这儿有收获、有共鸣。"
+  },
+  {
+   "type": "p",
+   "text": "**三是「边界与寿命」。** 团队有清清楚楚的任务边界和解散时点——项目交付了、部门撤了,团队也就散了;实践社区由共同的兴趣来定义,它有机地生长、延续,**只要这个话题还有人在乎,它就活着**,可以比任何一个项目、任何一次组织架构调整都长命。**四是「留下什么」。** 团队交付的是一个具体成果——一款产品、一份报告;实践社区沉淀下来的,是知识、是能力、是人和人之间的关系——**一堆看不见、却会长久留在人身上和人与人之间的东西。**"
+  },
+  {
+   "type": "p",
+   "text": "你身边就有活例子:一个项目团队,产品上线那天就地解散,大家各奔东西,那段共事很快就淡了;可如果这批人里有几个是真心爱琢磨这门技术的,他们很可能在项目散场之后,还继续私下里约着交流——**项目死了,那个因热爱结成的圈子却活了下来**,甚至跨越好几个项目、好几次组织调整,一直延续。这正是两者最动人的分别:团队为一件事而生、事了则散;实践社区为一门长久的热爱而在,**事过,而人不散。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照",
+   "caption": "同样是「一群人在一起」,团队因任务而聚、任务完即散;实践社区因热爱而聚、随兴趣有机生长。",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">实践社区 vs 正式团队</text><rect x=\"28\" y=\"46\" width=\"238\" height=\"212\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"294\" y=\"46\" width=\"238\" height=\"212\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"147\" y=\"76\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">实践社区</text><text x=\"413\" y=\"76\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">正式团队</text><line x1=\"52\" y1=\"90\" x2=\"242\" y2=\"90\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><line x1=\"318\" y1=\"90\" x2=\"508\" y2=\"90\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"147\" y=\"124\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">因何聚:共同的知识与热爱</text><text x=\"147\" y=\"158\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">是否自愿:多半自愿而来</text><text x=\"147\" y=\"192\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">边界寿命:有机生长,题在则在</text><text x=\"147\" y=\"226\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">留下什么:知识 · 能力 · 关系</text><text x=\"413\" y=\"124\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">因何聚:被分配的任务</text><text x=\"413\" y=\"158\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">是否自愿:行政安排</text><text x=\"413\" y=\"192\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">边界寿命:任务完,即解散</text><text x=\"413\" y=\"226\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">留下什么:一个具体成果</text><text x=\"280\" y=\"286\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">一个因任务而聚,一个因热爱而聚</text></svg>"
+  },
+  {
+   "type": "quote",
+   "original": "团队因被分配的任务而聚,实践社区因共同的知识与热爱而聚。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "它也不只是「兴趣小组」"
+  },
+  {
+   "type": "p",
+   "text": "分清了团队,还得再分清另一头——**实践社区也不等于「兴趣小组」「联谊会」。** 光是「一群喜欢同一个话题的人凑一起聊聊天」,还差着一口气。差在哪?差在那个「实践」二字。"
+  },
+  {
+   "type": "p",
+   "text": "关键就在**「实践」**这两个字上:实践社区不是围着一个话题空聊,而是**围绕真实的「实践」**——大家是真的在做这件事,并且一起琢磨怎么把它做得更好。他们之间流动的,不只是观点和感受,更是**共同的方法、真实的案例、踩过坑的经验**。一个只是「都喜欢喝咖啡」的群和一个「都在认真钻研怎么把咖啡做得更好、彼此交换手法与失败」的群,前者是兴趣小组,后者才是实践社区。**正因为扎在真实的实践里,它才能带来真实的能力提升**——聊完不只是心情舒畅,而是手艺真的进了一步。"
+  },
+  {
+   "type": "quote",
+   "original": "它围绕的不是话题,而是真实的实践——大家真的在做这件事,并一起琢磨怎么做得更好。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "对比",
+   "caption": "都爱同一件事,分野在「做不做」:兴趣小组停在「聊」,实践社区走到「做」,于是长出真本事。",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">兴趣小组 vs 实践社区</text><circle cx=\"145\" cy=\"162\" r=\"78\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\" stroke-dasharray=\"3 6\"/><text x=\"145\" y=\"152\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">兴趣小组</text><text x=\"145\" y=\"178\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">喜欢就聊聊</text><text x=\"145\" y=\"270\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">停在「聊」</text><circle cx=\"415\" cy=\"162\" r=\"78\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"2.2\"/><text x=\"415\" y=\"152\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">实践社区</text><text x=\"415\" y=\"178\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"11.5\">动手做,一起打磨</text><text x=\"415\" y=\"270\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">长出「真本事」</text><text x=\"280\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">多走一步:</text><text x=\"280\" y=\"168\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">扎进真实践</text><path d=\"M234 190 L326 190\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><polygon points=\"326,190 317,186 317,194\" style=\"fill:var(--ink-soft)\"/></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "它为什么特别:知识的活水,不在手册里"
+  },
+  {
+   "type": "p",
+   "text": "分清了「不是团队、不是兴趣小组」,那实践社区到底特别在哪、值不值得专门写一本书去讲?温格的答案是:**它填补了正式组织留下的一大块空白。**"
+  },
+  {
+   "type": "p",
+   "text": "想想一个组织是怎么存放知识的——流程手册、操作规范、数据库、培训 PPT。这些当然有用,但你我心里都清楚:**真正解决问题时最管用的那些知识,恰恰很多都不在这些地方。** 「这个客户其实要的是那个」「这个坑我上次是这么绕过去的」「那个供应商别信他的报价」——这类活的、带着分寸和手感的经验,写不进手册,只在**同行之间的持续交流**里传递。你请教一句、他点拨一句,一门手艺里最精微的部分,就这么口耳相传、活了下来。"
+  },
+  {
+   "type": "p",
+   "text": "打个比方你就懂了。一个干了二十年的老师傅,他脑子里最值钱的,往往是些说不清、写不明的手感——机器听声音就知道哪儿快出毛病,客户一皱眉就晓得话该怎么往回接。这种知识,你让他写成手册,他自己都未必写得全;可只要有个后生天天跟着他、多问多聊,这份手感竟能一点点传过去。**手册留得住条文,留不住手感;能把手感盘活、传下去的,是人与人之间那份持续的往来。** 实践社区做的,正是把这样的往来供养起来、让它长久地发生。"
+  },
+  {
+   "type": "p",
+   "text": "**而实践社区,正是承载这种交流的容器。** 它不是组织架构图上的一个格子,却是那些「写不进手册的知识」得以流动、沉淀、传下去的地方。这也是为什么温格说它是组织里最鲜活的东西——它装的,是最有生命力的那半截知识。至于这半截知识究竟有多要紧、能给组织带来什么,是下一章要展开的正题,这里先埋下一个头:**别小看这群自发聚起来聊天的人,组织真正的学习,常常就发生在这里。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "露出水面的手册与数据库只是一角,真正有用的知识大半沉在水下——在同行之间的持续交流里。",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">真正有用的知识,大半在水面之下</text><line x1=\"30\" y1=\"150\" x2=\"530\" y2=\"150\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/><text x=\"512\" y=\"144\" text-anchor=\"end\" style=\"fill:var(--ink-faint)\" font-size=\"11\">水面</text><polygon points=\"280,72 248,150 312,150\" style=\"fill:var(--line);stroke:var(--ink-soft)\" stroke-width=\"1\"/><polygon points=\"248,150 312,150 372,268 188,268\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><path d=\"M320 100 L400 100\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"1\"/><text x=\"408\" y=\"96\" style=\"fill:var(--ink-soft)\" font-size=\"12\">手册 · 数据库</text><text x=\"408\" y=\"116\" style=\"fill:var(--ink-faint)\" font-size=\"11\">看得见 · 查得到</text><text x=\"280\" y=\"212\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">同行间的持续交流</text><text x=\"280\" y=\"238\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">写不进手册,却最管用</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "落到你身上:先学会「认出」它"
+  },
+  {
+   "type": "p",
+   "text": "这一章其实还没到「怎么做」,而是先教你「怎么认」。把定义揣在兜里,你不妨环顾一下自己身边:**有没有那么一群人,不归一个上级管、也没人派任务,却因为都在乎同一门手艺、同一类难题,自愿地常来常往,聊完各自都长了本事?** 如果有,那很可能就是一个实践社区——它也许一直在那儿,只是你以前没给它起过名字、没意识到它有多珍贵。"
+  },
+  {
+   "type": "p",
+   "text": "认出它,也顺带解开一个常见的困惑:为什么公司砸钱建了知识库、写了一大堆规范,大家有事却还是「去问隔壁老王」?不是知识库没用,而是**最活的那部分知识,天生就住在人与人的交流里,住不进数据库**。所以别只盯着「文档没人看」发愁,不妨回头看看:那些「老王们」私下切磋的网络,是不是正是一个一直没被好好对待的实践社区?**看见它,就是善待它的第一步。**"
+  },
+  {
+   "type": "p",
+   "text": "而认出它的同时,也就摸到了这本书最要紧的一个分寸,这个分寸会一直贯穿到最后一章:**实践社区的本性是自愿的、有机的。** 人们是因为「想把这件事做得更好、想和同好在一起」才来的,这份热爱和自发,恰恰是它全部力量的来源。所以它**只能被培育,不能被命令**——你可以给它阳光、水土,却没法下一道行政命令把它「建」出来。往后几章讲的所有方法,归根到底都是在学一件事:**怎样当一个好园丁,而不是发号施令的工头。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "金句卡",
+   "caption": "本章题眼:实践社区不是任务派来的团队,也不只是聊天的圈子,而是让能力与知识在同行间活起来的地方。",
+   "svg": "<svg viewBox=\"0 0 560 320\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"20\" y=\"20\" width=\"520\" height=\"280\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"38\" y=\"38\" width=\"484\" height=\"244\" rx=\"6\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1\"/><rect x=\"52\" y=\"52\" width=\"46\" height=\"46\" rx=\"5\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"75\" y=\"83\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\" font-size=\"20\">观</text><text x=\"280\" y=\"152\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"23\">它因热爱而聚,</text><text x=\"280\" y=\"192\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"23\">在切磋里把事越做越好。</text><line x1=\"150\" y1=\"224\" x2=\"410\" y2=\"224\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"280\" y=\"254\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13.5\">不是任务派来的团队,也不只是聊天的圈子。</text><text x=\"280\" y=\"282\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">《打造实践社区》· 第1章</text></svg>"
+  }
+ ]
+}

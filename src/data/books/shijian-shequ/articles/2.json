@@ -1,0 +1,158 @@
+{
+ "title": "为什么重要:知识的活水与组织学习",
+ "subtitle": "组织最宝贵的知识,常常写不进手册——温格等《打造实践社区》第2章导读",
+ "centralIdea": "一个组织真正的竞争力,越来越不在它买得到的机器、抄得来的流程里,而在它能不能持续地积累、流动、更新「知识与能力」。而组织里最值钱的知识,偏偏是最写不进手册的那一种——隐性知识(tacit knowledge):老手的经验、诀窍、判断力、手感,那种「遇到这种情况该怎么办」的直觉。它没法靠发一份文档就教会新人,只能在人与人一起动手、讲故事、当面切磋的实践互动里,一点点传下去。温格说,这正是实践社区最要紧的价值:它照管(steward)着组织里这类最鲜活、也最容易从正式结构指缝里漏掉的活知识——公司的层级管「谁向谁汇报」、流程管「按什么步骤走」、数据库存「能写下来的信息」,唯独没人管「隐性知识如何在同行间传承与更新」,而实践社区横跨部门、以知识为纽带,恰好补上这块空白,让一处的教训变成众人的经验、让个人的创新扩散成集体的能力,成为组织学习与创新的活水。但要记住:活水的性质是「流动」而非「灌装」——它只在自愿的互动里生长,你能搭台、能浇灌,却没法拿指标逼人交出诀窍。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "同一条产线上,新来的技术员手里攥着一本厚厚的操作手册,老师傅两手空空。可机器一出怪声,新人翻遍手册也对不上号,老师傅走过来,耳朵一贴、手一摸,「嗯,这轴承该换了」——他说不太清自己是怎么知道的,但他就是知道。**一个组织里最值钱的东西,常常就是这种「说不清、写不下、却真管用」的本事。** 这一章要回答的,正是上一章那个问题的下半句:实践社区到底重要在哪儿?答案,得从这位老师傅手里那点「写不进手册的本事」说起。"
+  },
+  {
+   "type": "h2",
+   "text": "先接上一章:从「是什么」到「为什么值得养」"
+  },
+  {
+   "type": "p",
+   "text": "上一章我们讲清楚了实践社区「是什么」——一群因为共同的专业与热爱聚到一起、在持续互动中把一件事越做越好的人。但一个务实的管理者接下来一定会追问:**这东西听着不错,可它凭什么值得组织花力气、给时间、拨资源去培育?** 温格这一章,就是来正面回答这个「为什么重要」的。"
+  },
+  {
+   "type": "p",
+   "text": "而要说清它为什么重要,得先把一个更大的问题摆上台面:**一个组织,真正的竞争力到底藏在哪里?**"
+  },
+  {
+   "type": "h2",
+   "text": "组织真正的竞争力,藏在「知识」里"
+  },
+  {
+   "type": "p",
+   "text": "我们习惯把一家公司的实力,想成它的厂房、设备、资金、市场份额——这些看得见摸得着的家当。但温格提醒我们,在今天这个**知识经济**的时代,决定一个组织能不能持续把事情做好的,越来越是另一样东西:**它能不能有效地积累、流动、更新自己的知识与能力。**"
+  },
+  {
+   "type": "p",
+   "text": "道理不难懂。机器,你买得到,对手也买得到;流程,你写得出,对手照着抄一遍也就学去了。**唯独「知识与能力」——一群人手里那套把事做好的真本事——是别人搬不走、抄不像的。** 两家公司买的是同一批设备、跑的是同一套流程,做出来的东西却有高下,差就差在**人**身上那点说不清道不明的功夫。一个组织的家底,越来越是它脑子里的知识,而不是账面上的资产。"
+  },
+  {
+   "type": "h2",
+   "text": "最关键的知识,是「写不进手册」的那一种"
+  },
+  {
+   "type": "p",
+   "text": "可是「知识」这两个字,底下其实藏着两种很不一样的东西,分清它们,是这一章的关键。温格沿用了一个经典的区分:**显性知识**和**隐性知识**。"
+  },
+  {
+   "type": "p",
+   "text": "**显性知识,是能写下来的那部分**——操作手册、技术文档、报表数据、标准流程。它的好处是能被记录、被复制、被存进数据库,一份文件发出去,人人都看得到。**隐性知识(tacit knowledge),是难以言传的那部分**——经验、诀窍、判断力、手感,还有那种「遇到这种情况该怎么办」的直觉。它长在一个人的身体和判断里,你让他讲,他自己都未必讲得全。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照",
+   "caption": "显性知识写得下、传得快,新人也能拿到;隐性知识写不进手册,只能靠人传给人——而老手比新手强,大半强在这一块。",
+   "svg": "<svg viewBox=\"0 0 560 320\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">两种知识:写得下的 vs 传得下的</text><rect x=\"28\" y=\"46\" width=\"238\" height=\"244\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"294\" y=\"46\" width=\"238\" height=\"244\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><text x=\"147\" y=\"78\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">显性知识</text><text x=\"147\" y=\"100\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">能写下来的</text><text x=\"413\" y=\"78\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"16\">隐性知识 · tacit</text><text x=\"413\" y=\"100\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">难以言传的</text><line x1=\"52\" y1=\"114\" x2=\"242\" y2=\"114\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><line x1=\"318\" y1=\"114\" x2=\"508\" y2=\"114\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"147\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">手册 · 文档</text><text x=\"147\" y=\"172\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">数据 · 流程</text><text x=\"413\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">经验 · 诀窍</text><text x=\"413\" y=\"172\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">判断 · 手感 · 直觉</text><text x=\"147\" y=\"214\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">可记录 · 可复制</text><text x=\"147\" y=\"236\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">存得进数据库</text><text x=\"413\" y=\"214\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">写不进手册</text><text x=\"413\" y=\"236\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">只能靠人传给人</text><text x=\"147\" y=\"272\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">发一份文档,新人就拿到</text><text x=\"413\" y=\"272\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">老手强,多半强在这</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "而真正让老手比新人强的,**大部分恰恰是隐性知识。** 这就带出一个让很多管理者头疼的事实:**这类最值钱的知识,偏偏写不进数据库、装不进流程手册。** 你没办法靠发一份文档,就把老师傅几十年攒下来的手感,一次性拷贝给新人。知识管理系统里躺着成千上万份文件,可最救命的那点门道,常常一个字也不在里面。"
+  },
+  {
+   "type": "quote",
+   "original": "最难被写下来的知识,往往正是最值得拥有的知识。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "隐性知识,只能在「人与人」之间流动"
+  },
+  {
+   "type": "p",
+   "text": "既然写不下来,那它怎么传?温格的答案是:**隐性知识只能在人与人的实践互动里流动。** 它靠**示范**——你看着老师傅怎么做;靠**讲故事**——他跟你念叨「上回遇到这情况,我是这么处理的」;靠**一起动手**——两个人凑在同一台机器前边做边说;靠**当面问答**和**耳濡目染**,一点一点渗过去。"
+  },
+  {
+   "type": "p",
+   "text": "换句话说,隐性知识的传承,需要一个**同行持续交流的场**——一群做同一行的人,能常来常往、切磋琢磨的地方。**而这个「场」,正是实践社区。** 它的价值,不在于开了多少会、出了多少文档,而在于它**照管(steward)着组织里那些最宝贵、也最难被正式结构捕捉的活知识**——把散在各个老手脑子里的诀窍,变成能在同行之间流动的东西。"
+  },
+  {
+   "type": "p",
+   "text": "一个常被提起的例子,是施乐(Xerox)的维修技师。公司给他们配了厚厚的官方维修手册,可技师们真正解决疑难杂症,靠的往往不是手册,而是**彼此之间的经验交流**——碰面时、吃饭时,你一句我一句地讲「我遇到过一台特别邪门的机器,后来发现是……」。真正救场的诀窍,是在技师之间的**故事和切磋**里流传的,而不是躺在手册里的条文。这些非正式的同行交流网络,本身就是一个活生生的实践社区。"
+  },
+  {
+   "type": "quote",
+   "original": "最好用的知识,常常是在同行的闲谈和故事里传下来的,而不在正式的手册里。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "它补上了正式组织照顾不到的空白"
+  },
+  {
+   "type": "p",
+   "text": "讲到这儿,一个更深的问题浮出来了:一家公司明明有那么多正式的结构——组织架构、工作流程、知识库,**难道它们管不了知识的传承吗?** 温格的回答很清楚:这三样各有各的用,但它们凑在一起,恰好**都照顾不到隐性知识的那一块。**"
+  },
+  {
+   "type": "p",
+   "text": "你看:公司的**层级架构**,管的是「谁向谁汇报」——它安排的是权力和责任;**流程**,管的是「事情按什么步骤走」——它规定的是动作的先后;**数据库**,存的是「能写得下来的信息」——它装的是显性知识。这三样都很重要,可**没有一样,是专门负责「老手脑子里那点隐性知识,怎么传给新手、怎么在同行间不断更新」的。** 这中间,天然留着一块空白。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "层级、流程、数据库各管一摊,却没有一样在管「隐性知识如何在同行间传承与更新」;实践社区横跨部门、以知识为纽带,恰好补上这块空白。",
+   "svg": "<svg viewBox=\"0 0 560 330\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">正式组织的三样,都照顾不到隐性知识</text><rect x=\"26\" y=\"46\" width=\"160\" height=\"84\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"200\" y=\"46\" width=\"160\" height=\"84\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"374\" y=\"46\" width=\"160\" height=\"84\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"106\" y=\"78\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">层级架构</text><text x=\"106\" y=\"104\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">谁向谁汇报</text><text x=\"280\" y=\"78\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">流程</text><text x=\"280\" y=\"104\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">按什么步骤走</text><text x=\"454\" y=\"78\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">数据库</text><text x=\"454\" y=\"104\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">能写下的信息</text><rect x=\"26\" y=\"148\" width=\"508\" height=\"54\" rx=\"7\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\"/><text x=\"280\" y=\"172\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">空白:隐性知识如何在同行间传承与更新?</text><text x=\"280\" y=\"192\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">—— 上面三样,没有一样管这件事</text><path d=\"M280 204 L280 222\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><polygon points=\"280,230 275,220 285,220\" style=\"fill:var(--cinnabar-pure)\"/><rect x=\"26\" y=\"232\" width=\"508\" height=\"78\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><text x=\"280\" y=\"264\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"16\">实践社区</text><text x=\"280\" y=\"290\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">横跨部门 · 以知识为纽带 · 恰好补上这块空白</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "而实践社区,恰好就长在这块空白上。它**横跨部门、以知识为纽带**——把本来分散在不同科室、不同项目里、做着同一类事的人,用「共同的专业」这根线串起来。它不归任何一个部门管,却让老手的诀窍传给新手、让分散各处的经验汇到一处、让大家在**「做中学」**。正式组织没顾上的那件事,它接住了。"
+  },
+  {
+   "type": "h2",
+   "text": "它是「组织学习」的活水"
+  },
+  {
+   "type": "p",
+   "text": "把这些连起来看,实践社区之于一个组织,就像**活水之于一片田**。一个有着活跃实践社区的组织,能做到几件很要紧的事:**把一处的教训,很快变成众人的经验;把一个人的创新,很快扩散成一群人的能力。** 某个团队踩过的坑、摸索出的巧办法,不必等它写成文件、层层上报,就能通过同行的交流,横着传到其他人那里。"
+  },
+  {
+   "type": "p",
+   "text": "这就是「组织学习」最鲜活的样子。**知识不再是死在硬盘里、没人打开的文件,而是在人群中流动、生长的活水**——它在一次次交流里被用起来、被改进、被传下去,越流越活。一个组织的学习能力,很大程度上,就藏在这些活水般的实践社区里。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "实践社区像一条河道:老手的诀窍流向新手、一处的教训汇成众人的经验、个人的创新长成集体的能力——知识在人群中流动、生长。",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">知识的活水:在人群中流动、生长</text><rect x=\"212\" y=\"56\" width=\"136\" height=\"188\" rx=\"12\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><text x=\"280\" y=\"142\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"16\">实践</text><text x=\"280\" y=\"166\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"16\">社区</text><text x=\"66\" y=\"96\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">老手的诀窍</text><text x=\"66\" y=\"154\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">一处的教训</text><text x=\"66\" y=\"212\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">个人的创新</text><path d=\"M120 91 L202 91\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><polygon points=\"210,91 200,86 200,96\" style=\"fill:var(--ink-soft)\"/><path d=\"M120 150 L202 150\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><polygon points=\"210,150 200,145 200,155\" style=\"fill:var(--ink-soft)\"/><path d=\"M120 207 L202 207\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><polygon points=\"210,207 200,202 200,212\" style=\"fill:var(--ink-soft)\"/><path d=\"M358 91 L440 91\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><polygon points=\"448,91 438,86 438,96\" style=\"fill:var(--cinnabar-pure)\"/><path d=\"M358 150 L440 150\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><polygon points=\"448,150 438,145 438,155\" style=\"fill:var(--cinnabar-pure)\"/><path d=\"M358 207 L440 207\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><polygon points=\"448,207 438,202 438,212\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"496\" y=\"96\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">新手学会</text><text x=\"496\" y=\"154\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">众人的经验</text><text x=\"496\" y=\"212\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">集体的能力</text><text x=\"280\" y=\"278\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">知识不再是死在硬盘里的文件,而是流动生长的活水</text></svg>"
+  },
+  {
+   "type": "quote",
+   "original": "实践社区,是组织里知识流动和生长的活水。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "一点分寸:活水是「流」出来的,不是「逼」出来的"
+  },
+  {
+   "type": "p",
+   "text": "不过,越是看到实践社区的价值,越要记住一个容易被管理者忽略的分寸——这也是全书后面会反复强调、末章更要专门讲的:**这份活知识,只在自愿的互动里流动。**"
+  },
+  {
+   "type": "p",
+   "text": "隐性知识的传递,靠的是人愿意讲、愿意教、愿意凑在一起切磋。**这种「愿意」,是逼不出来的。** 你可以给它搭一个台、浇一点水、留一段时间,让同行们有机会常来常往;但你一旦想拿考核指标去逼人「每周必须贡献几条经验」,活水立刻就变成了应付差事的死水——人们会交出一堆没营养的文档,却把真正的诀窍捂得更紧。**知识分享是「培育」出来的,不是「管制」出来的。** 这一点,是理解后面所有培育原则的前提,这里先埋下一颗种子。"
+  },
+  {
+   "type": "h2",
+   "text": "收束:最值钱的东西,最容易被漏掉"
+  },
+  {
+   "type": "p",
+   "text": "回到开头那位两手空空的老师傅。读完这一章,你会明白他手里那点「说不清的本事」,为什么这么金贵——**它正是组织最宝贵、却也最容易从正式结构的指缝里漏掉的那类知识。**"
+  },
+  {
+   "type": "p",
+   "text": "层级、流程、数据库,都抓不住它;能抓住它的,是一个让同行持续交流、彼此传承的场——**实践社区**。它照管着这潭活水,让老手的手感传给新人、让个人的灵光变成集体的本事。**这,就是它值得一个组织花力气去培育的根本原因。** 下一章,我们就来拆开看:一个真正的实践社区,是由哪三样东西咬合而成的。"
+  },
+  {
+   "type": "figure",
+   "ftype": "金句卡",
+   "caption": "本章题眼:最值钱的知识写不进手册,它只在同行的互动里活着流动——实践社区,就是照管这潭活水的容器。",
+   "svg": "<svg viewBox=\"0 0 560 320\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"20\" y=\"20\" width=\"520\" height=\"280\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"38\" y=\"38\" width=\"484\" height=\"244\" rx=\"6\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1\"/><rect x=\"52\" y=\"52\" width=\"46\" height=\"46\" rx=\"5\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"75\" y=\"82\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\" font-size=\"20\">观</text><text x=\"280\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"24\">最值钱的知识,写不进手册;</text><text x=\"280\" y=\"192\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"24\">它只在同行的互动里,活着流动。</text><line x1=\"150\" y1=\"224\" x2=\"410\" y2=\"224\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"280\" y=\"254\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">层级、流程、数据库都抓不住的那潭活水。</text><text x=\"280\" y=\"282\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">《打造实践社区》· 第2章</text></svg>"
+  }
+ ]
+}

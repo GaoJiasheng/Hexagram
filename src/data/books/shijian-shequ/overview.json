@@ -1,0 +1,211 @@
+{
+  "title": "白话《打造实践社区》· 全书总览",
+  "subtitle": "温格（Wenger）等人奠定「实践社区（Community of Practice）」概念的经典——一群人因共同在乎某个领域、共同的问题或同一份热爱而自发聚到一起、把这门手艺越做越好；它照管那些写不进手册的隐性知识，补上正式组织架构照顾不到的那块活水。全书最深一句提醒藏在书名里：这种社区只能「培育」，不能「命令」。",
+  "centralIdea": "《打造实践社区》奠定了「实践社区（Community of Practice）」这个概念：一群人因为共同在乎某个领域、共同的问题或同一份热爱而自发聚到一起，通过持续互动把这门手艺越做越好——它不是被分配的团队，而是靠共同的知识与情谊有机生长的活物。温格（Wenger）等人指出，一个真正的实践社区必须同时具备三要素：领域（共同在乎什么）、社区（彼此的关系与信任）、实践（一起打磨的共享家当）；它最大的价值，是照管那些写不进数据库、装不进流程手册的隐性知识——经验、诀窍、判断力、只可意会的手感，补上正式组织架构照顾不到的那块活知识。但全书最深的一句提醒藏在书名里：实践社区只能「培育（cultivate）」，不能「命令（command）」——组织能做的是提供土壤（时间、空间、认可、资源与连接的机会），而不能靠行政命令强造、靠 KPI 逼出真正的分享；一旦过度管制、把它异化成又一个官僚任务、用硬指标去考核，自发的热情与信任就会枯死。所以真正的滋养，是让对的人有机会、有理由、有余裕地聚到一起，然后信任他们、给他们舞台，而不是盯着他们、逼着他们。",
+  "featured": true,
+  "hero": {
+    "badge": "全书 · 核心",
+    "headline": "组织真正的竞争力，藏在那些写不进数据库、只能在人与人之间流动的活知识里——而照管这活知识的容器，只能培育，不能命令。",
+    "tagline": "领域 × 社区 × 实践，三者咬合才活；核心 / 活跃 / 外围各安其位，潜水也是合法的参与；你能浇水施肥，却造不出一片森林。"
+  },
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "你有没有见过这样的场景：公司斥资建了知识库、写满了流程手册、开了无数场培训，可真正解决疑难杂症的，还是老张午饭时随口点拨新人的那几句话；一个行业里最顶尖的手艺，往往不在任何教材里，而在几位老师傅彼此切磋、示范、拌嘴的来来回回中悄悄传下去。**温格（Wenger）、McDermott、Snyder** 在《打造实践社区》里，给这种「一群人因为在乎同一件事、想把它做得更好，而自发聚在一起持续切磋」的现象起了个名字——**实践社区（Community of Practice，简称 CoP）**。这本书是知识管理与组织学习领域的奠基之作，它要回答的问题很实在：一个组织最难被复制的竞争力，常常不在它的架构图和数据库里，而在这些看不见、管不着、却真真切切在人与人之间流动的活知识里；而这样的社区，到底是什么、为什么重要、又该怎么去照料？"
+    },
+    {
+      "type": "p",
+      "text": "这本书不长，但脉络清楚。它先厘清**实践社区到底是什么、和团队部门有什么根本区别**；再说透它**为什么值得组织认真对待**——因为它照管的是那部分最难传、也最值钱的活知识；接着讲**它内部是怎样的结构**（三个参与层次），以及**该怎样一步步去照料**（七条原则、五个生命周期阶段）；最后落到全书真正的分量所在——一句听起来简单、做起来极难的提醒：这种社区，只能培育，不能命令。下面就顺着这条线，一节一节讲清楚。"
+    },
+    {
+      "type": "h2",
+      "text": "一、什么是实践社区：因共同热爱而自发聚起来的人"
+    },
+    {
+      "type": "p",
+      "text": "先说它是什么。**实践社区，是一群因为共同关注某个领域、面对共同的问题、或对某件事怀着同一份热情，而自发聚到一起，并通过持续互动把这件事越做越好的人。** 一群工程师定期凑在一起交流疑难，一群医生私下分享棘手的病例，一个行业里彼此登门切磋的手艺人——这些都是实践社区。它的关键词是「自发」和「持续」：成员不是被谁分配来的，而是因为**「我想把这门手艺、这门专业做得更好」**才聚拢；他们也不是开一次会就散，而是一来二去、长期往来，在反复的交流中越走越近、越做越精。"
+    },
+    {
+      "type": "p",
+      "text": "所以它和公司里的正式团队、部门有着根本的不同。**正式团队是由行政任务定义的——你被分到哪个项目、归哪个部门管，就和谁是「一队」；实践社区却是由共同的知识与热爱定义的、有机生长的活物。** 前者的边界是组织画出来的，后者的边界是「谁真的在乎这件事」自己长出来的。也正因如此，实践社区常常横跨部门、横跨公司、甚至横跨行业——把散落在各个角落、却同样痴迷于某门手艺的人，悄悄连成一张网。"
+    },
+    {
+      "type": "p",
+      "text": "举个身边的例子。一家公司里，客服、维修、销售分属不同部门，各背各的 KPI；可几个爱琢磨的老维修工，会在下班后的群里、在茶水间里，反复交流「这台老机型的怪毛病其实是某个电容虚焊」「那个客户嘴上说要 A，其实要的是 B」。没人给他们派这个活，也没人考核这个群活不活跃，但正是在这一来一往里，最难缠的故障有了解法、最难搞的客户有了应对。这个群，就是一个活生生的实践社区——它不在组织架构图上，却实实在在地托着这家公司的服务水准。很多组织最宝贵的能力，就是这样在正式结构的缝隙里，靠一群「多管闲事」的人自发长出来的。"
+    },
+    {
+      "type": "quote",
+      "original": "实践社区，是一群因为在乎同一件事、想把它做得更好，而自发聚到一起持续切磋的人——不是被谁分配来的团队。",
+      "translation": "对「什么是实践社区」的转述——自愿、持续、由共同的知识与热爱定义，而非由行政任务定义。"
+    },
+    {
+      "type": "h2",
+      "text": "二、三要素：领域、社区、实践，缺一不可"
+    },
+    {
+      "type": "p",
+      "text": "温格给出了一个极简却极有用的判据：一个真正的实践社区，必须同时具备**领域（domain）、社区（community）、实践（practice）**三样东西，三者咬合，缺一就不成立。"
+    },
+    {
+      "type": "p",
+      "text": "**领域**，是社区共同关注、彼此认同的那个知识主题——回答的是「**我们共同在乎什么、这个社区到底是关于什么的**」。它给社区以身份和意义：是「儿科重症护理」，还是「嵌入式系统调试」，还是「古建筑木作」？没有一个大家都上心的领域，人就没有聚拢的理由。**社区**，是成员之间真实的关系、信任与互动——回答的是「**我们是谁、如何彼此学习与相处**」。光有一个共同话题还不够，那只是一个标签；要有人愿意开口问「这个我搞不定，谁帮我看看」，有人愿意掏心窝子地答，一来一往中长出信任，才叫社区。**实践**，则是成员在长期交流里攒下来的共享家当——共同的做法、工具、方法、案例、故事与经验（shared repertoire），回答的是「**我们一起在做什么、在打磨什么共同的东西**」。"
+    },
+    {
+      "type": "p",
+      "text": "三者的关系可以这样体会：**有领域而无社区，是一堆各看各的资料**——大家都对同一个主题感兴趣，却互不相识、从不往来；**有社区而无实践，是一个联谊会**——关系是热络的，却没沉淀下任何能拿出来用、传下去的真东西；唯有三者齐备，知识才会在人与人之间「活」起来。"
+    },
+    {
+      "type": "figure",
+      "ftype": "咬合图",
+      "caption": "三要素咬合：领域（我们共同在乎什么）、社区（我们是谁、如何相处）、实践（共享的做法与家当），三个圈交叠的中心，才是真正的实践社区。少任何一个，都塌成资料堆或联谊会。",
+      "svg": "<svg viewBox='0 0 560 380' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='30' text-anchor='middle' font-size='18' font-weight='bold' style='fill:var(--ink)'>实践社区 = 领域 ∩ 社区 ∩ 实践</text><circle cx='280' cy='158' r='96' style='fill:none;stroke:var(--cinnabar-pure)' stroke-width='1.5'/><circle cx='206' cy='256' r='96' style='fill:none;stroke:var(--cinnabar-pure)' stroke-width='1.5'/><circle cx='354' cy='256' r='96' style='fill:none;stroke:var(--cinnabar-pure)' stroke-width='1.5'/><text x='280' y='96' text-anchor='middle' font-size='15' font-weight='bold' style='fill:var(--ink)'>领域 domain</text><text x='280' y='116' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>我们共同在乎什么</text><text x='138' y='300' text-anchor='middle' font-size='15' font-weight='bold' style='fill:var(--ink)'>社区 community</text><text x='138' y='320' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>我们是谁、如何相处</text><text x='422' y='300' text-anchor='middle' font-size='15' font-weight='bold' style='fill:var(--ink)'>实践 practice</text><text x='422' y='320' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>共享的做法与家当</text><text x='280' y='222' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--cinnabar-pure)'>实践社区</text><text x='280' y='242' text-anchor='middle' font-size='10.5' style='fill:var(--ink-soft)'>三者咬合才活</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "三、它不是团队、不是部门、不是项目组"
+    },
+    {
+      "type": "p",
+      "text": "为了不把实践社区和别的组织形式搞混，值得把它和正式团队掰开来比一比。正式团队为**完成一个交付物**而存在，任务做完、项目结项，团队就地解散；成员是被**指派**进来的，边界由组织架构划定，靠**上下级和考核**来驱动。实践社区不一样：它为**发展某一门知识与本领**而存在，只要这门手艺还有人在乎，它就可以一直活下去、活很多年；成员是**自愿**聚来的，边界由「谁真的关心这个领域」自然界定，靠**共同的热爱与彼此的认可**来维系，而不是靠谁给谁下命令。"
+    },
+    {
+      "type": "p",
+      "text": "这不是说实践社区要取代团队和部门——恰恰相反，它是**补位**的那一块。正式结构擅长把确定的活儿高效地干完，却照顾不到那些跨越边界、需要长期浸泡才能长出来的本领；实践社区正好接住这一块，让「把手艺做深、做精、传下去」这件事有了容身之所。可以打个比方：部门和团队是组织的**骨架**，把责任和流程一格一格地撑起来；实践社区则是流淌在骨架之间的**血脉**，把本该四散的知识、经验和信任，在不同格子之间悄悄接通。骨架给组织以形，血脉给组织以活——两者不是谁替代谁，而是各司其职、缺一不可。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "实践社区 ≠ 正式团队：一个为交付物而生、结项即散、靠考核驱动；一个为发展本领而生、有人在乎就活着、靠热爱与认可维系。二者不是替代，而是补位。",
+      "svg": "<svg viewBox='0 0 560 360' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='28' text-anchor='middle' font-size='18' font-weight='bold' style='fill:var(--ink)'>实践社区，不是团队、不是部门</text><rect x='352' y='50' width='193' height='288' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.5'/><text x='192' y='70' font-size='13.5' font-weight='bold' style='fill:var(--ink-soft)'>正式团队</text><text x='362' y='70' font-size='13.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>实践社区</text><rect x='20' y='84' width='525' height='46' style='fill:none;stroke:var(--line)' stroke-width='1'/><text x='30' y='112' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>为何存在</text><text x='192' y='112' font-size='12' style='fill:var(--ink-soft)'>完成一个交付物</text><text x='362' y='112' font-size='12' style='fill:var(--ink)'>发展一门知识本领</text><rect x='20' y='132' width='525' height='46' style='fill:none;stroke:var(--line)' stroke-width='1'/><text x='30' y='160' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>谁能进来</text><text x='192' y='160' font-size='12' style='fill:var(--ink-soft)'>被指派进来</text><text x='362' y='160' font-size='12' style='fill:var(--ink)'>自愿聚拢而来</text><rect x='20' y='180' width='525' height='46' style='fill:none;stroke:var(--line)' stroke-width='1'/><text x='30' y='208' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>边界由谁定</text><text x='192' y='208' font-size='12' style='fill:var(--ink-soft)'>组织架构划定</text><text x='362' y='208' font-size='12' style='fill:var(--ink)'>谁真在乎自然界定</text><rect x='20' y='228' width='525' height='46' style='fill:none;stroke:var(--line)' stroke-width='1'/><text x='30' y='256' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>靠什么驱动</text><text x='192' y='256' font-size='12' style='fill:var(--ink-soft)'>上下级与考核</text><text x='362' y='256' font-size='12' style='fill:var(--ink)'>热爱与彼此认可</text><rect x='20' y='276' width='525' height='46' style='fill:none;stroke:var(--line)' stroke-width='1'/><text x='30' y='304' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>何时结束</text><text x='192' y='304' font-size='12' style='fill:var(--ink-soft)'>项目结项即解散</text><text x='362' y='304' font-size='12' style='fill:var(--ink)'>有人在乎就活着</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "四、为什么它重要：照管那些写不进手册的活知识"
+    },
+    {
+      "type": "p",
+      "text": "实践社区之所以要紧，要从一个常被忽视的事实说起：**组织真正的竞争力，很大程度藏在难以被正式结构捕捉的知识里，尤其是隐性知识（tacit knowledge）。** 什么是隐性知识？是老师傅一眼看出这炉钢火候到没到的判断力，是资深医生凭「感觉不对」多查一步救回一条命的直觉，是谈判高手何时该沉默、何时该逼一句的分寸——是经验、诀窍、手感，是**只可意会、难以言传**的那部分本事。"
+    },
+    {
+      "type": "p",
+      "text": "这类知识有个要命的特点：**它写不进数据库，装不进流程手册。** 你可以把「操作步骤 1234」写成文档，却没法把「什么时候该破例」写清楚；你能把结论存进知识库，却存不进那份得来不易的判断力。它只能在**人与人的实践互动中流动、示范与传承**——老手做给新手看、新手在旁边打下手、遇到活的难题一起上手拆解，这份手感才慢慢过到下一个人身上。**而实践社区，正是照管（steward）这类活知识的容器。** 它让老手的经验传给新手，让分散在各处的智慧汇流成河，让组织在「做中学」。在这个知识越来越值钱的时代，它是组织学习与创新的活水，补上了层级、流程、数据库这些正式架构照顾不到的那一块。"
+    },
+    {
+      "type": "p",
+      "text": "这也解释了一个让很多公司头疼的现象：明明砸了大钱上知识管理系统，要求人人「把经验沉淀成文档」，最后库里堆满了没人看的文件，真正的本事却还是没留住，老员工一走，一段经验就跟着断了。原因就藏在隐性知识的性子里——你最想留住的那部分知识，本就装不进文档；它是「湿」的，得靠人带人、手把手才能过继；而把它硬逼成一份份「干」的文档，恰恰把最鲜活的那口气蒸发掉了。所以聪明的组织，不是拼命去建一个更大的库，而是去养护一个个能让老手和新手真正碰面、一起干活的实践社区——**让知识在人身上、在关系里活着，而不是在硬盘里睡着。** 库和社区不是二选一，但真正让知识流动起来的，是后者。"
+    },
+    {
+      "type": "quote",
+      "original": "能写进手册的，都不是最值钱的那部分本事；真正的判断力与手感，只能在人与人的实践里传下去。",
+      "translation": "对隐性知识的转述——它无法被正式结构捕捉，实践社区正是照管这类活知识的容器。"
+    },
+    {
+      "type": "figure",
+      "ftype": "容器图",
+      "caption": "两种知识、两种容器：显性知识（步骤、结论、规范）装得进数据库与手册；隐性知识（经验、诀窍、判断、手感）只能在人与人之间流动，而实践社区就是照管这份活知识的容器。",
+      "svg": "<svg viewBox='0 0 560 360' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='28' text-anchor='middle' font-size='18' font-weight='bold' style='fill:var(--ink)'>两种知识，两种容器</text><rect x='24' y='52' width='232' height='276' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='140' y='82' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--ink)'>显性知识</text><text x='140' y='102' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>explicit knowledge</text><rect x='70' y='120' width='140' height='58' rx='6' style='fill:none;stroke:var(--ink-faint)' stroke-width='1.2'/><line x1='84' y1='136' x2='196' y2='136' style='stroke:var(--ink-faint)' stroke-width='1'/><line x1='84' y1='150' x2='196' y2='150' style='stroke:var(--ink-faint)' stroke-width='1'/><line x1='84' y1='164' x2='160' y2='164' style='stroke:var(--ink-faint)' stroke-width='1'/><text x='140' y='205' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>步骤 · 结论 · 规范</text><text x='140' y='250' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>层级 / 流程 / 数据库</text><text x='140' y='300' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>写得进数据库、装得进手册</text><rect x='304' y='52' width='232' height='276' rx='10' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.6'/><text x='420' y='82' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>隐性知识</text><text x='420' y='102' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>tacit knowledge</text><line x1='356' y1='150' x2='420' y2='150' style='stroke:var(--cinnabar-pure)' stroke-width='1.2'/><line x1='420' y1='150' x2='484' y2='150' style='stroke:var(--cinnabar-pure)' stroke-width='1.2'/><circle cx='356' cy='143' r='7' style='fill:var(--cinnabar-pure)'/><path d='M345 166 q11 -18 22 0 z' style='fill:var(--cinnabar-pure)'/><circle cx='420' cy='143' r='7' style='fill:var(--cinnabar-pure)'/><path d='M409 166 q11 -18 22 0 z' style='fill:var(--cinnabar-pure)'/><circle cx='484' cy='143' r='7' style='fill:var(--cinnabar-pure)'/><path d='M473 166 q11 -18 22 0 z' style='fill:var(--cinnabar-pure)'/><text x='420' y='205' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>经验 · 诀窍 · 判断力 · 手感</text><text x='420' y='250' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>只在人与人的实践互动中流动</text><text x='420' y='300' text-anchor='middle' font-size='11.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>实践社区 = 照管活知识的容器</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "五、参与的三个层次：潜水也是合法的参与"
+    },
+    {
+      "type": "p",
+      "text": "一个常见的误解是：社区里人人都该踊跃发言、深度投入，不然就是不健康。温格的观察恰恰相反：**实践社区天然分成三个层次，而这三层各有各的价值。** 最里面是**核心圈（core group）**——少数最投入、最上心、实际推动社区运转的人，他们组织活动、挑起话题、维系着这团火；外面一圈是**活跃成员（active members）**——经常参与、但不主导的人；最外层是**外围成员（peripheral members）**——大多时候在「潜水」、观望、偶尔冒个泡的人。"
+    },
+    {
+      "type": "p",
+      "text": "关键的洞见在于：**外围参与是合法的、也是有价值的**——温格称之为「**合法的边缘性参与（legitimate peripheral participation）**」。那些只看不发的人，并不是社区的失败，他们**也在学习、也在受益**；而且随着时间推移，外围的人可能慢慢走向活跃、走向核心，活跃的人也可能因为忙碌暂时退回外围。所以**别逼每个人都高强度投入**，而要让成员能在三个层次之间自由流动，给核心、活跃、外围各自都留一个舒服的位置。这也一举回应了那个老问题——「为什么很多社区里九成的人只看不发」：那是健康社区的常态，不是病。"
+    },
+    {
+      "type": "p",
+      "text": "这个洞见落到操作上，就是**别用一把尺子去量所有人**。对核心圈那几个「烧火的人」，要给他们认可、舞台，有时还要帮他们减负，别让最上心的人先累到心灰意冷；对活跃成员，多给他们出力和被看见的机会，留一条能往核心走的通道；对外围的大多数，则要把参与的门槛压低、别立「不发言就踢人」这类规矩，让他们能舒舒服服地待着、随时能更深地卷进来。说到底，健康的社区是一个允许人**「按自己的节奏靠近」**的地方，而不是一台要求人人全速运转的机器——逼着外围表态、拿发言量排名，只会把本可以慢慢走近的人，直接吓跑。"
+    },
+    {
+      "type": "figure",
+      "ftype": "层次图",
+      "caption": "参与三层次：核心（少数推动运转的人）／活跃（常来但不主导）／外围（多在潜水观望）。外围不是失败，而是「合法的边缘性参与」——潜水也在学习受益，成员可在三层间自由流动。",
+      "svg": "<svg viewBox='0 0 560 380' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='28' text-anchor='middle' font-size='18' font-weight='bold' style='fill:var(--ink)'>参与的三个层次</text><circle cx='190' cy='210' r='150' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><circle cx='190' cy='210' r='100' style='fill:var(--ink-faint);stroke:var(--line)' stroke-width='1'/><circle cx='190' cy='210' r='52' style='fill:var(--cinnabar-pure)'/><text x='190' y='208' text-anchor='middle' font-size='15' font-weight='bold' style='fill:var(--paper-raised)'>核心</text><text x='190' y='226' text-anchor='middle' font-size='10' style='fill:var(--paper-raised)'>core</text><text x='190' y='135' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--ink)'>活跃 active</text><text x='190' y='82' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--ink-soft)'>外围 peripheral</text><line x1='190' y1='210' x2='190' y2='68' style='stroke:var(--cinnabar-pure)' stroke-width='1' stroke-dasharray='4 4'/><path d='M186 78 l4 -10 l4 10 z' style='fill:var(--cinnabar-pure)'/><path d='M186 200 l4 10 l4 -10 z' style='fill:var(--cinnabar-pure)'/><text x='388' y='128' font-size='13' font-weight='bold' style='fill:var(--cinnabar-pure)'>合法的边缘性参与</text><text x='388' y='150' font-size='11.5' style='fill:var(--ink-soft)'>legitimate peripheral</text><text x='388' y='168' font-size='11.5' style='fill:var(--ink-soft)'>participation</text><text x='388' y='210' font-size='11.5' style='fill:var(--ink)'>潜水的人也在学习、</text><text x='388' y='228' font-size='11.5' style='fill:var(--ink)'>也在受益</text><text x='388' y='262' font-size='11.5' style='fill:var(--ink)'>成员可在三层间</text><text x='388' y='280' font-size='11.5' style='fill:var(--ink)'>自由流动 ↕</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "六、培育社区的七条原则"
+    },
+    {
+      "type": "p",
+      "text": "既然社区要「培育」，温格给了七条实打实的原则，可以当作照料一个社区的操作提示："
+    },
+    {
+      "type": "p",
+      "text": "**⑴ 为演变而设计（design for evolution）**——社区会随着成员和需求不断生长变化，别一上来就把结构定死，要给它留出生长的弹性。**⑵ 开启内外对话**——既俯身倾听社区内部的声音，也主动引入外部的新知与挑战，免得闭门造车、越走越窄。**⑶ 邀请不同层次的参与**——为核心、活跃、外围各自设计合适的参与方式，而不是只服务那批最活跃的人。**⑷ 发展公共与私人两种空间**——既要有公开的活动与讨论，也要珍视成员之间一对一的私下往来，因为很多信任和知识，恰恰是在私底下流动的。"
+    },
+    {
+      "type": "p",
+      "text": "**⑸ 聚焦于价值（focus on value）**——持续让成员真切感到「参与是有收获的」，并帮大家把这份收获看见、说出来。**⑹ 结合熟悉与新鲜**——既提供稳定、熟悉、让人安心的常规，也时不时注入新话题、新活动的刺激，让人有所期待。**⑺ 为社区创造一种节奏（rhythm）**——定期相聚的节律（每周或每月的活动）是社区的「心跳」，有了它，社区才是活着的，而不是时断时续、聚一次散半年。"
+    },
+    {
+      "type": "p",
+      "text": "把这七条连起来读，你会发现它们没有一条是在教你「怎么管控成员」，全都是在琢磨「怎么让人更愿意来、更容易留、更有收获」。这不是偶然——七条背后是同一个信念：**社区的活力不是管出来的，是养出来的。** 这也正好把话题引到全书最要紧的一层分寸上去。"
+    },
+    {
+      "type": "figure",
+      "ftype": "一览图",
+      "caption": "培育七原则：为演变而设计、开启内外对话、邀请不同层次参与、兼顾公共与私人空间、聚焦于价值、结合熟悉与新鲜、为社区创造一种节奏——七条都指向同一件事：给活物留出生长的空间与理由。",
+      "svg": "<svg viewBox='0 0 560 440' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='30' text-anchor='middle' font-size='18' font-weight='bold' style='fill:var(--ink)'>培育社区的七条原则</text><circle cx='46' cy='66' r='15' style='fill:var(--cinnabar-pure)'/><text x='46' y='71' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--paper-raised)'>1</text><text x='76' y='64' font-size='14' font-weight='bold' style='fill:var(--ink)'>为演变而设计</text><text x='76' y='84' font-size='11.5' style='fill:var(--ink-soft)'>留出生长的弹性，别把结构定死</text><circle cx='46' cy='118' r='15' style='fill:var(--cinnabar-pure)'/><text x='46' y='123' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--paper-raised)'>2</text><text x='76' y='116' font-size='14' font-weight='bold' style='fill:var(--ink)'>开启内外对话</text><text x='76' y='136' font-size='11.5' style='fill:var(--ink-soft)'>既听内部声音，也引外部新知</text><circle cx='46' cy='170' r='15' style='fill:var(--cinnabar-pure)'/><text x='46' y='175' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--paper-raised)'>3</text><text x='76' y='168' font-size='14' font-weight='bold' style='fill:var(--ink)'>邀请不同层次参与</text><text x='76' y='188' font-size='11.5' style='fill:var(--ink-soft)'>为核心 / 活跃 / 外围各设入口</text><circle cx='46' cy='222' r='15' style='fill:var(--cinnabar-pure)'/><text x='46' y='227' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--paper-raised)'>4</text><text x='76' y='220' font-size='14' font-weight='bold' style='fill:var(--ink)'>兼顾公共与私人空间</text><text x='76' y='240' font-size='11.5' style='fill:var(--ink-soft)'>公开活动之外，珍视私下往来</text><circle cx='46' cy='274' r='15' style='fill:var(--cinnabar-pure)'/><text x='46' y='279' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--paper-raised)'>5</text><text x='76' y='272' font-size='14' font-weight='bold' style='fill:var(--ink)'>聚焦于价值</text><text x='76' y='292' font-size='11.5' style='fill:var(--ink-soft)'>让人真切感到「参与有收获」</text><circle cx='46' cy='326' r='15' style='fill:var(--cinnabar-pure)'/><text x='46' y='331' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--paper-raised)'>6</text><text x='76' y='324' font-size='14' font-weight='bold' style='fill:var(--ink)'>结合熟悉与新鲜</text><text x='76' y='344' font-size='11.5' style='fill:var(--ink-soft)'>稳定的常规 ＋ 新鲜的刺激</text><circle cx='46' cy='378' r='15' style='fill:var(--cinnabar-pure)'/><text x='46' y='383' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--paper-raised)'>7</text><text x='76' y='376' font-size='14' font-weight='bold' style='fill:var(--ink)'>为社区创造一种节奏</text><text x='76' y='396' font-size='11.5' style='fill:var(--ink-soft)'>定期相聚是社区的「心跳」</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "七、生命周期：从潜在到成熟，再到体面地转身"
+    },
+    {
+      "type": "p",
+      "text": "实践社区不是建好就一劳永逸的，它像活物一样有自己的生命周期，通常经历五个阶段：**潜在（potential）→ 聚合（coalescing）→ 成熟（maturing）→ 照管（stewardship）→ 转变或消亡（transformation）**。不同阶段，照料的重点各不相同：潜在期，重在把散落各处、气味相投的人找到，发现彼此的共同点；聚合期，重在让这群人真正建立起关系与信任，尝到第一口甜头；成熟期，社区已然成形，重心转向保持活力、扩展深度、把价值稳稳做实；照管期，则要对抗惯性与倦怠，不断更新话题、迎接新血；到了最后，或是完成一次脱胎换骨的转变，或是体面地、有尊严地收尾——一个社区的谢幕并不丢人，硬撑着一具空壳才是。"
+    },
+    {
+      "type": "figure",
+      "ftype": "流程图",
+      "caption": "生命周期五阶段：潜在 → 聚合 → 成熟 → 照管 → 转变/消亡。每一阶段的照料重点不同，初期在找人与找共同点，成熟期在保持活力做实价值，后期或脱胎换骨、或体面收尾。",
+      "svg": "<svg viewBox='0 0 640 200' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='30' text-anchor='middle' font-size='18' font-weight='bold' style='fill:var(--ink)'>实践社区的生命周期</text><rect x='20' y='60' width='100' height='66' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='70' y='92' text-anchor='middle' font-size='13.5' font-weight='bold' style='fill:var(--ink)'>潜在</text><text x='70' y='112' text-anchor='middle' font-size='9.5' style='fill:var(--ink-soft)'>potential</text><text x='70' y='150' text-anchor='middle' font-size='10.5' style='fill:var(--ink-soft)'>找到气味相投的人</text><line x1='122' y1='93' x2='142' y2='93' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><path d='M140 88 l8 5 l-8 5 z' style='fill:var(--cinnabar-pure)'/><rect x='145' y='60' width='100' height='66' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='195' y='92' text-anchor='middle' font-size='13.5' font-weight='bold' style='fill:var(--ink)'>聚合</text><text x='195' y='112' text-anchor='middle' font-size='9.5' style='fill:var(--ink-soft)'>coalescing</text><text x='195' y='150' text-anchor='middle' font-size='10.5' style='fill:var(--ink-soft)'>建立关系与信任</text><line x1='247' y1='93' x2='267' y2='93' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><path d='M265 88 l8 5 l-8 5 z' style='fill:var(--cinnabar-pure)'/><rect x='270' y='60' width='100' height='66' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.5'/><text x='320' y='92' text-anchor='middle' font-size='13.5' font-weight='bold' style='fill:var(--ink)'>成熟</text><text x='320' y='112' text-anchor='middle' font-size='9.5' style='fill:var(--ink-soft)'>maturing</text><text x='320' y='150' text-anchor='middle' font-size='10.5' style='fill:var(--ink-soft)'>保持活力、做实价值</text><line x1='372' y1='93' x2='392' y2='93' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><path d='M390 88 l8 5 l-8 5 z' style='fill:var(--cinnabar-pure)'/><rect x='395' y='60' width='100' height='66' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='445' y='92' text-anchor='middle' font-size='13.5' font-weight='bold' style='fill:var(--ink)'>照管</text><text x='445' y='112' text-anchor='middle' font-size='9.5' style='fill:var(--ink-soft)'>stewardship</text><text x='445' y='150' text-anchor='middle' font-size='10.5' style='fill:var(--ink-soft)'>更新话题、迎新血</text><line x1='497' y1='93' x2='517' y2='93' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><path d='M515 88 l8 5 l-8 5 z' style='fill:var(--cinnabar-pure)'/><rect x='520' y='60' width='100' height='66' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='570' y='92' text-anchor='middle' font-size='13.5' font-weight='bold' style='fill:var(--ink)'>转变/消亡</text><text x='570' y='112' text-anchor='middle' font-size='9.5' style='fill:var(--ink-soft)'>transformation</text><text x='570' y='150' text-anchor='middle' font-size='10.5' style='fill:var(--ink-soft)'>脱胎换骨 或 体面收尾</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "八、分寸：只能培育，不能命令"
+    },
+    {
+      "type": "p",
+      "text": "读这本书，最要记牢的一层意思，就藏在书名里那个词——**培育（cultivate）**。实践社区是**有机的、自愿的活物**：你可以给它浇水、施肥、给足阳光——提供空间、时间、认可、资源，以及让人彼此连接的机会；**但你不能靠一纸行政命令，强行「造」出一个真社区，也不能靠 KPI，逼出真正的知识分享。** 这就像种一片森林——你能改良土壤、挡风引水，却不能拽着树苗往上拔。全书用「cultivate（培育）」而不用「build（建造）」「manage（管理）」，分量全在这里。"
+    },
+    {
+      "type": "p",
+      "text": "所以组织该扮演的角色，是**「提供土壤」而不是「控制」**：给社区时间与空间的合法性（让人不必偷偷摸摸地聚）、给资源与高层的支持、并且给它一份不被过度管控的自由。反过来，**过度的管制、僵硬的指标化——比如硬性考核发帖数、把社区异化成又一个必须交差的官僚任务——恰恰会亲手扼杀它的生命力。** 道理很朴素：人一旦感到「这是被逼的、是要被考核的」，那份自发的热情与信任，当场就蒸发了。真正的滋养，是**让对的人有机会、有理由、也有余裕地聚到一起，然后信任他们、把舞台交给他们**，而不是盯着他们、逼着他们、量着他们。这本书教的从来不是一套「运营 KPI」，而是一种照料活物的耐心与分寸——**你能做的是让森林更容易长出来，却永远造不出一棵真正的树。**"
+    },
+    {
+      "type": "p",
+      "text": "这条分寸，值得再举个正反的例子体会。**反面**是很多人都见过的：领导听说「实践社区」是个好东西，大手一挥，行政指定每个部门必须成立一个、每人每月必须发够几个帖、季度末按活跃度排名通报——不出半年，群里就只剩下为了凑数而转发的鸡汤和「学习了」，真正的高手早已默默退场。这不是社区，这是又一张要填的表。**正面**则往往是这样：组织只是做了几件不起眼的事——认下这群人聚会的时间是「正经工作」而非摸鱼，给一间能坐下来的屋子、一点活动经费，请一位受尊敬的老手牵头，然后就退到后面，不打分、不排名、不催促。剩下的，交给那份「想把手艺做好」的心气自己去烧。两种做法用的词可能一模一样，分野只在一件事上：你究竟是**信任并放手**，还是**盯着并驱赶**。"
+    },
+    {
+      "type": "quote",
+      "original": "你能浇水、施肥、给足阳光，却不能拽着树苗往上拔——社区只能培育，不能命令。",
+      "translation": "对全书书名深意的凝练——cultivate 而非 build/manage；组织提供土壤，而非控制。"
+    },
+    {
+      "type": "quote",
+      "original": "一旦成员感到「这是被逼的、要被考核的」，自发的热情与信任当场就蒸发了——硬指标是社区的毒药。",
+      "translation": "对分寸的提醒——过度管制与指标化会扼杀社区的生命力，滋养的关键是信任与放手。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "Etienne Wenger、Richard McDermott、William M. Snyder《Cultivating Communities of Practice》(Harvard Business Review Press, 2002)：奠定「实践社区（Community of Practice）」概念的经典之作，聚焦知识管理与组织学习",
+        "核心概念：实践社区＝一群因共同关注某领域、共同问题或同一份热爱而自发聚到一起、通过持续互动把这件事越做越好的人——由共同的知识与情谊定义，而非行政任务",
+        "三要素（缺一不可）：领域 domain（我们共同在乎什么）／社区 community（我们是谁、如何相处）／实践 practice（共享的做法与家当 shared repertoire）",
+        "核心价值：照管（steward）隐性知识（tacit knowledge）——写不进数据库、装不进手册的经验、诀窍、判断力与手感，只能在人与人的实践互动中流动传承",
+        "参与三层次：核心 core／活跃 active／外围 peripheral；外围参与是「合法的边缘性参与（legitimate peripheral participation）」，潜水也在学习受益，成员可在三层间自由流动",
+        "培育七原则：为演变而设计、开启内外对话、邀请不同层次参与、发展公共与私人空间、聚焦于价值、结合熟悉与新鲜、为社区创造一种节奏",
+        "生命周期五阶段：潜在 potential → 聚合 coalescing → 成熟 maturing → 照管 stewardship → 转变/消亡 transformation",
+        "研读分寸：实践社区只能「培育（cultivate）」不能「命令（command）」——组织的角色是提供土壤（时间、空间、认可、资源、连接机会）而非控制；过度管制与指标化（硬性考核发帖数、异化成官僚任务）会扼杀其生命力，真正的滋养是让对的人有机会聚到一起，然后信任他们、给他们舞台",
+        "本文为原创转述与导读，非一套社群运营 KPI 或管控手册；重在理解「活知识如何在人与人之间生长与传承」，并守住「只能培育、不能命令」的底线"
+      ]
+    }
+  ]
+}

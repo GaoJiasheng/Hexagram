@@ -698,6 +698,18 @@ function BelongingRings() {
   )
 }
 
+// 母题:三环相扣——领域·社区·实践三个圆相互交叠,共同交汇处朱色(呼应实践社区的三要素:domain/community/practice 咬合而生)。
+function PracticeTriad() {
+  const cx = 150, cy = 296, r = 42, off = 26
+  const centers = [[cx, cy - off], [cx - off * 0.87, cy + off * 0.5], [cx + off * 0.87, cy + off * 0.5]]
+  return (
+    <g>
+      {centers.map(([x, y], i) => <circle key={i} cx={x} cy={y} r={r} fill="none" stroke={CREAM} strokeOpacity="0.42" strokeWidth="1.2" />)}
+      <circle cx={cx} cy={cy} r="7" fill={CINNABAR} />
+    </g>
+  )
+}
+
 // 母题:围成一圈——几个人(结点)手拉手围成一圈,连成闭环,其一朱色(呼应《聚在一起》:和人一起、彼此相连地建社群)。
 function CircleJoin() {
   const cx = 150, cy = 293, R = 66, N = 7
@@ -715,9 +727,81 @@ function CircleJoin() {
   )
 }
 
+// 母题:交织之线——三缕丝线上下起伏、彼此交织成一片(呼应《文化密码》:强团队文化由无数信号与连接交织而成),中缕朱色。
+function Weave() {
+  const mk = (y, ph) => { let d = `M62,${y}`; for (let i = 0; i <= 6; i++) { const x = 62 + i * 28; const yy = y + (((i + ph) % 2) ? 15 : -15); d += ` Q${x - 14},${yy} ${x},${y}` } return d }
+  return (
+    <g fill="none" strokeLinecap="round">
+      <path d={mk(272, 0)} stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.3" />
+      <path d={mk(298, 1)} stroke={CINNABAR} strokeOpacity="0.85" strokeWidth="1.9" />
+      <path d={mk(324, 0)} stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.3" />
+    </g>
+  )
+}
+
+// 母题:旗与众——一根旗杆挑起一面朱旗,杆下几个人点聚拢(呼应《部落》:一群人因一个理念与一位领袖而聚、追随一面旗)。
+function Banner() {
+  const px = 138
+  return (
+    <g>
+      <line x1={px} y1="212" x2={px} y2="372" stroke={CREAM} strokeOpacity="0.45" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M138,222 Q172,212 204,224 Q188,236 204,248 Q172,240 138,250 Z" fill={CINNABAR} opacity="0.9" />
+      {[[116, 360], [136, 368], [156, 360], [176, 368], [196, 360]].map(([x, y], i) => <circle key={i} cx={x} cy={y} r="5" fill={CREAM} fillOpacity="0.5" />)}
+    </g>
+  )
+}
+
+// 母题:去中心网——六个对等结点两两相连成网、没有中心(呼应《重塑组织》青色组织的自我管理:权力分布、无科层),其一朱色。
+function Mesh() {
+  const cx = 150, cy = 293, R = 66, N = 6, pts = []
+  for (let i = 0; i < N; i++) { const a = (i / N) * Math.PI * 2 - Math.PI / 2; pts.push([cx + Math.cos(a) * R, cy + Math.sin(a) * R]) }
+  const lines = []
+  for (let i = 0; i < N; i++) { lines.push([pts[i], pts[(i + 1) % N]]); lines.push([pts[i], pts[(i + 2) % N]]) }
+  return (
+    <g>
+      <path d={lines.map(([[x1, y1], [x2, y2]]) => `M${x1.toFixed(1)},${y1.toFixed(1)} L${x2.toFixed(1)},${y2.toFixed(1)}`).join(' ')} fill="none" stroke={CREAM} strokeOpacity="0.24" strokeWidth="1" />
+      {pts.map(([x, y], i) => <circle key={i} cx={x} cy={y} r={i === 0 ? 8 : 6} fill={i === 0 ? CINNABAR : CREAM} fillOpacity={i === 0 ? 0.9 : 0.5} />)}
+    </g>
+  )
+}
+
+// 母题:流与团队——一道价值流的箭头贯穿,三个团队方块沿流排布,主流(流式团队)朱色(呼应《团队拓扑》:围绕价值流组织团队)。
+function TeamFlow() {
+  const y = 293
+  const xs = [102, 150, 198]
+  return (
+    <g>
+      <line x1="70" y1={y + 24} x2="226" y2={y + 24} stroke={CREAM} strokeOpacity="0.35" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M228,317 l-11,-5 l1,10 z" fill={CREAM} fillOpacity="0.5" />
+      {xs.map((x, i) => <rect key={i} x={x - 21} y={y - 22} width="42" height="28" rx="5" fill={i === 1 ? CINNABAR : 'none'} fillOpacity={i === 1 ? 0.85 : 1} stroke={i === 1 ? 'none' : CREAM} strokeOpacity="0.42" strokeWidth="1.2" />)}
+    </g>
+  )
+}
+
+// 母题:影响之杆——一排立在基线上的开关/杠杆,中间一根被扳动、朱色(呼应《影响力》:一按即触发自动反应的几根「影响力杠杆」)。
+function Levers() {
+  const y = 336, xs = [96, 124, 152, 180, 208]
+  return (
+    <g>
+      <line x1="82" y1={y} x2="222" y2={y} stroke={CREAM} strokeOpacity="0.35" strokeWidth="1.3" strokeLinecap="round" />
+      {xs.map((x, i) => { const hi = i === 2, dx = hi ? 11 : 0, dy = hi ? -3 : 0; return (
+        <g key={i}>
+          <line x1={x} y1={y} x2={x + dx} y2={y - 46 + dy} stroke={hi ? CINNABAR : CREAM} strokeOpacity={hi ? 0.9 : 0.5} strokeWidth={hi ? 2 : 1.4} strokeLinecap="round" />
+          <circle cx={x + dx} cy={y - 46 + dy} r={hi ? 7 : 5} fill={hi ? CINNABAR : CREAM} fillOpacity={hi ? 0.92 : 0.5} />
+        </g>
+      ) })}
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'two-mountains') return <TwoMountains />
   if (motif === 'two-systems') return <TwoSystems />
+  if (motif === 'weave') return <Weave />
+  if (motif === 'banner') return <Banner />
+  if (motif === 'mesh') return <Mesh />
+  if (motif === 'team-flow') return <TeamFlow />
+  if (motif === 'levers') return <Levers />
   if (motif === 'scatter-target') return <ScatterTarget />
   if (motif === 'forecast-fan') return <ForecastFan />
   if (motif === 'snowball') return <Snowball />
@@ -726,6 +810,7 @@ function Motif({ motif }) {
   if (motif === 'golden-egg') return <GoldenEgg />
   if (motif === 'belonging-rings') return <BelongingRings />
   if (motif === 'circle-join') return <CircleJoin />
+  if (motif === 'practice-triad') return <PracticeTriad />
   if (motif === 'ripples') return <Ripples />
   if (motif === 'spiral') return <Spiral />
   if (motif === 'mandala') return <Mandala />
