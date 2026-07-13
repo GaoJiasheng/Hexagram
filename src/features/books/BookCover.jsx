@@ -628,11 +628,26 @@ function ForecastFan() {
   )
 }
 
+// 母题:复利雪球——一道长坡上,雪球越滚越大,末端最大一枚朱色(呼应巴菲特复利之道:一颗湿雪球 + 一道长长的坡,时间滚出巨大财富)。
+function Snowball() {
+  const slope = 'M44,214 Q150,300 262,356'
+  const balls = [[74, 232, 5], [116, 260, 8], [166, 294, 12], [232, 340, 20]]
+  return (
+    <g>
+      <path d={slope} fill="none" stroke={CREAM} strokeOpacity="0.32" strokeWidth="1.3" strokeLinecap="round" />
+      {balls.map(([x, y, r], i) => (
+        <circle key={i} cx={x} cy={y} r={r} fill={i === balls.length - 1 ? CINNABAR : CREAM} fillOpacity={i === balls.length - 1 ? 0.92 : 0.42} />
+      ))}
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'two-mountains') return <TwoMountains />
   if (motif === 'two-systems') return <TwoSystems />
   if (motif === 'scatter-target') return <ScatterTarget />
   if (motif === 'forecast-fan') return <ForecastFan />
+  if (motif === 'snowball') return <Snowball />
   if (motif === 'ripples') return <Ripples />
   if (motif === 'spiral') return <Spiral />
   if (motif === 'mandala') return <Mandala />

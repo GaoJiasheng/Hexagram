@@ -1,0 +1,177 @@
+{
+ "title": "安全边际:格雷厄姆留下的基石",
+ "subtitle": "先估价值,只在价格远低于价值时才买——把那段折扣,当成应对错误与意外的缓冲",
+ "centralIdea": "这一章讲价值投资的压舱石——安全边际(margin of safety),巴菲特称它是投资「最重要的三个词」,由他的老师格雷厄姆留下。核心是一条朴素的纪律:先估算一家公司的内在价值(它未来能创造的现金折算到今天大约值多少),然后只在市场价格显著低于这个价值时才买,中间那段折扣就是安全边际。为什么非留这段缓冲?因为估值一定有误差、未来一定有意外——你可能判断偏乐观、行业可能突变、宏观可能逆风,留足边际等于给自己的错误和坏运气准备了垫子,判断有偏差也不至于亏大钱。格雷厄姆用造桥作比:桥只需过十吨的车,却建成能承三十吨,多出的二十吨就是安全边际;投资同理,别在刚刚好的价格买,要在便宜出一大截时买。巴菲特那句「规则一永远不要亏钱、规则二别忘了规则一」,讲的正是把避免永久性亏损放在第一位的风控心态——不是保证永不浮亏,而是先想会亏多少、再想能赚多少,宁可错过不可看错买贵。折扣越大越不依赖精确估值,便宜本身就是最好的保护;它约束的是买入价——再好的公司买贵也可能是坏投资,好公司加好价格才成立。核心信息:便宜买、留余地,是不亏钱的第一道防线。分寸:这是讲风控理念,不给具体估值方法与买卖点、不荐标的;内在价值估算极难,本文仅供研读、非投资建议,过往不代表未来,多数人宜选低成本指数基金长期定投。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "如果只让巴菲特留一句投资箴言,他大概会留下「安全边际」这四个字。他说得很重:这是投资里「最重要的三个词」(margin of safety)。听上去玄乎,拆开却朴素得像一句大白话——**别在刚刚好的价格买东西,要在便宜出一大截的时候买**。这一章,我们就把这块被巴菲特反复叩击、由他的老师格雷厄姆亲手打下的基石,一寸寸看清楚。"
+  },
+  {
+   "type": "h2",
+   "text": "这一章在讲什么:一块传了三代人的基石"
+  },
+  {
+   "type": "p",
+   "text": "先把来历交代清楚。「安全边际」不是巴菲特发明的,而是他的老师——本杰明·格雷厄姆——留下的。格雷厄姆被称作「价值投资之父」,他那本《聪明的投资者》,巴菲特读了一辈子,还专门说其中讲安全边际的那一章,是「有史以来关于投资写得最好的文字」。可以说,巴菲特毕生的投资大厦,就架在这块石头上。"
+  },
+  {
+   "type": "p",
+   "text": "它的脑回路其实特别简单。买股票,说到底是**用一个价格,去换一家公司未来能创造的价值**。价值是「东西本身值多少」,价格是「你掏了多少钱」。这两者常常对不上:市场情绪一激动,价格能远远冲到价值之上;市场一恐慌,价格又能被砸到价值之下。安全边际要做的,就是**只在价格明显低于价值的时候才出手**,把中间那段折扣,当成留给自己的保护垫。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "安全边际:先估内在价值,只在市场价格远低于它时买入,中间那段折扣就是缓冲带",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">安全边际:价格远低于价值,中间是缓冲带</text><rect x=\"210\" y=\"72\" width=\"140\" height=\"106\" style=\"fill:color-mix(in srgb, var(--cinnabar-pure) 12%, transparent);stroke:var(--cinnabar-pure);stroke-dasharray:5 4\" stroke-width=\"1.2\"/><rect x=\"210\" y=\"178\" width=\"140\" height=\"82\" style=\"fill:color-mix(in srgb, var(--ink) 6%, transparent);stroke:var(--line)\" stroke-width=\"1.2\"/><line x1=\"150\" y1=\"72\" x2=\"420\" y2=\"72\" style=\"stroke:var(--ink)\" stroke-width=\"1.6\"/><line x1=\"150\" y1=\"178\" x2=\"420\" y2=\"178\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><text x=\"150\" y=\"64\" style=\"fill:var(--ink)\" font-size=\"14\">内在价值(它未来大约值多少)</text><text x=\"150\" y=\"200\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\">市场价格(你实际买入的价)</text><text x=\"280\" y=\"120\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"16\">安全边际</text><text x=\"280\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">这段折扣 = 缓冲带</text><text x=\"280\" y=\"232\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">买入付出的价</text><text x=\"280\" y=\"288\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">价压得越低,缓冲带越厚,越经得起看错与意外</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "第一步:先弄清一家公司「到底值多少」"
+  },
+  {
+   "type": "p",
+   "text": "要谈「价格低于价值」,得先有个「价值」。这个价值,格雷厄姆和巴菲特管它叫**内在价值**(intrinsic value)。别被术语吓到,它的意思很直白:**一家公司在它剩下的经营年头里,能给主人挣回的所有现金,折算到今天,大约值多少钱**。你把公司想成一棵果树,内在价值就是它这辈子还能结多少果子、这些果子折成今天的钱值几何。"
+  },
+  {
+   "type": "p",
+   "text": "这里还藏着一个「折算到今天」的细节,也值得用大白话点一句:同样一笔钱,今年到手和十年后才到手,分量并不一样——早拿到的钱可以再钱生钱,晚拿到的钱则要打个折。所以估内在价值,不是把未来的现金简单加总,而是把越远的钱、按越大的折扣拉回到今天来看。你不必会算这套账,只要记住它想表达的常识:一家公司越能**又稳又久地**把真金白银装进主人口袋,它今天就越值钱。"
+  },
+  {
+   "type": "p",
+   "text": "另一个关键的字是「**大约**」。内在价值算不出一个精确的数——它牵扯到公司未来十年二十年能赚多少,而未来谁也说不准。所以巴菲特从不追求把它算到小数点后几位,他要的只是一个**大致的、靠谱的区间**:这家公司差不多值七八十块,还是差不多值两三百块。能把量级判断对,就够用了。这也埋下了后面那句话的伏笔:既然价值本身是估出来的、带着误差,那就更得给误差留余地。"
+  },
+  {
+   "type": "quote",
+   "original": "价格,是你付出的;价值,是你得到的。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "第二步:为什么非要留一段缓冲"
+  },
+  {
+   "type": "p",
+   "text": "这是整块基石的灵魂。你可能会问:既然算出了内在价值,那价格只要低于它,哪怕低一点点,不就该买了吗?格雷厄姆的回答是:**不够,远远不够**。因为你手里那个「价值」,本身就可能是错的。"
+  },
+  {
+   "type": "p",
+   "text": "错误会从三个方向冒出来。其一,**你的判断可能偏乐观**——人在看好一家公司时,总不自觉地把前景想得太美,估值就悄悄虚高了。其二,**行业可能突变**——今天的好生意,明天冒出个新技术、新对手,护城河说没就没。其三,**宏观可能逆风**——经济、利率、政策一转向,再稳的公司也得跟着颠簸。这三件事,没有一件是你能算准的,可它们**迟早会来**。"
+  },
+  {
+   "type": "p",
+   "text": "安全边际,就是替这些「看错」和「坏运气」提前准备的缓冲垫。你以为公司值一百块,那就等它跌到六十、五十块再买。这样一来,就算你把价值高估了两成、就算行业遇上点逆风、就算大环境转坏,你的买入价依然趴在真实价值下面——**判断有偏差,也不至于亏大钱**。折扣越厚,你能扛的意外就越多。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "判断偏乐观、行业突变、宏观逆风——这些错误与意外迟早会来,安全边际就是替它们准备的缓冲垫",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"mb\" markerWidth=\"9\" markerHeight=\"9\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6 Z\" style=\"fill:var(--cinnabar-pure)\"/></marker></defs><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">为什么要留缓冲:错误与意外总会来</text><rect x=\"26\" y=\"62\" width=\"150\" height=\"66\" rx=\"9\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"101\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">判断偏乐观</text><text x=\"101\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">你可能看错了公司</text><rect x=\"205\" y=\"62\" width=\"150\" height=\"66\" rx=\"9\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">行业突变</text><text x=\"280\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">生意可能变天</text><rect x=\"384\" y=\"62\" width=\"150\" height=\"66\" rx=\"9\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"459\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">宏观逆风</text><text x=\"459\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">大环境可能转坏</text><path d=\"M101 128 L240 196\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\" marker-end=\"url(#mb)\"/><path d=\"M280 128 L280 194\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\" marker-end=\"url(#mb)\"/><path d=\"M459 128 L320 196\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\" marker-end=\"url(#mb)\"/><rect x=\"140\" y=\"200\" width=\"280\" height=\"62\" rx=\"31\" style=\"fill:color-mix(in srgb, var(--cinnabar-pure) 12%, transparent);stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><text x=\"280\" y=\"228\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">安全边际 · 缓冲垫</text><text x=\"280\" y=\"250\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">留足折扣,看错也不致亏大钱</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "一个最好懂的比喻:造桥"
+  },
+  {
+   "type": "p",
+   "text": "格雷厄姆讲安全边际,最爱用造桥打比方,巴菲特也一辈子在转述它。道理是这样的:你要造一座桥,平时过桥的卡车最重也就十吨,可你会把这座桥**建成能承重三十吨的**。为什么?因为你算的载重会有误差,偶尔会有超载的车,桥梁本身也会老化——那多出来的二十吨,不是浪费,而是**留给意外的安全空间**。"
+  },
+  {
+   "type": "p",
+   "text": "投资完全是一回事。你估一家公司值一百块,可这个「一百」是你算的,可能偏高;未来也总有你没料到的坏事。于是你不在一百块买,也不在九十五块买,而是**等它便宜到六十块再上桥**。那省下的四十块,就是你的三十吨承重——是留给「万一我看错了」的空间。别在「刚刚好」的价格买,要在「便宜出一大截」时买,说的就是这个。"
+  },
+  {
+   "type": "figure",
+   "ftype": "比喻图",
+   "caption": "造桥的智慧:明明只需过十吨的车,却把桥建成能承三十吨;多出的二十吨,就是投资里的安全边际",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">造桥的道理:能承三十吨,却只让十吨过</text><text x=\"280\" y=\"70\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">桥的设计承重:30 吨</text><text x=\"280\" y=\"96\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">实际只放 10 吨的车通过</text><line x1=\"60\" y1=\"252\" x2=\"500\" y2=\"252\" style=\"stroke:var(--line)\" stroke-width=\"1.5\"/><line x1=\"120\" y1=\"178\" x2=\"120\" y2=\"252\" style=\"stroke:var(--ink-soft)\" stroke-width=\"2\"/><line x1=\"440\" y1=\"178\" x2=\"440\" y2=\"252\" style=\"stroke:var(--ink-soft)\" stroke-width=\"2\"/><rect x=\"90\" y=\"168\" width=\"380\" height=\"10\" style=\"fill:var(--ink-soft)\"/><rect x=\"248\" y=\"130\" width=\"66\" height=\"34\" rx=\"4\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"281\" y=\"152\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\">10 吨</text><circle cx=\"264\" cy=\"170\" r=\"5\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\"/><circle cx=\"298\" cy=\"170\" r=\"5\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\"/><text x=\"280\" y=\"290\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">多出来的 20 吨,就是安全边际</text></svg>"
+  },
+  {
+   "type": "quote",
+   "original": "造桥时你标它能承三十吨,却只让十吨的车通过——投资也该这样。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "「第一条:永远不要亏钱」"
+  },
+  {
+   "type": "p",
+   "text": "巴菲特有一句被引到烂的话:**「规则一,永远不要亏钱;规则二,别忘了规则一。」**很多人把它当成一句俏皮话,其实它讲的正是安全边际背后的那种心态——**把「避免永久性亏损」放在第一位**。"
+  },
+  {
+   "type": "p",
+   "text": "这里要澄清一个常见的误读。这句话**不是**说「保证你账户永远不浮亏、永远不见红」——市场天天波动,谁买了都可能一时套牢,这是常识。它真正的意思是:**先想会亏多少,再想能赚多少**。多数人买之前满脑子是「这能涨到哪儿」,巴菲特的顺序反过来——他先问「如果我看错了,最坏会亏成什么样」。安全边际就是这个心态的落地:**宁可错过,也不可看错买贵**。错过顶多少赚一笔,买贵却可能伤筋动骨。"
+  },
+  {
+   "type": "quote",
+   "original": "规则一:永远不要亏钱;规则二:别忘了规则一。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "边际越大,你越不必算得那么精"
+  },
+  {
+   "type": "p",
+   "text": "安全边际还藏着一个让人松一口气的好处:**折扣够大,你就不必把估值算到分毫不差**。这话听着有点反直觉,细想却很通。"
+  },
+  {
+   "type": "p",
+   "text": "设想你觉得一家公司「大概值一百块上下」。如果你非要等它跌到九十九块才买,那你对这个「一百」就必须极其精确——差一点,判断就翻盘了。可如果你等它跌到五十块才买呢?这时你就算把价值估错了、它其实只值八十块,你依然买得便宜;甚至它只值七十块,你也还有余地。**足够低的价格,本身就把「估值不准」这件事给对冲掉了**。所以巴菲特反复说,他宁愿要一个「大致正确」的判断加一个「便宜到离谱」的价格,也不要一个精确到小数点、却买在价值边缘的决定。便宜,是最不需要运气配合的保护。"
+  },
+  {
+   "type": "quote",
+   "original": "买得足够便宜,你就不必把一家公司的价值算得分毫不差。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "它管的是「买入价」:好公司,还得加上好价格"
+  },
+  {
+   "type": "p",
+   "text": "要特别记住一点:安全边际约束的,是你**买入的价格**,而不是公司好不好。这两件事很容易被混为一谈。人们常以为「只要买的是好公司,就不会错」——巴菲特偏偏要提醒你:**再好的公司,买得太贵,也可能是一笔坏投资**。"
+  },
+  {
+   "type": "p",
+   "text": "一家顶尖企业,当然值得拥有;可如果市场把它捧上了天,价格远远冲过了它的价值,你在那个高点冲进去,买的就不再是「好生意」,而是「好生意的天价门票」。往后就算公司经营得一切如常,单是价格从高处回落到合理,就够让你亏上一大截。所以在巴菲特这里,「好公司」和「好价格」是**两个都得满足的条件**:好公司决定你**值不值得**拥有它,好价格决定你**会不会亏钱**。价格,始终是那个最关键的变量之一。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "caption": "好公司 + 好价格 = 好投资;好公司 + 买太贵 = 可能亏钱。价格,是能不能亏钱的关键变量",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"mp\" markerWidth=\"9\" markerHeight=\"9\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6 Z\" style=\"fill:var(--ink-faint)\"/></marker></defs><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">好公司,还要加上好价格</text><rect x=\"30\" y=\"72\" width=\"112\" height=\"60\" rx=\"9\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"86\" y=\"108\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">好公司</text><text x=\"162\" y=\"108\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"18\">+</text><rect x=\"182\" y=\"72\" width=\"112\" height=\"60\" rx=\"9\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><text x=\"238\" y=\"103\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\">好价格</text><text x=\"238\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10\">价远低于值</text><path d=\"M300 102 L332 102\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.5\" marker-end=\"url(#mp)\"/><rect x=\"340\" y=\"72\" width=\"150\" height=\"60\" rx=\"9\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"415\" y=\"108\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">好投资 &#10003;</text><rect x=\"30\" y=\"176\" width=\"112\" height=\"60\" rx=\"9\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"86\" y=\"212\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">好公司</text><text x=\"162\" y=\"212\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"18\">+</text><rect x=\"182\" y=\"176\" width=\"112\" height=\"60\" rx=\"9\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"1.5\"/><text x=\"238\" y=\"207\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">买太贵</text><text x=\"238\" y=\"226\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"10\">价高于值</text><path d=\"M300 206 L332 206\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.5\" marker-end=\"url(#mp)\"/><rect x=\"340\" y=\"176\" width=\"150\" height=\"60\" rx=\"9\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"415\" y=\"212\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">可能亏钱 &#10007;</text><text x=\"280\" y=\"278\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">同一家好公司,买贵与买便宜,是两笔完全不同的投资</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "换成生活里的事,你其实早就懂"
+  },
+  {
+   "type": "p",
+   "text": "这套道理,你在菜市场、在买房时其实一直在用,只是没起过名字。你心里清楚一样东西「大概值多少」,然后**等它打折、等它便宜出一截才下手**,好给自己留个还价和看走眼的余地——这就是安全边际。你不会因为一件外套是名牌,就闭眼按三倍价买回家;可一到股市,人们却常常因为「这是家好公司」,就忘了问一句「现在这个价,贵不贵」。"
+  },
+  {
+   "type": "p",
+   "text": "安全边际做的,无非是把这份买东西的常识,郑重地搬回投资里:**先想清楚它值多少,再等一个便宜得让你有底气的价格**。便宜买、留余地,不是小气,而是承认「我可能看错、世界可能有意外」之后,给自己留下的第一道防线。"
+  },
+  {
+   "type": "figure",
+   "ftype": "金句卡",
+   "caption": "这一章的核心:先估价值,只在便宜出一大截时才买——便宜,是不亏钱的第一道防线",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"24\" y=\"40\" width=\"512\" height=\"200\" rx=\"12\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><rect x=\"256\" y=\"20\" width=\"48\" height=\"48\" rx=\"8\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"280\" y=\"54\" text-anchor=\"middle\" style=\"fill:var(--paper)\" font-size=\"26\">观</text><text x=\"280\" y=\"128\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\">先估价值,只在便宜出一大截时才买;</text><text x=\"280\" y=\"166\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\">那段折扣,是不亏钱的第一道防线。</text><text x=\"280\" y=\"212\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">安全边际 · margin of safety</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "一个必须说清的分寸"
+  },
+  {
+   "type": "p",
+   "text": "最后要把话说到底。安全边际是一种**风控理念**,不是一张能照抄的下单说明书。它的前提——「先估出内在价值」——恰恰是投资里最难的一步:一家公司未来能挣多少现金,牵涉到行业、竞争、管理、宏观太多变量,连巴菲特都只敢求个「大致区间」,还坦言有些生意他一辈子都看不懂、干脆不碰。所以本章不会、也不该给你任何具体的估值公式、买卖点位或标的名字;它想留给你的,只是那个顺序和那份分寸:**先想会亏多少,再想能赚多少;宁可错过,不可看错买贵。**"
+  },
+  {
+   "type": "p",
+   "text": "也请把这几句实实在在放在心上。第一,**本文只是对一种投资理念的研读与转述,不构成任何投资建议**,不荐任何股票,也不给任何买卖点位。第二,**过往不代表未来**——巴菲特几十年的业绩、书里举的任何例子,都只是历史,不保证在你身上、在往后的市场里重演。第三,估算内在价值这件事本身极难,连专业人士都常常看走眼;因此对**绝大多数普通人**来说,与其在个股上赌自己没看错,更稳妥、也更适合的做法,往往是**长期、分散地定投一只低成本的宽基指数基金**,用足够长的时间和足够分散的持有,替自己留出那道缓冲。说到底,真正的安全边际,从来不只在价格里,也在你对自己能力边界的那份诚实里——知道自己看不懂什么、不去赌什么,本身就是最厚的一层保护。"
+  }
+ ]
+}

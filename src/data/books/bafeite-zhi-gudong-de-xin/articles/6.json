@@ -1,0 +1,135 @@
+{
+  "title": "复利与长期持有:时间是好生意的朋友",
+  "subtitle": "《巴菲特致股东的信》第6章导读——为什么真正让财富滚起来的,不是选中一只妖股,而是『好生意 + 长时间』这台安静的机器",
+  "centralIdea": "巴菲特财富的真正引擎,不是某一次神来之笔的抄底,而是复利——利滚利,赚到的钱继续投下去再生钱,一年年叠加。复利的脾气是『早期缓慢、后期爆发』:曲线前半程平得让人想放弃,后半程却陡得吓人,他绝大部分身家都是在很老以后才滚出来的。他把这件事比作滚雪球,要滚出一个大雪球,需要两样东西——又湿又粘的雪(能持续赚钱的好生意)和一道很长很长的坡(足够长的时间),缺一不可。找到有护城河的伟大公司后,他倾向长期持有、与企业一起成长,让复利不受打扰地转;而复利有三大天敌:频繁交易(每次买卖都摩擦掉手续费与税)、追涨杀跌与择时(情绪化进出往往买高卖低、打断复利)、成本与税负(费用一点点侵蚀长期回报,长期持有还能延迟纳税、把更多钱留在雪球里)。所以『坐着不动』常常比勤于操作更划算,而这需要耐心——忍得住无聊、扛得过波动。它把前几章串成一句话:好生意(护城河)+ 好价格(安全边际)+ 看得懂(能力圈)+ 长时间(复利),才凑成一次好投资。要提醒的是:本文只讲理念,不是投资建议;『长期』不等于『稳赚』,过往也不代表未来。对绝大多数普通人,巴菲特反复给出的做法,恰恰是长期定投一只低成本的指数基金。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "很多人以为巴菲特之所以是巴菲特,是因为他年轻时逮住了几只翻很多倍的股票。这话只对了一小半。真相要平淡得多,也深刻得多:**让他财富滚成今天这个体量的,不是哪一次石破天惊的操作,而是一台安静运转了几十年的机器——复利。** 这台机器的燃料只有两样,一样是能持续赚钱的好生意,一样是长得吓人的时间。这一章,我们就来看看这台机器是怎么转的,又为什么大多数人明明知道它,却始终没能让它替自己转起来。"
+    },
+    {
+      "type": "h2",
+      "text": "复利是什么:利滚利,早期慢、后期猛"
+    },
+    {
+      "type": "p",
+      "text": "复利(compounding)听起来是个金融名词,拆开却朴素得很:**赚到的钱不拿走,继续投下去,让它也去替你生钱。** 第一年你赚的那一份收益,第二年会和本金一起再赚一次;第二年新添的收益,第三年又跟着一起赚——利生利、利再生利,一层叠一层。它和『单利』的差别,就在于单利只让本金干活,复利却让『本金 + 历年赚到的每一分钱』一起干活,越滚人手越多。"
+    },
+    {
+      "type": "p",
+      "text": "复利最反直觉的地方,是它的脾气:**前半程慢得让人想放弃,后半程快得让人看不懂。** 举一个纯粹用来讲道理的算术例子(这里随手取的增长数字只为说清原理,并不是说谁能稳稳赚到):假设一笔钱每年按同一个比例往上长,头些年你几乎看不出动静,金额只是不咸不淡地爬;可一旦年头够长,同样的增长率作用在一个已经变大的数目上,每一年新增的绝对金额就越来越惊人,曲线像被人从后面猛推了一把,直直地翘起来。巴菲特绝大部分身家,都是在他六十岁、七十岁以后才积累起来的——不是他晚年突然开了窍,而是复利的曲线,本来就要到后半段才真正发力。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>复利曲线:早期平缓,后期陡升</text><line x1='70' y1='50' x2='70' y2='252' style='stroke:var(--line);stroke-width:1'/><line x1='70' y1='252' x2='524' y2='252' style='stroke:var(--line);stroke-width:1'/><text x='70' y='42' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>财富</text><text x='300' y='274' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>时间 → 年头越长</text><polyline points='70,248 520,150' style='fill:none;stroke:var(--ink-soft);stroke-width:2;stroke-dasharray:5 4'/><text x='486' y='142' text-anchor='end' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>线性 · 单利</text><polyline points='70,248 115,246 160,243 205,238 250,231 295,220 340,205 385,183 430,151 475,110 520,60' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2.6'/><text x='512' y='58' text-anchor='end' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>复利 · 利滚利</text><line x1='250' y1='252' x2='250' y2='60' style='stroke:var(--line);stroke-width:1;stroke-dasharray:3 3'/><text x='158' y='240' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>前半程:慢得想放弃</text><text x='430' y='250' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar-pure)'>后半程:曲线翘起来</text><polygon points='470,96 462,110 478,110' style='fill:var(--cinnabar-pure)'/><text x='470' y='90' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;font-weight:bold;fill:var(--cinnabar-pure)'>晚年才爆发</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "红线是复利,灰虚线是单利。看头几年,两条线几乎贴在一起,复利甚至一度还落在下面——这正是最劝退人的一段:你付出了本金、付出了等待,账面却平得像没动。可越往后,红线越不安分,先是悄悄超过灰线,继而一路陡峭地窜上去,把单利远远甩在身后。**真正的钱,都藏在曲线右边那一小截陡坡里;而你能不能吃到那一截,取决于你有没有耐心熬过左边那一长段平地。**"
+    },
+    {
+      "type": "h2",
+      "text": "湿雪 + 长坡:好生意配上长时间"
+    },
+    {
+      "type": "p",
+      "text": "巴菲特自己最爱用的比喻,是滚雪球。他说,人生就像滚雪球,要紧的是找到**又湿又粘的雪**和**一道很长很长的坡。** 这两样东西,一样都不能少。雪要够湿够粘,滚动时才裹得住、越滚越大——这对应的是一门能持续赚钱、能一年又一年把利润再投出去的**好生意**;坡要够长,雪球才有足够的路程去越滚越沉——这对应的是足够长的**时间。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "比喻图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>滚雪球:又湿的雪,加一道很长的坡</text><line x1='60' y1='90' x2='510' y2='250' style='stroke:var(--ink-soft);stroke-width:2.5'/><text x='300' y='262' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>长坡 · 足够长的时间</text><circle cx='96' cy='104' r='12' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><circle cx='188' cy='136' r='19' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><circle cx='300' cy='176' r='29' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2.2'/><circle cx='438' cy='224' r='44' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2.4'/><text x='438' y='229' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>越滚越大</text><text x='96' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>起步小</text><rect x='150' y='40' width='196' height='30' rx='6' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='248' y='60' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>湿雪 = 能持续赚钱的好生意</text><text x='280' y='288' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>雪再湿,坡太短也滚不大;坡再长,雪不粘也裹不住——两者缺一不可</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这个比喻的妙处,在于它点破了一件常被忽略的事:**两个条件是相乘的关系,不是相加。** 再湿再粘的雪,若坡只有几米长,雪球也大不到哪里去——好公司若你只拿几个月就卖,复利根本来不及发力;反过来,坡再长,若雪是干的、松的,滚一路也裹不住多少——一门平庸甚至越做越差的生意,时间拖得越久,反而把你套得越深。所以巴菲特挑生意极挑剔,又一旦挑中就极有耐心:他要的,是那种既值得、又经得起长期持有的『湿雪』。"
+    },
+    {
+      "type": "quote",
+      "original": "人生就像滚雪球,要紧的是找到又湿又粘的雪,和一道很长很长的坡。",
+      "translation": "这句被用作巴菲特传记标题的话,把复利讲透了。湿雪是好生意——能一年年把赚到的钱再投出去、越滚越多;长坡是时间——给雪球足够长的路去变大。两者相乘,才是财富真正的来处;缺哪一样,雪球都滚不大。"
+    },
+    {
+      "type": "h2",
+      "text": "『我们最爱的持有期限是永远』"
+    },
+    {
+      "type": "p",
+      "text": "既然复利要靠长时间发力,巴菲特对待手里的好公司,便有一种近乎固执的长情。他说过一句常被引用的话:**若一家企业足够出色,他最中意的持有期限,是永远。** 这不是一句漂亮的口号,而是复利逻辑的直接推论——你若真找到了那门又湿又粘的好生意,最聪明的做法,就是攥住它,让它安安静静地替你把雪球滚下去,而不是刚看到一点浮盈就急着落袋。"
+    },
+    {
+      "type": "p",
+      "text": "这背后是一个视角的转换:**把买股票,真正当成买下一门生意的一小块,而不是买一张随时准备转手的彩票。** 一旦你把自己看成企业的长期合伙人,你关心的就不再是明天报价涨了跌了,而是这家公司三年、五年、十年后能不能赚更多的钱。报价的上蹿下跳,于是从每天折磨你的东西,变成偶尔递给你便宜货的机会。长期持有不是『买了懒得卖』的将就,而是主动选择站到时间这一边,让复利替自己干活。"
+    },
+    {
+      "type": "quote",
+      "original": "若一家企业足够出色,我们最中意的持有期限,是永远。",
+      "translation": "这是长期持有的底色。它的前提很硬——公司得『足够出色』,配得上长相守;不是什么股票都值得抱到永远。一旦确认它是好生意,最好的操作往往就是不操作,让复利在不受打扰的安静里,一年年把雪球滚大。"
+    },
+    {
+      "type": "h2",
+      "text": "复利的三大天敌:别把雪球一路刮小"
+    },
+    {
+      "type": "p",
+      "text": "复利这台机器最怕的,不是外面的风浪,而是你自己伸手去拨它。它有三个天敌,个个都披着『我在积极管理』的外衣,实则一点点把雪球刮小。**第一个是频繁交易。** 每一次买进卖出,都要摩擦掉手续费,常常还得为赚到的部分交税。单看一笔不起眼,可你若一年折腾几十上百回,这些摩擦累加起来,就是从复利雪球上一刀刀削下的雪——本该继续滚下去生钱的本金,白白漏在了路上。"
+    },
+    {
+      "type": "p",
+      "text": "**第二个是追涨杀跌、试图择时。** 想着『高了就跑、低了再回来』听着精明,可现实里,情绪化的进进出出,结果往往是反的:涨得热闹时忍不住追高买入,跌得难看时扛不住恐慌卖出,一来一回正好买贵卖贱。更要命的是,它**打断了复利。** 复利要的是不间断地滚,你每一次为了『避一避』而下车,都可能恰好错过后面最陡的那一段爬升——而事后看,大涨往往就挤在少数几天里,你一旦踏空,整条曲线的翘尾就跟你无关了。"
+    },
+    {
+      "type": "p",
+      "text": "**第三个是成本与税负。** 各种交易税、管理费、申赎费,数字看着都很小,一年一两个百分点,不痛不痒;可放到几十年的复利里,它们同样在『利滚利』——只不过是反着滚,一年年从你的回报里悄悄扣走一块,越扣越多。长期持有还有一个不显眼的好处:**只要你不卖,浮盈就还没变成要交税的已实现收益,这笔本该缴出去的税,就还留在雪球里继续替你滚。** 少一次多余的操作,常常就等于少漏一层雪。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>复利的三大天敌:一刀刀刮小雪球</text><circle cx='280' cy='168' r='48' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2.4'/><text x='280' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>复利雪球</text><text x='280' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>本该越滚越大</text><rect x='30' y='60' width='150' height='58' rx='8' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1.3'/><text x='105' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>① 频繁交易</text><text x='105' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>手续费与税,削本金</text><rect x='380' y='60' width='150' height='58' rx='8' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1.3'/><text x='455' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>② 追涨杀跌</text><text x='455' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>情绪择时,买贵卖贱</text><rect x='205' y='238' width='150' height='54' rx='8' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1.3'/><text x='280' y='261' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>③ 成本与税负</text><text x='280' y='279' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>费用逐年反着复利</text><line x1='178' y1='114' x2='245' y2='150' style='stroke:var(--ink-soft);stroke-width:1.6'/><polygon points='245,150 233,145 238,156' style='fill:var(--ink-soft)'/><line x1='382' y1='114' x2='315' y2='150' style='stroke:var(--ink-soft);stroke-width:1.6'/><polygon points='315,150 322,156 327,145' style='fill:var(--ink-soft)'/><line x1='280' y1='236' x2='280' y2='218' style='stroke:var(--ink-soft);stroke-width:1.6'/><polygon points='280,218 274,229 286,229' style='fill:var(--ink-soft)'/></svg>"
+    },
+    {
+      "type": "p",
+      "text": "把这三样放在一起看,一个朴素的结论就浮出来了:**很多时候,坐着不动比勤于操作更赚钱。** 这话初听像是懒人的自我安慰,细想却是复利的必然——只要你手里是好生意,你越少去打扰它,它就越能不间断地滚下去;你每一次自作聪明的进出,都是在给它添摩擦、断节奏。巴菲特的过人之处,一半在于挑得准,另一半就在于挑准之后,他有本事管住自己的手。"
+    },
+    {
+      "type": "quote",
+      "original": "对好公司而言,时间是朋友;对平庸公司而言,时间是敌人。",
+      "translation": "这句话是复利的两面。同样是『长期持有』,放在好生意上,时间会替你把雪球越滚越大;放在平庸甚至变坏的生意上,时间只会把你套得越深。所以关键从来不是『拿得久不久』,而是先确认——你拿的,到底是不是一门配得上长相守的好生意。"
+    },
+    {
+      "type": "h2",
+      "text": "耐心是必需品:忍得住无聊,扛得过波动"
+    },
+    {
+      "type": "p",
+      "text": "说到底,复利对人最大的考验,不是智力,而是**耐心。** 回头看那条复利曲线,左边那一长段平地,考验的正是你熬不熬得住:账面不动、旁人炫耀着各种快钱,你却要按住性子,给好生意足够的时间去发酵。中间还会有一次次的波动——市场时不时把你手里的好公司报出一个荒唐的低价,吓得人想夺路而逃。**忍得住无聊、扛得过波动,是吃到右边那截陡坡的入场券。** 很多人不是选错了雪球,而是败在等不及,在坡还没走完时就提前下了车。"
+    },
+    {
+      "type": "p",
+      "text": "而这份耐心,恰好把前几章讲过的东西,一根线串了起来。你得**看得懂**这门生意(能力圈),才敢在别人恐慌时安心持有;你得当初就买得**不贵**(安全边际),才不会因为价格回落就慌了手脚;你得确认它是一门有**护城河的好生意**,才值得托付漫长的时间。四样东西凑齐,时间才会真的站到你这边——**好生意 + 好价格 + 看得懂 + 长时间,才凑成一次好投资。** 少了任何一样,复利这台机器要么发动不起来,要么滚着滚着就散了架。"
+    },
+    {
+      "type": "figure",
+      "ftype": "流程图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>四样凑齐,才是一次好投资</text><rect x='24' y='70' width='118' height='72' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='83' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>好生意</text><text x='83' y='120' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>护城河</text><text x='158' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:18px;fill:var(--ink-soft)'>+</text><rect x='176' y='70' width='118' height='72' rx='8' style='fill:var(--paper-raised);stroke:var(--azure);stroke-width:1.4'/><text x='235' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--azure)'>好价格</text><text x='235' y='120' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>安全边际</text><text x='310' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:18px;fill:var(--ink-soft)'>+</text><rect x='328' y='70' width='118' height='72' rx='8' style='fill:var(--paper-raised);stroke:var(--ink);stroke-width:1.4'/><text x='387' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>看得懂</text><text x='387' y='120' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>能力圈</text><rect x='176' y='176' width='118' height='72' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='235' y='204' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>长时间</text><text x='235' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>让复利发力</text><text x='310' y='218' text-anchor='middle' style='font-family:var(--font-serif);font-size:16px;fill:var(--ink-soft)'>=</text><rect x='328' y='176' width='118' height='72' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='387' y='204' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>一次好投资</text><text x='387' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>时间站到你这边</text><line x1='235' y1='142' x2='235' y2='176' style='stroke:var(--ink-soft);stroke-width:1.4;stroke-dasharray:3 3'/></svg>"
+    },
+    {
+      "type": "quote",
+      "original": "股市像是一个装置,把钱从没耐心的人手里,搬到有耐心的人手里。",
+      "translation": "这句半带调侃的话,道破了长期持有的本钱。频繁进出、追涨杀跌的人,把摩擦、错判和恐慌造成的损失,一点点让渡给了另一群人——那些看懂了、买对了,然后安静等待的人。耐心在这里不是美德,而是实打实能留住钱的能力。"
+    },
+    {
+      "type": "h2",
+      "text": "写在末尾:这是理念,不是投资建议"
+    },
+    {
+      "type": "p",
+      "text": "把这一章收成几句能带走的话。**复利是财富真正的引擎,而它需要两样燃料——好生意和长时间;** 找到又湿又粘的雪,再给它一道足够长的坡,让雪球不受打扰地滚。**防着复利的三个天敌:** 别频繁交易、别追涨杀跌择时、别小看成本与税负一年年反着复利。**多数时候,坐着不动胜过勤于操作;** 而这需要耐心去忍无聊、扛波动。一句话:**时间是优质企业的朋友,却是平庸企业的敌人。**"
+    },
+    {
+      "type": "p",
+      "text": "最后必须把话说清楚,这也是读这本书时该始终揣着的分寸。**以上讲的全是理念,不是投资建议,更不是荐股。** 『长期持有』绝不等于『长期稳赚』——它只在你确实拿着一门好生意、且当初买得不贵时才成立;拿着一门平庸的生意死扛,时间只会让亏损也跟着复利。而且**过往的表现,从不代表未来的结果,** 巴菲特几十年的成绩,复制不了,也不该被当成对谁的许诺。事实上,巴菲特反复对普通人给出的建议,并不是去学他挑公司,而是承认绝大多数人既没那个精力也没那个把握——**对多数人来说,最省心也最靠谱的做法,是长期、定期地买入一只低成本的指数基金,然后交给时间。** 让复利替你工作,而不是天天想着战胜市场:这或许才是这一章,留给普通读者最实在的一句话。"
+    }
+  ]
+}
