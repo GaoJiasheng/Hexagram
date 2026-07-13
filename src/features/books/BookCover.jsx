@@ -600,9 +600,24 @@ function TwoSystems() {
   )
 }
 
+// 母题:散靶——一面同心圆靶,弹着点四下散落(判断的「噪声」:本该一致的判断却四处发散),其一朱色(呼应《噪声》射击靶隐喻:偏差是系统性偏移,噪声是发散)。
+function ScatterTarget() {
+  const cx = 150, cy = 293
+  const rings = [80, 54, 28]
+  const shots = [[118, 248], [170, 258], [128, 302], [188, 292], [150, 332], [106, 284], [176, 322], [140, 232], [198, 246]]
+  return (
+    <g>
+      {rings.map((r, i) => <circle key={r} cx={cx} cy={cy} r={r} fill="none" stroke={CREAM} strokeOpacity={0.36 - i * 0.05} strokeWidth="1.1" />)}
+      <path d={`M${cx - 10},${cy} L${cx + 10},${cy} M${cx},${cy - 10} L${cx},${cy + 10}`} stroke={CREAM} strokeOpacity="0.3" strokeWidth="1" />
+      {shots.map(([x, y], i) => <circle key={i} cx={x} cy={y} r={i === 3 ? 6 : 4} fill={i === 3 ? CINNABAR : CREAM} fillOpacity={i === 3 ? 0.95 : 0.5} />)}
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'two-mountains') return <TwoMountains />
   if (motif === 'two-systems') return <TwoSystems />
+  if (motif === 'scatter-target') return <ScatterTarget />
   if (motif === 'ripples') return <Ripples />
   if (motif === 'spiral') return <Spiral />
   if (motif === 'mandala') return <Mandala />

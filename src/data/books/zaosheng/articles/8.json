@@ -1,0 +1,138 @@
+{
+  "title": "该消除多少噪声：成本、异议与边界",
+  "subtitle": "最优噪声与降噪的代价，收束全书——《噪声》第8章(末章)导读",
+  "centralIdea": "全书收尾，作者们给出一个克制的答案：既然噪声是判断里被忽视的巨大误差，是不是该把它降到零？不。降噪本身要花钱花时间，若判断无关紧要就不值当；更重要的是，机械地抹平一切差异会碰掉我们真正珍视的东西——把人当成公式里的一行，会伤及个案关怀与尊严；僵化透明的规则会被人照字面钻空子；强推标准化会挫伤专业者的士气与自主；而有些「不一致」其实是合理的价值多元或对规则的正当修正。用算法消噪也非万能出口：它零噪声，却可能把历史数据里的歧视原样固化，还损害透明与问责。所以本书主张的不是零噪声，而是「最优噪声」——先做噪声审计、意识到它，再在高风险、可标准化、降噪收益大于代价的地方，用决策卫生审慎降噪，同时保留必要的人类判断与个案裁量。真正的进步不在追求完美一致，而在看见那看不见的一半误差，并有节制地改善它。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "读到这里，噪声的面目已经清楚：它藏在法官的量刑、医生的诊断、核保员的定价里，和偏差并列为判断的两大误差，却长期无人正视。前七章一路都在说它有多坏、又如何靠决策卫生把它降下来，顺理成章的下一步似乎是——既然噪声这么坏，那就把它降到零吧。可全书的最后一章偏偏踩了一脚刹车。卡尼曼、西博尼与桑斯坦要说的是：降噪是好事，但**不是越少越好，更不是没有代价**。真正该追问的，从来不是「怎样彻底消灭噪声」，而是「该消除多少」。这一章，是全书最重要的一次自我警醒。"
+    },
+    {
+      "type": "h2",
+      "text": "一个反直觉的收尾：噪声不必清零"
+    },
+    {
+      "type": "p",
+      "text": "把噪声压到零，直觉上像是无可指摘的目标。但作者提醒：降噪本身，是一项要花成本的工程。做一次噪声审计，要占用一批专业人员的时间；制定规则、设计量表、培训执行、监督落地，每一步都要花钱花力气。如果一类判断本身无足轻重——判错了也没什么大不了——那么为它大动干戈地降噪，就是把钱花错了地方。"
+    },
+    {
+      "type": "p",
+      "text": "更关键的是，降噪的收益并非线性。最初把那些最离谱的发散收拢，回报很高；越往后、越想榨干最后一点不一致，需要的规则就越繁密、越僵硬，代价却陡然上升。于是**总代价**——剩余误差带来的损失，加上降噪付出的成本——不是一路下滑到零，而是先降后升，在中间某处触底。那个触底点，就是作者说的**「最优噪声」（optimal noise）**：不是零，而是划算的那一点。"
+    },
+    {
+      "type": "figure",
+      "ftype": "曲线图",
+      "caption": "降噪不是越多越好：把剩余误差成本和降噪成本加起来，总代价呈 U 形，最低点落在中间，而不在「零噪声」那一端。",
+      "svg": "<svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\">\n<text x=\"280\" y=\"24\" text-anchor=\"middle\" font-size=\"16\" style=\"fill:var(--ink)\">总代价随降噪程度变化：最低点不在零</text>\n<text x=\"18\" y=\"46\" font-size=\"12\" style=\"fill:var(--ink-soft)\">总代价 ↑</text>\n<line x1=\"64\" y1=\"44\" x2=\"64\" y2=\"250\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.5\"/>\n<line x1=\"64\" y1=\"250\" x2=\"524\" y2=\"250\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.5\"/>\n<path d=\"M64 72 C 180 122 320 210 524 238\" fill=\"none\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/>\n<path d=\"M64 240 C 220 232 360 150 524 62\" fill=\"none\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/>\n<path d=\"M64 66 C 170 200 250 205 305 202 C 400 197 470 140 524 96\" fill=\"none\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"2.5\"/>\n<text x=\"96\" y=\"98\" font-size=\"11\" style=\"fill:var(--ink-faint)\">剩余误差成本 ↓</text>\n<text x=\"360\" y=\"106\" font-size=\"11\" style=\"fill:var(--ink-faint)\">降噪成本 ↑</text>\n<text x=\"452\" y=\"86\" font-size=\"12\" style=\"fill:var(--cinnabar-pure)\">总代价</text>\n<line x1=\"305\" y1=\"202\" x2=\"305\" y2=\"250\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/>\n<circle cx=\"305\" cy=\"202\" r=\"5\" style=\"fill:var(--cinnabar-pure)\"/>\n<text x=\"316\" y=\"180\" font-size=\"13\" style=\"fill:var(--cinnabar-pure)\">最优噪声</text>\n<text x=\"316\" y=\"197\" font-size=\"11\" style=\"fill:var(--ink-soft)\">最划算的那一点</text>\n<text x=\"70\" y=\"270\" font-size=\"11\" style=\"fill:var(--ink-soft)\">← 放任噪声</text>\n<text x=\"520\" y=\"270\" text-anchor=\"end\" font-size=\"11\" style=\"fill:var(--ink-soft)\">零噪声 →</text>\n<text x=\"290\" y=\"288\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">降噪程度</text>\n</svg>"
+    },
+    {
+      "type": "p",
+      "text": "换句话说，问题从「有没有噪声」变成了「再降一分噪声，值不值这个价」。答案因场景而异——同罪同罚这种事，噪声再贵也得压下去；另一些判断里，留一点人的余地反而更好。这也解释了作者为什么不肯开出一张「噪声越低越先进」的排行榜：脱离了代价谈降噪，就像脱离了价格谈买卖，根本无从判断划不划算。承认这条边界，才不至于把降噪本身变成一种新的迷信。"
+    },
+    {
+      "type": "h2",
+      "text": "认真对待反对的声音：四种正当异议"
+    },
+    {
+      "type": "p",
+      "text": "作者没有把不同意降噪的人一概当成糊涂。恰恰相反，他们把针对降噪的几种反对意见摆上台面，逐一回应——因为这些异议大多是正当的，值得权衡，而不是驳倒。"
+    },
+    {
+      "type": "p",
+      "text": "**其一，尊严与个案关怀。** 用统一规则去处理人，等于把一个活生生的人压缩成公式里的一行。每个人都希望自己被当作独一无二的具体处境来对待，而不是被塞进一台不认脸的机器。在医疗、司法这类地方尤其如此：一致固然是公平的一种形式，但机械的一致也可能是冷酷的——它省掉了对独特情节的体察，也省掉了人性的温度。"
+    },
+    {
+      "type": "quote",
+      "original": "一致是公平的一种形式；可机械照搬的一致，也可能是另一种冷酷。",
+      "translation": ""
+    },
+    {
+      "type": "p",
+      "text": "**其二，被钻空子（gaming）。** 规则一旦公开、透明、可预期，就会被人照着字面去表演。严苛的量化考核，催生的往往是刷指标、做台账，而不是把事情真正做好；明码标价的标准，反倒像给聪明人递上了一份规避与套利的说明书。这里有个吊诡之处：噪声因为不可预测，有时反而堵死了博弈的门——你摸不准尺子会怎么摆，就没法精确地钻它的空子。降噪把尺子固定下来，也顺手把那扇门重新打开了。"
+    },
+    {
+      "type": "p",
+      "text": "**其三，士气与自主。** 把判断流程彻底标准化，专业人员会觉得自己不被信任、判断权被夺走，从一位资深的裁量者，降格成照章执行的按钮。一个经验丰富的医生，若被要求事事对表打勾、不许越雷池半步，很难还有钻研疑难的热情。被这样对待的人，轻则积极性受挫，重则阳奉阴违——表面上遵守规则，暗地里用各种办法把它架空。一套再漂亮的降噪方案，落不了地也是空的；而人心的抵触，恰恰是它最容易落空的地方。"
+    },
+    {
+      "type": "p",
+      "text": "**其四，变化与价值分歧。** 有些「不一致」并不是错误，而是合理的价值多元，或是对僵化规则的正当修正。规则天生是向后看的，它固化的是制定那一刻的共识；世界变了、观念进步了，恰恰要靠一些「不合规」的判断把它撬松、推着更新。一刀切地把所有差异都抹平，也会连这种有生命力的分歧一起抹掉。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "作者逐一回应的四种异议：它们大多正当，提醒我们降噪要有分寸，而不是一味求「齐」。",
+      "svg": "<svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\">\n<text x=\"280\" y=\"24\" text-anchor=\"middle\" font-size=\"16\" style=\"fill:var(--ink)\">对降噪的四种正当异议</text>\n<rect x=\"26\" y=\"42\" width=\"248\" height=\"106\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/>\n<text x=\"150\" y=\"74\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--cinnabar-pure)\">㈠ 尊严与个案关怀</text>\n<text x=\"150\" y=\"102\" text-anchor=\"middle\" font-size=\"11.5\" style=\"fill:var(--ink-soft)\">把人压成公式里的一行，</text>\n<text x=\"150\" y=\"122\" text-anchor=\"middle\" font-size=\"11.5\" style=\"fill:var(--ink-soft)\">省掉了对独特处境的体察</text>\n<rect x=\"286\" y=\"42\" width=\"248\" height=\"106\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/>\n<text x=\"410\" y=\"74\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--cinnabar-pure)\">㈡ 被钻空子 gaming</text>\n<text x=\"410\" y=\"102\" text-anchor=\"middle\" font-size=\"11.5\" style=\"fill:var(--ink-soft)\">规则一透明，就被照字面</text>\n<text x=\"410\" y=\"122\" text-anchor=\"middle\" font-size=\"11.5\" style=\"fill:var(--ink-soft)\">表演、刷指标、套利</text>\n<rect x=\"26\" y=\"160\" width=\"248\" height=\"106\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/>\n<text x=\"150\" y=\"192\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--cinnabar-pure)\">㈢ 士气与自主</text>\n<text x=\"150\" y=\"220\" text-anchor=\"middle\" font-size=\"11.5\" style=\"fill:var(--ink-soft)\">标准化让专业者觉得判断权</text>\n<text x=\"150\" y=\"240\" text-anchor=\"middle\" font-size=\"11.5\" style=\"fill:var(--ink-soft)\">被夺走，积极性受挫</text>\n<rect x=\"286\" y=\"160\" width=\"248\" height=\"106\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/>\n<text x=\"410\" y=\"192\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--cinnabar-pure)\">㈣ 变化与价值分歧</text>\n<text x=\"410\" y=\"220\" text-anchor=\"middle\" font-size=\"11.5\" style=\"fill:var(--ink-soft)\">有些不一致是正当的多元，</text>\n<text x=\"410\" y=\"240\" text-anchor=\"middle\" font-size=\"11.5\" style=\"fill:var(--ink-soft)\">或对僵化规则的修正</text>\n</svg>"
+    },
+    {
+      "type": "h2",
+      "text": "算法不是万能的出口"
+    },
+    {
+      "type": "p",
+      "text": "既然人的判断噪声这么大，一个诱人的念头是：干脆交给算法。公式和模型确实有一项无可比拟的优点——零噪声，同样的输入永远给出同样的输出，不会因心情、疲劳、顺序而漂移。但作者在收尾处再次敲响第六章埋下的警钟：用算法消噪，很可能引进、甚至放大偏差。"
+    },
+    {
+      "type": "p",
+      "text": "如果拿有偏见的历史数据去训练模型，它会把过去的歧视原封不动地学下来，再披上一层「客观中立」的外衣照做不误——而且做得稳定、一致、理直气壮。零噪声绝不等于零错误：一台每次都读同一个数的仪器，若那个数本身系统性地偏了，它只会一丝不苟地、一致地错到底。何况把决定外包给一个说不清理由的黑箱，还会损害透明与问责——出了错，你连该问谁、错在哪都找不到。"
+    },
+    {
+      "type": "quote",
+      "original": "算法没有噪声，却可能把旧日的偏见学得一丝不差，再稳稳当当地重复下去。",
+      "translation": ""
+    },
+    {
+      "type": "p",
+      "text": "所以「消除噪声」不能悄悄变成「外包给一个黑箱」。作者主张的始终是**决策卫生**——用规则与流程去辅助人做出更一致的判断，而不是用一个不受审视的公式，把思考本身给豁免掉。这里的分寸很微妙：算法可以是降噪的好帮手，但一旦它从「辅助判断」变成「替人拍板、还没人看得懂它凭什么」，降噪的账面上就悄悄记上了透明与问责这两笔隐形负债。"
+    },
+    {
+      "type": "h2",
+      "text": "那么，到底该消除多少？"
+    },
+    {
+      "type": "p",
+      "text": "把账两边摊开看，事情就清楚了：降噪那一侧，写着更公平、更准确、更可问责；它的代价那一侧，写着个案的尊严、被钻空子的风险、专业者的士气，以及算法可能夹带的偏见。该降多少，就是在这两侧之间，一处一处地称出平衡。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "降噪的收益与代价两相权衡：既不高估一致的好处，也不低估它可能碰掉的东西。",
+      "svg": "<svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\">\n<text x=\"280\" y=\"24\" text-anchor=\"middle\" font-size=\"16\" style=\"fill:var(--ink)\">降噪：收益 vs 代价，称出一个平衡</text>\n<rect x=\"26\" y=\"46\" width=\"214\" height=\"216\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--confucian)\" stroke-width=\"1.5\"/>\n<text x=\"133\" y=\"74\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--confucian)\">降噪的收益</text>\n<line x1=\"46\" y1=\"86\" x2=\"220\" y2=\"86\" style=\"stroke:var(--line)\" stroke-width=\"1\"/>\n<text x=\"50\" y=\"118\" font-size=\"12.5\" style=\"fill:var(--ink-soft)\">· 判断更一致、更公平</text>\n<text x=\"50\" y=\"152\" font-size=\"12.5\" style=\"fill:var(--ink-soft)\">· 预测更准、误差更小</text>\n<text x=\"50\" y=\"186\" font-size=\"12.5\" style=\"fill:var(--ink-soft)\">· 流程可复核、可问责</text>\n<text x=\"50\" y=\"220\" font-size=\"12.5\" style=\"fill:var(--ink-soft)\">· 结果更可信、更可预期</text>\n<rect x=\"320\" y=\"46\" width=\"214\" height=\"216\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/>\n<text x=\"427\" y=\"74\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--cinnabar-pure)\">降噪的代价</text>\n<line x1=\"340\" y1=\"86\" x2=\"514\" y2=\"86\" style=\"stroke:var(--line)\" stroke-width=\"1\"/>\n<text x=\"344\" y=\"118\" font-size=\"12.5\" style=\"fill:var(--ink-soft)\">· 个案关怀与人的尊严</text>\n<text x=\"344\" y=\"152\" font-size=\"12.5\" style=\"fill:var(--ink-soft)\">· 规则被钻空子 gaming</text>\n<text x=\"344\" y=\"186\" font-size=\"12.5\" style=\"fill:var(--ink-soft)\">· 专业者的士气与自主</text>\n<text x=\"344\" y=\"220\" font-size=\"12.5\" style=\"fill:var(--ink-soft)\">· 算法固化历史偏见</text>\n<circle cx=\"280\" cy=\"152\" r=\"28\" style=\"fill:var(--paper);stroke:var(--ink-faint)\" stroke-width=\"1.5\"/>\n<text x=\"280\" y=\"149\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">权衡</text>\n<text x=\"280\" y=\"166\" text-anchor=\"middle\" font-size=\"9.5\" style=\"fill:var(--ink-faint)\">trade-off</text>\n</svg>"
+    },
+    {
+      "type": "p",
+      "text": "作者给出的处方，不是把噪声降到零，而是一套有分寸的次序。**第一步，先做噪声审计**——把「大概有点不一致」变成白纸黑字的数字，让机构先意识到问题的规模；很多时候，光是看见噪声有多大，本身就已经是最大的进步。**第二步，用决策卫生去改善**——独立判断、拆解结构、推迟直觉、相对排序、多元意见、固定流程，这些习惯不针对某个具体错误，却能默默拦下大量看不见的发散。"
+    },
+    {
+      "type": "p",
+      "text": "**第三步，也是最要紧的——挑地方下手，且留有余地。** 在高风险、可标准化、而且降噪收益明显大于代价的场合（同罪量刑、批量核保、标准化的影像判读），就该果断把噪声压低；而在那些个案千差万别、价值判断绕不开、人的体察不可替代的场合，则应保留必要的人类裁量。降噪不是一场把所有差异都推平的运动，而是在「一致」与「灵活」、「规则」与「尊严」之间，反复权衡的手艺。"
+    },
+    {
+      "type": "h2",
+      "text": "收束全书：看见那看不见的一半"
+    },
+    {
+      "type": "p",
+      "text": "回望整本书，它其实只做了一件事：请你把目光从偏差那里移开一半，分给一直被冷落的噪声。偏差和噪声，是判断的两种病——一个让所有人一起偏向一边，一个让本该一致的人各执一词；前者有故事、有反派，人人爱谈，后者没有方向、讲不出情节，于是长期隐形。可它们在数学上地位对等，任何一个都在把总误差往上抬。只盯着纠偏，等于只还了一半的债。"
+    },
+    {
+      "type": "p",
+      "text": "认识噪声，最大的价值或许是一份谦逊：它让我们对「专业判断天生可靠」这个默认假设，多留一分警醒。资深不等于稳定，自信不等于准确，人这台测量仪器，读数是会抖的。承认这一点，不是要否定人的判断，而是要给它配上一副防抖的支架。"
+    },
+    {
+      "type": "quote",
+      "original": "真正的进步不在追求完美的一致，而在看见那看不见的一半误差，并有节制地改善它。",
+      "translation": ""
+    },
+    {
+      "type": "figure",
+      "ftype": "流程图",
+      "caption": "全书的地图：偏差与噪声共同抬高总误差，而对付噪声，是审计—卫生—择处降噪的三步，且始终留一手给人的判断。",
+      "svg": "<svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\">\n<text x=\"280\" y=\"24\" text-anchor=\"middle\" font-size=\"16\" style=\"fill:var(--ink)\">判断的两种病，与审慎的降噪</text>\n<rect x=\"24\" y=\"66\" width=\"140\" height=\"46\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--ink-faint)\" stroke-width=\"1.5\"/>\n<text x=\"94\" y=\"87\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">偏差 bias</text>\n<text x=\"94\" y=\"104\" text-anchor=\"middle\" font-size=\"10.5\" style=\"fill:var(--ink-faint)\">大家一起偏</text>\n<rect x=\"24\" y=\"130\" width=\"140\" height=\"46\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/>\n<text x=\"94\" y=\"151\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">噪声 noise</text>\n<text x=\"94\" y=\"168\" text-anchor=\"middle\" font-size=\"10.5\" style=\"fill:var(--cinnabar-pure)\">被忽视的那一半</text>\n<text x=\"184\" y=\"127\" text-anchor=\"middle\" font-size=\"16\" style=\"fill:var(--ink-faint)\">+</text>\n<line x1=\"164\" y1=\"92\" x2=\"198\" y2=\"115\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.3\"/>\n<line x1=\"164\" y1=\"153\" x2=\"198\" y2=\"130\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.3\"/>\n<rect x=\"200\" y=\"98\" width=\"112\" height=\"46\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--ink-faint)\" stroke-width=\"1.5\"/>\n<text x=\"256\" y=\"119\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">判断总误差</text>\n<text x=\"256\" y=\"136\" text-anchor=\"middle\" font-size=\"10\" style=\"fill:var(--ink-faint)\">两者同等重要</text>\n<line x1=\"312\" y1=\"121\" x2=\"336\" y2=\"121\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.5\"/>\n<polygon points=\"344,121 334,116 334,126\" style=\"fill:var(--ink-faint)\"/>\n<rect x=\"346\" y=\"60\" width=\"190\" height=\"40\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/>\n<text x=\"441\" y=\"85\" text-anchor=\"middle\" font-size=\"12.5\" style=\"fill:var(--ink-soft)\">① 噪声审计：先看见它</text>\n<rect x=\"346\" y=\"108\" width=\"190\" height=\"40\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/>\n<text x=\"441\" y=\"133\" text-anchor=\"middle\" font-size=\"12.5\" style=\"fill:var(--ink-soft)\">② 决策卫生：系统地降</text>\n<rect x=\"346\" y=\"156\" width=\"190\" height=\"40\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/>\n<text x=\"441\" y=\"181\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">③ 高风险处降，留必要裁量</text>\n<text x=\"280\" y=\"236\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">不求完美一致，只求看见并有节制地改善那看不见的一半</text>\n</svg>"
+    },
+    {
+      "type": "p",
+      "text": "这也正是《噪声》留给读者的那句克制的收束：降噪是好事，但不是越少越好，也从来不是零成本。它没有许诺一个所有判断都严丝合缝、分毫不差的世界，那样的世界既造不出来，也未必值得向往。它请你做的，只是先睁眼看见噪声、认真掂量它的分量，再在尊严与士气、防钻空子与价值多元、算法的便利与它的风险之间，一次次做审慎的权衡——这，才是与噪声相处的成熟姿态。"
+    }
+  ]
+}

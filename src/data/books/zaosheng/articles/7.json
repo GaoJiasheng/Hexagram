@@ -1,0 +1,111 @@
+{
+  "title": "决策卫生:六条降噪之道",
+  "subtitle": "降噪像洗手——你不知道挡掉了哪个病菌,做完也没有战果,但坚持成常规,判断里看不见的不一致就被系统地拦下一大批",
+  "centralIdea": "这一章给「降噪」起了个名字:决策卫生(decision hygiene)。精髓在一个比喻——降噪像洗手防感染,你不知道这一次搓掉的是哪个病菌,做完也看不到「战果」(噪声本就看不见),但坚持这套通用的卫生习惯,确实能系统地减少判断误差。六条核心做法:①独立判断再聚合——让多人互不影响地各自下判断,再取平均,独立是命门,一开会讨论就互相污染,平均能抵消随机噪声;②结构化分解——把一个笼统的大判断拆成几个彼此独立的小维度分别评估、最后才合成,挡住「一好遮百丑」的光环效应;③推迟直觉——先系统地过完证据、填好分项,把「一锤定音的整体感觉」留到最后,并只在需要时递信息,避免无关或过早的信息污染判断;④用相对判断/排序代替绝对打分——人做比较和排序比给绝对分数稳,排名比打1到10分噪声小;⑤用共同的、锚定良好的刻度——用具体案例做参照点,让每一档有一致理解,减少「你的7分=我的5分」;⑥中介评估协议(mediating assessments protocol)——把复杂决定拆成一组预先定义的中介评估各自评好、最后综合,并主动寻求多元独立的第二意见。贯穿原则:尽量把注意力钉在外部、可比、结构化的信息上,推迟并约束直觉,让它在证据都摆好之后才登场。降噪不靠说教「你要客观点」,而靠改造判断的流程。分寸:这些原则有成本(费时、需设计)、有边界(下一章再谈),不吹成万能公式。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "外科医生进手术室前,总要反复洗手。他并不知道这一次搓掉的到底是哪一种病菌,手术做完,也没人能指着某处说「看,这条命是洗手救回来的」——洗手的功劳,永远是看不见的。可正因为一代代医生把它当成雷打不动的规矩,术后感染才被系统地压了下去。这一章要讲的降噪之道,脾性与洗手一模一样:它不针对某一个具体的错误,你做完也看不到「战果」,但只要把这套习惯坚持成常规,判断里那些四散的、看不见的不一致,就会被悄悄拦下一大批。作者给这套习惯起了个名字——决策卫生(decision hygiene)。"
+    },
+    {
+      "type": "h2",
+      "text": "降噪像洗手,不像破案"
+    },
+    {
+      "type": "p",
+      "text": "破案是有主角、有情节的:抓住那个偏心的评委、揪出那条带歧视的规则,是一件让人痛快的事。可噪声没有反派,也讲不出故事——它是无数判断各偏各的、彼此对不上,散成一片,你根本指不出该怪谁。对付这种散乱,靠的不是找出凶手,而是改造流程。**决策卫生**就是这样一套「流程上的卫生习惯」:它不追问「这一次为什么错」,而是让整条判断的流水线更稳——同样的输入,尽量交出同样的输出。它不追求让某一次判断变得多聪明,只让每一次都少抖一点。"
+    },
+    {
+      "type": "quote",
+      "original": "决策卫生像洗手:你不知道挡掉了哪个病菌,做完也没有战果,但坚持下来,确实少生病。",
+      "translation": "全书给降噪起的名字。它不图单次判断变聪明,只让整个流程更稳定——看不见的功劳,恰恰最扎实。"
+    },
+    {
+      "type": "figure",
+      "ftype": "compare",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:15px;font-weight:600'>降噪像洗手,不像破案</text><text x='280' y='50' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>卫生习惯拦下的,永远是看不见的那一部分</text><line x1='280' y1='66' x2='280' y2='200' style='stroke:var(--line);stroke-width:1;stroke-dasharray:4 4'/><text x='142' y='88' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:13px;font-weight:600'>手部卫生 · 防术后感染</text><rect x='24' y='100' width='236' height='96' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='142' y='126' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:11.5px'>不知搓掉了哪个病菌</text><text x='142' y='150' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:11.5px'>做完没有可见战果</text><text x='142' y='177' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>坚持成常规 → 感染系统性下降</text><text x='418' y='88' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:13px;font-weight:600'>决策卫生 · 防判断噪声</text><rect x='300' y='100' width='236' height='96' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='418' y='126' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:11.5px'>不知挡掉了哪个错误</text><text x='418' y='150' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:11.5px'>做完没有可见战果</text><text x='418' y='177' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>坚持成常规 → 误差系统性下降</text><rect x='24' y='214' width='512' height='58' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='240' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>不针对某个错误,而是把流程管稳</text><text x='280' y='260' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>看不见的功劳,恰恰最扎实</text></svg>",
+      "caption": "决策卫生与洗手同理:看不见每一次挡掉了什么,但坚持成常规,就系统地减少误差"
+    },
+    {
+      "type": "p",
+      "text": "这套习惯一共六条。它们朴素、甚至有点枯燥,而且没有一条是免费的:每一条都要多花些时间,需要有人先把流程设计好。但换来的,是把大量本会随人、随时、随心情漂移的判断,拉回到一条稳定的轨道上。下面逐条来看。"
+    },
+    {
+      "type": "h2",
+      "text": "一 · 先独立,后汇总"
+    },
+    {
+      "type": "p",
+      "text": "想借众人之力,最糟的做法是把大家叫进一间屋,让人你一言我一语地讨论。前面讲群体时已经看到:先开口的人会给全场定调,后面的意见一个接一个被「带节奏」,热闹的讨论非但不能抵消噪声,反而在传染噪声。正确的次序是反过来的——**先让每个人互不通气地各自下判断,写下来,再把这些独立的结论汇总、取平均**。独立是这里的命门:一旦彼此听见,判断就被污染,聚合的降噪效果也随之作废。几个相互独立的判断求个平均,随机的偏高偏低会彼此抵消;而几个早已互相传染的判断,平均出来的只是同一种偏差,数字再多也白搭。所以开会不是不能开——而是要把「各自独立表态」放在「围坐讨论」之前:先各写各的,亮出来,再来碰。次序错了,人越多,反而错得越齐。"
+    },
+    {
+      "type": "h2",
+      "text": "二 · 把大判断拆成小块"
+    },
+    {
+      "type": "p",
+      "text": "第二条针对的是「一好遮百丑」的**光环效应**。面试一个候选人,若凭一个笼统的整体印象拍板,往往是某一点亮眼(比如谈吐讨喜)就把其余全染上了光,某一处扎眼就一票否决——这个整体印象里,各个维度早已互相污染,搅成了一团。**结构化分解**的办法是:先把大判断拆成几个界定清楚、彼此独立的小维度——专业能力、沟通表达、可靠程度……——逐项分别评估、分别打分,最后才把各项合成一个总分。每一项单独看、不让它去沾染别项,某一点的好恶就很难再绑架全局。"
+    },
+    {
+      "type": "figure",
+      "ftype": "flow",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='30' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:15px;font-weight:600'>降噪的次序:让直觉最后登场</text><rect x='26' y='86' width='88' height='60' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='70' y='121' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px;font-weight:600'>独立判断</text><rect x='128' y='86' width='88' height='60' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='172' y='121' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px;font-weight:600'>结构分解</text><rect x='230' y='86' width='88' height='60' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='274' y='121' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:12px;font-weight:600'>推迟直觉</text><rect x='332' y='86' width='88' height='60' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='376' y='121' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px;font-weight:600'>相对排序</text><rect x='434' y='86' width='88' height='60' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='478' y='121' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px;font-weight:600'>汇总聚合</text><path d='M116 116 L126 116' style='stroke:var(--ink-faint);stroke-width:1.5'/><path d='M124 111 L134 116 L124 121 Z' style='fill:var(--ink-faint)'/><path d='M218 116 L228 116' style='stroke:var(--ink-faint);stroke-width:1.5'/><path d='M226 111 L236 116 L226 121 Z' style='fill:var(--ink-faint)'/><path d='M320 116 L330 116' style='stroke:var(--ink-faint);stroke-width:1.5'/><path d='M328 111 L338 116 L328 121 Z' style='fill:var(--ink-faint)'/><path d='M422 116 L432 116' style='stroke:var(--ink-faint);stroke-width:1.5'/><path d='M430 111 L440 116 L430 121 Z' style='fill:var(--ink-faint)'/><text x='70' y='170' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:10px'>各自下结论</text><text x='172' y='170' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:10px'>拆成小维度</text><text x='274' y='170' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:10px'>证据齐再拍</text><text x='376' y='170' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:10px'>比高下</text><text x='478' y='170' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:10px'>取平均抵消</text><rect x='26' y='206' width='508' height='58' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='280' y='232' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>把直觉逼到最后,让噪声在入口就少一批</text><text x='280' y='252' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>同样的输入,尽量交出同样的输出</text></svg>",
+      "caption": "先独立、再分解、把直觉压到最后,最后才排序聚合——一条设计好的流水线,而非凭一股整体感觉一锤定音"
+    },
+    {
+      "type": "h2",
+      "text": "三 · 让直觉最后登场"
+    },
+    {
+      "type": "p",
+      "text": "人有个根深蒂固的毛病:常常先冒出一个结论,再回头去搜罗证据,把它圆成一个自洽的故事。早到的信息、第一眼的印象,会悄悄把整幅判断定了型,后面看到的一切都被它牵着走。第三条就是要拦住这一手——**推迟直觉**。做法是:先老老实实把证据一项项过完、把各个分项一格格填好,把那个「一锤定音的整体感觉」硬是留到最后一步,才放它出场。与之配套的还有一条:只在需要时才把信息递给判断者,无关的、过早的信息(比如一份卷宗里其实用不上的旁枝末节)不如干脆挡在门外,免得它凭空污染判断。直觉不是不要,而是要等证据都摆好了,再请它来做那最后的综合。"
+    },
+    {
+      "type": "quote",
+      "original": "先过完证据,再让直觉登场;别让第一感一上来,就绑架了整场分析。",
+      "translation": "推迟直觉的要义。直觉本身不是敌人,过早出场、抢在证据前头定调的直觉才是——把它留到最后,它反而更可靠。"
+    },
+    {
+      "type": "h2",
+      "text": "四 · 比高下,别打绝对分"
+    },
+    {
+      "type": "p",
+      "text": "让人凭空给一个东西打「几分」,是件很不稳的事——你的 7 分和我的 7 分未必是一回事,而且同一个人今天手松、明天手紧,分数还会自己漂移。可要是换成「把这几个放一起,排个先后、比个高下」,人就稳得多。**比较和排序,是我们天生更在行的动作**:说不清一杯咖啡「值几分」,却一口就能尝出哪杯更浓。所以第四条主张:能用相对判断的地方,就别用绝对打分。与其让每位考核者给员工独立打 1 到 10 分,不如让他们把员工两两相比、排出次序——排出来的名次,噪声通常比一堆孤立的分数小得多。"
+    },
+    {
+      "type": "h2",
+      "text": "五 · 统一那把尺子"
+    },
+    {
+      "type": "p",
+      "text": "就算非用打分不可,也还有救:让所有判断者对这把尺子的每一档,有一致的理解。「优秀」到底长什么样、「合格」的下限画在哪,不能靠各人心里那杆各不相同的秤,而要用**具体的案例**把每一档钉死——拿几个真实的样本当参照点:「像这个,就是 8 分;像那个,就是 5 分」。有了共同的、锚得牢的刻度,「你的 7 分等于我的 5 分」这种错位才压得下去,同一句评语在不同人笔下,才不至于变成完全不同的分数。"
+    },
+    {
+      "type": "h2",
+      "text": "六 · 中介评估协议,与多元的第二意见"
+    },
+    {
+      "type": "p",
+      "text": "最后一条,是把前几条拧成一套固定流程,作者称之为「**中介评估协议**(mediating assessments protocol)」。面对一个复杂的大决定(该不该收购这家公司、这个方案行不行),不要一上来就凭总体感觉拍板,而是先把它拆成一组预先定义好的「中介评估」项,每一项都独立地、结构化地评好,把直觉逼到最末,最后才综合成总判断——等于让每一次这样的决定,都走同一条设计好的轨道。与之配套的,是主动去寻求**多元而独立的第二意见**,尤其是那些可能反对你的声音,而不是找几个必然附和你的人来给自己壮胆。"
+    },
+    {
+      "type": "figure",
+      "ftype": "method",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:15px;font-weight:600'>决策卫生 · 六条降噪之道</text><text x='280' y='47' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>不针对某个错误,像洗手一样拦下看不见的不一致</text><rect x='24' y='62' width='252' height='62' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='54' cy='93' r='14' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='54' y='98' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:13px;font-weight:600'>1</text><text x='80' y='88' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:12.5px;font-weight:600'>先独立,后汇总</text><text x='80' y='108' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>各自判断,再取平均</text><rect x='284' y='62' width='252' height='62' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='314' cy='93' r='14' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='314' y='98' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:13px;font-weight:600'>2</text><text x='340' y='88' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:12.5px;font-weight:600'>结构化分解</text><text x='340' y='108' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>拆成独立小维度分别评</text><rect x='24' y='132' width='252' height='62' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='54' cy='163' r='14' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='54' y='168' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:13px;font-weight:600'>3</text><text x='80' y='158' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:12.5px;font-weight:600'>推迟直觉</text><text x='80' y='178' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>证据填齐后再下整体判断</text><rect x='284' y='132' width='252' height='62' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='314' cy='163' r='14' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='314' y='168' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:13px;font-weight:600'>4</text><text x='340' y='158' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:12.5px;font-weight:600'>相对排序</text><text x='340' y='178' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>比高下,代替绝对打分</text><rect x='24' y='202' width='252' height='62' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='54' cy='233' r='14' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='54' y='238' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:13px;font-weight:600'>5</text><text x='80' y='228' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:12.5px;font-weight:600'>统一刻度</text><text x='80' y='248' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>用实例把每一档锚死</text><rect x='284' y='202' width='252' height='62' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><circle cx='314' cy='233' r='14' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='314' y='238' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:13px;font-weight:600'>6</text><text x='340' y='228' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:12.5px;font-weight:600'>中介评估协议</text><text x='340' y='248' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>走固定流程,纳多元第二意见</text><text x='280' y='286' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:11.5px;font-weight:600'>六条同一指向:把注意力钉在外部、可比、结构化的信息上</text></svg>",
+      "caption": "决策卫生六原则一览:独立、分解、推迟直觉、相对排序、统一刻度、中介评估协议——改造流程,而非说教「客观点」"
+    },
+    {
+      "type": "h2",
+      "text": "洗手看不见战果,却真能防病"
+    },
+    {
+      "type": "p",
+      "text": "把这六条摆到一起,会发现它们其实指向同一件事:尽量把判断者的注意力,钉在**外部的、可比的、结构化的**信息上,把直觉推到最后、约束在框架之内,让它在「证据都摆好之后」才登场。这就是决策卫生的全部脾性——它不靠对谁说教「你要客观一点」「你别带情绪」(那种劝告几乎从不管用,谁都自以为已经很客观了),而是靠改造判断的流程本身,让不一致从入口处就少一批。换句话说,降噪不是一场对个人品性的呼吁,而是一次对工作流程的重新设计。"
+    },
+    {
+      "type": "p",
+      "text": "也要老实承认它的代价。这六条没有一条是免费的:独立判断要多组织一轮、结构化分解要事先设计维度、推迟直觉要按捺住那股想立刻下结论的冲动——它们都更费时、更费事,需要有人先把流程搭起来。它们也不是包治百病的万能公式:什么时候值得这么大动干戈、什么时候保留一点人的裁量反而更好,是有边界的,那正是下一章的题目。但就像洗手一样——你看不见它今天究竟挡掉了哪一个错误,做完也没有掌声,可只要坚持成常规,它确实在系统地、一点一点地,替你的判断减少误差。"
+    }
+  ]
+}

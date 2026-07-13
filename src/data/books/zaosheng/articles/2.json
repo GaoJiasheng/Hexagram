@@ -1,0 +1,133 @@
+{
+ "title": "系统噪声:本该一致的判断为何四散",
+ "subtitle": "同一个案子换一位法官,刑期可能差出十年——这不是偏见,是纯粹的运气",
+ "centralIdea": "系统噪声(system noise),指一群本应可以互相替换的专业人员——法官、核保员、医生、评委——对同一件事做出的判断彼此不一致。它不是「大家都偏向一边」的偏差,而是纯粹的四散:同一份假设案卷交到不同联邦法官手里,刑期能从一两年铺到十几年;同一批风险交给不同核保员定价,差异高达约55%,是高管预期的五倍。系统噪声还能再拆成两块——水平噪声(有人一贯从严、有人一贯从宽)与模式噪声(每个人对不同类型的个案有自己独特的偏好反应),后者往往是最大的一块。它长期隐形,是因为现实中一个案子只由一个人裁决,我们从不知道「换个人会怎样」;只有把多人对同一批案例的独立判断并排比较,分歧才会现形。在法庭、保险、医院、评审这些地方,「你摊上谁」和「你摊上什么事」几乎一样重要——这是一种巨大而隐形的不公与浪费。分寸在于:这不是否定专业判断的价值,而是揭示它被忽视的不一致。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "两个人,犯了几乎一样的罪,一样的前科、一样的情节。他们走进两间不同的法庭,一个被判一年半,另一个被判十一年。区别不在案情,而在——他们抽到了不同的法官。这不是虚构的极端个案,而是研究者把同一批案卷发给许多位法官后,反复看到的景象。上一章我们认识了「噪声」这个被忽视的误差来源;这一章要把它放进组织里看:当一群**本该做出相同判断的专业人员各说各话**,会发生什么。这种一致性的崩塌,书里给了它一个名字——**系统噪声(system noise)**。"
+  },
+  {
+   "type": "h2",
+   "text": "同一个案子,在不同法官手里"
+  },
+  {
+   "type": "p",
+   "text": "上世纪七十年代,一位对量刑随意深恶痛绝的联邦法官,推动了一项如今很有名的实验:研究者准备了一组**假设案件**——案情、被告背景、证据全部写死,一字不差,然后请许多位联邦法官各自独立地为同一批案子量刑。逻辑很简单:如果法律是一套能稳定运行的系统,不同法官面对同一份案卷,判罚应该相当接近才对。"
+  },
+  {
+   "type": "p",
+   "text": "结果不是这样。同一个案子,判出来的刑期在不同法官手里从一两年一直铺到十几年;有些案子,重判和轻判之间差的不是几个月,而是好几年的牢狱。随机抽两位法官来判同一个被告,他们给出的刑期平均要差出好几年。**这意味着:一个人要在监狱里待多久,很大一部分不取决于他做了什么,而取决于当天是哪位法官坐在审判席上。**"
+  },
+  {
+   "type": "p",
+   "text": "关键要看清:这**不是「偏见」那种误差**。偏见是大家一起偏向某个方向——比如整体判得过重,或对某类人系统性地更严厉。噪声是另一回事:它是纯粹的**不一致**,是判决像被打散了一样四处飞溅,没有统一的方向,只有杂乱的分歧。对站在被告席上的人来说,这等于**司法变成了抽签**——同样的行为,可能换来宽大,也可能换来严惩,全看运气。这也是那位法官当年最愤怒的地方:法律面前人人平等,前提是判决不能这样随人而变。"
+  },
+  {
+   "type": "p",
+   "text": "回想上一章那个打靶的比喻:偏差是所有弹孔一致地偏向靶心某一侧,噪声则是弹孔四散、无规律地铺开。量刑实验拍下的,正是一张**弹孔四散的靶纸**——它们没有共同偏向哪里,只是彼此对不上。偏差至少还有个方向,发现了就能整体校准;噪声连方向都没有,它是一片纯粹的分歧,你甚至说不出「应该往哪边修」。这也是它更难被抓住的原因:一个方向明确的错误容易被投诉、被纠正,而一群「各判各的」的判决,单看每一个都言之成理,凑在一起才露出破绽。"
+  },
+  {
+   "type": "figure",
+   "ftype": "离散示意",
+   "caption": "同一份案卷,不同法官判出的刑期四处飞溅——差距十年以上",
+   "svg": "<svg viewBox=\"0 0 560 250\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink);font-family:var(--font-serif)\">同一个被告 · 同一份案卷</text><text x=\"280\" y=\"47\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint);font-family:var(--font-serif)\">每个点 = 一位法官对这个案子给出的刑期</text><line x1=\"60\" y1=\"180\" x2=\"520\" y2=\"180\" style=\"stroke:var(--line);stroke-width:1.5\"/><line x1=\"60\" y1=\"176\" x2=\"60\" y2=\"184\" style=\"stroke:var(--ink-faint);stroke-width:1\"/><text x=\"60\" y=\"200\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint);font-family:var(--font-serif)\">0年</text><line x1=\"175\" y1=\"176\" x2=\"175\" y2=\"184\" style=\"stroke:var(--ink-faint);stroke-width:1\"/><text x=\"175\" y=\"200\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint);font-family:var(--font-serif)\">5年</text><line x1=\"290\" y1=\"176\" x2=\"290\" y2=\"184\" style=\"stroke:var(--ink-faint);stroke-width:1\"/><text x=\"290\" y=\"200\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint);font-family:var(--font-serif)\">10年</text><line x1=\"405\" y1=\"176\" x2=\"405\" y2=\"184\" style=\"stroke:var(--ink-faint);stroke-width:1\"/><text x=\"405\" y=\"200\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint);font-family:var(--font-serif)\">15年</text><line x1=\"520\" y1=\"176\" x2=\"520\" y2=\"184\" style=\"stroke:var(--ink-faint);stroke-width:1\"/><text x=\"520\" y=\"200\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint);font-family:var(--font-serif)\">20年</text><circle cx=\"94\" cy=\"150\" r=\"5\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"106\" cy=\"163\" r=\"5\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"129\" cy=\"143\" r=\"5\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"152\" cy=\"165\" r=\"5\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"164\" cy=\"150\" r=\"5\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"175\" cy=\"134\" r=\"5\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"198\" cy=\"161\" r=\"5\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"221\" cy=\"147\" r=\"5\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"244\" cy=\"166\" r=\"5\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"279\" cy=\"151\" r=\"5\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"313\" cy=\"160\" r=\"5\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"359\" cy=\"144\" r=\"5\" style=\"fill:var(--cinnabar-pure)\"/><line x1=\"94\" y1=\"214\" x2=\"94\" y2=\"222\" style=\"stroke:var(--ink-soft);stroke-width:1\"/><line x1=\"94\" y1=\"222\" x2=\"359\" y2=\"222\" style=\"stroke:var(--ink-soft);stroke-width:1\"/><line x1=\"359\" y1=\"214\" x2=\"359\" y2=\"222\" style=\"stroke:var(--ink-soft);stroke-width:1\"/><text x=\"226\" y=\"240\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft);font-family:var(--font-serif)\">同一个案子,最轻与最重相差十年以上</text></svg>"
+  },
+  {
+   "type": "quote",
+   "original": "在一个有噪声的系统里,你会被判多久,一半看你做了什么,一半看你碰上了谁。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "保险公司里的「噪声审计」"
+  },
+  {
+   "type": "p",
+   "text": "你可能会想:法官处理的是人命关天、情节复杂的案子,分歧大一点也难免。那换个看起来「客观」得多的行当呢?书里讲了一家大保险公司的故事。核保员的工作是给风险定价——看一份投保申请,估出该收多少保费;理赔估损员则是看一桩事故,估出该赔多少钱。这类工作有数据、有流程、有经验丰富的专业人员,照理说应该相当稳定,不该像法庭那样众说纷纭。"
+  },
+  {
+   "type": "p",
+   "text": "作者请公司做了一次**噪声审计(noise audit)**:准备若干个真实业务那样的案例,让多名核保员**各自独立**地报价,彼此不商量,然后把同一个案子的不同报价摆到一起比。在揭晓之前,作者先请公司高管猜一猜:两位核保员对同一个案子的报价,大概会差多少?高管们的答案是**10%左右**——在他们心里,这已经算是「专业范围内的正常浮动」了,甚至有人觉得还偏高。"
+  },
+  {
+   "type": "p",
+   "text": "实测结果是**约55%**——是高管预期的**五倍还多**。也就是说,同一份风险,一位核保员报一万,另一位可能报一万五;理赔估损同样离散。这种差异每天都在发生,却几乎从不被人察觉——因为一份保单通常只经一个人的手,公司从不把两个人对同一个案子的判断并排放在一起看。**报高了,生意被吓跑;报低了,赔穿了保费。噪声就这样安静地、常年地从两头吃掉利润,谁也没给它记过一笔账。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "caption": "噪声审计:高管以为差约10%,实测约55%——五倍于预期",
+   "svg": "<svg viewBox=\"0 0 560 280\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink);font-family:var(--font-serif)\">同一份风险,两位核保员报价的差异</text><line x1=\"90\" y1=\"220\" x2=\"500\" y2=\"220\" style=\"stroke:var(--line);stroke-width:1.5\"/><rect x=\"150\" y=\"193\" width=\"90\" height=\"27\" style=\"fill:none;stroke:var(--ink-faint);stroke-width:2\"/><text x=\"195\" y=\"184\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink-faint);font-family:var(--font-serif)\">≈10%</text><text x=\"195\" y=\"240\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft);font-family:var(--font-serif)\">高管事先预期</text><rect x=\"330\" y=\"73\" width=\"90\" height=\"147\" style=\"fill:var(--cinnabar-bg);stroke:var(--cinnabar-pure);stroke-width:2\"/><text x=\"375\" y=\"64\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--cinnabar-pure);font-family:var(--font-serif)\">≈55%</text><text x=\"375\" y=\"240\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft);font-family:var(--font-serif)\">噪声审计实测</text><text x=\"280\" y=\"266\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint);font-family:var(--font-serif)\">实测差异约为高管预期的五倍</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "别以为这只是法庭和保险两个特例。同样「本该一致却四散」的现象,在几乎所有靠专业判断吃饭的地方都能找到:两位放射科医生看同一张片子,可能一个说没事、一个建议进一步处理;两位面试官见同一个应聘者,给出的评价常常南辕北辙;专利审查、法医鉴定、绩效打分、论文评审……只要最终结论压在「一个人的判断」上,系统噪声就有藏身之处。它不是某个行业的毛病,而是**人在做判断这件事上普遍带着的一层杂音**。"
+  },
+  {
+   "type": "h2",
+   "text": "把系统噪声拆成两块:水平噪声与模式噪声"
+  },
+  {
+   "type": "p",
+   "text": "系统噪声看着一团乱,其实可以拆开。第一块叫**水平噪声(level noise)**,指的是不同判断者**整体的宽严基准不一样**。有的法官天生是「重手」,不管什么案子都判得偏重;有的一贯从宽。打分也一样:有的老师给分一向偏高,有的一向偏低。水平噪声衡量的,就是这些人各自「平均线」的高低参差——同一批卷子,甲老师整体给80分,乙老师整体给70分。这一块最好理解,也最容易想到办法去校正。"
+  },
+  {
+   "type": "p",
+   "text": "但如果你以为把每个人的宽严基准校平就够了,那就低估了问题。还有第二块,叫**模式噪声(pattern noise)**:每个判断者对**不同类型的个案,有自己独特的、往往说不清道不明的偏好反应**。甲法官对白领经济犯罪深恶痛绝、下手极狠,对某些暴力犯反倒相对宽容;乙法官恰好相反。这不是谁整体更严的问题——他俩的平均线可能一样高——而是**他们的「严厉」落在了不同的地方**。把每个人对每一类案子的独特倾向叠起来,就是模式噪声。"
+  },
+  {
+   "type": "p",
+   "text": "换个生活里的例子也许更好懂。两位评委给同一批征文打分,把各自整体偏高偏低的差先抹平之后,你会发现他们**偏爱的「点」根本不一样**:甲评委独独欣赏辞藻华丽的,乙评委偏偏吃朴实真诚那一套。于是同一篇文章,在一个人那儿是第一,到另一个人手里可能垫底——两人平均分明明一样,排序却对不上。这种「各有各的口味」落到判决、定价、诊断上,就是模式噪声:它藏在每个专业人员看似合理的推理背后,难以言说,也难以察觉。"
+  },
+  {
+   "type": "p",
+   "text": "出人意料的是,拆开之后往往会发现:**模式噪声通常是系统噪声里最大的一块**,比水平噪声还大。也就是说,让判决四散的,主要不是「有人偏严、有人偏宽」这种好理解的差异,而是每个人脑子里那套独一无二、连自己都未必意识到的反应模式。模式噪声里还藏着一个随时间波动的部分——**同一个人在不同时刻、不同心情下也会前后不一**——这一块叫**场合噪声(occasion noise)**,正是下一章的主角。"
+  },
+  {
+   "type": "figure",
+   "ftype": "拆解图",
+   "caption": "系统噪声 = 水平噪声 + 模式噪声(模式噪声中又含随时间波动的场合噪声)",
+   "svg": "<svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"150\" y=\"18\" width=\"260\" height=\"54\" rx=\"6\" style=\"fill:none;stroke:var(--cinnabar-pure);stroke-width:2\"/><text x=\"280\" y=\"43\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"bold\" style=\"fill:var(--cinnabar-pure);font-family:var(--font-serif)\">系统噪声 System noise</text><text x=\"280\" y=\"63\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint);font-family:var(--font-serif)\">本应可互换的人,判断却四散</text><line x1=\"280\" y1=\"72\" x2=\"280\" y2=\"90\" style=\"stroke:var(--ink-soft);stroke-width:1.5\"/><line x1=\"150\" y1=\"90\" x2=\"410\" y2=\"90\" style=\"stroke:var(--ink-soft);stroke-width:1.5\"/><line x1=\"150\" y1=\"90\" x2=\"150\" y2=\"112\" style=\"stroke:var(--ink-soft);stroke-width:1.5\"/><line x1=\"410\" y1=\"90\" x2=\"410\" y2=\"112\" style=\"stroke:var(--ink-soft);stroke-width:1.5\"/><rect x=\"40\" y=\"112\" width=\"220\" height=\"72\" rx=\"6\" style=\"fill:none;stroke:var(--ink);stroke-width:1.5\"/><text x=\"150\" y=\"138\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">水平噪声 level noise</text><text x=\"150\" y=\"160\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft);font-family:var(--font-serif)\">整体宽严基准不同</text><text x=\"150\" y=\"178\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint);font-family:var(--font-serif)\">有人一贯从严,有人一贯从宽</text><rect x=\"300\" y=\"112\" width=\"220\" height=\"72\" rx=\"6\" style=\"fill:none;stroke:var(--ink);stroke-width:1.5\"/><text x=\"410\" y=\"138\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">模式噪声 pattern noise</text><text x=\"410\" y=\"160\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft);font-family:var(--font-serif)\">对不同个案有独特反应</text><text x=\"410\" y=\"178\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--cinnabar-pure);font-family:var(--font-serif)\">通常是系统噪声里最大的一块</text><line x1=\"410\" y1=\"184\" x2=\"410\" y2=\"198\" style=\"stroke:var(--ink-faint);stroke-width:1.2\"/><line x1=\"355\" y1=\"198\" x2=\"465\" y2=\"198\" style=\"stroke:var(--ink-faint);stroke-width:1.2\"/><line x1=\"355\" y1=\"198\" x2=\"355\" y2=\"216\" style=\"stroke:var(--ink-faint);stroke-width:1.2\"/><line x1=\"465\" y1=\"198\" x2=\"465\" y2=\"216\" style=\"stroke:var(--ink-faint);stroke-width:1.2\"/><rect x=\"300\" y=\"216\" width=\"110\" height=\"66\" rx=\"6\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"355\" y=\"243\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink);font-family:var(--font-serif)\">稳定模式</text><text x=\"355\" y=\"263\" text-anchor=\"middle\" font-size=\"10\" style=\"fill:var(--ink-faint);font-family:var(--font-serif)\">一贯的独特倾向</text><rect x=\"410\" y=\"216\" width=\"110\" height=\"66\" rx=\"6\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"465\" y=\"240\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink);font-family:var(--font-serif)\">场合噪声</text><text x=\"465\" y=\"258\" text-anchor=\"middle\" font-size=\"10\" style=\"fill:var(--ink-faint);font-family:var(--font-serif)\">同一人不同时刻</text><text x=\"465\" y=\"274\" text-anchor=\"middle\" font-size=\"10\" style=\"fill:var(--cinnabar-pure);font-family:var(--font-serif)\">→ 下一章</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "它为什么一直没被发现"
+  },
+  {
+   "type": "p",
+   "text": "这么大的问题,为什么很多组织多年来都没意识到?答案朴素得让人吃惊:**因为现实里,一个案子只由一个人判**。一份保单只经一位核保员的手,一台手术只由一位医生拍板,一份简历只落到一位面试官桌上。判决一出,事情就翻篇了,**没有人会知道「换一个人来,会不会完全不同」**。那个「换个人」的平行结果从不出现,不一致也就无从暴露。"
+  },
+  {
+   "type": "p",
+   "text": "更微妙的是,专业人员对自己的判断往往**很有信心**,而且这种信心是真诚的——他们看不到别人,只看到自己言之成理的推理过程,自然觉得「换谁来都该这么判」。只有像噪声审计这样,硬把多个人对**同一批案例**的独立判断并排摆出来,分歧才会一下子现形。所以噪声不是先被解决的,而是先**被看见**的;而看见它,需要一个反直觉的动作——刻意去比较那些本来永远不会相遇的判断。"
+  },
+  {
+   "type": "p",
+   "text": "这也解释了一个反常识的现象:噪声往往在「大家都很专业、很认真」的机构里同样严重。认真不等于一致——每个人都认真地、诚恳地,按自己那套标准把事情判到底,而这些标准彼此并不重合。**问题不出在偷懒或不用心,恰恰出在每个人都在凭本事独立判断**,却从没人把这些独立的判断放到一起校对过。越是倚重资深专家、越是不设统一尺度的地方,这层杂音有时反而越厚。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照图",
+   "caption": "现实中一案一人,分歧被彻底掩盖;并排独立判,差异才现形",
+   "svg": "<svg viewBox=\"0 0 560 280\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"280\" y1=\"18\" x2=\"280\" y2=\"250\" style=\"stroke:var(--line);stroke-width:1.5\"/><text x=\"140\" y=\"34\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">现实:一案一人</text><rect x=\"80\" y=\"50\" width=\"120\" height=\"34\" rx=\"5\" style=\"fill:none;stroke:var(--ink);stroke-width:1.5\"/><text x=\"140\" y=\"72\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink);font-family:var(--font-serif)\">同一个案子</text><line x1=\"140\" y1=\"84\" x2=\"140\" y2=\"108\" style=\"stroke:var(--ink-soft);stroke-width:1.2\"/><path d=\"M 135 104 L 140 112 L 145 104 Z\" style=\"fill:var(--ink-soft)\"/><rect x=\"90\" y=\"112\" width=\"100\" height=\"34\" rx=\"5\" style=\"fill:none;stroke:var(--ink);stroke-width:1.5\"/><text x=\"140\" y=\"134\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink);font-family:var(--font-serif)\">一位法官</text><line x1=\"140\" y1=\"146\" x2=\"140\" y2=\"170\" style=\"stroke:var(--ink-soft);stroke-width:1.2\"/><path d=\"M 135 166 L 140 174 L 145 166 Z\" style=\"fill:var(--ink-soft)\"/><rect x=\"90\" y=\"174\" width=\"100\" height=\"34\" rx=\"5\" style=\"fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5\"/><text x=\"140\" y=\"196\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--cinnabar-pure);font-family:var(--font-serif)\">一个判决</text><text x=\"140\" y=\"236\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint);font-family:var(--font-serif)\">换个人会怎样? 无从知道</text><text x=\"420\" y=\"34\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">噪声审计:一案多人</text><rect x=\"360\" y=\"50\" width=\"120\" height=\"34\" rx=\"5\" style=\"fill:none;stroke:var(--ink);stroke-width:1.5\"/><text x=\"420\" y=\"72\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink);font-family:var(--font-serif)\">同一个案子</text><line x1=\"420\" y1=\"84\" x2=\"338\" y2=\"102\" style=\"stroke:var(--ink-soft);stroke-width:1\"/><line x1=\"420\" y1=\"84\" x2=\"420\" y2=\"102\" style=\"stroke:var(--ink-soft);stroke-width:1\"/><line x1=\"420\" y1=\"84\" x2=\"502\" y2=\"102\" style=\"stroke:var(--ink-soft);stroke-width:1\"/><rect x=\"306\" y=\"102\" width=\"64\" height=\"30\" rx=\"4\" style=\"fill:none;stroke:var(--ink);stroke-width:1.2\"/><text x=\"338\" y=\"122\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink);font-family:var(--font-serif)\">法官甲</text><rect x=\"388\" y=\"102\" width=\"64\" height=\"30\" rx=\"4\" style=\"fill:none;stroke:var(--ink);stroke-width:1.2\"/><text x=\"420\" y=\"122\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink);font-family:var(--font-serif)\">法官乙</text><rect x=\"470\" y=\"102\" width=\"64\" height=\"30\" rx=\"4\" style=\"fill:none;stroke:var(--ink);stroke-width:1.2\"/><text x=\"502\" y=\"122\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink);font-family:var(--font-serif)\">法官丙</text><line x1=\"338\" y1=\"132\" x2=\"338\" y2=\"168\" style=\"stroke:var(--ink-soft);stroke-width:1\"/><line x1=\"420\" y1=\"132\" x2=\"420\" y2=\"178\" style=\"stroke:var(--ink-soft);stroke-width:1\"/><line x1=\"502\" y1=\"132\" x2=\"502\" y2=\"160\" style=\"stroke:var(--ink-soft);stroke-width:1\"/><rect x=\"308\" y=\"168\" width=\"60\" height=\"28\" rx=\"4\" style=\"fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5\"/><text x=\"338\" y=\"187\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--cinnabar-pure);font-family:var(--font-serif)\">2年</text><rect x=\"390\" y=\"178\" width=\"60\" height=\"28\" rx=\"4\" style=\"fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5\"/><text x=\"420\" y=\"197\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--cinnabar-pure);font-family:var(--font-serif)\">7年</text><rect x=\"472\" y=\"160\" width=\"60\" height=\"28\" rx=\"4\" style=\"fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5\"/><text x=\"502\" y=\"179\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--cinnabar-pure);font-family:var(--font-serif)\">12年</text><text x=\"420\" y=\"236\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint);font-family:var(--font-serif)\">并排一比,分歧立刻现形</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "「你摊上谁」和「你摊上什么事」"
+  },
+  {
+   "type": "p",
+   "text": "把这些放到一起,得到一个不太舒服的结论:在法庭、保险、医院、招聘、评审这些地方,决定你命运的,除了「你摊上了什么事」,还有一个几乎同样重要的变量——**「你摊上了谁」**。抽到哪位法官、哪位核保员、哪位医生、哪位评委,本应无关紧要,实际却常常左右结果。这既是对个体的不公——同样的情况得到天差地别的对待;也是对组织的浪费——同一件事被反复地、随机地判偏,成本年复一年地从缝隙里流走,却因为从不并排比较而始终隐形。"
+  },
+  {
+   "type": "quote",
+   "original": "一件事的裁断,本不该取决于你今天恰好抽到了谁。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "需要说清分寸:指出系统噪声,**不是要否定专业判断的价值**,更不是说「人不如机器」「凭经验都是错的」。专业人员的经验、直觉、对复杂情境的把握,依然宝贵。这一章要揭示的,只是一个长期被忽视的事实:**再专业的判断者聚在一起,也会在本该一致的地方四散开来**,而这种四散是可以被测量、也应该被正视的。承认它的存在,不是不信任专家,恰恰是认真对待「公平」二字的第一步——因为一件事该怎么判,不该取决于你今天抽到了谁。看清了系统噪声长什么样、由哪几块拼成,下一章我们就转向它最难缠的一块:同一个人,在不同时候,也会做出不同的判断。"
+  }
+ ]
+}

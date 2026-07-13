@@ -1,0 +1,148 @@
+{
+ "title": "规则、公式与算法:为何常胜过人的直觉",
+ "subtitle": "在大量判断任务上,几个变量按固定权重算出的机械预测,平均而言不输甚至反超资深专家的直觉——公式赢在一个朴素的优势:零噪声;但用算法降噪时,别让偏见穿着「客观」的外衣溜回来。",
+ "centralIdea": "本章讲一个反直觉却证据充分的结论:很多判断任务上,简单的规则/公式/算法胜过专家的临床直觉,一个核心原因是公式零噪声。①机械预测 vs 临床判断——Meehl 及半个多世纪的后继研究反复发现,把几个关键变量按固定权重算出的机械预测,在预测学业、再犯、疾病预后、绩效等任务上平均不输甚至胜过资深专家的整体判断。②公式为何赢:㈠零噪声,同样输入永远同样输出,不受心情/疲劳/顺序/锚定干扰;㈡不被无关信息带偏,不追求「连贯故事」,不对个案过度自信。③简单到惊人也够用——等权模型(几个变量各给相同权重求和)几乎和复杂回归一样准,连随机权重的线性模型有时也能打平专家,可见专家败在「不稳定」而非缺信息。④「断腿例外」与专家真正价值——规则允许在极少数明显特殊情形(如「他今晚摔断了腿」这种公式没纳入的关键信息)人工推翻,但人一旦有随意推翻权往往滥用、反把准确度拉低;专家更大的价值在定义问题、选变量、喂对输入。⑤算法的警示——算法胜在稳定但不中立,若训练数据含历史偏见会将其固化甚至放大,用「客观」外衣制造新的系统性不公,故公式降噪须配对偏差、透明、可问责的审查。核心:一条稳定的简单规则常能打败飘忽的专家直觉,靠的正是零噪声;但降噪别顺手请回一个更隐蔽的偏差。分寸:平衡,既讲公式威力也讲算法偏见风险,不鼓吹一切交给算法。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "设想一家公司在招人。简历、笔试、几轮面试下来,资深主管把材料一摊,凭多年阅人的经验拍板:这个行,那个不行。我们几乎本能地相信——一个经验老到的专家,坐下来通盘权衡、综合判断,总该比一张冷冰冰的评分表靠谱吧?这一章要讲一件让很多专家难以下咽的事:在大量这类判断任务上——预测谁能读好研究生、谁会再次犯罪、哪个病人预后更差、哪个新人绩效更高——把几个关键指标按固定权重加起来算出的一个分数,平均而言不但不输给专家的整体直觉,还常常反过来赢它。更扎心的是原因之一,恰恰是我们前几章一直在追的那个幽灵:**公式没有噪声。**"
+  },
+  {
+   "type": "h2",
+   "text": "一、机械预测对临床判断:一场持续半个多世纪的对垒"
+  },
+  {
+   "type": "p",
+   "text": "先把两条路摆清楚。面对同一堆信息,做预测有两种办法:一种是**临床判断(clinical judgment)**——专家把所有材料放进脑子里,凭经验和直觉综合出一个整体结论;另一种是**机械预测(mechanical prediction)**——把几个被选定的变量代进一条固定的规则或公式,算出一个分数,谁也不许临时加戏。前者是我们最推崇的「专业眼光」,后者听起来呆板、没灵气。"
+  },
+  {
+   "type": "p",
+   "text": "1954 年,心理学家保罗·米尔(Paul Meehl)出了一本很薄的书,系统比较这两条路谁更准,结论让整个行业下不来台:在他能找到的一批研究里,**呆板的机械预测几乎总是打平、常常反超**训练有素的临床专家。这本小册子像一根刺,扎了几十年。此后半个多世纪,后继者把比较扩展到二百多项研究、覆盖医学、司法、金融、人事各行:机械预测在约一半任务里明显更准,另一半里打平,专家能明显胜出的**寥寥无几**。这不是某个刁钻个例,而是一条稳稳站住的普遍规律。"
+  },
+  {
+   "type": "quote",
+   "original": "把几个数字代进固定公式,竟然比资深专家的通盘判断更准——这个结论让专业人士难堪,却被半个多世纪的研究一再证实。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "二、公式凭什么赢:第一,它零噪声"
+  },
+  {
+   "type": "p",
+   "text": "公式赢的头号原因,朴素得几乎让人失望:**同样的输入,永远给同样的输出。**你把一模一样的材料喂给它,今天和明天、饭前和饭后、排在第一个和排在第一百个,它吐出的答案一字不差。回想前几章讲过的那些噪声:专家有**场合噪声**——心情、疲劳、饥饿、天气、上一个案子的余味,都会悄悄挪动他这一次的判断;还有**模式噪声**——每个专家都带着自己独有的一套怪癖权重。公式把这两样一笔勾销:它没有心情,不会累,也没有个人偏好。"
+  },
+  {
+   "type": "p",
+   "text": "这一点值得在这里钉牢,因为它常被低估。我们总以为专家输是因为「看得不够全」「少了点信息」,于是想着给他更多资料、更多时间。可真相往往是:专家看的信息和公式差不多,他输,是输在**每次称重的手都在抖。**公式的手不抖——这就是它全部的、也是决定性的优势。下面这张靶盘图,把「抖」和「不抖」画在了一起。"
+  },
+  {
+   "type": "quote",
+   "original": "同一份材料,今天和明天、饭前和饭后,公式给出的答案一字不差;而人不会——公式的手不抖,人的手一直在抖。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "对比",
+   "svg": "<svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"18\" letter-spacing=\"2\">同一批材料,反复判断:靶心落点</text><circle cx=\"160\" cy=\"170\" r=\"68\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><circle cx=\"160\" cy=\"170\" r=\"44\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><circle cx=\"160\" cy=\"170\" r=\"22\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><circle cx=\"160\" cy=\"170\" r=\"2.4\" style=\"fill:var(--ink)\"/><circle cx=\"118\" cy=\"132\" r=\"4.2\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"205\" cy=\"146\" r=\"4.2\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"146\" cy=\"214\" r=\"4.2\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"214\" cy=\"196\" r=\"4.2\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"104\" cy=\"184\" r=\"4.2\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"184\" cy=\"108\" r=\"4.2\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"132\" cy=\"168\" r=\"4.2\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"176\" cy=\"176\" r=\"4.2\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"212\" cy=\"120\" r=\"4.2\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"160\" y=\"264\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">专家直觉</text><text x=\"160\" y=\"284\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"12\">每次落点都在飘 · 噪声大</text><circle cx=\"400\" cy=\"170\" r=\"68\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><circle cx=\"400\" cy=\"170\" r=\"44\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><circle cx=\"400\" cy=\"170\" r=\"22\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><circle cx=\"400\" cy=\"170\" r=\"2.4\" style=\"fill:var(--ink)\"/><circle cx=\"416\" cy=\"150\" r=\"4.2\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"422\" cy=\"156\" r=\"4.2\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"418\" cy=\"162\" r=\"4.2\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"425\" cy=\"152\" r=\"4.2\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"420\" cy=\"145\" r=\"4.2\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"413\" cy=\"157\" r=\"4.2\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"428\" cy=\"160\" r=\"4.2\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"419\" cy=\"153\" r=\"4.2\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"424\" cy=\"147\" r=\"4.2\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"400\" y=\"264\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">公式</text><text x=\"400\" y=\"284\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"12\">每次落在同一处 · 零噪声</text></svg>",
+   "caption": "让专家和公式各自对同一批材料反复判断:专家的落点四下发散(噪声大),公式则每次都钉在同一处(零噪声)。公式那簇点即便略偏靶心,也稳——稳,正是它打败飘忽直觉的底牌。"
+  },
+  {
+   "type": "h2",
+   "text": "三、公式还赢在:不被无关信息带偏,不迷恋「连贯的故事」"
+  },
+  {
+   "type": "p",
+   "text": "零噪声之外,公式还有第二重优势:它**只看被规定去看的那几个变量,别的一概不看。**人不行。人脑天生爱把碎片拼成一个顺溜的故事,一旦故事讲圆了,就对它过度自信。面试时对方侃侃而谈的那几分钟、一个和旧同事撞脸的巧合、材料递上来的先后顺序——这些其实没什么预测力的细节,都会偷偷渗进专家的总分里,把判断带偏。公式对这些一律免疫:没写进公式的,它看不见。"
+  },
+  {
+   "type": "p",
+   "text": "更微妙的是专家的一种自我期许:他常自信能捕捉「变量之间那点微妙的交互」「这个个案的特殊之处」,觉得这正是机器比不了的洞察。可一旦拿去严格验证,这类「洞察」多半是幻觉——它们并没带来额外的准确度,反而添了噪声。换句话说,专家自以为在做的「高级综合」,很多时候只是把不稳定包装成了深刻。**公式的呆,恰恰保护了它不犯这种聪明反被聪明误的错。**"
+  },
+  {
+   "type": "h2",
+   "text": "四、简单到令人尴尬:等权模型也照样够用"
+  },
+  {
+   "type": "p",
+   "text": "你可能会退一步想:那公式总得造得很精妙吧?回归系数得算得很准、权重得调得很细,才压得过专家吧?偏不。心理学家罗宾·道斯(Robyn Dawes)研究过一类被他称作**「不当线性模型」(improper linear models)**的东西:把几个变量各自标准化后,干脆**每个都给相同的权重**(等权),简单一加了事——不做任何精心拟合。结果,这种粗糙的等权模型,准确度几乎和费劲拟合出来的复杂回归**一样好**,照样稳稳胜过专家。"
+  },
+  {
+   "type": "p",
+   "text": "还有更让人下不来台的:在一些研究里,连**随机取的权重**(只要方向别搞反)搭出来的线性模型,也能和专家打个平手。这说明了什么?说明专家的败因,**根本不是「信息不够」或「公式不够聪明」**——他们和公式看的是同一批信息。败,败在**不稳定**:同样的信息,专家每一次掂量出的分量都在飘,而任何一个固定权重的模型,每次掂出的都一样。稳定这一条,便宜到近乎白送,却足以定胜负。"
+  },
+  {
+   "type": "quote",
+   "original": "专家输给公式,多半不是输在见识,而是输在稳定:同样的信息,他每次掂量出的分量都在变。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "对比",
+   "svg": "<svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"18\" letter-spacing=\"2\">谁更准:专家 ＜ 等权简单模型 ≈ 复杂统计模型</text><line x1=\"70\" y1=\"238\" x2=\"500\" y2=\"238\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"112\" y=\"162\" width=\"78\" height=\"76\" style=\"fill:var(--cinnabar-pure);opacity:0.4\"/><text x=\"151\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">专家直觉</text><text x=\"151\" y=\"258\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"12\">凭经验打总分</text><rect x=\"240\" y=\"108\" width=\"78\" height=\"130\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"279\" y=\"96\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">等权简单模型</text><text x=\"279\" y=\"258\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"12\">变量各给同等权重</text><rect x=\"368\" y=\"100\" width=\"78\" height=\"138\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"407\" y=\"88\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">复杂统计模型</text><text x=\"407\" y=\"258\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"12\">精心拟合回归</text><text x=\"343\" y=\"80\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"16\">≈</text><text x=\"280\" y=\"288\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">专家败在「不稳定」,不在「缺信息」——连等权模型都够用</text></svg>",
+   "caption": "反复出现的次序是:专家直觉 ＜ 等权简单模型 ≈ 复杂统计模型。精心拟合的复杂模型并不比「变量各给同等权重」的粗糙模型强多少,而两者都稳稳超过凭经验打总分的专家——因为专家败在不稳定,不在缺信息。"
+  },
+  {
+   "type": "h2",
+   "text": "五、「断腿例外」:该给规则留多大的推翻余地"
+  },
+  {
+   "type": "p",
+   "text": "讲到这儿,得给公式留个必要的活口,这就是米尔著名的**「断腿」比喻。**假设有个人过去每周二雷打不动去看电影,公式据此预测他这周二也会去。可你恰好知道一件公式没纳入的事:**他今早摔断了腿。**这条腿的信息压倒一切,这时,人当然应该推翻公式。断腿例外是真实存在的,任何一条好规则,都该给这样明确又决定性的特殊信息留一道口子。"
+  },
+  {
+   "type": "p",
+   "text": "陷阱恰恰藏在这道口子里。研究发现,一旦把「可以随意推翻公式」的权力交给人,人就会**滥用**它——把太多平平无奇的个案都看成「这个不一样」的例外,频频出手改判。结果,推翻带来的新错误,远多于它纠正的旧错误,净效果是**把整体准确度拉低。**真正的断腿百年一遇,可人一有推翻的权力,就到处都觉得自己看见了断腿。所以正确的姿势是:推翻要**极其克制**——只有当你手上握着公式确实没纳入、又明确具有决定性的信息时,才动手。"
+  },
+  {
+   "type": "quote",
+   "original": "规则该给「断腿」留一道口子;但真正的断腿百年一遇,而人一有推翻的权力,就到处都看见断腿。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "那专家还有用吗?**有,而且关键**——只是价值不在最后拍板那一下。公式虽好,却是个「喂什么算什么」的裁判,它自己既不会定义要预测什么,也不会挑该看哪几个变量,更不会把一堆原始、含糊的情况整理成能代入的干净输入(比如判断「这段病史到底算不算一个阳性体征」)。这些**全靠人**。把专家从「凭感觉给个总分」里解放出来,让他去做定义问题、选变量、喂对输入这些机器做不了的判断,才是物尽其用。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "svg": "<svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"18\" letter-spacing=\"2\">分工:人擅长「看什么」,机器擅长「稳定算」</text><rect x=\"20\" y=\"96\" width=\"104\" height=\"58\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"72\" y=\"130\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">定义问题</text><rect x=\"140\" y=\"96\" width=\"104\" height=\"58\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"192\" y=\"130\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">挑选变量</text><rect x=\"260\" y=\"96\" width=\"104\" height=\"58\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"312\" y=\"130\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">喂对输入</text><rect x=\"392\" y=\"96\" width=\"148\" height=\"58\" rx=\"4\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><text x=\"466\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\">公式算分</text><text x=\"466\" y=\"142\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"11\">零噪声 · 稳定</text><path d=\"M124 125 L138 125\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\"/><path d=\"M244 125 L258 125\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\"/><path d=\"M364 125 L390 125\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\"/><line x1=\"20\" y1=\"172\" x2=\"364\" y2=\"172\" style=\"stroke:var(--ink-faint)\" stroke-width=\"0.8\"/><text x=\"192\" y=\"192\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">人(专家)真正的价值在这里</text><text x=\"280\" y=\"234\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">只有「他今晚摔断了腿」这类公式没纳入的决定性信息,才推翻</text><text x=\"280\" y=\"256\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"12\">——断腿百年一遇,推翻须极克制</text></svg>",
+   "caption": "分工才是正解:人(专家)擅长前端——定义问题、挑变量、把原始情况整理成干净输入;公式擅长最后那一步「稳定算分」。至于推翻,只留给「他今晚摔断了腿」这类决定性的断腿信息,且须极克制。"
+  },
+  {
+   "type": "h2",
+   "text": "六、别把偏差请回来:算法降噪的警示"
+  },
+  {
+   "type": "p",
+   "text": "读到这里,似乎顺理成章的结论是:「能上算法就上算法。」慢一点——这一步必须踩住刹车。公式和算法确实赢在稳定,但**稳定不等于公正。**一台算法零噪声地重复它学到的东西:如果它学的那批历史数据里本就带着偏见——比如过去的招聘、放贷、判决,系统性地亏待了某些人群——它就会**零噪声地把这份偏见照单复制下去**,还可能因为大规模自动运行而**放大**它。噪声是降了,一种更整齐的不公却被固化了进来。"
+  },
+  {
+   "type": "p",
+   "text": "更危险的是它的伪装。人做出的偏见,好歹还能被当面质疑、被追问理由;算法给出的分数,却容易被当成「客观」「数据驱动」的中立事实,反而**更难挑战、更难问责。**于是在降噪的同时,你可能悄悄请回来一个**更隐蔽、更难被抓住**的系统性偏差——它不吵不闹,却穿着一件「科学」的外衣坐在了决策桌前。"
+  },
+  {
+   "type": "quote",
+   "original": "算法零噪声地重复它学到的一切——包括数据里的历史偏见;降噪很好,但别让偏差穿上「客观」的外衣溜回来。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "所以正确的做法不是「要么全交给算法、要么全凭人」,而是:**用公式和算法去降噪,同时死死盯住它的偏差。**要追问三件事——训练数据里是否埋着历史的不公?某个变量是不是敏感属性的「替身」(比如拿邮编去间接指代种族)?算出的结果能不能被解释、被申诉?**降噪和纠偏是两件事,不能顾此失彼。**降掉噪声是好的,但别顺手迎回一个戴着面具的偏差。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "svg": "<svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"18\" letter-spacing=\"2\">警示:算法零噪声地重复它学到的一切</text><rect x=\"16\" y=\"86\" width=\"120\" height=\"60\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"76\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">历史数据</text><text x=\"76\" y=\"130\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"11\">已含旧偏见</text><rect x=\"164\" y=\"86\" width=\"120\" height=\"60\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"224\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">算法学习</text><text x=\"224\" y=\"130\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"11\">照单复制</text><rect x=\"312\" y=\"86\" width=\"120\" height=\"60\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"372\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">固化并放大</text><text x=\"372\" y=\"130\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"11\">规模化扩散</text><rect x=\"460\" y=\"86\" width=\"88\" height=\"60\" rx=\"4\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><text x=\"504\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">系统性</text><text x=\"504\" y=\"130\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">不公</text><path d=\"M136 116 L162 116\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\"/><path d=\"M284 116 L310 116\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\"/><path d=\"M432 116 L458 116\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"280\" y=\"196\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">更隐蔽:披着「客观」「数据驱动」的外衣,反而更难被质疑问责</text><line x1=\"70\" y1=\"216\" x2=\"490\" y2=\"216\" style=\"stroke:var(--line)\" stroke-width=\"0.8\"/><text x=\"280\" y=\"242\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">降噪的同时必须审查:</text><text x=\"280\" y=\"266\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">数据是否带历史不公 · 变量是否是敏感属性的替身 · 能否解释与申诉</text></svg>",
+   "caption": "算法降噪的暗面:含旧偏见的历史数据 → 算法照单复制 → 规模化固化甚至放大 → 更整齐的系统性不公,还因「客观」外衣更难问责。所以降噪必须配上对数据偏差、替身变量、可解释可申诉的审查。"
+  },
+  {
+   "type": "h2",
+   "text": "结语:让规则去「稳」,让人去「判断该看什么」"
+  },
+  {
+   "type": "p",
+   "text": "把这一章收成一句朴素的话:**在很多判断场合,一条稳定的简单规则,就能打败飘忽的专家直觉,靠的正是「零噪声」这个不起眼的优势。**这不是说专家无用——恰恰相反,专家该去做定义问题、选变量、喂对输入这些机器干不了的活儿;也不是说「一切交给算法」——算法能降噪,却可能把偏见写进公式,还盖上一枚「客观」的印。真正的智慧,是让规则去干它擅长的**稳**,让人去干他擅长的**判断该看什么**,再对算法可能夹带的偏差保持一份清醒的警惕。降噪的终点是让判断更公,而不是用一种看不见的错误,换掉另一种。"
+  }
+ ]
+}
