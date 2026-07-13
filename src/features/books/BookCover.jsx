@@ -642,12 +642,27 @@ function Snowball() {
   )
 }
 
+// 母题:现金流象限——一个 2×2 方格(雇员/自雇/企业主/投资者),右下「让钱为你工作」的一格朱色(呼应《穷爸爸富爸爸》:从为钱工作,转向让钱为你工作)。
+function Quadrant() {
+  const x0 = 88, y0 = 231, s = 62
+  return (
+    <g>
+      <rect x={x0} y={y0} width={2 * s} height={2 * s} fill="none" stroke={CREAM} strokeOpacity="0.36" strokeWidth="1.2" />
+      <line x1={x0 + s} y1={y0} x2={x0 + s} y2={y0 + 2 * s} stroke={CREAM} strokeOpacity="0.3" strokeWidth="1" />
+      <line x1={x0} y1={y0 + s} x2={x0 + 2 * s} y2={y0 + s} stroke={CREAM} strokeOpacity="0.3" strokeWidth="1" />
+      <rect x={x0 + s} y={y0 + s} width={s} height={s} fill={CINNABAR} fillOpacity="0.82" />
+      <circle cx={x0 + s + s / 2} cy={y0 + s + s / 2} r="9" fill="none" stroke={CREAM} strokeOpacity="0.7" strokeWidth="1.4" />
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'two-mountains') return <TwoMountains />
   if (motif === 'two-systems') return <TwoSystems />
   if (motif === 'scatter-target') return <ScatterTarget />
   if (motif === 'forecast-fan') return <ForecastFan />
   if (motif === 'snowball') return <Snowball />
+  if (motif === 'quadrant') return <Quadrant />
   if (motif === 'ripples') return <Ripples />
   if (motif === 'spiral') return <Spiral />
   if (motif === 'mandala') return <Mandala />
