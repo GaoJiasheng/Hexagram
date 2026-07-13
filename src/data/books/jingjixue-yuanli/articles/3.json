@@ -1,0 +1,106 @@
+{
+ "title": "看不见的手:市场如何组织经济",
+ "subtitle": "没有谁在总指挥,可第二天早上面包铺照样有面包——把这盘散沙般的经济悄悄下顺的,是亚当·斯密两百多年前点破的那只「看不见的手」,而它真正的运作机制,是价格",
+ "centralIdea": "前两章讲一个人如何取舍,这一章视角切到「一群人」:当千百万个各自打算盘的人凑到一起,经济靠谁指挥才没乱成一团?答案反直觉——**没有谁在总指挥**。①先破一个顽固误会:交易不是零和。一笔自愿的买卖能成,恰恰因为**双方都觉得换到的比付出的更值**;而分工让人人专注所长、再交换,把总的蛋糕做大,人人比自给自足过得好。②亚当·斯密 1776 年《国富论》的洞见:**每个人只顾追求自己的利益,却仿佛被一只「看不见的手」(invisible hand)牵引,做成了对社会整体有益的事**——面包师烤面包不是出于爱你,而是想赚钱,结果你有面包、他有钱,资源被有效配置。③这只手的运作机制是**价格**:没有中央调度室,可某物短缺→价格上涨→吸引更多人生产、劝退部分消费者→短缺缓解;价格里浓缩了千万人分散的信息与意愿,自发协调整个经济,这是计划者永远算不过来的。④市场经济 vs 计划经济:苏联东欧的历史经验显示,用中央指令取代价格信号往往效率低下、短缺频发,**分散决策+价格信号**通常更能组织复杂经济。⑤但这只手不是万能(承上启下):它高效,却在外部性、公共物品、垄断、分配不公等处失灵,需要制度与政府补位——留给第五章。核心信息:市场没有总指挥,却靠价格这只看不见的手,把无数人的自利协调成大体有效的资源配置——这是市场最深刻的力量;但高效不等于完美。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "前两章讲的都是「一个人」怎么做决策——取舍、机会成本、边际权衡。从这一章起,视角切换到「一群人」:当千百万个各自打算盘的人凑到一起,这盘散沙般的经济,是靠谁在指挥、才没有乱成一团的?你会发现一件反直觉的事——**没有谁在总指挥**。没有一个中央大脑规定今天全城该烤多少面包、种多少菜、造多少辆车,可第二天早上,面包铺照样有面包,菜市场照样有菜,你想买的东西大多买得到。曼昆说,把这盘看似要散架的棋悄悄下顺的,是亚当·斯密两百多年前就点破的那只「看不见的手」。这一章,我们就来看清它到底是什么、靠什么运作,以及——它虽然厉害,却并不是万能的。"
+  },
+  {
+   "type": "h2",
+   "text": "一、先破一个误会:交易不是「零和」"
+  },
+  {
+   "type": "p",
+   "text": "在说看不见的手之前,得先拆掉一个特别顽固的错觉:很多人心里觉得,做买卖是一件「零和」的事——一方赚,就意味着另一方亏,一块蛋糕你多切一刀我就少一刀。照这个想法,商人赚了钱,就是从顾客身上「刮」走的;两国做贸易,总有一方在吃亏。可只要想想你自己上一次心甘情愿的买卖,就知道不对了:你花三十块买了一本书,是因为在你眼里这本书比那三十块更值;书店卖出这本书,是因为在它眼里那三十块比压在仓库里的书更值。**一笔自愿的交易之所以能成,恰恰是因为买卖双方都觉得自己换到的、比付出的更划算。**没有人被逼,两个人都觉得赚了——这怎么会是零和?"
+  },
+  {
+   "type": "p",
+   "text": "再往深一层,交换还悄悄把整个蛋糕做大了。设想一个不许交换、人人自给自足的世界:你得自己种粮、自己缝衣、自己修屋,样样都得做,可样样都做不精,一天到晚忙下来,吃穿住都紧巴巴。而一旦允许交换,事情就变了——**擅长种地的专心种地,擅长做衣的专心做衣,擅长盖屋的专心盖屋,然后彼此交换**,每个人都把时间押在自己最拿手的那件事上,熟能生巧、越做越好,产出的总量比人人样样亲自来要多得多。于是交换之后,人人手里的东西反而都比自给自足时更丰富。这就是曼昆反复强调的那条原理:「贸易能让每个人的状况都变得更好」——它靠的正是分工,而分工背后更精细的道理(比较优势)留到第六章细讲。这里只要先记住结论:**交易不是你死我活的零和,而是把蛋糕做大、再分给双方的正和。**"
+  },
+  {
+   "type": "quote",
+   "original": "一笔自愿的交易能成,是因为买卖双方都觉得:自己换到的,比付出的更值。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "非零和示意图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='30' text-anchor='middle' style='fill:var(--ink)' font-size='17' letter-spacing='2'>交换不是零和:分工让总产出变大</text><line x1='280' y1='50' x2='280' y2='276' style='stroke:var(--line);stroke-width:1' stroke-dasharray='5 5'/><text x='140' y='76' text-anchor='middle' style='fill:var(--ink-soft)' font-size='15' letter-spacing='1'>各自自给自足</text><text x='140' y='170' text-anchor='middle' style='fill:var(--ink-faint)' font-size='12'>样样自己做,样样不精</text><rect x='96' y='198' width='38' height='52' style='fill:none;stroke:var(--ink-soft);stroke-width:2'/><rect x='150' y='204' width='38' height='46' style='fill:none;stroke:var(--ink-soft);stroke-width:2'/><line x1='86' y1='250' x2='202' y2='250' style='stroke:var(--line);stroke-width:1.5'/><text x='115' y='268' text-anchor='middle' style='fill:var(--ink-faint)' font-size='12'>甲</text><text x='169' y='268' text-anchor='middle' style='fill:var(--ink-faint)' font-size='12'>乙</text><text x='420' y='76' text-anchor='middle' style='fill:var(--azure)' font-size='15' letter-spacing='1'>分工 + 交换</text><text x='420' y='122' text-anchor='middle' style='fill:var(--ink-faint)' font-size='12'>各做所长,再彼此交换</text><rect x='372' y='140' width='38' height='110' style='fill:none;stroke:var(--azure);stroke-width:2'/><rect x='426' y='150' width='38' height='100' style='fill:none;stroke:var(--azure);stroke-width:2'/><line x1='360' y1='250' x2='478' y2='250' style='stroke:var(--line);stroke-width:1.5'/><text x='391' y='268' text-anchor='middle' style='fill:var(--ink-faint)' font-size='12'>甲</text><text x='445' y='268' text-anchor='middle' style='fill:var(--ink-faint)' font-size='12'>乙</text></svg>",
+   "caption": "同样两个人,自给自足时各自产出都少(左);一旦分工再交换,各把时间押在所长上,两人到手的东西都变多(右)。交易做大了总的蛋糕,不是一方赚一方亏的零和。"
+  },
+  {
+   "type": "h2",
+   "text": "二、亚当·斯密的「看不见的手」"
+  },
+  {
+   "type": "p",
+   "text": "把蛋糕做大这件好事,是谁在背后安排的?1776 年,亚当·斯密在《国富论》里给了一个至今读来仍叫人拍案的答案。他观察到一个奇怪的现象:市场上人人都在为自己打算——面包师起早贪黑烤面包,不是因为多爱街坊,而是想赚钱养家;可正是这份「自私」,让全城人清早都有面包吃。斯密由此点破:**每个人一门心思追求自己的利益,却仿佛被一只「看不见的手」(invisible hand)牵引着,做成了一件他本没打算去做的好事——让整个社会的资源被安排得妥妥当当。**这句话是全书、也是整个经济学里最有名的一句洞见。"
+  },
+  {
+   "type": "quote",
+   "original": "我们能吃上晚饭,不是因为屠夫、酿酒师和面包师的善心,而是因为他们各自都在盘算自己的利益。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "这句话的分量在于,它翻转了一个古老的道德直觉。人们总以为,要让社会变好,得靠一群心怀天下、大公无私的人去操办。斯密却说:不必。你不需要面包师爱你,只需要他想赚你的钱——为了赚钱,他就得烤出你愿意买的面包、定一个你付得起的价、还得比隔壁铺子做得更好,否则你扭头就走。**他追逐私利的每一步,恰好都在为你服务。**无数这样各自逐利的人拼在一起,资源就自动流向了最被需要的地方:大家爱吃、肯出钱的东西,自然有人抢着多做;没人要的东西,自然慢慢没人做。没有谁在上面发号施令,一种大体合理的秩序,却自己生长了出来。这不是说自私是美德,而是说:市场这套机制,能把普通人再正常不过的自利,导向对大家都有益的结果。"
+  },
+  {
+   "type": "figure",
+   "ftype": "看不见的手示意图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='28' text-anchor='middle' style='fill:var(--ink)' font-size='17' letter-spacing='2'>看不见的手:各自逐利,却成全了整体</text><rect x='36' y='68' width='112' height='34' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.8'/><text x='92' y='90' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>面包师</text><rect x='36' y='126' width='112' height='34' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.8'/><text x='92' y='148' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>裁缝</text><rect x='36' y='184' width='112' height='34' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.8'/><text x='92' y='206' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>农夫</text><text x='92' y='242' text-anchor='middle' style='fill:var(--ink-faint)' font-size='12'>各自只顾自己的利益</text><line x1='148' y1='85' x2='224' y2='134' style='stroke:var(--line);stroke-width:1.5'/><line x1='148' y1='143' x2='224' y2='145' style='stroke:var(--line);stroke-width:1.5'/><line x1='148' y1='201' x2='224' y2='156' style='stroke:var(--line);stroke-width:1.5'/><polygon points='218,130 228,135 218,141' style='fill:var(--line)'/><polygon points='218,140 228,145 218,150' style='fill:var(--line)'/><polygon points='218,151 228,156 218,162' style='fill:var(--line)'/><rect x='230' y='108' width='142' height='74' rx='10' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><text x='301' y='138' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='14' letter-spacing='1'>看不见的手</text><text x='301' y='162' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>(价格信号)</text><line x1='372' y1='145' x2='406' y2='145' style='stroke:var(--cinnabar-pure);stroke-width:2'/><polygon points='402,140 412,145 402,150' style='fill:var(--cinnabar-pure)'/><rect x='414' y='108' width='130' height='74' rx='8' style='fill:none;stroke:var(--azure);stroke-width:2'/><text x='479' y='132' text-anchor='middle' style='fill:var(--azure)' font-size='13' letter-spacing='1'>社会得益</text><text x='479' y='153' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12'>资源有效配置</text><text x='479' y='172' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12'>供需自动匹配</text></svg>",
+   "caption": "没有谁在总指挥。面包师、裁缝、农夫各自只顾赚钱,他们的自利经由价格这只「看不见的手」传导,汇成了对整个社会有益的结果——资源流向最被需要的地方,供需大体对上了茬。"
+  },
+  {
+   "type": "h2",
+   "text": "三、价格:这只手到底靠什么运作"
+  },
+  {
+   "type": "p",
+   "text": "「看不见的手」听起来有点玄,好像市场里真住着个神灵。曼昆把它落到实处:这只手不是神,它有一套看得见的运作机制,就是**价格**。市场里没有一个中央调度室,能算清全国该产多少钢、多少米、多少口罩;可它压根不需要算——价格会替它算。某样东西一旦短缺,想买的人多、货又少,价格就往上涨;价格一涨,两件事同时发生:**一边,更高的价钱把更多生产者吸引进来,愿意多产;另一边,变贵了又劝退了一部分没那么急需的买家,少买一些。**供给被拉上来、需求被压下去,短缺就慢慢缓解了。反过来,东西过剩、卖不动,价格就下跌:生产者知趣地少做,便宜又引来买家多消化,过剩也化解了。价格就像一个自动的阀门,哪里紧了往哪里补,哪里松了往哪里泄。"
+  },
+  {
+   "type": "p",
+   "text": "妙就妙在,**价格这个小小的数字,悄悄浓缩了千万人分散在各处的信息和意愿**——谁更缺它、谁更擅长做它、原料是紧了还是松了,这些散落在无数人脑子里、谁也没法完整收集的信息,最后都汇成了一个价。生产者和消费者其实并不需要弄懂背后到底发生了什么,只要各自盯着这个价、按自己的利益行动,整个经济的供需就被这只手默默地对上了。这正是任何一个中央计划者——哪怕给他最快的计算机——也永远算不过来的地方:他没法把亿万人心里那点「我到底有多想要它」的念头,一一收集、汇总、还要算得及时。价格不需要谁去汇总,它自己就是那台永远在线的信息汇总机。"
+  },
+  {
+   "type": "figure",
+   "ftype": "价格协调供需图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='30' text-anchor='middle' style='fill:var(--ink)' font-size='17' letter-spacing='2'>价格:短缺如何被自动缓解</text><rect x='60' y='68' width='170' height='46' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='145' y='96' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='14'>① 某物短缺</text><rect x='330' y='68' width='170' height='46' rx='8' style='fill:none;stroke:var(--ink);stroke-width:1.8'/><text x='415' y='96' text-anchor='middle' style='fill:var(--ink)' font-size='14'>② 价格上涨</text><rect x='330' y='186' width='170' height='50' rx='8' style='fill:none;stroke:var(--ink);stroke-width:1.8'/><text x='415' y='208' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>③ 生产者多产</text><text x='415' y='226' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>消费者少买</text><rect x='60' y='186' width='170' height='50' rx='8' style='fill:none;stroke:var(--azure);stroke-width:1.8'/><text x='145' y='215' text-anchor='middle' style='fill:var(--azure)' font-size='14'>④ 短缺缓解</text><line x1='230' y1='91' x2='324' y2='91' style='stroke:var(--line);stroke-width:1.6'/><polygon points='320,86 330,91 320,96' style='fill:var(--line)'/><line x1='415' y1='114' x2='415' y2='180' style='stroke:var(--line);stroke-width:1.6'/><polygon points='410,176 415,186 420,176' style='fill:var(--line)'/><line x1='330' y1='211' x2='236' y2='211' style='stroke:var(--line);stroke-width:1.6'/><polygon points='240,206 230,211 240,216' style='fill:var(--line)'/><line x1='145' y1='186' x2='145' y2='120' style='stroke:var(--line);stroke-width:1.6'/><polygon points='140,124 145,114 150,124' style='fill:var(--line)'/><text x='280' y='276' text-anchor='middle' style='fill:var(--ink-faint)' font-size='12'>过剩则反向:价格下跌 → 少产、多买 → 过剩化解</text></svg>",
+   "caption": "价格是一个自动阀门:短缺推高价格,高价一头引生产者多产、一头劝退部分买家,供需重新对上,短缺自我缓解;过剩时方向相反,同样自我纠正。全程没有谁在下命令。"
+  },
+  {
+   "type": "h2",
+   "text": "四、市场经济,还是计划经济?"
+  },
+  {
+   "type": "p",
+   "text": "既然价格这么能干,那能不能干脆抛开它,让一个足够聪明的中央来统一计划、指令式地分配一切资源?二十世纪,不少国家真的这样试过。曼昆(以及更早的一批经济学家)给出的判断是审慎而清楚的:**从苏联、东欧等计划经济的历史经验看,试图用中央指令取代价格信号,往往效率低下、短缺频发。**原因正在上一节——计划者手里没有价格这台「信息汇总机」,他不知道千万人真正想要多少、又能产多少,只能靠估、靠拍脑袋下指标,结果常常是该多的东西缺、没人要的东西堆成山,排长队和闹短缺成了日常。相比之下,**分散决策 + 价格信号**这套办法,表面看乱糟糟、没人统一管,却往往更能把一个极其复杂的经济组织得井井有条。"
+  },
+  {
+   "type": "quote",
+   "original": "价格里浓缩着千万人分散的信息与意愿——这是任何中央计划者都收集不全、也算不过来的。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "两种组织方式对照图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='28' text-anchor='middle' style='fill:var(--ink)' font-size='17' letter-spacing='2'>两种组织经济的方式</text><line x1='280' y1='46' x2='280' y2='288' style='stroke:var(--line);stroke-width:1' stroke-dasharray='5 5'/><text x='140' y='70' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='15' letter-spacing='1'>计划经济</text><circle cx='140' cy='108' r='24' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><text x='140' y='113' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='12'>计划者</text><line x1='120' y1='128' x2='84' y2='176' style='stroke:var(--line);stroke-width:1.5'/><line x1='140' y1='132' x2='140' y2='176' style='stroke:var(--line);stroke-width:1.5'/><line x1='160' y1='128' x2='196' y2='176' style='stroke:var(--line);stroke-width:1.5'/><polygon points='79,168 84,180 90,169' style='fill:var(--line)'/><polygon points='135,168 140,180 145,168' style='fill:var(--line)'/><polygon points='190,169 196,180 201,168' style='fill:var(--line)'/><rect x='62' y='182' width='44' height='30' style='fill:none;stroke:var(--ink-soft);stroke-width:1.6'/><rect x='118' y='182' width='44' height='30' style='fill:none;stroke:var(--ink-soft);stroke-width:1.6'/><rect x='174' y='182' width='44' height='30' style='fill:none;stroke:var(--ink-soft);stroke-width:1.6'/><text x='140' y='244' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12'>自上而下指令分配</text><text x='140' y='266' text-anchor='middle' style='fill:var(--ink-faint)' font-size='12'>算不过需求 → 短缺·低效</text><text x='420' y='70' text-anchor='middle' style='fill:var(--azure)' font-size='15' letter-spacing='1'>市场经济</text><rect x='344' y='96' width='44' height='30' style='fill:none;stroke:var(--ink-soft);stroke-width:1.6'/><rect x='398' y='96' width='44' height='30' style='fill:none;stroke:var(--ink-soft);stroke-width:1.6'/><rect x='452' y='96' width='44' height='30' style='fill:none;stroke:var(--ink-soft);stroke-width:1.6'/><line x1='366' y1='126' x2='366' y2='150' style='stroke:var(--line);stroke-width:1.3'/><line x1='420' y1='126' x2='420' y2='150' style='stroke:var(--line);stroke-width:1.3'/><line x1='474' y1='126' x2='474' y2='150' style='stroke:var(--line);stroke-width:1.3'/><rect x='340' y='150' width='160' height='30' rx='6' style='fill:none;stroke:var(--azure);stroke-width:2'/><text x='420' y='170' text-anchor='middle' style='fill:var(--azure)' font-size='13' letter-spacing='1'>价格信号</text><text x='420' y='244' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12'>无人居中,分散决策</text><text x='420' y='266' text-anchor='middle' style='fill:var(--ink-faint)' font-size='12'>价格自动协调 → 大体有效</text></svg>",
+   "caption": "计划经济靠一个居中的计划者自上而下下指令,却收集不全千万人的真实需求,易致短缺与低效;市场经济没有总指挥,各方分散决策、由价格信号横向协调,往往更能组织好复杂的经济。"
+  },
+  {
+   "type": "h2",
+   "text": "五、高效,但不等于万能"
+  },
+  {
+   "type": "p",
+   "text": "讲到这儿,「看不见的手」几乎要被夸成万能了。这里必须踩一脚刹车——也正是这一章通向后文的地方:**市场很高效,却并不完美,这只手也有它够不着、甚至会出错的角落。**比如,工厂逐利时把污染排进河里,治污的代价却由下游所有人承担,他的私利在这里不再自动等于大家的好处(这叫外部性);比如国防、路灯这类东西,人人都受益,却没人愿意单独掏钱去建(这叫公共物品);再比如,一家独大的垄断者可以抬价宰客,竞争的压力对他失灵;还有,看不见的手只管把蛋糕做大,却不保证分得公平,总有人可能被远远甩在后头。这些地方,私利和公益就对不上了。"
+  },
+  {
+   "type": "p",
+   "text": "这些「手」够不着的角落,正是下一章「政府的角色」要谈的——市场失灵,以及制度与政策该如何补位。所以这一章真正想让你带走的,是一个既有力、又有分寸的判断:**没有总指挥的市场,靠价格这只看不见的手,能把无数人各自的自利,协调成大体有效的资源配置——这是市场最深刻的力量;但高效不等于完美,它有清楚的边界,需要别的东西来补。**既看清它的厉害,也认得它的边界,不把它捧成万能、也不因它有缺陷就一笔抹杀——这样,才算真正读懂了亚当·斯密那只看不见的手。"
+  }
+ ]
+}

@@ -1,0 +1,134 @@
+{
+ "title": "宏观经济:通胀、失业与增长",
+ "subtitle": "把镜头从「一个人、一个市场」拉远到「一整个国家」——曼昆说,宏观其实只关心三件大事:经济能不能长期变富、物价为什么会普遍上涨、为什么总有人找不到工作",
+ "centralIdea": "前面几章讲的是个人如何取舍、单个市场如何定价,这一章把视角切换到整个国家的经济,即宏观经济学。它盯着三件大事:长期增长、通货膨胀、失业。曼昆的三条主线是——一国生活水平的高低,归根到底取决于生产率(每单位劳动能生产多少);通货膨胀这种物价普遍上涨,长期的主因是货币供给增长过快;而通胀与失业在短期里往往此消彼长,压低一个常以抬高另一个为代价。衡量总产出用的是GDP,虽然它并不完美;熨平经济周期波动靠的是央行的货币政策和政府的财政政策,但这两件工具都有时滞和副作用,谁也不能把经济当遥控器精确操控。读这一章,记住它给的是一套主流的宏观框架和几个基本判断,而不是一套万能的调控按钮。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "到这一章,镜头要拉远了。前面几章我们一直趴在地面上看:一个人怎么在两件事之间取舍,一个市场里买家和卖家怎么把价格谈出来。现在曼昆把镜头猛地拉到高空,不再看某一个人、某一件商品,而是看**一整个国家的经济**——这就是「宏观经济学」。听上去很宏大,其实曼昆把它收拢成了三个特别朴素的问题:一个国家为什么会越来越富(**增长**)?东西为什么会一年比一年贵(**通货膨胀**)?为什么明明有人想工作,却总有一批人找不到活干(**失业**)?这一章,就是带你把这三件大事各看一眼,顺便认识几件政府和央行手里的工具。"
+  },
+  {
+   "type": "h2",
+   "text": "先给整个经济称一次重:GDP"
+  },
+  {
+   "type": "p",
+   "text": "要谈一个国家的经济,你得先有个数字能说清「它到底有多大」。这个数字就是**国内生产总值(GDP)**——一个国家在一段时间(通常是一年)里,生产的所有**最终**商品和服务的市场价值,全部加起来。理发、造车、看病、写代码、种粮食……不管是有形的东西还是无形的服务,只要是这段时间新生产出来卖掉的,都折成钱算进去。为什么要强调「最终」?因为面粉进了面包房又变成面包,如果面粉和面包都算,就重复计算了,所以只算摆上货架的那块面包。GDP之所以重要,是因为它同时回答了两个问题:这个经济体规模有多大,以及,平均下来每个人日子过得怎么样(用人均GDP)。它几乎是衡量一国生活水平最常用的那把尺。"
+  },
+  {
+   "type": "p",
+   "text": "但曼昆很诚实地提醒:这把尺**并不完美**。你在家给孩子做饭、辅导功课,创造了实实在在的价值,可因为没走市场、没付钱,GDP一分都不算;志愿者的无偿劳动同样被漏掉。反过来,一片森林被砍光换成木材,GDP会涨,可环境的损耗它不记账。它也不告诉你这块蛋糕是怎么分的——人均GDP很高,可能只是少数人极富拉高了平均数。更别说,GDP高不直接等于人过得幸福。所以正确的用法是:把GDP当成一个**有用但粗糙**的总量指标,知道它测的是「市场上的产出」,而不是「生活的全部」。"
+  },
+  {
+   "type": "h2",
+   "text": "宏观其实就盯三件大事"
+  },
+  {
+   "type": "p",
+   "text": "有了GDP这把尺,曼昆把整个宏观图景收拢成三条主线,你可以一直攥在手里:**长期看增长,靠的是生产率;通胀,长期源于货币太多;失业,既有一个自然的底数,也随经济周期上下波动。** 而且这三件事里,有一条时间线索特别关键——把「长期」和「短期」分开看。长期,决定一国富不富的是它的生产能力;短期,经济会有繁荣和衰退的起伏,通胀和失业在这段起伏里彼此拉扯。下面这张图,先把三件大事和这条长期/短期的线索摆在一起,后面我们再一件一件拆。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "宏观经济关心的三件大事:增长(长期靠生产率)、通胀(长期源于货币过多)、失业(有自然率也随周期波动)。长期看增长,短期里通胀与失业此消彼长。",
+   "svg": "<svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--font-serif)\"><rect x=\"205\" y=\"14\" width=\"150\" height=\"36\" rx=\"6\" style=\"fill:none;stroke:var(--ink-soft);stroke-width:1.5\"/><text x=\"280\" y=\"37\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">整个国家的经济</text><line x1=\"280\" y1=\"50\" x2=\"110\" y2=\"92\" style=\"stroke:var(--ink-soft);stroke-width:1.5\"/><line x1=\"280\" y1=\"50\" x2=\"280\" y2=\"92\" style=\"stroke:var(--ink-soft);stroke-width:1.5\"/><line x1=\"280\" y1=\"50\" x2=\"450\" y2=\"92\" style=\"stroke:var(--ink-soft);stroke-width:1.5\"/><rect x=\"40\" y=\"94\" width=\"140\" height=\"46\" rx=\"6\" style=\"fill:none;stroke:var(--azure);stroke-width:1.5\"/><text x=\"110\" y=\"116\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">增 长</text><text x=\"110\" y=\"133\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-soft)\">长期靠生产率</text><rect x=\"210\" y=\"94\" width=\"140\" height=\"46\" rx=\"6\" style=\"fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5\"/><text x=\"280\" y=\"116\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">通 胀</text><text x=\"280\" y=\"133\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-soft)\">长期源于货币过多</text><rect x=\"380\" y=\"94\" width=\"140\" height=\"46\" rx=\"6\" style=\"fill:none;stroke:var(--azure);stroke-width:1.5\"/><text x=\"450\" y=\"116\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">失 业</text><text x=\"450\" y=\"133\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-soft)\">自然率+随周期波动</text><text x=\"110\" y=\"166\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">技术·教育·资本·制度</text><text x=\"280\" y=\"166\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">钱多了,东西没多,物价涨</text><text x=\"450\" y=\"166\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">摩擦·结构·周期</text><line x1=\"60\" y1=\"212\" x2=\"500\" y2=\"212\" style=\"stroke:var(--ink-soft);stroke-width:1.5\"/><text x=\"60\" y=\"232\" text-anchor=\"start\" font-size=\"12\" style=\"fill:var(--ink-soft)\">长期</text><text x=\"500\" y=\"232\" text-anchor=\"end\" font-size=\"12\" style=\"fill:var(--ink-soft)\">短期</text><text x=\"280\" y=\"232\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--cinnabar-pure)\">短期里,通胀与失业此消彼长</text><text x=\"280\" y=\"266\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">长期看增长(生产率),短期看通胀与失业的权衡</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "增长:蛋糕能不能变大,靠生产率"
+  },
+  {
+   "type": "p",
+   "text": "第一件大事:为什么有的国家人均收入是别国的十几倍?为什么今天普通人的生活,比一百年前的富人还宽裕?曼昆的答案只有一个词——**生产率(productivity)**,也就是**每单位劳动能生产出多少东西**。一个工人一小时能造出的商品和服务越多,这个国家能分的蛋糕就越大,生活水平也就越高。这正是曼昆「十大原理」里的一条:一国的生活水平,取决于它的生产能力。别的因素——工会强不强、政府最低工资定多高、贸易顺差还是逆差——在长期面前,都远不如生产率来得根本。"
+  },
+  {
+   "type": "quote",
+   "original": "一国的生活水平,取决于它生产商品与服务的能力。",
+   "translation": "曼昆十大原理之一。长期而言,让一个国家真正变富的,是生产率的持续提高,而不是别的花招。"
+  },
+  {
+   "type": "p",
+   "text": "那生产率又由什么决定?曼昆列了几样:**技术进步**(有了更好的方法和工具,同样的人干出更多活)、**人力资本**(教育和技能,一个受过训练的工人顶好几个)、**物质资本**(机器、设备、厂房,给工人配上趁手的家伙)、以及**制度**(产权是否清晰、法治是否可靠,决定了人们愿不愿意长期投资和创新)。把这几样拼起来,你就懂了一个反常识的道理:**让一个国家长期变富的,是把生产率一点点顶上去,而不是多印钱。** 钱印得再多,如果东西没变多,大家也没变富——这恰好把我们引向第二件大事。"
+  },
+  {
+   "type": "h2",
+   "text": "通胀:钱太多了,物价就普遍涨"
+  },
+  {
+   "type": "p",
+   "text": "**通货膨胀**,说白了就是**整体物价水平持续往上涨,手里的钱越来越不经花**。今天一百块买到的东西,明年可能就买不全了,这就是货币购买力在下降。物价为什么会普遍上涨?单个东西涨价可能有各种缘由(比如某年水果歉收),但**几乎所有东西一起、长期地涨**,曼昆指向一个主因:**货币供给增长得太快**。逻辑很直白——市场上流通的钱变多了,可商品和服务并没有同步变多,那么追着同样多的东西的钱变多了,每一块钱能买的自然就少了,标价于是水涨船高。这也是「十大原理」里的一条:政府发行过多货币,物价就会上涨。"
+  },
+  {
+   "type": "quote",
+   "original": "当政府发行了过多的货币时,物价就会上涨。",
+   "translation": "曼昆十大原理之一。这是他对通胀长期成因的核心判断:通胀说到底是个「钱太多」的货币现象。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "通胀的长期主因:货币供给增长过快。钱变多了,可商品和服务没同步变多,每一块钱能买的就变少,标价于是普遍上涨。",
+   "svg": "<svg viewBox=\"0 0 560 210\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--font-serif)\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">钱太多,是通胀的长期根源</text><rect x=\"15\" y=\"70\" width=\"110\" height=\"58\" rx=\"8\" style=\"fill:none;stroke:var(--ink-soft);stroke-width:1.5\"/><text x=\"70\" y=\"95\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink)\">货币供给</text><text x=\"70\" y=\"114\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink)\">增长过快</text><line x1=\"127\" y1=\"99\" x2=\"152\" y2=\"99\" style=\"stroke:var(--ink-soft);stroke-width:1.5\"/><path d=\"M158 99 L146 93 L146 105 Z\" style=\"fill:var(--ink-soft)\"/><rect x=\"155\" y=\"70\" width=\"110\" height=\"58\" rx=\"8\" style=\"fill:none;stroke:var(--ink-soft);stroke-width:1.5\"/><text x=\"210\" y=\"95\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink)\">东西没有</text><text x=\"210\" y=\"114\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink)\">同步变多</text><line x1=\"267\" y1=\"99\" x2=\"292\" y2=\"99\" style=\"stroke:var(--ink-soft);stroke-width:1.5\"/><path d=\"M298 99 L286 93 L286 105 Z\" style=\"fill:var(--ink-soft)\"/><rect x=\"295\" y=\"70\" width=\"110\" height=\"58\" rx=\"8\" style=\"fill:none;stroke:var(--ink-soft);stroke-width:1.5\"/><text x=\"350\" y=\"95\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink)\">每块钱</text><text x=\"350\" y=\"114\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink)\">购买力下降</text><line x1=\"407\" y1=\"99\" x2=\"432\" y2=\"99\" style=\"stroke:var(--cinnabar-pure);stroke-width:1.5\"/><path d=\"M438 99 L426 93 L426 105 Z\" style=\"fill:var(--cinnabar-pure)\"/><rect x=\"435\" y=\"70\" width=\"110\" height=\"58\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar-pure);stroke-width:2\"/><text x=\"490\" y=\"95\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--cinnabar-pure)\">物价</text><text x=\"490\" y=\"114\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--cinnabar-pure)\">普遍上涨</text><text x=\"280\" y=\"172\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">温和通胀常见;货币一旦滥发,恶性通胀能摧毁储蓄与整个经济</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "要补一句分寸:**温和的通胀很常见**,现代经济里物价每年涨个百分之二三,大体被看作正常甚至健康。真正可怕的是**恶性通胀**——政府为了填窟窿疯狂印钞,物价一天翻几倍,钱几乎变成废纸。历史上这样的场景一再上演,结局都是储蓄一夜蒸发、正常交易崩溃、整个经济瘫痪。所以「货币太多致通胀」不是一句抽象的教条,它背后是一次次真实的灾难。"
+  },
+  {
+   "type": "h2",
+   "text": "失业:总有一批想工作的人找不到活"
+  },
+  {
+   "type": "p",
+   "text": "第三件大事:一个健康的经济,失业率也从来不是零。为什么?曼昆把失业拆成两类看。一类是**自然失业率**——哪怕经济运转良好,也总会存在的那个底数,它由两部分构成:**摩擦性失业**(人们换工作、找更合适的岗位,中间总有个空窗期)和**结构性失业**(某些行业的技能被淘汰,工人一时接不上新岗位)。这部分失业,更多是经济结构和劳动力市场自身的特征,消不干净。另一类是**周期性失业**——它跟着经济的冷热走:经济繁荣时活多、招人多,失业下降;一旦衰退,订单萎缩、企业裁员,失业就会明显爬升。判断经济眼下是冷是热,失业率是最灵敏的温度计之一。"
+  },
+  {
+   "type": "h2",
+   "text": "短期的两难:通胀和失业,常常此消彼长"
+  },
+  {
+   "type": "p",
+   "text": "现在把通胀和失业放到一起,曼昆抛出了这一章最微妙、也最重要的一个判断——它同样是「十大原理」之一:**社会在短期内,面临通货膨胀与失业之间的权衡**。什么意思?当政府或央行出手刺激经济、想把失业压下去时,往往会顺带把物价推高一些;反过来,当他们下狠手压通胀时,又常常要以短期内失业上升为代价。这就像跷跷板:短期里,你按下一头,另一头就翘起来。经济学史上把这层此消彼长的关系,叫作**菲利普斯曲线**的思想。"
+  },
+  {
+   "type": "figure",
+   "ftype": "权衡图",
+   "caption": "通胀与失业的短期权衡(菲利普斯曲线的思想):想把失业压得更低,短期常要付出更高通胀;想压住通胀,短期又可能抬高失业。注意——这是短期关系,长期未必成立。",
+   "svg": "<svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--font-serif)\"><line x1=\"80\" y1=\"250\" x2=\"515\" y2=\"250\" style=\"stroke:var(--ink-soft);stroke-width:1.5\"/><line x1=\"80\" y1=\"250\" x2=\"80\" y2=\"45\" style=\"stroke:var(--ink-soft);stroke-width:1.5\"/><text x=\"80\" y=\"36\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">通胀率↑</text><text x=\"515\" y=\"270\" text-anchor=\"end\" font-size=\"12\" style=\"fill:var(--ink-soft)\">失业率→</text><path d=\"M118 72 C 210 118, 300 205, 470 232\" style=\"fill:none;stroke:var(--cinnabar-pure);stroke-width:2.5\"/><circle cx=\"140\" cy=\"86\" r=\"5\" style=\"fill:none;stroke:var(--azure);stroke-width:1.8\"/><text x=\"156\" y=\"84\" text-anchor=\"start\" font-size=\"11\" style=\"fill:var(--ink)\">刺激经济:失业低、通胀高</text><circle cx=\"440\" cy=\"228\" r=\"5\" style=\"fill:none;stroke:var(--azure);stroke-width:1.8\"/><text x=\"430\" y=\"218\" text-anchor=\"end\" font-size=\"11\" style=\"fill:var(--ink)\">紧缩压通胀:通胀低、失业高</text><text x=\"300\" y=\"185\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">短期里,曲线向下倾斜:按下一头,另一头翘起</text><text x=\"297\" y=\"290\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--cinnabar-pure)\">这只是短期权衡——长期未必成立,是政策争论的焦点</text></svg>"
+  },
+  {
+   "type": "quote",
+   "original": "社会面临通货膨胀与失业之间的短期权衡。",
+   "translation": "曼昆十大原理之一。请紧扣「短期」二字:它不承诺长期也能这样用来换,这恰是宏观政策争论最激烈的地方。"
+  },
+  {
+   "type": "p",
+   "text": "务必咬住「**短期**」两个字。曼昆并没有说你可以永远靠制造通胀来换低失业——很多经济学家认为,这条权衡只在短期成立,长期里经济会回到它自然的失业率上,你换来的只剩通胀。所以这条跷跷板不是一台可以随意加减的兑换机,它到底能撑多久、代价多大,正是宏观经济学里吵得最凶的题目之一。"
+  },
+  {
+   "type": "h2",
+   "text": "政府的工具箱:货币政策与财政政策"
+  },
+  {
+   "type": "p",
+   "text": "既然经济短期会有繁荣和衰退的大起大落,政府手里有没有工具去熨一熨这些波动?有两件。一件是**货币政策**,握在**央行**手里——通过调节利率和货币供给来给经济踩油门或踩刹车:经济太冷,就降息、放松银根,鼓励借钱和花钱;经济过热、通胀抬头,就加息、收紧银根。另一件是**财政政策**,握在**政府**手里——通过调节自己的支出和税收来影响总需求:衰退时多花钱、减点税，托一把经济;过热时反过来。这两件工具,是宏观调控最主要的两只手。"
+  },
+  {
+   "type": "figure",
+   "ftype": "工具图",
+   "caption": "两件宏观工具:央行的货币政策(调利率、控货币供给)与政府的财政政策(调支出、改税收),用来熨平经济周期的大起大落。但两者都有时滞和副作用,不是精确的遥控器。",
+   "svg": "<svg viewBox=\"0 0 560 250\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--font-serif)\"><rect x=\"40\" y=\"28\" width=\"200\" height=\"64\" rx=\"8\" style=\"fill:none;stroke:var(--azure);stroke-width:1.8\"/><text x=\"140\" y=\"54\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">货币政策</text><text x=\"140\" y=\"76\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-soft)\">央行:调利率、控货币供给</text><rect x=\"320\" y=\"28\" width=\"200\" height=\"64\" rx=\"8\" style=\"fill:none;stroke:var(--azure);stroke-width:1.8\"/><text x=\"420\" y=\"54\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">财政政策</text><text x=\"420\" y=\"76\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-soft)\">政府:调支出、改税收</text><line x1=\"140\" y1=\"92\" x2=\"250\" y2=\"140\" style=\"stroke:var(--ink-soft);stroke-width:1.5\"/><line x1=\"420\" y1=\"92\" x2=\"310\" y2=\"140\" style=\"stroke:var(--ink-soft);stroke-width:1.5\"/><path d=\"M252 141 L240 137 L246 148 Z\" style=\"fill:var(--ink-soft)\"/><path d=\"M308 141 L314 148 L320 137 Z\" style=\"fill:var(--ink-soft)\"/><rect x=\"180\" y=\"142\" width=\"200\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar-pure);stroke-width:2\"/><text x=\"280\" y=\"166\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--cinnabar-pure)\">熨平经济的大起大落</text><text x=\"280\" y=\"185\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-soft)\">给繁荣降温,给衰退托底</text><text x=\"280\" y=\"228\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">局限:有时滞、有副作用——是方向盘,不是精确遥控器</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "分寸:宏观不是遥控器"
+  },
+  {
+   "type": "p",
+   "text": "这一章最后要留住一分清醒。这两件工具听起来威力很大,但它们**远不是精确遥控器**。政策有**时滞**:从央行降息到经济真正回暖,中间常隔好几个月甚至一两年,等药效上来,病可能已经换了样。政策也有**副作用**:刺激过猛会喂大通胀,收紧过狠又会把失业推高。更麻烦的是,经济学家对该在什么时候、用多大力气,一直吵个不停。所以现实里的宏观调控,更像开一辆反应迟钝、还总在雾里的车——你能打方向、能踩油门刹车,但绝做不到指哪打哪。"
+  },
+  {
+   "type": "p",
+   "text": "把这一章收成三句话:**长期看,一国富不富,取决于生产率;通胀,长期是个「钱太多」的货币现象;失业,有一个消不干净的自然底数,也随经济周期上下起伏。** 而在短期,通胀和失业像跷跷板一样此消彼长,央行的货币政策和政府的财政政策试着去熨平这块跷跷板——只是工具都不完美,时滞和副作用如影随形。这就是宏观经济学的基本框架:它给你一副看整个国家经济的眼镜,和几个靠得住的判断。但请记住,它是一套**主流的框架**,不是一套万能的按钮——真实经济里,连最聪明的头脑也常常吵不出一致答案。"
+  }
+ ]
+}

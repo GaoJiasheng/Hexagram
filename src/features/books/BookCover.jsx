@@ -656,6 +656,34 @@ function Quadrant() {
   )
 }
 
+// 母题:供需之叉——向上的供给线与向下的需求线在中点交叉,交点(均衡)朱色(呼应经济学最核心的供求图)。
+function SupplyDemand() {
+  return (
+    <g>
+      <path d="M66,378 L66,214 M66,378 L246,378" fill="none" stroke={CREAM} strokeOpacity="0.28" strokeWidth="1" strokeLinecap="round" />
+      <path d="M80,232 L238,356" fill="none" stroke={CREAM} strokeOpacity="0.42" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M80,356 L238,232" fill="none" stroke={CREAM} strokeOpacity="0.42" strokeWidth="1.4" strokeLinecap="round" />
+      <circle cx="159" cy="294" r="7" fill={CINNABAR} />
+    </g>
+  )
+}
+
+// 母题:金蛋——窝里卧着几枚蛋,中央一枚朱色金蛋(呼应《小狗钱钱》"会下金蛋的鹅":守住本金、靠它下的蛋过活)。
+function GoldenEgg() {
+  const nest = 'M90,314 Q150,360 210,314'
+  const nest2 = 'M98,306 Q150,346 202,306'
+  const eggs = [[126, 300, 11, 15, false], [150, 292, 13, 18, true], [174, 300, 11, 15, false]]
+  return (
+    <g>
+      <path d={nest} fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.4" strokeLinecap="round" />
+      <path d={nest2} fill="none" stroke={CREAM} strokeOpacity="0.24" strokeWidth="1.1" strokeLinecap="round" />
+      {eggs.map(([x, y, rx, ry, hi], i) => (
+        <ellipse key={i} cx={x} cy={y} rx={rx} ry={ry} fill={hi ? CINNABAR : CREAM} fillOpacity={hi ? 0.9 : 0.45} />
+      ))}
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'two-mountains') return <TwoMountains />
   if (motif === 'two-systems') return <TwoSystems />
@@ -663,6 +691,8 @@ function Motif({ motif }) {
   if (motif === 'forecast-fan') return <ForecastFan />
   if (motif === 'snowball') return <Snowball />
   if (motif === 'quadrant') return <Quadrant />
+  if (motif === 'supply-demand') return <SupplyDemand />
+  if (motif === 'golden-egg') return <GoldenEgg />
   if (motif === 'ripples') return <Ripples />
   if (motif === 'spiral') return <Spiral />
   if (motif === 'mandala') return <Mandala />

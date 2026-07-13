@@ -1,0 +1,129 @@
+{
+  "title": "供给与需求:价格是如何决定的",
+  "subtitle": "一条向下的需求线、一条向上的供给线,交点处既定价又定量——这是经济学用得最多的一张图",
+  "centralIdea": "供求模型是经济学最常用的主力工具。它把一个市场拆成两股力量:需求——在其他条件不变时,价格越低,人们想买的越多,画出来是一条向右下方倾斜的线;供给——价格越高,卖家愿意供应的越多,画出来是一条向右上方倾斜的线。两条线相交的那一点,就是市场均衡:对应的价格叫均衡价格,数量叫均衡数量,此时想买的量正好等于想卖的量。价格若偏高就出现过剩、卖家降价;若偏低就出现短缺、买家抬价——市场像一根弹簧,你把价格按到哪里,它都会弹回交点。掌握这张\"供求交叉图\",涨价、管制、税收一大类问题都能顺着它分析;但要记住,它描述的是竞争市场的简化模型,垄断等例外留待后面的章节再补。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "想想菜市场。清早青菜水灵、要价高;临近收摊,同样一把青菜论堆甩卖。没有谁在中间发号施令,价格却在一天里自己上下浮动,最后总能把菜差不多卖完。为什么是这个价、不是别的价?经济学给出的答案,几乎全装在一张图里——两条线,一条代表买家,一条代表卖家,它们相交的地方,就同时定下了价格和成交量。这一章要做的,就是把这张图讲透:先分别看清两条线,再看它们相交处发生了什么,最后用它去解释涨价、管制这些天天遇到的事。"
+    },
+    {
+      "type": "h2",
+      "text": "需求:价格越低,想买的越多"
+    },
+    {
+      "type": "p",
+      "text": "先看买家这一边。在其他条件不变时,一件东西越便宜,人们想买的量就越大;越贵,想买的量就越小。这几乎是常识:奶茶降到五块,你一周可能喝上三杯;涨到三十,你大概一个月才舍得点一次。把不同价格下\"人们愿意买的总量\"逐一连起来,就得到一条**需求曲线(demand curve)**——纵轴是价格、横轴是数量,它向右下方倾斜:价越低、量越大。这条向下的线,经济学里称作\"需求定律\",是整套分析的第一块基石。它背后其实是无数个体在心里默默做的取舍:同一笔钱,便宜时多买一点、贵时省着点花。"
+    },
+    {
+      "type": "p",
+      "text": "这里要小心一个最容易混的区分。如果是价格本身变了,你沿着同一条需求曲线上下滑动,这叫\"**需求量**的变化\"——还是同一批买家,只是在新价格下多买或少买。但如果变的是价格以外的东西,整条曲线就会**平移**:大家收入涨了、突然更偏爱这件东西、它的替代品涨价了、预期以后还要涨、或者市场里买家变多了——这些都会让\"每个价格下想买的量\"整体增加,曲线向右移;反之则向左移。这才叫\"**需求**的变化\"。一个是沿着线走,一个是整条线搬家,后面所有涨跌分析都靠先分清这两者。"
+    },
+    {
+      "type": "figure",
+      "ftype": "曲线图",
+      "caption": "需求量变化=沿同一条曲线滑动(只因价格变);需求变化=整条曲线平移(因收入、偏好、相关品价、预期、买家数等)",
+      "svg": "<svg viewBox='0 0 560 300' style='width:100%;height:auto;font-family:var(--font-serif)' xmlns='http://www.w3.org/2000/svg'><text x='155' y='24' text-anchor='middle' style='fill:var(--ink)' font-size='14'>需求量变化:沿曲线滑动</text><line x1='55' y1='50' x2='55' y2='230' style='stroke:var(--ink-soft)' stroke-width='1.2'/><line x1='55' y1='230' x2='255' y2='230' style='stroke:var(--ink-soft)' stroke-width='1.2'/><line x1='75' y1='65' x2='240' y2='215' style='stroke:var(--cinnabar-pure)' stroke-width='2'/><text x='244' y='217' style='fill:var(--cinnabar-pure)' font-size='12'>D</text><circle cx='110' cy='97' r='4' style='fill:var(--ink)'/><circle cx='200' cy='179' r='4' style='fill:var(--ink)'/><path d='M120 106 L188 168' style='stroke:var(--ink-soft);fill:none' stroke-width='1.3' stroke-dasharray='3 3' marker-end='url(#dvm)'/><text x='155' y='258' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11.5'>只因价格变,点在同一条线上移动</text><line x1='285' y1='42' x2='285' y2='250' style='stroke:var(--line)' stroke-width='1' stroke-dasharray='2 4'/><text x='415' y='24' text-anchor='middle' style='fill:var(--ink)' font-size='14'>需求变化:整条平移</text><line x1='315' y1='50' x2='315' y2='230' style='stroke:var(--ink-soft)' stroke-width='1.2'/><line x1='315' y1='230' x2='515' y2='230' style='stroke:var(--ink-soft)' stroke-width='1.2'/><line x1='330' y1='72' x2='458' y2='215' style='stroke:var(--cinnabar-pure)' stroke-width='2'/><text x='450' y='226' style='fill:var(--cinnabar-pure)' font-size='12'>D</text><line x1='372' y1='72' x2='500' y2='215' style='stroke:var(--cinnabar-pure)' stroke-width='2' stroke-dasharray='5 3'/><text x='503' y='226' style='fill:var(--cinnabar-pure)' font-size='12'>D'</text><path d='M392 122 L430 122' style='stroke:var(--ink-soft);fill:none' stroke-width='1.4' marker-end='url(#dvm)'/><text x='415' y='258' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>收入·偏好·相关品价·预期·买家数</text><defs><marker id='dvm' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0 0 L6 3 L0 6 Z' style='fill:var(--ink-soft)'/></marker></defs></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "供给:价格越高,愿意卖的越多"
+    },
+    {
+      "type": "p",
+      "text": "再看卖家这一边,逻辑正好反过来。在其他条件不变时,一件东西卖得越贵,愿意生产、供应它的人就越多;价格太低,不少卖家干脆就不做了。把不同价格下\"卖家愿意供应的总量\"连起来,得到一条**供给曲线(supply curve)**——它向右上方倾斜:价越高、供应量越大。道理也直白:价高意味着有利可图,现有厂商愿意加班多产,原本观望的新厂商也会被吸引进场;价一旦低到连成本都盖不住,供应就迅速缩水。"
+    },
+    {
+      "type": "p",
+      "text": "和需求一样,供给曲线整条也会移动,原因同样出在\"价格以外\":原材料、人工等投入品变贵会推高成本,让同样价格下愿意供应的量减少(曲线左移);技术进步、生产效率提高,则让同样价格下能供应更多(右移);市场里卖家数量的增减、大家对未来价格的预期,也都会整条搬动这根线。区分\"沿曲线的供给量变化\"和\"整条供给曲线的移动\",和需求那边是一模一样的思路——先问一句:动的是价格,还是价格以外的东西?"
+    },
+    {
+      "type": "h2",
+      "text": "均衡:两条线的交点"
+    },
+    {
+      "type": "p",
+      "text": "现在把两条线画进同一张图。需求线向下、供给线向上,它们必然交于一点。这个交点,就是市场的**均衡(equilibrium)**:对应的价格叫**均衡价格**,对应的数量叫**均衡数量**。均衡的妙处在于——在这个价格上,买家想买的量正好等于卖家想卖的量,东西不多不少、恰好卖完,没有卖家被迫留下库存,也没有买家空手而归。所以它又被称作\"市场出清\"的价格:市场把货一扫而空,供需两边都得到了满足。"
+    },
+    {
+      "type": "figure",
+      "ftype": "曲线图",
+      "caption": "把向下的需求线和向上的供给线画在一起,交点就是市场均衡——它同时定出均衡价格与均衡数量",
+      "svg": "<svg viewBox='0 0 560 320' style='width:100%;height:auto;font-family:var(--font-serif)' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink)' font-size='16'>供给与需求相交:定出均衡价格与均衡数量</text><line x1='70' y1='42' x2='70' y2='272' style='stroke:var(--ink-soft)' stroke-width='1.4'/><line x1='70' y1='272' x2='512' y2='272' style='stroke:var(--ink-soft)' stroke-width='1.4'/><text x='62' y='38' text-anchor='end' style='fill:var(--ink-soft)' font-size='12'>价格</text><text x='516' y='276' style='fill:var(--ink-soft)' font-size='12'>数量</text><line x1='90' y1='60' x2='470' y2='250' style='stroke:var(--cinnabar-pure)' stroke-width='2.2'/><text x='476' y='252' style='fill:var(--cinnabar-pure)' font-size='13'>需求 D</text><line x1='90' y1='250' x2='470' y2='60' style='stroke:var(--azure)' stroke-width='2.2'/><text x='476' y='64' style='fill:var(--azure)' font-size='13'>供给 S</text><line x1='70' y1='155' x2='280' y2='155' style='stroke:var(--line)' stroke-width='1.2' stroke-dasharray='4 4'/><line x1='280' y1='155' x2='280' y2='272' style='stroke:var(--line)' stroke-width='1.2' stroke-dasharray='4 4'/><circle cx='280' cy='155' r='5' style='fill:var(--cinnabar-pure)'/><text x='293' y='149' style='fill:var(--ink)' font-size='13'>均衡点 E</text><text x='64' y='159' text-anchor='end' style='fill:var(--ink-soft)' font-size='12'>均衡价格</text><text x='280' y='288' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12'>均衡数量</text><text x='280' y='308' text-anchor='middle' style='fill:var(--ink-faint)' font-size='11'>此处:买家想买的量 = 卖家想卖的量</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "可为什么市场偏偏会停在这一点,而不是别处?关键在于:只要价格偏离交点,就会立刻冒出一股力量,把它推回来。这就是下一节要讲的\"自我纠错\"——也是整张图最迷人的地方。"
+    },
+    {
+      "type": "h2",
+      "text": "市场怎样自动回到均衡"
+    },
+    {
+      "type": "p",
+      "text": "假设价格被摆在**高于**均衡的位置。这时卖家一看有利可图,拼命供货、供应量很大;可买家嫌贵,想买的量却很小——供大于求,货堆在货架上卖不掉,这叫\"**过剩**\"。为了清库存,卖家只好降价;价格一路往下走,买家慢慢回来、卖家慢慢退出,直到重新回到交点才停。反过来,如果价格被摆在**低于**均衡的位置,东西太便宜,想买的人乌泱泱、愿意供货的却不多——供不应求,这叫\"**短缺**\";买家为了抢到货,愿意多出钱,价格被一路抬高,同样直到回到交点为止。"
+    },
+    {
+      "type": "quote",
+      "ftype": "金句",
+      "original": "过剩就降价,短缺就涨价——市场像一根弹簧,你把价格按到哪里,它都会弹回那个交点。",
+      "translation": ""
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "价格偏高→供大于求(过剩)→卖家降价;价格偏低→供不应求(短缺)→买家抬价;两股力量都把价格推回均衡",
+      "svg": "<svg viewBox='0 0 560 300' style='width:100%;height:auto;font-family:var(--font-serif)' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='fill:var(--ink)' font-size='16'>价格的自我纠错:总被推回均衡</text><line x1='120' y1='150' x2='438' y2='150' style='stroke:var(--ink)' stroke-width='1.6' stroke-dasharray='6 4'/><text x='446' y='154' style='fill:var(--ink)' font-size='12'>均衡价</text><text x='280' y='68' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='14'>价格偏高 → 供 大于 求 → 过剩(卖不掉)</text><text x='280' y='90' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11.5'>卖家降价甩货</text><path d='M280 98 L280 140' style='stroke:var(--cinnabar-pure);fill:none' stroke-width='2' marker-end='url(#down)'/><path d='M280 202 L280 160' style='stroke:var(--azure);fill:none' stroke-width='2' marker-end='url(#up)'/><text x='280' y='224' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11.5'>买家抬价抢购</text><text x='280' y='246' text-anchor='middle' style='fill:var(--azure)' font-size='14'>价格偏低 → 求 大于 供 → 短缺(买不到)</text><defs><marker id='down' markerWidth='10' markerHeight='10' refX='4' refY='7' orient='auto'><path d='M0 0 L8 0 L4 8 Z' style='fill:var(--cinnabar-pure)'/></marker><marker id='up' markerWidth='10' markerHeight='10' refX='4' refY='1' orient='auto'><path d='M4 0 L8 8 L0 8 Z' style='fill:var(--azure)'/></marker></defs></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这股力量,常被叫作\"价格的调节作用\"。没有谁下命令、没有中央调度,只是无数买家和卖家各自为自己的利益讨价还价,合起来就把价格推向那个供求相等的点。这正是上一章\"看不见的手\"落到一个具体市场里的样子:价格既是信号(告诉大家东西是紧俏还是过剩),又是激励(引导买卖双方各自调整),市场因此不用有人统一指挥,也能大体协调起来。"
+    },
+    {
+      "type": "h2",
+      "text": "拿供求看现实:曲线一移动,价量就跟着变"
+    },
+    {
+      "type": "p",
+      "text": "这张图真正好用的地方,是分析\"变化\"。记住一句口诀:哪条线动、往哪边动,交点就跟着挪,均衡价和均衡量随之改变。天一热,大家都想吃冰淇淋——需求曲线整条右移,新交点比原来更靠上、更靠右,于是冰淇淋既涨了价、又卖得更多。又比如某种农产品因技术改良而大丰收——供给曲线右移,新交点更靠下、更靠右,东西降价、成交量反而增加。学会先判断\"是需求在动还是供给在动、朝哪边动\",再看交点怎么挪,你就能解释生活里大半的涨跌新闻:油价、房价、机票、口罩,套路都是同一个。"
+    },
+    {
+      "type": "p",
+      "text": "有一点值得多留意:同样是\"涨价\",背后的线可能不一样,后果也不一样。需求拉动的涨价,往往伴着量的增加(东西更抢手,大家买得也更多);供给收缩的涨价,却常常伴着量的减少(东西变少了,价才被顶上去)。所以看到一条涨价新闻,别急着下结论,先问一句:是需求那条线右移了,还是供给那条线左移了?比如一场天灾让某地蔬菜减产——供给左移,交点往左上挪,菜价涨、成交量却缩水;而一款手机突然爆红、人人抢购——需求右移,交点往右上挪,价涨、销量也一起涨。用这套\"先辨哪条线动\"的读法,同一个\"涨\"字,你就能读出两种完全不同的故事。"
+    },
+    {
+      "type": "h2",
+      "text": "价格管制:好心也会有可预测的副作用"
+    },
+    {
+      "type": "p",
+      "text": "最后一类应用,是政府绕开交点、直接给价格\"设一条线\"。这里最能看出供求模型的锋利。第一种是把价格**压在均衡之下**,比如给房租设上限的\"租金管制\":出发点是让人租得起房,可价格一低,愿意租房的人变多、愿意把房子拿出来出租的房东却变少——想租的远多于能租到的,结果是长期、持续的**短缺**:一房难求、排队、走后门,甚至房子越来越破也没人修。第二种是把价格**托在均衡之上**,比如\"最低工资\":本意是保障劳动者,但当劳动的价格被强行抬高,愿意招人的岗位减少、想找工作的人却增多,就可能出现劳动力的**过剩**——落到现实里,就是一部分人找不到工作,也就是失业。"
+    },
+    {
+      "type": "figure",
+      "ftype": "曲线图",
+      "caption": "价格被压在均衡之下(限价上限),需求量大、供给量小,二者之间的缺口就是持续短缺——租金管制正是这样",
+      "svg": "<svg viewBox='0 0 560 320' style='width:100%;height:auto;font-family:var(--font-serif)' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink)' font-size='16'>价格压在均衡之下(如租金管制)→ 持续短缺</text><line x1='70' y1='42' x2='70' y2='272' style='stroke:var(--ink-soft)' stroke-width='1.4'/><line x1='70' y1='272' x2='512' y2='272' style='stroke:var(--ink-soft)' stroke-width='1.4'/><text x='62' y='38' text-anchor='end' style='fill:var(--ink-soft)' font-size='12'>价格</text><text x='516' y='276' style='fill:var(--ink-soft)' font-size='12'>数量</text><line x1='90' y1='60' x2='470' y2='250' style='stroke:var(--cinnabar-pure)' stroke-width='2.2'/><text x='476' y='252' style='fill:var(--cinnabar-pure)' font-size='13'>需求 D</text><line x1='90' y1='250' x2='470' y2='60' style='stroke:var(--azure)' stroke-width='2.2'/><text x='476' y='64' style='fill:var(--azure)' font-size='13'>供给 S</text><circle cx='280' cy='155' r='4' style='fill:var(--ink-faint)'/><text x='289' y='149' style='fill:var(--ink-faint)' font-size='11'>均衡</text><line x1='70' y1='200' x2='370' y2='200' style='stroke:var(--ink)' stroke-width='1.6' stroke-dasharray='6 4'/><text x='64' y='204' text-anchor='end' style='fill:var(--ink)' font-size='11.5'>限价</text><line x1='190' y1='200' x2='190' y2='272' style='stroke:var(--azure)' stroke-width='1.2' stroke-dasharray='4 4'/><text x='190' y='288' text-anchor='middle' style='fill:var(--azure)' font-size='11.5'>供给量</text><line x1='370' y1='200' x2='370' y2='272' style='stroke:var(--cinnabar-pure)' stroke-width='1.2' stroke-dasharray='4 4'/><text x='370' y='288' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='11.5'>需求量</text><line x1='190' y1='228' x2='370' y2='228' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='280' y='222' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='12.5'>短缺(供不应求)</text><text x='280' y='308' text-anchor='middle' style='fill:var(--ink-faint)' font-size='11'>价格越低,需求量越大、供给量越小,缺口长期存在</text></svg>"
+    },
+    {
+      "type": "quote",
+      "ftype": "金句",
+      "original": "把价格摁在均衡之下会造成短缺,托在均衡之上会造成过剩——好心的干预,往往带着可预测的副作用。",
+      "translation": ""
+    },
+    {
+      "type": "p",
+      "text": "这不是说价格管制一定是错的——分配、公平、民生都是真实而重要的考量,有时社会宁可承担短缺,也要保住某个群体的可及性。供求模型能做的,只是提醒你:任何绕开交点定价的做法,都会在另一头冒出短缺或过剩这样的代价,而且这些代价是可以事先预见的。值不值,得把好处和这份代价一起摆上桌,再来权衡。"
+    },
+    {
+      "type": "p",
+      "text": "还要补一句边界。这张漂亮的交叉图,描述的是一个\"**竞争市场**\":买卖双方都很多、谁也单独左右不了价格、商品也大体一样。可现实里,有的市场只有一两个卖家(垄断),有的商品彼此差异很大,有的交易还牵连到没参与其中的第三方——这些例外都会让图走样,得留到后面的章节再补。但即便如此,供求这张图仍是你分析绝大多数市场时该画的第一张草稿:先把两条线画出来,很多问题就已经想明白了一半。"
+    },
+    {
+      "type": "quote",
+      "ftype": "金句",
+      "original": "在竞争市场里,价格由供给与需求共同决定,二者相交处便是均衡;看懂这张交叉图,你就握住了分析价格问题的总钥匙。",
+      "translation": ""
+    }
+  ]
+}

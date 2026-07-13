@@ -1,0 +1,129 @@
+{
+ "title": "经济学的边界:模型、假设与局限",
+ "subtitle": "最后一章,曼昆不再往你手里塞新知识,而是退后一步问:经济学到底是一门什么样的学问?它的洞察力从哪来,又到哪为止——好用,是因为它简化;可也正因为简化,它必然漏掉了现实的许多东西",
+ "centralIdea": "全书收尾,跳出具体知识点,谈经济学「作为一种思维方式」的力量与边界。核心有几层:一,经济学家像科学家一样工作——提出理论、建立模型、用数据检验;模型靠大胆简化抓住主干,靠「假设其他条件不变(ceteris paribus)」一次只看一个变量。二,模型的力量正来自「抽象」,而抽象必然意味着「遗漏」——模型好比地图,有用是因为它不等于真实地形,但也因此漏掉现实的许多东西;「理性人、信息充分、市场出清」等假设在现实里常不成立。三,分清实证陈述(positive,描述世界是什么样,可用证据检验)与规范陈述(normative,主张世界应该怎样,掺入价值判断)——经济学家在实证问题上分歧其实不大,吵得凶的多是规范与政策,别把价值主张伪装成科学结论。四,行为经济学的挑战:卡尼曼、塞勒等用实验证明真实的人系统性地不理性,直接冲击标准模型「理性人」的地基,经济学正把心理学纳进来修正自己。五,主流(新古典)框架并非价值中立、有学派之争,常被批评对权力、分配、制度、生态与非市场价值着墨太少。六,经济学擅长厘清取舍、揭示激励与代价、预测大方向,却替代不了价值判断,对复杂系统的精确预测也力有不逮。收束一句:把经济学当成一副有力但有边界的思维眼镜,而不是放之四海皆准的真理——带着它的洞察、也带着对它局限的清醒,再去看世界,这才是这本书真正的用处。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "读到这里,你已经握着一整套工具了:取舍、机会成本、边际、激励、看不见的手、供求、比较优势、宏观三件大事……最后一章,曼昆不再往你手里塞新知识,而是退后一步,问一个更根本的问题:**经济学到底是一门什么样的学问?它的洞察力从哪来,又到哪为止?** 这一问,恰好给整本书一个清醒的收尾——它让你既看清这副「经济学眼镜」有多好用,也看清它有多少地方看不真、看不全。"
+  },
+  {
+   "type": "h2",
+   "text": "经济学家像科学家一样工作"
+  },
+  {
+   "type": "p",
+   "text": "曼昆开宗明义:**经济学家看世界的方式,和科学家很像。** 他们先提出一个理论(比如「价格越高,需求量越低」),再去收集数据、观察现实,然后用数据来检验这个理论站不站得住。物理学家做不了让地球停转的实验,经济学家同样没法把一个国家关进实验室——但他们可以从一次次真实发生的涨价、加息、减税里,读出规律。这套「提出理论 → 建立模型 → 用数据检验」的做派,就是经济学自称为一门科学的底气。"
+  },
+  {
+   "type": "p",
+   "text": "而经济学家手里最趁手的家伙,是**模型**。供求图、生产可能性边界、循环流量图……这些都是模型。模型的本事,全在**大胆简化**:它故意撇开一大堆枝枝节节,只留下最关键的那几根骨头,好让你一眼看清事情的主干。为了做到这一点,经济学里有一句反复出现的咒语——**「假设其他条件不变(ceteris paribus)」**。它的意思是:先把别的因素统统摁住不动,单看一个变量的变化会带来什么。正因为一次只放一个变量进来,你才可能理清「到底是谁影响了谁」。"
+  },
+  {
+   "type": "quote",
+   "original": "经济学家像科学家一样:提出理论,收集数据,再用这些数据检验理论。",
+   "translation": "曼昆对经济学方法论的概括。它的科学性不在于能做实验,而在于用理论和证据相互检验——这也埋下了它一切力量与局限的种子。"
+  },
+  {
+   "type": "h2",
+   "text": "模型是地图,不是地形(核心张力)"
+  },
+  {
+   "type": "p",
+   "text": "这里藏着整本书最该记住的一层张力——**模型的力量,恰恰来自它的「抽象」;而抽象,必然意味着「遗漏」。** 打个曼昆式的比方:一张地图之所以有用,正因为它**不等于**真实的地形。它把千沟万壑、一草一木全省了,只留下几条路、几个地名,你才能一眼找到方向。可你也永远别忘了——**地图上没有的东西,现实里照样存在。** 经济模型完全一样:它有用,是因为它简化;但也正因为简化,它**漏掉了现实里的许多东西**。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "模型好比一张简化的地图:它靠大胆撇开枝节来抓住主干,好用正因为它不等于真实地形——但也因此,现实里的许多东西,它压根没画进去。",
+   "svg": "<svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--font-serif)\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">模型 = 一张简化的地图</text><rect x=\"30\" y=\"56\" width=\"190\" height=\"140\" rx=\"6\" style=\"fill:none;stroke:var(--ink-soft);stroke-width:1.5\"/><line x1=\"44\" y1=\"150\" x2=\"206\" y2=\"78\" style=\"stroke:var(--ink-faint);stroke-width:0.8\"/><line x1=\"46\" y1=\"92\" x2=\"204\" y2=\"180\" style=\"stroke:var(--ink-faint);stroke-width:0.8\"/><circle cx=\"58\" cy=\"84\" r=\"4\" style=\"fill:var(--ink-faint)\"/><circle cx=\"96\" cy=\"76\" r=\"4\" style=\"fill:var(--ink-faint)\"/><circle cx=\"134\" cy=\"94\" r=\"4\" style=\"fill:var(--ink-faint)\"/><circle cx=\"174\" cy=\"82\" r=\"4\" style=\"fill:var(--ink-faint)\"/><circle cx=\"200\" cy=\"104\" r=\"4\" style=\"fill:var(--ink-faint)\"/><circle cx=\"64\" cy=\"120\" r=\"4\" style=\"fill:var(--ink-faint)\"/><circle cx=\"104\" cy=\"132\" r=\"4\" style=\"fill:var(--ink-faint)\"/><circle cx=\"148\" cy=\"118\" r=\"4\" style=\"fill:var(--ink-faint)\"/><circle cx=\"188\" cy=\"138\" r=\"4\" style=\"fill:var(--ink-faint)\"/><circle cx=\"72\" cy=\"162\" r=\"4\" style=\"fill:var(--ink-faint)\"/><circle cx=\"116\" cy=\"170\" r=\"4\" style=\"fill:var(--ink-faint)\"/><circle cx=\"160\" cy=\"158\" r=\"4\" style=\"fill:var(--ink-faint)\"/><circle cx=\"196\" cy=\"176\" r=\"4\" style=\"fill:var(--ink-faint)\"/><circle cx=\"88\" cy=\"188\" r=\"4\" style=\"fill:var(--ink-faint)\"/><text x=\"125\" y=\"216\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-soft)\">真实地形:千头万绪</text><line x1=\"230\" y1=\"126\" x2=\"326\" y2=\"126\" style=\"stroke:var(--ink-soft);stroke-width:1.5\"/><path d=\"M332 126 L320 120 L320 132 Z\" style=\"fill:var(--ink-soft)\"/><text x=\"280\" y=\"114\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-soft)\">大胆简化</text><text x=\"280\" y=\"150\" text-anchor=\"middle\" font-size=\"10\" style=\"fill:var(--ink-faint)\">剔除枝节</text><rect x=\"340\" y=\"56\" width=\"190\" height=\"140\" rx=\"6\" style=\"fill:none;stroke:var(--azure);stroke-width:1.5\"/><line x1=\"340\" y1=\"102\" x2=\"530\" y2=\"102\" style=\"stroke:var(--line);stroke-width:1\"/><line x1=\"340\" y1=\"150\" x2=\"530\" y2=\"150\" style=\"stroke:var(--line);stroke-width:1\"/><line x1=\"404\" y1=\"56\" x2=\"404\" y2=\"196\" style=\"stroke:var(--line);stroke-width:1\"/><line x1=\"466\" y1=\"56\" x2=\"466\" y2=\"196\" style=\"stroke:var(--line);stroke-width:1\"/><path d=\"M360 180 L404 130 L466 120 L512 76\" style=\"fill:none;stroke:var(--azure);stroke-width:2.2\"/><circle cx=\"404\" cy=\"130\" r=\"5\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"512\" cy=\"76\" r=\"5\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"435\" y=\"216\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-soft)\">地图/模型:只留主干</text><text x=\"280\" y=\"252\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">地图有用,正因它不等于地形;模型有用,正因它简化——</text><text x=\"280\" y=\"274\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--cinnabar-pure)\">而这,也正是它必然漏掉现实许多东西的地方。</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "更要警惕的是模型背后那些**假设**。「人是理性的、信息是充分的、市场总会出清(供求自动相等)」——这些假设让模型算得漂亮,可它们在现实里**常常并不成立**。真实的人会冲动、会被忽悠、掌握的信息残缺不全;真实的市场会卡壳、会失灵。所以一个模型好不好用,不看它多精巧,而看它**在它假设成立的场合,能不能帮你解释和预测**;一旦你把它搬到假设崩塌的地方,再漂亮的模型也会给你错的答案。"
+  },
+  {
+   "type": "h2",
+   "text": "实证 vs 规范:别把价值主张伪装成科学"
+  },
+  {
+   "type": "p",
+   "text": "分清两种截然不同的说法,是经济学里一件极要紧、又极容易被搅浑的事。一种叫**实证陈述(positive)**,它描述「**世界是什么样**」——比如「最低工资上调,会不会增加失业?」这种话,原则上可以拿证据去检验对错。另一种叫**规范陈述(normative)**,它主张「**世界应该怎样**」——比如「到底该不该上调最低工资?」这种话里掺进了价值判断(你更看重穷人的工资,还是更看重就业机会?),没有任何数据能单独替你拍板。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照图",
+   "caption": "实证 vs 规范:前者描述「世界是什么样」、可用证据检验;后者主张「世界应该怎样」、掺入价值判断。分歧最大的多在规范一侧——最该提防的,是有人把价值主张伪装成科学结论。",
+   "svg": "<svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--font-serif)\"><rect x=\"30\" y=\"44\" width=\"230\" height=\"186\" rx=\"8\" style=\"fill:none;stroke:var(--azure);stroke-width:1.8\"/><text x=\"145\" y=\"72\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">实证 · positive</text><text x=\"145\" y=\"96\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">描述「世界是什么样」</text><line x1=\"56\" y1=\"110\" x2=\"234\" y2=\"110\" style=\"stroke:var(--line);stroke-width:1\"/><text x=\"145\" y=\"138\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink)\">「最低工资上调,</text><text x=\"145\" y=\"158\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink)\">会增加失业吗?」</text><rect x=\"78\" y=\"186\" width=\"134\" height=\"30\" rx=\"15\" style=\"fill:none;stroke:var(--azure);stroke-width:1.2\"/><text x=\"145\" y=\"206\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--azure)\">可用证据检验</text><rect x=\"300\" y=\"44\" width=\"230\" height=\"186\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8\"/><text x=\"415\" y=\"72\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">规范 · normative</text><text x=\"415\" y=\"96\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">主张「世界应该怎样」</text><line x1=\"326\" y1=\"110\" x2=\"504\" y2=\"110\" style=\"stroke:var(--line);stroke-width:1\"/><text x=\"415\" y=\"138\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink)\">「到底该不该</text><text x=\"415\" y=\"158\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink)\">上调最低工资?」</text><rect x=\"348\" y=\"186\" width=\"134\" height=\"30\" rx=\"15\" style=\"fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2\"/><text x=\"415\" y=\"206\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--cinnabar-pure)\">掺入价值判断</text><text x=\"280\" y=\"258\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">实证问题上,经济学家分歧其实不大;吵得凶的多是规范与价值——</text><text x=\"280\" y=\"280\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--cinnabar-pure)\">别把一个价值主张,悄悄包装成一条科学结论。</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "看清这条界线,你就会发现一个常被误解的真相:**经济学家在实证问题上的分歧,其实并没有外界想的那么大。** 大方向上,他们对「价格管制会造成短缺」「自由贸易能把总蛋糕做大」这类判断,相当一致。吵得面红耳赤的,往往是**规范问题和具体政策**——那里头装的是价值取向和利益权衡,本就没有标准答案。所以听到经济学家「打架」时,先分一分:他们是在争「世界是什么样」,还是在争「世界应该怎样」?**最该提防的,是有人把一个价值主张,悄悄包装成一条科学结论来卖给你。**"
+  },
+  {
+   "type": "quote",
+   "original": "实证陈述描述世界是什么样,规范陈述主张世界应该怎样。",
+   "translation": "前者可用证据检验,后者取决于价值判断。混淆两者,是经济学讨论里最常见的糊涂账,也是各种「专家结论」最爱藏私货的地方。"
+  },
+  {
+   "type": "h2",
+   "text": "行为经济学的挑战:真实的人,系统性地不理性"
+  },
+  {
+   "type": "p",
+   "text": "标准经济学模型有一块地基,叫「**理性人**」——假设人会冷静地权衡、追求自身利益的最大化。可过去几十年,一门叫**行为经济学**的分支,用海量实验狠狠撼动了这块地基。以卡尼曼、塞勒为代表的学者发现:真实的人**不是偶尔犯错,而是系统性地、可预测地偏离理性**。我们会被**框架**带跑(同一件事,说成「九成存活」还是「一成死亡」,选择就不一样)、被**情绪**左右、被**从众**心理裹挟、对损失的痛远大于对等量收益的喜……这些偏差不是随机噪音,而是人性里稳定的褶皱。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照图",
+   "caption": "标准模型假设的「理性人」,与行为经济学看到的「真实的人」:后者被框架、情绪、从众左右,系统性地偏离理性——这动摇了整座模型大厦的地基。",
+   "svg": "<svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--font-serif)\"><rect x=\"30\" y=\"48\" width=\"216\" height=\"178\" rx=\"8\" style=\"fill:none;stroke:var(--azure);stroke-width:1.8\"/><text x=\"138\" y=\"76\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">标准模型的地基</text><text x=\"138\" y=\"96\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--azure)\">「理 性 人」</text><line x1=\"54\" y1=\"110\" x2=\"222\" y2=\"110\" style=\"stroke:var(--line);stroke-width:1\"/><text x=\"58\" y=\"136\" text-anchor=\"start\" font-size=\"12\" style=\"fill:var(--ink-soft)\">· 信息充分</text><text x=\"58\" y=\"162\" text-anchor=\"start\" font-size=\"12\" style=\"fill:var(--ink-soft)\">· 冷静计算</text><text x=\"58\" y=\"188\" text-anchor=\"start\" font-size=\"12\" style=\"fill:var(--ink-soft)\">· 追求最优</text><text x=\"58\" y=\"214\" text-anchor=\"start\" font-size=\"12\" style=\"fill:var(--ink-soft)\">· 从不系统犯错</text><path d=\"M276 40 L266 96 L286 132 L272 200\" style=\"fill:none;stroke:var(--cinnabar-pure);stroke-width:2;stroke-dasharray:5 4\"/><text x=\"279\" y=\"232\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--cinnabar-pure)\">实验冲击</text><rect x=\"314\" y=\"48\" width=\"216\" height=\"178\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8\"/><text x=\"422\" y=\"76\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">行为经济学看到的</text><text x=\"422\" y=\"96\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--cinnabar-pure)\">「真 实 的 人」</text><line x1=\"338\" y1=\"110\" x2=\"506\" y2=\"110\" style=\"stroke:var(--line);stroke-width:1\"/><text x=\"342\" y=\"136\" text-anchor=\"start\" font-size=\"12\" style=\"fill:var(--ink-soft)\">· 被框架带跑</text><text x=\"342\" y=\"162\" text-anchor=\"start\" font-size=\"12\" style=\"fill:var(--ink-soft)\">· 受情绪左右</text><text x=\"342\" y=\"188\" text-anchor=\"start\" font-size=\"12\" style=\"fill:var(--ink-soft)\">· 随大流从众</text><text x=\"342\" y=\"214\" text-anchor=\"start\" font-size=\"12\" style=\"fill:var(--ink-soft)\">· 系统性地犯错</text><text x=\"280\" y=\"268\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">卡尼曼、塞勒等以大量实验证明:真实的人系统性地偏离理性——</text><text x=\"280\" y=\"289\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">于是经济学把心理学请进来,修正、扩充自己。</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "这对标准模型是个直击地基的挑战:如果人根本不像模型假设的那样理性,那么建在「理性人」之上的许多结论,是不是也得打个折扣?值得称道的是,经济学并没有捂住耳朵,而是**把心理学请了进来**,用更贴近真人的假设去修正、扩充自己。这本身就说明:经济学不是一套刻在石头上的教条,而是一门**还在自我纠错、自我生长的学问**。"
+  },
+  {
+   "type": "h2",
+   "text": "它并非价值中立:框架背后有学派之争"
+  },
+  {
+   "type": "p",
+   "text": "还有一层更深的清醒:你手里这本入门教材,讲的主要是**主流(新古典)经济学**的框架,而这套框架**并不是价值中立的**。它天然偏重**效率与市场**——默认价格机制大体靠谱、市场大体能把资源配好。批评者指出,正因如此,它对另一些同样要紧的东西着墨太少:**权力**(谁在市场里说了算)、**分配不平等**(蛋糕做大了,却越分越不匀)、**制度**(规则本身如何形成、又偏袒了谁)、**生态环境**,以及那些**无法被标价的价值**(尊严、社群、代际公平)。"
+  },
+  {
+   "type": "p",
+   "text": "而且,经济学从来不只有这一种声音。**凯恩斯学派**更强调政府在需求不足时的作用,**制度经济学**盯着规则与组织如何塑造行为,**马克思主义经济学**把焦点对准阶级与权力,**生态经济学**则坚持把地球的承载极限算进账本……它们各有侧重、也各有盲区。所以最危险的读法,是把一本入门教材当成「经济学的**全部**真理」。它更诚实的身份是:**一种有力、却有边界的视角,而不是唯一的真理。**"
+  },
+  {
+   "type": "h2",
+   "text": "经济学能做什么,不能做什么"
+  },
+  {
+   "type": "p",
+   "text": "把边界摆明,反而更能看清它的价值。经济学**特别擅长**几件事:帮你**厘清取舍**(想要这个,得放弃什么)、**揭示激励与代价**(一项政策会悄悄改变谁的算盘、把成本转嫁给谁)、以及**预测大方向**(限价大体会招来短缺,补贴大体会引来更多供给)。这几样本事,足以让你在一片情绪化的争论里,看得比旁人更冷静、更透彻。"
+  },
+  {
+   "type": "figure",
+   "ftype": "清单图",
+   "caption": "经济学的能与不能:它擅长厘清取舍、揭示激励与代价、预测大方向;但它替代不了价值判断,对复杂系统的精确预测也力有不逮。承认够不着的地方,正是为了正确地使用它。",
+   "svg": "<svg viewBox=\"0 0 560 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--font-serif)\"><rect x=\"30\" y=\"46\" width=\"228\" height=\"192\" rx=\"8\" style=\"fill:none;stroke:var(--azure);stroke-width:1.8\"/><text x=\"144\" y=\"76\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--azure)\">✓ 它擅长</text><line x1=\"54\" y1=\"90\" x2=\"234\" y2=\"90\" style=\"stroke:var(--line);stroke-width:1\"/><text x=\"56\" y=\"120\" text-anchor=\"start\" font-size=\"12\" style=\"fill:var(--ink)\">· 厘清取舍与机会成本</text><text x=\"56\" y=\"152\" text-anchor=\"start\" font-size=\"12\" style=\"fill:var(--ink)\">· 揭示激励与代价</text><text x=\"56\" y=\"184\" text-anchor=\"start\" font-size=\"12\" style=\"fill:var(--ink)\">· 预测大方向</text><text x=\"70\" y=\"206\" text-anchor=\"start\" font-size=\"11\" style=\"fill:var(--ink-faint)\">(限价致短缺…)</text><rect x=\"302\" y=\"46\" width=\"228\" height=\"192\" rx=\"8\" style=\"fill:none;stroke:var(--ink-soft);stroke-width:1.8\"/><text x=\"416\" y=\"76\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink-soft)\">✕ 它够不着</text><line x1=\"326\" y1=\"90\" x2=\"506\" y2=\"90\" style=\"stroke:var(--line);stroke-width:1\"/><text x=\"328\" y=\"120\" text-anchor=\"start\" font-size=\"12\" style=\"fill:var(--ink)\">· 替你做价值判断</text><text x=\"342\" y=\"142\" text-anchor=\"start\" font-size=\"11\" style=\"fill:var(--ink-faint)\">(效率与公平如何取舍)</text><text x=\"328\" y=\"174\" text-anchor=\"start\" font-size=\"12\" style=\"fill:var(--ink)\">· 精确预测复杂系统</text><text x=\"342\" y=\"196\" text-anchor=\"start\" font-size=\"11\" style=\"fill:var(--ink-faint)\">(危机屡屡失准)</text><text x=\"280\" y=\"270\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--cinnabar-pure)\">承认「够不着」,不是贬低经济学,而是正确地使用它。</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "但它同样有**够不着的地方**。它**替代不了价值判断**——效率与公平之间到底怎么取舍,说到底是个**政治与伦理**问题,不是一道能算出唯一解的数学题;经济学能帮你把代价看清,却不能替你决定「值不值」。它对**复杂系统的精确预测**也力有不逮:2008 年那场金融危机之前,主流经济学界几乎无人预警;宏观预测屡屡落空,早已不是新闻。承认这些够不着的地方,不是贬低经济学,而是**正确地使用它**。"
+  },
+  {
+   "type": "h2",
+   "text": "收束:一副有力,但有边界的思维眼镜"
+  },
+  {
+   "type": "p",
+   "text": "读完这本书,你最大的收获,其实**不是记住了多少条曲线、多少个术语**。那些迟早会忘。真正会留下来、变成你一部分的,是一套**看世界的思维习惯**:遇事先问「代价是什么」(取舍与机会成本)、「再多一点值不值」(边际)、「这会改变谁的算盘」(激励)、「各方会怎么反应、最后落在哪里」(均衡)。这套习惯一旦长进你的骨头里,你看新闻、做决定、评判一项政策的眼光,都会和从前不一样。"
+  },
+  {
+   "type": "p",
+   "text": "所以,请把经济学当成一副**眼镜**,而不是一部**圣经**。戴上它,许多原本模糊的东西会陡然清晰——你会看见免费背后的代价、好意背后的反噬、繁荣背后的取舍。但也请始终记得:这副眼镜有它的**度数和盲区**,它的模型必然遗漏现实,它的假设常常不成立,它并不价值中立,它替代不了你自己的判断。**带着它的洞察,也带着对它局限的清醒,再去看这个世界——这,才是这本《经济学原理》真正想留给你的东西。**"
+  }
+ ]
+}

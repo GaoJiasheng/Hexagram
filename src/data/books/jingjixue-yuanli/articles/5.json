@@ -1,0 +1,101 @@
+{
+  "title": "政府的角色:市场失灵与公共政策",
+  "subtitle": "市场高效,却不是万能——《经济学原理》第五章导读:市场会在哪些地方「失灵」,政府又能(和不能)做什么",
+  "centralIdea": "上一章的结论是「看不见的手」:市场多数时候能高效配置资源。这一章讲它的例外——市场并非万能,在三个地方会「失灵」。其一外部性(externality),一笔交易的成本或收益外溢给没参与的第三方,于是污染被生产得太多、疫苗教育被供给得太少;其二公共物品(public goods),像国防、灯塔,挡不住白用又不因人多而减少,人人搭便车(free rider),市场供不出;其三市场势力(market power),垄断者能抬价减产、损害消费者。此外,市场即便有效率,也可能造成巨大的不平等,是否再分配涉及价值判断——效率与公平的取舍。政府有时能用税、补贴、管制、公共供给、再分配去改善;但政府自身也会失灵:信息不足、政策有意外副作用、被利益集团俘获(寻租)、官僚低效。「市场会失灵」并不等于「政府一出手就更好」。好政策要在两边的代价之间就事论事地权衡,而非教条地偏向任一边。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "上一章刚夸完市场的好:千百万人素不相识,价格却像一只看不见的手,把面包送到最想要它的人手里,谁也没在中央发号施令,事情就办成了。听上去近乎完美。可紧接着,曼昆要给这幅漂亮的图景补一句要紧的注脚——**看不见的手,并不是永远都灵。**有些时候,人人追求自己的好处,合起来的结果却让所有人都更糟:工厂顺着自己的账本排污,河里的鱼和岸上的人替它买单;人人都想用路灯,却没人愿意自己掏钱去装。这一章讲的,就是市场会在哪些地方掉链子、政府又能不能把它接住——以及一个同样要紧的问题:政府这只手,自己就一定更稳吗?"
+    },
+    {
+      "type": "h2",
+      "text": "先把话说全:市场很能干,但不是万能"
+    },
+    {
+      "type": "p",
+      "text": "先把上一章的结论摆正,免得会错意。市场「多数时候」是组织经济的好办法,这句话依然成立——曼昆不是要推翻它,而是要给它划出边界。所谓**市场失灵(market failure)**,指的就是这样一类情形:任由自由市场自己运转,资源的配置反而不再有效,该多的少了、该少的多了。它不是「市场偶尔出点小差错」,而是市场的内在逻辑在特定条件下会系统性地把事情做偏。经济学家把最常见的病因归成三类——**外部性、公共物品、市场势力**。把它们一个个看清楚,才谈得上政府该不该出手、又该怎么出手。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>市场失灵的三种常见成因</text><rect x='205' y='40' width='150' height='46' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><text x='280' y='62' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>市场失灵</text><text x='280' y='79' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>market failure</text><line x1='280' y1='86' x2='105' y2='146' style='stroke:var(--ink-faint);stroke-width:1.5'/><line x1='280' y1='86' x2='280' y2='146' style='stroke:var(--ink-faint);stroke-width:1.5'/><line x1='280' y1='86' x2='455' y2='146' style='stroke:var(--ink-faint);stroke-width:1.5'/><rect x='30' y='148' width='150' height='118' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='105' y='174' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>外部性 externality</text><text x='105' y='200' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>成本/收益外溢第三方</text><text x='105' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>污染 → 生产过多</text><text x='105' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>疫苗 → 供给过少</text><rect x='205' y='148' width='150' height='118' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='280' y='174' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>公共物品 public goods</text><text x='280' y='200' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>非排他 + 非竞争</text><text x='280' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>人人想搭便车</text><text x='280' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>市场供给不足</text><rect x='380' y='148' width='150' height='118' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='455' y='174' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>市场势力 market power</text><text x='455' y='200' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>单一 / 少数卖家</text><text x='455' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>抬价、压产</text><text x='455' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>损害效率</text></svg>",
+      "caption": "三类市场失灵各有各的毛病,但共同点是:市场自己解决不了,才轮到政府考虑要不要出手。"
+    },
+    {
+      "type": "h2",
+      "text": "外部性:一笔交易的账,算漏了第三方"
+    },
+    {
+      "type": "p",
+      "text": "第一类,也是最好懂的一类,叫**外部性(externality)**——一笔买卖的成本或好处,外溢到了没有参与这笔买卖的第三方身上。先说**负外部性**。一家工厂生产钢铁,它的账本上记着铁矿、电费、工人工资,却没有一栏写着「排进河里的废水」。污染的代价是真金白银的——下游的居民要治病、庄稼会减产——只是这笔账没有落在工厂头上,而是甩给了周边所有人。这种事其实离你并不远:楼下饭馆的油烟、马路上多开一辆车添出的那段拥堵、公共场合的二手烟,都是同一个道理——做的人只算自己那本账,遭殃的却是旁人。于是市场价格是「失真」的:钢铁看起来比它真实的社会成本便宜,大家就买得多、工厂也就生产得多。结论有点反直觉却很硬:**有负外部性时,市场会把这样东西生产得「太多」。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><defs><marker id='mfa' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto'><path d='M0 0L10 5L0 10z' style='fill:var(--ink-faint)'/></marker><marker id='mfr' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto'><path d='M0 0L10 5L0 10z' style='fill:var(--cinnabar-pure)'/></marker></defs><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>负外部性:一笔交易的账,算漏了第三方</text><rect x='48' y='62' width='118' height='56' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.6'/><text x='107' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>工厂</text><text x='107' y='106' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>卖方</text><rect x='394' y='62' width='118' height='56' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.6'/><text x='453' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>买家</text><text x='453' y='106' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>买方</text><line x1='166' y1='90' x2='392' y2='90' style='stroke:var(--ink-faint);stroke-width:1.5' marker-end='url(#mfa)'/><text x='280' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>交易:一手交钱,一手交货</text><text x='280' y='108' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>价格只算了买卖双方的成本与收益</text><path d='M100 118 C 92 165, 120 196, 205 226' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2' marker-end='url(#mfr)'/><text x='52' y='180' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar-pure)'>排污:代价外溢</text><rect x='210' y='214' width='150' height='58' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='285' y='238' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>周边居民</text><text x='285' y='258' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink)'>没参与交易,却承担污染</text><text x='280' y='292' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>代价没算进工厂成本 → 工厂把钢铁生产得「太多」</text></svg>",
+      "caption": "买卖双方各得其利,污染的账却记到了没上桌的第三方头上。价格算漏了这一笔,产量就偏高了。"
+    },
+    {
+      "type": "p",
+      "text": "反过来还有**正外部性**。你去打一针疫苗,受益的不只是你自己:你不容易得病,也就不容易把病传给别人,街坊邻居跟着沾光。教育、基础研究也是一样——一个人多读了书、一家公司做出了新知识,好处会外溢给整个社会。可当你盘算「值不值得打这一针、读这个学位」时,你只会算到落在自己头上的那份好处,算不到外溢出去的那部分。于是**有正外部性的东西,市场会供给得「太少」**。那政府能做什么?思路是把外溢的账「内部化」——让做决定的人把外部的成本或好处也算进自己的账里:对污染这类负外部性,可以**征税**(比如碳税、排污税,让污染者为真实代价买单),也可以**直接管制**排放上限;对疫苗、教育这类正外部性,则可以**补贴**来鼓励。还有一条更巧的路子——把「谁有权污染、谁有权免受污染」的**产权**界定清楚,让相关各方自己去协商交易(这正是「科斯定理」的思路),某些情况下不必政府亲自动手,当事人就能谈出好结果。"
+    },
+    {
+      "type": "quote",
+      "original": "有负外部性时,市场生产得太多;有正外部性时,市场生产得太少。",
+      "translation": "外部性让价格偏离了真实的社会成本——这正是政府考虑用税收、补贴或管制去「纠偏」的理由。"
+    },
+    {
+      "type": "h2",
+      "text": "公共物品:人人都想搭便车"
+    },
+    {
+      "type": "p",
+      "text": "第二类市场失灵,来自一种特别的东西——**公共物品(public goods)**,典型的例子是国防、路灯、灯塔、基础科学研究。它们有两个共同的怪脾气:一是**非排他**,你没法把不付钱的人挡在门外——导弹防御保护的是整个国家,总不能只保护交了钱的人;灯塔一亮,过路的每条船都看得见,拦都拦不住。二是**非竞争**,一个人享用它,并不会减少别人能享用的量——你看见灯塔的光,不会让另一条船看到的光变暗一分。这两条凑在一起,就埋下了一个要命的问题:既然不付钱也能用、别人付了我照样白蹭,那我为什么要自己掏钱?人人都这么想,人人都等着别人买单,这就是经济学里著名的**搭便车(free rider)**难题。结果是:市场里没有哪个商人愿意提供这种明摆着收不回钱的东西,于是**公共物品会被严重供给不足**。这时候常见的办法,就是由**政府出面提供**,再用**税收**向大家统一筹钱——你不能选择不交国防的税,但你也因此享受到了国防的保护。小区里也常见这种尴尬:楼道灯坏了,人人都盼着修,却都指望邻居去张罗、去凑钱,结果拖着没人管——这正是搭便车难题的日常版,也是为什么有些事必须靠物业统一收费、靠政府统一提供,才办得成。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><defs><marker id='pga' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='7' markerHeight='7' orient='auto'><path d='M0 0L10 5L0 10z' style='fill:var(--ink-faint)'/></marker></defs><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>公共物品:为什么市场供不出来</text><rect x='120' y='40' width='320' height='40' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='280' y='65' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>公共物品:国防 · 灯塔 · 路灯 · 基础研究</text><line x1='240' y1='80' x2='170' y2='104' style='stroke:var(--ink-faint);stroke-width:1.3'/><line x1='320' y1='80' x2='390' y2='104' style='stroke:var(--ink-faint);stroke-width:1.3'/><rect x='58' y='104' width='196' height='50' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='156' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>非排他</text><text x='156' y='144' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>挡不住不付钱的人享用</text><rect x='306' y='104' width='196' height='50' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='404' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>非竞争</text><text x='404' y='144' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>一人用不减少他人可用</text><line x1='156' y1='154' x2='240' y2='190' style='stroke:var(--ink-faint);stroke-width:1.3' marker-end='url(#pga)'/><line x1='404' y1='154' x2='320' y2='190' style='stroke:var(--ink-faint);stroke-width:1.3' marker-end='url(#pga)'/><rect x='140' y='192' width='280' height='46' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='280' y='213' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>搭便车 free rider</text><text x='280' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink)'>人人都想让别人买单</text><text x='280' y='268' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>结果:市场供给不足 → 常需政府提供、靠税收筹资</text></svg>",
+      "caption": "既挡不住白用、又不因人多而变少,理性人就都选择搭便车。市场因此供不出,只好换政府来办、用税来筹。"
+    },
+    {
+      "type": "h2",
+      "text": "市场势力:一家独大,就能抬价"
+    },
+    {
+      "type": "p",
+      "text": "第三类叫**市场势力(market power)**。看不见的手能把事情办好,有个隐含的前提:买家和卖家都很多,谁也左右不了价格,只能乖乖接受市场定出来的价。可现实里,有时一家(或少数几家)厂商大到能自己**操纵价格**——这就是**垄断**或寡头。一个垄断者不必再看市场脸色,它会怎么做?它会**抬高价格、压低产量**:少产一点、卖贵一点,自己赚得更多,可社会为此付了代价——本来愿意按合理价格购买的人买不起了,该生产出来的东西没有生产,资源没有用到最该用的地方。这里的效率损失,和外部性、公共物品是两码事,但同样是市场自己修不好的。对付市场势力,政府的工具是**反垄断法**(拆分巨头、禁止合谋、阻止有害的并购)、对自然垄断行业的**价格管制**,以及一切**促进竞争**的政策——让更多对手能进场,往往是压住垄断者最根本的办法。"
+    },
+    {
+      "type": "h2",
+      "text": "还有一件事:效率之外,还有公平"
+    },
+    {
+      "type": "p",
+      "text": "到这里,三类市场失灵讲完了,它们说的都是**效率**——市场有没有把蛋糕做到最大。但曼昆特意提醒:政府操心的还有另一件事,和效率无关,那就是**公平**。一个市场哪怕运转得完美无缺、效率满分,它分配的结果也可能极不平均:有人富可敌国,有人食不果腹。看不见的手擅长把蛋糕做大,却从不保证把蛋糕分匀——它甚至根本不管这件事。要不要用**税收和转移支付**(向高收入者多征税、给低收入者发补助)去追求一个更平的分配?这就不再是纯粹的经济学问题了,它触到了**价值判断**:多要一分公平,往往要以损失一点效率为代价(税收会削弱人们赚钱和投资的激励),这中间怎么权衡,不同的人、不同的社会会给出不同的答案。经济学能把这个**取舍**摆清楚、把两边的代价算明白,但「到底该偏向哪一边」,它给不出唯一正确的答案。"
+    },
+    {
+      "type": "h2",
+      "text": "关键的一句平衡:政府自己也会失灵"
+    },
+    {
+      "type": "p",
+      "text": "读到这儿,很容易滑向一个结论:既然市场会失灵,那让政府来管不就好了?这一步一定要刹住。曼昆写这一章,绝不是要证明「政府万能」——恰恰相反,他要同时递给你另一半警告:**「市场会失灵」并不等于「政府一出手就更好」。**政府干预也会失灵,原因至少有四条。其一,**信息不足**:官员未必比身处其中的千万买家卖家更清楚该产多少、定什么价,拍脑袋定出来的政策,可能还不如市场自己摸索的结果。其二,**意外的副作用**:政策会改变人的激励,常常招来设计者没料到的后果——比如限了价,反而制造出短缺和黑市。其三,**被俘获**:干预给了权力,权力就会招来游说,政策可能被它本该约束的利益集团反过来把持(经济学叫「寻租」),名义上为公众,实际上肥了少数人。其四,**官僚低效**:政府机构没有市场那样的竞争压力,容易迟钝、臃肿、缺乏改进的动力。"
+    },
+    {
+      "type": "quote",
+      "original": "市场有时会失灵,政府有时能改善结果——但「有时」这两个字,两边都得加上。",
+      "translation": "这是本章的分寸所在:市场不是万能的,政府也不是。要不要干预,得看具体情形下两边的代价谁更小。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>该不该干预:两边的代价放上秤</text><rect x='38' y='44' width='232' height='204' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='154' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>放任市场的代价</text><text x='54' y='100' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>· 污染等负外部性被生产过多</text><text x='54' y='128' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>· 教育疫苗等正外部性供不足</text><text x='54' y='156' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>· 公共物品没人买单,供不出</text><text x='54' y='184' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>· 垄断抬价减产,损害消费者</text><text x='54' y='212' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>· 分配悬殊,可能很不公平</text><rect x='290' y='44' width='232' height='204' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='406' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink-soft)'>政府干预的代价</text><text x='306' y='100' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>· 信息不足,未必比市场更懂</text><text x='306' y='128' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>· 政策常有意料之外的副作用</text><text x='306' y='156' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>· 被利益集团俘获(寻租)</text><text x='306' y='184' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>· 官僚机构低效、迟钝</text><text x='306' y='212' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>· 干预本身也要花成本</text><text x='280' y='280' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>好政策 = 在两边代价之间就事论事地权衡,不教条偏向任何一边</text></svg>",
+      "caption": "两栏都要读:只看左栏会以为政府该管一切,只看右栏会以为政府一无是处。真正的判断,发生在两栏的比较之间。"
+    },
+    {
+      "type": "p",
+      "text": "所以正确的姿势,不是在「市场派」和「政府派」之间选边站队,而是**就事论事地权衡两边的代价**。面对一个具体问题,该问的是:市场失灵到底造成了多大的损害?政府这一手下去,又要付出多少代价、可能带来哪些新麻烦?两边一比,才知道该不该干预、怎么干预。有时市场失灵的窟窿太大,哪怕政府笨手笨脚,补一补也强过放任;有时市场那点小毛病,还不如政府折腾出来的乱子大。**不美化市场,也不美化政府**——这才是这一章真正想教给你的分寸。看不见的手很强大,但它有够不着的地方;政府的手能去补位,可那只手同样会抖。承认这两件事都是真的,你就读懂了曼昆的第七条原理:政府有时能改善市场的结果。"
+    }
+  ]
+}
