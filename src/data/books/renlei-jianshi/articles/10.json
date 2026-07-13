@@ -1,0 +1,95 @@
+{
+  "title": "我们真的更幸福了吗?",
+  "subtitle": "《人类简史》第十章导读——力量的账记满了整本书,幸福的账却几乎是一页空白",
+  "centralIdea": "前九章记的全是「力量」的账:智人从啃剩骨头的中型动物,变成了掌控行星的主宰。可赫拉利在这一章掀开一个几乎没人认真算过的问题——力量涨了一万倍,快乐涨了吗?他给出三条冷静到扎心的线索:其一,快乐更像一台由生化基线(血清素、多巴胺)控定的恒温器,中彩票和出车祸的人一年后大都回到各自的「出厂设定」,境遇只能短暂拨动指针;其二,幸福约等于「现实减期望」,而期望的通胀往往快过条件的改善,所以拥有越多反而未必越满足;其三,更彻底的追问来自「意义」——如果人生的意义本身也是一个虚构故事,那「我很幸福」会不会只是我们说服自己相信的又一个故事?最后他借佛教把问题推到底:苦源于对感受的贪求,而非感受本身。批判地读:幸福极难测量,这一章证据薄、思辨重,赫拉利自己也把它明确留成了开放题,不是标准答案。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "假设有一台时光机,能把你送回任何一个你想去的年代生活一辈子——中世纪的村庄、罗马的城邦、石器时代的草原。你会去吗?多数人会犹豫,因为我们默认一件事:**今天的日子,总归是比过去好的**。抗生素、自来水、飞机、外卖、随手可查的全部人类知识——凭这些,现代人怎么看都该比古人幸福得多。赫拉利在全书写满了「力量」的账本之后,突然停下来,问了一个几乎没有历史学家认真问过的问题:**这些力量,真的换来了更多的快乐吗?** 这一问看似简单,却像一根针,扎破了「进步=幸福」这个我们从没想过要去检验的默认设定。"
+    },
+    {
+      "type": "h2",
+      "text": "一个被整本历史书跳过的问题"
+    },
+    {
+      "type": "p",
+      "text": "先说清楚这一问为什么稀奇。翻开任何一本大历史,记的都是**能力的增长**:更大的帝国、更快的船、更强的火炮、更多的产出。这些东西好测量——版图有多大、人口有多少、GDP多少,一查便知。可「人过得开不开心」既没法称重也没法征税,于是它被整个学科集体绕过了。赫拉利的挑衅在于:**如果历史的终极意义是为了「人」,那衡量成败的终极标准就该是人的幸福,而不是帝国的大小**。可一旦真拿这把尺子去量,麻烦立刻来了——农业革命让物种数量暴涨,却可能让每个具体的农民过得更累;工业革命堆出了海量商品,却也堆出了海量焦虑。**力量的曲线一路向上,幸福的曲线却可能是条几乎水平的线**。这个反差,是本章所有讨论的起点。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>两条曲线:力量一路向上,幸福几乎水平</text><line x1='60' y1='60' x2='60' y2='240' style='stroke:var(--ink-faint);stroke-width:1.5'/><line x1='60' y1='240' x2='520' y2='240' style='stroke:var(--ink-faint);stroke-width:1.5'/><text x='40' y='150' text-anchor='middle' transform='rotate(-90 40 150)' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>高 ←　→ 低</text><text x='90' y='258' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>采集时代</text><text x='250' y='258' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>农业 · 帝国</text><text x='440' y='258' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>现代</text><path d='M70,210 C200,190 360,120 510,66' style='fill:none;stroke:var(--cinnabar);stroke-width:2.5'/><text x='452' y='58' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar)'>力量</text><path d='M70,182 C200,176 360,184 510,174' style='fill:none;stroke:var(--ink-soft);stroke-width:2;stroke-dasharray:6 4'/><text x='456' y='190' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>幸福?</text><text x='280' y='290' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>历史记满了实线,却几乎没人去描过那条虚线</text></svg>",
+      "caption": "全章的起点:我们精确记录了力量的增长,却从未认真丈量幸福是否同步——两条曲线也许早就分了家。"
+    },
+    {
+      "type": "h2",
+      "text": "线索一:快乐是一台生化恒温器"
+    },
+    {
+      "type": "p",
+      "text": "第一条线索来自心理学最反直觉的一个发现。研究者追踪两类人:中了大奖的和遭遇事故截瘫的。按常识,前者该从此乐开花,后者该一辈子沉在谷底。结果呢?**大约一年之后,两拨人的快乐水平大都回到了事故或中奖之前的各自基线**。中奖者的兴奋褪去,截瘫者的绝望也慢慢平复,各自弹回原来的位置。赫拉利借此解释:决定你「大体上开不开心」的,主要不是你遇到了什么,而是你体内血清素、多巴胺等物质的**基线水平**——它像一台恒温器,把你的心情锁在一个由生理设定的区间里。好事来了,指针短暂上跳,然后回落;坏事来了,指针短暂下探,然后也回落。这解释了一个残酷的事实:**升职、买房、换车带来的快乐,几乎都有保质期**——它们能拨动指针,却改不了恒温器的设定值。"
+    },
+    {
+      "type": "quote",
+      "original": "快乐并不在于任何像是财富、健康甚至社群之类的客观条件,而在于客观条件和主观期望之间是否相符。",
+      "translation": "这是本章的枢纽命题。它把「幸福」从「你拥有多少」搬到了「你拥有的减去你期望的还剩多少」——同样一套条件,配上不同的期望,得出的幸福感可以天差地别。这也是为什么单靠改善物质条件,永远追不上幸福。"
+    },
+    {
+      "type": "p",
+      "text": "如果这条线索成立,推论就相当颠覆:**七万年来一切轰轰烈烈的革命,对个人「基线快乐」的净贡献,可能远比我们以为的小**。石器时代的猎人打到一头鹿的狂喜,和你抢到一张演唱会票的狂喜,可能是同一台恒温器跳出的同一个数字——只是触发的东西换了。这不是说进步毫无意义(止痛药实实在在减轻了痛苦,这点赫拉利也承认),而是提醒:**别把「拥有更多」直接当成「快乐更多」**,这两者之间隔着一台你几乎无法用意志力调节的生化装置。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "svg": "<svg viewBox='0 0 560 264' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>快乐恒温器:境遇能拨指针,拨不动设定值</text><line x1='100' y1='70' x2='100' y2='210' style='stroke:var(--ink-faint);stroke-width:1.5'/><line x1='460' y1='70' x2='460' y2='210' style='stroke:var(--ink-faint);stroke-width:1.5'/><line x1='100' y1='140' x2='460' y2='140' style='stroke:var(--cinnabar);stroke-width:1.5;stroke-dasharray:6 4'/><text x='476' y='144' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>基线</text><path d='M100,140 C150,140 160,86 190,86 C220,86 230,140 280,140 C330,140 340,196 370,196 C400,196 410,140 460,140' style='fill:none;stroke:var(--ink-soft);stroke-width:2'/><circle cx='190' cy='86' r='4' style='fill:var(--cinnabar)'/><text x='190' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>中大奖</text><circle cx='370' cy='196' r='4' style='fill:var(--cinnabar)'/><text x='370' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>遭事故</text><text x='280' y='244' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>约一年后,指针都弹回各自的基线——升职买房的快乐,都有保质期</text></svg>",
+      "caption": "大喜大悲都是暂时的偏移:恒温器由生化基线设定,好事坏事只能让指针短暂偏离,然后回归原位。"
+    },
+    {
+      "type": "h2",
+      "text": "线索二:期望的通胀,追平了条件的改善"
+    },
+    {
+      "type": "p",
+      "text": "第二条线索藏在上面那句引文里:**幸福 ≈ 现实 − 期望**。麻烦在于,期望不是固定的锚,它会随条件一起水涨船高,而且往往涨得更快。中世纪的农民住土房、患牙痛,却对现世没什么奢望——他把盼头寄给来生,所以一点小确幸就能让他知足。现代人住带暖气的公寓、有麻药止痛,按客观条件是那位农民的一百倍,却未必更满足——因为广告、影视和社交媒体,每天都在把他的期望往上顶:别人的房更大、旅行更远、身材更好、孩子更优秀。**条件改善是加法,期望膨胀是乘法**,两条线赛跑,幸福就被夹在中间原地踏步。赫拉利举了个精准的现代病:媒体和消费主义一边拼命刺激欲望,一边又贩卖「你本该更幸福」的焦虑——**它先帮你把期望抬高,再回过头卖你「填补落差」的产品**,这门生意永远不会做完。"
+    },
+    {
+      "type": "p",
+      "text": "把这条线索翻译成大白话就是:**你上一次「终于得到了心心念念的东西」之后,那份满足维持了多久?** 大概率是几天,然后你的目光已经移到了下一个目标上。这不是你不知足,而是期望这台机器的默认程序如此——它每达成一个目标,就自动把标准线上移一格。想在这台机器上获得持久的幸福,靠不停满足它几乎是南辕北辙,反倒是**管理期望本身**才是那个被长期忽略的旋钮。"
+    },
+    {
+      "type": "figure",
+      "ftype": "公式图",
+      "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='30' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>幸福的隐藏公式:现实 − 期望</text><rect x='150' y='58' width='120' height='52' rx='9' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><text x='210' y='90' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;fill:var(--ink)'>现实(加法)</text><text x='290' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:24px;fill:var(--cinnabar)'>−</text><rect x='310' y='58' width='120' height='52' rx='9' style='fill:none;stroke:var(--cinnabar);stroke-width:1.4'/><text x='370' y='90' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--cinnabar)'>期望(乘法)</text><path d='M210,110 L210,150' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M370,110 L370,150' style='fill:none;stroke:var(--cinnabar);stroke-width:1.2'/><text x='210' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>条件慢慢变好</text><text x='370' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>被广告不断顶高</text><rect x='150' y='188' width='280' height='42' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.3;stroke-dasharray:5 4'/><text x='290' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>期望跑得比条件快 → 落差恒在,幸福踏步</text></svg>",
+      "caption": "幸福不是一个绝对值,而是一道减法:当期望的涨速盖过条件的改善,拥有再多也填不平那道落差。"
+    },
+    {
+      "type": "h2",
+      "text": "线索三:如果连「意义」也是虚构的呢?"
+    },
+    {
+      "type": "p",
+      "text": "前两条线索还停在心理层面,第三条把追问推到了哲学的底。赫拉利指出,很多人并不追求「一直有好感受」,而是追求「人生有意义」——一位含辛茹苦的母亲、一位埋头著述的学者,过程未必愉快,却觉得值得。可他随即掀开了这层安慰的底牌:**所谓「意义」,很可能只是我们讲给自己听的又一个虚构故事**。这正是全书主线在个人内心的回响——国家、金钱是集体共享的虚构,而「我的人生很有意义」则是每个人为自己私人定制的虚构。中世纪的骑士相信为荣誉而死有意义,今天的人相信实现自我、拓展视野有意义;这些信念都不来自宇宙的客观认证,而来自各自时代的文化剧本。**如果一个人觉得幸福,只是因为他成功说服了自己相信一个关于人生意义的故事**——那这份幸福,和自我欺骗的边界,到底划在哪里?这是本章最锋利、也最令人不安的一刀。"
+    },
+    {
+      "type": "p",
+      "text": "赫拉利没有停在虚无里,而是请出了另一种思路——**佛教的视角**。他这样转述其核心洞见:人之所以苦,不在于遭遇了什么感受,而在于对感受永不停歇的**贪求**。得到愉悦,就怕它消失、还想要更多;遭遇痛苦,就拼命想推开它。心念永远在追逐或抗拒中打转,于是永远无法安宁。顺着这个逻辑,把幸福押注在「一直拥有好感受」上,本身就是苦的根源——因为感受本性无常,追一个注定要流走的东西,是一场原理上就赢不了的赛跑。**真正的出路或许不是拼命拨高恒温器,而是看清并放下这场追逐**。要特别说明:赫拉利是把它作为一种被历史检验过的**思想资源**引入,拿来和现代快乐观对照,而不是给出「答案就是学佛」的结论。"
+    },
+    {
+      "type": "quote",
+      "original": "追求内心感受,只会让人陷入无止境的焦虑和不满。",
+      "translation": "把佛教的诊断翻成现代话:越是执着于「我此刻感觉好不好」,就越是把自己绑在感受的过山车上。因为感受天生变动不居,你越紧盯它、越想抓住好的推开坏的,焦虑就越深——问题不在感受本身,而在那份追逐。"
+    },
+    {
+      "type": "h2",
+      "text": "收束:一道被诚实地留白的题"
+    },
+    {
+      "type": "p",
+      "text": "照例要打上问号,而这一章的问号尤其重。**第一,幸福几乎无法测量。** 恒温器理论、期望公式听着都精巧,但「快乐」怎么量化、跨越千年怎么比较,至今是心理学的老大难——你没法给一个石器时代的猎人发问卷。所以本章的证据强度,明显弱于讲力量、讲金钱那几章,更接近一场高水平的思辨,而非扎实的实证。**第二,「古人未必更不幸」也可能滑向另一种浪漫化。** 拿「知足」去反衬现代人的焦虑,固然戳中要害,但中世纪农民的高婴儿死亡率、剧痛无麻药、朝不保夕的暴力,同样是真实的苦——把「期望低所以幸福」讲得太满,就成了另一副有色眼镜。**第三,佛教视角是引介而非裁决。** 赫拉利把它当思想资源摆出来对照,读者不必据此认定这本书在劝人修行。"
+    },
+    {
+      "type": "p",
+      "text": "打完问号,这一章真正的价值反而更清楚了:它未必给了你正确答案,却给了你一个**几乎从未被认真问过的问题**,和三件随身可用的工具。恒温器提醒你——**下一次升职加薪买新手机带来的兴奋,大概率有保质期,别把人生押在它上面**;期望公式提醒你——**当你感到「拥有这么多却还是不满足」,该检查的可能不是拥有得够不够,而是期望被谁悄悄顶高了**;而「意义也是故事」这一刀,则逼你直面一个平时被日子捂住的追问——**你此刻信以为真的人生意义,是你自己想清楚的,还是这个时代替你写好的剧本?** 力量的账,赫拉利到此已经全部记完;下一章,他把镜头推向未来,问出一个比「我们幸福吗」更大的问题——**当智人开始亲手改写生命本身,这个物种,还剩多少年?**"
+    }
+  ]
+}
