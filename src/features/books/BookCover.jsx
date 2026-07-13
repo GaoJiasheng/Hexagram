@@ -585,8 +585,24 @@ function AppleOrange() {
   )
 }
 
+// 母题:双系统——一枚圆分作两半:左半一道朱色闪电(系统1·快·直觉),右半几道同心慢弧(系统2·慢·审慎),中缝虚线相隔(呼应《思考,快与慢》两套心智系统)。
+function TwoSystems() {
+  const cx = 150, cy = 293, R = 82
+  const arcs = [34, 56, 78].map((r) => `M${cx},${cy - r} A${r},${r} 0 0 1 ${cx},${cy + r}`)
+  const bolt = 'M132,236 L108,290 L126,290 L112,352'
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={R} fill="none" stroke={CREAM} strokeOpacity="0.36" strokeWidth="1.2" />
+      <line x1={cx} y1={cy - R} x2={cx} y2={cy + R} stroke={CREAM} strokeOpacity="0.3" strokeWidth="1" strokeDasharray="3 5" />
+      {arcs.map((d, i) => <path key={i} d={d} fill="none" stroke={CREAM} strokeOpacity={0.42 - i * 0.08} strokeWidth="1.2" />)}
+      <path d={bolt} fill="none" stroke={CINNABAR} strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'two-mountains') return <TwoMountains />
+  if (motif === 'two-systems') return <TwoSystems />
   if (motif === 'ripples') return <Ripples />
   if (motif === 'spiral') return <Spiral />
   if (motif === 'mandala') return <Mandala />

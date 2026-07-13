@@ -1,0 +1,184 @@
+{
+ "title": "过度自信:理解的错觉与专家直觉",
+ "subtitle": "我们常常在最该谦虚的地方,反而最有把握",
+ "centralIdea": "这一章讲的是系统1的一个副作用:它太擅长把零散的信息编成一个顺理成章的故事,于是我们总有种\"我很懂、我很准\"的错觉。卡尼曼拆了三样东西——后见之明(事后觉得\"早该知道\",记忆被结果偷偷改写)、叙事谬误(用连贯的因果故事解释过去,夸大了技能、抹掉了运气)、有效性的错觉(反馈一再打脸,信心却纹丝不动)。然后他和直觉研究者克莱因达成一个共识:专家直觉不是玄学,但它只在两个条件同时满足时才可信——环境本身有规律可循、从业者又能拿到及时明确的反馈;两者缺一,所谓\"专家\"的直觉往往不比瞎猜强,一个简单的公式反而更准。最后必须补一句:本书里那些\"启发实验\"后来在心理学的可重复性危机中栽了跟头,连卡尼曼自己都承认当年不该那么自信——但这一章的几条硬结论,证据反而站得住。读它,要\"知其稳,也知其疑\"。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "球赛输了,第二天办公室里一定有人拍着大腿说:\"这场我早就看出来要输,那个换人换得莫名其妙。\"公司暴雷了,评论区一片\"其实早有苗头,只是没人听\"。可你要是回到事情发生之前问他:\"接下来会怎样?\"——他多半也是一脸茫然。这种\"事后诸葛亮\"不是嘴硬,它是我们大脑出厂自带的一个毛病。这一章要讲的,就是这个毛病怎么让我们(尤其是所谓的\"专家\")在最该谦虚的地方,反而最有把握。"
+  },
+  {
+   "type": "h2",
+   "text": "先看清:自信从哪来"
+  },
+  {
+   "type": "p",
+   "text": "前几章卡尼曼一直在说系统1——那个快速、自动、不费力气的直觉系统。它有个执念:**追求连贯**。给它几个零散的线索,它会飞快地拼出一个说得通的故事,拼好之后还特别满意。问题就出在这份满意上:**故事越顺,我们越自信;可故事顺不顺,和它对不对,根本是两回事。**"
+  },
+  {
+   "type": "p",
+   "text": "换句话说,你心里那份\"我很确定\"的感觉,量的往往不是真相,而是脑子里那个故事有多流畅。信息越少、越好编,故事反而越干净、越自信——卡尼曼给系统1起过一个很扎心的绰号,叫\"你看到的就是全部\"(What You See Is All There Is)。你没看到的那些空白,系统1不会提醒你,它直接当作不存在。这就是本章所有\"错觉\"的总根子。"
+  },
+  {
+   "type": "quote",
+   "original": "我们并不是在理解世界,而是在给已经发生的事,编一个听起来顺理成章的故事。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "错觉一:后见之明——记忆被结果偷偷改写"
+  },
+  {
+   "type": "p",
+   "text": "第一个错觉叫**后见之明**(hindsight bias),就是文章开头那个\"我早就知道\"。它的机制很狡猾:一件事一旦有了结果,你的大脑会**回头去篡改你事发前的记忆**,把当时那个七上八下、模棱两可的你,悄悄改写成一个\"早就看明白\"的你。你不是在撒谎,你是真的记不清自己当初有多没底了——结果一出来,过去那条模糊的岔路,在记忆里就被拉直成一条清清楚楚的单行道。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "后见之明:事前一片模糊,事后却像早有定数",
+   "svg": "<svg viewBox=\"0 0 560 270\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"140\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">事情发生之前</text><text x=\"420\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"16\">事情发生之后</text><line x1=\"280\" y1=\"22\" x2=\"280\" y2=\"244\" style=\"stroke:var(--line)\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/><circle cx=\"56\" cy=\"140\" r=\"7\" style=\"fill:var(--ink-soft)\"/><path d=\"M63 138 L235 66\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\"/><path d=\"M63 140 L235 112\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\"/><path d=\"M63 142 L235 160\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\"/><path d=\"M63 144 L235 208\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\"/><text x=\"140\" y=\"242\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">哪条路都可能 · 心里没底</text><line x1=\"320\" y1=\"140\" x2=\"496\" y2=\"140\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"3\"/><circle cx=\"320\" cy=\"140\" r=\"5\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"496\" cy=\"140\" r=\"7\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"420\" y=\"120\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">我早就看出来了</text><text x=\"420\" y=\"242\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">一条清清楚楚的单行道</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "这个毛病有两个坏后果。第一,它让**整个世界看起来比实际更可解释、更有规律**。既然什么事回头看都\"有迹可循\",我们就会高估自己(和专家)对世界的把握,以为它比真实情况更好预测。第二,更不公平的是,它让我们**用结果去论英雄**:一个决策当时明明合情合理,只因为最后运气不好、结果砸了,事后就被骂成\"愚蠢\";反过来,一个冒失的赌博只要侥幸赢了,就被捧成\"有远见\"。医生、投资人、创业者都吃过这个亏——**大家不是在评判他当时的判断有多稳,而是在拿他没法控制的结果,倒过来给他贴标签。**"
+  },
+  {
+   "type": "h2",
+   "text": "错觉二:叙事谬误——好故事骗了我们"
+  },
+  {
+   "type": "p",
+   "text": "第二个错觉,是后见之明的\"升级版\",叫**叙事谬误**。我们太爱听、也太爱讲**连贯的因果故事**了。一家公司成功了,书店里立刻摆满\"揭秘\"——CEO如何英明、战略如何超前、文化如何独特。故事讲得头头是道,读着热血沸腾,好像照着做你也能成。"
+  },
+  {
+   "type": "p",
+   "text": "卡尼曼要泼的冷水是:这类成功故事,几乎**系统性地夸大了技能的作用,抹掉了运气的分量**。同样一位CEO,把他放到另一段市场行情、另一个对手格局、另一次偶然的时间点上,结局可能完全不同。真实世界里,一家公司的成败,是本事、对手、大势、意外掺在一起的混合物,运气的比重比我们愿意承认的大得多。可\"运气\"这东西没法编成励志故事——它不连贯、不好懂、也不解气,于是被讲故事的人自动删掉了。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比",
+   "caption": "同一个成功:我们以为的配方,和真实的配方",
+   "svg": "<svg viewBox=\"0 0 560 260\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"150\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">故事里的成功</text><text x=\"410\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">真实的成功</text><line x1=\"280\" y1=\"20\" x2=\"280\" y2=\"238\" style=\"stroke:var(--line)\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/><rect x=\"90\" y=\"60\" width=\"120\" height=\"120\" rx=\"6\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"90\" y=\"60\" width=\"120\" height=\"96\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><text x=\"150\" y=\"115\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">技能·远见</text><text x=\"150\" y=\"172\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">运气</text><text x=\"150\" y=\"210\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">运气几乎被删掉</text><rect x=\"350\" y=\"60\" width=\"120\" height=\"120\" rx=\"6\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><rect x=\"350\" y=\"124\" width=\"120\" height=\"56\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><text x=\"410\" y=\"98\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">技能</text><rect x=\"350\" y=\"60\" width=\"120\" height=\"120\" rx=\"6\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><text x=\"410\" y=\"156\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\">运气·大势</text><text x=\"410\" y=\"210\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">运气的分量被低估</text></svg>"
+  },
+  {
+   "type": "quote",
+   "original": "一个好故事最危险的地方在于:它让你觉得自己懂了,而真正的世界远比故事凌乱。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "错觉三:有效性的错觉——反馈打脸,信心不减"
+  },
+  {
+   "type": "p",
+   "text": "第三个错觉最顽固,叫**有效性的错觉**(illusion of validity):明明反馈一再证明你判断不准,你却**照样对自己的判断充满信心**。卡尼曼讲了段自己的亲历——年轻时他在军队里做军官选拔评估,一群人被拉去做无领导小组任务,他和同事在旁边看,自信满满地判断谁有领导潜质、谁不行,评语写得斩钉截铁。"
+  },
+  {
+   "type": "p",
+   "text": "可后来军校的实际表现一次次反馈回来:他们的预测**基本等于瞎猜**。荒唐的是,拿到这些打脸的数据之后,他们第二天回到观察场,面对下一批人,**依旧信心十足地下判断**,那份笃定丝毫没受影响。卡尼曼说,他当时清清楚楚地知道自己的判断没用,可\"我们准\"这种主观感受,强大到能把冷冰冰的统计事实直接顶开。这就是有效性的错觉——**信心是脑子里那个连贯故事给的,不是现实的准确率给的。**"
+  },
+  {
+   "type": "quote",
+   "original": "我们清楚地知道自己的预测毫无价值,却依旧对下一次预测信心满满。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "那专家直觉,到底靠不靠谱?"
+  },
+  {
+   "type": "p",
+   "text": "讲到这儿你可能会想:那是不是所有\"专家的直觉\"都是唬人的?卡尼曼没这么极端。他专门去找了一位立场相反的对手——直觉研究者加里·克莱因(Gary Klein)。克莱因常年研究消防队长、护士这些人,记录了大量\"专家一眼看穿、当场救命\"的真实案例,他坚信专家直觉是真本事。一个成天\"拆穿\"直觉的人,和一个成天\"力挺\"直觉的人,坐下来吵了好几年,最后居然吵出了一个**共识**。这个共识,是本章最值钱的一句话。"
+  },
+  {
+   "type": "p",
+   "text": "他俩一致同意:专家直觉不是玄学,它本质上就是\"识别\"——大脑在过往经验里存下了大量模式,遇到相似情境时\"啪\"地认出来。但这种识别要练得出来、靠得住,**必须同时满足两个条件**:第一,**环境本身足够有规律**,也就是有稳定的因果关系可循;第二,从业者能通过**长期练习拿到及时、明确的反馈**,让他有机会把模式学对。**两个条件缺一,直觉就练不出真本事,只会长出错觉。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "判据图",
+   "caption": "专家直觉何时可信:环境有规律 × 反馈够靠谱,两者都要",
+   "svg": "<svg viewBox=\"0 0 560 320\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">纵:有无及时反馈　横:环境有无规律</text><line x1=\"120\" y1=\"50\" x2=\"120\" y2=\"290\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><line x1=\"120\" y1=\"290\" x2=\"500\" y2=\"290\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><text x=\"70\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">有</text><text x=\"70\" y=\"250\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">无</text><text x=\"440\" y=\"310\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">有规律</text><text x=\"200\" y=\"310\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">无规律</text><rect x=\"320\" y=\"64\" width=\"170\" height=\"96\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"2.4\"/><text x=\"405\" y=\"98\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">直觉可信</text><text x=\"405\" y=\"124\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">消防队长·麻醉师</text><text x=\"405\" y=\"143\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">棋手</text><rect x=\"140\" y=\"64\" width=\"162\" height=\"96\" rx=\"6\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"221\" y=\"116\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">练不出稳直觉</text><rect x=\"140\" y=\"184\" width=\"162\" height=\"92\" rx=\"6\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"221\" y=\"234\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">纯属错觉</text><rect x=\"320\" y=\"184\" width=\"170\" height=\"92\" rx=\"6\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"405\" y=\"222\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12.5\">不比瞎猜强</text><text x=\"405\" y=\"244\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">长期股市·政治预测</text><text x=\"405\" y=\"262\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">精神科长期预后</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "对照一下就清楚了。**消防队长**在火场里进进出出几十年,火情有物理规律,判断对错几秒钟就见分晓——他那句\"快撤,这屋要塌\"往往真能救命。**麻醉师、下了几十年的棋手**也一样:环境有章法,反馈又快又准,他们的直觉是真金白银练出来的。可换到另一头:**长期股票预测、政治的长远走向、精神科对病人多年后的预后**——这些环境本身乱、因果不稳,反馈还要拖好几年才回来、回来时又被无数别的因素搅浑。在这种\"低效度环境\"里,顶着\"专家\"头衔的人,直觉往往**不比扔硬币强多少**,只是他们和普通人一样,照样自信满满。"
+  },
+  {
+   "type": "quote",
+   "original": "直觉不是魔法,它只是识别——在一个够规矩、又肯给你及时反馈的世界里,慢慢练出来的识别。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "一个反直觉的结论:简单公式常常赢过专家"
+  },
+  {
+   "type": "p",
+   "text": "顺着这条逻辑往下,会得出一个让很多专业人士很不服气的结论:在那些低效度环境里,一个**简单的统计公式,或者一张打分清单,预测得往往比专家的临床直觉更准**。卡尼曼引了大量研究——从预测罪犯再犯、学生成绩,到判断疾病预后——一次次是冷冰冰的公式赢了活生生的专家。"
+  },
+  {
+   "type": "p",
+   "text": "为什么?不是因为公式多聪明,恰恰因为它**够笨、够稳**。人是会波动的:今天心情差、昨晚没睡好、刚被上一个案例带偏了锚定、对眼前这个人莫名有点好感或反感——这些噪音都会悄悄污染判断,而且你自己根本察觉不到。公式不受情绪、疲劳、锚定的干扰,同样的输入永远给同样的输出。**在一个本来就难预测的领域里,\"稳定地平庸\",常常就赢过\"忽好忽坏地聪明\"。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比",
+   "caption": "在低效度环境里:专家直觉忽高忽低,简单公式稳而更准",
+   "svg": "<svg viewBox=\"0 0 560 250\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">谁的预测更准(命中率)</text><line x1=\"60\" y1=\"200\" x2=\"500\" y2=\"200\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><rect x=\"120\" y=\"120\" width=\"90\" height=\"80\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><path d=\"M120 120 q22 -26 45 0 q22 26 45 0\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><text x=\"165\" y=\"228\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">专家直觉</text><text x=\"165\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">受情绪·疲劳干扰</text><rect x=\"350\" y=\"84\" width=\"90\" height=\"116\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"2.2\"/><line x1=\"350\" y1=\"84\" x2=\"440\" y2=\"84\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"2.6\"/><text x=\"395\" y=\"228\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">简单公式</text><text x=\"395\" y=\"74\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">同样输入·同样输出</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "这不是要把专家赶走,而是给了他们一个更聪明的位置:让专家去做公式做不了的事——发现新变量、处理罕见情况、判断信息该不该信;把重复、可量化的常规打分,交给不知疲倦、不闹情绪的公式。**该服气的地方服气,该出手的地方出手。**"
+  },
+  {
+   "type": "h2",
+   "text": "必须说清楚的争议:可重复性危机"
+  },
+  {
+   "type": "p",
+   "text": "读这本书,有一件事绕不过去,得跟你交个底。《思考,快与慢》里有一部分内容,讲的是**社会启发效应**(priming)——比如让人接触和金钱有关的字眼,他随后就变得更自私一点;比如读了一堆和\"老年\"相关的词,人走路都会不自觉地慢下来(著名的\"佛罗里达效应\")。这些实验当年写进书里时,口气是相当笃定的。"
+  },
+  {
+   "type": "p",
+   "text": "但后来,整个心理学界经历了一场\"**可重复性危机**\":很多曾被当作定论的经典实验,别的团队照着重做,**结果做不出来了**,或者效应小到几乎可以忽略。上面那类启发实验,正是重灾区之一。难得的是,卡尼曼本人**公开承认**了这一点——他说自己当年过于轻信那部分研究,不该把话说得那么满。一位地位如此之高的学者,亲手划掉自己书里的一部分,这份诚实本身,就是对本章主题最好的示范:**连他都会在该谦虚的地方过于自信。**"
+  },
+  {
+   "type": "quote",
+   "original": "作者本人后来承认:书中那部分启发实验的证据,当年不该那么自信。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "那这本书还能不能读?能,而且要读——只是要带着分寸读。要区分开:那些**站不太稳**的,主要是社会启发这类效应量小、易受干扰的实验;而本章讲的几条**硬骨头结论**——后见之明、叙事谬误、有效性的错觉、专家直觉的两个条件、公式常胜过直觉——**证据反而扎实得多**,它们有大量独立研究反复支撑,没被那场危机撼动。所以读这本书最好的姿态,恰恰就是它自己教你的那句:**知其稳,也知其疑。** 既不因为一部分被推翻就全盘否定,也不因为作者是大牌就照单全收——**对任何结论,都留一分'它有多可靠'的问号。**"
+  },
+  {
+   "type": "h2",
+   "text": "落地:普通人能拿走什么"
+  },
+  {
+   "type": "p",
+   "text": "第一,**评判一个决策,看它当时合不合理,别只看结果好不好**。你复盘自己或别人的选择时,先把结果盖住,问一句:\"在当时能拿到的信息下,这个判断站得住吗?\"——避免被后见之明骗着,拿运气去奖惩本事。"
+  },
+  {
+   "type": "p",
+   "text": "第二,**听到一个特别顺、特别解气的故事,先警惕一下**。凡是把复杂的成败讲成\"就因为某人英明/某步走错\"的叙述,大概率删掉了运气那一大块。越是让你热血沸腾\"照做就能成\"的故事,越该多问一句:那些失败了、却做了同样事的人,去哪了?"
+  },
+  {
+   "type": "p",
+   "text": "第三,**判断该不该信一份直觉(自己的或专家的),就套那两个条件**:这个领域有规律吗?这个人拿到过及时又靠谱的反馈吗?两个都'是',直觉值得听;缺一个,就把直觉当参考,别当铁证——能用清单、用数据的地方,别嫌它笨。"
+  },
+  {
+   "type": "h2",
+   "text": "收束:在该谦虚处谦虚"
+  },
+  {
+   "type": "p",
+   "text": "回到开头那个拍大腿说\"我早就知道\"的人。读完这一章你会明白,他多半不是嘴硬——是他的系统1真的把记忆改写了,把一片模糊改成了一条直路。而这件事,你我天天都在干,只是自己不觉得。"
+  },
+  {
+   "type": "p",
+   "text": "卡尼曼这一章真正想留给我们的,不是'别相信直觉',而是一副更精细的度量衡:**分清楚哪种自信有资格,哪种只是错觉。** 在有规律、有反馈的地方,大胆信你练出来的直觉;在乱糟糟、反馈又慢的地方,收起那份莫名的笃定,老老实实借助公式、数据和别人的眼睛。人最容易翻车的,从来不是'不懂',而是**在最该说'我不确定'的地方,偏偏说了'我很确定'**——包括写下这个道理的卡尼曼自己。能对自己的判断留一分怀疑,已经比大多数'专家'走得远了。"
+  }
+ ]
+}

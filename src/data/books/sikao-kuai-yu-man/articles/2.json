@@ -1,0 +1,114 @@
+{
+  "title": "启发式与偏见:大脑爱抄的近路",
+  "subtitle": "《思考,快与慢》第2章导读——难题一时答不上来,系统1就换一道简单的偷偷作答;认出这次调包,是防偏见的第一步",
+  "centralIdea": "卡尼曼与特沃斯基毕生研究的主线,可以浓缩成一对词:启发式与偏见。**启发式**是系统1为了快速作答而抄的经验近路,**偏见**则是这些近路带来的、可以预测的系统性错误——二者是同一枚硬币的两面。其核心机制叫**问题替换**:碰到「这位CEO能不能干」「我对生活满不满意」这类难以直接回答的目标问题,系统1会不动声色地换成「他看起来像不像成功者」「我此刻心情好不好」这类好答得多的启发问题,答完再把答案冒充成对原题的回答,而我们毫无察觉。**情感启发**是其中最常走的一条:先问「我喜不喜欢」,再让这份好恶替我们把利弊都算了——喜欢就觉得好处大、风险小,讨厌就反过来。这些近路大多数时候够用,是进化与效率磨出来的高效默认策略;可一旦挪到需要统计、概率与严谨推理的场合,它就会又快又笃定地给出一个系统性偏离正确答案的回答。所以本章的分寸是:启发式不是愚蠢,而是高效,错只错在用错了场合。而防住偏见的第一步,就是学会在下判断时反问一句——我此刻回答的,还是当初那个问题吗?",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "上一章我们认识了大脑里的两位主角:又快又直觉的系统1,和又慢又费力的系统2。这一章,卡尼曼要交代一件更要紧的事——他和搭档特沃斯基毕生研究的那条主线,到底在讲什么。一句话:系统1为了省力,总在**用简单问题偷偷替换难问题**。它给出的答案往往又快又顺,大多数时候够用,可一旦碰上需要认真算计的场合,就会以一种**可以预测**的方式出错。看懂这套「偷梁换柱」,是防住直觉陷阱的第一步。"
+    },
+    {
+      "type": "h2",
+      "text": "启发式与偏见:同一枚硬币的两面"
+    },
+    {
+      "type": "p",
+      "text": "「启发式」(heuristic)这个词听着专业,拆开看其实很朴素:它就是**大脑为了快速作答而抄的近路**。要精确回答「这条路堵不堵」,得调数据、算车流;可你瞄一眼路口的车尾灯就下了判断——这一瞄,就是一次启发式。系统1手里攥着一大把这样的近路,让我们在信息不全、时间不够的处境下,几乎不费力地给出一个「差不多」的答案。多数时候,它们确实管用:靠它认路、看人脸色、在菜单前三秒选定午饭,日子才转得动。"
+    },
+    {
+      "type": "p",
+      "text": "但抄近路是要还账的。「偏见」(bias)指的不是道德上的偏心,而是这些近路带来的、**可以预测的系统性错误**。关键在「系统性」三个字:它不是随机的、这次偏左下次偏右的失手,而是**朝着同一个方向、反复地偏**。就像一杆没校准的秤,每次都少称二两——你越信它,错得越稳。卡尼曼和特沃斯基的贡献,正是把这些「稳定的错」一条条摸清、命名、做成实验,让原本看不见的思维暗礁浮出水面。启发式和偏见,从来是同一枚硬币的两面:近路带来效率,也带来它专属的那种错。"
+    },
+    {
+      "type": "figure",
+      "ftype": "机制图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='30' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>启发式与偏见:同一枚硬币的两面</text><rect x='205' y='118' width='150' height='64' rx='10' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='280' y='145' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>系统1</text><text x='280' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>抄近路,抢着作答</text><line x1='205' y1='150' x2='174' y2='150' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='174,150 184,145 184,155' style='fill:var(--ink-soft)'/><line x1='355' y1='150' x2='386' y2='150' style='stroke:var(--cinnabar-pure);stroke-width:1.5'/><polygon points='386,150 376,145 376,155' style='fill:var(--cinnabar-pure)'/><rect x='25' y='108' width='149' height='84' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='99' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>启发式</text><text x='99' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>又快又省力</text><text x='99' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>多数时候够用</text><rect x='386' y='108' width='149' height='84' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='460' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>偏见</text><text x='460' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>可预测的系统性错误</text><text x='460' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>关键处失手</text><text x='280' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>同一条近路:左边是它的好处,右边是它专属的那种错</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "系统1的偷梁换柱:问题替换"
+    },
+    {
+      "type": "p",
+      "text": "这套机制里最核心的一招,卡尼曼叫它**问题替换**(substitution)。它的剧本永远是同一出:你面前摆着一个**难以回答的「目标问题」**,系统1不动声色地把它换成一个**容易得多的「启发问题」**,答完那个简单的,再把答案原封不动地端回来,冒充你对难题的回答——而**你对这次调包毫无察觉**,还以为自己老老实实想过了原来那道题。"
+    },
+    {
+      "type": "p",
+      "text": "举几个例子就懂了。有人问你「这位CEO到底能不能干」,这是个要靠财报、战略、行业周期才谈得清的难题;系统1嫌麻烦,悄悄换成「他看起来像不像个成功者」——下巴方不方、握手有没有力、说话稳不稳——然后拿这个印象替你回答了「能不能干」。再比如,「我对如今的生活满意吗」本是个要盘点方方面面的大问题,可如果刚才有人恰好问过你「你这个月约会了几次」,你此刻的心情就被激活了,系统1顺手用「我现在开不开心」替换掉「我这辈子过得怎样」。**问题被换了,你却浑然不觉。**"
+    },
+    {
+      "type": "quote",
+      "original": "无法迅速为一个难题找到满意答案时,系统1会找一个相关而更容易的问题来回答。",
+      "translation": "这是问题替换的定义,也是全书大半偏见的总开关。难题从没被真正解决,只是被一个长得有点像、却好答得多的问题顶了包——后面的锚定、可得性、代表性,都是它的变体。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>问题替换:系统1的偷梁换柱</text><rect x='20' y='58' width='185' height='104' rx='9' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='112' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>目标问题(难)</text><text x='112' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>这位CEO</text><text x='112' y='132' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>到底能不能干?</text><text x='112' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>要财报、战略才答得清</text><rect x='355' y='58' width='185' height='104' rx='9' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='447' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>启发问题(易)</text><text x='447' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>他看起来</text><text x='447' y='132' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>像不像成功者?</text><text x='447' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>一眼就能答</text><text x='280' y='102' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar-pure)'>系统1悄悄替换</text><line x1='205' y1='116' x2='353' y2='116' style='stroke:var(--cinnabar-pure);stroke-width:1.6'/><polygon points='353,116 342,110 342,122' style='fill:var(--cinnabar-pure)'/><line x1='447' y1='162' x2='447' y2='206' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='447,206 442,196 452,196' style='fill:var(--ink-soft)'/><rect x='60' y='214' width='440' height='62' rx='10' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='280' y='241' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>把「易题的答案」当成「难题的答案」端出来</text><text x='280' y='263' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>——而你,毫无察觉</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这一招之所以隐蔽,是因为**替换发生在你意识到之前**。系统2——那个负责核对、纠偏的慢性子——通常懒得启动,乐得直接采信系统1递上来的顺滑答案。于是,判断悄悄被一些**不相关、却好评估**的线索牵着走:一个人长得像不像领袖,替代了他能不能领导;字写得工不工整,替代了内容对不对;甚至当天天气好不好,都能影响你给整个人生打的分。有个经典实验就说明这点:先随口问大学生「你上个月约会了几次」,再问「你最近整体幸福吗」,两个答案会高度挂钩;可要是把顺序倒过来先问幸福,关联立刻消失——顺序一换,被激活来顶包的线索就换了。这些线索本与真问题无关,唯一的优点就是——**好答**。"
+    },
+    {
+      "type": "h2",
+      "text": "情感启发:让「喜不喜欢」替「利弊如何」"
+    },
+    {
+      "type": "p",
+      "text": "问题替换里,有一条近路格外常走,卡尼曼专门给它起了名字:**情感启发**(affect heuristic)。意思是,当你要评估某样东西的利弊时,系统1往往先问一个更省事的问题——**「我喜不喜欢它」**——再让这份好恶替你把利弊都算了。该盘算的那道难题,又一次被一道简单题顶了包。"
+    },
+    {
+      "type": "p",
+      "text": "于是就有了一种奇怪的捆绑:你**喜欢**一样东西,就会不自觉地觉得它**好处大、风险小**;你**讨厌**它,就觉得它**风险大、好处小**。可现实里,好处和风险本是两笔独立的账——一件事完全可能既诱人又危险,或既无趣又安全。情感启发却把这两笔账一把攥住,用一个「爽不爽」的总印象替你一锤定音。支持核电的人多半坚信它既安全又划算,反对的人多半认定它既危险又不经济,双方吵得面红耳赤,其实各自都只是在念自己那份好恶罢了。"
+    },
+    {
+      "type": "quote",
+      "original": "很多时候,是人们的好恶决定了他们相信什么。",
+      "translation": "这句话的分量在于:我们总以为是「先看清利弊,才决定爱憎」,情感启发揭示的恰恰相反——往往是**先有了爱憎,再倒过来编排利弊**,好让自己的立场显得理直气壮。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>情感启发:让「喜不喜欢」替「利弊如何」</text><text x='100' y='60' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>先冒出的情绪</text><text x='410' y='60' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>被牵着走的判断</text><rect x='30' y='74' width='140' height='58' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='100' y='109' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>我喜欢它</text><line x1='170' y1='103' x2='288' y2='103' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='288,103 277,97 277,109' style='fill:var(--ink-soft)'/><rect x='290' y='74' width='240' height='58' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='410' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>觉得它 好处大 · 风险小</text><text x='410' y='120' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>不自觉高估好处、低估风险</text><rect x='30' y='158' width='140' height='58' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.6'/><text x='100' y='193' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>我讨厌它</text><line x1='170' y1='187' x2='288' y2='187' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='288,187 277,181 277,193' style='fill:var(--ink-soft)'/><rect x='290' y='158' width='240' height='58' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='410' y='184' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>觉得它 好处小 · 风险大</text><text x='410' y='204' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>不自觉低估好处、高估风险</text><text x='280' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--cinnabar-pure)'>利与弊本是两笔独立的账,情感却替你一把捆死</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "捷径为什么大多管用,却在关键处坑人"
+    },
+    {
+      "type": "p",
+      "text": "读到这里也许会疑惑:既然启发式这么容易出错,大脑干嘛还留着它?答案是——**因为它绝大多数时候都对**。这些近路是漫长进化和日常效率磨出来的默认策略,专为「信息不全、必须马上决定」的处境而生。在丛林里,看见影子一闪先跑再说,用「像不像危险」替换「是不是真危险」,慢一秒可能就没命;在日常里,靠一眼印象挑餐厅、凭手感估时间,九成场合都八九不离十。启发式不是脑子笨,恰恰是脑子**聪明地偷懒**。"
+    },
+    {
+      "type": "p",
+      "text": "真正的麻烦,出在**用错了场合**。当问题从「赶紧做个大概判断」切换到「需要严谨的统计、概率与跨领域推理」时,那条顺滑的近路就会**系统性地偏离正确答案**。要估算一件事的真实概率,系统1却用「这个故事听起来像不像真的」来搪塞;要评估一项投资的胜算,它却用「我对它有没有好感」来作答。答案照样来得又快又笃定,只是**方向稳稳地错了**。捷径的可怕之处正在于此:它不会心虚,不会给你留下「我可能算错了」的迟疑——**错得越离谱,常常答得越流畅**。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>同一条捷径:何时管用,何时坑人</text><rect x='24' y='54' width='250' height='210' rx='10' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='149' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>日常快决策 · 管用</text><line x1='54' y1='98' x2='244' y2='98' style='stroke:var(--ink-soft);stroke-width:1'/><text x='149' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>认路 · 看脸色 · 三秒挑午饭</text><text x='149' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>信息不全也得马上定</text><text x='149' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>九成场合八九不离十</text><text x='149' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>顺滑的答案 ≈ 够用</text><rect x='286' y='54' width='250' height='210' rx='10' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='411' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>需要严谨处 · 坑人</text><line x1='316' y1='98' x2='506' y2='98' style='stroke:var(--cinnabar-pure);stroke-width:1'/><text x='411' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>统计与概率 · 跨领域判断</text><text x='411' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>高风险、大赌注的抉择</text><text x='411' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>系统性地偏离正确答案</text><text x='411' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>顺滑的答案 ≠ 正确答案</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "认出「偷换」,是防偏见的第一步"
+    },
+    {
+      "type": "p",
+      "text": "所以这一章真正想交到你手里的,不是一份「人类有多蠢」的清单,而是一副**能看见调包动作的眼睛**。下判断时多问自己一句:**我此刻回答的,还是当初那个问题吗?** 我说这位候选人「靠谱」,是真掂量过他的能力,还是只因为他长得让人安心?我觉得这个方案「稳」,是算过风险,还是只因为我喜欢提出它的那个人?这一问,常常就能逮住系统1那只正在换牌的手。"
+    },
+    {
+      "type": "p",
+      "text": "要说清楚分寸:**启发式不是愚蠢,而是高效**。它是大脑合理的默认设置,替我们省下海量算力,大多数日常判断都靠它才做得又快又好。问题从不在近路本身,而在**我们分不清什么时候该抄近路、什么时候必须叫醒系统2老老实实走大路**。卡尼曼写这本书,不是要我们从此不信直觉——那既不可能也没必要——而是想让我们在**赌注够大、又恰好是统计与概率的地盘**时,能听见心里那一声提醒:等一下,这道题,是不是被人偷偷换成了另一道?"
+    },
+    {
+      "type": "quote",
+      "original": "我的目的,是丰富人们谈论他人判断与选择时所用的词汇。",
+      "translation": "卡尼曼要的不是让你时时刻刻怀疑自己,而是给这些思维的调包动作**起个名字**。能叫出「这是问题替换」「这是情感启发」,你才抓得住它——认出偷换,就是防住偏见的第一步。"
+    },
+    {
+      "type": "p",
+      "text": "下一章起,卡尼曼会带我们逐个拆解这些近路最著名的几种花样——锚定效应、可得性、代表性。别被这些名词唬住:它们说到底,全是同一套「用易题换难题」的把戏,只是换了身不同的行头。看懂了这一章的总纲,后面的每一章,你都能一眼认出那只正在换牌的手。"
+    }
+  ]
+}
