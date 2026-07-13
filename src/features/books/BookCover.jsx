@@ -614,10 +614,25 @@ function ScatterTarget() {
   )
 }
 
+// 母题:预测之扇——从当下一点向右分叉出多条可能的未来路径,主路朱色、余路淡出(呼应《超级预测》:以概率思考未来的多种可能,而非只押一个结局)。
+function ForecastFan() {
+  const ox = 60, oy = 293, hi = 1
+  const ends = [[252, 206], [256, 250], [258, 293], [256, 336], [252, 380]]
+  const paths = ends.map(([x, y]) => `M${ox},${oy} Q${((ox + x) / 2).toFixed(0)},${oy} ${x},${y}`)
+  return (
+    <g>
+      <circle cx={ox} cy={oy} r="6" fill={CREAM} fillOpacity="0.6" />
+      {paths.map((d, i) => <path key={i} d={d} fill="none" stroke={i === hi ? CINNABAR : CREAM} strokeOpacity={i === hi ? 0.9 : 0.3} strokeWidth={i === hi ? 2 : 1.1} strokeLinecap="round" />)}
+      {ends.map(([x, y], i) => <circle key={i} cx={x} cy={y} r={i === hi ? 6 : 3.5} fill={i === hi ? CINNABAR : CREAM} fillOpacity={i === hi ? 0.95 : 0.45} />)}
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'two-mountains') return <TwoMountains />
   if (motif === 'two-systems') return <TwoSystems />
   if (motif === 'scatter-target') return <ScatterTarget />
+  if (motif === 'forecast-fan') return <ForecastFan />
   if (motif === 'ripples') return <Ripples />
   if (motif === 'spiral') return <Spiral />
   if (motif === 'mandala') return <Mandala />

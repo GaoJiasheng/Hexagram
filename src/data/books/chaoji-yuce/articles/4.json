@@ -1,0 +1,170 @@
+{
+ "title": "超级预测者的思维习惯",
+ "subtitle": "跑赢专家的，不是天赋和内幕，而是一套可学的思维习惯",
+ "centralIdea": "在预测竞赛里稳定跑在最前的那约 2% 的人，被称作「超级预测者」——他们是退休的程序员、药剂师、数学老师、家庭主妇，既非天才、也不掌握机密，却持续跑赢大众、甚至跑赢有机密情报的专业分析师。Tetlock 发现，他们靠的不是水晶球，而是一套可学的思维习惯：把信念当假设而非珍宝、用概率的灰度看世界、极度好奇爱钻研、乐于认错、相信预测能力是练出来的。决定预测好坏的不是智商或学历的高低，而是「怎么想」加「愿不愿持续下功夫」——这意味着，普通人也学得会。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "先猜个人。有这么一群人，在一场覆盖全球时事的预测竞赛里，年复一年稳定跑在最前面，准得让情报机构都吃了一惊。你可能会想象他们是白宫里的智囊、常春藤的教授、手握机密的分析师。可事实是：其中不少人是退休的程序员、社区药剂师、中学数学老师，还有在家带娃的主妇。他们没有内幕，用的都是网上公开的新闻。这一章想回答的就是一个让人不太甘心、又挺鼓舞人的问题——他们凭什么？"
+  },
+  {
+   "type": "h2",
+   "text": "先认识这些人：不是天才，也没内幕"
+  },
+  {
+   "type": "p",
+   "text": "Tetlock 搞了一场大规模的预测竞赛，让成千上万的普通志愿者去预测各种真实世界的问题——某国会不会在半年内政权更迭、某种大宗商品价格会不会破某个点、某场谈判会不会谈成。所有人都给出一个具体的概率数字，事后再拿真实结果来打分。跑了几季下来，一小撮人（大约最前面的 **2%**）浮了出来：他们不是偶尔蒙对一次，而是**长期、稳定地**比其他人准，甚至比那些能看到机密情报的职业分析师还准一截。Tetlock 给他们起了个名字：**超级预测者（superforecaster）**。"
+  },
+  {
+   "type": "p",
+   "text": "最反直觉的一点是：这些人并不是一群智商爆表的天才。测下来，他们确实比平均聪明一些，但**远远够不上「万里挑一的天才」那个档**。他们的职业五花八门，学历高低不等，退休的、在职的、带孩子的都有。换句话说，把他们和普通人拉开距离的，**不是脑子里多出来的天赋，也不是别人拿不到的内幕**，而是别的东西。这就把问题逼到了墙角：如果不是天赋、不是机密，那到底是什么？"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比",
+   "caption": "决定预测好坏的，常以为是智商和机密，其实是「怎么想 + 肯下功夫」",
+   "svg": "<svg viewBox=\"0 0 560 280\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"150\" y=\"42\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">常以为靠这些</text><text x=\"150\" y=\"82\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">高智商 · 名校学历</text><text x=\"150\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">机密情报 · 内幕消息</text><text x=\"150\" y=\"142\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">天生的直觉</text><text x=\"150\" y=\"200\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"26\">✕</text><line x1=\"280\" y1=\"28\" x2=\"280\" y2=\"252\" style=\"stroke:var(--line)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"410\" y=\"42\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">其实靠这些</text><text x=\"410\" y=\"82\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">开放 · 灰度 · 好奇</text><text x=\"410\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">肯认错 · 信能练</text><text x=\"410\" y=\"142\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">持续记分复盘</text><line x1=\"410\" y1=\"158\" x2=\"410\" y2=\"200\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><path d=\"M410 208 L404 198 L416 198 Z\" style=\"fill:var(--cinnabar-pure)\"/><rect x=\"330\" y=\"214\" width=\"160\" height=\"40\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><text x=\"410\" y=\"239\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\">预测更准 · 可学</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "Tetlock 的答案是：**一套思维习惯**。不是某一招神技，而是一整套看待信念、看待不确定、看待自己错误的方式。它们像肌肉，能练；也像习惯，一旦养成就会自动运转。下面把这套习惯拆成五条，一条条看。"
+  },
+  {
+   "type": "figure",
+   "ftype": "一览图",
+   "caption": "超级预测者的思维习惯一览：开放 · 概率化 · 好奇 · 认错 · 成长心态",
+   "svg": "<svg viewBox=\"0 0 560 330\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"280\" y1=\"170\" x2=\"280\" y2=\"42\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><line x1=\"280\" y1=\"170\" x2=\"92\" y2=\"140\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><line x1=\"280\" y1=\"170\" x2=\"468\" y2=\"140\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><line x1=\"280\" y1=\"170\" x2=\"150\" y2=\"298\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><line x1=\"280\" y1=\"170\" x2=\"410\" y2=\"298\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"205\" y=\"21\" width=\"150\" height=\"44\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.3\"/><text x=\"280\" y=\"40\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">开放</text><text x=\"280\" y=\"57\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10.5\">信念是假设，不是珍宝</text><rect x=\"17\" y=\"118\" width=\"150\" height=\"44\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.3\"/><text x=\"92\" y=\"137\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">概率化</text><text x=\"92\" y=\"154\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10.5\">用灰度看世界</text><rect x=\"393\" y=\"118\" width=\"150\" height=\"44\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.3\"/><text x=\"468\" y=\"137\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">好奇</text><text x=\"468\" y=\"154\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10.5\">兴致勃勃地钻研</text><rect x=\"75\" y=\"276\" width=\"150\" height=\"44\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.3\"/><text x=\"150\" y=\"295\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">认错</text><text x=\"150\" y=\"312\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10.5\">把错当信息</text><rect x=\"335\" y=\"276\" width=\"150\" height=\"44\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.3\"/><text x=\"410\" y=\"295\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">成长心态</text><text x=\"410\" y=\"312\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10.5\">相信能练出来</text><circle cx=\"280\" cy=\"170\" r=\"48\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"280\" y=\"166\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">超级</text><text x=\"280\" y=\"186\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">预测者</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "习惯一：把信念当「假设」，而不是「珍宝」"
+  },
+  {
+   "type": "p",
+   "text": "多数人对待自己的观点，像对待一件传家宝——它是「我的」，跟我的脸面、身份绑在一起，谁来质疑就等于打我的脸，得誓死捍卫。超级预测者恰恰相反：他们把每个观点当成一条**临时假设**，是拿来检验的，是可以被证据推翻的。今天我觉得这事有七成把握，那只是一个「当前最佳猜测」，明天来了新证据，把它改成五成，一点都不丢人——反而说明我在进步。"
+  },
+  {
+   "type": "p",
+   "text": "心理学里有个词叫 **actively open-minded（主动的开放心态）**：不只是被动地「愿意听不同意见」，而是**主动去找那些跟自己作对的证据和说法**。别人是给自己找支持，他们是给自己找麻烦——专门去读反方的分析、去想「如果我错了，会是错在哪」。这听着别扭，却正是准确的来源：一个观点被你从各个角度捶打过之后还立得住，它才可靠。"
+  },
+  {
+   "type": "quote",
+   "original": "信念是有待检验的假设，不是需要严防死守的珍宝。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "习惯二：用概率的「灰度」看世界"
+  },
+  {
+   "type": "p",
+   "text": "普通人谈未来，爱用非黑即白的词：这事「会」发生，那事「不会」发生。可真实世界很少是纯黑或纯白，它是一大片**灰度**——「大概 35%」「约七成」「顶多两成」。超级预测者的一个鲜明习惯，就是对数字敏感，习惯把不确定量化出来。他们不会含糊地说「很有可能」，而会逼自己落到一个具体的百分比上；而且这个百分比是有刻度的——他们能分清 60% 和 65% 的差别，并且愿意为这五个点的差别去多查一点、多想一点。"
+  },
+  {
+   "type": "p",
+   "text": "这不是玩数字游戏。用灰度思考，逼你面对「我到底有多确定」这个问题，也让事后复盘变得可能——如果你只说「会」或「不会」，对了错了都无从追究；可一旦你说了「70%」，结果出来后就能算账、能打分、能知道自己是偏乐观还是偏保守。**把模糊的直觉翻译成清晰的数字，是他们能持续变准的前提。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意",
+   "caption": "世界不是「会 / 不会」的黑白两格，而是一片有刻度的灰度",
+   "svg": "<svg viewBox=\"0 0 560 250\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">✕ 非黑即白</text><rect x=\"185\" y=\"46\" width=\"60\" height=\"44\" style=\"fill:var(--ink)\"/><text x=\"215\" y=\"73\" text-anchor=\"middle\" style=\"fill:var(--paper)\" font-size=\"14\">不会</text><rect x=\"315\" y=\"46\" width=\"60\" height=\"44\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"345\" y=\"73\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">会</text><text x=\"280\" y=\"128\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\">✓ 一片灰度</text><rect x=\"70\" y=\"142\" width=\"42\" height=\"40\" style=\"fill:var(--ink)\" opacity=\"0.12\"/><rect x=\"112\" y=\"142\" width=\"42\" height=\"40\" style=\"fill:var(--ink)\" opacity=\"0.22\"/><rect x=\"154\" y=\"142\" width=\"42\" height=\"40\" style=\"fill:var(--ink)\" opacity=\"0.32\"/><rect x=\"196\" y=\"142\" width=\"42\" height=\"40\" style=\"fill:var(--ink)\" opacity=\"0.42\"/><rect x=\"238\" y=\"142\" width=\"42\" height=\"40\" style=\"fill:var(--ink)\" opacity=\"0.52\"/><rect x=\"280\" y=\"142\" width=\"42\" height=\"40\" style=\"fill:var(--ink)\" opacity=\"0.62\"/><rect x=\"322\" y=\"142\" width=\"42\" height=\"40\" style=\"fill:var(--ink)\" opacity=\"0.72\"/><rect x=\"364\" y=\"142\" width=\"42\" height=\"40\" style=\"fill:var(--ink)\" opacity=\"0.82\"/><rect x=\"406\" y=\"142\" width=\"42\" height=\"40\" style=\"fill:var(--ink)\" opacity=\"0.91\"/><rect x=\"448\" y=\"142\" width=\"42\" height=\"40\" style=\"fill:var(--ink)\" opacity=\"1\"/><text x=\"70\" y=\"210\" text-anchor=\"start\" style=\"fill:var(--ink-faint)\" font-size=\"11\">0% 不可能</text><line x1=\"217\" y1=\"186\" x2=\"217\" y2=\"200\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.2\"/><text x=\"217\" y=\"214\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"11\">约35%</text><line x1=\"364\" y1=\"186\" x2=\"364\" y2=\"200\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.2\"/><text x=\"364\" y=\"214\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"11\">约七成</text><text x=\"490\" y=\"210\" text-anchor=\"end\" style=\"fill:var(--ink-faint)\" font-size=\"11\">100% 肯定</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "习惯三：极度好奇，享受「搞清楚」的过程"
+  },
+  {
+   "type": "p",
+   "text": "超级预测者身上有一种藏不住的好奇心。碰到一个陌生的问题，别人第一反应是「这跟我有什么关系」，他们却是眼睛一亮：有意思，我来查查。他们会兴致勃勃地翻资料、找不同来源、搭起好几个角度去看同一件事，享受的正是「把一团乱麻一点点理清楚」的那个过程。对他们来说，预测不是苦差，更像解谜。"
+  },
+  {
+   "type": "p",
+   "text": "这种好奇不是空转的兴趣，它直接喂养准确度。因为**看问题的角度越多，你越不容易被单一叙事牵着走**。一个懒得多查的人，很容易抓住第一个顺眼的解释就下结论；而一个爱钻研的人，会在下结论前先问「还有别的可能吗」「反过来会怎样」。多搭几个视角，本身就是在给自己纠偏。"
+  },
+  {
+   "type": "h2",
+   "text": "习惯四：乐于认错，把错当信息而非羞辱"
+  },
+  {
+   "type": "p",
+   "text": "会预测的人，一定会犯错——预测本来就是在不确定里下注，没有人能全对。区别在于，**犯错之后怎么办**。大多数人把错误当成一种羞辱：错了就想赶紧翻篇，或者找个理由把自己摘干净（「谁能想到会出这种意外」）。超级预测者不一样，他们把每一次错都当成一条**信息**——一条关于「我的想法哪里不对」的宝贵线索。"
+  },
+  {
+   "type": "p",
+   "text": "所以他们的复盘特别诚实：不急着为自己辩护，而是老老实实地问「我当时是哪一步想岔了？是高估了某个因素，还是漏看了某条证据？」这种不护短的自我审视，短期内不好受，长期却让他们越练越准——因为每一个被认真对待的错误，都变成了下一次的改进。**把错误从「面子问题」还原成「学习材料」，是这套习惯里最难、也最值钱的一条。**"
+  },
+  {
+   "type": "quote",
+   "original": "他们把错误当作待解读的信息，而不是需要遮掩的羞耻。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "习惯五：成长心态——相信预测是练出来的"
+  },
+  {
+   "type": "p",
+   "text": "上面这几条习惯，背后其实站着一个共同的信念，心理学称之为 **growth mindset（成长心态）**：**能力不是天生定死的，而是可以通过练习长出来的。** 超级预测者深信预测是一门手艺，跟弹琴、下棋一样，可以靠刻意练习越做越好。正因为信这一点，他们才愿意去做那些麻烦事——给每个判断记分、事后一条条复盘、把教训用到下一次。如果一个人打心底觉得「准不准全看天分」，他根本没有动力去记分、去复盘，也就永远停在原地。"
+  },
+  {
+   "type": "p",
+   "text": "所以成长心态不是一句鸡汤，它是整台机器的发动机：**信能练 → 才肯记分复盘 → 才真的越练越准 → 又反过来印证「果然能练」。** 这是一个正向的循环。天赋型的自我认知会让人止步，成长型的自我认知则让人一直在迭代。"
+  },
+  {
+   "type": "figure",
+   "ftype": "循环图",
+   "caption": "成长心态驱动的正向循环：预测 → 记分 → 复盘 → 迭代，越练越准",
+   "svg": "<svg viewBox=\"0 0 560 270\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"75\" y=\"36\" width=\"150\" height=\"48\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"150\" y=\"65\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">给出概率预测</text><rect x=\"335\" y=\"36\" width=\"150\" height=\"48\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"410\" y=\"65\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">记分 · 对照结果</text><rect x=\"335\" y=\"186\" width=\"150\" height=\"48\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"410\" y=\"215\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">复盘 · 哪里想错了</text><rect x=\"75\" y=\"186\" width=\"150\" height=\"48\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"150\" y=\"215\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">调整 · 再来一次</text><line x1=\"225\" y1=\"60\" x2=\"327\" y2=\"60\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\"/><path d=\"M335 60 L325 55 L325 65 Z\" style=\"fill:var(--cinnabar-pure)\"/><line x1=\"410\" y1=\"84\" x2=\"410\" y2=\"178\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\"/><path d=\"M410 186 L405 176 L415 176 Z\" style=\"fill:var(--cinnabar-pure)\"/><line x1=\"335\" y1=\"210\" x2=\"233\" y2=\"210\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\"/><path d=\"M225 210 L235 205 L235 215 Z\" style=\"fill:var(--cinnabar-pure)\"/><line x1=\"150\" y1=\"186\" x2=\"150\" y2=\"92\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\"/><path d=\"M150 84 L145 94 L155 94 Z\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"280\" y=\"130\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"16\">越练越准</text><text x=\"280\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">growth mindset</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "谦逊，但不消极"
+  },
+  {
+   "type": "p",
+   "text": "有人可能担心：又是开放、又是认错、又是「我可能错」，这么谦虚，会不会变得优柔寡断、什么都不敢判断？恰恰相反。超级预测者的谦逊是一种很特别的谦逊——**对世界的复杂谦卑，对自己的判断负责。** 他们承认「世界很难预测，我可能会错」，但绝不因此躺平说「那就没法预测了，随便猜吧」。他们的态度是：正因为难，我才要尽量想清楚，给出一个我负得起责的概率。"
+  },
+  {
+   "type": "p",
+   "text": "这就是「谦逊而不消极」：谦逊，是知道自己认知有限、随时准备被证据修正；不消极，是照样认真下判断、照样承担这个判断。把这两者合在一起，人既不狂妄（以为自己一定对），也不摆烂（干脆不想了），而是稳稳地站在中间——**带着「我可能错」的清醒，去做「尽量对」的努力。**"
+  },
+  {
+   "type": "h2",
+   "text": "结论：不是智商，是「怎么想 + 肯下功夫」"
+  },
+  {
+   "type": "p",
+   "text": "把这一章收一收，Tetlock 最想让我们记住的一句话是：**决定预测好坏的，不是智商或学历的高低，而是「怎么想」加上「愿不愿意持续下功夫」。** 超级预测者当然聪明，但他们不是最顶尖的天才；真正让他们脱颖而出的，是那套可以描述、可以模仿的思维**风格与习惯**——开放地对待信念、用灰度量化不确定、好奇地钻研、坦然地认错、笃定地相信自己能练好。"
+  },
+  {
+   "type": "quote",
+   "original": "让他们与众不同的，不是他们是谁，而是他们怎么想、做什么。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "这个结论的分量在于它的**可迁移性**：如果超能力来自天赋或内幕，那跟你我无关，只能羡慕；可如果它来自一套习惯，那就意味着——**普通人也学得会。** 你不必是天才，也拿不到什么机密，照样可以在自己的领域里，把判断做得更清醒、更负责一点。"
+  },
+  {
+   "type": "h2",
+   "text": "落地：普通人能带走的三面镜子"
+  },
+  {
+   "type": "p",
+   "text": "**第一，下回下判断时，逼自己给个数字。** 别只说「很可能」「悬」，试着落到一个具体的百分比上，比如「我觉得有六成」。数字会逼你面对「到底有多确定」，也让你事后能回来对账——对了错了，都心里有本账。"
+  },
+  {
+   "type": "p",
+   "text": "**第二，主动替反方说一次话。** 认定一件事之前，花两分钟认真想：「如果我是错的，最可能错在哪？反对我的人会拿什么理由？」这一步不为难自己，是给自己纠偏；一个观点被反方捶打过还立得住，你才更该信它。"
+  },
+  {
+   "type": "p",
+   "text": "**第三，把「错了」当成学习，而不是丢脸。** 判断落空时，别急着翻篇或找借口，老实问一句「我哪一步想岔了」。能这样复盘的人，才会真的越来越准。"
+  },
+  {
+   "type": "p",
+   "text": "最后要留一句分寸：这一章不是要把超级预测者捧成神。他们不是先知，照样会错、照样受运气影响，Tetlock 也从不主张谁能算准未来。真正值得学的，从来不是「他们多神」，而是**他们看待信念、不确定和自己错误的那套朴素习惯**——开放、量化、好奇、肯认错、相信能练好。这些东西不玄，也不稀有，它们的门票不是天赋，而是**愿不愿意日复一日地下这份功夫。**"
+  }
+ ]
+}

@@ -1,0 +1,108 @@
+{
+  "title": "布莱尔分数与校准:给预测一个成绩",
+  "subtitle": "《超级预测》第2章导读——先把话说成一个概率数字,再用「校准」和「果断」两把尺子去量;有了客观成绩单,预测才第一次能比较、能复盘、能一年比一年更准",
+  "centralIdea": "要让预测能被检验、进而能进步,先得给它一把尺子。第一步是**把话说成概率**:别再讲「可能会」「搞不好」,而是讲「我认为有七成把握」——带了数字,对错才有据可查;不落到数字的「说不准」,是**没法证伪的废话**。可一个概率预测的对错,不能只看一次:你说七成会发生、结果没发生,你未必错,因为那三成本就留给了「不发生」;要看**一大批**预测长期的成绩。于是有了两把尺子。**校准**(calibration),是把你所有说「七成」的预测挑出来,看是否真有约七成兑现——越是你说X%的事就约X%成真,校准越好。**果断**,也叫分辨度(resolution),是敢在有把握时把概率往0%或100%两端推,而不是事事和稀泥说50%——只会说50%的人可能「校准」却毫无用处。把这两者合成一个可比的数,就是**布莱尔分数**(Brier score):它量的是你的概率与真实结果(发生记1、没发生记0)之间的平均平方差,越低越好,0是完美,瞎猜约0.5,又自信又全错则接近最差。有了它,不同的人、不同的题,预测水平第一次能客观排名、逐年对照。而这套记分的真正威力不在羞辱谁,而在:一旦知道会被打分、看得见自己历年的成绩单,人就会较真、诚实、肯复盘——这正是超级预测者越练越强的引擎。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "上一章,我们看见了「说不准」的舒服:话讲得含糊,永远不会错,也永远学不到东西。这一章要做的,是把这份舒服拆掉——给预测装一把尺子。方法分两步:先**把预测写成一个概率数字**,再用两条标准去量它准不准。一旦预测有了客观的「成绩单」,它就从一句事后谁都能圆的空话,变成一件能比较、能复盘、能一年比一年做得更好的手艺。这把尺子,正是整个「超级预测」工程的地基。"
+    },
+    {
+      "type": "h2",
+      "text": "第一步:把「可能会」换成一个数字"
+    },
+    {
+      "type": "p",
+      "text": "日常里我们爱用模糊词报预测——「很可能」「也许」「搞不好」。这些词听着谨慎,其实藏着一个便利:无论结果怎样,都能说自己「没说错」。事情发生了,「我说了很可能嘛」;没发生,「我也只说了也许」。一句话把两头都占了,代价是它**根本没法被检验**。作者把这种话叫做不可证伪的废话:它给不出任何可以对照现实、事后算账的承诺,听着像预测,实则什么也没赌上。"
+    },
+    {
+      "type": "p",
+      "text": "破解的办法朴素得近乎笨:**把话说成概率**。不讲「某地局势很可能升级」,而讲「我认为未来三个月升级的概率是七成」。数字一落地,这句预测就有了棱角——三个月后拿结果一比,它要么靠谱要么不靠谱,赖不掉也躲不开。数字未必更「科学」,但它逼你把心里那团模糊的直觉,压成一个能被记录、能被追问的具体承诺。这一步看似简单,却是后面一切评分的前提:**没有数字,就没有分数。**"
+    },
+    {
+      "type": "quote",
+      "original": "含糊的预测无法评分,而无法评分的预测,也就无从改进。",
+      "translation": "这是全章的起点。评分不是为了给预测挑刺,而是因为——量不出来的东西就改不动;一句永远说不错的话,也永远不会变得更准。想进步,就先得让自己有被打分的资格。"
+    },
+    {
+      "type": "h2",
+      "text": "一次没中,不等于你错了"
+    },
+    {
+      "type": "p",
+      "text": "数字化之后,新麻烦跟着来了:你说某事七成会发生,结果它偏偏没发生,这算你错了吗?**不算。**七成的把握里,本来就留着三成给「不发生」;单看这一次,根本判不出你的七成是高了还是低了。这正是概率预测最反直觉的地方——**它天生没法用单次结果来验对错。**天气预报说今天降雨概率30%,结果下了雨,你不会因此说预报员是骗子——因为他从没说「一定不下」。"
+    },
+    {
+      "type": "p",
+      "text": "那靠什么验?靠**量**。把你说过「七成」的所有预测攒成一批,再回头看这批事情里到底有多少真的发生了。一次是偶然,一百次就显出规律:如果你所有报「七成」的事,长期看约七成兑现,那你这个「七成」就报得诚实、报得准;若只有四成兑现,说明你把话说满了、过度自信。**评价一个预测者,从来不是看他某一次神不神,而是看他一长串预测的整体成色。**"
+    },
+    {
+      "type": "h2",
+      "text": "校准:你说七成,是不是真有七成"
+    },
+    {
+      "type": "p",
+      "text": "上面这套「把同一档概率的预测拢在一起、看实际兑现比例」的做法,有个正式名字,叫**校准**(calibration)。它问的是一个朴素的问题:你嘴上的概率,配不配得上现实里的频率?一个校准良好的人,说10%的那些事约一成发生,说50%的约一半发生,说90%的约九成发生——**你报的数,长期看就是事情真实的发生率。**"
+    },
+    {
+      "type": "p",
+      "text": "把它画出来最直观:横轴是你给的概率,纵轴是实际发生的比例,每一档标一个点。若你校准得好,这些点会**紧贴一条对角线**——报多少,就兑现多少。点若整体压在对角线下方,是过度自信(话说太满);压在上方,则是过度保守(该笃定时不敢笃定)。这条对角线,就是每个预测者想贴近的准星。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>校准图:说七成的事,约七成发生</text><line x1='90' y1='255' x2='510' y2='255' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='90' y1='255' x2='90' y2='55' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='90' y1='255' x2='510' y2='55' style='stroke:var(--cinnabar-pure);stroke-width:1.4;stroke-dasharray:6 5'/><text x='476' y='76' text-anchor='end' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>理想:紧贴对角线</text><text x='90' y='272' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>0%</text><text x='300' y='272' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>50%</text><text x='510' y='272' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>100%</text><text x='82' y='259' text-anchor='end' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>0%</text><text x='82' y='159' text-anchor='end' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>50%</text><text x='82' y='59' text-anchor='end' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>100%</text><text x='300' y='292' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>你给出的概率</text><text x='30' y='155' text-anchor='middle' transform='rotate(-90 30 155)' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>实际发生比例</text><line x1='384' y1='255' x2='384' y2='119' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:3 4'/><line x1='90' y1='119' x2='384' y2='119' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:3 4'/><circle cx='132' cy='229' r='5' style='fill:var(--ink)'/><circle cx='216' cy='201' r='5' style='fill:var(--ink)'/><circle cx='300' cy='149' r='5' style='fill:var(--ink)'/><circle cx='468' cy='71' r='5' style='fill:var(--ink)'/><circle cx='384' cy='119' r='7.5' style='fill:var(--cinnabar-pure)'/><text x='400' y='113' text-anchor='start' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar-pure)'>说70%的一批事</text><text x='400' y='128' text-anchor='start' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar-pure)'>→ 约七成兑现</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "光准还不够:敢不敢把话说死"
+    },
+    {
+      "type": "p",
+      "text": "但校准有个尴尬的漏洞。设想一个人,不管问他什么,一律回答「50%」:天要不要下雨,50%;某国会不会打仗,50%。长期算下来,他这些「50%」里还真可能约有一半发生——**他「校准」得无可挑剔,却对你毫无用处**,因为他从头到尾什么也没说,把选择权原封不动地又推回给了你。"
+    },
+    {
+      "type": "p",
+      "text": "所以好预测还要第二样东西,叫**果断**,也称分辨度(resolution):**敢在有把握时把概率推向两端**,逼近0%或100%,把「会发生」和「不会发生」清清楚楚分到两边。事事说50%是最安全的和稀泥,却也最没信息量;真本事,是在看得准的地方敢说「九成」,在看得穿的地方敢说「一成」。校准管的是「你诚不诚实」,果断管的是「你敢不敢担当」——两样都够,预测才既可信又有用。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>只会说50%:校准,却毫无用处</text><line x1='90' y1='165' x2='510' y2='165' style='stroke:var(--ink-soft);stroke-width:1.5'/><text x='90' y='183' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>0%</text><text x='300' y='183' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>50%</text><text x='510' y='183' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>100%</text><line x1='300' y1='58' x2='300' y2='150' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:3 4'/><circle cx='300' cy='74' r='5' style='fill:var(--ink-soft)'/><circle cx='300' cy='92' r='5' style='fill:var(--ink-soft)'/><circle cx='300' cy='110' r='5' style='fill:var(--ink-soft)'/><circle cx='300' cy='128' r='5' style='fill:var(--ink-soft)'/><text x='318' y='90' text-anchor='start' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>和稀泥:事事说50%</text><text x='318' y='106' text-anchor='start' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>可能「校准」,却什么也没说</text><circle cx='110' cy='214' r='5' style='fill:var(--cinnabar-pure)'/><circle cx='136' cy='230' r='5' style='fill:var(--cinnabar-pure)'/><circle cx='468' cy='214' r='5' style='fill:var(--cinnabar-pure)'/><circle cx='494' cy='230' r='5' style='fill:var(--cinnabar-pure)'/><text x='288' y='220' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>果断:有把握时逼近两端</text><text x='288' y='236' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>把「会」与「不会」分清,才有用</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "布莱尔分数:把两把尺子合成一个数"
+    },
+    {
+      "type": "p",
+      "text": "校准和果断,一个讲诚实、一个讲担当,可它们各说各话,没法直接比高下。于是有了一个把两者拧成一股的总分——**布莱尔分数**(Brier score)。它的算法直觉上很好懂:每做一次预测,就把你给的概率和真实结果之间的差距量一量(结果发生记作1、没发生记作0),差得越远、罚得越狠(差距要平方),再把一长串预测的罚分平均起来。**说白了,它量的就是「你的概率离真相平均有多远」。**"
+    },
+    {
+      "type": "p",
+      "text": "这个分数像高尔夫杆数——**越低越好。**0分是完美:该说100%的都说了100%、该说0%的都说了0%,分毫不差。一律瞎猜、事事说50%,大约得0.5。而又自信又全错——把必不发生的事拍着胸脯说100%——会滑到接近最差的一端。妙处在于:有了这一个数,张三和李四、今年和去年、难题和易题,预测水平**第一次能摆在同一把尺子上排名、对照**;校准好不好、够不够果断,都被它一并收了进去。"
+    },
+    {
+      "type": "figure",
+      "ftype": "刻度图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>布莱尔分数:像高尔夫杆数,越低越好</text><rect x='90' y='120' width='420' height='24' rx='4' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.4'/><line x1='90' y1='114' x2='90' y2='150' style='stroke:var(--cinnabar-pure);stroke-width:2.4'/><line x1='195' y1='116' x2='195' y2='148' style='stroke:var(--ink-soft);stroke-width:1.4'/><line x1='300' y1='116' x2='300' y2='148' style='stroke:var(--ink-soft);stroke-width:1.4'/><line x1='510' y1='114' x2='510' y2='150' style='stroke:var(--ink);stroke-width:2.4'/><text x='90' y='106' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>0</text><text x='90' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--cinnabar-pure)'>完美</text><text x='195' y='106' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>0.5</text><text x='195' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>瞎猜·一律50%</text><text x='300' y='106' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>1.0</text><text x='510' y='106' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>2.0</text><text x='510' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>又自信又全错</text><line x1='330' y1='200' x2='122' y2='200' style='stroke:var(--ink-soft);stroke-width:1.6'/><path d='M122 200 L134 194 L134 206 Z' style='fill:var(--ink-soft)'/><text x='300' y='192' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>越低 = 越接近真相</text><text x='280' y='242' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>= 「你给的概率」与「结果(发生记1·没发生记0)」差距的平方,再平均</text></svg>"
+    },
+    {
+      "type": "quote",
+      "original": "布莱尔分数像高尔夫杆数:越低越好,零是完美。",
+      "translation": "一句话点破评分的精神——不追求「说对」的漂亮话,只追求离真相更近。这个分数把过度自信和不敢表态一起罚了,逼着预测者既诚实又敢担当。"
+    },
+    {
+      "type": "h2",
+      "text": "记分,是为了长本事,不是为了羞辱"
+    },
+    {
+      "type": "p",
+      "text": "最后要说清一件容易被误会的事:给预测打分,不是为了事后揪着谁的错处羞辱他。分数真正的作用,是**打开了一条反馈回路**。一件事没有分数,做得好坏全凭一张嘴,谁也说不清,自然也没人愿意较真;可一旦知道每个预测都会被记录、被打分,还能看见自己历年成绩的曲线,人的态度就变了——**会认真起来,会诚实起来,更会愿意回头复盘**:上次那个七成,到底是判准了,还是蒙对了?哪一类题我总是过度自信?"
+    },
+    {
+      "type": "p",
+      "text": "这条「预测—记分—复盘—再预测」的回路,正是后面那些超级预测者越练越强的引擎。他们不是天生神算,而是**长年活在自己的成绩单里**:被分数一次次照见短处,再一点点改过来。所以这一章给的,不只是一套评分工具,更是一种态度——把预测当成一门可以量、可以练、可以一年比一年做得更好的手艺。而这一切的起点,不过是当初那个不起眼的决定:**别说「可能会」,请说出一个数字。**"
+    }
+  ]
+}

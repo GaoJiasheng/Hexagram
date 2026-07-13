@@ -1,0 +1,124 @@
+{
+ "title": "拆解问题:费米估算与外部视角",
+ "subtitle": "把吓人的大问题拆成能查的小问题,先看基率再看细节——泰特洛克与加德纳《超级预测》第 5 章导读",
+ "centralIdea": "面对一个吓人的大问题,超级预测者不硬猜,而是用两件手艺把它拿下。第一件叫「费米化」(Fermi-ize):像物理学家费米那样,把一个没头绪的大问题拆成一串能查、能估的小问题,分别估计再拼起来——拆解本身就能把「完全不知道」变成「每一小块都能说点什么」,还顺带照出你到底知道什么、缺什么。第二件叫「外部视角」(outside view)优先:面对一个具体个案,先别急着钻进它的细节,而是先问「同类事情历史上一般多大比例发生?」,拿这个基率(base rate)当锚点;有了锚,再回头看这个个案的特殊之处,在锚点上下适度微调。顺序是关键——先看「通常怎样」,再看「这次特殊在哪」,能大幅压住过度自信;反过来先陷进细节,就容易忘了大多数同类情况其实根本没发生。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "假设有人半夜把你摇醒,问你一个问题:「某个你不太熟的国家,未来半年会不会发生政变?」你脑子里大概一片空白——你既不认识那国的将军,也没有卫星情报,连它上一次政变是哪年都答不上来。本能反应无非两个:要么摆手说「这我哪知道」,要么凭一条昨天刷到的新闻拍脑袋给个「我觉得会」。这一章讲的,正是超级预测者面对这种吓人的大问题时,既不装懂也不摆烂的第三条路——**把大问题拆开,一块一块地啃。**"
+  },
+  {
+   "type": "h2",
+   "text": "这一章在全书的什么位置"
+  },
+  {
+   "type": "p",
+   "text": "前面几章告诉你超级预测者「是什么样的人」——概率化思考、多元视角(狐狸式)、开放而谦逊。这一章往下钻一层,讲他们具体「怎么动手」。当一个问题大到让人腿软,他们不会盯着它发呆,而是掏出两样固定的手艺:一样是把问题**拆小**(费米化),一样是先**站远看**(外部视角)。这两样都不神秘,普通人学会了照样能用;它们共同的精神是——**别一上来就想直接回答那个大问题,先把它变成一堆你答得上来的小问题。**"
+  },
+  {
+   "type": "h2",
+   "text": "第一件手艺:费米化——把大问题拆成能查的小问题"
+  },
+  {
+   "type": "p",
+   "text": "费米(Enrico Fermi)是造出人类第一座核反应堆的物理学家,但他在同行里还以另一件事出名:**随手估算**。据说原子弹试爆那天,他撒了一把纸屑,看冲击波把纸吹出多远,当场就估出了爆炸的大致当量,和精密仪器事后算出来的相差不远。他喜欢用一类「乍看根本没法答」的问题训练学生,其中最有名的一道是——"
+  },
+  {
+   "type": "quote",
+   "original": "芝加哥有多少位钢琴调音师?",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "这问题妖在哪儿?你既不能上网去查(在费米那个年代更不能),也压根没人统计过。但费米的办法是:**别去猜那个大数,去拆它。** 芝加哥大约有多少人?假设三百万。平均每户几口人?算两三口,那就是约一百万户。多少户家里有钢琴?也许二十户里有一户,那是五万架钢琴。一架钢琴多久调一次音?大概一年一次,于是全城一年有五万次调音需求。一个调音师一天能调几架、一年工作多少天?算下来一人一年大概能调几百架。拿五万次需求除以每人每年的产能,就估出芝加哥大概有几十到上百位钢琴调音师。**没有一个数字是查来的,但拼起来的结果,和实际相差不会离谱。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "拆解示意",
+   "caption": "费米化:把一个哑口无言的大问题,拆成四五个凭常识就能估的小问题。",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"110\" y=\"12\" width=\"340\" height=\"46\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">吓人的大问题</text><text x=\"280\" y=\"49\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">芝加哥有多少位钢琴调音师?</text><path d=\"M280 58 L280 80\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.6\"/><path d=\"M280 80 L275 72 L285 72 Z\" style=\"fill:var(--ink-soft)\"/><text x=\"300\" y=\"76\" style=\"fill:var(--ink-soft)\" font-size=\"11\">拆成小问题</text><rect x=\"22\" y=\"86\" width=\"250\" height=\"48\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"38\" y=\"106\" style=\"fill:var(--ink)\" font-size=\"12\">① 全城约 300 万人</text><text x=\"38\" y=\"124\" style=\"fill:var(--ink-soft)\" font-size=\"12\">→ 约 100 万户</text><rect x=\"288\" y=\"86\" width=\"250\" height=\"48\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"304\" y=\"106\" style=\"fill:var(--ink)\" font-size=\"12\">② 约 20 户一架钢琴</text><text x=\"304\" y=\"124\" style=\"fill:var(--ink-soft)\" font-size=\"12\">→ 约 5 万架</text><rect x=\"22\" y=\"146\" width=\"250\" height=\"48\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"38\" y=\"166\" style=\"fill:var(--ink)\" font-size=\"12\">③ 一架一年调一次</text><text x=\"38\" y=\"184\" style=\"fill:var(--ink-soft)\" font-size=\"12\">→ 约 5 万次 / 年</text><rect x=\"288\" y=\"146\" width=\"250\" height=\"48\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"304\" y=\"166\" style=\"fill:var(--ink)\" font-size=\"12\">④ 一人一年调</text><text x=\"304\" y=\"184\" style=\"fill:var(--ink-soft)\" font-size=\"12\">→ 数百架</text><path d=\"M280 194 L280 226\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.6\"/><path d=\"M280 226 L275 218 L285 218 Z\" style=\"fill:var(--ink-soft)\"/><text x=\"300\" y=\"214\" style=\"fill:var(--ink-soft)\" font-size=\"11\">相乘相除</text><rect x=\"90\" y=\"232\" width=\"380\" height=\"50\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><text x=\"280\" y=\"252\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">拼起来</text><text x=\"280\" y=\"272\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">≈ 数十至上百位调音师</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "这里真正的魔法,不在于算得多准,而在于**拆解这个动作本身**。原来那个让你哑口无言的大问题,被拆成四五个小问题之后,每一个你都能凭常识说个八九不离十。更妙的是,**拆解会照出你的无知**:哪一步你特别没底(比如「二十户里有一户有钢琴」这个比例到底靠不靠谱),你立刻就知道该去查哪个数、该向谁打听——你的「不知道」被精确地定位了,而不再是一团化不开的迷雾。超级预测者管这叫**把一个不可知的大问题,换成一串可知的小问题。**"
+  },
+  {
+   "type": "p",
+   "text": "现在回到那个政变问题。超级预测者不会直接猜「会 / 不会」,而是把它费米化成一串小问题:这个政权最近还按时给军队发饷吗?街头有没有大规模抗议?邻国最近有没有上演类似的政变、给了坏榜样?现任领导人对军权的控制有多稳?每一个小问题,你都比对着「半年内会不会政变」这个大问题更容易说出点门道来。分别有了判断,再把它们拼回一个总的概率。**大问题让你张口结舌,小问题让你人人有话说——这就是费米化的全部价值。**"
+  },
+  {
+   "type": "h2",
+   "text": "第二件手艺:外部视角——先问「同类一般怎样」"
+  },
+  {
+   "type": "p",
+   "text": "问题拆完了,还有个更隐蔽的坑在等你,叫**内部视角**(inside view)。人一碰到具体个案,本能就是一头扎进它的细节里:这个国家最近的新闻好吓人、这位将军眼神很不对、上周那场抗议规模空前……你越看越入戏,越入戏越觉得「这次铁定要出事」。生动的情节像磁铁一样吸住你的全部注意力,让你**忘了去问一个更笨、却更要紧的问题:同类的国家、同类的局势,历史上到底有多大比例真的政变了?**"
+  },
+  {
+   "type": "p",
+   "text": "这个「同类历史上多大比例发生」的数字,就叫**基率**(base rate),它是外部视角的核心。举个心理学里常用的例子:有人给你描述一位安静、爱读书、做事细心的人,问他更可能是图书管理员还是农民,你几乎脱口而出「图书管理员」——因为那描述太像了。但你忘了一件事:**农民的人数是图书管理员的很多倍。** 光凭基率,这个人是农民的可能性其实反而更高。是那段生动的描述(个案细节)骗过了你,而基率(外部视角)才是你本该先抓住的那根锚。"
+  },
+  {
+   "type": "figure",
+   "ftype": "流程图",
+   "caption": "外部视角先看基率、定下锚,再用内部视角看这次的特殊之处做微调,最后落成一个概率。顺序不能反。",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"205\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">外部视角 · 先看基率</text><text x=\"355\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--azure)\" font-size=\"12\">内部视角 · 再看个案</text><rect x=\"10\" y=\"88\" width=\"116\" height=\"96\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"68\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">个案</text><text x=\"68\" y=\"142\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">这国半年</text><text x=\"68\" y=\"160\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">会政变吗?</text><path d=\"M126 136 L150 136\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.6\"/><path d=\"M150 136 L142 131 L142 141 Z\" style=\"fill:var(--ink-soft)\"/><rect x=\"150\" y=\"88\" width=\"116\" height=\"96\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><text x=\"208\" y=\"114\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">问:同类历史</text><text x=\"208\" y=\"132\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">多大比例?</text><text x=\"208\" y=\"158\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">基率锚 ≈ 15%</text><path d=\"M266 136 L290 136\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.6\"/><path d=\"M290 136 L282 131 L282 141 Z\" style=\"fill:var(--ink-soft)\"/><rect x=\"290\" y=\"88\" width=\"116\" height=\"96\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--azure)\" stroke-width=\"2\"/><text x=\"348\" y=\"114\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">看这次</text><text x=\"348\" y=\"132\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">特殊在哪</text><text x=\"348\" y=\"158\" text-anchor=\"middle\" style=\"fill:var(--azure)\" font-size=\"12\">锚上下微调</text><path d=\"M406 136 L430 136\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.6\"/><path d=\"M430 136 L422 131 L422 141 Z\" style=\"fill:var(--ink-soft)\"/><rect x=\"430\" y=\"88\" width=\"120\" height=\"96\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><text x=\"490\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">负责任的</text><text x=\"490\" y=\"140\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">概率</text><text x=\"490\" y=\"162\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">≈ 20–30%</text><text x=\"280\" y=\"230\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">先看「通常怎样」,再看「这次特殊」——</text><text x=\"280\" y=\"252\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">顺序一反,锚就被生动的细节带跑了。</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "外部视角的做法其实很朴素:**先给手头这个个案找一个「参照类」**——把它归进一堆同类里(「这类政权、这种局势」),查出这类情况过去若干年里发生的年均比例,把它当作**出发点**。比如你发现「这类政权过去五年里,平均每年约有百分之十几发生政变」,那么在你还没读这个国家任何一条具体新闻之前,你的估计就该从「十几个百分点」起步,而不是从「我觉得」起步。这个基率,就是你后面所有判断的**锚**。"
+  },
+  {
+   "type": "p",
+   "text": "当然,外部视角也讲究火候:**参照类圈得好不好,直接决定基率靠不靠谱。** 圈得太窄——比如「过去五年里、这个特定国家、这位特定领导人任内的政变」——很可能样本少到只有零次或一次,算出来的基率毫无意义;圈得太宽——比如「全世界所有国家」——又把一堆不相干的情况混了进来,把信号冲淡了。超级预测者会在这两头之间反复权衡:找一批**真正相似、又足够多**的同类,让基率既有代表性、又有统计意义。**选参照类这件事本身,就是一门需要练的手艺。**"
+  },
+  {
+   "type": "h2",
+   "text": "顺序是关键:先外后内"
+  },
+  {
+   "type": "p",
+   "text": "外部视角还有个反直觉的地方:它逼着你**先承认「我手上这个具体的它,和一大堆别的其实没什么两样」**——可人天生就爱觉得自己这件事独一无二、不能拿平均数来套。正因为它反直觉,大多数人本能地跳过基率、直奔那些活色生香的细节;也正因为超级预测者肯先咽下这口「你没那么特殊」的谦逊,他们才总能先站在一个更靠谱的起点上。**先看基率,不是不看这一次的特殊,而是不让特殊来抢在通常前面说话。**"
+  },
+  {
+   "type": "p",
+   "text": "有了基率锚,是不是就不看个案细节了?当然还要看。**外部视角给你起点,内部视角给你微调。** 拿到「十几个百分点」这个基率之后,你再回头审这个国家的特殊之处:它最近军费断了、领导人重病、邻国刚政变过——这些都是比同类更危险的信号,那就把估计往上调一点;反过来,如果它军队待遇优厚、政局出奇平稳,就往下调一点。要紧的是**调整要适度**,是在锚点附近上下挪动,而不是看了两条吓人的新闻,就一把冲到百分之九十。"
+  },
+  {
+   "type": "p",
+   "text": "那为什么非得**先外后内**、不能反过来?因为顺序一反,整件事就塌了。**你要是先一头扎进个案细节,那些生动的情节会先把你的情绪和判断占满,等你想起该看基率时,锚早被细节带跑了。** 心理学里管这叫锚定效应:你最先抓住的那个数,会死死拽住你后面所有的调整。先看基率,你的锚就是那个冷静的历史比例;先看细节,你的锚就是那条耸动的新闻。**同样一堆信息,只是换了个先后顺序,结论可能差出十万八千里。** 超级预测者几乎无一例外都是先外后内——这是把过度自信压下去最省力的一招。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "caption": "先陷进细节,人会被情节带偏、过度自信;先看基率,人先有一个冷静的锚,再微调,过度自信被压住。",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"280\" y1=\"20\" x2=\"280\" y2=\"284\" style=\"stroke:var(--line)\" stroke-width=\"1.4\" stroke-dasharray=\"4 4\"/><text x=\"140\" y=\"40\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">✗ 先一头扎进个案细节</text><rect x=\"30\" y=\"60\" width=\"220\" height=\"40\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"140\" y=\"85\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">被生动的情节吸住</text><path d=\"M140 100 L140 116\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><path d=\"M140 116 L135 108 L145 108 Z\" style=\"fill:var(--ink-soft)\"/><rect x=\"30\" y=\"118\" width=\"220\" height=\"40\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"140\" y=\"143\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">情绪先入为主 → 过度自信</text><path d=\"M140 158 L140 174\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><path d=\"M140 174 L135 166 L145 166 Z\" style=\"fill:var(--ink-soft)\"/><rect x=\"30\" y=\"176\" width=\"220\" height=\"44\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"140\" y=\"196\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">忘了:大多数同类</text><text x=\"140\" y=\"213\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">情况其实没发生</text><text x=\"420\" y=\"40\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\">✓ 先看基率(外部视角)</text><rect x=\"310\" y=\"60\" width=\"220\" height=\"40\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"420\" y=\"85\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">先拿到一个冷静的锚</text><path d=\"M420 100 L420 116\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><path d=\"M420 116 L415 108 L425 108 Z\" style=\"fill:var(--cinnabar-pure)\"/><rect x=\"310\" y=\"118\" width=\"220\" height=\"40\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"420\" y=\"143\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">再看特殊 → 适度微调</text><path d=\"M420 158 L420 174\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><path d=\"M420 174 L415 166 L425 166 Z\" style=\"fill:var(--cinnabar-pure)\"/><rect x=\"310\" y=\"176\" width=\"220\" height=\"44\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"420\" y=\"203\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">过度自信被压住</text><text x=\"280\" y=\"270\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">同一堆信息,只是换了先后顺序,结论可能差出十万八千里。</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "综合:把碎块拼回一个负责任的概率"
+  },
+  {
+   "type": "p",
+   "text": "拆也拆了,基率也锚了,细节也调了,最后一步是**综合**——把费米拆出来的各个小块、外部视角的基率、内部视角的微调,再加上你能找到的多个信息源,统统汇到一起,给出一个**负责任的概率**,比如「我估计这半年内政变的可能性,大约在两成到三成之间」。请留意这句话的分寸:它**不是**「一定会」或「绝不会」,也**不假装**精确到小数点后几位;它是一个有出处、可复盘、日后能对照真实结果打分的判断。"
+  },
+  {
+   "type": "figure",
+   "ftype": "汇流图",
+   "caption": "费米碎块、外部基率、内部微调,加上多个信息源,汇成一个有出处、可复盘、能打分的概率。",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"120\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">三样东西汇到一起</text><rect x=\"20\" y=\"52\" width=\"200\" height=\"44\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"120\" y=\"79\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">费米拆出的各小块</text><rect x=\"20\" y=\"118\" width=\"200\" height=\"44\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"120\" y=\"145\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">外部视角:基率锚</text><rect x=\"20\" y=\"184\" width=\"200\" height=\"44\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--azure)\" stroke-width=\"1.6\"/><text x=\"120\" y=\"211\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">内部视角:个案微调</text><path d=\"M220 74 C 300 74, 300 150, 356 150\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><path d=\"M220 140 L356 148\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><path d=\"M220 206 C 300 206, 300 152, 356 152\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><path d=\"M356 150 L346 145 L346 155 Z\" style=\"fill:var(--ink-soft)\"/><rect x=\"358\" y=\"104\" width=\"184\" height=\"92\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><text x=\"450\" y=\"132\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\">一个负责任的概率</text><text x=\"450\" y=\"156\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">有出处 · 可复盘</text><text x=\"450\" y=\"174\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">日后能对照结果打分</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "这里要说清一个特别容易被误解的地方:费米化和基率,**并不是让你算出一个「正确答案」**——世上很多事根本就没有事前的正确答案。它们的作用要谦逊得多:**减少瞎猜,压住过度自信。** 拆解让你不至于对着大问题干瞪眼,基率让你不至于被一条新闻牵着鼻子走。你依然会犯错,但你会**错得更有章法、也更容易改**——因为你的判断是拆开的、有锚的,哪一小块出了岔子,回头一查就知道该修哪儿。这也正好接上下一章要讲的「小步更新」。"
+  },
+  {
+   "type": "h2",
+   "text": "一句话记住这一章"
+  },
+  {
+   "type": "p",
+   "text": "面对一个吓人的大问题,超级预测者只做两件事:**把它拆小,先看基率。** 拆小(费米化),是把「我完全不知道」变成一串「这个我能说点」;先看基率(外部视角),是先问「同类通常怎样」定下锚,再问「这次特殊在哪」做微调。**先看通常,再看特殊**——记住这个顺序,在任何一件没头绪的事情上,你都能比昨天多几分清醒、少几分瞎猜。"
+  }
+ ]
+}
