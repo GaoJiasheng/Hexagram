@@ -425,11 +425,12 @@ function RabbitHat() {
 // 母题:大陆轴线——东西向大陆(欧亚)一条通畅的朱线横贯,南北向大陆(非洲/美洲)
 // 同样的路径被气候带截断(呼应全书核心论点:大陆轴线方向决定农作物、技术传播的快慢)。
 function ContinentalAxis() {
+  // 欧亚横轴上移到竖排书名两列文字带之上,避免长书名折两列时与文字重叠。
   return (
     <g>
-      <ellipse cx="150" cy="234" rx="112" ry="30" fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.2" />
-      <line x1="56" y1="234" x2="226" y2="234" stroke={CINNABAR} strokeWidth="1.7" strokeOpacity="0.85" />
-      <polygon points="238,234 224,227 224,241" fill={CINNABAR} opacity="0.85" />
+      <ellipse cx="150" cy="98" rx="95" ry="20" fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.2" />
+      <line x1="65" y1="98" x2="220" y2="98" stroke={CINNABAR} strokeWidth="1.7" strokeOpacity="0.85" />
+      <polygon points="232,98 218,91 218,105" fill={CINNABAR} opacity="0.85" />
       <ellipse cx="150" cy="336" rx="30" ry="72" fill="none" stroke={CREAM} strokeOpacity="0.3" strokeWidth="1.1" />
       <line x1="150" y1="276" x2="150" y2="308" stroke={CREAM} strokeOpacity="0.42" strokeWidth="1.2" />
       <line x1="150" y1="364" x2="150" y2="396" stroke={CREAM} strokeOpacity="0.42" strokeWidth="1.2" />
