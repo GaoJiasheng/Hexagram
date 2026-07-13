@@ -698,6 +698,23 @@ function BelongingRings() {
   )
 }
 
+// 母题:围成一圈——几个人(结点)手拉手围成一圈,连成闭环,其一朱色(呼应《聚在一起》:和人一起、彼此相连地建社群)。
+function CircleJoin() {
+  const cx = 150, cy = 293, R = 66, N = 7
+  const pts = []
+  for (let i = 0; i < N; i++) {
+    const a = (i / N) * Math.PI * 2 - Math.PI / 2
+    pts.push([cx + Math.cos(a) * R, cy + Math.sin(a) * R])
+  }
+  const ring = pts.map(([x, y], i) => (i === 0 ? 'M' : 'L') + x.toFixed(1) + ',' + y.toFixed(1)).join(' ') + ' Z'
+  return (
+    <g>
+      <path d={ring} fill="none" stroke={CREAM} strokeOpacity="0.3" strokeWidth="1.1" />
+      {pts.map(([x, y], i) => <circle key={i} cx={x} cy={y} r={i === 2 ? 8 : 6} fill={i === 2 ? CINNABAR : CREAM} fillOpacity={i === 2 ? 0.92 : 0.5} />)}
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'two-mountains') return <TwoMountains />
   if (motif === 'two-systems') return <TwoSystems />
@@ -708,6 +725,7 @@ function Motif({ motif }) {
   if (motif === 'supply-demand') return <SupplyDemand />
   if (motif === 'golden-egg') return <GoldenEgg />
   if (motif === 'belonging-rings') return <BelongingRings />
+  if (motif === 'circle-join') return <CircleJoin />
   if (motif === 'ripples') return <Ripples />
   if (motif === 'spiral') return <Spiral />
   if (motif === 'mandala') return <Mandala />
