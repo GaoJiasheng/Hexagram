@@ -684,6 +684,20 @@ function GoldenEgg() {
   )
 }
 
+// 母题:归属之环——数圈同心环(社区的界线与内环),几枚成员点由外向内散布,圆心朱色如炉火(呼应《社区的艺术》:从外围到核心、层层深入的归属)。
+function BelongingRings() {
+  const cx = 150, cy = 293
+  const rings = [84, 58, 32]
+  const dots = [[cx - 6, cy - 84], [cx + 44, cy - 30], [cx - 34, cy + 20], [cx + 20, cy + 46]]
+  return (
+    <g>
+      {rings.map((r, i) => <circle key={r} cx={cx} cy={cy} r={r} fill="none" stroke={CREAM} strokeOpacity={0.4 - i * 0.07} strokeWidth="1.2" />)}
+      {dots.map(([x, y], i) => <circle key={i} cx={x} cy={y} r="5" fill={CREAM} fillOpacity="0.55" />)}
+      <circle cx={cx} cy={cy} r="9" fill={CINNABAR} />
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'two-mountains') return <TwoMountains />
   if (motif === 'two-systems') return <TwoSystems />
@@ -693,6 +707,7 @@ function Motif({ motif }) {
   if (motif === 'quadrant') return <Quadrant />
   if (motif === 'supply-demand') return <SupplyDemand />
   if (motif === 'golden-egg') return <GoldenEgg />
+  if (motif === 'belonging-rings') return <BelongingRings />
   if (motif === 'ripples') return <Ripples />
   if (motif === 'spiral') return <Spiral />
   if (motif === 'mandala') return <Mandala />
