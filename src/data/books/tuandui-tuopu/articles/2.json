@@ -1,0 +1,157 @@
+{
+ "title": "以团队为本：团队是交付的基本单元",
+ "subtitle": "别再把人当成随时可搬的积木，开始把团队当成一个需要养大的整体",
+ "centralIdea": "软件交付的基本单元是「团队」而不是「个人」——要打造稳定、长期、小而有归属感的团队（受邓巴数约束通常 5–9 人），给它时间磨合成一个高效整体；并让工作流向稳定的团队，而不是为每个项目临时拼凑又打散。这与上一章的康威定律相扣：先设计好稳定的团队，就是在为好架构打地基。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "想象一个我们都很熟的场景：一个新项目立项了，项目经理开始「找人」——从这个组借一个后端，从那个组抽一个前端，再拉一个测试、一个设计，临时凑齐一支队伍。项目做完，这支队伍就地解散，各回各家，等下一个项目再重新拼一支。这套打法我们太熟了，熟到几乎从不追问它对不对。《团队拓扑》第2章要做的，恰恰是把这个从不被追问的习惯，翻过来问一遍：**软件，到底是谁在交付？**"
+  },
+  {
+   "type": "h2",
+   "text": "这一篇在全书的什么位置"
+  },
+  {
+   "type": "p",
+   "text": "上一章讲了康威定律——组织怎么沟通，系统就长成什么样，团队结构会印在架构上。那一章解决的是「团队边界会决定架构」这件事。可它留下一个更前置的问题：既然团队这么重要，那**「团队」本身，到底该被当成什么？** 是一个随时可以拆开重装的临时容器，还是一个需要长期培养、稳定存在的整体？"
+  },
+  {
+   "type": "p",
+   "text": "Skelton 和 Pais 的答案非常鲜明：**要把「稳定的团队」，当作软件交付的基本单元来对待和培养。** 这句话听着平平无奇，可它其实是在跟一整套根深蒂固的管理习惯叫板——那套习惯，是以「个人」为单位来运转整个组织的。"
+  },
+  {
+   "type": "figure",
+   "ftype": "金句卡",
+   "caption": "这一章的题眼",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"14\" y=\"14\" width=\"532\" height=\"272\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"24\" y=\"24\" width=\"512\" height=\"252\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"0.6\"/><text x=\"280\" y=\"102\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"26\">交付软件的基本单元</text><text x=\"280\" y=\"154\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"34\" font-weight=\"bold\">是团队，不是个人</text><line x1=\"170\" y1=\"182\" x2=\"390\" y2=\"182\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"280\" y=\"218\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">好软件出自一个磨合好的整体，而非一群单打的高手</text><text x=\"280\" y=\"250\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">——《团队拓扑》第2章</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "从「个人」到「团队」：一次基本单元的换位"
+  },
+  {
+   "type": "p",
+   "text": "我们大多数组织，骨子里是按「个人」来管理的。招聘招的是个人、绩效考的是个人、排任务派的是个人、觉得哪里缺人手就把某个人调过去补上。人，在这套逻辑里像是一块块可以自由搬动的积木——哪里需要，搬过去插上就行。"
+  },
+  {
+   "type": "p",
+   "text": "这套逻辑用在流水线上也许没错，但用在软件上就出了大问题。因为**软件是一种高度复杂的集体工作**。一个功能能不能顺利做出来，靠的不是某个高手单点开挂，而是一群人之间的默契：谁熟悉哪块代码、遇到问题找谁、这套系统有哪些不成文的坑、大家习惯用什么方式沟通和评审。这些东西，统统长在「团队」这个整体里，而不是长在任何一个人的简历上。"
+  },
+  {
+   "type": "p",
+   "text": "所以《团队拓扑》要做的第一个换位就是：**别再把「个人」当作交付的最小单元，把「团队」当作最小单元。** 一个磨合好的团队，产出远大于同样几个人各自为战的相加。反过来，你把这个团队拆散、重新洗牌，哪怕每个人的能力一点没变，那份默契和产出也会瞬间归零。"
+  },
+  {
+   "type": "p",
+   "text": "举个例子。一个在某套系统里泡了三年的资深工程师，闭着眼都知道哪段代码碰不得、哪个模块半夜爱报警、哪个历史包袱埋在哪儿。可一旦把他单独调到一个全新的团队，这些价值大半会蒸发——不是他变笨了，而是他和「原来那个团队、那套系统」之间的默契被切断了。**能力可以搬走，默契搬不走。** 这正是为什么以个人为单位调兵遣将，常常搬走了一个人，却同时搬垮了两个团队。"
+  },
+  {
+   "type": "quote",
+   "original": "把稳定的团队，而不是个人，当作软件交付的基本单元。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "团队为什么不能「拼了就散」"
+  },
+  {
+   "type": "p",
+   "text": "一群人凑到一起，不会自动变成「一个团队」。从「一群人」到「一个高效的整体」，中间隔着一段绕不过去的路——磨合。彼此要建立信任、摸清对方的脾气和长处、形成共同的做事方式和节奏。这段路要花时间，少则几个月，长则更久。"
+  },
+  {
+   "type": "p",
+   "text": "现在回头看开头那个「拼了又散」的打法，问题就浮出来了：如果每来一个项目就临时拉一批人、做完就打散，**团队永远停在最低效的那段「磨合期」**。信任还没建立、默契还没形成，项目就结束了，人就散了；下一次重新拼，又从零开始磨。这就像每次做饭都要先花两小时把厨房从毛坯装修一遍——你永远在装修，从没真正开火。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比",
+   "caption": "临时项目组 vs 稳定团队：两种对待团队的方式",
+   "svg": "<svg viewBox=\"0 0 620 340\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"310\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"20\">两种对待团队的方式</text><line x1=\"310\" y1=\"54\" x2=\"310\" y2=\"312\" style=\"stroke:var(--line)\" stroke-width=\"0.8\" stroke-dasharray=\"4 4\"/><text x=\"156\" y=\"86\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"17\">临时项目组</text><text x=\"156\" y=\"120\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">来一个项目 · 拉一批人</text><text x=\"156\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">做完就地打散</text><path d=\"M96 168 L216 168\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"156\" y=\"200\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">永远停在磨合期</text><text x=\"156\" y=\"228\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">信任没建立就散</text><text x=\"156\" y=\"252\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">默契来不及形成</text><text x=\"156\" y=\"296\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">效率始终最低</text><text x=\"464\" y=\"86\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"17\">稳定团队</text><text x=\"464\" y=\"120\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">长期存在 · 不打散</text><text x=\"464\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">有时间慢慢磨合</text><path d=\"M404 168 L524 168\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\"/><text x=\"464\" y=\"200\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">磨成一个整体</text><text x=\"464\" y=\"228\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">信任默契不断积累</text><text x=\"464\" y=\"252\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">让工作流向它</text><text x=\"464\" y=\"296\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">越用越顺</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "团队优先的做法，是反过来的：**让团队稳定、长期地存在，给它足够的时间，长成一个真正的整体。** 一支在一起待了两年的团队，和一支临时拼三个月的队伍，做同样的事，效率可能差出好几倍——差的那几倍，全在「稳定」两个字里。"
+  },
+  {
+   "type": "h2",
+   "text": "邓巴数：团队为什么必须小"
+  },
+  {
+   "type": "p",
+   "text": "稳定之外，还有一条硬约束：**团队必须小。** 这背后有个来自人类学的概念，叫邓巴数（Dunbar's number）。人类学家邓巴发现，受大脑的限制，一个人能维持稳定、可信关系的人数是有上限的——超过这个数，关系就维持不住、只能停留在点头之交。"
+  },
+  {
+   "type": "p",
+   "text": "把这个规律放进团队里，结论很直接：**一个能高效协作、彼此充分信任的团队，通常只有 5 到 9 个人。** 为什么不能更多？因为人一多，沟通的路径会爆炸式增长——3 个人之间只有 3 条沟通线，10 个人之间就有 45 条。人越多，信任越稀薄、协调越费劲，团队反而越跑越慢。"
+  },
+  {
+   "type": "p",
+   "text": "那组织要变大怎么办？团队优先给出的答案是：**靠增加「团队」的数量，而不是把单个团队无限撑大。** 一个团队顶到八九个人就别再往里塞了，该让它长出第二个、第三个团队。组织的扩张，是横向多长几条稳定的河道，而不是把一条河道拓成一片没法管理的沼泽。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "团队要小而稳（邓巴数 5–9 人），扩张靠增加团队数量",
+   "svg": "<svg viewBox=\"0 0 580 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"290\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"19\">团队要小而稳 · 邓巴数的约束</text><circle cx=\"150\" cy=\"104\" r=\"6\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"196\" cy=\"128\" r=\"6\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"200\" cy=\"180\" r=\"6\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"168\" cy=\"212\" r=\"6\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"132\" cy=\"212\" r=\"6\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"100\" cy=\"180\" r=\"6\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"104\" cy=\"128\" r=\"6\" style=\"fill:var(--cinnabar-pure)\"/><circle cx=\"150\" cy=\"162\" r=\"56\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/><text x=\"150\" y=\"168\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">5–9 人</text><text x=\"150\" y=\"256\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">一个团队</text><text x=\"150\" y=\"278\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">小到能彼此信任</text><line x1=\"260\" y1=\"70\" x2=\"260\" y2=\"280\" style=\"stroke:var(--line)\" stroke-width=\"0.6\"/><text x=\"420\" y=\"104\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">组织要变大？</text><text x=\"320\" y=\"150\" style=\"fill:var(--ink)\" font-size=\"15\">✗ 把单个团队撑大</text><text x=\"338\" y=\"174\" style=\"fill:var(--ink-soft)\" font-size=\"12\">沟通路径爆炸 · 信任跟不上</text><text x=\"320\" y=\"224\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">✓ 增加团队的数量</text><text x=\"338\" y=\"248\" style=\"fill:var(--ink-soft)\" font-size=\"12\">每个都小而稳 · 组织横向扩展</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "让工作流向团队，而不是为工作拼团队"
+  },
+  {
+   "type": "p",
+   "text": "讲到这里，一个关键的翻转已经呼之欲出了。传统做法的顺序是：**先有工作（项目），再临时拼一个团队去做，做完解散。**——团队是围着工作临时搭起来、又拆掉的脚手架。"
+  },
+  {
+   "type": "p",
+   "text": "团队优先把这个顺序整个颠倒过来：**先有稳定的团队，再把工作（需求、项目、特性）分配、流动到合适的团队去做。** 打个比方：团队是一条条常驻的河道，工作是流过河道的水。水一波一波地来、流过、走掉，河道始终在那儿，越冲越顺畅。你不会每来一船货就重新挖一条河——你让货流进现成的河道就好。"
+  },
+  {
+   "type": "p",
+   "text": "这个颠倒带来的好处，是复利式的。每一波流过来的工作，都在给同一支团队「加经验」：他们对这块领域越来越熟、彼此配合越来越顺、踩过的坑越来越少。而临时拼团队的老路，每次都在推倒重来——上一个项目攒下的所有默契，随着团队解散一笔勾销，下一个项目又得从磨合期爬起。**一个越用越顺，一个次次归零，长期下来的差距，会大到惊人。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "让工作流向团队：团队是常驻的河道，工作是流过的水",
+   "svg": "<svg viewBox=\"0 0 560 270\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"19\">让工作流向团队</text><line x1=\"70\" y1=\"120\" x2=\"490\" y2=\"120\" style=\"stroke:var(--line)\" stroke-width=\"1.4\"/><line x1=\"70\" y1=\"178\" x2=\"490\" y2=\"178\" style=\"stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"280\" y=\"156\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">稳定团队 ＝ 常驻的河道（始终在那儿）</text><text x=\"128\" y=\"106\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">需求 →</text><text x=\"248\" y=\"106\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">项目 →</text><text x=\"368\" y=\"106\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">特性 →</text><path d=\"M60 149 L500 149\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1\" stroke-dasharray=\"6 5\"/><path d=\"M500 149 L488 143 M500 149 L488 155\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1\"/><text x=\"280\" y=\"224\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">工作 ＝ 流过河道的水（一波波来、流过、走掉）</text><text x=\"280\" y=\"252\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">而不是每来一个项目，就重新挖一条河</text></svg>"
+  },
+  {
+   "type": "quote",
+   "original": "让工作流向稳定的长期团队，而不是为每个项目临时拼凑团队。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "归属感：团队要「拥有」一块地"
+  },
+  {
+   "type": "p",
+   "text": "稳定和长期，还带来一样容易被忽略、却极其重要的东西——**归属感和拥有感**。一支长期存在的团队，应当长期拥有一块明确的领域或产品，而不是打一枪换一个地方，这个月修支付、下个月又被扔去救火搜索。"
+  },
+  {
+   "type": "p",
+   "text": "为什么这件事重要？因为只有「这块地长期是我的」，成员才会真正把自己当主人。他会愿意为这块领域做长远的投入：清理欠下的技术债、打磨那些短期看不出回报的细节、把系统里的坑一个个填平。而一个明天就要被调走的人，是不会替一块跟自己无关的地除草的——反正也不是我的地。**拥有感，是深度和长期投入的前提。**"
+  },
+  {
+   "type": "h2",
+   "text": "这一切，都扣在康威定律上"
+  },
+  {
+   "type": "p",
+   "text": "最后要把这一章和上一章接起来。第1章说：团队结构会决定系统架构。既然如此，那么**先设计好稳定的、小而有归属的团队，本身就是在为一个好架构打地基。** 你连团队都是临时拼凑、频繁打散的，又怎么可能指望长出清晰稳定的架构？团队优先思维，不是一句温情的口号，它是应用整套「团队拓扑」的前提——**你得先有稳定的团队，才谈得上后面怎么摆布这些团队。**"
+  },
+  {
+   "type": "h2",
+   "text": "收束：先把「团队」当回事"
+  },
+  {
+   "type": "p",
+   "text": "回到开头那个「东拼西凑、做完就散」的场景。《团队拓扑》这一章想让你换一个眼光去看它：那不是灵活，那是在反复支付「磨合」这笔最贵的成本，却永远拿不到「默契」这份最大的红利。"
+  },
+  {
+   "type": "p",
+   "text": "它给出的转变其实只有一句话：**把交付的基本单元，从「个人」换成「团队」；并且让这个团队稳定、长期、小而有归属地存在，再让工作流向它。** 组织要长大，就多长几支这样的团队，而不是把一支撑到变形。听起来简单，可真要做到，得先放下那个用了很多年、几乎成了本能的习惯——**别再把人当成随时可搬的积木，开始把团队，当成一个需要耐心养大的、活的整体。**"
+  }
+ ]
+}

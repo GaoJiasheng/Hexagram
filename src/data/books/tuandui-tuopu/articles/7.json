@@ -1,0 +1,116 @@
+{
+ "title": "三种协作模式",
+ "subtitle": "光把团队分好类还不够，还得说清「每一对团队之间到底该怎么配合」——把交互模式收敛成协作、服务、促进三种，为每对关系有意识地选对一种、并随成熟度演化｜《团队拓扑》第7章解读",
+ "centralIdea": "前面几章解决了「团队怎么分」，这一章解决一个同样要命、却常被忽略的问题：「团队之间怎么配合」。斯凯尔顿和帕伊斯发现，很多团队间的摩擦、扯皮、等待、职责不清，根子不在于谁能力差，而在于两个团队压根没搞清楚「我们到底该紧密协作，还是各管各的？该谁提供、谁使用？」他们把千变万化的团队交互，收敛成三种基本模式——协作（Collaboration）：两个团队紧密地一起工作、共同探索一个未知领域，边界模糊、频繁交流、共担责任，适合开创新领域和磨合期，但成本高、认知负荷大，长期这样会互相拖慢，所以应当是短期、有目的的；服务（X-as-a-Service）：一个团队把成果当作清晰的服务提供给另一个团队按需取用，边界清晰、依赖最小、双方各自独立高速前进，适合关系成熟稳定，是让大量团队并行高速工作的关键；促进（Facilitating）：一个团队（常是赋能团队）帮助、引导、教练另一个团队跨越障碍、学会新东西，是暂时的辅导关系。关键有两条：一是为每一对协作关系有意识地选定当下最合适的那一种，把交互模式说清楚，一大半协作混乱就消失了；二是同两个团队的关系会随阶段演化——新领域初期可能需要协作（一起摸索），成熟稳定后就该转成服务（一方提供、一方使用），让双方各自加速。最常见的病，就是该转服务了却还停在协作，两队长期黏在一起、边界永远模糊、谁也快不起来。所以要有意识地把成熟的协作关系「毕业」成清晰的服务关系。一切都服务于同一个目的：减少摩擦、加速价值流动。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "两个团队每天为一件事扯皮：接口迟迟对不上，需求改来改去，你等我、我等你，出了问题谁也不认。人们习惯把这归咎于「配合的人不行」。但《团队拓扑》给出一个更冷静的诊断——**很多摩擦，根子不在能力，而在于这两个团队从没把一件事说清楚：我们到底该怎么配合？** 是该肩并肩一起干，还是你把东西做好了我按需来取？把这个问题摊开、定下来，一大半的混乱当场就散了。这一章，就是给团队之间的关系，也画出几条清晰的轨道。"
+  },
+  {
+   "type": "h2",
+   "text": "分好团队还不够，还得说清「怎么配合」"
+  },
+  {
+   "type": "p",
+   "text": "前面几章费尽心思把团队分好类——流式、赋能、复杂子系统、平台。但斯凯尔顿和帕伊斯提醒：**把每个团队各自定义清楚，只做完了一半；剩下一半，是把「团队与团队之间怎么互动」也定义清楚**。现实里，两个都很能干的团队照样能天天卡壳，问题往往不出在任何一个团队内部，而出在它们之间那条模糊的地带——谁该主动找谁、谁对谁负责、一件事到底是「我们一起扛」还是「你交给我用」，从没人讲明白。"
+  },
+  {
+   "type": "p",
+   "text": "于是就有了那些最耗人的日常：一个团队苦等另一个团队交东西，另一个团队却以为球在对方脚下；两队为一个边界上的模块反复推诿，因为谁都觉得那不是自己的活；本该各干各的两队，偏偏事事都要开会对齐，把彼此拖成一团。作者的洞见是：**这些摩擦，很多不是「态度问题」，而是「模式没定」——两个团队没搞清楚当下该用哪一种配合方式。** 一旦把这件事挑明、并有意识地为每一对关系选定一种模式，扯皮、等待、越界就会大面积消失。所以他们把纷繁的团队交互，狠狠收敛成三种基本模式，让每一对关系都能对号入座。"
+  },
+  {
+   "type": "quote",
+   "original": "很多团队间的摩擦，不是谁能力差、态度坏，而是两个团队从没说清「我们到底该怎么配合」——把交互模式定下来，一大半混乱就消失了。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "团队之间的配合方式，收敛为三种基本模式：协作（紧密共探）、服务（清晰边界、按需取用）、促进（帮助引导）。每种各有适用场景——关键是为每对关系选对当下最合适的一种。",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink)' font-size='15'>三种协作模式</text><rect x='24' y='44' width='160' height='212' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='104' y='72' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='13'>协作</text><text x='104' y='90' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>Collaboration</text><line x1='44' y1='102' x2='164' y2='102' style='stroke:var(--line)' stroke-width='1'/><text x='104' y='128' text-anchor='middle' style='fill:var(--ink)' font-size='12'>紧密一起工作</text><text x='104' y='148' text-anchor='middle' style='fill:var(--ink)' font-size='12'>共同探索未知</text><text x='104' y='168' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>边界模糊·共担责</text><text x='104' y='214' text-anchor='middle' style='fill:var(--ink-faint)' font-size='11'>适合</text><text x='104' y='234' text-anchor='middle' style='fill:var(--ink)' font-size='12'>开创·磨合期</text><rect x='200' y='44' width='160' height='212' rx='10' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.8'/><text x='280' y='72' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='13'>服务</text><text x='280' y='90' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>X-as-a-Service</text><line x1='220' y1='102' x2='340' y2='102' style='stroke:var(--line)' stroke-width='1'/><text x='280' y='128' text-anchor='middle' style='fill:var(--ink)' font-size='12'>成果当服务提供</text><text x='280' y='148' text-anchor='middle' style='fill:var(--ink)' font-size='12'>另一队按需取用</text><text x='280' y='168' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>边界清晰·依赖低</text><text x='280' y='214' text-anchor='middle' style='fill:var(--ink-faint)' font-size='11'>适合</text><text x='280' y='234' text-anchor='middle' style='fill:var(--ink)' font-size='12'>成熟·并行高速</text><rect x='376' y='44' width='160' height='212' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='456' y='72' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='13'>促进</text><text x='456' y='90' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>Facilitating</text><line x1='396' y1='102' x2='516' y2='102' style='stroke:var(--line)' stroke-width='1'/><text x='456' y='128' text-anchor='middle' style='fill:var(--ink)' font-size='12'>帮助·引导·教练</text><text x='456' y='148' text-anchor='middle' style='fill:var(--ink)' font-size='12'>助对方学会新事</text><text x='456' y='168' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>暂时的辅导关系</text><text x='456' y='214' text-anchor='middle' style='fill:var(--ink-faint)' font-size='11'>适合</text><text x='456' y='234' text-anchor='middle' style='fill:var(--ink)' font-size='12'>赋能·补能力</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "模式一 · 协作：紧密同探一片未知"
+  },
+  {
+   "type": "p",
+   "text": "第一种叫**协作（Collaboration）**：两个团队**紧密地一起工作，共同探索一个还没人走通的领域**。它的样子是边界模糊、频繁交流、共担责任——你中有我、我中有你，遇到问题一起上，做出的东西算大家的。当一件事前路未明、谁也说不清接口该长什么样、职责该怎么切时，就需要这种高带宽的密切配合：只有天天泡在一起、随时对话，两队才能一边摸索一边把地图画出来。所以协作**最适合开创新领域、打通一项新技术、以及两队刚开始磨合的阶段**——凡是「未知」占主导的时候，协作能让探索走得最快。"
+  },
+  {
+   "type": "p",
+   "text": "但协作有它的代价，而且不小。两队黏在一起，意味着**成本高、认知负荷大、边界始终模糊**——每个人不仅要装下自己团队的事，还得时时惦记另一队在干什么，脑子里背的复杂度成倍上涨。作者反复强调：**协作是把双刃剑，短期用它探路是利器，长期黏着却会反过来拖慢彼此。** 该分开各自加速了还硬凑在一起，两队就都快不起来，谁也无法独立地把事情推到底。所以他们下了一个明确的结论：**协作应当是短期的、有目的的**——目的是把那片未知探清楚，一旦地图画出来、边界看明白了，就该功成身退，转成更清晰的模式。协作不是一种可以永远维持的常态，而是一段有始有终的探路期。"
+  },
+  {
+   "type": "quote",
+   "original": "协作是把双刃剑：短期一起探路是利器，长期黏在一起却会互相拖慢。它该是有始有终的探路期，而非可以永远维持的常态。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "模式二 · 服务：清晰边界，按需取用"
+  },
+  {
+   "type": "p",
+   "text": "第二种叫**服务（X-as-a-Service）**：一个团队把自己的成果，**当作一个清晰的「服务」提供出去，让另一个团队按需取用**。平台团队提供一套内部平台，某个团队对外提供一组稳定的 API——都属于这种模式。它和协作几乎是反着来的：协作是边界模糊、共担责任，服务则是**边界清晰、依赖最小**。用的一方不必关心提供方内部是怎么实现的，只管按约定去调用；提供的一方也不必事事都拉着对方开会，只要把服务维护好、把接口讲清楚。两队之间，是一条窄而明确的接缝，而不是一大片交融的模糊地带。"
+  },
+  {
+   "type": "p",
+   "text": "这种模式最大的好处，是**让双方各自独立、高速地前进**。消费方不用等、不用问、不用协调，自助取用即可，把节省下来的精力全放在自己的价值流上；提供方也能专注打磨自己那份服务，不被无穷无尽的对接会拖住。正因为如此，作者把服务称为**让大量团队能并行高速工作的关键模式**——一个组织里团队越多，越要靠清晰的服务边界把它们解耦开，否则人人都要跟人人协调，整个组织就会陷在开不完的会里。**服务适合的，正是那些关系已经成熟、稳定、职责明确的场景**：路已经趟熟了，接口早已定型，就没必要再天天黏在一起，把它固化成一条干净的服务接缝，双方各奔前程、各自提速。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照图",
+   "caption": "协作与服务几乎是反着来的：协作边界模糊、高带宽、共担责，成本高，适合短期探路；服务边界清晰、低依赖、按需取用，让双方各自独立高速前进，适合成熟稳定。",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink)' font-size='15'>协作 vs 服务</text><rect x='30' y='44' width='230' height='196' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='145' y='70' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='13'>协作 · Collaboration</text><line x1='52' y1='82' x2='238' y2='82' style='stroke:var(--line)' stroke-width='1'/><text x='52' y='108' style='fill:var(--ink)' font-size='12'>边界 · 模糊、交融</text><text x='52' y='134' style='fill:var(--ink)' font-size='12'>沟通 · 高带宽、频繁</text><text x='52' y='160' style='fill:var(--ink)' font-size='12'>责任 · 共同承担</text><text x='52' y='186' style='fill:var(--ink)' font-size='12'>成本 · 高、认知负荷大</text><text x='52' y='218' style='fill:var(--ink-soft)' font-size='11'>宜短期探路 · 开创磨合</text><rect x='300' y='44' width='230' height='196' rx='10' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.8'/><text x='415' y='70' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='13'>服务 · as-a-Service</text><line x1='322' y1='82' x2='508' y2='82' style='stroke:var(--line)' stroke-width='1'/><text x='322' y='108' style='fill:var(--ink)' font-size='12'>边界 · 清晰、一条窄缝</text><text x='322' y='134' style='fill:var(--ink)' font-size='12'>沟通 · 依赖最小</text><text x='322' y='160' style='fill:var(--ink)' font-size='12'>责任 · 各自独立</text><text x='322' y='186' style='fill:var(--ink)' font-size='12'>取用 · 按需自助</text><text x='322' y='218' style='fill:var(--ink-soft)' font-size='11'>各自高速 · 成熟稳定</text><text x='280' y='272' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>越多团队并行，越要靠清晰的服务边界解耦，否则人人都在开对齐会</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "模式三 · 促进：帮另一个团队跨过障碍"
+  },
+  {
+   "type": "p",
+   "text": "第三种叫**促进（Facilitating）**：一个团队去**帮助、引导、教练另一个团队，让它跨越障碍、学会新东西**。这通常是**赋能团队**扮演的角色——它不替对方把活干了，而是站在旁边，帮对方补上缺失的能力、趟平卡住的环节，等对方能自己走了，就抽身退出。所以它的本质是一段**暂时的辅导关系**：一方在「帮」，另一方在「学」，目标是让被帮的团队真正长出本事，而不是养成长期依赖。"
+  },
+  {
+   "type": "p",
+   "text": "促进最典型的两个用场：一是**赋能团队帮一支流式团队补能力**——比如教它一套新的测试实践、帮它引入一项还不熟的技术，扶上马、送一程；二是**帮两个团队打通卡住的协作**——当两队之间总是别别扭扭、接口对不上，一个善于促进的团队介入，帮它们把中间的障碍理顺。要注意促进和前两种的分别：它既不像协作那样两队合力去产出同一个东西，也不像服务那样一方持续供另一方取，而是**一方专注于「让另一方变得更强、更能自立」**。正因为目标是让对方毕业，它天然就是有期限的——帮到位了，就该退场。"
+  },
+  {
+   "type": "h2",
+   "text": "为每对关系选对模式，并随成熟度演化"
+  },
+  {
+   "type": "p",
+   "text": "有了这三种模式，真正的功夫，是**为每一对协作关系，有意识地选定当下最合适的那一种**。不是笼统地说「团队之间要多协作」，而是具体到问：我们这两支队，此刻是该紧密协作、还是该谁提供谁使用、还是一方该去促进另一方？把这个问题问清楚、答明白，团队之间那条模糊地带就变成了一条清晰的轨道，摩擦自然大减。"
+  },
+  {
+   "type": "p",
+   "text": "更关键的是，**同样两个团队之间的关系，会随阶段而变，不该一次定死**。作者给的经典图景是：一块新领域刚开辟时，两队谁也说不清边界，这时最需要的是「协作」——挤在一起摸索，共担未知；可等到这片地趟熟了、接口稳定了、职责清楚了，就该果断转成「服务」——一方把成果做成服务提供出去，另一方按需取用，两队从此各自加速。**看清「此刻这对关系该用哪种模式、又到了该切换的哪个节点」，正是减少摩擦、加速流动的核心判断。** 模式不是给团队贴的永久标签，而是随关系成熟度不断调整的挡位。"
+  },
+  {
+   "type": "figure",
+   "ftype": "演化图",
+   "caption": "同两个团队的关系会随成熟度演化：新领域初期靠协作（一起摸索未知），等边界趟熟、职责稳定后，就该「毕业」成服务（一方提供、一方按需取用），让双方各自独立提速。",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><defs><marker id='ev7' viewBox='0 0 10 10' refX='9' refY='5' markerWidth='8' markerHeight='8' orient='auto-start-reverse'><path d='M0 0 L10 5 L0 10 z' style='fill:var(--cinnabar-pure)'/></marker></defs><text x='280' y='26' text-anchor='middle' style='fill:var(--ink)' font-size='15'>关系随成熟度演化</text><rect x='34' y='60' width='190' height='150' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='129' y='90' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='13'>初期 · 协作</text><line x1='56' y1='102' x2='202' y2='102' style='stroke:var(--line)' stroke-width='1'/><text x='129' y='128' text-anchor='middle' style='fill:var(--ink)' font-size='12'>一起摸索未知</text><text x='129' y='150' text-anchor='middle' style='fill:var(--ink)' font-size='12'>边界模糊·共担</text><text x='129' y='184' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>高带宽·成本高</text><rect x='336' y='60' width='190' height='150' rx='10' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.8'/><text x='431' y='90' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='13'>成熟 · 服务</text><line x1='358' y1='102' x2='504' y2='102' style='stroke:var(--line)' stroke-width='1'/><text x='431' y='128' text-anchor='middle' style='fill:var(--ink)' font-size='12'>一方提供·一方取用</text><text x='431' y='150' text-anchor='middle' style='fill:var(--ink)' font-size='12'>边界清晰·低依赖</text><text x='431' y='184' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>各自独立高速</text><line x1='224' y1='135' x2='330' y2='135' style='stroke:var(--cinnabar-pure)' stroke-width='2' marker-end='url(#ev7)'/><text x='280' y='126' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='11'>趟熟即</text><text x='280' y='158' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>毕业</text><text x='280' y='250' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>看清此刻该用哪种模式、何时该切换，是加速流动的核心判断</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "别让协作「僵住」：及时毕业成服务"
+  },
+  {
+   "type": "p",
+   "text": "了解了演化，也就看清了团队协作里最常见的一种病：**该转服务了，却还停在协作**。两个团队一起探路的阶段本该结束，可谁也没意识到该切换，于是它们**长期黏在一起、边界永远模糊、事事都要协调，谁也快不起来**。表面上看是「大家协作得很紧密」，实际上是探路期迟迟不肯毕业——把一段本该短暂的高成本关系，硬生生拖成了常态，白白背上认知负荷、白白互相拖慢。"
+  },
+  {
+   "type": "p",
+   "text": "所以作者的告诫很直接：**要有意识地把成熟的协作关系「毕业」成清晰的服务关系。** 当一片领域已经探明、接口已经稳定，就别再留恋那种什么都一起商量的紧密感——那不是团结，那是没及时松手。把它固化成一条干净的服务接缝，让两队各自独立、各自提速，才是对彼此都好的选择。说到底，这三种模式、这套选择与演化的判断，全都指向同一件事——**减少团队之间的摩擦，让价值更顺畅、更快地流动。** 交互模式不是组织图上好看的连线，而是决定价值能否流得动的那些接缝：接缝对了，整个组织就轻快了。"
+  },
+  {
+   "type": "quote",
+   "original": "最常见的病，是该转服务了却还停在协作——两队长期黏着、边界永远模糊、谁也快不起来。要有意识地让成熟的协作「毕业」成清晰的服务。",
+   "translation": ""
+  }
+ ]
+}

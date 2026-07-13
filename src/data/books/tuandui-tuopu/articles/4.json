@@ -1,0 +1,145 @@
+{
+ "title": "四种团队类型",
+ "subtitle": "别再乱造团队——绝大多数团队,都能归进这四种基本积木",
+ "centralIdea": "真实组织里团队名目繁多、职责重叠、边界混乱。《团队拓扑》主张把它们收敛为四种基本类型:流式团队(对齐一条价值流、端到端把价值交到用户手里,是主角、数量最多)、赋能团队(像教练,阶段性帮流式团队补能力后退出)、复杂子系统团队(把需要专家深度知识的硬骨头封装隔离)、平台团队(把底层做成内部自助平台,当产品一样经营)。后三种存在的唯一理由,都是让流式团队交付得更顺畅;四者各司其职,职责清晰,价值才能快速流动。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "打开很多公司的组织架构图,你会看到密密麻麻一堆团队:前端组、后端组、DBA 组、架构组、运维组、测试组,还有临时拉起来的这个项目组、那个专项组……名字五花八门,职责却常常你压着我、我盖着你。一件事要上线,得在七八个组之间来回踢皮球,谁也说不清「这活儿到底归谁」。《团队拓扑》这一章想干的事很朴素:把这团乱麻,收成四种清清楚楚的团队。"
+  },
+  {
+   "type": "h2",
+   "text": "先看病:团队为什么越设越乱"
+  },
+  {
+   "type": "p",
+   "text": "作者先点出一个很多人身在其中、却早已习以为常的现象:团队常常是**随事而生**的。来了个新技术,设个专门组;老板重视某块业务,拉个专项组;历史上某个牛人擅长某事,就围着他成立一个组……日积月累,组织里堆满了名字各异、来历不同的团队。问题是,这些团队之间的边界从没人认真理过——前端组和某个业务组都觉得那个页面归自己,架构组和运维组都想管那套发布流水线,一件事往往要横跨五六个组才落得了地。"
+  },
+  {
+   "type": "p",
+   "text": "更麻烦的是「**谁也不端到端负责**」。每个组只管自己那一小段:需求组提需求,开发组写代码,测试组点验收,运维组管上线;出了问题各说各话,而用户真正要的那个完整功能,反倒没有任何一个团队从头到尾对它负责。名目越多,交接越多;交接越多,扯皮和等待就越多。作者说,这不是哪个团队不努力,而是团队的「**种类**」本身就没被好好设计过。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "团队名目繁多、职责重叠 → 收敛成四种基本类型",
+   "svg": "<svg viewBox=\"0 0 560 250\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"18\" y=\"26\" width=\"72\" height=\"26\" rx=\"3\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"54\" y=\"43\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">前端组</text><rect x=\"120\" y=\"52\" width=\"72\" height=\"26\" rx=\"3\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"156\" y=\"69\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">DBA组</text><rect x=\"30\" y=\"96\" width=\"72\" height=\"26\" rx=\"3\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"66\" y=\"113\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">运维组</text><rect x=\"128\" y=\"120\" width=\"72\" height=\"26\" rx=\"3\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"164\" y=\"137\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">架构组</text><rect x=\"56\" y=\"162\" width=\"80\" height=\"26\" rx=\"3\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"96\" y=\"179\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">项目组</text><path d=\"M90 39 L120 65 M102 109 L128 133 M156 78 L96 162 M66 96 L54 52\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"110\" y=\"215\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">名目繁多 · 边界重叠</text><path d=\"M232 110 L296 110\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\" marker-end=\"url(#arA)\"/><defs><marker id=\"arA\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6 Z\" style=\"fill:var(--cinnabar-pure)\"/></marker></defs><text x=\"264\" y=\"100\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">收敛</text><rect x=\"360\" y=\"30\" width=\"180\" height=\"32\" rx=\"4\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><text x=\"450\" y=\"51\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">流式团队</text><rect x=\"360\" y=\"70\" width=\"180\" height=\"32\" rx=\"4\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"450\" y=\"91\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">赋能团队</text><rect x=\"360\" y=\"110\" width=\"180\" height=\"32\" rx=\"4\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"450\" y=\"131\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">复杂子系统团队</text><rect x=\"360\" y=\"150\" width=\"180\" height=\"32\" rx=\"4\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"450\" y=\"171\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">平台团队</text><text x=\"450\" y=\"205\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">四种基本类型 · 各司其职</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "药方:绝大多数团队,都归进四种"
+  },
+  {
+   "type": "p",
+   "text": "于是本书给了一个近乎「反直觉」的建议:**别再为每一种情况都发明一种新团队,把全公司的团队,收敛成四种基本类型。** 作者的意思是,绝大多数团队,都应该能被归进这四种之一;如果你发现某个团队哪种都不像、非得单独发明一个新类型不可,那多半是个信号——要么它职责不清,要么它本可以拆进现有类型里。这四种是:**流式团队、赋能团队、复杂子系统团队、平台团队。**"
+  },
+  {
+   "type": "p",
+   "text": "但要先说清一件事:这四种**不是平起平坐**的。作者把话讲得很直白——**流式团队是主角**,是数量最多、最主要的团队;另外三种之所以存在,唯一的理由就是让流式团队交付得更顺。记住这个主次关系,是读懂整章的钥匙。下面一种种看。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "四种团队类型及其角色:流式为主角,其余三种为支撑",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"20\" y=\"22\" width=\"520\" height=\"56\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><rect x=\"20\" y=\"22\" width=\"6\" height=\"56\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"46\" y=\"46\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">流式团队 · Stream-aligned</text><text x=\"46\" y=\"67\" style=\"fill:var(--ink-soft)\" font-size=\"12\">对齐一条价值流,端到端交付面向用户的功能 —— 主角、数量最多</text><rect x=\"20\" y=\"88\" width=\"520\" height=\"56\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"20\" y=\"88\" width=\"6\" height=\"56\" style=\"fill:var(--ink-soft)\"/><text x=\"46\" y=\"112\" style=\"fill:var(--ink)\" font-size=\"15\">赋能团队 · Enabling</text><text x=\"46\" y=\"133\" style=\"fill:var(--ink-soft)\" font-size=\"12\">像教练,阶段性帮流式团队补齐缺的能力,学会即退场</text><rect x=\"20\" y=\"154\" width=\"520\" height=\"56\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"20\" y=\"154\" width=\"6\" height=\"56\" style=\"fill:var(--ink-soft)\"/><text x=\"46\" y=\"178\" style=\"fill:var(--ink)\" font-size=\"15\">复杂子系统团队 · Complicated-subsystem</text><text x=\"46\" y=\"199\" style=\"fill:var(--ink-soft)\" font-size=\"12\">把需专家深度的复杂子系统封装隔离,免得人人都成专家</text><rect x=\"20\" y=\"220\" width=\"520\" height=\"56\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"20\" y=\"220\" width=\"6\" height=\"56\" style=\"fill:var(--ink-soft)\"/><text x=\"46\" y=\"244\" style=\"fill:var(--ink)\" font-size=\"15\">平台团队 · Platform</text><text x=\"46\" y=\"265\" style=\"fill:var(--ink-soft)\" font-size=\"12\">把底层做成内部自助平台,当产品一样经营,让人自助取用</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "类型一:流式团队——直接交付价值的主角"
+  },
+  {
+   "type": "p",
+   "text": "第一种,也是最重要的一种,叫**流式团队(Stream-aligned team)**。「流」指的是一条业务或价值的流动——比如某条产品线、某类用户、某个业务领域。流式团队的特点是:对齐这么一条流,**端到端**地负责一块面向用户的功能。从想清楚要做什么,到写出来,到上线,到线上出了问题去救,尽量都由这一个团队包圆,少交接、少求人。"
+  },
+  {
+   "type": "p",
+   "text": "为什么要这么设计?因为价值只有真正**流动**到用户手里才算兑现,而每一次跨团队交接,都是一次卡顿和等待。让一个团队端到端握住一条流,它就能自己决定、自己交付、自己快速拿到用户反馈再改进,不必在七八个组之间递条子。作者说,一个健康的组织,**绝大多数人都应该待在流式团队里**;衡量组织好不好,就看价值能不能顺畅地流过这些团队。"
+  },
+  {
+   "type": "quote",
+   "original": "组织里绝大多数团队,都应该是流式团队;其余三种类型的存在,是为了让它交付得更顺畅。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "类型二:赋能团队——像教练,补完能力就退场"
+  },
+  {
+   "type": "p",
+   "text": "可流式团队不是万能的,它常会撞上自己不擅长的墙:想引入自动化测试却没人会,想上可观测性、上云原生却摸不着门道。这时候登场的是第二种——**赋能团队(Enabling team)**。它由某个方面的专家组成,像**教练**一样短期介入,手把手帮流式团队补上缺的能力、工具或实践。关键就在「教练」二字:它的目标是**让对方学会,学会了就退场**,而不是长期赖在那儿替人干活,更不是变成一个「你要用新技术先来我这儿审批」的**关卡**。作者反复强调这条分寸——赋能团队一旦变成守门人,就背离了它的本意。"
+  },
+  {
+   "type": "h2",
+   "text": "类型三:复杂子系统团队——把硬骨头封装起来"
+  },
+  {
+   "type": "p",
+   "text": "第三种是**复杂子系统团队(Complicated-subsystem team)**。有些东西天生就难,难到得靠专门的深度知识才做得好:一套数学或算法引擎、音视频编解码、复杂的风控或计费核心……如果让每个流式团队都去啃这块硬骨头,人人都得先修成那个领域的专家,认知负荷直接爆表。于是把这块高复杂度单独交给一个团队,让它把复杂度**封装、隔离**起来,对外只暴露一个好用的接口。这样其余流式团队就不必人人变成专家,拿来用就好。要提醒的是:**只有当某块复杂度确实高到「需要专人专精」时,才值得设这种团队**,不能什么活儿嫌麻烦就往外拆。"
+  },
+  {
+   "type": "h2",
+   "text": "类型四:平台团队——把底层做成内部自助平台"
+  },
+  {
+   "type": "p",
+   "text": "第四种是**平台团队(Platform team)**。它把底层那些重复的、通用的工具、服务、基础设施——部署、监控、数据库、运行环境……做成一个内部的「**平台**」,让流式团队能像用公有云一样**自助取用**:要个环境,自己点一下就有,不用提工单等三天;要看监控,平台上现成的,不用求人配。平台团队最容易走偏的地方,是把自己做成又一个高高在上、难用还要排队的中央部门。作者给的解药是四个字:**把平台当产品做**。它的「客户」就是内部那些流式团队,衡量它好不好的标准,是这些团队用得爽不爽、是不是真的自助了、认知负荷有没有被它减轻。"
+  },
+  {
+   "type": "quote",
+   "original": "把平台当成一个产品来经营,它服务的对象,是内部那些靠它交付的团队。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "四种怎么配合:流式团队唱主角,其余三种搭台"
+  },
+  {
+   "type": "p",
+   "text": "四种类型凑到一起,画面就清楚了:**流式团队**站在最前面,直接把价值交到用户手里,唱主角;**平台团队**在下面铺好自助的地基,让它站得稳、跑得快;**复杂子系统团队**替它把最难啃的硬骨头封装好,让它不必样样精通;**赋能团队**则在旁边当教练,哪儿能力不够就来补一补、扫清障碍再退场。四者各司其职,却都朝着同一个目标使劲——**让价值快速地流动**。"
+  },
+  {
+   "type": "figure",
+   "ftype": "关系图",
+   "caption": "流式团队是主角,直接交付价值;其余三种在旁为它搭台",
+   "svg": "<svg viewBox=\"0 0 560 320\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"arC\" markerWidth=\"9\" markerHeight=\"9\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6 Z\" style=\"fill:var(--cinnabar-pure)\"/></marker><marker id=\"arG\" markerWidth=\"9\" markerHeight=\"9\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6 Z\" style=\"fill:var(--ink-soft)\"/></marker></defs><rect x=\"224\" y=\"18\" width=\"112\" height=\"34\" rx=\"4\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"280\" y=\"40\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">用户 · 价值到手</text><circle cx=\"280\" cy=\"150\" r=\"58\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">流式团队</text><text x=\"280\" y=\"167\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">端到端交付</text><path d=\"M280 92 L280 56\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\" marker-end=\"url(#arC)\"/><text x=\"330\" y=\"78\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">价值流出</text><rect x=\"22\" y=\"256\" width=\"152\" height=\"50\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"98\" y=\"278\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">平台团队</text><text x=\"98\" y=\"296\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">自助地基</text><rect x=\"204\" y=\"256\" width=\"152\" height=\"50\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"280\" y=\"278\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">复杂子系统团队</text><text x=\"280\" y=\"296\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">封装难点</text><rect x=\"386\" y=\"256\" width=\"152\" height=\"50\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"462\" y=\"278\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">赋能团队</text><text x=\"462\" y=\"296\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">教练补能力</text><path d=\"M108 256 L236 196\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1\" marker-end=\"url(#arG)\"/><path d=\"M280 256 L280 210\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1\" marker-end=\"url(#arG)\"/><path d=\"M452 256 L324 196\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1\" marker-end=\"url(#arG)\"/></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "为什么「少即是多」"
+  },
+  {
+   "type": "p",
+   "text": "你可能会问:把团队硬塞进四个格子,会不会太简化、太死板?作者的回答是——**正因为简单,才管用**。团队类型一旦收敛成四种,每个团队都能一句话说清自己是谁:「我是流式团队,负责端到端交付这条业务」「我是平台团队,给大家提供自助工具」。角色一清楚,那两个最耗人的问题——「**这活儿到底归谁**」「**为什么又卡在这儿了**」——就少了一大半。"
+  },
+  {
+   "type": "p",
+   "text": "这就是「少即是多」的道理:不是团队越多、分工越细就越高效,恰恰相反,**名目太多会制造出无穷的边界摩擦**。把繁杂收敛成四种清晰的角色,反而让每个团队都知道自己该干什么、该怎么跟别人配合。这也暗合本书的底色——所有这些框架和分类,都不是为了好看,而是为了一件事:**让价值流得更顺**。框架是为流动服务的,不该反过来让团队去伺候框架。"
+  },
+  {
+   "type": "figure",
+   "ftype": "金句卡",
+   "caption": "本章金句",
+   "svg": "<svg viewBox=\"0 0 560 230\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"20\" y=\"20\" width=\"520\" height=\"190\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><line x1=\"20\" y1=\"64\" x2=\"540\" y2=\"64\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1\"/><text x=\"280\" y=\"47\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\" letter-spacing=\"4\">四 种 团 队</text><text x=\"280\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\">流式团队是主角,直接交付价值</text><text x=\"280\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\">其余三种各司其职,只为让它流得更顺</text><text x=\"280\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">——《团队拓扑》第4章</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "落地:这一章能带走什么"
+  },
+  {
+   "type": "p",
+   "text": "把这一章收一收,给三面可以照自己团队的镜子——不是行动指令,只是几个可以拿来自问的角度。"
+  },
+  {
+   "type": "p",
+   "text": "**第一,数数你身边的团队,有几个是真正「端到端对齐一条价值流」的?** 如果一件面向用户的事,要横跨五六个组才落得了地,却没有任何一个团队从头负责到尾,那大概率不是人不行,而是团队的「种类」没设计好。流式团队太少、支持型团队太杂,常是很多组织交付慢的病根。"
+  },
+  {
+   "type": "p",
+   "text": "**第二,分清「教练」和「关卡」。** 那些帮你补能力的角色——架构、平台、安全——它究竟是来帮你学会、让你更自主,还是变成了你每次都得排队审批的守门人?前者是赋能团队、平台团队该有的样子,后者往往正是价值卡顿的地方。平台也好、赋能也好,是来**服务**流式团队的,不是来卡它的。"
+  },
+  {
+   "type": "p",
+   "text": "**第三,记住主次:流式团队是主角,其余三种都是配角,存在的意义是让主角演得更好。** 任何时候纠结「这个团队要不要设、要设成什么样」,都可以回到那一问——**它到底有没有让价值流得更顺?** 如果一个支持型团队非但没帮流式团队减负,反而给它添了新的等待和审批,那它的存在方式,可能就需要重新想一想了。"
+  }
+ ]
+}

@@ -1,0 +1,107 @@
+{
+ "title": "认知负荷:别让团队超载",
+ "subtitle": "一个团队能装进脑子里、能有效处理的复杂度是有限的;超载会拖慢交付、堆积 bug、耗尽人;解法不是加人加班,而是把范围收窄到「团队规模的软件」,并用平台消除无谓的外在负荷。",
+ "centralIdea": "这一章讲《团队拓扑》全书最重要的一把尺子——认知负荷(cognitive load)。核心洞见只有一句:一个团队能装进脑子里、能真正处理好的复杂度,是有限的。它要理解的业务领域、要掌握的技术栈、要维护的系统数量、要记住的上下文,全部加起来,就是这个团队的认知负荷;一旦被塞进太多、太杂、太难的东西,团队就认知过载,表现为交付变慢、bug 增多、没人说得清系统全貌、天天救火、成员疲惫倦怠、优秀的人离职。作者提醒:很多「这个团队怎么这么慢、这么容易出错」的问题,根子不在人不努力,而在认知超载。而常见的错误反应——再招几个人、让大家加加班——治标不治本:当范围本身超出了容量,加人只会让沟通更复杂,加班只会加速倦怠。正解是反过来做:限制团队负责的范围,让复杂度匹配它的认知容量,把每个团队负责的软件收窄到它「装得下」的大小——书中称之为团队规模的软件(team-sized software)。作者还借认知科学把负荷分成三类:内在的(领域固有难度)、外在的(糟糕工具、混乱流程带来的、本可消除的额外负担)、相关的(真正有价值的思考);策略是靠平台与自动化尽量消除外在负荷,把宝贵容量留给有价值的工作。最终,认知负荷成了判断团队边界划得对不对的核心标尺:一个团队总在超载,说明边界划得太大太杂,该拆分、或引入平台团队/赋能团队来卸载。这也正是平台团队为何重要——它替流式团队卸掉大量外在负荷,让它们专注业务。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "我们评价一个团队,习惯盯着人:是不是不够拼、能力是不是不行、要不要换个负责人。《团队拓扑》第 3 章却把镜头转向一个更基础、也更常被忽略的东西——**一个团队的脑子,到底装得下多少复杂度**。它给这个「装得下的量」起了个名字:**认知负荷**(cognitive load)。抓住它,你会发现很多「这个团队怎么这么慢、这么容易出错」的老大难,根子根本不在人。"
+  },
+  {
+   "type": "h2",
+   "text": "先问一句:一个团队的脑子,装得下多少?"
+  },
+  {
+   "type": "p",
+   "text": "所谓认知负荷,就是一个团队为了干好活,**必须同时装在脑子里、并有效处理的全部东西**。它至少包括:要理解的业务领域、要掌握的技术栈、要维护的系统数量、要记住的上下文——谁调谁、哪段代码碰不得、上次那个诡异故障是怎么回事。把这些全部加起来,就是这个团队当下背着的认知负荷。"
+  },
+  {
+   "type": "p",
+   "text": "关键在两个字:**有限**。这不是说团队里的人笨,而是任何一群人——哪怕再聪明——能真正吃透、掌控、并有余力照看好的复杂度,天生有个上限。就像一个人能同时抛接的球是有数的,再加一个,不是抛得更累,而是**全部掉地上**。认知负荷不是软性的「感觉有点忙」,它是一个实打实的、会被撑爆的容量。"
+  },
+  {
+   "type": "figure",
+   "ftype": "金句卡",
+   "caption": "这一章的一句话:团队装得下的复杂度,是有限的",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"16\" y=\"16\" width=\"528\" height=\"268\" rx=\"14\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"30\" y=\"30\" width=\"42\" height=\"42\" rx=\"6\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><text x=\"51\" y=\"58\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"20\">观</text><text x=\"280\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"25\">一个团队装得下的复杂度</text><text x=\"280\" y=\"166\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"25\">是有限的</text><line x1=\"205\" y1=\"192\" x2=\"355\" y2=\"192\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><text x=\"280\" y=\"228\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">超出这条线,团队就开始变慢、出错、耗竭</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "认知超载:很多「慢」和「错」的真正根子"
+  },
+  {
+   "type": "p",
+   "text": "当一个团队被塞进**太多、太杂、太难**的东西——同时负责十几个服务、横跨好几个互不相关的领域、还要精通一大堆技术栈——它就**认知过载**了。超载不会挂个牌子告诉你,它是从一堆症状里渗出来的:交付越来越慢、bug 越来越多、没有一个人能说清系统的全貌、故障一个接一个只能疲于救火、成员长期紧绷到疲惫倦怠,最后**最优秀的那几个人先走**。"
+  },
+  {
+   "type": "p",
+   "text": "作者要我们做一次视角的翻转:遇到一个又慢又容易出错的团队,先别急着问「这帮人怎么回事」,而要问「**是不是我们让它背得太多了**」。同样一群人,范围合适时能又快又稳,范围失控时就步履维艰——**变量往往不是努力程度,而是认知负荷**。把「人的问题」误判成真问题,你会一直在错的方向上使劲。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "caption": "范围决定认知负荷:太大太杂则慢/错/倦怠,匹配容量则深入/快/稳",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">范围决定认知负荷:超载 vs 匹配</text><line x1=\"280\" y1=\"46\" x2=\"280\" y2=\"286\" style=\"stroke:var(--line)\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/><text x=\"140\" y=\"68\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">认知超载</text><rect x=\"28\" y=\"82\" width=\"224\" height=\"98\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><text x=\"140\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">十几个服务</text><text x=\"140\" y=\"134\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">好几个不相关领域</text><text x=\"140\" y=\"158\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">一大堆技术栈</text><text x=\"140\" y=\"206\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">交付变慢 · bug 增多</text><text x=\"140\" y=\"228\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">救火不断 · 疲惫倦怠</text><text x=\"140\" y=\"250\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">没人说清全貌 · 人才流失</text><text x=\"420\" y=\"68\" text-anchor=\"middle\" style=\"fill:var(--confucian)\" font-size=\"15\">范围匹配</text><rect x=\"308\" y=\"82\" width=\"224\" height=\"98\" rx=\"8\" style=\"fill:none;stroke:var(--confucian)\" stroke-width=\"1.5\"/><text x=\"420\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">团队规模的软件</text><text x=\"420\" y=\"134\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">一个聚焦的领域</text><text x=\"420\" y=\"158\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">掌控得住的技术栈</text><text x=\"420\" y=\"212\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">深入 · 快 · 稳</text><text x=\"420\" y=\"236\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">团队有余力把它做好</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "别用「加人、加班」去硬扛"
+  },
+  {
+   "type": "p",
+   "text": "认知超载时,最本能的两个反应是:**「再招几个人」和「让大家加加班顶一顶」**。这两招之所以诱人,是因为它们看起来在「增加产能」。但如果**团队负责的范围本身就超出了认知容量**,这两招都只会让事情更糟。"
+  },
+  {
+   "type": "p",
+   "text": "加人,并不会自动把复杂度分掉。新人要花很久才能把那一大摊领域和系统装进脑子,在此之前他反而是净负担;而团队一大,内部要同步的上下文、要拉通的沟通线呈指数上升,**沟通开销吃掉了新增的人力**。加班就更直接——它不缩小要装进脑子的东西,只是让同一批已经过载的脑子转得更久,**加速的是倦怠,不是交付**。两者都是止痛片,治标不治本:病灶是范围,你却在给产能加码。"
+  },
+  {
+   "type": "h2",
+   "text": "正解:让复杂度匹配容量——team-sized software"
+  },
+  {
+   "type": "p",
+   "text": "既然病根是「范围超出了容量」,解法就自然浮现:**不是把容量往上硬撑,而是把范围往下收**。作者给出的原则叫**团队规模的软件**(team-sized software)——把每个团队负责的那块软件,收窄到它真正**装得下**的大小。"
+  },
+  {
+   "type": "p",
+   "text": "具体说,一个团队应当**只负责它能真正理解、掌控、并有余力做好的那一块**,而不是「反正人手在这儿,多塞几个服务进来」。范围合适,团队才谈得上深入:能把领域吃透、能对系统了如指掌、能从容地重构和演进,而不是永远在半懂不懂中救火。**范围收窄不是野心变小,而是把有限的脑力对准该对准的地方**,于是交付反而更快、更稳。这也把「团队该多大、该管多少」从拍脑袋的问题,变成了一个有标尺可依的判断。"
+  },
+  {
+   "type": "h2",
+   "text": "三类认知负荷:该省的是哪一种"
+  },
+  {
+   "type": "p",
+   "text": "但「收窄范围」不等于「什么都少做」。作者借认知科学(Sweller 的认知负荷理论)把负荷拆成三类,好让我们知道**该省哪一种、该留哪一种**。**内在的**(intrinsic):领域本身固有的难度,比如支付、风控天生就复杂——这部分省不掉,是活儿本身。**外在的**(extraneous):环境强加的、本可消除的额外负担——糟糕的部署流程、混乱的环境配置、每次上线都要手工折腾的一堆步骤。**相关的**(germane):真正有价值、值得投入的思考,比如打磨领域模型、设计更好的架构。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "三类认知负荷:内在保留、外在消除、相关投入——把容量腾给有价值的工作",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">三类认知负荷:该省哪一种</text><rect x=\"150\" y=\"66\" width=\"300\" height=\"34\" rx=\"6\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"70\" y=\"88\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">内在</text><text x=\"300\" y=\"88\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">领域本身固有的难度</text><text x=\"492\" y=\"88\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">保留</text><rect x=\"150\" y=\"124\" width=\"300\" height=\"34\" rx=\"6\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><text x=\"70\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">外在</text><text x=\"300\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">糟糕工具、混乱流程、繁琐部署</text><text x=\"492\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">消除</text><rect x=\"150\" y=\"182\" width=\"300\" height=\"34\" rx=\"6\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"70\" y=\"204\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">相关</text><text x=\"300\" y=\"204\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">真正有价值、值得投入的思考</text><text x=\"492\" y=\"204\" text-anchor=\"middle\" style=\"fill:var(--confucian)\" font-size=\"12\">投入</text><text x=\"280\" y=\"252\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">尽量消除「外在」的无谓负担,把容量腾给「相关」的有价值工作</text><text x=\"280\" y=\"276\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"11\">靠平台、工具与自动化替团队卸下外在负荷</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "策略于是清清楚楚:**内在的接受它,相关的多投入,外在的往死里消除**。因为外在负荷纯属浪费——团队本可以把这份脑力用在业务和设计上,却被消耗在跟工具、流程、环境的搏斗里。而消除外在负荷最有力的手段,就是**平台、工具与自动化**:一套顺滑的自助式部署、一个开箱即用的环境,能替团队卸下一大摞「本不该由人操心」的杂事,把宝贵的认知容量还给真正重要的工作。"
+  },
+  {
+   "type": "h2",
+   "text": "认知负荷:一把量团队边界的尺子"
+  },
+  {
+   "type": "p",
+   "text": "讲到这里,认知负荷的真正身份才浮出水面——它是全书用来判断「**团队的边界划得对不对**」的核心标尺。判断一个团队的范围合不合理,不必靠感觉,只要看它是不是长期在超载:**如果一个团队总在超载,那几乎可以断定,它的边界划得太大、太杂了**。这时该做的,是**拆分**这个团队的职责,或者**引入平台团队、赋能团队把一部分负荷卸走**,而不是继续往里塞人、塞需求。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "认知负荷是量团队边界的尺子:越过容量线,就该拆分或引入平台团队卸载",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">认知负荷:一把量团队边界的尺子</text><line x1=\"360\" y1=\"104\" x2=\"360\" y2=\"162\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><text x=\"360\" y=\"98\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">认知容量上限</text><rect x=\"60\" y=\"120\" width=\"300\" height=\"26\" rx=\"4\" style=\"fill:var(--cinnabar-bg)\" stroke=\"none\"/><rect x=\"360\" y=\"120\" width=\"140\" height=\"26\" style=\"fill:var(--cinnabar-bg)\" stroke=\"none\" opacity=\"0.55\"/><rect x=\"60\" y=\"120\" width=\"440\" height=\"26\" rx=\"4\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><text x=\"205\" y=\"138\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">团队负责的范围</text><text x=\"432\" y=\"138\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">超载</text><text x=\"280\" y=\"196\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">范围越过容量线 → 边界划得太大太杂</text><text x=\"280\" y=\"228\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">办法:① 拆分范围　② 引入平台团队 / 赋能团队卸载</text><text x=\"280\" y=\"262\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"11\">团队总在超载,不是人不努力,而是边界的信号灯亮了</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "这把尺子,也顺势解释了后面几章的两件大事。其一,**为什么需要平台团队**:它通过提供自助式的工具与服务,系统性地替业务团队(流式团队)卸掉大量**外在认知负荷**,让人人不必都精通底层运维,从而心无旁骛地专注业务(第 6 章会细讲)。其二,它为下一章的**四种团队类型**铺好了地基——当你学会用认知负荷去量边界,团队该怎么切、彼此该怎么配合,就有了一条贯穿全书的准绳。记住这一章的底色就够了:**团队慢、团队错,先查的不是人,而是它背上的认知负荷。**"
+  }
+ ]
+}

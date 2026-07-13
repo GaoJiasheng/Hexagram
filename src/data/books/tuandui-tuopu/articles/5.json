@@ -1,0 +1,148 @@
+{
+ "title": "流式团队:价值流的主角",
+ "subtitle": "斯凯尔顿等说,四种团队类型里,流式团队(stream-aligned team)是当之无愧的主角——组织里大多数人都应在流式团队里,其余三类都是为支撑它而存在。它对齐一条业务价值流,端到端且尽量自主地把一块价值快速、可持续地交付给用户;因此要围绕「价值流」而非「技术分层」来划团队,把交接与依赖降到最低。",
+ "centralIdea": "这一章讲团队拓扑四种团队类型里的主角——流式团队(stream-aligned team)。①流式团队是主角:四种类型里它数量最多、最重要,组织里大多数人都应在流式团队里,其余三类都是为支撑它而存在,理解好它就抓住了团队拓扑的核心。②「对齐一条价值流」是什么:一条「流(stream)」指一条持续交付价值的工作流(围绕某类用户、某个产品或某块业务功能),流式团队就是端到端对齐并负责这样一条流的团队——从想法、开发、测试、部署到运维,尽可能独立、不必层层依赖别人地把这块价值持续交付给用户。③端到端负责与自主:理想的流式团队能自己搞定一块功能的全流程(而非开发丢测试、测试丢运维的接力赛),拥有交付所需的技能与授权,减少对别的团队的等待与依赖——依赖越少,流动越快;这也是要有平台团队(自助地基)、复杂子系统团队(封装难点)来支撑它、卸掉不必要认知负荷的原因,好让它专注快速交付业务价值。④快速、可持续地流动:目标是让价值又快又稳地流到用户手里——快速交付、快速反馈、快速改进,且节奏长期可持续(不靠加班透支);为此需合适的认知负荷(第3章)、稳定团队(第2章)与清晰边界。⑤清晰的边界与「团队 API」:应有明确的领域边界(负责哪块、不负责哪块)与清晰的团队 API(别人如何与它协作、它交付什么),避免职责重叠与扯皮。⑥围绕「价值流」而非「技术分层」划团队:传统按技术分层(前端/后端/DBA/运维)切,一个功能要串起好几个团队、层层交接、慢且易错;团队拓扑主张围绕价值流切,让一个团队端到端拥有一块面向用户的价值,把交接与依赖降到最低,从「接力赛」变成「一支队伍跑完全程」。分寸:讲流式团队的定位与围绕价值流划团队,强调自主、减少依赖、可持续,并与前几章相扣。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "《团队拓扑》讲了康威定律(第1章)、以团队为本(第2章)、认知负荷(第3章),又把全公司的团队收敛成四种基本类型(第4章)。这一章,作者请出了这四种里的主角——**流式团队(stream-aligned team)**。它数量最多、也最重要;一个健康的组织里,大多数人都应该待在流式团队里,其余三种团队,归根到底都是为了支撑它。**把流式团队理解透了,团队拓扑的核心也就抓住了。**"
+  },
+  {
+   "type": "h2",
+   "text": "先说清「流」是什么"
+  },
+  {
+   "type": "p",
+   "text": "「流式团队」的英文是 stream-aligned team,直译是「对齐一条流的团队」。要懂它,得先懂这个「流(stream)」。这里的流,不是水流,而是**一条持续不断地向用户交付价值的工作流**——它可能围绕某一类用户、某一个产品,或某一块业务功能。比如「负责会员订阅这块业务」「负责手机 App 的下单体验」「负责商家后台的对账功能」,每一个,都是一条从想法出发、最终流到用户手里的价值流。"
+  },
+  {
+   "type": "p",
+   "text": "所谓「对齐一条价值流(stream-aligned)」,意思就是:让一个团队,**端到端**地对这样一条流负起责来——从最初的想法,到开发、测试、部署,一直到上线之后的运维,统统归它管。它不是只写代码的一群人,而是**完整地拥有「把这块价值持续送到用户面前」这件事**的一支队伍。所以流式团队的名字里没有任何技术词——不是「前端团队」也不是「数据库团队」,而是照着它负责的那条业务价值流来命名的。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "流式团队:一个团队端到端负责一条价值流,快速可持续地把价值送到用户手里",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"f1a\" markerWidth=\"10\" markerHeight=\"10\" refX=\"7\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L7 3 L0 6\" style=\"fill:var(--cinnabar-pure)\"/></marker></defs><text x=\"280\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">流式团队:一个团队,端到端负责一条价值流</text><text x=\"234\" y=\"96\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12.5\">同一个流式团队 · 端到端全程负责</text><rect x=\"8\" y=\"104\" width=\"452\" height=\"92\" rx=\"12\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\"/><rect x=\"16\" y=\"120\" width=\"76\" height=\"60\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"54\" y=\"155\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">想法</text><rect x=\"104\" y=\"120\" width=\"76\" height=\"60\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"142\" y=\"155\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">开发</text><rect x=\"192\" y=\"120\" width=\"76\" height=\"60\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"230\" y=\"155\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">测试</text><rect x=\"280\" y=\"120\" width=\"76\" height=\"60\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"318\" y=\"155\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">部署</text><rect x=\"368\" y=\"120\" width=\"76\" height=\"60\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"406\" y=\"155\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">运维</text><path d=\"M92 150 L104 150\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\" marker-end=\"url(#f1a)\" fill=\"none\"/><path d=\"M180 150 L192 150\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\" marker-end=\"url(#f1a)\" fill=\"none\"/><path d=\"M268 150 L280 150\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\" marker-end=\"url(#f1a)\" fill=\"none\"/><path d=\"M356 150 L368 150\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\" marker-end=\"url(#f1a)\" fill=\"none\"/><path d=\"M444 150 L472 150\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"2\" marker-end=\"url(#f1a)\" fill=\"none\"/><rect x=\"476\" y=\"120\" width=\"78\" height=\"60\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"515\" y=\"148\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">用户</text><text x=\"515\" y=\"167\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10.5\">价值送达</text><text x=\"280\" y=\"228\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">快速 · 可持续 地把这块价值持续送到用户手里</text><text x=\"280\" y=\"256\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">不必层层交接给别的团队 —— 一支队伍跑完全程</text></svg>"
+  },
+  {
+   "type": "quote",
+   "original": "流式团队,就是端到端对齐一条价值流的团队——从想法、开发、测试到部署、运维,尽可能独立地把一块价值持续交付给用户。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "端到端负责,尽量自主"
+  },
+  {
+   "type": "p",
+   "text": "理想的流式团队,能**自己把一块功能的全流程搞定**,而不必事事去求别的团队。这和很多组织里习以为常的做法正相反:那里的活儿像一场接力赛——开发写完,把需求丢给测试;测试测完,再把包丢给运维;中间但凡卡住,就得排队等另一个团队有空。每一次交接,都是一次等待、一次信息损耗、一次「这不归我管」的推诿空间。"
+  },
+  {
+   "type": "p",
+   "text": "流式团队想打破的,正是这条接力链。它拥有交付一块价值所需要的技能与授权,尽量把「要等别人、要依赖别人」的环节压到最低。**依赖越少,价值流动得越快。** 一个团队若什么都得看别人脸色、层层审批、处处排队,再能干也快不起来;反过来,一个能独立跑完全程的团队,才谈得上对最终结果真正负责——因为没有别人可以替它背锅,也没有别人挡在它和用户之间。"
+  },
+  {
+   "type": "p",
+   "text": "当然,「尽量自主」不等于「什么都自己造」。真要让流式团队连最底层的地基都亲手搭、连最高深的难点都亲自啃,它的脑子(认知负荷,第3章)立刻就会超载。所以团队拓扑才安排了另外几种团队来托底:**平台团队**提供自助式的地基,**复杂子系统团队**替它封装最难啃的硬骨头。它们存在的意义,就是**替流式团队卸下不必要的认知负荷,让它腾出脑力,专注于快速交付业务价值。**"
+  },
+  {
+   "type": "quote",
+   "original": "让流式团队尽量自主、少依赖地端到端交付;依赖越少,价值流动得越快。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "围绕「价值流」划团队,而非「技术分层」"
+  },
+  {
+   "type": "p",
+   "text": "这一章最要紧的一句话是:**该围绕「价值流」来切分团队,而不是围绕「技术分层」。** 传统上,很多公司是按技术把人分组的——前端组、后端组、数据库(DBA)组、运维组,各管一层。听上去分工明确、专业对口,可一旦要做一个面向用户的功能,麻烦就来了:它得从前端组排到后端组,再排到 DBA 组,最后交给运维组,一路层层交接。"
+  },
+  {
+   "type": "p",
+   "text": "结果就是那场熟悉的接力赛:一个不大的功能,要串起四五个团队,谁都只对自己那一段负责,谁都不对「用户最终有没有用上」负责。交接越多,等待越久、误会越深、出错越容易,还留下大片「三不管」的缝隙。团队拓扑主张换一种切法:**让一个团队端到端地拥有一块面向用户的价值**,把前端、后端、数据、运维需要的能力尽量装进同一支队伍里,把交接和依赖降到最低。这是从「接力赛」到「一支队伍跑完全程」的根本转变。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比",
+   "caption": "按技术分层切团队(接力赛·层层交接) vs 围绕价值流切团队(一支队伍端到端跑完)",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"f2d\" markerWidth=\"10\" markerHeight=\"10\" refX=\"5\" refY=\"7\" orient=\"auto\"><path d=\"M0 0 L5 7 L10 0\" style=\"fill:var(--ink-soft)\"/></marker></defs><line x1=\"280\" y1=\"40\" x2=\"280\" y2=\"256\" style=\"stroke:var(--line)\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/><text x=\"140\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">按技术分层切团队</text><text x=\"140\" y=\"48\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">接力赛 · 层层交接</text><rect x=\"64\" y=\"62\" width=\"152\" height=\"30\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"140\" y=\"82\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">前端组</text><path d=\"M140 92 L140 104\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.6\" marker-end=\"url(#f2d)\" fill=\"none\"/><rect x=\"64\" y=\"104\" width=\"152\" height=\"30\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"140\" y=\"124\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">后端组</text><path d=\"M140 134 L140 146\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.6\" marker-end=\"url(#f2d)\" fill=\"none\"/><rect x=\"64\" y=\"146\" width=\"152\" height=\"30\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"140\" y=\"166\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">DBA 组</text><path d=\"M140 176 L140 188\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.6\" marker-end=\"url(#f2d)\" fill=\"none\"/><rect x=\"64\" y=\"188\" width=\"152\" height=\"30\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"140\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">运维组</text><text x=\"140\" y=\"244\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">一个功能串起 4 个团队 · 慢 · 易错 · 三不管</text><text x=\"420\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"16\">围绕价值流切团队</text><text x=\"420\" y=\"48\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">一支队伍 · 端到端跑完</text><rect x=\"308\" y=\"62\" width=\"224\" height=\"146\" rx=\"12\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.7\"/><text x=\"420\" y=\"86\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\">一个流式团队</text><rect x=\"316\" y=\"100\" width=\"98\" height=\"30\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"365\" y=\"120\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">前端</text><rect x=\"418\" y=\"100\" width=\"98\" height=\"30\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"467\" y=\"120\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">后端</text><rect x=\"316\" y=\"140\" width=\"98\" height=\"30\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"365\" y=\"160\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">数据</text><rect x=\"418\" y=\"140\" width=\"98\" height=\"30\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"467\" y=\"160\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">运维</text><text x=\"420\" y=\"194\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">技能一体 · 端到端拥有一块价值</text><text x=\"420\" y=\"244\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"11.5\">端到端拥有一块面向用户的价值 · 交接最少</text><text x=\"280\" y=\"284\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12.5\">从「接力赛」到「一支队伍跑完全程」:围绕价值流,而非技术分层</text></svg>"
+  },
+  {
+   "type": "quote",
+   "original": "别按技术分层(前端/后端/DBA/运维)切团队,那会让一个功能串起好几个团队、层层交接;要围绕价值流切,让一个团队端到端跑完。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "又快,又能长久"
+  },
+  {
+   "type": "p",
+   "text": "流式团队的目标,可以浓缩成一句:**让价值又快又稳地流到用户手里。** 快,是指它能快速交付、快速拿到用户反馈、再快速改进,形成一个转得飞快的循环;稳,是指这个节奏得**长期可持续**——是靠合理的结构撑起来的,而不是靠加班和透支硬扛出来的。一个团队今天冲刺很猛、三个月后集体倦怠,那不叫流动顺畅,那叫竭泽而渔。"
+  },
+  {
+   "type": "p",
+   "text": "要做到「又快又可持续」,前几章的功夫全都用得上:它需要**合适的认知负荷**(第3章),背的东西不能超过脑子的容量;需要**稳定的团队**(第2章),长期磨合出来的默契不能被频繁重组打散;还需要**清晰的边界**,知道自己该管哪块、不该管哪块。快是结果,可持续是底线,而结构,才是让这两者同时成立的地基。这也是为什么团队拓扑不厌其烦地先讲团队、认知负荷,再讲流式团队——前面那些,全是为了让这条「流」能又快又长久地淌下去。"
+  },
+  {
+   "type": "quote",
+   "original": "流式团队要让价值快速、可持续地流动:快速交付、快速反馈、快速改进,而这节奏靠结构撑住,不靠加班透支。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "清晰的边界与「团队 API」"
+  },
+  {
+   "type": "p",
+   "text": "一个流式团队要跑得顺,还得有**清晰的边界**:它到底负责哪一块业务、哪一块又不归它管,必须划得明明白白。边界一模糊,几个团队的职责就会互相重叠——同一件事你也做我也做,或者你以为我做、我以为你做,扯皮和空档就都来了。清晰的领域边界,是流式团队能安心专注的前提。"
+  },
+  {
+   "type": "p",
+   "text": "光有边界还不够,作者借用了一个软件里的说法——**团队 API**。就像一个软件模块对外提供 API、别人照着接口来调用它,一个团队也该有清晰的「对外接口」:别人该怎么向它提需求、它对外交付什么、有哪些文档和约定。把这层「团队 API」说清楚,别的团队就知道该怎么和它打交道,不必每次都靠临时沟通、私下打招呼、拉群对齐。**清晰的边界,加上清晰的团队 API,是流式团队能安安稳稳跑起来、少扯皮的前提。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "清晰的边界 + 团队 API:别人如何与它协作、它交付什么、边界在哪都说清",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"f3a\" markerWidth=\"10\" markerHeight=\"10\" refX=\"7\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L7 3 L0 6\" style=\"fill:var(--cinnabar-pure)\"/></marker></defs><text x=\"280\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">清晰的边界 + 团队 API</text><rect x=\"200\" y=\"104\" width=\"160\" height=\"96\" rx=\"12\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.7\"/><text x=\"280\" y=\"136\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">流式团队</text><text x=\"280\" y=\"160\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">负责这一块价值流</text><text x=\"280\" y=\"180\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">领域边界:该管哪块</text><rect x=\"20\" y=\"126\" width=\"120\" height=\"56\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"80\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">其他团队</text><text x=\"80\" y=\"170\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">上游 · 协作方</text><path d=\"M140 154 L200 154\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\" marker-end=\"url(#f3a)\" fill=\"none\"/><text x=\"170\" y=\"142\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10.5\">① 怎么提需求</text><rect x=\"420\" y=\"126\" width=\"120\" height=\"56\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"480\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">其他团队</text><text x=\"480\" y=\"170\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">下游 · 取用方</text><path d=\"M360 154 L420 154\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\" marker-end=\"url(#f3a)\" fill=\"none\"/><text x=\"390\" y=\"142\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10.5\">② 交付什么</text><text x=\"280\" y=\"234\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">团队 API:别人如何与它协作 · 它交付什么 · 边界在哪</text><text x=\"280\" y=\"260\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">边界清 + 接口清 → 少重叠 · 少扯皮 · 少靠临时沟通</text></svg>"
+  },
+  {
+   "type": "quote",
+   "original": "流式团队要有清晰的领域边界和「团队 API」:别人如何与它协作、它交付什么都说清楚,才少职责重叠与扯皮。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "主角,以及为它服务的三类"
+  },
+  {
+   "type": "p",
+   "text": "回到开头那句话:流式团队是团队拓扑的**主角**。四种团队类型里,它数量最多、地位最中心;衡量一个组织好不好,很大程度就看**价值能不能顺畅地流过它的流式团队**。而另外三种团队——赋能团队、复杂子系统团队、平台团队——存在的全部意义,都是**为了让流式团队跑得更快、更省心**(下一章会细讲这三种)。它们像后勤与教练,替主角卸下不必要的认知负荷、扫清挡路的障碍。"
+  },
+  {
+   "type": "p",
+   "text": "这是一种视角的翻转。过去我们容易把平台、把中台、把专家团队看成组织的核心,把做业务的人当成「上层应用」;团队拓扑反过来说:**真正直面用户、持续交付价值的流式团队,才是主角,其余都是配角与后盾。** 配角的好坏,不看它自己多厉害,而看它有没有让主角更好地交付。想清楚了这一层主次,后面几章讲的赋能、平台、协作模式,才有了共同的落脚点——一切,都是为了这条价值之流淌得更顺。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "主角与后盾:平台 / 复杂子系统 / 赋能三类团队,为流式团队卸载认知负荷",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"f4a\" markerWidth=\"10\" markerHeight=\"10\" refX=\"7\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L7 3 L0 6\" style=\"fill:var(--cinnabar-pure)\"/></marker></defs><text x=\"280\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15.5\">主角与后盾:三类团队为流式团队卸载负荷</text><rect x=\"170\" y=\"52\" width=\"220\" height=\"64\" rx=\"12\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><text x=\"280\" y=\"80\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">流式团队(主角)</text><text x=\"280\" y=\"102\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">专注快速 · 可持续交付业务价值</text><path d=\"M100 188 L204 118\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\" marker-end=\"url(#f4a)\" fill=\"none\"/><path d=\"M280 188 L280 120\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\" marker-end=\"url(#f4a)\" fill=\"none\"/><path d=\"M460 188 L356 118\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\" marker-end=\"url(#f4a)\" fill=\"none\"/><rect x=\"214\" y=\"132\" width=\"132\" height=\"24\" rx=\"12\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.3\"/><text x=\"280\" y=\"149\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">卸下不必要的认知负荷</text><rect x=\"20\" y=\"188\" width=\"160\" height=\"78\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"100\" y=\"218\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">平台团队</text><text x=\"100\" y=\"242\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">提供自助式地基</text><rect x=\"200\" y=\"188\" width=\"160\" height=\"78\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"280\" y=\"218\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">复杂子系统团队</text><text x=\"280\" y=\"242\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">封装最难啃的难点</text><rect x=\"380\" y=\"188\" width=\"160\" height=\"78\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"460\" y=\"218\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">赋能团队</text><text x=\"460\" y=\"242\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">帮它补齐能力</text><text x=\"280\" y=\"288\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">其余三类都为让流式团队更快 · 更省心地交付而存在</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "收束:让价值顺畅地流过一支队伍"
+  },
+  {
+   "type": "p",
+   "text": "把这一章收拢成一句话:**流式团队,是对齐一条价值流、端到端且尽量自主地,把一块业务价值快速、可持续地交付给用户的团队。** 要用好它,记住两个关键动作:一是**围绕「价值流」而不是「技术分层」来划团队**,让一支队伍端到端跑完全程,把交接和依赖降到最低;二是给它清晰的边界与团队 API,再靠平台、复杂子系统、赋能这三类团队替它卸载负荷、扫清障碍。"
+  },
+  {
+   "type": "p",
+   "text": "说到底,团队拓扑的一切设计,都是为了一个朴素的目标:**让价值快速而可持续地流动。** 而流式团队,正是这条价值之流上的主角——把它扶好、让它跑顺,组织这台机器,才真正转得起来。下一章,我们就来看看那三类为主角托底的团队,各自是怎么干活的。"
+  }
+ ]
+}

@@ -1,0 +1,163 @@
+{
+ "title": "康威定律:组织决定架构",
+ "subtitle": "团队怎么分、怎么沟通,软件就长成什么样——《团队拓扑》第1章导读",
+ "centralIdea": "康威定律(Conway's Law)是1967年梅尔文·康威提出的一条观察:任何设计系统的组织,其产出的系统结构,必然复制该组织的沟通结构。通俗说——你的团队怎么划分、彼此怎么沟通,做出来的软件就会长成对应的形状:四个小组各自去做一个编译器,往往得到一个分成四段、接缝生硬的编译器;两个不怎么说话的团队负责的两个模块,接口常常别扭难对接。系统的接缝,长在组织的沟通断层上;软件架构,某种程度上就是组织沟通结构的一块化石——因为造系统的人只能沿着自己能沟通、能协调的边界去设计。这意味着组织结构绝非小事,它会在你没察觉时把架构往某个形状上拽:想要好架构却放任糟糕的团队结构,注定事与愿违。反过来,既然组织决定架构,就能主动利用它——先想清楚想要的架构长什么样,再倒推设计团队的划分与沟通方式,让组织自己长出好架构,这就是反向康威操作(Inverse Conway Maneuver)。正因组织与架构绑得这么死,如何设计团队便成了技术领导最重要的杠杆之一,这正是《团队拓扑》要系统回答的问题。分寸:团队设计是强大的杠杆,但不是唯一因素,改组织不等于万事大吉。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "你有没有留意过一件怪事:两个平时几乎不打交道的团队,做出来的两个模块,等到要对接的时候,接口往往别别扭扭、字段对不上;而同一个团队内部捣鼓出来的东西,零件之间却严丝合缝。这不是巧合,也不是谁能力差。早在1967年,一位叫梅尔文·康威的程序员就道破了背后的规律——**你的软件会长成什么形状,早在你写下第一行代码之前,就已经被你的组织悄悄决定了。** 这一章,是《团队拓扑》全书的地基:它要让你看见那只一直在拉扯架构、却看不见的手。"
+  },
+  {
+   "type": "h2",
+   "text": "先说清楚:这一章在讲什么"
+  },
+  {
+   "type": "p",
+   "text": "《团队拓扑》(Team Topologies)想解决一个老大难的问题:软件越做越大、团队越来越多,到底该怎么把人组织起来,才能让价值顺畅地流动,而不是处处卡壳、层层扯皮。全书给出的一整套答案,都建立在一块地基之上——**康威定律**。"
+  },
+  {
+   "type": "p",
+   "text": "所以第1章不急着教你团队该怎么分,而是先把这条定律讲透:**组织结构和系统架构,是一对甩不掉的双胞胎。** 这一点想明白了,后面几章讲的四种团队类型、三种协作模式,你才会知道——它们为什么非那么设计不可,而不是拍脑袋的花样。"
+  },
+  {
+   "type": "h2",
+   "text": "康威定律:一句1967年的老话"
+  },
+  {
+   "type": "p",
+   "text": "1967年,梅尔文·康威(Melvin Conway)提出了一个后来以他名字命名的观察。原话有点绕,但意思极其锋利——"
+  },
+  {
+   "type": "quote",
+   "original": "任何设计系统的组织,其产出的系统结构,必然复制该组织的沟通结构。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "翻成大白话,就一句:**你的团队怎么划分、彼此怎么沟通,你做出来的软件就会长成对应的形状。** 三个团队,常常就做出三大块;两个团队之间隔着一堵墙、平时不怎么说话,那两块代码之间,多半也会横着一道别扭的接缝。说白了:**系统的骨架,是照着组织的骨架浇出来的。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "康威定律:组织的沟通结构(团队怎么分、怎么沟通)会一一映射成系统的架构(软件长成什么样)。",
+   "svg": "<svg viewBox=\"0 0 560 330\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">康威定律:系统结构复制组织的沟通结构</text><text x=\"118\" y=\"64\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\">组织的沟通结构</text><text x=\"118\" y=\"83\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">团队怎么分、怎么沟通</text><text x=\"442\" y=\"64\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\">系统的架构</text><text x=\"442\" y=\"83\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">软件长成什么样</text><rect x=\"44\" y=\"104\" width=\"148\" height=\"42\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"118\" y=\"131\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">团队 A</text><rect x=\"44\" y=\"162\" width=\"148\" height=\"42\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"118\" y=\"189\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">团队 B</text><rect x=\"44\" y=\"220\" width=\"148\" height=\"42\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"118\" y=\"247\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">团队 C</text><rect x=\"368\" y=\"104\" width=\"148\" height=\"42\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"442\" y=\"131\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">模块 A</text><rect x=\"368\" y=\"162\" width=\"148\" height=\"42\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"442\" y=\"189\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">模块 B</text><rect x=\"368\" y=\"220\" width=\"148\" height=\"42\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"442\" y=\"247\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">模块 C</text><path d=\"M196 125 L356 125\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><path d=\"M356 125 L346 120 L346 130 Z\" style=\"fill:var(--cinnabar-pure)\"/><path d=\"M196 183 L356 183\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><path d=\"M356 183 L346 178 L346 188 Z\" style=\"fill:var(--cinnabar-pure)\"/><path d=\"M196 241 L356 241\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><path d=\"M356 241 L346 236 L346 246 Z\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"280\" y=\"302\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">组织的形状,一一映射成系统的形状</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "一个直观的例子:四个小组,四段编译器"
+  },
+  {
+   "type": "p",
+   "text": "康威自己举过一个经典的例子。假设你派**四个小组**,各自独立地去做一个编译器,最后你多半会得到一个**分成四段、接缝生硬**的编译器——每个小组把自己那一段做得都还不错,可段与段之间的衔接,却处处透着别扭。为什么?因为四个小组各管一摊、彼此沟通有限,他们之间那道「不怎么说话」的缝,就原封不动地长进了产品里。"
+  },
+  {
+   "type": "p",
+   "text": "再换个你也见过的场景:两个平时几乎不打交道的团队,分别负责两个模块,等到要对接的时候,接口往往别别扭扭——字段对不上、假设不一致、谁也没顺着谁的路子来。这不是谁的水平差,而是**系统的「接缝」,恰恰长在组织的「沟通断层」处。** 组织里哪儿有一道沟通的裂缝,产品里就容易对应地裂开一道缝。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "四个小组各做一段,拼出来的编译器,接缝处(朱线)处处生硬——组织的沟通断层,复制成了产品的接缝。",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">四个小组,做出一个四段的编译器</text><circle cx=\"112\" cy=\"88\" r=\"26\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"112\" y=\"93\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">小组一</text><circle cx=\"224\" cy=\"88\" r=\"26\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"224\" y=\"93\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">小组二</text><circle cx=\"336\" cy=\"88\" r=\"26\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"336\" y=\"93\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">小组三</text><circle cx=\"448\" cy=\"88\" r=\"26\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"448\" y=\"93\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">小组四</text><path d=\"M112 114 L112 170\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.4\"/><path d=\"M112 172 L107 162 L117 162 Z\" style=\"fill:var(--ink-soft)\"/><path d=\"M224 114 L224 170\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.4\"/><path d=\"M224 172 L219 162 L229 162 Z\" style=\"fill:var(--ink-soft)\"/><path d=\"M336 114 L336 170\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.4\"/><path d=\"M336 172 L331 162 L341 162 Z\" style=\"fill:var(--ink-soft)\"/><path d=\"M448 114 L448 170\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.4\"/><path d=\"M448 172 L443 162 L453 162 Z\" style=\"fill:var(--ink-soft)\"/><rect x=\"56\" y=\"176\" width=\"448\" height=\"54\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><path d=\"M168 176 L159 189 L177 203 L159 216 L168 230\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><path d=\"M280 176 L271 189 L289 203 L271 216 L280 230\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><path d=\"M392 176 L383 189 L401 203 L383 216 L392 230\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><text x=\"112\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">段一</text><text x=\"224\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">段二</text><text x=\"336\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">段三</text><text x=\"448\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">段四</text><text x=\"280\" y=\"268\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">每段各自还行,段与段的接缝却生硬难对接</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "为什么会这样:人只能沿着能沟通的边界去设计"
+  },
+  {
+   "type": "p",
+   "text": "康威定律听起来像玄学,其实道理很朴素:**造系统的人,只能沿着自己能沟通、能协调的边界去设计。** 同一个团队内部,大家天天碰头、随口就能对齐,于是能做出咬合紧密、互相配合的模块;可一旦跨到另一个团队,沟通就有了成本、有了隔阂、有了信息落差,模块与模块之间,自然就长出边界和摩擦。你能协作到哪儿,系统就紧密到哪儿;协作断在哪儿,系统就裂在哪儿。"
+  },
+  {
+   "type": "quote",
+   "original": "系统的接缝,长在组织的沟通断层上;软件架构,是组织沟通结构的一块化石。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "所以有个说法很传神:**软件架构,某种程度上就是组织沟通结构的一块「化石」。** 你把一份代码的模块边界摊开看,几乎能反推出来:当初是几个团队做的、谁和谁常聊、谁和谁老死不相往来。组织当年的沟通地图长什么样,架构就把它悄悄地、固执地保存了下来——哪怕人早换了、组织早改了,那道化石般的接缝还在。"
+  },
+  {
+   "type": "h2",
+   "text": "所以,组织结构不是小事:它悄悄把架构往某个形状上拽"
+  },
+  {
+   "type": "p",
+   "text": "这就带出一个很多人会想反的结论。常见的思路是:**「先把架构设计好,团队随便怎么安排都行。」** 在这种想法里,架构是技术活,组织是人事活,两码事。康威定律说:反了。**你的团队怎么分、怎么沟通,会在你毫无察觉的情况下,把架构往某个形状上拽。** 你在白板上画的那张漂亮架构图是一回事,组织这只看不见的手最终「拉扯」出来的架构,又是另一回事——而往往,是后者赢。"
+  },
+  {
+   "type": "quote",
+   "original": "别再把组织结构当成架构的背景板——它不是背景,它是塑造架构的那只手。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "于是,一个常见的悲剧就发生了:团队嘴上想要一套清爽、松耦合的架构,却放任一个臃肿、纠缠、部门墙林立的组织结构不去管它。结果注定事与愿违——因为**糟糕的组织结构,会源源不断地「生产」出糟糕的架构**,你在代码层面怎么重构,都拧不过组织层面的这股拉力。想要好架构,却对团队结构听之任之,等于逆着重力往上倒水。"
+  },
+  {
+   "type": "h2",
+   "text": "反向康威操作:反过来利用这条定律"
+  },
+  {
+   "type": "p",
+   "text": "既然「组织决定架构」这件事躲不掉,聪明的做法就不是抱怨它,而是**反过来利用它**——这就是书中一个关键招式:**反向康威操作(Inverse Conway Maneuver)。** 它的思路特别巧:既然「组织的形状,会长出对应的架构」,那我干脆**倒着来**——不从架构下手,先从组织下手。"
+  },
+  {
+   "type": "p",
+   "text": "具体分三步。**第一步,先想清楚你「想要」的架构长什么样**——比如若干个松耦合、能各自独立开发和部署、互不掣肘的模块。**第二步,照着这个目标架构,去设计团队的划分、边界和沟通方式**——让团队的形状,严丝合缝地对上你想要的模块的形状。**第三步,让组织这只手,自己「长出」你想要的架构。** 一句话:**不是被动接受组织带给你的架构,而是主动用组织设计,去塑造架构。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "流程图",
+   "caption": "反向康威操作:先定想要的架构,再倒推设计团队结构与沟通,让组织自己长出这套架构。",
+   "svg": "<svg viewBox=\"0 0 560 240\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">反向康威操作:用组织去塑造架构</text><text x=\"280\" y=\"52\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">Inverse Conway Maneuver</text><rect x=\"22\" y=\"86\" width=\"152\" height=\"82\" rx=\"9\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"98\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">① 先定想要的架构</text><text x=\"98\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">松耦合、可独立部署</text><rect x=\"204\" y=\"86\" width=\"152\" height=\"82\" rx=\"9\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.6\"/><text x=\"280\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">② 倒推设计团队</text><text x=\"280\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">团队边界对上模块边界</text><rect x=\"386\" y=\"86\" width=\"152\" height=\"82\" rx=\"9\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.6\"/><text x=\"462\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">③ 组织长出架构</text><text x=\"462\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">让康威定律为你所用</text><path d=\"M176 127 L200 127\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><path d=\"M202 127 L192 122 L192 132 Z\" style=\"fill:var(--cinnabar-pure)\"/><path d=\"M358 127 L382 127\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><path d=\"M384 127 L374 122 L374 132 Z\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"280\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">不被动接受组织带来的架构,而是主动用组织去塑造它</text></svg>"
+  },
+  {
+   "type": "quote",
+   "original": "想要什么样的架构,就先设计出对应的团队结构,让组织自己长出它。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "全书的起点:团队设计,是技术领导最重要的杠杆之一"
+  },
+  {
+   "type": "p",
+   "text": "讲到这儿,《团队拓扑》真正的出发点就浮出来了。既然「组织结构 ↔ 系统架构」这对双胞胎绑得这么死,那么——**「如何设计团队」,就不再是只有 HR 才操心的琐事,而是一个技术领导手里最重要的杠杆之一。** 团队怎么划分、边界画在哪、彼此怎么协作,这些看似「管人」的决定,会一路顺着康威定律,决定你最终能不能拥有一套好架构、能不能让价值顺畅地流动。"
+  },
+  {
+   "type": "p",
+   "text": "这,正是全书要系统回答的问题。往后的每一章——团队为什么是交付的基本单元、怎样别让团队被认知负荷压垮、四种团队类型、三种协作模式——本质上都在回答同一件事:**在康威定律的引力之下,到底该怎么设计团队,才能长出你想要的系统。** 第1章埋下的这条定律,是后面所有招法共同的地基。"
+  },
+  {
+   "type": "h2",
+   "text": "分寸:团队是杠杆,但不是唯一的那个"
+  },
+  {
+   "type": "p",
+   "text": "最后要留一个分寸,免得走过头。康威定律揭示了组织对架构的强大拉力,但这**绝不等于「只要一改组织,架构就万事大吉」**。团队设计是一个极其重要的杠杆,却不是唯一的因素——技术选型、业务的复杂度、历史包袱、人的能力,样样都在起作用。反向康威操作也不是一按就灵的魔法开关,它需要持续的观察、试验和调整,更没法一劳永逸。"
+  },
+  {
+   "type": "p",
+   "text": "所以这一章想让你记住的,不是一句「改组织就能救架构」的口号,而是一个更清醒的视角:**别再把组织结构当成架构的背景板。** 它不是背景,它是**塑造架构的那只手**。先看见了这只手,你才谈得上去引导它——而怎么引导,正是《团队拓扑》接下来要一步步教你的。"
+  },
+  {
+   "type": "h2",
+   "text": "收束:先看见那只看不见的手"
+  },
+  {
+   "type": "p",
+   "text": "回到开头那件怪事:接缝为什么总长在团队的裂缝上?现在你有答案了——**因为软件的结构,一直在忠实地复制组织的沟通结构。** 康威在1967年说破的这条定律,不是一句技术冷知识,而是一副眼镜:戴上它,你会开始在每一处别扭的接口背后,看见一道组织的沟通断层;在每一套清爽的架构背后,看见一群沟通顺畅的人。"
+  },
+  {
+   "type": "p",
+   "text": "这一章只做了一件事:让你看见「组织 → 架构」这只看不见的手,并且知道——它还能被**反过来**用。从下一章起,《团队拓扑》会带你把这只手真正握到手里。而它的第一块砖,是一个听起来朴素、却颠覆很多人直觉的主张:**为什么说,团队,而不是个人,才是软件交付的基本单元。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "金句卡",
+   "caption": "本章题眼:团队怎么分、怎么沟通,软件就长成什么样;组织,是塑造架构的那只手。",
+   "svg": "<svg viewBox=\"0 0 560 320\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"18\" y=\"18\" width=\"524\" height=\"284\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"34\" y=\"34\" width=\"492\" height=\"252\" rx=\"6\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1\"/><rect x=\"48\" y=\"48\" width=\"44\" height=\"44\" rx=\"5\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"70\" y=\"79\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\" font-size=\"20\">观</text><text x=\"280\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"20\">团队怎么分、怎么沟通,</text><text x=\"280\" y=\"186\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"20\">软件就长成什么样。</text><line x1=\"150\" y1=\"214\" x2=\"410\" y2=\"214\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"280\" y=\"244\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">组织,是塑造架构的那只手</text><text x=\"280\" y=\"278\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">《团队拓扑》· 第1章 康威定律</text></svg>"
+  }
+ ]
+}

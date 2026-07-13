@@ -1,0 +1,149 @@
+{
+ "title": "突破一 · 自我管理：把老板换成同事",
+ "subtitle": "拆掉命令与审批的金字塔，让做事的人自己拍板——靠「建议流程」既保住敏捷，又汇入集体的智慧",
+ "centralIdea": "《重塑组织》第4章讲青色组织的第一大突破——自我管理（self-management）：用同事之间的协作和分布式的权威，取代「老板发号施令、层层汇报审批」的金字塔。① 告别传统层级：自我管理组织里没有传统意义上的中层管理、命令链和审批链，不是「下级请示、上级拍板」，而是做事的人自己拥有决策权、团队自己组织自己；层级金字塔被一张由自管小组和灵活角色织成的网取代，管理的职能（计划、协调、监督）没有消失，而是分散给了团队自己。② 自组织的团队：工作由小而自主的团队承担，团队自己排班、分配任务、招人、管预算、解决冲突、做掉绝大多数决策，不必层层报批（如荷兰社区护理机构 Buurtzorg 的 10–12 人自管小组）。③ 核心机制「建议流程」（advice process）：任何人都可以做任何决定（哪怕是花大钱、定方向的大决定），但拍板前必须征询两类人——会被影响的人、这方面的专家；听完之后决定权仍在发起人手里、由他自己负责，但他必须认真掂量过这些建议。这样既保住个人的自主与敏捷，又汇入集体智慧，稳稳卡在「一言堂」与「事事投票」之间。④ 权威分布，而非集中或消失：自我管理不是没人负责的无政府，也不是人人一票的民主，而是权威随能力、信息与责任分布到最合适的人和团队手里。⑤ 冲突与问责靠同事直接沟通、约定的冲突解决流程、透明的信息和同伴的承诺与压力，而非老板考核。⑥ 它可能更高效，是因为砍掉了大量审批、汇报与「等老板拍板」的延迟，让信息与决策贴近一线。但它不是魔法，落地依赖信任、透明与配套流程，也因此难以简单复制——这为末章的分寸埋下伏笔。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "想象一家公司，几百上千号人，却没有一个「老板」——没有总监、没有经理，也没有那条从上到下的命令链；你要做一个决定，不必写申请、不必等审批、不必揣摩上级的脸色。这听上去像是一场注定失控的混乱，可 Laloux 在书里访到的一批青色组织，恰恰就是这么运转的，而且往往比同行更高效、更有活力。它们靠的不是「没人管」，而是一套全新的协作方式——**自我管理（self-management）**。这是青色组织的第一大突破，也是最颠覆直觉的一个。"
+  },
+  {
+   "type": "h2",
+   "text": "这一章在讲什么：第一大突破——自我管理"
+  },
+  {
+   "type": "p",
+   "text": "上一章说，青色组织有三大突破：自我管理、完整性、进化目的。这一章单讲第一个，也是最要紧的地基。它要拆掉的，是我们太熟悉、以至于以为「组织本来就该长这样」的那个东西——**金字塔**。老板在顶端，一层层经理往下排，信息层层上报、指令层层下达，任何稍大点的决定都得逐级请示、逐级审批。橙色和绿色组织再怎么强调赋能、扁平，骨子里还是这座金字塔，只是把它修得温和一点。自我管理做的事很激进：它把整座金字塔拆掉，换成另一样东西——**一张由自主团队和灵活角色织成的网。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比",
+   "caption": "金字塔层级 vs 自管网络：命令与汇报的塔，被自组织团队与分布式权威的网取代",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">金字塔层级 vs 自管网络</text><line x1=\"280\" y1=\"46\" x2=\"280\" y2=\"278\" style=\"stroke:var(--line)\" stroke-width=\"0.5\" stroke-dasharray=\"3 5\"/><text x=\"140\" y=\"62\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">传统金字塔：老板发令 · 层层汇报</text><rect x=\"112\" y=\"76\" width=\"56\" height=\"26\" rx=\"5\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.6\"/><text x=\"140\" y=\"93\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">老板</text><rect x=\"88\" y=\"120\" width=\"104\" height=\"26\" rx=\"5\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.4\"/><text x=\"140\" y=\"137\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">中层管理</text><rect x=\"56\" y=\"164\" width=\"168\" height=\"28\" rx=\"5\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.4\"/><text x=\"140\" y=\"182\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">一线做事的人</text><path d=\"M46 80 L46 188\" style=\"stroke:var(--line)\" stroke-width=\"1.4\" marker-end=\"url(#gl)\"/><text x=\"36\" y=\"134\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10\" transform=\"rotate(-90 36 134)\">命令 · 审批</text><path d=\"M234 188 L234 80\" style=\"stroke:var(--line)\" stroke-width=\"1.4\" marker-end=\"url(#gl)\"/><text x=\"250\" y=\"134\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10\" transform=\"rotate(90 250 134)\">汇报 · 请示</text><text x=\"140\" y=\"224\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">决策权集中顶端，一线事事等拍板</text><text x=\"420\" y=\"62\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">自管网络：自组织团队 · 分布式权威</text><path d=\"M360 100 L480 100\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.1\"/><path d=\"M360 100 L330 156\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.1\"/><path d=\"M480 100 L510 156\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.1\"/><path d=\"M330 156 L390 202\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.1\"/><path d=\"M510 156 L450 202\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.1\"/><path d=\"M390 202 L450 202\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.1\"/><path d=\"M330 156 L510 156\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"0.9\" opacity=\"0.6\"/><path d=\"M360 100 L450 202\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"0.9\" opacity=\"0.6\"/><path d=\"M480 100 L390 202\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"0.9\" opacity=\"0.6\"/><circle cx=\"360\" cy=\"100\" r=\"16\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><circle cx=\"480\" cy=\"100\" r=\"16\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><circle cx=\"330\" cy=\"156\" r=\"16\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><circle cx=\"510\" cy=\"156\" r=\"16\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><circle cx=\"390\" cy=\"202\" r=\"16\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><circle cx=\"450\" cy=\"202\" r=\"16\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"360\" y=\"104\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"10\">团队</text><text x=\"480\" y=\"104\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"10\">团队</text><text x=\"330\" y=\"160\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"10\">团队</text><text x=\"510\" y=\"160\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"10\">团队</text><text x=\"390\" y=\"206\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"10\">团队</text><text x=\"450\" y=\"206\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"10\">团队</text><text x=\"420\" y=\"238\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">没有中层，团队自组织，权威散到各处</text><defs><marker id=\"gl\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6 Z\" style=\"fill:var(--line)\"/></marker></defs></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "告别层级：没有命令链，也没有审批链"
+  },
+  {
+   "type": "p",
+   "text": "自我管理组织里，没有传统意义上的中层管理，没有那条「下级请示、上级拍板」的命令链，也没有层层盖章的审批链。这不是说把经理都裁掉、把活儿摊给剩下的人硬扛，而是从根上换了一套逻辑：**做事的人自己就拥有决策权。** 管理该干的那些事——计划、协调、监督、分配——并没有凭空消失，而是被拆散，分给了团队自己和一个个灵活的角色。原来一位经理身上背的十几项职权，现在可能由团队里五六个人分别认领，谁认领哪一块，谁就对那一块负责。"
+  },
+  {
+   "type": "p",
+   "text": "于是「职位」这个概念也松动了。传统公司里，你是「某某经理」，头衔框定了你能碰什么、不能碰什么。自我管理组织里，人担的是一个个「角色」，一个人可以同时兼好几个角色，角色也可以随需要重新洗牌、重新分配，而不必被一个固定的头衔和职级锁死。层级金字塔就这样被一张网取代——网上的节点，是一个个自管小组和它们承担的角色，而不是一级级的官阶。"
+  },
+  {
+   "type": "quote",
+   "ftype": "金句",
+   "original": "自我管理不是把经理裁掉、活儿摊给别人，而是让做事的人自己拥有决策权。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "自组织的团队：自己排班、招人、管预算"
+  },
+  {
+   "type": "p",
+   "text": "在青色组织里，活儿通常由一个个「小而自主的团队」来承担。这些团队自己排班、自己分配任务、自己招人、自己管预算、自己解决内部的冲突、自己做掉绝大多数决策——统统不需要报给某个经理审批。计划、协调、监督这些原本属于「管理层」的职能，就这样落回到了团队自己手里。管理并没有蒸发，只是不再由一个专门的「管理层」来做，而是化进了团队的日常。"
+  },
+  {
+   "type": "p",
+   "text": "书里最有名的例子，是荷兰的社区护理机构 Buurtzorg。它把上万名护士编成一个个 10 到 12 人的自管小组，每个小组自己负责一片社区：接哪些病人、怎么排班、怎么分工、招不招新人、办公室租在哪儿，全由小组自己商量着定；总部只留极少的后台支持，几乎没有中层管理。结果呢？这套「几乎没人管」的模式，在护理质量、病人满意度和成本上，反而把按传统方式层层管着的同行远远甩在了后头。它说明一件事：管理的那些职能，可以不靠一个「管理层」来完成——团队自己，就能把它扛起来。"
+  },
+  {
+   "type": "h2",
+   "text": "核心机制：建议流程（advice process）"
+  },
+  {
+   "type": "p",
+   "text": "讲到这儿，你多半会有个疑问：人人都能自己拍板，那不乱套了吗？张三花一大笔钱买了台设备，李四又擅自定了个方向，岂不是各行其是、一盘散沙？——正是为了不掉进这种混乱，自我管理有一个关键机制，叫「建议流程」（advice process）。它是整套自我管理能转起来而不散架的枢纽。"
+  },
+  {
+   "type": "p",
+   "text": "建议流程的规则，一句话就能说清：**任何人都可以做任何决定**——哪怕是花一大笔钱、定一个大方向这样的重大决定——**但在拍板之前，必须先征询两类人的意见**。第一类，是会被这个决定影响到的人；第二类，是这方面真正有经验的专家。听完这两类人的意见之后，**决定权仍然留在发起人自己手里**（由他自己承担后果），但他必须是认真掂量过这些建议，才落下这一锤的。"
+  },
+  {
+   "type": "figure",
+   "ftype": "流程图",
+   "caption": "建议流程：任何人可发起决定，但拍板前先征询受影响者与专家，然后自己拍板、自己负责",
+   "svg": "<svg viewBox=\"0 0 560 280\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">建议流程：任何人可决策，但先征询</text><rect x=\"20\" y=\"94\" width=\"150\" height=\"66\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><text x=\"95\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">① 任何人</text><text x=\"95\" y=\"144\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">都可发起决定</text><rect x=\"205\" y=\"62\" width=\"150\" height=\"50\" rx=\"8\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"92\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">② 征询受影响的人</text><rect x=\"205\" y=\"144\" width=\"150\" height=\"50\" rx=\"8\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"174\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">③ 征询懂行的专家</text><rect x=\"390\" y=\"94\" width=\"150\" height=\"66\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><text x=\"465\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">④ 自己拍板</text><text x=\"465\" y=\"144\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">自己负责</text><path d=\"M170 116 L202 96\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.3\" marker-end=\"url(#gc)\"/><path d=\"M170 138 L202 166\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.3\" marker-end=\"url(#gc)\"/><path d=\"M355 92 L388 116\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.3\" marker-end=\"url(#gc)\"/><path d=\"M355 168 L388 140\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.3\" marker-end=\"url(#gc)\"/><text x=\"280\" y=\"232\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">征询 ≠ 表决：听完意见，仍由发起人自己拍板、自己担责</text><text x=\"280\" y=\"256\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">既不必事事开会求共识，也不致一人闭门造车</text><defs><marker id=\"gc\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6 Z\" style=\"fill:var(--cinnabar-pure)\"/></marker></defs></svg>"
+  },
+  {
+   "type": "p",
+   "text": "这里有两点特别要紧。**其一，征询不等于表决，也不等于要争得所有人点头。** 你不需要开一个大会、投一轮票、凑齐所有人的同意——那样反而会把决策拖进无休止的扯皮。你要做的只是「认真听」，听完之后，拍板的还是你。**其二，正因为最后是你拍板、你负责，你会格外慎重地去听那些意见。** 决定越大，你越会主动去找更多受影响的人和更懂行的专家聊。就这样，建议流程一头保住了个人的自主与敏捷（不必事事开会求共识），另一头又把集体的智慧和相关方的声音接了进来（不至于一个人闭门造车），稳稳地卡在「一言堂」和「事事投票」这两个极端之间。"
+  },
+  {
+   "type": "quote",
+   "ftype": "金句",
+   "original": "任何人都可以做任何决定，但拍板前必须征询受影响的人和懂行的专家，然后自己负责。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "不是无政府，也不是人人投票"
+  },
+  {
+   "type": "p",
+   "text": "到这里，最容易冒出两个误解，得赶紧澄清。**第一个误解：自我管理 = 没人负责的无政府。** 不对。自我管理绝不是「谁都不管、随便乱来」。恰恰相反，它对「谁负责」看得极重——每一件事、每一个角色，都有明确的人认领、明确的人担责，只不过这个「谁」，不再一律是那位头衔最大的经理罢了。**第二个误解：自我管理 = 人人平等、一人一票的民主。** 也不对。它不靠开会投票来定事，那样既慢又容易和稀泥、拉平成平庸。"
+  },
+  {
+   "type": "p",
+   "text": "那权威到底在哪儿？答案是：权威既不集中于顶端，也不消失于无序，而是「**分布**」——它随着能力、信息和责任，流向最合适的那个人和那个团队。谁最懂这件事、谁离问题最近、谁愿意为结果负责，谁就在这件事上有相应的决策权。这是一种动态的、随事而变的权威分布：同一个人，在他擅长的事上说了算，在他不擅长的事上就去听别人的。它不是把权力锁死在某个职位上，也不是把权力摊薄成人人一票，而是让权力找到那个当下最该拥有它的人。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比",
+   "caption": "权威的三种去处：集中于顶端 / 消失于无序 / 分布到最合适的人——自我管理是第三种",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">权威的三种去处</text><line x1=\"190\" y1=\"42\" x2=\"190\" y2=\"246\" style=\"stroke:var(--line)\" stroke-width=\"0.5\" stroke-dasharray=\"3 5\"/><line x1=\"370\" y1=\"42\" x2=\"370\" y2=\"246\" style=\"stroke:var(--line)\" stroke-width=\"0.5\" stroke-dasharray=\"3 5\"/><text x=\"95\" y=\"58\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">集中于顶端</text><text x=\"280\" y=\"58\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">消失于无序</text><text x=\"465\" y=\"58\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">分布到最合适的人</text><path d=\"M95 100 L55 150\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.2\"/><path d=\"M95 100 L95 150\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.2\"/><path d=\"M95 100 L135 150\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.2\"/><circle cx=\"95\" cy=\"90\" r=\"12\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.8\"/><circle cx=\"55\" cy=\"158\" r=\"8\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.3\"/><circle cx=\"95\" cy=\"158\" r=\"8\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.3\"/><circle cx=\"135\" cy=\"158\" r=\"8\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.3\"/><text x=\"95\" y=\"224\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">老板一人说了算</text><circle cx=\"245\" cy=\"92\" r=\"8\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.3\"/><circle cx=\"308\" cy=\"104\" r=\"8\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.3\"/><circle cx=\"262\" cy=\"140\" r=\"8\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.3\"/><circle cx=\"312\" cy=\"150\" r=\"8\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.3\"/><circle cx=\"240\" cy=\"176\" r=\"8\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.3\"/><circle cx=\"298\" cy=\"182\" r=\"8\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.3\"/><text x=\"280\" y=\"224\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">没人负责／人人一票</text><path d=\"M430 100 L500 108\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.1\"/><path d=\"M430 100 L422 158\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.1\"/><path d=\"M500 108 L496 162\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.1\"/><path d=\"M422 158 L462 196\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.1\"/><path d=\"M496 162 L462 196\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.1\"/><path d=\"M422 158 L496 162\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"0.9\" opacity=\"0.6\"/><circle cx=\"430\" cy=\"100\" r=\"13\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><circle cx=\"500\" cy=\"108\" r=\"8\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\"/><circle cx=\"422\" cy=\"158\" r=\"10\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><circle cx=\"496\" cy=\"162\" r=\"14\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><circle cx=\"462\" cy=\"196\" r=\"8\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\"/><text x=\"465\" y=\"224\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"11\">谁懂谁担责，谁做主</text><text x=\"280\" y=\"282\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">自我管理：不集中、不无序，而让权威随能力与责任分布</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "那冲突和问责怎么办？"
+  },
+  {
+   "type": "p",
+   "text": "没有了老板的考核与督促，人会不会松懈？团队里闹了矛盾，没有上级来「主持公道」，又怎么收场？自我管理靠的不是一个凌驾于众人之上的裁判，而是几根横向的支柱。**一是同事之间直接沟通**：有意见、有不满，不是绕到背后向上级告状，而是当面跟当事人说清楚。**二是事先约定好的冲突解决流程**：万一两个人谈不拢，就按大家事先讲定的步骤一步步来（比如先双方谈，谈不成请一位共同信任的同事居中，再不成请更多人参与），而不是等一个老板来拍板谁对谁错。**三是透明的信息**：公司的数据——预算、成本、业绩，大家都看得到，谁做得怎么样，一目了然，藏不住也赖不掉。**四是同伴的承诺与压力**：你对同事做出的承诺，同事都记着；你干得怎么样，朝夕相处的伙伴最清楚。人往往不太怕辜负一个远在天边的老板，却很在意别让身边并肩做事的同伴失望。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "没有老板，靠四根横向的支柱来问责，而非自上而下的考核",
+   "svg": "<svg viewBox=\"0 0 560 260\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">没有老板，靠什么问责？</text><rect x=\"20\" y=\"58\" width=\"124\" height=\"120\" rx=\"9\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><text x=\"82\" y=\"92\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">① 直接沟通</text><text x=\"82\" y=\"124\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">有话当面说</text><text x=\"82\" y=\"144\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">不背后告状</text><rect x=\"158\" y=\"58\" width=\"124\" height=\"120\" rx=\"9\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><text x=\"220\" y=\"92\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">② 冲突流程</text><text x=\"220\" y=\"124\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">事先约定步骤</text><text x=\"220\" y=\"144\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">一步步来</text><rect x=\"296\" y=\"58\" width=\"124\" height=\"120\" rx=\"9\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><text x=\"358\" y=\"92\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">③ 透明信息</text><text x=\"358\" y=\"124\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">预算业绩都看得到</text><text x=\"358\" y=\"144\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">藏不住</text><rect x=\"434\" y=\"58\" width=\"124\" height=\"120\" rx=\"9\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><text x=\"496\" y=\"92\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">④ 同伴承诺</text><text x=\"496\" y=\"124\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">不想让</text><text x=\"496\" y=\"144\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">身边伙伴失望</text><text x=\"280\" y=\"212\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">把自上而下的考核，换成横向的、彼此之间的问责</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "说白了，自我管理是把「自上而下的考核」换成了「横向的、彼此之间的问责」。它不靠一个权威盯着你，而靠透明、承诺和同伴之间实打实的关系来托住每个人。这不是放任，而是一种更贴身、也更难糊弄的约束——因为糊弄一个远处的老板容易，糊弄天天并肩做事的同伴，很难。"
+  },
+  {
+   "type": "h2",
+   "text": "为什么它可能更高效"
+  },
+  {
+   "type": "p",
+   "text": "拆掉金字塔，好处是实打实的。传统层级里，大量的时间和精力，都耗在了「往上」这件事上：写汇报、做 PPT、逐级请示、排队等审批、揣摩上级的意思……一个本该当场就能定的事，常常要在层级里走上好几天甚至好几周。自我管理把这些内耗一刀砍掉：信息不必层层上报，决策就发生在离一线最近的地方，谁遇到问题、谁掌握情况，谁当场就能带着建议流程把它解决掉。响应因此快得多，组织对变化也灵敏得多。"
+  },
+  {
+   "type": "p",
+   "text": "更深一层的好处，是人的状态变了。当你不再是一颗只等着执行指令的螺丝钉，而是一个真能自己拍板、要为结果负责的人，你对工作的主人翁感会完全不一样——那是一种「这是我的事」的投入，而不是「反正老板会管」的应付。当然，这一切都有前提：得有足够的**信任**（相信人本来就想把事做好）、足够的**透明**（信息不藏着掖着）、以及配套的**流程**（建议流程、冲突解决约定这些）。少了这些底子，贸然「取消老板」，换来的很可能真的是一团乱。"
+  },
+  {
+   "type": "h2",
+   "text": "收束：换掉的是金字塔，不是秩序"
+  },
+  {
+   "type": "p",
+   "text": "回到最初那个「没有老板」的公司。它之所以没垮，不是因为它放任不管，而是因为它用另一套秩序，替换掉了金字塔那套秩序。老板发号施令、层层汇报审批的那套，被换成了：做事的人自己拍板，拍板前走一遍建议流程；团队自己组织自己；权威随着能力和责任，分布到最合适的人手里；问责靠透明、承诺和同伴之间横向地完成。管理并没有消失，它只是从少数人的头衔里，散回到了每个人和每个团队的手上。"
+  },
+  {
+   "type": "p",
+   "text": "但要老实说一句：这套东西看着诱人，却不好照搬。它高度依赖信任、透明和一整套配套的流程，更依赖组织里的人——尤其是最高领导者和所有者——是不是真的相信「人可信、能自治」这件事。缺了这层底子，光把经理裁掉、把「建议流程」四个字贴到墙上，是长不出自我管理的，多半只会换来混乱。为什么同样的做法在有些组织里活得漂亮、换个地方却水土不服、难以复制？这正是这本书到最后要认真掂量的分寸。此刻先记住这一条：自我管理换掉的，是那座命令与审批的金字塔，而不是秩序本身——它用同事间的协作和分布式的权威，搭起了另一种秩序。"
+  },
+  {
+   "type": "quote",
+   "ftype": "金句",
+   "original": "自我管理换掉的是金字塔，不是秩序——用同事协作和分布式权威，搭起另一种秩序。",
+   "translation": ""
+  }
+ ]
+}

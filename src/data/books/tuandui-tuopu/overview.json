@@ -1,0 +1,243 @@
+{
+ "title": "白话《团队拓扑》· 全书总览",
+ "subtitle": "Skelton 与 Pais 讲一件被大多数技术组织忽视的事:软件交付慢、乱、累,根子常常不在技术,而在团队怎么切、彼此怎么说话。",
+ "centralIdea": "《团队拓扑》回答一个被大多数技术组织忽视的问题:软件交付慢、乱、累,根子常常不在技术,而在团队怎么划分、怎么协作。Skelton 与 Pais 从康威定律出发——组织的沟通结构会长成软件的架构,于是主张「以团队(而非个人)为交付的基本单元」,用「认知负荷」这把尺子去判断团队边界划得对不对,再用四种基本团队类型(流式 / 赋能 / 复杂子系统 / 平台)和三种交互模式(协作 / 服务 / 促进)搭出一张能持续演化的团队地图。但全书反复强调:这四种类型、三种模式是一副「看团队」的镜子和词汇,不是照抄的教条——真实组织多半是混合、过渡、模糊的,硬贴标签、为了「像团队拓扑」而强行改组,只会制造形式主义。一切概念都服务于唯一的目标:让价值快速、可持续地流到用户手里;凡不利于这个「快速流动」的改动,再标准也不该做。",
+ "featured": true,
+ "hero": {
+  "badge": "全书 · 核心",
+  "headline": "你的团队怎么切,你的软件就长成什么样。",
+  "tagline": "一本把「组织结构」当成软件架构第一因来设计的书。"
+ },
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "你有没有见过这样一个软件项目:代码越写越乱,一个小需求要三四个团队开会对齐两周才能动手,谁也说不清整个系统到底是怎么跑起来的,资深工程师累到想辞职,新人上手三个月还摸不着头脑。领导们的第一反应,通常是「我们技术选型不行」「要不要上个微服务」「是不是该换套框架」。**Matthew Skelton 和 Manuel Pais 在《团队拓扑》里给出的答案,却指向一个大多数人从没往那想的方向:问题很可能不在技术,而在你的团队是怎么切的、彼此是怎么说话的。**"
+  },
+  {
+   "type": "p",
+   "text": "Skelton 和 Pais 都是长期泡在真实技术组织里的顾问,帮各种公司做 DevOps、做持续交付、做架构改造。他们看多了一种怪现象:同样一批聪明人,换一种团队结构,产出的软件质量能差出十万八千里。于是他们把这些年的观察收进这本 2019 年的《Team Topologies》,副标题叫「为快速流动而组织业务与技术团队」。这篇总览,就是把整本书俯瞰一遍,让完全没读过的人,读完就大致知道这本书在讲什么、它凭什么这么讲、以及它给的那套工具能不能用到你自己的团队上。"
+  },
+  {
+   "type": "p",
+   "text": "先把全书的目的钉在墙上:一切都是为了一件事——**让价值快速、持续地流到用户手里**(书里叫 fast flow,快速流动)。一个功能从「有人想到它」到「用户真的用上它」,中间要经过多少道等待、多少次跨团队的扯皮、多少回「这事得等那个组有空」?这些拖慢价值流动的地方,大多不是代码问题,而是组织问题。团队拓扑这一整套方法,说到底都在回答一个问题:**怎么设计团队,才能让价值少堵车、跑得快?**"
+  },
+  {
+   "type": "h2",
+   "text": "一、康威定律:组织结构,悄悄决定了软件的样子"
+  },
+  {
+   "type": "p",
+   "text": "要理解这本书,得先认识一条 1967 年就被提出、却常被当成趣闻一笑而过的老定律——**康威定律(Conway's Law)**。它的原话有点拗口,翻成大白话是这样:**任何设计系统的组织,最后做出来的系统结构,一定会长得像这个组织内部的沟通结构。**"
+  },
+  {
+   "type": "quote",
+   "original": "Organizations produce designs which are copies of their own communication structures.",
+   "translation": "康威定律的核心一句:组织产出的设计,就是它自身沟通结构的翻版。"
+  },
+  {
+   "type": "p",
+   "text": "这话听着抽象,书里有个流传很广的例子:让四个团队去做一个编译器,你大概率会得到一个「四段式」的编译器——因为四个团队各管一段、各自为政,软件就自然被切成了四块,团队之间的墙,原封不动变成了代码里的墙。**换句话说,团队怎么分、谁跟谁常沟通,几乎就是画在软件架构上的一张暗线图。** 你在组织结构图上做的每一次切分,都会在系统架构里留下一道对应的缝。"
+  },
+  {
+   "type": "p",
+   "text": "再举个更接地气的例子。假设一家公司,前端、后端、数据库分属三个互相不太说话的部门,那这套系统几乎注定会在「前端 / 后端 / 数据库」之间划出三道又深又硬的接缝,一个跨这三层的小改动,都得三个部门各自排期、来回开会、彼此扯皮。反过来,如果一个小团队里前端、后端、数据一应俱全,这套功能就能被做成一块能独立改、独立发布的整体。**同一个需求,团队怎么组,直接决定了它在代码里是「一整块」还是「割裂的三段」。** 这就是为什么作者说,想改架构,常常得先改组织。"
+  },
+  {
+   "type": "figure",
+   "ftype": "关系图",
+   "caption": "康威定律:团队之间的墙,会原样变成软件里的墙——四个各自为政的团队,做出一个四段式的编译器。",
+   "svg": "<svg viewBox=\"0 0 640 350\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"320\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"19\" font-weight=\"bold\">康威定律:组织的形状,长成软件的形状</text><text x=\"130\" y=\"60\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">组织 · 四个各自为政的团队</text><text x=\"510\" y=\"60\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">系统 · 一个「四段式」编译器</text><rect x=\"55\" y=\"74\" width=\"150\" height=\"42\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"130\" y=\"100\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">团队 甲</text><rect x=\"55\" y=\"128\" width=\"150\" height=\"42\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"130\" y=\"154\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">团队 乙</text><rect x=\"55\" y=\"182\" width=\"150\" height=\"42\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"130\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">团队 丙</text><rect x=\"55\" y=\"236\" width=\"150\" height=\"42\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"130\" y=\"262\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">团队 丁</text><rect x=\"435\" y=\"74\" width=\"150\" height=\"42\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><text x=\"510\" y=\"100\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">编译器 · 第一段</text><rect x=\"435\" y=\"128\" width=\"150\" height=\"42\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><text x=\"510\" y=\"154\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">编译器 · 第二段</text><rect x=\"435\" y=\"182\" width=\"150\" height=\"42\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><text x=\"510\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">编译器 · 第三段</text><rect x=\"435\" y=\"236\" width=\"150\" height=\"42\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><text x=\"510\" y=\"262\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">编译器 · 第四段</text><path d=\"M510 116 L510 128\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"1.5\"/><path d=\"M510 170 L510 182\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"1.5\"/><path d=\"M510 224 L510 236\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"1.5\"/><text x=\"320\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\" font-weight=\"bold\">康威定律</text><path d=\"M215 168 L420 168\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><path d=\"M420 168 L408 161 L408 175 Z\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"320\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">沟通结构 → 系统结构</text><text x=\"320\" y=\"326\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">团队之间的墙,原样变成了代码里的墙</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "这就颠覆了一个很常见的偏见:很多人以为「团队怎么组」是 HR 和管理层的小事,跟真正的技术架构是两码事。康威定律说,不,**组织结构本身就是一个深刻的技术决策**——你还没写一行代码,团队一分好,软件的骨架其实就已经被限定了大半。一个沟通拧巴、部门林立的组织,几乎不可能做出干净、松耦合的架构;不是工程师不努力,是组织的形状顶在那里。"
+  },
+  {
+   "type": "p",
+   "text": "既然组织决定架构,Skelton 和 Pais 顺手把这条定律反过来用,叫**「反向康威操作(Inverse Conway Maneuver)」**:**别再被现有的组织结构困着、然后回头抱怨架构烂了;先想清楚你到底想要什么样的软件架构,再倒推回去,照着那个架构去设计团队怎么分、谁该跟谁常沟通,让组织「长出」你想要的架构来。** 想要松耦合、能独立部署的服务?那就先有一批边界清晰、能独立干活的团队。团队拓扑这本书,本质上就是一整套「怎么做反向康威操作」的实操手册。"
+  },
+  {
+   "type": "h2",
+   "text": "二、以团队为本:交付的基本单元是团队,不是个人"
+  },
+  {
+   "type": "p",
+   "text": "如果说康威定律是这本书的地基,那**「以团队为本(team-first thinking)」就是它最根本的立场**。这个立场一句话:**软件交付的基本单元,是团队,不是个人。**"
+  },
+  {
+   "type": "p",
+   "text": "这跟我们习惯的想法很不一样。我们总爱谈「牛人」「十倍工程师」,招聘时盯着一个个漂亮简历,排期时按人头算工时。但 Skelton 和 Pais 说,真正能稳定、快速交付复杂软件的,从来不是一个个孤立的英雄,而是一个磨合好了的团队——它像一个有机整体,成员之间有默契、有共享的上下文、有互相补位的信任。**所以要把团队当成「第一公民」来对待:资源、目标、责任,都落到团队这个单位上,而不是散落到一个个人头上。**"
+  },
+  {
+   "type": "p",
+   "text": "由此引出一串很实在的主张。**第一,团队要稳定、长期、有强归属感。** 别动不动就打散重组、临时拉一批人拼个项目组、项目一完又解散。因为一个团队从陌生到高效,要熬过一段磨合的「阵痛期」;你每次打散重来,团队就永远卡在那段最低效的磨合期,永远长不成熟。**第二,团队规模要受「邓巴数」约束**——人脑能维持的稳定信任关系是有限的,一个团队通常 5 到 9 人最好,人再多,内部沟通成本就指数级爆炸,信任被稀释,协作变形。"
+  },
+  {
+   "type": "p",
+   "text": "**第三,也是最反直觉的一条:先定稳定的团队,再把工作流向团队;而不是为每个项目临时拉一批人。** 传统做法是「来了个项目 → 拉人组队 → 干完解散」,人像积木一样被搬来搬去。团队拓扑主张反过来:**先有一批长期稳定的团队在那里,新工作来了,是把工作分给合适的团队去做**——团队是稳的,流过团队的工作是变的。这样团队的默契和能力才能不断累积,而不是每次归零重来。"
+  },
+  {
+   "type": "h2",
+   "text": "三、认知负荷:别把团队的脑子塞爆"
+  },
+  {
+   "type": "p",
+   "text": "有了「以团队为本」,接下来最关键的问题就是:**一个团队到底该管多大一摊事?** 团队拓扑给出的那把尺子,叫**认知负荷(cognitive load)**。"
+  },
+  {
+   "type": "p",
+   "text": "道理很朴素:**每个团队能「装进脑子里」去理解、掌控的复杂度,是有限的。** 一个团队要记住多少业务规则、要搞懂多少种技术、要维护多少个服务、要应付多少个上下游——这些加起来,就是它的认知负荷。**当你往一个团队里塞了太多、太杂、太难的东西——太多服务、太多技术栈、太广的业务领域——它就「认知过载」了。** 过载的团队什么样?交付越来越慢、bug 越来越多、没有一个人能说清系统全貌、大家疲于奔命、资深的想跑路、新来的学不会。很多「这个团队怎么这么不给力」的表象,底下其实是认知过载。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比",
+   "caption": "认知负荷是判断团队边界的尺子:塞太多就溢出上限、处处冒烟;瘦身到「团队规模的软件」,才装得下、跑得稳。",
+   "svg": "<svg viewBox=\"0 0 640 340\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"320\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"19\" font-weight=\"bold\">认知负荷:一个团队的脑容量是有限的</text><line x1=\"60\" y1=\"92\" x2=\"580\" y2=\"92\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.3\" stroke-dasharray=\"6 4\"/><text x=\"580\" y=\"86\" text-anchor=\"end\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">认知容量上限</text><text x=\"150\" y=\"60\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\" font-weight=\"bold\">认知过载</text><rect x=\"90\" y=\"92\" width=\"140\" height=\"196\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"94\" y=\"256\" width=\"132\" height=\"26\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"160\" y=\"273\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">一堆服务</text><rect x=\"94\" y=\"226\" width=\"132\" height=\"26\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"160\" y=\"243\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">多种技术栈</text><rect x=\"94\" y=\"196\" width=\"132\" height=\"26\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"160\" y=\"213\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">太广的领域</text><rect x=\"94\" y=\"166\" width=\"132\" height=\"26\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"160\" y=\"183\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">上下游对接</text><rect x=\"94\" y=\"136\" width=\"132\" height=\"26\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"160\" y=\"153\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">流水线运维</text><rect x=\"94\" y=\"106\" width=\"132\" height=\"26\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"160\" y=\"123\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">监控告警</text><rect x=\"98\" y=\"62\" width=\"124\" height=\"24\" rx=\"3\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><text x=\"160\" y=\"79\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"11\">安全合规 · 溢出</text><text x=\"150\" y=\"312\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">交付慢 · bug 多 · 无人懂全貌 · 倦怠</text><text x=\"490\" y=\"60\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\" font-weight=\"bold\">刚好装得下</text><rect x=\"420\" y=\"92\" width=\"140\" height=\"196\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"424\" y=\"256\" width=\"132\" height=\"26\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1\"/><text x=\"490\" y=\"273\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"11\">一条价值流</text><rect x=\"424\" y=\"226\" width=\"132\" height=\"26\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1\"/><text x=\"490\" y=\"243\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"11\">团队规模的软件</text><rect x=\"424\" y=\"196\" width=\"132\" height=\"26\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1\"/><text x=\"490\" y=\"213\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"11\">合适的技术</text><text x=\"490\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"12\">余量 · 从容</text><text x=\"490\" y=\"312\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">清晰 · 稳定 · 可持续</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "书里还把认知负荷细分成三种来源:一种是任务本身固有的难度(比如业务逻辑真的复杂、算法真的难);一种是环境强加的、本不必要的负担(比如乱七八糟的部署流程、找不到的文档、动不动就出问题的环境);还有一种,是真正值得投入的、用来学习和创造新东西的部分。**管理认知负荷的关键,就是把第二种「本不必要的负担」尽量削掉**——这也正是平台团队存在的意义:把那些琐碎、重复、恼人的底层杂事接管过去,好让流式团队的脑子腾出来,专注在真正创造价值的地方。"
+  },
+  {
+   "type": "p",
+   "text": "解药不是「加人」——加人往往只会让沟通更复杂、认知更乱。解药是:**给团队负责的软件范围「瘦身」,让这摊事的复杂度,匹配团队大脑的容量。** 书里管这叫「团队规模的软件(team-sized software)」:一块软件的大小和复杂度,应该刚好是一个稳定小团队能从容 hold 住的程度。装不下,就说明边界划错了,该拆、该换个分法。"
+  },
+  {
+   "type": "p",
+   "text": "这一点是整本书的枢纽:**认知负荷,就是团队拓扑用来判断「团队边界划得对不对」的核心标尺。** 你不用玄乎地争论「这个团队该不该管这个模块」,而是问一个具体的问题:**加上这块,这个团队还装得下吗?会不会过载?** 边界的对错,不看组织图好不好看,看认知负荷合不合适。"
+  },
+  {
+   "type": "h2",
+   "text": "四、四种基本团队类型:别造五花八门的团队"
+  },
+  {
+   "type": "p",
+   "text": "铺垫完三块地基(康威定律、以团队为本、认知负荷),书里最有名、最好上手的部分来了:**四种基本团队类型。** Skelton 和 Pais 的主张很干脆——**别再发明五花八门、名字各异的团队了;绝大多数团队,都应该归到下面四种基本类型之一。** 这四种里,有一种是主角,另外三种都是为了支撑这个主角而存在的。"
+  },
+  {
+   "type": "p",
+   "text": "**第一种:流式团队(Stream-aligned team)——主角。** 「流」指的是一条业务或价值的流动线。这种团队**对齐一条价值流,端到端地负责一块面向用户的功能或产品**:从想清楚需求、到开发、到上线、到运维,一条龙自己扛,能独立、快速地把价值交付出去。**这是数量最多、最核心的团队类型**;理想的组织里,绝大部分人都在流式团队里。记住这一点:另外三种团队,存在的全部意义,就是让流式团队跑得更快、更省心。"
+  },
+  {
+   "type": "p",
+   "text": "**第二种:赋能团队(Enabling team)——教练。** 由某个方面的专家组成(比如测试自动化、云原生、可观测性),他们**像教练一样,帮流式团队补上缺失的能力、工具或实践**。关键在于:**赋能团队是阶段性介入的**——手把手带流式团队学会某项本事,团队学会了,他们就退出,去帮下一个团队,而**不是长期赖着替流式团队干活**。他们卖的是「让你学会」,不是「替你做」。"
+  },
+  {
+   "type": "p",
+   "text": "**第三种:复杂子系统团队(Complicated-subsystem team)——专科。** 有些子系统天生需要很深的专家知识才能搞定——某种复杂的数学算法、音视频编解码、风控引擎、金融定价模型。这种团队**专门负责把这么一块高难度的子系统封装、隔离好**,对外只提供一个好用的接口。这样,**流式团队就不必人人都去啃那门高深学问了**,认知负荷一下子轻了一大截。它不是主角,是给主角减负的专科医生。"
+  },
+  {
+   "type": "p",
+   "text": "**第四种:平台团队(Platform team)——自助超市。** 底层那些工具、服务、基础设施(部署流水线、监控、数据库、环境),如果每次都要流式团队提工单、等人排期,价值流动就堵死了。平台团队**把这些底层能力做成一个「内部自助平台」,让流式团队像用云服务一样自助取用**——少提工单、少等待、少求人。诀窍是:**把平台当成一个「产品」来做**,它的客户就是内部的流式团队,好不好用,由这些内部客户说了算。"
+  },
+  {
+   "type": "p",
+   "text": "你可能会问:凭什么就四种?会不会太粗了?作者的回答是——**类型少,恰恰是优点。** 类型一多,大家又会掉进「我们到底算哪一种」的命名游戏,造出一堆似是而非、边界模糊的团队。四种基本类型的价值,不在于穷尽世上所有情况,而在于给你一副够用、好记、能立刻上手的分类眼镜:先粗粗归个类,看清主次(谁是流式、谁在为流式减负),该用什么协作方式、谁给谁减负,重点自然就浮出来了。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "四种团队类型的分工:流式团队直接把价值交付给用户,平台团队在底下托着、赋能团队从旁点拨、复杂子系统团队封装难点——三者都为流式团队减负。",
+   "svg": "<svg viewBox=\"0 0 660 400\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"330\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"18\" font-weight=\"bold\">四种基本团队类型:流式团队是主角,其余三种为它减负</text><rect x=\"560\" y=\"98\" width=\"74\" height=\"46\" rx=\"6\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><text x=\"597\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\" font-weight=\"bold\">用户</text><rect x=\"150\" y=\"94\" width=\"108\" height=\"54\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"204\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\" font-weight=\"bold\">流式团队</text><text x=\"204\" y=\"137\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">端到端交付</text><rect x=\"280\" y=\"94\" width=\"108\" height=\"54\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"334\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\" font-weight=\"bold\">流式团队</text><text x=\"334\" y=\"137\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">端到端交付</text><rect x=\"410\" y=\"94\" width=\"108\" height=\"54\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"464\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\" font-weight=\"bold\">流式团队</text><text x=\"464\" y=\"137\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">端到端交付</text><path d=\"M518 121 L558 121\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><path d=\"M558 121 L547 115 L547 127 Z\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"333\" y=\"166\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">数量最多 · 直接把价值交付给用户</text><rect x=\"120\" y=\"308\" width=\"420\" height=\"52\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1.8\"/><text x=\"330\" y=\"333\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\" font-weight=\"bold\">平台团队 · 内部自助平台</text><text x=\"330\" y=\"351\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">当作产品来做,让流式团队自助取用、少提工单</text><path d=\"M204 308 L204 150\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\"/><path d=\"M334 308 L334 150\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\"/><path d=\"M464 308 L464 210\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\"/><rect x=\"24\" y=\"210\" width=\"110\" height=\"50\" rx=\"6\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/><text x=\"79\" y=\"232\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\" font-weight=\"bold\">赋能团队</text><text x=\"79\" y=\"250\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10\">教练·阶段性</text><path d=\"M134 226 C160 200 176 175 200 150\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\"/><rect x=\"404\" y=\"210\" width=\"130\" height=\"50\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1.8\"/><text x=\"469\" y=\"232\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\" font-weight=\"bold\">复杂子系统团队</text><text x=\"469\" y=\"250\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10\">封装高复杂度</text><path d=\"M469 210 L466 150\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"1.3\"/><path d=\"M466 150 L461 161 L472 161 Z\" style=\"fill:var(--ink-faint)\"/></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "五、三种交互模式:两个团队此刻该用哪一种"
+  },
+  {
+   "type": "p",
+   "text": "光有四种团队还不够,团队和团队之间**怎么协作**,同样需要设计。书里把团队间的交互收敛成**三种模式**,并主张:**任何两个团队,在任何时刻,都该明确「我们现在到底该用哪一种」——而不是稀里糊涂地混着来。**"
+  },
+  {
+   "type": "p",
+   "text": "**第一种:协作(Collaboration)——紧密并肩。** 两个团队暂时**紧紧绑在一起、共同探索未知**,边界模糊、你中有我。这种模式适合创新、磨合、打通一个全新领域的阶段,能碰撞出东西。但它**成本很高**:两个团队的认知负荷都会上升,边界一糊,责任就难分。所以**协作应当是短期的**——像两个人合力搬过一段难走的路,搬完就该松手;长期黏在一起协作,只会互相拖慢。"
+  },
+  {
+   "type": "p",
+   "text": "**第二种:服务(X-as-a-Service)——清清爽爽。** 一个团队把自己的成果**当成一个界限分明的「服务」,提供给另一个团队按需取用**(平台团队最典型)。**边界清晰、依赖最小**:你不用知道我内部怎么实现,照着接口用就行。这种模式适合稳定、成熟的关系,能让双方各自埋头高速前进、互不打扰。团队拓扑的一个重要判断是:**很多本该是「服务」关系的团队,却还停在「协作」里天天开会——这就是摩擦和等待的一大来源。**"
+  },
+  {
+   "type": "p",
+   "text": "**第三种:促进(Facilitating)——从旁点拨。** 一个团队(通常是赋能团队)**帮助、引导、教练另一个团队,助它跨过某个障碍**。它不替对方干活,也不跟对方长期共建,而是像教练站在场边,帮你把卡住的地方疏通了,就功成身退。**看清并有意识地选择交互模式,能消掉团队之间大量的摩擦、扯皮和等待。** 很多跨团队的痛苦,不是因为人不好,而是因为两个团队用错了交互模式还不自知。"
+  },
+  {
+   "type": "figure",
+   "ftype": "关系图",
+   "caption": "三种交互模式:协作紧密而短期、服务边界清晰、促进从旁点拨——有意识地选对一种,能消掉大量团队间的摩擦与等待。",
+   "svg": "<svg viewBox=\"0 0 660 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"330\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"18\" font-weight=\"bold\">三种交互模式:此刻这两个团队,该用哪一种?</text><line x1=\"222\" y1=\"52\" x2=\"222\" y2=\"258\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><line x1=\"438\" y1=\"52\" x2=\"438\" y2=\"258\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"58\" y=\"78\" width=\"86\" height=\"42\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1.6\"/><text x=\"101\" y=\"104\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">团队 甲</text><rect x=\"98\" y=\"116\" width=\"86\" height=\"42\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1.6\"/><text x=\"141\" y=\"142\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">团队 乙</text><path d=\"M132 118 L110 114\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\"/><path d=\"M150 120 L172 124\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\"/><text x=\"120\" y=\"205\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"16\" font-weight=\"bold\">协作</text><text x=\"120\" y=\"223\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"11\">Collaboration</text><text x=\"120\" y=\"244\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">紧密并肩·共探未知</text><text x=\"120\" y=\"261\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">成本高·宜短期</text><rect x=\"285\" y=\"72\" width=\"94\" height=\"40\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1.6\"/><text x=\"332\" y=\"97\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">服务方</text><rect x=\"285\" y=\"150\" width=\"94\" height=\"40\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1.6\"/><text x=\"332\" y=\"175\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">取用方</text><path d=\"M332 112 L332 148\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><path d=\"M332 148 L326 137 L338 137 Z\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"393\" y=\"134\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10\">即服务</text><text x=\"332\" y=\"205\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\" font-weight=\"bold\">服务</text><text x=\"332\" y=\"223\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"11\">X-as-a-Service</text><text x=\"332\" y=\"244\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">边界清晰·依赖最小</text><text x=\"332\" y=\"261\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">各自高速前进</text><rect x=\"500\" y=\"72\" width=\"100\" height=\"40\" rx=\"5\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/><text x=\"550\" y=\"97\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">赋能团队</text><rect x=\"500\" y=\"150\" width=\"100\" height=\"40\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1.6\"/><text x=\"550\" y=\"175\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">被帮助的团队</text><path d=\"M550 112 L550 148\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\"/><path d=\"M550 148 L544 137 L556 137 Z\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"550\" y=\"205\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\" font-weight=\"bold\">促进</text><text x=\"550\" y=\"223\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"11\">Facilitating</text><text x=\"550\" y=\"244\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">教练引导·助其跨障</text><text x=\"550\" y=\"261\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">疏通后即退</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "六、团队 API:像调接口一样跟一个团队打交道"
+  },
+  {
+   "type": "p",
+   "text": "这里还有一个很妙的小概念:**团队 API。** 程序员都懂,一个软件模块对外会有清晰的 API——你不用管它内部怎么写的,照着接口调用就行。Skelton 和 Pais 说,**一个团队,也应该有一套清晰的「团队 API」**:别人该怎么跟你协作、怎么给你提需求、你负责交付什么、你的边界到哪、有哪些文档可查、走什么渠道找你。"
+  },
+  {
+   "type": "p",
+   "text": "把团队 API 定清楚,跨团队协作就能**像调接口一样低摩擦**:我不用挤进你的团队内部、不用天天拉你开会,照着你的「接口」来就行。这其实是「服务」模式能跑顺的前提,也是给认知负荷减负的利器——**一个边界清晰、对外接口明确的团队,别人跟它打交道时要操的心,就少得多。**"
+  },
+  {
+   "type": "h2",
+   "text": "七、组织随需演化:团队拓扑是动词,不是一张组织图"
+  },
+  {
+   "type": "p",
+   "text": "最后,也是最容易被误解的一点:**团队拓扑不是一张画一次就永久挂在墙上的组织架构图。** 它是**随需演化(sensing & evolving)的**——团队结构应该像活物一样,随着产品成熟、技术演进、认知负荷的变化,持续地去感知、去调整。"
+  },
+  {
+   "type": "p",
+   "text": "举几个例子你就明白它「动」在哪:一个新领域刚开荒时,两个团队用「协作」模式一起摸索;等这块领域成熟稳定了,就该**把交互模式从「协作」降级成「服务」**,让双方松开手、各自提速。某个流式团队被塞的东西越来越多、开始过载了,那就是信号——该**拆分它,或者引入平台团队 / 赋能团队来给它减负**。某块复杂子系统的知识慢慢普及开了,复杂子系统团队甚至可以功成身退。"
+  },
+  {
+   "type": "figure",
+   "ftype": "时间线",
+   "caption": "随需演化:同一对团队的关系会随产品成熟而变——新领域时紧密「协作」,成熟后降级为清爽的「服务」;谁过载了,就拆分或引入平台、赋能团队。",
+   "svg": "<svg viewBox=\"0 0 640 320\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"320\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"18\" font-weight=\"bold\">随需演化:团队拓扑是动词,不是一张定死的组织图</text><rect x=\"60\" y=\"86\" width=\"88\" height=\"40\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1.6\"/><text x=\"104\" y=\"111\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">团队 甲</text><rect x=\"98\" y=\"122\" width=\"88\" height=\"40\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1.6\"/><text x=\"142\" y=\"147\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">团队 乙</text><text x=\"122\" y=\"196\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\" font-weight=\"bold\">协作</text><text x=\"122\" y=\"215\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">新领域·共同摸索</text><path d=\"M215 122 L410 122\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><path d=\"M410 122 L398 115 L398 129 Z\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"312\" y=\"108\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\" font-weight=\"bold\">领域成熟了</text><text x=\"312\" y=\"145\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">协作 → 降级为服务</text><rect x=\"430\" y=\"88\" width=\"92\" height=\"38\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1.6\"/><text x=\"476\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">服务方</text><rect x=\"430\" y=\"150\" width=\"92\" height=\"38\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1.6\"/><text x=\"476\" y=\"174\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">取用方</text><path d=\"M476 126 L476 148\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><path d=\"M476 148 L470 138 L482 138 Z\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"476\" y=\"212\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\" font-weight=\"bold\">服务</text><text x=\"476\" y=\"231\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">成熟稳定·各自提速</text><path d=\"M50 268 L590 268\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"1.5\"/><path d=\"M590 268 L578 262 L578 274 Z\" style=\"fill:var(--ink-faint)\"/><text x=\"50\" y=\"288\" text-anchor=\"start\" style=\"fill:var(--ink-soft)\" font-size=\"12\">时间 · 产品成熟度 →</text><text x=\"590\" y=\"288\" text-anchor=\"end\" style=\"fill:var(--ink-soft)\" font-size=\"12\">过载则拆分·引入平台/赋能</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "所以正确的理解是:**团队拓扑是一套「持续设计团队」的动态方法,而不是一张静态的架构图。** 它给你的不是一个「一劳永逸的正确答案」,而是一双**不断观察、不断微调**的眼睛:此刻谁过载了?哪两个团队的协作该转成服务了?哪里的价值流动堵住了?看到了,就动手调一点点。"
+  },
+  {
+   "type": "h2",
+   "text": "八、分寸:框架是镜子,不是模具"
+  },
+  {
+   "type": "p",
+   "text": "讲到这儿,你可能已经跃跃欲试,想拿这四种类型、三种模式,把自己公司的团队一个个对号入座、重新洗牌了。**打住。这恰恰是全书反复提醒你别犯的错。**"
+  },
+  {
+   "type": "p",
+   "text": "**第一层分寸:这四种类型、三种模式,是「思考框架」,不是照抄的教条。** 真实的组织,几乎不可能是这四种类型的「纯净」排列。绝大多数团队都处在**混合、过渡、模糊**的状态:一个团队可能既有点像流式、又背着半个平台;两个团队的关系可能正卡在从协作转向服务的半路上。**硬要给每个团队贴上一个干净的标签、为了「符合框架」而强行改组,反而会制造混乱和形式主义**——大家忙着争论「我们到底算哪一类」,却忘了本来要解决的问题是什么。"
+  },
+  {
+   "type": "p",
+   "text": "框架的正确用法,是**把它当成一副「看团队结构与协作」的镜子和一套词汇表**。它的价值不在于给你一个标准答案,而在于给你一双能看见问题的眼睛、一组能说清问题的词:**谁认知过载了?哪两个团队明明该是「服务」关系,却还在天天「协作」开会?这条价值流,卡在哪个团队的门口了?** 看见了这些,再**结合你自己组织的真实情境——团队的成熟度、技术栈、业务特点、具体是哪些人——灵活地、渐进地去调整。** 镜子照出问题,怎么改,得由你根据实情拿捏,而不是照着一个模具浇一个出来。"
+  },
+  {
+   "type": "p",
+   "text": "**第二层分寸,也是压舱石:框架是手段,不是目的。** 所有这些概念——四种类型、三种模式、团队 API、认知负荷——服务的是同一个、也是唯一的终极目标:**让价值快速、可持续地流到用户手里。** 千万别本末倒置,为了「看起来像团队拓扑」而瞎折腾。**判断任何一次团队调整该不该做,标准永远是那一个:它让价值流动得更快了吗?团队的认知更轻了吗?交付更稳了吗?** 如果一个改动很「标准」、很「像团队拓扑」,却让流动更慢、让人更累,那它再标准也不该做。"
+  },
+  {
+   "type": "p",
+   "text": "还有一句现实的告诫:**改团队结构,成本很高、牵动很多人的饭碗和情绪。** 它不是在白板上挪几个方块那么轻巧。所以动手要**审慎、渐进**——小步试、看效果、再往前走,而不是一夜之间大手术。始终拿实际效果说话:流动是不是真的更快了,认知是不是真的更轻了,交付是不是真的更稳了。**《团队拓扑》给你的,与其说是一套要照搬的标准答案,不如说是一副重新看待「组织」的眼镜:组织结构不是软件之外的杂事,它就是你的软件架构的第一因;而设计组织的唯一准绳,是让价值流得更快。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "金句卡",
+   "caption": "全书一句话:你怎么切团队,软件就长成什么样——所以要先想清楚要什么架构,再倒推着设计团队。",
+   "svg": "<svg viewBox=\"0 0 640 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"16\" y=\"16\" width=\"608\" height=\"268\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"30\" y=\"30\" width=\"580\" height=\"240\" rx=\"6\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1\" stroke-dasharray=\"3 5\"/><text x=\"320\" y=\"108\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"27\" font-weight=\"bold\">你的团队怎么切,</text><text x=\"320\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"27\" font-weight=\"bold\">软件就长成什么样。</text><line x1=\"250\" y1=\"182\" x2=\"390\" y2=\"182\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><text x=\"320\" y=\"216\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">组织结构不是软件之外的小事,它是架构的第一因</text><text x=\"320\" y=\"250\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\">《团队拓扑》· Skelton &amp; Pais</text></svg>"
+  },
+  {
+   "type": "refs",
+   "items": [
+    "本篇为《团队拓扑》(Team Topologies: Organizing Business and Technology Teams for Fast Flow,Matthew Skelton & Manuel Pais,2019)全书总览的白话深读,系原创转述与讲解,非原书内容摘抄;书中概念与个别英文术语(Conway's Law / cognitive load / stream-aligned / platform / X-as-a-Service 等)按通行译法呈现。",
+    "康威定律(Conway's Law)由 Melvin Conway 于 1967 年提出,本书在其上发展出「反向康威操作」等实践;文中「四个团队做出四段式编译器」为业界常用的通俗示例。",
+    "四种团队类型、三种交互模式是一套「思考框架」而非教条;实际运用须结合自身组织情境(团队成熟度、技术栈、业务特点、人员)灵活、渐进地调整,一切以「价值快速、可持续流动」为准绳。改团队结构成本高、影响大,宜审慎小步推进、以实际效果为凭。",
+    "后续分章白话将逐一展开康威定律、以团队为本、认知负荷、四种团队类型、三种交互模式与组织演化等核心章节,本篇只作俯瞰。"
+   ]
+  }
+ ]
+}

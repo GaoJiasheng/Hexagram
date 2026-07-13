@@ -1,0 +1,119 @@
+{
+ "title": "让组织随需演化(分寸)",
+ "subtitle": "团队拓扑是一套持续演化的思考框架,不是一张画定就挂墙上的组织图,也不是照抄的教条",
+ "centralIdea": "这是全书的收尾。合上书前,先把《团队拓扑》串成一条线:康威定律(组织结构塑造架构)+反向康威操作、以团队为本(稳定的小团队是交付单元)、认知负荷(别让团队超载,是划边界的标尺)、四种团队类型(流式为主角,赋能/平台/复杂子系统为支撑)、三种交互模式(协作/服务/促进)、团队 API。但比这套框架更要紧的,是运用它的分寸——团队拓扑是一套「持续演化的动态方法 + 思考框架」,不是一张一次画定就挂墙上的静态组织图,也不是照抄的教条。分寸有四:其一,组织要随需演化——持续感知(sensing)产品成熟、技术演进、认知负荷的变化,动态地把团队关系从协作转服务、把过载团队拆分或引入平台/赋能团队卸载、把不再复杂的子系统并回流式团队;它是「持续设计团队」的活动,而非一次性重组。其二,四种类型、三种模式是看清与改进团队结构的镜子和词汇表,不是必须对号入座的标准答案——真实组织多是混合、过渡、模糊态,硬贴标签、为「符合框架」而强行改组只会制造混乱与形式主义;正确用法是先用框架发现问题,再结合自身情境灵活渐进地调整。其三,框架是手段,让价值快速可持续地流动到用户手里才是目的,别本末倒置、买椟还珠——凡不利于流动的改动再标准也不该做,凡让流动更顺的调整再不合框架也是对的。其四,改团队结构成本高、会打断磨合,要以实际效果(流动更快?认知更轻?交付更稳?)为准绳,小步渐进、给团队重新稳定的时间(呼应稳定团队)。团队拓扑真正教给我们的,不是「把团队分成四类」这个答案,而是一种思维方式:把「如何组织团队」当作可以有意识设计、并持续演化的杠杆,用来让价值更快流动、让团队认知更轻、让人工作得更好——运用它的关键,永远是服务于价值流动,并结合自身情境灵活、渐进、审慎地调整,而非照搬教条。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "某公司的技术负责人读完这本书,大受震动,连夜画了一张漂亮的新组织图:每个团队都工工整整贴上标签——这几个是「流式团队」,那个是「平台团队」,这里补一个「赋能团队」,那边圈一个「复杂子系统团队」;团队之间的关系也标得一清二楚,谁跟谁「协作」、谁向谁「服务」。图挂上墙,全员对着新名分一次性重组到位。三个月后,他却满脸困惑:「书里说的我都照做了,团队也按四种类型分好了,可怎么比以前还乱?」——两个本来配合默契的小组,被生生拆进两个不同的『类型』里,天天扯皮;一个被封为『平台团队』的组,其实根本没做好对外服务的准备,反倒成了所有人卡脖子的地方;而那张挂在墙上的图,画定之后就再没动过,业务都转了两轮了,它还是老样子。他把《团队拓扑》读成了一张要照着填的表格,却漏掉了全书最要紧的那一层——分寸。这一章,先把整本书串成一条线,再把这层分寸,讲透。"
+  },
+  {
+   "type": "h2",
+   "text": "一、先把整本书,串成一条线"
+  },
+  {
+   "type": "p",
+   "text": "合上书前,值得把走过的路回望一遍。《团队拓扑》从头到尾,其实在回答同一个问题:一家公司该怎么切分团队、怎么安排团队之间的沟通,才能又快又稳地把价值送到用户手里。它给出的答案,是一条环环相扣的链。**起点是康威定律**——设计系统的组织,其产出的架构必然复制它的沟通结构;团队边界最终会变成系统边界。既然如此,就干脆**反过来用**它:先想清楚你要什么样的架构,再据此设计团队(反向康威操作)。**接着是以团队为本**:软件交付的基本单元是团队而非个人,所以要打造稳定、长期、有归属感的小团队,而不是频繁重组、临时拼凑。**再接着是认知负荷**:一个团队能装进脑子里处理的复杂度有上限,超载是交付变慢、质量下滑、人心倦怠的根源——它因此成了划分团队边界的标尺。**有了这三块地基,才谈得上搭骨架**:全公司的团队收敛成四种基本类型——流式团队(对齐一条价值流、端到端交付)是主角,赋能团队(像教练帮别人补齐能力)、平台团队(提供内部自助平台)、复杂子系统团队(封装专家级复杂度)三类,都是为让流式团队更快、更轻而存在。**团队之间怎么配合**,则用三种交互模式说清楚:协作(紧密共创,成本高、宜短期)、服务(把成果当服务提供,边界清晰、适合稳定期)、促进(一方帮助引导另一方,赋能团队常用);再配上「团队 API」——像软件有接口一样,让每个团队都有清晰的对外接口。"
+  },
+  {
+   "type": "figure",
+   "ftype": "流程图",
+   "caption": "全书一条线:康威定律奠定为什么,以团队为本与认知负荷打地基,四种类型 / 三种模式 / 团队 API 搭骨架——七块拼图共同指向同一个目标:让价值快速、可持续地流动",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\">全书框架:从「组织」通往「价值流动」的一条链</text><rect x=\"70\" y=\"42\" width=\"420\" height=\"42\" rx=\"9\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"280\" y=\"60\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12.5\">康威定律 + 反向康威操作</text><text x=\"280\" y=\"77\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10.5\">组织结构塑造架构,于是反过来据理想架构设计团队</text><text x=\"280\" y=\"100\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">↓</text><rect x=\"70\" y=\"106\" width=\"420\" height=\"42\" rx=\"9\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"280\" y=\"124\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12.5\">以团队为本 · 认知负荷</text><text x=\"280\" y=\"141\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10.5\">稳定的小团队是交付单元;认知负荷是划边界的标尺</text><text x=\"280\" y=\"164\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">↓</text><rect x=\"70\" y=\"170\" width=\"420\" height=\"54\" rx=\"9\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"280\" y=\"188\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12.5\">四种团队类型 · 三种交互模式 · 团队 API</text><text x=\"280\" y=\"205\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10.5\">流式为主角,赋能 / 平台 / 复杂子系统为支撑</text><text x=\"280\" y=\"219\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10.5\">协作 / 服务 / 促进,配清晰的团队接口</text><text x=\"280\" y=\"240\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">↓</text><rect x=\"70\" y=\"246\" width=\"420\" height=\"40\" rx=\"9\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\"/><text x=\"280\" y=\"271\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">目标:让价值快速、可持续地流动到用户手里</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "把这一串连起来看,你会发现它们并不是七个孤立的知识点,而是一个有机的整体,共同指向一个词——**流动**。从康威定律到团队 API,所有概念最终都服务于同一件事:让价值快速、可持续地流动到用户手里。这是理解整本书的钥匙,也是接下来这几条分寸共同的源头。可这套框架越是好用,就越容易被用歪:被当成一张一劳永逸的组织图,被当成一份对号入座的标准答案。所以在合上书之前,必须把运用它的分寸补足——这才是最后一章真正要交给你的东西。"
+  },
+  {
+   "type": "h2",
+   "text": "二、分寸一:组织要「随需演化」,不是一次定死"
+  },
+  {
+   "type": "p",
+   "text": "很多人读完这本书,最想做的一件事,就是立刻画一张新的组织图,把每个团队都归好类、把每条关系都标清楚,然后挂上墙——大功告成。这恰恰是最要提防的误会。**团队结构,不是一张画好就挂墙上、几年不动的组织架构图。**产品会从探索期走向成熟,技术会演进,业务会转向,团队的认知负荷也会随之涨落。今天合理的切分,半年后可能就成了绊脚石。所以团队拓扑真正主张的,是让组织**持续地「感知」(sensing)**:像一个有机体那样,不断接收来自交付速度、认知负荷、团队士气、系统耦合的信号,并据此动态地调整团队与团队之间的关系。"
+  },
+  {
+   "type": "p",
+   "text": "这种调整,是具体而日常的。**某块领域成熟稳定了**,两个原本要紧密「协作」、天天开会对齐的团队,就该把关系升级为「服务」——一方把能力沉淀成清晰的服务,另一方自助取用,不必再耗在没完没了的沟通里。**某个团队认知过载了**,负责的东西太多太杂,就该动手:或者把它拆成两个更聚焦的团队,或者引入一个平台团队把底层的重复劳动接走,或者请一个赋能团队进来,阶段性地帮它补齐短板再退出。**某个复杂子系统不再那么复杂了**——专家级的难点被攻克、沉淀成了成熟工具,就可以把它并回流式团队,少养一个专门团队。说到底,**团队拓扑是一项「持续设计团队」的活动,而不是一次性的重组。**画组织图是名词,随需演化是动词——后者,才是这本书的本意。"
+  },
+  {
+   "type": "quote",
+   "original": "团队拓扑是一套持续演化的动态方法,不是一张一次画定、挂上墙就不动的组织图。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "对比",
+   "caption": "两种截然不同的用法:把它当一次定死、对号入座的静态组织图(左),还是当持续感知、动态调整、服务于价值流动的思考框架(右)——分野决定成败",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"150\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13.5\">静态组织图</text><text x=\"150\" y=\"48\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10.5\">一次定死 · 对号入座</text><text x=\"410\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13.5\">随需演化的思考框架</text><text x=\"410\" y=\"48\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"10.5\">持续感知调整 · 服务于价值流动</text><line x1=\"30\" y1=\"58\" x2=\"530\" y2=\"58\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/><line x1=\"280\" y1=\"58\" x2=\"280\" y2=\"284\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/><text x=\"150\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"11.5\">一次画定,挂墙上几年不变</text><text x=\"410\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"11.5\">持续感知信号,动态调整</text><line x1=\"30\" y1=\"110\" x2=\"530\" y2=\"110\" style=\"stroke:var(--line)\" stroke-width=\"0.7\"/><text x=\"150\" y=\"140\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"11.5\">每个团队硬贴一个标签</text><text x=\"410\" y=\"140\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"11.5\">混合 · 过渡态,不求纯净</text><line x1=\"30\" y1=\"160\" x2=\"530\" y2=\"160\" style=\"stroke:var(--line)\" stroke-width=\"0.7\"/><text x=\"150\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"11.5\">为「符合框架」强行改组</text><text x=\"410\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"11.5\">从现状小步 · 渐进演化</text><line x1=\"30\" y1=\"210\" x2=\"530\" y2=\"210\" style=\"stroke:var(--line)\" stroke-width=\"0.7\"/><text x=\"150\" y=\"240\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">易本末倒置,忘了为什么</text><text x=\"410\" y=\"240\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"11.5\">始终问:流动是否更顺</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "三、分寸二:它是「思考框架」,不是照抄的教条"
+  },
+  {
+   "type": "p",
+   "text": "这是全书最容易被读歪、也最要紧的一层分寸。四种团队类型、三种交互模式,听上去像一套标准答案,于是很多人拿到手,第一反应就是给公司里每个团队都贴一个标签:你是流式,你是平台,你是复杂子系统……凡是对不上号的,就想办法改造它、迁就它,好让现实「符合框架」。**这是把镜子当成了模具。**四种类型、三种模式,本是帮你看清、讨论、改进团队结构的一套镜子和词汇表——它给你一套共同语言,让「这个团队是不是超载了」「这两个团队现在到底算协作还是服务」这类原本模糊的问题,变得可以被指认、被讨论。它**不是一张必须对号入座的标准答案。**"
+  },
+  {
+   "type": "p",
+   "text": "真实的组织,几乎不可能是这些类型的「纯净」排列。**大量团队处在混合、过渡、模糊的状态**:一个团队既对齐着一条价值流,又顺带维护着一块半平台化的东西;一对团队正从「协作」慢慢转向「服务」,卡在中间;某个小组挂着「平台」的名,其实还没真正把自己产品化。这都很正常。**硬要给每个团队贴一个纯净的标签、为了「符合框架」而强行改组,只会制造混乱与形式主义**——团队被拆得七零八落,默契被打断,大家忙着适应新名分,真正的问题反而没人管。正确的用法恰恰相反:**先用这套框架去发现问题**——谁在超载?哪两个团队的协作早该转成服务了?价值到底卡在了哪一环?——**再结合自己组织的真实情境**(团队的成熟度、技术栈、业务形态、具体的人),灵活、渐进地去调整。框架负责帮你看清,情境决定你怎么做。"
+  },
+  {
+   "type": "quote",
+   "original": "四种类型、三种模式,是看清与改进团队结构的镜子,不是必须对号入座的标准答案。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "流程图",
+   "caption": "不是照着框架填表,而是用框架发现问题、结合自身情境小步调整、再看价值流动是否更顺——如此循环往复,团队拓扑是持续设计,而非一次性重组",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\">正确的用法:发现问题 → 结合情境 → 渐进调整 → 看流动</text><rect x=\"26\" y=\"72\" width=\"108\" height=\"104\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.2\"/><rect x=\"164\" y=\"72\" width=\"108\" height=\"104\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.2\"/><rect x=\"302\" y=\"72\" width=\"108\" height=\"104\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.2\"/><rect x=\"440\" y=\"72\" width=\"108\" height=\"104\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.3\"/><text x=\"149\" y=\"124\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">→</text><text x=\"287\" y=\"124\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">→</text><text x=\"425\" y=\"124\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">→</text><text x=\"80\" y=\"98\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">① 发现问题</text><text x=\"80\" y=\"120\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"9.5\">谁在超载?</text><text x=\"80\" y=\"136\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"9.5\">哪对协作该转服务?</text><text x=\"80\" y=\"152\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"9.5\">价值卡在哪一环?</text><text x=\"218\" y=\"98\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">② 结合情境</text><text x=\"218\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"9.5\">成熟度 · 技术栈</text><text x=\"218\" y=\"140\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"9.5\">业务 · 具体的人</text><text x=\"356\" y=\"98\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">③ 渐进调整</text><text x=\"356\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"9.5\">拆分 · 引平台</text><text x=\"356\" y=\"140\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"9.5\">协作转服务</text><text x=\"494\" y=\"98\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">④ 看流动</text><text x=\"494\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"9.5\">更快?更轻?</text><text x=\"494\" y=\"140\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"9.5\">交付更稳?</text><polygon points=\"80,182 76,190 84,190\" style=\"fill:var(--cinnabar-pure)\"/><path d=\"M494 176 L494 214 L80 214 L80 192\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.2\" stroke-dasharray=\"4 3\"/><text x=\"287\" y=\"236\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">循环往复:团队拓扑是持续设计团队,而非一次性重组</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "四、分寸三:框架是手段,「让价值流动」才是目的"
+  },
+  {
+   "type": "p",
+   "text": "为什么框架不能当教条?因为它从来只是**手段**。所有这些概念——四种类型、三种模式、团队 API、认知负荷——服务的是同一个、也是唯一一个最终目的:**让价值快速、可持续地流动到用户手里。**一旦忘了这一点,就极容易本末倒置:为了让组织「看起来像团队拓扑」而折腾团队,为了凑齐四种类型而硬造出一个平台团队,为了图上好看而把本该协作的两个团队生生分开。这就是**买椟还珠**——买下了那只精致的盒子,却把里面真正的珠子扔了。判断一个团队设计的改动该不该做,标准其实特别简单,就一句话:它让价值流动得更顺了,还是更堵了?想清楚这一问,很多纠结当场就化开了。"
+  },
+  {
+   "type": "quote",
+   "original": "凡不利于价值快速可持续流动的改动,再标准也不该做;凡让流动更顺的调整,再不合框架也是对的。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "五、分寸四:改团队结构成本高,要审慎渐进"
+  },
+  {
+   "type": "p",
+   "text": "最后一条分寸,关乎节奏。**重组团队,是一件成本很高的事。**它会牵动很多人的日常,打断团队之间好不容易磨出来的默契,带来一段谁都不好受的阵痛期。所以团队拓扑虽然主张「随需演化」,却绝不是鼓励你频繁大改、动不动就推倒重来。**恰恰相反,演化的要义是小步、渐进。**每一次调整,都该以实际效果为准绳去检验——流动是不是更快了?认知是不是更轻了?交付是不是更稳了?——用真实的收益来决定下一步,而不是凭一张理想图纸一次性到位。而且,每次改动之后,都要**给团队留出重新磨合、重新稳定下来的时间**;这正好呼应了全书一开始就强调的「以团队为本、打造稳定团队」——若为追求某种理想结构而把团队改来改去,稳定团队的根基反倒先被自己刨了。**审慎、渐进、以效果说话,正是让『随需演化』不至于沦为瞎折腾的那根缰绳。**"
+  },
+  {
+   "type": "h2",
+   "text": "六、合上书:把「组织团队」当成一根持续演化的杠杆"
+  },
+  {
+   "type": "p",
+   "text": "书到这里,可以合上了。回头看,《团队拓扑》真正教给我们的,其实不是「把团队分成四类」这个现成答案——那只是它最表层、也最容易被误读的一块。它真正给的,是一种**看待组织的思维方式**:别再把「团队怎么分」当成一件由上头一次性拍定、之后就不必再管的行政小事;而要把它当作一根**可以有意识地设计、并且持续演化的杠杆**——一根用来让价值更快流动、让团队认知更轻、让身处其中的人工作得更顺、更有归属的杠杆。康威定律告诉你这根杠杆真实存在(组织结构确实在塑造你的系统),四种类型和三种模式给了你拨动它的着力点和语言,而随需演化,才是握着这根杠杆的正确姿势。"
+  },
+  {
+   "type": "p",
+   "text": "所以,愿你从这本书带走的,不是墙上那张一劳永逸的组织图,而是这样一套动态的、清醒的用法:**始终服务于「让价值快速、可持续地流动」这一个目的,并结合自己组织的真实情境,灵活、渐进、审慎地去调整**,而不是照搬教条、为套框架而折腾。四种类型是镜子,不是模具;三种模式是词汇,不是律条;整本书是一套帮你思考的工具,不是一份等你填写的表格。当你不再问「我的组织像不像团队拓扑」,而是开始问「价值在我这里,流得够不够快、够不够稳」的时候——你才算真正读懂了这本书。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "合上书,记住这一句:团队拓扑是持续演化的动态方法与思考框架,不是静态组织图,也不是照抄的教条——灵活、渐进、审慎地调整,始终服务于价值流动",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"40\" y=\"34\" width=\"480\" height=\"232\" rx=\"14\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\"/><rect x=\"64\" y=\"56\" width=\"32\" height=\"32\" rx=\"5\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.2\"/><text x=\"80\" y=\"79\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"17\">观</text><text x=\"284\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">团队拓扑,是持续演化的动态方法</text><text x=\"284\" y=\"152\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">与思考框架;不是静态组织图,</text><text x=\"284\" y=\"182\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">也不是照抄的教条。</text><text x=\"284\" y=\"226\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">灵活 · 渐进 · 审慎地调整,始终服务于价值流动</text></svg>"
+  },
+  {
+   "type": "quote",
+   "original": "团队拓扑教的不是把团队分成四类,而是把组织团队当作可持续演化的杠杆,让价值更快流动。",
+   "translation": ""
+  }
+ ]
+}
