@@ -1,0 +1,107 @@
+{
+ "title": "进犯行为：稳定性策略与自私的机器",
+ "subtitle": "为什么草原上的角斗士很少真的拼命——答案不是道德克制,而是一套精密的博弈均衡",
+ "centralIdea": "同种动物打斗时,很少真的往死里打:响尾蛇彼此角力而不用毒牙互咬,雄鹿用鹿角顶撞却极少刺穿对方要害。传统说法认为这是动物懂得为物种存续而自我克制,道金斯延续第一章的立场,指出这种说法站不住脚,转而引入博弈论工具——进化稳定策略,用经典的鹰鸽博弈模型说明:一个种群里全是好斗的鹰派会因互相伤害而集体吃亏,全是温和的鸽派又会被少数好斗者轻松入侵获利,真正稳定下来的,往往是鹰鸽按某个特定比例混合共存的均衡点。这个均衡不是为了整个群体的利益而设计,而是在给定条件下,没有任何一种替代策略能做得更好的纳什均衡式稳定点——这正是理解后续合作与利他行为演化逻辑的关键工具。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "自然纪录片里常有这样的画面:两条雄性响尾蛇为了争夺配偶,缠绕在一起角力摔跤,却几乎不会用它们足以致命的毒牙互相攻击;两头雄鹿为了争夺交配权,用鹿角反复顶撞,力道之大足以把土地犁出沟壑,可极少见到一方被鹿角刺穿身体、当场毙命的惨剧。这类场景很容易让人产生一种浪漫化的联想:动物打斗时懂得克制,好像天生就明白不能把同类往死里打,是为了整个物种不至于自相残杀而灭绝。这个解释听起来很温暖,却正是道金斯在第一章就着力拆穿的那种群体选择式思维——如果每一头鹿都愿意为了物种大局而收着劲打,那么只要种群里出现一头不讲武德、下死手的变异者,它就能稳赢不输,这个不受克制的基因会迅速扩散开来,克制的传统用不了几代就会被冲垮。要真正解释这种普遍存在的克制现象,道金斯需要借来一件全新的工具——博弈论。"
+  },
+  {
+   "type": "h2",
+   "text": "旧解释为什么站不住脚,新工具从哪里借来"
+  },
+  {
+   "type": "p",
+   "text": "在道金斯写作此书之前,动物行为学界确实流行过温-爱德华兹式的解释:动物打斗留有余地,是一种为了不让种群过度损耗而演化出的仪式化行为。可这套说法在自然选择的逻辑下经不起推敲——设想一个所有个体都遵守绅士风度、点到为止的种群,只要一个不守规矩、下死手的变异个体出现,它每次打斗都能占尽便宜,几乎不需要承担被同类克制所带来的任何代价,这个基因会以远快于群体平均水平的速度扩散,用不了多久,克制这套规矩就会从内部瓦解。也就是说,单纯的群体利益没办法保护这套克制策略不被入侵——这和第一章批驳旅鼠跳海传说的逻辑,是同一套道理。"
+  },
+  {
+   "type": "p",
+   "text": "真正能解释这种克制现象的答案,来自英国生物学家梅纳德·史密斯在20世纪70年代初提出的一套分析工具——他把源自经济学与冷战核战略研究的博弈论,移植到演化生物学里,提出了进化稳定策略这个概念。这套工具的核心洞察是:一种行为策略能不能在种群里稳定存在下去,不能只看它单独执行时的效果,而必须放进一个种群语境里考察——当种群里几乎所有个体都采用这种策略时,任何一个采用其他策略的变异个体,平均而言都不可能比大多数派做得更好。道金斯把这套工具引入书中,正是要给「动物为什么常常打得留有余地」这个问题,提供一个不依赖群体利益、完全建立在个体自私逻辑之上的严谨解释。"
+  },
+  {
+   "type": "h2",
+   "text": "鹰派与鸽派:一个简化的思想实验"
+  },
+  {
+   "type": "p",
+   "text": "为了让抽象的博弈论工具变得直观,道金斯设计了一个简化到极致的思想实验:假设一个物种的个体在争夺某种有限资源——比如领地、食物或配偶——时,只会采用两种截然不同的策略之一。鹰派策略者,遇到冲突就全力升级、死缠烂打,直到自己受伤或对方彻底退让为止;鸽派策略者,只会摆出威胁的姿态进行象征性的展示,一旦对方表现出真正升级冲突的意图,就立刻退让,绝不会真的动手互相伤害。每一次冲突都会带来两种可能的后果:赢得资源带来的收益,记作V;受伤付出的代价,记作C——道金斯特别设定C远大于V,这个假设很关键,因为现实中许多资源固然重要,却很少重要到值得用生命去换。"
+  },
+  {
+   "type": "p",
+   "text": "按这套简化模型推演各种遭遇的结果:两个鸽派相遇,谁都不会真的动手,经过一番展示和僵持之后,双方以对半的概率赢得资源,谁也不会受伤,平均收益是V的一半;两个鹰派相遇,一方最终会赢得资源,但过程中大概率双方都会受伤,平均下来算上受伤的代价,收益会大打折扣,甚至可能是负数;而鹰派遇上鸽派时,鸽派会立刻退让,鹰派几乎不费吹灰之力就能拿到全部收益V,鸽派则一无所获但也毫发无损。把这四种组合的期望收益列成一张表格,就能推算出:当种群里鹰派和鸽派的比例分别是多少时,两种策略的平均收益恰好相等——这个特定比例,就是这个简化模型下的进化稳定策略。"
+  },
+  {
+   "type": "figure",
+   "ftype": "鹰鸽博弈收益表",
+   "svg": "<svg viewBox=\"0 0 520 230\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><text x=\"20\" y=\"24\" font-size=\"14\" style=\"fill:var(--ink);font-weight:bold\">鹰鸽博弈:四种相遇的收益</text><rect x=\"20\" y=\"44\" width=\"120\" height=\"36\" style=\"fill:none;stroke:var(--ink-faint);stroke-width:1\"/><rect x=\"140\" y=\"44\" width=\"170\" height=\"36\" style=\"fill:none;stroke:var(--ink-faint);stroke-width:1\"/><rect x=\"310\" y=\"44\" width=\"170\" height=\"36\" style=\"fill:none;stroke:var(--ink-faint);stroke-width:1\"/><text x=\"225\" y=\"67\" font-size=\"11\" text-anchor=\"middle\" style=\"fill:var(--ink);font-weight:bold\">遇到鹰派</text><text x=\"395\" y=\"67\" font-size=\"11\" text-anchor=\"middle\" style=\"fill:var(--ink);font-weight:bold\">遇到鸽派</text><rect x=\"20\" y=\"80\" width=\"120\" height=\"70\" style=\"fill:none;stroke:var(--ink-faint);stroke-width:1\"/><text x=\"80\" y=\"120\" font-size=\"12\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-weight:bold\">我是鹰派</text><rect x=\"140\" y=\"80\" width=\"170\" height=\"70\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:1.5\"/><text x=\"225\" y=\"108\" font-size=\"11\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\">(V－C)/2</text><text x=\"225\" y=\"128\" font-size=\"10\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\">大概率两败俱伤</text><rect x=\"310\" y=\"80\" width=\"170\" height=\"70\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:1.5\"/><text x=\"395\" y=\"108\" font-size=\"11\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\">V</text><text x=\"395\" y=\"128\" font-size=\"10\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\">鸽派立刻退让</text><rect x=\"20\" y=\"150\" width=\"120\" height=\"70\" style=\"fill:none;stroke:var(--ink-faint);stroke-width:1\"/><text x=\"80\" y=\"190\" font-size=\"12\" text-anchor=\"middle\" style=\"fill:var(--azure);font-weight:bold\">我是鸽派</text><rect x=\"140\" y=\"150\" width=\"170\" height=\"70\" style=\"fill:none;stroke:var(--azure);stroke-width:1.5\"/><text x=\"225\" y=\"178\" font-size=\"11\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\">0</text><text x=\"225\" y=\"198\" font-size=\"10\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\">立刻退让,零损失</text><rect x=\"310\" y=\"150\" width=\"170\" height=\"70\" style=\"fill:none;stroke:var(--azure);stroke-width:1.5\"/><text x=\"395\" y=\"178\" font-size=\"11\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\">V/2</text><text x=\"395\" y=\"198\" font-size=\"10\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\">展示一番对半分</text></svg>",
+   "caption": "四格收益表是整个鹰鸽博弈模型的核心:把这四个数字代入种群比例方程,就能算出稳定均衡点落在哪里。"
+  },
+  {
+   "type": "h2",
+   "text": "为什么纯鹰种群和纯鸽种群都撑不住"
+  },
+  {
+   "type": "p",
+   "text": "先看一个全部由鹰派组成的种群会发生什么。每一次相遇都是鹰对鹰,按前面的收益表,平均收益是资源价值减去受伤代价再除以二,而受伤代价被设定为远大于资源价值,这意味着整个种群的平均收益是负数——群体里的每一个个体,平均而言都在这场无休止的互相伤害中亏本。此时,只要种群里偶然出现一个鸽派突变体,它每次遇到鹰派对手都会立刻退让,虽然什么也得不到,却完全不会受伤,平均收益是零——比全员皆鹰状态下的负收益要划算得多。鸽派突变体因此能够成功侵入,并在种群中逐渐扩散,纯鹰种群注定不稳定。"
+  },
+  {
+   "type": "p",
+   "text": "再看另一个极端:一个全部由鸽派组成的种群。每一次相遇都以温和的对半分收场,平均收益是资源价值的一半,是个不错的正数。可这时只要种群里偶然出现一个鹰派突变体,它每次遭遇的对手清一色都是从不反抗的鸽派,几乎每次都能不费吹灰之力拿到全部资源,平均收益接近资源价值本身,远远高于鸽派的收益。鹰派突变体因此能够轻松入侵并快速扩散,纯鸽种群同样注定不稳定。两个极端都撑不住,说明真正的稳定状态,必然落在两者之间的某个混合比例上。"
+  },
+  {
+   "type": "p",
+   "text": "把两种策略各自的期望收益方程列出来,令二者相等,就能解出这个特定的均衡比例——按照道金斯书里给出的简化设定,这个比例恰好取决于资源价值V与受伤代价C的相对大小:资源越珍贵、打斗的代价相对越低,种群里鹰派所占的比例就会越高;反过来,如果为了争夺的东西根本不值当,而一旦真打起来后果又极其惨重,种群里鹰派的比例就会被压得很低,温和的鸽派策略反而能占主导。这也解释了为什么不同物种、乃至同一物种争夺不同资源时,表现出的攻击性烈度会有明显差异——领地关乎生死存亡的物种,打斗往往更激烈;单纯争夺一次交配机会的场合,则更倾向于用低成本的仪式化展示来分胜负。"
+  },
+  {
+   "type": "p",
+   "text": "这里还有一个值得展开的细节:混合稳定态在现实种群里,可以通过两种截然不同的方式实现,道金斯特意做了区分。第一种是种群多态——种群里始终存在两类不同的个体,一部分个体天生倾向于采取鹰派策略,另一部分个体天生倾向于采取鸽派策略,两类个体各自的数量比例维持在均衡点附近,像蜜蜂群体里天生分化出的蜂后、工蜂、雄蜂那样,各司其职、比例稳定。第二种是个体混合策略——种群里的每一个个体,行为上都不是固定归属于某一派,而是每次遭遇冲突时,按某个特定的概率随机选择鹰派或鸽派的应对方式,长期平均下来,同样能让种群整体的策略比例落在均衡点上。这两种实现方式在数学期望上可以完全等价,但对应的生物学机制却天差地别,要靠具体物种的实际观察数据才能分辨清楚,道金斯把这个区分留给了后续研究者去田野调查中验证。"
+  },
+  {
+   "type": "figure",
+   "ftype": "两种混合实现方式对比图",
+   "svg": "<svg viewBox=\"0 0 520 190\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><text x=\"20\" y=\"24\" font-size=\"14\" style=\"fill:var(--ink);font-weight:bold\">同一个均衡比例,两种不同的实现方式</text><rect x=\"30\" y=\"46\" width=\"210\" height=\"120\" rx=\"6\" style=\"fill:none;stroke:var(--ink-soft);stroke-width:1.5\"/><text x=\"135\" y=\"70\" font-size=\"12\" text-anchor=\"middle\" style=\"fill:var(--ink);font-weight:bold\">种群多态</text><circle cx=\"75\" cy=\"100\" r=\"10\" style=\"fill:var(--cinnabar);stroke:none\"/><circle cx=\"105\" cy=\"100\" r=\"10\" style=\"fill:none;stroke:var(--azure);stroke-width:2\"/><circle cx=\"135\" cy=\"100\" r=\"10\" style=\"fill:none;stroke:var(--azure);stroke-width:2\"/><circle cx=\"165\" cy=\"100\" r=\"10\" style=\"fill:none;stroke:var(--azure);stroke-width:2\"/><circle cx=\"195\" cy=\"100\" r=\"10\" style=\"fill:none;stroke:var(--azure);stroke-width:2\"/><text x=\"135\" y=\"130\" font-size=\"10\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\">固定分工,各占比例</text><text x=\"135\" y=\"150\" font-size=\"10\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\">一生只属于一派</text><rect x=\"280\" y=\"46\" width=\"210\" height=\"120\" rx=\"6\" style=\"fill:none;stroke:var(--ink-soft);stroke-width:1.5\"/><text x=\"385\" y=\"70\" font-size=\"12\" text-anchor=\"middle\" style=\"fill:var(--ink);font-weight:bold\">个体混合策略</text><circle cx=\"325\" cy=\"100\" r=\"10\" style=\"fill:var(--cinnabar);stroke:var(--azure);stroke-width:2;stroke-dasharray:2 2\"/><circle cx=\"355\" cy=\"100\" r=\"10\" style=\"fill:var(--cinnabar);stroke:var(--azure);stroke-width:2;stroke-dasharray:2 2\"/><circle cx=\"385\" cy=\"100\" r=\"10\" style=\"fill:var(--cinnabar);stroke:var(--azure);stroke-width:2;stroke-dasharray:2 2\"/><circle cx=\"415\" cy=\"100\" r=\"10\" style=\"fill:var(--cinnabar);stroke:var(--azure);stroke-width:2;stroke-dasharray:2 2\"/><circle cx=\"445\" cy=\"100\" r=\"10\" style=\"fill:var(--cinnabar);stroke:var(--azure);stroke-width:2;stroke-dasharray:2 2\"/><text x=\"385\" y=\"130\" font-size=\"10\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\">每个个体按概率</text><text x=\"385\" y=\"150\" font-size=\"10\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\">随机选择应对方式</text></svg>",
+   "caption": "两种机制在数学期望上完全等价,却对应着不同的生物学现实——要区分它们,得靠实际的田野观察数据。"
+  },
+  {
+   "type": "quote",
+   "original": "一个策略要成为进化稳定策略,必须满足这样的条件:当种群里几乎所有个体都采用它时,没有任何一种替代策略能获得比它更高的平均收益。",
+   "translation": "这是进化稳定策略最精确的定义——重点不是这个策略本身有多好,而是没有其它策略能打败它。"
+  },
+  {
+   "type": "h2",
+   "text": "稳定不等于最优:一个容易被误解的关键区别"
+  },
+  {
+   "type": "p",
+   "text": "这里有一个道金斯反复提醒读者、也是全书最容易被误读的一点:进化稳定策略,绝不等同于对整个种群最有利的策略。回头看看全员鸽派的那个种群——每个个体的平均收益是资源价值的一半,这其实比混合稳定态下的平均收益要高得多,因为混合稳定态里包含了大量鹰派互相伤害所付出的沉重代价。也就是说,如果种群真能维持全员鸽派的状态,群体整体的日子会过得更好;可正因为这个状态对单个偷偷变鹰的个体极具诱惑力,它根本没办法在演化的压力下维持下去。真正能够稳定存在的,恰恰不是对群体最优的那个状态,而是没有任何个体有动机偏离的那个均衡点——这正是自然选择只会照顾个体眼前得失、而不会替群体长远利益打算盘的又一次生动体现,也是全书开篇论点在博弈情境下的具体延伸。"
+  },
+  {
+   "type": "p",
+   "text": "熟悉经济学或博弈论的读者,大概会立刻联想到纳什均衡这个概念——两者确实高度相似:纳什均衡描述的是「给定所有其他参与者的策略不变,没有人能通过单方面改变自己的策略而获益」的状态;进化稳定策略描述的则是「给定种群里几乎所有个体都采用某策略,任何单独偏离这个策略的个体都不会获得更高的平均收益」的状态。区别在于,纳什均衡通常预设博弈参与者是理性思考、主动计算收益的决策者,而进化稳定策略完全不需要这个预设——第四章已经讲清楚,动物遵循的往往是基因预先编好的本能策略,策略比例之所以会收敛到均衡点,靠的是一代代的自然选择淘汰,而不是任何个体的理性算计。这个区别很重要:它意味着哪怕是没有大脑、不会思考的简单生物,只要处在反复博弈的情境里,种群层面的策略分布也会自动被自然选择推向类似的稳定均衡。"
+  },
+  {
+   "type": "figure",
+   "ftype": "群体最优与稳定均衡对比图",
+   "svg": "<svg viewBox=\"0 0 520 180\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><text x=\"20\" y=\"24\" font-size=\"14\" style=\"fill:var(--ink);font-weight:bold\">「过得最好」和「稳得住」不是一回事</text><rect x=\"30\" y=\"46\" width=\"200\" height=\"100\" rx=\"6\" style=\"fill:none;stroke:var(--azure);stroke-width:2\"/><text x=\"130\" y=\"70\" font-size=\"12\" text-anchor=\"middle\" style=\"fill:var(--azure);font-weight:bold\">全员鸽派</text><text x=\"130\" y=\"92\" font-size=\"10\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\">群体平均收益更高</text><text x=\"130\" y=\"112\" font-size=\"10\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\">但极易被鹰派入侵</text><text x=\"130\" y=\"132\" font-size=\"11\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\">✗ 不稳定</text><rect x=\"290\" y=\"46\" width=\"200\" height=\"100\" rx=\"6\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:2\"/><text x=\"390\" y=\"70\" font-size=\"12\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-weight:bold\">鹰鸽混合均衡</text><text x=\"390\" y=\"92\" font-size=\"10\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\">群体平均收益较低</text><text x=\"390\" y=\"112\" font-size=\"10\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\">但没有策略能打败它</text><text x=\"390\" y=\"132\" font-size=\"11\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\">✓ 稳定</text><text x=\"260\" y=\"166\" font-size=\"11\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\">自然选择只筛选「稳不稳」,不筛选「好不好」</text></svg>",
+   "caption": "对群体最有利的状态,往往因为对偷偷叛变的个体太有诱惑力,而根本无法在演化压力下维持——稳定均衡才是真正能落地的答案。"
+  },
+  {
+   "type": "h2",
+   "text": "一件为后续章节铺路的工具"
+  },
+  {
+   "type": "p",
+   "text": "道金斯在这一章末尾提醒读者,鹰鸽博弈只是进化稳定策略这套分析工具最简化的入门版本,真实的自然界远比两种极端策略的简单混合复杂得多。比如把「先占者不主动挑起冲突,但一旦被入侵就全力反击」这样一种依赖于先来后到的资产阶级策略加进模型,往往能在特定条件下,以更低的整体代价达成稳定,并且能相当好地解释为什么很多物种确实表现出「先到先得、后来者知难而退」的领地行为模式。真实种群里的策略分布,也未必是「一部分个体永远是鹰、一部分个体永远是鸽」这种固定分工,同样可能是每个个体按照某个概率,随机在鹰派策略和鸽派策略之间切换——数学上这两种情形能够达成完全相同的种群层面均衡比例,但生物学含义却大不相同,后续研究需要靠实际观察数据来加以区分。"
+  },
+  {
+   "type": "p",
+   "text": "更重要的是,进化稳定策略这套工具的价值,远不止于解释动物打斗为什么留有余地。它提供了一整套分析框架,专门用来处理「一个策略好不好,取决于种群里其他个体都在采用什么策略」这类相互依赖的演化问题——而这恰恰是理解后续章节里合作、互惠乃至看似无私的利他行为,所必需的核心工具。当道金斯在后面的章节里讨论「针锋相对」这类互惠策略为什么能在反复博弈中稳定存在,或者讨论亲代对子女的投入应该如何权衡分配时,他反复调用的,正是这一章打下的进化稳定策略这套地基。可以说,第五章表面上讲的是动物打斗,骨子里讲的却是整本书接下来讨论一切群体层面策略性行为时,都绕不开的一套通用数学语言。回头看整本书到目前为止的脉络:第一章立起基因视角这面旗帜,第二三章讲清楚基因作为复制因子的物理本质与近乎不朽的存续方式,第四章讲身体如何作为基因预先编程的机器独立运作,这一章则第一次把镜头从单个身体的行为,扩展到多个身体相遇博弈时的策略均衡——从这里开始,这本书要处理的问题,正式从「一个基因如何影响一具身体」,升级为「多具身体、多个基因之间,如何在博弈与合作中彼此塑造」,这也是全书后半部分真正的重头戏所在。"
+  },
+  {
+   "type": "quote",
+   "original": "在很多情形下,种群会稳定在一个鹰派与鸽派混合共存的比例上,而不是全部倒向其中一个极端。",
+   "translation": "这句话是鹰鸽模型最直接的结论:好斗与温和并非非此即彼,现实种群往往呈现某个特定比例的混合共存。"
+  }
+ ]
+}
