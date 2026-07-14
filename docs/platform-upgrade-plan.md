@@ -231,8 +231,8 @@
 - [x] 1.3 Worker 项目脚手架:用 Hono 搭路由骨架,本地 `wrangler dev` 跑通一个健康检查接口
 - [x] 1.4 前端 `src/features/telemetry.js`:路由切换 + `visibilitychange`/`pagehide` 打点,`sendBeacon` 上报,`cid` 匿名 id 生成与存储
 - [x] 1.5 Worker `/api/beat` 接口:路径合法性校验 + 限频 + 直写 D1 `reading_events`
-- [ ] 1.6 `/admin/stats` 页面骨架 + 过渡期口令鉴权(env secret,预埋「`is_owner` 账号出现后自动失效」判断逻辑,即使 Phase 2 还没做)
-- [ ] 1.7 `/admin/stats` 图表:七日曲线/分组热度榜/书章 Top N/平均停留(自绘 SVG,朱色 accent 风格)
+- [x] 1.6 `/admin/stats` 页面骨架 + 过渡期口令鉴权(env secret,预埋「`is_owner` 账号出现后自动失效」判断逻辑,即使 Phase 2 还没做)
+- [x] 1.7 `/admin/stats` 图表:七日曲线/分组热度榜/书章 Top N/平均停留(自绘 SVG,朱色 accent 风格)
 
 ### Phase 2 · 账号与互动
 

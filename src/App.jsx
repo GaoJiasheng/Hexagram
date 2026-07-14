@@ -62,10 +62,11 @@ const BookHomePage = lazy(() => import('./features/books/BookHomePage.jsx'))
 const BookArticlePage = lazy(() => import('./features/books/BookArticlePage.jsx'))
 const ColophonPage = lazy(() => import('./features/Colophon.jsx').then((module) => ({ default: module.ColophonPage })))
 const LicensePage = lazy(() => import('./features/LicensePage.jsx'))
+const AdminStatsPage = lazy(() => import('./features/admin/AdminStatsPage.jsx'))
 
 // 中立外壳路径(总门户 / 义理专题 / 百家争鸣):不套分站 nav/搜索/底栏,域名着陆豁免
 function isNeutralPath(p) {
-  return p === '/' || p === MASTER_PORTAL_PATH || p === '/concepts' || p === '/privacy' || p === '/ba' || p === '/legal' || p === '/debates' || p.startsWith('/debates/') || p === '/books' || p.startsWith('/books/')
+  return p === '/' || p === MASTER_PORTAL_PATH || p === '/concepts' || p === '/privacy' || p === '/ba' || p === '/legal' || p === '/admin/stats' || p === '/debates' || p.startsWith('/debates/') || p === '/books' || p.startsWith('/books/')
 }
 // 全站设置浮层(Tier 0):任何站 nav 齿轮就地打开(主题/字号/译文 + 数据导出导入)
 const SettingsSheet = lazy(() => import('./features/SettingsSheet.jsx'))
@@ -364,6 +365,8 @@ function AppContent() {
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/ba" element={<ColophonPage />} />
           <Route path="/legal" element={<LicensePage />} />
+          {/* Owner 阅读统计工具(隐藏入口,不挂任一分站导航)。 */}
+          <Route path="/admin/stats" element={<AdminStatsPage />} />
           {/* 私人书房「观书」(隐藏入口,不外链,中性外壳):all-in-one 书架 + 书主页放射脑图 + 逐章详读 */}
           <Route path="/books" element={<BooksIndexPage />} />
           <Route path="/books/:slug" element={<BookHomePage />} />

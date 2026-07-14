@@ -11,6 +11,10 @@ public/content/
 
 # Local env files
 *.local
+.dev.vars
+
+# Local wrangler dev state (D1 sqlite, etc.)
+.wrangler/
 
 # Logs
 logs
