@@ -51,10 +51,12 @@ export default function DaoSinglePage({ slug, text }) {
       chapters={book.chapters}
       tocBack={<Link to="/dao" className="read-toc__back">← 道藏</Link>}
       chapterLabel={label}
+      chapterHref={(no) => `/dao/${slug}/${no}`}
       anchorId={(no) => `dao-ch-${no}`}
       getAnchors={(no, i) => getDaoAnchors(slug, no, i)}
       renderYanyi={(no) => <YanyiBlock slug={slug} chapter={no} />}
       renderBaihua={(no) => <BaihuaBlock corpus="dao" slug={slug} chapter={no} bookTitle={meta.title} sectionUnit={meta.sectionUnit || '章'} />}
+      bookTitle={meta.title}
       markCtx={{ corpus: 'dao', slug }}
       header={header}
     />

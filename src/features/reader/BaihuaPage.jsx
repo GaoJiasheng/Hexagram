@@ -4,6 +4,9 @@ import { loadBaihua } from './baihua.js'
 import { BaihuaArticle } from './BaihuaBlock.jsx'
 import { SITE_MAP } from '../../sites/registry.js'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
+import QuoteCard from './QuoteCard.jsx'
+
+function plain(text) { return (text || '').replace(/\*\*/g, '') }
 
 // 白话「整页研读」（design-v22 §2 / A2）——独立路由 /<corpus>/:slug/baihua/:chapter，
 // 整屏阅读、可收藏/分享/深链、刷新仍在。复用 BaihuaArticle（与抽屉同一渲染）。
@@ -16,10 +19,11 @@ export default function BaihuaPage({ corpus }) {
   const slug = isJingzhuan ? params.book : isYijing ? 'hexagrams' : params.slug
   const ch = Number(isJingzhuan ? params.chapter : isYijing ? params.id : params.chapter) || 1
   const [data, setData] = useState(undefined)
+  const [quoteOpen, setQuoteOpen] = useState(false)
   const site = SITE_MAP[corpus]
   usePageTitle(data?.title || '白话', site?.brand)
 
-  useEffect(() => { window.scrollTo(0, 0) }, [slug, ch])
+  useEffect(() => { window.scrollTo(0, 0); setQuoteOpen(false) }, [slug, ch])
 
   useEffect(() => {
     let alive = true
@@ -29,6 +33,9 @@ export default function BaihuaPage({ corpus }) {
   }, [corpus, slug, ch])
 
   const backToChapter = isJingzhuan ? `/classics/${slug}/${ch}` : isYijing ? `/hexagram/${ch}` : `${site?.home || ''}/${slug}/${ch}`
+  const sharePath = isJingzhuan
+    ? `/classics/${slug}/${ch}/baihua`
+    : isYijing ? `/hexagram/${ch}/baihua` : `${site?.home || ''}/${slug}/baihua/${ch}`
   if (data === undefined) {
     return (
       <div className="page-content">
@@ -51,10 +58,20 @@ export default function BaihuaPage({ corpus }) {
         <Link to={backToChapter} className="baihua-page__back">← 回原文</Link>
         {site?.brand && <span className="baihua-page__seal">{site.brand}</span>}
         <span className="baihua-page__title">{data.title}</span>
+        <button className="baihua-page__share" onClick={() => setQuoteOpen(true)} aria-label="生成本篇白话分享卡">🖼 分享卡</button>
       </div>
       <article className="baihua-page__body">
         <BaihuaArticle data={data} />
       </article>
+      {quoteOpen && (
+        <QuoteCard
+          original={plain(data.hero?.headline || data.title)}
+          translation={plain(data.centralIdea || data.subtitle)}
+          source={`${site?.brand || '观象'} · 白话研读`}
+          href={sharePath}
+          onClose={() => setQuoteOpen(false)}
+        />
+      )}
     </div>
   )
 }

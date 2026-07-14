@@ -32,11 +32,13 @@ export const DEFAULT_SETTINGS = {
   fontScale: 1, // 0.9 | 1 | 1.15 | 1.35
   readWidth: 'normal', // 'narrow' | 'normal' | 'wide'
   transLayout: 'stack', // 'stack'(译文在下) | 'side'(原文/译文左右对照)
+  quoteTheme: 'classic', // 'classic'(朱印经典) | 'ink'(水墨留白) | 'moon'(暗夜月白)
 }
 const VALID_THEMES = ['light', 'dark', 'system']
 const VALID_FONT_SCALES = [0.9, 1, 1.15, 1.35]
 const VALID_READ_WIDTHS = ['narrow', 'normal', 'wide']
 const VALID_TRANS_LAYOUTS = ['stack', 'side']
+const VALID_QUOTE_THEMES = ['classic', 'ink', 'moon']
 
 // 白名单校验:旧结构/损坏值不直接进 state(防非法 fontScale 写入 --font-scale 等)
 export function getSettings() {
@@ -45,12 +47,31 @@ export function getSettings() {
   if (!VALID_FONT_SCALES.includes(s.fontScale)) s.fontScale = DEFAULT_SETTINGS.fontScale
   if (!VALID_READ_WIDTHS.includes(s.readWidth)) s.readWidth = DEFAULT_SETTINGS.readWidth
   if (!VALID_TRANS_LAYOUTS.includes(s.transLayout)) s.transLayout = DEFAULT_SETTINGS.transLayout
+  s.quoteTheme = getQuoteTheme()
   s.showTranslation = !!s.showTranslation
   return s
 }
 
 export function saveSettings(s) {
-  set('settings', s)
+  // quoteTheme 有规格指定的独立键；保存其他设置时仍以该键为准，避免旧 context 覆盖新选项。
+  set('settings', { ...s, quoteTheme: getQuoteTheme() })
+}
+
+// ── Quote card theme ──────────────────────────────────────
+// 独立键 guanxiang.v1.quoteTheme，便于分享卡单独记忆、导入导出与日后扩主题。
+export function getQuoteTheme() {
+  const saved = get('quoteTheme', null)
+  if (VALID_QUOTE_THEMES.includes(saved)) return saved
+  // 兼容曾随 settings 导入的值；独立键仍是当前版本的唯一写入目标。
+  const legacy = get('settings', null)?.quoteTheme
+  return VALID_QUOTE_THEMES.includes(legacy) ? legacy : DEFAULT_SETTINGS.quoteTheme
+}
+
+export function saveQuoteTheme(theme) {
+  const next = VALID_QUOTE_THEMES.includes(theme) ? theme : DEFAULT_SETTINGS.quoteTheme
+  set('quoteTheme', next)
+  set('settings', { ...getSettings(), quoteTheme: next })
+  return next
 }
 
 // ── Bookmarks ─────────────────────────────────────────────
@@ -174,7 +195,7 @@ export function markMethodUsed(methodKey) {
 }
 
 // ── Export / Import ───────────────────────────────────────
-const DATA_KEYS = ['settings', 'bookmarks', 'notes', 'divinations', 'reading', 'recentHexagrams', 'progress', 'corpusMarks', 'corpusNotes']
+const DATA_KEYS = ['settings', 'quoteTheme', 'bookmarks', 'notes', 'divinations', 'reading', 'recentHexagrams', 'progress', 'corpusMarks', 'corpusNotes']
 
 export function exportData() {
   const data = {}

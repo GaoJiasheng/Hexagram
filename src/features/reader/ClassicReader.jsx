@@ -58,7 +58,7 @@ export default function ClassicReader({
   markCtx = null,   // {corpus, slug}:启用读经站段落收藏/笔记(Tier 2);null 则关闭
 }) {
   const { settings, setSettings } = useSettings()
-  const { hash } = useLocation()
+  const { hash, pathname } = useLocation()
   const navigate = useNavigate()
   const single = mode === 'single'
   const multi = chapters.length > 1
@@ -69,7 +69,7 @@ export default function ClassicReader({
   const [editing, setEditing] = useState(null)
   const [draft, setDraft] = useState('')
   const [copiedSeg, setCopiedSeg] = useState(null)
-  const [cardSeg, setCardSeg] = useState(null)   // 金句卡(#147):{original, translation, source}
+  const [cardSeg, setCardSeg] = useState(null)   // 金句卡(#147):{original, translation, source, href}
   // 单页长经(金刚经 32 分/黄庭 36 章铺一页)scroll-spy:点亮侧栏当前章 + 回显移动端 select(#145)。
   // 当前章 = 顶部已越过工具条线(130px)的最后一章;rAF 节流,挂载即同步算一次(不依赖后台 rAF)。
   const [activeAnchor, setActiveAnchor] = useState(null)
@@ -107,12 +107,23 @@ export default function ClassicReader({
     }
   }, [chapter, activeAnchor])
   function copyLink(no, i) {
-    const url = `${window.location.origin}${window.location.pathname}#seg-${no}-${i}`
+    const anchor = single ? `seg-${no}-${i}` : `p${i + 1}`
+    const url = `${window.location.origin}${window.location.pathname}#${anchor}`
     try {
       navigator.clipboard?.writeText(url)
       setCopiedSeg(`${no}-${i}`)
       setTimeout(() => setCopiedSeg(null), 1500)
     } catch { /* clipboard 不可用 */ }
+  }
+  function openQuoteCard(no, i, paragraph) {
+    const base = typeof chapterHref === 'function' ? chapterHref(no) : pathname
+    setCardSeg({
+      original: paragraph.original,
+      translation: paragraph.translation,
+      source: cardSource(no),
+      // 分享二维码统一走章节路由 + 1-based 段锚；单页经由现成章节路由落回对应段。
+      href: `${base}#p${i + 1}`,
+    })
   }
   function toggleMark(no, i, snippet) {
     setMarks({ ...toggleCorpusMark(markCtx.corpus, markCtx.slug, no, i, snippet) })
@@ -123,8 +134,7 @@ export default function ClassicReader({
     setEditing(null)
   }
 
-  // hash 锚点定位(目录跳章 / 段落深链 #seg-章-段);rAF 等布局完成再定位,长经更稳。
-  // 单页与逐章模式皆适用(逐章深链 #seg-N-i)。
+  // hash 锚点定位(目录跳章 / 旧 #seg-章-段 / 新分享卡 #p段);rAF 等布局完成再定位,长经更稳。
   useEffect(() => {
     if (!hash) return
     let raf2 = 0
@@ -206,11 +216,19 @@ export default function ClassicReader({
     const label = paraLabel(no, i)
     const text = <ClassicText original={p.original} translation={p.translation} anchors={getAnchors(no, i)} verse={verse} />
     if (!markCtx) {
-      if (!label) return <ClassicText key={i} original={p.original} translation={p.translation} anchors={getAnchors(no, i)} verse={verse} />
       return (
-        <div key={i} className="read-para">
-          <span className="read-para__num">{label}</span>
+        <div key={i} id={single ? `seg-${no}-${i}` : `p${i + 1}`} className="read-para read-para--markable">
+          {!single && <span id={`seg-${no}-${i}`} className="read-para__legacy-anchor" aria-hidden="true" />}
+          {label && <span className="read-para__num">{label}</span>}
           <div className="read-para__body">{text}</div>
+          <div className="para-actions">
+            <button
+              className="para-act"
+              onClick={() => openQuoteCard(no, i, p)}
+              aria-label="生成金句卡"
+              data-tip="生成金句卡"
+            >🖼</button>
+          </div>
         </div>
       )
     }
@@ -221,7 +239,8 @@ export default function ClassicReader({
     const isEditing = editing === key
     const copied = copiedSeg === `${no}-${i}`
     return (
-      <div key={i} id={`seg-${no}-${i}`} className={`read-para read-para--markable ${marked ? 'read-para--marked' : ''}`}>
+      <div key={i} id={single ? `seg-${no}-${i}` : `p${i + 1}`} className={`read-para read-para--markable ${marked ? 'read-para--marked' : ''}`}>
+        {!single && <span id={`seg-${no}-${i}`} className="read-para__legacy-anchor" aria-hidden="true" />}
         {label && <span className="read-para__num">{label}</span>}
         <div className="read-para__body">
           {text}
@@ -269,7 +288,7 @@ export default function ClassicReader({
           >{copied ? '✓' : '🔗'}</button>
           <button
             className="para-act"
-            onClick={() => setCardSeg({ original: p.original, translation: p.translation, source: cardSource(no) })}
+            onClick={() => openQuoteCard(no, i, p)}
             aria-label="生成金句卡"
             data-tip="生成金句卡"
           >🖼</button>

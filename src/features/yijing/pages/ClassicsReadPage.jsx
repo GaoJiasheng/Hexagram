@@ -38,6 +38,7 @@ export default function ClassicsReadPage() {
       mode="paged"
       chapters={classics.chapters}
       chapter={chapter}
+      bookTitle={meta?.title || classics.title}
       tocBack={meta?.title || classics.title}
       chapterLabel={(c) => `第${c.no}章`}
       chapterHref={(no) => `/classics/${book}/${no}`}

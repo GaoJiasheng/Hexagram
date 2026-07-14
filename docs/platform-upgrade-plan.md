@@ -217,11 +217,11 @@
 - [x] 0.4 `src/features/Colophon.jsx`:落款浮层组件(复用 `SettingsSheet.jsx` 浮层基座)+ 独立路由 `/ba`
 - [x] 0.5 全站页脚挂「跋」印章入口(App 外壳层一次接入,十组分站 + 中立外壳全覆盖,印色随 `data-site` 取组 accent)
 - [x] 0.6 `vite.config` 注入 `__APP_VERSION__` + 构建日期,落款页展示版本号
-- [ ] 0.7 `QuoteCard.jsx` 主题化重构:把现有写死配色抽成 `THEMES` 常量表(先保留「朱印经典」为默认)
-- [ ] 0.8 新增「水墨留白」「暗夜月白」两套主题(节气应景后置为可选项)
-- [ ] 0.9 主题切换 UI:卡片上方 swatch 圆点 + 选中态描边 + localStorage 记忆(`quoteTheme` 入 DEFAULT_SETTINGS 白名单)
-- [ ] 0.10 接入 `qrcode` npm 依赖,生成当前段落/卦/文章深链接二维码
-- [ ] 0.11 二维码视觉融合:主题配色前景、中心叠「观」微缩印、外圈细边框、署名行加「扫码读原文」提示
+- [x] 0.7 `QuoteCard.jsx` 主题化重构:把现有写死配色抽成 `THEMES` 常量表(先保留「朱印经典」为默认)
+- [x] 0.8 新增「水墨留白」「暗夜月白」两套主题(节气应景后置为可选项)
+- [x] 0.9 主题切换 UI:卡片上方 swatch 圆点 + 选中态描边 + localStorage 记忆(`quoteTheme` 入 DEFAULT_SETTINGS 白名单)
+- [x] 0.10 接入 `qrcode` npm 依赖,生成当前段落/卦/文章深链接二维码
+- [x] 0.11 二维码视觉融合:主题配色前景、中心叠「观」微缩印、外圈细边框、署名行加「扫码读原文」提示
 - [ ] 0.12 Cloudflare Pages 后台开启 Web Analytics(零代码,owner 操作,CF 后台勾选即可)
 
 ### Phase 1 · 后端地基

@@ -1,4 +1,4 @@
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams, Link, useLocation, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { saveReadingProgress } from '../yijing/storage.js'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
@@ -12,6 +12,7 @@ import BaihuaBlock from './BaihuaBlock.jsx'
 export default function CorpusReadPage({ corpus }) {
   const site = SITE_MAP[corpus]
   const navigate = useNavigate()
+  const { hash } = useLocation()
   const { slug, chapter: chapterParam } = useParams()
   const [book, setBook] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -21,8 +22,12 @@ export default function CorpusReadPage({ corpus }) {
 
   // 单页书被章路由深链命中(如 /fo/jingangjing/5):重定向到单页阅读器,保单一阅读形态
   useEffect(() => {
-    if (meta?.singlePage) navigate(`${site.home}/${slug}`, { replace: true })
-  }, [meta, site, slug, navigate])
+    if (!meta?.singlePage) return
+    const p = hash.match(/^#p(\d+)$/)
+    // 分享卡用统一的 /<corpus>/<slug>/<ch>#pN；单页经落回整书页时换成全书唯一旧锚。
+    const targetHash = p ? `#seg-${chapter}-${Math.max(0, Number(p[1]) - 1)}` : hash
+    navigate(`${site.home}/${slug}${targetHash}`, { replace: true })
+  }, [meta, site, slug, chapter, hash, navigate])
 
   useEffect(() => {
     setLoading(true)

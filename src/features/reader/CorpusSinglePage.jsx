@@ -57,11 +57,13 @@ export default function CorpusSinglePage({ corpus, slug, text }) {
       chapters={book.chapters}
       tocBack={<Link to={site.home} className="read-toc__back">← {site.portalTitle}</Link>}
       chapterLabel={label}
+      chapterHref={(no) => `${site.home}/${slug}/${no}`}
       anchorId={(no) => `${corpus}-ch-${no}`}
       getAnchors={(no, i) => getAnchors(corpus, slug, no, i)}
       renderYanyi={(no) => <YanyiBlock corpus={corpus} slug={slug} chapter={no} />}
       renderBaihua={(no) => <BaihuaBlock corpus={corpus} slug={slug} chapter={no} bookTitle={meta.title} sectionUnit={meta.sectionUnit || '章'} />}
       paraLabel={paraLabel}
+      bookTitle={meta.title}
       markCtx={{ corpus, slug }}
       header={header}
     />

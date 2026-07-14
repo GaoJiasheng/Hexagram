@@ -17,6 +17,7 @@ import { getHexAnchors } from '../zhushiAnchored.js'
 import shili from '../../../data/yijing/shili.json'
 import shishi from '../../../data/yijing/shishi.json'
 import BaihuaBlock from '../../reader/BaihuaBlock.jsx'
+import QuoteCard from '../../reader/QuoteCard.jsx'
 import { useSettings } from '../SettingsContext.jsx'
 import { usePageTitle } from '../hooks/usePageTitle.js'
 
@@ -88,6 +89,7 @@ export default function HexagramDetailPage() {
   const [previewLine, setPreviewLine] = useState(null) // 1-indexed or null
   const [hoveredLine, setHoveredLine] = useState(null)
   const [bookmarked, setBookmarked] = useState(() => getBookmarks().includes(Number(id)))
+  const [quoteOpen, setQuoteOpen] = useState(false)
   const [tuanOpen, setTuanOpen] = useState(true)
   const [xiangOpen, setXiangOpen] = useState(true)
   const [wenyangOpen, setWenyangOpen] = useState(false)
@@ -96,6 +98,7 @@ export default function HexagramDetailPage() {
     if (hex) {
       addRecentHexagram(hex.id)
       setPreviewLine(null)
+      setQuoteOpen(false)
       setBookmarked(getBookmarks().includes(hex.id))
     }
   }, [id])
@@ -231,6 +234,9 @@ export default function HexagramDetailPage() {
                 aria-label={bookmarked ? '取消收藏' : '收藏此卦'}
               >
                 {bookmarked ? '★ 已收藏' : '☆ 收藏'}
+              </button>
+              <button className="bookmark-btn" onClick={() => setQuoteOpen(true)} aria-label="生成本卦金句卡">
+                🖼 金句卡
               </button>
               <Link to={`/workbench?gua=${hex.id}`} className="btn btn--primary">
                 以此卦推演 →
@@ -396,6 +402,15 @@ export default function HexagramDetailPage() {
             </Link>
           )}
         </div>
+        {quoteOpen && (
+          <QuoteCard
+            original={hex.judgment.original}
+            translation={hex.judgment.translation}
+            source={`《易经》· ${hex.name}卦（第${hex.id}卦）`}
+            href={`/hexagram/${hex.id}`}
+            onClose={() => setQuoteOpen(false)}
+          />
+        )}
       </div>
     </div>
   )
