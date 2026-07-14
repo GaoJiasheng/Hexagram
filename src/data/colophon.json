@@ -1,28 +1,32 @@
 {
   "author": {
-    "name": "Gavin Gao",
+    "name": "高家升（Gavin Gao）",
     "id": "gaojiasheng",
     "role": "《观象》创作者与内容审校者"
   },
-  "origin": "【owner 待填：写一段你为什么做《观象》的话】",
+  "origin": [
+    "少时读国学，好的是宋词的婉转、骈文的对仗，贪恋的是辞藻本身的美。年岁渐长，才慢慢读进这些文字背后的道理，从中汲取安身立命的养分。",
+    "钢铁与霓虹交织的城市里，车流昼夜不息，高楼刺入云层——我一直想在这样的喧嚣中，辟出一处地方，安放一些值得留住的知识与印记。",
+    "只是苦于一直没有时间。直到近来有了大模型可以分担案头之劳，许多想做却做不完的事，才终于有了着落——这，就是《观象》的缘起。"
+  ],
   "contacts": [
     {
       "label": "邮箱",
-      "value": "",
-      "href": "mailto:"
+      "value": "gaojiasheng.him@foxmail.com",
+      "href": "mailto:gaojiasheng.him@foxmail.com"
     },
     {
       "label": "GitHub",
-      "value": "",
-      "href": ""
+      "value": "GaoJiasheng",
+      "href": "https://github.com/GaoJiasheng"
     }
   ],
   "license": {
-    "summary": "Gavin Gao（gaojiasheng）的原创内容与本仓库全部源代码采用 CC BY-NC 4.0；管线抓取的公版古籍原文本身属于公共领域，不在本协议授权范围内。",
-    "href": "/LICENSE"
+    "summary": "高家升（Gavin Gao）的原创内容与本仓库全部源代码采用 CC BY-NC 4.0；管线抓取的公版古籍原文本身属于公共领域，不在本协议授权范围内。",
+    "href": "/legal"
   },
   "update": {
     "summary": "版本号与构建日期由构建流程自动写入，随每次发布更新。"
   },
-  "credits": "全站译注、白话文章及相关图文内容在制作过程中使用 AI 辅助生成，Gavin Gao（gaojiasheng）负责审校与最终把关。"
+  "credits": "全站译注、白话文章及相关图文内容主要由 Claude Fable 模型生成，高家升（Gavin Gao）负责审校与最终把关。"
 }

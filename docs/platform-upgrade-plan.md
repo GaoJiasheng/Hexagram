@@ -222,7 +222,7 @@
 - [x] 0.9 主题切换 UI:卡片上方 swatch 圆点 + 选中态描边 + localStorage 记忆(`quoteTheme` 入 DEFAULT_SETTINGS 白名单)
 - [x] 0.10 接入 `qrcode` npm 依赖,生成当前段落/卦/文章深链接二维码
 - [x] 0.11 二维码视觉融合:主题配色前景、中心叠「观」微缩印、外圈细边框、署名行加「扫码读原文」提示
-- [ ] 0.12 Cloudflare Pages 后台开启 Web Analytics(零代码,owner 操作,CF 后台勾选即可)
+- [x] 0.12 Cloudflare Pages 后台开启 Web Analytics(零代码,owner 操作,CF 后台勾选即可)
 
 ### Phase 1 · 后端地基
 

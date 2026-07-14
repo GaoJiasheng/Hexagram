@@ -2324,6 +2324,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .colophon-author strong { font-size: 1.04rem; }
 .colophon-author span { color: var(--ink-faint); font-family: var(--font-mono); font-size: 0.76rem; }
 .colophon-origin { padding: 11px 14px; border-left: 2px solid var(--colophon-accent); border-radius: 0 6px 6px 0; background: var(--colophon-accent-bg); }
+.colophon-origin p + p { margin-top: 0.85em; }
 .colophon-contacts { display: grid; gap: 7px; margin: 0; }
 .colophon-contact { display: grid; grid-template-columns: 4.5em minmax(0, 1fr); gap: 12px; font-size: 0.86rem; }
 .colophon-contact dt { color: var(--ink-faint); }

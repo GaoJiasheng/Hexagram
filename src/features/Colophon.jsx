@@ -33,7 +33,11 @@ export function ColophonContent() {
 
       <section className="colophon-block">
         <h2 className="colophon-block__title">缘起</h2>
-        <p className="colophon-block__text colophon-origin">{colophon.origin}</p>
+        <div className="colophon-origin">
+          {(Array.isArray(colophon.origin) ? colophon.origin : [colophon.origin]).map((para, i) => (
+            <p key={i} className="colophon-block__text">{para}</p>
+          ))}
+        </div>
       </section>
 
       <section className="colophon-block">
