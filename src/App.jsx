@@ -4,6 +4,7 @@ import { SettingsProvider } from './features/yijing/SettingsContext.jsx'
 import ErrorBoundary from './features/ErrorBoundary.jsx'
 import { siteForPath, activeGroup, sitesInGroup, HOST_GROUPS, MASTER_PORTAL_PATH } from './sites/registry.js'
 import { registerBookShortcut } from './native/appShortcuts.js'
+import { useTelemetry } from './features/telemetry.js'
 
 // 全站搜索面板按需加载:搜索页面、经典、正文、白话、注疏、专题。
 const GlobalSearchPalette = lazy(() => import('./features/search/GlobalSearchPalette.jsx'))
@@ -231,6 +232,7 @@ function AppContent() {
   const openColophon = useCallback(() => setColophonOpen(true), [])
   const location = useLocation()
   const navigate = useNavigate()
+  useTelemetry(location)
 
   const module = siteForPath(location.pathname)
   const group = activeGroup(location.pathname, typeof window !== 'undefined' ? window.location.hostname : '')
