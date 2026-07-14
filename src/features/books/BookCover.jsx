@@ -868,6 +868,18 @@ function Motif({ motif }) {
   if (motif === 'zero-to-one') return <ZeroToOne />
   if (motif === 'bml-loop') return <BmlLoop />
   if (motif === 'safety-margin') return <SafetyMargin />
+  if (motif === 'big-brother-eye') return <BigBrotherEye />
+  if (motif === 'hatchery-vials') return <HatcheryVials />
+  if (motif === 'silent-bird') return <SilentBird />
+  if (motif === 'clear-thinking-fork') return <ClearThinkingFork />
+  if (motif === 'random-walk') return <RandomWalk />
+  if (motif === 'relativity-curve') return <RelativityCurve />
+  if (motif === 'sidewalk-grid') return <SidewalkGrid />
+  if (motif === 'boom-bust-line') return <BoomBustLine />
+  if (motif === 'growth-sprout') return <GrowthSprout />
+  if (motif === 'gate-siege') return <GateSiege />
+  if (motif === 'cracked-foundation') return <CrackedFoundation />
+  if (motif === 'snowball-roll') return <SnowballRoll />
   return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
 }
 
@@ -1252,6 +1264,201 @@ function SafetyMargin() {
       <line x1="96" y1="230" x2="204" y2="230" stroke={CINNABAR} strokeWidth="1.6" strokeDasharray="5 5" />
       <path d="M96,222 L96,238 M204,222 L204,238" stroke={CINNABAR} strokeWidth="1.6" />
       <text x="150" y="216" textAnchor="middle" fontSize="10" fill={CREAM} fillOpacity="0.55" style={SERIF}>margin</text>
+    </g>
+  )
+}
+
+// 母题:老大哥之眼——一枚巨大的、不眨的眼睛俯瞰全局,瞳孔正中一点朱色
+// (呼应全书核心意象:电幕无处不在,老大哥永远在看着你)。
+function BigBrotherEye() {
+  return (
+    <g>
+      <path d="M60,190 Q150,120 240,190 Q150,260 60,190 Z" fill="none" stroke={CREAM} strokeOpacity="0.42" strokeWidth="2" />
+      <circle cx="150" cy="190" r="34" fill="none" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.6" />
+      <circle cx="150" cy="190" r="14" fill={CINNABAR} />
+      <line x1="60" y1="190" x2="30" y2="190" stroke={CREAM} strokeOpacity="0.24" strokeWidth="1" />
+      <line x1="240" y1="190" x2="270" y2="190" stroke={CREAM} strokeOpacity="0.24" strokeWidth="1" />
+    </g>
+  )
+}
+
+// 母题:孵化瓶阵——一排整齐排列的培养瓶,每只瓶里一个小小的胚芽点
+// (呼应全书核心意象:人不是被生下来的,是被按标准配方"孵化"出来的)。
+function HatcheryVials() {
+  const xs = [90, 120, 150, 180, 210]
+  return (
+    <g>
+      {xs.map((x, i) => (
+        <g key={i}>
+          <path d={`M${x - 10},170 L${x - 10},230 Q${x},242 ${x + 10},230 L${x + 10},170`} fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.3" />
+          <line x1={x - 13} y1="168" x2={x + 13} y2="168" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.3" />
+          <circle cx={x} cy={i === 2 ? 208 : 214} r={i === 2 ? 7 : 4} fill={i === 2 ? CINNABAR : CREAM} fillOpacity={i === 2 ? 1 : 0.4} />
+        </g>
+      ))}
+    </g>
+  )
+}
+
+// 母题:无声的鸟——一根枯枝上停着一只轮廓鸟,枝头无叶无花,底部一缕淡淡的分子式暗纹
+// (呼应书名意象:一个再没有鸟鸣的春天)。
+function SilentBird() {
+  return (
+    <g>
+      <path d="M70,240 Q150,220 230,236" fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="2" />
+      <path d="M130,236 L120,214 M150,232 L162,208 M170,234 L182,216" stroke={CREAM} strokeOpacity="0.28" strokeWidth="1.2" />
+      <path d="M148,222 Q156,208 172,210 Q166,218 172,224 Q160,228 154,222 Q150,226 146,224 Z" fill="none" stroke={CINNABAR} strokeWidth="1.6" />
+      <circle cx="167" cy="214" r="1.6" fill={CINNABAR} />
+      <g opacity="0.18">
+        <circle cx="95" cy="290" r="5" fill="none" stroke={CREAM} strokeWidth="1" />
+        <circle cx="112" cy="290" r="5" fill="none" stroke={CREAM} strokeWidth="1" />
+        <line x1="100" y1="290" x2="107" y2="290" stroke={CREAM} strokeWidth="1" />
+      </g>
+    </g>
+  )
+}
+
+// 母题:清醒岔路——一团思维气泡里分出几条岔路,唯一一条被朱色描出通向清晰的方向
+// (呼应全书主旨:认清思维谬误,才能在岔路口选对方向)。
+function ClearThinkingFork() {
+  const paths = [[150, 220, 90, 160, 0.28], [150, 220, 130, 150, 0.28], [150, 220, 210, 150, 0.28], [150, 220, 170, 160, 0.28]]
+  return (
+    <g>
+      <circle cx="150" cy="220" r="6" fill={CREAM} fillOpacity="0.6" />
+      {paths.map(([x1, y1, x2, y2, op], i) => (
+        <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke={CREAM} strokeOpacity={op} strokeWidth="1.3" strokeDasharray={i === 3 ? '3 3' : undefined} />
+      ))}
+      <line x1="150" y1="220" x2="150" y2="126" stroke={CINNABAR} strokeWidth="2.2" />
+      <circle cx="150" cy="126" r="6" fill={CINNABAR} />
+      {paths.slice(0, 3).map(([, , x2, y2], i) => <circle key={`e${i}`} cx={x2} cy={y2} r="3.4" fill={CREAM} fillOpacity="0.4" />)}
+    </g>
+  )
+}
+
+// 母题:随机游走——一条毫无规律上下起伏的折线,没有任何趋势可循
+// (呼应有效市场假说:股价的短期波动本质上是随机游走,无法被稳定预测)。
+function RandomWalk() {
+  const pts = [[50, 220], [78, 190], [100, 232], [126, 172], [150, 210], [176, 160], [198, 224], [222, 178], [250, 214]]
+  const d = pts.map((p, i) => (i === 0 ? 'M' : 'L') + p.join(',')).join(' ')
+  return (
+    <g>
+      <line x1="40" y1="260" x2="260" y2="260" stroke={CREAM} strokeOpacity="0.2" strokeWidth="1" />
+      <path d={d} fill="none" stroke={CREAM} strokeOpacity="0.42" strokeWidth="1.6" />
+      {pts.map((p, i) => <circle key={i} cx={p[0]} cy={p[1]} r={i === 5 ? 6 : 3} fill={i === 5 ? CINNABAR : CREAM} fillOpacity={i === 5 ? 1 : 0.4} />)}
+    </g>
+  )
+}
+
+// 母题:时空弯曲——一片规则网格被中心质量压出一道弯陷弧线,一束光沿弧线偏折
+// (呼应广义相对论核心意象:大质量物体弯曲周围的时空)。
+function RelativityCurve() {
+  const lines = []
+  for (let i = 0; i <= 6; i++) {
+    const y = 150 + i * 20
+    const dip = Math.max(0, 20 - Math.abs(150 - (70 + i * 6)))
+    lines.push(<path key={`h${i}`} d={`M70,${y} Q150,${y + (i === 3 ? 24 : 4)} 230,${y}`} fill="none" stroke={CREAM} strokeOpacity="0.26" strokeWidth="1" />)
+  }
+  return (
+    <g>
+      {lines}
+      <circle cx="150" cy="204" r="12" fill={CINNABAR} />
+      <path d="M60,170 Q150,214 240,170" fill="none" stroke={CREAM} strokeOpacity="0.55" strokeWidth="1.4" strokeDasharray="4 4" />
+    </g>
+  )
+}
+
+// 母题:人行道网格——一片城市街区网格,街道上密集排布的小点(街道上的眼睛)
+// (呼应全书核心论点:安全的城市来自混合使用的街道生活,而非隔离式规划)。
+// 长书名占中段,本图刻意排在安全的上/下窄带,不进 y=105-315 区间。
+function SidewalkGrid() {
+  return (
+    <g>
+      <g opacity="0.4">
+        {[70, 110, 150, 190, 230].map((x, i) => <line key={`v${i}`} x1={x} y1="52" x2={x} y2="92" stroke={CREAM} strokeWidth="1" />)}
+        <line x1="60" y1="72" x2="240" y2="72" stroke={CREAM} strokeWidth="1" />
+      </g>
+      <g>
+        {[86, 106, 126, 146, 166, 186, 206].map((x, i) => (
+          <circle key={i} cx={x} cy={352} r={i === 3 ? 5 : 2.6} fill={i === 3 ? CINNABAR : CREAM} fillOpacity={i === 3 ? 1 : 0.42} />
+        ))}
+        <line x1="80" y1="366" x2="220" y2="366" stroke={CREAM} strokeOpacity="0.3" strokeWidth="1" strokeDasharray="3 4" />
+      </g>
+    </g>
+  )
+}
+
+// 母题:荣枯曲线——一条价格曲线剧烈起伏冲上顶点又骤然跌入谷底
+// (呼应投机者的宿命:一夜暴富与一夜破产的循环往复)。
+function BoomBustLine() {
+  const d = 'M50,250 L90,220 L120,240 L150,140 L175,190 L200,110 L225,260 L250,300'
+  return (
+    <g>
+      <line x1="40" y1="300" x2="260" y2="300" stroke={CREAM} strokeOpacity="0.2" strokeWidth="1" />
+      <path d={d} fill="none" stroke={CREAM} strokeOpacity="0.44" strokeWidth="1.8" />
+      <circle cx="200" cy="110" r="6" fill={CINNABAR} />
+      <circle cx="250" cy="300" r="6" fill="none" stroke={CINNABAR} strokeWidth="1.8" />
+    </g>
+  )
+}
+
+// 母题:成长嫩芽——一颗种子沿一道弧线生长成幼苗、再到枝叶舒展的小树,一路向上
+// (呼应成长股投资:复利式生长,从一粒种子到参天大树)。
+function GrowthSprout() {
+  const stages = [[100, 260, 4], [140, 240, 7], [180, 210, 11], [214, 170, 16]]
+  return (
+    <g>
+      <line x1="80" y1="270" x2="230" y2="270" stroke={CREAM} strokeOpacity="0.22" strokeWidth="1" />
+      <path d="M100,260 Q140,250 140,240 Q180,222 180,210 Q212,190 214,170" fill="none" stroke={CREAM} strokeOpacity="0.34" strokeWidth="1.3" strokeDasharray="2 4" />
+      {stages.map(([x, y, r], i) => (
+        <g key={i}>
+          {i === 3 && <path d={`M${x - 14},${y} Q${x},${y - 18} ${x + 14},${y}`} fill="none" stroke={CINNABAR} strokeWidth="1.6" />}
+          <circle cx={x} cy={y} r={r} fill={i === 3 ? CINNABAR : CREAM} fillOpacity={i === 3 ? 1 : 0.32 + i * 0.08} />
+        </g>
+      ))}
+    </g>
+  )
+}
+
+// 母题:围门而攻——一扇紧闭的公司大门,门前几个逼近的身影轮廓
+// (呼应书名意象:门口的野蛮人,杠杆收购者围住猎物公司)。
+function GateSiege() {
+  return (
+    <g>
+      <rect x="120" y="150" width="60" height="110" fill="none" stroke={CREAM} strokeOpacity="0.46" strokeWidth="1.6" />
+      <line x1="150" y1="150" x2="150" y2="260" stroke={CREAM} strokeOpacity="0.3" strokeWidth="1" />
+      <circle cx="140" cy="205" r="3" fill={CINNABAR} />
+      {[[90, 270, 0.4], [230, 270, 0.4], [70, 300, 0.28], [250, 300, 0.28]].map(([x, y, op], i) => (
+        <g key={i}>
+          <circle cx={x} cy={y - 18} r="7" fill="none" stroke={CREAM} strokeOpacity={op} strokeWidth="1.4" />
+          <path d={`M${x - 10},${y + 14} Q${x},${y - 4} ${x + 10},${y + 14}`} fill="none" stroke={CREAM} strokeOpacity={op} strokeWidth="1.4" />
+        </g>
+      ))}
+    </g>
+  )
+}
+
+// 母题:裂缝地基——一栋房子的地基出现一道明显裂纹,房身微微倾斜下沉
+// (呼应大空头核心意象:整栋次贷搭建的房地产大厦,地基早已开裂)。
+function CrackedFoundation() {
+  return (
+    <g>
+      <path d="M100,260 L100,180 L200,180 L200,260" fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.6" transform="rotate(-3 150 220)" />
+      <path d="M120,180 L150,150 L180,180" fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.6" transform="rotate(-3 150 220)" />
+      <rect x="90" y="260" width="120" height="12" fill="none" stroke={CREAM} strokeOpacity="0.42" strokeWidth="1.4" />
+      <path d="M120,272 L134,290 L126,300 L142,320" fill="none" stroke={CINNABAR} strokeWidth="2" />
+    </g>
+  )
+}
+
+// 母题:滚雪球——一个小雪球沿一道下坡轨迹越滚越大,轨迹尽头是最大的一颗
+// (呼应巴菲特自己最爱的比喻:人生就像滚雪球,重要的是找到很湿的雪和很长的坡)。
+function SnowballRoll() {
+  const balls = [[80, 160, 5], [110, 185, 8], [148, 208, 12], [195, 228, 18]]
+  return (
+    <g>
+      <path d="M60,150 Q140,190 220,250" fill="none" stroke={CREAM} strokeOpacity="0.24" strokeWidth="1" strokeDasharray="3 4" />
+      {balls.map(([x, y, r], i) => (
+        <circle key={i} cx={x} cy={y} r={r} fill={i === 3 ? CINNABAR : 'none'} stroke={CREAM} strokeOpacity={i === 3 ? 1 : 0.4} strokeWidth="1.3" />
+      ))}
     </g>
   )
 }
