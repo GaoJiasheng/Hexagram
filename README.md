@@ -37,6 +37,10 @@ npm run check-data     # 数据校验(结构/繁简哨兵/译注覆盖/注疏锚
 - 实现者指引:[CLAUDE.md](CLAUDE.md)
 - 经文原文一律来自数据管线(维基文库,繁转简),不可手改;白话译文与注疏为人工内容,存于 `scripts/authored/` 与 `src/data/*/zhushi*`。
 
+## 授权范围
+
+Gavin Gao（gaojiasheng）的原创内容与本仓库全部源代码采用 [CC BY-NC 4.0](./LICENSE)；`hexagrams.json`、`classics/*.json` 等管线数据中的公版古籍原文本身属于公共领域，不在本协议授权范围内。若文件同时包含古籍原文与原创译注，只有原创部分受协议覆盖。
+
 ## 目录
 
 ```

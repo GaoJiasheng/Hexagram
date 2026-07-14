@@ -59,13 +59,15 @@ const DebatePage = lazy(() => import('./features/debates/DebatePage.jsx'))
 const BooksIndexPage = lazy(() => import('./features/books/BooksIndexPage.jsx'))
 const BookHomePage = lazy(() => import('./features/books/BookHomePage.jsx'))
 const BookArticlePage = lazy(() => import('./features/books/BookArticlePage.jsx'))
+const ColophonPage = lazy(() => import('./features/Colophon.jsx').then((module) => ({ default: module.ColophonPage })))
 
 // 中立外壳路径(总门户 / 义理专题 / 百家争鸣):不套分站 nav/搜索/底栏,域名着陆豁免
 function isNeutralPath(p) {
-  return p === '/' || p === MASTER_PORTAL_PATH || p === '/concepts' || p === '/privacy' || p === '/debates' || p.startsWith('/debates/') || p === '/books' || p.startsWith('/books/')
+  return p === '/' || p === MASTER_PORTAL_PATH || p === '/concepts' || p === '/privacy' || p === '/ba' || p === '/debates' || p.startsWith('/debates/') || p === '/books' || p.startsWith('/books/')
 }
 // 全站设置浮层(Tier 0):任何站 nav 齿轮就地打开(主题/字号/译文 + 数据导出导入)
 const SettingsSheet = lazy(() => import('./features/SettingsSheet.jsx'))
+const Colophon = lazy(() => import('./features/Colophon.jsx'))
 
 // 站点注册迁至 src/sites/registry.js(v14):平台读 manifest,加站零改平台代码
 
@@ -221,9 +223,11 @@ function AppContent() {
   const [searchOpen, setSearchOpen] = useState(false)
   const [portalOpen, setPortalOpen] = useState(false)
   const [settingsOpen, setSettingsOpen] = useState(false)
+  const [colophonOpen, setColophonOpen] = useState(false)
   const openSearch = useCallback(() => setSearchOpen(true), [])
   const openPortal = useCallback(() => setPortalOpen(true), [])
   const openSettings = useCallback(() => setSettingsOpen(true), [])
+  const openColophon = useCallback(() => setColophonOpen(true), [])
   const location = useLocation()
   const navigate = useNavigate()
 
@@ -235,8 +239,8 @@ function AppContent() {
   const otherSite = groupSites.length === 2 ? groupSites.find(s => s.key !== module.key) : null
   // 中立枢纽(总门户 / 义理专题 / 百家争鸣):不套任一分站外壳(无 module nav / 搜索 / 底栏 / 主色偏向)
   const isPortal = isNeutralPath(location.pathname)
-  // 路由切换关闭搜索/切站/设置浮层,避免状态在跨站导航后残留
-  useEffect(() => { setSearchOpen(false); setPortalOpen(false); setSettingsOpen(false) }, [location.pathname])
+  // 路由切换关闭搜索/切站/设置/落款浮层,避免状态在跨站导航后残留
+  useEffect(() => { setSearchOpen(false); setPortalOpen(false); setSettingsOpen(false); setColophonOpen(false) }, [location.pathname])
 
   // iOS「App 图标长按 → 书房」快捷入口 → 观书隐藏入口 /books(web/Android 无操作)
   useEffect(() => {
@@ -355,6 +359,7 @@ function AppContent() {
           <Route path="/debates/:id" element={<DebatePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/ba" element={<ColophonPage />} />
           {/* 私人书房「观书」(隐藏入口,不外链,中性外壳):all-in-one 书架 + 书主页放射脑图 + 逐章详读 */}
           <Route path="/books" element={<BooksIndexPage />} />
           <Route path="/books/:slug" element={<BookHomePage />} />
@@ -370,12 +375,18 @@ function AppContent() {
         </Suspense>
         </ErrorBoundary>
       </main>
-      {!isPortal && (
-        <footer className="app-footer">
-          <span>观象 · 个人学习站</span>
-          <span>本站为个人学习用途，解读内容仅供研习参考 · <NavLink to="/about" className="app-footer__link">关于本站</NavLink></span>
-        </footer>
-      )}
+      <footer className={`app-footer ${isPortal ? 'app-footer--neutral' : ''}`}>
+        {!isPortal && (
+          <div className="app-footer__copy">
+            <span>观象 · 个人学习站</span>
+            <span>本站为个人学习用途，解读内容仅供研习参考 · <NavLink to="/about" className="app-footer__link">关于本站</NavLink></span>
+          </div>
+        )}
+        <button className="colophon-trigger" onClick={openColophon} aria-label="落款" title="落款">
+          <span className="colophon-trigger__seal" aria-hidden="true">跋</span>
+          <span className="colophon-trigger__label" aria-hidden="true">落款</span>
+        </button>
+      </footer>
       {!isPortal && <MobileNav module={module} canSwitch={canSwitch} otherSite={otherSite} onPortal={openPortal} onSearch={openSearch} />}
       {searchOpen && (
         <Suspense fallback={null}>
@@ -386,6 +397,11 @@ function AppContent() {
       {settingsOpen && (
         <Suspense fallback={null}>
           <SettingsSheet open onClose={() => setSettingsOpen(false)} />
+        </Suspense>
+      )}
+      {colophonOpen && (
+        <Suspense fallback={null}>
+          <Colophon open onClose={() => setColophonOpen(false)} />
         </Suspense>
       )}
     </div>
