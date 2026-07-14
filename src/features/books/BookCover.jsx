@@ -848,7 +848,185 @@ function Motif({ motif }) {
   if (motif === 'footsteps') return <Footsteps />
   if (motif === 'narrowing-gates') return <NarrowingGates />
   if (motif === 'abacus-gap') return <AbacusGap />
+  if (motif === 'circuit-halo') return <CircuitHalo />
+  if (motif === 'hinge-panels') return <HingePanels />
+  if (motif === 'tectonic-fault') return <TectonicFault />
+  if (motif === 'black-swan-flock') return <BlackSwanFlock />
+  if (motif === 'hydra-branch') return <HydraBranch />
+  if (motif === 'moon-waves') return <MoonWaves />
+  if (motif === 'assembly-line') return <AssemblyLine />
+  if (motif === 'flywheel') return <Flywheel />
+  if (motif === 'bridge-bubbles') return <BridgeBubbles />
+  if (motif === 'compound-curve') return <CompoundCurve />
   return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
+}
+
+// 母题:电路光环——人形轮廓头顶浮起一圈电路结点的光环(呼应全书核心意象:智人正试图
+// 把自己升级为神——用数据与算法取代神话,给自己造一顶新的光环)。
+function CircuitHalo() {
+  const headCx = 150, headCy = 330, headR = 22
+  const shoulders = 'M108,390 Q108,352 150,352 Q192,352 192,390'
+  const haloNodes = [[110, 270], [132, 246], [150, 238], [168, 246], [190, 270], [150, 214]]
+  const haloLines = haloNodes.map(([x, y]) => `M${headCx},${headCy - headR - 6} L${x},${y}`).join(' ')
+  return (
+    <g>
+      <path d={shoulders} fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.3" />
+      <circle cx={headCx} cy={headCy} r={headR} fill="none" stroke={CREAM} strokeOpacity="0.42" strokeWidth="1.3" />
+      <path d={haloLines} fill="none" stroke={CREAM} strokeOpacity="0.24" strokeWidth="1" />
+      {haloNodes.slice(0, -1).map(([x, y], i) => <circle key={i} cx={x} cy={y} r="4.5" fill={CREAM} fillOpacity="0.5" />)}
+      <circle cx={haloNodes[5][0]} cy={haloNodes[5][1]} r="8" fill={CINNABAR} />
+    </g>
+  )
+}
+
+// 母题:铰链双扇——两片微张的门扇在中轴一排铰链上开合(呼应全书论点:中国是连接
+// 内亚草原与东亚农耕世界、大陆秩序与海洋秩序的枢纽,靠一根轴转动两个世界)。
+function HingePanels() {
+  const leftPanel = 'M60,220 L150,236 L150,364 L60,380 Z'
+  const rightPanel = 'M240,220 L150,236 L150,364 L240,380 Z'
+  const hinges = [246, 282, 318, 354]
+  return (
+    <g>
+      <path d={leftPanel} fill="none" stroke={CREAM} strokeOpacity="0.36" strokeWidth="1.2" />
+      <path d={rightPanel} fill="none" stroke={CREAM} strokeOpacity="0.36" strokeWidth="1.2" />
+      <line x1="150" y1="230" x2="150" y2="370" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.4" />
+      {hinges.map((y, i) => <circle key={i} cx="150" cy={y} r={i === 1 ? 7 : 4} fill={i === 1 ? CINNABAR : CREAM} fillOpacity={i === 1 ? 1 : 0.55} />)}
+    </g>
+  )
+}
+
+// 母题:板块断层——两块参差的地壳在一道锯齿裂缝处相抵,裂缝一点朱色摩擦火花
+// (呼应全书核心论点:冷战后的世界不再按意识形态分裂,而是沿文明的「断层线」冲突)。
+function TectonicFault() {
+  const plateA = 'M40,380 L52,300 L96,268 L140,300 L120,380 Z'
+  const plateB = 'M260,380 L248,296 L200,262 L156,300 L180,380 Z'
+  const fault = 'M96,268 L104,290 L92,308 L108,330 L96,352 L120,380'
+  return (
+    <g>
+      <path d={plateA} fill="none" stroke={CREAM} strokeOpacity="0.36" strokeWidth="1.2" />
+      <path d={plateB} fill="none" stroke={CREAM} strokeOpacity="0.36" strokeWidth="1.2" />
+      <path d={fault} fill="none" stroke={CINNABAR} strokeOpacity="0.8" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="104" cy="290" r="6" fill={CINNABAR} />
+    </g>
+  )
+}
+
+// 母题:黑天鹅之群——一群振翅的鸟形剪影中,唯独一只朱色、体量更大、姿态迥异
+// (呼应全书封面原典意象:极端而不可预测的少数事件,主宰了看似规律的世界)。
+function BlackSwanFlock() {
+  const birds = [[70, 260, 0.9, false], [110, 244, 1, false], [150, 236, 1.1, false], [190, 248, 1, false], [228, 264, 0.95, false], [150, 300, 1.6, true]]
+  const wing = (x, y, s) => `M${x - 14 * s},${y} Q${x},${y - 10 * s} ${x + 14 * s},${y} Q${x},${y - 3 * s} ${x - 14 * s},${y} Z`
+  return (
+    <g>
+      {birds.map(([x, y, s, hi], i) => (
+        <path key={i} d={wing(x, y, s)} fill="none" stroke={hi ? CINNABAR : CREAM} strokeOpacity={hi ? 0.95 : 0.4} strokeWidth={hi ? 1.8 : 1.2} />
+      ))}
+    </g>
+  )
+}
+
+// 母题:多头之枝——一根主干被斩断处,反而生出两条新枝(其一朱色、伸展得更远)
+// (呼应全书核心论点:反脆弱的系统从冲击与压力中获益、越挫越强,而非仅仅是「抗压」)。
+function HydraBranch() {
+  const stem = 'M150,380 L150,290'
+  const branchL = 'M150,290 Q120,270 108,224'
+  const branchR = 'M150,290 Q180,268 196,220'
+  return (
+    <g>
+      <path d={stem} fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.6" strokeLinecap="round" />
+      <path d={branchL} fill="none" stroke={CREAM} strokeOpacity="0.44" strokeWidth="1.3" strokeLinecap="round" />
+      <path d={branchR} fill="none" stroke={CINNABAR} strokeOpacity="0.85" strokeWidth="1.6" strokeLinecap="round" />
+      <circle cx="150" cy="290" r="6" fill={CINNABAR} />
+      <circle cx="108" cy="224" r="5" fill={CREAM} fillOpacity="0.5" />
+      <circle cx="196" cy="220" r="6.5" fill={CINNABAR} />
+    </g>
+  )
+}
+
+// 母题:月与波——一弯新月挂在上方留白,下方三道脑波般的曲线起伏(中间一道朱色,
+// 呼应全书主题:睡眠不是意识的关机,而是大脑最活跃的修复与巩固时段)。
+// 长书名(9字两列)专用布局:月亮收在两列文字之上、波纹收在文字与落款题字之间的窄带。
+function MoonWaves() {
+  const moonPath = 'M168,64 A24,24 0 1 1 168,112 A18,18 0 1 0 168,64 Z'
+  const waves = [332, 346, 360].map((y) => `M40,${y} Q90,${y - 7} 140,${y} T260,${y + 3}`)
+  return (
+    <g>
+      <path d={moonPath} fill={CREAM} fillOpacity="0.5" />
+      {waves.map((d, i) => <path key={i} d={d} fill="none" stroke={i === 1 ? CINNABAR : CREAM} strokeOpacity={i === 1 ? 0.85 : 0.32} strokeWidth={i === 1 ? 1.6 : 1.1} />)}
+    </g>
+  )
+}
+
+// 母题:装配线——一条横贯的产线,几个工位方框依次排开,其一朱色(呼应全书「早餐工厂」
+// 比喻:管理的本质是产出,找到杠杆率最高的那道工序)。长书名(11字两列)专用布局,
+// 整条产线收在两列文字与落款题字之间的窄带,避免与竖排书名重叠。
+function AssemblyLine() {
+  const y = 362
+  const stations = [48, 86, 124, 162, 200, 238]
+  return (
+    <g>
+      <line x1="40" y1={y} x2="258" y2={y} stroke={CREAM} strokeOpacity="0.3" strokeWidth="1.1" />
+      {stations.map((x, i) => (
+        <rect key={i} x={x - 8} y={y - 10} width="16" height="20" rx="3"
+          fill="none" stroke={i === 3 ? CINNABAR : CREAM} strokeOpacity={i === 3 ? 0.9 : 0.4} strokeWidth={i === 3 ? 1.5 : 1} />
+      ))}
+      <polygon points={`264,${y} 253,${y - 5} 253,${y + 5}`} fill={CREAM} opacity="0.4" />
+    </g>
+  )
+}
+
+// 母题:飞轮——一圈同心弧线绕着圆心渐次加粗、加速,末端接上朱色的突破弧
+// (呼应全书核心比喻:卓越不是一次突破,是同一个方向持续推动,飞轮转到临界点后自己转起来)。
+function Flywheel() {
+  const cx = 150, cy = 300, R = 76
+  const arrows = [0, 60, 120, 180, 240, 300].map((deg, i) => {
+    const a1 = (deg - 18) * Math.PI / 180, a2 = (deg + 18) * Math.PI / 180
+    const r = R - i * 3
+    const x1 = cx + Math.cos(a1) * r, y1 = cy + Math.sin(a1) * r
+    const x2 = cx + Math.cos(a2) * r, y2 = cy + Math.sin(a2) * r
+    return { d: `M${x1.toFixed(1)},${y1.toFixed(1)} A${r},${r} 0 0 1 ${x2.toFixed(1)},${y2.toFixed(1)}`, hi: i === 5, w: 1 + i * 0.15 }
+  })
+  return (
+    <g fill="none">
+      <circle cx={cx} cy={cy} r={R} stroke={CREAM} strokeOpacity="0.22" strokeWidth="1" />
+      {arrows.map((a, i) => <path key={i} d={a.d} stroke={a.hi ? CINNABAR : CREAM} strokeOpacity={a.hi ? 0.9 : 0.3 + i * 0.08} strokeWidth={a.hi ? 2 : a.w} strokeLinecap="round" />)}
+      <circle cx={cx} cy={cy} r="7" fill={CINNABAR} />
+    </g>
+  )
+}
+
+// 母题:桥接两语——左侧一只尖角的话语泡(评判、指责的语言),经一道虚线弧桥,
+// 接到右侧一只朱色的圆融话语泡(观察与需要的语言),呼应全书「长颈鹿语言 vs 豺狼语言」的比喻。
+function BridgeBubbles() {
+  const jagged = 'M50,240 L100,236 L96,252 L128,244 L120,270 L96,266 L100,286 L60,272 L70,258 Z'
+  const smoothCx = 210, smoothCy = 280
+  const bridge = 'M105,255 Q150,220 195,262'
+  return (
+    <g>
+      <path d={jagged} fill="none" stroke={CREAM} strokeOpacity="0.36" strokeWidth="1.2" strokeLinejoin="round" />
+      <path d={bridge} fill="none" stroke={CREAM} strokeOpacity="0.3" strokeWidth="1.1" strokeDasharray="2 4" />
+      <ellipse cx={smoothCx} cy={smoothCy} rx="34" ry="24" fill="none" stroke={CINNABAR} strokeOpacity="0.85" strokeWidth="1.6" />
+      <path d={`M${smoothCx - 10},${smoothCy + 22} L${smoothCx - 18},${smoothCy + 34} L${smoothCx - 2},${smoothCy + 23} Z`} fill="none" stroke={CINNABAR} strokeOpacity="0.85" strokeWidth="1.4" strokeLinejoin="round" />
+    </g>
+  )
+}
+
+// 母题:复利曲线——一串由小到大的结点沿指数曲线爬升,末端一点放大的朱色
+// (呼应全书核心论点:习惯是复利,1% 的微小改变每天都在发生,但要很久之后才看得见)。
+function CompoundCurve() {
+  const pts = []
+  for (let i = 0; i < 7; i++) {
+    const t = i / 6
+    pts.push({ x: 50 + t * 190, y: 360 - Math.pow(t, 2.2) * 150, r: 3 + t * 7 })
+  }
+  const path = pts.map((p, i) => (i === 0 ? 'M' : 'L') + p.x.toFixed(1) + ',' + p.y.toFixed(1)).join(' ')
+  return (
+    <g>
+      <path d={path} fill="none" stroke={CREAM} strokeOpacity="0.32" strokeWidth="1.2" />
+      {pts.slice(0, -1).map((p, i) => <circle key={i} cx={p.x} cy={p.y} r={p.r} fill={CREAM} fillOpacity="0.4" />)}
+      <circle cx={pts[6].x} cy={pts[6].y} r={pts[6].r} fill={CINNABAR} />
+    </g>
+  )
 }
 
 // 竖排书名自适应:短名(≤5)沿用大字单列(与既有封面像素级一致);6–7 字缩小单列;
