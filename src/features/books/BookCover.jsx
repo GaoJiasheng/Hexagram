@@ -858,6 +858,16 @@ function Motif({ motif }) {
   if (motif === 'flywheel') return <Flywheel />
   if (motif === 'bridge-bubbles') return <BridgeBubbles />
   if (motif === 'compound-curve') return <CompoundCurve />
+  if (motif === 'gene-helix') return <GeneHelix />
+  if (motif === 'event-horizon') return <EventHorizon />
+  if (motif === 'broken-causal-chain') return <BrokenCausalChain />
+  if (motif === 'butterfly-spiral') return <ButterflySpiral />
+  if (motif === 'bitten-circle') return <BittenCircle />
+  if (motif === 'mirror-question') return <MirrorQuestion />
+  if (motif === 'gentle-nudge') return <GentleNudge />
+  if (motif === 'zero-to-one') return <ZeroToOne />
+  if (motif === 'bml-loop') return <BmlLoop />
+  if (motif === 'safety-margin') return <SafetyMargin />
   return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
 }
 
@@ -1052,6 +1062,198 @@ function titleColumns(title) {
     { x: 250, fontSize, step, startY, chars: all.slice(0, half) },
     { x: 250 - gap, fontSize, step, startY, chars: all.slice(half) },
   ]
+}
+
+// 母题:基因螺旋——一道双螺旋从上方垂落,螺旋周身缀着几只小小的「载具」外壳
+// (呼应全书核心论点:身体不过是基因用来复制自己的生存机器)。
+function GeneHelix() {
+  const rungs = [80, 108, 136, 164, 192, 220, 248, 276]
+  const vehicles = [[95, 96], [205, 150], [95, 204], [205, 258]]
+  return (
+    <g>
+      {rungs.map((y, i) => {
+        const lx = 120 + Math.sin(y / 22) * 45
+        const rx = 180 - Math.sin(y / 22) * 45
+        return (
+          <g key={i}>
+            <line x1={lx} y1={y} x2={rx} y2={y} stroke={CREAM} strokeOpacity="0.3" strokeWidth="1" />
+            <circle cx={lx} cy={y} r="3.4" fill={CREAM} fillOpacity="0.55" />
+            <circle cx={rx} cy={y} r="3.4" fill={CREAM} fillOpacity="0.55" />
+          </g>
+        )
+      })}
+      <path d="M120,72 C90,110 90,150 120,192 C150,234 150,270 120,312" fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.3" />
+      <path d="M180,72 C210,110 210,150 180,192 C150,234 150,270 180,312" fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.3" />
+      {vehicles.map(([x, y], i) => <circle key={i} cx={x} cy={y} r={i === 1 ? 9 : 5.5} fill={i === 1 ? CINNABAR : CREAM} fillOpacity={i === 1 ? 1 : 0.45} />)}
+    </g>
+  )
+}
+
+// 母题:事件视界——一片规则的时空网格被中心的暗孔渐渐弯折吞噬,孔边一圈朱色
+// 吸积环(呼应全书核心意象:引力如何弯曲时空,黑洞如何吞噬光)。
+function EventHorizon() {
+  const lines = []
+  for (let i = 0; i <= 8; i++) {
+    const y = 90 + i * 26
+    const bend = Math.max(0, 30 - Math.abs(150 - (60 + i * 6)))
+    lines.push(<path key={`h${i}`} d={`M60,${y} Q150,${y + (i >= 3 && i <= 5 ? 22 : 4)} 240,${y}`} fill="none" stroke={CREAM} strokeOpacity="0.26" strokeWidth="1" />)
+  }
+  for (let i = 0; i <= 6; i++) {
+    const x = 60 + i * 30
+    lines.push(<path key={`v${i}`} d={`M${x},90 Q${x + (i >= 2 && i <= 4 ? 18 : 3)},195 ${x},312`} fill="none" stroke={CREAM} strokeOpacity="0.26" strokeWidth="1" />)
+  }
+  return (
+    <g>
+      {lines}
+      <circle cx="150" cy="204" r="30" fill="rgba(0,0,0,0.4)" />
+      <circle cx="150" cy="204" r="30" fill="none" stroke={CINNABAR} strokeWidth="2.4" />
+      <circle cx="150" cy="204" r="18" fill="rgba(0,0,0,0.55)" />
+    </g>
+  )
+}
+
+// 母题:断裂的因果链——一串环环相扣的锁链在中段被剪断,断口一点朱色裂痕
+// (呼应全书核心论点:相关不是因果,许多「显而易见」的因果链其实经不起推敲)。
+function BrokenCausalChain() {
+  const links = [[90, 110], [90, 150], [90, 190], [210, 230], [210, 270], [210, 310]]
+  return (
+    <g>
+      {links.map(([x, y], i) => (
+        <ellipse key={i} cx={x} cy={y} rx="17" ry="22" fill="none" stroke={CREAM} strokeOpacity={i < 3 ? 0.44 : 0.3} strokeWidth="2.2"
+          transform={i % 2 ? `rotate(90 ${x} ${y})` : undefined} />
+      ))}
+      <line x1="90" y1="212" x2="120" y2="205" stroke={CINNABAR} strokeWidth="2" />
+      <line x1="120" y1="205" x2="150" y2="222" stroke={CINNABAR} strokeWidth="2" />
+      <line x1="150" y1="222" x2="180" y2="210" stroke={CINNABAR} strokeWidth="2" />
+      <circle cx="150" cy="222" r="4" fill={CINNABAR} />
+      <text x="150" y="260" textAnchor="middle" fontSize="11" fill={CREAM} fillOpacity="0.5" style={SERIF}>?</text>
+    </g>
+  )
+}
+
+// 母题:蝴蝶回旋——一圈黄蝶(全书标志意象)绕着一个孤独的小点螺旋盘旋
+// (呼应马孔多与布恩迪亚家族:重复的名字、重复的命运,孤独是终局)。
+function ButterflySpiral() {
+  const wing = (x, y, r, rot, op) => (
+    <g key={`${x}-${y}`} transform={`translate(${x} ${y}) rotate(${rot})`}>
+      <ellipse cx="-4" cy="0" rx="6" ry="4" fill={CREAM} fillOpacity={op} />
+      <ellipse cx="4" cy="0" rx="6" ry="4" fill={CREAM} fillOpacity={op} />
+    </g>
+  )
+  const spiral = []
+  for (let i = 0; i < 9; i++) {
+    const a = i * 0.85
+    const r = 20 + i * 11
+    const x = 150 + Math.cos(a) * r
+    const y = 210 + Math.sin(a) * r * 0.85
+    spiral.push(wing(x, y, a * 40, 0.32 + i * 0.05))
+  }
+  return (
+    <g>
+      {spiral}
+      <circle cx="150" cy="210" r="6" fill={CINNABAR} />
+    </g>
+  )
+}
+
+// 母题:缺口圆——一枚被咬去一角的圆(果实/月相的抽象),缺口处透出几道微光
+// (呼应车库到车库的创业史与「非同凡想」式产品美学,不直接挪用任何品牌标志)。
+function BittenCircle() {
+  return (
+    <g>
+      <circle cx="150" cy="200" r="62" fill="none" stroke={CREAM} strokeOpacity="0.42" strokeWidth="2" />
+      <circle cx="196" cy="176" r="26" fill={accentBg()} />
+      <line x1="150" y1="138" x2="150" y2="118" stroke={CREAM} strokeOpacity="0.5" strokeWidth="2" />
+      <circle cx="150" cy="112" r="4" fill={CINNABAR} />
+      {[0, 1, 2].map((i) => (
+        <line key={i} x1={196 + Math.cos(i * 0.5 - 0.5) * 30} y1={176 + Math.sin(i * 0.5 - 0.5) * 30}
+          x2={196 + Math.cos(i * 0.5 - 0.5) * 44} y2={176 + Math.sin(i * 0.5 - 0.5) * 44}
+          stroke={CREAM} strokeOpacity="0.3" strokeWidth="1.4" />
+      ))}
+    </g>
+  )
+  function accentBg() { return 'rgba(0,0,0,0.28)' }
+}
+
+// 母题:镜问——两个相对的对话气泡,一个提问一个映照(镜像式聆听),中间一点朱色
+// 校准式问号(呼应「战术同理心」——先照见对方,再提问)。
+function MirrorQuestion() {
+  return (
+    <g>
+      <path d="M60,150 h90 v54 h-40 l-14,16 v-16 h-36 z" fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.4" />
+      <path d="M240,240 h-90 v-54 h40 l14,-16 v16 h36 z" fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.4" />
+      <line x1="150" y1="177" x2="150" y2="213" stroke={CREAM} strokeOpacity="0.22" strokeWidth="1" strokeDasharray="3 4" />
+      <text x="105" y="184" textAnchor="middle" fontSize="15" fill={CREAM} fillOpacity="0.55" style={SERIF}>?</text>
+      <circle cx="195" cy="210" r="7" fill={CINNABAR} />
+    </g>
+  )
+}
+
+// 母题:轻推——一颗小球停在岔路口,一道极细的箭头从旁轻轻一点(不是推倒,是助推)
+// (呼应全书核心比喻:选择架构如何在不剥夺自由的前提下,轻轻引导人做出更好的选择)。
+function GentleNudge() {
+  return (
+    <g>
+      <path d="M150,120 L150,190" stroke={CREAM} strokeOpacity="0.3" strokeWidth="1.4" />
+      <path d="M150,190 L90,270" fill="none" stroke={CREAM} strokeOpacity="0.3" strokeWidth="1.4" />
+      <path d="M150,190 L210,270" fill="none" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.8" />
+      <circle cx="150" cy="190" r="12" fill="none" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.6" />
+      <path d="M120,168 L142,184" stroke={CINNABAR} strokeWidth="2.4" />
+      <polygon points="142,184 133,180 138,190" fill={CINNABAR} />
+      <circle cx="210" cy="270" r="6" fill={CINNABAR} />
+      <circle cx="90" cy="270" r="6" fill={CREAM} fillOpacity="0.4" />
+    </g>
+  )
+}
+
+// 母题:零到一——一枚圆环(0)与一道竖线(1)隔着一道火花对望
+// (呼应全书主题:从无到有的创造,不是复制已存在的东西,是让不存在的东西破土而出)。
+function ZeroToOne() {
+  return (
+    <g>
+      <circle cx="108" cy="204" r="34" fill="none" stroke={CREAM} strokeOpacity="0.42" strokeWidth="3" />
+      <line x1="192" y1="168" x2="192" y2="240" stroke={CINNABAR} strokeWidth="4" />
+      <path d="M150,160 L160,180 M150,160 L140,180" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.6" />
+      <circle cx="150" cy="204" r="3" fill={CREAM} fillOpacity="0.6" />
+      <path d="M138,204 L162,204" stroke={CREAM} strokeOpacity="0.3" strokeWidth="1" strokeDasharray="2 4" />
+    </g>
+  )
+}
+
+// 母题:构建-测量-学习——三支箭首尾相连围成一个循环三角
+// (呼应精益创业方法论的核心引擎:小步快跑、验证性学习、持续迭代)。
+function BmlLoop() {
+  const pts = [[150, 130], [214, 250], [86, 250]]
+  return (
+    <g>
+      {pts.map((p, i) => {
+        const q = pts[(i + 1) % 3]
+        const mx = (p[0] + q[0]) / 2, my = (p[1] + q[1]) / 2
+        return (
+          <g key={i}>
+            <line x1={p[0]} y1={p[1]} x2={q[0]} y2={q[1]} stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.6" />
+            <circle cx={mx} cy={my} r={i === 0 ? 7 : 4.5} fill={i === 0 ? CINNABAR : CREAM} fillOpacity={i === 0 ? 1 : 0.5} />
+          </g>
+        )
+      })}
+      {pts.map((p, i) => <circle key={`n${i}`} cx={p[0]} cy={p[1]} r="5" fill={CREAM} fillOpacity="0.6" />)}
+    </g>
+  )
+}
+
+// 母题:安全边际——一座桥面与桥墩之间留出明显的冗余间隙,间隙处一道朱色标线
+// (呼应格雷厄姆的核心概念:用足够宽的安全边际,抵御自己判断可能出现的误差)。
+function SafetyMargin() {
+  return (
+    <g>
+      <rect x="60" y="170" width="180" height="10" fill="none" stroke={CREAM} strokeOpacity="0.44" strokeWidth="1.6" />
+      <rect x="80" y="196" width="16" height="70" fill="none" stroke={CREAM} strokeOpacity="0.34" strokeWidth="1.3" />
+      <rect x="204" y="196" width="16" height="70" fill="none" stroke={CREAM} strokeOpacity="0.34" strokeWidth="1.3" />
+      <line x1="96" y1="230" x2="204" y2="230" stroke={CINNABAR} strokeWidth="1.6" strokeDasharray="5 5" />
+      <path d="M96,222 L96,238 M204,222 L204,238" stroke={CINNABAR} strokeWidth="1.6" />
+      <text x="150" y="216" textAnchor="middle" fontSize="10" fill={CREAM} fillOpacity="0.55" style={SERIF}>margin</text>
+    </g>
+  )
 }
 
 export default function BookCover({ title = '', subtitle = '', author = '', accent = '#3f7d6e', motif, className }) {
