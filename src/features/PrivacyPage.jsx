@@ -62,12 +62,12 @@ export default function PrivacyPage() {
 
       <section className="about-section">
         <h2 className="about-section__title">政策变更与联系方式</h2>
-        <p>本政策如有更新,将在本页公布并更新顶部日期。如对隐私有任何疑问,可联系:<a href="mailto:gaojiasheng.him@gmail.com">gaojiasheng.him@gmail.com</a>。</p>
+        <p>本政策如有更新,将在本页公布并更新顶部日期。如对隐私有任何疑问,可联系:<a href="mailto:gaojiasheng.him@foxmail.com">gaojiasheng.him@foxmail.com</a>。</p>
       </section>
 
       <section className="about-section">
         <h2 className="about-section__title">Privacy Policy (English summary)</h2>
-        <p><strong>Guanxiang (观象)</strong> does not collect names, contact details, advertising identifiers, or device fingerprints. Its HTTP(S) website records minimal anonymous reading events: a random browser ID, page/book/chapter identifiers, dwell time, event time, and a coarse country/region derived server-side by Cloudflare's edge from the connecting IP — the raw IP address itself is never read, logged, or stored. These events are stored in Cloudflare D1 for aggregate readership statistics and are not linked to accounts or used for advertising. The packaged iOS app does not enable this web telemetry. Preferences, bookmarks, notes, reading progress, and local divination history remain on the device and can be exported or deleted via Settings. On-device search sends no queries out. Questions: <a href="mailto:gaojiasheng.him@gmail.com">gaojiasheng.him@gmail.com</a>.</p>
+        <p><strong>Guanxiang (观象)</strong> does not collect names, contact details, advertising identifiers, or device fingerprints. Its HTTP(S) website records minimal anonymous reading events: a random browser ID, page/book/chapter identifiers, dwell time, event time, and a coarse country/region derived server-side by Cloudflare's edge from the connecting IP — the raw IP address itself is never read, logged, or stored. These events are stored in Cloudflare D1 for aggregate readership statistics and are not linked to accounts or used for advertising. The packaged iOS app does not enable this web telemetry. Preferences, bookmarks, notes, reading progress, and local divination history remain on the device and can be exported or deleted via Settings. On-device search sends no queries out. Questions: <a href="mailto:gaojiasheng.him@foxmail.com">gaojiasheng.him@foxmail.com</a>.</p>
       </section>
 
       <p style={{ marginTop: '2rem' }}><Link to="/about" className="btn btn--secondary">关于本站</Link></p>

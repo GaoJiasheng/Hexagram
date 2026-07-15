@@ -238,13 +238,15 @@ app.get('/admin/stats', async (c) => {
         LIMIT 10
       `),
       db.prepare('SELECT AVG(dwell_ms) AS average FROM reading_events'),
+      // Grouped by (country, region) so the response can be re-aggregated two
+      // ways: country-only for the world ranking, region-level for China.
       db.prepare(`
         SELECT country, region, COUNT(*) AS count
         FROM reading_events
         WHERE country IS NOT NULL
         GROUP BY country, region
         ORDER BY count DESC
-        LIMIT 15
+        LIMIT 500
       `),
     ])
 
@@ -273,11 +275,26 @@ app.get('/admin/stats', async (c) => {
 
     const average = Number(resultRows(dwellResult)[0]?.average)
 
-    const geoHeat = resultRows(geoResult).map((row) => ({
-      country: row.country,
-      region: row.region ?? null,
-      count: countValue(row.count),
-    }))
+    // Country ranking collapses region (other countries only need country-
+    // level, per owner's spec); China additionally gets a province ranking
+    // from the same raw rows.
+    const countryCounts = new Map()
+    const chinaProvinceCounts = new Map()
+    for (const row of resultRows(geoResult)) {
+      const country = String(row.country)
+      const count = countValue(row.count)
+      countryCounts.set(country, (countryCounts.get(country) ?? 0) + count)
+      if (country === 'CN') {
+        const province = row.region == null ? '' : String(row.region)
+        chinaProvinceCounts.set(province, (chinaProvinceCounts.get(province) ?? 0) + count)
+      }
+    }
+    const countryHeat = Array.from(countryCounts, ([country, count]) => ({ country, count }))
+      .sort((left, right) => right.count - left.count)
+      .slice(0, 30)
+    const chinaProvinceHeat = Array.from(chinaProvinceCounts, ([region, count]) => ({ region, count }))
+      .sort((left, right) => right.count - left.count)
+      .slice(0, 40)
 
     return c.json({
       totalEvents: countValue(resultRows(totalResult)[0]?.count),
@@ -285,7 +302,8 @@ app.get('/admin/stats', async (c) => {
       corpusHeat,
       topChapters,
       avgDwellMs: Number.isFinite(average) && average > 0 ? Math.round(average) : 0,
-      geoHeat,
+      countryHeat,
+      chinaProvinceHeat,
     })
   } catch (error) {
     console.error('Reading statistics query failed', error)

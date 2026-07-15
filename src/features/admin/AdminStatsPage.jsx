@@ -53,6 +53,24 @@ function countryLabel(code) {
   return COUNTRY_NAMES[code] || code
 }
 
+// Cloudflare 的 cf.region 对中国大陆给的是英文省级行政区名——转中文展示；
+// 匹配不到（含空值，即无法定位到省级）统一归为「其他/未知地区」。
+const CHINA_PROVINCE_NAMES = {
+  Beijing: '北京', Shanghai: '上海', Tianjin: '天津', Chongqing: '重庆',
+  Hebei: '河北', Shanxi: '山西', 'Nei Mongol': '内蒙古', 'Inner Mongolia': '内蒙古',
+  Liaoning: '辽宁', Jilin: '吉林', Heilongjiang: '黑龙江',
+  Jiangsu: '江苏', Zhejiang: '浙江', Anhui: '安徽', Fujian: '福建', Jiangxi: '江西',
+  Shandong: '山东', Henan: '河南', Hubei: '湖北', Hunan: '湖南',
+  Guangdong: '广东', Guangxi: '广西', Hainan: '海南',
+  Sichuan: '四川', Guizhou: '贵州', Yunnan: '云南', Xizang: '西藏', Tibet: '西藏',
+  Shaanxi: '陕西', Gansu: '甘肃', Qinghai: '青海', Ningxia: '宁夏', Xinjiang: '新疆',
+  Taiwan: '台湾', 'Hong Kong': '香港', Macau: '澳门', Macao: '澳门',
+}
+function provinceLabel(region) {
+  if (!region) return '其他/未知地区'
+  return CHINA_PROVINCE_NAMES[region] || region
+}
+
 function readPassphrase() {
   try {
     return sessionStorage.getItem(PASSPHRASE_KEY) || ''
@@ -104,14 +122,15 @@ function normalizeStats(raw) {
         }))
       : [],
     avgDwellMs: safeNumber(raw.avgDwellMs),
-    geoHeat: Array.isArray(raw.geoHeat)
-      ? raw.geoHeat
+    countryHeat: Array.isArray(raw.countryHeat)
+      ? raw.countryHeat
         .filter((row) => row && typeof row.country === 'string')
-        .map((row) => ({
-          country: row.country,
-          region: typeof row.region === 'string' ? row.region : null,
-          count: safeNumber(row.count),
-        }))
+        .map((row) => ({ country: row.country, count: safeNumber(row.count) }))
+      : [],
+    chinaProvinceHeat: Array.isArray(raw.chinaProvinceHeat)
+      ? raw.chinaProvinceHeat
+        .filter((row) => row && typeof row.count === 'number')
+        .map((row) => ({ region: typeof row.region === 'string' ? row.region : '', count: safeNumber(row.count) }))
       : [],
   }
 }
@@ -231,39 +250,57 @@ function CorpusHeatChart({ rows }) {
   )
 }
 
-function geoRowLabel(row) {
-  return row.region ? `${countryLabel(row.country)} · ${row.region}` : countryLabel(row.country)
+// 排名列表(#155,与「书 / 章 Top 10」同一视觉语言):国家/地区榜只到国家级；
+// 中国省份榜是国家榜里「中国大陆」一行的下钻,单独一张榜、只含中国大陆事件。
+function RankingList({ rows, keyFor, labelFor, emptyLabel, limit = 20 }) {
+  const visible = rows.filter((row) => row.count > 0).slice(0, limit)
+  if (!visible.length) return <EmptyState label={emptyLabel} />
+
+  const maximum = Math.max(...visible.map((row) => row.count), 1)
+  return (
+    <ol className="admin-top-list">
+      {visible.map((row, index) => (
+        <li className="admin-top-list__item" key={keyFor(row)}>
+          <span className="admin-top-list__rank">{String(index + 1).padStart(2, '0')}</span>
+          <div className="admin-top-list__body">
+            <div className="admin-top-list__line">
+              <span><strong>{labelFor(row)}</strong></span>
+              <span className="admin-top-list__count">{NUMBER.format(row.count)} 次</span>
+            </div>
+            <span className="admin-top-list__track" aria-hidden="true">
+              <span
+                className="admin-top-list__bar"
+                style={{ width: `${Math.max(2, (row.count / maximum) * 100)}%`, background: 'var(--cinnabar-pure)' }}
+              />
+            </span>
+          </div>
+        </li>
+      ))}
+    </ol>
+  )
 }
 
-function GeoHeatChart({ rows }) {
-  const visible = rows.filter((row) => row.count > 0)
-  if (!visible.length) return <EmptyState label="暂无地区数据" />
-
-  const width = 680
-  const rowHeight = 36
-  const height = visible.length * rowHeight + 8
-  const barX = 148
-  const barWidth = 458
-  const maximum = Math.max(...visible.map((row) => row.count), 1)
-
+function CountryRanking({ rows }) {
   return (
-    <svg className="admin-chart admin-heat-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="访问来源地区横向条形图">
-      <title>地区分布</title>
-      {visible.map((row, index) => {
-        const y = index * rowHeight + 7
-        const valueWidth = Math.max(2, (barWidth * row.count) / maximum)
-        const label = geoRowLabel(row)
-        return (
-          <g key={`${row.country}-${row.region ?? ''}`}>
-            <title>{`${label}: ${row.count} 次`}</title>
-            <text className="admin-heat-chart__label" x="0" y={y + 15}>{label}</text>
-            <rect className="admin-heat-chart__track" x={barX} y={y + 3} width={barWidth} height="12" rx="6" />
-            <rect x={barX} y={y + 3} width={valueWidth} height="12" rx="6" style={{ fill: 'var(--cinnabar-pure)' }} />
-            <text className="admin-heat-chart__count" x={width - 2} y={y + 15} textAnchor="end">{NUMBER.format(row.count)}</text>
-          </g>
-        )
-      })}
-    </svg>
+    <RankingList
+      rows={rows}
+      keyFor={(row) => row.country}
+      labelFor={(row) => countryLabel(row.country)}
+      emptyLabel="暂无地区数据"
+      limit={20}
+    />
+  )
+}
+
+function ChinaProvinceRanking({ rows }) {
+  return (
+    <RankingList
+      rows={rows}
+      keyFor={(row) => row.region || '(unknown)'}
+      labelFor={(row) => provinceLabel(row.region)}
+      emptyLabel="暂无中国大陆细分数据"
+      limit={34}
+    />
   )
 }
 
@@ -485,10 +522,18 @@ export default function AdminStatsPage() {
 
             <section className="admin-stat-card admin-stat-card--wide">
               <div className="admin-stat-card__head">
-                <h2>地区分布</h2>
-                <span>按国家/地区，Cloudflare 边缘解析，不存原始 IP</span>
+                <h2>国家/地区排名</h2>
+                <span>Cloudflare 边缘解析，不存原始 IP</span>
               </div>
-              <GeoHeatChart rows={stats.geoHeat} />
+              <CountryRanking rows={stats.countryHeat} />
+            </section>
+
+            <section className="admin-stat-card admin-stat-card--wide">
+              <div className="admin-stat-card__head">
+                <h2>中国大陆省级排名</h2>
+                <span>「国家/地区排名」中「中国大陆」的下钻</span>
+              </div>
+              <ChinaProvinceRanking rows={stats.chinaProvinceHeat} />
             </section>
 
             <section className="admin-stat-card admin-stat-card--dwell">

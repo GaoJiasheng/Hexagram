@@ -2,7 +2,7 @@ import { useSettings } from '../SettingsContext.jsx'
 import { analyzePosition, describePosition } from '../engine/positions.js'
 import AnnotatedText from './AnnotatedText.jsx'
 
-export default function LineRow({ line, pos, binary, onHover, isHighlighted, guazhu, xiaoxiangAnchors }) {
+export default function LineRow({ line, pos, binary, onHover, isHighlighted, guazhu, xiaoxiangAnchors, onQuote }) {
   const { settings } = useSettings()
   const analysis = analyzePosition(pos, binary)
   const { chips, desc } = describePosition(analysis)
@@ -23,13 +23,35 @@ export default function LineRow({ line, pos, binary, onHover, isHighlighted, gua
           ))}
         </span>
       </div>
-      <p className="line-row__text"><AnnotatedText text={line.original} /></p>
+      <div className="detail-quotable">
+        <p className="line-row__text"><AnnotatedText text={line.original} /></p>
+        {onQuote && (
+          <button
+            type="button"
+            className="para-act detail-quote-act"
+            onClick={() => onQuote(line.original, line.translation, line.title)}
+            aria-label="生成金句卡"
+            data-tip="生成金句卡"
+          >🖼</button>
+        )}
+      </div>
       {line.xiaoxiang?.original && (
-        <p className="line-row__xiaoxiang">
-          {xiaoxiangAnchors?.length
-            ? <AnnotatedText text={line.xiaoxiang.original} anchors={xiaoxiangAnchors} />
-            : line.xiaoxiang.original}
-        </p>
+        <div className="detail-quotable">
+          <p className="line-row__xiaoxiang">
+            {xiaoxiangAnchors?.length
+              ? <AnnotatedText text={line.xiaoxiang.original} anchors={xiaoxiangAnchors} />
+              : line.xiaoxiang.original}
+          </p>
+          {onQuote && (
+            <button
+              type="button"
+              className="para-act detail-quote-act"
+              onClick={() => onQuote(line.xiaoxiang.original, line.xiaoxiang.translation, `${line.title} · 小象`)}
+              aria-label="生成小象金句卡"
+              data-tip="生成小象金句卡"
+            >🖼</button>
+          )}
+        </div>
       )}
       {settings.showTranslation && (
         <>

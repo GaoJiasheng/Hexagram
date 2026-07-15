@@ -235,7 +235,7 @@
 - [x] 1.5 Worker `/api/beat` 接口:路径合法性校验 + 限频 + 直写 D1 `reading_events`
 - [x] 1.6 `/admin/stats` 页面骨架 + 过渡期口令鉴权(env secret,预埋「`is_owner` 账号出现后自动失效」判断逻辑,即使 Phase 2 还没做)
 - [x] 1.7 `/admin/stats` 图表:七日曲线/分组热度榜/书章 Top N/平均停留(自绘 SVG,朱色 accent 风格)
-- [x] 1.7a(补,2026-07-15)地区分布图:`reading_events` 加 `country`/`region` 列(Cloudflare 边缘解析,不存原始 IP),`/admin/stats` 新增地区横向条形图,隐私政策同步披露
+- [x] 1.7a(补,2026-07-15)地区排名:`reading_events` 加 `country`/`region` 列(Cloudflare 边缘解析,不存原始 IP),隐私政策同步披露;`/admin/stats` 新增两张排名榜(与「书/章 Top 10」同一视觉语言)——「国家/地区排名」(其他国家只到国家级)+「中国大陆省级排名」(中国大陆下钻到省,`cf.region` 英文名转中文)
 
 ### Phase 2 · 账号与互动
 

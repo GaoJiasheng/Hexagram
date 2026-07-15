@@ -1379,6 +1379,13 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 
 .detail-section { margin-bottom: 32px; scroll-margin-top: 70px; }
 
+/* 卦辞/彖/象/爻/文言逐句金句卡(#155,与普通经典逐段金句卡看齐) */
+.detail-quotable { position: relative; display: flex; align-items: flex-start; gap: 8px; }
+.detail-quotable > *:first-child { flex: 1 1 auto; min-width: 0; }
+.detail-quote-act { flex: none; margin-top: 2px; opacity: 0.55; transition: opacity 0.15s; }
+.detail-quotable:hover .detail-quote-act, .detail-quote-act:focus-visible { opacity: 1; }
+@media (hover: none) { .detail-quote-act { opacity: 0.7; } }
+
 .detail-section__title {
   margin: 0;
   font-size: 0.8rem;
