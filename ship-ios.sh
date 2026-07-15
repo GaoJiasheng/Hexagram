@@ -5,7 +5,9 @@ set -euo pipefail; cd "$(dirname "$0")"; source .ios-ship.env
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 KEY="$HOME/.appstoreconnect/private_keys/AuthKey_${ASC_KEY_ID}.p8"
 A=(-allowProvisioningUpdates -authenticationKeyPath "$KEY" -authenticationKeyID "$ASC_KEY_ID" -authenticationKeyIssuerID "$ASC_ISSUER_ID")
-echo "▶ bump build 号"; (cd ios/App && xcrun agvtool next-version -all >/dev/null)
+VERSION=$(node -p "require('./package.json').version")
+echo "▶ 同步版本号 → $VERSION + bump build 号"
+(cd ios/App && xcrun agvtool new-marketing-version "$VERSION" >/dev/null && xcrun agvtool next-version -all >/dev/null)
 echo "▶ 构建 web(原生档)+ sync"; npm run build:cap >/dev/null && npx cap sync ios >/dev/null
 echo "▶ 归档"; rm -rf /tmp/Hexa.xcarchive
 xcodebuild -project ios/App/App.xcodeproj -scheme App -configuration Release -destination 'generic/platform=iOS' -archivePath /tmp/Hexa.xcarchive archive "${A[@]}" DEVELOPMENT_TEAM="$ASC_TEAM" CODE_SIGN_STYLE=Automatic -quiet
