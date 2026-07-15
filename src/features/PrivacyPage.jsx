@@ -9,7 +9,7 @@ export default function PrivacyPage() {
     <div className="basics-page about-page">
       <div className="page-header">
         <h1 className="page-title">隐私政策</h1>
-        <p className="page-subtitle text-soft">观象 · 个人学习站 · 更新于 2026-07-14</p>
+        <p className="page-subtitle text-soft">观象 · 个人学习站 · 更新于 2026-07-15</p>
       </div>
 
       <section className="about-section">
@@ -24,9 +24,10 @@ export default function PrivacyPage() {
         <ul className="about-list">
           <li>浏览器首次访问时随机生成的匿名编号(cid);</li>
           <li>离开页面时的路径、典籍/章节标识和本次停留毫秒数;</li>
-          <li>事件发生时间。</li>
+          <li>事件发生时间;</li>
+          <li>粗粒度地理位置(国家/地区,部分情况精确到省/州级)——由 Cloudflare 在边缘节点根据连接 IP 自动解析后附加在请求上,<strong>本站服务端不读取、不记录、不存储原始 IP 地址本身</strong>,只保留解析后的国家/地区名称。</li>
         </ul>
-        <p>该事件不包含姓名、账号、邮箱、IP 地址或 User-Agent 指纹,也不与未来的登录账号关联;只用于 owner 查看聚合阅读趋势。数据存放在本站的 Cloudflare D1 数据库,不用于广告、画像或出售。</p>
+        <p>该事件不包含姓名、账号、邮箱、IP 地址或 User-Agent 指纹,也不与未来的登录账号关联;只用于 owner 查看聚合阅读趋势与访客地区分布。数据存放在本站的 Cloudflare D1 数据库,不用于广告、画像或出售。</p>
       </section>
 
       <section className="about-section">
@@ -66,7 +67,7 @@ export default function PrivacyPage() {
 
       <section className="about-section">
         <h2 className="about-section__title">Privacy Policy (English summary)</h2>
-        <p><strong>Guanxiang (观象)</strong> does not collect names, contact details, advertising identifiers, or device fingerprints. Its HTTP(S) website records minimal anonymous reading events: a random browser ID, page/book/chapter identifiers, dwell time, and event time. These events are stored in Cloudflare D1 for aggregate readership statistics and are not linked to accounts or used for advertising. The packaged iOS app does not enable this web telemetry. Preferences, bookmarks, notes, reading progress, and local divination history remain on the device and can be exported or deleted via Settings. On-device search sends no queries out. Questions: <a href="mailto:gaojiasheng.him@gmail.com">gaojiasheng.him@gmail.com</a>.</p>
+        <p><strong>Guanxiang (观象)</strong> does not collect names, contact details, advertising identifiers, or device fingerprints. Its HTTP(S) website records minimal anonymous reading events: a random browser ID, page/book/chapter identifiers, dwell time, event time, and a coarse country/region derived server-side by Cloudflare's edge from the connecting IP — the raw IP address itself is never read, logged, or stored. These events are stored in Cloudflare D1 for aggregate readership statistics and are not linked to accounts or used for advertising. The packaged iOS app does not enable this web telemetry. Preferences, bookmarks, notes, reading progress, and local divination history remain on the device and can be exported or deleted via Settings. On-device search sends no queries out. Questions: <a href="mailto:gaojiasheng.him@gmail.com">gaojiasheng.him@gmail.com</a>.</p>
       </section>
 
       <p style={{ marginTop: '2rem' }}><Link to="/about" className="btn btn--secondary">关于本站</Link></p>

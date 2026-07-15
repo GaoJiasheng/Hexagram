@@ -57,7 +57,7 @@
 | `identities` | user_id、provider(google/email/phone/wechat 预留)、provider_uid(Google sub / 邮箱 / 手机号哈希)、created_at | 一人可绑多种登录方式;手机号哈希存储不存明文 |
 | `auth_codes` | target(邮箱/手机号)、code_hash、expires_at、attempts | 验证码短时效表,过期即清 |
 | `user_data` | user_id、key(reading/corpusMarks/corpusNotes/settings…)、value(JSON)、updated_at | **云同步表:直接映射现有 localStorage 的 DATA_KEYS 白名单**,粗粒度整键存取,先不做逐条合并 |
-| `reading_events` | client_id(localStorage 匿名随机 id)、path、corpus、slug、chapter、dwell_ms(粗粒度停留)、ts | 匿名埋点,无 IP、无 UA 指纹、与 users 不关联 |
+| `reading_events` | client_id(localStorage 匿名随机 id)、path、corpus、slug、chapter、dwell_ms(粗粒度停留)、ts、country/region(2026-07-15 补,见下) | 匿名埋点,无 IP、无 UA 指纹、与 users 不关联 |
 | `comments` | id、user_id、corpus、slug、chapter(挂载锚)、body(纯文本,长度上限)、status(visible/hidden)、created_at | 扁平评论,owner 可改 status |
 
 ---
@@ -107,6 +107,8 @@
 - **后台页 `/admin/stats`**:仅 owner 可见,鉴权**做成自动收口、不依赖人为记得手动切换**——过渡期(Phase 1,登录体系还没上线时)用环境变量口令(Worker secret)兜底;但 `/api/admin/*` 的校验逻辑写成「**只要 `users` 表里已存在 `is_owner=true` 的正式账号,口令验证直接失效,强制走登录**」。也就是说:Phase 2 登录一上线、owner 自己用正式账号登录过一次,临时口令自动作废,不需要日后手动回来删代码或改配置——避免"过渡方案"变成"永久遗留"。图表数据**直接对 D1 跑实时 `GROUP BY` 聚合查询**(不预计算缓存),复用项目里已有的数据可视化语言(自绘 SVG 条形/折线,朱色 accent、衬线标注,参照白话配图与辩论图谱的做法,不引图表库):七日曲线、分组热度榜、书/章 Top N、平均停留。
 
 **容量估算(按 owner 目标场景计算,已定案)**:全站行为分三类——⑴翻章埋点(`reading_events` 写,量最大);⑵登录/同步(`users`/`identities`/`user_data` 写,已登录用户日常阅读不重复触发);⑶评论(`comments` 读写,**评论列表必须懒加载**——打开章节页不自动拉取,用户主动点开才发请求,否则量级会追平埋点、直接把总请求数翻倍)。**目标场景:日活 2000、人均单次登录看 10 篇文章**——按 10 次翻章埋点 + 已登录用户摊薄后 <1 次会话 + 1–2 次收藏批注同步(防抖)+ <1 次评论(懒加载),每活跃用户/日约 **13–15 次请求**。2000 × 15 ≈ **3 万次/日**,仅占 Workers 免费 10 万请求/日额度的 **~30%**、D1 免费写 10 万行/日额度的 **~24%**——**目标场景在免费档内有 3–4 倍安全余量,现在不需要为 Workers Paid 做预算**,免费档实际能撑到 6000–7000 活跃 DAU 才会顶到天花板。
+
+**地区分布(2026-07-15 补,owner 要求)**:`/api/beat` 在服务端从 Cloudflare 自动附加在请求上的 `cf.country`/`cf.region` 取粗粒度地理位置(国家/地区,部分国家精确到省/州),写入 `reading_events` 的 `country`/`region` 两个新列——**全程不读取、不记录原始 IP 本身**,地理位置由 Cloudflare 边缘节点在到达本站代码之前就已解析好。`/admin/stats` 新增「地区分布」横向条形图,取 Top 15 国家/地区(按次数降序)。隐私政策已同步披露此项。
 
 ### 2.4 登录功能
 
@@ -233,6 +235,7 @@
 - [x] 1.5 Worker `/api/beat` 接口:路径合法性校验 + 限频 + 直写 D1 `reading_events`
 - [x] 1.6 `/admin/stats` 页面骨架 + 过渡期口令鉴权(env secret,预埋「`is_owner` 账号出现后自动失效」判断逻辑,即使 Phase 2 还没做)
 - [x] 1.7 `/admin/stats` 图表:七日曲线/分组热度榜/书章 Top N/平均停留(自绘 SVG,朱色 accent 风格)
+- [x] 1.7a(补,2026-07-15)地区分布图:`reading_events` 加 `country`/`region` 列(Cloudflare 边缘解析,不存原始 IP),`/admin/stats` 新增地区横向条形图,隐私政策同步披露
 
 ### Phase 2 · 账号与互动
 

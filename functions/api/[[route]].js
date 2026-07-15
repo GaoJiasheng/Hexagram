@@ -169,12 +169,19 @@ app.post('/beat', async (c) => {
     throw error
   }
 
+  // Country/region come from Cloudflare's own edge geolocation of the
+  // connecting IP (populated on the request's `cf` object). The raw IP
+  // itself is never read, logged, or stored — only this coarse location.
+  const cf = c.req.raw.cf || {}
+  const country = typeof cf.country === 'string' && cf.country.length > 0 && cf.country.length <= 8 ? cf.country : null
+  const region = typeof cf.region === 'string' && cf.region.length > 0 && cf.region.length <= 80 ? cf.region : null
+
   try {
     await getDb(c)
       .prepare(`
         INSERT INTO reading_events
-          (client_id, path, corpus, slug, chapter, dwell_ms, ts)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
+          (client_id, path, corpus, slug, chapter, dwell_ms, ts, country, region)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
       `)
       .bind(
         event.clientId,
@@ -184,6 +191,8 @@ app.post('/beat', async (c) => {
         event.chapter,
         event.dwellMs,
         Date.now(),
+        country,
+        region,
       )
       .run()
   } catch (error) {
@@ -203,7 +212,7 @@ app.get('/admin/stats', async (c) => {
 
   try {
     const db = getDb(c)
-    const [totalResult, dailyResult, corpusResult, chaptersResult, dwellResult] = await db.batch([
+    const [totalResult, dailyResult, corpusResult, chaptersResult, dwellResult, geoResult] = await db.batch([
       db.prepare('SELECT COUNT(*) AS count FROM reading_events'),
       db.prepare(`
         SELECT date(ts / 1000.0, 'unixepoch') AS date, COUNT(*) AS count
@@ -229,6 +238,14 @@ app.get('/admin/stats', async (c) => {
         LIMIT 10
       `),
       db.prepare('SELECT AVG(dwell_ms) AS average FROM reading_events'),
+      db.prepare(`
+        SELECT country, region, COUNT(*) AS count
+        FROM reading_events
+        WHERE country IS NOT NULL
+        GROUP BY country, region
+        ORDER BY count DESC
+        LIMIT 15
+      `),
     ])
 
     const dailyByDate = new Map(
@@ -256,12 +273,19 @@ app.get('/admin/stats', async (c) => {
 
     const average = Number(resultRows(dwellResult)[0]?.average)
 
+    const geoHeat = resultRows(geoResult).map((row) => ({
+      country: row.country,
+      region: row.region ?? null,
+      count: countValue(row.count),
+    }))
+
     return c.json({
       totalEvents: countValue(resultRows(totalResult)[0]?.count),
       dailyCounts,
       corpusHeat,
       topChapters,
       avgDwellMs: Number.isFinite(average) && average > 0 ? Math.round(average) : 0,
+      geoHeat,
     })
   } catch (error) {
     console.error('Reading statistics query failed', error)

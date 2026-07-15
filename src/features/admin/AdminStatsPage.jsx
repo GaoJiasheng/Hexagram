@@ -40,6 +40,19 @@ const YIJING_CLASSICS = {
 }
 const NUMBER = new Intl.NumberFormat('zh-CN')
 
+// 国家/地区代码转中文名——只覆盖高频访客来源，其余回退显示原始 ISO 代码。
+const COUNTRY_NAMES = {
+  CN: '中国大陆', HK: '中国香港', TW: '中国台湾', MO: '中国澳门',
+  US: '美国', CA: '加拿大', GB: '英国', DE: '德国', FR: '法国',
+  JP: '日本', KR: '韩国', SG: '新加坡', MY: '马来西亚', AU: '澳大利亚',
+  NZ: '新西兰', NL: '荷兰', CH: '瑞士', SE: '瑞典', IN: '印度',
+  BR: '巴西', RU: '俄罗斯', AE: '阿联酋', TH: '泰国', VN: '越南',
+  PH: '菲律宾', ID: '印度尼西亚',
+}
+function countryLabel(code) {
+  return COUNTRY_NAMES[code] || code
+}
+
 function readPassphrase() {
   try {
     return sessionStorage.getItem(PASSPHRASE_KEY) || ''
@@ -91,6 +104,15 @@ function normalizeStats(raw) {
         }))
       : [],
     avgDwellMs: safeNumber(raw.avgDwellMs),
+    geoHeat: Array.isArray(raw.geoHeat)
+      ? raw.geoHeat
+        .filter((row) => row && typeof row.country === 'string')
+        .map((row) => ({
+          country: row.country,
+          region: typeof row.region === 'string' ? row.region : null,
+          count: safeNumber(row.count),
+        }))
+      : [],
   }
 }
 
@@ -201,6 +223,42 @@ function CorpusHeatChart({ rows }) {
             <text className="admin-heat-chart__label" x="0" y={y + 15}>{label}</text>
             <rect className="admin-heat-chart__track" x={barX} y={y + 3} width={barWidth} height="12" rx="6" />
             <rect x={barX} y={y + 3} width={valueWidth} height="12" rx="6" style={{ fill: corpusColor(row.corpus) }} />
+            <text className="admin-heat-chart__count" x={width - 2} y={y + 15} textAnchor="end">{NUMBER.format(row.count)}</text>
+          </g>
+        )
+      })}
+    </svg>
+  )
+}
+
+function geoRowLabel(row) {
+  return row.region ? `${countryLabel(row.country)} · ${row.region}` : countryLabel(row.country)
+}
+
+function GeoHeatChart({ rows }) {
+  const visible = rows.filter((row) => row.count > 0)
+  if (!visible.length) return <EmptyState label="暂无地区数据" />
+
+  const width = 680
+  const rowHeight = 36
+  const height = visible.length * rowHeight + 8
+  const barX = 148
+  const barWidth = 458
+  const maximum = Math.max(...visible.map((row) => row.count), 1)
+
+  return (
+    <svg className="admin-chart admin-heat-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="访问来源地区横向条形图">
+      <title>地区分布</title>
+      {visible.map((row, index) => {
+        const y = index * rowHeight + 7
+        const valueWidth = Math.max(2, (barWidth * row.count) / maximum)
+        const label = geoRowLabel(row)
+        return (
+          <g key={`${row.country}-${row.region ?? ''}`}>
+            <title>{`${label}: ${row.count} 次`}</title>
+            <text className="admin-heat-chart__label" x="0" y={y + 15}>{label}</text>
+            <rect className="admin-heat-chart__track" x={barX} y={y + 3} width={barWidth} height="12" rx="6" />
+            <rect x={barX} y={y + 3} width={valueWidth} height="12" rx="6" style={{ fill: 'var(--cinnabar-pure)' }} />
             <text className="admin-heat-chart__count" x={width - 2} y={y + 15} textAnchor="end">{NUMBER.format(row.count)}</text>
           </g>
         )
@@ -423,6 +481,14 @@ export default function AdminStatsPage() {
                 <span>仅含读经页面</span>
               </div>
               <TopChapters rows={stats.topChapters} />
+            </section>
+
+            <section className="admin-stat-card admin-stat-card--wide">
+              <div className="admin-stat-card__head">
+                <h2>地区分布</h2>
+                <span>按国家/地区，Cloudflare 边缘解析，不存原始 IP</span>
+              </div>
+              <GeoHeatChart rows={stats.geoHeat} />
             </section>
 
             <section className="admin-stat-card admin-stat-card--dwell">

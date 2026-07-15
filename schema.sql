@@ -50,7 +50,12 @@ CREATE TABLE reading_events (
   slug TEXT,
   chapter TEXT,
   dwell_ms INTEGER NOT NULL DEFAULT 0 CHECK (dwell_ms >= 0),
-  ts INTEGER NOT NULL DEFAULT (unixepoch() * 1000)
+  ts INTEGER NOT NULL DEFAULT (unixepoch() * 1000),
+  -- Coarse geolocation resolved server-side by Cloudflare from the connecting
+  -- IP (never stored). country is an ISO 3166-1 alpha-2 code; region is a
+  -- best-effort state/province name and is null for many countries.
+  country TEXT,
+  region TEXT
 );
 
 CREATE INDEX idx_reading_events_ts
@@ -58,6 +63,9 @@ CREATE INDEX idx_reading_events_ts
 
 CREATE INDEX idx_reading_events_content
   ON reading_events (corpus, slug, chapter, ts);
+
+CREATE INDEX idx_reading_events_geo
+  ON reading_events (country, region);
 
 CREATE TABLE comments (
   id TEXT NOT NULL PRIMARY KEY,
