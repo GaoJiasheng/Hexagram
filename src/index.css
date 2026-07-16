@@ -3,14 +3,19 @@
    ============================================================ */
 
 :root {
-  --paper: #f7f4ec;
-  --paper-raised: #fdfbf6;
+  /* 观火(浅色主题,v22 宣纸+朱批改版):宣纸米白主底 + 略深仿纸分层 + 朱砂/赤金双强调色 */
+  --paper: #faf6ec;
+  --paper-raised: #f7f1e3;
   --ink: #2b2620;
   --ink-soft: #6b6157;
   --ink-faint: #a89f93;
-  --cinnabar: #a03a2a;
-  --cinnabar-bg: #a03a2a14;
-  --cinnabar-pure: #a03a2a;  /* 不被门户 muted 覆盖的真朱砂——招牌入口用 */
+  --cinnabar: #c3272b;
+  --cinnabar-bg: #c3272b14;
+  --cinnabar-pure: #c3272b;  /* 不被门户 muted 覆盖的真朱砂——招牌入口用 */
+  --gold: #8a6608;           /* 赤金——批注标记/延伸标题(WCAG AA 达标的深赤金) */
+  --yanyi-border: var(--cinnabar); /* 延伸区块侧边线——朱批 */
+  --yanyi-tag: var(--gold);        /* 延伸区块标题——赤金 */
+  --annotation-mark: var(--gold);  /* 正文批注(词条)下划线——赤金引线 */
   --azure: #3d5a73;
   --buddha: #9c7b4d;
   --confucian: #4f6f52;
@@ -38,6 +43,8 @@
 }
 
 [data-theme='dark'] {
+  /* 观水(深色主题):本次改造不改动任何取值,仅补上观火新引入的语义 token
+     (yanyi-border/yanyi-tag/annotation-mark 均照旧指回原有 azure/ink-faint,像素不变)。 */
   --paper: #191713;
   --paper-raised: #211e19;
   --ink: #f1ece1;
@@ -46,6 +53,10 @@
   --cinnabar: #c75b49;
   --cinnabar-bg: #c75b4920;
   --cinnabar-pure: #c75b49;
+  --gold: #c2a355;
+  --yanyi-border: var(--azure);
+  --yanyi-tag: var(--azure);
+  --annotation-mark: var(--ink-faint);
   --azure: #7e9cb5;
   --buddha: #c4a06a;
   --confucian: #84a888;
@@ -69,6 +80,10 @@
     --ink-faint: #6b6157;
     --cinnabar: #c75b49;
     --cinnabar-bg: #c75b4920;
+    --gold: #c2a355;
+    --yanyi-border: var(--azure);
+    --yanyi-tag: var(--azure);
+    --annotation-mark: var(--ink-faint);
     --azure: #7e9cb5;
     --buddha: #c4a06a;
     --confucian: #84a888;
@@ -2986,7 +3001,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 
 /* 经文字词注释(AnnotatedText) */
 .zhushi { position: relative; display: inline; }
-.zhushi__trigger { border-bottom: 1px dotted var(--ink-faint); cursor: help; }
+.zhushi__trigger { border-bottom: 1px dotted var(--annotation-mark); cursor: help; }
 .zhushi__trigger:hover, .zhushi__trigger:focus { border-bottom-color: var(--cinnabar); color: var(--cinnabar); outline: none; }
 .zhushi__popover { position: absolute; left: 50%; bottom: calc(100% + 8px); transform: translateX(-50%); z-index: 50; display: flex; flex-direction: column; gap: 4px; width: max-content; max-width: 260px; padding: 10px 12px; background: var(--paper-raised); border: 1px solid var(--line); border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); font-size: 0.8rem; line-height: 1.6; white-space: normal; }
 .zhushi__popover--below { bottom: auto; top: calc(100% + 8px); }
@@ -3042,8 +3057,8 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .dao-text-authornote { font-size: 0.88rem; line-height: 1.8; color: var(--ink-soft); margin: 14px 0 0; padding-top: 12px; border-top: 1px dashed var(--line); }
 
 /* 每章延伸(v13 §2) */
-.yanyi-block { margin: 18px 0 8px; padding: 14px 16px; background: var(--paper); border-left: 2px solid var(--azure); border-radius: 0 4px 4px 0; }
-.yanyi-block__tag { font-size: 0.74rem; color: var(--azure); letter-spacing: 0.05em; margin-bottom: 8px; }
+.yanyi-block { margin: 18px 0 8px; padding: 14px 16px; background: var(--paper); border-left: 2px solid var(--yanyi-border); border-radius: 0 4px 4px 0; }
+.yanyi-block__tag { font-size: 0.74rem; color: var(--yanyi-tag); letter-spacing: 0.05em; margin-bottom: 8px; }
 .yanyi-block__para { font-size: 0.9rem; line-height: 1.95; color: var(--ink-soft); margin: 0 0 10px; }
 .yanyi-xref { color: var(--cinnabar); text-decoration: none; border-bottom: 1px dotted var(--cinnabar); }
 .yanyi-xref:hover { border-bottom-style: solid; }

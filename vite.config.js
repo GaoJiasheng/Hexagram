@@ -42,8 +42,8 @@ export default defineConfig({
         short_name: '观象',
         description: '易经研习与道藏研读——六十四卦、推演、经传、筮例',
         lang: 'zh-CN',
-        theme_color: '#a03a2a',
-        background_color: '#f7f4ec',
+        theme_color: '#c3272b',
+        background_color: '#faf6ec',
         display: 'standalone',
         icons: [
           { src: 'pwa-192.png', sizes: '192x192', type: 'image/png' },

@@ -275,7 +275,7 @@ export default function MePage() {
             <div className="settings-section">
               <h3 className="settings-section__title">主题</h3>
               <div className="seg-control">
-                {[['light', '亮色'], ['dark', '暗色'], ['system', '跟随系统']].map(([v, l]) => (
+                {[['light', '观火'], ['dark', '观水'], ['system', '跟随系统']].map(([v, l]) => (
                   <button key={v} className={`seg-btn ${settings.theme === v ? 'seg-btn--active' : ''}`} onClick={() => setSettings({ theme: v })}>{l}</button>
                 ))}
               </div>

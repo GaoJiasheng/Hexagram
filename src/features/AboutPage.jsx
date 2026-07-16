@@ -44,7 +44,7 @@ export default function AboutPage() {
         <ul className="about-list">
           <li><strong>读经</strong>:经文字词可悬停看注疏;工具条可开译文 / 上下 ⇄ 左右对照、调字号;每段右侧可 ★收藏、✎批注、🔗复制本段链接。</li>
           <li><strong>搜索</strong>:顶栏放大镜或按 <kbd>/</kbd> 键,可搜经名、正文、译文、注疏、延伸;读经站面板可切「本站 / 全站」,全站态横跨诸组搜跨派概念(如「无为 / 格物 / 致良知」)。</li>
-          <li><strong>设置</strong>:顶栏齿轮——主题(亮 / 暗 / 跟随系统)、字号、行宽、译文开关、数据导出导入。</li>
+          <li><strong>设置</strong>:顶栏齿轮——主题(观火 / 观水 / 跟随系统)、字号、行宽、译文开关、数据导出导入。</li>
           <li><strong>我的</strong>:顶栏 ☯——本组的续读、收藏与批注汇总。</li>
           <li><strong>易经</strong>另有推演工作台、学堂十二篇、卦画闪卡、春秋筮例等。</li>
         </ul>
