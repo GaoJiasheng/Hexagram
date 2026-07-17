@@ -168,6 +168,14 @@ button { cursor: pointer; font-family: var(--font-serif); }
   background: color-mix(in srgb, var(--paper) 90%, transparent);
 }
 
+/* 窄屏随滚动方向自动收起主导航(#157,与抽屉头同款体验):下滑收起给正文腾空间、上滑立即
+   展开。用 transform 而非折叠高度——sticky 元素在「贴住」阶段本就不再占据文档流空间,
+   平移出视口不会在正文里留出空白。只在窄屏生效,宽屏导航常驻不受影响。 */
+@media (max-width: 600px) {
+  .app-nav { transition: transform 0.22s ease, backdrop-filter 0.2s; }
+  .app-nav--hidden { transform: translateY(-100%); }
+}
+
 .app-nav__brand {
   flex-shrink: 0;
   margin-right: 32px;

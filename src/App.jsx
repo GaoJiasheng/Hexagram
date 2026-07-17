@@ -1,5 +1,5 @@
 import { BrowserRouter, NavLink, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
-import { useState, useEffect, useCallback, lazy, Suspense } from 'react'
+import { useState, useEffect, useCallback, useRef, lazy, Suspense } from 'react'
 import { SettingsProvider } from './features/yijing/SettingsContext.jsx'
 import ErrorBoundary from './features/ErrorBoundary.jsx'
 import { siteForPath, activeGroup, sitesInGroup, HOST_GROUPS, MASTER_PORTAL_PATH } from './sites/registry.js'
@@ -110,17 +110,33 @@ function ModulePortal({ current, group, onClose }) {
 // 站名去「研读/研习」尾 → 切换钮显的目标站名(道藏研读→道藏、易经研习→易经)
 const switchTargetName = (site) => site.portalTitle.replace(/(研读|研习)$/, '')
 
+// 窄屏下(#157,与抽屉同款)随滚动方向收起主导航,给阅读腾地方:下滑收起、上滑立即展开。
+// 只在窄屏生效——CSS 媒体查询兜底,宽屏即使算出 hidden 也不会有视觉变化。
+const NAV_HIDE_THRESHOLD = 8, NAV_TOP_SAFE = 12
+
 function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings }) {
   const [scrolled, setScrolled] = useState(false)
+  const [navHidden, setNavHidden] = useState(false)
+  const lastY = useRef(0)
+  const accum = useRef(0)
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 10)
+    function handler() {
+      const y = window.scrollY
+      setScrolled(y > 10)
+      const dy = y - lastY.current
+      lastY.current = y
+      if (y <= NAV_TOP_SAFE) { setNavHidden(false); accum.current = 0; return }
+      accum.current = (accum.current === 0 || (dy > 0) === (accum.current > 0)) ? accum.current + dy : dy
+      if (accum.current > NAV_HIDE_THRESHOLD) { setNavHidden(true); accum.current = 0 }
+      else if (accum.current < -NAV_HIDE_THRESHOLD) { setNavHidden(false); accum.current = 0 }
+    }
     window.addEventListener('scroll', handler, { passive: true })
     return () => window.removeEventListener('scroll', handler)
   }, [])
 
   return (
-    <nav className={`app-nav ${scrolled ? 'app-nav--scrolled' : ''}`} role="navigation" aria-label="主导航">
+    <nav className={`app-nav ${scrolled ? 'app-nav--scrolled' : ''} ${navHidden ? 'app-nav--hidden' : ''}`} role="navigation" aria-label="主导航">
       {/* 左上角 logo → 诸学总门户(公开总入口,全站可达;列全部分组) */}
       <NavLink to={MASTER_PORTAL_PATH} className="app-nav__brand" aria-label="诸学门户·全部分组" title="诸学门户 · 全部分组">
         <span className="brand-seal" aria-hidden="true">{module.brand}</span>
