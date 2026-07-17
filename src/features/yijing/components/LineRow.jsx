@@ -1,12 +1,15 @@
 import { useSettings } from '../SettingsContext.jsx'
 import { analyzePosition, describePosition } from '../engine/positions.js'
 import AnnotatedText from './AnnotatedText.jsx'
+import MarkableBlock from './MarkableBlock.jsx'
 
-export default function LineRow({ line, pos, binary, onHover, isHighlighted, guazhu, xiaoxiangAnchors, onQuote }) {
+export default function LineRow({ line, pos, binary, onHover, isHighlighted, guazhu, xiaoxiangAnchors, onQuote, markKeyFor, markProps }) {
   const { settings } = useSettings()
   const analysis = analyzePosition(pos, binary)
   const { chips, desc } = describePosition(analysis)
   const isGuazhu = guazhu?.line === pos
+  const lineItemId = `line${pos}`
+  const xiaoxiangItemId = `${lineItemId}-xiaoxiang`
 
   return (
     <div
@@ -23,35 +26,33 @@ export default function LineRow({ line, pos, binary, onHover, isHighlighted, gua
           ))}
         </span>
       </div>
-      <div className="detail-quotable">
+      <MarkableBlock
+        {...markProps}
+        markKey={markKeyFor(lineItemId)}
+        itemId={lineItemId}
+        original={line.original}
+        translation={line.translation}
+        sourceLabel={line.title}
+        onQuote={onQuote}
+      >
         <p className="line-row__text"><AnnotatedText text={line.original} /></p>
-        {onQuote && (
-          <button
-            type="button"
-            className="para-act detail-quote-act"
-            onClick={() => onQuote(line.original, line.translation, line.title)}
-            aria-label="生成金句卡"
-            data-tip="生成金句卡"
-          >🖼</button>
-        )}
-      </div>
+      </MarkableBlock>
       {line.xiaoxiang?.original && (
-        <div className="detail-quotable">
+        <MarkableBlock
+          {...markProps}
+          markKey={markKeyFor(xiaoxiangItemId)}
+          itemId={xiaoxiangItemId}
+          original={line.xiaoxiang.original}
+          translation={line.xiaoxiang.translation}
+          sourceLabel={`${line.title} · 小象`}
+          onQuote={onQuote}
+        >
           <p className="line-row__xiaoxiang">
             {xiaoxiangAnchors?.length
               ? <AnnotatedText text={line.xiaoxiang.original} anchors={xiaoxiangAnchors} />
               : line.xiaoxiang.original}
           </p>
-          {onQuote && (
-            <button
-              type="button"
-              className="para-act detail-quote-act"
-              onClick={() => onQuote(line.xiaoxiang.original, line.xiaoxiang.translation, `${line.title} · 小象`)}
-              aria-label="生成小象金句卡"
-              data-tip="生成小象金句卡"
-            >🖼</button>
-          )}
-        </div>
+        </MarkableBlock>
       )}
       {settings.showTranslation && (
         <>

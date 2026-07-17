@@ -2,14 +2,33 @@ import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import HexagramCard from '../components/HexagramCard.jsx'
 import EmptyState from '../components/EmptyState.jsx'
-import { getBookmarks, getNotes, getDivinations, deleteDivination, saveDivinations, setDivinationOutcome, exportData, importData, clearAllData, saveSettings, getProgress } from '../storage.js'
+import { getBookmarks, getNotes, getCorpusMarks, getCorpusNotes, getDivinations, deleteDivination, saveDivinations, setDivinationOutcome, exportData, importData, clearAllData, saveSettings, getProgress } from '../storage.js'
 import { getHexagram, hexagramById } from '../data.js'
 import { useSettings } from '../SettingsContext.jsx'
 import { lineTitle } from '../engine/transforms.js'
 import { LEARN_TOPICS, topicStatus } from '../learnTopics.js'
 import { usePageTitle } from '../hooks/usePageTitle.js'
 
-const TABS = ['收藏', '笔记', '推演历史', '研习', '设置']
+const TABS = ['收藏', '笔记', '逐句标记', '推演历史', '研习', '设置']
+
+// 逐句 ★星标/✎批注(#158)的 itemId → 可读标题 + 实际 DOM 锚点(daxiang 的锚点是既有的 #xiang)
+function yijingItemMeta(hex, itemId) {
+  if (itemId === 'judgment') return { label: '卦辞', anchor: 'judgment' }
+  if (itemId === 'tuan') return { label: '彖传', anchor: 'tuan' }
+  if (itemId === 'daxiang') return { label: '象传', anchor: 'xiang' }
+  if (itemId === 'use') return { label: hex?.extra?.use?.title || '用九/用六', anchor: 'use' }
+  if (itemId === 'use-xiaoxiang') return { label: `${hex?.extra?.use?.title || '用九/用六'} · 小象`, anchor: itemId }
+  let m = itemId.match(/^line(\d+)-xiaoxiang$/)
+  if (m) {
+    const title = hex?.lines?.[Number(m[1]) - 1]?.title || `第${m[1]}爻`
+    return { label: `${title} · 小象`, anchor: itemId }
+  }
+  m = itemId.match(/^line(\d+)$/)
+  if (m) return { label: hex?.lines?.[Number(m[1]) - 1]?.title || `第${m[1]}爻`, anchor: itemId }
+  m = itemId.match(/^wenyan(\d+)$/)
+  if (m) return { label: `文言传 · 第${Number(m[1]) + 1}段`, anchor: itemId }
+  return { label: itemId, anchor: itemId }
+}
 
 // 验占结论(v10 §2)
 const VERDICTS = [
@@ -73,6 +92,8 @@ export default function MePage() {
   const [tab, setTab] = useState('收藏')
   const [bookmarks, setBookmarks] = useState(getBookmarks)
   const [notes, setNotes] = useState(getNotes)
+  const [marks] = useState(getCorpusMarks)
+  const [sentenceNotes] = useState(getCorpusNotes)
   const [divinations, setDivinations] = useState(getDivinations)
   const [deleteUndo, setDeleteUndo] = useState(null)
   const { settings, setSettings } = useSettings()
@@ -180,6 +201,61 @@ export default function MePage() {
                 ))}
               </div>
         )}
+
+        {/* 逐句标记(#158)——卦辞/彖/象/六爻/文言逐句的 ★星标 与 ✎批注 聚合视图,回链原句锚点 */}
+        {tab === '逐句标记' && (() => {
+          const yiMarks = Object.values(marks)
+            .filter(m => m.corpus === 'yijing' && m.slug === 'hexagrams')
+            .sort((a, b) => (b.at || '').localeCompare(a.at || ''))
+          const yiNotes = Object.values(sentenceNotes)
+            .filter(n => n.corpus === 'yijing' && n.slug === 'hexagrams')
+            .sort((a, b) => (b.at || '').localeCompare(a.at || ''))
+
+          if (!yiMarks.length && !yiNotes.length) {
+            return <EmptyState icon="✎" text="在卦页点段落右侧的 ★ 收藏、✎ 写批注，这里会汇总显示" />
+          }
+
+          return (
+            <div>
+              {yiMarks.length > 0 && (
+                <section className="corpus-me__section">
+                  <h2 className="corpus-me__title">星标 · {yiMarks.length}</h2>
+                  <div className="corpus-me__list">
+                    {yiMarks.map(m => {
+                      const hex = getHexagram(m.ch)
+                      const { label, anchor } = yijingItemMeta(hex, m.i)
+                      return (
+                        <Link key={`${m.ch}:${m.i}`} to={`/hexagram/${m.ch}#${anchor}`} className="corpus-me__row">
+                          <span className="corpus-me__snippet">{m.snippet}…</span>
+                          <span className="corpus-me__meta">{hex?.name ? `${hex.name}卦` : ''}·{label} →</span>
+                        </Link>
+                      )
+                    })}
+                  </div>
+                </section>
+              )}
+
+              {yiNotes.length > 0 && (
+                <section className="corpus-me__section">
+                  <h2 className="corpus-me__title">批注 · {yiNotes.length}</h2>
+                  <div className="corpus-me__list">
+                    {yiNotes.map(n => {
+                      const hex = getHexagram(n.ch)
+                      const { label, anchor } = yijingItemMeta(hex, n.i)
+                      return (
+                        <Link key={`${n.ch}:${n.i}`} to={`/hexagram/${n.ch}#${anchor}`} className="corpus-me__row corpus-me__row--note">
+                          <span className="corpus-me__note-text">{n.text}</span>
+                          <span className="corpus-me__snippet text-faint">「{n.snippet}…」</span>
+                          <span className="corpus-me__meta">{hex?.name ? `${hex.name}卦` : ''}·{label} →</span>
+                        </Link>
+                      )
+                    })}
+                  </div>
+                </section>
+              )}
+            </div>
+          )
+        })()}
 
         {/* 推演历史 */}
         {tab === '推演历史' && (

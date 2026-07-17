@@ -1,9 +1,10 @@
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams, Link, useNavigate, useLocation } from 'react-router-dom'
 import { useState, useEffect, useRef } from 'react'
 import HexagramFigure from '../components/HexagramFigure.jsx'
 import TrigramBadge from '../components/TrigramBadge.jsx'
 import ClassicText from '../components/ClassicText.jsx'
 import LineRow from '../components/LineRow.jsx'
+import MarkableBlock from '../components/MarkableBlock.jsx'
 import DerivationStrip from '../components/DerivationStrip.jsx'
 import TermTip from '../components/TermTip.jsx'
 import AnnotatedText from '../components/AnnotatedText.jsx'
@@ -11,7 +12,15 @@ import { getHexagram, hexagramByBinary } from '../data.js'
 import { getBianGua, lineTitle } from '../engine/transforms.js'
 import { getPalace } from '../engine/bagong.js'
 import { getNajia } from '../engine/najia.js'
-import { addRecentHexagram, getBookmarks, toggleBookmark } from '../storage.js'
+import {
+  addRecentHexagram,
+  getBookmarks,
+  toggleBookmark,
+  getCorpusMarks,
+  toggleCorpusMark,
+  getCorpusNotes,
+  saveCorpusNote,
+} from '../storage.js'
 import { getHexAnchors } from '../zhushiAnchored.js'
 import shili from '../../../data/yijing/shili.json'
 import shishi from '../../../data/yijing/shishi.json'
@@ -20,12 +29,8 @@ import QuoteCard from '../../reader/QuoteCard.jsx'
 import { useSettings } from '../SettingsContext.jsx'
 import { usePageTitle } from '../hooks/usePageTitle.js'
 
-// 一句一卡(与普通经典的逐段金句卡看齐,#155):卦辞/彖/象/爻/文言各自独立可生成
-function QuoteTrigger({ onClick, label = '生成金句卡' }) {
-  return (
-    <button type="button" className="para-act detail-quote-act" onClick={onClick} aria-label={label} data-tip={label}>🖼</button>
-  )
-}
+const MARK_CORPUS = 'yijing'
+const MARK_SLUG = 'hexagrams'
 
 function NajiaSection({ binary }) {
   const [open, setOpen] = useState(false)
@@ -90,12 +95,19 @@ export default function HexagramDetailPage() {
   const hex = getHexagram(Number(id))
   usePageTitle(hex?.fullName)
   const navigate = useNavigate()
+  const { hash } = useLocation()
   const { settings, setSettings } = useSettings()
 
   const [previewLine, setPreviewLine] = useState(null) // 1-indexed or null
   const [hoveredLine, setHoveredLine] = useState(null)
   const [bookmarked, setBookmarked] = useState(() => getBookmarks().includes(Number(id)))
   const [quoteContent, setQuoteContent] = useState(null) // {original, translation, source} | null
+  const [marks, setMarks] = useState(() => getCorpusMarks())
+  const [notes, setNotes] = useState(() => getCorpusNotes())
+  const [editingKey, setEditingKey] = useState(null)
+  const [draft, setDraft] = useState('')
+  const [copiedKey, setCopiedKey] = useState(null)
+  const copiedTimerRef = useRef(null)
   const [tuanOpen, setTuanOpen] = useState(true)
   const [xiangOpen, setXiangOpen] = useState(true)
   const [wenyangOpen, setWenyangOpen] = useState(false)
@@ -106,8 +118,32 @@ export default function HexagramDetailPage() {
       setPreviewLine(null)
       setQuoteContent(null)
       setBookmarked(getBookmarks().includes(hex.id))
+      setEditingKey(null)
+      setDraft('')
+      setCopiedKey(null)
+      if (copiedTimerRef.current) clearTimeout(copiedTimerRef.current)
     }
   }, [id])
+
+  useEffect(() => () => {
+    if (copiedTimerRef.current) clearTimeout(copiedTimerRef.current)
+  }, [])
+
+  // hash 锚点定位(卦辞/彖/象/每条爻/文言等逐句复制链接、分享卡深链);SPA 首次渲染时目标元素
+  // 可能还没挂载,浏览器原生的一次性锚点跳转会扑空,故仿 ClassicReader 用双 rAF 等布局稳定再定位。
+  // 文言传默认折叠(wenyangOpen 初值 false),深链落在其中时目标元素压根不会渲染,须先展开。
+  useEffect(() => {
+    if (!hash) return
+    if (hash.slice(1).startsWith('wenyan')) setWenyangOpen(true)
+    let raf2 = 0
+    const raf1 = requestAnimationFrame(() => {
+      raf2 = requestAnimationFrame(() => {
+        const el = document.getElementById(decodeURIComponent(hash.slice(1)))
+        if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' })
+      })
+    })
+    return () => { cancelAnimationFrame(raf1); cancelAnimationFrame(raf2) }
+  }, [hash, id])
 
   // 翻页(v10 §6):桌面 ←→ 键;移动端横滑(横向>60 且纵向<30,避开内部横向滚动元素)
   useEffect(() => {
@@ -173,12 +209,58 @@ export default function HexagramDetailPage() {
     setBookmarked(next.includes(hex.id))
   }
 
+  function markKeyFor(itemId) {
+    return `${MARK_CORPUS}:${MARK_SLUG}:${hex.id}:${itemId}`
+  }
+
+  function handleToggleMark(itemId, snippet) {
+    setMarks({ ...toggleCorpusMark(MARK_CORPUS, MARK_SLUG, hex.id, itemId, snippet) })
+  }
+
+  function handleOpenEdit(markKey, text) {
+    setEditingKey(markKey)
+    setDraft(text)
+  }
+
+  function handleSaveNote(itemId, snippet) {
+    setNotes({ ...saveCorpusNote(MARK_CORPUS, MARK_SLUG, hex.id, itemId, draft, snippet) })
+    setEditingKey(null)
+  }
+
+  function handleCancelEdit() {
+    setEditingKey(null)
+  }
+
+  function handleCopyLink(anchorId) {
+    const url = `${window.location.origin}${window.location.pathname}#${anchorId}`
+    try {
+      navigator.clipboard?.writeText(url)
+    } catch { /* clipboard 不可用 */ }
+    if (copiedTimerRef.current) clearTimeout(copiedTimerRef.current)
+    setCopiedKey(anchorId)
+    copiedTimerRef.current = setTimeout(() => setCopiedKey(null), 1500)
+  }
+
   function openQuote(original, translation, part) {
     setQuoteContent({
       original,
       translation,
       source: `《易经》· ${hex.name}卦（第${hex.id}卦）${part ? ` · ${part}` : ''}`,
     })
+  }
+
+  const markProps = {
+    marks,
+    notes,
+    editingKey,
+    draft,
+    copiedKey,
+    onToggleMark: handleToggleMark,
+    onOpenEdit: handleOpenEdit,
+    onSaveNote: handleSaveNote,
+    onCancelEdit: handleCancelEdit,
+    onCopyLink: handleCopyLink,
+    onSetDraft: setDraft,
   }
 
   // 判断爻的标记: 爻位置 → lineTitle
@@ -272,10 +354,18 @@ export default function HexagramDetailPage() {
         {/* ② 卦辞 */}
         <section id="judgment" className="detail-section">
           <h2 className="detail-section__title">卦辞</h2>
-          <div className="detail-quotable">
+          <MarkableBlock
+            {...markProps}
+            markKey={markKeyFor('judgment')}
+            itemId="judgment"
+            anchorOnParent
+            original={hex.judgment.original}
+            translation={hex.judgment.translation}
+            sourceLabel="卦辞"
+            onQuote={openQuote}
+          >
             <ClassicText original={hex.judgment.original} translation={hex.judgment.translation} annotate />
-            <QuoteTrigger onClick={() => openQuote(hex.judgment.original, hex.judgment.translation, '卦辞')} />
-          </div>
+          </MarkableBlock>
         </section>
 
         {/* ③ 彖传 */}
@@ -285,10 +375,18 @@ export default function HexagramDetailPage() {
             <span>{tuanOpen ? '▲' : '▼'}</span>
           </button>
           {tuanOpen && (
-            <div className="detail-quotable">
+            <MarkableBlock
+              {...markProps}
+              markKey={markKeyFor('tuan')}
+              itemId="tuan"
+              anchorOnParent
+              original={hex.tuan.original}
+              translation={hex.tuan.translation}
+              sourceLabel="彖传"
+              onQuote={openQuote}
+            >
               <ClassicText original={hex.tuan.original} translation={hex.tuan.translation} anchors={getHexAnchors(hex.id, 'tuan')} />
-              <QuoteTrigger onClick={() => openQuote(hex.tuan.original, hex.tuan.translation, '彖传')} />
-            </div>
+            </MarkableBlock>
           )}
         </section>
 
@@ -299,10 +397,19 @@ export default function HexagramDetailPage() {
             <span>{xiangOpen ? '▲' : '▼'}</span>
           </button>
           {xiangOpen && (
-            <div className="detail-quotable">
+            <MarkableBlock
+              {...markProps}
+              markKey={markKeyFor('daxiang')}
+              itemId="daxiang"
+              anchorId="xiang"
+              anchorOnParent
+              original={hex.daxiang.original}
+              translation={hex.daxiang.translation}
+              sourceLabel="象传"
+              onQuote={openQuote}
+            >
               <ClassicText original={hex.daxiang.original} translation={hex.daxiang.translation} anchors={getHexAnchors(hex.id, 'daxiang')} />
-              <QuoteTrigger onClick={() => openQuote(hex.daxiang.original, hex.daxiang.translation, '象传')} />
-            </div>
+            </MarkableBlock>
           )}
         </section>
 
@@ -321,6 +428,8 @@ export default function HexagramDetailPage() {
                 guazhu={hex.guazhu}
                 xiaoxiangAnchors={getHexAnchors(hex.id, 'xiaoxiang', i + 1)}
                 onQuote={openQuote}
+                markKeyFor={markKeyFor}
+                markProps={markProps}
               />
             ))}
             {/* 用九/用六 */}
@@ -329,19 +438,33 @@ export default function HexagramDetailPage() {
                 <div className="line-row__header">
                   <span className="line-row__title">{hex.extra.use.title}</span>
                 </div>
-                <div className="detail-quotable">
+                <MarkableBlock
+                  {...markProps}
+                  markKey={markKeyFor('use')}
+                  itemId="use"
+                  original={hex.extra.use.original}
+                  translation={hex.extra.use.translation}
+                  sourceLabel={hex.extra.use.title}
+                  onQuote={openQuote}
+                >
                   <p className="line-row__text"><AnnotatedText text={hex.extra.use.original} /></p>
-                  <QuoteTrigger onClick={() => openQuote(hex.extra.use.original, hex.extra.use.translation, hex.extra.use.title)} />
-                </div>
+                </MarkableBlock>
                 {hex.extra.use.xiaoxiang?.original && (
-                  <div className="detail-quotable">
+                  <MarkableBlock
+                    {...markProps}
+                    markKey={markKeyFor('use-xiaoxiang')}
+                    itemId="use-xiaoxiang"
+                    original={hex.extra.use.xiaoxiang.original}
+                    translation={hex.extra.use.xiaoxiang.translation}
+                    sourceLabel={`${hex.extra.use.title} · 小象`}
+                    onQuote={openQuote}
+                  >
                     <p className="line-row__xiaoxiang">
                       {getHexAnchors(hex.id, 'xiaoxiang', 'use')
                         ? <AnnotatedText text={hex.extra.use.xiaoxiang.original} anchors={getHexAnchors(hex.id, 'xiaoxiang', 'use')} />
                         : hex.extra.use.xiaoxiang.original}
                     </p>
-                    <QuoteTrigger onClick={() => openQuote(hex.extra.use.xiaoxiang.original, hex.extra.use.xiaoxiang.translation, `${hex.extra.use.title} · 小象`)} />
-                  </div>
+                  </MarkableBlock>
                 )}
                 {settings.showTranslation && (
                   <>
@@ -366,10 +489,18 @@ export default function HexagramDetailPage() {
             {wenyangOpen && (
               <div className="wenyan-body">
                 {hex.extra.wenyan.map((para, i) => (
-                  <div key={i} className="detail-quotable">
+                  <MarkableBlock
+                    key={i}
+                    {...markProps}
+                    markKey={markKeyFor(`wenyan${i}`)}
+                    itemId={`wenyan${i}`}
+                    original={para.original}
+                    translation={para.translation}
+                    sourceLabel="文言传"
+                    onQuote={openQuote}
+                  >
                     <ClassicText original={para.original} translation={para.translation} anchors={getHexAnchors(hex.id, 'wenyan', i)} />
-                    <QuoteTrigger onClick={() => openQuote(para.original, para.translation, '文言传')} />
-                  </div>
+                  </MarkableBlock>
                 ))}
               </div>
             )}
