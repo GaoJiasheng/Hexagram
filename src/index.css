@@ -751,42 +751,6 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   text-align: left;
 }
 
-/* ── NoteEditor ─────────────────────────────────────────────── */
-
-.note-editor {
-  background: var(--paper-raised);
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.note-editor__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 14px;
-  border-bottom: 1px solid var(--line);
-}
-
-.note-editor__label { font-size: 0.8rem; color: var(--ink-soft); }
-.note-editor__saved { font-size: 0.75rem; color: var(--ochre); }
-
-.note-editor__textarea {
-  width: 100%;
-  padding: 12px 14px;
-  border: none;
-  background: transparent;
-  color: var(--ink);
-  font-family: var(--font-serif);
-  font-size: 0.9rem;
-  line-height: 1.8;
-  resize: vertical;
-  min-height: 80px;
-}
-
-.note-editor__textarea:focus { outline: none; }
-.note-editor__textarea::placeholder { color: var(--ink-faint); }
-
 /* ── EmptyState ─────────────────────────────────────────────── */
 
 .empty-state {

@@ -85,16 +85,9 @@ export function toggleBookmark(id) {
 }
 
 // ── Notes ──────────────────────────────────────────────────
+// 整卦笔记的写入面已下线(#158,位置将改作评论);getNotes 仍保留供「我的·笔记」
+// 只读展示存量笔记,不删旧数据。
 export function getNotes() { return get('notes', {}) }
-export function saveNote(hexagramId, text) {
-  const notes = getNotes()
-  if (!text.trim()) {
-    delete notes[hexagramId]
-  } else {
-    notes[hexagramId] = { text, updatedAt: new Date().toISOString() }
-  }
-  set('notes', notes)
-}
 
 // ── Divinations (history) ──────────────────────────────────
 const MAX_DIVINATIONS = 200

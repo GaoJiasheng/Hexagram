@@ -7,7 +7,6 @@ import LineRow from '../components/LineRow.jsx'
 import DerivationStrip from '../components/DerivationStrip.jsx'
 import TermTip from '../components/TermTip.jsx'
 import AnnotatedText from '../components/AnnotatedText.jsx'
-import NoteEditor from '../components/NoteEditor.jsx'
 import { getHexagram, hexagramByBinary } from '../data.js'
 import { getBianGua, lineTitle } from '../engine/transforms.js'
 import { getPalace } from '../engine/bagong.js'
@@ -200,7 +199,6 @@ export default function HexagramDetailPage() {
         {hex.extra?.wenyan && <a href="#wenyan">文言</a>}
         <a href="#najia">纳甲</a>
         <a href="#related">关联</a>
-        <a href="#note">笔记</a>
       </nav>
 
       <div className="detail-content">
@@ -419,10 +417,7 @@ export default function HexagramDetailPage() {
         {/* 白话深读（design-v22:一卦一厚文 + 周边关联 + 五至八图）——有该卦白话才显示 */}
         <BaihuaBlock corpus="yijing" slug="hexagrams" chapter={hex.id} bookTitle="易经" sectionUnit="卦" chapterLabel={`${hex.name}卦（第${hex.id}卦）`} />
 
-        {/* ⑦ 笔记 */}
-        <section id="note" className="detail-section">
-          <NoteEditor hexagramId={hex.id} />
-        </section>
+        {/* 整卦笔记入口已下线(#158,原位置留给后续的评论功能) */}
 
         {/* prev/next */}
         <div className="detail-nav">

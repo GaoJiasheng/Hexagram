@@ -164,13 +164,13 @@ export default function MePage() {
               </div>
         )}
 
-        {/* 笔记 */}
+        {/* 笔记(整卦笔记写入面已下线,#158;此处保留存量笔记的只读展示,不丢历史数据) */}
         {tab === '笔记' && (
           notesList.length === 0
-            ? <EmptyState icon="✏" text="在卦详情页记录你的理解与感悟" />
+            ? <EmptyState icon="✏" text="暂无笔记" />
             : <div className="notes-list">
                 {notesList.map(n => (
-                  <Link key={n.id} to={`/hexagram/${n.id}#note`} className="note-item">
+                  <Link key={n.id} to={`/hexagram/${n.id}`} className="note-item">
                     <div className="note-item__header">
                       <strong>{n.hex.name}卦</strong>
                       <span className="text-faint">{n.updatedAt?.slice(0, 10)}</span>
