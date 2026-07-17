@@ -3410,6 +3410,15 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 /* 抽屉字号工具条(白话/观书通用):就地调 小/中/大/特大 */
 .baihua-drawer__toolbar { flex-shrink: 0; display: flex; align-items: center; justify-content: flex-end; gap: 10px; padding: 8px clamp(20px, 5vw, 56px); border-bottom: 1px solid var(--line); background: var(--paper-raised); }
 .baihua-drawer__toolbar-label { font-size: 0.76rem; color: var(--ink-faint); }
+/* 头部/工具条随正文滚动方向自动收起(#156,useAutoHideHeader):下滑收起给阅读区腾空间、
+   上滑立刻展开。max-height 过渡起点给够余量(标题两行/安全区最坏情况也能容下)。 */
+.baihua-drawer__head, .baihua-drawer__toolbar {
+  overflow: hidden; max-height: 140px;
+  transition: max-height .22s ease, padding-top .22s ease, padding-bottom .22s ease, opacity .16s ease, border-color .22s ease;
+}
+.baihua-drawer__head--hidden, .baihua-drawer__toolbar--hidden {
+  max-height: 0; padding-top: 0; padding-bottom: 0; opacity: 0; border-bottom-color: transparent; pointer-events: none;
+}
 /* 紧凑档 seg-control(抽屉头/书页顶栏用) */
 .seg-control--sm .seg-btn { padding: 4px 10px; font-size: 0.8rem; }
 /* 观书整页顶栏右侧:字号控件 + 印章 */

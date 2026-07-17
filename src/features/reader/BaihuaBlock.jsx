@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 import { useNavigate } from 'react-router-dom'
 import { getBaihuaMeta, loadBaihua } from './baihua.js'
 import FontScaleControl from './FontScaleControl.jsx'
+import { useAutoHideHeader } from './useAutoHideHeader.js'
 import { SITE_MAP } from '../../sites/registry.js'
 
 // 内联富文本:把 **加粗** 渲染成 <strong>(React 安全的 split，不用 dangerouslySetInnerHTML)。
@@ -87,6 +88,7 @@ export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionU
   const [loading, setLoading] = useState(false)
   const [open, setOpen] = useState(false)
   const navigate = useNavigate()
+  const { hidden, onScroll } = useAutoHideHeader()
 
   useEffect(() => {
     let alive = true
@@ -153,7 +155,7 @@ export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionU
         >
           <div className="baihua-overlay__backdrop" onClick={() => setOpen(false)} />
           <aside className="baihua-drawer">
-            <header className="baihua-drawer__head">
+            <header className={`baihua-drawer__head${hidden ? ' baihua-drawer__head--hidden' : ''}`}>
               <div className="baihua-drawer__titles">
                 {seal && <span className="baihua-drawer__seal">{seal}</span>}
                 <span className="baihua-drawer__titletext">
@@ -166,11 +168,11 @@ export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionU
                 <button onClick={() => setOpen(false)} aria-label="关闭" title="关闭（Esc）">✕</button>
               </div>
             </header>
-            <div className="baihua-drawer__toolbar">
+            <div className={`baihua-drawer__toolbar${hidden ? ' baihua-drawer__toolbar--hidden' : ''}`}>
               <span className="baihua-drawer__toolbar-label">字号</span>
               <FontScaleControl />
             </div>
-            <div className="baihua-drawer__body">
+            <div className="baihua-drawer__body" onScroll={onScroll}>
               {loading && <p className="text-faint">正在载入白话…</p>}
               {!loading && data && <BaihuaArticle data={data} />}
               {!loading && !data && <p className="text-faint">这一章白话暂时无法载入。</p>}

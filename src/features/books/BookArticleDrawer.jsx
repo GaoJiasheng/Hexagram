@@ -2,9 +2,12 @@ import { useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { BaihuaArticle } from '../reader/BaihuaBlock.jsx'
 import FontScaleControl from '../reader/FontScaleControl.jsx'
+import { useAutoHideHeader } from '../reader/useAutoHideHeader.js'
 
 // 书文章图层:与白话文章同款抽屉——先弹层预览,点 ⤢ 再进整页 URL(可收藏/分享/刷新保留)。
 export default function BookArticleDrawer({ open, accent, brand, chap, data, onFull, onClose }) {
+  const { hidden, onScroll } = useAutoHideHeader()
+
   useEffect(() => {
     if (!open) return
     const prev = document.body.style.overflow
@@ -19,7 +22,7 @@ export default function BookArticleDrawer({ open, accent, brand, chap, data, onF
     <div className="baihua-overlay" data-site="portal" role="dialog" aria-modal="true" aria-label={`${brand} · ${chap}`}>
       <div className="baihua-overlay__backdrop" onClick={onClose} />
       <aside className="baihua-drawer">
-        <header className="baihua-drawer__head">
+        <header className={`baihua-drawer__head${hidden ? ' baihua-drawer__head--hidden' : ''}`}>
           <div className="baihua-drawer__titles">
             <span className="baihua-drawer__seal" style={accent ? { background: accent } : undefined}>观</span>
             <span className="baihua-drawer__titletext">
@@ -32,11 +35,11 @@ export default function BookArticleDrawer({ open, accent, brand, chap, data, onF
             <button onClick={onClose} aria-label="关闭" title="关闭(Esc)">✕</button>
           </div>
         </header>
-        <div className="baihua-drawer__toolbar">
+        <div className={`baihua-drawer__toolbar${hidden ? ' baihua-drawer__toolbar--hidden' : ''}`}>
           <span className="baihua-drawer__toolbar-label">字号</span>
           <FontScaleControl />
         </div>
-        <div className="baihua-drawer__body">
+        <div className="baihua-drawer__body" onScroll={onScroll}>
           {data ? <BaihuaArticle data={data} /> : <p className="text-faint">这篇暂时无法载入。</p>}
         </div>
       </aside>
