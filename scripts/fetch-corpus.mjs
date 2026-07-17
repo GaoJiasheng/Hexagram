@@ -117,6 +117,70 @@ function cleanLine(raw) {
   return simp
 }
 
+// 诗经专用:一诗一页,页内构造不统一——部分诗以「===毛诗序===/===诗文===」分节标题隔开头注与正文
+// (樛木一类),部分以「毛诗序：「…」」内嵌一行不另立标题(那/文王一类),《关雎》因是开篇更叠了鲁诗说/
+// 齐诗说/韩诗说三家序甚至「鲁齐韩三家说」合并标题(何彼襛矣),个别另附「安大简本」等出土文献异文
+// 对照(蒹葭)、页首「詩經‧类别‧诗题」面包屑重复行(部分页无 < 前缀故不落入 clean() 的残段清除)、
+// 表格式版式残留的 `!诗题` 表头行(鸤鸠);页尾另有「《X》，N章，M句」计数注(个别诗页内文用异体字
+// 拼写与页名不同,如「何彼襛矣」页内作「何彼穠矣」,故计数注判据须用通配、不能只靠精确诗题匹配)、
+// 「===注解/注释===」训诂节。
+// 判据:①序类/异文类小标题(毛诗序/毛诗说/毛诗叙/鲁诗说/…/鲁齐韩三家说/诗序/小序/X简本/X帛书本)
+// 本身非正文,其下内容整段跳过;②内嵌无标题的「毛诗序：」行逐行丢弃;③面包屑行(诗经‧…)、表头行
+// (!…)、与本诗诗题相同的裸标题行(节南山、丰)逐行丢弃;④以书名号起首、句中含「章」「句」的计数注
+// 逐行丢弃(通配,不要求诗题字形与页名完全一致);⑤训诂节即本诗终点。
+const SHI_XU_LINE_RE = /^毛诗序/
+const SHI_BREADCRUMB_RE = /^诗经[‧·]/
+const SHI_STANZA_NOTE_RE = /^《[^》]+》.*[章句]/
+const SHI_SKIP_HEADING_RE = /(诗(序|说|叙)$)|(简本$)|(帛书本?$)|^小序$|^鲁齐韩三家说$/
+// 子串匹配(非锚定):个别多国合页的「注解」标题被语言转换标记包住(如「-{zh-hans:註解; zh-hant:註解}-」
+// 未被通用 clean() 的简化 -{}- 处理器完全拆开),子串匹配可稳健命中。
+const SHI_STOP_HEADING_RE = /注解|注释/
+const reEscape = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+// sectionFilter:同页含多首同名诗(如「白华」笙诗〔亡辞〕与魚藻之什实有其辞的「白华」共享一页,
+// 以「----」分隔为两个 === 小节),仅取标题含 sectionFilter 的小节;不传则不作节过滤,遇训诂节即停。
+// (已核实:8 处同页消歧诗均为内嵌无标题的简单形式,不含毛诗序/诗文分节标题,故消歧模式下不需
+// 处理 SHI_SKIP_HEADING_RE 与 sectionFilter 的层级交互——两套机制分工清晰、互不纠缠。)
+function parsePoemPage(wikitext, warnings, pageName, sectionFilter = null) {
+  const paras = []
+  const filterSimp = sectionFilter ? t2s(sectionFilter) : null // 标题已简体化,过滤关键字(配置里或写繁体)需同转
+  let active = !sectionFilter
+  let controlLevel = null // 记录使 active 生效的标题层级,子级标题(层级更深)不重判、继承父级状态
+  const poemName = t2s(pageName.slice(pageName.indexOf('/') + 1))
+  const selfTitleRe = new RegExp(`^《${reEscape(poemName)}》`)
+  for (const raw of wikitext.split('\n')) {
+    if (STOP_RE.test(raw)) break
+    const h = raw.trim().match(/^(=+)\s*(.+?)\s*=+$/)
+    if (h) {
+      const level = h[1].length
+      const title = t2s(clean(h[2]))
+      if (SHI_STOP_HEADING_RE.test(title)) {
+        // 仅当前(或无节过滤)已在目标节内时,训诂节才是本诗终点;否则可能是另一同页诗的训诂节,继续找目标节
+        if (!sectionFilter || active) break
+        continue
+      }
+      if (sectionFilter) {
+        if (controlLevel === null || level <= controlLevel) {
+          active = title.includes(filterSimp)
+          controlLevel = level
+        }
+        continue
+      }
+      // 无节过滤(单一诗页):序类小标题本身非正文,其下内容跳过;其余标题(诗文/诗题自身重复/
+      // 国风归属行)一律视为正文段起点。
+      active = !SHI_SKIP_HEADING_RE.test(title)
+      continue
+    }
+    if (!active) continue
+    if (/^!/.test(raw.trim())) continue // 表格式版式残留的表头行(如「!鳲鳩」)
+    const simp = cleanLine(raw)
+    if (!simp || simp === poemName) continue
+    if (SHI_XU_LINE_RE.test(simp) || selfTitleRe.test(simp) || SHI_STANZA_NOTE_RE.test(simp) || SHI_BREADCRUMB_RE.test(simp)) continue
+    paras.push({ original: simp, translation: null })
+  }
+  if (!paras.length) warnings.push(`${pageName}: 解析后无任何段落`)
+  return paras
+}
+
 // 单页 → 段落数组(各源页即一章)
 function parsePageParas(wikitext, warnings, pageName) {
   const paras = []
@@ -168,14 +232,16 @@ async function main() {
   const trPath = path.join(ROOT, `scripts/authored/${key}-translations.json`)
   const translations = fs.existsSync(trPath) ? JSON.parse(fs.readFileSync(trPath, 'utf8')) : {}
 
-  const allPages = BOOKS.flatMap((b) => b.pages)
+  const allPages = BOOKS.flatMap((b) => b.groupPages
+    ? b.groupPages.flatMap((g) => g.pages.map((p) => (typeof p === 'string' ? p : p.page)))
+    : b.pages)
   const pages = await fetchPages(allPages)
 
   fs.mkdirSync(OUT_DIR, { recursive: true })
   const summary = []
 
   for (const book of BOOKS) {
-    const single = book.pages.length === 1 && !book.splitHeadings
+    const single = !book.groupPages && book.pages.length === 1 && !book.splitHeadings
     const chapters = []
     // 内联卷题切章(韬晦术:单页无 == 标题,卷题「隐晦卷一」等内联成行,按 markPattern 切)
     if (book.markPattern) {
@@ -194,6 +260,23 @@ async function main() {
         if (!matched.length) { errors.push(`${book.title}: 未找到摘录章「${pick.match}」`); continue }
         if (matched.length > 1) warnings.push(`${book.title}: 摘录「${pick.match}」命中 ${matched.length} 章,取第一`)
         chapters.push({ no: chapters.length + 1, title: pick.title, paragraphs: matched[0].paragraphs })
+      }
+    } else
+    // 多页合一章(诗经:一诗一页,按国风/什归组,组内诸诗顺次接续、诗题作为一段插在诗句之前)
+    if (book.groupPages) {
+      for (const group of book.groupPages) {
+        const paragraphs = []
+        for (const entry of group.pages) {
+          const page = typeof entry === 'string' ? entry : entry.page
+          const section = typeof entry === 'string' ? null : entry.section
+          const poemParas = parsePoemPage(pages[page], warnings, page, section)
+          if (!poemParas.length) continue
+          const poemTitle = t2s(page.slice(page.indexOf('/') + 1))
+          paragraphs.push({ original: `《${poemTitle}》`, translation: null })
+          paragraphs.push(...poemParas)
+        }
+        if (paragraphs.length) chapters.push({ no: chapters.length + 1, title: t2s(group.title), paragraphs })
+        else warnings.push(`${group.title}: 分组无内容`)
       }
     } else
     for (const page of book.pages) {

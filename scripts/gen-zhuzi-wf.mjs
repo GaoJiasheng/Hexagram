@@ -14,7 +14,8 @@ const BOOKS = [
   ['dao', 'zhuangzi-waipian'], ['dao', 'zhuangzi-zapian'], ['dao', 'liezi'], ['dao', 'wenzi'], ['dao', 'huangting'],
   ['fo', 'yijiaojing'], ['fo', 'badaren'], ['fo', 'amituojing'], ['fo', 'xinxinming'], ['fo', 'zhengdaoge'], ['fo', 'weimojie'],
   ['xin', 'daxuewen'],
-  ['ru', 'xunzi'], ['ru', 'yanshi'], ['ru', 'jinsilu'],
+  ['ru', 'xunzi'], ['ru', 'yanshi'], ['ru', 'jinsilu'], ['ru', 'shijing'],
+  ['dao', 'wuzhenpian'],
 ]
 const ONLY = process.argv[2]          // 可选:只为某 slug 或某 corpus 生成(逗号可多选,如 liutao,jinkui)
 const ONLY_SET = ONLY ? new Set(ONLY.split(',')) : null
@@ -58,7 +59,7 @@ const SCHEMA = {
 
 const UNITS = ${JSON.stringify(units, null, 0)}
 
-const CN = { hanfeizi: '韩非子', shangjunshu: '商君书', shenzi: '慎子', yinwenzi: '尹文子', wenzi: '文子', mozi: '墨子', sunzi: '孙子兵法', wuzi: '吴子', simafa: '司马法', weiliaozi: '尉缭子', sanlue: '三略', guiguzi: '鬼谷子', zhanguoce: '战国策', suwen: '黄帝内经·素问', lingshu: '黄帝内经·灵枢', shanghanlun: '伤寒论', bencaojing: '神农本草经', luozhijing: '罗织经', rongkujian: '小人经', quanmou: '权谋术', taohuishu: '韬晦术', zhixue: '止学', liutao: '六韬', jinkui: '金匮要略', nanjing: '难经', 'zhuangzi-waipian': '庄子外篇', 'zhuangzi-zapian': '庄子杂篇', liezi: '列子', yijiaojing: '佛遗教经', badaren: '八大人觉经', amituojing: '阿弥陀经', xinxinming: '信心铭', zhengdaoge: '永嘉证道歌', daxuewen: '大学问', xunzi: '荀子', yanshi: '颜氏家训', jinsilu: '近思录', weimojie: '维摩诘经', huangting: '黄庭内景经' }
+const CN = { hanfeizi: '韩非子', shangjunshu: '商君书', shenzi: '慎子', yinwenzi: '尹文子', wenzi: '文子', mozi: '墨子', sunzi: '孙子兵法', wuzi: '吴子', simafa: '司马法', weiliaozi: '尉缭子', sanlue: '三略', guiguzi: '鬼谷子', zhanguoce: '战国策', suwen: '黄帝内经·素问', lingshu: '黄帝内经·灵枢', shanghanlun: '伤寒论', bencaojing: '神农本草经', luozhijing: '罗织经', rongkujian: '小人经', quanmou: '权谋术', taohuishu: '韬晦术', zhixue: '止学', liutao: '六韬', jinkui: '金匮要略', nanjing: '难经', 'zhuangzi-waipian': '庄子外篇', 'zhuangzi-zapian': '庄子杂篇', liezi: '列子', yijiaojing: '佛遗教经', badaren: '八大人觉经', amituojing: '阿弥陀经', xinxinming: '信心铭', zhengdaoge: '永嘉证道歌', daxuewen: '大学问', xunzi: '荀子', yanshi: '颜氏家训', jinsilu: '近思录', weimojie: '维摩诘经', huangting: '黄庭内景经', shijing: '诗经', wuzhenpian: '悟真篇' }
 const REF = {
   fa: '陈奇猷《韩非子集释》、王先慎《韩非子集解》、蒋礼鸿《商君书锥指》',
   mo: '孙诒让《墨子间诂》、吴毓江《墨子校注》',
@@ -93,6 +94,7 @@ function styleRule(u) {
     const base = '【研习·儒家】儒典取义理与思想史视角:译文平实直译,仁义礼智、性命理气等概念注疏释之(0–4 条/段、≤40 字、无 ref),延伸讲义理/学派源流/与孔孟程朱异同,如实呈现不作现代借用。参' + REF.ru + '。'
     if (u.book === 'yanshi') return base + '颜氏家训为家训体,平实直译;家庭教化/治学/处世/南北朝史事名物注疏释之,延伸讲家训源流与颜之推身世,不作现代育儿/成功学发挥。'
     if (u.book === 'jinsilu') return base + '近思录为朱熹、吕祖谦辑周敦颐张载二程语录,直译其理学语录(卷首「此卷论…」为注本提要照译);理/气/性/命/敬/格物致知等概念注疏释之,延伸讲程朱理学源流与编纂体例。'
+    if (u.book === 'shijing') return '【研习·诗经】诗经为最早诗歌总集,四言为主,多用赋比兴,多草木鸟兽虫鱼名物、方言古语、通假异文。译文平实直译字面意象与情境,不预设「美刺讽谏」说教式解读(可在延伸里提汉儒经学传统,但主译取诗本身情境与今人训诂);名物字词、通假、地名邦国、礼制习俗注疏释之(0–4 条/段、≤40 字、无 ref)。**每组含数首诗,组内以独立成段的「《诗题》」标记诗界——该标记段的 translations 对应位置留空字符串""(不译、不注),真正译文从下一段诗句开始。**延伸(每组 1–2 段)讲该组代表诗篇的主题、艺术手法(赋比兴)与经学阐释源流(如汉儒美刺说与今人从抒情角度读的分歧),如实呈现分歧、不强行统一解读、不作现代恋爱/成功学式过度引申。参程俊英《诗经译注》、余冠英《诗经选》、陈子展《诗经直解》、《毛诗正义》。'
     return base + '荀子多长篇论说,直译不缩写不臆补,如实呈现性恶/隆礼重法之说;《成相》弹词、《赋》隐语存其体例。'
   }
   if (u.corpus === 'xin') {
@@ -110,6 +112,7 @@ function styleRule(u) {
     if (u.book === 'liezi') return base + ' 列子今本经晋张湛辑注、杂魏晋玄佛语,延伸宜如实标真伪存疑;寓言(愚公移山/杞人忧天/纪昌学射/薛谭学讴等)译文存名、注疏点其旨。'
     if (u.book === 'wenzi') return base + ' 文子(通玄真经)为黄老道家,多「老子曰」演申道德之旨,直译其说;道/德/无为/精诚等概念注疏释之,延伸讲黄老源流、与《老子》《淮南子》之关系,今本真伪(旧疑伪托、1973 定州汉简证有古本而今本多异)如实点出。'
     if (u.book === 'huangting') return base + ' 黄庭内景经为上清派七言韵语存思养生经,丹道隐语(黄庭/三宫/三部八景/泥丸/丹田/脏神名)平实直译取字面义;注疏释名物术语,延伸讲存思养生学说与上清派源流,不演工法、不下成仙断语。'
+    if (u.book === 'wuzhenpian') return base + ' 悟真篇以七律/绝句/词寓性命双修之理于丹道隐语意象(龙虎/铅汞/婴儿姹女/黄婆/坎离/刀圭等,实喻身中阴阳精气,非实指外物或炼丹操作物质);译文平实直译字面意象,不展开破译其「真实所指」、不代为演绎内丹步骤;隐语术语注疏释其字面义与丹道语境泛称、不详解修炼法;第一章(悟真篇序)、末章(读周易参同契)为散文/长篇韵文,直译;中间四组诗词各首独立,延伸讲张伯端生平、丹经源流(与参同契并称丹经之祖)、南宗内丹学影响,不演内丹工法、不下成仙断语。参翁葆光《悟真篇注疏》、《悟真篇集释》、陈致虚《悟真篇三注》。'
     return base + ' 庄子外杂篇以寓言、论辩为主,直译不缩写不臆补,以郭象注、成玄英疏为主流参照;论辩段(秋水/天下等)存其思理结构,《天下》评诸家如实直译。'
   }
   const base = TIELU + ' 参' + REF[u.corpus] + '。'

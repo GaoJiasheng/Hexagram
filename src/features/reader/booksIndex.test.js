@@ -3,10 +3,10 @@ import { ALL_BOOKS, bookByTitle, globalBookRefs } from './booksIndex.js'
 import { linkifyBooks } from './linkifyBooks.jsx'
 
 describe('booksIndex 全站书目索引(#139 底座)', () => {
-  it('枚举全部 corpus 书 + 道藏 11 部 + 易经总目(≥56)', () => {
+  it('枚举全部 corpus 书 + 道藏 12 部 + 易经总目(≥56)', () => {
     expect(ALL_BOOKS.length).toBeGreaterThanOrEqual(56)
     expect(ALL_BOOKS.some((b) => b.corpus === 'yijing' && b.title === '易经')).toBe(true)
-    expect(ALL_BOOKS.filter((b) => b.corpus === 'dao')).toHaveLength(11)
+    expect(ALL_BOOKS.filter((b) => b.corpus === 'dao')).toHaveLength(12)
   })
 
   it('书名全站唯一(自动链的前提)', () => {

@@ -102,6 +102,18 @@ const BOOKS = [
     perPageChapter: true,
     exactChapters: 36,
   },
+  // 悟真篇(Wave 7):张伯端内丹经典,与参同契/黄庭同类。单页含张伯端自序+四组诗词+翁葆光
+  // 注本附的「丹房宝鉴之图」(丹炉图解+名词对照表,后人注家附件、非张伯端原文)——
+  // chapterHeaderRe 只认六个 == 标题 ==,丹房宝鉴之图不在其列,连同其下诸小标题(挨排四象生真
+  // 土诗等 5 首附诗)一并归入「跳过」态,只留张伯端本人所著六部分。
+  {
+    slug: 'wuzhenpian',
+    title: '悟真篇',
+    pages: ['悟真篇'],
+    chapterHeaderRe: /^(悟真篇序|七言四韵|七言绝句六十四首|西江月一十二首|绝句五首|读周易参同契)$/,
+    continueSubHeadingRe: /^([一二三四五六七八九十百]+|又一首)$/, // 组内逐首编号是装饰性子标题,续入所属组章
+    exactChapters: 6,
+  },
 ]
 
 // ---------- 单页解析 ----------
@@ -122,6 +134,13 @@ function parsePage(wikitext, warnings, pageName, opts = {}) {
       // 限定章题样式时,不匹配的标题(篇题/跋/音注等)同样进入跳过态,
       // 防止其下的序言/附录内容混入上一章(如王弼本下篇序、卷末跋)
       if (opts.chapterHeaderRe && !opts.chapterHeaderRe.test(title)) {
+        // continueSubHeadingRe:已接受章内纯装饰性的子标题(如悟真篇「七言四韵」组内逐首编号
+        // 一/二/三…/又一首)匹配此正则时,不新开跳过态、内容续入当前章;按标题文本精确匹配而非
+        // 层级推断——源页层级不严格(丹房宝鉴之图虽为附件却与序同处 = 层级之下的更深层),
+        // 层级比较会误吞非目标内容,故改用显式白名单(悟真篇专用开关,他书不设不受影响)。
+        if (opts.continueSubHeadingRe && current && !current.skip && opts.continueSubHeadingRe.test(title)) {
+          continue
+        }
         current = { skip: true, paragraphs: [] }
         continue
       }
