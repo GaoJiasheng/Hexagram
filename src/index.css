@@ -1869,10 +1869,17 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .para-act--on { color: var(--cinnabar); border-color: var(--cinnabar); background: var(--cinnabar-bg); }
 .para-note { display: block; width: 100%; text-align: left; margin-top: 10px; padding: 8px 12px; background: var(--cinnabar-bg); border: none; border-left: 2px solid var(--cinnabar); border-radius: 0 4px 4px 0; font-size: 0.85rem; line-height: 1.6; color: var(--ink-soft); cursor: pointer; font-family: var(--font-serif); }
 .para-note__icon { color: var(--cinnabar); margin-right: 6px; }
-.para-note-editor { margin-top: 10px; }
-.para-note-editor__input { width: 100%; border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; font-family: var(--font-serif); font-size: 0.9rem; line-height: 1.6; resize: vertical; background: var(--paper); color: var(--ink); }
-.para-note-editor__actions { display: flex; gap: 8px; margin-top: 6px; }
-.para-note-editor__actions .btn { padding: 5px 16px; font-size: 0.85rem; }
+/* 批注编辑器:借用 .para-note 已有的"朱印批注条"视觉(左侧朱色竖线+淡朱底),
+   不用通用表单式全包边框——与页面整体的宣纸/朱印基调更贴,也呼应保存后 .para-note 的展示态 */
+.para-note-editor { margin-top: 10px; padding: 10px 12px; background: var(--cinnabar-bg); border-left: 2px solid var(--cinnabar); border-radius: 0 4px 4px 0; }
+.para-note-editor__input { width: 100%; border: none; padding: 0; font-family: var(--font-serif); font-size: 0.9rem; line-height: 1.6; resize: vertical; background: transparent; color: var(--ink); }
+.para-note-editor__input:focus { outline: none; }
+.para-note-editor__actions { display: flex; align-items: center; gap: 16px; margin-top: 8px; }
+.para-note-editor__actions .btn { border: none; background: transparent; padding: 2px 0; border-radius: 0; font-size: 0.85rem; }
+.para-note-editor__actions .btn--secondary { color: var(--cinnabar); font-weight: 600; }
+.para-note-editor__actions .btn--secondary:hover { text-decoration: underline dotted; }
+.para-note-editor__actions .btn--ghost { color: var(--ink-soft); }
+.para-note-editor__actions .btn--ghost:hover { color: var(--ink); text-decoration: underline dotted; }
 .btn--ghost { background: transparent; border-color: transparent; color: var(--ink-soft); }
 .btn--ghost:hover { color: var(--ink); background: var(--paper-raised); }
 
