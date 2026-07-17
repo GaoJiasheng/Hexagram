@@ -56,7 +56,7 @@
 | `users` | id(uuid)、display_name、avatar_seed(生成式头像种子,不存上传图)、created_at、is_owner(布尔,owner 账号标记,统计后台/评论管理鉴权用) | 一人一行,与登录方式解耦 |
 | `identities` | user_id、provider(google/email/phone/wechat 预留)、provider_uid(Google sub / 邮箱 / 手机号哈希)、created_at | 一人可绑多种登录方式;手机号哈希存储不存明文 |
 | `auth_codes` | target(邮箱/手机号)、code_hash、expires_at、attempts | 验证码短时效表,过期即清 |
-| `user_data` | user_id、key(reading/corpusMarks/corpusNotes/settings…)、value(JSON)、updated_at | **云同步表:直接映射现有 localStorage 的 DATA_KEYS 白名单**,粗粒度整键存取,先不做逐条合并 |
+| `user_data` | user_id、key(reading/corpusMarks/corpusNotes/settings…)、value(JSON)、updated_at | **云同步表:直接映射现有 localStorage 的 DATA_KEYS 白名单**;表结构仍是整键存取(一个 key 一整块 JSON),但 Worker 端 `/api/sync` 对「集合类」key 做按条合并而非整键覆盖,见 §2.4a |
 | `reading_events` | client_id(localStorage 匿名随机 id)、path、corpus、slug、chapter、dwell_ms(粗粒度停留)、ts、country/region(2026-07-15 补,见下) | 匿名埋点,无 IP、无 UA 指纹、与 users 不关联 |
 | `comments` | id、user_id、corpus、slug、chapter(挂载锚)、body(纯文本,长度上限)、status(visible/hidden)、created_at | 扁平评论,owner 可改 status |
 
@@ -119,7 +119,23 @@
 3. **手机号验证码**(Phase 2 末或 Phase 3 初,国内替代方案):流程同邮箱,发送通道换阿里云/腾讯云短信。它就是「国内用户友好登录」的答案本体,**不依赖备案与企业资质**(详 §2.6)。
 4. **微信**:**已定案不做**(§2.6)。`identities.provider` 已预留 `wechat` 字段位,仅为将来万一改主意留一个不用改表结构的口子,当前无实施计划。
 
-**登录的「顺带」价值——云同步,这才是对读者的真卖点**:登录后把现有 localStorage 的收藏/批注/阅读进度/设置(即 `storage.js` 的 DATA_KEYS 白名单,导出导入功能已验证过这套数据的可序列化性)同步到 D1 `user_data` 表——「换设备、换浏览器、web 和 iOS App 之间,足迹都能带走」。同步策略从简:登录时拉云端与本地按 `updated_at` 取新,之后写操作防抖推送整键;冲突不做逐条合并(个人学习数据冲突概率低,先粗后细)。**未登录用户一切照旧**,登录永远是可选增强。
+**登录的「顺带」价值——云同步,这才是对读者的真卖点**:登录后把现有 localStorage 的收藏/批注/阅读进度/设置(即 `storage.js` 的 DATA_KEYS 白名单,导出导入功能已验证过这套数据的可序列化性)同步到 D1 `user_data` 表——「换设备、换浏览器、web 和 iOS App 之间,足迹都能带走」。同步一致性设计见 §2.4a(标量类 key 整键覆盖、集合类 key 按条合并 + 墓碑)。**未登录用户一切照旧**,登录永远是可选增强。
+
+### 2.4a 云同步的本地/云端一致性设计(2026-07-17 补)
+
+**问题不止「丢最后一次编辑」这么轻。** `storage.js` 的 DATA_KEYS 里,`corpusMarks`/`corpusNotes`(现已从读经站扩展到易经逐句标记——卦辞/彖/象/六爻/文言逐句 ★/✎,与其余九站同构复用同一套存储)、`bookmarks`、`progress` 都是**集合类**数据——一个 JSON 对象/数组里装着成百上千条独立记录。若用"整键覆盖、谁的 `updated_at` 新谁赢"同步:设备 A 离线时新增了 5 条批注;设备 B 之后触发了一次不相关的整键同步(比如改了主题设置连带同步了批注这个 key,但 B 本地的批注集合还是旧的、缺 A 那 5 条);A 再次同步时,如果时间戳比较结果是 B 赢,云端会被 B 那份**缺 5 条**的集合整体覆盖——A 自己刚加的 5 条随之从云端消失。这不是"丢一点编辑",是可能成批丢失,个人学习数据长期积累(收藏/批注)一旦发生一次就无法挽回,必须在设计阶段堵住,不能留到出问题后再修。
+
+**区分两类 key,分别处理**:
+
+- **标量类**(`settings`、`reading` 当前阅读位置):语义上就是"当前唯一状态",没有"合并"的必要——整键覆盖 + "谁的 `updated_at` 新谁赢"完全够用,维持原方案不变。
+- **集合类**(`corpusMarks`/`corpusNotes`/`bookmarks`/`progress`):每条记录本身已带 `at`/`updatedAt` 时间戳(`storage.js` 现有实现自带,不需要新增字段),同步时按条合并而非整键覆盖:
+  1. 云端集合与本地集合按记录的 key(如 `corpus:slug:ch:i`)取并集;
+  2. 两边都有同一 key → 比较各自的 `at`,保留较新的一条;
+  3. 只有一边有 → 直接保留(这正是整键覆盖会误删的那一半)。
+
+**删除操作要用墓碑(tombstone),否则会"复活"**:按条合并解决了"新增丢失",但引入新问题——用户在设备 A 上取消收藏(本地直接删掉这个 key),设备 B 还没同步过这次删除、之后又触发了一次同步(带着它那份仍包含该记录的旧集合)。按条合并规则会把 B 的旧记录当成"只有一边有"而保留,等于把用户明确删除的收藏"复活"了。解法:删除时不真的移除 key,而是写成 `{ deleted: true, at: <删除时间> }` 占位;合并比较 `at` 时 `deleted` 记录一视同仁参与比较,新的删除能覆盖旧的记录(无论旧记录是否也标了删除)。墓碑长期留存的存储成本可忽略(个人学习场景条目量级小),暂不做定期清理,留作后续按需优化。
+
+**落地范围**:按条合并 + 墓碑逻辑只需要在 **Worker 端 `/api/sync` 接口内**实现(纯 JS 对象操作,D1 `user_data` 表结构不用变,一个 key 仍存一整块合并后的 JSON,见 §1.4);前端 `storage.js` 的改动只有:`toggleCorpusMark`/`saveCorpusNote`/`toggleBookmark` 的删除分支从"物理删除"改成"写墓碑",读取侧(`getCorpusMarks`/`getCorpusNotes`/`getBookmarks` 等)统一过滤掉 `deleted:true` 的条目——改动量不大,且**未登录、纯本地场景行为不变**(墓碑只在"曾经登录同步过"时才有意义,本地判断不到是否需要墓碑就一律墓碑化,逻辑最简单,不需要区分两套删除路径)。checklist 2.6 按此展开为子项。
 
 **已定案:Phase 2 先做 web-only 登录,iOS 端后补。** 因为 iOS App 是 Capacitor 直接封装同一份 web 代码(同源同构建),若不特殊处理,登录上线当天 iOS 壳里也会"看得到"登录入口——但 iOS 端的会话存储(Capacitor Preferences)、cookie 跨源行为都还没适配,点了会不工作。落地方式:登录入口加一个 `Capacitor.isNativePlatform()` 平台判断,**iOS 壳内这一阶段直接隐藏登录入口**(或显示「即将支持」的禁用态),避免看得到用不了的体验;等 iOS 端登录适配完再放开。这也顺带简化了 Apple 登录合规问题——**iOS 端这阶段完全不提供第三方登录,不触发 App Store 审核指南 4.8 条款(该条款仅在 App 内提供第三方登录时才要求同时提供 Sign in with Apple)**,只有日后 iOS 也接入 Google 登录时才需要补 Apple 登录。
 
@@ -193,7 +209,7 @@
 5. **新增依赖底线**——**已认可**`qrcode`/Resend/Turnstile/短信服务这几项新增依赖,均在可接受范围内。
 6. **iOS 上架与登录的合规联动**——**已定案:先 web-only 登录,iOS 端后补**;通过 `Capacitor.isNativePlatform()` 判断在 iOS 壳内隐藏登录入口,避免看得到用不了,也避免过早触发 Sign in with Apple 的合规要求;内容生产节奏(白话/观书/TestFlight 发版)不受此影响,两条线互不占用。(§2.4)
 
-技术风险备注(非决策项,仅记录):D1/Workers 免费额度对当前体量(§2.3 已按 2000 DAU 测算)有 3–4 倍余量;埋点是全站最高频写入,`/api/beat` 需带限频、直落 D1(不经 KV);云同步采用整键覆盖策略,极端多端并发下可能丢最后一次编辑之前的中间态——个人学习场景可接受,先粗后细。
+技术风险备注(非决策项,仅记录):D1/Workers 免费额度对当前体量(§2.3 已按 2000 DAU 测算)有 3–4 倍余量;埋点是全站最高频写入,`/api/beat` 需带限频、直落 D1(不经 KV);云同步一致性方案见 §2.4a(2026-07-17 补,由"整键覆盖"改为"标量类整键覆盖 + 集合类按条合并 + 墓碑删除",堵住多端并发下集合类数据〔收藏/批注〕成批丢失的风险,标量类 key 仍是整键覆盖、风险维持原判断"可接受")。
 
 ---
 
@@ -244,7 +260,11 @@
 - [ ] 2.3 Turnstile 接入(先服务于邮箱验证码发送,评论提交复用同一份)
 - [ ] 2.4 `src/features/auth/AuthSheet.jsx`:登录浮层组件(视觉沿用 SettingsSheet 基座),入口挂 nav + 「我的」页
 - [ ] 2.5 会话机制:Worker 签发 JWT,web 走 HttpOnly cookie;iOS 端 `Capacitor.isNativePlatform()` 判断先隐藏登录入口(不做 Preferences 存储适配,等后续批次)
-- [ ] 2.6 云同步:登录时按 `updated_at` 拉取 D1 `user_data` 与本地 localStorage 取新,之后写操作防抖推送整键
+- [ ] 2.6 云同步(一致性设计见 §2.4a):
+  - [ ] 2.6.1 Worker `/api/sync`:标量类 key(settings/reading)整键覆盖(`updated_at` 取新);集合类 key(corpusMarks/corpusNotes/bookmarks/progress)按记录 key 取并集 + 逐条比较 `at` 取新
+  - [ ] 2.6.2 `storage.js` 集合类删除分支(`toggleCorpusMark`/`saveCorpusNote`/`toggleBookmark` 等)改物理删除为墓碑(`{deleted:true, at}`),读取侧统一过滤
+  - [ ] 2.6.3 登录时全量拉取 + 合并写回本地;之后本地写操作防抖推送增量给 `/api/sync`
+  - [ ] 2.6.4 多端场景手动验证:两个浏览器模拟离线新增+其中一端删除,确认合并结果无误删、无复活
 - [ ] 2.7 评论系统:`src/features/comments/CommentSection.jsx` + `GET/POST /api/comments`,挂载 `ClassicReader` 章末(原文→注疏→延伸→白话→评论)
 - [ ] 2.8 评论管理:owner 登录态下评论区内「隐藏/删除」按钮 + `PATCH /api/comments/:id`
 - [ ] 2.9 手机号验证码登录:注册短信服务(阿里云/腾讯云)、办理签名审核、`/api/auth/phone/*`(与邮箱验证码同构)
