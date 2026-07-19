@@ -1,8 +1,18 @@
 import { useState, useEffect } from 'react'
 import { useSettings } from './yijing/SettingsContext.jsx'
-import { exportData, importData, clearAllData } from './yijing/storage.js'
+import { exportData, importData, clearAllData, getLastSyncAt } from './yijing/storage.js'
 import { useAuth } from './auth/AuthContext.jsx'
+import { syncNow } from './auth/sync.js'
 import PixelAvatar from './auth/PixelAvatar.jsx'
+
+function syncTimeLabel(timestamp) {
+  if (!timestamp) return '尚未同步过'
+  return `上次同步:${new Date(timestamp).toLocaleTimeString('zh-CN', {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  })}`
+}
 
 // 全站设置浮层(Tier 0 · 0-2/0-7)——主题/译文/字号 + 数据导出/导入/清除 + 隐私说明。
 // 任何分站点 nav 齿轮就地打开,不再把读经站用户甩进易经 /me。数据变更后刷新页面以全站生效。
@@ -11,6 +21,8 @@ export default function SettingsSheet({ open, onClose }) {
   const { user, loading: authLoading, enabled: authEnabled, openAuth, logout } = useAuth()
   const [clearConfirm, setClearConfirm] = useState('')
   const [accountError, setAccountError] = useState('')
+  const [syncing, setSyncing] = useState(false)
+  const [lastSyncAt, setLastSyncAt] = useState(getLastSyncAt)
 
   // 锁背景滚动 + Esc 关闭 + 关闭还原焦点
   useEffect(() => {
@@ -26,6 +38,14 @@ export default function SettingsSheet({ open, onClose }) {
       if (prevFocus && typeof prevFocus.focus === 'function') prevFocus.focus()
     }
   }, [open, onClose])
+
+  useEffect(() => {
+    if (!open) return undefined
+    setLastSyncAt(getLastSyncAt())
+    const onComplete = (event) => setLastSyncAt(event.detail?.at || getLastSyncAt())
+    window.addEventListener('gx:sync-complete', onComplete)
+    return () => window.removeEventListener('gx:sync-complete', onComplete)
+  }, [open, user?.id])
 
   if (!open) return null
 
@@ -71,6 +91,16 @@ export default function SettingsSheet({ open, onClose }) {
     }
   }
 
+  async function handleSyncNow() {
+    setSyncing(true)
+    try {
+      await syncNow()
+      setLastSyncAt(getLastSyncAt())
+    } finally {
+      setSyncing(false)
+    }
+  }
+
   return (
     <div className="settings-overlay" onClick={(e) => { if (e.target === e.currentTarget) onClose() }}>
       <div className="settings-sheet" role="dialog" aria-modal="true" aria-label="设置">
@@ -85,14 +115,22 @@ export default function SettingsSheet({ open, onClose }) {
             {authLoading ? (
               <p className="settings-privacy">正在确认登录状态…</p>
             ) : user ? (
-              <div className="settings-account__user">
-                <PixelAvatar seed={user.avatarSeed} size={38} />
-                <div className="settings-account__identity">
-                  <strong>{user.displayName}</strong>
-                  <span>{user.email}</span>
+              <>
+                <div className="settings-account__user">
+                  <PixelAvatar seed={user.avatarSeed} size={38} />
+                  <div className="settings-account__identity">
+                    <strong>{user.displayName}</strong>
+                    <span>{user.email}</span>
+                  </div>
+                  <button className="btn-text settings-account__logout" onClick={handleLogout}>退出登录</button>
                 </div>
-                <button className="btn-text settings-account__logout" onClick={handleLogout}>退出登录</button>
-              </div>
+                <div className="settings-account__sync">
+                  <span><strong>云同步</strong> · {syncTimeLabel(lastSyncAt)}</span>
+                  <button className="btn-text" onClick={handleSyncNow} disabled={syncing}>
+                    {syncing ? '同步中…' : '立即同步'}
+                  </button>
+                </div>
+              </>
             ) : (
               <div className="settings-account__guest">
                 <p className="settings-privacy">登录后可在云端保存足迹、参与评论；不登录不影响浏览。</p>
@@ -146,7 +184,7 @@ export default function SettingsSheet({ open, onClose }) {
 
         <div className="settings-section">
           <h3 className="settings-section__title">数据管理</h3>
-          <p className="settings-privacy">全部数据(收藏/笔记/推演历史/研习进度)仅存于本浏览器,不上传;清缓存或换设备会丢失,请定期导出备份。</p>
+          <p className="settings-privacy">{user ? '收藏、笔记、推演历史与研习进度会在登录设备间云同步；本机仍保留副本，也建议定期导出备份。' : '全部数据(收藏/笔记/推演历史/研习进度)仅存于本浏览器,不上传;清缓存或换设备会丢失,请定期导出备份。'}</p>
           <div className="data-actions">
             <button className="btn btn--secondary" onClick={handleExport}>导出全部数据</button>
             <label className="btn btn--secondary" style={{ cursor: 'pointer' }}>

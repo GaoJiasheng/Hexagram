@@ -2,6 +2,24 @@
 
 const PREFIX = 'guanxiang.v1.'
 
+// Keep this client list in sync with the independent backend allow-list in
+// functions/api/[[route]].js.
+export const DATA_KEYS = ['settings', 'quoteTheme', 'bookmarks', 'notes', 'divinations', 'reading', 'recentHexagrams', 'progress', 'corpusMarks', 'corpusNotes']
+const DATA_KEY_SET = new Set(DATA_KEYS)
+const SYNC_DEFAULTS = {
+  settings: null,
+  quoteTheme: null,
+  bookmarks: {},
+  notes: null,
+  divinations: [],
+  reading: null,
+  recentHexagrams: [],
+  progress: {},
+  corpusMarks: {},
+  corpusNotes: {},
+}
+let applyingSyncResult = false
+
 function key(k) { return PREFIX + k }
 
 function get(k, fallback = null) {
@@ -17,6 +35,14 @@ function get(k, fallback = null) {
 function set(k, value) {
   try {
     localStorage.setItem(key(k), JSON.stringify(value))
+    if (DATA_KEY_SET.has(k) && !applyingSyncResult) {
+      const meta = get('syncMeta', {})
+      const nextMeta = meta && typeof meta === 'object' && !Array.isArray(meta) ? meta : {}
+      localStorage.setItem(key('syncMeta'), JSON.stringify({ ...nextMeta, [k]: Date.now() }))
+      if (typeof window !== 'undefined' && typeof window.CustomEvent === 'function') {
+        window.dispatchEvent(new window.CustomEvent('gx:data-changed', { detail: { key: k } }))
+      }
+    }
     return true
   } catch { return false /* 配额满 / 隐私模式不可写 */ }
 }
@@ -111,7 +137,10 @@ export function toggleBookmark(id) {
 // ── Notes ──────────────────────────────────────────────────
 // 整卦笔记的写入面已下线(#158,位置将改作评论);getNotes 仍保留供「我的·笔记」
 // 只读展示存量笔记,不删旧数据。
-export function getNotes() { return get('notes', {}) }
+export function getNotes() {
+  const notes = get('notes', {})
+  return notes && typeof notes === 'object' && !Array.isArray(notes) ? notes : {}
+}
 
 // ── Divinations (history) ──────────────────────────────────
 const MAX_DIVINATIONS = 200
@@ -176,7 +205,10 @@ export function saveCorpusNote(corpus, slug, ch, i, text, snippet) {
 }
 
 // ── Reading progress ──────────────────────────────────────
-export function getReadingProgress() { return get('reading', {}) }
+export function getReadingProgress() {
+  const reading = get('reading', {})
+  return reading && typeof reading === 'object' && !Array.isArray(reading) ? reading : {}
+}
 export function saveReadingProgress(book, chapter) {
   const p = getReadingProgress()
   set('reading', { ...p, [book]: chapter })
@@ -229,7 +261,82 @@ export function markMethodUsed(methodKey) {
 }
 
 // ── Export / Import ───────────────────────────────────────
-const DATA_KEYS = ['settings', 'quoteTheme', 'bookmarks', 'notes', 'divinations', 'reading', 'recentHexagrams', 'progress', 'corpusMarks', 'corpusNotes']
+function hasMeaningfulSyncValue(dataKey, value) {
+  if (value === null || value === undefined) return false
+  if (Array.isArray(value)) return value.length > 0
+  if (typeof value !== 'object') return true
+  if (dataKey === 'progress') {
+    return ['read', 'quiz', 'used'].some((section) => {
+      const items = value[section]
+      return items && typeof items === 'object' && Object.keys(items).length > 0
+    })
+  }
+  return Object.keys(value).length > 0
+}
+
+export function getSyncSnapshot(now = Date.now()) {
+  // Finish the existing lazy bookmark-array migration before collecting raw
+  // sync data, so a pre-tombstone user's bookmarks cannot be mistaken for an
+  // invalid collection and disappear on first login.
+  getBookmarksMap()
+
+  const savedMeta = get('syncMeta', {})
+  const syncMeta = savedMeta && typeof savedMeta === 'object' && !Array.isArray(savedMeta) ? savedMeta : {}
+  const nextMeta = { ...syncMeta }
+  let metaChanged = false
+  const snapshot = {}
+  for (const dataKey of DATA_KEYS) {
+    const value = get(dataKey, SYNC_DEFAULTS[dataKey])
+    const savedAt = syncMeta[dataKey]
+    const hasSavedAt = typeof savedAt === 'number' && Number.isFinite(savedAt)
+    const at = hasSavedAt ? savedAt : hasMeaningfulSyncValue(dataKey, value) ? now : 0
+    snapshot[dataKey] = {
+      value,
+      at,
+    }
+    if (!hasSavedAt && at > 0) {
+      nextMeta[dataKey] = at
+      metaChanged = true
+    }
+  }
+  if (metaChanged) {
+    try { localStorage.setItem(key('syncMeta'), JSON.stringify(nextMeta)) } catch { /* best effort */ }
+  }
+  return snapshot
+}
+
+export function applySyncSnapshot(data, syncedAt = Date.now()) {
+  const savedMeta = get('syncMeta', {})
+  const nextMeta = savedMeta && typeof savedMeta === 'object' && !Array.isArray(savedMeta) ? { ...savedMeta } : {}
+  let allWritten = true
+  applyingSyncResult = true
+  try {
+    for (const dataKey of DATA_KEYS) {
+      const entry = data?.[dataKey]
+      const value = entry && Object.hasOwn(entry, 'value') ? entry.value : SYNC_DEFAULTS[dataKey]
+      if (!set(dataKey, value)) {
+        allWritten = false
+        continue
+      }
+      nextMeta[dataKey] = typeof entry?.at === 'number' && Number.isFinite(entry.at) ? entry.at : 0
+    }
+  } finally {
+    applyingSyncResult = false
+  }
+
+  try {
+    localStorage.setItem(key('syncMeta'), JSON.stringify(nextMeta))
+    if (allWritten) localStorage.setItem(key('lastSyncAt'), JSON.stringify(syncedAt))
+  } catch {
+    return false
+  }
+  return allWritten
+}
+
+export function getLastSyncAt() {
+  const value = get('lastSyncAt', null)
+  return typeof value === 'number' && Number.isFinite(value) ? value : null
+}
 
 export function exportData() {
   const data = {}

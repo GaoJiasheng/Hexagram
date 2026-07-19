@@ -1,6 +1,7 @@
 import { createContext, lazy, Suspense, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { Capacitor } from '@capacitor/core'
 import { clearAuthHint, hasAuthHint, saveAuthHint } from '../yijing/storage.js'
+import { startSyncLoop, stopSyncLoop, syncNow } from './sync.js'
 
 const AuthSheet = lazy(() => import('./AuthSheet.jsx'))
 const AuthContext = createContext(null)
@@ -49,6 +50,16 @@ export function AuthProvider({ children }) {
     const request = refreshAuthIfHinted(enabled, hasAuthHint(), refresh)
     request?.catch(() => {})
   }, [enabled, refresh])
+
+  useEffect(() => {
+    if (!enabled || !user?.id) {
+      stopSyncLoop()
+      return undefined
+    }
+    startSyncLoop()
+    void syncNow()
+    return stopSyncLoop
+  }, [enabled, user?.id])
 
   const login = useCallback(async (credentials) => {
     if (!enabled) return null

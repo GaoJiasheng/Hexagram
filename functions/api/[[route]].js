@@ -7,8 +7,17 @@ import {
   resolveGoogleAccount,
   validateGoogleIdToken,
 } from '../../server/google-auth.js'
+import {
+  mergeCollectionEntry,
+  mergeDivinations,
+  mergeProgress,
+  mergeRecordMaps,
+  mergeScalar,
+} from '../../server/sync-merge.js'
 
 const MAX_BODY_BYTES = 4096
+const SYNC_MAX_BODY_BYTES = 1_000_000
+const SYNC_MAX_VALUE_BYTES = 200_000
 const ADMIN_PASSPHRASE_HEADER = 'X-Admin-Passphrase'
 const DAY_MS = 24 * 60 * 60 * 1000
 const SESSION_COOKIE = 'gx_session'
@@ -17,6 +26,26 @@ const SESSION_TTL_MS = 30 * DAY_MS
 const SESSION_TTL_SECONDS = SESSION_TTL_MS / 1000
 const PBKDF2_ITERATIONS = 100_000
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+// Keep this backend allow-list in sync with DATA_KEYS in
+// src/features/yijing/storage.js. It is intentionally duplicated so the API
+// never trusts a client-provided key as a D1 row key.
+const DATA_KEYS = ['settings', 'quoteTheme', 'bookmarks', 'notes', 'divinations', 'reading', 'recentHexagrams', 'progress', 'corpusMarks', 'corpusNotes']
+const DATA_KEY_SET = new Set(DATA_KEYS)
+const SCALAR_DATA_KEYS = new Set(['settings', 'quoteTheme', 'reading', 'recentHexagrams', 'notes'])
+const MAP_DATA_KEYS = new Set(['corpusMarks', 'corpusNotes', 'bookmarks'])
+const SYNC_DEFAULTS = {
+  settings: null,
+  quoteTheme: null,
+  bookmarks: {},
+  notes: null,
+  divinations: [],
+  reading: null,
+  recentHexagrams: [],
+  progress: {},
+  corpusMarks: {},
+  corpusNotes: {},
+}
 
 // Pages Functions receives the original /api/* URL, so keep the public prefix
 // here and define the individual endpoints relative to it.
@@ -226,14 +255,14 @@ function utcDayStart(timestamp) {
   return Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate())
 }
 
-async function readJsonBody(c) {
+async function readJsonBody(c, maxBytes = MAX_BODY_BYTES) {
   const declaredLength = Number(c.req.header('content-length'))
-  if (Number.isFinite(declaredLength) && declaredLength > MAX_BODY_BYTES) {
+  if (Number.isFinite(declaredLength) && declaredLength > maxBytes) {
     throw new RequestError(413, 'request body too large')
   }
 
   const raw = await c.req.text()
-  if (new TextEncoder().encode(raw).byteLength > MAX_BODY_BYTES) {
+  if (new TextEncoder().encode(raw).byteLength > maxBytes) {
     throw new RequestError(413, 'request body too large')
   }
 
@@ -282,6 +311,44 @@ function validateLogin(body) {
     throw new RequestError(401, '邮箱或密码不正确')
   }
   return { email, password: body.password }
+}
+
+function validateSync(body) {
+  if (!body.data || typeof body.data !== 'object' || Array.isArray(body.data)) {
+    throw new RequestError(400, 'invalid sync data')
+  }
+
+  const entries = new Map()
+  for (const [dataKey, entry] of Object.entries(body.data)) {
+    if (!DATA_KEY_SET.has(dataKey)) {
+      throw new RequestError(400, `unknown sync key: ${dataKey}`)
+    }
+    if (
+      !entry
+      || typeof entry !== 'object'
+      || Array.isArray(entry)
+      || !Object.hasOwn(entry, 'value')
+      || typeof entry.at !== 'number'
+      || !Number.isFinite(entry.at)
+    ) {
+      throw new RequestError(400, `invalid sync entry: ${dataKey}`)
+    }
+
+    let serialized
+    try {
+      serialized = JSON.stringify(entry.value)
+    } catch {
+      throw new RequestError(400, `invalid sync value: ${dataKey}`)
+    }
+    if (serialized === undefined) {
+      throw new RequestError(400, `invalid sync value: ${dataKey}`)
+    }
+    if (new TextEncoder().encode(serialized).byteLength > SYNC_MAX_VALUE_BYTES) {
+      throw new RequestError(400, `sync value too large: ${dataKey}`)
+    }
+    entries.set(dataKey, { value: entry.value, at: entry.at })
+  }
+  return entries
 }
 
 function validateBeat(body) {
@@ -591,6 +658,71 @@ app.get('/me', async (c) => {
     return c.json({ user: row ? publicUser(row) : null })
   } catch (error) {
     console.error('Session lookup failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
+app.post('/sync', async (c) => {
+  try {
+    const user = await requireUser(c)
+    const clientEntries = validateSync(await readJsonBody(c, SYNC_MAX_BODY_BYTES))
+    const db = getDb(c)
+    const cloudResult = await db
+      .prepare('SELECT key, value, updated_at FROM user_data WHERE user_id = ?')
+      .bind(user.id)
+      .all()
+    const cloudEntries = new Map()
+    for (const row of resultRows(cloudResult)) {
+      if (!DATA_KEY_SET.has(row.key)) continue
+      cloudEntries.set(row.key, {
+        value: JSON.parse(row.value),
+        at: Number(row.updated_at),
+      })
+    }
+
+    const serverNow = Date.now()
+    const responseData = {}
+    const writes = []
+
+    for (const dataKey of DATA_KEYS) {
+      const cloudEntry = cloudEntries.get(dataKey)
+      const clientEntry = clientEntries.get(dataKey)
+      let mergedEntry
+
+      if (SCALAR_DATA_KEYS.has(dataKey)) {
+        mergedEntry = mergeScalar(cloudEntry, clientEntry, serverNow)
+      } else if (MAP_DATA_KEYS.has(dataKey)) {
+        mergedEntry = mergeCollectionEntry(cloudEntry, clientEntry, serverNow, mergeRecordMaps)
+      } else if (dataKey === 'divinations') {
+        mergedEntry = mergeCollectionEntry(cloudEntry, clientEntry, serverNow, mergeDivinations)
+      } else if (dataKey === 'progress') {
+        mergedEntry = mergeCollectionEntry(cloudEntry, clientEntry, serverNow, mergeProgress)
+      }
+
+      responseData[dataKey] = mergedEntry ?? { value: SYNC_DEFAULTS[dataKey], at: 0 }
+
+      const scalarClientWon = SCALAR_DATA_KEYS.has(dataKey)
+        && clientEntry !== undefined
+        && mergedEntry !== cloudEntry
+      const collectionWasSubmitted = !SCALAR_DATA_KEYS.has(dataKey) && clientEntry !== undefined
+      if (!scalarClientWon && !collectionWasSubmitted) continue
+
+      writes.push(db.prepare(`
+        INSERT INTO user_data (user_id, key, value, updated_at)
+        VALUES (?, ?, ?, ?)
+        ON CONFLICT(user_id, key) DO UPDATE SET
+          value = excluded.value,
+          updated_at = excluded.updated_at
+      `).bind(user.id, dataKey, JSON.stringify(mergedEntry.value), mergedEntry.at))
+    }
+
+    if (writes.length > 0) await db.batch(writes)
+    return c.json({ ok: true, data: responseData })
+  } catch (error) {
+    if (error instanceof RequestError) {
+      return c.json({ ok: false, error: error.message }, error.status)
+    }
+    console.error('User data sync failed', error)
     return c.json({ ok: false, error: 'service unavailable' }, 503)
   }
 })

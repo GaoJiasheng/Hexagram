@@ -2283,6 +2283,9 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .settings-account__identity strong { overflow: hidden; color: var(--ink); font-size: 0.92rem; text-overflow: ellipsis; white-space: nowrap; }
 .settings-account__identity span { overflow: hidden; color: var(--ink-faint); font-size: 0.76rem; text-overflow: ellipsis; white-space: nowrap; }
 .settings-account__logout { flex: none; color: var(--cinnabar); }
+.settings-account__sync { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--line); color: var(--ink-faint); font-size: 0.76rem; }
+.settings-account__sync strong { color: var(--ink-soft); font-weight: 600; }
+.settings-account__sync .btn-text:disabled { cursor: wait; opacity: 0.55; }
 
 .auth-overlay { z-index: 210; }
 .auth-sheet { max-width: 420px; padding-bottom: 24px; }
