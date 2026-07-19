@@ -1,6 +1,6 @@
 # 观象 · 平台化升级规划(platform-upgrade)
 
-> 状态:**规划已定案(§4 决策记录,2026-07-13),按 Phase 0→1→2→3 分期动工,进度按 §6 TODO 清单逐项打勾跟踪。Phase 2(登录+评论)的 14 项开放问题已由 owner 表态(§7,2026-07-17),详细分批实施方案见 [docs/auth-comments-design.md](./auth-comments-design.md)**。
+> 状态:**规划已定案(§4 决策记录,2026-07-13),按 Phase 0→1→2→3 分期动工,进度按 §6 TODO 清单逐项打勾跟踪。Phase 2(登录+评论)的 14 项开放问题已由 owner 表态(§7,2026-07-17),详细分批实施方案见 [docs/auth-comments-design.md](./auth-comments-design.md)。批次 1–8 代码已于 2026-07-19 全部完成并逐批 review+本地验证,尚未部署——等 §8 的 owner 前置事项办完后一次性上生产**。
 > 缘起:owner 提出七项诉求——① CC BY-NC 4.0 license;② 页面上的作者/版权落款功能;③ 后台可见的阅读统计;④ 登录(海外谷歌/邮箱、国内微信);⑤ 上数据库存用户数据 + 评论系统;⑥ 域名备案;⑦ 分享卡精细化多主题 + 可扫码进站的二维码。
 > 性质:这是**平台/基础设施规划**,不是内容里程碑,故不入 design-v* 序列。内容生产线(白话/译注/观书)不受本规划影响,可并行推进。
 
@@ -257,14 +257,16 @@
 
 **详细分批实施方案见 [docs/auth-comments-design.md](./auth-comments-design.md)(Fable 起草、已核对代码事实,2026-07-17)——下表是该文档八个批次的进度镜像,実际验收标准、API/D1/前端改动细节、每批验收清单以该文档为准,这里只跟踪打勾进度。**
 
-- [ ] 2.1 批次 1 · 本地删除墓碑化(纯前端,`corpusMarks`/`corpusNotes`/`bookmarks`/`divinations` 软删,为同步铺路)
-- [ ] 2.2 批次 2 · 邮箱注册/登录 + 会话基座(D1 sessions 表、PBKDF2 密码哈希、AuthSheet、像素头像、默认昵称)
-- [ ] 2.3 批次 3 · Google 登录(服务端 OAuth code flow,按邮箱自动并入同一账号)
-- [ ] 2.4 批次 4 · Owner 管理鉴权切换(`/admin/*` 从临时口令切到 owner 正式会话)
-- [ ] 2.5 批次 5 · 云同步(`POST /api/sync`,按 §2.4a 已定合并算法双向同步 DATA_KEYS)
-- [ ] 2.6 批次 6 · 评论区(读经章 + 观书主页两类挂载点;看无需登录/发需登录+Turnstile/删自己的)
-- [ ] 2.7 批次 7 · 新评论邮件通知(Resend,新评论触发一封邮件到 owner 邮箱)
-- [ ] 2.8 批次 8 · 评论管理(owner 站内隐藏/恢复任意评论 + `/admin/stats` 最近评论流)
+**状态(2026-07-19):八个批次代码已全部实现完毕**——每批均由 Codex 实施、我逐行 review diff、本地 `wrangler pages dev` + 本地 D1 独立验证(含真实浏览器走查)后才提交,全部已推送到 `main`,**但尚未部署到生产、尚未跑生产 D1 迁移**。owner 拍板"先把批次1-8 全部做完、外部前置也一起备齐,再一次性上生产",故意不逐批部署。下面每条后面的 commit 是该批次落地的提交:
+
+- [x] 2.1 批次 1 · 本地删除墓碑化(`27beb1f`)——纯前端,`corpusMarks`/`corpusNotes`/`bookmarks`/`divinations` 软删,为同步铺路
+- [x] 2.2 批次 2 · 邮箱注册/登录 + 会话基座(`f46f47f`)——D1 sessions 表、PBKDF2 密码哈希、AuthSheet、像素头像、默认昵称
+- [x] 2.3 批次 3 · Google 登录(`1e00c2b`)——服务端 OAuth code flow,按邮箱自动并入同一账号;**真实 Google 授权页往返尚未端到端验证过**(需下面 §7.1 的 owner 前置)
+- [x] 2.4 批次 4 · Owner 管理鉴权切换(`f0cb77f`)——`/admin/*` 从临时口令切到 owner 正式会话
+- [x] 2.5 批次 5 · 云同步(`81e18c9`)——`POST /api/sync`,按 §2.4a 已定合并算法双向同步 DATA_KEYS
+- [x] 2.6 批次 6 · 评论区(`0350837`)——读经章 + 观书主页两类挂载点;看无需登录/发需登录+Turnstile/删自己的;本地开发用 Cloudflare 官方测试 sitekey/secret,**生产上线前必须换成真实 Turnstile 站点凭证**(见下面 §7.2)
+- [x] 2.7 批次 7 · 新评论邮件通知(`0cd092e`)——Resend,新评论触发一封邮件到 owner 邮箱;**真实发信尚未验证过**(需下面 §7.3 的 Resend 账号)
+- [x] 2.8 批次 8 · 评论管理(`f45ebfc`)——owner 站内隐藏/恢复任意评论 + `/admin/stats` 最近评论流
 - [ ] 2.9(可选,不占主线)`/api/og`:对爬虫 UA 返回带书名/章题的动态 OG meta
 
 ### Phase 3 · 个人备案(可随时并行起步,不阻塞 0–2)
@@ -301,3 +303,14 @@
     - 读经站:**每一章一个评论区**(挂在该章正文页,即 ClassicReader/DaoReadPage 单章页面),白话文章页(BaihuaPage)不放评论区。
     - 观书:**每一本书的主页一个评论区**(BookHomePage),书内每篇文章页不放评论区。
 14. 单条评论**字数上限 500 字**(注:现有 `schema.sql` 的 `comments.body` CHECK 约束是 1–4000,500 的上限在 API 校验层收紧即可,不必收紧 DB 层的 CHECK)。
+
+---
+
+## 8. 上线前 owner 待办(2026-07-19 汇总,批次 1–8 代码全部完成后列出)
+
+**状态:代码侧已无阻塞项。以下全部是需要 owner 去外部控制台操作、我这边替代不了的事——办完告诉我(或者把凭证发我),我把环境变量配上,然后跑生产 D1 迁移 + 部署,批次 1–8 一次性上生产。**
+
+- [ ] 8.1 **Google OAuth 客户端**(批次3 · Google 登录用,详细步骤见 [auth-comments-design.md §4.8](./auth-comments-design.md)):Google Cloud Console → OAuth 同意屏幕(External)→ 凭据 → 创建 OAuth 客户端 ID(Web application);Authorized redirect URIs 填两条 `https://hexa.gavin.pub/api/auth/google/callback` 与 `http://localhost:8788/api/auth/google/callback`;拿到 client_id/client_secret 后给我配进 `GOOGLE_CLIENT_ID`(明文可)/`GOOGLE_CLIENT_SECRET`(encrypted)。
+- [ ] 8.2 **Cloudflare Turnstile 生产站点**(批次6 · 评论防刷用,详细步骤见 [auth-comments-design.md §7.8](./auth-comments-design.md))——⚠️ **上线前必须做,不是可选项**:现在代码里 `src/features/comments/config.js` 配的是 Cloudflare 官方**测试用** sitekey(`1x00000000000000000000AA`,永远直接判定通过,方便本地开发验证整条链路),如果不换成真实凭证就直接上线,评论区等于没有机器人防护。Cloudflare Dashboard → Turnstile → Add site → 域名填 `hexa.gavin.pub` → widget 模式选 Managed;拿到 sitekey/secret 后给我,我把 `config.js` 里的测试 sitekey 换掉、`TURNSTILE_SECRET_KEY`(encrypted)配上生产环境变量。
+- [ ] 8.3 **Resend 邮件账号**(批次7 · 新评论通知邮件用,详细步骤见 [auth-comments-design.md §8.8](./auth-comments-design.md))——**非阻塞项,可以先跳过,上线后随时补**:注册 Resend → Domains 添加 `gavin.pub` → 按提示到 DNS 服务商加 SPF/DKIM 记录、等验证通过 → 建 API key。不配的话只是收不到"有人评论了"的邮件提醒,评论/登录/同步等核心功能完全不受影响。给我 `RESEND_API_KEY`(encrypted)和你想收通知的 `OWNER_NOTIFY_EMAIL`(明文可)。
+- [ ] 8.4 **部署之后**(不是现在的前置项,是部署完成后的下一步,我会引导):用你自己的邮箱在 `hexa.gavin.pub` 上注册一个正式账号 → 把这个邮箱告诉我 → 我在生产 D1 执行一次性的 `UPDATE users SET is_owner=1 WHERE email='<你的邮箱>'` → 确认能用这个账号正常打开 `/admin/stats`、看到并管理评论(此时旧的 `ADMIN_PASSPHRASE` 口令通道会自动失效,这是设计好的行为,不用额外操作;确认新方式好用后可以顺手去 Cloudflare Pages 后台把 `ADMIN_PASSPHRASE` 这个环境变量删掉,留着也无妨)。
