@@ -61,6 +61,7 @@ export default function DaoReadPage() {
       renderYanyi={(no) => <YanyiBlock slug={slug} chapter={no} />}
       renderBaihua={(no) => <BaihuaBlock corpus="dao" slug={slug} chapter={no} bookTitle={meta.title} sectionUnit={meta.sectionUnit || '章'} />}
       markCtx={{ corpus: 'dao', slug }}
+      commentCtx={{ corpus: 'dao', slug }}
     />
   )
 }

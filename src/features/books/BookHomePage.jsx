@@ -5,6 +5,7 @@ import MindTree from './MindTree.jsx'
 import BookCover from './BookCover.jsx'
 import BookArticleDrawer from './BookArticleDrawer.jsx'
 import HomeSeal from './HomeSeal.jsx'
+import CommentSection from '../comments/CommentSection.jsx'
 import books from '../../data/books/index.json'
 import './books.css'
 
@@ -72,6 +73,8 @@ export default function BookHomePage() {
           ))}
         </div>
       </div>
+
+      <CommentSection key={`books:${slug}`} corpus="books" slug={slug} chapter="home" />
 
       <BookArticleDrawer
         open={!!drawer}

@@ -105,5 +105,11 @@ CREATE INDEX idx_comments_content
 CREATE INDEX idx_comments_user_id
   ON comments (user_id);
 
+CREATE INDEX idx_comments_anchor
+  ON comments (corpus, slug, chapter, created_at DESC);
+
+CREATE INDEX idx_comments_user_time
+  ON comments (user_id, created_at);
+
 CREATE INDEX idx_auth_codes_expires_at
   ON auth_codes (expires_at);

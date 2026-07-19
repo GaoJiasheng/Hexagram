@@ -53,6 +53,7 @@ export default function ClassicsReadPage() {
           chapterLabel={`第${no}章`}
         />
       )}
+      commentCtx={{ corpus: 'yijing', slug: book }}
     />
   )
 }

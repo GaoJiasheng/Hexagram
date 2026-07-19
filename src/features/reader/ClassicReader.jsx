@@ -4,6 +4,7 @@ import ClassicText from '../yijing/components/ClassicText.jsx'
 import QuoteCard from './QuoteCard.jsx'
 import { useSettings } from '../yijing/SettingsContext.jsx'
 import { getCorpusMarks, toggleCorpusMark, getCorpusNotes, saveCorpusNote } from '../yijing/storage.js'
+import CommentSection from '../comments/CommentSection.jsx'
 
 const FONT_SCALES = [0.9, 1, 1.15, 1.35]
 const FONT_SCALE_LABELS = { 0.9: '小', 1: '中', 1.15: '大', 1.35: '特大' }
@@ -56,6 +57,7 @@ export default function ClassicReader({
   verse = false,    // 诗体经按句读换行(黄庭等,#143)
   bookTitle = '',   // 金句卡署名用(#147)
   markCtx = null,   // {corpus, slug}:启用读经站段落收藏/笔记(Tier 2);null 则关闭
+  commentCtx = null, // {corpus, slug}:仅 paged 模式在章末启用评论区
 }) {
   const { settings, setSettings } = useSettings()
   const { hash, pathname } = useLocation()
@@ -376,6 +378,14 @@ export default function ClassicReader({
               <ChapterNotes chapter={cur} getAnchors={getAnchors} />
               {renderYanyi(cur.no)}
               {renderBaihua(cur.no)}
+              {commentCtx && (
+                <CommentSection
+                  key={`${commentCtx.corpus}:${commentCtx.slug}:${cur.no}`}
+                  corpus={commentCtx.corpus}
+                  slug={commentCtx.slug}
+                  chapter={String(cur.no)}
+                />
+              )}
               <div className="read-nav">
                 {prev ? (
                   <Link to={chapterHref(prev.no)} className="read-nav__prev">← {chapterLabel(prev)}</Link>

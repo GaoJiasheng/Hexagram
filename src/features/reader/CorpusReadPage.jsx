@@ -77,6 +77,7 @@ export default function CorpusReadPage({ corpus }) {
       renderBaihua={(no) => <BaihuaBlock corpus={corpus} slug={slug} chapter={no} bookTitle={meta.title} sectionUnit={meta.sectionUnit || '章'} />}
       paraLabel={numberParas ? (no, i) => String(i + 1) : undefined}
       markCtx={{ corpus, slug }}
+      commentCtx={{ corpus, slug }}
     />
   )
 }

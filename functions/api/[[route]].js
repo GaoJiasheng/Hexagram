@@ -16,6 +16,7 @@ import {
 } from '../../server/sync-merge.js'
 
 const MAX_BODY_BYTES = 4096
+const COMMENTS_MAX_BODY_BYTES = 8192
 const SYNC_MAX_BODY_BYTES = 1_000_000
 const SYNC_MAX_VALUE_BYTES = 200_000
 const ADMIN_PASSPHRASE_HEADER = 'X-Admin-Passphrase'
@@ -283,6 +284,61 @@ function optionalText(value, name, maxLength) {
     throw new RequestError(400, `invalid ${name}`)
   }
   return value
+}
+
+function validateAnchor(query) {
+  if (typeof query.corpus !== 'string' || !/^[a-z0-9_-]{1,32}$/i.test(query.corpus)) {
+    throw new RequestError(400, 'invalid corpus')
+  }
+
+  for (const name of ['slug', 'chapter']) {
+    const value = query[name]
+    if (
+      typeof value !== 'string'
+      || value.length < 1
+      || value.length > 160
+      || /[\u0000-\u001f\u007f]/.test(value)
+    ) {
+      throw new RequestError(400, `invalid ${name}`)
+    }
+  }
+
+  return {
+    corpus: query.corpus,
+    slug: query.slug,
+    chapter: query.chapter,
+  }
+}
+
+function commentItem(row, sessionUser, includeStatus = false) {
+  return {
+    id: row.id,
+    body: row.body,
+    createdAt: row.created_at,
+    mine: !!sessionUser && row.user_id === sessionUser.id,
+    user: {
+      displayName: row.display_name,
+      avatarSeed: row.avatar_seed,
+    },
+    ...(includeStatus ? { status: row.status } : {}),
+  }
+}
+
+async function verifyTurnstile(c, token) {
+  const secret = c.env?.TURNSTILE_SECRET_KEY
+  if (typeof secret !== 'string' || secret.length < 1) return false
+
+  try {
+    const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ secret, response: token }),
+    })
+    const result = await response.json().catch(() => null)
+    return result?.success === true
+  } catch {
+    return false
+  }
 }
 
 function normalizeEmail(value) {
@@ -658,6 +714,117 @@ app.get('/me', async (c) => {
     return c.json({ user: row ? publicUser(row) : null })
   } catch (error) {
     console.error('Session lookup failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
+app.get('/comments', async (c) => {
+  try {
+    const anchor = validateAnchor({
+      corpus: c.req.query('corpus'),
+      slug: c.req.query('slug'),
+      chapter: c.req.query('chapter'),
+    })
+    const sessionUser = await getSessionUser(c)
+    const result = await getDb(c).prepare(`
+      SELECT c.id, c.body, c.created_at, c.user_id, c.status,
+             u.display_name, u.avatar_seed
+      FROM comments c
+      JOIN users u ON u.id = c.user_id
+      WHERE c.corpus = ? AND c.slug = ? AND c.chapter = ?
+      ORDER BY c.created_at DESC
+      LIMIT 100
+    `).bind(anchor.corpus, anchor.slug, anchor.chapter).all()
+
+    const isOwner = !!sessionUser?.is_owner
+    const comments = resultRows(result)
+      .filter((row) => isOwner || row.status === 'visible')
+      .map((row) => commentItem(row, sessionUser, isOwner))
+    return c.json({ ok: true, comments })
+  } catch (error) {
+    if (error instanceof RequestError) {
+      return c.json({ ok: false, error: error.message }, error.status)
+    }
+    console.error('Comment list failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
+app.post('/comments', async (c) => {
+  try {
+    const user = await requireUser(c)
+    const input = await readJsonBody(c, COMMENTS_MAX_BODY_BYTES)
+    const anchor = validateAnchor(input)
+    const body = typeof input.body === 'string' ? input.body.trim() : ''
+    if (body.length < 1) {
+      throw new RequestError(400, '评论不能为空')
+    }
+    if (body.length > 500) {
+      throw new RequestError(400, '评论最长 500 字')
+    }
+    if (
+      typeof input.turnstileToken !== 'string'
+      || input.turnstileToken.length < 1
+      || input.turnstileToken.length > 2048
+    ) {
+      throw new RequestError(400, '请完成人机验证')
+    }
+
+    if (!await verifyTurnstile(c, input.turnstileToken)) {
+      throw new RequestError(403, '人机验证未通过,请重试')
+    }
+
+    const now = Date.now()
+    const recent = await getDb(c)
+      .prepare('SELECT COUNT(*) AS n FROM comments WHERE user_id = ? AND created_at > ?')
+      .bind(user.id, now - 60_000)
+      .first()
+    if (Number(recent?.n) >= 3) {
+      throw new RequestError(429, '发得太快,歇一歇')
+    }
+
+    const id = crypto.randomUUID()
+    await getDb(c).prepare(`
+      INSERT INTO comments (id, user_id, corpus, slug, chapter, body, created_at)
+      VALUES (?, ?, ?, ?, ?, ?, ?)
+    `).bind(id, user.id, anchor.corpus, anchor.slug, anchor.chapter, body, now).run()
+
+    return c.json({
+      ok: true,
+      comment: commentItem({
+        id,
+        body,
+        created_at: now,
+        user_id: user.id,
+        display_name: user.display_name,
+        avatar_seed: user.avatar_seed,
+      }, user),
+    }, 201)
+  } catch (error) {
+    if (error instanceof RequestError) {
+      return c.json({ ok: false, error: error.message }, error.status)
+    }
+    console.error('Comment creation failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
+app.delete('/comments/:id', async (c) => {
+  try {
+    const user = await requireUser(c)
+    const result = await getDb(c)
+      .prepare('DELETE FROM comments WHERE id = ? AND user_id = ?')
+      .bind(c.req.param('id'), user.id)
+      .run()
+    if (Number(result?.meta?.changes) === 0) {
+      throw new RequestError(404, '评论不存在或无权删除')
+    }
+    return c.body(null, 204)
+  } catch (error) {
+    if (error instanceof RequestError) {
+      return c.json({ ok: false, error: error.message }, error.status)
+    }
+    console.error('Comment deletion failed', error)
     return c.json({ ok: false, error: 'service unavailable' }, 503)
   }
 })
