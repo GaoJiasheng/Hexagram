@@ -11,10 +11,12 @@ import zongTexts from '../../data/zong/texts.json'
 import zhongyiTexts from '../../data/zhongyi/texts.json'
 import moulueTexts from '../../data/moulue/texts.json'
 import { useAuth } from '../auth/AuthContext.jsx'
+import { commentPageUrl } from '../comments/commentPageUrl.js'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 
 const PASSPHRASE_KEY = 'guanxiang.admin.passphrase'
 const STATS_URL = '/api/admin/stats'
+const COMMENTS_URL = '/api/admin/comments'
 const ADMIN_HEADER = 'X-Admin-Passphrase'
 
 const SITE_BY_KEY = Object.fromEntries(SITES.map((site) => [site.key, site]))
@@ -40,6 +42,13 @@ const YIJING_CLASSICS = {
   zagua: '杂卦传',
 }
 const NUMBER = new Intl.NumberFormat('zh-CN')
+const COMMENT_DATE = new Intl.DateTimeFormat('zh-CN', {
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+  hour: '2-digit',
+  minute: '2-digit',
+})
 
 // 国家/地区代码转中文名——只覆盖高频访客来源，其余回退显示原始 ISO 代码。
 const COUNTRY_NAMES = {
@@ -134,6 +143,45 @@ function normalizeStats(raw) {
         .map((row) => ({ region: typeof row.region === 'string' ? row.region : '', count: safeNumber(row.count) }))
       : [],
   }
+}
+
+function normalizeRecentComments(raw) {
+  if (!raw || typeof raw !== 'object' || !Array.isArray(raw.comments)) {
+    throw new Error('invalid comments response')
+  }
+
+  return raw.comments
+    .filter((comment) => (
+      comment
+      && typeof comment.id === 'string'
+      && typeof comment.corpus === 'string'
+      && typeof comment.slug === 'string'
+      && typeof comment.chapter === 'string'
+      && typeof comment.body === 'string'
+      && (comment.status === 'visible' || comment.status === 'hidden')
+      && typeof comment.displayName === 'string'
+    ))
+    .map((comment) => ({
+      id: comment.id,
+      corpus: comment.corpus,
+      slug: comment.slug,
+      chapter: comment.chapter,
+      body: comment.body,
+      status: comment.status,
+      createdAt: Number(comment.createdAt),
+      displayName: comment.displayName,
+    }))
+}
+
+function commentTime(value) {
+  const date = new Date(Number(value))
+  if (Number.isNaN(date.getTime())) return { label: '时间未知', dateTime: undefined }
+  return { label: COMMENT_DATE.format(date), dateTime: date.toISOString() }
+}
+
+function commentExcerpt(body) {
+  const characters = Array.from(body)
+  return characters.length > 120 ? `${characters.slice(0, 120).join('')}…` : body
 }
 
 function shortDate(date) {
@@ -401,6 +449,71 @@ function OwnerLoginPrompt({ onLogin, onRetry }) {
   )
 }
 
+function RecentComments({ comments, loading, error, actionError, moderatingId, onModerate, onRetry }) {
+  return (
+    <section className="admin-comments" aria-labelledby="admin-comments-title">
+      <div className="admin-comments__head">
+        <div>
+          <h2 id="admin-comments-title">最近评论</h2>
+          <p>全站最近 50 条，含已隐藏评论。</p>
+        </div>
+        {!loading && !error && <span>{NUMBER.format(comments.length)} 条</span>}
+      </div>
+
+      {loading && <p className="admin-comments__state">正在读取最近评论…</p>}
+      {!loading && error && (
+        <div className="admin-comments__state admin-comments__state--error" role="alert">
+          <span>{error}</span>
+          <button type="button" onClick={onRetry}>重试</button>
+        </div>
+      )}
+      {!loading && !error && comments.length === 0 && (
+        <p className="admin-comments__state">还没有评论。</p>
+      )}
+      {!loading && !error && actionError && (
+        <p className="admin-comments__action-error" role="alert">{actionError}</p>
+      )}
+      {!loading && !error && comments.length > 0 && (
+        <ol className="admin-comments__list">
+          {comments.map((comment) => {
+            const hidden = comment.status === 'hidden'
+            const time = commentTime(comment.createdAt)
+            return (
+              <li key={comment.id} className={`admin-comments__item${hidden ? ' admin-comments__item--hidden' : ''}`}>
+                <div className="admin-comments__meta">
+                  <time dateTime={time.dateTime}>{time.label}</time>
+                  <strong>{comment.displayName}</strong>
+                  <a
+                    href={commentPageUrl(comment.corpus, comment.slug, comment.chapter)}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    查看原页 ↗
+                  </a>
+                </div>
+                <p className="admin-comments__body">{commentExcerpt(comment.body)}</p>
+                <div className="admin-comments__actions">
+                  <span className={`admin-comments__status admin-comments__status--${comment.status}`}>
+                    {hidden ? '已隐藏' : '公开'}
+                  </span>
+                  <button
+                    type="button"
+                    className="admin-comments__moderate"
+                    disabled={moderatingId !== null}
+                    onClick={() => onModerate(comment)}
+                  >
+                    {moderatingId === comment.id ? '处理中…' : hidden ? '恢复' : '隐藏'}
+                  </button>
+                </div>
+              </li>
+            )
+          })}
+        </ol>
+      )}
+    </section>
+  )
+}
+
 export default function AdminStatsPage() {
   const [credential, setCredential] = useState(readPassphrase)
   const [draft, setDraft] = useState('')
@@ -408,6 +521,12 @@ export default function AdminStatsPage() {
   const [mode, setMode] = useState('checking')
   const [stats, setStats] = useState(null)
   const [retryKey, setRetryKey] = useState(0)
+  const [recentComments, setRecentComments] = useState([])
+  const [commentsLoading, setCommentsLoading] = useState(false)
+  const [commentsError, setCommentsError] = useState('')
+  const [commentsActionError, setCommentsActionError] = useState('')
+  const [commentsRetryKey, setCommentsRetryKey] = useState(0)
+  const [moderatingCommentId, setModeratingCommentId] = useState(null)
   const { user, openAuth } = useAuth()
   const retriedUserId = useRef(null)
 
@@ -519,6 +638,38 @@ export default function AdminStatsPage() {
     }
   }, [mode, user?.id])
 
+  useEffect(() => {
+    if (mode !== 'stats') return undefined
+
+    const controller = new AbortController()
+    const options = {
+      method: 'GET',
+      credentials: 'same-origin',
+      cache: 'no-store',
+      signal: controller.signal,
+    }
+    if (credential) options.headers = { [ADMIN_HEADER]: credential }
+
+    setCommentsLoading(true)
+    setCommentsError('')
+    setCommentsActionError('')
+
+    fetch(COMMENTS_URL, options)
+      .then(async (response) => {
+        const data = await response.json().catch(() => null)
+        if (!response.ok) throw new Error(data?.error || '最近评论读取失败,请稍后重试')
+        setRecentComments(normalizeRecentComments(data))
+      })
+      .catch((error) => {
+        if (error.name !== 'AbortError') setCommentsError(error.message)
+      })
+      .finally(() => {
+        if (!controller.signal.aborted) setCommentsLoading(false)
+      })
+
+    return () => controller.abort()
+  }, [mode, credential, commentsRetryKey])
+
   function submitPassphrase(event) {
     event.preventDefault()
     if (!draft) return
@@ -541,6 +692,34 @@ export default function AdminStatsPage() {
   function retrySession() {
     setMode('checking')
     setRetryKey((key) => key + 1)
+  }
+
+  async function moderateRecentComment(comment) {
+    const status = comment.status === 'hidden' ? 'visible' : 'hidden'
+    const headers = { 'Content-Type': 'application/json' }
+    if (credential) headers[ADMIN_HEADER] = credential
+
+    setModeratingCommentId(comment.id)
+    setCommentsActionError('')
+    try {
+      const response = await fetch(`${COMMENTS_URL}/${encodeURIComponent(comment.id)}`, {
+        method: 'PATCH',
+        credentials: 'same-origin',
+        headers,
+        body: JSON.stringify({ status }),
+      })
+      if (!response.ok) {
+        const data = await response.json().catch(() => null)
+        throw new Error(data?.error || '评论状态更新失败,请稍后重试')
+      }
+      setRecentComments((current) => current.map((item) => (
+        item.id === comment.id ? { ...item, status } : item
+      )))
+    } catch (error) {
+      setCommentsActionError(error.message)
+    } finally {
+      setModeratingCommentId(null)
+    }
   }
 
   if (mode === 'passphrase') {
@@ -647,6 +826,16 @@ export default function AdminStatsPage() {
               ) : <EmptyState />}
             </section>
           </div>
+
+          <RecentComments
+            comments={recentComments}
+            loading={commentsLoading}
+            error={commentsError}
+            actionError={commentsActionError}
+            moderatingId={moderatingCommentId}
+            onModerate={moderateRecentComment}
+            onRetry={() => setCommentsRetryKey((key) => key + 1)}
+          />
         </>
       )}
     </div>

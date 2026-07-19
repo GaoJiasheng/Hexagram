@@ -833,6 +833,63 @@ app.delete('/comments/:id', async (c) => {
   }
 })
 
+app.get('/admin/comments', async (c) => {
+  const rawLimit = Number(c.req.query('limit'))
+  const limit = Number.isInteger(rawLimit) && rawLimit >= 1 && rawLimit <= 200
+    ? rawLimit
+    : 50
+
+  try {
+    const result = await getDb(c).prepare(`
+      SELECT c.id, c.corpus, c.slug, c.chapter, c.body, c.status, c.created_at,
+             u.display_name
+      FROM comments c
+      JOIN users u ON u.id = c.user_id
+      ORDER BY c.created_at DESC
+      LIMIT ?
+    `).bind(limit).all()
+
+    const comments = resultRows(result).map((row) => ({
+      id: row.id,
+      corpus: row.corpus,
+      slug: row.slug,
+      chapter: row.chapter,
+      body: row.body,
+      status: row.status,
+      createdAt: row.created_at,
+      displayName: row.display_name,
+    }))
+    return c.json({ ok: true, comments })
+  } catch (error) {
+    console.error('Admin comment list failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
+app.patch('/admin/comments/:id', async (c) => {
+  try {
+    const input = await readJsonBody(c)
+    if (input.status !== 'visible' && input.status !== 'hidden') {
+      throw new RequestError(400, 'invalid status')
+    }
+
+    const result = await getDb(c)
+      .prepare('UPDATE comments SET status = ? WHERE id = ?')
+      .bind(input.status, c.req.param('id'))
+      .run()
+    if (Number(result?.meta?.changes) === 0) {
+      throw new RequestError(404, '评论不存在')
+    }
+    return c.body(null, 204)
+  } catch (error) {
+    if (error instanceof RequestError) {
+      return c.json({ ok: false, error: error.message }, error.status)
+    }
+    console.error('Admin comment update failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
 app.post('/sync', async (c) => {
   try {
     const user = await requireUser(c)

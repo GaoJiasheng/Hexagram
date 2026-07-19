@@ -55,6 +55,7 @@ export default function CommentSection({ corpus, slug, chapter }) {
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [deletingId, setDeletingId] = useState(null)
+  const [moderatingId, setModeratingId] = useState(null)
   const [turnstileReady, setTurnstileReady] = useState(false)
   const requestedRef = useRef(false)
   const turnstileContainerRef = useRef(null)
@@ -165,6 +166,30 @@ export default function CommentSection({ corpus, slug, chapter }) {
     }
   }
 
+  async function moderateComment(comment) {
+    const status = comment.status === 'hidden' ? 'visible' : 'hidden'
+    setModeratingId(comment.id)
+    setError('')
+    try {
+      const response = await fetch(`/api/admin/comments/${encodeURIComponent(comment.id)}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status }),
+      })
+      if (!response.ok) {
+        const data = await responseData(response)
+        throw new Error(data?.error || '评论状态更新失败,请稍后重试')
+      }
+      setComments((current) => current.map((item) => (
+        item.id === comment.id ? { ...item, status } : item
+      )))
+    } catch (moderateError) {
+      setError(moderateError.message)
+    } finally {
+      setModeratingId(null)
+    }
+  }
+
   return (
     <section className="comment-section__root">
       <button
@@ -200,6 +225,16 @@ export default function CommentSection({ corpus, slug, chapter }) {
                       <strong>{comment.user.displayName}</strong>
                       <time dateTime={commentDate}>{commentDate}</time>
                       {hidden && <span className="comment-section__hidden-badge">已隐藏</span>}
+                      {user?.isOwner && (
+                        <button
+                          type="button"
+                          className="comment-section__moderate"
+                          disabled={moderatingId !== null}
+                          onClick={() => moderateComment(comment)}
+                        >
+                          {moderatingId === comment.id ? '处理中…' : hidden ? '恢复' : '隐藏'}
+                        </button>
+                      )}
                       {comment.mine && (
                         <button
                           type="button"
