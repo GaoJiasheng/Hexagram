@@ -795,6 +795,160 @@ function Levers() {
   )
 }
 
+// 母题:传记与历史之弧——一道小弧(个人传记)与一道大弧(时代历史)在中点相交,
+// 交点炸开一圈细芒(呼应米尔斯的核心定义:社会学的想象力,就是看清「个人困扰」
+// 与「公共议题」在此交汇)。
+function BiographyHistoryArc() {
+  const jx = 146, jy = 284
+  const rays = Array.from({ length: 8 }, (_, i) => {
+    const a = (i / 8) * Math.PI * 2
+    return `M${jx + Math.cos(a) * 10},${jy + Math.sin(a) * 10} L${jx + Math.cos(a) * 22},${jy + Math.sin(a) * 22}`
+  }).join(' ')
+  return (
+    <g fill="none">
+      <path d="M40,380 Q90,300 146,284" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.6" />
+      <path d="M252,206 Q210,250 146,284" stroke={CREAM} strokeOpacity="0.3" strokeWidth="2.4" />
+      <path d={rays} stroke={CINNABAR} strokeWidth="1.4" />
+      <circle cx={jx} cy={jy} r="6" fill={CINNABAR} />
+    </g>
+  )
+}
+
+// 母题:铁笼——理性化的方格牢笼,一点暖光(新教徒的入世苦行精神)困在笼中,
+// 光已微弱(呼应韦伯全书末章的著名意象:铁笼终将困住那本要解放它的精神)。
+function IronCage() {
+  const bars = []
+  for (let x = 70; x <= 230; x += 26) bars.push(`M${x},200 L${x},380`)
+  for (let y = 200; y <= 380; y += 30) bars.push(`M70,${y} L230,${y}`)
+  return (
+    <g fill="none">
+      <path d={bars.join(' ')} stroke={CREAM} strokeOpacity="0.32" strokeWidth="1.1" />
+      <rect x="70" y="200" width="160" height="180" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.6" />
+      <circle cx="150" cy="290" r="10" fill={CINNABAR} fillOpacity="0.85" />
+    </g>
+  )
+}
+
+// 母题:整合之网——一侧节点彼此相连成网(社会整合),一侧节点散落孤立(失范/利己),
+// 中线是断裂处(呼应涂尔干:自杀率随社会整合程度而非个人意志起伏)。
+function IntegrationWeb() {
+  const woven = [[70, 250], [104, 232], [96, 276], [130, 258]]
+  const lonely = [[196, 240], [232, 268], [200, 312], [246, 330]]
+  const wovenLines = woven.flatMap((p, i) => woven.slice(i + 1).map(q => `M${p[0]},${p[1]} L${q[0]},${q[1]}`)).join(' ')
+  return (
+    <g>
+      <path d={wovenLines} fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1" />
+      {woven.map(([x, y], i) => <circle key={`w${i}`} cx={x} cy={y} r="5.5" fill={CREAM} fillOpacity="0.55" />)}
+      {lonely.map(([x, y], i) => <circle key={`l${i}`} cx={x} cy={y} r="5" fill="none" stroke={CINNABAR} strokeWidth="1.4" />)}
+      <path d="M162,206 L156,366" stroke={CREAM} strokeOpacity="0.2" strokeWidth="1" strokeDasharray="2 5" />
+    </g>
+  )
+}
+
+// 母题:戏台一角——半开的幕布 + 一枚素面具,面具背后一道细影(呼应戈夫曼的拟剧论:
+// 日常生活即前台表演,自我是一场持续排练的演出)。
+function StageMask() {
+  return (
+    <g fill="none">
+      <path d="M60,200 Q60,340 90,392 L90,200 Z" fill="rgba(255,255,255,0.08)" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1" />
+      <path d="M240,200 Q240,340 210,392 L210,200 Z" fill="rgba(0,0,0,0.22)" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1" />
+      <ellipse cx="150" cy="296" rx="38" ry="46" stroke={CREAM} strokeOpacity="0.55" strokeWidth="1.5" />
+      <path d="M134,286 Q150,278 166,286" stroke={CREAM} strokeOpacity="0.55" strokeWidth="1.3" />
+      <path d="M138,312 Q150,320 162,312" stroke={CREAM} strokeOpacity="0.55" strokeWidth="1.3" />
+      <circle cx="150" cy="296" r="3" fill={CINNABAR} />
+    </g>
+  )
+}
+
+// 母题:孤零零的瓶——一根瓶柱立于道具灯下,身后几根已倒的瓶影渐渐模糊
+// (呼应帕特南书名意象:一个人打保龄,曾经满场的联谊队伍已经散去)。
+function LonePin() {
+  const pin = 'M150,242 Q142,242 142,254 Q142,266 148,272 L148,320 Q136,326 136,338 L164,338 Q164,326 152,320 L152,272 Q158,266 158,254 Q158,242 150,242 Z'
+  return (
+    <g>
+      <ellipse cx="98" cy="332" rx="20" ry="7" fill="rgba(255,255,255,0.06)" />
+      <ellipse cx="196" cy="326" rx="18" ry="6.5" fill="rgba(255,255,255,0.06)" />
+      <path d={pin} fill="none" stroke={CINNABAR} strokeWidth="1.8" />
+      <path d="M150,232 L150,220" stroke={CREAM} strokeOpacity="0.3" strokeWidth="8" strokeLinecap="round" />
+    </g>
+  )
+}
+
+// 母题:结社之环——数枚圆环彼此交叠、各自独立又相互勾连(呼应托克维尔的核心
+// 观察:美国人靠不计其数的自发结社把个体编织成公民社会,替代了贵族纽带)。
+function CivicRings() {
+  const rings = [[122, 268, 34], [166, 262, 30], [140, 312, 32], [188, 306, 28]]
+  return (
+    <g fill="none" stroke={CREAM} strokeOpacity="0.42" strokeWidth="1.4">
+      {rings.map(([x, y, r], i) => <circle key={i} cx={x} cy={y} r={r} />)}
+      <circle cx="154" cy="288" r="5" fill={CINNABAR} stroke="none" />
+    </g>
+  )
+}
+
+// 母题:同质到分化——左侧一排同尺寸方格(机械团结),右侧渐变为大小不一、
+// 彼此咬合的有机细胞形(有机团结),呼应涂尔干论社会分工的整合方式演化。
+function OrganismCells() {
+  const grid = [0, 1, 2].map(i => `M${76 + i * 22},240 h18 v18 h-18 Z`).join(' ')
+  return (
+    <g fill="none" stroke={CREAM} strokeOpacity="0.42" strokeWidth="1.2">
+      <path d={grid} />
+      <path d="M172,232 Q198,224 214,246 Q228,266 210,284 Q192,300 176,282 Q162,262 172,232 Z" />
+      <path d="M186,286 Q206,282 216,302 Q224,320 204,330 Q186,338 178,318 Q170,298 186,286 Z" />
+      <circle cx="196" cy="264" r="4" fill={CINNABAR} stroke="none" />
+    </g>
+  )
+}
+
+// 母题:陀螺与雷达——一只自转的陀螺(内在导向的性格,靠自身陀螺仪定向)
+// 渐变为一面雷达(他人导向的性格,靠外部信号扫描定位),呼应理斯曼的两大比喻。
+function GyroRadar() {
+  return (
+    <g fill="none">
+      <path d="M96,300 L96,340 M84,300 L108,300 L100,270 L92,270 Z" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.4" />
+      <circle cx="96" cy="300" r="4" fill={CINNABAR} stroke="none" />
+      <circle cx="196" cy="300" r="40" stroke={CREAM} strokeOpacity="0.35" strokeWidth="1.2" />
+      <circle cx="196" cy="300" r="26" stroke={CREAM} strokeOpacity="0.35" strokeWidth="1" />
+      <path d="M196,300 L228,282" stroke={CINNABAR} strokeWidth="1.8" />
+      <circle cx="196" cy="300" r="3" fill={CREAM} stroke="none" />
+    </g>
+  )
+}
+
+// 母题:街角人际网——几个人形圆点聚在街角,细线织成非正式的交往网络
+// (呼应怀特蹲点街角帮派、用参与式观察画出的那张真实社会关系图)。
+function CornerNetwork() {
+  const corner = 'M60,420 L60,260 M60,260 L240,260'
+  const people = [[100, 300], [140, 320], [92, 350], [160, 288], [180, 336]]
+  const links = [[0, 1], [1, 2], [0, 3], [3, 4], [1, 4]]
+  const lines = links.map(([a, b]) => `M${people[a][0]},${people[a][1]} L${people[b][0]},${people[b][1]}`).join(' ')
+  return (
+    <g fill="none">
+      <path d={corner} stroke={CREAM} strokeOpacity="0.3" strokeWidth="1.4" strokeDasharray="3 5" />
+      <path d={lines} stroke={CREAM} strokeOpacity="0.4" strokeWidth="1" />
+      {people.map(([x, y], i) => <circle key={i} cx={x} cy={y} r={i === 3 ? 6 : 4.5} fill={i === 3 ? CINNABAR : CREAM} fillOpacity={i === 3 ? 1 : 0.55} />)}
+    </g>
+  )
+}
+
+// 母题:菊与刀——左侧一朵抽象菊花(温良守礼的一面),右侧一道刀锋(尚武自律的
+// 一面),两者在中轴对望,不相融也不相斥(呼应本尼迪克特全书的核心悖论命题)。
+function ChrysanthemumBlade() {
+  const petals = Array.from({ length: 10 }, (_, i) => {
+    const a = (i / 10) * Math.PI * 2
+    const x2 = 106 + Math.cos(a) * 30
+    const y2 = 284 + Math.sin(a) * 30
+    return `M106,284 L${x2.toFixed(1)},${y2.toFixed(1)}`
+  }).join(' ')
+  return (
+    <g fill="none">
+      <path d={petals} stroke={CREAM} strokeOpacity="0.45" strokeWidth="1.3" />
+      <circle cx="106" cy="284" r="7" fill={CREAM} fillOpacity="0.5" />
+      <path d="M170,244 L232,306 L214,324 L200,300 L182,318 L170,306 Z" fill="none" stroke={CINNABAR} strokeWidth="1.7" />
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'two-mountains') return <TwoMountains />
   if (motif === 'two-systems') return <TwoSystems />
@@ -880,6 +1034,16 @@ function Motif({ motif }) {
   if (motif === 'gate-siege') return <GateSiege />
   if (motif === 'cracked-foundation') return <CrackedFoundation />
   if (motif === 'snowball-roll') return <SnowballRoll />
+  if (motif === 'biography-history-arc') return <BiographyHistoryArc />
+  if (motif === 'iron-cage') return <IronCage />
+  if (motif === 'integration-web') return <IntegrationWeb />
+  if (motif === 'stage-mask') return <StageMask />
+  if (motif === 'lone-pin') return <LonePin />
+  if (motif === 'civic-rings') return <CivicRings />
+  if (motif === 'organism-cells') return <OrganismCells />
+  if (motif === 'gyro-radar' ) return <GyroRadar />
+  if (motif === 'corner-network') return <CornerNetwork />
+  if (motif === 'chrysanthemum-blade') return <ChrysanthemumBlade />
   return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
 }
 
