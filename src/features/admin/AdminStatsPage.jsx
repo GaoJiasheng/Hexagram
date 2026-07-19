@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { SITES } from '../../sites/registry.js'
 import daoTexts from '../../data/dao/texts.json'
 import foTexts from '../../data/fo/texts.json'
@@ -10,6 +10,7 @@ import bingTexts from '../../data/bing/texts.json'
 import zongTexts from '../../data/zong/texts.json'
 import zhongyiTexts from '../../data/zhongyi/texts.json'
 import moulueTexts from '../../data/moulue/texts.json'
+import { useAuth } from '../auth/AuthContext.jsx'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 
 const PASSPHRASE_KEY = 'guanxiang.admin.passphrase'
@@ -386,48 +387,119 @@ function PassphraseForm({ draft, error, onChange, onSubmit }) {
   )
 }
 
+function OwnerLoginPrompt({ onLogin, onRetry }) {
+  return (
+    <div className="admin-auth-card">
+      <span className="admin-auth-card__seal" aria-hidden="true">统</span>
+      <h1>阅读统计</h1>
+      <p>此页面需要 owner 账号登录。请使用已标记为 owner 的正式账号登录后重试。</p>
+      <div className="admin-auth-card__actions">
+        <button className="btn admin-stats__primary" type="button" onClick={onLogin}>登录 owner 账号</button>
+        <button className="btn btn--secondary" type="button" onClick={onRetry}>重试</button>
+      </div>
+    </div>
+  )
+}
+
 export default function AdminStatsPage() {
   const [credential, setCredential] = useState(readPassphrase)
   const [draft, setDraft] = useState('')
   const [formError, setFormError] = useState('')
-  const [status, setStatus] = useState(credential ? 'loading' : 'locked')
+  const [mode, setMode] = useState('checking')
   const [stats, setStats] = useState(null)
   const [retryKey, setRetryKey] = useState(0)
+  const { user, openAuth } = useAuth()
+  const retriedUserId = useRef(null)
 
   usePageTitle('阅读统计后台')
 
   useEffect(() => {
-    if (!credential) return undefined
-
     const controller = new AbortController()
-    setStatus('loading')
+    setMode('checking')
+
+    async function requestStats(passphrase = '') {
+      const options = {
+        method: 'GET',
+        credentials: 'same-origin',
+        cache: 'no-store',
+        signal: controller.signal,
+      }
+      if (passphrase) options.headers = { [ADMIN_HEADER]: passphrase }
+
+      const response = await fetch(STATS_URL, options)
+      const data = await response.json().catch(() => null)
+      return { response, data }
+    }
+
+    function showStats(data) {
+      setStats(normalizeStats(data))
+      setMode('stats')
+    }
+
+    function showPassphraseError() {
+      forgetPassphrase()
+      setCredential('')
+      setDraft('')
+      setStats(null)
+      setFormError('访问被拒绝')
+      setMode('passphrase')
+    }
 
     async function loadStats() {
       try {
-        const response = await fetch(STATS_URL, {
-          method: 'GET',
-          headers: { [ADMIN_HEADER]: credential },
-          credentials: 'same-origin',
-          cache: 'no-store',
-          signal: controller.signal,
-        })
+        const sessionAttempt = await requestStats()
+        if (sessionAttempt.response.ok) {
+          showStats(sessionAttempt.data)
+          return
+        }
 
-        if (response.status === 401) {
+        if (sessionAttempt.response.status !== 401) {
+          throw new Error(`stats request failed: ${sessionAttempt.response.status}`)
+        }
+
+        if (sessionAttempt.data?.error === 'owner login required') {
           forgetPassphrase()
           setCredential('')
           setDraft('')
           setStats(null)
-          setFormError('访问被拒绝')
-          setStatus('locked')
+          setFormError('')
+          setMode('need-owner-login')
           return
         }
-        if (!response.ok) throw new Error(`stats request failed: ${response.status}`)
 
-        const data = normalizeStats(await response.json())
-        setStats(data)
-        setStatus('ready')
+        if (sessionAttempt.data?.error !== 'access denied') {
+          throw new Error('unexpected admin authorization response')
+        }
+
+        if (!credential) {
+          setStats(null)
+          setMode('passphrase')
+          return
+        }
+
+        const passphraseAttempt = await requestStats(credential)
+        if (passphraseAttempt.response.ok) {
+          showStats(passphraseAttempt.data)
+          return
+        }
+
+        if (passphraseAttempt.response.status === 401) {
+          if (passphraseAttempt.data?.error === 'owner login required') {
+            forgetPassphrase()
+            setCredential('')
+            setDraft('')
+            setStats(null)
+            setFormError('')
+            setMode('need-owner-login')
+          } else {
+            showPassphraseError()
+          }
+          return
+        }
+
+        throw new Error(`stats request failed: ${passphraseAttempt.response.status}`)
       } catch (error) {
-        if (error.name !== 'AbortError') setStatus('error')
+        if (error.name !== 'AbortError') setMode('error')
       }
     }
 
@@ -435,13 +507,25 @@ export default function AdminStatsPage() {
     return () => controller.abort()
   }, [credential, retryKey])
 
+  useEffect(() => {
+    const userId = user?.id ?? null
+    if (!userId) {
+      retriedUserId.current = null
+      return
+    }
+    if (mode === 'need-owner-login' && retriedUserId.current !== userId) {
+      retriedUserId.current = userId
+      setRetryKey((key) => key + 1)
+    }
+  }, [mode, user?.id])
+
   function submitPassphrase(event) {
     event.preventDefault()
     if (!draft) return
     setFormError('')
     storePassphrase(draft)
     setCredential(draft)
-    setStatus('loading')
+    setMode('checking')
   }
 
   function lockPage() {
@@ -450,10 +534,16 @@ export default function AdminStatsPage() {
     setDraft('')
     setStats(null)
     setFormError('')
-    setStatus('locked')
+    setMode('checking')
+    setRetryKey((key) => key + 1)
   }
 
-  if (!credential) {
+  function retrySession() {
+    setMode('checking')
+    setRetryKey((key) => key + 1)
+  }
+
+  if (mode === 'passphrase') {
     return (
       <div className="admin-stats-page admin-stats-page--locked">
         <PassphraseForm
@@ -462,6 +552,14 @@ export default function AdminStatsPage() {
           onChange={(event) => { setDraft(event.target.value); setFormError('') }}
           onSubmit={submitPassphrase}
         />
+      </div>
+    )
+  }
+
+  if (mode === 'need-owner-login') {
+    return (
+      <div className="admin-stats-page admin-stats-page--locked">
+        <OwnerLoginPrompt onLogin={() => openAuth('login')} onRetry={retrySession} />
       </div>
     )
   }
@@ -477,19 +575,19 @@ export default function AdminStatsPage() {
         <button className="btn btn--secondary admin-stats__lock" type="button" onClick={lockPage}>退出</button>
       </header>
 
-      {status === 'loading' && <div className="admin-stats__message">正在读取统计…</div>}
+      {mode === 'checking' && <div className="admin-stats__message">正在验证身份并读取统计…</div>}
 
-      {status === 'error' && (
+      {mode === 'error' && (
         <div className="admin-stats__message admin-stats__message--error" role="alert">
           <p>统计数据读取失败，请稍后重试。</p>
           <div>
-            <button className="btn admin-stats__primary" type="button" onClick={() => setRetryKey((key) => key + 1)}>重试</button>
+            <button className="btn admin-stats__primary" type="button" onClick={retrySession}>重试</button>
             <button className="btn btn--secondary" type="button" onClick={lockPage}>重新输入口令</button>
           </div>
         </div>
       )}
 
-      {status === 'ready' && stats && (
+      {mode === 'stats' && stats && (
         <>
           <div className="admin-stats__summary">
             累计 <strong>{NUMBER.format(stats.totalEvents)}</strong> 条阅读事件

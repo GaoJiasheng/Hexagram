@@ -3544,6 +3544,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .admin-auth-card input:focus { border-color: var(--cinnabar-pure); outline: 2px solid color-mix(in srgb, var(--cinnabar-pure) 18%, transparent); outline-offset: 1px; }
 .admin-auth-card__error { margin: 0; color: var(--cinnabar-pure); font-size: 0.82rem; }
 .admin-auth-card small { display: block; margin-top: 18px; color: var(--ink-faint); font-size: 0.72rem; line-height: 1.65; }
+.admin-auth-card__actions { display: flex; flex-wrap: wrap; gap: 10px; }
 
 .admin-stats__primary {
   justify-content: center;

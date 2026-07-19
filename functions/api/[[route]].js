@@ -327,6 +327,19 @@ app.use('*', async (c, next) => {
 })
 
 app.use('/admin/*', async (c, next) => {
+  let sessionUser
+  try {
+    sessionUser = await getSessionUser(c)
+  } catch (error) {
+    console.error('Admin session authorization failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+
+  if (sessionUser?.is_owner) {
+    await next()
+    return
+  }
+
   let owner
   try {
     owner = await getDb(c)
@@ -338,7 +351,7 @@ app.use('/admin/*', async (c, next) => {
   }
 
   // The passphrase is deliberately transitional: once a formal owner account
-  // exists, this route must wait for Phase 2 login authorization instead.
+  // exists, only that account's authenticated session may use admin routes.
   if (owner) {
     return c.json({ ok: false, error: 'owner login required' }, 401)
   }
