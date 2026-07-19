@@ -75,13 +75,30 @@ export function saveQuoteTheme(theme) {
 }
 
 // ── Bookmarks ─────────────────────────────────────────────
-export function getBookmarks() { return get('bookmarks', []) }
-export function saveBookmarks(ids) { set('bookmarks', ids) }
+function getBookmarksMap() {
+  const saved = get('bookmarks', {})
+  if (!Array.isArray(saved)) return saved && typeof saved === 'object' ? saved : {}
+
+  const at = new Date().toISOString()
+  const migrated = Object.fromEntries(saved.map(id => [id, { at }]))
+  set('bookmarks', migrated)
+  return migrated
+}
+
+export function getBookmarks() {
+  return Object.entries(getBookmarksMap())
+    .filter(([, item]) => item?.deleted !== true)
+    .sort(([, a], [, b]) => (a.at || '').localeCompare(b.at || ''))
+    .map(([id]) => Number(id))
+}
+
 export function toggleBookmark(id) {
-  const bm = getBookmarks()
-  const next = bm.includes(id) ? bm.filter(x => x !== id) : [...bm, id]
-  saveBookmarks(next)
-  return next
+  const bookmarks = getBookmarksMap()
+  const current = bookmarks[id]
+  const at = new Date().toISOString()
+  bookmarks[id] = current && current.deleted !== true ? { deleted: true, at } : { at }
+  set('bookmarks', bookmarks)
+  return getBookmarks()
 }
 
 // ── Notes ──────────────────────────────────────────────────
@@ -91,22 +108,35 @@ export function getNotes() { return get('notes', {}) }
 
 // ── Divinations (history) ──────────────────────────────────
 const MAX_DIVINATIONS = 200
-export function getDivinations() { return get('divinations', []) }
+export function getDivinationsRaw() { return get('divinations', []) }
+export function getDivinations() { return getDivinationsRaw().filter(d => d.deleted !== true) }
 export function saveDivination(entry) {
-  const list = getDivinations()
-  list.unshift({ ...entry, id: Date.now(), createdAt: new Date().toISOString() })
-  set('divinations', list.slice(0, MAX_DIVINATIONS))
+  const list = getDivinationsRaw()
+  const createdAt = new Date().toISOString()
+  list.unshift({ ...entry, id: Date.now(), createdAt, at: createdAt })
+
+  let activeCount = 0
+  const capped = list.filter((d) => {
+    if (d.deleted === true) return true
+    activeCount += 1
+    return activeCount <= MAX_DIVINATIONS
+  })
+  set('divinations', capped)
 }
 export function deleteDivination(id) {
-  set('divinations', getDivinations().filter(d => d.id !== id))
+  const at = new Date().toISOString()
+  const list = getDivinationsRaw().map(d => d.id === id ? { id, deleted: true, at } : d)
+  set('divinations', list)
 }
 export function saveDivinations(list) { set('divinations', list) }
 // 验占回填(v10 §2):outcome = { verdict: 'ying'|'partial'|'bu', note, recordedAt };旧条目无此字段视同待验
 export function setDivinationOutcome(id, verdict, note) {
-  const list = getDivinations()
-  const d = list.find(x => x.id === id)
+  const list = getDivinationsRaw()
+  const d = list.find(x => x.id === id && x.deleted !== true)
   if (!d) return
-  d.outcome = verdict ? { verdict, note: note || '', recordedAt: new Date().toISOString() } : null
+  const at = new Date().toISOString()
+  d.outcome = verdict ? { verdict, note: note || '', recordedAt: at } : null
+  d.at = verdict ? d.outcome.recordedAt : at
   set('divinations', list)
 }
 
@@ -114,24 +144,28 @@ export function setDivinationOutcome(id, verdict, note) {
 // 锚 key = corpus:slug:章:段(slug 全站唯一,不跨站碰撞)。dao 站 corpus 传 'dao'。
 function markKey(corpus, slug, ch, i) { return `${corpus}:${slug}:${ch}:${i}` }
 
-export function getCorpusMarks() { return get('corpusMarks', {}) }
-export function toggleCorpusMark(corpus, slug, ch, i, snippet) {
-  const m = getCorpusMarks()
-  const k = markKey(corpus, slug, ch, i)
-  if (m[k]) delete m[k]
-  else m[k] = { corpus, slug, ch, i, snippet: (snippet || '').slice(0, 60), at: new Date().toISOString() }
-  set('corpusMarks', m)
-  return m
+function withoutDeleted(items) {
+  return Object.fromEntries(Object.entries(items).filter(([, item]) => item?.deleted !== true))
 }
 
-export function getCorpusNotes() { return get('corpusNotes', {}) }
-export function saveCorpusNote(corpus, slug, ch, i, text, snippet) {
-  const n = getCorpusNotes()
+export function getCorpusMarks() { return withoutDeleted(get('corpusMarks', {})) }
+export function toggleCorpusMark(corpus, slug, ch, i, snippet) {
+  const m = get('corpusMarks', {})
   const k = markKey(corpus, slug, ch, i)
-  if (!text.trim()) delete n[k]
+  if (m[k] && m[k].deleted !== true) m[k] = { deleted: true, at: new Date().toISOString() }
+  else m[k] = { corpus, slug, ch, i, snippet: (snippet || '').slice(0, 60), at: new Date().toISOString() }
+  set('corpusMarks', m)
+  return withoutDeleted(m)
+}
+
+export function getCorpusNotes() { return withoutDeleted(get('corpusNotes', {})) }
+export function saveCorpusNote(corpus, slug, ch, i, text, snippet) {
+  const n = get('corpusNotes', {})
+  const k = markKey(corpus, slug, ch, i)
+  if (!text.trim()) n[k] = { deleted: true, at: new Date().toISOString() }
   else n[k] = { corpus, slug, ch, i, text, snippet: (snippet || '').slice(0, 60), at: new Date().toISOString() }
   set('corpusNotes', n)
-  return n
+  return withoutDeleted(n)
 }
 
 // ── Reading progress ──────────────────────────────────────
@@ -203,8 +237,8 @@ export function markDailyDebateSeen(day) { set('dailyDebateSeen', day) }
 
 // 研读足迹统计(#149)——收藏/批注总数 + 是否曾导出备份。供「我的」里程碑文案与备份提示。
 export function getStudyStats() {
-  const marks = Object.keys(get('corpusMarks', {})).length
-  const notes = Object.keys(get('corpusNotes', {})).length
+  const marks = Object.keys(getCorpusMarks()).length
+  const notes = Object.keys(getCorpusNotes()).length
   return { marks, notes, total: marks + notes, exported: !!get('lastExportAt') }
 }
 

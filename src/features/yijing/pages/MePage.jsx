@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import HexagramCard from '../components/HexagramCard.jsx'
 import EmptyState from '../components/EmptyState.jsx'
-import { getBookmarks, getNotes, getCorpusMarks, getCorpusNotes, getDivinations, deleteDivination, saveDivinations, setDivinationOutcome, exportData, importData, clearAllData, saveSettings, getProgress } from '../storage.js'
+import { getBookmarks, getNotes, getCorpusMarks, getCorpusNotes, getDivinations, getDivinationsRaw, deleteDivination, saveDivinations, setDivinationOutcome, exportData, importData, clearAllData, saveSettings, getProgress } from '../storage.js'
 import { getHexagram, hexagramById } from '../data.js'
 import { useSettings } from '../SettingsContext.jsx'
 import { lineTitle } from '../engine/transforms.js'
@@ -111,9 +111,12 @@ export default function MePage() {
 
   function undoDelete() {
     if (!deleteUndo) return
-    const list = getDivinations()
-    list.push(deleteUndo)
-    list.sort((a, b) => (b.id || 0) - (a.id || 0))  // 按 id(=Date.now)排序,旧条目无 createdAt 也稳
+    const list = getDivinationsRaw()
+    const index = list.findIndex(d => d.id === deleteUndo.id)
+    if (index === -1) return
+    const deletedAt = Date.parse(list[index].at || '')
+    const restoredAt = new Date(Math.max(Date.now(), Number.isNaN(deletedAt) ? 0 : deletedAt + 1)).toISOString()
+    list[index] = { ...deleteUndo, at: restoredAt }
     saveDivinations(list)
     refreshDivinations()
     setDeleteUndo(null)
