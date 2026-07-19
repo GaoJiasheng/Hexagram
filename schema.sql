@@ -10,8 +10,12 @@ CREATE TABLE users (
     length(avatar_seed) BETWEEN 1 AND 128
   ),
   created_at INTEGER NOT NULL DEFAULT (unixepoch() * 1000),
-  is_owner INTEGER NOT NULL DEFAULT 0 CHECK (is_owner IN (0, 1))
+  is_owner INTEGER NOT NULL DEFAULT 0 CHECK (is_owner IN (0, 1)),
+  email TEXT
 );
+
+CREATE UNIQUE INDEX idx_users_email
+  ON users (email) WHERE email IS NOT NULL;
 
 CREATE TABLE identities (
   user_id TEXT NOT NULL,
@@ -20,10 +24,22 @@ CREATE TABLE identities (
   ),
   provider_uid TEXT NOT NULL CHECK (length(provider_uid) > 0),
   created_at INTEGER NOT NULL DEFAULT (unixepoch() * 1000),
+  secret TEXT,
   PRIMARY KEY (provider, provider_uid),
   UNIQUE (user_id, provider),
   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
+
+CREATE TABLE sessions (
+  id TEXT NOT NULL PRIMARY KEY,
+  user_id TEXT NOT NULL,
+  created_at INTEGER NOT NULL DEFAULT (unixepoch() * 1000),
+  expires_at INTEGER NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE INDEX idx_sessions_user
+  ON sessions (user_id);
 
 CREATE TABLE auth_codes (
   target TEXT NOT NULL PRIMARY KEY CHECK (length(target) > 0),

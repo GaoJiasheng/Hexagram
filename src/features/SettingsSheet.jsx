@@ -1,12 +1,16 @@
 import { useState, useEffect } from 'react'
 import { useSettings } from './yijing/SettingsContext.jsx'
 import { exportData, importData, clearAllData } from './yijing/storage.js'
+import { useAuth } from './auth/AuthContext.jsx'
+import PixelAvatar from './auth/PixelAvatar.jsx'
 
 // 全站设置浮层(Tier 0 · 0-2/0-7)——主题/译文/字号 + 数据导出/导入/清除 + 隐私说明。
 // 任何分站点 nav 齿轮就地打开,不再把读经站用户甩进易经 /me。数据变更后刷新页面以全站生效。
 export default function SettingsSheet({ open, onClose }) {
   const { settings, setSettings } = useSettings()
+  const { user, loading: authLoading, enabled: authEnabled, openAuth, logout } = useAuth()
   const [clearConfirm, setClearConfirm] = useState('')
+  const [accountError, setAccountError] = useState('')
 
   // 锁背景滚动 + Esc 关闭 + 关闭还原焦点
   useEffect(() => {
@@ -58,6 +62,15 @@ export default function SettingsSheet({ open, onClose }) {
     window.location.reload()
   }
 
+  async function handleLogout() {
+    setAccountError('')
+    try {
+      await logout()
+    } catch (error) {
+      setAccountError(error.message)
+    }
+  }
+
   return (
     <div className="settings-overlay" onClick={(e) => { if (e.target === e.currentTarget) onClose() }}>
       <div className="settings-sheet" role="dialog" aria-modal="true" aria-label="设置">
@@ -65,6 +78,33 @@ export default function SettingsSheet({ open, onClose }) {
           <span className="settings-sheet__title">设置</span>
           <button className="search-palette__close" onClick={onClose} aria-label="关闭">Esc</button>
         </div>
+
+        {authEnabled && (
+          <div className="settings-section settings-account">
+            <h3 className="settings-section__title">账号</h3>
+            {authLoading ? (
+              <p className="settings-privacy">正在确认登录状态…</p>
+            ) : user ? (
+              <div className="settings-account__user">
+                <PixelAvatar seed={user.avatarSeed} size={38} />
+                <div className="settings-account__identity">
+                  <strong>{user.displayName}</strong>
+                  <span>{user.email}</span>
+                </div>
+                <button className="btn-text settings-account__logout" onClick={handleLogout}>退出登录</button>
+              </div>
+            ) : (
+              <div className="settings-account__guest">
+                <p className="settings-privacy">登录后可在云端保存足迹、参与评论；不登录不影响浏览。</p>
+                <div className="settings-account__actions">
+                  <button className="btn btn--secondary" onClick={() => openAuth('login')}>登录</button>
+                  <button className="btn btn--secondary" onClick={() => openAuth('register')}>注册</button>
+                </div>
+              </div>
+            )}
+            {accountError && <p className="auth-sheet__error" role="alert">{accountError}</p>}
+          </div>
+        )}
 
         <div className="settings-section">
           <h3 className="settings-section__title">主题</h3>

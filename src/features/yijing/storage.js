@@ -25,6 +25,13 @@ function remove(k) {
   localStorage.removeItem(key(k))
 }
 
+// ── Auth hint ─────────────────────────────────────────────
+// 只提示浏览器曾登录过,让 AuthProvider 决定是否请求 /api/me。它不是用户数据,
+// 不参与导出/导入/「清空本地数据」,退出登录时单独移除。
+export function hasAuthHint() { return get('authHint', false) === true }
+export function saveAuthHint() { return set('authHint', true) }
+export function clearAuthHint() { remove('authHint') }
+
 // ── Settings ─────────────────────────────────────────────
 export const DEFAULT_SETTINGS = {
   theme: 'system', // 'light' | 'dark' | 'system'

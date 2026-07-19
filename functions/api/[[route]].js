@@ -1,9 +1,15 @@
 import { Hono } from 'hono'
 import { handle } from 'hono/cloudflare-pages'
+import { getCookie, setCookie } from 'hono/cookie'
 
 const MAX_BODY_BYTES = 4096
 const ADMIN_PASSPHRASE_HEADER = 'X-Admin-Passphrase'
 const DAY_MS = 24 * 60 * 60 * 1000
+const SESSION_COOKIE = 'gx_session'
+const SESSION_TTL_MS = 30 * DAY_MS
+const SESSION_TTL_SECONDS = SESSION_TTL_MS / 1000
+const PBKDF2_ITERATIONS = 100_000
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 // Pages Functions receives the original /api/* URL, so keep the public prefix
 // here and define the individual endpoints relative to it.
@@ -33,6 +39,132 @@ function constantTimeEqual(left, right) {
     mismatch |= (left.charCodeAt(index) || 0) ^ (right.charCodeAt(index) || 0)
   }
   return mismatch === 0
+}
+
+function bytesToBase64Url(bytes) {
+  const binary = String.fromCharCode(...bytes)
+  return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '')
+}
+
+function base64UrlToBytes(value) {
+  const padded = value.replace(/-/g, '+').replace(/_/g, '/') + '='.repeat((4 - (value.length % 4)) % 4)
+  const binary = atob(padded)
+  return Uint8Array.from(binary, (character) => character.charCodeAt(0))
+}
+
+async function sha256Hex(text) {
+  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text))
+  return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('')
+}
+
+async function derivePassword(password, salt, iterations) {
+  const key = await crypto.subtle.importKey(
+    'raw',
+    new TextEncoder().encode(password),
+    'PBKDF2',
+    false,
+    ['deriveBits'],
+  )
+  const bits = await crypto.subtle.deriveBits(
+    { name: 'PBKDF2', hash: 'SHA-256', salt, iterations },
+    key,
+    256,
+  )
+  return new Uint8Array(bits)
+}
+
+async function hashPassword(password) {
+  const salt = crypto.getRandomValues(new Uint8Array(16))
+  const derived = await derivePassword(password, salt, PBKDF2_ITERATIONS)
+  return `pbkdf2:${PBKDF2_ITERATIONS}:${bytesToBase64Url(salt)}:${bytesToBase64Url(derived)}`
+}
+
+async function verifyPassword(password, stored) {
+  if (typeof stored !== 'string') return false
+  const [algorithm, rawIterations, saltValue, derivedValue, extra] = stored.split(':')
+  const iterations = Number(rawIterations)
+  if (
+    algorithm !== 'pbkdf2'
+    || extra !== undefined
+    || !Number.isInteger(iterations)
+    || iterations < 1
+    || iterations > 1_000_000
+    || !/^[A-Za-z0-9_-]+$/.test(saltValue || '')
+    || !/^[A-Za-z0-9_-]+$/.test(derivedValue || '')
+  ) return false
+
+  try {
+    const derived = await derivePassword(password, base64UrlToBytes(saltValue), iterations)
+    return constantTimeEqual(bytesToBase64Url(derived), derivedValue)
+  } catch {
+    return false
+  }
+}
+
+async function createSession(db, userId) {
+  const raw = bytesToBase64Url(crypto.getRandomValues(new Uint8Array(32)))
+  await db
+    .prepare('INSERT INTO sessions (id, user_id, expires_at) VALUES (?, ?, ?)')
+    .bind(await sha256Hex(raw), userId, Date.now() + SESSION_TTL_MS)
+    .run()
+  return raw
+}
+
+function setSessionCookie(c, raw) {
+  setCookie(c, SESSION_COOKIE, raw, {
+    httpOnly: true,
+    secure: true,
+    sameSite: 'Lax',
+    path: '/',
+    maxAge: SESSION_TTL_SECONDS,
+  })
+}
+
+function clearSessionCookie(c) {
+  setCookie(c, SESSION_COOKIE, '', {
+    httpOnly: true,
+    secure: true,
+    sameSite: 'Lax',
+    path: '/',
+    maxAge: 0,
+  })
+}
+
+function publicUser(row) {
+  return {
+    id: row.id,
+    displayName: row.display_name,
+    avatarSeed: row.avatar_seed,
+    avatarUrl: null,
+    email: row.email,
+    isOwner: !!row.is_owner,
+  }
+}
+
+async function getSessionUser(c) {
+  const raw = getCookie(c, SESSION_COOKIE)
+  if (!raw) return null
+
+  const db = getDb(c)
+  const sessionId = await sha256Hex(raw)
+  const row = await db.prepare(`
+    SELECT s.expires_at, u.id, u.display_name, u.avatar_seed, u.email, u.is_owner
+    FROM sessions s
+    JOIN users u ON u.id = s.user_id
+    WHERE s.id = ?
+  `).bind(sessionId).first()
+  if (!row) return null
+  if (Number(row.expires_at) <= Date.now()) {
+    await db.prepare('DELETE FROM sessions WHERE id = ?').bind(sessionId).run()
+    return null
+  }
+  return row
+}
+
+async function requireUser(c) {
+  const user = await getSessionUser(c)
+  if (!user) throw new RequestError(401, 'login required')
+  return user
 }
 
 function resultRows(result) {
@@ -77,6 +209,34 @@ function optionalText(value, name, maxLength) {
     throw new RequestError(400, `invalid ${name}`)
   }
   return value
+}
+
+function normalizeEmail(value) {
+  if (typeof value !== 'string') throw new RequestError(400, '邮箱格式不正确')
+  const email = value.trim().toLowerCase()
+  if (email.length > 254 || !EMAIL_RE.test(email)) {
+    throw new RequestError(400, '邮箱格式不正确')
+  }
+  return email
+}
+
+function validateRegister(body) {
+  const email = normalizeEmail(body.email)
+  if (typeof body.password !== 'string' || body.password.length < 8 || body.password.length > 72) {
+    throw new RequestError(400, '密码长度须为 8–72 位')
+  }
+  if (body.password2 !== body.password) {
+    throw new RequestError(400, '两次输入的密码不一致')
+  }
+  return { email, password: body.password }
+}
+
+function validateLogin(body) {
+  const email = normalizeEmail(body.email)
+  if (typeof body.password !== 'string' || body.password.length < 1 || body.password.length > 72) {
+    throw new RequestError(401, '邮箱或密码不正确')
+  }
+  return { email, password: body.password }
 }
 
 function validateBeat(body) {
@@ -145,6 +305,132 @@ app.use('/admin/*', async (c, next) => {
   }
 
   await next()
+})
+
+app.post('/auth/register', async (c) => {
+  try {
+    const { email, password } = validateRegister(await readJsonBody(c))
+    const db = getDb(c)
+    const existingIdentity = await db
+      .prepare("SELECT 1 AS found FROM identities WHERE provider = 'email' AND provider_uid = ? LIMIT 1")
+      .bind(email)
+      .first()
+    if (existingIdentity) {
+      throw new RequestError(409, '该邮箱已注册,请直接登录')
+    }
+
+    const existingUser = await db
+      .prepare('SELECT 1 AS found FROM users WHERE email = ? LIMIT 1')
+      .bind(email)
+      .first()
+    if (existingUser) {
+      throw new RequestError(409, '该邮箱已通过 Google 登录创建账号,请改用 Google 登录')
+    }
+
+    const id = crypto.randomUUID()
+    const displayName = email.split('@')[0].slice(0, 80) || '读者'
+    const avatarSeed = crypto.randomUUID()
+    const secret = await hashPassword(password)
+    await db.batch([
+      db.prepare(`
+        INSERT INTO users (id, display_name, avatar_seed, email)
+        VALUES (?, ?, ?, ?)
+      `).bind(id, displayName, avatarSeed, email),
+      db.prepare(`
+        INSERT INTO identities (user_id, provider, provider_uid, secret)
+        VALUES (?, 'email', ?, ?)
+      `).bind(id, email, secret),
+    ])
+
+    const rawSession = await createSession(db, id)
+    setSessionCookie(c, rawSession)
+    return c.json({
+      ok: true,
+      user: publicUser({
+        id,
+        display_name: displayName,
+        avatar_seed: avatarSeed,
+        email,
+        is_owner: 0,
+      }),
+    }, 201)
+  } catch (error) {
+    if (error instanceof RequestError) {
+      return c.json({ ok: false, error: error.message }, error.status)
+    }
+    console.error('Email registration failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
+app.post('/auth/login', async (c) => {
+  try {
+    const { email, password } = validateLogin(await readJsonBody(c))
+    const db = getDb(c)
+    const row = await db.prepare(`
+      SELECT i.secret, u.id, u.display_name, u.avatar_seed, u.email, u.is_owner
+      FROM identities i
+      JOIN users u ON u.id = i.user_id
+      WHERE i.provider = 'email' AND i.provider_uid = ?
+      LIMIT 1
+    `).bind(email).first()
+
+    if (!row) {
+      const googleUser = await db
+        .prepare('SELECT 1 AS found FROM users WHERE email = ? LIMIT 1')
+        .bind(email)
+        .first()
+      if (googleUser) {
+        throw new RequestError(401, '该邮箱账号通过 Google 创建,请用 Google 登录')
+      }
+      throw new RequestError(401, '邮箱或密码不正确')
+    }
+
+    if (!await verifyPassword(password, row.secret)) {
+      throw new RequestError(401, '邮箱或密码不正确')
+    }
+
+    await db
+      .prepare('DELETE FROM sessions WHERE user_id = ? AND expires_at < ?')
+      .bind(row.id, Date.now())
+      .run()
+    const rawSession = await createSession(db, row.id)
+    setSessionCookie(c, rawSession)
+    return c.json({ ok: true, user: publicUser(row) })
+  } catch (error) {
+    if (error instanceof RequestError) {
+      return c.json({ ok: false, error: error.message }, error.status)
+    }
+    console.error('Email login failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
+app.post('/auth/logout', async (c) => {
+  clearSessionCookie(c)
+  try {
+    const raw = getCookie(c, SESSION_COOKIE)
+    if (raw) {
+      await getDb(c)
+        .prepare('DELETE FROM sessions WHERE id = ?')
+        .bind(await sha256Hex(raw))
+        .run()
+    }
+    return c.body(null, 204)
+  } catch (error) {
+    console.error('Session logout failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
+app.get('/me', async (c) => {
+  try {
+    const row = await getSessionUser(c)
+    return c.json({ user: row ? publicUser(row) : null })
+  } catch (error) {
+    console.error('Session lookup failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
 })
 
 app.get('/health', async (c) => {

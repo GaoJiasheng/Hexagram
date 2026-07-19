@@ -1,6 +1,7 @@
 import { BrowserRouter, NavLink, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import { useState, useEffect, useCallback, useRef, lazy, Suspense } from 'react'
 import { SettingsProvider } from './features/yijing/SettingsContext.jsx'
+import { AuthProvider } from './features/auth/AuthContext.jsx'
 import ErrorBoundary from './features/ErrorBoundary.jsx'
 import { siteForPath, activeGroup, sitesInGroup, HOST_GROUPS, MASTER_PORTAL_PATH } from './sites/registry.js'
 import { registerBookShortcut } from './native/appShortcuts.js'
@@ -435,7 +436,9 @@ export default function App() {
   return (
     <BrowserRouter>
       <SettingsProvider>
-        <AppContent />
+        <AuthProvider>
+          <AppContent />
+        </AuthProvider>
       </SettingsProvider>
     </BrowserRouter>
   )
