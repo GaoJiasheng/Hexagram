@@ -7,6 +7,7 @@ import {
   resolveGoogleAccount,
   validateGoogleIdToken,
 } from '../../server/google-auth.js'
+import { sendCommentNotification } from '../../server/comment-notification.js'
 import {
   mergeCollectionEntry,
   mergeDivinations,
@@ -789,16 +790,19 @@ app.post('/comments', async (c) => {
       VALUES (?, ?, ?, ?, ?, ?, ?)
     `).bind(id, user.id, anchor.corpus, anchor.slug, anchor.chapter, body, now).run()
 
+    const comment = commentItem({
+      id,
+      body,
+      created_at: now,
+      user_id: user.id,
+      display_name: user.display_name,
+      avatar_seed: user.avatar_seed,
+    }, user)
+    c.executionCtx.waitUntil(sendCommentNotification(c.env, comment, user, anchor))
+
     return c.json({
       ok: true,
-      comment: commentItem({
-        id,
-        body,
-        created_at: now,
-        user_id: user.id,
-        display_name: user.display_name,
-        avatar_seed: user.avatar_seed,
-      }, user),
+      comment,
     }, 201)
   } catch (error) {
     if (error instanceof RequestError) {
