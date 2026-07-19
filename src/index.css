@@ -2299,6 +2299,10 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .auth-sheet__error { margin: 0; color: var(--cinnabar); font-size: 0.78rem; line-height: 1.6; }
 .auth-sheet__submit { align-self: flex-start; min-width: 112px; padding: 8px 18px; border: 1px solid var(--cinnabar); border-radius: 4px; background: var(--cinnabar); color: var(--paper); font-family: var(--font-serif); font-size: 0.9rem; }
 .auth-sheet__submit:disabled { cursor: wait; opacity: 0.62; }
+.auth-sheet__oauth { display: flex; flex-direction: column; gap: 14px; margin-top: 18px; }
+.auth-sheet__divider { display: flex; align-items: center; gap: 10px; color: var(--ink-faint); font-size: 0.72rem; }
+.auth-sheet__divider::before, .auth-sheet__divider::after { content: ''; flex: 1; border-top: 1px solid var(--line); }
+.auth-sheet__google { align-self: stretch; background: transparent; color: var(--cinnabar); }
 .pixel-avatar { flex: none; border: 1px solid var(--line); border-radius: 4px; background: var(--paper-raised); }
 
 .data-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }

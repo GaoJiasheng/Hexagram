@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { saveAuthHint } from '../yijing/storage.js'
 import { useAuth } from './AuthContext.jsx'
 
 export default function AuthSheet({ open, initialMode = 'login', onClose }) {
@@ -62,6 +63,11 @@ export default function AuthSheet({ open, initialMode = 'login', onClose }) {
     }
   }
 
+  function handleGoogleLogin() {
+    saveAuthHint()
+    window.location.href = `/api/auth/google/start?return_to=${encodeURIComponent(window.location.pathname)}`
+  }
+
   return (
     <div className="settings-overlay auth-overlay" onClick={(event) => { if (event.target === event.currentTarget && !submitting) onClose() }}>
       <div className="settings-sheet auth-sheet" role="dialog" aria-modal="true" aria-label="登录观象">
@@ -98,6 +104,14 @@ export default function AuthSheet({ open, initialMode = 'login', onClose }) {
             {submitting ? '请稍候…' : mode === 'register' ? '注册并登录' : '登录'}
           </button>
         </form>
+        {mode === 'login' && (
+          <div className="auth-sheet__oauth">
+            <div className="auth-sheet__divider"><span>或</span></div>
+            <button className="auth-sheet__submit auth-sheet__google" type="button" onClick={handleGoogleLogin} disabled={submitting}>
+              用 Google 登录
+            </button>
+          </div>
+        )}
       </div>
     </div>
   )

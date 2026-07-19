@@ -1,11 +1,18 @@
 import { Hono } from 'hono'
 import { handle } from 'hono/cloudflare-pages'
 import { getCookie, setCookie } from 'hono/cookie'
+import {
+  GoogleIdTokenError,
+  normalizeOAuthReturnTo,
+  resolveGoogleAccount,
+  validateGoogleIdToken,
+} from '../../server/google-auth.js'
 
 const MAX_BODY_BYTES = 4096
 const ADMIN_PASSPHRASE_HEADER = 'X-Admin-Passphrase'
 const DAY_MS = 24 * 60 * 60 * 1000
 const SESSION_COOKIE = 'gx_session'
+const OAUTH_COOKIE = 'gx_oauth'
 const SESSION_TTL_MS = 30 * DAY_MS
 const SESSION_TTL_SECONDS = SESSION_TTL_MS / 1000
 const PBKDF2_ITERATIONS = 100_000
@@ -128,6 +135,44 @@ function clearSessionCookie(c) {
     path: '/',
     maxAge: 0,
   })
+}
+
+function clearOAuthCookie(c) {
+  setCookie(c, OAUTH_COOKIE, '', {
+    httpOnly: true,
+    secure: true,
+    sameSite: 'Lax',
+    path: '/',
+    maxAge: 0,
+  })
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
+
+function googleAuthErrorPage(c, status, message, requestedReturnTo = '/') {
+  const returnTo = normalizeOAuthReturnTo(requestedReturnTo)
+  return c.html(`<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Google 登录未完成 · 观象</title>
+</head>
+<body style="margin:0;background:#faf6ec;color:#2b2620;font-family:system-ui,sans-serif">
+  <main style="box-sizing:border-box;max-width:34rem;margin:12vh auto;padding:2rem">
+    <h1 style="font-size:1.25rem">Google 登录未完成</h1>
+    <p style="line-height:1.8">${escapeHtml(message)}</p>
+    <a href="${escapeHtml(returnTo)}" style="color:#a52a2a">返回观象</a>
+  </main>
+</body>
+</html>`, status)
 }
 
 function publicUser(row) {
@@ -305,6 +350,110 @@ app.use('/admin/*', async (c, next) => {
   }
 
   await next()
+})
+
+app.get('/auth/google/start', (c) => {
+  const returnTo = normalizeOAuthReturnTo(c.req.query('return_to'))
+  const state = crypto.randomUUID()
+  setCookie(c, OAUTH_COOKIE, JSON.stringify({ state, returnTo }), {
+    httpOnly: true,
+    secure: true,
+    sameSite: 'Lax',
+    path: '/',
+    maxAge: 600,
+  })
+
+  const redirectUri = `${new URL(c.req.url).origin}/api/auth/google/callback`
+  const authorizationUrl = new URL('https://accounts.google.com/o/oauth2/v2/auth')
+  authorizationUrl.search = new URLSearchParams({
+    client_id: c.env?.GOOGLE_CLIENT_ID,
+    redirect_uri: redirectUri,
+    response_type: 'code',
+    scope: 'openid email',
+    state,
+    prompt: 'select_account',
+  }).toString()
+  return c.redirect(authorizationUrl.toString(), 302)
+})
+
+app.get('/auth/google/callback', async (c) => {
+  const rawAttempt = getCookie(c, OAUTH_COOKIE)
+  clearOAuthCookie(c)
+
+  let attempt = null
+  if (rawAttempt) {
+    try {
+      const parsed = JSON.parse(rawAttempt)
+      if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
+        attempt = {
+          state: typeof parsed.state === 'string' ? parsed.state : '',
+          returnTo: normalizeOAuthReturnTo(parsed.returnTo),
+        }
+      }
+    } catch {
+      // The one-time cookie is untrusted input; malformed data is handled like
+      // a missing/mismatched OAuth attempt below.
+    }
+  }
+
+  const returnTo = attempt?.returnTo || '/'
+  const state = c.req.query('state')
+  if (!attempt?.state || !state || attempt.state !== state) {
+    return googleAuthErrorPage(c, 400, '登录请求已失效或校验失败,请返回后重试。', returnTo)
+  }
+
+  const code = c.req.query('code')
+  if (!code) {
+    return googleAuthErrorPage(c, 400, 'Google 没有返回授权码,请返回后重试。', returnTo)
+  }
+
+  try {
+    const redirectUri = `${new URL(c.req.url).origin}/api/auth/google/callback`
+    let tokenResponse
+    try {
+      tokenResponse = await fetch('https://oauth2.googleapis.com/token', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          code,
+          client_id: c.env?.GOOGLE_CLIENT_ID,
+          client_secret: c.env?.GOOGLE_CLIENT_SECRET,
+          redirect_uri: redirectUri,
+          grant_type: 'authorization_code',
+        }),
+      })
+    } catch {
+      throw new RequestError(502, '暂时无法连接 Google 登录服务,请稍后重试')
+    }
+
+    if (!tokenResponse.ok) {
+      throw new RequestError(502, 'Google 授权码换取失败,请返回后重试')
+    }
+    const tokenData = await tokenResponse.json().catch(() => null)
+    if (!tokenData?.id_token) {
+      throw new RequestError(502, 'Google 未返回身份凭证,请返回后重试')
+    }
+
+    const payload = validateGoogleIdToken(tokenData.id_token, c.env?.GOOGLE_CLIENT_ID)
+    const sub = payload.sub
+    const email = normalizeEmail(payload.email)
+    const db = getDb(c)
+    const user = await resolveGoogleAccount(db, { sub, email })
+
+    await db
+      .prepare('DELETE FROM sessions WHERE user_id = ? AND expires_at < ?')
+      .bind(user.id, Date.now())
+      .run()
+    const rawSession = await createSession(db, user.id)
+    setSessionCookie(c, rawSession)
+    return c.redirect(returnTo, 302)
+  } catch (error) {
+    if (error instanceof RequestError || error instanceof GoogleIdTokenError) {
+      return googleAuthErrorPage(c, error.status, error.message, returnTo)
+    }
+    console.error('Google OAuth callback failed', error)
+    return googleAuthErrorPage(c, 503, '登录服务暂时不可用,请稍后重试。', returnTo)
+  }
 })
 
 app.post('/auth/register', async (c) => {
