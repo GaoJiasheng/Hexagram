@@ -949,7 +949,39 @@ function ChrysanthemumBlade() {
   )
 }
 
+// 母题:融化的方块——一个尚存棱角的方形轮廓,下缘已开始滴融、崩解成波纹与水珠
+// (呼应鲍曼"固态现代性"的坚固建制,如何在"液态现代性"里持续融化、流动、不再定形)。
+function LiquidMelt() {
+  return (
+    <g fill="none">
+      <path d="M90,248 L90,288 M90,248 L150,248 M150,248 L150,288" stroke={CREAM} strokeOpacity="0.45" strokeWidth="1.4" />
+      <path d="M90,288 Q99,295 95,304 Q103,309 99,320" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.2" />
+      <path d="M150,288 Q141,295 145,304 Q137,309 141,320" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.2" />
+      <path d="M56,344 Q78,335 100,344 Q122,353 144,344 Q166,335 188,344 Q210,353 232,344" stroke={CINNABAR} strokeWidth="1.7" />
+      <path d="M60,366 Q82,359 104,366 Q126,373 148,366 Q170,359 192,366" stroke={CREAM} strokeOpacity="0.32" strokeWidth="1.1" />
+      <circle cx="110" cy="306" r="2.6" fill={CREAM} fillOpacity="0.5" />
+      <circle cx="130" cy="314" r="2" fill={CREAM} fillOpacity="0.38" />
+    </g>
+  )
+}
+
+// 母题:面纱与双重意识——两枚交叠的圆(一体两魂,彼此映照又各自独立),
+// 面前垂下几缕半透的纱线(呼应杜波依斯"面纱"的隐喻与"双重意识"的核心命题)。
+function VeilTwoness() {
+  return (
+    <g fill="none">
+      <circle cx="98" cy="292" r="32" stroke={CREAM} strokeOpacity="0.42" strokeWidth="1.3" />
+      <circle cx="140" cy="292" r="32" stroke={CINNABAR} strokeWidth="1.6" />
+      <path d="M54,268 Q120,259 194,270" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1" />
+      <path d="M52,286 Q120,277 196,288" stroke={CREAM} strokeOpacity="0.34" strokeWidth="1" />
+      <path d="M54,304 Q120,295 194,306" stroke={CREAM} strokeOpacity="0.22" strokeWidth="1" />
+    </g>
+  )
+}
+
 function Motif({ motif }) {
+  if (motif === 'liquid-melt') return <LiquidMelt />
+  if (motif === 'veil-twoness') return <VeilTwoness />
   if (motif === 'two-mountains') return <TwoMountains />
   if (motif === 'two-systems') return <TwoSystems />
   if (motif === 'weave') return <Weave />
