@@ -147,7 +147,8 @@ function parsePoemPage(wikitext, warnings, pageName, sectionFilter = null) {
   let controlLevel = null // 记录使 active 生效的标题层级,子级标题(层级更深)不重判、继承父级状态
   const poemName = t2s(pageName.slice(pageName.indexOf('/') + 1))
   const selfTitleRe = new RegExp(`^《${reEscape(poemName)}》`)
-  for (const raw of wikitext.split('\n')) {
+  // 长短经等篇内含 {{*|议曰：…}} 大段夹注(可能跨行),需先整段剔除(同战国策处理);诗经无此标记,no-op。
+  for (const raw of stripHeaderBlock(stripStarTemplates(wikitext)).split('\n')) {
     if (STOP_RE.test(raw)) break
     const h = raw.trim().match(/^(=+)\s*(.+?)\s*=+$/)
     if (h) {

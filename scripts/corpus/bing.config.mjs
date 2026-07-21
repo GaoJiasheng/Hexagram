@@ -12,5 +12,7 @@ export const BOOKS = [
   { slug: 'sanlue', title: '三略', pages: ['三略'], splitHeadings: true, exactChapters: 3 },
   // 武经七书补全(扩展):六韬单页 ==卷题==/===篇题=== 二级,parsePageChapters 丢无正文卷题→60 篇。
   { slug: 'liutao', title: '六韬', pages: ['六韜'], splitHeadings: true, dropChapterRe: '^(文韬|武韬|龙韬|虎韬|豹韬|犬韬)$', exactChapters: 60 },
-  // 李卫公问对:维基子页 /卷下空缺(只卷上/卷中有文),底本不全,待另寻全本后再收。
+  // 李卫公问对(武经七书最后一部,补全):此前维基 /卷下 空缺已复核——现三卷(卷上/卷中/卷下)俱全,
+  // 无 == 分篇标题,3 子页各一章(默认多页各一章)。
+  { slug: 'weigongwendui', title: '李卫公问对', pages: ['唐李問對/卷上', '唐李問對/卷中', '唐李問對/卷下'], exactChapters: 3 },
 ]

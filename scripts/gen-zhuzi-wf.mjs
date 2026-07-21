@@ -11,6 +11,8 @@ const BOOKS = [
   ['zong', 'guiguzi'], ['zong', 'zhanguoce'],
   ['zhongyi', 'suwen'], ['zhongyi', 'lingshu'], ['zhongyi', 'shanghanlun'], ['zhongyi', 'bencaojing'], ['zhongyi', 'jinkui'], ['zhongyi', 'nanjing'],
   ['moulue', 'luozhijing'], ['moulue', 'rongkujian'], ['moulue', 'quanmou'], ['moulue', 'taohuishu'], ['moulue', 'zhixue'],
+  ['moulue', 'changduanjing'], ['moulue', 'caigentan'], ['moulue', 'weiluyehua'], ['moulue', 'xiaochuangyouji'],
+  ['bing', 'weigongwendui'],
   ['dao', 'zhuangzi-waipian'], ['dao', 'zhuangzi-zapian'], ['dao', 'liezi'], ['dao', 'wenzi'], ['dao', 'huangting'],
   ['fo', 'yijiaojing'], ['fo', 'badaren'], ['fo', 'amituojing'], ['fo', 'xinxinming'], ['fo', 'zhengdaoge'], ['fo', 'weimojie'],
   ['xin', 'daxuewen'],
@@ -59,14 +61,15 @@ const SCHEMA = {
 
 const UNITS = ${JSON.stringify(units, null, 0)}
 
-const CN = { hanfeizi: '韩非子', shangjunshu: '商君书', shenzi: '慎子', yinwenzi: '尹文子', wenzi: '文子', mozi: '墨子', sunzi: '孙子兵法', wuzi: '吴子', simafa: '司马法', weiliaozi: '尉缭子', sanlue: '三略', guiguzi: '鬼谷子', zhanguoce: '战国策', suwen: '黄帝内经·素问', lingshu: '黄帝内经·灵枢', shanghanlun: '伤寒论', bencaojing: '神农本草经', luozhijing: '罗织经', rongkujian: '小人经', quanmou: '权谋术', taohuishu: '韬晦术', zhixue: '止学', liutao: '六韬', jinkui: '金匮要略', nanjing: '难经', 'zhuangzi-waipian': '庄子外篇', 'zhuangzi-zapian': '庄子杂篇', liezi: '列子', yijiaojing: '佛遗教经', badaren: '八大人觉经', amituojing: '阿弥陀经', xinxinming: '信心铭', zhengdaoge: '永嘉证道歌', daxuewen: '大学问', xunzi: '荀子', yanshi: '颜氏家训', jinsilu: '近思录', weimojie: '维摩诘经', huangting: '黄庭内景经', shijing: '诗经', wuzhenpian: '悟真篇' }
+const CN = { hanfeizi: '韩非子', shangjunshu: '商君书', shenzi: '慎子', yinwenzi: '尹文子', wenzi: '文子', mozi: '墨子', sunzi: '孙子兵法', wuzi: '吴子', simafa: '司马法', weiliaozi: '尉缭子', sanlue: '三略', guiguzi: '鬼谷子', zhanguoce: '战国策', suwen: '黄帝内经·素问', lingshu: '黄帝内经·灵枢', shanghanlun: '伤寒论', bencaojing: '神农本草经', luozhijing: '罗织经', rongkujian: '小人经', quanmou: '权谋术', taohuishu: '韬晦术', zhixue: '止学', liutao: '六韬', jinkui: '金匮要略', nanjing: '难经', 'zhuangzi-waipian': '庄子外篇', 'zhuangzi-zapian': '庄子杂篇', liezi: '列子', yijiaojing: '佛遗教经', badaren: '八大人觉经', amituojing: '阿弥陀经', xinxinming: '信心铭', zhengdaoge: '永嘉证道歌', daxuewen: '大学问', xunzi: '荀子', yanshi: '颜氏家训', jinsilu: '近思录', weimojie: '维摩诘经', huangting: '黄庭内景经', shijing: '诗经', wuzhenpian: '悟真篇',
+  changduanjing: '长短经', caigentan: '菜根谭', weiluyehua: '围炉夜话', xiaochuangyouji: '小窗幽记', weigongwendui: '李卫公问对' }
 const REF = {
   fa: '陈奇猷《韩非子集释》、王先慎《韩非子集解》、蒋礼鸿《商君书锥指》',
   mo: '孙诒让《墨子间诂》、吴毓江《墨子校注》',
   bing: '曹操等十一家注《孙子》、施子美《武经七书讲义》',
   zong: '许富宏《鬼谷子集校集注》、俞棪《鬼谷子新注》',
   zhongyi: '王冰次注《素问》、张介宾《类经》、张志聪《黄帝内经集注》;成无己《注解伤寒论》;孙星衍辑《神农本草经》',
-  moulue: '各书真伪考辨(百度百科/维基/腾讯短史记等)——本组为托名伪书,无可靠古注',
+  moulue: '伪书 5 部真伪考辨(百度百科/维基/腾讯短史记等,无可靠古注);真书 4 部:《四库全书总目》(长短经)、通行注本与作者生平考(菜根谭/围炉夜话/小窗幽记)',
   dao: '郭象《庄子注》、成玄英《庄子疏》、王先谦《庄子集解》、郭庆藩《庄子集释》;张湛《列子注》',
   fo: '鸠摩罗什译本;天亲《佛遗教经论》、智旭《阿弥陀经要解》、丁福保《佛学大辞典》;禅宗灯录',
   xin: '陈荣捷《王阳明传习录详注集评》、邓艾民《传习录注疏》;《王文成公全书》',
@@ -77,10 +80,20 @@ const TIELU_YI = '【铁律·研习不诊疗】中医典籍取医学史与文献
 const TIELU_FO = '【铁律·研习不宣化】释典取义理与文献研习视角:译文平实直译经文字面义(含极乐庄严、念佛往生、戒律因果等,属原典照译);但注疏与延伸一律不作信仰劝化、不下吉凶/果报/往生承诺断语、不劝人皈信修持奉诵;注疏作名相(般若/涅槃/陀罗尼/四谛/五阴/三十二相等)、人名、典故训诂(0–4 条/段、≤40 字、无 ref),延伸讲经典译史、宗派源流、义理思想(禅宗顿悟、净土、戒学)。内容为佛典研习、非宗教宣化。'
 const TIELU_DAO = '【铁律·道家研习】道藏典籍取思想史与文献研习视角:译文平实直译字面义,寓言人名/地名/物名(鲲鹏/河伯/北海若/庖丁/愚公/夸父/纪昌等)保留,注疏释之;但不作宗教信仰宣化、不下吉凶/福报/成仙断语、不演绎内丹工法或养生导引术;注疏作字词名物训诂(0–4 条/段、≤40 字、无 ref,模块不互链),延伸讲义理/寓言/思想源流/学派流变,如实呈现(列子今本经魏晋缀辑、真伪存疑须如实点出)。'
 const TIELU_MOU = '【铁律·伪书批判】本组为《天下无谋》托名谋略书,学界多判为后世托名或现代伪作(罗织经更被揭为今人伪造)。译文平实直译其字面义,如实呈现其权术、构陷、厚黑之说以见其面目;但**注疏作字词训诂、延伸取文献批判与思想史视角**(讲此书何时出现、为何托名古人、映照何种世态人心、与真史/真人著作不合之处),**绝不作处世权术/厚黑/构陷之教程、不教人施用、不为其术张目、不下「高明」之褒**;延伸须点出真伪存疑。内容为伪书现象与文献研究,非处世指南。'
+// 谋略组扩书(真书,与上面 5 部伪书性质不同,不作「伪书批判」框注):长短经(反经)取思想史/治国用人视角,
+// 菜根谭/围炉夜话/小窗幽记(清言三书)取处世智慧文献研习视角。二者均不作现代权术施用教程。
+const TIELU_MOU_ZHEN_CHANGDUAN = '【铁律·真书·思想史研习】《长短经》(反经)为唐赵蕤真实著作(非托名伪书),《四库全书总目》详载源流,与本组其余 5 部伪书性质不同,不作「托名伪书」框注。译文平实直译其识人用人、治乱兴亡、兵权奇正之说;注疏作字词名物训诂,延伸取思想史与文献源流视角(讲赵蕤生平、此篇论旨、与《战国策》纵横家渊源、后世评价),**不作现代政治/职场权术施用教程、不借古讽今、不下现实政治褒贬**。'
+const TIELU_MOU_ZHEN_QINGYAN = '【铁律·真书·处世智慧研习】本书为真实古籍(非托名伪书),与本组其余 5 部伪书性质不同,不作「托名伪书」框注。译文平实直译其处世格言;注疏作字词训诂,延伸取思想史与文献研习视角(讲作者生平、格言旨趣、儒释道思想渊源),**不作成功学/心灵鸡汤式过度引申、不作处世权术教程,存其温厚劝世本色**。'
 const FILE = (c, b) => '/Users/gavin/work/hexagram/src/data/' + c + '/classics/' + b + '.json'
 
 function styleRule(u) {
   if (u.corpus === 'moulue') {
+    if (u.book === 'changduanjing') {
+      return TIELU_MOU_ZHEN_CHANGDUAN + ' **组内以独立成段的「《篇名》」标记篇界(如诗经体例)——该标记段的 translations 对应位置留空字符串""(不译、不注),真正译文从下一段开始。**'
+    }
+    if (u.book === 'caigentan' || u.book === 'weiluyehua' || u.book === 'xiaochuangyouji') {
+      return TIELU_MOU_ZHEN_QINGYAN + (u.book === 'caigentan' ? ' 《菜根谭》条目独立成段,逐条直译。' : u.book === 'weiluyehua' ? ' 《围炉夜话》条目独立成段,逐条直译,首段为作者自序、按序文风格译。' : ' 《小窗幽记》(醉古堂剑扫)条目独立成段,逐条直译,句式讲究骈俪对仗,译文尽量存其对仗神韵。')
+    }
     return TIELU_MOU + ' 本书《' + CN[u.book] + '》旧题托名、真伪存疑;直译其辞,延伸批判性指出托名与世态,不教施用、不褒其术。'
   }
   if (u.corpus === 'zhongyi') {
@@ -136,14 +149,18 @@ function translatePrompt(u) {
     '只返回结构化结果。'
 }
 
+const MOULUE_FAKE_BOOKS = new Set(['luozhijing', 'rongkujian', 'quanmou', 'taohuishu', 'zhixue'])
+
 function verifyPrompt(u, draft) {
   const len = u.end - u.start + 1
+  const isFakeMoulue = u.corpus === 'moulue' && MOULUE_FAKE_BOOKS.has(u.book)
+  const isRealMoulue = u.corpus === 'moulue' && !MOULUE_FAKE_BOOKS.has(u.book)
   return '校对修正《' + CN[u.book] + '·' + u.title + '》(原文第 ' + u.start + '–' + u.end + ' 段)译注草稿,返回修正后完整结构。' + styleRule(u) + '\\n\\n' +
     '先 Read ' + FILE(u.corpus, u.book) + ' 中 no===' + u.no + ' 的章,核对其第 ' + u.start + '..' + u.end + ' 段。草稿:\\n' + JSON.stringify(draft) + '\\n\\n' +
     '逐项改正后按 schema 返回:\\n' +
-    '- translations 长度必须恰为 ' + len + ',与第 ' + u.start + '.. 段逐一对齐;漏译/臆增/错解/把注混入译文者改正;' + (u.corpus === 'zhongyi' ? '注疏/延伸中删去诊疗指导、方药功效用法用量、病症/疗效断语、养生医嘱' : u.corpus === 'moulue' ? '注疏/延伸中删去处世权术教程式发挥、为伪书张目或褒扬其术的措辞,延伸须存真伪批判' : '删去鸡汤、拔高、现代政治影射、权术/厚黑发挥') + ';口吻平实。\\n' +
+    '- translations 长度必须恰为 ' + len + ',与第 ' + u.start + '.. 段逐一对齐;漏译/臆增/错解/把注混入译文者改正;' + (u.corpus === 'zhongyi' ? '注疏/延伸中删去诊疗指导、方药功效用法用量、病症/疗效断语、养生医嘱' : isFakeMoulue ? '注疏/延伸中删去处世权术教程式发挥、为伪书张目或褒扬其术的措辞,延伸须存真伪批判' : isRealMoulue ? '注疏/延伸中删去处世权术施用教程或成功学鸡汤式过度引申的措辞' : '删去鸡汤、拔高、现代政治影射、权术/厚黑发挥') + ';口吻平实。\\n' +
     '- zhushi:key 为片段内相对下标("0".."' + (len - 1) + '");每条 term 必须是对应段 original 的精确子串,否则删或改;note≤40;删 ref/链接;每段≤4 条。\\n' +
-    '- yanyi:' + (u.yanyi ? ('保持 1–2 段,删空泛说教与' + (u.corpus === 'zhongyi' ? '诊疗医嘱/功效宣称' : u.corpus === 'moulue' ? '处世权术教程或为伪书张目之辞' : '现实政治影射') + ',确保实质、出处可靠。') : '空数组 []。') + '\\n\\n' +
+    '- yanyi:' + (u.yanyi ? ('保持 1–2 段,删空泛说教与' + (u.corpus === 'zhongyi' ? '诊疗医嘱/功效宣称' : isFakeMoulue ? '处世权术教程或为伪书张目之辞' : isRealMoulue ? '权术施用教程或成功学鸡汤式发挥' : '现实政治影射') + ',确保实质、出处可靠。') : '空数组 []。') + '\\n\\n' +
     '只返回修正后的结构化结果。'
 }
 

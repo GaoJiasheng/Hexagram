@@ -22,7 +22,7 @@ export default function AboutPage() {
         <ul className="about-list">
           <li><strong>释典(佛)</strong>:研习不宣化,不下吉凶 / 果报断语。</li>
           <li><strong>中医</strong>:<strong>研习不诊疗</strong>——原文方剂照原典录,但注疏 / 延伸不述功效、用法、用量,不下病症 / 疗效断语,不教自疗。<em>⚠ 本站内容非医疗建议,身体不适请就医。</em></li>
-          <li><strong>谋略杂纂</strong>:所收《天下无谋》五部学界多判为<strong>托名伪书</strong>,本站显著标「托名 · 真伪存疑」,取文献批判视角,不为伪书张目、不作处世权术教程。</li>
+          <li><strong>谋略杂纂</strong>:书架含两类——《天下无谋》五部学界多判为<strong>托名伪书</strong>,本站显著标「托名 · 真伪存疑」,取文献批判视角,不为伪书张目;另收长短经、菜根谭等<strong>真实</strong>权谋处世古籍,取思想史研习视角。两类均不作处世权术教程,真伪见各书题解。</li>
           <li><strong>诸子(法 / 墨 / 兵 / 纵横)</strong>:思想史视角,如实呈现其面目,不作现代政治影射、不作权术施用教程。</li>
         </ul>
       </section>
