@@ -979,7 +979,53 @@ function VeilTwoness() {
   )
 }
 
+// 母题:圆形监狱——一圈牢房环绕,细如蛛丝的视线从四面八方汇向正中的瞭望塔
+// (那只朱色的"全景之眼"看得见每一间牢房,却无人看得见它;呼应福柯"规训权力"
+// 靠"随时可能被看见"的不对称注视,把被看者驯化成自我监视的核心命题)。
+function Panopticon() {
+  const cx = 120, cy = 300, r = 52
+  const cells = Array.from({ length: 12 }, (_, i) => {
+    const a = (i / 12) * Math.PI * 2 - Math.PI / 2
+    return [cx + Math.cos(a) * r, cy + Math.sin(a) * r, i]
+  })
+  return (
+    <g fill="none">
+      <circle cx={cx} cy={cy} r={r} stroke={CREAM} strokeOpacity="0.3" strokeWidth="1.2" />
+      {cells.map(([x, y, i]) => (
+        <g key={i}>
+          <line x1={cx} y1={cy} x2={x} y2={y} stroke={CREAM} strokeOpacity={i % 3 === 0 ? 0.28 : 0.12} strokeWidth="0.8" />
+          <circle cx={x} cy={y} r="2.4" fill={CREAM} fillOpacity="0.42" stroke="none" />
+        </g>
+      ))}
+      <circle cx={cx} cy={cy} r="12" stroke={CINNABAR} strokeWidth="1.6" />
+      <circle cx={cx} cy={cy} r="4" fill={CINNABAR} stroke="none" />
+    </g>
+  )
+}
+
+// 母题:显功能与潜功能——一条虚线是"水面",水面之上只探出一个朱色小节点(人人
+// 都说得出的"显功能"),水面之下却潜着一整张相连的隐藏网络(默顿最著名的"潜功能"
+// ——制度真正在起作用、却不为人所觉察的那一面;呼应本书把社会结构的"看不见处"
+// 请到台面上来的分析眼光)。
+function ManifestLatent() {
+  const surfaceY = 292
+  const hidden = [[86, 320], [120, 336], [154, 322], [104, 356], [140, 356]]
+  const links = [[0, 1], [1, 2], [0, 3], [1, 3], [1, 4], [2, 4]]
+  const lines = links.map(([a, b]) => `M${hidden[a][0]},${hidden[a][1]} L${hidden[b][0]},${hidden[b][1]}`).join(' ')
+  return (
+    <g fill="none">
+      <line x1="50" y1={surfaceY} x2="210" y2={surfaceY} stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.2" strokeDasharray="4 4" />
+      <line x1="120" y1={surfaceY} x2="120" y2="268" stroke={CINNABAR} strokeWidth="1.5" />
+      <circle cx="120" cy="264" r="5" fill={CINNABAR} stroke="none" />
+      <path d={lines} stroke={CREAM} strokeOpacity="0.32" strokeWidth="1" />
+      {hidden.map(([x, y], i) => <circle key={i} cx={x} cy={y} r="3.4" fill={CREAM} fillOpacity="0.45" stroke="none" />)}
+    </g>
+  )
+}
+
 function Motif({ motif }) {
+  if (motif === 'panopticon') return <Panopticon />
+  if (motif === 'manifest-latent') return <ManifestLatent />
   if (motif === 'liquid-melt') return <LiquidMelt />
   if (motif === 'veil-twoness') return <VeilTwoness />
   if (motif === 'two-mountains') return <TwoMountains />
