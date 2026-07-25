@@ -1,255 +1,262 @@
 {
-  "1": {
-    "title": "白话心经 · 般若波罗蜜多心经",
-    "subtitle": "二百六十字,把「拆解焦虑」这件事讲到底",
-    "centralIdea": "「我」与世界皆是因缘拼装、并无焊死不变的实体(空);照见这一点,挂碍与恐惧便失去立足点——度苦不是搬走苦,而是抽掉苦脚下的台子。",
-    "blocks": [
-      {
-        "type": "lead",
-        "text": "佛经里字数最少的一部,大概也是被念歪最狠的一部。《心经》正文二百六十个字,比一条长微博还短;「色即是空」四个字,几乎人人会念——但十个人里九个,把它理解成了「一切都是虚的,别太认真」。这篇文章想做一件事:把这二百六十个字逐句拆开,用大白话讲清它到底在说什么。你会发现,它不是劝你看破红尘,而是给你一套拆解焦虑的思路——一份一千三百多年前就写好的「心理减负说明书」。"
-      },
-      {
-        "type": "p",
-        "text": "先从一个谁都有过的时刻说起。凌晨三点,你躺在床上睡不着:白天开会说错的那句话、下个月的房贷、体检报告上的箭头、孩子的成绩、爸妈的年纪……念头一个接一个,越想越清醒,胸口像压了块石头。你明知道「想也没用」,可就是停不下来。《心经》要处理的,恰恰是这块石头。它不劝你「别想了」,也不递鸡汤,它干的事更彻底:把石头当场拆开给你看——看清它是拿什么拼起来的、每块零件长什么样。零件看清了,石头就压不实了。整部经,就是这一次「当场拆解」的完整记录。"
-      },
-      {
-        "type": "h2",
-        "text": "立骨架:这是一部什么样的经"
-      },
-      {
-        "type": "p",
-        "text": "先把骨架立起来。这部经全名《般若波罗蜜多心经》。「般若」读 bō rě,不读 bān ruò,是梵语 prajñā 的音译,指看透事物实相的智慧——古人怕它跟日常的「聪明机灵」混为一谈,特意保留原音不意译。「波罗蜜多」是 pāramitā 的音译,义为「到彼岸」:从烦恼的此岸,渡到自在的彼岸。「心」不是心脏,是「心要、核心」——它是六百卷《大般若经》的浓缩胶囊,把一整面书墙压成了随身一页纸。顺便把生字的音一次注齐:五蕴的「蕴」读 yùn;罣碍的「罣」读 guà,同「挂」;菩提萨埵的「埵」读 duǒ;阿耨多罗的「耨」读 nòu;「揭谛」读 jiē dì。"
-      },
-      {
-        "type": "quote",
-        "original": "唐三藏法师玄奘译",
-        "translation": "唐代三藏法师玄奘奉诏译。"
-      },
-      {
-        "type": "p",
-        "text": "译者玄奘,就是《西游记》里唐僧的历史原型。唐贞观二十三年(649),他把这部经译成汉文,即今天的通行本。传记《大慈恩寺三藏法师传》记了一个细节:玄奘当年孤身横穿八百里流沙,随身默诵的正是此经。这是传记的记载,我们不必当灵异故事读;但它至少说明,在译者本人那里,这二百六十个字是可以在绝境里当扶手抓的东西。还要交代一点:心经有「略本」「广本」两个系统。略本(旧题鸠摩罗什本、玄奘本)没有「如是我闻」的开场、没有大众欢喜的收场,翻开就是正文;广本(唐代法月、般若共利言等译)才有完整的叙事框架——舍利弗提问、观自在作答、佛陀印可。我们读的是略本,等于直接从正文第一页读起。"
-      },
-      {
-        "type": "figure",
-        "ftype": "timeline",
-        "svg": "<svg viewBox=\"0 0 720 240\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--font-serif)\"><line x1=\"40\" y1=\"120\" x2=\"672\" y2=\"120\" style=\"stroke:var(--line);stroke-width:1.5\"/><polygon points=\"668,114 668,126 680,120\" style=\"fill:var(--line)\"/><circle cx=\"110\" cy=\"120\" r=\"6\" style=\"fill:var(--cinnabar)\"/><line x1=\"110\" y1=\"114\" x2=\"110\" y2=\"100\" style=\"stroke:var(--line)\"/><text x=\"110\" y=\"68\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:12.5px;font-weight:bold\">五世纪初 · 后秦</text><text x=\"110\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12px\">鸠摩罗什(传)《大明咒经》(略本)</text><circle cx=\"290\" cy=\"120\" r=\"6\" style=\"fill:var(--cinnabar)\"/><line x1=\"290\" y1=\"126\" x2=\"290\" y2=\"140\" style=\"stroke:var(--line)\"/><text x=\"290\" y=\"162\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:12.5px;font-weight:bold\">649 · 唐贞观廿三年</text><text x=\"290\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12px\">玄奘译本(略本 · 今通行本)</text><circle cx=\"460\" cy=\"120\" r=\"6\" style=\"fill:var(--cinnabar)\"/><line x1=\"460\" y1=\"114\" x2=\"460\" y2=\"100\" style=\"stroke:var(--line)\"/><text x=\"460\" y=\"68\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:12.5px;font-weight:bold\">八世纪 · 唐</text><text x=\"460\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12px\">法月、般若共利言等广本</text><circle cx=\"610\" cy=\"120\" r=\"6\" style=\"fill:var(--cinnabar)\"/><line x1=\"610\" y1=\"126\" x2=\"610\" y2=\"140\" style=\"stroke:var(--line)\"/><text x=\"610\" y=\"162\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:12.5px;font-weight:bold\">唐五代以降</text><text x=\"610\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12px\">敦煌写本 · 历代抄刻与书法</text></svg>",
-        "caption": "心经汉译与流传的大脉络:罗什本(传,五世纪初)→玄奘略本(649,今通行本)→唐代诸广本(补齐开场与收尾)→敦煌写本与历代抄刻。本站底本为玄奘略本(《大正藏》No.251)。"
-      },
-      {
-        "type": "p",
-        "text": "版本上还有一桩学术公案,照实说给你:现代学者那体慧(Jan Nattier)提出过一个大胆假说——心经也许不是先有梵文原本,而是从汉译《大品般若》中抽出核心段落、在中国编定,再回译成梵文的。此说在学界有支持也有商榷,至今无定论。不过有一点没有争议:心经的核心段落与《大般若经》相应经文高度重合,它是「摘要」而非凭空「原创」。至于摘要在哪里、以何种语言完成,学者还在争;我们如实记下分歧,不替任何一方拍板。"
-      },
-      {
-        "type": "figure",
-        "ftype": "structure",
-        "svg": "<svg viewBox=\"0 0 720 480\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--font-serif)\"><rect x=\"140\" y=\"18\" width=\"440\" height=\"62\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"360\" y=\"44\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:15px;font-weight:bold\">① 总纲 · 照见五蕴皆空,度一切苦厄</text><text x=\"360\" y=\"66\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12px\">谁 · 用什么方法 · 看见什么 · 结果如何</text><line x1=\"360\" y1=\"82\" x2=\"360\" y2=\"100\" style=\"stroke:var(--line);stroke-width:1.5\"/><polygon points=\"354,100 366,100 360,110\" style=\"fill:var(--line)\"/><rect x=\"140\" y=\"112\" width=\"440\" height=\"62\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"360\" y=\"138\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:15px;font-weight:bold\">② 色空不二 · 色即是空,空即是色</text><text x=\"360\" y=\"160\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12px\">对智慧第一的舍利子,先立最硬的命题</text><line x1=\"360\" y1=\"176\" x2=\"360\" y2=\"194\" style=\"stroke:var(--line);stroke-width:1.5\"/><polygon points=\"354,194 366,194 360,204\" style=\"fill:var(--line)\"/><rect x=\"140\" y=\"206\" width=\"440\" height=\"62\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"360\" y=\"232\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:15px;font-weight:bold\">③ 否定清单 · 从「无色」到「无智亦无得」</text><text x=\"360\" y=\"254\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12px\">五蕴 → 十八界 → 十二因缘 → 四谛,层层拆完</text><line x1=\"360\" y1=\"270\" x2=\"360\" y2=\"288\" style=\"stroke:var(--line);stroke-width:1.5\"/><polygon points=\"354,288 366,288 360,298\" style=\"fill:var(--line)\"/><rect x=\"140\" y=\"300\" width=\"440\" height=\"62\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"360\" y=\"326\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:15px;font-weight:bold\">④ 果地 · 心无罣碍,无有恐怖</text><text x=\"360\" y=\"348\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12px\">看清之后:恐惧失去立足点,直至涅槃</text><line x1=\"360\" y1=\"364\" x2=\"360\" y2=\"382\" style=\"stroke:var(--line);stroke-width:1.5\"/><polygon points=\"354,382 366,382 360,392\" style=\"fill:var(--line)\"/><rect x=\"140\" y=\"394\" width=\"440\" height=\"62\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"360\" y=\"420\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:15px;font-weight:bold\">⑤ 压缩 · 揭谛揭谛,波罗揭谛</text><text x=\"360\" y=\"442\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12px\">整部经再浓缩成一句随身携带的咒</text></svg>",
-        "caption": "《心经》全篇结构图:一句总纲、两层展开、一处果地、一句压缩——其余每一段都在展开第一句。(据玄奘译本二百六十字正文)"
-      },
-      {
-        "type": "h2",
-        "text": "第一句,就是全篇的答案"
-      },
-      {
-        "type": "quote",
-        "original": "观自在菩萨，行深般若波罗蜜多时，照见五蕴皆空，度一切苦厄。",
-        "translation": "观自在菩萨,在修行甚深的般若波罗蜜多时,观照见色、受、想、行、识五蕴都是空的,因而度脱一切苦难灾厄。"
-      },
-      {
-        "type": "p",
-        "text": "全经总纲,一句写完,信息密度极高。拆开是四件事:谁(观自在菩萨)、在干什么(行深般若波罗蜜多)、看见了什么(照见五蕴皆空)、结果如何(度一切苦厄)。「观自在」就是大家熟悉的观世音菩萨——「观自在」是玄奘的新译,取「观照而得自在」之义;旧译「观世音」取「观听世间音声」之义,一名两译,侧重不同。真正要紧的是后半句的因果:苦厄是被「度」过去的,而度的方法不是咬牙硬扛,也不是求谁把苦搬走,而是「照见」——看清楚。看清什么?看清「五蕴皆空」。"
-      },
-      {
-        "type": "p",
-        "text": "「五蕴」是佛教对「我」的拆解清单。蕴,是「堆、聚合」的意思:所谓「我」,其实是五堆东西临时聚在一起——色(身体与物质)、受(苦乐感受)、想(认知与联想)、行(意志与冲动)、识(背后的觉知)。打个比方:你此刻的「我」,像一部正在运行的手机——硬件机身是「色」,消息弹出来那一下舒服或膈应是「受」,认出「这是老板发来的」是「想」,手指忍不住要点开的冲动是「行」,背后一直亮着的系统是「识」。凌晨三点压在你胸口的那块「石头」,拆开看,无非就是这五样在高速运转:身体紧绷、感受难受、念头翻滚、冲动拉扯、意识清醒。《心经》说,这五堆没有一堆是焊死的实体,全都在流动、在变化——这就叫「五蕴皆空」。"
-      },
-      {
-        "type": "figure",
-        "ftype": "diagram",
-        "svg": "<svg viewBox=\"0 0 720 340\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--font-serif)\"><circle cx=\"115\" cy=\"163\" r=\"50\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:1.5\"/><text x=\"115\" y=\"175\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:26px;font-weight:bold\">我</text><text x=\"115\" y=\"245\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:11.5px\">一个正在发生的「我」</text><line x1=\"170\" y1=\"163\" x2=\"250\" y2=\"163\" style=\"stroke:var(--line);stroke-width:1.5\"/><polygon points=\"250,157 250,169 262,163\" style=\"fill:var(--line)\"/><text x=\"210\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:12px\">拆开看</text><rect x=\"280\" y=\"25\" width=\"390\" height=\"44\" rx=\"8\" style=\"fill:none;stroke:var(--line)\"/><text x=\"312\" y=\"54\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:18px;font-weight:bold\">色</text><text x=\"505\" y=\"53\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:13px\">身体与物质——能看能碰的那部分</text><rect x=\"280\" y=\"83\" width=\"390\" height=\"44\" rx=\"8\" style=\"fill:none;stroke:var(--line)\"/><text x=\"312\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:18px;font-weight:bold\">受</text><text x=\"505\" y=\"111\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:13px\">感受——舒服、难受、不好不坏</text><rect x=\"280\" y=\"141\" width=\"390\" height=\"44\" rx=\"8\" style=\"fill:none;stroke:var(--line)\"/><text x=\"312\" y=\"170\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:18px;font-weight:bold\">想</text><text x=\"505\" y=\"169\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:13px\">认知——识别、联想、给事贴标签</text><rect x=\"280\" y=\"199\" width=\"390\" height=\"44\" rx=\"8\" style=\"fill:none;stroke:var(--line)\"/><text x=\"312\" y=\"228\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:18px;font-weight:bold\">行</text><text x=\"505\" y=\"227\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:13px\">冲动——想去做点什么的意志</text><rect x=\"280\" y=\"257\" width=\"390\" height=\"44\" rx=\"8\" style=\"fill:none;stroke:var(--line)\"/><text x=\"312\" y=\"286\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:18px;font-weight:bold\">识</text><text x=\"505\" y=\"285\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:13px\">觉知——背后一直亮着的总后台</text><text x=\"475\" y=\"326\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:12.5px\">五件都在流动,没有一件停得住——这就叫「五蕴皆空」</text></svg>",
-        "caption": "五蕴拆解图:佛教把「一个正在发生的我」拆成色、受、想、行、识五类零件。名目出自本章「照见五蕴皆空」「无受、想、行、识」诸句,白话释义与本站注疏一致。"
-      },
-      {
-        "type": "h2",
-        "text": "色即是空:被念歪最狠的四个字"
-      },
-      {
-        "type": "quote",
-        "original": "舍利子！色不异空，空不异色，色即是空，空即是色；受、想、行、识，亦复如是。",
-        "translation": "舍利子!物质现象不异于空,空不异于物质现象;物质现象当下即是空,空当下即是物质现象;感受、表象、心行、心识,也都是这样。"
-      },
-      {
-        "type": "p",
-        "text": "「舍利子」即舍利弗,佛陀弟子中「智慧第一」的那位——最难的课,要讲给最聪明的学生听。这既是经文的排场,也是给读者的提醒:接下来是全经最烧脑的部分。注意句子的结构:先说「不异」(不分离),再说「即是」(就是)。不是「色的背后另藏着一个空」,也不是「色消灭之后才轮到空」——色与空是同一件事的两面,当下就是。"
-      },
-      {
-        "type": "p",
-        "text": "用两个比喻落地。传统的比喻是浪与水:浪(色)是水暂时的形状,水(空)是浪一直的本体;浪起浪灭,水不增不减——你不能说浪是假的,它真的能打湿你;但你也找不到一朵离开水、自己成立的浪。现代一点的比喻是乐高:桌上那座城堡是真的立在那儿(色),但拆开看,没有任何一块零件叫「城堡」,「城堡」只是这堆积木此刻的组合方式(空);而正因为它是拼的、没焊死,才能拆了重拼——「空即是色」,空不是城堡消失,而是城堡的存在方式。「受、想、行、识,亦复如是」:不光身体和物质,你的情绪、念头、冲动、意识,同样是拼装件,同样没焊死。"
-      },
-      {
-        "type": "figure",
-        "ftype": "compare",
-        "svg": "<svg viewBox=\"0 0 720 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--font-serif)\"><circle cx=\"190\" cy=\"130\" r=\"64\" style=\"fill:none;stroke:var(--ink);stroke-width:1.5\"/><text x=\"190\" y=\"128\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:30px;font-weight:bold\">色</text><text x=\"190\" y=\"158\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:11px\">看得见摸得着的现象</text><circle cx=\"530\" cy=\"130\" r=\"64\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:1.5\"/><text x=\"530\" y=\"128\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:30px;font-weight:bold\">空</text><text x=\"530\" y=\"158\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:11px\">没有焊死的实体</text><line x1=\"262\" y1=\"102\" x2=\"450\" y2=\"102\" style=\"stroke:var(--line);stroke-width:1.5\"/><polygon points=\"448,96 448,108 460,102\" style=\"fill:var(--line)\"/><text x=\"360\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12.5px\">色不异空 · 色即是空</text><line x1=\"458\" y1=\"158\" x2=\"270\" y2=\"158\" style=\"stroke:var(--line);stroke-width:1.5\"/><polygon points=\"272,152 272,164 260,158\" style=\"fill:var(--line)\"/><text x=\"360\" y=\"182\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12.5px\">空不异色 · 空即是色</text><text x=\"360\" y=\"246\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:14px;font-weight:bold\">比喻:浪与水</text><text x=\"360\" y=\"272\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12.5px\">浪是水暂时的形状,水是浪一直的本体;浪起浪灭,水不增减</text></svg>",
-        "caption": "「色不异空,空不异色;色即是空,空即是色」的结构:色与空不是两样东西,而是同一件事的两面——如浪之于水。(本章第二段)"
-      },
-      {
-        "type": "h2",
-        "text": "一路「无」下去:全经最豪横的否定清单"
-      },
-      {
-        "type": "quote",
-        "original": "舍利子！是诸法空相，不生不灭，不垢不净，不增不减。",
-        "translation": "舍利子!一切现象都是空的体相:不生不灭,不垢不净,不增不减。"
-      },
-      {
-        "type": "p",
-        "text": "从空的角度看一切现象(诸法空相),没有真正的出生与消灭、干净与肮脏、增加与减少。听着玄,其实是把「组合体」的逻辑推到底:水汽聚成云、云落成雨、雨蒸成汽,再聚成云——「云」从没出生过,也从没死掉过,只是水在换形态。生灭、垢净、增减,都是站在「有一个固定实体」的前提上才成立的判断;前提一抽掉,这六个字就没了着落。"
-      },
-      {
-        "type": "quote",
-        "original": "是故，空中无色，无受、想、行、识；无眼、耳、鼻、舌、身、意；无色、声、香、味、触、法；无眼界，乃至无意识界；",
-        "translation": "所以在空之中,没有物质现象,没有感受、表象、心行、心识;没有眼、耳、鼻、舌、身、意(六根);没有色、声、香、味、触、法(六尘);没有眼界,乃至没有意识界(十八界)。"
-      },
-      {
-        "type": "p",
-        "text": "接下来是连环否定。六根(眼耳鼻舌身意,六个感官接口)、六尘(色声香味触法,六类感知对象),再加上六识,合称「十八界」——这是佛教给「你全部经验世界」编的门牌号系统:从看见一朵花,到冒出一个念头,任何经验都逃不出这十八个格子。经文说「无」,不是说眼睛不存在、声音听不见——玄奘译经的时候,眼睛好好长着——而是说:这十八个格子里,没有一个装着「固定不变的实体」。「无」否定的是格子里的「焊死」,不是格子本身。"
-      },
-      {
-        "type": "quote",
-        "original": "无无明，亦无无明尽，乃至无老死，亦无老死尽；",
-        "translation": "没有无明,也没有无明的灭尽,乃至没有老死,也没有老死的灭尽(十二因缘)。"
-      },
-      {
-        "type": "p",
-        "text": "「无明」到「老死」,是十二因缘的头尾——佛教描述生命一环扣一环流转的因果链:无明→行→识→……→生→老死,共十二环,「乃至」二字把中间十环省略掉了,相当于文言里的省略号。「无无明,亦无无明尽」是双重否定:既没有焊死的「无明」,也没有一个焊死的「把无明灭尽」的终点。链条的每一环都是流动的;连「挣脱链条」这件事,也不该被抓成新的执念。"
-      },
-      {
-        "type": "quote",
-        "original": "无苦、集、灭、道；无智，亦无得，以无所得故。",
-        "translation": "没有苦、集、灭、道(四谛);没有能知的智,也没有所得之境——因为本无所得的缘故。"
-      },
-      {
-        "type": "p",
-        "text": "这一句最惊人:苦、集、灭、道,是佛陀最早的教学大纲「四谛」——确认问题(苦)、找到根源(集)、给出愿景(灭)、开出路径(道)。连自家教科书,经文也一并说「无」;连「能观照的智慧」和「能到手的觉悟」也不放过:「无智,亦无得」。这不是拆台,是防止学生把教材抱死。《金刚经》里有一句可作互见:「法尚应舍,何况非法」——佛法像渡河的筏子,过了河还把筏子扛在背上,就本末倒置了。「以无所得故」四个字收束全段:因为本来就没有一个可以抓到手里的东西,所以一路「无」下去,不是损失,是卸货。"
-      },
-      {
-        "type": "figure",
-        "ftype": "steps",
-        "svg": "<svg viewBox=\"0 0 720 340\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--font-serif)\"><rect x=\"60\" y=\"20\" width=\"390\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line)\"/><text x=\"76\" y=\"42\" style=\"fill:var(--cinnabar);font-size:13.5px;font-weight:bold\">① 无五蕴——拆「我」的材料</text><text x=\"76\" y=\"62\" style=\"fill:var(--ink);font-size:12px\">空中无色,无受、想、行、识</text><rect x=\"96\" y=\"84\" width=\"390\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line)\"/><text x=\"112\" y=\"106\" style=\"fill:var(--cinnabar);font-size:13.5px;font-weight:bold\">② 无六根六尘——拆感官与世界</text><text x=\"112\" y=\"126\" style=\"fill:var(--ink);font-size:12px\">无眼耳鼻舌身意;无色声香味触法</text><rect x=\"132\" y=\"148\" width=\"390\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line)\"/><text x=\"148\" y=\"170\" style=\"fill:var(--cinnabar);font-size:13.5px;font-weight:bold\">③ 无十八界——拆认知的全部领域</text><text x=\"148\" y=\"190\" style=\"fill:var(--ink);font-size:12px\">无眼界,乃至无意识界</text><rect x=\"168\" y=\"212\" width=\"390\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line)\"/><text x=\"184\" y=\"234\" style=\"fill:var(--cinnabar);font-size:13.5px;font-weight:bold\">④ 无十二因缘——拆生命的流转链</text><text x=\"184\" y=\"254\" style=\"fill:var(--ink);font-size:12px\">无无明……乃至无老死,亦无老死尽</text><rect x=\"204\" y=\"276\" width=\"390\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line)\"/><text x=\"220\" y=\"298\" style=\"fill:var(--cinnabar);font-size:13.5px;font-weight:bold\">⑤ 无四谛、无智无得——拆到教案自身</text><text x=\"220\" y=\"318\" style=\"fill:var(--ink);font-size:12px\">无苦、集、灭、道;无智,亦无得</text><line x1=\"648\" y1=\"36\" x2=\"648\" y2=\"300\" style=\"stroke:var(--line);stroke-width:1.5\"/><polygon points=\"642,298 654,298 648,312\" style=\"fill:var(--line)\"/><text x=\"648\" y=\"22\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:11.5px\">越拆越彻底</text></svg>",
-        "caption": "全经否定清单的五个台阶:从日常经验(五蕴、十八界)一路拆到佛法自家的教案(四谛)与「能得的智慧」,收在「以无所得故」。(本章「是故,空中无色……以无所得故」段)"
-      },
-      {
-        "type": "h2",
-        "text": "心无罣碍:看清之后会发生什么"
-      },
-      {
-        "type": "quote",
-        "original": "菩提萨埵，依般若波罗蜜多故，心无罣碍；无罣碍故，无有恐怖，远离颠倒梦想，究竟涅槃。",
-        "translation": "菩萨依凭般若波罗蜜多,所以心无挂碍;因为无挂碍,所以没有恐怖,远离颠倒错乱的妄想,达到究竟的涅槃。"
-      },
-      {
-        "type": "p",
-        "text": "「菩提萨埵」是「菩萨」的完整音译。「罣碍」的「罣」,本义是被网绳挂住——鱼挂在网上,进退不得,就是「罣」。这个字选得极准:焦虑的体感,不正是被什么东西挂住了吗?用今天的话说,挂碍就是心里那些杀不掉的后台程序:白天的会散了,复盘还在后台转;房贷还没到期,利息已经在脑子里跑了一夜。程序占满内存,机器就卡、就烫、就随时怕崩——这就是「恐怖」的来路。经文给出的因果链非常清楚:依智慧看清(依般若波罗蜜多)→挂不住(心无罣碍)→不怕(无有恐怖)→不再把梦当真(远离颠倒梦想)→彻底安稳(究竟涅槃)。恐惧不是被勇气压下去的,是被看清抽掉了地基。"
-      },
-      {
-        "type": "p",
-        "text": "两个名相顺手训读:「颠倒梦想」,指认知层面的倒置——把流动的当恒常、把拼装的当实体,像在梦里把梦当真;「涅槃」是梵语 nirvāṇa 的音译,本义「吹熄」,指火熄灭的那个状态——不是死亡,是烧了半辈子的焦虑之火,熄了。"
-      },
-      {
-        "type": "figure",
-        "ftype": "quotecard",
-        "svg": "<svg viewBox=\"0 0 720 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--font-serif)\"><rect x=\"80\" y=\"30\" width=\"560\" height=\"240\" rx=\"16\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><rect x=\"336\" y=\"52\" width=\"48\" height=\"34\" rx=\"6\" style=\"fill:var(--cinnabar)\"/><text x=\"360\" y=\"76\" text-anchor=\"middle\" style=\"fill:var(--paper-raised);font-size:15px\">观空</text><text x=\"360\" y=\"152\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:32px;font-weight:bold;letter-spacing:6px\">心无罣碍</text><text x=\"360\" y=\"198\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:20px;letter-spacing:3px\">无罣碍故，无有恐怖</text><text x=\"360\" y=\"242\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12.5px;opacity:.75\">——《般若波罗蜜多心经》· 玄奘译</text></svg>",
-        "caption": "「心无罣碍;无罣碍故,无有恐怖」——般若段的因果链:恐惧不是被勇气压下去,而是被看清抽掉了地基。(本章「菩提萨埵」段)"
-      },
-      {
-        "type": "quote",
-        "original": "三世诸佛，依般若波罗蜜多故，得阿耨多罗三藐三菩提。",
-        "translation": "过去、现在、未来三世的一切佛,也都依凭般若波罗蜜多,证得无上正等正觉。"
-      },
-      {
-        "type": "p",
-        "text": "「阿耨多罗三藐三菩提」是梵语 anuttarā samyak-saṃbodhi 的音译,意为「无上正等正觉」,即圆满的觉悟。这一句是在给方法背书:不只菩萨这么修,过去、现在、未来的一切觉悟者,走的都是同一条路——依般若,看清实相。经文用「三世诸佛」把话说满,是在强调:在它自己的叙述里,这不是某一家的偏方,而是历来觉悟者共走的一条路。"
-      },
-      {
-        "type": "h2",
-        "text": "结尾的咒:整部经的压缩包"
-      },
-      {
-        "type": "quote",
-        "original": "故知般若波罗蜜多，是大神咒，是大明咒，是无上咒，是无等等咒，能除一切苦，真实不虚。",
-        "translation": "所以知道:般若波罗蜜多是大神咒,是大明咒,是无上咒,是无可比拟的咒,能除灭一切苦,真实而不虚妄。"
-      },
-      {
-        "type": "p",
-        "text": "读到这儿你可能会愣一下:前面还在讲「无智亦无得」,怎么突然夸起「咒」来了?训读地看:「咒」是梵语 mantra 的旧译,本义接近「真言、心要」——把一整套义理压缩成一句可以随身携带的话,像把整本书拧成一行口诀。「大神、大明、无上、无等等」四个最高级,是经文给般若的赞叹语,也是般若经典与咒语传统交汇的痕迹(旧题罗什译本径以「大明咒」为经名)。「能除一切苦,真实不虚」则呼应开篇的「度一切苦厄」,首尾扣死。研习的立场上,我们把这段当作文本自己的「压轴推荐语」照实读出;至于经文之外的效验之说,本站不代下断语。"
-      },
-      {
-        "type": "quote",
-        "original": "故说般若波罗蜜多咒，即说咒曰：",
-        "translation": "所以宣说般若波罗蜜多咒,就说咒道:"
-      },
-      {
-        "type": "quote",
-        "original": "揭谛 揭谛 波罗揭谛 波罗僧揭谛 菩提萨婆诃",
-        "translation": "般若波罗蜜多咒为梵语音译,依例存原音、不另作意译;其字面之义约为:去吧,去吧,到彼岸去,大家都到彼岸去,觉悟,圆满成就。"
-      },
-      {
-        "type": "p",
-        "text": "玄奘译经有「五种不翻」的原则,其一便是「秘密故不翻」:咒语保留原音、不作意译,所以这一句照录梵音。它的梵文是 gate gate pāragate pārasaṃgate bodhi svāhā,字面义约为:「去吧,去吧,到彼岸去,大家都到彼岸去,觉悟,圆满。」你看,压缩包解开,还是那件事——渡河,到彼岸。二百六十个字的经,最后浓缩成一句「走吧」。"
-      },
-      {
-        "type": "p",
-        "text": "顺带一笔文化回响:今天你在博物馆和字帖里最常遇到的佛经,大概率就是它——唐《怀仁集王羲之圣教序》碑文之后,附刻的正是玄奘这个译本的心经;历代书家抄写此经的传统一直延续到今天。一部经能以二百六十字走进书法史、被随身携带一千三百多年,这本身就是「压缩包」设计的胜利。"
-      },
-      {
-        "type": "h2",
-        "text": "中心思想:空不是没有,是没焊死"
-      },
-      {
-        "type": "p",
-        "text": "把全篇串成一条推理链:苦从哪来?从抓着不放来。为什么抓着不放?因为把拼装的东西当成了焊死的实体——把此刻的职位当成永远的身份,把一次失败当成整个人生的判决,把翻滚的念头当成不可动摇的事实。般若做的事,就是照见「拼装」这个本质:五蕴是拼的,十八界是拼的,连生死流转的链条、连佛法的教案本身,都不许抓死。看清了,挂碍失去地基,恐惧无处立足——「度一切苦厄」不是把苦搬走,是把苦脚下的台子抽掉。"
-      },
-      {
-        "type": "p",
-        "text": "所以「空」最怕被读成「什么都没有」。恰恰相反:杯子正因为中间是空的,才装得下水;房间正因为空,才住得进人;「我」正因为没被焊死,才改得了、长得了、放得下。空,是变化的许可证。把心经读出消极,是把许可证读成了死刑判决书。"
-      },
-      {
-        "type": "figure",
-        "ftype": "contrast",
-        "svg": "<svg viewBox=\"0 0 720 310\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--font-serif)\"><text x=\"360\" y=\"66\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:42px;font-weight:bold\">空</text><rect x=\"48\" y=\"100\" width=\"292\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--line)\"/><text x=\"194\" y=\"130\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:14.5px;font-weight:bold\">常见的误读</text><text x=\"194\" y=\"162\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12.5px;opacity:.8\">✕ 空＝什么都没有</text><text x=\"194\" y=\"188\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12.5px;opacity:.8\">✕ 空＝虚无、消极、别认真</text><text x=\"194\" y=\"214\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12.5px;opacity:.8\">✕ 看破＝躺平、放弃</text><rect x=\"380\" y=\"100\" width=\"292\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--cinnabar)\"/><text x=\"526\" y=\"130\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:14.5px;font-weight:bold\">经文的本义</text><text x=\"526\" y=\"162\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12.5px\">✓ 空＝没有固定不变的自性</text><text x=\"526\" y=\"188\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12.5px\">✓ 一切是因缘拼装、随条件变化</text><text x=\"526\" y=\"214\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12.5px\">✓ 正因为没焊死,变化才可能</text><text x=\"360\" y=\"290\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:13px\">「空」否定的是「焊死不变」,不否定「存在」</text></svg>",
-        "caption": "「空」的古今义对比:经文的「空」否定的是「固定不变的自性」,不是否定存在本身;读成虚无与消极,是最常见的误读。(义据本章「色即是空」「诸法空相」诸句与本站译文)"
-      },
-      {
-        "type": "h2",
-        "text": "能带走什么:三个看法,不是三副药"
-      },
-      {
-        "type": "p",
-        "text": "最后,从文本里挑三条今天用得上的思路。说明在先:这是对经文义理的训读引申,不是修行指导,更不承诺任何效果。其一,情绪来时,试试五蕴的拆法:把「我完了」拆成「此刻有个身体在紧绷(色),有股难受(受),有个『我完了』的念头(想),有股想刷手机逃开的冲动(行)」——念头是零件,不是判决书,拆开摆一摆,它就没那么大了。其二,给标签松绑:职位、房子、点赞数,都是因缘拼装,可以用,但不必把「我是谁」焊死在上面;积木掉了一块,不等于你这个人塌了。其三,做事时体会一下「以无所得故」:把注意力从「抓住结果」挪回「走好脚下」——不是不要结果,是不被结果提前勒住脖子。"
-      },
-      {
-        "type": "h2",
-        "text": "回到凌晨三点"
-      },
-      {
-        "type": "p",
-        "text": "还记得开头那块凌晨三点的石头吗?心经不保证你从此夜夜安眠——它没这么许诺过,我们也不替它许诺。它给的是一套拆解的眼光:下一次石头压上来,你至少知道它是拼的,知道每块零件的名字,知道「挂住你的」是心里的网,而不是世界的墙。二百六十个字,从「照见」开始,到「揭谛」结束——看清,然后,走吧,走吧,往开阔处去。"
-      },
-      {
-        "type": "refs",
-        "items": [
-          "底本:唐·玄奘译《般若波罗蜜多心经》(略本,贞观二十三年/公元 649 年译),原文据《大正新修大藏经》第八册 No.251;本文引文与译文均取本站《心经》原文及逐段对照译文",
-          "对读:旧题后秦·鸠摩罗什译《摩诃般若波罗蜜大明咒经》(略本,译者归属学界或有疑);唐·法月、般若共利言等诸广本(有序分与流通分)",
-          "传记与经录:慧立、彦悰《大慈恩寺三藏法师传》(玄奘沙漠持诵本经的记载)、智升《开元释教录》;唐《怀仁集王羲之圣教序》碑附刻玄奘译心经",
-          "注家参考:唐·窥基《般若波罗蜜多心经幽赞》、法藏《般若波罗蜜多心经略疏》;文本来源问题另见那体慧(Jan Nattier)之假说,学界尚存争议,本文如实标出、不作定论",
-          "本站资源:《心经》题解与字词注疏;般若系对读可参本站《金刚经》(「法尚应舍,何况非法」)"
-        ]
-      }
-    ],
-    "featured": true,
-    "hero": {
-      "badge": "开篇 · 全书总纲",
-      "headline": "照见五蕴皆空，度一切苦厄",
-      "tagline": "六百卷般若压成一页纸:看清,便是渡河"
-    }
+ "1": {
+  "title": "白话心经 · 般若波罗蜜多心经",
+  "subtitle": "二百六十字,把「拆解焦虑」这件事讲到底",
+  "centralIdea": "「我」与世界皆是因缘拼装、并无焊死不变的实体(空);照见这一点,挂碍与恐惧便失去立足点——度苦不是搬走苦,而是抽掉苦脚下的台子。",
+  "blocks": [
+   {
+    "type": "lead",
+    "text": "佛经里字数最少的一部,大概也是被念歪最狠的一部。《心经》正文二百六十个字,比一条长微博还短;「色即是空」四个字,几乎人人会念——但十个人里九个,把它理解成了「一切都是虚的,别太认真」。这篇文章想做一件事:把这二百六十个字逐句拆开,用大白话讲清它到底在说什么。你会发现,它不是劝你看破红尘,而是给你一套拆解焦虑的思路——一份一千三百多年前就写好的「心理减负说明书」。"
+   },
+   {
+    "type": "p",
+    "text": "先从一个谁都有过的时刻说起。凌晨三点,你躺在床上睡不着:白天开会说错的那句话、下个月的房贷、体检报告上的箭头、孩子的成绩、爸妈的年纪……念头一个接一个,越想越清醒,胸口像压了块石头。你明知道「想也没用」,可就是停不下来。《心经》要处理的,恰恰是这块石头。它不劝你「别想了」,也不递鸡汤,它干的事更彻底:把石头当场拆开给你看——看清它是拿什么拼起来的、每块零件长什么样。零件看清了,石头就压不实了。整部经,就是这一次「当场拆解」的完整记录。"
+   },
+   {
+    "type": "h2",
+    "text": "立骨架:这是一部什么样的经"
+   },
+   {
+    "type": "p",
+    "text": "先把骨架立起来。这部经全名《般若波罗蜜多心经》。「般若」读 bō rě,不读 bān ruò,是梵语 prajñā 的音译,指看透事物实相的智慧——古人怕它跟日常的「聪明机灵」混为一谈,特意保留原音不意译。「波罗蜜多」是 pāramitā 的音译,义为「到彼岸」:从烦恼的此岸,渡到自在的彼岸。「心」不是心脏,是「心要、核心」——它是六百卷《大般若经》的浓缩胶囊,把一整面书墙压成了随身一页纸。顺便把生字的音一次注齐:五蕴的「蕴」读 yùn;罣碍的「罣」读 guà,同「挂」;菩提萨埵的「埵」读 duǒ;阿耨多罗的「耨」读 nòu;「揭谛」读 jiē dì。"
+   },
+   {
+    "type": "quote",
+    "original": "唐三藏法师玄奘译",
+    "translation": "唐代三藏法师玄奘奉诏译。"
+   },
+   {
+    "type": "p",
+    "text": "译者玄奘,就是《西游记》里唐僧的历史原型。唐贞观二十三年(649),他把这部经译成汉文,即今天的通行本。传记《大慈恩寺三藏法师传》记了一个细节:玄奘当年孤身横穿八百里流沙,随身默诵的正是此经。这是传记的记载,我们不必当灵异故事读;但它至少说明,在译者本人那里,这二百六十个字是可以在绝境里当扶手抓的东西。还要交代一点:心经有「略本」「广本」两个系统。略本(旧题鸠摩罗什本、玄奘本)没有「如是我闻」的开场、没有大众欢喜的收场,翻开就是正文;广本(唐代法月、般若共利言等译)才有完整的叙事框架——舍利弗提问、观自在作答、佛陀印可。我们读的是略本,等于直接从正文第一页读起。"
+   },
+   {
+    "type": "figure",
+    "ftype": "timeline",
+    "svg": "<svg viewBox=\"0 0 720 240\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--font-serif)\"><line x1=\"40\" y1=\"120\" x2=\"672\" y2=\"120\" style=\"stroke:var(--line);stroke-width:1.5\"/><polygon points=\"668,114 668,126 680,120\" style=\"fill:var(--line)\"/><circle cx=\"110\" cy=\"120\" r=\"6\" style=\"fill:var(--cinnabar)\"/><line x1=\"110\" y1=\"114\" x2=\"110\" y2=\"100\" style=\"stroke:var(--line)\"/><text x=\"110\" y=\"68\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:12.5px;font-weight:bold\">五世纪初 · 后秦</text><text x=\"110\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12px\">鸠摩罗什(传)《大明咒经》(略本)</text><circle cx=\"290\" cy=\"120\" r=\"6\" style=\"fill:var(--cinnabar)\"/><line x1=\"290\" y1=\"126\" x2=\"290\" y2=\"140\" style=\"stroke:var(--line)\"/><text x=\"290\" y=\"162\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:12.5px;font-weight:bold\">649 · 唐贞观廿三年</text><text x=\"290\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12px\">玄奘译本(略本 · 今通行本)</text><circle cx=\"460\" cy=\"120\" r=\"6\" style=\"fill:var(--cinnabar)\"/><line x1=\"460\" y1=\"114\" x2=\"460\" y2=\"100\" style=\"stroke:var(--line)\"/><text x=\"460\" y=\"68\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:12.5px;font-weight:bold\">八世纪 · 唐</text><text x=\"460\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12px\">法月、般若共利言等广本</text><circle cx=\"610\" cy=\"120\" r=\"6\" style=\"fill:var(--cinnabar)\"/><line x1=\"610\" y1=\"126\" x2=\"610\" y2=\"140\" style=\"stroke:var(--line)\"/><text x=\"610\" y=\"162\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:12.5px;font-weight:bold\">唐五代以降</text><text x=\"610\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12px\">敦煌写本 · 历代抄刻与书法</text></svg>",
+    "caption": "心经汉译与流传的大脉络:罗什本(传,五世纪初)→玄奘略本(649,今通行本)→唐代诸广本(补齐开场与收尾)→敦煌写本与历代抄刻。本站底本为玄奘略本(《大正藏》No.251)。"
+   },
+   {
+    "type": "p",
+    "text": "版本上还有一桩学术公案,照实说给你:现代学者那体慧(Jan Nattier)提出过一个大胆假说——心经也许不是先有梵文原本,而是从汉译《大品般若》中抽出核心段落、在中国编定,再回译成梵文的。此说在学界有支持也有商榷,至今无定论。不过有一点没有争议:心经的核心段落与《大般若经》相应经文高度重合,它是「摘要」而非凭空「原创」。至于摘要在哪里、以何种语言完成,学者还在争;我们如实记下分歧,不替任何一方拍板。"
+   },
+   {
+    "type": "figure",
+    "ftype": "structure",
+    "svg": "<svg viewBox=\"0 0 720 480\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--font-serif)\"><rect x=\"140\" y=\"18\" width=\"440\" height=\"62\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"360\" y=\"44\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:15px;font-weight:bold\">① 总纲 · 照见五蕴皆空,度一切苦厄</text><text x=\"360\" y=\"66\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12px\">谁 · 用什么方法 · 看见什么 · 结果如何</text><line x1=\"360\" y1=\"82\" x2=\"360\" y2=\"100\" style=\"stroke:var(--line);stroke-width:1.5\"/><polygon points=\"354,100 366,100 360,110\" style=\"fill:var(--line)\"/><rect x=\"140\" y=\"112\" width=\"440\" height=\"62\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"360\" y=\"138\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:15px;font-weight:bold\">② 色空不二 · 色即是空,空即是色</text><text x=\"360\" y=\"160\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12px\">对智慧第一的舍利子,先立最硬的命题</text><line x1=\"360\" y1=\"176\" x2=\"360\" y2=\"194\" style=\"stroke:var(--line);stroke-width:1.5\"/><polygon points=\"354,194 366,194 360,204\" style=\"fill:var(--line)\"/><rect x=\"140\" y=\"206\" width=\"440\" height=\"62\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"360\" y=\"232\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:15px;font-weight:bold\">③ 否定清单 · 从「无色」到「无智亦无得」</text><text x=\"360\" y=\"254\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12px\">五蕴 → 十八界 → 十二因缘 → 四谛,层层拆完</text><line x1=\"360\" y1=\"270\" x2=\"360\" y2=\"288\" style=\"stroke:var(--line);stroke-width:1.5\"/><polygon points=\"354,288 366,288 360,298\" style=\"fill:var(--line)\"/><rect x=\"140\" y=\"300\" width=\"440\" height=\"62\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"360\" y=\"326\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:15px;font-weight:bold\">④ 果地 · 心无罣碍,无有恐怖</text><text x=\"360\" y=\"348\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12px\">看清之后:恐惧失去立足点,直至涅槃</text><line x1=\"360\" y1=\"364\" x2=\"360\" y2=\"382\" style=\"stroke:var(--line);stroke-width:1.5\"/><polygon points=\"354,382 366,382 360,392\" style=\"fill:var(--line)\"/><rect x=\"140\" y=\"394\" width=\"440\" height=\"62\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"360\" y=\"420\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:15px;font-weight:bold\">⑤ 压缩 · 揭谛揭谛,波罗揭谛</text><text x=\"360\" y=\"442\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12px\">整部经再浓缩成一句随身携带的咒</text></svg>",
+    "caption": "《心经》全篇结构图:一句总纲、两层展开、一处果地、一句压缩——其余每一段都在展开第一句。(据玄奘译本二百六十字正文)"
+   },
+   {
+    "type": "h2",
+    "text": "第一句,就是全篇的答案"
+   },
+   {
+    "type": "quote",
+    "original": "观自在菩萨，行深般若波罗蜜多时，照见五蕴皆空，度一切苦厄。",
+    "translation": "观自在菩萨,在修行甚深的般若波罗蜜多时,观照见色、受、想、行、识五蕴都是空的,因而度脱一切苦难灾厄。"
+   },
+   {
+    "type": "p",
+    "text": "全经总纲,一句写完,信息密度极高。拆开是四件事:谁(观自在菩萨)、在干什么(行深般若波罗蜜多)、看见了什么(照见五蕴皆空)、结果如何(度一切苦厄)。「观自在」就是大家熟悉的观世音菩萨——「观自在」是玄奘的新译,取「观照而得自在」之义;旧译「观世音」取「观听世间音声」之义,一名两译,侧重不同。真正要紧的是后半句的因果:苦厄是被「度」过去的,而度的方法不是咬牙硬扛,也不是求谁把苦搬走,而是「照见」——看清楚。看清什么?看清「五蕴皆空」。"
+   },
+   {
+    "type": "p",
+    "text": "「五蕴」是佛教对「我」的拆解清单。蕴,是「堆、聚合」的意思:所谓「我」,其实是五堆东西临时聚在一起——色(身体与物质)、受(苦乐感受)、想(认知与联想)、行(意志与冲动)、识(背后的觉知)。打个比方:你此刻的「我」,像一部正在运行的手机——硬件机身是「色」,消息弹出来那一下舒服或膈应是「受」,认出「这是老板发来的」是「想」,手指忍不住要点开的冲动是「行」,背后一直亮着的系统是「识」。凌晨三点压在你胸口的那块「石头」,拆开看,无非就是这五样在高速运转:身体紧绷、感受难受、念头翻滚、冲动拉扯、意识清醒。《心经》说,这五堆没有一堆是焊死的实体,全都在流动、在变化——这就叫「五蕴皆空」。"
+   },
+   {
+    "type": "figure",
+    "ftype": "diagram",
+    "svg": "<svg viewBox=\"0 0 720 340\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--font-serif)\"><circle cx=\"115\" cy=\"163\" r=\"50\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:1.5\"/><text x=\"115\" y=\"175\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:26px;font-weight:bold\">我</text><text x=\"115\" y=\"245\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:11.5px\">一个正在发生的「我」</text><line x1=\"170\" y1=\"163\" x2=\"250\" y2=\"163\" style=\"stroke:var(--line);stroke-width:1.5\"/><polygon points=\"250,157 250,169 262,163\" style=\"fill:var(--line)\"/><text x=\"210\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:12px\">拆开看</text><rect x=\"280\" y=\"25\" width=\"390\" height=\"44\" rx=\"8\" style=\"fill:none;stroke:var(--line)\"/><text x=\"312\" y=\"54\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:18px;font-weight:bold\">色</text><text x=\"505\" y=\"53\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:13px\">身体与物质——能看能碰的那部分</text><rect x=\"280\" y=\"83\" width=\"390\" height=\"44\" rx=\"8\" style=\"fill:none;stroke:var(--line)\"/><text x=\"312\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:18px;font-weight:bold\">受</text><text x=\"505\" y=\"111\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:13px\">感受——舒服、难受、不好不坏</text><rect x=\"280\" y=\"141\" width=\"390\" height=\"44\" rx=\"8\" style=\"fill:none;stroke:var(--line)\"/><text x=\"312\" y=\"170\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:18px;font-weight:bold\">想</text><text x=\"505\" y=\"169\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:13px\">认知——识别、联想、给事贴标签</text><rect x=\"280\" y=\"199\" width=\"390\" height=\"44\" rx=\"8\" style=\"fill:none;stroke:var(--line)\"/><text x=\"312\" y=\"228\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:18px;font-weight:bold\">行</text><text x=\"505\" y=\"227\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:13px\">冲动——想去做点什么的意志</text><rect x=\"280\" y=\"257\" width=\"390\" height=\"44\" rx=\"8\" style=\"fill:none;stroke:var(--line)\"/><text x=\"312\" y=\"286\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:18px;font-weight:bold\">识</text><text x=\"505\" y=\"285\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:13px\">觉知——背后一直亮着的总后台</text><text x=\"475\" y=\"326\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:12.5px\">五件都在流动,没有一件停得住——这就叫「五蕴皆空」</text></svg>",
+    "caption": "五蕴拆解图:佛教把「一个正在发生的我」拆成色、受、想、行、识五类零件。名目出自本章「照见五蕴皆空」「无受、想、行、识」诸句,白话释义与本站注疏一致。"
+   },
+   {
+    "type": "h2",
+    "text": "色即是空:被念歪最狠的四个字"
+   },
+   {
+    "type": "quote",
+    "original": "舍利子！色不异空，空不异色，色即是空，空即是色；受、想、行、识，亦复如是。",
+    "translation": "舍利子!物质现象不异于空,空不异于物质现象;物质现象当下即是空,空当下即是物质现象;感受、表象、心行、心识,也都是这样。"
+   },
+   {
+    "type": "p",
+    "text": "「舍利子」即舍利弗,佛陀弟子中「智慧第一」的那位——最难的课,要讲给最聪明的学生听。这既是经文的排场,也是给读者的提醒:接下来是全经最烧脑的部分。注意句子的结构:先说「不异」(不分离),再说「即是」(就是)。不是「色的背后另藏着一个空」,也不是「色消灭之后才轮到空」——色与空是同一件事的两面,当下就是。"
+   },
+   {
+    "type": "p",
+    "text": "用两个比喻落地。传统的比喻是浪与水:浪(色)是水暂时的形状,水(空)是浪一直的本体;浪起浪灭,水不增不减——你不能说浪是假的,它真的能打湿你;但你也找不到一朵离开水、自己成立的浪。现代一点的比喻是乐高:桌上那座城堡是真的立在那儿(色),但拆开看,没有任何一块零件叫「城堡」,「城堡」只是这堆积木此刻的组合方式(空);而正因为它是拼的、没焊死,才能拆了重拼——「空即是色」,空不是城堡消失,而是城堡的存在方式。「受、想、行、识,亦复如是」:不光身体和物质,你的情绪、念头、冲动、意识,同样是拼装件,同样没焊死。"
+   },
+   {
+    "type": "figure",
+    "ftype": "compare",
+    "svg": "<svg viewBox=\"0 0 720 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--font-serif)\"><circle cx=\"190\" cy=\"130\" r=\"64\" style=\"fill:none;stroke:var(--ink);stroke-width:1.5\"/><text x=\"190\" y=\"128\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:30px;font-weight:bold\">色</text><text x=\"190\" y=\"158\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:11px\">看得见摸得着的现象</text><circle cx=\"530\" cy=\"130\" r=\"64\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:1.5\"/><text x=\"530\" y=\"128\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:30px;font-weight:bold\">空</text><text x=\"530\" y=\"158\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:11px\">没有焊死的实体</text><line x1=\"262\" y1=\"102\" x2=\"450\" y2=\"102\" style=\"stroke:var(--line);stroke-width:1.5\"/><polygon points=\"448,96 448,108 460,102\" style=\"fill:var(--line)\"/><text x=\"360\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12.5px\">色不异空 · 色即是空</text><line x1=\"458\" y1=\"158\" x2=\"270\" y2=\"158\" style=\"stroke:var(--line);stroke-width:1.5\"/><polygon points=\"272,152 272,164 260,158\" style=\"fill:var(--line)\"/><text x=\"360\" y=\"182\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12.5px\">空不异色 · 空即是色</text><text x=\"360\" y=\"246\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:14px;font-weight:bold\">比喻:浪与水</text><text x=\"360\" y=\"272\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12.5px\">浪是水暂时的形状,水是浪一直的本体;浪起浪灭,水不增减</text></svg>",
+    "caption": "「色不异空,空不异色;色即是空,空即是色」的结构:色与空不是两样东西,而是同一件事的两面——如浪之于水。(本章第二段)"
+   },
+   {
+    "type": "h2",
+    "text": "一路「无」下去:全经最豪横的否定清单"
+   },
+   {
+    "type": "quote",
+    "original": "舍利子！是诸法空相，不生不灭，不垢不净，不增不减。",
+    "translation": "舍利子!一切现象都是空的体相:不生不灭,不垢不净,不增不减。"
+   },
+   {
+    "type": "p",
+    "text": "从空的角度看一切现象(诸法空相),没有真正的出生与消灭、干净与肮脏、增加与减少。听着玄,其实是把「组合体」的逻辑推到底:水汽聚成云、云落成雨、雨蒸成汽,再聚成云——「云」从没出生过,也从没死掉过,只是水在换形态。生灭、垢净、增减,都是站在「有一个固定实体」的前提上才成立的判断;前提一抽掉,这六个字就没了着落。"
+   },
+   {
+    "type": "quote",
+    "original": "是故，空中无色，无受、想、行、识；无眼、耳、鼻、舌、身、意；无色、声、香、味、触、法；无眼界，乃至无意识界；",
+    "translation": "所以在空之中,没有物质现象,没有感受、表象、心行、心识;没有眼、耳、鼻、舌、身、意(六根);没有色、声、香、味、触、法(六尘);没有眼界,乃至没有意识界(十八界)。"
+   },
+   {
+    "type": "p",
+    "text": "接下来是连环否定。六根(眼耳鼻舌身意,六个感官接口)、六尘(色声香味触法,六类感知对象),再加上六识,合称「十八界」——这是佛教给「你全部经验世界」编的门牌号系统:从看见一朵花,到冒出一个念头,任何经验都逃不出这十八个格子。经文说「无」,不是说眼睛不存在、声音听不见——玄奘译经的时候,眼睛好好长着——而是说:这十八个格子里,没有一个装着「固定不变的实体」。「无」否定的是格子里的「焊死」,不是格子本身。"
+   },
+   {
+    "type": "quote",
+    "original": "无无明，亦无无明尽，乃至无老死，亦无老死尽；",
+    "translation": "没有无明,也没有无明的灭尽,乃至没有老死,也没有老死的灭尽(十二因缘)。"
+   },
+   {
+    "type": "p",
+    "text": "「无明」到「老死」,是十二因缘的头尾——佛教描述生命一环扣一环流转的因果链:无明→行→识→……→生→老死,共十二环,「乃至」二字把中间十环省略掉了,相当于文言里的省略号。「无无明,亦无无明尽」是双重否定:既没有焊死的「无明」,也没有一个焊死的「把无明灭尽」的终点。链条的每一环都是流动的;连「挣脱链条」这件事,也不该被抓成新的执念。"
+   },
+   {
+    "type": "quote",
+    "original": "无苦、集、灭、道；无智，亦无得，以无所得故。",
+    "translation": "没有苦、集、灭、道(四谛);没有能知的智,也没有所得之境——因为本无所得的缘故。"
+   },
+   {
+    "type": "p",
+    "text": "这一句最惊人:苦、集、灭、道,是佛陀最早的教学大纲「四谛」——确认问题(苦)、找到根源(集)、给出愿景(灭)、开出路径(道)。连自家教科书,经文也一并说「无」;连「能观照的智慧」和「能到手的觉悟」也不放过:「无智,亦无得」。这不是拆台,是防止学生把教材抱死。《金刚经》里有一句可作互见:「法尚应舍,何况非法」——佛法像渡河的筏子,过了河还把筏子扛在背上,就本末倒置了。「以无所得故」四个字收束全段:因为本来就没有一个可以抓到手里的东西,所以一路「无」下去,不是损失,是卸货。"
+   },
+   {
+    "type": "figure",
+    "ftype": "steps",
+    "svg": "<svg viewBox=\"0 0 720 340\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--font-serif)\"><rect x=\"60\" y=\"20\" width=\"390\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line)\"/><text x=\"76\" y=\"42\" style=\"fill:var(--cinnabar);font-size:13.5px;font-weight:bold\">① 无五蕴——拆「我」的材料</text><text x=\"76\" y=\"62\" style=\"fill:var(--ink);font-size:12px\">空中无色,无受、想、行、识</text><rect x=\"96\" y=\"84\" width=\"390\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line)\"/><text x=\"112\" y=\"106\" style=\"fill:var(--cinnabar);font-size:13.5px;font-weight:bold\">② 无六根六尘——拆感官与世界</text><text x=\"112\" y=\"126\" style=\"fill:var(--ink);font-size:12px\">无眼耳鼻舌身意;无色声香味触法</text><rect x=\"132\" y=\"148\" width=\"390\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line)\"/><text x=\"148\" y=\"170\" style=\"fill:var(--cinnabar);font-size:13.5px;font-weight:bold\">③ 无十八界——拆认知的全部领域</text><text x=\"148\" y=\"190\" style=\"fill:var(--ink);font-size:12px\">无眼界,乃至无意识界</text><rect x=\"168\" y=\"212\" width=\"390\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line)\"/><text x=\"184\" y=\"234\" style=\"fill:var(--cinnabar);font-size:13.5px;font-weight:bold\">④ 无十二因缘——拆生命的流转链</text><text x=\"184\" y=\"254\" style=\"fill:var(--ink);font-size:12px\">无无明……乃至无老死,亦无老死尽</text><rect x=\"204\" y=\"276\" width=\"390\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line)\"/><text x=\"220\" y=\"298\" style=\"fill:var(--cinnabar);font-size:13.5px;font-weight:bold\">⑤ 无四谛、无智无得——拆到教案自身</text><text x=\"220\" y=\"318\" style=\"fill:var(--ink);font-size:12px\">无苦、集、灭、道;无智,亦无得</text><line x1=\"648\" y1=\"36\" x2=\"648\" y2=\"300\" style=\"stroke:var(--line);stroke-width:1.5\"/><polygon points=\"642,298 654,298 648,312\" style=\"fill:var(--line)\"/><text x=\"648\" y=\"22\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:11.5px\">越拆越彻底</text></svg>",
+    "caption": "全经否定清单的五个台阶:从日常经验(五蕴、十八界)一路拆到佛法自家的教案(四谛)与「能得的智慧」,收在「以无所得故」。(本章「是故,空中无色……以无所得故」段)"
+   },
+   {
+    "type": "h2",
+    "text": "心无罣碍:看清之后会发生什么"
+   },
+   {
+    "type": "quote",
+    "original": "菩提萨埵，依般若波罗蜜多故，心无罣碍；无罣碍故，无有恐怖，远离颠倒梦想，究竟涅槃。",
+    "translation": "菩萨依凭般若波罗蜜多,所以心无挂碍;因为无挂碍,所以没有恐怖,远离颠倒错乱的妄想,达到究竟的涅槃。"
+   },
+   {
+    "type": "p",
+    "text": "「菩提萨埵」是「菩萨」的完整音译。「罣碍」的「罣」,本义是被网绳挂住——鱼挂在网上,进退不得,就是「罣」。这个字选得极准:焦虑的体感,不正是被什么东西挂住了吗?用今天的话说,挂碍就是心里那些杀不掉的后台程序:白天的会散了,复盘还在后台转;房贷还没到期,利息已经在脑子里跑了一夜。程序占满内存,机器就卡、就烫、就随时怕崩——这就是「恐怖」的来路。经文给出的因果链非常清楚:依智慧看清(依般若波罗蜜多)→挂不住(心无罣碍)→不怕(无有恐怖)→不再把梦当真(远离颠倒梦想)→彻底安稳(究竟涅槃)。恐惧不是被勇气压下去的,是被看清抽掉了地基。"
+   },
+   {
+    "type": "p",
+    "text": "两个名相顺手训读:「颠倒梦想」,指认知层面的倒置——把流动的当恒常、把拼装的当实体,像在梦里把梦当真;「涅槃」是梵语 nirvāṇa 的音译,本义「吹熄」,指火熄灭的那个状态——不是死亡,是烧了半辈子的焦虑之火,熄了。"
+   },
+   {
+    "type": "figure",
+    "ftype": "quotecard",
+    "svg": "<svg viewBox=\"0 0 720 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--font-serif)\"><rect x=\"80\" y=\"30\" width=\"560\" height=\"240\" rx=\"16\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><rect x=\"336\" y=\"52\" width=\"48\" height=\"34\" rx=\"6\" style=\"fill:var(--cinnabar)\"/><text x=\"360\" y=\"76\" text-anchor=\"middle\" style=\"fill:var(--paper-raised);font-size:15px\">观空</text><text x=\"360\" y=\"152\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:32px;font-weight:bold;letter-spacing:6px\">心无罣碍</text><text x=\"360\" y=\"198\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:20px;letter-spacing:3px\">无罣碍故，无有恐怖</text><text x=\"360\" y=\"242\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12.5px;opacity:.75\">——《般若波罗蜜多心经》· 玄奘译</text></svg>",
+    "caption": "「心无罣碍;无罣碍故,无有恐怖」——般若段的因果链:恐惧不是被勇气压下去,而是被看清抽掉了地基。(本章「菩提萨埵」段)"
+   },
+   {
+    "type": "quote",
+    "original": "三世诸佛，依般若波罗蜜多故，得阿耨多罗三藐三菩提。",
+    "translation": "过去、现在、未来三世的一切佛,也都依凭般若波罗蜜多,证得无上正等正觉。"
+   },
+   {
+    "type": "p",
+    "text": "「阿耨多罗三藐三菩提」是梵语 anuttarā samyak-saṃbodhi 的音译,意为「无上正等正觉」,即圆满的觉悟。这一句是在给方法背书:不只菩萨这么修,过去、现在、未来的一切觉悟者,走的都是同一条路——依般若,看清实相。经文用「三世诸佛」把话说满,是在强调:在它自己的叙述里,这不是某一家的偏方,而是历来觉悟者共走的一条路。"
+   },
+   {
+    "type": "h2",
+    "text": "结尾的咒:整部经的压缩包"
+   },
+   {
+    "type": "quote",
+    "original": "故知般若波罗蜜多，是大神咒，是大明咒，是无上咒，是无等等咒，能除一切苦，真实不虚。",
+    "translation": "所以知道:般若波罗蜜多是大神咒,是大明咒,是无上咒,是无可比拟的咒,能除灭一切苦,真实而不虚妄。"
+   },
+   {
+    "type": "p",
+    "text": "读到这儿你可能会愣一下:前面还在讲「无智亦无得」,怎么突然夸起「咒」来了?训读地看:「咒」是梵语 mantra 的旧译,本义接近「真言、心要」——把一整套义理压缩成一句可以随身携带的话,像把整本书拧成一行口诀。「大神、大明、无上、无等等」四个最高级,是经文给般若的赞叹语,也是般若经典与咒语传统交汇的痕迹(旧题罗什译本径以「大明咒」为经名)。「能除一切苦,真实不虚」则呼应开篇的「度一切苦厄」,首尾扣死。研习的立场上,我们把这段当作文本自己的「压轴推荐语」照实读出;至于经文之外的效验之说,本站不代下断语。"
+   },
+   {
+    "type": "quote",
+    "original": "故说般若波罗蜜多咒，即说咒曰：",
+    "translation": "所以宣说般若波罗蜜多咒,就说咒道:"
+   },
+   {
+    "type": "quote",
+    "original": "揭谛 揭谛 波罗揭谛 波罗僧揭谛 菩提萨婆诃",
+    "translation": "般若波罗蜜多咒为梵语音译,依例存原音、不另作意译;其字面之义约为:去吧,去吧,到彼岸去,大家都到彼岸去,觉悟,圆满成就。"
+   },
+   {
+    "type": "p",
+    "text": "玄奘译经有「五种不翻」的原则,其一便是「秘密故不翻」:咒语保留原音、不作意译,所以这一句照录梵音。它的梵文是 gate gate pāragate pārasaṃgate bodhi svāhā,字面义约为:「去吧,去吧,到彼岸去,大家都到彼岸去,觉悟,圆满。」你看,压缩包解开,还是那件事——渡河,到彼岸。二百六十个字的经,最后浓缩成一句「走吧」。"
+   },
+   {
+    "type": "callout",
+    "tone": "mute",
+    "items": [
+     "顺带一笔文化回响:今天你在博物馆和字帖里最常遇到的佛经,大概率就是它——唐《怀仁集王羲之圣教序》碑文之后,附刻的正是玄奘这个译本的心经;历代书家抄写此经的传统一直延续到今天。一部经能以二百六十字走进书法史、被随身携带一千三百多年,这本身就是「压缩包」设计的胜利。"
+    ]
+   },
+   {
+    "type": "h2",
+    "text": "中心思想:空不是没有,是没焊死"
+   },
+   {
+    "type": "p",
+    "text": "把全篇串成一条推理链:苦从哪来?从抓着不放来。为什么抓着不放?因为把拼装的东西当成了焊死的实体——把此刻的职位当成永远的身份,把一次失败当成整个人生的判决,把翻滚的念头当成不可动摇的事实。般若做的事,就是照见「拼装」这个本质:五蕴是拼的,十八界是拼的,连生死流转的链条、连佛法的教案本身,都不许抓死。"
+   },
+   {
+    "type": "pull",
+    "text": "看清了,挂碍失去地基,恐惧无处立足——「度一切苦厄」不是把苦搬走,是把苦脚下的台子抽掉。"
+   },
+   {
+    "type": "p",
+    "text": "所以「空」最怕被读成「什么都没有」。恰恰相反:杯子正因为中间是空的,才装得下水;房间正因为空,才住得进人;「我」正因为没被焊死,才改得了、长得了、放得下。空,是变化的许可证。把心经读出消极,是把许可证读成了死刑判决书。"
+   },
+   {
+    "type": "figure",
+    "ftype": "contrast",
+    "svg": "<svg viewBox=\"0 0 720 310\" xmlns=\"http://www.w3.org/2000/svg\" style=\"font-family:var(--font-serif)\"><text x=\"360\" y=\"66\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:42px;font-weight:bold\">空</text><rect x=\"48\" y=\"100\" width=\"292\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--line)\"/><text x=\"194\" y=\"130\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:14.5px;font-weight:bold\">常见的误读</text><text x=\"194\" y=\"162\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12.5px;opacity:.8\">✕ 空＝什么都没有</text><text x=\"194\" y=\"188\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12.5px;opacity:.8\">✕ 空＝虚无、消极、别认真</text><text x=\"194\" y=\"214\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12.5px;opacity:.8\">✕ 看破＝躺平、放弃</text><rect x=\"380\" y=\"100\" width=\"292\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--cinnabar)\"/><text x=\"526\" y=\"130\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:14.5px;font-weight:bold\">经文的本义</text><text x=\"526\" y=\"162\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12.5px\">✓ 空＝没有固定不变的自性</text><text x=\"526\" y=\"188\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12.5px\">✓ 一切是因缘拼装、随条件变化</text><text x=\"526\" y=\"214\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:12.5px\">✓ 正因为没焊死,变化才可能</text><text x=\"360\" y=\"290\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:13px\">「空」否定的是「焊死不变」,不否定「存在」</text></svg>",
+    "caption": "「空」的古今义对比:经文的「空」否定的是「固定不变的自性」,不是否定存在本身;读成虚无与消极,是最常见的误读。(义据本章「色即是空」「诸法空相」诸句与本站译文)"
+   },
+   {
+    "type": "h2",
+    "text": "能带走什么:三个看法,不是三副药"
+   },
+   {
+    "type": "p",
+    "text": "最后,从文本里挑三条今天用得上的思路。说明在先:这是对经文义理的训读引申,不是修行指导,更不承诺任何效果。其一,情绪来时,试试五蕴的拆法:把「我完了」拆成「此刻有个身体在紧绷(色),有股难受(受),有个『我完了』的念头(想),有股想刷手机逃开的冲动(行)」——念头是零件,不是判决书,拆开摆一摆,它就没那么大了。其二,给标签松绑:职位、房子、点赞数,都是因缘拼装,可以用,但不必把「我是谁」焊死在上面;积木掉了一块,不等于你这个人塌了。其三,做事时体会一下「以无所得故」:把注意力从「抓住结果」挪回「走好脚下」——不是不要结果,是不被结果提前勒住脖子。"
+   },
+   {
+    "type": "h2",
+    "text": "回到凌晨三点"
+   },
+   {
+    "type": "p",
+    "text": "还记得开头那块凌晨三点的石头吗?心经不保证你从此夜夜安眠——它没这么许诺过,我们也不替它许诺。它给的是一套拆解的眼光:下一次石头压上来,你至少知道它是拼的,知道每块零件的名字,知道「挂住你的」是心里的网,而不是世界的墙。二百六十个字,从「照见」开始,到「揭谛」结束——看清,然后,走吧,走吧,往开阔处去。"
+   },
+   {
+    "type": "refs",
+    "items": [
+     "底本:唐·玄奘译《般若波罗蜜多心经》(略本,贞观二十三年/公元 649 年译),原文据《大正新修大藏经》第八册 No.251;本文引文与译文均取本站《心经》原文及逐段对照译文",
+     "对读:旧题后秦·鸠摩罗什译《摩诃般若波罗蜜大明咒经》(略本,译者归属学界或有疑);唐·法月、般若共利言等诸广本(有序分与流通分)",
+     "传记与经录:慧立、彦悰《大慈恩寺三藏法师传》(玄奘沙漠持诵本经的记载)、智升《开元释教录》;唐《怀仁集王羲之圣教序》碑附刻玄奘译心经",
+     "注家参考:唐·窥基《般若波罗蜜多心经幽赞》、法藏《般若波罗蜜多心经略疏》;文本来源问题另见那体慧(Jan Nattier)之假说,学界尚存争议,本文如实标出、不作定论",
+     "本站资源:《心经》题解与字词注疏;般若系对读可参本站《金刚经》(「法尚应舍,何况非法」)"
+    ]
+   }
+  ],
+  "featured": true,
+  "hero": {
+   "badge": "开篇 · 全书总纲",
+   "headline": "照见五蕴皆空，度一切苦厄",
+   "tagline": "六百卷般若压成一页纸:看清,便是渡河"
   }
+ }
 }

@@ -84,11 +84,40 @@ function pickPull(ch) {
   return bestScore >= PULL_MIN ? best : null
 }
 
+// 回退档:普通档文章几乎不用加粗(实测儒 120 章只有 7 章有、佛 63 章一章没有),
+// 上面那条没有信号可用 → 放宽到「任一段的**收尾整句**」,同样按中心思想打分。
+// 候选一下从 ~3 个变成 ~50 个,故阈值提高到 0.45,并加四道闸门滤掉读着像半句/像编者按的:
+//   ① 连词开头(所以/因此/但…)= 从上下文里被生剥出来的半句
+//   ② 评论文章本身的话(这一篇/全篇/以上…)= 编者按,不是思想本身
+//   ③ 疑问句、引号收尾符开头(「」——…」这类残句)
+//   ④ 长度 16–40 字(短于此不成句、长于此不像金句)
+const SENT_TAIL = /[^。！？]+[。！？]』?」?\s*$/
+const BAD_HEAD = /^(?:\*\*)?(?:所以|因此|于是|但|可是|而|也就是说|这就是|换句话说|总之|不过|然后|接着|至于|其实|[」』"'）)—－–])/
+const META_SENT = /这一篇|这一章|这一节|全篇|整篇|本篇|本章|这三|上面这|以上|下面/
+const PULL_MIN_LOOSE = 0.45
+function pickPullLoose(ch) {
+  const idea = KEY(ch.centralIdea || ch.hero?.headline || '')
+  if (!idea) return null
+  let best = null, bestScore = 0
+  for (const b of ch.blocks || []) {
+    if (!isPara(b)) continue
+    const m = SENT_TAIL.exec((b.text || '').trim())
+    if (!m) continue
+    const s = m[0].trim()
+    if (BAD_HEAD.test(s) || META_SENT.test(s) || /[？?]$/.test(s)) continue
+    const c = KEY(s)
+    if (c.length < 16 || c.length > 40) continue
+    const overlap = [...new Set(c)].filter((x) => idea.includes(x)).length / Math.max(1, new Set(c).size)
+    if (overlap > bestScore) { bestScore = overlap; best = s }
+  }
+  return bestScore >= PULL_MIN_LOOSE ? best : null
+}
+
 // 主转换:返回新的 blocks
 function reblock(ch, chKey) {
   const src = ch.blocks || []
   // 人工选句文件优先(值为 null = 否掉本章的 pull);没给就用启发式提议
-  const chosen = PULLS && chKey in PULLS ? PULLS[chKey] : pickPull(ch)
+  const chosen = PULLS && chKey in PULLS ? PULLS[chKey] : (pickPull(ch) ?? pickPullLoose(ch))
   const out = []
   for (let i = 0; i < src.length; i++) {
     const b = src[i]
@@ -131,11 +160,15 @@ function reblock(ch, chKey) {
 
     // ④ pull:把选定的那句从段尾摘出来单独成块(本章已有 pull 则跳过,每章至多一处)
     if (chosen && !src.some((x) => x.type === 'pull')) {
-      const m = TAIL_BOLD.exec(t)
-      if (m && N(m[1] + m[2]) === N(chosen)) {
+      const mb = TAIL_BOLD.exec(t)
+      const ms = SENT_TAIL.exec(t)
+      const m = mb && N(mb[1] + mb[2]) === N(chosen) ? { text: mb[1] + mb[2], index: mb.index }
+        : ms && N(ms[0].trim()) === N(chosen) ? { text: ms[0].trim(), index: ms.index }
+          : null
+      if (m) {
         const head = t.slice(0, m.index).trim()
         if (head) out.push({ ...b, text: head })
-        out.push({ type: 'pull', text: m[1] + m[2] })
+        out.push({ type: 'pull', text: m.text })
         continue
       }
     }
