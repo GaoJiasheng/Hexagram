@@ -69,12 +69,16 @@ export const DEFAULT_SETTINGS = {
   fontScale: 1.15, // 1 | 1.15 | 1.35 | 1.55
   readWidth: 'normal', // 'narrow' | 'normal' | 'wide'
   transLayout: 'stack', // 'stack'(译文在下) | 'side'(原文/译文左右对照)
+  // 白话/观书文章正文的字体。'serif' = 与站内其余部分同一款(Noto Serif SC,OFL-1.1 自托管);
+  // 'sans' = 系统无衬线栈(苹方/冬青黑…,不打包字体文件、无分发授权问题)。默认跟站内一致。
+  readFont: 'serif', // 'serif'(字体一·宋) | 'sans'(字体二·黑)
   quoteTheme: 'classic', // 'classic'(朱印经典) | 'ink'(水墨留白) | 'moon'(暗夜月白)
 }
 const VALID_THEMES = ['light', 'paper-white', 'dark', 'system']
 const VALID_FONT_SCALES = FONT_SCALE_STEPS.map(([value]) => value)
 const VALID_READ_WIDTHS = ['narrow', 'normal', 'wide']
 const VALID_TRANS_LAYOUTS = ['stack', 'side']
+const VALID_READ_FONTS = ['serif', 'sans']
 const VALID_QUOTE_THEMES = ['classic', 'ink', 'moon']
 
 // 白名单校验:旧结构/损坏值不直接进 state(防非法 fontScale 写入 --font-scale 等)
@@ -100,6 +104,7 @@ export function getSettings() {
   if (!VALID_FONT_SCALES.includes(s.fontScale)) s.fontScale = DEFAULT_SETTINGS.fontScale
   if (!VALID_READ_WIDTHS.includes(s.readWidth)) s.readWidth = DEFAULT_SETTINGS.readWidth
   if (!VALID_TRANS_LAYOUTS.includes(s.transLayout)) s.transLayout = DEFAULT_SETTINGS.transLayout
+  if (!VALID_READ_FONTS.includes(s.readFont)) s.readFont = DEFAULT_SETTINGS.readFont
   s.quoteTheme = getQuoteTheme()
   s.showTranslation = !!s.showTranslation
   delete s.fontScaleTier

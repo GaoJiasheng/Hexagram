@@ -14,6 +14,7 @@ import { useCallback, useRef, useState } from 'react'
 // --bar-h 供正文 padding-top 用。
 const THRESHOLD = 8
 const TOP_SAFE = 12
+const BOTTOM_SAFE = 24   // 触底这一段冻结状态,躲开橡皮筋回弹的抖动
 
 export function useAutoHideHeader() {
   const [hidden, setHidden] = useState(false)
@@ -36,9 +37,13 @@ export function useAutoHideHeader() {
   }, [])
 
   function onScroll(e) {
-    const y = e.currentTarget.scrollTop
+    const el = e.currentTarget
+    const y = el.scrollTop
     const dy = y - lastY.current
     lastY.current = y
+    // 触底那一段不改收放状态:iOS 橡皮筋回弹会让 scrollTop 来回小幅跳动,
+    // 方向忽正忽负,顶栏就会疯狂开合(owner 录屏里正是页尾抖得最凶)。
+    if (y + el.clientHeight >= el.scrollHeight - BOTTOM_SAFE) { accum.current = 0; return }
     if (y <= TOP_SAFE) {
       if (hidden) setHidden(false)
       accum.current = 0

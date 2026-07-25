@@ -37,6 +37,11 @@ export function SettingsProvider({ children }) {
     document.documentElement.style.setProperty('--font-scale', settings.fontScale)
   }, [settings.fontScale])
 
+  // 正文字体应用(白话/观书文章):只写档位,具体字族由 CSS 决定
+  useEffect(() => {
+    document.documentElement.setAttribute('data-read-font', settings.readFont)
+  }, [settings.readFont])
+
   // 行宽应用:JS 只写档位,CSS 负责各视口下的实际宽度。
   useEffect(() => {
     document.documentElement.setAttribute('data-read-width', settings.readWidth)

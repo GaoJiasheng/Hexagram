@@ -113,7 +113,7 @@ const switchTargetName = (site) => site.portalTitle.replace(/(研读|研习)$/, 
 
 // 窄屏下(#157,与抽屉同款)随滚动方向收起主导航,给阅读腾地方:下滑收起、上滑立即展开。
 // 只在窄屏生效——CSS 媒体查询兜底,宽屏即使算出 hidden 也不会有视觉变化。
-const NAV_HIDE_THRESHOLD = 8, NAV_TOP_SAFE = 12
+const NAV_HIDE_THRESHOLD = 8, NAV_TOP_SAFE = 12, NAV_BOTTOM_SAFE = 24
 
 function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings }) {
   const [scrolled, setScrolled] = useState(false)
@@ -127,6 +127,8 @@ function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings }) {
       setScrolled(y > 10)
       const dy = y - lastY.current
       lastY.current = y
+      // 触底那一段冻结:iOS 橡皮筋回弹让 scrollY 来回跳,方向忽正忽负,导航会疯狂开合
+      if (y + window.innerHeight >= document.documentElement.scrollHeight - NAV_BOTTOM_SAFE) { accum.current = 0; return }
       if (y <= NAV_TOP_SAFE) { setNavHidden(false); accum.current = 0; return }
       accum.current = (accum.current === 0 || (dy > 0) === (accum.current > 0)) ? accum.current + dy : dy
       if (accum.current > NAV_HIDE_THRESHOLD) { setNavHidden(true); accum.current = 0 }

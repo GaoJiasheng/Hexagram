@@ -3560,7 +3560,9 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .baihua-idea__tag { flex-shrink: 0; font-size: .72rem; color: var(--paper-raised); background: var(--cinnabar); padding: 2px 8px; border-radius: 5px; font-family: var(--font-serif); }
 /* 白话正文走无衬线(--font-sans):与原文的衬线形成古今对照,也是「现代解说」
    这一层该有的声音。标题加粗拉开层级,行高放宽到 1.95 便于长段落阅读。 */
-.baihua-article { font-family: var(--font-sans); }
+/* 白话/观书正文字体:默认与站内其余部分一致的衬线;工具条可切系统无衬线(设置 readFont) */
+.baihua-article { font-family: var(--font-serif); }
+:root[data-read-font='sans'] .baihua-article { font-family: var(--font-sans); }
 .baihua-lead { margin: 0 0 24px; padding-left: 14px; border-left: 2px solid var(--cinnabar); font-size: calc(.96rem * var(--read-scale)); line-height: 1.85; color: var(--ink-soft); }
 .baihua-h2 { margin: 40px 0 14px; font-family: var(--font-sans); font-weight: 700; font-size: calc(1.22rem * var(--read-scale)); line-height: 1.45; color: var(--ink); letter-spacing: -0.01em; }
 .baihua-p { margin: 0 0 17px; font-size: calc(.98rem * var(--read-scale)); line-height: 1.95; color: var(--ink); font-weight: 400; }

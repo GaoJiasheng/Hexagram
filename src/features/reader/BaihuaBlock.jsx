@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 import { useNavigate } from 'react-router-dom'
 import { getBaihuaMeta, loadBaihua } from './baihua.js'
 import FontScaleControl from './FontScaleControl.jsx'
+import FontFamilyControl from './FontFamilyControl.jsx'
 import { useAutoHideHeader } from './useAutoHideHeader.js'
 import { SITE_MAP } from '../../sites/registry.js'
 
@@ -212,6 +213,8 @@ export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionU
                 </div>
               </header>
               <div className="baihua-drawer__toolbar">
+                <span className="baihua-drawer__toolbar-label">字体</span>
+                <FontFamilyControl />
                 <span className="baihua-drawer__toolbar-label">字号</span>
                 <FontScaleControl />
               </div>

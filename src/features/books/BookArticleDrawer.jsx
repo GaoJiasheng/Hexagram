@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { BaihuaArticle } from '../reader/BaihuaBlock.jsx'
 import FontScaleControl from '../reader/FontScaleControl.jsx'
+import FontFamilyControl from '../reader/FontFamilyControl.jsx'
 import { useAutoHideHeader } from '../reader/useAutoHideHeader.js'
 
 // 书文章图层:与白话文章同款抽屉——先弹层预览,点 ⤢ 再进整页 URL(可收藏/分享/刷新保留)。
@@ -38,6 +39,8 @@ export default function BookArticleDrawer({ open, accent, brand, chap, data, onF
             </div>
           </header>
           <div className="baihua-drawer__toolbar">
+            <span className="baihua-drawer__toolbar-label">字体</span>
+            <FontFamilyControl />
             <span className="baihua-drawer__toolbar-label">字号</span>
             <FontScaleControl />
           </div>

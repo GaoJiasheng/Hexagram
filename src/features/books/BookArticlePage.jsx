@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import { BaihuaArticle } from '../reader/BaihuaBlock.jsx'
 import FontScaleControl from '../reader/FontScaleControl.jsx'
+import FontFamilyControl from '../reader/FontFamilyControl.jsx'
 import HomeSeal from './HomeSeal.jsx'
 import books from '../../data/books/index.json'
 import './books.css'
@@ -32,6 +33,7 @@ export default function BookArticlePage({ kind }) {
       <div className="books-topbar book-article__topbar">
         <Link to={`/books/${slug}`} className="book-article__back">← {book.title}</Link>
         <div className="book-article__topbar-right">
+          <FontFamilyControl />
           <FontScaleControl />
           <HomeSeal />
         </div>
