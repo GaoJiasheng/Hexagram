@@ -3523,22 +3523,29 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 /* 抽屉字号工具条(白话/观书通用):就地调 小/中/大/特大 */
 .baihua-drawer__toolbar { flex-shrink: 0; display: flex; align-items: center; justify-content: flex-end; gap: 10px; padding: 8px clamp(20px, 5vw, 56px); border-bottom: 1px solid var(--line); background: var(--paper-raised); }
 .baihua-drawer__toolbar-label { font-size: 0.76rem; color: var(--ink-faint); }
-/* 头部/工具条随正文滚动方向自动收起(#156,useAutoHideHeader):下滑收起给阅读区腾空间、
-   上滑立刻展开。max-height 过渡起点给够余量(标题两行/安全区最坏情况也能容下)。 */
-.baihua-drawer__head, .baihua-drawer__toolbar {
-  overflow: hidden; max-height: 140px;
-  transition: max-height .22s ease, padding-top .22s ease, padding-bottom .22s ease, opacity .16s ease, border-color .22s ease;
+/* 头部条(头部+字号工具条)随正文滚动方向自动收起(#156,useAutoHideHeader):
+   下滑收起给阅读区腾空间、上滑立刻展开。
+
+   ⚠ 收起必须**平移**、不能折叠高度(#162)。原先头部是滚动容器上方的流内元素,
+   max-height 收到 0 会把滚动容器的上边界一下抬高一整条头部,而 scrollTop 没变 ——
+   眼前正文凭空往上蹦 121px,阅读体验很差。现在头部条脱离文档流浮在正文之上、
+   正文用 padding-top 让出等高空白,收起时整条 translateY(-100%) 平移出视口:
+   布局全程不变、正文一个像素不动,而原先被盖住的那条正文随平移露出来,阅读区照样变大。
+   (主导航 .app-nav 用的就是同一招:sticky + translateY。)
+   高度由 JS 实测写进 --bar-h(标题折行/iOS 安全区都会改变它)。 */
+.baihua-drawer__bar {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 3;
+  transition: transform .24s ease;
 }
-.baihua-drawer__head--hidden, .baihua-drawer__toolbar--hidden {
-  max-height: 0; padding-top: 0; padding-bottom: 0; opacity: 0; border-bottom-color: transparent; pointer-events: none;
-}
+.baihua-drawer__bar--hidden { transform: translateY(-100%); pointer-events: none; }
 /* 紧凑档 seg-control(抽屉头/书页顶栏用) */
 .seg-control--sm .seg-btn { padding: 4px 10px; font-size: 0.8rem; }
 /* 观书整页顶栏右侧:字号控件 + 印章 */
 .book-article__topbar-right { display: flex; align-items: center; gap: 12px; }
 .baihua-drawer__actions button { width: 34px; height: 34px; border: 1px solid var(--line); border-radius: 7px; background: var(--paper); color: var(--ink-soft); cursor: pointer; font-size: .95rem; line-height: 1; }
 .baihua-drawer__actions button:hover { border-color: var(--cinnabar); color: var(--cinnabar); }
-.baihua-drawer__body { flex: 1; overflow-y: auto; padding: 28px clamp(20px, 5vw, 56px) 56px; }
+/* padding-top 让出浮在上面的头部条(--bar-h 由 JS 实测;取不到时退回一个够用的估值) */
+.baihua-drawer__body { flex: 1; overflow-y: auto; padding: calc(var(--bar-h, 116px) + 28px) clamp(20px, 5vw, 56px) 56px; }
 .baihua-overlay--max .baihua-drawer__body > * { max-width: 760px; margin-left: auto; margin-right: auto; }
 
 /* 总纲章「封面」hero(区别于其他章,强化视觉) */

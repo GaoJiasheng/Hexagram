@@ -129,7 +129,7 @@ export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionU
   const [loading, setLoading] = useState(false)
   const [open, setOpen] = useState(false)
   const navigate = useNavigate()
-  const { hidden, onScroll } = useAutoHideHeader()
+  const { hidden, onScroll, barRef, barStyle } = useAutoHideHeader()
 
   useEffect(() => {
     let alive = true
@@ -195,23 +195,26 @@ export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionU
           aria-label={`${entryLabel} · ${chapterName}`}
         >
           <div className="baihua-overlay__backdrop" onClick={() => setOpen(false)} />
-          <aside className="baihua-drawer">
-            <header className={`baihua-drawer__head${hidden ? ' baihua-drawer__head--hidden' : ''}`}>
-              <div className="baihua-drawer__titles">
-                {seal && <span className="baihua-drawer__seal">{seal}</span>}
-                <span className="baihua-drawer__titletext">
-                  <span className="baihua-drawer__brand">{entryLabel}</span>
-                  <span className="baihua-drawer__chap">{chapterName}{display.subtitle ? ` · ${display.subtitle}` : ''}</span>
-                </span>
+          {/* 头部条浮在正文之上(不占文档流),收起时平移出视口——布局不变，正文不跳 */}
+          <aside className="baihua-drawer" style={barStyle}>
+            <div ref={barRef} className={`baihua-drawer__bar${hidden ? ' baihua-drawer__bar--hidden' : ''}`}>
+              <header className="baihua-drawer__head">
+                <div className="baihua-drawer__titles">
+                  {seal && <span className="baihua-drawer__seal">{seal}</span>}
+                  <span className="baihua-drawer__titletext">
+                    <span className="baihua-drawer__brand">{entryLabel}</span>
+                    <span className="baihua-drawer__chap">{chapterName}{display.subtitle ? ` · ${display.subtitle}` : ''}</span>
+                  </span>
+                </div>
+                <div className="baihua-drawer__actions">
+                  <button onClick={goFullPage} aria-label="整页研读" title="整页研读（独立页 · 可收藏分享）">⤢</button>
+                  <button onClick={() => setOpen(false)} aria-label="关闭" title="关闭（Esc）">✕</button>
+                </div>
+              </header>
+              <div className="baihua-drawer__toolbar">
+                <span className="baihua-drawer__toolbar-label">字号</span>
+                <FontScaleControl />
               </div>
-              <div className="baihua-drawer__actions">
-                <button onClick={goFullPage} aria-label="整页研读" title="整页研读（独立页 · 可收藏分享）">⤢</button>
-                <button onClick={() => setOpen(false)} aria-label="关闭" title="关闭（Esc）">✕</button>
-              </div>
-            </header>
-            <div className={`baihua-drawer__toolbar${hidden ? ' baihua-drawer__toolbar--hidden' : ''}`}>
-              <span className="baihua-drawer__toolbar-label">字号</span>
-              <FontScaleControl />
             </div>
             <div className="baihua-drawer__body" onScroll={onScroll}>
               {loading && <p className="text-faint">正在载入白话…</p>}
