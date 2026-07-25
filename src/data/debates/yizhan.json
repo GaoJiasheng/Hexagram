@@ -1,0 +1,108 @@
+{
+  "id": "yizhan",
+  "title": "义战与诡道",
+  "category": "治道与政治",
+  "concept": "义战与诡道",
+  "question": "兵可用乎？若可用，当以礼义节之，以诡道行之，还是根本非之？",
+  "framing": "《司马法》言以战去战、战有礼节，孙子言兵者诡道、必以全争，墨子则非攻而止其源。三家同惜兵祸而所重各异，此为会讲，不判胜负。",
+  "schools": [
+    { "key": "sima", "label": "司马法", "group": "bing", "seal": "观兵", "stance": "以战去战" },
+    { "key": "sun", "label": "孙子", "group": "bing", "seal": "观兵", "stance": "兵者诡道" },
+    { "key": "mo", "label": "墨子", "group": "mo", "seal": "观兼", "stance": "非攻" }
+  ],
+  "rounds": [
+    {
+      "phase": "开宗",
+      "turns": [
+        {
+          "school": "sima",
+          "rebut": null,
+          "point": "兵事出于不得已：以仁为本、以义治之，正不获意而后用权。故为止乱而兴师，虽战亦可。",
+          "cite": { "corpus": "bing", "slug": "simafa", "ch": 1, "quote": "以战去战，虽战可也", "label": "司马法·仁本" }
+        },
+        {
+          "school": "sun",
+          "rebut": null,
+          "point": "既已用兵，则其事在因利制权、示形误敌，不可以常法绳之。此就临阵一节而言。",
+          "cite": { "corpus": "bing", "slug": "sunzi", "ch": 1, "quote": "兵者，诡道也", "label": "孙子·始计" }
+        },
+        {
+          "school": "mo",
+          "rebut": null,
+          "point": "窃桃李者众非之，攻人之国者反誉之。此正是义与不义之辨已乱，故当非攻。",
+          "cite": { "corpus": "mo", "slug": "mozi", "ch": 17, "quote": "今至大为攻国，则弗知非，从而誉之，谓之义", "label": "墨子·非攻上" }
+        }
+      ]
+    },
+    {
+      "phase": "诘问",
+      "turns": [
+        {
+          "school": "mo",
+          "rebut": "sima",
+          "point": "以战去战之说，恰是好攻伐者所饰之辞。杀一人已谓之不义，况驱万民相残乎？",
+          "cite": { "corpus": "mo", "slug": "mozi", "ch": 17, "quote": "杀一人谓之不义，必有一死罪矣", "label": "墨子·非攻上" }
+        },
+        {
+          "school": "sima",
+          "rebut": "sun",
+          "point": "诡道乃临敌之术。古者逐奔不过百步、成列而鼓，争义不争利；舍此礼节，兵与盗何异？",
+          "cite": { "corpus": "bing", "slug": "simafa", "ch": 1, "quote": "争义不争利，是以明其义也", "label": "司马法·仁本" }
+        },
+        {
+          "school": "sun",
+          "rebut": "mo",
+          "point": "非攻之心可敬。然兵事既系于国之存亡，则不容不察；不察而遇之，祸乃更烈。",
+          "cite": { "corpus": "bing", "slug": "sunzi", "ch": 1, "quote": "兵者，国之大事，死生之地，存亡之道，不可不察也", "label": "孙子·始计" }
+        }
+      ]
+    },
+    {
+      "phase": "明诛",
+      "turns": [
+        {
+          "school": "sima",
+          "rebut": "mo",
+          "point": "禹汤武之师岂得谓之攻？其有失命乱常、背德逆天者，乃告于天而彰明有罪，非私斗也。",
+          "cite": { "corpus": "bing", "slug": "simafa", "ch": 1, "quote": "偏告于诸侯，彰明有罪", "label": "司马法·仁本" }
+        },
+        {
+          "school": "mo",
+          "rebut": "sima",
+          "point": "此吾所素分也：三圣王所行者诛，非攻。攻者亏人自利，诛者除天下之害，不可混称。",
+          "cite": { "corpus": "mo", "slug": "mozi", "ch": 19, "quote": "彼非所谓攻，谓诛也", "label": "墨子·非攻下" }
+        },
+        {
+          "school": "sun",
+          "rebut": "sima",
+          "point": "礼节之说，施于成列而鼓之世。今则务在伐谋伐交在先，攻城为不得已之下策。",
+          "cite": { "corpus": "bing", "slug": "sunzi", "ch": 3, "quote": "上兵伐谋，其次伐交，其次伐兵，其下攻城", "label": "孙子·谋攻" }
+        }
+      ]
+    },
+    {
+      "phase": "归本",
+      "turns": [
+        {
+          "school": "sun",
+          "rebut": "sima",
+          "point": "故所重不在战之礼，而在屈人之兵而非战：以全争于天下，则兵不顿而利可全。",
+          "cite": { "corpus": "bing", "slug": "sunzi", "ch": 3, "quote": "必以全争于天下", "label": "孙子·谋攻" }
+        },
+        {
+          "school": "sima",
+          "rebut": "sun",
+          "point": "全争固善。然国虽大好战必亡，天下虽安忘战必危——两句并存，方是先王之政。",
+          "cite": { "corpus": "bing", "slug": "simafa", "ch": 1, "quote": "故国虽大，好战必亡；天下虽安，忘战必危", "label": "司马法·仁本" }
+        },
+        {
+          "school": "mo",
+          "rebut": "sun",
+          "point": "全争之利算在国，吾所计者在民：农不暇稼穑、士不暇治官府，转死沟壑者不可胜计。",
+          "cite": { "corpus": "mo", "slug": "mozi", "ch": 19, "quote": "厮役以此饥寒冻馁疾病而转死沟壑中者，不可胜计也", "label": "墨子·非攻下" }
+        }
+      ]
+    }
+  ],
+  "coda": "三家之异，在「兵」字所落之处不同：《司马法》立于旧礼，视战为王政之一节，故求其有节有度；孙子立于战国之实，视战为存亡所系，故求其不顿兵而利可全；墨子立于百姓之费，视战为亏人自利之最大者，故求其不作。而三家又有一处暗合——皆不以战为可乐之事。《司马法》作者旧题司马穰苴而实为战国齐人所辑，说存疑；此处但就书中所言而论。"
+}

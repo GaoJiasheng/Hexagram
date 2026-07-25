@@ -1,0 +1,203 @@
+{
+  "id": "zaijia",
+  "title": "在家与出家",
+  "category": "伦理 · 义利 · 爱孝",
+  "concept": "在家与出家",
+  "question": "行道须舍家离欲,还是居家亦得?剃度与「身体发肤」之诫如何相安?",
+  "framing": "维摩诘以居士身入不二法门,《遗教经》以戒为师、出家离欲,《孝经》则言身体发肤不敢毁伤——佛教入华时,这正是最吃紧的一处相值。此为会讲,不判胜负。",
+  "schools": [
+    {
+      "key": "weimo",
+      "label": "维摩诘",
+      "group": "fo",
+      "seal": "观空",
+      "stance": "居家·不二"
+    },
+    {
+      "key": "yijiao",
+      "label": "《遗教经》",
+      "group": "fo",
+      "seal": "观空",
+      "stance": "以戒为师"
+    },
+    {
+      "key": "xiaojing",
+      "label": "《孝经》",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "身体发肤"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "缘起",
+      "turns": [
+        {
+          "school": "weimo",
+          "rebut": null,
+          "point": "虽为白衣而奉持沙门清净律行,虽处居家而不著三界。形迹在俗,心地未尝在俗。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "weimojie",
+            "ch": 2,
+            "quote": "虽为白衣奉持沙门清净律行",
+            "label": "维摩诘经·方便品"
+          }
+        },
+        {
+          "school": "yijiao",
+          "rebut": null,
+          "point": "佛将入灭,以波罗提木叉付嘱弟子,令当尊重珍敬。戒相在身,行者方有依止。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "yijiaojing",
+            "ch": 1,
+            "quote": "当尊重珍敬波罗提木叉",
+            "label": "佛遗教经"
+          }
+        },
+        {
+          "school": "xiaojing",
+          "rebut": null,
+          "point": "身体发肤受之父母,不敢毁伤,是孝之始。剃落之举,先动了这一关。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xiaojing",
+            "ch": 1,
+            "quote": "身体发肤，受之父母，不敢毁伤，孝之始也",
+            "label": "孝经·开宗明义"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "诘形迹",
+      "turns": [
+        {
+          "school": "weimo",
+          "rebut": "yijiao",
+          "point": "若必舍家而后可行道,则示有妻子而常修梵行者又置何地?律行不系乎白衣缁衣。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "weimojie",
+            "ch": 2,
+            "quote": "示有妻子常修梵行",
+            "label": "维摩诘经·方便品"
+          }
+        },
+        {
+          "school": "yijiao",
+          "rebut": "weimo",
+          "point": "若乐众者,则受众恼。故教人当离愦闹、独处闲居——非是轻俗,是知此心易散。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "yijiaojing",
+            "ch": 1,
+            "quote": "若乐众者，则受众恼",
+            "label": "佛遗教经"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "守毗尼",
+      "turns": [
+        {
+          "school": "yijiao",
+          "rebut": "xiaojing",
+          "point": "已舍饰好,著坏色衣,执持应器以乞自活。所变者形而所全者志,与轻身自弃不同。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "yijiaojing",
+            "ch": 1,
+            "quote": "已舍饰好，著坏色衣，执持应器，以乞自活",
+            "label": "佛遗教经"
+          }
+        },
+        {
+          "school": "xiaojing",
+          "rebut": "yijiao",
+          "point": "孝不止于全形。立身行道、扬名后世以显父母,乃孝之终;弃亲独善,其终安在?",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xiaojing",
+            "ch": 1,
+            "quote": "立身行道，扬名于后世，以显父母",
+            "label": "孝经·开宗明义"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "责孝道",
+      "turns": [
+        {
+          "school": "xiaojing",
+          "rebut": "weimo",
+          "point": "居家而言不著三界,听来两全;然孝始于事亲、中于事君、终于立身,三节须著实处。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xiaojing",
+            "ch": 1,
+            "quote": "夫孝，始于事亲，中于事君，终于立身",
+            "label": "孝经·开宗明义"
+          }
+        },
+        {
+          "school": "weimo",
+          "rebut": "xiaojing",
+          "point": "经载居士入治政法救护一切,于王子中示以忠孝。人伦非所弃,正是所行之地。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "weimojie",
+            "ch": 2,
+            "quote": "入治政法救护一切",
+            "label": "维摩诘经·方便品"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "和会",
+      "turns": [
+        {
+          "school": "weimo",
+          "rebut": null,
+          "point": "世间性空即是出世间,于其中不入不出。理上如此,则在家出家之诤自其根处已消。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "weimojie",
+            "ch": 9,
+            "quote": "世间性空即是出世间",
+            "label": "维摩诘经·入不二法门品"
+          }
+        },
+        {
+          "school": "yijiao",
+          "rebut": "weimo",
+          "point": "理上不二,事上仍有次第:白衣受欲、非行道人,其瞋犹可恕;出家怀瞋则甚不可。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "yijiaojing",
+            "ch": 1,
+            "quote": "白衣受欲，非行道人",
+            "label": "佛遗教经"
+          }
+        },
+        {
+          "school": "xiaojing",
+          "rebut": null,
+          "point": "儒者所争原不在僧俗二字,只在恩义有所归。孝为德之本、教之所由生,不可空过。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xiaojing",
+            "ch": 1,
+            "quote": "夫孝，德之本也，教之所由生也",
+            "label": "孝经·开宗明义"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "《遗教经》守出家之次第,重在制心有依;维摩诘示居家之不二,重在心迹可分;《孝经》问的则是恩义有无著落。三说所对不是同一层:一说事相,一说理体,一说人伦之责。中古僧俗之争聚讼数百年,义理的接榫处大抵不出此三面。此为会讲,不判胜负。"
+}

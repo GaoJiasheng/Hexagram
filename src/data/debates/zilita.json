@@ -1,0 +1,215 @@
+{
+  "id": "zilita",
+  "title": "自力与他力",
+  "category": "工夫与学",
+  "concept": "自力与他力",
+  "question": "解脱之路,是仗佛愿力持名往生,是自性自度,还是并自他之见而遣之?",
+  "framing": "净土举持名念佛、愿生彼国,禅门指自性自度、不假外求,《信心铭》则连「自」「他」这一分别本身也不许存。佛门最大的一组路径之别,正可对看。此为会讲,不判胜负。",
+  "schools": [
+    {
+      "key": "mituo",
+      "label": "《阿弥陀经》",
+      "group": "fo",
+      "seal": "观空",
+      "stance": "持名·愿生"
+    },
+    {
+      "key": "huineng",
+      "label": "惠能",
+      "group": "fo",
+      "seal": "观空",
+      "stance": "自性自度"
+    },
+    {
+      "key": "sengcan",
+      "label": "《信心铭》",
+      "group": "fo",
+      "seal": "观空",
+      "stance": "不落拣择"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "启请",
+      "turns": [
+        {
+          "school": "mituo",
+          "rebut": null,
+          "point": "经中所示:闻佛名号而执持之,七日一心不乱。这是替下手艰难者另开的一条易行之门。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "amituojing",
+            "ch": 1,
+            "quote": "闻说阿弥陀佛，执持名号",
+            "label": "阿弥陀经"
+          }
+        },
+        {
+          "school": "huineng",
+          "rebut": null,
+          "point": "一切般若智皆从自性而生,不从外入。若识得自本心,法便在自身,何须别处安顿。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "tanjing",
+            "ch": 2,
+            "quote": "一切般若智，皆从自性而生，不从外入",
+            "label": "坛经·般若品"
+          }
+        },
+        {
+          "school": "sengcan",
+          "rebut": null,
+          "point": "才分自他,便已落拣择。至道原不在两头,取此舍彼之心一起,平怀即失。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "xinxinming",
+            "ch": 1,
+            "quote": "至道无难  唯嫌拣择",
+            "label": "信心铭"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "据愿",
+      "turns": [
+        {
+          "school": "mituo",
+          "rebut": "huineng",
+          "point": "自性本具固然,然凡愚终日说心而不见心;故经中不讳其难,自称此是世间难信之法。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "amituojing",
+            "ch": 1,
+            "quote": "为诸众生说是一切世间难信之法",
+            "label": "阿弥陀经"
+          }
+        },
+        {
+          "school": "huineng",
+          "rebut": "mituo",
+          "point": "迷人念佛求生于彼,悟人自净其心。经既言随其心净即佛土净,则净土之说本自指心。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "tanjing",
+            "ch": 3,
+            "quote": "迷人念佛，求生于彼；悟人自净其心",
+            "label": "坛经·疑问品"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "返本",
+      "turns": [
+        {
+          "school": "huineng",
+          "rebut": "sengcan",
+          "point": "不落两头固是,然学人须有下手处。某昔日只道迷时师度、悟了自度,先后自有分际。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "tanjing",
+            "ch": 1,
+            "quote": "迷时师度，悟了自度",
+            "label": "坛经·行由品"
+          }
+        },
+        {
+          "school": "sengcan",
+          "rebut": "huineng",
+          "point": "说自度,亦是心。将心用心,岂非大错?一起念要个「自」字,便又添了一重。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "xinxinming",
+            "ch": 1,
+            "quote": "将心用心  岂非大错",
+            "label": "信心铭"
+          }
+        },
+        {
+          "school": "mituo",
+          "rebut": "sengcan",
+          "point": "若一概不许拣择,则经中劝人发愿生彼国者又当如何安顿?愿力正是有所向。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "amituojing",
+            "ch": 1,
+            "quote": "应当发愿，愿生彼国",
+            "label": "阿弥陀经"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "息见",
+      "turns": [
+        {
+          "school": "sengcan",
+          "rebut": "mituo",
+          "point": "莫逐有缘,勿住空忍。愿之为物,亦须还他一个不将不迎,方不成新的系缚。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "xinxinming",
+            "ch": 1,
+            "quote": "莫逐有缘  勿住空忍",
+            "label": "信心铭"
+          }
+        },
+        {
+          "school": "huineng",
+          "rebut": "mituo",
+          "point": "佛向性中作,莫向身外求。若只管指西方为归处,恐认路头作了家乡。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "tanjing",
+            "ch": 3,
+            "quote": "佛向性中作，莫向身外求",
+            "label": "坛经·疑问品"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "三路同归",
+      "turns": [
+        {
+          "school": "mituo",
+          "rebut": null,
+          "point": "经中原不曾说持名之外别无路,只说于五浊恶世行此难事,为钝根者留一条可走之径。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "amituojing",
+            "ch": 1,
+            "quote": "当知我于五浊恶世行此难事",
+            "label": "阿弥陀经"
+          }
+        },
+        {
+          "school": "huineng",
+          "rebut": null,
+          "point": "菩提只向心觅,何劳向外求玄。话虽如此,人自有钝利、门自有难易,不必强同。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "tanjing",
+            "ch": 3,
+            "quote": "菩提只向心觅，何劳向外求玄",
+            "label": "坛经·疑问品"
+          }
+        },
+        {
+          "school": "sengcan",
+          "rebut": null,
+          "point": "一即一切,一切即一。能如是者,持名与观心两不相碍,亦无所谓自他。",
+          "cite": {
+            "corpus": "fo",
+            "slug": "xinxinming",
+            "ch": 1,
+            "quote": "一即一切  一切即一",
+            "label": "信心铭"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "净土举他力以摄钝根,禅门指自性以立信根,《信心铭》则并自他之见一齐遣去。三家所争不在教理之有无,而在入处之难易:一条易行、一条直指、一条不许安立门户。经中自道「难信」,正见路本不一。此处只述其分,不劝人取舍。"
+}

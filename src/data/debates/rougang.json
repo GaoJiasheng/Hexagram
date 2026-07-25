@@ -1,0 +1,108 @@
+{
+  "id": "rougang",
+  "title": "柔与刚",
+  "category": "治道与政治",
+  "concept": "柔与刚",
+  "question": "制事之本，在柔德、在形势，还是在守雌无为？",
+  "framing": "《三略》引《军谶》「柔能制刚，弱能制强」，是兵家中最近道家的一支；孙子归之于势，老子归之于柔弱处上。同言柔刚而所指各别，此为会讲，不判胜负。",
+  "schools": [
+    { "key": "lue", "label": "三略", "group": "bing", "seal": "观兵", "stance": "柔能制刚" },
+    { "key": "sun", "label": "孙子", "group": "bing", "seal": "观兵", "stance": "择人任势" },
+    { "key": "lao", "label": "老子", "group": "dao", "seal": "观道", "stance": "柔弱处上" }
+  ],
+  "rounds": [
+    {
+      "phase": "起论",
+      "turns": [
+        {
+          "school": "lue",
+          "rebut": null,
+          "point": "《军谶》有言：柔者德也，刚者贼也；弱为人之所助，强为怨之所攻。故治军当以柔为本。",
+          "cite": { "corpus": "bing", "slug": "sanlue", "ch": 1, "quote": "柔能制刚，弱能制强", "label": "三略·上略" }
+        },
+        {
+          "school": "lao",
+          "rebut": null,
+          "point": "天下至柔者莫过于水，而攻坚强者无出其右。此理人尽知之，而莫能行之，故须常提。",
+          "cite": { "corpus": "dao", "slug": "daodejing", "ch": 78, "quote": "天下莫柔弱于水，而攻坚强者，莫之能胜", "label": "道德经·七十八章" }
+        },
+        {
+          "school": "sun",
+          "rebut": null,
+          "point": "柔刚皆是形名之别。所恃者非柔非刚而在势：激水漂石者势也，鸷鸟毁折者节也。",
+          "cite": { "corpus": "bing", "slug": "sunzi", "ch": 5, "quote": "激水之疾，至于漂石者，势也", "label": "孙子·兵势" }
+        }
+      ]
+    },
+    {
+      "phase": "推刃",
+      "turns": [
+        {
+          "school": "sun",
+          "rebut": "lue",
+          "point": "专言柔德，恐失之于责人。善战者求之于势而不责于人，择人任势，如转圆石于千仞之山。",
+          "cite": { "corpus": "bing", "slug": "sunzi", "ch": 5, "quote": "善战者，求之于势，不责于人，故能择人而任势", "label": "孙子·兵势" }
+        },
+        {
+          "school": "lue",
+          "rebut": "sun",
+          "point": "任势诚是。然《军谶》亦云纯柔纯弱其国必削、纯刚纯强其国必亡，四者兼设乃能制其宜。",
+          "cite": { "corpus": "bing", "slug": "sanlue", "ch": 1, "quote": "纯柔纯弱，其国必削；纯刚纯强，其国必亡", "label": "三略·上略" }
+        },
+        {
+          "school": "lao",
+          "rebut": "sun",
+          "point": "势可任而不可恃。人之生也柔弱、其死也坚强；强大者已处下，恃强而已居下矣。",
+          "cite": { "corpus": "dao", "slug": "daodejing", "ch": 76, "quote": "故坚强者死之徒，柔弱者生之徒", "label": "道德经·七十六章" }
+        }
+      ]
+    },
+    {
+      "phase": "按剑",
+      "turns": [
+        {
+          "school": "sun",
+          "rebut": "lao",
+          "point": "柔弱处上是就物性言。至于临阵，则势险节短、如彍弩发机，岂容以柔弱当锋镝？",
+          "cite": { "corpus": "bing", "slug": "sunzi", "ch": 5, "quote": "故善战者，其势险，其节短", "label": "孙子·兵势" }
+        },
+        {
+          "school": "lao",
+          "rebut": "sun",
+          "point": "正为此故，乃有微明之诫：将欲弱之必固强之。锋镝之利，往往先自恃利者始。",
+          "cite": { "corpus": "dao", "slug": "daodejing", "ch": 36, "quote": "将欲弱之，必固强之", "label": "道德经·三十六章" }
+        },
+        {
+          "school": "lue",
+          "rebut": "lao",
+          "point": "兵家取柔，非为守雌而已，乃为兼制其宜：柔有所设，刚有所施，弱有所用，强有所加。",
+          "cite": { "corpus": "bing", "slug": "sanlue", "ch": 1, "quote": "柔有所设，刚有所施；弱有所用，强有所加", "label": "三略·上略" }
+        }
+      ]
+    },
+    {
+      "phase": "合流",
+      "turns": [
+        {
+          "school": "lao",
+          "rebut": "lue",
+          "point": "能柔能刚固善，然吾所指非权术之调剂，乃无为之益：至柔驰骋至坚，不言之教天下希及。",
+          "cite": { "corpus": "dao", "slug": "daodejing", "ch": 43, "quote": "天下之至柔，驰骋天下之至坚", "label": "道德经·四十三章" }
+        },
+        {
+          "school": "lue",
+          "rebut": "lao",
+          "point": "故兵事之柔，终归落在人上：恕己而治人、推惠施恩，士力日新，不在器械之刚利。",
+          "cite": { "corpus": "bing", "slug": "sanlue", "ch": 1, "quote": "良将之统军也，恕己而治人，推惠施恩，士力日新", "label": "三略·上略" }
+        },
+        {
+          "school": "sun",
+          "rebut": "lue",
+          "point": "刚柔皆形，治乱皆数。乱生于治、怯生于勇、弱生于强，惟能因变而后能得其用。",
+          "cite": { "corpus": "bing", "slug": "sunzi", "ch": 5, "quote": "乱生于治，怯生于勇，弱生于强", "label": "孙子·兵势" }
+        }
+      ]
+    }
+  ],
+  "coda": "同一「柔」字，三家所指不同：《三略》之柔是御众之德，落在恩信与人心；孙子之柔刚只是形，真正着力处在势与节；老子之柔弱则是道之用，不为取效而设。故《三略》最近道家而终归兵家——它取柔以为术，老子取柔以为体。《三略》旧题黄石公授张良，实为后人托名之作，此处但论其文。"
+}

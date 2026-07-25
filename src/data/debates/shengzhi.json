@@ -1,0 +1,244 @@
+{
+  "id": "shengzhi",
+  "title": "圣智有害否",
+  "category": "治道与政治",
+  "concept": "圣智有害否",
+  "question": "圣智仁义是治世之具,还是反为大盗所窃?治国当举贤,还是当任法?",
+  "framing": "《胠箧》言「圣人不死,大盗不止」,谓圣智之法反被窃国者据为守备;孔子主举贤兴教;韩非则不恃人贤而恃法术之势。此为会讲,不判胜负。",
+  "schools": [
+    {
+      "key": "zhuang",
+      "label": "庄子",
+      "group": "dao",
+      "seal": "观道",
+      "stance": "绝圣弃知"
+    },
+    {
+      "key": "kong",
+      "label": "孔子",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "举贤兴教"
+    },
+    {
+      "key": "fei",
+      "label": "韩非",
+      "group": "fa",
+      "seal": "观法",
+      "stance": "不恃贤而恃法"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "设问",
+      "turns": [
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "田成子窃齐,并其圣知之法而窃之。圣人生而大盗起,所立之法反成大盗的守备。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-waipian",
+            "ch": 3,
+            "quote": "圣人生而大盗起",
+            "label": "庄子·胠箧"
+          }
+        },
+        {
+          "school": "kong",
+          "rebut": null,
+          "point": "举直错诸枉则民服。贤者在位,风俗自正;不举,则枉者当路,其害更甚。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 2,
+            "quote": "举直错诸枉，则民服",
+            "label": "论语·为政"
+          }
+        },
+        {
+          "school": "fei",
+          "rebut": null,
+          "point": "治国不恃人之为吾善,而用其不得为非。贤者难必,不如立法而一国可齐。",
+          "cite": {
+            "corpus": "fa",
+            "slug": "hanfeizi",
+            "ch": 50,
+            "quote": "不恃人之为吾善也，而用其不得为非也",
+            "label": "韩非子·显学"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "窃圣",
+      "turns": [
+        {
+          "school": "zhuang",
+          "rebut": "kong",
+          "point": "为之仁义以矫之,则并与仁义而窃之。窃钩者诛而窃国者为诸侯,标格愈立,借者愈众。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-waipian",
+            "ch": 3,
+            "quote": "彼窃钩者诛，窃国者为诸侯",
+            "label": "庄子·胠箧"
+          }
+        },
+        {
+          "school": "kong",
+          "rebut": "zhuang",
+          "point": "道之以政、齐之以刑,民免而无耻。并教化去之,则大盗未止而小盗已遍地。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 2,
+            "quote": "道之以政，齐之以刑，民免而无耻",
+            "label": "论语·为政"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "举贤",
+      "turns": [
+        {
+          "school": "kong",
+          "rebut": "fei",
+          "point": "为政之要:先有司、赦小过、举贤才。举尔所知,尔所不知人其舍诸?不可一概不问人。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 13,
+            "quote": "先有司。赦小过。举贤才",
+            "label": "论语·子路"
+          }
+        },
+        {
+          "school": "fei",
+          "rebut": "kong",
+          "point": "儒以文乱法,侠以武犯禁,而人主兼礼之。取士以文行,则法度先自口舌处坏。",
+          "cite": {
+            "corpus": "fa",
+            "slug": "hanfeizi",
+            "ch": 49,
+            "quote": "儒以文乱法，侠以武犯禁",
+            "label": "韩非子·五蠹"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "任法",
+      "turns": [
+        {
+          "school": "fei",
+          "rebut": "zhuang",
+          "point": "绝圣弃知则国无所守。所言者中人之治:抱法处势则治,背法去势则乱。",
+          "cite": {
+            "corpus": "fa",
+            "slug": "hanfeizi",
+            "ch": 40,
+            "quote": "抱法处势则治，背法去势则乱",
+            "label": "韩非子·难势"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": "fei",
+          "point": "为之斗斛以量之,则并与斗斛而窃之。法术亦器,器可被窃,岂独仁义为然?",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-waipian",
+            "ch": 3,
+            "quote": "为之斗斛以量之，则并与斗斛而窃之",
+            "label": "庄子·胠箧"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "鼎足相攻",
+      "turns": [
+        {
+          "school": "fei",
+          "rebut": "kong",
+          "point": "明主之国无书简之文而以法为教,无先王之语而以吏为师;不欲一国安危系于难得之人。",
+          "cite": {
+            "corpus": "fa",
+            "slug": "hanfeizi",
+            "ch": 49,
+            "quote": "无书简之文，以法为教；无先王之语，以吏为师",
+            "label": "韩非子·五蠹"
+          }
+        },
+        {
+          "school": "kong",
+          "rebut": "fei",
+          "point": "有教无类。人既可教,则不必尽以吏为师;弃教而专任法,民之耻心从何处养?",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 15,
+            "quote": "有教无类",
+            "label": "论语·卫灵公"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": "kong",
+          "point": "民延颈举踵而趋贤者之门,内弃其亲而外去其主之事。好知之患,正在此处。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-waipian",
+            "ch": 3,
+            "quote": "内弃其亲，而外去其主之事",
+            "label": "庄子·胠箧"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "省思",
+      "turns": [
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "所疑者非圣人之贤否,乃圣名可否被借。故曰罪在于好知,不在有知无知。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-waipian",
+            "ch": 3,
+            "quote": "罪在于好知",
+            "label": "庄子·胠箧"
+          }
+        },
+        {
+          "school": "fei",
+          "rebut": null,
+          "point": "恃自直之箭则百世无矢。为治者用众而舍寡,故不务德而务法,其虑在常人之世。",
+          "cite": {
+            "corpus": "fa",
+            "slug": "hanfeizi",
+            "ch": 50,
+            "quote": "为治者用众而舍寡，故不务德而务法",
+            "label": "韩非子·显学"
+          }
+        },
+        {
+          "school": "kong",
+          "rebut": null,
+          "point": "举直错诸枉,能使枉者直。人心可移,此儒者所以不肯放下教化一路。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 12,
+            "quote": "举直错诸枉，能使枉者直",
+            "label": "论语·颜渊"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "庄子所疑不是圣人之贤否,而是圣名圣法可被窃借,故归罪于「好知」;孔子信人心可移,故必举贤兴教;韩非虑常人之世不可坐待贤者,故务法而不务德。三说各有所忧:一忧标格被盗,一忧人心失养,一忧治乱无常。作思想史读,不作现世政论。此为会讲,不判胜负。"
+}

@@ -1,0 +1,83 @@
+{
+  "id": "qizheng",
+  "title": "奇正之辨",
+  "category": "治道与政治",
+  "concept": "奇正之辨",
+  "question": "奇正是可以预分的两种部署，还是只在临时相变之间？",
+  "framing": "孙子言以正合、以奇胜，李靖答唐太宗则以奇正相变为枢机、归之于「在人」。这是兵学史上的一桩真公案：唐人如何重解孙子。此为会讲，不判胜负。",
+  "schools": [
+    { "key": "sun", "label": "孙子", "group": "bing", "seal": "观兵", "stance": "以正合以奇胜" },
+    { "key": "jing", "label": "李卫公问对", "group": "bing", "seal": "观兵", "stance": "奇正在人" }
+  ],
+  "rounds": [
+    {
+      "phase": "发端",
+      "turns": [
+        {
+          "school": "sun",
+          "rebut": null,
+          "point": "战势不过奇正。以正相合，以奇取效；善出奇者无穷如天地、不竭如江海，变化无所穷尽。",
+          "cite": { "corpus": "bing", "slug": "sunzi", "ch": 5, "quote": "凡战者，以正合，以奇胜", "label": "孙子·兵势" }
+        },
+        {
+          "school": "jing",
+          "rebut": null,
+          "point": "奇正非二物。正兵可变为奇，奇兵可变为正，枢机全在用之者，故曰奇正在人而已。",
+          "cite": { "corpus": "bing", "slug": "weigongwendui", "ch": 1, "quote": "故善用兵者，奇正在人而已", "label": "李卫公问对·卷上" }
+        }
+      ]
+    },
+    {
+      "phase": "辨名",
+      "turns": [
+        {
+          "school": "jing",
+          "rebut": "sun",
+          "point": "后人执孙武之言，遂以先出为正、后出为奇。臣谓大众所合为正、将所自出为奇，无先后旁击之拘。",
+          "cite": { "corpus": "bing", "slug": "weigongwendui", "ch": 1, "quote": "臣愚谓大众所合为正，将所自出为奇", "label": "李卫公问对·卷上" }
+        },
+        {
+          "school": "sun",
+          "rebut": "jing",
+          "point": "名可再立，理则一贯。吾言奇正相生如循环之无端，本未尝以先后分之，注家自拘耳。",
+          "cite": { "corpus": "bing", "slug": "sunzi", "ch": 5, "quote": "奇正相生，如循环之无端，孰能穷之哉", "label": "孙子·兵势" }
+        }
+      ]
+    },
+    {
+      "phase": "征事",
+      "turns": [
+        {
+          "school": "jing",
+          "rebut": "sun",
+          "point": "试征之于事：诸葛七擒孟获，无他道，正兵而已。远征致远、束部伍而前拒者，非正不能。",
+          "cite": { "corpus": "bing", "slug": "weigongwendui", "ch": 1, "quote": "诸葛亮七擒孟获，无他道也，正兵而已矣", "label": "李卫公问对·卷上" }
+        },
+        {
+          "school": "sun",
+          "rebut": "jing",
+          "point": "正兵所以立不败之地。三军受敌而不至于败者奇正也，至于兵之所加如以碫投卵，则在虚实。",
+          "cite": { "corpus": "bing", "slug": "sunzi", "ch": 5, "quote": "三军之众，可使必受敌而无败者，奇正是也", "label": "孙子·兵势" }
+        }
+      ]
+    },
+    {
+      "phase": "通变",
+      "turns": [
+        {
+          "school": "jing",
+          "rebut": "sun",
+          "point": "故奇正者，所以致敌之虚实。将若不知奇正，则虽知敌之虚实，亦无由致之，此其先后。",
+          "cite": { "corpus": "bing", "slug": "weigongwendui", "ch": 2, "quote": "奇正者，所以致敌之虚实也", "label": "李卫公问对·卷中" }
+        },
+        {
+          "school": "sun",
+          "rebut": "jing",
+          "point": "然则奇正之变不可穷尽，犹五声五色五味之变。执一术以求之者，皆未至于其极。",
+          "cite": { "corpus": "bing", "slug": "sunzi", "ch": 5, "quote": "战势不过奇正，奇正之变，不可胜穷也", "label": "孙子·兵势" }
+        }
+      ]
+    }
+  ],
+  "coda": "两说其实是一个演进：孙子立奇正之名而未详其分合，故后世注家各以己意实之——曹操以先出后出分，李靖则斥其为拘。李靖之解有两层新意：一是把奇正从部署之名转为相变之法，二是把变的根据归于人（教阅既成、众知吾法，然后无所谓奇正之别）。《李卫公问对》旧疑为宋人伪托（阮逸之说流传最广），非唐人原书亦未可知；但即便如此，它仍是唐宋之际读孙子的一份重要记录。"
+}

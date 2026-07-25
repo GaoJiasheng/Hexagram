@@ -1,0 +1,108 @@
+{
+  "id": "changsheng",
+  "title": "长生可修否",
+  "category": "生死 · 身 · 苦乐",
+  "concept": "长生可修否",
+  "question": "形寿可以修为延续，还是当以死生为一条而任其化？",
+  "framing": "内丹一系（《参同契》《悟真篇》）以炼养言命，庄子则不悦生不恶死、以死生存亡为一体。这是道门内部最深的一组分歧。以下如实陈述各家主张与其隐语，属思想史会讲，不作信仰宣化，不承诺长生成仙，亦不述任何修炼工法；不判胜负。",
+  "schools": [
+    { "key": "wu", "label": "悟真篇", "group": "dao", "seal": "观道", "stance": "金液还丹" },
+    { "key": "can", "label": "参同契", "group": "dao", "seal": "观道", "stance": "托易言丹" },
+    { "key": "zhuang", "label": "庄子", "group": "dao", "seal": "观道", "stance": "死生一体" }
+  ],
+  "rounds": [
+    {
+      "phase": "揭旨",
+      "turns": [
+        {
+          "school": "wu",
+          "rebut": null,
+          "point": "吾书所主，在金丹一路。世传服气念咒、休妻绝粒诸法，施力虽多而求效莫验，故不取之。",
+          "cite": { "corpus": "dao", "slug": "wuzhenpian", "ch": 1, "quote": "成道者皆因炼金丹而得", "label": "悟真篇·序" }
+        },
+        {
+          "school": "can",
+          "rebut": null,
+          "point": "吾托《易》象以言造化交构之体：三五和谐、水火相济，皆是隐语，所指在物性之变。",
+          "cite": { "corpus": "dao", "slug": "cantongqi", "ch": 11, "quote": "巨胜尚延年，还丹可入口", "label": "参同契·第十一章" }
+        },
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "吾未闻有可修之长生。古之真人不知悦生、不知恶死，翛然而往、翛然而来而已矣。",
+          "cite": { "corpus": "dao", "slug": "zhuangzi-neipian", "ch": 6, "quote": "古之真人，不知悦生，不知恶死", "label": "庄子·大宗师" }
+        }
+      ]
+    },
+    {
+      "phase": "质疑",
+      "turns": [
+        {
+          "school": "zhuang",
+          "rebut": "wu",
+          "point": "丹之为说，仍是悦生恶死之心未忘。知死生存亡本是一体者，吾乃与之为友。",
+          "cite": { "corpus": "dao", "slug": "zhuangzi-neipian", "ch": 6, "quote": "孰知死生存亡之一体者，吾与之友矣", "label": "庄子·大宗师" }
+        },
+        {
+          "school": "wu",
+          "rebut": "zhuang",
+          "point": "人身难得、光景易迁，此为不甘只作枯待者言之。忘与不忘，正在各人自省，非可强同。",
+          "cite": { "corpus": "dao", "slug": "wuzhenpian", "ch": 1, "quote": "人身难得，光景易迁", "label": "悟真篇·序" }
+        },
+        {
+          "school": "can",
+          "rebut": "zhuang",
+          "point": "黄土流珠、朱雀为火，皆借物为号。吾所论者阴阳消息之纪，不止是生死一端之谈。",
+          "cite": { "corpus": "dao", "slug": "cantongqi", "ch": 11, "quote": "黄土金之父，流珠水之子", "label": "参同契·第十一章" }
+        }
+      ]
+    },
+    {
+      "phase": "返照",
+      "turns": [
+        {
+          "school": "zhuang",
+          "rebut": "can",
+          "point": "言变化则善矣。然以天地为大炉、以造化为大冶，则人之形化亦其一物，何往而不可？",
+          "cite": { "corpus": "dao", "slug": "zhuangzi-neipian", "ch": 6, "quote": "以造化为大冶，恶乎往而不可哉", "label": "庄子·大宗师" }
+        },
+        {
+          "school": "can",
+          "rebut": "zhuang",
+          "point": "大冶之喻吾亦取之。所异者：子以任化为归，吾谓造化有其规矩可寻，故托象以纪之。",
+          "cite": { "corpus": "dao", "slug": "cantongqi", "ch": 11, "quote": "土游于四季，守界定规矩", "label": "参同契·第十一章" }
+        },
+        {
+          "school": "wu",
+          "rebut": "zhuang",
+          "point": "吾亦不敢以幻形为实。若未明本性，则犹滞于幻形——故性与命两者，不可偏举。",
+          "cite": { "corpus": "dao", "slug": "wuzhenpian", "ch": 1, "quote": "如其未明本性，则犹滞于幻形", "label": "悟真篇·序" }
+        }
+      ]
+    },
+    {
+      "phase": "存异",
+      "turns": [
+        {
+          "school": "zhuang",
+          "rebut": "wu",
+          "point": "既云未明本性犹滞幻形，则所争在心不在丹。安时而处顺，哀乐不能入，是谓县解。",
+          "cite": { "corpus": "dao", "slug": "zhuangzi-neipian", "ch": 3, "quote": "安时而处顺，哀乐不能入也", "label": "庄子·养生主" }
+        },
+        {
+          "school": "wu",
+          "rebut": "can",
+          "point": "吾于魏公之书取其纲，而斥后人以藏府为五行、以心肾为坎离者，是认他人之财为己物。",
+          "cite": { "corpus": "dao", "slug": "wuzhenpian", "ch": 1, "quote": "何异认他财为己物", "label": "悟真篇·序" }
+        },
+        {
+          "school": "can",
+          "rebut": "wu",
+          "point": "隐语所以防泄，亦所以致误。故读吾书者当求其纪，勿逐其辞；辞之所指，本非其实。",
+          "cite": { "corpus": "dao", "slug": "cantongqi", "ch": 11, "quote": "改形免世厄，号之曰真人", "label": "参同契·第十一章" }
+        }
+      ]
+    }
+  ],
+  "coda": "三家同在道门而路径各别：《参同契》托《易》象言阴阳交构，其辞多隐；《悟真篇》承其绪而斥旁门，又自言未明本性则犹滞幻形，已把命与性并举；庄子则根本不在「修不修得成」上立论，而在悦生恶死之心上立论——安时处顺，哀乐不入，是要把这问题本身放下。读丹经当知其语皆隐喻，本篇只作思想史陈述：既不代其立信，亦不为其作保，更不涉具体修炼之法。"
+}

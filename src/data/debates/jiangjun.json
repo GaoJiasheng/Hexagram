@@ -1,0 +1,108 @@
+{
+  "id": "jiangjun",
+  "title": "将与君",
+  "category": "治道与政治",
+  "concept": "将与君",
+  "question": "军中之事，当由将专断，还是终归君权与法令？",
+  "framing": "《六韬》以斧钺授将、军不从中御；韩非以权势不可借人为亡国之戒；尉缭子则以法令立将威。此是军权与君权的真张力，此为会讲，不判胜负。",
+  "schools": [
+    { "key": "tai", "label": "六韬", "group": "bing", "seal": "观兵", "stance": "军不从中御" },
+    { "key": "han", "label": "韩非", "group": "fa", "seal": "观法", "stance": "权势不可借人" },
+    { "key": "wei", "label": "尉缭子", "group": "bing", "seal": "观兵", "stance": "将威在法令" }
+  ],
+  "rounds": [
+    {
+      "phase": "陈势",
+      "turns": [
+        {
+          "school": "tai",
+          "rebut": null,
+          "point": "国有难则君避正殿、授将斧钺，曰从此上至天者将军制之。既受命，则军事皆由将出。",
+          "cite": { "corpus": "bing", "slug": "liutao", "ch": 21, "quote": "军中之事，不闻君命，皆由将出", "label": "六韬·立将" }
+        },
+        {
+          "school": "han",
+          "rebut": null,
+          "point": "此正人主所当戒。柄者杀生之制、势者驭众之资，一旦借之于下，臣得其一而用为百。",
+          "cite": { "corpus": "fa", "slug": "hanfeizi", "ch": 31, "quote": "权势不可以借人", "label": "韩非子·内储说下" }
+        },
+        {
+          "school": "wei",
+          "rebut": null,
+          "point": "将权固不假于天地人，然其所以立者在法令：军无二令，二令者诛，留令失令皆诛。",
+          "cite": { "corpus": "bing", "slug": "weiliaozi", "ch": 15, "quote": "军无二令；二令者诛", "label": "尉缭子·将令" }
+        }
+      ]
+    },
+    {
+      "phase": "争柄",
+      "turns": [
+        {
+          "school": "han",
+          "rebut": "tai",
+          "point": "出军命将太重、边地任守太尊，专制擅命而无所请者，历数亡国之征，此居其一。",
+          "cite": { "corpus": "fa", "slug": "hanfeizi", "ch": 15, "quote": "出军命将太重，边地任守太尊，专制擅命，径为而无所请者，可亡也", "label": "韩非子·亡征" }
+        },
+        {
+          "school": "tai",
+          "rebut": "han",
+          "point": "然国不可从外治，军不可从中御。二心不可以事君，疑志不可以应敌，故受命之日不敢生还。",
+          "cite": { "corpus": "bing", "slug": "liutao", "ch": 21, "quote": "国不可从外治，军不可从中御", "label": "六韬·立将" }
+        },
+        {
+          "school": "wei",
+          "rebut": "tai",
+          "point": "将权虽专，亦非无所制。所谓不制于天地人者，谓其守法而不为私意所挠，非谓无所受制。",
+          "cite": { "corpus": "bing", "slug": "weiliaozi", "ch": 2, "quote": "将者，上不制于天，下不制于地，中不制于人", "label": "尉缭子·兵谈" }
+        }
+      ]
+    },
+    {
+      "phase": "问责",
+      "turns": [
+        {
+          "school": "han",
+          "rebut": "wei",
+          "point": "法令固当。然须人臣处国无私朝、居军无私交，乃可久安；徒恃将之自律，则势已下移。",
+          "cite": { "corpus": "fa", "slug": "hanfeizi", "ch": 4, "quote": "故人臣处国无私朝，居军无私交", "label": "韩非子·爱臣" }
+        },
+        {
+          "school": "wei",
+          "rebut": "han",
+          "point": "故武议归于诛赏：杀一人而三军震者杀之，赏一人而万人喜者赏之，刑上究而赏下流。",
+          "cite": { "corpus": "bing", "slug": "weiliaozi", "ch": 8, "quote": "杀一人而三军震者，杀之；赏一人而万人喜者，赏之", "label": "尉缭子·武议" }
+        },
+        {
+          "school": "tai",
+          "rebut": "wei",
+          "point": "威明之外，尚须君之不疑。君不疑将，则智者为之谋、勇者为之斗；疑志一生，法令亦虚设。",
+          "cite": { "corpus": "bing", "slug": "liutao", "ch": 21, "quote": "是故智者为之谋，勇者为之斗", "label": "六韬·立将" }
+        }
+      ]
+    },
+    {
+      "phase": "划界",
+      "turns": [
+        {
+          "school": "tai",
+          "rebut": "han",
+          "point": "君择将而授之，亦非纵之。将有五材十过，故置将不可不察——权之所付，先在选任。",
+          "cite": { "corpus": "bing", "slug": "liutao", "ch": 19, "quote": "故置将不可不察也", "label": "六韬·论将" }
+        },
+        {
+          "school": "han",
+          "rebut": "tai",
+          "point": "察将之说吾不废，然察之在法不在心。柄与势操之于上，则将虽任事而不为患。",
+          "cite": { "corpus": "fa", "slug": "hanfeizi", "ch": 48, "quote": "柄者，杀生之制也；势者，胜众之资也", "label": "韩非子·八经" }
+        },
+        {
+          "school": "wei",
+          "rebut": "han",
+          "point": "然兵起非可以忿也，见可而兴、不见则止。人主之重将，正为战守之实不在庙堂意气。",
+          "cite": { "corpus": "bing", "slug": "weiliaozi", "ch": 2, "quote": "兵起，非可以忿也。见胜则兴，不见胜则止", "label": "尉缭子·兵谈" }
+        }
+      ]
+    }
+  ],
+  "coda": "此题的分歧不在人品而在制度：《六韬》从战场的时效着眼，军令一日不专则应敌失机，故要君以斧钺明授、以不疑相付；韩非从君位的安危着眼，凡权柄外借者其势必渐移，故列专制擅命为亡征；尉缭子居两者之间，把将权系在法令上——将之所以能专，正因其所行者是法而非私。三说合看，恰是一个至今未了的问题：授权与制衡如何同时成立。"
+}
