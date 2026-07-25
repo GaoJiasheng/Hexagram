@@ -2399,16 +2399,12 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 }
 
 /* Colophon */
+/* 落款(跋)印章:owner 定——不论哪个主题、哪个分站,一律用原本的暖红。
+   故直接绑 --cinnabar-pure:它不被分站换肤([data-site] 把 --cinnabar 重绑成
+   各组主色)、也不被门户 muted 覆盖。落款是全站唯一的作者签名,不随站变色。 */
 .colophon-trigger,
 .colophon-sheet,
 .colophon-page {
-  --colophon-accent: var(--cinnabar);
-  --colophon-accent-bg: var(--cinnabar-bg);
-}
-
-[data-site="portal"] .colophon-trigger,
-[data-site="portal"] .colophon-sheet,
-[data-site="portal"] .colophon-page {
   --colophon-accent: var(--cinnabar-pure);
   --colophon-accent-bg: color-mix(in srgb, var(--cinnabar-pure) 9%, transparent);
 }
@@ -3562,6 +3558,46 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .baihua-h2 { margin: 40px 0 14px; font-family: var(--font-sans); font-weight: 700; font-size: calc(1.22rem * var(--read-scale)); line-height: 1.45; color: var(--ink); letter-spacing: -0.01em; }
 .baihua-p { margin: 0 0 17px; font-size: calc(.98rem * var(--read-scale)); line-height: 1.95; color: var(--ink); font-weight: 400; }
 .baihua-p strong, .baihua-li strong { font-weight: 700; }
+/* ── v22.1 富文本块(参照科普 PDF 排版)────────────────────────── */
+/* 列表:悬挂缩进,标记不随正文加粗 */
+.baihua-list { margin: 0 0 17px; padding-left: 1.35em; }
+.baihua-li { margin: 0 0 9px; font-size: calc(.98rem * var(--read-scale)); line-height: 1.9; color: var(--ink); }
+.baihua-li::marker { color: var(--ink-faint); }
+.baihua-list--ol { padding-left: 1.6em; }
+
+/* 提示框:三色语义 + 左上角小标签。用组主色 color-mix,自动随明暗与站点色走 */
+.baihua-callout { margin: 20px 0; padding: 14px 16px 4px; border-radius: 10px; border-left: 3px solid; }
+.baihua-callout__label { display: inline-block; margin-bottom: 8px; font-size: .74rem; letter-spacing: .06em; font-weight: 700; }
+.baihua-callout__p { margin: 0 0 12px; font-size: calc(.95rem * var(--read-scale)); line-height: 1.9; color: var(--ink); }
+.baihua-callout--note { background: color-mix(in srgb, var(--azure) 7%, transparent); border-left-color: var(--azure); }
+.baihua-callout--note .baihua-callout__label { color: var(--azure); }
+.baihua-callout--warn { background: color-mix(in srgb, var(--gold) 9%, transparent); border-left-color: var(--gold); }
+.baihua-callout--warn .baihua-callout__label { color: var(--gold); }
+.baihua-callout--mute { background: var(--paper-raised); border-left-color: var(--line); }
+.baihua-callout--mute .baihua-callout__label { color: var(--ink-faint); }
+
+/* 重点引言:粗左竖条、无底色——与 callout 的「框」区别开,一章至多一处 */
+.baihua-pull { margin: 22px 0; padding: 2px 0 2px 16px; border-left: 4px solid var(--cinnabar);
+  font-size: calc(1.06rem * var(--read-scale)); line-height: 1.75; font-weight: 700; color: var(--ink); }
+
+/* 次第:圆号 + 左竖线串联;todo 整体压灰,表示「尚未到此」 */
+.baihua-steps { list-style: none; margin: 20px 0; padding: 0; }
+.baihua-step { position: relative; display: flex; gap: 12px; padding: 0 0 18px 0; }
+.baihua-step::before { content: ''; position: absolute; left: 11px; top: 24px; bottom: 0; width: 1px; background: var(--line); }
+.baihua-step:last-child::before { display: none; }
+.baihua-step__no { flex: 0 0 23px; height: 23px; border-radius: 50%; display: grid; place-items: center;
+  font-size: .74rem; border: 1px solid var(--line); background: var(--paper); color: var(--ink-soft); position: relative; z-index: 1; }
+.baihua-step__body { flex: 1 1 auto; min-width: 0; }
+.baihua-step__title { margin: 1px 0 4px; font-weight: 700; font-size: calc(.98rem * var(--read-scale)); line-height: 1.6; color: var(--ink); }
+.baihua-step__text { margin: 0; font-size: calc(.92rem * var(--read-scale)); line-height: 1.85; color: var(--ink-soft); }
+.baihua-step__badge { display: inline-block; margin-left: 8px; padding: 1px 8px; border-radius: 999px;
+  font-size: .7rem; font-weight: 400; background: color-mix(in srgb, var(--cinnabar) 12%, transparent); color: var(--cinnabar); vertical-align: middle; }
+.baihua-step--now .baihua-step__no { border-color: var(--cinnabar); color: var(--cinnabar); font-weight: 700; }
+.baihua-step--todo .baihua-step__no,
+.baihua-step--todo .baihua-step__title,
+.baihua-step--todo .baihua-step__text { color: var(--ink-faint); }
+.baihua-step--todo .baihua-step__badge { background: var(--paper-raised); color: var(--ink-faint); }
+
 .baihua-quote { margin: 18px 0; padding: 13px 18px; background: var(--paper-raised); border: 1px solid var(--line); border-radius: 9px; }
 .baihua-quote__orig { margin: 0; font-family: var(--font-serif); font-size: calc(1.02rem * var(--read-scale)); line-height: 1.9; color: var(--ink); font-weight: 500; }
 .baihua-quote__trans { margin: 8px 0 0; font-size: calc(.86rem * var(--read-scale)); line-height: 1.7; color: var(--ink-soft); }
