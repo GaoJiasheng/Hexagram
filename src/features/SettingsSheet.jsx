@@ -147,7 +147,7 @@ export default function SettingsSheet({ open, onClose }) {
         <div className="settings-section">
           <h3 className="settings-section__title">主题</h3>
           <div className="seg-control">
-            {[['light', '观火'], ['dark', '观水'], ['system', '跟随系统']].map(([v, l]) => (
+            {[['light', '观火'], ['paper-white', '观素'], ['dark', '观水'], ['system', '跟随系统']].map(([v, l]) => (
               <button key={v} className={`seg-btn ${settings.theme === v ? 'seg-btn--active' : ''}`} onClick={() => setSettings({ theme: v })}>{l}</button>
             ))}
           </div>

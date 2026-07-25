@@ -29,6 +29,10 @@
   --ochre: #b08d57;
   --line: #e4ddce;
   --font-serif: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+  /* 白话层专用无衬线:系统字优先(iOS/macOS 得苹方,零下载),与原文的衬线形成
+     古今对照——衬线承经文,黑体讲白话。 */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB',
+               'Microsoft YaHei', 'Noto Sans SC', system-ui, sans-serif;
   --font-mono: ui-monospace, monospace;
   --font-scale: 1.15;              /* 用户字号档位(SettingsContext 内联设于 :root):1/1.15/1.35/1.55 */
   --read-boost: 1;                 /* 窄屏默认略大(见下方 media query);桌面为 1 */
@@ -47,6 +51,18 @@
   :root[data-read-width='narrow'] { --read-w: 600px; }
   :root[data-read-width='normal'] { --read-w: 680px; }
   :root[data-read-width='wide'] { --read-w: 820px; }
+}
+
+/* 观素(纯白档):只覆盖纸色与分隔线,朱砂/赤金/各组主色一律沿用观火,
+   故换档不破坏任何既有配色关系。为白底重新压了一档墨色对比与线色。 */
+[data-theme='paper-white'] {
+  --paper: #ffffff;
+  --paper-raised: #f7f7f8;
+  --ink: #1a1a1c;
+  --ink-soft: #5c5c62;
+  --ink-faint: #9a9aa2;
+  --line: #e6e6ea;
+  --cinnabar-bg: #c3272b0f;
 }
 
 [data-theme='dark'] {
@@ -79,7 +95,8 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']):not([data-theme='dark']) {
+  /* 仅「跟随系统」档才吃系统暗色;任何显式档(观火/观素/观水)都不被覆盖 */
+  :root:not([data-theme]) {
     --paper: #191713;
     --paper-raised: #211e19;
     --ink: #f1ece1;
@@ -3538,9 +3555,13 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .baihua-hero__tagline { position: relative; margin: 16px auto 0; max-width: 24em; font-size: .8rem; line-height: 1.7; color: var(--ink-faint); }
 .baihua-idea { display: flex; gap: 10px; align-items: baseline; margin: 0 0 26px; padding: 14px 16px; background: color-mix(in srgb, var(--cinnabar) 7%, transparent); border-radius: 9px; font-size: calc(.96rem * var(--read-scale)); line-height: 1.75; color: var(--ink); }
 .baihua-idea__tag { flex-shrink: 0; font-size: .72rem; color: var(--paper-raised); background: var(--cinnabar); padding: 2px 8px; border-radius: 5px; font-family: var(--font-serif); }
+/* 白话正文走无衬线(--font-sans):与原文的衬线形成古今对照,也是「现代解说」
+   这一层该有的声音。标题加粗拉开层级,行高放宽到 1.95 便于长段落阅读。 */
+.baihua-article { font-family: var(--font-sans); }
 .baihua-lead { margin: 0 0 24px; padding-left: 14px; border-left: 2px solid var(--cinnabar); font-size: calc(.96rem * var(--read-scale)); line-height: 1.85; color: var(--ink-soft); }
-.baihua-h2 { margin: 36px 0 14px; font-family: var(--font-serif); font-size: calc(1.18rem * var(--read-scale)); color: var(--ink); }
-.baihua-p { margin: 0 0 16px; font-size: calc(.98rem * var(--read-scale)); line-height: 1.9; color: var(--ink); font-weight: 500; }
+.baihua-h2 { margin: 40px 0 14px; font-family: var(--font-sans); font-weight: 700; font-size: calc(1.22rem * var(--read-scale)); line-height: 1.45; color: var(--ink); letter-spacing: -0.01em; }
+.baihua-p { margin: 0 0 17px; font-size: calc(.98rem * var(--read-scale)); line-height: 1.95; color: var(--ink); font-weight: 400; }
+.baihua-p strong, .baihua-li strong { font-weight: 700; }
 .baihua-quote { margin: 18px 0; padding: 13px 18px; background: var(--paper-raised); border: 1px solid var(--line); border-radius: 9px; }
 .baihua-quote__orig { margin: 0; font-family: var(--font-serif); font-size: calc(1.02rem * var(--read-scale)); line-height: 1.9; color: var(--ink); font-weight: 500; }
 .baihua-quote__trans { margin: 8px 0 0; font-size: calc(.86rem * var(--read-scale)); line-height: 1.7; color: var(--ink-soft); }

@@ -58,7 +58,7 @@ function Block({ block }) {
 // 文章正文（抽屉与整页研读共用）：总纲章 hero 封面 / 普通章中心思想 → 内容块 → 尾注
 export function BaihuaArticle({ data }) {
   return (
-    <>
+    <div className="baihua-article">
       {data.hero ? (
         /* 总纲章「封面」(区别于其他章):徽标 + 大字金句 + 中心思想 + 题词 */
         <div className="baihua-hero">
@@ -76,7 +76,7 @@ export function BaihuaArticle({ data }) {
       )}
       {data.blocks.map((b, i) => <Block key={i} block={b} />)}
       <p className="baihua-drawer__foot">— 白话研读，重在体会思想；引文出处见上。—</p>
-    </>
+    </div>
   )
 }
 

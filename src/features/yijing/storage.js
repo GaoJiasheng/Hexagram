@@ -64,14 +64,14 @@ const LEGACY_FONT_SCALES = [0.9, 1, 1.15, 1.35]
 export const FONT_SCALE_STEPS = [[1, '小'], [1.15, '中'], [1.35, '大'], [1.55, '特大']]
 
 export const DEFAULT_SETTINGS = {
-  theme: 'system', // 'light' | 'dark' | 'system'
+  theme: 'system', // 'light'(观火·宣纸) | 'paper-white'(观素·纯白) | 'dark'(观水) | 'system'
   showTranslation: true,
   fontScale: 1.15, // 1 | 1.15 | 1.35 | 1.55
   readWidth: 'normal', // 'narrow' | 'normal' | 'wide'
   transLayout: 'stack', // 'stack'(译文在下) | 'side'(原文/译文左右对照)
   quoteTheme: 'classic', // 'classic'(朱印经典) | 'ink'(水墨留白) | 'moon'(暗夜月白)
 }
-const VALID_THEMES = ['light', 'dark', 'system']
+const VALID_THEMES = ['light', 'paper-white', 'dark', 'system']
 const VALID_FONT_SCALES = FONT_SCALE_STEPS.map(([value]) => value)
 const VALID_READ_WIDTHS = ['narrow', 'normal', 'wide']
 const VALID_TRANS_LAYOUTS = ['stack', 'side']

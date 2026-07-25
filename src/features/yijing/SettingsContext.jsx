@@ -27,9 +27,9 @@ export function SettingsProvider({ children }) {
   useEffect(() => {
     const { theme } = settings
     const root = document.documentElement
-    if (theme === 'light') root.setAttribute('data-theme', 'light')
-    else if (theme === 'dark') root.setAttribute('data-theme', 'dark')
-    else root.removeAttribute('data-theme')
+    // system 档不写属性,交给 prefers-color-scheme;其余档直接落 data-theme
+    if (theme === 'system') root.removeAttribute('data-theme')
+    else root.setAttribute('data-theme', theme)
   }, [settings.theme])
 
   // 字号应用
