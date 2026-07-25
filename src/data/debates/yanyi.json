@@ -100,11 +100,40 @@
       ]
     },
     {
+      "phase": "问辞",
+      "turns": [
+        {
+          "school": "zhuang",
+          "rebut": "kong",
+          "point": "辞达而已，所达者何物？言者所以在意，得意而忘言；执辞求达，恐守筌而失鱼。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-zapian",
+            "ch": 4,
+            "quote": "言者所以在意，得意而忘言",
+            "label": "庄子·外物"
+          }
+        },
+        {
+          "school": "xun",
+          "rebut": "kong",
+          "point": "达而已矣，则达无准则；圣王没而名守慢、奇辞起，不制名指实，虽守法之吏亦乱。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 22,
+            "quote": "今圣王没，名守慢，奇辞起，名实乱",
+            "label": "荀子·正名"
+          }
+        }
+      ]
+    },
+    {
       "phase": "申辩",
       "turns": [
         {
           "school": "kong",
-          "rebut": null,
+          "rebut": "xun",
           "point": "言不在多寡华质，而在能否使名实相符、意旨通达;达则止，过则赘。",
           "cite": {
             "corpus": "ru",

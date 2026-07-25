@@ -112,6 +112,35 @@
       ]
     },
     {
+      "phase": "诘名",
+      "turns": [
+        {
+          "school": "sun",
+          "rebut": "meng",
+          "point": "正名可辨义与不义,却不能收既亡之国;亡国不可以复存,死者不可以复生,故慎战在计而不在名。",
+          "cite": {
+            "corpus": "bing",
+            "slug": "sunzi",
+            "ch": 12,
+            "quote": "亡国不可以复存，死者不可以复生",
+            "label": "孙子·火攻"
+          }
+        },
+        {
+          "school": "mo",
+          "rebut": "meng",
+          "point": "上伐下之名,不能销杀人之罪;杀一人谓之不义,必有一死罪,则征伐之名愈正,亏人愈不可掩。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 17,
+            "quote": "杀一人谓之不义，必有一死罪矣",
+            "label": "墨子·非攻上"
+          }
+        }
+      ]
+    },
+    {
       "phase": "申辩",
       "turns": [
         {
@@ -128,7 +157,7 @@
         },
         {
           "school": "meng",
-          "rebut": null,
+          "rebut": "sun",
           "point": "较量之术终不如人心。天时地利皆不如人和;施仁政、薄刑敛而民附,争战之外另有所凭。",
           "cite": {
             "corpus": "ru",

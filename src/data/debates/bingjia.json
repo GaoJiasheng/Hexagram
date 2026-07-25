@@ -100,6 +100,35 @@
       ]
     },
     {
+      "phase": "再诘",
+      "turns": [
+        {
+          "school": "sun",
+          "rebut": "wei",
+          "point": "刑赏立而士可使前,然赏罚所加终是责在人;善战者求之于势,择人而任势,不专恃号令之明。",
+          "cite": {
+            "corpus": "bing",
+            "slug": "sunzi",
+            "ch": 5,
+            "quote": "善战者，求之于势，不责于人",
+            "label": "孙子·兵势"
+          }
+        },
+        {
+          "school": "wu",
+          "rebut": "wei",
+          "point": "法制周审固不可无,然图国者必先教百姓而亲万民;四和不立,徒以刑赏驱之,士未必肯用命。",
+          "cite": {
+            "corpus": "bing",
+            "slug": "wuzi",
+            "ch": 1,
+            "quote": "必先教百姓而亲万民",
+            "label": "吴子·图国"
+          }
+        }
+      ]
+    },
+    {
       "phase": "申辩",
       "turns": [
         {
@@ -116,7 +145,7 @@
         },
         {
           "school": "wei",
-          "rebut": null,
+          "rebut": "sun",
           "point": "既不取吉凶卜筮,则一切归于制度:明法审令而事自利,人事重于时日之占。",
           "cite": {
             "corpus": "bing",

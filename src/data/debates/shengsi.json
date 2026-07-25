@@ -112,6 +112,35 @@
       ]
     },
     {
+      "phase": "诘幻",
+      "turns": [
+        {
+          "school": "kong",
+          "rebut": "fo",
+          "point": "若一切如梦幻泡影,则慎终追远之诚何所寄?民德归厚正由丧祭之实,不宜以观照消其情实。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 1,
+            "quote": "慎终追远，民德归厚矣",
+            "label": "论语·学而"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": "fo",
+          "point": "作如是观,仍存真幻之别;以造化为大冶,形来则受、化去则往,不须别立一观以照之。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 6,
+            "quote": "以造化为大冶，恶乎往而不可哉",
+            "label": "庄子·大宗师"
+          }
+        }
+      ]
+    },
+    {
       "phase": "申辩",
       "turns": [
         {
@@ -140,7 +169,7 @@
         },
         {
           "school": "fo",
-          "rebut": null,
+          "rebut": "zhuang",
           "point": "不止于幻泡之喻,更须如观露电之倏忽,常作此观,则于生灭之间不生执着。",
           "cite": {
             "corpus": "fo",

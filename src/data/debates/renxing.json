@@ -112,6 +112,35 @@
       ]
     },
     {
+      "phase": "追问",
+      "turns": [
+        {
+          "school": "xun",
+          "rebut": "yang",
+          "point": "良知若不假外求,便属不可学不可事者;然礼义须学而能、事而成,混性伪为一,工夫无处著落。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 23,
+            "quote": "不可学、不可事而在人者谓之性",
+            "label": "荀子·性恶篇"
+          }
+        },
+        {
+          "school": "meng",
+          "rebut": "yang",
+          "point": "说善恶落第二义,恐性善之旨反晦;人性之善犹水就下,不可只标本体而不指其端绪。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "mengzi",
+            "ch": 11,
+            "quote": "人性之善也，犹水之就下也",
+            "label": "孟子·告子上"
+          }
+        }
+      ]
+    },
+    {
       "phase": "申辩",
       "turns": [
         {
@@ -140,7 +169,7 @@
         },
         {
           "school": "yang",
-          "rebut": null,
+          "rebut": "xun",
           "point": "故工夫只在致良知:致吾心之良知于事事物物,则物各得其理,善恶自明。",
           "cite": {
             "corpus": "xin",

@@ -112,6 +112,35 @@
       ]
     },
     {
+      "phase": "诘玄",
+      "turns": [
+        {
+          "school": "xun",
+          "rebut": "lao",
+          "point": "大音希声之说,有见于诎而无见于信;声乐既为人情所必不免,一概归之无声,则民无所导。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 17,
+            "quote": "老子有见于诎，无见于信",
+            "label": "荀子·天论"
+          }
+        },
+        {
+          "school": "mo",
+          "rebut": "lao",
+          "point": "希声无形固玄妙,然仁者度天下以利害为准:利人乎即为,不利人乎即止;不闻不见,何补饥寒?",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 27,
+            "quote": "利人乎即为，不利人乎即止",
+            "label": "墨子·非乐上"
+          }
+        }
+      ]
+    },
+    {
       "phase": "申辩",
       "turns": [
         {
@@ -140,7 +169,7 @@
         },
         {
           "school": "lao",
-          "rebut": null,
+          "rebut": "mo",
           "point": "大象无形,道隐于无名,真正广大者不落于一声一象,故不在有声处争其有用无用。",
           "cite": {
             "corpus": "dao",

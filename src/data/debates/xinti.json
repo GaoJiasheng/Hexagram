@@ -100,6 +100,23 @@
       ]
     },
     {
+      "phase": "诘虚",
+      "turns": [
+        {
+          "school": "cheng",
+          "rebut": "zhuang",
+          "point": "虚而待物,则本体成一空器;道之外无物,物之外无道,父子君臣之理即在此心,不待虚而后有。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "jinsilu",
+            "ch": 13,
+            "quote": "道之外无物，物之外无道",
+            "label": "近思录·辨异端"
+          }
+        }
+      ]
+    },
+    {
       "phase": "申辩",
       "turns": [
         {
@@ -128,7 +145,7 @@
         },
         {
           "school": "zhuang",
-          "rebut": null,
+          "rebut": "cheng",
           "point": "更进一步,堕肢体、黜聪明、离形去知,与大通为一,此坐忘之境亦本体之事。",
           "cite": {
             "corpus": "dao",

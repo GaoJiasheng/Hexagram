@@ -112,6 +112,35 @@
       ]
     },
     {
+      "phase": "反诘",
+      "turns": [
+        {
+          "school": "mo",
+          "rebut": "lao",
+          "point": "谓其神不伤人,则幽隐之地何所忌惮?鬼神之明无所不烛,故吏不敢不廉、暴不敢不罪。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 26,
+            "quote": "鬼神之明，不可为幽闲、广泽、山林、深谷",
+            "label": "墨子·明鬼下"
+          }
+        },
+        {
+          "school": "kong",
+          "rebut": "lao",
+          "point": "以道莅之而鬼不神,是把幽明推给天道;丧祭之诚何处安顿?祭如在,敬在诚而不在其伤不伤。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "lunyu",
+            "ch": 3,
+            "quote": "祭如在，祭神如神在",
+            "label": "论语·八佾"
+          }
+        }
+      ]
+    },
+    {
       "phase": "申辩",
       "turns": [
         {
@@ -128,7 +157,7 @@
         },
         {
           "school": "lao",
-          "rebut": null,
+          "rebut": "mo",
           "point": "治大国如烹小鲜,不宜频扰;清静无为,则幽明各安其位,无须以神道相督责。",
           "cite": {
             "corpus": "dao",

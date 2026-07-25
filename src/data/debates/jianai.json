@@ -88,11 +88,28 @@
       ]
     },
     {
+      "phase": "转锋",
+      "turns": [
+        {
+          "school": "mo",
+          "rebut": "kong",
+          "point": "推己及人自亲亲始,而各爱其家不爱异家,正是乱之所起;爱有等差,则推之终有所止。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 14,
+            "quote": "大夫各爱其家，不爱异家，故乱异家以利其家",
+            "label": "墨子·兼爱上"
+          }
+        }
+      ]
+    },
+    {
       "phase": "申辩",
       "turns": [
         {
           "school": "kong",
-          "rebut": null,
+          "rebut": "mo",
           "point": "仁之方在己所不欲、勿施于人——爱有差等而能推之,则及于人。",
           "cite": {
             "corpus": "ru",

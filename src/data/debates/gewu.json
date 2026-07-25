@@ -100,6 +100,35 @@
       ]
     },
     {
+      "phase": "叩经",
+      "turns": [
+        {
+          "school": "zhu",
+          "rebut": "daxue",
+          "point": "经文但云致知在格物,不言格几物、如何格;门人遂疑格一物而万理皆知,故不得不推明其义。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "jinsilu",
+            "ch": 3,
+            "quote": "或问格物须物物格之，还只格一物而万理皆知",
+            "label": "近思录·致知"
+          }
+        },
+        {
+          "school": "wang",
+          "rebut": "daxue",
+          "point": "经文只说致知,不曾说所致者何知;若认作充扩知识,则愈致愈远——请经文自道其知。",
+          "cite": {
+            "corpus": "xin",
+            "slug": "daxuewen",
+            "ch": 1,
+            "quote": "非若后儒所谓充扩其知识之谓也，致吾心之良知焉耳",
+            "label": "大学问"
+          }
+        }
+      ]
+    },
+    {
       "phase": "申辩",
       "turns": [
         {
@@ -112,6 +141,18 @@
             "ch": 1,
             "quote": "意之所在便是物",
             "label": "传习录·卷上"
+          }
+        },
+        {
+          "school": "daxue",
+          "rebut": "wang",
+          "point": "本文次第自具:物格而后知致,知致而后意诚;所致者即诚意正心之知,不在经外别求。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "daxue",
+            "ch": 1,
+            "quote": "物格而后知致，知致而后意诚",
+            "label": "大学·经"
           }
         }
       ]
