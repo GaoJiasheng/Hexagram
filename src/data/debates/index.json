@@ -1992,6 +1992,138 @@
           "stance": "刑不足恃"
         }
       ]
+    },
+    {
+      "id": "hetong",
+      "title": "和与同",
+      "division": "zhidao",
+      "category": "礼 · 文 · 乐",
+      "concept": "和与同",
+      "question": "「和」是保存差异的相济,还是天下之义归于一?同一个字,三家所指是否同一物?",
+      "turns": 14,
+      "status": "done",
+      "schools": [
+        {
+          "label": "孔子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "和而不同"
+        },
+        {
+          "label": "墨子",
+          "group": "mo",
+          "seal": "观兼",
+          "stance": "尚同一义"
+        },
+        {
+          "label": "《中庸》",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "致中和"
+        }
+      ]
+    },
+    {
+      "id": "youhuan",
+      "title": "忧与患",
+      "division": "xinxing",
+      "category": "生死 · 身 · 苦乐",
+      "concept": "忧与患",
+      "question": "忧患是当去之病、是生机所寄、是自招之累,还是本无可忧之实?",
+      "turns": 16,
+      "status": "done",
+      "schools": [
+        {
+          "label": "孔子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "内省不疚"
+        },
+        {
+          "label": "孟子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "生于忧患"
+        },
+        {
+          "label": "庄子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "无所困苦"
+        },
+        {
+          "label": "《心经》",
+          "group": "fo",
+          "seal": "观空",
+          "stance": "五蕴皆空"
+        }
+      ]
+    },
+    {
+      "id": "mengjue",
+      "title": "梦与觉",
+      "division": "xinxing",
+      "category": "生死 · 身 · 苦乐",
+      "concept": "梦与觉",
+      "question": "梦是不可辨的另一重真、是可解的心身之迹、是万象皆幻的一例,还是心失其主时的乱象?",
+      "turns": 16,
+      "status": "done",
+      "schools": [
+        {
+          "label": "庄子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "周蝶物化"
+        },
+        {
+          "label": "列子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "神遇为梦"
+        },
+        {
+          "label": "《金刚经》",
+          "group": "fo",
+          "seal": "观空",
+          "stance": "有为皆幻"
+        },
+        {
+          "label": "荀子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "梦不足为凭"
+        }
+      ]
+    },
+    {
+      "id": "wuyong",
+      "title": "无用之用",
+      "division": "weixue",
+      "category": "名实 · 言辩 · 知",
+      "concept": "无用之用",
+      "question": "什么才算「有用」?以全生为用、以民利为用,还是以治功为用?",
+      "turns": 14,
+      "status": "done",
+      "schools": [
+        {
+          "label": "庄子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "无用之用"
+        },
+        {
+          "label": "墨子",
+          "group": "mo",
+          "seal": "观兼",
+          "stance": "用而不可则非之"
+        },
+        {
+          "label": "韩非",
+          "group": "fa",
+          "seal": "观法",
+          "stance": "功用为的"
+        }
+      ]
     }
   ],
   "planned": []
