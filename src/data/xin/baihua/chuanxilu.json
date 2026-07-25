@@ -1,1100 +1,1120 @@
 {
-  "1": {
-    "title": "白话传习录 · 卷上",
-    "subtitle": "心即理、知行合一、事上磨——王阳明开给「道理都懂就是做不到」的药方",
-    "centralIdea": "理不在心外：知而不行只是未知，一切修养工夫都收归自己心上、在事上磨。",
-    "blocks": [
-      {
-        "type": "lead",
-        "text": "「道理我都懂，就是做不到。」这大概是现代人说得最多、也最无奈的一句话。五百年前，有个人听到类似的话，只回了一句：做不到，就是不懂。这句话把无数人噎住了，也把无数人点醒了。说这话的人叫王阳明，记下这些话的本子，叫《传习录》。卷上，就是这一切的开头。"
-      },
-      {
-        "type": "p",
-        "text": "先说一个谁都经历过的瞬间：深夜刷手机，刷到一条《长期熬夜的十大危害》，你心头一紧，郑重地点了收藏，然后——继续刷到凌晨两点。收藏夹里躺着早睡指南、健身计划、理财课、沟通技巧，个个是好道理；生活却原地踏步。我们通常把这归结为「懒」「拖延」「执行力差」，然后买更多的课、收藏更多的干货。王阳明会在这里拦住你：问题不出在执行，出在你以为的那个「懂」，根本不是懂。整部《传习录》卷上，就是围绕这个判断展开的。"
-      },
-      {
-        "type": "h2",
-        "text": "一本没打算出版的课堂笔记"
-      },
-      {
-        "type": "p",
-        "text": "先立个骨架。《传习录》是王阳明的弟子们记录的问答语录和论学书信，书名取自《论语》里曾子的「传不习乎」——老师传授的东西，我练习了吗？光这个书名就已经在剧透全书主题：传了不习，等于没传。全书分上、中、下三卷：卷上是课堂问答实录，卷中是论学书信，卷下是门人后来的续记。我们现在读的卷上，由三位弟子先后记录：徐爱、陆澄、薛侃。其中徐爱是王阳明的妹婿，也是最早登门的弟子，可惜三十一岁早逝，没能看到老师思想的完全成熟；卷上开头那十几条问答，就是他留下的记录，也是心学最经典的「第一课」。徐爱在卷首自述，这些笔记只是「私以示夫同志」——私下给同门看的，本没打算出版。"
-      },
-      {
-        "type": "p",
-        "text": "几个容易读错的字先记下：「温凊」的凊读 qìng（冬温夏凊，冬天使父母温暖、夏天使父母凉爽，不是「清」）；「万镒」的镒读 yì（古代重量单位，二十两上下为一镒）；「謦欬」读 qǐng kài（谈笑声）；「知弟」的弟通「悌」，读 tì（敬爱兄长）。后面都会遇到。"
-      },
-      {
-        "type": "figure",
-        "ftype": "structure",
-        "svg": "<svg viewBox='0 0 700 330' xmlns='http://www.w3.org/2000/svg' font-family='var(--font-serif)'><text x='350' y='34' text-anchor='middle' font-size='20' style='fill:var(--ink)'>《传习录》全书结构 · 你在读的位置</text><rect x='30' y='60' width='200' height='78' rx='8' style='fill:none;stroke:var(--cinnabar)' stroke-width='2.5'/><text x='130' y='92' text-anchor='middle' font-size='17' style='fill:var(--cinnabar)'>卷上 · 语录</text><text x='130' y='118' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>门人所记课堂问答（本篇）</text><rect x='250' y='60' width='200' height='78' rx='8' style='fill:none;stroke:var(--line)' stroke-width='1.5'/><text x='350' y='92' text-anchor='middle' font-size='17' style='fill:var(--ink)'>卷中 · 书信</text><text x='350' y='118' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.65'>论学书信（答顾东桥书等）</text><rect x='470' y='60' width='200' height='78' rx='8' style='fill:none;stroke:var(--line)' stroke-width='1.5'/><text x='570' y='92' text-anchor='middle' font-size='17' style='fill:var(--ink)'>卷下 · 续录</text><text x='570' y='118' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.65'>门人续记（含晚年论学）</text><line x1='130' y1='138' x2='130' y2='168' style='stroke:var(--cinnabar)' stroke-width='2'/><line x1='130' y1='168' x2='570' y2='168' style='stroke:var(--cinnabar)' stroke-width='2'/><line x1='350' y1='168' x2='350' y2='190' style='stroke:var(--cinnabar)' stroke-width='2'/><rect x='30' y='190' width='200' height='90' rx='8' style='fill:none;stroke:var(--line)' stroke-width='1.5'/><text x='130' y='222' text-anchor='middle' font-size='15' style='fill:var(--ink)'>徐爱录</text><text x='130' y='246' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.7'>心即理 · 知行合一</text><text x='130' y='266' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.7'>格物新解（开卷第一课）</text><rect x='250' y='190' width='200' height='90' rx='8' style='fill:none;stroke:var(--line)' stroke-width='1.5'/><text x='350' y='222' text-anchor='middle' font-size='15' style='fill:var(--ink)'>陆澄录</text><text x='350' y='246' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.7'>立志 · 主一 · 事上磨</text><text x='350' y='266' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.7'>种树、井水诸喻</text><rect x='470' y='190' width='200' height='90' rx='8' style='fill:none;stroke:var(--line)' stroke-width='1.5'/><text x='570' y='222' text-anchor='middle' font-size='15' style='fill:var(--ink)'>薛侃录</text><text x='570' y='246' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.7'>善恶之辨（花间草）</text><text x='570' y='266' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.7'>精金喻圣</text><text x='350' y='312' text-anchor='middle' font-size='12' style='fill:var(--ink)' opacity='0.55'>卷上由徐爱、陆澄、薛侃三位弟子先后记录，是心学语录的最早结集</text></svg>",
-        "caption": "《传习录》三卷结构与卷上的三位记录者。本篇即卷上全文，开头十余条为徐爱所录，是心学的「第一课」。"
-      },
-      {
-        "type": "p",
-        "text": "还有一个背景必须交代：卷上开篇第一段，徐爱就说老师讲《大学》「悉以旧本为正」——王阳明认定《大学》的古本没问题，反而是朱熹改定、天下读书人奉为标准答案的那个版本改错了。在朱子学是科举官学的明代，这等于公开对标准教科书说「印错了」。徐爱自己都承认，「始闻而骇，既而疑」——初听吓一跳，再听满腹狐疑，反复琢磨才服气。所以读卷上，你要有个心理准备：这不是心灵鸡汤，这是一场针对当时主流学术的正面辩论，每一条问答背后都有一个具体的争议点。"
-      },
-      {
-        "type": "h2",
-        "text": "心即理：你缺的不是道理，是那颗心"
-      },
-      {
-        "type": "p",
-        "text": "第一课从一个书呆子气十足的问题开始：《大学》里那句话，到底该是「亲民」还是「新民」？朱熹沿程子之说，认为旧本有误，应作「新民」（使民更新）；王阳明说旧本没错，就是「亲民」（亲爱百姓）。这个考据之争我们不必陷进去，值得记住的是王阳明给出的理由：「说『亲民』便是兼教养意」——亲民，教化和养育都包含在内了；说新民，「便觉偏了」，偏到「我来改造你」那一边去。一字之差，是把百姓当作待改造的对象，还是当作要去亲近爱护的人——立场完全不同。接下来，徐爱抛出了真正的大问题：至善只在心里求，恐怕不能穷尽天下的事理吧？王阳明的回答只有一句，却是整部书的地基："
-      },
-      {
-        "type": "quote",
-        "original": "心即理也。天下又有心外之事、心外之理乎？",
-        "translation": "心即是理。天下难道还有心外之事、心外之理吗？"
-      },
-      {
-        "type": "p",
-        "text": "这话乍听很玄，其实王阳明马上给了最生活化的解释。徐爱不服：侍奉父亲的孝、辅佐君上的忠、交朋友的信，这里面有许多道理，难道不用去考察吗？王阳明叹了口气，反问：你侍奉父亲，难道是跑到父亲身上去找一个「孝的道理」？"
-      },
-      {
-        "type": "quote",
-        "original": "都只在此心，心即理也。此心无私欲之蔽，即是天理，不须外面添一分。",
-        "translation": "都只在这个心上，心即是理。这个心没有私欲的蒙蔽，就是天理，不须从外面添一分。"
-      },
-      {
-        "type": "p",
-        "text": "翻成今天的脑回路是这样的：朱子的路线像「先查攻略再出门」——孝有孝的标准动作，忠有忠的操作手册，一件件研究明白，然后照着做。王阳明说，方向反了。孝顺不是一套写在父亲身上的规范，等你去抄；它是你心里那份真实的惦记，在没有被私心（面子、攀比、不耐烦）遮住时，自然流露出来的样子。你见过谁家孩子是背熟了《孝经》条款才知道给妈妈倒水的？也见过不少人，孝道文章写得漂亮，回家对爸妈没一句好话。道理的清单可以无穷无尽，那颗心却只有一颗——擦亮它，比抄清单要紧。"
-      },
-      {
-        "type": "p",
-        "text": "徐爱还是不放心：那「温凊、定省」——冬温夏凊、晨昏问安这些具体节目，总要讲求吧？注意，王阳明并没有说不要——他说「如何不讲求？只是有个头脑」。头脑，就是总纲、就是根。接着说出了卷上第一个大比喻："
-      },
-      {
-        "type": "quote",
-        "original": "譬之树木，这诚孝的心便是根，许多条件便是枝叶。须先有根，然后有枝叶；不是先寻了枝叶，然后去种根。",
-        "translation": "譬如树木，这诚孝的心便是根，许多条目便是枝叶。须先有根，然后有枝叶；不是先寻了枝叶，然后去种根。"
-      },
-      {
-        "type": "p",
-        "text": "顺带说个古今义：这里的「条件」是古义，指「条目、细目」，不是今天「谈条件」的条件。这个比喻放到今天毫不过时：心里真惦记爸妈的人，入冬自然会想到他们怕冷，自然会琢磨暖气片够不够热——这些「枝叶」是从根上自己长出来的；反过来，一个只想在家族群里刷存在感的人，保健品买最贵的，电话一年打不了三回。枝叶再茂盛，底下没根，是插在花瓶里的装饰枝，撑不过一个季节。同一个话题，另一位弟子郑朝朔也问过：温凊奉养总得求个恰当，所以才需要学问思辨吧？王阳明回敬了一个扎心的例子：若只是仪节做得恰当就算至善，那如今戏台上的戏子，把侍奉父母的仪节演得分毫不差，岂不也可以叫至善？记录里写道，「爱于是日又有省」——旁听的徐爱，这一天又开悟了一层。"
-      },
-      {
-        "type": "h2",
-        "text": "知行合一：「知道做不到」，只是不知道"
-      },
-      {
-        "type": "p",
-        "text": "接下来轮到全书最著名的段落。徐爱说：现在的人明明知道对父亲该孝、对兄长该敬，却做不到孝、做不到敬，可见知和行分明是两件事。这不就是我们开头那个收藏夹问题吗？五百年前的人一样被它困扰。王阳明的回答是一记重锤："
-      },
-      {
-        "type": "quote",
-        "original": "未有知而不行者；知而不行，只是未知。",
-        "translation": "没有知而不行的；知而不行，只是未知。"
-      },
-      {
-        "type": "p",
-        "text": "注意，他不是在骂你「知道了还不做，真懒」，他是在重新定义「知道」这个词。他举的例子精妙至极：《大学》说「如好好色，如恶恶臭」——见到美色，属知；喜欢上，属行。可你什么时候是「先看见，再开个会决定要不要喜欢」的？看见的那一瞬间已经喜欢了。闻到臭味，属知；厌恶，属行。闻到的那一刻已经皱眉了，不存在「闻完之后另立一个心去讨厌」。真正的知，和行为之间没有缝隙，就像手心和手背，是同一只手的两面。"
-      },
-      {
-        "type": "p",
-        "text": "那「知道熬夜伤身却照样熬」算什么？王阳明说，那是被私欲隔断了的状态——你「知道」的只是一句从别人那里听来的话，一个存在收藏夹里的标题，它从来没有真正成为你的知。就像鼻塞的人对着臭味毫无反应，不是他修养好，是他压根没闻到。一个真正在急诊室躺过一夜的人，对「熬夜伤身」的知，和刷到推送时点收藏的知，是两种东西：前者会直接改变行为，后者只是信息路过大脑。所以判断标准很简单——说某人知孝知悌，必是这人已经行了孝悌，才算他知；只会说些孝悌的漂亮话，不算。"
-      },
-      {
-        "type": "quote",
-        "original": "知是行的主意，行是知的功夫；知是行之始，行是知之成。",
-        "translation": "知是行的主意，行是知的工夫；知是行的开端，行是知的完成。"
-      },
-      {
-        "type": "p",
-        "text": "这句是知行合一的正面表述。知是行的出发点和方向盘，行是知的落实和完成态；一个念头动了，行已经开始；一件事做成了，知才算完成。王阳明特意解释了古人为什么要把知、行分开说：世上有一种人闷头蛮干、从不思考，得对他说个「知」；另一种人悬空空想、从不动手，得对他说个「行」——那是补偏救弊的话术，不是说知行本来是两截。今人的病恰恰是：我先去研究、讨论，把「知」的功课做足，等彻底弄明白了再去行——「故遂终身不行，亦遂终身不知」。翻译一下：报了课不上等于没报，收藏了不做等于没看，健身卡办了不去，那份「我在自我提升」的感觉是幻觉。知行合一四个字，是照妖镜，不是励志口号。"
-      },
-      {
-        "type": "figure",
-        "ftype": "compare",
-        "svg": "<svg viewBox='0 0 700 280' xmlns='http://www.w3.org/2000/svg' font-family='var(--font-serif)'><text x='350' y='34' text-anchor='middle' font-size='20' style='fill:var(--ink)'>知行合一：一个工夫的两面</text><circle cx='190' cy='150' r='58' style='fill:none;stroke:var(--cinnabar)' stroke-width='2.5'/><text x='190' y='160' text-anchor='middle' font-size='26' style='fill:var(--cinnabar)'>知</text><circle cx='510' cy='150' r='58' style='fill:none;stroke:var(--ink)' stroke-width='2.5'/><text x='510' y='160' text-anchor='middle' font-size='26' style='fill:var(--ink)'>行</text><path d='M 240 112 Q 350 62 460 112' style='fill:none;stroke:var(--cinnabar)' stroke-width='2'/><path d='M 460 112 l -14 -3 m 14 3 l -6 12' style='fill:none;stroke:var(--cinnabar)' stroke-width='2'/><text x='350' y='72' text-anchor='middle' font-size='14' style='fill:var(--cinnabar)'>知是行之始（主意）</text><path d='M 460 188 Q 350 238 240 188' style='fill:none;stroke:var(--ink)' stroke-width='2'/><path d='M 240 188 l 14 3 m -14 -3 l 6 -12' style='fill:none;stroke:var(--ink)' stroke-width='2'/><text x='350' y='242' text-anchor='middle' font-size='14' style='fill:var(--ink)'>行是知之成（功夫）</text><text x='350' y='146' text-anchor='middle' font-size='13.5' style='fill:var(--ink)' opacity='0.7'>见好色，属知</text><text x='350' y='168' text-anchor='middle' font-size='13.5' style='fill:var(--ink)' opacity='0.7'>好好色，属行——中间没有第二个决定</text><text x='350' y='272' text-anchor='middle' font-size='12' style='fill:var(--ink)' opacity='0.55'>「只说一个知，已自有行在；只说一个行，已自有知在。」</text></svg>",
-        "caption": "知行本是同一个工夫的开端与完成：真知必然带出行动，行动才让知完成。据《传习录·卷上》徐爱录。"
-      },
-      {
-        "type": "h2",
-        "text": "格物新解：去正你的心，不是去研究竹子"
-      },
-      {
-        "type": "p",
-        "text": "「格物致知」是《大学》八条目的第一步，朱熹解为「即物穷理」：接触天下事物，一件件穷究其中之理，今日格一物、明日格一物，积累久了豁然贯通。年轻时的王阳明是朱熹的忠实读者，据他在卷下的自述，他真的照做过——和朋友对着亭前的竹子「格」了七天，理没格出来，人先病倒了。这次著名的失败埋下了怀疑的种子；多年后他在贬所贵州龙场彻悟（《年谱》记为正德三年，1508），得出的结论就是卷上这套：理不在竹子里，在你心上。于是「格物」二字被他重新训释——本卷原话说得明白：「格物」如《孟子》「大人格君心」之格，「是去其心之不正，以全其本体之正」。格，是「正」；物，不是外物，而是意念所指向的事。"
-      },
-      {
-        "type": "quote",
-        "original": "身之主宰便是心，心之所发便是意，意之本体便是知，意之所在便是物。",
-        "translation": "身的主宰便是心，心所发动的便是意，意的本体便是知，意所在的便是物。"
-      },
-      {
-        "type": "p",
-        "text": "这十六个字是心学的解剖图：身体的主宰是心，心一动就是意（念头），念头指向哪里，哪里就是一「物」。意在事亲，事亲就是一物；意在刷手机，刷手机也是一物。所以「格物」不是去实验室分析对象，而是在每个念头发动处做校正——把不正的念头正过来。修行的现场从书斋和实验室，搬到了你每一个起心动念的瞬间。就在解释这套工夫时，一个日后响彻五百年的词第一次亮了相："
-      },
-      {
-        "type": "quote",
-        "original": "见父，自然知孝；见兄，自然知弟；见孺子入井，自然知恻隐。此便是『良知』，不假外求。",
-        "translation": "见到父亲，自然知道孝；见到兄长，自然知道敬；见到小孩落入井中，自然知道恻隐。这便是『良知』，不假外求。"
-      },
-      {
-        "type": "p",
-        "text": "「良知」这个词借自《孟子》——「所不虑而知者，其良知也」。看见小孩爬向井口，你心头那一紧，不需要论证、不需要培训，它就在。王阳明说，这就是你心里自带的判断力，问题只是它常被私意挡住——像手机屏幕上糊了层油，屏幕本身没坏。所以工夫不是往外找光，是擦屏幕：「胜私复理」，把私心的油污擦掉，良知自然亮。晚年的王阳明把整个学说都收拢到「致良知」三个字上，而源头就在卷上这一条。"
-      },
-      {
-        "type": "figure",
-        "ftype": "compare",
-        "svg": "<svg viewBox='0 0 700 340' xmlns='http://www.w3.org/2000/svg' font-family='var(--font-serif)'><text x='350' y='34' text-anchor='middle' font-size='20' style='fill:var(--ink)'>同一个词，两条路：「格物」的朱王之别</text><line x1='350' y1='56' x2='350' y2='300' style='stroke:var(--line)' stroke-width='1' stroke-dasharray='4 4'/><text x='185' y='72' text-anchor='middle' font-size='16' style='fill:var(--ink)'>朱子：格 = 穷至（向外）</text><circle cx='185' cy='140' r='34' style='fill:none;stroke:var(--ink)' stroke-width='2'/><text x='185' y='147' text-anchor='middle' font-size='18' style='fill:var(--ink)'>心</text><path d='M 222 128 L 290 104' style='fill:none;stroke:var(--ink)' stroke-width='1.5'/><path d='M 222 140 L 295 140' style='fill:none;stroke:var(--ink)' stroke-width='1.5'/><path d='M 222 152 L 290 176' style='fill:none;stroke:var(--ink)' stroke-width='1.5'/><text x='312' y='108' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>事</text><text x='315' y='145' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>物</text><text x='312' y='182' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>理</text><text x='185' y='222' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>到事事物物上求定理</text><text x='185' y='246' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>今日格一物，明日格一物</text><text x='185' y='270' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>积累既久，豁然贯通</text><text x='515' y='72' text-anchor='middle' font-size='16' style='fill:var(--cinnabar)'>阳明：格 = 正（向内）</text><circle cx='515' cy='140' r='34' style='fill:none;stroke:var(--cinnabar)' stroke-width='2.5'/><text x='515' y='147' text-anchor='middle' font-size='18' style='fill:var(--cinnabar)'>心</text><path d='M 610 104 Q 570 112 552 126' style='fill:none;stroke:var(--cinnabar)' stroke-width='1.5'/><path d='M 552 126 l 6 -11 m -6 11 l 13 2' style='fill:none;stroke:var(--cinnabar)' stroke-width='1.5'/><path d='M 615 140 Q 580 140 551 140' style='fill:none;stroke:var(--cinnabar)' stroke-width='1.5'/><path d='M 551 140 l 11 -6 m -11 6 l 11 6' style='fill:none;stroke:var(--cinnabar)' stroke-width='1.5'/><path d='M 610 176 Q 570 168 552 154' style='fill:none;stroke:var(--cinnabar)' stroke-width='1.5'/><path d='M 552 154 l 13 -2 m -13 2 l 6 11' style='fill:none;stroke:var(--cinnabar)' stroke-width='1.5'/><text x='636' y='108' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>意</text><text x='640' y='145' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>念</text><text x='636' y='182' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>事</text><text x='515' y='222' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>意之所在便是物</text><text x='515' y='246' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>去其心之不正</text><text x='515' y='270' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>以全其本体之正</text><text x='350' y='322' text-anchor='middle' font-size='12' style='fill:var(--ink)' opacity='0.55'>朱说见《大学章句》「即物穷理」；王说见本卷：「格物」如《孟子》「大人格君心」之格</text></svg>",
-        "caption": "「格物」两解：朱熹训格为「至」，到事物上穷理；王阳明训格为「正」，在念头发动处正心。这是卷上全部辩论的分水岭。"
-      },
-      {
-        "type": "h2",
-        "text": "事上磨：工夫在生活里，不在深山里"
-      },
-      {
-        "type": "p",
-        "text": "卷上中段换了记录者陆澄，画风从大辩论转向了工夫答疑，像一本课后问答集。有人问：我静坐的时候觉得状态很好，一遇到事就乱了套，怎么办？这个问题今天可以一字不改地发在任何一个冥想社群里：打坐时心如止水，一进早高峰地铁被人踩了脚，修养瞬间清零。王阳明的回答是卷上流传最广的金句之一：这是只知道养静、不肯克己的毛病，这样一临事就会站不稳——「人须在事上磨，方立得住，方能静亦定，动亦定」。修养不是无菌室里的盆栽，是马路牙子上的行道树；躲进安静里练出来的「定」，是没经过风的定。堵车、被误解、方案被推翻重来——这些不是修行的干扰项，这些就是修行本身的现场。"
-      },
-      {
-        "type": "p",
-        "text": "配套的还有一面镜子。有人问：圣人应变不穷，是不是预先把各种情况都研究好了？王阳明说圣人之心如明镜，「只怕镜不明，不怕物来不能照」——你该担心的不是没预习到考题，是镜面本身不亮。这话对今天的「攻略焦虑」是对症的：面试宝典背了三百题，真被问到第三百零一题就懵；而心里透亮的人，没背过也答得从容。然后是两个关于「急」的比喻。第一个给急着看到成果的人："
-      },
-      {
-        "type": "quote",
-        "original": "初种根时，只管栽培灌溉；勿作枝想，勿作叶想，勿作花想，勿作实想。悬想何益？但不忘栽培之功，怕没有枝、叶、花、实？",
-        "translation": "初种根时，只管栽培灌溉；不要作枝的妄想，不要作叶的妄想，不要作花的妄想，不要作果的妄想。空想有什么益处？只要不忘栽培的工夫，怕没有枝、叶、花、果吗？"
-      },
-      {
-        "type": "p",
-        "text": "刚立志就想收获，像刚种下树苗就天天蹲在旁边想象果子的甜度——想象不浇水，树不会长。考证的人算「拿到证第几年能回本」，健身的人天天上秤，本质都是「作花想、作实想」，把力气花在了悬想上。第二个比喻给贪多求全的人："
-      },
-      {
-        "type": "quote",
-        "original": "与其为数顷无源之塘水，不若为数尺有源之井水，生意不穷。",
-        "translation": "与其做几顷无源的塘水，不如做几尺有源的井水，生意无穷。"
-      },
-      {
-        "type": "p",
-        "text": "这句是王阳明坐在塘边、看见旁边一口井，随手拈来的。几顷大的池塘看着壮观，没有源头，一个旱季就见底；几尺深的井不起眼，底下有活水，永远打不干。放到今天：收藏一千篇干货、同时追五个领域三个副业，是塘；把一件事做到有自己的活水源头，是井。面积唬人，源头养人。卷上后文还有一句同款：「种树者必培其根，种德者必养其心」——想让树长高，得在它初生时删掉繁枝；想让德长成，得在初学时收起那些四处漏泄精神的爱好。字字都在说同一件事：往根上用力。"
-      },
-      {
-        "type": "figure",
-        "ftype": "quote-card",
-        "svg": "<svg viewBox='0 0 700 340' xmlns='http://www.w3.org/2000/svg' font-family='var(--font-serif)'><rect x='24' y='24' width='652' height='292' rx='10' style='fill:none;stroke:var(--line)' stroke-width='1.5'/><rect x='36' y='36' width='628' height='268' rx='6' style='fill:none;stroke:var(--line)' stroke-width='0.75'/><text x='350' y='118' text-anchor='middle' font-size='30' style='fill:var(--ink)'>人须在事上磨，</text><text x='350' y='168' text-anchor='middle' font-size='30' style='fill:var(--ink)'>方立得住，</text><text x='350' y='218' text-anchor='middle' font-size='30' style='fill:var(--ink)'>方能静亦定，动亦定。</text><text x='350' y='268' text-anchor='middle' font-size='14' style='fill:var(--ink)' opacity='0.6'>《传习录 · 卷上》 陆澄所录</text><rect x='600' y='244' width='44' height='44' rx='5' style='fill:var(--cinnabar)'/><text x='622' y='262' text-anchor='middle' font-size='15' style='fill:var(--paper)'>观</text><text x='622' y='281' text-anchor='middle' font-size='15' style='fill:var(--paper)'>心</text></svg>",
-        "caption": "金句卡：「人须在事上磨，方立得住，方能静亦定，动亦定。」修养的考场不在静室，在正在发生的生活里。《传习录·卷上》。"
-      },
-      {
-        "type": "h2",
-        "text": "精金喻圣：比的是成色，不是斤两"
-      },
-      {
-        "type": "p",
-        "text": "卷上后段的记录者换成薛侃，出现了全卷最精彩的一个比喻。弟子蔡希渊问：圣人可以学而至，可伯夷、伊尹与孔子才力终究不同，凭什么同样称圣？王阳明先把「圣」的定义钉死："
-      },
-      {
-        "type": "quote",
-        "original": "圣人之所以为圣，只是其心纯乎天理，而无人欲之杂。",
-        "translation": "圣人之所以为圣，只是他的心纯然是天理，而没有人欲的夹杂。"
-      },
-      {
-        "type": "p",
-        "text": "然后展开炼金的类比：圣人像精金，之所以「精」，在成色十足，不在分量。尧舜好比万镒之金，文王、孔子九千镒，禹、汤、武王七八千镒，伯夷、伊尹四五千镒——分量（才力）悬殊，但成色（心地纯度）相同，所以都是圣人。就像一克足金和一吨足金，纯度上完全平等。"
-      },
-      {
-        "type": "quote",
-        "original": "盖所以为精金者，在足色，而不在分两；所以为圣者，在纯乎天理，而不在才力也。",
-        "translation": "原来精金之所以为精金，在于足色，而不在分量；圣人之所以为圣，在于纯然天理，而不在才力。"
-      },
-      {
-        "type": "p",
-        "text": "请注意，这个比喻锋利的地方在于它「反成功学」。它不是说「你努力也能成为首富」——恰恰相反，王阳明明说才力分量是有差等的，凡人就是一两的金，别妄想万镒。他批评的正是那种看见别人有万镒精金、不去炼自己的成色、反而拼命往自己这块金里「锡、铅、铜、铁杂然而投」来凑分量的人：「分两愈增而成色愈下」，最后连金都不是了。翻成今天的话：看见别人的头衔、流量、身家（分两），就靠注水包装把自己撑大——简历掺假、人设浮夸、什么风口都蹭——盘子越做越大，成色越来越低。这段话的末尾，王阳明点出「故曰『人皆可以为尧、舜』者以此」——《孟子》那句名言的真正含义是：普通岗位上的普通人，把手头的事做得心地干净、不掺假，虽一两之金比之万镒，「其到足色处，可以无愧」。比的从来不是斤两。"
-      },
-      {
-        "type": "figure",
-        "ftype": "compare",
-        "svg": "<svg viewBox='0 0 700 330' xmlns='http://www.w3.org/2000/svg' font-family='var(--font-serif)'><text x='350' y='34' text-anchor='middle' font-size='20' style='fill:var(--ink)'>精金之喻：分两与成色是两回事</text><line x1='350' y1='56' x2='350' y2='268' style='stroke:var(--line)' stroke-width='1' stroke-dasharray='4 4'/><text x='185' y='76' text-anchor='middle' font-size='16' style='fill:var(--ink)'>分两（才力 · 际遇）</text><rect x='95' y='110' width='110' height='120' rx='6' style='fill:none;stroke:var(--ink)' stroke-width='2'/><text x='150' y='165' text-anchor='middle' font-size='15' style='fill:var(--ink)'>尧 舜</text><text x='150' y='190' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.7'>万镒</text><rect x='235' y='192' width='48' height='38' rx='4' style='fill:none;stroke:var(--ink)' stroke-width='2'/><text x='259' y='210' text-anchor='middle' font-size='12' style='fill:var(--ink)'>凡人</text><text x='259' y='225' text-anchor='middle' font-size='11' style='fill:var(--ink)' opacity='0.7'>一两</text><text x='185' y='262' text-anchor='middle' font-size='13.5' style='fill:var(--ink)' opacity='0.75'>可以悬殊——不必强求</text><text x='515' y='76' text-anchor='middle' font-size='16' style='fill:var(--cinnabar)'>成色（此心纯乎天理）</text><circle cx='455' cy='165' r='42' style='fill:none;stroke:var(--cinnabar)' stroke-width='2.5'/><text x='455' y='172' text-anchor='middle' font-size='15' style='fill:var(--cinnabar)'>足色</text><circle cx='575' cy='165' r='42' style='fill:none;stroke:var(--cinnabar)' stroke-width='2.5'/><text x='575' y='172' text-anchor='middle' font-size='15' style='fill:var(--cinnabar)'>足色</text><text x='515' y='165' text-anchor='middle' font-size='16' style='fill:var(--cinnabar)'>=</text><text x='515' y='262' text-anchor='middle' font-size='13.5' style='fill:var(--ink)' opacity='0.75'>可以无愧——工夫所在</text><text x='350' y='302' text-anchor='middle' font-size='13' style='fill:var(--cinnabar)'>「所以为圣者，在纯乎天理，而不在才力也。」</text><text x='350' y='322' text-anchor='middle' font-size='12' style='fill:var(--ink)' opacity='0.55'>掺杂求重，分两愈增而成色愈下——王阳明对「妄希分两」的警告</text></svg>",
-        "caption": "精金之喻：才力分量人各不同，不必强求；心地成色人人可炼，这才是「人皆可以为尧、舜」的本义。《传习录·卷上》薛侃录。"
-      },
-      {
-        "type": "h2",
-        "text": "花间草：善恶不在草，在你心"
-      },
-      {
-        "type": "p",
-        "text": "卷上快结尾处有一幕小剧场。薛侃在花圃里锄草，一边锄一边发牢骚：天地间为什么善这么难培养、恶这么难铲除？——多么熟悉的抱怨，好习惯难养、坏毛病难改，谁没说过。王阳明的回答直接掀了桌子："
-      },
-      {
-        "type": "quote",
-        "original": "天地生意，花草一般，何曾有善恶之分？子欲观花，则以花为善，以草为恶；如欲用草时，复以草为善矣。",
-        "translation": "天地的生意，花和草是一样的，何曾有善恶之分？你想观花，就以花为善，以草为恶；如果要用草时，又以草为善了。"
-      },
-      {
-        "type": "p",
-        "text": "在天地眼里，花和草都是生命力，没有谁善谁恶；是你要赏花，草才成了「恶」——哪天你要用草铺坪，它立刻又「善」了。同一场雨，办婚礼的人骂它坏事，种地的人谢它救田；同事的「固执」在这个项目里是缺点，换个需要死磕的项目就是优点。标签是你的需求贴上去的。薛侃立刻抓住把柄：照这么说，就无善无恶了？草也不用锄了？注意，王阳明在这里展现了极精微的分寸——他没有滑向「一切都无所谓」的相对主义。草碍事，照锄不误；但锄草时别「动气」，别附加那一层怨憎恼恨。偶尔没锄干净，也不往心里去。"
-      },
-      {
-        "type": "quote",
-        "original": "只在汝心，循理便是善，动气便是恶。",
-        "translation": "只在你心上，依循理便是善，动气便是恶。"
-      },
-      {
-        "type": "p",
-        "text": "善恶的真正战场，从对象身上移回了你的反应方式：该做的事按理去做，是善；同一件事裹挟着情绪的翻江倒海去做，就成了恶。堵车是中性的，握着方向盘骂骂咧咧的那半小时才是你自己造出来的「恶」。这一段还有个隽永的收尾：弟子伯生追问，先生既说「草有妨碍，理亦宜去」，怎么又说从躯壳起念便会错？王阳明不给标准答案，把问题原样抛了回去：「此须汝心自体当。汝要去草，是甚么心？周茂叔窗前草不除，是甚么心？」（周茂叔即周敦颐，「窗前草不除」是宋儒的著名典故）——心学的功课，最终要在自己心上体会，没有标准答案可抄，这本身就是「心即理」的教学法。"
-      },
-      {
-        "type": "h2",
-        "text": "把整卷串起来：一棵树的完整长法"
-      },
-      {
-        "type": "p",
-        "text": "现在退后一步，把卷上从头到尾看成一个整体，你会发现三位记录者、上百条问答，其实只在讲一条推理链。第一步：理不在心外（心即理）——孝的道理不在父亲身上，至善不在事物里，你缺的从来不是攻略。第二步：既然理在心里，那「知」就不是信息的搬运，而是心的真实状态——于是知行必然合一，知而不行只是未知。第三步：既然如此，工夫的下手处就不是研究外物，而是校正念头（格物=正心），擦亮那个自带的判断力（良知）。第四步：擦拭的砂纸就是日常生活——事上磨，在根上浇水，不作花想，不贪塘大。第五步：这条路的终点评价标准也变了——比成色不比分两，人人可以在纯度上无愧。第六步：连善恶本身，也收归为心的循理与动气。你看，整卷就是一棵树：心即理是根，知行合一是干，格物致知是枝，事上磨是浇水施肥，精金成色是果实的品级。从头到尾，方向只有一个——向内。"
-      },
-      {
-        "type": "figure",
-        "ftype": "list",
-        "svg": "<svg viewBox='0 0 700 400' xmlns='http://www.w3.org/2000/svg' font-family='var(--font-serif)'><text x='350' y='34' text-anchor='middle' font-size='20' style='fill:var(--ink)'>卷上的比喻系统：五个比喻，一个方向</text><line x1='60' y1='52' x2='640' y2='52' style='stroke:var(--line)' stroke-width='1'/><text x='150' y='88' text-anchor='middle' font-size='15' style='fill:var(--cinnabar)'>树根与枝叶</text><text x='420' y='88' text-anchor='middle' font-size='14' style='fill:var(--ink)'>诚孝的心是根，温凊仪节是枝叶</text><text x='420' y='108' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.65'>先有根，后有枝叶；不是先寻枝叶再种根</text><line x1='60' y1='122' x2='640' y2='122' style='stroke:var(--line)' stroke-width='0.75'/><text x='150' y='152' text-anchor='middle' font-size='15' style='fill:var(--cinnabar)'>磨镜</text><text x='420' y='152' text-anchor='middle' font-size='14' style='fill:var(--ink)'>圣人心如明镜，随感而应</text><text x='420' y='172' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.65'>只怕镜不明，不怕物来不能照——工夫在磨不在照</text><line x1='60' y1='186' x2='640' y2='186' style='stroke:var(--line)' stroke-width='0.75'/><text x='150' y='216' text-anchor='middle' font-size='15' style='fill:var(--cinnabar)'>种树勿悬想</text><text x='420' y='216' text-anchor='middle' font-size='14' style='fill:var(--ink)'>立志用功，只管栽培灌溉</text><text x='420' y='236' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.65'>勿作枝想叶想花想实想——悬想何益</text><line x1='60' y1='250' x2='640' y2='250' style='stroke:var(--line)' stroke-width='0.75'/><text x='150' y='280' text-anchor='middle' font-size='15' style='fill:var(--cinnabar)'>有源井水</text><text x='420' y='280' text-anchor='middle' font-size='14' style='fill:var(--ink)'>数尺井水胜数顷塘水</text><text x='420' y='300' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.65'>为学贵有源头活水，不贪面积唬人</text><line x1='60' y1='314' x2='640' y2='314' style='stroke:var(--line)' stroke-width='0.75'/><text x='150' y='344' text-anchor='middle' font-size='15' style='fill:var(--cinnabar)'>炼金</text><text x='420' y='344' text-anchor='middle' font-size='14' style='fill:var(--ink)'>学圣人是炼成色，不是凑分两</text><text x='420' y='364' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.65'>掺杂求重，分两愈增而成色愈下</text><line x1='60' y1='378' x2='640' y2='378' style='stroke:var(--line)' stroke-width='1'/><text x='350' y='398' text-anchor='middle' font-size='12' style='fill:var(--ink)' opacity='0.55'>五个比喻的共同箭头：从外面的枝叶、照见、花果、面积、分量，收回到里面的根、镜、栽培、源头、成色</text></svg>",
-        "caption": "卷上的比喻系统一览：树根、磨镜、种树、井水、炼金——五个比喻说的是同一件事，工夫向内、向根上去。"
-      },
-      {
-        "type": "h2",
-        "text": "这本书是怎么长成的：从龙场到刻本"
-      },
-      {
-        "type": "p",
-        "text": "卷上的文本自己也有一部成长史。正德元年（1506），三十五岁的王阳明因得罪宦官刘瑾，廷杖下狱，贬往贵州龙场做驿丞——一个瘴疠之地的招待所站长。正是在那里的困顿中，他在一个深夜彻悟「圣人之道，吾性自足，向之求理于事物者误也」（《年谱》正德三年条），这就是著名的「龙场悟道」，也是卷上所有观点的出生地。此后徐爱等弟子陆续记录师门问答；正德十二年（1517），徐爱三十一岁早逝，没能看到这些笔记刊行。次年（1518），薛侃将徐爱、陆澄与自己所录汇集，在江西赣州初次刻印，题名《传习录》——那一册，大体就是今天的卷上。嘉靖三年（1524），南大吉续刻，增入论学书信（后来的卷中）；到隆庆六年（1572），谢廷杰刊《王文成公全书》，三卷本《传习录》最终定型。换句话说，你正在读的卷上，是全书中最早成形、也最接近课堂现场的一层地层。"
-      },
-      {
-        "type": "figure",
-        "ftype": "timeline",
-        "svg": "<svg viewBox='0 0 700 250' xmlns='http://www.w3.org/2000/svg' font-family='var(--font-serif)'><text x='350' y='32' text-anchor='middle' font-size='20' style='fill:var(--ink)'>《传习录》卷上成书时间线</text><line x1='60' y1='130' x2='640' y2='130' style='stroke:var(--line)' stroke-width='2'/><circle cx='95' cy='130' r='7' style='fill:var(--cinnabar)'/><text x='95' y='105' text-anchor='middle' font-size='14' style='fill:var(--ink)'>1508</text><text x='95' y='160' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.8'>龙场悟道</text><text x='95' y='178' text-anchor='middle' font-size='11.5' style='fill:var(--ink)' opacity='0.6'>「吾性自足」</text><circle cx='235' cy='130' r='7' style='fill:none;stroke:var(--ink)' stroke-width='2'/><text x='235' y='105' text-anchor='middle' font-size='14' style='fill:var(--ink)'>1512 起</text><text x='235' y='160' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.8'>徐爱等记录问答</text><text x='235' y='178' text-anchor='middle' font-size='11.5' style='fill:var(--ink)' opacity='0.6'>心即理·知行合一</text><circle cx='355' cy='130' r='7' style='fill:none;stroke:var(--ink)' stroke-width='2'/><text x='355' y='105' text-anchor='middle' font-size='14' style='fill:var(--ink)'>1517</text><text x='355' y='160' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.8'>徐爱早逝</text><circle cx='470' cy='130' r='7' style='fill:var(--cinnabar)'/><text x='470' y='105' text-anchor='middle' font-size='14' style='fill:var(--cinnabar)'>1518</text><text x='470' y='160' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.8'>薛侃赣州初刻</text><text x='470' y='178' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>即今卷上</text><circle cx='565' cy='130' r='7' style='fill:none;stroke:var(--ink)' stroke-width='2'/><text x='565' y='105' text-anchor='middle' font-size='14' style='fill:var(--ink)'>1524</text><text x='565' y='160' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.8'>南大吉续刻</text><text x='565' y='178' text-anchor='middle' font-size='11.5' style='fill:var(--ink)' opacity='0.6'>增书信（卷中）</text><circle cx='635' cy='130' r='7' style='fill:none;stroke:var(--ink)' stroke-width='2'/><text x='632' y='105' text-anchor='middle' font-size='14' style='fill:var(--ink)'>1572</text><text x='627' y='160' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.8'>三卷本定型</text><text x='350' y='226' text-anchor='middle' font-size='12' style='fill:var(--ink)' opacity='0.55'>据《王文成公年谱》及诸刻本序跋；卷上是全书最早刊行、最接近课堂现场的一层</text></svg>",
-        "caption": "从龙场悟道（1508）到薛侃初刻（1518）再到三卷定本（1572）：卷上的文本层积史。"
-      },
-      {
-        "type": "h2",
-        "text": "五百年的回声与争论"
-      },
-      {
-        "type": "p",
-        "text": "卷上从刊行那天起就争议不断，这一点要如实说。朱子学阵营长期批评「心即理」混淆了心与理、批评知行合一「近禅」；王阳明自己在卷上就预先答辩过——「又不是某凿空杜撰，知行本体原是如此」，并反复援引《尚书》的「惟精惟一」、《论语》的「博学于文，约之以礼」来证明自己讲的是儒门旧义。这场官司明清两代没有断过，读者不必急着站队，两边的讲法在本站《近思录》与本书间正好可以对读。而它的影响也确实越出了国界：阳明学东传日本，经中江藤树一系发展，深刻影响了幕末的一代志士；到了现代，美国管理学界甚至有一本专著就叫《知行差距》（The Knowing-Doing Gap，2000），研究企业里「知道该做什么却做不到」的普遍病症——问题意识与五百年前徐爱的提问遥相呼应。至于「知行合一」四个字本身，早已进入现代汉语的日常词库，只是多数人用它时，未必知道它最初的意思不是「说到做到」的道德要求，而是对「知」的重新定义。"
-      },
-      {
-        "type": "p",
-        "text": "跨典互见也值得留一笔：「良知」的出处在《孟子》尽心篇（「所不虑而知者，其良知也」），恻隐之心、孺子入井的例子同样来自《孟子》；「格物致知」「诚意」「如好好色，如恶恶臭」出自《大学》；「惟精惟一」出自《尚书·大禹谟》的十六字心传；「未发之中」出自《中庸》。王阳明的辩论对手，则是朱熹《四书章句集注》所代表的官学体系。可以说，卷上是踩着整个四书系统展开的一场重新解释——它不另起炉灶，而是宣称：这些经典本来就该这么读。"
-      },
-      {
-        "type": "h2",
-        "text": "能带走的三个角度"
-      },
-      {
-        "type": "p",
-        "text": "按本站的规矩，不灌鸡汤、不许诺成功，只提供三个可以自己验证的思考角度。其一：下次听见自己说「我知道，但是……」，把它当一声警报——按卷上的定义，这句话等于「我还不知道」。不必自责，去补那个知：到事里做一次，哪怕最小的一步，做过的知才是知。其二：面对一长串「该做的事」而焦虑时，用卷上的问法拦自己一下——王阳明说凡事「只是有个头脑」，先找到这堆枝叶底下的根是哪一个；先浇根，枝叶的清单会自己变短。其三：把「等我有空了、等忙完这阵、等上完这门课再修身养性」的念头搁下——按「事上磨」的讲法，此刻的堵车、加班、被误解，就是工夫的现场，没有另一个更合适的道场在别处等你。"
-      },
-      {
-        "type": "h2",
-        "text": "回到你的收藏夹"
-      },
-      {
-        "type": "p",
-        "text": "文章开头那条深夜收藏的早睡指南，还在你的收藏夹里。现在你可以用卷上的标准重新问一次：我「知道」熬夜伤身吗？王阳明的答案很干脆——今晚见分晓。徐爱在卷首形容老师的学问：「即之若易，而仰之愈高；见之若粗，而探之愈精」——靠近它好像很简单，仰望它却越来越高；乍看粗浅，越探越精。卷上就是这样一本书：每句话都听得懂，每句话都做不完。它不给你新的信息，它只是把你早就「收藏」了的那些道理，一条一条地问你：这一条，你行过了吗？没行过的，按这本书的算法，都还不算数。"
-      },
-      {
-        "type": "refs",
-        "items": [
-          "《传习录·卷上》，徐爱、陆澄、薛侃所录——本文原文与译文均取自本站文本",
-          "《大学》《中庸》——「格物致知」「诚意」「如好好色，如恶恶臭」「未发之中」诸语出处",
-          "《孟子》——「良知」一词及「孺子入井」「大人格君心」诸例的源头",
-          "《尚书·大禹谟》——「惟精惟一」十六字心传",
-          "朱熹《四书章句集注》——卷上全篇商榷的对象，「格物」朱解见《大学章句》",
-          "钱德洪等编《王文成公年谱》——龙场悟道与《传习录》刊刻始末",
-          "说明：引文均为本站《传习录》卷上原文的逐字摘录；白话为编者所拟，与站内译文一致；朱王之争历代评价不一，本文如实并陈，不代读者拍板。"
-        ]
-      }
-    ],
-    "featured": true,
-    "hero": {
-      "badge": "开篇 · 全书总纲",
-      "headline": "心即理也。天下又有心外之事、心外之理乎？",
-      "tagline": "一切工夫，收归此心——王门心学的第一课"
-    }
-  },
-  "2": {
-    "title": "白话传习录 · 卷中",
-    "subtitle": "八封亲笔回信里的王阳明：所有「做不到」，都是因为没真懂",
-    "centralIdea": "卷中借六家问难反复申明一件事：心外无理、知行一体，功夫只有一个——在每件具体的事上把良知致到十分、不自欺。",
-    "blocks": [
-      {
-        "type": "lead",
-        "text": "《传习录》上卷是学生记的课堂笔记，中卷不一样——它是王阳明本人写的白纸黑字：几位读书人轮番来信发难，有追问的、有商榷的、有当面质疑的，他一封封亲笔回。一个思想家被逼到墙角时说出的话，往往才是他最真的功夫。这一卷，就是王阳明的「答辩实录」。"
-      },
-      {
-        "type": "p",
-        "text": "先说一个你大概率经历过的时刻：深夜刷手机，又收藏了一篇《真正拉开人与人差距的，是这个习惯》，心满意足地锁屏睡觉。收藏夹几百篇，生活纹丝不动。你安慰自己：道理我都懂，只是还没来得及做。——五百年前，一位叫顾东桥的学者给王阳明写信，掰扯的其实就是这件事：知和行到底什么关系？是不是先把道理学明白，再去实行？王阳明的回信，把「都懂，就是做不到」这个人人熟悉的说法，拆了个干干净净：你做不到，恰恰证明你没真懂。这一卷的所有内容，几乎都从这一针扎下去。"
-      },
-      {
-        "type": "h2",
-        "text": "这是一卷什么书：八封亲笔信，加三篇小文"
-      },
-      {
-        "type": "p",
-        "text": "《传习录》分上、中、下三卷。中卷由弟子钱德洪编定，收王阳明写给六位友人、学生的八封论学书信——答顾东桥书、答周道通书、答陆原静书（两封）、答欧阳崇一书、答罗整庵少宰书、答聂文蔚书（两封）——卷末附《示弟立志说》《训蒙大意》《教约》三篇短文。这些信大多写于阳明五十岁前后、提出「致良知」宗旨之后，是他最成熟时期的文字。先记几个词的读音，后面会反复见到：温凊（qìng，冬温夏凊，让父母冬暖夏凉）、恻怛（cè dá，恳切的心疼）、妍媸（yán chī，美与丑）、自慊（qiè，自己心安满足）。"
-      },
-      {
-        "type": "figure",
-        "ftype": "structure",
-        "svg": "<svg viewBox=\"0 0 700 430\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\">\n<text x=\"350\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:20px;font-weight:bold\">《传习录·卷中》一览：八封亲笔信 + 卷末三篇</text>\n<g>\n<rect x=\"40\" y=\"58\" width=\"300\" height=\"76\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:1.6\"/>\n<text x=\"190\" y=\"86\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:16px;font-weight:bold\">答顾东桥书（最长）</text>\n<text x=\"190\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px\">知行合一 · 格物致知 · 拔本塞源</text>\n<rect x=\"360\" y=\"58\" width=\"300\" height=\"76\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<text x=\"510\" y=\"86\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:16px;font-weight:bold\">答周道通书</text>\n<text x=\"510\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px\">功夫终身只是一事 · 痒只有自己挠</text>\n<rect x=\"40\" y=\"146\" width=\"300\" height=\"76\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<text x=\"190\" y=\"174\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:16px;font-weight:bold\">答陆原静书（两封）</text>\n<text x=\"190\" y=\"198\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px\">求静愈不静 · 乐是心之本体 · 明镜之喻</text>\n<rect x=\"360\" y=\"146\" width=\"300\" height=\"76\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<text x=\"510\" y=\"174\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:16px;font-weight:bold\">答欧阳崇一书</text>\n<text x=\"510\" y=\"198\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px\">良知与见闻：头脑对了处处是营养</text>\n<rect x=\"40\" y=\"234\" width=\"300\" height=\"76\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<text x=\"190\" y=\"262\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:16px;font-weight:bold\">答罗整庵少宰书</text>\n<text x=\"190\" y=\"286\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px\">道，天下之公道 · 与朱学之争的体面</text>\n<rect x=\"360\" y=\"234\" width=\"300\" height=\"76\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:1.6\"/>\n<text x=\"510\" y=\"262\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:16px;font-weight:bold\">答聂文蔚书（两封）</text>\n<text x=\"510\" y=\"286\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px\">万物一体 · 真诚恻怛 · 必有事焉即致良知</text>\n</g>\n<line x1=\"60\" y1=\"330\" x2=\"640\" y2=\"330\" style=\"stroke:var(--line);stroke-width:1;stroke-dasharray:4 4\"/>\n<text x=\"350\" y=\"352\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px;opacity:.75\">卷末附三篇短文</text>\n<g>\n<rect x=\"60\" y=\"366\" width=\"180\" height=\"44\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.2\"/>\n<text x=\"150\" y=\"393\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">示弟立志说</text>\n<rect x=\"260\" y=\"366\" width=\"180\" height=\"44\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.2\"/>\n<text x=\"350\" y=\"393\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">训蒙大意</text>\n<rect x=\"460\" y=\"366\" width=\"180\" height=\"44\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.2\"/>\n<text x=\"550\" y=\"393\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">教约</text>\n</g>\n</svg>",
-        "caption": "《传习录·卷中》结构一览：八封论学书信（六位来信人）各有对手与主题，卷末附家书与两篇儿童教育短文。其中答顾东桥书最长，末段「拔本塞源论」历来被单独抬出来读。"
-      },
-      {
-        "type": "p",
-        "text": "卷首有钱德洪一段按语，交代这卷书的来历：南大吉（字元善）当年刻《传习录》，下册收先生手书八篇；钱德洪重编时删去《答徐成之》两封调停朱陆的信，增补了答聂文蔚的第二书。按语里有一句写他老师的处境，读来沉重——"
-      },
-      {
-        "type": "quote",
-        "original": "平生冒天下之非诋推陷，万死一生，遑遑然不忘讲学，惟恐吾人不闻斯道，流于功利机智，以日堕于夷狄禽兽而不觉",
-        "translation": "先师平生冒着天下的诋毁陷害,九死一生,惶惶然不忘讲学,只怕我们听不到这道理,流于功利机巧,以致日日堕入夷狄禽兽而不自觉"
-      },
-      {
-        "type": "p",
-        "text": "注意「万死一生」不是修辞。写这些信的年代，王阳明刚平定宁王之乱，功高遭忌，毁谤满天下；他的学说被朝野守旧者斥为伪学。也就是说，这一卷里从容不迫的说理文字，是在舆论的枪林弹雨里写的。知道这个背景，再读信里那些不动声色的坚持，分量完全不同。"
-      },
-      {
-        "type": "figure",
-        "ftype": "timeline",
-        "svg": "<svg viewBox=\"0 0 700 250\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\">\n<text x=\"350\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:19px;font-weight:bold\">《传习录》卷中的成书流变</text>\n<line x1=\"60\" y1=\"120\" x2=\"640\" y2=\"120\" style=\"stroke:var(--line);stroke-width:2\"/>\n<circle cx=\"120\" cy=\"120\" r=\"7\" style=\"fill:var(--cinnabar)\"/>\n<text x=\"120\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px;font-weight:bold\">正德十三年（1518）</text>\n<text x=\"120\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px\">薛侃初刻于虔州</text>\n<text x=\"120\" y=\"170\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:12px;opacity:.75\">收课堂语录（今卷上之源）</text>\n<circle cx=\"350\" cy=\"120\" r=\"7\" style=\"fill:var(--cinnabar)\"/>\n<text x=\"350\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px;font-weight:bold\">嘉靖三年（1524）</text>\n<text x=\"350\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px\">南大吉（元善）续刻于越</text>\n<text x=\"350\" y=\"170\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:12px;opacity:.75\">增先生手书两册（今卷中之源）</text>\n<circle cx=\"580\" cy=\"120\" r=\"7\" style=\"fill:var(--cinnabar)\"/>\n<text x=\"580\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px;font-weight:bold\">隆庆六年（1572）</text>\n<text x=\"580\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px\">钱德洪重编定本入《全书》</text>\n<text x=\"580\" y=\"170\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:12px;opacity:.75\">去《答徐成之》，增答聂文蔚第二书</text>\n<text x=\"350\" y=\"220\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:12px;opacity:.7\">卷首钱德洪按语自述取舍缘由：「今所去取，裁之时义则然」</text>\n</svg>",
-        "caption": "卷中的成书流变：从薛侃虔州初刻的课堂语录，到南大吉越中续刻收入手书，再到钱德洪重编、随《王文成公全书》行世的三卷定本。今天读到的卷中，取舍出自钱德洪之手。"
-      },
-      {
-        "type": "h2",
-        "text": "「道理我都懂」，是世上最大的错觉"
-      },
-      {
-        "type": "p",
-        "text": "顾东桥的信问得客气但尖锐：您讲知行并进，可学问总有次第，哪能不先知后行？王阳明的回答，是全卷第一块基石，也是心学最有名的话之一——"
-      },
-      {
-        "type": "quote",
-        "original": "知之真切笃实处即是行，行之明觉精察处即是知，知、行工夫本不可离。只为后世学者分作两截用功，失却知、行本体，故有合一并进之说。",
-        "translation": "知得真切笃实之处就是行,行得明觉精察之处就是知,知行的功夫本不可分离。只因后世学者把它分作两截用功,失却了知行的本体,所以才有合一并进之说。"
-      },
-      {
-        "type": "p",
-        "text": "把这句话的脑回路翻成大白话。你说你「知道」熬夜伤身——可你昨晚两点才睡。阳明会说：你手碰到火会立刻缩回来，那才叫知道烫；你对「熬夜伤身」这四个字，只是听说过，没有知道。真知道一件事，行为会像手离火那样自动发生；反过来，只有真的做了、在做的过程里越做越明白，那个「知」才算完成。知和行不是流水线上的两道工序，是同一件事的两面——就像「会游泳」这件事，不存在「理论上会了、只差下水」的状态：不敢下水，就是不会。"
-      },
-      {
-        "type": "figure",
-        "ftype": "contrast",
-        "svg": "<svg viewBox=\"0 0 700 320\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\">\n<text x=\"350\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:19px;font-weight:bold\">两种活法：知行两截 vs 知行合一</text>\n<text x=\"185\" y=\"70\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:15px;font-weight:bold\">后世学者：分作两截用功</text>\n<rect x=\"70\" y=\"90\" width=\"100\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/>\n<text x=\"120\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:16px\">知</text>\n<rect x=\"230\" y=\"90\" width=\"100\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/>\n<text x=\"280\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:16px\">行</text>\n<line x1=\"170\" y1=\"116\" x2=\"230\" y2=\"116\" style=\"stroke:var(--line);stroke-width:1.5;stroke-dasharray:5 5\"/>\n<text x=\"200\" y=\"106\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:13px\">断了</text>\n<text x=\"185\" y=\"176\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px;opacity:.8\">「先学明白再去做」——</text>\n<text x=\"185\" y=\"198\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px;opacity:.8\">结果是终身不行，也终身不知</text>\n<line x1=\"350\" y1=\"60\" x2=\"350\" y2=\"290\" style=\"stroke:var(--line);stroke-width:1;stroke-dasharray:3 5\"/>\n<text x=\"520\" y=\"70\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:15px;font-weight:bold\">阳明：知行本体只是一个</text>\n<circle cx=\"520\" cy=\"135\" r=\"52\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:2\"/>\n<line x1=\"520\" y1=\"83\" x2=\"520\" y2=\"187\" style=\"stroke:var(--cinnabar);stroke-width:1;stroke-dasharray:3 3\"/>\n<text x=\"496\" y=\"140\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:16px\">知</text>\n<text x=\"544\" y=\"140\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:16px\">行</text>\n<text x=\"520\" y=\"220\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px;opacity:.85\">知之真切笃实处，即是行</text>\n<text x=\"520\" y=\"242\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px;opacity:.85\">行之明觉精察处，即是知</text>\n<text x=\"350\" y=\"308\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:12px;opacity:.7\">据《答顾东桥书》：「知、行工夫本不可离，只为后世学者分作两截用功，故有合一并进之说」</text>\n</svg>",
-        "caption": "两种用功方式的对比：把知行拆成两截，就会「先学明白再做」地无限拖延；阳明说知行本是一体，真切笃实的知本身就是行的开始。据《答顾东桥书》。"
-      },
-      {
-        "type": "p",
-        "text": "顾东桥又抛出一个更根本的担忧：只求本心，会不会丢了外部世界的「物理」（事事物物的道理）？这一问逼出了心学的地基——「心即理」："
-      },
-      {
-        "type": "quote",
-        "original": "夫物理不外于吾心，外吾心而求物理，无物理矣；遗物理而求吾心，吾心又何物邪？心之体，性也，性即理也。故有孝亲之心，即有孝之理，无孝亲之心，即无孝之理矣",
-        "translation": "事物之理不外于我心,离开我心去求事物之理,就没有事物之理了;遗弃事物之理去求我心,我心又是什么呢?心的本体就是性,性就是理。所以有孝亲的心,就有孝的理,没有孝亲的心,就没有孝的理了"
-      },
-      {
-        "type": "p",
-        "text": "这段最容易被读成玄学，其实用一个例子就落地了：「孝的道理」在哪里？在《孝经》的纸上吗？一个人能把二十四孝倒背如流、却半年不给爸妈打一个电话，他身上有「孝之理」吗？阳明说：没有。孝的道理不是挂在外面等你背诵的条文，它只在你心里那份对父母的挂念一动时，才真实存在——就像疼不在病历本里，只在你疼的那一下里。这里他点名商榷了朱熹「心与理」一分一合的讲法，认为那已经埋下了把心和理拆成两截的雷。要说明：这是学理之争而非意气之争，朱熹讲格物穷理自有其严密体系，阳明的批评是不是完全公允，历代学者有不同看法——分歧如实摆在这里，读者可以自己掂量。"
-      },
-      {
-        "type": "figure",
-        "ftype": "quotecard",
-        "svg": "<svg viewBox=\"0 0 700 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\">\n<rect x=\"24\" y=\"20\" width=\"652\" height=\"260\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/>\n<rect x=\"34\" y=\"30\" width=\"632\" height=\"240\" rx=\"6\" style=\"fill:none;stroke:var(--line);stroke-width:.6\"/>\n<text x=\"350\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:27px;font-weight:bold\">知之真切笃实处即是行，</text>\n<text x=\"350\" y=\"168\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:27px;font-weight:bold\">行之明觉精察处即是知。</text>\n<text x=\"350\" y=\"226\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px;opacity:.75\">——《传习录 · 卷中 · 答顾东桥书》</text>\n<rect x=\"596\" y=\"52\" width=\"44\" height=\"44\" rx=\"5\" style=\"fill:var(--cinnabar)\"/>\n<text x=\"618\" y=\"82\" text-anchor=\"middle\" style=\"fill:var(--paper);font-family:var(--font-serif);font-size:20px;font-weight:bold\">心</text>\n</svg>",
-        "caption": "金句卡：知之真切笃实处即是行，行之明觉精察处即是知。——《传习录·卷中·答顾东桥书》"
-      },
-      {
-        "type": "h2",
-        "text": "良知是尺子，不是题库"
-      },
-      {
-        "type": "p",
-        "text": "顾东桥不服，追问了一个特别实际的问题：大道理好懂，可具体的礼节、随时势变化的细目（「节目时变」），差之毫厘谬以千里，不去外面学，行吗？这一问，问出了全卷最漂亮的一个比喻——"
-      },
-      {
-        "type": "quote",
-        "original": "夫良知之于节目时变，犹规矩、尺度之于方圆、长短也；节目时变之不可预定，犹方圆、长短之不可胜穷也。故规矩诚立，则不可欺以方圆，而天下之方圆不可胜用矣；尺度诚陈，则不可欺以长短，而天下之长短不可胜用矣；良知诚致，则不可欺以节目时变，而天下之节目时变不可胜应矣。",
-        "translation": "良知对于节目时变,好比规矩、尺度对于方圆、长短;节目时变不可预先定下,好比方圆、长短不可穷尽。所以规矩确立了,就不能拿方圆来欺骗它,而天下的方圆便用之不尽了;尺度确立了,就不能拿长短来欺骗它,而天下的长短便用之不尽了;良知真致了,就不能拿节目时变来欺骗它,而天下的节目时变便应之不尽了。"
-      },
-      {
-        "type": "p",
-        "text": "「规矩」是画圆的圆规、画方的矩尺。这个比喻的脑回路是：世界上的圆有无穷多个，你不可能把每个圆都背下来；但你手里有一把圆规，任何尺寸的圆都画得出。良知就是那把圆规——它不是预存了所有答案的题库，它是判断力本身。想想你入职第一年：员工手册再厚，也总会遇到手册没写的情况，最后靠的是什么？是你心里那杆能权衡轻重的秤。家里老人生病，该不该辞职回去照顾？这种事没有标准答案可查，古人也遇到过——"
-      },
-      {
-        "type": "quote",
-        "original": "夫舜之不告而娶，岂舜之前已有不告而娶者为之准则，故舜得以考之何典，问诸何人，而为此邪？抑亦求诸其心一念之真知，权轻重之宜，不得已而为此邪？",
-        "translation": "舜不告而娶,难道舜以前已有不告而娶的人作为准则,使舜得以查考于哪部典籍、询问于哪个人,才这么做?还是求之于自己心中一念的真知,权衡轻重的所宜,不得已才这么做?"
-      },
-      {
-        "type": "p",
-        "text": "舜没有禀告父母就娶妻——严重违反礼法。他查了哪本典籍、问了哪位专家？都没有，因为史无前例。他靠的是心里一念之真知，权衡「不告而娶」与「无后」孰轻孰重。但注意，阳明立刻补了一道安全阀：假使舜的动机不是真为延续后嗣，那这件事就是大不孝。也就是说，「凭良知判断」绝不等于「跟着感觉走」——良知是把私心杂念收拾干净之后的明觉，动机的真诚是它唯一的合法性来源。这条线划得很清，不划清，心学就会滑向自我合理化的借口。"
-      },
-      {
-        "type": "figure",
-        "ftype": "metaphor",
-        "svg": "<svg viewBox=\"0 0 700 340\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\">\n<text x=\"350\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:19px;font-weight:bold\">良知是尺子，不是题库</text>\n<text x=\"185\" y=\"68\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:15px;font-weight:bold\">背题库：一事记一个答案</text>\n<circle cx=\"100\" cy=\"120\" r=\"22\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<rect x=\"150\" y=\"100\" width=\"44\" height=\"40\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<circle cx=\"245\" cy=\"120\" r=\"14\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<rect x=\"82\" y=\"160\" width=\"36\" height=\"26\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<circle cx=\"180\" cy=\"176\" r=\"18\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<text x=\"250\" y=\"182\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:18px;font-weight:bold\">？</text>\n<text x=\"185\" y=\"232\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px;opacity:.85\">「节目时变不可预定」——</text>\n<text x=\"185\" y=\"254\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px;opacity:.85\">情况穷举不尽，题库永远背不完</text>\n<line x1=\"350\" y1=\"56\" x2=\"350\" y2=\"300\" style=\"stroke:var(--line);stroke-width:1;stroke-dasharray:3 5\"/>\n<text x=\"520\" y=\"68\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:15px;font-weight:bold\">持规矩：一具在手，方圆无穷</text>\n<line x1=\"520\" y1=\"96\" x2=\"480\" y2=\"176\" style=\"stroke:var(--cinnabar);stroke-width:2.4\"/>\n<line x1=\"520\" y1=\"96\" x2=\"560\" y2=\"176\" style=\"stroke:var(--cinnabar);stroke-width:2.4\"/>\n<circle cx=\"520\" cy=\"96\" r=\"5\" style=\"fill:var(--cinnabar)\"/>\n<path d=\"M 480 176 A 57 57 0 0 0 560 176\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:1.4;stroke-dasharray:4 3\"/>\n<circle cx=\"450\" cy=\"230\" r=\"16\" style=\"fill:none;stroke:var(--line);stroke-width:1.2\"/>\n<circle cx=\"520\" cy=\"238\" r=\"26\" style=\"fill:none;stroke:var(--line);stroke-width:1.2\"/>\n<circle cx=\"592\" cy=\"230\" r=\"12\" style=\"fill:none;stroke:var(--line);stroke-width:1.2\"/>\n<text x=\"520\" y=\"290\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px;opacity:.85\">「规矩诚立，则天下之方圆不可胜用」</text>\n<text x=\"350\" y=\"326\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:12px;opacity:.7\">据《答顾东桥书》规矩尺度之喻：良知是判断力本身，不是预存的答案清单</text>\n</svg>",
-        "caption": "题库式学习 vs 尺子式学习：情况穷举不尽，答案背不完；良知如规矩尺度，一具在手，天下之方圆不可胜用。据《答顾东桥书》。"
-      },
-      {
-        "type": "p",
-        "text": "那向外求知识就没用了吗？阳明打了另一个比方，同样一针见血——"
-      },
-      {
-        "type": "quote",
-        "original": "今欲去此之蔽，不知致力于此，而欲以外求，是犹目之不明者不务服药调理以治其目，而徒伥伥然求明于其外；明岂可以自外而得哉？",
-        "translation": "如今要去掉这遮蔽,不知在这良知上用力,反想向外去求,这就像眼睛不明亮的人不去服药调理来治他的眼,却茫然向外去求明亮;明亮岂能从身外得来?"
-      },
-      {
-        "type": "p",
-        "text": "眼睛坏了，该治眼睛，而不是满世界找更亮的灯。放到今天：判断力一团浆糊的时候，再囤十门课、再关注一百个博主，只会更乱——信息是灯，判断力是眼，灯再多也替不了眼。这不是反智，阳明后面会亲口说见闻多多益善（见答欧阳崇一一节），前提是那双眼先得能看。"
-      },
-      {
-        "type": "h2",
-        "text": "格物致知，落在给爸妈装暖气这件事上"
-      },
-      {
-        "type": "p",
-        "text": "「格物、致知、诚意、正心」，《大学》里这串词听着像绕口令。顾东桥挑刺说：照你的讲法，难道知道怎么伺候父母冷暖就算诚意了？阳明索性用「温凊奉养」——让父母冬天暖和、夏天凉快、日常供养周到——把整串概念拆了一遍。这是全卷最适合初学者的一段，因为它全程不离一件具体的家务事："
-      },
-      {
-        "type": "quote",
-        "original": "盖鄙人之见，则谓意欲温凊、意欲奉养者，所谓「意」也，而未可谓之「诚意」。必实行其温凊、奉养之意，务求自慊而无自欺，然后谓之「诚意」。",
-        "translation": "依我的看法,意要冬温夏凊、意要奉养,这是所谓『意』,却还不能叫作『诚意』。必实实在在去行那温凊、奉养之意,务求自己心安而无自欺,然后才叫『诚意』。"
-      },
-      {
-        "type": "p",
-        "text": "翻译成今天的场景：你「想孝顺爸妈」——这是意，人人都有，不值钱。你给爸妈买了台按摩仪，拍照发了朋友圈，按摩仪在墙角吃了半年灰——意有了，诚意没有。什么时候才算诚意？真去做了，做到位了，而且——注意这个词——「自慊」：自己心里踏实，没有一丝糊弄自己的成分。「无自欺」是整个功夫的枢纽：别人你都骗得过，你心里那声「其实我没做到」的小声音，骗不过。"
-      },
-      {
-        "type": "quote",
-        "original": "温凊之物格，然后知温凊之良知始致；奉养之物格，然后知奉养之良知始致。故曰：「物格而后知至。」",
-        "translation": "温凊之物格了,然后温凊的良知才致;奉养之物格了,然后奉养的良知才致。所以说:『物格而后知至。』"
-      },
-      {
-        "type": "p",
-        "text": "这句把次第讲反了——反得有道理。通常以为：先学知识（致知），再去做事（格物）。阳明说：顺序倒过来，事情做到位了（物格），那件事上的良知才算真正兑现（知至），心意才算真（意诚）。学问不是「先学后做」的直线，是「做到位了认知才完成」的回路。就像带孩子：没当过父母的人读一百本育儿书，也只是「知道」；夜里第三次起来喂奶的那一刻，有些东西才真的「知至」了。"
-      },
-      {
-        "type": "figure",
-        "ftype": "structure",
-        "svg": "<svg viewBox=\"0 0 700 360\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\">\n<text x=\"350\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:19px;font-weight:bold\">拿「让爸妈冬暖夏凉」这件事，拆开格物致知诚意</text>\n<g>\n<rect x=\"46\" y=\"60\" width=\"130\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<text x=\"111\" y=\"86\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:15px\">意</text>\n<text x=\"111\" y=\"104\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:11px;opacity:.8\">想让爸妈过得好</text>\n<text x=\"305\" y=\"80\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:12px\">实行到位、自慊无自欺</text>\n<line x1=\"186\" y1=\"86\" x2=\"424\" y2=\"86\" style=\"stroke:var(--line);stroke-width:1.4\"/>\n<path d=\"M 424 86 l -9 -5 v 10 z\" style=\"fill:var(--line)\"/>\n<rect x=\"434\" y=\"60\" width=\"220\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:1.6\"/>\n<text x=\"544\" y=\"92\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:16px;font-weight:bold\">诚意</text>\n</g>\n<g>\n<rect x=\"46\" y=\"140\" width=\"130\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<text x=\"111\" y=\"166\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:15px\">知</text>\n<text x=\"111\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:11px;opacity:.8\">知道该怎么照料</text>\n<text x=\"305\" y=\"160\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:12px\">照良知所知做到无一毫不尽</text>\n<line x1=\"186\" y1=\"166\" x2=\"424\" y2=\"166\" style=\"stroke:var(--line);stroke-width:1.4\"/>\n<path d=\"M 424 166 l -9 -5 v 10 z\" style=\"fill:var(--line)\"/>\n<rect x=\"434\" y=\"140\" width=\"220\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:1.6\"/>\n<text x=\"544\" y=\"172\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:16px;font-weight:bold\">致知</text>\n</g>\n<g>\n<rect x=\"46\" y=\"220\" width=\"130\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<text x=\"111\" y=\"246\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:15px\">物</text>\n<text x=\"111\" y=\"264\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:11px;opacity:.8\">奉养父母这件事</text>\n<text x=\"305\" y=\"240\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:12px\">一如良知之所知而为之</text>\n<line x1=\"186\" y1=\"246\" x2=\"424\" y2=\"246\" style=\"stroke:var(--line);stroke-width:1.4\"/>\n<path d=\"M 424 246 l -9 -5 v 10 z\" style=\"fill:var(--line)\"/>\n<rect x=\"434\" y=\"220\" width=\"220\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:1.6\"/>\n<text x=\"544\" y=\"252\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:16px;font-weight:bold\">格物</text>\n</g>\n<text x=\"350\" y=\"316\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">回路：物格 → 知至 → 意诚（做到位了，认知才完成，心意才真）</text>\n<text x=\"350\" y=\"342\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:12px;opacity:.7\">据《答顾东桥书》温凊奉养之例：「物格而后知至，知至而后意诚」</text>\n</svg>",
-        "caption": "用「温凊奉养」拆解格物致知诚意：意、知、物是原材料，各自做到十分、无一毫自欺，才升级为诚意、致知、格物；次第是物格→知至→意诚。据《答顾东桥书》。"
-      },
-      {
-        "type": "h2",
-        "text": "拔本塞源：一场对「卷」的千年诊断"
-      },
-      {
-        "type": "p",
-        "text": "答顾东桥书的末段，阳明突然把镜头从个人功夫拉到整个文明，写下了后人单独抬出来传抄的「拔本塞源论」——拔掉病根、堵住污染源。它回答一个大问题：世道为什么会变成现在这样？他的答案从人心的「出厂设置」讲起——"
-      },
-      {
-        "type": "quote",
-        "original": "天下之人心，其始亦非有异于圣人也，特其间于有我之私，隔于物欲之蔽，大者以小，通者以塞，人各有心，至有视其父子兄弟如仇雠者。",
-        "translation": "天下人的心,起初也并非异于圣人,只是隔在『有我』的私念里、被物欲遮蔽,本来大的变小、本来通的变塞,人人各怀其心,以至有把父子兄弟看作仇敌的。"
-      },
-      {
-        "type": "p",
-        "text": "人心的出厂设置本来和圣人一样，坏在后来装了太多后台程序：「有我之私」和「物欲之蔽」。接下来他描绘学风败坏的景象，把世上的学者比作挤进一座「百戏之场」——四面八方都是杂耍卖艺争奇斗巧的，看客「前瞻后盼，应接不遑」，看到精神恍惚，忘了自己家在哪。五百年后的我们对这个画面应该毫无理解障碍：它就是你的信息流。而下面这四句排比，简直像是从今天的社交网络评论区里抄出来的——"
-      },
-      {
-        "type": "quote",
-        "original": "记诵之广，适以长其敖也；知识之多，适以行其恶也；闻见之博，适以肆其辨也；辞章之富，适以饰其伪也。",
-        "translation": "记诵的广博,恰好助长他的傲慢;知识的繁多,恰好助行他的恶事;闻见的广博,恰好放纵他的诡辩;辞章的丰富,恰好文饰他的虚伪。"
-      },
-      {
-        "type": "p",
-        "text": "注意逻辑：不是知识本身有毒，是「相矜以知，相轧以势，相争以利」——当学问变成攀比的筹码、倾轧的武器，知识越多毒越深。学历军备竞赛、简历美化、用漂亮话术包装私利，都在这四句的射程里。要诚实地说：阳明开出的药方是回到三代之治「惟以成德为事」的复古理想，各安其分、不慕其外——这幅对分工社会的想象有强烈的时代局限，今天不可能照搬，也不必美化。但他的诊断——「功利之毒沦浃于人之心髓」，学问一旦只剩功利这一个发动机，整个系统就会空转——放到今天依然锋利。而他在长篇痛陈之后，收尾只留了一个不悲观的理由："
-      },
-      {
-        "type": "quote",
-        "original": "所幸天理之在人心，终有所不可泯，而良知之明，万古一日，则其闻吾拔本塞源之论，必有恻然而悲，戚然而痛，愤然而起，沛然若决江河，而有所不可御者矣。",
-        "translation": "所幸天理在人心,终有不可泯灭之处,而良知之明,万古如同一日,那么人听到我拔本塞源的议论,必有恻然而悲、戚然而痛、愤然而起、沛然如决江河而不可遏止的。"
-      },
-      {
-        "type": "p",
-        "text": "「良知之明，万古一日」——不管世道怎么污染，人心里那盏灯泯灭不了，今天亮度和一万年前一样。这不是乐观主义的口号，是他整个学说的承重墙：如果这盏灯会灭，后面所有功夫都无从谈起。"
-      },
-      {
-        "type": "h2",
-        "text": "痒，只有自己挠——答周道通"
-      },
-      {
-        "type": "p",
-        "text": "周道通的问题朴素得多：立志时断时续怎么办？身边没有朋友一起讲习，功夫就懈怠，怎么办？阳明的回答里有一句极生动的大白话——"
-      },
-      {
-        "type": "quote",
-        "original": "自家痛痒，自家须会知得，自家须会搔摩得；既自知得痛痒，自家须不能不搔摩得。",
-        "translation": "自己的痛痒,自己须能知得,自己须能搔摩得;既自知得痛痒,自己便不能不去搔摩。"
-      },
-      {
-        "type": "p",
-        "text": "痒，只有自己知道在哪，也只有自己的手够得着。打卡群、监督师、学习搭子，都替你挠不了。同一封信里他还有个更扎心的观察：好色之人从来不会「忘记」好色，也从不喊坚持不下去——因为那是真想要。志向立不牢，不是方法不对、工具不够，是「志欠真切」：还不够想要。这话听着像批评，其实是诊断——它把问题从「我意志力差」（自责，无解）挪到「我到底要什么」（可以老实回答）上。"
-      },
-      {
-        "type": "quote",
-        "original": "凡人为学，终身只为这一事。自少至老、自朝至暮，不论有事无事，只是做得这一件，所谓「必有事焉」者也。",
-        "translation": "凡人为学,终身只为这一件事。从少到老、从早到晚,不论有事无事,只是做得这一件,这就是所谓『必有事焉』。"
-      },
-      {
-        "type": "p",
-        "text": "「终身只为这一事」不是让你二十四小时紧绷，而是取消「上班糊弄、下班修行」「工作日堕落、周末自律」这种两个时区的划分——功夫不挑场地，洗碗、开会、堵车，都是它的道场。周道通还提到，与其争论朱熹陆九渊谁对谁错，不如各自做功夫。阳明大赞，顺手写下一句可以裱起来的话——"
-      },
-      {
-        "type": "quote",
-        "original": "以言语谤人，其谤浅；若自己不能身体实践，而徒入耳出口，呶呶度日，是以身谤也，其谤深矣。",
-        "translation": "用言语诽谤人,那诽谤还浅;若自己不能亲身体察践行,而徒然入耳出口、絮絮地度日,这是用自身去诽谤,那诽谤就深了。"
-      },
-      {
-        "type": "p",
-        "text": "用嘴诋毁别人，伤害有限；自己号称信奉某个道理却从不实践、整天空谈——那是用你的整个人生在给这个道理抹黑，「以身谤也」。转发了一百条读书笔记而一本书没读完，某种意义上就是在「以身谤」读书这件事。同段还有一句「攻吾之短者是吾师」：来批评我短处的人是我的老师——挨批评的正确姿势，五百年前就写好了。"
-      },
-      {
-        "type": "h2",
-        "text": "心静不下来？别追着念头打——答陆原静"
-      },
-      {
-        "type": "p",
-        "text": "陆原静是全卷问得最细的人，细到钱德洪在两封信后特意附了一段跋：这组问答刊出，「读者皆喜澄善问，师善答」，都觉得听到了没听过的道理；而阳明自己的评语却泼了盆冷水——原静所问毕竟「只是知解上转」，这门学问贵在反求自得，不是靠拆解概念能进去的。不过他的问题今天人人都懂：我一坐下来心就乱，念头一个接一个，怎么办？阳明的回答先给这个「怎么办」本身泼了盆冷水——"
-      },
-      {
-        "type": "quote",
-        "original": "是有意于求宁静，是以愈不宁静耳。夫妄心则动也，照心非动也；恒照则恒动恒静，天地之所以恒久而不已也。",
-        "translation": "这是有意于求宁静,所以愈不宁静罢了。妄心是动,照心不是动;恒照则恒动恒静,这是天地所以恒久而不息的缘故。"
-      },
-      {
-        "type": "p",
-        "text": "这就是失眠者的悖论：越用力想睡，越睡不着——因为「我要静下来」本身就是一个新的、更执着的念头。阳明把心拆成两层：乱跑的念头是「妄心」，但那个能看见「念头在乱跑」的觉察本身——「照心」——从来没乱过。功夫不是扑灭念头（扑不灭，而且越扑越多），是站到照心那一层去：念头来，看见它；念头走，不送。同组问答里还有一句常被单独摘出来的话——"
-      },
-      {
-        "type": "quote",
-        "original": "乐是心之本体，虽不同于七情之乐，而亦不外于七情之乐；虽则圣贤别有真乐，而亦常人之所同有，但常人有之而不自知，反自求许多忧苦，自加迷弃。",
-        "translation": "乐是心的本体,虽不同于七情之乐,而也不外于七情之乐;虽则圣贤另有真乐,而也是常人所共有的,只是常人有它而不自知,反自寻许多忧苦、自加迷弃。"
-      },
-      {
-        "type": "p",
-        "text": "「乐是心之本体」很容易被念成心灵鸡汤，所以要把语境钉死：说这话的人被廷杖四十、贬到瘴疠之地的龙场驿，在那里给自己备过一具石椁、日夜端坐其中——他说的「乐」不是岁月静好，而是心的底色：哪怕在忧苦里，那个能感到「一口热汤真踏实」的能力本身，从未丢失。阳明说常人到处问「用什么办法能得到这个乐」，是「骑驴觅驴」——骑在驴背上满世界找驴。对着幸福学课程焦虑「我怎么还不幸福」的人，值得把这四个字抄下来。而这一组问答里最美的意象，是镜子——"
-      },
-      {
-        "type": "quote",
-        "original": "其良知之体，皦如明镜，略无纤翳，妍媸之来，随物见形，而明镜曾无留染，所谓「情顺万事而无情」也。",
-        "translation": "其良知之体,皎洁如明镜,毫无纤尘翳障,妍丑之来,随物现形,而明镜未尝有所留染,这就是所谓『情顺万事而无情』。"
-      },
-      {
-        "type": "p",
-        "text": "镜子照东西，美的照出美，丑的照出丑，照得一丝不差——这叫「随物见形」，该有的情绪一分不少；但东西走了，镜面上不留任何残影——这叫「曾无留染」，不把情绪养成内伤。被领导批评，当下羞愧，是镜子在照；三天后还在半夜回放那句话，是镜面上长了锈。值得注意的是，阳明在这里坦然引了佛家「无所住而生其心」并说「未为非也」——不算错。但他与佛家的分界线也画得很清：在他看来，佛氏「有个自私自利之心」，为求自家清净脱离了人伦事务；儒者的镜子照的是爹妈、孩子、同事，照完还得接着干活。这是学派立场之辨，如实摆出，不评高下。"
-      },
-      {
-        "type": "figure",
-        "ftype": "metaphor",
-        "svg": "<svg viewBox=\"0 0 700 320\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\">\n<text x=\"350\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:19px;font-weight:bold\">良知如明镜：照得真，不挂住</text>\n<circle cx=\"350\" cy=\"160\" r=\"72\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:2.4\"/>\n<circle cx=\"350\" cy=\"160\" r=\"60\" style=\"fill:none;stroke:var(--line);stroke-width:.8\"/>\n<text x=\"350\" y=\"156\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:17px;font-weight:bold\">明镜</text>\n<text x=\"350\" y=\"180\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:12px;opacity:.8\">略无纤翳</text>\n<text x=\"120\" y=\"120\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:15px\">妍（美的来）</text>\n<text x=\"120\" y=\"206\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:15px\">媸（丑的来）</text>\n<line x1=\"165\" y1=\"116\" x2=\"272\" y2=\"140\" style=\"stroke:var(--line);stroke-width:1.4\"/>\n<path d=\"M 272 140 l -10 -2 4 9 z\" style=\"fill:var(--line)\"/>\n<line x1=\"165\" y1=\"202\" x2=\"272\" y2=\"180\" style=\"stroke:var(--line);stroke-width:1.4\"/>\n<path d=\"M 272 180 l -10 3 5 8 z\" style=\"fill:var(--line)\"/>\n<line x1=\"428\" y1=\"140\" x2=\"540\" y2=\"116\" style=\"stroke:var(--line);stroke-width:1.4;stroke-dasharray:5 4\"/>\n<line x1=\"428\" y1=\"180\" x2=\"540\" y2=\"202\" style=\"stroke:var(--line);stroke-width:1.4;stroke-dasharray:5 4\"/>\n<text x=\"592\" y=\"114\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">一照而皆真</text>\n<text x=\"592\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">一过而不留</text>\n<text x=\"350\" y=\"278\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">情绪来了照见它，过去了不追着它跑——「情顺万事而无情」</text>\n<text x=\"350\" y=\"304\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:12px;opacity:.7\">据《答陆原静书》明镜之喻：「妍媸之来，随物见形，而明镜曾无留染」</text>\n</svg>",
-        "caption": "明镜之喻：妍媸之来，随物见形——情绪如实照见，一分不假；一过而不留——不留染、不内耗。据《答陆原静书》，「情顺万事而无情」语出程颢。"
-      },
-      {
-        "type": "h2",
-        "text": "读书刷课到底有没有用？——答欧阳崇一"
-      },
-      {
-        "type": "p",
-        "text": "欧阳崇一的问题替所有爱学习的人问的：良知不靠见闻，那多闻多见岂不是白费？阳明的回答两边都不偏——"
-      },
-      {
-        "type": "quote",
-        "original": "良知不由见闻而有，而见闻莫非良知之用，故良知不滞于见闻，而亦不离于见闻。",
-        "translation": "良知不由见闻而有,而见闻无不是良知之用,所以良知不滞于见闻,而也不离于见闻。"
-      },
-      {
-        "type": "p",
-        "text": "良知不是从见闻里学来的（它是本有的判断力），但它的运行一刻也离不开见闻（判断总得有料可判）。关键在这封信里的另一个词：「主意头脑」。学问功夫只要主线对了——以致良知为事——那么多闻多见全是致良知的燃料；主线丢了，专在见闻上打转，学习本身反而成了逃避的方式。用今天的话说：带着真问题去读书，读到的每一页都在喂养你的判断力；为缓解焦虑而囤课，收藏夹只是一个更体面的游戏库。区别不在读多少，在「头脑」还在不在。"
-      },
-      {
-        "type": "h2",
-        "text": "怎么跟权威吵架——答罗整庵"
-      },
-      {
-        "type": "p",
-        "text": "罗整庵（钦顺）不是学生，是当时程朱学阵营真正的重量级人物。他批评阳明擅改《大学》古本、立异于朱子——这在当时是很重的指控，近乎学术不端加政治不正确。阳明的回信是全卷姿态最庄重的一封，其中这几句，值得每个参加过学术争论（或者微信群吵架）的人读——"
-      },
-      {
-        "type": "quote",
-        "original": "夫道，天下之公道也；学，天下之公学也。非朱子可得而私也，非孔子可得而私也。天下之公也，公言之而已矣。故言之而是，虽异于己，乃益于己也；言之而非，虽同于己，适损于己也。",
-        "translation": "道,是天下的公道;学,是天下的公学。不是朱子可得而私有的,不是孔子可得而私有的。是天下之公,公正地说它罢了。所以说得对,虽与自己相异,正是有益于自己;说得不对,虽与自己相同,恰是损害自己。"
-      },
-      {
-        "type": "p",
-        "text": "真理不是任何人的私有财产——包括朱子，包括孔子。判断一句话，只看它对不对，不看它是谁说的、跟我是不是一伙的。「言之而是，虽异于己，乃益于己」：反对我但说得对的，是在帮我；吹捧我但说错了的，是在害我。同一封信里，阳明还大方承认自己《朱子晚年定论》一书「中间年岁早晚，诚有所未考」——考证确有不严谨处——但坚持核心主张不退。认账技术性失误、不放弃根本立场，这是争论的体面样子。顺带一提：朱王之争此后绵延数百年，双方各有真章，本站儒典组的《近思录》与这一卷对照着读，才算听全了两造陈词。"
-      },
-      {
-        "type": "h2",
-        "text": "良知的底色，是心疼——答聂文蔚"
-      },
-      {
-        "type": "p",
-        "text": "如果说答顾东桥书是论战，答聂文蔚第一书就是掏心窝。聂文蔚来信推许阳明之学，阳明回信时正处在毁谤的风口浪尖，他写下了全卷情感浓度最高的段落——"
-      },
-      {
-        "type": "quote",
-        "original": "夫人者，天地之心，天地万物本吾一体者也。生民之困苦荼毒，孰非疾痛之切于吾身者乎？不知吾身之疾痛，无是非之心者也。是非之心不虑而知，不学而能，所谓「良知」也。良知之在人心，无间于圣愚，天下古今之所同也。",
-        "translation": "人,是天地之心,天地万物本与我一体。生民的困苦荼毒,哪一样不是切于我身的疾痛?不知自身疾痛的,是没有是非之心的人。是非之心不思虑而知、不学习而能,就是所谓『良知』。良知在人心,无分于圣愚,是天下古今所共同的。"
-      },
-      {
-        "type": "p",
-        "text": "「万物一体」听着玄，推理链其实极简：你刷到灾难新闻，心里会一紧；地铁里有人晕倒，你会下意识起身——那一紧、那一动，不用学、不用想、来不及算利弊，它自己就发生了。阳明说：这就是证据。证明你和他人不是两座孤岛，你的神经末梢天然延伸到别人身上。需要解释的从来不是共情，而是麻木——「不知吾身之疾痛」才是病。在第二封信里，他给良知下了全卷最温柔的定义——"
-      },
-      {
-        "type": "quote",
-        "original": "盖良知只是一个天理自然明觉发见处，只是一个真诚恻怛，便是他本体。故致此良知之真诚恻怛以事亲便是孝，致此良知之真诚恻怛以从兄便是弟，致此良知之真诚恻怛以事君便是忠，只是一个良知，一个真诚恻怛。",
-        "translation": "良知只是一个天理自然明觉发见处,只是一个真诚恻怛,便是它的本体。所以致此良知的真诚恻怛去事亲便是孝,致此良知的真诚恻怛去从兄便是悌,致此良知的真诚恻怛去事君便是忠,只是一个良知、一个真诚恻怛。"
-      },
-      {
-        "type": "p",
-        "text": "「真诚恻怛」——真诚的心疼。孝、悌、忠不是三门要分别修的课，是同一份心疼流向不同的人：流向父母叫孝，流向兄长叫悌，流向职守叫忠。源头只有一个。这也是为什么钱德洪特意增录第二书——他说这封信把功夫讲得「明白简切，使人言下即得入手」。确实，全卷最能一句上手的功夫总结就在这里——"
-      },
-      {
-        "type": "quote",
-        "original": "夫「必有事焉」只是「集义」，「集义」只是「致良知」。说「集义」，则一时未见头恼；说「致良知」，即当下便有实地步可用工。",
-        "translation": "『必有事焉』只是『集义』,『集义』只是『致良知』。说『集义』,则一时见不着头脑;说『致良知』,便当下就有实地步可用功。"
-      },
-      {
-        "type": "p",
-        "text": "孟子那些「必有事焉」「勿忘勿助」的玄谈，历来让学者头大——用力算不算「助长」？不用力算不算「忘」？阳明一刀斩断：别绕了，就说「致良知」——此时此刻，就眼前这件事，把你心里那点分明的是非做出来。当下就有落脚的实地，不用先解决哲学问题再开始生活。"
-      },
-      {
-        "type": "h2",
-        "text": "卷末三篇：立志，和怎么教小孩"
-      },
-      {
-        "type": "p",
-        "text": "卷末附的三篇短文，把宏大的义理落到了两件最家常的事上：给弟弟讲怎么立志，给蒙馆老师讲怎么教小孩。《示弟立志说》开头就是一个种树的比喻——"
-      },
-      {
-        "type": "quote",
-        "original": "夫学，其先于立志。志之不立，犹不种其根，而徒事培拥灌漑，劳苦无成矣。",
-        "translation": "为学,首先在于立志。志不立,如同不种下根,而徒去培土浇灌,劳苦无成。"
-      },
-      {
-        "type": "p",
-        "text": "不种根，光浇水，浇的是一块空地。立志不是打鸡血、喊口号，是先回答那个根问题：我到底要成为什么样的人？这个答案没有，学习方法再先进，都是给空地施肥。要注意阳明说的志是「求为圣人之志」——是人格方向，不是业绩目标；把它偷换成KPI，就恰好掉进了他在拔本塞源论里骂的那个坑。《训蒙大意》则是一篇五百年前的教育心理学，核心比喻好到不需要解释——"
-      },
-      {
-        "type": "quote",
-        "original": "大抵童子之情，乐嬉游而惮拘检，如草木之始萌芽，舒畅之则条达，摧挠之则衰痿；今教童子必使其趋向鼓舞，中心喜悦，则其进自不能已：譬之时雨春风，沾被卉木，莫不萌动发越，自然日长月化；若冰霜剥落，则生意萧索，日就枯槁矣。",
-        "translation": "大抵童子的性情,乐于嬉游而怕拘束检点,如同草木初萌芽,舒展它则枝条通达,摧折它则衰萎。如今教童子,必使他们意趣向往、欢欣鼓舞,中心喜悦,那么他们的长进自不能止:譬如及时之雨、和煦春风,沾被草木,无不萌动发越,自然日长月化;若像冰霜剥落,那么生意萧索,日就枯槁了。"
-      },
-      {
-        "type": "p",
-        "text": "孩子是萌芽，教育要么做春风时雨，要么做冰霜。阳明批评当时的蒙馆先生「日惟督以句读课仿」、动辄鞭挞绳缚，把学校变成监狱，孩子「视学舍如囹狱而不肯入」——对照今天写作业写到亲子关系破裂的家庭，这幅画面毫不过时。他开的课表是歌诗、习礼、读书三样，唱歌不只是美育，是给孩子的情绪一个出口（「泄其跳号呼啸于咏歌」）。《教约》里还有一条具体到字数的操作规范——"
-      },
-      {
-        "type": "quote",
-        "original": "凡授书不在徒多，但贵精熟。量其资禀，能二百字者止可以授一百字，常使精神力量有余，则无厌苦之患，而有自得之美。",
-        "translation": "凡授书不在贪多,只贵精熟。量他们的资禀,能记二百字的只可授一百字,常使精神力量有余,那么没有厌苦之患,而有自得之美。"
-      },
-      {
-        "type": "p",
-        "text": "能学两百字的孩子，只教一百字——永远留三分余力。听起来「不够卷」，但阳明算的是另一笔账：留有余力，孩子才有「自得之美」——那种自己够到答案的甜。把甜留住，学习才是可持续的；把孩子榨干，是用一年的进度换掉一生的胃口。这条写给明代蒙馆的规矩，今天读来像是写给每一个辅导作业到深夜的家长。"
-      },
-      {
-        "type": "h2",
-        "text": "贯通：八封信，其实只回答了一个问题"
-      },
-      {
-        "type": "p",
-        "text": "现在把八封信摊开看，会发现六位来信人问的，其实是同一个问题穿了不同的马甲。顾东桥把「知」和「行」拆成两截，所以困在「先学明白再做」里；陆原静把「动」和「静」拆成两截，所以越求静越乱；欧阳崇一担心「德性」和「见闻」是两截，所以不知道书该不该读；罗整庵坚持「理」在心外，把「内」和「外」拆成两截，所以指责阳明遗弃外部世界；而世人把「一己」和「天下」拆成两截，所以觉得别人的苦与我无关。阳明八封信写了几万字，核心答案只有两个字：别拆。心即理，知即行，动即静，体即用，己即天下——用他自己反复念叨的话说，「只是一个」。"
-      },
-      {
-        "type": "figure",
-        "ftype": "structure",
-        "svg": "<svg viewBox=\"0 0 700 420\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\">\n<text x=\"350\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:19px;font-weight:bold\">八封信，一个答案：别拆成两截</text>\n<line x1=\"350\" y1=\"230\" x2=\"160\" y2=\"110\" style=\"stroke:var(--line);stroke-width:1.2\"/>\n<line x1=\"350\" y1=\"230\" x2=\"540\" y2=\"110\" style=\"stroke:var(--line);stroke-width:1.2\"/>\n<line x1=\"350\" y1=\"230\" x2=\"96\" y2=\"250\" style=\"stroke:var(--line);stroke-width:1.2\"/>\n<line x1=\"350\" y1=\"230\" x2=\"604\" y2=\"250\" style=\"stroke:var(--line);stroke-width:1.2\"/>\n<line x1=\"350\" y1=\"230\" x2=\"350\" y2=\"374\" style=\"stroke:var(--line);stroke-width:1.2\"/>\n<g>\n<rect x=\"80\" y=\"76\" width=\"160\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.3\"/>\n<text x=\"160\" y=\"98\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">知 ／ 行</text>\n<text x=\"160\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:11px;opacity:.75\">答顾东桥：先学后做？</text>\n</g>\n<g>\n<rect x=\"460\" y=\"76\" width=\"160\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.3\"/>\n<text x=\"540\" y=\"98\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">动 ／ 静</text>\n<text x=\"540\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:11px;opacity:.75\">答陆原静：求静愈不静？</text>\n</g>\n<g>\n<rect x=\"16\" y=\"224\" width=\"160\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.3\"/>\n<text x=\"96\" y=\"246\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">德性 ／ 见闻</text>\n<text x=\"96\" y=\"266\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:11px;opacity:.75\">答欧阳崇一：读书何用？</text>\n</g>\n<g>\n<rect x=\"524\" y=\"224\" width=\"160\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.3\"/>\n<text x=\"604\" y=\"246\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">心内 ／ 心外</text>\n<text x=\"604\" y=\"266\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:11px;opacity:.75\">答罗整庵：理在外？</text>\n</g>\n<g>\n<rect x=\"270\" y=\"352\" width=\"160\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.3\"/>\n<text x=\"350\" y=\"374\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">一己 ／ 天下</text>\n<text x=\"350\" y=\"394\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:11px;opacity:.75\">答聂文蔚：他人何干？</text>\n</g>\n<circle cx=\"350\" cy=\"230\" r=\"66\" style=\"fill:var(--paper);stroke:var(--cinnabar);stroke-width:2.4\"/>\n<text x=\"350\" y=\"218\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:18px;font-weight:bold\">只是一个</text>\n<text x=\"350\" y=\"246\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:16px;font-weight:bold\">致良知</text>\n<text x=\"350\" y=\"268\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:11px;opacity:.75\">就事上致其良知</text>\n</svg>",
-        "caption": "卷中的问答地图：六位来信人各自把世界拆成两截，阳明的回答始终指向圆心——只是一个，致良知。"
-      },
-      {
-        "type": "p",
-        "text": "而把这个「一」落到手上的动作，也只有一个：致良知——在每一件具体的事上，把心里那点分明的是非做到十分，不自欺。这就是卷中在全书里的位置：上卷是「心即理」的课堂问答，散金碎玉；中卷把它锤炼成能扛住最强质疑的完整论证，并且第一次系统展开「致良知」与「拔本塞源」；下卷则是更晚年的圆熟话头。想看王阳明防守反击的真功夫，中卷是最好的一卷——对手够强，他才把话说到了最透。"
-      },
-      {
-        "type": "h2",
-        "text": "从卷中带走的三个自检"
-      },
-      {
-        "type": "p",
-        "text": "按本站的规矩，这里不提供人生指南，只归纳三条研习时可以拿来自我检验的问法。其一，用「做没做」检验「懂没懂」：下次说「道理我都懂」时，换成阳明的问法——这件事上我行出来了吗？没有，就承认那还不是真知。这不是自责，是把学习的起点找准。其二，主意头脑优先于信息量：打开一门新课、一本新书之前，先问自己此刻的主线是什么；主线在，多闻多见都是营养，主线丢了，再刷只是逛「百戏之场」。其三，功夫只有一处下手——不自欺：「务求自慊而无自欺」，每天能骗过所有人，骗不过自己心里那声轻轻的「不对吧」；听见它，别按掉。最后要说明：阳明学在后世也曾被讲成升官发财的「成功心法」，那恰恰是他在拔本塞源论里痛斥的功利之见——此卷研习的终点是「自慊」，不是「成功」。"
-      },
-      {
-        "type": "h2",
-        "text": "收束：收藏夹里的道理，不属于你"
-      },
-      {
-        "type": "p",
-        "text": "回到开头那个深夜。那位「道理我都懂」的顾东桥先生，收到的回信今天还完整地躺在这一卷里，等了五百年，等每一个把「懂了」当作终点的人。王阳明用八封信反复说的无非是：知与行之间没有传说中的鸿沟，只有一步——把此刻心里那点分明，做出来。收藏夹里的道理再多，也只是别人的道理；只有走过你的手和脚的那一条，才真正属于你。合上这一页之后你要做的下一件小事，无论多小——就是你的「格物」。"
-      },
-      {
-        "type": "refs",
-        "items": [
-          "原文与译文：《传习录·卷中》，王守仁著，门人钱德洪编，本站「观心」阳明心学组录文（据通行本）",
-          "成书源流：正德十三年（1518）薛侃虔州初刻语录；嘉靖三年（1524）南大吉越中续刻增手书二册；隆庆六年（1572）钱德洪重编三卷定本随《王文成公全书》行世（卷首钱德洪按语自述去取）",
-          "参考：陈荣捷《王阳明传习录详注集评》；钱穆《阳明学述要》；《王阳明全集》（上海古籍出版社）",
-          "站内互见：《大学》（格物致知本文）、《孟子》（尽心·必有事焉）、《近思录》（程朱一系之说，与本卷对读）、本站义理专题「格物致知」「人性之辨」"
-        ]
-      }
+ "1": {
+  "title": "白话传习录 · 卷上",
+  "subtitle": "心即理、知行合一、事上磨——王阳明开给「道理都懂就是做不到」的药方",
+  "centralIdea": "理不在心外：知而不行只是未知，一切修养工夫都收归自己心上、在事上磨。",
+  "blocks": [
+   {
+    "type": "lead",
+    "text": "「道理我都懂，就是做不到。」这大概是现代人说得最多、也最无奈的一句话。五百年前，有个人听到类似的话，只回了一句：做不到，就是不懂。这句话把无数人噎住了，也把无数人点醒了。说这话的人叫王阳明，记下这些话的本子，叫《传习录》。卷上，就是这一切的开头。"
+   },
+   {
+    "type": "p",
+    "text": "先说一个谁都经历过的瞬间：深夜刷手机，刷到一条《长期熬夜的十大危害》，你心头一紧，郑重地点了收藏，然后——继续刷到凌晨两点。收藏夹里躺着早睡指南、健身计划、理财课、沟通技巧，个个是好道理；生活却原地踏步。我们通常把这归结为「懒」「拖延」「执行力差」，然后买更多的课、收藏更多的干货。王阳明会在这里拦住你：问题不出在执行，出在你以为的那个「懂」，根本不是懂。整部《传习录》卷上，就是围绕这个判断展开的。"
+   },
+   {
+    "type": "h2",
+    "text": "一本没打算出版的课堂笔记"
+   },
+   {
+    "type": "p",
+    "text": "先立个骨架。《传习录》是王阳明的弟子们记录的问答语录和论学书信，书名取自《论语》里曾子的「传不习乎」——老师传授的东西，我练习了吗？光这个书名就已经在剧透全书主题：传了不习，等于没传。全书分上、中、下三卷：卷上是课堂问答实录，卷中是论学书信，卷下是门人后来的续记。我们现在读的卷上，由三位弟子先后记录：徐爱、陆澄、薛侃。其中徐爱是王阳明的妹婿，也是最早登门的弟子，可惜三十一岁早逝，没能看到老师思想的完全成熟；卷上开头那十几条问答，就是他留下的记录，也是心学最经典的「第一课」。徐爱在卷首自述，这些笔记只是「私以示夫同志」——私下给同门看的，本没打算出版。"
+   },
+   {
+    "type": "p",
+    "text": "几个容易读错的字先记下：「温凊」的凊读 qìng（冬温夏凊，冬天使父母温暖、夏天使父母凉爽，不是「清」）；「万镒」的镒读 yì（古代重量单位，二十两上下为一镒）；「謦欬」读 qǐng kài（谈笑声）；「知弟」的弟通「悌」，读 tì（敬爱兄长）。后面都会遇到。"
+   },
+   {
+    "type": "figure",
+    "ftype": "structure",
+    "svg": "<svg viewBox='0 0 700 330' xmlns='http://www.w3.org/2000/svg' font-family='var(--font-serif)'><text x='350' y='34' text-anchor='middle' font-size='20' style='fill:var(--ink)'>《传习录》全书结构 · 你在读的位置</text><rect x='30' y='60' width='200' height='78' rx='8' style='fill:none;stroke:var(--cinnabar)' stroke-width='2.5'/><text x='130' y='92' text-anchor='middle' font-size='17' style='fill:var(--cinnabar)'>卷上 · 语录</text><text x='130' y='118' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>门人所记课堂问答（本篇）</text><rect x='250' y='60' width='200' height='78' rx='8' style='fill:none;stroke:var(--line)' stroke-width='1.5'/><text x='350' y='92' text-anchor='middle' font-size='17' style='fill:var(--ink)'>卷中 · 书信</text><text x='350' y='118' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.65'>论学书信（答顾东桥书等）</text><rect x='470' y='60' width='200' height='78' rx='8' style='fill:none;stroke:var(--line)' stroke-width='1.5'/><text x='570' y='92' text-anchor='middle' font-size='17' style='fill:var(--ink)'>卷下 · 续录</text><text x='570' y='118' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.65'>门人续记（含晚年论学）</text><line x1='130' y1='138' x2='130' y2='168' style='stroke:var(--cinnabar)' stroke-width='2'/><line x1='130' y1='168' x2='570' y2='168' style='stroke:var(--cinnabar)' stroke-width='2'/><line x1='350' y1='168' x2='350' y2='190' style='stroke:var(--cinnabar)' stroke-width='2'/><rect x='30' y='190' width='200' height='90' rx='8' style='fill:none;stroke:var(--line)' stroke-width='1.5'/><text x='130' y='222' text-anchor='middle' font-size='15' style='fill:var(--ink)'>徐爱录</text><text x='130' y='246' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.7'>心即理 · 知行合一</text><text x='130' y='266' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.7'>格物新解（开卷第一课）</text><rect x='250' y='190' width='200' height='90' rx='8' style='fill:none;stroke:var(--line)' stroke-width='1.5'/><text x='350' y='222' text-anchor='middle' font-size='15' style='fill:var(--ink)'>陆澄录</text><text x='350' y='246' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.7'>立志 · 主一 · 事上磨</text><text x='350' y='266' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.7'>种树、井水诸喻</text><rect x='470' y='190' width='200' height='90' rx='8' style='fill:none;stroke:var(--line)' stroke-width='1.5'/><text x='570' y='222' text-anchor='middle' font-size='15' style='fill:var(--ink)'>薛侃录</text><text x='570' y='246' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.7'>善恶之辨（花间草）</text><text x='570' y='266' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.7'>精金喻圣</text><text x='350' y='312' text-anchor='middle' font-size='12' style='fill:var(--ink)' opacity='0.55'>卷上由徐爱、陆澄、薛侃三位弟子先后记录，是心学语录的最早结集</text></svg>",
+    "caption": "《传习录》三卷结构与卷上的三位记录者。本篇即卷上全文，开头十余条为徐爱所录，是心学的「第一课」。"
+   },
+   {
+    "type": "p",
+    "text": "还有一个背景必须交代：卷上开篇第一段，徐爱就说老师讲《大学》「悉以旧本为正」——王阳明认定《大学》的古本没问题，反而是朱熹改定、天下读书人奉为标准答案的那个版本改错了。在朱子学是科举官学的明代，这等于公开对标准教科书说「印错了」。徐爱自己都承认，「始闻而骇，既而疑」——初听吓一跳，再听满腹狐疑，反复琢磨才服气。所以读卷上，你要有个心理准备：这不是心灵鸡汤，这是一场针对当时主流学术的正面辩论，每一条问答背后都有一个具体的争议点。"
+   },
+   {
+    "type": "h2",
+    "text": "心即理：你缺的不是道理，是那颗心"
+   },
+   {
+    "type": "p",
+    "text": "第一课从一个书呆子气十足的问题开始：《大学》里那句话，到底该是「亲民」还是「新民」？朱熹沿程子之说，认为旧本有误，应作「新民」（使民更新）；王阳明说旧本没错，就是「亲民」（亲爱百姓）。这个考据之争我们不必陷进去，值得记住的是王阳明给出的理由：「说『亲民』便是兼教养意」——亲民，教化和养育都包含在内了；说新民，「便觉偏了」，偏到「我来改造你」那一边去。一字之差，是把百姓当作待改造的对象，还是当作要去亲近爱护的人——立场完全不同。接下来，徐爱抛出了真正的大问题：至善只在心里求，恐怕不能穷尽天下的事理吧？王阳明的回答只有一句，却是整部书的地基："
+   },
+   {
+    "type": "quote",
+    "original": "心即理也。天下又有心外之事、心外之理乎？",
+    "translation": "心即是理。天下难道还有心外之事、心外之理吗？"
+   },
+   {
+    "type": "p",
+    "text": "这话乍听很玄，其实王阳明马上给了最生活化的解释。徐爱不服：侍奉父亲的孝、辅佐君上的忠、交朋友的信，这里面有许多道理，难道不用去考察吗？王阳明叹了口气，反问：你侍奉父亲，难道是跑到父亲身上去找一个「孝的道理」？"
+   },
+   {
+    "type": "quote",
+    "original": "都只在此心，心即理也。此心无私欲之蔽，即是天理，不须外面添一分。",
+    "translation": "都只在这个心上，心即是理。这个心没有私欲的蒙蔽，就是天理，不须从外面添一分。"
+   },
+   {
+    "type": "p",
+    "text": "翻成今天的脑回路是这样的：朱子的路线像「先查攻略再出门」——孝有孝的标准动作，忠有忠的操作手册，一件件研究明白，然后照着做。王阳明说，方向反了。孝顺不是一套写在父亲身上的规范，等你去抄；它是你心里那份真实的惦记，在没有被私心（面子、攀比、不耐烦）遮住时，自然流露出来的样子。你见过谁家孩子是背熟了《孝经》条款才知道给妈妈倒水的？也见过不少人，孝道文章写得漂亮，回家对爸妈没一句好话。道理的清单可以无穷无尽，那颗心却只有一颗——擦亮它，比抄清单要紧。"
+   },
+   {
+    "type": "p",
+    "text": "徐爱还是不放心：那「温凊、定省」——冬温夏凊、晨昏问安这些具体节目，总要讲求吧？注意，王阳明并没有说不要——他说「如何不讲求？只是有个头脑」。头脑，就是总纲、就是根。接着说出了卷上第一个大比喻："
+   },
+   {
+    "type": "quote",
+    "original": "譬之树木，这诚孝的心便是根，许多条件便是枝叶。须先有根，然后有枝叶；不是先寻了枝叶，然后去种根。",
+    "translation": "譬如树木，这诚孝的心便是根，许多条目便是枝叶。须先有根，然后有枝叶；不是先寻了枝叶，然后去种根。"
+   },
+   {
+    "type": "callout",
+    "tone": "mute",
+    "items": [
+     "顺带说个古今义：这里的「条件」是古义，指「条目、细目」，不是今天「谈条件」的条件。这个比喻放到今天毫不过时：心里真惦记爸妈的人，入冬自然会想到他们怕冷，自然会琢磨暖气片够不够热——这些「枝叶」是从根上自己长出来的；反过来，一个只想在家族群里刷存在感的人，保健品买最贵的，电话一年打不了三回。枝叶再茂盛，底下没根，是插在花瓶里的装饰枝，撑不过一个季节。同一个话题，另一位弟子郑朝朔也问过：温凊奉养总得求个恰当，所以才需要学问思辨吧？王阳明回敬了一个扎心的例子：若只是仪节做得恰当就算至善，那如今戏台上的戏子，把侍奉父母的仪节演得分毫不差，岂不也可以叫至善？记录里写道，「爱于是日又有省」——旁听的徐爱，这一天又开悟了一层。"
     ]
-  },
-  "3": {
-    "title": "白话传习录 · 卷下",
-    "subtitle": "良知是你自家的准则:从深夜那一下「咯噔」,到天泉桥上的四句教——王阳明的最后一课",
-    "centralIdea": "良知人人现成、瞒它不得;功夫不在悬空想本体,而在念头发动处和眼前每件事上把它做实——这是王阳明晚年收拢一生学问的定盘话。",
-    "blocks": [
-      {
-        "type": "lead",
-        "text": "一个人临终前一年,把一生的学问收拢成四句话,在一座桥上交代给两个学生。这四句话后来吵了四百年,至今没吵完。《传习录》卷下,就是王阳明的最后一课:里面有那朵著名的深山之花,有满街的圣人,有天泉桥的夜话——还有一句最实在的底话:判断对错的那台仪器,你出厂就自带,只是你老不肯听它的。"
-      },
-      {
-        "type": "p",
-        "text": "先从一个你一定经历过的瞬间说起。深夜,你躺在床上刷手机,白天的一幕突然弹出来:开会时你把锅轻轻推给了同事,话说得很漂亮,没人听出来。可就在话出口的那半秒,你心里「咯噔」了一下——特别轻,轻到你马上用「大家都这样」把它按了回去。按回去之后,那点不舒服并没有消失,它只是搬到了深夜,趁你毫无防备时回来敲门。王阳明会告诉你:那一下「咯噔」,就是良知。它不用你培养,不用你上课,它一直在,是便知是,非便知非——你唯一做的事,是常年装作没听见。整卷《传习录·卷下》,讲的就是怎么别再装。"
-      },
-      {
-        "type": "h2",
-        "text": "这一卷是从哪儿来的:晚年最后的收拢"
-      },
-      {
-        "type": "p",
-        "text": "《传习录》一共三卷:卷上是早期门人记的讲学语录,卷中是八封论学书信,而这卷下,是王阳明晚年的语录,由陈九川、黄直、黄修易、黄省曾、钱德洪等一批学生各自笔录,阳明身后再由钱德洪汇集删定。也就是说,你在这一卷里听到的,是一个五十多岁、讲了半辈子学、平过叛乱也蹲过诏狱的人,把话越说越简、越说越狠的阶段。卷中还在跟人细细辩论,卷下已经常常一句话打到底。几个人名先记一下,后面都会出场:陈九川字惟濬(濬音同「俊」),卷下开篇就是他的提问;钱德洪号绪山,是记录和编纂的主力;王畿(畿音同「机」)字汝中,天泉桥上和钱德洪对辩的就是他。"
-      },
-      {
-        "type": "p",
-        "text": "本卷的关键句,一句是「尔那一点良知,是尔自家底准则」,一句是天泉桥的四句教:「无善无恶是心之体,有善有恶是意之动,知善知恶是良知,为善去恶是格物」。前一句是给每个普通人的,后一句是给整个王学定纲领的。这一卷篇幅很长、问答很碎,我们不逐条走,挑主线:先立「良知是准则」,再看「念头就是行动」,然后是「功夫在事上」,中间穿过那朵花、那条街,最后走上天泉桥,听他临别的叮咛。"
-      },
-      {
-        "type": "figure",
-        "ftype": "structure",
-        "svg": "<svg viewBox=\"0 0 760 320\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"传习录三卷结构图\"><text x=\"380\" y=\"44\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">《传习录》三卷 · 本文在哪一卷</text><rect x=\"40\" y=\"78\" width=\"210\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"145\" y=\"112\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">卷上</text><text x=\"145\" y=\"146\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">早期讲学语录</text><text x=\"145\" y=\"172\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">徐爱、陆澄、薛侃所记</text><text x=\"145\" y=\"198\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">立「心即理」基调</text><rect x=\"275\" y=\"78\" width=\"210\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"380\" y=\"112\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">卷中</text><text x=\"380\" y=\"146\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">论学书信</text><text x=\"380\" y=\"172\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">《答顾东桥书》等</text><text x=\"380\" y=\"198\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">义理辩难最细密</text><rect x=\"510\" y=\"78\" width=\"210\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:2.5\"/><text x=\"615\" y=\"112\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" style=\"fill:var(--cinnabar);font-family:var(--font-serif)\">卷下(本卷)</text><text x=\"615\" y=\"146\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">晚年语录 · 钱德洪汇定</text><text x=\"615\" y=\"172\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">陈九川、黄直等所记</text><text x=\"615\" y=\"198\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--cinnabar)\">含「天泉证道」四句教</text><text x=\"380\" y=\"282\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".7\">卷上打底 → 卷中辩难 → 卷下是晚年最后的收拢与叮咛</text></svg>",
-        "caption": "《传习录》全书地图:卷下收王阳明晚年语录,由钱德洪等汇集门人笔录删定;「岩中花树」「满街圣人」「天泉证道」都在本卷。"
-      },
-      {
-        "type": "h2",
-        "text": "一、你自带的那台仪器"
-      },
-      {
-        "type": "p",
-        "text": "卷下开篇是陈九川的连环追问:格物、致知、诚意到底怎么排顺序?功夫从哪儿下手?问到最后,他问出了所有人的心声——「如何致?」良知听起来很玄,到底怎么用?阳明的回答,是整部《传习录》里最不玄的一段话:"
-      },
-      {
-        "type": "quote",
-        "original": "尔那一点良知，是尔自家底准则。尔意念著处，他是便知是，非便知非，更瞒他一些不得。尔只不要欺他，实实落落依著他做去；善便存，恶便去。",
-        "translation": "你那一点良知,是你自家的准则。你意念所到之处,它是便知是,非便知非,丝毫瞒它不得。你只不要欺它,实实在在依着它去做;善便存,恶便去。"
-      },
-      {
-        "type": "p",
-        "text": "把这段话翻成大白话:你身上装着一台测谎仪,测的对象是你自己。每当一个念头冒出来——想甩锅、想撒个小谎、想占个便宜——这台仪器当场就响,是就是是,非就是非,响得又快又准,你想骗它一丁点都办不到。你能骗过老板、骗过朋友、有时甚至骗过枕边人,唯独骗不过它。阳明说的「致良知」,第一步不是去修炼什么高深状态,而是别捂这台仪器的报警器:它响了,你就认账,照它说的做——该存的善存下,该去的恶去掉。"
-      },
-      {
-        "type": "p",
-        "text": "注意他最后补的那句体己话:「我亦近年体贴出来如此分明。初犹疑只依他恐有不足;精细看,无些小欠阙。」连王阳明自己起初都怀疑:光靠这点直觉够吗?要不要再配点别的?他仔细验证过后的结论是:够,一点不缺。这就像你买了台新手机,总觉得还得装一堆第三方软件才能用,折腾半天发现,原生系统才是最顺的。宋儒教人去万事万物上一件件穷理,阳明的路线是反过来:准则不在外面,在你意念发动的地方,它一直在给你打分,你只欠一个「听它的」。"
-      },
-      {
-        "type": "figure",
-        "ftype": "quote-card",
-        "svg": "<svg viewBox=\"0 0 700 380\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"金句卡\"><rect x=\"20\" y=\"20\" width=\"660\" height=\"340\" rx=\"14\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><rect x=\"20\" y=\"20\" width=\"6\" height=\"340\" rx=\"3\" style=\"fill:var(--cinnabar)\"/><text x=\"350\" y=\"128\" text-anchor=\"middle\" font-size=\"40\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">尔那一点良知</text><text x=\"350\" y=\"188\" text-anchor=\"middle\" font-size=\"40\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">是尔自家底准则</text><text x=\"350\" y=\"242\" text-anchor=\"middle\" font-size=\"19\" style=\"fill:var(--ink);font-family:var(--font-serif)\" opacity=\".75\">是便知是，非便知非——更瞒他一些不得</text><rect x=\"308\" y=\"272\" width=\"84\" height=\"34\" rx=\"6\" style=\"fill:var(--cinnabar)\"/><text x=\"350\" y=\"296\" text-anchor=\"middle\" font-size=\"17\" style=\"fill:var(--paper);font-family:var(--font-serif)\">传习录</text><text x=\"350\" y=\"340\" text-anchor=\"middle\" font-size=\"16\" style=\"fill:var(--ink);font-family:var(--font-serif)\" opacity=\".65\">—— 王阳明《传习录 · 卷下》</text></svg>",
-        "caption": "金句卡:「尔那一点良知,是尔自家底准则」——判断是非的仪器你出厂自带,功夫只是别欺它。(《传习录·卷下》陈九川所记)"
-      },
-      {
-        "type": "h2",
-        "text": "二、念头一动,就已经是「做」了"
-      },
-      {
-        "type": "p",
-        "text": "仪器立住了,紧接着一个更狠的命题。有人问「知行合一」——这是阳明最出名也最被误解的四个字。很多人把它理解成「知识要配合实践」,类似「学了要用」。阳明自己解释的时候,刀口完全不在这儿:"
-      },
-      {
-        "type": "quote",
-        "original": "我今说个『知行合一』，正要人晓得一念发动处，便即是行了；发动处有不善，就将这不善的念克倒了，须要彻根彻底不使那一念不善潜伏在胸中",
-        "translation": "我如今说个『知行合一』,正要人明白一念发动处,便已是行了;发动处有不善,就把这不善的念头克倒,须要彻根彻底不让那一念不善潜伏在胸中"
-      },
-      {
-        "type": "p",
-        "text": "脑回路是这样的:一般人给自己划的红线是「行为」——只要没说出口、没动手,就不算数。于是心里对同事翻了一百个白眼、把对方骂了一万遍,还觉得自己修养挺好,「我又没表现出来」。阳明把红线整个往前挪:念头一动,就已经是行了。为什么这么划?因为他看透了一件事:行为只是念头的下游。你今天在心里骂的那一万遍,不会凭空消失,它潜伏在胸中,像一粒火星掉进干草堆,慢慢烘,总有一天借着某个由头烧出来——可能是一次憋不住的阴阳怪气,可能是关键时刻的见死不救。等烧出来再灭火,晚了。"
-      },
-      {
-        "type": "p",
-        "text": "用现代的话说:程序在后台就已经开始跑了,界面上还没显示而已。所以「知行合一」不是励志口号,是一套把关卡设在最上游的风控方案——恶要在念头处就克倒,彻根彻底,不留潜伏。这也顺便解释了它为什么难:管住手容易,管住念头难;但也只有管到念头,才算真的管住了。"
-      },
-      {
-        "type": "h2",
-        "text": "三、定力不是在垫子上修出来的"
-      },
-      {
-        "type": "p",
-        "text": "那功夫在哪儿做?很多人的直觉是:找个安静地方。周末点上香薰,冥想App连续打卡三十天,内心一片澄澈,觉得自己脱胎换骨了——结果周一早会被领导当众点名批评,三秒破功,心态炸得比谁都响。这个现象,四百多年前陈九川就问过:静坐时觉得心挺收敛,一遇事就断了,怎么办?阳明的回答毫不客气:"
-      },
-      {
-        "type": "quote",
-        "original": "人须在事上磨炼，做功夫乃有益。若只好静，遇事便乱，终无长进。",
-        "translation": "人须在事上磨炼,做功夫才有益。若只爱静,一遇事便乱,终究没有长进。"
-      },
-      {
-        "type": "p",
-        "text": "他还补了一句更扎心的诊断:那种静中的功夫,「似收歛,而实放溺也」(「歛」同「敛」)——看着是收心,其实是把心泡在「静」这种舒服里放纵它。就像在岸上把游泳教程背得滚瓜烂熟、动作比划得无比标准,一下水照样呛。定力这个东西,只能在有事的地方练:堵车、加班、孩子写作业写到你血压上来、甲方第五次改需求——这些你避之不及的时刻,恰恰是唯一的健身房。心何尝有内外?听讲时专注的这个心,就是静坐时那个心,功夫本是一贯的,不需要「处理完事情再回来修行」。事情本身就是修行的器材。"
-      },
-      {
-        "type": "p",
-        "text": "有学生问得更实际:我还得准备科举考试呢(放今天就是:我还得考证、冲KPI、还房贷呢),哪有空修养?阳明的回答对所有「忙人」都适用:"
-      },
-      {
-        "type": "quote",
-        "original": "只要良知真切，虽做举业，不为心累，总有累，亦易觉克之而已。",
-        "translation": "只要良知真切,虽做举业,也不被心所累,纵有所累,也容易察觉而克去。"
-      },
-      {
-        "type": "p",
-        "text": "意思是:该考试考试,该上班上班,事情本身不脏,脏的是缠在事情上的那些心思——死记硬背只为炫耀的心、急于求成的心、跟人攀比的心。良知知道哪个心思不对,察觉了就克掉,那读书就只是读书,工作就只是工作,「任他读书,亦只是调摄此心而已,何累之有?」累人的从来不是事,是你跟事较的那股劲。"
-      },
-      {
-        "type": "p",
-        "text": "还有一段自述特别值得看:有朋友静坐中有所见,兴冲冲赶来请教。阳明说,我早年在滁州也教学生静坐,学生一时「窥见光景」,短期颇有效果,时间一长,毛病出来了——有人喜静厌动,修成了枯木;有人专务玄妙解悟,拿去耸动听闻。所以我后来只讲三个字:"
-      },
-      {
-        "type": "quote",
-        "original": "良知明白，随你去静处体悟也好，随你去事上磨炼也好，良知本体原是无动无静的。此便是学问头脑。",
-        "translation": "良知明白了,任你去静处体悟也好,任你去事上磨炼也好,良知本体原是无动无静的。这便是学问头脑。"
-      },
-      {
-        "type": "p",
-        "text": "他说自己这个话头「亦较过几番,只是『致良知』三字无病」,并且拿医生打比方——「医经折肱,方能察人病理」:折过胳膊的医生才懂病人的痛。这话的分量在于,它是试错试出来的:静坐这味药他开过,副作用他亲眼见过,最后留下的才是「致良知」这个不挑场地的方子。静与动都只是场地,良知才是功夫本身。"
-      },
-      {
-        "type": "figure",
-        "ftype": "compare",
-        "svg": "<svg viewBox=\"0 0 760 430\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"只好静与事上磨炼对比\"><text x=\"380\" y=\"42\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">「只好静」 vs 「事上磨炼」</text><rect x=\"40\" y=\"72\" width=\"330\" height=\"268\" rx=\"12\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"205\" y=\"108\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">只好静:躲进安静里</text><text x=\"205\" y=\"150\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">静坐时似乎很收敛</text><text x=\"205\" y=\"178\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".55\">↓</text><text x=\"205\" y=\"206\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">实是把心泡在舒服里(实放溺)</text><text x=\"205\" y=\"234\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".55\">↓</text><text x=\"205\" y=\"262\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--cinnabar)\">一遇事便乱</text><text x=\"205\" y=\"290\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".55\">↓</text><text x=\"205\" y=\"318\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">终无长进</text><rect x=\"390\" y=\"72\" width=\"330\" height=\"268\" rx=\"12\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:2.5\"/><text x=\"555\" y=\"108\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" style=\"fill:var(--cinnabar);font-family:var(--font-serif)\">事上磨炼:在事里练</text><text x=\"555\" y=\"150\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">听讲、办事、应酬皆是功夫</text><text x=\"555\" y=\"178\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".55\">↓</text><text x=\"555\" y=\"206\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">功夫一贯,不必另起念头</text><text x=\"555\" y=\"234\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".55\">↓</text><text x=\"555\" y=\"262\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">遇事不乱,静躁两得力</text><text x=\"555\" y=\"290\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".55\">↓</text><text x=\"555\" y=\"318\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">日日有长进</text><text x=\"380\" y=\"392\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".7\">定力只能在有事的地方练——像游泳,只能在水里学</text></svg>",
-        "caption": "「似收歛,而实放溺也」:阳明并不反对静,反对的是拿静当避风港;真功夫在每一件躲不开的事里。(《传习录·卷下》陈九川所记)"
-      },
-      {
-        "type": "h2",
-        "text": "四、深山里那朵花"
-      },
-      {
-        "type": "p",
-        "text": "卷下有一段可能是全书知名度最高的对话。阳明游南镇(今绍兴会稽山),一位朋友指着岩石间一树花发难:你说天下无心外之物,这花在深山里自开自落,跟我的心有什么关系?这一问相当锋利——它几乎是替所有普通读者问的:唯心,难道东西离了你就不存在了?"
-      },
-      {
-        "type": "quote",
-        "original": "你未看此花时，此花与汝心同归于寂；你来看此花时，则此花颜色一时明白起来。便知此花不在你的心外。",
-        "translation": "你没看这花时,这花和你的心同样归于沉寂;你来看这花时,这花的颜色便一时鲜明起来。可见这花并不在你的心外。"
-      },
-      {
-        "type": "p",
-        "text": "注意阳明的用词,他没有说「你未看时此花不存在」,说的是「同归于寂」——一同沉寂着;你来看时,也不是「花被创造出来」,而是「颜色一时明白起来」——被点亮了。打个比方:你家路由器的Wi-Fi信号一直在空气里飘着,但对你的手机来说,连上的那一刻它才「亮」了。又比如你每天通勤路过的街角,那里其实一直有一棵樱花树,可对你而言,它是在某个你抬头的春天早晨才「一时明白起来」的。花按它的规律开落,但「鲜明起来的这朵花」——带着颜色、香气和让你心头一动的那朵——是在你与它相遇的那一刻,才在你的世界里成立的。阳明的心学关心的从来不是天体物理,而是这个由感应构成的、对你有意义的世界。"
-      },
-      {
-        "type": "p",
-        "text": "这里要诚实地标一个分歧:这段话到底怎么读,学界至今不是一个声音。一种读法偏「存在论」,认为阳明真的主张物依心而存,常有人拿西方贝克莱的「存在即被感知」来类比;另一种读法认为这是「意义论」——花的物理开落他不否认,他谈的是花之「明白」「颜色」只在与心的感应中呈现,与贝克莱貌合神离。多数现代研究者倾向后一种,但两种读法都有文本依据,这里如实摆出,不替你拍板。可以确定的是:对阳明来说,重点从来不是抬杠「深山的花在不在」,而是提醒你——你的世界,是被你的觉知一处一处点亮的;你不看,它就对你「寂」着。"
-      },
-      {
-        "type": "figure",
-        "ftype": "compare",
-        "svg": "<svg viewBox=\"0 0 760 410\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"岩中花树两种状态\"><text x=\"380\" y=\"42\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">岩中花树:寂 与 明白</text><rect x=\"45\" y=\"72\" width=\"320\" height=\"240\" rx=\"12\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"205\" y=\"106\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">你未看此花时</text><line x1=\"205\" y1=\"210\" x2=\"205\" y2=\"250\" style=\"stroke:var(--line);stroke-width:2\"/><circle cx=\"205\" cy=\"180\" r=\"26\" style=\"fill:var(--ink)\" opacity=\".15\"/><circle cx=\"181\" cy=\"196\" r=\"12\" style=\"fill:var(--ink)\" opacity=\".12\"/><circle cx=\"229\" cy=\"196\" r=\"12\" style=\"fill:var(--ink)\" opacity=\".12\"/><text x=\"205\" y=\"282\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".8\">花与心「同归于寂」——不是无,是未被点亮</text><rect x=\"395\" y=\"72\" width=\"320\" height=\"240\" rx=\"12\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:2\"/><text x=\"555\" y=\"106\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" style=\"fill:var(--cinnabar);font-family:var(--font-serif)\">你来看此花时</text><line x1=\"555\" y1=\"210\" x2=\"555\" y2=\"250\" style=\"stroke:var(--line);stroke-width:2\"/><circle cx=\"555\" cy=\"180\" r=\"26\" style=\"fill:var(--cinnabar)\" opacity=\".9\"/><circle cx=\"531\" cy=\"196\" r=\"12\" style=\"fill:var(--cinnabar)\" opacity=\".55\"/><circle cx=\"579\" cy=\"196\" r=\"12\" style=\"fill:var(--cinnabar)\" opacity=\".55\"/><text x=\"555\" y=\"282\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".8\">「颜色一时明白起来」——在感应中被点亮</text><text x=\"380\" y=\"348\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".75\">两种读法并存:①物依心存(存在论) ②花之「明白」在感应中呈现(意义论)</text><text x=\"380\" y=\"376\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".55\">学界至今各有依据,本文如实并陈,不替读者拍板</text></svg>",
-        "caption": "「此花不在你的心外」:阳明谈的是花与心在感应中「一时明白」,而非物理断言;此段的哲学定性学界仍有两读。(《传习录·卷下》)"
-      },
-      {
-        "type": "h2",
-        "text": "五、大哭一场之后的「乐」"
-      },
-      {
-        "type": "p",
-        "text": "卷下里阳明多次谈到「乐」。他说良知这个东西,不只是台冷冰冰的测谎仪,它是活的、是有生机的:"
-      },
-      {
-        "type": "quote",
-        "original": "良知是造化的精灵。这些精灵，生天生地，成鬼成帝，皆从此出，真是与物无对。",
-        "translation": "良知是造化的精灵。这些精灵,生出天地,成就鬼神帝王,都从此出,真是与万物无对。"
-      },
-      {
-        "type": "p",
-        "text": "人若把它恢复得完完全全,「自不觉手舞足蹈」——那种快乐没有任何东西可以替代。但请注意,这种「乐」不是心灵鸡汤里「保持微笑」的正能量。有学生问了一个非常好的问题:你说乐是心之本体,那遇到大的变故、痛哭的时候,这乐还在吗?难道悲伤也要强颜欢笑?阳明的回答是心学里最见人味的一段:"
-      },
-      {
-        "type": "quote",
-        "original": "须是大哭一番了方乐，不哭便不乐矣；虽哭，此心安处是乐也。本体未尝有动。",
-        "translation": "须是大哭一场过后才乐,不哭便不乐了;即便哭着,这心安处便是乐。本体不曾有动。"
-      },
-      {
-        "type": "p",
-        "text": "该哭的时候,必须大哭一场,不哭反而不「乐」——因为压抑真情才是对心的扭曲。哭着的时候,只要这颗心是安的、是如其所是的,那份「安」本身就是乐。这里的「乐」不是情绪高涨,而是水底的静:水面可以有滔天的浪(悲恸、眼泪),水底那个东西没有动过。亲人离世,你嚎啕大哭,哭完瘫坐着,心里却有一种奇怪的踏实——「我没有亏欠这份感情」。那个踏实,就是阳明说的本体之乐。它不排斥任何情绪,它只排斥「假」。"
-      },
-      {
-        "type": "h2",
-        "text": "六、满街都是圣人"
-      },
-      {
-        "type": "p",
-        "text": "卷下记了一个很有戏剧性的场面。学生王汝止(即王艮,后来开创泰州学派的那位)出游回来,阳明问他见到什么,他答:「见满街人都是圣人。」这话听着境界很高——人人皆有良知,人人皆可为圣,满街可不都是圣人?阳明却回了一句:"
-      },
-      {
-        "type": "quote",
-        "original": "你看满街人是圣人，满街人到看你是圣人在。",
-        "translation": "你看满街人是圣人,满街人倒看你是圣人哩。"
-      },
-      {
-        "type": "p",
-        "text": "更妙的是后文:又一天,年近七十来学的董萝石出游回来,兴奋地报告「今日见一异事」——「见满街人都是圣人」。同一句话!阳明这回却淡淡地说:「此亦常事耳,何足为异。」同问同答,回应完全相反。记录者点破了机关:王艮锋芒毕露、棱角未消,说「满街圣人」多少带着点居高临下的姿态——是「我」看出了他们是圣人;所以阳明反将一军:人家看你才像圣人呢,先收收你那个「看别人」的优越感。董萝石是真有所悟、少见多怪,所以阳明把他往平实处按:这本是常事,不必大惊小怪。一个要泼冷水,一个要撤兴奋剂,「皆反其言而进之」。这就是好老师:药不看贵贱,看对不对症。同一句话,对不同的人,可以是补药也可以是泻药。"
-      },
-      {
-        "type": "h2",
-        "text": "七、天泉桥夜话:四句教"
-      },
-      {
-        "type": "p",
-        "text": "现在到了全卷、也是整个阳明学的最高潮。嘉靖六年(1527)九月,五十六岁的阳明再度被朝廷起用,出征广西思恩、田州。出发前夜,两位大弟子钱德洪与王畿(汝中)在争论老师的一段教言,争不出结果,当晚陪坐在绍兴宅边的天泉桥上,各自把观点摆出来请老师裁决。争论的对象,就是后来被称为「四句教」的十六个字:"
-      },
-      {
-        "type": "quote",
-        "original": "无善无恶是心之体，有善有恶是意之动，知善知恶是良知，为善去恶是格物。",
-        "translation": "无善无恶是心的本体,有善有恶是意的发动,知善知恶是良知,为善去恶是格物。"
-      },
-      {
-        "type": "p",
-        "text": "先把这四句拆明白。第一句「无善无恶是心之体」:心的本来状态,像一面刚出厂的镜子,上面既没有污渍、也没有贴「我是干净的」标签——「无善无恶」不是没有是非,而是还没起念、无所偏倚的澄澈。第二句「有善有恶是意之动」:念头一动,事情就来了——想帮人是善念,想甩锅是恶念,善恶是在「意」这一层才出现的。第三句「知善知恶是良知」:念头一起,那台仪器同步开机,当场判别。第四句「为善去恶是格物」:把判别落成行动,该做的做、该克的克。四句连读,就是一张完整的功夫地图:本体→发动→判别→行动。"
-      },
-      {
-        "type": "figure",
-        "ftype": "flow",
-        "svg": "<svg viewBox=\"0 0 700 470\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"四句教结构图\"><text x=\"350\" y=\"40\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">四句教:一张四层的功夫地图</text><rect x=\"170\" y=\"66\" width=\"460\" height=\"66\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"110\" y=\"106\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".65\">本体</text><text x=\"400\" y=\"96\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">无善无恶是心之体</text><text x=\"400\" y=\"120\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\" opacity=\".65\">心的出厂状态:未起念、无偏倚</text><text x=\"400\" y=\"152\" text-anchor=\"middle\" font-size=\"16\" style=\"fill:var(--ink)\" opacity=\".5\">↓ 念头一起</text><rect x=\"170\" y=\"166\" width=\"460\" height=\"66\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"110\" y=\"206\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".65\">发动</text><text x=\"400\" y=\"196\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">有善有恶是意之动</text><text x=\"400\" y=\"220\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\" opacity=\".65\">善恶在念头这一层才出现</text><text x=\"400\" y=\"252\" text-anchor=\"middle\" font-size=\"16\" style=\"fill:var(--ink)\" opacity=\".5\">↓ 仪器同步开机</text><rect x=\"170\" y=\"266\" width=\"460\" height=\"66\" rx=\"10\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:2.5\"/><text x=\"110\" y=\"306\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--cinnabar)\">判别</text><text x=\"400\" y=\"296\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" style=\"fill:var(--cinnabar);font-family:var(--font-serif)\">知善知恶是良知</text><text x=\"400\" y=\"320\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\" opacity=\".65\">当场知是知非,瞒它不得</text><text x=\"400\" y=\"352\" text-anchor=\"middle\" font-size=\"16\" style=\"fill:var(--ink)\" opacity=\".5\">↓ 把知落成做</text><rect x=\"170\" y=\"366\" width=\"460\" height=\"66\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"110\" y=\"406\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".65\">行动</text><text x=\"400\" y=\"396\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">为善去恶是格物</text><text x=\"400\" y=\"420\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\" opacity=\".65\">在事上把该存的存、该克的克</text></svg>",
-        "caption": "四句教的四层:本体→发动→判别→行动。阳明称它「彻上彻下功夫」——上根人下根人都用这一套。(《传习录·卷下》天泉证道)"
-      },
-      {
-        "type": "p",
-        "text": "两位弟子争的是什么?王畿是「学霸思维」:既然心体无善无恶,那意、知、物也应该一路无善无恶才彻底——直接悟到本体,后面三句都可以收起来(这就是后来所谓「四无」)。钱德洪是「陪练思维」:话虽如此,可人都有积习,念头上明明有善有恶,格致诚正的功夫一句都不能省(所谓「四有」)。谁对?阳明的裁决出人意料——都对,但都只对一半:"
-      },
-      {
-        "type": "quote",
-        "original": "汝中之见，是我这里接利根人的；德洪之见，是我这里为其次立法的。二君相取为用，则中人上下皆可引入于道",
-        "translation": "汝中的见解,是我这里接引利根人的;德洪的见解,是我这里为其次的人立法的。二位互相取用,则中等以上以下的人都可引入于道"
-      },
-      {
-        "type": "p",
-        "text": "利根之人,一悟本体即是功夫,人己内外一齐透——但阳明紧接着泼了盆冷水:这种人「世亦难遇」,连颜回、程明道都不敢自居,你们就别指望满街遇到了。绝大多数人有习心,本体受蔽,老老实实的路只有一条:在意念上实落地为善去恶,功夫熟了,渣滓去尽,本体自然明。而他最放心不下的,是有人抄近道:"
-      },
-      {
-        "type": "quote",
-        "original": "人有习心，不教他在良知上实用为善、去恶功夫，只去悬空想个本体，一切事为俱不著实，不过养成一个虚寂",
-        "translation": "人有习心,不教他在良知上切实下为善去恶的功夫,只去凭空想个本体,一切事情都不切实,不过养成一个虚寂"
-      },
-      {
-        "type": "p",
-        "text": "「悬空想个本体」,翻成今天的话:收藏了两百篇干货,一篇没读完;办了健身年卡,只去拍了张照;道理层面早已「悟」了,生活里一件实事不做。阳明说这个病「不是小小」,必须早说破。这个提醒后来不幸言中——阳明身后,王学一部分末流恰恰滑向了空谈心性,明末清初的学者对此批评极烈;东林党人顾宪成更是直接向「无善无恶」四字开火,认为它模糊了善恶界限。而王畿自己所记的《天泉证道纪》,与《传习录》此条在细节侧重上也不尽相同——四句教之争,某种意义上打了四百年。这里如实告诉你:争论存在,且没有终审判决;但至少在天泉桥这一晚,阳明本人的态度是清楚的——四句教「彻上彻下」,谁也不许丢下面两句。"
-      },
-      {
-        "type": "figure",
-        "ftype": "flow",
-        "svg": "<svg viewBox=\"0 0 760 470\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"天泉证道两条路\"><text x=\"380\" y=\"40\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">天泉证道:两种根器,一个宗旨</text><rect x=\"255\" y=\"62\" width=\"250\" height=\"52\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"380\" y=\"94\" text-anchor=\"middle\" font-size=\"17\" style=\"fill:var(--ink);font-family:var(--font-serif)\">同一个心体,人有两种根器</text><line x1=\"310\" y1=\"114\" x2=\"195\" y2=\"152\" style=\"stroke:var(--line);stroke-width:1.5\"/><line x1=\"450\" y1=\"114\" x2=\"565\" y2=\"152\" style=\"stroke:var(--cinnabar);stroke-width:2\"/><rect x=\"48\" y=\"156\" width=\"300\" height=\"160\" rx=\"12\" style=\"fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:7 5\"/><text x=\"198\" y=\"190\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">利根之人(汝中所接)</text><text x=\"198\" y=\"222\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">直从本原上悟入</text><text x=\"198\" y=\"248\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">一悟本体即是功夫</text><text x=\"198\" y=\"284\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--cinnabar)\">但「世亦难遇」——别指望是自己</text><rect x=\"412\" y=\"156\" width=\"300\" height=\"160\" rx=\"12\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:2.5\"/><text x=\"562\" y=\"190\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" style=\"fill:var(--cinnabar);font-family:var(--font-serif)\">有习心之人(你我·德洪所立)</text><text x=\"562\" y=\"222\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">在意念上实落为善去恶</text><text x=\"562\" y=\"248\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">功夫熟后,渣滓去尽</text><text x=\"562\" y=\"284\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">本体亦明尽了</text><line x1=\"198\" y1=\"316\" x2=\"340\" y2=\"368\" style=\"stroke:var(--line);stroke-width:1.5\"/><line x1=\"562\" y1=\"316\" x2=\"420\" y2=\"368\" style=\"stroke:var(--cinnabar);stroke-width:2\"/><rect x=\"280\" y=\"372\" width=\"200\" height=\"50\" rx=\"10\" style=\"fill:var(--cinnabar)\"/><text x=\"380\" y=\"404\" text-anchor=\"middle\" font-size=\"17\" style=\"fill:var(--paper);font-family:var(--font-serif)\">皆可引入于道</text><text x=\"380\" y=\"452\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".7\">⚠ 最忌第三条路:悬空想个本体 → 一切不著实 → 养成一个虚寂</text></svg>",
-        "caption": "两条路互资为用,缺一即「失人」;而抄近道「悬空想本体」是阳明临行前特意说破的大病。(《传习录·卷下》天泉证道)"
-      },
-      {
-        "type": "h2",
-        "text": "八、最后的叮咛:狠劲、灵明与傲"
-      },
-      {
-        "type": "p",
-        "text": "卷下的尾部,像一位要出远门的老人反复回头交代。第一句叮咛是要有狠劲:"
-      },
-      {
-        "type": "quote",
-        "original": "时时刻刻，须是一棒一条痕、一掴一拳血，方能听吾说话，句句得力。",
-        "translation": "时时刻刻,须是一棒一条痕、一掴一拳血那样切实,才能听我的话,句句得力。"
-      },
-      {
-        "type": "p",
-        "text": "「一棒一条痕,一掴一拳血」——打一棒要见一条痕,掴一掌要见血印。听课不能像水泼在石头上,滑过去不留痕迹。他说,若茫茫荡荡度日,人就像「一块死肉,打也不知得痛痒」,听再多也是回家「只寻得旧时伎俩」——这话对今天的我们几乎是点名批评:播客听了几百期,书单收藏了几十份,句句点头,转身一件不改,那些「知道」在身上一条痕都没留下。"
-      },
-      {
-        "type": "p",
-        "text": "第二句叮咛把格局撑到最大。有人问:草木瓦石、天地鬼神也与人同体吗?阳明反问:天地中间,什么是天地的心?答:人是天地的心。人又把什么叫做心?答:只是一个灵明。于是有了这段:"
-      },
-      {
-        "type": "quote",
-        "original": "天地、鬼神、万物，离却我的灵明，便没有天地、鬼神、万物了；我的灵明，离却天地、鬼神、万物，亦没有我的灵明。",
-        "translation": "天地、鬼神、万物,离开我的灵明,便没有天地、鬼神、万物了;我的灵明,离开天地、鬼神、万物,也没有我的灵明。"
-      },
-      {
-        "type": "p",
-        "text": "这是「岩中花树」的放大版:没有我的觉知,谁去仰天之高、俯地之深?反过来,离了天地万物,我的觉知也无处安放——像一场没有观众的电影和一个没有电影的观众,彼此成就,一气流通。人之贵,不在体力智力(那些多有不如禽兽机器处),在于人是天地间那点会「明白」的灵明。这不是让你自大,恰恰相反——正因为你是天地的心,你那点灵明怎么用,才格外要紧。"
-      },
-      {
-        "type": "p",
-        "text": "于是有了第三句、也是给人印象最深的一句叮咛,关于「傲」:"
-      },
-      {
-        "type": "quote",
-        "original": "人生大病只是一傲字。为子而傲必不孝，为臣而傲必不忠，为父而傲必不慈，为友而傲必不信",
-        "translation": "人生最大的毛病只是一个『傲』字。做儿子而傲必定不孝,做臣子而傲必定不忠,做父亲而傲必定不慈,做朋友而傲必定不信"
-      },
-      {
-        "type": "p",
-        "text": "为什么单单是「傲」?因为傲的底层是「有我」——处处以我为中心,我对、我强、我早就说过。你身边一定有这样的时刻:开会时有人永远在等别人说完好反驳;家里有人永远用「我吃过的盐比你吃过的饭多」结束讨论;你自己大概也有过,孩子考砸了,第一句话是「我早提醒过你」——那一刻你要的不是孩子好,是「我是对的」。阳明说,心本是天然之理,精精明明,不沾一丝,坏就坏在往里面塞了个「我」。所以他的结论是:"
-      },
-      {
-        "type": "quote",
-        "original": "谦者众善之基，傲者众恶之魁。",
-        "translation": "谦是众善的根基,傲是众恶的祸首。"
-      },
-      {
-        "type": "p",
-        "text": "注意,这里的谦不是社交客套、不是逢人弯腰,而是「无我」之后的自然状态:把那个到处刷存在感的「我」缩小,良知的信号就清楚了——傲是良知最大的噪音源。"
-      },
-      {
-        "type": "figure",
-        "ftype": "compare",
-        "svg": "<svg viewBox=\"0 0 760 400\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"傲与谦对比\"><text x=\"380\" y=\"42\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">一「傲」字 vs 一「无我」</text><rect x=\"45\" y=\"72\" width=\"320\" height=\"250\" rx=\"12\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:2;stroke-dasharray:7 5\"/><text x=\"205\" y=\"108\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" style=\"fill:var(--cinnabar);font-family:var(--font-serif)\">傲 · 众恶之魁</text><text x=\"205\" y=\"134\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\" opacity=\".6\">底层:处处「有我」</text><text x=\"205\" y=\"170\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">为子而傲 → 必不孝</text><text x=\"205\" y=\"202\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">为臣而傲 → 必不忠</text><text x=\"205\" y=\"234\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">为父而傲 → 必不慈</text><text x=\"205\" y=\"266\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">为友而傲 → 必不信</text><text x=\"205\" y=\"300\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\" opacity=\".6\">「我对、我强、我早说过」</text><rect x=\"395\" y=\"72\" width=\"320\" height=\"250\" rx=\"12\" style=\"fill:none;stroke:var(--line);stroke-width:2\"/><text x=\"555\" y=\"108\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">谦 · 众善之基</text><text x=\"555\" y=\"134\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\" opacity=\".6\">底层:一个「无我」</text><text x=\"555\" y=\"170\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">心本精精明明</text><text x=\"555\" y=\"202\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">无纤介染著</text><text x=\"555\" y=\"234\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">无我,自能谦</text><text x=\"555\" y=\"266\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">良知的信号最清楚</text><text x=\"555\" y=\"300\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\" opacity=\".6\">不是客套,是放下「我」后的自然</text><text x=\"380\" y=\"362\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".7\">傲是良知最大的噪音源;把「我」调小,仪器才听得清</text></svg>",
-        "caption": "「谦者众善之基,傲者众恶之魁」:阳明把人生大病归到一个傲字,病根不在态度,在处处「有我」。(《传习录·卷下》)"
-      },
-      {
-        "type": "h2",
-        "text": "把整卷串成一根线"
-      },
-      {
-        "type": "p",
-        "text": "现在回头看,卷下这几百条问答其实只讲了一件事,可以串成一根线。起点:你有一台出厂自带、瞒不过的仪器(良知是尔自家底准则)。第一个推论:既然仪器在念头一动时就响,那红线就该划在念头处,念头即是行(知行合一,一念发动处便即是行了)。第二个推论:仪器不挑场地,静坐用得上,吵架也用得上,所以功夫不必躲进安静里,反而要在事上磨(人须在事上磨炼);读书、考试、上班,事事皆可是功夫。第三层:这台仪器点亮的不只是是非,还有你的整个世界——深山的花因你而「一时明白」,天地万物因你的灵明而有高深吉凶;这份「明白」的本味是乐,大哭之后心安处的那种乐,不是硬挤的笑。"
-      },
-      {
-        "type": "p",
-        "text": "最后收拢成天泉桥的十六个字:无善无恶是心之体(仪器出厂时屏幕是干净的),有善有恶是意之动(念头一起才有善恶可判),知善知恶是良知(仪器当场响),为善去恶是格物(照着仪器做)。上两句给你看地图的全貌,免得你把功夫做成死板的压抑;下两句给你划每天的路线,免得你把「悟」当成什么都不用做的借口。利根人可以从上往下走,普通人老老实实从下往上走,两条路通向同一处。而全程最大的障碍只有一个字:傲——「我」一大,仪器的声音就被盖住了。这就是王阳明晚年的全部家当:不是一套玄学,是一张任何人明天早上就能用的操作图。"
-      },
-      {
-        "type": "p",
-        "text": "值得一提的是,这套「人人自有、当下可用」的讲法,在思想史上是有明确对手的。朱子学教人「即物穷理」,一件件事物去格,知识积累够了豁然贯通——像必须先修完全部学分才能毕业;阳明年轻时真去格过竹子,格到病倒也没格出理来,才转而向内。卷下里他说「圣人只是一能之尔,能处正是良知」「何等明白简易」——圣人不是配置比你高,只是把人人都有的那台仪器用到底了。这个「简易直截」的转向,后来经泰州学派把「满街圣人」讲到市井田间,深刻改变了晚明的思想空气;其流弊(空谈、狂禅)也真如阳明在天泉桥所忧。一体两面,都是历史。"
-      },
-      {
-        "type": "h2",
-        "text": "能带走的三件小事"
-      },
-      {
-        "type": "p",
-        "text": "按心学的规矩,不给鸡汤,只给可以试的功夫。而且阳明自己划了个重要的边界——别贪多,今天只做今天的:"
-      },
-      {
-        "type": "quote",
-        "original": "我辈致知，只是各随分限所及。今日良知见在如此，只随今日所知扩充到底，明日良知又有开悟，便从明日所知扩充到底，如此方是精一功夫。",
-        "translation": "我辈致知,只是各随各自的限度所能及。今日良知所见如此,只随今日所知扩充到底,明日良知又有开悟,便从明日所知扩充到底,这样才是精一功夫。"
-      },
-      {
-        "type": "p",
-        "text": "他配的比喻是浇树:小萌芽只配得上一瓢水,你非把一桶水全浇上去,树苗直接泡坏。所以下面三件事,一天做到一件就算数。第一,做一次「念头级」复盘:睡前挑今天心里「咯噔」过的一个瞬间——就一个——只问两件事:那一下,良知说了什么?我听了没有?不评判、不自责,只是把捂住的报警器松开一条缝。第二,给一件躲不开的烦事贴上「功夫」的标签:这周你最想逃的那件事(催款、汇报、陪孩子写作业),下次它来时,试着只做一个动作——按良知响的方向处理一次,哪怕很小。事上磨炼不需要你另找时间,它就藏在你的日程表里。第三,省一句话:下次「我早就说过」冲到嘴边时,咽回去。这一句省下来,傲就小了一号,你会亲耳听见对话变得不一样。做不到也正常——阳明说了,功夫本来就是一棒一条痕,慢慢来,但每一棒要真打在自己身上。"
-      },
-      {
-        "type": "h2",
-        "text": "桥上的灯火"
-      },
-      {
-        "type": "p",
-        "text": "回到开头那个深夜「咯噔」的时刻。现在你知道了:那不是内耗,那是你身上最贵的东西在工作。王阳明一生讲学,晚年把所有话收成三个字「致良知」、十六个字四句教,在天泉桥上连夜交代给学生,次年便病逝于离粤北上的途中,年五十七。据钱德洪等所编《年谱》记载,他临终留下的最后一句话是:「此心光明,亦复何言。」——这颗心是亮的,还有什么可说的呢。那盏灯不是圣人专属。按卷下的说法,它在每个人意念发动的地方常亮着,是便知是,非便知非,从未断电。满街都是圣人,不是恭维,是提醒:你欠的从来不是仪器,是下一次它响的时候——别再装作没听见。"
-      },
-      {
-        "type": "refs",
-        "items": [
-          "原文与译文:《传习录·卷下》,本站底本取自维基文库通行本(陈九川、黄直、黄修易、黄省曾、钱德洪等录,钱德洪汇定),逐段对照译文见本章阅读页",
-          "陈荣捷《王阳明传习录详注集评》(台湾学生书局):四句教、岩中花树诸条集评与版本考订",
-          "邓艾民《传习录注疏》(上海古籍出版社):卷下逐条注疏",
-          "钱德洪等编《阳明先生年谱》(收入《王阳明全集》):天泉证道时地与「此心光明」临终语出此",
-          "王畿《天泉证道纪》(《王龙溪先生全集》卷一):四句教的另一记录,与本卷所记侧重不同,四百年争论之源",
-          "黄宗羲《明儒学案·姚江学案》:四句教后世评骘与王学分化脉络"
-        ]
-      }
+   },
+   {
+    "type": "h2",
+    "text": "知行合一：「知道做不到」，只是不知道"
+   },
+   {
+    "type": "p",
+    "text": "接下来轮到全书最著名的段落。徐爱说：现在的人明明知道对父亲该孝、对兄长该敬，却做不到孝、做不到敬，可见知和行分明是两件事。这不就是我们开头那个收藏夹问题吗？五百年前的人一样被它困扰。王阳明的回答是一记重锤："
+   },
+   {
+    "type": "quote",
+    "original": "未有知而不行者；知而不行，只是未知。",
+    "translation": "没有知而不行的；知而不行，只是未知。"
+   },
+   {
+    "type": "callout",
+    "tone": "warn",
+    "items": [
+     "注意，他不是在骂你「知道了还不做，真懒」，他是在重新定义「知道」这个词。他举的例子精妙至极：《大学》说「如好好色，如恶恶臭」——见到美色，属知；喜欢上，属行。可你什么时候是「先看见，再开个会决定要不要喜欢」的？看见的那一瞬间已经喜欢了。闻到臭味，属知；厌恶，属行。闻到的那一刻已经皱眉了，不存在「闻完之后另立一个心去讨厌」。真正的知，和行为之间没有缝隙，就像手心和手背，是同一只手的两面。"
     ]
+   },
+   {
+    "type": "p",
+    "text": "那「知道熬夜伤身却照样熬」算什么？王阳明说，那是被私欲隔断了的状态——你「知道」的只是一句从别人那里听来的话，一个存在收藏夹里的标题，它从来没有真正成为你的知。就像鼻塞的人对着臭味毫无反应，不是他修养好，是他压根没闻到。一个真正在急诊室躺过一夜的人，对「熬夜伤身」的知，和刷到推送时点收藏的知，是两种东西：前者会直接改变行为，后者只是信息路过大脑。所以判断标准很简单——说某人知孝知悌，必是这人已经行了孝悌，才算他知；只会说些孝悌的漂亮话，不算。"
+   },
+   {
+    "type": "quote",
+    "original": "知是行的主意，行是知的功夫；知是行之始，行是知之成。",
+    "translation": "知是行的主意，行是知的工夫；知是行的开端，行是知的完成。"
+   },
+   {
+    "type": "p",
+    "text": "这句是知行合一的正面表述。知是行的出发点和方向盘，行是知的落实和完成态；一个念头动了，行已经开始；一件事做成了，知才算完成。王阳明特意解释了古人为什么要把知、行分开说：世上有一种人闷头蛮干、从不思考，得对他说个「知」；另一种人悬空空想、从不动手，得对他说个「行」——那是补偏救弊的话术，不是说知行本来是两截。今人的病恰恰是：我先去研究、讨论，把「知」的功课做足，等彻底弄明白了再去行——「故遂终身不行，亦遂终身不知」。翻译一下：报了课不上等于没报，收藏了不做等于没看，健身卡办了不去，那份「我在自我提升」的感觉是幻觉。知行合一四个字，是照妖镜，不是励志口号。"
+   },
+   {
+    "type": "figure",
+    "ftype": "compare",
+    "svg": "<svg viewBox='0 0 700 280' xmlns='http://www.w3.org/2000/svg' font-family='var(--font-serif)'><text x='350' y='34' text-anchor='middle' font-size='20' style='fill:var(--ink)'>知行合一：一个工夫的两面</text><circle cx='190' cy='150' r='58' style='fill:none;stroke:var(--cinnabar)' stroke-width='2.5'/><text x='190' y='160' text-anchor='middle' font-size='26' style='fill:var(--cinnabar)'>知</text><circle cx='510' cy='150' r='58' style='fill:none;stroke:var(--ink)' stroke-width='2.5'/><text x='510' y='160' text-anchor='middle' font-size='26' style='fill:var(--ink)'>行</text><path d='M 240 112 Q 350 62 460 112' style='fill:none;stroke:var(--cinnabar)' stroke-width='2'/><path d='M 460 112 l -14 -3 m 14 3 l -6 12' style='fill:none;stroke:var(--cinnabar)' stroke-width='2'/><text x='350' y='72' text-anchor='middle' font-size='14' style='fill:var(--cinnabar)'>知是行之始（主意）</text><path d='M 460 188 Q 350 238 240 188' style='fill:none;stroke:var(--ink)' stroke-width='2'/><path d='M 240 188 l 14 3 m -14 -3 l 6 -12' style='fill:none;stroke:var(--ink)' stroke-width='2'/><text x='350' y='242' text-anchor='middle' font-size='14' style='fill:var(--ink)'>行是知之成（功夫）</text><text x='350' y='146' text-anchor='middle' font-size='13.5' style='fill:var(--ink)' opacity='0.7'>见好色，属知</text><text x='350' y='168' text-anchor='middle' font-size='13.5' style='fill:var(--ink)' opacity='0.7'>好好色，属行——中间没有第二个决定</text><text x='350' y='272' text-anchor='middle' font-size='12' style='fill:var(--ink)' opacity='0.55'>「只说一个知，已自有行在；只说一个行，已自有知在。」</text></svg>",
+    "caption": "知行本是同一个工夫的开端与完成：真知必然带出行动，行动才让知完成。据《传习录·卷上》徐爱录。"
+   },
+   {
+    "type": "h2",
+    "text": "格物新解：去正你的心，不是去研究竹子"
+   },
+   {
+    "type": "p",
+    "text": "「格物致知」是《大学》八条目的第一步，朱熹解为「即物穷理」：接触天下事物，一件件穷究其中之理，今日格一物、明日格一物，积累久了豁然贯通。年轻时的王阳明是朱熹的忠实读者，据他在卷下的自述，他真的照做过——和朋友对着亭前的竹子「格」了七天，理没格出来，人先病倒了。这次著名的失败埋下了怀疑的种子；多年后他在贬所贵州龙场彻悟（《年谱》记为正德三年，1508），得出的结论就是卷上这套：理不在竹子里，在你心上。于是「格物」二字被他重新训释——本卷原话说得明白：「格物」如《孟子》「大人格君心」之格，「是去其心之不正，以全其本体之正」。格，是「正」；物，不是外物，而是意念所指向的事。"
+   },
+   {
+    "type": "quote",
+    "original": "身之主宰便是心，心之所发便是意，意之本体便是知，意之所在便是物。",
+    "translation": "身的主宰便是心，心所发动的便是意，意的本体便是知，意所在的便是物。"
+   },
+   {
+    "type": "p",
+    "text": "这十六个字是心学的解剖图：身体的主宰是心，心一动就是意（念头），念头指向哪里，哪里就是一「物」。意在事亲，事亲就是一物；意在刷手机，刷手机也是一物。所以「格物」不是去实验室分析对象，而是在每个念头发动处做校正——把不正的念头正过来。修行的现场从书斋和实验室，搬到了你每一个起心动念的瞬间。就在解释这套工夫时，一个日后响彻五百年的词第一次亮了相："
+   },
+   {
+    "type": "quote",
+    "original": "见父，自然知孝；见兄，自然知弟；见孺子入井，自然知恻隐。此便是『良知』，不假外求。",
+    "translation": "见到父亲，自然知道孝；见到兄长，自然知道敬；见到小孩落入井中，自然知道恻隐。这便是『良知』，不假外求。"
+   },
+   {
+    "type": "p",
+    "text": "「良知」这个词借自《孟子》——「所不虑而知者，其良知也」。看见小孩爬向井口，你心头那一紧，不需要论证、不需要培训，它就在。王阳明说，这就是你心里自带的判断力，问题只是它常被私意挡住——像手机屏幕上糊了层油，屏幕本身没坏。所以工夫不是往外找光，是擦屏幕：「胜私复理」，把私心的油污擦掉，良知自然亮。晚年的王阳明把整个学说都收拢到「致良知」三个字上，而源头就在卷上这一条。"
+   },
+   {
+    "type": "figure",
+    "ftype": "compare",
+    "svg": "<svg viewBox='0 0 700 340' xmlns='http://www.w3.org/2000/svg' font-family='var(--font-serif)'><text x='350' y='34' text-anchor='middle' font-size='20' style='fill:var(--ink)'>同一个词，两条路：「格物」的朱王之别</text><line x1='350' y1='56' x2='350' y2='300' style='stroke:var(--line)' stroke-width='1' stroke-dasharray='4 4'/><text x='185' y='72' text-anchor='middle' font-size='16' style='fill:var(--ink)'>朱子：格 = 穷至（向外）</text><circle cx='185' cy='140' r='34' style='fill:none;stroke:var(--ink)' stroke-width='2'/><text x='185' y='147' text-anchor='middle' font-size='18' style='fill:var(--ink)'>心</text><path d='M 222 128 L 290 104' style='fill:none;stroke:var(--ink)' stroke-width='1.5'/><path d='M 222 140 L 295 140' style='fill:none;stroke:var(--ink)' stroke-width='1.5'/><path d='M 222 152 L 290 176' style='fill:none;stroke:var(--ink)' stroke-width='1.5'/><text x='312' y='108' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>事</text><text x='315' y='145' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>物</text><text x='312' y='182' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>理</text><text x='185' y='222' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>到事事物物上求定理</text><text x='185' y='246' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>今日格一物，明日格一物</text><text x='185' y='270' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>积累既久，豁然贯通</text><text x='515' y='72' text-anchor='middle' font-size='16' style='fill:var(--cinnabar)'>阳明：格 = 正（向内）</text><circle cx='515' cy='140' r='34' style='fill:none;stroke:var(--cinnabar)' stroke-width='2.5'/><text x='515' y='147' text-anchor='middle' font-size='18' style='fill:var(--cinnabar)'>心</text><path d='M 610 104 Q 570 112 552 126' style='fill:none;stroke:var(--cinnabar)' stroke-width='1.5'/><path d='M 552 126 l 6 -11 m -6 11 l 13 2' style='fill:none;stroke:var(--cinnabar)' stroke-width='1.5'/><path d='M 615 140 Q 580 140 551 140' style='fill:none;stroke:var(--cinnabar)' stroke-width='1.5'/><path d='M 551 140 l 11 -6 m -11 6 l 11 6' style='fill:none;stroke:var(--cinnabar)' stroke-width='1.5'/><path d='M 610 176 Q 570 168 552 154' style='fill:none;stroke:var(--cinnabar)' stroke-width='1.5'/><path d='M 552 154 l 13 -2 m -13 2 l 6 11' style='fill:none;stroke:var(--cinnabar)' stroke-width='1.5'/><text x='636' y='108' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>意</text><text x='640' y='145' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>念</text><text x='636' y='182' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>事</text><text x='515' y='222' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>意之所在便是物</text><text x='515' y='246' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>去其心之不正</text><text x='515' y='270' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.75'>以全其本体之正</text><text x='350' y='322' text-anchor='middle' font-size='12' style='fill:var(--ink)' opacity='0.55'>朱说见《大学章句》「即物穷理」；王说见本卷：「格物」如《孟子》「大人格君心」之格</text></svg>",
+    "caption": "「格物」两解：朱熹训格为「至」，到事物上穷理；王阳明训格为「正」，在念头发动处正心。这是卷上全部辩论的分水岭。"
+   },
+   {
+    "type": "h2",
+    "text": "事上磨：工夫在生活里，不在深山里"
+   },
+   {
+    "type": "p",
+    "text": "卷上中段换了记录者陆澄，画风从大辩论转向了工夫答疑，像一本课后问答集。有人问：我静坐的时候觉得状态很好，一遇到事就乱了套，怎么办？这个问题今天可以一字不改地发在任何一个冥想社群里：打坐时心如止水，一进早高峰地铁被人踩了脚，修养瞬间清零。王阳明的回答是卷上流传最广的金句之一：这是只知道养静、不肯克己的毛病，这样一临事就会站不稳——「人须在事上磨，方立得住，方能静亦定，动亦定」。修养不是无菌室里的盆栽，是马路牙子上的行道树；躲进安静里练出来的「定」，是没经过风的定。堵车、被误解、方案被推翻重来——这些不是修行的干扰项，这些就是修行本身的现场。"
+   },
+   {
+    "type": "p",
+    "text": "配套的还有一面镜子。有人问：圣人应变不穷，是不是预先把各种情况都研究好了？王阳明说圣人之心如明镜，「只怕镜不明，不怕物来不能照」——你该担心的不是没预习到考题，是镜面本身不亮。这话对今天的「攻略焦虑」是对症的：面试宝典背了三百题，真被问到第三百零一题就懵；而心里透亮的人，没背过也答得从容。然后是两个关于「急」的比喻。第一个给急着看到成果的人："
+   },
+   {
+    "type": "quote",
+    "original": "初种根时，只管栽培灌溉；勿作枝想，勿作叶想，勿作花想，勿作实想。悬想何益？但不忘栽培之功，怕没有枝、叶、花、实？",
+    "translation": "初种根时，只管栽培灌溉；不要作枝的妄想，不要作叶的妄想，不要作花的妄想，不要作果的妄想。空想有什么益处？只要不忘栽培的工夫，怕没有枝、叶、花、果吗？"
+   },
+   {
+    "type": "p",
+    "text": "刚立志就想收获，像刚种下树苗就天天蹲在旁边想象果子的甜度——想象不浇水，树不会长。考证的人算「拿到证第几年能回本」，健身的人天天上秤，本质都是「作花想、作实想」，把力气花在了悬想上。第二个比喻给贪多求全的人："
+   },
+   {
+    "type": "quote",
+    "original": "与其为数顷无源之塘水，不若为数尺有源之井水，生意不穷。",
+    "translation": "与其做几顷无源的塘水，不如做几尺有源的井水，生意无穷。"
+   },
+   {
+    "type": "p",
+    "text": "这句是王阳明坐在塘边、看见旁边一口井，随手拈来的。几顷大的池塘看着壮观，没有源头，一个旱季就见底；几尺深的井不起眼，底下有活水，永远打不干。放到今天：收藏一千篇干货、同时追五个领域三个副业，是塘；把一件事做到有自己的活水源头，是井。面积唬人，源头养人。卷上后文还有一句同款：「种树者必培其根，种德者必养其心」——想让树长高，得在它初生时删掉繁枝；想让德长成，得在初学时收起那些四处漏泄精神的爱好。字字都在说同一件事：往根上用力。"
+   },
+   {
+    "type": "figure",
+    "ftype": "quote-card",
+    "svg": "<svg viewBox='0 0 700 340' xmlns='http://www.w3.org/2000/svg' font-family='var(--font-serif)'><rect x='24' y='24' width='652' height='292' rx='10' style='fill:none;stroke:var(--line)' stroke-width='1.5'/><rect x='36' y='36' width='628' height='268' rx='6' style='fill:none;stroke:var(--line)' stroke-width='0.75'/><text x='350' y='118' text-anchor='middle' font-size='30' style='fill:var(--ink)'>人须在事上磨，</text><text x='350' y='168' text-anchor='middle' font-size='30' style='fill:var(--ink)'>方立得住，</text><text x='350' y='218' text-anchor='middle' font-size='30' style='fill:var(--ink)'>方能静亦定，动亦定。</text><text x='350' y='268' text-anchor='middle' font-size='14' style='fill:var(--ink)' opacity='0.6'>《传习录 · 卷上》 陆澄所录</text><rect x='600' y='244' width='44' height='44' rx='5' style='fill:var(--cinnabar)'/><text x='622' y='262' text-anchor='middle' font-size='15' style='fill:var(--paper)'>观</text><text x='622' y='281' text-anchor='middle' font-size='15' style='fill:var(--paper)'>心</text></svg>",
+    "caption": "金句卡：「人须在事上磨，方立得住，方能静亦定，动亦定。」修养的考场不在静室，在正在发生的生活里。《传习录·卷上》。"
+   },
+   {
+    "type": "h2",
+    "text": "精金喻圣：比的是成色，不是斤两"
+   },
+   {
+    "type": "p",
+    "text": "卷上后段的记录者换成薛侃，出现了全卷最精彩的一个比喻。弟子蔡希渊问：圣人可以学而至，可伯夷、伊尹与孔子才力终究不同，凭什么同样称圣？王阳明先把「圣」的定义钉死："
+   },
+   {
+    "type": "quote",
+    "original": "圣人之所以为圣，只是其心纯乎天理，而无人欲之杂。",
+    "translation": "圣人之所以为圣，只是他的心纯然是天理，而没有人欲的夹杂。"
+   },
+   {
+    "type": "p",
+    "text": "然后展开炼金的类比：圣人像精金，之所以「精」，在成色十足，不在分量。尧舜好比万镒之金，文王、孔子九千镒，禹、汤、武王七八千镒，伯夷、伊尹四五千镒——分量（才力）悬殊，但成色（心地纯度）相同，所以都是圣人。就像一克足金和一吨足金，纯度上完全平等。"
+   },
+   {
+    "type": "quote",
+    "original": "盖所以为精金者，在足色，而不在分两；所以为圣者，在纯乎天理，而不在才力也。",
+    "translation": "原来精金之所以为精金，在于足色，而不在分量；圣人之所以为圣，在于纯然天理，而不在才力。"
+   },
+   {
+    "type": "p",
+    "text": "请注意，这个比喻锋利的地方在于它「反成功学」。它不是说「你努力也能成为首富」——恰恰相反，王阳明明说才力分量是有差等的，凡人就是一两的金，别妄想万镒。他批评的正是那种看见别人有万镒精金、不去炼自己的成色、反而拼命往自己这块金里「锡、铅、铜、铁杂然而投」来凑分量的人：「分两愈增而成色愈下」，最后连金都不是了。翻成今天的话：看见别人的头衔、流量、身家（分两），就靠注水包装把自己撑大——简历掺假、人设浮夸、什么风口都蹭——盘子越做越大，成色越来越低。这段话的末尾，王阳明点出「故曰『人皆可以为尧、舜』者以此」——《孟子》那句名言的真正含义是：普通岗位上的普通人，把手头的事做得心地干净、不掺假，虽一两之金比之万镒，「其到足色处，可以无愧」。比的从来不是斤两。"
+   },
+   {
+    "type": "figure",
+    "ftype": "compare",
+    "svg": "<svg viewBox='0 0 700 330' xmlns='http://www.w3.org/2000/svg' font-family='var(--font-serif)'><text x='350' y='34' text-anchor='middle' font-size='20' style='fill:var(--ink)'>精金之喻：分两与成色是两回事</text><line x1='350' y1='56' x2='350' y2='268' style='stroke:var(--line)' stroke-width='1' stroke-dasharray='4 4'/><text x='185' y='76' text-anchor='middle' font-size='16' style='fill:var(--ink)'>分两（才力 · 际遇）</text><rect x='95' y='110' width='110' height='120' rx='6' style='fill:none;stroke:var(--ink)' stroke-width='2'/><text x='150' y='165' text-anchor='middle' font-size='15' style='fill:var(--ink)'>尧 舜</text><text x='150' y='190' text-anchor='middle' font-size='13' style='fill:var(--ink)' opacity='0.7'>万镒</text><rect x='235' y='192' width='48' height='38' rx='4' style='fill:none;stroke:var(--ink)' stroke-width='2'/><text x='259' y='210' text-anchor='middle' font-size='12' style='fill:var(--ink)'>凡人</text><text x='259' y='225' text-anchor='middle' font-size='11' style='fill:var(--ink)' opacity='0.7'>一两</text><text x='185' y='262' text-anchor='middle' font-size='13.5' style='fill:var(--ink)' opacity='0.75'>可以悬殊——不必强求</text><text x='515' y='76' text-anchor='middle' font-size='16' style='fill:var(--cinnabar)'>成色（此心纯乎天理）</text><circle cx='455' cy='165' r='42' style='fill:none;stroke:var(--cinnabar)' stroke-width='2.5'/><text x='455' y='172' text-anchor='middle' font-size='15' style='fill:var(--cinnabar)'>足色</text><circle cx='575' cy='165' r='42' style='fill:none;stroke:var(--cinnabar)' stroke-width='2.5'/><text x='575' y='172' text-anchor='middle' font-size='15' style='fill:var(--cinnabar)'>足色</text><text x='515' y='165' text-anchor='middle' font-size='16' style='fill:var(--cinnabar)'>=</text><text x='515' y='262' text-anchor='middle' font-size='13.5' style='fill:var(--ink)' opacity='0.75'>可以无愧——工夫所在</text><text x='350' y='302' text-anchor='middle' font-size='13' style='fill:var(--cinnabar)'>「所以为圣者，在纯乎天理，而不在才力也。」</text><text x='350' y='322' text-anchor='middle' font-size='12' style='fill:var(--ink)' opacity='0.55'>掺杂求重，分两愈增而成色愈下——王阳明对「妄希分两」的警告</text></svg>",
+    "caption": "精金之喻：才力分量人各不同，不必强求；心地成色人人可炼，这才是「人皆可以为尧、舜」的本义。《传习录·卷上》薛侃录。"
+   },
+   {
+    "type": "h2",
+    "text": "花间草：善恶不在草，在你心"
+   },
+   {
+    "type": "p",
+    "text": "卷上快结尾处有一幕小剧场。薛侃在花圃里锄草，一边锄一边发牢骚：天地间为什么善这么难培养、恶这么难铲除？——多么熟悉的抱怨，好习惯难养、坏毛病难改，谁没说过。王阳明的回答直接掀了桌子："
+   },
+   {
+    "type": "quote",
+    "original": "天地生意，花草一般，何曾有善恶之分？子欲观花，则以花为善，以草为恶；如欲用草时，复以草为善矣。",
+    "translation": "天地的生意，花和草是一样的，何曾有善恶之分？你想观花，就以花为善，以草为恶；如果要用草时，又以草为善了。"
+   },
+   {
+    "type": "p",
+    "text": "在天地眼里，花和草都是生命力，没有谁善谁恶；是你要赏花，草才成了「恶」——哪天你要用草铺坪，它立刻又「善」了。同一场雨，办婚礼的人骂它坏事，种地的人谢它救田；同事的「固执」在这个项目里是缺点，换个需要死磕的项目就是优点。标签是你的需求贴上去的。薛侃立刻抓住把柄：照这么说，就无善无恶了？草也不用锄了？注意，王阳明在这里展现了极精微的分寸——他没有滑向「一切都无所谓」的相对主义。草碍事，照锄不误；但锄草时别「动气」，别附加那一层怨憎恼恨。偶尔没锄干净，也不往心里去。"
+   },
+   {
+    "type": "quote",
+    "original": "只在汝心，循理便是善，动气便是恶。",
+    "translation": "只在你心上，依循理便是善，动气便是恶。"
+   },
+   {
+    "type": "p",
+    "text": "善恶的真正战场，从对象身上移回了你的反应方式：该做的事按理去做，是善；同一件事裹挟着情绪的翻江倒海去做，就成了恶。堵车是中性的，握着方向盘骂骂咧咧的那半小时才是你自己造出来的「恶」。这一段还有个隽永的收尾：弟子伯生追问，先生既说「草有妨碍，理亦宜去」，怎么又说从躯壳起念便会错？王阳明不给标准答案，把问题原样抛了回去：「此须汝心自体当。汝要去草，是甚么心？周茂叔窗前草不除，是甚么心？」（周茂叔即周敦颐，「窗前草不除」是宋儒的著名典故）——心学的功课，最终要在自己心上体会，没有标准答案可抄，这本身就是「心即理」的教学法。"
+   },
+   {
+    "type": "h2",
+    "text": "把整卷串起来：一棵树的完整长法"
+   },
+   {
+    "type": "p",
+    "text": "现在退后一步，把卷上从头到尾看成一个整体，你会发现三位记录者、上百条问答，其实只在讲一条推理链。第一步：理不在心外（心即理）——孝的道理不在父亲身上，至善不在事物里，你缺的从来不是攻略。第二步：既然理在心里，那「知」就不是信息的搬运，而是心的真实状态——于是知行必然合一，知而不行只是未知。第三步：既然如此，工夫的下手处就不是研究外物，而是校正念头（格物=正心），擦亮那个自带的判断力（良知）。第四步：擦拭的砂纸就是日常生活——事上磨，在根上浇水，不作花想，不贪塘大。第五步：这条路的终点评价标准也变了——比成色不比分两，人人可以在纯度上无愧。第六步：连善恶本身，也收归为心的循理与动气。你看，整卷就是一棵树：心即理是根，知行合一是干，格物致知是枝，事上磨是浇水施肥，精金成色是果实的品级。从头到尾，方向只有一个——向内。"
+   },
+   {
+    "type": "figure",
+    "ftype": "list",
+    "svg": "<svg viewBox='0 0 700 400' xmlns='http://www.w3.org/2000/svg' font-family='var(--font-serif)'><text x='350' y='34' text-anchor='middle' font-size='20' style='fill:var(--ink)'>卷上的比喻系统：五个比喻，一个方向</text><line x1='60' y1='52' x2='640' y2='52' style='stroke:var(--line)' stroke-width='1'/><text x='150' y='88' text-anchor='middle' font-size='15' style='fill:var(--cinnabar)'>树根与枝叶</text><text x='420' y='88' text-anchor='middle' font-size='14' style='fill:var(--ink)'>诚孝的心是根，温凊仪节是枝叶</text><text x='420' y='108' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.65'>先有根，后有枝叶；不是先寻枝叶再种根</text><line x1='60' y1='122' x2='640' y2='122' style='stroke:var(--line)' stroke-width='0.75'/><text x='150' y='152' text-anchor='middle' font-size='15' style='fill:var(--cinnabar)'>磨镜</text><text x='420' y='152' text-anchor='middle' font-size='14' style='fill:var(--ink)'>圣人心如明镜，随感而应</text><text x='420' y='172' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.65'>只怕镜不明，不怕物来不能照——工夫在磨不在照</text><line x1='60' y1='186' x2='640' y2='186' style='stroke:var(--line)' stroke-width='0.75'/><text x='150' y='216' text-anchor='middle' font-size='15' style='fill:var(--cinnabar)'>种树勿悬想</text><text x='420' y='216' text-anchor='middle' font-size='14' style='fill:var(--ink)'>立志用功，只管栽培灌溉</text><text x='420' y='236' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.65'>勿作枝想叶想花想实想——悬想何益</text><line x1='60' y1='250' x2='640' y2='250' style='stroke:var(--line)' stroke-width='0.75'/><text x='150' y='280' text-anchor='middle' font-size='15' style='fill:var(--cinnabar)'>有源井水</text><text x='420' y='280' text-anchor='middle' font-size='14' style='fill:var(--ink)'>数尺井水胜数顷塘水</text><text x='420' y='300' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.65'>为学贵有源头活水，不贪面积唬人</text><line x1='60' y1='314' x2='640' y2='314' style='stroke:var(--line)' stroke-width='0.75'/><text x='150' y='344' text-anchor='middle' font-size='15' style='fill:var(--cinnabar)'>炼金</text><text x='420' y='344' text-anchor='middle' font-size='14' style='fill:var(--ink)'>学圣人是炼成色，不是凑分两</text><text x='420' y='364' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.65'>掺杂求重，分两愈增而成色愈下</text><line x1='60' y1='378' x2='640' y2='378' style='stroke:var(--line)' stroke-width='1'/><text x='350' y='398' text-anchor='middle' font-size='12' style='fill:var(--ink)' opacity='0.55'>五个比喻的共同箭头：从外面的枝叶、照见、花果、面积、分量，收回到里面的根、镜、栽培、源头、成色</text></svg>",
+    "caption": "卷上的比喻系统一览：树根、磨镜、种树、井水、炼金——五个比喻说的是同一件事，工夫向内、向根上去。"
+   },
+   {
+    "type": "h2",
+    "text": "这本书是怎么长成的：从龙场到刻本"
+   },
+   {
+    "type": "p",
+    "text": "卷上的文本自己也有一部成长史。正德元年（1506），三十五岁的王阳明因得罪宦官刘瑾，廷杖下狱，贬往贵州龙场做驿丞——一个瘴疠之地的招待所站长。正是在那里的困顿中，他在一个深夜彻悟「圣人之道，吾性自足，向之求理于事物者误也」（《年谱》正德三年条），这就是著名的「龙场悟道」，也是卷上所有观点的出生地。此后徐爱等弟子陆续记录师门问答；正德十二年（1517），徐爱三十一岁早逝，没能看到这些笔记刊行。次年（1518），薛侃将徐爱、陆澄与自己所录汇集，在江西赣州初次刻印，题名《传习录》——那一册，大体就是今天的卷上。嘉靖三年（1524），南大吉续刻，增入论学书信（后来的卷中）；到隆庆六年（1572），谢廷杰刊《王文成公全书》，三卷本《传习录》最终定型。换句话说，你正在读的卷上，是全书中最早成形、也最接近课堂现场的一层地层。"
+   },
+   {
+    "type": "figure",
+    "ftype": "timeline",
+    "svg": "<svg viewBox='0 0 700 250' xmlns='http://www.w3.org/2000/svg' font-family='var(--font-serif)'><text x='350' y='32' text-anchor='middle' font-size='20' style='fill:var(--ink)'>《传习录》卷上成书时间线</text><line x1='60' y1='130' x2='640' y2='130' style='stroke:var(--line)' stroke-width='2'/><circle cx='95' cy='130' r='7' style='fill:var(--cinnabar)'/><text x='95' y='105' text-anchor='middle' font-size='14' style='fill:var(--ink)'>1508</text><text x='95' y='160' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.8'>龙场悟道</text><text x='95' y='178' text-anchor='middle' font-size='11.5' style='fill:var(--ink)' opacity='0.6'>「吾性自足」</text><circle cx='235' cy='130' r='7' style='fill:none;stroke:var(--ink)' stroke-width='2'/><text x='235' y='105' text-anchor='middle' font-size='14' style='fill:var(--ink)'>1512 起</text><text x='235' y='160' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.8'>徐爱等记录问答</text><text x='235' y='178' text-anchor='middle' font-size='11.5' style='fill:var(--ink)' opacity='0.6'>心即理·知行合一</text><circle cx='355' cy='130' r='7' style='fill:none;stroke:var(--ink)' stroke-width='2'/><text x='355' y='105' text-anchor='middle' font-size='14' style='fill:var(--ink)'>1517</text><text x='355' y='160' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.8'>徐爱早逝</text><circle cx='470' cy='130' r='7' style='fill:var(--cinnabar)'/><text x='470' y='105' text-anchor='middle' font-size='14' style='fill:var(--cinnabar)'>1518</text><text x='470' y='160' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.8'>薛侃赣州初刻</text><text x='470' y='178' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>即今卷上</text><circle cx='565' cy='130' r='7' style='fill:none;stroke:var(--ink)' stroke-width='2'/><text x='565' y='105' text-anchor='middle' font-size='14' style='fill:var(--ink)'>1524</text><text x='565' y='160' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.8'>南大吉续刻</text><text x='565' y='178' text-anchor='middle' font-size='11.5' style='fill:var(--ink)' opacity='0.6'>增书信（卷中）</text><circle cx='635' cy='130' r='7' style='fill:none;stroke:var(--ink)' stroke-width='2'/><text x='632' y='105' text-anchor='middle' font-size='14' style='fill:var(--ink)'>1572</text><text x='627' y='160' text-anchor='middle' font-size='12.5' style='fill:var(--ink)' opacity='0.8'>三卷本定型</text><text x='350' y='226' text-anchor='middle' font-size='12' style='fill:var(--ink)' opacity='0.55'>据《王文成公年谱》及诸刻本序跋；卷上是全书最早刊行、最接近课堂现场的一层</text></svg>",
+    "caption": "从龙场悟道（1508）到薛侃初刻（1518）再到三卷定本（1572）：卷上的文本层积史。"
+   },
+   {
+    "type": "h2",
+    "text": "五百年的回声与争论"
+   },
+   {
+    "type": "p",
+    "text": "卷上从刊行那天起就争议不断，这一点要如实说。朱子学阵营长期批评「心即理」混淆了心与理、批评知行合一「近禅」；王阳明自己在卷上就预先答辩过——「又不是某凿空杜撰，知行本体原是如此」，并反复援引《尚书》的「惟精惟一」、《论语》的「博学于文，约之以礼」来证明自己讲的是儒门旧义。这场官司明清两代没有断过，读者不必急着站队，两边的讲法在本站《近思录》与本书间正好可以对读。而它的影响也确实越出了国界：阳明学东传日本，经中江藤树一系发展，深刻影响了幕末的一代志士；到了现代，美国管理学界甚至有一本专著就叫《知行差距》（The Knowing-Doing Gap，2000），研究企业里「知道该做什么却做不到」的普遍病症——问题意识与五百年前徐爱的提问遥相呼应。至于「知行合一」四个字本身，早已进入现代汉语的日常词库，只是多数人用它时，未必知道它最初的意思不是「说到做到」的道德要求，而是对「知」的重新定义。"
+   },
+   {
+    "type": "p",
+    "text": "跨典互见也值得留一笔：「良知」的出处在《孟子》尽心篇（「所不虑而知者，其良知也」），恻隐之心、孺子入井的例子同样来自《孟子》；「格物致知」「诚意」「如好好色，如恶恶臭」出自《大学》；「惟精惟一」出自《尚书·大禹谟》的十六字心传；「未发之中」出自《中庸》。王阳明的辩论对手，则是朱熹《四书章句集注》所代表的官学体系。可以说，卷上是踩着整个四书系统展开的一场重新解释——它不另起炉灶，而是宣称：这些经典本来就该这么读。"
+   },
+   {
+    "type": "h2",
+    "text": "能带走的三个角度"
+   },
+   {
+    "type": "p",
+    "text": "按本站的规矩，不灌鸡汤、不许诺成功，只提供三个可以自己验证的思考角度。其一：下次听见自己说「我知道，但是……」，把它当一声警报——按卷上的定义，这句话等于「我还不知道」。不必自责，去补那个知：到事里做一次，哪怕最小的一步，做过的知才是知。其二：面对一长串「该做的事」而焦虑时，用卷上的问法拦自己一下——王阳明说凡事「只是有个头脑」，先找到这堆枝叶底下的根是哪一个；先浇根，枝叶的清单会自己变短。其三：把「等我有空了、等忙完这阵、等上完这门课再修身养性」的念头搁下——按「事上磨」的讲法，此刻的堵车、加班、被误解，就是工夫的现场，没有另一个更合适的道场在别处等你。"
+   },
+   {
+    "type": "h2",
+    "text": "回到你的收藏夹"
+   },
+   {
+    "type": "p",
+    "text": "文章开头那条深夜收藏的早睡指南，还在你的收藏夹里。现在你可以用卷上的标准重新问一次：我「知道」熬夜伤身吗？王阳明的答案很干脆——今晚见分晓。徐爱在卷首形容老师的学问：「即之若易，而仰之愈高；见之若粗，而探之愈精」——靠近它好像很简单，仰望它却越来越高；乍看粗浅，越探越精。卷上就是这样一本书：每句话都听得懂，每句话都做不完。它不给你新的信息，它只是把你早就「收藏」了的那些道理，一条一条地问你：这一条，你行过了吗？没行过的，按这本书的算法，都还不算数。"
+   },
+   {
+    "type": "refs",
+    "items": [
+     "《传习录·卷上》，徐爱、陆澄、薛侃所录——本文原文与译文均取自本站文本",
+     "《大学》《中庸》——「格物致知」「诚意」「如好好色，如恶恶臭」「未发之中」诸语出处",
+     "《孟子》——「良知」一词及「孺子入井」「大人格君心」诸例的源头",
+     "《尚书·大禹谟》——「惟精惟一」十六字心传",
+     "朱熹《四书章句集注》——卷上全篇商榷的对象，「格物」朱解见《大学章句》",
+     "钱德洪等编《王文成公年谱》——龙场悟道与《传习录》刊刻始末",
+     "说明：引文均为本站《传习录》卷上原文的逐字摘录；白话为编者所拟，与站内译文一致；朱王之争历代评价不一，本文如实并陈，不代读者拍板。"
+    ]
+   }
+  ],
+  "featured": true,
+  "hero": {
+   "badge": "开篇 · 全书总纲",
+   "headline": "心即理也。天下又有心外之事、心外之理乎？",
+   "tagline": "一切工夫，收归此心——王门心学的第一课"
   }
+ },
+ "2": {
+  "title": "白话传习录 · 卷中",
+  "subtitle": "八封亲笔回信里的王阳明：所有「做不到」，都是因为没真懂",
+  "centralIdea": "卷中借六家问难反复申明一件事：心外无理、知行一体，功夫只有一个——在每件具体的事上把良知致到十分、不自欺。",
+  "blocks": [
+   {
+    "type": "lead",
+    "text": "《传习录》上卷是学生记的课堂笔记，中卷不一样——它是王阳明本人写的白纸黑字：几位读书人轮番来信发难，有追问的、有商榷的、有当面质疑的，他一封封亲笔回。一个思想家被逼到墙角时说出的话，往往才是他最真的功夫。这一卷，就是王阳明的「答辩实录」。"
+   },
+   {
+    "type": "p",
+    "text": "先说一个你大概率经历过的时刻：深夜刷手机，又收藏了一篇《真正拉开人与人差距的，是这个习惯》，心满意足地锁屏睡觉。收藏夹几百篇，生活纹丝不动。你安慰自己：道理我都懂，只是还没来得及做。——五百年前，一位叫顾东桥的学者给王阳明写信，掰扯的其实就是这件事：知和行到底什么关系？是不是先把道理学明白，再去实行？王阳明的回信，把「都懂，就是做不到」这个人人熟悉的说法，拆了个干干净净：你做不到，恰恰证明你没真懂。这一卷的所有内容，几乎都从这一针扎下去。"
+   },
+   {
+    "type": "h2",
+    "text": "这是一卷什么书：八封亲笔信，加三篇小文"
+   },
+   {
+    "type": "p",
+    "text": "《传习录》分上、中、下三卷。中卷由弟子钱德洪编定，收王阳明写给六位友人、学生的八封论学书信——答顾东桥书、答周道通书、答陆原静书（两封）、答欧阳崇一书、答罗整庵少宰书、答聂文蔚书（两封）——卷末附《示弟立志说》《训蒙大意》《教约》三篇短文。这些信大多写于阳明五十岁前后、提出「致良知」宗旨之后，是他最成熟时期的文字。先记几个词的读音，后面会反复见到：温凊（qìng，冬温夏凊，让父母冬暖夏凉）、恻怛（cè dá，恳切的心疼）、妍媸（yán chī，美与丑）、自慊（qiè，自己心安满足）。"
+   },
+   {
+    "type": "figure",
+    "ftype": "structure",
+    "svg": "<svg viewBox=\"0 0 700 430\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\">\n<text x=\"350\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:20px;font-weight:bold\">《传习录·卷中》一览：八封亲笔信 + 卷末三篇</text>\n<g>\n<rect x=\"40\" y=\"58\" width=\"300\" height=\"76\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:1.6\"/>\n<text x=\"190\" y=\"86\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:16px;font-weight:bold\">答顾东桥书（最长）</text>\n<text x=\"190\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px\">知行合一 · 格物致知 · 拔本塞源</text>\n<rect x=\"360\" y=\"58\" width=\"300\" height=\"76\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<text x=\"510\" y=\"86\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:16px;font-weight:bold\">答周道通书</text>\n<text x=\"510\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px\">功夫终身只是一事 · 痒只有自己挠</text>\n<rect x=\"40\" y=\"146\" width=\"300\" height=\"76\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<text x=\"190\" y=\"174\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:16px;font-weight:bold\">答陆原静书（两封）</text>\n<text x=\"190\" y=\"198\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px\">求静愈不静 · 乐是心之本体 · 明镜之喻</text>\n<rect x=\"360\" y=\"146\" width=\"300\" height=\"76\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<text x=\"510\" y=\"174\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:16px;font-weight:bold\">答欧阳崇一书</text>\n<text x=\"510\" y=\"198\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px\">良知与见闻：头脑对了处处是营养</text>\n<rect x=\"40\" y=\"234\" width=\"300\" height=\"76\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<text x=\"190\" y=\"262\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:16px;font-weight:bold\">答罗整庵少宰书</text>\n<text x=\"190\" y=\"286\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px\">道，天下之公道 · 与朱学之争的体面</text>\n<rect x=\"360\" y=\"234\" width=\"300\" height=\"76\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:1.6\"/>\n<text x=\"510\" y=\"262\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:16px;font-weight:bold\">答聂文蔚书（两封）</text>\n<text x=\"510\" y=\"286\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px\">万物一体 · 真诚恻怛 · 必有事焉即致良知</text>\n</g>\n<line x1=\"60\" y1=\"330\" x2=\"640\" y2=\"330\" style=\"stroke:var(--line);stroke-width:1;stroke-dasharray:4 4\"/>\n<text x=\"350\" y=\"352\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px;opacity:.75\">卷末附三篇短文</text>\n<g>\n<rect x=\"60\" y=\"366\" width=\"180\" height=\"44\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.2\"/>\n<text x=\"150\" y=\"393\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">示弟立志说</text>\n<rect x=\"260\" y=\"366\" width=\"180\" height=\"44\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.2\"/>\n<text x=\"350\" y=\"393\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">训蒙大意</text>\n<rect x=\"460\" y=\"366\" width=\"180\" height=\"44\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.2\"/>\n<text x=\"550\" y=\"393\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">教约</text>\n</g>\n</svg>",
+    "caption": "《传习录·卷中》结构一览：八封论学书信（六位来信人）各有对手与主题，卷末附家书与两篇儿童教育短文。其中答顾东桥书最长，末段「拔本塞源论」历来被单独抬出来读。"
+   },
+   {
+    "type": "p",
+    "text": "卷首有钱德洪一段按语，交代这卷书的来历：南大吉（字元善）当年刻《传习录》，下册收先生手书八篇；钱德洪重编时删去《答徐成之》两封调停朱陆的信，增补了答聂文蔚的第二书。按语里有一句写他老师的处境，读来沉重——"
+   },
+   {
+    "type": "quote",
+    "original": "平生冒天下之非诋推陷，万死一生，遑遑然不忘讲学，惟恐吾人不闻斯道，流于功利机智，以日堕于夷狄禽兽而不觉",
+    "translation": "先师平生冒着天下的诋毁陷害,九死一生,惶惶然不忘讲学,只怕我们听不到这道理,流于功利机巧,以致日日堕入夷狄禽兽而不自觉"
+   },
+   {
+    "type": "p",
+    "text": "注意「万死一生」不是修辞。写这些信的年代，王阳明刚平定宁王之乱，功高遭忌，毁谤满天下；他的学说被朝野守旧者斥为伪学。也就是说，这一卷里从容不迫的说理文字，是在舆论的枪林弹雨里写的。知道这个背景，再读信里那些不动声色的坚持，分量完全不同。"
+   },
+   {
+    "type": "figure",
+    "ftype": "timeline",
+    "svg": "<svg viewBox=\"0 0 700 250\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\">\n<text x=\"350\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:19px;font-weight:bold\">《传习录》卷中的成书流变</text>\n<line x1=\"60\" y1=\"120\" x2=\"640\" y2=\"120\" style=\"stroke:var(--line);stroke-width:2\"/>\n<circle cx=\"120\" cy=\"120\" r=\"7\" style=\"fill:var(--cinnabar)\"/>\n<text x=\"120\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px;font-weight:bold\">正德十三年（1518）</text>\n<text x=\"120\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px\">薛侃初刻于虔州</text>\n<text x=\"120\" y=\"170\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:12px;opacity:.75\">收课堂语录（今卷上之源）</text>\n<circle cx=\"350\" cy=\"120\" r=\"7\" style=\"fill:var(--cinnabar)\"/>\n<text x=\"350\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px;font-weight:bold\">嘉靖三年（1524）</text>\n<text x=\"350\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px\">南大吉（元善）续刻于越</text>\n<text x=\"350\" y=\"170\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:12px;opacity:.75\">增先生手书两册（今卷中之源）</text>\n<circle cx=\"580\" cy=\"120\" r=\"7\" style=\"fill:var(--cinnabar)\"/>\n<text x=\"580\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px;font-weight:bold\">隆庆六年（1572）</text>\n<text x=\"580\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px\">钱德洪重编定本入《全书》</text>\n<text x=\"580\" y=\"170\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:12px;opacity:.75\">去《答徐成之》，增答聂文蔚第二书</text>\n<text x=\"350\" y=\"220\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:12px;opacity:.7\">卷首钱德洪按语自述取舍缘由：「今所去取，裁之时义则然」</text>\n</svg>",
+    "caption": "卷中的成书流变：从薛侃虔州初刻的课堂语录，到南大吉越中续刻收入手书，再到钱德洪重编、随《王文成公全书》行世的三卷定本。今天读到的卷中，取舍出自钱德洪之手。"
+   },
+   {
+    "type": "h2",
+    "text": "「道理我都懂」，是世上最大的错觉"
+   },
+   {
+    "type": "p",
+    "text": "顾东桥的信问得客气但尖锐：您讲知行并进，可学问总有次第，哪能不先知后行？王阳明的回答，是全卷第一块基石，也是心学最有名的话之一——"
+   },
+   {
+    "type": "quote",
+    "original": "知之真切笃实处即是行，行之明觉精察处即是知，知、行工夫本不可离。只为后世学者分作两截用功，失却知、行本体，故有合一并进之说。",
+    "translation": "知得真切笃实之处就是行,行得明觉精察之处就是知,知行的功夫本不可分离。只因后世学者把它分作两截用功,失却了知行的本体,所以才有合一并进之说。"
+   },
+   {
+    "type": "p",
+    "text": "把这句话的脑回路翻成大白话。你说你「知道」熬夜伤身——可你昨晚两点才睡。阳明会说：你手碰到火会立刻缩回来，那才叫知道烫；你对「熬夜伤身」这四个字，只是听说过，没有知道。真知道一件事，行为会像手离火那样自动发生；反过来，只有真的做了、在做的过程里越做越明白，那个「知」才算完成。知和行不是流水线上的两道工序，是同一件事的两面——就像「会游泳」这件事，不存在「理论上会了、只差下水」的状态：不敢下水，就是不会。"
+   },
+   {
+    "type": "figure",
+    "ftype": "contrast",
+    "svg": "<svg viewBox=\"0 0 700 320\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\">\n<text x=\"350\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:19px;font-weight:bold\">两种活法：知行两截 vs 知行合一</text>\n<text x=\"185\" y=\"70\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:15px;font-weight:bold\">后世学者：分作两截用功</text>\n<rect x=\"70\" y=\"90\" width=\"100\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/>\n<text x=\"120\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:16px\">知</text>\n<rect x=\"230\" y=\"90\" width=\"100\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/>\n<text x=\"280\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:16px\">行</text>\n<line x1=\"170\" y1=\"116\" x2=\"230\" y2=\"116\" style=\"stroke:var(--line);stroke-width:1.5;stroke-dasharray:5 5\"/>\n<text x=\"200\" y=\"106\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:13px\">断了</text>\n<text x=\"185\" y=\"176\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px;opacity:.8\">「先学明白再去做」——</text>\n<text x=\"185\" y=\"198\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px;opacity:.8\">结果是终身不行，也终身不知</text>\n<line x1=\"350\" y1=\"60\" x2=\"350\" y2=\"290\" style=\"stroke:var(--line);stroke-width:1;stroke-dasharray:3 5\"/>\n<text x=\"520\" y=\"70\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:15px;font-weight:bold\">阳明：知行本体只是一个</text>\n<circle cx=\"520\" cy=\"135\" r=\"52\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:2\"/>\n<line x1=\"520\" y1=\"83\" x2=\"520\" y2=\"187\" style=\"stroke:var(--cinnabar);stroke-width:1;stroke-dasharray:3 3\"/>\n<text x=\"496\" y=\"140\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:16px\">知</text>\n<text x=\"544\" y=\"140\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:16px\">行</text>\n<text x=\"520\" y=\"220\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px;opacity:.85\">知之真切笃实处，即是行</text>\n<text x=\"520\" y=\"242\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px;opacity:.85\">行之明觉精察处，即是知</text>\n<text x=\"350\" y=\"308\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:12px;opacity:.7\">据《答顾东桥书》：「知、行工夫本不可离，只为后世学者分作两截用功，故有合一并进之说」</text>\n</svg>",
+    "caption": "两种用功方式的对比：把知行拆成两截，就会「先学明白再做」地无限拖延；阳明说知行本是一体，真切笃实的知本身就是行的开始。据《答顾东桥书》。"
+   },
+   {
+    "type": "p",
+    "text": "顾东桥又抛出一个更根本的担忧：只求本心，会不会丢了外部世界的「物理」（事事物物的道理）？这一问逼出了心学的地基——「心即理」："
+   },
+   {
+    "type": "quote",
+    "original": "夫物理不外于吾心，外吾心而求物理，无物理矣；遗物理而求吾心，吾心又何物邪？心之体，性也，性即理也。故有孝亲之心，即有孝之理，无孝亲之心，即无孝之理矣",
+    "translation": "事物之理不外于我心,离开我心去求事物之理,就没有事物之理了;遗弃事物之理去求我心,我心又是什么呢?心的本体就是性,性就是理。所以有孝亲的心,就有孝的理,没有孝亲的心,就没有孝的理了"
+   },
+   {
+    "type": "p",
+    "text": "这段最容易被读成玄学，其实用一个例子就落地了：「孝的道理」在哪里？在《孝经》的纸上吗？一个人能把二十四孝倒背如流、却半年不给爸妈打一个电话，他身上有「孝之理」吗？阳明说：没有。孝的道理不是挂在外面等你背诵的条文，它只在你心里那份对父母的挂念一动时，才真实存在——就像疼不在病历本里，只在你疼的那一下里。这里他点名商榷了朱熹「心与理」一分一合的讲法，认为那已经埋下了把心和理拆成两截的雷。要说明：这是学理之争而非意气之争，朱熹讲格物穷理自有其严密体系，阳明的批评是不是完全公允，历代学者有不同看法——分歧如实摆在这里，读者可以自己掂量。"
+   },
+   {
+    "type": "figure",
+    "ftype": "quotecard",
+    "svg": "<svg viewBox=\"0 0 700 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\">\n<rect x=\"24\" y=\"20\" width=\"652\" height=\"260\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/>\n<rect x=\"34\" y=\"30\" width=\"632\" height=\"240\" rx=\"6\" style=\"fill:none;stroke:var(--line);stroke-width:.6\"/>\n<text x=\"350\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:27px;font-weight:bold\">知之真切笃实处即是行，</text>\n<text x=\"350\" y=\"168\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:27px;font-weight:bold\">行之明觉精察处即是知。</text>\n<text x=\"350\" y=\"226\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px;opacity:.75\">——《传习录 · 卷中 · 答顾东桥书》</text>\n<rect x=\"596\" y=\"52\" width=\"44\" height=\"44\" rx=\"5\" style=\"fill:var(--cinnabar)\"/>\n<text x=\"618\" y=\"82\" text-anchor=\"middle\" style=\"fill:var(--paper);font-family:var(--font-serif);font-size:20px;font-weight:bold\">心</text>\n</svg>",
+    "caption": "金句卡：知之真切笃实处即是行，行之明觉精察处即是知。——《传习录·卷中·答顾东桥书》"
+   },
+   {
+    "type": "h2",
+    "text": "良知是尺子，不是题库"
+   },
+   {
+    "type": "p",
+    "text": "顾东桥不服，追问了一个特别实际的问题：大道理好懂，可具体的礼节、随时势变化的细目（「节目时变」），差之毫厘谬以千里，不去外面学，行吗？这一问，问出了全卷最漂亮的一个比喻——"
+   },
+   {
+    "type": "quote",
+    "original": "夫良知之于节目时变，犹规矩、尺度之于方圆、长短也；节目时变之不可预定，犹方圆、长短之不可胜穷也。故规矩诚立，则不可欺以方圆，而天下之方圆不可胜用矣；尺度诚陈，则不可欺以长短，而天下之长短不可胜用矣；良知诚致，则不可欺以节目时变，而天下之节目时变不可胜应矣。",
+    "translation": "良知对于节目时变,好比规矩、尺度对于方圆、长短;节目时变不可预先定下,好比方圆、长短不可穷尽。所以规矩确立了,就不能拿方圆来欺骗它,而天下的方圆便用之不尽了;尺度确立了,就不能拿长短来欺骗它,而天下的长短便用之不尽了;良知真致了,就不能拿节目时变来欺骗它,而天下的节目时变便应之不尽了。"
+   },
+   {
+    "type": "p",
+    "text": "「规矩」是画圆的圆规、画方的矩尺。这个比喻的脑回路是：世界上的圆有无穷多个，你不可能把每个圆都背下来；但你手里有一把圆规，任何尺寸的圆都画得出。良知就是那把圆规——它不是预存了所有答案的题库，它是判断力本身。想想你入职第一年：员工手册再厚，也总会遇到手册没写的情况，最后靠的是什么？是你心里那杆能权衡轻重的秤。家里老人生病，该不该辞职回去照顾？这种事没有标准答案可查，古人也遇到过——"
+   },
+   {
+    "type": "quote",
+    "original": "夫舜之不告而娶，岂舜之前已有不告而娶者为之准则，故舜得以考之何典，问诸何人，而为此邪？抑亦求诸其心一念之真知，权轻重之宜，不得已而为此邪？",
+    "translation": "舜不告而娶,难道舜以前已有不告而娶的人作为准则,使舜得以查考于哪部典籍、询问于哪个人,才这么做?还是求之于自己心中一念的真知,权衡轻重的所宜,不得已才这么做?"
+   },
+   {
+    "type": "p",
+    "text": "舜没有禀告父母就娶妻——严重违反礼法。他查了哪本典籍、问了哪位专家？都没有，因为史无前例。他靠的是心里一念之真知，权衡「不告而娶」与「无后」孰轻孰重。但注意，阳明立刻补了一道安全阀：假使舜的动机不是真为延续后嗣，那这件事就是大不孝。也就是说，「凭良知判断」绝不等于「跟着感觉走」——良知是把私心杂念收拾干净之后的明觉，动机的真诚是它唯一的合法性来源。这条线划得很清，不划清，心学就会滑向自我合理化的借口。"
+   },
+   {
+    "type": "figure",
+    "ftype": "metaphor",
+    "svg": "<svg viewBox=\"0 0 700 340\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\">\n<text x=\"350\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:19px;font-weight:bold\">良知是尺子，不是题库</text>\n<text x=\"185\" y=\"68\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:15px;font-weight:bold\">背题库：一事记一个答案</text>\n<circle cx=\"100\" cy=\"120\" r=\"22\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<rect x=\"150\" y=\"100\" width=\"44\" height=\"40\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<circle cx=\"245\" cy=\"120\" r=\"14\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<rect x=\"82\" y=\"160\" width=\"36\" height=\"26\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<circle cx=\"180\" cy=\"176\" r=\"18\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<text x=\"250\" y=\"182\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:18px;font-weight:bold\">？</text>\n<text x=\"185\" y=\"232\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px;opacity:.85\">「节目时变不可预定」——</text>\n<text x=\"185\" y=\"254\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px;opacity:.85\">情况穷举不尽，题库永远背不完</text>\n<line x1=\"350\" y1=\"56\" x2=\"350\" y2=\"300\" style=\"stroke:var(--line);stroke-width:1;stroke-dasharray:3 5\"/>\n<text x=\"520\" y=\"68\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:15px;font-weight:bold\">持规矩：一具在手，方圆无穷</text>\n<line x1=\"520\" y1=\"96\" x2=\"480\" y2=\"176\" style=\"stroke:var(--cinnabar);stroke-width:2.4\"/>\n<line x1=\"520\" y1=\"96\" x2=\"560\" y2=\"176\" style=\"stroke:var(--cinnabar);stroke-width:2.4\"/>\n<circle cx=\"520\" cy=\"96\" r=\"5\" style=\"fill:var(--cinnabar)\"/>\n<path d=\"M 480 176 A 57 57 0 0 0 560 176\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:1.4;stroke-dasharray:4 3\"/>\n<circle cx=\"450\" cy=\"230\" r=\"16\" style=\"fill:none;stroke:var(--line);stroke-width:1.2\"/>\n<circle cx=\"520\" cy=\"238\" r=\"26\" style=\"fill:none;stroke:var(--line);stroke-width:1.2\"/>\n<circle cx=\"592\" cy=\"230\" r=\"12\" style=\"fill:none;stroke:var(--line);stroke-width:1.2\"/>\n<text x=\"520\" y=\"290\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:13px;opacity:.85\">「规矩诚立，则天下之方圆不可胜用」</text>\n<text x=\"350\" y=\"326\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:12px;opacity:.7\">据《答顾东桥书》规矩尺度之喻：良知是判断力本身，不是预存的答案清单</text>\n</svg>",
+    "caption": "题库式学习 vs 尺子式学习：情况穷举不尽，答案背不完；良知如规矩尺度，一具在手，天下之方圆不可胜用。据《答顾东桥书》。"
+   },
+   {
+    "type": "p",
+    "text": "那向外求知识就没用了吗？阳明打了另一个比方，同样一针见血——"
+   },
+   {
+    "type": "quote",
+    "original": "今欲去此之蔽，不知致力于此，而欲以外求，是犹目之不明者不务服药调理以治其目，而徒伥伥然求明于其外；明岂可以自外而得哉？",
+    "translation": "如今要去掉这遮蔽,不知在这良知上用力,反想向外去求,这就像眼睛不明亮的人不去服药调理来治他的眼,却茫然向外去求明亮;明亮岂能从身外得来?"
+   },
+   {
+    "type": "p",
+    "text": "眼睛坏了，该治眼睛，而不是满世界找更亮的灯。放到今天：判断力一团浆糊的时候，再囤十门课、再关注一百个博主，只会更乱——信息是灯，判断力是眼，灯再多也替不了眼。这不是反智，阳明后面会亲口说见闻多多益善（见答欧阳崇一一节），前提是那双眼先得能看。"
+   },
+   {
+    "type": "h2",
+    "text": "格物致知，落在给爸妈装暖气这件事上"
+   },
+   {
+    "type": "p",
+    "text": "「格物、致知、诚意、正心」，《大学》里这串词听着像绕口令。顾东桥挑刺说：照你的讲法，难道知道怎么伺候父母冷暖就算诚意了？阳明索性用「温凊奉养」——让父母冬天暖和、夏天凉快、日常供养周到——把整串概念拆了一遍。这是全卷最适合初学者的一段，因为它全程不离一件具体的家务事："
+   },
+   {
+    "type": "quote",
+    "original": "盖鄙人之见，则谓意欲温凊、意欲奉养者，所谓「意」也，而未可谓之「诚意」。必实行其温凊、奉养之意，务求自慊而无自欺，然后谓之「诚意」。",
+    "translation": "依我的看法,意要冬温夏凊、意要奉养,这是所谓『意』,却还不能叫作『诚意』。必实实在在去行那温凊、奉养之意,务求自己心安而无自欺,然后才叫『诚意』。"
+   },
+   {
+    "type": "p",
+    "text": "翻译成今天的场景：你「想孝顺爸妈」——这是意，人人都有，不值钱。你给爸妈买了台按摩仪，拍照发了朋友圈，按摩仪在墙角吃了半年灰——意有了，诚意没有。什么时候才算诚意？真去做了，做到位了，而且——注意这个词——「自慊」：自己心里踏实，没有一丝糊弄自己的成分。「无自欺」是整个功夫的枢纽：别人你都骗得过，你心里那声「其实我没做到」的小声音，骗不过。"
+   },
+   {
+    "type": "quote",
+    "original": "温凊之物格，然后知温凊之良知始致；奉养之物格，然后知奉养之良知始致。故曰：「物格而后知至。」",
+    "translation": "温凊之物格了,然后温凊的良知才致;奉养之物格了,然后奉养的良知才致。所以说:『物格而后知至。』"
+   },
+   {
+    "type": "p",
+    "text": "这句把次第讲反了——反得有道理。通常以为：先学知识（致知），再去做事（格物）。阳明说：顺序倒过来，事情做到位了（物格），那件事上的良知才算真正兑现（知至），心意才算真（意诚）。学问不是「先学后做」的直线，是「做到位了认知才完成」的回路。就像带孩子：没当过父母的人读一百本育儿书，也只是「知道」；夜里第三次起来喂奶的那一刻，有些东西才真的「知至」了。"
+   },
+   {
+    "type": "figure",
+    "ftype": "structure",
+    "svg": "<svg viewBox=\"0 0 700 360\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\">\n<text x=\"350\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:19px;font-weight:bold\">拿「让爸妈冬暖夏凉」这件事，拆开格物致知诚意</text>\n<g>\n<rect x=\"46\" y=\"60\" width=\"130\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<text x=\"111\" y=\"86\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:15px\">意</text>\n<text x=\"111\" y=\"104\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:11px;opacity:.8\">想让爸妈过得好</text>\n<text x=\"305\" y=\"80\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:12px\">实行到位、自慊无自欺</text>\n<line x1=\"186\" y1=\"86\" x2=\"424\" y2=\"86\" style=\"stroke:var(--line);stroke-width:1.4\"/>\n<path d=\"M 424 86 l -9 -5 v 10 z\" style=\"fill:var(--line)\"/>\n<rect x=\"434\" y=\"60\" width=\"220\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:1.6\"/>\n<text x=\"544\" y=\"92\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:16px;font-weight:bold\">诚意</text>\n</g>\n<g>\n<rect x=\"46\" y=\"140\" width=\"130\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<text x=\"111\" y=\"166\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:15px\">知</text>\n<text x=\"111\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:11px;opacity:.8\">知道该怎么照料</text>\n<text x=\"305\" y=\"160\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:12px\">照良知所知做到无一毫不尽</text>\n<line x1=\"186\" y1=\"166\" x2=\"424\" y2=\"166\" style=\"stroke:var(--line);stroke-width:1.4\"/>\n<path d=\"M 424 166 l -9 -5 v 10 z\" style=\"fill:var(--line)\"/>\n<rect x=\"434\" y=\"140\" width=\"220\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:1.6\"/>\n<text x=\"544\" y=\"172\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:16px;font-weight:bold\">致知</text>\n</g>\n<g>\n<rect x=\"46\" y=\"220\" width=\"130\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.4\"/>\n<text x=\"111\" y=\"246\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:15px\">物</text>\n<text x=\"111\" y=\"264\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:11px;opacity:.8\">奉养父母这件事</text>\n<text x=\"305\" y=\"240\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:12px\">一如良知之所知而为之</text>\n<line x1=\"186\" y1=\"246\" x2=\"424\" y2=\"246\" style=\"stroke:var(--line);stroke-width:1.4\"/>\n<path d=\"M 424 246 l -9 -5 v 10 z\" style=\"fill:var(--line)\"/>\n<rect x=\"434\" y=\"220\" width=\"220\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:1.6\"/>\n<text x=\"544\" y=\"252\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:16px;font-weight:bold\">格物</text>\n</g>\n<text x=\"350\" y=\"316\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">回路：物格 → 知至 → 意诚（做到位了，认知才完成，心意才真）</text>\n<text x=\"350\" y=\"342\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:12px;opacity:.7\">据《答顾东桥书》温凊奉养之例：「物格而后知至，知至而后意诚」</text>\n</svg>",
+    "caption": "用「温凊奉养」拆解格物致知诚意：意、知、物是原材料，各自做到十分、无一毫自欺，才升级为诚意、致知、格物；次第是物格→知至→意诚。据《答顾东桥书》。"
+   },
+   {
+    "type": "h2",
+    "text": "拔本塞源：一场对「卷」的千年诊断"
+   },
+   {
+    "type": "p",
+    "text": "答顾东桥书的末段，阳明突然把镜头从个人功夫拉到整个文明，写下了后人单独抬出来传抄的「拔本塞源论」——拔掉病根、堵住污染源。它回答一个大问题：世道为什么会变成现在这样？他的答案从人心的「出厂设置」讲起——"
+   },
+   {
+    "type": "quote",
+    "original": "天下之人心，其始亦非有异于圣人也，特其间于有我之私，隔于物欲之蔽，大者以小，通者以塞，人各有心，至有视其父子兄弟如仇雠者。",
+    "translation": "天下人的心,起初也并非异于圣人,只是隔在『有我』的私念里、被物欲遮蔽,本来大的变小、本来通的变塞,人人各怀其心,以至有把父子兄弟看作仇敌的。"
+   },
+   {
+    "type": "p",
+    "text": "人心的出厂设置本来和圣人一样，坏在后来装了太多后台程序：「有我之私」和「物欲之蔽」。接下来他描绘学风败坏的景象，把世上的学者比作挤进一座「百戏之场」——四面八方都是杂耍卖艺争奇斗巧的，看客「前瞻后盼，应接不遑」，看到精神恍惚，忘了自己家在哪。五百年后的我们对这个画面应该毫无理解障碍：它就是你的信息流。而下面这四句排比，简直像是从今天的社交网络评论区里抄出来的——"
+   },
+   {
+    "type": "quote",
+    "original": "记诵之广，适以长其敖也；知识之多，适以行其恶也；闻见之博，适以肆其辨也；辞章之富，适以饰其伪也。",
+    "translation": "记诵的广博,恰好助长他的傲慢;知识的繁多,恰好助行他的恶事;闻见的广博,恰好放纵他的诡辩;辞章的丰富,恰好文饰他的虚伪。"
+   },
+   {
+    "type": "p",
+    "text": "注意逻辑：不是知识本身有毒，是「相矜以知，相轧以势，相争以利」——当学问变成攀比的筹码、倾轧的武器，知识越多毒越深。学历军备竞赛、简历美化、用漂亮话术包装私利，都在这四句的射程里。要诚实地说：阳明开出的药方是回到三代之治「惟以成德为事」的复古理想，各安其分、不慕其外——这幅对分工社会的想象有强烈的时代局限，今天不可能照搬，也不必美化。但他的诊断——「功利之毒沦浃于人之心髓」，学问一旦只剩功利这一个发动机，整个系统就会空转——放到今天依然锋利。而他在长篇痛陈之后，收尾只留了一个不悲观的理由："
+   },
+   {
+    "type": "quote",
+    "original": "所幸天理之在人心，终有所不可泯，而良知之明，万古一日，则其闻吾拔本塞源之论，必有恻然而悲，戚然而痛，愤然而起，沛然若决江河，而有所不可御者矣。",
+    "translation": "所幸天理在人心,终有不可泯灭之处,而良知之明,万古如同一日,那么人听到我拔本塞源的议论,必有恻然而悲、戚然而痛、愤然而起、沛然如决江河而不可遏止的。"
+   },
+   {
+    "type": "p",
+    "text": "「良知之明，万古一日」——不管世道怎么污染，人心里那盏灯泯灭不了，今天亮度和一万年前一样。这不是乐观主义的口号，是他整个学说的承重墙：如果这盏灯会灭，后面所有功夫都无从谈起。"
+   },
+   {
+    "type": "h2",
+    "text": "痒，只有自己挠——答周道通"
+   },
+   {
+    "type": "p",
+    "text": "周道通的问题朴素得多：立志时断时续怎么办？身边没有朋友一起讲习，功夫就懈怠，怎么办？阳明的回答里有一句极生动的大白话——"
+   },
+   {
+    "type": "quote",
+    "original": "自家痛痒，自家须会知得，自家须会搔摩得；既自知得痛痒，自家须不能不搔摩得。",
+    "translation": "自己的痛痒,自己须能知得,自己须能搔摩得;既自知得痛痒,自己便不能不去搔摩。"
+   },
+   {
+    "type": "p",
+    "text": "痒，只有自己知道在哪，也只有自己的手够得着。打卡群、监督师、学习搭子，都替你挠不了。同一封信里他还有个更扎心的观察：好色之人从来不会「忘记」好色，也从不喊坚持不下去——因为那是真想要。志向立不牢，不是方法不对、工具不够，是「志欠真切」：还不够想要。这话听着像批评，其实是诊断——它把问题从「我意志力差」（自责，无解）挪到「我到底要什么」（可以老实回答）上。"
+   },
+   {
+    "type": "quote",
+    "original": "凡人为学，终身只为这一事。自少至老、自朝至暮，不论有事无事，只是做得这一件，所谓「必有事焉」者也。",
+    "translation": "凡人为学,终身只为这一件事。从少到老、从早到晚,不论有事无事,只是做得这一件,这就是所谓『必有事焉』。"
+   },
+   {
+    "type": "p",
+    "text": "「终身只为这一事」不是让你二十四小时紧绷，而是取消「上班糊弄、下班修行」「工作日堕落、周末自律」这种两个时区的划分——功夫不挑场地，洗碗、开会、堵车，都是它的道场。周道通还提到，与其争论朱熹陆九渊谁对谁错，不如各自做功夫。阳明大赞，顺手写下一句可以裱起来的话——"
+   },
+   {
+    "type": "quote",
+    "original": "以言语谤人，其谤浅；若自己不能身体实践，而徒入耳出口，呶呶度日，是以身谤也，其谤深矣。",
+    "translation": "用言语诽谤人,那诽谤还浅;若自己不能亲身体察践行,而徒然入耳出口、絮絮地度日,这是用自身去诽谤,那诽谤就深了。"
+   },
+   {
+    "type": "p",
+    "text": "用嘴诋毁别人，伤害有限；自己号称信奉某个道理却从不实践、整天空谈——那是用你的整个人生在给这个道理抹黑，「以身谤也」。转发了一百条读书笔记而一本书没读完，某种意义上就是在「以身谤」读书这件事。同段还有一句「攻吾之短者是吾师」：来批评我短处的人是我的老师——挨批评的正确姿势，五百年前就写好了。"
+   },
+   {
+    "type": "h2",
+    "text": "心静不下来？别追着念头打——答陆原静"
+   },
+   {
+    "type": "p",
+    "text": "陆原静是全卷问得最细的人，细到钱德洪在两封信后特意附了一段跋：这组问答刊出，「读者皆喜澄善问，师善答」，都觉得听到了没听过的道理；而阳明自己的评语却泼了盆冷水——原静所问毕竟「只是知解上转」，这门学问贵在反求自得，不是靠拆解概念能进去的。不过他的问题今天人人都懂：我一坐下来心就乱，念头一个接一个，怎么办？阳明的回答先给这个「怎么办」本身泼了盆冷水——"
+   },
+   {
+    "type": "quote",
+    "original": "是有意于求宁静，是以愈不宁静耳。夫妄心则动也，照心非动也；恒照则恒动恒静，天地之所以恒久而不已也。",
+    "translation": "这是有意于求宁静,所以愈不宁静罢了。妄心是动,照心不是动;恒照则恒动恒静,这是天地所以恒久而不息的缘故。"
+   },
+   {
+    "type": "p",
+    "text": "这就是失眠者的悖论：越用力想睡，越睡不着——因为「我要静下来」本身就是一个新的、更执着的念头。阳明把心拆成两层：乱跑的念头是「妄心」，但那个能看见「念头在乱跑」的觉察本身——「照心」——从来没乱过。功夫不是扑灭念头（扑不灭，而且越扑越多），是站到照心那一层去：念头来，看见它；念头走，不送。同组问答里还有一句常被单独摘出来的话——"
+   },
+   {
+    "type": "quote",
+    "original": "乐是心之本体，虽不同于七情之乐，而亦不外于七情之乐；虽则圣贤别有真乐，而亦常人之所同有，但常人有之而不自知，反自求许多忧苦，自加迷弃。",
+    "translation": "乐是心的本体,虽不同于七情之乐,而也不外于七情之乐;虽则圣贤另有真乐,而也是常人所共有的,只是常人有它而不自知,反自寻许多忧苦、自加迷弃。"
+   },
+   {
+    "type": "p",
+    "text": "「乐是心之本体」很容易被念成心灵鸡汤，所以要把语境钉死：说这话的人被廷杖四十、贬到瘴疠之地的龙场驿，在那里给自己备过一具石椁、日夜端坐其中——他说的「乐」不是岁月静好，而是心的底色：哪怕在忧苦里，那个能感到「一口热汤真踏实」的能力本身，从未丢失。阳明说常人到处问「用什么办法能得到这个乐」，是「骑驴觅驴」——骑在驴背上满世界找驴。对着幸福学课程焦虑「我怎么还不幸福」的人，值得把这四个字抄下来。而这一组问答里最美的意象，是镜子——"
+   },
+   {
+    "type": "quote",
+    "original": "其良知之体，皦如明镜，略无纤翳，妍媸之来，随物见形，而明镜曾无留染，所谓「情顺万事而无情」也。",
+    "translation": "其良知之体,皎洁如明镜,毫无纤尘翳障,妍丑之来,随物现形,而明镜未尝有所留染,这就是所谓『情顺万事而无情』。"
+   },
+   {
+    "type": "p",
+    "text": "镜子照东西，美的照出美，丑的照出丑，照得一丝不差——这叫「随物见形」，该有的情绪一分不少；但东西走了，镜面上不留任何残影——这叫「曾无留染」，不把情绪养成内伤。被领导批评，当下羞愧，是镜子在照；三天后还在半夜回放那句话，是镜面上长了锈。值得注意的是，阳明在这里坦然引了佛家「无所住而生其心」并说「未为非也」——不算错。但他与佛家的分界线也画得很清：在他看来，佛氏「有个自私自利之心」，为求自家清净脱离了人伦事务；儒者的镜子照的是爹妈、孩子、同事，照完还得接着干活。这是学派立场之辨，如实摆出，不评高下。"
+   },
+   {
+    "type": "figure",
+    "ftype": "metaphor",
+    "svg": "<svg viewBox=\"0 0 700 320\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\">\n<text x=\"350\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:19px;font-weight:bold\">良知如明镜：照得真，不挂住</text>\n<circle cx=\"350\" cy=\"160\" r=\"72\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:2.4\"/>\n<circle cx=\"350\" cy=\"160\" r=\"60\" style=\"fill:none;stroke:var(--line);stroke-width:.8\"/>\n<text x=\"350\" y=\"156\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:17px;font-weight:bold\">明镜</text>\n<text x=\"350\" y=\"180\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:12px;opacity:.8\">略无纤翳</text>\n<text x=\"120\" y=\"120\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:15px\">妍（美的来）</text>\n<text x=\"120\" y=\"206\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:15px\">媸（丑的来）</text>\n<line x1=\"165\" y1=\"116\" x2=\"272\" y2=\"140\" style=\"stroke:var(--line);stroke-width:1.4\"/>\n<path d=\"M 272 140 l -10 -2 4 9 z\" style=\"fill:var(--line)\"/>\n<line x1=\"165\" y1=\"202\" x2=\"272\" y2=\"180\" style=\"stroke:var(--line);stroke-width:1.4\"/>\n<path d=\"M 272 180 l -10 3 5 8 z\" style=\"fill:var(--line)\"/>\n<line x1=\"428\" y1=\"140\" x2=\"540\" y2=\"116\" style=\"stroke:var(--line);stroke-width:1.4;stroke-dasharray:5 4\"/>\n<line x1=\"428\" y1=\"180\" x2=\"540\" y2=\"202\" style=\"stroke:var(--line);stroke-width:1.4;stroke-dasharray:5 4\"/>\n<text x=\"592\" y=\"114\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">一照而皆真</text>\n<text x=\"592\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">一过而不留</text>\n<text x=\"350\" y=\"278\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">情绪来了照见它，过去了不追着它跑——「情顺万事而无情」</text>\n<text x=\"350\" y=\"304\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:12px;opacity:.7\">据《答陆原静书》明镜之喻：「妍媸之来，随物见形，而明镜曾无留染」</text>\n</svg>",
+    "caption": "明镜之喻：妍媸之来，随物见形——情绪如实照见，一分不假；一过而不留——不留染、不内耗。据《答陆原静书》，「情顺万事而无情」语出程颢。"
+   },
+   {
+    "type": "h2",
+    "text": "读书刷课到底有没有用？——答欧阳崇一"
+   },
+   {
+    "type": "p",
+    "text": "欧阳崇一的问题替所有爱学习的人问的：良知不靠见闻，那多闻多见岂不是白费？阳明的回答两边都不偏——"
+   },
+   {
+    "type": "quote",
+    "original": "良知不由见闻而有，而见闻莫非良知之用，故良知不滞于见闻，而亦不离于见闻。",
+    "translation": "良知不由见闻而有,而见闻无不是良知之用,所以良知不滞于见闻,而也不离于见闻。"
+   },
+   {
+    "type": "p",
+    "text": "良知不是从见闻里学来的（它是本有的判断力），但它的运行一刻也离不开见闻（判断总得有料可判）。关键在这封信里的另一个词：「主意头脑」。学问功夫只要主线对了——以致良知为事——那么多闻多见全是致良知的燃料；主线丢了，专在见闻上打转，学习本身反而成了逃避的方式。用今天的话说：带着真问题去读书，读到的每一页都在喂养你的判断力；为缓解焦虑而囤课，收藏夹只是一个更体面的游戏库。区别不在读多少，在「头脑」还在不在。"
+   },
+   {
+    "type": "h2",
+    "text": "怎么跟权威吵架——答罗整庵"
+   },
+   {
+    "type": "p",
+    "text": "罗整庵（钦顺）不是学生，是当时程朱学阵营真正的重量级人物。他批评阳明擅改《大学》古本、立异于朱子——这在当时是很重的指控，近乎学术不端加政治不正确。阳明的回信是全卷姿态最庄重的一封，其中这几句，值得每个参加过学术争论（或者微信群吵架）的人读——"
+   },
+   {
+    "type": "quote",
+    "original": "夫道，天下之公道也；学，天下之公学也。非朱子可得而私也，非孔子可得而私也。天下之公也，公言之而已矣。故言之而是，虽异于己，乃益于己也；言之而非，虽同于己，适损于己也。",
+    "translation": "道,是天下的公道;学,是天下的公学。不是朱子可得而私有的,不是孔子可得而私有的。是天下之公,公正地说它罢了。所以说得对,虽与自己相异,正是有益于自己;说得不对,虽与自己相同,恰是损害自己。"
+   },
+   {
+    "type": "p",
+    "text": "真理不是任何人的私有财产——包括朱子，包括孔子。判断一句话，只看它对不对，不看它是谁说的、跟我是不是一伙的。「言之而是，虽异于己，乃益于己」：反对我但说得对的，是在帮我；吹捧我但说错了的，是在害我。同一封信里，阳明还大方承认自己《朱子晚年定论》一书「中间年岁早晚，诚有所未考」——考证确有不严谨处——但坚持核心主张不退。认账技术性失误、不放弃根本立场，这是争论的体面样子。顺带一提：朱王之争此后绵延数百年，双方各有真章，本站儒典组的《近思录》与这一卷对照着读，才算听全了两造陈词。"
+   },
+   {
+    "type": "h2",
+    "text": "良知的底色，是心疼——答聂文蔚"
+   },
+   {
+    "type": "p",
+    "text": "如果说答顾东桥书是论战，答聂文蔚第一书就是掏心窝。聂文蔚来信推许阳明之学，阳明回信时正处在毁谤的风口浪尖，他写下了全卷情感浓度最高的段落——"
+   },
+   {
+    "type": "quote",
+    "original": "夫人者，天地之心，天地万物本吾一体者也。生民之困苦荼毒，孰非疾痛之切于吾身者乎？不知吾身之疾痛，无是非之心者也。是非之心不虑而知，不学而能，所谓「良知」也。良知之在人心，无间于圣愚，天下古今之所同也。",
+    "translation": "人,是天地之心,天地万物本与我一体。生民的困苦荼毒,哪一样不是切于我身的疾痛?不知自身疾痛的,是没有是非之心的人。是非之心不思虑而知、不学习而能,就是所谓『良知』。良知在人心,无分于圣愚,是天下古今所共同的。"
+   },
+   {
+    "type": "p",
+    "text": "「万物一体」听着玄，推理链其实极简：你刷到灾难新闻，心里会一紧；地铁里有人晕倒，你会下意识起身——那一紧、那一动，不用学、不用想、来不及算利弊，它自己就发生了。阳明说：这就是证据。证明你和他人不是两座孤岛，你的神经末梢天然延伸到别人身上。需要解释的从来不是共情，而是麻木——「不知吾身之疾痛」才是病。在第二封信里，他给良知下了全卷最温柔的定义——"
+   },
+   {
+    "type": "quote",
+    "original": "盖良知只是一个天理自然明觉发见处，只是一个真诚恻怛，便是他本体。故致此良知之真诚恻怛以事亲便是孝，致此良知之真诚恻怛以从兄便是弟，致此良知之真诚恻怛以事君便是忠，只是一个良知，一个真诚恻怛。",
+    "translation": "良知只是一个天理自然明觉发见处,只是一个真诚恻怛,便是它的本体。所以致此良知的真诚恻怛去事亲便是孝,致此良知的真诚恻怛去从兄便是悌,致此良知的真诚恻怛去事君便是忠,只是一个良知、一个真诚恻怛。"
+   },
+   {
+    "type": "p",
+    "text": "「真诚恻怛」——真诚的心疼。孝、悌、忠不是三门要分别修的课，是同一份心疼流向不同的人：流向父母叫孝，流向兄长叫悌，流向职守叫忠。源头只有一个。这也是为什么钱德洪特意增录第二书——他说这封信把功夫讲得「明白简切，使人言下即得入手」。确实，全卷最能一句上手的功夫总结就在这里——"
+   },
+   {
+    "type": "quote",
+    "original": "夫「必有事焉」只是「集义」，「集义」只是「致良知」。说「集义」，则一时未见头恼；说「致良知」，即当下便有实地步可用工。",
+    "translation": "『必有事焉』只是『集义』,『集义』只是『致良知』。说『集义』,则一时见不着头脑;说『致良知』,便当下就有实地步可用功。"
+   },
+   {
+    "type": "p",
+    "text": "孟子那些「必有事焉」「勿忘勿助」的玄谈，历来让学者头大——用力算不算「助长」？不用力算不算「忘」？阳明一刀斩断：别绕了，就说「致良知」——此时此刻，就眼前这件事，把你心里那点分明的是非做出来。当下就有落脚的实地，不用先解决哲学问题再开始生活。"
+   },
+   {
+    "type": "h2",
+    "text": "卷末三篇：立志，和怎么教小孩"
+   },
+   {
+    "type": "p",
+    "text": "卷末附的三篇短文，把宏大的义理落到了两件最家常的事上：给弟弟讲怎么立志，给蒙馆老师讲怎么教小孩。《示弟立志说》开头就是一个种树的比喻——"
+   },
+   {
+    "type": "quote",
+    "original": "夫学，其先于立志。志之不立，犹不种其根，而徒事培拥灌漑，劳苦无成矣。",
+    "translation": "为学,首先在于立志。志不立,如同不种下根,而徒去培土浇灌,劳苦无成。"
+   },
+   {
+    "type": "p",
+    "text": "不种根，光浇水，浇的是一块空地。立志不是打鸡血、喊口号，是先回答那个根问题：我到底要成为什么样的人？这个答案没有，学习方法再先进，都是给空地施肥。要注意阳明说的志是「求为圣人之志」——是人格方向，不是业绩目标；把它偷换成KPI，就恰好掉进了他在拔本塞源论里骂的那个坑。《训蒙大意》则是一篇五百年前的教育心理学，核心比喻好到不需要解释——"
+   },
+   {
+    "type": "quote",
+    "original": "大抵童子之情，乐嬉游而惮拘检，如草木之始萌芽，舒畅之则条达，摧挠之则衰痿；今教童子必使其趋向鼓舞，中心喜悦，则其进自不能已：譬之时雨春风，沾被卉木，莫不萌动发越，自然日长月化；若冰霜剥落，则生意萧索，日就枯槁矣。",
+    "translation": "大抵童子的性情,乐于嬉游而怕拘束检点,如同草木初萌芽,舒展它则枝条通达,摧折它则衰萎。如今教童子,必使他们意趣向往、欢欣鼓舞,中心喜悦,那么他们的长进自不能止:譬如及时之雨、和煦春风,沾被草木,无不萌动发越,自然日长月化;若像冰霜剥落,那么生意萧索,日就枯槁了。"
+   },
+   {
+    "type": "p",
+    "text": "孩子是萌芽，教育要么做春风时雨，要么做冰霜。阳明批评当时的蒙馆先生「日惟督以句读课仿」、动辄鞭挞绳缚，把学校变成监狱，孩子「视学舍如囹狱而不肯入」——对照今天写作业写到亲子关系破裂的家庭，这幅画面毫不过时。他开的课表是歌诗、习礼、读书三样，唱歌不只是美育，是给孩子的情绪一个出口（「泄其跳号呼啸于咏歌」）。《教约》里还有一条具体到字数的操作规范——"
+   },
+   {
+    "type": "quote",
+    "original": "凡授书不在徒多，但贵精熟。量其资禀，能二百字者止可以授一百字，常使精神力量有余，则无厌苦之患，而有自得之美。",
+    "translation": "凡授书不在贪多,只贵精熟。量他们的资禀,能记二百字的只可授一百字,常使精神力量有余,那么没有厌苦之患,而有自得之美。"
+   },
+   {
+    "type": "p",
+    "text": "能学两百字的孩子，只教一百字——永远留三分余力。听起来「不够卷」，但阳明算的是另一笔账：留有余力，孩子才有「自得之美」——那种自己够到答案的甜。把甜留住，学习才是可持续的；把孩子榨干，是用一年的进度换掉一生的胃口。这条写给明代蒙馆的规矩，今天读来像是写给每一个辅导作业到深夜的家长。"
+   },
+   {
+    "type": "h2",
+    "text": "贯通：八封信，其实只回答了一个问题"
+   },
+   {
+    "type": "p",
+    "text": "现在把八封信摊开看，会发现六位来信人问的，其实是同一个问题穿了不同的马甲。顾东桥把「知」和「行」拆成两截，所以困在「先学明白再做」里；陆原静把「动」和「静」拆成两截，所以越求静越乱；欧阳崇一担心「德性」和「见闻」是两截，所以不知道书该不该读；罗整庵坚持「理」在心外，把「内」和「外」拆成两截，所以指责阳明遗弃外部世界；而世人把「一己」和「天下」拆成两截，所以觉得别人的苦与我无关。阳明八封信写了几万字，核心答案只有两个字：别拆。"
+   },
+   {
+    "type": "pull",
+    "text": "心即理，知即行，动即静，体即用，己即天下——用他自己反复念叨的话说，「只是一个」。"
+   },
+   {
+    "type": "figure",
+    "ftype": "structure",
+    "svg": "<svg viewBox=\"0 0 700 420\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\">\n<text x=\"350\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:19px;font-weight:bold\">八封信，一个答案：别拆成两截</text>\n<line x1=\"350\" y1=\"230\" x2=\"160\" y2=\"110\" style=\"stroke:var(--line);stroke-width:1.2\"/>\n<line x1=\"350\" y1=\"230\" x2=\"540\" y2=\"110\" style=\"stroke:var(--line);stroke-width:1.2\"/>\n<line x1=\"350\" y1=\"230\" x2=\"96\" y2=\"250\" style=\"stroke:var(--line);stroke-width:1.2\"/>\n<line x1=\"350\" y1=\"230\" x2=\"604\" y2=\"250\" style=\"stroke:var(--line);stroke-width:1.2\"/>\n<line x1=\"350\" y1=\"230\" x2=\"350\" y2=\"374\" style=\"stroke:var(--line);stroke-width:1.2\"/>\n<g>\n<rect x=\"80\" y=\"76\" width=\"160\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.3\"/>\n<text x=\"160\" y=\"98\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">知 ／ 行</text>\n<text x=\"160\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:11px;opacity:.75\">答顾东桥：先学后做？</text>\n</g>\n<g>\n<rect x=\"460\" y=\"76\" width=\"160\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.3\"/>\n<text x=\"540\" y=\"98\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">动 ／ 静</text>\n<text x=\"540\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:11px;opacity:.75\">答陆原静：求静愈不静？</text>\n</g>\n<g>\n<rect x=\"16\" y=\"224\" width=\"160\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.3\"/>\n<text x=\"96\" y=\"246\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">德性 ／ 见闻</text>\n<text x=\"96\" y=\"266\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:11px;opacity:.75\">答欧阳崇一：读书何用？</text>\n</g>\n<g>\n<rect x=\"524\" y=\"224\" width=\"160\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.3\"/>\n<text x=\"604\" y=\"246\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">心内 ／ 心外</text>\n<text x=\"604\" y=\"266\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:11px;opacity:.75\">答罗整庵：理在外？</text>\n</g>\n<g>\n<rect x=\"270\" y=\"352\" width=\"160\" height=\"52\" rx=\"8\" style=\"fill:none;stroke:var(--line);stroke-width:1.3\"/>\n<text x=\"350\" y=\"374\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:14px\">一己 ／ 天下</text>\n<text x=\"350\" y=\"394\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:11px;opacity:.75\">答聂文蔚：他人何干？</text>\n</g>\n<circle cx=\"350\" cy=\"230\" r=\"66\" style=\"fill:var(--paper);stroke:var(--cinnabar);stroke-width:2.4\"/>\n<text x=\"350\" y=\"218\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-family:var(--font-serif);font-size:18px;font-weight:bold\">只是一个</text>\n<text x=\"350\" y=\"246\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:16px;font-weight:bold\">致良知</text>\n<text x=\"350\" y=\"268\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif);font-size:11px;opacity:.75\">就事上致其良知</text>\n</svg>",
+    "caption": "卷中的问答地图：六位来信人各自把世界拆成两截，阳明的回答始终指向圆心——只是一个，致良知。"
+   },
+   {
+    "type": "p",
+    "text": "而把这个「一」落到手上的动作，也只有一个：致良知——在每一件具体的事上，把心里那点分明的是非做到十分，不自欺。这就是卷中在全书里的位置：上卷是「心即理」的课堂问答，散金碎玉；中卷把它锤炼成能扛住最强质疑的完整论证，并且第一次系统展开「致良知」与「拔本塞源」；下卷则是更晚年的圆熟话头。想看王阳明防守反击的真功夫，中卷是最好的一卷——对手够强，他才把话说到了最透。"
+   },
+   {
+    "type": "h2",
+    "text": "从卷中带走的三个自检"
+   },
+   {
+    "type": "p",
+    "text": "按本站的规矩，这里不提供人生指南，只归纳三条研习时可以拿来自我检验的问法。其一，用「做没做」检验「懂没懂」：下次说「道理我都懂」时，换成阳明的问法——这件事上我行出来了吗？没有，就承认那还不是真知。这不是自责，是把学习的起点找准。其二，主意头脑优先于信息量：打开一门新课、一本新书之前，先问自己此刻的主线是什么；主线在，多闻多见都是营养，主线丢了，再刷只是逛「百戏之场」。其三，功夫只有一处下手——不自欺：「务求自慊而无自欺」，每天能骗过所有人，骗不过自己心里那声轻轻的「不对吧」；听见它，别按掉。最后要说明：阳明学在后世也曾被讲成升官发财的「成功心法」，那恰恰是他在拔本塞源论里痛斥的功利之见——此卷研习的终点是「自慊」，不是「成功」。"
+   },
+   {
+    "type": "h2",
+    "text": "收束：收藏夹里的道理，不属于你"
+   },
+   {
+    "type": "p",
+    "text": "回到开头那个深夜。那位「道理我都懂」的顾东桥先生，收到的回信今天还完整地躺在这一卷里，等了五百年，等每一个把「懂了」当作终点的人。王阳明用八封信反复说的无非是：知与行之间没有传说中的鸿沟，只有一步——把此刻心里那点分明，做出来。收藏夹里的道理再多，也只是别人的道理；只有走过你的手和脚的那一条，才真正属于你。合上这一页之后你要做的下一件小事，无论多小——就是你的「格物」。"
+   },
+   {
+    "type": "refs",
+    "items": [
+     "原文与译文：《传习录·卷中》，王守仁著，门人钱德洪编，本站「观心」阳明心学组录文（据通行本）",
+     "成书源流：正德十三年（1518）薛侃虔州初刻语录；嘉靖三年（1524）南大吉越中续刻增手书二册；隆庆六年（1572）钱德洪重编三卷定本随《王文成公全书》行世（卷首钱德洪按语自述去取）",
+     "参考：陈荣捷《王阳明传习录详注集评》；钱穆《阳明学述要》；《王阳明全集》（上海古籍出版社）",
+     "站内互见：《大学》（格物致知本文）、《孟子》（尽心·必有事焉）、《近思录》（程朱一系之说，与本卷对读）、本站义理专题「格物致知」「人性之辨」"
+    ]
+   }
+  ]
+ },
+ "3": {
+  "title": "白话传习录 · 卷下",
+  "subtitle": "良知是你自家的准则:从深夜那一下「咯噔」,到天泉桥上的四句教——王阳明的最后一课",
+  "centralIdea": "良知人人现成、瞒它不得;功夫不在悬空想本体,而在念头发动处和眼前每件事上把它做实——这是王阳明晚年收拢一生学问的定盘话。",
+  "blocks": [
+   {
+    "type": "lead",
+    "text": "一个人临终前一年,把一生的学问收拢成四句话,在一座桥上交代给两个学生。这四句话后来吵了四百年,至今没吵完。《传习录》卷下,就是王阳明的最后一课:里面有那朵著名的深山之花,有满街的圣人,有天泉桥的夜话——还有一句最实在的底话:判断对错的那台仪器,你出厂就自带,只是你老不肯听它的。"
+   },
+   {
+    "type": "p",
+    "text": "先从一个你一定经历过的瞬间说起。深夜,你躺在床上刷手机,白天的一幕突然弹出来:开会时你把锅轻轻推给了同事,话说得很漂亮,没人听出来。可就在话出口的那半秒,你心里「咯噔」了一下——特别轻,轻到你马上用「大家都这样」把它按了回去。按回去之后,那点不舒服并没有消失,它只是搬到了深夜,趁你毫无防备时回来敲门。王阳明会告诉你:那一下「咯噔」,就是良知。它不用你培养,不用你上课,它一直在,是便知是,非便知非——你唯一做的事,是常年装作没听见。整卷《传习录·卷下》,讲的就是怎么别再装。"
+   },
+   {
+    "type": "h2",
+    "text": "这一卷是从哪儿来的:晚年最后的收拢"
+   },
+   {
+    "type": "p",
+    "text": "《传习录》一共三卷:卷上是早期门人记的讲学语录,卷中是八封论学书信,而这卷下,是王阳明晚年的语录,由陈九川、黄直、黄修易、黄省曾、钱德洪等一批学生各自笔录,阳明身后再由钱德洪汇集删定。也就是说,你在这一卷里听到的,是一个五十多岁、讲了半辈子学、平过叛乱也蹲过诏狱的人,把话越说越简、越说越狠的阶段。卷中还在跟人细细辩论,卷下已经常常一句话打到底。几个人名先记一下,后面都会出场:陈九川字惟濬(濬音同「俊」),卷下开篇就是他的提问;钱德洪号绪山,是记录和编纂的主力;王畿(畿音同「机」)字汝中,天泉桥上和钱德洪对辩的就是他。"
+   },
+   {
+    "type": "p",
+    "text": "本卷的关键句,一句是「尔那一点良知,是尔自家底准则」,一句是天泉桥的四句教:「无善无恶是心之体,有善有恶是意之动,知善知恶是良知,为善去恶是格物」。前一句是给每个普通人的,后一句是给整个王学定纲领的。这一卷篇幅很长、问答很碎,我们不逐条走,挑主线:先立「良知是准则」,再看「念头就是行动」,然后是「功夫在事上」,中间穿过那朵花、那条街,最后走上天泉桥,听他临别的叮咛。"
+   },
+   {
+    "type": "figure",
+    "ftype": "structure",
+    "svg": "<svg viewBox=\"0 0 760 320\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"传习录三卷结构图\"><text x=\"380\" y=\"44\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">《传习录》三卷 · 本文在哪一卷</text><rect x=\"40\" y=\"78\" width=\"210\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"145\" y=\"112\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">卷上</text><text x=\"145\" y=\"146\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">早期讲学语录</text><text x=\"145\" y=\"172\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">徐爱、陆澄、薛侃所记</text><text x=\"145\" y=\"198\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">立「心即理」基调</text><rect x=\"275\" y=\"78\" width=\"210\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"380\" y=\"112\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">卷中</text><text x=\"380\" y=\"146\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">论学书信</text><text x=\"380\" y=\"172\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">《答顾东桥书》等</text><text x=\"380\" y=\"198\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">义理辩难最细密</text><rect x=\"510\" y=\"78\" width=\"210\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:2.5\"/><text x=\"615\" y=\"112\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" style=\"fill:var(--cinnabar);font-family:var(--font-serif)\">卷下(本卷)</text><text x=\"615\" y=\"146\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">晚年语录 · 钱德洪汇定</text><text x=\"615\" y=\"172\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">陈九川、黄直等所记</text><text x=\"615\" y=\"198\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--cinnabar)\">含「天泉证道」四句教</text><text x=\"380\" y=\"282\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".7\">卷上打底 → 卷中辩难 → 卷下是晚年最后的收拢与叮咛</text></svg>",
+    "caption": "《传习录》全书地图:卷下收王阳明晚年语录,由钱德洪等汇集门人笔录删定;「岩中花树」「满街圣人」「天泉证道」都在本卷。"
+   },
+   {
+    "type": "h2",
+    "text": "一、你自带的那台仪器"
+   },
+   {
+    "type": "p",
+    "text": "卷下开篇是陈九川的连环追问:格物、致知、诚意到底怎么排顺序?功夫从哪儿下手?问到最后,他问出了所有人的心声——「如何致?」良知听起来很玄,到底怎么用?阳明的回答,是整部《传习录》里最不玄的一段话:"
+   },
+   {
+    "type": "quote",
+    "original": "尔那一点良知，是尔自家底准则。尔意念著处，他是便知是，非便知非，更瞒他一些不得。尔只不要欺他，实实落落依著他做去；善便存，恶便去。",
+    "translation": "你那一点良知,是你自家的准则。你意念所到之处,它是便知是,非便知非,丝毫瞒它不得。你只不要欺它,实实在在依着它去做;善便存,恶便去。"
+   },
+   {
+    "type": "p",
+    "text": "把这段话翻成大白话:你身上装着一台测谎仪,测的对象是你自己。每当一个念头冒出来——想甩锅、想撒个小谎、想占个便宜——这台仪器当场就响,是就是是,非就是非,响得又快又准,你想骗它一丁点都办不到。你能骗过老板、骗过朋友、有时甚至骗过枕边人,唯独骗不过它。阳明说的「致良知」,第一步不是去修炼什么高深状态,而是别捂这台仪器的报警器:它响了,你就认账,照它说的做——该存的善存下,该去的恶去掉。"
+   },
+   {
+    "type": "p",
+    "text": "注意他最后补的那句体己话:「我亦近年体贴出来如此分明。初犹疑只依他恐有不足;精细看,无些小欠阙。」连王阳明自己起初都怀疑:光靠这点直觉够吗?要不要再配点别的?他仔细验证过后的结论是:够,一点不缺。这就像你买了台新手机,总觉得还得装一堆第三方软件才能用,折腾半天发现,原生系统才是最顺的。宋儒教人去万事万物上一件件穷理,阳明的路线是反过来:准则不在外面,在你意念发动的地方,它一直在给你打分,你只欠一个「听它的」。"
+   },
+   {
+    "type": "figure",
+    "ftype": "quote-card",
+    "svg": "<svg viewBox=\"0 0 700 380\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"金句卡\"><rect x=\"20\" y=\"20\" width=\"660\" height=\"340\" rx=\"14\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><rect x=\"20\" y=\"20\" width=\"6\" height=\"340\" rx=\"3\" style=\"fill:var(--cinnabar)\"/><text x=\"350\" y=\"128\" text-anchor=\"middle\" font-size=\"40\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">尔那一点良知</text><text x=\"350\" y=\"188\" text-anchor=\"middle\" font-size=\"40\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">是尔自家底准则</text><text x=\"350\" y=\"242\" text-anchor=\"middle\" font-size=\"19\" style=\"fill:var(--ink);font-family:var(--font-serif)\" opacity=\".75\">是便知是，非便知非——更瞒他一些不得</text><rect x=\"308\" y=\"272\" width=\"84\" height=\"34\" rx=\"6\" style=\"fill:var(--cinnabar)\"/><text x=\"350\" y=\"296\" text-anchor=\"middle\" font-size=\"17\" style=\"fill:var(--paper);font-family:var(--font-serif)\">传习录</text><text x=\"350\" y=\"340\" text-anchor=\"middle\" font-size=\"16\" style=\"fill:var(--ink);font-family:var(--font-serif)\" opacity=\".65\">—— 王阳明《传习录 · 卷下》</text></svg>",
+    "caption": "金句卡:「尔那一点良知,是尔自家底准则」——判断是非的仪器你出厂自带,功夫只是别欺它。(《传习录·卷下》陈九川所记)"
+   },
+   {
+    "type": "h2",
+    "text": "二、念头一动,就已经是「做」了"
+   },
+   {
+    "type": "p",
+    "text": "仪器立住了,紧接着一个更狠的命题。有人问「知行合一」——这是阳明最出名也最被误解的四个字。很多人把它理解成「知识要配合实践」,类似「学了要用」。阳明自己解释的时候,刀口完全不在这儿:"
+   },
+   {
+    "type": "quote",
+    "original": "我今说个『知行合一』，正要人晓得一念发动处，便即是行了；发动处有不善，就将这不善的念克倒了，须要彻根彻底不使那一念不善潜伏在胸中",
+    "translation": "我如今说个『知行合一』,正要人明白一念发动处,便已是行了;发动处有不善,就把这不善的念头克倒,须要彻根彻底不让那一念不善潜伏在胸中"
+   },
+   {
+    "type": "p",
+    "text": "脑回路是这样的:一般人给自己划的红线是「行为」——只要没说出口、没动手,就不算数。于是心里对同事翻了一百个白眼、把对方骂了一万遍,还觉得自己修养挺好,「我又没表现出来」。阳明把红线整个往前挪:念头一动,就已经是行了。为什么这么划?因为他看透了一件事:行为只是念头的下游。你今天在心里骂的那一万遍,不会凭空消失,它潜伏在胸中,像一粒火星掉进干草堆,慢慢烘,总有一天借着某个由头烧出来——可能是一次憋不住的阴阳怪气,可能是关键时刻的见死不救。等烧出来再灭火,晚了。"
+   },
+   {
+    "type": "p",
+    "text": "用现代的话说:程序在后台就已经开始跑了,界面上还没显示而已。所以「知行合一」不是励志口号,是一套把关卡设在最上游的风控方案——恶要在念头处就克倒,彻根彻底,不留潜伏。这也顺便解释了它为什么难:管住手容易,管住念头难;但也只有管到念头,才算真的管住了。"
+   },
+   {
+    "type": "h2",
+    "text": "三、定力不是在垫子上修出来的"
+   },
+   {
+    "type": "p",
+    "text": "那功夫在哪儿做?很多人的直觉是:找个安静地方。周末点上香薰,冥想App连续打卡三十天,内心一片澄澈,觉得自己脱胎换骨了——结果周一早会被领导当众点名批评,三秒破功,心态炸得比谁都响。这个现象,四百多年前陈九川就问过:静坐时觉得心挺收敛,一遇事就断了,怎么办?阳明的回答毫不客气:"
+   },
+   {
+    "type": "quote",
+    "original": "人须在事上磨炼，做功夫乃有益。若只好静，遇事便乱，终无长进。",
+    "translation": "人须在事上磨炼,做功夫才有益。若只爱静,一遇事便乱,终究没有长进。"
+   },
+   {
+    "type": "p",
+    "text": "他还补了一句更扎心的诊断:那种静中的功夫,「似收歛,而实放溺也」(「歛」同「敛」)——看着是收心,其实是把心泡在「静」这种舒服里放纵它。就像在岸上把游泳教程背得滚瓜烂熟、动作比划得无比标准,一下水照样呛。定力这个东西,只能在有事的地方练:堵车、加班、孩子写作业写到你血压上来、甲方第五次改需求——这些你避之不及的时刻,恰恰是唯一的健身房。心何尝有内外?听讲时专注的这个心,就是静坐时那个心,功夫本是一贯的,不需要「处理完事情再回来修行」。事情本身就是修行的器材。"
+   },
+   {
+    "type": "p",
+    "text": "有学生问得更实际:我还得准备科举考试呢(放今天就是:我还得考证、冲KPI、还房贷呢),哪有空修养?阳明的回答对所有「忙人」都适用:"
+   },
+   {
+    "type": "quote",
+    "original": "只要良知真切，虽做举业，不为心累，总有累，亦易觉克之而已。",
+    "translation": "只要良知真切,虽做举业,也不被心所累,纵有所累,也容易察觉而克去。"
+   },
+   {
+    "type": "p",
+    "text": "意思是:该考试考试,该上班上班,事情本身不脏,脏的是缠在事情上的那些心思——死记硬背只为炫耀的心、急于求成的心、跟人攀比的心。良知知道哪个心思不对,察觉了就克掉,那读书就只是读书,工作就只是工作,「任他读书,亦只是调摄此心而已,何累之有?」累人的从来不是事,是你跟事较的那股劲。"
+   },
+   {
+    "type": "p",
+    "text": "还有一段自述特别值得看:有朋友静坐中有所见,兴冲冲赶来请教。阳明说,我早年在滁州也教学生静坐,学生一时「窥见光景」,短期颇有效果,时间一长,毛病出来了——有人喜静厌动,修成了枯木;有人专务玄妙解悟,拿去耸动听闻。所以我后来只讲三个字:"
+   },
+   {
+    "type": "quote",
+    "original": "良知明白，随你去静处体悟也好，随你去事上磨炼也好，良知本体原是无动无静的。此便是学问头脑。",
+    "translation": "良知明白了,任你去静处体悟也好,任你去事上磨炼也好,良知本体原是无动无静的。这便是学问头脑。"
+   },
+   {
+    "type": "p",
+    "text": "他说自己这个话头「亦较过几番,只是『致良知』三字无病」,并且拿医生打比方——「医经折肱,方能察人病理」:折过胳膊的医生才懂病人的痛。这话的分量在于,它是试错试出来的:静坐这味药他开过,副作用他亲眼见过,最后留下的才是「致良知」这个不挑场地的方子。"
+   },
+   {
+    "type": "pull",
+    "text": "静与动都只是场地,良知才是功夫本身。"
+   },
+   {
+    "type": "figure",
+    "ftype": "compare",
+    "svg": "<svg viewBox=\"0 0 760 430\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"只好静与事上磨炼对比\"><text x=\"380\" y=\"42\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">「只好静」 vs 「事上磨炼」</text><rect x=\"40\" y=\"72\" width=\"330\" height=\"268\" rx=\"12\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"205\" y=\"108\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">只好静:躲进安静里</text><text x=\"205\" y=\"150\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">静坐时似乎很收敛</text><text x=\"205\" y=\"178\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".55\">↓</text><text x=\"205\" y=\"206\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">实是把心泡在舒服里(实放溺)</text><text x=\"205\" y=\"234\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".55\">↓</text><text x=\"205\" y=\"262\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--cinnabar)\">一遇事便乱</text><text x=\"205\" y=\"290\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".55\">↓</text><text x=\"205\" y=\"318\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">终无长进</text><rect x=\"390\" y=\"72\" width=\"330\" height=\"268\" rx=\"12\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:2.5\"/><text x=\"555\" y=\"108\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" style=\"fill:var(--cinnabar);font-family:var(--font-serif)\">事上磨炼:在事里练</text><text x=\"555\" y=\"150\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">听讲、办事、应酬皆是功夫</text><text x=\"555\" y=\"178\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".55\">↓</text><text x=\"555\" y=\"206\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">功夫一贯,不必另起念头</text><text x=\"555\" y=\"234\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".55\">↓</text><text x=\"555\" y=\"262\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">遇事不乱,静躁两得力</text><text x=\"555\" y=\"290\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".55\">↓</text><text x=\"555\" y=\"318\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">日日有长进</text><text x=\"380\" y=\"392\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".7\">定力只能在有事的地方练——像游泳,只能在水里学</text></svg>",
+    "caption": "「似收歛,而实放溺也」:阳明并不反对静,反对的是拿静当避风港;真功夫在每一件躲不开的事里。(《传习录·卷下》陈九川所记)"
+   },
+   {
+    "type": "h2",
+    "text": "四、深山里那朵花"
+   },
+   {
+    "type": "p",
+    "text": "卷下有一段可能是全书知名度最高的对话。阳明游南镇(今绍兴会稽山),一位朋友指着岩石间一树花发难:你说天下无心外之物,这花在深山里自开自落,跟我的心有什么关系?这一问相当锋利——它几乎是替所有普通读者问的:唯心,难道东西离了你就不存在了?"
+   },
+   {
+    "type": "quote",
+    "original": "你未看此花时，此花与汝心同归于寂；你来看此花时，则此花颜色一时明白起来。便知此花不在你的心外。",
+    "translation": "你没看这花时,这花和你的心同样归于沉寂;你来看这花时,这花的颜色便一时鲜明起来。可见这花并不在你的心外。"
+   },
+   {
+    "type": "p",
+    "text": "注意阳明的用词,他没有说「你未看时此花不存在」,说的是「同归于寂」——一同沉寂着;你来看时,也不是「花被创造出来」,而是「颜色一时明白起来」——被点亮了。打个比方:你家路由器的Wi-Fi信号一直在空气里飘着,但对你的手机来说,连上的那一刻它才「亮」了。又比如你每天通勤路过的街角,那里其实一直有一棵樱花树,可对你而言,它是在某个你抬头的春天早晨才「一时明白起来」的。花按它的规律开落,但「鲜明起来的这朵花」——带着颜色、香气和让你心头一动的那朵——是在你与它相遇的那一刻,才在你的世界里成立的。阳明的心学关心的从来不是天体物理,而是这个由感应构成的、对你有意义的世界。"
+   },
+   {
+    "type": "p",
+    "text": "这里要诚实地标一个分歧:这段话到底怎么读,学界至今不是一个声音。一种读法偏「存在论」,认为阳明真的主张物依心而存,常有人拿西方贝克莱的「存在即被感知」来类比;另一种读法认为这是「意义论」——花的物理开落他不否认,他谈的是花之「明白」「颜色」只在与心的感应中呈现,与贝克莱貌合神离。多数现代研究者倾向后一种,但两种读法都有文本依据,这里如实摆出,不替你拍板。可以确定的是:对阳明来说,重点从来不是抬杠「深山的花在不在」,而是提醒你——你的世界,是被你的觉知一处一处点亮的;你不看,它就对你「寂」着。"
+   },
+   {
+    "type": "figure",
+    "ftype": "compare",
+    "svg": "<svg viewBox=\"0 0 760 410\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"岩中花树两种状态\"><text x=\"380\" y=\"42\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">岩中花树:寂 与 明白</text><rect x=\"45\" y=\"72\" width=\"320\" height=\"240\" rx=\"12\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"205\" y=\"106\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">你未看此花时</text><line x1=\"205\" y1=\"210\" x2=\"205\" y2=\"250\" style=\"stroke:var(--line);stroke-width:2\"/><circle cx=\"205\" cy=\"180\" r=\"26\" style=\"fill:var(--ink)\" opacity=\".15\"/><circle cx=\"181\" cy=\"196\" r=\"12\" style=\"fill:var(--ink)\" opacity=\".12\"/><circle cx=\"229\" cy=\"196\" r=\"12\" style=\"fill:var(--ink)\" opacity=\".12\"/><text x=\"205\" y=\"282\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".8\">花与心「同归于寂」——不是无,是未被点亮</text><rect x=\"395\" y=\"72\" width=\"320\" height=\"240\" rx=\"12\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:2\"/><text x=\"555\" y=\"106\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" style=\"fill:var(--cinnabar);font-family:var(--font-serif)\">你来看此花时</text><line x1=\"555\" y1=\"210\" x2=\"555\" y2=\"250\" style=\"stroke:var(--line);stroke-width:2\"/><circle cx=\"555\" cy=\"180\" r=\"26\" style=\"fill:var(--cinnabar)\" opacity=\".9\"/><circle cx=\"531\" cy=\"196\" r=\"12\" style=\"fill:var(--cinnabar)\" opacity=\".55\"/><circle cx=\"579\" cy=\"196\" r=\"12\" style=\"fill:var(--cinnabar)\" opacity=\".55\"/><text x=\"555\" y=\"282\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".8\">「颜色一时明白起来」——在感应中被点亮</text><text x=\"380\" y=\"348\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".75\">两种读法并存:①物依心存(存在论) ②花之「明白」在感应中呈现(意义论)</text><text x=\"380\" y=\"376\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".55\">学界至今各有依据,本文如实并陈,不替读者拍板</text></svg>",
+    "caption": "「此花不在你的心外」:阳明谈的是花与心在感应中「一时明白」,而非物理断言;此段的哲学定性学界仍有两读。(《传习录·卷下》)"
+   },
+   {
+    "type": "h2",
+    "text": "五、大哭一场之后的「乐」"
+   },
+   {
+    "type": "p",
+    "text": "卷下里阳明多次谈到「乐」。他说良知这个东西,不只是台冷冰冰的测谎仪,它是活的、是有生机的:"
+   },
+   {
+    "type": "quote",
+    "original": "良知是造化的精灵。这些精灵，生天生地，成鬼成帝，皆从此出，真是与物无对。",
+    "translation": "良知是造化的精灵。这些精灵,生出天地,成就鬼神帝王,都从此出,真是与万物无对。"
+   },
+   {
+    "type": "p",
+    "text": "人若把它恢复得完完全全,「自不觉手舞足蹈」——那种快乐没有任何东西可以替代。但请注意,这种「乐」不是心灵鸡汤里「保持微笑」的正能量。有学生问了一个非常好的问题:你说乐是心之本体,那遇到大的变故、痛哭的时候,这乐还在吗?难道悲伤也要强颜欢笑?阳明的回答是心学里最见人味的一段:"
+   },
+   {
+    "type": "quote",
+    "original": "须是大哭一番了方乐，不哭便不乐矣；虽哭，此心安处是乐也。本体未尝有动。",
+    "translation": "须是大哭一场过后才乐,不哭便不乐了;即便哭着,这心安处便是乐。本体不曾有动。"
+   },
+   {
+    "type": "p",
+    "text": "该哭的时候,必须大哭一场,不哭反而不「乐」——因为压抑真情才是对心的扭曲。哭着的时候,只要这颗心是安的、是如其所是的,那份「安」本身就是乐。这里的「乐」不是情绪高涨,而是水底的静:水面可以有滔天的浪(悲恸、眼泪),水底那个东西没有动过。亲人离世,你嚎啕大哭,哭完瘫坐着,心里却有一种奇怪的踏实——「我没有亏欠这份感情」。那个踏实,就是阳明说的本体之乐。它不排斥任何情绪,它只排斥「假」。"
+   },
+   {
+    "type": "h2",
+    "text": "六、满街都是圣人"
+   },
+   {
+    "type": "p",
+    "text": "卷下记了一个很有戏剧性的场面。学生王汝止(即王艮,后来开创泰州学派的那位)出游回来,阳明问他见到什么,他答:「见满街人都是圣人。」这话听着境界很高——人人皆有良知,人人皆可为圣,满街可不都是圣人?阳明却回了一句:"
+   },
+   {
+    "type": "quote",
+    "original": "你看满街人是圣人，满街人到看你是圣人在。",
+    "translation": "你看满街人是圣人,满街人倒看你是圣人哩。"
+   },
+   {
+    "type": "p",
+    "text": "更妙的是后文:又一天,年近七十来学的董萝石出游回来,兴奋地报告「今日见一异事」——「见满街人都是圣人」。同一句话!阳明这回却淡淡地说:「此亦常事耳,何足为异。」同问同答,回应完全相反。记录者点破了机关:王艮锋芒毕露、棱角未消,说「满街圣人」多少带着点居高临下的姿态——是「我」看出了他们是圣人;所以阳明反将一军:人家看你才像圣人呢,先收收你那个「看别人」的优越感。董萝石是真有所悟、少见多怪,所以阳明把他往平实处按:这本是常事,不必大惊小怪。一个要泼冷水,一个要撤兴奋剂,「皆反其言而进之」。这就是好老师:药不看贵贱,看对不对症。同一句话,对不同的人,可以是补药也可以是泻药。"
+   },
+   {
+    "type": "h2",
+    "text": "七、天泉桥夜话:四句教"
+   },
+   {
+    "type": "p",
+    "text": "现在到了全卷、也是整个阳明学的最高潮。嘉靖六年(1527)九月,五十六岁的阳明再度被朝廷起用,出征广西思恩、田州。出发前夜,两位大弟子钱德洪与王畿(汝中)在争论老师的一段教言,争不出结果,当晚陪坐在绍兴宅边的天泉桥上,各自把观点摆出来请老师裁决。争论的对象,就是后来被称为「四句教」的十六个字:"
+   },
+   {
+    "type": "quote",
+    "original": "无善无恶是心之体，有善有恶是意之动，知善知恶是良知，为善去恶是格物。",
+    "translation": "无善无恶是心的本体,有善有恶是意的发动,知善知恶是良知,为善去恶是格物。"
+   },
+   {
+    "type": "p",
+    "text": "先把这四句拆明白。第一句「无善无恶是心之体」:心的本来状态,像一面刚出厂的镜子,上面既没有污渍、也没有贴「我是干净的」标签——「无善无恶」不是没有是非,而是还没起念、无所偏倚的澄澈。第二句「有善有恶是意之动」:念头一动,事情就来了——想帮人是善念,想甩锅是恶念,善恶是在「意」这一层才出现的。第三句「知善知恶是良知」:念头一起,那台仪器同步开机,当场判别。第四句「为善去恶是格物」:把判别落成行动,该做的做、该克的克。四句连读,就是一张完整的功夫地图:本体→发动→判别→行动。"
+   },
+   {
+    "type": "figure",
+    "ftype": "flow",
+    "svg": "<svg viewBox=\"0 0 700 470\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"四句教结构图\"><text x=\"350\" y=\"40\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">四句教:一张四层的功夫地图</text><rect x=\"170\" y=\"66\" width=\"460\" height=\"66\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"110\" y=\"106\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".65\">本体</text><text x=\"400\" y=\"96\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">无善无恶是心之体</text><text x=\"400\" y=\"120\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\" opacity=\".65\">心的出厂状态:未起念、无偏倚</text><text x=\"400\" y=\"152\" text-anchor=\"middle\" font-size=\"16\" style=\"fill:var(--ink)\" opacity=\".5\">↓ 念头一起</text><rect x=\"170\" y=\"166\" width=\"460\" height=\"66\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"110\" y=\"206\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".65\">发动</text><text x=\"400\" y=\"196\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">有善有恶是意之动</text><text x=\"400\" y=\"220\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\" opacity=\".65\">善恶在念头这一层才出现</text><text x=\"400\" y=\"252\" text-anchor=\"middle\" font-size=\"16\" style=\"fill:var(--ink)\" opacity=\".5\">↓ 仪器同步开机</text><rect x=\"170\" y=\"266\" width=\"460\" height=\"66\" rx=\"10\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:2.5\"/><text x=\"110\" y=\"306\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--cinnabar)\">判别</text><text x=\"400\" y=\"296\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" style=\"fill:var(--cinnabar);font-family:var(--font-serif)\">知善知恶是良知</text><text x=\"400\" y=\"320\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\" opacity=\".65\">当场知是知非,瞒它不得</text><text x=\"400\" y=\"352\" text-anchor=\"middle\" font-size=\"16\" style=\"fill:var(--ink)\" opacity=\".5\">↓ 把知落成做</text><rect x=\"170\" y=\"366\" width=\"460\" height=\"66\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"110\" y=\"406\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".65\">行动</text><text x=\"400\" y=\"396\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">为善去恶是格物</text><text x=\"400\" y=\"420\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\" opacity=\".65\">在事上把该存的存、该克的克</text></svg>",
+    "caption": "四句教的四层:本体→发动→判别→行动。阳明称它「彻上彻下功夫」——上根人下根人都用这一套。(《传习录·卷下》天泉证道)"
+   },
+   {
+    "type": "p",
+    "text": "两位弟子争的是什么?王畿是「学霸思维」:既然心体无善无恶,那意、知、物也应该一路无善无恶才彻底——直接悟到本体,后面三句都可以收起来(这就是后来所谓「四无」)。钱德洪是「陪练思维」:话虽如此,可人都有积习,念头上明明有善有恶,格致诚正的功夫一句都不能省(所谓「四有」)。谁对?阳明的裁决出人意料——都对,但都只对一半:"
+   },
+   {
+    "type": "quote",
+    "original": "汝中之见，是我这里接利根人的；德洪之见，是我这里为其次立法的。二君相取为用，则中人上下皆可引入于道",
+    "translation": "汝中的见解,是我这里接引利根人的;德洪的见解,是我这里为其次的人立法的。二位互相取用,则中等以上以下的人都可引入于道"
+   },
+   {
+    "type": "p",
+    "text": "利根之人,一悟本体即是功夫,人己内外一齐透——但阳明紧接着泼了盆冷水:这种人「世亦难遇」,连颜回、程明道都不敢自居,你们就别指望满街遇到了。绝大多数人有习心,本体受蔽,老老实实的路只有一条:在意念上实落地为善去恶,功夫熟了,渣滓去尽,本体自然明。而他最放心不下的,是有人抄近道:"
+   },
+   {
+    "type": "quote",
+    "original": "人有习心，不教他在良知上实用为善、去恶功夫，只去悬空想个本体，一切事为俱不著实，不过养成一个虚寂",
+    "translation": "人有习心,不教他在良知上切实下为善去恶的功夫,只去凭空想个本体,一切事情都不切实,不过养成一个虚寂"
+   },
+   {
+    "type": "p",
+    "text": "「悬空想个本体」,翻成今天的话:收藏了两百篇干货,一篇没读完;办了健身年卡,只去拍了张照;道理层面早已「悟」了,生活里一件实事不做。阳明说这个病「不是小小」,必须早说破。这个提醒后来不幸言中——阳明身后,王学一部分末流恰恰滑向了空谈心性,明末清初的学者对此批评极烈;东林党人顾宪成更是直接向「无善无恶」四字开火,认为它模糊了善恶界限。而王畿自己所记的《天泉证道纪》,与《传习录》此条在细节侧重上也不尽相同——四句教之争,某种意义上打了四百年。这里如实告诉你:争论存在,且没有终审判决;但至少在天泉桥这一晚,阳明本人的态度是清楚的——四句教「彻上彻下」,谁也不许丢下面两句。"
+   },
+   {
+    "type": "figure",
+    "ftype": "flow",
+    "svg": "<svg viewBox=\"0 0 760 470\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"天泉证道两条路\"><text x=\"380\" y=\"40\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">天泉证道:两种根器,一个宗旨</text><rect x=\"255\" y=\"62\" width=\"250\" height=\"52\" rx=\"10\" style=\"fill:none;stroke:var(--line);stroke-width:1.5\"/><text x=\"380\" y=\"94\" text-anchor=\"middle\" font-size=\"17\" style=\"fill:var(--ink);font-family:var(--font-serif)\">同一个心体,人有两种根器</text><line x1=\"310\" y1=\"114\" x2=\"195\" y2=\"152\" style=\"stroke:var(--line);stroke-width:1.5\"/><line x1=\"450\" y1=\"114\" x2=\"565\" y2=\"152\" style=\"stroke:var(--cinnabar);stroke-width:2\"/><rect x=\"48\" y=\"156\" width=\"300\" height=\"160\" rx=\"12\" style=\"fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:7 5\"/><text x=\"198\" y=\"190\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">利根之人(汝中所接)</text><text x=\"198\" y=\"222\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">直从本原上悟入</text><text x=\"198\" y=\"248\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">一悟本体即是功夫</text><text x=\"198\" y=\"284\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--cinnabar)\">但「世亦难遇」——别指望是自己</text><rect x=\"412\" y=\"156\" width=\"300\" height=\"160\" rx=\"12\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:2.5\"/><text x=\"562\" y=\"190\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" style=\"fill:var(--cinnabar);font-family:var(--font-serif)\">有习心之人(你我·德洪所立)</text><text x=\"562\" y=\"222\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">在意念上实落为善去恶</text><text x=\"562\" y=\"248\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">功夫熟后,渣滓去尽</text><text x=\"562\" y=\"284\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".8\">本体亦明尽了</text><line x1=\"198\" y1=\"316\" x2=\"340\" y2=\"368\" style=\"stroke:var(--line);stroke-width:1.5\"/><line x1=\"562\" y1=\"316\" x2=\"420\" y2=\"368\" style=\"stroke:var(--cinnabar);stroke-width:2\"/><rect x=\"280\" y=\"372\" width=\"200\" height=\"50\" rx=\"10\" style=\"fill:var(--cinnabar)\"/><text x=\"380\" y=\"404\" text-anchor=\"middle\" font-size=\"17\" style=\"fill:var(--paper);font-family:var(--font-serif)\">皆可引入于道</text><text x=\"380\" y=\"452\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\" opacity=\".7\">⚠ 最忌第三条路:悬空想个本体 → 一切不著实 → 养成一个虚寂</text></svg>",
+    "caption": "两条路互资为用,缺一即「失人」;而抄近道「悬空想本体」是阳明临行前特意说破的大病。(《传习录·卷下》天泉证道)"
+   },
+   {
+    "type": "h2",
+    "text": "八、最后的叮咛:狠劲、灵明与傲"
+   },
+   {
+    "type": "p",
+    "text": "卷下的尾部,像一位要出远门的老人反复回头交代。第一句叮咛是要有狠劲:"
+   },
+   {
+    "type": "quote",
+    "original": "时时刻刻，须是一棒一条痕、一掴一拳血，方能听吾说话，句句得力。",
+    "translation": "时时刻刻,须是一棒一条痕、一掴一拳血那样切实,才能听我的话,句句得力。"
+   },
+   {
+    "type": "p",
+    "text": "「一棒一条痕,一掴一拳血」——打一棒要见一条痕,掴一掌要见血印。听课不能像水泼在石头上,滑过去不留痕迹。他说,若茫茫荡荡度日,人就像「一块死肉,打也不知得痛痒」,听再多也是回家「只寻得旧时伎俩」——这话对今天的我们几乎是点名批评:播客听了几百期,书单收藏了几十份,句句点头,转身一件不改,那些「知道」在身上一条痕都没留下。"
+   },
+   {
+    "type": "p",
+    "text": "第二句叮咛把格局撑到最大。有人问:草木瓦石、天地鬼神也与人同体吗?阳明反问:天地中间,什么是天地的心?答:人是天地的心。人又把什么叫做心?答:只是一个灵明。于是有了这段:"
+   },
+   {
+    "type": "quote",
+    "original": "天地、鬼神、万物，离却我的灵明，便没有天地、鬼神、万物了；我的灵明，离却天地、鬼神、万物，亦没有我的灵明。",
+    "translation": "天地、鬼神、万物,离开我的灵明,便没有天地、鬼神、万物了;我的灵明,离开天地、鬼神、万物,也没有我的灵明。"
+   },
+   {
+    "type": "p",
+    "text": "这是「岩中花树」的放大版:没有我的觉知,谁去仰天之高、俯地之深?反过来,离了天地万物,我的觉知也无处安放——像一场没有观众的电影和一个没有电影的观众,彼此成就,一气流通。人之贵,不在体力智力(那些多有不如禽兽机器处),在于人是天地间那点会「明白」的灵明。这不是让你自大,恰恰相反——正因为你是天地的心,你那点灵明怎么用,才格外要紧。"
+   },
+   {
+    "type": "p",
+    "text": "于是有了第三句、也是给人印象最深的一句叮咛,关于「傲」:"
+   },
+   {
+    "type": "quote",
+    "original": "人生大病只是一傲字。为子而傲必不孝，为臣而傲必不忠，为父而傲必不慈，为友而傲必不信",
+    "translation": "人生最大的毛病只是一个『傲』字。做儿子而傲必定不孝,做臣子而傲必定不忠,做父亲而傲必定不慈,做朋友而傲必定不信"
+   },
+   {
+    "type": "p",
+    "text": "为什么单单是「傲」?因为傲的底层是「有我」——处处以我为中心,我对、我强、我早就说过。你身边一定有这样的时刻:开会时有人永远在等别人说完好反驳;家里有人永远用「我吃过的盐比你吃过的饭多」结束讨论;你自己大概也有过,孩子考砸了,第一句话是「我早提醒过你」——那一刻你要的不是孩子好,是「我是对的」。阳明说,心本是天然之理,精精明明,不沾一丝,坏就坏在往里面塞了个「我」。所以他的结论是:"
+   },
+   {
+    "type": "quote",
+    "original": "谦者众善之基，傲者众恶之魁。",
+    "translation": "谦是众善的根基,傲是众恶的祸首。"
+   },
+   {
+    "type": "callout",
+    "tone": "warn",
+    "items": [
+     "注意,这里的谦不是社交客套、不是逢人弯腰,而是「无我」之后的自然状态:把那个到处刷存在感的「我」缩小,良知的信号就清楚了——傲是良知最大的噪音源。"
+    ]
+   },
+   {
+    "type": "figure",
+    "ftype": "compare",
+    "svg": "<svg viewBox=\"0 0 760 400\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"傲与谦对比\"><text x=\"380\" y=\"42\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">一「傲」字 vs 一「无我」</text><rect x=\"45\" y=\"72\" width=\"320\" height=\"250\" rx=\"12\" style=\"fill:none;stroke:var(--cinnabar);stroke-width:2;stroke-dasharray:7 5\"/><text x=\"205\" y=\"108\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" style=\"fill:var(--cinnabar);font-family:var(--font-serif)\">傲 · 众恶之魁</text><text x=\"205\" y=\"134\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\" opacity=\".6\">底层:处处「有我」</text><text x=\"205\" y=\"170\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">为子而傲 → 必不孝</text><text x=\"205\" y=\"202\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">为臣而傲 → 必不忠</text><text x=\"205\" y=\"234\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">为父而傲 → 必不慈</text><text x=\"205\" y=\"266\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">为友而傲 → 必不信</text><text x=\"205\" y=\"300\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\" opacity=\".6\">「我对、我强、我早说过」</text><rect x=\"395\" y=\"72\" width=\"320\" height=\"250\" rx=\"12\" style=\"fill:none;stroke:var(--line);stroke-width:2\"/><text x=\"555\" y=\"108\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" style=\"fill:var(--ink);font-family:var(--font-serif)\">谦 · 众善之基</text><text x=\"555\" y=\"134\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\" opacity=\".6\">底层:一个「无我」</text><text x=\"555\" y=\"170\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">心本精精明明</text><text x=\"555\" y=\"202\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">无纤介染著</text><text x=\"555\" y=\"234\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">无我,自能谦</text><text x=\"555\" y=\"266\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".85\">良知的信号最清楚</text><text x=\"555\" y=\"300\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\" opacity=\".6\">不是客套,是放下「我」后的自然</text><text x=\"380\" y=\"362\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\" opacity=\".7\">傲是良知最大的噪音源;把「我」调小,仪器才听得清</text></svg>",
+    "caption": "「谦者众善之基,傲者众恶之魁」:阳明把人生大病归到一个傲字,病根不在态度,在处处「有我」。(《传习录·卷下》)"
+   },
+   {
+    "type": "h2",
+    "text": "把整卷串成一根线"
+   },
+   {
+    "type": "p",
+    "text": "现在回头看,卷下这几百条问答其实只讲了一件事,可以串成一根线。起点:你有一台出厂自带、瞒不过的仪器(良知是尔自家底准则)。第一个推论:既然仪器在念头一动时就响,那红线就该划在念头处,念头即是行(知行合一,一念发动处便即是行了)。第二个推论:仪器不挑场地,静坐用得上,吵架也用得上,所以功夫不必躲进安静里,反而要在事上磨(人须在事上磨炼);读书、考试、上班,事事皆可是功夫。第三层:这台仪器点亮的不只是是非,还有你的整个世界——深山的花因你而「一时明白」,天地万物因你的灵明而有高深吉凶;这份「明白」的本味是乐,大哭之后心安处的那种乐,不是硬挤的笑。"
+   },
+   {
+    "type": "p",
+    "text": "最后收拢成天泉桥的十六个字:无善无恶是心之体(仪器出厂时屏幕是干净的),有善有恶是意之动(念头一起才有善恶可判),知善知恶是良知(仪器当场响),为善去恶是格物(照着仪器做)。上两句给你看地图的全貌,免得你把功夫做成死板的压抑;下两句给你划每天的路线,免得你把「悟」当成什么都不用做的借口。利根人可以从上往下走,普通人老老实实从下往上走,两条路通向同一处。而全程最大的障碍只有一个字:傲——「我」一大,仪器的声音就被盖住了。这就是王阳明晚年的全部家当:不是一套玄学,是一张任何人明天早上就能用的操作图。"
+   },
+   {
+    "type": "callout",
+    "tone": "mute",
+    "items": [
+     "值得一提的是,这套「人人自有、当下可用」的讲法,在思想史上是有明确对手的。朱子学教人「即物穷理」,一件件事物去格,知识积累够了豁然贯通——像必须先修完全部学分才能毕业;阳明年轻时真去格过竹子,格到病倒也没格出理来,才转而向内。卷下里他说「圣人只是一能之尔,能处正是良知」「何等明白简易」——圣人不是配置比你高,只是把人人都有的那台仪器用到底了。这个「简易直截」的转向,后来经泰州学派把「满街圣人」讲到市井田间,深刻改变了晚明的思想空气;其流弊(空谈、狂禅)也真如阳明在天泉桥所忧。一体两面,都是历史。"
+    ]
+   },
+   {
+    "type": "h2",
+    "text": "能带走的三件小事"
+   },
+   {
+    "type": "p",
+    "text": "按心学的规矩,不给鸡汤,只给可以试的功夫。而且阳明自己划了个重要的边界——别贪多,今天只做今天的:"
+   },
+   {
+    "type": "quote",
+    "original": "我辈致知，只是各随分限所及。今日良知见在如此，只随今日所知扩充到底，明日良知又有开悟，便从明日所知扩充到底，如此方是精一功夫。",
+    "translation": "我辈致知,只是各随各自的限度所能及。今日良知所见如此,只随今日所知扩充到底,明日良知又有开悟,便从明日所知扩充到底,这样才是精一功夫。"
+   },
+   {
+    "type": "p",
+    "text": "他配的比喻是浇树:小萌芽只配得上一瓢水,你非把一桶水全浇上去,树苗直接泡坏。所以下面三件事,一天做到一件就算数。第一,做一次「念头级」复盘:睡前挑今天心里「咯噔」过的一个瞬间——就一个——只问两件事:那一下,良知说了什么?我听了没有?不评判、不自责,只是把捂住的报警器松开一条缝。第二,给一件躲不开的烦事贴上「功夫」的标签:这周你最想逃的那件事(催款、汇报、陪孩子写作业),下次它来时,试着只做一个动作——按良知响的方向处理一次,哪怕很小。事上磨炼不需要你另找时间,它就藏在你的日程表里。第三,省一句话:下次「我早就说过」冲到嘴边时,咽回去。这一句省下来,傲就小了一号,你会亲耳听见对话变得不一样。做不到也正常——阳明说了,功夫本来就是一棒一条痕,慢慢来,但每一棒要真打在自己身上。"
+   },
+   {
+    "type": "h2",
+    "text": "桥上的灯火"
+   },
+   {
+    "type": "p",
+    "text": "回到开头那个深夜「咯噔」的时刻。现在你知道了:那不是内耗,那是你身上最贵的东西在工作。王阳明一生讲学,晚年把所有话收成三个字「致良知」、十六个字四句教,在天泉桥上连夜交代给学生,次年便病逝于离粤北上的途中,年五十七。据钱德洪等所编《年谱》记载,他临终留下的最后一句话是:「此心光明,亦复何言。」——这颗心是亮的,还有什么可说的呢。那盏灯不是圣人专属。按卷下的说法,它在每个人意念发动的地方常亮着,是便知是,非便知非,从未断电。满街都是圣人,不是恭维,是提醒:你欠的从来不是仪器,是下一次它响的时候——别再装作没听见。"
+   },
+   {
+    "type": "refs",
+    "items": [
+     "原文与译文:《传习录·卷下》,本站底本取自维基文库通行本(陈九川、黄直、黄修易、黄省曾、钱德洪等录,钱德洪汇定),逐段对照译文见本章阅读页",
+     "陈荣捷《王阳明传习录详注集评》(台湾学生书局):四句教、岩中花树诸条集评与版本考订",
+     "邓艾民《传习录注疏》(上海古籍出版社):卷下逐条注疏",
+     "钱德洪等编《阳明先生年谱》(收入《王阳明全集》):天泉证道时地与「此心光明」临终语出此",
+     "王畿《天泉证道纪》(《王龙溪先生全集》卷一):四句教的另一记录,与本卷所记侧重不同,四百年争论之源",
+     "黄宗羲《明儒学案·姚江学案》:四句教后世评骘与王学分化脉络"
+    ]
+   }
+  ]
+ }
 }
