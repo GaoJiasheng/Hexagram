@@ -1,74 +1,78 @@
 {
-  "title": "工业革命与时间表的暴政",
-  "subtitle": "《人类简史》第九章导读——能量的天花板被掀开之后,人被塞进了钟表的格子",
-  "centralIdea": "工业革命的本质不是机器,是能量转换:此前人类可用的能量几乎只有肌肉、柴火和风水,蒸汽机教会我们「把热变成动」,能源从此不是快见底的罐子,而是不断被解锁的海洋。但能量解放的同时,人被套上了两副新枷锁:一是时间表——火车时刻表逼出全国统一时间,工厂哨声把一天切成格子,你手机上的打卡与日程是它的直系后代;二是共同体的瓦解——几千年里靠家庭与邻里办的事(养老、看病、婚配),被国家和市场整体接管,「个体的解放」与「社群的孤独」是同一张发票的正反面,填补真空的是民族与消费部落这些新的想象共同体。此外还有一笔最少被讨论的账:动物被工业化成了产肉机器。批判地读:能量乐观主义与环境代价,在这一章里并不对称。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "今天早上叫醒你的不是太阳,是闹钟;决定你何时吃午饭的不是饥饿,是十二点;宣布你自由的不是天黑,是下班打卡。这套安排如此天经地义,以至于你可能没想过:**人类按「几点几分」生活,满打满算不过两百年**。农民看天吃饭、跟着季节劳作,一辈子不需要知道「现在几点」。是什么把人类塞进了钟表的格子?赫拉利的回答分两层:先是一场能量的解放——蒸汽机掀开了力量的天花板;然后是一场时间的圈地——被解放的能量需要被组织,而组织的代价,是每个人交出自己的节奏。"
-    },
-    {
-      "type": "h2",
-      "text": "能量:从罐子到海洋"
-    },
-    {
-      "type": "p",
-      "text": "工业革命之前,人类的能量预算小得可怜:自己的肌肉、牲口的肌肉、烧饭的柴火,加上一点风车水磨。更要命的是**转换的死结**:小麦的化学能可以经人畜的胃变成拉犁的动能,但煤烧出来的热,只会取暖,没法推车——热能与动能之间没有桥。蒸汽机就是那座桥:烧水,蒸汽膨胀,推动活塞——**「把热变成动」这个原理一旦打通,能量的世界豁然洞开**。先是抽矿井的水,然后拖动纺机、火车、轮船;再往后,内燃机让石油从「涂船板的黑油」变成液体黄金,发电机让能量可以顺着电线送进每一盏灯。赫拉利由此纠正一个流行的焦虑:工业革命反复证明,**能源不是一个越用越少的罐子,而是一片不断被新钥匙打开的海洋**——瓶颈从来不是宇宙里的能量总量(单是太阳每天倾泻的能量就远超人类所需),而是人类的转换知识。这是上一章「增长信条」的物理背书:科学不断递来新钥匙,饼就真的能一直变大——至少,账面上如此;这句「至少」,收束处再算。"
-    },
-    {
-      "type": "figure",
-      "ftype": "结构图",
-      "svg": "<svg viewBox='0 0 560 320' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>能量的台阶:每一步都是一次「转换知识」的解锁</text><rect x='30' y='218' width='118' height='56' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='89' y='242' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>肌肉与柴火</text><text x='89' y='262' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>几十万年的天花板</text><rect x='166' y='166' width='118' height='56' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='225' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>风车 · 水磨</text><text x='225' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>借自然的力,看天脸色</text><rect x='302' y='114' width='118' height='56' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.6'/><text x='361' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar)'>蒸汽机</text><text x='361' y='158' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>热 → 动,桥打通了</text><rect x='428' y='62' width='118' height='56' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='487' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>内燃机 · 电力</text><text x='487' y='106' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>能量顺着电线入户</text><path d='M148,240 L166,222' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><path d='M284,188 L302,170' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><path d='M420,136 L428,118' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='280' y='300 ' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>瓶颈从来不是宇宙的能量总量,而是人类的转换知识——能源是海洋,不是罐子</text></svg>",
-      "caption": "每上一级台阶,可用能量就翻几番——「增长信条」由此获得了物理世界的背书,也埋下了向大气赊账的伏笔。"
-    },
-    {
-      "type": "h2",
-      "text": "第二次农业革命:被工业化的生灵"
-    },
-    {
-      "type": "p",
-      "text": "能量与机器先改造了农业本身:化肥、机械、冷藏船让越来越少的农民养活越来越多的人口,城市化的闸门由此打开——这是温和的一半。残酷的一半,赫拉利不许你移开眼睛:**农场动物被重新定义成了生产设备**。在传统农家,牛和人住得不远,彼此认识;在工业化农场,蛋鸡被折叠进转身都难的格子,奶牛成了产奶管线的一个接口,小牛出生即与母亲分离——不是因为农场主残忍,而是因为核算表里只有「产出效率」这一栏,而动物的恐惧、社交欲与母子联结,**在市场上没有价格,于是在系统里没有位置**。赫拉利把这件事列为现代规模最大、讨论最少的伦理问题之一:第三章里智人曾是「生态连环杀手」,这一章他升级成了「生态流水线厂长」——上一章说市场对痛苦色盲,这里是它最刺眼的展品。"
-    },
-    {
-      "type": "h2",
-      "text": "时间表:一场悄无声息的圈地运动"
-    },
-    {
-      "type": "p",
-      "text": "然后是那场几乎没人反抗、如今没人逃脱的圈地——**对时间的圈地**。农业时代的时间是软的:日出而作,农忙拼命,农闲晒太阳,村口的钟(如果有的话)只报个大概。工厂改变了一切:流水线要求几百个工人**同一分钟**各就各位,一个环节迟到,整条线瘫痪——于是哨声、班次、打卡钟。真正把「统一时间」推向全国的是铁路:每个城镇按自己的日头过活,时刻表就是废纸;于是各地时间被强行对齐到同一个标准——**历史上第一次,「现在几点」不再由头顶的太阳决定,而由千里之外的一纸标准决定**。此后的故事你熟:工厂时间渗进学校(上下课铃就是班次铃的童年版)、医院、政府,最后长到每个人手腕上、口袋里。今天你的日历把一天切成半小时的格子,通勤软件精确到分钟,连休息都要「安排」——赫拉利的用词毫不客气:这是**时间表的暴政**。它换来了不可思议的协作效率,代价是人类历史上从未有过的一种焦虑:永远在对表,永远差五分钟。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对比图",
-      "svg": "<svg viewBox='0 0 560 330' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>两种一天:太阳的节奏 vs 钟表的格子</text><text x='150' y='60' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>农民的一天(软时间)</text><circle cx='150' cy='150' r='62' style='fill:none;stroke:var(--line);stroke-width:1.5'/><path d='M150,88 A62,62 0 0 1 212,150' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='150' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>日出而作</text><text x='150' y='162' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>日入而息</text><text x='150' y='246' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>农忙拼命,农闲晒太阳</text><text x='150' y='266' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>「几点了」不重要</text><text x='410' y='60' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>现代人的一天(硬格子)</text><rect x='318' y='88' width='184' height='124' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><line x1='318' y1='119' x2='502' y2='119' style='stroke:var(--cinnabar);stroke-width:0.8'/><line x1='318' y1='150' x2='502' y2='150' style='stroke:var(--cinnabar);stroke-width:0.8'/><line x1='318' y1='181' x2='502' y2='181' style='stroke:var(--cinnabar);stroke-width:0.8'/><line x1='364' y1='88' x2='364' y2='212' style='stroke:var(--cinnabar);stroke-width:0.8'/><line x1='410' y1='88' x2='410' y2='212' style='stroke:var(--cinnabar);stroke-width:0.8'/><line x1='456' y1='88' x2='456' y2='212' style='stroke:var(--cinnabar);stroke-width:0.8'/><text x='341' y='107' text-anchor='middle' style='font-family:var(--font-serif);font-size:9px;fill:var(--ink-soft)'>7:00</text><text x='387' y='107' text-anchor='middle' style='font-family:var(--font-serif);font-size:9px;fill:var(--ink-soft)'>打卡</text><text x='433' y='107' text-anchor='middle' style='font-family:var(--font-serif);font-size:9px;fill:var(--ink-soft)'>例会</text><text x='479' y='107' text-anchor='middle' style='font-family:var(--font-serif);font-size:9px;fill:var(--ink-soft)'>午餐</text><text x='341' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:9px;fill:var(--ink-soft)'>汇报</text><text x='387' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:9px;fill:var(--ink-soft)'>通勤</text><text x='433' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:9px;fill:var(--ink-soft)'>健身</text><text x='479' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:9px;fill:var(--ink-soft)'>网课</text><text x='410' y='246' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>铁路对齐了全国的钟,工厂的哨声</text><text x='410' y='266' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>长成了你手机上的日程提醒</text><text x='280' y='306' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>协作效率的代价:永远在对表,永远差五分钟</text></svg>",
-      "caption": "对时间的圈地运动:太阳下岗,标准时上任——历史上第一次,「现在几点」由千里之外的一纸标准决定。"
-    },
-    {
-      "type": "h2",
-      "text": "家庭下岗,国家与市场上岗"
-    },
-    {
-      "type": "p",
-      "text": "工业革命最深的改造不在工厂里,在家里。几千年来,人这一生的全部保障来自两个圈子:**家庭与邻里社区**。养老靠儿女,看病靠亲族,失业靠宗族接济,婚配靠父母之命媒妁之言——个人几乎没有独立空间,但也几乎不会独自坠落。工业革命把这套系统整体拆解:工厂需要能自由流动的劳动力,不是拖家带口的宗族;于是国家和市场向个人递出一份历史性的新合同——**「做你自己吧:想娶谁娶谁,想去哪去哪;养老有养老金,生病有医院,失业有保险——不用再看家族的脸色。」**这份合同,绝大多数人签得心甘情愿,因为它给的是真自由。但发票的背面印着代价:当家庭与社区不再被需要,它们就真的萎缩了;个人获得空前自由的同时,也第一次要**独自面对**生老病死——身边只剩下发工资的市场和收税的国家,这两位都不会陪你吃年夜饭。填补情感真空的,是两种新的想象共同体:**民族**,让你为素未谋面的同胞热泪盈眶;**消费部落**,让你和同款球鞋、同个偶像的陌生人称兄道弟。从部落到帝国再到民族与粉丝群——虚构故事的形态换了几轮,配方从来没变。"
-    },
-    {
-      "type": "quote",
-      "original": "消费主义告诉我们,想要快乐,就该去买更多的产品、更多的服务。",
-      "translation": "工业革命的收尾一环:机器让生产暴涨,可产出总得有人买。于是人类历史上第一次,「多买」从道德缺陷(奢侈、浪费)被改写成了美德(拉动经济、犒赏自己)——节俭了几千年的伦理,一代人之间完成掉头。广告业的全部工作,就是替你把「想要」升级成「需要」。"
-    },
-    {
-      "type": "figure",
-      "ftype": "结构图",
-      "svg": "<svg viewBox='0 0 560 320' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>同一张发票的正反面:个体解放 × 共同体瓦解</text><rect x='150' y='54' width='260' height='50' rx='9' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='78' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>传统:家庭与邻里包办一切</text><text x='280' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>养老 · 看病 · 婚配 · 接济——没自由,也不会独自坠落</text><path d='M280,106 L280,138' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='280,138 274,126 286,126' style='fill:var(--ink-faint)'/><text x='366' y='126' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>工业革命的新合同</text><rect x='40' y='142' width='230' height='70' rx='9' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='155' y='168' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>正面:个体解放</text><text x='155' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>想娶谁娶谁,想去哪去哪</text><text x='155' y='206' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>国家发保障,市场发工资</text><rect x='290' y='142' width='230' height='70' rx='9' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='405' y='168' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>背面:共同体瓦解</text><text x='405' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>第一次独自面对生老病死</text><text x='405' y='206' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>市场和国家不陪你吃年夜饭</text><path d='M155,214 L245,252' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M405,214 L315,252' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><rect x='170' y='254' width='220' height='44' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.2;stroke-dasharray:5 4'/><text x='280' y='273' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>填补真空的新想象共同体</text><text x='280' y='291' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>民族 · 消费部落(球鞋圈 · 粉丝群)</text></svg>",
-      "caption": "国家与市场对个人说「做你自己」,顺手接管了家庭的全部职能——自由是真的,孤独也是真的,虚构共同体前来补位。"
-    },
-    {
-      "type": "h2",
-      "text": "收束:两笔没算完的账"
-    },
-    {
-      "type": "p",
-      "text": "照例打问号。**第一笔:能量乐观主义讲了一半。**「能源是海洋不是罐子」在供给端大体成立,但这一章对另一端着墨很少——烧掉的每一吨煤和石油都在向大气赊账,气候变化恰恰说明:瓶颈可能不在「能量够不够」,而在「副作用兜不兜得住」。用今天的眼光回看,这是本章明显的时代局限。**第二笔:「传统共同体的温暖」别浪漫化。**家族与村社确实兜底,但也附赠包办婚姻、家长专制和对出格者的窒息式管制——很多人逃进城市的匿名与孤独,是用脚投的票。赫拉利自己也承认这份新合同利弊皆真,读者更不必替古人抹金。**但这一章真正的收获是一个观察角度**:下次感到「时间不够用」的焦虑时,提醒自己这不是你的失败,而是一套两百年前为蒸汽机设计的时间制度,正运行在你这具为草原设计的身体上。至此,力量的账已全部记完——七万年,智人从啃剩骨头到掌控行星。于是下一章,赫拉利问出了全书最扎心的问题:这一切,让我们更快乐了吗?"
-    }
-  ]
+ "title": "工业革命与时间表的暴政",
+ "subtitle": "《人类简史》第九章导读——能量的天花板被掀开之后,人被塞进了钟表的格子",
+ "centralIdea": "工业革命的本质不是机器,是能量转换:此前人类可用的能量几乎只有肌肉、柴火和风水,蒸汽机教会我们「把热变成动」,能源从此不是快见底的罐子,而是不断被解锁的海洋。但能量解放的同时,人被套上了两副新枷锁:一是时间表——火车时刻表逼出全国统一时间,工厂哨声把一天切成格子,你手机上的打卡与日程是它的直系后代;二是共同体的瓦解——几千年里靠家庭与邻里办的事(养老、看病、婚配),被国家和市场整体接管,「个体的解放」与「社群的孤独」是同一张发票的正反面,填补真空的是民族与消费部落这些新的想象共同体。此外还有一笔最少被讨论的账:动物被工业化成了产肉机器。批判地读:能量乐观主义与环境代价,在这一章里并不对称。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "今天早上叫醒你的不是太阳,是闹钟;决定你何时吃午饭的不是饥饿,是十二点;宣布你自由的不是天黑,是下班打卡。这套安排如此天经地义,以至于你可能没想过:**人类按「几点几分」生活,满打满算不过两百年**。农民看天吃饭、跟着季节劳作,一辈子不需要知道「现在几点」。是什么把人类塞进了钟表的格子?赫拉利的回答分两层:先是一场能量的解放——蒸汽机掀开了力量的天花板;然后是一场时间的圈地——被解放的能量需要被组织,而组织的代价,是每个人交出自己的节奏。"
+  },
+  {
+   "type": "h2",
+   "text": "能量:从罐子到海洋"
+  },
+  {
+   "type": "p",
+   "text": "工业革命之前,人类的能量预算小得可怜:自己的肌肉、牲口的肌肉、烧饭的柴火,加上一点风车水磨。更要命的是**转换的死结**:小麦的化学能可以经人畜的胃变成拉犁的动能,但煤烧出来的热,只会取暖,没法推车——热能与动能之间没有桥。蒸汽机就是那座桥:烧水,蒸汽膨胀,推动活塞——**「把热变成动」这个原理一旦打通,能量的世界豁然洞开**。先是抽矿井的水,然后拖动纺机、火车、轮船;再往后,内燃机让石油从「涂船板的黑油」变成液体黄金,发电机让能量可以顺着电线送进每一盏灯。赫拉利由此纠正一个流行的焦虑:工业革命反复证明,**能源不是一个越用越少的罐子,而是一片不断被新钥匙打开的海洋**——瓶颈从来不是宇宙里的能量总量(单是太阳每天倾泻的能量就远超人类所需),而是人类的转换知识。这是上一章「增长信条」的物理背书:科学不断递来新钥匙,饼就真的能一直变大——至少,账面上如此;这句「至少」,收束处再算。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "svg": "<svg viewBox='0 0 560 320' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>能量的台阶:每一步都是一次「转换知识」的解锁</text><rect x='30' y='218' width='118' height='56' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='89' y='242' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>肌肉与柴火</text><text x='89' y='262' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>几十万年的天花板</text><rect x='166' y='166' width='118' height='56' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='225' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>风车 · 水磨</text><text x='225' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>借自然的力,看天脸色</text><rect x='302' y='114' width='118' height='56' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.6'/><text x='361' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar)'>蒸汽机</text><text x='361' y='158' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>热 → 动,桥打通了</text><rect x='428' y='62' width='118' height='56' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='487' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>内燃机 · 电力</text><text x='487' y='106' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>能量顺着电线入户</text><path d='M148,240 L166,222' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><path d='M284,188 L302,170' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><path d='M420,136 L428,118' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='280' y='300 ' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>瓶颈从来不是宇宙的能量总量,而是人类的转换知识——能源是海洋,不是罐子</text></svg>",
+   "caption": "每上一级台阶,可用能量就翻几番——「增长信条」由此获得了物理世界的背书,也埋下了向大气赊账的伏笔。"
+  },
+  {
+   "type": "h2",
+   "text": "第二次农业革命:被工业化的生灵"
+  },
+  {
+   "type": "p",
+   "text": "能量与机器先改造了农业本身:化肥、机械、冷藏船让越来越少的农民养活越来越多的人口,城市化的闸门由此打开——这是温和的一半。残酷的一半,赫拉利不许你移开眼睛:**农场动物被重新定义成了生产设备**。在传统农家,牛和人住得不远,彼此认识;在工业化农场,蛋鸡被折叠进转身都难的格子,奶牛成了产奶管线的一个接口,小牛出生即与母亲分离——不是因为农场主残忍,而是因为核算表里只有「产出效率」这一栏,而动物的恐惧、社交欲与母子联结,**在市场上没有价格,于是在系统里没有位置**。赫拉利把这件事列为现代规模最大、讨论最少的伦理问题之一:第三章里智人曾是「生态连环杀手」,这一章他升级成了「生态流水线厂长」——上一章说市场对痛苦色盲,这里是它最刺眼的展品。"
+  },
+  {
+   "type": "h2",
+   "text": "时间表:一场悄无声息的圈地运动"
+  },
+  {
+   "type": "p",
+   "text": "然后是那场几乎没人反抗、如今没人逃脱的圈地——**对时间的圈地**。农业时代的时间是软的:日出而作,农忙拼命,农闲晒太阳,村口的钟(如果有的话)只报个大概。工厂改变了一切:流水线要求几百个工人**同一分钟**各就各位,一个环节迟到,整条线瘫痪——于是哨声、班次、打卡钟。真正把「统一时间」推向全国的是铁路:每个城镇按自己的日头过活,时刻表就是废纸;于是各地时间被强行对齐到同一个标准——**历史上第一次,「现在几点」不再由头顶的太阳决定,而由千里之外的一纸标准决定**。此后的故事你熟:工厂时间渗进学校(上下课铃就是班次铃的童年版)、医院、政府,最后长到每个人手腕上、口袋里。今天你的日历把一天切成半小时的格子,通勤软件精确到分钟,连休息都要「安排」——赫拉利的用词毫不客气:这是**时间表的暴政**。它换来了不可思议的协作效率,代价是人类历史上从未有过的一种焦虑:永远在对表,永远差五分钟。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "svg": "<svg viewBox='0 0 560 330' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>两种一天:太阳的节奏 vs 钟表的格子</text><text x='150' y='60' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>农民的一天(软时间)</text><circle cx='150' cy='150' r='62' style='fill:none;stroke:var(--line);stroke-width:1.5'/><path d='M150,88 A62,62 0 0 1 212,150' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='150' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>日出而作</text><text x='150' y='162' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>日入而息</text><text x='150' y='246' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>农忙拼命,农闲晒太阳</text><text x='150' y='266' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>「几点了」不重要</text><text x='410' y='60' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>现代人的一天(硬格子)</text><rect x='318' y='88' width='184' height='124' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><line x1='318' y1='119' x2='502' y2='119' style='stroke:var(--cinnabar);stroke-width:0.8'/><line x1='318' y1='150' x2='502' y2='150' style='stroke:var(--cinnabar);stroke-width:0.8'/><line x1='318' y1='181' x2='502' y2='181' style='stroke:var(--cinnabar);stroke-width:0.8'/><line x1='364' y1='88' x2='364' y2='212' style='stroke:var(--cinnabar);stroke-width:0.8'/><line x1='410' y1='88' x2='410' y2='212' style='stroke:var(--cinnabar);stroke-width:0.8'/><line x1='456' y1='88' x2='456' y2='212' style='stroke:var(--cinnabar);stroke-width:0.8'/><text x='341' y='107' text-anchor='middle' style='font-family:var(--font-serif);font-size:9px;fill:var(--ink-soft)'>7:00</text><text x='387' y='107' text-anchor='middle' style='font-family:var(--font-serif);font-size:9px;fill:var(--ink-soft)'>打卡</text><text x='433' y='107' text-anchor='middle' style='font-family:var(--font-serif);font-size:9px;fill:var(--ink-soft)'>例会</text><text x='479' y='107' text-anchor='middle' style='font-family:var(--font-serif);font-size:9px;fill:var(--ink-soft)'>午餐</text><text x='341' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:9px;fill:var(--ink-soft)'>汇报</text><text x='387' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:9px;fill:var(--ink-soft)'>通勤</text><text x='433' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:9px;fill:var(--ink-soft)'>健身</text><text x='479' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:9px;fill:var(--ink-soft)'>网课</text><text x='410' y='246' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>铁路对齐了全国的钟,工厂的哨声</text><text x='410' y='266' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>长成了你手机上的日程提醒</text><text x='280' y='306' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>协作效率的代价:永远在对表,永远差五分钟</text></svg>",
+   "caption": "对时间的圈地运动:太阳下岗,标准时上任——历史上第一次,「现在几点」由千里之外的一纸标准决定。"
+  },
+  {
+   "type": "h2",
+   "text": "家庭下岗,国家与市场上岗"
+  },
+  {
+   "type": "p",
+   "text": "工业革命最深的改造不在工厂里,在家里。几千年来,人这一生的全部保障来自两个圈子:**家庭与邻里社区**。养老靠儿女,看病靠亲族,失业靠宗族接济,婚配靠父母之命媒妁之言——个人几乎没有独立空间,但也几乎不会独自坠落。工业革命把这套系统整体拆解:工厂需要能自由流动的劳动力,不是拖家带口的宗族;于是国家和市场向个人递出一份历史性的新合同——**「做你自己吧:想娶谁娶谁,想去哪去哪;养老有养老金,生病有医院,失业有保险——不用再看家族的脸色。」**这份合同,绝大多数人签得心甘情愿,因为它给的是真自由。但发票的背面印着代价:当家庭与社区不再被需要,它们就真的萎缩了;个人获得空前自由的同时,也第一次要**独自面对**生老病死——身边只剩下发工资的市场和收税的国家,这两位都不会陪你吃年夜饭。填补情感真空的,是两种新的想象共同体:**民族**,让你为素未谋面的同胞热泪盈眶;**消费部落**,让你和同款球鞋、同个偶像的陌生人称兄道弟。"
+  },
+  {
+   "type": "pull",
+   "text": "从部落到帝国再到民族与粉丝群——虚构故事的形态换了几轮,配方从来没变。"
+  },
+  {
+   "type": "quote",
+   "original": "消费主义告诉我们,想要快乐,就该去买更多的产品、更多的服务。",
+   "translation": "工业革命的收尾一环:机器让生产暴涨,可产出总得有人买。于是人类历史上第一次,「多买」从道德缺陷(奢侈、浪费)被改写成了美德(拉动经济、犒赏自己)——节俭了几千年的伦理,一代人之间完成掉头。广告业的全部工作,就是替你把「想要」升级成「需要」。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "svg": "<svg viewBox='0 0 560 320' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>同一张发票的正反面:个体解放 × 共同体瓦解</text><rect x='150' y='54' width='260' height='50' rx='9' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='78' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>传统:家庭与邻里包办一切</text><text x='280' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>养老 · 看病 · 婚配 · 接济——没自由,也不会独自坠落</text><path d='M280,106 L280,138' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='280,138 274,126 286,126' style='fill:var(--ink-faint)'/><text x='366' y='126' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>工业革命的新合同</text><rect x='40' y='142' width='230' height='70' rx='9' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='155' y='168' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>正面:个体解放</text><text x='155' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>想娶谁娶谁,想去哪去哪</text><text x='155' y='206' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>国家发保障,市场发工资</text><rect x='290' y='142' width='230' height='70' rx='9' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='405' y='168' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>背面:共同体瓦解</text><text x='405' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>第一次独自面对生老病死</text><text x='405' y='206' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>市场和国家不陪你吃年夜饭</text><path d='M155,214 L245,252' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M405,214 L315,252' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><rect x='170' y='254' width='220' height='44' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.2;stroke-dasharray:5 4'/><text x='280' y='273' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>填补真空的新想象共同体</text><text x='280' y='291' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>民族 · 消费部落(球鞋圈 · 粉丝群)</text></svg>",
+   "caption": "国家与市场对个人说「做你自己」,顺手接管了家庭的全部职能——自由是真的,孤独也是真的,虚构共同体前来补位。"
+  },
+  {
+   "type": "h2",
+   "text": "收束:两笔没算完的账"
+  },
+  {
+   "type": "p",
+   "text": "照例打问号。**第一笔:能量乐观主义讲了一半。**「能源是海洋不是罐子」在供给端大体成立,但这一章对另一端着墨很少——烧掉的每一吨煤和石油都在向大气赊账,气候变化恰恰说明:瓶颈可能不在「能量够不够」,而在「副作用兜不兜得住」。用今天的眼光回看,这是本章明显的时代局限。**第二笔:「传统共同体的温暖」别浪漫化。**家族与村社确实兜底,但也附赠包办婚姻、家长专制和对出格者的窒息式管制——很多人逃进城市的匿名与孤独,是用脚投的票。赫拉利自己也承认这份新合同利弊皆真,读者更不必替古人抹金。**但这一章真正的收获是一个观察角度**:下次感到「时间不够用」的焦虑时,提醒自己这不是你的失败,而是一套两百年前为蒸汽机设计的时间制度,正运行在你这具为草原设计的身体上。至此,力量的账已全部记完——七万年,智人从啃剩骨头到掌控行星。于是下一章,赫拉利问出了全书最扎心的问题:这一切,让我们更快乐了吗?"
+  }
+ ]
 }

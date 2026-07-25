@@ -1,115 +1,119 @@
 {
-  "title": "哈扎人的启示:运动多≠消耗多",
-  "subtitle": "地球上最能走的人，和最不爱动的人，每天烧掉的热量竟然差不多——这个反直觉的发现，是全书真正的地基",
-  "centralIdea": "这一章是《燃烧》的实证核心。庞策把上一章那把最精准的代谢尺子——双标水——背进坦桑尼亚的荒野，去测一群仍靠狩猎采集为生的哈扎人（Hadza）：他们没有汽车、没有机械，每天步行、挖块茎、追猎物、攀树取蜜，体力活动量远远甩开久坐的现代人。出发前，包括研究者在内，所有人都笃定他们每天烧掉的总热量会高得惊人。结果却让全场愣住：校正体型和体重之后，哈扎人的每日总能量消耗，跟成天久坐的欧美人几乎落在同一区间。这意味着「活动越多、每天烧的总热量就越多」这个天经地义的假设，是错的。这是一项开创性、但仍需更多研究反复印证的发现——它逼出了下一章的「受限能量消耗」模型，也让减肥的重心，开始从「腿」悄悄挪向「嘴」。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "十几年前，进化人类学家赫尔曼·庞策带着一箱看似普通的水，飞进了坦桑尼亚的荒野。那不是普通的水，而是掺了两种稀有同位素的「双标水」——上一章讲过，它是目前测量人体每日真实能量消耗最精准的工具。他要测的对象，是世上仅存的少数几个仍靠狩猎采集为生的族群之一：哈扎人（Hadza）。出发前，几乎每个人心里都揣着同一个笃定的答案，庞策自己也不例外。可等数据回来，那个答案碎了一地——这一章，就是全书真正的地基。"
-    },
-    {
-      "type": "h2",
-      "text": "先把赌注下好：所有人都押哈扎人烧得更多"
-    },
-    {
-      "type": "p",
-      "text": "哈扎人住在东非大裂谷边、埃亚西湖畔的稀树草原上，人口约千人，其中还有几百人过着近乎千百年未变的生活。他们没有农田，不养牲口，不通电，更没有汽车、没有任何代步或省力的机械。吃的每一口，几乎都得靠自己的双腿和双手，从荒野里一点点挣来。对研究能量消耗的人来说，这简直是一座天然的实验室：一群把「体力劳动」结结实实写进每一天的人。"
-    },
-    {
-      "type": "p",
-      "text": "他们的一天大致是这样：天没亮，妇女们就成群走出营地，去挖一种埋在硬土里的野生块茎，弯着腰、用尖木棍一下一下地刨，一挖就是几个钟头；男人们背着自制的弓，为追一头猎物，能在灌木丛里穿行大半天，空手而归是常事。想吃蜂蜜，就得徒手爬上几层楼高的猴面包树。孩子要背着，采来的果子和猎物要扛回营地。粗算下来，一个哈扎成年人每天步行的距离，常常是久坐城里人的好几倍。按我们所有人的常识，这样一具身体，每天烧掉的热量理应高得惊人。"
-    },
-    {
-      "type": "figure",
-      "ftype": "结构图",
-      "caption": "哈扎人没有汽车与省力机械，觅食本身就是体力活——挖、追、爬、背，醒着几乎都在动",
-      "svg": "<svg viewBox='0 0 560 250' style='width:100%;height:auto;font-family:var(--font-serif)' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink)' font-size='16'>哈扎人：为什么活动量这么大</text><rect x='190' y='40' width='180' height='44' rx='8' style='fill:none;stroke:var(--cinnabar-pure)' stroke-width='2'/><text x='280' y='67' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='15'>醒着几乎都在动</text><path d='M280 84 L76 126' style='stroke:var(--line);fill:none' stroke-width='1.2'/><path d='M280 84 L212 126' style='stroke:var(--line);fill:none' stroke-width='1.2'/><path d='M280 84 L348 126' style='stroke:var(--line);fill:none' stroke-width='1.2'/><path d='M280 84 L484 126' style='stroke:var(--line);fill:none' stroke-width='1.2'/><rect x='14' y='126' width='124' height='84' rx='8' style='fill:none;stroke:var(--line)' stroke-width='1.5'/><text x='76' y='154' text-anchor='middle' style='fill:var(--ink)' font-size='14'>挖块茎</text><text x='76' y='176' text-anchor='middle' style='fill:var(--ink-soft)' font-size='10.5'>妇女弯腰刨挖</text><text x='76' y='194' text-anchor='middle' style='fill:var(--ink-soft)' font-size='10.5'>一挖数小时</text><rect x='150' y='126' width='124' height='84' rx='8' style='fill:none;stroke:var(--line)' stroke-width='1.5'/><text x='212' y='154' text-anchor='middle' style='fill:var(--ink)' font-size='14'>弓箭追猎</text><text x='212' y='176' text-anchor='middle' style='fill:var(--ink-soft)' font-size='10.5'>男子长途追踪</text><text x='212' y='194' text-anchor='middle' style='fill:var(--ink-soft)' font-size='10.5'>常空手而归</text><rect x='286' y='126' width='124' height='84' rx='8' style='fill:none;stroke:var(--line)' stroke-width='1.5'/><text x='348' y='154' text-anchor='middle' style='fill:var(--ink)' font-size='14'>攀树取蜜</text><text x='348' y='176' text-anchor='middle' style='fill:var(--ink-soft)' font-size='10.5'>徒手爬上</text><text x='348' y='194' text-anchor='middle' style='fill:var(--ink-soft)' font-size='10.5'>高大的猴面包树</text><rect x='422' y='126' width='124' height='84' rx='8' style='fill:none;stroke:var(--line)' stroke-width='1.5'/><text x='484' y='154' text-anchor='middle' style='fill:var(--ink)' font-size='14'>采集背负</text><text x='484' y='176' text-anchor='middle' style='fill:var(--ink-soft)' font-size='10.5'>走远路采果</text><text x='484' y='194' text-anchor='middle' style='fill:var(--ink-soft)' font-size='10.5'>还背着孩子</text><text x='280' y='236' text-anchor='middle' style='fill:var(--ink-faint)' font-size='11'>觅食就是体力活，每天常步行数公里——远超任何一个久坐的现代人</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "庞策千里迢迢跑这一趟，赌的正是这个「理应」。他和同行都预期：哈扎人的每日总消耗，会明显甩开成天坐办公室、开车、按电梯的欧美人一大截。这几乎不像一个假设，更像是去把一个板上钉钉的常识，用最硬的数据再坐实一遍。「活动越多，烧得越多」——这句话听起来天经地义，谁会去怀疑呢？"
-    },
-    {
-      "type": "h2",
-      "text": "把双标水背进丛林"
-    },
-    {
-      "type": "p",
-      "text": "测量本身是场硬仗。研究者让哈扎志愿者喝下定量的双标水，此后连着约十天，定期收集他们的尿样。原理上一章说过：水里被标记的氢随着水分离开身体，被标记的氧却既随水、又随呼出的二氧化碳离开，两者流失速度的差，正好换算出这些天里身体产生了多少二氧化碳，也就等于烧掉了多少能量。在没有实验室、没有冰箱、全靠越野车和徒步进出的荒野里，把一份份样本采好、编号、低温运回美国分析——这套精密流程能在丛林里跑通，本身就已是一项不小的成就。"
-    },
-    {
-      "type": "p",
-      "text": "为什么非得用双标水？因为这是唯一能在人正常过日子、不进代谢舱的情况下，量出「真实一整天」总消耗的办法。哈扎人照常出去觅食、狩猎、走路，仪器不打扰他们分毫，测得的却是货真价实的日常消耗。更关键的是，几十年来欧美人群早已用同一套方法留下了大量数据。这意味着庞策手里的哈扎数字，可以和久坐的现代人放到同一杆秤上——同样的尺子、同样的单位，一场真正公平的对照，就这样成立了。"
-    },
-    {
-      "type": "quote",
-      "ftype": "金句",
-      "original": "把最精密的代谢尺子，带进最不「现代」的生活里——这一测，测翻了一个想当然的答案。",
-      "translation": ""
-    },
-    {
-      "type": "h2",
-      "text": "结果让所有人愣住"
-    },
-    {
-      "type": "p",
-      "text": "数据揭晓，全场愣住。哈扎人每天烧掉的总热量，在校正了体型和体重之后，跟成天久坐的美国人、欧洲人几乎一样，落在同一个区间里。不是略高一点，而是基本持平。哈扎人身材更瘦小，所以论绝对数字，他们的消耗甚至不比坐办公室的人多多少；一旦把体型这个最大的干扰因素扣掉、放到同一杆秤上比，那条「活跃的人烧得更多」的鸿沟——竟然消失了。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对比图",
-      "caption": "哈扎人的体力活动量远高于久坐者（左），可校正体型后，两者每天烧掉的总热量却几乎持平（右）——差距在活动上，不在总账上",
-      "svg": "<svg viewBox='0 0 560 300' style='width:100%;height:auto;font-family:var(--font-serif)' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink)' font-size='16'>活动量差一大截，每日总消耗却几乎持平</text><path d='M280 46 L280 256' style='stroke:var(--line);fill:none' stroke-width='1' stroke-dasharray='4 4'/><text x='155' y='58' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>① 每天的体力活动量</text><path d='M60 250 L250 250' style='stroke:var(--line);fill:none' stroke-width='1.5'/><rect x='92' y='80' width='46' height='170' style='fill:var(--cinnabar-pure)'/><rect x='170' y='204' width='46' height='46' style='fill:var(--ink-faint)'/><text x='150' y='150' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='11'>差距悬殊</text><text x='115' y='270' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>哈扎人</text><text x='193' y='270' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>久坐者</text><text x='413' y='58' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>② 每日总能量消耗</text><text x='413' y='73' text-anchor='middle' style='fill:var(--ink-faint)' font-size='10'>（校正体型后）</text><path d='M310 250 L522 250' style='stroke:var(--line);fill:none' stroke-width='1.5'/><rect x='350' y='126' width='46' height='124' style='fill:var(--cinnabar-pure)'/><rect x='430' y='132' width='46' height='118' style='fill:var(--ink-faint)'/><path d='M340 126 L488 126' style='stroke:var(--ink-soft);fill:none' stroke-width='1' stroke-dasharray='5 4'/><text x='414' y='116' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='11'>≈ 相差无几</text><text x='373' y='270' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>哈扎人</text><text x='453' y='270' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>久坐者</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "把这个结果摆清楚很重要：不是哈扎人不辛苦，他们的体力活动量确实远远高过任何一个久坐的现代人，这一点毫无疑问。反直觉的地方恰恰在于，如此悬殊的活动量差距，最后并没有换来同样悬殊的每日总消耗差距。一个把日子过成马拉松的人，和一个把日子过在沙发与工位之间的人，一天下来烧掉的「油」，居然差不多。"
-    },
-    {
-      "type": "quote",
-      "ftype": "金句",
-      "original": "最能走的人，和最不动的人，每天烧的油量差不多——这不合常识，却是量出来的。",
-      "translation": ""
-    },
-    {
-      "type": "h2",
-      "text": "为什么这件事这么反直觉"
-    },
-    {
-      "type": "p",
-      "text": "会觉得离谱，是因为我们脑子里装着一个「加法模型」：身体先有一份维持心跳、呼吸、体温的基础开销，你每多走一步、多爬一层楼，就在这份基础之上「额外」添一笔活动开销。跑步机上跳动的数字、手环上累计的卡路里，都在不停强化这个印象——动得越多，加得越多，一天的总数自然越大。这套逻辑如此顺理成章，以至于整个健康产业、几乎每一本减肥书，都默认它天然为真。"
-    },
-    {
-      "type": "figure",
-      "ftype": "结构图",
-      "caption": "直觉以为总消耗是「基础＋活动」的加法（左），活跃的人自然更高；哈扎人的数据却显示，总量被锁在同一条线上（右）——活动多占的，身体在别处省了回来",
-      "svg": "<svg viewBox='0 0 560 300' style='width:100%;height:auto;font-family:var(--font-serif)' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink)' font-size='16'>同一个身体，两种账法</text><path d='M280 44 L280 254' style='stroke:var(--line);fill:none' stroke-width='1' stroke-dasharray='4 4'/><text x='150' y='56' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>我们的直觉：加法</text><path d='M55 250 L252 250' style='stroke:var(--line);fill:none' stroke-width='1.5'/><rect x='78' y='150' width='50' height='100' style='fill:var(--ink-faint)'/><rect x='78' y='130' width='50' height='20' style='fill:var(--cinnabar-pure)'/><text x='103' y='268' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>久坐</text><rect x='158' y='150' width='50' height='100' style='fill:var(--ink-faint)'/><rect x='158' y='60' width='50' height='90' style='fill:var(--cinnabar-pure)'/><text x='183' y='268' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>活跃</text><text x='410' y='56' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>实测大致是：锁定</text><path d='M310 250 L525 250' style='stroke:var(--line);fill:none' stroke-width='1.5'/><rect x='350' y='128' width='50' height='122' style='fill:var(--ink-faint)'/><rect x='350' y='110' width='50' height='18' style='fill:var(--cinnabar-pure)'/><text x='375' y='268' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>久坐</text><rect x='430' y='200' width='50' height='50' style='fill:var(--ink-faint)'/><rect x='430' y='110' width='50' height='90' style='fill:var(--cinnabar-pure)'/><text x='455' y='268' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>活跃</text><path d='M340 110 L490 110' style='stroke:var(--ink-soft);fill:none' stroke-width='1' stroke-dasharray='5 4'/><text x='415' y='102' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='11'>总量锁在同一条线</text><rect x='150' y='280' width='14' height='9' style='fill:var(--cinnabar-pure)'/><text x='170' y='288' style='fill:var(--ink-soft)' font-size='10.5'>体力活动</text><rect x='300' y='280' width='14' height='9' style='fill:var(--ink-faint)'/><text x='320' y='288' style='fill:var(--ink-soft)' font-size='10.5'>基础代谢＋其他开支</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "可哈扎人的数据说，身体不是这么简单的加法器。既然总消耗被稳稳按在一个区间里，那么当体力活动占掉一大块时，身体一定在别处「省」了回来——把花在其它生理过程上的能量悄悄压下去，好让总账维持平衡。换个日常的比方：这更像一个每月收入固定的家庭，房租涨了，就只能从伙食、娱乐、储蓄里一点点抠回来，月底的总支出还是那个数；身体也一样，把大把能量投进走路、挖土、追猎之后，会在别的开支上收紧，把一天的能量总账重新拉平。至于身体究竟省在了哪、这套「锁定」是怎么运作的，正是下一章「受限的能量消耗」要展开的主线。这一章只需先把那个惊人的事实钉牢：每天的总量，是被限制住的。"
-    },
-    {
-      "type": "h2",
-      "text": "分寸：一块地基，不是终点"
-    },
-    {
-      "type": "p",
-      "text": "有几句话必须说在前头。第一，这是一项开创性的发现，但它终究是从一个特定族群、一次测量里得出的；后来庞策团队和其他研究者又在更多人群里做了验证，结论大体站得住，可要说彻底盖棺定论，仍需要更多、更大样本的研究去反复印证——科学本就是这样一点点夯实起来的。第二，也是最容易被误读的一点：「运动不能等量地增加每日总消耗」绝不等于「运动没用、可以不动」。恰恰相反，后面几章会讲到，规律运动对身体的好处多得数不清，只是「多烧热量、好减肥」未必是其中最靠得住的那一条。"
-    },
-    {
-      "type": "p",
-      "text": "还有一层不能漏掉：哈扎人每天烧掉的总热量虽然并不比久坐者高，身体却相当结实——血压偏低、几乎没有肥胖、随年龄增长也少见困扰现代人的那些代谢麻烦。这恰恰是庞策想点醒我们的：一个人健不健康、代谢好不好，未必看他每天「烧掉多少」，而更多藏在他把这些能量花在了哪里、身体的各项开支排布得是否合理。这些线索，后面几章会一条条接住。（这里说的是研究观察，不是给谁开的健康处方。）"
-    },
-    {
-      "type": "p",
-      "text": "把这一章放回全书来看，它的分量在于：一个被当作常识用了上百年的假设——「多动就多烧、多烧就变瘦」——第一次被最硬的测量数据正面撞了个趔趄。减肥这件事的重心，也因此开始从「腿」悄悄挪向「嘴」。但在真正解释身体如何「锁住」总消耗之前，我们得先接受这个不太舒服、却结结实实的事实：地球上最能走的人，和最不爱动的人，每天烧掉的那点油，其实差不了多少。"
-    },
-    {
-      "type": "figure",
-      "ftype": "金句卡",
-      "caption": "本章一句话",
-      "svg": "<svg viewBox='0 0 560 200' style='width:100%;height:auto;font-family:var(--font-serif)' xmlns='http://www.w3.org/2000/svg'><rect x='28' y='18' width='504' height='164' rx='14' style='fill:none;stroke:var(--line)' stroke-width='1.5'/><rect x='262' y='34' width='36' height='36' rx='6' style='fill:var(--cinnabar-pure)'/><text x='280' y='59' text-anchor='middle' style='fill:var(--paper)' font-size='20'>观</text><text x='280' y='106' text-anchor='middle' style='fill:var(--ink)' font-size='19'>最能走的人，和最不动的人</text><text x='280' y='140' text-anchor='middle' style='fill:var(--ink)' font-size='19'>每天烧掉的热量，<tspan style='fill:var(--cinnabar-pure)'>差不多</tspan></text><text x='280' y='170' text-anchor='middle' style='fill:var(--ink-faint)' font-size='11'>——《燃烧》· 哈扎人的启示</text></svg>"
-    }
-  ]
+ "title": "哈扎人的启示:运动多≠消耗多",
+ "subtitle": "地球上最能走的人，和最不爱动的人，每天烧掉的热量竟然差不多——这个反直觉的发现，是全书真正的地基",
+ "centralIdea": "这一章是《燃烧》的实证核心。庞策把上一章那把最精准的代谢尺子——双标水——背进坦桑尼亚的荒野，去测一群仍靠狩猎采集为生的哈扎人（Hadza）：他们没有汽车、没有机械，每天步行、挖块茎、追猎物、攀树取蜜，体力活动量远远甩开久坐的现代人。出发前，包括研究者在内，所有人都笃定他们每天烧掉的总热量会高得惊人。结果却让全场愣住：校正体型和体重之后，哈扎人的每日总能量消耗，跟成天久坐的欧美人几乎落在同一区间。这意味着「活动越多、每天烧的总热量就越多」这个天经地义的假设，是错的。这是一项开创性、但仍需更多研究反复印证的发现——它逼出了下一章的「受限能量消耗」模型，也让减肥的重心，开始从「腿」悄悄挪向「嘴」。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "十几年前，进化人类学家赫尔曼·庞策带着一箱看似普通的水，飞进了坦桑尼亚的荒野。那不是普通的水，而是掺了两种稀有同位素的「双标水」——上一章讲过，它是目前测量人体每日真实能量消耗最精准的工具。他要测的对象，是世上仅存的少数几个仍靠狩猎采集为生的族群之一：哈扎人（Hadza）。出发前，几乎每个人心里都揣着同一个笃定的答案，庞策自己也不例外。可等数据回来，那个答案碎了一地——这一章，就是全书真正的地基。"
+  },
+  {
+   "type": "h2",
+   "text": "先把赌注下好：所有人都押哈扎人烧得更多"
+  },
+  {
+   "type": "p",
+   "text": "哈扎人住在东非大裂谷边、埃亚西湖畔的稀树草原上，人口约千人，其中还有几百人过着近乎千百年未变的生活。他们没有农田，不养牲口，不通电，更没有汽车、没有任何代步或省力的机械。吃的每一口，几乎都得靠自己的双腿和双手，从荒野里一点点挣来。对研究能量消耗的人来说，这简直是一座天然的实验室：一群把「体力劳动」结结实实写进每一天的人。"
+  },
+  {
+   "type": "p",
+   "text": "他们的一天大致是这样：天没亮，妇女们就成群走出营地，去挖一种埋在硬土里的野生块茎，弯着腰、用尖木棍一下一下地刨，一挖就是几个钟头；男人们背着自制的弓，为追一头猎物，能在灌木丛里穿行大半天，空手而归是常事。想吃蜂蜜，就得徒手爬上几层楼高的猴面包树。孩子要背着，采来的果子和猎物要扛回营地。粗算下来，一个哈扎成年人每天步行的距离，常常是久坐城里人的好几倍。"
+  },
+  {
+   "type": "pull",
+   "text": "按我们所有人的常识，这样一具身体，每天烧掉的热量理应高得惊人。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "哈扎人没有汽车与省力机械，觅食本身就是体力活——挖、追、爬、背，醒着几乎都在动",
+   "svg": "<svg viewBox='0 0 560 250' style='width:100%;height:auto;font-family:var(--font-serif)' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink)' font-size='16'>哈扎人：为什么活动量这么大</text><rect x='190' y='40' width='180' height='44' rx='8' style='fill:none;stroke:var(--cinnabar-pure)' stroke-width='2'/><text x='280' y='67' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='15'>醒着几乎都在动</text><path d='M280 84 L76 126' style='stroke:var(--line);fill:none' stroke-width='1.2'/><path d='M280 84 L212 126' style='stroke:var(--line);fill:none' stroke-width='1.2'/><path d='M280 84 L348 126' style='stroke:var(--line);fill:none' stroke-width='1.2'/><path d='M280 84 L484 126' style='stroke:var(--line);fill:none' stroke-width='1.2'/><rect x='14' y='126' width='124' height='84' rx='8' style='fill:none;stroke:var(--line)' stroke-width='1.5'/><text x='76' y='154' text-anchor='middle' style='fill:var(--ink)' font-size='14'>挖块茎</text><text x='76' y='176' text-anchor='middle' style='fill:var(--ink-soft)' font-size='10.5'>妇女弯腰刨挖</text><text x='76' y='194' text-anchor='middle' style='fill:var(--ink-soft)' font-size='10.5'>一挖数小时</text><rect x='150' y='126' width='124' height='84' rx='8' style='fill:none;stroke:var(--line)' stroke-width='1.5'/><text x='212' y='154' text-anchor='middle' style='fill:var(--ink)' font-size='14'>弓箭追猎</text><text x='212' y='176' text-anchor='middle' style='fill:var(--ink-soft)' font-size='10.5'>男子长途追踪</text><text x='212' y='194' text-anchor='middle' style='fill:var(--ink-soft)' font-size='10.5'>常空手而归</text><rect x='286' y='126' width='124' height='84' rx='8' style='fill:none;stroke:var(--line)' stroke-width='1.5'/><text x='348' y='154' text-anchor='middle' style='fill:var(--ink)' font-size='14'>攀树取蜜</text><text x='348' y='176' text-anchor='middle' style='fill:var(--ink-soft)' font-size='10.5'>徒手爬上</text><text x='348' y='194' text-anchor='middle' style='fill:var(--ink-soft)' font-size='10.5'>高大的猴面包树</text><rect x='422' y='126' width='124' height='84' rx='8' style='fill:none;stroke:var(--line)' stroke-width='1.5'/><text x='484' y='154' text-anchor='middle' style='fill:var(--ink)' font-size='14'>采集背负</text><text x='484' y='176' text-anchor='middle' style='fill:var(--ink-soft)' font-size='10.5'>走远路采果</text><text x='484' y='194' text-anchor='middle' style='fill:var(--ink-soft)' font-size='10.5'>还背着孩子</text><text x='280' y='236' text-anchor='middle' style='fill:var(--ink-faint)' font-size='11'>觅食就是体力活，每天常步行数公里——远超任何一个久坐的现代人</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "庞策千里迢迢跑这一趟，赌的正是这个「理应」。他和同行都预期：哈扎人的每日总消耗，会明显甩开成天坐办公室、开车、按电梯的欧美人一大截。这几乎不像一个假设，更像是去把一个板上钉钉的常识，用最硬的数据再坐实一遍。「活动越多，烧得越多」——这句话听起来天经地义，谁会去怀疑呢？"
+  },
+  {
+   "type": "h2",
+   "text": "把双标水背进丛林"
+  },
+  {
+   "type": "p",
+   "text": "测量本身是场硬仗。研究者让哈扎志愿者喝下定量的双标水，此后连着约十天，定期收集他们的尿样。原理上一章说过：水里被标记的氢随着水分离开身体，被标记的氧却既随水、又随呼出的二氧化碳离开，两者流失速度的差，正好换算出这些天里身体产生了多少二氧化碳，也就等于烧掉了多少能量。在没有实验室、没有冰箱、全靠越野车和徒步进出的荒野里，把一份份样本采好、编号、低温运回美国分析——这套精密流程能在丛林里跑通，本身就已是一项不小的成就。"
+  },
+  {
+   "type": "p",
+   "text": "为什么非得用双标水？因为这是唯一能在人正常过日子、不进代谢舱的情况下，量出「真实一整天」总消耗的办法。哈扎人照常出去觅食、狩猎、走路，仪器不打扰他们分毫，测得的却是货真价实的日常消耗。更关键的是，几十年来欧美人群早已用同一套方法留下了大量数据。这意味着庞策手里的哈扎数字，可以和久坐的现代人放到同一杆秤上——同样的尺子、同样的单位，一场真正公平的对照，就这样成立了。"
+  },
+  {
+   "type": "quote",
+   "ftype": "金句",
+   "original": "把最精密的代谢尺子，带进最不「现代」的生活里——这一测，测翻了一个想当然的答案。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "结果让所有人愣住"
+  },
+  {
+   "type": "p",
+   "text": "数据揭晓，全场愣住。哈扎人每天烧掉的总热量，在校正了体型和体重之后，跟成天久坐的美国人、欧洲人几乎一样，落在同一个区间里。不是略高一点，而是基本持平。哈扎人身材更瘦小，所以论绝对数字，他们的消耗甚至不比坐办公室的人多多少；一旦把体型这个最大的干扰因素扣掉、放到同一杆秤上比，那条「活跃的人烧得更多」的鸿沟——竟然消失了。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "caption": "哈扎人的体力活动量远高于久坐者（左），可校正体型后，两者每天烧掉的总热量却几乎持平（右）——差距在活动上，不在总账上",
+   "svg": "<svg viewBox='0 0 560 300' style='width:100%;height:auto;font-family:var(--font-serif)' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink)' font-size='16'>活动量差一大截，每日总消耗却几乎持平</text><path d='M280 46 L280 256' style='stroke:var(--line);fill:none' stroke-width='1' stroke-dasharray='4 4'/><text x='155' y='58' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>① 每天的体力活动量</text><path d='M60 250 L250 250' style='stroke:var(--line);fill:none' stroke-width='1.5'/><rect x='92' y='80' width='46' height='170' style='fill:var(--cinnabar-pure)'/><rect x='170' y='204' width='46' height='46' style='fill:var(--ink-faint)'/><text x='150' y='150' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='11'>差距悬殊</text><text x='115' y='270' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>哈扎人</text><text x='193' y='270' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>久坐者</text><text x='413' y='58' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>② 每日总能量消耗</text><text x='413' y='73' text-anchor='middle' style='fill:var(--ink-faint)' font-size='10'>（校正体型后）</text><path d='M310 250 L522 250' style='stroke:var(--line);fill:none' stroke-width='1.5'/><rect x='350' y='126' width='46' height='124' style='fill:var(--cinnabar-pure)'/><rect x='430' y='132' width='46' height='118' style='fill:var(--ink-faint)'/><path d='M340 126 L488 126' style='stroke:var(--ink-soft);fill:none' stroke-width='1' stroke-dasharray='5 4'/><text x='414' y='116' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='11'>≈ 相差无几</text><text x='373' y='270' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>哈扎人</text><text x='453' y='270' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>久坐者</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "把这个结果摆清楚很重要：不是哈扎人不辛苦，他们的体力活动量确实远远高过任何一个久坐的现代人，这一点毫无疑问。反直觉的地方恰恰在于，如此悬殊的活动量差距，最后并没有换来同样悬殊的每日总消耗差距。一个把日子过成马拉松的人，和一个把日子过在沙发与工位之间的人，一天下来烧掉的「油」，居然差不多。"
+  },
+  {
+   "type": "quote",
+   "ftype": "金句",
+   "original": "最能走的人，和最不动的人，每天烧的油量差不多——这不合常识，却是量出来的。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "为什么这件事这么反直觉"
+  },
+  {
+   "type": "p",
+   "text": "会觉得离谱，是因为我们脑子里装着一个「加法模型」：身体先有一份维持心跳、呼吸、体温的基础开销，你每多走一步、多爬一层楼，就在这份基础之上「额外」添一笔活动开销。跑步机上跳动的数字、手环上累计的卡路里，都在不停强化这个印象——动得越多，加得越多，一天的总数自然越大。这套逻辑如此顺理成章，以至于整个健康产业、几乎每一本减肥书，都默认它天然为真。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "直觉以为总消耗是「基础＋活动」的加法（左），活跃的人自然更高；哈扎人的数据却显示，总量被锁在同一条线上（右）——活动多占的，身体在别处省了回来",
+   "svg": "<svg viewBox='0 0 560 300' style='width:100%;height:auto;font-family:var(--font-serif)' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink)' font-size='16'>同一个身体，两种账法</text><path d='M280 44 L280 254' style='stroke:var(--line);fill:none' stroke-width='1' stroke-dasharray='4 4'/><text x='150' y='56' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>我们的直觉：加法</text><path d='M55 250 L252 250' style='stroke:var(--line);fill:none' stroke-width='1.5'/><rect x='78' y='150' width='50' height='100' style='fill:var(--ink-faint)'/><rect x='78' y='130' width='50' height='20' style='fill:var(--cinnabar-pure)'/><text x='103' y='268' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>久坐</text><rect x='158' y='150' width='50' height='100' style='fill:var(--ink-faint)'/><rect x='158' y='60' width='50' height='90' style='fill:var(--cinnabar-pure)'/><text x='183' y='268' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>活跃</text><text x='410' y='56' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>实测大致是：锁定</text><path d='M310 250 L525 250' style='stroke:var(--line);fill:none' stroke-width='1.5'/><rect x='350' y='128' width='50' height='122' style='fill:var(--ink-faint)'/><rect x='350' y='110' width='50' height='18' style='fill:var(--cinnabar-pure)'/><text x='375' y='268' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>久坐</text><rect x='430' y='200' width='50' height='50' style='fill:var(--ink-faint)'/><rect x='430' y='110' width='50' height='90' style='fill:var(--cinnabar-pure)'/><text x='455' y='268' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>活跃</text><path d='M340 110 L490 110' style='stroke:var(--ink-soft);fill:none' stroke-width='1' stroke-dasharray='5 4'/><text x='415' y='102' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='11'>总量锁在同一条线</text><rect x='150' y='280' width='14' height='9' style='fill:var(--cinnabar-pure)'/><text x='170' y='288' style='fill:var(--ink-soft)' font-size='10.5'>体力活动</text><rect x='300' y='280' width='14' height='9' style='fill:var(--ink-faint)'/><text x='320' y='288' style='fill:var(--ink-soft)' font-size='10.5'>基础代谢＋其他开支</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "可哈扎人的数据说，身体不是这么简单的加法器。既然总消耗被稳稳按在一个区间里，那么当体力活动占掉一大块时，身体一定在别处「省」了回来——把花在其它生理过程上的能量悄悄压下去，好让总账维持平衡。换个日常的比方：这更像一个每月收入固定的家庭，房租涨了，就只能从伙食、娱乐、储蓄里一点点抠回来，月底的总支出还是那个数；身体也一样，把大把能量投进走路、挖土、追猎之后，会在别的开支上收紧，把一天的能量总账重新拉平。至于身体究竟省在了哪、这套「锁定」是怎么运作的，正是下一章「受限的能量消耗」要展开的主线。这一章只需先把那个惊人的事实钉牢：每天的总量，是被限制住的。"
+  },
+  {
+   "type": "h2",
+   "text": "分寸：一块地基，不是终点"
+  },
+  {
+   "type": "p",
+   "text": "有几句话必须说在前头。第一，这是一项开创性的发现，但它终究是从一个特定族群、一次测量里得出的；后来庞策团队和其他研究者又在更多人群里做了验证，结论大体站得住，可要说彻底盖棺定论，仍需要更多、更大样本的研究去反复印证——科学本就是这样一点点夯实起来的。第二，也是最容易被误读的一点：「运动不能等量地增加每日总消耗」绝不等于「运动没用、可以不动」。恰恰相反，后面几章会讲到，规律运动对身体的好处多得数不清，只是「多烧热量、好减肥」未必是其中最靠得住的那一条。"
+  },
+  {
+   "type": "p",
+   "text": "还有一层不能漏掉：哈扎人每天烧掉的总热量虽然并不比久坐者高，身体却相当结实——血压偏低、几乎没有肥胖、随年龄增长也少见困扰现代人的那些代谢麻烦。这恰恰是庞策想点醒我们的：一个人健不健康、代谢好不好，未必看他每天「烧掉多少」，而更多藏在他把这些能量花在了哪里、身体的各项开支排布得是否合理。这些线索，后面几章会一条条接住。（这里说的是研究观察，不是给谁开的健康处方。）"
+  },
+  {
+   "type": "p",
+   "text": "把这一章放回全书来看，它的分量在于：一个被当作常识用了上百年的假设——「多动就多烧、多烧就变瘦」——第一次被最硬的测量数据正面撞了个趔趄。减肥这件事的重心，也因此开始从「腿」悄悄挪向「嘴」。但在真正解释身体如何「锁住」总消耗之前，我们得先接受这个不太舒服、却结结实实的事实：地球上最能走的人，和最不爱动的人，每天烧掉的那点油，其实差不了多少。"
+  },
+  {
+   "type": "figure",
+   "ftype": "金句卡",
+   "caption": "本章一句话",
+   "svg": "<svg viewBox='0 0 560 200' style='width:100%;height:auto;font-family:var(--font-serif)' xmlns='http://www.w3.org/2000/svg'><rect x='28' y='18' width='504' height='164' rx='14' style='fill:none;stroke:var(--line)' stroke-width='1.5'/><rect x='262' y='34' width='36' height='36' rx='6' style='fill:var(--cinnabar-pure)'/><text x='280' y='59' text-anchor='middle' style='fill:var(--paper)' font-size='20'>观</text><text x='280' y='106' text-anchor='middle' style='fill:var(--ink)' font-size='19'>最能走的人，和最不动的人</text><text x='280' y='140' text-anchor='middle' style='fill:var(--ink)' font-size='19'>每天烧掉的热量，<tspan style='fill:var(--cinnabar-pure)'>差不多</tspan></text><text x='280' y='170' text-anchor='middle' style='fill:var(--ink-faint)' font-size='11'>——《燃烧》· 哈扎人的启示</text></svg>"
+  }
+ ]
 }

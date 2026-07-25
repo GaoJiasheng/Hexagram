@@ -5,7 +5,7 @@
 //   例: node scripts/verify-reblock.mjs dao daodejing /tmp/daodejing.reblocked.json
 //
 // 判定:把一章所有块的可见文字按序拼成一个字符串,做「归一化」后逐字比对。
-// 归一化只抹掉合法的结构性差异——列表项被吃掉的序号前缀(一、/第一，/①/•)、
+// 归一化只抹掉合法的结构性差异——枚举/次第记号(一、/第一，/①/第二步，)、项目符号、
 // Markdown 加粗标记、空白。除此之外任何字符出入都算改写,当场报错。
 import fs from 'node:fs'
 import path from 'node:path'
@@ -17,40 +17,51 @@ if (!corpus || !slug || !newFile) {
   console.error('     否则默认的改前路径就是改后文件本身,校验会空转。')
   process.exit(2)
 }
-const oldFile = oldOverride || path.join('src/data', corpus, 'baihua', `${slug}.json`)
+const oldFile = oldOverride || (corpus === 'books' ? path.join('src/data/books', slug) : path.join('src/data', corpus, 'baihua', `${slug}.json`))
 if (path.resolve(oldFile) === path.resolve(newFile)) {
   console.error('✗ 改前与改后是同一个文件,校验将空转——请显式传入改前文件。')
   process.exit(2)
 }
-const before = JSON.parse(fs.readFileSync(oldFile, 'utf8'))
-const after = JSON.parse(fs.readFileSync(newFile, 'utf8'))
+// 观书是「一书一目录、一篇一文件」,白话是「一文件内含 {章号: 章}」——两种都读成同一张表
+function readMap(p) {
+  if (!fs.statSync(p).isDirectory()) return JSON.parse(fs.readFileSync(p, 'utf8'))
+  const out = {}
+  const add = (f) => { if (fs.existsSync(f)) out[path.relative(p, f)] = JSON.parse(fs.readFileSync(f, 'utf8')) }
+  add(path.join(p, 'overview.json'))
+  const ad = path.join(p, 'articles')
+  if (fs.existsSync(ad)) for (const x of fs.readdirSync(ad).filter((y) => y.endsWith('.json')).sort()) add(path.join(ad, x))
+  return out
+}
+const before = readMap(oldFile)
+const after = readMap(newFile)
 
-// 允许被吃掉的列表序号前缀(仅在行首)。
-// 「第/其 + 数字」这一支**必须跟标点**才算序号 —— 否则「第二步，…」会被当成序号剥掉「第二」、
-// 只剩「步，…」,而那是 steps 项的正文(实测 8 章因此误报)。
-const LIST_PREFIX = /^\s*(?:[其第][一二三四五六七八九十百]+[，,、：:]|[一二三四五六七八九十百]+[、．.]|[（(]?[0-9①②③④⑤⑥⑦⑧⑨⑩]+[）)、.．]?)/
-// 项目符号只对 list/steps 项剥。它若也全局剥,一个恰好断在「——」处的块(如 pull)
-// 会被吃掉行首破折号,而改前那个破折号在段中没被剥 → 单侧消失,误报不一致。
+// 枚举/次第记号(「第一，」「其一，」「一、」「①」「第二步，」…)一律**全局对称**抹掉。
+// 这是被两类情形逼出来的:
+//   A 整段成列表:改前是以序号开头的 p、改后是已剥序号的 list 项。
+//   B 块被切在序号处(金句正好从「第一,」起、次第除首步外的记号本在句中)。
+// 只在某一侧、或只在行首剥,这两类里总有一类对不上(实测两类都中过)。全局对称则都成立。
+// 代价:这些记号在任何位置被删都查不出来 —— 范围极窄,且它们本就是排版元件不是内容。
+// 注意数字那一支必须**带标点**才算记号,否则散文里的数字会被吃掉。
+const ENUM_MARK = /(?:[其第][一二三四五六七八九十百]+[，,、：:]|(?:第[一二三四五六七八九十]+步|最后一步)[，,、：:]|[一二三四五六七八九十百]+[、．]|[（(]?[0-9]+[）)、．]|[①②③④⑤⑥⑦⑧⑨⑩])/g
+// 项目符号只对 list/steps 项剥(散文里的破折号不能动)
 const BULLET_PREFIX = /^\s*[•·▪‣\-—]\s*/
-// 次第记号「第N步，」「最后一步，」**全局**抹掉(不限行首):一整段切成 steps 后,
-// 除第一步外的记号原本都在句中,行首规则够不着;而它们转成排版的圆号是合法消失。
-// 代价:这几个特定记号在别处被删也查不出来 —— 范围极窄,可接受。
-const STEP_MARK = /(?:第[一二三四五六七八九十]+步|最后一步)[，,、：:]/g
 const norm = (s) => String(s ?? '')
   .replace(/\*\*/g, '')          // 加粗标记不计
-  .replace(STEP_MARK, '')
+  .replace(ENUM_MARK, '')
   .replace(/\s+/g, '')           // 空白不计
-  .replace(/[​-‍]/g, '')
+  .replace(/[\u200b-\u200d]/g, '')
 
 // 把一章摊平成有序的文字片段。
-// 行首序号(「第一，」「其一，」「一、」…)**两侧一律剥掉** —— 转成 list 后序号由排版出、
-// 从文字里消失是合法的,但只在 list 那一侧剥就会与改前的 p 对不上(单侧消失=误报不一致)。
-// 对称剥离的代价:段首恰好是枚举词的删除查不出来 —— 范围极窄,可接受。
+// 行首序号(「第一，」「其一，」「一、」…)的剥离**按侧区分**,这是两类情形挤出来的规则:
+//   A 整段成列表:改前是以序号开头的 p、改后是已剥序号的 list 项 → 须在**改前侧**剥,才对得上。
+//   B 块被切在序号处(如金句正好从「第一,」起):改前该序号在段中(不剥)、改后落在块首。
+//     若改后侧也剥,就单侧消失、误报不一致。
+// 故:改前侧一律剥;改后侧只对 list/steps 项剥(脚本也只在那里剥)。
+// 代价:改前段首恰好是枚举词的删除查不出来 —— 范围极窄,可接受。
 function pieces(ch) {
   const out = []
   const push = (s, isItem) => {
-    let t = String(s ?? '').replace(LIST_PREFIX, '')
-    if (isItem) t = t.replace(BULLET_PREFIX, '')
+    const t = isItem ? String(s ?? '').replace(BULLET_PREFIX, '') : String(s ?? '')
     if (norm(t)) out.push(norm(t))
   }
   push(ch.title); push(ch.subtitle); push(ch.centralIdea)

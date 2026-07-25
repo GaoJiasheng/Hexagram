@@ -1,108 +1,112 @@
 {
-  "title": "噪声是什么:判断里被忽视的另一半误差",
-  "subtitle": "《噪声》第一章导读——用一张靶纸看清:偏差是整齐地偏一边,噪声是杂乱地四下散;两者一样致命,我们却只盯着前者",
-  "centralIdea": "人的判断出错,有两个来源。一个叫偏差(bias):所有判断朝同一个方向系统性地偏,有方向、可预测,像一个稳定的坏习惯。一个叫噪声(noise):判断彼此之间四下发散,没有统一方向,纯粹是不一致。作者用四支射击队打同一个靶来讲:弹孔紧密却整团偏左下的,是偏差;弹孔散得到处都是的,是噪声。最关键的洞察是——哪怕把靶翻到背面、根本不知道红心在哪,你也能一眼认出噪声队「有问题」,因为它太散了;这说明噪声不必知道正确答案就能测量,只看判断彼此多分散即可,而偏差非得先知道红心不可。误差方程告诉我们:总误差同时被偏差和噪声推高,两者往往分量相当;可偏差有故事性、显眼、好归因,噪声隐形、枯燥、必须把很多本该相同的判断摆在一起才现形,于是长期无人问津。而噪声恰恰藏在你以为最该一致的地方——本该同样判的案子、同样定价的风险、同样诊断的病症,一换人、一换时间就大不同。这一章不下「人不可信」的虚无结论,只做一件事:把被忽视的那半个误差请到台面上。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "设想有四支射击队,去打同一个靶。第一队的弹孔挤成紧紧一团,可惜整团都歪在左下角,离红心老远;第二队的弹孔却散得到处都是,东一个西一个,没个准头。你会说这两队都打得不好——可它们「不好」的方式,根本是两码事。卡尼曼和两位合著者用这张靶纸,讲清了一件被我们长期忽视的事:**人的判断出错,其实有两个来源。一个叫偏差(bias),一个叫噪声(noise)。**我们几乎把全部注意力都给了前者,对后者视而不见——哪怕它同样普遍,同样致命。"
-    },
-    {
-      "type": "h2",
-      "text": "一张靶纸,两种毛病"
-    },
-    {
-      "type": "p",
-      "text": "先看第一队。它的弹孔紧紧挤在一起,说明每个队员的手都很稳、彼此很一致——问题在于,这一整团都系统性地偏向左下方。这种「方向一致的错」,就叫**偏差**。偏差有个好认的特点:它有方向、可预测。既然大家都往左下偏,你几乎能猜到下一枪还会落在左下。要是查出毛病出在瞄准镜没校准,把镜子往右上拧一拧,整团弹孔就能挪回红心。偏差像一个稳定的坏习惯,认出来了,就有的治。"
-    },
-    {
-      "type": "p",
-      "text": "再看第二队。它的弹孔没有统一的偏向——不是齐刷刷偏左、也不是齐刷刷偏右,而是四下发散,谁也不挨着谁。这种「没有统一方向、纯粹是彼此不一致」的错,就叫**噪声**。噪声的麻烦正在于它没方向:你没法说「大家都偏右,那往左修一修」,因为根本不存在一个「大家」——每一枪偏的方向都不一样。它不是一个统一的坏习惯,而是一堆各行其是的手抖。同样是脱靶,偏差是**整齐地错**,噪声是**杂乱地错**。"
-    },
-    {
-      "type": "p",
-      "text": "换个日常点的比方也许更好懂。偏差,像一只**总是快十分钟**的挂钟:它每天都稳稳地快十分钟,你摸清了它的脾气,看表时心里减掉十分钟就行,甚至拧一下就能校准。噪声,则像一只**走时飘忽**的表:今天快五分钟、明天慢八分钟、后天又快三分钟,毫无规律。前一只表虽然一直不准,却「可靠地不准」,好对付;后一只表你根本没法信,因为你永远不知道这一眼看到的是快了还是慢了。偏差是稳定的错,噪声是善变的错——而善变的错,往往更难缠。"
-    },
-    {
-      "type": "p",
-      "text": "现实里当然还有第三种、第四种队:既偏又散——整团重心歪在一边,内部还各自乱飞。真实世界的判断大多如此:既有系统性的偏,也有随机性的散,两种毛病叠在一起。这一章要做的,是先把这两样东西**拆开**看清楚——因为长久以来,我们只认得偏差这一半,另一半几乎从没被正眼瞧过。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对照图",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>同一个靶,两种毛病</text><circle cx='150' cy='150' r='56' style='fill:none;stroke:var(--line);stroke-width:1.2'/><circle cx='150' cy='150' r='38' style='fill:none;stroke:var(--line);stroke-width:1.2'/><circle cx='150' cy='150' r='20' style='fill:none;stroke:var(--line);stroke-width:1.2'/><circle cx='150' cy='150' r='3.5' style='fill:var(--cinnabar-pure)'/><circle cx='126' cy='168' r='4' style='fill:var(--ink)'/><circle cx='134' cy='170' r='4' style='fill:var(--ink)'/><circle cx='128' cy='176' r='4' style='fill:var(--ink)'/><circle cx='122' cy='164' r='4' style='fill:var(--ink)'/><circle cx='132' cy='162' r='4' style='fill:var(--ink)'/><circle cx='120' cy='172' r='4' style='fill:var(--ink)'/><circle cx='136' cy='166' r='4' style='fill:var(--ink)'/><circle cx='410' cy='150' r='56' style='fill:none;stroke:var(--line);stroke-width:1.2'/><circle cx='410' cy='150' r='38' style='fill:none;stroke:var(--line);stroke-width:1.2'/><circle cx='410' cy='150' r='20' style='fill:none;stroke:var(--line);stroke-width:1.2'/><circle cx='410' cy='150' r='3.5' style='fill:var(--cinnabar-pure)'/><circle cx='392' cy='116' r='4' style='fill:var(--ink)'/><circle cx='444' cy='134' r='4' style='fill:var(--ink)'/><circle cx='378' cy='170' r='4' style='fill:var(--ink)'/><circle cx='432' cy='184' r='4' style='fill:var(--ink)'/><circle cx='408' cy='110' r='4' style='fill:var(--ink)'/><circle cx='454' cy='150' r='4' style='fill:var(--ink)'/><circle cx='386' cy='156' r='4' style='fill:var(--ink)'/><circle cx='422' cy='178' r='4' style='fill:var(--ink)'/><text x='150' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>偏差 · bias</text><text x='150' y='250' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>紧密,但整团偏一侧</text><text x='410' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>噪声 · noise</text><text x='410' y='250' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>四下发散,谁也不挨着谁</text><text x='280' y='284' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>偏差有方向、可预测;噪声无方向、纯是彼此不一致</text></svg>",
-      "caption": "偏差是整团弹孔一致地偏向一侧;噪声是弹孔四下发散、没有统一方向——同样脱靶,毛病不是一回事。"
-    },
-    {
-      "type": "h2",
-      "text": "把靶翻到背面,照样揪得出噪声"
-    },
-    {
-      "type": "p",
-      "text": "这张靶纸最妙的地方,是接下来这个思想实验:假设有人把靶纸翻过来,你只看得见**背面**——弹孔从背面透出来,可红心在哪你完全不知道。现在问你:哪一队打得有问题?第一队(偏差队)你答不上来了,因为不知道红心在哪,你没法判断那一团到底偏没偏——说不定它正好打在红心上呢。可第二队(噪声队)你**一眼就能认出有问题**:弹孔散成那样,不管红心藏在哪儿,它们都不可能同时打中。"
-    },
-    {
-      "type": "figure",
-      "ftype": "示意图",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>把靶翻到背面:看不见红心</text><circle cx='150' cy='150' r='56' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1.2'/><circle cx='126' cy='168' r='4' style='fill:var(--ink)'/><circle cx='134' cy='170' r='4' style='fill:var(--ink)'/><circle cx='128' cy='176' r='4' style='fill:var(--ink)'/><circle cx='122' cy='164' r='4' style='fill:var(--ink)'/><circle cx='132' cy='162' r='4' style='fill:var(--ink)'/><circle cx='120' cy='172' r='4' style='fill:var(--ink)'/><circle cx='136' cy='166' r='4' style='fill:var(--ink)'/><circle cx='410' cy='150' r='56' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1.2'/><circle cx='392' cy='116' r='4' style='fill:var(--ink)'/><circle cx='444' cy='134' r='4' style='fill:var(--ink)'/><circle cx='378' cy='170' r='4' style='fill:var(--ink)'/><circle cx='432' cy='184' r='4' style='fill:var(--ink)'/><circle cx='408' cy='110' r='4' style='fill:var(--ink)'/><circle cx='454' cy='150' r='4' style='fill:var(--ink)'/><circle cx='386' cy='156' r='4' style='fill:var(--ink)'/><circle cx='422' cy='178' r='4' style='fill:var(--ink)'/><text x='150' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>偏差队</text><text x='150' y='250' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>认不出——不知红心,说不定正中</text><text x='410' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>噪声队</text><text x='410' y='250' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>一眼认出:这么散,不可能都中</text><text x='280' y='284' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>噪声不必知道正确答案,只看判断彼此有多散就能测出来</text></svg>",
-      "caption": "只看背面、不知红心,你仍能一眼揪出噪声队——因为噪声只关乎判断彼此的离散,和「谁对谁错」无关。"
-    },
-    {
-      "type": "p",
-      "text": "这个小实验点破了一件要紧事:**噪声,不需要知道正确答案,就能测量。**你只要看判断**彼此之间**有多分散就行——它们越是各说各话,噪声就越大,这跟「最后谁对谁错」无关。偏差就不同了:要谈偏差,你必须先知道红心在哪(正确答案是什么),否则「偏」根本无从谈起。这也解释了为什么噪声其实**很好查**:哪怕在没有标准答案的领域——两个医生看同一张片子、两个法官判同一个案子——只要他们给出的结论对不上,你立刻就知道这里有噪声。不必等到水落石出,分歧本身就是证据。"
-    },
-    {
-      "type": "h2",
-      "text": "误差的方程:两块一起推高总误差"
-    },
-    {
-      "type": "p",
-      "text": "把这两样东西放进一个更冷静的框架,就是书里那个「误差方程」。一次次判断偏离真相的总误差,可以拆成两块:一块来自**偏差**(所有判断共同偏离的那个方向),一块来自**噪声**(判断彼此之间的发散)。书里用的是统计上的均方误差,近似写成:**总误差 ≈ 偏差² + 噪声²**。你不必记这个平方,只要记住那个直觉结论:偏差和噪声,**两者都在往上推高总误差;而且在大量真实场景里,它们的分量往往不相上下。**"
-    },
-    {
-      "type": "figure",
-      "ftype": "结构图",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='30' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>误差的方程:两块一起推高总误差</text><rect x='44' y='92' width='128' height='84' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='108' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>总误差</text><text x='108' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>判断偏离真相</text><text x='187' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:22px;fill:var(--ink-soft)'>=</text><rect x='200' y='92' width='128' height='84' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='264' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--cinnabar-pure)'>偏差</text><text x='264' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>共同偏离的方向</text><text x='342' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:22px;fill:var(--ink-soft)'>+</text><rect x='356' y='92' width='128' height='84' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='420' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--cinnabar-pure)'>噪声</text><text x='420' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>判断彼此的发散</text><line x1='60' y1='202' x2='500' y2='202' style='stroke:var(--line);stroke-width:1;stroke-dasharray:3 3'/><text x='280' y='228' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>统计上:总(均方)误差 ≈ 偏差² + 噪声²</text><text x='280' y='256' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>两者往往分量相当——清干净偏差,散还在,误差照样大</text></svg>",
-      "caption": "总误差由偏差与噪声一起撑起;即便把偏差全部清除、判断平均下来正好对准红心,只要彼此还在发散,误差依然可以很大。"
-    },
-    {
-      "type": "p",
-      "text": "这一点极其反直觉。多数人想到「判断出错」,脑子里浮现的全是偏差那一类——某某有成见、某某带情绪、某某被利益牵着走。这些都真实存在。可方程告诉我们:即便你把所有偏差都清除干净,让判断平均下来正好对准红心,只要判断彼此之间还在四下发散,总误差依然可以很大。**一群平均而言无偏的法官,照样可能把同一个案子判得天差地别。**降偏差和降噪声,是两件不同的活儿,漏了哪一件,误差都下不来。"
-    },
-    {
-      "type": "h2",
-      "text": "为什么我们只看得见偏差"
-    },
-    {
-      "type": "p",
-      "text": "既然两者一样重,为什么偏差抢尽风头、噪声无人问津?作者给的解释很实在:**偏差看得见,噪声看不见。**偏差有故事性——它总能被讲成一个有因有果的故事:「他之所以判重,是因为对这类人有偏见」「预测之所以偏高,是因为大家太乐观」。有方向,就有归因,就有一个能讲、能议论、能着手去改的靶子。噪声呢?它是随机的、无方向的、枯燥的——你没法把「这几个人恰好各自散着错」讲成一个动人的故事,于是它就悄悄溜过了所有人的眼睛。"
-    },
-    {
-      "type": "p",
-      "text": "更关键的是**它现形的条件太苛刻**。偏差看一个判断、事后一复盘,常常就能感觉到;噪声却必须把「很多个本该相同的判断」**摆在一起**,才看得出来。可我们平时的处境恰恰相反:一个案子只由一位法官审、一份保单只由一位核保员定价、一张片子往往只有一位医生读。我们只看得到那**一个**判断,看不到它的那些「兄弟」——那些换个人、换个时间、面对同一件事本该做出的判断——本来会有多不一致。看不见它的兄弟,就看不见它的散。噪声不是不在,是我们从没把它们凑到一处比一比。"
-    },
-    {
-      "type": "figure",
-      "ftype": "示意图",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='30' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>同一个案子,五位法官</text><text x='44' y='76' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>法官甲</text><rect x='108' y='62' width='120' height='20' rx='4' style='fill:var(--ink-soft)'/><text x='236' y='77' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>3 年</text><text x='44' y='114' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>法官乙</text><rect x='108' y='100' width='320' height='20' rx='4' style='fill:var(--cinnabar-pure)'/><text x='436' y='115' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>8 年</text><text x='44' y='152' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>法官丙</text><rect x='108' y='138' width='60' height='20' rx='4' style='fill:var(--ink-soft)'/><text x='176' y='153' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>1.5 年</text><text x='44' y='190' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>法官丁</text><rect x='108' y='176' width='200' height='20' rx='4' style='fill:var(--ink-soft)'/><text x='316' y='191' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>5 年</text><text x='44' y='228' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>法官戊</text><rect x='108' y='214' width='80' height='20' rx='4' style='fill:var(--ink-soft)'/><text x='196' y='229' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>2 年</text><text x='280' y='270' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>本该判得差不多的同一个案子,换个法官就天差地别——这就是噪声</text></svg>",
-      "caption": "把本该一致的判断并排摆出,噪声才现形:同一件事,只因碰巧轮到谁,结论可以从一年半到八年不等。(数值为示意)"
-    },
-    {
-      "type": "h2",
-      "text": "噪声,就藏在你以为最该一致的地方"
-    },
-    {
-      "type": "p",
-      "text": "于是就有了这本书最扎心的一句提醒:噪声,恰恰躲在那些「本该一致」的地方。本该同样的案子同样判,本该同样的风险同样定价,本该同样的病症同样诊断——正是在这些我们默认「专业人士当然会给出差不多结论」的场合,一换人、一换时间,结论就大不一样。它不吵不闹,没有戏剧性,却在每一次「碰巧轮到谁」里悄悄改写着人的处境:同一份申请,交到宽松的核保员手里和严苛的核保员手里,保费可能差出一大截,而当事人对此毫不知情。"
-    },
-    {
-      "type": "quote",
-      "original": "只要有判断,就有噪声——而且比你以为的多得多。",
-      "translation": "这句话是全书的底色。作者反复要提醒我们的,不是某个人不靠谱,而是「判断」这件事本身,只要交给活生生的人去做,就会带出一层随机的发散。它无处不在,又因为太安静,几乎从没被人认真数过一遍。"
-    },
-    {
-      "type": "p",
-      "text": "要说清楚的是,认识噪声,并不是要得出「人的判断根本不可信」这种虚无的结论。这一章只做一件事:**把被忽视的那半个误差,请到台面上来。**判断依然是必要的,人也依然是判断的主体;只是我们终于知道,除了追问「偏没偏」,还得追问一句「散不散」。这本书接下来会一层层展开:噪声到底有多大(它常常大得惊人)、它从哪里来、又能用哪些朴素而有效的办法把它压下去。而这一切的起点,就是先认出它——认出你打的那个靶上,除了整体的偏移,还有一片本不该有的、四下飞散的弹孔。"
-    }
-  ]
+ "title": "噪声是什么:判断里被忽视的另一半误差",
+ "subtitle": "《噪声》第一章导读——用一张靶纸看清:偏差是整齐地偏一边,噪声是杂乱地四下散;两者一样致命,我们却只盯着前者",
+ "centralIdea": "人的判断出错,有两个来源。一个叫偏差(bias):所有判断朝同一个方向系统性地偏,有方向、可预测,像一个稳定的坏习惯。一个叫噪声(noise):判断彼此之间四下发散,没有统一方向,纯粹是不一致。作者用四支射击队打同一个靶来讲:弹孔紧密却整团偏左下的,是偏差;弹孔散得到处都是的,是噪声。最关键的洞察是——哪怕把靶翻到背面、根本不知道红心在哪,你也能一眼认出噪声队「有问题」,因为它太散了;这说明噪声不必知道正确答案就能测量,只看判断彼此多分散即可,而偏差非得先知道红心不可。误差方程告诉我们:总误差同时被偏差和噪声推高,两者往往分量相当;可偏差有故事性、显眼、好归因,噪声隐形、枯燥、必须把很多本该相同的判断摆在一起才现形,于是长期无人问津。而噪声恰恰藏在你以为最该一致的地方——本该同样判的案子、同样定价的风险、同样诊断的病症,一换人、一换时间就大不同。这一章不下「人不可信」的虚无结论,只做一件事:把被忽视的那半个误差请到台面上。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "设想有四支射击队,去打同一个靶。第一队的弹孔挤成紧紧一团,可惜整团都歪在左下角,离红心老远;第二队的弹孔却散得到处都是,东一个西一个,没个准头。你会说这两队都打得不好——可它们「不好」的方式,根本是两码事。卡尼曼和两位合著者用这张靶纸,讲清了一件被我们长期忽视的事:**人的判断出错,其实有两个来源。一个叫偏差(bias),一个叫噪声(noise)。**我们几乎把全部注意力都给了前者,对后者视而不见——哪怕它同样普遍,同样致命。"
+  },
+  {
+   "type": "h2",
+   "text": "一张靶纸,两种毛病"
+  },
+  {
+   "type": "p",
+   "text": "先看第一队。它的弹孔紧紧挤在一起,说明每个队员的手都很稳、彼此很一致——问题在于,这一整团都系统性地偏向左下方。这种「方向一致的错」,就叫**偏差**。偏差有个好认的特点:它有方向、可预测。既然大家都往左下偏,你几乎能猜到下一枪还会落在左下。要是查出毛病出在瞄准镜没校准,把镜子往右上拧一拧,整团弹孔就能挪回红心。偏差像一个稳定的坏习惯,认出来了,就有的治。"
+  },
+  {
+   "type": "p",
+   "text": "再看第二队。它的弹孔没有统一的偏向——不是齐刷刷偏左、也不是齐刷刷偏右,而是四下发散,谁也不挨着谁。这种「没有统一方向、纯粹是彼此不一致」的错,就叫**噪声**。噪声的麻烦正在于它没方向:你没法说「大家都偏右,那往左修一修」,因为根本不存在一个「大家」——每一枪偏的方向都不一样。它不是一个统一的坏习惯,而是一堆各行其是的手抖。同样是脱靶,偏差是**整齐地错**,噪声是**杂乱地错**。"
+  },
+  {
+   "type": "p",
+   "text": "换个日常点的比方也许更好懂。偏差,像一只**总是快十分钟**的挂钟:它每天都稳稳地快十分钟,你摸清了它的脾气,看表时心里减掉十分钟就行,甚至拧一下就能校准。噪声,则像一只**走时飘忽**的表:今天快五分钟、明天慢八分钟、后天又快三分钟,毫无规律。前一只表虽然一直不准,却「可靠地不准」,好对付;后一只表你根本没法信,因为你永远不知道这一眼看到的是快了还是慢了。偏差是稳定的错,噪声是善变的错——而善变的错,往往更难缠。"
+  },
+  {
+   "type": "p",
+   "text": "现实里当然还有第三种、第四种队:既偏又散——整团重心歪在一边,内部还各自乱飞。真实世界的判断大多如此:既有系统性的偏,也有随机性的散,两种毛病叠在一起。这一章要做的,是先把这两样东西**拆开**看清楚——因为长久以来,我们只认得偏差这一半,另一半几乎从没被正眼瞧过。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>同一个靶,两种毛病</text><circle cx='150' cy='150' r='56' style='fill:none;stroke:var(--line);stroke-width:1.2'/><circle cx='150' cy='150' r='38' style='fill:none;stroke:var(--line);stroke-width:1.2'/><circle cx='150' cy='150' r='20' style='fill:none;stroke:var(--line);stroke-width:1.2'/><circle cx='150' cy='150' r='3.5' style='fill:var(--cinnabar-pure)'/><circle cx='126' cy='168' r='4' style='fill:var(--ink)'/><circle cx='134' cy='170' r='4' style='fill:var(--ink)'/><circle cx='128' cy='176' r='4' style='fill:var(--ink)'/><circle cx='122' cy='164' r='4' style='fill:var(--ink)'/><circle cx='132' cy='162' r='4' style='fill:var(--ink)'/><circle cx='120' cy='172' r='4' style='fill:var(--ink)'/><circle cx='136' cy='166' r='4' style='fill:var(--ink)'/><circle cx='410' cy='150' r='56' style='fill:none;stroke:var(--line);stroke-width:1.2'/><circle cx='410' cy='150' r='38' style='fill:none;stroke:var(--line);stroke-width:1.2'/><circle cx='410' cy='150' r='20' style='fill:none;stroke:var(--line);stroke-width:1.2'/><circle cx='410' cy='150' r='3.5' style='fill:var(--cinnabar-pure)'/><circle cx='392' cy='116' r='4' style='fill:var(--ink)'/><circle cx='444' cy='134' r='4' style='fill:var(--ink)'/><circle cx='378' cy='170' r='4' style='fill:var(--ink)'/><circle cx='432' cy='184' r='4' style='fill:var(--ink)'/><circle cx='408' cy='110' r='4' style='fill:var(--ink)'/><circle cx='454' cy='150' r='4' style='fill:var(--ink)'/><circle cx='386' cy='156' r='4' style='fill:var(--ink)'/><circle cx='422' cy='178' r='4' style='fill:var(--ink)'/><text x='150' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>偏差 · bias</text><text x='150' y='250' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>紧密,但整团偏一侧</text><text x='410' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>噪声 · noise</text><text x='410' y='250' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>四下发散,谁也不挨着谁</text><text x='280' y='284' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>偏差有方向、可预测;噪声无方向、纯是彼此不一致</text></svg>",
+   "caption": "偏差是整团弹孔一致地偏向一侧;噪声是弹孔四下发散、没有统一方向——同样脱靶,毛病不是一回事。"
+  },
+  {
+   "type": "h2",
+   "text": "把靶翻到背面,照样揪得出噪声"
+  },
+  {
+   "type": "p",
+   "text": "这张靶纸最妙的地方,是接下来这个思想实验:假设有人把靶纸翻过来,你只看得见**背面**——弹孔从背面透出来,可红心在哪你完全不知道。现在问你:哪一队打得有问题?第一队(偏差队)你答不上来了,因为不知道红心在哪,你没法判断那一团到底偏没偏——说不定它正好打在红心上呢。可第二队(噪声队)你**一眼就能认出有问题**:弹孔散成那样,不管红心藏在哪儿,它们都不可能同时打中。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>把靶翻到背面:看不见红心</text><circle cx='150' cy='150' r='56' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1.2'/><circle cx='126' cy='168' r='4' style='fill:var(--ink)'/><circle cx='134' cy='170' r='4' style='fill:var(--ink)'/><circle cx='128' cy='176' r='4' style='fill:var(--ink)'/><circle cx='122' cy='164' r='4' style='fill:var(--ink)'/><circle cx='132' cy='162' r='4' style='fill:var(--ink)'/><circle cx='120' cy='172' r='4' style='fill:var(--ink)'/><circle cx='136' cy='166' r='4' style='fill:var(--ink)'/><circle cx='410' cy='150' r='56' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1.2'/><circle cx='392' cy='116' r='4' style='fill:var(--ink)'/><circle cx='444' cy='134' r='4' style='fill:var(--ink)'/><circle cx='378' cy='170' r='4' style='fill:var(--ink)'/><circle cx='432' cy='184' r='4' style='fill:var(--ink)'/><circle cx='408' cy='110' r='4' style='fill:var(--ink)'/><circle cx='454' cy='150' r='4' style='fill:var(--ink)'/><circle cx='386' cy='156' r='4' style='fill:var(--ink)'/><circle cx='422' cy='178' r='4' style='fill:var(--ink)'/><text x='150' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>偏差队</text><text x='150' y='250' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>认不出——不知红心,说不定正中</text><text x='410' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>噪声队</text><text x='410' y='250' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>一眼认出:这么散,不可能都中</text><text x='280' y='284' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>噪声不必知道正确答案,只看判断彼此有多散就能测出来</text></svg>",
+   "caption": "只看背面、不知红心,你仍能一眼揪出噪声队——因为噪声只关乎判断彼此的离散,和「谁对谁错」无关。"
+  },
+  {
+   "type": "p",
+   "text": "这个小实验点破了一件要紧事:**噪声,不需要知道正确答案,就能测量。**你只要看判断**彼此之间**有多分散就行——它们越是各说各话,噪声就越大,这跟「最后谁对谁错」无关。偏差就不同了:要谈偏差,你必须先知道红心在哪(正确答案是什么),否则「偏」根本无从谈起。这也解释了为什么噪声其实**很好查**:哪怕在没有标准答案的领域——两个医生看同一张片子、两个法官判同一个案子——只要他们给出的结论对不上,你立刻就知道这里有噪声。不必等到水落石出,分歧本身就是证据。"
+  },
+  {
+   "type": "h2",
+   "text": "误差的方程:两块一起推高总误差"
+  },
+  {
+   "type": "p",
+   "text": "把这两样东西放进一个更冷静的框架,就是书里那个「误差方程」。一次次判断偏离真相的总误差,可以拆成两块:一块来自**偏差**(所有判断共同偏离的那个方向),一块来自**噪声**(判断彼此之间的发散)。书里用的是统计上的均方误差,近似写成:**总误差 ≈ 偏差² + 噪声²**。你不必记这个平方,只要记住那个直觉结论:偏差和噪声,"
+  },
+  {
+   "type": "pull",
+   "text": "两者都在往上推高总误差;而且在大量真实场景里,它们的分量往往不相上下。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='30' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>误差的方程:两块一起推高总误差</text><rect x='44' y='92' width='128' height='84' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='108' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>总误差</text><text x='108' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>判断偏离真相</text><text x='187' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:22px;fill:var(--ink-soft)'>=</text><rect x='200' y='92' width='128' height='84' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='264' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--cinnabar-pure)'>偏差</text><text x='264' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>共同偏离的方向</text><text x='342' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:22px;fill:var(--ink-soft)'>+</text><rect x='356' y='92' width='128' height='84' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='420' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--cinnabar-pure)'>噪声</text><text x='420' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>判断彼此的发散</text><line x1='60' y1='202' x2='500' y2='202' style='stroke:var(--line);stroke-width:1;stroke-dasharray:3 3'/><text x='280' y='228' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>统计上:总(均方)误差 ≈ 偏差² + 噪声²</text><text x='280' y='256' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>两者往往分量相当——清干净偏差,散还在,误差照样大</text></svg>",
+   "caption": "总误差由偏差与噪声一起撑起;即便把偏差全部清除、判断平均下来正好对准红心,只要彼此还在发散,误差依然可以很大。"
+  },
+  {
+   "type": "p",
+   "text": "这一点极其反直觉。多数人想到「判断出错」,脑子里浮现的全是偏差那一类——某某有成见、某某带情绪、某某被利益牵着走。这些都真实存在。可方程告诉我们:即便你把所有偏差都清除干净,让判断平均下来正好对准红心,只要判断彼此之间还在四下发散,总误差依然可以很大。**一群平均而言无偏的法官,照样可能把同一个案子判得天差地别。**降偏差和降噪声,是两件不同的活儿,漏了哪一件,误差都下不来。"
+  },
+  {
+   "type": "h2",
+   "text": "为什么我们只看得见偏差"
+  },
+  {
+   "type": "p",
+   "text": "既然两者一样重,为什么偏差抢尽风头、噪声无人问津?作者给的解释很实在:**偏差看得见,噪声看不见。**偏差有故事性——它总能被讲成一个有因有果的故事:「他之所以判重,是因为对这类人有偏见」「预测之所以偏高,是因为大家太乐观」。有方向,就有归因,就有一个能讲、能议论、能着手去改的靶子。噪声呢?它是随机的、无方向的、枯燥的——你没法把「这几个人恰好各自散着错」讲成一个动人的故事,于是它就悄悄溜过了所有人的眼睛。"
+  },
+  {
+   "type": "p",
+   "text": "更关键的是**它现形的条件太苛刻**。偏差看一个判断、事后一复盘,常常就能感觉到;噪声却必须把「很多个本该相同的判断」**摆在一起**,才看得出来。可我们平时的处境恰恰相反:一个案子只由一位法官审、一份保单只由一位核保员定价、一张片子往往只有一位医生读。我们只看得到那**一个**判断,看不到它的那些「兄弟」——那些换个人、换个时间、面对同一件事本该做出的判断——本来会有多不一致。看不见它的兄弟,就看不见它的散。噪声不是不在,是我们从没把它们凑到一处比一比。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='30' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>同一个案子,五位法官</text><text x='44' y='76' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>法官甲</text><rect x='108' y='62' width='120' height='20' rx='4' style='fill:var(--ink-soft)'/><text x='236' y='77' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>3 年</text><text x='44' y='114' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>法官乙</text><rect x='108' y='100' width='320' height='20' rx='4' style='fill:var(--cinnabar-pure)'/><text x='436' y='115' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>8 年</text><text x='44' y='152' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>法官丙</text><rect x='108' y='138' width='60' height='20' rx='4' style='fill:var(--ink-soft)'/><text x='176' y='153' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>1.5 年</text><text x='44' y='190' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>法官丁</text><rect x='108' y='176' width='200' height='20' rx='4' style='fill:var(--ink-soft)'/><text x='316' y='191' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>5 年</text><text x='44' y='228' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>法官戊</text><rect x='108' y='214' width='80' height='20' rx='4' style='fill:var(--ink-soft)'/><text x='196' y='229' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>2 年</text><text x='280' y='270' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>本该判得差不多的同一个案子,换个法官就天差地别——这就是噪声</text></svg>",
+   "caption": "把本该一致的判断并排摆出,噪声才现形:同一件事,只因碰巧轮到谁,结论可以从一年半到八年不等。(数值为示意)"
+  },
+  {
+   "type": "h2",
+   "text": "噪声,就藏在你以为最该一致的地方"
+  },
+  {
+   "type": "p",
+   "text": "于是就有了这本书最扎心的一句提醒:噪声,恰恰躲在那些「本该一致」的地方。本该同样的案子同样判,本该同样的风险同样定价,本该同样的病症同样诊断——正是在这些我们默认「专业人士当然会给出差不多结论」的场合,一换人、一换时间,结论就大不一样。它不吵不闹,没有戏剧性,却在每一次「碰巧轮到谁」里悄悄改写着人的处境:同一份申请,交到宽松的核保员手里和严苛的核保员手里,保费可能差出一大截,而当事人对此毫不知情。"
+  },
+  {
+   "type": "quote",
+   "original": "只要有判断,就有噪声——而且比你以为的多得多。",
+   "translation": "这句话是全书的底色。作者反复要提醒我们的,不是某个人不靠谱,而是「判断」这件事本身,只要交给活生生的人去做,就会带出一层随机的发散。它无处不在,又因为太安静,几乎从没被人认真数过一遍。"
+  },
+  {
+   "type": "p",
+   "text": "要说清楚的是,认识噪声,并不是要得出「人的判断根本不可信」这种虚无的结论。这一章只做一件事:**把被忽视的那半个误差,请到台面上来。**判断依然是必要的,人也依然是判断的主体;只是我们终于知道,除了追问「偏没偏」,还得追问一句「散不散」。这本书接下来会一层层展开:噪声到底有多大(它常常大得惊人)、它从哪里来、又能用哪些朴素而有效的办法把它压下去。而这一切的起点,就是先认出它——认出你打的那个靶上,除了整体的偏移,还有一片本不该有的、四下飞散的弹孔。"
+  }
+ ]
 }

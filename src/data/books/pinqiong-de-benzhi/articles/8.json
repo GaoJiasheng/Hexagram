@@ -82,7 +82,11 @@
   },
   {
    "type": "p",
-   "text": "第三类是**移动银行、手机存款**这类技术手段:不用跑几十公里,存款门槛低到几乎为零;更妙的是它自带隐私——钱进了手机账户,不像现金和牲口那样显眼,人情税自然就轻了。技术在这里做到的不只是方便,而是**替储蓄穿上了一层隐身衣**。"
+   "text": "第三类是**移动银行、手机存款**这类技术手段:不用跑几十公里,存款门槛低到几乎为零;更妙的是它自带隐私——钱进了手机账户,不像现金和牲口那样显眼,人情税自然就轻了。技术在这里做到的不只是方便,而是"
+  },
+  {
+   "type": "pull",
+   "text": "替储蓄穿上了一层隐身衣。"
   },
   {
    "type": "quote",
@@ -119,24 +123,24 @@
    "svg": "<svg viewBox=\"0 0 640 310\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"pq8f4\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" style=\"fill:var(--ink-soft)\"/></marker></defs><text x=\"165\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">现金放在手边</text><rect x=\"110\" y=\"64\" width=\"110\" height=\"56\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><text x=\"165\" y=\"97\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">现金</text><path d=\"M130 120 L90 170\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.5\" marker-end=\"url(#pq8f4)\"/><path d=\"M165 120 L165 172\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.5\" marker-end=\"url(#pq8f4)\"/><path d=\"M200 120 L240 170\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.5\" marker-end=\"url(#pq8f4)\"/><text x=\"78\" y=\"194\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">被偷走</text><text x=\"165\" y=\"196\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">被自己花掉</text><text x=\"252\" y=\"194\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">被亲友借走</text><text x=\"165\" y=\"240\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">钱在手边,处处在漏</text><line x1=\"320\" y1=\"28\" x2=\"320\" y2=\"282\" style=\"stroke:var(--line)\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/><text x=\"480\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\">换成砖囤起来</text><path d=\"M372 148 L372 96 L490 56 L608 96 L608 220\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\"/><text x=\"490\" y=\"130\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">每攒一笔,就多一块砖</text><g style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.5\"><rect x=\"372\" y=\"152\" width=\"56\" height=\"20\"/><rect x=\"432\" y=\"152\" width=\"56\" height=\"20\"/><rect x=\"402\" y=\"176\" width=\"56\" height=\"20\"/><rect x=\"462\" y=\"176\" width=\"56\" height=\"20\"/><rect x=\"522\" y=\"176\" width=\"56\" height=\"20\"/><rect x=\"372\" y=\"200\" width=\"56\" height=\"20\"/><rect x=\"432\" y=\"200\" width=\"56\" height=\"20\"/><rect x=\"492\" y=\"200\" width=\"56\" height=\"20\"/><rect x=\"552\" y=\"200\" width=\"56\" height=\"20\"/></g><text x=\"490\" y=\"250\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"12\">搬不走·花不掉·借不出——锁死的储蓄</text><text x=\"320\" y=\"296\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">把现金尽快换成不好变现的实物,是最朴素的承诺装置</text></svg>"
   },
   {
-   "type": "p",
-   "text": "顺带一提,这本书的封面用的是经济学里「贫困陷阱曲线」那个专业意象——S 形曲线、均衡点,学院派的语言;而这一章的主角,却是普通人在日常生活里自己发明的朴素金融学:凑会、锁盒、囤砖。两者摆在一起是个有趣的对照——**理解贫穷,既需要看得懂曲线,也需要看得见砖头。**"
+   "type": "callout",
+   "tone": "mute",
+   "items": [
+    "顺带一提,这本书的封面用的是经济学里「贫困陷阱曲线」那个专业意象——S 形曲线、均衡点,学院派的语言;而这一章的主角,却是普通人在日常生活里自己发明的朴素金融学:凑会、锁盒、囤砖。两者摆在一起是个有趣的对照——**理解贫穷,既需要看得懂曲线,也需要看得见砖头。**"
+   ]
   },
   {
    "type": "h2",
    "text": "这一章能给普通人什么"
   },
   {
-   "type": "p",
-   "text": "第一,**换一个解释储蓄差异的框架**。看到别人存不下钱(包括看到自己存不下钱),先别急着归因于「意志力差」。这一章递过来的镜子是:你能存下钱,很大程度上是因为别人替你装好了承诺装置——工资自动进卡、公积金强制缴存、定期存款取出来麻烦。环境和工具的差别,往往比意志的差别大得多。"
-  },
-  {
-   "type": "p",
-   "text": "第二,**给自己造承诺装置**。发薪日自动转一笔进不常动的账户;把想存的钱换成「取出来麻烦」的形态;把储蓄目标告诉一个会盯着你的朋友——这些做法和轮转储蓄会、锁盒、囤砖,在原理上一模一样:让反悔变难,让钱离手边远一点。"
-  },
-  {
-   "type": "p",
-   "text": "第三,一句研读提醒:本章写作于移动支付大规模普及之前,里面的具体障碍——网点、开户门槛、现金的显眼——在今天不少地方已经被一部手机深刻改写(这恰恰印证了作者当年对移动银行的判断)。读这一章,**把案例当成理解「储蓄行为背后心理与社会机制」的素材**,而不是当下各地现实的写照。机制是长寿的,案例会过时。"
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "**换一个解释储蓄差异的框架**。看到别人存不下钱(包括看到自己存不下钱),先别急着归因于「意志力差」。这一章递过来的镜子是:你能存下钱,很大程度上是因为别人替你装好了承诺装置——工资自动进卡、公积金强制缴存、定期存款取出来麻烦。环境和工具的差别,往往比意志的差别大得多。",
+    "**给自己造承诺装置**。发薪日自动转一笔进不常动的账户;把想存的钱换成「取出来麻烦」的形态;把储蓄目标告诉一个会盯着你的朋友——这些做法和轮转储蓄会、锁盒、囤砖,在原理上一模一样:让反悔变难,让钱离手边远一点。",
+    "一句研读提醒:本章写作于移动支付大规模普及之前,里面的具体障碍——网点、开户门槛、现金的显眼——在今天不少地方已经被一部手机深刻改写(这恰恰印证了作者当年对移动银行的判断)。读这一章,**把案例当成理解「储蓄行为背后心理与社会机制」的素材**,而不是当下各地现实的写照。机制是长寿的,案例会过时。"
+   ]
   },
   {
    "type": "h2",

@@ -1,115 +1,131 @@
 {
-  "title": "心智模式:看见并挑战你的假设",
-  "subtitle": "第二项修炼——为什么最好的想法,常常死在一张没被检查过的旧地图上",
-  "centralIdea": "真正限制我们的,往往不是外部现实,而是脑中那张从未被检查过的旧地图。心智模式的修炼,就是把这些看不见的假设浮现出来、摊到桌面上,让它们接受检视与更新——组织才能真正接纳新事物。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "一份漂亮的新战略,评审会上人人点头,三个月后一切照旧;一个明明更好的做法,试点数据摆在眼前,就是推不动。彼得·圣吉在《第五项修炼》里给出的诊断常常让人一愣:问题多半不出在战略本身,而出在每个人脑子里那张**没被检查过的旧地图**。这一章讲第二项修炼——心智模式(mental models):先学会看见这张地图,再动手更新它。"
-    },
-    { "type": "h2", "text": "你以为在看世界,其实在看地图" },
-    {
-      "type": "p",
-      "text": "所谓**心智模式**,是我们头脑里根深蒂固的假设、成见和思维图式:「人天生偷懒,不盯就松」「这类客户不会买贵的东西」「我们这行从来就是这么干的」。它们决定我们如何理解世界、如何采取行动,却几乎从不接受盘问——因为它们藏在意识水面之下,我们把地图当成了地形本身。圣吉特意强调,心智模式不是坏东西:没有简化的地图,谁也应付不了扑面而来的复杂世界。危险的从来不是「有地图」,而是**忘了自己戴着镜片**,把镜片里的景象当成世界的全部。"
-    },
-    {
-      "type": "quote",
-      "original": "心智模式不仅决定我们如何理解世界,也决定我们如何采取行动。",
-      "translation": "这项修炼的起点:假设先于行为。你看不见它,它却在替你做决定。"
-    },
-    {
-      "type": "p",
-      "text": "书里最扎心的例子来自底特律。几十年里,美国汽车业的高管们共享着一组从没被说破的假设:美国人买车买的是样式,质量和油耗没那么要紧;经销商体系不可撼动;而压在最底下的一条是——"
-    },
-    {
-      "type": "quote",
-      "original": "我们不是在造汽车,我们是在赚钱。",
-      "translation": "书中转述的底特律信条。它从未写进任何战略文件,却决定了整套产品逻辑。"
-    },
-    {
-      "type": "p",
-      "text": "当日本车用质量和省油一寸寸撬开市场时,数据早就摆在报表上,底特律却迟迟不肯当真——与旧地图冲突的信息,会被自动归档成「噪音」。这正是圣吉的核心论断:**许多好战略的失败,不是因为想错了,而是因为它与管理者旧的心智模式相冲突,被无声地抵制了**。新想法不是被驳倒的,是被旧图像悄悄挤出去的。"
-    },
-    {
-      "type": "p",
-      "text": "反面样板是壳牌。七十年代初,壳牌的规划团队发现,再周密的报告也说服不了经理们,于是改用**情景规划**:不去预测油价,而是让各级经理反复预演「如果油价暴涨,我们的世界会变成什么样」,逼着他们亲手松动「石油供应永远平稳」这条隐含假设。等石油危机真的来临,壳牌成了大石油公司里反应最快的一家,从边缘位置一路升到前列。规划者们事后的总结,后来成了这一章的注脚:"
-    },
-    {
-      "type": "quote",
-      "original": "规划的真正产出,不是一份计划,而是决策者心智模式的改变。",
-      "translation": "预演未来不是为了算准未来,而是为了松动今天脑中的旧地图。"
-    },
-    {
-      "type": "figure",
-      "ftype": "示意图",
-      "caption": "心智模式=看不见的镜片:同一件事实,两副镜片,导向两种行动",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='font-family:var(--font-serif)'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink);font-size:14px;font-weight:bold'>同一件事,两副镜片,两种行动</text><rect x='16' y='110' width='130' height='68' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='81' y='132' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>事实</text><text x='81' y='150' text-anchor='middle' style='fill:var(--ink);font-size:12px'>新同事小林</text><text x='81' y='167' text-anchor='middle' style='fill:var(--ink);font-size:12px'>开会一言不发</text><path d='M146,128 L178,82' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><path d='M146,160 L178,206' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><rect x='180' y='52' width='122' height='56' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3;stroke-dasharray:5 3'/><text x='241' y='74' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:12px;font-weight:bold'>镜片A</text><text x='241' y='94' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>「沉默=不上心」</text><path d='M302,80 L324,80' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><path d='M324,76 L332,80 L324,84 Z' style='fill:var(--ink-faint)'/><rect x='334' y='52' width='210' height='56' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='439' y='74' text-anchor='middle' style='fill:var(--ink);font-size:11.5px'>解读:他对项目不上心</text><text x='439' y='94' text-anchor='middle' style='fill:var(--ink);font-size:11.5px'>行动:重要会议不再叫他</text><rect x='180' y='176' width='122' height='56' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3;stroke-dasharray:5 3'/><text x='241' y='198' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:12px;font-weight:bold'>镜片B</text><text x='241' y='218' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>「新人在观察」</text><path d='M302,204 L324,204' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><path d='M324,200 L332,204 L324,208 Z' style='fill:var(--ink-faint)'/><rect x='334' y='176' width='210' height='56' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='439' y='198' text-anchor='middle' style='fill:var(--ink);font-size:11.5px'>解读:新人还在观察学习</text><text x='439' y='218' text-anchor='middle' style='fill:var(--ink);font-size:11.5px'>行动:会后主动问他看法</text><text x='280' y='276' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>你从未直接对「事实」反应——你反应的,是镜片处理过的事实</text></svg>"
-    },
-    { "type": "h2", "text": "推论阶梯:你跳得比自己以为的快" },
-    {
-      "type": "p",
-      "text": "心智模式最隐蔽的运作方式,藏在一个叫**推论阶梯(ladder of inference)**的过程里——这是圣吉从组织学习理论家克里斯·阿吉里斯那里借来的工具。设想一下:你在会上讲方案,瞥见同事小张低头看了一眼手机。你的大脑在两秒内完成了一次登梯:他在走神→他觉得我的方案无聊→他一向不把我当回事→以后要紧的事不带他。散会时你只记得最后那一级台阶,而且觉得那是「明摆着的事实」。"
-    },
-    {
-      "type": "p",
-      "text": "阶梯的每一级都是一次跳跃:从可观察的事实里**选择**一部分,给它**加上解读**,再叠上**假设**,得出**结论**,最后照结论**行动**。麻烦在于,跳跃的过程不留任何痕迹——我们意识不到自己爬过梯子,只看见梯顶的结论,还把它当成脚下的地面。"
-    },
-    {
-      "type": "figure",
-      "ftype": "示意图",
-      "caption": "推论阶梯:从事实到行动只要两秒,中间四级跳跃却不留痕迹;信念还会反过来决定你下次看见什么",
-      "svg": "<svg viewBox='0 0 560 310' xmlns='http://www.w3.org/2000/svg' style='font-family:var(--font-serif)'><text x='280' y='20' text-anchor='middle' style='fill:var(--ink);font-size:13.5px;font-weight:bold'>推论阶梯:从「看见」到「行动」,中间跳了四级</text><polyline points='14,278 102,278 102,242 190,242 190,206 278,206 278,170 366,170 366,134 454,134 454,98 542,98' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><rect x='14' y='248' width='88' height='30' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.3'/><text x='58' y='267' text-anchor='middle' style='fill:var(--ink);font-size:11px'>观察到的事实</text><rect x='102' y='212' width='88' height='30' rx='5' style='fill:none;stroke:var(--ink-faint);stroke-width:1.1;stroke-dasharray:4 3'/><text x='146' y='231' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>选择一部分</text><rect x='190' y='176' width='88' height='30' rx='5' style='fill:none;stroke:var(--ink-faint);stroke-width:1.1;stroke-dasharray:4 3'/><text x='234' y='195' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>加上解读</text><rect x='278' y='140' width='88' height='30' rx='5' style='fill:none;stroke:var(--ink-faint);stroke-width:1.1;stroke-dasharray:4 3'/><text x='322' y='159' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>做出假设</text><rect x='366' y='104' width='88' height='30' rx='5' style='fill:none;stroke:var(--ink-faint);stroke-width:1.1;stroke-dasharray:4 3'/><text x='410' y='123' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>得出结论</text><rect x='454' y='68' width='88' height='30' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='498' y='87' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:11px;font-weight:bold'>照结论行动</text><path d='M486,62 C400,20 210,80 148,206' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2;stroke-dasharray:4 3'/><path d='M141,198 L148,212 L154,200 Z' style='fill:var(--cinnabar-pure)'/><text x='300' y='44' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:11px'>反身回路:信念决定你下次「看见」什么</text><text x='300' y='296' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>虚线四级在脑内一瞬完成——你自己看不见,还以为结论是「明摆着的事实」</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "更麻烦的是**反身回路**:结论一旦沉淀为信念,就反过来决定你下次「看见」什么。你认定小张不靠谱,从此只注意到他迟到的那两次,却看不见他救火的那五回——信念不断自我证实,地图越描越偏。所以这个工具的用法,不是「别下结论」——人不可能停在事实层——而是在要紧的判断之前,学会**顺着梯子往下爬**:我的结论建立在哪些事实上?中间加了什么解读?换一个人看同样的事实,会不会爬出另一架梯子?"
-    },
-    { "type": "h2", "text": "把地图摊到桌面上" },
-    {
-      "type": "p",
-      "text": "看见了地图,修炼才真正开始。圣吉给的方向很清楚:把心智模式**浮现**出来,摊到桌面上,让它接受检视和挑战。注意,「挑战」的对象是假设,不是人——目标不是争出谁对谁错,而是让每个人的地图都摆出来,互相照一照哪里画歪了。听起来抽象,落到日常,主要是两个可以直接上手的工具。"
-    },
-    {
-      "type": "p",
-      "text": "书里还有一个常被忽略的主角:汉诺威保险公司。总裁欧白恩干脆把这项修炼写进了公司信条——决策的质量,取决于决策者心智模式的质量;职位再高,也不代表你的地图更准。他们为各级经理开设内部课程,专门训练浮现假设、检视推理。圣吉借此说明:心智模式的功夫不只是个人修养,它可以沉淀为组织的基础设施——就像壳牌把它做进了规划流程。"
-    },
-    {
-      "type": "p",
-      "text": "**工具一:让主张与探询平衡。**多数管理者都是训练有素的主张者:观点鲜明、逻辑周密、长于说服;可一屋子只会主张的人凑在一起,会议就成了辩论赛——嗓门决定结论,谁也没学到东西。主张(advocacy)的正确姿势,是把观点连同背后的推理一起亮出来:「我是这么想的,依据有三,大家看看哪里有漏洞。」探询(inquiry)则是真诚地想弄懂对方:「你是怎么得出这个判断的?你看到了什么我没看到的?」前者把自己的梯子摆出来给人检查,后者去看清别人的梯子——缺了哪一条腿,对话都会瘸。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对比图",
-      "caption": "主张亮出自己的推理,探询看清对方的推理;只有两者兼用,对话才从互相说服变成共同学习",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='font-family:var(--font-serif)'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink);font-size:14px;font-weight:bold'>主张 × 探询:好的对话,两条腿走路</text><rect x='20' y='44' width='248' height='150' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='144' y='70' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:13px;font-weight:bold'>主张 advocacy</text><text x='144' y='96' text-anchor='middle' style='fill:var(--ink);font-size:11.5px'>把你的观点亮出来</text><text x='144' y='115' text-anchor='middle' style='fill:var(--ink);font-size:11.5px'>摊开背后的推理与依据</text><text x='144' y='146' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>「我是这么想的,依据有三——</text><text x='144' y='165' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>大家看看哪里有漏洞?」</text><text x='280' y='128' text-anchor='middle' style='fill:var(--ink-faint);font-size:16px'>×</text><rect x='292' y='44' width='248' height='150' rx='8' style='fill:none;stroke:var(--azure);stroke-width:1.3'/><text x='416' y='70' text-anchor='middle' style='fill:var(--azure);font-size:13px;font-weight:bold'>探询 inquiry</text><text x='416' y='96' text-anchor='middle' style='fill:var(--ink);font-size:11.5px'>真心想弄懂对方的想法</text><text x='416' y='115' text-anchor='middle' style='fill:var(--ink);font-size:11.5px'>问出对方的推理与依据</text><text x='416' y='146' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>「你是怎么得出这个判断的?</text><text x='416' y='165' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>你看到了什么我没看到的?」</text><rect x='20' y='216' width='164' height='56' rx='6' style='fill:none;stroke:var(--line);stroke-width:1.1'/><text x='102' y='238' text-anchor='middle' style='fill:var(--ink);font-size:12px;font-weight:bold'>只主张不探询</text><text x='102' y='258' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>各说各话的辩论赛</text><rect x='198' y='216' width='164' height='56' rx='6' style='fill:none;stroke:var(--line);stroke-width:1.1'/><text x='280' y='238' text-anchor='middle' style='fill:var(--ink);font-size:12px;font-weight:bold'>只探询不主张</text><text x='280' y='258' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>藏起自己观点的试探</text><rect x='376' y='216' width='164' height='56' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='458' y='238' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:12px;font-weight:bold'>两者兼用</text><text x='458' y='258' text-anchor='middle' style='fill:var(--ink);font-size:11px'>一起检验彼此的地图</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "**工具二:左手栏。**这是阿吉里斯设计的一个朴素练习:取一页纸分成两栏,右栏写下一次别扭对话里双方实际说出口的话,左栏写下你当时心里想、却没说出来的话。多数人第一次做都会惊出一身汗:右栏客客气气,左栏早已下了判决。左手栏里蹲着的,正是你真实的心智模式——也是问题永远上不了桌面的原因:你以为自己在「顾全大局」,其实是在替旧地图站岗。"
-    },
-    {
-      "type": "figure",
-      "ftype": "示意图",
-      "caption": "左手栏练习:右栏是台词,左栏才是剧本",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='font-family:var(--font-serif)'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink);font-size:14px;font-weight:bold'>左手栏练习:把没说出口的那一栏写下来</text><rect x='20' y='46' width='252' height='190' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3;stroke-dasharray:5 3'/><text x='146' y='72' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:12.5px;font-weight:bold'>左手栏:心里想的(没说出口)</text><text x='146' y='104' text-anchor='middle' style='fill:var(--ink-soft);font-size:11.5px'>「这个方案根本没抓住重点。」</text><text x='146' y='132' text-anchor='middle' style='fill:var(--ink-soft);font-size:11.5px'>「直说的话,他肯定下不来台。」</text><text x='146' y='160' text-anchor='middle' style='fill:var(--ink-soft);font-size:11.5px'>「算了,回头我自己偷偷改掉。」</text><rect x='288' y='46' width='252' height='190' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='414' y='72' text-anchor='middle' style='fill:var(--ink);font-size:12.5px;font-weight:bold'>右栏:实际说出口的</text><text x='414' y='104' text-anchor='middle' style='fill:var(--ink);font-size:11.5px'>「整体挺好的,很有想法。」</text><text x='414' y='132' text-anchor='middle' style='fill:var(--ink);font-size:11.5px'>「就是个别细节,</text><text x='414' y='152' text-anchor='middle' style='fill:var(--ink);font-size:11.5px'>要不再打磨打磨?」</text><text x='280' y='268' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>两栏对照,你会看见心智模式在暗中掌舵——以及「表面和气」让组织付出的代价</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "还有一面照妖镜:区分你**信奉的理论**与你**使用的理论**。人人都说「我欢迎不同意见」,可会上真有人提意见时,看你的第一反应——两者之间的落差,恰恰就是心智模式的藏身之处。而这个落差,别人往往比你自己看得清楚,所以这项修炼从来不是独自打坐,得靠同伴互为镜子。"
-    },
-    {
-      "type": "quote",
-      "original": "人们并不总是照着自己信奉的理论行事,但他们一定照着自己使用的理论——心智模式——行事。",
-      "translation": "阿吉里斯的观察:嘴上的信条与实际的行为逻辑之间,隔着一层看不见的假设。"
-    },
-    { "type": "h2", "text": "分寸:这是反思的功夫,不是读心的权术" },
-    {
-      "type": "p",
-      "text": "最后把边界说清楚。心智模式的修炼,容易被念歪成两样东西。一是歪成揣摩人心的操控术——但探询是为了「一起看见」,不是为了套话和拿捏;真诚是这套方法的地基,抽掉它,所有技巧都会变质。二是歪成无原则的自我怀疑——这项修炼恰恰不要求你放弃观点,它要求你把观点亮得**更清楚**:清楚到可以被检验,也值得被检验。"
-    },
-    {
-      "type": "p",
-      "text": "回到开头那份死在抽屉里的战略。组织真正的学习,不发生在评审会上最响亮的陈述里,而发生在有人轻声问出这句话的时刻:「我们这行『从来如此』的干法,建立在什么假设上?这些假设,今天还成立吗?」限制我们的,常常不是外部现实,而是脑中那张没被检查过的旧地图。看见它,才谈得上更新它;更新了它,新的事物才真正进得来。"
-    }
-  ]
+ "title": "心智模式:看见并挑战你的假设",
+ "subtitle": "第二项修炼——为什么最好的想法,常常死在一张没被检查过的旧地图上",
+ "centralIdea": "真正限制我们的,往往不是外部现实,而是脑中那张从未被检查过的旧地图。心智模式的修炼,就是把这些看不见的假设浮现出来、摊到桌面上,让它们接受检视与更新——组织才能真正接纳新事物。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "一份漂亮的新战略,评审会上人人点头,三个月后一切照旧;一个明明更好的做法,试点数据摆在眼前,就是推不动。彼得·圣吉在《第五项修炼》里给出的诊断常常让人一愣:问题多半不出在战略本身,而出在每个人脑子里那张**没被检查过的旧地图**。这一章讲第二项修炼——心智模式(mental models):先学会看见这张地图,再动手更新它。"
+  },
+  {
+   "type": "h2",
+   "text": "你以为在看世界,其实在看地图"
+  },
+  {
+   "type": "p",
+   "text": "所谓**心智模式**,是我们头脑里根深蒂固的假设、成见和思维图式:「人天生偷懒,不盯就松」「这类客户不会买贵的东西」「我们这行从来就是这么干的」。它们决定我们如何理解世界、如何采取行动,却几乎从不接受盘问——因为它们藏在意识水面之下,我们把地图当成了地形本身。圣吉特意强调,心智模式不是坏东西:没有简化的地图,谁也应付不了扑面而来的复杂世界。危险的从来不是「有地图」,而是**忘了自己戴着镜片**,把镜片里的景象当成世界的全部。"
+  },
+  {
+   "type": "quote",
+   "original": "心智模式不仅决定我们如何理解世界,也决定我们如何采取行动。",
+   "translation": "这项修炼的起点:假设先于行为。你看不见它,它却在替你做决定。"
+  },
+  {
+   "type": "p",
+   "text": "书里最扎心的例子来自底特律。几十年里,美国汽车业的高管们共享着一组从没被说破的假设:美国人买车买的是样式,质量和油耗没那么要紧;经销商体系不可撼动;而压在最底下的一条是——"
+  },
+  {
+   "type": "quote",
+   "original": "我们不是在造汽车,我们是在赚钱。",
+   "translation": "书中转述的底特律信条。它从未写进任何战略文件,却决定了整套产品逻辑。"
+  },
+  {
+   "type": "p",
+   "text": "当日本车用质量和省油一寸寸撬开市场时,数据早就摆在报表上,底特律却迟迟不肯当真——与旧地图冲突的信息,会被自动归档成「噪音」。这正是圣吉的核心论断:**许多好战略的失败,不是因为想错了,而是因为它与管理者旧的心智模式相冲突,被无声地抵制了**。新想法不是被驳倒的,是被旧图像悄悄挤出去的。"
+  },
+  {
+   "type": "p",
+   "text": "反面样板是壳牌。七十年代初,壳牌的规划团队发现,再周密的报告也说服不了经理们,于是改用**情景规划**:不去预测油价,而是让各级经理反复预演「如果油价暴涨,我们的世界会变成什么样」,逼着他们亲手松动「石油供应永远平稳」这条隐含假设。等石油危机真的来临,壳牌成了大石油公司里反应最快的一家,从边缘位置一路升到前列。规划者们事后的总结,后来成了这一章的注脚:"
+  },
+  {
+   "type": "quote",
+   "original": "规划的真正产出,不是一份计划,而是决策者心智模式的改变。",
+   "translation": "预演未来不是为了算准未来,而是为了松动今天脑中的旧地图。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "心智模式=看不见的镜片:同一件事实,两副镜片,导向两种行动",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='font-family:var(--font-serif)'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink);font-size:14px;font-weight:bold'>同一件事,两副镜片,两种行动</text><rect x='16' y='110' width='130' height='68' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='81' y='132' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>事实</text><text x='81' y='150' text-anchor='middle' style='fill:var(--ink);font-size:12px'>新同事小林</text><text x='81' y='167' text-anchor='middle' style='fill:var(--ink);font-size:12px'>开会一言不发</text><path d='M146,128 L178,82' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><path d='M146,160 L178,206' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><rect x='180' y='52' width='122' height='56' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3;stroke-dasharray:5 3'/><text x='241' y='74' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:12px;font-weight:bold'>镜片A</text><text x='241' y='94' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>「沉默=不上心」</text><path d='M302,80 L324,80' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><path d='M324,76 L332,80 L324,84 Z' style='fill:var(--ink-faint)'/><rect x='334' y='52' width='210' height='56' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='439' y='74' text-anchor='middle' style='fill:var(--ink);font-size:11.5px'>解读:他对项目不上心</text><text x='439' y='94' text-anchor='middle' style='fill:var(--ink);font-size:11.5px'>行动:重要会议不再叫他</text><rect x='180' y='176' width='122' height='56' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3;stroke-dasharray:5 3'/><text x='241' y='198' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:12px;font-weight:bold'>镜片B</text><text x='241' y='218' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>「新人在观察」</text><path d='M302,204 L324,204' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><path d='M324,200 L332,204 L324,208 Z' style='fill:var(--ink-faint)'/><rect x='334' y='176' width='210' height='56' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='439' y='198' text-anchor='middle' style='fill:var(--ink);font-size:11.5px'>解读:新人还在观察学习</text><text x='439' y='218' text-anchor='middle' style='fill:var(--ink);font-size:11.5px'>行动:会后主动问他看法</text><text x='280' y='276' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>你从未直接对「事实」反应——你反应的,是镜片处理过的事实</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "推论阶梯:你跳得比自己以为的快"
+  },
+  {
+   "type": "p",
+   "text": "心智模式最隐蔽的运作方式,藏在一个叫**推论阶梯(ladder of inference)**的过程里——这是圣吉从组织学习理论家克里斯·阿吉里斯那里借来的工具。设想一下:你在会上讲方案,瞥见同事小张低头看了一眼手机。你的大脑在两秒内完成了一次登梯:他在走神→他觉得我的方案无聊→他一向不把我当回事→以后要紧的事不带他。散会时你只记得最后那一级台阶,而且觉得那是「明摆着的事实」。"
+  },
+  {
+   "type": "p",
+   "text": "阶梯的每一级都是一次跳跃:从可观察的事实里**选择**一部分,给它**加上解读**,再叠上**假设**,得出**结论**,最后照结论**行动**。麻烦在于,跳跃的过程不留任何痕迹——我们意识不到自己爬过梯子,只看见梯顶的结论,还把它当成脚下的地面。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "推论阶梯:从事实到行动只要两秒,中间四级跳跃却不留痕迹;信念还会反过来决定你下次看见什么",
+   "svg": "<svg viewBox='0 0 560 310' xmlns='http://www.w3.org/2000/svg' style='font-family:var(--font-serif)'><text x='280' y='20' text-anchor='middle' style='fill:var(--ink);font-size:13.5px;font-weight:bold'>推论阶梯:从「看见」到「行动」,中间跳了四级</text><polyline points='14,278 102,278 102,242 190,242 190,206 278,206 278,170 366,170 366,134 454,134 454,98 542,98' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><rect x='14' y='248' width='88' height='30' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.3'/><text x='58' y='267' text-anchor='middle' style='fill:var(--ink);font-size:11px'>观察到的事实</text><rect x='102' y='212' width='88' height='30' rx='5' style='fill:none;stroke:var(--ink-faint);stroke-width:1.1;stroke-dasharray:4 3'/><text x='146' y='231' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>选择一部分</text><rect x='190' y='176' width='88' height='30' rx='5' style='fill:none;stroke:var(--ink-faint);stroke-width:1.1;stroke-dasharray:4 3'/><text x='234' y='195' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>加上解读</text><rect x='278' y='140' width='88' height='30' rx='5' style='fill:none;stroke:var(--ink-faint);stroke-width:1.1;stroke-dasharray:4 3'/><text x='322' y='159' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>做出假设</text><rect x='366' y='104' width='88' height='30' rx='5' style='fill:none;stroke:var(--ink-faint);stroke-width:1.1;stroke-dasharray:4 3'/><text x='410' y='123' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>得出结论</text><rect x='454' y='68' width='88' height='30' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='498' y='87' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:11px;font-weight:bold'>照结论行动</text><path d='M486,62 C400,20 210,80 148,206' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2;stroke-dasharray:4 3'/><path d='M141,198 L148,212 L154,200 Z' style='fill:var(--cinnabar-pure)'/><text x='300' y='44' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:11px'>反身回路:信念决定你下次「看见」什么</text><text x='300' y='296' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>虚线四级在脑内一瞬完成——你自己看不见,还以为结论是「明摆着的事实」</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "更麻烦的是**反身回路**:结论一旦沉淀为信念,就反过来决定你下次「看见」什么。你认定小张不靠谱,从此只注意到他迟到的那两次,却看不见他救火的那五回——信念不断自我证实,地图越描越偏。所以这个工具的用法,不是「别下结论」——人不可能停在事实层——而是在要紧的判断之前,学会**顺着梯子往下爬**:我的结论建立在哪些事实上?中间加了什么解读?换一个人看同样的事实,会不会爬出另一架梯子?"
+  },
+  {
+   "type": "h2",
+   "text": "把地图摊到桌面上"
+  },
+  {
+   "type": "p",
+   "text": "看见了地图,修炼才真正开始。圣吉给的方向很清楚:把心智模式**浮现**出来,摊到桌面上,让它接受检视和挑战。注意,「挑战」的对象是假设,不是人——目标不是争出谁对谁错,而是让每个人的地图都摆出来,互相照一照哪里画歪了。听起来抽象,落到日常,主要是两个可以直接上手的工具。"
+  },
+  {
+   "type": "p",
+   "text": "书里还有一个常被忽略的主角:汉诺威保险公司。总裁欧白恩干脆把这项修炼写进了公司信条——决策的质量,取决于决策者心智模式的质量;职位再高,也不代表你的地图更准。他们为各级经理开设内部课程,专门训练浮现假设、检视推理。圣吉借此说明:心智模式的功夫不只是个人修养,它可以沉淀为组织的基础设施——就像壳牌把它做进了规划流程。"
+  },
+  {
+   "type": "p",
+   "text": "**工具一:让主张与探询平衡。**多数管理者都是训练有素的主张者:观点鲜明、逻辑周密、长于说服;可一屋子只会主张的人凑在一起,会议就成了辩论赛——嗓门决定结论,谁也没学到东西。主张(advocacy)的正确姿势,是把观点连同背后的推理一起亮出来:「我是这么想的,依据有三,大家看看哪里有漏洞。」探询(inquiry)则是真诚地想弄懂对方:「你是怎么得出这个判断的?你看到了什么我没看到的?」前者把自己的梯子摆出来给人检查,后者去看清别人的梯子——缺了哪一条腿,对话都会瘸。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "caption": "主张亮出自己的推理,探询看清对方的推理;只有两者兼用,对话才从互相说服变成共同学习",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='font-family:var(--font-serif)'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink);font-size:14px;font-weight:bold'>主张 × 探询:好的对话,两条腿走路</text><rect x='20' y='44' width='248' height='150' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='144' y='70' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:13px;font-weight:bold'>主张 advocacy</text><text x='144' y='96' text-anchor='middle' style='fill:var(--ink);font-size:11.5px'>把你的观点亮出来</text><text x='144' y='115' text-anchor='middle' style='fill:var(--ink);font-size:11.5px'>摊开背后的推理与依据</text><text x='144' y='146' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>「我是这么想的,依据有三——</text><text x='144' y='165' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>大家看看哪里有漏洞?」</text><text x='280' y='128' text-anchor='middle' style='fill:var(--ink-faint);font-size:16px'>×</text><rect x='292' y='44' width='248' height='150' rx='8' style='fill:none;stroke:var(--azure);stroke-width:1.3'/><text x='416' y='70' text-anchor='middle' style='fill:var(--azure);font-size:13px;font-weight:bold'>探询 inquiry</text><text x='416' y='96' text-anchor='middle' style='fill:var(--ink);font-size:11.5px'>真心想弄懂对方的想法</text><text x='416' y='115' text-anchor='middle' style='fill:var(--ink);font-size:11.5px'>问出对方的推理与依据</text><text x='416' y='146' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>「你是怎么得出这个判断的?</text><text x='416' y='165' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>你看到了什么我没看到的?」</text><rect x='20' y='216' width='164' height='56' rx='6' style='fill:none;stroke:var(--line);stroke-width:1.1'/><text x='102' y='238' text-anchor='middle' style='fill:var(--ink);font-size:12px;font-weight:bold'>只主张不探询</text><text x='102' y='258' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>各说各话的辩论赛</text><rect x='198' y='216' width='164' height='56' rx='6' style='fill:none;stroke:var(--line);stroke-width:1.1'/><text x='280' y='238' text-anchor='middle' style='fill:var(--ink);font-size:12px;font-weight:bold'>只探询不主张</text><text x='280' y='258' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>藏起自己观点的试探</text><rect x='376' y='216' width='164' height='56' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='458' y='238' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:12px;font-weight:bold'>两者兼用</text><text x='458' y='258' text-anchor='middle' style='fill:var(--ink);font-size:11px'>一起检验彼此的地图</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "**工具二:左手栏。**这是阿吉里斯设计的一个朴素练习:取一页纸分成两栏,右栏写下一次别扭对话里双方实际说出口的话,左栏写下你当时心里想、却没说出来的话。多数人第一次做都会惊出一身汗:右栏客客气气,左栏早已下了判决。左手栏里蹲着的,正是你真实的心智模式——也是问题永远上不了桌面的原因:你以为自己在「顾全大局」,其实是在替旧地图站岗。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "左手栏练习:右栏是台词,左栏才是剧本",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='font-family:var(--font-serif)'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink);font-size:14px;font-weight:bold'>左手栏练习:把没说出口的那一栏写下来</text><rect x='20' y='46' width='252' height='190' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3;stroke-dasharray:5 3'/><text x='146' y='72' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:12.5px;font-weight:bold'>左手栏:心里想的(没说出口)</text><text x='146' y='104' text-anchor='middle' style='fill:var(--ink-soft);font-size:11.5px'>「这个方案根本没抓住重点。」</text><text x='146' y='132' text-anchor='middle' style='fill:var(--ink-soft);font-size:11.5px'>「直说的话,他肯定下不来台。」</text><text x='146' y='160' text-anchor='middle' style='fill:var(--ink-soft);font-size:11.5px'>「算了,回头我自己偷偷改掉。」</text><rect x='288' y='46' width='252' height='190' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='414' y='72' text-anchor='middle' style='fill:var(--ink);font-size:12.5px;font-weight:bold'>右栏:实际说出口的</text><text x='414' y='104' text-anchor='middle' style='fill:var(--ink);font-size:11.5px'>「整体挺好的,很有想法。」</text><text x='414' y='132' text-anchor='middle' style='fill:var(--ink);font-size:11.5px'>「就是个别细节,</text><text x='414' y='152' text-anchor='middle' style='fill:var(--ink);font-size:11.5px'>要不再打磨打磨?」</text><text x='280' y='268' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>两栏对照,你会看见心智模式在暗中掌舵——以及「表面和气」让组织付出的代价</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "还有一面照妖镜:区分你**信奉的理论**与你**使用的理论**。人人都说「我欢迎不同意见」,可会上真有人提意见时,看你的第一反应——两者之间的落差,恰恰就是心智模式的藏身之处。而这个落差,别人往往比你自己看得清楚,所以这项修炼从来不是独自打坐,得靠同伴互为镜子。"
+  },
+  {
+   "type": "quote",
+   "original": "人们并不总是照着自己信奉的理论行事,但他们一定照着自己使用的理论——心智模式——行事。",
+   "translation": "阿吉里斯的观察:嘴上的信条与实际的行为逻辑之间,隔着一层看不见的假设。"
+  },
+  {
+   "type": "h2",
+   "text": "分寸:这是反思的功夫,不是读心的权术"
+  },
+  {
+   "type": "p",
+   "text": "最后把边界说清楚。心智模式的修炼,容易被念歪成两样东西。一是歪成揣摩人心的操控术——但探询是为了「一起看见」,不是为了套话和拿捏;真诚是这套方法的地基,抽掉它,所有技巧都会变质。二是歪成无原则的自我怀疑——这项修炼恰恰不要求你放弃观点,它要求你把观点亮得**更清楚**:清楚到可以被检验,也值得被检验。"
+  },
+  {
+   "type": "p",
+   "text": "回到开头那份死在抽屉里的战略。组织真正的学习,不发生在评审会上最响亮的陈述里,而发生在有人轻声问出这句话的时刻:「我们这行『从来如此』的干法,建立在什么假设上?这些假设,今天还成立吗?」限制我们的,常常不是外部现实,而是脑中那张没被检查过的旧地图。"
+  },
+  {
+   "type": "pull",
+   "text": "看见它,才谈得上更新它;更新了它,新的事物才真正进得来。"
+  }
+ ]
 }

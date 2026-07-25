@@ -1,99 +1,103 @@
 {
-  "title": "你心里那个打分的人",
-  "subtitle": "自我内部的评判者——两年后「超我」概念在这里打了地基",
-  "centralIdea": "弗洛伊德在这一章做了一次技术性补充：「自我」并非铁板一块，它内部分化出一个能观察、评判自己的特殊机构——良心的谴责、自我观察、梦的审查都归它管。热恋和催眠会让外人坐上这把评判席，忧郁则让它与自我痛苦对峙。要记住这里还是理论工地：两年后的《自我与本我》才把它正式命名为「超我」——读这一章该带着看工地的眼光，而不是验收竣工大楼。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "夜里躺下，白天说过的一句蠢话突然在脑子里回放，你狠狠骂自己：「怎么会说出那种话！」骂人的是你，挨骂的也是你——那么，到底是谁在骂谁？弗洛伊德在这一章要处理的正是这个问题。前面十章讲群体、讲领袖、讲爱与催眠，这一章他把镜头转回每个人的内部，做一次更技术性的补充：「自我」里面，分化出了一个专门观察你、给你打分的部分。"
-    },
-    {
-      "type": "h2",
-      "text": "自我不是铁板一块：里面住着一个值班的评判官"
-    },
-    {
-      "type": "p",
-      "text": "弗洛伊德的出发点很日常：人会自我谴责、会心虚、会觉得「配不上」，也会在达到某个标准时体验到「被认可」的踏实。如果自我是一个均质的整体，这些体验就说不通——**评判需要距离**，得有一个位置站在「我」之外，才能打量「我」、给「我」打分。于是他提出：自我内部分化出了一个特殊机构，并把它与自己几年前提出的**「自我理想」**联系起来——你心里那把衡量自己的尺子，就归这个机构掌管。"
-    },
-    {
-      "type": "p",
-      "text": "这把尺子从哪来？弗洛伊德在更早的《论自恋》里给过一个说法：小孩子曾经觉得自己无所不能、样样完美——那是人人经历过的自恋阶段。长大就是不断发现「我其实没那么行」的过程，但那份对完美的执念并不消失，而是**搬了家**：从「我就是完美的」变成「我应当变得完美」，安顿进自我理想里。从此人终生用这把尺子丈量自己，量出来的差距，既是不满的来源，也是上进心的来源。"
-    },
-    {
-      "type": "p",
-      "text": "这个机构管的事不少，弗洛伊德给它开了一份职责清单——"
-    },
-    {
-      "type": "quote",
-      "original": "自我观察、道德良心、梦的稽查，都由它执掌",
-      "translation": "这个从自我中分化出来的部分，白天盯着你（自我观察）、谴责你（良心），夜里还兼职梦的审查员——把不体面的愿望改装打扮之后，才放进梦里。"
-    },
-    {
-      "type": "p",
-      "text": "翻译成日常语言：**良心的谴责感，就是挨了它的批**；觉得「被爱、被认可」，是你够到了它的标准，它冲你点头；反过来，罪恶感就是自我与这把尺子之间的距离拉得太远。连做梦也逃不开它——梦里那些莫名其妙的变形与遮掩，在弗洛伊德看来，正是这位审查员在值夜班。"
-    },
-    {
-      "type": "figure",
-      "ftype": "示意图",
-      "svg": "<svg viewBox='0 0 460 275' xmlns='http://www.w3.org/2000/svg'><text x='230' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;fill:var(--ink)'>自我里分化出一个评判者</text><ellipse cx='230' cy='140' rx='180' ry='82' style='fill:none;stroke:var(--ink);stroke-width:2'/><text x='96' y='112' style='font-family:var(--font-serif);font-size:14px;fill:var(--ink)'>自我</text><rect x='268' y='92' width='122' height='50' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='329' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--cinnabar)'>评判机构</text><text x='329' y='130' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>（自我理想）</text><line x1='266' y1='122' x2='196' y2='150' style='stroke:var(--cinnabar);stroke-width:1.8'/><polygon points='186,154 198,155 194,144' style='fill:var(--cinnabar)'/><text x='244' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>观察 · 评判</text><text x='148' y='172' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>自我的其余部分</text><line x1='185' y1='214' x2='125' y2='236' style='stroke:var(--azure);stroke-width:1.5'/><line x1='275' y1='214' x2='335' y2='236' style='stroke:var(--cinnabar);stroke-width:1.5'/><text x='108' y='256' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--azure)'>达标 → 被认可 · 自豪</text><text x='352' y='256' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--cinnabar)'>不达标 → 罪恶感 · 自责</text></svg>",
-      "caption": "自我内部分化出一个评判机构：够到标准时你感到被认可，够不到时它递来罪恶感。"
-    },
-    {
-      "type": "h2",
-      "text": "一块打了桩的地基：两年后的「超我」从这里长出来"
-    },
-    {
-      "type": "p",
-      "text": "站在思想史的位置看，这一章最重要的身份是**伏笔**。1923 年，弗洛伊德在《自我与本我》里给这个评判机构正式起名——**「超我」（superego）**，并配齐了它的来历（父母管教的声音被内化进心里）和结构位置（本我—自我—超我的三分格局）。而在 1921 年的这一章里，它还是毛坯：有职能清单，没有正式名字；有零散案例，没有完整理论。观书如果之后也做《自我与本我》，你会在那本书里亲眼看到这里埋下的桩被一根根接起来。"
-    },
-    {
-      "type": "figure",
-      "ftype": "源流图",
-      "svg": "<svg viewBox='0 0 520 190' xmlns='http://www.w3.org/2000/svg'><text x='260' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;fill:var(--ink)'>从「自我理想」到「超我」：一根接一根的桩</text><line x1='30' y1='112' x2='480' y2='112' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='480,106 480,118 494,112' style='fill:var(--ink-faint)'/><path d='M325,84 L325,62 L445,62 L445,80' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5;stroke-dasharray:4 3'/><polygon points='445,90 440,79 450,79' style='fill:var(--cinnabar)'/><text x='385' y='54' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>两年后，伏笔被系统化</text><circle cx='85' cy='112' r='5' style='fill:var(--ink-soft)'/><text x='85' y='99' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>1914</text><text x='85' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>《论自恋》</text><text x='85' y='155' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>首提「自我理想」</text><circle cx='205' cy='112' r='5' style='fill:var(--ink-soft)'/><text x='205' y='99' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>1917</text><text x='205' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>《哀悼与忧郁》</text><text x='205' y='155' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>评判者攻击自我</text><circle cx='325' cy='112' r='7' style='fill:var(--cinnabar)'/><text x='325' y='99' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>1921</text><text x='325' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>本章（第11章）</text><text x='325' y='155' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>职能清单 · 三个案例</text><circle cx='445' cy='112' r='5' style='fill:var(--azure)'/><text x='445' y='99' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--azure)'>1923</text><text x='445' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>《自我与本我》</text><text x='445' y='155' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>正式命名「超我」</text></svg>",
-      "caption": "从 1914 年首提「自我理想」，到本章的职能清单，再到 1923 年正式命名「超我」——这一章是中间那根桩。"
-    },
-    {
-      "type": "p",
-      "text": "所以要提醒一句：**这是理论工地，不是竣工验收**。自我、自我理想这些划分，是弗洛伊德为解释临床观察搭的概念脚手架，不是解剖学事实；「心里真有一个评判者」这类说法，在后世心理学里争议很大，也很难用实验一锤定音。读它的正确姿势，是看一位理论家如何一步步搭框架、埋伏笔，而不是把「你脑子里住着几个小人」当成科学定论照单全收。"
-    },
-    {
-      "type": "h2",
-      "text": "评判席上的人会换：恋爱、催眠、忧郁三个案例"
-    },
-    {
-      "type": "p",
-      "text": "地基打好，弗洛伊德回头把前面章节的线索串了起来。还记得第 8 章讲热恋吗——**「把对象放到了自我理想的位置上」**。用这一章的语言重说一遍：热恋时，那把评判席被爱人整个占据了。评判者一让位，「情人眼里出西施」就顺理成章——爱人做什么都对，因为那个平时负责挑剔的机构，此刻坐着的正是他本人，谁会谴责自己的意中人？**催眠是同一个格局**：催眠师坐上评判席，他说的话便自带「正确」的光环。而群体，不过是千万人同时把同一位领袖请上了各自的评判席。"
-    },
-    {
-      "type": "p",
-      "text": "另一头是痛苦的方向。在**哀悼、忧郁**这类状态里，自我和这个内在评判者之间可能出现激烈的分裂：评判者变得异常严苛，日夜数落自我、贬低自我，仿佛把自我按在被告席上不放。弗洛伊德在《哀悼与忧郁》里对此有专门讨论，这里只是简要带过——"
-    },
-    {
-      "type": "quote",
-      "original": "自我分裂为两部分，其中一部分向另一部分发泄怒火",
-      "translation": "忧郁状态下，内在评判者仿佛独立成军，把自我当成靶子无休止地攻击——那种「我一无是处」的自我贬斥，在弗洛伊德看来正是这两半之间的内战。"
-    },
-    {
-      "type": "p",
-      "text": "需要说明：这是一百年前的理论假说，不是现代意义上抑郁症的诊断框架，两者不能划等号。这里更值得留意的是思路本身——**同一个内部结构，既能解释「爱到盲目」，也能解释「恨自己入骨」**：前者是评判者离席，后者是评判者失控。一张图看清三种状态："
-    },
-    {
-      "type": "figure",
-      "ftype": "对照图",
-      "svg": "<svg viewBox='0 0 520 260' xmlns='http://www.w3.org/2000/svg'><text x='260' y='20' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;fill:var(--ink)'>评判席上坐着谁——三种状态</text><text x='100' y='46' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>平时</text><rect x='38' y='56' width='124' height='44' rx='8' style='fill:none;stroke:var(--ink);stroke-width:1.8'/><text x='100' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>自我理想</text><text x='100' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-soft)'>（正常在岗）</text><line x1='100' y1='104' x2='100' y2='146' style='stroke:var(--ink-soft);stroke-width:1.6'/><polygon points='95,146 105,146 100,158' style='fill:var(--ink-soft)'/><text x='90' y='128' text-anchor='end' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>适度评判</text><circle cx='100' cy='192' r='26' style='fill:none;stroke:var(--ink);stroke-width:2'/><text x='100' y='197' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>自我</text><text x='260' y='46' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--azure)'>热恋 · 催眠</text><rect x='198' y='56' width='124' height='44' rx='8' style='fill:none;stroke:var(--azure);stroke-width:1.8'/><text x='260' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--azure)'>爱人 / 催眠师</text><text x='260' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-soft)'>（外来者占席）</text><line x1='260' y1='104' x2='260' y2='146' style='stroke:var(--azure);stroke-width:1.6;stroke-dasharray:4 3'/><polygon points='255,146 265,146 260,158' style='fill:var(--azure)'/><text x='270' y='128' text-anchor='start' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--azure)'>评判停摆，怎么都对</text><circle cx='260' cy='192' r='26' style='fill:none;stroke:var(--ink);stroke-width:2'/><text x='260' y='197' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>自我</text><text x='420' y='46' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--cinnabar)'>忧郁</text><rect x='358' y='56' width='124' height='44' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.8'/><text x='420' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--cinnabar)'>评判者</text><text x='420' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-soft)'>（异常严苛）</text><line x1='420' y1='104' x2='420' y2='146' style='stroke:var(--cinnabar);stroke-width:3.5'/><polygon points='414,146 426,146 420,159' style='fill:var(--cinnabar)'/><text x='430' y='128' text-anchor='start' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar)'>日夜攻击自我</text><circle cx='420' cy='192' r='26' style='fill:none;stroke:var(--ink);stroke-width:2;stroke-dasharray:5 4'/><text x='420' y='197' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>自我</text><text x='260' y='245' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>热恋与催眠：外人坐上评判席（见第8章）；忧郁：评判者反过来围攻自我</text></svg>",
-      "caption": "同一把评判席，三种坐法：平时它在岗，热恋与催眠时外人占席，忧郁时它反过来围攻自我。"
-    },
-    {
-      "type": "h2",
-      "text": "评判者也放假：躁狂、节日与钟摆"
-    },
-    {
-      "type": "p",
-      "text": "章末弗洛伊德还留了一个耐人寻味的观察：有些人的情绪呈周期性摆动，在亢奋（躁狂）与低落（忧郁）之间来回。他的解释仍用这套结构：**忧郁是评判者与自我激烈对峙，躁狂则像两者突然合并庆祝**——评判机构放了假，一切自我批评停摆，人于是自我感觉空前良好、精力四溢。这个解释是否成立另说，但它顺手带出一个漂亮的人类学脚注：**节日，本质上就是「被准许的放纵」**——平日被理想禁止的事，节日里集体开禁；狂欢的快乐，正是自我暂时挣脱那把尺子时的快乐。"
-    },
-    {
-      "type": "p",
-      "text": "这一章篇幅不大，却是全书理论密度最高的一段补充。把它读成一张**工地照片**最合适：能看见打好的桩（评判机构的职责清单）、拉起的线（恋爱、催眠、忧郁三个案例），也能看见还没盖起来的楼——「超我」和人格三分的完整结构。两年后弗洛伊德会把楼盖起来；而作为读者，我们既看他怎么盖，也始终保留一份判断权：这座楼，究竟能不能住人。"
-    }
-  ]
+ "title": "你心里那个打分的人",
+ "subtitle": "自我内部的评判者——两年后「超我」概念在这里打了地基",
+ "centralIdea": "弗洛伊德在这一章做了一次技术性补充：「自我」并非铁板一块，它内部分化出一个能观察、评判自己的特殊机构——良心的谴责、自我观察、梦的审查都归它管。热恋和催眠会让外人坐上这把评判席，忧郁则让它与自我痛苦对峙。要记住这里还是理论工地：两年后的《自我与本我》才把它正式命名为「超我」——读这一章该带着看工地的眼光，而不是验收竣工大楼。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "夜里躺下，白天说过的一句蠢话突然在脑子里回放，你狠狠骂自己：「怎么会说出那种话！」骂人的是你，挨骂的也是你——那么，到底是谁在骂谁？弗洛伊德在这一章要处理的正是这个问题。前面十章讲群体、讲领袖、讲爱与催眠，这一章他把镜头转回每个人的内部，做一次更技术性的补充：「自我」里面，分化出了一个专门观察你、给你打分的部分。"
+  },
+  {
+   "type": "h2",
+   "text": "自我不是铁板一块：里面住着一个值班的评判官"
+  },
+  {
+   "type": "p",
+   "text": "弗洛伊德的出发点很日常：人会自我谴责、会心虚、会觉得「配不上」，也会在达到某个标准时体验到「被认可」的踏实。如果自我是一个均质的整体，这些体验就说不通——**评判需要距离**，得有一个位置站在「我」之外，才能打量「我」、给「我」打分。于是他提出：自我内部分化出了一个特殊机构，并把它与自己几年前提出的**「自我理想」**联系起来——你心里那把衡量自己的尺子，就归这个机构掌管。"
+  },
+  {
+   "type": "p",
+   "text": "这把尺子从哪来？弗洛伊德在更早的《论自恋》里给过一个说法：小孩子曾经觉得自己无所不能、样样完美——那是人人经历过的自恋阶段。长大就是不断发现「我其实没那么行」的过程，但那份对完美的执念并不消失，而是**搬了家**：从「我就是完美的」变成「我应当变得完美」，安顿进自我理想里。从此人终生用这把尺子丈量自己，量出来的差距，既是不满的来源，也是上进心的来源。"
+  },
+  {
+   "type": "p",
+   "text": "这个机构管的事不少，弗洛伊德给它开了一份职责清单——"
+  },
+  {
+   "type": "quote",
+   "original": "自我观察、道德良心、梦的稽查，都由它执掌",
+   "translation": "这个从自我中分化出来的部分，白天盯着你（自我观察）、谴责你（良心），夜里还兼职梦的审查员——把不体面的愿望改装打扮之后，才放进梦里。"
+  },
+  {
+   "type": "p",
+   "text": "翻译成日常语言：**良心的谴责感，就是挨了它的批**；觉得「被爱、被认可」，是你够到了它的标准，它冲你点头；反过来，罪恶感就是自我与这把尺子之间的距离拉得太远。"
+  },
+  {
+   "type": "pull",
+   "text": "连做梦也逃不开它——梦里那些莫名其妙的变形与遮掩，在弗洛伊德看来，正是这位审查员在值夜班。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "svg": "<svg viewBox='0 0 460 275' xmlns='http://www.w3.org/2000/svg'><text x='230' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;fill:var(--ink)'>自我里分化出一个评判者</text><ellipse cx='230' cy='140' rx='180' ry='82' style='fill:none;stroke:var(--ink);stroke-width:2'/><text x='96' y='112' style='font-family:var(--font-serif);font-size:14px;fill:var(--ink)'>自我</text><rect x='268' y='92' width='122' height='50' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='329' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--cinnabar)'>评判机构</text><text x='329' y='130' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>（自我理想）</text><line x1='266' y1='122' x2='196' y2='150' style='stroke:var(--cinnabar);stroke-width:1.8'/><polygon points='186,154 198,155 194,144' style='fill:var(--cinnabar)'/><text x='244' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>观察 · 评判</text><text x='148' y='172' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>自我的其余部分</text><line x1='185' y1='214' x2='125' y2='236' style='stroke:var(--azure);stroke-width:1.5'/><line x1='275' y1='214' x2='335' y2='236' style='stroke:var(--cinnabar);stroke-width:1.5'/><text x='108' y='256' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--azure)'>达标 → 被认可 · 自豪</text><text x='352' y='256' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--cinnabar)'>不达标 → 罪恶感 · 自责</text></svg>",
+   "caption": "自我内部分化出一个评判机构：够到标准时你感到被认可，够不到时它递来罪恶感。"
+  },
+  {
+   "type": "h2",
+   "text": "一块打了桩的地基：两年后的「超我」从这里长出来"
+  },
+  {
+   "type": "p",
+   "text": "站在思想史的位置看，这一章最重要的身份是**伏笔**。1923 年，弗洛伊德在《自我与本我》里给这个评判机构正式起名——**「超我」（superego）**，并配齐了它的来历（父母管教的声音被内化进心里）和结构位置（本我—自我—超我的三分格局）。而在 1921 年的这一章里，它还是毛坯：有职能清单，没有正式名字；有零散案例，没有完整理论。观书如果之后也做《自我与本我》，你会在那本书里亲眼看到这里埋下的桩被一根根接起来。"
+  },
+  {
+   "type": "figure",
+   "ftype": "源流图",
+   "svg": "<svg viewBox='0 0 520 190' xmlns='http://www.w3.org/2000/svg'><text x='260' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;fill:var(--ink)'>从「自我理想」到「超我」：一根接一根的桩</text><line x1='30' y1='112' x2='480' y2='112' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='480,106 480,118 494,112' style='fill:var(--ink-faint)'/><path d='M325,84 L325,62 L445,62 L445,80' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5;stroke-dasharray:4 3'/><polygon points='445,90 440,79 450,79' style='fill:var(--cinnabar)'/><text x='385' y='54' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>两年后，伏笔被系统化</text><circle cx='85' cy='112' r='5' style='fill:var(--ink-soft)'/><text x='85' y='99' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>1914</text><text x='85' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>《论自恋》</text><text x='85' y='155' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>首提「自我理想」</text><circle cx='205' cy='112' r='5' style='fill:var(--ink-soft)'/><text x='205' y='99' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>1917</text><text x='205' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>《哀悼与忧郁》</text><text x='205' y='155' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>评判者攻击自我</text><circle cx='325' cy='112' r='7' style='fill:var(--cinnabar)'/><text x='325' y='99' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>1921</text><text x='325' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>本章（第11章）</text><text x='325' y='155' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>职能清单 · 三个案例</text><circle cx='445' cy='112' r='5' style='fill:var(--azure)'/><text x='445' y='99' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--azure)'>1923</text><text x='445' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>《自我与本我》</text><text x='445' y='155' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>正式命名「超我」</text></svg>",
+   "caption": "从 1914 年首提「自我理想」，到本章的职能清单，再到 1923 年正式命名「超我」——这一章是中间那根桩。"
+  },
+  {
+   "type": "p",
+   "text": "所以要提醒一句：**这是理论工地，不是竣工验收**。自我、自我理想这些划分，是弗洛伊德为解释临床观察搭的概念脚手架，不是解剖学事实；「心里真有一个评判者」这类说法，在后世心理学里争议很大，也很难用实验一锤定音。读它的正确姿势，是看一位理论家如何一步步搭框架、埋伏笔，而不是把「你脑子里住着几个小人」当成科学定论照单全收。"
+  },
+  {
+   "type": "h2",
+   "text": "评判席上的人会换：恋爱、催眠、忧郁三个案例"
+  },
+  {
+   "type": "p",
+   "text": "地基打好，弗洛伊德回头把前面章节的线索串了起来。还记得第 8 章讲热恋吗——**「把对象放到了自我理想的位置上」**。用这一章的语言重说一遍：热恋时，那把评判席被爱人整个占据了。评判者一让位，「情人眼里出西施」就顺理成章——爱人做什么都对，因为那个平时负责挑剔的机构，此刻坐着的正是他本人，谁会谴责自己的意中人？**催眠是同一个格局**：催眠师坐上评判席，他说的话便自带「正确」的光环。而群体，不过是千万人同时把同一位领袖请上了各自的评判席。"
+  },
+  {
+   "type": "p",
+   "text": "另一头是痛苦的方向。在**哀悼、忧郁**这类状态里，自我和这个内在评判者之间可能出现激烈的分裂：评判者变得异常严苛，日夜数落自我、贬低自我，仿佛把自我按在被告席上不放。弗洛伊德在《哀悼与忧郁》里对此有专门讨论，这里只是简要带过——"
+  },
+  {
+   "type": "quote",
+   "original": "自我分裂为两部分，其中一部分向另一部分发泄怒火",
+   "translation": "忧郁状态下，内在评判者仿佛独立成军，把自我当成靶子无休止地攻击——那种「我一无是处」的自我贬斥，在弗洛伊德看来正是这两半之间的内战。"
+  },
+  {
+   "type": "p",
+   "text": "需要说明：这是一百年前的理论假说，不是现代意义上抑郁症的诊断框架，两者不能划等号。这里更值得留意的是思路本身——**同一个内部结构，既能解释「爱到盲目」，也能解释「恨自己入骨」**：前者是评判者离席，后者是评判者失控。一张图看清三种状态："
+  },
+  {
+   "type": "figure",
+   "ftype": "对照图",
+   "svg": "<svg viewBox='0 0 520 260' xmlns='http://www.w3.org/2000/svg'><text x='260' y='20' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;fill:var(--ink)'>评判席上坐着谁——三种状态</text><text x='100' y='46' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>平时</text><rect x='38' y='56' width='124' height='44' rx='8' style='fill:none;stroke:var(--ink);stroke-width:1.8'/><text x='100' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>自我理想</text><text x='100' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-soft)'>（正常在岗）</text><line x1='100' y1='104' x2='100' y2='146' style='stroke:var(--ink-soft);stroke-width:1.6'/><polygon points='95,146 105,146 100,158' style='fill:var(--ink-soft)'/><text x='90' y='128' text-anchor='end' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>适度评判</text><circle cx='100' cy='192' r='26' style='fill:none;stroke:var(--ink);stroke-width:2'/><text x='100' y='197' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>自我</text><text x='260' y='46' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--azure)'>热恋 · 催眠</text><rect x='198' y='56' width='124' height='44' rx='8' style='fill:none;stroke:var(--azure);stroke-width:1.8'/><text x='260' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--azure)'>爱人 / 催眠师</text><text x='260' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-soft)'>（外来者占席）</text><line x1='260' y1='104' x2='260' y2='146' style='stroke:var(--azure);stroke-width:1.6;stroke-dasharray:4 3'/><polygon points='255,146 265,146 260,158' style='fill:var(--azure)'/><text x='270' y='128' text-anchor='start' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--azure)'>评判停摆，怎么都对</text><circle cx='260' cy='192' r='26' style='fill:none;stroke:var(--ink);stroke-width:2'/><text x='260' y='197' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>自我</text><text x='420' y='46' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--cinnabar)'>忧郁</text><rect x='358' y='56' width='124' height='44' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.8'/><text x='420' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--cinnabar)'>评判者</text><text x='420' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-soft)'>（异常严苛）</text><line x1='420' y1='104' x2='420' y2='146' style='stroke:var(--cinnabar);stroke-width:3.5'/><polygon points='414,146 426,146 420,159' style='fill:var(--cinnabar)'/><text x='430' y='128' text-anchor='start' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar)'>日夜攻击自我</text><circle cx='420' cy='192' r='26' style='fill:none;stroke:var(--ink);stroke-width:2;stroke-dasharray:5 4'/><text x='420' y='197' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>自我</text><text x='260' y='245' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>热恋与催眠：外人坐上评判席（见第8章）；忧郁：评判者反过来围攻自我</text></svg>",
+   "caption": "同一把评判席，三种坐法：平时它在岗，热恋与催眠时外人占席，忧郁时它反过来围攻自我。"
+  },
+  {
+   "type": "h2",
+   "text": "评判者也放假：躁狂、节日与钟摆"
+  },
+  {
+   "type": "p",
+   "text": "章末弗洛伊德还留了一个耐人寻味的观察：有些人的情绪呈周期性摆动，在亢奋（躁狂）与低落（忧郁）之间来回。他的解释仍用这套结构：**忧郁是评判者与自我激烈对峙，躁狂则像两者突然合并庆祝**——评判机构放了假，一切自我批评停摆，人于是自我感觉空前良好、精力四溢。这个解释是否成立另说，但它顺手带出一个漂亮的人类学脚注：**节日，本质上就是「被准许的放纵」**——平日被理想禁止的事，节日里集体开禁；狂欢的快乐，正是自我暂时挣脱那把尺子时的快乐。"
+  },
+  {
+   "type": "p",
+   "text": "这一章篇幅不大，却是全书理论密度最高的一段补充。把它读成一张**工地照片**最合适：能看见打好的桩（评判机构的职责清单）、拉起的线（恋爱、催眠、忧郁三个案例），也能看见还没盖起来的楼——「超我」和人格三分的完整结构。两年后弗洛伊德会把楼盖起来；而作为读者，我们既看他怎么盖，也始终保留一份判断权：这座楼，究竟能不能住人。"
+  }
+ ]
 }

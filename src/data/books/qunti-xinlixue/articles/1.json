@@ -1,95 +1,99 @@
 {
-  "title": "个体心理学，从一开始就是社会心理学",
-  "subtitle": "弗洛伊德《群体心理学与自我的分析》第1章导读——从「描述群体」走向「解释群体」",
-  "centralIdea": "弗洛伊德开篇的起手式很反直觉：个体心理学从一开始就同时是社会心理学，因为一个人的精神生活里，「另一个人」几乎总是在场——作为榜样、对象、帮手或对手；所以「纯粹孤立的个体心理」几乎不存在，个体心理与群体心理之间没有人们以为的那道硬边界。本章还立下方法：不满足于像勒庞那样只描述群体现象，而要用广义的力比多（情感纽带）理论去解释「为什么」，并预告全书路线——先复述评价勒庞与麦独孤的描述工作，再逐步给出情感纽带的机制解释，最后接回「原始部落」假说。需要提醒：这是精神分析的理论建构而非科学定论，研读它的论证，不必照单全收。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "先做个小实验：回想你今天独处的某个时刻——刷手机、发呆、对着镜子理头发。你以为那是「纯粹的你自己」吗？弗洛伊德大概会摇头：刷手机时你在意谁点了赞，发呆时你在回放和谁的对话，照镜子时你在用谁的眼光打量自己。《群体心理学与自我的分析》的第一章只有短短几页，却先干了一件大事——把「个体心理」和「群体心理」之间那道看似天经地义的墙，轻轻推倒。"
-    },
-    {
-      "type": "h2",
-      "text": "一记反直觉的起手式：研究「一个人」，就是在研究「人与人」"
-    },
-    {
-      "type": "p",
-      "text": "按常识，心理学应该分两摊：研究「一个人」的，叫个体心理学；研究「一群人」的，叫社会心理学或群体心理学，两边井水不犯河水。弗洛伊德开篇就说：这个分法看着牢靠，细看站不住。个体心理学表面上研究的是单个人——他怎么满足自己的本能冲动，走哪条路去实现愿望。可真做起来，这门学问**极少能够、只在很例外的情况下才能够**撇开这个人与其他人的关系。"
-    },
-    {
-      "type": "quote",
-      "original": "个体心理学同时也自始至终是社会心理学",
-      "translation": ""
-    },
-    {
-      "type": "p",
-      "text": "为什么这么说？因为在一个人的精神生活里，「另一个人」几乎从不缺席。弗洛伊德列出了他在场的四种方式：作为**榜样**——你模仿的父母、老师、偶像，他们的样子被你悄悄搬进了心里；作为**对象**——你爱的人、恨的人，你的情感总得有个落点；作为**帮手**——你依赖、求助、协作的人；作为**对手**——你较劲、比较、竞争的人。换句话说，哪怕房间里只有你一个，你心里也坐满了人：汇报时你脑中预演着上司的表情，深夜复盘时你还在跟白天那个杠精吵架。"
-    },
-    {
-      "type": "quote",
-      "original": "他人一律作为榜样、对象、帮手或对手参与其中",
-      "translation": ""
-    },
-    {
-      "type": "figure",
-      "ftype": "结构图",
-      "caption": "所谓「孤立的个体」：房间里只有一个人，心里却站满了人——榜样、对象、帮手、对手。个体心理学一开始就绕不开他们。",
-      "svg": "<svg viewBox=\"0 0 520 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><ellipse cx=\"260\" cy=\"158\" rx=\"96\" ry=\"98\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"1.5\" stroke-dasharray=\"6 5\"/><circle cx=\"260\" cy=\"122\" r=\"15\" style=\"fill:var(--ink)\"/><rect x=\"246\" y=\"141\" width=\"28\" height=\"38\" rx=\"12\" style=\"fill:var(--ink)\"/><text x=\"260\" y=\"204\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">「我」</text><text x=\"260\" y=\"238\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">所谓「孤立的个体」？</text><g><circle cx=\"78\" cy=\"66\" r=\"11\" style=\"fill:var(--ink-faint)\"/><rect x=\"68\" y=\"80\" width=\"20\" height=\"26\" rx=\"9\" style=\"fill:var(--ink-faint)\"/><text x=\"78\" y=\"126\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink-soft)\">榜样（学谁）</text></g><g><circle cx=\"442\" cy=\"66\" r=\"11\" style=\"fill:var(--ink-faint)\"/><rect x=\"432\" y=\"80\" width=\"20\" height=\"26\" rx=\"9\" style=\"fill:var(--ink-faint)\"/><text x=\"442\" y=\"126\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink-soft)\">对象（爱谁恨谁）</text></g><g><circle cx=\"78\" cy=\"210\" r=\"11\" style=\"fill:var(--ink-faint)\"/><rect x=\"68\" y=\"224\" width=\"20\" height=\"26\" rx=\"9\" style=\"fill:var(--ink-faint)\"/><text x=\"78\" y=\"270\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink-soft)\">帮手（靠谁）</text></g><g><circle cx=\"442\" cy=\"210\" r=\"11\" style=\"fill:var(--ink-faint)\"/><rect x=\"432\" y=\"224\" width=\"20\" height=\"26\" rx=\"9\" style=\"fill:var(--ink-faint)\"/><text x=\"442\" y=\"270\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink-soft)\">对手（跟谁比）</text></g><line x1=\"104\" y1=\"92\" x2=\"176\" y2=\"122\" style=\"stroke:var(--azure)\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\"/><line x1=\"416\" y1=\"92\" x2=\"344\" y2=\"122\" style=\"stroke:var(--azure)\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\"/><line x1=\"104\" y1=\"224\" x2=\"176\" y2=\"196\" style=\"stroke:var(--azure)\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\"/><line x1=\"416\" y1=\"224\" x2=\"344\" y2=\"196\" style=\"stroke:var(--azure)\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\"/><text x=\"260\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--cinnabar)\">一个人的心里，从来不止一个人</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "弗洛伊德还拿自家学问作证：精神分析号称研究「个人」，可它的材料从头到尾全是关系——病人与父母、与兄弟姐妹、与所爱之人、乃至与医生本人的关系。所以在他看来，个体心理学与社会心理学的对立**远没有初看之下那么泾渭分明**。真正能把他人完全排除在外的心理过程，大概只剩极少数自恋式的满足；而即便在那里，「他人」也常以记忆、期待、想象的方式潜伏着。个体与群体的差别，不在「有没有他人在场」，而在「他人以什么方式、多大规模在场」——是心里住着几个人，还是广场上站着一万人。这是**程度之差，不是种类之差**。"
-    },
-    {
-      "type": "p",
-      "text": "顺着这个思路，他还挑战了当时的一个流行答案。不少学者解释群体现象时，爱搬出一种「社会本能」或「合群本能」：人天生就有一股扎堆的原始冲动，一进人群就被它接管。弗洛伊德表示怀疑：凭什么认定这是一种**不可再分解的原始本能**？它完全可能是从别处派生出来的，而它形成的起点，或许就藏在家庭这个最小的「群体」里。这句伏笔很重——全书后半讲的「认同」与「情感纽带」，就是要把这个笼统的「社会本能」拆开，给你看里面的零件。"
-    },
-    {
-      "type": "h2",
-      "text": "从「是什么」到「为什么」：跟勒庞分道扬镳的方法宣言"
-    },
-    {
-      "type": "p",
-      "text": "摆完起手式，弗洛伊德交代本书的打法。在他之前，勒庞的《乌合之众》已经把群体现象描述得绘声绘色：人一进群体就变得冲动、易受暗示、智力下降，情绪像传染病一样蔓延……这些描述流传极广，画面感十足。但在弗洛伊德看来，它们回答的都是群体里发生了**什么**，而没有回答**为什么**会这样。描述现象只是开列清单，解释机制才算得上理论——就像记下「潮水每天涨落两次」是观察，指出「是月亮的引力在拉它」才是解释。"
-    },
-    {
-      "type": "p",
-      "text": "他给自己立下的问题清单是三连问：群体究竟是什么？它凭什么能对个体的精神生活产生如此决定性的影响？它强加给个体的那种心理变化，本质又是什么？而他准备用来作答的工具，是自家的力比多理论——注意，这里的力比多取**广义**：不是狭义的性欲，而是一切情感性的联结、依恋与投注，爱情、友谊、忠诚、崇拜都算在内。群体之所以能「接管」个体，秘密不在什么神秘的群体心灵，而在成员与成员之间、成员与领袖之间那些看不见的情感纽带。这一步棋，就是本书区别于一切前人著作的地方。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对比图",
-      "caption": "勒庞回答「群体里发生了什么」，弗洛伊德要回答「为什么会这样」——本书的全部野心，就是从左边跨到右边这一步。",
-      "svg": "<svg viewBox=\"0 0 520 270\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"260\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">同一个群体现象，两种工作</text><rect x=\"22\" y=\"46\" width=\"212\" height=\"186\" rx=\"10\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><text x=\"128\" y=\"74\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">勒庞《乌合之众》</text><text x=\"128\" y=\"96\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--azure)\">描述：「是什么」</text><text x=\"40\" y=\"126\" font-size=\"13\" style=\"fill:var(--ink-soft)\">· 冲动、易变、急躁</text><text x=\"40\" y=\"150\" font-size=\"13\" style=\"fill:var(--ink-soft)\">· 易受暗示、轻信</text><text x=\"40\" y=\"174\" font-size=\"13\" style=\"fill:var(--ink-soft)\">· 情绪相互传染</text><text x=\"40\" y=\"198\" font-size=\"13\" style=\"fill:var(--ink-soft)\">· 个人被人群淹没</text><rect x=\"286\" y=\"46\" width=\"212\" height=\"186\" rx=\"10\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"2\"/><text x=\"392\" y=\"74\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">弗洛伊德（本书）</text><text x=\"392\" y=\"96\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--cinnabar)\">解释：「为什么」</text><text x=\"304\" y=\"126\" font-size=\"13\" style=\"fill:var(--ink-soft)\">· 力比多＝广义情感纽带</text><text x=\"304\" y=\"150\" font-size=\"13\" style=\"fill:var(--ink-soft)\">· 成员 ⇄ 成员的联结</text><text x=\"304\" y=\"174\" font-size=\"13\" style=\"fill:var(--ink-soft)\">· 成员 ⇄ 领袖的联结</text><text x=\"304\" y=\"198\" font-size=\"13\" style=\"fill:var(--ink-soft)\">· 机制：认同与理想</text><line x1=\"236\" y1=\"139\" x2=\"282\" y2=\"139\" style=\"stroke:var(--cinnabar)\" stroke-width=\"2\"/><path d=\"M282 139 l-9 -5 v10 Z\" style=\"fill:var(--cinnabar)\"/><text x=\"260\" y=\"254\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">（这一步是理论建构，不是实验定论——研读它，别背诵它）</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "这里得停一步，把研读的分寸立好：这是**精神分析的理论建构，不是实验科学的定论**。「力比多」「本能」「投注」都是弗洛伊德体系内部的概念，后世对它们能否被检验、能否被证伪，争议一直很大。他批评勒庞「只描述不解释」，这一击是成立的；但他自己端出的解释，同样需要你带着批判的眼光去读——看他每一步怎么论证、证据够不够，而不是把结论当真理背下来。这也是读完整本书应有的姿势：把它当作一套值得认真对待的思想实验，而非盖了章的科学结论。"
-    },
-    {
-      "type": "h2",
-      "text": "全书阅读地图：三段路，一个回马枪"
-    },
-    {
-      "type": "p",
-      "text": "第一章同时是一张路线图，弗洛伊德把全书的行军路线交代得很清楚。**第一段（第2—3章）**：先复述并评价前人的描述性工作——勒庞那幅著名的群体画像，以及麦独孤对「有组织群体」的补充观察，先把「是什么」的账盘清。**第二段（第4—8章）**：换上自己的工具，用力比多替换「暗示」这个万能却空洞的词，拿教会和军队两个「人为群体」当解剖标本，再引入「认同」「爱恋与催眠」等机制，一步步搭出群体纽带的心理构造。**第三段（第9—12章）**：批评「合群本能」说——人不是「群居动物」，更像「部落动物」——然后打出回马枪，接回他早年在《图腾与禁忌》里提出的「原始部落」假说：群体心理也许是人类最古老的心理，领袖与追随者的关系可以一路追溯到那个传说中的「原始父亲」；最后落到「自我的分化」，回应书名的后半句「自我的分析」。"
-    },
-    {
-      "type": "figure",
-      "ftype": "路线图",
-      "caption": "全书十二章的行军路线：先盘点前人的描述（第2—3章），再换上力比多工具给出解释（第4—8章），最后追到史前的源头（第9—12章）。",
-      "svg": "<svg viewBox=\"0 0 520 330\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"64\" y1=\"44\" x2=\"64\" y2=\"296\" style=\"stroke:var(--line)\" stroke-width=\"2\"/><circle cx=\"64\" cy=\"44\" r=\"7\" style=\"fill:var(--cinnabar)\"/><text x=\"86\" y=\"49\" font-size=\"13\" style=\"fill:var(--ink)\">第1章 导言</text><text x=\"178\" y=\"49\" font-size=\"12\" style=\"fill:var(--cinnabar)\">◀ 你在这里：拆墙＋亮工具＋发地图</text><circle cx=\"64\" cy=\"86\" r=\"6\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"86\" y=\"91\" font-size=\"13\" style=\"fill:var(--ink)\">第2—3章 勒庞的画像·麦独孤的补充</text><text x=\"368\" y=\"91\" font-size=\"12\" style=\"fill:var(--azure)\">（描述）</text><circle cx=\"64\" cy=\"128\" r=\"6\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"86\" y=\"133\" font-size=\"13\" style=\"fill:var(--ink)\">第4—5章 暗示→力比多；教会与军队</text><text x=\"368\" y=\"133\" font-size=\"12\" style=\"fill:var(--azure)\">（换工具）</text><circle cx=\"64\" cy=\"170\" r=\"6\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"86\" y=\"175\" font-size=\"13\" style=\"fill:var(--ink)\">第6—8章 认同·爱恋与催眠</text><text x=\"368\" y=\"175\" font-size=\"12\" style=\"fill:var(--azure)\">（给机制）</text><circle cx=\"64\" cy=\"212\" r=\"6\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"86\" y=\"217\" font-size=\"13\" style=\"fill:var(--ink)\">第9章 批评「合群本能」说</text><circle cx=\"64\" cy=\"254\" r=\"6\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"86\" y=\"259\" font-size=\"13\" style=\"fill:var(--ink)\">第10章 原始部落假说</text><text x=\"368\" y=\"259\" font-size=\"12\" style=\"fill:var(--azure)\">（溯源）</text><circle cx=\"64\" cy=\"296\" r=\"6\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"86\" y=\"301\" font-size=\"13\" style=\"fill:var(--ink)\">第11—12章 自我的分化·补论</text><text x=\"64\" y=\"22\" font-size=\"14\" style=\"fill:var(--ink)\">全书 12 章行军路线</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "这张地图值得存好。中途读到「认同」「自我理想」这些概念开始绕的时候，回来看一眼自己在哪一站——弗洛伊德的章节看似散，其实每一章都在为下一章递梯子。"
-    },
-    {
-      "type": "h2",
-      "text": "一百年后，这个起手式为什么还新鲜"
-    },
-    {
-      "type": "p",
-      "text": "把场景换到今天：直播间里齐刷刷的弹幕、股市里追涨杀跌的散户、热搜下一夜反转的舆论、演唱会里十万人同一秒落泪——勒庞式的描述随处可以套用，可「为什么」依然是更难、也更少有人耐心回答的问题。而第一章留给读者的真正遗产，或许不是某个具体结论，而是那个视角翻转：**别把「个体」当成默认状态、把「群体」当成异常状态**。人从来就活在与他人的纽带里；群体不是把一个「干净的个体」污染了，而是把他心里本来就有的那些纽带放大、重组了。带着这个翻转再去读第二章的勒庞，你就知道该盯着什么看了——不是群体有多疯狂，而是那股让人心甘情愿交出自己的力量，究竟从哪里来。"
-    }
-  ]
+ "title": "个体心理学，从一开始就是社会心理学",
+ "subtitle": "弗洛伊德《群体心理学与自我的分析》第1章导读——从「描述群体」走向「解释群体」",
+ "centralIdea": "弗洛伊德开篇的起手式很反直觉：个体心理学从一开始就同时是社会心理学，因为一个人的精神生活里，「另一个人」几乎总是在场——作为榜样、对象、帮手或对手；所以「纯粹孤立的个体心理」几乎不存在，个体心理与群体心理之间没有人们以为的那道硬边界。本章还立下方法：不满足于像勒庞那样只描述群体现象，而要用广义的力比多（情感纽带）理论去解释「为什么」，并预告全书路线——先复述评价勒庞与麦独孤的描述工作，再逐步给出情感纽带的机制解释，最后接回「原始部落」假说。需要提醒：这是精神分析的理论建构而非科学定论，研读它的论证，不必照单全收。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "先做个小实验：回想你今天独处的某个时刻——刷手机、发呆、对着镜子理头发。你以为那是「纯粹的你自己」吗？弗洛伊德大概会摇头：刷手机时你在意谁点了赞，发呆时你在回放和谁的对话，照镜子时你在用谁的眼光打量自己。《群体心理学与自我的分析》的第一章只有短短几页，却先干了一件大事——把「个体心理」和「群体心理」之间那道看似天经地义的墙，轻轻推倒。"
+  },
+  {
+   "type": "h2",
+   "text": "一记反直觉的起手式：研究「一个人」，就是在研究「人与人」"
+  },
+  {
+   "type": "p",
+   "text": "按常识，心理学应该分两摊：研究「一个人」的，叫个体心理学；研究「一群人」的，叫社会心理学或群体心理学，两边井水不犯河水。弗洛伊德开篇就说：这个分法看着牢靠，细看站不住。个体心理学表面上研究的是单个人——他怎么满足自己的本能冲动，走哪条路去实现愿望。可真做起来，这门学问**极少能够、只在很例外的情况下才能够**撇开这个人与其他人的关系。"
+  },
+  {
+   "type": "quote",
+   "original": "个体心理学同时也自始至终是社会心理学",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "为什么这么说？因为在一个人的精神生活里，「另一个人」几乎从不缺席。弗洛伊德列出了他在场的四种方式：作为**榜样**——你模仿的父母、老师、偶像，他们的样子被你悄悄搬进了心里；作为**对象**——你爱的人、恨的人，你的情感总得有个落点；作为**帮手**——你依赖、求助、协作的人；作为**对手**——你较劲、比较、竞争的人。换句话说，哪怕房间里只有你一个，你心里也坐满了人：汇报时你脑中预演着上司的表情，深夜复盘时你还在跟白天那个杠精吵架。"
+  },
+  {
+   "type": "quote",
+   "original": "他人一律作为榜样、对象、帮手或对手参与其中",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "所谓「孤立的个体」：房间里只有一个人，心里却站满了人——榜样、对象、帮手、对手。个体心理学一开始就绕不开他们。",
+   "svg": "<svg viewBox=\"0 0 520 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><ellipse cx=\"260\" cy=\"158\" rx=\"96\" ry=\"98\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"1.5\" stroke-dasharray=\"6 5\"/><circle cx=\"260\" cy=\"122\" r=\"15\" style=\"fill:var(--ink)\"/><rect x=\"246\" y=\"141\" width=\"28\" height=\"38\" rx=\"12\" style=\"fill:var(--ink)\"/><text x=\"260\" y=\"204\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">「我」</text><text x=\"260\" y=\"238\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">所谓「孤立的个体」？</text><g><circle cx=\"78\" cy=\"66\" r=\"11\" style=\"fill:var(--ink-faint)\"/><rect x=\"68\" y=\"80\" width=\"20\" height=\"26\" rx=\"9\" style=\"fill:var(--ink-faint)\"/><text x=\"78\" y=\"126\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink-soft)\">榜样（学谁）</text></g><g><circle cx=\"442\" cy=\"66\" r=\"11\" style=\"fill:var(--ink-faint)\"/><rect x=\"432\" y=\"80\" width=\"20\" height=\"26\" rx=\"9\" style=\"fill:var(--ink-faint)\"/><text x=\"442\" y=\"126\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink-soft)\">对象（爱谁恨谁）</text></g><g><circle cx=\"78\" cy=\"210\" r=\"11\" style=\"fill:var(--ink-faint)\"/><rect x=\"68\" y=\"224\" width=\"20\" height=\"26\" rx=\"9\" style=\"fill:var(--ink-faint)\"/><text x=\"78\" y=\"270\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink-soft)\">帮手（靠谁）</text></g><g><circle cx=\"442\" cy=\"210\" r=\"11\" style=\"fill:var(--ink-faint)\"/><rect x=\"432\" y=\"224\" width=\"20\" height=\"26\" rx=\"9\" style=\"fill:var(--ink-faint)\"/><text x=\"442\" y=\"270\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink-soft)\">对手（跟谁比）</text></g><line x1=\"104\" y1=\"92\" x2=\"176\" y2=\"122\" style=\"stroke:var(--azure)\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\"/><line x1=\"416\" y1=\"92\" x2=\"344\" y2=\"122\" style=\"stroke:var(--azure)\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\"/><line x1=\"104\" y1=\"224\" x2=\"176\" y2=\"196\" style=\"stroke:var(--azure)\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\"/><line x1=\"416\" y1=\"224\" x2=\"344\" y2=\"196\" style=\"stroke:var(--azure)\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\"/><text x=\"260\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--cinnabar)\">一个人的心里，从来不止一个人</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "弗洛伊德还拿自家学问作证：精神分析号称研究「个人」，可它的材料从头到尾全是关系——病人与父母、与兄弟姐妹、与所爱之人、乃至与医生本人的关系。所以在他看来，个体心理学与社会心理学的对立**远没有初看之下那么泾渭分明**。真正能把他人完全排除在外的心理过程，大概只剩极少数自恋式的满足；而即便在那里，「他人」也常以记忆、期待、想象的方式潜伏着。个体与群体的差别，不在「有没有他人在场」，而在「他人以什么方式、多大规模在场」——是心里住着几个人，还是广场上站着一万人。这是"
+  },
+  {
+   "type": "pull",
+   "text": "程度之差，不是种类之差。"
+  },
+  {
+   "type": "p",
+   "text": "顺着这个思路，他还挑战了当时的一个流行答案。不少学者解释群体现象时，爱搬出一种「社会本能」或「合群本能」：人天生就有一股扎堆的原始冲动，一进人群就被它接管。弗洛伊德表示怀疑：凭什么认定这是一种**不可再分解的原始本能**？它完全可能是从别处派生出来的，而它形成的起点，或许就藏在家庭这个最小的「群体」里。这句伏笔很重——全书后半讲的「认同」与「情感纽带」，就是要把这个笼统的「社会本能」拆开，给你看里面的零件。"
+  },
+  {
+   "type": "h2",
+   "text": "从「是什么」到「为什么」：跟勒庞分道扬镳的方法宣言"
+  },
+  {
+   "type": "p",
+   "text": "摆完起手式，弗洛伊德交代本书的打法。在他之前，勒庞的《乌合之众》已经把群体现象描述得绘声绘色：人一进群体就变得冲动、易受暗示、智力下降，情绪像传染病一样蔓延……这些描述流传极广，画面感十足。但在弗洛伊德看来，它们回答的都是群体里发生了**什么**，而没有回答**为什么**会这样。描述现象只是开列清单，解释机制才算得上理论——就像记下「潮水每天涨落两次」是观察，指出「是月亮的引力在拉它」才是解释。"
+  },
+  {
+   "type": "p",
+   "text": "他给自己立下的问题清单是三连问：群体究竟是什么？它凭什么能对个体的精神生活产生如此决定性的影响？它强加给个体的那种心理变化，本质又是什么？而他准备用来作答的工具，是自家的力比多理论——注意，这里的力比多取**广义**：不是狭义的性欲，而是一切情感性的联结、依恋与投注，爱情、友谊、忠诚、崇拜都算在内。群体之所以能「接管」个体，秘密不在什么神秘的群体心灵，而在成员与成员之间、成员与领袖之间那些看不见的情感纽带。这一步棋，就是本书区别于一切前人著作的地方。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "caption": "勒庞回答「群体里发生了什么」，弗洛伊德要回答「为什么会这样」——本书的全部野心，就是从左边跨到右边这一步。",
+   "svg": "<svg viewBox=\"0 0 520 270\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"260\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">同一个群体现象，两种工作</text><rect x=\"22\" y=\"46\" width=\"212\" height=\"186\" rx=\"10\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><text x=\"128\" y=\"74\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">勒庞《乌合之众》</text><text x=\"128\" y=\"96\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--azure)\">描述：「是什么」</text><text x=\"40\" y=\"126\" font-size=\"13\" style=\"fill:var(--ink-soft)\">· 冲动、易变、急躁</text><text x=\"40\" y=\"150\" font-size=\"13\" style=\"fill:var(--ink-soft)\">· 易受暗示、轻信</text><text x=\"40\" y=\"174\" font-size=\"13\" style=\"fill:var(--ink-soft)\">· 情绪相互传染</text><text x=\"40\" y=\"198\" font-size=\"13\" style=\"fill:var(--ink-soft)\">· 个人被人群淹没</text><rect x=\"286\" y=\"46\" width=\"212\" height=\"186\" rx=\"10\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"2\"/><text x=\"392\" y=\"74\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">弗洛伊德（本书）</text><text x=\"392\" y=\"96\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--cinnabar)\">解释：「为什么」</text><text x=\"304\" y=\"126\" font-size=\"13\" style=\"fill:var(--ink-soft)\">· 力比多＝广义情感纽带</text><text x=\"304\" y=\"150\" font-size=\"13\" style=\"fill:var(--ink-soft)\">· 成员 ⇄ 成员的联结</text><text x=\"304\" y=\"174\" font-size=\"13\" style=\"fill:var(--ink-soft)\">· 成员 ⇄ 领袖的联结</text><text x=\"304\" y=\"198\" font-size=\"13\" style=\"fill:var(--ink-soft)\">· 机制：认同与理想</text><line x1=\"236\" y1=\"139\" x2=\"282\" y2=\"139\" style=\"stroke:var(--cinnabar)\" stroke-width=\"2\"/><path d=\"M282 139 l-9 -5 v10 Z\" style=\"fill:var(--cinnabar)\"/><text x=\"260\" y=\"254\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">（这一步是理论建构，不是实验定论——研读它，别背诵它）</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "这里得停一步，把研读的分寸立好：这是**精神分析的理论建构，不是实验科学的定论**。「力比多」「本能」「投注」都是弗洛伊德体系内部的概念，后世对它们能否被检验、能否被证伪，争议一直很大。他批评勒庞「只描述不解释」，这一击是成立的；但他自己端出的解释，同样需要你带着批判的眼光去读——看他每一步怎么论证、证据够不够，而不是把结论当真理背下来。这也是读完整本书应有的姿势：把它当作一套值得认真对待的思想实验，而非盖了章的科学结论。"
+  },
+  {
+   "type": "h2",
+   "text": "全书阅读地图：三段路，一个回马枪"
+  },
+  {
+   "type": "p",
+   "text": "第一章同时是一张路线图，弗洛伊德把全书的行军路线交代得很清楚。**第一段（第2—3章）**：先复述并评价前人的描述性工作——勒庞那幅著名的群体画像，以及麦独孤对「有组织群体」的补充观察，先把「是什么」的账盘清。**第二段（第4—8章）**：换上自己的工具，用力比多替换「暗示」这个万能却空洞的词，拿教会和军队两个「人为群体」当解剖标本，再引入「认同」「爱恋与催眠」等机制，一步步搭出群体纽带的心理构造。**第三段（第9—12章）**：批评「合群本能」说——人不是「群居动物」，更像「部落动物」——然后打出回马枪，接回他早年在《图腾与禁忌》里提出的「原始部落」假说：群体心理也许是人类最古老的心理，领袖与追随者的关系可以一路追溯到那个传说中的「原始父亲」；最后落到「自我的分化」，回应书名的后半句「自我的分析」。"
+  },
+  {
+   "type": "figure",
+   "ftype": "路线图",
+   "caption": "全书十二章的行军路线：先盘点前人的描述（第2—3章），再换上力比多工具给出解释（第4—8章），最后追到史前的源头（第9—12章）。",
+   "svg": "<svg viewBox=\"0 0 520 330\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"64\" y1=\"44\" x2=\"64\" y2=\"296\" style=\"stroke:var(--line)\" stroke-width=\"2\"/><circle cx=\"64\" cy=\"44\" r=\"7\" style=\"fill:var(--cinnabar)\"/><text x=\"86\" y=\"49\" font-size=\"13\" style=\"fill:var(--ink)\">第1章 导言</text><text x=\"178\" y=\"49\" font-size=\"12\" style=\"fill:var(--cinnabar)\">◀ 你在这里：拆墙＋亮工具＋发地图</text><circle cx=\"64\" cy=\"86\" r=\"6\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"86\" y=\"91\" font-size=\"13\" style=\"fill:var(--ink)\">第2—3章 勒庞的画像·麦独孤的补充</text><text x=\"368\" y=\"91\" font-size=\"12\" style=\"fill:var(--azure)\">（描述）</text><circle cx=\"64\" cy=\"128\" r=\"6\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"86\" y=\"133\" font-size=\"13\" style=\"fill:var(--ink)\">第4—5章 暗示→力比多；教会与军队</text><text x=\"368\" y=\"133\" font-size=\"12\" style=\"fill:var(--azure)\">（换工具）</text><circle cx=\"64\" cy=\"170\" r=\"6\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"86\" y=\"175\" font-size=\"13\" style=\"fill:var(--ink)\">第6—8章 认同·爱恋与催眠</text><text x=\"368\" y=\"175\" font-size=\"12\" style=\"fill:var(--azure)\">（给机制）</text><circle cx=\"64\" cy=\"212\" r=\"6\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"86\" y=\"217\" font-size=\"13\" style=\"fill:var(--ink)\">第9章 批评「合群本能」说</text><circle cx=\"64\" cy=\"254\" r=\"6\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"86\" y=\"259\" font-size=\"13\" style=\"fill:var(--ink)\">第10章 原始部落假说</text><text x=\"368\" y=\"259\" font-size=\"12\" style=\"fill:var(--azure)\">（溯源）</text><circle cx=\"64\" cy=\"296\" r=\"6\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"86\" y=\"301\" font-size=\"13\" style=\"fill:var(--ink)\">第11—12章 自我的分化·补论</text><text x=\"64\" y=\"22\" font-size=\"14\" style=\"fill:var(--ink)\">全书 12 章行军路线</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "这张地图值得存好。中途读到「认同」「自我理想」这些概念开始绕的时候，回来看一眼自己在哪一站——弗洛伊德的章节看似散，其实每一章都在为下一章递梯子。"
+  },
+  {
+   "type": "h2",
+   "text": "一百年后，这个起手式为什么还新鲜"
+  },
+  {
+   "type": "p",
+   "text": "把场景换到今天：直播间里齐刷刷的弹幕、股市里追涨杀跌的散户、热搜下一夜反转的舆论、演唱会里十万人同一秒落泪——勒庞式的描述随处可以套用，可「为什么」依然是更难、也更少有人耐心回答的问题。而第一章留给读者的真正遗产，或许不是某个具体结论，而是那个视角翻转：**别把「个体」当成默认状态、把「群体」当成异常状态**。人从来就活在与他人的纽带里；群体不是把一个「干净的个体」污染了，而是把他心里本来就有的那些纽带放大、重组了。带着这个翻转再去读第二章的勒庞，你就知道该盯着什么看了——不是群体有多疯狂，而是那股让人心甘情愿交出自己的力量，究竟从哪里来。"
+  }
+ ]
 }

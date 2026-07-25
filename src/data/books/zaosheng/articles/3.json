@@ -1,110 +1,114 @@
 {
-  "title": "场合噪声:同一个人,不同时候会有不同判断",
-  "subtitle": "《噪声》第3章导读——你不只跟别人不一致,还跟昨天的自己不一致",
-  "centralIdea": "这一章讲判断里最难堪的一种飘忽——场合噪声(occasion noise):连同一个判断者,在不同时刻对同一件事也会给出不同答案。不是你换了立场、学到了新东西,而是同一个你,只因『这一次』和『上一次』的当口不同,判断就悄悄挪了位。拨动它的手,几乎都跟事情本身无关:心情好时评估更宽容更乐观,晴天面试官打分更高(有研究称阴晴还会改变招生官对学术分量的看重);饥饿疲劳可能渗进裁决——一项被反复引用的研究称,法官在临近午饭、休息前的假释批准率明显下降,书中用它说明场合噪声,但这项『午饭假释』研究学界解读有争议,不能坐实『法官全凭肚子判案』;上一个案子太强会把下一个的评分拉低(对比效应),连昨晚球队输没输球都可能渗进第二天的专业判断。更可怕的是,连放射科、病理医生看同一张片子两次都可能改判,指纹鉴定专家在不同情境下对同一对指纹也会受周边信息影响而改口——而当事人毫无察觉,还会为每个判断编出一套理由。一个补救是『内部众包』:让同一个人隔开时间独立判断两次再平均,能抵消一部分场合噪声、略微更准。核心一句:判断不仅因人而异,还因时而异。分寸:如实讲效应,对争议研究点明学界有不同解读,不夸大成运气或玄学。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "想象同一位放射科医生:周一上午精神饱满,看了你的胸片,判『没问题』;换成周四傍晚,他连着看了三十张片子、又惦记着堵在路上的晚高峰,同一张片子,他也许会多标一句『这里建议复查』。片子没变,病灶没变,变的只是他看片的那个当口。我们总以为专业判断像一把准星,稳稳钉在那儿;可它其实更像天气,有它自己的阴晴。这一章讲的,就是判断里最难堪的一种飘忽——你不只跟别人不一致,你还跟昨天的自己不一致。"
-    },
-    {
-      "type": "h2",
-      "text": "同一个人,也会跟昨天的自己吵架"
-    },
-    {
-      "type": "p",
-      "text": "《噪声》把判断里的分歧拆成几层来看。你和同事对同一件事看法不同,这是一层;而这一章要抓的,是更贴身、也更让人不安的一层——**场合噪声(occasion noise)**:连同一个判断者,在不同的时刻,对同一件事也会给出不同的答案。不是你换了立场,也不是你学到了新东西,而是同一个你,只因为『这一次』和『上一次』的当口不同,判断就悄悄挪了位。作者说得直白:我们珍视的那种『一贯』,很多时候是错觉;真正稳定下来的,往往只是你事后替每个判断补上的那套理由。"
-    },
-    {
-      "type": "quote",
-      "original": "你不仅常常与他人意见相左,还常常与另一个时刻的自己意见相左。",
-      "translation": ""
-    },
-    {
-      "type": "figure",
-      "ftype": "示意图",
-      "caption": "场合噪声:法官没变、案卷没变,变的只是看它的那个当口——心情、天气、饥饿、前一个案子,都在把同一份判断往不同方向推。",
-      "svg": "<svg viewBox=\"0 0 560 330\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">同一个人,不同时刻,给出不同判断</text><rect x=\"130\" y=\"42\" width=\"300\" height=\"42\" rx=\"8\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><text x=\"280\" y=\"60\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">同一位法官 · 同一份假释申请</text><text x=\"280\" y=\"77\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">法官没变、案卷没变,变的只是看它的那个当口</text><line x1=\"90\" y1=\"94\" x2=\"90\" y2=\"112\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\"/><line x1=\"215\" y1=\"94\" x2=\"215\" y2=\"112\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\"/><line x1=\"345\" y1=\"94\" x2=\"345\" y2=\"112\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\"/><line x1=\"470\" y1=\"94\" x2=\"470\" y2=\"112\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\"/><rect x=\"26\" y=\"114\" width=\"128\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.6\"/><text x=\"90\" y=\"140\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">心情好的上午</text><text x=\"90\" y=\"162\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">看什么都宽容</text><line x1=\"90\" y1=\"176\" x2=\"90\" y2=\"196\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\"/><path d=\"M90 196 l-4 -9 h8 Z\" style=\"fill:var(--ink-faint)\"/><text x=\"90\" y=\"224\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--cinnabar-pure)\">倾向批准</text><rect x=\"164\" y=\"114\" width=\"128\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.6\"/><text x=\"228\" y=\"140\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">阴雨的一天</text><text x=\"228\" y=\"162\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">莫名更严苛</text><line x1=\"228\" y1=\"176\" x2=\"228\" y2=\"196\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\"/><path d=\"M228 196 l-4 -9 h8 Z\" style=\"fill:var(--ink-faint)\"/><text x=\"228\" y=\"224\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\">更可能驳回</text><rect x=\"302\" y=\"114\" width=\"128\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.6\"/><text x=\"366\" y=\"140\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">临近午饭时</text><text x=\"366\" y=\"162\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">又累又饿</text><line x1=\"366\" y1=\"176\" x2=\"366\" y2=\"196\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\"/><path d=\"M366 196 l-4 -9 h8 Z\" style=\"fill:var(--ink-faint)\"/><text x=\"366\" y=\"224\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\">更容易说不</text><text x=\"366\" y=\"246\" text-anchor=\"middle\" font-size=\"10\" style=\"fill:var(--ink-faint)\">(此说有争议)</text><rect x=\"440\" y=\"114\" width=\"120\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.6\"/><text x=\"500\" y=\"140\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">刚看完一个强案</text><text x=\"500\" y=\"162\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">一比就显弱</text><line x1=\"500\" y1=\"176\" x2=\"500\" y2=\"196\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\"/><path d=\"M500 196 l-4 -9 h8 Z\" style=\"fill:var(--ink-faint)\"/><text x=\"500\" y=\"224\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\">评分被拉低</text><text x=\"280\" y=\"300\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">这些跟案子毫不相干的东西,正在偷偷改写本该客观的裁决</text></svg>"
-    },
-    {
-      "type": "h2",
-      "text": "偷偷拨动你的,是一堆跟案子毫不相干的东西"
-    },
-    {
-      "type": "p",
-      "text": "最让人别扭的是,拨动判断的那些手,几乎都跟事情本身无关。**心情**是头一个:心情好的时候,人看什么都宽容几分、乐观几分,评估、面试、打分都偏松;心情差,则处处从严,连本来能一笑而过的小毛病都看得格外刺眼。同一份方案、同一个求职者,递到笑意盈盈的你面前,和递到刚被上一封邮件惹毛的你面前,得到的评价可能就差着一截。**天气**也能顺着这条缝渗进来——有研究发现,晴天的面试官给的分数更高;还有研究称,阴晴会改变大学招生官对『学术成绩』的看重程度,天一沉,他们反而更看重硬邦邦的书面分数。这些因素当事人一概不知情,却实实在在地改了分。你以为自己在评价材料,其实有一部分,是在替今天的天色和心境背书。"
-    },
-    {
-      "type": "p",
-      "text": "更耸动的是**饥饿和疲劳**。一项被反复引用的研究称,以色列法官的假释批准率,在临近午饭、临近休息前会明显下降,一顿饭之后又回升——书里用它来说明场合噪声确有其事。不过这里得留个心眼:这项『午饭假释』研究后来引发了不小的争议,有学者指出案件排序并非随机、律师与案件安排等因素可能混进来,单凭它并不能坐实『法官全靠肚子判案』。稳妥的说法是:疲惫、饥饿、一天里的时段,确实可能悄悄影响本该客观的裁决;至于影响有多大、到底怎么起作用,还没有定论。"
-    },
-    {
-      "type": "p",
-      "text": "还有一只更隐蔽的手,叫**对比效应**。判断很少是孤立作出的,它总在跟『上一个』比。上一份申请特别出色,会把你对下一份的评价往下拽——明明是份不错的材料,只因排在尖子后头,就显得平庸;反过来,跟在一堆平庸后面的普通申请,又会被高看一眼。于是**顺序**本身成了噪声:同一份材料,放在评审队列的前头还是后头、前一个是强是弱,得到的分可能就不一样。甚至你支持的球队昨晚输没输球、办公室早上吵没吵架,都可能顺着这条缝,渗进第二天那份『专业』判断里。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对照图",
-      "caption": "对比效应:同一份申请 B,前一个若是尖子就显得平庸、被打低分;前一个若很弱就被高看、打了高分。顺序本身成了噪声。",
-      "svg": "<svg viewBox=\"0 0 560 250\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">对比效应:上一个是强是弱,决定下一个吃亏还是占便宜</text><rect x=\"30\" y=\"56\" width=\"150\" height=\"46\" rx=\"8\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.6\"/><text x=\"105\" y=\"78\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink)\">上一个:很强的申请</text><text x=\"105\" y=\"94\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">尖子在前</text><line x1=\"180\" y1=\"79\" x2=\"238\" y2=\"79\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.5\"/><path d=\"M238 79 l-9 -4 v8 Z\" style=\"fill:var(--ink-faint)\"/><rect x=\"240\" y=\"56\" width=\"120\" height=\"46\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><text x=\"300\" y=\"84\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">同一份申请 B</text><line x1=\"360\" y1=\"79\" x2=\"418\" y2=\"79\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.5\"/><path d=\"M418 79 l-9 -4 v8 Z\" style=\"fill:var(--ink-faint)\"/><text x=\"490\" y=\"76\" text-anchor=\"middle\" font-size=\"16\" style=\"fill:var(--ink)\">打 6 分</text><text x=\"490\" y=\"94\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">显得平庸,偏低</text><rect x=\"30\" y=\"140\" width=\"150\" height=\"46\" rx=\"8\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.6\"/><text x=\"105\" y=\"162\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink)\">上一个:很弱的申请</text><text x=\"105\" y=\"178\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">平庸在前</text><line x1=\"180\" y1=\"163\" x2=\"238\" y2=\"163\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.5\"/><path d=\"M238 163 l-9 -4 v8 Z\" style=\"fill:var(--ink-faint)\"/><rect x=\"240\" y=\"140\" width=\"120\" height=\"46\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><text x=\"300\" y=\"168\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">同一份申请 B</text><line x1=\"360\" y1=\"163\" x2=\"418\" y2=\"163\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.5\"/><path d=\"M418 163 l-9 -4 v8 Z\" style=\"fill:var(--ink-faint)\"/><text x=\"490\" y=\"160\" text-anchor=\"middle\" font-size=\"16\" style=\"fill:var(--cinnabar-pure)\">打 8 分</text><text x=\"490\" y=\"178\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">被高看,偏高</text><text x=\"280\" y=\"224\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">同一份 B,只因前一个不同,评分就变了——顺序本身成了噪声</text></svg>"
-    },
-    {
-      "type": "h2",
-      "text": "连『机器一样』的判断,也自己跟自己打架"
-    },
-    {
-      "type": "p",
-      "text": "你也许会想:上面那些是主观打分,难免飘;总有些判断是硬碰硬、不会走样的吧?偏偏不是。**同一位放射科医生,把同一张片子隔些日子看两遍,可能给出不同的判读;同一位病理医生看同一份切片,也一样。**这种『自己跟自己不一致』(书中叫复测噪声)在医学里被反复测到——不是水平不够,而是同一双眼睛、同一个大脑,在不同当口就是会飘。判读『可疑』还是『正常』,有时竟取决于今天看的是这一张,还是今天的第几张。"
-    },
-    {
-      "type": "p",
-      "text": "最出人意料的是**指纹鉴定**。人们以为这是铁证如山,可实验显示:把同一对指纹,在不同情境下拿给同一位专家看,只要周边信息变了——比如旁边多提一句『嫌疑人已经认罪』——他的结论也可能跟着改口。作者要点破的,不是这些专家不专业,恰恰相反:正因为他们训练有素、结论又常被当成客观事实,这种当日波动才格外值得警惕。一个判断越是被大家信以为『铁板一块』,藏在它里面的场合噪声,就越危险。"
-    },
-    {
-      "type": "quote",
-      "original": "同一位专家,在不同时刻看同一份证据,未必给出同一个结论。",
-      "translation": ""
-    },
-    {
-      "type": "figure",
-      "ftype": "机制图",
-      "caption": "专家也逃不掉:同一位医生看同一张片子,周一上午判『正常』,周四傍晚疲惫时判『建议复查』——放射、病理、指纹都测到过这种自己跟自己不一致。",
-      "svg": "<svg viewBox=\"0 0 560 250\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">连专家也逃不掉:同一张片子,看两次两个结论</text><rect x=\"240\" y=\"48\" width=\"80\" height=\"104\" rx=\"6\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><circle cx=\"280\" cy=\"92\" r=\"18\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"1.4\"/><circle cx=\"280\" cy=\"92\" r=\"5\" style=\"fill:var(--ink-faint)\"/><text x=\"280\" y=\"140\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-soft)\">同一张胸片</text><line x1=\"238\" y1=\"100\" x2=\"150\" y2=\"82\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\" stroke-dasharray=\"4 4\"/><text x=\"98\" y=\"70\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">周一上午</text><text x=\"98\" y=\"88\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">精神饱满</text><rect x=\"30\" y=\"100\" width=\"136\" height=\"40\" rx=\"8\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.6\"/><text x=\"98\" y=\"125\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">判读:正常</text><line x1=\"322\" y1=\"100\" x2=\"410\" y2=\"82\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\" stroke-dasharray=\"4 4\"/><text x=\"462\" y=\"70\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">周四傍晚</text><text x=\"462\" y=\"88\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">第三十张,疲惫</text><rect x=\"394\" y=\"100\" width=\"136\" height=\"40\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><text x=\"462\" y=\"125\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--cinnabar-pure)\">判读:建议复查</text><text x=\"280\" y=\"196\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">放射科、病理、指纹鉴定都出现过这种「自己跟自己不一致」</text><text x=\"280\" y=\"220\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">越被当成「铁板一块」的判断,藏在里面的当日波动越值得警惕</text></svg>"
-    },
-    {
-      "type": "h2",
-      "text": "为什么可怕:我们毫无察觉,还替每个判断编好了理由"
-    },
-    {
-      "type": "p",
-      "text": "场合噪声真正的杀伤力,在于它**无声无息**。误差如果明晃晃摆在那儿,我们还能提防;可当事人对自己的飘忽几乎毫无察觉——你不会觉得『我今天心情好、所以打分松了』,你只会觉得『这份材料确实不错』。更麻烦的是,大脑是台不知疲倦的解释机器:无论此刻给出什么判断,它都能立刻替你配上一套顺理成章的理由,让你深信这是深思熟虑的结论,而不是当天天气、上一杯咖啡、前一个案子共同拼出来的偶然。我们以为自己在称量事实,其实有一部分,是在报告此刻的状态。"
-    },
-    {
-      "type": "p",
-      "text": "这也点破了场合噪声和我们常说的『偏见』的区别。偏见是所有人朝同一个方向一起错,像一群把靶子系统性打偏到右上角的射手,方向明确、还有迹可循;场合噪声却是同一个射手,今天偏左、明天偏右,弹着点散成一片——你甚至说不清它错在哪一边。正因为它没有固定方向,单看某一次判断,你根本分不出里头有多少是真本事、多少是当天的运气。它不像偏见那样能靠『往反方向修正一下』就压住,而是必须换一种思路去对付——要么把作判断的流程标准化,要么就得借下面这一招,拿多次判断互相校准。"
-    },
-    {
-      "type": "h2",
-      "text": "一个意外的补救:把自己当成两个人"
-    },
-    {
-      "type": "p",
-      "text": "既然同一个人在不同时刻会给出不同答案,那反过来想,这些答案里其实住着一小群『不同的你』。作者提到一个巧妙的对策——**内部众包**(the crowd within):就同一个问题,让同一个人**隔开一段时间、彼此独立地判断两次,再取平均**。因为两次判断的场合噪声方向往往相反(这次偏高、下次偏低),一平均,就抵消掉一部分,估计反而更准。这就像把一大群人的猜测取平均能变得更聪明一样,只不过这里的『众人』,是不同时刻的同一个自己。间隔越久、越是把上一次忘干净,两次判断就越独立,这招也就越管用——若是隔几分钟就再判一遍,你多半只是把第一次的答案照抄一遍,那点飘忽还没来得及换个方向,平均也就无从抵消。所以真要用,不妨拉开几天,或者故意换个心境、换个时段再来一次,让第二个『你』尽量别记得第一个『你』当时怎么想。这不是什么高深工具,却提醒了一件朴素的事:与其笃信自己一锤定音的直觉,不如给同一个判断多留一次机会。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对策图",
-      "caption": "内部众包:同一个人隔开时间独立判断两次,一次偏高、一次偏低,取平均后反而更靠近真值——抵消一部分场合噪声。它只把偏差压小,消不掉。",
-      "svg": "<svg viewBox=\"0 0 560 250\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">内部众包:同一个人,隔开时间,独立判断两次再取平均</text><line x1=\"70\" y1=\"150\" x2=\"490\" y2=\"150\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.5\"/><text x=\"70\" y=\"176\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">偏低</text><text x=\"490\" y=\"176\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">偏高</text><line x1=\"300\" y1=\"132\" x2=\"300\" y2=\"168\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.6\" stroke-dasharray=\"4 3\"/><text x=\"300\" y=\"196\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">真值</text><circle cx=\"180\" cy=\"150\" r=\"7\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"2\"/><text x=\"180\" y=\"126\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">第一次判断</text><circle cx=\"404\" cy=\"150\" r=\"7\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"2\"/><text x=\"404\" y=\"126\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">隔些日子,再判一次</text><circle cx=\"292\" cy=\"150\" r=\"8\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"292\" y=\"110\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--cinnabar-pure)\">两次取平均</text><line x1=\"188\" y1=\"150\" x2=\"284\" y2=\"150\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"300\" y1=\"150\" x2=\"396\" y2=\"150\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"280\" y=\"228\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">两次的场合噪声方向常相反,一平均就抵消一部分,估计反而更靠近真值</text></svg>"
-    },
-    {
-      "type": "quote",
-      "original": "就同一问题独立判断两次再取平均,能抵消一部分当日的波动。",
-      "translation": ""
-    },
-    {
-      "type": "p",
-      "text": "最后把分寸摆正。这一招顶多把偏差压小,消不掉它,更挡不住那些系统性的偏见;而那些争议性的研究(比如午饭假释)该打的问号,也得老老实实打上。说判断有『当日波动』,不等于说它全凭运气、全无价值。这一章真正要你记住的,是一次视角的翻转——你一向以为专业判断稳如准星,可它更像天气,有阴有晴。下次你为一件事拍板,尤其在打分、评估、裁决这些自认最客观的场合,不妨留个心:此刻给出的这个答案,有多少来自事情本身,又有多少,只是来自今天的你。"
-    }
-  ]
+ "title": "场合噪声:同一个人,不同时候会有不同判断",
+ "subtitle": "《噪声》第3章导读——你不只跟别人不一致,还跟昨天的自己不一致",
+ "centralIdea": "这一章讲判断里最难堪的一种飘忽——场合噪声(occasion noise):连同一个判断者,在不同时刻对同一件事也会给出不同答案。不是你换了立场、学到了新东西,而是同一个你,只因『这一次』和『上一次』的当口不同,判断就悄悄挪了位。拨动它的手,几乎都跟事情本身无关:心情好时评估更宽容更乐观,晴天面试官打分更高(有研究称阴晴还会改变招生官对学术分量的看重);饥饿疲劳可能渗进裁决——一项被反复引用的研究称,法官在临近午饭、休息前的假释批准率明显下降,书中用它说明场合噪声,但这项『午饭假释』研究学界解读有争议,不能坐实『法官全凭肚子判案』;上一个案子太强会把下一个的评分拉低(对比效应),连昨晚球队输没输球都可能渗进第二天的专业判断。更可怕的是,连放射科、病理医生看同一张片子两次都可能改判,指纹鉴定专家在不同情境下对同一对指纹也会受周边信息影响而改口——而当事人毫无察觉,还会为每个判断编出一套理由。一个补救是『内部众包』:让同一个人隔开时间独立判断两次再平均,能抵消一部分场合噪声、略微更准。核心一句:判断不仅因人而异,还因时而异。分寸:如实讲效应,对争议研究点明学界有不同解读,不夸大成运气或玄学。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "想象同一位放射科医生:周一上午精神饱满,看了你的胸片,判『没问题』;换成周四傍晚,他连着看了三十张片子、又惦记着堵在路上的晚高峰,同一张片子,他也许会多标一句『这里建议复查』。片子没变,病灶没变,变的只是他看片的那个当口。我们总以为专业判断像一把准星,稳稳钉在那儿;可它其实更像天气,有它自己的阴晴。这一章讲的,就是判断里最难堪的一种飘忽——你不只跟别人不一致,你还跟昨天的自己不一致。"
+  },
+  {
+   "type": "h2",
+   "text": "同一个人,也会跟昨天的自己吵架"
+  },
+  {
+   "type": "p",
+   "text": "《噪声》把判断里的分歧拆成几层来看。你和同事对同一件事看法不同,这是一层;而这一章要抓的,是更贴身、也更让人不安的一层——**场合噪声(occasion noise)**:连同一个判断者,在不同的时刻,对同一件事也会给出不同的答案。不是你换了立场,也不是你学到了新东西,而是同一个你,只因为『这一次』和『上一次』的当口不同,判断就悄悄挪了位。作者说得直白:我们珍视的那种『一贯』,很多时候是错觉;真正稳定下来的,往往只是你事后替每个判断补上的那套理由。"
+  },
+  {
+   "type": "quote",
+   "original": "你不仅常常与他人意见相左,还常常与另一个时刻的自己意见相左。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "场合噪声:法官没变、案卷没变,变的只是看它的那个当口——心情、天气、饥饿、前一个案子,都在把同一份判断往不同方向推。",
+   "svg": "<svg viewBox=\"0 0 560 330\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">同一个人,不同时刻,给出不同判断</text><rect x=\"130\" y=\"42\" width=\"300\" height=\"42\" rx=\"8\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><text x=\"280\" y=\"60\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">同一位法官 · 同一份假释申请</text><text x=\"280\" y=\"77\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">法官没变、案卷没变,变的只是看它的那个当口</text><line x1=\"90\" y1=\"94\" x2=\"90\" y2=\"112\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\"/><line x1=\"215\" y1=\"94\" x2=\"215\" y2=\"112\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\"/><line x1=\"345\" y1=\"94\" x2=\"345\" y2=\"112\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\"/><line x1=\"470\" y1=\"94\" x2=\"470\" y2=\"112\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\"/><rect x=\"26\" y=\"114\" width=\"128\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.6\"/><text x=\"90\" y=\"140\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">心情好的上午</text><text x=\"90\" y=\"162\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">看什么都宽容</text><line x1=\"90\" y1=\"176\" x2=\"90\" y2=\"196\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\"/><path d=\"M90 196 l-4 -9 h8 Z\" style=\"fill:var(--ink-faint)\"/><text x=\"90\" y=\"224\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--cinnabar-pure)\">倾向批准</text><rect x=\"164\" y=\"114\" width=\"128\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.6\"/><text x=\"228\" y=\"140\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">阴雨的一天</text><text x=\"228\" y=\"162\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">莫名更严苛</text><line x1=\"228\" y1=\"176\" x2=\"228\" y2=\"196\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\"/><path d=\"M228 196 l-4 -9 h8 Z\" style=\"fill:var(--ink-faint)\"/><text x=\"228\" y=\"224\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\">更可能驳回</text><rect x=\"302\" y=\"114\" width=\"128\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.6\"/><text x=\"366\" y=\"140\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">临近午饭时</text><text x=\"366\" y=\"162\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">又累又饿</text><line x1=\"366\" y1=\"176\" x2=\"366\" y2=\"196\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\"/><path d=\"M366 196 l-4 -9 h8 Z\" style=\"fill:var(--ink-faint)\"/><text x=\"366\" y=\"224\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\">更容易说不</text><text x=\"366\" y=\"246\" text-anchor=\"middle\" font-size=\"10\" style=\"fill:var(--ink-faint)\">(此说有争议)</text><rect x=\"440\" y=\"114\" width=\"120\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.6\"/><text x=\"500\" y=\"140\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">刚看完一个强案</text><text x=\"500\" y=\"162\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">一比就显弱</text><line x1=\"500\" y1=\"176\" x2=\"500\" y2=\"196\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\"/><path d=\"M500 196 l-4 -9 h8 Z\" style=\"fill:var(--ink-faint)\"/><text x=\"500\" y=\"224\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--ink)\">评分被拉低</text><text x=\"280\" y=\"300\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">这些跟案子毫不相干的东西,正在偷偷改写本该客观的裁决</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "偷偷拨动你的,是一堆跟案子毫不相干的东西"
+  },
+  {
+   "type": "p",
+   "text": "最让人别扭的是,拨动判断的那些手,几乎都跟事情本身无关。**心情**是头一个:心情好的时候,人看什么都宽容几分、乐观几分,评估、面试、打分都偏松;心情差,则处处从严,连本来能一笑而过的小毛病都看得格外刺眼。同一份方案、同一个求职者,递到笑意盈盈的你面前,和递到刚被上一封邮件惹毛的你面前,得到的评价可能就差着一截。**天气**也能顺着这条缝渗进来——有研究发现,晴天的面试官给的分数更高;还有研究称,阴晴会改变大学招生官对『学术成绩』的看重程度,天一沉,他们反而更看重硬邦邦的书面分数。这些因素当事人一概不知情,却实实在在地改了分。你以为自己在评价材料,其实有一部分,是在替今天的天色和心境背书。"
+  },
+  {
+   "type": "p",
+   "text": "更耸动的是**饥饿和疲劳**。一项被反复引用的研究称,以色列法官的假释批准率,在临近午饭、临近休息前会明显下降,一顿饭之后又回升——书里用它来说明场合噪声确有其事。不过这里得留个心眼:这项『午饭假释』研究后来引发了不小的争议,有学者指出案件排序并非随机、律师与案件安排等因素可能混进来,单凭它并不能坐实『法官全靠肚子判案』。稳妥的说法是:疲惫、饥饿、一天里的时段,确实可能悄悄影响本该客观的裁决;至于影响有多大、到底怎么起作用,还没有定论。"
+  },
+  {
+   "type": "p",
+   "text": "还有一只更隐蔽的手,叫**对比效应**。判断很少是孤立作出的,它总在跟『上一个』比。上一份申请特别出色,会把你对下一份的评价往下拽——明明是份不错的材料,只因排在尖子后头,就显得平庸;反过来,跟在一堆平庸后面的普通申请,又会被高看一眼。于是**顺序**本身成了噪声:同一份材料,放在评审队列的前头还是后头、前一个是强是弱,得到的分可能就不一样。甚至你支持的球队昨晚输没输球、办公室早上吵没吵架,都可能顺着这条缝,渗进第二天那份『专业』判断里。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照图",
+   "caption": "对比效应:同一份申请 B,前一个若是尖子就显得平庸、被打低分;前一个若很弱就被高看、打了高分。顺序本身成了噪声。",
+   "svg": "<svg viewBox=\"0 0 560 250\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">对比效应:上一个是强是弱,决定下一个吃亏还是占便宜</text><rect x=\"30\" y=\"56\" width=\"150\" height=\"46\" rx=\"8\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.6\"/><text x=\"105\" y=\"78\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink)\">上一个:很强的申请</text><text x=\"105\" y=\"94\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">尖子在前</text><line x1=\"180\" y1=\"79\" x2=\"238\" y2=\"79\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.5\"/><path d=\"M238 79 l-9 -4 v8 Z\" style=\"fill:var(--ink-faint)\"/><rect x=\"240\" y=\"56\" width=\"120\" height=\"46\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><text x=\"300\" y=\"84\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">同一份申请 B</text><line x1=\"360\" y1=\"79\" x2=\"418\" y2=\"79\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.5\"/><path d=\"M418 79 l-9 -4 v8 Z\" style=\"fill:var(--ink-faint)\"/><text x=\"490\" y=\"76\" text-anchor=\"middle\" font-size=\"16\" style=\"fill:var(--ink)\">打 6 分</text><text x=\"490\" y=\"94\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">显得平庸,偏低</text><rect x=\"30\" y=\"140\" width=\"150\" height=\"46\" rx=\"8\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.6\"/><text x=\"105\" y=\"162\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink)\">上一个:很弱的申请</text><text x=\"105\" y=\"178\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">平庸在前</text><line x1=\"180\" y1=\"163\" x2=\"238\" y2=\"163\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.5\"/><path d=\"M238 163 l-9 -4 v8 Z\" style=\"fill:var(--ink-faint)\"/><rect x=\"240\" y=\"140\" width=\"120\" height=\"46\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><text x=\"300\" y=\"168\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">同一份申请 B</text><line x1=\"360\" y1=\"163\" x2=\"418\" y2=\"163\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.5\"/><path d=\"M418 163 l-9 -4 v8 Z\" style=\"fill:var(--ink-faint)\"/><text x=\"490\" y=\"160\" text-anchor=\"middle\" font-size=\"16\" style=\"fill:var(--cinnabar-pure)\">打 8 分</text><text x=\"490\" y=\"178\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">被高看,偏高</text><text x=\"280\" y=\"224\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">同一份 B,只因前一个不同,评分就变了——顺序本身成了噪声</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "连『机器一样』的判断,也自己跟自己打架"
+  },
+  {
+   "type": "p",
+   "text": "你也许会想:上面那些是主观打分,难免飘;总有些判断是硬碰硬、不会走样的吧?偏偏不是。**同一位放射科医生,把同一张片子隔些日子看两遍,可能给出不同的判读;同一位病理医生看同一份切片,也一样。**这种『自己跟自己不一致』(书中叫复测噪声)在医学里被反复测到——不是水平不够,而是同一双眼睛、同一个大脑,在不同当口就是会飘。判读『可疑』还是『正常』,有时竟取决于今天看的是这一张,还是今天的第几张。"
+  },
+  {
+   "type": "p",
+   "text": "最出人意料的是**指纹鉴定**。人们以为这是铁证如山,可实验显示:把同一对指纹,在不同情境下拿给同一位专家看,只要周边信息变了——比如旁边多提一句『嫌疑人已经认罪』——他的结论也可能跟着改口。作者要点破的,不是这些专家不专业,恰恰相反:正因为他们训练有素、结论又常被当成客观事实,这种当日波动才格外值得警惕。"
+  },
+  {
+   "type": "pull",
+   "text": "一个判断越是被大家信以为『铁板一块』,藏在它里面的场合噪声,就越危险。"
+  },
+  {
+   "type": "quote",
+   "original": "同一位专家,在不同时刻看同一份证据,未必给出同一个结论。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "机制图",
+   "caption": "专家也逃不掉:同一位医生看同一张片子,周一上午判『正常』,周四傍晚疲惫时判『建议复查』——放射、病理、指纹都测到过这种自己跟自己不一致。",
+   "svg": "<svg viewBox=\"0 0 560 250\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">连专家也逃不掉:同一张片子,看两次两个结论</text><rect x=\"240\" y=\"48\" width=\"80\" height=\"104\" rx=\"6\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><circle cx=\"280\" cy=\"92\" r=\"18\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"1.4\"/><circle cx=\"280\" cy=\"92\" r=\"5\" style=\"fill:var(--ink-faint)\"/><text x=\"280\" y=\"140\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-soft)\">同一张胸片</text><line x1=\"238\" y1=\"100\" x2=\"150\" y2=\"82\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\" stroke-dasharray=\"4 4\"/><text x=\"98\" y=\"70\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">周一上午</text><text x=\"98\" y=\"88\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">精神饱满</text><rect x=\"30\" y=\"100\" width=\"136\" height=\"40\" rx=\"8\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.6\"/><text x=\"98\" y=\"125\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">判读:正常</text><line x1=\"322\" y1=\"100\" x2=\"410\" y2=\"82\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\" stroke-dasharray=\"4 4\"/><text x=\"462\" y=\"70\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">周四傍晚</text><text x=\"462\" y=\"88\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">第三十张,疲惫</text><rect x=\"394\" y=\"100\" width=\"136\" height=\"40\" rx=\"8\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\"/><text x=\"462\" y=\"125\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--cinnabar-pure)\">判读:建议复查</text><text x=\"280\" y=\"196\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">放射科、病理、指纹鉴定都出现过这种「自己跟自己不一致」</text><text x=\"280\" y=\"220\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">越被当成「铁板一块」的判断,藏在里面的当日波动越值得警惕</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "为什么可怕:我们毫无察觉,还替每个判断编好了理由"
+  },
+  {
+   "type": "p",
+   "text": "场合噪声真正的杀伤力,在于它**无声无息**。误差如果明晃晃摆在那儿,我们还能提防;可当事人对自己的飘忽几乎毫无察觉——你不会觉得『我今天心情好、所以打分松了』,你只会觉得『这份材料确实不错』。更麻烦的是,大脑是台不知疲倦的解释机器:无论此刻给出什么判断,它都能立刻替你配上一套顺理成章的理由,让你深信这是深思熟虑的结论,而不是当天天气、上一杯咖啡、前一个案子共同拼出来的偶然。我们以为自己在称量事实,其实有一部分,是在报告此刻的状态。"
+  },
+  {
+   "type": "p",
+   "text": "这也点破了场合噪声和我们常说的『偏见』的区别。偏见是所有人朝同一个方向一起错,像一群把靶子系统性打偏到右上角的射手,方向明确、还有迹可循;场合噪声却是同一个射手,今天偏左、明天偏右,弹着点散成一片——你甚至说不清它错在哪一边。正因为它没有固定方向,单看某一次判断,你根本分不出里头有多少是真本事、多少是当天的运气。它不像偏见那样能靠『往反方向修正一下』就压住,而是必须换一种思路去对付——要么把作判断的流程标准化,要么就得借下面这一招,拿多次判断互相校准。"
+  },
+  {
+   "type": "h2",
+   "text": "一个意外的补救:把自己当成两个人"
+  },
+  {
+   "type": "p",
+   "text": "既然同一个人在不同时刻会给出不同答案,那反过来想,这些答案里其实住着一小群『不同的你』。作者提到一个巧妙的对策——**内部众包**(the crowd within):就同一个问题,让同一个人**隔开一段时间、彼此独立地判断两次,再取平均**。因为两次判断的场合噪声方向往往相反(这次偏高、下次偏低),一平均,就抵消掉一部分,估计反而更准。这就像把一大群人的猜测取平均能变得更聪明一样,只不过这里的『众人』,是不同时刻的同一个自己。间隔越久、越是把上一次忘干净,两次判断就越独立,这招也就越管用——若是隔几分钟就再判一遍,你多半只是把第一次的答案照抄一遍,那点飘忽还没来得及换个方向,平均也就无从抵消。所以真要用,不妨拉开几天,或者故意换个心境、换个时段再来一次,让第二个『你』尽量别记得第一个『你』当时怎么想。这不是什么高深工具,却提醒了一件朴素的事:与其笃信自己一锤定音的直觉,不如给同一个判断多留一次机会。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对策图",
+   "caption": "内部众包:同一个人隔开时间独立判断两次,一次偏高、一次偏低,取平均后反而更靠近真值——抵消一部分场合噪声。它只把偏差压小,消不掉。",
+   "svg": "<svg viewBox=\"0 0 560 250\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">内部众包:同一个人,隔开时间,独立判断两次再取平均</text><line x1=\"70\" y1=\"150\" x2=\"490\" y2=\"150\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.5\"/><text x=\"70\" y=\"176\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">偏低</text><text x=\"490\" y=\"176\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">偏高</text><line x1=\"300\" y1=\"132\" x2=\"300\" y2=\"168\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.6\" stroke-dasharray=\"4 3\"/><text x=\"300\" y=\"196\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">真值</text><circle cx=\"180\" cy=\"150\" r=\"7\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"2\"/><text x=\"180\" y=\"126\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">第一次判断</text><circle cx=\"404\" cy=\"150\" r=\"7\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"2\"/><text x=\"404\" y=\"126\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">隔些日子,再判一次</text><circle cx=\"292\" cy=\"150\" r=\"8\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"292\" y=\"110\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--cinnabar-pure)\">两次取平均</text><line x1=\"188\" y1=\"150\" x2=\"284\" y2=\"150\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"300\" y1=\"150\" x2=\"396\" y2=\"150\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"280\" y=\"228\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">两次的场合噪声方向常相反,一平均就抵消一部分,估计反而更靠近真值</text></svg>"
+  },
+  {
+   "type": "quote",
+   "original": "就同一问题独立判断两次再取平均,能抵消一部分当日的波动。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "最后把分寸摆正。这一招顶多把偏差压小,消不掉它,更挡不住那些系统性的偏见;而那些争议性的研究(比如午饭假释)该打的问号,也得老老实实打上。说判断有『当日波动』,不等于说它全凭运气、全无价值。这一章真正要你记住的,是一次视角的翻转——你一向以为专业判断稳如准星,可它更像天气,有阴有晴。下次你为一件事拍板,尤其在打分、评估、裁决这些自认最客观的场合,不妨留个心:此刻给出的这个答案,有多少来自事情本身,又有多少,只是来自今天的你。"
+  }
+ ]
 }

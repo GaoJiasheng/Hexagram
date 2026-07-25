@@ -22,7 +22,11 @@
   },
   {
    "type": "p",
-   "text": "要给一本书打分,得先知道它的证据是怎么来的。本尼迪克特是文化人类学家,此前以《文化模式》一书阐述「文化相对论」闻名——主张先进入一个文化自身的逻辑去理解它,而不是拿外来的单一标准去粗暴评判。二战期间,她受美国战时情报局委托研究日本。**问题在于:当时美日交战,她无法入境,也就不可能像常规民族志那样,搬到当地长期生活、观察。** 于是她开创了一种「远距离研究文化」(culture at a distance)的方法:研读日本的电影、小说、历史与宣传文献,访谈在美的日裔美国人与被俘的日本士兵。这在特殊历史条件下,是一种颇有勇气与巧思的应对——**没有条件做田野,就想办法从一切能拿到的间接材料里,拼出一幅图景。**"
+   "text": "要给一本书打分,得先知道它的证据是怎么来的。本尼迪克特是文化人类学家,此前以《文化模式》一书阐述「文化相对论」闻名——主张先进入一个文化自身的逻辑去理解它,而不是拿外来的单一标准去粗暴评判。二战期间,她受美国战时情报局委托研究日本。**问题在于:当时美日交战,她无法入境,也就不可能像常规民族志那样,搬到当地长期生活、观察。** 于是她开创了一种「远距离研究文化」(culture at a distance)的方法:研读日本的电影、小说、历史与宣传文献,访谈在美的日裔美国人与被俘的日本士兵。这在特殊历史条件下,是一种颇有勇气与巧思的应对——"
+  },
+  {
+   "type": "pull",
+   "text": "没有条件做田野,就想办法从一切能拿到的间接材料里,拼出一幅图景。"
   },
   {
    "type": "p",
@@ -53,8 +57,11 @@
    "svg": "<svg viewBox=\"0 0 660 270\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"330\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"18\" font-weight=\"bold\">裁判,在心里 还是 在众人的目光里?</text><rect x=\"36\" y=\"56\" width=\"280\" height=\"158\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"176\" y=\"84\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\" font-weight=\"bold\">罪感文化</text><text x=\"176\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">靠内化的良知约束</text><text x=\"176\" y=\"138\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">无人看见也会内疚</text><text x=\"176\" y=\"164\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">裁判在心里,靠忏悔赎罪</text><text x=\"176\" y=\"194\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"11\">问:我有没有违背良心</text><rect x=\"344\" y=\"56\" width=\"280\" height=\"158\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"484\" y=\"84\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\" font-weight=\"bold\">耻感文化</text><text x=\"484\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">靠外部评价与面子约束</text><text x=\"484\" y=\"138\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">需要「他人的目光」</text><text x=\"484\" y=\"164\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">无人知晓则压力弱</text><text x=\"484\" y=\"194\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"11\">问:会不会被看见、丢脸</text><text x=\"330\" y=\"246\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">理想类型式的对照——现实中两种机制常同时在场</text></svg>"
   },
   {
-   "type": "p",
-   "text": "举个贴身的例子就懂了。**设想一件小事:深夜的十字路口,一个人都没有,红灯亮着。** 按本尼迪克特的理想类型,一个『罪感』取向的人,哪怕四下无人,也可能因为『闯红灯违背了我心里那条规矩』而别扭、不安;而一个『耻感』取向更强的人,则更在意『有没有人看见我闯』——没人看见,心理负担就轻得多。这个例子能帮你抓住那条分界线:**约束你的那股力量,主要来自你心里那个『法官』,还是来自外面那些『眼睛』?** 但也请立刻警惕:真实的人从来不是纯色的。同一个人,可能既怕心里那个法官、也怕外面那些眼睛;换个场合、换件事,两种力量的配比还会变。**所以这个例子是用来『理解概念』的,绝不是用来给谁『贴标签』的——一旦你拿它去断言『某国人就是只怕被看见、不怕良心』,你就已经从洞察滑向了偏见。**"
+   "type": "callout",
+   "tone": "note",
+   "items": [
+    "举个贴身的例子就懂了。**设想一件小事:深夜的十字路口,一个人都没有,红灯亮着。** 按本尼迪克特的理想类型,一个『罪感』取向的人,哪怕四下无人,也可能因为『闯红灯违背了我心里那条规矩』而别扭、不安;而一个『耻感』取向更强的人,则更在意『有没有人看见我闯』——没人看见,心理负担就轻得多。这个例子能帮你抓住那条分界线:**约束你的那股力量,主要来自你心里那个『法官』,还是来自外面那些『眼睛』?** 但也请立刻警惕:真实的人从来不是纯色的。同一个人,可能既怕心里那个法官、也怕外面那些眼睛;换个场合、换件事,两种力量的配比还会变。**所以这个例子是用来『理解概念』的,绝不是用来给谁『贴标签』的——一旦你拿它去断言『某国人就是只怕被看见、不怕良心』,你就已经从洞察滑向了偏见。**"
+   ]
   },
   {
    "type": "p",

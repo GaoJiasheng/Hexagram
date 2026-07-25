@@ -3579,6 +3579,9 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 /* 重点引言:粗左竖条、无底色——与 callout 的「框」区别开,一章至多一处 */
 .baihua-pull { margin: 22px 0; padding: 2px 0 2px 16px; border-left: 4px solid var(--cinnabar);
   font-size: calc(1.06rem * var(--read-scale)); line-height: 1.75; font-weight: 700; color: var(--ink); }
+/* 观书走中立外壳(data-site="portal"),那里 --cinnabar 被 muted 成褐黑,竖条会变灰。
+   书内朱色一律用 --cinnabar-pure(全站惯例,同落款印章)。 */
+.book-article .baihua-pull, .book-home .baihua-pull { border-left-color: var(--cinnabar-pure); }
 
 /* 次第:圆号 + 左竖线串联;todo 整体压灰,表示「尚未到此」 */
 .baihua-steps { list-style: none; margin: 20px 0; padding: 0; }

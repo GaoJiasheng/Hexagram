@@ -1,92 +1,96 @@
 {
-  "title": "文艺复兴与理性主义:笛卡尔的怀疑,斯宾诺莎的必然",
-  "subtitle": "世界重新开机——知识的标准从「古书怎么说」换成「证据怎么说」,然后有人问:证据又凭什么可信?",
-  "centralIdea": "文艺复兴把人重新放回舞台中央:哥白尼移走地球的中心宝座,伽利略用「实验+数学」改写了「怎样才算知道」,印刷术把知识的闸门冲开。旧地基松动之后,笛卡尔干脆把整栋楼推倒重建——怀疑一切,直到撞上那块疑不掉的砖:我思故我在。斯宾诺莎接着盖出最彻底的一栋:实体只有一个,上帝即自然,万物皆必然,自由是理解必然。这一章是「确定性」的过山车:先失去,再重建——而重建的新地基,下一章就会被休谟再敲一遍。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "如果给欧洲历史找一个「系统大更新」的时刻,就是十五到十七世纪这两百多年。更新包一个接一个弹出来:印刷术让书从修道院的珍宝变成市集上的商品;罗盘把船送出已知的海图;哥白尼按下最狠的一个按钮——**你脚下的大地,不是宇宙的中心,只是一颗绕着太阳跑的行星**。中世纪那份「信仰与理性」的和解协议,是按旧宇宙的格局签的;现在宇宙换了,协议上的字迹开始发虚。这一章讲欧洲人如何兴高采烈地拆掉旧房子,又如何在某个深夜突然发现:拆得太干净了,**连「我怎么确定任何事」的地基都拆没了**——然后两位理性主义者,一位法国人一位荷兰犹太人,先后动手重建。"
-    },
-    {
-      "type": "h2",
-      "text": "文艺复兴:人重新站到画面中央"
-    },
-    {
-      "type": "p",
-      "text": "「文艺复兴」字面意思是「再生」——古希腊罗马文化的再生。但真正再生的不是古董,是一种**对人的估值**:中世纪的人首先是待救赎的罪人,人生是通往来世的候车厅;文艺复兴的人文主义者则重新宣布,人本身高贵,现世的生活值得全力以赴地活。于是出现了达·芬奇这种「什么都要试一遍」的全才理想:画画、解剖、造机械、观察飞鸟——**人不再问「我该待在哪个位置」,开始问「我能做到哪一步」**。经济也在配合:贸易与城市让教会之外长出了有钱有闲的新阶层,知识的赞助人从此不止一家。这股自信有它的阴影面——冒险、扩张、掠夺同样是「我能做到哪一步」的产物,贾德没有展开,我们记一笔。"
-    },
-    {
-      "type": "p",
-      "text": "对哲学史而言,文艺复兴最重要的遗产是**新的知识标准**。中世纪学者遇到问题,标准动作是查书:亚里士多德怎么说,教父怎么说。新科学的标准动作变成了两步:**做实验,算数学**。伽利略说,自然这本大书是用数学语言写的;他不满足于「重物下落是因为它有趋向地心的天性」这种解释——他要问下落的速度**具体怎么变**,并用斜面和计时把它量出来。别小看这个转变:「它为什么如此」换成「它如何运作」,解释的终点从「天性/目的」换成「可测量的规律」——**亚里士多德的目的因,就是在这里被正式退休的**。这场换挡以牛顿收官:天上的行星与地上的苹果,服从同一条数学定律。天与地的界限,连同旧宇宙的等级秩序,一起被抹平了。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对照",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>知识标准的换挡</text><rect x='36' y='52' width='236' height='170' rx='10' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='154' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--ink)'>旧标准:查权威</text><text x='154' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>遇到问题 → 翻古书</text><text x='154' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>「亚里士多德说过……」</text><text x='154' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>解释的终点:天性与目的</text><text x='154' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>知识 = 被记住的答案</text><rect x='288' y='52' width='236' height='170' rx='10' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='406' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--cinnabar)'>新标准:问证据</text><text x='406' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>遇到问题 → 设实验</text><text x='406' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>「测出来是多少?」</text><text x='406' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>解释的终点:数学规律</text><text x='406' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>知识 = 经得起复测的规律</text><text x='280' y='262' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>哥白尼 → 开普勒 → 伽利略 → 牛顿</text><text x='280' y='286' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>这次换挡的深远程度,不亚于当年从神话换到自然哲学</text></svg>",
-      "caption": "从「古书怎么说」到「证据怎么说」:一切现代科技,都是这次换挡的利息。"
-    },
-    {
-      "type": "h2",
-      "text": "巴洛克插曲:人生如梦,世界如台"
-    },
-    {
-      "type": "p",
-      "text": "在新科学的凯歌与宗教战争的血泊之间,十七世纪的欧洲情绪极其分裂,这就是巴洛克时代的底色:一面纵情声色「及时行乐」,一面在书桌上摆骷髅提醒「勿忘你终有一死」。这个时代最钟爱的两个比喻是**人生如梦、世界如舞台**——莎士比亚写世界是座舞台,男男女女不过是演员。请注意,贾德把这段放在这里绝不是凑字数:**「我们会不会只是戏中人」这个巴洛克式的疑问,对苏菲来说根本不是修辞**。此刻她信箱里的怪事越攒越多,写给希尔德的明信片一张张寄到她家。舞台的比喻在她的世界里,正在从文学慢慢变成事实。"
-    },
-    {
-      "type": "h2",
-      "text": "笛卡尔:全部推倒,找那块疑不掉的砖"
-    },
-    {
-      "type": "p",
-      "text": "新科学越成功,一个隐忧越明显:感官原来这么不可靠——大地明明在以巨大的速度奔驰,你却觉得它纹丝不动;那还有什么是**确定**知道的?笛卡尔,退役军官、数学家、习惯睡懒觉在床上思考的人,决定做一次彻底的大扫除:**把所有能怀疑的东西全部当成假的,看看最后剩下什么**。感官?骗过我,不可靠。眼前这间屋子、我的身体?我可能在做梦——梦里一切同样逼真。连数学?万一有个法力无边的恶魔,专门在我每次计算时暗中捣鬼呢?一层层疑下去,世界、身体、数学全部悬空——直到他撞上一个奇特的事实:**我可以怀疑一切,唯独没法怀疑「我正在怀疑」这件事本身**。怀疑是一种思考;有思考,就必有一个正在思考的东西。**我思,故我在**——这就是那块疑不掉的砖。"
-    },
-    {
-      "type": "quote",
-      "original": "我思故我在。",
-      "translation": "笛卡尔哲学的支点:哪怕全世界都是幻觉,「正在被骗的这个意识」本身骗不掉。近代哲学从这里改了朝向——不再从世界出发解释人,而是从「我」出发重建世界。"
-    },
-    {
-      "type": "p",
-      "text": "拿到支点后,笛卡尔开始往回盖楼:从「我」推出完美的上帝存在,再由「诚实的上帝不会系统性骗我」担保外部世界为真。坦白说,后人普遍认为**回程盖得远不如去程拆得漂亮**——用「我心中有完美的观念」证明上帝,再用上帝担保世界,有循环互保之嫌。他真正影响深远的遗产是另一件:**心物二元论**。他把存在切成两种:思维(心灵,不占空间)与广延(物质,占空间),两边各自独立运转——动物在他看来只是精巧的机器,人则是机器上拴了一个心灵。可这两样完全异质的东西怎么互动?你「想」抬手,手怎么就抬起来了?笛卡尔含糊地指了指大脑里的松果腺,等于没答。这道「身心问题」的裂缝,哲学至今没有完全焊上——你每次讨论「意识只是脑电活动吗」,都还站在这道裂缝边上。"
-    },
-    {
-      "type": "figure",
-      "ftype": "流程图",
-      "svg": "<svg viewBox='0 0 560 330' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>笛卡尔的拆与建</text><rect x='40' y='48' width='150' height='44' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='115' y='67' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>疑感官</text><text x='115' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>它骗过我</text><rect x='205' y='48' width='150' height='44' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='67' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>疑世界与身体</text><text x='280' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>也许在做梦</text><rect x='370' y='48' width='150' height='44' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='445' y='67' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>疑数学</text><text x='445' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>也许有恶魔捣鬼</text><line x1='280' y1='92' x2='280' y2='124' style='stroke:var(--ink-faint);stroke-width:1'/><rect x='170' y='124' width='220' height='52' rx='9' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='280' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar)'>疑不掉:我正在怀疑</text><text x='280' y='167' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>我思 → 我在(地基)</text><line x1='280' y1='176' x2='280' y2='206' style='stroke:var(--ink-faint);stroke-width:1'/><rect x='60' y='206' width='210' height='46' rx='8' style='fill:none;stroke:var(--line);stroke-width:1;stroke-dasharray:5 4'/><text x='165' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>重建①:完美观念 → 上帝存在</text><text x='165' y='244' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>后人:有循环之嫌</text><rect x='290' y='206' width='210' height='46' rx='8' style='fill:none;stroke:var(--line);stroke-width:1;stroke-dasharray:5 4'/><text x='395' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>重建②:上帝担保 → 世界为真</text><text x='395' y='244' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>虚线部分,裂缝犹在</text><text x='280' y='296' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>去程的怀疑成了千古经典,回程的重建留下一地问号</text><text x='280' y='316' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>下一章,休谟专挑虚线下手</text></svg>",
-      "caption": "方法论怀疑:不是为了当怀疑论者,而是用怀疑当筛子,筛出疑不掉的东西做地基。"
-    },
-    {
-      "type": "h2",
-      "text": "斯宾诺莎:上帝即自然,自由即理解"
-    },
-    {
-      "type": "p",
-      "text": "笛卡尔切成两半的世界,被一位磨镜片的人重新焊成了一整块。斯宾诺莎,阿姆斯特丹的犹太人,因为异端思想被自己的社群开除教籍、诅咒放逐,终身靠磨光学镜片为生,拒绝大学教职以保思想自由——**哲学史上把「活得像自己的哲学」这件事做到头的人,他排得进前三**。他的体系从一个追问开始:笛卡尔说心与物是两种实体,可「实体」的定义是「不依赖他物而自存」——真正不依赖任何东西的,想来想去只能有一个。所以**实体只有一个,它既可以叫上帝,也可以叫自然**;思维与广延不是两种实体,只是这唯一实体的两副面孔。「上帝即自然」——这句话让他被骂了一个世纪的无神论者,又被后来的浪漫派尊为「醉心于神的人」:取决于你把重音放在哪半句。"
-    },
-    {
-      "type": "p",
-      "text": "这套一元论逼出一个冷峻的推论:**万物皆必然**。自然中的每件事都由前因决定,人的意志也不例外——你以为你「自由地」想吃甜食,其实那念头有它的来路。斯宾诺莎打过一个流传很广的比方(大意):一块被抛出的石头如果有意识,大概会以为「是我自己想飞」。那自由还剩什么?他给出全书最反直觉也最耐嚼的答案之一:**自由不是摆脱必然,而是理解必然**。被情绪拖着走的人是奴隶——不是因为有情绪,而是因为不明白情绪从哪来;当你看清「我此刻的愤怒是这样一条因果链的产物」,你就从被链条抽打,变成了看着链条的人。他管这种视角叫「**在永恒的形相下**」看万物——把镜头拉远,从整体看每一个局部。一个磨镜片的人,给人类磨了一副看世界的远视镜,这大概不是巧合。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对照",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>二元与一元:世界是两块还是一块</text><text x='150' y='60' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>笛卡尔:两种实体</text><circle cx='95' cy='140' r='52' style='fill:none;stroke:var(--cinnabar);stroke-width:1.8'/><text x='95' y='135' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>思维</text><text x='95' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>心灵 · 不占空间</text><circle cx='210' cy='140' r='52' style='fill:none;stroke:var(--azure);stroke-width:1.8'/><text x='210' y='135' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>广延</text><text x='210' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>物质 · 占空间</text><text x='152' y='222' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>难题:两块怎么互动?</text><text x='152' y='242' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>(松果腺……等于没答)</text><line x1='285' y1='60' x2='285' y2='260' style='stroke:var(--line);stroke-width:1;stroke-dasharray:4 3'/><text x='420' y='60' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>斯宾诺莎:一个实体</text><circle cx='420' cy='150' r='68' style='fill:none;stroke:var(--ink);stroke-width:2'/><text x='420' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>上帝 = 自然</text><line x1='366' y1='186' x2='474' y2='114' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:3 3'/><text x='394' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>思维面</text><text x='449' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>广延面</text><text x='420' y='242' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>心与物是同一实体的两副面孔</text><text x='280' y='286' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>切两块留下身心难题;焊一块的代价:一切皆必然</text></svg>",
-      "caption": "怎么切分世界,决定你会遇到什么难题——哲学体系的差异,常常从第一刀就注定了。"
-    },
-    {
-      "type": "h2",
-      "text": "结账:理性能盖多高的楼"
-    },
-    {
-      "type": "p",
-      "text": "笛卡尔与斯宾诺莎同属**理性主义**:相信仅凭清晰的思考,像做几何证明一样,就能从少数自明的公理推出整个世界的真相。这份信心气势逼人,毛病也在气势里——**从定义出发盖楼,楼可以又高又漂亮,却未必落在真实的地面上**。你可以把「实体」定义得滴水不漏,但世界没有义务配合你的定义。下一章,英吉利海峡对岸的经验主义者会带着账本上门查这笔账:请问「天生的观念」,验过货吗?最后再回小说一眼:斯宾诺莎说,看清那条推动你的因果链,就是自由——**而苏菲世界里的「因果链」,是一支正在写字的笔**。她后来的越狱,走的正是斯宾诺莎的路线:先理解自己被什么决定,再在理解中找缝隙。这一章不是背景板,是她的越狱预习课。"
-    },
-    {
-      "type": "figure",
-      "ftype": "金句卡",
-      "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><rect x='16' y='16' width='528' height='218' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='280' cy='54' r='4' style='fill:var(--cinnabar)'/><line x1='200' y1='54' x2='252' y2='54' style='stroke:var(--cinnabar);stroke-width:1'/><line x1='308' y1='54' x2='360' y2='54' style='stroke:var(--cinnabar);stroke-width:1'/><text x='280' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:20px;font-weight:bold;fill:var(--ink)'>自由不是摆脱必然,</text><text x='280' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:20px;font-weight:bold;fill:var(--ink)'>而是理解必然。</text><text x='280' y='200' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink-soft)'>——斯宾诺莎立场的通俗概括</text><text x='280' y='224' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>被链条抽打,或看着链条——石头没得选,人有。</text></svg>",
-      "caption": "对一个被写定的小说人物,这句话是求生指南;对屏幕前的你,它至少是情绪管理的祖师爷。"
-    }
-  ]
+ "title": "文艺复兴与理性主义:笛卡尔的怀疑,斯宾诺莎的必然",
+ "subtitle": "世界重新开机——知识的标准从「古书怎么说」换成「证据怎么说」,然后有人问:证据又凭什么可信?",
+ "centralIdea": "文艺复兴把人重新放回舞台中央:哥白尼移走地球的中心宝座,伽利略用「实验+数学」改写了「怎样才算知道」,印刷术把知识的闸门冲开。旧地基松动之后,笛卡尔干脆把整栋楼推倒重建——怀疑一切,直到撞上那块疑不掉的砖:我思故我在。斯宾诺莎接着盖出最彻底的一栋:实体只有一个,上帝即自然,万物皆必然,自由是理解必然。这一章是「确定性」的过山车:先失去,再重建——而重建的新地基,下一章就会被休谟再敲一遍。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "如果给欧洲历史找一个「系统大更新」的时刻,就是十五到十七世纪这两百多年。更新包一个接一个弹出来:印刷术让书从修道院的珍宝变成市集上的商品;罗盘把船送出已知的海图;哥白尼按下最狠的一个按钮——**你脚下的大地,不是宇宙的中心,只是一颗绕着太阳跑的行星**。中世纪那份「信仰与理性」的和解协议,是按旧宇宙的格局签的;现在宇宙换了,协议上的字迹开始发虚。这一章讲欧洲人如何兴高采烈地拆掉旧房子,又如何在某个深夜突然发现:拆得太干净了,**连「我怎么确定任何事」的地基都拆没了**——然后两位理性主义者,一位法国人一位荷兰犹太人,先后动手重建。"
+  },
+  {
+   "type": "h2",
+   "text": "文艺复兴:人重新站到画面中央"
+  },
+  {
+   "type": "p",
+   "text": "「文艺复兴」字面意思是「再生」——古希腊罗马文化的再生。但真正再生的不是古董,是一种**对人的估值**:中世纪的人首先是待救赎的罪人,人生是通往来世的候车厅;文艺复兴的人文主义者则重新宣布,人本身高贵,现世的生活值得全力以赴地活。于是出现了达·芬奇这种「什么都要试一遍」的全才理想:画画、解剖、造机械、观察飞鸟——**人不再问「我该待在哪个位置」,开始问「我能做到哪一步」**。经济也在配合:贸易与城市让教会之外长出了有钱有闲的新阶层,知识的赞助人从此不止一家。这股自信有它的阴影面——冒险、扩张、掠夺同样是「我能做到哪一步」的产物,贾德没有展开,我们记一笔。"
+  },
+  {
+   "type": "p",
+   "text": "对哲学史而言,文艺复兴最重要的遗产是**新的知识标准**。中世纪学者遇到问题,标准动作是查书:亚里士多德怎么说,教父怎么说。新科学的标准动作变成了两步:**做实验,算数学**。伽利略说,自然这本大书是用数学语言写的;他不满足于「重物下落是因为它有趋向地心的天性」这种解释——他要问下落的速度**具体怎么变**,并用斜面和计时把它量出来。别小看这个转变:「它为什么如此」换成「它如何运作」,解释的终点从「天性/目的」换成「可测量的规律」——**亚里士多德的目的因,就是在这里被正式退休的**。这场换挡以牛顿收官:天上的行星与地上的苹果,服从同一条数学定律。天与地的界限,连同旧宇宙的等级秩序,一起被抹平了。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>知识标准的换挡</text><rect x='36' y='52' width='236' height='170' rx='10' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='154' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--ink)'>旧标准:查权威</text><text x='154' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>遇到问题 → 翻古书</text><text x='154' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>「亚里士多德说过……」</text><text x='154' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>解释的终点:天性与目的</text><text x='154' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>知识 = 被记住的答案</text><rect x='288' y='52' width='236' height='170' rx='10' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='406' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--cinnabar)'>新标准:问证据</text><text x='406' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>遇到问题 → 设实验</text><text x='406' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>「测出来是多少?」</text><text x='406' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>解释的终点:数学规律</text><text x='406' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>知识 = 经得起复测的规律</text><text x='280' y='262' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>哥白尼 → 开普勒 → 伽利略 → 牛顿</text><text x='280' y='286' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>这次换挡的深远程度,不亚于当年从神话换到自然哲学</text></svg>",
+   "caption": "从「古书怎么说」到「证据怎么说」:一切现代科技,都是这次换挡的利息。"
+  },
+  {
+   "type": "h2",
+   "text": "巴洛克插曲:人生如梦,世界如台"
+  },
+  {
+   "type": "p",
+   "text": "在新科学的凯歌与宗教战争的血泊之间,十七世纪的欧洲情绪极其分裂,这就是巴洛克时代的底色:一面纵情声色「及时行乐」,一面在书桌上摆骷髅提醒「勿忘你终有一死」。这个时代最钟爱的两个比喻是**人生如梦、世界如舞台**——莎士比亚写世界是座舞台,男男女女不过是演员。请注意,贾德把这段放在这里绝不是凑字数:**「我们会不会只是戏中人」这个巴洛克式的疑问,对苏菲来说根本不是修辞**。此刻她信箱里的怪事越攒越多,写给希尔德的明信片一张张寄到她家。舞台的比喻在她的世界里,正在从文学慢慢变成事实。"
+  },
+  {
+   "type": "h2",
+   "text": "笛卡尔:全部推倒,找那块疑不掉的砖"
+  },
+  {
+   "type": "p",
+   "text": "新科学越成功,一个隐忧越明显:感官原来这么不可靠——大地明明在以巨大的速度奔驰,你却觉得它纹丝不动;那还有什么是**确定**知道的?笛卡尔,退役军官、数学家、习惯睡懒觉在床上思考的人,决定做一次彻底的大扫除:**把所有能怀疑的东西全部当成假的,看看最后剩下什么**。感官?骗过我,不可靠。眼前这间屋子、我的身体?我可能在做梦——梦里一切同样逼真。连数学?万一有个法力无边的恶魔,专门在我每次计算时暗中捣鬼呢?一层层疑下去,世界、身体、数学全部悬空——直到他撞上一个奇特的事实:**我可以怀疑一切,唯独没法怀疑「我正在怀疑」这件事本身**。怀疑是一种思考;有思考,就必有一个正在思考的东西。"
+  },
+  {
+   "type": "pull",
+   "text": "**我思,故我在**——这就是那块疑不掉的砖。"
+  },
+  {
+   "type": "quote",
+   "original": "我思故我在。",
+   "translation": "笛卡尔哲学的支点:哪怕全世界都是幻觉,「正在被骗的这个意识」本身骗不掉。近代哲学从这里改了朝向——不再从世界出发解释人,而是从「我」出发重建世界。"
+  },
+  {
+   "type": "p",
+   "text": "拿到支点后,笛卡尔开始往回盖楼:从「我」推出完美的上帝存在,再由「诚实的上帝不会系统性骗我」担保外部世界为真。坦白说,后人普遍认为**回程盖得远不如去程拆得漂亮**——用「我心中有完美的观念」证明上帝,再用上帝担保世界,有循环互保之嫌。他真正影响深远的遗产是另一件:**心物二元论**。他把存在切成两种:思维(心灵,不占空间)与广延(物质,占空间),两边各自独立运转——动物在他看来只是精巧的机器,人则是机器上拴了一个心灵。可这两样完全异质的东西怎么互动?你「想」抬手,手怎么就抬起来了?笛卡尔含糊地指了指大脑里的松果腺,等于没答。这道「身心问题」的裂缝,哲学至今没有完全焊上——你每次讨论「意识只是脑电活动吗」,都还站在这道裂缝边上。"
+  },
+  {
+   "type": "figure",
+   "ftype": "流程图",
+   "svg": "<svg viewBox='0 0 560 330' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>笛卡尔的拆与建</text><rect x='40' y='48' width='150' height='44' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='115' y='67' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>疑感官</text><text x='115' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>它骗过我</text><rect x='205' y='48' width='150' height='44' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='67' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>疑世界与身体</text><text x='280' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>也许在做梦</text><rect x='370' y='48' width='150' height='44' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='445' y='67' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>疑数学</text><text x='445' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>也许有恶魔捣鬼</text><line x1='280' y1='92' x2='280' y2='124' style='stroke:var(--ink-faint);stroke-width:1'/><rect x='170' y='124' width='220' height='52' rx='9' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='280' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar)'>疑不掉:我正在怀疑</text><text x='280' y='167' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>我思 → 我在(地基)</text><line x1='280' y1='176' x2='280' y2='206' style='stroke:var(--ink-faint);stroke-width:1'/><rect x='60' y='206' width='210' height='46' rx='8' style='fill:none;stroke:var(--line);stroke-width:1;stroke-dasharray:5 4'/><text x='165' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>重建①:完美观念 → 上帝存在</text><text x='165' y='244' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>后人:有循环之嫌</text><rect x='290' y='206' width='210' height='46' rx='8' style='fill:none;stroke:var(--line);stroke-width:1;stroke-dasharray:5 4'/><text x='395' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>重建②:上帝担保 → 世界为真</text><text x='395' y='244' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>虚线部分,裂缝犹在</text><text x='280' y='296' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>去程的怀疑成了千古经典,回程的重建留下一地问号</text><text x='280' y='316' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>下一章,休谟专挑虚线下手</text></svg>",
+   "caption": "方法论怀疑:不是为了当怀疑论者,而是用怀疑当筛子,筛出疑不掉的东西做地基。"
+  },
+  {
+   "type": "h2",
+   "text": "斯宾诺莎:上帝即自然,自由即理解"
+  },
+  {
+   "type": "p",
+   "text": "笛卡尔切成两半的世界,被一位磨镜片的人重新焊成了一整块。斯宾诺莎,阿姆斯特丹的犹太人,因为异端思想被自己的社群开除教籍、诅咒放逐,终身靠磨光学镜片为生,拒绝大学教职以保思想自由——**哲学史上把「活得像自己的哲学」这件事做到头的人,他排得进前三**。他的体系从一个追问开始:笛卡尔说心与物是两种实体,可「实体」的定义是「不依赖他物而自存」——真正不依赖任何东西的,想来想去只能有一个。所以**实体只有一个,它既可以叫上帝,也可以叫自然**;思维与广延不是两种实体,只是这唯一实体的两副面孔。「上帝即自然」——这句话让他被骂了一个世纪的无神论者,又被后来的浪漫派尊为「醉心于神的人」:取决于你把重音放在哪半句。"
+  },
+  {
+   "type": "p",
+   "text": "这套一元论逼出一个冷峻的推论:**万物皆必然**。自然中的每件事都由前因决定,人的意志也不例外——你以为你「自由地」想吃甜食,其实那念头有它的来路。斯宾诺莎打过一个流传很广的比方(大意):一块被抛出的石头如果有意识,大概会以为「是我自己想飞」。那自由还剩什么?他给出全书最反直觉也最耐嚼的答案之一:**自由不是摆脱必然,而是理解必然**。被情绪拖着走的人是奴隶——不是因为有情绪,而是因为不明白情绪从哪来;当你看清「我此刻的愤怒是这样一条因果链的产物」,你就从被链条抽打,变成了看着链条的人。他管这种视角叫「**在永恒的形相下**」看万物——把镜头拉远,从整体看每一个局部。一个磨镜片的人,给人类磨了一副看世界的远视镜,这大概不是巧合。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>二元与一元:世界是两块还是一块</text><text x='150' y='60' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>笛卡尔:两种实体</text><circle cx='95' cy='140' r='52' style='fill:none;stroke:var(--cinnabar);stroke-width:1.8'/><text x='95' y='135' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>思维</text><text x='95' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>心灵 · 不占空间</text><circle cx='210' cy='140' r='52' style='fill:none;stroke:var(--azure);stroke-width:1.8'/><text x='210' y='135' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>广延</text><text x='210' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>物质 · 占空间</text><text x='152' y='222' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>难题:两块怎么互动?</text><text x='152' y='242' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>(松果腺……等于没答)</text><line x1='285' y1='60' x2='285' y2='260' style='stroke:var(--line);stroke-width:1;stroke-dasharray:4 3'/><text x='420' y='60' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>斯宾诺莎:一个实体</text><circle cx='420' cy='150' r='68' style='fill:none;stroke:var(--ink);stroke-width:2'/><text x='420' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>上帝 = 自然</text><line x1='366' y1='186' x2='474' y2='114' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:3 3'/><text x='394' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>思维面</text><text x='449' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>广延面</text><text x='420' y='242' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>心与物是同一实体的两副面孔</text><text x='280' y='286' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>切两块留下身心难题;焊一块的代价:一切皆必然</text></svg>",
+   "caption": "怎么切分世界,决定你会遇到什么难题——哲学体系的差异,常常从第一刀就注定了。"
+  },
+  {
+   "type": "h2",
+   "text": "结账:理性能盖多高的楼"
+  },
+  {
+   "type": "p",
+   "text": "笛卡尔与斯宾诺莎同属**理性主义**:相信仅凭清晰的思考,像做几何证明一样,就能从少数自明的公理推出整个世界的真相。这份信心气势逼人,毛病也在气势里——**从定义出发盖楼,楼可以又高又漂亮,却未必落在真实的地面上**。你可以把「实体」定义得滴水不漏,但世界没有义务配合你的定义。下一章,英吉利海峡对岸的经验主义者会带着账本上门查这笔账:请问「天生的观念」,验过货吗?最后再回小说一眼:斯宾诺莎说,看清那条推动你的因果链,就是自由——**而苏菲世界里的「因果链」,是一支正在写字的笔**。她后来的越狱,走的正是斯宾诺莎的路线:先理解自己被什么决定,再在理解中找缝隙。这一章不是背景板,是她的越狱预习课。"
+  },
+  {
+   "type": "figure",
+   "ftype": "金句卡",
+   "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><rect x='16' y='16' width='528' height='218' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='280' cy='54' r='4' style='fill:var(--cinnabar)'/><line x1='200' y1='54' x2='252' y2='54' style='stroke:var(--cinnabar);stroke-width:1'/><line x1='308' y1='54' x2='360' y2='54' style='stroke:var(--cinnabar);stroke-width:1'/><text x='280' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:20px;font-weight:bold;fill:var(--ink)'>自由不是摆脱必然,</text><text x='280' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:20px;font-weight:bold;fill:var(--ink)'>而是理解必然。</text><text x='280' y='200' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink-soft)'>——斯宾诺莎立场的通俗概括</text><text x='280' y='224' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>被链条抽打,或看着链条——石头没得选,人有。</text></svg>",
+   "caption": "对一个被写定的小说人物,这句话是求生指南;对屏幕前的你,它至少是情绪管理的祖师爷。"
+  }
+ ]
 }

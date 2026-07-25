@@ -1,134 +1,138 @@
 {
-  "title": "什么是超加工食品：NOVA 分类",
-  "subtitle": "看配料表，别只看营养表——一套按「加工目的与程度」给食物分组的体系，和一个好用的厨房判据",
-  "centralIdea": "NOVA 分类不按营养素、而按「加工的目的与程度」把食品分四组：①未/最少加工的原样食材（蔬果、肉、蛋、奶、豆）；②油、盐、糖、醋等烹饪配料；③用前两组做出的传统加工食品（面包、奶酪、腌菜、罐头）；④超加工食品（UPF）——含大量家用厨房里根本不会出现的成分（乳化剂、增味剂、色素、改性淀粉、分离蛋白、代糖）的工业配方产品，被做成即食、耐存、超诱人的形态。关键不在「加工了多少道工序」，而在它是不是一件**为最大化销量而设计的工业配方产品**。判据也简单：翻到包装背面看配料表——里面有你家厨房不会有的东西、或一长串念不出名字的成分，多半就是 UPF。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "去超市拿起一袋全麦面包，翻到背面：小麦粉、水、酵母、盐——然后是单双甘油脂肪酸酯、双乙酰酒石酸单双甘油酯、改性淀粉、抗真菌剂……前四样你家厨房都有，后面那串你既念不顺、也买不到。范图勒肯这本书要做的第一件事，就是给这类东西一个准确的名字：**超加工食品（Ultra-Processed Food，UPF）**。而用来命名的那把尺子，叫 **NOVA 分类**。"
-    },
-    {
-      "type": "h2",
-      "text": "先换一把尺子：不看「含什么」，看「被做成了什么」"
-    },
-    {
-      "type": "p",
-      "text": "过去几十年，营养学的主流做法是把食物拆成营养素：脂肪、糖、盐、蛋白质、维生素。于是公共讨论也围着营养素打转——一会儿说脂肪是元凶，一会儿说糖才是。巴西圣保罗大学的卡洛斯·蒙泰罗（Carlos Monteiro）团队在 2010 年前后提出另一把尺子：先别问食物**含什么**，先看它**被做成了什么**——按加工的目的与程度给食品分组。这套体系就是 NOVA。"
-    },
-    {
-      "type": "p",
-      "text": "蒙泰罗当年注意到一个营养素视角解释不了的现象：巴西家庭买回家的糖和油逐年减少，肥胖率却一路上涨。谜底是，糖和油没有消失，只是不再以「厨房原料」的身份进家门——它们被预先装进了饼干、饮料、即食餐里，跟着成品一起被吃掉。换了尺子，问题才显出形状：变化的不是营养素，是**食物的生产方式**。"
-    },
-    {
-      "type": "figure",
-      "ftype": "结构图",
-      "caption": "NOVA 四分类：①②③覆盖了人类几千年的正常饮食；第④组是二十世纪才出现的工业配方产品。",
-      "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">NOVA：按「加工目的与程度」分四组</text><rect x=\"16\" y=\"42\" width=\"528\" height=\"54\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"34\" y=\"64\" style=\"fill:var(--ink)\" font-size=\"15\">① 未加工 / 最少加工食品</text><text x=\"34\" y=\"85\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">蔬菜、水果、肉、蛋、奶、豆、谷物——原样食材</text><rect x=\"16\" y=\"104\" width=\"528\" height=\"54\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"34\" y=\"126\" style=\"fill:var(--ink)\" font-size=\"15\">② 烹饪配料</text><text x=\"34\" y=\"147\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">油、盐、糖、醋——厨房里把①变成一顿饭的东西</text><rect x=\"16\" y=\"166\" width=\"528\" height=\"54\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"34\" y=\"188\" style=\"fill:var(--ink)\" font-size=\"15\">③ 加工食品</text><text x=\"34\" y=\"209\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">用①＋②做的传统食品：面包、奶酪、腌菜、罐头</text><rect x=\"16\" y=\"228\" width=\"528\" height=\"54\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><text x=\"34\" y=\"250\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">④ 超加工食品（UPF）</text><text x=\"34\" y=\"271\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">工业配方产品：乳化剂、增味剂、色素、改性淀粉、分离蛋白、代糖……</text></svg>"
-    },
-    {
-      "type": "h2",
-      "text": "四组各是什么：从菜市场到流水线"
-    },
-    {
-      "type": "p",
-      "text": "**第①组**是原样或基本原样的食材：一根胡萝卜、一块肉、一枚蛋、一杯奶、一把豆子。洗净、切分、冷冻、巴氏杀菌都不改变它的身份。**第②组**是烹饪配料：油、盐、糖、醋、淀粉——它们几乎没人单独吃，存在的意义是在厨房里把第①组变成一顿饭。**第③组**是用①加②做出来的传统食品：面包、奶酪、腌菜、火腿、罐头鱼。"
-    },
-    {
-      "type": "p",
-      "text": "第③组值得多停一秒：面包和奶酪都是「加工食品」，而人类做了几千年——发酵、腌制、烘焙、罐藏，目的是保存食物、创造风味。**加工本身从来不是罪**。NOVA 的锋芒不指向「加工」这个动作，而指向第④组那种完全不同的东西。"
-    },
-    {
-      "type": "p",
-      "text": "**第④组，超加工食品（UPF）**：不是「加工得更狠的食物」，而是**工业配方产品**——从植物油、糖浆、改性淀粉、分离蛋白这类廉价工业原料出发，靠乳化剂定型、增味剂调味、色素上色、代糖压成本，再经挤压、膨化、氢化等家里不可能有的工序，做成即食、耐存、超诱人的最终形态。书里给了个不严谨但极好用的速记版："
-    },
-    {
-      "type": "quote",
-      "original": "它多半裹着塑料包装，而且配料表里至少有一种你家厨房里通常找不到的成分。",
-      "translation": ""
-    },
-    {
-      "type": "p",
-      "text": "注意，NOVA 分的是「产品」而不是「食材」：同一样东西，走不同的生产路径，会落进不同的组。一根鲜玉米在第①组；加盐水做成的玉米罐头在第③组；而磨浆、挤压、膨化、再喷上糖浆和增味剂做成的早餐玉米片，就到了第④组。原料没变，**变的是它被做成什么、为什么被做成那样**。"
-    },
-    {
-      "type": "h2",
-      "text": "厨房测试：这东西你家灶台上做得出来吗"
-    },
-    {
-      "type": "p",
-      "text": "把定义翻译成一个动作：**翻到包装背面，读配料表**。家里烤面包需要四样东西；超市里保质期两周、永远松软的切片面包，配料表往往是那四样再加一串化学名词。同样叫「面包」，一个在第③组，一个在第④组——差别不在味道，在配料表上那道看得见的分界线。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对比图",
-      "caption": "厨房测试：配料表里出现你家厨房不会有的成分，这件东西多半是 UPF。",
-      "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">同样叫「面包」，两张配料表</text><rect x=\"20\" y=\"44\" width=\"250\" height=\"226\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"145\" y=\"72\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14.5\">家里烤的面包</text><line x1=\"44\" y1=\"84\" x2=\"246\" y2=\"84\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"44\" y=\"112\" style=\"fill:var(--ink-soft)\" font-size=\"13\">面粉</text><text x=\"44\" y=\"138\" style=\"fill:var(--ink-soft)\" font-size=\"13\">水</text><text x=\"44\" y=\"164\" style=\"fill:var(--ink-soft)\" font-size=\"13\">酵母</text><text x=\"44\" y=\"190\" style=\"fill:var(--ink-soft)\" font-size=\"13\">盐</text><text x=\"145\" y=\"250\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"12\">——灶台上做得出来（第③组）</text><rect x=\"290\" y=\"44\" width=\"250\" height=\"226\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><text x=\"415\" y=\"72\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14.5\">超市长保质期切片面包</text><line x1=\"314\" y1=\"84\" x2=\"516\" y2=\"84\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"314\" y=\"108\" style=\"fill:var(--ink-soft)\" font-size=\"13\">面粉、水、酵母、盐</text><text x=\"314\" y=\"134\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">乳化剂（单双甘油脂肪酸酯）</text><text x=\"314\" y=\"160\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">改性淀粉、增稠剂</text><text x=\"314\" y=\"186\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">防腐剂（丙酸钙）……</text><text x=\"415\" y=\"250\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"12\">——厨房里没有的东西（第④组）</text><text x=\"280\" y=\"292\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">厨房测试：这东西你家灶台上做得出来吗？</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "要说清楚的是，这个测试针对的不是「化学名词」本身——抗坏血酸就是维生素 C，听着吓人其实无害。它识别的是**身份**：乳化剂、增味剂、色素、改性淀粉、分离蛋白、代糖，这些成分被放进去，不是为了让食物更有营养，而是为了让它更便宜、更耐放、口感更「顺」、更让人一口接一口。配料表是这件产品的出身证明。"
-    },
-    {
-      "type": "p",
-      "text": "厨房测试当然会有毛边：家里没有丙酸钙不等于这片面包立刻有害，第④组内部也远非铁板一块。但它的价值在于**足够简单、足够可操作**——不需要营养学学位，不需要背营养素表格，站在货架前三十秒就能完成。对一个想先看清自己吃了什么的普通人来说，这比任何复杂的评分体系都更管用。"
-    },
-    {
-      "type": "h2",
-      "text": "它不是零食边角，是主食：约一半热量"
-    },
-    {
-      "type": "p",
-      "text": "如果 UPF 只是偶尔吃的薯片和可乐，这本书不必写。触目惊心的地方在于体量——"
-    },
-    {
-      "type": "quote",
-      "original": "在英国和美国这样的国家，普通人摄入的热量里，已经有大约一半来自超加工食品；儿童的比例还要更高。",
-      "translation": ""
-    },
-    {
-      "type": "p",
-      "text": "换句话说，对英美相当多的人（尤其是孩子）而言，UPF 不是饮食的点缀，而是**饮食本身**。早餐麦片、切片面包、风味酸奶、即食汤、能量棒——很多根本不被当成「垃圾食品」的东西，按配料表一查，全在第④组。这也是书名的由来：当一半热量来自工业配方产品时，我们已经是「超加工人群」。"
-    },
-    {
-      "type": "p",
-      "text": "为什么会到这一步？作者提前埋了一条贯穿全书的线：不是这一代人意志力突然崩塌，而是 UPF 在竞争中**全面占优**——它比真食物便宜、不用洗切烹煮、常温放得住，货架和外卖单上占绝对多数，广告预算更是碾压。当最省钱、最省事、最触手可及的选项都是第④组时，「吃成超加工人群」与其说是选择，不如说是默认设置。"
-    },
-    {
-      "type": "figure",
-      "ftype": "占比图",
-      "caption": "书中引用的英美膳食调查估计。不同研究口径略有出入，但量级一致：约一半上下，儿童更高。",
-      "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">摄入热量里，有多少来自 UPF？</text><text x=\"30\" y=\"76\" style=\"fill:var(--ink)\" font-size=\"14\">英美成人</text><rect x=\"30\" y=\"88\" width=\"500\" height=\"36\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"30\" y=\"88\" width=\"280\" height=\"36\" rx=\"5\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"170\" y=\"111\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\" font-size=\"13.5\">超加工食品 ≈ 一半以上</text><text x=\"420\" y=\"111\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">其他食物</text><text x=\"30\" y=\"172\" style=\"fill:var(--ink)\" font-size=\"14\">儿童与青少年</text><rect x=\"30\" y=\"184\" width=\"500\" height=\"36\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"30\" y=\"184\" width=\"325\" height=\"36\" rx=\"5\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"192\" y=\"207\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\" font-size=\"13.5\">比例更高（可近三分之二）</text><text x=\"442\" y=\"207\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">其他食物</text><text x=\"280\" y=\"266\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"12\">不是「偶尔吃的零食」，而是许多人饮食的主体。</text></svg>"
-    },
-    {
-      "type": "h2",
-      "text": "NOVA 也有争议：这把尺子粗，但方向对"
-    },
-    {
-      "type": "p",
-      "text": "范图勒肯是循证出身的医生，他没有把 NOVA 供成真理。批评是实在的：四组的边界依赖配料表标注，同在第④组的全麦工业面包和碳酸饮料显然不是一回事；「超加工」也不是毒理学意义上的成分清单，很多关联证据来自观察性研究，混杂因素难以剥干净。这些争论，书的后半部分（证据之争一章）会正面处理。"
-    },
-    {
-      "type": "p",
-      "text": "他的态度更像是：把 NOVA 当**探照灯**用，别当法庭判决用。它照亮的是一个此前没有名字、因而无法被讨论的对象——一类在人类饮食史上全新的、由公司配方出来的可食用产品。尺子粗一点没关系，先有尺子，才量得出问题。"
-    },
-    {
-      "type": "p",
-      "text": "但第 1 章先立住一个不被争议动摇的核心：**关键从来不在「加工了多少道工序」**。冷冻蔬菜的工序不少，仍在第①组；手工奶酪陈化一年，仍是食物。真正把第④组同前三组分开的，是**目的**——前三组的加工为了保存与风味，第④组是一件从配方设计之初就为最大化销量服务的工业产品：成本压到最低，保质期拉到最长，口感调到让你停不下来。"
-    },
-    {
-      "type": "quote",
-      "original": "问题的关键不是「加工」这个动作，而是这件东西从被设计出来的那一刻起，目标就是让你买得更多。",
-      "translation": ""
-    },
-    {
-      "type": "figure",
-      "ftype": "对比图",
-      "caption": "判断标准是「为什么被制造」，不是「经过几道工序」。",
-      "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">关键不在工序多少，在制造目的</text><rect x=\"20\" y=\"50\" width=\"250\" height=\"190\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"145\" y=\"80\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14.5\">传统加工（①—③组）</text><line x1=\"44\" y1=\"94\" x2=\"246\" y2=\"94\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"44\" y=\"122\" style=\"fill:var(--ink-soft)\" font-size=\"13\">发酵、腌制、烘焙、罐藏</text><text x=\"44\" y=\"150\" style=\"fill:var(--ink-soft)\" font-size=\"13\">目的：保存食物、创造风味</text><text x=\"44\" y=\"178\" style=\"fill:var(--ink-soft)\" font-size=\"13\">配方在厨房里就能复现</text><text x=\"44\" y=\"216\" style=\"fill:var(--ink-faint)\" font-size=\"12.5\">奶酪陈化一年，仍是食物</text><rect x=\"290\" y=\"50\" width=\"250\" height=\"190\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><text x=\"415\" y=\"80\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14.5\">超加工（第④组）</text><line x1=\"314\" y1=\"94\" x2=\"516\" y2=\"94\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"314\" y=\"122\" style=\"fill:var(--ink-soft)\" font-size=\"13\">工业配方＋厨房外的成分</text><text x=\"314\" y=\"150\" style=\"fill:var(--ink-soft)\" font-size=\"13\">目的：更便宜、更耐放、更诱人</text><text x=\"314\" y=\"178\" style=\"fill:var(--ink-soft)\" font-size=\"13\">为最大化销量而设计</text><text x=\"314\" y=\"216\" style=\"fill:var(--ink-faint)\" font-size=\"12.5\">即食、耐存、让人停不下来</text><text x=\"280\" y=\"282\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">冷冻蔬菜工序不少，仍在第①组——分界线是目的，不是步骤数。</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "所以第 1 章其实只做了一件事：**给东西起名**。名字起对了，后面的追问才有落点——它为什么让人停不下来、怎样绕过饱腹信号、添加剂对肠道做了什么。读完这一章不必恐慌，也不用连夜清空储藏柜；这本书不是医嘱，怎么吃仍是每个人自己权衡的事。它只要求一个新习惯：下次拿起包装食品，先翻过来，看看背面那张出身证明。下一章，作者会把自己当受试者——连吃一个月 UPF，看身体发生什么。"
-    }
-  ]
+ "title": "什么是超加工食品：NOVA 分类",
+ "subtitle": "看配料表，别只看营养表——一套按「加工目的与程度」给食物分组的体系，和一个好用的厨房判据",
+ "centralIdea": "NOVA 分类不按营养素、而按「加工的目的与程度」把食品分四组：①未/最少加工的原样食材（蔬果、肉、蛋、奶、豆）；②油、盐、糖、醋等烹饪配料；③用前两组做出的传统加工食品（面包、奶酪、腌菜、罐头）；④超加工食品（UPF）——含大量家用厨房里根本不会出现的成分（乳化剂、增味剂、色素、改性淀粉、分离蛋白、代糖）的工业配方产品，被做成即食、耐存、超诱人的形态。关键不在「加工了多少道工序」，而在它是不是一件**为最大化销量而设计的工业配方产品**。判据也简单：翻到包装背面看配料表——里面有你家厨房不会有的东西、或一长串念不出名字的成分，多半就是 UPF。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "去超市拿起一袋全麦面包，翻到背面：小麦粉、水、酵母、盐——然后是单双甘油脂肪酸酯、双乙酰酒石酸单双甘油酯、改性淀粉、抗真菌剂……前四样你家厨房都有，后面那串你既念不顺、也买不到。范图勒肯这本书要做的第一件事，就是给这类东西一个准确的名字：**超加工食品（Ultra-Processed Food，UPF）**。而用来命名的那把尺子，叫 **NOVA 分类**。"
+  },
+  {
+   "type": "h2",
+   "text": "先换一把尺子：不看「含什么」，看「被做成了什么」"
+  },
+  {
+   "type": "p",
+   "text": "过去几十年，营养学的主流做法是把食物拆成营养素：脂肪、糖、盐、蛋白质、维生素。于是公共讨论也围着营养素打转——一会儿说脂肪是元凶，一会儿说糖才是。巴西圣保罗大学的卡洛斯·蒙泰罗（Carlos Monteiro）团队在 2010 年前后提出另一把尺子：先别问食物**含什么**，先看它**被做成了什么**——按加工的目的与程度给食品分组。这套体系就是 NOVA。"
+  },
+  {
+   "type": "p",
+   "text": "蒙泰罗当年注意到一个营养素视角解释不了的现象：巴西家庭买回家的糖和油逐年减少，肥胖率却一路上涨。谜底是，糖和油没有消失，只是不再以「厨房原料」的身份进家门——它们被预先装进了饼干、饮料、即食餐里，跟着成品一起被吃掉。换了尺子，问题才显出形状：变化的不是营养素，是**食物的生产方式**。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "NOVA 四分类：①②③覆盖了人类几千年的正常饮食；第④组是二十世纪才出现的工业配方产品。",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">NOVA：按「加工目的与程度」分四组</text><rect x=\"16\" y=\"42\" width=\"528\" height=\"54\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"34\" y=\"64\" style=\"fill:var(--ink)\" font-size=\"15\">① 未加工 / 最少加工食品</text><text x=\"34\" y=\"85\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">蔬菜、水果、肉、蛋、奶、豆、谷物——原样食材</text><rect x=\"16\" y=\"104\" width=\"528\" height=\"54\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"34\" y=\"126\" style=\"fill:var(--ink)\" font-size=\"15\">② 烹饪配料</text><text x=\"34\" y=\"147\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">油、盐、糖、醋——厨房里把①变成一顿饭的东西</text><rect x=\"16\" y=\"166\" width=\"528\" height=\"54\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"34\" y=\"188\" style=\"fill:var(--ink)\" font-size=\"15\">③ 加工食品</text><text x=\"34\" y=\"209\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">用①＋②做的传统食品：面包、奶酪、腌菜、罐头</text><rect x=\"16\" y=\"228\" width=\"528\" height=\"54\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><text x=\"34\" y=\"250\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">④ 超加工食品（UPF）</text><text x=\"34\" y=\"271\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">工业配方产品：乳化剂、增味剂、色素、改性淀粉、分离蛋白、代糖……</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "四组各是什么：从菜市场到流水线"
+  },
+  {
+   "type": "p",
+   "text": "**第①组**是原样或基本原样的食材：一根胡萝卜、一块肉、一枚蛋、一杯奶、一把豆子。洗净、切分、冷冻、巴氏杀菌都不改变它的身份。**第②组**是烹饪配料：油、盐、糖、醋、淀粉——它们几乎没人单独吃，存在的意义是在厨房里把第①组变成一顿饭。**第③组**是用①加②做出来的传统食品：面包、奶酪、腌菜、火腿、罐头鱼。"
+  },
+  {
+   "type": "p",
+   "text": "第③组值得多停一秒：面包和奶酪都是「加工食品」，而人类做了几千年——发酵、腌制、烘焙、罐藏，目的是保存食物、创造风味。**加工本身从来不是罪**。NOVA 的锋芒不指向「加工」这个动作，而指向第④组那种完全不同的东西。"
+  },
+  {
+   "type": "p",
+   "text": "**第④组，超加工食品（UPF）**：不是「加工得更狠的食物」，而是**工业配方产品**——从植物油、糖浆、改性淀粉、分离蛋白这类廉价工业原料出发，靠乳化剂定型、增味剂调味、色素上色、代糖压成本，再经挤压、膨化、氢化等家里不可能有的工序，做成即食、耐存、超诱人的最终形态。书里给了个不严谨但极好用的速记版："
+  },
+  {
+   "type": "quote",
+   "original": "它多半裹着塑料包装，而且配料表里至少有一种你家厨房里通常找不到的成分。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "注意，NOVA 分的是「产品」而不是「食材」：同一样东西，走不同的生产路径，会落进不同的组。一根鲜玉米在第①组；加盐水做成的玉米罐头在第③组；而磨浆、挤压、膨化、再喷上糖浆和增味剂做成的早餐玉米片，就到了第④组。原料没变，"
+  },
+  {
+   "type": "pull",
+   "text": "变的是它被做成什么、为什么被做成那样。"
+  },
+  {
+   "type": "h2",
+   "text": "厨房测试：这东西你家灶台上做得出来吗"
+  },
+  {
+   "type": "p",
+   "text": "把定义翻译成一个动作：**翻到包装背面，读配料表**。家里烤面包需要四样东西；超市里保质期两周、永远松软的切片面包，配料表往往是那四样再加一串化学名词。同样叫「面包」，一个在第③组，一个在第④组——差别不在味道，在配料表上那道看得见的分界线。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "caption": "厨房测试：配料表里出现你家厨房不会有的成分，这件东西多半是 UPF。",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">同样叫「面包」，两张配料表</text><rect x=\"20\" y=\"44\" width=\"250\" height=\"226\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"145\" y=\"72\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14.5\">家里烤的面包</text><line x1=\"44\" y1=\"84\" x2=\"246\" y2=\"84\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"44\" y=\"112\" style=\"fill:var(--ink-soft)\" font-size=\"13\">面粉</text><text x=\"44\" y=\"138\" style=\"fill:var(--ink-soft)\" font-size=\"13\">水</text><text x=\"44\" y=\"164\" style=\"fill:var(--ink-soft)\" font-size=\"13\">酵母</text><text x=\"44\" y=\"190\" style=\"fill:var(--ink-soft)\" font-size=\"13\">盐</text><text x=\"145\" y=\"250\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"12\">——灶台上做得出来（第③组）</text><rect x=\"290\" y=\"44\" width=\"250\" height=\"226\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><text x=\"415\" y=\"72\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14.5\">超市长保质期切片面包</text><line x1=\"314\" y1=\"84\" x2=\"516\" y2=\"84\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"314\" y=\"108\" style=\"fill:var(--ink-soft)\" font-size=\"13\">面粉、水、酵母、盐</text><text x=\"314\" y=\"134\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">乳化剂（单双甘油脂肪酸酯）</text><text x=\"314\" y=\"160\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">改性淀粉、增稠剂</text><text x=\"314\" y=\"186\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">防腐剂（丙酸钙）……</text><text x=\"415\" y=\"250\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"12\">——厨房里没有的东西（第④组）</text><text x=\"280\" y=\"292\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">厨房测试：这东西你家灶台上做得出来吗？</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "要说清楚的是，这个测试针对的不是「化学名词」本身——抗坏血酸就是维生素 C，听着吓人其实无害。它识别的是**身份**：乳化剂、增味剂、色素、改性淀粉、分离蛋白、代糖，这些成分被放进去，不是为了让食物更有营养，而是为了让它更便宜、更耐放、口感更「顺」、更让人一口接一口。配料表是这件产品的出身证明。"
+  },
+  {
+   "type": "p",
+   "text": "厨房测试当然会有毛边：家里没有丙酸钙不等于这片面包立刻有害，第④组内部也远非铁板一块。但它的价值在于**足够简单、足够可操作**——不需要营养学学位，不需要背营养素表格，站在货架前三十秒就能完成。对一个想先看清自己吃了什么的普通人来说，这比任何复杂的评分体系都更管用。"
+  },
+  {
+   "type": "h2",
+   "text": "它不是零食边角，是主食：约一半热量"
+  },
+  {
+   "type": "p",
+   "text": "如果 UPF 只是偶尔吃的薯片和可乐，这本书不必写。触目惊心的地方在于体量——"
+  },
+  {
+   "type": "quote",
+   "original": "在英国和美国这样的国家，普通人摄入的热量里，已经有大约一半来自超加工食品；儿童的比例还要更高。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "换句话说，对英美相当多的人（尤其是孩子）而言，UPF 不是饮食的点缀，而是**饮食本身**。早餐麦片、切片面包、风味酸奶、即食汤、能量棒——很多根本不被当成「垃圾食品」的东西，按配料表一查，全在第④组。这也是书名的由来：当一半热量来自工业配方产品时，我们已经是「超加工人群」。"
+  },
+  {
+   "type": "p",
+   "text": "为什么会到这一步？作者提前埋了一条贯穿全书的线：不是这一代人意志力突然崩塌，而是 UPF 在竞争中**全面占优**——它比真食物便宜、不用洗切烹煮、常温放得住，货架和外卖单上占绝对多数，广告预算更是碾压。当最省钱、最省事、最触手可及的选项都是第④组时，「吃成超加工人群」与其说是选择，不如说是默认设置。"
+  },
+  {
+   "type": "figure",
+   "ftype": "占比图",
+   "caption": "书中引用的英美膳食调查估计。不同研究口径略有出入，但量级一致：约一半上下，儿童更高。",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">摄入热量里，有多少来自 UPF？</text><text x=\"30\" y=\"76\" style=\"fill:var(--ink)\" font-size=\"14\">英美成人</text><rect x=\"30\" y=\"88\" width=\"500\" height=\"36\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"30\" y=\"88\" width=\"280\" height=\"36\" rx=\"5\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"170\" y=\"111\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\" font-size=\"13.5\">超加工食品 ≈ 一半以上</text><text x=\"420\" y=\"111\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">其他食物</text><text x=\"30\" y=\"172\" style=\"fill:var(--ink)\" font-size=\"14\">儿童与青少年</text><rect x=\"30\" y=\"184\" width=\"500\" height=\"36\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"30\" y=\"184\" width=\"325\" height=\"36\" rx=\"5\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"192\" y=\"207\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\" font-size=\"13.5\">比例更高（可近三分之二）</text><text x=\"442\" y=\"207\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">其他食物</text><text x=\"280\" y=\"266\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"12\">不是「偶尔吃的零食」，而是许多人饮食的主体。</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "NOVA 也有争议：这把尺子粗，但方向对"
+  },
+  {
+   "type": "p",
+   "text": "范图勒肯是循证出身的医生，他没有把 NOVA 供成真理。批评是实在的：四组的边界依赖配料表标注，同在第④组的全麦工业面包和碳酸饮料显然不是一回事；「超加工」也不是毒理学意义上的成分清单，很多关联证据来自观察性研究，混杂因素难以剥干净。这些争论，书的后半部分（证据之争一章）会正面处理。"
+  },
+  {
+   "type": "p",
+   "text": "他的态度更像是：把 NOVA 当**探照灯**用，别当法庭判决用。它照亮的是一个此前没有名字、因而无法被讨论的对象——一类在人类饮食史上全新的、由公司配方出来的可食用产品。尺子粗一点没关系，先有尺子，才量得出问题。"
+  },
+  {
+   "type": "p",
+   "text": "但第 1 章先立住一个不被争议动摇的核心：**关键从来不在「加工了多少道工序」**。冷冻蔬菜的工序不少，仍在第①组；手工奶酪陈化一年，仍是食物。真正把第④组同前三组分开的，是**目的**——前三组的加工为了保存与风味，第④组是一件从配方设计之初就为最大化销量服务的工业产品：成本压到最低，保质期拉到最长，口感调到让你停不下来。"
+  },
+  {
+   "type": "quote",
+   "original": "问题的关键不是「加工」这个动作，而是这件东西从被设计出来的那一刻起，目标就是让你买得更多。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "caption": "判断标准是「为什么被制造」，不是「经过几道工序」。",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">关键不在工序多少，在制造目的</text><rect x=\"20\" y=\"50\" width=\"250\" height=\"190\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"145\" y=\"80\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14.5\">传统加工（①—③组）</text><line x1=\"44\" y1=\"94\" x2=\"246\" y2=\"94\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"44\" y=\"122\" style=\"fill:var(--ink-soft)\" font-size=\"13\">发酵、腌制、烘焙、罐藏</text><text x=\"44\" y=\"150\" style=\"fill:var(--ink-soft)\" font-size=\"13\">目的：保存食物、创造风味</text><text x=\"44\" y=\"178\" style=\"fill:var(--ink-soft)\" font-size=\"13\">配方在厨房里就能复现</text><text x=\"44\" y=\"216\" style=\"fill:var(--ink-faint)\" font-size=\"12.5\">奶酪陈化一年，仍是食物</text><rect x=\"290\" y=\"50\" width=\"250\" height=\"190\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><text x=\"415\" y=\"80\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14.5\">超加工（第④组）</text><line x1=\"314\" y1=\"94\" x2=\"516\" y2=\"94\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"314\" y=\"122\" style=\"fill:var(--ink-soft)\" font-size=\"13\">工业配方＋厨房外的成分</text><text x=\"314\" y=\"150\" style=\"fill:var(--ink-soft)\" font-size=\"13\">目的：更便宜、更耐放、更诱人</text><text x=\"314\" y=\"178\" style=\"fill:var(--ink-soft)\" font-size=\"13\">为最大化销量而设计</text><text x=\"314\" y=\"216\" style=\"fill:var(--ink-faint)\" font-size=\"12.5\">即食、耐存、让人停不下来</text><text x=\"280\" y=\"282\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">冷冻蔬菜工序不少，仍在第①组——分界线是目的，不是步骤数。</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "所以第 1 章其实只做了一件事：**给东西起名**。名字起对了，后面的追问才有落点——它为什么让人停不下来、怎样绕过饱腹信号、添加剂对肠道做了什么。读完这一章不必恐慌，也不用连夜清空储藏柜；这本书不是医嘱，怎么吃仍是每个人自己权衡的事。它只要求一个新习惯：下次拿起包装食品，先翻过来，看看背面那张出身证明。下一章，作者会把自己当受试者——连吃一个月 UPF，看身体发生什么。"
+  }
+ ]
 }

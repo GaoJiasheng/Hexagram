@@ -23,22 +23,37 @@ const ONLY_CAND = flags.includes('--candidates')
 const pullsArg = flags.find((f) => f.startsWith('--pulls='))
 const PULLS = pullsArg ? JSON.parse(fs.readFileSync(pullsArg.slice('--pulls='.length), 'utf8')) : null
 
-const FILE = path.join('src/data', corpus, 'baihua', `${slug}.json`)
-const book = JSON.parse(fs.readFileSync(FILE, 'utf8'))
+// 两种布局:白话是「一书一文件、内含 {章号: 章}」;观书是「一书一目录、一篇一文件」。
+// 文章本身的形态(title/subtitle/centralIdea/hero/blocks)两边完全同构,故规则通用。
+const IS_BOOKS = corpus === 'books'
+const BOOK_DIR = path.join('src/data/books', slug)
+const bookFiles = IS_BOOKS
+  ? [path.join(BOOK_DIR, 'overview.json'),
+     ...(fs.existsSync(path.join(BOOK_DIR, 'articles'))
+       ? fs.readdirSync(path.join(BOOK_DIR, 'articles')).filter((x) => x.endsWith('.json')).sort()
+         .map((x) => path.join(BOOK_DIR, 'articles', x))
+       : [])].filter((f) => fs.existsSync(f))
+  : null
+const FILE = IS_BOOKS ? BOOK_DIR : path.join('src/data', corpus, 'baihua', `${slug}.json`)
+const book = IS_BOOKS
+  ? Object.fromEntries(bookFiles.map((f) => [path.relative(BOOK_DIR, f), JSON.parse(fs.readFileSync(f, 'utf8'))]))
+  : JSON.parse(fs.readFileSync(FILE, 'utf8'))
 const N = (s) => String(s ?? '').replace(/\s|\*\*/g, '')
 
 // ── 词法规则(自试点反推)──────────────────────────────────────────
 // callout:整段转框。tone 由开头的「话术」定 —— 试点里 note 是比方/举例/训字,
 // warn 是纠误读/划界限,mute 是旁注/源流/版本。
-const MUTE = /^(顺带|顺便|多说一句|插一句|再说一句|附带说|说句题外)/
+const MUTE = /^(顺带|顺便|多说一句|插一句|再说一句|附带说|说句题外|值得一提)/
 const WARN = /^(这里最容易|最容易被误读|千万别|切莫|别把|不要把|这里要特别提醒|要提醒一句|注意[，,].{0,10}(不是|并非|不等于|别))/
-const NOTE = /^(再|我|这里|不妨)?(打个.{0,8}比方|举个.{0,8}例子|举例说|比方说|想象一下|设想一下|换成今天|放到今天|注意.{0,6}(用的字|用的是|这句|句式|的字是))/
+const NOTE = /^(值得注意|值得留意)|^(再|我|这里|不妨)?(打个.{0,8}比方|举个.{0,8}例子|举例说|比方说|想象一下|设想一下|换成今天|放到今天|注意.{0,6}(用的字|用的是|这句|句式|的字是))/
 // list:连着若干段的**显式枚举**(其一，/第一，/一、)。
 // 注意:试点里还有一类「『词』——解释」的连续段,看着也像并列,但那是「逐句走读」的正常骨架 ——
 // 一并转成列表会把整篇拍平(实测多判 3 倍),正是规格禁止的「为了用新块而硬拆」。故不收。
-const LIST_ITEM = /^(?:其[一二三四五六七八九十]\s*[，,]|第[一二三四五六七八九十]\s*[，,]|[一二三四五六七八九十]\s*、)/
+const LIST_ITEM = /^(?:\*\*)?(?:其[一二三四五六七八九十]\s*[，,]|第[一二三四五六七八九十]\s*[，,]|[一二三四五六七八九十]\s*、)/
 // steps:一段之内「第一步…第二步…」,按步切开
 const STEP_SPLIT = /(?=第[一二三四五六七八九十]步[，,、]|最后一步[，,、])/
+// 跨段次第:整段以「第N步」起头(可带加粗标记)
+const STEP_PARA = /^(?:\*\*)?(?:第[一二三四五六七八九十]+步|最后一步)[，,、：:]/
 // pull 候选:段尾整句加粗(试点 40/40 命中此形)
 const TAIL_BOLD = /\*\*([^*]{10,60})\*\*([。！？」』]*)\s*$/
 
@@ -92,8 +107,8 @@ function pickPull(ch) {
 //   ③ 疑问句、引号收尾符开头(「」——…」这类残句)
 //   ④ 长度 16–40 字(短于此不成句、长于此不像金句)
 const SENT_TAIL = /[^。！？]+[。！？]』?」?\s*$/
-const BAD_HEAD = /^(?:\*\*)?(?:所以|因此|于是|但|可是|而|也就是说|这就是|换句话说|总之|不过|然后|接着|至于|其实|[」』"'）)—－–])/
-const META_SENT = /这一篇|这一章|这一节|全篇|整篇|本篇|本章|这三|上面这|以上|下面/
+const BAD_HEAD = /^(?:\*\*)?(?:所以|因此|于是|但|可是|而|也就是说|这就是|换句话说|总之|不过|然后|接着|至于|其实|是|就是|而是|因为|比如|例如|[」』"'）)—－–])/
+const META_SENT = /这一篇|这一章|这一节|全篇|整篇|本篇|本章|这三|上面这|以上|下面|什么是[^。]*什么是|以及为什么|本文|这篇文章|接下来/
 const PULL_MIN_LOOSE = 0.45
 function pickPullLoose(ch) {
   const idea = KEY(ch.centralIdea || ch.hero?.headline || '')
@@ -104,6 +119,8 @@ function pickPullLoose(ch) {
     const m = SENT_TAIL.exec((b.text || '').trim())
     if (!m) continue
     const s = m[0].trim()
+    // ** 不成对 = 句子边界切在加粗跨度里,摘出来会留个孤零零的 **(渲染成字面量)
+    if ((s.match(/\*\*/g) || []).length % 2) continue
     if (BAD_HEAD.test(s) || META_SENT.test(s) || /[？?]$/.test(s)) continue
     const c = KEY(s)
     if (c.length < 16 || c.length > 40) continue
@@ -138,6 +155,27 @@ function reblock(ch, chKey) {
       }
     }
 
+    // ①b 跨段次第:观书爱把每一步写成独立一段(`**第三步,…**` + 解释),
+    //     与段内「第一步…第二步…」是两种写法,都收。加粗的小标题拆成 title/text 两半。
+    if (STEP_PARA.test(t)) {
+      const runs = [t]
+      let j2 = i + 1
+      while (j2 < src.length && isPara(src[j2]) && src[j2].type !== 'lead' && STEP_PARA.test((src[j2].text || '').trim())) {
+        runs.push((src[j2].text || '').trim()); j2++
+      }
+      if (runs.length >= 2) {
+        out.push({ type: 'steps', items: runs.map((x) => {
+          const body = x.replace(/^(\*\*)?(?:第[一二三四五六七八九十]+步|最后一步)[，,、：:]\s*/, '$1')
+          const mt = /^\*\*([^*]+)\*\*([\s\S]*)$/.exec(body)
+          return mt && mt[2].trim()
+            ? { title: mt[1].trim(), text: mt[2].trim(), state: 'done' }
+            : { text: body.replace(/\*\*/g, ''), state: 'done' }
+        }) })
+        i = j2 - 1
+        continue
+      }
+    }
+
     // ② list:向后收集连续的显式枚举段(≥2 段才成列表)
     if (LIST_ITEM.test(t)) {
       const items = [t]
@@ -147,7 +185,8 @@ function reblock(ch, chKey) {
       }
       if (items.length >= 2) {
         // 三种枚举形式(其一，/第一，/一、)一律剥掉行首序号、由排版出编号
-        const stripped = items.map((x) => x.replace(/^(?:[其第][一二三四五六七八九十]\s*[，,]|[一二三四五六七八九十]\s*、)\s*/, ''))
+        // 保留行首的加粗标记(观书爱写 `**第一，…**`),只吃掉序号本身,否则 ** 不成对
+        const stripped = items.map((x) => x.replace(/^(\*\*)?(?:[其第][一二三四五六七八九十]\s*[，,]|[一二三四五六七八九十]\s*、)\s*/, '$1'))
         out.push({ type: 'list', ordered: true, items: stripped })
         i = j - 1
         continue
@@ -165,7 +204,8 @@ function reblock(ch, chKey) {
       const m = mb && N(mb[1] + mb[2]) === N(chosen) ? { text: mb[1] + mb[2], index: mb.index }
         : ms && N(ms[0].trim()) === N(chosen) ? { text: ms[0].trim(), index: ms.index }
           : null
-      if (m) {
+      // 摘出的句子里 ** 必须成对(否则会留个字面量 **),这里再兜一道
+      if (m && (m.text.match(/\*\*/g) || []).length % 2 === 0) {
         const head = t.slice(0, m.index).trim()
         if (head) out.push({ ...b, text: head })
         out.push({ type: 'pull', text: m.text })
@@ -200,7 +240,13 @@ for (const [k, ch] of Object.entries(book)) {
 console.log(`${corpus}/${slug}: ${Object.keys(book).length} 章 · 有变化 ${stat.changed} · ` +
   `list ${stat.list} · callout ${stat.callout} · pull ${stat.pull} · steps ${stat.steps}`)
 if (WRITE) {
-  fs.writeFileSync(FILE, JSON.stringify(next, null, 1) + '\n')
+  if (IS_BOOKS) {
+    for (const [rel, art] of Object.entries(next)) {
+      fs.writeFileSync(path.join(BOOK_DIR, rel), JSON.stringify(art, null, 1) + '\n')
+    }
+  } else {
+    fs.writeFileSync(FILE, JSON.stringify(next, null, 1) + '\n')
+  }
   console.log(`已写入 ${FILE}`)
 } else {
   const tmp = `/tmp/reblock-${corpus}-${slug}.json`

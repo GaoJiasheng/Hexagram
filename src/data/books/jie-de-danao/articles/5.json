@@ -1,130 +1,134 @@
 {
-  "title": "下丘脑与瘦素:身体的「油量表」",
-  "subtitle": "在意识够不着的后台，一套自动回路替你盯着体脂;瘦素，就是它随时在读的那块油量表",
-  "centralIdea": "体重不是靠意志力『管』出来的——后台一直有一套自动系统在替你盯着体脂，中枢是脑深处的**下丘脑**(hypothalamus)，它像恒温器一样把体脂维持在某个水平。它靠什么知道该维持多少?靠**瘦素(leptin)**:脂肪细胞按脂肪储量往血里分泌瘦素，等于源源不断地给大脑发一份『油量表(lipostat)读数』。瘦素高，大脑判断『油箱满』，就压食欲、放开代谢;瘦素低，大脑判断『快饿死了』，就催你多吃、把代谢调低省着烧——这正是节食后又饿又乏、体重反弹的一大由来。真正棘手的是**瘦素抵抗**:很多肥胖者瘦素明明很高，大脑却像读不到一样，仍以为缺油、继续催人吃，如同油量表卡在空档、油箱其实是满的。一句话:调节体重的很大程度上是这套下丘脑-瘦素回路，不是你的决心;不少减肥失败，是这块『油量表』读数失灵、始终报『缺油』。(这些机制是主流认识，不少细节仍在研究，本文不构成任何医疗或减重建议。)",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "减肥的人常把失败归到一个词上:意志力。仿佛体重是一件全凭决心管住的事——管住了就瘦，管不住就是你不够狠。这一章想告诉你一个让人松一口气、也有点不甘心的事实:体重其实一直有人在管，只不过那个『人』不是你的意识，而是脑子深处一套你根本感觉不到的自动回路。它有中枢、有传感器、有一支随时在读的『油量表』。看懂它，你才明白，为什么很多减肥像是在跟一个看不见的对手掰手腕。"
-    },
-    {
-      "type": "h2",
-      "text": "一、体重其实有人在管——只是不是「你」"
-    },
-    {
-      "type": "p",
-      "text": "先说中枢。在大脑底部、两眼后方靠里的位置，有一小团组织叫**下丘脑**(hypothalamus)。它个头不大，管的事却又多又要命:体温、口渴、睡眠、多种激素……其中一项，就是**体重调控**。可以把它理解成身体的『体重恒温器』:就像墙上的空调恒温器盯着室温、偏了就自动开关机把温度拉回设定值，下丘脑也盯着你身上的体脂，一旦偏离它认定的水平，就自动出手把你拉回去。"
-    },
-    {
-      "type": "p",
-      "text": "它出手的方式，不是给你讲道理，而是直接拧动两个旋钮:一个是**食欲**(让你更饿、还是更不想吃)，一个是**代谢**(让你多烧一点、还是省着烧)。你以为『今天特别想吃』『最近莫名没劲、还怕冷』是心情或天气，很多时候，那是下丘脑在悄悄调旋钮。关键在于:这套调节发生在意识够不着的后台，你能感觉到的只是结果——饿、馋、乏、冷——却看不见那只拧旋钮的手。"
-    },
-    {
-      "type": "h2",
-      "text": "二、瘦素:脂肪发给大脑的「油量表读数」"
-    },
-    {
-      "type": "p",
-      "text": "恒温器要工作，得先有个温度计;下丘脑要调体重，也得先知道『现在身上到底有多少脂肪』。这个『脂肪传感器』的核心，是一种叫**瘦素(leptin)**的激素。瘦素的来源很妙:它不是别的器官分泌的，正是**脂肪组织自己**分泌的。你身上脂肪越多，血里的瘦素通常就越高;脂肪越少，瘦素越低。于是瘦素就成了一份实时报告——脂肪不停地通过它，向大脑汇报『油箱里还剩多少油』。"
-    },
-    {
-      "type": "p",
-      "text": "这就是为什么可以把这套系统叫做身体的**油量表(lipostat)**。lipo 是脂肪，stat 是恒定——合起来，就是一套『把脂肪维持在某个恒定水平』的机制。油量表的读数(瘦素)高，下丘脑判断油箱满、能量充足;读数低，下丘脑判断油箱见底、该省该补了。整套逻辑简单得像开车看油表:表高就放心开、甚至能开快点;表低就赶紧找加油站、顺便松开油门省着走。你不用时时刻刻惦记『还剩多少油』，那根指针替你惦记着。"
-    },
-    {
-      "type": "quote",
-      "original": "瘦素不是让你变瘦的药，而是脂肪写给大脑的一封信:油箱里还剩这么多。",
-      "translation": ""
-    },
-    {
-      "type": "figure",
-      "ftype": "回路示意图",
-      "caption": "瘦素-下丘脑油量表回路:脂肪把储量报给大脑，大脑再拧动食欲与代谢两个旋钮",
-      "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"16\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"10\">下丘脑-瘦素回路 · 一个闭环</text><rect x=\"30\" y=\"118\" width=\"130\" height=\"64\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"95\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">脂肪组织</text><text x=\"95\" y=\"166\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10\">脂肪越多 → 瘦素越多</text><rect x=\"215\" y=\"28\" width=\"150\" height=\"60\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"290\" y=\"54\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">下丘脑</text><text x=\"290\" y=\"74\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10\">体重调控中枢</text><rect x=\"410\" y=\"116\" width=\"130\" height=\"66\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"475\" y=\"143\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">压食欲</text><text x=\"475\" y=\"165\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">放开代谢</text><rect x=\"215\" y=\"214\" width=\"150\" height=\"52\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"290\" y=\"245\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">体脂回落 → 瘦素回落</text><path d=\"M152 122 C210 92 200 64 213 60\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\"/><polygon points=\"213,60 201,56 204,68\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"150\" y=\"88\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"10\">瘦素(油量表读数)</text><path d=\"M366 78 C418 94 432 100 460 114\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.4\"/><polygon points=\"460,114 448,108 449,120\" style=\"fill:var(--ink-soft)\"/><path d=\"M462 176 C420 210 400 224 367 234\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.4\"/><polygon points=\"367,234 380,229 378,241\" style=\"fill:var(--ink-soft)\"/><path d=\"M213 234 C150 226 118 210 100 186\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.4\"/><polygon points=\"100,186 98,198 110,191\" style=\"fill:var(--ink-soft)\"/><text x=\"492\" y=\"210\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"10\">箍住体脂</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "注意，这是一个**闭环**:脂肪多→瘦素高→大脑压食欲、放代谢→体脂慢慢回落→瘦素随之回落→大脑再松手……如此往复，把体脂稳稳箍在一个区间里。正常情况下，这套回路悄无声息却极其尽责——它就是你根本不用天天称重、体重却常年八九不离十的原因。你以为是自己『没怎么胖』，其实是这块油量表在后台默默地一次次把你拨回原位。"
-    },
-    {
-      "type": "h2",
-      "text": "三、油量表读数一低，大脑就切进「要饿死了」模式"
-    },
-    {
-      "type": "p",
-      "text": "真正见识这套系统脾气的时刻，是你**主动少吃**的时候。你一节食，脂肪开始被消耗，瘦素随之下降;下丘脑读到油量表往下掉，得出的结论不是『主人在减肥，配合一下』，而是一句写进基因几百万年的老话:**『要闹饥荒了，快省!』**在漫长的进化史里，脂肪掉、瘦素降，几乎只对应一件事——没饭吃、要挨饿。大脑分不清你是在健身房里自愿轻断食，还是真的断了粮，它只按最保命的方式反应。"
-    },
-    {
-      "type": "p",
-      "text": "于是它把两个旋钮往相反方向猛拧:**食欲旋钮拧到最大**——你开始满脑子想吃的，闻到什么都香，越是不让吃越馋;**代谢旋钮拧到最小**——身体调低基础消耗，你怕冷、乏力、懒得动，能省一卡是一卡。一边拼命催你进食、一边拼命少烧，两头夹击。这就是几乎每个减肥的人都撞过的那堵墙:**体重掉到一半就卡住，稍一放松就反弹**——不是你突然变懒变馋、意志力崩了，而是油量表一低，大脑就切进了『饥荒模式』，在后台跟你反着来。(下一章会专门讲这个『调定点』和反弹是怎么回事。)"
-    },
-    {
-      "type": "quote",
-      "original": "大脑分不清你是在减肥，还是在挨饿——它只按『别饿死』那套本能反应。",
-      "translation": ""
-    },
-    {
-      "type": "figure",
-      "ftype": "对比图",
-      "caption": "同一块油量表，两种读数、两套指令:满则放开烧，空则省着烧",
-      "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"20\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"10\">读数高低，决定大脑往哪个方向拧旋钮</text><rect x=\"24\" y=\"36\" width=\"248\" height=\"238\" rx=\"10\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"148\" y=\"66\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">瘦素高 · 油箱满</text><path d=\"M104 168 A44 44 0 0 1 192 168\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><text x=\"100\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"10\">E</text><text x=\"196\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"10\">F</text><line x1=\"148\" y1=\"168\" x2=\"184\" y2=\"138\" style=\"stroke:var(--ink)\" stroke-width=\"2\"/><circle cx=\"148\" cy=\"168\" r=\"4\" style=\"fill:var(--ink)\"/><text x=\"148\" y=\"216\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">食欲 ↓　代谢 ↑</text><text x=\"148\" y=\"246\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">少吃 · 放开烧</text><rect x=\"288\" y=\"36\" width=\"248\" height=\"238\" rx=\"10\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><text x=\"412\" y=\"66\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\">瘦素低 · 油箱空</text><path d=\"M368 168 A44 44 0 0 1 456 168\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><text x=\"364\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"10\">E</text><text x=\"460\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"10\">F</text><line x1=\"412\" y1=\"168\" x2=\"380\" y2=\"140\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><circle cx=\"412\" cy=\"168\" r=\"4\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"412\" y=\"216\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">食欲 ↑　代谢 ↓</text><text x=\"412\" y=\"246\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">多吃 · 省着烧(饥荒模式)</text></svg>"
-    },
-    {
-      "type": "h2",
-      "text": "四、瘦素抵抗:油箱明明满了，表针却卡在「空」"
-    },
-    {
-      "type": "p",
-      "text": "讲到这，你可能会冒出一个疑问:那胖的人脂肪多、瘦素高、油量表读数满，大脑不就该自动压食欲、把人拉回去吗?为什么还会越来越胖?这正是全书最关键、也最反直觉的一环——**瘦素抵抗(leptin resistance)**。"
-    },
-    {
-      "type": "p",
-      "text": "测一测会发现，许多肥胖者血里的瘦素**不但不低，反而很高**(脂肪多，分泌自然多)。按理说这么高的读数，大脑早该判断『油箱爆满』、大幅压住食欲了。可现实是:大脑**读不到**这份读数。就像油量表的指针和油箱之间那根线出了问题——油箱是满的，仪表盘上的指针却死死卡在『E』(空)那一格。下丘脑看着那根卡住的空针，一口咬定『还缺油』，继续发出『多吃、少烧』的指令。人于是在脂肪已经很多的情况下，照样觉得饿、照样容易囤——不是嘴馋，是那块表读错了。"
-    },
-    {
-      "type": "quote",
-      "original": "瘦素抵抗，就像油箱是满的，油量表的针却卡在空档;大脑照着那根卡针，一路催你加油。",
-      "translation": ""
-    },
-    {
-      "type": "figure",
-      "ftype": "机制示意图",
-      "caption": "瘦素抵抗:油箱其实是满的(瘦素很高)，信号却传不到大脑，表针卡在「空」",
-      "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"18\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"10\">瘦素抵抗 · 油箱满，表针却卡在「空」</text><rect x=\"40\" y=\"96\" width=\"92\" height=\"128\" rx=\"8\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"40\" y=\"104\" width=\"92\" height=\"120\" rx=\"6\" style=\"fill:var(--ink-faint)\"/><text x=\"86\" y=\"170\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\" font-size=\"13\">满</text><text x=\"86\" y=\"246\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10\">瘦素其实很高</text><line x1=\"134\" y1=\"150\" x2=\"216\" y2=\"150\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\"/><line x1=\"168\" y1=\"140\" x2=\"182\" y2=\"160\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><line x1=\"182\" y1=\"140\" x2=\"168\" y2=\"160\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"175\" y=\"130\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"10\">信号读不到</text><path d=\"M244 172 A48 48 0 0 1 340 172\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><text x=\"240\" y=\"188\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"10\">E</text><text x=\"344\" y=\"188\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"10\">F</text><line x1=\"292\" y1=\"172\" x2=\"256\" y2=\"146\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"2.4\"/><circle cx=\"292\" cy=\"172\" r=\"4\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"292\" y=\"210\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"11\">表针卡在「空」</text><line x1=\"348\" y1=\"150\" x2=\"396\" y2=\"150\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.4\"/><polygon points=\"396,150 384,145 384,155\" style=\"fill:var(--ink-soft)\"/><rect x=\"400\" y=\"116\" width=\"140\" height=\"70\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"470\" y=\"144\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">大脑:「还缺油」</text><text x=\"470\" y=\"167\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">继续催你吃</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "至于**为什么**会读不到，科学家还在研究，目前有几条线索:长期偏高的瘦素，可能让大脑相应的『接收器』变迟钝(有点像天天被大声吆喝、耳朵慢慢就充耳不闻);某些饮食(尤其是高糖、高度加工的食物)与低度炎症，可能干扰瘦素信号在下丘脑里的传递。这些是主流认识的大方向，具体环节仍有争议、仍在补细节——这一点要老实说清楚，别把还在研究中的机制讲成板上钉钉的定论。『油量表卡针』是个好用的比喻，但真实的线路比一根电线复杂得多。"
-    },
-    {
-      "type": "h2",
-      "text": "五、这意味着什么:很多减肥失败，是「表」坏了，不是「人」懒"
-    },
-    {
-      "type": "p",
-      "text": "把这套系统看明白，对减肥这件事的理解会整个翻个面。我们习惯把体重当成一道意志力的算术题:少吃多动、管住嘴迈开腿，瘦不下来就怪你不够自律。但下丘脑-瘦素这套回路说明:体重更像被一台后台程序托管着，而这台程序认死理——它只按油量表的读数干活，读数说缺油，它就催你吃、帮你囤，哪怕你正咬着牙节食。你和它，是在同一具身体里朝相反方向使劲。"
-    },
-    {
-      "type": "p",
-      "text": "对很多长期肥胖的人来说，问题恰恰出在这台程序『读数失灵』:油量表始终报『缺油』，于是大脑始终在跟他们的减肥意志对着干。看清这一点，不是给『管不住嘴』发一张免罪符——能改变的地方仍然有(后面几章会讲食物环境、睡眠、压力怎么搅动这套系统)——而是把矛头从『你这个人不行』，挪到『这套回路被现代环境搞乱了』。先看清对手是谁，比一味自责有用得多。"
-    },
-    {
-      "type": "figure",
-      "ftype": "收束图",
-      "caption": "同一条链:脂肪把储量报给大脑;表读得准，体重悄悄稳住;表卡住，就一直催你吃",
-      "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"18\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"10\">一句话收束 · 全看这块表读得准不准</text><rect x=\"24\" y=\"40\" width=\"120\" height=\"48\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"84\" y=\"70\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">脂肪组织</text><line x1=\"144\" y1=\"64\" x2=\"182\" y2=\"64\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.3\"/><polygon points=\"182,64 170,59 170,69\" style=\"fill:var(--ink-soft)\"/><rect x=\"184\" y=\"40\" width=\"140\" height=\"48\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><text x=\"254\" y=\"70\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">瘦素 · 油量表</text><line x1=\"324\" y1=\"64\" x2=\"362\" y2=\"64\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.3\"/><polygon points=\"362,64 350,59 350,69\" style=\"fill:var(--ink-soft)\"/><rect x=\"364\" y=\"40\" width=\"120\" height=\"48\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"424\" y=\"70\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">下丘脑</text><path d=\"M424 88 C424 132 180 132 160 184\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.3\"/><polygon points=\"160,184 157,172 169,177\" style=\"fill:var(--ink-soft)\"/><path d=\"M424 88 C424 132 402 134 402 184\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.3\"/><polygon points=\"402,184 396,173 408,173\" style=\"fill:var(--cinnabar-pure)\"/><rect x=\"40\" y=\"186\" width=\"230\" height=\"70\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"155\" y=\"214\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">表读得准</text><text x=\"155\" y=\"238\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">体重悄悄稳在一个区间</text><rect x=\"290\" y=\"186\" width=\"230\" height=\"70\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"405\" y=\"214\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">表卡住(瘦素抵抗)</text><text x=\"405\" y=\"238\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">始终报缺油 · 一直催你吃</text></svg>"
-    },
-    {
-      "type": "h2",
-      "text": "六、这一章想让你记住的"
-    },
-    {
-      "type": "p",
-      "text": "收成几句话:体重有一套**自动调节回路**在后台管着，中枢是**下丘脑**;它靠脂肪分泌的**瘦素**当『油量表』,读数高就压食欲、放代谢，读数低就催食欲、省代谢。节食会让读数变低、逼大脑进入『饥荒模式』，这是减重容易反弹的一大原因;而**瘦素抵抗**让不少人的油量表始终卡在『空』,大脑于是一直催他们吃、帮他们囤。一句话:管你体重的，很大程度上不是你的决心，是这块表读得准不准。"
-    },
-    {
-      "type": "p",
-      "text": "最后照例说清分寸:以上是这本书(以及背后神经科学)对体重调节的主流讲法，用『油量表』作比是为了好懂，真实的回路比这复杂得多，不少细节学界仍在争论、仍在研究。它能帮你理解『为什么减肥这么难』，却**不构成任何医疗诊断或减重方案**——你身上的具体情况该怎么查、怎么办，请交给专业医生，而不是一篇读书笔记。(本文是对《饥饿的大脑》(Stephan Guyenet)第 5 章的读书转述。)"
-    }
-  ]
+ "title": "下丘脑与瘦素:身体的「油量表」",
+ "subtitle": "在意识够不着的后台，一套自动回路替你盯着体脂;瘦素，就是它随时在读的那块油量表",
+ "centralIdea": "体重不是靠意志力『管』出来的——后台一直有一套自动系统在替你盯着体脂，中枢是脑深处的**下丘脑**(hypothalamus)，它像恒温器一样把体脂维持在某个水平。它靠什么知道该维持多少?靠**瘦素(leptin)**:脂肪细胞按脂肪储量往血里分泌瘦素，等于源源不断地给大脑发一份『油量表(lipostat)读数』。瘦素高，大脑判断『油箱满』，就压食欲、放开代谢;瘦素低，大脑判断『快饿死了』，就催你多吃、把代谢调低省着烧——这正是节食后又饿又乏、体重反弹的一大由来。真正棘手的是**瘦素抵抗**:很多肥胖者瘦素明明很高，大脑却像读不到一样，仍以为缺油、继续催人吃，如同油量表卡在空档、油箱其实是满的。一句话:调节体重的很大程度上是这套下丘脑-瘦素回路，不是你的决心;不少减肥失败，是这块『油量表』读数失灵、始终报『缺油』。(这些机制是主流认识，不少细节仍在研究，本文不构成任何医疗或减重建议。)",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "减肥的人常把失败归到一个词上:意志力。仿佛体重是一件全凭决心管住的事——管住了就瘦，管不住就是你不够狠。这一章想告诉你一个让人松一口气、也有点不甘心的事实:体重其实一直有人在管，只不过那个『人』不是你的意识，而是脑子深处一套你根本感觉不到的自动回路。它有中枢、有传感器、有一支随时在读的『油量表』。看懂它，你才明白，为什么很多减肥像是在跟一个看不见的对手掰手腕。"
+  },
+  {
+   "type": "h2",
+   "text": "一、体重其实有人在管——只是不是「你」"
+  },
+  {
+   "type": "p",
+   "text": "先说中枢。在大脑底部、两眼后方靠里的位置，有一小团组织叫**下丘脑**(hypothalamus)。它个头不大，管的事却又多又要命:体温、口渴、睡眠、多种激素……其中一项，就是**体重调控**。可以把它理解成身体的『体重恒温器』:就像墙上的空调恒温器盯着室温、偏了就自动开关机把温度拉回设定值，下丘脑也盯着你身上的体脂，一旦偏离它认定的水平，就自动出手把你拉回去。"
+  },
+  {
+   "type": "p",
+   "text": "它出手的方式，不是给你讲道理，而是直接拧动两个旋钮:一个是**食欲**(让你更饿、还是更不想吃)，一个是**代谢**(让你多烧一点、还是省着烧)。你以为『今天特别想吃』『最近莫名没劲、还怕冷』是心情或天气，很多时候，那是下丘脑在悄悄调旋钮。关键在于:这套调节发生在意识够不着的后台，你能感觉到的只是结果——饿、馋、乏、冷——却看不见那只拧旋钮的手。"
+  },
+  {
+   "type": "h2",
+   "text": "二、瘦素:脂肪发给大脑的「油量表读数」"
+  },
+  {
+   "type": "p",
+   "text": "恒温器要工作，得先有个温度计;下丘脑要调体重，也得先知道『现在身上到底有多少脂肪』。这个『脂肪传感器』的核心，是一种叫**瘦素(leptin)**的激素。瘦素的来源很妙:它不是别的器官分泌的，正是**脂肪组织自己**分泌的。你身上脂肪越多，血里的瘦素通常就越高;脂肪越少，瘦素越低。于是瘦素就成了一份实时报告——脂肪不停地通过它，向大脑汇报『油箱里还剩多少油』。"
+  },
+  {
+   "type": "p",
+   "text": "这就是为什么可以把这套系统叫做身体的**油量表(lipostat)**。lipo 是脂肪，stat 是恒定——合起来，就是一套『把脂肪维持在某个恒定水平』的机制。油量表的读数(瘦素)高，下丘脑判断油箱满、能量充足;读数低，下丘脑判断油箱见底、该省该补了。整套逻辑简单得像开车看油表:表高就放心开、甚至能开快点;表低就赶紧找加油站、顺便松开油门省着走。你不用时时刻刻惦记『还剩多少油』，那根指针替你惦记着。"
+  },
+  {
+   "type": "quote",
+   "original": "瘦素不是让你变瘦的药，而是脂肪写给大脑的一封信:油箱里还剩这么多。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "回路示意图",
+   "caption": "瘦素-下丘脑油量表回路:脂肪把储量报给大脑，大脑再拧动食欲与代谢两个旋钮",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"16\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"10\">下丘脑-瘦素回路 · 一个闭环</text><rect x=\"30\" y=\"118\" width=\"130\" height=\"64\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"95\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">脂肪组织</text><text x=\"95\" y=\"166\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10\">脂肪越多 → 瘦素越多</text><rect x=\"215\" y=\"28\" width=\"150\" height=\"60\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"290\" y=\"54\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">下丘脑</text><text x=\"290\" y=\"74\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10\">体重调控中枢</text><rect x=\"410\" y=\"116\" width=\"130\" height=\"66\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"475\" y=\"143\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">压食欲</text><text x=\"475\" y=\"165\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">放开代谢</text><rect x=\"215\" y=\"214\" width=\"150\" height=\"52\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"290\" y=\"245\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">体脂回落 → 瘦素回落</text><path d=\"M152 122 C210 92 200 64 213 60\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\"/><polygon points=\"213,60 201,56 204,68\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"150\" y=\"88\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"10\">瘦素(油量表读数)</text><path d=\"M366 78 C418 94 432 100 460 114\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.4\"/><polygon points=\"460,114 448,108 449,120\" style=\"fill:var(--ink-soft)\"/><path d=\"M462 176 C420 210 400 224 367 234\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.4\"/><polygon points=\"367,234 380,229 378,241\" style=\"fill:var(--ink-soft)\"/><path d=\"M213 234 C150 226 118 210 100 186\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.4\"/><polygon points=\"100,186 98,198 110,191\" style=\"fill:var(--ink-soft)\"/><text x=\"492\" y=\"210\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"10\">箍住体脂</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "注意，这是一个**闭环**:脂肪多→瘦素高→大脑压食欲、放代谢→体脂慢慢回落→瘦素随之回落→大脑再松手……如此往复，把体脂稳稳箍在一个区间里。正常情况下，这套回路悄无声息却极其尽责——它就是你根本不用天天称重、体重却常年八九不离十的原因。你以为是自己『没怎么胖』，其实是这块油量表在后台默默地一次次把你拨回原位。"
+  },
+  {
+   "type": "h2",
+   "text": "三、油量表读数一低，大脑就切进「要饿死了」模式"
+  },
+  {
+   "type": "p",
+   "text": "真正见识这套系统脾气的时刻，是你**主动少吃**的时候。你一节食，脂肪开始被消耗，瘦素随之下降;下丘脑读到油量表往下掉，得出的结论不是『主人在减肥，配合一下』，而是一句写进基因几百万年的老话:**『要闹饥荒了，快省!』**在漫长的进化史里，脂肪掉、瘦素降，几乎只对应一件事——没饭吃、要挨饿。大脑分不清你是在健身房里自愿轻断食，还是真的断了粮，它只按最保命的方式反应。"
+  },
+  {
+   "type": "p",
+   "text": "于是它把两个旋钮往相反方向猛拧:**食欲旋钮拧到最大**——你开始满脑子想吃的，闻到什么都香，越是不让吃越馋;**代谢旋钮拧到最小**——身体调低基础消耗，你怕冷、乏力、懒得动，能省一卡是一卡。一边拼命催你进食、一边拼命少烧，两头夹击。这就是几乎每个减肥的人都撞过的那堵墙:**体重掉到一半就卡住，稍一放松就反弹**——不是你突然变懒变馋、意志力崩了，而是油量表一低，大脑就切进了『饥荒模式』，在后台跟你反着来。(下一章会专门讲这个『调定点』和反弹是怎么回事。)"
+  },
+  {
+   "type": "quote",
+   "original": "大脑分不清你是在减肥，还是在挨饿——它只按『别饿死』那套本能反应。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "caption": "同一块油量表，两种读数、两套指令:满则放开烧，空则省着烧",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"20\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"10\">读数高低，决定大脑往哪个方向拧旋钮</text><rect x=\"24\" y=\"36\" width=\"248\" height=\"238\" rx=\"10\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"148\" y=\"66\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">瘦素高 · 油箱满</text><path d=\"M104 168 A44 44 0 0 1 192 168\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><text x=\"100\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"10\">E</text><text x=\"196\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"10\">F</text><line x1=\"148\" y1=\"168\" x2=\"184\" y2=\"138\" style=\"stroke:var(--ink)\" stroke-width=\"2\"/><circle cx=\"148\" cy=\"168\" r=\"4\" style=\"fill:var(--ink)\"/><text x=\"148\" y=\"216\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">食欲 ↓　代谢 ↑</text><text x=\"148\" y=\"246\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">少吃 · 放开烧</text><rect x=\"288\" y=\"36\" width=\"248\" height=\"238\" rx=\"10\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><text x=\"412\" y=\"66\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\">瘦素低 · 油箱空</text><path d=\"M368 168 A44 44 0 0 1 456 168\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><text x=\"364\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"10\">E</text><text x=\"460\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"10\">F</text><line x1=\"412\" y1=\"168\" x2=\"380\" y2=\"140\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><circle cx=\"412\" cy=\"168\" r=\"4\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"412\" y=\"216\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">食欲 ↑　代谢 ↓</text><text x=\"412\" y=\"246\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">多吃 · 省着烧(饥荒模式)</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "四、瘦素抵抗:油箱明明满了，表针却卡在「空」"
+  },
+  {
+   "type": "p",
+   "text": "讲到这，你可能会冒出一个疑问:那胖的人脂肪多、瘦素高、油量表读数满，大脑不就该自动压食欲、把人拉回去吗?为什么还会越来越胖?这正是全书最关键、也最反直觉的一环——"
+  },
+  {
+   "type": "pull",
+   "text": "瘦素抵抗(leptin resistance)。"
+  },
+  {
+   "type": "p",
+   "text": "测一测会发现，许多肥胖者血里的瘦素**不但不低，反而很高**(脂肪多，分泌自然多)。按理说这么高的读数，大脑早该判断『油箱爆满』、大幅压住食欲了。可现实是:大脑**读不到**这份读数。就像油量表的指针和油箱之间那根线出了问题——油箱是满的，仪表盘上的指针却死死卡在『E』(空)那一格。下丘脑看着那根卡住的空针，一口咬定『还缺油』，继续发出『多吃、少烧』的指令。人于是在脂肪已经很多的情况下，照样觉得饿、照样容易囤——不是嘴馋，是那块表读错了。"
+  },
+  {
+   "type": "quote",
+   "original": "瘦素抵抗，就像油箱是满的，油量表的针却卡在空档;大脑照着那根卡针，一路催你加油。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "机制示意图",
+   "caption": "瘦素抵抗:油箱其实是满的(瘦素很高)，信号却传不到大脑，表针卡在「空」",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"18\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"10\">瘦素抵抗 · 油箱满，表针却卡在「空」</text><rect x=\"40\" y=\"96\" width=\"92\" height=\"128\" rx=\"8\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"40\" y=\"104\" width=\"92\" height=\"120\" rx=\"6\" style=\"fill:var(--ink-faint)\"/><text x=\"86\" y=\"170\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\" font-size=\"13\">满</text><text x=\"86\" y=\"246\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10\">瘦素其实很高</text><line x1=\"134\" y1=\"150\" x2=\"216\" y2=\"150\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\"/><line x1=\"168\" y1=\"140\" x2=\"182\" y2=\"160\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><line x1=\"182\" y1=\"140\" x2=\"168\" y2=\"160\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"175\" y=\"130\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"10\">信号读不到</text><path d=\"M244 172 A48 48 0 0 1 340 172\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><text x=\"240\" y=\"188\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"10\">E</text><text x=\"344\" y=\"188\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"10\">F</text><line x1=\"292\" y1=\"172\" x2=\"256\" y2=\"146\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"2.4\"/><circle cx=\"292\" cy=\"172\" r=\"4\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"292\" y=\"210\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"11\">表针卡在「空」</text><line x1=\"348\" y1=\"150\" x2=\"396\" y2=\"150\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.4\"/><polygon points=\"396,150 384,145 384,155\" style=\"fill:var(--ink-soft)\"/><rect x=\"400\" y=\"116\" width=\"140\" height=\"70\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"470\" y=\"144\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">大脑:「还缺油」</text><text x=\"470\" y=\"167\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">继续催你吃</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "至于**为什么**会读不到，科学家还在研究，目前有几条线索:长期偏高的瘦素，可能让大脑相应的『接收器』变迟钝(有点像天天被大声吆喝、耳朵慢慢就充耳不闻);某些饮食(尤其是高糖、高度加工的食物)与低度炎症，可能干扰瘦素信号在下丘脑里的传递。这些是主流认识的大方向，具体环节仍有争议、仍在补细节——这一点要老实说清楚，别把还在研究中的机制讲成板上钉钉的定论。『油量表卡针』是个好用的比喻，但真实的线路比一根电线复杂得多。"
+  },
+  {
+   "type": "h2",
+   "text": "五、这意味着什么:很多减肥失败，是「表」坏了，不是「人」懒"
+  },
+  {
+   "type": "p",
+   "text": "把这套系统看明白，对减肥这件事的理解会整个翻个面。我们习惯把体重当成一道意志力的算术题:少吃多动、管住嘴迈开腿，瘦不下来就怪你不够自律。但下丘脑-瘦素这套回路说明:体重更像被一台后台程序托管着，而这台程序认死理——它只按油量表的读数干活，读数说缺油，它就催你吃、帮你囤，哪怕你正咬着牙节食。你和它，是在同一具身体里朝相反方向使劲。"
+  },
+  {
+   "type": "p",
+   "text": "对很多长期肥胖的人来说，问题恰恰出在这台程序『读数失灵』:油量表始终报『缺油』，于是大脑始终在跟他们的减肥意志对着干。看清这一点，不是给『管不住嘴』发一张免罪符——能改变的地方仍然有(后面几章会讲食物环境、睡眠、压力怎么搅动这套系统)——而是把矛头从『你这个人不行』，挪到『这套回路被现代环境搞乱了』。先看清对手是谁，比一味自责有用得多。"
+  },
+  {
+   "type": "figure",
+   "ftype": "收束图",
+   "caption": "同一条链:脂肪把储量报给大脑;表读得准，体重悄悄稳住;表卡住，就一直催你吃",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"18\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"10\">一句话收束 · 全看这块表读得准不准</text><rect x=\"24\" y=\"40\" width=\"120\" height=\"48\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"84\" y=\"70\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">脂肪组织</text><line x1=\"144\" y1=\"64\" x2=\"182\" y2=\"64\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.3\"/><polygon points=\"182,64 170,59 170,69\" style=\"fill:var(--ink-soft)\"/><rect x=\"184\" y=\"40\" width=\"140\" height=\"48\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\"/><text x=\"254\" y=\"70\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">瘦素 · 油量表</text><line x1=\"324\" y1=\"64\" x2=\"362\" y2=\"64\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.3\"/><polygon points=\"362,64 350,59 350,69\" style=\"fill:var(--ink-soft)\"/><rect x=\"364\" y=\"40\" width=\"120\" height=\"48\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"424\" y=\"70\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">下丘脑</text><path d=\"M424 88 C424 132 180 132 160 184\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"1.3\"/><polygon points=\"160,184 157,172 169,177\" style=\"fill:var(--ink-soft)\"/><path d=\"M424 88 C424 132 402 134 402 184\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.3\"/><polygon points=\"402,184 396,173 408,173\" style=\"fill:var(--cinnabar-pure)\"/><rect x=\"40\" y=\"186\" width=\"230\" height=\"70\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"155\" y=\"214\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">表读得准</text><text x=\"155\" y=\"238\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">体重悄悄稳在一个区间</text><rect x=\"290\" y=\"186\" width=\"230\" height=\"70\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"405\" y=\"214\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"13\">表卡住(瘦素抵抗)</text><text x=\"405\" y=\"238\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">始终报缺油 · 一直催你吃</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "六、这一章想让你记住的"
+  },
+  {
+   "type": "p",
+   "text": "收成几句话:体重有一套**自动调节回路**在后台管着，中枢是**下丘脑**;它靠脂肪分泌的**瘦素**当『油量表』,读数高就压食欲、放代谢，读数低就催食欲、省代谢。节食会让读数变低、逼大脑进入『饥荒模式』，这是减重容易反弹的一大原因;而**瘦素抵抗**让不少人的油量表始终卡在『空』,大脑于是一直催他们吃、帮他们囤。一句话:管你体重的，很大程度上不是你的决心，是这块表读得准不准。"
+  },
+  {
+   "type": "p",
+   "text": "最后照例说清分寸:以上是这本书(以及背后神经科学)对体重调节的主流讲法，用『油量表』作比是为了好懂，真实的回路比这复杂得多，不少细节学界仍在争论、仍在研究。它能帮你理解『为什么减肥这么难』，却**不构成任何医疗诊断或减重方案**——你身上的具体情况该怎么查、怎么办，请交给专业医生，而不是一篇读书笔记。(本文是对《饥饿的大脑》(Stephan Guyenet)第 5 章的读书转述。)"
+  }
+ ]
 }

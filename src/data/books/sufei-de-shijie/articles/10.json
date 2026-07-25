@@ -1,71 +1,70 @@
 {
-  "title": "弗洛伊德与存在主义:潜意识与自由的重负",
-  "subtitle": "先告诉你「你连自己心里的主人都不是」,再告诉你「所以你的每一个选择都算数」——二十世纪把人拆到最低,又把责任加到最满",
-  "centralIdea": "弗洛伊德完成了人类自尊的第三次降级:意识只是心灵冰山露出水面的一角,水面之下的欲望、创伤与冲动在暗处推着你走——你以为的「理性决定」,常常只是事后写的新闻稿。存在主义正面接住这个碎了一地的「人」:萨特说,没有上帝、没有预装的人性图纸,人先存在,再靠一次次选择把自己做出来——存在先于本质;自由因此不是礼物而是刑罚,把责任推给天性、处境或潜意识,都是「自欺」。这是哲学课的最后一站,也是苏菲越狱前的最后一次装备检查:一个知道自己被写定的角色,还谈得上选择吗?"
-  ,
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "哲学课走到二十世纪,只剩最后两讲。它们像一对反着拧的螺丝:第一讲把「自我」拆散——弗洛伊德告诉你,你心里住着不止一个你,拍板的那位常常不是你认识的那位;第二讲却把责任拧到最紧——萨特说,正因为没有任何现成的东西能定义你,**你做的每件事都在定义你,而且没有任何借口**。一边说你不是主人,一边说你全权负责,听起来矛盾,合起来恰是现代人的处境说明书。对苏菲来说,这两讲来得正是时候:她马上要在生日宴会上做一件她的「作者」没写进大纲的事。"
-    },
-    {
-      "type": "h2",
-      "text": "弗洛伊德:冰山下面有暗流"
-    },
-    {
-      "type": "p",
-      "text": "严格说,弗洛伊德不算哲学家,他是维也纳的神经科医生;贾德把他请进哲学史,因为他改写了「认识你自己」这道题的难度。诊室里的经验让他确信:**心灵像一座冰山,意识只是露出水面的一角**;水面之下是一大片你进不去的区域——潜意识,里面存着被压下去的欲望、羞于承认的念头、假装忘掉的创伤。压下去,不等于消失。它们会换上戏服回到台前:梦是最诚实的一场戏(白天不敢想的愿望,夜里化装上演);口误是后台的声音串进了台词——你「不小心」叫错的那个名字,往往一点都不小心;还有莫名的紧张、说不出缘由的讨厌、总在同一处跌倒的「巧合」。弗洛伊德把心灵画成三方角力:**本我**(生下来就有的那团欲望,只管「我要」)、**超我**(内化了的父母与社会,只管「不许」)、**自我**(夹在中间的可怜管家,负责在「我要」「不许」和「现实允许」之间找活路)。所谓成长,就是这位管家的执政史;所谓症状,常是某次镇压过狠留下的旧账。"
-    },
-    {
-      "type": "figure",
-      "ftype": "示意",
-      "svg": "<svg viewBox='0 0 560 330' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>心灵的冰山</text><line x1='40' y1='120' x2='520' y2='120' style='stroke:var(--azure);stroke-width:1.5;stroke-dasharray:6 4'/><text x='500' y='112' text-anchor='end' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>水面 = 意识的边界</text><polygon points='280,52 350,120 210,120' style='fill:none;stroke:var(--ink);stroke-width:1.6'/><text x='280' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>意识</text><polygon points='210,120 350,120 420,240 280,300 140,240' style='fill:none;stroke:var(--cinnabar);stroke-width:1.8'/><text x='280' y='168' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>潜意识</text><text x='280' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>被压抑的欲望 · 创伤 · 不敢想的念头</text><text x='280' y='222' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>不消失,只改道:梦 · 口误 · 症状</text><text x='280' y='258' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>水下的体积,远大于水上</text><text x='280' y='322' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>「理性的主人翁」是人类自尊的最后一块领地——弗洛伊德连这块也收走了</text></svg>",
-      "caption": "第三次降级:哥白尼收走了中心位置,达尔文收走了特制证书,弗洛伊德收走了「心里我说了算」。"
-    },
-    {
-      "type": "p",
-      "text": "该打的问号照打:弗洛伊德的理论魅力巨大,**科学成色却一直有争议**——梦是愿望的化装、症状源于压抑,这类命题很难设计出能证伪它的实验,你说「不对」,理论可以回答「你在抗拒,这正说明我对」;一套怎么都输不了的理论,在科学的账本上反而要扣分。他对女性心理的论断更是时代局限的重灾区。但两笔账要分开算:具体理论尽可存疑,**「人对自己心里的事所知甚少」这个大方向,已经成了现代人的常识**——今天你说「我可能有点回避」「这是我的应激反应」,用的都是他开辟的语言。对本书更要紧的是隐喻的对位:苏菲的世界里也有一个「水面之下」——**少校的手稿**。她生活中每一件解释不通的怪事,都是水下那只手搅动的暗流。精神分析教人从梦和口误里读出被隐藏的作者;苏菲做的正是同一件事,只是她要分析的「梦」,是她的整个人生。"
-    },
-    {
-      "type": "p",
-      "text": "冰山理论还有一个亮色的推论,贾德没有漏掉:**水下不只有淤泥,还有泉眼**。艺术家和诗人常常是最会跟潜意识打交道的人——灵感冒出来的时刻,像是水下有人递了张纸条上来;超现实主义者干脆把「不设防地写,让念头自己流」当成创作方法。艾伯特顺势教了苏菲一手:夜里似睡非睡之际,那些不受检查的画面与句子,谁都体验过——**通往潜意识的门每晚都虚掩着,区别只在于你敢不敢看**。这一小节在小说里另有妙用:如果少校也有潜意识,那么他笔下的世界里,会不会也有连作者自己都没察觉的漏洞?越狱的门缝,又宽了一线。"
-    },
-    {
-      "type": "h2",
-      "text": "存在主义:先存在,再定义"
-    },
-    {
-      "type": "p",
-      "text": "二十世纪中叶的巴黎,咖啡馆里坐着一群刚从战争里走出来的人。上帝的位子空了(尼采在上个世纪末已经宣布「上帝死了」——欧洲文化里那个担保一切意义的支点垮了),「历史必然进步」的许诺在战壕里烂掉了,连「人性本善/本恶」这类图纸也没人敢信了。萨特把这片废墟总结成一句地基级的话:**存在先于本质**。什么意思?一把裁纸刀,是先有图纸(用途、规格)再被造出来的——它的本质先于存在。传统观念里的人也一样:上帝按图纸造人,人性先于每个具体的人。萨特说:现在图纸没有了。**人是先被扔到世界上存在着,然后才通过一件一件的选择,把「自己是什么」做出来的**。你不是「本来就懦弱」所以逃避,你是在一次次逃避里把自己做成了懦弱的人;反过来也一样。没有预设的剧本,连「找借口」这条路都被堵死了。"
-    },
-    {
-      "type": "quote",
-      "original": "人是被判了自由的刑。",
-      "translation": "萨特的名言:自由不是你争取来的奖品,是你无法退掉的判决——不选择也是一种选择,你的每次行动都在替「人该是什么样」投票。"
-    },
-    {
-      "type": "p",
-      "text": "自由为什么是「刑」?因为它取消了所有卸责的窗口。把锅甩给天性(「我这人就这样」)、甩给处境(「我别无选择」)、甩给潜意识(「都是童年的错」)——萨特给这类操作起了个名字:**自欺**。他最爱举的例子是那位动作标准得过了头的咖啡馆侍者:他不是在做侍者,是在**扮演**「侍者」这个角色,把自己活成了一件有固定本质的东西,好躲开「我随时可以不这样」的眩晕。注意,存在主义并不否认弗洛伊德说的暗流,也不否认处境的真实——你没法选择出生的牌局,**但怎么打手里这副牌,签名的永远是你**。西蒙·波娃把同一把刀挥向了另一个方向:「女人不是生成的,而是形成的」——所谓「女人天生如何」,大半是社会一笔一笔写上去的剧本;而剧本,既然是写的,就可以改写。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对照",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>本质先于存在 vs 存在先于本质</text><rect x='36' y='56' width='236' height='168' rx='10' style='fill:none;stroke:var(--line);stroke-width:1.4'/><text x='154' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>裁纸刀的活法</text><text x='154' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>先有图纸(用途已定)</text><text x='154' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>再被造出来</text><text x='154' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>它永远不必问「我是谁」</text><text x='154' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>传统观念里的「人性」同款</text><rect x='288' y='56' width='236' height='168' rx='10' style='fill:none;stroke:var(--cinnabar);stroke-width:1.6'/><text x='406' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar)'>人的活法(萨特版)</text><text x='406' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>先被扔进世界(没有图纸)</text><text x='406' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>再用选择一笔笔画出自己</text><text x='406' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>「我是谁」永远是进行时</text><text x='406' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>代价:无处可推的责任</text><text x='280' y='258' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>而苏菲的处境最拧巴:她明明是「有图纸的」——图纸在少校手里</text><text x='280' y='282' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>一个被写定的角色,还能不能活出「存在先于本质」?全书结局就是答案</text></svg>",
-      "caption": "萨特的划界:东西有本质,人没有——人是唯一要为「自己是什么」负责的存在。"
-    },
-    {
-      "type": "h2",
-      "text": "结账:两讲合起来才是一副装备"
-    },
-    {
-      "type": "p",
-      "text": "先算书的账。这一章是全书赶得最急的一段:尼采只分到几个段落,加缪与「荒谬」一笔带过,维特根斯坦和整个分析哲学传统——二十世纪学院哲学的半壁江山——几乎没上场;贾德选择用存在主义给哲学史收尾,是**为小说服务的取舍**,不是二十世纪哲学的全貌,这一点要心里有数。再看这份取舍换来了什么:弗洛伊德与萨特两讲,恰好是苏菲越狱前的最后装备——**弗洛伊德教她承认暗流的存在**(她的人生确实被水面下的一只手推着),**萨特教她拒绝把暗流当借口**(被推着,不等于可以不选)。一个知道自己被写定的角色,还谈得上自由吗?萨特的框架给出了苏菲式的答案:处境不由你挑,**对处境的回应方式由你挑**——哪怕全部剧本都是别人写的,「不肯只当剧本人物」这个姿态本身,没人替你写得出来。下一章,她动手了。"
-    },
-    {
-      "type": "figure",
-      "ftype": "金句卡",
-      "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><rect x='16' y='16' width='528' height='218' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='280' cy='54' r='4' style='fill:var(--cinnabar)'/><line x1='200' y1='54' x2='252' y2='54' style='stroke:var(--cinnabar);stroke-width:1'/><line x1='308' y1='54' x2='360' y2='54' style='stroke:var(--cinnabar);stroke-width:1'/><text x='280' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:20px;font-weight:bold;fill:var(--ink)'>牌不是你发的,</text><text x='280' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:20px;font-weight:bold;fill:var(--ink)'>但每一手都签着你的名。</text><text x='280' y='200' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink-soft)'>——存在主义处境观的通俗概括</text><text x='280' y='224' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>弗洛伊德解释你为什么想打这张牌;萨特提醒你,打出去的仍是你。</text></svg>",
-      "caption": "二十世纪的两讲合成一句话:看清推着你的力,然后为你的回应负责——这也是苏菲带进最后一章的全部行李。"
-    }
-  ]
+ "title": "弗洛伊德与存在主义:潜意识与自由的重负",
+ "subtitle": "先告诉你「你连自己心里的主人都不是」,再告诉你「所以你的每一个选择都算数」——二十世纪把人拆到最低,又把责任加到最满",
+ "centralIdea": "弗洛伊德完成了人类自尊的第三次降级:意识只是心灵冰山露出水面的一角,水面之下的欲望、创伤与冲动在暗处推着你走——你以为的「理性决定」,常常只是事后写的新闻稿。存在主义正面接住这个碎了一地的「人」:萨特说,没有上帝、没有预装的人性图纸,人先存在,再靠一次次选择把自己做出来——存在先于本质;自由因此不是礼物而是刑罚,把责任推给天性、处境或潜意识,都是「自欺」。这是哲学课的最后一站,也是苏菲越狱前的最后一次装备检查:一个知道自己被写定的角色,还谈得上选择吗?",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "哲学课走到二十世纪,只剩最后两讲。它们像一对反着拧的螺丝:第一讲把「自我」拆散——弗洛伊德告诉你,你心里住着不止一个你,拍板的那位常常不是你认识的那位;第二讲却把责任拧到最紧——萨特说,正因为没有任何现成的东西能定义你,**你做的每件事都在定义你,而且没有任何借口**。一边说你不是主人,一边说你全权负责,听起来矛盾,合起来恰是现代人的处境说明书。对苏菲来说,这两讲来得正是时候:她马上要在生日宴会上做一件她的「作者」没写进大纲的事。"
+  },
+  {
+   "type": "h2",
+   "text": "弗洛伊德:冰山下面有暗流"
+  },
+  {
+   "type": "p",
+   "text": "严格说,弗洛伊德不算哲学家,他是维也纳的神经科医生;贾德把他请进哲学史,因为他改写了「认识你自己」这道题的难度。诊室里的经验让他确信:**心灵像一座冰山,意识只是露出水面的一角**;水面之下是一大片你进不去的区域——潜意识,里面存着被压下去的欲望、羞于承认的念头、假装忘掉的创伤。压下去,不等于消失。它们会换上戏服回到台前:梦是最诚实的一场戏(白天不敢想的愿望,夜里化装上演);口误是后台的声音串进了台词——你「不小心」叫错的那个名字,往往一点都不小心;还有莫名的紧张、说不出缘由的讨厌、总在同一处跌倒的「巧合」。弗洛伊德把心灵画成三方角力:**本我**(生下来就有的那团欲望,只管「我要」)、**超我**(内化了的父母与社会,只管「不许」)、**自我**(夹在中间的可怜管家,负责在「我要」「不许」和「现实允许」之间找活路)。所谓成长,就是这位管家的执政史;所谓症状,常是某次镇压过狠留下的旧账。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意",
+   "svg": "<svg viewBox='0 0 560 330' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>心灵的冰山</text><line x1='40' y1='120' x2='520' y2='120' style='stroke:var(--azure);stroke-width:1.5;stroke-dasharray:6 4'/><text x='500' y='112' text-anchor='end' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>水面 = 意识的边界</text><polygon points='280,52 350,120 210,120' style='fill:none;stroke:var(--ink);stroke-width:1.6'/><text x='280' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>意识</text><polygon points='210,120 350,120 420,240 280,300 140,240' style='fill:none;stroke:var(--cinnabar);stroke-width:1.8'/><text x='280' y='168' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>潜意识</text><text x='280' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>被压抑的欲望 · 创伤 · 不敢想的念头</text><text x='280' y='222' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>不消失,只改道:梦 · 口误 · 症状</text><text x='280' y='258' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>水下的体积,远大于水上</text><text x='280' y='322' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>「理性的主人翁」是人类自尊的最后一块领地——弗洛伊德连这块也收走了</text></svg>",
+   "caption": "第三次降级:哥白尼收走了中心位置,达尔文收走了特制证书,弗洛伊德收走了「心里我说了算」。"
+  },
+  {
+   "type": "p",
+   "text": "该打的问号照打:弗洛伊德的理论魅力巨大,**科学成色却一直有争议**——梦是愿望的化装、症状源于压抑,这类命题很难设计出能证伪它的实验,你说「不对」,理论可以回答「你在抗拒,这正说明我对」;一套怎么都输不了的理论,在科学的账本上反而要扣分。他对女性心理的论断更是时代局限的重灾区。但两笔账要分开算:具体理论尽可存疑,**「人对自己心里的事所知甚少」这个大方向,已经成了现代人的常识**——今天你说「我可能有点回避」「这是我的应激反应」,用的都是他开辟的语言。对本书更要紧的是隐喻的对位:苏菲的世界里也有一个「水面之下」——**少校的手稿**。她生活中每一件解释不通的怪事,都是水下那只手搅动的暗流。精神分析教人从梦和口误里读出被隐藏的作者;苏菲做的正是同一件事,只是她要分析的「梦」,是她的整个人生。"
+  },
+  {
+   "type": "p",
+   "text": "冰山理论还有一个亮色的推论,贾德没有漏掉:**水下不只有淤泥,还有泉眼**。艺术家和诗人常常是最会跟潜意识打交道的人——灵感冒出来的时刻,像是水下有人递了张纸条上来;超现实主义者干脆把「不设防地写,让念头自己流」当成创作方法。艾伯特顺势教了苏菲一手:夜里似睡非睡之际,那些不受检查的画面与句子,谁都体验过——**通往潜意识的门每晚都虚掩着,区别只在于你敢不敢看**。这一小节在小说里另有妙用:如果少校也有潜意识,那么他笔下的世界里,会不会也有连作者自己都没察觉的漏洞?越狱的门缝,又宽了一线。"
+  },
+  {
+   "type": "h2",
+   "text": "存在主义:先存在,再定义"
+  },
+  {
+   "type": "p",
+   "text": "二十世纪中叶的巴黎,咖啡馆里坐着一群刚从战争里走出来的人。上帝的位子空了(尼采在上个世纪末已经宣布「上帝死了」——欧洲文化里那个担保一切意义的支点垮了),「历史必然进步」的许诺在战壕里烂掉了,连「人性本善/本恶」这类图纸也没人敢信了。萨特把这片废墟总结成一句地基级的话:**存在先于本质**。什么意思?一把裁纸刀,是先有图纸(用途、规格)再被造出来的——它的本质先于存在。传统观念里的人也一样:上帝按图纸造人,人性先于每个具体的人。萨特说:现在图纸没有了。**人是先被扔到世界上存在着,然后才通过一件一件的选择,把「自己是什么」做出来的**。你不是「本来就懦弱」所以逃避,你是在一次次逃避里把自己做成了懦弱的人;反过来也一样。没有预设的剧本,连「找借口」这条路都被堵死了。"
+  },
+  {
+   "type": "quote",
+   "original": "人是被判了自由的刑。",
+   "translation": "萨特的名言:自由不是你争取来的奖品,是你无法退掉的判决——不选择也是一种选择,你的每次行动都在替「人该是什么样」投票。"
+  },
+  {
+   "type": "p",
+   "text": "自由为什么是「刑」?因为它取消了所有卸责的窗口。把锅甩给天性(「我这人就这样」)、甩给处境(「我别无选择」)、甩给潜意识(「都是童年的错」)——萨特给这类操作起了个名字:**自欺**。他最爱举的例子是那位动作标准得过了头的咖啡馆侍者:他不是在做侍者,是在**扮演**「侍者」这个角色,把自己活成了一件有固定本质的东西,好躲开「我随时可以不这样」的眩晕。注意,存在主义并不否认弗洛伊德说的暗流,也不否认处境的真实——你没法选择出生的牌局,**但怎么打手里这副牌,签名的永远是你**。西蒙·波娃把同一把刀挥向了另一个方向:「女人不是生成的,而是形成的」——所谓「女人天生如何」,大半是社会一笔一笔写上去的剧本;而剧本,既然是写的,就可以改写。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>本质先于存在 vs 存在先于本质</text><rect x='36' y='56' width='236' height='168' rx='10' style='fill:none;stroke:var(--line);stroke-width:1.4'/><text x='154' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>裁纸刀的活法</text><text x='154' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>先有图纸(用途已定)</text><text x='154' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>再被造出来</text><text x='154' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>它永远不必问「我是谁」</text><text x='154' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>传统观念里的「人性」同款</text><rect x='288' y='56' width='236' height='168' rx='10' style='fill:none;stroke:var(--cinnabar);stroke-width:1.6'/><text x='406' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar)'>人的活法(萨特版)</text><text x='406' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>先被扔进世界(没有图纸)</text><text x='406' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>再用选择一笔笔画出自己</text><text x='406' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>「我是谁」永远是进行时</text><text x='406' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>代价:无处可推的责任</text><text x='280' y='258' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>而苏菲的处境最拧巴:她明明是「有图纸的」——图纸在少校手里</text><text x='280' y='282' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>一个被写定的角色,还能不能活出「存在先于本质」?全书结局就是答案</text></svg>",
+   "caption": "萨特的划界:东西有本质,人没有——人是唯一要为「自己是什么」负责的存在。"
+  },
+  {
+   "type": "h2",
+   "text": "结账:两讲合起来才是一副装备"
+  },
+  {
+   "type": "p",
+   "text": "先算书的账。这一章是全书赶得最急的一段:尼采只分到几个段落,加缪与「荒谬」一笔带过,维特根斯坦和整个分析哲学传统——二十世纪学院哲学的半壁江山——几乎没上场;贾德选择用存在主义给哲学史收尾,是**为小说服务的取舍**,不是二十世纪哲学的全貌,这一点要心里有数。再看这份取舍换来了什么:弗洛伊德与萨特两讲,恰好是苏菲越狱前的最后装备——**弗洛伊德教她承认暗流的存在**(她的人生确实被水面下的一只手推着),**萨特教她拒绝把暗流当借口**(被推着,不等于可以不选)。一个知道自己被写定的角色,还谈得上自由吗?萨特的框架给出了苏菲式的答案:处境不由你挑,**对处境的回应方式由你挑**——哪怕全部剧本都是别人写的,「不肯只当剧本人物」这个姿态本身,没人替你写得出来。下一章,她动手了。"
+  },
+  {
+   "type": "figure",
+   "ftype": "金句卡",
+   "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><rect x='16' y='16' width='528' height='218' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='280' cy='54' r='4' style='fill:var(--cinnabar)'/><line x1='200' y1='54' x2='252' y2='54' style='stroke:var(--cinnabar);stroke-width:1'/><line x1='308' y1='54' x2='360' y2='54' style='stroke:var(--cinnabar);stroke-width:1'/><text x='280' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:20px;font-weight:bold;fill:var(--ink)'>牌不是你发的,</text><text x='280' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:20px;font-weight:bold;fill:var(--ink)'>但每一手都签着你的名。</text><text x='280' y='200' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink-soft)'>——存在主义处境观的通俗概括</text><text x='280' y='224' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>弗洛伊德解释你为什么想打这张牌;萨特提醒你,打出去的仍是你。</text></svg>",
+   "caption": "二十世纪的两讲合成一句话:看清推着你的力,然后为你的回应负责——这也是苏菲带进最后一章的全部行李。"
+  }
+ ]
 }

@@ -1,64 +1,241 @@
 {
-  "title": "白话《乌合之众》· 全书总览",
-  "subtitle": "一篇文章读懂勒庞：群体心理的开山之作，与它必须被点破的偏见",
-  "centralIdea": "勒庞的核心论断是：个人一旦融入群体，理性退场、情绪接管——变得冲动、轻信、极端，而领袖靠断言、重复、传染而非讲理来驱动这台情绪机器。此书是群体心理学、宣传学与现代公关的奠基文本，弗洛伊德专书回应、伯内斯直接引用。但它几乎没有一次实证研究，还夹带十九世纪的性别与种族伪科学，当代社会认同理论已大幅修正「群体＝退化暴民」的模型。读它，是为了识破裹挟与话术，而不是照单全收，更不是学着操控别人。",
-  "featured": true,
-  "hero": {
-    "badge": "全书 · 核心",
-    "headline": "人一进群体，就容易换一副脑子——看穿这一点的书，自己也得被你看穿。",
-    "tagline": "现代群体心理学的起点，也是一面需要先擦干净、再拿来用的镜子。"
+ "title": "白话《乌合之众》· 全书总览",
+ "subtitle": "一篇文章读懂勒庞：群体心理的开山之作，与它必须被点破的偏见",
+ "centralIdea": "勒庞的核心论断是：个人一旦融入群体，理性退场、情绪接管——变得冲动、轻信、极端，而领袖靠断言、重复、传染而非讲理来驱动这台情绪机器。此书是群体心理学、宣传学与现代公关的奠基文本，弗洛伊德专书回应、伯内斯直接引用。但它几乎没有一次实证研究，还夹带十九世纪的性别与种族伪科学，当代社会认同理论已大幅修正「群体＝退化暴民」的模型。读它，是为了识破裹挟与话术，而不是照单全收，更不是学着操控别人。",
+ "featured": true,
+ "hero": {
+  "badge": "全书 · 核心",
+  "headline": "人一进群体，就容易换一副脑子——看穿这一点的书，自己也得被你看穿。",
+  "tagline": "现代群体心理学的起点，也是一面需要先擦干净、再拿来用的镜子。"
+ },
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "你多半见过这样的场面：平时温文尔雅的同事，一进某个群聊就跟人吵得面红耳赤；股市连涨三天，连从不理财的亲戚都借钱杀了进去；辟谣的帖子写得再扎实，转发量也不到谣言的零头。一个人明明不傻，怎么一扎堆就容易犯傻？一百三十年前，一个法国人把这件事写成了一本小册子，中文书名后来被译得极狠——《乌合之众》。它是现代群体心理学的开山之作，也是一本毛病不少、必须带着警惕读的书。这篇文章带你把全书三卷串成一条线读完，最后再告诉你：它哪里依然锋利，哪里已经过时，甚至错得离谱。"
   },
-  "blocks": [
-    { "type": "lead", "text": "你多半见过这样的场面：平时温文尔雅的同事，一进某个群聊就跟人吵得面红耳赤；股市连涨三天，连从不理财的亲戚都借钱杀了进去；辟谣的帖子写得再扎实，转发量也不到谣言的零头。一个人明明不傻，怎么一扎堆就容易犯傻？一百三十年前，一个法国人把这件事写成了一本小册子，中文书名后来被译得极狠——《乌合之众》。它是现代群体心理学的开山之作，也是一本毛病不少、必须带着警惕读的书。这篇文章带你把全书三卷串成一条线读完，最后再告诉你：它哪里依然锋利，哪里已经过时，甚至错得离谱。" },
-    { "type": "h2", "text": "一个被广场吓到的时代，一本焦虑催生的书" },
-    { "type": "p", "text": "先看这本书是从什么土壤里长出来的。作者古斯塔夫·勒庞（Gustave Le Bon，1841–1931），学医出身，却没走学院派的路，一辈子在体制外写书，天文、地理、人类学都敢碰，是当时法国有名的畅销书作者。1895 年他出版《乌合之众：大众心理研究》，一炮而红，很快被译成十几种语言，直到今天还在加印。" },
-    { "type": "p", "text": "但更关键的是时代。勒庞身后站着两场让整个法国精英阶层做噩梦的大事：**1789 年开始的法国大革命**——广场上的人群把国王送上断头台，随后革命自己也吞噬了无数革命者；以及他亲眼见证的 **1871 年巴黎公社**——巴黎市民武装起义，两个月后被血腥镇压，整座城市尸横街头。再加上十九世纪末工人运动、社会主义思潮、普选权扩张一齐涌来，「群众」第一次成了政治舞台的主角。旧秩序里的读书人看着这一切，心里只有一个问题：**这股力量到底是什么？它讲不讲道理？**" },
-    { "type": "p", "text": "所以要先给你打个底：这本书既是冷静的观察，也是焦虑的产物。勒庞是站在「害怕群众的旧精英」这一边打量群众的，他的很多判断里混着那个时代的傲慢与偏见——这一点我们文末细算。但也正因为他不端学院架子，这本书写得**极其好读、极其敢下结论**，句句像格言。这既是它流传百年的原因，也是它最大的隐患：**好读和正确，是两回事。**" },
-    { "type": "figure", "ftype": "structure", "svg": "<svg viewBox='0 0 560 240' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' font-size='15' font-weight='bold' style='fill:var(--ink);font-family:var(--font-serif)'>《乌合之众》三卷一条线</text><rect x='14' y='44' width='160' height='148' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='94' y='68' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>第一卷 · 群体心理</text><line x1='32' y1='78' x2='156' y2='78' style='stroke:var(--line);stroke-width:1'/><text x='94' y='100' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>一般特征</text><text x='94' y='122' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>感情与道德观</text><text x='94' y='144' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>观念·推理·想象力</text><text x='94' y='166' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>宗教式的信仰</text><text x='94' y='216' text-anchor='middle' font-size='11.5' style='fill:var(--azure);font-family:var(--font-serif)'>群体是什么</text><line x1='177' y1='118' x2='190' y2='118' style='stroke:var(--ink-faint);stroke-width:1.6'/><polygon points='190,113 199,118 190,123' style='fill:var(--ink-faint)'/><rect x='200' y='44' width='160' height='148' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='280' y='68' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>第二卷 · 意见与信念</text><line x1='218' y1='78' x2='342' y2='78' style='stroke:var(--line);stroke-width:1'/><text x='280' y='100' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>间接因素（土壤）</text><text x='280' y='122' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>直接因素（火花）</text><text x='280' y='144' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>领袖与说服术</text><text x='280' y='166' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>信念的变化范围</text><text x='280' y='216' text-anchor='middle' font-size='11.5' style='fill:var(--azure);font-family:var(--font-serif)'>想法怎么灌进去</text><line x1='363' y1='118' x2='376' y2='118' style='stroke:var(--ink-faint);stroke-width:1.6'/><polygon points='376,113 385,118 376,123' style='fill:var(--ink-faint)'/><rect x='386' y='44' width='160' height='148' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='466' y='68' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>第三卷 · 群体的分类</text><line x1='404' y1='78' x2='528' y2='78' style='stroke:var(--line);stroke-width:1'/><text x='466' y='100' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>犯罪群体</text><text x='466' y='122' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>陪审团</text><text x='466' y='144' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>选民群体</text><text x='466' y='166' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>议会</text><text x='466' y='216' text-anchor='middle' font-size='11.5' style='fill:var(--azure);font-family:var(--font-serif)'>各类群体什么样</text></svg>", "caption": "全书三卷一条主线：群体是什么 → 想法怎么灌进去 → 各类群体什么样" },
-    { "type": "h2", "text": "核心论点：人一进群体，就像被催眠了" },
-    { "type": "p", "text": "全书第一卷回答「群体是什么」。勒庞开篇先立了个概念：他说的群体（crowd），不是随便一堆人。地铁里挤着的一车厢人，各想各的心事，不算；但只要一件事把这些人的**注意力和情绪拧到同一个方向**——比如一声「着火了」，或一个共同的口号——他们就瞬间变成他所说的「心理群体」：千百个脑子，暂时像一个脑子一样运转。他称之为「群体心理统一律」。按这个定义，今天一个热搜话题下情绪汹涌的几十万网民完全符合——**广场不必是物理的。**" },
-    { "type": "p", "text": "那这个「合成大脑」是什么水平？勒庞的回答毫不客气：比组成它的每个人都低。他给了三个机制。**第一是匿名**：人一淹没进人群，「法不责众」的感觉就来了，平时靠「怕担责任」拴住的那根缰绳松了。**第二是传染**：情绪在人群里像病毒，一个人喊，十个人跟着喊，愤怒、恐慌、狂热都会指数级放大——你在演唱会和球场体验过它的良性版本。**第三是暗示**：勒庞借用当时最时髦的催眠术做比喻，说群体中的个人像被催眠的人，批判力下线，别人塞什么就信什么。" },
-    { "type": "quote", "original": "孤立的他可能是个有教养的个人，在群体中他却成了野蛮人。", "translation": "一个人独处时讲文明、讲逻辑；可一旦淹没进人群，克制松开、本能上台，行事全凭冲动。这是全书最著名的一笔。" },
-    { "type": "p", "text": "于是群体有了一张画像：**冲动、易变、急躁**——今天捧你上天，明天踩你入地；**轻信**——不核实、只凭联想，谣言在群体里以光速传播；**情绪夸张而简单化**——没有「有点不满」，只有「血海深仇」，没有「部分有理」，只有「非黑即白」；**偏执而专横**——容不下讨论，怀疑就是背叛。至于智力，勒庞留下了被引用一百多年的一句判断：" },
-    { "type": "quote", "original": "群体中累加的只有愚蠢，而不是天生的智慧。", "translation": "一群聪明人凑在一起，叠加的往往不是各自的聪明，而是共同的偏见与情绪；群体表现出的智力水平，常常低于其中个体的平均值。" },
-    { "type": "p", "text": "把这张画像对着今天的屏幕看看，会有点脊背发凉：一条未经核实的爆料，两小时冲上热搜第一——**轻信**；评论区从「求真相」到网暴当事人只要半天——**冲动与专横**；剧情反转之后，昨天喊打喊杀的人一哄而散，没有一个道歉——**易变**；至于「抢盐」「抢板蓝根」式的集体恐慌，每隔几年准时上演一轮，参与者单拎出来问，个个都说「我也知道未必有用，但大家都在抢」。勒庞若能刷手机，大概会淡淡地说：这些人，我 1895 年就写过了。" },
-    { "type": "p", "text": "不过有个细节，常被断章取义的人漏掉：勒庞并没有说群体只会作恶。他专门讲过，群体的道德是**两极化**的——它可以比个人更残暴，也可以比个人更英勇、更慷慨：平时斤斤计较的小市民，在群体激情里可以舍身赴死。群体是情绪的放大器，放大恶，也放大牺牲精神。**它不是更坏，是更极端。**这个相对公允的观察，反而是全书最值得留下的部分之一。" },
-    { "type": "figure", "ftype": "transform", "svg": "<svg viewBox='0 0 560 232' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--ink);font-family:var(--font-serif)'>一进群体，像被催眠：三个机制</text><rect x='20' y='44' width='200' height='140' rx='10' style='fill:none;stroke:var(--azure);stroke-width:1.5'/><text x='120' y='68' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--azure);font-family:var(--font-serif)'>独立的个人</text><line x1='44' y1='78' x2='196' y2='78' style='stroke:var(--line);stroke-width:1'/><text x='120' y='102' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>有名有姓 · 怕担责任</text><text x='120' y='126' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>权衡利弊 · 讲点逻辑</text><text x='120' y='150' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>情绪有刹车</text><text x='280' y='102' text-anchor='middle' font-size='11' style='fill:var(--ink);font-family:var(--font-serif)'>匿名 · 传染 · 暗示</text><line x1='232' y1='118' x2='316' y2='118' style='stroke:var(--ink-faint);stroke-width:1.8'/><polygon points='316,112 328,118 316,124' style='fill:var(--ink-faint)'/><text x='280' y='140' text-anchor='middle' font-size='10.5' style='fill:var(--ink-faint);font-family:var(--font-serif)'>像进了催眠状态</text><rect x='340' y='44' width='200' height='140' rx='10' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='440' y='68' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>群体中的他</text><line x1='364' y1='78' x2='516' y2='78' style='stroke:var(--line);stroke-width:1'/><text x='440' y='102' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>匿名 · 法不责众</text><text x='440' y='126' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>传染 · 情绪指数放大</text><text x='440' y='150' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>暗示 · 批判力下线</text><text x='280' y='216' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint);font-family:var(--font-serif)'>勒庞的补充：群体不是必然更坏，而是更极端——放大恶，也放大英勇</text></svg>", "caption": "匿名、传染、暗示：勒庞笔下把「个人」变成「群体人」的三个机制" },
-    { "type": "h2", "text": "群体不认逻辑，只认画面" },
-    { "type": "p", "text": "第一卷后半部分讲群体怎么「思考」。勒庞的答案是：基本不思考，至少不按逻辑思考。一个观念想进入群体的脑子，必须先做减法：**砍掉所有前提、条件和复杂性，压缩成一句斩钉截铁的口号、一个鲜明的形象。**「自由、平等、博爱」能动员千万人，不是因为大家研究过政治哲学，而是因为这六个字像旗帜一样简单、响亮、自带情绪。" },
-    { "type": "p", "text": "群体的「推理」也不是推理，是**形象的串联**：两个画面挨在一起，就当它们有因果。而真正驱动群体的是**想象力**——一个戏剧性的画面，胜过一千页统计报表。勒庞举的例子放今天依然刺眼：一场大海难淹死几百人，举国哀恸；而同样这些年里，疾病与事故悄悄带走的人命多出百倍，却无人动容。**能被看见的、有画面的、有主角的悲剧才「存在」；统计数字没有脸，所以不存在。**想想「具体的一只被虐的猫」和「抽象的一万名受灾者」在热搜上的待遇差，你就明白他在说什么。" },
-    { "type": "quote", "original": "掌握了影响群体想象力的艺术，就掌握了统治他们的艺术。", "translation": "谁能给群众提供画面、故事和戏剧性，谁就能引导他们。勒庞说，历代能驱动大众的强人，无一不是操纵想象力的高手。" },
-    { "type": "p", "text": "顺着这条线，勒庞又给出一个很锋利的观察：群体不管信什么，都会**信成宗教的样子**——把对象奉为神明，盲目服从，狂热排他，随时准备为信仰献身，把怀疑者当异端。对象可以是神，也可以是领袖、主义、明星，甚至一支股票。**当你看到一群人容不得任何人说他们的偶像半句不好时，按勒庞的说法，你看到的不是喜爱，是宗教。**" },
-    { "type": "h2", "text": "意见与信念，是怎么被灌进去的" },
-    { "type": "p", "text": "第二卷从「群体是什么」转向「群体的想法从哪来」。勒庞把因素分成两层。**间接因素**是长期打底的：传统、时间、政治与社会制度、教育，还有他放在第一位的「种族」——这里必须立刻打个红灯：勒庞所谓「种族灵魂」「种族等级」，是十九世纪流行、如今已被遗传学和人类学**彻底推翻的伪科学**，我们在文末专门批它。刨去这块坏地基，他讲的其余部分倒不难懂：一代代人积累的成见与习惯，构成了群体接受新观念的「土壤」——什么种子能发芽，土壤早就预定了大半。" },
-    { "type": "p", "text": "**直接因素**则是临门一脚：形象、词语和套话、幻觉、经验。他对「词语魔力」的分析尤其精彩：同一件事，换个名字，群体的接受度天差地别——**词语像按钮，按下去，联想和情绪自动涌出，至于按钮后面接的是什么，没人细看。**所以历史上高明的操盘手从不硬碰群体的成见，只给旧事物换新名字。至于理性？勒庞冷冷地说：在群体那里，理性几乎从来不是情绪的对手，**从来没有哪个群体是被三段论说服的。**" },
-    { "type": "p", "text": "间接因素里还有一段，今天的读者读了多半会心一笑：勒庞用整整一节骂当时法国的教育。他说填鸭式的应试教育让年轻人从课本到考试空转多年，既没学会观察世界，也没学会动手做事，只批量生产心怀不满、又眼高手低的「文凭无产者」——而这些人，恰恰是群体运动最好的燃料。公平地说，这个判断里有他保守立场的私货（他并不乐见平民靠教育向上流动），但「教育若只剩应试，就是在给社会攒火药」这层观察，放在任何一个内卷的时代读，都扎心。" },
-    { "type": "p", "text": "这一卷还有个容易被忽略的亮点：勒庞区分了**牢固的普遍信念**（一个文明底层的宗教与价值观，百年不移，动它就是文明地震）和**多变的表层意见**（随新闻起落、朝三暮四）。他还注意到：报刊越发达、信息越快，表层意见就越碎、越善变，公众今天为一事沸腾，明天就忘。写下这话时是 1895 年——把「报刊」换成「热搜」，**这几乎是对社交媒体时代的精准预言。**" },
-    { "type": "h2", "text": "领袖的三板斧：断言、重复、传染" },
-    { "type": "p", "text": "群体既然不认逻辑，那谁在给群体装观念？勒庞的答案是**领袖**。他笔下的领袖画像很反直觉：通常不是最聪明、想得最深的人——想得深的人顾虑多、下不了狠手——而是**意志最偏执、信念最狂热的行动派**。领袖自己往往先被某个观念「催眠」，然后那种不容置疑的确信，本身就构成催眠般的感染力。群体不追随论点，**群体追随确信**。" },
-    { "type": "p", "text": "怎么把观念钉进群体的脑子？勒庞总结了三板斧，这三个词值得抄下来贴在屏幕边上。**断言**：不解释、不论证、不留余地，直接下结论——「XX 就是最好的」「不转不是好人」，越简洁越武断，越有效。**重复**：同一句话翻来覆去地说，说到它渗进你的潜意识，让你误以为那是自己的判断——广告业的命根子就在这里。**传染**：前两步点着火之后，情绪自己会人传人，像流行病一样铺开，不需要再推。" },
-    { "type": "p", "text": "三板斧之外还有个放大器：**威望**（prestige）。头衔、财富、名气、胜利战绩，都让同一句话的分量翻倍——同一个观点，无名之辈说是妄言，大人物说是金句。但勒庞补了狠狠一刀：威望靠成功续命，**一旦失败，群体反噬的速度和当初膜拜的热情成正比**——昨天的神，今天被拖下神坛踩进土里。看看那些一夜塌房的偶像与大 V，这一页他一百多年前就写好了。" },
-    { "type": "figure", "ftype": "method", "svg": "<svg viewBox='0 0 560 240' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--ink);font-family:var(--font-serif)'>说服群体，不靠讲理：三板斧与一个放大器</text><rect x='20' y='42' width='150' height='92' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='95' y='70' text-anchor='middle' font-size='15' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>断言</text><text x='95' y='94' text-anchor='middle' font-size='11' style='fill:var(--ink-soft);font-family:var(--font-serif)'>不解释、不论证</text><text x='95' y='114' text-anchor='middle' font-size='11' style='fill:var(--ink-soft);font-family:var(--font-serif)'>结论越武断越有效</text><line x1='175' y1='88' x2='192' y2='88' style='stroke:var(--ink-faint);stroke-width:1.6'/><polygon points='192,83 200,88 192,93' style='fill:var(--ink-faint)'/><rect x='205' y='42' width='150' height='92' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='280' y='70' text-anchor='middle' font-size='15' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>重复</text><text x='280' y='94' text-anchor='middle' font-size='11' style='fill:var(--ink-soft);font-family:var(--font-serif)'>翻来覆去地说</text><text x='280' y='114' text-anchor='middle' font-size='11' style='fill:var(--ink-soft);font-family:var(--font-serif)'>假话说千遍像常识</text><line x1='360' y1='88' x2='377' y2='88' style='stroke:var(--ink-faint);stroke-width:1.6'/><polygon points='377,83 385,88 377,93' style='fill:var(--ink-faint)'/><rect x='390' y='42' width='150' height='92' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='465' y='70' text-anchor='middle' font-size='15' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>传染</text><text x='465' y='94' text-anchor='middle' font-size='11' style='fill:var(--ink-soft);font-family:var(--font-serif)'>情绪人传人</text><text x='465' y='114' text-anchor='middle' font-size='11' style='fill:var(--ink-soft);font-family:var(--font-serif)'>像流行病一样铺开</text><rect x='20' y='156' width='520' height='44' rx='8' style='fill:none;stroke:var(--azure);stroke-width:1.4'/><text x='280' y='183' text-anchor='middle' font-size='12.5' style='fill:var(--azure);font-family:var(--font-serif)'>放大器：威望——听众先信这个人，再信这句话</text><text x='280' y='226' text-anchor='middle' font-size='11' style='fill:var(--ink-faint);font-family:var(--font-serif)'>威望靠成功续命；一旦失败，反噬与当初的膜拜一样猛烈</text></svg>", "caption": "断言、重复、传染，外加威望这个放大器——勒庞总结的群体说服术" },
-    { "type": "h2", "text": "群体动物园：从街头人群到国会议员" },
-    { "type": "p", "text": "第三卷是「应用篇」：把前两卷的理论套到具体群体上，像逛动物园一样挨个看。勒庞先分了类——教派、阶层这类「同质性群体」与街头人群这类「异质性群体」机制相通，于是他挑了四个最有政治分量的样本：犯罪群体、陪审团、选民、议会。他真正想说的是后三个：**那些看起来体面、合法、坐在制度里的群体，心理机制和街头人群并无本质不同。**" },
-    { "type": "p", "text": "**犯罪群体**：参与打砸抢烧的个人，单独拎出来往往是守法良民，事后自己都想不通；更可怕的是，群体行凶时常常觉得自己在「履行义务」——正义在我、人多势众，于是下手毫无心理障碍。他举的标本是法国大革命中的「九月屠杀」：巴黎民众冲进监狱，几天里私刑处死上千名囚犯；杀人者一边行凶一边记工时报销，事后还去邻里间讨表扬——他们真诚地相信自己在替国家除害。**陪审团**：勒庞的观察很扎心——陪审团的判决质量与成员智力几乎无关，由教授组成的陪审团和由工匠组成的陪审团，判出来的结果差不多；真正起作用的是感情杠杆，会讲故事、会煽情的律师，赢面远大于只摆证据的。" },
-    { "type": "p", "text": "**选民群体**：候选人靠威望、套话和慷慨许诺当选，政纲的逻辑严密程度几乎不影响选票。有意思的是，勒庞把普选骂了个遍，却不主张废掉它——因为普选已成「牢固信念」，动它的代价比忍它更大；而且他承认，把投票权只交给精英，结果未必更高明。**议会**：议员一开会，也是群体——意见简单化、被领袖牵着走、间歇性集体亢奋；他还顺手预言了议会制的两个慢性病：**花钱永远刹不住车，个人自由被一部接一部的新法律零刀割。**这两条放在今天各国，仍然对得上号。" },
-    { "type": "figure", "ftype": "taxonomy", "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--ink);font-family:var(--font-serif)'>第三卷的四个样本：体面的群体，机制也一样</text><rect x='16' y='44' width='255' height='98' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.4'/><text x='144' y='72' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>犯罪群体</text><text x='144' y='96' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>单独拎出来往往是守法良民</text><text x='144' y='118' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>合伙行凶时自觉在「履行义务」</text><rect x='289' y='44' width='255' height='98' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.4'/><text x='416' y='72' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>陪审团</text><text x='416' y='96' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>判决质量与成员智力无关</text><text x='416' y='118' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>打动它的是感情，不是证据</text><rect x='16' y='158' width='255' height='98' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.4'/><text x='144' y='186' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>选民群体</text><text x='144' y='210' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>投给威望、套话与许诺</text><text x='144' y='232' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>政纲的逻辑没人细看</text><rect x='289' y='158' width='255' height='98' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.4'/><text x='416' y='186' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>议会</text><text x='416' y='210' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>换了屋顶的心理群体</text><text x='416' y='232' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>简单化 · 被领袖牵动 · 集体亢奋</text><text x='280' y='286' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint);font-family:var(--font-serif)'>勒庞的用意：坐在制度里的群体，心理机制与街头人群并无本质不同</text></svg>", "caption": "第三卷群像：从犯罪群体到议会——体面与否，机制相通" },
-    { "type": "h2", "text": "一本小册子，改写了二十世纪的说服术" },
-    { "type": "p", "text": "平心而论，《乌合之众》的历史地位是实打实的。**弗洛伊德** 1921 年写《群体心理学与自我的分析》，开篇就拿勒庞当对话对象，承认他出色地描绘了群体心理，然后再提出自己的解释。**爱德华·伯内斯**（Edward Bernays）——被称为「公关之父」的那个人、弗洛伊德的外甥——在《宣传》等书里明确借用勒庞的群体心理学，把它变成了现代公共关系与广告行业的操作系统：今天你看到的品牌造势、明星人设、议程设置，追根溯源都有这本小册子的影子。至于「二十世纪那些政治宣传家人手一册」的说法，流传很广，不必坐实为唯一因果，但**宣传术与他描述的断言、重复、传染高度同构**，是明摆着的事实。" },
-    { "type": "p", "text": "还有个绝妙的注脚。中文互联网上流传最广的那句「人一到群体中，智商就严重降低，为了获得认同，个体愿意抛弃是非，用智商去换取那份让人备感安全的归属感」——**其实并不是书里的原文**，而是后人的演绎再创作，靠无数次转发变成了「勒庞名言」。一句并不存在的引文，凭借断言与重复，被群体不加核实地信以为真——**这本书的传播史本身，就是书中理论的现场演示。**" },
-    { "type": "p", "text": "顺带一提，这本书在中文世界长年霸榜，火爆的原因也值得玩味：它给了读者一种廉价的优越感——读完觉得「众人皆醉我独醒」，仿佛买到了一张退出乌合之众的门票。但请注意，**「我永远是清醒的例外」这种感觉，恰恰是最典型的群体成员心态**。勒庞的理论如果成立，它首先适用于每一个读它的人：你我也有自己的「群」，也有情绪被点燃、跟着刷屏转发的时刻。把它读成「批判别人的武器」，等于白读。" },
-    { "type": "figure", "ftype": "influence", "svg": "<svg viewBox='0 0 560 272' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--ink);font-family:var(--font-serif)'>一本小册子的百年回声</text><rect x='16' y='104' width='150' height='64' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='91' y='130' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>《乌合之众》</text><text x='91' y='150' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>勒庞 · 1895</text><line x1='166' y1='136' x2='252' y2='62' style='stroke:var(--ink-faint);stroke-width:1.3'/><line x1='166' y1='136' x2='252' y2='120' style='stroke:var(--ink-faint);stroke-width:1.3'/><line x1='166' y1='136' x2='252' y2='178' style='stroke:var(--ink-faint);stroke-width:1.3;stroke-dasharray:4 3'/><line x1='166' y1='136' x2='252' y2='236' style='stroke:var(--ink-faint);stroke-width:1.3'/><rect x='252' y='38' width='292' height='48' rx='6' style='fill:none;stroke:var(--line);stroke-width:1.3'/><text x='266' y='58' font-size='12' font-weight='bold' style='fill:var(--ink);font-family:var(--font-serif)'>弗洛伊德《群体心理学与自我的分析》</text><text x='266' y='76' font-size='10.5' style='fill:var(--ink-faint);font-family:var(--font-serif)'>1921 · 开篇专门与勒庞对话</text><rect x='252' y='96' width='292' height='48' rx='6' style='fill:none;stroke:var(--line);stroke-width:1.3'/><text x='266' y='116' font-size='12' font-weight='bold' style='fill:var(--ink);font-family:var(--font-serif)'>伯内斯《宣传》与现代公关、广告</text><text x='266' y='134' font-size='10.5' style='fill:var(--ink-faint);font-family:var(--font-serif)'>1928 · 明确借用其群体心理学</text><rect x='252' y='154' width='292' height='48' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2;stroke-dasharray:4 3'/><text x='266' y='174' font-size='12' font-weight='bold' style='fill:var(--ink);font-family:var(--font-serif)'>二十世纪的政治宣传术</text><text x='266' y='192' font-size='10.5' style='fill:var(--ink-faint);font-family:var(--font-serif)'>流传说法 · 但手法确与三板斧同构</text><rect x='252' y='212' width='292' height='48' rx='6' style='fill:none;stroke:var(--line);stroke-width:1.3'/><text x='266' y='232' font-size='12' font-weight='bold' style='fill:var(--ink);font-family:var(--font-serif)'>当代群体心理学</text><text x='266' y='250' font-size='10.5' style='fill:var(--ink-faint);font-family:var(--font-serif)'>作为被批判、被修正的起点</text></svg>", "caption": "影响力谱系：从弗洛伊德、现代公关到当代群体心理学（虚线为流传说法）" },
-    { "type": "h2", "text": "现在，轮到批判它了" },
-    { "type": "p", "text": "说完它的锋利，必须说它的问题——这部分不是可选项，而是读这本书的必修课。**第一，方法论几乎为零。**全书从头到尾没有一次实验、没有一组数据、没有对照检验，论证方式是「历史轶闻＋斩钉截铁的断言」：讲个大革命的段子，然后宣布「群体就是如此」。用今天的标准衡量，这不是科学研究，是一部才华横溢的观察随笔。最讽刺的是，**勒庞自己就在用他总结的那套手法写作——通篇都是断言与重复。**你读着觉得「句句在理」的那种快感，恰恰应该触发你的警报。" },
-    { "type": "p", "text": "**第二，时代偏见必须点名。**勒庞反复把群体的心智类比为「原始人、妇女和儿童」，把女性说成进化的低级形态——这是十九世纪欧洲男性精英的标配傲慢，在今天看是**不折不扣的性别歧视**，而且从来没有科学依据。更糟的是贯穿全书的「种族灵魂」「种族心理等级」话语——那套「各人种心智天生分高下」的说法，是**早已被现代遗传学、人类学干净利落推翻的伪科学**，与他同时代的殖民主义互为表里。读到这些段落，不必替他辩解，直接标记为「时代局限，结论作废」即可；但也不必因此把全书扔进火堆——**了解一位 1895 年的法国精英为何这样想，本身就是一堂思想史课。**" },
-    { "type": "p", "text": "**第三，他的核心模型已被现代研究大幅修正。**当代社会心理学——以斯蒂芬·赖歇尔（Stephen Reicher）、约翰·德鲁里（John Drury）等人的**社会认同模型**及相关的 SIDE 模型为代表——用几十年实证研究给出了很不一样的图景：人在群体中不是「失去自我」，而是**切换了自我**——从「我」切换到「我们」，然后按这个共享身份的规范行事。所以群体行为远非千篇一律的疯狂：骚乱人群内部往往有「什么可以打、什么不能碰」的清晰规范；紧急疏散与灾难现场的人群，实证研究一再发现**大多数时候秩序井然、互助感人**，而不是勒庞想象的疯抢踩踏；抗议现场的暴力升级，也常常是人群与处置方式互动生成的，并非群体天性使然。一句话：**群体不是退化的暴民，而是换了一套身份逻辑的正常人**——道德能动性还在，只是参照系变了。" },
-    { "type": "p", "text": "所以正确的打开方式是分层读。**现象层可以收下**——群体极化、情绪传染、口号政治、塌房反噬，这些描述今天仍能对上号，信息茧房与饭圈生态甚至比他写的更夸张；**解释层必须存疑**——「集体心智退化」「种族灵魂」这些框架已经作废，请换用社会认同、情境规范这些现代工具；**每读到一处斩钉截铁的断言，就停下来问一句：证据呢？**这个小动作本身，就是对这本书最好的致敬——因为它训练的，恰恰是勒庞声称群体最缺的那种能力。" },
-    { "type": "figure", "ftype": "contrast", "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--ink);font-family:var(--font-serif)'>带着批判读：它的毛病 vs 现代修正</text><line x1='280' y1='40' x2='280' y2='268' style='stroke:var(--line);stroke-width:1'/><text x='148' y='56' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>它的毛病</text><text x='412' y='56' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--azure);font-family:var(--font-serif)'>现代修正</text><rect x='16' y='68' width='248' height='58' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.2'/><text x='140' y='92' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>零实证：只有历史轶闻</text><text x='140' y='112' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>加断言式修辞，从无检验</text><rect x='16' y='138' width='248' height='58' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.2'/><text x='140' y='162' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>类比「原始人、妇女、儿童」</text><text x='140' y='182' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>十九世纪的歧视，不是科学</text><rect x='16' y='208' width='248' height='58' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.2'/><text x='140' y='232' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>「种族灵魂」等级论</text><text x='140' y='252' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>已被现代科学彻底推翻</text><rect x='296' y='68' width='248' height='58' rx='6' style='fill:none;stroke:var(--azure);stroke-width:1.2'/><text x='420' y='92' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>社会认同模型（赖歇尔、德鲁里）</text><text x='420' y='112' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>群体是身份切换，不是退化</text><rect x='296' y='138' width='248' height='58' rx='6' style='fill:none;stroke:var(--azure);stroke-width:1.2'/><text x='420' y='162' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>实证：灾难与疏散中的人群</text><text x='420' y='182' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>常常互助有序，而非疯抢</text><rect x='296' y='208' width='248' height='58' rx='6' style='fill:none;stroke:var(--azure);stroke-width:1.2'/><text x='420' y='232' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>行为受共享规范与情境塑造</text><text x='420' y='252' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>道德能动性并未消失</text><text x='280' y='290' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint);font-family:var(--font-serif)'>读法：现象观察可取，解释框架换现代版；读到断言，多问一句「证据呢」</text></svg>", "caption": "方法薄弱与时代偏见，对照当代社会心理学的修正——这是读此书的正确姿势" },
-    { "type": "h2", "text": "一面镜子，不是一本操作手册" },
-    { "type": "p", "text": "那这本书今天还值得读吗？值得——前提是拿对姿势。勒庞观察到的**现象**，在算法时代不但没过时，反而被百倍放大了：热搜和推荐流让「心理群体」的形成，从广场时代的几小时压缩到几分钟；弹幕和评论区里，情绪传染肉眼可见；流量话术的三件套，正是断言、重复、传染的工业化版本。**他对现象的直觉常常惊人地准；但对现象的解释，请换用现代版本。**" },
-    { "type": "p", "text": "所以给你三个可以带走的提醒。**第一，当你发现自己和很多人同时愤怒时，慢半拍**——情绪同步不等于判断正确，那可能只是传染。**第二，当有人对你只断言、不论证，并且翻来覆去重复时，提高警惕**——这是教科书级的群体说服术，无论它来自广告、大 V 还是会议室。**第三，别把这本书读成操控指南**——历史上确实有人把它当工具书用，结果都写在二十世纪最黑暗的几页里；它真正的价值，是让你不被操控，而不是教你去收割别人的不清醒。" },
-    { "type": "p", "text": "合上书，记住这个画面就够了：勒庞画了一幅「人群如洪水」的惊悚素描——笔触夸张，颜料过期，但洪水本身是真的。现代科学告诉我们，洪水其实有它的水文规律，人在水里也远比他想象的更有能动性。**读《乌合之众》，是为了认识水性——然后既不被水冲走，也不去当那个推人下水的。**" },
-    { "type": "figure", "ftype": "quote-card", "svg": "<svg viewBox='0 0 520 230' xmlns='http://www.w3.org/2000/svg'><rect x='10' y='10' width='500' height='210' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><rect x='18' y='18' width='484' height='194' rx='2' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='260' y='54' text-anchor='middle' font-size='12' style='fill:var(--cinnabar);font-family:var(--font-serif)'>❖</text><text x='260' y='94' text-anchor='middle' font-size='17' style='fill:var(--ink);font-family:var(--font-serif)'>「群体永远漫游在无意识的领地，</text><text x='260' y='126' text-anchor='middle' font-size='17' style='fill:var(--ink);font-family:var(--font-serif)'>随时听命于一切暗示。」</text><text x='260' y='170' text-anchor='middle' font-size='12' style='fill:var(--ink-soft);font-family:var(--font-serif)'>——古斯塔夫·勒庞《乌合之众》（1895）</text><rect x='458' y='166' width='30' height='30' rx='3' style='fill:none;stroke:var(--cinnabar);stroke-width:1.4'/><text x='473' y='180' text-anchor='middle' font-size='10' style='fill:var(--cinnabar);font-family:var(--font-serif)'>观</text><text x='473' y='192' text-anchor='middle' font-size='10' style='fill:var(--cinnabar);font-family:var(--font-serif)'>书</text></svg>", "caption": "金句卡：群体与无意识——记住它，也记住要向它多问一句「证据呢」" }
-  ]
+  {
+   "type": "h2",
+   "text": "一个被广场吓到的时代，一本焦虑催生的书"
+  },
+  {
+   "type": "p",
+   "text": "先看这本书是从什么土壤里长出来的。作者古斯塔夫·勒庞（Gustave Le Bon，1841–1931），学医出身，却没走学院派的路，一辈子在体制外写书，天文、地理、人类学都敢碰，是当时法国有名的畅销书作者。1895 年他出版《乌合之众：大众心理研究》，一炮而红，很快被译成十几种语言，直到今天还在加印。"
+  },
+  {
+   "type": "p",
+   "text": "但更关键的是时代。勒庞身后站着两场让整个法国精英阶层做噩梦的大事：**1789 年开始的法国大革命**——广场上的人群把国王送上断头台，随后革命自己也吞噬了无数革命者；以及他亲眼见证的 **1871 年巴黎公社**——巴黎市民武装起义，两个月后被血腥镇压，整座城市尸横街头。再加上十九世纪末工人运动、社会主义思潮、普选权扩张一齐涌来，「群众」第一次成了政治舞台的主角。旧秩序里的读书人看着这一切，心里只有一个问题：**这股力量到底是什么？它讲不讲道理？**"
+  },
+  {
+   "type": "p",
+   "text": "所以要先给你打个底：这本书既是冷静的观察，也是焦虑的产物。勒庞是站在「害怕群众的旧精英」这一边打量群众的，他的很多判断里混着那个时代的傲慢与偏见——这一点我们文末细算。但也正因为他不端学院架子，这本书写得**极其好读、极其敢下结论**，句句像格言。这既是它流传百年的原因，也是它最大的隐患：**好读和正确，是两回事。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "structure",
+   "svg": "<svg viewBox='0 0 560 240' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' font-size='15' font-weight='bold' style='fill:var(--ink);font-family:var(--font-serif)'>《乌合之众》三卷一条线</text><rect x='14' y='44' width='160' height='148' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='94' y='68' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>第一卷 · 群体心理</text><line x1='32' y1='78' x2='156' y2='78' style='stroke:var(--line);stroke-width:1'/><text x='94' y='100' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>一般特征</text><text x='94' y='122' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>感情与道德观</text><text x='94' y='144' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>观念·推理·想象力</text><text x='94' y='166' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>宗教式的信仰</text><text x='94' y='216' text-anchor='middle' font-size='11.5' style='fill:var(--azure);font-family:var(--font-serif)'>群体是什么</text><line x1='177' y1='118' x2='190' y2='118' style='stroke:var(--ink-faint);stroke-width:1.6'/><polygon points='190,113 199,118 190,123' style='fill:var(--ink-faint)'/><rect x='200' y='44' width='160' height='148' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='280' y='68' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>第二卷 · 意见与信念</text><line x1='218' y1='78' x2='342' y2='78' style='stroke:var(--line);stroke-width:1'/><text x='280' y='100' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>间接因素（土壤）</text><text x='280' y='122' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>直接因素（火花）</text><text x='280' y='144' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>领袖与说服术</text><text x='280' y='166' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>信念的变化范围</text><text x='280' y='216' text-anchor='middle' font-size='11.5' style='fill:var(--azure);font-family:var(--font-serif)'>想法怎么灌进去</text><line x1='363' y1='118' x2='376' y2='118' style='stroke:var(--ink-faint);stroke-width:1.6'/><polygon points='376,113 385,118 376,123' style='fill:var(--ink-faint)'/><rect x='386' y='44' width='160' height='148' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='466' y='68' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>第三卷 · 群体的分类</text><line x1='404' y1='78' x2='528' y2='78' style='stroke:var(--line);stroke-width:1'/><text x='466' y='100' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>犯罪群体</text><text x='466' y='122' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>陪审团</text><text x='466' y='144' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>选民群体</text><text x='466' y='166' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>议会</text><text x='466' y='216' text-anchor='middle' font-size='11.5' style='fill:var(--azure);font-family:var(--font-serif)'>各类群体什么样</text></svg>",
+   "caption": "全书三卷一条主线：群体是什么 → 想法怎么灌进去 → 各类群体什么样"
+  },
+  {
+   "type": "h2",
+   "text": "核心论点：人一进群体，就像被催眠了"
+  },
+  {
+   "type": "p",
+   "text": "全书第一卷回答「群体是什么」。勒庞开篇先立了个概念：他说的群体（crowd），不是随便一堆人。地铁里挤着的一车厢人，各想各的心事，不算；但只要一件事把这些人的**注意力和情绪拧到同一个方向**——比如一声「着火了」，或一个共同的口号——他们就瞬间变成他所说的「心理群体」：千百个脑子，暂时像一个脑子一样运转。他称之为「群体心理统一律」。按这个定义，今天一个热搜话题下情绪汹涌的几十万网民完全符合——**广场不必是物理的。**"
+  },
+  {
+   "type": "p",
+   "text": "那这个「合成大脑」是什么水平？勒庞的回答毫不客气：比组成它的每个人都低。他给了三个机制。**第一是匿名**：人一淹没进人群，「法不责众」的感觉就来了，平时靠「怕担责任」拴住的那根缰绳松了。**第二是传染**：情绪在人群里像病毒，一个人喊，十个人跟着喊，愤怒、恐慌、狂热都会指数级放大——你在演唱会和球场体验过它的良性版本。**第三是暗示**：勒庞借用当时最时髦的催眠术做比喻，说群体中的个人像被催眠的人，批判力下线，别人塞什么就信什么。"
+  },
+  {
+   "type": "quote",
+   "original": "孤立的他可能是个有教养的个人，在群体中他却成了野蛮人。",
+   "translation": "一个人独处时讲文明、讲逻辑；可一旦淹没进人群，克制松开、本能上台，行事全凭冲动。这是全书最著名的一笔。"
+  },
+  {
+   "type": "p",
+   "text": "于是群体有了一张画像：**冲动、易变、急躁**——今天捧你上天，明天踩你入地；**轻信**——不核实、只凭联想，谣言在群体里以光速传播；**情绪夸张而简单化**——没有「有点不满」，只有「血海深仇」，没有「部分有理」，只有「非黑即白」；**偏执而专横**——容不下讨论，怀疑就是背叛。至于智力，勒庞留下了被引用一百多年的一句判断："
+  },
+  {
+   "type": "quote",
+   "original": "群体中累加的只有愚蠢，而不是天生的智慧。",
+   "translation": "一群聪明人凑在一起，叠加的往往不是各自的聪明，而是共同的偏见与情绪；群体表现出的智力水平，常常低于其中个体的平均值。"
+  },
+  {
+   "type": "p",
+   "text": "把这张画像对着今天的屏幕看看，会有点脊背发凉：一条未经核实的爆料，两小时冲上热搜第一——**轻信**；评论区从「求真相」到网暴当事人只要半天——**冲动与专横**；剧情反转之后，昨天喊打喊杀的人一哄而散，没有一个道歉——**易变**；至于「抢盐」「抢板蓝根」式的集体恐慌，每隔几年准时上演一轮，参与者单拎出来问，个个都说「我也知道未必有用，但大家都在抢」。勒庞若能刷手机，大概会淡淡地说：这些人，我 1895 年就写过了。"
+  },
+  {
+   "type": "p",
+   "text": "不过有个细节，常被断章取义的人漏掉：勒庞并没有说群体只会作恶。他专门讲过，群体的道德是**两极化**的——它可以比个人更残暴，也可以比个人更英勇、更慷慨：平时斤斤计较的小市民，在群体激情里可以舍身赴死。群体是情绪的放大器，放大恶，也放大牺牲精神。**它不是更坏，是更极端。**这个相对公允的观察，反而是全书最值得留下的部分之一。"
+  },
+  {
+   "type": "figure",
+   "ftype": "transform",
+   "svg": "<svg viewBox='0 0 560 232' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--ink);font-family:var(--font-serif)'>一进群体，像被催眠：三个机制</text><rect x='20' y='44' width='200' height='140' rx='10' style='fill:none;stroke:var(--azure);stroke-width:1.5'/><text x='120' y='68' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--azure);font-family:var(--font-serif)'>独立的个人</text><line x1='44' y1='78' x2='196' y2='78' style='stroke:var(--line);stroke-width:1'/><text x='120' y='102' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>有名有姓 · 怕担责任</text><text x='120' y='126' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>权衡利弊 · 讲点逻辑</text><text x='120' y='150' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>情绪有刹车</text><text x='280' y='102' text-anchor='middle' font-size='11' style='fill:var(--ink);font-family:var(--font-serif)'>匿名 · 传染 · 暗示</text><line x1='232' y1='118' x2='316' y2='118' style='stroke:var(--ink-faint);stroke-width:1.8'/><polygon points='316,112 328,118 316,124' style='fill:var(--ink-faint)'/><text x='280' y='140' text-anchor='middle' font-size='10.5' style='fill:var(--ink-faint);font-family:var(--font-serif)'>像进了催眠状态</text><rect x='340' y='44' width='200' height='140' rx='10' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='440' y='68' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>群体中的他</text><line x1='364' y1='78' x2='516' y2='78' style='stroke:var(--line);stroke-width:1'/><text x='440' y='102' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>匿名 · 法不责众</text><text x='440' y='126' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>传染 · 情绪指数放大</text><text x='440' y='150' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>暗示 · 批判力下线</text><text x='280' y='216' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint);font-family:var(--font-serif)'>勒庞的补充：群体不是必然更坏，而是更极端——放大恶，也放大英勇</text></svg>",
+   "caption": "匿名、传染、暗示：勒庞笔下把「个人」变成「群体人」的三个机制"
+  },
+  {
+   "type": "h2",
+   "text": "群体不认逻辑，只认画面"
+  },
+  {
+   "type": "p",
+   "text": "第一卷后半部分讲群体怎么「思考」。勒庞的答案是：基本不思考，至少不按逻辑思考。一个观念想进入群体的脑子，必须先做减法：**砍掉所有前提、条件和复杂性，压缩成一句斩钉截铁的口号、一个鲜明的形象。**「自由、平等、博爱」能动员千万人，不是因为大家研究过政治哲学，而是因为这六个字像旗帜一样简单、响亮、自带情绪。"
+  },
+  {
+   "type": "p",
+   "text": "群体的「推理」也不是推理，是**形象的串联**：两个画面挨在一起，就当它们有因果。而真正驱动群体的是**想象力**——一个戏剧性的画面，胜过一千页统计报表。勒庞举的例子放今天依然刺眼：一场大海难淹死几百人，举国哀恸；而同样这些年里，疾病与事故悄悄带走的人命多出百倍，却无人动容。**能被看见的、有画面的、有主角的悲剧才「存在」；统计数字没有脸，所以不存在。**想想「具体的一只被虐的猫」和「抽象的一万名受灾者」在热搜上的待遇差，你就明白他在说什么。"
+  },
+  {
+   "type": "quote",
+   "original": "掌握了影响群体想象力的艺术，就掌握了统治他们的艺术。",
+   "translation": "谁能给群众提供画面、故事和戏剧性，谁就能引导他们。勒庞说，历代能驱动大众的强人，无一不是操纵想象力的高手。"
+  },
+  {
+   "type": "p",
+   "text": "顺着这条线，勒庞又给出一个很锋利的观察：群体不管信什么，都会**信成宗教的样子**——把对象奉为神明，盲目服从，狂热排他，随时准备为信仰献身，把怀疑者当异端。对象可以是神，也可以是领袖、主义、明星，甚至一支股票。**当你看到一群人容不得任何人说他们的偶像半句不好时，按勒庞的说法，你看到的不是喜爱，是宗教。**"
+  },
+  {
+   "type": "h2",
+   "text": "意见与信念，是怎么被灌进去的"
+  },
+  {
+   "type": "p",
+   "text": "第二卷从「群体是什么」转向「群体的想法从哪来」。勒庞把因素分成两层。**间接因素**是长期打底的：传统、时间、政治与社会制度、教育，还有他放在第一位的「种族」——这里必须立刻打个红灯：勒庞所谓「种族灵魂」「种族等级」，是十九世纪流行、如今已被遗传学和人类学**彻底推翻的伪科学**，我们在文末专门批它。刨去这块坏地基，他讲的其余部分倒不难懂：一代代人积累的成见与习惯，构成了群体接受新观念的「土壤」——什么种子能发芽，土壤早就预定了大半。"
+  },
+  {
+   "type": "p",
+   "text": "**直接因素**则是临门一脚：形象、词语和套话、幻觉、经验。他对「词语魔力」的分析尤其精彩：同一件事，换个名字，群体的接受度天差地别——**词语像按钮，按下去，联想和情绪自动涌出，至于按钮后面接的是什么，没人细看。**所以历史上高明的操盘手从不硬碰群体的成见，只给旧事物换新名字。至于理性？勒庞冷冷地说：在群体那里，理性几乎从来不是情绪的对手，**从来没有哪个群体是被三段论说服的。**"
+  },
+  {
+   "type": "p",
+   "text": "间接因素里还有一段，今天的读者读了多半会心一笑：勒庞用整整一节骂当时法国的教育。他说填鸭式的应试教育让年轻人从课本到考试空转多年，既没学会观察世界，也没学会动手做事，只批量生产心怀不满、又眼高手低的「文凭无产者」——而这些人，恰恰是群体运动最好的燃料。公平地说，这个判断里有他保守立场的私货（他并不乐见平民靠教育向上流动），但「教育若只剩应试，就是在给社会攒火药」这层观察，放在任何一个内卷的时代读，都扎心。"
+  },
+  {
+   "type": "p",
+   "text": "这一卷还有个容易被忽略的亮点：勒庞区分了**牢固的普遍信念**（一个文明底层的宗教与价值观，百年不移，动它就是文明地震）和**多变的表层意见**（随新闻起落、朝三暮四）。他还注意到：报刊越发达、信息越快，表层意见就越碎、越善变，公众今天为一事沸腾，明天就忘。写下这话时是 1895 年——把「报刊」换成「热搜」，**这几乎是对社交媒体时代的精准预言。**"
+  },
+  {
+   "type": "h2",
+   "text": "领袖的三板斧：断言、重复、传染"
+  },
+  {
+   "type": "p",
+   "text": "群体既然不认逻辑，那谁在给群体装观念？勒庞的答案是**领袖**。他笔下的领袖画像很反直觉：通常不是最聪明、想得最深的人——想得深的人顾虑多、下不了狠手——而是**意志最偏执、信念最狂热的行动派**。领袖自己往往先被某个观念「催眠」，然后那种不容置疑的确信，本身就构成催眠般的感染力。群体不追随论点，**群体追随确信**。"
+  },
+  {
+   "type": "p",
+   "text": "怎么把观念钉进群体的脑子？勒庞总结了三板斧，这三个词值得抄下来贴在屏幕边上。**断言**：不解释、不论证、不留余地，直接下结论——「XX 就是最好的」「不转不是好人」，越简洁越武断，越有效。**重复**：同一句话翻来覆去地说，说到它渗进你的潜意识，让你误以为那是自己的判断——广告业的命根子就在这里。**传染**：前两步点着火之后，情绪自己会人传人，像流行病一样铺开，不需要再推。"
+  },
+  {
+   "type": "p",
+   "text": "三板斧之外还有个放大器：**威望**（prestige）。头衔、财富、名气、胜利战绩，都让同一句话的分量翻倍——同一个观点，无名之辈说是妄言，大人物说是金句。但勒庞补了狠狠一刀：威望靠成功续命，**一旦失败，群体反噬的速度和当初膜拜的热情成正比**——昨天的神，今天被拖下神坛踩进土里。看看那些一夜塌房的偶像与大 V，这一页他一百多年前就写好了。"
+  },
+  {
+   "type": "figure",
+   "ftype": "method",
+   "svg": "<svg viewBox='0 0 560 240' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--ink);font-family:var(--font-serif)'>说服群体，不靠讲理：三板斧与一个放大器</text><rect x='20' y='42' width='150' height='92' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='95' y='70' text-anchor='middle' font-size='15' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>断言</text><text x='95' y='94' text-anchor='middle' font-size='11' style='fill:var(--ink-soft);font-family:var(--font-serif)'>不解释、不论证</text><text x='95' y='114' text-anchor='middle' font-size='11' style='fill:var(--ink-soft);font-family:var(--font-serif)'>结论越武断越有效</text><line x1='175' y1='88' x2='192' y2='88' style='stroke:var(--ink-faint);stroke-width:1.6'/><polygon points='192,83 200,88 192,93' style='fill:var(--ink-faint)'/><rect x='205' y='42' width='150' height='92' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='280' y='70' text-anchor='middle' font-size='15' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>重复</text><text x='280' y='94' text-anchor='middle' font-size='11' style='fill:var(--ink-soft);font-family:var(--font-serif)'>翻来覆去地说</text><text x='280' y='114' text-anchor='middle' font-size='11' style='fill:var(--ink-soft);font-family:var(--font-serif)'>假话说千遍像常识</text><line x1='360' y1='88' x2='377' y2='88' style='stroke:var(--ink-faint);stroke-width:1.6'/><polygon points='377,83 385,88 377,93' style='fill:var(--ink-faint)'/><rect x='390' y='42' width='150' height='92' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='465' y='70' text-anchor='middle' font-size='15' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>传染</text><text x='465' y='94' text-anchor='middle' font-size='11' style='fill:var(--ink-soft);font-family:var(--font-serif)'>情绪人传人</text><text x='465' y='114' text-anchor='middle' font-size='11' style='fill:var(--ink-soft);font-family:var(--font-serif)'>像流行病一样铺开</text><rect x='20' y='156' width='520' height='44' rx='8' style='fill:none;stroke:var(--azure);stroke-width:1.4'/><text x='280' y='183' text-anchor='middle' font-size='12.5' style='fill:var(--azure);font-family:var(--font-serif)'>放大器：威望——听众先信这个人，再信这句话</text><text x='280' y='226' text-anchor='middle' font-size='11' style='fill:var(--ink-faint);font-family:var(--font-serif)'>威望靠成功续命；一旦失败，反噬与当初的膜拜一样猛烈</text></svg>",
+   "caption": "断言、重复、传染，外加威望这个放大器——勒庞总结的群体说服术"
+  },
+  {
+   "type": "h2",
+   "text": "群体动物园：从街头人群到国会议员"
+  },
+  {
+   "type": "p",
+   "text": "第三卷是「应用篇」：把前两卷的理论套到具体群体上，像逛动物园一样挨个看。勒庞先分了类——教派、阶层这类「同质性群体」与街头人群这类「异质性群体」机制相通，于是他挑了四个最有政治分量的样本：犯罪群体、陪审团、选民、议会。他真正想说的是后三个：**那些看起来体面、合法、坐在制度里的群体，心理机制和街头人群并无本质不同。**"
+  },
+  {
+   "type": "p",
+   "text": "**犯罪群体**：参与打砸抢烧的个人，单独拎出来往往是守法良民，事后自己都想不通；更可怕的是，群体行凶时常常觉得自己在「履行义务」——正义在我、人多势众，于是下手毫无心理障碍。他举的标本是法国大革命中的「九月屠杀」：巴黎民众冲进监狱，几天里私刑处死上千名囚犯；杀人者一边行凶一边记工时报销，事后还去邻里间讨表扬——他们真诚地相信自己在替国家除害。**陪审团**：勒庞的观察很扎心——陪审团的判决质量与成员智力几乎无关，由教授组成的陪审团和由工匠组成的陪审团，判出来的结果差不多；真正起作用的是感情杠杆，会讲故事、会煽情的律师，赢面远大于只摆证据的。"
+  },
+  {
+   "type": "p",
+   "text": "**选民群体**：候选人靠威望、套话和慷慨许诺当选，政纲的逻辑严密程度几乎不影响选票。有意思的是，勒庞把普选骂了个遍，却不主张废掉它——因为普选已成「牢固信念」，动它的代价比忍它更大；而且他承认，把投票权只交给精英，结果未必更高明。**议会**：议员一开会，也是群体——意见简单化、被领袖牵着走、间歇性集体亢奋；他还顺手预言了议会制的两个慢性病：**花钱永远刹不住车，个人自由被一部接一部的新法律零刀割。**这两条放在今天各国，仍然对得上号。"
+  },
+  {
+   "type": "figure",
+   "ftype": "taxonomy",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--ink);font-family:var(--font-serif)'>第三卷的四个样本：体面的群体，机制也一样</text><rect x='16' y='44' width='255' height='98' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.4'/><text x='144' y='72' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>犯罪群体</text><text x='144' y='96' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>单独拎出来往往是守法良民</text><text x='144' y='118' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>合伙行凶时自觉在「履行义务」</text><rect x='289' y='44' width='255' height='98' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.4'/><text x='416' y='72' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>陪审团</text><text x='416' y='96' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>判决质量与成员智力无关</text><text x='416' y='118' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>打动它的是感情，不是证据</text><rect x='16' y='158' width='255' height='98' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.4'/><text x='144' y='186' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>选民群体</text><text x='144' y='210' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>投给威望、套话与许诺</text><text x='144' y='232' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>政纲的逻辑没人细看</text><rect x='289' y='158' width='255' height='98' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.4'/><text x='416' y='186' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>议会</text><text x='416' y='210' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>换了屋顶的心理群体</text><text x='416' y='232' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>简单化 · 被领袖牵动 · 集体亢奋</text><text x='280' y='286' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint);font-family:var(--font-serif)'>勒庞的用意：坐在制度里的群体，心理机制与街头人群并无本质不同</text></svg>",
+   "caption": "第三卷群像：从犯罪群体到议会——体面与否，机制相通"
+  },
+  {
+   "type": "h2",
+   "text": "一本小册子，改写了二十世纪的说服术"
+  },
+  {
+   "type": "p",
+   "text": "平心而论，《乌合之众》的历史地位是实打实的。**弗洛伊德** 1921 年写《群体心理学与自我的分析》，开篇就拿勒庞当对话对象，承认他出色地描绘了群体心理，然后再提出自己的解释。**爱德华·伯内斯**（Edward Bernays）——被称为「公关之父」的那个人、弗洛伊德的外甥——在《宣传》等书里明确借用勒庞的群体心理学，把它变成了现代公共关系与广告行业的操作系统：今天你看到的品牌造势、明星人设、议程设置，追根溯源都有这本小册子的影子。至于「二十世纪那些政治宣传家人手一册」的说法，流传很广，不必坐实为唯一因果，但**宣传术与他描述的断言、重复、传染高度同构**，是明摆着的事实。"
+  },
+  {
+   "type": "p",
+   "text": "还有个绝妙的注脚。中文互联网上流传最广的那句「人一到群体中，智商就严重降低，为了获得认同，个体愿意抛弃是非，用智商去换取那份让人备感安全的归属感」——**其实并不是书里的原文**，而是后人的演绎再创作，靠无数次转发变成了「勒庞名言」。一句并不存在的引文，凭借断言与重复，被群体不加核实地信以为真——"
+  },
+  {
+   "type": "pull",
+   "text": "这本书的传播史本身，就是书中理论的现场演示。"
+  },
+  {
+   "type": "callout",
+   "tone": "mute",
+   "items": [
+    "顺带一提，这本书在中文世界长年霸榜，火爆的原因也值得玩味：它给了读者一种廉价的优越感——读完觉得「众人皆醉我独醒」，仿佛买到了一张退出乌合之众的门票。但请注意，**「我永远是清醒的例外」这种感觉，恰恰是最典型的群体成员心态**。勒庞的理论如果成立，它首先适用于每一个读它的人：你我也有自己的「群」，也有情绪被点燃、跟着刷屏转发的时刻。把它读成「批判别人的武器」，等于白读。"
+   ]
+  },
+  {
+   "type": "figure",
+   "ftype": "influence",
+   "svg": "<svg viewBox='0 0 560 272' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--ink);font-family:var(--font-serif)'>一本小册子的百年回声</text><rect x='16' y='104' width='150' height='64' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='91' y='130' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>《乌合之众》</text><text x='91' y='150' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>勒庞 · 1895</text><line x1='166' y1='136' x2='252' y2='62' style='stroke:var(--ink-faint);stroke-width:1.3'/><line x1='166' y1='136' x2='252' y2='120' style='stroke:var(--ink-faint);stroke-width:1.3'/><line x1='166' y1='136' x2='252' y2='178' style='stroke:var(--ink-faint);stroke-width:1.3;stroke-dasharray:4 3'/><line x1='166' y1='136' x2='252' y2='236' style='stroke:var(--ink-faint);stroke-width:1.3'/><rect x='252' y='38' width='292' height='48' rx='6' style='fill:none;stroke:var(--line);stroke-width:1.3'/><text x='266' y='58' font-size='12' font-weight='bold' style='fill:var(--ink);font-family:var(--font-serif)'>弗洛伊德《群体心理学与自我的分析》</text><text x='266' y='76' font-size='10.5' style='fill:var(--ink-faint);font-family:var(--font-serif)'>1921 · 开篇专门与勒庞对话</text><rect x='252' y='96' width='292' height='48' rx='6' style='fill:none;stroke:var(--line);stroke-width:1.3'/><text x='266' y='116' font-size='12' font-weight='bold' style='fill:var(--ink);font-family:var(--font-serif)'>伯内斯《宣传》与现代公关、广告</text><text x='266' y='134' font-size='10.5' style='fill:var(--ink-faint);font-family:var(--font-serif)'>1928 · 明确借用其群体心理学</text><rect x='252' y='154' width='292' height='48' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2;stroke-dasharray:4 3'/><text x='266' y='174' font-size='12' font-weight='bold' style='fill:var(--ink);font-family:var(--font-serif)'>二十世纪的政治宣传术</text><text x='266' y='192' font-size='10.5' style='fill:var(--ink-faint);font-family:var(--font-serif)'>流传说法 · 但手法确与三板斧同构</text><rect x='252' y='212' width='292' height='48' rx='6' style='fill:none;stroke:var(--line);stroke-width:1.3'/><text x='266' y='232' font-size='12' font-weight='bold' style='fill:var(--ink);font-family:var(--font-serif)'>当代群体心理学</text><text x='266' y='250' font-size='10.5' style='fill:var(--ink-faint);font-family:var(--font-serif)'>作为被批判、被修正的起点</text></svg>",
+   "caption": "影响力谱系：从弗洛伊德、现代公关到当代群体心理学（虚线为流传说法）"
+  },
+  {
+   "type": "h2",
+   "text": "现在，轮到批判它了"
+  },
+  {
+   "type": "p",
+   "text": "说完它的锋利，必须说它的问题——这部分不是可选项，而是读这本书的必修课。**第一，方法论几乎为零。**全书从头到尾没有一次实验、没有一组数据、没有对照检验，论证方式是「历史轶闻＋斩钉截铁的断言」：讲个大革命的段子，然后宣布「群体就是如此」。用今天的标准衡量，这不是科学研究，是一部才华横溢的观察随笔。最讽刺的是，**勒庞自己就在用他总结的那套手法写作——通篇都是断言与重复。**你读着觉得「句句在理」的那种快感，恰恰应该触发你的警报。"
+  },
+  {
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "**时代偏见必须点名。**勒庞反复把群体的心智类比为「原始人、妇女和儿童」，把女性说成进化的低级形态——这是十九世纪欧洲男性精英的标配傲慢，在今天看是**不折不扣的性别歧视**，而且从来没有科学依据。更糟的是贯穿全书的「种族灵魂」「种族心理等级」话语——那套「各人种心智天生分高下」的说法，是**早已被现代遗传学、人类学干净利落推翻的伪科学**，与他同时代的殖民主义互为表里。读到这些段落，不必替他辩解，直接标记为「时代局限，结论作废」即可；但也不必因此把全书扔进火堆——**了解一位 1895 年的法国精英为何这样想，本身就是一堂思想史课。**",
+    "**他的核心模型已被现代研究大幅修正。**当代社会心理学——以斯蒂芬·赖歇尔（Stephen Reicher）、约翰·德鲁里（John Drury）等人的**社会认同模型**及相关的 SIDE 模型为代表——用几十年实证研究给出了很不一样的图景：人在群体中不是「失去自我」，而是**切换了自我**——从「我」切换到「我们」，然后按这个共享身份的规范行事。所以群体行为远非千篇一律的疯狂：骚乱人群内部往往有「什么可以打、什么不能碰」的清晰规范；紧急疏散与灾难现场的人群，实证研究一再发现**大多数时候秩序井然、互助感人**，而不是勒庞想象的疯抢踩踏；抗议现场的暴力升级，也常常是人群与处置方式互动生成的，并非群体天性使然。一句话：**群体不是退化的暴民，而是换了一套身份逻辑的正常人**——道德能动性还在，只是参照系变了。"
+   ]
+  },
+  {
+   "type": "p",
+   "text": "所以正确的打开方式是分层读。**现象层可以收下**——群体极化、情绪传染、口号政治、塌房反噬，这些描述今天仍能对上号，信息茧房与饭圈生态甚至比他写的更夸张；**解释层必须存疑**——「集体心智退化」「种族灵魂」这些框架已经作废，请换用社会认同、情境规范这些现代工具；**每读到一处斩钉截铁的断言，就停下来问一句：证据呢？**这个小动作本身，就是对这本书最好的致敬——因为它训练的，恰恰是勒庞声称群体最缺的那种能力。"
+  },
+  {
+   "type": "figure",
+   "ftype": "contrast",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--ink);font-family:var(--font-serif)'>带着批判读：它的毛病 vs 现代修正</text><line x1='280' y1='40' x2='280' y2='268' style='stroke:var(--line);stroke-width:1'/><text x='148' y='56' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar);font-family:var(--font-serif)'>它的毛病</text><text x='412' y='56' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--azure);font-family:var(--font-serif)'>现代修正</text><rect x='16' y='68' width='248' height='58' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.2'/><text x='140' y='92' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>零实证：只有历史轶闻</text><text x='140' y='112' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>加断言式修辞，从无检验</text><rect x='16' y='138' width='248' height='58' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.2'/><text x='140' y='162' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>类比「原始人、妇女、儿童」</text><text x='140' y='182' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>十九世纪的歧视，不是科学</text><rect x='16' y='208' width='248' height='58' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.2'/><text x='140' y='232' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>「种族灵魂」等级论</text><text x='140' y='252' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>已被现代科学彻底推翻</text><rect x='296' y='68' width='248' height='58' rx='6' style='fill:none;stroke:var(--azure);stroke-width:1.2'/><text x='420' y='92' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>社会认同模型（赖歇尔、德鲁里）</text><text x='420' y='112' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>群体是身份切换，不是退化</text><rect x='296' y='138' width='248' height='58' rx='6' style='fill:none;stroke:var(--azure);stroke-width:1.2'/><text x='420' y='162' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>实证：灾难与疏散中的人群</text><text x='420' y='182' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>常常互助有序，而非疯抢</text><rect x='296' y='208' width='248' height='58' rx='6' style='fill:none;stroke:var(--azure);stroke-width:1.2'/><text x='420' y='232' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>行为受共享规范与情境塑造</text><text x='420' y='252' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft);font-family:var(--font-serif)'>道德能动性并未消失</text><text x='280' y='290' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint);font-family:var(--font-serif)'>读法：现象观察可取，解释框架换现代版；读到断言，多问一句「证据呢」</text></svg>",
+   "caption": "方法薄弱与时代偏见，对照当代社会心理学的修正——这是读此书的正确姿势"
+  },
+  {
+   "type": "h2",
+   "text": "一面镜子，不是一本操作手册"
+  },
+  {
+   "type": "p",
+   "text": "那这本书今天还值得读吗？值得——前提是拿对姿势。勒庞观察到的**现象**，在算法时代不但没过时，反而被百倍放大了：热搜和推荐流让「心理群体」的形成，从广场时代的几小时压缩到几分钟；弹幕和评论区里，情绪传染肉眼可见；流量话术的三件套，正是断言、重复、传染的工业化版本。**他对现象的直觉常常惊人地准；但对现象的解释，请换用现代版本。**"
+  },
+  {
+   "type": "p",
+   "text": "所以给你三个可以带走的提醒。**第一，当你发现自己和很多人同时愤怒时，慢半拍**——情绪同步不等于判断正确，那可能只是传染。**第二，当有人对你只断言、不论证，并且翻来覆去重复时，提高警惕**——这是教科书级的群体说服术，无论它来自广告、大 V 还是会议室。**第三，别把这本书读成操控指南**——历史上确实有人把它当工具书用，结果都写在二十世纪最黑暗的几页里；它真正的价值，是让你不被操控，而不是教你去收割别人的不清醒。"
+  },
+  {
+   "type": "p",
+   "text": "合上书，记住这个画面就够了：勒庞画了一幅「人群如洪水」的惊悚素描——笔触夸张，颜料过期，但洪水本身是真的。现代科学告诉我们，洪水其实有它的水文规律，人在水里也远比他想象的更有能动性。**读《乌合之众》，是为了认识水性——然后既不被水冲走，也不去当那个推人下水的。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "quote-card",
+   "svg": "<svg viewBox='0 0 520 230' xmlns='http://www.w3.org/2000/svg'><rect x='10' y='10' width='500' height='210' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><rect x='18' y='18' width='484' height='194' rx='2' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='260' y='54' text-anchor='middle' font-size='12' style='fill:var(--cinnabar);font-family:var(--font-serif)'>❖</text><text x='260' y='94' text-anchor='middle' font-size='17' style='fill:var(--ink);font-family:var(--font-serif)'>「群体永远漫游在无意识的领地，</text><text x='260' y='126' text-anchor='middle' font-size='17' style='fill:var(--ink);font-family:var(--font-serif)'>随时听命于一切暗示。」</text><text x='260' y='170' text-anchor='middle' font-size='12' style='fill:var(--ink-soft);font-family:var(--font-serif)'>——古斯塔夫·勒庞《乌合之众》（1895）</text><rect x='458' y='166' width='30' height='30' rx='3' style='fill:none;stroke:var(--cinnabar);stroke-width:1.4'/><text x='473' y='180' text-anchor='middle' font-size='10' style='fill:var(--cinnabar);font-family:var(--font-serif)'>观</text><text x='473' y='192' text-anchor='middle' font-size='10' style='fill:var(--cinnabar);font-family:var(--font-serif)'>书</text></svg>",
+   "caption": "金句卡：群体与无意识——记住它，也记住要向它多问一句「证据呢」"
+  }
+ ]
 }

@@ -1,24 +1,86 @@
 {
-  "title": "种族与官僚统治：不必负责的权力是怎样炼成的",
-  "subtitle": "《极权主义的起源》第7章导读——在殖民地，帝国主义发明了两件统治工具：用「种族」替代法律，用法令替代政府",
-  "centralIdea": "阿伦特在这一章指出，海外帝国主义在殖民地摸索出两件全新的统治工具：一是「种族」——一个用出身划定的抽象范畴，取代法律与公民身份，成为统治的正当性来源；二是脱离法律问责的官僚制——以法令取代法律、以机密报告取代公开政治，统治者不必对任何人负责。这两件工具在南非、埃及、印度等地合流试验，构成了后来极权统治术的一个重要历史前身。",
-  "blocks": [
-    { "type": "lead", "text": "设想一位十九世纪末的殖民地官员。他坐在开罗或开普敦的办公室里，一纸法令就能决定几百万人的命运——不用经议会辩论，不用向法院解释，甚至不用留下姓名。如果有人追问「凭什么」，他也不必援引任何法律，只需要指向一个词：种族。阿伦特在这一章要拆解的，正是这套「不必负责的权力」的诞生过程——在她看来，这是帝国主义留给二十世纪最危险的遗产。" },
-    { "type": "h2", "text": "帝国主义发明的两件统治工具" },
-    { "type": "p", "text": "上一章讲的是种族思想如何在欧洲的书斋里酝酿；这一章讲它如何在殖民地**落地成统治术**。阿伦特开篇便点题：帝国主义头几十年，欧洲人在统治异族的过程中造出两种新的政治装置——**用「种族」替代「民族」，用「官僚制」替代「政府」**。前者在南非被「发现」，后者在埃及与印度被磨成精器。" },
-    { "type": "p", "text": "为什么说是「替代」？民族国家的统治逻辑是：一群人生活在共同的法律之下，权力来自被统治者的同意，统治者的行为受法律约束、受议会问责。可这套逻辑没法搬到殖民地——殖民者既不打算让殖民地人民成为平等公民，又需要一个说法来解释「凭什么我统治你」。「种族」恰好补上了这个洞：它宣称统治的依据不是法律、不是同意，而是**天生的、不可更改的差异**。你不需要论证自己做得对，只需要声明自己生来属于「更高的种族」。" },
-    { "type": "figure", "ftype": "结构图", "svg": "<svg viewBox='0 0 520 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='130' y='34' text-anchor='middle' style='fill:var(--azure);font-size:15px;font-weight:bold'>民族国家的统治逻辑</text><text x='390' y='34' text-anchor='middle' style='fill:var(--cinnabar);font-size:15px;font-weight:bold'>殖民地的统治逻辑</text><line x1='260' y1='20' x2='260' y2='285' style='stroke:var(--line);stroke-width:1'/><rect x='45' y='56' width='170' height='40' rx='6' style='fill:none;stroke:var(--azure);stroke-width:1.5'/><text x='130' y='81' text-anchor='middle' style='fill:var(--ink);font-size:14px'>共同的法律</text><line x1='130' y1='96' x2='130' y2='126' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='130,132 125,122 135,122' style='fill:var(--ink-faint)'/><rect x='45' y='134' width='170' height='40' rx='6' style='fill:none;stroke:var(--azure);stroke-width:1.5'/><text x='130' y='159' text-anchor='middle' style='fill:var(--ink);font-size:14px'>被统治者的同意</text><line x1='130' y1='174' x2='130' y2='204' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='130,210 125,200 135,200' style='fill:var(--ink-faint)'/><rect x='45' y='212' width='170' height='40' rx='6' style='fill:none;stroke:var(--azure);stroke-width:1.5'/><text x='130' y='237' text-anchor='middle' style='fill:var(--ink);font-size:14px'>权力受法律问责</text><rect x='305' y='56' width='170' height='40' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='390' y='81' text-anchor='middle' style='fill:var(--ink);font-size:14px'>种族：天生的差异</text><line x1='390' y1='96' x2='390' y2='126' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='390,132 385,122 395,122' style='fill:var(--ink-faint)'/><rect x='305' y='134' width='170' height='40' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='390' y='159' text-anchor='middle' style='fill:var(--ink);font-size:14px'>法令：随时可改</text><line x1='390' y1='174' x2='390' y2='204' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='390,210 385,200 395,200' style='fill:var(--ink-faint)'/><rect x='305' y='212' width='170' height='40' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='390' y='237' text-anchor='middle' style='fill:var(--ink);font-size:14px'>无人对结果负责</text><text x='130' y='278' text-anchor='middle' style='fill:var(--ink-soft);font-size:12px'>统治要给出理由</text><text x='390' y='278' text-anchor='middle' style='fill:var(--ink-soft);font-size:12px'>统治只需援引范畴</text></svg>", "caption": "两套统治逻辑的对照：民族国家以法律、同意与问责立国；殖民统治用「种族」当理由、用法令当手段，责任无处安放。" },
-    { "type": "h2", "text": "种族：在南非被「发现」的活的统治方式" },
-    { "type": "p", "text": "阿伦特举的核心例子是南非的布尔人（早期荷兰裔移民）。这群与欧洲母国渐渐断了联系的移民，在与非洲部落社会遭遇时，发展出一种她称之为「作为生活方式的种族主义」：不再把对方当作「另一群人」，而是当作环境的一部分、可供役使的原料。在她的分析里，「种族」最初甚至算不上理论，而是一种**应急解释**——面对完全陌生、无法用欧洲经验理解的人群，殖民者拒绝承认对方与自己同属人类，于是用「种族」一词把困惑封存起来。" },
-    { "type": "quote", "original": "种族，是对那些欧洲人无法理解的人的应急解释。", "translation": "第七章名句大意。阿伦特认为种族主义在殖民地首先是一种「偷懒的解释」：不去理解眼前的陌生人，而是宣布他们「天生不同」，从而豁免了理解的义务——也顺带豁免了道德的义务。" },
-    { "type": "p", "text": "这个「发现」的可怕之处还在于它的反噬。布尔人靠奴役土著生存，自己却也在这种关系里退化——阿伦特称之为欧洲人的「去欧洲化」：抛开劳动、法律与文明的约束，活成了被统治者的寄生者。后来金矿钻石矿引来投机资本与欧洲的「多余人口」，种族社会与过剩资本一拍即合。南非由此成了一块预演场：一个**完全按种族组织起来的社会**长什么样，那里先演了一遍。" },
-    { "type": "h2", "text": "官僚制：用法令统治，用机密免责" },
-    { "type": "p", "text": "第二件工具在埃及和印度成形。阿伦特以埃及的实际统治者克罗默勋爵为标本：他名义上只是「总领事」，却靠报告、法令与幕后影响统治埃及二十余年——**不受英国法律管辖，不经埃及人民同意，也几乎不受伦敦议会问责**。这就是殖民地官僚制的精髓：以法令取代法律，以机密报告取代公开政治。" },
-    { "type": "p", "text": "法律和法令的区别，值得放大看。法律是公开的、稳定的，人可以预先知道界限在哪，也可以据它对统治者说「不」；法令则是匿名的、随时可变的，今天允许的事明天就能禁止，被统治者永远猜不透，也永远告不赢。更微妙的是官僚自己的心态：这些「帝国的仆人」往往不觉得自己在作恶，反而自视为某种更高使命——民族扩张、历史进程——的**工具**。既然只是工具，具体的决定就不是「我」做的，责任也就无处安放。罗得斯那句著名的狂言「如果可以，我连行星都想吞并」，道出的正是这种把扩张本身当作目的、任何个人都只是齿轮的心态。" },
-    { "type": "figure", "ftype": "对比图", "svg": "<svg viewBox='0 0 520 250' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><rect x='20' y='20' width='230' height='210' rx='8' style='fill:none;stroke:var(--azure);stroke-width:1.5'/><text x='135' y='52' text-anchor='middle' style='fill:var(--azure);font-size:16px;font-weight:bold'>法 律</text><line x1='45' y1='66' x2='225' y2='66' style='stroke:var(--line);stroke-width:1'/><circle cx='48' cy='92' r='2.5' style='fill:var(--ink-faint)'/><text x='60' y='97' style='fill:var(--ink-soft);font-size:13px'>公开而稳定</text><circle cx='48' cy='126' r='2.5' style='fill:var(--ink-faint)'/><text x='60' y='131' style='fill:var(--ink-soft);font-size:13px'>界限可以预知</text><circle cx='48' cy='160' r='2.5' style='fill:var(--ink-faint)'/><text x='60' y='165' style='fill:var(--ink-soft);font-size:13px'>可以据它说「不」</text><circle cx='48' cy='194' r='2.5' style='fill:var(--ink-faint)'/><text x='60' y='199' style='fill:var(--ink-soft);font-size:13px'>统治者也在约束之内</text><rect x='270' y='20' width='230' height='210' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='385' y='52' text-anchor='middle' style='fill:var(--cinnabar);font-size:16px;font-weight:bold'>法 令</text><line x1='295' y1='66' x2='475' y2='66' style='stroke:var(--line);stroke-width:1'/><circle cx='298' cy='92' r='2.5' style='fill:var(--ink-faint)'/><text x='310' y='97' style='fill:var(--ink-soft);font-size:13px'>匿名而多变</text><circle cx='298' cy='126' r='2.5' style='fill:var(--ink-faint)'/><text x='310' y='131' style='fill:var(--ink-soft);font-size:13px'>今是明非，无从预期</text><circle cx='298' cy='160' r='2.5' style='fill:var(--ink-faint)'/><text x='310' y='165' style='fill:var(--ink-soft);font-size:13px'>猜不透，也告不赢</text><circle cx='298' cy='194' r='2.5' style='fill:var(--ink-faint)'/><text x='310' y='199' style='fill:var(--ink-soft);font-size:13px'>只约束被统治者</text></svg>", "caption": "法律与法令：一字之差，隔着「可预期、可抗辩」与「不可预期、不可追究」的鸿沟。殖民地官僚制正是靠后者运转。" },
-    { "type": "h2", "text": "两件工具合流：极权统治术的预演" },
-    { "type": "p", "text": "这一章真正的落点在于组合。「种族」提供了统治的**理由**——不需要论证，只需要援引一个抽象范畴；官僚制提供了统治的**方法**——不需要负责，只需要执行法令。两者合在一起，便是一种前所未有的权力形态：对被统治者，它不受法律约束；对统治者自身，它免除了道德与政治责任。阿伦特提醒我们，后来极权主义的许多手法——按范畴而非行为处置人、以法令和「运动」代替法律、让每个执行者都自认「只是齿轮」——都能在这里找到雏形。殖民地是欧洲的实验室，实验的成果最终被运回了欧洲本土。" },
-    { "type": "figure", "ftype": "传导图", "svg": "<svg viewBox='0 0 520 240' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><rect x='30' y='22' width='210' height='54' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='135' y='45' text-anchor='middle' style='fill:var(--ink);font-size:14px;font-weight:bold'>种族 —— 统治的理由</text><text x='135' y='66' text-anchor='middle' style='fill:var(--ink-soft);font-size:12px'>援引范畴，无须论证</text><rect x='280' y='22' width='210' height='54' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='385' y='45' text-anchor='middle' style='fill:var(--ink);font-size:14px;font-weight:bold'>官僚制 —— 统治的方法</text><text x='385' y='66' text-anchor='middle' style='fill:var(--ink-soft);font-size:12px'>执行法令，无须负责</text><line x1='135' y1='76' x2='230' y2='118' style='stroke:var(--ink-faint);stroke-width:1.5'/><line x1='385' y1='76' x2='290' y2='118' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='236,121 225,119 231,110' style='fill:var(--ink-faint)'/><polygon points='284,121 289,110 295,119' style='fill:var(--ink-faint)'/><rect x='160' y='122' width='200' height='44' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='260' y='149' text-anchor='middle' style='fill:var(--cinnabar);font-size:15px;font-weight:bold'>不必负责的权力</text><line x1='260' y1='166' x2='260' y2='192' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='260,198 255,188 265,188' style='fill:var(--ink-faint)'/><text x='260' y='222' text-anchor='middle' style='fill:var(--ink);font-size:14px'>二十世纪极权统治术的历史前身</text></svg>", "caption": "第七章的核心公式：种族给出「理由」，官僚制给出「方法」，合成一种既不受法律约束、也无人承担责任的权力。" },
-    { "type": "p", "text": "读这一章，不必把阿伦特的每个论断都当定论——她对布尔人与非洲社会的描写带着二十世纪中叶的视角与材料局限，后来的史学对南非的研究远比这更细致。但她抓住的那个机制经得起推敲：**当统治者可以援引一个抽象范畴来免除对具体的人的责任时，任何暴行都能获得行政流程的外观。**这个警告，不因史料的更新而过时。" }
-  ]
+ "title": "种族与官僚统治：不必负责的权力是怎样炼成的",
+ "subtitle": "《极权主义的起源》第7章导读——在殖民地，帝国主义发明了两件统治工具：用「种族」替代法律，用法令替代政府",
+ "centralIdea": "阿伦特在这一章指出，海外帝国主义在殖民地摸索出两件全新的统治工具：一是「种族」——一个用出身划定的抽象范畴，取代法律与公民身份，成为统治的正当性来源；二是脱离法律问责的官僚制——以法令取代法律、以机密报告取代公开政治，统治者不必对任何人负责。这两件工具在南非、埃及、印度等地合流试验，构成了后来极权统治术的一个重要历史前身。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "设想一位十九世纪末的殖民地官员。他坐在开罗或开普敦的办公室里，一纸法令就能决定几百万人的命运——不用经议会辩论，不用向法院解释，甚至不用留下姓名。如果有人追问「凭什么」，他也不必援引任何法律，只需要指向一个词：种族。阿伦特在这一章要拆解的，正是这套「不必负责的权力」的诞生过程——在她看来，这是帝国主义留给二十世纪最危险的遗产。"
+  },
+  {
+   "type": "h2",
+   "text": "帝国主义发明的两件统治工具"
+  },
+  {
+   "type": "p",
+   "text": "上一章讲的是种族思想如何在欧洲的书斋里酝酿；这一章讲它如何在殖民地**落地成统治术**。阿伦特开篇便点题：帝国主义头几十年，欧洲人在统治异族的过程中造出两种新的政治装置——**用「种族」替代「民族」，用「官僚制」替代「政府」**。"
+  },
+  {
+   "type": "pull",
+   "text": "前者在南非被「发现」，后者在埃及与印度被磨成精器。"
+  },
+  {
+   "type": "p",
+   "text": "为什么说是「替代」？民族国家的统治逻辑是：一群人生活在共同的法律之下，权力来自被统治者的同意，统治者的行为受法律约束、受议会问责。可这套逻辑没法搬到殖民地——殖民者既不打算让殖民地人民成为平等公民，又需要一个说法来解释「凭什么我统治你」。「种族」恰好补上了这个洞：它宣称统治的依据不是法律、不是同意，而是**天生的、不可更改的差异**。你不需要论证自己做得对，只需要声明自己生来属于「更高的种族」。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "svg": "<svg viewBox='0 0 520 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='130' y='34' text-anchor='middle' style='fill:var(--azure);font-size:15px;font-weight:bold'>民族国家的统治逻辑</text><text x='390' y='34' text-anchor='middle' style='fill:var(--cinnabar);font-size:15px;font-weight:bold'>殖民地的统治逻辑</text><line x1='260' y1='20' x2='260' y2='285' style='stroke:var(--line);stroke-width:1'/><rect x='45' y='56' width='170' height='40' rx='6' style='fill:none;stroke:var(--azure);stroke-width:1.5'/><text x='130' y='81' text-anchor='middle' style='fill:var(--ink);font-size:14px'>共同的法律</text><line x1='130' y1='96' x2='130' y2='126' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='130,132 125,122 135,122' style='fill:var(--ink-faint)'/><rect x='45' y='134' width='170' height='40' rx='6' style='fill:none;stroke:var(--azure);stroke-width:1.5'/><text x='130' y='159' text-anchor='middle' style='fill:var(--ink);font-size:14px'>被统治者的同意</text><line x1='130' y1='174' x2='130' y2='204' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='130,210 125,200 135,200' style='fill:var(--ink-faint)'/><rect x='45' y='212' width='170' height='40' rx='6' style='fill:none;stroke:var(--azure);stroke-width:1.5'/><text x='130' y='237' text-anchor='middle' style='fill:var(--ink);font-size:14px'>权力受法律问责</text><rect x='305' y='56' width='170' height='40' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='390' y='81' text-anchor='middle' style='fill:var(--ink);font-size:14px'>种族：天生的差异</text><line x1='390' y1='96' x2='390' y2='126' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='390,132 385,122 395,122' style='fill:var(--ink-faint)'/><rect x='305' y='134' width='170' height='40' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='390' y='159' text-anchor='middle' style='fill:var(--ink);font-size:14px'>法令：随时可改</text><line x1='390' y1='174' x2='390' y2='204' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='390,210 385,200 395,200' style='fill:var(--ink-faint)'/><rect x='305' y='212' width='170' height='40' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='390' y='237' text-anchor='middle' style='fill:var(--ink);font-size:14px'>无人对结果负责</text><text x='130' y='278' text-anchor='middle' style='fill:var(--ink-soft);font-size:12px'>统治要给出理由</text><text x='390' y='278' text-anchor='middle' style='fill:var(--ink-soft);font-size:12px'>统治只需援引范畴</text></svg>",
+   "caption": "两套统治逻辑的对照：民族国家以法律、同意与问责立国；殖民统治用「种族」当理由、用法令当手段，责任无处安放。"
+  },
+  {
+   "type": "h2",
+   "text": "种族：在南非被「发现」的活的统治方式"
+  },
+  {
+   "type": "p",
+   "text": "阿伦特举的核心例子是南非的布尔人（早期荷兰裔移民）。这群与欧洲母国渐渐断了联系的移民，在与非洲部落社会遭遇时，发展出一种她称之为「作为生活方式的种族主义」：不再把对方当作「另一群人」，而是当作环境的一部分、可供役使的原料。在她的分析里，「种族」最初甚至算不上理论，而是一种**应急解释**——面对完全陌生、无法用欧洲经验理解的人群，殖民者拒绝承认对方与自己同属人类，于是用「种族」一词把困惑封存起来。"
+  },
+  {
+   "type": "quote",
+   "original": "种族，是对那些欧洲人无法理解的人的应急解释。",
+   "translation": "第七章名句大意。阿伦特认为种族主义在殖民地首先是一种「偷懒的解释」：不去理解眼前的陌生人，而是宣布他们「天生不同」，从而豁免了理解的义务——也顺带豁免了道德的义务。"
+  },
+  {
+   "type": "p",
+   "text": "这个「发现」的可怕之处还在于它的反噬。布尔人靠奴役土著生存，自己却也在这种关系里退化——阿伦特称之为欧洲人的「去欧洲化」：抛开劳动、法律与文明的约束，活成了被统治者的寄生者。后来金矿钻石矿引来投机资本与欧洲的「多余人口」，种族社会与过剩资本一拍即合。南非由此成了一块预演场：一个**完全按种族组织起来的社会**长什么样，那里先演了一遍。"
+  },
+  {
+   "type": "h2",
+   "text": "官僚制：用法令统治，用机密免责"
+  },
+  {
+   "type": "p",
+   "text": "第二件工具在埃及和印度成形。阿伦特以埃及的实际统治者克罗默勋爵为标本：他名义上只是「总领事」，却靠报告、法令与幕后影响统治埃及二十余年——**不受英国法律管辖，不经埃及人民同意，也几乎不受伦敦议会问责**。这就是殖民地官僚制的精髓：以法令取代法律，以机密报告取代公开政治。"
+  },
+  {
+   "type": "p",
+   "text": "法律和法令的区别，值得放大看。法律是公开的、稳定的，人可以预先知道界限在哪，也可以据它对统治者说「不」；法令则是匿名的、随时可变的，今天允许的事明天就能禁止，被统治者永远猜不透，也永远告不赢。更微妙的是官僚自己的心态：这些「帝国的仆人」往往不觉得自己在作恶，反而自视为某种更高使命——民族扩张、历史进程——的**工具**。既然只是工具，具体的决定就不是「我」做的，责任也就无处安放。罗得斯那句著名的狂言「如果可以，我连行星都想吞并」，道出的正是这种把扩张本身当作目的、任何个人都只是齿轮的心态。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "svg": "<svg viewBox='0 0 520 250' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><rect x='20' y='20' width='230' height='210' rx='8' style='fill:none;stroke:var(--azure);stroke-width:1.5'/><text x='135' y='52' text-anchor='middle' style='fill:var(--azure);font-size:16px;font-weight:bold'>法 律</text><line x1='45' y1='66' x2='225' y2='66' style='stroke:var(--line);stroke-width:1'/><circle cx='48' cy='92' r='2.5' style='fill:var(--ink-faint)'/><text x='60' y='97' style='fill:var(--ink-soft);font-size:13px'>公开而稳定</text><circle cx='48' cy='126' r='2.5' style='fill:var(--ink-faint)'/><text x='60' y='131' style='fill:var(--ink-soft);font-size:13px'>界限可以预知</text><circle cx='48' cy='160' r='2.5' style='fill:var(--ink-faint)'/><text x='60' y='165' style='fill:var(--ink-soft);font-size:13px'>可以据它说「不」</text><circle cx='48' cy='194' r='2.5' style='fill:var(--ink-faint)'/><text x='60' y='199' style='fill:var(--ink-soft);font-size:13px'>统治者也在约束之内</text><rect x='270' y='20' width='230' height='210' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='385' y='52' text-anchor='middle' style='fill:var(--cinnabar);font-size:16px;font-weight:bold'>法 令</text><line x1='295' y1='66' x2='475' y2='66' style='stroke:var(--line);stroke-width:1'/><circle cx='298' cy='92' r='2.5' style='fill:var(--ink-faint)'/><text x='310' y='97' style='fill:var(--ink-soft);font-size:13px'>匿名而多变</text><circle cx='298' cy='126' r='2.5' style='fill:var(--ink-faint)'/><text x='310' y='131' style='fill:var(--ink-soft);font-size:13px'>今是明非，无从预期</text><circle cx='298' cy='160' r='2.5' style='fill:var(--ink-faint)'/><text x='310' y='165' style='fill:var(--ink-soft);font-size:13px'>猜不透，也告不赢</text><circle cx='298' cy='194' r='2.5' style='fill:var(--ink-faint)'/><text x='310' y='199' style='fill:var(--ink-soft);font-size:13px'>只约束被统治者</text></svg>",
+   "caption": "法律与法令：一字之差，隔着「可预期、可抗辩」与「不可预期、不可追究」的鸿沟。殖民地官僚制正是靠后者运转。"
+  },
+  {
+   "type": "h2",
+   "text": "两件工具合流：极权统治术的预演"
+  },
+  {
+   "type": "p",
+   "text": "这一章真正的落点在于组合。「种族」提供了统治的**理由**——不需要论证，只需要援引一个抽象范畴；官僚制提供了统治的**方法**——不需要负责，只需要执行法令。两者合在一起，便是一种前所未有的权力形态：对被统治者，它不受法律约束；对统治者自身，它免除了道德与政治责任。阿伦特提醒我们，后来极权主义的许多手法——按范畴而非行为处置人、以法令和「运动」代替法律、让每个执行者都自认「只是齿轮」——都能在这里找到雏形。殖民地是欧洲的实验室，实验的成果最终被运回了欧洲本土。"
+  },
+  {
+   "type": "figure",
+   "ftype": "传导图",
+   "svg": "<svg viewBox='0 0 520 240' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><rect x='30' y='22' width='210' height='54' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='135' y='45' text-anchor='middle' style='fill:var(--ink);font-size:14px;font-weight:bold'>种族 —— 统治的理由</text><text x='135' y='66' text-anchor='middle' style='fill:var(--ink-soft);font-size:12px'>援引范畴，无须论证</text><rect x='280' y='22' width='210' height='54' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='385' y='45' text-anchor='middle' style='fill:var(--ink);font-size:14px;font-weight:bold'>官僚制 —— 统治的方法</text><text x='385' y='66' text-anchor='middle' style='fill:var(--ink-soft);font-size:12px'>执行法令，无须负责</text><line x1='135' y1='76' x2='230' y2='118' style='stroke:var(--ink-faint);stroke-width:1.5'/><line x1='385' y1='76' x2='290' y2='118' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='236,121 225,119 231,110' style='fill:var(--ink-faint)'/><polygon points='284,121 289,110 295,119' style='fill:var(--ink-faint)'/><rect x='160' y='122' width='200' height='44' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='260' y='149' text-anchor='middle' style='fill:var(--cinnabar);font-size:15px;font-weight:bold'>不必负责的权力</text><line x1='260' y1='166' x2='260' y2='192' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='260,198 255,188 265,188' style='fill:var(--ink-faint)'/><text x='260' y='222' text-anchor='middle' style='fill:var(--ink);font-size:14px'>二十世纪极权统治术的历史前身</text></svg>",
+   "caption": "第七章的核心公式：种族给出「理由」，官僚制给出「方法」，合成一种既不受法律约束、也无人承担责任的权力。"
+  },
+  {
+   "type": "p",
+   "text": "读这一章，不必把阿伦特的每个论断都当定论——她对布尔人与非洲社会的描写带着二十世纪中叶的视角与材料局限，后来的史学对南非的研究远比这更细致。但她抓住的那个机制经得起推敲：**当统治者可以援引一个抽象范畴来免除对具体的人的责任时，任何暴行都能获得行政流程的外观。**这个警告，不因史料的更新而过时。"
+  }
+ ]
 }

@@ -1,86 +1,90 @@
 {
-  "title": "亚里士多德:把世界整理进抽屉",
-  "subtitle": "欧洲第一位科学家——他正面拆了老师的学说,发明了逻辑与分类,给整个自然界贴上标签",
-  "centralIdea": "柏拉图向上指,亚里士多德向下指:形式不在天上的理型世界,就在一朵朵花、一匹匹马里。他坚持感官是知识的起点,发明了逻辑学与分类法,把自然界整理进「属与种」的抽屉柜,用「四因」解释万物为何如此,用「中庸之道」回答人该怎么活。西方科学在他搭的柜子里一住近两千年——住得太舒服,后来花了几百年才搬出来。这一章还有全书少见的一次正面「打脸」:他对女性的论断错得离谱,苏菲读完气得直接动笔反驳。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "哲学课讲到这里,苏菲收到的信第一次带上了「实验室的气味」。前面的哲学家个个仰着头:泰勒斯望水,柏拉图望天上的理型。而这一位蹲了下来——扒开水草看青蛙,掰开鸡蛋看胚胎,把海边捡来的贝壳一排排码好。他叫亚里士多德,在柏拉图的学园里待了二十年,是老师最优秀的学生,然后干了一件最优秀的学生才干得出的事:**把老师的学说,当着全希腊的面,正面拆了**。如果说柏拉图给了欧洲一双仰望的眼睛,那么亚里士多德给了欧洲一双手——一双闲不住、非要把满世界的东西分门别类塞进抽屉的手。"
-    },
-    {
-      "type": "h2",
-      "text": "先拆老师:模子不在天上,在鸡蛋里"
-    },
-    {
-      "type": "p",
-      "text": "回忆一下上一章:柏拉图说,你见过的每匹马都会老会死,但「马的理型」完美永恒,住在感官够不着的理型世界;我们能认出马,是因为灵魂在出生前见过那个模子。亚里士多德听完只问了一个朴素的问题:**真的需要两个世界吗?**在他看来,顺序恰好倒过来——是我们先看见了一匹匹真实的马,才在头脑里**归纳**出「马」这个概念。概念是感官经验的提炼,不是天上掉下来的存货。所谓「马的理型」,不过是马的**共同特征**;它当然存在,但不住在另一个世界,**就住在每一匹马身上**。"
-    },
-    {
-      "type": "p",
-      "text": "他给这套讲法配了一对术语:**质料**与**形式**。质料是事物的材料,形式是事物的特征与结构。一只鸡的质料是血肉羽毛,形式是「会咯咯叫、会下蛋」的那一整套鸡的样子。妙处在下一步:形式不只是描述,还是**潜能**——鸡蛋的质料里预装着「成为鸡」的可能性,橡实里预装着一棵橡树。万物的变化,就是质料一步步**实现**自己的形式。这一改,柏拉图那个静止发光的理型世界,变成了一个处处在生长、在孵化、在成形的世界。你不必仰望真实,**你可以蹲下来观察它**。顺带记一笔:「人心里没有什么不先经过感官」这个立场,两千年后会被洛克接过去,成为经验主义的旗帜——理性与经验这场全书主线之争,两位队长在雅典就位了。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对照",
-      "svg": "<svg viewBox='0 0 560 320' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>同一匹马,两种看法</text><rect x='36' y='52' width='236' height='210' rx='10' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='154' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--cinnabar)'>柏拉图:模子在天上</text><text x='154' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>先有「马的理型」</text><text x='154' y='136' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>眼前的马只是复制品</text><text x='154' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>认识 = 回忆出生前见过的模子</text><text x='154' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>最高的学问:数学与思辨</text><text x='154' y='236' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>手指向上 ↑</text><rect x='288' y='52' width='236' height='210' rx='10' style='fill:none;stroke:var(--azure);stroke-width:1.5'/><text x='406' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--ink)'>亚里士多德:形式在马里</text><text x='406' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>先看见一匹匹真马</text><text x='406' y='136' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>再归纳出「马」的概念</text><text x='406' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>认识 = 观察 + 归纳 + 分类</text><text x='406' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>最高兴趣:生物与自然万象</text><text x='406' y='236' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>手掌向下 ↓</text><text x='280' y='298' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>《雅典学院》里的两个手势,吵到康德才有裁决</text></svg>",
-      "caption": "拉斐尔把这场师徒之争画成了两个手势。往后读到笛卡尔请回想左边,读到洛克休谟请回想右边。"
-    },
-    {
-      "type": "h2",
-      "text": "四因:一个「为什么」拆成四个"
-    },
-    {
-      "type": "p",
-      "text": "亚里士多德的第二件工具,是把「为什么」拆开。问「这座雕像为什么在这里」,他说完整的回答要有四层:**质料因**——它由大理石构成;**动力因**——雕刻家凿出了它;**形式因**——它具有某个人像的形状;**目的因**——为了纪念某人。前三个我们今天听着都顺耳,第四个要小心:他把「目的」推广到了整个自然——下雨是「为了」让植物生长,植物结果是「为了」让人和动物有得吃。**现代科学恰恰是靠扔掉这个「自然目的论」才起飞的**:雨只是水汽遇冷凝结,没有任何打算。这里得给他记一笔局限,但也别嘲笑得太快——在解释**人的行为**时,「他做这件事是为了什么」至今仍是绕不开的问法。亚里士多德的毛病不是发明了目的因,而是把它用得太宽,把整个宇宙都想象成一间处处有安排的作坊。"
-    },
-    {
-      "type": "h2",
-      "text": "发明逻辑与抽屉柜:图书馆管理员的诞生"
-    },
-    {
-      "type": "p",
-      "text": "如果只能给亚里士多德留一个头衔,应该是:**人类第一位大规模的知识整理员**。他做了两件配套的事。第一件,发明**逻辑学**:「所有人都会死;苏格拉底是人;所以苏格拉底会死」——这种三段论看似废话,却是人类第一次把「怎样推理才算有效」本身当成研究对象,给一切论证立了质检标准。第二件,发明**分类法**:先把万物分成无生物与生物,生物再分植物与动物,动物再分有理性的与无理性的——一层层属与种,像一座巨大的抽屉柜,每个物种都有自己的抽屉和标签。「人是理性的动物」这个著名定义,就是抽屉柜的产物:先归入「动物」的大抽屉,再用「理性」这个标签和其他动物隔开。"
-    },
-    {
-      "type": "p",
-      "text": "别小看整理这件事。你房间乱的时候,东西其实一件没少,但你**找不到**,它们就等于不存在。亚里士多德之前的知识就是那间乱房间:观察是零散的,词语是含混的,推理是凭感觉的。他把房间收拾了一遍,之后两千年,欧洲人研究任何东西,第一反应都是「它属于哪个抽屉」。今天生物课的「界门纲目科属种」、图书馆的分类号、你手机相册的自动归类,追到根上都是这位雅典整理员的遗产。当然,柜子太好用也有代价——这个我们留到最后算账。"
-    },
-    {
-      "type": "figure",
-      "ftype": "结构图",
-      "svg": "<svg viewBox='0 0 560 330' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>自然的抽屉柜:属与种的阶梯</text><rect x='210' y='44' width='140' height='36' rx='7' style='fill:none;stroke:var(--ink);stroke-width:1.5'/><text x='280' y='67' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>万物</text><line x1='280' y1='80' x2='160' y2='104' style='stroke:var(--ink-faint);stroke-width:1'/><line x1='280' y1='80' x2='400' y2='104' style='stroke:var(--ink-faint);stroke-width:1'/><rect x='90' y='104' width='140' height='34' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='160' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>无生物(石、水)</text><rect x='330' y='104' width='140' height='34' rx='7' style='fill:none;stroke:var(--azure);stroke-width:1.5'/><text x='400' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>生物</text><line x1='400' y1='138' x2='300' y2='162' style='stroke:var(--ink-faint);stroke-width:1'/><line x1='400' y1='138' x2='480' y2='162' style='stroke:var(--ink-faint);stroke-width:1'/><rect x='230' y='162' width='140' height='34' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='300' y='184' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>植物(生长)</text><rect x='410' y='162' width='140' height='34' rx='7' style='fill:none;stroke:var(--azure);stroke-width:1.5'/><text x='480' y='184' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>动物(感觉·移动)</text><line x1='480' y1='196' x2='480' y2='220' style='stroke:var(--ink-faint);stroke-width:1'/><rect x='410' y='220' width='140' height='34' rx='7' style='fill:none;stroke:var(--cinnabar);stroke-width:1.8'/><text x='480' y='242' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar)'>人(理性)</text><text x='150' y='236' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>每往下一层,标签多一个:</text><text x='150' y='258' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>存在 → 有生命 → 有感觉 → 有理性</text><text x='280' y='306' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>「人是理性的动物」= 大抽屉(动物)+ 独有标签(理性)</text></svg>",
-      "caption": "西方科学在这座柜子里住了近两千年。它的好处是万物各归其位,坏处是——柜子本身很少有人再检查。"
-    },
-    {
-      "type": "h2",
-      "text": "怎么活:幸福不在两端,在中间"
-    },
-    {
-      "type": "p",
-      "text": "整理完自然界,亚里士多德把同一双手伸向了「人该怎么活」。他的答案依然带着分类员的气质:人的形式是理性,那么**实现自己的形式,就是幸福**——像橡实长成橡树那样,把人身上独有的潜能活出来。光享乐是把自己活成了植物,光挣钱是把手段当成了目的;真正的幸福要几样兼得:感官的快乐、自由而负责的公民生活、思考与求知的乐趣。而在具体德行上,他给出那条著名的**中庸之道**:勇敢是懦弱与鲁莽的中间,慷慨是吝啬与挥霍的中间——美德不是走极端的激情,是**长年练出来的平衡感**,像骑自行车,偏左偏右都会摔。这套讲法朴素得近乎无聊,但两千年来一直是「反鸡血」的解药:它不许诺狂喜,只教你把日子过得站得稳。"
-    },
-    {
-      "type": "quote",
-      "original": "吾爱吾师,吾更爱真理。",
-      "translation": "这句名言长期被归在亚里士多德名下(是后人对其拉丁语句意的凝缩,原话已不可考),但它确实概括了他一生的姿态:在柏拉图门下二十年,依然把老师的核心学说拆掉重建。哲学史上最健康的师生关系,大概就长这样。"
-    },
-    {
-      "type": "h2",
-      "text": "打脸时刻:整理员也会贴错标签"
-    },
-    {
-      "type": "p",
-      "text": "按书房的规矩,该算账了。第一笔是全书里贾德自己就点破的:**亚里士多德对女性的论断错得离谱**。他认为女性是「未完成的男人」,孩子的全部禀赋都由父亲的精子提供,母亲只是提供土壤的田地。这不是无关痛痒的小错——由于他后来的权威地位,这个错误标签被中世纪教会接手,压在欧洲女性头上一千多年。苏菲读到这里气得不轻,当场写文章反驳;贾德特意保留她的怒气,是想告诉读者:**面对权威,生气并核实,是比崇拜更端正的姿势**。第二笔账更微妙:亚里士多德生前是打破权威的人,死后却**成了**最大的权威——中世纪的学者遇到问题不再观察自然,而是翻他的书找答案,「亚里士多德说过」成了终审判决。一个教人观察的人,最终让后人停止了观察;直到伽利略把两个铁球从斜塔的思想实验里扔下来,柜子才被重新打开。这不是他的错,却是一切「标准答案」共同的命运。"
-    },
-    {
-      "type": "p",
-      "text": "所以这一章的读法是双份的:一面收下他的礼物——逻辑、分类、中庸,这些工具你今天还在用;一面记住他的教训——**任何抽屉柜都是人打造的,标签可以贴错,格局可以重排**。下一章,哲学要进入一段最容易被讲成「一片黑暗」的岁月:中世纪。带上亚里士多德一起走——你会看到他的书稿绕了大半个地中海,在另一种文明手里保存下来,一千多年后回到欧洲,把神学的屋顶捅出一扇天窗。"
-    },
-    {
-      "type": "figure",
-      "ftype": "金句卡",
-      "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><rect x='16' y='16' width='528' height='218' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='280' cy='54' r='4' style='fill:var(--cinnabar)'/><line x1='200' y1='54' x2='252' y2='54' style='stroke:var(--cinnabar);stroke-width:1'/><line x1='308' y1='54' x2='360' y2='54' style='stroke:var(--cinnabar);stroke-width:1'/><text x='280' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:21px;font-weight:bold;fill:var(--ink)'>形式不在天上,</text><text x='280' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:21px;font-weight:bold;fill:var(--ink)'>就在一朵朵花、一匹匹马里。</text><text x='280' y='200' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink-soft)'>——亚里士多德对理型论的回答 · 立场概括</text><text x='280' y='224' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>蹲下来观察,是仰望之外的另一种虔诚。</text></svg>",
-      "caption": "向上指与向下指,哪个对?康德在第八章等你——他会说:各对一半。"
-    }
-  ]
+ "title": "亚里士多德:把世界整理进抽屉",
+ "subtitle": "欧洲第一位科学家——他正面拆了老师的学说,发明了逻辑与分类,给整个自然界贴上标签",
+ "centralIdea": "柏拉图向上指,亚里士多德向下指:形式不在天上的理型世界,就在一朵朵花、一匹匹马里。他坚持感官是知识的起点,发明了逻辑学与分类法,把自然界整理进「属与种」的抽屉柜,用「四因」解释万物为何如此,用「中庸之道」回答人该怎么活。西方科学在他搭的柜子里一住近两千年——住得太舒服,后来花了几百年才搬出来。这一章还有全书少见的一次正面「打脸」:他对女性的论断错得离谱,苏菲读完气得直接动笔反驳。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "哲学课讲到这里,苏菲收到的信第一次带上了「实验室的气味」。前面的哲学家个个仰着头:泰勒斯望水,柏拉图望天上的理型。而这一位蹲了下来——扒开水草看青蛙,掰开鸡蛋看胚胎,把海边捡来的贝壳一排排码好。他叫亚里士多德,在柏拉图的学园里待了二十年,是老师最优秀的学生,然后干了一件最优秀的学生才干得出的事:**把老师的学说,当着全希腊的面,正面拆了**。如果说柏拉图给了欧洲一双仰望的眼睛,那么亚里士多德给了欧洲一双手——一双闲不住、非要把满世界的东西分门别类塞进抽屉的手。"
+  },
+  {
+   "type": "h2",
+   "text": "先拆老师:模子不在天上,在鸡蛋里"
+  },
+  {
+   "type": "p",
+   "text": "回忆一下上一章:柏拉图说,你见过的每匹马都会老会死,但「马的理型」完美永恒,住在感官够不着的理型世界;我们能认出马,是因为灵魂在出生前见过那个模子。亚里士多德听完只问了一个朴素的问题:**真的需要两个世界吗?**在他看来,顺序恰好倒过来——是我们先看见了一匹匹真实的马,才在头脑里**归纳**出「马」这个概念。概念是感官经验的提炼,不是天上掉下来的存货。所谓「马的理型」,不过是马的**共同特征**;它当然存在,但不住在另一个世界,**就住在每一匹马身上**。"
+  },
+  {
+   "type": "p",
+   "text": "他给这套讲法配了一对术语:**质料**与**形式**。质料是事物的材料,形式是事物的特征与结构。一只鸡的质料是血肉羽毛,形式是「会咯咯叫、会下蛋」的那一整套鸡的样子。妙处在下一步:形式不只是描述,还是**潜能**——鸡蛋的质料里预装着「成为鸡」的可能性,橡实里预装着一棵橡树。万物的变化,就是质料一步步**实现**自己的形式。这一改,柏拉图那个静止发光的理型世界,变成了一个处处在生长、在孵化、在成形的世界。你不必仰望真实,**你可以蹲下来观察它**。顺带记一笔:「人心里没有什么不先经过感官」这个立场,两千年后会被洛克接过去,成为经验主义的旗帜——理性与经验这场全书主线之争,两位队长在雅典就位了。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照",
+   "svg": "<svg viewBox='0 0 560 320' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>同一匹马,两种看法</text><rect x='36' y='52' width='236' height='210' rx='10' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='154' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--cinnabar)'>柏拉图:模子在天上</text><text x='154' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>先有「马的理型」</text><text x='154' y='136' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>眼前的马只是复制品</text><text x='154' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>认识 = 回忆出生前见过的模子</text><text x='154' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>最高的学问:数学与思辨</text><text x='154' y='236' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>手指向上 ↑</text><rect x='288' y='52' width='236' height='210' rx='10' style='fill:none;stroke:var(--azure);stroke-width:1.5'/><text x='406' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--ink)'>亚里士多德:形式在马里</text><text x='406' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>先看见一匹匹真马</text><text x='406' y='136' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>再归纳出「马」的概念</text><text x='406' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>认识 = 观察 + 归纳 + 分类</text><text x='406' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>最高兴趣:生物与自然万象</text><text x='406' y='236' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>手掌向下 ↓</text><text x='280' y='298' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>《雅典学院》里的两个手势,吵到康德才有裁决</text></svg>",
+   "caption": "拉斐尔把这场师徒之争画成了两个手势。往后读到笛卡尔请回想左边,读到洛克休谟请回想右边。"
+  },
+  {
+   "type": "h2",
+   "text": "四因:一个「为什么」拆成四个"
+  },
+  {
+   "type": "p",
+   "text": "亚里士多德的第二件工具,是把「为什么」拆开。问「这座雕像为什么在这里」,他说完整的回答要有四层:**质料因**——它由大理石构成;**动力因**——雕刻家凿出了它;**形式因**——它具有某个人像的形状;**目的因**——为了纪念某人。前三个我们今天听着都顺耳,第四个要小心:他把「目的」推广到了整个自然——下雨是「为了」让植物生长,植物结果是「为了」让人和动物有得吃。**现代科学恰恰是靠扔掉这个「自然目的论」才起飞的**:雨只是水汽遇冷凝结,没有任何打算。这里得给他记一笔局限,但也别嘲笑得太快——在解释**人的行为**时,「他做这件事是为了什么」至今仍是绕不开的问法。亚里士多德的毛病不是发明了目的因,而是把它用得太宽,把整个宇宙都想象成一间处处有安排的作坊。"
+  },
+  {
+   "type": "h2",
+   "text": "发明逻辑与抽屉柜:图书馆管理员的诞生"
+  },
+  {
+   "type": "p",
+   "text": "如果只能给亚里士多德留一个头衔,应该是:**人类第一位大规模的知识整理员**。他做了两件配套的事。第一件,发明**逻辑学**:「所有人都会死;苏格拉底是人;所以苏格拉底会死」——这种三段论看似废话,却是人类第一次把「怎样推理才算有效」本身当成研究对象,给一切论证立了质检标准。第二件,发明**分类法**:先把万物分成无生物与生物,生物再分植物与动物,动物再分有理性的与无理性的——一层层属与种,像一座巨大的抽屉柜,每个物种都有自己的抽屉和标签。「人是理性的动物」这个著名定义,就是抽屉柜的产物:先归入「动物」的大抽屉,再用「理性」这个标签和其他动物隔开。"
+  },
+  {
+   "type": "p",
+   "text": "别小看整理这件事。你房间乱的时候,东西其实一件没少,但你**找不到**,它们就等于不存在。亚里士多德之前的知识就是那间乱房间:观察是零散的,词语是含混的,推理是凭感觉的。他把房间收拾了一遍,之后两千年,欧洲人研究任何东西,第一反应都是「它属于哪个抽屉」。今天生物课的「界门纲目科属种」、图书馆的分类号、你手机相册的自动归类,追到根上都是这位雅典整理员的遗产。当然,柜子太好用也有代价——这个我们留到最后算账。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "svg": "<svg viewBox='0 0 560 330' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>自然的抽屉柜:属与种的阶梯</text><rect x='210' y='44' width='140' height='36' rx='7' style='fill:none;stroke:var(--ink);stroke-width:1.5'/><text x='280' y='67' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>万物</text><line x1='280' y1='80' x2='160' y2='104' style='stroke:var(--ink-faint);stroke-width:1'/><line x1='280' y1='80' x2='400' y2='104' style='stroke:var(--ink-faint);stroke-width:1'/><rect x='90' y='104' width='140' height='34' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='160' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>无生物(石、水)</text><rect x='330' y='104' width='140' height='34' rx='7' style='fill:none;stroke:var(--azure);stroke-width:1.5'/><text x='400' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>生物</text><line x1='400' y1='138' x2='300' y2='162' style='stroke:var(--ink-faint);stroke-width:1'/><line x1='400' y1='138' x2='480' y2='162' style='stroke:var(--ink-faint);stroke-width:1'/><rect x='230' y='162' width='140' height='34' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='300' y='184' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>植物(生长)</text><rect x='410' y='162' width='140' height='34' rx='7' style='fill:none;stroke:var(--azure);stroke-width:1.5'/><text x='480' y='184' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>动物(感觉·移动)</text><line x1='480' y1='196' x2='480' y2='220' style='stroke:var(--ink-faint);stroke-width:1'/><rect x='410' y='220' width='140' height='34' rx='7' style='fill:none;stroke:var(--cinnabar);stroke-width:1.8'/><text x='480' y='242' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar)'>人(理性)</text><text x='150' y='236' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>每往下一层,标签多一个:</text><text x='150' y='258' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>存在 → 有生命 → 有感觉 → 有理性</text><text x='280' y='306' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>「人是理性的动物」= 大抽屉(动物)+ 独有标签(理性)</text></svg>",
+   "caption": "西方科学在这座柜子里住了近两千年。它的好处是万物各归其位,坏处是——柜子本身很少有人再检查。"
+  },
+  {
+   "type": "h2",
+   "text": "怎么活:幸福不在两端,在中间"
+  },
+  {
+   "type": "p",
+   "text": "整理完自然界,亚里士多德把同一双手伸向了「人该怎么活」。他的答案依然带着分类员的气质:人的形式是理性,那么**实现自己的形式,就是幸福**——像橡实长成橡树那样,把人身上独有的潜能活出来。光享乐是把自己活成了植物,光挣钱是把手段当成了目的;真正的幸福要几样兼得:感官的快乐、自由而负责的公民生活、思考与求知的乐趣。而在具体德行上,他给出那条著名的**中庸之道**:勇敢是懦弱与鲁莽的中间,慷慨是吝啬与挥霍的中间——美德不是走极端的激情,是**长年练出来的平衡感**,像骑自行车,偏左偏右都会摔。这套讲法朴素得近乎无聊,但两千年来一直是「反鸡血」的解药:它不许诺狂喜,只教你把日子过得站得稳。"
+  },
+  {
+   "type": "quote",
+   "original": "吾爱吾师,吾更爱真理。",
+   "translation": "这句名言长期被归在亚里士多德名下(是后人对其拉丁语句意的凝缩,原话已不可考),但它确实概括了他一生的姿态:在柏拉图门下二十年,依然把老师的核心学说拆掉重建。哲学史上最健康的师生关系,大概就长这样。"
+  },
+  {
+   "type": "h2",
+   "text": "打脸时刻:整理员也会贴错标签"
+  },
+  {
+   "type": "p",
+   "text": "按书房的规矩,该算账了。第一笔是全书里贾德自己就点破的:**亚里士多德对女性的论断错得离谱**。他认为女性是「未完成的男人」,孩子的全部禀赋都由父亲的精子提供,母亲只是提供土壤的田地。这不是无关痛痒的小错——由于他后来的权威地位,这个错误标签被中世纪教会接手,压在欧洲女性头上一千多年。苏菲读到这里气得不轻,当场写文章反驳;贾德特意保留她的怒气,是想告诉读者:**面对权威,生气并核实,是比崇拜更端正的姿势**。第二笔账更微妙:亚里士多德生前是打破权威的人,死后却**成了**最大的权威——中世纪的学者遇到问题不再观察自然,而是翻他的书找答案,「亚里士多德说过」成了终审判决。一个教人观察的人,最终让后人停止了观察;直到伽利略把两个铁球从斜塔的思想实验里扔下来,柜子才被重新打开。"
+  },
+  {
+   "type": "pull",
+   "text": "这不是他的错,却是一切「标准答案」共同的命运。"
+  },
+  {
+   "type": "p",
+   "text": "所以这一章的读法是双份的:一面收下他的礼物——逻辑、分类、中庸,这些工具你今天还在用;一面记住他的教训——**任何抽屉柜都是人打造的,标签可以贴错,格局可以重排**。下一章,哲学要进入一段最容易被讲成「一片黑暗」的岁月:中世纪。带上亚里士多德一起走——你会看到他的书稿绕了大半个地中海,在另一种文明手里保存下来,一千多年后回到欧洲,把神学的屋顶捅出一扇天窗。"
+  },
+  {
+   "type": "figure",
+   "ftype": "金句卡",
+   "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><rect x='16' y='16' width='528' height='218' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='280' cy='54' r='4' style='fill:var(--cinnabar)'/><line x1='200' y1='54' x2='252' y2='54' style='stroke:var(--cinnabar);stroke-width:1'/><line x1='308' y1='54' x2='360' y2='54' style='stroke:var(--cinnabar);stroke-width:1'/><text x='280' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:21px;font-weight:bold;fill:var(--ink)'>形式不在天上,</text><text x='280' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:21px;font-weight:bold;fill:var(--ink)'>就在一朵朵花、一匹匹马里。</text><text x='280' y='200' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink-soft)'>——亚里士多德对理型论的回答 · 立场概括</text><text x='280' y='224' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>蹲下来观察,是仰望之外的另一种虔诚。</text></svg>",
+   "caption": "向上指与向下指,哪个对?康德在第八章等你——他会说:各对一半。"
+  }
+ ]
 }

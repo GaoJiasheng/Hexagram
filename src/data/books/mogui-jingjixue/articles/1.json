@@ -1,114 +1,118 @@
 {
-  "title": "经济学的另一面:激励、数据与反常识",
-  "subtitle": "《魔鬼经济学》第一章导读——先问激励是什么,再让数据说话,最后管住「相关≠因果」这条线",
-  "centralIdea": "《魔鬼经济学》不教你赚钱,也几乎不谈GDP,它给读者的是一副重新打量世界的眼镜。镜片之一是激励:经济学在本质上是研究激励的学问,人对激励做出反应;激励分经济、社会、道德三类,常常拧在一起,也会互相干扰。镜片之二是数据:世俗常识常常是错的,甚至是专家和利益方为自己方便而「造」出来的,唯有提出反常的问题、让数据说话,才能戳穿漂亮的故事。而使用这副眼镜最要紧的自律只有一条——相关不等于因果:两件事一起出现,不等于一件导致另一件。这一章立下全书的方法论,后面每一章都是它的实地测试。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "先说清楚这本书不是什么:它不教你炒股,不预测房价,也几乎不碰GDP、利率这些「正经」的经济话题。经济学家列维特和记者都伯纳在开篇立下的野心要古怪得多——**给你换一副眼镜**。戴上它,幼儿园的迟到罚款、房产中介的热情劝说、专家在电视上的忧心忡忡,全都会露出另一副面目。这副眼镜只有两片镜片:一片叫**激励**,一片叫**数据**。"
-    },
-    {
-      "type": "h2",
-      "text": "一切行为背后,先找激励"
-    },
-    {
-      "type": "p",
-      "text": "在列维特看来,剥掉数学公式和专业术语,经济学的内核朴素得近乎粗暴:**它研究的是人如何对激励做出反应**。人未必理性,未必高尚,但极少无缘无故地行动。所以,想弄懂任何看上去费解的行为,第一个该问的问题都是同一句:「这里的激励是什么?」孩子为什么突然爱上刷牙?销售为什么在月底疯狂冲单?排队加塞的人为什么理直气壮?顺着激励找下去,答案往往比想象中简单。反过来,想改变一个行为——让人守时、让人节能、让孩子好好写作业——本质上也都是同一件事:重新设计激励。只是这件事远比听上去凶险,一不小心就会弄巧成拙。"
-    },
-    {
-      "type": "p",
-      "text": "书里最有名的例子来自以色列海法的几家幼儿园。家长接孩子总迟到,老师只能干等,于是园方支了一招:迟到就罚款,每次约3美元。按常识,罚款该让迟到减少——结果迟到的家长几乎**翻了一倍**。为什么?罚款之前,准时是一件**道德**上的事:让老师白白陪着等,心里过意不去。罚款一出,内疚被明码标价成了3美元的商品:花小钱买老师加班,天经地义。更糟的是,几周后园方撤销了罚款,迟到率却再也没降回去——道德激励一旦被换成经济激励,想换回来就难了。"
-    },
-    {
-      "type": "quote",
-      "original": "激励是现代生活的基石。",
-      "translation": "这是全书的第一块地基。罚款、奖金、分数、面子、内疚,都是激励。设计得好,它让人把事情做对;设计得糟——比如那次3美元的罚款——它会精确地把事情推向反面。"
-    },
-    {
-      "type": "h2",
-      "text": "经济的、社会的、道德的:三股绳常拧在一起"
-    },
-    {
-      "type": "p",
-      "text": "列维特把激励粗分三类。**经济激励**作用于钱包:奖金、罚款、涨价、折扣。**社会激励**作用于面子:别人会怎么看我——酒驾曝光名单之所以有效,靠的常常不是罚款数额,而是「丢不起这个人」。**道德激励**作用于良心:哪怕没人看见,自己心里也过不去。现实中的一个行为,往往同时被三股绳拉着:不顺手牵羊,是怕受罚(经济),怕被人看见(社会),更是「我不是那种人」(道德)。而幼儿园的故事提醒我们,三股绳会互相干扰——鲁莽地加一股经济激励,可能恰好剪断另外两股。给献血者发补贴的实验里也见过类似的影子:一旦高尚的事变成几块钱的交易,愿意做的人反而可能变少。"
-    },
-    {
-      "type": "figure",
-      "ftype": "结构图",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>一切行为背后:激励的三种类型</text><rect x='30' y='52' width='155' height='112' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='107' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>经济激励</text><text x='107' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>作用于钱包</text><text x='107' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>罚款 · 奖金 · 价格</text><text x='107' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>划算不划算?</text><rect x='202' y='52' width='155' height='112' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='279' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>社会激励</text><text x='279' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>作用于面子</text><text x='279' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>名声 · 表扬 · 示众</text><text x='279' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>别人怎么看我?</text><rect x='374' y='52' width='155' height='112' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='451' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>道德激励</text><text x='451' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>作用于良心</text><text x='451' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>内疚 · 自豪 · 底线</text><text x='451' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>自己过得去吗?</text><line x1='107' y1='164' x2='260' y2='204' style='stroke:var(--line);stroke-width:1.5'/><line x1='279' y1='164' x2='280' y2='204' style='stroke:var(--line);stroke-width:1.5'/><line x1='451' y1='164' x2='300' y2='204' style='stroke:var(--line);stroke-width:1.5'/><rect x='225' y='205' width='110' height='42' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><text x='280' y='231' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>人的行为</text><text x='280' y='274' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>三股绳常拧在一起,也会互相干扰——海法幼儿园:</text><text x='280' y='292' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>3美元罚款把「内疚」换成「价格」,迟到反而翻倍</text></svg>",
-      "caption": "激励的三种类型:经济、社会、道德,常常同时作用在一个行为上。加错一股绳,可能恰好剪断另外两股。"
-    },
-    {
-      "type": "h2",
-      "text": "世俗常识,常常是错的"
-    },
-    {
-      "type": "p",
-      "text": "眼镜的第二片镜片,对准那些「人人都知道」的事。作者借经济学家加尔布雷斯造的词——**世俗常识**(conventional wisdom)——点破一个机制:人们接受一种说法,往往不是因为它最接近真相,而是因为它**方便、顺耳、符合自己的利益**。常识替我们省去思考的麻烦,也让我们免于听见扎心的答案,所以它格外顽固。"
-    },
-    {
-      "type": "p",
-      "text": "更要紧的是,常识常常不是自然长出来的,而是**被人造出来的**。专家、机构、利益相关方各有各的激励:为弱势群体奔走的活动家,需要一个足够吓人的数字才能挤上新闻——书里那位倡导者随口报出的死亡数字,换算下来一年要死掉数亿人,媒体却照单全收;靠咨询费吃饭的专家,需要你觉得问题既严重又复杂,离了他不行;而替你卖房的中介,需要你尽快成交,而不是卖出最高价。列维特翻过成千上万条房产交易数据:中介卖**自己的**房子,平均比替客户卖多挂牌十来天,成交价高出约3%。「相信我,这个报价已经很不错了」——这句常识背后,是佣金结构决定的激励:多等一周替你多卖一万块,落进中介口袋的只有一百来块,他犯不着等。"
-    },
-    {
-      "type": "quote",
-      "original": "道德代表人们希望世界如何运转,而经济学代表世界实际如何运转。",
-      "translation": "全书反复回响的一句话。它不是在贬低道德,而是在提醒:想改变世界,先得看清世界真实的运转方式——而看清的起点,就是承认「应该如此」和「实际如此」是两回事。"
-    },
-    {
-      "type": "figure",
-      "ftype": "流程图",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>「人人都知道」是怎样被制造出来的</text><rect x='16' y='62' width='112' height='92' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='72' y='90' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>利益方与专家</text><text x='72' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>各有各的激励</text><text x='72' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>曝光·经费·佣金</text><line x1='130' y1='108' x2='150' y2='108' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='150,103 158,108 150,113' style='fill:var(--ink-soft)'/><rect x='158' y='62' width='112' height='92' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='214' y='90' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>方便的说法</text><text x='214' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>吓人的数字</text><text x='214' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>安心的答案</text><line x1='272' y1='108' x2='292' y2='108' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='292,103 300,108 292,113' style='fill:var(--ink-soft)'/><rect x='300' y='62' width='112' height='92' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='356' y='90' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>媒体与口耳</text><text x='356' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>照单全收</text><text x='356' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>层层放大</text><line x1='414' y1='108' x2='434' y2='108' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='434,103 442,108 434,113' style='fill:var(--ink-soft)'/><rect x='442' y='62' width='104' height='92' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><text x='494' y='90' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>世俗常识</text><text x='494' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>顺耳 · 省事</text><text x='494' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>未必是真</text><text x='280' y='204' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>「相信我,这个报价已经很不错了」——中介的「常识」,背后是佣金的激励</text><text x='280' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>加尔布雷斯:人们拥抱的往往是方便顺耳的说法,而不是最接近真相的那个</text><text x='280' y='268' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>一条常识方便了谁,谁就有动力生产它</text></svg>",
-      "caption": "世俗常识的流水线:它未必来自事实,而常常来自「谁需要你这么相信」。这是本书后面几章反复拆解的对象。"
-    },
-    {
-      "type": "h2",
-      "text": "提怪问题,让数据说话"
-    },
-    {
-      "type": "p",
-      "text": "常识靠不住,专家有私心,那靠什么?靠数据。这本书的标志性动作,是先提一个不合时宜的怪问题——毒贩看着日进斗金,为什么大多还跟妈妈住?老师会不会为了考核替学生改答题卡?游泳池和枪,哪个对孩子更危险?——然后不跟你辩论,直接去翻账本、答题卡和成绩库,让数字自己开口。芝加哥公立学校几万份答题卡里,列维特用算法筛出了成串可疑的「雷同修改」,查实了少数教师在替学生涂改答案;相扑运动员几十年的对战记录里,关键场次的胜率异常,暴露了心照不宣的让局默契。漂亮的故事经不起数据的盘问,是全书反复上演的戏码。"
-    },
-    {
-      "type": "p",
-      "text": "「常识+专家」一起翻车的最壮观标本,来自犯罪学。上世纪90年代初,美国的专家们几乎异口同声:青少年「超级掠食者」将让犯罪率再翻一番,血流成河。结果呢?犯罪率掉头向下,一路跌到几十年来的低点。各路常识解释——经济繁荣、警力增加、枪支管控——都有道理,但经数据一项项称量,都远不足以解释这场断崖式下跌。列维特自己给出的候选答案出人意料,也争议至今,书中后文会专门交代,这里先按下不表。方法论的教训倒是可以先记住:**当所有专家说着同一句话时,恰恰值得去查一查数据。**"
-    },
-    {
-      "type": "quote",
-      "original": "知道测量什么、如何测量,这个复杂的世界就没那么复杂了。",
-      "translation": "这句话概括了全书的方法自信:很多看似无解的争论,不缺立场,缺的是一份被正确提问过的数据。"
-    },
-    {
-      "type": "h2",
-      "text": "最要紧的一条自律:相关不等于因果"
-    },
-    {
-      "type": "p",
-      "text": "不过,「让数据说话」有个致命陷阱:数据很会「说谎」——确切地说,是我们很容易听错。两件事总是一起出现,统计上叫**相关**;但相关不等于**因果**。逻辑上至少有三种可能:A导致B;B反过来导致A;或者藏在幕后的C,同时导致了A和B。警察多的城市往往犯罪也多,难道是警察制造犯罪?显然是犯罪多的城市才雇更多警察。竞选中花钱多的候选人通常获胜,于是「钱能买选举」成了常识;可列维特比对了同一对候选人多次交手的记录:经费砍掉一半,得票平均只少约1%。不是钱买来了胜利,而是**看起来会赢的人,钱才愿意涌向他**——捐款人同样在对激励做反应。"
-    },
-    {
-      "type": "figure",
-      "ftype": "示意图",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>A 与 B 总一起出现(相关),背后有三种可能</text><text x='100' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>① A 导致 B</text><circle cx='62' cy='122' r='18' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='62' y='127' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>A</text><line x1='84' y1='122' x2='110' y2='122' style='stroke:var(--ink);stroke-width:1.5'/><polygon points='110,117 118,122 110,127' style='fill:var(--ink)'/><circle cx='138' cy='122' r='18' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='138' y='127' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>B</text><text x='280' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>② B 导致 A</text><circle cx='242' cy='122' r='18' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='242' y='127' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>A</text><line x1='296' y1='122' x2='270' y2='122' style='stroke:var(--ink);stroke-width:1.5'/><polygon points='270,117 262,122 270,127' style='fill:var(--ink)'/><circle cx='318' cy='122' r='18' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='318' y='127' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>B</text><text x='460' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>③ 幕后的 C 导致两者</text><circle cx='460' cy='106' r='18' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><text x='460' y='111' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>C</text><line x1='448' y1='120' x2='424' y2='148' style='stroke:var(--cinnabar-pure);stroke-width:1.5'/><polygon points='428,146 421,152 424,143' style='fill:var(--cinnabar-pure)'/><line x1='472' y1='120' x2='496' y2='148' style='stroke:var(--cinnabar-pure);stroke-width:1.5'/><polygon points='492,146 499,152 496,143' style='fill:var(--cinnabar-pure)'/><circle cx='417' cy='164' r='16' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='417' y='169' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>A</text><circle cx='503' cy='164' r='16' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='503' y='169' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>B</text><text x='280' y='222' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>例:花钱多的候选人往往得票也多——但经费砍半,得票只少约1%</text><text x='280' y='246' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>不是钱买来胜利;是「看起来会赢」这个 C,同时吸来了钞票与选票</text><text x='280' y='276' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>警察多的城市犯罪也多:不是警察制造犯罪,是犯罪多才多雇警察</text></svg>",
-      "caption": "相关≠因果的三种可能。看到两件事同时发生,先在心里画一遍这三张图,再决定信哪个故事——这是全书每一章都在守的底线。"
-    },
-    {
-      "type": "p",
-      "text": "这条「相关≠因果」的自律,是这副眼镜上最贵的一层镀膜。后面每个惊人的结论——关于教养方式、关于名字、关于犯罪——都要先过这一关:排除反向因果,揪出幕后的第三因素。作为读者,我们也该带着同一条线去读:书里的具体答案并非定论,有些后来确实被同行反复挑战过;但「先怀疑、再验证」的规矩本身,不会过时。日常生活里这条线同样好用——「吃X的人更长寿」「用了这套方法的公司都成功了」,听到此类说法时先别急着信,问一句:有没有可能是反过来,或者背后另有一个C?"
-    },
-    {
-      "type": "h2",
-      "text": "这副眼镜怎么用"
-    },
-    {
-      "type": "p",
-      "text": "作者自己坦承,这本书没有统一的主题,只有统一的方法:遇事先问「谁的激励是什么」;对「人人都知道」的说法多留一个心眼,想想它方便了谁;能找数据,就别只听故事;看到两件事同时发生,忍住立刻下因果结论的冲动。往后各章——作弊的教师与相扑手、三K党与房产中介、毒贩的账本、罪案与父母——不过是戴着这副眼镜做的一次次实地测试。眼镜不提供现成的答案,它只改变你提问的方式;而提对问题,常常已经是答案的一半。"
-    },
-    {
-      "type": "figure",
-      "ftype": "方法图",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='30' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>这副眼镜的四步用法</text><line x1='114' y1='104' x2='196' y2='104' style='stroke:var(--line);stroke-width:1.5'/><line x1='244' y1='104' x2='326' y2='104' style='stroke:var(--line);stroke-width:1.5'/><line x1='374' y1='104' x2='456' y2='104' style='stroke:var(--line);stroke-width:1.5'/><circle cx='90' cy='104' r='24' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='90' y='110' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>1</text><circle cx='220' cy='104' r='24' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='220' y='110' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>2</text><circle cx='350' cy='104' r='24' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='350' y='110' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>3</text><circle cx='480' cy='104' r='24' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><text x='480' y='110' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--cinnabar-pure)'>4</text><text x='90' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>提一个</text><text x='90' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>反常的问题</text><text x='220' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>先问:这里</text><text x='220' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>谁有什么激励?</text><text x='350' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>找数据检验</text><text x='350' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>别只听故事</text><text x='480' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>忍住下结论</text><text x='480' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>相关 ≠ 因果</text><text x='280' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>眼镜不提供现成答案——它改变你提问的方式</text><text x='280' y='260' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>提对问题,常常已经是答案的一半</text></svg>",
-      "caption": "全书方法论四步:反常提问 → 追问激励 → 数据检验 → 守住因果底线。后面每一章,都是这四步的一次演练。"
-    }
-  ]
+ "title": "经济学的另一面:激励、数据与反常识",
+ "subtitle": "《魔鬼经济学》第一章导读——先问激励是什么,再让数据说话,最后管住「相关≠因果」这条线",
+ "centralIdea": "《魔鬼经济学》不教你赚钱,也几乎不谈GDP,它给读者的是一副重新打量世界的眼镜。镜片之一是激励:经济学在本质上是研究激励的学问,人对激励做出反应;激励分经济、社会、道德三类,常常拧在一起,也会互相干扰。镜片之二是数据:世俗常识常常是错的,甚至是专家和利益方为自己方便而「造」出来的,唯有提出反常的问题、让数据说话,才能戳穿漂亮的故事。而使用这副眼镜最要紧的自律只有一条——相关不等于因果:两件事一起出现,不等于一件导致另一件。这一章立下全书的方法论,后面每一章都是它的实地测试。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "先说清楚这本书不是什么:它不教你炒股,不预测房价,也几乎不碰GDP、利率这些「正经」的经济话题。经济学家列维特和记者都伯纳在开篇立下的野心要古怪得多——**给你换一副眼镜**。戴上它,幼儿园的迟到罚款、房产中介的热情劝说、专家在电视上的忧心忡忡,全都会露出另一副面目。这副眼镜只有两片镜片:一片叫**激励**,一片叫**数据**。"
+  },
+  {
+   "type": "h2",
+   "text": "一切行为背后,先找激励"
+  },
+  {
+   "type": "p",
+   "text": "在列维特看来,剥掉数学公式和专业术语,经济学的内核朴素得近乎粗暴:**它研究的是人如何对激励做出反应**。人未必理性,未必高尚,但极少无缘无故地行动。所以,想弄懂任何看上去费解的行为,第一个该问的问题都是同一句:「这里的激励是什么?」孩子为什么突然爱上刷牙?销售为什么在月底疯狂冲单?排队加塞的人为什么理直气壮?顺着激励找下去,答案往往比想象中简单。反过来,想改变一个行为——让人守时、让人节能、让孩子好好写作业——本质上也都是同一件事:重新设计激励。只是这件事远比听上去凶险,一不小心就会弄巧成拙。"
+  },
+  {
+   "type": "p",
+   "text": "书里最有名的例子来自以色列海法的几家幼儿园。家长接孩子总迟到,老师只能干等,于是园方支了一招:迟到就罚款,每次约3美元。按常识,罚款该让迟到减少——结果迟到的家长几乎**翻了一倍**。为什么?罚款之前,准时是一件**道德**上的事:让老师白白陪着等,心里过意不去。罚款一出,内疚被明码标价成了3美元的商品:花小钱买老师加班,天经地义。更糟的是,几周后园方撤销了罚款,迟到率却再也没降回去——道德激励一旦被换成经济激励,想换回来就难了。"
+  },
+  {
+   "type": "quote",
+   "original": "激励是现代生活的基石。",
+   "translation": "这是全书的第一块地基。罚款、奖金、分数、面子、内疚,都是激励。设计得好,它让人把事情做对;设计得糟——比如那次3美元的罚款——它会精确地把事情推向反面。"
+  },
+  {
+   "type": "h2",
+   "text": "经济的、社会的、道德的:三股绳常拧在一起"
+  },
+  {
+   "type": "p",
+   "text": "列维特把激励粗分三类。**经济激励**作用于钱包:奖金、罚款、涨价、折扣。**社会激励**作用于面子:别人会怎么看我——酒驾曝光名单之所以有效,靠的常常不是罚款数额,而是「丢不起这个人」。**道德激励**作用于良心:哪怕没人看见,自己心里也过不去。现实中的一个行为,往往同时被三股绳拉着:不顺手牵羊,是怕受罚(经济),怕被人看见(社会),更是「我不是那种人」(道德)。而幼儿园的故事提醒我们,三股绳会互相干扰——鲁莽地加一股经济激励,可能恰好剪断另外两股。给献血者发补贴的实验里也见过类似的影子:一旦高尚的事变成几块钱的交易,愿意做的人反而可能变少。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>一切行为背后:激励的三种类型</text><rect x='30' y='52' width='155' height='112' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='107' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>经济激励</text><text x='107' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>作用于钱包</text><text x='107' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>罚款 · 奖金 · 价格</text><text x='107' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>划算不划算?</text><rect x='202' y='52' width='155' height='112' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='279' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>社会激励</text><text x='279' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>作用于面子</text><text x='279' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>名声 · 表扬 · 示众</text><text x='279' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>别人怎么看我?</text><rect x='374' y='52' width='155' height='112' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='451' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>道德激励</text><text x='451' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>作用于良心</text><text x='451' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>内疚 · 自豪 · 底线</text><text x='451' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>自己过得去吗?</text><line x1='107' y1='164' x2='260' y2='204' style='stroke:var(--line);stroke-width:1.5'/><line x1='279' y1='164' x2='280' y2='204' style='stroke:var(--line);stroke-width:1.5'/><line x1='451' y1='164' x2='300' y2='204' style='stroke:var(--line);stroke-width:1.5'/><rect x='225' y='205' width='110' height='42' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><text x='280' y='231' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>人的行为</text><text x='280' y='274' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>三股绳常拧在一起,也会互相干扰——海法幼儿园:</text><text x='280' y='292' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>3美元罚款把「内疚」换成「价格」,迟到反而翻倍</text></svg>",
+   "caption": "激励的三种类型:经济、社会、道德,常常同时作用在一个行为上。加错一股绳,可能恰好剪断另外两股。"
+  },
+  {
+   "type": "h2",
+   "text": "世俗常识,常常是错的"
+  },
+  {
+   "type": "p",
+   "text": "眼镜的第二片镜片,对准那些「人人都知道」的事。作者借经济学家加尔布雷斯造的词——**世俗常识**(conventional wisdom)——点破一个机制:人们接受一种说法,往往不是因为它最接近真相,而是因为它**方便、顺耳、符合自己的利益**。常识替我们省去思考的麻烦,也让我们免于听见扎心的答案,所以它格外顽固。"
+  },
+  {
+   "type": "p",
+   "text": "更要紧的是,常识常常不是自然长出来的,而是**被人造出来的**。专家、机构、利益相关方各有各的激励:为弱势群体奔走的活动家,需要一个足够吓人的数字才能挤上新闻——书里那位倡导者随口报出的死亡数字,换算下来一年要死掉数亿人,媒体却照单全收;靠咨询费吃饭的专家,需要你觉得问题既严重又复杂,离了他不行;而替你卖房的中介,需要你尽快成交,而不是卖出最高价。列维特翻过成千上万条房产交易数据:中介卖**自己的**房子,平均比替客户卖多挂牌十来天,成交价高出约3%。「相信我,这个报价已经很不错了」——这句常识背后,是佣金结构决定的激励:多等一周替你多卖一万块,落进中介口袋的只有一百来块,他犯不着等。"
+  },
+  {
+   "type": "quote",
+   "original": "道德代表人们希望世界如何运转,而经济学代表世界实际如何运转。",
+   "translation": "全书反复回响的一句话。它不是在贬低道德,而是在提醒:想改变世界,先得看清世界真实的运转方式——而看清的起点,就是承认「应该如此」和「实际如此」是两回事。"
+  },
+  {
+   "type": "figure",
+   "ftype": "流程图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>「人人都知道」是怎样被制造出来的</text><rect x='16' y='62' width='112' height='92' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='72' y='90' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>利益方与专家</text><text x='72' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>各有各的激励</text><text x='72' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>曝光·经费·佣金</text><line x1='130' y1='108' x2='150' y2='108' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='150,103 158,108 150,113' style='fill:var(--ink-soft)'/><rect x='158' y='62' width='112' height='92' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='214' y='90' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>方便的说法</text><text x='214' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>吓人的数字</text><text x='214' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>安心的答案</text><line x1='272' y1='108' x2='292' y2='108' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='292,103 300,108 292,113' style='fill:var(--ink-soft)'/><rect x='300' y='62' width='112' height='92' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='356' y='90' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>媒体与口耳</text><text x='356' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>照单全收</text><text x='356' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>层层放大</text><line x1='414' y1='108' x2='434' y2='108' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='434,103 442,108 434,113' style='fill:var(--ink-soft)'/><rect x='442' y='62' width='104' height='92' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><text x='494' y='90' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>世俗常识</text><text x='494' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>顺耳 · 省事</text><text x='494' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>未必是真</text><text x='280' y='204' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>「相信我,这个报价已经很不错了」——中介的「常识」,背后是佣金的激励</text><text x='280' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>加尔布雷斯:人们拥抱的往往是方便顺耳的说法,而不是最接近真相的那个</text><text x='280' y='268' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>一条常识方便了谁,谁就有动力生产它</text></svg>",
+   "caption": "世俗常识的流水线:它未必来自事实,而常常来自「谁需要你这么相信」。这是本书后面几章反复拆解的对象。"
+  },
+  {
+   "type": "h2",
+   "text": "提怪问题,让数据说话"
+  },
+  {
+   "type": "p",
+   "text": "常识靠不住,专家有私心,那靠什么?靠数据。这本书的标志性动作,是先提一个不合时宜的怪问题——毒贩看着日进斗金,为什么大多还跟妈妈住?老师会不会为了考核替学生改答题卡?游泳池和枪,哪个对孩子更危险?——然后不跟你辩论,直接去翻账本、答题卡和成绩库,让数字自己开口。芝加哥公立学校几万份答题卡里,列维特用算法筛出了成串可疑的「雷同修改」,查实了少数教师在替学生涂改答案;相扑运动员几十年的对战记录里,关键场次的胜率异常,暴露了心照不宣的让局默契。漂亮的故事经不起数据的盘问,是全书反复上演的戏码。"
+  },
+  {
+   "type": "p",
+   "text": "「常识+专家」一起翻车的最壮观标本,来自犯罪学。上世纪90年代初,美国的专家们几乎异口同声:青少年「超级掠食者」将让犯罪率再翻一番,血流成河。结果呢?犯罪率掉头向下,一路跌到几十年来的低点。各路常识解释——经济繁荣、警力增加、枪支管控——都有道理,但经数据一项项称量,都远不足以解释这场断崖式下跌。列维特自己给出的候选答案出人意料,也争议至今,书中后文会专门交代,这里先按下不表。方法论的教训倒是可以先记住:"
+  },
+  {
+   "type": "pull",
+   "text": "当所有专家说着同一句话时,恰恰值得去查一查数据。"
+  },
+  {
+   "type": "quote",
+   "original": "知道测量什么、如何测量,这个复杂的世界就没那么复杂了。",
+   "translation": "这句话概括了全书的方法自信:很多看似无解的争论,不缺立场,缺的是一份被正确提问过的数据。"
+  },
+  {
+   "type": "h2",
+   "text": "最要紧的一条自律:相关不等于因果"
+  },
+  {
+   "type": "p",
+   "text": "不过,「让数据说话」有个致命陷阱:数据很会「说谎」——确切地说,是我们很容易听错。两件事总是一起出现,统计上叫**相关**;但相关不等于**因果**。逻辑上至少有三种可能:A导致B;B反过来导致A;或者藏在幕后的C,同时导致了A和B。警察多的城市往往犯罪也多,难道是警察制造犯罪?显然是犯罪多的城市才雇更多警察。竞选中花钱多的候选人通常获胜,于是「钱能买选举」成了常识;可列维特比对了同一对候选人多次交手的记录:经费砍掉一半,得票平均只少约1%。不是钱买来了胜利,而是**看起来会赢的人,钱才愿意涌向他**——捐款人同样在对激励做反应。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>A 与 B 总一起出现(相关),背后有三种可能</text><text x='100' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>① A 导致 B</text><circle cx='62' cy='122' r='18' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='62' y='127' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>A</text><line x1='84' y1='122' x2='110' y2='122' style='stroke:var(--ink);stroke-width:1.5'/><polygon points='110,117 118,122 110,127' style='fill:var(--ink)'/><circle cx='138' cy='122' r='18' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='138' y='127' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>B</text><text x='280' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>② B 导致 A</text><circle cx='242' cy='122' r='18' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='242' y='127' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>A</text><line x1='296' y1='122' x2='270' y2='122' style='stroke:var(--ink);stroke-width:1.5'/><polygon points='270,117 262,122 270,127' style='fill:var(--ink)'/><circle cx='318' cy='122' r='18' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='318' y='127' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>B</text><text x='460' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>③ 幕后的 C 导致两者</text><circle cx='460' cy='106' r='18' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><text x='460' y='111' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>C</text><line x1='448' y1='120' x2='424' y2='148' style='stroke:var(--cinnabar-pure);stroke-width:1.5'/><polygon points='428,146 421,152 424,143' style='fill:var(--cinnabar-pure)'/><line x1='472' y1='120' x2='496' y2='148' style='stroke:var(--cinnabar-pure);stroke-width:1.5'/><polygon points='492,146 499,152 496,143' style='fill:var(--cinnabar-pure)'/><circle cx='417' cy='164' r='16' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='417' y='169' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>A</text><circle cx='503' cy='164' r='16' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='503' y='169' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>B</text><text x='280' y='222' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>例:花钱多的候选人往往得票也多——但经费砍半,得票只少约1%</text><text x='280' y='246' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>不是钱买来胜利;是「看起来会赢」这个 C,同时吸来了钞票与选票</text><text x='280' y='276' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>警察多的城市犯罪也多:不是警察制造犯罪,是犯罪多才多雇警察</text></svg>",
+   "caption": "相关≠因果的三种可能。看到两件事同时发生,先在心里画一遍这三张图,再决定信哪个故事——这是全书每一章都在守的底线。"
+  },
+  {
+   "type": "p",
+   "text": "这条「相关≠因果」的自律,是这副眼镜上最贵的一层镀膜。后面每个惊人的结论——关于教养方式、关于名字、关于犯罪——都要先过这一关:排除反向因果,揪出幕后的第三因素。作为读者,我们也该带着同一条线去读:书里的具体答案并非定论,有些后来确实被同行反复挑战过;但「先怀疑、再验证」的规矩本身,不会过时。日常生活里这条线同样好用——「吃X的人更长寿」「用了这套方法的公司都成功了」,听到此类说法时先别急着信,问一句:有没有可能是反过来,或者背后另有一个C?"
+  },
+  {
+   "type": "h2",
+   "text": "这副眼镜怎么用"
+  },
+  {
+   "type": "p",
+   "text": "作者自己坦承,这本书没有统一的主题,只有统一的方法:遇事先问「谁的激励是什么」;对「人人都知道」的说法多留一个心眼,想想它方便了谁;能找数据,就别只听故事;看到两件事同时发生,忍住立刻下因果结论的冲动。往后各章——作弊的教师与相扑手、三K党与房产中介、毒贩的账本、罪案与父母——不过是戴着这副眼镜做的一次次实地测试。眼镜不提供现成的答案,它只改变你提问的方式;而提对问题,常常已经是答案的一半。"
+  },
+  {
+   "type": "figure",
+   "ftype": "方法图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='30' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>这副眼镜的四步用法</text><line x1='114' y1='104' x2='196' y2='104' style='stroke:var(--line);stroke-width:1.5'/><line x1='244' y1='104' x2='326' y2='104' style='stroke:var(--line);stroke-width:1.5'/><line x1='374' y1='104' x2='456' y2='104' style='stroke:var(--line);stroke-width:1.5'/><circle cx='90' cy='104' r='24' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='90' y='110' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>1</text><circle cx='220' cy='104' r='24' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='220' y='110' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>2</text><circle cx='350' cy='104' r='24' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.5'/><text x='350' y='110' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>3</text><circle cx='480' cy='104' r='24' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><text x='480' y='110' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--cinnabar-pure)'>4</text><text x='90' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>提一个</text><text x='90' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>反常的问题</text><text x='220' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>先问:这里</text><text x='220' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>谁有什么激励?</text><text x='350' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>找数据检验</text><text x='350' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>别只听故事</text><text x='480' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>忍住下结论</text><text x='480' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>相关 ≠ 因果</text><text x='280' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>眼镜不提供现成答案——它改变你提问的方式</text><text x='280' y='260' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>提对问题,常常已经是答案的一半</text></svg>",
+   "caption": "全书方法论四步:反常提问 → 追问激励 → 数据检验 → 守住因果底线。后面每一章,都是这四步的一次演练。"
+  }
+ ]
 }

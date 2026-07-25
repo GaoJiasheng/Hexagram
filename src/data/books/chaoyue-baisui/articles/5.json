@@ -1,142 +1,146 @@
 {
-  "title": "代谢功能障碍:万病之根",
-  "subtitle": "四骑士背后那条共同的上游河，和它更早亮起的那盏灯",
-  "centralIdea": "心脏病、癌症、阿尔茨海默、2 型糖尿病这『四骑士』看似各不相干，其实共享同一条上游河——代谢功能障碍(胰岛素抵抗、高胰岛素血症、非酒精性脂肪肝 NAFLD、代谢综合征)。它由长期高糖高精制碳水、过量果糖喂大:肝脏与内脏囤起脂肪、细胞对胰岛素变迟钝、胰岛素被迫长期偏高，把四种病的风险整体抬高。两个反常识要记牢——脂肪其实是相对安全的『缓冲仓』，存不下、外溢到肝脏内脏才危险;瘦不等于代谢健康，外瘦内胖(TOFI)一样出事。所以别等空腹血糖亮红灯，那往往是最后才亮的一盏;更该早查空腹胰岛素、口服糖耐量+胰岛素、甘油三酯/HDL 比。这是 Attia 眼里性价比最高的一步预防。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "体检报告上，只要空腹血糖那一栏还印着黑字、没标红，很多人就长舒一口气:血糖正常，代谢没事。Attia 想拦住这口气。在他看来，等空腹血糖亮红灯，往往已经是这场慢性危机的最后一幕——前面十几年，身体一直在悄悄代偿，只是没人去查那盏更早亮起的灯。这一章讲的，就是藏在心脏病、癌症、阿尔茨海默、2 型糖尿病这『四骑士』背后的同一个上游:代谢功能障碍。"
-    },
-    {
-      "type": "h2",
-      "text": "一、四骑士，共用同一条「上游河」"
-    },
-    {
-      "type": "p",
-      "text": "全书把折磨现代人的四类慢病称作『四骑士』:动脉粥样硬化性心脏病、癌症、神经退行(以阿尔茨海默为代表)、2 型糖尿病。乍看它们八竿子打不着——一个堵血管、一个长肿瘤、一个坏脑子、一个乱血糖。Attia 的关键判断是:它们并非各走各路，而是共享同一条上游河。那条河，就是**代谢功能障碍**。"
-    },
-    {
-      "type": "p",
-      "text": "所谓代谢功能障碍，不是一个单独的病，而是一组彼此纠缠的失调:胰岛素抵抗、高胰岛素血症、非酒精性脂肪肝(NAFLD)，以及把它们打包起来的『代谢综合征』。它像地下水位——你在地面上看到的是四棵不同的病树，往下刨，根须却泡在同一片浸水的土里。地下水位一高，四棵树同时更容易烂根。换句话说，代谢越差，四骑士各自的风险都被整体抬高;而这四类病里，2 型糖尿病更像是代谢失调终于藏不住、浮出水面的那一个，其余三个则在水面下悄悄被同一股力量推着走。"
-    },
-    {
-      "type": "quote",
-      "original": "四骑士看似各奔东西，脚下踩的却是同一条河。",
-      "translation": ""
-    },
-    {
-      "type": "figure",
-      "ftype": "上游示意图",
-      "caption": "代谢功能障碍是共同上游，同时抬高四骑士各自的风险",
-      "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"15\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"10\">同一上游，抬高四道风险</text><rect x=\"24\" y=\"118\" width=\"150\" height=\"64\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.5\"/><text x=\"99\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">代谢功能障碍</text><text x=\"99\" y=\"167\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">上游总根</text><text x=\"99\" y=\"200\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10\">胰岛素抵抗 · 脂肪肝 · 高胰岛素</text><path d=\"M174 150 C280 150 280 45 386 45\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><path d=\"M174 150 C280 150 280 117 386 117\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><path d=\"M174 150 C280 150 280 189 386 189\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><path d=\"M174 150 C280 150 280 261 386 261\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"386\" y=\"23\" width=\"150\" height=\"44\" rx=\"6\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"461\" y=\"50\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">心脏病</text><rect x=\"386\" y=\"95\" width=\"150\" height=\"44\" rx=\"6\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"461\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">癌症</text><rect x=\"386\" y=\"167\" width=\"150\" height=\"44\" rx=\"6\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"461\" y=\"194\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">阿尔茨海默</text><rect x=\"386\" y=\"239\" width=\"150\" height=\"44\" rx=\"6\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"461\" y=\"266\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">2型糖尿病</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "这也解释了 Attia 的战略:与其等某一匹骑士冲到眼前再各个击退，不如先去管那条上游河。把代谢修好，等于同时给四道门都上了闩。这正是全书『把预防提前几十年』落到实处的第一站。"
-    },
-    {
-      "type": "h2",
-      "text": "二、胰岛素:那个不停加班的仓库管理员"
-    },
-    {
-      "type": "p",
-      "text": "要看懂这条上游河，先得认识**胰岛素**。可以把它想成身体里管糖的仓库管理员:你一吃饭，血里的葡萄糖升高，胰岛素就出来指挥，把糖搬进肌肉、肝脏和脂肪细胞储存，让血糖回落。偶尔来一批货，管理员轻松应付，货进仓、血糖平，一切井然。"
-    },
-    {
-      "type": "p",
-      "text": "可如果你天天大批量进货——长期高糖、精制碳水、过量果糖——细胞的仓库越塞越满，慢慢对管理员的吆喝爱理不理，这就是**胰岛素抵抗**。身体的对策不是少搬，而是派更多管理员、喊得更大声:胰岛素越分泌越多、长期居高不下，这叫**高胰岛素血症**。血糖表面上还正常，代价是胰岛素这位管理员被迫无限加班。"
-    },
-    {
-      "type": "p",
-      "text": "为什么要单把**果糖**拎出来?因为葡萄糖能被全身各处细胞分头消化，果糖却几乎全靠肝脏一家处理。含糖饮料、果葡糖浆把大量果糖一次性砸向肝脏，肝脏来不及用完，就地把它转成脂肪囤下——这正是肝脏脂肪堆积、进而拖累全身胰岛素敏感度的一条捷径。所以问题往往不在『糖』这个字本身，而在你以多快的速度、多大的量、多稀缺的其他营养(纤维、蛋白)把它灌进身体。一颗完整的水果和一杯果汁，肝脏的感受可以天差地别。"
-    },
-    {
-      "type": "quote",
-      "original": "空腹血糖还漂亮的时候，胰岛素可能已经替你加了好几年的班。",
-      "translation": ""
-    },
-    {
-      "type": "p",
-      "text": "这就是为什么『血糖正常』会骗人。血糖之所以还正常，恰恰是因为胰岛素在拼命代偿、替你兜底。等哪天管理员累垮、再多也压不住血糖，空腹血糖才升上去——那时糖尿病其实已经走了很远。真正更早的信号，是胰岛素本身偏高，而它偏偏不在常规体检的默认项里。"
-    },
-    {
-      "type": "figure",
-      "ftype": "机制流程图",
-      "caption": "从饮食到高胰岛素:一条会自我加固的恶性循环",
-      "svg": "<svg viewBox=\"0 0 560 310\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"130\" y=\"16\" width=\"300\" height=\"46\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"280\" y=\"44\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">长期高糖 · 精制碳水 · 过量果糖</text><line x1=\"280\" y1=\"62\" x2=\"280\" y2=\"86\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.3\"/><polygon points=\"273,84 287,84 280,94\" style=\"fill:var(--ink-soft)\"/><rect x=\"130\" y=\"94\" width=\"300\" height=\"46\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"280\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">肝脏囤起脂肪(脂肪肝)</text><line x1=\"280\" y1=\"140\" x2=\"280\" y2=\"164\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.3\"/><polygon points=\"273,162 287,162 280,172\" style=\"fill:var(--ink-soft)\"/><rect x=\"130\" y=\"172\" width=\"300\" height=\"46\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"280\" y=\"200\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">细胞对胰岛素变迟钝(抵抗)</text><line x1=\"280\" y1=\"218\" x2=\"280\" y2=\"242\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.3\"/><polygon points=\"273,240 287,240 280,250\" style=\"fill:var(--ink-soft)\"/><rect x=\"130\" y=\"250\" width=\"300\" height=\"46\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"278\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"13\">胰岛素被迫长期偏高</text><path d=\"M430 273 C520 245 520 135 436 117\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\"/><polygon points=\"442,110 430,116 444,124\" style=\"fill:var(--cinnabar)\"/><text x=\"498\" y=\"197\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"11\">恶性循环</text></svg>"
-    },
-    {
-      "type": "h2",
-      "text": "三、脂肪不是敌人，是「缓冲仓」——存得下才安全"
-    },
-    {
-      "type": "p",
-      "text": "很多人以为脂肪越少越好、脂肪就是坏东西。Attia 讲了一个反直觉的角度:**皮下脂肪其实是身体相对安全的『缓冲仓』**。你多摄入的能量，优先被存进臀部、大腿这些皮下脂肪里，安安稳稳待着，基本不惹事。它是缓冲，不是祸首。"
-    },
-    {
-      "type": "p",
-      "text": "真正的麻烦，是缓冲仓存满、再也塞不下的时候。多出来的脂肪无处可去，就外溢、异位堆到本不该存脂的地方——肝脏、胰腺、心脏周围、内脏之间。堆在肝上，就是非酒精性脂肪肝;泡在内脏间，就是内脏脂肪。正是这些**放错地方的脂肪**，最直接地点燃胰岛素抵抗和全身低度炎症。所以危险的不是你有脂肪，而是脂肪存到了不该存的仓库。"
-    },
-    {
-      "type": "figure",
-      "ftype": "结构图",
-      "caption": "皮下缓冲仓存满后，脂肪外溢到肝脏与内脏——危险由此而来",
-      "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"115\" y=\"70\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">皮下脂肪 · 安全缓冲仓</text><rect x=\"58\" y=\"84\" width=\"114\" height=\"160\" rx=\"8\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.4\"/><rect x=\"58\" y=\"122\" width=\"114\" height=\"122\" rx=\"6\" style=\"fill:var(--ink-faint)\"/><text x=\"115\" y=\"196\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">快满了</text><path d=\"M172 108 C250 76 320 92 374 122\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><polygon points=\"374,122 361,116 363,129\" style=\"fill:var(--cinnabar)\"/><text x=\"264\" y=\"84\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"11\">存满 → 外溢</text><path d=\"M172 202 C258 252 340 236 396 226\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><polygon points=\"396,226 383,219 384,232\" style=\"fill:var(--cinnabar)\"/><ellipse cx=\"440\" cy=\"132\" rx=\"58\" ry=\"36\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.3\"/><text x=\"440\" y=\"128\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">肝脏</text><text x=\"440\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"11\">脂肪肝</text><ellipse cx=\"448\" cy=\"224\" rx=\"54\" ry=\"32\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.3\"/><text x=\"448\" y=\"221\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">内脏之间</text><text x=\"448\" y=\"239\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"11\">内脏脂肪</text><text x=\"268\" y=\"278\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"10\">异位脂肪 · 放错仓库才点火</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "每个人皮下缓冲仓的容量天生不同。有人能存下很多、迟迟不外溢;有人仓小易满，稍微多吃就往肝里、内脏里溢。这也解释了下一节那个更扎心的现象:两个人吃得差不多、胖瘦看着差很多，代谢的好坏却可能反过来。"
-    },
-    {
-      "type": "h2",
-      "text": "四、瘦，不等于代谢健康:外瘦内胖(TOFI)"
-    },
-    {
-      "type": "p",
-      "text": "我们习惯拿体重和腰围给健康打分:胖就是不健康，瘦就该没事。但缓冲仓那套逻辑意味着——一个体重完全正常、看着清瘦的人，如果皮下仓小、脂肪早早外溢，他的肝脏和内脏里可能已经塞满了脂肪。学界给这种人起了个名字:**TOFI**，thin outside, fat inside，外瘦内胖。"
-    },
-    {
-      "type": "quote",
-      "original": "有的人瘦，只是把胖藏进了看不见的地方。",
-      "translation": ""
-    },
-    {
-      "type": "p",
-      "text": "反过来，也有体重偏高、皮下脂肪厚，代谢指标却相当漂亮的人——他们的缓冲仓够大，脂肪都乖乖待在皮下。这两种情况放在一起说明:体重秤和 BMI 量的是脂肪的**多少**，量不出脂肪存在了**哪里**、代谢到底好不好。生活里那位怎么吃都不胖、却顿顿甜食奶茶的朋友，未必比看着壮实、常年练力量的人更代谢健康。只凭一句『我不胖』就放心，恰恰会把最危险的一类人漏掉——他们体检各项『看起来正常』，也最容易与真正该做的早查擦肩而过。"
-    },
-    {
-      "type": "h2",
-      "text": "五、别等空腹血糖亮红灯:把体检往前挪"
-    },
-    {
-      "type": "p",
-      "text": "代谢综合征通常按五项指标打分:腰围偏大、甘油三酯偏高、HDL(好胆固醇)偏低、血压偏高、空腹血糖偏高，凑满三项就算。Attia 的态度更激进:代谢健康是一条连续的光谱，不是『满三项才生病』。哪怕只中一项，也值得警觉;而且这套阈值本身，他认为定得偏宽松、亮灯偏晚。(这是他个人偏严格的主张，医学界对具体切点仍有争议。)"
-    },
-    {
-      "type": "p",
-      "text": "他更看重那些亮得更早的灯:**空腹胰岛素**——不只测血糖，把胰岛素也测了，能提前多年看出代偿;**口服葡萄糖耐量试验同时测胰岛素**——喝下糖水后不只看血糖曲线，更看胰岛素被逼到多高;还有**甘油三酯与 HDL 的比值**——一个便宜、常被忽视、却相当灵敏的代谢窗口。这些指标，往往在空腹血糖还漂亮时就先变了脸。"
-    },
-    {
-      "type": "figure",
-      "ftype": "时间线",
-      "caption": "空腹血糖是最后才亮的那盏灯;更早的信号得主动去查",
-      "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"46\" y1=\"150\" x2=\"512\" y2=\"150\" style=\"stroke:var(--line)\" stroke-width=\"1.4\"/><polygon points=\"512,150 500,145 500,155\" style=\"fill:var(--line)\"/><text x=\"48\" y=\"176\" style=\"fill:var(--ink-soft)\" font-size=\"11\">早 · 代偿期</text><text x=\"508\" y=\"176\" text-anchor=\"end\" style=\"fill:var(--ink-soft)\" font-size=\"11\">晚</text><circle cx=\"110\" cy=\"150\" r=\"11\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1.4\"/><text x=\"110\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"11\">空腹胰岛素 ↑</text><circle cx=\"230\" cy=\"150\" r=\"11\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1.4\"/><text x=\"230\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"11\">糖耐量异常</text><circle cx=\"350\" cy=\"150\" r=\"11\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1.4\"/><text x=\"350\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"11\">甘油三酯↑ HDL↓</text><circle cx=\"470\" cy=\"150\" r=\"15\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.8\"/><circle cx=\"470\" cy=\"150\" r=\"6\" style=\"fill:var(--cinnabar)\"/><text x=\"470\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"11\">空腹血糖 ↑</text><text x=\"470\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"10\">最后才亮的红灯</text><rect x=\"86\" y=\"212\" width=\"388\" height=\"52\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"280\" y=\"234\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">别等空腹血糖亮灯才查</text><text x=\"280\" y=\"254\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">更早查:空腹胰岛素 · 糖耐量+胰岛素 · 甘油三酯/HDL 比</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "一句话:常规体检里的空腹血糖，是这场危机里**最后才亮**的那盏灯。真想早点看见问题，得去查那几盏更早亮起、却常被跳过的灯。看得越早，可回旋的余地就越大——因为代谢是一条能往回走的路:胰岛素抵抗在真正变成糖尿病之前，往往还有很长一段可以靠饮食、运动、睡眠扳回来的窗口，越早发现，扳起来越省力。"
-    },
-    {
-      "type": "h2",
-      "text": "六、这一章想让你记住的"
-    },
-    {
-      "type": "p",
-      "text": "把逻辑收成一条链:长期高糖高精制碳水、过量果糖 → 肝脏和内脏囤起脂肪 → 细胞对胰岛素变迟钝 → 胰岛素被迫长期偏高 → 一路把心脏病、癌症、阿尔茨海默、2 型糖尿病的风险整体抬高。管住这条上游河，是 Attia 眼里性价比最高的一步预防——因为你不是在四个下游各修一道堤，而是在源头拧小了水量。"
-    },
-    {
-      "type": "p",
-      "text": "也别被『瘦就没事、血糖正常就没事』这两句话哄住——真正该问的，是**脂肪存到了哪里**、**胰岛素是不是在偷偷加班**。(本文是对《超越百岁》(Peter Attia)的读书转述，讲的是书里的框架与证据，个别阈值与主张学界仍有争议;它不构成任何体检或用药建议——具体该查什么、怎么解读，请交给你的医生。)"
-    }
-  ]
+ "title": "代谢功能障碍:万病之根",
+ "subtitle": "四骑士背后那条共同的上游河，和它更早亮起的那盏灯",
+ "centralIdea": "心脏病、癌症、阿尔茨海默、2 型糖尿病这『四骑士』看似各不相干，其实共享同一条上游河——代谢功能障碍(胰岛素抵抗、高胰岛素血症、非酒精性脂肪肝 NAFLD、代谢综合征)。它由长期高糖高精制碳水、过量果糖喂大:肝脏与内脏囤起脂肪、细胞对胰岛素变迟钝、胰岛素被迫长期偏高，把四种病的风险整体抬高。两个反常识要记牢——脂肪其实是相对安全的『缓冲仓』，存不下、外溢到肝脏内脏才危险;瘦不等于代谢健康，外瘦内胖(TOFI)一样出事。所以别等空腹血糖亮红灯，那往往是最后才亮的一盏;更该早查空腹胰岛素、口服糖耐量+胰岛素、甘油三酯/HDL 比。这是 Attia 眼里性价比最高的一步预防。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "体检报告上，只要空腹血糖那一栏还印着黑字、没标红，很多人就长舒一口气:血糖正常，代谢没事。Attia 想拦住这口气。在他看来，等空腹血糖亮红灯，往往已经是这场慢性危机的最后一幕——前面十几年，身体一直在悄悄代偿，只是没人去查那盏更早亮起的灯。这一章讲的，就是藏在心脏病、癌症、阿尔茨海默、2 型糖尿病这『四骑士』背后的同一个上游:代谢功能障碍。"
+  },
+  {
+   "type": "h2",
+   "text": "一、四骑士，共用同一条「上游河」"
+  },
+  {
+   "type": "p",
+   "text": "全书把折磨现代人的四类慢病称作『四骑士』:动脉粥样硬化性心脏病、癌症、神经退行(以阿尔茨海默为代表)、2 型糖尿病。乍看它们八竿子打不着——一个堵血管、一个长肿瘤、一个坏脑子、一个乱血糖。Attia 的关键判断是:它们并非各走各路，而是共享同一条上游河。那条河，就是**代谢功能障碍**。"
+  },
+  {
+   "type": "p",
+   "text": "所谓代谢功能障碍，不是一个单独的病，而是一组彼此纠缠的失调:胰岛素抵抗、高胰岛素血症、非酒精性脂肪肝(NAFLD)，以及把它们打包起来的『代谢综合征』。它像地下水位——你在地面上看到的是四棵不同的病树，往下刨，根须却泡在同一片浸水的土里。地下水位一高，四棵树同时更容易烂根。换句话说，代谢越差，四骑士各自的风险都被整体抬高;而这四类病里，2 型糖尿病更像是代谢失调终于藏不住、浮出水面的那一个，其余三个则在水面下悄悄被同一股力量推着走。"
+  },
+  {
+   "type": "quote",
+   "original": "四骑士看似各奔东西，脚下踩的却是同一条河。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "上游示意图",
+   "caption": "代谢功能障碍是共同上游，同时抬高四骑士各自的风险",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"15\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"10\">同一上游，抬高四道风险</text><rect x=\"24\" y=\"118\" width=\"150\" height=\"64\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.5\"/><text x=\"99\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">代谢功能障碍</text><text x=\"99\" y=\"167\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">上游总根</text><text x=\"99\" y=\"200\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"10\">胰岛素抵抗 · 脂肪肝 · 高胰岛素</text><path d=\"M174 150 C280 150 280 45 386 45\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><path d=\"M174 150 C280 150 280 117 386 117\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><path d=\"M174 150 C280 150 280 189 386 189\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><path d=\"M174 150 C280 150 280 261 386 261\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"386\" y=\"23\" width=\"150\" height=\"44\" rx=\"6\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"461\" y=\"50\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">心脏病</text><rect x=\"386\" y=\"95\" width=\"150\" height=\"44\" rx=\"6\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"461\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">癌症</text><rect x=\"386\" y=\"167\" width=\"150\" height=\"44\" rx=\"6\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"461\" y=\"194\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">阿尔茨海默</text><rect x=\"386\" y=\"239\" width=\"150\" height=\"44\" rx=\"6\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"461\" y=\"266\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">2型糖尿病</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "这也解释了 Attia 的战略:与其等某一匹骑士冲到眼前再各个击退，不如先去管那条上游河。把代谢修好，等于同时给四道门都上了闩。这正是全书『把预防提前几十年』落到实处的第一站。"
+  },
+  {
+   "type": "h2",
+   "text": "二、胰岛素:那个不停加班的仓库管理员"
+  },
+  {
+   "type": "p",
+   "text": "要看懂这条上游河，先得认识**胰岛素**。可以把它想成身体里管糖的仓库管理员:你一吃饭，血里的葡萄糖升高，胰岛素就出来指挥，把糖搬进肌肉、肝脏和脂肪细胞储存，让血糖回落。偶尔来一批货，管理员轻松应付，货进仓、血糖平，一切井然。"
+  },
+  {
+   "type": "p",
+   "text": "可如果你天天大批量进货——长期高糖、精制碳水、过量果糖——细胞的仓库越塞越满，慢慢对管理员的吆喝爱理不理，这就是**胰岛素抵抗**。身体的对策不是少搬，而是派更多管理员、喊得更大声:胰岛素越分泌越多、长期居高不下，这叫**高胰岛素血症**。血糖表面上还正常，代价是胰岛素这位管理员被迫无限加班。"
+  },
+  {
+   "type": "p",
+   "text": "为什么要单把**果糖**拎出来?因为葡萄糖能被全身各处细胞分头消化，果糖却几乎全靠肝脏一家处理。含糖饮料、果葡糖浆把大量果糖一次性砸向肝脏，肝脏来不及用完，就地把它转成脂肪囤下——这正是肝脏脂肪堆积、进而拖累全身胰岛素敏感度的一条捷径。所以问题往往不在『糖』这个字本身，而在你以多快的速度、多大的量、多稀缺的其他营养(纤维、蛋白)把它灌进身体。一颗完整的水果和一杯果汁，肝脏的感受可以天差地别。"
+  },
+  {
+   "type": "quote",
+   "original": "空腹血糖还漂亮的时候，胰岛素可能已经替你加了好几年的班。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "这就是为什么『血糖正常』会骗人。血糖之所以还正常，恰恰是因为胰岛素在拼命代偿、替你兜底。等哪天管理员累垮、再多也压不住血糖，空腹血糖才升上去——那时糖尿病其实已经走了很远。"
+  },
+  {
+   "type": "pull",
+   "text": "真正更早的信号，是胰岛素本身偏高，而它偏偏不在常规体检的默认项里。"
+  },
+  {
+   "type": "figure",
+   "ftype": "机制流程图",
+   "caption": "从饮食到高胰岛素:一条会自我加固的恶性循环",
+   "svg": "<svg viewBox=\"0 0 560 310\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"130\" y=\"16\" width=\"300\" height=\"46\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"280\" y=\"44\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">长期高糖 · 精制碳水 · 过量果糖</text><line x1=\"280\" y1=\"62\" x2=\"280\" y2=\"86\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.3\"/><polygon points=\"273,84 287,84 280,94\" style=\"fill:var(--ink-soft)\"/><rect x=\"130\" y=\"94\" width=\"300\" height=\"46\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"280\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">肝脏囤起脂肪(脂肪肝)</text><line x1=\"280\" y1=\"140\" x2=\"280\" y2=\"164\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.3\"/><polygon points=\"273,162 287,162 280,172\" style=\"fill:var(--ink-soft)\"/><rect x=\"130\" y=\"172\" width=\"300\" height=\"46\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.3\"/><text x=\"280\" y=\"200\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">细胞对胰岛素变迟钝(抵抗)</text><line x1=\"280\" y1=\"218\" x2=\"280\" y2=\"242\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.3\"/><polygon points=\"273,240 287,240 280,250\" style=\"fill:var(--ink-soft)\"/><rect x=\"130\" y=\"250\" width=\"300\" height=\"46\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.5\"/><text x=\"280\" y=\"278\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"13\">胰岛素被迫长期偏高</text><path d=\"M430 273 C520 245 520 135 436 117\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\"/><polygon points=\"442,110 430,116 444,124\" style=\"fill:var(--cinnabar)\"/><text x=\"498\" y=\"197\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"11\">恶性循环</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "三、脂肪不是敌人，是「缓冲仓」——存得下才安全"
+  },
+  {
+   "type": "p",
+   "text": "很多人以为脂肪越少越好、脂肪就是坏东西。Attia 讲了一个反直觉的角度:**皮下脂肪其实是身体相对安全的『缓冲仓』**。你多摄入的能量，优先被存进臀部、大腿这些皮下脂肪里，安安稳稳待着，基本不惹事。它是缓冲，不是祸首。"
+  },
+  {
+   "type": "p",
+   "text": "真正的麻烦，是缓冲仓存满、再也塞不下的时候。多出来的脂肪无处可去，就外溢、异位堆到本不该存脂的地方——肝脏、胰腺、心脏周围、内脏之间。堆在肝上，就是非酒精性脂肪肝;泡在内脏间，就是内脏脂肪。正是这些**放错地方的脂肪**，最直接地点燃胰岛素抵抗和全身低度炎症。所以危险的不是你有脂肪，而是脂肪存到了不该存的仓库。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "皮下缓冲仓存满后，脂肪外溢到肝脏与内脏——危险由此而来",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"115\" y=\"70\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">皮下脂肪 · 安全缓冲仓</text><rect x=\"58\" y=\"84\" width=\"114\" height=\"160\" rx=\"8\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.4\"/><rect x=\"58\" y=\"122\" width=\"114\" height=\"122\" rx=\"6\" style=\"fill:var(--ink-faint)\"/><text x=\"115\" y=\"196\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">快满了</text><path d=\"M172 108 C250 76 320 92 374 122\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><polygon points=\"374,122 361,116 363,129\" style=\"fill:var(--cinnabar)\"/><text x=\"264\" y=\"84\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"11\">存满 → 外溢</text><path d=\"M172 202 C258 252 340 236 396 226\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><polygon points=\"396,226 383,219 384,232\" style=\"fill:var(--cinnabar)\"/><ellipse cx=\"440\" cy=\"132\" rx=\"58\" ry=\"36\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.3\"/><text x=\"440\" y=\"128\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">肝脏</text><text x=\"440\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"11\">脂肪肝</text><ellipse cx=\"448\" cy=\"224\" rx=\"54\" ry=\"32\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.3\"/><text x=\"448\" y=\"221\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">内脏之间</text><text x=\"448\" y=\"239\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"11\">内脏脂肪</text><text x=\"268\" y=\"278\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"10\">异位脂肪 · 放错仓库才点火</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "每个人皮下缓冲仓的容量天生不同。有人能存下很多、迟迟不外溢;有人仓小易满，稍微多吃就往肝里、内脏里溢。这也解释了下一节那个更扎心的现象:两个人吃得差不多、胖瘦看着差很多，代谢的好坏却可能反过来。"
+  },
+  {
+   "type": "h2",
+   "text": "四、瘦，不等于代谢健康:外瘦内胖(TOFI)"
+  },
+  {
+   "type": "p",
+   "text": "我们习惯拿体重和腰围给健康打分:胖就是不健康，瘦就该没事。但缓冲仓那套逻辑意味着——一个体重完全正常、看着清瘦的人，如果皮下仓小、脂肪早早外溢，他的肝脏和内脏里可能已经塞满了脂肪。学界给这种人起了个名字:**TOFI**，thin outside, fat inside，外瘦内胖。"
+  },
+  {
+   "type": "quote",
+   "original": "有的人瘦，只是把胖藏进了看不见的地方。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "反过来，也有体重偏高、皮下脂肪厚，代谢指标却相当漂亮的人——他们的缓冲仓够大，脂肪都乖乖待在皮下。这两种情况放在一起说明:体重秤和 BMI 量的是脂肪的**多少**，量不出脂肪存在了**哪里**、代谢到底好不好。生活里那位怎么吃都不胖、却顿顿甜食奶茶的朋友，未必比看着壮实、常年练力量的人更代谢健康。只凭一句『我不胖』就放心，恰恰会把最危险的一类人漏掉——他们体检各项『看起来正常』，也最容易与真正该做的早查擦肩而过。"
+  },
+  {
+   "type": "h2",
+   "text": "五、别等空腹血糖亮红灯:把体检往前挪"
+  },
+  {
+   "type": "p",
+   "text": "代谢综合征通常按五项指标打分:腰围偏大、甘油三酯偏高、HDL(好胆固醇)偏低、血压偏高、空腹血糖偏高，凑满三项就算。Attia 的态度更激进:代谢健康是一条连续的光谱，不是『满三项才生病』。哪怕只中一项，也值得警觉;而且这套阈值本身，他认为定得偏宽松、亮灯偏晚。(这是他个人偏严格的主张，医学界对具体切点仍有争议。)"
+  },
+  {
+   "type": "p",
+   "text": "他更看重那些亮得更早的灯:**空腹胰岛素**——不只测血糖，把胰岛素也测了，能提前多年看出代偿;**口服葡萄糖耐量试验同时测胰岛素**——喝下糖水后不只看血糖曲线，更看胰岛素被逼到多高;还有**甘油三酯与 HDL 的比值**——一个便宜、常被忽视、却相当灵敏的代谢窗口。这些指标，往往在空腹血糖还漂亮时就先变了脸。"
+  },
+  {
+   "type": "figure",
+   "ftype": "时间线",
+   "caption": "空腹血糖是最后才亮的那盏灯;更早的信号得主动去查",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"46\" y1=\"150\" x2=\"512\" y2=\"150\" style=\"stroke:var(--line)\" stroke-width=\"1.4\"/><polygon points=\"512,150 500,145 500,155\" style=\"fill:var(--line)\"/><text x=\"48\" y=\"176\" style=\"fill:var(--ink-soft)\" font-size=\"11\">早 · 代偿期</text><text x=\"508\" y=\"176\" text-anchor=\"end\" style=\"fill:var(--ink-soft)\" font-size=\"11\">晚</text><circle cx=\"110\" cy=\"150\" r=\"11\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1.4\"/><text x=\"110\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"11\">空腹胰岛素 ↑</text><circle cx=\"230\" cy=\"150\" r=\"11\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1.4\"/><text x=\"230\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"11\">糖耐量异常</text><circle cx=\"350\" cy=\"150\" r=\"11\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"1.4\"/><text x=\"350\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"11\">甘油三酯↑ HDL↓</text><circle cx=\"470\" cy=\"150\" r=\"15\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.8\"/><circle cx=\"470\" cy=\"150\" r=\"6\" style=\"fill:var(--cinnabar)\"/><text x=\"470\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"11\">空腹血糖 ↑</text><text x=\"470\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"10\">最后才亮的红灯</text><rect x=\"86\" y=\"212\" width=\"388\" height=\"52\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"280\" y=\"234\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">别等空腹血糖亮灯才查</text><text x=\"280\" y=\"254\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">更早查:空腹胰岛素 · 糖耐量+胰岛素 · 甘油三酯/HDL 比</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "一句话:常规体检里的空腹血糖，是这场危机里**最后才亮**的那盏灯。真想早点看见问题，得去查那几盏更早亮起、却常被跳过的灯。看得越早，可回旋的余地就越大——因为代谢是一条能往回走的路:胰岛素抵抗在真正变成糖尿病之前，往往还有很长一段可以靠饮食、运动、睡眠扳回来的窗口，越早发现，扳起来越省力。"
+  },
+  {
+   "type": "h2",
+   "text": "六、这一章想让你记住的"
+  },
+  {
+   "type": "p",
+   "text": "把逻辑收成一条链:长期高糖高精制碳水、过量果糖 → 肝脏和内脏囤起脂肪 → 细胞对胰岛素变迟钝 → 胰岛素被迫长期偏高 → 一路把心脏病、癌症、阿尔茨海默、2 型糖尿病的风险整体抬高。管住这条上游河，是 Attia 眼里性价比最高的一步预防——因为你不是在四个下游各修一道堤，而是在源头拧小了水量。"
+  },
+  {
+   "type": "p",
+   "text": "也别被『瘦就没事、血糖正常就没事』这两句话哄住——真正该问的，是**脂肪存到了哪里**、**胰岛素是不是在偷偷加班**。(本文是对《超越百岁》(Peter Attia)的读书转述，讲的是书里的框架与证据，个别阈值与主张学界仍有争议;它不构成任何体检或用药建议——具体该查什么、怎么解读，请交给你的医生。)"
+  }
+ ]
 }

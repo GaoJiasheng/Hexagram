@@ -1,81 +1,273 @@
 {
-  "title": "白话《梦的解析》· 全书总览",
-  "subtitle": "愿望、伪装与「梦的工作」——精神分析奠基之作研读版,读懂它的野心,也看清它的边界",
-  "centralIdea": "弗洛伊德在本书提出:梦既不是神谕也不是大脑噪音,而是被压抑的愿望经过伪装之后的达成;用自由联想可以从记得的「显梦」逆推回藏着的「隐梦」,而「梦的工作」(凝缩/移置/象征/二次加工)正是那套伪装术。本篇把全书七章串成一条线讲透,同时把账算清:「愿望达成」这个普遍命题今天的睡眠科学多不采信,自由联想缺乏可证伪性——它是思想史地标,不是解梦手册。",
-  "featured": true,
-  "hero": {
-    "badge": "全书 · 核心",
-    "headline": "梦不是天意,不是噪音,是你不敢直说的愿望戴着面具在夜里上演。",
-    "tagline": "读懂它的野心,也看清它的边界。"
+ "title": "白话《梦的解析》· 全书总览",
+ "subtitle": "愿望、伪装与「梦的工作」——精神分析奠基之作研读版,读懂它的野心,也看清它的边界",
+ "centralIdea": "弗洛伊德在本书提出:梦既不是神谕也不是大脑噪音,而是被压抑的愿望经过伪装之后的达成;用自由联想可以从记得的「显梦」逆推回藏着的「隐梦」,而「梦的工作」(凝缩/移置/象征/二次加工)正是那套伪装术。本篇把全书七章串成一条线讲透,同时把账算清:「愿望达成」这个普遍命题今天的睡眠科学多不采信,自由联想缺乏可证伪性——它是思想史地标,不是解梦手册。",
+ "featured": true,
+ "hero": {
+  "badge": "全书 · 核心",
+  "headline": "梦不是天意,不是噪音,是你不敢直说的愿望戴着面具在夜里上演。",
+  "tagline": "读懂它的野心,也看清它的边界。"
+ },
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "每个人每夜都做梦。那些荒诞、破碎、醒来就散的画面,到底是什么?一百多年前,维也纳一位神经科医生给出了一个石破天惊的回答:梦既不是上天的启示,也不是大脑的废话,而是**你自己不敢直说的愿望,换了一副面具在夜里上演**。这本书就是1900年出版的《梦的解析》——弗洛伊德本人最看重的著作,精神分析真正的奠基之作。这篇文章带你把全书七章串成一条线:从他如何解剖第一个「标本梦」,到「梦的工作」那套精巧的伪装术,再到今天的睡眠科学为什么不再买账。读懂它的野心,也看清它的边界。"
   },
-  "blocks": [
-    { "type": "lead", "text": "每个人每夜都做梦。那些荒诞、破碎、醒来就散的画面,到底是什么?一百多年前,维也纳一位神经科医生给出了一个石破天惊的回答:梦既不是上天的启示,也不是大脑的废话,而是**你自己不敢直说的愿望,换了一副面具在夜里上演**。这本书就是1900年出版的《梦的解析》——弗洛伊德本人最看重的著作,精神分析真正的奠基之作。这篇文章带你把全书七章串成一条线:从他如何解剖第一个「标本梦」,到「梦的工作」那套精巧的伪装术,再到今天的睡眠科学为什么不再买账。读懂它的野心,也看清它的边界。" },
-
-    { "type": "h2", "text": "一、他之前,人类怎么理解梦:要么太玄,要么太糙" },
-    { "type": "p", "text": "全书第一章,是一篇厚厚的文献综述:在弗洛伊德之前,人们大致把梦往两个方向解释。一个方向古老而流行——**梦是神谕**,是神明或祖先捎来的口信,预示吉凶。古埃及和希腊有专门睡进神庙里「求梦」的仪式;中国读者熟悉的《周公解梦》也是这个路数:梦是外来的消息,得找懂行的人破译。" },
-    { "type": "p", "text": "另一个方向是十九世纪科学界的主流——**梦是躯体噪音**。睡觉时被子滑落、肠胃不适、窗外有声响,神经系统受了刺激胡乱放电,大脑随手拼出些无意义的图像。一句话:梦是神经系统打的嗝,不值得认真对待。" },
-    { "type": "p", "text": "弗洛伊德对两边都不满意。神谕说把梦的意义放在天上,无从检验;躯体说干脆取消了意义。他要走第三条路:**梦有意义,这个意义不在天上,而在做梦者自己心里,并且可以用一套方法解读出来**。要知道,在当时的学界,「解梦」是江湖术士的营生,一个严肃的医生把整本学术著作押在这上面,近乎自毁前程——这本书初版只印了六百册,八年才卖完,冷遇可想而知。" },
-    { "type": "p", "text": "但弗洛伊德本人对它的分量从不怀疑。他一生反复修订此书八次,晚年回望时说过大意如此的话:这样的洞见,一个人一辈子只能碰上一次。后来的历史站在了他的自负这一边——至少在影响力上:二十世纪关于心灵的几乎所有大众语汇,潜意识、压抑、心理防御,都从这本书里流出来。至于它说得对不对,是另一笔账,我们留到文末算;先看他到底说了什么。" },
-    { "type": "figure", "ftype": "flow", "svg": "<svg viewBox='0 0 520 408' xmlns='http://www.w3.org/2000/svg'><text x='260' y='26' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:16px;font-weight:bold'>《梦的解析》七章一条线</text><rect x='60' y='44' width='400' height='40' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='88' y='69' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px;font-weight:bold'>①</text><text x='106' y='61' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px;font-weight:bold'>前人怎么说</text><text x='106' y='77' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>神谕说 / 躯体噪音说——都没讲清梦的「意义」</text><line x1='260' y1='84' x2='260' y2='94' style='stroke:var(--ink-faint);stroke-width:1.5'/><rect x='60' y='94' width='400' height='40' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='88' y='119' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px;font-weight:bold'>②</text><text x='106' y='111' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px;font-weight:bold'>方法:自由联想</text><text x='106' y='127' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>标本梦「伊尔玛打针」:梦在替自己开脱</text><line x1='260' y1='134' x2='260' y2='144' style='stroke:var(--ink-faint);stroke-width:1.5'/><rect x='60' y='144' width='400' height='40' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='88' y='169' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px;font-weight:bold'>③</text><text x='106' y='161' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px;font-weight:bold'>命题:梦是愿望的达成</text><text x='106' y='177' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>孩子的梦最直白:没吃到的草莓,夜里补上一盘</text><line x1='260' y1='184' x2='260' y2='194' style='stroke:var(--ink-faint);stroke-width:1.5'/><rect x='60' y='194' width='400' height='40' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='88' y='219' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px;font-weight:bold'>④</text><text x='106' y='211' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px;font-weight:bold'>伪装:梦的稽查</text><text x='106' y='227' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>显梦是过审的假面,隐梦才是本文</text><line x1='260' y1='234' x2='260' y2='244' style='stroke:var(--ink-faint);stroke-width:1.5'/><rect x='60' y='244' width='400' height='40' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='88' y='269' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px;font-weight:bold'>⑤</text><text x='106' y='261' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px;font-weight:bold'>材料来源</text><text x='106' y='277' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>日间残余 + 幼儿期愿望(资本)+ 躯体刺激</text><line x1='260' y1='284' x2='260' y2='294' style='stroke:var(--ink-faint);stroke-width:1.5'/><rect x='60' y='294' width='400' height='40' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='88' y='319' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px;font-weight:bold'>⑥</text><text x='106' y='311' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px;font-weight:bold'>梦的工作(全书核心)</text><text x='106' y='327' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>凝缩 · 移置 · 象征 · 二次加工</text><line x1='260' y1='334' x2='260' y2='344' style='stroke:var(--ink-faint);stroke-width:1.5'/><rect x='60' y='344' width='400' height='40' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='88' y='369' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px;font-weight:bold'>⑦</text><text x='106' y='361' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px;font-weight:bold'>心理装置</text><text x='106' y='377' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>意识 / 前意识 / 无意识 · 退行成像</text></svg>", "caption": "七章其实是一条论证链:先立方法,再立命题,遇到反例就引入伪装机制,最后交出整套心理模型。" },
-
-    { "type": "h2", "text": "二、方法先行:不查密码本,让做梦的人自己开口" },
-    { "type": "p", "text": "怎么解?先说他反对什么。传统解梦是**密码本式**的:梦见蛇代表什么、梦见掉牙代表什么,像查字典一样把意象逐个换成固定含义。弗洛伊德认为这行不通——同一个意象,在不同人的梦里、甚至同一个人的不同梦里,意义完全不同。密码本假定所有人共用一套梦的语言,可梦分明是每个人自己的方言。" },
-    { "type": "p", "text": "他的方法叫**自由联想**:把梦拆成一个个细节,让做梦者对着每个细节,不加筛选地说出脑子里冒出的任何东西——不管多离谱、多难堪、多不相干,都说出来。顺着这些联想的藤一路摸下去,常会摸到一些当事人自己都没意识到、或不愿承认的念头。换句话说,梦不是拿来「猜」的,是拿来「问」的——问的对象,是做梦的人自己。" },
-    { "type": "p", "text": "还有一件事必须交代:这本书里最主要的「实验材料」,其实是**弗洛伊德自己的梦**。病人的梦牵涉隐私,不便和盘托出;而写作此书时,他正处在丧父之后的自我分析期,索性把自己搬上解剖台——书里那些梦,连同梦背后的野心、嫉妒、对亡父的复杂心绪,都是他本人的。这份坦诚在学术史上罕见,但它同时也是一个软肋:分析者与被分析者是同一个人,既当运动员又当裁判。这个隐患,文末算账时还会回来。" },
-    { "type": "p", "text": "全书最著名的示范,是弗洛伊德拿自己开刀的「**伊尔玛打针的梦**」,做于1895年7月,他称之为「标本梦」。背景很具体:伊尔玛是他的病人,治疗效果不理想;前一天,朋友兼同行奥托带话说,伊尔玛「好了一些,但没全好」。弗洛伊德听出了弦外之音,觉得这是在怪他没治好,心里堵得慌,当晚就做了这个梦。" },
-    { "type": "p", "text": "梦里:一场聚会上,他遇见伊尔玛,责备她不肯接受自己的「解决方案」;检查她的喉咙,看到奇怪的白斑;几位同事围拢过来会诊;最后线索指向——是奥托先前给她打过一针,那种药不该那么随便用,**针头大概还没消毒**。" },
-    { "type": "p", "text": "对着每个细节逐一联想之后,弗洛伊德拼出的结论让他自己都心惊:这个梦从头到尾在**替他开脱**。病没治好?梦准备了一整套辩护词:是病人自己不配合;是器质性的病,本来就不归心理治疗管;是奥托乱打针闯的祸,针头还不干净。每一条辩词都指向同一句潜台词:「**不是我的错**」。白天被那句「没全好」扎了一下,夜里潜意识就加班写好了辩护状。" },
-    { "type": "p", "text": "由此他得出全书第一个论断:梦不是乱码,它有动机、有活儿要干——这个梦干的活,就是满足「但愿不是我的错」这个愿望。**梦是愿望的达成**,第一次有了一个被完整解剖的实例。" },
-    { "type": "figure", "ftype": "analysis", "svg": "<svg viewBox='0 0 560 230' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:15px;font-weight:bold'>标本梦「伊尔玛打针」怎么解(1895)</text><rect x='16' y='46' width='158' height='140' rx='10' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='95' y='68' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:12.5px;font-weight:bold'>显梦 · 记得的情节</text><text x='28' y='92' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10.5px'>聚会上责备伊尔玛</text><text x='28' y='110' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10.5px'>她喉咙上的白斑</text><text x='28' y='128' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10.5px'>同事围拢会诊</text><text x='28' y='146' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10.5px'>奥托的针没消毒</text><line x1='176' y1='116' x2='196' y2='116' style='stroke:var(--ink-soft);stroke-width:2'/><polygon points='202,116 192,111 192,121' style='fill:var(--ink-soft)'/><rect x='204' y='46' width='158' height='140' rx='10' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='283' y='68' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:12.5px;font-weight:bold'>联想挖出的辩护词</text><text x='216' y='92' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10.5px'>是她不肯配合治疗</text><text x='216' y='110' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10.5px'>是器质性的病</text><text x='216' y='128' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10.5px'>不归心理治疗管</text><text x='216' y='146' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10.5px'>是奥托乱打针闯祸</text><line x1='364' y1='116' x2='384' y2='116' style='stroke:var(--ink-soft);stroke-width:2'/><polygon points='390,116 380,111 380,121' style='fill:var(--ink-soft)'/><rect x='394' y='46' width='150' height='140' rx='10' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='469' y='68' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:12.5px;font-weight:bold'>隐藏的愿望</text><text x='469' y='104' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px;font-weight:bold'>「病没治好,</text><text x='469' y='124' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px;font-weight:bold'>不是我的错」</text><text x='469' y='154' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:11px'>梦 = 愿望的达成</text><text x='280' y='214' text-anchor='middle' style='fill:var(--ink-faint);font-family:var(--font-serif);font-size:10.5px'>白天被那句「没全好」扎了一下,夜里潜意识加班写好了辩护状</text></svg>", "caption": "标本梦的完整路数:不猜情节,对每个细节自由联想,拼出的潜台词是一份自我辩护状。" },
-
-    { "type": "h2", "text": "三、更大胆的一步:所有的梦都是愿望的达成" },
-    { "type": "p", "text": "解剖了一个梦,就敢推广到所有梦?第三章,弗洛伊德就是这么干的。他先拿出最干净的证据——**孩子的梦**。孩子的心理审查还没长结实,愿望可以裸奔:白天没吃到的草莓,夜里就梦见吃一大盘草莓;白天被大人取消的出游,夜里原样补上一趟。愿望是什么,梦就演什么,一目了然。" },
-    { "type": "quote", "original": "The dream is a wish-fulfilment", "translation": "梦是愿望的达成。——全书第三章的标题命题" },
-    { "type": "p", "text": "成年人也有这样直白的梦:口渴的人梦见大口喝水,于是不用醒来;困得要死又必须早起的人,梦见自己已经起床洗漱,于是心安理得接着睡。弗洛伊德把这类叫作「方便之梦」,并顺势给出一个漂亮的说法:**梦是睡眠的守护者**——那些会吵醒你的需求和念头,先在梦里被打发掉,这一觉才睡得下去。" },
-    { "type": "p", "text": "当年就有病人不服,专门做了个「反例」来:她梦见自己最不想要的事发生了——愿望在哪?弗洛伊德的回答堪称机智:你梦见我的理论被推翻,恰好满足了「希望弗洛伊德错了」这个愿望。一句话把反例变成了顺例。听起来漂亮,但你大概也咂摸出一丝不对劲:**一套怎么都能赢的理论,还能被检验吗?**这个疑点先按下,文末细算。" },
-    { "type": "p", "text": "你还会反驳得更直接:我梦见考试交白卷、亲人出事、被人追杀,难道也是愿望的达成?问得好——这正是全书最关键的转折,弗洛伊德的回答,直接催生了整套理论里最有名的一组概念。" },
-
-    { "type": "h2", "text": "四、噩梦怎么算?——稽查、伪装,与门里门外" },
-    { "type": "p", "text": "他的回答不是收回命题,而是给命题加一个定语:梦是**被伪装过的**愿望达成。为什么要伪装?因为有些愿望见不得人。按他的说法,那常常是幼年留下的、带攻击性的或与性有关的冲动——你清醒时绝不肯承认的东西,恰恰是梦最深处的燃料。" },
-    { "type": "p", "text": "心里于是有一道关卡,他称之为**梦的稽查**。他自己打的比方就很传神:像书报审查制度下的作家,真话直说必被删稿,那就换曲笔、打比方、指桑骂槐,把意思乔装打扮送过关。愿望要进入梦,也得先把自己改装到审查员认不出的程度。" },
-    { "type": "p", "text": "于是每个梦都分成两层:你早上还记得的那个故事,叫**显梦**,是审查通过后「见报」的版本;藏在底下、未经修饰的愿望与念头,叫**隐梦**,才是梦真正的本文。所谓解梦,就是从显梦一步步逆推回隐梦。至于噩梦和焦虑梦,在这套框架里另有说法:或是伪装没做好,愿望差点破门而出,把人吓醒;或是另一种更拧巴的愿望——比如自我惩罚——在暗中得逞。" },
-    { "type": "p", "text": "你可以把整件事想象成一扇门:门外亮着,是你看得见、记得住的表层情节;门里黑着,住着那些没换装就出不了门的念头;门口站着稽查者,一夜无休。《梦的解析》全书做的,就是想方设法从门缝往里看。" },
-    { "type": "figure", "ftype": "structure", "svg": "<svg viewBox='0 0 480 320' xmlns='http://www.w3.org/2000/svg'><text x='240' y='26' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:16px;font-weight:bold'>显梦在门外,隐梦在门里</text><text x='105' y='96' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:13.5px;font-weight:bold'>门外 · 显梦</text><text x='105' y='118' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>醒来记得的故事</text><text x='105' y='136' text-anchor='middle' style='fill:var(--ink-faint);font-family:var(--font-serif);font-size:10.5px'>看似连贯,其实是改写稿</text><rect x='200' y='56' width='120' height='218' style='fill:var(--ink-faint);opacity:0.22'/><rect x='196' y='52' width='128' height='226' style='fill:none;stroke:var(--ink-soft);stroke-width:2.5'/><polygon points='324,52 372,74 372,254 324,278' style='fill:none;stroke:var(--ink-soft);stroke-width:1.8'/><text x='260' y='110' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:13.5px;font-weight:bold'>门内 · 隐梦</text><text x='260' y='134' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>被压抑的愿望</text><text x='260' y='152' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10.5px'>幼年的冲动</text><text x='260' y='170' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10.5px'>见不得人的念头</text><line x1='244' y1='178' x2='112' y2='178' style='stroke:var(--cinnabar);stroke-width:2;stroke-dasharray:6 5'/><polygon points='100,178 112,172 112,184' style='fill:var(--cinnabar)'/><text x='172' y='166' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:10.5px'>经伪装(梦的工作)才许出门</text><circle cx='185' cy='200' r='7' style='fill:none;stroke:var(--ink);stroke-width:2'/><line x1='185' y1='207' x2='185' y2='236' style='stroke:var(--ink);stroke-width:2'/><line x1='171' y1='218' x2='199' y2='218' style='stroke:var(--ink);stroke-width:2'/><line x1='185' y1='236' x2='175' y2='256' style='stroke:var(--ink);stroke-width:2'/><line x1='185' y1='236' x2='195' y2='256' style='stroke:var(--ink);stroke-width:2'/><text x='185' y='274' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:12px;font-weight:bold'>稽查</text><text x='240' y='306' text-anchor='middle' style='fill:var(--ink-faint);font-family:var(--font-serif);font-size:10.5px'>解梦 = 从门外的改写稿,逆推回门里的本文</text></svg>", "caption": "你记得的梦只是门外的改写稿;弗洛伊德认为本文在门里,门口站着一位从不下班的稽查。" },
-
-    { "type": "h2", "text": "五、梦的材料从哪来:白天的碎屑,童年的资本" },
-    { "type": "p", "text": "隐梦的原料从哪来?弗洛伊德清点出三个来源。最表层的是**日间残余**——最近一两天的印象,而且常常是些鸡毛蒜皮:白天多看了一眼的陌生人、一封没写完的信、一句无关痛痒的闲话。几乎每个梦都要从这里取材,像借一个不起眼的壳。" },
-    { "type": "p", "text": "但真正出钱开工的,他认为是**幼儿期的记忆与愿望**。他打过一个著名的比方:日间残余像企业家,有项目、没资本;幼年的愿望像资本家,真正的钱在它手里。一个梦要立起来,必须两者合伙——白天的碎屑提供由头,童年的愿望提供动力。他甚至断言,几乎每个梦往深处挖,都能挖到幼儿期。这是全书最大胆、日后也最受争议的论断之一,先记下,文末再算账。" },
-    { "type": "p", "text": "顺着「童年」这条线,书里还讨论了一批人人做过的**典型的梦**。考试梦:明明毕业多年,还梦见坐在考场上一题不会——他的观察很妙:人往往只梦见**当年其实考过了**的科目,所以这梦更像一句安慰:「当年那么怕,不也过来了?」当众赤身的梦,被他追到幼年那段光屁股乱跑也不觉羞耻的岁月。而最惊世骇俗的,是对「梦见至亲亡故」的解释:他认为这可能残留着幼年时对亲人真实起过的敌意——孩子的爱恨本就直来直去。正是在这一节里,他借希腊悲剧《俄狄浦斯王》第一次抛出了日后名满天下也争议滔天的**俄狄浦斯情结**。这本书,正是它首次登台的地方——这套说法今天多不被实证心理学采信,记进文末的账。" },
-    { "type": "p", "text": "第三个来源是**躯体刺激**:口渴、憋尿、被子掉了、胳膊压麻了。前人拿这个解释一切,弗洛伊德只给它一个配角的位置——身体状况确实会被顺手编进剧情,但它只是送上门的素材,不是编剧本身。同样是渴,张三梦见沙漠跋涉,李四梦见畅饮冰水:素材相同,写法各异,写法里才藏着各人的心事。" },
-
-    { "type": "h2", "text": "六、梦的工作:把心事改写成梦境的四道工序" },
-    { "type": "p", "text": "第六章是全书篇幅最长、技术含量最高的部分,回答一个问题:隐梦究竟是**怎么被加工成**显梦的?这道工序,他称为**梦的工作**,拆出四种手法。这一章是理解精神分析的钥匙——他后来分析口误、笑话、神经症症状,用的都是同一套思路。" },
-    { "type": "p", "text": "第一道:**凝缩**。几个念头压进同一个意象。梦里那个人,脸像同事,穿着老同学的外套,说话却是父亲的腔调——一个形象背着好几个人的账。所以显梦总是异常地「浓」,短短一段情节,联想开来就是一大片心事;也所以梦里的人物,总透着一股说不出的怪。" },
-    { "type": "p", "text": "凝缩最有趣的产物是梦里的生造词。弗洛伊德记录过自己梦里冒出的一个词「Autodidasker」——醒来一拆,竟是「自学者」「作家」和一位熟人的名字压缩在一起,每个成分各自牵出一串心事。你若梦见过念不出来的怪词、认不出的混合面孔,那就是凝缩的手笔:不是梦在胡编,是几股念头在抢同一个位置。" },
-    { "type": "p", "text": "第二道:**移置**。情感的重量从要害挪到边角。真正扎心的事,在梦里可能只是一闪而过的背景;一个无关紧要的细节,却让你在梦里嚎啕大哭。重心一挪,审查员就认不出哪里是重点。这也顺手解释了梦给人的普遍观感——「莫名其妙」:不是没有重点,是重点被藏起来了。" },
-    { "type": "p", "text": "第三道:**象征**。某些意象有相对固定的含义,弗洛伊德列了不少;后世流传最广、也被滥用得最狠的,是其中的性象征。这里值得替他说句公道话:他本人明确警告过,象征只能当辅助,不能当密码本生搬硬套,联想才是正路——尽管在他自己的分析实践里,这条界线也没能一直守住。" },
-    { "type": "p", "text": "第四道:**二次加工**。快醒的时候,理智进场收拾残局,把一地碎片抹平、缝合成一个像样的故事。所以你复述出来的梦,永远比梦本身「通顺」——那份通顺不是梦的,是醒来的你贴上去的包装。" },
-    { "type": "p", "text": "四道工序合起来,活像一间躲避审查的地下作坊:先压缩,再挪位,然后换装,最后抛光。弗洛伊德说,解梦的全部技术,不过是把这四道工序**倒着做一遍**:从抛光过的成品出发,一路拆回原料。" },
-    { "type": "p", "text": "这套框架还顺手解释了一个日常之谜:**为什么梦醒即忘**?他认为这不全是记性的问题,而是稽查在「追缴」——睡着时审查松了手,让一些东西溜了出来;人一醒,审查权力全面恢复,赶紧把泄露的内容抹掉。越是重要的梦,忘得越快、记得越拧。所以他要求病人一睁眼就把梦写下来。今天心理学科普里常见的「床头放本梦日记」,源头就在这里——只是记录的理由,已经换成了现代的版本。" },
-    { "type": "figure", "ftype": "structure", "svg": "<svg viewBox='0 0 560 330' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:16px;font-weight:bold'>梦的工作 · 四道伪装工序</text><rect x='20' y='44' width='250' height='126' rx='10' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='145' y='70' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px;font-weight:bold'>凝缩</text><circle cx='90' cy='106' r='9' style='fill:none;stroke:var(--ink-soft);stroke-width:1.8'/><circle cx='115' cy='96' r='9' style='fill:none;stroke:var(--ink-soft);stroke-width:1.8'/><circle cx='100' cy='124' r='9' style='fill:none;stroke:var(--ink-soft);stroke-width:1.8'/><line x1='135' y1='110' x2='165' y2='110' style='stroke:var(--ink-soft);stroke-width:2'/><polygon points='171,110 161,105 161,115' style='fill:var(--ink-soft)'/><circle cx='200' cy='110' r='17' style='fill:none;stroke:var(--cinnabar);stroke-width:2.2'/><text x='145' y='156' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>几个念头,叠进同一个形象</text><rect x='290' y='44' width='250' height='126' rx='10' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='415' y='70' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px;font-weight:bold'>移置</text><circle cx='360' cy='108' r='18' style='fill:none;stroke:var(--ink-faint);stroke-width:2'/><text x='360' y='112' text-anchor='middle' style='fill:var(--ink-faint);font-family:var(--font-serif);font-size:9.5px'>要害</text><line x1='385' y1='108' x2='448' y2='108' style='stroke:var(--cinnabar);stroke-width:2;stroke-dasharray:5 4'/><polygon points='454,108 444,103 444,113' style='fill:var(--cinnabar)'/><circle cx='472' cy='108' r='7' style='fill:none;stroke:var(--ink);stroke-width:2'/><line x1='472' y1='92' x2='472' y2='86' style='stroke:var(--cinnabar);stroke-width:2'/><line x1='484' y1='97' x2='488' y2='93' style='stroke:var(--cinnabar);stroke-width:2'/><line x1='460' y1='97' x2='456' y2='93' style='stroke:var(--cinnabar);stroke-width:2'/><text x='415' y='156' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>情感的重量,挪到边角细节</text><rect x='20' y='184' width='250' height='126' rx='10' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='145' y='210' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px;font-weight:bold'>象征</text><rect x='75' y='234' width='30' height='30' style='fill:none;stroke:var(--ink-soft);stroke-width:1.8'/><text x='90' y='282' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10px'>意象</text><line x1='120' y1='249' x2='175' y2='249' style='stroke:var(--ink-faint);stroke-width:1.8;stroke-dasharray:4 4'/><text x='147' y='240' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:13px;font-weight:bold'>?</text><text x='205' y='253' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:12px;font-weight:bold'>固定含义</text><text x='145' y='296' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>词典只是辅助,联想才是正路</text><rect x='290' y='184' width='250' height='126' rx='10' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='415' y='210' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px;font-weight:bold'>二次加工</text><polyline points='330,262 348,236 366,268 384,240 400,260' style='fill:none;stroke:var(--ink-faint);stroke-width:2'/><line x1='412' y1='250' x2='438' y2='250' style='stroke:var(--ink-soft);stroke-width:2'/><polygon points='444,250 434,245 434,255' style='fill:var(--ink-soft)'/><path d='M 452 256 C 467 242, 487 242, 504 252' style='fill:none;stroke:var(--cinnabar);stroke-width:2.2'/><text x='415' y='296' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>醒前把碎片抹平成连贯故事</text></svg>", "caption": "隐梦变显梦的四道工序:压缩、挪位、换装、抛光——解梦就是把它们倒着做回去。" },
-
-    { "type": "h2", "text": "七、收尾的野心:三层心理装置,一条康庄大道" },
-    { "type": "p", "text": "最后一章,弗洛伊德从「解梦」跳到了「建模」——为整个心灵画一张结构图。他把心理装置分成三层:最底层是**无意识**,愿望与冲动的大本营,永远在活动,却从不直接露面;中间是**前意识**,存放此刻没在想、但随时能调取的内容,它与无意识之间有稽查把门;最上面的**意识**,只是整座装置顶上那盏小灯——我们平时以为的「自己」,不过是灯光照亮的那一小块。" },
-    { "type": "p", "text": "梦怎么发生?他给出一个机制,叫**退行**:睡眠中,通往行动的出口关闭了,念头无路可走,只好倒着流回感知系统,把自己「放映」成画面。所以梦是用眼睛「看见」的,不是用逻辑「想出来」的——念头退化成了图像,这正是梦不讲道理、只讲画面的原因。" },
-    { "type": "p", "text": "这一章还藏着全书最安静、也最深远的一场革命:在弗洛伊德笔下,**做梦不是病,而是每个正常人夜夜都在进行的心理活动**,它与口误、走神、神经症症状共用同一套机制,只是程度不同。换句话说,「正常人」和「病人」不再隔着一堵墙,而是站在同一条连续谱上——这个观念日后渗进了整个现代文化,以至于我们今天已经忘了它曾经多么离经叛道。" },
-    { "type": "p", "text": "这套三层模型,日后会演化成大众更熟悉的本我、自我、超我。而梦在整个体系里的地位,他用全书最有名的一句话定了调:" },
-    { "type": "quote", "original": "royal road to the unconscious", "translation": "对梦的解读,是通向心灵中无意识活动的一条康庄大道。" },
-    { "type": "figure", "ftype": "model", "svg": "<svg viewBox='0 0 480 310' xmlns='http://www.w3.org/2000/svg'><text x='240' y='26' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:15.5px;font-weight:bold'>心理装置三层 · 与一条倒流的路</text><rect x='140' y='48' width='200' height='42' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='240' y='67' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px;font-weight:bold'>意识</text><text x='240' y='83' text-anchor='middle' style='fill:var(--ink-faint);font-family:var(--font-serif);font-size:10px'>顶上那盏小灯</text><line x1='231' y1='92' x2='231' y2='106' style='stroke:var(--cinnabar);stroke-width:2'/><line x1='249' y1='92' x2='249' y2='106' style='stroke:var(--cinnabar);stroke-width:2'/><text x='285' y='103' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:11px'>稽查</text><rect x='115' y='108' width='250' height='52' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='240' y='130' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px;font-weight:bold'>前意识</text><text x='240' y='148' text-anchor='middle' style='fill:var(--ink-faint);font-family:var(--font-serif);font-size:10px'>随时可取的库存</text><line x1='231' y1='162' x2='231' y2='176' style='stroke:var(--cinnabar);stroke-width:2'/><line x1='249' y1='162' x2='249' y2='176' style='stroke:var(--cinnabar);stroke-width:2'/><text x='285' y='173' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:11px'>稽查(把门最严)</text><rect x='90' y='178' width='300' height='88' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:2.2'/><text x='240' y='204' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14.5px;font-weight:bold'>无意识</text><text x='240' y='227' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10.5px'>愿望与冲动的大本营,永远在活动</text><text x='240' y='247' text-anchor='middle' style='fill:var(--ink-faint);font-family:var(--font-serif);font-size:10px'>梦的动力从这里来</text><line x1='415' y1='58' x2='415' y2='252' style='stroke:var(--azure);stroke-width:2'/><polygon points='415,260 409,248 421,248' style='fill:var(--azure)'/><text x='440' y='150' text-anchor='middle' style='fill:var(--azure);font-family:var(--font-serif);font-size:12.5px;font-weight:bold'>退行</text><text x='440' y='170' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:9.5px'>念头倒流</text><text x='440' y='186' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:9.5px'>放映成画面</text><text x='240' y='294' text-anchor='middle' style='fill:var(--ink-faint);font-family:var(--font-serif);font-size:10.5px'>睡眠中出口关闭,念头退回感知端,变成你「看见」的梦</text></svg>", "caption": "全书收尾的理论模型:无意识永不熄火,稽查层层把门;睡眠中念头退行成画面,便是梦。" },
-
-    { "type": "h2", "text": "八、该信多少?——研读,而不是照单全收" },
-    { "type": "p", "text": "全书讲完,必须把立场摆正:《梦的解析》是思想史上的一座地标,**但不是一本被科学证实的解梦手册**。有三笔账要算清。" },
-    { "type": "p", "text": "第一笔:「所有梦都是愿望的达成」这个普遍命题,今天的睡眠科学**普遍不采信**。1953年,快速眼动睡眠(REM)被发现,梦研究从诊室搬进了实验室。此后的主流解释里——「激活-合成」假说认为,梦更像大脑给睡眠中随机的神经活动现场编的剧本;记忆巩固理论认为,做梦与大脑筛选、整理白天的记忆有关;情绪调节理论认为,梦在帮我们于低风险环境里消化情绪。这些理论彼此仍在竞争,但没有哪一家需要「精心伪装的愿望」这个设定。" },
-    { "type": "p", "text": "第二笔:自由联想法有个致命的方法论软肋——**缺乏可证伪性**。还记得前文按下的两个疑点吗?病人梦见理论被推翻,他说这满足了「希望我错」的愿望;标本梦里,分析者与被分析者是同一个人。顺着联想走,一个梦几乎可以通向任何结论;分析者想找什么,总能找到什么,而且永远能自圆其说——连反例都能收编成顺例的理论,恰恰因此失去了被检验的资格。回头再看伊尔玛梦:哪些联想写进书里、在哪里收线、结论落在何处,全由弗洛伊德自己裁定。批评者说得不客气但在理:那更像一场精彩的自我辩护表演,而不是一次可重复、可检验的论证。" },
-    { "type": "p", "text": "第三笔:「每个梦都能挖到幼儿期」的断言,连同那套具体的性象征解释,在当代实证心理学界争议极大,多不被采信。就连后世的许多精神分析师,也早已不再逢梦必挖童年。" },
-    { "type": "figure", "ftype": "contrast", "svg": "<svg viewBox='0 0 560 316' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:15.5px;font-weight:bold'>1900年的答案 vs 今天的睡眠科学</text><rect x='22' y='44' width='248' height='204' rx='10' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='146' y='70' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:13.5px;font-weight:bold'>弗洛伊德 · 1900</text><line x1='42' y1='82' x2='250' y2='82' style='stroke:var(--line);stroke-width:1'/><text x='40' y='106' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11.5px'>梦 = 被伪装的愿望达成</text><text x='40' y='132' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11.5px'>稽查 + 梦的工作负责改装</text><text x='40' y='158' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11.5px'>动力来自幼儿期的愿望</text><text x='40' y='184' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11.5px'>证据:诊室里的自由联想</text><text x='40' y='214' style='fill:var(--ink-faint);font-family:var(--font-serif);font-size:10.5px'>(个案难重复,结论难证伪)</text><rect x='290' y='44' width='248' height='204' rx='10' style='fill:none;stroke:var(--azure);stroke-width:2'/><text x='414' y='70' text-anchor='middle' style='fill:var(--azure);font-family:var(--font-serif);font-size:13.5px;font-weight:bold'>现代梦研究</text><line x1='310' y1='82' x2='518' y2='82' style='stroke:var(--line);stroke-width:1'/><text x='308' y='106' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11.5px'>1953年发现REM,搬进实验室</text><text x='308' y='132' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11.5px'>激活-合成:给随机放电编剧</text><text x='308' y='158' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11.5px'>记忆巩固 · 情绪调节</text><text x='308' y='184' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11.5px'>证据:实验与脑成像</text><text x='308' y='214' style='fill:var(--ink-faint);font-family:var(--font-serif);font-size:10.5px'>(彼此竞争,都不需要「伪装」)</text><rect x='22' y='262' width='516' height='40' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='280' y='287' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:12px'>仅存的共识:梦与做梦者的经历、情绪相关,值得研究</text></svg>", "caption": "同一个问题,两个时代的答案。现代理论彼此仍在竞争,但都不需要「伪装的愿望」这个设定。" },
-    { "type": "p", "text": "但反过来把它一笔抹杀,同样不公道。这本书至少留下了两样经得起时间的东西。其一,**把梦当作值得认真对待的心理材料**:梦的内容确实与做梦者的经历、焦虑和心事相关——这个大方向,今天的研究者大体仍然认可,只是不再接受那套伪装机制的解释。其二,自由联想作为**临床探索的工具**:让人绕过自我防卫、说出平时说不出口的东西,至今仍活在各种谈话治疗里。至于文化影响,更是无远弗届——超现实主义的绘画、写意识流的小说、玩梦境嵌套的电影,背后都站着这本书;现代人张口就来的「潜意识」「压抑」「口误暴露真心」,词源都在这里。" },
-    { "type": "p", "text": "落到自己身上,这本书能给今天的读者留下什么?大概是一种**对梦的合理态度**:不必查密码本,不必怕凶兆,也不必逢梦必挖童年;但一个反复出现的梦、一段醒来仍心口发紧的情绪,不妨当作内心递来的一张便条——它未必是伪装的愿望,却多半和你近来的处境、压力与牵挂有关。把梦当线索而非预言,这个分寸,恰好是这本书最值得保留的部分,也是它最常被读过头的部分。" },
-    { "type": "p", "text": "所以,今天读《梦的解析》,合适的姿势是把它当作一份1900年的思想标本:看一个极聪明的人,如何拒绝「梦是垃圾」的时代共识,坚持在最荒诞的材料里寻找意义,并为此建起一整套概念大厦。这座大厦的许多楼层,今天已经空置;但「你的梦与你有关,值得一问」这扇门,确实是他第一个推开的——推开之后,就再也关不上了。" },
-    { "type": "figure", "ftype": "quote-card", "svg": "<svg viewBox='0 0 520 232' xmlns='http://www.w3.org/2000/svg'><rect x='10' y='10' width='500' height='212' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='20' y='20' width='480' height='192' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='260' y='58' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px'>❖</text><text x='260' y='112' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:21px;font-weight:bold'>「解梦,是通向无意识的康庄大道。」</text><text x='260' y='152' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:12px'>——弗洛伊德《梦的解析》,1900</text><rect x='440' y='162' width='38' height='38' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='459' y='186' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:11.5px;font-weight:bold'>观书</text></svg>", "caption": "全书最有名的一句话——从此,梦从「垃圾」变成了「线索」。" }
-  ]
+  {
+   "type": "h2",
+   "text": "一、他之前,人类怎么理解梦:要么太玄,要么太糙"
+  },
+  {
+   "type": "p",
+   "text": "全书第一章,是一篇厚厚的文献综述:在弗洛伊德之前,人们大致把梦往两个方向解释。一个方向古老而流行——**梦是神谕**,是神明或祖先捎来的口信,预示吉凶。古埃及和希腊有专门睡进神庙里「求梦」的仪式;中国读者熟悉的《周公解梦》也是这个路数:梦是外来的消息,得找懂行的人破译。"
+  },
+  {
+   "type": "p",
+   "text": "另一个方向是十九世纪科学界的主流——**梦是躯体噪音**。睡觉时被子滑落、肠胃不适、窗外有声响,神经系统受了刺激胡乱放电,大脑随手拼出些无意义的图像。一句话:梦是神经系统打的嗝,不值得认真对待。"
+  },
+  {
+   "type": "p",
+   "text": "弗洛伊德对两边都不满意。神谕说把梦的意义放在天上,无从检验;躯体说干脆取消了意义。他要走第三条路:**梦有意义,这个意义不在天上,而在做梦者自己心里,并且可以用一套方法解读出来**。要知道,在当时的学界,「解梦」是江湖术士的营生,一个严肃的医生把整本学术著作押在这上面,近乎自毁前程——这本书初版只印了六百册,八年才卖完,冷遇可想而知。"
+  },
+  {
+   "type": "p",
+   "text": "但弗洛伊德本人对它的分量从不怀疑。他一生反复修订此书八次,晚年回望时说过大意如此的话:这样的洞见,一个人一辈子只能碰上一次。后来的历史站在了他的自负这一边——至少在影响力上:二十世纪关于心灵的几乎所有大众语汇,潜意识、压抑、心理防御,都从这本书里流出来。至于它说得对不对,是另一笔账,我们留到文末算;先看他到底说了什么。"
+  },
+  {
+   "type": "figure",
+   "ftype": "flow",
+   "svg": "<svg viewBox='0 0 520 408' xmlns='http://www.w3.org/2000/svg'><text x='260' y='26' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:16px;font-weight:bold'>《梦的解析》七章一条线</text><rect x='60' y='44' width='400' height='40' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='88' y='69' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px;font-weight:bold'>①</text><text x='106' y='61' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px;font-weight:bold'>前人怎么说</text><text x='106' y='77' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>神谕说 / 躯体噪音说——都没讲清梦的「意义」</text><line x1='260' y1='84' x2='260' y2='94' style='stroke:var(--ink-faint);stroke-width:1.5'/><rect x='60' y='94' width='400' height='40' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='88' y='119' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px;font-weight:bold'>②</text><text x='106' y='111' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px;font-weight:bold'>方法:自由联想</text><text x='106' y='127' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>标本梦「伊尔玛打针」:梦在替自己开脱</text><line x1='260' y1='134' x2='260' y2='144' style='stroke:var(--ink-faint);stroke-width:1.5'/><rect x='60' y='144' width='400' height='40' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='88' y='169' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px;font-weight:bold'>③</text><text x='106' y='161' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px;font-weight:bold'>命题:梦是愿望的达成</text><text x='106' y='177' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>孩子的梦最直白:没吃到的草莓,夜里补上一盘</text><line x1='260' y1='184' x2='260' y2='194' style='stroke:var(--ink-faint);stroke-width:1.5'/><rect x='60' y='194' width='400' height='40' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='88' y='219' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px;font-weight:bold'>④</text><text x='106' y='211' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px;font-weight:bold'>伪装:梦的稽查</text><text x='106' y='227' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>显梦是过审的假面,隐梦才是本文</text><line x1='260' y1='234' x2='260' y2='244' style='stroke:var(--ink-faint);stroke-width:1.5'/><rect x='60' y='244' width='400' height='40' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='88' y='269' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px;font-weight:bold'>⑤</text><text x='106' y='261' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px;font-weight:bold'>材料来源</text><text x='106' y='277' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>日间残余 + 幼儿期愿望(资本)+ 躯体刺激</text><line x1='260' y1='284' x2='260' y2='294' style='stroke:var(--ink-faint);stroke-width:1.5'/><rect x='60' y='294' width='400' height='40' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='88' y='319' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px;font-weight:bold'>⑥</text><text x='106' y='311' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px;font-weight:bold'>梦的工作(全书核心)</text><text x='106' y='327' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>凝缩 · 移置 · 象征 · 二次加工</text><line x1='260' y1='334' x2='260' y2='344' style='stroke:var(--ink-faint);stroke-width:1.5'/><rect x='60' y='344' width='400' height='40' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='88' y='369' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px;font-weight:bold'>⑦</text><text x='106' y='361' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px;font-weight:bold'>心理装置</text><text x='106' y='377' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>意识 / 前意识 / 无意识 · 退行成像</text></svg>",
+   "caption": "七章其实是一条论证链:先立方法,再立命题,遇到反例就引入伪装机制,最后交出整套心理模型。"
+  },
+  {
+   "type": "h2",
+   "text": "二、方法先行:不查密码本,让做梦的人自己开口"
+  },
+  {
+   "type": "p",
+   "text": "怎么解?先说他反对什么。传统解梦是**密码本式**的:梦见蛇代表什么、梦见掉牙代表什么,像查字典一样把意象逐个换成固定含义。弗洛伊德认为这行不通——同一个意象,在不同人的梦里、甚至同一个人的不同梦里,意义完全不同。密码本假定所有人共用一套梦的语言,可梦分明是每个人自己的方言。"
+  },
+  {
+   "type": "p",
+   "text": "他的方法叫**自由联想**:把梦拆成一个个细节,让做梦者对着每个细节,不加筛选地说出脑子里冒出的任何东西——不管多离谱、多难堪、多不相干,都说出来。顺着这些联想的藤一路摸下去,常会摸到一些当事人自己都没意识到、或不愿承认的念头。换句话说,梦不是拿来「猜」的,是拿来「问」的——问的对象,是做梦的人自己。"
+  },
+  {
+   "type": "p",
+   "text": "还有一件事必须交代:这本书里最主要的「实验材料」,其实是**弗洛伊德自己的梦**。病人的梦牵涉隐私,不便和盘托出;而写作此书时,他正处在丧父之后的自我分析期,索性把自己搬上解剖台——书里那些梦,连同梦背后的野心、嫉妒、对亡父的复杂心绪,都是他本人的。这份坦诚在学术史上罕见,但它同时也是一个软肋:分析者与被分析者是同一个人,既当运动员又当裁判。这个隐患,文末算账时还会回来。"
+  },
+  {
+   "type": "p",
+   "text": "全书最著名的示范,是弗洛伊德拿自己开刀的「**伊尔玛打针的梦**」,做于1895年7月,他称之为「标本梦」。背景很具体:伊尔玛是他的病人,治疗效果不理想;前一天,朋友兼同行奥托带话说,伊尔玛「好了一些,但没全好」。弗洛伊德听出了弦外之音,觉得这是在怪他没治好,心里堵得慌,当晚就做了这个梦。"
+  },
+  {
+   "type": "p",
+   "text": "梦里:一场聚会上,他遇见伊尔玛,责备她不肯接受自己的「解决方案」;检查她的喉咙,看到奇怪的白斑;几位同事围拢过来会诊;最后线索指向——是奥托先前给她打过一针,那种药不该那么随便用,**针头大概还没消毒**。"
+  },
+  {
+   "type": "p",
+   "text": "对着每个细节逐一联想之后,弗洛伊德拼出的结论让他自己都心惊:这个梦从头到尾在**替他开脱**。病没治好?梦准备了一整套辩护词:是病人自己不配合;是器质性的病,本来就不归心理治疗管;是奥托乱打针闯的祸,针头还不干净。每一条辩词都指向同一句潜台词:「**不是我的错**」。白天被那句「没全好」扎了一下,夜里潜意识就加班写好了辩护状。"
+  },
+  {
+   "type": "p",
+   "text": "由此他得出全书第一个论断:梦不是乱码,它有动机、有活儿要干——这个梦干的活,就是满足「但愿不是我的错」这个愿望。**梦是愿望的达成**,第一次有了一个被完整解剖的实例。"
+  },
+  {
+   "type": "figure",
+   "ftype": "analysis",
+   "svg": "<svg viewBox='0 0 560 230' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:15px;font-weight:bold'>标本梦「伊尔玛打针」怎么解(1895)</text><rect x='16' y='46' width='158' height='140' rx='10' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='95' y='68' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:12.5px;font-weight:bold'>显梦 · 记得的情节</text><text x='28' y='92' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10.5px'>聚会上责备伊尔玛</text><text x='28' y='110' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10.5px'>她喉咙上的白斑</text><text x='28' y='128' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10.5px'>同事围拢会诊</text><text x='28' y='146' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10.5px'>奥托的针没消毒</text><line x1='176' y1='116' x2='196' y2='116' style='stroke:var(--ink-soft);stroke-width:2'/><polygon points='202,116 192,111 192,121' style='fill:var(--ink-soft)'/><rect x='204' y='46' width='158' height='140' rx='10' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='283' y='68' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:12.5px;font-weight:bold'>联想挖出的辩护词</text><text x='216' y='92' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10.5px'>是她不肯配合治疗</text><text x='216' y='110' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10.5px'>是器质性的病</text><text x='216' y='128' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10.5px'>不归心理治疗管</text><text x='216' y='146' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10.5px'>是奥托乱打针闯祸</text><line x1='364' y1='116' x2='384' y2='116' style='stroke:var(--ink-soft);stroke-width:2'/><polygon points='390,116 380,111 380,121' style='fill:var(--ink-soft)'/><rect x='394' y='46' width='150' height='140' rx='10' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='469' y='68' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:12.5px;font-weight:bold'>隐藏的愿望</text><text x='469' y='104' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px;font-weight:bold'>「病没治好,</text><text x='469' y='124' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px;font-weight:bold'>不是我的错」</text><text x='469' y='154' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:11px'>梦 = 愿望的达成</text><text x='280' y='214' text-anchor='middle' style='fill:var(--ink-faint);font-family:var(--font-serif);font-size:10.5px'>白天被那句「没全好」扎了一下,夜里潜意识加班写好了辩护状</text></svg>",
+   "caption": "标本梦的完整路数:不猜情节,对每个细节自由联想,拼出的潜台词是一份自我辩护状。"
+  },
+  {
+   "type": "h2",
+   "text": "三、更大胆的一步:所有的梦都是愿望的达成"
+  },
+  {
+   "type": "p",
+   "text": "解剖了一个梦,就敢推广到所有梦?第三章,弗洛伊德就是这么干的。他先拿出最干净的证据——**孩子的梦**。孩子的心理审查还没长结实,愿望可以裸奔:白天没吃到的草莓,夜里就梦见吃一大盘草莓;白天被大人取消的出游,夜里原样补上一趟。愿望是什么,梦就演什么,一目了然。"
+  },
+  {
+   "type": "quote",
+   "original": "The dream is a wish-fulfilment",
+   "translation": "梦是愿望的达成。——全书第三章的标题命题"
+  },
+  {
+   "type": "p",
+   "text": "成年人也有这样直白的梦:口渴的人梦见大口喝水,于是不用醒来;困得要死又必须早起的人,梦见自己已经起床洗漱,于是心安理得接着睡。弗洛伊德把这类叫作「方便之梦」,并顺势给出一个漂亮的说法:**梦是睡眠的守护者**——那些会吵醒你的需求和念头,先在梦里被打发掉,这一觉才睡得下去。"
+  },
+  {
+   "type": "p",
+   "text": "当年就有病人不服,专门做了个「反例」来:她梦见自己最不想要的事发生了——愿望在哪?弗洛伊德的回答堪称机智:你梦见我的理论被推翻,恰好满足了「希望弗洛伊德错了」这个愿望。一句话把反例变成了顺例。听起来漂亮,但你大概也咂摸出一丝不对劲:**一套怎么都能赢的理论,还能被检验吗?**这个疑点先按下,文末细算。"
+  },
+  {
+   "type": "p",
+   "text": "你还会反驳得更直接:我梦见考试交白卷、亲人出事、被人追杀,难道也是愿望的达成?问得好——这正是全书最关键的转折,弗洛伊德的回答,直接催生了整套理论里最有名的一组概念。"
+  },
+  {
+   "type": "h2",
+   "text": "四、噩梦怎么算?——稽查、伪装,与门里门外"
+  },
+  {
+   "type": "p",
+   "text": "他的回答不是收回命题,而是给命题加一个定语:梦是**被伪装过的**愿望达成。为什么要伪装?因为有些愿望见不得人。按他的说法,那常常是幼年留下的、带攻击性的或与性有关的冲动——你清醒时绝不肯承认的东西,恰恰是梦最深处的燃料。"
+  },
+  {
+   "type": "p",
+   "text": "心里于是有一道关卡,他称之为**梦的稽查**。他自己打的比方就很传神:像书报审查制度下的作家,真话直说必被删稿,那就换曲笔、打比方、指桑骂槐,把意思乔装打扮送过关。愿望要进入梦,也得先把自己改装到审查员认不出的程度。"
+  },
+  {
+   "type": "p",
+   "text": "于是每个梦都分成两层:你早上还记得的那个故事,叫**显梦**,是审查通过后「见报」的版本;藏在底下、未经修饰的愿望与念头,叫**隐梦**,才是梦真正的本文。所谓解梦,就是从显梦一步步逆推回隐梦。至于噩梦和焦虑梦,在这套框架里另有说法:或是伪装没做好,愿望差点破门而出,把人吓醒;或是另一种更拧巴的愿望——比如自我惩罚——在暗中得逞。"
+  },
+  {
+   "type": "p",
+   "text": "你可以把整件事想象成一扇门:门外亮着,是你看得见、记得住的表层情节;门里黑着,住着那些没换装就出不了门的念头;门口站着稽查者,一夜无休。《梦的解析》全书做的,就是想方设法从门缝往里看。"
+  },
+  {
+   "type": "figure",
+   "ftype": "structure",
+   "svg": "<svg viewBox='0 0 480 320' xmlns='http://www.w3.org/2000/svg'><text x='240' y='26' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:16px;font-weight:bold'>显梦在门外,隐梦在门里</text><text x='105' y='96' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:13.5px;font-weight:bold'>门外 · 显梦</text><text x='105' y='118' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>醒来记得的故事</text><text x='105' y='136' text-anchor='middle' style='fill:var(--ink-faint);font-family:var(--font-serif);font-size:10.5px'>看似连贯,其实是改写稿</text><rect x='200' y='56' width='120' height='218' style='fill:var(--ink-faint);opacity:0.22'/><rect x='196' y='52' width='128' height='226' style='fill:none;stroke:var(--ink-soft);stroke-width:2.5'/><polygon points='324,52 372,74 372,254 324,278' style='fill:none;stroke:var(--ink-soft);stroke-width:1.8'/><text x='260' y='110' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:13.5px;font-weight:bold'>门内 · 隐梦</text><text x='260' y='134' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>被压抑的愿望</text><text x='260' y='152' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10.5px'>幼年的冲动</text><text x='260' y='170' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10.5px'>见不得人的念头</text><line x1='244' y1='178' x2='112' y2='178' style='stroke:var(--cinnabar);stroke-width:2;stroke-dasharray:6 5'/><polygon points='100,178 112,172 112,184' style='fill:var(--cinnabar)'/><text x='172' y='166' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:10.5px'>经伪装(梦的工作)才许出门</text><circle cx='185' cy='200' r='7' style='fill:none;stroke:var(--ink);stroke-width:2'/><line x1='185' y1='207' x2='185' y2='236' style='stroke:var(--ink);stroke-width:2'/><line x1='171' y1='218' x2='199' y2='218' style='stroke:var(--ink);stroke-width:2'/><line x1='185' y1='236' x2='175' y2='256' style='stroke:var(--ink);stroke-width:2'/><line x1='185' y1='236' x2='195' y2='256' style='stroke:var(--ink);stroke-width:2'/><text x='185' y='274' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:12px;font-weight:bold'>稽查</text><text x='240' y='306' text-anchor='middle' style='fill:var(--ink-faint);font-family:var(--font-serif);font-size:10.5px'>解梦 = 从门外的改写稿,逆推回门里的本文</text></svg>",
+   "caption": "你记得的梦只是门外的改写稿;弗洛伊德认为本文在门里,门口站着一位从不下班的稽查。"
+  },
+  {
+   "type": "h2",
+   "text": "五、梦的材料从哪来:白天的碎屑,童年的资本"
+  },
+  {
+   "type": "p",
+   "text": "隐梦的原料从哪来?弗洛伊德清点出三个来源。最表层的是**日间残余**——最近一两天的印象,而且常常是些鸡毛蒜皮:白天多看了一眼的陌生人、一封没写完的信、一句无关痛痒的闲话。几乎每个梦都要从这里取材,像借一个不起眼的壳。"
+  },
+  {
+   "type": "p",
+   "text": "但真正出钱开工的,他认为是**幼儿期的记忆与愿望**。他打过一个著名的比方:日间残余像企业家,有项目、没资本;幼年的愿望像资本家,真正的钱在它手里。一个梦要立起来,必须两者合伙——白天的碎屑提供由头,童年的愿望提供动力。他甚至断言,几乎每个梦往深处挖,都能挖到幼儿期。这是全书最大胆、日后也最受争议的论断之一,先记下,文末再算账。"
+  },
+  {
+   "type": "p",
+   "text": "顺着「童年」这条线,书里还讨论了一批人人做过的**典型的梦**。考试梦:明明毕业多年,还梦见坐在考场上一题不会——他的观察很妙:人往往只梦见**当年其实考过了**的科目,所以这梦更像一句安慰:「当年那么怕,不也过来了?」当众赤身的梦,被他追到幼年那段光屁股乱跑也不觉羞耻的岁月。而最惊世骇俗的,是对「梦见至亲亡故」的解释:他认为这可能残留着幼年时对亲人真实起过的敌意——孩子的爱恨本就直来直去。正是在这一节里,他借希腊悲剧《俄狄浦斯王》第一次抛出了日后名满天下也争议滔天的**俄狄浦斯情结**。"
+  },
+  {
+   "type": "pull",
+   "text": "这本书,正是它首次登台的地方——这套说法今天多不被实证心理学采信,记进文末的账。"
+  },
+  {
+   "type": "p",
+   "text": "第三个来源是**躯体刺激**:口渴、憋尿、被子掉了、胳膊压麻了。前人拿这个解释一切,弗洛伊德只给它一个配角的位置——身体状况确实会被顺手编进剧情,但它只是送上门的素材,不是编剧本身。同样是渴,张三梦见沙漠跋涉,李四梦见畅饮冰水:素材相同,写法各异,写法里才藏着各人的心事。"
+  },
+  {
+   "type": "h2",
+   "text": "六、梦的工作:把心事改写成梦境的四道工序"
+  },
+  {
+   "type": "p",
+   "text": "第六章是全书篇幅最长、技术含量最高的部分,回答一个问题:隐梦究竟是**怎么被加工成**显梦的?这道工序,他称为**梦的工作**,拆出四种手法。这一章是理解精神分析的钥匙——他后来分析口误、笑话、神经症症状,用的都是同一套思路。"
+  },
+  {
+   "type": "p",
+   "text": "第一道:**凝缩**。几个念头压进同一个意象。梦里那个人,脸像同事,穿着老同学的外套,说话却是父亲的腔调——一个形象背着好几个人的账。所以显梦总是异常地「浓」,短短一段情节,联想开来就是一大片心事;也所以梦里的人物,总透着一股说不出的怪。"
+  },
+  {
+   "type": "p",
+   "text": "凝缩最有趣的产物是梦里的生造词。弗洛伊德记录过自己梦里冒出的一个词「Autodidasker」——醒来一拆,竟是「自学者」「作家」和一位熟人的名字压缩在一起,每个成分各自牵出一串心事。你若梦见过念不出来的怪词、认不出的混合面孔,那就是凝缩的手笔:不是梦在胡编,是几股念头在抢同一个位置。"
+  },
+  {
+   "type": "p",
+   "text": "第二道:**移置**。情感的重量从要害挪到边角。真正扎心的事,在梦里可能只是一闪而过的背景;一个无关紧要的细节,却让你在梦里嚎啕大哭。重心一挪,审查员就认不出哪里是重点。这也顺手解释了梦给人的普遍观感——「莫名其妙」:不是没有重点,是重点被藏起来了。"
+  },
+  {
+   "type": "p",
+   "text": "第三道:**象征**。某些意象有相对固定的含义,弗洛伊德列了不少;后世流传最广、也被滥用得最狠的,是其中的性象征。这里值得替他说句公道话:他本人明确警告过,象征只能当辅助,不能当密码本生搬硬套,联想才是正路——尽管在他自己的分析实践里,这条界线也没能一直守住。"
+  },
+  {
+   "type": "p",
+   "text": "第四道:**二次加工**。快醒的时候,理智进场收拾残局,把一地碎片抹平、缝合成一个像样的故事。所以你复述出来的梦,永远比梦本身「通顺」——那份通顺不是梦的,是醒来的你贴上去的包装。"
+  },
+  {
+   "type": "p",
+   "text": "四道工序合起来,活像一间躲避审查的地下作坊:先压缩,再挪位,然后换装,最后抛光。弗洛伊德说,解梦的全部技术,不过是把这四道工序**倒着做一遍**:从抛光过的成品出发,一路拆回原料。"
+  },
+  {
+   "type": "p",
+   "text": "这套框架还顺手解释了一个日常之谜:**为什么梦醒即忘**?他认为这不全是记性的问题,而是稽查在「追缴」——睡着时审查松了手,让一些东西溜了出来;人一醒,审查权力全面恢复,赶紧把泄露的内容抹掉。越是重要的梦,忘得越快、记得越拧。所以他要求病人一睁眼就把梦写下来。今天心理学科普里常见的「床头放本梦日记」,源头就在这里——只是记录的理由,已经换成了现代的版本。"
+  },
+  {
+   "type": "figure",
+   "ftype": "structure",
+   "svg": "<svg viewBox='0 0 560 330' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:16px;font-weight:bold'>梦的工作 · 四道伪装工序</text><rect x='20' y='44' width='250' height='126' rx='10' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='145' y='70' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px;font-weight:bold'>凝缩</text><circle cx='90' cy='106' r='9' style='fill:none;stroke:var(--ink-soft);stroke-width:1.8'/><circle cx='115' cy='96' r='9' style='fill:none;stroke:var(--ink-soft);stroke-width:1.8'/><circle cx='100' cy='124' r='9' style='fill:none;stroke:var(--ink-soft);stroke-width:1.8'/><line x1='135' y1='110' x2='165' y2='110' style='stroke:var(--ink-soft);stroke-width:2'/><polygon points='171,110 161,105 161,115' style='fill:var(--ink-soft)'/><circle cx='200' cy='110' r='17' style='fill:none;stroke:var(--cinnabar);stroke-width:2.2'/><text x='145' y='156' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>几个念头,叠进同一个形象</text><rect x='290' y='44' width='250' height='126' rx='10' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='415' y='70' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px;font-weight:bold'>移置</text><circle cx='360' cy='108' r='18' style='fill:none;stroke:var(--ink-faint);stroke-width:2'/><text x='360' y='112' text-anchor='middle' style='fill:var(--ink-faint);font-family:var(--font-serif);font-size:9.5px'>要害</text><line x1='385' y1='108' x2='448' y2='108' style='stroke:var(--cinnabar);stroke-width:2;stroke-dasharray:5 4'/><polygon points='454,108 444,103 444,113' style='fill:var(--cinnabar)'/><circle cx='472' cy='108' r='7' style='fill:none;stroke:var(--ink);stroke-width:2'/><line x1='472' y1='92' x2='472' y2='86' style='stroke:var(--cinnabar);stroke-width:2'/><line x1='484' y1='97' x2='488' y2='93' style='stroke:var(--cinnabar);stroke-width:2'/><line x1='460' y1='97' x2='456' y2='93' style='stroke:var(--cinnabar);stroke-width:2'/><text x='415' y='156' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>情感的重量,挪到边角细节</text><rect x='20' y='184' width='250' height='126' rx='10' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='145' y='210' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px;font-weight:bold'>象征</text><rect x='75' y='234' width='30' height='30' style='fill:none;stroke:var(--ink-soft);stroke-width:1.8'/><text x='90' y='282' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10px'>意象</text><line x1='120' y1='249' x2='175' y2='249' style='stroke:var(--ink-faint);stroke-width:1.8;stroke-dasharray:4 4'/><text x='147' y='240' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:13px;font-weight:bold'>?</text><text x='205' y='253' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:12px;font-weight:bold'>固定含义</text><text x='145' y='296' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>词典只是辅助,联想才是正路</text><rect x='290' y='184' width='250' height='126' rx='10' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='415' y='210' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px;font-weight:bold'>二次加工</text><polyline points='330,262 348,236 366,268 384,240 400,260' style='fill:none;stroke:var(--ink-faint);stroke-width:2'/><line x1='412' y1='250' x2='438' y2='250' style='stroke:var(--ink-soft);stroke-width:2'/><polygon points='444,250 434,245 434,255' style='fill:var(--ink-soft)'/><path d='M 452 256 C 467 242, 487 242, 504 252' style='fill:none;stroke:var(--cinnabar);stroke-width:2.2'/><text x='415' y='296' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>醒前把碎片抹平成连贯故事</text></svg>",
+   "caption": "隐梦变显梦的四道工序:压缩、挪位、换装、抛光——解梦就是把它们倒着做回去。"
+  },
+  {
+   "type": "h2",
+   "text": "七、收尾的野心:三层心理装置,一条康庄大道"
+  },
+  {
+   "type": "p",
+   "text": "最后一章,弗洛伊德从「解梦」跳到了「建模」——为整个心灵画一张结构图。他把心理装置分成三层:最底层是**无意识**,愿望与冲动的大本营,永远在活动,却从不直接露面;中间是**前意识**,存放此刻没在想、但随时能调取的内容,它与无意识之间有稽查把门;最上面的**意识**,只是整座装置顶上那盏小灯——我们平时以为的「自己」,不过是灯光照亮的那一小块。"
+  },
+  {
+   "type": "p",
+   "text": "梦怎么发生?他给出一个机制,叫**退行**:睡眠中,通往行动的出口关闭了,念头无路可走,只好倒着流回感知系统,把自己「放映」成画面。所以梦是用眼睛「看见」的,不是用逻辑「想出来」的——念头退化成了图像,这正是梦不讲道理、只讲画面的原因。"
+  },
+  {
+   "type": "p",
+   "text": "这一章还藏着全书最安静、也最深远的一场革命:在弗洛伊德笔下,**做梦不是病,而是每个正常人夜夜都在进行的心理活动**,它与口误、走神、神经症症状共用同一套机制,只是程度不同。换句话说,「正常人」和「病人」不再隔着一堵墙,而是站在同一条连续谱上——这个观念日后渗进了整个现代文化,以至于我们今天已经忘了它曾经多么离经叛道。"
+  },
+  {
+   "type": "p",
+   "text": "这套三层模型,日后会演化成大众更熟悉的本我、自我、超我。而梦在整个体系里的地位,他用全书最有名的一句话定了调:"
+  },
+  {
+   "type": "quote",
+   "original": "royal road to the unconscious",
+   "translation": "对梦的解读,是通向心灵中无意识活动的一条康庄大道。"
+  },
+  {
+   "type": "figure",
+   "ftype": "model",
+   "svg": "<svg viewBox='0 0 480 310' xmlns='http://www.w3.org/2000/svg'><text x='240' y='26' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:15.5px;font-weight:bold'>心理装置三层 · 与一条倒流的路</text><rect x='140' y='48' width='200' height='42' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='240' y='67' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px;font-weight:bold'>意识</text><text x='240' y='83' text-anchor='middle' style='fill:var(--ink-faint);font-family:var(--font-serif);font-size:10px'>顶上那盏小灯</text><line x1='231' y1='92' x2='231' y2='106' style='stroke:var(--cinnabar);stroke-width:2'/><line x1='249' y1='92' x2='249' y2='106' style='stroke:var(--cinnabar);stroke-width:2'/><text x='285' y='103' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:11px'>稽查</text><rect x='115' y='108' width='250' height='52' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='240' y='130' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px;font-weight:bold'>前意识</text><text x='240' y='148' text-anchor='middle' style='fill:var(--ink-faint);font-family:var(--font-serif);font-size:10px'>随时可取的库存</text><line x1='231' y1='162' x2='231' y2='176' style='stroke:var(--cinnabar);stroke-width:2'/><line x1='249' y1='162' x2='249' y2='176' style='stroke:var(--cinnabar);stroke-width:2'/><text x='285' y='173' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:11px'>稽查(把门最严)</text><rect x='90' y='178' width='300' height='88' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:2.2'/><text x='240' y='204' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14.5px;font-weight:bold'>无意识</text><text x='240' y='227' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:10.5px'>愿望与冲动的大本营,永远在活动</text><text x='240' y='247' text-anchor='middle' style='fill:var(--ink-faint);font-family:var(--font-serif);font-size:10px'>梦的动力从这里来</text><line x1='415' y1='58' x2='415' y2='252' style='stroke:var(--azure);stroke-width:2'/><polygon points='415,260 409,248 421,248' style='fill:var(--azure)'/><text x='440' y='150' text-anchor='middle' style='fill:var(--azure);font-family:var(--font-serif);font-size:12.5px;font-weight:bold'>退行</text><text x='440' y='170' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:9.5px'>念头倒流</text><text x='440' y='186' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:9.5px'>放映成画面</text><text x='240' y='294' text-anchor='middle' style='fill:var(--ink-faint);font-family:var(--font-serif);font-size:10.5px'>睡眠中出口关闭,念头退回感知端,变成你「看见」的梦</text></svg>",
+   "caption": "全书收尾的理论模型:无意识永不熄火,稽查层层把门;睡眠中念头退行成画面,便是梦。"
+  },
+  {
+   "type": "h2",
+   "text": "八、该信多少?——研读,而不是照单全收"
+  },
+  {
+   "type": "p",
+   "text": "全书讲完,必须把立场摆正:《梦的解析》是思想史上的一座地标,**但不是一本被科学证实的解梦手册**。有三笔账要算清。"
+  },
+  {
+   "type": "p",
+   "text": "第一笔:「所有梦都是愿望的达成」这个普遍命题,今天的睡眠科学**普遍不采信**。1953年,快速眼动睡眠(REM)被发现,梦研究从诊室搬进了实验室。此后的主流解释里——「激活-合成」假说认为,梦更像大脑给睡眠中随机的神经活动现场编的剧本;记忆巩固理论认为,做梦与大脑筛选、整理白天的记忆有关;情绪调节理论认为,梦在帮我们于低风险环境里消化情绪。这些理论彼此仍在竞争,但没有哪一家需要「精心伪装的愿望」这个设定。"
+  },
+  {
+   "type": "p",
+   "text": "第二笔:自由联想法有个致命的方法论软肋——**缺乏可证伪性**。还记得前文按下的两个疑点吗?病人梦见理论被推翻,他说这满足了「希望我错」的愿望;标本梦里,分析者与被分析者是同一个人。顺着联想走,一个梦几乎可以通向任何结论;分析者想找什么,总能找到什么,而且永远能自圆其说——连反例都能收编成顺例的理论,恰恰因此失去了被检验的资格。回头再看伊尔玛梦:哪些联想写进书里、在哪里收线、结论落在何处,全由弗洛伊德自己裁定。批评者说得不客气但在理:那更像一场精彩的自我辩护表演,而不是一次可重复、可检验的论证。"
+  },
+  {
+   "type": "p",
+   "text": "第三笔:「每个梦都能挖到幼儿期」的断言,连同那套具体的性象征解释,在当代实证心理学界争议极大,多不被采信。就连后世的许多精神分析师,也早已不再逢梦必挖童年。"
+  },
+  {
+   "type": "figure",
+   "ftype": "contrast",
+   "svg": "<svg viewBox='0 0 560 316' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:15.5px;font-weight:bold'>1900年的答案 vs 今天的睡眠科学</text><rect x='22' y='44' width='248' height='204' rx='10' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='146' y='70' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:13.5px;font-weight:bold'>弗洛伊德 · 1900</text><line x1='42' y1='82' x2='250' y2='82' style='stroke:var(--line);stroke-width:1'/><text x='40' y='106' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11.5px'>梦 = 被伪装的愿望达成</text><text x='40' y='132' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11.5px'>稽查 + 梦的工作负责改装</text><text x='40' y='158' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11.5px'>动力来自幼儿期的愿望</text><text x='40' y='184' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11.5px'>证据:诊室里的自由联想</text><text x='40' y='214' style='fill:var(--ink-faint);font-family:var(--font-serif);font-size:10.5px'>(个案难重复,结论难证伪)</text><rect x='290' y='44' width='248' height='204' rx='10' style='fill:none;stroke:var(--azure);stroke-width:2'/><text x='414' y='70' text-anchor='middle' style='fill:var(--azure);font-family:var(--font-serif);font-size:13.5px;font-weight:bold'>现代梦研究</text><line x1='310' y1='82' x2='518' y2='82' style='stroke:var(--line);stroke-width:1'/><text x='308' y='106' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11.5px'>1953年发现REM,搬进实验室</text><text x='308' y='132' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11.5px'>激活-合成:给随机放电编剧</text><text x='308' y='158' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11.5px'>记忆巩固 · 情绪调节</text><text x='308' y='184' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11.5px'>证据:实验与脑成像</text><text x='308' y='214' style='fill:var(--ink-faint);font-family:var(--font-serif);font-size:10.5px'>(彼此竞争,都不需要「伪装」)</text><rect x='22' y='262' width='516' height='40' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='280' y='287' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:12px'>仅存的共识:梦与做梦者的经历、情绪相关,值得研究</text></svg>",
+   "caption": "同一个问题,两个时代的答案。现代理论彼此仍在竞争,但都不需要「伪装的愿望」这个设定。"
+  },
+  {
+   "type": "p",
+   "text": "但反过来把它一笔抹杀,同样不公道。这本书至少留下了两样经得起时间的东西。其一,**把梦当作值得认真对待的心理材料**:梦的内容确实与做梦者的经历、焦虑和心事相关——这个大方向,今天的研究者大体仍然认可,只是不再接受那套伪装机制的解释。其二,自由联想作为**临床探索的工具**:让人绕过自我防卫、说出平时说不出口的东西,至今仍活在各种谈话治疗里。至于文化影响,更是无远弗届——超现实主义的绘画、写意识流的小说、玩梦境嵌套的电影,背后都站着这本书;现代人张口就来的「潜意识」「压抑」「口误暴露真心」,词源都在这里。"
+  },
+  {
+   "type": "p",
+   "text": "落到自己身上,这本书能给今天的读者留下什么?大概是一种**对梦的合理态度**:不必查密码本,不必怕凶兆,也不必逢梦必挖童年;但一个反复出现的梦、一段醒来仍心口发紧的情绪,不妨当作内心递来的一张便条——它未必是伪装的愿望,却多半和你近来的处境、压力与牵挂有关。把梦当线索而非预言,这个分寸,恰好是这本书最值得保留的部分,也是它最常被读过头的部分。"
+  },
+  {
+   "type": "p",
+   "text": "所以,今天读《梦的解析》,合适的姿势是把它当作一份1900年的思想标本:看一个极聪明的人,如何拒绝「梦是垃圾」的时代共识,坚持在最荒诞的材料里寻找意义,并为此建起一整套概念大厦。这座大厦的许多楼层,今天已经空置;但「你的梦与你有关,值得一问」这扇门,确实是他第一个推开的——推开之后,就再也关不上了。"
+  },
+  {
+   "type": "figure",
+   "ftype": "quote-card",
+   "svg": "<svg viewBox='0 0 520 232' xmlns='http://www.w3.org/2000/svg'><rect x='10' y='10' width='500' height='212' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='20' y='20' width='480' height='192' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='260' y='58' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:14px'>❖</text><text x='260' y='112' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:21px;font-weight:bold'>「解梦,是通向无意识的康庄大道。」</text><text x='260' y='152' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:12px'>——弗洛伊德《梦的解析》,1900</text><rect x='440' y='162' width='38' height='38' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='459' y='186' text-anchor='middle' style='fill:var(--cinnabar);font-family:var(--font-serif);font-size:11.5px;font-weight:bold'>观书</text></svg>",
+   "caption": "全书最有名的一句话——从此,梦从「垃圾」变成了「线索」。"
+  }
+ ]
 }

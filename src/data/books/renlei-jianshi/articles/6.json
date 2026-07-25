@@ -1,83 +1,87 @@
 {
-  "title": "帝国的逻辑,宗教的黏合力",
-  "subtitle": "《人类简史》第六章导读——两台缝合机,把无数个「他们」缝成一个「我们」",
-  "centralIdea": "金钱统一了「怎么交易」,却管不了「归谁管」和「信什么」——这一章登场的帝国与宗教,补上了后两块。帝国是过去两千多年最常见的政治形态:它靠征服起家,却在消化战利品的过程中把语言、法律、道路、观念摊派给所有人,以至于今天没有谁还能从自己身上剥离出「纯正的本土文化」;宗教则给人人心知肚明「是人定的」的脆弱秩序,接上一根「天定」的天线,让它不容置疑。赫拉利拒绝对帝国做简单的善恶审判,又把自由主义、社会主义统统算进「宗教」的账——前者被批评超然得近乎冷漠,后者被批评把概念拉宽到失去锋利度。读这一章,要同时接住他的框架之利与定义之险。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "上一章结尾留了个缺口:钱统一了「怎么交易」,却统一不了「归谁管」和「信什么」。这一章,两台更重型的缝合机进场。先抛一个让人坐不住的事实:今天地球上没有一个人是「纯本土文化」的产物——你说的语言、写的文字、用的历法、走的公路、脑子里的对错标准,几乎全是某个帝国当年用刀剑和税吏推开的。赫拉利在这一章干的事,是把「帝国」这个声名狼藉的词和「宗教」这个自带光环的词,放回同一张工作台,当作**统一人类的两种技术**来拆:帝国负责把很多个「他们」强行装进同一个政治容器,宗教负责给容器里的秩序盖上「天定」的图章。"
-    },
-    {
-      "type": "h2",
-      "text": "帝国是什么:先把好恶放一边"
-    },
-    {
-      "type": "p",
-      "text": "赫拉利给帝国下的定义冷静得像验货单,只有两条:**第一,统治着多个拥有不同文化认同的民族;第二,疆域有弹性、胃口无上限**——吞下一个省之后,永远还能再吞一个。按这个标准,罗马、汉朝、阿拉伯帝国、大英帝国、甚至今天许多「民族国家」的前身,统统在列。然后是那句翻案:帝国不是历史的意外或毒瘤,而是**过去两千多年里最常见、最稳定的政治形态**——绝大多数人类,绝大多数时间,都活在某个帝国治下。今天「帝国主义」是骂人的话,但骂完之后你得面对一个尴尬的事实:我们引以为傲的文化遗产,十有八九是帝国的遗产。"
-    },
-    {
-      "type": "p",
-      "text": "帝国怎么把「他们」变成「我们」?赫拉利描了一个反复上演的循环:军队先到,**征服**;接着是**压榨**——税收、劳役、战利品源源不断输往中心;但统治几百万异族光靠刀不行,成本太高,于是帝国开始**摊派文化**——推广自己的语言、法律、货币、道路和神;被征服者的孙辈说着帝国的语言长大,慢慢**把帝国文化当成自己的**;最后一步最妙:他们拿起帝国自己宣扬的理想,**反过来要求平等**——「你说帝国子民一律受法律保护,那凭什么我低人一等?」罗马治下的高卢人,从被屠戮的蛮族,变成穿托加袍、争公民权的罗马人,用了不过几代人。帝国的理念,最终成了被征服者手里的武器——循环走完,一个更大的「我们」诞生,然后等着被下一个帝国吞并、再来一轮。"
-    },
-    {
-      "type": "figure",
-      "ftype": "循环图",
-      "svg": "<svg viewBox='0 0 560 340' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>帝国循环:从征服到「我们」</text><rect x='40' y='56' width='150' height='44' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='115' y='83' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--cinnabar)'>① 征服与压榨</text><rect x='230' y='56' width='150' height='44' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='305' y='83' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>② 摊派帝国文化</text><rect x='420' y='56' width='120' height='44' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='480' y='83' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>③ 后代认同</text><path d='M190,78 L228,78' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='228,78 216,72 216,84' style='fill:var(--ink-faint)'/><path d='M380,78 L418,78' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='418,78 406,72 406,84' style='fill:var(--ink-faint)'/><path d='M480,100 C480,150 380,150 340,166' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='340,166 353,162 348,174' style='fill:var(--ink-faint)'/><rect x='150' y='166' width='260' height='44' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='193' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>④ 拿帝国的理想,反过来要求平等</text><path d='M280,210 L280,246' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='280,246 274,234 286,234' style='fill:var(--ink-faint)'/><rect x='170' y='248' width='220' height='44' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='280' y='275' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>⑤ 融合成一个更大的「我们」</text><path d='M168,270 C60,250 60,110 38,90' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5;stroke-dasharray:5 4'/><polygon points='38,90 42,102 50,93' style='fill:var(--ink-faint)'/><text x='60' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>等着被下一个</text><text x='60' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>帝国吞并…</text><text x='280' y='322' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>高卢人变成罗马人,用了不过几代——帝国的理念成了被征服者的武器</text></svg>",
-      "caption": "帝国循环:刀剑开路,文化收尾。最讽刺的一步是⑤——被征服者最终用帝国自己的理想,赢得了帝国里的位置。"
-    },
-    {
-      "type": "p",
-      "text": "所以赫拉利说,**帝国的遗产没法退货**。今天的印度人若要清算英国殖民,会发现铁路、法律体系、英语、板球——乃至「印度」作为一个统一政治实体的观念本身——都得一并退掉;而剥掉英国这一层,底下还有莫卧儿、德里苏丹、笈多王朝,一层帝国摞着一层帝国,根本挖不到那个想象中「纯净的本土」。他的立场因此显得冷峻:帝国之恶(屠杀、奴役、压榨)是真的,帝国之功(道路、文字、普世法律、更大范围的和平)也是真的,**而且常常是同一件事的两面**——供养暴君的税金,也修了水渠;镇压叛乱的军团,也护了商路。他拒绝在「邪恶帝国」和「文明使者」之间选边,只把账摊开给你看。"
-    },
-    {
-      "type": "h2",
-      "text": "宗教:给人间秩序接上天线"
-    },
-    {
-      "type": "p",
-      "text": "帝国解决了「归谁管」,但秩序还缺一样东西:**不容置疑**。想象的秩序有个天生的心虚之处——人人隐约知道法律是人定的,而人定的东西,换一批人就能改。怎么办?把秩序的署名从「人」改成「超人类」:这不是国王的意思,是神的意思、天的法则、宇宙的道理。凡人可以跟凡人讨价还价,没法跟宇宙讨价还价。这就是宗教在赫拉利框架里的功能定位——**给最重要的那部分想象秩序,加上一层「超人类合法性」的封印**。"
-    },
-    {
-      "type": "quote",
-      "original": "宗教是一种人类规范及价值观的系统,建立在超人类的秩序之上。",
-      "translation": "注意这个定义的宽度:它不要求有神,只要求「规范与价值观」加「超人类秩序」。神教符合,不拜神、拜宇宙法则的佛教符合——而这个口子一开,自由主义、社会主义也将被赫拉利请进「宗教」的名单。这是全书最具争议的操作之一,收束处再算这笔账。"
-    },
-    {
-      "type": "p",
-      "text": "然后他快进了一部宗教演化史。最早是**泛灵论**:万物有灵,采集者跟身边的树、溪流、岩石打交道,神很「本地」。农业革命后神开始升级——庄稼收成靠天,人需要能管风调雨顺的大神,于是**多神教**登场:世界由一批各管一摊的职能神打理。多神教有个常被忽略的美德:**宽容**。它默认神有很多,你拜你的、我拜我的,互不拆台——罗马帝国为难基督徒的次数与规模,远比后来基督教各派之间的互相屠戮要克制。接着是**一神教**的崛起:我的神不只是最强的神,是唯一的神——排他,但也因此自带传教的狂热,像装了推进器,几百年就从边缘教派铺满半个地球。有趣的是,一神教内部又偷偷长回了多神教的样子:圣徒各管一摊(有守护旅人的、守护渔夫的),几乎就是职能神换了户口;而为了解释「全能的善神为何容许恶」,二元论(光明与黑暗永恒对战)的思路也被悄悄借来救场。**真实世界里的信仰,从来是层层叠叠的综摄混合体,而非教科书里的纯净标本。**"
-    },
-    {
-      "type": "figure",
-      "ftype": "时间线",
-      "svg": "<svg viewBox='0 0 560 330' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>宗教的升级路线:神越来越大,圈越来越大</text><line x1='60' y1='56' x2='60' y2='300' style='stroke:var(--ink-faint);stroke-width:2'/><circle cx='60' cy='72' r='6' style='fill:var(--cinnabar)'/><text x='84' y='68' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>泛灵论</text><text x='84' y='88' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>万物有灵,神很「本地」——一棵树、一条溪</text><circle cx='60' cy='128' r='6' style='fill:var(--cinnabar)'/><text x='84' y='124' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>多神教(农业革命后)</text><text x='84' y='144' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>职能神各管一摊;默认神有很多 → 出奇地宽容</text><circle cx='60' cy='184' r='6' style='fill:var(--cinnabar)'/><text x='84' y='180' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>一神教</text><text x='84' y='200' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>唯一真神,排他 + 传教狂热;内部又长回圣徒「职能神」</text><circle cx='60' cy='240' r='6' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='84' y='236' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>自然法则宗教(佛教等)</text><text x='84' y='256' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>不拜神,拜法则:苦来自贪求——第十章还会回来</text><circle cx='60' cy='292' r='6' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='84' y='288' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar)'>人文主义诸教派(赫拉利的争议扩展)</text><text x='84' y='308' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>崇拜对象从神换成「人」:自由主义 · 社会主义 · 进化人文主义</text></svg>",
-      "caption": "从一棵树的灵,到唯一的神,再到「人性」本身——赫拉利把这条线一路画到现代意识形态头上,最后一步是全书最险的一跳。"
-    },
-    {
-      "type": "p",
-      "text": "路线的尽头是那惊险的一跳。既然宗教=「规范与价值观+超人类秩序」,那么赫拉利问:自由主义算不算?它信奉每个个体内在有神圣不可侵犯的价值——这一点无法用显微镜证明,只能「信」;社会主义算不算?它把「集体的平等」奉为最高律令;还有他称为「进化人文主义」的纳粹主义——相信人性可以进化也可以退化,因此要「保护优等、淘汰劣等」,并为此杀了几千万人。三者崇拜的都不再是神,而是「人」,只是对「人」的理解各异。赫拉利把它们统称**人文主义诸教派**,并提醒:现代意识形态确实具有信仰的全套结构——不可证明的核心教条、圣典、殉道者、分裂出的教派。这个视角的洞见是真的:它让你看清「人人生而平等」同样需要被相信才能生效。但危险也是真的——下一节算账。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对比图",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>「人文主义诸教派」:同一个崇拜对象,三种读法</text><rect x='30' y='56' width='156' height='140' rx='10' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='108' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--cinnabar)'>自由人文主义</text><text x='108' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>神圣的是「个体」</text><text x='108' y='136' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>人权 · 自由 · 尊严</text><text x='108' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>核心教条无法实证</text><rect x='202' y='56' width='156' height='140' rx='10' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--ink)'>社会人文主义</text><text x='280' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>神圣的是「集体」</text><text x='280' y='136' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>平等高于自由</text><text x='280' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>有圣典与教派分裂</text><rect x='374' y='56' width='156' height='140' rx='10' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='452' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--ink)'>进化人文主义</text><text x='452' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>「人性」可升可降</text><text x='452' y='136' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>纳粹主义属此类</text><text x='452' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>以「科学」之名行屠杀</text><line x1='44' y1='222' x2='516' y2='222' style='stroke:var(--line);stroke-width:1'/><text x='280' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>⚠ 把三者并排,是洞见也是危险:</text><text x='280' y='276' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>「都需要被相信」不等于「同样任意、同样无高下」——这一步要读者自己站稳</text></svg>",
-      "caption": "赫拉利的分类学:三种现代意识形态都把「人」放上祭坛。框架好用,但「可辩护性的差别」被这张整齐的表格抹平了。"
-    },
-    {
-      "type": "h2",
-      "text": "收束:缝合完成,问号照打"
-    },
-    {
-      "type": "p",
-      "text": "照例坐直了算账。**第一笔:宗教定义拉得太宽。** 「规范与价值观+超人类秩序」这个口子,能装下的东西几乎没有边界——按同样逻辑,货币政策、环保主义、素食主义都能算「宗教」。定义一旦无所不包,就什么也没解释;宗教学者对这种用法多有保留。更要紧的是,把自由主义与纳粹主义排进同一张「教派」名单,修辞上等效,论证上悬殊:「个体不可侵犯」是一个可以给出理由、可以用历史教训辩护的规范主张,「淘汰劣等人种」则在事实与伦理两个层面都已破产——**「都靠相信」不等于「都一样」**,这个滑动全书反复出现,这一章最密集。**第二笔:帝国叙述的超然,是优点也是盲区。** 拒绝道德审判让分析清爽,但受害者的视角在这一章确实单薄——被缝合进「更大的我们」的人,很多没能活着看到循环的第五步。"
-    },
-    {
-      "type": "quote",
-      "original": "历史的铁则就是:事后看来无可避免的事,在当时看来总是毫不明显。",
-      "translation": "别把帝国与一神教的胜出读成「它们更正义、更先进」——历史选择的理由常常与好坏无关,只与扩张能力有关。成功者写史,然后把自己的成功追认为必然。这句话也是给下一章准备的解毒剂:欧洲的崛起,同样不是「注定」。"
-    },
-    {
-      "type": "p",
-      "text": "把批评记完,这一章的骨架依然结实:金钱统一了交易,帝国统一了治理,宗教统一了信念——三台缝合机各司其职,把无数互不往来的小世界,缝成了一个彼此认账、彼此通婚、彼此打量的大世界。到公元1500年前后,舞台已经搭好,幕布已经拉开,可主角还没登场:**真正让人类力量在五百年里翻到面目全非的那场革命,开场白只有三个字——「不知道」。** 下一章,科学革命。"
-    }
-  ]
+ "title": "帝国的逻辑,宗教的黏合力",
+ "subtitle": "《人类简史》第六章导读——两台缝合机,把无数个「他们」缝成一个「我们」",
+ "centralIdea": "金钱统一了「怎么交易」,却管不了「归谁管」和「信什么」——这一章登场的帝国与宗教,补上了后两块。帝国是过去两千多年最常见的政治形态:它靠征服起家,却在消化战利品的过程中把语言、法律、道路、观念摊派给所有人,以至于今天没有谁还能从自己身上剥离出「纯正的本土文化」;宗教则给人人心知肚明「是人定的」的脆弱秩序,接上一根「天定」的天线,让它不容置疑。赫拉利拒绝对帝国做简单的善恶审判,又把自由主义、社会主义统统算进「宗教」的账——前者被批评超然得近乎冷漠,后者被批评把概念拉宽到失去锋利度。读这一章,要同时接住他的框架之利与定义之险。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "上一章结尾留了个缺口:钱统一了「怎么交易」,却统一不了「归谁管」和「信什么」。这一章,两台更重型的缝合机进场。先抛一个让人坐不住的事实:今天地球上没有一个人是「纯本土文化」的产物——你说的语言、写的文字、用的历法、走的公路、脑子里的对错标准,几乎全是某个帝国当年用刀剑和税吏推开的。赫拉利在这一章干的事,是把「帝国」这个声名狼藉的词和「宗教」这个自带光环的词,放回同一张工作台,当作**统一人类的两种技术**来拆:帝国负责把很多个「他们」强行装进同一个政治容器,宗教负责给容器里的秩序盖上「天定」的图章。"
+  },
+  {
+   "type": "h2",
+   "text": "帝国是什么:先把好恶放一边"
+  },
+  {
+   "type": "p",
+   "text": "赫拉利给帝国下的定义冷静得像验货单,只有两条:**第一,统治着多个拥有不同文化认同的民族;第二,疆域有弹性、胃口无上限**——吞下一个省之后,永远还能再吞一个。按这个标准,罗马、汉朝、阿拉伯帝国、大英帝国、甚至今天许多「民族国家」的前身,统统在列。然后是那句翻案:帝国不是历史的意外或毒瘤,而是**过去两千多年里最常见、最稳定的政治形态**——绝大多数人类,绝大多数时间,都活在某个帝国治下。今天「帝国主义」是骂人的话,但骂完之后你得面对一个尴尬的事实:我们引以为傲的文化遗产,十有八九是帝国的遗产。"
+  },
+  {
+   "type": "p",
+   "text": "帝国怎么把「他们」变成「我们」?赫拉利描了一个反复上演的循环:军队先到,**征服**;接着是**压榨**——税收、劳役、战利品源源不断输往中心;但统治几百万异族光靠刀不行,成本太高,于是帝国开始**摊派文化**——推广自己的语言、法律、货币、道路和神;被征服者的孙辈说着帝国的语言长大,慢慢**把帝国文化当成自己的**;最后一步最妙:他们拿起帝国自己宣扬的理想,**反过来要求平等**——「你说帝国子民一律受法律保护,那凭什么我低人一等?」罗马治下的高卢人,从被屠戮的蛮族,变成穿托加袍、争公民权的罗马人,用了不过几代人。帝国的理念,最终成了被征服者手里的武器——循环走完,一个更大的「我们」诞生,然后等着被下一个帝国吞并、再来一轮。"
+  },
+  {
+   "type": "figure",
+   "ftype": "循环图",
+   "svg": "<svg viewBox='0 0 560 340' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>帝国循环:从征服到「我们」</text><rect x='40' y='56' width='150' height='44' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='115' y='83' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--cinnabar)'>① 征服与压榨</text><rect x='230' y='56' width='150' height='44' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='305' y='83' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>② 摊派帝国文化</text><rect x='420' y='56' width='120' height='44' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='480' y='83' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>③ 后代认同</text><path d='M190,78 L228,78' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='228,78 216,72 216,84' style='fill:var(--ink-faint)'/><path d='M380,78 L418,78' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='418,78 406,72 406,84' style='fill:var(--ink-faint)'/><path d='M480,100 C480,150 380,150 340,166' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='340,166 353,162 348,174' style='fill:var(--ink-faint)'/><rect x='150' y='166' width='260' height='44' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='193' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>④ 拿帝国的理想,反过来要求平等</text><path d='M280,210 L280,246' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='280,246 274,234 286,234' style='fill:var(--ink-faint)'/><rect x='170' y='248' width='220' height='44' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='280' y='275' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>⑤ 融合成一个更大的「我们」</text><path d='M168,270 C60,250 60,110 38,90' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5;stroke-dasharray:5 4'/><polygon points='38,90 42,102 50,93' style='fill:var(--ink-faint)'/><text x='60' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>等着被下一个</text><text x='60' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>帝国吞并…</text><text x='280' y='322' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>高卢人变成罗马人,用了不过几代——帝国的理念成了被征服者的武器</text></svg>",
+   "caption": "帝国循环:刀剑开路,文化收尾。最讽刺的一步是⑤——被征服者最终用帝国自己的理想,赢得了帝国里的位置。"
+  },
+  {
+   "type": "p",
+   "text": "所以赫拉利说,**帝国的遗产没法退货**。今天的印度人若要清算英国殖民,会发现铁路、法律体系、英语、板球——乃至「印度」作为一个统一政治实体的观念本身——都得一并退掉;而剥掉英国这一层,底下还有莫卧儿、德里苏丹、笈多王朝,一层帝国摞着一层帝国,根本挖不到那个想象中「纯净的本土」。他的立场因此显得冷峻:帝国之恶(屠杀、奴役、压榨)是真的,帝国之功(道路、文字、普世法律、更大范围的和平)也是真的,**而且常常是同一件事的两面**——供养暴君的税金,也修了水渠;镇压叛乱的军团,也护了商路。他拒绝在「邪恶帝国」和「文明使者」之间选边,只把账摊开给你看。"
+  },
+  {
+   "type": "h2",
+   "text": "宗教:给人间秩序接上天线"
+  },
+  {
+   "type": "p",
+   "text": "帝国解决了「归谁管」,但秩序还缺一样东西:**不容置疑**。想象的秩序有个天生的心虚之处——人人隐约知道法律是人定的,而人定的东西,换一批人就能改。怎么办?把秩序的署名从「人」改成「超人类」:这不是国王的意思,是神的意思、天的法则、宇宙的道理。凡人可以跟凡人讨价还价,没法跟宇宙讨价还价。这就是宗教在赫拉利框架里的功能定位——"
+  },
+  {
+   "type": "pull",
+   "text": "给最重要的那部分想象秩序,加上一层「超人类合法性」的封印。"
+  },
+  {
+   "type": "quote",
+   "original": "宗教是一种人类规范及价值观的系统,建立在超人类的秩序之上。",
+   "translation": "注意这个定义的宽度:它不要求有神,只要求「规范与价值观」加「超人类秩序」。神教符合,不拜神、拜宇宙法则的佛教符合——而这个口子一开,自由主义、社会主义也将被赫拉利请进「宗教」的名单。这是全书最具争议的操作之一,收束处再算这笔账。"
+  },
+  {
+   "type": "p",
+   "text": "然后他快进了一部宗教演化史。最早是**泛灵论**:万物有灵,采集者跟身边的树、溪流、岩石打交道,神很「本地」。农业革命后神开始升级——庄稼收成靠天,人需要能管风调雨顺的大神,于是**多神教**登场:世界由一批各管一摊的职能神打理。多神教有个常被忽略的美德:**宽容**。它默认神有很多,你拜你的、我拜我的,互不拆台——罗马帝国为难基督徒的次数与规模,远比后来基督教各派之间的互相屠戮要克制。接着是**一神教**的崛起:我的神不只是最强的神,是唯一的神——排他,但也因此自带传教的狂热,像装了推进器,几百年就从边缘教派铺满半个地球。有趣的是,一神教内部又偷偷长回了多神教的样子:圣徒各管一摊(有守护旅人的、守护渔夫的),几乎就是职能神换了户口;而为了解释「全能的善神为何容许恶」,二元论(光明与黑暗永恒对战)的思路也被悄悄借来救场。**真实世界里的信仰,从来是层层叠叠的综摄混合体,而非教科书里的纯净标本。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "时间线",
+   "svg": "<svg viewBox='0 0 560 330' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>宗教的升级路线:神越来越大,圈越来越大</text><line x1='60' y1='56' x2='60' y2='300' style='stroke:var(--ink-faint);stroke-width:2'/><circle cx='60' cy='72' r='6' style='fill:var(--cinnabar)'/><text x='84' y='68' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>泛灵论</text><text x='84' y='88' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>万物有灵,神很「本地」——一棵树、一条溪</text><circle cx='60' cy='128' r='6' style='fill:var(--cinnabar)'/><text x='84' y='124' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>多神教(农业革命后)</text><text x='84' y='144' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>职能神各管一摊;默认神有很多 → 出奇地宽容</text><circle cx='60' cy='184' r='6' style='fill:var(--cinnabar)'/><text x='84' y='180' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>一神教</text><text x='84' y='200' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>唯一真神,排他 + 传教狂热;内部又长回圣徒「职能神」</text><circle cx='60' cy='240' r='6' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='84' y='236' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>自然法则宗教(佛教等)</text><text x='84' y='256' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>不拜神,拜法则:苦来自贪求——第十章还会回来</text><circle cx='60' cy='292' r='6' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='84' y='288' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar)'>人文主义诸教派(赫拉利的争议扩展)</text><text x='84' y='308' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>崇拜对象从神换成「人」:自由主义 · 社会主义 · 进化人文主义</text></svg>",
+   "caption": "从一棵树的灵,到唯一的神,再到「人性」本身——赫拉利把这条线一路画到现代意识形态头上,最后一步是全书最险的一跳。"
+  },
+  {
+   "type": "p",
+   "text": "路线的尽头是那惊险的一跳。既然宗教=「规范与价值观+超人类秩序」,那么赫拉利问:自由主义算不算?它信奉每个个体内在有神圣不可侵犯的价值——这一点无法用显微镜证明,只能「信」;社会主义算不算?它把「集体的平等」奉为最高律令;还有他称为「进化人文主义」的纳粹主义——相信人性可以进化也可以退化,因此要「保护优等、淘汰劣等」,并为此杀了几千万人。三者崇拜的都不再是神,而是「人」,只是对「人」的理解各异。赫拉利把它们统称**人文主义诸教派**,并提醒:现代意识形态确实具有信仰的全套结构——不可证明的核心教条、圣典、殉道者、分裂出的教派。这个视角的洞见是真的:它让你看清「人人生而平等」同样需要被相信才能生效。但危险也是真的——下一节算账。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>「人文主义诸教派」:同一个崇拜对象,三种读法</text><rect x='30' y='56' width='156' height='140' rx='10' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='108' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--cinnabar)'>自由人文主义</text><text x='108' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>神圣的是「个体」</text><text x='108' y='136' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>人权 · 自由 · 尊严</text><text x='108' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>核心教条无法实证</text><rect x='202' y='56' width='156' height='140' rx='10' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--ink)'>社会人文主义</text><text x='280' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>神圣的是「集体」</text><text x='280' y='136' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>平等高于自由</text><text x='280' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>有圣典与教派分裂</text><rect x='374' y='56' width='156' height='140' rx='10' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='452' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--ink)'>进化人文主义</text><text x='452' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>「人性」可升可降</text><text x='452' y='136' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>纳粹主义属此类</text><text x='452' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>以「科学」之名行屠杀</text><line x1='44' y1='222' x2='516' y2='222' style='stroke:var(--line);stroke-width:1'/><text x='280' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>⚠ 把三者并排,是洞见也是危险:</text><text x='280' y='276' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>「都需要被相信」不等于「同样任意、同样无高下」——这一步要读者自己站稳</text></svg>",
+   "caption": "赫拉利的分类学:三种现代意识形态都把「人」放上祭坛。框架好用,但「可辩护性的差别」被这张整齐的表格抹平了。"
+  },
+  {
+   "type": "h2",
+   "text": "收束:缝合完成,问号照打"
+  },
+  {
+   "type": "p",
+   "text": "照例坐直了算账。**第一笔:宗教定义拉得太宽。** 「规范与价值观+超人类秩序」这个口子,能装下的东西几乎没有边界——按同样逻辑,货币政策、环保主义、素食主义都能算「宗教」。定义一旦无所不包,就什么也没解释;宗教学者对这种用法多有保留。更要紧的是,把自由主义与纳粹主义排进同一张「教派」名单,修辞上等效,论证上悬殊:「个体不可侵犯」是一个可以给出理由、可以用历史教训辩护的规范主张,「淘汰劣等人种」则在事实与伦理两个层面都已破产——**「都靠相信」不等于「都一样」**,这个滑动全书反复出现,这一章最密集。**第二笔:帝国叙述的超然,是优点也是盲区。** 拒绝道德审判让分析清爽,但受害者的视角在这一章确实单薄——被缝合进「更大的我们」的人,很多没能活着看到循环的第五步。"
+  },
+  {
+   "type": "quote",
+   "original": "历史的铁则就是:事后看来无可避免的事,在当时看来总是毫不明显。",
+   "translation": "别把帝国与一神教的胜出读成「它们更正义、更先进」——历史选择的理由常常与好坏无关,只与扩张能力有关。成功者写史,然后把自己的成功追认为必然。这句话也是给下一章准备的解毒剂:欧洲的崛起,同样不是「注定」。"
+  },
+  {
+   "type": "p",
+   "text": "把批评记完,这一章的骨架依然结实:金钱统一了交易,帝国统一了治理,宗教统一了信念——三台缝合机各司其职,把无数互不往来的小世界,缝成了一个彼此认账、彼此通婚、彼此打量的大世界。到公元1500年前后,舞台已经搭好,幕布已经拉开,可主角还没登场:**真正让人类力量在五百年里翻到面目全非的那场革命,开场白只有三个字——「不知道」。** 下一章,科学革命。"
+  }
+ ]
 }

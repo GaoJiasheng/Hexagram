@@ -1,65 +1,220 @@
 {
-  "title": "白话《自卑与超越》· 全书总览",
-  "subtitle": "一篇文章读懂阿德勒：三大生活任务、自卑的转化机制，以及该打问号的出生顺序理论",
-  "centralIdea": "人人生而自卑，因为人人都从弱小开始；健康的人生把自卑感转化为追求优越的成长动力，转化失败则沦为自卑情结，或它的伪装——优越情结。衡量转化成败的标尺，是能否在职业、社会、婚恋三大生活任务中与人真实合作，阿德勒称之为社会兴趣。这套框架并非被证实的科学定律，却是理解自己的一面好镜子。",
-  "featured": true,
-  "hero": {
-    "badge": "全书 · 核心",
-    "headline": "自卑不是你的病，是你还没用对方向的燃料。",
-    "tagline": "一篇文章读懂阿德勒与他的个体心理学"
+ "title": "白话《自卑与超越》· 全书总览",
+ "subtitle": "一篇文章读懂阿德勒：三大生活任务、自卑的转化机制，以及该打问号的出生顺序理论",
+ "centralIdea": "人人生而自卑，因为人人都从弱小开始；健康的人生把自卑感转化为追求优越的成长动力，转化失败则沦为自卑情结，或它的伪装——优越情结。衡量转化成败的标尺，是能否在职业、社会、婚恋三大生活任务中与人真实合作，阿德勒称之为社会兴趣。这套框架并非被证实的科学定律，却是理解自己的一面好镜子。",
+ "featured": true,
+ "hero": {
+  "badge": "全书 · 核心",
+  "headline": "自卑不是你的病，是你还没用对方向的燃料。",
+  "tagline": "一篇文章读懂阿德勒与他的个体心理学"
+ },
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "「自卑」这个词你一定不陌生——但你可能不知道，把这个词变成现代人自我认知关键词的，正是这本 1931 年出版的书。阿德勒的核心论点简单到可以写在手心上：**每个人生下来都自卑，而自卑不是病，是燃料**。烧对了方向，它推着你成长；烧错了方向，它把你困在「我不行」里，或者把你变成一个虚张声势、逢人就要证明自己的人。这篇总览带你把全书十三章串成一条线，也会明白告诉你：哪些地方值得认真记下，哪些地方要打个问号。"
   },
-  "blocks": [
-    { "type": "lead", "text": "「自卑」这个词你一定不陌生——但你可能不知道，把这个词变成现代人自我认知关键词的，正是这本 1931 年出版的书。阿德勒的核心论点简单到可以写在手心上：**每个人生下来都自卑，而自卑不是病，是燃料**。烧对了方向，它推着你成长；烧错了方向，它把你困在「我不行」里，或者把你变成一个虚张声势、逢人就要证明自己的人。这篇总览带你把全书十三章串成一条线，也会明白告诉你：哪些地方值得认真记下，哪些地方要打个问号。" },
-
-    { "type": "h2", "text": "一个跟弗洛伊德翻脸的人" },
-    { "type": "p", "text": "先认识作者。阿尔弗雷德·阿德勒，维也纳医生出身，后来转向精神医学，曾是弗洛伊德那个著名的「周三心理学会」的核心成员——相当于精神分析的开国元老之一。但 1911 年，他和弗洛伊德彻底决裂，带着一批人另立门户，创立了**个体心理学**。决裂的导火索是一个根本分歧：弗洛伊德认为驱动人的是性本能，人被童年的创伤推着走；阿德勒认为驱动人的是**对优越感的追求**——人不是被过去推着走的，是被自己心里那个目标拉着走的。" },
-    { "type": "p", "text": "打个比方：弗洛伊德看人像法医验尸，翻你的童年档案，找「你今天这样，是因为当年那道伤」；阿德勒看人像教练看运动员，问的是「你想去哪儿？你现在这套跑姿，是在为什么目标服务？」一个向后看，一个向前看。这个分歧贯穿全书每一章，也是理解阿德勒的钥匙——在他眼里，**连你的记忆、你的情绪、你的梦，都不是过去的残留物，而是为你当下的目标服务的工具**。" },
-    { "type": "quote", "original": "决定我们的不是经验本身，而是我们赋予经验的意义。", "translation": "同一件事落在不同人身上，会走出完全不同的人生——差别不在事件，在解释。这是阿德勒与弗洛伊德最深的分歧。" },
-    { "type": "figure", "ftype": "duizhao", "svg": "<svg viewBox='0 0 560 320' xmlns='http://www.w3.org/2000/svg'><text x='230' y='38' text-anchor='middle' style='font-family:var(--font-serif);font-size:17px;font-weight:bold;fill:var(--ink)'>弗洛伊德</text><text x='430' y='38' text-anchor='middle' style='font-family:var(--font-serif);font-size:17px;font-weight:bold;fill:var(--cinnabar)'>阿德勒</text><line x1='36' y1='54' x2='524' y2='54' style='stroke:var(--line);stroke-width:1'/><text x='36' y='92' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>驱动人的力量</text><text x='230' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink-soft)'>性本能的驱力</text><text x='430' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>对优越感的追求</text><line x1='36' y1='112' x2='524' y2='112' style='stroke:var(--line);stroke-width:0.5;stroke-dasharray:3 3'/><text x='36' y='150' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>人被什么塑造</text><text x='230' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink-soft)'>童年创伤（向后看）</text><text x='430' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>目标与解释（向前看）</text><line x1='36' y1='170' x2='524' y2='170' style='stroke:var(--line);stroke-width:0.5;stroke-dasharray:3 3'/><text x='36' y='208' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>梦是什么</text><text x='230' y='208' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink-soft)'>被压抑愿望的达成</text><text x='430' y='208' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>为现实困境彩排情绪</text><line x1='36' y1='228' x2='524' y2='228' style='stroke:var(--line);stroke-width:0.5;stroke-dasharray:3 3'/><text x='36' y='266' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>着眼何处</text><text x='230' y='266' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink-soft)'>挖出过去的病根</text><text x='430' y='266' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>调整当下的目标与合作</text><line x1='36' y1='292' x2='524' y2='292' style='stroke:var(--line);stroke-width:1'/></svg>", "caption": "1911 年的分岔路：弗洛伊德向后找病根，阿德勒向前看目标" },
-
-    { "type": "h2", "text": "人生逃不开的三张考卷" },
-    { "type": "p", "text": "全书第一章开门见山：不管你是谁，人生都必须回答三道题，一道都躲不掉。**第一道是职业**——地球资源有限，人类靠分工合作才活得下来，你得在这个分工体系里找到自己的位置；**第二道是社会**——人是群居动物，你身边永远有别人，你得学会跟同类共处；**第三道是爱情与婚姻**——人类分两性，种族要延续，你得处理最亲密的两人关系。阿德勒管这叫三大**生活任务**。注意这三道题的共同点：没有一道是你一个人能答完的，**每一道的答案里都藏着「合作」两个字**。" },
-    { "type": "p", "text": "更关键的是第二层：每个人心里都有一套自己未必意识到的**「生活的意义」**——你觉得活着是为了什么、世界是敌是友、别人是同伴还是对手。这套意义你说不出来，但你的一举一动都在泄露它。同样是失业，有人觉得「天塌了，我这辈子完了」，有人觉得「正好换条路试试」，有人觉得「都是这个社会亏欠我」——事件相同，赋予的意义不同，接下来的人生就此分岔。阿德勒的判断标准也很干脆：**健康的生活意义，必然指向对他人的真实关怀与合作**——他给它起了个名字，叫**社会兴趣**；而所有只围着「我」打转的意义——我的安全、我的面子、我的优越——迟早会在三张考卷面前露馅。" },
-    { "type": "p", "text": "有人会问：生活的意义难道不是各人各样、没有对错吗？阿德勒的回答很务实：意义没有绝对的标准答案，但有**公共的检验标准**——你那套意义，放到三大任务里跑一跑就见分晓。一套「只为自己」的意义，在职业里表现为混与躲，在人际里表现为算计与防备，在亲密关系里表现为控制与索取，处处碰壁；而「对别人有用」这套意义，恰恰是被人类几千年合作生存反复验证过的公约数。" },
-    { "type": "p", "text": "阿德勒还观察到，人躲避这三张考卷时有一套经典话术，叫**「是的——但是」**：「我也想找份正经工作，但是我身体不好」「我也想谈恋爱，但是我一见人多就紧张」。注意这个句式的精妙之处：前半句保住了面子（我的意愿没问题），后半句免除了责任（是客观条件不行）。在阿德勒看来，许多神经症症状——失眠、头痛、莫名的焦虑——之所以「治不好」，正是因为它们对本人**有用**：它们是一张体面的免战牌，举着它就可以不下场考试，也就永远不必面对「下场了却考砸」的风险。这个观察相当扎心，也是阿德勒式咨询的入手点：先看清症状在替你挡什么。" },
-    { "type": "figure", "ftype": "jiegou", "svg": "<svg viewBox='0 0 560 360' xmlns='http://www.w3.org/2000/svg'><circle cx='280' cy='185' r='56' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='280' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:16px;font-weight:bold;fill:var(--cinnabar)'>社会兴趣</text><text x='280' y='204' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>与人合作</text><circle cx='280' cy='64' r='46' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='280' y='62' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>职业</text><text x='280' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>在分工中谋生</text><circle cx='108' cy='290' r='46' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='108' y='288' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>社会</text><text x='108' y='308' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>与同类共处</text><circle cx='452' cy='290' r='46' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='452' y='288' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>婚恋</text><text x='452' y='308' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>两性与延续</text><line x1='280' y1='129' x2='280' y2='112' style='stroke:var(--ink-faint);stroke-width:1.5'/><line x1='232' y1='214' x2='147' y2='266' style='stroke:var(--ink-faint);stroke-width:1.5'/><line x1='328' y1='214' x2='413' y2='266' style='stroke:var(--ink-faint);stroke-width:1.5'/><text x='280' y='345' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>三大生活任务，没有一道能独自答完</text></svg>", "caption": "三大生活任务：职业、社会、婚恋，交卷处都写着「合作」" },
-
-    { "type": "h2", "text": "全书的心脏：自卑感，和它的两条出路" },
-    { "type": "p", "text": "现在到全书最核心的第三章。阿德勒的起点，是一个谁也无法反驳的观察：**每个人的人生都是从彻底的弱小开始的**。婴儿吃喝拉撒全靠别人，孩子在成人世界里处处矮一截、事事做不到；放大到整个物种，人类没有利爪没有厚皮，在自然界也算弱势群体。所以自卑感不是某些人的毛病，而是**人类的出厂设置**——每个人都带着它出生，谁也没有例外。" },
-    { "type": "quote", "original": "自卑感并不是变态，它是人类进步的原因。", "translation": "感到不足不丢人。人类的一切改进——衣服、房子、医学、科学——都是从「觉得自己还不够好、还不够安全」开始的。" },
-    { "type": "p", "text": "重点在于自卑感往哪儿走。健康的走法是**转化**：感到不足，于是补偿，于是变强。这条路人类整体走了几万年——正因为怕冷才有了衣服和房屋，正因为跑不过野兽才有了工具和协作。落到个人身上也一样：口吃的德摩斯梯尼含着石子对海练声，练成古希腊最伟大的演说家；觉得自己出身普通、没有退路，就用十年苦读给自己挣一张入场券。**自卑感被用对了，就是推你往上走的那级台阶。**阿德勒把这个向上的过程叫「追求优越」——注意，它的本意不是「比别人优越」，而是**从「减号」的处境走向「加号」的处境**：是成长，不是攀比。" },
-    { "type": "p", "text": "这套「补偿」理论里，藏着阿德勒自己的影子。他小时候患佝偻病，身体孱弱，三岁时弟弟病死在他身旁的小床上，四岁那年他自己也差点死于肺炎——病愈后他立志学医，要跟死亡掰一次手腕。他哥哥健壮出众，他从小就是那个「追不上的老二」。后来他最早的学术成果，研究的正是**器官缺陷与补偿**：身体有短板的人，如何靠加倍的训练把短板练成长板——就像很多视力有缺陷的画家、耳疾缠身的音乐家（贝多芬是最著名的例子）。你可以说，「自卑与超越」这套理论，首先是阿德勒对自己人生的解释。这不减损它的洞察力，但也提醒我们：它的出发点是个人经验与临床观察，不是对照实验。" },
-    { "type": "figure", "ftype": "liucheng", "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><polyline points='60,250 140,220 220,190 300,155 380,115 465,68' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='60' cy='250' r='6' style='fill:var(--ink-faint)'/><circle cx='140' cy='220' r='7' style='fill:var(--ink-soft)'/><circle cx='220' cy='190' r='8' style='fill:var(--ink-soft)'/><circle cx='300' cy='155' r='9' style='fill:var(--ink-soft)'/><circle cx='380' cy='115' r='11' style='fill:var(--ink)'/><circle cx='465' cy='68' r='16' style='fill:var(--cinnabar)'/><text x='60' y='276' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>自卑感</text><text x='60' y='292' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>（人人都有的起点）</text><text x='218' y='158' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>补偿 · 努力 · 成长</text><text x='465' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--cinnabar)'>超越</text><text x='465' y='122' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>从减号处境走向加号</text><line x1='300' y1='155' x2='393' y2='240' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 3'/><circle cx='393' cy='240' r='9' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='393' y='270' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>转化失败：自卑情结／优越情结</text></svg>", "caption": "自卑感的两条出路：转化为向上的台阶，或跌入情结" },
-    { "type": "p", "text": "但转化会失败，而且有两种失败法。**第一种叫自卑情结**：自卑感大到把人压垮，于是缩回去——「我不行」「算了吧」「反正我这种人做什么都没用」。表现形式不只是垂头丧气，还包括拖延、找借口、用生病来逃避考验，甚至用眼泪和无助来操控身边人——阿德勒有个刻薄又精准的说法，眼泪是「水做的力量」。**第二种叫优越情结**：自卑大到不敢承认，于是反向表演——吹嘘、炫耀、摆架子、逢人贬低两句、在网上见谁怼谁。阿德勒最锋利的洞察就在这儿：**优越情结不是自卑的反面，是自卑的伪装**。真正有底气的人，不需要反复宣称自己了不起；一个人越是大声证明自己优越，越说明他心里那块自卑没有处理完。这两种情结你在生活里都见过：一个躲在「我不配」里，一个躲在「我最牛」里——躲的是同一样东西。" },
-    { "type": "figure", "ftype": "duibi", "svg": "<svg viewBox='0 0 560 320' xmlns='http://www.w3.org/2000/svg'><rect x='28' y='48' width='232' height='210' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='144' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:16px;font-weight:bold;fill:var(--ink)'>自卑情结</text><text x='144' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>「我不行，算了吧」</text><text x='144' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>退缩 · 拖延 · 找借口</text><text x='144' y='174' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>用眼泪与无助操控他人</text><text x='144' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>自卑写在脸上</text><rect x='300' y='48' width='232' height='210' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='416' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:16px;font-weight:bold;fill:var(--cinnabar)'>优越情结</text><text x='416' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>「我最牛，你们都不行」</text><text x='416' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>吹嘘 · 炫耀 · 贬低他人</text><circle cx='416' cy='205' r='34' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5;stroke-dasharray:4 3'/><text x='416' y='201' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>内核</text><text x='416' y='219' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>自卑</text><line x1='264' y1='153' x2='296' y2='153' style='stroke:var(--ink-faint);stroke-width:1.5'/><text x='280' y='292' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>同一种自卑，两副面孔</text><text x='280' y='312' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--cinnabar)'>优越情结是自卑情结的伪装</text></svg>", "caption": "自卑情结与优越情结：一个躲在「我不配」里，一个躲在「我最牛」里" },
-    { "type": "p", "text": "顺带交代第二章的铺垫：**心灵和肉体不是两台机器，而是一个整体**——心灵设定目标，肉体执行，连情绪都是为目标服务的工具。愤怒常常是为了压制对方、逼人让步；焦虑可以充当逃避考验的理由；连「我控制不住我自己」，在阿德勒看来也往往是一种选择——因为发脾气比讲道理见效快。这个「情绪是工具」的视角相当颠覆：它把人从「情绪的受害者」，变成了「情绪的使用者」——你不是被愤怒抓住了，是你在用愤怒达到目的。" },
-
-    { "type": "h2", "text": "三件「测谎仪」：早期记忆、身体语言、梦" },
-    { "type": "p", "text": "这里得先解释阿德勒的另一个招牌术语——**生活风格**。它指的是一个人应对世界的整套惯用打法：遇到困难是迎上去还是绕着走、把别人默认为帮手还是对手、习惯靠实力还是靠讨好或眼泪。阿德勒认为这套打法在四五岁左右就定了雏形，之后像一副**度数固定的眼镜**：你不觉得自己戴着它，但你看到的一切都经过了它的折射——同一句批评，有人听成「对方在帮我」，有人听成「果然所有人都看不起我」。心理咨询要做的第一件事，就是给这副眼镜验光。可眼镜长在自己脸上，本人看不见，怎么验？" },
-    { "type": "p", "text": "既然生活的意义藏在心里、本人未必说得出来，怎么把它挖出来？阿德勒给了三件诊断工具。**第一件是早期记忆**：让一个人讲讲他记得的最早的童年片段。在阿德勒看来，人的记忆不是监控录像，而是**精选集**——几万个童年瞬间里，你偏偏保存了这几个，是因为它们符合你对人生的基本判断。一个人最早的记忆是「妈妈抱着刚出生的妹妹，没人理我」，和一个人最早的记忆是「我自己爬上桌子，够到了糖罐」，多半活在两套不同的人生脚本里。妙的是，**这段记忆是真是假、准不准确，都不要紧**——你愿意相信并反复保存的版本，恰恰暴露了你的「生活风格」。" },
-    { "type": "p", "text": "**第二件是态度与动作**。一个人怎么走路、怎么坐、离人多远、敢不敢直视对方，都是内在态度的自然流露——进了教室总挑角落坐、后背一定要靠墙的人，和一进门就站到人群中央的人，防御姿态一目了然。身体不会撒谎，因为它没接到撒谎的指令。" },
-    { "type": "p", "text": "**第三件是梦——这里阿德勒又一次跟老师对着干**。弗洛伊德说，梦是被压抑的（多半与性有关的）幼年愿望在夜里偷偷达成；阿德勒说不对：**梦是为白天的难题预先彩排情绪**。你明天要做一个不敢做的决定，今晚就梦见自己从高处坠落——梦在给你制造「别跳，会摔死」的恐惧，好让你明天顺理成章地退缩；考试临近梦见自己准备充分大获全胜，是在给自己打气。梦是一种自我催眠：制造一种情绪，绕过自己的理智。所以阿德勒说，越是不想被常识说服的人，梦越多、越离奇；而一个生活风格与现实处境完全合拍的人，几乎不需要做梦。" },
-
-    { "type": "h2", "text": "性格是在哪儿铸成的：家庭、学校、青春期" },
-    { "type": "p", "text": "阿德勒认为，生活风格大约在四五岁就定了雏形，铸模的现场就是家庭。母亲是孩子的**第一个合作对象**——孩子从她身上第一次体验到「别人是可以信任的」，再由她把这份信任引向父亲、引向更大的世界。养育有两大深坑：**宠溺**让孩子学会「不用合作，哭就行了」，长大后把全世界当成欠他的；**忽视**让孩子认定「世界是冷的，谁都靠不住」。两种孩子成年后都在「合作」这门课上挂科——这是阿德勒全书反复敲黑板的地方。" },
-    { "type": "p", "text": "然后是全书最出名、也最该打问号的部分：**出生顺序**。阿德勒观察到：长子长女曾经独享父母的关注，弟妹一出生就遭遇「**篡位**」，所以容易怀念旧秩序、执着权威、缺乏安全感；老二一生下来眼前就有个领跑者，所以容易活成「追赶者」，竞争心强，永远觉得自己要再快一点；老小是全家的宠儿，要么被惯得依赖成性，要么反过来憋着劲要证明自己；独生子女缺少同龄人的竞争实战，容易在走出家门后适应困难。这套说法流传极广——你多半在饭桌上听过谁用它头头是道地分析亲戚家的孩子。" },
-    { "type": "figure", "ftype": "tupu", "svg": "<svg viewBox='0 0 560 350' xmlns='http://www.w3.org/2000/svg'><rect x='24' y='36' width='122' height='190' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='85' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>长子／长女</text><text x='85' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>曾独享宠爱</text><text x='85' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>遭遇「篡位」</text><text x='85' y='162' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>易执着权威</text><text x='85' y='184' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>缺安全感</text><rect x='161' y='36' width='122' height='190' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='222' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>老二</text><text x='222' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>生来有领跑者</text><text x='222' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>活成追赶者</text><text x='222' y='162' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>竞争心强</text><rect x='298' y='36' width='122' height='190' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='359' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>老小</text><text x='359' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>全家的宠儿</text><text x='359' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>易被惯得依赖</text><text x='359' y='162' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>或憋劲争胜</text><rect x='435' y='36' width='102' height='190' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='486' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>独生子女</text><text x='486' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>无同龄对手</text><text x='486' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>缺竞争实战</text><text x='486' y='162' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>易适应困难</text><rect x='24' y='252' width='513' height='66' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5;stroke-dasharray:5 4'/><text x='280' y='280' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar)'>⚠ 注意：现代大样本研究并未找到稳固支持</text><text x='280' y='302' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>效应即使存在也极小——当观察视角用，别当定律信</text></svg>", "caption": "阿德勒的出生顺序观察——注意底部那行警示：证据薄弱，仅供参考" },
-    { "type": "p", "text": "但这里必须踩一脚刹车：**「出生顺序决定性格」这个论断，在现代心理学里基本没有站住**。本世纪以来几项数十万人级别的大样本统计研究，总体上没有找到出生顺序对成年人格的稳固影响——即便有，效应也小到接近可以忽略。那它为什么听起来那么准？因为描述足够模糊、案例足够好挑——这跟星座能「说中」你的机制是近亲。所以这一章的正确用法是：把它当成**提醒你留意家庭内部处境差异**的观察视角——同一屋檐下，每个孩子面对的「微环境」确实不同——而不是拿来给自己或别人贴标签的科学定律。" },
-    { "type": "p", "text": "第八、九章把镜头移到学校和青春期。阿德勒对只看分数排名的教育火力全开：排名把一部分孩子反复按在「我不行」的位置上，恰恰是在批量生产自卑情结；在他心里，教师的头号任务不是筛选尖子，而是让那些在家里没学会合作的孩子**补上合作这一课**。至于青春期，他的看法出奇地淡定：青春期不制造问题，只是**放大**问题——它像一场突然加压的路试，孩子原有生活风格里的裂缝在这个阶段集中显形。所谓「孩子一到青春期就变了」，多半是本来就存在的问题终于藏不住了。" },
-
-    { "type": "h2", "text": "把十三章串成一条线" },
-    { "type": "p", "text": "读到这里，可以回头看清全书的骨架了：第一章立总纲（三大任务与生活的意义），第二、三章装引擎（心灵指挥肉体、自卑推动超越），第四到六章发工具（早期记忆、身体语言、梦），第七到九章看铸型现场（家庭、学校、青春期），最后四章是三张考卷的正式作答——其中「犯罪」一章，是一份不及格答卷的深度解剖。" },
-    { "type": "figure", "ftype": "liucheng", "svg": "<svg viewBox='0 0 560 390' xmlns='http://www.w3.org/2000/svg'><rect x='65' y='28' width='430' height='48' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='280' y='48' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>第 1 章 · 立总纲</text><text x='280' y='67' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>生活的意义 · 三大生活任务</text><line x1='280' y1='78' x2='280' y2='92' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='280,96 275,88 285,88' style='fill:var(--ink-faint)'/><rect x='65' y='96' width='430' height='48' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='280' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar)'>第 2–3 章 · 装引擎（全书心脏）</text><text x='280' y='135' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>心灵指挥肉体 · 自卑感与追求优越</text><line x1='280' y1='146' x2='280' y2='160' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='280,164 275,156 285,156' style='fill:var(--ink-faint)'/><rect x='65' y='164' width='430' height='48' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='280' y='184' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>第 4–6 章 · 发工具</text><text x='280' y='203' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>早期记忆 · 态度动作 · 梦</text><line x1='280' y1='214' x2='280' y2='228' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='280,232 275,224 285,224' style='fill:var(--ink-faint)'/><rect x='65' y='232' width='430' height='48' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='280' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>第 7–9 章 · 看铸型</text><text x='280' y='271' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>家庭（出生顺序）· 学校 · 青春期</text><line x1='280' y1='282' x2='280' y2='296' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='280,300 275,292 285,292' style='fill:var(--ink-faint)'/><rect x='65' y='300' width='430' height='48' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='280' y='320' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>第 10–13 章 · 交考卷</text><text x='280' y='339' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>犯罪（反例）· 职业 · 同伴 · 爱情婚姻</text><text x='280' y='376' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>十三章一条线：从总纲到引擎，从工具到考卷</text></svg>", "caption": "全书十三章脉络：总纲 → 核心引擎 → 诊断工具 → 铸型现场 → 三张考卷" },
-    { "type": "p", "text": "第十章谈犯罪，是阿德勒理论的一次压力测试。他给罪犯画的像是**「高野心＋低社会兴趣」**：罪犯并非不追求优越——恰恰相反，他们对优越的渴望常常极强，只是彻底绕开了合作，专挑损人利己的捷径，还给自己配上一套「我是好汉」「社会先负我」的英雄叙事。所以阿德勒反对指望严刑峻法解决问题：惩罚只会坐实罪犯心中「全世界与我为敌」的剧本，让他把下次失手归因于「还不够狠」。真正的出路在早期——让孩子在家庭和学校里就学会靠贡献、而不是靠掠夺来获得价值感。" },
-    { "type": "p", "text": "第十一、十二章相对平实：职业是普通人实现社会贡献、获得价值感最日常的通道——工作的意义感不来自头衔和工资条，来自「我做的事对别人有用」；而衡量一个人心理健康的核心标尺，就是他的**社会兴趣**——能不能对他人真的感兴趣、真的合作。阿德勒甚至把人生绝大多数的失败归结为同一个病根：只关心自己。" },
-    { "type": "p", "text": "职业这章有个很实用的细节：阿德勒喜欢问孩子「你长大想做什么」，而且认真对待答案——不是看职业本身，而是看**选择背后的方向感**。想当医生的孩子，可能在跟死亡和无力感较劲（就像他自己）；想当老师的孩子，可能在演练「我来主导」的位置。他也提醒家长：孩子的职业训练早在过家家里就开始了，与其灌输「什么工作体面、什么工作赚钱」，不如保护孩子「我能对别人有用」的感觉——因为在他看来，一个人赚钱多少、头衔高低都可能起落，唯独「靠贡献换来的价值感」是塌不了的地基。" },
-    { "type": "p", "text": "第十三章收在爱情与婚姻，答案毫无悬念，还是那两个字：**平等的合作**。婚姻不是谁征服谁、谁管着谁——只要一方立志当支配者，这段关系就已经开始漏水；它也不是浪漫情绪的自动延续，而是一项需要两个人持续投入的合作事业：对等的付出、对对方处境的真实兴趣、并肩面对三大任务。这个观点放在 1931 年——那个「丈夫默认是一家之主」的年代——相当超前。" },
-
-    { "type": "h2", "text": "冷静看：哪些当真，哪些别当真" },
-    { "type": "p", "text": "最后必须把话说全。这本书**不能照单全收**的地方，前面点过一处，这里一并摊开。其一，出生顺序理论证据薄弱，别当科学定律用。其二，「生活风格」「社会兴趣」这些核心概念，至今缺乏严格的可操作定义——没法精确测量，也就很难用实验去证伪；它们更像一位临床医生几十年看诊归纳出来的**启发性框架**，而不是被验证过的心理学定律。其三，早期记忆分析和释梦，高度依赖分析者的主观诠释——同一段记忆，换个分析师可能讲出完全不同的故事，这在方法论上是硬伤。一句话总结：**这是一套深刻的观察，不是一套精密的科学。**" },
-    { "type": "p", "text": "但也别把它贬成鸡汤。阿德勒真正的遗产有两笔。第一笔是方向性的：他把**社会联结、合作、贡献**立为心理健康的标尺，这条线往后延伸，影响了人本主义心理学、正向心理学、阿德勒式教育，一直到你在书店畅销榜上看到的《被讨厌的勇气》——那本书整个就是阿德勒思想的当代转述。在「心理学＝挖童年创伤」的年代，他把目光转向目标、合作与当下的选择，这一转身的价值，学界至今承认。第二笔是给普通人的：「自卑感人皆有之，且可以转化为成长动力」这个框架，也许测不准，但**用起来是真的顺手**——它把「我不如人」从一纸让人瘫痪的判决，改写成一段可以做功的落差。" },
-    { "type": "figure", "ftype": "jinju", "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><rect x='14' y='14' width='532' height='222' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='22' y='22' width='516' height='206' style='fill:none;stroke:var(--line);stroke-width:0.5'/><text x='280' y='64' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;fill:var(--cinnabar)'>❖</text><text x='280' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:21px;font-weight:bold;fill:var(--ink)'>自卑感并不是变态，</text><text x='280' y='148' text-anchor='middle' style='font-family:var(--font-serif);font-size:21px;font-weight:bold;fill:var(--ink)'>它是人类进步的原因。</text><text x='280' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink-soft)'>——阿德勒《自卑与超越》</text></svg>", "caption": "全书最该带走的一句话" },
-    { "type": "quote", "original": "对别人不感兴趣的人，一生中的困难最大。", "translation": "阿德勒把对他人的关怀当作心理健康的标尺：把自己封闭在「我」里面的人，三张考卷一张也答不好。" },
-    { "type": "p", "text": "所以这本书的正确打开方式，是**把它当镜子，别当尺子**：别拿出生顺序去量别人、给人贴标签；但不妨拿它照照自己——我此刻的退缩，是不是自卑情结在替我做决定？朋友圈里那条用力过猛的炫耀，想盖住的是什么？我在职业、人际、亲密关系这三张考卷上，是在与人合作，还是在独自较劲？九十多年过去，阿德勒的许多具体论断已经过时，但他那个朴素的方向——**从「我不行」出发，走向「我们可以」**——依然是关于自卑这件事，最好的答案之一。" }
-  ]
+  {
+   "type": "h2",
+   "text": "一个跟弗洛伊德翻脸的人"
+  },
+  {
+   "type": "p",
+   "text": "先认识作者。阿尔弗雷德·阿德勒，维也纳医生出身，后来转向精神医学，曾是弗洛伊德那个著名的「周三心理学会」的核心成员——相当于精神分析的开国元老之一。但 1911 年，他和弗洛伊德彻底决裂，带着一批人另立门户，创立了**个体心理学**。决裂的导火索是一个根本分歧：弗洛伊德认为驱动人的是性本能，人被童年的创伤推着走；阿德勒认为驱动人的是**对优越感的追求**——人不是被过去推着走的，是被自己心里那个目标拉着走的。"
+  },
+  {
+   "type": "callout",
+   "tone": "note",
+   "items": [
+    "打个比方：弗洛伊德看人像法医验尸，翻你的童年档案，找「你今天这样，是因为当年那道伤」；阿德勒看人像教练看运动员，问的是「你想去哪儿？你现在这套跑姿，是在为什么目标服务？」一个向后看，一个向前看。这个分歧贯穿全书每一章，也是理解阿德勒的钥匙——在他眼里，**连你的记忆、你的情绪、你的梦，都不是过去的残留物，而是为你当下的目标服务的工具**。"
+   ]
+  },
+  {
+   "type": "quote",
+   "original": "决定我们的不是经验本身，而是我们赋予经验的意义。",
+   "translation": "同一件事落在不同人身上，会走出完全不同的人生——差别不在事件，在解释。这是阿德勒与弗洛伊德最深的分歧。"
+  },
+  {
+   "type": "figure",
+   "ftype": "duizhao",
+   "svg": "<svg viewBox='0 0 560 320' xmlns='http://www.w3.org/2000/svg'><text x='230' y='38' text-anchor='middle' style='font-family:var(--font-serif);font-size:17px;font-weight:bold;fill:var(--ink)'>弗洛伊德</text><text x='430' y='38' text-anchor='middle' style='font-family:var(--font-serif);font-size:17px;font-weight:bold;fill:var(--cinnabar)'>阿德勒</text><line x1='36' y1='54' x2='524' y2='54' style='stroke:var(--line);stroke-width:1'/><text x='36' y='92' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>驱动人的力量</text><text x='230' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink-soft)'>性本能的驱力</text><text x='430' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>对优越感的追求</text><line x1='36' y1='112' x2='524' y2='112' style='stroke:var(--line);stroke-width:0.5;stroke-dasharray:3 3'/><text x='36' y='150' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>人被什么塑造</text><text x='230' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink-soft)'>童年创伤（向后看）</text><text x='430' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>目标与解释（向前看）</text><line x1='36' y1='170' x2='524' y2='170' style='stroke:var(--line);stroke-width:0.5;stroke-dasharray:3 3'/><text x='36' y='208' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>梦是什么</text><text x='230' y='208' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink-soft)'>被压抑愿望的达成</text><text x='430' y='208' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>为现实困境彩排情绪</text><line x1='36' y1='228' x2='524' y2='228' style='stroke:var(--line);stroke-width:0.5;stroke-dasharray:3 3'/><text x='36' y='266' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>着眼何处</text><text x='230' y='266' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink-soft)'>挖出过去的病根</text><text x='430' y='266' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>调整当下的目标与合作</text><line x1='36' y1='292' x2='524' y2='292' style='stroke:var(--line);stroke-width:1'/></svg>",
+   "caption": "1911 年的分岔路：弗洛伊德向后找病根，阿德勒向前看目标"
+  },
+  {
+   "type": "h2",
+   "text": "人生逃不开的三张考卷"
+  },
+  {
+   "type": "p",
+   "text": "全书第一章开门见山：不管你是谁，人生都必须回答三道题，一道都躲不掉。**第一道是职业**——地球资源有限，人类靠分工合作才活得下来，你得在这个分工体系里找到自己的位置；**第二道是社会**——人是群居动物，你身边永远有别人，你得学会跟同类共处；**第三道是爱情与婚姻**——人类分两性，种族要延续，你得处理最亲密的两人关系。阿德勒管这叫三大**生活任务**。注意这三道题的共同点：没有一道是你一个人能答完的，**每一道的答案里都藏着「合作」两个字**。"
+  },
+  {
+   "type": "p",
+   "text": "更关键的是第二层：每个人心里都有一套自己未必意识到的**「生活的意义」**——你觉得活着是为了什么、世界是敌是友、别人是同伴还是对手。这套意义你说不出来，但你的一举一动都在泄露它。同样是失业，有人觉得「天塌了，我这辈子完了」，有人觉得「正好换条路试试」，有人觉得「都是这个社会亏欠我」——事件相同，赋予的意义不同，接下来的人生就此分岔。阿德勒的判断标准也很干脆：**健康的生活意义，必然指向对他人的真实关怀与合作**——他给它起了个名字，叫**社会兴趣**；而所有只围着「我」打转的意义——我的安全、我的面子、我的优越——迟早会在三张考卷面前露馅。"
+  },
+  {
+   "type": "p",
+   "text": "有人会问：生活的意义难道不是各人各样、没有对错吗？阿德勒的回答很务实：意义没有绝对的标准答案，但有**公共的检验标准**——你那套意义，放到三大任务里跑一跑就见分晓。一套「只为自己」的意义，在职业里表现为混与躲，在人际里表现为算计与防备，在亲密关系里表现为控制与索取，处处碰壁；而「对别人有用」这套意义，恰恰是被人类几千年合作生存反复验证过的公约数。"
+  },
+  {
+   "type": "p",
+   "text": "阿德勒还观察到，人躲避这三张考卷时有一套经典话术，叫**「是的——但是」**：「我也想找份正经工作，但是我身体不好」「我也想谈恋爱，但是我一见人多就紧张」。注意这个句式的精妙之处：前半句保住了面子（我的意愿没问题），后半句免除了责任（是客观条件不行）。在阿德勒看来，许多神经症症状——失眠、头痛、莫名的焦虑——之所以「治不好」，正是因为它们对本人**有用**：它们是一张体面的免战牌，举着它就可以不下场考试，也就永远不必面对「下场了却考砸」的风险。这个观察相当扎心，也是阿德勒式咨询的入手点：先看清症状在替你挡什么。"
+  },
+  {
+   "type": "figure",
+   "ftype": "jiegou",
+   "svg": "<svg viewBox='0 0 560 360' xmlns='http://www.w3.org/2000/svg'><circle cx='280' cy='185' r='56' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='280' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:16px;font-weight:bold;fill:var(--cinnabar)'>社会兴趣</text><text x='280' y='204' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>与人合作</text><circle cx='280' cy='64' r='46' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='280' y='62' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>职业</text><text x='280' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>在分工中谋生</text><circle cx='108' cy='290' r='46' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='108' y='288' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>社会</text><text x='108' y='308' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>与同类共处</text><circle cx='452' cy='290' r='46' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='452' y='288' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>婚恋</text><text x='452' y='308' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>两性与延续</text><line x1='280' y1='129' x2='280' y2='112' style='stroke:var(--ink-faint);stroke-width:1.5'/><line x1='232' y1='214' x2='147' y2='266' style='stroke:var(--ink-faint);stroke-width:1.5'/><line x1='328' y1='214' x2='413' y2='266' style='stroke:var(--ink-faint);stroke-width:1.5'/><text x='280' y='345' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>三大生活任务，没有一道能独自答完</text></svg>",
+   "caption": "三大生活任务：职业、社会、婚恋，交卷处都写着「合作」"
+  },
+  {
+   "type": "h2",
+   "text": "全书的心脏：自卑感，和它的两条出路"
+  },
+  {
+   "type": "p",
+   "text": "现在到全书最核心的第三章。阿德勒的起点，是一个谁也无法反驳的观察：**每个人的人生都是从彻底的弱小开始的**。婴儿吃喝拉撒全靠别人，孩子在成人世界里处处矮一截、事事做不到；放大到整个物种，人类没有利爪没有厚皮，在自然界也算弱势群体。所以自卑感不是某些人的毛病，而是**人类的出厂设置**——每个人都带着它出生，谁也没有例外。"
+  },
+  {
+   "type": "quote",
+   "original": "自卑感并不是变态，它是人类进步的原因。",
+   "translation": "感到不足不丢人。人类的一切改进——衣服、房子、医学、科学——都是从「觉得自己还不够好、还不够安全」开始的。"
+  },
+  {
+   "type": "p",
+   "text": "重点在于自卑感往哪儿走。健康的走法是**转化**：感到不足，于是补偿，于是变强。这条路人类整体走了几万年——正因为怕冷才有了衣服和房屋，正因为跑不过野兽才有了工具和协作。落到个人身上也一样：口吃的德摩斯梯尼含着石子对海练声，练成古希腊最伟大的演说家；觉得自己出身普通、没有退路，就用十年苦读给自己挣一张入场券。**自卑感被用对了，就是推你往上走的那级台阶。**阿德勒把这个向上的过程叫「追求优越」——注意，它的本意不是「比别人优越」，而是**从「减号」的处境走向「加号」的处境**：是成长，不是攀比。"
+  },
+  {
+   "type": "p",
+   "text": "这套「补偿」理论里，藏着阿德勒自己的影子。他小时候患佝偻病，身体孱弱，三岁时弟弟病死在他身旁的小床上，四岁那年他自己也差点死于肺炎——病愈后他立志学医，要跟死亡掰一次手腕。他哥哥健壮出众，他从小就是那个「追不上的老二」。后来他最早的学术成果，研究的正是**器官缺陷与补偿**：身体有短板的人，如何靠加倍的训练把短板练成长板——就像很多视力有缺陷的画家、耳疾缠身的音乐家（贝多芬是最著名的例子）。你可以说，「自卑与超越」这套理论，首先是阿德勒对自己人生的解释。这不减损它的洞察力，但也提醒我们：它的出发点是个人经验与临床观察，不是对照实验。"
+  },
+  {
+   "type": "figure",
+   "ftype": "liucheng",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><polyline points='60,250 140,220 220,190 300,155 380,115 465,68' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='60' cy='250' r='6' style='fill:var(--ink-faint)'/><circle cx='140' cy='220' r='7' style='fill:var(--ink-soft)'/><circle cx='220' cy='190' r='8' style='fill:var(--ink-soft)'/><circle cx='300' cy='155' r='9' style='fill:var(--ink-soft)'/><circle cx='380' cy='115' r='11' style='fill:var(--ink)'/><circle cx='465' cy='68' r='16' style='fill:var(--cinnabar)'/><text x='60' y='276' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>自卑感</text><text x='60' y='292' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>（人人都有的起点）</text><text x='218' y='158' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>补偿 · 努力 · 成长</text><text x='465' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--cinnabar)'>超越</text><text x='465' y='122' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>从减号处境走向加号</text><line x1='300' y1='155' x2='393' y2='240' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 3'/><circle cx='393' cy='240' r='9' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='393' y='270' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>转化失败：自卑情结／优越情结</text></svg>",
+   "caption": "自卑感的两条出路：转化为向上的台阶，或跌入情结"
+  },
+  {
+   "type": "p",
+   "text": "但转化会失败，而且有两种失败法。**第一种叫自卑情结**：自卑感大到把人压垮，于是缩回去——「我不行」「算了吧」「反正我这种人做什么都没用」。表现形式不只是垂头丧气，还包括拖延、找借口、用生病来逃避考验，甚至用眼泪和无助来操控身边人——阿德勒有个刻薄又精准的说法，眼泪是「水做的力量」。**第二种叫优越情结**：自卑大到不敢承认，于是反向表演——吹嘘、炫耀、摆架子、逢人贬低两句、在网上见谁怼谁。阿德勒最锋利的洞察就在这儿：**优越情结不是自卑的反面，是自卑的伪装**。真正有底气的人，不需要反复宣称自己了不起；一个人越是大声证明自己优越，越说明他心里那块自卑没有处理完。这两种情结你在生活里都见过：一个躲在「我不配」里，一个躲在「我最牛」里——躲的是同一样东西。"
+  },
+  {
+   "type": "figure",
+   "ftype": "duibi",
+   "svg": "<svg viewBox='0 0 560 320' xmlns='http://www.w3.org/2000/svg'><rect x='28' y='48' width='232' height='210' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='144' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:16px;font-weight:bold;fill:var(--ink)'>自卑情结</text><text x='144' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>「我不行，算了吧」</text><text x='144' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>退缩 · 拖延 · 找借口</text><text x='144' y='174' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>用眼泪与无助操控他人</text><text x='144' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>自卑写在脸上</text><rect x='300' y='48' width='232' height='210' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='416' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:16px;font-weight:bold;fill:var(--cinnabar)'>优越情结</text><text x='416' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>「我最牛，你们都不行」</text><text x='416' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>吹嘘 · 炫耀 · 贬低他人</text><circle cx='416' cy='205' r='34' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5;stroke-dasharray:4 3'/><text x='416' y='201' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>内核</text><text x='416' y='219' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>自卑</text><line x1='264' y1='153' x2='296' y2='153' style='stroke:var(--ink-faint);stroke-width:1.5'/><text x='280' y='292' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>同一种自卑，两副面孔</text><text x='280' y='312' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--cinnabar)'>优越情结是自卑情结的伪装</text></svg>",
+   "caption": "自卑情结与优越情结：一个躲在「我不配」里，一个躲在「我最牛」里"
+  },
+  {
+   "type": "callout",
+   "tone": "mute",
+   "items": [
+    "顺带交代第二章的铺垫：**心灵和肉体不是两台机器，而是一个整体**——心灵设定目标，肉体执行，连情绪都是为目标服务的工具。愤怒常常是为了压制对方、逼人让步；焦虑可以充当逃避考验的理由；连「我控制不住我自己」，在阿德勒看来也往往是一种选择——因为发脾气比讲道理见效快。这个「情绪是工具」的视角相当颠覆：它把人从「情绪的受害者」，变成了「情绪的使用者」——你不是被愤怒抓住了，是你在用愤怒达到目的。"
+   ]
+  },
+  {
+   "type": "h2",
+   "text": "三件「测谎仪」：早期记忆、身体语言、梦"
+  },
+  {
+   "type": "p",
+   "text": "这里得先解释阿德勒的另一个招牌术语——**生活风格**。它指的是一个人应对世界的整套惯用打法：遇到困难是迎上去还是绕着走、把别人默认为帮手还是对手、习惯靠实力还是靠讨好或眼泪。阿德勒认为这套打法在四五岁左右就定了雏形，之后像一副**度数固定的眼镜**：你不觉得自己戴着它，但你看到的一切都经过了它的折射——同一句批评，有人听成「对方在帮我」，有人听成「果然所有人都看不起我」。心理咨询要做的第一件事，就是给这副眼镜验光。可眼镜长在自己脸上，本人看不见，怎么验？"
+  },
+  {
+   "type": "p",
+   "text": "既然生活的意义藏在心里、本人未必说得出来，怎么把它挖出来？阿德勒给了三件诊断工具。**第一件是早期记忆**：让一个人讲讲他记得的最早的童年片段。在阿德勒看来，人的记忆不是监控录像，而是**精选集**——几万个童年瞬间里，你偏偏保存了这几个，是因为它们符合你对人生的基本判断。一个人最早的记忆是「妈妈抱着刚出生的妹妹，没人理我」，和一个人最早的记忆是「我自己爬上桌子，够到了糖罐」，多半活在两套不同的人生脚本里。妙的是，**这段记忆是真是假、准不准确，都不要紧**——你愿意相信并反复保存的版本，恰恰暴露了你的「生活风格」。"
+  },
+  {
+   "type": "p",
+   "text": "**第二件是态度与动作**。一个人怎么走路、怎么坐、离人多远、敢不敢直视对方，都是内在态度的自然流露——进了教室总挑角落坐、后背一定要靠墙的人，和一进门就站到人群中央的人，防御姿态一目了然。身体不会撒谎，因为它没接到撒谎的指令。"
+  },
+  {
+   "type": "p",
+   "text": "**第三件是梦——这里阿德勒又一次跟老师对着干**。弗洛伊德说，梦是被压抑的（多半与性有关的）幼年愿望在夜里偷偷达成；阿德勒说不对：**梦是为白天的难题预先彩排情绪**。你明天要做一个不敢做的决定，今晚就梦见自己从高处坠落——梦在给你制造「别跳，会摔死」的恐惧，好让你明天顺理成章地退缩；考试临近梦见自己准备充分大获全胜，是在给自己打气。梦是一种自我催眠：制造一种情绪，绕过自己的理智。所以阿德勒说，越是不想被常识说服的人，梦越多、越离奇；而一个生活风格与现实处境完全合拍的人，几乎不需要做梦。"
+  },
+  {
+   "type": "h2",
+   "text": "性格是在哪儿铸成的：家庭、学校、青春期"
+  },
+  {
+   "type": "p",
+   "text": "阿德勒认为，生活风格大约在四五岁就定了雏形，铸模的现场就是家庭。母亲是孩子的**第一个合作对象**——孩子从她身上第一次体验到「别人是可以信任的」，再由她把这份信任引向父亲、引向更大的世界。养育有两大深坑：**宠溺**让孩子学会「不用合作，哭就行了」，长大后把全世界当成欠他的；**忽视**让孩子认定「世界是冷的，谁都靠不住」。两种孩子成年后都在「合作」这门课上挂科——这是阿德勒全书反复敲黑板的地方。"
+  },
+  {
+   "type": "p",
+   "text": "然后是全书最出名、也最该打问号的部分：**出生顺序**。阿德勒观察到：长子长女曾经独享父母的关注，弟妹一出生就遭遇「**篡位**」，所以容易怀念旧秩序、执着权威、缺乏安全感；老二一生下来眼前就有个领跑者，所以容易活成「追赶者」，竞争心强，永远觉得自己要再快一点；老小是全家的宠儿，要么被惯得依赖成性，要么反过来憋着劲要证明自己；独生子女缺少同龄人的竞争实战，容易在走出家门后适应困难。这套说法流传极广——你多半在饭桌上听过谁用它头头是道地分析亲戚家的孩子。"
+  },
+  {
+   "type": "figure",
+   "ftype": "tupu",
+   "svg": "<svg viewBox='0 0 560 350' xmlns='http://www.w3.org/2000/svg'><rect x='24' y='36' width='122' height='190' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='85' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>长子／长女</text><text x='85' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>曾独享宠爱</text><text x='85' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>遭遇「篡位」</text><text x='85' y='162' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>易执着权威</text><text x='85' y='184' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>缺安全感</text><rect x='161' y='36' width='122' height='190' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='222' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>老二</text><text x='222' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>生来有领跑者</text><text x='222' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>活成追赶者</text><text x='222' y='162' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>竞争心强</text><rect x='298' y='36' width='122' height='190' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='359' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>老小</text><text x='359' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>全家的宠儿</text><text x='359' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>易被惯得依赖</text><text x='359' y='162' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>或憋劲争胜</text><rect x='435' y='36' width='102' height='190' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='486' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>独生子女</text><text x='486' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>无同龄对手</text><text x='486' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>缺竞争实战</text><text x='486' y='162' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>易适应困难</text><rect x='24' y='252' width='513' height='66' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5;stroke-dasharray:5 4'/><text x='280' y='280' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar)'>⚠ 注意：现代大样本研究并未找到稳固支持</text><text x='280' y='302' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>效应即使存在也极小——当观察视角用，别当定律信</text></svg>",
+   "caption": "阿德勒的出生顺序观察——注意底部那行警示：证据薄弱，仅供参考"
+  },
+  {
+   "type": "p",
+   "text": "但这里必须踩一脚刹车：**「出生顺序决定性格」这个论断，在现代心理学里基本没有站住**。本世纪以来几项数十万人级别的大样本统计研究，总体上没有找到出生顺序对成年人格的稳固影响——即便有，效应也小到接近可以忽略。那它为什么听起来那么准？因为描述足够模糊、案例足够好挑——这跟星座能「说中」你的机制是近亲。所以这一章的正确用法是：把它当成**提醒你留意家庭内部处境差异**的观察视角——同一屋檐下，每个孩子面对的「微环境」确实不同——而不是拿来给自己或别人贴标签的科学定律。"
+  },
+  {
+   "type": "p",
+   "text": "第八、九章把镜头移到学校和青春期。阿德勒对只看分数排名的教育火力全开：排名把一部分孩子反复按在「我不行」的位置上，恰恰是在批量生产自卑情结；在他心里，教师的头号任务不是筛选尖子，而是让那些在家里没学会合作的孩子**补上合作这一课**。至于青春期，他的看法出奇地淡定：青春期不制造问题，只是**放大**问题——它像一场突然加压的路试，孩子原有生活风格里的裂缝在这个阶段集中显形。所谓「孩子一到青春期就变了」，多半是本来就存在的问题终于藏不住了。"
+  },
+  {
+   "type": "h2",
+   "text": "把十三章串成一条线"
+  },
+  {
+   "type": "p",
+   "text": "读到这里，可以回头看清全书的骨架了：第一章立总纲（三大任务与生活的意义），第二、三章装引擎（心灵指挥肉体、自卑推动超越），第四到六章发工具（早期记忆、身体语言、梦），第七到九章看铸型现场（家庭、学校、青春期），最后四章是三张考卷的正式作答——其中「犯罪」一章，是一份不及格答卷的深度解剖。"
+  },
+  {
+   "type": "figure",
+   "ftype": "liucheng",
+   "svg": "<svg viewBox='0 0 560 390' xmlns='http://www.w3.org/2000/svg'><rect x='65' y='28' width='430' height='48' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='280' y='48' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>第 1 章 · 立总纲</text><text x='280' y='67' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>生活的意义 · 三大生活任务</text><line x1='280' y1='78' x2='280' y2='92' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='280,96 275,88 285,88' style='fill:var(--ink-faint)'/><rect x='65' y='96' width='430' height='48' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='280' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar)'>第 2–3 章 · 装引擎（全书心脏）</text><text x='280' y='135' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>心灵指挥肉体 · 自卑感与追求优越</text><line x1='280' y1='146' x2='280' y2='160' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='280,164 275,156 285,156' style='fill:var(--ink-faint)'/><rect x='65' y='164' width='430' height='48' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='280' y='184' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>第 4–6 章 · 发工具</text><text x='280' y='203' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>早期记忆 · 态度动作 · 梦</text><line x1='280' y1='214' x2='280' y2='228' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='280,232 275,224 285,224' style='fill:var(--ink-faint)'/><rect x='65' y='232' width='430' height='48' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='280' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>第 7–9 章 · 看铸型</text><text x='280' y='271' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>家庭（出生顺序）· 学校 · 青春期</text><line x1='280' y1='282' x2='280' y2='296' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='280,300 275,292 285,292' style='fill:var(--ink-faint)'/><rect x='65' y='300' width='430' height='48' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='280' y='320' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>第 10–13 章 · 交考卷</text><text x='280' y='339' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>犯罪（反例）· 职业 · 同伴 · 爱情婚姻</text><text x='280' y='376' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>十三章一条线：从总纲到引擎，从工具到考卷</text></svg>",
+   "caption": "全书十三章脉络：总纲 → 核心引擎 → 诊断工具 → 铸型现场 → 三张考卷"
+  },
+  {
+   "type": "p",
+   "text": "第十章谈犯罪，是阿德勒理论的一次压力测试。他给罪犯画的像是**「高野心＋低社会兴趣」**：罪犯并非不追求优越——恰恰相反，他们对优越的渴望常常极强，只是彻底绕开了合作，专挑损人利己的捷径，还给自己配上一套「我是好汉」「社会先负我」的英雄叙事。所以阿德勒反对指望严刑峻法解决问题：惩罚只会坐实罪犯心中「全世界与我为敌」的剧本，让他把下次失手归因于「还不够狠」。真正的出路在早期——让孩子在家庭和学校里就学会靠贡献、而不是靠掠夺来获得价值感。"
+  },
+  {
+   "type": "p",
+   "text": "第十一、十二章相对平实：职业是普通人实现社会贡献、获得价值感最日常的通道——工作的意义感不来自头衔和工资条，来自「我做的事对别人有用」；而衡量一个人心理健康的核心标尺，就是他的**社会兴趣**——能不能对他人真的感兴趣、真的合作。阿德勒甚至把人生绝大多数的失败归结为同一个病根：只关心自己。"
+  },
+  {
+   "type": "p",
+   "text": "职业这章有个很实用的细节：阿德勒喜欢问孩子「你长大想做什么」，而且认真对待答案——不是看职业本身，而是看**选择背后的方向感**。想当医生的孩子，可能在跟死亡和无力感较劲（就像他自己）；想当老师的孩子，可能在演练「我来主导」的位置。他也提醒家长：孩子的职业训练早在过家家里就开始了，与其灌输「什么工作体面、什么工作赚钱」，不如保护孩子「我能对别人有用」的感觉——因为在他看来，一个人赚钱多少、头衔高低都可能起落，唯独「靠贡献换来的价值感」是塌不了的地基。"
+  },
+  {
+   "type": "p",
+   "text": "第十三章收在爱情与婚姻，答案毫无悬念，还是那两个字：**平等的合作**。婚姻不是谁征服谁、谁管着谁——只要一方立志当支配者，这段关系就已经开始漏水；它也不是浪漫情绪的自动延续，而是一项需要两个人持续投入的合作事业：对等的付出、对对方处境的真实兴趣、并肩面对三大任务。这个观点放在 1931 年——那个「丈夫默认是一家之主」的年代——相当超前。"
+  },
+  {
+   "type": "h2",
+   "text": "冷静看：哪些当真，哪些别当真"
+  },
+  {
+   "type": "p",
+   "text": "最后必须把话说全。这本书**不能照单全收**的地方，前面点过一处，这里一并摊开。其一，出生顺序理论证据薄弱，别当科学定律用。其二，「生活风格」「社会兴趣」这些核心概念，至今缺乏严格的可操作定义——没法精确测量，也就很难用实验去证伪；它们更像一位临床医生几十年看诊归纳出来的**启发性框架**，而不是被验证过的心理学定律。其三，早期记忆分析和释梦，高度依赖分析者的主观诠释——同一段记忆，换个分析师可能讲出完全不同的故事，这在方法论上是硬伤。一句话总结："
+  },
+  {
+   "type": "pull",
+   "text": "这是一套深刻的观察，不是一套精密的科学。"
+  },
+  {
+   "type": "p",
+   "text": "但也别把它贬成鸡汤。阿德勒真正的遗产有两笔。第一笔是方向性的：他把**社会联结、合作、贡献**立为心理健康的标尺，这条线往后延伸，影响了人本主义心理学、正向心理学、阿德勒式教育，一直到你在书店畅销榜上看到的《被讨厌的勇气》——那本书整个就是阿德勒思想的当代转述。在「心理学＝挖童年创伤」的年代，他把目光转向目标、合作与当下的选择，这一转身的价值，学界至今承认。第二笔是给普通人的：「自卑感人皆有之，且可以转化为成长动力」这个框架，也许测不准，但**用起来是真的顺手**——它把「我不如人」从一纸让人瘫痪的判决，改写成一段可以做功的落差。"
+  },
+  {
+   "type": "figure",
+   "ftype": "jinju",
+   "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><rect x='14' y='14' width='532' height='222' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='22' y='22' width='516' height='206' style='fill:none;stroke:var(--line);stroke-width:0.5'/><text x='280' y='64' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;fill:var(--cinnabar)'>❖</text><text x='280' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:21px;font-weight:bold;fill:var(--ink)'>自卑感并不是变态，</text><text x='280' y='148' text-anchor='middle' style='font-family:var(--font-serif);font-size:21px;font-weight:bold;fill:var(--ink)'>它是人类进步的原因。</text><text x='280' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink-soft)'>——阿德勒《自卑与超越》</text></svg>",
+   "caption": "全书最该带走的一句话"
+  },
+  {
+   "type": "quote",
+   "original": "对别人不感兴趣的人，一生中的困难最大。",
+   "translation": "阿德勒把对他人的关怀当作心理健康的标尺：把自己封闭在「我」里面的人，三张考卷一张也答不好。"
+  },
+  {
+   "type": "p",
+   "text": "所以这本书的正确打开方式，是**把它当镜子，别当尺子**：别拿出生顺序去量别人、给人贴标签；但不妨拿它照照自己——我此刻的退缩，是不是自卑情结在替我做决定？朋友圈里那条用力过猛的炫耀，想盖住的是什么？我在职业、人际、亲密关系这三张考卷上，是在与人合作，还是在独自较劲？九十多年过去，阿德勒的许多具体论断已经过时，但他那个朴素的方向——**从「我不行」出发，走向「我们可以」**——依然是关于自卑这件事，最好的答案之一。"
+  }
+ ]
 }

@@ -1,95 +1,99 @@
 {
-  "title": "智人的终局:从生物到数据",
-  "subtitle": "《人类简史》终章导读——四十亿年来第一次,设计生命的笔,从自然选择手里换到了智人手里",
-  "centralIdea": "全书的最后一章把镜头从过去推向未来,收束在一个惊人的转折上:四十亿年来,地球上所有生命都由同一位「设计师」塑造——自然选择;而现在,第一次,这支笔要换人了,智人开始用「智慧设计」亲手改写生命。三条路径正在同时铺开:生物工程直接改基因,半机械工程把血肉与机器焊在一起,无机生命工程(人工智能)则可能创造出完全不依赖碳基身体的智能。任何一条走通,「智人」这个物种本身都会被改写,历史与生物学的边界随之消失——沿着这条路再往前,一种把万物(包括人)都看成「数据处理系统」的世界观(数据主义)正浮出水面。这一章也是全书「虚构故事」主线的终点回响:一个靠讲故事称霸地球的物种,如今强大到能改写「人」这个故事本身,却在拥有神的能力时,依然说不清自己到底想要什么。批判地读:终章是外推与预言,不是历史,论断最戏剧化、证据最稀薄,赫拉利本人也把它当警示而非蓝图——决不能读成无保留的背书。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "回想全书是怎么开头的:七万年前,一只在非洲草原上啃剩骨头、在食物链里排不上号的普通猿类,因为学会了讲「不存在的东西」,一路把自己讲成了行星的主宰。现在,故事讲到了最惊险的一页。赫拉利在终章抛出一个足以让人脊背发凉的判断:**四十亿年来,地球上每一个生命——每一株草、每一只虫、每一个人——都出自同一位设计师之手,那就是自然选择;而就在我们这几代人手里,这支画笔第一次要换人了**。智人不再只是被进化塑造的产物,他开始反过来编辑进化本身。当一个由故事造就的物种,强大到能改写「人」这个故事的底稿时,历史会走向何方?这是《人类简史》留给读者的最后、也是最大的问题。"
-    },
-    {
-      "type": "h2",
-      "text": "一支画笔,换了主人"
-    },
-    {
-      "type": "p",
-      "text": "先把这句「换笔」讲清楚,因为它是整章的地基。过去四十亿年,新物种的诞生遵循一条铁律:随机的基因突变,加上环境的筛选——**慢、盲、无目的**。长颈鹿的脖子不是谁设计的,是无数代随机变异里,脖子长的那些恰好够得着高处的叶子、活得更好、留下更多后代,一点点「碰」出来的。自然选择是个没有蓝图、没有意图、耗时以百万年计的工匠。赫拉利指出,如今这条铁律正被打破:人类掌握的技术,已经能让生命的改造**快、准、有目的**地进行——他把这称为从「自然选择」到「智慧设计」的交接。注意,「智慧设计」这个词他用得辛辣:它原本是宗教用来指「上帝造物」的,赫拉利把它抢过来,指的却是**人类自己扮演了那个设计者**。四十亿年的垄断被打破,而接手的这位新设计师,论智慧远未成熟,论野心却已经迫不及待。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对比图",
-      "svg": "<svg viewBox='0 0 560 268' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>设计生命的两支笔</text><rect x='34' y='58' width='232' height='158' rx='10' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='150' y='88' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--ink)'>自然选择(旧)</text><circle cx='60' cy='118' r='3' style='fill:var(--ink-faint)'/><text x='74' y='122' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>随机突变 + 环境筛选</text><circle cx='60' cy='146' r='3' style='fill:var(--ink-faint)'/><text x='74' y='150' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>慢:以百万年计</text><circle cx='60' cy='174' r='3' style='fill:var(--ink-faint)'/><text x='74' y='178' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>盲:没有蓝图与意图</text><circle cx='60' cy='202' r='3' style='fill:var(--ink-faint)'/><text x='74' y='206' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>独家垄断四十亿年</text><rect x='294' y='58' width='232' height='158' rx='10' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='410' y='88' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--cinnabar)'>智慧设计(新)</text><circle cx='320' cy='118' r='3' style='fill:var(--cinnabar)'/><text x='334' y='122' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>直接编辑基因与身体</text><circle cx='320' cy='146' r='3' style='fill:var(--cinnabar)'/><text x='334' y='150' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>快:以年、以代计</text><circle cx='320' cy='174' r='3' style='fill:var(--cinnabar)'/><text x='334' y='178' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>有目的:照人的意愿改</text><circle cx='320' cy='202' r='3' style='fill:var(--cinnabar)'/><text x='334' y='206' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>设计者 = 智人自己</text><text x='280' y='250' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>笔一换手,「物种是固定的」这条几十亿年的前提就失效了</text></svg>",
-      "caption": "换笔的意义:当改造生命从「等自然碰运气」变成「照人的意愿下笔」,进化的时钟从百万年一下跳到了一代人。"
-    },
-    {
-      "type": "h2",
-      "text": "三条通向「后智人」的路"
-    },
-    {
-      "type": "p",
-      "text": "赫拉利把这支新笔可能写出的未来,归为三条并行的路径。**第一条,生物工程**:直接在基因层面动手。人类早已在改造动植物(能发光的兔子、抗虫的作物),而技术的枪口终将转向自己——修掉致病基因是起点,再往前,是记忆、智力、寿命乃至情绪的「定制」。一旦父母能为孩子挑选天赋,「人人生而平等」这个曾经的信念(第四章说过,它本就是个虚构故事),将撞上「基因买得起的和买不起的」这道全新的、写进肉体里的鸿沟。**第二条,半机械工程**:把有机体和机器焊在一起。义肢、人工耳蜗、心脏起搏器已是寻常,再往前是能直连大脑的接口——当记忆可以外挂、感官可以加装、思维可以联网,「我」的边界到底划在皮肤上,还是划在最后一块芯片上?**第三条,无机生命工程**:创造完全不依赖碳基血肉的智能,也就是人工智能。前两条还在改造「人」,第三条则可能催生出「非人」的、却同样(甚至更)强大的心智。"
-    },
-    {
-      "type": "figure",
-      "ftype": "结构图",
-      "svg": "<svg viewBox='0 0 560 288' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>改写生命的三条路径</text><rect x='24' y='58' width='166' height='150' rx='10' style='fill:none;stroke:var(--cinnabar);stroke-width:1.4'/><text x='107' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar)'>生物工程</text><text x='107' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>直接改写基因</text><text x='107' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>修病 → 定制</text><text x='107' y='162' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>智力·寿命·情绪</text><text x='107' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>撕开基因贫富的鸿沟</text><rect x='197' y='58' width='166' height='150' rx='10' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>半机械工程</text><text x='280' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>血肉 + 机器</text><text x='280' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>义肢·脑机接口</text><text x='280' y='162' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>记忆外挂·感官加装</text><text x='280' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>「我」的边界在哪?</text><rect x='370' y='58' width='166' height='150' rx='10' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='453' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>无机生命</text><text x='453' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>人工智能</text><text x='453' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>不依赖碳基身体</text><text x='453' y='162' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>可能创造「非人」心智</text><text x='453' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>连碳基都不再需要</text><text x='280' y='238' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>三条路殊途同归:走通任何一条,「智人」都将被改写</text><text x='280' y='262' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>历史与生物学之间那道分界线,随之消失</text></svg>",
-      "caption": "三条路径并行推进:前两条改造「人」,第三条催生「非人」——但它们指向同一个结局,智人不再是故事唯一的主角。"
-    },
-    {
-      "type": "p",
-      "text": "赫拉利用一个古老的名字给这股冲动命名:**吉尔伽美什计划**。四千年前那部两河流域的史诗里,英雄吉尔伽美什因挚友之死而痛彻心扉,踏上了寻找永生的旅途,最终无功而返——人必有一死,是那个时代无法撼动的天条。而今天,「战胜死亡」不再是神话里的痴念,而是硅谷实验室里排上日程、砸进真金白银的科研项目。**在赫拉利看来,现代医学表面上是在「治病救人」,骨子里却在悄悄改写目标——从「让人别病死」滑向「让人别死」**。死亡正从一个哲学、宗教的终极命题,被重新定义成一个「有待攻克的技术故障」。这是本章最震撼的一个视角转换:困扰了人类几千年的那堵终极高墙,第一次被当成了一道工程题。"
-    },
-    {
-      "type": "quote",
-      "original": "科学正在把死亡当成一个技术问题,而技术问题都有技术上的解决方案。",
-      "translation": "这句话点破了「吉尔伽美什计划」的底层逻辑:一旦不再把死亡看作命定的、神圣的终点,而看作身体这台机器的一次次可修复的故障,那么「不死」就从宗教的许诺,变成了一个只是「还没做到」的技术目标——尽管这个目标是否真能实现、该不该去实现,都是巨大的问号。"
-    },
-    {
-      "type": "h2",
-      "text": "从生物到数据:一种正在成形的世界观"
-    },
-    {
-      "type": "p",
-      "text": "顺着第三条路径(人工智能)再往前推,一种更彻底的世界观正在浮出水面——这也是本章标题「从生物到数据」的落点。它的核心假设是:**万物的本质都是信息处理,生命也不例外**。在这套眼光里,一只猴子、一个人、一家公司、乃至整个物种,都可以被看成一套「接收数据—处理数据—输出决策」的算法;区别只在于算法的复杂度和运算速度。赫拉利把这种把「数据流」奉为最高价值的思潮,称为**数据主义**。若这套观点成立,推论相当激进:人类之所以曾是地球的主宰,是因为我们是当时最强的数据处理系统;可一旦出现了运算更快、联网更广的系统(比如遍布全球的AI网络),**「智人是万物之灵」的故事就该翻篇了**——就像当年更弱的数据处理者(其他动物)把舞台让给了智人一样。这正是全书主线的终极回响:第一章里,智人靠「讲故事」这套独门算法登上王座;而在终章,他亲手造出的新算法,可能反过来把他请下王座。"
-    },
-    {
-      "type": "p",
-      "text": "要格外提醒:**数据主义作为一套成体系的世界观,赫拉利是在后来的《未来简史》里才展开细讲的**;在《人类简史》的终章,它更像是被这三条路径的走向「顺势带出」的一道地平线——一个方向,而非一份论证。所以读这一段,应当把它当成「作者顺着趋势外推出的一种可能」,而不是「已经坐实的未来」。这也自然接上了本章、乃至全书都必须打的那个大问号。"
-    },
-    {
-      "type": "figure",
-      "ftype": "时间线",
-      "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>王座的更替:谁是最强的「数据处理者」</text><line x1='70' y1='150' x2='510' y2='150' style='stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='120' cy='150' r='6' style='fill:var(--ink-faint)'/><text x='120' y='132' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>其他动物</text><text x='120' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>各据一方</text><circle cx='300' cy='150' r='7' style='fill:var(--cinnabar)'/><text x='300' y='130' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>智人</text><text x='300' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>靠「讲故事」称霸</text><circle cx='480' cy='150' r='6' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='480' y='132' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--cinnabar)'>AI 网络?</text><text x='480' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>更快 · 更广</text><path d='M150,150 L268,150' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2;stroke-dasharray:4 3'/><path d='M332,150 L448,150' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2;stroke-dasharray:4 3'/><text x='280' y='218' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>若「本质皆是数据处理」成立,王座就该属于当时最强的那套算法</text><text x='280' y='238' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>——这是一道地平线,不是已坐实的终点</text></svg>",
-      "caption": "数据主义的推论链:靠故事登基的智人,可能被自己造出的更强算法请下王座——但这仍是外推,不是定论。"
-    },
-    {
-      "type": "h2",
-      "text": "全书的收束:拥有神力,却不知想要什么"
-    },
-    {
-      "type": "p",
-      "text": "把七万年的旅程一路铺到这里,赫拉利在全书的最末尾,落下了那句流传最广的诘问。它不是对未来技术的预测,而是对「我们自己」的一次逼视——"
-    },
-    {
-      "type": "quote",
-      "original": "拥有神的能力,但是不负责任、贪得无厌,而且连想要什么都不知道。天下危险,恐怕莫此为甚。",
-      "translation": "全书的封顶之问。人类升级了工具、升级了制度、升级到能改写生命本身,唯独没有升级「智慧」与「对欲望的管理」——手握重塑万物的力量,心里却是一团连自己都看不清的贪求。比「人类会变成什么」更迫切、也更该先回答的,是那个最朴素的问题:人类,到底想要什么?"
-    },
-    {
-      "type": "p",
-      "text": "这一问,正是全书主线画下的最后一个圆。回想开篇:智人靠「虚构故事」的能力,把陌生人捏合成部落、城邦、帝国、公司、民族——故事是我们最锋利的工具,也是我们造出的第一件「神器」。而如今,这个讲故事的物种强大到可以改写「人」这个故事的底稿:定制基因、嫁接机器、创造新的心智。可赫拉利尖锐地指出:**我们把「力量」这一栏的数值刷到了近乎神明,却在「我们究竟想要什么」这一栏留着刺眼的空白**。一个连自己的目标都说不清的物种,握着能重塑万物的画笔——这幅画面里的危险,不在技术本身,而在执笔者的懵懂与贪婪。全书就停在这声追问里,不给答案:它把「智人该往何处去」这道题,原封不动地交还给了每一个读者。"
-    },
-    {
-      "type": "h2",
-      "text": "冷静收尾:终章尤其要打的问号"
-    },
-    {
-      "type": "p",
-      "text": "越是精彩的收尾,越要坐直了算账——而终章,恰恰是全书最需要打问号的部分。**第一,这里是外推与预言,不是历史。** 前面十章至少还站在考古、文献、经济数据的地面上;终章一脚踏进未来,论断的证据强度陡然下降。基因技术会走多远、脑机接口能否真正连通「意识」、AI是否会诞生出「心智」——这些都是学界激烈争论、远未有定论的开放问题,而书里的笔调,却常常把「可能会」写得像「必将会」。**读终章要随手把每个断言前默念一句「赫拉利推测」,再往下读。** **第二,「数据主义」把人化约成算法,是一种极强的哲学假设,不是已被证明的事实。** 「生命的本质就是数据处理」听着简洁有力,却绕过了意识、体验、意义这些至今无解的硬骨头——把「我」等同于一套算法,在哲学上是需要艰苦辩护的立场,而非可以顺口带过的前提。**第三,技术预言最容易被时间打脸。** 历史上「几十年后人类将如何如何」的宏大预测,落空的远多于兑现的;对「奇点」「永生」「超级AI」这类叙事,尤其要留一分警惕——它们戏剧性十足,恰恰因此最容易被高估。"
-    },
-    {
-      "type": "p",
-      "text": "那么,把这些问号统统打完,终章还剩下什么?**剩下的,恰恰是它最不该被技术细节遮住的那个内核——一个问对了的问题。** 无论基因编辑最终走到哪一步、AI是否真会觉醒,「拥有了改写生命的力量,我们准备好回答『想要什么』了吗」这一问,都不会因为预言的对错而失效。它逼着每一个现代人,在为下一项技术欢呼或恐慌之前,先补上那门被落下太久的功课:**不是问「我们能做到什么」,而是问「我们究竟想要什么」**。这也正是《人类简史》最好的用法——它未必给了你一幅可信的未来地图,但它把一个物种七万年的来路,浓缩成一面镜子举到你面前;镜子里那个「拥有神力却不知想要什么」的身影,不是别人,正是握着手机读到这里的我们自己。故事讲完了,而真正的问题,才刚刚开始。"
-    }
-  ]
+ "title": "智人的终局:从生物到数据",
+ "subtitle": "《人类简史》终章导读——四十亿年来第一次,设计生命的笔,从自然选择手里换到了智人手里",
+ "centralIdea": "全书的最后一章把镜头从过去推向未来,收束在一个惊人的转折上:四十亿年来,地球上所有生命都由同一位「设计师」塑造——自然选择;而现在,第一次,这支笔要换人了,智人开始用「智慧设计」亲手改写生命。三条路径正在同时铺开:生物工程直接改基因,半机械工程把血肉与机器焊在一起,无机生命工程(人工智能)则可能创造出完全不依赖碳基身体的智能。任何一条走通,「智人」这个物种本身都会被改写,历史与生物学的边界随之消失——沿着这条路再往前,一种把万物(包括人)都看成「数据处理系统」的世界观(数据主义)正浮出水面。这一章也是全书「虚构故事」主线的终点回响:一个靠讲故事称霸地球的物种,如今强大到能改写「人」这个故事本身,却在拥有神的能力时,依然说不清自己到底想要什么。批判地读:终章是外推与预言,不是历史,论断最戏剧化、证据最稀薄,赫拉利本人也把它当警示而非蓝图——决不能读成无保留的背书。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "回想全书是怎么开头的:七万年前,一只在非洲草原上啃剩骨头、在食物链里排不上号的普通猿类,因为学会了讲「不存在的东西」,一路把自己讲成了行星的主宰。现在,故事讲到了最惊险的一页。赫拉利在终章抛出一个足以让人脊背发凉的判断:**四十亿年来,地球上每一个生命——每一株草、每一只虫、每一个人——都出自同一位设计师之手,那就是自然选择;而就在我们这几代人手里,这支画笔第一次要换人了**。智人不再只是被进化塑造的产物,他开始反过来编辑进化本身。当一个由故事造就的物种,强大到能改写「人」这个故事的底稿时,历史会走向何方?这是《人类简史》留给读者的最后、也是最大的问题。"
+  },
+  {
+   "type": "h2",
+   "text": "一支画笔,换了主人"
+  },
+  {
+   "type": "p",
+   "text": "先把这句「换笔」讲清楚,因为它是整章的地基。过去四十亿年,新物种的诞生遵循一条铁律:随机的基因突变,加上环境的筛选——**慢、盲、无目的**。长颈鹿的脖子不是谁设计的,是无数代随机变异里,脖子长的那些恰好够得着高处的叶子、活得更好、留下更多后代,一点点「碰」出来的。自然选择是个没有蓝图、没有意图、耗时以百万年计的工匠。赫拉利指出,如今这条铁律正被打破:人类掌握的技术,已经能让生命的改造**快、准、有目的**地进行——他把这称为从「自然选择」到「智慧设计」的交接。注意,「智慧设计」这个词他用得辛辣:它原本是宗教用来指「上帝造物」的,赫拉利把它抢过来,指的却是**人类自己扮演了那个设计者**。四十亿年的垄断被打破,而接手的这位新设计师,论智慧远未成熟,论野心却已经迫不及待。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "svg": "<svg viewBox='0 0 560 268' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>设计生命的两支笔</text><rect x='34' y='58' width='232' height='158' rx='10' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='150' y='88' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--ink)'>自然选择(旧)</text><circle cx='60' cy='118' r='3' style='fill:var(--ink-faint)'/><text x='74' y='122' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>随机突变 + 环境筛选</text><circle cx='60' cy='146' r='3' style='fill:var(--ink-faint)'/><text x='74' y='150' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>慢:以百万年计</text><circle cx='60' cy='174' r='3' style='fill:var(--ink-faint)'/><text x='74' y='178' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>盲:没有蓝图与意图</text><circle cx='60' cy='202' r='3' style='fill:var(--ink-faint)'/><text x='74' y='206' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>独家垄断四十亿年</text><rect x='294' y='58' width='232' height='158' rx='10' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='410' y='88' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--cinnabar)'>智慧设计(新)</text><circle cx='320' cy='118' r='3' style='fill:var(--cinnabar)'/><text x='334' y='122' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>直接编辑基因与身体</text><circle cx='320' cy='146' r='3' style='fill:var(--cinnabar)'/><text x='334' y='150' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>快:以年、以代计</text><circle cx='320' cy='174' r='3' style='fill:var(--cinnabar)'/><text x='334' y='178' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>有目的:照人的意愿改</text><circle cx='320' cy='202' r='3' style='fill:var(--cinnabar)'/><text x='334' y='206' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>设计者 = 智人自己</text><text x='280' y='250' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>笔一换手,「物种是固定的」这条几十亿年的前提就失效了</text></svg>",
+   "caption": "换笔的意义:当改造生命从「等自然碰运气」变成「照人的意愿下笔」,进化的时钟从百万年一下跳到了一代人。"
+  },
+  {
+   "type": "h2",
+   "text": "三条通向「后智人」的路"
+  },
+  {
+   "type": "p",
+   "text": "赫拉利把这支新笔可能写出的未来,归为三条并行的路径。**第一条,生物工程**:直接在基因层面动手。人类早已在改造动植物(能发光的兔子、抗虫的作物),而技术的枪口终将转向自己——修掉致病基因是起点,再往前,是记忆、智力、寿命乃至情绪的「定制」。一旦父母能为孩子挑选天赋,「人人生而平等」这个曾经的信念(第四章说过,它本就是个虚构故事),将撞上「基因买得起的和买不起的」这道全新的、写进肉体里的鸿沟。**第二条,半机械工程**:把有机体和机器焊在一起。义肢、人工耳蜗、心脏起搏器已是寻常,再往前是能直连大脑的接口——当记忆可以外挂、感官可以加装、思维可以联网,「我」的边界到底划在皮肤上,还是划在最后一块芯片上?**第三条,无机生命工程**:创造完全不依赖碳基血肉的智能,也就是人工智能。"
+  },
+  {
+   "type": "pull",
+   "text": "前两条还在改造「人」,第三条则可能催生出「非人」的、却同样(甚至更)强大的心智。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "svg": "<svg viewBox='0 0 560 288' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>改写生命的三条路径</text><rect x='24' y='58' width='166' height='150' rx='10' style='fill:none;stroke:var(--cinnabar);stroke-width:1.4'/><text x='107' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar)'>生物工程</text><text x='107' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>直接改写基因</text><text x='107' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>修病 → 定制</text><text x='107' y='162' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>智力·寿命·情绪</text><text x='107' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>撕开基因贫富的鸿沟</text><rect x='197' y='58' width='166' height='150' rx='10' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>半机械工程</text><text x='280' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>血肉 + 机器</text><text x='280' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>义肢·脑机接口</text><text x='280' y='162' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>记忆外挂·感官加装</text><text x='280' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>「我」的边界在哪?</text><rect x='370' y='58' width='166' height='150' rx='10' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='453' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>无机生命</text><text x='453' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>人工智能</text><text x='453' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>不依赖碳基身体</text><text x='453' y='162' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>可能创造「非人」心智</text><text x='453' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>连碳基都不再需要</text><text x='280' y='238' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>三条路殊途同归:走通任何一条,「智人」都将被改写</text><text x='280' y='262' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>历史与生物学之间那道分界线,随之消失</text></svg>",
+   "caption": "三条路径并行推进:前两条改造「人」,第三条催生「非人」——但它们指向同一个结局,智人不再是故事唯一的主角。"
+  },
+  {
+   "type": "p",
+   "text": "赫拉利用一个古老的名字给这股冲动命名:**吉尔伽美什计划**。四千年前那部两河流域的史诗里,英雄吉尔伽美什因挚友之死而痛彻心扉,踏上了寻找永生的旅途,最终无功而返——人必有一死,是那个时代无法撼动的天条。而今天,「战胜死亡」不再是神话里的痴念,而是硅谷实验室里排上日程、砸进真金白银的科研项目。**在赫拉利看来,现代医学表面上是在「治病救人」,骨子里却在悄悄改写目标——从「让人别病死」滑向「让人别死」**。死亡正从一个哲学、宗教的终极命题,被重新定义成一个「有待攻克的技术故障」。这是本章最震撼的一个视角转换:困扰了人类几千年的那堵终极高墙,第一次被当成了一道工程题。"
+  },
+  {
+   "type": "quote",
+   "original": "科学正在把死亡当成一个技术问题,而技术问题都有技术上的解决方案。",
+   "translation": "这句话点破了「吉尔伽美什计划」的底层逻辑:一旦不再把死亡看作命定的、神圣的终点,而看作身体这台机器的一次次可修复的故障,那么「不死」就从宗教的许诺,变成了一个只是「还没做到」的技术目标——尽管这个目标是否真能实现、该不该去实现,都是巨大的问号。"
+  },
+  {
+   "type": "h2",
+   "text": "从生物到数据:一种正在成形的世界观"
+  },
+  {
+   "type": "p",
+   "text": "顺着第三条路径(人工智能)再往前推,一种更彻底的世界观正在浮出水面——这也是本章标题「从生物到数据」的落点。它的核心假设是:**万物的本质都是信息处理,生命也不例外**。在这套眼光里,一只猴子、一个人、一家公司、乃至整个物种,都可以被看成一套「接收数据—处理数据—输出决策」的算法;区别只在于算法的复杂度和运算速度。赫拉利把这种把「数据流」奉为最高价值的思潮,称为**数据主义**。若这套观点成立,推论相当激进:人类之所以曾是地球的主宰,是因为我们是当时最强的数据处理系统;可一旦出现了运算更快、联网更广的系统(比如遍布全球的AI网络),**「智人是万物之灵」的故事就该翻篇了**——就像当年更弱的数据处理者(其他动物)把舞台让给了智人一样。这正是全书主线的终极回响:第一章里,智人靠「讲故事」这套独门算法登上王座;而在终章,他亲手造出的新算法,可能反过来把他请下王座。"
+  },
+  {
+   "type": "p",
+   "text": "要格外提醒:**数据主义作为一套成体系的世界观,赫拉利是在后来的《未来简史》里才展开细讲的**;在《人类简史》的终章,它更像是被这三条路径的走向「顺势带出」的一道地平线——一个方向,而非一份论证。所以读这一段,应当把它当成「作者顺着趋势外推出的一种可能」,而不是「已经坐实的未来」。这也自然接上了本章、乃至全书都必须打的那个大问号。"
+  },
+  {
+   "type": "figure",
+   "ftype": "时间线",
+   "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>王座的更替:谁是最强的「数据处理者」</text><line x1='70' y1='150' x2='510' y2='150' style='stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='120' cy='150' r='6' style='fill:var(--ink-faint)'/><text x='120' y='132' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>其他动物</text><text x='120' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>各据一方</text><circle cx='300' cy='150' r='7' style='fill:var(--cinnabar)'/><text x='300' y='130' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>智人</text><text x='300' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>靠「讲故事」称霸</text><circle cx='480' cy='150' r='6' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='480' y='132' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--cinnabar)'>AI 网络?</text><text x='480' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>更快 · 更广</text><path d='M150,150 L268,150' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2;stroke-dasharray:4 3'/><path d='M332,150 L448,150' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2;stroke-dasharray:4 3'/><text x='280' y='218' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>若「本质皆是数据处理」成立,王座就该属于当时最强的那套算法</text><text x='280' y='238' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>——这是一道地平线,不是已坐实的终点</text></svg>",
+   "caption": "数据主义的推论链:靠故事登基的智人,可能被自己造出的更强算法请下王座——但这仍是外推,不是定论。"
+  },
+  {
+   "type": "h2",
+   "text": "全书的收束:拥有神力,却不知想要什么"
+  },
+  {
+   "type": "p",
+   "text": "把七万年的旅程一路铺到这里,赫拉利在全书的最末尾,落下了那句流传最广的诘问。它不是对未来技术的预测,而是对「我们自己」的一次逼视——"
+  },
+  {
+   "type": "quote",
+   "original": "拥有神的能力,但是不负责任、贪得无厌,而且连想要什么都不知道。天下危险,恐怕莫此为甚。",
+   "translation": "全书的封顶之问。人类升级了工具、升级了制度、升级到能改写生命本身,唯独没有升级「智慧」与「对欲望的管理」——手握重塑万物的力量,心里却是一团连自己都看不清的贪求。比「人类会变成什么」更迫切、也更该先回答的,是那个最朴素的问题:人类,到底想要什么?"
+  },
+  {
+   "type": "p",
+   "text": "这一问,正是全书主线画下的最后一个圆。回想开篇:智人靠「虚构故事」的能力,把陌生人捏合成部落、城邦、帝国、公司、民族——故事是我们最锋利的工具,也是我们造出的第一件「神器」。而如今,这个讲故事的物种强大到可以改写「人」这个故事的底稿:定制基因、嫁接机器、创造新的心智。可赫拉利尖锐地指出:**我们把「力量」这一栏的数值刷到了近乎神明,却在「我们究竟想要什么」这一栏留着刺眼的空白**。一个连自己的目标都说不清的物种,握着能重塑万物的画笔——这幅画面里的危险,不在技术本身,而在执笔者的懵懂与贪婪。全书就停在这声追问里,不给答案:它把「智人该往何处去」这道题,原封不动地交还给了每一个读者。"
+  },
+  {
+   "type": "h2",
+   "text": "冷静收尾:终章尤其要打的问号"
+  },
+  {
+   "type": "p",
+   "text": "越是精彩的收尾,越要坐直了算账——而终章,恰恰是全书最需要打问号的部分。**第一,这里是外推与预言,不是历史。** 前面十章至少还站在考古、文献、经济数据的地面上;终章一脚踏进未来,论断的证据强度陡然下降。基因技术会走多远、脑机接口能否真正连通「意识」、AI是否会诞生出「心智」——这些都是学界激烈争论、远未有定论的开放问题,而书里的笔调,却常常把「可能会」写得像「必将会」。**读终章要随手把每个断言前默念一句「赫拉利推测」,再往下读。** **第二,「数据主义」把人化约成算法,是一种极强的哲学假设,不是已被证明的事实。** 「生命的本质就是数据处理」听着简洁有力,却绕过了意识、体验、意义这些至今无解的硬骨头——把「我」等同于一套算法,在哲学上是需要艰苦辩护的立场,而非可以顺口带过的前提。**第三,技术预言最容易被时间打脸。** 历史上「几十年后人类将如何如何」的宏大预测,落空的远多于兑现的;对「奇点」「永生」「超级AI」这类叙事,尤其要留一分警惕——它们戏剧性十足,恰恰因此最容易被高估。"
+  },
+  {
+   "type": "p",
+   "text": "那么,把这些问号统统打完,终章还剩下什么?**剩下的,恰恰是它最不该被技术细节遮住的那个内核——一个问对了的问题。** 无论基因编辑最终走到哪一步、AI是否真会觉醒,「拥有了改写生命的力量,我们准备好回答『想要什么』了吗」这一问,都不会因为预言的对错而失效。它逼着每一个现代人,在为下一项技术欢呼或恐慌之前,先补上那门被落下太久的功课:**不是问「我们能做到什么」,而是问「我们究竟想要什么」**。这也正是《人类简史》最好的用法——它未必给了你一幅可信的未来地图,但它把一个物种七万年的来路,浓缩成一面镜子举到你面前;镜子里那个「拥有神力却不知想要什么」的身影,不是别人,正是握着手机读到这里的我们自己。故事讲完了,而真正的问题,才刚刚开始。"
+  }
+ ]
 }

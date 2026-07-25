@@ -1,133 +1,137 @@
 {
-  "title": "赋能、平台、复杂子系统团队:三种为流动而生的支撑",
-  "subtitle": "它们存在的唯一理由,是让流式团队跑得更快、更自主",
-  "centralIdea": "支撑流式团队的,有三种团队,它们存在的唯一理由,都是让流式团队更顺畅、更自主地交付价值。赋能团队像教练:由某方面专家组成,帮流式团队补上缺失的能力、工具或实践,授人以渔、阶段性介入,教会就退出,绝不能变成卡审批的关卡。平台团队把底层的部署、监控、环境、CI/CD 等做成一个内部自助式的产品,让流式团队像用云服务一样自助取用、少提工单、少等待;平台的价值,在于减少流式团队的负担,而不是制造新的排队。复杂子系统团队负责一块需要深度专家知识才能做好的复杂子系统,把高复杂度封装、隔离起来,省下流式团队宝贵的认知容量,且只在复杂度确实高到需要专人专精时才设立。三者成功的唯一标准,都是让价值流得更快;一旦它们变成瓶颈、关卡或甩不掉的依赖,就说明用错了。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "一个流式团队正卯足了劲,要把新功能送到用户手里,却在最后几步接连卡住:他们想加一套自动化测试,可组里没人真正懂;想让系统跑起来后能被监控,却不知从何搭起;好不容易写完代码,又得排队等运维批一个上线环境,一等就是三天。功能没毛病,人也够努力,可价值就是流不动——堵点全在那些「不是本行、又绕不开」的地方。这一章要讲的,正是三种专门为疏通这类堵点而生的团队:**赋能团队、平台团队、复杂子系统团队**。它们不抢流式团队的主角位,却决定了主角能跑多快。"
-    },
-    {
-      "type": "h2",
-      "text": "先认清一件事:它们都是配角,配角为主角而活"
-    },
-    {
-      "type": "p",
-      "text": "前几章立起了两根柱子:一是**团队**才是软件交付的基本单元;二是**流式团队**——对齐一条业务价值流、端到端把功能送到用户手里的那种团队——是组织里的主角,数量最多、最该被服务好。可现实里,一个流式团队不可能样样精通、样样自己扛:它要背的业务已经够多了,而一个团队能「装在脑子里」的复杂度是有上限的(第3章的认知负荷)。于是就有了另外三种团队,专门替它分担那些「重要、但不该压在它头上」的复杂度。"
-    },
-    {
-      "type": "p",
-      "text": "这一点必须先钉死,因为它是判断这三种团队「有没有用对」的唯一尺子。不管是赋能、平台还是复杂子系统,只要问一个问题就够了:**它有没有让流式团队更快、更自主地交付了价值?** 让了,就是好的;没让,反而添了堵、多了道手续,那就是走样了。下面三种团队各有各的分工,但底下这把尺子,始终是同一把。"
-    },
-    {
-      "type": "figure",
-      "ftype": "结构图",
-      "svg": "<svg viewBox=\"0 0 700 340\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"s1a\" markerWidth=\"9\" markerHeight=\"9\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" style=\"fill:var(--cinnabar-pure)\"/></marker></defs><g font-size=\"14\"><rect x=\"24\" y=\"28\" width=\"188\" height=\"82\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"118\" y=\"60\" text-anchor=\"middle\" style=\"fill:var(--ink)\">赋能团队</text><text x=\"118\" y=\"86\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">教练 · 授人以渔</text><rect x=\"256\" y=\"28\" width=\"188\" height=\"82\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"350\" y=\"60\" text-anchor=\"middle\" style=\"fill:var(--ink)\">平台团队</text><text x=\"350\" y=\"86\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">把地基做成自助产品</text><rect x=\"488\" y=\"28\" width=\"188\" height=\"82\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"582\" y=\"60\" text-anchor=\"middle\" style=\"fill:var(--ink)\">复杂子系统团队</text><text x=\"582\" y=\"86\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">封装难啃的复杂度</text></g><path d=\"M118 114 Q118 200 318 246\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\" marker-end=\"url(#s1a)\"/><path d=\"M350 114 L350 244\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\" marker-end=\"url(#s1a)\"/><path d=\"M582 114 Q582 200 382 246\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\" marker-end=\"url(#s1a)\"/><rect x=\"244\" y=\"250\" width=\"212\" height=\"74\" rx=\"8\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"350\" y=\"283\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\" font-size=\"16\">流式团队</text><text x=\"350\" y=\"308\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\" font-size=\"12\">端到端交付价值</text></svg>",
-      "caption": "三种支撑团队各司其职,却指向同一件事——让流式团队更快、更自主地交付价值。"
-    },
-    {
-      "type": "h2",
-      "text": "赋能团队:是教练,不是替工"
-    },
-    {
-      "type": "p",
-      "text": "先说**赋能团队(enabling team)**。它由某方面的专家组成——可能精通自动化测试,可能懂可观测性,可能是安全或某项新技术的老手。它的活儿,是帮流式团队补上当下缺失的那块能力。回到开头那个场景:流式团队不会做自动化测试,赋能团队就进来,手把手带他们把测试搭起来、把习惯养成。关键全在「带」这个字——赋能团队的目标,**不是替流式团队把测试写完就完事,而是让流式团队自己学会、往后能独立干**。"
-    },
-    {
-      "type": "p",
-      "text": "这就是「授人以渔」和「授人以鱼」的分别。授人以鱼,是你替他把事做了,他下回还得来找你;授人以渔,是你教会他,他从此自立。赋能团队走的是后一条路。所以它的介入是**阶段性**的:帮团队跨过某个能力障碍之后,就该退出,转身去帮别的团队。它像球队里的教练,而不是替补队员——教练把队员练强了就功成身退,绝不会赖在场上替队员踢球。"
-    },
-    {
-      "type": "p",
-      "text": "这里有个最容易滑进去的坑,必须警惕:赋能团队**千万不能变成「卡审批的关卡」**。有些团队一旦握住了某项专长,就慢慢变了味——「上线前的安全,都得先过我们这关」「测试方案,不经我们批不算数」。它从「教你会」变成了「你什么都得来求我」。这一变,就彻底背离了初衷:本该是帮流式团队自立的,如今反倒成了挡在路上的一道闸,流动比先前更慢了。健康的赋能团队,是让流式团队越来越**不需要**它;变味的赋能团队,是让流式团队越来越**离不开**它。"
-    },
-    {
-      "type": "figure",
-      "ftype": "流程图",
-      "svg": "<svg viewBox=\"0 0 700 230\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"s2a\" markerWidth=\"9\" markerHeight=\"9\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" style=\"fill:var(--cinnabar-pure)\"/></marker></defs><line x1=\"70\" y1=\"120\" x2=\"616\" y2=\"120\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.6\" marker-end=\"url(#s2a)\"/><g font-size=\"13\"><circle cx=\"100\" cy=\"120\" r=\"9\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"100\" y=\"96\" text-anchor=\"middle\" style=\"fill:var(--ink)\">发现能力缺口</text><circle cx=\"270\" cy=\"120\" r=\"9\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"270\" y=\"158\" text-anchor=\"middle\" style=\"fill:var(--ink)\">介入 · 手把手教</text><circle cx=\"440\" cy=\"120\" r=\"9\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"440\" y=\"96\" text-anchor=\"middle\" style=\"fill:var(--ink)\">团队学会、能自立</text><circle cx=\"590\" cy=\"120\" r=\"11\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"590\" y=\"158\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\">退出,去帮别队</text></g><text x=\"350\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">阶段性介入 · 不常驻、不替工</text></svg>",
-      "caption": "赋能团队的正确姿势:发现缺口、介入教会,然后退出去帮别的团队。"
-    },
-    {
-      "type": "quote",
-      "original": "赋能团队像教练:把队员练强了就退场,而不是赖在场上替他踢球。",
-      "translation": ""
-    },
-    {
-      "type": "h2",
-      "text": "平台团队:把地基做成自助的产品"
-    },
-    {
-      "type": "p",
-      "text": "第二种是**平台团队(platform team)**。流式团队要交付,底下总得踩着一层地基:部署的通道、监控的系统、测试和运行的环境、CI/CD 的流水线……这些东西每个流式团队都要用,但没必要每个团队都自己从头搭一套。平台团队干的,就是把这层底层的工具、服务、基础设施收拢起来,做成一个内部的「平台」,让所有流式团队共用。"
-    },
-    {
-      "type": "p",
-      "text": "但「做成平台」四个字,分量全在怎么做上。这本书反复强调一条原则:**把平台当「产品」来做**。什么意思?就是把内部的流式团队当成你的「客户」,像做一款对外产品那样,琢磨它好不好用、文档清不清楚、能不能自助上手、有没有真替客户省了事、降没降低它的认知负荷。理想的平台,应该像用公有云一样:要一台环境,点几下就有了;要看监控,打开就能看;不用提工单、不用等人批、不用追着谁问。**平台越自助,流式团队就越自主,流动就越快。**"
-    },
-    {
-      "type": "p",
-      "text": "反过来,一个难用的平台,不但不是平台,还会变成新的瓶颈。设想这样一个「平台」:要个环境得填一张表、提一张工单,然后排队等三天;文档语焉不详,出了岔子只能一个个去问人。这种东西名义上叫平台,实际上是给流式团队又加了一道障碍。判断一个平台好不好,标准很朴素:**它到底是减少了流式团队的负担,还是增加了?** 减少了,才配叫平台;增加了,它就是披着平台外衣的又一个瓶颈。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对比",
-      "svg": "<svg viewBox=\"0 0 700 290\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"s3a\" markerWidth=\"9\" markerHeight=\"9\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" style=\"fill:var(--ink-soft)\"/></marker><marker id=\"s3b\" markerWidth=\"9\" markerHeight=\"9\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" style=\"fill:var(--cinnabar-pure)\"/></marker></defs><line x1=\"350\" y1=\"28\" x2=\"350\" y2=\"270\" style=\"stroke:var(--line)\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/><text x=\"175\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14.5\">难用的平台 = 新瓶颈</text><text x=\"525\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14.5\">好用的平台 = 自助</text><g font-size=\"13\"><rect x=\"100\" y=\"52\" width=\"150\" height=\"44\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"175\" y=\"79\" text-anchor=\"middle\" style=\"fill:var(--ink)\">流式团队</text><path d=\"M175 96 L175 128\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.6\" marker-end=\"url(#s3a)\"/><rect x=\"100\" y=\"130\" width=\"150\" height=\"44\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"175\" y=\"157\" text-anchor=\"middle\" style=\"fill:var(--ink)\">填表 · 提工单</text><path d=\"M175 174 L175 206\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.6\" marker-end=\"url(#s3a)\"/><rect x=\"100\" y=\"208\" width=\"150\" height=\"44\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"175\" y=\"235\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\">排队等批</text><rect x=\"450\" y=\"52\" width=\"150\" height=\"44\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"525\" y=\"79\" text-anchor=\"middle\" style=\"fill:var(--ink)\">流式团队</text><path d=\"M525 96 L525 128\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\" marker-end=\"url(#s3b)\"/><rect x=\"450\" y=\"130\" width=\"150\" height=\"44\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\"/><text x=\"525\" y=\"157\" text-anchor=\"middle\" style=\"fill:var(--ink)\">自助取用 · 免工单</text><path d=\"M525 174 L525 206\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\" marker-end=\"url(#s3b)\"/><rect x=\"450\" y=\"208\" width=\"150\" height=\"44\" rx=\"7\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"525\" y=\"235\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\">直接交付</text></g></svg>",
-      "caption": "同样叫平台:要工单、排队的是新瓶颈,能自助、免等待的才是好平台。"
-    },
-    {
-      "type": "h2",
-      "text": "复杂子系统团队:替大家啃下那块硬骨头"
-    },
-    {
-      "type": "p",
-      "text": "第三种是**复杂子系统团队(complicated-subsystem team)**。有些东西是真的难——难到需要深厚的专家知识才能做好,比如一套复杂的算法、音视频的编解码、风控或计费的核心逻辑。这类硬骨头,如果指望每个流式团队都自己去啃,既啃不动,也太浪费:每个团队都得养一个该领域的专家,结果还都做不精。"
-    },
-    {
-      "type": "p",
-      "text": "复杂子系统团队就是来解决这个问题的:**把这块高复杂度单独拎出来,交给一支专精的团队,由它封装成一个清晰、稳定、别人可以放心调用的部分。** 这样一来,别的流式团队就不必人人都去成为那个领域的专家了——它们只要会「调用」这块子系统就行,把省下来的宝贵认知容量,留给自己真正该操心的业务。这正是第3章讲的减负:把最烧脑的一块从大家肩上卸下来,集中放到最扛得住的那支团队肩上。"
-    },
-    {
-      "type": "p",
-      "text": "但这里也有分寸:复杂子系统团队,**只在「复杂度确实高到需要专人专精」时才该设立**。不是什么东西都值得拆成一个子系统团队。如果一块东西并不那么难,却也被拆出去单设一队,那就是无端制造了一道交接、一条依赖——流式团队每要用它,都得跟另一支团队打交道,流动反而更绕了。硬骨头才配专人专啃;不硬的,就别拆。设团队,永远是为了减少依赖,而不是凭空多造依赖。"
-    },
-    {
-      "type": "h2",
-      "text": "三者的共同点:都是支撑,都在减负"
-    },
-    {
-      "type": "p",
-      "text": "讲到这里,三种团队的分工清楚了,更要看清它们骨子里的共同点:**它们都是「支撑」,都是为了减少、而不是增加流式团队的负担**。赋能团队补能力,平台团队做地基,复杂子系统团队封复杂度——手法各异,指向同一件事:让流式团队腾出手、腾出脑子,更快也更自主地把价值交付出去。所以衡量它们成功与否,永远用同一把尺:流式团队是不是因为有了它,交付得更顺了?"
-    },
-    {
-      "type": "p",
-      "text": "也正因为都是支撑,这三种团队都容易滑向同样两种病,得时时警惕。**第一种病,是变成中央集权的关卡**——什么都要经过它审批、经过它排队,它从「帮手」坐大成了「关口」。**第二种病,是变成甩不掉的长期依赖**——流式团队永远离不开它,凡事都得靠它,自己始终立不起来。这两种病,一个把流动堵在了闸口,一个把流动拴在了绳上,方向相反,结果却一样:价值流慢了。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对比",
-      "svg": "<svg viewBox=\"0 0 700 285\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"200\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">健康:是服务</text><text x=\"530\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">变味:成关卡 / 成依赖</text><line x1=\"380\" y1=\"50\" x2=\"380\" y2=\"266\" style=\"stroke:var(--line)\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/><line x1=\"40\" y1=\"108\" x2=\"660\" y2=\"108\" style=\"stroke:var(--line)\" stroke-width=\"0.8\"/><line x1=\"40\" y1=\"158\" x2=\"660\" y2=\"158\" style=\"stroke:var(--line)\" stroke-width=\"0.8\"/><line x1=\"40\" y1=\"208\" x2=\"660\" y2=\"208\" style=\"stroke:var(--line)\" stroke-width=\"0.8\"/><g font-size=\"13.5\"><text x=\"200\" y=\"88\" text-anchor=\"middle\" style=\"fill:var(--ink)\">授人以渔,教会就退</text><text x=\"530\" y=\"88\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\">长期替工,甩不掉</text><text x=\"200\" y=\"138\" text-anchor=\"middle\" style=\"fill:var(--ink)\">自助取用,少提工单</text><text x=\"530\" y=\"138\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\">事事排队、样样要批</text><text x=\"200\" y=\"188\" text-anchor=\"middle\" style=\"fill:var(--ink)\">让团队越来越自主</text><text x=\"530\" y=\"188\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\">让团队永远离不开</text><text x=\"200\" y=\"238\" text-anchor=\"middle\" style=\"fill:var(--ink)\">成功=价值流得更快</text><text x=\"530\" y=\"238\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\">自己坐大成新瓶颈</text></g></svg>",
-      "caption": "同一支撑团队,服务则健康、卡关或制造依赖则变味——尺子只有一把:流动是否更顺。"
-    },
-    {
-      "type": "p",
-      "text": "那健康的样子是什么?**健康的支撑团队,是让流式团队越来越自主、越来越不需要频繁地打扰它。** 赋能团队教会就退,好过赖着不走;平台越自助,好过事事提工单;复杂子系统封装得越干净,流式团队越能放心调用、不必回头。说到底,支撑团队最高的境界,不是「大家都离不开我」,恰恰是「大家越来越不用来找我」——因为它已经把该给的能力、该铺的地基、该封的复杂度,稳稳地交到了流式团队手上。"
-    },
-    {
-      "type": "quote",
-      "original": "支撑团队最高的境界,不是大家都离不开你,而是大家越来越不用来找你。",
-      "translation": ""
-    },
-    {
-      "type": "h2",
-      "text": "换到日常:一个小团队也用得上这套分工"
-    },
-    {
-      "type": "p",
-      "text": "这套东西听着像大公司的架构,其实换个尺度,日常里也处处是它的影子。想想一个刚学做菜的人:有人过来教他颠勺、教他调味,教几次就放手让他自己练,这是「赋能」;厨房里备好了洗净切好的净菜、随手能取的调料,他不必每次都从买菜洗菜做起,这是「平台」;而那道最难的老汤,交给家里最懂火候的人专门吊着,其他人直接舀来用就行,这是「复杂子系统」。三种帮法不同,道理却一模一样:都是为了让「做菜的那个人」做得更顺、更省心。"
-    },
-    {
-      "type": "p",
-      "text": "判断这些帮忙到底是不是真帮忙,尺子还是那一把:**它有没有让主事的人更快、更自主地把事做成?** 教你颠勺的人若赖着不走、天天替你炒,你永远学不会;备菜的地方若要你填单排队才给一根葱,那还不如自己去买;吊汤的人若谁都不许碰、什么都得等他,一顿饭就全卡在他一个人身上。帮忙一旦变成卡关或依赖,就不再是帮忙了。守住「让价值流得更顺」这条底线,三种支撑才不会走样——这,正是这一章要交到你手里的那把尺。"
-    }
-  ]
+ "title": "赋能、平台、复杂子系统团队:三种为流动而生的支撑",
+ "subtitle": "它们存在的唯一理由,是让流式团队跑得更快、更自主",
+ "centralIdea": "支撑流式团队的,有三种团队,它们存在的唯一理由,都是让流式团队更顺畅、更自主地交付价值。赋能团队像教练:由某方面专家组成,帮流式团队补上缺失的能力、工具或实践,授人以渔、阶段性介入,教会就退出,绝不能变成卡审批的关卡。平台团队把底层的部署、监控、环境、CI/CD 等做成一个内部自助式的产品,让流式团队像用云服务一样自助取用、少提工单、少等待;平台的价值,在于减少流式团队的负担,而不是制造新的排队。复杂子系统团队负责一块需要深度专家知识才能做好的复杂子系统,把高复杂度封装、隔离起来,省下流式团队宝贵的认知容量,且只在复杂度确实高到需要专人专精时才设立。三者成功的唯一标准,都是让价值流得更快;一旦它们变成瓶颈、关卡或甩不掉的依赖,就说明用错了。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "一个流式团队正卯足了劲,要把新功能送到用户手里,却在最后几步接连卡住:他们想加一套自动化测试,可组里没人真正懂;想让系统跑起来后能被监控,却不知从何搭起;好不容易写完代码,又得排队等运维批一个上线环境,一等就是三天。功能没毛病,人也够努力,可价值就是流不动——堵点全在那些「不是本行、又绕不开」的地方。这一章要讲的,正是三种专门为疏通这类堵点而生的团队:**赋能团队、平台团队、复杂子系统团队**。它们不抢流式团队的主角位,却决定了主角能跑多快。"
+  },
+  {
+   "type": "h2",
+   "text": "先认清一件事:它们都是配角,配角为主角而活"
+  },
+  {
+   "type": "p",
+   "text": "前几章立起了两根柱子:一是**团队**才是软件交付的基本单元;二是**流式团队**——对齐一条业务价值流、端到端把功能送到用户手里的那种团队——是组织里的主角,数量最多、最该被服务好。可现实里,一个流式团队不可能样样精通、样样自己扛:它要背的业务已经够多了,而一个团队能「装在脑子里」的复杂度是有上限的(第3章的认知负荷)。于是就有了另外三种团队,专门替它分担那些「重要、但不该压在它头上」的复杂度。"
+  },
+  {
+   "type": "p",
+   "text": "这一点必须先钉死,因为它是判断这三种团队「有没有用对」的唯一尺子。不管是赋能、平台还是复杂子系统,只要问一个问题就够了:**它有没有让流式团队更快、更自主地交付了价值?** 让了,就是好的;没让,反而添了堵、多了道手续,那就是走样了。下面三种团队各有各的分工,但底下这把尺子,始终是同一把。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "svg": "<svg viewBox=\"0 0 700 340\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"s1a\" markerWidth=\"9\" markerHeight=\"9\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" style=\"fill:var(--cinnabar-pure)\"/></marker></defs><g font-size=\"14\"><rect x=\"24\" y=\"28\" width=\"188\" height=\"82\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"118\" y=\"60\" text-anchor=\"middle\" style=\"fill:var(--ink)\">赋能团队</text><text x=\"118\" y=\"86\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">教练 · 授人以渔</text><rect x=\"256\" y=\"28\" width=\"188\" height=\"82\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"350\" y=\"60\" text-anchor=\"middle\" style=\"fill:var(--ink)\">平台团队</text><text x=\"350\" y=\"86\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">把地基做成自助产品</text><rect x=\"488\" y=\"28\" width=\"188\" height=\"82\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"582\" y=\"60\" text-anchor=\"middle\" style=\"fill:var(--ink)\">复杂子系统团队</text><text x=\"582\" y=\"86\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">封装难啃的复杂度</text></g><path d=\"M118 114 Q118 200 318 246\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\" marker-end=\"url(#s1a)\"/><path d=\"M350 114 L350 244\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\" marker-end=\"url(#s1a)\"/><path d=\"M582 114 Q582 200 382 246\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\" marker-end=\"url(#s1a)\"/><rect x=\"244\" y=\"250\" width=\"212\" height=\"74\" rx=\"8\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"350\" y=\"283\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\" font-size=\"16\">流式团队</text><text x=\"350\" y=\"308\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\" font-size=\"12\">端到端交付价值</text></svg>",
+   "caption": "三种支撑团队各司其职,却指向同一件事——让流式团队更快、更自主地交付价值。"
+  },
+  {
+   "type": "h2",
+   "text": "赋能团队:是教练,不是替工"
+  },
+  {
+   "type": "p",
+   "text": "先说**赋能团队(enabling team)**。它由某方面的专家组成——可能精通自动化测试,可能懂可观测性,可能是安全或某项新技术的老手。它的活儿,是帮流式团队补上当下缺失的那块能力。回到开头那个场景:流式团队不会做自动化测试,赋能团队就进来,手把手带他们把测试搭起来、把习惯养成。关键全在「带」这个字——赋能团队的目标,**不是替流式团队把测试写完就完事,而是让流式团队自己学会、往后能独立干**。"
+  },
+  {
+   "type": "p",
+   "text": "这就是「授人以渔」和「授人以鱼」的分别。授人以鱼,是你替他把事做了,他下回还得来找你;授人以渔,是你教会他,他从此自立。赋能团队走的是后一条路。所以它的介入是**阶段性**的:帮团队跨过某个能力障碍之后,就该退出,转身去帮别的团队。它像球队里的教练,而不是替补队员——教练把队员练强了就功成身退,绝不会赖在场上替队员踢球。"
+  },
+  {
+   "type": "p",
+   "text": "这里有个最容易滑进去的坑,必须警惕:赋能团队**千万不能变成「卡审批的关卡」**。有些团队一旦握住了某项专长,就慢慢变了味——「上线前的安全,都得先过我们这关」「测试方案,不经我们批不算数」。它从「教你会」变成了「你什么都得来求我」。这一变,就彻底背离了初衷:本该是帮流式团队自立的,如今反倒成了挡在路上的一道闸,流动比先前更慢了。健康的赋能团队,是让流式团队越来越**不需要**它;变味的赋能团队,是让流式团队越来越**离不开**它。"
+  },
+  {
+   "type": "figure",
+   "ftype": "流程图",
+   "svg": "<svg viewBox=\"0 0 700 230\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"s2a\" markerWidth=\"9\" markerHeight=\"9\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" style=\"fill:var(--cinnabar-pure)\"/></marker></defs><line x1=\"70\" y1=\"120\" x2=\"616\" y2=\"120\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.6\" marker-end=\"url(#s2a)\"/><g font-size=\"13\"><circle cx=\"100\" cy=\"120\" r=\"9\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"100\" y=\"96\" text-anchor=\"middle\" style=\"fill:var(--ink)\">发现能力缺口</text><circle cx=\"270\" cy=\"120\" r=\"9\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"270\" y=\"158\" text-anchor=\"middle\" style=\"fill:var(--ink)\">介入 · 手把手教</text><circle cx=\"440\" cy=\"120\" r=\"9\" style=\"fill:var(--paper-raised);stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"440\" y=\"96\" text-anchor=\"middle\" style=\"fill:var(--ink)\">团队学会、能自立</text><circle cx=\"590\" cy=\"120\" r=\"11\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"590\" y=\"158\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\">退出,去帮别队</text></g><text x=\"350\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">阶段性介入 · 不常驻、不替工</text></svg>",
+   "caption": "赋能团队的正确姿势:发现缺口、介入教会,然后退出去帮别的团队。"
+  },
+  {
+   "type": "quote",
+   "original": "赋能团队像教练:把队员练强了就退场,而不是赖在场上替他踢球。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "平台团队:把地基做成自助的产品"
+  },
+  {
+   "type": "p",
+   "text": "第二种是**平台团队(platform team)**。流式团队要交付,底下总得踩着一层地基:部署的通道、监控的系统、测试和运行的环境、CI/CD 的流水线……这些东西每个流式团队都要用,但没必要每个团队都自己从头搭一套。平台团队干的,就是把这层底层的工具、服务、基础设施收拢起来,做成一个内部的「平台」,让所有流式团队共用。"
+  },
+  {
+   "type": "p",
+   "text": "但「做成平台」四个字,分量全在怎么做上。这本书反复强调一条原则:**把平台当「产品」来做**。什么意思?就是把内部的流式团队当成你的「客户」,像做一款对外产品那样,琢磨它好不好用、文档清不清楚、能不能自助上手、有没有真替客户省了事、降没降低它的认知负荷。理想的平台,应该像用公有云一样:要一台环境,点几下就有了;要看监控,打开就能看;不用提工单、不用等人批、不用追着谁问。"
+  },
+  {
+   "type": "pull",
+   "text": "平台越自助,流式团队就越自主,流动就越快。"
+  },
+  {
+   "type": "p",
+   "text": "反过来,一个难用的平台,不但不是平台,还会变成新的瓶颈。设想这样一个「平台」:要个环境得填一张表、提一张工单,然后排队等三天;文档语焉不详,出了岔子只能一个个去问人。这种东西名义上叫平台,实际上是给流式团队又加了一道障碍。判断一个平台好不好,标准很朴素:**它到底是减少了流式团队的负担,还是增加了?** 减少了,才配叫平台;增加了,它就是披着平台外衣的又一个瓶颈。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比",
+   "svg": "<svg viewBox=\"0 0 700 290\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"s3a\" markerWidth=\"9\" markerHeight=\"9\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" style=\"fill:var(--ink-soft)\"/></marker><marker id=\"s3b\" markerWidth=\"9\" markerHeight=\"9\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" style=\"fill:var(--cinnabar-pure)\"/></marker></defs><line x1=\"350\" y1=\"28\" x2=\"350\" y2=\"270\" style=\"stroke:var(--line)\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/><text x=\"175\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14.5\">难用的平台 = 新瓶颈</text><text x=\"525\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14.5\">好用的平台 = 自助</text><g font-size=\"13\"><rect x=\"100\" y=\"52\" width=\"150\" height=\"44\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"175\" y=\"79\" text-anchor=\"middle\" style=\"fill:var(--ink)\">流式团队</text><path d=\"M175 96 L175 128\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.6\" marker-end=\"url(#s3a)\"/><rect x=\"100\" y=\"130\" width=\"150\" height=\"44\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"175\" y=\"157\" text-anchor=\"middle\" style=\"fill:var(--ink)\">填表 · 提工单</text><path d=\"M175 174 L175 206\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.6\" marker-end=\"url(#s3a)\"/><rect x=\"100\" y=\"208\" width=\"150\" height=\"44\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"175\" y=\"235\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\">排队等批</text><rect x=\"450\" y=\"52\" width=\"150\" height=\"44\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.4\"/><text x=\"525\" y=\"79\" text-anchor=\"middle\" style=\"fill:var(--ink)\">流式团队</text><path d=\"M525 96 L525 128\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\" marker-end=\"url(#s3b)\"/><rect x=\"450\" y=\"130\" width=\"150\" height=\"44\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar-pure)\" stroke-width=\"1.4\"/><text x=\"525\" y=\"157\" text-anchor=\"middle\" style=\"fill:var(--ink)\">自助取用 · 免工单</text><path d=\"M525 174 L525 206\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.8\" marker-end=\"url(#s3b)\"/><rect x=\"450\" y=\"208\" width=\"150\" height=\"44\" rx=\"7\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"525\" y=\"235\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\">直接交付</text></g></svg>",
+   "caption": "同样叫平台:要工单、排队的是新瓶颈,能自助、免等待的才是好平台。"
+  },
+  {
+   "type": "h2",
+   "text": "复杂子系统团队:替大家啃下那块硬骨头"
+  },
+  {
+   "type": "p",
+   "text": "第三种是**复杂子系统团队(complicated-subsystem team)**。有些东西是真的难——难到需要深厚的专家知识才能做好,比如一套复杂的算法、音视频的编解码、风控或计费的核心逻辑。这类硬骨头,如果指望每个流式团队都自己去啃,既啃不动,也太浪费:每个团队都得养一个该领域的专家,结果还都做不精。"
+  },
+  {
+   "type": "p",
+   "text": "复杂子系统团队就是来解决这个问题的:**把这块高复杂度单独拎出来,交给一支专精的团队,由它封装成一个清晰、稳定、别人可以放心调用的部分。** 这样一来,别的流式团队就不必人人都去成为那个领域的专家了——它们只要会「调用」这块子系统就行,把省下来的宝贵认知容量,留给自己真正该操心的业务。这正是第3章讲的减负:把最烧脑的一块从大家肩上卸下来,集中放到最扛得住的那支团队肩上。"
+  },
+  {
+   "type": "p",
+   "text": "但这里也有分寸:复杂子系统团队,**只在「复杂度确实高到需要专人专精」时才该设立**。不是什么东西都值得拆成一个子系统团队。如果一块东西并不那么难,却也被拆出去单设一队,那就是无端制造了一道交接、一条依赖——流式团队每要用它,都得跟另一支团队打交道,流动反而更绕了。硬骨头才配专人专啃;不硬的,就别拆。设团队,永远是为了减少依赖,而不是凭空多造依赖。"
+  },
+  {
+   "type": "h2",
+   "text": "三者的共同点:都是支撑,都在减负"
+  },
+  {
+   "type": "p",
+   "text": "讲到这里,三种团队的分工清楚了,更要看清它们骨子里的共同点:**它们都是「支撑」,都是为了减少、而不是增加流式团队的负担**。赋能团队补能力,平台团队做地基,复杂子系统团队封复杂度——手法各异,指向同一件事:让流式团队腾出手、腾出脑子,更快也更自主地把价值交付出去。所以衡量它们成功与否,永远用同一把尺:流式团队是不是因为有了它,交付得更顺了?"
+  },
+  {
+   "type": "p",
+   "text": "也正因为都是支撑,这三种团队都容易滑向同样两种病,得时时警惕。**第一种病,是变成中央集权的关卡**——什么都要经过它审批、经过它排队,它从「帮手」坐大成了「关口」。**第二种病,是变成甩不掉的长期依赖**——流式团队永远离不开它,凡事都得靠它,自己始终立不起来。这两种病,一个把流动堵在了闸口,一个把流动拴在了绳上,方向相反,结果却一样:价值流慢了。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比",
+   "svg": "<svg viewBox=\"0 0 700 285\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"200\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"15\">健康:是服务</text><text x=\"530\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">变味:成关卡 / 成依赖</text><line x1=\"380\" y1=\"50\" x2=\"380\" y2=\"266\" style=\"stroke:var(--line)\" stroke-width=\"1\" stroke-dasharray=\"4 4\"/><line x1=\"40\" y1=\"108\" x2=\"660\" y2=\"108\" style=\"stroke:var(--line)\" stroke-width=\"0.8\"/><line x1=\"40\" y1=\"158\" x2=\"660\" y2=\"158\" style=\"stroke:var(--line)\" stroke-width=\"0.8\"/><line x1=\"40\" y1=\"208\" x2=\"660\" y2=\"208\" style=\"stroke:var(--line)\" stroke-width=\"0.8\"/><g font-size=\"13.5\"><text x=\"200\" y=\"88\" text-anchor=\"middle\" style=\"fill:var(--ink)\">授人以渔,教会就退</text><text x=\"530\" y=\"88\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\">长期替工,甩不掉</text><text x=\"200\" y=\"138\" text-anchor=\"middle\" style=\"fill:var(--ink)\">自助取用,少提工单</text><text x=\"530\" y=\"138\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\">事事排队、样样要批</text><text x=\"200\" y=\"188\" text-anchor=\"middle\" style=\"fill:var(--ink)\">让团队越来越自主</text><text x=\"530\" y=\"188\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\">让团队永远离不开</text><text x=\"200\" y=\"238\" text-anchor=\"middle\" style=\"fill:var(--ink)\">成功=价值流得更快</text><text x=\"530\" y=\"238\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\">自己坐大成新瓶颈</text></g></svg>",
+   "caption": "同一支撑团队,服务则健康、卡关或制造依赖则变味——尺子只有一把:流动是否更顺。"
+  },
+  {
+   "type": "p",
+   "text": "那健康的样子是什么?**健康的支撑团队,是让流式团队越来越自主、越来越不需要频繁地打扰它。** 赋能团队教会就退,好过赖着不走;平台越自助,好过事事提工单;复杂子系统封装得越干净,流式团队越能放心调用、不必回头。说到底,支撑团队最高的境界,不是「大家都离不开我」,恰恰是「大家越来越不用来找我」——因为它已经把该给的能力、该铺的地基、该封的复杂度,稳稳地交到了流式团队手上。"
+  },
+  {
+   "type": "quote",
+   "original": "支撑团队最高的境界,不是大家都离不开你,而是大家越来越不用来找你。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "换到日常:一个小团队也用得上这套分工"
+  },
+  {
+   "type": "p",
+   "text": "这套东西听着像大公司的架构,其实换个尺度,日常里也处处是它的影子。想想一个刚学做菜的人:有人过来教他颠勺、教他调味,教几次就放手让他自己练,这是「赋能」;厨房里备好了洗净切好的净菜、随手能取的调料,他不必每次都从买菜洗菜做起,这是「平台」;而那道最难的老汤,交给家里最懂火候的人专门吊着,其他人直接舀来用就行,这是「复杂子系统」。三种帮法不同,道理却一模一样:都是为了让「做菜的那个人」做得更顺、更省心。"
+  },
+  {
+   "type": "p",
+   "text": "判断这些帮忙到底是不是真帮忙,尺子还是那一把:**它有没有让主事的人更快、更自主地把事做成?** 教你颠勺的人若赖着不走、天天替你炒,你永远学不会;备菜的地方若要你填单排队才给一根葱,那还不如自己去买;吊汤的人若谁都不许碰、什么都得等他,一顿饭就全卡在他一个人身上。帮忙一旦变成卡关或依赖,就不再是帮忙了。守住「让价值流得更顺」这条底线,三种支撑才不会走样——这,正是这一章要交到你手里的那把尺。"
+  }
+ ]
 }

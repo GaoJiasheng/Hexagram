@@ -1,117 +1,121 @@
 {
-  "title": "你的大脑是一台测量仪器",
-  "subtitle": "每一个专业判断,都是拿一台仪器去测某个看不见的量——于是你能追问它两件事:准不准(偏差)、稳不稳(噪声)",
-  "centralIdea": "把专业判断看成一次「测量」,是理解噪声的关键一招:医生打分、法官量刑、核保定价,每一次都像拿起一台仪器去测某个看不见的量,再用一个刻度把读数报出来。既是测量,就有两个维度——准不准(偏差)、稳不稳(噪声)。偏差早有人盯,噪声这一半却长期没人量。而量它有一把现成的尺子:噪声审计——让多名专家各自独立判同一批案例,统计他们彼此的离散;一做,噪声总远超管理层的预估。同时要分清:有些判断天生就难(客观无知,只能谦逊),但噪声是仪器自身的毛病、可以改善——这是两回事。这副「测量」的眼镜不是把人贬成机器,而是帮你把「靠不靠谱」拆成两个能分头下手的具体问题。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "前三章像三记闷棍:本该一样的判断,却因人、因时四下发散——法官量刑、医生读片、核保定价,同一份卷宗到了不同人手里、甚至同一个人不同时候手里,结论能差出一大截。你大概已经憋着一个问题:这些「散」,到底该怎么**看**、怎么**量**?这一章,卡尼曼递给你一副眼镜。戴上它,你会发现一件朴素得吓人的事:**一个专业判断,本质上是一次测量**。医生给病情打个分、面试官给候选人评个级、分析师给风险估个价——每一次,都像拿起一台仪器,去测某个看不见的量,再用一个刻度(一个数字、一个等级)把读数报出来。而只要是测量,你就会本能地追问两件事:这台仪器**准不准**、**稳不稳**。准不准,是偏差;稳不稳,就是噪声。前者早有人盯,后者长期没人量——这一章,就是要把那把没人用过的尺子,塞到你手里。"
-    },
-    {
-      "type": "h2",
-      "text": "判断,其实是一次测量"
-    },
-    {
-      "type": "p",
-      "text": "先把「测量」这个词想透。你家的体重秤,测的是「你有多重」这个真实存在的量,再用「公斤」这把刻度报个数给你。一台好秤,得同时守两条:一是**准**——它报的数,得贴近你真实的体重,不能一站上去就凭空多出五公斤(那叫**偏差**);二是**稳**——同一个你、同一个早晨、连称三次,它不该一次 62、一次 67、一次 59(那种飘忽,就是**噪声**)。把这两条搬到专业判断上,严丝合缝:法官在「测」一桩罪行该配多重的刑,医生在「测」这片阴影有几分凶险,主管在「测」这名下属值几分。他们各揣着一把心里的刻度,把读数报出来。"
-    },
-    {
-      "type": "p",
-      "text": "这副「判断即测量」的眼镜,妙就妙在它逼你把一句含糊的褒贬,拆成两个能分开问、分开管的维度。从前评价一个判断,我们只会笼统地说「靠不靠谱」;现在你能清清楚楚地分两刀切。第一刀问**准不准**:这群人的判断,平均而言是不是系统性地偏高、或偏低?(那是偏差。)第二刀问**稳不稳**:把同一个案子发给他们,或把同一个案子在不同时候发给同一个人,读数会不会自己先打起来?(那是噪声。)偏差,是所有箭齐刷刷偏向靶心的同一侧;噪声,是箭四处乱溅、彼此离散。两者是**各自独立**的毛病:一台秤可以又准又飘,也可以稳得很却稳稳地偏——它们得分开诊断、分开治。"
-    },
-    {
-      "type": "figure",
-      "ftype": "示意图",
-      "svg": "<svg viewBox='0 0 560 396' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>把判断看成测量:准(偏差)与稳(噪声)两个维度</text><text x='210' y='54' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink-soft)'>稳 · 噪声低</text><text x='420' y='54' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink-soft)'>不稳 · 噪声高</text><text x='34' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink-soft)'>准</text><text x='34' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-faint)'>偏差低</text><text x='34' y='284' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink-soft)'>偏</text><text x='34' y='300' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-faint)'>偏差高</text><circle cx='210' cy='148' r='44' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='210' cy='148' r='27' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='210' cy='148' r='11' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='210' cy='148' r='2.5' style='fill:var(--ink-faint)'/><circle cx='206' cy='144' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='213' cy='146' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='208' cy='153' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='214' cy='150' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='205' cy='149' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='420' cy='148' r='44' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='420' cy='148' r='27' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='420' cy='148' r='11' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='420' cy='148' r='2.5' style='fill:var(--ink-faint)'/><circle cx='400' cy='136' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='440' cy='145' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='411' cy='167' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='434' cy='131' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='418' cy='160' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='401' cy='160' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='210' cy='282' r='44' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='210' cy='282' r='27' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='210' cy='282' r='11' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='210' cy='282' r='2.5' style='fill:var(--ink-faint)'/><circle cx='219' cy='263' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='227' cy='266' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='222' cy='271' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='230' cy='264' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='218' cy='269' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='420' cy='282' r='44' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='420' cy='282' r='27' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='420' cy='282' r='11' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='420' cy='282' r='2.5' style='fill:var(--ink-faint)'/><circle cx='416' cy='254' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='454' cy='262' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='430' cy='284' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='447' cy='251' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='438' cy='278' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='421' cy='268' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><text x='210' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>又准又稳 · 理想</text><text x='420' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--cinnabar-pure)'>准但不稳 · 纯噪声</text><text x='210' y='344' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>稳但不准 · 纯偏差</text><text x='420' y='344' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--cinnabar-pure)'>又偏又散 · 两者都有</text><text x='280' y='378' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>测量的两个维度:准不准 = 偏差,稳不稳 = 噪声</text></svg>",
-      "caption": "靶心是这次测量该瞄的真值。偏差,是一致地偏向一侧;噪声,是彼此离散。两台毛病各自为政——一台仪器可以又准又飘,也可以稳稳地偏。"
-    },
-    {
-      "type": "h2",
-      "text": "判断,不是品味"
-    },
-    {
-      "type": "p",
-      "text": "但这副眼镜有个**戴的前提**:得先分清你面对的,是「判断」还是「品味」。卡尼曼把话说得很直:本书要处理的,是有**更对/更错**之分的**判断**——罪该判几年、片子是不是恶性、这单保险该定多少钱,这些都存在一个「更接近真相」的方向,所以才谈得上准不准。而**品味**是另一回事:你爱吃辣、我偏爱蓝色、他周末只想宅着——这里没有对错,你说不出谁「测偏了」,因为压根没有一个客观的量在那儿等着被测。"
-    },
-    {
-      "type": "p",
-      "text": "这条界线要紧,因为它决定了「噪声」这个词到底有没有意义。两个人对一道菜咸淡的偏好不同,那不叫噪声,那叫各有各的舌头,天经地义。可两个法官对同一桩案子判出两个刑期,就不是「各有口味」能开脱的了——判决理应有个「对」的方向,他俩的分歧,是实打实的误差。判断背后,藏着一个隐含的标准:**假如把全世界最好的专家请来,让他们反复、独立地评估同一个案子,结论会向某个答案收敛**——那个收敛点,就是这次「测量」要瞄的靶心。有靶心,才有「偏」和「散」可谈。"
-    },
-    {
-      "type": "quote",
-      "original": "品味无所谓对错;判断有——所以判断才谈得上准与稳。",
-      "translation": "这是「判断即测量」这副眼镜能戴的前提:先确认你面对的是有对错的判断,而非纯粹的个人偏好,「噪声」二字才有意义。对辣度、颜色、周末怎么过,不存在噪声——那本就是各人的自由。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对照",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>判断,不是品味:只有前者才谈得上「对错」</text><rect x='28' y='46' width='244' height='190' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='150' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--cinnabar-pure)'>判断 · judgment</text><text x='150' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>有更对/更错,谈得上准确</text><text x='48' y='126' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 这桩罪该判几年</text><text x='48' y='152' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 这片阴影是不是恶性</text><text x='48' y='178' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 这名下属绩效几分</text><text x='48' y='204' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 这单保险该定多少钱</text><rect x='288' y='46' width='244' height='190' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='410' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--azure)'>品味 · matters of taste</text><text x='410' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>只是偏好,无所谓对错</text><text x='308' y='126' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 你爱吃辣</text><text x='308' y='152' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 我偏爱蓝色</text><text x='308' y='178' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 周末想宅还是出门</text><text x='308' y='204' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 这首歌好不好听</text><text x='280' y='272' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>本书只处理判断——唯有「有对错」,才谈得上准不准、稳不稳</text></svg>",
-      "caption": "判断藏着一个隐含标准:最好的一批专家反复独立评估会收敛到的那个答案。品味没有这样的靶心,所以两个人口味不同,不算谁「测偏了」。"
-    },
-    {
-      "type": "h2",
-      "text": "噪声,就是这台仪器在自己抖"
-    },
-    {
-      "type": "p",
-      "text": "认清了判断是测量,「噪声」这个概念一下就落了地:**噪声,就是仪器的不稳定**。同一台体重秤,同一个人,早晚称出两个数,这台秤在抖——这就是噪声最素朴的样子。把镜头拉远,一个组织里往往不是一台仪器,而是**一群「人肉仪器」**:一排核保员、一批放射科医生、一队面试官,名义上都在测同一个量、都该报出可比的读数。可你把同一个案子发给他们,读数却彼此打架——这群仪器之间的离散,就是**系统噪声**。"
-    },
-    {
-      "type": "p",
-      "text": "这里有个让人不太舒服、卡尼曼却说得斩钉截铁的结论:**只要有判断,就有噪声**,几乎无一例外。哪里靠人的脑子去权衡、去拍板,哪里就有飘忽:法官、医生、核保、面试、评审论文、给酒打分、预测销量……你能想到的每一处专业判断,一量,都带着噪声,而且往往比当事人以为的大得多。这不是骂谁不专业——人不是精密仪器,本就带着一点抖。可怕的从来不是抖本身,而是这份抖长期**没人量、没人认**:大家默认「同行看同一个案子,会看出差不多的结论」,而这份「差不多」,真去量,常常碎得让人吃惊。"
-    },
-    {
-      "type": "h2",
-      "text": "噪声审计:给组织这台仪器,校一次准"
-    },
-    {
-      "type": "p",
-      "text": "既然判断是测量,降噪的第一步,就该像给仪器校准一样:**先量出它到底有多不稳**。这件事有个名字,叫**噪声审计**(noise audit)。做法朴素得近乎笨:精心挑一批真实、有代表性的案例,发给一群本该给出可比判断的专业人员,让他们**各自独立**地判——互不通气、互不参考,就像让一排秤分别去称同一个砝码;然后,把他们的读数摆到一起,统计彼此的离散有多大。这个离散度,就是这台「组织仪器」的噪声量,一个实实在在、能写进报告的数字。"
-    },
-    {
-      "type": "p",
-      "text": "书里反复出现同一幕:**审计一做,噪声总是远远超出管理层的预估**。高管们事先大多以为,自家专家看同一个案子,分歧顶多在一成上下;可真数据摆出来,分歧动辄是那个数字的好几倍。为什么长期没人发觉?因为在日常里,两个判断几乎从不被摆到同一张桌上对质——每个案子只经一个人的手,判完就走,谁也没机会看见「换个人会判成什么样」。噪声,是一种**看不见的分歧**;而噪声审计,干的就是把它从看不见,变成一个摆在桌面上、能讨论、能追问、能管的数。"
-    },
-    {
-      "type": "quote",
-      "original": "你没法改善你看不见的东西。",
-      "translation": "噪声长期被放过,不是因为它小,而是因为它藏在「一案一人」的流程里从不现形。噪声审计的全部价值,就是先让它现形——量出来,才谈得上降下去。"
-    },
-    {
-      "type": "figure",
-      "ftype": "流程",
-      "svg": "<svg viewBox='0 0 560 340' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>噪声审计:让一群「人肉仪器」称同一个砝码</text><rect x='24' y='46' width='150' height='56' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='99' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>① 同一批</text><text x='99' y='88' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>精心设计的案例</text><line x1='180' y1='74' x2='200' y2='74' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='200,70 208,74 200,78' style='fill:var(--ink-faint)'/><rect x='210' y='46' width='150' height='56' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='285' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>② 多名专家</text><text x='285' y='88' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>各自独立地判</text><line x1='366' y1='74' x2='386' y2='74' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='386,70 394,74 386,78' style='fill:var(--ink-faint)'/><rect x='396' y='46' width='140' height='56' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='466' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>③ 量读数</text><text x='466' y='88' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>彼此的离散度</text><text x='280' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>同一个案子,各人报出的分:</text><line x1='70' y1='192' x2='500' y2='192' style='stroke:var(--line);stroke-width:1.5'/><text x='130' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>甲</text><text x='178' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>乙</text><text x='246' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>丙</text><text x='322' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>丁</text><text x='392' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>戊</text><text x='452' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>己</text><circle cx='130' cy='192' r='5' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='178' cy='192' r='5' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='246' cy='192' r='5' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='322' cy='192' r='5' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='392' cy='192' r='5' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='452' cy='192' r='5' style='fill:var(--cinnabar-pure);opacity:0.85'/><path d='M130 206 L130 214 L452 214 L452 206' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='291' y='234' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>彼此的离散 = 噪声量</text><text x='280' y='292' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>一做审计,噪声总远超管理层的预估——先量出来,才谈得上降</text><text x='280' y='314' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>关键在「各自独立」:互不通气,才照得出真实的离散</text></svg>",
-      "caption": "审计的要害是「各自独立」——一旦互相通气,读数会被彼此拉齐,离散被掩盖,你就照不出这台仪器真实有多抖。"
-    },
-    {
-      "type": "h2",
-      "text": "客观无知:仪器的毛病,和世界本难料,是两回事"
-    },
-    {
-      "type": "p",
-      "text": "这副眼镜还帮你分清一对特别容易混为一谈的东西。有些判断,天生就难——尤其是预测未来:这个创业者五年后成不成、这名缓刑犯会不会再犯、明年的销量究竟几何。就算你把仪器打磨到极致、把噪声降到零,这类判断也注定错得不少,因为**世界本身,就留了一大片没法提前知道的空白**。卡尼曼给这片空白起了个名字:**客观无知**(objective ignorance)。它是准确度头顶的一块天花板——再好的预测,也顶不破未来固有的不确定。"
-    },
-    {
-      "type": "p",
-      "text": "但关键的分寸在这儿:**客观无知,和噪声,是两码事**。客观无知说的是「这个量本来就难测」,是世界的性质,谁也躲不过,只能谦逊地承认「我们能算的就到这儿」。而噪声说的是「我们这群仪器彼此对不齐」,这是**仪器自身的毛病**,跟世界难不难料毫无关系——哪怕面对一个原则上完全可测的量,一群人照样能判出一地鸡毛。所以千万别把两者混着用:不能因为「未来本就难料」,就顺势原谅了「我们各判各的」。前者要的是谦逊,后者要的是改善;前者是命,后者是病,而**病,是可以治的**。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对照",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>两种不一样的误差:世界难料 vs 仪器不一致</text><rect x='28' y='48' width='244' height='176' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='150' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--azure)'>客观无知</text><text x='150' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>objective ignorance</text><text x='150' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>有些量本就难测,</text><text x='150' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>尤其是预测未来;</text><text x='150' y='168' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>再好的仪器也顶着</text><text x='150' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>一块测不准的天花板。</text><text x='150' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--azure)'>不可全消 · 谦逊面对</text><rect x='288' y='48' width='244' height='176' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='410' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--cinnabar-pure)'>噪声</text><text x='410' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>noise</text><text x='410' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>同一批人肉仪器,</text><text x='410' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>读数彼此打架;</text><text x='410' y='168' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>这是仪器自身的毛病,</text><text x='410' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>与世界难不难料无关。</text><text x='410' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>可以改善 · 别当借口</text><text x='280' y='272' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>别拿「世界本难料」当「我们各判各的」的挡箭牌——那是两回事</text></svg>",
-      "caption": "客观无知是命,只能谦逊;噪声是病,可以医治。把它们分清,才不至于用「未来难料」搪塞掉本可以降下来的那一半误差。"
-    },
-    {
-      "type": "h2",
-      "text": "分寸:是给判断量个体温,不是把人贬成机器"
-    },
-    {
-      "type": "p",
-      "text": "最后得把这副眼镜的边界说清,免得会错意。说「判断是测量」「人是仪器」,绝不是要把专业人员贬成一台冷冰冰的机器,更不是说经验、直觉、临场的体察不值钱——恰恰相反,正因为判断里有大量机器替不了的人味,它才既珍贵、又难免带噪。「测量」在这里是一副**诊断的眼镜**,不是一句贬低的判词:它只是帮你把「这个判断靠不靠谱」这个含糊的问题,换成两个能分头下手的具体问题——**准不准**(偏差),**稳不稳**(噪声)。给判断量一次「体温」,是为了对症,不是为了羞辱谁。"
-    },
-    {
-      "type": "p",
-      "text": "把这一章收进兜里,你就多了三样随身的东西。其一,一副**测量的眼镜**:往后再看任何专业判断,先本能地拆成两问——它偏不偏、它散不散。其二,一把**审计的尺子**:想知道一群人到底有多不齐,别靠拍脑袋猜,发一批案子让他们各判各的,把离散量出来。其三,一份**该有的谦逊、和该有的不甘**:对世界固有的客观无知,认命、谦逊;对仪器自身的噪声,不认、要改。而这份「散」,一旦被人凑到一堆、彼此传染,还会比单打独斗时更凶——下一章,卡尼曼就要去看:**当判断发生在群体里,噪声是怎样被一步步放大的**。"
-    }
-  ]
+ "title": "你的大脑是一台测量仪器",
+ "subtitle": "每一个专业判断,都是拿一台仪器去测某个看不见的量——于是你能追问它两件事:准不准(偏差)、稳不稳(噪声)",
+ "centralIdea": "把专业判断看成一次「测量」,是理解噪声的关键一招:医生打分、法官量刑、核保定价,每一次都像拿起一台仪器去测某个看不见的量,再用一个刻度把读数报出来。既是测量,就有两个维度——准不准(偏差)、稳不稳(噪声)。偏差早有人盯,噪声这一半却长期没人量。而量它有一把现成的尺子:噪声审计——让多名专家各自独立判同一批案例,统计他们彼此的离散;一做,噪声总远超管理层的预估。同时要分清:有些判断天生就难(客观无知,只能谦逊),但噪声是仪器自身的毛病、可以改善——这是两回事。这副「测量」的眼镜不是把人贬成机器,而是帮你把「靠不靠谱」拆成两个能分头下手的具体问题。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "前三章像三记闷棍:本该一样的判断,却因人、因时四下发散——法官量刑、医生读片、核保定价,同一份卷宗到了不同人手里、甚至同一个人不同时候手里,结论能差出一大截。你大概已经憋着一个问题:这些「散」,到底该怎么**看**、怎么**量**?这一章,卡尼曼递给你一副眼镜。戴上它,你会发现一件朴素得吓人的事:**一个专业判断,本质上是一次测量**。医生给病情打个分、面试官给候选人评个级、分析师给风险估个价——每一次,都像拿起一台仪器,去测某个看不见的量,再用一个刻度(一个数字、一个等级)把读数报出来。而只要是测量,你就会本能地追问两件事:这台仪器**准不准**、**稳不稳**。准不准,是偏差;稳不稳,就是噪声。前者早有人盯,后者长期没人量——这一章,就是要把那把没人用过的尺子,塞到你手里。"
+  },
+  {
+   "type": "h2",
+   "text": "判断,其实是一次测量"
+  },
+  {
+   "type": "p",
+   "text": "先把「测量」这个词想透。你家的体重秤,测的是「你有多重」这个真实存在的量,再用「公斤」这把刻度报个数给你。一台好秤,得同时守两条:一是**准**——它报的数,得贴近你真实的体重,不能一站上去就凭空多出五公斤(那叫**偏差**);二是**稳**——同一个你、同一个早晨、连称三次,它不该一次 62、一次 67、一次 59(那种飘忽,就是**噪声**)。把这两条搬到专业判断上,严丝合缝:法官在「测」一桩罪行该配多重的刑,医生在「测」这片阴影有几分凶险,主管在「测」这名下属值几分。他们各揣着一把心里的刻度,把读数报出来。"
+  },
+  {
+   "type": "p",
+   "text": "这副「判断即测量」的眼镜,妙就妙在它逼你把一句含糊的褒贬,拆成两个能分开问、分开管的维度。从前评价一个判断,我们只会笼统地说「靠不靠谱」;现在你能清清楚楚地分两刀切。第一刀问**准不准**:这群人的判断,平均而言是不是系统性地偏高、或偏低?(那是偏差。)第二刀问**稳不稳**:把同一个案子发给他们,或把同一个案子在不同时候发给同一个人,读数会不会自己先打起来?(那是噪声。)偏差,是所有箭齐刷刷偏向靶心的同一侧;噪声,是箭四处乱溅、彼此离散。两者是**各自独立**的毛病:一台秤可以又准又飘,也可以稳得很却稳稳地偏——它们得分开诊断、分开治。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "svg": "<svg viewBox='0 0 560 396' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>把判断看成测量:准(偏差)与稳(噪声)两个维度</text><text x='210' y='54' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink-soft)'>稳 · 噪声低</text><text x='420' y='54' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink-soft)'>不稳 · 噪声高</text><text x='34' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink-soft)'>准</text><text x='34' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-faint)'>偏差低</text><text x='34' y='284' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink-soft)'>偏</text><text x='34' y='300' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-faint)'>偏差高</text><circle cx='210' cy='148' r='44' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='210' cy='148' r='27' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='210' cy='148' r='11' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='210' cy='148' r='2.5' style='fill:var(--ink-faint)'/><circle cx='206' cy='144' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='213' cy='146' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='208' cy='153' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='214' cy='150' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='205' cy='149' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='420' cy='148' r='44' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='420' cy='148' r='27' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='420' cy='148' r='11' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='420' cy='148' r='2.5' style='fill:var(--ink-faint)'/><circle cx='400' cy='136' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='440' cy='145' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='411' cy='167' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='434' cy='131' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='418' cy='160' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='401' cy='160' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='210' cy='282' r='44' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='210' cy='282' r='27' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='210' cy='282' r='11' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='210' cy='282' r='2.5' style='fill:var(--ink-faint)'/><circle cx='219' cy='263' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='227' cy='266' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='222' cy='271' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='230' cy='264' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='218' cy='269' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='420' cy='282' r='44' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='420' cy='282' r='27' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='420' cy='282' r='11' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='420' cy='282' r='2.5' style='fill:var(--ink-faint)'/><circle cx='416' cy='254' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='454' cy='262' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='430' cy='284' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='447' cy='251' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='438' cy='278' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='421' cy='268' r='3.6' style='fill:var(--cinnabar-pure);opacity:0.85'/><text x='210' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>又准又稳 · 理想</text><text x='420' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--cinnabar-pure)'>准但不稳 · 纯噪声</text><text x='210' y='344' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>稳但不准 · 纯偏差</text><text x='420' y='344' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--cinnabar-pure)'>又偏又散 · 两者都有</text><text x='280' y='378' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>测量的两个维度:准不准 = 偏差,稳不稳 = 噪声</text></svg>",
+   "caption": "靶心是这次测量该瞄的真值。偏差,是一致地偏向一侧;噪声,是彼此离散。两台毛病各自为政——一台仪器可以又准又飘,也可以稳稳地偏。"
+  },
+  {
+   "type": "h2",
+   "text": "判断,不是品味"
+  },
+  {
+   "type": "p",
+   "text": "但这副眼镜有个**戴的前提**:得先分清你面对的,是「判断」还是「品味」。卡尼曼把话说得很直:本书要处理的,是有**更对/更错**之分的**判断**——罪该判几年、片子是不是恶性、这单保险该定多少钱,这些都存在一个「更接近真相」的方向,所以才谈得上准不准。而**品味**是另一回事:你爱吃辣、我偏爱蓝色、他周末只想宅着——这里没有对错,你说不出谁「测偏了」,因为压根没有一个客观的量在那儿等着被测。"
+  },
+  {
+   "type": "p",
+   "text": "这条界线要紧,因为它决定了「噪声」这个词到底有没有意义。两个人对一道菜咸淡的偏好不同,那不叫噪声,那叫各有各的舌头,天经地义。可两个法官对同一桩案子判出两个刑期,就不是「各有口味」能开脱的了——判决理应有个「对」的方向,他俩的分歧,是实打实的误差。判断背后,藏着一个隐含的标准:**假如把全世界最好的专家请来,让他们反复、独立地评估同一个案子,结论会向某个答案收敛**——那个收敛点,就是这次「测量」要瞄的靶心。有靶心,才有「偏」和「散」可谈。"
+  },
+  {
+   "type": "quote",
+   "original": "品味无所谓对错;判断有——所以判断才谈得上准与稳。",
+   "translation": "这是「判断即测量」这副眼镜能戴的前提:先确认你面对的是有对错的判断,而非纯粹的个人偏好,「噪声」二字才有意义。对辣度、颜色、周末怎么过,不存在噪声——那本就是各人的自由。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>判断,不是品味:只有前者才谈得上「对错」</text><rect x='28' y='46' width='244' height='190' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='150' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--cinnabar-pure)'>判断 · judgment</text><text x='150' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>有更对/更错,谈得上准确</text><text x='48' y='126' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 这桩罪该判几年</text><text x='48' y='152' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 这片阴影是不是恶性</text><text x='48' y='178' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 这名下属绩效几分</text><text x='48' y='204' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 这单保险该定多少钱</text><rect x='288' y='46' width='244' height='190' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='410' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--azure)'>品味 · matters of taste</text><text x='410' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>只是偏好,无所谓对错</text><text x='308' y='126' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 你爱吃辣</text><text x='308' y='152' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 我偏爱蓝色</text><text x='308' y='178' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 周末想宅还是出门</text><text x='308' y='204' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>· 这首歌好不好听</text><text x='280' y='272' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>本书只处理判断——唯有「有对错」,才谈得上准不准、稳不稳</text></svg>",
+   "caption": "判断藏着一个隐含标准:最好的一批专家反复独立评估会收敛到的那个答案。品味没有这样的靶心,所以两个人口味不同,不算谁「测偏了」。"
+  },
+  {
+   "type": "h2",
+   "text": "噪声,就是这台仪器在自己抖"
+  },
+  {
+   "type": "p",
+   "text": "认清了判断是测量,「噪声」这个概念一下就落了地:**噪声,就是仪器的不稳定**。同一台体重秤,同一个人,早晚称出两个数,这台秤在抖——这就是噪声最素朴的样子。把镜头拉远,一个组织里往往不是一台仪器,而是**一群「人肉仪器」**:一排核保员、一批放射科医生、一队面试官,名义上都在测同一个量、都该报出可比的读数。可你把同一个案子发给他们,读数却彼此打架——这群仪器之间的离散,就是**系统噪声**。"
+  },
+  {
+   "type": "p",
+   "text": "这里有个让人不太舒服、卡尼曼却说得斩钉截铁的结论:**只要有判断,就有噪声**,几乎无一例外。哪里靠人的脑子去权衡、去拍板,哪里就有飘忽:法官、医生、核保、面试、评审论文、给酒打分、预测销量……你能想到的每一处专业判断,一量,都带着噪声,而且往往比当事人以为的大得多。这不是骂谁不专业——人不是精密仪器,本就带着一点抖。可怕的从来不是抖本身,而是这份抖长期**没人量、没人认**:大家默认「同行看同一个案子,会看出差不多的结论」,而这份「差不多」,真去量,常常碎得让人吃惊。"
+  },
+  {
+   "type": "h2",
+   "text": "噪声审计:给组织这台仪器,校一次准"
+  },
+  {
+   "type": "p",
+   "text": "既然判断是测量,降噪的第一步,就该像给仪器校准一样:**先量出它到底有多不稳**。这件事有个名字,叫**噪声审计**(noise audit)。做法朴素得近乎笨:精心挑一批真实、有代表性的案例,发给一群本该给出可比判断的专业人员,让他们**各自独立**地判——互不通气、互不参考,就像让一排秤分别去称同一个砝码;然后,把他们的读数摆到一起,统计彼此的离散有多大。这个离散度,就是这台「组织仪器」的噪声量,一个实实在在、能写进报告的数字。"
+  },
+  {
+   "type": "p",
+   "text": "书里反复出现同一幕:**审计一做,噪声总是远远超出管理层的预估**。高管们事先大多以为,自家专家看同一个案子,分歧顶多在一成上下;可真数据摆出来,分歧动辄是那个数字的好几倍。为什么长期没人发觉?因为在日常里,两个判断几乎从不被摆到同一张桌上对质——每个案子只经一个人的手,判完就走,谁也没机会看见「换个人会判成什么样」。噪声,是一种**看不见的分歧**;而噪声审计,干的就是把它从看不见,变成一个摆在桌面上、能讨论、能追问、能管的数。"
+  },
+  {
+   "type": "quote",
+   "original": "你没法改善你看不见的东西。",
+   "translation": "噪声长期被放过,不是因为它小,而是因为它藏在「一案一人」的流程里从不现形。噪声审计的全部价值,就是先让它现形——量出来,才谈得上降下去。"
+  },
+  {
+   "type": "figure",
+   "ftype": "流程",
+   "svg": "<svg viewBox='0 0 560 340' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>噪声审计:让一群「人肉仪器」称同一个砝码</text><rect x='24' y='46' width='150' height='56' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='99' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>① 同一批</text><text x='99' y='88' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>精心设计的案例</text><line x1='180' y1='74' x2='200' y2='74' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='200,70 208,74 200,78' style='fill:var(--ink-faint)'/><rect x='210' y='46' width='150' height='56' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='285' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>② 多名专家</text><text x='285' y='88' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>各自独立地判</text><line x1='366' y1='74' x2='386' y2='74' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='386,70 394,74 386,78' style='fill:var(--ink-faint)'/><rect x='396' y='46' width='140' height='56' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='466' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>③ 量读数</text><text x='466' y='88' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>彼此的离散度</text><text x='280' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>同一个案子,各人报出的分:</text><line x1='70' y1='192' x2='500' y2='192' style='stroke:var(--line);stroke-width:1.5'/><text x='130' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>甲</text><text x='178' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>乙</text><text x='246' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>丙</text><text x='322' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>丁</text><text x='392' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>戊</text><text x='452' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>己</text><circle cx='130' cy='192' r='5' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='178' cy='192' r='5' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='246' cy='192' r='5' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='322' cy='192' r='5' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='392' cy='192' r='5' style='fill:var(--cinnabar-pure);opacity:0.85'/><circle cx='452' cy='192' r='5' style='fill:var(--cinnabar-pure);opacity:0.85'/><path d='M130 206 L130 214 L452 214 L452 206' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='291' y='234' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>彼此的离散 = 噪声量</text><text x='280' y='292' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>一做审计,噪声总远超管理层的预估——先量出来,才谈得上降</text><text x='280' y='314' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>关键在「各自独立」:互不通气,才照得出真实的离散</text></svg>",
+   "caption": "审计的要害是「各自独立」——一旦互相通气,读数会被彼此拉齐,离散被掩盖,你就照不出这台仪器真实有多抖。"
+  },
+  {
+   "type": "h2",
+   "text": "客观无知:仪器的毛病,和世界本难料,是两回事"
+  },
+  {
+   "type": "p",
+   "text": "这副眼镜还帮你分清一对特别容易混为一谈的东西。有些判断,天生就难——尤其是预测未来:这个创业者五年后成不成、这名缓刑犯会不会再犯、明年的销量究竟几何。就算你把仪器打磨到极致、把噪声降到零,这类判断也注定错得不少,因为**世界本身,就留了一大片没法提前知道的空白**。卡尼曼给这片空白起了个名字:**客观无知**(objective ignorance)。它是准确度头顶的一块天花板——再好的预测,也顶不破未来固有的不确定。"
+  },
+  {
+   "type": "p",
+   "text": "但关键的分寸在这儿:**客观无知,和噪声,是两码事**。客观无知说的是「这个量本来就难测」,是世界的性质,谁也躲不过,只能谦逊地承认「我们能算的就到这儿」。而噪声说的是「我们这群仪器彼此对不齐」,这是**仪器自身的毛病**,跟世界难不难料毫无关系——哪怕面对一个原则上完全可测的量,一群人照样能判出一地鸡毛。所以千万别把两者混着用:不能因为「未来本就难料」,就顺势原谅了「我们各判各的」。前者要的是谦逊,后者要的是改善;前者是命,后者是病,而**病,是可以治的**。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>两种不一样的误差:世界难料 vs 仪器不一致</text><rect x='28' y='48' width='244' height='176' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='150' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--azure)'>客观无知</text><text x='150' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>objective ignorance</text><text x='150' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>有些量本就难测,</text><text x='150' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>尤其是预测未来;</text><text x='150' y='168' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>再好的仪器也顶着</text><text x='150' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>一块测不准的天花板。</text><text x='150' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--azure)'>不可全消 · 谦逊面对</text><rect x='288' y='48' width='244' height='176' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='410' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--cinnabar-pure)'>噪声</text><text x='410' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>noise</text><text x='410' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>同一批人肉仪器,</text><text x='410' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>读数彼此打架;</text><text x='410' y='168' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>这是仪器自身的毛病,</text><text x='410' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>与世界难不难料无关。</text><text x='410' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>可以改善 · 别当借口</text><text x='280' y='272' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>别拿「世界本难料」当「我们各判各的」的挡箭牌——那是两回事</text></svg>",
+   "caption": "客观无知是命,只能谦逊;噪声是病,可以医治。把它们分清,才不至于用「未来难料」搪塞掉本可以降下来的那一半误差。"
+  },
+  {
+   "type": "h2",
+   "text": "分寸:是给判断量个体温,不是把人贬成机器"
+  },
+  {
+   "type": "p",
+   "text": "最后得把这副眼镜的边界说清,免得会错意。说「判断是测量」「人是仪器」,绝不是要把专业人员贬成一台冷冰冰的机器,更不是说经验、直觉、临场的体察不值钱——恰恰相反,正因为判断里有大量机器替不了的人味,它才既珍贵、又难免带噪。「测量」在这里是一副**诊断的眼镜**,不是一句贬低的判词:它只是帮你把「这个判断靠不靠谱」这个含糊的问题,换成两个能分头下手的具体问题——**准不准**(偏差),**稳不稳**(噪声)。给判断量一次「体温」,是为了对症,不是为了羞辱谁。"
+  },
+  {
+   "type": "p",
+   "text": "把这一章收进兜里,你就多了三样随身的东西。其一,一副**测量的眼镜**:往后再看任何专业判断,先本能地拆成两问——它偏不偏、它散不散。其二,一把**审计的尺子**:想知道一群人到底有多不齐,别靠拍脑袋猜,发一批案子让他们各判各的,把离散量出来。其三,一份**该有的谦逊、和该有的不甘**:对世界固有的客观无知,认命、谦逊;对仪器自身的噪声,不认、要改。而这份「散」,一旦被人凑到一堆、彼此传染,还会比单打独斗时更凶——下一章,卡尼曼就要去看:"
+  },
+  {
+   "type": "pull",
+   "text": "当判断发生在群体里,噪声是怎样被一步步放大的。"
+  }
+ ]
 }

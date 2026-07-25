@@ -1,121 +1,125 @@
 {
-  "title": "框架效应与心理账户:同一件事,两种选择",
-  "subtitle": "换个说法、换个记账方式,你的决定就变了——学会主动换框、剔除沉没成本",
-  "centralIdea": "承接前景理论,这一章讲一件让人不安的事:同一个现实,换个说法或换本账,人的选择就会变。①框架效应(framing)——逻辑上完全等价的两种表述,会引出相反的决定,因为系统1对措辞里的「得」「失」色彩极其敏感,照单全收。经典的「亚洲疾病问题」里,同一套防疫方案,说成「能救活200人」时人们求稳,说成「会死掉400人」时人们转而冒险,数字分毫不差,选择却反了过来;连医生也会因「存活率90%」还是「死亡率10%」的说法改变建议。②心理账户(mental accounting)——人把钱按来源和用途分进不同的「抽屉」,违背「钱是可替换的」这条理性原则:丢了同价的电影票和丢了同价的现金,买票的意愿就不一样;赌资和工资花起来两套心态。③沉没成本谬误(sunk cost)——为已经花掉、再也追不回的钱和时间继续投入(暴风雪硬开车去看球、烂项目因「已投这么多」不肯止损、难看的电影舍不得退场),只因不甘心认亏。④处置效应——怕后悔让人卖掉赚钱的、死扛亏钱的。核心信息:你的选择常常不取决于事实本身,而取决于事实被怎么描述、被记进哪本账。防身办法:重要决策刻意换个框架再看一遍(既算存活也算死亡)、把沉没成本明确排除、用宽框架整体权衡而非一笔笔孤立地算。分寸:讲机制与自我防范,不教操纵他人。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "同一台手术,医生有两种说法。第一种:「做完这台手术,一个月后还活着的病人有九成。」第二种:「这台手术,一个月内会死掉一成的人。」两句话说的是同一件事,数字严丝合缝地对得上,可听到第一种说法的人,大多点头愿意做;听到第二种的,不少人当场犹豫起来——连医生自己给建议时,也会被这层措辞悄悄带偏。这一章要讲的,就是这种怪事:很多时候,决定你选什么的,不是事实本身,而是事实被怎么说出口、被记进了哪一本账。"
-    },
-    {
-      "type": "h2",
-      "text": "一样的事实,两种说法,两个决定"
-    },
-    {
-      "type": "p",
-      "text": "心理学家做过一个后来无比经典的实验,叫「亚洲疾病问题」。设想有一种传染病即将暴发,预计会夺走 600 条人命,现在有两套防疫方案供你选。第一组人被这样告知:方案 A「确定能救活 200 人」;方案 B「有三分之一的机会把 600 人全救活,三分之二的机会一个都救不成」。大多数人选了稳妥的 A——到手的 200 条命,先攥牢,不赌。"
-    },
-    {
-      "type": "p",
-      "text": "第二组人面对的其实是同一套方案,只是换了个说法:方案 A'「会有 400 人死掉」;方案 B'「有三分之一的机会没有人死,三分之二的机会 600 人全部死掉」。这一回,多数人却掉头选了冒险的 B'。可你只要摊开算一下就会发现:「救活 200 人」和「死掉 400 人」是同一件事,A 和 A' 分毫不差,B 和 B' 也完全一样。仅仅因为一边说「救」、一边说「死」,人群的选择就整个反了过来。"
-    },
-    {
-      "type": "figure",
-      "ftype": "compare",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:15px;font-weight:600'>亚洲疾病问题:同一方案,两种说法</text><text x='280' y='50' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>600 人染病,同一套防疫方案,只换了描述的口径</text><line x1='280' y1='66' x2='280' y2='202' style='stroke:var(--line);stroke-width:1;stroke-dasharray:4 4'/><text x='142' y='88' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:13px;font-weight:600'>收益框架 · 说成「能救活 200 人」</text><rect x='24' y='102' width='236' height='58' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='142' y='126' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12.5px'>多数人选 → 保守方案</text><text x='142' y='147' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>稳稳救回 200 人,不赌</text><text x='418' y='88' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:13px;font-weight:600'>损失框架 · 说成「会死掉 400 人」</text><rect x='300' y='102' width='236' height='58' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='418' y='126' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12.5px'>多数人转投 → 冒险方案</text><text x='418' y='147' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>赌一把:或全救,或全死</text><text x='142' y='186' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:11px'>救 200 = 死 400</text><text x='418' y='186' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:11px'>死 400 = 救 200</text><rect x='24' y='216' width='512' height='56' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='242' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>两组数字完全一样,决定却反了过来</text><text x='280' y='261' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>「得」的框架让人求稳,「失」的框架让人冒险</text></svg>",
-      "caption": "亚洲疾病问题:同一方案换个说法,人群的选择就整个翻了过来"
-    },
-    {
-      "type": "p",
-      "text": "这就是**框架效应(framing)**:逻辑上等价的两种表述,会引出不同的决定。窍门在于人对「得」和「失」的态度天生不对称——面对明确的「收益」(救活 200 人),我们求稳,见好就收;面对明确的「损失」(死掉 400 人),我们反而愿意赌一把,想搏一个「一个都不死」。所以把同一件事装进「得」的框架,人就保守;装进「失」的框架,人就冒险。措辞没动事实一根毫毛,却拨动了选择的方向。"
-    },
-    {
-      "type": "p",
-      "text": "别以为这只是外行才会中招。前面那台手术的例子,研究者真的拿去问过医生:同样的疗法,说成「一个月存活率 90%」时,愿意推荐的医生明显更多;说成「一个月死亡率 10%」时,推荐的人就少了一截——受过多年训练、天天跟数字打交道的专业人士,照样被一句话的框架带着走。原因在于,做这类快速判断的是我们脑子里的**系统 1**:它对措辞里的得失色彩极其敏感,照单全收,懒得去做「90% 活着 = 10% 死掉」这一步本该顺手的换算。"
-    },
-    {
-      "type": "quote",
-      "original": "同样一件事,包进「得」里,人就求稳;包进「失」里,人就敢赌。",
-      "translation": "框架效应的核心。改变的不是事实,而是事实被涂上的得失底色;系统1对这层底色极其敏感,来不及折算就先作了反应。"
-    },
-    {
-      "type": "h2",
-      "text": "心理账户:钱被分进不同的抽屉"
-    },
-    {
-      "type": "p",
-      "text": "换个说法能改选择,换个「记账方式」同样能。经济学里有一条本该成立的理性原则:钱是可替换的(fungible)——一百块就是一百块,不管它是工资、奖金还是路上捡的,进了你口袋,价值完全一样,该怎么花就怎么花。可现实里,几乎没人这么算账。我们会不自觉地把钱按**来源和用途**,分进一个个不同的「心理账户」:这是工资、这是奖金、这是买菜钱、这是旅游基金——像分进抽屉里的钱,彼此之间隔着一堵看不见的墙。"
-    },
-    {
-      "type": "p",
-      "text": "卡尼曼举过一个精巧的对照。你打算去看一场票价 200 元的演出:第一种情形,你到了门口,发现刚买的票弄丢了;第二种情形,你还没买票,却发现兜里丢了 200 元现金。两种情形损失的钱一模一样,可实验里,丢了票的人多半掉头回家、不肯再花 200 买一张;丢了现金的人则大多照旧买票进场。差别就在记账:丢票的人把「看这场演出」这本账算成了「400 元」,嫌太贵;丢现金的人,损失记在了「现金」账户上,和「看演出」这本账没打通,自然照买不误。"
-    },
-    {
-      "type": "figure",
-      "ftype": "diagram",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:15px;font-weight:600'>心理账户:同样是钱,分进不同抽屉</text><text x='280' y='50' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>理性上钱可以互换,人却按来源和用途分开记账</text><rect x='150' y='62' width='260' height='192' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><rect x='162' y='74' width='236' height='36' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><circle cx='384' cy='92' r='3' style='fill:var(--cinnabar-pure)'/><text x='176' y='97' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>工资 · 一分一厘省着花</text><rect x='162' y='120' width='236' height='36' rx='5' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='384' cy='138' r='3' style='fill:var(--ink-faint)'/><text x='176' y='143' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>奖金/年终 · 敢多花一点</text><rect x='162' y='166' width='236' height='36' rx='5' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='384' cy='184' r='3' style='fill:var(--ink-faint)'/><text x='176' y='189' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>中奖·赌资 · 花着不心疼</text><rect x='162' y='212' width='236' height='36' rx='5' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='384' cy='230' r='3' style='fill:var(--ink-faint)'/><text x='176' y='235' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>买菜钱 · 一块钱都计较</text><text x='280' y='282' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:12.5px;font-weight:600'>该合起来算的账,偏被一道道墙隔开分着算</text></svg>",
-      "caption": "钱本可互换,人却按来源和用途分进不同的心理抽屉,花起来两套心态"
-    },
-    {
-      "type": "p",
-      "text": "同一套逻辑,解释了很多我们习以为常的「双标」。赌场里赢来的钱、意外收到的红包,花起来往往大手大脚,因为它们被记进了「天上掉的」这本账,输掉、花光都不太心疼;可同样数目的工资,却是一分一厘省着来的。该合起来一起算的账,我们偏要分开算;本可以互相调剂的钱,却被一道道心理的墙隔死。心理账户不全是坏事——它帮我们做预算、控开销——但一旦这些墙让你做出「换成别的钱就绝不会做」的决定,它就开始悄悄坑你了。"
-    },
-    {
-      "type": "h2",
-      "text": "沉没成本:为泼出去的水继续买单"
-    },
-    {
-      "type": "p",
-      "text": "心理账户里最坑人的一格,叫**沉没成本(sunk cost)**——已经付出去、再也追不回来的钱、时间和精力。理性的算法只有一条:决定下一步做不做,只该看「从现在往后」还值不值;至于过去投进去多少,已成定局,本不该再进入这道计算。可人偏偏做不到。暴风雪的夜里,为了一张早买好的球赛票,硬要冒着危险开车出门——要是这票是别人白送的,你多半早就窝在家里了;一个明显要黄的项目,只因为「已经砸进去这么多」,反而不肯止损,继续追加;一部难看到坐不住的电影,想着「票都买了」,硬是熬到散场。"
-    },
-    {
-      "type": "figure",
-      "ftype": "flow",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:15px;font-weight:600'>沉没成本:该止损,却继续投入</text><rect x='24' y='66' width='150' height='64' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='99' y='94' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>已投入的钱·时间·精力</text><text x='99' y='114' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:11.5px;font-weight:600'>沉没成本 · 追不回</text><path d='M174 98 L206 98' style='stroke:var(--ink-faint);stroke-width:1.5'/><path d='M204 93 L214 98 L204 103 Z' style='fill:var(--ink-faint)'/><path d='M214 98 L214 88 L300 88' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><path d='M298 83 L308 88 L298 93 Z' style='fill:var(--ink-faint)'/><path d='M214 98 L214 168 L300 168' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><path d='M298 163 L308 168 L298 173 Z' style='fill:var(--ink-faint)'/><rect x='308' y='60' width='228' height='56' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='422' y='84' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12.5px;font-weight:600'>不甘心 → 继续投入</text><text x='422' y='104' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>暴风雪硬开车、烂项目再砸钱</text><rect x='308' y='140' width='228' height='56' rx='6' style='fill:none;stroke:var(--ink);stroke-width:1.5'/><text x='422' y='164' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12.5px;font-weight:600'>只看未来 → 该止损就止损</text><text x='422' y='184' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>把已花掉的明确排除在外</text><rect x='24' y='224' width='512' height='52' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='280' y='248' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>沉没成本已成定局,不该再左右下一步</text><text x='280' y='266' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>理性只比较「从现在往后」的得与失</text></svg>",
-      "caption": "已花掉的钱和时间追不回,本不该进入下一步的计算——不甘心却推着人继续加码"
-    },
-    {
-      "type": "p",
-      "text": "推着人这么干的,不是理智,而是不甘心——承认「已经亏了、那些投入打了水漂」太难受,于是宁可再赔上更多,也要拖着不认这笔账。可越是加码,窟窿只会越大。真正干净的问法是:**把已经花掉的一笔勾掉,只问「站在此刻,继续下去划不划算」**。这么一问,该退场的电影、该砍掉的项目、该留在家里的暴风雪夜,答案往往立刻就清楚了。"
-    },
-    {
-      "type": "h2",
-      "text": "卖掉赚钱的,死扛亏钱的"
-    },
-    {
-      "type": "p",
-      "text": "沉没成本背后那股「不认亏」的劲儿,还有个孪生兄弟,叫**处置效应**:人倾向于早早卖掉正在赚钱的东西,却死死扛住正在亏钱的。道理还是怕后悔——卖掉赚的,能落袋一份「我赢了」的痛快;而卖掉亏的,等于亲手把账面上的浮亏变成板上钉钉的实亏,等于当众承认自己当初看走了眼,这份难受让人一拖再拖。于是常见的局面是:该留的赚钱货被过早出手,该断的亏钱货却被一路死扛——决定去留的,不是它未来会怎样,而是卖掉的那一刻,我会不会后悔。"
-    },
-    {
-      "type": "quote",
-      "original": "该不该继续,只看往后值不值;已经花掉的,一笔勾掉,别再算进来。",
-      "translation": "剔除沉没成本的口诀。过去的投入无论多大都已追不回,让它退出这道决策,只比较从此刻往后的得与失。"
-    },
-    {
-      "type": "h2",
-      "text": "怎么少上当:换个框架再看一遍"
-    },
-    {
-      "type": "p",
-      "text": "好在这些坑都有解,而且解法都朴素得出奇。第一招是**主动换框**:遇到重要的选择,别只信第一种说法,刻意把它翻成相反的框架再看一遍。医生说「存活率 90%」,你就顺手补一句「也就是死亡率 10%」,两种说法都摆出来,天平立刻就稳了。同一份体检报告、同一个投资方案、同一句「已售出八成」,换个口径复述一遍,常常就能看清:让你心动或心慌的,到底是事实,还是那层包装。"
-    },
-    {
-      "type": "p",
-      "text": "第二招是**把沉没成本请出去**。做决定前先问自己一句:「如果这笔钱、这段时间是刚刚才冒出来的,和过去无关,我现在还会这么选吗?」——这一问,等于强行把追不回的过去从账上划掉,只留下真正该比较的未来。它专治那句最坑人的「都已经花这么多了」。"
-    },
-    {
-      "type": "p",
-      "text": "第三招是尽量用**宽框架**,而不是一笔一笔孤立地算(那叫窄框架)。窄框架让你把每一次选择、每一个账户都单拎出来,斤斤计较眼前这一格的得失;宽框架则把它们放回整体里一起权衡——一整年的投资盈亏合起来看,一整笔家庭开销通盘算,而不是为某一格的一时涨跌反复揪心。视野一放宽,很多在窄框里显得惊天动地的得失,就回到了它本来的分量。"
-    },
-    {
-      "type": "figure",
-      "ftype": "method",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='30' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:15px;font-weight:600'>三招,少被框架牵着走</text><rect x='40' y='52' width='480' height='56' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='74' cy='80' r='15' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='74' y='85' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:14px;font-weight:600'>1</text><text x='104' y='78' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>主动换框</text><text x='104' y='98' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>既算「存活率」也算「死亡率」,两种说法都摆出来看</text><rect x='40' y='118' width='480' height='56' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='74' cy='146' r='15' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='74' y='151' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:14px;font-weight:600'>2</text><text x='104' y='144' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>剔除沉没成本</text><text x='104' y='164' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>问自己:这钱若是别处来的,我现在还会这么花吗?</text><rect x='40' y='184' width='480' height='56' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='74' cy='212' r='15' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='74' y='217' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:14px;font-weight:600'>3</text><text x='104' y='210' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>用宽框架</text><text x='104' y='230' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>把这一笔放进整体一起权衡,别一笔笔孤立地算</text><text x='280' y='272' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:12.5px;font-weight:600'>换一次框,常能挡掉一个被人摆布的决定</text></svg>",
-      "caption": "主动换框、剔除沉没成本、用宽框架——三个朴素的动作,给自己的决定留一道防线"
-    },
-    {
-      "type": "p",
-      "text": "说到底,这一章讲的是同一件朴素的事:你的选择,常常不取决于事实本身,而取决于事实被怎么描述、被记进了哪一本账。这既是弱点,也是提醒。看清框架和心理账户是怎么运作的,不是为了反过来去拿捏别人——用「换个说法」诱导对方,是另一回事,也不是这本书的用意;而是为了给自己留一道防线:重要的决定,多换一个框架看一遍,把泼出去的水明明白白排除在外。多这一步,你就能挡掉一大批本会被别人、也被自己一时情绪牵着走的选择。"
-    }
-  ]
+ "title": "框架效应与心理账户:同一件事,两种选择",
+ "subtitle": "换个说法、换个记账方式,你的决定就变了——学会主动换框、剔除沉没成本",
+ "centralIdea": "承接前景理论,这一章讲一件让人不安的事:同一个现实,换个说法或换本账,人的选择就会变。①框架效应(framing)——逻辑上完全等价的两种表述,会引出相反的决定,因为系统1对措辞里的「得」「失」色彩极其敏感,照单全收。经典的「亚洲疾病问题」里,同一套防疫方案,说成「能救活200人」时人们求稳,说成「会死掉400人」时人们转而冒险,数字分毫不差,选择却反了过来;连医生也会因「存活率90%」还是「死亡率10%」的说法改变建议。②心理账户(mental accounting)——人把钱按来源和用途分进不同的「抽屉」,违背「钱是可替换的」这条理性原则:丢了同价的电影票和丢了同价的现金,买票的意愿就不一样;赌资和工资花起来两套心态。③沉没成本谬误(sunk cost)——为已经花掉、再也追不回的钱和时间继续投入(暴风雪硬开车去看球、烂项目因「已投这么多」不肯止损、难看的电影舍不得退场),只因不甘心认亏。④处置效应——怕后悔让人卖掉赚钱的、死扛亏钱的。核心信息:你的选择常常不取决于事实本身,而取决于事实被怎么描述、被记进哪本账。防身办法:重要决策刻意换个框架再看一遍(既算存活也算死亡)、把沉没成本明确排除、用宽框架整体权衡而非一笔笔孤立地算。分寸:讲机制与自我防范,不教操纵他人。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "同一台手术,医生有两种说法。第一种:「做完这台手术,一个月后还活着的病人有九成。」第二种:「这台手术,一个月内会死掉一成的人。」两句话说的是同一件事,数字严丝合缝地对得上,可听到第一种说法的人,大多点头愿意做;听到第二种的,不少人当场犹豫起来——连医生自己给建议时,也会被这层措辞悄悄带偏。这一章要讲的,就是这种怪事:很多时候,决定你选什么的,不是事实本身,而是事实被怎么说出口、被记进了哪一本账。"
+  },
+  {
+   "type": "h2",
+   "text": "一样的事实,两种说法,两个决定"
+  },
+  {
+   "type": "p",
+   "text": "心理学家做过一个后来无比经典的实验,叫「亚洲疾病问题」。设想有一种传染病即将暴发,预计会夺走 600 条人命,现在有两套防疫方案供你选。第一组人被这样告知:方案 A「确定能救活 200 人」;方案 B「有三分之一的机会把 600 人全救活,三分之二的机会一个都救不成」。大多数人选了稳妥的 A——到手的 200 条命,先攥牢,不赌。"
+  },
+  {
+   "type": "p",
+   "text": "第二组人面对的其实是同一套方案,只是换了个说法:方案 A'「会有 400 人死掉」;方案 B'「有三分之一的机会没有人死,三分之二的机会 600 人全部死掉」。这一回,多数人却掉头选了冒险的 B'。可你只要摊开算一下就会发现:「救活 200 人」和「死掉 400 人」是同一件事,A 和 A' 分毫不差,B 和 B' 也完全一样。"
+  },
+  {
+   "type": "pull",
+   "text": "仅仅因为一边说「救」、一边说「死」,人群的选择就整个反了过来。"
+  },
+  {
+   "type": "figure",
+   "ftype": "compare",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:15px;font-weight:600'>亚洲疾病问题:同一方案,两种说法</text><text x='280' y='50' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>600 人染病,同一套防疫方案,只换了描述的口径</text><line x1='280' y1='66' x2='280' y2='202' style='stroke:var(--line);stroke-width:1;stroke-dasharray:4 4'/><text x='142' y='88' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:13px;font-weight:600'>收益框架 · 说成「能救活 200 人」</text><rect x='24' y='102' width='236' height='58' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='142' y='126' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12.5px'>多数人选 → 保守方案</text><text x='142' y='147' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>稳稳救回 200 人,不赌</text><text x='418' y='88' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:13px;font-weight:600'>损失框架 · 说成「会死掉 400 人」</text><rect x='300' y='102' width='236' height='58' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='418' y='126' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12.5px'>多数人转投 → 冒险方案</text><text x='418' y='147' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>赌一把:或全救,或全死</text><text x='142' y='186' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:11px'>救 200 = 死 400</text><text x='418' y='186' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:11px'>死 400 = 救 200</text><rect x='24' y='216' width='512' height='56' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='242' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>两组数字完全一样,决定却反了过来</text><text x='280' y='261' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>「得」的框架让人求稳,「失」的框架让人冒险</text></svg>",
+   "caption": "亚洲疾病问题:同一方案换个说法,人群的选择就整个翻了过来"
+  },
+  {
+   "type": "p",
+   "text": "这就是**框架效应(framing)**:逻辑上等价的两种表述,会引出不同的决定。窍门在于人对「得」和「失」的态度天生不对称——面对明确的「收益」(救活 200 人),我们求稳,见好就收;面对明确的「损失」(死掉 400 人),我们反而愿意赌一把,想搏一个「一个都不死」。所以把同一件事装进「得」的框架,人就保守;装进「失」的框架,人就冒险。措辞没动事实一根毫毛,却拨动了选择的方向。"
+  },
+  {
+   "type": "p",
+   "text": "别以为这只是外行才会中招。前面那台手术的例子,研究者真的拿去问过医生:同样的疗法,说成「一个月存活率 90%」时,愿意推荐的医生明显更多;说成「一个月死亡率 10%」时,推荐的人就少了一截——受过多年训练、天天跟数字打交道的专业人士,照样被一句话的框架带着走。原因在于,做这类快速判断的是我们脑子里的**系统 1**:它对措辞里的得失色彩极其敏感,照单全收,懒得去做「90% 活着 = 10% 死掉」这一步本该顺手的换算。"
+  },
+  {
+   "type": "quote",
+   "original": "同样一件事,包进「得」里,人就求稳;包进「失」里,人就敢赌。",
+   "translation": "框架效应的核心。改变的不是事实,而是事实被涂上的得失底色;系统1对这层底色极其敏感,来不及折算就先作了反应。"
+  },
+  {
+   "type": "h2",
+   "text": "心理账户:钱被分进不同的抽屉"
+  },
+  {
+   "type": "p",
+   "text": "换个说法能改选择,换个「记账方式」同样能。经济学里有一条本该成立的理性原则:钱是可替换的(fungible)——一百块就是一百块,不管它是工资、奖金还是路上捡的,进了你口袋,价值完全一样,该怎么花就怎么花。可现实里,几乎没人这么算账。我们会不自觉地把钱按**来源和用途**,分进一个个不同的「心理账户」:这是工资、这是奖金、这是买菜钱、这是旅游基金——像分进抽屉里的钱,彼此之间隔着一堵看不见的墙。"
+  },
+  {
+   "type": "p",
+   "text": "卡尼曼举过一个精巧的对照。你打算去看一场票价 200 元的演出:第一种情形,你到了门口,发现刚买的票弄丢了;第二种情形,你还没买票,却发现兜里丢了 200 元现金。两种情形损失的钱一模一样,可实验里,丢了票的人多半掉头回家、不肯再花 200 买一张;丢了现金的人则大多照旧买票进场。差别就在记账:丢票的人把「看这场演出」这本账算成了「400 元」,嫌太贵;丢现金的人,损失记在了「现金」账户上,和「看演出」这本账没打通,自然照买不误。"
+  },
+  {
+   "type": "figure",
+   "ftype": "diagram",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:15px;font-weight:600'>心理账户:同样是钱,分进不同抽屉</text><text x='280' y='50' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>理性上钱可以互换,人却按来源和用途分开记账</text><rect x='150' y='62' width='260' height='192' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><rect x='162' y='74' width='236' height='36' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><circle cx='384' cy='92' r='3' style='fill:var(--cinnabar-pure)'/><text x='176' y='97' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>工资 · 一分一厘省着花</text><rect x='162' y='120' width='236' height='36' rx='5' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='384' cy='138' r='3' style='fill:var(--ink-faint)'/><text x='176' y='143' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>奖金/年终 · 敢多花一点</text><rect x='162' y='166' width='236' height='36' rx='5' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='384' cy='184' r='3' style='fill:var(--ink-faint)'/><text x='176' y='189' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>中奖·赌资 · 花着不心疼</text><rect x='162' y='212' width='236' height='36' rx='5' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='384' cy='230' r='3' style='fill:var(--ink-faint)'/><text x='176' y='235' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>买菜钱 · 一块钱都计较</text><text x='280' y='282' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:12.5px;font-weight:600'>该合起来算的账,偏被一道道墙隔开分着算</text></svg>",
+   "caption": "钱本可互换,人却按来源和用途分进不同的心理抽屉,花起来两套心态"
+  },
+  {
+   "type": "p",
+   "text": "同一套逻辑,解释了很多我们习以为常的「双标」。赌场里赢来的钱、意外收到的红包,花起来往往大手大脚,因为它们被记进了「天上掉的」这本账,输掉、花光都不太心疼;可同样数目的工资,却是一分一厘省着来的。该合起来一起算的账,我们偏要分开算;本可以互相调剂的钱,却被一道道心理的墙隔死。心理账户不全是坏事——它帮我们做预算、控开销——但一旦这些墙让你做出「换成别的钱就绝不会做」的决定,它就开始悄悄坑你了。"
+  },
+  {
+   "type": "h2",
+   "text": "沉没成本:为泼出去的水继续买单"
+  },
+  {
+   "type": "p",
+   "text": "心理账户里最坑人的一格,叫**沉没成本(sunk cost)**——已经付出去、再也追不回来的钱、时间和精力。理性的算法只有一条:决定下一步做不做,只该看「从现在往后」还值不值;至于过去投进去多少,已成定局,本不该再进入这道计算。可人偏偏做不到。暴风雪的夜里,为了一张早买好的球赛票,硬要冒着危险开车出门——要是这票是别人白送的,你多半早就窝在家里了;一个明显要黄的项目,只因为「已经砸进去这么多」,反而不肯止损,继续追加;一部难看到坐不住的电影,想着「票都买了」,硬是熬到散场。"
+  },
+  {
+   "type": "figure",
+   "ftype": "flow",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:15px;font-weight:600'>沉没成本:该止损,却继续投入</text><rect x='24' y='66' width='150' height='64' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='99' y='94' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>已投入的钱·时间·精力</text><text x='99' y='114' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:11.5px;font-weight:600'>沉没成本 · 追不回</text><path d='M174 98 L206 98' style='stroke:var(--ink-faint);stroke-width:1.5'/><path d='M204 93 L214 98 L204 103 Z' style='fill:var(--ink-faint)'/><path d='M214 98 L214 88 L300 88' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><path d='M298 83 L308 88 L298 93 Z' style='fill:var(--ink-faint)'/><path d='M214 98 L214 168 L300 168' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><path d='M298 163 L308 168 L298 173 Z' style='fill:var(--ink-faint)'/><rect x='308' y='60' width='228' height='56' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='422' y='84' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12.5px;font-weight:600'>不甘心 → 继续投入</text><text x='422' y='104' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>暴风雪硬开车、烂项目再砸钱</text><rect x='308' y='140' width='228' height='56' rx='6' style='fill:none;stroke:var(--ink);stroke-width:1.5'/><text x='422' y='164' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12.5px;font-weight:600'>只看未来 → 该止损就止损</text><text x='422' y='184' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>把已花掉的明确排除在外</text><rect x='24' y='224' width='512' height='52' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='280' y='248' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>沉没成本已成定局,不该再左右下一步</text><text x='280' y='266' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>理性只比较「从现在往后」的得与失</text></svg>",
+   "caption": "已花掉的钱和时间追不回,本不该进入下一步的计算——不甘心却推着人继续加码"
+  },
+  {
+   "type": "p",
+   "text": "推着人这么干的,不是理智,而是不甘心——承认「已经亏了、那些投入打了水漂」太难受,于是宁可再赔上更多,也要拖着不认这笔账。可越是加码,窟窿只会越大。真正干净的问法是:**把已经花掉的一笔勾掉,只问「站在此刻,继续下去划不划算」**。这么一问,该退场的电影、该砍掉的项目、该留在家里的暴风雪夜,答案往往立刻就清楚了。"
+  },
+  {
+   "type": "h2",
+   "text": "卖掉赚钱的,死扛亏钱的"
+  },
+  {
+   "type": "p",
+   "text": "沉没成本背后那股「不认亏」的劲儿,还有个孪生兄弟,叫**处置效应**:人倾向于早早卖掉正在赚钱的东西,却死死扛住正在亏钱的。道理还是怕后悔——卖掉赚的,能落袋一份「我赢了」的痛快;而卖掉亏的,等于亲手把账面上的浮亏变成板上钉钉的实亏,等于当众承认自己当初看走了眼,这份难受让人一拖再拖。于是常见的局面是:该留的赚钱货被过早出手,该断的亏钱货却被一路死扛——决定去留的,不是它未来会怎样,而是卖掉的那一刻,我会不会后悔。"
+  },
+  {
+   "type": "quote",
+   "original": "该不该继续,只看往后值不值;已经花掉的,一笔勾掉,别再算进来。",
+   "translation": "剔除沉没成本的口诀。过去的投入无论多大都已追不回,让它退出这道决策,只比较从此刻往后的得与失。"
+  },
+  {
+   "type": "h2",
+   "text": "怎么少上当:换个框架再看一遍"
+  },
+  {
+   "type": "p",
+   "text": "好在这些坑都有解,而且解法都朴素得出奇。第一招是**主动换框**:遇到重要的选择,别只信第一种说法,刻意把它翻成相反的框架再看一遍。医生说「存活率 90%」,你就顺手补一句「也就是死亡率 10%」,两种说法都摆出来,天平立刻就稳了。同一份体检报告、同一个投资方案、同一句「已售出八成」,换个口径复述一遍,常常就能看清:让你心动或心慌的,到底是事实,还是那层包装。"
+  },
+  {
+   "type": "p",
+   "text": "第二招是**把沉没成本请出去**。做决定前先问自己一句:「如果这笔钱、这段时间是刚刚才冒出来的,和过去无关,我现在还会这么选吗?」——这一问,等于强行把追不回的过去从账上划掉,只留下真正该比较的未来。它专治那句最坑人的「都已经花这么多了」。"
+  },
+  {
+   "type": "p",
+   "text": "第三招是尽量用**宽框架**,而不是一笔一笔孤立地算(那叫窄框架)。窄框架让你把每一次选择、每一个账户都单拎出来,斤斤计较眼前这一格的得失;宽框架则把它们放回整体里一起权衡——一整年的投资盈亏合起来看,一整笔家庭开销通盘算,而不是为某一格的一时涨跌反复揪心。视野一放宽,很多在窄框里显得惊天动地的得失,就回到了它本来的分量。"
+  },
+  {
+   "type": "figure",
+   "ftype": "method",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='30' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:15px;font-weight:600'>三招,少被框架牵着走</text><rect x='40' y='52' width='480' height='56' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='74' cy='80' r='15' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='74' y='85' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:14px;font-weight:600'>1</text><text x='104' y='78' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>主动换框</text><text x='104' y='98' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>既算「存活率」也算「死亡率」,两种说法都摆出来看</text><rect x='40' y='118' width='480' height='56' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='74' cy='146' r='15' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='74' y='151' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:14px;font-weight:600'>2</text><text x='104' y='144' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>剔除沉没成本</text><text x='104' y='164' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>问自己:这钱若是别处来的,我现在还会这么花吗?</text><rect x='40' y='184' width='480' height='56' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='74' cy='212' r='15' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='74' y='217' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:14px;font-weight:600'>3</text><text x='104' y='210' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>用宽框架</text><text x='104' y='230' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>把这一笔放进整体一起权衡,别一笔笔孤立地算</text><text x='280' y='272' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:12.5px;font-weight:600'>换一次框,常能挡掉一个被人摆布的决定</text></svg>",
+   "caption": "主动换框、剔除沉没成本、用宽框架——三个朴素的动作,给自己的决定留一道防线"
+  },
+  {
+   "type": "p",
+   "text": "说到底,这一章讲的是同一件朴素的事:你的选择,常常不取决于事实本身,而取决于事实被怎么描述、被记进了哪一本账。这既是弱点,也是提醒。看清框架和心理账户是怎么运作的,不是为了反过来去拿捏别人——用「换个说法」诱导对方,是另一回事,也不是这本书的用意;而是为了给自己留一道防线:重要的决定,多换一个框架看一遍,把泼出去的水明明白白排除在外。多这一步,你就能挡掉一大批本会被别人、也被自己一时情绪牵着走的选择。"
+  }
+ ]
 }

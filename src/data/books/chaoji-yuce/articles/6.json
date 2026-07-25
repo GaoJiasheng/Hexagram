@@ -1,131 +1,135 @@
 {
-  "title": "小步更新:像贝叶斯一样调整信念",
-  "subtitle": "《超级预测》第6章导读——把预测当作『永远的测试版』,随新证据一点点打磨概率",
-  "centralIdea": "超级预测者最见功力的一步,不是开局猜得多准,而是持续、细致地更新自己的概率。他们把预测当成一块要反复擦改的黑板,而不是一句许完就不再回头的愿——每来一点新消息,就重新掂量一遍手里的数字。这正是贝叶斯的精神:新的相信程度 = 原来的看法(先验/基率)+ 新证据带来的修正;既别忘了『过去大概多少』,也认真吸收新情况,把两者揉在一起,而不是二选一。分寸在于避开两个极端:反应过度,一有风吹草动就把概率从两成猛拉到八成,被噪声耍得团团转;反应不足,证据都变了还死抱旧判断、不肯认错。高手走在中间——该动就动,只动该动的幅度。而且他们更新得勤、每次幅度小:许多次小修正累积起来,常比偶尔一次大转向更准更稳,也逼着自己持续关注、持续复盘。这份『小步快调』的底气,来自一种把信念当假设、不怕承认之前估高估低的开放心态。要点是分寸,不是次次都调对。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "设想你在天气预报里听到『明天有 30% 的概率下雨』。到了傍晚,云越压越低,风也起了——一个好的预报员会怎么做?他不会固执地守着早上那句『30%』,也不会被一阵风吓得改口喊『100% 要下暴雨』。他会把这条新证据接过来,把 30% 往上挪一挪,也许挪到 45%。**超级预测者最见功力的一步,正是这种持续、细致的『挪一挪』**:他们把预测当成一块要反复擦改的黑板,而不是一句许完就不再回头的愿。"
-    },
-    {
-      "type": "h2",
-      "text": "预测不是许愿,是一块要不断擦改的黑板"
-    },
-    {
-      "type": "p",
-      "text": "在良好判断计划(GJP)里,Tetlock 团队追踪了每个人从下第一注到问题揭晓之间的全部改动。一个反直觉的结果浮了出来:**最准的那批人,往往不是开局猜得最漂亮的人,而是一路上更新得最勤的人。** 普通参与者常常提交一次预测就再不回头,仿佛下注之后就该转身离场;超级预测者却像盯盘一样,时不时回来看看有没有新消息,一有风吹草动就重新掂量一遍手里的数字。更耐人寻味的是:他们回来得虽勤,每次动的幅度却往往很小——多数时候只把概率挪几个百分点,而不是一言不合就推倒重来。"
-    },
-    {
-      "type": "p",
-      "text": "『勤』和『小』这两个词放在一起,才是这一章的诀窍。更新得勤,意味着你始终跟得上事态,不会抱着一个月前的旧判断呼呼大睡;每次只动一小步,意味着你不会被某条耸人听闻的头条牵着鼻子乱跑。二者合起来,画出的是一条稳稳向真相靠拢的折线,而不是一根上蹿下跳的心电图。下面这张图,把三种人的更新方式摆在一起看。"
-    },
-    {
-      "type": "figure",
-      "ftype": "示意图",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>三种更新方式:谁在向真相靠拢</text><line x1='64' y1='48' x2='64' y2='252' style='stroke:var(--line);stroke-width:1'/><line x1='64' y1='252' x2='520' y2='252' style='stroke:var(--line);stroke-width:1'/><text x='64' y='42' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>概率</text><text x='292' y='274' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>时间 → 新证据不断到来</text><line x1='64' y1='108' x2='520' y2='108' style='stroke:var(--azure);stroke-width:1.4;stroke-dasharray:5 4'/><text x='70' y='103' style='font-family:var(--font-serif);font-size:11px;fill:var(--azure)'>真相 · 真实概率</text><polyline points='64,152 121,83 178,191 235,93 292,181 349,97 406,172 463,103 520,140' style='fill:none;stroke:var(--ink);stroke-width:2'/><polyline points='64,152 520,152' style='fill:none;stroke:var(--ink-soft);stroke-width:2'/><polyline points='64,150 121,148 178,142 235,136 292,128 349,120 406,114 463,111 520,109' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2.4'/><rect x='360' y='196' width='158' height='52' rx='6' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1'/><line x1='370' y1='210' x2='392' y2='210' style='stroke:var(--cinnabar-pure);stroke-width:2.4'/><text x='398' y='214' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>超级预测者 · 小步爬升</text><line x1='370' y1='226' x2='392' y2='226' style='stroke:var(--ink-soft);stroke-width:2'/><text x='398' y='230' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>反应不足 · 纹丝不动</text><line x1='370' y1='242' x2='392' y2='242' style='stroke:var(--ink);stroke-width:2'/><text x='398' y='246' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>反应过度 · 上蹿下跳</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "红线是超级预测者:起点未必最准,却顺着一条条新证据小步爬升,越来越贴近那条代表真相的虚线。灰线反应不足,证据都变了还纹丝不动,始终停在最初的猜测上;深色线反应过度,被每条消息扯得忽高忽低,看似『反应灵敏』,离真相反而更远。看得出来,真正的功夫不在动得多猛,而在动得多准、多有分寸。"
-    },
-    {
-      "type": "h2",
-      "text": "贝叶斯的精神:旧看法 + 新证据 = 新看法"
-    },
-    {
-      "type": "p",
-      "text": "这种更新方式,有一个正经的名字:**贝叶斯更新(Bayesian updating)。** 十八世纪的牧师托马斯·贝叶斯留下一条关于概率的定理,写成数学并不好懂,但它的精神朴素得可以一句话说清:**新的相信程度 = 你原来的看法 + 新证据带来的修正。** 你不必背公式,也不必真的动笔去算;要紧的是养成那个本能——手里先有一个『原来大概多少』的估计,再拿新消息把它往某个方向推一推。"
-    },
-    {
-      "type": "p",
-      "text": "这里有两样东西都不能丢。一样是**『原来大概多少』**,也就是先验,常常就是上一章讲的基率——同类的事情,过去大体多大比例会发生。另一样是**新证据的分量**:证据越有力、越直接指向某个方向,你就该往那个方向多挪一点;证据越含糊、越可能只是巧合,你就少挪甚至不挪。贝叶斯的高明,在于它不逼你在『只信老经验』和『只追新消息』之间二选一,而是把两者揉在一起——既不忘老底,也不装作没看见眼前的新情况。"
-    },
-    {
-      "type": "figure",
-      "ftype": "流程图",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>贝叶斯:旧看法 + 新证据 = 新看法</text><rect x='24' y='72' width='150' height='96' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='99' y='102' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>原来的看法</text><text x='99' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>先验 · 基率</text><text x='99' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>『过去大概多少』</text><text x='190' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:24px;fill:var(--ink-soft)'>+</text><rect x='206' y='72' width='150' height='96' rx='8' style='fill:var(--paper-raised);stroke:var(--azure);stroke-width:1.5'/><text x='281' y='102' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--azure)'>新证据</text><text x='281' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>今天这条新消息</text><text x='281' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>分量越重,挪得越多</text><text x='372' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:20px;fill:var(--ink-soft)'>=</text><rect x='388' y='72' width='150' height='96' rx='8' style='fill:var(--paper-raised);stroke:var(--ink);stroke-width:1.5'/><text x='463' y='102' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>更新后的看法</text><text x='463' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>把两者揉在一起</text><text x='463' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>不忘老底,也不装没看见</text><text x='280' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>证据有力 → 往它指的方向多挪;证据含糊 → 少挪或不挪</text><text x='280' y='236' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>不必背公式,要紧的是养成『先有一估、再拿新消息推一推』的本能</text></svg>"
-    },
-    {
-      "type": "quote",
-      "original": "别把第一个判断当成非守不可的阵地;它只是你在拿到今天这条消息之前,能给出的最好一猜罢了。",
-      "translation": "这句话是整章的地基。一旦把初始判断看成『暂定的最好一猜』,而不是『不能丢的立场』,更新就成了顺理成章的事——不是认输,而是把手里的估计喂给新证据,让它替你改得更好一点。"
-    },
-    {
-      "type": "h2",
-      "text": "两个极端:反应过度与反应不足"
-    },
-    {
-      "type": "p",
-      "text": "更新的分寸,坏就坏在两头。一头是**反应过度**:一条突发新闻、一句专家断言、一个抢眼的数字,就能让人把概率从 20% 猛拉到 80%,仿佛之前的思考全不作数。问题是,世上大多数『新消息』其实是噪声——它们看着惊人,含的真信息却很少。被噪声牵着走的人,今天押多、明天押空,数字看着很『敏感』,却在真相附近来回打转,始终定不下来。"
-    },
-    {
-      "type": "p",
-      "text": "另一头是**反应不足**:证据已经明明白白变了,人却死抱着旧判断不肯认错。有时是因为面子——改口显得当初看走了眼;有时是因为惯性——第一个结论一旦说出口,就成了要守的阵地。心理学里管这叫『锚定』和『承诺升级』:越是公开表过态、投入过感情的判断,越舍不得往回改。反应不足的人不是没看见新证据,而是不肯让它动自己分毫。"
-    },
-    {
-      "type": "p",
-      "text": "超级预测者走在两者中间,而且走得很讲分寸:**该动就动,只动该动的幅度。** 大多数消息只值几个百分点的微调;偶尔真碰上一条足以改写全局的硬证据,他们也敢一次挪一大步。难的从来不是『要不要更新』,而是**分清这一次到底是噪声还是信号**——这份判断力,得在事后一遍遍复盘里慢慢磨出来。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对照图",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>更新的分寸:一条光谱</text><polygon points='280,104 272,118 288,118' style='fill:var(--cinnabar-pure)'/><text x='280' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>恰到好处 · 小步微调</text><rect x='56' y='132' width='448' height='14' rx='7' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1'/><circle cx='92' cy='139' r='5' style='fill:var(--ink-soft)'/><circle cx='280' cy='139' r='9' style='fill:var(--cinnabar-pure)'/><circle cx='468' cy='139' r='5' style='fill:var(--ink)'/><text x='56' y='172' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>反应不足</text><text x='56' y='190' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>证据变了也纹丝不动</text><text x='504' y='172' text-anchor='end' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>反应过度</text><text x='504' y='190' text-anchor='end' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>一条消息就推倒重来</text><text x='280' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>该动就动,只动该动的幅度</text><text x='280' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>同一条消息,三种人给出三种幅度——难的是分清它是噪声还是信号</text></svg>"
-    },
-    {
-      "type": "quote",
-      "original": "一条消息值不值得你改主意,不看它多耸动、多新鲜,只看它到底带来了多少你原先不知道的信息。",
-      "translation": "这是分清噪声与信号的那把尺子。头条的音量、措辞的笃定,都跟信息量无关。真正该问的只有一句:知道这条消息之后,我对结果的把握,比之前多了几分?多得越多,就该挪得越多。"
-    },
-    {
-      "type": "h2",
-      "text": "小步的复利:许多次小修正,胜过一次大转向"
-    },
-    {
-      "type": "p",
-      "text": "也许有人会问:既然迟早要挪到位,何必分成一小步一小步?一次看准、一步到位不是更省事?答案藏在『准头』里。你几乎永远不可能一次就看准终点在哪儿——事态还在演化,证据还在陆续到来。**把一次大转向拆成许多次小修正,等于给自己留了不断纠偏的机会:** 这一步挪偏了,下一条证据来时还能补回来;若孤注一掷地一次大改,一旦改错,就得连本带利地再改回去,来回折腾反而离得更远。"
-    },
-    {
-      "type": "p",
-      "text": "小步更新还有一层看不见的好处:它逼着你**持续关注、持续复盘。** 一个打算频繁微调的人,必须一直盯着事态、一直问自己『今天这条消息,该让我加一点还是减一点』;而一个『一锤定音』的人,下完注就把问题抛到脑后了。许多次小修正累积起来,常常比偶尔一次大转向更准、也更稳——这有点像复利:单看每一步都不起眼,合起来却能把你稳稳送到离真相很近的地方。"
-    },
-    {
-      "type": "quote",
-      "original": "把预测切成许多小步来走,不是因为胆小,而是因为路还在你脚下延伸——你得边走边看,才不至于一脚踏空。",
-      "translation": "一次到位听着漂亮,却建立在『我现在就能看清终点』的错觉上。承认路还没走完、证据还没到齐,才会甘心用一连串小步去逼近,而不是拿一次豪赌去碰运气。"
-    },
-    {
-      "type": "h2",
-      "text": "永远的测试版:把信念当假设"
-    },
-    {
-      "type": "p",
-      "text": "愿意这样一小步一小步地改,背后其实是一种心态。超级预测者常把自己形容成**『永远的测试版』(perpetual beta):** 就像软件永远有下一个待修的漏洞、下一版待发的更新,他们从不把当前的判断当成定稿,只当成『到目前为止最好的一版』,随时准备被下一条证据修订。这份心态,正接着前几章讲的那种开放——**把自己的信念当成假设,而不是需要死守的立场。**"
-    },
-    {
-      "type": "p",
-      "text": "假设是拿来检验的:估高了就往下调,估低了就往上抬,认错不丢人,反倒是本事。Tetlock 的研究里有一个让人踏实的结论:**最强的预测能力,主要不来自天赋,而来自这种持续记分、复盘、更新的习惯。** 换句话说,『愿不愿意改、改得勤不勤、改得有没有分寸』,比『一开始猜得多准』更能决定谁是长跑赢家。这也意味着,小步更新不是少数天才的专利,而是普通人可以刻意练出来的功夫。"
-    },
-    {
-      "type": "figure",
-      "ftype": "循环图",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>永远的测试版:一个转个不停的循环</text><circle cx='280' cy='160' r='95' style='fill:none;stroke:var(--line);stroke-width:1.2;stroke-dasharray:4 4'/><polygon points='-6,-5 7,0 -6,5' transform='translate(347,93) rotate(45)' style='fill:var(--cinnabar-pure)'/><polygon points='-6,-5 7,0 -6,5' transform='translate(347,227) rotate(135)' style='fill:var(--cinnabar-pure)'/><polygon points='-6,-5 7,0 -6,5' transform='translate(213,227) rotate(225)' style='fill:var(--cinnabar-pure)'/><polygon points='-6,-5 7,0 -6,5' transform='translate(213,93) rotate(315)' style='fill:var(--cinnabar-pure)'/><rect x='219' y='45' width='122' height='40' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='69' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>① 下判断 · 给概率</text><rect x='320' y='140' width='120' height='40' rx='8' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1.3'/><text x='380' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>② 记分 · 对答案</text><rect x='219' y='235' width='122' height='40' rx='8' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1.3'/><text x='280' y='259' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>③ 复盘 · 哪里错了</text><rect x='120' y='140' width='120' height='40' rx='8' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1.3'/><text x='180' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>④ 更新 · 挪一挪</text><text x='280' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>把判断</text><text x='280' y='172' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>当假设</text></svg>"
-    },
-    {
-      "type": "quote",
-      "original": "把判断当定稿的人,最怕被证明看错;把判断当测试版的人,只是在等下一条证据,来帮自己改得更好。",
-      "translation": "同一件事——被新证据推翻旧判断——在两种心态里意味着完全不同的东西。一个觉得是打脸,一个觉得是升级。差别不在聪明,而在你把手里的判断,当成非守不可的定稿,还是随时可改的测试版。"
-    },
-    {
-      "type": "h2",
-      "text": "写给自己的话:该动就动,只动该动的幅度"
-    },
-    {
-      "type": "p",
-      "text": "把这一章收成几句可以带走的话。**第一,别把第一个判断当终点。** 它只是起点,是你在拿到今天这条消息之前能给的最好一猜。**第二,勤更新、小步走。** 一有新证据就回来掂量一遍,大多数时候只挪几个百分点;把『改主意』变成日常,而不是危机时刻才被迫为之。**第三,先问信息、再问反应。** 面对一条消息,先掂量它究竟带来了多少你原先不知道的东西,再决定是微调、大改还是干脆不动——别让它的音量替你做主。"
-    },
-    {
-      "type": "p",
-      "text": "当然,再勤的更新也不保证次次都调对。有时你会因噪声而错动,有时会因迟疑而慢半拍——这很正常,连超级预测者也免不了。这一章教的不是一套稳赢的算法,而是一种**面对不确定的姿态:** 承认自己手里的永远只是暂时最优的一版,于是愿意一次次小心地擦掉一点、再写上一点。真相往往不在某一次灵光乍现里,而在这一连串不起眼的小修正的尽头,静静等着你走近。"
-    }
-  ]
+ "title": "小步更新:像贝叶斯一样调整信念",
+ "subtitle": "《超级预测》第6章导读——把预测当作『永远的测试版』,随新证据一点点打磨概率",
+ "centralIdea": "超级预测者最见功力的一步,不是开局猜得多准,而是持续、细致地更新自己的概率。他们把预测当成一块要反复擦改的黑板,而不是一句许完就不再回头的愿——每来一点新消息,就重新掂量一遍手里的数字。这正是贝叶斯的精神:新的相信程度 = 原来的看法(先验/基率)+ 新证据带来的修正;既别忘了『过去大概多少』,也认真吸收新情况,把两者揉在一起,而不是二选一。分寸在于避开两个极端:反应过度,一有风吹草动就把概率从两成猛拉到八成,被噪声耍得团团转;反应不足,证据都变了还死抱旧判断、不肯认错。高手走在中间——该动就动,只动该动的幅度。而且他们更新得勤、每次幅度小:许多次小修正累积起来,常比偶尔一次大转向更准更稳,也逼着自己持续关注、持续复盘。这份『小步快调』的底气,来自一种把信念当假设、不怕承认之前估高估低的开放心态。要点是分寸,不是次次都调对。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "设想你在天气预报里听到『明天有 30% 的概率下雨』。到了傍晚,云越压越低,风也起了——一个好的预报员会怎么做?他不会固执地守着早上那句『30%』,也不会被一阵风吓得改口喊『100% 要下暴雨』。他会把这条新证据接过来,把 30% 往上挪一挪,也许挪到 45%。**超级预测者最见功力的一步,正是这种持续、细致的『挪一挪』**:他们把预测当成一块要反复擦改的黑板,而不是一句许完就不再回头的愿。"
+  },
+  {
+   "type": "h2",
+   "text": "预测不是许愿,是一块要不断擦改的黑板"
+  },
+  {
+   "type": "p",
+   "text": "在良好判断计划(GJP)里,Tetlock 团队追踪了每个人从下第一注到问题揭晓之间的全部改动。一个反直觉的结果浮了出来:**最准的那批人,往往不是开局猜得最漂亮的人,而是一路上更新得最勤的人。** 普通参与者常常提交一次预测就再不回头,仿佛下注之后就该转身离场;超级预测者却像盯盘一样,时不时回来看看有没有新消息,一有风吹草动就重新掂量一遍手里的数字。更耐人寻味的是:他们回来得虽勤,每次动的幅度却往往很小——多数时候只把概率挪几个百分点,而不是一言不合就推倒重来。"
+  },
+  {
+   "type": "p",
+   "text": "『勤』和『小』这两个词放在一起,才是这一章的诀窍。更新得勤,意味着你始终跟得上事态,不会抱着一个月前的旧判断呼呼大睡;每次只动一小步,意味着你不会被某条耸人听闻的头条牵着鼻子乱跑。二者合起来,画出的是一条稳稳向真相靠拢的折线,而不是一根上蹿下跳的心电图。下面这张图,把三种人的更新方式摆在一起看。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>三种更新方式:谁在向真相靠拢</text><line x1='64' y1='48' x2='64' y2='252' style='stroke:var(--line);stroke-width:1'/><line x1='64' y1='252' x2='520' y2='252' style='stroke:var(--line);stroke-width:1'/><text x='64' y='42' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>概率</text><text x='292' y='274' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>时间 → 新证据不断到来</text><line x1='64' y1='108' x2='520' y2='108' style='stroke:var(--azure);stroke-width:1.4;stroke-dasharray:5 4'/><text x='70' y='103' style='font-family:var(--font-serif);font-size:11px;fill:var(--azure)'>真相 · 真实概率</text><polyline points='64,152 121,83 178,191 235,93 292,181 349,97 406,172 463,103 520,140' style='fill:none;stroke:var(--ink);stroke-width:2'/><polyline points='64,152 520,152' style='fill:none;stroke:var(--ink-soft);stroke-width:2'/><polyline points='64,150 121,148 178,142 235,136 292,128 349,120 406,114 463,111 520,109' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2.4'/><rect x='360' y='196' width='158' height='52' rx='6' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1'/><line x1='370' y1='210' x2='392' y2='210' style='stroke:var(--cinnabar-pure);stroke-width:2.4'/><text x='398' y='214' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>超级预测者 · 小步爬升</text><line x1='370' y1='226' x2='392' y2='226' style='stroke:var(--ink-soft);stroke-width:2'/><text x='398' y='230' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>反应不足 · 纹丝不动</text><line x1='370' y1='242' x2='392' y2='242' style='stroke:var(--ink);stroke-width:2'/><text x='398' y='246' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>反应过度 · 上蹿下跳</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "红线是超级预测者:起点未必最准,却顺着一条条新证据小步爬升,越来越贴近那条代表真相的虚线。灰线反应不足,证据都变了还纹丝不动,始终停在最初的猜测上;深色线反应过度,被每条消息扯得忽高忽低,看似『反应灵敏』,离真相反而更远。看得出来,真正的功夫不在动得多猛,而在动得多准、多有分寸。"
+  },
+  {
+   "type": "h2",
+   "text": "贝叶斯的精神:旧看法 + 新证据 = 新看法"
+  },
+  {
+   "type": "p",
+   "text": "这种更新方式,有一个正经的名字:**贝叶斯更新(Bayesian updating)。** 十八世纪的牧师托马斯·贝叶斯留下一条关于概率的定理,写成数学并不好懂,但它的精神朴素得可以一句话说清:**新的相信程度 = 你原来的看法 + 新证据带来的修正。** 你不必背公式,也不必真的动笔去算;要紧的是养成那个本能——手里先有一个『原来大概多少』的估计,再拿新消息把它往某个方向推一推。"
+  },
+  {
+   "type": "p",
+   "text": "这里有两样东西都不能丢。一样是**『原来大概多少』**,也就是先验,常常就是上一章讲的基率——同类的事情,过去大体多大比例会发生。另一样是**新证据的分量**:证据越有力、越直接指向某个方向,你就该往那个方向多挪一点;证据越含糊、越可能只是巧合,你就少挪甚至不挪。贝叶斯的高明,在于它不逼你在『只信老经验』和『只追新消息』之间二选一,而是把两者揉在一起——既不忘老底,也不装作没看见眼前的新情况。"
+  },
+  {
+   "type": "figure",
+   "ftype": "流程图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>贝叶斯:旧看法 + 新证据 = 新看法</text><rect x='24' y='72' width='150' height='96' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='99' y='102' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>原来的看法</text><text x='99' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>先验 · 基率</text><text x='99' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>『过去大概多少』</text><text x='190' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:24px;fill:var(--ink-soft)'>+</text><rect x='206' y='72' width='150' height='96' rx='8' style='fill:var(--paper-raised);stroke:var(--azure);stroke-width:1.5'/><text x='281' y='102' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--azure)'>新证据</text><text x='281' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>今天这条新消息</text><text x='281' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>分量越重,挪得越多</text><text x='372' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:20px;fill:var(--ink-soft)'>=</text><rect x='388' y='72' width='150' height='96' rx='8' style='fill:var(--paper-raised);stroke:var(--ink);stroke-width:1.5'/><text x='463' y='102' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>更新后的看法</text><text x='463' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>把两者揉在一起</text><text x='463' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>不忘老底,也不装没看见</text><text x='280' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>证据有力 → 往它指的方向多挪;证据含糊 → 少挪或不挪</text><text x='280' y='236' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>不必背公式,要紧的是养成『先有一估、再拿新消息推一推』的本能</text></svg>"
+  },
+  {
+   "type": "quote",
+   "original": "别把第一个判断当成非守不可的阵地;它只是你在拿到今天这条消息之前,能给出的最好一猜罢了。",
+   "translation": "这句话是整章的地基。一旦把初始判断看成『暂定的最好一猜』,而不是『不能丢的立场』,更新就成了顺理成章的事——不是认输,而是把手里的估计喂给新证据,让它替你改得更好一点。"
+  },
+  {
+   "type": "h2",
+   "text": "两个极端:反应过度与反应不足"
+  },
+  {
+   "type": "p",
+   "text": "更新的分寸,坏就坏在两头。一头是**反应过度**:一条突发新闻、一句专家断言、一个抢眼的数字,就能让人把概率从 20% 猛拉到 80%,仿佛之前的思考全不作数。问题是,世上大多数『新消息』其实是噪声——它们看着惊人,含的真信息却很少。被噪声牵着走的人,今天押多、明天押空,数字看着很『敏感』,却在真相附近来回打转,始终定不下来。"
+  },
+  {
+   "type": "p",
+   "text": "另一头是**反应不足**:证据已经明明白白变了,人却死抱着旧判断不肯认错。有时是因为面子——改口显得当初看走了眼;有时是因为惯性——第一个结论一旦说出口,就成了要守的阵地。心理学里管这叫『锚定』和『承诺升级』:越是公开表过态、投入过感情的判断,越舍不得往回改。反应不足的人不是没看见新证据,而是不肯让它动自己分毫。"
+  },
+  {
+   "type": "p",
+   "text": "超级预测者走在两者中间,而且走得很讲分寸:**该动就动,只动该动的幅度。** 大多数消息只值几个百分点的微调;偶尔真碰上一条足以改写全局的硬证据,他们也敢一次挪一大步。难的从来不是『要不要更新』,而是**分清这一次到底是噪声还是信号**——这份判断力,得在事后一遍遍复盘里慢慢磨出来。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>更新的分寸:一条光谱</text><polygon points='280,104 272,118 288,118' style='fill:var(--cinnabar-pure)'/><text x='280' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>恰到好处 · 小步微调</text><rect x='56' y='132' width='448' height='14' rx='7' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1'/><circle cx='92' cy='139' r='5' style='fill:var(--ink-soft)'/><circle cx='280' cy='139' r='9' style='fill:var(--cinnabar-pure)'/><circle cx='468' cy='139' r='5' style='fill:var(--ink)'/><text x='56' y='172' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>反应不足</text><text x='56' y='190' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>证据变了也纹丝不动</text><text x='504' y='172' text-anchor='end' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>反应过度</text><text x='504' y='190' text-anchor='end' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>一条消息就推倒重来</text><text x='280' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>该动就动,只动该动的幅度</text><text x='280' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>同一条消息,三种人给出三种幅度——难的是分清它是噪声还是信号</text></svg>"
+  },
+  {
+   "type": "quote",
+   "original": "一条消息值不值得你改主意,不看它多耸动、多新鲜,只看它到底带来了多少你原先不知道的信息。",
+   "translation": "这是分清噪声与信号的那把尺子。头条的音量、措辞的笃定,都跟信息量无关。真正该问的只有一句:知道这条消息之后,我对结果的把握,比之前多了几分?多得越多,就该挪得越多。"
+  },
+  {
+   "type": "h2",
+   "text": "小步的复利:许多次小修正,胜过一次大转向"
+  },
+  {
+   "type": "p",
+   "text": "也许有人会问:既然迟早要挪到位,何必分成一小步一小步?一次看准、一步到位不是更省事?答案藏在『准头』里。你几乎永远不可能一次就看准终点在哪儿——事态还在演化,证据还在陆续到来。**把一次大转向拆成许多次小修正,等于给自己留了不断纠偏的机会:** 这一步挪偏了,下一条证据来时还能补回来;若孤注一掷地一次大改,一旦改错,就得连本带利地再改回去,来回折腾反而离得更远。"
+  },
+  {
+   "type": "p",
+   "text": "小步更新还有一层看不见的好处:它逼着你**持续关注、持续复盘。** 一个打算频繁微调的人,必须一直盯着事态、一直问自己『今天这条消息,该让我加一点还是减一点』;而一个『一锤定音』的人,下完注就把问题抛到脑后了。许多次小修正累积起来,常常比偶尔一次大转向更准、也更稳——这有点像复利:单看每一步都不起眼,合起来却能把你稳稳送到离真相很近的地方。"
+  },
+  {
+   "type": "quote",
+   "original": "把预测切成许多小步来走,不是因为胆小,而是因为路还在你脚下延伸——你得边走边看,才不至于一脚踏空。",
+   "translation": "一次到位听着漂亮,却建立在『我现在就能看清终点』的错觉上。承认路还没走完、证据还没到齐,才会甘心用一连串小步去逼近,而不是拿一次豪赌去碰运气。"
+  },
+  {
+   "type": "h2",
+   "text": "永远的测试版:把信念当假设"
+  },
+  {
+   "type": "p",
+   "text": "愿意这样一小步一小步地改,背后其实是一种心态。超级预测者常把自己形容成**『永远的测试版』(perpetual beta):** 就像软件永远有下一个待修的漏洞、下一版待发的更新,他们从不把当前的判断当成定稿,只当成『到目前为止最好的一版』,随时准备被下一条证据修订。这份心态,正接着前几章讲的那种开放——"
+  },
+  {
+   "type": "pull",
+   "text": "把自己的信念当成假设,而不是需要死守的立场。"
+  },
+  {
+   "type": "p",
+   "text": "假设是拿来检验的:估高了就往下调,估低了就往上抬,认错不丢人,反倒是本事。Tetlock 的研究里有一个让人踏实的结论:**最强的预测能力,主要不来自天赋,而来自这种持续记分、复盘、更新的习惯。** 换句话说,『愿不愿意改、改得勤不勤、改得有没有分寸』,比『一开始猜得多准』更能决定谁是长跑赢家。这也意味着,小步更新不是少数天才的专利,而是普通人可以刻意练出来的功夫。"
+  },
+  {
+   "type": "figure",
+   "ftype": "循环图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>永远的测试版:一个转个不停的循环</text><circle cx='280' cy='160' r='95' style='fill:none;stroke:var(--line);stroke-width:1.2;stroke-dasharray:4 4'/><polygon points='-6,-5 7,0 -6,5' transform='translate(347,93) rotate(45)' style='fill:var(--cinnabar-pure)'/><polygon points='-6,-5 7,0 -6,5' transform='translate(347,227) rotate(135)' style='fill:var(--cinnabar-pure)'/><polygon points='-6,-5 7,0 -6,5' transform='translate(213,227) rotate(225)' style='fill:var(--cinnabar-pure)'/><polygon points='-6,-5 7,0 -6,5' transform='translate(213,93) rotate(315)' style='fill:var(--cinnabar-pure)'/><rect x='219' y='45' width='122' height='40' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='69' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>① 下判断 · 给概率</text><rect x='320' y='140' width='120' height='40' rx='8' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1.3'/><text x='380' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>② 记分 · 对答案</text><rect x='219' y='235' width='122' height='40' rx='8' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1.3'/><text x='280' y='259' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>③ 复盘 · 哪里错了</text><rect x='120' y='140' width='120' height='40' rx='8' style='fill:var(--paper-raised);stroke:var(--line);stroke-width:1.3'/><text x='180' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>④ 更新 · 挪一挪</text><text x='280' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>把判断</text><text x='280' y='172' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>当假设</text></svg>"
+  },
+  {
+   "type": "quote",
+   "original": "把判断当定稿的人,最怕被证明看错;把判断当测试版的人,只是在等下一条证据,来帮自己改得更好。",
+   "translation": "同一件事——被新证据推翻旧判断——在两种心态里意味着完全不同的东西。一个觉得是打脸,一个觉得是升级。差别不在聪明,而在你把手里的判断,当成非守不可的定稿,还是随时可改的测试版。"
+  },
+  {
+   "type": "h2",
+   "text": "写给自己的话:该动就动,只动该动的幅度"
+  },
+  {
+   "type": "p",
+   "text": "把这一章收成几句可以带走的话。**第一,别把第一个判断当终点。** 它只是起点,是你在拿到今天这条消息之前能给的最好一猜。**第二,勤更新、小步走。** 一有新证据就回来掂量一遍,大多数时候只挪几个百分点;把『改主意』变成日常,而不是危机时刻才被迫为之。**第三,先问信息、再问反应。** 面对一条消息,先掂量它究竟带来了多少你原先不知道的东西,再决定是微调、大改还是干脆不动——别让它的音量替你做主。"
+  },
+  {
+   "type": "p",
+   "text": "当然,再勤的更新也不保证次次都调对。有时你会因噪声而错动,有时会因迟疑而慢半拍——这很正常,连超级预测者也免不了。这一章教的不是一套稳赢的算法,而是一种**面对不确定的姿态:** 承认自己手里的永远只是暂时最优的一版,于是愿意一次次小心地擦掉一点、再写上一点。真相往往不在某一次灵光乍现里,而在这一连串不起眼的小修正的尽头,静静等着你走近。"
+  }
+ ]
 }

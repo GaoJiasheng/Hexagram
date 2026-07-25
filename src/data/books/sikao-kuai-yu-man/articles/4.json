@@ -1,103 +1,107 @@
 {
-  "title": "可得性与代表性:被记忆和刻板印象带偏",
-  "subtitle": "判断「有多可能」时,大脑偷偷换了两道更好答的题——「多容易想起」和「多像典型」",
-  "centralIdea": "我们判断一件事「有多可能」,本该去数真实的频率和基率;但系统1嫌这活儿累,总偷偷把问题换成两个更好答的:「这事多容易想起来?」(可得性)和「这事多像我脑中的典型?」(代表性)。于是空难被高估、车祸被低估,一段像女权主义者的描述,让人忘了世上银行出纳员远比女权主义者多。卡尼曼要说的不是人蠢——连懂统计的专家都会在直觉层面中招——而是:一个连贯合理的故事,骗过了我们对概率的清点。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "上一章说锚定,是一个数字绑架你的估计;这一章更常见:**根本没人给你数字,你得自己估**——这条街危不危险、这个人是干哪行的、这件事会不会发生。理性的做法是去查频率、算比例。但系统1没这耐心,它会玩一个偷梁换柱的把戏:把「这事**有多可能**」这道难题,悄悄换成两道好答得多的题——「这事**有多容易想起来**」,以及「这事**有多像**我脑子里那个典型模样」。换完题它自己都不知道换过,还把好答那道题的答案,当成难题的答案交给你。卡尼曼给这两台偷换器起了名字:**可得性启发**和**代表性启发**。它们大多数时候够用,省时省力;可一旦碰上真实世界里「好想起的」和「真常见的」不一致、「像典型的」和「基率高的」对不上,它们就会把你系统性地带偏——而且偏得很稳、很一致,连你自己都察觉不到。"
-    },
-    {
-      "type": "h2",
-      "text": "可得性启发:越好想起,越显得多"
-    },
-    {
-      "type": "p",
-      "text": "先说第一台偷换器。**可得性启发**的规则一句话:一件事越容易从记忆里蹦出来,你就越觉得它常见、觉得它可能发生。这在多数时候是靠谱的近路——真常见的事,你的确见得多、想得起。麻烦出在:**「好想起」不只由「真常见」决定**。一件事上不上头条、画面鲜不鲜活、有没有情绪冲击、是不是最近刚发生、是不是你亲身经历过——这些都会让它在记忆里更「跳」,而它们和真实频率没多大关系。于是记忆的检索难度,被系统1误当成了频率的读数。"
-    },
-    {
-      "type": "p",
-      "text": "最经典的例子是危险的错估。空难、鲨鱼袭击、恐怖袭击、离奇凶杀——这些事**罕见,却极上镜**:媒体反复渲染,画面血淋淋,情绪拉满,于是它们在你脑中随时待命、一叫就到,你便高估了它们的威胁。反过来,中风、糖尿病、哮喘、家里摔一跤、开车上下班——这些才是真正带走大量生命的杀手,却**平淡、不上头条、想不起来**,于是被大大低估。卡尼曼引过一个研究:人们凭直觉估计各种死因的相对频率,凡是耸动、被媒体偏爱的死法(龙卷风、意外事故)一律被高估,凡是安静、寻常的死法(哮喘、中风)一律被低估——错的方向,精确地跟着「上镜程度」走,而不是跟着真实数字走。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对照",
-      "svg": "<svg viewBox='0 0 560 320' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>可得性偏差:好想起的被高估,平淡的被低估</text><text x='150' y='52' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink-soft)'>脑中的「感觉危险度」</text><text x='430' y='52' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink-soft)'>真实的「致死人数」</text><line x1='280' y1='62' x2='280' y2='292' style='stroke:var(--line);stroke-width:1'/><text x='40' y='86' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--cinnabar-pure)'>空难 · 鲨鱼 · 凶杀</text><rect x='150' y='74' width='120' height='16' rx='3' style='fill:var(--cinnabar-pure);opacity:0.75'/><rect x='290' y='74' width='22' height='16' rx='3' style='fill:var(--ink-faint);opacity:0.55'/><text x='320' y='87' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>其实极罕见</text><text x='40' y='120' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--cinnabar-pure)'>恐袭 · 空气失事</text><rect x='160' y='108' width='110' height='16' rx='3' style='fill:var(--cinnabar-pure);opacity:0.7'/><rect x='290' y='108' width='28' height='16' rx='3' style='fill:var(--ink-faint);opacity:0.55'/><line x1='40' y1='150' x2='520' y2='150' style='stroke:var(--line);stroke-width:1;stroke-dasharray:3 3'/><text x='40' y='176' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--azure)'>车祸</text><rect x='230' y='164' width='40' height='16' rx='3' style='fill:var(--azure);opacity:0.55'/><rect x='290' y='164' width='150' height='16' rx='3' style='fill:var(--azure);opacity:0.8'/><text x='40' y='210' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--azure)'>中风 · 糖尿病</text><rect x='238' y='198' width='32' height='16' rx='3' style='fill:var(--azure);opacity:0.55'/><rect x='290' y='198' width='195' height='16' rx='3' style='fill:var(--azure);opacity:0.8'/><text x='40' y='244' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--azure)'>家中摔倒</text><rect x='245' y='232' width='25' height='16' rx='3' style='fill:var(--azure);opacity:0.55'/><rect x='290' y='232' width='120' height='16' rx='3' style='fill:var(--azure);opacity:0.8'/><text x='280' y='282' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>上镜的被记住 → 高估;平淡的被忽略 → 低估</text><text x='280' y='304' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>示意为相对关系,非精确统计——差距的方向才是重点</text></svg>",
-      "caption": "同一件事,「感觉多危险」跟「实际害死多少人」常常错位。系统1读的是记忆检索的难易,不是死亡率表。"
-    },
-    {
-      "type": "p",
-      "text": "更麻烦的是这台偷换器会**放大自己**。卡尼曼和法学家桑斯坦提出「**可得性瀑布**」:一桩小概率事件被媒体报道→引发公众恐慌→恐慌本身成了新闻→更多报道→更大恐慌……舆论和媒体互相点火,一件本来微不足道的风险,几周内被滚成全民议题,逼出仓促的政策和巨额的资源错配,而真正更该管的大风险因为「不上镜」继续被冷落。你不必是笨蛋才会卷进去——**你只是诚实地报告了脑中那份「太容易想起、想起来还心惊」的印象**。可得性把「我能轻易想到」翻译成了「这很常见、很危险」,而这条翻译,时对时错。"
-    },
-    {
-      "type": "h2",
-      "text": "代表性启发:越像典型,越以为是"
-    },
-    {
-      "type": "p",
-      "text": "第二台偷换器答的是另一类问题:这个人/这件事,**属于哪一类、有多可能是某一类**?系统1的近路是——看它**像不像**那一类的典型模样,越像就越判它是。卡尼曼给了一段著名的人物速写:有个人「害羞、内向、乐于助人却对旁人兴趣不大,做事一丝不苟、爱整洁、关心秩序和细节」,问你:他更可能是**图书管理员**,还是**农民**?几乎所有人脱口而出——图书管理员。因为这段描述,活脱脱就是我们脑中「图书管理员」的刻板印象:安静、爱秩序、跟书打交道。「像」,于是「是」。"
-    },
-    {
-      "type": "p",
-      "text": "但这个直觉漏掉了一个致命的数字:**基率**——世上农民的人数,是图书管理员的许多许多倍。哪怕爱整洁的人在图书管理员里占比更高,可农民的**总盘子太大**了,大到「爱整洁的农民」的绝对人数,轻松碾过「爱整洁的图书管理员」。正确的估法,是把「像不像典型」和「本来有多少」两个数**乘在一起**;而系统1只算了前一半,把后一半——那个不起眼却决定一切的基率——**整个丢掉了**。这就是代表性最大的坑:**基率忽视**。只顾盯着「像不像」,忘了问「本来有多少」。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对照",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>基率忽视:只看「像不像」,忘了「本来有多少」</text><text x='280' y='50' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>速写:害羞、爱整洁、关心秩序 → 直觉喊「图书管理员!」</text><rect x='30' y='66' width='500' height='120' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='45' y='88' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>但先看看总人数的盘子:</text><g style='font-family:var(--font-serif);font-size:14px;fill:var(--azure)'><text x='45' y='114'>农</text><text x='73' y='114'>农</text><text x='101' y='114'>农</text><text x='129' y='114'>农</text><text x='157' y='114'>农</text><text x='185' y='114'>农</text><text x='213' y='114'>农</text><text x='241' y='114'>农</text><text x='269' y='114'>农</text><text x='297' y='114'>农</text><text x='325' y='114'>农</text><text x='353' y='114'>农</text><text x='381' y='114'>农</text><text x='409' y='114'>农</text><text x='437' y='114'>农</text><text x='465' y='114'>农</text><text x='493' y='114'>农</text><text x='45' y='140'>农</text><text x='73' y='140'>农</text><text x='101' y='140'>农</text><text x='129' y='140'>农</text><text x='157' y='140'>农</text><text x='185' y='140'>农</text><text x='213' y='140'>农</text><text x='241' y='140'>农</text><text x='269' y='140'>农</text><text x='297' y='140'>农</text><text x='325' y='140'>农</text><text x='353' y='140'>农</text><text x='381' y='140'>农</text><text x='409' y='140'>农</text><text x='437' y='140'>农</text><text x='465' y='140'>农</text></g><text x='45' y='168' style='font-family:var(--font-serif);font-size:14px;fill:var(--cinnabar-pure);font-weight:bold'>管</text><text x='72' y='168' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>← 图书管理员,总共就这么点</text><text x='280' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>该乘的是两个数:<tspan style='fill:var(--cinnabar-pure);font-weight:bold'>像的程度</tspan> × <tspan style='fill:var(--azure);font-weight:bold'>本来的人数</tspan></text><text x='280' y='238' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>系统1只算了前一半,把「农民多得多」这个基率整个丢了</text><text x='280' y='272' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>爱整洁的农民,绝对人数照样多过爱整洁的管理员</text></svg>",
-      "caption": "代表性最大的坑是「基率忽视」:速写再像图书管理员,也架不住农民的总盘子大出好几个量级。"
-    },
-    {
-      "type": "p",
-      "text": "代表性还有别的翻车姿势。它让人相信「**小样本能代表大规律**」:连开五把红,就赌下一把该开黑了(其实骰子没记性);一个小县城某年癌症发病率奇高,就断言那里有污染(其实样本越小、极端值越常出,纯属波动)。它也让人被**生动的个案**盖过冰冷的统计:医生说这台手术九成成功,你本该放心,可病房里那个失败的病例太鲜活、太「像」你,你就吓退了。共同的病根都是:拿「像不像典型/像不像一个好例子」当成了「概率」,而把真正管用的基率、样本量、总频率,晾在一边。"
-    },
-    {
-      "type": "h2",
-      "text": "Linda 问题:合取谬误,故事骗过了逻辑"
-    },
-    {
-      "type": "p",
-      "text": "代表性最漂亮、也最扎心的一击,是卡尼曼与特沃斯基设计的「**Linda 问题**」。先给一段速写:Linda,三十一岁,单身,直率,非常聪明,大学主修哲学,学生时代就深切关心歧视与社会公正问题,还参加过反核游行。然后问一句:下面哪个更可能?"
-    },
-    {
-      "type": "quote",
-      "original": "① Linda 是银行出纳员。 ② Linda 是银行出纳员,而且积极参与女权运动。",
-      "translation": "大多数人——包括受过统计训练的研究生——都选了②。因为②里那个「关心正义、参与女权」的形象,跟前面那段速写严丝合缝、故事更连贯、更「像」Linda。"
-    },
-    {
-      "type": "p",
-      "text": "但②在逻辑上**绝无可能**比①更可能。道理简单到不容争辩:「出纳员**而且**是女权主义者」是「出纳员」的一个**子集**——凡是符合②的人,必然也符合①;②里还多加了一个条件,只会把人筛掉、不会添人。**给一个描述加的细节越多,它听起来越可信、越具体,可它成真的概率只会越低,绝不会越高。**这就是「**合取谬误**」:两个条件的合取(A 且 B),被判得比单个条件(A)还可能。系统1不做集合运算,它做的是「哪个故事更顺、更像」——而那个塞满了吻合细节的版本,故事最顺,于是最像真的,于是骗过了铁一般的逻辑。"
-    },
-    {
-      "type": "figure",
-      "ftype": "示意图",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>合取谬误:子集不可能大过全集</text><circle cx='215' cy='168' r='108' style='fill:var(--azure);opacity:0.12;stroke:var(--azure);stroke-width:1.5'/><text x='215' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--azure)'>① 银行出纳员</text><text x='215' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>所有出纳员(含各种人)</text><circle cx='232' cy='196' r='52' style='fill:var(--cinnabar-pure);opacity:0.16;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='232' y='192' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>② 出纳员</text><text x='232' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>且女权主义者</text><text x='455' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>②在①里面</text><text x='455' y='172' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>是它的一小块</text><text x='455' y='202' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>P(②) ≤ P(①)</text><text x='455' y='224' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>永远成立</text><text x='280' y='288' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>细节越多 → 故事越像真 → 概率却只降不升</text></svg>",
-      "caption": "「A 且 B」是「A」的子集,数学上不可能更大。可加细节让故事更连贯,系统1就把「更合理」错当成了「更可能」。"
-    },
-    {
-      "type": "h2",
-      "text": "为什么老中招:系统1要的是好故事,不是概率"
-    },
-    {
-      "type": "p",
-      "text": "把三件事——高估空难、错认图书管理员、误判 Linda——摆一起,病根是同一个:**系统1不擅长概率,它擅长连贯**。它是个天生的说书人,拿到任何素材都急着编一个通顺、因果分明、细节自洽的故事;故事越顺,它就越信,并把这份「信」当成了「可能性高」的读数。可概率是另一门手艺:它要你数频率、看基率、比样本、做集合运算——全是系统2才肯干的慢活、累活。于是「**合理**」和「**可能**」这两件本不相干的事,被系统1混为一谈:一个塞满吻合细节的版本读起来最合理,它便判它最可能;而真相常常是,越合理的具体故事,越是被细节筛得概率极低。卡尼曼把这条误区提炼成一句朴素的话:"
-    },
-    {
-      "type": "quote",
-      "original": "凡是容易想起、听起来顺的,就显得更常见、更可能——哪怕它并不是。",
-      "translation": "「多容易想起」(可得性)、「多像典型 / 故事多顺」(代表性),被系统1当成了「有多可能」的答案。这就是两台偷换器共同的把戏。"
-    },
-    {
-      "type": "h2",
-      "text": "分寸:不是嘲笑人蠢,是直觉本来就这样"
-    },
-    {
-      "type": "p",
-      "text": "要说清一点分寸:这一章不是在证明人愚蠢。可得性和代表性,大多数时候是**又快又好用**的近路——真常见的确好想起,真典型的确常常就是。它们是我们能不假思索地过日子的功臣,只在特定的、可预测的场合才翻车。更要紧的是:**这些偏差不因聪明或专业而豁免**。Linda 问题里,受过统计训练的研究生照样多数选错——他们**懂**合取的道理,可道理住在系统2,而选择由系统1脱口而出。卡尼曼本人写道,他熟知这些坑,却依然在直觉层面一次次踩进去。所以正确的姿态,不是嘲笑别人上当,也不是幻想自己免疫,而是**认得出这两台偷换器的手感**:当一个判断特别「顺」、一个风险特别「上头」、一个人特别「像」某一类——正是该踩下刹车、把系统2叫醒的时刻。问一句笨拙却救命的话:先别管它像不像、好不好想起——**它本来有多少?真实的频率、基率、概率,到底是多少?**"
-    },
-    {
-      "type": "p",
-      "text": "这一章给你三件随身工具。其一,一副**可得性的警觉**:当某个危险在脑中挥之不去,先问它是真高发,还是只是太上镜、太近、太吓人。其二,一句**基率的口诀**:遇到「他像哪一类」,补一句「那一类本来有多少」,把「像的程度」乘上「本来的人数」再下判断。其三,一个**合取的红灯**:一个版本细节越多、故事越顺、越让你想点头,越要记得——细节只会降低概率,不会抬高它;合理,从来不等于可能。下一章,卡尼曼要把矛头转向一个更让人不服气的对象:我们对自己「看懂了、算准了」的那份笃定——**过度自信,以及专家直觉到底几分可信**。"
-    }
-  ]
+ "title": "可得性与代表性:被记忆和刻板印象带偏",
+ "subtitle": "判断「有多可能」时,大脑偷偷换了两道更好答的题——「多容易想起」和「多像典型」",
+ "centralIdea": "我们判断一件事「有多可能」,本该去数真实的频率和基率;但系统1嫌这活儿累,总偷偷把问题换成两个更好答的:「这事多容易想起来?」(可得性)和「这事多像我脑中的典型?」(代表性)。于是空难被高估、车祸被低估,一段像女权主义者的描述,让人忘了世上银行出纳员远比女权主义者多。卡尼曼要说的不是人蠢——连懂统计的专家都会在直觉层面中招——而是:一个连贯合理的故事,骗过了我们对概率的清点。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "上一章说锚定,是一个数字绑架你的估计;这一章更常见:**根本没人给你数字,你得自己估**——这条街危不危险、这个人是干哪行的、这件事会不会发生。理性的做法是去查频率、算比例。但系统1没这耐心,它会玩一个偷梁换柱的把戏:把「这事**有多可能**」这道难题,悄悄换成两道好答得多的题——「这事**有多容易想起来**」,以及「这事**有多像**我脑子里那个典型模样」。换完题它自己都不知道换过,还把好答那道题的答案,当成难题的答案交给你。卡尼曼给这两台偷换器起了名字:**可得性启发**和**代表性启发**。它们大多数时候够用,省时省力;可一旦碰上真实世界里「好想起的」和「真常见的」不一致、「像典型的」和「基率高的」对不上,它们就会把你系统性地带偏——而且偏得很稳、很一致,连你自己都察觉不到。"
+  },
+  {
+   "type": "h2",
+   "text": "可得性启发:越好想起,越显得多"
+  },
+  {
+   "type": "p",
+   "text": "先说第一台偷换器。**可得性启发**的规则一句话:一件事越容易从记忆里蹦出来,你就越觉得它常见、觉得它可能发生。这在多数时候是靠谱的近路——真常见的事,你的确见得多、想得起。麻烦出在:**「好想起」不只由「真常见」决定**。一件事上不上头条、画面鲜不鲜活、有没有情绪冲击、是不是最近刚发生、是不是你亲身经历过——这些都会让它在记忆里更「跳」,而它们和真实频率没多大关系。于是记忆的检索难度,被系统1误当成了频率的读数。"
+  },
+  {
+   "type": "p",
+   "text": "最经典的例子是危险的错估。空难、鲨鱼袭击、恐怖袭击、离奇凶杀——这些事**罕见,却极上镜**:媒体反复渲染,画面血淋淋,情绪拉满,于是它们在你脑中随时待命、一叫就到,你便高估了它们的威胁。反过来,中风、糖尿病、哮喘、家里摔一跤、开车上下班——这些才是真正带走大量生命的杀手,却**平淡、不上头条、想不起来**,于是被大大低估。卡尼曼引过一个研究:人们凭直觉估计各种死因的相对频率,凡是耸动、被媒体偏爱的死法(龙卷风、意外事故)一律被高估,凡是安静、寻常的死法(哮喘、中风)一律被低估——错的方向,精确地跟着「上镜程度」走,而不是跟着真实数字走。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照",
+   "svg": "<svg viewBox='0 0 560 320' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>可得性偏差:好想起的被高估,平淡的被低估</text><text x='150' y='52' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink-soft)'>脑中的「感觉危险度」</text><text x='430' y='52' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink-soft)'>真实的「致死人数」</text><line x1='280' y1='62' x2='280' y2='292' style='stroke:var(--line);stroke-width:1'/><text x='40' y='86' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--cinnabar-pure)'>空难 · 鲨鱼 · 凶杀</text><rect x='150' y='74' width='120' height='16' rx='3' style='fill:var(--cinnabar-pure);opacity:0.75'/><rect x='290' y='74' width='22' height='16' rx='3' style='fill:var(--ink-faint);opacity:0.55'/><text x='320' y='87' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>其实极罕见</text><text x='40' y='120' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--cinnabar-pure)'>恐袭 · 空气失事</text><rect x='160' y='108' width='110' height='16' rx='3' style='fill:var(--cinnabar-pure);opacity:0.7'/><rect x='290' y='108' width='28' height='16' rx='3' style='fill:var(--ink-faint);opacity:0.55'/><line x1='40' y1='150' x2='520' y2='150' style='stroke:var(--line);stroke-width:1;stroke-dasharray:3 3'/><text x='40' y='176' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--azure)'>车祸</text><rect x='230' y='164' width='40' height='16' rx='3' style='fill:var(--azure);opacity:0.55'/><rect x='290' y='164' width='150' height='16' rx='3' style='fill:var(--azure);opacity:0.8'/><text x='40' y='210' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--azure)'>中风 · 糖尿病</text><rect x='238' y='198' width='32' height='16' rx='3' style='fill:var(--azure);opacity:0.55'/><rect x='290' y='198' width='195' height='16' rx='3' style='fill:var(--azure);opacity:0.8'/><text x='40' y='244' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--azure)'>家中摔倒</text><rect x='245' y='232' width='25' height='16' rx='3' style='fill:var(--azure);opacity:0.55'/><rect x='290' y='232' width='120' height='16' rx='3' style='fill:var(--azure);opacity:0.8'/><text x='280' y='282' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>上镜的被记住 → 高估;平淡的被忽略 → 低估</text><text x='280' y='304' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>示意为相对关系,非精确统计——差距的方向才是重点</text></svg>",
+   "caption": "同一件事,「感觉多危险」跟「实际害死多少人」常常错位。系统1读的是记忆检索的难易,不是死亡率表。"
+  },
+  {
+   "type": "p",
+   "text": "更麻烦的是这台偷换器会**放大自己**。卡尼曼和法学家桑斯坦提出「**可得性瀑布**」:一桩小概率事件被媒体报道→引发公众恐慌→恐慌本身成了新闻→更多报道→更大恐慌……舆论和媒体互相点火,一件本来微不足道的风险,几周内被滚成全民议题,逼出仓促的政策和巨额的资源错配,而真正更该管的大风险因为「不上镜」继续被冷落。你不必是笨蛋才会卷进去——**你只是诚实地报告了脑中那份「太容易想起、想起来还心惊」的印象**。可得性把「我能轻易想到」翻译成了「这很常见、很危险」,而这条翻译,时对时错。"
+  },
+  {
+   "type": "h2",
+   "text": "代表性启发:越像典型,越以为是"
+  },
+  {
+   "type": "p",
+   "text": "第二台偷换器答的是另一类问题:这个人/这件事,**属于哪一类、有多可能是某一类**?系统1的近路是——看它**像不像**那一类的典型模样,越像就越判它是。卡尼曼给了一段著名的人物速写:有个人「害羞、内向、乐于助人却对旁人兴趣不大,做事一丝不苟、爱整洁、关心秩序和细节」,问你:他更可能是**图书管理员**,还是**农民**?几乎所有人脱口而出——图书管理员。因为这段描述,活脱脱就是我们脑中「图书管理员」的刻板印象:安静、爱秩序、跟书打交道。「像」,于是「是」。"
+  },
+  {
+   "type": "p",
+   "text": "但这个直觉漏掉了一个致命的数字:**基率**——世上农民的人数,是图书管理员的许多许多倍。哪怕爱整洁的人在图书管理员里占比更高,可农民的**总盘子太大**了,大到「爱整洁的农民」的绝对人数,轻松碾过「爱整洁的图书管理员」。正确的估法,是把「像不像典型」和「本来有多少」两个数**乘在一起**;而系统1只算了前一半,把后一半——那个不起眼却决定一切的基率——**整个丢掉了**。这就是代表性最大的坑:**基率忽视**。只顾盯着「像不像」,忘了问「本来有多少」。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>基率忽视:只看「像不像」,忘了「本来有多少」</text><text x='280' y='50' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>速写:害羞、爱整洁、关心秩序 → 直觉喊「图书管理员!」</text><rect x='30' y='66' width='500' height='120' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='45' y='88' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>但先看看总人数的盘子:</text><g style='font-family:var(--font-serif);font-size:14px;fill:var(--azure)'><text x='45' y='114'>农</text><text x='73' y='114'>农</text><text x='101' y='114'>农</text><text x='129' y='114'>农</text><text x='157' y='114'>农</text><text x='185' y='114'>农</text><text x='213' y='114'>农</text><text x='241' y='114'>农</text><text x='269' y='114'>农</text><text x='297' y='114'>农</text><text x='325' y='114'>农</text><text x='353' y='114'>农</text><text x='381' y='114'>农</text><text x='409' y='114'>农</text><text x='437' y='114'>农</text><text x='465' y='114'>农</text><text x='493' y='114'>农</text><text x='45' y='140'>农</text><text x='73' y='140'>农</text><text x='101' y='140'>农</text><text x='129' y='140'>农</text><text x='157' y='140'>农</text><text x='185' y='140'>农</text><text x='213' y='140'>农</text><text x='241' y='140'>农</text><text x='269' y='140'>农</text><text x='297' y='140'>农</text><text x='325' y='140'>农</text><text x='353' y='140'>农</text><text x='381' y='140'>农</text><text x='409' y='140'>农</text><text x='437' y='140'>农</text><text x='465' y='140'>农</text></g><text x='45' y='168' style='font-family:var(--font-serif);font-size:14px;fill:var(--cinnabar-pure);font-weight:bold'>管</text><text x='72' y='168' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>← 图书管理员,总共就这么点</text><text x='280' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>该乘的是两个数:<tspan style='fill:var(--cinnabar-pure);font-weight:bold'>像的程度</tspan> × <tspan style='fill:var(--azure);font-weight:bold'>本来的人数</tspan></text><text x='280' y='238' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>系统1只算了前一半,把「农民多得多」这个基率整个丢了</text><text x='280' y='272' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>爱整洁的农民,绝对人数照样多过爱整洁的管理员</text></svg>",
+   "caption": "代表性最大的坑是「基率忽视」:速写再像图书管理员,也架不住农民的总盘子大出好几个量级。"
+  },
+  {
+   "type": "p",
+   "text": "代表性还有别的翻车姿势。它让人相信「**小样本能代表大规律**」:连开五把红,就赌下一把该开黑了(其实骰子没记性);一个小县城某年癌症发病率奇高,就断言那里有污染(其实样本越小、极端值越常出,纯属波动)。它也让人被**生动的个案**盖过冰冷的统计:医生说这台手术九成成功,你本该放心,可病房里那个失败的病例太鲜活、太「像」你,你就吓退了。共同的病根都是:拿「像不像典型/像不像一个好例子」当成了「概率」,而把真正管用的基率、样本量、总频率,晾在一边。"
+  },
+  {
+   "type": "h2",
+   "text": "Linda 问题:合取谬误,故事骗过了逻辑"
+  },
+  {
+   "type": "p",
+   "text": "代表性最漂亮、也最扎心的一击,是卡尼曼与特沃斯基设计的「**Linda 问题**」。先给一段速写:Linda,三十一岁,单身,直率,非常聪明,大学主修哲学,学生时代就深切关心歧视与社会公正问题,还参加过反核游行。然后问一句:下面哪个更可能?"
+  },
+  {
+   "type": "quote",
+   "original": "① Linda 是银行出纳员。 ② Linda 是银行出纳员,而且积极参与女权运动。",
+   "translation": "大多数人——包括受过统计训练的研究生——都选了②。因为②里那个「关心正义、参与女权」的形象,跟前面那段速写严丝合缝、故事更连贯、更「像」Linda。"
+  },
+  {
+   "type": "p",
+   "text": "但②在逻辑上**绝无可能**比①更可能。道理简单到不容争辩:「出纳员**而且**是女权主义者」是「出纳员」的一个**子集**——凡是符合②的人,必然也符合①;②里还多加了一个条件,只会把人筛掉、不会添人。**给一个描述加的细节越多,它听起来越可信、越具体,可它成真的概率只会越低,绝不会越高。**这就是「**合取谬误**」:两个条件的合取(A 且 B),被判得比单个条件(A)还可能。系统1不做集合运算,它做的是「哪个故事更顺、更像」——而那个塞满了吻合细节的版本,故事最顺,于是最像真的,于是骗过了铁一般的逻辑。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>合取谬误:子集不可能大过全集</text><circle cx='215' cy='168' r='108' style='fill:var(--azure);opacity:0.12;stroke:var(--azure);stroke-width:1.5'/><text x='215' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--azure)'>① 银行出纳员</text><text x='215' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>所有出纳员(含各种人)</text><circle cx='232' cy='196' r='52' style='fill:var(--cinnabar-pure);opacity:0.16;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='232' y='192' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>② 出纳员</text><text x='232' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>且女权主义者</text><text x='455' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>②在①里面</text><text x='455' y='172' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>是它的一小块</text><text x='455' y='202' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>P(②) ≤ P(①)</text><text x='455' y='224' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>永远成立</text><text x='280' y='288' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>细节越多 → 故事越像真 → 概率却只降不升</text></svg>",
+   "caption": "「A 且 B」是「A」的子集,数学上不可能更大。可加细节让故事更连贯,系统1就把「更合理」错当成了「更可能」。"
+  },
+  {
+   "type": "h2",
+   "text": "为什么老中招:系统1要的是好故事,不是概率"
+  },
+  {
+   "type": "p",
+   "text": "把三件事——高估空难、错认图书管理员、误判 Linda——摆一起,病根是同一个:**系统1不擅长概率,它擅长连贯**。它是个天生的说书人,拿到任何素材都急着编一个通顺、因果分明、细节自洽的故事;故事越顺,它就越信,并把这份「信」当成了「可能性高」的读数。可概率是另一门手艺:它要你数频率、看基率、比样本、做集合运算——全是系统2才肯干的慢活、累活。于是「**合理**」和「**可能**」这两件本不相干的事,被系统1混为一谈:一个塞满吻合细节的版本读起来最合理,它便判它最可能;而真相常常是,越合理的具体故事,越是被细节筛得概率极低。卡尼曼把这条误区提炼成一句朴素的话:"
+  },
+  {
+   "type": "quote",
+   "original": "凡是容易想起、听起来顺的,就显得更常见、更可能——哪怕它并不是。",
+   "translation": "「多容易想起」(可得性)、「多像典型 / 故事多顺」(代表性),被系统1当成了「有多可能」的答案。这就是两台偷换器共同的把戏。"
+  },
+  {
+   "type": "h2",
+   "text": "分寸:不是嘲笑人蠢,是直觉本来就这样"
+  },
+  {
+   "type": "p",
+   "text": "要说清一点分寸:这一章不是在证明人愚蠢。可得性和代表性,大多数时候是**又快又好用**的近路——真常见的确好想起,真典型的确常常就是。它们是我们能不假思索地过日子的功臣,只在特定的、可预测的场合才翻车。更要紧的是:**这些偏差不因聪明或专业而豁免**。Linda 问题里,受过统计训练的研究生照样多数选错——他们**懂**合取的道理,可道理住在系统2,而选择由系统1脱口而出。卡尼曼本人写道,他熟知这些坑,却依然在直觉层面一次次踩进去。所以正确的姿态,不是嘲笑别人上当,也不是幻想自己免疫,而是**认得出这两台偷换器的手感**:当一个判断特别「顺」、一个风险特别「上头」、一个人特别「像」某一类——正是该踩下刹车、把系统2叫醒的时刻。问一句笨拙却救命的话:先别管它像不像、好不好想起——"
+  },
+  {
+   "type": "pull",
+   "text": "它本来有多少?真实的频率、基率、概率,到底是多少?"
+  },
+  {
+   "type": "p",
+   "text": "这一章给你三件随身工具。其一,一副**可得性的警觉**:当某个危险在脑中挥之不去,先问它是真高发,还是只是太上镜、太近、太吓人。其二,一句**基率的口诀**:遇到「他像哪一类」,补一句「那一类本来有多少」,把「像的程度」乘上「本来的人数」再下判断。其三,一个**合取的红灯**:一个版本细节越多、故事越顺、越让你想点头,越要记得——细节只会降低概率,不会抬高它;合理,从来不等于可能。下一章,卡尼曼要把矛头转向一个更让人不服气的对象:我们对自己「看懂了、算准了」的那份笃定——**过度自信,以及专家直觉到底几分可信**。"
+  }
+ ]
 }

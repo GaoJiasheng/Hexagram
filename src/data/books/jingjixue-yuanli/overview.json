@@ -1,205 +1,212 @@
 {
-  "title": "白话《经济学原理》· 全书总览",
-  "subtitle": "一套关于人如何取舍、市场如何运作的思维方式——极其好用,却也有它的假设与边界。",
-  "centralIdea": "曼昆的《经济学原理》是全球最流行的入门教材,它不从公式讲起,而是把整门学科浓缩成「十大原理」:前四条讲一个人如何做决策(权衡取舍、机会成本、边际思考、对激励做反应),中三条讲人们如何互动(贸易互利、看不见的手、政府有时能改善),后三条讲整个经济如何运行(生产率决定生活水平、印钱多则通胀、短期内通胀与失业此消彼长)。全书的主力工具是「供给与需求」这张图,配上比较优势、市场失灵与政府角色、宏观增长与通胀,拼出一副理解世界的眼镜。但必须记住:这是一副有力却有边界的眼镜。模型的力量来自抽象,抽象也意味着遗漏——「理性人、信息充分、其他条件不变」等假设在现实中常不成立,行为经济学已证明人会系统性地不理性;主流(新古典)框架偏重效率与市场,对权力、分配不平等、制度与生态环境的处理常被批评为薄弱,不同学派各有侧重。它是「一种」有力的视角,不是唯一的真理;它能厘清代价与权衡,却替代不了价值判断。",
-  "featured": true,
-  "hero": {
-    "badge": "全书 · 核心",
-    "headline": "资源有限,欲望无穷——于是每一步选择,都是一次算账。",
-    "tagline": "十条最朴素的直觉,一张供求图,撑起一门课;也别忘了它清晰的边界。"
+ "title": "白话《经济学原理》· 全书总览",
+ "subtitle": "一套关于人如何取舍、市场如何运作的思维方式——极其好用,却也有它的假设与边界。",
+ "centralIdea": "曼昆的《经济学原理》是全球最流行的入门教材,它不从公式讲起,而是把整门学科浓缩成「十大原理」:前四条讲一个人如何做决策(权衡取舍、机会成本、边际思考、对激励做反应),中三条讲人们如何互动(贸易互利、看不见的手、政府有时能改善),后三条讲整个经济如何运行(生产率决定生活水平、印钱多则通胀、短期内通胀与失业此消彼长)。全书的主力工具是「供给与需求」这张图,配上比较优势、市场失灵与政府角色、宏观增长与通胀,拼出一副理解世界的眼镜。但必须记住:这是一副有力却有边界的眼镜。模型的力量来自抽象,抽象也意味着遗漏——「理性人、信息充分、其他条件不变」等假设在现实中常不成立,行为经济学已证明人会系统性地不理性;主流(新古典)框架偏重效率与市场,对权力、分配不平等、制度与生态环境的处理常被批评为薄弱,不同学派各有侧重。它是「一种」有力的视角,不是唯一的真理;它能厘清代价与权衡,却替代不了价值判断。",
+ "featured": true,
+ "hero": {
+  "badge": "全书 · 核心",
+  "headline": "资源有限,欲望无穷——于是每一步选择,都是一次算账。",
+  "tagline": "十条最朴素的直觉,一张供求图,撑起一门课;也别忘了它清晰的边界。"
+ },
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "早上买一杯咖啡,你花掉的不只是三十块钱,还有这三十块钱本可以做的别的事,以及排队的十分钟。你没意识到,但你刚刚做了一次经济学计算。曼昆的《经济学原理》想教给完全门外汉的,正是这种藏在日常里的思维:资源总是有限的,人却有无穷的欲望,于是每一步选择都在权衡、取舍、算账。这本书是全球最多人用的入门经济学教材,它不从复杂公式讲起,而是先给你十条最朴素的直觉——著名的「经济学十大原理」。读完你未必会算 GDP,但你会换上一副新的眼镜看世界。只是要先说清楚:这是一副有力、却也有边界的眼镜,不是唯一的真理。"
   },
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "早上买一杯咖啡,你花掉的不只是三十块钱,还有这三十块钱本可以做的别的事,以及排队的十分钟。你没意识到,但你刚刚做了一次经济学计算。曼昆的《经济学原理》想教给完全门外汉的,正是这种藏在日常里的思维:资源总是有限的,人却有无穷的欲望,于是每一步选择都在权衡、取舍、算账。这本书是全球最多人用的入门经济学教材,它不从复杂公式讲起,而是先给你十条最朴素的直觉——著名的「经济学十大原理」。读完你未必会算 GDP,但你会换上一副新的眼镜看世界。只是要先说清楚:这是一副有力、却也有边界的眼镜,不是唯一的真理。"
-    },
-    {
-      "type": "h2",
-      "text": "一、一门最流行的入门课"
-    },
-    {
-      "type": "p",
-      "text": "写这本书的是格里高利·曼昆(N. Gregory Mankiw),哈佛大学经济学教授,他的这本教材几十年来被全世界的大学课堂反复采用,几乎是一代人学经济学的第一本书。它最聪明的地方,是没有一上来就抛公式,而是把整个学科浓缩成十条最基本的原理,再按三个层次排好队:前四条讲**一个人如何做决策**,中间三条讲**人与人如何互动**,最后三条讲**整个经济如何运行**。全书成百上千页的模型与图表,追到根上,都是在给这十条直觉做注脚。"
-    },
-    {
-      "type": "figure",
-      "ftype": "结构图",
-      "caption": "经济学十大原理,按三个层次排队:从一个人的取舍,到人与人的互动,再到整个经济的运转——记住这张地图,后面的一切都能对号入座。",
-      "svg": "<svg viewBox='0 0 640 470' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='30' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>经济学十大原理:三组问题</text><rect x='25' y='50' width='190' height='44' rx='9' style='fill:var(--cinnabar-pure)'/><text x='120' y='78' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--paper-raised)'>人们如何做决策</text><rect x='225' y='50' width='190' height='44' rx='9' style='fill:var(--cinnabar-pure)'/><text x='320' y='78' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--paper-raised)'>人们如何互动</text><rect x='425' y='50' width='190' height='44' rx='9' style='fill:var(--cinnabar-pure)'/><text x='520' y='78' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--paper-raised)'>整体经济如何运行</text><rect x='25' y='104' width='190' height='64' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='39' y='131' font-size='13' font-weight='bold' style='fill:var(--ink)'>① 权衡取舍</text><text x='39' y='153' font-size='11.5' style='fill:var(--ink-soft)'>要一样,就得放弃另一样</text><rect x='25' y='176' width='190' height='64' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='39' y='203' font-size='13' font-weight='bold' style='fill:var(--ink)'>② 机会成本</text><text x='39' y='225' font-size='11.5' style='fill:var(--ink-soft)'>成本＝放弃的最高价值选项</text><rect x='25' y='248' width='190' height='64' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='39' y='275' font-size='13' font-weight='bold' style='fill:var(--ink)'>③ 边际思考</text><text x='39' y='297' font-size='11.5' style='fill:var(--ink-soft)'>看「再多一点」的得与失</text><rect x='25' y='320' width='190' height='64' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='39' y='347' font-size='13' font-weight='bold' style='fill:var(--ink)'>④ 对激励做反应</text><text x='39' y='369' font-size='11.5' style='fill:var(--ink-soft)'>价格税收一变,行为就变</text><rect x='225' y='104' width='190' height='64' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='239' y='131' font-size='13' font-weight='bold' style='fill:var(--ink)'>⑤ 贸易互利</text><text x='239' y='153' font-size='11.5' style='fill:var(--ink-soft)'>交换不是零和,双方都变好</text><rect x='225' y='176' width='190' height='64' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='239' y='203' font-size='13' font-weight='bold' style='fill:var(--ink)'>⑥ 市场常是好方式</text><text x='239' y='225' font-size='11.5' style='fill:var(--ink-soft)'>看不见的手协调私利</text><rect x='225' y='248' width='190' height='64' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='239' y='275' font-size='13' font-weight='bold' style='fill:var(--ink)'>⑦ 政府有时能改善</text><text x='239' y='297' font-size='11.5' style='fill:var(--ink-soft)'>市场失灵时可纠正</text><rect x='425' y='104' width='190' height='64' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='439' y='131' font-size='13' font-weight='bold' style='fill:var(--ink)'>⑧ 生活水平靠生产率</text><text x='439' y='153' font-size='11.5' style='fill:var(--ink-soft)'>根本看产出效率</text><rect x='425' y='176' width='190' height='64' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='439' y='203' font-size='13' font-weight='bold' style='fill:var(--ink)'>⑨ 印钱多就通胀</text><text x='439' y='225' font-size='11.5' style='fill:var(--ink-soft)'>货币超发,物价普涨</text><rect x='425' y='248' width='190' height='64' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='439' y='275' font-size='13' font-weight='bold' style='fill:var(--ink)'>⑩ 通胀失业此消彼长</text><text x='439' y='297' font-size='11.5' style='fill:var(--ink-soft)'>短期内二者难兼得</text><line x1='60' y1='400' x2='580' y2='400' style='stroke:var(--line)' stroke-width='1'/><text x='320' y='428' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>前四条讲一个人怎么取舍,中三条讲人们怎样互动,后三条讲整个经济怎样运转</text><text x='320' y='452' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>十条朴素的直觉,撑起一整本教材</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "这三组问题层层放大:先看一个人面对稀缺资源怎么选,再看无数人的选择如何在市场里彼此碰撞、协调,最后看这些互动汇成的整体——增长、通胀、失业——又遵循什么规律。把这张地图记在心里,后面的一切都能对号入座。"
-    },
-    {
-      "type": "h2",
-      "text": "二、人们如何做决策"
-    },
-    {
-      "type": "p",
-      "text": "第一条原理最朴素:**人们面临权衡取舍**。资源就那么多,要了这个就得放弃那个——社会要在「效率」与「平等」之间拉扯,政府要在「大炮」与「黄油」之间分配,你要在「多睡半小时」与「吃顿早饭」之间二选一。承认取舍,是清醒的起点;假装什么都能兼得,是一切糊涂账的源头。第二条紧接着追问:放弃的那一样,到底值多少?一件事真正的成本,不是你付出的钱,而是你为它**放弃掉的最高价值的那个选项**——这就是**机会成本(opportunity cost)**。上大学四年的成本,不只是学费,还有这四年本可以挣到的工资。「天下没有免费的午餐」,说的就是这个理。"
-    },
-    {
-      "type": "quote",
-      "original": "天下没有免费的午餐。",
-      "translation": "十大原理里最口语的一条:凡有所得,必有所弃;看不见自己放弃了什么,就永远算不清一件事的真实代价。"
-    },
-    {
-      "type": "figure",
-      "ftype": "示意图",
-      "caption": "生产可能性边界:资源用尽时,想多要黄油,就得少要大炮。边界上每一次「换」,放弃掉的那一样,就是机会成本。",
-      "svg": "<svg viewBox='0 0 560 380' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='28' text-anchor='middle' font-size='18' font-weight='bold' style='fill:var(--ink)'>生产可能性边界:大炮与黄油</text><line x1='80' y1='56' x2='80' y2='300' style='stroke:var(--ink-soft)' stroke-width='1.8'/><line x1='80' y1='300' x2='500' y2='300' style='stroke:var(--ink-soft)' stroke-width='1.8'/><text x='74' y='52' text-anchor='end' font-size='12' style='fill:var(--ink-soft)'>大炮</text><text x='506' y='304' font-size='12' style='fill:var(--ink-soft)'>黄油</text><path d='M 80 80 Q 400 130 460 300' style='fill:none;stroke:var(--cinnabar-pure)' stroke-width='2.6'/><line x1='170' y1='98' x2='370' y2='183' style='stroke:var(--ink-faint)' stroke-width='1.4' stroke-dasharray='5 4'/><circle cx='170' cy='98' r='5.5' style='fill:var(--cinnabar-pure)'/><text x='150' y='90' text-anchor='end' font-size='11.5' style='fill:var(--ink)'>多大炮·少黄油</text><circle cx='370' cy='183' r='5.5' style='fill:var(--cinnabar-pure)'/><text x='384' y='185' font-size='11.5' style='fill:var(--ink)'>多黄油·少大炮</text><circle cx='225' cy='215' r='5' style='fill:var(--ink-faint)'/><text x='240' y='219' font-size='11.5' style='fill:var(--ink-soft)'>资源没用足(低效·闲置)</text><circle cx='420' cy='110' r='5.5' style='fill:none;stroke:var(--ink-soft)' stroke-width='1.6'/><text x='408' y='112' text-anchor='end' font-size='11.5' style='fill:var(--ink-soft)'>够不着(不可行)</text><text x='280' y='340' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>边界上每一点都用尽了资源:想多要黄油,就得少要大炮</text><text x='280' y='362' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>这一放弃,正是「机会成本」;资源有限,取舍无处不在</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "第三条讲**理性人在边际上思考(think at the margin)**。好的决策很少是「全有或全无」,而是在现状上问一句:「再多做一点点,划不划算?」工厂该不该多接一张订单,航空公司该不该把最后一个空座低价卖掉,看的都不是平均成本,而是**边际收益与边际成本**的比较——这也解开了那个古老的悖论:水比钻石有用得多,价格却低得多,因为定价的是「再多一杯水」的边际价值,而不是水的总价值。第四条则是整门学科的发动机:**人们会对激励做出反应**。价格涨了就少买,罚款重了就收敛,补贴一到位行为就转向。但激励是把双刃剑,设计者一旦看错了人心,就会亲手造出意想不到的副作用——安全带让一些司机开得更猛,「以罚代管」有时反而让人心安理得地违规。"
-    },
-    {
-      "type": "p",
-      "text": "激励失灵的例子俯拾皆是。若为了鼓励医院救治重病人,便按「治愈率」给它们排名,一些医院反而会挑轻症收、把真正危重的病人往外推,好让报表好看;殖民地时期,官府为清除眼镜蛇悬赏收购蛇皮,结果竟有人专门养蛇来领赏——赏金一取消,养的蛇被放回野外,蛇比原来还多。这类**「眼镜蛇效应」**在提醒每一个设计规则的人:人们回应的是你**真正奖励**的那个指标,而不是你**心里希望**他们做的事。把这一条记牢,你看待考核、补贴、罚款乃至一切制度时,都会多问一句:它究竟在奖励什么?"
-    },
-    {
-      "type": "h2",
-      "text": "三、人们如何互动"
-    },
-    {
-      "type": "p",
-      "text": "镜头拉远到人与人之间。第五条:**贸易能让每个人都变得更好**。交换不是你多我就少的零和游戏——正因为各自擅长的不同,分工再交换,双方拿到的都比自己单干时多。第六条是全书的思想核心:**市场通常是组织经济活动的好方式**。两百多年前,亚当·斯密(Adam Smith)提出了那个著名的比喻:市场上无数人各自只顾自己的私利,却仿佛被一只「**看不见的手(invisible hand)**」牵引着,共同促成了对社会有益的结果。这只手,其实就是**价格**——它像信号灯一样,把千千万万人的意愿、成本、稀缺程度压缩成一个数字,自动引导资源流向最需要的地方,不需要谁在中央发号施令。"
-    },
-    {
-      "type": "quote",
-      "original": "每个人只盘算着自己的利益,却被一只看不见的手,引导着去促进社会的利益。",
-      "translation": "亚当·斯密《国富论》(1776)的名句。价格就是这只手:私利在其中相互协调,汇成公共的秩序——但斯密自己也没说过它永不失手。"
-    },
-    {
-      "type": "p",
-      "text": "斯密的话不是市场万能的通行证。第七条随即补上一句:**政府有时能改善市场结果**。当市场自己失灵——有人把成本偷偷转嫁给别人,有些东西没人愿意单独买单,或者一家独大操纵了价格——政府的介入就可能让蛋糕分得更好、做得更大。市场很强,但不是神;这条原理,给全书后面「政府的角色」埋下了伏笔。"
-    },
-    {
-      "type": "h2",
-      "text": "四、供给与需求:全书的主力模型"
-    },
-    {
-      "type": "p",
-      "text": "如果十大原理是这门课的骨架,那么**供给与需求**就是它的心脏——全书大半的分析,都在这一张图上展开。道理简单到近乎常识:在一个市场里,**需求曲线向下**(东西越便宜,想买的人越多)、**供给曲线向上**(价格越高,愿意卖的人越多),两条线相交的那一点,就是**均衡价格**与**均衡数量**。价格在这里扮演一盏自动调节的信号灯:定得太高,东西卖不掉、堆成过剩,卖家只好降价;定得太低,大家抢着买、出现短缺,买家开始加价——两股力量一推一拉,总把价格送回供求相等的那个均衡点。"
-    },
-    {
-      "type": "figure",
-      "ftype": "供求均衡图",
-      "caption": "需求向下、供给向上,交点就是均衡。价格像信号灯:过剩就降、短缺就涨,自动把买卖双方协调到供求相等的那一点。",
-      "svg": "<svg viewBox='0 0 560 380' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='28' text-anchor='middle' font-size='18' font-weight='bold' style='fill:var(--ink)'>供给与需求:价格如何走到均衡</text><line x1='90' y1='56' x2='90' y2='308' style='stroke:var(--ink-soft)' stroke-width='1.8'/><line x1='90' y1='308' x2='512' y2='308' style='stroke:var(--ink-soft)' stroke-width='1.8'/><text x='84' y='52' text-anchor='end' font-size='12' style='fill:var(--ink-soft)'>价格</text><text x='516' y='312' font-size='12' style='fill:var(--ink-soft)'>数量</text><line x1='120' y1='80' x2='470' y2='290' style='stroke:var(--ink)' stroke-width='2.6'/><line x1='120' y1='290' x2='470' y2='80' style='stroke:var(--cinnabar-pure)' stroke-width='2.6'/><text x='476' y='288' font-size='13' font-weight='bold' style='fill:var(--ink)'>需求</text><text x='476' y='86' font-size='13' font-weight='bold' style='fill:var(--cinnabar-pure)'>供给</text><line x1='90' y1='185' x2='295' y2='185' style='stroke:var(--ink-faint)' stroke-width='1.4' stroke-dasharray='5 4'/><line x1='295' y1='185' x2='295' y2='308' style='stroke:var(--ink-faint)' stroke-width='1.4' stroke-dasharray='5 4'/><circle cx='295' cy='185' r='5.5' style='fill:var(--cinnabar-pure)'/><text x='307' y='176' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>均衡点</text><text x='152' y='178' font-size='11.5' style='fill:var(--ink-soft)'>均衡价格</text><text x='301' y='300' font-size='11.5' style='fill:var(--ink-soft)'>均衡数量</text><text x='280' y='340' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>价太高→过剩,卖家降价;价太低→短缺,买家加价</text><text x='280' y='362' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>一推一拉,总把价格送回供求相等的那一点</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "这张看似朴素的图,是一把万能的分析工具。想知道**房租管制**(给价格设上限)会怎样?图上一看便知:人为压低的租金会招来大批租客、却吓退房东,长期结果往往是房荒。想知道**最低工资**(给价格设下限)的两面?它抬高了在岗者的收入,却也可能让一部分低技能岗位消失。税收、补贴、进出口……几乎每一个政策问题,都能翻译成「需求或供给曲线移动了,均衡随之走到哪里」。工具越简单,越见功力——不过也要留意,现实的市场里,信息、习惯、垄断、时滞常让曲线不那么听话。"
-    },
-    {
-      "type": "p",
-      "text": "要用好这张图,还得分清两件容易混淆的事:**沿着曲线移动**和**整条曲线平移**。价格自己在变,是在同一条曲线上滑动;而当价格之外的东西变了——一场霜冻毁掉大半咖啡收成、或一阵风潮让人人都想喝咖啡——整条供给或需求曲线会**平移**,把均衡点带到新位置。前者是「量」随价而动,后者是「线」本身挪窝,分析政策时最忌把两者搞混。经济学还给曲线的陡与缓起了个名字,叫**弹性**:同样涨一块钱,有的东西销量应声大跌(弹性大),有的几乎纹丝不动(弹性小)——一笔税该由买家还是卖家多担、涨价究竟能不能增收,答案都藏在这条曲线有多陡里。"
-    },
-    {
-      "type": "h2",
-      "text": "五、比较优势:为什么交易让大家都受益"
-    },
-    {
-      "type": "p",
-      "text": "「贸易互利」这条原理,值得单独拿出来细看,因为它最反直觉。假设有一个人样样都比你强——做饭更快、写代码也更快,他还有必要跟你交易吗?答案是:有,而且双方都受益。关键在于区分两个概念:**绝对优势**是「谁做得又快又好」,而**比较优势(comparative advantage)**是「谁做这件事时,放弃的东西更少」——也就是谁的**机会成本**更低。哪怕你什么都不如对方,只要各自专注于自己机会成本最低的那件事,再拿去交换,两个人的总产出**都会比各自单干时更多**。"
-    },
-    {
-      "type": "figure",
-      "ftype": "结构图",
-      "caption": "哪怕一方样样绝对更强,只要各自专做「自己机会成本最低」的事,再交换,双方的总产出都会比单干时更多——这就是分工与自由贸易把蛋糕做大的逻辑。",
-      "svg": "<svg viewBox='0 0 640 420' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='28' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>比较优势:各做机会成本最低的事,一起把蛋糕做大</text><rect x='55' y='50' width='230' height='84' rx='10' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.8'/><text x='170' y='80' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--ink)'>甲:样样都更强</text><text x='170' y='104' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>做饭、写代码都快过乙</text><text x='170' y='124' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>(拥有绝对优势)</text><rect x='355' y='50' width='230' height='84' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='470' y='80' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--ink)'>乙:样样都稍逊</text><text x='470' y='104' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>两件事都不如甲</text><text x='470' y='124' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>(没有绝对优势)</text><line x1='320' y1='134' x2='320' y2='162' style='stroke:var(--ink-faint)' stroke-width='1.6'/><polygon points='320,170 313,159 327,159' style='fill:var(--ink-faint)'/><rect x='60' y='172' width='520' height='48' rx='10' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.5'/><text x='320' y='201' text-anchor='middle' font-size='13.5' font-weight='bold' style='fill:var(--ink)'>关键不看谁绝对更强,而看谁做这件事时放弃得更少</text><rect x='55' y='240' width='230' height='66' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='170' y='268' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--ink)'>甲专做机会成本最低的事</text><text x='170' y='291' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>把时间全押在最划算的一样</text><rect x='355' y='240' width='230' height='66' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='470' y='268' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--ink)'>乙也专做自己最划算的事</text><text x='470' y='291' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>总有一样相对最不吃亏</text><line x1='170' y1='306' x2='250' y2='346' style='stroke:var(--ink-faint)' stroke-width='1.4'/><line x1='470' y1='306' x2='390' y2='346' style='stroke:var(--ink-faint)' stroke-width='1.4'/><rect x='110' y='348' width='420' height='58' rx='10' style='fill:var(--cinnabar-pure)'/><text x='320' y='374' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--paper-raised)'>分工 + 交换 → 两人总产出都比单干时多</text><text x='320' y='396' text-anchor='middle' font-size='12.5' style='fill:var(--paper-raised)'>自由贸易把蛋糕做大,而非零和的你输我赢</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "这就是分工与自由贸易能把「蛋糕做大」的底层逻辑:它不要求你在每件事上都最强,只要求你找到自己相对最不吃亏的那件事。国与国之间同理——一个国家哪怕生产什么都比别国高效,专注于自己最擅长的、再互通有无,各国的总财富仍能一起增长。当然,这是一幅「总量」的图景;它讲清了蛋糕为何变大,却没有回答蛋糕**怎么分**——贸易中受损的那部分人是否得到补偿,是原理之外、需要另行面对的问题。"
-    },
-    {
-      "type": "h2",
-      "text": "六、市场失灵与政府的角色"
-    },
-    {
-      "type": "p",
-      "text": "看不见的手很灵,但会有失手的时候,这时才轮到政府登场。经济学把市场自己搞不定的情形归为几类:一是**外部性**——工厂把污染排进河里,成本转嫁给了下游的所有人,自己却不必买单,于是污染总是过量;二是**公共物品**——像国防、灯塔、基础研究,一旦提供人人都能享用、谁也没法被排除在外,于是没人愿意单独掏钱,市场供给严重不足;三是**市场势力(垄断)**——一家独大时,它可以抬价压量,榨取本该属于消费者的好处。这些情形里,自由放任的市场结果并不「有效率」,政府可以用税收(比如对污染征碳税)、管制或直接提供公共服务来纠偏。"
-    },
-    {
-      "type": "figure",
-      "ftype": "结构图",
-      "caption": "市场失灵的三种典型,与政府的两难:市场不是万能,政府也不是万能——外部性、公共物品、垄断需要纠正,但也要提防「政府失灵」。",
-      "svg": "<svg viewBox='0 0 640 420' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='28' text-anchor='middle' font-size='18' font-weight='bold' style='fill:var(--ink)'>市场失灵的三种典型——与政府的角色</text><rect x='25' y='50' width='190' height='124' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='120' y='82' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--cinnabar-pure)'>外部性</text><text x='120' y='110' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>例:工厂排污给他人</text><text x='120' y='132' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>自己却不必买单</text><text x='120' y='160' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink)'>结果:污染过量</text><rect x='225' y='50' width='190' height='124' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='320' y='82' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--cinnabar-pure)'>公共物品</text><text x='320' y='110' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>例:国防、灯塔</text><text x='320' y='132' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>人人想搭便车</text><text x='320' y='160' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink)'>结果:供给不足</text><rect x='425' y='50' width='190' height='124' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='520' y='82' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--cinnabar-pure)'>市场势力(垄断)</text><text x='520' y='110' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>例:一家独大</text><text x='520' y='132' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>抬价又压产量</text><text x='520' y='160' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink)'>结果:效率受损</text><rect x='50' y='196' width='540' height='48' rx='10' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.5'/><text x='320' y='225' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--ink)'>政府可用 税收(如碳税) · 管制 · 公共供给 来纠正</text><rect x='50' y='258' width='540' height='58' rx='10' style='fill:none;stroke:var(--ink-faint)' stroke-width='1.5' stroke-dasharray='5 4'/><text x='320' y='283' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--ink-soft)'>但也要警惕「政府失灵」</text><text x='320' y='304' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>信息不足 · 被利益集团俘获 · 官僚低效</text><text x='320' y='352' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>市场不是万能,政府也不是万能——两种失灵,都要掂量代价</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "但这一条必须两面读。承认市场会失灵,不等于政府就一定做得更好。政府同样会**失灵**:它未必掌握足够的信息去「替市场定价」,它的政策可能被有组织的利益集团俘获、变成少数人的提款机,庞大的官僚体系也可能低效而迟钝。所以曼昆的措辞是谨慎的——政府「**有时**」能改善结果,而不是「总能」。真正的问题从来不是「要市场还是要政府」,而是在具体的每一件事上,掂量两种失灵各自的代价,选那个错得更少的。"
-    },
-    {
-      "type": "h2",
-      "text": "七、整体经济如何运行"
-    },
-    {
-      "type": "p",
-      "text": "把镜头拉到最远,就是宏观经济。衡量一国经济总量的核心指标是**GDP(国内生产总值)**,它统计一段时间里一个国家生产的全部最终产品与服务。围绕它,后三条原理给出了三个最重要的判断。其一:**一国的生活水平,根本上取决于它的生产率(productivity)**——一个国家能有多富裕,归根到底看它的劳动者单位时间能生产多少东西,而生产率又由技术、教育、资本和制度长期累积而成,长期增长的秘密几乎全藏在这里。其二:**政府发行太多货币,物价就会普遍上涨**,这就是通货膨胀的长期根源——钱印多了,每一块钱就更不值钱。其三:在**短期**内,社会往往要在**通胀与失业**之间此消彼长——想压低失业,可能推高通胀;想摁住通胀,又可能付出失业上升的代价。央行的货币政策与政府的财政政策,大半就是在这条跷跷板上小心调节。"
-    },
-    {
-      "type": "p",
-      "text": "这三条判断的分量并不一样。生产率决定长期富裕,几乎是宏观经济学里最少争议的共识:今天一个普通人的生活远胜百年前的富人,靠的不是谁更省吃俭用,而是技术与效率一层层累积,像复利一样滚出天壤之别。但越往短期走,分歧越大——货币与通胀的关系在长期清晰、在短期纠缠,通胀与失业的取舍到底有多刚性、政府该不该出手熨平波动,是凯恩斯主义与它的批评者争了几十年、至今没有定论的战场。换句话说,宏观经济学远不如那张供求图干净利落,这本入门书在这里给出的,是一张仍在被不断修订的地图,而不是一份盖棺定论的答案。"
-    },
-    {
-      "type": "h2",
-      "text": "八、经济学是一种思维方式"
-    },
-    {
-      "type": "p",
-      "text": "读到这里应该能感觉到:经济学与其说是一堆结论,不如说是一套**思考方式**。经济学家像科学家一样工作——面对复杂到无从下手的真实世界,他们先**搭一个简化的模型**,做出「**其他条件不变(ceteris paribus)**」的假设,把千头万绪暂时摁住,只留下想研究的那一两个变量,好把因果关系拎清楚。生产可能性边界、供求曲线,都是这样的「思想模型」。还有一个贯穿全书的区分极重要:**实证陈述**说的是「世界**是**什么样」(比如「上调最低工资会减少低技能岗位的就业」),它可以用证据去检验对错;**规范陈述**说的是「世界**应该**怎样」(比如「政府应当提高最低工资」),它掺进了价值判断,数据本身裁决不了。"
-    },
-    {
-      "type": "p",
-      "text": "打个比方,模型就像地图:一张有用的地图,恰恰因为它**不是**一比一的疆域——它省略了绝大部分细节,只留下你此刻用得上的那几条路。经济学的曲线也是如此,它们从不假装自己就是现实,而是有意舍弃枝节,好让某一层因果关系显形。用地图别忘了它不是大地,用模型也别忘了它不是世界——这份自觉,恰恰是下一节要谈的「边界」的起点。"
-    },
-    {
-      "type": "quote",
-      "original": "实证陈述描述世界是什么样,规范陈述主张世界应该怎样。",
-      "translation": "分清这两句,是经济学素养的起点:前者交给证据,后者交给价值——把二者混为一谈,争论就永远说不到一块去。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对比图",
-      "caption": "两种陈述,泾渭分明:「是什么」交给证据检验,「该怎样」掺入价值判断。经济学家在实证上分歧其实不大,吵得最凶的多是规范问题。",
-      "svg": "<svg viewBox='0 0 640 360' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='28' text-anchor='middle' font-size='18' font-weight='bold' style='fill:var(--ink)'>两种陈述:经济学能回答哪一半</text><rect x='35' y='52' width='270' height='150' rx='10' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.8'/><text x='170' y='84' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--ink)'>实证陈述:世界「是」什么</text><text x='55' y='122' font-size='12' style='fill:var(--ink-soft)'>· 可用证据与数据检验对错</text><text x='55' y='152' font-size='12' style='fill:var(--ink-soft)'>· 例:上调最低工资,</text><text x='68' y='174' font-size='12' style='fill:var(--ink-soft)'>低技能岗位会减少</text><rect x='335' y='52' width='270' height='150' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='470' y='84' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--ink)'>规范陈述:世界「该」怎样</text><text x='355' y='122' font-size='12' style='fill:var(--ink-soft)'>· 掺入价值判断,数据裁不了</text><text x='355' y='152' font-size='12' style='fill:var(--ink-soft)'>· 例:政府「应当」</text><text x='368' y='174' font-size='12' style='fill:var(--ink-soft)'>提高最低工资</text><rect x='60' y='226' width='520' height='56' rx='10' style='fill:var(--cinnabar-pure)'/><text x='320' y='260' text-anchor='middle' font-size='13.5' font-weight='bold' style='fill:var(--paper-raised)'>经济学家在「实证」上分歧不大,分歧多在「规范」</text><text x='320' y='320' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>经济学能厘清代价与权衡,却替代不了价值判断</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "有趣的是,一旦分清这两层,你会发现:经济学家之间在**实证问题**上的分歧,其实远比外界想象的小——多数人同意关税总体上会降低福利、房租管制会造成短缺;他们吵得不可开交的,大多是**规范问题**,是价值与政策的取舍。所以下次听到「经济学家意见不一」,不妨追问一句:他们究竟是在争「事实是什么」,还是在争「我们该要什么」?"
-    },
-    {
-      "type": "h2",
-      "text": "九、这副眼镜的边界"
-    },
-    {
-      "type": "p",
-      "text": "最后,必须诚实地谈谈这套框架的局限——这不是给它挑刺,而是正确使用它的前提。经济学的全部力量,来自「**抽象**」:把复杂现实简化成几条曲线。可**抽象也意味着遗漏**。教科书里那个「**理性人**」——信息充分、精于计算、永远追求自身利益最大化——在现实中并不真实存在。**行为经济学**(卡尼曼等人的工作)已经反复证明,真实的人会**系统性地不理性**:被眼前的得失牵着走,厌恶损失甚于喜爱同等的收益,常被无关的参照点左右。这些发现直接动摇了标准模型最底层的那块地基。「其他条件不变」的假设也一样——现实里,其他条件从不肯乖乖不变。"
-    },
-    {
-      "type": "p",
-      "text": "更深一层的批评是:主流经济学(新古典框架)**并非价值中立**。它天然偏重「**效率**」与「市场」,而对**权力、分配不平等、制度演化、生态环境,以及那些没有价格标签的东西**——一片湿地、一段闲暇、一份社群归属——处理得往往相当薄弱。经济学史上从来不止一种声音:凯恩斯学派更看重需求不足与政府调控,制度经济学强调规则与组织的塑造力,马克思主义追问资本与劳动之间的权力,生态经济学则坚持经济必须放进地球的物理边界里衡量。曼昆这本书呈现的,是其中最主流、也最有解释力的一支,但它是「**一种**」视角,不是**唯一**的真理。"
-    },
-    {
-      "type": "quote",
-      "original": "经济学厘清代价,却替代不了价值。",
-      "translation": "全书边界的一句话总结:它能把每条路要付的代价摆到你面前,但往哪条路走,始终是一道属于人、而不只属于模型的选择题。"
-    },
-    {
-      "type": "p",
-      "text": "所以,该怎么读这本书?把它当成一副**极其好用、却有清晰边界的眼镜**——它能帮你算清代价、看穿取舍、识破「免费午餐」的幻觉,让你面对政策与选择时多一层清醒。但要记得,几乎所有真正棘手的政策结论,最后都落在「效率与公平如何权衡」这个价值岔路口上,而**经济学能替你把每条路的代价摆清楚,却替代不了你自己的价值判断**。学会这套思维,是为了把账算明白;账算明白之后要往哪儿走,是一道属于人的选择题。这,大概就是这本入门课最该带走的东西。"
-    },
-    {
-      "type": "refs",
-      "items": [
-        "原书:N. Gregory Mankiw, Principles of Economics(初版1998,后有多个修订版,并有《宏观经济学》及微观/宏观分册等衍生版本)。曼昆为哈佛大学经济学教授,曾任美国总统经济顾问委员会主席。「经济学十大原理」是本书开篇用来组织全书的框架。本文为原创转述与提要,非原文翻译,个别表述、数字随版次或有出入。",
-        "思想源头:「看不见的手」出自亚当·斯密《国富论》(An Inquiry into the Nature and Causes of the Wealth of Nations, 1776);比较优势的经典表述可追溯至大卫·李嘉图(David Ricardo,《政治经济学及赋税原理》1817)。这些是现代经济学的源流,曼昆在书中作了入门化的转述。",
-        "关于局限与批判:行为经济学可参丹尼尔·卡尼曼《思考,快与慢》与理查德·塞勒等人的工作(二者均获诺贝尔经济学奖);对主流(新古典)框架的不同侧重,另见凯恩斯主义、制度经济学、马克思主义政治经济学与生态经济学等传统。本文在提要中特意保留这些边界,提醒读者:入门教材呈现的是一种有力、却非唯一的视角,政策结论往往取决于价值取舍。"
-      ]
-    }
-  ]
+  {
+   "type": "h2",
+   "text": "一、一门最流行的入门课"
+  },
+  {
+   "type": "p",
+   "text": "写这本书的是格里高利·曼昆(N. Gregory Mankiw),哈佛大学经济学教授,他的这本教材几十年来被全世界的大学课堂反复采用,几乎是一代人学经济学的第一本书。它最聪明的地方,是没有一上来就抛公式,而是把整个学科浓缩成十条最基本的原理,再按三个层次排好队:前四条讲**一个人如何做决策**,中间三条讲**人与人如何互动**,最后三条讲**整个经济如何运行**。全书成百上千页的模型与图表,追到根上,都是在给这十条直觉做注脚。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "经济学十大原理,按三个层次排队:从一个人的取舍,到人与人的互动,再到整个经济的运转——记住这张地图,后面的一切都能对号入座。",
+   "svg": "<svg viewBox='0 0 640 470' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='30' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>经济学十大原理:三组问题</text><rect x='25' y='50' width='190' height='44' rx='9' style='fill:var(--cinnabar-pure)'/><text x='120' y='78' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--paper-raised)'>人们如何做决策</text><rect x='225' y='50' width='190' height='44' rx='9' style='fill:var(--cinnabar-pure)'/><text x='320' y='78' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--paper-raised)'>人们如何互动</text><rect x='425' y='50' width='190' height='44' rx='9' style='fill:var(--cinnabar-pure)'/><text x='520' y='78' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--paper-raised)'>整体经济如何运行</text><rect x='25' y='104' width='190' height='64' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='39' y='131' font-size='13' font-weight='bold' style='fill:var(--ink)'>① 权衡取舍</text><text x='39' y='153' font-size='11.5' style='fill:var(--ink-soft)'>要一样,就得放弃另一样</text><rect x='25' y='176' width='190' height='64' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='39' y='203' font-size='13' font-weight='bold' style='fill:var(--ink)'>② 机会成本</text><text x='39' y='225' font-size='11.5' style='fill:var(--ink-soft)'>成本＝放弃的最高价值选项</text><rect x='25' y='248' width='190' height='64' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='39' y='275' font-size='13' font-weight='bold' style='fill:var(--ink)'>③ 边际思考</text><text x='39' y='297' font-size='11.5' style='fill:var(--ink-soft)'>看「再多一点」的得与失</text><rect x='25' y='320' width='190' height='64' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='39' y='347' font-size='13' font-weight='bold' style='fill:var(--ink)'>④ 对激励做反应</text><text x='39' y='369' font-size='11.5' style='fill:var(--ink-soft)'>价格税收一变,行为就变</text><rect x='225' y='104' width='190' height='64' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='239' y='131' font-size='13' font-weight='bold' style='fill:var(--ink)'>⑤ 贸易互利</text><text x='239' y='153' font-size='11.5' style='fill:var(--ink-soft)'>交换不是零和,双方都变好</text><rect x='225' y='176' width='190' height='64' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='239' y='203' font-size='13' font-weight='bold' style='fill:var(--ink)'>⑥ 市场常是好方式</text><text x='239' y='225' font-size='11.5' style='fill:var(--ink-soft)'>看不见的手协调私利</text><rect x='225' y='248' width='190' height='64' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='239' y='275' font-size='13' font-weight='bold' style='fill:var(--ink)'>⑦ 政府有时能改善</text><text x='239' y='297' font-size='11.5' style='fill:var(--ink-soft)'>市场失灵时可纠正</text><rect x='425' y='104' width='190' height='64' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='439' y='131' font-size='13' font-weight='bold' style='fill:var(--ink)'>⑧ 生活水平靠生产率</text><text x='439' y='153' font-size='11.5' style='fill:var(--ink-soft)'>根本看产出效率</text><rect x='425' y='176' width='190' height='64' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='439' y='203' font-size='13' font-weight='bold' style='fill:var(--ink)'>⑨ 印钱多就通胀</text><text x='439' y='225' font-size='11.5' style='fill:var(--ink-soft)'>货币超发,物价普涨</text><rect x='425' y='248' width='190' height='64' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='439' y='275' font-size='13' font-weight='bold' style='fill:var(--ink)'>⑩ 通胀失业此消彼长</text><text x='439' y='297' font-size='11.5' style='fill:var(--ink-soft)'>短期内二者难兼得</text><line x1='60' y1='400' x2='580' y2='400' style='stroke:var(--line)' stroke-width='1'/><text x='320' y='428' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>前四条讲一个人怎么取舍,中三条讲人们怎样互动,后三条讲整个经济怎样运转</text><text x='320' y='452' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>十条朴素的直觉,撑起一整本教材</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "这三组问题层层放大:先看一个人面对稀缺资源怎么选,再看无数人的选择如何在市场里彼此碰撞、协调,最后看这些互动汇成的整体——增长、通胀、失业——又遵循什么规律。把这张地图记在心里,后面的一切都能对号入座。"
+  },
+  {
+   "type": "h2",
+   "text": "二、人们如何做决策"
+  },
+  {
+   "type": "p",
+   "text": "第一条原理最朴素:**人们面临权衡取舍**。资源就那么多,要了这个就得放弃那个——社会要在「效率」与「平等」之间拉扯,政府要在「大炮」与「黄油」之间分配,你要在「多睡半小时」与「吃顿早饭」之间二选一。承认取舍,是清醒的起点;假装什么都能兼得,是一切糊涂账的源头。第二条紧接着追问:放弃的那一样,到底值多少?一件事真正的成本,不是你付出的钱,而是你为它**放弃掉的最高价值的那个选项**——这就是**机会成本(opportunity cost)**。上大学四年的成本,不只是学费,还有这四年本可以挣到的工资。「天下没有免费的午餐」,说的就是这个理。"
+  },
+  {
+   "type": "quote",
+   "original": "天下没有免费的午餐。",
+   "translation": "十大原理里最口语的一条:凡有所得,必有所弃;看不见自己放弃了什么,就永远算不清一件事的真实代价。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "生产可能性边界:资源用尽时,想多要黄油,就得少要大炮。边界上每一次「换」,放弃掉的那一样,就是机会成本。",
+   "svg": "<svg viewBox='0 0 560 380' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='28' text-anchor='middle' font-size='18' font-weight='bold' style='fill:var(--ink)'>生产可能性边界:大炮与黄油</text><line x1='80' y1='56' x2='80' y2='300' style='stroke:var(--ink-soft)' stroke-width='1.8'/><line x1='80' y1='300' x2='500' y2='300' style='stroke:var(--ink-soft)' stroke-width='1.8'/><text x='74' y='52' text-anchor='end' font-size='12' style='fill:var(--ink-soft)'>大炮</text><text x='506' y='304' font-size='12' style='fill:var(--ink-soft)'>黄油</text><path d='M 80 80 Q 400 130 460 300' style='fill:none;stroke:var(--cinnabar-pure)' stroke-width='2.6'/><line x1='170' y1='98' x2='370' y2='183' style='stroke:var(--ink-faint)' stroke-width='1.4' stroke-dasharray='5 4'/><circle cx='170' cy='98' r='5.5' style='fill:var(--cinnabar-pure)'/><text x='150' y='90' text-anchor='end' font-size='11.5' style='fill:var(--ink)'>多大炮·少黄油</text><circle cx='370' cy='183' r='5.5' style='fill:var(--cinnabar-pure)'/><text x='384' y='185' font-size='11.5' style='fill:var(--ink)'>多黄油·少大炮</text><circle cx='225' cy='215' r='5' style='fill:var(--ink-faint)'/><text x='240' y='219' font-size='11.5' style='fill:var(--ink-soft)'>资源没用足(低效·闲置)</text><circle cx='420' cy='110' r='5.5' style='fill:none;stroke:var(--ink-soft)' stroke-width='1.6'/><text x='408' y='112' text-anchor='end' font-size='11.5' style='fill:var(--ink-soft)'>够不着(不可行)</text><text x='280' y='340' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>边界上每一点都用尽了资源:想多要黄油,就得少要大炮</text><text x='280' y='362' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>这一放弃,正是「机会成本」;资源有限,取舍无处不在</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "第三条讲**理性人在边际上思考(think at the margin)**。好的决策很少是「全有或全无」,而是在现状上问一句:「再多做一点点,划不划算?」工厂该不该多接一张订单,航空公司该不该把最后一个空座低价卖掉,看的都不是平均成本,而是**边际收益与边际成本**的比较——这也解开了那个古老的悖论:水比钻石有用得多,价格却低得多,因为定价的是「再多一杯水」的边际价值,而不是水的总价值。第四条则是整门学科的发动机:**人们会对激励做出反应**。价格涨了就少买,罚款重了就收敛,补贴一到位行为就转向。但激励是把双刃剑,设计者一旦看错了人心,就会亲手造出意想不到的副作用——安全带让一些司机开得更猛,「以罚代管」有时反而让人心安理得地违规。"
+  },
+  {
+   "type": "p",
+   "text": "激励失灵的例子俯拾皆是。若为了鼓励医院救治重病人,便按「治愈率」给它们排名,一些医院反而会挑轻症收、把真正危重的病人往外推,好让报表好看;殖民地时期,官府为清除眼镜蛇悬赏收购蛇皮,结果竟有人专门养蛇来领赏——赏金一取消,养的蛇被放回野外,蛇比原来还多。这类**「眼镜蛇效应」**在提醒每一个设计规则的人:人们回应的是你**真正奖励**的那个指标,而不是你**心里希望**他们做的事。把这一条记牢,你看待考核、补贴、罚款乃至一切制度时,都会多问一句:它究竟在奖励什么?"
+  },
+  {
+   "type": "h2",
+   "text": "三、人们如何互动"
+  },
+  {
+   "type": "p",
+   "text": "镜头拉远到人与人之间。第五条:**贸易能让每个人都变得更好**。交换不是你多我就少的零和游戏——正因为各自擅长的不同,分工再交换,双方拿到的都比自己单干时多。第六条是全书的思想核心:**市场通常是组织经济活动的好方式**。两百多年前,亚当·斯密(Adam Smith)提出了那个著名的比喻:市场上无数人各自只顾自己的私利,却仿佛被一只「**看不见的手(invisible hand)**」牵引着,共同促成了对社会有益的结果。这只手,其实就是**价格**——它像信号灯一样,把千千万万人的意愿、成本、稀缺程度压缩成一个数字,自动引导资源流向最需要的地方,不需要谁在中央发号施令。"
+  },
+  {
+   "type": "quote",
+   "original": "每个人只盘算着自己的利益,却被一只看不见的手,引导着去促进社会的利益。",
+   "translation": "亚当·斯密《国富论》(1776)的名句。价格就是这只手:私利在其中相互协调,汇成公共的秩序——但斯密自己也没说过它永不失手。"
+  },
+  {
+   "type": "p",
+   "text": "斯密的话不是市场万能的通行证。第七条随即补上一句:**政府有时能改善市场结果**。当市场自己失灵——有人把成本偷偷转嫁给别人,有些东西没人愿意单独买单,或者一家独大操纵了价格——政府的介入就可能让蛋糕分得更好、做得更大。市场很强,但不是神;这条原理,给全书后面「政府的角色」埋下了伏笔。"
+  },
+  {
+   "type": "h2",
+   "text": "四、供给与需求:全书的主力模型"
+  },
+  {
+   "type": "p",
+   "text": "如果十大原理是这门课的骨架,那么**供给与需求**就是它的心脏——全书大半的分析,都在这一张图上展开。道理简单到近乎常识:在一个市场里,**需求曲线向下**(东西越便宜,想买的人越多)、**供给曲线向上**(价格越高,愿意卖的人越多),两条线相交的那一点,就是**均衡价格**与**均衡数量**。价格在这里扮演一盏自动调节的信号灯:定得太高,东西卖不掉、堆成过剩,卖家只好降价;定得太低,大家抢着买、出现短缺,买家开始加价——两股力量一推一拉,总把价格送回供求相等的那个均衡点。"
+  },
+  {
+   "type": "figure",
+   "ftype": "供求均衡图",
+   "caption": "需求向下、供给向上,交点就是均衡。价格像信号灯:过剩就降、短缺就涨,自动把买卖双方协调到供求相等的那一点。",
+   "svg": "<svg viewBox='0 0 560 380' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='28' text-anchor='middle' font-size='18' font-weight='bold' style='fill:var(--ink)'>供给与需求:价格如何走到均衡</text><line x1='90' y1='56' x2='90' y2='308' style='stroke:var(--ink-soft)' stroke-width='1.8'/><line x1='90' y1='308' x2='512' y2='308' style='stroke:var(--ink-soft)' stroke-width='1.8'/><text x='84' y='52' text-anchor='end' font-size='12' style='fill:var(--ink-soft)'>价格</text><text x='516' y='312' font-size='12' style='fill:var(--ink-soft)'>数量</text><line x1='120' y1='80' x2='470' y2='290' style='stroke:var(--ink)' stroke-width='2.6'/><line x1='120' y1='290' x2='470' y2='80' style='stroke:var(--cinnabar-pure)' stroke-width='2.6'/><text x='476' y='288' font-size='13' font-weight='bold' style='fill:var(--ink)'>需求</text><text x='476' y='86' font-size='13' font-weight='bold' style='fill:var(--cinnabar-pure)'>供给</text><line x1='90' y1='185' x2='295' y2='185' style='stroke:var(--ink-faint)' stroke-width='1.4' stroke-dasharray='5 4'/><line x1='295' y1='185' x2='295' y2='308' style='stroke:var(--ink-faint)' stroke-width='1.4' stroke-dasharray='5 4'/><circle cx='295' cy='185' r='5.5' style='fill:var(--cinnabar-pure)'/><text x='307' y='176' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>均衡点</text><text x='152' y='178' font-size='11.5' style='fill:var(--ink-soft)'>均衡价格</text><text x='301' y='300' font-size='11.5' style='fill:var(--ink-soft)'>均衡数量</text><text x='280' y='340' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>价太高→过剩,卖家降价;价太低→短缺,买家加价</text><text x='280' y='362' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>一推一拉,总把价格送回供求相等的那一点</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "这张看似朴素的图,是一把万能的分析工具。想知道**房租管制**(给价格设上限)会怎样?图上一看便知:人为压低的租金会招来大批租客、却吓退房东,长期结果往往是房荒。想知道**最低工资**(给价格设下限)的两面?它抬高了在岗者的收入,却也可能让一部分低技能岗位消失。税收、补贴、进出口……几乎每一个政策问题,都能翻译成「需求或供给曲线移动了,均衡随之走到哪里」。工具越简单,越见功力——不过也要留意,现实的市场里,信息、习惯、垄断、时滞常让曲线不那么听话。"
+  },
+  {
+   "type": "p",
+   "text": "要用好这张图,还得分清两件容易混淆的事:**沿着曲线移动**和**整条曲线平移**。价格自己在变,是在同一条曲线上滑动;而当价格之外的东西变了——一场霜冻毁掉大半咖啡收成、或一阵风潮让人人都想喝咖啡——整条供给或需求曲线会**平移**,把均衡点带到新位置。前者是「量」随价而动,后者是「线」本身挪窝,分析政策时最忌把两者搞混。经济学还给曲线的陡与缓起了个名字,叫**弹性**:同样涨一块钱,有的东西销量应声大跌(弹性大),有的几乎纹丝不动(弹性小)——一笔税该由买家还是卖家多担、涨价究竟能不能增收,答案都藏在这条曲线有多陡里。"
+  },
+  {
+   "type": "h2",
+   "text": "五、比较优势:为什么交易让大家都受益"
+  },
+  {
+   "type": "p",
+   "text": "「贸易互利」这条原理,值得单独拿出来细看,因为它最反直觉。假设有一个人样样都比你强——做饭更快、写代码也更快,他还有必要跟你交易吗?答案是:有,而且双方都受益。关键在于区分两个概念:**绝对优势**是「谁做得又快又好」,而**比较优势(comparative advantage)**是「谁做这件事时,放弃的东西更少」——也就是谁的**机会成本**更低。哪怕你什么都不如对方,只要各自专注于自己机会成本最低的那件事,再拿去交换,两个人的总产出"
+  },
+  {
+   "type": "pull",
+   "text": "都会比各自单干时更多。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "哪怕一方样样绝对更强,只要各自专做「自己机会成本最低」的事,再交换,双方的总产出都会比单干时更多——这就是分工与自由贸易把蛋糕做大的逻辑。",
+   "svg": "<svg viewBox='0 0 640 420' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='28' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>比较优势:各做机会成本最低的事,一起把蛋糕做大</text><rect x='55' y='50' width='230' height='84' rx='10' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.8'/><text x='170' y='80' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--ink)'>甲:样样都更强</text><text x='170' y='104' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>做饭、写代码都快过乙</text><text x='170' y='124' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>(拥有绝对优势)</text><rect x='355' y='50' width='230' height='84' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='470' y='80' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--ink)'>乙:样样都稍逊</text><text x='470' y='104' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>两件事都不如甲</text><text x='470' y='124' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>(没有绝对优势)</text><line x1='320' y1='134' x2='320' y2='162' style='stroke:var(--ink-faint)' stroke-width='1.6'/><polygon points='320,170 313,159 327,159' style='fill:var(--ink-faint)'/><rect x='60' y='172' width='520' height='48' rx='10' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.5'/><text x='320' y='201' text-anchor='middle' font-size='13.5' font-weight='bold' style='fill:var(--ink)'>关键不看谁绝对更强,而看谁做这件事时放弃得更少</text><rect x='55' y='240' width='230' height='66' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='170' y='268' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--ink)'>甲专做机会成本最低的事</text><text x='170' y='291' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>把时间全押在最划算的一样</text><rect x='355' y='240' width='230' height='66' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='470' y='268' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--ink)'>乙也专做自己最划算的事</text><text x='470' y='291' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>总有一样相对最不吃亏</text><line x1='170' y1='306' x2='250' y2='346' style='stroke:var(--ink-faint)' stroke-width='1.4'/><line x1='470' y1='306' x2='390' y2='346' style='stroke:var(--ink-faint)' stroke-width='1.4'/><rect x='110' y='348' width='420' height='58' rx='10' style='fill:var(--cinnabar-pure)'/><text x='320' y='374' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--paper-raised)'>分工 + 交换 → 两人总产出都比单干时多</text><text x='320' y='396' text-anchor='middle' font-size='12.5' style='fill:var(--paper-raised)'>自由贸易把蛋糕做大,而非零和的你输我赢</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "这就是分工与自由贸易能把「蛋糕做大」的底层逻辑:它不要求你在每件事上都最强,只要求你找到自己相对最不吃亏的那件事。国与国之间同理——一个国家哪怕生产什么都比别国高效,专注于自己最擅长的、再互通有无,各国的总财富仍能一起增长。当然,这是一幅「总量」的图景;它讲清了蛋糕为何变大,却没有回答蛋糕**怎么分**——贸易中受损的那部分人是否得到补偿,是原理之外、需要另行面对的问题。"
+  },
+  {
+   "type": "h2",
+   "text": "六、市场失灵与政府的角色"
+  },
+  {
+   "type": "p",
+   "text": "看不见的手很灵,但会有失手的时候,这时才轮到政府登场。经济学把市场自己搞不定的情形归为几类:一是**外部性**——工厂把污染排进河里,成本转嫁给了下游的所有人,自己却不必买单,于是污染总是过量;二是**公共物品**——像国防、灯塔、基础研究,一旦提供人人都能享用、谁也没法被排除在外,于是没人愿意单独掏钱,市场供给严重不足;三是**市场势力(垄断)**——一家独大时,它可以抬价压量,榨取本该属于消费者的好处。这些情形里,自由放任的市场结果并不「有效率」,政府可以用税收(比如对污染征碳税)、管制或直接提供公共服务来纠偏。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "市场失灵的三种典型,与政府的两难:市场不是万能,政府也不是万能——外部性、公共物品、垄断需要纠正,但也要提防「政府失灵」。",
+   "svg": "<svg viewBox='0 0 640 420' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='28' text-anchor='middle' font-size='18' font-weight='bold' style='fill:var(--ink)'>市场失灵的三种典型——与政府的角色</text><rect x='25' y='50' width='190' height='124' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='120' y='82' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--cinnabar-pure)'>外部性</text><text x='120' y='110' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>例:工厂排污给他人</text><text x='120' y='132' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>自己却不必买单</text><text x='120' y='160' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink)'>结果:污染过量</text><rect x='225' y='50' width='190' height='124' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='320' y='82' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--cinnabar-pure)'>公共物品</text><text x='320' y='110' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>例:国防、灯塔</text><text x='320' y='132' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>人人想搭便车</text><text x='320' y='160' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink)'>结果:供给不足</text><rect x='425' y='50' width='190' height='124' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='520' y='82' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--cinnabar-pure)'>市场势力(垄断)</text><text x='520' y='110' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>例:一家独大</text><text x='520' y='132' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>抬价又压产量</text><text x='520' y='160' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink)'>结果:效率受损</text><rect x='50' y='196' width='540' height='48' rx='10' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.5'/><text x='320' y='225' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--ink)'>政府可用 税收(如碳税) · 管制 · 公共供给 来纠正</text><rect x='50' y='258' width='540' height='58' rx='10' style='fill:none;stroke:var(--ink-faint)' stroke-width='1.5' stroke-dasharray='5 4'/><text x='320' y='283' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--ink-soft)'>但也要警惕「政府失灵」</text><text x='320' y='304' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>信息不足 · 被利益集团俘获 · 官僚低效</text><text x='320' y='352' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>市场不是万能,政府也不是万能——两种失灵,都要掂量代价</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "但这一条必须两面读。承认市场会失灵,不等于政府就一定做得更好。政府同样会**失灵**:它未必掌握足够的信息去「替市场定价」,它的政策可能被有组织的利益集团俘获、变成少数人的提款机,庞大的官僚体系也可能低效而迟钝。所以曼昆的措辞是谨慎的——政府「**有时**」能改善结果,而不是「总能」。真正的问题从来不是「要市场还是要政府」,而是在具体的每一件事上,掂量两种失灵各自的代价,选那个错得更少的。"
+  },
+  {
+   "type": "h2",
+   "text": "七、整体经济如何运行"
+  },
+  {
+   "type": "p",
+   "text": "把镜头拉到最远,就是宏观经济。衡量一国经济总量的核心指标是**GDP(国内生产总值)**,它统计一段时间里一个国家生产的全部最终产品与服务。围绕它,后三条原理给出了三个最重要的判断。其一:**一国的生活水平,根本上取决于它的生产率(productivity)**——一个国家能有多富裕,归根到底看它的劳动者单位时间能生产多少东西,而生产率又由技术、教育、资本和制度长期累积而成,长期增长的秘密几乎全藏在这里。其二:**政府发行太多货币,物价就会普遍上涨**,这就是通货膨胀的长期根源——钱印多了,每一块钱就更不值钱。其三:在**短期**内,社会往往要在**通胀与失业**之间此消彼长——想压低失业,可能推高通胀;想摁住通胀,又可能付出失业上升的代价。央行的货币政策与政府的财政政策,大半就是在这条跷跷板上小心调节。"
+  },
+  {
+   "type": "p",
+   "text": "这三条判断的分量并不一样。生产率决定长期富裕,几乎是宏观经济学里最少争议的共识:今天一个普通人的生活远胜百年前的富人,靠的不是谁更省吃俭用,而是技术与效率一层层累积,像复利一样滚出天壤之别。但越往短期走,分歧越大——货币与通胀的关系在长期清晰、在短期纠缠,通胀与失业的取舍到底有多刚性、政府该不该出手熨平波动,是凯恩斯主义与它的批评者争了几十年、至今没有定论的战场。换句话说,宏观经济学远不如那张供求图干净利落,这本入门书在这里给出的,是一张仍在被不断修订的地图,而不是一份盖棺定论的答案。"
+  },
+  {
+   "type": "h2",
+   "text": "八、经济学是一种思维方式"
+  },
+  {
+   "type": "p",
+   "text": "读到这里应该能感觉到:经济学与其说是一堆结论,不如说是一套**思考方式**。经济学家像科学家一样工作——面对复杂到无从下手的真实世界,他们先**搭一个简化的模型**,做出「**其他条件不变(ceteris paribus)**」的假设,把千头万绪暂时摁住,只留下想研究的那一两个变量,好把因果关系拎清楚。生产可能性边界、供求曲线,都是这样的「思想模型」。还有一个贯穿全书的区分极重要:**实证陈述**说的是「世界**是**什么样」(比如「上调最低工资会减少低技能岗位的就业」),它可以用证据去检验对错;**规范陈述**说的是「世界**应该**怎样」(比如「政府应当提高最低工资」),它掺进了价值判断,数据本身裁决不了。"
+  },
+  {
+   "type": "callout",
+   "tone": "note",
+   "items": [
+    "打个比方,模型就像地图:一张有用的地图,恰恰因为它**不是**一比一的疆域——它省略了绝大部分细节,只留下你此刻用得上的那几条路。经济学的曲线也是如此,它们从不假装自己就是现实,而是有意舍弃枝节,好让某一层因果关系显形。用地图别忘了它不是大地,用模型也别忘了它不是世界——这份自觉,恰恰是下一节要谈的「边界」的起点。"
+   ]
+  },
+  {
+   "type": "quote",
+   "original": "实证陈述描述世界是什么样,规范陈述主张世界应该怎样。",
+   "translation": "分清这两句,是经济学素养的起点:前者交给证据,后者交给价值——把二者混为一谈,争论就永远说不到一块去。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "caption": "两种陈述,泾渭分明:「是什么」交给证据检验,「该怎样」掺入价值判断。经济学家在实证上分歧其实不大,吵得最凶的多是规范问题。",
+   "svg": "<svg viewBox='0 0 640 360' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='28' text-anchor='middle' font-size='18' font-weight='bold' style='fill:var(--ink)'>两种陈述:经济学能回答哪一半</text><rect x='35' y='52' width='270' height='150' rx='10' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.8'/><text x='170' y='84' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--ink)'>实证陈述:世界「是」什么</text><text x='55' y='122' font-size='12' style='fill:var(--ink-soft)'>· 可用证据与数据检验对错</text><text x='55' y='152' font-size='12' style='fill:var(--ink-soft)'>· 例:上调最低工资,</text><text x='68' y='174' font-size='12' style='fill:var(--ink-soft)'>低技能岗位会减少</text><rect x='335' y='52' width='270' height='150' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='470' y='84' text-anchor='middle' font-size='14.5' font-weight='bold' style='fill:var(--ink)'>规范陈述:世界「该」怎样</text><text x='355' y='122' font-size='12' style='fill:var(--ink-soft)'>· 掺入价值判断,数据裁不了</text><text x='355' y='152' font-size='12' style='fill:var(--ink-soft)'>· 例:政府「应当」</text><text x='368' y='174' font-size='12' style='fill:var(--ink-soft)'>提高最低工资</text><rect x='60' y='226' width='520' height='56' rx='10' style='fill:var(--cinnabar-pure)'/><text x='320' y='260' text-anchor='middle' font-size='13.5' font-weight='bold' style='fill:var(--paper-raised)'>经济学家在「实证」上分歧不大,分歧多在「规范」</text><text x='320' y='320' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>经济学能厘清代价与权衡,却替代不了价值判断</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "有趣的是,一旦分清这两层,你会发现:经济学家之间在**实证问题**上的分歧,其实远比外界想象的小——多数人同意关税总体上会降低福利、房租管制会造成短缺;他们吵得不可开交的,大多是**规范问题**,是价值与政策的取舍。所以下次听到「经济学家意见不一」,不妨追问一句:他们究竟是在争「事实是什么」,还是在争「我们该要什么」?"
+  },
+  {
+   "type": "h2",
+   "text": "九、这副眼镜的边界"
+  },
+  {
+   "type": "p",
+   "text": "最后,必须诚实地谈谈这套框架的局限——这不是给它挑刺,而是正确使用它的前提。经济学的全部力量,来自「**抽象**」:把复杂现实简化成几条曲线。可**抽象也意味着遗漏**。教科书里那个「**理性人**」——信息充分、精于计算、永远追求自身利益最大化——在现实中并不真实存在。**行为经济学**(卡尼曼等人的工作)已经反复证明,真实的人会**系统性地不理性**:被眼前的得失牵着走,厌恶损失甚于喜爱同等的收益,常被无关的参照点左右。这些发现直接动摇了标准模型最底层的那块地基。「其他条件不变」的假设也一样——现实里,其他条件从不肯乖乖不变。"
+  },
+  {
+   "type": "p",
+   "text": "更深一层的批评是:主流经济学(新古典框架)**并非价值中立**。它天然偏重「**效率**」与「市场」,而对**权力、分配不平等、制度演化、生态环境,以及那些没有价格标签的东西**——一片湿地、一段闲暇、一份社群归属——处理得往往相当薄弱。经济学史上从来不止一种声音:凯恩斯学派更看重需求不足与政府调控,制度经济学强调规则与组织的塑造力,马克思主义追问资本与劳动之间的权力,生态经济学则坚持经济必须放进地球的物理边界里衡量。曼昆这本书呈现的,是其中最主流、也最有解释力的一支,但它是「**一种**」视角,不是**唯一**的真理。"
+  },
+  {
+   "type": "quote",
+   "original": "经济学厘清代价,却替代不了价值。",
+   "translation": "全书边界的一句话总结:它能把每条路要付的代价摆到你面前,但往哪条路走,始终是一道属于人、而不只属于模型的选择题。"
+  },
+  {
+   "type": "p",
+   "text": "所以,该怎么读这本书?把它当成一副**极其好用、却有清晰边界的眼镜**——它能帮你算清代价、看穿取舍、识破「免费午餐」的幻觉,让你面对政策与选择时多一层清醒。但要记得,几乎所有真正棘手的政策结论,最后都落在「效率与公平如何权衡」这个价值岔路口上,而**经济学能替你把每条路的代价摆清楚,却替代不了你自己的价值判断**。学会这套思维,是为了把账算明白;账算明白之后要往哪儿走,是一道属于人的选择题。这,大概就是这本入门课最该带走的东西。"
+  },
+  {
+   "type": "refs",
+   "items": [
+    "原书:N. Gregory Mankiw, Principles of Economics(初版1998,后有多个修订版,并有《宏观经济学》及微观/宏观分册等衍生版本)。曼昆为哈佛大学经济学教授,曾任美国总统经济顾问委员会主席。「经济学十大原理」是本书开篇用来组织全书的框架。本文为原创转述与提要,非原文翻译,个别表述、数字随版次或有出入。",
+    "思想源头:「看不见的手」出自亚当·斯密《国富论》(An Inquiry into the Nature and Causes of the Wealth of Nations, 1776);比较优势的经典表述可追溯至大卫·李嘉图(David Ricardo,《政治经济学及赋税原理》1817)。这些是现代经济学的源流,曼昆在书中作了入门化的转述。",
+    "关于局限与批判:行为经济学可参丹尼尔·卡尼曼《思考,快与慢》与理查德·塞勒等人的工作(二者均获诺贝尔经济学奖);对主流(新古典)框架的不同侧重,另见凯恩斯主义、制度经济学、马克思主义政治经济学与生态经济学等传统。本文在提要中特意保留这些边界,提醒读者:入门教材呈现的是一种有力、却非唯一的视角,政策结论往往取决于价值取舍。"
+   ]
+  }
+ ]
 }

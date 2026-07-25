@@ -1,83 +1,87 @@
 {
-  "title": "群体也能变好?麦独孤补上勒庞漏掉的另一半",
-  "subtitle": "街头人群会变笨,但军队、教会、老牌机构为什么不乱?弗洛伊德拿到了「配方清单」,还想要「化学原理」",
-  "centralIdea": "勒庞把群体描绘成一台「降智机器」,但这幅画像其实只适用于临时凑起来的松散人群。英国心理学家麦独孤指出:高度组织化的群体——国家、军队、教派——因为有持续性、内部结构、共同传统和与他群的对抗关系,反而能提升成员的表现,纪律更强、目标更久。弗洛伊德承认这补上了勒庞的漏洞,却仍不满意:麦独孤列出了「哪些条件让群体升级」,没说清驱动这一切的心理动力是什么。坏样子与好样子,还等着一个能同时解释两者的底层力量。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "上一章勒庞把话说得很满:人一进群体,智力被拉低、情绪被放大、像被催眠一样任人摆布。可你稍微想一下就会觉得不对劲——一支训练有素的军队是群体,一个运转了几百年的教会是群体,一家管理良好的公司也是群体,它们非但不混乱,反而能做成任何个人都做不成的事。难道这些群体不算群体?这一章,弗洛伊德把话筒递给另一位学者:英国心理学家麦独孤(William McDougall)。他在 1920 年出版的《群体心理》(The Group Mind)里,恰好补上了勒庞漏掉的那一半。"
-    },
-    {
-      "type": "h2",
-      "text": "勒庞画的,其实只是「最差的群体」"
-    },
-    {
-      "type": "p",
-      "text": "麦独孤是谁?一位从英国走出、后来任教于哈佛的心理学家,当年社会心理学的开山人物之一。弗洛伊德在这一章里把他请出来,不是为了推翻勒庞,恰恰是因为他和勒庞看到了同一件事的两面。对于**街头那种临时、松散、无组织的人群**——一场骚乱、一次围观、一群挤在广场上互相感染情绪的陌生人——麦独孤的观察和勒庞高度一致:情绪彼此传染、层层加码,判断力下降,容易冲动,来得快散得也快。他甚至给这种情绪的相互抬高起了个名字,叫「情绪的高涨与强化」,并认为这是成群最显眼的后果:平时克制的人,在人群里会体验到独处时很难达到的情绪烈度,而且身不由己——你在演唱会或球场看台上大概体会过这种「不由自主跟着吼」的状态。到这里,两人看到的是同一幅画。"
-    },
-    {
-      "type": "quote",
-      "original": "成群带来的最显著结果,是情绪的高涨与强化。",
-      "translation": "弗洛伊德转述麦独孤对松散人群的判断:人在群体里被彼此的情绪反复点燃,达到独处时罕见的强度——这一点上,麦独孤和勒庞并无分歧。"
-    },
-    {
-      "type": "p",
-      "text": "分歧在后面。麦独孤指出:勒庞那幅阴暗画像,**只适用于「最低级」的群体形态**,也就是没组织、没结构、没历史的乌合之众。拿街头人群的表现去概括「一切群体」,就像拿一群临时拼凑的路人球队去断言「人类不可能踢好足球」——你看到的确实是真的,但你只看了样本里最差的那一档。"
-    },
-    {
-      "type": "figure",
-      "ftype": "compare",
-      "svg": "<svg viewBox='0 0 500 270' xmlns='http://www.w3.org/2000/svg'><text x='125' y='28' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:14px;font-weight:600'>松散人群(勒庞的画像)</text><text x='375' y='28' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:14px;font-weight:600'>组织化群体(麦独孤的补充)</text><line x1='250' y1='42' x2='250' y2='240' style='stroke:var(--line);stroke-width:1;stroke-dasharray:4 4'/><circle cx='78' cy='78' r='9' style='fill:var(--ink-faint)'/><circle cx='128' cy='62' r='9' style='fill:var(--ink-faint)'/><circle cx='170' cy='92' r='9' style='fill:var(--ink-faint)'/><circle cx='100' cy='112' r='9' style='fill:var(--ink-faint)'/><circle cx='150' cy='128' r='9' style='fill:var(--ink-faint)'/><circle cx='62' cy='132' r='9' style='fill:var(--ink-faint)'/><path d='M 90 84 L 118 68' style='stroke:var(--cinnabar);stroke-width:1.5;fill:none'/><path d='M 138 70 L 162 86' style='stroke:var(--cinnabar);stroke-width:1.5;fill:none'/><path d='M 108 106 L 142 122' style='stroke:var(--cinnabar);stroke-width:1.5;fill:none'/><path d='M 74 126 L 92 118' style='stroke:var(--cinnabar);stroke-width:1.5;fill:none'/><text x='125' y='172' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>情绪互相传染、层层加码</text><text x='125' y='192' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>冲动、易变、判断力下降</text><text x='125' y='212' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>来得快,散得也快</text><circle cx='330' cy='66' r='9' style='fill:var(--cinnabar)'/><circle cx='306' cy='102' r='8' style='fill:var(--ink-faint)'/><circle cx='354' cy='102' r='8' style='fill:var(--ink-faint)'/><circle cx='402' cy='102' r='8' style='fill:var(--ink-faint)'/><circle cx='294' cy='136' r='8' style='fill:var(--ink-faint)'/><circle cx='330' cy='136' r='8' style='fill:var(--ink-faint)'/><circle cx='366' cy='136' r='8' style='fill:var(--ink-faint)'/><circle cx='402' cy='136' r='8' style='fill:var(--ink-faint)'/><path d='M 324 74 L 310 94' style='stroke:var(--line);stroke-width:1.5;fill:none'/><path d='M 336 74 L 350 94' style='stroke:var(--line);stroke-width:1.5;fill:none'/><path d='M 340 70 L 396 96' style='stroke:var(--line);stroke-width:1.5;fill:none'/><path d='M 302 110 L 296 128' style='stroke:var(--line);stroke-width:1.5;fill:none'/><path d='M 312 110 L 326 128' style='stroke:var(--line);stroke-width:1.5;fill:none'/><path d='M 358 110 L 364 128' style='stroke:var(--line);stroke-width:1.5;fill:none'/><path d='M 402 110 L 402 128' style='stroke:var(--line);stroke-width:1.5;fill:none'/><text x='375' y='172' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>有结构、有分工、有传统</text><text x='375' y='192' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>纪律更强、目标更持久</text><text x='375' y='212' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>能做成个人做不成的事</text><text x='250' y='256' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:10.5px'>同样叫「群体」,一个把人拉低,一个把人抬高</text></svg>",
-      "caption": "两种群体的画像:勒庞盯着街头人群,麦独孤指向军队、国家、教派——降智不是群体的宿命,而是「无组织」的症状"
-    },
-    {
-      "type": "h2",
-      "text": "让群体「升级」的配方:麦独孤的五个条件"
-    },
-    {
-      "type": "p",
-      "text": "那么,是什么把一群乌合之众变成一支能打仗的军队?麦独孤开出了一张条件清单。**第一是持续性**:群体得长期存在,不管是同一批人一直在(老店的班底),还是人换了位置还在(铁打的营盘流水的兵)。**第二是自我认知**:成员心里清楚这个群体是什么、要干什么、和自己是什么关系——一个知道自己是「消防队员」的人,和一个碰巧站在人堆里的人,状态完全不同。**第三是与其他群体的互动乃至对抗**:有对手、有比较、有竞争,凝聚力反而被激出来,想想球队有了宿敌之后的样子。**第四是传统、习俗和惯例**:规矩沉淀下来,新人一进来就知道「我们这儿的做法」。**第五是内部结构和分工**:各司其职,有人指挥、有人执行、有人补位,而不是一窝蜂。"
-    },
-    {
-      "type": "figure",
-      "ftype": "list",
-      "svg": "<svg viewBox='0 0 460 312' xmlns='http://www.w3.org/2000/svg'><text x='230' y='30' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:15px;font-weight:600'>麦独孤:群体「升级」的五个条件</text><circle cx='48' cy='72' r='13' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='48' y='77' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar);font-size:12px'>一</text><text x='76' y='69' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>持续性</text><text x='76' y='87' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>群体长期存在,不因人来人往而散伙</text><circle cx='48' cy='122' r='13' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='48' y='127' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar);font-size:12px'>二</text><text x='76' y='119' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>自我认知</text><text x='76' y='137' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>成员清楚群体是什么、要干什么</text><circle cx='48' cy='172' r='13' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='48' y='177' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar);font-size:12px'>三</text><text x='76' y='169' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>与他群的互动与对抗</text><text x='76' y='187' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>有对手有竞争,凝聚力被激出来</text><circle cx='48' cy='222' r='13' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='48' y='227' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar);font-size:12px'>四</text><text x='76' y='219' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>传统与惯例</text><text x='76' y='237' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>规矩沉淀成「我们这儿的做法」</text><circle cx='48' cy='272' r='13' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='48' y='277' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar);font-size:12px'>五</text><text x='76' y='269' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>结构与分工</text><text x='76' y='287' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>各司其职,而不是一窝蜂</text><line x1='390' y1='60' x2='390' y2='284' style='stroke:var(--line);stroke-width:1'/><text x='420' y='160' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:11px' transform='rotate(90 420 160)'>条件越齐,群体越不像乌合之众</text></svg>",
-      "caption": "麦独孤的「升级条件」清单:持续性、自我认知、对抗关系、传统、分工——想想军队、老牌学校、有宿敌的球队,几乎条条命中"
-    },
-    {
-      "type": "p",
-      "text": "用这张清单一对照,你身边的群体立刻分出了层次:早高峰地铁里的人群,五条一条不占,所以最接近勒庞的描述;一家百年老店、一支有番号的部队、一个有校训有校友会的学校,五条几乎全占,所以能表现出**个人单干时达不到的纪律和持久目标**。中间地带也看得清:一个刚拉起来的微信群,只占「自我认知」一条,吵散是常态;等它有了固定活动、老成员带新成员的惯例、再遇上一个「隔壁群」当参照,凝聚力就肉眼可见地变硬。麦独孤的结论是:组织化程度越高,群体把成员心智「往下拉」的那部分弊病就越能被抵消,甚至反过来把人的表现往上抬——群体不必然是深渊,它也可以是台阶。"
-    },
-    {
-      "type": "h2",
-      "text": "弗洛伊德的不满:你给了配方,没给原理"
-    },
-    {
-      "type": "p",
-      "text": "弗洛伊德对麦独孤的补充评价不低——它填掉了勒庞理论一个明显的漏洞:如果群体注定让人变笨,人类历史上那些靠组织完成的伟业就没法解释了,语言、民歌、大教堂,哪一样不是群体的作品?但他随即指出了一个更深的问题:**这五个条件只是描述,不是解释**。它们回答了「什么样的群体不会退化」,却没有回答「究竟是什么心理力量,让人愿意留在群体里、服从纪律、为共同目标压住自己的冲动」。持续性为什么能让人安心?传统为什么能让人服气?对抗为什么能让人抱团?清单上每一条的背后,都藏着同一个没被点名的发动机。打个比方:麦独孤给了一张烤面包的配方清单——面粉、水、酵母、温度、时间,照做确实能出炉;但弗洛伊德想知道的是发酵的化学原理——酵母到底对面团做了什么。清单能让你复制结果,原理才能让你理解结果;而不懂原理,你就说不清配方为什么灵、什么时候会失灵。"
-    },
-    {
-      "type": "quote",
-      "original": "问题在于:如何为群体争得个人原有、却因成群而泯灭的那些特性。",
-      "translation": "弗洛伊德把麦独孤的五个条件收拢成一句话:所谓「组织化」,本质上是想办法让群体重新获得个人独处时才有的稳定、连续和自觉。但「怎么做到」清单说了,「靠什么心理动力做到」还没人说。"
-    },
-    {
-      "type": "figure",
-      "ftype": "metaphor",
-      "svg": "<svg viewBox='0 0 500 250' xmlns='http://www.w3.org/2000/svg'><rect x='28' y='44' width='180' height='160' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='118' y='70' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>配方清单(麦独孤)</text><line x1='52' y1='92' x2='68' y2='92' style='stroke:var(--cinnabar);stroke-width:2'/><text x='78' y='96' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>持续性</text><line x1='52' y1='116' x2='68' y2='116' style='stroke:var(--cinnabar);stroke-width:2'/><text x='78' y='120' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>自我认知</text><line x1='52' y1='140' x2='68' y2='140' style='stroke:var(--cinnabar);stroke-width:2'/><text x='78' y='144' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>对抗关系</text><line x1='52' y1='164' x2='68' y2='164' style='stroke:var(--cinnabar);stroke-width:2'/><text x='78' y='168' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>传统 · 分工</text><text x='118' y='192' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:10.5px'>照做,能出「好群体」</text><path d='M 216 124 L 276 124' style='stroke:var(--ink-soft);stroke-width:1.5;fill:none'/><path d='M 276 124 L 268 118 M 276 124 L 268 130' style='stroke:var(--ink-soft);stroke-width:1.5;fill:none'/><text x='246' y='112' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:10.5px'>还差一步</text><rect x='288' y='44' width='184' height='160' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='380' y='70' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>化学原理(弗洛伊德要找的)</text><text x='380' y='122' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar);font-size:30px;font-weight:600'>?</text><text x='380' y='156' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>驱动这一切的心理动力</text><text x='380' y='174' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>究竟是什么?</text><text x='380' y='192' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:10.5px'>——本书后面几章的主线</text><text x='250' y='234' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:10.5px'>清单让你复制结果,原理才让你理解结果</text></svg>",
-      "caption": "配方与原理:麦独孤告诉你放什么料能烤出面包,弗洛伊德追问酵母到底干了什么——这一问,引出全书真正的主角"
-    },
-    {
-      "type": "h2",
-      "text": "两幅画像,等一个统一解释"
-    },
-    {
-      "type": "p",
-      "text": "读到这里,可以给前三章做个小结:勒庞画了群体的**坏样子**——冲动、降智、易受摆布;麦独孤画了群体的**好样子**——有纪律、有传统、目标持久。两幅画都有真实的原型,但摆在一起就成了一个谜:同样是「人聚成群」,为什么能结出两种截然相反的果子?值得注意的是弗洛伊德对麦独孤那五个条件的一个巧妙翻译:所谓「组织化」,说到底是想办法**把个人独处时才有的稳定、连续、自觉,重新还给群体**——个人一入群就丢掉的东西,组织化群体靠制度一件件捡了回来。这个翻译把两幅画像拧到了同一根轴上:坏样子是「丢了没捡」,好样子是「丢了又捡回来」,而「丢」与「捡」背后必定是同一套心理机制在运作。弗洛伊德接下来要做的,正是绕开「描述现象」这条路,去找**能同时解释两种样子的那股底层力量**——一股既能让街头人群失控、也能让军队和教会凝聚不散的心理动力。他心里已经有了候选答案,后面几章会亮出来。"
-    },
-    {
-      "type": "p",
-      "text": "照例提醒一句读法:这一章呈现的是弗洛伊德对麦独孤的**转述和取舍**,他挑的是对自己论证有用的部分。而麦独孤那本《群体心理》里「群体心智」(group mind)的提法——仿佛群体真有一个独立于成员的「心灵」——在后来的社会心理学里争议很大,主流早已不把它当实体看待。所以这份「配方清单」值得记住的,是它对「组织化程度决定群体品质」的观察,而不是它背后的形而上学;至于弗洛伊德即将给出的「化学原理」,同样请带着这份研读的距离感往下看。"
-    }
-  ]
+ "title": "群体也能变好?麦独孤补上勒庞漏掉的另一半",
+ "subtitle": "街头人群会变笨,但军队、教会、老牌机构为什么不乱?弗洛伊德拿到了「配方清单」,还想要「化学原理」",
+ "centralIdea": "勒庞把群体描绘成一台「降智机器」,但这幅画像其实只适用于临时凑起来的松散人群。英国心理学家麦独孤指出:高度组织化的群体——国家、军队、教派——因为有持续性、内部结构、共同传统和与他群的对抗关系,反而能提升成员的表现,纪律更强、目标更久。弗洛伊德承认这补上了勒庞的漏洞,却仍不满意:麦独孤列出了「哪些条件让群体升级」,没说清驱动这一切的心理动力是什么。坏样子与好样子,还等着一个能同时解释两者的底层力量。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "上一章勒庞把话说得很满:人一进群体,智力被拉低、情绪被放大、像被催眠一样任人摆布。可你稍微想一下就会觉得不对劲——一支训练有素的军队是群体,一个运转了几百年的教会是群体,一家管理良好的公司也是群体,它们非但不混乱,反而能做成任何个人都做不成的事。难道这些群体不算群体?这一章,弗洛伊德把话筒递给另一位学者:英国心理学家麦独孤(William McDougall)。他在 1920 年出版的《群体心理》(The Group Mind)里,恰好补上了勒庞漏掉的那一半。"
+  },
+  {
+   "type": "h2",
+   "text": "勒庞画的,其实只是「最差的群体」"
+  },
+  {
+   "type": "p",
+   "text": "麦独孤是谁?一位从英国走出、后来任教于哈佛的心理学家,当年社会心理学的开山人物之一。弗洛伊德在这一章里把他请出来,不是为了推翻勒庞,恰恰是因为他和勒庞看到了同一件事的两面。对于**街头那种临时、松散、无组织的人群**——一场骚乱、一次围观、一群挤在广场上互相感染情绪的陌生人——麦独孤的观察和勒庞高度一致:情绪彼此传染、层层加码,判断力下降,容易冲动,来得快散得也快。他甚至给这种情绪的相互抬高起了个名字,叫「情绪的高涨与强化」,并认为这是成群最显眼的后果:平时克制的人,在人群里会体验到独处时很难达到的情绪烈度,而且身不由己——你在演唱会或球场看台上大概体会过这种「不由自主跟着吼」的状态。到这里,两人看到的是同一幅画。"
+  },
+  {
+   "type": "quote",
+   "original": "成群带来的最显著结果,是情绪的高涨与强化。",
+   "translation": "弗洛伊德转述麦独孤对松散人群的判断:人在群体里被彼此的情绪反复点燃,达到独处时罕见的强度——这一点上,麦独孤和勒庞并无分歧。"
+  },
+  {
+   "type": "p",
+   "text": "分歧在后面。麦独孤指出:勒庞那幅阴暗画像,**只适用于「最低级」的群体形态**,也就是没组织、没结构、没历史的乌合之众。拿街头人群的表现去概括「一切群体」,就像拿一群临时拼凑的路人球队去断言「人类不可能踢好足球」——你看到的确实是真的,但你只看了样本里最差的那一档。"
+  },
+  {
+   "type": "figure",
+   "ftype": "compare",
+   "svg": "<svg viewBox='0 0 500 270' xmlns='http://www.w3.org/2000/svg'><text x='125' y='28' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:14px;font-weight:600'>松散人群(勒庞的画像)</text><text x='375' y='28' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:14px;font-weight:600'>组织化群体(麦独孤的补充)</text><line x1='250' y1='42' x2='250' y2='240' style='stroke:var(--line);stroke-width:1;stroke-dasharray:4 4'/><circle cx='78' cy='78' r='9' style='fill:var(--ink-faint)'/><circle cx='128' cy='62' r='9' style='fill:var(--ink-faint)'/><circle cx='170' cy='92' r='9' style='fill:var(--ink-faint)'/><circle cx='100' cy='112' r='9' style='fill:var(--ink-faint)'/><circle cx='150' cy='128' r='9' style='fill:var(--ink-faint)'/><circle cx='62' cy='132' r='9' style='fill:var(--ink-faint)'/><path d='M 90 84 L 118 68' style='stroke:var(--cinnabar);stroke-width:1.5;fill:none'/><path d='M 138 70 L 162 86' style='stroke:var(--cinnabar);stroke-width:1.5;fill:none'/><path d='M 108 106 L 142 122' style='stroke:var(--cinnabar);stroke-width:1.5;fill:none'/><path d='M 74 126 L 92 118' style='stroke:var(--cinnabar);stroke-width:1.5;fill:none'/><text x='125' y='172' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>情绪互相传染、层层加码</text><text x='125' y='192' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>冲动、易变、判断力下降</text><text x='125' y='212' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>来得快,散得也快</text><circle cx='330' cy='66' r='9' style='fill:var(--cinnabar)'/><circle cx='306' cy='102' r='8' style='fill:var(--ink-faint)'/><circle cx='354' cy='102' r='8' style='fill:var(--ink-faint)'/><circle cx='402' cy='102' r='8' style='fill:var(--ink-faint)'/><circle cx='294' cy='136' r='8' style='fill:var(--ink-faint)'/><circle cx='330' cy='136' r='8' style='fill:var(--ink-faint)'/><circle cx='366' cy='136' r='8' style='fill:var(--ink-faint)'/><circle cx='402' cy='136' r='8' style='fill:var(--ink-faint)'/><path d='M 324 74 L 310 94' style='stroke:var(--line);stroke-width:1.5;fill:none'/><path d='M 336 74 L 350 94' style='stroke:var(--line);stroke-width:1.5;fill:none'/><path d='M 340 70 L 396 96' style='stroke:var(--line);stroke-width:1.5;fill:none'/><path d='M 302 110 L 296 128' style='stroke:var(--line);stroke-width:1.5;fill:none'/><path d='M 312 110 L 326 128' style='stroke:var(--line);stroke-width:1.5;fill:none'/><path d='M 358 110 L 364 128' style='stroke:var(--line);stroke-width:1.5;fill:none'/><path d='M 402 110 L 402 128' style='stroke:var(--line);stroke-width:1.5;fill:none'/><text x='375' y='172' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>有结构、有分工、有传统</text><text x='375' y='192' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>纪律更强、目标更持久</text><text x='375' y='212' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>能做成个人做不成的事</text><text x='250' y='256' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:10.5px'>同样叫「群体」,一个把人拉低,一个把人抬高</text></svg>",
+   "caption": "两种群体的画像:勒庞盯着街头人群,麦独孤指向军队、国家、教派——降智不是群体的宿命,而是「无组织」的症状"
+  },
+  {
+   "type": "h2",
+   "text": "让群体「升级」的配方:麦独孤的五个条件"
+  },
+  {
+   "type": "p",
+   "text": "那么,是什么把一群乌合之众变成一支能打仗的军队?麦独孤开出了一张条件清单。**第一是持续性**:群体得长期存在,不管是同一批人一直在(老店的班底),还是人换了位置还在(铁打的营盘流水的兵)。**第二是自我认知**:成员心里清楚这个群体是什么、要干什么、和自己是什么关系——一个知道自己是「消防队员」的人,和一个碰巧站在人堆里的人,状态完全不同。**第三是与其他群体的互动乃至对抗**:有对手、有比较、有竞争,凝聚力反而被激出来,想想球队有了宿敌之后的样子。**第四是传统、习俗和惯例**:规矩沉淀下来,新人一进来就知道「我们这儿的做法」。"
+  },
+  {
+   "type": "pull",
+   "text": "**第五是内部结构和分工**:各司其职,有人指挥、有人执行、有人补位,而不是一窝蜂。"
+  },
+  {
+   "type": "figure",
+   "ftype": "list",
+   "svg": "<svg viewBox='0 0 460 312' xmlns='http://www.w3.org/2000/svg'><text x='230' y='30' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:15px;font-weight:600'>麦独孤:群体「升级」的五个条件</text><circle cx='48' cy='72' r='13' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='48' y='77' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar);font-size:12px'>一</text><text x='76' y='69' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>持续性</text><text x='76' y='87' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>群体长期存在,不因人来人往而散伙</text><circle cx='48' cy='122' r='13' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='48' y='127' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar);font-size:12px'>二</text><text x='76' y='119' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>自我认知</text><text x='76' y='137' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>成员清楚群体是什么、要干什么</text><circle cx='48' cy='172' r='13' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='48' y='177' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar);font-size:12px'>三</text><text x='76' y='169' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>与他群的互动与对抗</text><text x='76' y='187' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>有对手有竞争,凝聚力被激出来</text><circle cx='48' cy='222' r='13' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='48' y='227' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar);font-size:12px'>四</text><text x='76' y='219' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>传统与惯例</text><text x='76' y='237' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>规矩沉淀成「我们这儿的做法」</text><circle cx='48' cy='272' r='13' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='48' y='277' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar);font-size:12px'>五</text><text x='76' y='269' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>结构与分工</text><text x='76' y='287' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>各司其职,而不是一窝蜂</text><line x1='390' y1='60' x2='390' y2='284' style='stroke:var(--line);stroke-width:1'/><text x='420' y='160' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:11px' transform='rotate(90 420 160)'>条件越齐,群体越不像乌合之众</text></svg>",
+   "caption": "麦独孤的「升级条件」清单:持续性、自我认知、对抗关系、传统、分工——想想军队、老牌学校、有宿敌的球队,几乎条条命中"
+  },
+  {
+   "type": "p",
+   "text": "用这张清单一对照,你身边的群体立刻分出了层次:早高峰地铁里的人群,五条一条不占,所以最接近勒庞的描述;一家百年老店、一支有番号的部队、一个有校训有校友会的学校,五条几乎全占,所以能表现出**个人单干时达不到的纪律和持久目标**。中间地带也看得清:一个刚拉起来的微信群,只占「自我认知」一条,吵散是常态;等它有了固定活动、老成员带新成员的惯例、再遇上一个「隔壁群」当参照,凝聚力就肉眼可见地变硬。麦独孤的结论是:组织化程度越高,群体把成员心智「往下拉」的那部分弊病就越能被抵消,甚至反过来把人的表现往上抬——群体不必然是深渊,它也可以是台阶。"
+  },
+  {
+   "type": "h2",
+   "text": "弗洛伊德的不满:你给了配方,没给原理"
+  },
+  {
+   "type": "p",
+   "text": "弗洛伊德对麦独孤的补充评价不低——它填掉了勒庞理论一个明显的漏洞:如果群体注定让人变笨,人类历史上那些靠组织完成的伟业就没法解释了,语言、民歌、大教堂,哪一样不是群体的作品?但他随即指出了一个更深的问题:**这五个条件只是描述,不是解释**。它们回答了「什么样的群体不会退化」,却没有回答「究竟是什么心理力量,让人愿意留在群体里、服从纪律、为共同目标压住自己的冲动」。持续性为什么能让人安心?传统为什么能让人服气?对抗为什么能让人抱团?清单上每一条的背后,都藏着同一个没被点名的发动机。打个比方:麦独孤给了一张烤面包的配方清单——面粉、水、酵母、温度、时间,照做确实能出炉;但弗洛伊德想知道的是发酵的化学原理——酵母到底对面团做了什么。清单能让你复制结果,原理才能让你理解结果;而不懂原理,你就说不清配方为什么灵、什么时候会失灵。"
+  },
+  {
+   "type": "quote",
+   "original": "问题在于:如何为群体争得个人原有、却因成群而泯灭的那些特性。",
+   "translation": "弗洛伊德把麦独孤的五个条件收拢成一句话:所谓「组织化」,本质上是想办法让群体重新获得个人独处时才有的稳定、连续和自觉。但「怎么做到」清单说了,「靠什么心理动力做到」还没人说。"
+  },
+  {
+   "type": "figure",
+   "ftype": "metaphor",
+   "svg": "<svg viewBox='0 0 500 250' xmlns='http://www.w3.org/2000/svg'><rect x='28' y='44' width='180' height='160' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.5'/><text x='118' y='70' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>配方清单(麦独孤)</text><line x1='52' y1='92' x2='68' y2='92' style='stroke:var(--cinnabar);stroke-width:2'/><text x='78' y='96' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>持续性</text><line x1='52' y1='116' x2='68' y2='116' style='stroke:var(--cinnabar);stroke-width:2'/><text x='78' y='120' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>自我认知</text><line x1='52' y1='140' x2='68' y2='140' style='stroke:var(--cinnabar);stroke-width:2'/><text x='78' y='144' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>对抗关系</text><line x1='52' y1='164' x2='68' y2='164' style='stroke:var(--cinnabar);stroke-width:2'/><text x='78' y='168' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>传统 · 分工</text><text x='118' y='192' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:10.5px'>照做,能出「好群体」</text><path d='M 216 124 L 276 124' style='stroke:var(--ink-soft);stroke-width:1.5;fill:none'/><path d='M 276 124 L 268 118 M 276 124 L 268 130' style='stroke:var(--ink-soft);stroke-width:1.5;fill:none'/><text x='246' y='112' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:10.5px'>还差一步</text><rect x='288' y='44' width='184' height='160' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='380' y='70' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>化学原理(弗洛伊德要找的)</text><text x='380' y='122' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar);font-size:30px;font-weight:600'>?</text><text x='380' y='156' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>驱动这一切的心理动力</text><text x='380' y='174' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>究竟是什么?</text><text x='380' y='192' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:10.5px'>——本书后面几章的主线</text><text x='250' y='234' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:10.5px'>清单让你复制结果,原理才让你理解结果</text></svg>",
+   "caption": "配方与原理:麦独孤告诉你放什么料能烤出面包,弗洛伊德追问酵母到底干了什么——这一问,引出全书真正的主角"
+  },
+  {
+   "type": "h2",
+   "text": "两幅画像,等一个统一解释"
+  },
+  {
+   "type": "p",
+   "text": "读到这里,可以给前三章做个小结:勒庞画了群体的**坏样子**——冲动、降智、易受摆布;麦独孤画了群体的**好样子**——有纪律、有传统、目标持久。两幅画都有真实的原型,但摆在一起就成了一个谜:同样是「人聚成群」,为什么能结出两种截然相反的果子?值得注意的是弗洛伊德对麦独孤那五个条件的一个巧妙翻译:所谓「组织化」,说到底是想办法**把个人独处时才有的稳定、连续、自觉,重新还给群体**——个人一入群就丢掉的东西,组织化群体靠制度一件件捡了回来。这个翻译把两幅画像拧到了同一根轴上:坏样子是「丢了没捡」,好样子是「丢了又捡回来」,而「丢」与「捡」背后必定是同一套心理机制在运作。弗洛伊德接下来要做的,正是绕开「描述现象」这条路,去找**能同时解释两种样子的那股底层力量**——一股既能让街头人群失控、也能让军队和教会凝聚不散的心理动力。他心里已经有了候选答案,后面几章会亮出来。"
+  },
+  {
+   "type": "p",
+   "text": "照例提醒一句读法:这一章呈现的是弗洛伊德对麦独孤的**转述和取舍**,他挑的是对自己论证有用的部分。而麦独孤那本《群体心理》里「群体心智」(group mind)的提法——仿佛群体真有一个独立于成员的「心灵」——在后来的社会心理学里争议很大,主流早已不把它当实体看待。所以这份「配方清单」值得记住的,是它对「组织化程度决定群体品质」的观察,而不是它背后的形而上学;至于弗洛伊德即将给出的「化学原理」,同样请带着这份研读的距离感往下看。"
+  }
+ ]
 }

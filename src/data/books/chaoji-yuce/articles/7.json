@@ -1,118 +1,122 @@
 {
-  "title": "团队与集体智慧:超级团队为何更强",
-  "subtitle": "把优秀预测者组成「会争论、肯分享、能聚合」的多元团队,胜过任何单打独斗——前提是鼓励异见、对事不对人",
-  "centralIdea": "「良好判断计划」不只比个人,也比团队,结果耐人寻味。①把超级预测者编成团队,成绩比他们各自单干还要好——因为团队能聚合更多信息、更多视角,一个人漏看的线索另一个人抓到,彼此的盲点互相补上,这正印证「聚合多元独立判断能提高准确度」。②但团队是把双刃剑——若变成一言堂、抱团取暖、赶时间凑共识,反而会放大偏差、压制异见,这就是群体思维(groupthink);超级团队之所以强,是因为把团队用对了方式。③好团队的三件事:成员乐于分享自己的理由和信息来源(不藏私)、建设性地互相质疑与反驳(「我不同意,因为……」)、把各人判断聚合(如取加权平均)而非由最强势者拍板;既能尖锐辩论、又对事不对人,营造让人敢说「我可能错了」的氛围。④「极端化聚合」的反直觉窍门——把一群校准良好、又彼此独立的高手的概率适度往两端推(大家都说70%,聚合后可略推高),往往能进一步提准,因为群体已消化各自独立的信息,可以更果断。⑤多样性很重要——视角、背景、信息源越多元,聚合越能纠偏;清一色的同类人凑一起,只会把同一个盲点叫得更响。核心信息:把优秀预测者组成「会争论、肯分享、能聚合」的多元团队,集体智慧胜过任何单打独斗;但前提是团队要鼓励异见、对事不对人,而不是抱团求和谐。分寸:讲团队协作的正反两面与做法,不把「团队」当万能,强调独立多元加建设性冲突才是关键。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "这场预测竞赛,比的不只是一个个孤零零的预测者。研究者还做了一件事:把人分成小组,让他们在同一个平台上一起看题、互相讨论,再各自下注。于是一个自然的问题冒了出来——那些本就厉害的超级预测者,凑成一个团队之后,到底是会更准,还是会被拖累、被带偏?答案出人意料,也耐人寻味:组起队来的超级预测者,比他们各自单干时还要准。可这句话有个要紧的尾巴——团队并不总能加分,一旦用错了方式,它反而会把人越带越偏。这一章,讲的就是团队这把双刃剑的两面。"
-    },
-    {
-      "type": "h2",
-      "text": "组起队来,他们反而更准了"
-    },
-    {
-      "type": "p",
-      "text": "竞赛进行到后来,研究者把成绩最好的那批超级预测者单独挑出来,编进一支支「超级团队」,让他们彼此看得见对方的判断、能互相留言讨论,再各自给出自己的概率。结果很清楚:这些超级团队在竞赛里显著跑赢了其他所有分组;更值得玩味的是,它们的集体成绩,连每个成员自己单打独斗时的水平都超过了。也就是说,把高手凑到一起,不是简单地「取个平均、大家彼此彼此」,而是真的产生了「一加一大于二」的增益。"
-    },
-    {
-      "type": "p",
-      "text": "增益从哪儿来?一个字:聚。每个队友都不是全知的,他手里只攥着这道题的一部分信息、一个特定角度的看法——有人翻到了一则冷门新闻,有人熟悉当地的历史,有人对数字更敏感。单看,谁都有盲区;可一旦摊到桌面上拼起来,甲漏看的那条线索,乙正好抓到了;乙没想到的那个角度,丙一句话点破了。众人各自的碎片彼此补位,拼出的图景就比任何一个人眼里的都更完整。这恰恰印证了那条朴素的道理:把足够多元、又各自独立的判断聚到一起,准确度就会往上走。"
-    },
-    {
-      "type": "figure",
-      "ftype": "diagram",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:15px;font-weight:600'>超级团队:多元视角聚合,胜过单打独斗</text><text x='280' y='47' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>每人握着不同的信息与视角,合起来补上彼此的盲区</text><rect x='24' y='66' width='150' height='38' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='99' y='90' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>队员甲 · 抓到线索 A</text><rect x='24' y='113' width='150' height='38' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='99' y='137' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>队员乙 · 抓到线索 B</text><rect x='24' y='160' width='150' height='38' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='99' y='184' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>队员丙 · 抓到线索 C</text><line x1='174' y1='85' x2='250' y2='127' style='stroke:var(--ink-faint);stroke-width:1.5'/><line x1='174' y1='132' x2='250' y2='132' style='stroke:var(--ink-faint);stroke-width:1.5'/><line x1='174' y1='179' x2='250' y2='139' style='stroke:var(--ink-faint);stroke-width:1.5'/><rect x='250' y='108' width='104' height='50' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='302' y='129' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:12.5px;font-weight:600'>聚合</text><text x='302' y='147' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:10.5px'>加权汇总,非拍板</text><line x1='354' y1='133' x2='412' y2='133' style='stroke:var(--ink-faint);stroke-width:1.5'/><path d='M410 128 L420 133 L410 138 Z' style='fill:var(--ink-faint)'/><rect x='420' y='104' width='116' height='58' rx='8' style='fill:none;stroke:var(--ink);stroke-width:1.5'/><text x='478' y='128' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12.5px;font-weight:600'>集体判断</text><text x='478' y='147' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:10.5px'>比任何一人都准</text><rect x='24' y='222' width='512' height='54' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='246' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12.5px;font-weight:600'>前提:① 建设性争论,对事不对人  ② 防群体思维,护住异见</text><text x='280' y='265' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>用对了放大智慧,用错了放大偏差</text></svg>",
-      "caption": "队员各握不同的信息与视角,聚合起来正好补上彼此的盲区——但前提是敢争论、防群体思维"
-    },
-    {
-      "type": "quote",
-      "original": "一个人漏看的线索,另一个人正好看见——凑到一起,盲点就被彼此补上了。",
-      "translation": "团队增益的来源。不是人多力量大,而是各人手里的信息碎片彼此补位,拼出比任何一人都完整的图景。"
-    },
-    {
-      "type": "h2",
-      "text": "双刃剑:一团和气最危险"
-    },
-    {
-      "type": "p",
-      "text": "但「团队」两个字本身,并不自动等于「更准」。同一批人凑在一起,也可能越商量越糊涂。危险在于它容易滑向另一个极端:大家为了维持和睦、图个痛快省事,开始抹平分歧、抢着附和最先冒头或嗓门最大的那个意见,心里的疑虑咽了回去,敢唱反调的人干脆闭嘴。表面上「大家都同意」,看着团结又高效,实际上不过是把同一个偏见叠加了好几遍、叫得更响而已。这种「为了和睦而集体走向错误」的现象,有个专门的名字——群体思维(groupthink)。"
-    },
-    {
-      "type": "p",
-      "text": "这种场面并不遥远。多少会议室里,方案一亮出来,老板先点了头,底下便一片附和;心里犯嘀咕的那几位,看没人吭声,也把话咽了回去,散会时人人都以为「大家都觉得没问题」。等到方案撞了南墙,复盘时才发现,当初其实好几个人都嗅到了不对劲,只是谁也没先开口。这就是群体思维的典型:错的不是没人看出问题,而是那口本该说出来的异见,被和睦的空气一点点压没了。"
-    },
-    {
-      "type": "p",
-      "text": "群体思维之所以要命,是因为它偷走的正是团队本该带来的那份增益。多元视角、独立判断,这两样东西不会自己保存下来;人天生怕被孤立、怕当那个扫兴的异类,压力稍一上来,大家就会不知不觉地往中间靠、往共识凑。于是本来能互相补位的碎片,被一股脑碾成了同一块;本来能互相纠偏的争论,被一句「差不多就这样吧」摁了下去。想让团队真的比个人强,就得反着来:刻意把多样和独立护住,甚至主动去请那个跟你意见相左的人多说两句,甚至指定一个人专唱反调,把「唱反调」变成职责而非冒犯。"
-    },
-    {
-      "type": "figure",
-      "ftype": "compare",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:15px;font-weight:600'>同样是一群人,两种团队</text><text x='280' y='47' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>团队是把双刃剑:用对了放大智慧,用错了放大偏差</text><line x1='280' y1='62' x2='280' y2='230' style='stroke:var(--line);stroke-width:1;stroke-dasharray:4 4'/><text x='142' y='82' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:13px;font-weight:600'>好团队 · 会争论</text><rect x='24' y='94' width='236' height='36' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='142' y='116' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>各抒己见,亮出理由与信息源</text><rect x='24' y='136' width='236' height='36' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='142' y='158' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>「我不同意,因为……」对事不对人</text><rect x='24' y='178' width='236' height='36' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='142' y='200' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>判断加权聚合,不由强势者拍板</text><text x='418' y='82' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:13px;font-weight:600'>一言堂 / 抱团</text><rect x='300' y='94' width='236' height='36' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='418' y='116' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:12px'>为和睦抹平分歧、抢着附和</text><rect x='300' y='136' width='236' height='36' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='418' y='158' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:12px'>赶时间凑一个表面共识</text><rect x='300' y='178' width='236' height='36' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='418' y='200' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:12px'>异见被压下 → 群体思维</text><rect x='24' y='242' width='512' height='40' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='267' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12.5px;font-weight:600'>人多不等于更准;护住独立与异见,才谈得上集体智慧</text></svg>",
-      "caption": "好团队靠尖锐而克制的争论提纯判断;一言堂却为和睦抹平分歧,把同一个偏见叠加放大"
-    },
-    {
-      "type": "quote",
-      "original": "人多不等于更准;若都盲从同一个声音,不过是把同一个偏见叫得更响。",
-      "translation": "群体思维的坑。团队能否胜过个人,不看人数,看它有没有护住成员的独立与异见。"
-    },
-    {
-      "type": "h2",
-      "text": "好团队做对了三件事"
-    },
-    {
-      "type": "p",
-      "text": "那些真正强的超级团队,和普通小组的差别,可以落到三个具体动作上。第一件是**肯分享**:成员乐于把自己的理由和信息来源摊开——我为什么给这个概率、根据的是哪条消息、哪段推理,一五一十讲给队友听,而不是藏着掖着只报一个光秃秃的数字。只有把「为什么」亮出来,队友才补得上你的缺口,也才驳得动你的漏洞;藏私的团队,等于把最值钱的那部分信息锁在了各人脑子里。"
-    },
-    {
-      "type": "p",
-      "text": "第二件是**敢质疑**,而且是建设性地质疑。好团队里,反驳是家常便饭,但反的是观点、不是人。它的标准句式不是「你这不对」,而是「我不同意,因为……」——后面必须跟上理由和证据。分歧在这里不是要摆平的麻烦,而是打磨判断的机会:你逼我把假设讲清楚,我逼你把漏洞补上,一来一回,两个人的判断都被磨得更利。能做到既尖锐辩论、又不伤和气(对事不对人),团队里才会有那种珍贵的空气——每个人都敢坦然说出「我可能错了」,而不必担心被当成软弱或失职。"
-    },
-    {
-      "type": "p",
-      "text": "第三件是**会聚合**。争论到最后,不该是嗓门最大、职位最高或最自信的那个人一锤定音,而是把各人的判断用某种方式合起来——最简单的是取平均,讲究些的是按各人过往的准头加权。这中间有个要紧的分寸:讨论是为了让每个人的判断变得更好,而不是为了抹掉分歧、逼出一个统一口径。理想的做法,是先让大家在充分交流后各自独立地下注,再把这些下注汇总;汇总,而非服从。"
-    },
-    {
-      "type": "figure",
-      "ftype": "method",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='30' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:15px;font-weight:600'>好团队做对了三件事</text><rect x='40' y='52' width='480' height='54' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='74' cy='79' r='15' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='74' y='84' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:14px;font-weight:600'>1</text><text x='104' y='77' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>肯分享</text><text x='104' y='97' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>亮出自己的理由和信息来源,不藏私,队友才补得上</text><rect x='40' y='118' width='480' height='54' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='74' cy='145' r='15' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='74' y='150' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:14px;font-weight:600'>2</text><text x='104' y='143' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>敢质疑</text><text x='104' y='163' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>「我不同意,因为……」,对事不对人,把分歧当打磨的机会</text><rect x='40' y='184' width='480' height='54' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='74' cy='211' r='15' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='74' y='216' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:14px;font-weight:600'>3</text><text x='104' y='209' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>会聚合</text><text x='104' y='229' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>把各人判断加权汇总,而非由最强势者一锤定音</text><text x='280' y='270' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:12.5px;font-weight:600'>既能尖锐辩论、又不伤和气——让人敢说「我可能错了」</text></svg>",
-      "caption": "肯分享、敢质疑、会聚合——三个具体动作,把一群高手真正拧成一支超级团队"
-    },
-    {
-      "type": "h2",
-      "text": "极端化聚合:一个反直觉的窍门"
-    },
-    {
-      "type": "p",
-      "text": "聚合本身,也还有讲究。研究者发现了一个乍看有点反直觉的技巧,叫「极端化聚合」。设想一支团队里,每个成员都是校准良好的高手,而且他们是各自独立地、根据自己手里的信息得出结论,最后不约而同都给出了大约 70% 的概率。这时候,与其老老实实取平均报个 70%,不如把这个数字**适度往两端推一推**——比如推高到接近 80%。别小看这一推,在合适的条件下,它往往能让团队的准确度再上一个台阶。"
-    },
-    {
-      "type": "p",
-      "text": "凭什么敢这么推?关键在「独立」二字。如果这么多人是各看各的信息、各走各的推理,却不约而同地都偏向了同一边,那么这批判断合起来提供的底气,其实比其中任何一个人单独看到的都足——群体已经把各自独立掌握的证据都消化进去了,所以它有资格比单个成员更果断、把话说得更满一点。但这个窍门有个不可让步的前提:成员必须真的彼此独立。一旦他们是互相抄的、看的是同一批消息、彼此盲从,这一推就会连同大家共有的那个错误一起放大——推得越狠,错得越离谱。"
-    },
-    {
-      "type": "figure",
-      "ftype": "flow",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:15px;font-weight:600'>极端化聚合:一个反直觉的窍门</text><text x='280' y='49' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>一群独立高手都偏向同一边,群体可以更果断一点</text><rect x='24' y='72' width='156' height='64' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='102' y='100' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>一群独立高手</text><text x='102' y='120' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>各自都说约 70%</text><line x1='180' y1='104' x2='196' y2='104' style='stroke:var(--ink-faint);stroke-width:1.5'/><path d='M194 99 L204 104 L194 109 Z' style='fill:var(--ink-faint)'/><rect x='204' y='72' width='156' height='64' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='282' y='100' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>适度往两端推</text><text x='282' y='120' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:11.5px;font-weight:600'>如推到约 80%</text><line x1='360' y1='104' x2='376' y2='104' style='stroke:var(--ink-faint);stroke-width:1.5'/><path d='M374 99 L384 104 L374 109 Z' style='fill:var(--ink-faint)'/><rect x='384' y='72' width='152' height='64' rx='8' style='fill:none;stroke:var(--ink);stroke-width:1.5'/><text x='460' y='100' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>群体更果断</text><text x='460' y='120' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>往往比谁都准</text><rect x='24' y='166' width='512' height='58' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='191' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12.5px;font-weight:600'>前提:成员校准良好,且各自独立地得出判断</text><text x='280' y='211' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>若互相盲从、信息趋同,越推越错——把共同的偏见也放大了</text><text x='280' y='250' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:11px'>「独立」是这枚窍门的命门:抄来的一致,不算数</text></svg>",
-      "caption": "一群独立高手都偏向同一边,群体已消化各自的证据,便有底气把话说得更果断——命门是「彼此独立」"
-    },
-    {
-      "type": "quote",
-      "original": "一群彼此独立的高手都偏向同一边,群体就比任何一人更有底气,可以更果断一点。",
-      "translation": "极端化聚合成立的条件。前提是「独立」——若大家看的是同一批消息、彼此盲从,这一推只会把共同的错误放得更大。"
-    },
-    {
-      "type": "h2",
-      "text": "说到底,关键从来不是人多"
-    },
-    {
-      "type": "p",
-      "text": "把这些串起来,会发现所有环节都指向同一样东西:多样性。视角越杂、背景越不同、信息源越五花八门,聚合起来才越能互相纠偏——A 的盲点恰好落在 B 的视野里,谁也一手遮不了全场。反过来,一屋子清一色的同类人,读同样的书、混同样的圈子、信同样的那几个消息源,凑到一起并不会更聪明,只会把他们共有的那个盲点异口同声地叫得更响。多样,不是政治正确的点缀,而是集体智慧能不能跑起来的发动机。"
-    },
-    {
-      "type": "p",
-      "text": "所以这一章绝不是把「团队」捧成万能药。团队是一把双刃剑:用对了,它放大智慧;用错了,它放大愚蠢,而且放大得更快、更整齐。真正让超级团队更强的,从来不是「人多」三个字,而是背后那三样东西——独立、多元,加上建设性的争论。把一群优秀的人凑到一起还远远不够,你得让他们肯分享、敢质疑、会聚合,还得小心翼翼地护住那口「我可能错了」也能坦然说出来的气。做到了,集体的判断胜过任何单打独斗;做不到,一群绝顶聪明的人,照样能手拉着手,一起走向同一个错误。"
-    }
-  ]
+ "title": "团队与集体智慧:超级团队为何更强",
+ "subtitle": "把优秀预测者组成「会争论、肯分享、能聚合」的多元团队,胜过任何单打独斗——前提是鼓励异见、对事不对人",
+ "centralIdea": "「良好判断计划」不只比个人,也比团队,结果耐人寻味。①把超级预测者编成团队,成绩比他们各自单干还要好——因为团队能聚合更多信息、更多视角,一个人漏看的线索另一个人抓到,彼此的盲点互相补上,这正印证「聚合多元独立判断能提高准确度」。②但团队是把双刃剑——若变成一言堂、抱团取暖、赶时间凑共识,反而会放大偏差、压制异见,这就是群体思维(groupthink);超级团队之所以强,是因为把团队用对了方式。③好团队的三件事:成员乐于分享自己的理由和信息来源(不藏私)、建设性地互相质疑与反驳(「我不同意,因为……」)、把各人判断聚合(如取加权平均)而非由最强势者拍板;既能尖锐辩论、又对事不对人,营造让人敢说「我可能错了」的氛围。④「极端化聚合」的反直觉窍门——把一群校准良好、又彼此独立的高手的概率适度往两端推(大家都说70%,聚合后可略推高),往往能进一步提准,因为群体已消化各自独立的信息,可以更果断。⑤多样性很重要——视角、背景、信息源越多元,聚合越能纠偏;清一色的同类人凑一起,只会把同一个盲点叫得更响。核心信息:把优秀预测者组成「会争论、肯分享、能聚合」的多元团队,集体智慧胜过任何单打独斗;但前提是团队要鼓励异见、对事不对人,而不是抱团求和谐。分寸:讲团队协作的正反两面与做法,不把「团队」当万能,强调独立多元加建设性冲突才是关键。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "这场预测竞赛,比的不只是一个个孤零零的预测者。研究者还做了一件事:把人分成小组,让他们在同一个平台上一起看题、互相讨论,再各自下注。于是一个自然的问题冒了出来——那些本就厉害的超级预测者,凑成一个团队之后,到底是会更准,还是会被拖累、被带偏?答案出人意料,也耐人寻味:组起队来的超级预测者,比他们各自单干时还要准。可这句话有个要紧的尾巴——团队并不总能加分,一旦用错了方式,它反而会把人越带越偏。这一章,讲的就是团队这把双刃剑的两面。"
+  },
+  {
+   "type": "h2",
+   "text": "组起队来,他们反而更准了"
+  },
+  {
+   "type": "p",
+   "text": "竞赛进行到后来,研究者把成绩最好的那批超级预测者单独挑出来,编进一支支「超级团队」,让他们彼此看得见对方的判断、能互相留言讨论,再各自给出自己的概率。结果很清楚:这些超级团队在竞赛里显著跑赢了其他所有分组;更值得玩味的是,它们的集体成绩,连每个成员自己单打独斗时的水平都超过了。也就是说,把高手凑到一起,不是简单地「取个平均、大家彼此彼此」,而是真的产生了「一加一大于二」的增益。"
+  },
+  {
+   "type": "p",
+   "text": "增益从哪儿来?一个字:聚。每个队友都不是全知的,他手里只攥着这道题的一部分信息、一个特定角度的看法——有人翻到了一则冷门新闻,有人熟悉当地的历史,有人对数字更敏感。单看,谁都有盲区;可一旦摊到桌面上拼起来,甲漏看的那条线索,乙正好抓到了;乙没想到的那个角度,丙一句话点破了。众人各自的碎片彼此补位,拼出的图景就比任何一个人眼里的都更完整。"
+  },
+  {
+   "type": "pull",
+   "text": "这恰恰印证了那条朴素的道理:把足够多元、又各自独立的判断聚到一起,准确度就会往上走。"
+  },
+  {
+   "type": "figure",
+   "ftype": "diagram",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:15px;font-weight:600'>超级团队:多元视角聚合,胜过单打独斗</text><text x='280' y='47' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>每人握着不同的信息与视角,合起来补上彼此的盲区</text><rect x='24' y='66' width='150' height='38' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='99' y='90' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>队员甲 · 抓到线索 A</text><rect x='24' y='113' width='150' height='38' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='99' y='137' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>队员乙 · 抓到线索 B</text><rect x='24' y='160' width='150' height='38' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='99' y='184' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>队员丙 · 抓到线索 C</text><line x1='174' y1='85' x2='250' y2='127' style='stroke:var(--ink-faint);stroke-width:1.5'/><line x1='174' y1='132' x2='250' y2='132' style='stroke:var(--ink-faint);stroke-width:1.5'/><line x1='174' y1='179' x2='250' y2='139' style='stroke:var(--ink-faint);stroke-width:1.5'/><rect x='250' y='108' width='104' height='50' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='302' y='129' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:12.5px;font-weight:600'>聚合</text><text x='302' y='147' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:10.5px'>加权汇总,非拍板</text><line x1='354' y1='133' x2='412' y2='133' style='stroke:var(--ink-faint);stroke-width:1.5'/><path d='M410 128 L420 133 L410 138 Z' style='fill:var(--ink-faint)'/><rect x='420' y='104' width='116' height='58' rx='8' style='fill:none;stroke:var(--ink);stroke-width:1.5'/><text x='478' y='128' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12.5px;font-weight:600'>集体判断</text><text x='478' y='147' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:10.5px'>比任何一人都准</text><rect x='24' y='222' width='512' height='54' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='246' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12.5px;font-weight:600'>前提:① 建设性争论,对事不对人  ② 防群体思维,护住异见</text><text x='280' y='265' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>用对了放大智慧,用错了放大偏差</text></svg>",
+   "caption": "队员各握不同的信息与视角,聚合起来正好补上彼此的盲区——但前提是敢争论、防群体思维"
+  },
+  {
+   "type": "quote",
+   "original": "一个人漏看的线索,另一个人正好看见——凑到一起,盲点就被彼此补上了。",
+   "translation": "团队增益的来源。不是人多力量大,而是各人手里的信息碎片彼此补位,拼出比任何一人都完整的图景。"
+  },
+  {
+   "type": "h2",
+   "text": "双刃剑:一团和气最危险"
+  },
+  {
+   "type": "p",
+   "text": "但「团队」两个字本身,并不自动等于「更准」。同一批人凑在一起,也可能越商量越糊涂。危险在于它容易滑向另一个极端:大家为了维持和睦、图个痛快省事,开始抹平分歧、抢着附和最先冒头或嗓门最大的那个意见,心里的疑虑咽了回去,敢唱反调的人干脆闭嘴。表面上「大家都同意」,看着团结又高效,实际上不过是把同一个偏见叠加了好几遍、叫得更响而已。这种「为了和睦而集体走向错误」的现象,有个专门的名字——群体思维(groupthink)。"
+  },
+  {
+   "type": "p",
+   "text": "这种场面并不遥远。多少会议室里,方案一亮出来,老板先点了头,底下便一片附和;心里犯嘀咕的那几位,看没人吭声,也把话咽了回去,散会时人人都以为「大家都觉得没问题」。等到方案撞了南墙,复盘时才发现,当初其实好几个人都嗅到了不对劲,只是谁也没先开口。这就是群体思维的典型:错的不是没人看出问题,而是那口本该说出来的异见,被和睦的空气一点点压没了。"
+  },
+  {
+   "type": "p",
+   "text": "群体思维之所以要命,是因为它偷走的正是团队本该带来的那份增益。多元视角、独立判断,这两样东西不会自己保存下来;人天生怕被孤立、怕当那个扫兴的异类,压力稍一上来,大家就会不知不觉地往中间靠、往共识凑。于是本来能互相补位的碎片,被一股脑碾成了同一块;本来能互相纠偏的争论,被一句「差不多就这样吧」摁了下去。想让团队真的比个人强,就得反着来:刻意把多样和独立护住,甚至主动去请那个跟你意见相左的人多说两句,甚至指定一个人专唱反调,把「唱反调」变成职责而非冒犯。"
+  },
+  {
+   "type": "figure",
+   "ftype": "compare",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:15px;font-weight:600'>同样是一群人,两种团队</text><text x='280' y='47' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>团队是把双刃剑:用对了放大智慧,用错了放大偏差</text><line x1='280' y1='62' x2='280' y2='230' style='stroke:var(--line);stroke-width:1;stroke-dasharray:4 4'/><text x='142' y='82' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:13px;font-weight:600'>好团队 · 会争论</text><rect x='24' y='94' width='236' height='36' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='142' y='116' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>各抒己见,亮出理由与信息源</text><rect x='24' y='136' width='236' height='36' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='142' y='158' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>「我不同意,因为……」对事不对人</text><rect x='24' y='178' width='236' height='36' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='142' y='200' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>判断加权聚合,不由强势者拍板</text><text x='418' y='82' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:13px;font-weight:600'>一言堂 / 抱团</text><rect x='300' y='94' width='236' height='36' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='418' y='116' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:12px'>为和睦抹平分歧、抢着附和</text><rect x='300' y='136' width='236' height='36' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='418' y='158' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:12px'>赶时间凑一个表面共识</text><rect x='300' y='178' width='236' height='36' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='418' y='200' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:12px'>异见被压下 → 群体思维</text><rect x='24' y='242' width='512' height='40' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='267' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12.5px;font-weight:600'>人多不等于更准;护住独立与异见,才谈得上集体智慧</text></svg>",
+   "caption": "好团队靠尖锐而克制的争论提纯判断;一言堂却为和睦抹平分歧,把同一个偏见叠加放大"
+  },
+  {
+   "type": "quote",
+   "original": "人多不等于更准;若都盲从同一个声音,不过是把同一个偏见叫得更响。",
+   "translation": "群体思维的坑。团队能否胜过个人,不看人数,看它有没有护住成员的独立与异见。"
+  },
+  {
+   "type": "h2",
+   "text": "好团队做对了三件事"
+  },
+  {
+   "type": "p",
+   "text": "那些真正强的超级团队,和普通小组的差别,可以落到三个具体动作上。第一件是**肯分享**:成员乐于把自己的理由和信息来源摊开——我为什么给这个概率、根据的是哪条消息、哪段推理,一五一十讲给队友听,而不是藏着掖着只报一个光秃秃的数字。只有把「为什么」亮出来,队友才补得上你的缺口,也才驳得动你的漏洞;藏私的团队,等于把最值钱的那部分信息锁在了各人脑子里。"
+  },
+  {
+   "type": "p",
+   "text": "第二件是**敢质疑**,而且是建设性地质疑。好团队里,反驳是家常便饭,但反的是观点、不是人。它的标准句式不是「你这不对」,而是「我不同意,因为……」——后面必须跟上理由和证据。分歧在这里不是要摆平的麻烦,而是打磨判断的机会:你逼我把假设讲清楚,我逼你把漏洞补上,一来一回,两个人的判断都被磨得更利。能做到既尖锐辩论、又不伤和气(对事不对人),团队里才会有那种珍贵的空气——每个人都敢坦然说出「我可能错了」,而不必担心被当成软弱或失职。"
+  },
+  {
+   "type": "p",
+   "text": "第三件是**会聚合**。争论到最后,不该是嗓门最大、职位最高或最自信的那个人一锤定音,而是把各人的判断用某种方式合起来——最简单的是取平均,讲究些的是按各人过往的准头加权。这中间有个要紧的分寸:讨论是为了让每个人的判断变得更好,而不是为了抹掉分歧、逼出一个统一口径。理想的做法,是先让大家在充分交流后各自独立地下注,再把这些下注汇总;汇总,而非服从。"
+  },
+  {
+   "type": "figure",
+   "ftype": "method",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='30' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:15px;font-weight:600'>好团队做对了三件事</text><rect x='40' y='52' width='480' height='54' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='74' cy='79' r='15' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='74' y='84' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:14px;font-weight:600'>1</text><text x='104' y='77' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>肯分享</text><text x='104' y='97' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>亮出自己的理由和信息来源,不藏私,队友才补得上</text><rect x='40' y='118' width='480' height='54' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='74' cy='145' r='15' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='74' y='150' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:14px;font-weight:600'>2</text><text x='104' y='143' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>敢质疑</text><text x='104' y='163' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>「我不同意,因为……」,对事不对人,把分歧当打磨的机会</text><rect x='40' y='184' width='480' height='54' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><circle cx='74' cy='211' r='15' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='74' y='216' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:14px;font-weight:600'>3</text><text x='104' y='209' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>会聚合</text><text x='104' y='229' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>把各人判断加权汇总,而非由最强势者一锤定音</text><text x='280' y='270' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:12.5px;font-weight:600'>既能尖锐辩论、又不伤和气——让人敢说「我可能错了」</text></svg>",
+   "caption": "肯分享、敢质疑、会聚合——三个具体动作,把一群高手真正拧成一支超级团队"
+  },
+  {
+   "type": "h2",
+   "text": "极端化聚合:一个反直觉的窍门"
+  },
+  {
+   "type": "p",
+   "text": "聚合本身,也还有讲究。研究者发现了一个乍看有点反直觉的技巧,叫「极端化聚合」。设想一支团队里,每个成员都是校准良好的高手,而且他们是各自独立地、根据自己手里的信息得出结论,最后不约而同都给出了大约 70% 的概率。这时候,与其老老实实取平均报个 70%,不如把这个数字**适度往两端推一推**——比如推高到接近 80%。别小看这一推,在合适的条件下,它往往能让团队的准确度再上一个台阶。"
+  },
+  {
+   "type": "p",
+   "text": "凭什么敢这么推?关键在「独立」二字。如果这么多人是各看各的信息、各走各的推理,却不约而同地都偏向了同一边,那么这批判断合起来提供的底气,其实比其中任何一个人单独看到的都足——群体已经把各自独立掌握的证据都消化进去了,所以它有资格比单个成员更果断、把话说得更满一点。但这个窍门有个不可让步的前提:成员必须真的彼此独立。一旦他们是互相抄的、看的是同一批消息、彼此盲从,这一推就会连同大家共有的那个错误一起放大——推得越狠,错得越离谱。"
+  },
+  {
+   "type": "figure",
+   "ftype": "flow",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:15px;font-weight:600'>极端化聚合:一个反直觉的窍门</text><text x='280' y='49' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>一群独立高手都偏向同一边,群体可以更果断一点</text><rect x='24' y='72' width='156' height='64' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><text x='102' y='100' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>一群独立高手</text><text x='102' y='120' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>各自都说约 70%</text><line x1='180' y1='104' x2='196' y2='104' style='stroke:var(--ink-faint);stroke-width:1.5'/><path d='M194 99 L204 104 L194 109 Z' style='fill:var(--ink-faint)'/><rect x='204' y='72' width='156' height='64' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='282' y='100' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>适度往两端推</text><text x='282' y='120' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:11.5px;font-weight:600'>如推到约 80%</text><line x1='360' y1='104' x2='376' y2='104' style='stroke:var(--ink-faint);stroke-width:1.5'/><path d='M374 99 L384 104 L374 109 Z' style='fill:var(--ink-faint)'/><rect x='384' y='72' width='152' height='64' rx='8' style='fill:none;stroke:var(--ink);stroke-width:1.5'/><text x='460' y='100' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>群体更果断</text><text x='460' y='120' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>往往比谁都准</text><rect x='24' y='166' width='512' height='58' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='191' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12.5px;font-weight:600'>前提:成员校准良好,且各自独立地得出判断</text><text x='280' y='211' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11px'>若互相盲从、信息趋同,越推越错——把共同的偏见也放大了</text><text x='280' y='250' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:11px'>「独立」是这枚窍门的命门:抄来的一致,不算数</text></svg>",
+   "caption": "一群独立高手都偏向同一边,群体已消化各自的证据,便有底气把话说得更果断——命门是「彼此独立」"
+  },
+  {
+   "type": "quote",
+   "original": "一群彼此独立的高手都偏向同一边,群体就比任何一人更有底气,可以更果断一点。",
+   "translation": "极端化聚合成立的条件。前提是「独立」——若大家看的是同一批消息、彼此盲从,这一推只会把共同的错误放得更大。"
+  },
+  {
+   "type": "h2",
+   "text": "说到底,关键从来不是人多"
+  },
+  {
+   "type": "p",
+   "text": "把这些串起来,会发现所有环节都指向同一样东西:多样性。视角越杂、背景越不同、信息源越五花八门,聚合起来才越能互相纠偏——A 的盲点恰好落在 B 的视野里,谁也一手遮不了全场。反过来,一屋子清一色的同类人,读同样的书、混同样的圈子、信同样的那几个消息源,凑到一起并不会更聪明,只会把他们共有的那个盲点异口同声地叫得更响。多样,不是政治正确的点缀,而是集体智慧能不能跑起来的发动机。"
+  },
+  {
+   "type": "p",
+   "text": "所以这一章绝不是把「团队」捧成万能药。团队是一把双刃剑:用对了,它放大智慧;用错了,它放大愚蠢,而且放大得更快、更整齐。真正让超级团队更强的,从来不是「人多」三个字,而是背后那三样东西——独立、多元,加上建设性的争论。把一群优秀的人凑到一起还远远不够,你得让他们肯分享、敢质疑、会聚合,还得小心翼翼地护住那口「我可能错了」也能坦然说出来的气。做到了,集体的判断胜过任何单打独斗;做不到,一群绝顶聪明的人,照样能手拉着手,一起走向同一个错误。"
+  }
+ ]
 }

@@ -1,50 +1,168 @@
 {
-  "title": "阿尔茨海默与神经退行:趁你还感觉不到,就开始防",
-  "subtitle": "四骑士里最令人恐惧的第三位——身体还在,人却在退潮。可它也是预防窗口最长的一个:战场不在发病之后,而在发病之前的几十年",
-  "centralIdea": "神经退行病(以阿尔茨海默为主,也含帕金森等)是「四骑士」的第三位,夺走的是「你之所以为你」的记忆与判断。坏消息是至今没有能逆转病程的特效药,清除斑块的药屡屡失败;好消息是病理在症状出现前几十年就已启动,留下漫长的预防窗口。ApoE4 基因抬高的是概率而非命运,提前知道是为了提前行动。阿提亚给出的核心方案是「护心即护脑」——控 apoB、稳血糖、逆转胰岛素抵抗同样护脑——再加上运动(证据最强的可控保护因素)、睡眠(深睡清扫脑内废物)、认知储备三根支柱。它讲的是降风险、推迟发病,不是治愈或逆转;机制仍有大量争议,不作个人医疗建议。",
-  "blocks": [
-    { "type": "lead", "text": "四骑士里,如果说心脏病和癌症夺走的是「命」,那么神经退行病夺走的,是「你之所以为你」的那部分——记忆、判断、认得出至亲的能力。身体还在,人却像退潮一样一寸寸消失。这也是很多人心底最深的恐惧:不怕死,怕的是「活着,却不再是自己」。可阿提亚在这一章要说的偏偏是:**恰恰是这个最令人无力的骑士,留给我们的预防窗口反而最长**——只要你肯把时钟往前拨几十年。" },
-
-    { "type": "h2", "text": "这一章讲的是什么" },
-    { "type": "p", "text": "这是第三骑士。前两章分别拆解了心脏病与癌症,这一章轮到「神经退行」。它不是一种病,而是一族病:以**阿尔茨海默病**(最常见的痴呆类型)为主,也包括帕金森病、路易体痴呆、额颞叶痴呆等。它们的共同点是——大脑里的神经元一批批地退化、死去,而且至少到今天为止,**几乎不可逆**。" },
-    { "type": "p", "text": "正因为不可逆,阿提亚把「医学 3.0」那套预防优先的思路用在这里,格外顺理成章。他自己也有强烈的私人动机:家族里有阿尔茨海默的影子,他做过基因检测,知道自己带着高风险的基因型。某种程度上,这一章是他写给自己的一份作战计划。" },
-    { "type": "figure", "ftype": "金句卡", "caption": "这一章的题眼", "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"12\" y=\"12\" width=\"536\" height=\"276\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"24\" y=\"24\" width=\"512\" height=\"252\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"0.6\"/><text x=\"280\" y=\"104\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"24\">神经退行不是发病了再治的病</text><text x=\"280\" y=\"156\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"27\" font-weight=\"bold\">而是提前几十年就要开始防的病</text><line x1=\"200\" y1=\"186\" x2=\"360\" y2=\"186\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"280\" y=\"222\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">等症状显现，脑损伤往往已重——战场在发病之前</text><text x=\"280\" y=\"258\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">——《超越百岁》第 8 章</text></svg>" },
-
-    { "type": "h2", "text": "一个坏消息,一个好消息" },
-    { "type": "p", "text": "先说残酷的部分。到今天为止,针对阿尔茨海默,**没有一种药能真正逆转病程**。过去二十来年,制药业押注最重的是「淀粉样蛋白假说」——认为大脑里堆积的 β-淀粉样斑块是元凶,清掉斑块就能救人。可一款又一款清斑块的药做完临床,要么无效,要么效果微弱到与副作用不成比例。斑块被清掉了,认知却没怎么好转。这让越来越多研究者怀疑:斑块也许更像是**火灾之后的灰烬,而不是纵火犯本身**。" },
-    { "type": "p", "text": "但坏消息的背面,藏着一个好消息。研究发现,阿尔茨海默的**病理过程在症状出现之前几十年就已经悄悄启动**——大脑的异常,可能在你四五十岁、还自觉思路清晰的时候就开始累积。等到记忆明显出问题、被正式确诊的那一刻,神经元往往已经大批死亡,损伤重到难以挽回。药物之所以屡屡失败,一个重要原因就是:**出手太晚了**。" },
-    { "type": "p", "text": "换个角度看,这条「病理早于症状几十年」的时间线,恰恰就是预防的机会所在。如果损伤是缓慢累积的,那么在它累积成灾之前,你有很长很长的一段时间可以出手。阿提亚反复强调的正是这一点:对付神经退行,战场不在**症状出现之后**,而在**症状出现之前的那几十年**。" },
-    { "type": "figure", "ftype": "曲线图", "caption": "病理早于症状几十年,预防窗口就藏在这段坡度里", "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\" font-weight=\"bold\">病理早于症状几十年——预防窗口就在这里</text><line x1=\"64\" y1=\"244\" x2=\"520\" y2=\"244\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.2\"/><line x1=\"64\" y1=\"244\" x2=\"64\" y2=\"58\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.2\"/><text x=\"46\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\" transform=\"rotate(-90 46 150)\">脑内病理</text><path d=\"M64 240 Q 250 232 348 176 T 512 64\" fill=\"none\" style=\"stroke:var(--ink)\" stroke-width=\"2.2\"/><line x1=\"64\" y1=\"116\" x2=\"520\" y2=\"116\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.1\" stroke-dasharray=\"5 4\"/><text x=\"516\" y=\"108\" text-anchor=\"end\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">症状显现阈值</text><line x1=\"430\" y1=\"116\" x2=\"430\" y2=\"244\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"64\" y1=\"244\" x2=\"430\" y2=\"244\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"4\"/><text x=\"240\" y=\"226\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">可干预的几十年</text><text x=\"88\" y=\"266\" style=\"fill:var(--ink-soft)\" font-size=\"11\">约 40 岁</text><text x=\"388\" y=\"266\" style=\"fill:var(--ink-soft)\" font-size=\"11\">确诊 · 损伤已重</text><text x=\"280\" y=\"290\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">药物屡屡失败的一大原因：出手太晚</text></svg>" },
-
-    { "type": "h2", "text": "遗传:ApoE4 不是一纸判决书" },
-    { "type": "p", "text": "说到神经退行,绕不开一个基因:**ApoE**。它有三种常见变体——e2、e3、e4。大多数人带的是最普通的 e3;带 e2 的人风险偏低;而带 **e4** 的人,阿尔茨海默的风险明显升高。带一个 e4 拷贝,风险大约是普通人的两三倍;若从父母各遗传一个、带上两个 e4,风险还要高得多,发病也可能更早。" },
-    { "type": "p", "text": "听起来像一纸判决书,但它**不是**。最关键的事实是:很多带着 e4 的人终生不发病,也有很多根本不带 e4 的人照样患上阿尔茨海默。基因抬高的是**概率**,不是**命运**。阿提亚本人就带着高风险基因型,他没有因此认命,反而把它当成一记提前几十年响起的**闹钟**。" },
-    { "type": "p", "text": "这正是阿提亚看重基因信息的地方——不是为了制造恐慌,而是为了**换取时间**。如果你四十岁就知道自己在高风险区,你就有整整几十年,可以比别人更早、更认真地去做那些已经被证明能降低风险的事。知道风险的意义,从来不在于焦虑,而在于**行动**。" },
-    { "type": "quote", "original": "提前几十年知道风险,是为了提前几十年开始行动。", "translation": "" },
-    { "type": "figure", "ftype": "结构图", "caption": "ApoE 抬高的是概率,不是命运", "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\" font-weight=\"bold\">ApoE 基因：抬高的是概率，不是命运</text><rect x=\"40\" y=\"66\" width=\"140\" height=\"92\" rx=\"8\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"110\" y=\"100\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"18\" font-weight=\"bold\">e2</text><text x=\"110\" y=\"128\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">风险偏低</text><rect x=\"210\" y=\"66\" width=\"140\" height=\"92\" rx=\"8\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"280\" y=\"100\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"18\" font-weight=\"bold\">e3</text><text x=\"280\" y=\"128\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">最常见 · 基准风险</text><rect x=\"380\" y=\"66\" width=\"140\" height=\"92\" rx=\"8\" fill=\"none\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"450\" y=\"100\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"18\" font-weight=\"bold\">e4</text><text x=\"450\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">风险明显升高</text><text x=\"450\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">一个拷贝约 2–3 倍</text><line x1=\"70\" y1=\"184\" x2=\"490\" y2=\"184\" style=\"stroke:var(--line)\" stroke-width=\"0.8\"/><text x=\"280\" y=\"212\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">带 e4 者很多终生不发病 · 不带 e4 者也可能患病</text><text x=\"280\" y=\"244\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\" font-weight=\"bold\">基因不是判决书，而是提前响起的闹钟</text><text x=\"280\" y=\"272\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">知道风险的意义在于「更早行动」，不在于焦虑</text></svg>" },
-
-    { "type": "h2", "text": "护心即护脑:最实用的一个洞见" },
-    { "type": "p", "text": "那么在漫长的预防窗口里,到底该做什么?阿提亚给出的第一条线索朴素得让人意外:**照顾好你的心血管和代谢,就是在照顾你的大脑。**" },
-    { "type": "p", "text": "这句话背后有扎实的道理。大脑是全身最耗能、最依赖血流的器官,它由密如蛛网的微小血管供养。当血管因为长期的 **apoB(携带「坏胆固醇」的颗粒)偏高、血压偏高**而受损时,受伤的不只是心脏的冠状动脉,还有大脑深处那些细小的血管——它们的病变会悄悄侵蚀认知,是「血管性痴呆」的直接推手,也常和阿尔茨海默叠加发作。" },
-    { "type": "p", "text": "代谢这一端同样如此。**高血糖、胰岛素抵抗**不仅是 2 型糖尿病和心脏病的温床,也与阿尔茨海默高度相关——相关到有研究者半开玩笑地把阿尔茨海默称作「**3 型糖尿病**」。大脑对胰岛素的反应一旦失灵,神经元的能量供应就会出问题。所以,第五、六章里那些护心、护代谢的功课——**压低 apoB、稳住血糖、逆转胰岛素抵抗**——几乎原封不动地,也是护脑的功课。" },
-    { "type": "quote", "original": "对大脑最好的事,往往正是对心脏最好的事。", "translation": "" },
-    { "type": "p", "text": "这是这一章最实用的一个洞见:你不必为大脑单独准备一套方案。**护心即护脑,控糖即护脑。**四骑士看似各自为战,根子却盘根错节地长在一起——修好一处,常常几处同时受益。" },
-    { "type": "figure", "ftype": "对比图", "caption": "护心即护脑:两个圈,重叠着同一批可控风险", "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\" font-weight=\"bold\">护心即护脑：高度重叠的风险</text><circle cx=\"215\" cy=\"172\" r=\"108\" fill=\"none\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><circle cx=\"345\" cy=\"172\" r=\"108\" fill=\"none\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><text x=\"150\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\" font-weight=\"bold\">心血管</text><text x=\"150\" y=\"142\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\" font-weight=\"bold\">与代谢健康</text><text x=\"412\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\" font-weight=\"bold\">大脑</text><text x=\"412\" y=\"142\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\" font-weight=\"bold\">健康</text><text x=\"280\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\" font-weight=\"bold\">共同的</text><text x=\"280\" y=\"163\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\" font-weight=\"bold\">可控风险</text><text x=\"280\" y=\"187\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">apoB 高</text><text x=\"280\" y=\"205\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">血糖高</text><text x=\"280\" y=\"223\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">胰岛素抵抗</text><text x=\"280\" y=\"293\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">控 apoB、稳血糖、逆转胰岛素抵抗——一套功课，两处受益</text></svg>" },
-
-    { "type": "h2", "text": "四根可控的支柱" },
-    { "type": "p", "text": "在「护心即护脑」这条主干之外,阿提亚还给出几根专门针对大脑的支柱。它们没有一根是特效药,但合起来,是目前证据下我们能实实在在抓住的东西。" },
-    { "type": "p", "text": "**第一根,也是最强的一根:运动。**在所有已知的可控因素里,规律运动是目前**证据最强的大脑保护手段**,没有之一。有氧运动改善脑部供血,力量训练维持全身代谢,长期看都和更低的痴呆风险、更好的认知表现相关。如果说有一种「长寿药」顺便还是「护脑药」,那就是运动——下一章会专门讲它。" },
-    { "type": "p", "text": "**第二根:睡眠。**睡觉时大脑并没有闲着,它在**清扫垃圾**。深度睡眠期间,大脑负责排废的系统会加速冲走白天代谢产生的废物,其中就包括与阿尔茨海默相关的蛋白。长期睡不够、睡不深,约等于让垃圾在脑子里越积越多。睡眠不是可以随意牺牲的奢侈品,而是护脑的基础工序。" },
-    { "type": "p", "text": "**第三根:认知储备。**持续地用脑——学习新东西、深度阅读、掌握新技能、维持丰富的社交——能攒下所谓的「认知储备」。它不能阻止病理发生,却像一笔**脑力上的存款**:即使大脑开始出现损伤,储备厚的人也能更久地维持正常功能,把发病的时点往后推。" },
-    { "type": "p", "text": "**第四根:管住血管与代谢风险**,也就是前面「护心即护脑」那一整套。控好血压、血脂、血糖,不抽烟,别让这些慢性的血管杀手在几十年里一点点侵蚀大脑。" },
-    { "type": "p", "text": "把这四根支柱摆在一起你会发现:它们没有一根需要等待某种尚未问世的神药。它们此刻就可以开始,而且越早开始,时间的**复利**越厚。" },
-    { "type": "figure", "ftype": "清单图", "caption": "四根可控的支柱,没有一根是特效药", "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\" font-weight=\"bold\">四根可控的支柱（没有一根是特效药）</text><rect x=\"28\" y=\"62\" width=\"120\" height=\"150\" rx=\"8\" fill=\"none\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"88\" y=\"98\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\" font-weight=\"bold\">运动</text><text x=\"88\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"11\">证据最强</text><text x=\"88\" y=\"152\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">改善脑供血</text><text x=\"88\" y=\"172\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">维持代谢</text><rect x=\"160\" y=\"62\" width=\"120\" height=\"150\" rx=\"8\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"220\" y=\"98\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\" font-weight=\"bold\">睡眠</text><text x=\"220\" y=\"130\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">深睡清扫</text><text x=\"220\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">脑内代谢废物</text><rect x=\"292\" y=\"62\" width=\"120\" height=\"150\" rx=\"8\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"352\" y=\"98\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\" font-weight=\"bold\">认知储备</text><text x=\"352\" y=\"130\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">持续用脑</text><text x=\"352\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">像脑力存款</text><rect x=\"424\" y=\"62\" width=\"120\" height=\"150\" rx=\"8\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"484\" y=\"92\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\" font-weight=\"bold\">控血管</text><text x=\"484\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\" font-weight=\"bold\">代谢风险</text><text x=\"484\" y=\"144\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">血压 · 血脂</text><text x=\"484\" y=\"164\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">血糖 · 戒烟</text><text x=\"280\" y=\"248\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">四根一起立起来，才撑得住漫长的预防窗口</text><text x=\"280\" y=\"278\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">此刻就能开始，越早开始，复利越厚</text></svg>" },
-
-    { "type": "h2", "text": "这一章不是在说什么" },
-    { "type": "p", "text": "最后必须把话说清楚,免得从一个极端滑向另一个极端。" },
-    { "type": "p", "text": "第一,**机制远未定论。**阿尔茨海默到底怎么发生,科学界至今争论不休:淀粉样蛋白假说正在被反思,tau 蛋白、慢性炎症、血管、代谢、甚至某些感染都可能牵涉其中。这一章讲的很多联系是**流行病学上的相关**,不等于每一环都已被证明是严丝合缝的因果。" },
-    { "type": "p", "text": "第二,**「降风险」不等于「能治愈」,更不等于「能逆转」。**市面上不乏「某某方案几周逆转阿尔茨海默」的说法,它们大多**证据薄弱、争议巨大**,有的甚至是包装成科学的营销。阿提亚这一章诚实的地方,恰恰在于他没有承诺治愈——他谈的是**降低概率、推迟发病**,是把胜算一点点往自己这边挪,而不是许诺一场必胜之仗。" },
-    { "type": "p", "text": "第三,这是一本书的**通识导读,不是针对你个人的医疗建议。**你若担心自己的风险、犹豫要不要做基因检测、该怎么安排运动和检查,请与专业医生商量,结合你自己的具体情况来定。" },
-    { "type": "p", "text": "说到底,这一章给人的既不是恐慌,也不是虚假的安心,而是一种**清醒的主动**:面对目前还治不好的神经退行,我们并非只能被动等待宣判。虽然没有特效药,但把代谢、血管、运动、睡眠这几件事扎扎实实做到位,就能实实在在地**降低风险、推迟发病**。而这场仗,要在你还感觉不到任何异样的时候,就悄悄打起来。" }
-  ]
+ "title": "阿尔茨海默与神经退行:趁你还感觉不到,就开始防",
+ "subtitle": "四骑士里最令人恐惧的第三位——身体还在,人却在退潮。可它也是预防窗口最长的一个:战场不在发病之后,而在发病之前的几十年",
+ "centralIdea": "神经退行病(以阿尔茨海默为主,也含帕金森等)是「四骑士」的第三位,夺走的是「你之所以为你」的记忆与判断。坏消息是至今没有能逆转病程的特效药,清除斑块的药屡屡失败;好消息是病理在症状出现前几十年就已启动,留下漫长的预防窗口。ApoE4 基因抬高的是概率而非命运,提前知道是为了提前行动。阿提亚给出的核心方案是「护心即护脑」——控 apoB、稳血糖、逆转胰岛素抵抗同样护脑——再加上运动(证据最强的可控保护因素)、睡眠(深睡清扫脑内废物)、认知储备三根支柱。它讲的是降风险、推迟发病,不是治愈或逆转;机制仍有大量争议,不作个人医疗建议。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "四骑士里,如果说心脏病和癌症夺走的是「命」,那么神经退行病夺走的,是「你之所以为你」的那部分——记忆、判断、认得出至亲的能力。身体还在,人却像退潮一样一寸寸消失。这也是很多人心底最深的恐惧:不怕死,怕的是「活着,却不再是自己」。可阿提亚在这一章要说的偏偏是:**恰恰是这个最令人无力的骑士,留给我们的预防窗口反而最长**——只要你肯把时钟往前拨几十年。"
+  },
+  {
+   "type": "h2",
+   "text": "这一章讲的是什么"
+  },
+  {
+   "type": "p",
+   "text": "这是第三骑士。前两章分别拆解了心脏病与癌症,这一章轮到「神经退行」。它不是一种病,而是一族病:以**阿尔茨海默病**(最常见的痴呆类型)为主,也包括帕金森病、路易体痴呆、额颞叶痴呆等。它们的共同点是——大脑里的神经元一批批地退化、死去,而且至少到今天为止,**几乎不可逆**。"
+  },
+  {
+   "type": "p",
+   "text": "正因为不可逆,阿提亚把「医学 3.0」那套预防优先的思路用在这里,格外顺理成章。他自己也有强烈的私人动机:家族里有阿尔茨海默的影子,他做过基因检测,知道自己带着高风险的基因型。某种程度上,这一章是他写给自己的一份作战计划。"
+  },
+  {
+   "type": "figure",
+   "ftype": "金句卡",
+   "caption": "这一章的题眼",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"12\" y=\"12\" width=\"536\" height=\"276\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"24\" y=\"24\" width=\"512\" height=\"252\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"0.6\"/><text x=\"280\" y=\"104\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"24\">神经退行不是发病了再治的病</text><text x=\"280\" y=\"156\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"27\" font-weight=\"bold\">而是提前几十年就要开始防的病</text><line x1=\"200\" y1=\"186\" x2=\"360\" y2=\"186\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"280\" y=\"222\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">等症状显现，脑损伤往往已重——战场在发病之前</text><text x=\"280\" y=\"258\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">——《超越百岁》第 8 章</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "一个坏消息,一个好消息"
+  },
+  {
+   "type": "p",
+   "text": "先说残酷的部分。到今天为止,针对阿尔茨海默,**没有一种药能真正逆转病程**。过去二十来年,制药业押注最重的是「淀粉样蛋白假说」——认为大脑里堆积的 β-淀粉样斑块是元凶,清掉斑块就能救人。可一款又一款清斑块的药做完临床,要么无效,要么效果微弱到与副作用不成比例。斑块被清掉了,认知却没怎么好转。这让越来越多研究者怀疑:斑块也许更像是**火灾之后的灰烬,而不是纵火犯本身**。"
+  },
+  {
+   "type": "p",
+   "text": "但坏消息的背面,藏着一个好消息。研究发现,阿尔茨海默的**病理过程在症状出现之前几十年就已经悄悄启动**——大脑的异常,可能在你四五十岁、还自觉思路清晰的时候就开始累积。等到记忆明显出问题、被正式确诊的那一刻,神经元往往已经大批死亡,损伤重到难以挽回。药物之所以屡屡失败,一个重要原因就是:**出手太晚了**。"
+  },
+  {
+   "type": "p",
+   "text": "换个角度看,这条「病理早于症状几十年」的时间线,恰恰就是预防的机会所在。如果损伤是缓慢累积的,那么在它累积成灾之前,你有很长很长的一段时间可以出手。阿提亚反复强调的正是这一点:对付神经退行,战场不在**症状出现之后**,而在"
+  },
+  {
+   "type": "pull",
+   "text": "症状出现之前的那几十年。"
+  },
+  {
+   "type": "figure",
+   "ftype": "曲线图",
+   "caption": "病理早于症状几十年,预防窗口就藏在这段坡度里",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\" font-weight=\"bold\">病理早于症状几十年——预防窗口就在这里</text><line x1=\"64\" y1=\"244\" x2=\"520\" y2=\"244\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.2\"/><line x1=\"64\" y1=\"244\" x2=\"64\" y2=\"58\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.2\"/><text x=\"46\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\" transform=\"rotate(-90 46 150)\">脑内病理</text><path d=\"M64 240 Q 250 232 348 176 T 512 64\" fill=\"none\" style=\"stroke:var(--ink)\" stroke-width=\"2.2\"/><line x1=\"64\" y1=\"116\" x2=\"520\" y2=\"116\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.1\" stroke-dasharray=\"5 4\"/><text x=\"516\" y=\"108\" text-anchor=\"end\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">症状显现阈值</text><line x1=\"430\" y1=\"116\" x2=\"430\" y2=\"244\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"64\" y1=\"244\" x2=\"430\" y2=\"244\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"4\"/><text x=\"240\" y=\"226\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">可干预的几十年</text><text x=\"88\" y=\"266\" style=\"fill:var(--ink-soft)\" font-size=\"11\">约 40 岁</text><text x=\"388\" y=\"266\" style=\"fill:var(--ink-soft)\" font-size=\"11\">确诊 · 损伤已重</text><text x=\"280\" y=\"290\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">药物屡屡失败的一大原因：出手太晚</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "遗传:ApoE4 不是一纸判决书"
+  },
+  {
+   "type": "p",
+   "text": "说到神经退行,绕不开一个基因:**ApoE**。它有三种常见变体——e2、e3、e4。大多数人带的是最普通的 e3;带 e2 的人风险偏低;而带 **e4** 的人,阿尔茨海默的风险明显升高。带一个 e4 拷贝,风险大约是普通人的两三倍;若从父母各遗传一个、带上两个 e4,风险还要高得多,发病也可能更早。"
+  },
+  {
+   "type": "p",
+   "text": "听起来像一纸判决书,但它**不是**。最关键的事实是:很多带着 e4 的人终生不发病,也有很多根本不带 e4 的人照样患上阿尔茨海默。基因抬高的是**概率**,不是**命运**。阿提亚本人就带着高风险基因型,他没有因此认命,反而把它当成一记提前几十年响起的**闹钟**。"
+  },
+  {
+   "type": "p",
+   "text": "这正是阿提亚看重基因信息的地方——不是为了制造恐慌,而是为了**换取时间**。如果你四十岁就知道自己在高风险区,你就有整整几十年,可以比别人更早、更认真地去做那些已经被证明能降低风险的事。知道风险的意义,从来不在于焦虑,而在于**行动**。"
+  },
+  {
+   "type": "quote",
+   "original": "提前几十年知道风险,是为了提前几十年开始行动。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "ApoE 抬高的是概率,不是命运",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\" font-weight=\"bold\">ApoE 基因：抬高的是概率，不是命运</text><rect x=\"40\" y=\"66\" width=\"140\" height=\"92\" rx=\"8\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"110\" y=\"100\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"18\" font-weight=\"bold\">e2</text><text x=\"110\" y=\"128\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">风险偏低</text><rect x=\"210\" y=\"66\" width=\"140\" height=\"92\" rx=\"8\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"280\" y=\"100\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"18\" font-weight=\"bold\">e3</text><text x=\"280\" y=\"128\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">最常见 · 基准风险</text><rect x=\"380\" y=\"66\" width=\"140\" height=\"92\" rx=\"8\" fill=\"none\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"450\" y=\"100\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"18\" font-weight=\"bold\">e4</text><text x=\"450\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">风险明显升高</text><text x=\"450\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">一个拷贝约 2–3 倍</text><line x1=\"70\" y1=\"184\" x2=\"490\" y2=\"184\" style=\"stroke:var(--line)\" stroke-width=\"0.8\"/><text x=\"280\" y=\"212\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">带 e4 者很多终生不发病 · 不带 e4 者也可能患病</text><text x=\"280\" y=\"244\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"14\" font-weight=\"bold\">基因不是判决书，而是提前响起的闹钟</text><text x=\"280\" y=\"272\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">知道风险的意义在于「更早行动」，不在于焦虑</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "护心即护脑:最实用的一个洞见"
+  },
+  {
+   "type": "p",
+   "text": "那么在漫长的预防窗口里,到底该做什么?阿提亚给出的第一条线索朴素得让人意外:**照顾好你的心血管和代谢,就是在照顾你的大脑。**"
+  },
+  {
+   "type": "p",
+   "text": "这句话背后有扎实的道理。大脑是全身最耗能、最依赖血流的器官,它由密如蛛网的微小血管供养。当血管因为长期的 **apoB(携带「坏胆固醇」的颗粒)偏高、血压偏高**而受损时,受伤的不只是心脏的冠状动脉,还有大脑深处那些细小的血管——它们的病变会悄悄侵蚀认知,是「血管性痴呆」的直接推手,也常和阿尔茨海默叠加发作。"
+  },
+  {
+   "type": "p",
+   "text": "代谢这一端同样如此。**高血糖、胰岛素抵抗**不仅是 2 型糖尿病和心脏病的温床,也与阿尔茨海默高度相关——相关到有研究者半开玩笑地把阿尔茨海默称作「**3 型糖尿病**」。大脑对胰岛素的反应一旦失灵,神经元的能量供应就会出问题。所以,第五、六章里那些护心、护代谢的功课——**压低 apoB、稳住血糖、逆转胰岛素抵抗**——几乎原封不动地,也是护脑的功课。"
+  },
+  {
+   "type": "quote",
+   "original": "对大脑最好的事,往往正是对心脏最好的事。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "这是这一章最实用的一个洞见:你不必为大脑单独准备一套方案。**护心即护脑,控糖即护脑。**四骑士看似各自为战,根子却盘根错节地长在一起——修好一处,常常几处同时受益。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "caption": "护心即护脑:两个圈,重叠着同一批可控风险",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\" font-weight=\"bold\">护心即护脑：高度重叠的风险</text><circle cx=\"215\" cy=\"172\" r=\"108\" fill=\"none\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><circle cx=\"345\" cy=\"172\" r=\"108\" fill=\"none\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><text x=\"150\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\" font-weight=\"bold\">心血管</text><text x=\"150\" y=\"142\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\" font-weight=\"bold\">与代谢健康</text><text x=\"412\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\" font-weight=\"bold\">大脑</text><text x=\"412\" y=\"142\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\" font-weight=\"bold\">健康</text><text x=\"280\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\" font-weight=\"bold\">共同的</text><text x=\"280\" y=\"163\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\" font-weight=\"bold\">可控风险</text><text x=\"280\" y=\"187\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">apoB 高</text><text x=\"280\" y=\"205\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">血糖高</text><text x=\"280\" y=\"223\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">胰岛素抵抗</text><text x=\"280\" y=\"293\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">控 apoB、稳血糖、逆转胰岛素抵抗——一套功课，两处受益</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "四根可控的支柱"
+  },
+  {
+   "type": "p",
+   "text": "在「护心即护脑」这条主干之外,阿提亚还给出几根专门针对大脑的支柱。它们没有一根是特效药,但合起来,是目前证据下我们能实实在在抓住的东西。"
+  },
+  {
+   "type": "p",
+   "text": "**第一根,也是最强的一根:运动。**在所有已知的可控因素里,规律运动是目前**证据最强的大脑保护手段**,没有之一。有氧运动改善脑部供血,力量训练维持全身代谢,长期看都和更低的痴呆风险、更好的认知表现相关。如果说有一种「长寿药」顺便还是「护脑药」,那就是运动——下一章会专门讲它。"
+  },
+  {
+   "type": "p",
+   "text": "**第二根:睡眠。**睡觉时大脑并没有闲着,它在**清扫垃圾**。深度睡眠期间,大脑负责排废的系统会加速冲走白天代谢产生的废物,其中就包括与阿尔茨海默相关的蛋白。长期睡不够、睡不深,约等于让垃圾在脑子里越积越多。睡眠不是可以随意牺牲的奢侈品,而是护脑的基础工序。"
+  },
+  {
+   "type": "p",
+   "text": "**第三根:认知储备。**持续地用脑——学习新东西、深度阅读、掌握新技能、维持丰富的社交——能攒下所谓的「认知储备」。它不能阻止病理发生,却像一笔**脑力上的存款**:即使大脑开始出现损伤,储备厚的人也能更久地维持正常功能,把发病的时点往后推。"
+  },
+  {
+   "type": "p",
+   "text": "**第四根:管住血管与代谢风险**,也就是前面「护心即护脑」那一整套。控好血压、血脂、血糖,不抽烟,别让这些慢性的血管杀手在几十年里一点点侵蚀大脑。"
+  },
+  {
+   "type": "p",
+   "text": "把这四根支柱摆在一起你会发现:它们没有一根需要等待某种尚未问世的神药。它们此刻就可以开始,而且越早开始,时间的**复利**越厚。"
+  },
+  {
+   "type": "figure",
+   "ftype": "清单图",
+   "caption": "四根可控的支柱,没有一根是特效药",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\" font-weight=\"bold\">四根可控的支柱（没有一根是特效药）</text><rect x=\"28\" y=\"62\" width=\"120\" height=\"150\" rx=\"8\" fill=\"none\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"88\" y=\"98\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\" font-weight=\"bold\">运动</text><text x=\"88\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"11\">证据最强</text><text x=\"88\" y=\"152\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">改善脑供血</text><text x=\"88\" y=\"172\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">维持代谢</text><rect x=\"160\" y=\"62\" width=\"120\" height=\"150\" rx=\"8\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"220\" y=\"98\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\" font-weight=\"bold\">睡眠</text><text x=\"220\" y=\"130\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">深睡清扫</text><text x=\"220\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">脑内代谢废物</text><rect x=\"292\" y=\"62\" width=\"120\" height=\"150\" rx=\"8\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"352\" y=\"98\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\" font-weight=\"bold\">认知储备</text><text x=\"352\" y=\"130\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">持续用脑</text><text x=\"352\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">像脑力存款</text><rect x=\"424\" y=\"62\" width=\"120\" height=\"150\" rx=\"8\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"484\" y=\"92\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\" font-weight=\"bold\">控血管</text><text x=\"484\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\" font-weight=\"bold\">代谢风险</text><text x=\"484\" y=\"144\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">血压 · 血脂</text><text x=\"484\" y=\"164\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">血糖 · 戒烟</text><text x=\"280\" y=\"248\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">四根一起立起来，才撑得住漫长的预防窗口</text><text x=\"280\" y=\"278\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12\">此刻就能开始，越早开始，复利越厚</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "这一章不是在说什么"
+  },
+  {
+   "type": "p",
+   "text": "最后必须把话说清楚,免得从一个极端滑向另一个极端。"
+  },
+  {
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "**机制远未定论。**阿尔茨海默到底怎么发生,科学界至今争论不休:淀粉样蛋白假说正在被反思,tau 蛋白、慢性炎症、血管、代谢、甚至某些感染都可能牵涉其中。这一章讲的很多联系是**流行病学上的相关**,不等于每一环都已被证明是严丝合缝的因果。",
+    "**「降风险」不等于「能治愈」,更不等于「能逆转」。**市面上不乏「某某方案几周逆转阿尔茨海默」的说法,它们大多**证据薄弱、争议巨大**,有的甚至是包装成科学的营销。阿提亚这一章诚实的地方,恰恰在于他没有承诺治愈——他谈的是**降低概率、推迟发病**,是把胜算一点点往自己这边挪,而不是许诺一场必胜之仗。",
+    "这是一本书的**通识导读,不是针对你个人的医疗建议。**你若担心自己的风险、犹豫要不要做基因检测、该怎么安排运动和检查,请与专业医生商量,结合你自己的具体情况来定。"
+   ]
+  },
+  {
+   "type": "p",
+   "text": "说到底,这一章给人的既不是恐慌,也不是虚假的安心,而是一种**清醒的主动**:面对目前还治不好的神经退行,我们并非只能被动等待宣判。虽然没有特效药,但把代谢、血管、运动、睡眠这几件事扎扎实实做到位,就能实实在在地**降低风险、推迟发病**。而这场仗,要在你还感觉不到任何异样的时候,就悄悄打起来。"
+  }
+ ]
 }

@@ -1,139 +1,143 @@
 {
-  "title": "十大原理:人们如何做决策",
-  "subtitle": "在开谈供求、通胀、贸易之前,曼昆先递给你四把最基础的尺子——看懂它们,就迈进了「像经济学家一样思考」的门",
-  "centralIdea": "曼昆把整门经济学压缩成「十大原理」,而第一组四条,讲的全是同一件小事:一个人该怎么做决定。它们朴素到几乎人人都听过,却又常常被忘掉——**凡事都有取舍(tradeoffs),资源有限,要一样就得放弃另一样**;**某物真正的成本,是你为它放弃的最好选项(机会成本)**,不只是花出去的钱;**聪明的决定不看总量或平均,而看「再多一点点」的边际(margin)得失**;**人会对激励(incentives)做出反应,得失一变,行为就跟着变**。这四条不是致富公式,而是四把看问题的尺子;学会拿它们去量日常的每个选择,你就摸到了经济学思维的门槛。分寸也要守住:它讲的是思维工具而非铁律——「理性人」是个好用的简化,却不是人的全部,后文自会谈它的边界。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "「经济」这个词,在古希腊语里的本意不过是「管理一个家」。一个家里,资源总是有限的——时间、钱、精力就那么多,谁做饭、谁上学、谁多花一点,都得有人来定夺。一个社会也一样。曼昆写《经济学原理》,开篇没有急着讲市场、货币或增长,而是先退回到最小的单位:**一个人,面对选择时,到底是怎么决定的?** 他把答案提炼成四条原理。它们简单得像常识,可一旦真的拿在手里去量事情,你看世界的方式就变了。"
-    },
-    {
-      "type": "p",
-      "text": "先交代个背景:曼昆一共列了「十大原理」,分成三组——**个人如何做决策**(前四条)、**人们如何相互影响**(中间三条)、**整个经济如何运行**(后三条)。本章把十条都摆了出来,但真正的地基是前四条,因为后面所有关于供求、贸易、通胀的讨论,都建立在「人会权衡、会算成本、会回应激励」这几个假设之上。所以这一篇,我们只把这四块基石讲透。"
-    },
-    {
-      "type": "figure",
-      "ftype": "题眼",
-      "caption": "个人决策的四块基石——这一章真正要你记住的东西",
-      "svg": "<svg viewBox='0 0 600 350' style='width:100%;height:auto;font-family:var(--font-serif)' xmlns='http://www.w3.org/2000/svg'><rect x='14' y='14' width='572' height='322' fill='none' style='stroke:var(--line)' stroke-width='1.2'/><rect x='24' y='24' width='552' height='302' fill='none' style='stroke:var(--line)' stroke-width='0.5'/><text x='300' y='52' text-anchor='middle' style='fill:var(--ink)' font-size='20'>个人决策的四块基石</text><line x1='300' y1='74' x2='300' y2='318' style='stroke:var(--line)' stroke-width='0.8'/><line x1='36' y1='196' x2='564' y2='196' style='stroke:var(--line)' stroke-width='0.8'/><text x='166' y='110' text-anchor='middle' style='fill:var(--ink-faint)' font-size='14'>原理一</text><text x='166' y='140' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='23' font-weight='bold'>权衡取舍</text><text x='166' y='172' text-anchor='middle' style='fill:var(--ink-soft)' font-size='14'>要一样,就得放弃另一样</text><text x='434' y='110' text-anchor='middle' style='fill:var(--ink-faint)' font-size='14'>原理二</text><text x='434' y='140' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='23' font-weight='bold'>机会成本</text><text x='434' y='172' text-anchor='middle' style='fill:var(--ink-soft)' font-size='14'>成本 = 你放弃的最好选项</text><text x='166' y='236' text-anchor='middle' style='fill:var(--ink-faint)' font-size='14'>原理三</text><text x='166' y='266' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='23' font-weight='bold'>边际思考</text><text x='166' y='298' text-anchor='middle' style='fill:var(--ink-soft)' font-size='14'>算「再多一点」的得与失</text><text x='434' y='236' text-anchor='middle' style='fill:var(--ink-faint)' font-size='14'>原理四</text><text x='434' y='266' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='23' font-weight='bold'>回应激励</text><text x='434' y='298' text-anchor='middle' style='fill:var(--ink-soft)' font-size='14'>得失一变,行为就变</text></svg>"
-    },
-    {
-      "type": "h2",
-      "text": "原理一:人们面临权衡取舍"
-    },
-    {
-      "type": "p",
-      "text": "第一条,也是最好懂、最容易被忽视的一条:**天下没有免费的午餐**。想得到一样喜欢的东西,通常就得放弃另一样也喜欢的东西。做决定,本质上就是在两个目标之间做取舍。"
-    },
-    {
-      "type": "p",
-      "text": "一个学生的一小时,可以拿去学习,也可以拿去睡觉、打球、刷手机——多学一小时,就少了一小时别的。一家人的钱,花在旅行上就少了给房子添置的钱。放大到整个国家也一样:钱和人力投到国防上(曼昆用的经典对子是「**大炮**」),就少了投到民生上(「**黄油**」);想要更**清洁的环境**,常常意味着企业和家庭得多花钱、收入增长慢一点。取舍无处不在,不因你回避而消失。"
-    },
-    {
-      "type": "p",
-      "text": "曼昆特别点出一个社会层面最重要的取舍:**效率**与**平等**之间的张力。效率是把蛋糕做到最大,让社会从有限的资源里榨出最多的好东西;平等则是把这块蛋糕分得尽量均匀。麻烦在于,这两件事常常打架:为了均分而向富人多征税、补贴穷人,可能会削弱人们努力工作、投资创业的动力,蛋糕反而做小了;而一味追求把蛋糕做大,又可能让分配变得悬殊。这里没有标准答案——它更多是价值取向的选择,而不是对错题。经济学能做的,是把这个取舍摆清楚,而不是替你拍板。"
-    },
-    {
-      "type": "p",
-      "text": "为什么这条这么重要?因为**认识到「凡事都有代价」,本身就是理性决策的起点**。一个人只有先承认自己面对的是取舍,才谈得上去权衡各个选项的好坏。分不清取舍的人,容易以为好处可以白拿、鱼与熊掌能够兼得,于是做出糊涂的决定。"
-    },
-    {
-      "type": "quote",
-      "original": "天下没有免费的午餐。",
-      "translation": "想要一样东西,几乎总得放弃另一样。先承认代价的存在,才谈得上理性地选择。"
-    },
-    {
-      "type": "h2",
-      "text": "原理二:某物的成本,是你为它放弃的东西"
-    },
-    {
-      "type": "p",
-      "text": "既然做事都要取舍,那就得比较各个选项的成本和收益。可「成本」这个词,比大多数人以为的要深。它不只是你**掏出去的钱**,还包括你**为此放弃的最好那个选项**——这就是经济学里极关键的一个概念:**机会成本(opportunity cost)**。"
-    },
-    {
-      "type": "p",
-      "text": "曼昆举的例子是「上大学值不值」。很多人算这笔账,只算学费、书本、住宿——这些是看得见的、要付钱的部分。但真正的成本不止于此:你把四年时间用来读书,就等于放弃了这四年本可以出去工作赚到的收入。对一个能赚不少钱的人来说,这笔「放弃的收入」甚至可能比学费本身还高。反过来,那些运动天赋极高、一旦从业就能赚大钱的年轻人,选择读大学的机会成本就特别大——这也解释了为什么有些人会选择先不读。"
-    },
-    {
-      "type": "figure",
-      "ftype": "示意",
-      "caption": "机会成本:上大学真正的成本,不止学费那一块",
-      "svg": "<svg viewBox='0 0 600 320' style='width:100%;height:auto;font-family:var(--font-serif)' xmlns='http://www.w3.org/2000/svg'><text x='300' y='42' text-anchor='middle' style='fill:var(--ink)' font-size='19'>上大学「真正的成本」</text><line x1='120' y1='280' x2='470' y2='280' style='stroke:var(--line)' stroke-width='1'/><rect x='148' y='208' width='108' height='72' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><text x='202' y='250' text-anchor='middle' style='fill:var(--ink-soft)' font-size='14'>学费 · 书本</text><rect x='148' y='90' width='108' height='118' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.6'/><text x='202' y='138' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='16' font-weight='bold'>放弃的收入</text><text x='202' y='164' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12'>这几年本可赚到的钱</text><path d='M272 90 L284 90 L284 280 L272 280' fill='none' style='stroke:var(--line)' stroke-width='1'/><text x='300' y='186' text-anchor='start' style='fill:var(--ink)' font-size='16'>= 真正的成本</text><text x='300' y='120' text-anchor='start' style='fill:var(--ink-faint)' font-size='13'>常被忘掉的一块,往往更贵</text><text x='300' y='244' text-anchor='start' style='fill:var(--ink-faint)' font-size='13'>多数人只算了下面这块</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "这把尺子一旦握在手里,很多日常选择都会露出真面目。看一场两小时的电影,成本不只是那张票的钱,还有这两小时本可以做的事——加班、陪家人、睡个好觉。把一笔钱存着不用,成本是它本可以拿去投资或消费带来的东西。**关键在于:凡是选了A,就意味着没选B、C、D……而其中最好的那个,就是你为A付出的真实代价。** 会算机会成本的人,不会只盯着账面上的支出,而会问一句:我为这件事,到底放弃了什么?"
-    },
-    {
-      "type": "quote",
-      "original": "某物的成本,是为了得到它而放弃的东西。",
-      "translation": "真正的成本 = 看得见的花费 + 放弃的最好选项。只算前者,就会低估代价。"
-    },
-    {
-      "type": "h2",
-      "text": "原理三:理性人在边际上思考"
-    },
-    {
-      "type": "p",
-      "text": "第三条,是四条里最不直觉、也最能改变判断力的一条。生活里的很多决定,不是「做还是不做」的非此即彼,而是「多一点还是少一点」的微调。曼昆把这些微小的调整叫作**边际变动(marginal change)**,而好的决策者,是在**边际**上思考的:他不看总量,也不看平均,而是比较**「再多做一点点」带来的额外收益(边际收益)和额外成本(边际成本)**。"
-    },
-    {
-      "type": "p",
-      "text": "书里的经典例子是航空公司:一架200个座位、飞一趟总成本10万美元的航班,平均每个座位的成本是500美元。现在飞机快起飞了,还剩一个空座,门口站着一位愿意出300美元的旅客——卖不卖?按「平均成本500」算,300是亏本买卖,不该卖。可这么算就错了。真正该问的是**边际**:多载这一个人,飞机照样要飞,油钱、机组、折旧一分不多,顶多多一份餐食——**多载一人的边际成本,几乎是零**。既然300元的票价远高于这接近零的边际成本,卖出去就是净赚。哪怕300远低于平均成本,也该卖。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对照",
-      "caption": "边际思考:最后一张空座,300 元该不该卖?",
-      "svg": "<svg viewBox='0 0 600 300' style='width:100%;height:auto;font-family:var(--font-serif)' xmlns='http://www.w3.org/2000/svg'><text x='300' y='38' text-anchor='middle' style='fill:var(--ink)' font-size='19'>最后一张空座,300 元卖不卖?</text><rect x='36' y='62' width='252' height='202' rx='8' fill='none' style='stroke:var(--line)' stroke-width='1'/><text x='162' y='94' text-anchor='middle' style='fill:var(--ink-soft)' font-size='16'>只看「平均成本」</text><text x='162' y='130' text-anchor='middle' style='fill:var(--ink)' font-size='15'>每座摊到 500 元</text><text x='162' y='158' text-anchor='middle' style='fill:var(--ink)' font-size='15'>300 &lt; 500,像亏本</text><text x='162' y='200' text-anchor='middle' style='fill:var(--ink-faint)' font-size='30'>✕</text><text x='162' y='240' text-anchor='middle' style='fill:var(--ink-soft)' font-size='14'>结论:宁可空着</text><rect x='312' y='62' width='252' height='202' rx='8' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='438' y='94' text-anchor='middle' style='fill:var(--ink)' font-size='16'>只看「边际成本」</text><text x='438' y='130' text-anchor='middle' style='fill:var(--ink)' font-size='15'>多载一人 ≈ 多花 0 元</text><text x='438' y='158' text-anchor='middle' style='fill:var(--ink)' font-size='15'>300 &gt; 0,净赚</text><text x='438' y='200' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='30' font-weight='bold'>✓</text><text x='438' y='240' text-anchor='middle' style='fill:var(--ink-soft)' font-size='14'>结论:卖,赚 300</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "这条尺子在自己身上一样好用。「要不要再多读一小时书」——不该看你今天总共读了多久,而该问:这多出来的一小时,记住的东西(边际收益)值不值得付出的困倦(边际成本)?工厂「要不要多产一件」,看的是多产这一件卖出去的钱够不够抵多用的料和工。就连「为什么水几乎白送、钻石却贵得离谱」这个老谜题,答案也在边际:水虽是生命必需,但多喝一杯的边际用处极小;钻石可有可无,可多得一颗的边际满足很大,价格便由边际来定。**记住:很多看似矛盾的现象,一放到「再多一点」的边际上,就顺了。**"
-    },
-    {
-      "type": "quote",
-      "original": "理性人只在边际收益超过边际成本时,才会去做那件事。",
-      "translation": "好决定不比总量、不比平均,只比「再多一点点」的得与失。"
-    },
-    {
-      "type": "h2",
-      "text": "原理四:人们会对激励做出反应"
-    },
-    {
-      "type": "p",
-      "text": "前三条都在说一个人如何权衡;第四条则说:**这个权衡是会变的**。因为人是会算账的,一旦成本或收益改变,他掂量的结果就变,行为也跟着变——这就是**激励(incentive)**的力量。所谓激励,就是任何促使人行动的东西:涨价、加税、给补贴、设罚款,都会重新拨动人的算盘。"
-    },
-    {
-      "type": "p",
-      "text": "例子俯拾皆是。苹果涨价了,人们就少买苹果、多买梨;汽油贵了,人们就更愿意买省油的小车、多拼车、多坐公交,甚至搬到离公司近一点的地方。这些反应看起来天经地义,可正因为它可靠,它才成了理解和设计政策的钥匙——**好的政策制定者必须预判自己的政策会激起怎样的激励效应。**"
-    },
-    {
-      "type": "figure",
-      "ftype": "示意",
-      "caption": "激励一变,行为就变——好政策要预判它,也要当心副作用",
-      "svg": "<svg viewBox='0 0 600 270' style='width:100%;height:auto;font-family:var(--font-serif)' xmlns='http://www.w3.org/2000/svg'><text x='300' y='40' text-anchor='middle' style='fill:var(--ink)' font-size='19'>激励一变,行为就变</text><rect x='40' y='74' width='192' height='94' rx='8' fill='none' style='stroke:var(--line)' stroke-width='1'/><text x='136' y='112' text-anchor='middle' style='fill:var(--ink)' font-size='17'>得失变了</text><text x='136' y='140' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>涨价 · 加税 · 补贴 · 罚款</text><line x1='238' y1='121' x2='356' y2='121' style='stroke:var(--cinnabar-pure)' stroke-width='1.8'/><path d='M366 121 l-14 -7 l0 14 z' style='fill:var(--cinnabar-pure)'/><rect x='368' y='74' width='192' height='94' rx='8' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='464' y='112' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='17' font-weight='bold'>行为就变</text><text x='464' y='140' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>人趋利避害地重新盘算</text><text x='300' y='210' text-anchor='middle' style='fill:var(--ink)' font-size='14'>当心意外副作用</text><text x='300' y='238' text-anchor='middle' style='fill:var(--ink-faint)' font-size='13'>例:系了安全带更「安全」,有人反而把车开得更猛</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "但激励也有暗面:它常常引出**意料之外的副作用**。曼昆举了个反直觉的例子——法律强制系安全带,本意是保护司机。安全带确实让每次车祸对司机的伤害变轻了,可这也悄悄改变了司机的激励:开车「变安全」了,有些人于是开得更快、更猛。结果是每场事故司机受伤更少,事故次数却可能更多,连带把行人置于更大风险。汽油税也一样:它一边增加收入、一边压低油耗、鼓励人们改开小车,牵一发而动全身。这告诉我们:**分析任何政策,不能只看它直接想达到的目的,还要顺着激励往下推,看看人们会如何绕着它重新行动。** 忽视激励效应的好心政策,常常收获相反的结果。"
-    },
-    {
-      "type": "quote",
-      "original": "人们会对激励做出反应,其余的多是注脚。",
-      "translation": "改变得失,就改变行为。设计激励时,既要算它想要的效果,也要防它没想到的副作用。"
-    },
-    {
-      "type": "h2",
-      "text": "四把尺子,一道门槛"
-    },
-    {
-      "type": "p",
-      "text": "把这一章讲个人决策的四条原理并排放在一起,其实是四把量事情的尺子:**遇事先认取舍**——想清楚要得到什么、必须放弃什么;**算账要算机会成本**——真正的代价是放弃的最好选项,不只是掏出去的钱;**选择在边际上比较**——看「再多一点」的收益盖不盖得住「再多一点」的成本;**记得人人都会回应激励**——得失一动,行为就跟着动,自己如此,别人也如此。"
-    },
-    {
-      "type": "p",
-      "text": "最后要补一句分寸。这四条原理背后,站着一个假设:人是「理性的」,会冷静权衡、追求自己利益的最大化。这是个极好用的简化——它让我们能把纷繁的行为讲出条理。但它并不是铁律。真实的人会冲动、会算错、会被情绪和习惯左右,曼昆自己在后文也会谈到这个模型的边界(行为经济学正是从这里生长出来的)。所以聪明的读法,是**把这四把尺子当成看问题的起点,而不是终点**:先用它们把事情量一遍,理清取舍、成本、边际与激励,再回过头来想想,现实里的人会不会偏离这套理性剧本。做到这一步,你就已经站在「像经济学家一样思考」的门口了。"
-    }
-  ]
+ "title": "十大原理:人们如何做决策",
+ "subtitle": "在开谈供求、通胀、贸易之前,曼昆先递给你四把最基础的尺子——看懂它们,就迈进了「像经济学家一样思考」的门",
+ "centralIdea": "曼昆把整门经济学压缩成「十大原理」,而第一组四条,讲的全是同一件小事:一个人该怎么做决定。它们朴素到几乎人人都听过,却又常常被忘掉——**凡事都有取舍(tradeoffs),资源有限,要一样就得放弃另一样**;**某物真正的成本,是你为它放弃的最好选项(机会成本)**,不只是花出去的钱;**聪明的决定不看总量或平均,而看「再多一点点」的边际(margin)得失**;**人会对激励(incentives)做出反应,得失一变,行为就跟着变**。这四条不是致富公式,而是四把看问题的尺子;学会拿它们去量日常的每个选择,你就摸到了经济学思维的门槛。分寸也要守住:它讲的是思维工具而非铁律——「理性人」是个好用的简化,却不是人的全部,后文自会谈它的边界。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "「经济」这个词,在古希腊语里的本意不过是「管理一个家」。一个家里,资源总是有限的——时间、钱、精力就那么多,谁做饭、谁上学、谁多花一点,都得有人来定夺。一个社会也一样。曼昆写《经济学原理》,开篇没有急着讲市场、货币或增长,而是先退回到最小的单位:**一个人,面对选择时,到底是怎么决定的?** 他把答案提炼成四条原理。它们简单得像常识,可一旦真的拿在手里去量事情,你看世界的方式就变了。"
+  },
+  {
+   "type": "p",
+   "text": "先交代个背景:曼昆一共列了「十大原理」,分成三组——**个人如何做决策**(前四条)、**人们如何相互影响**(中间三条)、**整个经济如何运行**(后三条)。本章把十条都摆了出来,但真正的地基是前四条,因为后面所有关于供求、贸易、通胀的讨论,都建立在「人会权衡、会算成本、会回应激励」这几个假设之上。所以这一篇,我们只把这四块基石讲透。"
+  },
+  {
+   "type": "figure",
+   "ftype": "题眼",
+   "caption": "个人决策的四块基石——这一章真正要你记住的东西",
+   "svg": "<svg viewBox='0 0 600 350' style='width:100%;height:auto;font-family:var(--font-serif)' xmlns='http://www.w3.org/2000/svg'><rect x='14' y='14' width='572' height='322' fill='none' style='stroke:var(--line)' stroke-width='1.2'/><rect x='24' y='24' width='552' height='302' fill='none' style='stroke:var(--line)' stroke-width='0.5'/><text x='300' y='52' text-anchor='middle' style='fill:var(--ink)' font-size='20'>个人决策的四块基石</text><line x1='300' y1='74' x2='300' y2='318' style='stroke:var(--line)' stroke-width='0.8'/><line x1='36' y1='196' x2='564' y2='196' style='stroke:var(--line)' stroke-width='0.8'/><text x='166' y='110' text-anchor='middle' style='fill:var(--ink-faint)' font-size='14'>原理一</text><text x='166' y='140' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='23' font-weight='bold'>权衡取舍</text><text x='166' y='172' text-anchor='middle' style='fill:var(--ink-soft)' font-size='14'>要一样,就得放弃另一样</text><text x='434' y='110' text-anchor='middle' style='fill:var(--ink-faint)' font-size='14'>原理二</text><text x='434' y='140' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='23' font-weight='bold'>机会成本</text><text x='434' y='172' text-anchor='middle' style='fill:var(--ink-soft)' font-size='14'>成本 = 你放弃的最好选项</text><text x='166' y='236' text-anchor='middle' style='fill:var(--ink-faint)' font-size='14'>原理三</text><text x='166' y='266' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='23' font-weight='bold'>边际思考</text><text x='166' y='298' text-anchor='middle' style='fill:var(--ink-soft)' font-size='14'>算「再多一点」的得与失</text><text x='434' y='236' text-anchor='middle' style='fill:var(--ink-faint)' font-size='14'>原理四</text><text x='434' y='266' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='23' font-weight='bold'>回应激励</text><text x='434' y='298' text-anchor='middle' style='fill:var(--ink-soft)' font-size='14'>得失一变,行为就变</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "原理一:人们面临权衡取舍"
+  },
+  {
+   "type": "p",
+   "text": "第一条,也是最好懂、最容易被忽视的一条:**天下没有免费的午餐**。想得到一样喜欢的东西,通常就得放弃另一样也喜欢的东西。做决定,本质上就是在两个目标之间做取舍。"
+  },
+  {
+   "type": "p",
+   "text": "一个学生的一小时,可以拿去学习,也可以拿去睡觉、打球、刷手机——多学一小时,就少了一小时别的。一家人的钱,花在旅行上就少了给房子添置的钱。放大到整个国家也一样:钱和人力投到国防上(曼昆用的经典对子是「**大炮**」),就少了投到民生上(「**黄油**」);想要更**清洁的环境**,常常意味着企业和家庭得多花钱、收入增长慢一点。取舍无处不在,不因你回避而消失。"
+  },
+  {
+   "type": "p",
+   "text": "曼昆特别点出一个社会层面最重要的取舍:**效率**与**平等**之间的张力。效率是把蛋糕做到最大,让社会从有限的资源里榨出最多的好东西;平等则是把这块蛋糕分得尽量均匀。麻烦在于,这两件事常常打架:为了均分而向富人多征税、补贴穷人,可能会削弱人们努力工作、投资创业的动力,蛋糕反而做小了;而一味追求把蛋糕做大,又可能让分配变得悬殊。这里没有标准答案——它更多是价值取向的选择,而不是对错题。经济学能做的,是把这个取舍摆清楚,而不是替你拍板。"
+  },
+  {
+   "type": "p",
+   "text": "为什么这条这么重要?因为**认识到「凡事都有代价」,本身就是理性决策的起点**。一个人只有先承认自己面对的是取舍,才谈得上去权衡各个选项的好坏。分不清取舍的人,容易以为好处可以白拿、鱼与熊掌能够兼得,于是做出糊涂的决定。"
+  },
+  {
+   "type": "quote",
+   "original": "天下没有免费的午餐。",
+   "translation": "想要一样东西,几乎总得放弃另一样。先承认代价的存在,才谈得上理性地选择。"
+  },
+  {
+   "type": "h2",
+   "text": "原理二:某物的成本,是你为它放弃的东西"
+  },
+  {
+   "type": "p",
+   "text": "既然做事都要取舍,那就得比较各个选项的成本和收益。可「成本」这个词,比大多数人以为的要深。它不只是你**掏出去的钱**,还包括你**为此放弃的最好那个选项**——这就是经济学里极关键的一个概念:"
+  },
+  {
+   "type": "pull",
+   "text": "机会成本(opportunity cost)。"
+  },
+  {
+   "type": "p",
+   "text": "曼昆举的例子是「上大学值不值」。很多人算这笔账,只算学费、书本、住宿——这些是看得见的、要付钱的部分。但真正的成本不止于此:你把四年时间用来读书,就等于放弃了这四年本可以出去工作赚到的收入。对一个能赚不少钱的人来说,这笔「放弃的收入」甚至可能比学费本身还高。反过来,那些运动天赋极高、一旦从业就能赚大钱的年轻人,选择读大学的机会成本就特别大——这也解释了为什么有些人会选择先不读。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意",
+   "caption": "机会成本:上大学真正的成本,不止学费那一块",
+   "svg": "<svg viewBox='0 0 600 320' style='width:100%;height:auto;font-family:var(--font-serif)' xmlns='http://www.w3.org/2000/svg'><text x='300' y='42' text-anchor='middle' style='fill:var(--ink)' font-size='19'>上大学「真正的成本」</text><line x1='120' y1='280' x2='470' y2='280' style='stroke:var(--line)' stroke-width='1'/><rect x='148' y='208' width='108' height='72' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><text x='202' y='250' text-anchor='middle' style='fill:var(--ink-soft)' font-size='14'>学费 · 书本</text><rect x='148' y='90' width='108' height='118' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.6'/><text x='202' y='138' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='16' font-weight='bold'>放弃的收入</text><text x='202' y='164' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12'>这几年本可赚到的钱</text><path d='M272 90 L284 90 L284 280 L272 280' fill='none' style='stroke:var(--line)' stroke-width='1'/><text x='300' y='186' text-anchor='start' style='fill:var(--ink)' font-size='16'>= 真正的成本</text><text x='300' y='120' text-anchor='start' style='fill:var(--ink-faint)' font-size='13'>常被忘掉的一块,往往更贵</text><text x='300' y='244' text-anchor='start' style='fill:var(--ink-faint)' font-size='13'>多数人只算了下面这块</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "这把尺子一旦握在手里,很多日常选择都会露出真面目。看一场两小时的电影,成本不只是那张票的钱,还有这两小时本可以做的事——加班、陪家人、睡个好觉。把一笔钱存着不用,成本是它本可以拿去投资或消费带来的东西。**关键在于:凡是选了A,就意味着没选B、C、D……而其中最好的那个,就是你为A付出的真实代价。** 会算机会成本的人,不会只盯着账面上的支出,而会问一句:我为这件事,到底放弃了什么?"
+  },
+  {
+   "type": "quote",
+   "original": "某物的成本,是为了得到它而放弃的东西。",
+   "translation": "真正的成本 = 看得见的花费 + 放弃的最好选项。只算前者,就会低估代价。"
+  },
+  {
+   "type": "h2",
+   "text": "原理三:理性人在边际上思考"
+  },
+  {
+   "type": "p",
+   "text": "第三条,是四条里最不直觉、也最能改变判断力的一条。生活里的很多决定,不是「做还是不做」的非此即彼,而是「多一点还是少一点」的微调。曼昆把这些微小的调整叫作**边际变动(marginal change)**,而好的决策者,是在**边际**上思考的:他不看总量,也不看平均,而是比较**「再多做一点点」带来的额外收益(边际收益)和额外成本(边际成本)**。"
+  },
+  {
+   "type": "p",
+   "text": "书里的经典例子是航空公司:一架200个座位、飞一趟总成本10万美元的航班,平均每个座位的成本是500美元。现在飞机快起飞了,还剩一个空座,门口站着一位愿意出300美元的旅客——卖不卖?按「平均成本500」算,300是亏本买卖,不该卖。可这么算就错了。真正该问的是**边际**:多载这一个人,飞机照样要飞,油钱、机组、折旧一分不多,顶多多一份餐食——**多载一人的边际成本,几乎是零**。既然300元的票价远高于这接近零的边际成本,卖出去就是净赚。哪怕300远低于平均成本,也该卖。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照",
+   "caption": "边际思考:最后一张空座,300 元该不该卖?",
+   "svg": "<svg viewBox='0 0 600 300' style='width:100%;height:auto;font-family:var(--font-serif)' xmlns='http://www.w3.org/2000/svg'><text x='300' y='38' text-anchor='middle' style='fill:var(--ink)' font-size='19'>最后一张空座,300 元卖不卖?</text><rect x='36' y='62' width='252' height='202' rx='8' fill='none' style='stroke:var(--line)' stroke-width='1'/><text x='162' y='94' text-anchor='middle' style='fill:var(--ink-soft)' font-size='16'>只看「平均成本」</text><text x='162' y='130' text-anchor='middle' style='fill:var(--ink)' font-size='15'>每座摊到 500 元</text><text x='162' y='158' text-anchor='middle' style='fill:var(--ink)' font-size='15'>300 &lt; 500,像亏本</text><text x='162' y='200' text-anchor='middle' style='fill:var(--ink-faint)' font-size='30'>✕</text><text x='162' y='240' text-anchor='middle' style='fill:var(--ink-soft)' font-size='14'>结论:宁可空着</text><rect x='312' y='62' width='252' height='202' rx='8' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='438' y='94' text-anchor='middle' style='fill:var(--ink)' font-size='16'>只看「边际成本」</text><text x='438' y='130' text-anchor='middle' style='fill:var(--ink)' font-size='15'>多载一人 ≈ 多花 0 元</text><text x='438' y='158' text-anchor='middle' style='fill:var(--ink)' font-size='15'>300 &gt; 0,净赚</text><text x='438' y='200' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='30' font-weight='bold'>✓</text><text x='438' y='240' text-anchor='middle' style='fill:var(--ink-soft)' font-size='14'>结论:卖,赚 300</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "这条尺子在自己身上一样好用。「要不要再多读一小时书」——不该看你今天总共读了多久,而该问:这多出来的一小时,记住的东西(边际收益)值不值得付出的困倦(边际成本)?工厂「要不要多产一件」,看的是多产这一件卖出去的钱够不够抵多用的料和工。就连「为什么水几乎白送、钻石却贵得离谱」这个老谜题,答案也在边际:水虽是生命必需,但多喝一杯的边际用处极小;钻石可有可无,可多得一颗的边际满足很大,价格便由边际来定。**记住:很多看似矛盾的现象,一放到「再多一点」的边际上,就顺了。**"
+  },
+  {
+   "type": "quote",
+   "original": "理性人只在边际收益超过边际成本时,才会去做那件事。",
+   "translation": "好决定不比总量、不比平均,只比「再多一点点」的得与失。"
+  },
+  {
+   "type": "h2",
+   "text": "原理四:人们会对激励做出反应"
+  },
+  {
+   "type": "p",
+   "text": "前三条都在说一个人如何权衡;第四条则说:**这个权衡是会变的**。因为人是会算账的,一旦成本或收益改变,他掂量的结果就变,行为也跟着变——这就是**激励(incentive)**的力量。所谓激励,就是任何促使人行动的东西:涨价、加税、给补贴、设罚款,都会重新拨动人的算盘。"
+  },
+  {
+   "type": "p",
+   "text": "例子俯拾皆是。苹果涨价了,人们就少买苹果、多买梨;汽油贵了,人们就更愿意买省油的小车、多拼车、多坐公交,甚至搬到离公司近一点的地方。这些反应看起来天经地义,可正因为它可靠,它才成了理解和设计政策的钥匙——**好的政策制定者必须预判自己的政策会激起怎样的激励效应。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意",
+   "caption": "激励一变,行为就变——好政策要预判它,也要当心副作用",
+   "svg": "<svg viewBox='0 0 600 270' style='width:100%;height:auto;font-family:var(--font-serif)' xmlns='http://www.w3.org/2000/svg'><text x='300' y='40' text-anchor='middle' style='fill:var(--ink)' font-size='19'>激励一变,行为就变</text><rect x='40' y='74' width='192' height='94' rx='8' fill='none' style='stroke:var(--line)' stroke-width='1'/><text x='136' y='112' text-anchor='middle' style='fill:var(--ink)' font-size='17'>得失变了</text><text x='136' y='140' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>涨价 · 加税 · 补贴 · 罚款</text><line x1='238' y1='121' x2='356' y2='121' style='stroke:var(--cinnabar-pure)' stroke-width='1.8'/><path d='M366 121 l-14 -7 l0 14 z' style='fill:var(--cinnabar-pure)'/><rect x='368' y='74' width='192' height='94' rx='8' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='464' y='112' text-anchor='middle' style='fill:var(--cinnabar-pure)' font-size='17' font-weight='bold'>行为就变</text><text x='464' y='140' text-anchor='middle' style='fill:var(--ink-soft)' font-size='13'>人趋利避害地重新盘算</text><text x='300' y='210' text-anchor='middle' style='fill:var(--ink)' font-size='14'>当心意外副作用</text><text x='300' y='238' text-anchor='middle' style='fill:var(--ink-faint)' font-size='13'>例:系了安全带更「安全」,有人反而把车开得更猛</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "但激励也有暗面:它常常引出**意料之外的副作用**。曼昆举了个反直觉的例子——法律强制系安全带,本意是保护司机。安全带确实让每次车祸对司机的伤害变轻了,可这也悄悄改变了司机的激励:开车「变安全」了,有些人于是开得更快、更猛。结果是每场事故司机受伤更少,事故次数却可能更多,连带把行人置于更大风险。汽油税也一样:它一边增加收入、一边压低油耗、鼓励人们改开小车,牵一发而动全身。这告诉我们:**分析任何政策,不能只看它直接想达到的目的,还要顺着激励往下推,看看人们会如何绕着它重新行动。** 忽视激励效应的好心政策,常常收获相反的结果。"
+  },
+  {
+   "type": "quote",
+   "original": "人们会对激励做出反应,其余的多是注脚。",
+   "translation": "改变得失,就改变行为。设计激励时,既要算它想要的效果,也要防它没想到的副作用。"
+  },
+  {
+   "type": "h2",
+   "text": "四把尺子,一道门槛"
+  },
+  {
+   "type": "p",
+   "text": "把这一章讲个人决策的四条原理并排放在一起,其实是四把量事情的尺子:**遇事先认取舍**——想清楚要得到什么、必须放弃什么;**算账要算机会成本**——真正的代价是放弃的最好选项,不只是掏出去的钱;**选择在边际上比较**——看「再多一点」的收益盖不盖得住「再多一点」的成本;**记得人人都会回应激励**——得失一动,行为就跟着动,自己如此,别人也如此。"
+  },
+  {
+   "type": "p",
+   "text": "最后要补一句分寸。这四条原理背后,站着一个假设:人是「理性的」,会冷静权衡、追求自己利益的最大化。这是个极好用的简化——它让我们能把纷繁的行为讲出条理。但它并不是铁律。真实的人会冲动、会算错、会被情绪和习惯左右,曼昆自己在后文也会谈到这个模型的边界(行为经济学正是从这里生长出来的)。所以聪明的读法,是**把这四把尺子当成看问题的起点,而不是终点**:先用它们把事情量一遍,理清取舍、成本、边际与激励,再回过头来想想,现实里的人会不会偏离这套理性剧本。做到这一步,你就已经站在「像经济学家一样思考」的门口了。"
+  }
+ ]
 }

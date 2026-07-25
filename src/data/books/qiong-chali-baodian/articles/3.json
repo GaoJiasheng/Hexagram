@@ -1,41 +1,135 @@
 {
-  "title": "反过来想:逆向思维与避免愚蠢",
-  "subtitle": "与其苦想「怎样才能赢」,不如先问「怎样一定会输」——把坑列出来,然后绕着走",
-  "centralIdea": "这一章讲芒格最出名也最实用的思维习惯:反过来想(invert, always invert)。口诀借自数学家雅可比——很多问题正着想是死路,倒过来表述就豁然开朗。与其苦想「怎样才能成功、幸福、发财」,不如先问「怎样会失败、痛苦、破产」,把坑一一列出来,然后坚决避开。他那场著名的「反向演讲」不讲如何幸福,专讲「如何保证过上悲惨的一生」——反着做,就是幸福之道。这套招式背后是他的核心信条:避免愚蠢比追求聪明更重要。普通人只要持续少犯大错,长期就能胜出;人生和投资的胜负,更多取决于少犯蠢,而非多聪明。",
-  "blocks": [
-    { "type": "lead", "text": "别人都在琢磨怎样成功,芒格最想知道的却是自己会死在哪里——好永远不去那个地方。这不是段子,而是他用了一辈子的思维工具的浓缩版。这一章讲清楚这个动作怎么做:为什么很多问题正着想是一堵墙,倒过来想就成了一扇门;以及它背后那条更要紧的信条——避免愚蠢,比追求聪明更重要。" },
-
-    { "type": "quote", "original": "我只想知道我将来会死在什么地方,这样我就永远不去那儿。", "translation": "" },
-
-    { "type": "h2", "text": "借自数学家的口诀" },
-    { "type": "p", "text": "这个习惯有个正经出处。十九世纪的德国数学家雅可比解题有个心法:很多难题从正面强攻,算到天黑也没有出路;可一旦把问题倒过来表述——从结论往回推,或者干脆去研究它的反面——僵局常常一下就松动了。他把这个心法说成一句口诀,芒格引用了一辈子:" },
-    { "type": "quote", "original": "反过来想,总是反过来想。(Invert, always invert.)", "translation": "" },
-    { "type": "p", "text": "芒格做的,是把这句口诀从数学搬进人生。与其苦想「怎样才能成功」「怎样才能幸福」「怎样才能发财」,不如先问反面:怎样会失败?怎样会痛苦?怎样会破产?把这些答案一条一条写下来,然后做一件朴素到近乎无趣的事——**坚决避开它们**。" },
-    { "type": "p", "text": "为什么倒过来问反而容易?因为「如何成功」的答案天然是模糊的:成功的路各不相同,里面混着大量运气,还被幸存者偏差筛过一遍——你听到的全是活下来的人讲的故事,照着学未必可复制。而「如何失败」的答案却出奇地清晰、稳定:让人破产的方式翻来覆去就那么几种,让人痛苦的习惯人人都叫得出名字。正面清单写不完也验证不了;反面清单又短又硬,写完当天就能用。" },
-    { "type": "p", "text": "拿最日常的事试一遍就能体会。想攒下点钱,正着想是研究「怎样多赚」,头绪千条;反着想是先问「我的钱通常是怎么漏掉的」——冲动下单、随手的订阅、为面子买的东西——堵住三个漏洞,立竿见影。想考好一场试,与其漫无边际地「多复习」,不如先翻错题:往年的人最容易在哪儿丢分?自己上次是栽在哪一类题上?逆向不提供新知识,它只是换了个入口,让你先看见那些确定会拖垮你的东西。" },
-    { "type": "figure", "ftype": "对照图", "caption": "同一个问题,两种问法:正着想越想越模糊,反过来想越列越清楚", "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='26' text-anchor='middle' style='fill:var(--ink);font-size:15px;font-weight:600'>同一个问题,两种问法</text><rect x='22' y='46' width='248' height='212' rx='10' style='fill:var(--paper-raised);stroke:var(--line)'/><text x='146' y='74' text-anchor='middle' style='fill:var(--ink);font-size:14px;font-weight:600'>正着想</text><text x='146' y='96' text-anchor='middle' style='fill:var(--ink-soft);font-size:12px'>「怎样才能成功?」</text><rect x='50' y='112' width='192' height='26' rx='13' style='fill:none;stroke:var(--line);stroke-dasharray:4 3'/><text x='146' y='129' text-anchor='middle' style='fill:var(--ink-soft);font-size:12px'>路各不相同 ?</text><rect x='50' y='148' width='192' height='26' rx='13' style='fill:none;stroke:var(--line);stroke-dasharray:4 3'/><text x='146' y='165' text-anchor='middle' style='fill:var(--ink-soft);font-size:12px'>混着大量运气 ?</text><rect x='50' y='184' width='192' height='26' rx='13' style='fill:none;stroke:var(--line);stroke-dasharray:4 3'/><text x='146' y='201' text-anchor='middle' style='fill:var(--ink-soft);font-size:12px'>只剩幸存者在讲 ?</text><text x='146' y='240' text-anchor='middle' style='fill:var(--ink-faint);font-size:12px'>越想越模糊</text><rect x='290' y='46' width='248' height='212' rx='10' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)'/><text x='414' y='74' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:14px;font-weight:600'>反过来想</text><text x='414' y='96' text-anchor='middle' style='fill:var(--ink-soft);font-size:12px'>「怎样一定会失败?」</text><rect x='318' y='112' width='192' height='26' rx='6' style='fill:none;stroke:var(--line)'/><text x='414' y='129' text-anchor='middle' style='fill:var(--ink);font-size:12px'>✕ 成瘾与滑坡</text><rect x='318' y='148' width='192' height='26' rx='6' style='fill:none;stroke:var(--line)'/><text x='414' y='165' text-anchor='middle' style='fill:var(--ink);font-size:12px'>✕ 嫉妒与怨恨</text><rect x='318' y='184' width='192' height='26' rx='6' style='fill:none;stroke:var(--line)'/><text x='414' y='201' text-anchor='middle' style='fill:var(--ink);font-size:12px'>✕ 重复踩同一个坑</text><text x='414' y='240' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:12px;font-weight:600'>→ 列出来,一条条避开</text><text x='280' y='284' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>正面清单验证不了;反面清单又短又硬,写完就能用</text></svg>" },
-
-    { "type": "h2", "text": "那场著名的「反向演讲」" },
-    { "type": "p", "text": "这个方法最出圈的一次亮相,是一场毕业演讲。一九八六年,芒格受邀在一所中学的毕业典礼上讲话。别的演讲嘉宾都在告诉孩子们如何追求幸福、如何拥抱远大前程,他偏偏反其道而行,开口就把全场逗笑了:我来教你们,怎样**保证**过上悲惨的一生。" },
-    { "type": "quote", "original": "我没法告诉你们怎样才能幸福,但我可以凭亲身观察告诉你们,怎样保证让自己痛苦。", "translation": "" },
-    { "type": "p", "text": "他先借喜剧演员约翰尼·卡森多年前的同题演讲开场。卡森给出保证痛苦的三味药:为了改变心情去碰成瘾的东西;心怀嫉妒;心怀怨恨。芒格说这三条一味都不掺假,然后添上自己的四味:做一个不可靠的人,答应的事不办;只从自己的亲身经历里学习,绝不借鉴他人——尤其别读书,别去碰前人用一生换来的教训;遭遇第一次挫折就一蹶不振,从此不再爬起;最后一条,压轴的——永远不要反过来想。" },
-    { "type": "p", "text": "这份「悲惨处方」的妙处在于,每一条都经得起反转。反着做——离成瘾物远一点;盯自己的跑道,而不是别人的收成;放下旧账;说到做到;贪婪地吸收他人(尤其是死人)的教训;跌倒了爬起来再走;遇到难题就倒过来想——七条合起来,差不多就是一份像样生活的大半配方。芒格从头到尾没有正面说一句「你要如何」,却把「你别如何」讲得清清楚楚;坑标完了,剩下的路自己就显出来了。" },
-    { "type": "figure", "ftype": "清单图", "caption": "「保证悲惨」的七味药:前三条借自卡森,后四条是芒格添的——反着做,就是幸福之道", "svg": "<svg viewBox='0 0 560 320' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink);font-size:15px;font-weight:600'>「保证悲惨」处方 → 反着做</text><text x='128' y='52' text-anchor='middle' style='fill:var(--ink-soft);font-size:12px;font-weight:600'>✕ 悲惨处方</text><text x='432' y='52' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:12px;font-weight:600'>○ 反着做</text><line x1='280' y1='62' x2='280' y2='278' style='stroke:var(--line)'/><text x='40' y='82' style='fill:var(--ink);font-size:12px'>✕ 碰成瘾的东西</text><text x='268' y='82' text-anchor='end' style='fill:var(--ink-faint);font-size:11px'>卡森</text><text x='300' y='82' style='fill:var(--ink);font-size:12px'>○ 离得远远的</text><text x='40' y='114' style='fill:var(--ink);font-size:12px'>✕ 心怀嫉妒</text><text x='268' y='114' text-anchor='end' style='fill:var(--ink-faint);font-size:11px'>卡森</text><text x='300' y='114' style='fill:var(--ink);font-size:12px'>○ 盯自己的跑道</text><text x='40' y='146' style='fill:var(--ink);font-size:12px'>✕ 心怀怨恨</text><text x='268' y='146' text-anchor='end' style='fill:var(--ink-faint);font-size:11px'>卡森</text><text x='300' y='146' style='fill:var(--ink);font-size:12px'>○ 放下旧账</text><text x='40' y='178' style='fill:var(--ink);font-size:12px'>✕ 做个不可靠的人</text><text x='268' y='178' text-anchor='end' style='fill:var(--ink-faint);font-size:11px'>芒格</text><text x='300' y='178' style='fill:var(--ink);font-size:12px'>○ 说到做到</text><text x='40' y='210' style='fill:var(--ink);font-size:12px'>✕ 只从自己的经验学</text><text x='268' y='210' text-anchor='end' style='fill:var(--ink-faint);font-size:11px'>芒格</text><text x='300' y='210' style='fill:var(--ink);font-size:12px'>○ 贪学他人教训,多读书</text><text x='40' y='242' style='fill:var(--ink);font-size:12px'>✕ 一遇挫折就躺下</text><text x='268' y='242' text-anchor='end' style='fill:var(--ink-faint);font-size:11px'>芒格</text><text x='300' y='242' style='fill:var(--ink);font-size:12px'>○ 爬起来再走</text><text x='40' y='274' style='fill:var(--ink);font-size:12px'>✕ 从不反过来想</text><text x='268' y='274' text-anchor='end' style='fill:var(--ink-faint);font-size:11px'>芒格</text><text x='300' y='274' style='fill:var(--cinnabar-pure);font-size:12px;font-weight:600'>○ 常常倒过来想</text><text x='280' y='306' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>他没说一句「你要如何」,坑标完了,路自己显出来</text></svg>" },
-
-    { "type": "h2", "text": "避免愚蠢,比追求聪明更重要" },
-    { "type": "p", "text": "反向演讲是招式,底下压着芒格真正的核心信条。他和巴菲特常被当作天才崇拜,他自己的总结却像一盆冷水:" },
-    { "type": "quote", "original": "如果说我们这些人真有什么长期优势,那多半来自我们持续地不做蠢事,而不是努力变得非常聪明。", "translation": "" },
-    { "type": "p", "text": "这句话值得多读两遍。比聪明,是在跟天赋和运气竞赛,胜负不由你说了算;比不犯蠢,却是在跟人性竞赛——坑是已知的,清单是现成的,躲开只需要纪律,不需要天分。更要紧的是,两种错误的量级完全不同:小错交学费,大错清账户。嫉妒上头的一次豪赌、怨恨驱动的一次翻脸、成瘾换来的一路滑坡——这类不可逆的大错,能把多年的积累一次抹平。" },
-    { "type": "p", "text": "所以「少犯大错」不是保守,而是一种复利策略:普通人只要持续避开灾难性的错误,让积累不被清零,时间自然站在他这边。追逐妙招的人需要一次次赌对,避开蠢事的人只需要一直在场——长期看,后者往往走得更远。这不是心灵鸡汤,是简单的算术。" },
-    { "type": "p", "text": "这也解释了芒格的一个怪癖:他毕生都在收集失败——企业怎么垮的、聪明人怎么栽的、好牌怎么打烂的。在他看来,每一桩灾难都是一条免费的负面清单,别人替你交过学费了,你只需要抄作业。这个立场还有个附带的好处:它对普通人格外友好。你可以不够聪明,但完全可以足够警惕;天分没法练,躲开已知的坑却是任何人都学得会的功夫。" },
-    { "type": "figure", "ftype": "曲线图", "caption": "两种长跑:妙招频出、大起大落 vs 少犯大错、一直在场——时间站在后者一边", "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink);font-size:15px;font-weight:600'>比聪明 vs 比不犯蠢</text><line x1='60' y1='250' x2='524' y2='250' style='stroke:var(--line);stroke-width:1.5'/><line x1='60' y1='250' x2='60' y2='42' style='stroke:var(--line);stroke-width:1.5'/><text x='524' y='270' text-anchor='end' style='fill:var(--ink-faint);font-size:11px'>时间 →</text><text x='56' y='40' text-anchor='end' style='fill:var(--ink-faint);font-size:11px'>积累</text><path d='M60 240 L128 156 L176 186 L252 84 L308 226 L392 192 L470 168' style='fill:none;stroke:var(--ink-soft);stroke-width:1.8;stroke-dasharray:5 4'/><circle cx='308' cy='226' r='4' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='318' y='244' style='fill:var(--ink-soft);font-size:11px'>一次大错,几乎清零</text><text x='252' y='70' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>妙招频出,大起大落</text><path d='M60 245 C 210 232 360 180 500 72' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2.5'/><text x='500' y='58' text-anchor='end' style='fill:var(--cinnabar-pure);font-size:12px;font-weight:600'>少犯大错,一直在场</text><text x='292' y='288' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>躲开已知的坑只需要纪律,不需要天分</text></svg>" },
-
-    { "type": "h2", "text": "用到决策上:先想它会怎么崩" },
-    { "type": "p", "text": "把这个习惯装进日常决策,动作其实很简单。要做一件要紧的事之前——接一个大项目、搬一次家、做一笔大开销——先别忙着论证「这事成了会多好」,而是把日历翻到一年以后,假设它已经砸了,然后逼自己回答一个问题:它最可能是**怎么**砸的?" },
-    { "type": "p", "text": "答案通常不难列:时间估得太乐观、指望了不可靠的人、预算没留余量、一开始就没想过退路……列完之后逐条检查:能堵的,现在就堵上;堵不住的那几条,就是这个决定真正的命门——要么改方案,要么缓一缓。这个「预演崩盘」的动作花不了半小时,却常常比几天的正面论证更能暴露问题:正面论证是在替决定辩护,反向预演才是在替你把关。" },
-    { "type": "p", "text": "一句话记住它:**想赢,先想怎么会输**。棋手复盘输棋多过赢棋,飞行员起飞前背的是事故清单而不是英雄事迹,老练的工程师上线前先问「它会在哪儿挂掉」——各行各业里最稳的那批人,其实都在用各自的方式反过来想。这个动作没有任何门槛,唯一的阻力是心理上的:预演失败不如畅想成功舒服。但舒服和把关,往往只能选一样。" },
-    { "type": "figure", "ftype": "流程图", "caption": "决策前的「预演崩盘」:先假设它砸了,倒推崩法,能堵的堵上,堵不住的就是命门", "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink);font-size:15px;font-weight:600'>决策前的「预演崩盘」</text><rect x='22' y='56' width='156' height='56' rx='8' style='fill:var(--paper-raised);stroke:var(--line)'/><text x='100' y='79' text-anchor='middle' style='fill:var(--ink);font-size:12px'>要做一件要紧的事</text><text x='100' y='98' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>项目 · 搬家 · 大开销</text><path d='M178 84 H196' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><path d='M196 79 L206 84 L196 89 Z' style='fill:var(--ink-faint)'/><rect x='206' y='56' width='150' height='56' rx='8' style='fill:var(--paper-raised);stroke:var(--line)'/><text x='281' y='79' text-anchor='middle' style='fill:var(--ink);font-size:12px'>假设一年后:</text><text x='281' y='98' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:12px;font-weight:600'>它已经砸了</text><path d='M356 84 H374' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><path d='M374 79 L384 84 L374 89 Z' style='fill:var(--ink-faint)'/><rect x='384' y='56' width='154' height='56' rx='8' style='fill:var(--paper-raised);stroke:var(--line)'/><text x='461' y='79' text-anchor='middle' style='fill:var(--ink);font-size:12px'>列出最可能的崩法</text><text x='461' y='98' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>乐观估时 · 没留余量…</text><path d='M461 112 V134 H190 M461 134 H430' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><path d='M190 134 V152 M430 134 V152' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><path d='M185 152 L190 162 L195 152 Z' style='fill:var(--ink-faint)'/><path d='M425 152 L430 162 L435 152 Z' style='fill:var(--ink-faint)'/><rect x='96' y='162' width='188' height='54' rx='8' style='fill:var(--paper-raised);stroke:var(--line)'/><text x='190' y='185' text-anchor='middle' style='fill:var(--ink);font-size:12px'>能堵的漏洞</text><text x='190' y='204' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>现在就堵上</text><rect x='330' y='162' width='200' height='54' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)'/><text x='430' y='185' text-anchor='middle' style='fill:var(--ink);font-size:12px'>堵不住的命门</text><text x='430' y='204' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:11px;font-weight:600'>改方案,或者缓一缓</text><text x='280' y='262' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:13px;font-weight:600'>想赢,先想怎么会输</text><text x='280' y='286' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>正面论证替决定辩护,反向预演才替你把关</text></svg>" },
-
-    { "type": "p", "text": "最后把分寸说清楚:反过来想是一种**提问方式**,不是一份答案清单。芒格不会替你决定该选哪份工作、该怎么安排钱,这一章也不打算给任何处方——它只是递给你一面镜子,让你在动手之前先看清「哪些事不该做」。很多问题正着想很难,倒过来想就豁然开朗;人生的胜负,常常不取决于你多聪明,而取决于你少犯了多少蠢。把那句口诀带走吧:反过来想,总是反过来想。" }
-  ]
+ "title": "反过来想:逆向思维与避免愚蠢",
+ "subtitle": "与其苦想「怎样才能赢」,不如先问「怎样一定会输」——把坑列出来,然后绕着走",
+ "centralIdea": "这一章讲芒格最出名也最实用的思维习惯:反过来想(invert, always invert)。口诀借自数学家雅可比——很多问题正着想是死路,倒过来表述就豁然开朗。与其苦想「怎样才能成功、幸福、发财」,不如先问「怎样会失败、痛苦、破产」,把坑一一列出来,然后坚决避开。他那场著名的「反向演讲」不讲如何幸福,专讲「如何保证过上悲惨的一生」——反着做,就是幸福之道。这套招式背后是他的核心信条:避免愚蠢比追求聪明更重要。普通人只要持续少犯大错,长期就能胜出;人生和投资的胜负,更多取决于少犯蠢,而非多聪明。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "别人都在琢磨怎样成功,芒格最想知道的却是自己会死在哪里——好永远不去那个地方。这不是段子,而是他用了一辈子的思维工具的浓缩版。这一章讲清楚这个动作怎么做:为什么很多问题正着想是一堵墙,倒过来想就成了一扇门;以及它背后那条更要紧的信条——避免愚蠢,比追求聪明更重要。"
+  },
+  {
+   "type": "quote",
+   "original": "我只想知道我将来会死在什么地方,这样我就永远不去那儿。",
+   "translation": ""
+  },
+  {
+   "type": "h2",
+   "text": "借自数学家的口诀"
+  },
+  {
+   "type": "p",
+   "text": "这个习惯有个正经出处。十九世纪的德国数学家雅可比解题有个心法:很多难题从正面强攻,算到天黑也没有出路;可一旦把问题倒过来表述——从结论往回推,或者干脆去研究它的反面——僵局常常一下就松动了。他把这个心法说成一句口诀,芒格引用了一辈子:"
+  },
+  {
+   "type": "quote",
+   "original": "反过来想,总是反过来想。(Invert, always invert.)",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "芒格做的,是把这句口诀从数学搬进人生。与其苦想「怎样才能成功」「怎样才能幸福」「怎样才能发财」,不如先问反面:怎样会失败?怎样会痛苦?怎样会破产?把这些答案一条一条写下来,然后做一件朴素到近乎无趣的事——**坚决避开它们**。"
+  },
+  {
+   "type": "p",
+   "text": "为什么倒过来问反而容易?因为「如何成功」的答案天然是模糊的:成功的路各不相同,里面混着大量运气,还被幸存者偏差筛过一遍——你听到的全是活下来的人讲的故事,照着学未必可复制。而「如何失败」的答案却出奇地清晰、稳定:让人破产的方式翻来覆去就那么几种,让人痛苦的习惯人人都叫得出名字。正面清单写不完也验证不了;反面清单又短又硬,写完当天就能用。"
+  },
+  {
+   "type": "p",
+   "text": "拿最日常的事试一遍就能体会。想攒下点钱,正着想是研究「怎样多赚」,头绪千条;反着想是先问「我的钱通常是怎么漏掉的」——冲动下单、随手的订阅、为面子买的东西——堵住三个漏洞,立竿见影。想考好一场试,与其漫无边际地「多复习」,不如先翻错题:往年的人最容易在哪儿丢分?自己上次是栽在哪一类题上?逆向不提供新知识,它只是换了个入口,让你先看见那些确定会拖垮你的东西。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照图",
+   "caption": "同一个问题,两种问法:正着想越想越模糊,反过来想越列越清楚",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='26' text-anchor='middle' style='fill:var(--ink);font-size:15px;font-weight:600'>同一个问题,两种问法</text><rect x='22' y='46' width='248' height='212' rx='10' style='fill:var(--paper-raised);stroke:var(--line)'/><text x='146' y='74' text-anchor='middle' style='fill:var(--ink);font-size:14px;font-weight:600'>正着想</text><text x='146' y='96' text-anchor='middle' style='fill:var(--ink-soft);font-size:12px'>「怎样才能成功?」</text><rect x='50' y='112' width='192' height='26' rx='13' style='fill:none;stroke:var(--line);stroke-dasharray:4 3'/><text x='146' y='129' text-anchor='middle' style='fill:var(--ink-soft);font-size:12px'>路各不相同 ?</text><rect x='50' y='148' width='192' height='26' rx='13' style='fill:none;stroke:var(--line);stroke-dasharray:4 3'/><text x='146' y='165' text-anchor='middle' style='fill:var(--ink-soft);font-size:12px'>混着大量运气 ?</text><rect x='50' y='184' width='192' height='26' rx='13' style='fill:none;stroke:var(--line);stroke-dasharray:4 3'/><text x='146' y='201' text-anchor='middle' style='fill:var(--ink-soft);font-size:12px'>只剩幸存者在讲 ?</text><text x='146' y='240' text-anchor='middle' style='fill:var(--ink-faint);font-size:12px'>越想越模糊</text><rect x='290' y='46' width='248' height='212' rx='10' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)'/><text x='414' y='74' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:14px;font-weight:600'>反过来想</text><text x='414' y='96' text-anchor='middle' style='fill:var(--ink-soft);font-size:12px'>「怎样一定会失败?」</text><rect x='318' y='112' width='192' height='26' rx='6' style='fill:none;stroke:var(--line)'/><text x='414' y='129' text-anchor='middle' style='fill:var(--ink);font-size:12px'>✕ 成瘾与滑坡</text><rect x='318' y='148' width='192' height='26' rx='6' style='fill:none;stroke:var(--line)'/><text x='414' y='165' text-anchor='middle' style='fill:var(--ink);font-size:12px'>✕ 嫉妒与怨恨</text><rect x='318' y='184' width='192' height='26' rx='6' style='fill:none;stroke:var(--line)'/><text x='414' y='201' text-anchor='middle' style='fill:var(--ink);font-size:12px'>✕ 重复踩同一个坑</text><text x='414' y='240' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:12px;font-weight:600'>→ 列出来,一条条避开</text><text x='280' y='284' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>正面清单验证不了;反面清单又短又硬,写完就能用</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "那场著名的「反向演讲」"
+  },
+  {
+   "type": "p",
+   "text": "这个方法最出圈的一次亮相,是一场毕业演讲。一九八六年,芒格受邀在一所中学的毕业典礼上讲话。别的演讲嘉宾都在告诉孩子们如何追求幸福、如何拥抱远大前程,他偏偏反其道而行,开口就把全场逗笑了:我来教你们,怎样**保证**过上悲惨的一生。"
+  },
+  {
+   "type": "quote",
+   "original": "我没法告诉你们怎样才能幸福,但我可以凭亲身观察告诉你们,怎样保证让自己痛苦。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "他先借喜剧演员约翰尼·卡森多年前的同题演讲开场。卡森给出保证痛苦的三味药:为了改变心情去碰成瘾的东西;心怀嫉妒;心怀怨恨。芒格说这三条一味都不掺假,然后添上自己的四味:做一个不可靠的人,答应的事不办;只从自己的亲身经历里学习,绝不借鉴他人——尤其别读书,别去碰前人用一生换来的教训;遭遇第一次挫折就一蹶不振,从此不再爬起;最后一条,压轴的——永远不要反过来想。"
+  },
+  {
+   "type": "p",
+   "text": "这份「悲惨处方」的妙处在于,每一条都经得起反转。反着做——离成瘾物远一点;盯自己的跑道,而不是别人的收成;放下旧账;说到做到;贪婪地吸收他人(尤其是死人)的教训;跌倒了爬起来再走;遇到难题就倒过来想——七条合起来,差不多就是一份像样生活的大半配方。芒格从头到尾没有正面说一句「你要如何」,却把「你别如何」讲得清清楚楚;坑标完了,剩下的路自己就显出来了。"
+  },
+  {
+   "type": "figure",
+   "ftype": "清单图",
+   "caption": "「保证悲惨」的七味药:前三条借自卡森,后四条是芒格添的——反着做,就是幸福之道",
+   "svg": "<svg viewBox='0 0 560 320' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink);font-size:15px;font-weight:600'>「保证悲惨」处方 → 反着做</text><text x='128' y='52' text-anchor='middle' style='fill:var(--ink-soft);font-size:12px;font-weight:600'>✕ 悲惨处方</text><text x='432' y='52' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:12px;font-weight:600'>○ 反着做</text><line x1='280' y1='62' x2='280' y2='278' style='stroke:var(--line)'/><text x='40' y='82' style='fill:var(--ink);font-size:12px'>✕ 碰成瘾的东西</text><text x='268' y='82' text-anchor='end' style='fill:var(--ink-faint);font-size:11px'>卡森</text><text x='300' y='82' style='fill:var(--ink);font-size:12px'>○ 离得远远的</text><text x='40' y='114' style='fill:var(--ink);font-size:12px'>✕ 心怀嫉妒</text><text x='268' y='114' text-anchor='end' style='fill:var(--ink-faint);font-size:11px'>卡森</text><text x='300' y='114' style='fill:var(--ink);font-size:12px'>○ 盯自己的跑道</text><text x='40' y='146' style='fill:var(--ink);font-size:12px'>✕ 心怀怨恨</text><text x='268' y='146' text-anchor='end' style='fill:var(--ink-faint);font-size:11px'>卡森</text><text x='300' y='146' style='fill:var(--ink);font-size:12px'>○ 放下旧账</text><text x='40' y='178' style='fill:var(--ink);font-size:12px'>✕ 做个不可靠的人</text><text x='268' y='178' text-anchor='end' style='fill:var(--ink-faint);font-size:11px'>芒格</text><text x='300' y='178' style='fill:var(--ink);font-size:12px'>○ 说到做到</text><text x='40' y='210' style='fill:var(--ink);font-size:12px'>✕ 只从自己的经验学</text><text x='268' y='210' text-anchor='end' style='fill:var(--ink-faint);font-size:11px'>芒格</text><text x='300' y='210' style='fill:var(--ink);font-size:12px'>○ 贪学他人教训,多读书</text><text x='40' y='242' style='fill:var(--ink);font-size:12px'>✕ 一遇挫折就躺下</text><text x='268' y='242' text-anchor='end' style='fill:var(--ink-faint);font-size:11px'>芒格</text><text x='300' y='242' style='fill:var(--ink);font-size:12px'>○ 爬起来再走</text><text x='40' y='274' style='fill:var(--ink);font-size:12px'>✕ 从不反过来想</text><text x='268' y='274' text-anchor='end' style='fill:var(--ink-faint);font-size:11px'>芒格</text><text x='300' y='274' style='fill:var(--cinnabar-pure);font-size:12px;font-weight:600'>○ 常常倒过来想</text><text x='280' y='306' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>他没说一句「你要如何」,坑标完了,路自己显出来</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "避免愚蠢,比追求聪明更重要"
+  },
+  {
+   "type": "p",
+   "text": "反向演讲是招式,底下压着芒格真正的核心信条。他和巴菲特常被当作天才崇拜,他自己的总结却像一盆冷水:"
+  },
+  {
+   "type": "quote",
+   "original": "如果说我们这些人真有什么长期优势,那多半来自我们持续地不做蠢事,而不是努力变得非常聪明。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "这句话值得多读两遍。比聪明,是在跟天赋和运气竞赛,胜负不由你说了算;比不犯蠢,却是在跟人性竞赛——坑是已知的,清单是现成的,躲开只需要纪律,不需要天分。更要紧的是,两种错误的量级完全不同:小错交学费,大错清账户。嫉妒上头的一次豪赌、怨恨驱动的一次翻脸、成瘾换来的一路滑坡——这类不可逆的大错,能把多年的积累一次抹平。"
+  },
+  {
+   "type": "p",
+   "text": "所以「少犯大错」不是保守,而是一种复利策略:普通人只要持续避开灾难性的错误,让积累不被清零,时间自然站在他这边。追逐妙招的人需要一次次赌对,避开蠢事的人只需要一直在场——长期看,后者往往走得更远。这不是心灵鸡汤,是简单的算术。"
+  },
+  {
+   "type": "p",
+   "text": "这也解释了芒格的一个怪癖:他毕生都在收集失败——企业怎么垮的、聪明人怎么栽的、好牌怎么打烂的。在他看来,每一桩灾难都是一条免费的负面清单,别人替你交过学费了,你只需要抄作业。这个立场还有个附带的好处:它对普通人格外友好。你可以不够聪明,但完全可以足够警惕;天分没法练,躲开已知的坑却是任何人都学得会的功夫。"
+  },
+  {
+   "type": "figure",
+   "ftype": "曲线图",
+   "caption": "两种长跑:妙招频出、大起大落 vs 少犯大错、一直在场——时间站在后者一边",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink);font-size:15px;font-weight:600'>比聪明 vs 比不犯蠢</text><line x1='60' y1='250' x2='524' y2='250' style='stroke:var(--line);stroke-width:1.5'/><line x1='60' y1='250' x2='60' y2='42' style='stroke:var(--line);stroke-width:1.5'/><text x='524' y='270' text-anchor='end' style='fill:var(--ink-faint);font-size:11px'>时间 →</text><text x='56' y='40' text-anchor='end' style='fill:var(--ink-faint);font-size:11px'>积累</text><path d='M60 240 L128 156 L176 186 L252 84 L308 226 L392 192 L470 168' style='fill:none;stroke:var(--ink-soft);stroke-width:1.8;stroke-dasharray:5 4'/><circle cx='308' cy='226' r='4' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='318' y='244' style='fill:var(--ink-soft);font-size:11px'>一次大错,几乎清零</text><text x='252' y='70' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>妙招频出,大起大落</text><path d='M60 245 C 210 232 360 180 500 72' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2.5'/><text x='500' y='58' text-anchor='end' style='fill:var(--cinnabar-pure);font-size:12px;font-weight:600'>少犯大错,一直在场</text><text x='292' y='288' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>躲开已知的坑只需要纪律,不需要天分</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "用到决策上:先想它会怎么崩"
+  },
+  {
+   "type": "p",
+   "text": "把这个习惯装进日常决策,动作其实很简单。要做一件要紧的事之前——接一个大项目、搬一次家、做一笔大开销——先别忙着论证「这事成了会多好」,而是把日历翻到一年以后,假设它已经砸了,然后逼自己回答一个问题:它最可能是**怎么**砸的?"
+  },
+  {
+   "type": "p",
+   "text": "答案通常不难列:时间估得太乐观、指望了不可靠的人、预算没留余量、一开始就没想过退路……列完之后逐条检查:能堵的,现在就堵上;堵不住的那几条,就是这个决定真正的命门——要么改方案,要么缓一缓。这个「预演崩盘」的动作花不了半小时,却常常比几天的正面论证更能暴露问题:正面论证是在替决定辩护,反向预演才是在替你把关。"
+  },
+  {
+   "type": "p",
+   "text": "一句话记住它:**想赢,先想怎么会输**。棋手复盘输棋多过赢棋,飞行员起飞前背的是事故清单而不是英雄事迹,老练的工程师上线前先问「它会在哪儿挂掉」——各行各业里最稳的那批人,其实都在用各自的方式反过来想。这个动作没有任何门槛,唯一的阻力是心理上的:预演失败不如畅想成功舒服。但舒服和把关,往往只能选一样。"
+  },
+  {
+   "type": "figure",
+   "ftype": "流程图",
+   "caption": "决策前的「预演崩盘」:先假设它砸了,倒推崩法,能堵的堵上,堵不住的就是命门",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='280' y='24' text-anchor='middle' style='fill:var(--ink);font-size:15px;font-weight:600'>决策前的「预演崩盘」</text><rect x='22' y='56' width='156' height='56' rx='8' style='fill:var(--paper-raised);stroke:var(--line)'/><text x='100' y='79' text-anchor='middle' style='fill:var(--ink);font-size:12px'>要做一件要紧的事</text><text x='100' y='98' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>项目 · 搬家 · 大开销</text><path d='M178 84 H196' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><path d='M196 79 L206 84 L196 89 Z' style='fill:var(--ink-faint)'/><rect x='206' y='56' width='150' height='56' rx='8' style='fill:var(--paper-raised);stroke:var(--line)'/><text x='281' y='79' text-anchor='middle' style='fill:var(--ink);font-size:12px'>假设一年后:</text><text x='281' y='98' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:12px;font-weight:600'>它已经砸了</text><path d='M356 84 H374' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><path d='M374 79 L384 84 L374 89 Z' style='fill:var(--ink-faint)'/><rect x='384' y='56' width='154' height='56' rx='8' style='fill:var(--paper-raised);stroke:var(--line)'/><text x='461' y='79' text-anchor='middle' style='fill:var(--ink);font-size:12px'>列出最可能的崩法</text><text x='461' y='98' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>乐观估时 · 没留余量…</text><path d='M461 112 V134 H190 M461 134 H430' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><path d='M190 134 V152 M430 134 V152' style='fill:none;stroke:var(--ink-faint);stroke-width:1.5'/><path d='M185 152 L190 162 L195 152 Z' style='fill:var(--ink-faint)'/><path d='M425 152 L430 162 L435 152 Z' style='fill:var(--ink-faint)'/><rect x='96' y='162' width='188' height='54' rx='8' style='fill:var(--paper-raised);stroke:var(--line)'/><text x='190' y='185' text-anchor='middle' style='fill:var(--ink);font-size:12px'>能堵的漏洞</text><text x='190' y='204' text-anchor='middle' style='fill:var(--ink-soft);font-size:11px'>现在就堵上</text><rect x='330' y='162' width='200' height='54' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)'/><text x='430' y='185' text-anchor='middle' style='fill:var(--ink);font-size:12px'>堵不住的命门</text><text x='430' y='204' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:11px;font-weight:600'>改方案,或者缓一缓</text><text x='280' y='262' text-anchor='middle' style='fill:var(--cinnabar-pure);font-size:13px;font-weight:600'>想赢,先想怎么会输</text><text x='280' y='286' text-anchor='middle' style='fill:var(--ink-faint);font-size:11px'>正面论证替决定辩护,反向预演才替你把关</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "最后把分寸说清楚:反过来想是一种**提问方式**,不是一份答案清单。芒格不会替你决定该选哪份工作、该怎么安排钱,这一章也不打算给任何处方——它只是递给你一面镜子,让你在动手之前先看清「哪些事不该做」。很多问题正着想很难,倒过来想就豁然开朗;人生的胜负,常常不取决于你多聪明,而取决于你少犯了多少蠢。"
+  },
+  {
+   "type": "pull",
+   "text": "把那句口诀带走吧:反过来想,总是反过来想。"
+  }
+ ]
 }

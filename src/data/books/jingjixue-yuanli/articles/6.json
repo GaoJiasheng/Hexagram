@@ -1,122 +1,126 @@
 {
-  "title": "贸易与比较优势:为什么交易让大家都受益",
-  "subtitle": "《经济学原理》第6章导读——即使一个人(或一国)样样都比对方强,只要各自专注于「机会成本最低」的那件事,再互相交换,双方的产出和收入都会比自给自足时更高;这就是「比较优势」,也是「贸易并非零和」的根本原因。但要诚实:整体受益不等于人人受益,分工里也有输家,需要配套政策去照顾他们。",
-  "centralIdea": "这一章讲一个反直觉却极重要的定理——比较优势(comparative advantage)。绝对优势(absolute advantage)问的是「谁生产同样东西用的资源更少」,比较优势问的却是「谁生产某物放弃得更少,也就是机会成本更低」。关键洞见在于:即使一方在所有事情上都绝对更强,双方分工交易仍然能让彼此都获益,只要各自专注于自己机会成本最低的那件事,再把成果换回来。经典的例子是一位打字比秘书还快的律师:他打字虽绝对更快,但打字一小时的机会成本是少赚的高额律师费,远高于秘书;所以律师专心办案、把打字交给秘书,两人产出和收入都更高。国家之间同理——各自专业化生产、彼此进出口,能把总产出这块「蛋糕」做大,让参与各方整体受益,这正是贸易不是零和、封闭自给反而更穷的原因。但必须诚实面对代价:比较优势说的是「总体」和「长期」的净收益,现实中贸易也有输家,某些行业、工人、地区会因进口竞争而受损,收益与损失分布不均。理论上「贸易让整体变好」与现实中「需要用再培训、补偿、过渡政策照顾受损者」并不矛盾;只喊「自由贸易人人受益」而忽视分配,反而会激起反弹。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "上一章我们说到,市场靠一只「看不见的手」把千百万人的选择协调起来,让大家整体过得更好。可这只手的力量,究竟从哪里来?答案里最反直觉、也最有分量的一块,叫「比较优势」。它要回答一个乍看很怪的问题:如果一个人样样都比你强,他还有必要跟你合作、跟你交易吗?直觉多半会说——不必吧,他自己全干了岂不更省事。可两百年前的经济学家给出了一个至今仍让人拍案的答案:恰恰相反,哪怕强的一方在每件事上都占上风,分工交易依然能让强弱双方都比各自单干时过得更好。这一章,我们就把这个道理一层层拆开来看,顺便也诚实地说清它的边界。"
-    },
-    {
-      "type": "h2",
-      "text": "两把不同的尺子:绝对优势与比较优势"
-    },
-    {
-      "type": "p",
-      "text": "先分清两个容易混为一谈的概念。第一把尺子叫**绝对优势(absolute advantage)**,量的是生产效率:同样一件东西,谁用的资源更少、或者同样的时间里产出更多,谁就在这件事上有绝对优势。一个师傅两小时能做一张桌子,学徒要四小时,那么师傅在做桌子上有绝对优势——这把尺子很直观,谁更能干一目了然。"
-    },
-    {
-      "type": "p",
-      "text": "第二把尺子叫**比较优势(comparative advantage)**,量的却不是效率,而是**机会成本**——你为了做这件事,放弃掉的那个最好的其他选择。这里藏着全章最要紧的转弯:判断该不该由某人来做一件事,看的不是他做得快不快,而是他做这件事时,**要放弃的东西值不值**。一个人可能在两件事上都比你能干(样样都有绝对优势),但他不可能在两件事上都比你「放弃得更少」——因为他每多花一小时在甲事上,就意味着从那件他最擅长、最值钱的乙事上抽走了一小时。机会成本这把尺子,总会把两件事分派到两个人手里。"
-    },
-    {
-      "type": "quote",
-      "original": "绝对优势问「谁做得更省」,比较优势问「谁放弃得更少」——决定分工的,是后者。",
-      "translation": "这是整章的枢纽。能干不能干,是绝对优势的问题;而该由谁来做,取决于机会成本,也就是比较优势。一个样样都强的人,恰恰因为强,做低价值的事才更「亏」——他放弃的太多了。"
-    },
-    {
-      "type": "h2",
-      "text": "一位能干律师的烦恼"
-    },
-    {
-      "type": "p",
-      "text": "把这个道理放进一个具体场景,一下就通了。设想一位很能干的律师,不但官司打得好,连打字都比自己的秘书快:同一份文件,律师一小时能敲完,秘书要花两小时。单看打字这件事,律师有绝对优势——他确实更快。于是一个念头冒出来:既然我打字都比她快,那我干脆自己打,还省下请秘书的钱,岂不更划算?"
-    },
-    {
-      "type": "p",
-      "text": "别急,换上机会成本这把尺子再看一遍。律师那一小时如果用来办案,能挣两千元;若拿去打字,这两千元就飞了——他打字的机会成本,是白白放弃的两千元律师费。秘书呢?她那一小时若不打字,顶多做点行政杂务,值一百元;她打字的机会成本,只有一百元。**同样是打字一小时,律师要放弃两千,秘书只放弃一百**。谁放弃得少?秘书。所以在打字这件事上,拥有比较优势的,反而是打字更慢的秘书。"
-    },
-    {
-      "type": "p",
-      "text": "结论于是反转了:律师应当专心办案(那是他机会成本最低、最不该放弃的事),把打字交给秘书,再付她一份报酬。这样一来,律师用省下的时间多办了案、多挣了钱,秘书有活干、有收入,两人都比「律师样样自己扛」时过得更好——哪怕律师打字客观上就是更快。能干的人之所以要把一些事「让」出去,不是因为做不好,而是因为他有更值钱的事要做。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对比图",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>打字这件事:谁更快,还是谁放弃得更少?</text><text x='180' y='60' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>律师</text><text x='400' y='60' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>秘书</text><text x='60' y='104' text-anchor='start' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>打字速度</text><text x='180' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>1 小时/份 · 更快</text><text x='400' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>2 小时/份 · 更慢</text><text x='305' y='120' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>(律师占绝对优势)</text><line x1='60' y1='138' x2='500' y2='138' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 5'/><text x='60' y='170' text-anchor='start' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>打字的机会成本</text><text x='180' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>放弃 2000 元律师费</text><text x='400' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>只放弃 100 元杂务</text><text x='305' y='188' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--cinnabar-pure)'>(秘书占比较优势)</text><rect x='60' y='214' width='440' height='58' rx='6' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar-pure);stroke-width:1.2'/><text x='280' y='238' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>律师专心办案,打字交给秘书 —— 两人产出与收入都更高</text><text x='280' y='259' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>该由谁做,看的是机会成本,不是谁手更快</text></svg>"
-    },
-    {
-      "type": "h2",
-      "text": "蛋糕是怎么变大的:交易不是零和"
-    },
-    {
-      "type": "p",
-      "text": "律师和秘书的故事,藏着一个更普遍的机制。很多人心里默认,交易像分一块固定大小的蛋糕:你多拿一口,我就少一口,一方赚必是另一方亏。若真是这样,精明人就该处处提防、事事自己来,免得被占便宜。可比较优势告诉我们:分工交易根本不是在切一块固定的蛋糕,而是在**把蛋糕本身做大**。"
-    },
-    {
-      "type": "p",
-      "text": "道理就在「机会成本最低」这几个字上。当每个人都把时间投到自己放弃得最少的那件事上,同样的人手、同样的时间,社会总产出就比人人自给自足时更多——因为没人再把宝贵的精力浪费在自己不划算的活儿上了。总产出这块蛋糕胀大之后,双方再通过交换各取所需,每一方分到的,都能比闭门单干时更多。你多得的,不是从我碗里抢来的,而是我们合作凭空多长出来的那一块。贸易的好处,来自分工带来的效率提升,而不是「谁占了谁的便宜」。"
-    },
-    {
-      "type": "p",
-      "text": "回到律师和秘书身上,这一点看得最清楚。原先律师若坚持样样自己干,一天里有一部分时间耗在了打字上,能办的案子就少了那么几件;秘书则闲着,发挥不出价值。分工之后,律师满负荷办案、秘书专职打字,两个人合起来「一天产出的东西」——办结的案子加上打好的文件——比各自单干时更多。多出来的这部分,就是那块凭空长大的蛋糕;律师付给秘书的报酬,以及他自己净赚的增量,不过是两人分食这块新蛋糕的方式罢了。**只要交换的价钱落在两人各自的机会成本之间,这笔交易就没有输家**,双方都比不合作时更好。"
-    },
-    {
-      "type": "quote",
-      "original": "各自专注于机会成本最低的事,再交换,总产出会比各自单干更多——蛋糕先变大了,双方才都能多分。",
-      "translation": "这就是「贸易并非零和」的全部秘密。交易之所以能双赢,不是因为一方让利,而是因为分工先把总产出做大;只要交换的价钱落在两者机会成本之间,增量就由双方共享。"
-    },
-    {
-      "type": "figure",
-      "ftype": "示意图",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>比较优势:各做机会成本最低的事 &#8594; 交换 &#8594; 双方都更好</text><rect x='24' y='52' width='150' height='56' rx='7' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.4'/><text x='99' y='78' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>各自专注</text><text x='99' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>机会成本最低的事</text><line x1='176' y1='80' x2='204' y2='80' style='stroke:var(--ink-soft);stroke-width:1.6'/><path d='M210 80 L198 74 L198 86 Z' style='fill:var(--ink-soft)'/><rect x='212' y='52' width='134' height='56' rx='7' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.4'/><text x='279' y='78' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>交换</text><text x='279' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>各取所需</text><line x1='348' y1='80' x2='376' y2='80' style='stroke:var(--cinnabar-pure);stroke-width:1.6'/><path d='M382 80 L370 74 L370 86 Z' style='fill:var(--cinnabar-pure)'/><rect x='384' y='52' width='152' height='56' rx='7' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='460' y='78' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>双方都更好</text><text x='460' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>比单干各得更多</text><text x='150' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>自给自足:蛋糕小</text><circle cx='150' cy='210' r='34' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.6'/><line x1='150' y1='176' x2='150' y2='244' style='stroke:var(--ink-faint);stroke-width:1'/><line x1='116' y1='210' x2='184' y2='210' style='stroke:var(--ink-faint);stroke-width:1'/><line x1='300' y1='210' x2='356' y2='210' style='stroke:var(--ink-soft);stroke-width:1.6'/><path d='M362 210 L350 204 L350 216 Z' style='fill:var(--ink-soft)'/><text x='330' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>分工</text><text x='330' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>做大</text><text x='452' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--cinnabar-pure)'>分工交易:蛋糕变大</text><circle cx='452' cy='214' r='52' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar-pure);stroke-width:1.8'/><line x1='452' y1='162' x2='452' y2='266' style='stroke:var(--cinnabar-pure);stroke-width:1'/><line x1='400' y1='214' x2='504' y2='214' style='stroke:var(--cinnabar-pure);stroke-width:1'/><text x='452' y='288' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>多出来的一圈,由双方分享</text></svg>"
-    },
-    {
-      "type": "h2",
-      "text": "从两个人,到两个国家"
-    },
-    {
-      "type": "p",
-      "text": "把镜头拉远,这套逻辑原封不动地适用于国家之间。一个国家好比一个「大号的个人」:它也有自己机会成本最低的产业。有的国家土地肥沃、光照充足,种粮食放弃得最少;有的国家技术雄厚、工程师众多,造精密仪器放弃得最少。哪怕某个国家碰巧样样都能造得比别人便宜(在很多东西上都有绝对优势),它也不可能在所有东西上都「放弃得最少」。于是各国各自专业化,生产自己比较优势所在的产品,再通过进出口彼此交换,参与国的总产出就一起被抬高了。"
-    },
-    {
-      "type": "p",
-      "text": "这正是为什么开放通常胜过封闭。一个事事都要自己造、拒绝一切进口的国家,等于逼着自己把资源投到许多不划算的活儿上,就像那位坚持自己打字的律师——看着自给自足、什么都不求人,实则把最宝贵的精力浪费掉了,整体反而更穷。反过来,融入分工网络、专注于自己最擅长的一环,再用出口换回其余所需,一国的老百姓能消费到的东西,会比闭关自守时更多、更便宜。所谓「贸易让参与国整体受益」,说的就是这块被共同做大的蛋糕。"
-    },
-    {
-      "type": "figure",
-      "ftype": "示意图",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>同一个道理:从个人分工,到国家分工</text><rect x='44' y='58' width='210' height='150' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.4'/><text x='149' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>甲国</text><text x='149' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>机会成本最低:种粮食</text><text x='149' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>专注 &#8594; 粮食</text><text x='149' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>出口粮食</text><text x='149' y='194' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>进口仪器</text><rect x='306' y='58' width='210' height='150' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.4'/><text x='411' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>乙国</text><text x='411' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>机会成本最低:造仪器</text><text x='411' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>专注 &#8594; 仪器</text><text x='411' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>出口仪器</text><text x='411' y='194' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>进口粮食</text><line x1='258' y1='118' x2='302' y2='118' style='stroke:var(--cinnabar-pure);stroke-width:1.6'/><path d='M302 118 L290 112 L290 124 Z' style='fill:var(--cinnabar-pure)'/><line x1='302' y1='150' x2='258' y2='150' style='stroke:var(--cinnabar-pure);stroke-width:1.6'/><path d='M258 150 L270 144 L270 156 Z' style='fill:var(--cinnabar-pure)'/><text x='280' y='240' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>各产所长,互通有无 —— 两国能消费的东西都变多</text><text x='280' y='264' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>闭关自守、事事自造,反而把资源耗在不划算的活儿上</text></svg>"
-    },
-    {
-      "type": "h2",
-      "text": "诚实一点:整体受益,不等于人人受益"
-    },
-    {
-      "type": "p",
-      "text": "讲到这里,比较优势像是一件皆大欢喜的好事。但如果就此打住、只喊一句「自由贸易人人受益」,那是把话说得太满,也不够诚实。必须补上关键的一笔:比较优势保证的,是**整体的、长期的净收益**——蛋糕确实变大了,可它并不保证**每一个人**手里那一块都变大。现实里,分工与贸易同样会制造出实实在在的**输家**。"
-    },
-    {
-      "type": "p",
-      "text": "想想那些原本在本国、靠着关起门来才活得下去的产业。一旦开放进口,更便宜的外国货涌进来,这些行业的工厂可能关门,工人可能失业,某些依赖单一产业的地区可能整片萧条。对全社会而言,消费者买到了更便宜的东西、出口部门接到了更多订单,总账是赚的;可对那位失去饭碗的工人来说,「国家整体更富了」是一句冰冷的安慰——他承受的,是集中而具体的损失。收益是分散的、人人沾一点,损失却是集中的、砸在少数人头上。这种**分布不均**,是比较优势这套漂亮理论最容易被略过、却最不该回避的一面。"
-    },
-    {
-      "type": "quote",
-      "original": "贸易做大了总蛋糕,却不保证人人多分;有人受益,也有人实实在在地受损。",
-      "translation": "承认这一点,不是否定比较优势,而是把它说完整。理论说的是「总量」,现实要面对的是「分配」——总量增加与个别受损,可以同时为真。"
-    },
-    {
-      "type": "p",
-      "text": "该怎么办?正因为总的蛋糕变大了,社会才**有能力**去补偿受损的人:用一部分贸易带来的收益,去做失业者的再培训、给转型中的地区搭建过渡的台阶、对受冲击最重的群体给予实实在在的支持。理论上「贸易让整体变好」,与现实中「需要政策照顾输家」,两者并不矛盾,反而正好衔接——前者创造了可分的增量,后者决定这增量分得公不公。若只顾着庆祝总量、放任输家自生自灭,被冷落的人自然会反弹,对开放本身的抵触也会随之而来。真正稳妥的开放,从来是「把蛋糕做大」和「让分配更过得去」一起做的。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对照图",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>蛋糕变大了,但分配不均:有赢家,也有输家</text><line x1='280' y1='52' x2='280' y2='210' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 5'/><rect x='48' y='60' width='196' height='40' rx='5' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='146' y='85' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>赢家</text><line x1='146' y1='104' x2='146' y2='128' style='stroke:var(--cinnabar-pure);stroke-width:1.6'/><path d='M146 100 L140 112 L152 112 Z' style='fill:var(--cinnabar-pure)'/><text x='146' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>消费者买得更便宜</text><text x='146' y='168' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>出口部门订单更多</text><text x='146' y='186' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>收益分散,人人沾一点</text><rect x='316' y='60' width='196' height='40' rx='5' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.3'/><text x='414' y='85' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>输家</text><line x1='414' y1='104' x2='414' y2='128' style='stroke:var(--ink-soft);stroke-width:1.6'/><path d='M414 132 L408 120 L420 120 Z' style='fill:var(--ink-soft)'/><text x='414' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>受进口冲击的行业</text><text x='414' y='168' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>失业的工人、萧条的地区</text><text x='414' y='186' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>损失集中,砸在少数人头上</text><rect x='48' y='224' width='464' height='54' rx='6' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar-pure);stroke-width:1.2'/><text x='280' y='247' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>蛋糕变大 &#8594; 有能力用再培训、补偿、过渡政策照顾输家</text><text x='280' y='268' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>「整体受益」与「照顾受损者」并不矛盾,而是要一起做</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "把这一章收束成一句话:靠比较优势来分工——各自去做自己机会成本最低的那件事,再互相交换——能把总产出的蛋糕做大,让参与各方在整体上都受益;这就是「贸易并非零和」的根本原因,也是从两个人一路推广到两个国家都成立的深刻道理。但同样重要的是记住它的边界:整体受益不等于人人受益,分工里有赢家也有输家,收益分散而损失集中,因此需要配套的政策去接住那些被冲击的人。既看见比较优势的力量,又不把自由贸易理想化——这两点合在一起,才是对这个反直觉定理最完整、也最诚实的理解。"
-    }
-  ]
+ "title": "贸易与比较优势:为什么交易让大家都受益",
+ "subtitle": "《经济学原理》第6章导读——即使一个人(或一国)样样都比对方强,只要各自专注于「机会成本最低」的那件事,再互相交换,双方的产出和收入都会比自给自足时更高;这就是「比较优势」,也是「贸易并非零和」的根本原因。但要诚实:整体受益不等于人人受益,分工里也有输家,需要配套政策去照顾他们。",
+ "centralIdea": "这一章讲一个反直觉却极重要的定理——比较优势(comparative advantage)。绝对优势(absolute advantage)问的是「谁生产同样东西用的资源更少」,比较优势问的却是「谁生产某物放弃得更少,也就是机会成本更低」。关键洞见在于:即使一方在所有事情上都绝对更强,双方分工交易仍然能让彼此都获益,只要各自专注于自己机会成本最低的那件事,再把成果换回来。经典的例子是一位打字比秘书还快的律师:他打字虽绝对更快,但打字一小时的机会成本是少赚的高额律师费,远高于秘书;所以律师专心办案、把打字交给秘书,两人产出和收入都更高。国家之间同理——各自专业化生产、彼此进出口,能把总产出这块「蛋糕」做大,让参与各方整体受益,这正是贸易不是零和、封闭自给反而更穷的原因。但必须诚实面对代价:比较优势说的是「总体」和「长期」的净收益,现实中贸易也有输家,某些行业、工人、地区会因进口竞争而受损,收益与损失分布不均。理论上「贸易让整体变好」与现实中「需要用再培训、补偿、过渡政策照顾受损者」并不矛盾;只喊「自由贸易人人受益」而忽视分配,反而会激起反弹。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "上一章我们说到,市场靠一只「看不见的手」把千百万人的选择协调起来,让大家整体过得更好。可这只手的力量,究竟从哪里来?答案里最反直觉、也最有分量的一块,叫「比较优势」。它要回答一个乍看很怪的问题:如果一个人样样都比你强,他还有必要跟你合作、跟你交易吗?直觉多半会说——不必吧,他自己全干了岂不更省事。可两百年前的经济学家给出了一个至今仍让人拍案的答案:恰恰相反,哪怕强的一方在每件事上都占上风,分工交易依然能让强弱双方都比各自单干时过得更好。这一章,我们就把这个道理一层层拆开来看,顺便也诚实地说清它的边界。"
+  },
+  {
+   "type": "h2",
+   "text": "两把不同的尺子:绝对优势与比较优势"
+  },
+  {
+   "type": "p",
+   "text": "先分清两个容易混为一谈的概念。第一把尺子叫**绝对优势(absolute advantage)**,量的是生产效率:同样一件东西,谁用的资源更少、或者同样的时间里产出更多,谁就在这件事上有绝对优势。一个师傅两小时能做一张桌子,学徒要四小时,那么师傅在做桌子上有绝对优势——这把尺子很直观,谁更能干一目了然。"
+  },
+  {
+   "type": "p",
+   "text": "第二把尺子叫**比较优势(comparative advantage)**,量的却不是效率,而是**机会成本**——你为了做这件事,放弃掉的那个最好的其他选择。这里藏着全章最要紧的转弯:判断该不该由某人来做一件事,看的不是他做得快不快,而是他做这件事时,**要放弃的东西值不值**。一个人可能在两件事上都比你能干(样样都有绝对优势),但他不可能在两件事上都比你「放弃得更少」——因为他每多花一小时在甲事上,就意味着从那件他最擅长、最值钱的乙事上抽走了一小时。机会成本这把尺子,总会把两件事分派到两个人手里。"
+  },
+  {
+   "type": "quote",
+   "original": "绝对优势问「谁做得更省」,比较优势问「谁放弃得更少」——决定分工的,是后者。",
+   "translation": "这是整章的枢纽。能干不能干,是绝对优势的问题;而该由谁来做,取决于机会成本,也就是比较优势。一个样样都强的人,恰恰因为强,做低价值的事才更「亏」——他放弃的太多了。"
+  },
+  {
+   "type": "h2",
+   "text": "一位能干律师的烦恼"
+  },
+  {
+   "type": "p",
+   "text": "把这个道理放进一个具体场景,一下就通了。设想一位很能干的律师,不但官司打得好,连打字都比自己的秘书快:同一份文件,律师一小时能敲完,秘书要花两小时。单看打字这件事,律师有绝对优势——他确实更快。于是一个念头冒出来:既然我打字都比她快,那我干脆自己打,还省下请秘书的钱,岂不更划算?"
+  },
+  {
+   "type": "p",
+   "text": "别急,换上机会成本这把尺子再看一遍。律师那一小时如果用来办案,能挣两千元;若拿去打字,这两千元就飞了——他打字的机会成本,是白白放弃的两千元律师费。秘书呢?她那一小时若不打字,顶多做点行政杂务,值一百元;她打字的机会成本,只有一百元。**同样是打字一小时,律师要放弃两千,秘书只放弃一百**。谁放弃得少?秘书。所以在打字这件事上,拥有比较优势的,反而是打字更慢的秘书。"
+  },
+  {
+   "type": "p",
+   "text": "结论于是反转了:律师应当专心办案(那是他机会成本最低、最不该放弃的事),把打字交给秘书,再付她一份报酬。这样一来,律师用省下的时间多办了案、多挣了钱,秘书有活干、有收入,两人都比「律师样样自己扛」时过得更好——哪怕律师打字客观上就是更快。能干的人之所以要把一些事「让」出去,不是因为做不好,而是因为他有更值钱的事要做。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>打字这件事:谁更快,还是谁放弃得更少?</text><text x='180' y='60' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>律师</text><text x='400' y='60' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>秘书</text><text x='60' y='104' text-anchor='start' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>打字速度</text><text x='180' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>1 小时/份 · 更快</text><text x='400' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>2 小时/份 · 更慢</text><text x='305' y='120' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>(律师占绝对优势)</text><line x1='60' y1='138' x2='500' y2='138' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 5'/><text x='60' y='170' text-anchor='start' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>打字的机会成本</text><text x='180' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>放弃 2000 元律师费</text><text x='400' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>只放弃 100 元杂务</text><text x='305' y='188' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--cinnabar-pure)'>(秘书占比较优势)</text><rect x='60' y='214' width='440' height='58' rx='6' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar-pure);stroke-width:1.2'/><text x='280' y='238' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>律师专心办案,打字交给秘书 —— 两人产出与收入都更高</text><text x='280' y='259' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>该由谁做,看的是机会成本,不是谁手更快</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "蛋糕是怎么变大的:交易不是零和"
+  },
+  {
+   "type": "p",
+   "text": "律师和秘书的故事,藏着一个更普遍的机制。很多人心里默认,交易像分一块固定大小的蛋糕:你多拿一口,我就少一口,一方赚必是另一方亏。若真是这样,精明人就该处处提防、事事自己来,免得被占便宜。可比较优势告诉我们:分工交易根本不是在切一块固定的蛋糕,而是在**把蛋糕本身做大**。"
+  },
+  {
+   "type": "p",
+   "text": "道理就在「机会成本最低」这几个字上。当每个人都把时间投到自己放弃得最少的那件事上,同样的人手、同样的时间,社会总产出就比人人自给自足时更多——因为没人再把宝贵的精力浪费在自己不划算的活儿上了。总产出这块蛋糕胀大之后,双方再通过交换各取所需,每一方分到的,都能比闭门单干时更多。你多得的,不是从我碗里抢来的,而是我们合作凭空多长出来的那一块。贸易的好处,来自分工带来的效率提升,而不是「谁占了谁的便宜」。"
+  },
+  {
+   "type": "p",
+   "text": "回到律师和秘书身上,这一点看得最清楚。原先律师若坚持样样自己干,一天里有一部分时间耗在了打字上,能办的案子就少了那么几件;秘书则闲着,发挥不出价值。分工之后,律师满负荷办案、秘书专职打字,两个人合起来「一天产出的东西」——办结的案子加上打好的文件——比各自单干时更多。多出来的这部分,就是那块凭空长大的蛋糕;律师付给秘书的报酬,以及他自己净赚的增量,不过是两人分食这块新蛋糕的方式罢了。**只要交换的价钱落在两人各自的机会成本之间,这笔交易就没有输家**,双方都比不合作时更好。"
+  },
+  {
+   "type": "quote",
+   "original": "各自专注于机会成本最低的事,再交换,总产出会比各自单干更多——蛋糕先变大了,双方才都能多分。",
+   "translation": "这就是「贸易并非零和」的全部秘密。交易之所以能双赢,不是因为一方让利,而是因为分工先把总产出做大;只要交换的价钱落在两者机会成本之间,增量就由双方共享。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>比较优势:各做机会成本最低的事 &#8594; 交换 &#8594; 双方都更好</text><rect x='24' y='52' width='150' height='56' rx='7' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.4'/><text x='99' y='78' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>各自专注</text><text x='99' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>机会成本最低的事</text><line x1='176' y1='80' x2='204' y2='80' style='stroke:var(--ink-soft);stroke-width:1.6'/><path d='M210 80 L198 74 L198 86 Z' style='fill:var(--ink-soft)'/><rect x='212' y='52' width='134' height='56' rx='7' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.4'/><text x='279' y='78' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>交换</text><text x='279' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>各取所需</text><line x1='348' y1='80' x2='376' y2='80' style='stroke:var(--cinnabar-pure);stroke-width:1.6'/><path d='M382 80 L370 74 L370 86 Z' style='fill:var(--cinnabar-pure)'/><rect x='384' y='52' width='152' height='56' rx='7' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='460' y='78' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>双方都更好</text><text x='460' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>比单干各得更多</text><text x='150' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>自给自足:蛋糕小</text><circle cx='150' cy='210' r='34' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.6'/><line x1='150' y1='176' x2='150' y2='244' style='stroke:var(--ink-faint);stroke-width:1'/><line x1='116' y1='210' x2='184' y2='210' style='stroke:var(--ink-faint);stroke-width:1'/><line x1='300' y1='210' x2='356' y2='210' style='stroke:var(--ink-soft);stroke-width:1.6'/><path d='M362 210 L350 204 L350 216 Z' style='fill:var(--ink-soft)'/><text x='330' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>分工</text><text x='330' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>做大</text><text x='452' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--cinnabar-pure)'>分工交易:蛋糕变大</text><circle cx='452' cy='214' r='52' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar-pure);stroke-width:1.8'/><line x1='452' y1='162' x2='452' y2='266' style='stroke:var(--cinnabar-pure);stroke-width:1'/><line x1='400' y1='214' x2='504' y2='214' style='stroke:var(--cinnabar-pure);stroke-width:1'/><text x='452' y='288' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>多出来的一圈,由双方分享</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "从两个人,到两个国家"
+  },
+  {
+   "type": "p",
+   "text": "把镜头拉远,这套逻辑原封不动地适用于国家之间。一个国家好比一个「大号的个人」:它也有自己机会成本最低的产业。有的国家土地肥沃、光照充足,种粮食放弃得最少;有的国家技术雄厚、工程师众多,造精密仪器放弃得最少。哪怕某个国家碰巧样样都能造得比别人便宜(在很多东西上都有绝对优势),它也不可能在所有东西上都「放弃得最少」。于是各国各自专业化,生产自己比较优势所在的产品,再通过进出口彼此交换,参与国的总产出就一起被抬高了。"
+  },
+  {
+   "type": "p",
+   "text": "这正是为什么开放通常胜过封闭。一个事事都要自己造、拒绝一切进口的国家,等于逼着自己把资源投到许多不划算的活儿上,就像那位坚持自己打字的律师——看着自给自足、什么都不求人,实则把最宝贵的精力浪费掉了,整体反而更穷。反过来,融入分工网络、专注于自己最擅长的一环,再用出口换回其余所需,一国的老百姓能消费到的东西,会比闭关自守时更多、更便宜。"
+  },
+  {
+   "type": "pull",
+   "text": "所谓「贸易让参与国整体受益」,说的就是这块被共同做大的蛋糕。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>同一个道理:从个人分工,到国家分工</text><rect x='44' y='58' width='210' height='150' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.4'/><text x='149' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>甲国</text><text x='149' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>机会成本最低:种粮食</text><text x='149' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>专注 &#8594; 粮食</text><text x='149' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>出口粮食</text><text x='149' y='194' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>进口仪器</text><rect x='306' y='58' width='210' height='150' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.4'/><text x='411' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>乙国</text><text x='411' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>机会成本最低:造仪器</text><text x='411' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>专注 &#8594; 仪器</text><text x='411' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>出口仪器</text><text x='411' y='194' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>进口粮食</text><line x1='258' y1='118' x2='302' y2='118' style='stroke:var(--cinnabar-pure);stroke-width:1.6'/><path d='M302 118 L290 112 L290 124 Z' style='fill:var(--cinnabar-pure)'/><line x1='302' y1='150' x2='258' y2='150' style='stroke:var(--cinnabar-pure);stroke-width:1.6'/><path d='M258 150 L270 144 L270 156 Z' style='fill:var(--cinnabar-pure)'/><text x='280' y='240' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>各产所长,互通有无 —— 两国能消费的东西都变多</text><text x='280' y='264' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>闭关自守、事事自造,反而把资源耗在不划算的活儿上</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "诚实一点:整体受益,不等于人人受益"
+  },
+  {
+   "type": "p",
+   "text": "讲到这里,比较优势像是一件皆大欢喜的好事。但如果就此打住、只喊一句「自由贸易人人受益」,那是把话说得太满,也不够诚实。必须补上关键的一笔:比较优势保证的,是**整体的、长期的净收益**——蛋糕确实变大了,可它并不保证**每一个人**手里那一块都变大。现实里,分工与贸易同样会制造出实实在在的**输家**。"
+  },
+  {
+   "type": "p",
+   "text": "想想那些原本在本国、靠着关起门来才活得下去的产业。一旦开放进口,更便宜的外国货涌进来,这些行业的工厂可能关门,工人可能失业,某些依赖单一产业的地区可能整片萧条。对全社会而言,消费者买到了更便宜的东西、出口部门接到了更多订单,总账是赚的;可对那位失去饭碗的工人来说,「国家整体更富了」是一句冰冷的安慰——他承受的,是集中而具体的损失。收益是分散的、人人沾一点,损失却是集中的、砸在少数人头上。这种**分布不均**,是比较优势这套漂亮理论最容易被略过、却最不该回避的一面。"
+  },
+  {
+   "type": "quote",
+   "original": "贸易做大了总蛋糕,却不保证人人多分;有人受益,也有人实实在在地受损。",
+   "translation": "承认这一点,不是否定比较优势,而是把它说完整。理论说的是「总量」,现实要面对的是「分配」——总量增加与个别受损,可以同时为真。"
+  },
+  {
+   "type": "p",
+   "text": "该怎么办?正因为总的蛋糕变大了,社会才**有能力**去补偿受损的人:用一部分贸易带来的收益,去做失业者的再培训、给转型中的地区搭建过渡的台阶、对受冲击最重的群体给予实实在在的支持。理论上「贸易让整体变好」,与现实中「需要政策照顾输家」,两者并不矛盾,反而正好衔接——前者创造了可分的增量,后者决定这增量分得公不公。若只顾着庆祝总量、放任输家自生自灭,被冷落的人自然会反弹,对开放本身的抵触也会随之而来。真正稳妥的开放,从来是「把蛋糕做大」和「让分配更过得去」一起做的。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>蛋糕变大了,但分配不均:有赢家,也有输家</text><line x1='280' y1='52' x2='280' y2='210' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 5'/><rect x='48' y='60' width='196' height='40' rx='5' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='146' y='85' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>赢家</text><line x1='146' y1='104' x2='146' y2='128' style='stroke:var(--cinnabar-pure);stroke-width:1.6'/><path d='M146 100 L140 112 L152 112 Z' style='fill:var(--cinnabar-pure)'/><text x='146' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>消费者买得更便宜</text><text x='146' y='168' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>出口部门订单更多</text><text x='146' y='186' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>收益分散,人人沾一点</text><rect x='316' y='60' width='196' height='40' rx='5' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.3'/><text x='414' y='85' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>输家</text><line x1='414' y1='104' x2='414' y2='128' style='stroke:var(--ink-soft);stroke-width:1.6'/><path d='M414 132 L408 120 L420 120 Z' style='fill:var(--ink-soft)'/><text x='414' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>受进口冲击的行业</text><text x='414' y='168' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>失业的工人、萧条的地区</text><text x='414' y='186' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>损失集中,砸在少数人头上</text><rect x='48' y='224' width='464' height='54' rx='6' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar-pure);stroke-width:1.2'/><text x='280' y='247' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>蛋糕变大 &#8594; 有能力用再培训、补偿、过渡政策照顾输家</text><text x='280' y='268' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>「整体受益」与「照顾受损者」并不矛盾,而是要一起做</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "把这一章收束成一句话:靠比较优势来分工——各自去做自己机会成本最低的那件事,再互相交换——能把总产出的蛋糕做大,让参与各方在整体上都受益;这就是「贸易并非零和」的根本原因,也是从两个人一路推广到两个国家都成立的深刻道理。但同样重要的是记住它的边界:整体受益不等于人人受益,分工里有赢家也有输家,收益分散而损失集中,因此需要配套的政策去接住那些被冲击的人。既看见比较优势的力量,又不把自由贸易理想化——这两点合在一起,才是对这个反直觉定理最完整、也最诚实的理解。"
+  }
+ ]
 }

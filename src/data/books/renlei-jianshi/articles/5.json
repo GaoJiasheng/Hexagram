@@ -1,86 +1,90 @@
 {
-  "title": "金钱:人类发明过的最普遍的信任体系",
-  "subtitle": "《人类简史》第五章导读——一张不能吃不能穿的纸,凭什么驱动全世界",
-  "centralIdea": "金钱是「想象的秩序」最纯粹的标本:贝壳、大麦、银块、纸片、屏幕上的数字,形态无所谓,本质只有一条——我肯收它,因为我相信别人也肯收它。它解决了以物换物的死结(需求刚好互补的巧合太难),把万物折算成同一个刻度,让价值可以储存、搬运、跨行业流转;更惊人的是它不问出身、不挑信仰,连战场上的敌人都彼此认账——金钱由此成为史上最普遍也最有效的互信系统。但赫拉利同时记下它的暗面:当一切都能标价,荣誉、忠诚与亲情也会被拖上秤盘,共同体的价值防线被万能溶剂一寸寸腐蚀。读这一章,还要补一句经济学的旁注:现代货币的信任并非凭空漂浮,背后有国家税收与法律的锚。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "做个思想实验:一个陌生人递给你几张印着图案的纸,你就心甘情愿把一整个月的时间、精力和才华交给他——这事你每个月都在干,它叫**领工资**。这些纸不能吃、不能穿、雨天连伞都当不了;把它拿给一只黑猩猩,换不来它手里的香蕉。可几十亿人类为了得到它起早贪黑,甚至铤而走险。上一章说,大规模协作靠想象的秩序;这一章,赫拉利端出想象秩序的极品标本——**钱**。看懂钱凭什么值钱,你就看懂了「集体相信」这台发动机的全部构造。"
-    },
-    {
-      "type": "h2",
-      "text": "先看没有钱的世界有多卡"
-    },
-    {
-      "type": "p",
-      "text": "小型的采集部落其实不需要钱:几十号人彼此沾亲带故,你分我一块肉,我记得你的好,人情和义务就是全部的经济系统。农业革命后麻烦来了:村庄变城镇,分工越来越细,种麦的、做鞋的、看病的、盖房的,彼此是陌生人,人情账记不过来了。直接以物换物行不行?行,但卡得要命——**它要求一场「需求的双重巧合」**:鞋匠想换苹果,必须刚好碰上一个想要鞋的果农;要是果农不缺鞋、缺的是看病,鞋匠就得先找个缺鞋的医生换出诊疗,再拿诊疗去换苹果……交易链条越长,巧合越难凑齐。更糟的是换算:一头牛值几双鞋?一次出诊值几筐苹果?几十种商品两两定价,报价表就要爆炸。市场越大,以物换物越是死路。"
-    },
-    {
-      "type": "p",
-      "text": "钱就是给这个死结发明的万能接口。**它把「我需要你刚好需要我的东西」,简化成「我们都需要同一样东西」**;把几十种商品之间乱成蛛网的比价,压成一根共同的标尺——从此鞋匠不用关心果农缺什么,他只需要关心一个数字:市价。赫拉利给金钱的定义干净利落:钱不是某种具体的东西,而是**一套心理构造**——任何被大家普遍愿意接受、用来间接交换其他东西的媒介,都是钱。所以历史上的钱五花八门:贝壳用了几千年,大麦当过钱,盐当过钱,烟草在近代监狱里当过钱,今天的钱百分之九十以上只是服务器里的数字——**形态从来不重要,重要的是那个「普遍愿意接受」**。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对比图",
-      "svg": "<svg viewBox='0 0 560 320' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>以物换物 vs 货币:一个接口救活整张网</text><text x='150' y='58' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>没有钱:两两互换</text><circle cx='90' cy='110' r='26' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='90' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>鞋匠</text><circle cx='210' cy='110' r='26' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='210' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>果农</text><circle cx='90' cy='210' r='26' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='90' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>医生</text><circle cx='210' cy='210' r='26' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='210' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>木匠</text><line x1='113' y1='120' x2='187' y2='200' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 3'/><line x1='113' y1='200' x2='187' y2='120' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 3'/><line x1='116' y1='110' x2='184' y2='110' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 3'/><line x1='90' y1='136' x2='90' y2='184' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 3'/><line x1='210' y1='136' x2='210' y2='184' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 3'/><text x='150' y='268' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>要凑「需求的双重巧合」</text><text x='150' y='288' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>比价表随品类爆炸</text><text x='420' y='58' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>有了钱:共同接口</text><circle cx='420' cy='160' r='30' style='fill:none;stroke:var(--cinnabar);stroke-width:1.8'/><text x='420' y='165' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar)'>钱</text><circle cx='340' cy='96' r='24' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='340' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink)'>鞋匠</text><circle cx='500' cy='96' r='24' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='500' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink)'>果农</text><circle cx='340' cy='230' r='24' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='340' y='234' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink)'>医生</text><circle cx='500' cy='230' r='24' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='500' y='234' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink)'>木匠</text><line x1='357' y1='112' x2='398' y2='142' style='stroke:var(--cinnabar);stroke-width:1.2'/><line x1='483' y1='112' x2='442' y2='142' style='stroke:var(--cinnabar);stroke-width:1.2'/><line x1='357' y1='214' x2='398' y2='178' style='stroke:var(--cinnabar);stroke-width:1.2'/><line x1='483' y1='214' x2='442' y2='178' style='stroke:var(--cinnabar);stroke-width:1.2'/><text x='420' y='288' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>人人只需对接同一标尺</text></svg>",
-      "caption": "钱把「N 种商品两两互换」的蛛网,改造成「万物对接同一接口」的星形网——交易成本断崖式下降。"
-    },
-    {
-      "type": "h2",
-      "text": "价值的本体:一场彼此支撑的相信"
-    },
-    {
-      "type": "p",
-      "text": "那接口本身凭什么有价值?金银好歹闪亮稀有,可它们同样不能吃不能穿;纸币和存款数字更是连稀有都谈不上。赫拉利的回答直指要害:**钱的价值不在钱里,而在人与人之间**。我愿意用一天的劳动换这张纸,是因为我相信明天菜贩、房东、药店也认它;他们认它,又是因为他们相信别的所有人也认它。这是一个自我支撑的信念结构——**人人都信「人人都信」**,循环咬合,坚固异常;可一旦这个循环松动(恶性通胀时期的钞票、崩盘的劣质货币),再精美的票面也会在一夜之间变回废纸。钱是集体想象,但它是被亿万次日常交易反复验证、随时可兑现的想象——这也是为什么它比神话和国界更「硬」:你可以不信国王,但你很难不信找零。"
-    },
-    {
-      "type": "quote",
-      "original": "金钱是有史以来最普遍也最有效的互信系统。",
-      "translation": "本章的题眼。金钱的本质,是「陌生人之间的信任」被铸造成了可分割、可储存、可流通的形态——它是唯一一种不需要双方认识、甚至不需要双方喜欢彼此就能运转的信任。"
-    },
-    {
-      "type": "p",
-      "text": "这套互信系统还有一个惊人的性质:**它不挑人**。宗教要求你先皈依,帝国要求你先臣服,金钱什么都不要求——它是历史上第一个跨越语言、肤色、信仰与敌我的通用协议。赫拉利举的例子锋利之极:中世纪的基督徒与穆斯林在战场上互相视为异端、彼此杀伐,可双方都毫无障碍地认对方口袋里的金币;金币上印着对方君主的头像和「异教」的铭文,照收不误。**神灵止步的边界、军队止步的边界,钱都能过**。也因此,金钱成了历史上最强的统一力量之一:它先于帝国和传教士,把无数互不往来的经济圈,悄悄焊成一个越来越大的市场。"
-    },
-    {
-      "type": "figure",
-      "ftype": "结构图",
-      "svg": "<svg viewBox='0 0 560 280' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>钱的价值住在哪:自我支撑的信念环</text><circle cx='280' cy='150' r='84' style='fill:none;stroke:var(--cinnabar);stroke-width:1.6'/><text x='280' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar)'>「别人都会收它」</text><text x='280' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>所以我也收它</text><text x='120' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>我信 →</text><text x='446' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>← 你信</text><text x='120' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>商贩信 →</text><text x='446' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>← 房东信</text><text x='280' y='262' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>环咬合时坚硬如金;环松动时(恶性通胀),票面一夜变废纸</text></svg>",
-      "caption": "「人人都信人人都信」——价值不在纸上,在这个循环里。金钱是需要每天续费的集体魔法。"
-    },
-    {
-      "type": "h2",
-      "text": "从大麦到数字:信任的提纯史"
-    },
-    {
-      "type": "p",
-      "text": "金钱的演化史,可以读成一部「信任含量」的提纯史。最早的钱自带实用价值兜底:苏美尔的**大麦钱**,收了大不了自己吃,信任门槛最低,可惜又重又难存。接着人类迈出关键一步:美索不达米亚的**银舍客勒**——银子不能吃,它的价值几乎纯靠文化共识,信任第一次与实用脱钩。再往后,金属的成色和重量也懒得每次检验了,国王把头像和印记盖上去:**铸币**诞生,信任从「信这块金属」升级成「信这个政权」——伪造货币因此从来不是普通的欺诈,而是对主权的挑衅。然后是更大的飞跃:纸币——金属都省了,只剩印刷品与承诺;最后是今天,连纸都省了,**钱的绝大部分只是银行系统里的电子记录**,转账不过是两行数字的增减。一路走来,物质越来越少,信任越来越纯:**钱的历史,就是人类学会「凭空信任」的历史**——认知革命种下的那颗「相信不存在之物」的种子,在这里结出了最日常也最庞大的果实。"
-    },
-    {
-      "type": "h2",
-      "text": "万能溶剂的另一面"
-    },
-    {
-      "type": "p",
-      "text": "写到这里,金钱像一曲颂歌:宽容、高效、不问出身。但赫拉利笔锋一转,记下了它的暗面。金钱是**万能溶剂**——它能溶解隔阂,也能溶解一切「本不该标价」的东西。当万物都能折算,荣誉、忠诚、正义、亲情也会被拖上秤盘:历史上,人可以被标价出售(奴隶贸易正是货币经济最「顺畅」的应用之一),法官的判决可以有行情,长老的祝福可以论次收费。传统共同体靠「有些东西千金不换」维系尊严与信任,而金钱的逻辑天生要问一句:**「不换?加价呢?」** 社区、家族、师徒之间那种不计回报的人情,被一点点置换成冷冰冰的市场关系——赫拉利说,人类金钱史的黑暗面正在于此:当一切皆可交易,人与人之间就只剩下「供需」。金钱是史上最伟大的信任机器,同时也是最高效的价值粉碎机——**它统一了世界,方法是把世界磨成同一种粉末**。"
-    },
-    {
-      "type": "figure",
-      "ftype": "提醒",
-      "svg": "<svg viewBox='0 0 560 240' xmlns='http://www.w3.org/2000/svg'><rect x='24' y='18' width='512' height='204' rx='10' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5;stroke-dasharray:7 5'/><text x='280' y='54' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--cinnabar)'>金钱的两副面孔</text><text x='150' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>作为桥梁</text><text x='150' y='120' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>不问信仰 · 不挑敌我</text><text x='150' y='144' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>让陌生人瞬间可以合作</text><line x1='280' y1='76' x2='280' y2='160' style='stroke:var(--line);stroke-width:1'/><text x='410' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>作为溶剂</text><text x='410' y='120' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>万物皆可标价</text><text x='410' y='144' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>荣誉忠诚亲情也被拖上秤</text><text x='280' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>它统一了世界——方法是把世界磨成同一种粉末</text></svg>",
-      "caption": "同一种力量的正反两面:溶解隔阂的,也在溶解「千金不换」——这是赫拉利对金钱的完整评价。"
-    },
-    {
-      "type": "h2",
-      "text": "收束:一条补注,一个回望"
-    },
-    {
-      "type": "p",
-      "text": "照例补一句冷静的旁注。「金钱=纯粹的集体信任」讲透了钱的文化本质,但经济学家会提醒:现代货币的信任并非凭空漂浮,它有制度的锚——**国家规定你必须用本币纳税,法律强制本币可以清偿债务**,央行则受托看守发行的闸门。信任是钱的灵魂,但灵魂住在国家与法律搭的房子里;赫拉利讲了灵魂,房子只是带过。另外,「以物换物的社会先于货币」这个教科书叙事本身,在人类学里也有争议——不少学者认为在货币之前,更普遍的其实是人情与债务网络,而非市场式的两两互换。"
-    },
-    {
-      "type": "p",
-      "text": "回望一下走过的路:第二章立起「主体间实在」,第四章展开「想象的秩序」,这一章你看到了那个理论**最成功的实现**——一套敌人之间都能运转的信任协议。但金钱只统一了「怎么交易」,还统一不了「归谁管」和「信什么」。下一章,另外两台缝合机登场:帝国与宗教。"
-    }
-  ]
+ "title": "金钱:人类发明过的最普遍的信任体系",
+ "subtitle": "《人类简史》第五章导读——一张不能吃不能穿的纸,凭什么驱动全世界",
+ "centralIdea": "金钱是「想象的秩序」最纯粹的标本:贝壳、大麦、银块、纸片、屏幕上的数字,形态无所谓,本质只有一条——我肯收它,因为我相信别人也肯收它。它解决了以物换物的死结(需求刚好互补的巧合太难),把万物折算成同一个刻度,让价值可以储存、搬运、跨行业流转;更惊人的是它不问出身、不挑信仰,连战场上的敌人都彼此认账——金钱由此成为史上最普遍也最有效的互信系统。但赫拉利同时记下它的暗面:当一切都能标价,荣誉、忠诚与亲情也会被拖上秤盘,共同体的价值防线被万能溶剂一寸寸腐蚀。读这一章,还要补一句经济学的旁注:现代货币的信任并非凭空漂浮,背后有国家税收与法律的锚。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "做个思想实验:一个陌生人递给你几张印着图案的纸,你就心甘情愿把一整个月的时间、精力和才华交给他——这事你每个月都在干,它叫**领工资**。这些纸不能吃、不能穿、雨天连伞都当不了;把它拿给一只黑猩猩,换不来它手里的香蕉。可几十亿人类为了得到它起早贪黑,甚至铤而走险。上一章说,大规模协作靠想象的秩序;这一章,赫拉利端出想象秩序的极品标本——**钱**。看懂钱凭什么值钱,你就看懂了「集体相信」这台发动机的全部构造。"
+  },
+  {
+   "type": "h2",
+   "text": "先看没有钱的世界有多卡"
+  },
+  {
+   "type": "p",
+   "text": "小型的采集部落其实不需要钱:几十号人彼此沾亲带故,你分我一块肉,我记得你的好,人情和义务就是全部的经济系统。农业革命后麻烦来了:村庄变城镇,分工越来越细,种麦的、做鞋的、看病的、盖房的,彼此是陌生人,人情账记不过来了。直接以物换物行不行?行,但卡得要命——**它要求一场「需求的双重巧合」**:鞋匠想换苹果,必须刚好碰上一个想要鞋的果农;要是果农不缺鞋、缺的是看病,鞋匠就得先找个缺鞋的医生换出诊疗,再拿诊疗去换苹果……交易链条越长,巧合越难凑齐。更糟的是换算:一头牛值几双鞋?一次出诊值几筐苹果?几十种商品两两定价,报价表就要爆炸。市场越大,以物换物越是死路。"
+  },
+  {
+   "type": "p",
+   "text": "钱就是给这个死结发明的万能接口。**它把「我需要你刚好需要我的东西」,简化成「我们都需要同一样东西」**;把几十种商品之间乱成蛛网的比价,压成一根共同的标尺——从此鞋匠不用关心果农缺什么,他只需要关心一个数字:市价。赫拉利给金钱的定义干净利落:钱不是某种具体的东西,而是**一套心理构造**——任何被大家普遍愿意接受、用来间接交换其他东西的媒介,都是钱。所以历史上的钱五花八门:贝壳用了几千年,大麦当过钱,盐当过钱,烟草在近代监狱里当过钱,今天的钱百分之九十以上只是服务器里的数字——**形态从来不重要,重要的是那个「普遍愿意接受」**。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "svg": "<svg viewBox='0 0 560 320' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>以物换物 vs 货币:一个接口救活整张网</text><text x='150' y='58' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>没有钱:两两互换</text><circle cx='90' cy='110' r='26' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='90' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>鞋匠</text><circle cx='210' cy='110' r='26' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='210' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>果农</text><circle cx='90' cy='210' r='26' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='90' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>医生</text><circle cx='210' cy='210' r='26' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='210' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>木匠</text><line x1='113' y1='120' x2='187' y2='200' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 3'/><line x1='113' y1='200' x2='187' y2='120' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 3'/><line x1='116' y1='110' x2='184' y2='110' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 3'/><line x1='90' y1='136' x2='90' y2='184' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 3'/><line x1='210' y1='136' x2='210' y2='184' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 3'/><text x='150' y='268' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>要凑「需求的双重巧合」</text><text x='150' y='288' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>比价表随品类爆炸</text><text x='420' y='58' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>有了钱:共同接口</text><circle cx='420' cy='160' r='30' style='fill:none;stroke:var(--cinnabar);stroke-width:1.8'/><text x='420' y='165' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar)'>钱</text><circle cx='340' cy='96' r='24' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='340' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink)'>鞋匠</text><circle cx='500' cy='96' r='24' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='500' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink)'>果农</text><circle cx='340' cy='230' r='24' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='340' y='234' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink)'>医生</text><circle cx='500' cy='230' r='24' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='500' y='234' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink)'>木匠</text><line x1='357' y1='112' x2='398' y2='142' style='stroke:var(--cinnabar);stroke-width:1.2'/><line x1='483' y1='112' x2='442' y2='142' style='stroke:var(--cinnabar);stroke-width:1.2'/><line x1='357' y1='214' x2='398' y2='178' style='stroke:var(--cinnabar);stroke-width:1.2'/><line x1='483' y1='214' x2='442' y2='178' style='stroke:var(--cinnabar);stroke-width:1.2'/><text x='420' y='288' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>人人只需对接同一标尺</text></svg>",
+   "caption": "钱把「N 种商品两两互换」的蛛网,改造成「万物对接同一接口」的星形网——交易成本断崖式下降。"
+  },
+  {
+   "type": "h2",
+   "text": "价值的本体:一场彼此支撑的相信"
+  },
+  {
+   "type": "p",
+   "text": "那接口本身凭什么有价值?金银好歹闪亮稀有,可它们同样不能吃不能穿;纸币和存款数字更是连稀有都谈不上。赫拉利的回答直指要害:**钱的价值不在钱里,而在人与人之间**。我愿意用一天的劳动换这张纸,是因为我相信明天菜贩、房东、药店也认它;他们认它,又是因为他们相信别的所有人也认它。这是一个自我支撑的信念结构——**人人都信「人人都信」**,循环咬合,坚固异常;可一旦这个循环松动(恶性通胀时期的钞票、崩盘的劣质货币),再精美的票面也会在一夜之间变回废纸。钱是集体想象,但它是被亿万次日常交易反复验证、随时可兑现的想象——这也是为什么它比神话和国界更「硬」:你可以不信国王,但你很难不信找零。"
+  },
+  {
+   "type": "quote",
+   "original": "金钱是有史以来最普遍也最有效的互信系统。",
+   "translation": "本章的题眼。金钱的本质,是「陌生人之间的信任」被铸造成了可分割、可储存、可流通的形态——它是唯一一种不需要双方认识、甚至不需要双方喜欢彼此就能运转的信任。"
+  },
+  {
+   "type": "p",
+   "text": "这套互信系统还有一个惊人的性质:**它不挑人**。宗教要求你先皈依,帝国要求你先臣服,金钱什么都不要求——它是历史上第一个跨越语言、肤色、信仰与敌我的通用协议。赫拉利举的例子锋利之极:中世纪的基督徒与穆斯林在战场上互相视为异端、彼此杀伐,可双方都毫无障碍地认对方口袋里的金币;金币上印着对方君主的头像和「异教」的铭文,照收不误。**神灵止步的边界、军队止步的边界,钱都能过**。也因此,金钱成了历史上最强的统一力量之一:它先于帝国和传教士,把无数互不往来的经济圈,悄悄焊成一个越来越大的市场。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "svg": "<svg viewBox='0 0 560 280' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>钱的价值住在哪:自我支撑的信念环</text><circle cx='280' cy='150' r='84' style='fill:none;stroke:var(--cinnabar);stroke-width:1.6'/><text x='280' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar)'>「别人都会收它」</text><text x='280' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>所以我也收它</text><text x='120' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>我信 →</text><text x='446' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>← 你信</text><text x='120' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>商贩信 →</text><text x='446' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>← 房东信</text><text x='280' y='262' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>环咬合时坚硬如金;环松动时(恶性通胀),票面一夜变废纸</text></svg>",
+   "caption": "「人人都信人人都信」——价值不在纸上,在这个循环里。金钱是需要每天续费的集体魔法。"
+  },
+  {
+   "type": "h2",
+   "text": "从大麦到数字:信任的提纯史"
+  },
+  {
+   "type": "p",
+   "text": "金钱的演化史,可以读成一部「信任含量」的提纯史。最早的钱自带实用价值兜底:苏美尔的**大麦钱**,收了大不了自己吃,信任门槛最低,可惜又重又难存。接着人类迈出关键一步:美索不达米亚的**银舍客勒**——银子不能吃,它的价值几乎纯靠文化共识,信任第一次与实用脱钩。再往后,金属的成色和重量也懒得每次检验了,国王把头像和印记盖上去:**铸币**诞生,信任从「信这块金属」升级成「信这个政权」——伪造货币因此从来不是普通的欺诈,而是对主权的挑衅。然后是更大的飞跃:纸币——金属都省了,只剩印刷品与承诺;最后是今天,连纸都省了,**钱的绝大部分只是银行系统里的电子记录**,转账不过是两行数字的增减。一路走来,物质越来越少,信任越来越纯:**钱的历史,就是人类学会「凭空信任」的历史**——认知革命种下的那颗「相信不存在之物」的种子,在这里结出了最日常也最庞大的果实。"
+  },
+  {
+   "type": "h2",
+   "text": "万能溶剂的另一面"
+  },
+  {
+   "type": "p",
+   "text": "写到这里,金钱像一曲颂歌:宽容、高效、不问出身。但赫拉利笔锋一转,记下了它的暗面。金钱是**万能溶剂**——它能溶解隔阂,也能溶解一切「本不该标价」的东西。当万物都能折算,荣誉、忠诚、正义、亲情也会被拖上秤盘:历史上,人可以被标价出售(奴隶贸易正是货币经济最「顺畅」的应用之一),法官的判决可以有行情,长老的祝福可以论次收费。传统共同体靠「有些东西千金不换」维系尊严与信任,而金钱的逻辑天生要问一句:**「不换?加价呢?」** 社区、家族、师徒之间那种不计回报的人情,被一点点置换成冷冰冰的市场关系——赫拉利说,人类金钱史的黑暗面正在于此:当一切皆可交易,人与人之间就只剩下「供需」。金钱是史上最伟大的信任机器,同时也是最高效的价值粉碎机——"
+  },
+  {
+   "type": "pull",
+   "text": "它统一了世界,方法是把世界磨成同一种粉末。"
+  },
+  {
+   "type": "figure",
+   "ftype": "提醒",
+   "svg": "<svg viewBox='0 0 560 240' xmlns='http://www.w3.org/2000/svg'><rect x='24' y='18' width='512' height='204' rx='10' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5;stroke-dasharray:7 5'/><text x='280' y='54' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--cinnabar)'>金钱的两副面孔</text><text x='150' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>作为桥梁</text><text x='150' y='120' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>不问信仰 · 不挑敌我</text><text x='150' y='144' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>让陌生人瞬间可以合作</text><line x1='280' y1='76' x2='280' y2='160' style='stroke:var(--line);stroke-width:1'/><text x='410' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>作为溶剂</text><text x='410' y='120' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>万物皆可标价</text><text x='410' y='144' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>荣誉忠诚亲情也被拖上秤</text><text x='280' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>它统一了世界——方法是把世界磨成同一种粉末</text></svg>",
+   "caption": "同一种力量的正反两面:溶解隔阂的,也在溶解「千金不换」——这是赫拉利对金钱的完整评价。"
+  },
+  {
+   "type": "h2",
+   "text": "收束:一条补注,一个回望"
+  },
+  {
+   "type": "p",
+   "text": "照例补一句冷静的旁注。「金钱=纯粹的集体信任」讲透了钱的文化本质,但经济学家会提醒:现代货币的信任并非凭空漂浮,它有制度的锚——**国家规定你必须用本币纳税,法律强制本币可以清偿债务**,央行则受托看守发行的闸门。信任是钱的灵魂,但灵魂住在国家与法律搭的房子里;赫拉利讲了灵魂,房子只是带过。另外,「以物换物的社会先于货币」这个教科书叙事本身,在人类学里也有争议——不少学者认为在货币之前,更普遍的其实是人情与债务网络,而非市场式的两两互换。"
+  },
+  {
+   "type": "p",
+   "text": "回望一下走过的路:第二章立起「主体间实在」,第四章展开「想象的秩序」,这一章你看到了那个理论**最成功的实现**——一套敌人之间都能运转的信任协议。但金钱只统一了「怎么交易」,还统一不了「归谁管」和「信什么」。下一章,另外两台缝合机登场:帝国与宗教。"
+  }
+ ]
 }

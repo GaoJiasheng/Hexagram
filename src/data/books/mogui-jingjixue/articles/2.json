@@ -1,129 +1,133 @@
 {
-  "title": "老师与相扑手:激励如何催生作弊",
-  "subtitle": "《魔鬼经济学》第二章导读——当利害够大、被抓的概率够小,体面人也会越线",
-  "centralIdea": "这一章是全书方法论的第一次完整亮相:作弊不是「坏人」的专利,而是激励结构的产物——当作弊的收益够大、被抓的成本够低,各行各业体面的人都可能越线。列维特用三组数据演示同一套侦探手法:芝加哥公立学校的老师在高利害考试压力下涂改学生答题卡,被「同班雷同的答案串」等统计异常揪出,复测后疑似班级成绩应声大跌;日本相扑手在决定升降级的「第8胜」关键局里胜率反常飙高、下次交手又反常回落,指向心照不宣的放水互惠;卖百吉饼的费尔德曼用无人看管的钱箱记下办公室白领的诚实率,发现诚实并非常数,会随办公室大小、天气、节日悄悄波动。核心信息:别急着问「谁品德坏」,先看「激励怎么摆」;再到数据里找作弊留下的统计指纹。同时守住分寸——统计异常强烈提示群体性的作弊模式,但对具体个案定性,仍需复核与谨慎。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "一位带毕业班的小学老师、一名两百多斤的相扑力士、一个在茶水间顺手拿走百吉饼的白领——这三种人有什么共同点?列维特的答案有点扎心:**在合适的激励下,他们都作过弊。** 这一章要演示的,是全书最核心的思维动作:先别问「谁品德坏」,先看「激励怎么摆」;然后钻进数据,找出作弊留下的统计指纹。读完你会发现,作弊很少是坏人的专利,它更像一面镜子——照出的往往是制度设计者自己埋下的诱惑。"
-    },
-    {
-      "type": "h2",
-      "text": "作弊,是激励的影子"
-    },
-    {
-      "type": "p",
-      "text": "经济学家爱说,经济学本质上是研究激励的学问:人们怎样得到自己想要的东西,尤其当别人也想要同一样东西的时候。激励大体有三种口味——**经济激励**(钱、饭碗、升迁)、**社会激励**(面子、别人怎么看你)、**道德激励**(自己心里那杆秤)。制度设计就是调配这三种口味;可一旦调错,后果立竿见影:书里提到一家以色列托儿所对迟到的家长罚款,结果迟到反而变多了——小额罚款把「让老师加班的愧疚」换成了「花三块钱买延时托管」,道德激励被廉价的经济激励挤跑了。"
-    },
-    {
-      "type": "p",
-      "text": "而作弊,就是激励的影子。它未必是什么惊天罪行,列维特给它的定义朴素得近乎冷酷:"
-    },
-    {
-      "type": "quote",
-      "original": "作弊是一种最原始的经济行为:用更少的付出,换到更多的东西。",
-      "translation": "这个定义把作弊从道德审判席上请了下来,放回经济学的解剖台:它和砍价、套利在结构上是同一族行为,区别只在越没越线。所以分析作弊,用的也是分析普通经济行为的那套工具——收益、成本、概率。"
-    },
-    {
-      "type": "p",
-      "text": "谁会作弊?列维特的回答是:只要利害摆得对,几乎人人都会。作弊与否,更像一道算术题:**越线的收益有多大?被抓的概率有多小?抓住了罚多重?** 当一项制度把某个指标的利害抬得极高,却没同步抬高被抓的概率,它其实是在向所有身处其中的人发出请柬。接下来的三个故事,就是三张被接下的请柬。"
-    },
-    {
-      "type": "figure",
-      "ftype": "示意图",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>作弊的算术:利害抬高,监督缺位,天平就会倾斜</text><line x1='280' y1='60' x2='280' y2='120' style='stroke:var(--ink-soft);stroke-width:2'/><path d='M120,96 L440,144' style='stroke:var(--ink);stroke-width:2.5'/><circle cx='280' cy='120' r='5' style='fill:var(--ink)'/><line x1='120' y1='96' x2='100' y2='136' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='120' y1='96' x2='140' y2='136' style='stroke:var(--ink-soft);stroke-width:1.5'/><path d='M100,136 A20,14 0 0,0 140,136' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><line x1='440' y1='144' x2='420' y2='180' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='440' y1='144' x2='460' y2='180' style='stroke:var(--ink-soft);stroke-width:1.5'/><path d='M420,180 A20,14 0 0,0 460,180' style='fill:none;stroke:var(--ink-soft);stroke-width:2'/><text x='120' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>越线的收益</text><text x='120' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>保住饭碗 · 保住段位</text><text x='120' y='250' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>白拿一个百吉饼</text><text x='440' y='222' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>越线的成本</text><text x='440' y='244' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>被抓概率 × 惩罚轻重</text><text x='440' y='262' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>监督缺位时趋近于零</text><text x='280' y='285' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>高利害指标 + 低被抓概率 = 向体面人发出的请柬</text></svg>",
-      "caption": "作弊与否常常是一道算术题:左盘是越线的收益,右盘是「被抓概率×惩罚」。本章三个故事里,都是制度先把左盘压重了。"
-    },
-    {
-      "type": "h2",
-      "text": "芝加哥的答题卡:老师替学生「考好」"
-    },
-    {
-      "type": "p",
-      "text": "第一个故事的主角,是最不该跟「作弊」二字沾边的人:老师。二十世纪九十年代中期起,芝加哥公立学校把标准化考试的分数变成了**高利害指标**:读写成绩太差的学校会被留校察看,乃至面临关停重组;成绩关系到老师的考评与升迁,一些州还为分数大涨的老师开出重奖;学生考不过还要留级。请注意这里发生了什么——考试本是测量学生的尺子,如今这把尺子同时量起了老师和学校的饭碗。**尺子一旦决定命运,握尺子的人就有了动尺子的动机。**"
-    },
-    {
-      "type": "p",
-      "text": "老师的作弊手法并不高明:考完收卷之后、送去机器阅卷之前,有一小段答题卡还在自己手里的窗口期,把学生答错的题擦掉、填上正确答案——尤其是成段成段地改。高明的是抓法。列维特和经济学家雅各布拿到了芝加哥公立学校的数据库:每个年级约三万名学生、跨越多年的七十万份答题记录、上亿个具体作答。他们不看分数看**模式**,给作弊设计了几枚统计指纹:同一个班里多名学生在同一段偏难的题目上,给出一模一样的连续正确答案串;一些学生难题全对、送分题反而错——像是改卷的手只顾了后半段;还有整班成绩某年暴涨、次年该班学生升学后又打回原形——真学会的东西不会一年就蒸发。"
-    },
-    {
-      "type": "figure",
-      "ftype": "示意图",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>答题卡上的三枚统计指纹</text><text x='40' y='62' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>① 同班雷同的连续答案串(偏难题段)</text><text x='60' y='90' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>学生甲  b a d c … </text><text x='195' y='90' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>d a c b d d a c</text><text x='60' y='114' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>学生乙  c c b a … </text><text x='195' y='114' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>d a c b d d a c</text><text x='60' y='138' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>学生丙  a d a b … </text><text x='195' y='138' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>d a c b d d a c</text><rect x='188' y='72' width='150' height='76' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5;stroke-dasharray:4 3'/><text x='352' y='114' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>← 前段各错各的,难题段整齐划一</text><text x='40' y='186' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>② 难题对、送分题错</text><text x='240' y='186' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>改卷的手只顾了后半段</text><text x='40' y='226' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>③ 成绩暴涨,次年回落</text><text x='240' y='226' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>真学会的东西不会一年就蒸发</text><path d='M40,268 L120,268 L180,244 L260,262' style='fill:none;stroke:var(--ink-soft);stroke-width:2'/><circle cx='180' cy='244' r='4' style='fill:var(--cinnabar-pure)'/><text x='300' y='268' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>作弊年份的尖峰,升学后打回原形</text></svg>",
-      "caption": "不看单个分数,看整体模式:作弊会在数据里留下正常教学留不下的形状。"
-    },
-    {
-      "type": "p",
-      "text": "算法给出的结论令人不安:**每年约有5%的班级出现教师作弊的迹象**;而且高利害政策出台之后,可疑班级明显增多,成绩垫底的班尤甚——激励一变,行为立变,教科书般的因果。更难得的是,这套算法得到了一次真刀真枪的检验:2002年,新上任的芝加哥公学负责人邓肯主动找到列维特,按算法圈出疑似班级、加上对照班,重新组织了一次突击复测——这回答题卡不经老师的手。结果毫不含糊:对照班成绩稳住了,疑似作弊的班级平均掉了一个多年级的水平,十来名教师因此丢了工作。"
-    },
-    {
-      "type": "p",
-      "text": "值得学一笔的还有处理的分寸:统计指纹指向的是「这个班的答题卡极可能被动过手脚」,而不是给某个人定罪的铁证;芝加哥方面也是**先复测、再处理**,让第二轮证据说话。数据侦探的力量在于筛出值得追查的异常,最后一步的定性,仍要留给更扎实的验证。"
-    },
-    {
-      "type": "h2",
-      "text": "相扑的第8胜:心照不宣的互惠"
-    },
-    {
-      "type": "p",
-      "text": "第二个故事发生在最讲「道」的行当里。相扑是日本的国技,力士的段位表决定一切——收入、随从、吃住待遇、社会地位,天上地下。段位怎么升降?每个大赛季打15场,**赢满8场(胜越)就升,7胜8负(负越)就降**。这套规则造出一个奇特的激励断层:第8胜价值连城,第9胜、第10胜的边际价值却小得多。于是每逢赛季最后一天,常会出现这样的对局:一边是7胜7负、生死一线的力士,一边是8胜6负、早已安全上岸的力士。前者拼的是身家性命,后者赢不赢无所谓——**你要是想安排一场默契球,再找不到比这更合适的剧本了。**"
-    },
-    {
-      "type": "p",
-      "text": "数据怎么说?列维特与合作者杜根分析了十一年间数百名顶级力士的三万多场对局。按双方过往实力推算,7胜7负者对阵8胜6负者,预期胜率约48.7%——大致五五开;实际胜率却接近**80%**。对阵9胜5负者也一样,预期约47%,实际约73%。也许只是命悬一线的人更拼命?这个解释不能排除,但接下来这刀更狠:看同一对力士**下一次**交手——这回双方都不在生死线上——上次在关键局获胜的那位,胜率骤降到约40%,再下一次才回到五五开。像不像还人情?我借你一个第8胜,下回补一场还你。"
-    },
-    {
-      "type": "figure",
-      "ftype": "图表",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>7胜7负者对阵8胜6负者:关键局的异常与回落</text><line x1='70' y1='250' x2='520' y2='250' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='70' y1='250' x2='70' y2='60' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='70' y1='160' x2='520' y2='160' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:5 4'/><text x='524' y='164' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>50%</text><rect x='110' y='162.3' width='70' height='87.7' style='fill:none;stroke:var(--ink-soft);stroke-width:2'/><text x='145' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>48.7%</text><text x='145' y='270' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>按实力预期</text><rect x='240' y='106.7' width='70' height='143.3' style='fill:var(--cinnabar-pure);opacity:0.85'/><text x='275' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>79.6%</text><text x='275' y='270' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>关键局实际</text><rect x='370' y='178' width='70' height='72' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2;stroke-dasharray:5 3'/><text x='405' y='168' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--cinnabar-pure)'>约40%</text><text x='405' y='270' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>下次交手(无关升降)</text><text x='280' y='292' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>关键局赢得反常多,下回输得反常多——互惠的形状 · 数据取自杜根与列维特的研究</text></svg>",
-      "caption": "预期五五开的关键局,实际赢了近八成;下次交手又反常输——「拼命」解释不了回落,「还人情」可以。"
-    },
-    {
-      "type": "p",
-      "text": "还有一枚旁证近乎天然实验:每当有前力士出面指控打假赛、媒体大举跟进的风口上,紧接着的赛季里这种异常就**消失了**——7胜7负者的关键局胜率老老实实回到五成上下。被抓的概率一升,天平另一端加了砝码,「默契」立刻收手。这恰好反过来印证:平时的异常不是什么玄学,就是激励在起作用。书里还记了一笔阴影:1996年,两名准备开发布会揭露内幕的前力士,在同一家医院前后脚离奇去世——传闻无法证实,但这个行当对「说破」的忌惮,可见一斑。"
-    },
-    {
-      "type": "p",
-      "text": "分寸依旧要守:统计模式强烈提示存在系统性的放水互惠,但它无法指认某一场、某一人。书出版时,相扑协会矢口否认。后记是多年之后补上的:2011年,警方在办案中查获力士间安排胜负的手机短信,打假赛丑闻坐实,春季大赛停办——那是战后六十多年里的头一次。**数据早就看见了,只是世界晚了几年才承认。**"
-    },
-    {
-      "type": "h2",
-      "text": "百吉饼与钱箱:没人看着的时候,你诚实吗"
-    },
-    {
-      "type": "p",
-      "text": "第三个故事换了个方向:不问「谁在作弊」,问「多数人到底有多诚实」。主角费尔德曼原是华盛顿一家研究机构的分析师,常年给同事带百吉饼、放个篮子自觉投钱。后来他索性辞职专职卖饼:清早把百吉饼和一只木头钱箱送进各家公司的茶水间,傍晚来收,全凭自觉付款,巅峰期一周卖出八千七百个。他保留了完整的账——哪家公司、哪一天、送几个、收回多少钱。一个体面的经济学研究岗没能留住他,他却在无意间做成了一个绝佳的田野实验:**白领们在无人监督时的诚实度,有了逐日的定量记录。**"
-    },
-    {
-      "type": "p",
-      "text": "总体答案先说:平均付款率大约87%——近九成的人在没人看着的时候照样付钱,钱箱本身更是几乎无人偷过。不付钱是「占小便宜」,撬钱箱是「偷窃」,人们心里那杆秤分得很清。但更有意思的是那13%的波动规律:**小办公室比大办公室诚实**——几十人的公司比几百人的付款率高出好几个百分点,熟人环境里社会激励更足,匿名的大机构里「反正没人知道是我」;**天气好时更诚实**,阴冷坏天付款率下滑;**节日分两种**——圣诞、感恩节这类压力大、事务多的节日周,付款率明显下跌,独立日这类纯放松的假日反而上涨;办公室**士气**也算数,员工喜欢自己工作和上司的地方付得更足,而他观察到高管楼层反倒常常付得更差。还有一条出人意料:2001年「9·11」之后,付款率跳升了约两个百分点,并且久久没有回落。"
-    },
-    {
-      "type": "figure",
-      "ftype": "结构图",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>百吉饼钱箱里的诚实率:约87%的基线,随情境波动</text><line x1='50' y1='160' x2='510' y2='160' style='stroke:var(--cinnabar-pure);stroke-width:2'/><text x='514' y='150' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>≈87%</text><text x='514' y='166' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>平均付款率</text><path d='M105,150 L105,110' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='105,104 100,114 110,114' style='fill:var(--ink-soft)'/><text x='105' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>小办公室</text><text x='105' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>熟人社会激励足</text><path d='M215,150 L215,116' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='215,110 210,120 220,120' style='fill:var(--ink-soft)'/><text x='215' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>好天气 · 轻松假日</text><path d='M330,150 L330,116' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='330,110 325,120 335,120' style='fill:var(--ink-soft)'/><text x='330' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>士气好的团队</text><path d='M445,150 L445,110' style='stroke:var(--cinnabar-pure);stroke-width:1.5'/><polygon points='445,104 440,114 450,114' style='fill:var(--cinnabar-pure)'/><text x='445' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--cinnabar-pure)'>9·11 之后 +2%</text><text x='445' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>且久未回落</text><path d='M130,170 L130,208' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='130,214 125,204 135,204' style='fill:var(--ink-soft)'/><text x='130' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>大办公室(匿名)</text><path d='M265,170 L265,208' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='265,214 260,204 270,204' style='fill:var(--ink-soft)'/><text x='265' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>阴冷坏天</text><path d='M395,170 L395,208' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='395,214 390,204 400,204' style='fill:var(--ink-soft)'/><text x='395' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>圣诞 · 感恩节周</text><text x='395' y='250' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>压力型节日,付款率下跌</text><text x='280' y='284' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>诚实不是常数:同一群人,情境与激励一变,那杆秤就悄悄偏移</text></svg>",
-      "caption": "费尔德曼的账本:多数人在无人监督时依然付钱,但诚实率会随办公室大小、天气、节日与士气规律地起伏。"
-    },
-    {
-      "type": "p",
-      "text": "这份账本其实回应了一个两千多年前的思想实验。柏拉图笔下的格劳孔讲过「古各斯的戒指」:一枚让人隐身的魔戒,谁戴上都会作恶——道德不过是怕被抓的伪装。费尔德曼的钱箱等于给这个问题跑了一次真实数据:**戴上「没人看见」的戒指,近九成的人仍然选择付钱。** 玻璃杯是大半满的。但反过来,那一成多的空缺也提醒我们:诚实不是刻在人身上的常数,它是情境的函数——把匿名做大、把压力调高、把士气搞垮,同一群好人,账面立刻难看几分。"
-    },
-    {
-      "type": "h2",
-      "text": "这一章教你的思维动作"
-    },
-    {
-      "type": "p",
-      "text": "老师、力士、白领,三个行当,一套方法。可以拆成三个动作带走。**第一,遇到出格行为,先画激励图,再谈品德**:越线的收益是什么?被抓的概率多大?罚多重?芝加哥的老师不是突然堕落了,是考试突然决定饭碗了;相扑的异常不在人心,在「第8胜」那个陡峭的断层上。**第二,到数据里找模式,别只听说辞**:作弊会留下正常行为留不下的统计形状——雷同的答案串、反常的胜率起落、规律波动的付款率。**第三,设计制度前,先替钻空子的人想一遍**:任何高利害的单一指标,都会诱使被考核者优化指标本身而不是指标背后的东西——这也是后人常说的「指标一旦成为目标,就不再是好指标」,与本章互为注脚。"
-    },
-    {
-      "type": "quote",
-      "original": "道德代表着人们希望世界如何运转,经济学则代表着世界实际上如何运转。",
-      "translation": "全书反复回响的一句话,在这一章落到实处:与其指望布道让人变好,不如把激励摆对——降低单一指标的利害、提高越线被抓的概率、维护小环境的士气,比一百场师德讲座更管用。"
-    },
-    {
-      "type": "p",
-      "text": "最后留一句读法上的分寸。这一章最容易读歪成两种极端:一种是「原来人人皆贼」的冷嘲——错了,费尔德曼的钱箱恰恰证明多数人多数时候是诚实的;另一种是把统计异常当成给具体某人定罪的判决书——也错了,列维特自己就守着「先复测、再处理」「模式提示而非个案铁证」的边界,相扑的实锤也是等到多年后的短信证据才落地。**统计能照出群体的影子,个案的定性要交给更硬的证据。** 拿捏住这个分寸,你才算真正学会了这一章:既敢用数据怀疑一切,又不滥用数据审判任何一个具体的人。"
-    }
-  ]
+ "title": "老师与相扑手:激励如何催生作弊",
+ "subtitle": "《魔鬼经济学》第二章导读——当利害够大、被抓的概率够小,体面人也会越线",
+ "centralIdea": "这一章是全书方法论的第一次完整亮相:作弊不是「坏人」的专利,而是激励结构的产物——当作弊的收益够大、被抓的成本够低,各行各业体面的人都可能越线。列维特用三组数据演示同一套侦探手法:芝加哥公立学校的老师在高利害考试压力下涂改学生答题卡,被「同班雷同的答案串」等统计异常揪出,复测后疑似班级成绩应声大跌;日本相扑手在决定升降级的「第8胜」关键局里胜率反常飙高、下次交手又反常回落,指向心照不宣的放水互惠;卖百吉饼的费尔德曼用无人看管的钱箱记下办公室白领的诚实率,发现诚实并非常数,会随办公室大小、天气、节日悄悄波动。核心信息:别急着问「谁品德坏」,先看「激励怎么摆」;再到数据里找作弊留下的统计指纹。同时守住分寸——统计异常强烈提示群体性的作弊模式,但对具体个案定性,仍需复核与谨慎。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "一位带毕业班的小学老师、一名两百多斤的相扑力士、一个在茶水间顺手拿走百吉饼的白领——这三种人有什么共同点?列维特的答案有点扎心:**在合适的激励下,他们都作过弊。** 这一章要演示的,是全书最核心的思维动作:先别问「谁品德坏」,先看「激励怎么摆」;然后钻进数据,找出作弊留下的统计指纹。读完你会发现,作弊很少是坏人的专利,它更像一面镜子——照出的往往是制度设计者自己埋下的诱惑。"
+  },
+  {
+   "type": "h2",
+   "text": "作弊,是激励的影子"
+  },
+  {
+   "type": "p",
+   "text": "经济学家爱说,经济学本质上是研究激励的学问:人们怎样得到自己想要的东西,尤其当别人也想要同一样东西的时候。激励大体有三种口味——**经济激励**(钱、饭碗、升迁)、**社会激励**(面子、别人怎么看你)、**道德激励**(自己心里那杆秤)。制度设计就是调配这三种口味;可一旦调错,后果立竿见影:书里提到一家以色列托儿所对迟到的家长罚款,结果迟到反而变多了——小额罚款把「让老师加班的愧疚」换成了「花三块钱买延时托管」,道德激励被廉价的经济激励挤跑了。"
+  },
+  {
+   "type": "p",
+   "text": "而作弊,就是激励的影子。它未必是什么惊天罪行,列维特给它的定义朴素得近乎冷酷:"
+  },
+  {
+   "type": "quote",
+   "original": "作弊是一种最原始的经济行为:用更少的付出,换到更多的东西。",
+   "translation": "这个定义把作弊从道德审判席上请了下来,放回经济学的解剖台:它和砍价、套利在结构上是同一族行为,区别只在越没越线。所以分析作弊,用的也是分析普通经济行为的那套工具——收益、成本、概率。"
+  },
+  {
+   "type": "p",
+   "text": "谁会作弊?列维特的回答是:只要利害摆得对,几乎人人都会。作弊与否,更像一道算术题:**越线的收益有多大?被抓的概率有多小?抓住了罚多重?** 当一项制度把某个指标的利害抬得极高,却没同步抬高被抓的概率,它其实是在向所有身处其中的人发出请柬。接下来的三个故事,就是三张被接下的请柬。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>作弊的算术:利害抬高,监督缺位,天平就会倾斜</text><line x1='280' y1='60' x2='280' y2='120' style='stroke:var(--ink-soft);stroke-width:2'/><path d='M120,96 L440,144' style='stroke:var(--ink);stroke-width:2.5'/><circle cx='280' cy='120' r='5' style='fill:var(--ink)'/><line x1='120' y1='96' x2='100' y2='136' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='120' y1='96' x2='140' y2='136' style='stroke:var(--ink-soft);stroke-width:1.5'/><path d='M100,136 A20,14 0 0,0 140,136' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><line x1='440' y1='144' x2='420' y2='180' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='440' y1='144' x2='460' y2='180' style='stroke:var(--ink-soft);stroke-width:1.5'/><path d='M420,180 A20,14 0 0,0 460,180' style='fill:none;stroke:var(--ink-soft);stroke-width:2'/><text x='120' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>越线的收益</text><text x='120' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>保住饭碗 · 保住段位</text><text x='120' y='250' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>白拿一个百吉饼</text><text x='440' y='222' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>越线的成本</text><text x='440' y='244' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>被抓概率 × 惩罚轻重</text><text x='440' y='262' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>监督缺位时趋近于零</text><text x='280' y='285' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>高利害指标 + 低被抓概率 = 向体面人发出的请柬</text></svg>",
+   "caption": "作弊与否常常是一道算术题:左盘是越线的收益,右盘是「被抓概率×惩罚」。本章三个故事里,都是制度先把左盘压重了。"
+  },
+  {
+   "type": "h2",
+   "text": "芝加哥的答题卡:老师替学生「考好」"
+  },
+  {
+   "type": "p",
+   "text": "第一个故事的主角,是最不该跟「作弊」二字沾边的人:老师。二十世纪九十年代中期起,芝加哥公立学校把标准化考试的分数变成了**高利害指标**:读写成绩太差的学校会被留校察看,乃至面临关停重组;成绩关系到老师的考评与升迁,一些州还为分数大涨的老师开出重奖;学生考不过还要留级。请注意这里发生了什么——考试本是测量学生的尺子,如今这把尺子同时量起了老师和学校的饭碗。**尺子一旦决定命运,握尺子的人就有了动尺子的动机。**"
+  },
+  {
+   "type": "p",
+   "text": "老师的作弊手法并不高明:考完收卷之后、送去机器阅卷之前,有一小段答题卡还在自己手里的窗口期,把学生答错的题擦掉、填上正确答案——尤其是成段成段地改。高明的是抓法。列维特和经济学家雅各布拿到了芝加哥公立学校的数据库:每个年级约三万名学生、跨越多年的七十万份答题记录、上亿个具体作答。他们不看分数看**模式**,给作弊设计了几枚统计指纹:同一个班里多名学生在同一段偏难的题目上,给出一模一样的连续正确答案串;一些学生难题全对、送分题反而错——像是改卷的手只顾了后半段;还有整班成绩某年暴涨、次年该班学生升学后又打回原形——真学会的东西不会一年就蒸发。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>答题卡上的三枚统计指纹</text><text x='40' y='62' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>① 同班雷同的连续答案串(偏难题段)</text><text x='60' y='90' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>学生甲  b a d c … </text><text x='195' y='90' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>d a c b d d a c</text><text x='60' y='114' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>学生乙  c c b a … </text><text x='195' y='114' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>d a c b d d a c</text><text x='60' y='138' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>学生丙  a d a b … </text><text x='195' y='138' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>d a c b d d a c</text><rect x='188' y='72' width='150' height='76' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5;stroke-dasharray:4 3'/><text x='352' y='114' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>← 前段各错各的,难题段整齐划一</text><text x='40' y='186' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>② 难题对、送分题错</text><text x='240' y='186' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>改卷的手只顾了后半段</text><text x='40' y='226' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>③ 成绩暴涨,次年回落</text><text x='240' y='226' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>真学会的东西不会一年就蒸发</text><path d='M40,268 L120,268 L180,244 L260,262' style='fill:none;stroke:var(--ink-soft);stroke-width:2'/><circle cx='180' cy='244' r='4' style='fill:var(--cinnabar-pure)'/><text x='300' y='268' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>作弊年份的尖峰,升学后打回原形</text></svg>",
+   "caption": "不看单个分数,看整体模式:作弊会在数据里留下正常教学留不下的形状。"
+  },
+  {
+   "type": "p",
+   "text": "算法给出的结论令人不安:**每年约有5%的班级出现教师作弊的迹象**;而且高利害政策出台之后,可疑班级明显增多,成绩垫底的班尤甚——激励一变,行为立变,教科书般的因果。更难得的是,这套算法得到了一次真刀真枪的检验:2002年,新上任的芝加哥公学负责人邓肯主动找到列维特,按算法圈出疑似班级、加上对照班,重新组织了一次突击复测——这回答题卡不经老师的手。结果毫不含糊:对照班成绩稳住了,疑似作弊的班级平均掉了一个多年级的水平,十来名教师因此丢了工作。"
+  },
+  {
+   "type": "p",
+   "text": "值得学一笔的还有处理的分寸:统计指纹指向的是「这个班的答题卡极可能被动过手脚」,而不是给某个人定罪的铁证;芝加哥方面也是**先复测、再处理**,让第二轮证据说话。数据侦探的力量在于筛出值得追查的异常,最后一步的定性,仍要留给更扎实的验证。"
+  },
+  {
+   "type": "h2",
+   "text": "相扑的第8胜:心照不宣的互惠"
+  },
+  {
+   "type": "p",
+   "text": "第二个故事发生在最讲「道」的行当里。相扑是日本的国技,力士的段位表决定一切——收入、随从、吃住待遇、社会地位,天上地下。段位怎么升降?每个大赛季打15场,**赢满8场(胜越)就升,7胜8负(负越)就降**。这套规则造出一个奇特的激励断层:第8胜价值连城,第9胜、第10胜的边际价值却小得多。于是每逢赛季最后一天,常会出现这样的对局:一边是7胜7负、生死一线的力士,一边是8胜6负、早已安全上岸的力士。前者拼的是身家性命,后者赢不赢无所谓——**你要是想安排一场默契球,再找不到比这更合适的剧本了。**"
+  },
+  {
+   "type": "p",
+   "text": "数据怎么说?列维特与合作者杜根分析了十一年间数百名顶级力士的三万多场对局。按双方过往实力推算,7胜7负者对阵8胜6负者,预期胜率约48.7%——大致五五开;实际胜率却接近**80%**。对阵9胜5负者也一样,预期约47%,实际约73%。也许只是命悬一线的人更拼命?这个解释不能排除,但接下来这刀更狠:看同一对力士**下一次**交手——这回双方都不在生死线上——上次在关键局获胜的那位,胜率骤降到约40%,再下一次才回到五五开。像不像还人情?我借你一个第8胜,下回补一场还你。"
+  },
+  {
+   "type": "figure",
+   "ftype": "图表",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>7胜7负者对阵8胜6负者:关键局的异常与回落</text><line x1='70' y1='250' x2='520' y2='250' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='70' y1='250' x2='70' y2='60' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='70' y1='160' x2='520' y2='160' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:5 4'/><text x='524' y='164' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>50%</text><rect x='110' y='162.3' width='70' height='87.7' style='fill:none;stroke:var(--ink-soft);stroke-width:2'/><text x='145' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>48.7%</text><text x='145' y='270' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>按实力预期</text><rect x='240' y='106.7' width='70' height='143.3' style='fill:var(--cinnabar-pure);opacity:0.85'/><text x='275' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>79.6%</text><text x='275' y='270' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>关键局实际</text><rect x='370' y='178' width='70' height='72' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2;stroke-dasharray:5 3'/><text x='405' y='168' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--cinnabar-pure)'>约40%</text><text x='405' y='270' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>下次交手(无关升降)</text><text x='280' y='292' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>关键局赢得反常多,下回输得反常多——互惠的形状 · 数据取自杜根与列维特的研究</text></svg>",
+   "caption": "预期五五开的关键局,实际赢了近八成;下次交手又反常输——「拼命」解释不了回落,「还人情」可以。"
+  },
+  {
+   "type": "p",
+   "text": "还有一枚旁证近乎天然实验:每当有前力士出面指控打假赛、媒体大举跟进的风口上,紧接着的赛季里这种异常就**消失了**——7胜7负者的关键局胜率老老实实回到五成上下。被抓的概率一升,天平另一端加了砝码,「默契」立刻收手。这恰好反过来印证:平时的异常不是什么玄学,就是激励在起作用。书里还记了一笔阴影:1996年,两名准备开发布会揭露内幕的前力士,在同一家医院前后脚离奇去世——传闻无法证实,但这个行当对「说破」的忌惮,可见一斑。"
+  },
+  {
+   "type": "p",
+   "text": "分寸依旧要守:统计模式强烈提示存在系统性的放水互惠,但它无法指认某一场、某一人。书出版时,相扑协会矢口否认。后记是多年之后补上的:2011年,警方在办案中查获力士间安排胜负的手机短信,打假赛丑闻坐实,春季大赛停办——那是战后六十多年里的头一次。**数据早就看见了,只是世界晚了几年才承认。**"
+  },
+  {
+   "type": "h2",
+   "text": "百吉饼与钱箱:没人看着的时候,你诚实吗"
+  },
+  {
+   "type": "p",
+   "text": "第三个故事换了个方向:不问「谁在作弊」,问「多数人到底有多诚实」。主角费尔德曼原是华盛顿一家研究机构的分析师,常年给同事带百吉饼、放个篮子自觉投钱。后来他索性辞职专职卖饼:清早把百吉饼和一只木头钱箱送进各家公司的茶水间,傍晚来收,全凭自觉付款,巅峰期一周卖出八千七百个。他保留了完整的账——哪家公司、哪一天、送几个、收回多少钱。一个体面的经济学研究岗没能留住他,他却在无意间做成了一个绝佳的田野实验:"
+  },
+  {
+   "type": "pull",
+   "text": "白领们在无人监督时的诚实度,有了逐日的定量记录。"
+  },
+  {
+   "type": "p",
+   "text": "总体答案先说:平均付款率大约87%——近九成的人在没人看着的时候照样付钱,钱箱本身更是几乎无人偷过。不付钱是「占小便宜」,撬钱箱是「偷窃」,人们心里那杆秤分得很清。但更有意思的是那13%的波动规律:**小办公室比大办公室诚实**——几十人的公司比几百人的付款率高出好几个百分点,熟人环境里社会激励更足,匿名的大机构里「反正没人知道是我」;**天气好时更诚实**,阴冷坏天付款率下滑;**节日分两种**——圣诞、感恩节这类压力大、事务多的节日周,付款率明显下跌,独立日这类纯放松的假日反而上涨;办公室**士气**也算数,员工喜欢自己工作和上司的地方付得更足,而他观察到高管楼层反倒常常付得更差。还有一条出人意料:2001年「9·11」之后,付款率跳升了约两个百分点,并且久久没有回落。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>百吉饼钱箱里的诚实率:约87%的基线,随情境波动</text><line x1='50' y1='160' x2='510' y2='160' style='stroke:var(--cinnabar-pure);stroke-width:2'/><text x='514' y='150' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>≈87%</text><text x='514' y='166' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>平均付款率</text><path d='M105,150 L105,110' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='105,104 100,114 110,114' style='fill:var(--ink-soft)'/><text x='105' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>小办公室</text><text x='105' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>熟人社会激励足</text><path d='M215,150 L215,116' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='215,110 210,120 220,120' style='fill:var(--ink-soft)'/><text x='215' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>好天气 · 轻松假日</text><path d='M330,150 L330,116' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='330,110 325,120 335,120' style='fill:var(--ink-soft)'/><text x='330' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>士气好的团队</text><path d='M445,150 L445,110' style='stroke:var(--cinnabar-pure);stroke-width:1.5'/><polygon points='445,104 440,114 450,114' style='fill:var(--cinnabar-pure)'/><text x='445' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--cinnabar-pure)'>9·11 之后 +2%</text><text x='445' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>且久未回落</text><path d='M130,170 L130,208' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='130,214 125,204 135,204' style='fill:var(--ink-soft)'/><text x='130' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>大办公室(匿名)</text><path d='M265,170 L265,208' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='265,214 260,204 270,204' style='fill:var(--ink-soft)'/><text x='265' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>阴冷坏天</text><path d='M395,170 L395,208' style='stroke:var(--ink-soft);stroke-width:1.5'/><polygon points='395,214 390,204 400,204' style='fill:var(--ink-soft)'/><text x='395' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>圣诞 · 感恩节周</text><text x='395' y='250' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>压力型节日,付款率下跌</text><text x='280' y='284' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>诚实不是常数:同一群人,情境与激励一变,那杆秤就悄悄偏移</text></svg>",
+   "caption": "费尔德曼的账本:多数人在无人监督时依然付钱,但诚实率会随办公室大小、天气、节日与士气规律地起伏。"
+  },
+  {
+   "type": "p",
+   "text": "这份账本其实回应了一个两千多年前的思想实验。柏拉图笔下的格劳孔讲过「古各斯的戒指」:一枚让人隐身的魔戒,谁戴上都会作恶——道德不过是怕被抓的伪装。费尔德曼的钱箱等于给这个问题跑了一次真实数据:**戴上「没人看见」的戒指,近九成的人仍然选择付钱。** 玻璃杯是大半满的。但反过来,那一成多的空缺也提醒我们:诚实不是刻在人身上的常数,它是情境的函数——把匿名做大、把压力调高、把士气搞垮,同一群好人,账面立刻难看几分。"
+  },
+  {
+   "type": "h2",
+   "text": "这一章教你的思维动作"
+  },
+  {
+   "type": "p",
+   "text": "老师、力士、白领,三个行当,一套方法。可以拆成三个动作带走。**第一,遇到出格行为,先画激励图,再谈品德**:越线的收益是什么?被抓的概率多大?罚多重?芝加哥的老师不是突然堕落了,是考试突然决定饭碗了;相扑的异常不在人心,在「第8胜」那个陡峭的断层上。**第二,到数据里找模式,别只听说辞**:作弊会留下正常行为留不下的统计形状——雷同的答案串、反常的胜率起落、规律波动的付款率。**第三,设计制度前,先替钻空子的人想一遍**:任何高利害的单一指标,都会诱使被考核者优化指标本身而不是指标背后的东西——这也是后人常说的「指标一旦成为目标,就不再是好指标」,与本章互为注脚。"
+  },
+  {
+   "type": "quote",
+   "original": "道德代表着人们希望世界如何运转,经济学则代表着世界实际上如何运转。",
+   "translation": "全书反复回响的一句话,在这一章落到实处:与其指望布道让人变好,不如把激励摆对——降低单一指标的利害、提高越线被抓的概率、维护小环境的士气,比一百场师德讲座更管用。"
+  },
+  {
+   "type": "p",
+   "text": "最后留一句读法上的分寸。这一章最容易读歪成两种极端:一种是「原来人人皆贼」的冷嘲——错了,费尔德曼的钱箱恰恰证明多数人多数时候是诚实的;另一种是把统计异常当成给具体某人定罪的判决书——也错了,列维特自己就守着「先复测、再处理」「模式提示而非个案铁证」的边界,相扑的实锤也是等到多年后的短信证据才落地。**统计能照出群体的影子,个案的定性要交给更硬的证据。** 拿捏住这个分寸,你才算真正学会了这一章:既敢用数据怀疑一切,又不滥用数据审判任何一个具体的人。"
+  }
+ ]
 }

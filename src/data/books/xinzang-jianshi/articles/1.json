@@ -1,122 +1,126 @@
 {
-  "title": "心之为物:从圣物到水泵",
-  "subtitle": "为什么我们既说「心碎」,又把它当作一台泵——Sandeep Jauhar《心脏简史》第一章导读",
-  "centralIdea": "人类对心脏有两副面孔的想象。几千年来,心是灵魂与情感的居所——爱、勇气、悲伤都「住」在心里,直到今天我们的语言仍这样说:心动、心碎、用心。而现代医学做了一件几乎相反的事,它把心脏还原成一台由肌肉、瓣膜和管道组成的机械水泵,一台可以被打开、被修理、甚至被替换的机器。Jauhar 作为一名心脏科医生,同时背着一段沉重的家族心脏病史,他写这本书要讲两件交织的事:人类如何在科学上把心脏从「神圣不可侵犯的禁区」变成「可维修的泵」;以及,为什么即便泵的隐喻已经无比成功,那颗「情感之心」也从未被真正取代——到本书最后你会看到,心碎不只是修辞,情绪确实能伤到那台泵。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "请你留意一下自己是怎么说话的。喜欢一个人,你说「心动」;被辜负了,你说「心碎」;做事认真,你说「用心」;藏着算计,叫「别有用心」。没有人会说「肝动」或者「脾碎」——所有关于爱、勇气、悲伤的重量,我们都不假思索地压在同一个器官上:**心**。可如果你去问一位心脏科医生,心是什么,他会告诉你另一个答案:那是一块拳头大的肌肉,一台每天不知疲倦泵血约十万次的机器。《心脏简史》整本书,就活在这两个答案之间——一边是**灵魂的居所**,一边是**一台水泵**,而第一章,作者要先把这道裂缝摊开给你看。"
-    },
-    {
-      "type": "figure",
-      "ftype": "金句卡",
-      "caption": "全书的起点,就是这句看似矛盾、却谁都懂的话。",
-      "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"18\" y=\"18\" width=\"524\" height=\"264\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"2\"/><text x=\"52\" y=\"88\" style=\"fill:var(--cinnabar);font-size:44px;font-weight:700\">“</text><text x=\"280\" y=\"132\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:25px;font-weight:700\">心,既是一块会跳动的肌肉,</text><text x=\"280\" y=\"174\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:25px;font-weight:700\">也是一处安放灵魂的居所。</text><line x1=\"232\" y1=\"212\" x2=\"328\" y2=\"212\" style=\"stroke:var(--cinnabar)\" stroke-width=\"2\"/><text x=\"280\" y=\"244\" text-anchor=\"middle\" style=\"fill:var(--ink-soft);font-size:14px\">——《心脏简史》开篇的两副面孔</text></svg>"
-    },
-    {
-      "type": "h2",
-      "text": "先说清楚:这一章在全书的什么位置"
-    },
-    {
-      "type": "p",
-      "text": "《心脏简史》讲的是一部「人类如何搞懂并驯服心脏」的历史。往后的章节会一个个登场:血液怎么在体内循环、第一次有人斗胆缝合一颗跳动的心、医生给自己心脏插进一根导管、把人「关掉」再打开做手术、用电击和起搏器管住心律、把一颗心从一个人身上换到另一个人身上……它像一部惊心动魄的探险史。"
-    },
-    {
-      "type": "p",
-      "text": "但作者没有一上来就冲进手术室。他先在第一章做了一件更根本的事:**交代人类是带着一种怎样的「敬畏」在面对心脏的**。因为只有先明白古人为什么觉得心不可触碰,你才会明白,后面每一位敢动刀的医生,冒犯的不只是一块肌肉,而是几千年来「心是灵魂所在」的信念。这一章是全书的地基,它立起了整本书的那根主轴——一场「从圣物到水泵」的漫长翻转。"
-    },
-    {
-      "type": "h2",
-      "text": "第一副面孔:心是灵魂与情感的家"
-    },
-    {
-      "type": "p",
-      "text": "在人类绝大部分历史里,心不是用来「泵血」的,而是用来「装人」的——装下你的爱、你的胆量、你的悲伤,装下那个「真正的你」。古埃及人相信,人死后要接受审判,称量的不是脑子,而是心脏:把心放在天平一端,另一端是象征真理与公正的一根羽毛,心若比羽毛重,便说明这一生罪孽深重,灵魂就要被吞噬。有意思的是,他们做木乃伊时会小心地把心留在体内,却毫不客气地把脑子从鼻孔里掏出来扔掉——在他们看来,脑子无关紧要,而心才是要带去接受审判的那个「你」。你的一生是善是恶,由你的**心**来作证。"
-    },
-    {
-      "type": "p",
-      "text": "亚里士多德干脆认为,心才是思想与感觉的中枢,大脑不过是给热血降温的散热器。这个今天听起来近乎荒唐的看法,却统治了西方一千多年。原因其实不难体会:当你害怕、当你动情、当你说谎心虚,**扑通乱跳的是心,不是脑**——身体给出的信号如此直接、如此诚实,人们自然而然就把情感的源头指认成了它。你没法命令心不跳,正如你没法命令自己不爱、不怕,这种「管不住」的感觉,更让心显得像是灵魂在身体里的真正住址。"
-    },
-    {
-      "type": "p",
-      "text": "语言,就是这套古老信念留下的化石,而且是活着的化石。今天我们说「铭记在心」「问心无愧」「心心相印」「痛彻心扉」,情人节的符号是一颗心而不是一颗大脑——用的其实还是几千年前那套心脏观。请注意这件事有多惊人:科学早已证明情感产生在大脑里,可我们的日常语言,直到今天仍然固执地把爱恨悲喜统统安放在胸口那颗器官上。这份「不肯改口」,正是本书想追问的谜题之一。"
-    },
-    {
-      "type": "quote",
-      "original": "几乎每一种文化,都把心当作情感与灵魂的所在——爱、勇气、悲伤,都被安放在这颗器官里。",
-      "translation": ""
-    },
-    {
-      "type": "figure",
-      "ftype": "对比图",
-      "caption": "同一个器官,两套截然不同的想象。全书就在这两栏之间来回。",
-      "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"280\" y1=\"30\" x2=\"280\" y2=\"272\" style=\"stroke:var(--line)\" stroke-width=\"2\" stroke-dasharray=\"5 5\"/><text x=\"140\" y=\"56\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:19px;font-weight:700\">情感之心</text><text x=\"420\" y=\"56\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:19px;font-weight:700\">机械之心</text><text x=\"140\" y=\"78\" text-anchor=\"middle\" style=\"fill:var(--ink-faint);font-size:13px\">古老而深情</text><text x=\"420\" y=\"78\" text-anchor=\"middle\" style=\"fill:var(--ink-faint);font-size:13px\">现代而冷静</text><text x=\"140\" y=\"128\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:15px\">爱与勇气的居所</text><text x=\"140\" y=\"168\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:15px\">悲伤住在这里</text><text x=\"140\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:15px\">称量善恶的天平</text><text x=\"140\" y=\"248\" text-anchor=\"middle\" style=\"fill:var(--ink-soft);font-size:14px\">「心动·心碎·用心」</text><text x=\"420\" y=\"128\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:15px\">一台会跳的水泵</text><text x=\"420\" y=\"168\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:15px\">肌肉·瓣膜·管道</text><text x=\"420\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:15px\">可打开·可修理</text><text x=\"420\" y=\"248\" text-anchor=\"middle\" style=\"fill:var(--ink-soft);font-size:14px\">「每天泵血约十万次」</text></svg>"
-    },
-    {
-      "type": "h2",
-      "text": "第二副面孔:心只是一台泵"
-    },
-    {
-      "type": "p",
-      "text": "翻转发生在近代。当解剖刀真正划开胸腔,人们看到的不是什么灵魂的宝座,而是一个结构惊人清晰的机械装置:四个腔室、几片单向开合的瓣膜、一进一出两套管道。它做的事简单得近乎粗暴——把血抽进来,再挤出去,一辈子不停。它就是一台**泵**。"
-    },
-    {
-      "type": "p",
-      "text": "这台泵的构造也一点不神秘:左右两半各管一套循环,四个腔室像上下两层的房间,中间那几片瓣膜就是单向阀门——血只许朝一个方向走,想倒流,阀门「啪」地就关上了。你把耳朵贴在别人胸口听到的那声「扑通」,其实就是这些阀门相继关闭的声音。它的数据更让人肃然起敬:一分钟跳六七十下,一天约十万次,一年三四千万次,几十年下来跳动数十亿次而几乎从不请假;它每天推动的血液足以灌满一个小小的泳池。把心理解成泵,是现代医学最关键的一次「祛魅」——正是因为不再把它当成神圣不可碰的圣物,而是当成一台会磨损、会堵塞、会漏的机器,医生才终于敢去想那个大逆不道的念头:机器会坏,那么坏了的机器,是不是就能**修**?"
-    },
-    {
-      "type": "p",
-      "text": "但通向这个念头的路极其漫长。哪怕到了十九世纪末,顶尖的外科权威还断言,任何胆敢在心脏上缝一针的医生,都会失去同行的尊重——心脏被视为外科的**禁区**,一处连最大胆的刀也不该触碰的地方。你几乎能从中听见那副古老面孔的回声:动这颗器官,冒犯的不是肌肉,是禁忌本身。这本书后面所有的突破,都是在一次次冒犯这道禁忌。"
-    },
-    {
-      "type": "quote",
-      "original": "把心脏理解成一台泵,是一场革命——正因为它只是机器,坏了的机器才可能被修好。",
-      "translation": ""
-    },
-    {
-      "type": "figure",
-      "ftype": "时间线",
-      "caption": "本书的主轴:心脏在人类眼中,如何从「不可触碰」一路走到「可以维修」。",
-      "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"70\" y1=\"150\" x2=\"490\" y2=\"150\" style=\"stroke:var(--line)\" stroke-width=\"2\"/><path d=\"M485 145 L498 150 L485 155 Z\" style=\"fill:var(--ink-soft)\"/><circle cx=\"90\" cy=\"150\" r=\"11\" style=\"fill:var(--cinnabar)\"/><circle cx=\"280\" cy=\"150\" r=\"11\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"2\"/><circle cx=\"470\" cy=\"150\" r=\"11\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"2\"/><text x=\"90\" y=\"115\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:16px;font-weight:700\">圣物</text><text x=\"90\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--ink-soft);font-size:13px\">灵魂居所</text><text x=\"90\" y=\"210\" text-anchor=\"middle\" style=\"fill:var(--ink-soft);font-size:13px\">不可触碰</text><text x=\"280\" y=\"115\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:16px;font-weight:700\">禁区</text><text x=\"280\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--ink-soft);font-size:13px\">解剖看清结构</text><text x=\"280\" y=\"210\" text-anchor=\"middle\" style=\"fill:var(--ink-soft);font-size:13px\">仍不敢下刀</text><text x=\"470\" y=\"115\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:16px;font-weight:700\">水泵</text><text x=\"470\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--ink-soft);font-size:13px\">一台机器</text><text x=\"470\" y=\"210\" text-anchor=\"middle\" style=\"fill:var(--ink-soft);font-size:13px\">可打开可维修</text><text x=\"280\" y=\"268\" text-anchor=\"middle\" style=\"fill:var(--ink-faint);font-size:12px\">全书后面每一章,都是这条线上的一步</text></svg>"
-    },
-    {
-      "type": "h2",
-      "text": "为什么是他来写这本书:一名医生的私人理由"
-    },
-    {
-      "type": "p",
-      "text": "Jauhar 不是站在旁观者的位置写这段历史的。他是一名心脏科医生,每天在诊室里对着造影片、心电图和一颗颗真实的、正在出问题的心。但他还背着另一样东西:**沉重的家族心脏病史**。心脏病在他的血脉里一代代传下来,像一份提前写好、却不知何时兑现的判决书。这让他对「心」的理解,天然是双重的——它既是他用手术和药物去对付的一台机器,也是随时可能夺走他至亲、乃至他自己的那个东西。"
-    },
-    {
-      "type": "p",
-      "text": "正是这份双重身份,让这本书没有写成一部冷冰冰的技术编年史。他讲哈维、讲第一次缝心、讲起搏器,是在讲科学如何一步步「驯服」这台泵;但他始终没有放下另一根线——那颗**会因恐惧而狂跳、会因悲痛而受损**的情感之心。他想追问的是:当我们已经能给心脏搭桥、换瓣、移植,我们是不是就真的读懂它了?还是说,有些东西,泵的隐喻永远解释不了?"
-    },
-    {
-      "type": "figure",
-      "ftype": "结构图",
-      "caption": "全书的两条线始终并行:一条讲「怎么修这台泵」,一条问「情感之心去哪了」。",
-      "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"60\" y=\"50\" width=\"180\" height=\"120\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"2\"/><rect x=\"320\" y=\"50\" width=\"180\" height=\"120\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"2\"/><text x=\"150\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:16px;font-weight:700\">科学之线</text><text x=\"150\" y=\"120\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:13px\">循环·缝合·手术</text><text x=\"150\" y=\"144\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:13px\">起搏·移植</text><text x=\"410\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:16px;font-weight:700\">情感之线</text><text x=\"410\" y=\"120\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:13px\">爱·恐惧·悲伤</text><text x=\"410\" y=\"144\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:13px\">「心碎」是真的吗</text><path d=\"M150 170 L280 235\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><path d=\"M410 170 L280 235\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><rect x=\"175\" y=\"236\" width=\"210\" height=\"40\" rx=\"20\" style=\"fill:var(--cinnabar)\"/><text x=\"280\" y=\"261\" text-anchor=\"middle\" style=\"fill:var(--paper-raised);font-size:15px;font-weight:700\">同一颗心,两种真相</text></svg>"
-    },
-    {
-      "type": "h2",
-      "text": "留一道悬念:心碎,可能真的会伤心"
-    },
-    {
-      "type": "p",
-      "text": "第一章最耐人寻味的地方,是它没有让「泵」彻底赢过「灵魂」。作者反而暗示:那副被现代医学「淘汰」的古老面孔,也许并不全错。他埋下一个会在全书末尾引爆的悬念——**情绪也许真的能损伤这台泵**。剧烈的悲痛、极度的惊吓,确实可能让一颗结构完好的心突然「罢工」,这在医学上是有名字、有病例的真实现象。也就是说,「心碎」不只是诗人的比喻。"
-    },
-    {
-      "type": "quote",
-      "original": "语言把情感放进心里,或许并不只是修辞——极度的悲伤,真的能伤到这颗器官。",
-      "translation": ""
-    },
-    {
-      "type": "p",
-      "text": "所以这一章其实提出了一个贯穿全书的漂亮问题:我们花了几百年,好不容易把心从「圣物」降格成「水泵」,才换来今天修补它的能力;可到头来,我们又发现那颗「情感之心」并没有被泵完全取代——它以另一种方式,重新回到了医学的视野里。**科学驯服了心脏,却没能把心从我们的语言和情感里搬走。** 这两副面孔,谁也没赢，谁也没输——它们是同一颗心。"
-    },
-    {
-      "type": "p",
-      "text": "读完第一章,你会带着一个全新的眼光进入后面的探险:每当有一位医生鼓起勇气去碰那颗心,他挑战的从来不只是技术的极限,还有人类几千年积累下来的、对这颗器官近乎宗教般的敬畏。而这份敬畏之所以至今没有消散,或许正是因为——在最深处,我们始终隐隐知道,那不只是一台泵。"
-    }
-  ]
+ "title": "心之为物:从圣物到水泵",
+ "subtitle": "为什么我们既说「心碎」,又把它当作一台泵——Sandeep Jauhar《心脏简史》第一章导读",
+ "centralIdea": "人类对心脏有两副面孔的想象。几千年来,心是灵魂与情感的居所——爱、勇气、悲伤都「住」在心里,直到今天我们的语言仍这样说:心动、心碎、用心。而现代医学做了一件几乎相反的事,它把心脏还原成一台由肌肉、瓣膜和管道组成的机械水泵,一台可以被打开、被修理、甚至被替换的机器。Jauhar 作为一名心脏科医生,同时背着一段沉重的家族心脏病史,他写这本书要讲两件交织的事:人类如何在科学上把心脏从「神圣不可侵犯的禁区」变成「可维修的泵」;以及,为什么即便泵的隐喻已经无比成功,那颗「情感之心」也从未被真正取代——到本书最后你会看到,心碎不只是修辞,情绪确实能伤到那台泵。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "请你留意一下自己是怎么说话的。喜欢一个人,你说「心动」;被辜负了,你说「心碎」;做事认真,你说「用心」;藏着算计,叫「别有用心」。没有人会说「肝动」或者「脾碎」——所有关于爱、勇气、悲伤的重量,我们都不假思索地压在同一个器官上:**心**。可如果你去问一位心脏科医生,心是什么,他会告诉你另一个答案:那是一块拳头大的肌肉,一台每天不知疲倦泵血约十万次的机器。《心脏简史》整本书,就活在这两个答案之间——一边是**灵魂的居所**,一边是**一台水泵**,而第一章,作者要先把这道裂缝摊开给你看。"
+  },
+  {
+   "type": "figure",
+   "ftype": "金句卡",
+   "caption": "全书的起点,就是这句看似矛盾、却谁都懂的话。",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"18\" y=\"18\" width=\"524\" height=\"264\" rx=\"10\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"2\"/><text x=\"52\" y=\"88\" style=\"fill:var(--cinnabar);font-size:44px;font-weight:700\">“</text><text x=\"280\" y=\"132\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:25px;font-weight:700\">心,既是一块会跳动的肌肉,</text><text x=\"280\" y=\"174\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:25px;font-weight:700\">也是一处安放灵魂的居所。</text><line x1=\"232\" y1=\"212\" x2=\"328\" y2=\"212\" style=\"stroke:var(--cinnabar)\" stroke-width=\"2\"/><text x=\"280\" y=\"244\" text-anchor=\"middle\" style=\"fill:var(--ink-soft);font-size:14px\">——《心脏简史》开篇的两副面孔</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "先说清楚:这一章在全书的什么位置"
+  },
+  {
+   "type": "p",
+   "text": "《心脏简史》讲的是一部「人类如何搞懂并驯服心脏」的历史。往后的章节会一个个登场:血液怎么在体内循环、第一次有人斗胆缝合一颗跳动的心、医生给自己心脏插进一根导管、把人「关掉」再打开做手术、用电击和起搏器管住心律、把一颗心从一个人身上换到另一个人身上……它像一部惊心动魄的探险史。"
+  },
+  {
+   "type": "p",
+   "text": "但作者没有一上来就冲进手术室。他先在第一章做了一件更根本的事:**交代人类是带着一种怎样的「敬畏」在面对心脏的**。因为只有先明白古人为什么觉得心不可触碰,你才会明白,后面每一位敢动刀的医生,冒犯的不只是一块肌肉,而是几千年来「心是灵魂所在」的信念。这一章是全书的地基,它立起了整本书的那根主轴——一场「从圣物到水泵」的漫长翻转。"
+  },
+  {
+   "type": "h2",
+   "text": "第一副面孔:心是灵魂与情感的家"
+  },
+  {
+   "type": "p",
+   "text": "在人类绝大部分历史里,心不是用来「泵血」的,而是用来「装人」的——装下你的爱、你的胆量、你的悲伤,装下那个「真正的你」。古埃及人相信,人死后要接受审判,称量的不是脑子,而是心脏:把心放在天平一端,另一端是象征真理与公正的一根羽毛,心若比羽毛重,便说明这一生罪孽深重,灵魂就要被吞噬。有意思的是,他们做木乃伊时会小心地把心留在体内,却毫不客气地把脑子从鼻孔里掏出来扔掉——在他们看来,脑子无关紧要,而心才是要带去接受审判的那个「你」。"
+  },
+  {
+   "type": "pull",
+   "text": "你的一生是善是恶,由你的**心**来作证。"
+  },
+  {
+   "type": "p",
+   "text": "亚里士多德干脆认为,心才是思想与感觉的中枢,大脑不过是给热血降温的散热器。这个今天听起来近乎荒唐的看法,却统治了西方一千多年。原因其实不难体会:当你害怕、当你动情、当你说谎心虚,**扑通乱跳的是心,不是脑**——身体给出的信号如此直接、如此诚实,人们自然而然就把情感的源头指认成了它。你没法命令心不跳,正如你没法命令自己不爱、不怕,这种「管不住」的感觉,更让心显得像是灵魂在身体里的真正住址。"
+  },
+  {
+   "type": "p",
+   "text": "语言,就是这套古老信念留下的化石,而且是活着的化石。今天我们说「铭记在心」「问心无愧」「心心相印」「痛彻心扉」,情人节的符号是一颗心而不是一颗大脑——用的其实还是几千年前那套心脏观。请注意这件事有多惊人:科学早已证明情感产生在大脑里,可我们的日常语言,直到今天仍然固执地把爱恨悲喜统统安放在胸口那颗器官上。这份「不肯改口」,正是本书想追问的谜题之一。"
+  },
+  {
+   "type": "quote",
+   "original": "几乎每一种文化,都把心当作情感与灵魂的所在——爱、勇气、悲伤,都被安放在这颗器官里。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "caption": "同一个器官,两套截然不同的想象。全书就在这两栏之间来回。",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"280\" y1=\"30\" x2=\"280\" y2=\"272\" style=\"stroke:var(--line)\" stroke-width=\"2\" stroke-dasharray=\"5 5\"/><text x=\"140\" y=\"56\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:19px;font-weight:700\">情感之心</text><text x=\"420\" y=\"56\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:19px;font-weight:700\">机械之心</text><text x=\"140\" y=\"78\" text-anchor=\"middle\" style=\"fill:var(--ink-faint);font-size:13px\">古老而深情</text><text x=\"420\" y=\"78\" text-anchor=\"middle\" style=\"fill:var(--ink-faint);font-size:13px\">现代而冷静</text><text x=\"140\" y=\"128\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:15px\">爱与勇气的居所</text><text x=\"140\" y=\"168\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:15px\">悲伤住在这里</text><text x=\"140\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:15px\">称量善恶的天平</text><text x=\"140\" y=\"248\" text-anchor=\"middle\" style=\"fill:var(--ink-soft);font-size:14px\">「心动·心碎·用心」</text><text x=\"420\" y=\"128\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:15px\">一台会跳的水泵</text><text x=\"420\" y=\"168\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:15px\">肌肉·瓣膜·管道</text><text x=\"420\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:15px\">可打开·可修理</text><text x=\"420\" y=\"248\" text-anchor=\"middle\" style=\"fill:var(--ink-soft);font-size:14px\">「每天泵血约十万次」</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "第二副面孔:心只是一台泵"
+  },
+  {
+   "type": "p",
+   "text": "翻转发生在近代。当解剖刀真正划开胸腔,人们看到的不是什么灵魂的宝座,而是一个结构惊人清晰的机械装置:四个腔室、几片单向开合的瓣膜、一进一出两套管道。它做的事简单得近乎粗暴——把血抽进来,再挤出去,一辈子不停。它就是一台**泵**。"
+  },
+  {
+   "type": "p",
+   "text": "这台泵的构造也一点不神秘:左右两半各管一套循环,四个腔室像上下两层的房间,中间那几片瓣膜就是单向阀门——血只许朝一个方向走,想倒流,阀门「啪」地就关上了。你把耳朵贴在别人胸口听到的那声「扑通」,其实就是这些阀门相继关闭的声音。它的数据更让人肃然起敬:一分钟跳六七十下,一天约十万次,一年三四千万次,几十年下来跳动数十亿次而几乎从不请假;它每天推动的血液足以灌满一个小小的泳池。把心理解成泵,是现代医学最关键的一次「祛魅」——正是因为不再把它当成神圣不可碰的圣物,而是当成一台会磨损、会堵塞、会漏的机器,医生才终于敢去想那个大逆不道的念头:机器会坏,那么坏了的机器,是不是就能**修**?"
+  },
+  {
+   "type": "p",
+   "text": "但通向这个念头的路极其漫长。哪怕到了十九世纪末,顶尖的外科权威还断言,任何胆敢在心脏上缝一针的医生,都会失去同行的尊重——心脏被视为外科的**禁区**,一处连最大胆的刀也不该触碰的地方。你几乎能从中听见那副古老面孔的回声:动这颗器官,冒犯的不是肌肉,是禁忌本身。这本书后面所有的突破,都是在一次次冒犯这道禁忌。"
+  },
+  {
+   "type": "quote",
+   "original": "把心脏理解成一台泵,是一场革命——正因为它只是机器,坏了的机器才可能被修好。",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "时间线",
+   "caption": "本书的主轴:心脏在人类眼中,如何从「不可触碰」一路走到「可以维修」。",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"70\" y1=\"150\" x2=\"490\" y2=\"150\" style=\"stroke:var(--line)\" stroke-width=\"2\"/><path d=\"M485 145 L498 150 L485 155 Z\" style=\"fill:var(--ink-soft)\"/><circle cx=\"90\" cy=\"150\" r=\"11\" style=\"fill:var(--cinnabar)\"/><circle cx=\"280\" cy=\"150\" r=\"11\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"2\"/><circle cx=\"470\" cy=\"150\" r=\"11\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"2\"/><text x=\"90\" y=\"115\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:16px;font-weight:700\">圣物</text><text x=\"90\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--ink-soft);font-size:13px\">灵魂居所</text><text x=\"90\" y=\"210\" text-anchor=\"middle\" style=\"fill:var(--ink-soft);font-size:13px\">不可触碰</text><text x=\"280\" y=\"115\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:16px;font-weight:700\">禁区</text><text x=\"280\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--ink-soft);font-size:13px\">解剖看清结构</text><text x=\"280\" y=\"210\" text-anchor=\"middle\" style=\"fill:var(--ink-soft);font-size:13px\">仍不敢下刀</text><text x=\"470\" y=\"115\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:16px;font-weight:700\">水泵</text><text x=\"470\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--ink-soft);font-size:13px\">一台机器</text><text x=\"470\" y=\"210\" text-anchor=\"middle\" style=\"fill:var(--ink-soft);font-size:13px\">可打开可维修</text><text x=\"280\" y=\"268\" text-anchor=\"middle\" style=\"fill:var(--ink-faint);font-size:12px\">全书后面每一章,都是这条线上的一步</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "为什么是他来写这本书:一名医生的私人理由"
+  },
+  {
+   "type": "p",
+   "text": "Jauhar 不是站在旁观者的位置写这段历史的。他是一名心脏科医生,每天在诊室里对着造影片、心电图和一颗颗真实的、正在出问题的心。但他还背着另一样东西:**沉重的家族心脏病史**。心脏病在他的血脉里一代代传下来,像一份提前写好、却不知何时兑现的判决书。这让他对「心」的理解,天然是双重的——它既是他用手术和药物去对付的一台机器,也是随时可能夺走他至亲、乃至他自己的那个东西。"
+  },
+  {
+   "type": "p",
+   "text": "正是这份双重身份,让这本书没有写成一部冷冰冰的技术编年史。他讲哈维、讲第一次缝心、讲起搏器,是在讲科学如何一步步「驯服」这台泵;但他始终没有放下另一根线——那颗**会因恐惧而狂跳、会因悲痛而受损**的情感之心。他想追问的是:当我们已经能给心脏搭桥、换瓣、移植,我们是不是就真的读懂它了?还是说,有些东西,泵的隐喻永远解释不了?"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "全书的两条线始终并行:一条讲「怎么修这台泵」,一条问「情感之心去哪了」。",
+   "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"60\" y=\"50\" width=\"180\" height=\"120\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"2\"/><rect x=\"320\" y=\"50\" width=\"180\" height=\"120\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"2\"/><text x=\"150\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:16px;font-weight:700\">科学之线</text><text x=\"150\" y=\"120\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:13px\">循环·缝合·手术</text><text x=\"150\" y=\"144\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:13px\">起搏·移植</text><text x=\"410\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--cinnabar);font-size:16px;font-weight:700\">情感之线</text><text x=\"410\" y=\"120\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:13px\">爱·恐惧·悲伤</text><text x=\"410\" y=\"144\" text-anchor=\"middle\" style=\"fill:var(--ink);font-size:13px\">「心碎」是真的吗</text><path d=\"M150 170 L280 235\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><path d=\"M410 170 L280 235\" style=\"stroke:var(--ink-soft)\" stroke-width=\"1.5\"/><rect x=\"175\" y=\"236\" width=\"210\" height=\"40\" rx=\"20\" style=\"fill:var(--cinnabar)\"/><text x=\"280\" y=\"261\" text-anchor=\"middle\" style=\"fill:var(--paper-raised);font-size:15px;font-weight:700\">同一颗心,两种真相</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "留一道悬念:心碎,可能真的会伤心"
+  },
+  {
+   "type": "p",
+   "text": "第一章最耐人寻味的地方,是它没有让「泵」彻底赢过「灵魂」。作者反而暗示:那副被现代医学「淘汰」的古老面孔,也许并不全错。他埋下一个会在全书末尾引爆的悬念——**情绪也许真的能损伤这台泵**。剧烈的悲痛、极度的惊吓,确实可能让一颗结构完好的心突然「罢工」,这在医学上是有名字、有病例的真实现象。也就是说,「心碎」不只是诗人的比喻。"
+  },
+  {
+   "type": "quote",
+   "original": "语言把情感放进心里,或许并不只是修辞——极度的悲伤,真的能伤到这颗器官。",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "所以这一章其实提出了一个贯穿全书的漂亮问题:我们花了几百年,好不容易把心从「圣物」降格成「水泵」,才换来今天修补它的能力;可到头来,我们又发现那颗「情感之心」并没有被泵完全取代——它以另一种方式,重新回到了医学的视野里。**科学驯服了心脏,却没能把心从我们的语言和情感里搬走。** 这两副面孔,谁也没赢，谁也没输——它们是同一颗心。"
+  },
+  {
+   "type": "p",
+   "text": "读完第一章,你会带着一个全新的眼光进入后面的探险:每当有一位医生鼓起勇气去碰那颗心,他挑战的从来不只是技术的极限,还有人类几千年积累下来的、对这颗器官近乎宗教般的敬畏。而这份敬畏之所以至今没有消散,或许正是因为——在最深处,我们始终隐隐知道,那不只是一台泵。"
+  }
+ ]
 }

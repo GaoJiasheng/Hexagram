@@ -1,197 +1,201 @@
 {
-  "title": "白话《超越百岁》· 全书总览",
-  "subtitle": "Peter Attia 想扭转一个默认设置:我们拼命想活得久(lifespan),却很少认真经营活得好(healthspan)——多数人生命最后那十年,是拖着一身慢病熬过去的。",
-  "centralIdea": "《超越百岁》要把长寿的目标从「寿命」换成「健康寿命」——不只是多活几年,而是让身体、认知、情绪三方面都尽量好到最后。Attia 主张一场医学范式换挡:从生病才治、一刀切的「医学 2.0」,走向主动预防、个性化、提前几十年下手的「医学 3.0」;主要对手是拖垮现代人的「四骑士」——代谢功能障碍、心脏病、癌症、神经退行,而能反击的杠杆是运动、营养、睡眠、药物激素与情绪健康,其中运动是最强的一味。研读时要守住一条线:这是一位长寿医学医生的一家框架,其中一些激进主张(如极早、极低的降脂目标,某些补剂与激素,某些生物标志物阈值)在主流指南里仍有争议,书本身也承认医学 3.0 常要在「证据还不完美」时先行动——所以请把它读成一份「提前下注」的蓝图,而不是板上钉钉的定论,更不是可以照抄的速成法;涉及个人健康,一切遵医嘱。",
-  "featured": true,
-  "hero": {
-    "badge": "全书 · 核心",
-    "headline": "别只盯着能活到几岁——真正该经营的,是生命最后那十年,你还能不能自己走路、认得家人、笑得出来。",
-    "tagline": "一位长寿医学医生写的健康蓝图:把预防提前几十年,和「四骑士」抢时间。"
+ "title": "白话《超越百岁》· 全书总览",
+ "subtitle": "Peter Attia 想扭转一个默认设置:我们拼命想活得久(lifespan),却很少认真经营活得好(healthspan)——多数人生命最后那十年,是拖着一身慢病熬过去的。",
+ "centralIdea": "《超越百岁》要把长寿的目标从「寿命」换成「健康寿命」——不只是多活几年,而是让身体、认知、情绪三方面都尽量好到最后。Attia 主张一场医学范式换挡:从生病才治、一刀切的「医学 2.0」,走向主动预防、个性化、提前几十年下手的「医学 3.0」;主要对手是拖垮现代人的「四骑士」——代谢功能障碍、心脏病、癌症、神经退行,而能反击的杠杆是运动、营养、睡眠、药物激素与情绪健康,其中运动是最强的一味。研读时要守住一条线:这是一位长寿医学医生的一家框架,其中一些激进主张(如极早、极低的降脂目标,某些补剂与激素,某些生物标志物阈值)在主流指南里仍有争议,书本身也承认医学 3.0 常要在「证据还不完美」时先行动——所以请把它读成一份「提前下注」的蓝图,而不是板上钉钉的定论,更不是可以照抄的速成法;涉及个人健康,一切遵医嘱。",
+ "featured": true,
+ "hero": {
+  "badge": "全书 · 核心",
+  "headline": "别只盯着能活到几岁——真正该经营的,是生命最后那十年,你还能不能自己走路、认得家人、笑得出来。",
+  "tagline": "一位长寿医学医生写的健康蓝图:把预防提前几十年,和「四骑士」抢时间。"
+ },
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "先想象一个很多人都见过的场景:一位老人躺在病床上,机器嘀嘀作响,子女轮流守着。他确实「还活着」,可他已经认不出人、下不了床、说不出话很久了。医学在这里做的,是把死亡往后推——推得越久,他在这种状态里泡得越久。写《超越百岁》的 Peter Attia,是一位专攻长寿的医生。他说,我们整套医疗系统都在拼命延长这条「活着」的线,却几乎没人认真问一句:延长出来的这段日子,到底是什么质量的日子?这本书,就是冲着这个被所有人默认、却很少被追问的问题去的。"
   },
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "先想象一个很多人都见过的场景:一位老人躺在病床上,机器嘀嘀作响,子女轮流守着。他确实「还活着」,可他已经认不出人、下不了床、说不出话很久了。医学在这里做的,是把死亡往后推——推得越久,他在这种状态里泡得越久。写《超越百岁》的 Peter Attia,是一位专攻长寿的医生。他说,我们整套医疗系统都在拼命延长这条「活着」的线,却几乎没人认真问一句:延长出来的这段日子,到底是什么质量的日子?这本书,就是冲着这个被所有人默认、却很少被追问的问题去的。"
-    },
-    {
-      "type": "h2",
-      "text": "一、先分清两件事:活多久,和活得好"
-    },
-    {
-      "type": "p",
-      "text": "全书的地基,是两个必须掰开的词。一个叫 **lifespan(寿命)**——你从出生到离世总共活了多少年,一个数字。另一个叫 **healthspan(健康寿命)**——在这些年里,你身体没垮、脑子清楚、心情不塌的那一段有多长。Attia 说,过去一百年,人类在「寿命」上取得了历史性胜利:抗生素、疫苗、卫生条件、急救,让人均寿命翻了近一倍。但「健康寿命」几乎原地踏步——我们成功地让人活得更久,却没能让人「好」得更久,于是凭空多出来一段拖着慢病、逐渐失能的尾巴。"
-    },
-    {
-      "type": "p",
-      "text": "这段尾巴,其实是整个时代的病变。一百年前,夺命的主力是**传染病**——肺结核、肺炎、痢疾,它们来得急、走得也快,要么治好、要么很快带走人,是一种「快死」。今天,抗生素和公共卫生把这些大体压住了,顶替它们坐上头号杀手位置的,是心脏病、癌症、糖尿病、阿尔茨海默这类**慢性病**:它们不声不响地烧上几十年,让人「慢死」——不是某天突然离场,而是被拖着,一点点失去能力、失去自己。这就是 Attia 说的**慢病时代**;而医学过去那套「快诊断、快治疗」的打法,恰恰对这种几十年的慢火最不趁手。"
-    },
-    {
-      "type": "p",
-      "text": "更关键的是,Attia 把「健康寿命」拆成**三个维度**,缺一不可:**身体**(能不能自己走路、拎东西、不摔倒)、**认知**(记性、判断、思路还清不清楚)、**情绪**(有没有意义感,还笑不笑得出来)。一个人可能身体硬朗却抑郁缠身,也可能头脑清醒却卧床不起——三条腿只要断一条,「活得好」就塌了。所以这本书从一开始就不是「怎么多活几年」的书,而是「怎么让最后这几十年三样都别掉线」的书。"
-    },
-    {
-      "type": "p",
-      "text": "Attia 给这段尾巴起了个很戳人的名字——**「边际的十年」(the marginal decade)**,指你生命最后大约十年。他反复问读者一个问题:你希望这十年怎么过?想抱得动孙子、爬得上山、拎得动行李,还是只能坐在轮椅里看别人忙活?**这十年的质量,不是等你 80 岁再来决定的,而是你从现在起每一年悄悄埋下的。** 这就把长寿从一个「等老了再说」的话题,拉回到「从今天就该动手」的当下。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对比图",
-      "caption": "同样活到八十几岁,后半程可以差得很远。医学 3.0 的目标不是多添几年病床上的光阴,而是把衰退段尽量往后推、压到最短——这个动作有个说法叫「把生存曲线拉方」(squaring the curve)。",
-      "svg": "<svg viewBox='0 0 640 360' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='32' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>寿命一样长,健康寿命可以差很远</text><text x='44' y='104' font-size='13' font-weight='bold' style='fill:var(--ink-soft)'>医学 2.0:慢慢衰退,拖很久</text><rect x='44' y='114' width='352' height='28' rx='6' style='fill:var(--cinnabar)'/><rect x='396' y='114' width='188' height='28' rx='6' style='fill:var(--ink-faint)'/><text x='220' y='133' text-anchor='middle' font-size='12.5' style='fill:var(--paper-raised)'>健康寿命</text><text x='490' y='133' text-anchor='middle' font-size='12' style='fill:var(--paper-raised)'>带病的「边际十年」</text><text x='44' y='196' font-size='13' font-weight='bold' style='fill:var(--ink-soft)'>医学 3.0:健康段拉长,衰退段压短</text><rect x='44' y='206' width='498' height='28' rx='6' style='fill:var(--cinnabar)'/><rect x='542' y='206' width='42' height='28' rx='6' style='fill:var(--ink-faint)'/><text x='293' y='225' text-anchor='middle' font-size='12.5' style='fill:var(--paper-raised)'>健康寿命</text><line x1='44' y1='268' x2='584' y2='268' style='stroke:var(--line)' stroke-width='1'/><text x='52' y='292' font-size='12' style='fill:var(--ink-faint)'>出生</text><text x='548' y='292' font-size='12' style='fill:var(--ink-faint)'>离世</text><text x='320' y='330' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>两条命一样长,不一样的是——你在「好」的状态里待了多久</text></svg>"
-    },
-    {
-      "type": "h2",
-      "text": "二、医学 2.0 与医学 3.0:一次范式换挡"
-    },
-    {
-      "type": "p",
-      "text": "要经营健康寿命,Attia 说现在这套医学根本不趁手。他把它叫 **「医学 2.0」**(1.0 是抗生素之前靠猜的年代)。医学 2.0 极擅长救急——车祸、感染、心梗发作,它能把你从鬼门关拉回来,这是了不起的成就。但它有几个刻进骨子里的毛病:**一是被动**,基本是「等你生了病再来治」,病没确诊之前它没什么可做;**二是一刀切**,拿针对「平均病人」的指南套到每一个具体的你身上;**三是循证的门槛设得太高**——它只认「已经病了的人群做的随机对照试验」,证据不够硬就按兵不动。对付慢病,这几条恰恰全是短板:因为慢病是几十年慢慢烧起来的,等它「确诊」,火早就烧大了。"
-    },
-    {
-      "type": "p",
-      "text": "于是 Attia 提出 **「医学 3.0」**——不是推翻 2.0,而是给它换挡。3.0 的几条新设定:**主动预防**,不等发病,提前几十年就去掐灭风险的苗头;**个性化**,拿你自己的血液指标、基因、生活方式来定策略,而不是套平均值;**患者是主角**,你得懂自己的数据、参与决策,而不是被动听candidates安排;还有最关键、也最容易被误读的一条——**它愿意在「证据还不完美」的时候就为预防行动**。因为预防的本质是提前下注:你不可能等到板上钉钉的铁证出来才动手,那时窗口早关了。这条既是 3.0 的锋利之处,也是它最该被打问号的地方——后面研读提醒会专门说。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对比图",
-      "caption": "医学 2.0 与 3.0 不是对错之争,而是分工不同:急症救命靠 2.0,慢病防患靠 3.0。这本书讲的几乎全是后者。",
-      "svg": "<svg viewBox='0 0 640 372' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='30' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>一次范式换挡</text><rect x='30' y='52' width='276' height='288' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><rect x='334' y='52' width='276' height='288' rx='10' style='fill:var(--paper-raised);stroke:var(--cinnabar)' stroke-width='1.5'/><text x='168' y='84' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink-soft)'>医学 2.0</text><text x='472' y='84' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--cinnabar)'>医学 3.0</text><line x1='50' y1='98' x2='286' y2='98' style='stroke:var(--line)' stroke-width='1'/><line x1='354' y1='98' x2='590' y2='98' style='stroke:var(--line)' stroke-width='1'/><text x='168' y='128' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>生病了才治(被动)</text><text x='168' y='162' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>按平均病人一刀切</text><text x='168' y='196' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>只认高门槛硬证据</text><text x='168' y='230' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>医生说了算</text><text x='168' y='264' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>擅长急症救命</text><text x='168' y='306' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>时间轴:发病之后</text><text x='472' y='128' text-anchor='middle' font-size='13' style='fill:var(--ink)'>提前几十年预防(主动)</text><text x='472' y='162' text-anchor='middle' font-size='13' style='fill:var(--ink)'>按你的数据个性化</text><text x='472' y='196' text-anchor='middle' font-size='13' style='fill:var(--ink)'>证据不完美也愿行动</text><text x='472' y='230' text-anchor='middle' font-size='13' style='fill:var(--ink)'>你自己是主角</text><text x='472' y='264' text-anchor='middle' font-size='13' style='fill:var(--ink)'>擅长慢病防患</text><text x='472' y='306' text-anchor='middle' font-size='12' style='fill:var(--cinnabar)'>时间轴:发病之前</text></svg>"
-    },
-    {
-      "type": "h2",
-      "text": "三、四骑士:拖垮现代人的四张面孔"
-    },
-    {
-      "type": "p",
-      "text": "那么,医学 3.0 主要跟谁抢时间?Attia 借《圣经》里的意象,把杀死绝大多数现代人的慢病点成 **「四骑士」**:代谢功能障碍、心脏病、癌症、神经退行。它们有个共同点——都不是一夜之间找上门的,而是在你毫无感觉的几十年里慢慢逼近。看懂这四位是谁、彼此怎么勾连,是这本书的骨架。"
-    },
-    {
-      "type": "p",
-      "text": "为什么偏偏是这四位?因为在发达社会里,**绝大多数人最终就是被它们之一带走的**——不是被某种罕见怪病,而是被这几种「谁都听过、却总觉得离自己还远」的慢病。Attia 的策略因此很清晰:与其在四条战线上分散用兵,不如认清它们的上下游关系,优先掐住那个能牵一发动全身的总根。这也是下面这张图想说的事。"
-    },
-    {
-      "type": "figure",
-      "ftype": "结构图",
-      "caption": "四骑士里,代谢功能障碍站在最上游——它是「万病之根」,即使身材偏瘦的人也可能代谢不健康;它往下能给心脏病、癌症、神经退行都添柴。所以控代谢,是同时给另外三位「釜底抽薪」。",
-      "svg": "<svg viewBox='0 0 640 372' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='32' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>四骑士:代谢是总根,其余三位受它牵连</text><rect x='190' y='54' width='260' height='62' rx='10' style='fill:var(--cinnabar);stroke:var(--cinnabar)' stroke-width='1.5'/><text x='320' y='82' text-anchor='middle' font-size='15' font-weight='bold' style='fill:var(--paper-raised)'>① 代谢功能障碍</text><text x='320' y='104' text-anchor='middle' font-size='12' style='fill:var(--paper-raised)'>胰岛素抵抗 · 最上游的总根</text><line x1='320' y1='116' x2='120' y2='190' style='stroke:var(--ink-faint)' stroke-width='1.5'/><line x1='320' y1='116' x2='320' y2='190' style='stroke:var(--ink-faint)' stroke-width='1.5'/><line x1='320' y1='116' x2='520' y2='190' style='stroke:var(--ink-faint)' stroke-width='1.5'/><rect x='24' y='192' width='192' height='96' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='120' y='222' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--ink)'>② 心脏病</text><text x='120' y='247' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>apoB / LDL 颗粒</text><text x='120' y='268' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>越多越久越糟</text><rect x='224' y='192' width='192' height='96' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='320' y='222' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--ink)'>③ 癌症</text><text x='320' y='247' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>预防手段有限</text><text x='320' y='268' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>早筛是关键</text><rect x='424' y='192' width='192' height='96' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='520' y='222' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--ink)'>④ 神经退行</text><text x='520' y='247' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>阿尔茨海默 · ApoE4</text><text x='520' y='268' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>护心即护脑</text><text x='320' y='334' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>它们都在你毫无感觉的几十年里慢慢逼近——等确诊,火早烧大了</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "**第一位:代谢功能障碍——万病之根。** 当身体对胰岛素越来越不敏感(胰岛素抵抗),血糖处理不顺、脂肪堆进肝脏(脂肪肝)、胰岛素被迫越分越多(高胰岛素血症),身体就进入一种慢性失调。Attia 说这是**最上游的总根**:它一乱,另外三骑士都跟着抬头。有个反直觉但重要的点——**代谢不健康不等于胖**,不少身材偏瘦的人,代谢指标其实一塌糊涂;反过来,也有胖但代谢尚可的人。所以别拿体重当唯一体检表。"
-    },
-    {
-      "type": "p",
-      "text": "**第二位:心脏病——头号杀手,却可以预防。** Attia 把矛头指向一个字母组合:**apoB**。血液里携带胆固醇的颗粒(尤其 LDL,俗称「坏胆固醇」),每一颗表面都挂着一个 apoB;真正钻进血管壁、日积月累堆成斑块的,是**颗粒的数量**,而不只是胆固醇的总量。他有一句总结狠话:动脉粥样硬化的风险,取决于这些颗粒**「有多少、待多久」**——浓度越高、暴露越久,越糟。所以他主张**尽早把这个数字降下来**,别等血管堵到发作;并提醒关注 **Lp(a)**(一种很受基因决定、常被漏查的高危颗粒)和**冠脉钙化积分**(看血管里已经积了多少「历史欠账」)。"
-    },
-    {
-      "type": "p",
-      "text": "**第三位:癌症——预防手段有限,早筛是关键。** Attia 坦言,癌症是四骑士里我们理解最浅、能主动预防的抓手最少的一位:控好代谢、别抽烟、别太胖,能压低一些风险,但远谈不上「防得住」。既然拦不住它冒头,那就**尽量早地发现它**——因为绝大多数癌症,早期发现和晚期发现,结局天差地别。于是他对「早筛」态度激进,主张比常规指南更早、更积极地做筛查(这一条同样有争议,后面会提)。"
-    },
-    {
-      "type": "p",
-      "text": "**第四位:神经退行——尤其是阿尔茨海默。** 这一位最残忍:它偷走的不是身体,是「你之所以是你」的记忆和心智。风险和基因(如 **ApoE4** 变异)有关,但 Attia 强调一个关键观念——**真正的预防窗口,在发病之前几十年**,等症状出来往往为时已晚。而且脑血管和心血管本是一套系统,他一句话点破:**「护心,就是护脑」**——你为心脏做的那些事,同时也在保护大脑。"
-    },
-    {
-      "type": "quote",
-      "original": "你不能在发病之后才开始预防——那时候,你要防的东西早就来了。",
-      "translation": "对四骑士共性的转述。慢病是几十年的慢火,医学 3.0 的全部主张,都建立在「提前几十年动手」这个时间观上。"
-    },
-    {
-      "type": "h2",
-      "text": "四、五大杠杆:我们真正能拉动的是什么"
-    },
-    {
-      "type": "p",
-      "text": "认清了对手,剩下的问题是:普通人到底能做什么?Attia 把可拉动的抓手归成**五根杠杆**——运动、营养、睡眠、药物/激素、情绪健康。他反复说,这里没有什么神药秘方,就是这几件「老掉牙」的事,难在**认真做、长期做、按你的身体做**。"
-    },
-    {
-      "type": "p",
-      "text": "别小看这几件旧事。Attia 强调,长寿从来不是靠某一次「大动作」赢下来的,而是靠**几十年的复利**——每天多睡半小时、每周几次 Zone 2、每顿吃够蛋白、和家人好好说话,单独看每一件都微不足道,叠加几十年却是天差地别的两条曲线。这也解释了为什么他把「提前几十年动手」看得那么重:复利最怕的就是起步晚,你 40 岁开始攒,和 65 岁才开始攒,终点根本不在一个量级。"
-    },
-    {
-      "type": "figure",
-      "ftype": "结构图",
-      "caption": "五根杠杆里,Attia 把运动排在第一,称它是「最强效的长寿药」——没有任何一种药或补剂,能在延长健康寿命上和规律运动相比。",
-      "svg": "<svg viewBox='0 0 640 340' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='30' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>五根杠杆(运动最强)</text><line x1='40' y1='268' x2='600' y2='268' style='stroke:var(--line)' stroke-width='1.5'/><rect x='58' y='72' width='84' height='196' rx='8' style='fill:var(--cinnabar)'/><rect x='170' y='140' width='84' height='128' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><rect x='282' y='158' width='84' height='110' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><rect x='394' y='150' width='84' height='118' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><rect x='506' y='132' width='84' height='136' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='100' y='176' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--paper-raised)'>运动</text><text x='100' y='198' text-anchor='middle' font-size='11' style='fill:var(--paper-raised)'>最强长寿药</text><text x='212' y='296' text-anchor='middle' font-size='13.5' style='fill:var(--ink-soft)'>营养</text><text x='324' y='296' text-anchor='middle' font-size='13.5' style='fill:var(--ink-soft)'>睡眠</text><text x='436' y='296' text-anchor='middle' font-size='13.5' style='fill:var(--ink-soft)'>药物激素</text><text x='548' y='296' text-anchor='middle' font-size='13.5' style='fill:var(--ink-soft)'>情绪健康</text><text x='320' y='326' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>柱高只示意侧重,不代表精确权重</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "**运动:最强效的长寿药。** Attia 在这一章几乎不留余地。大量数据显示,两项指标对「你还能活多久、活多好」的预测力极强:**VO₂max**(最大摄氧量,衡量你的有氧引擎有多强)和**肌肉力量**——它们和死亡率的关系,比几乎任何药物都硬。他把训练拆成四块:**Zone 2**(能边运动边说话的中低强度有氧,练线粒体、打底子)、**高强度间歇**(顶一顶 VO₂max 的天花板)、**力量训练**(对抗年纪大了最要命的肌肉流失和骨质疏松)、以及**稳定性**(核心与平衡,防摔倒——老年最凶险的往往不是病,是一次骨折)。"
-    },
-    {
-      "type": "p",
-      "text": "他还给了一个特别好用的思维工具——**「百岁十项全能」(Centenarian Decathlon)**:先想清楚你 **90 岁**时最想还能做的十件事(自己爬楼、抱起孙辈、拧开瓶盖、从地上站起来、拎两袋菜走回家……),然后**从现在就倒推着去训练它们**。因为体能是会随年纪打折的,你想 90 岁做到的,必须 50 岁、60 岁就练得远超那个门槛。一句话:**你现在,就该练你 90 岁想做的动作。**"
-    },
-    {
-      "type": "quote",
-      "original": "先想清楚你九十岁时想做的十件事,然后从今天起,倒着把它们练出来。",
-      "translation": "「百岁十项全能」的核心。它把「长寿」从抽象目标,变成一份此刻就能开练的具体清单——这是全书最落地的一个工具。"
-    },
-    {
-      "type": "figure",
-      "ftype": "金句卡",
-      "caption": "全书最落地的一句话:把长寿倒过来想——先定 90 岁想做的十件事,再从今天倒推着练。",
-      "svg": "<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><rect x='24' y='24' width='592' height='252' rx='14' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><circle cx='320' cy='82' r='23' style='fill:var(--cinnabar)'/><text x='320' y='90' text-anchor='middle' font-size='20' font-weight='bold' style='fill:var(--paper-raised)'>观</text><text x='320' y='158' text-anchor='middle' font-size='25' font-weight='bold' style='fill:var(--ink)'>现在,就练你</text><text x='320' y='196' text-anchor='middle' font-size='25' font-weight='bold' style='fill:var(--cinnabar)'>九十岁想做的动作</text><line x1='252' y1='224' x2='388' y2='224' style='stroke:var(--ink-faint)' stroke-width='1'/><text x='320' y='252' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>《超越百岁》 · 百岁十项全能</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "**营养:没有万能饮食,只有约束与测量。** 这一章 Attia 最「反教条」。他不站任何饮食门派——低碳、生酮、纯素、地中海……在他看来,**没有一种饮食适合所有人**。他把五花八门的吃法归成三种底层「约束」:**CR(限热量)**、**DR(限种类,比如少糖、断某类食物)**、**TR(限时,即在固定时间窗内进食)**——每种都可能有用,也各有代价,关键看你自己的身体怎么反应。他尤其强调两点:**蛋白质要吃够**(对抗年纪大了的「肌少症」——肌肉是长寿的本钱);以及**用数据说话**,比如戴**连续血糖监测(CGM)**看看到底哪种食物把你的血糖顶上天——把「我该怎么吃」从信仰之争,变成一件可以测量、可以调的私人工程。"
-    },
-    {
-      "type": "figure",
-      "ftype": "结构图",
-      "caption": "Attia 不站任何饮食门派,而是把五花八门的吃法归成三种底层「约束」——它们可以单用,也可以叠着用,各有代价,该选哪种,由你自己的身体数据说了算。",
-      "svg": "<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='32' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>没有万能饮食,只有三种「约束」</text><rect x='30' y='66' width='186' height='166' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><rect x='227' y='66' width='186' height='166' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><rect x='424' y='66' width='186' height='166' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='123' y='108' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--cinnabar)'>CR · 限热量</text><text x='123' y='146' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>吃得比消耗少</text><text x='123' y='174' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>在总量上做减法</text><text x='320' y='108' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--cinnabar)'>DR · 限种类</text><text x='320' y='146' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>少糖 / 断某类食物</text><text x='320' y='174' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>挑着吃</text><text x='517' y='108' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--cinnabar)'>TR · 限时</text><text x='517' y='146' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>只在时间窗内进食</text><text x='517' y='174' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>控住进食时段</text><text x='320' y='270' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>三种各有用、也各有代价——别信教条,先量了再说</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "剩下三根杠杆,Attia 讲得相对短,但都点到要害。**睡眠**:长期被现代人当成可牺牲的东西,其实它直接牵动代谢、心血管和大脑清理废物的能力,欠的觉都要还。**药物与激素**:他不排斥在个性化评估后审慎使用(如某些降脂药、在合适人群中的激素替代),但一再强调「因人而异、需专业评估」——这也是全书争议较多的一块。而最后一根,他留到全书压轴,郑重其事地单独讲。"
-    },
-    {
-      "type": "h2",
-      "text": "五、压轴的那根支柱:情绪健康"
-    },
-    {
-      "type": "p",
-      "text": "全书最动人的转折,来自 Attia 的**自我坦白**。他花了大半本书讲 VO₂max、apoB、血糖曲线这些硬邦邦的指标,却在结尾承认:自己曾经是个「情绪上很糟糕」的人——易怒、苛刻、被童年创伤和完美主义驱使,把家人越推越远。他一度以为,只要身体数据够漂亮,就算把长寿这件事做成了。直到他明白:**如果一个人活到一百岁,身体硬朗、脑子清楚,却孤独、愤怒、和所有亲近的人都断了连接,那这「长寿」到底有什么意义?**"
-    },
-    {
-      "type": "p",
-      "text": "而且情绪健康并不只是「软性」的锦上添花。大量研究一再发现,**社会连接的质量**——你有没有能说心里话的人、有没有稳定温暖的亲密关系——是预测一个人活多久、活多好的强变量,分量不输给血压和血糖。长期的孤独和敌意,本身就是一种慢性的健康损耗,会实打实地反映到身体上。所以 Attia 把它郑重写进长寿处方,不是为了煽情,而是在认账:人到底是关系里的动物,身体这台机器再保养得好,也架不住心里长期的荒芜。"
-    },
-    {
-      "type": "p",
-      "text": "所以他把**情绪健康**郑重列为第五根杠杆,而且分量最重。前面说过,健康寿命有身体、认知、情绪三个维度——情绪这一维如果塌了,前两维修得再好也撑不住整个人。这也是这本长寿书最不「技术」、却最点睛的一笔:**再精密的健康工程,如果没有值得活的关系和内心的安宁,都是空的。** 长寿的终点,不是一具保养得当的躯壳,是一个还愿意去爱、也被爱着的人。"
-    },
-    {
-      "type": "quote",
-      "original": "如果活得很久,身体也很好,却孤独、愤怒、谁也不亲近,那这份长寿,又有什么意义?",
-      "translation": "Attia 在收尾处的自省。全书最硬核的一位长寿医生,最后把最重的一票投给了情绪健康——这是《超越百岁》真正的落点。"
-    },
-    {
-      "type": "h2",
-      "text": "六、怎么读这本书:一份「提前下注」的蓝图"
-    },
-    {
-      "type": "p",
-      "text": "最后,几句研读提醒,请务必带着读。第一,**这是一位长寿医学医生的一家框架,不是官方指南。** 书里一些相当激进的主张——比如把降脂目标定得**极早、极低**,某些补剂和激素替代,某些生物标志物的具体阈值——在主流医学指南里**仍有争议**,并非共识。这不是说他一定错,而是说你该知道它们「有争议」,别当成铁律照搬。"
-    },
-    {
-      "type": "p",
-      "text": "第二,**要理解「医学 3.0」这套逻辑的两面性。** 它最大的优点是主动、提前;但它也承认自己常常要在**「证据还不完美」时就行动**——这本质上是一种「提前下注」:赌对了收益巨大,但它终究是下注,不是板上钉钉。所以读的时候,请把这些具体建议看成「值得认真评估的高质量下注」,而不是「照做必长寿」的保证。第三,**这是蓝图,不是速成法。** 它给的是一套需要几十年、按你个人情况长期经营的框架,**千万别读成「照抄某套饮食或某几种补剂就能长寿」**——那恰恰是这本书最反对的教条思维。"
-    },
-    {
-      "type": "p",
-      "text": "说到底,《超越百岁》真正想改的,是我们对「长寿」两个字的默认想象:不是把生命那根线尽量拖长,而是把「健康、清醒、还笑得出来」的那一段,尽量拉到最后、压得最实。它不承诺让你活到一百岁——没有谁能承诺——它只是提醒你:那个 90 岁还想爬山、抱孙子、认得家人的自己,能不能等到,答案藏在你从今天起怎么运动、怎么吃、怎么睡、怎么和人相处里。**具体到你自己的身体,书里任何建议都请与你的医生商量后再定——这本书能给你的,是一张好问题的清单,不是一份可以照抄的处方。**"
-    },
-    {
-      "type": "refs",
-      "items": [
-        "Peter Attia, Bill Gifford《超越百岁》(Outlive: The Science and Art of Longevity, 2023):健康寿命 vs 寿命、医学 3.0、四骑士、五大杠杆的原始框架",
-        "书中关键词速查:healthspan(健康寿命)/ marginal decade(边际的十年)/ Centenarian Decathlon(百岁十项全能)/ apoB · Lp(a)· ApoE4 · VO₂max · Zone 2 · CGM · CR/DR/TR",
-        "研读定位:属预防/长寿医学的一家之言,部分主张(激进早期降脂、某些补剂激素、生物标志物阈值)在主流指南中仍有争议;书本身承认医学 3.0 常需在证据不完美时行动",
-        "本文为原创转述与导读,非医疗建议;涉及个人健康决策请遵医嘱"
-      ]
-    }
-  ]
+  {
+   "type": "h2",
+   "text": "一、先分清两件事:活多久,和活得好"
+  },
+  {
+   "type": "p",
+   "text": "全书的地基,是两个必须掰开的词。一个叫 **lifespan(寿命)**——你从出生到离世总共活了多少年,一个数字。另一个叫 **healthspan(健康寿命)**——在这些年里,你身体没垮、脑子清楚、心情不塌的那一段有多长。Attia 说,过去一百年,人类在「寿命」上取得了历史性胜利:抗生素、疫苗、卫生条件、急救,让人均寿命翻了近一倍。但「健康寿命」几乎原地踏步——我们成功地让人活得更久,却没能让人「好」得更久,于是凭空多出来一段拖着慢病、逐渐失能的尾巴。"
+  },
+  {
+   "type": "p",
+   "text": "这段尾巴,其实是整个时代的病变。一百年前,夺命的主力是**传染病**——肺结核、肺炎、痢疾,它们来得急、走得也快,要么治好、要么很快带走人,是一种「快死」。今天,抗生素和公共卫生把这些大体压住了,顶替它们坐上头号杀手位置的,是心脏病、癌症、糖尿病、阿尔茨海默这类**慢性病**:它们不声不响地烧上几十年,让人「慢死」——不是某天突然离场,而是被拖着,一点点失去能力、失去自己。这就是 Attia 说的**慢病时代**;而医学过去那套「快诊断、快治疗」的打法,恰恰对这种几十年的慢火最不趁手。"
+  },
+  {
+   "type": "p",
+   "text": "更关键的是,Attia 把「健康寿命」拆成**三个维度**,缺一不可:**身体**(能不能自己走路、拎东西、不摔倒)、**认知**(记性、判断、思路还清不清楚)、**情绪**(有没有意义感,还笑不笑得出来)。一个人可能身体硬朗却抑郁缠身,也可能头脑清醒却卧床不起——三条腿只要断一条,「活得好」就塌了。所以这本书从一开始就不是「怎么多活几年」的书,而是「怎么让最后这几十年三样都别掉线」的书。"
+  },
+  {
+   "type": "p",
+   "text": "Attia 给这段尾巴起了个很戳人的名字——**「边际的十年」(the marginal decade)**,指你生命最后大约十年。他反复问读者一个问题:你希望这十年怎么过?想抱得动孙子、爬得上山、拎得动行李,还是只能坐在轮椅里看别人忙活?**这十年的质量,不是等你 80 岁再来决定的,而是你从现在起每一年悄悄埋下的。** 这就把长寿从一个「等老了再说」的话题,拉回到「从今天就该动手」的当下。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "caption": "同样活到八十几岁,后半程可以差得很远。医学 3.0 的目标不是多添几年病床上的光阴,而是把衰退段尽量往后推、压到最短——这个动作有个说法叫「把生存曲线拉方」(squaring the curve)。",
+   "svg": "<svg viewBox='0 0 640 360' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='32' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>寿命一样长,健康寿命可以差很远</text><text x='44' y='104' font-size='13' font-weight='bold' style='fill:var(--ink-soft)'>医学 2.0:慢慢衰退,拖很久</text><rect x='44' y='114' width='352' height='28' rx='6' style='fill:var(--cinnabar)'/><rect x='396' y='114' width='188' height='28' rx='6' style='fill:var(--ink-faint)'/><text x='220' y='133' text-anchor='middle' font-size='12.5' style='fill:var(--paper-raised)'>健康寿命</text><text x='490' y='133' text-anchor='middle' font-size='12' style='fill:var(--paper-raised)'>带病的「边际十年」</text><text x='44' y='196' font-size='13' font-weight='bold' style='fill:var(--ink-soft)'>医学 3.0:健康段拉长,衰退段压短</text><rect x='44' y='206' width='498' height='28' rx='6' style='fill:var(--cinnabar)'/><rect x='542' y='206' width='42' height='28' rx='6' style='fill:var(--ink-faint)'/><text x='293' y='225' text-anchor='middle' font-size='12.5' style='fill:var(--paper-raised)'>健康寿命</text><line x1='44' y1='268' x2='584' y2='268' style='stroke:var(--line)' stroke-width='1'/><text x='52' y='292' font-size='12' style='fill:var(--ink-faint)'>出生</text><text x='548' y='292' font-size='12' style='fill:var(--ink-faint)'>离世</text><text x='320' y='330' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>两条命一样长,不一样的是——你在「好」的状态里待了多久</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "二、医学 2.0 与医学 3.0:一次范式换挡"
+  },
+  {
+   "type": "p",
+   "text": "要经营健康寿命,Attia 说现在这套医学根本不趁手。他把它叫 **「医学 2.0」**(1.0 是抗生素之前靠猜的年代)。医学 2.0 极擅长救急——车祸、感染、心梗发作,它能把你从鬼门关拉回来,这是了不起的成就。但它有几个刻进骨子里的毛病:**一是被动**,基本是「等你生了病再来治」,病没确诊之前它没什么可做;**二是一刀切**,拿针对「平均病人」的指南套到每一个具体的你身上;**三是循证的门槛设得太高**——它只认「已经病了的人群做的随机对照试验」,证据不够硬就按兵不动。对付慢病,这几条恰恰全是短板:因为慢病是几十年慢慢烧起来的,等它「确诊」,火早就烧大了。"
+  },
+  {
+   "type": "p",
+   "text": "于是 Attia 提出 **「医学 3.0」**——不是推翻 2.0,而是给它换挡。3.0 的几条新设定:**主动预防**,不等发病,提前几十年就去掐灭风险的苗头;**个性化**,拿你自己的血液指标、基因、生活方式来定策略,而不是套平均值;**患者是主角**,你得懂自己的数据、参与决策,而不是被动听candidates安排;还有最关键、也最容易被误读的一条——**它愿意在「证据还不完美」的时候就为预防行动**。因为预防的本质是提前下注:你不可能等到板上钉钉的铁证出来才动手,那时窗口早关了。这条既是 3.0 的锋利之处,也是它最该被打问号的地方——后面研读提醒会专门说。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "caption": "医学 2.0 与 3.0 不是对错之争,而是分工不同:急症救命靠 2.0,慢病防患靠 3.0。这本书讲的几乎全是后者。",
+   "svg": "<svg viewBox='0 0 640 372' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='30' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>一次范式换挡</text><rect x='30' y='52' width='276' height='288' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><rect x='334' y='52' width='276' height='288' rx='10' style='fill:var(--paper-raised);stroke:var(--cinnabar)' stroke-width='1.5'/><text x='168' y='84' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink-soft)'>医学 2.0</text><text x='472' y='84' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--cinnabar)'>医学 3.0</text><line x1='50' y1='98' x2='286' y2='98' style='stroke:var(--line)' stroke-width='1'/><line x1='354' y1='98' x2='590' y2='98' style='stroke:var(--line)' stroke-width='1'/><text x='168' y='128' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>生病了才治(被动)</text><text x='168' y='162' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>按平均病人一刀切</text><text x='168' y='196' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>只认高门槛硬证据</text><text x='168' y='230' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>医生说了算</text><text x='168' y='264' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>擅长急症救命</text><text x='168' y='306' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>时间轴:发病之后</text><text x='472' y='128' text-anchor='middle' font-size='13' style='fill:var(--ink)'>提前几十年预防(主动)</text><text x='472' y='162' text-anchor='middle' font-size='13' style='fill:var(--ink)'>按你的数据个性化</text><text x='472' y='196' text-anchor='middle' font-size='13' style='fill:var(--ink)'>证据不完美也愿行动</text><text x='472' y='230' text-anchor='middle' font-size='13' style='fill:var(--ink)'>你自己是主角</text><text x='472' y='264' text-anchor='middle' font-size='13' style='fill:var(--ink)'>擅长慢病防患</text><text x='472' y='306' text-anchor='middle' font-size='12' style='fill:var(--cinnabar)'>时间轴:发病之前</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "三、四骑士:拖垮现代人的四张面孔"
+  },
+  {
+   "type": "p",
+   "text": "那么,医学 3.0 主要跟谁抢时间?Attia 借《圣经》里的意象,把杀死绝大多数现代人的慢病点成 **「四骑士」**:代谢功能障碍、心脏病、癌症、神经退行。它们有个共同点——都不是一夜之间找上门的,而是在你毫无感觉的几十年里慢慢逼近。看懂这四位是谁、彼此怎么勾连,是这本书的骨架。"
+  },
+  {
+   "type": "p",
+   "text": "为什么偏偏是这四位?因为在发达社会里,**绝大多数人最终就是被它们之一带走的**——不是被某种罕见怪病,而是被这几种「谁都听过、却总觉得离自己还远」的慢病。Attia 的策略因此很清晰:与其在四条战线上分散用兵,不如认清它们的上下游关系,优先掐住那个能牵一发动全身的总根。这也是下面这张图想说的事。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "四骑士里,代谢功能障碍站在最上游——它是「万病之根」,即使身材偏瘦的人也可能代谢不健康;它往下能给心脏病、癌症、神经退行都添柴。所以控代谢,是同时给另外三位「釜底抽薪」。",
+   "svg": "<svg viewBox='0 0 640 372' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='32' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>四骑士:代谢是总根,其余三位受它牵连</text><rect x='190' y='54' width='260' height='62' rx='10' style='fill:var(--cinnabar);stroke:var(--cinnabar)' stroke-width='1.5'/><text x='320' y='82' text-anchor='middle' font-size='15' font-weight='bold' style='fill:var(--paper-raised)'>① 代谢功能障碍</text><text x='320' y='104' text-anchor='middle' font-size='12' style='fill:var(--paper-raised)'>胰岛素抵抗 · 最上游的总根</text><line x1='320' y1='116' x2='120' y2='190' style='stroke:var(--ink-faint)' stroke-width='1.5'/><line x1='320' y1='116' x2='320' y2='190' style='stroke:var(--ink-faint)' stroke-width='1.5'/><line x1='320' y1='116' x2='520' y2='190' style='stroke:var(--ink-faint)' stroke-width='1.5'/><rect x='24' y='192' width='192' height='96' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='120' y='222' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--ink)'>② 心脏病</text><text x='120' y='247' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>apoB / LDL 颗粒</text><text x='120' y='268' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>越多越久越糟</text><rect x='224' y='192' width='192' height='96' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='320' y='222' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--ink)'>③ 癌症</text><text x='320' y='247' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>预防手段有限</text><text x='320' y='268' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>早筛是关键</text><rect x='424' y='192' width='192' height='96' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='520' y='222' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--ink)'>④ 神经退行</text><text x='520' y='247' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>阿尔茨海默 · ApoE4</text><text x='520' y='268' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>护心即护脑</text><text x='320' y='334' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>它们都在你毫无感觉的几十年里慢慢逼近——等确诊,火早烧大了</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "**第一位:代谢功能障碍——万病之根。** 当身体对胰岛素越来越不敏感(胰岛素抵抗),血糖处理不顺、脂肪堆进肝脏(脂肪肝)、胰岛素被迫越分越多(高胰岛素血症),身体就进入一种慢性失调。Attia 说这是**最上游的总根**:它一乱,另外三骑士都跟着抬头。有个反直觉但重要的点——**代谢不健康不等于胖**,不少身材偏瘦的人,代谢指标其实一塌糊涂;反过来,也有胖但代谢尚可的人。所以别拿体重当唯一体检表。"
+  },
+  {
+   "type": "p",
+   "text": "**第二位:心脏病——头号杀手,却可以预防。** Attia 把矛头指向一个字母组合:**apoB**。血液里携带胆固醇的颗粒(尤其 LDL,俗称「坏胆固醇」),每一颗表面都挂着一个 apoB;真正钻进血管壁、日积月累堆成斑块的,是**颗粒的数量**,而不只是胆固醇的总量。他有一句总结狠话:动脉粥样硬化的风险,取决于这些颗粒**「有多少、待多久」**——浓度越高、暴露越久,越糟。所以他主张**尽早把这个数字降下来**,别等血管堵到发作;并提醒关注 **Lp(a)**(一种很受基因决定、常被漏查的高危颗粒)和**冠脉钙化积分**(看血管里已经积了多少「历史欠账」)。"
+  },
+  {
+   "type": "p",
+   "text": "**第三位:癌症——预防手段有限,早筛是关键。** Attia 坦言,癌症是四骑士里我们理解最浅、能主动预防的抓手最少的一位:控好代谢、别抽烟、别太胖,能压低一些风险,但远谈不上「防得住」。既然拦不住它冒头,那就**尽量早地发现它**——因为绝大多数癌症,早期发现和晚期发现,结局天差地别。于是他对「早筛」态度激进,主张比常规指南更早、更积极地做筛查(这一条同样有争议,后面会提)。"
+  },
+  {
+   "type": "p",
+   "text": "**第四位:神经退行——尤其是阿尔茨海默。** 这一位最残忍:它偷走的不是身体,是「你之所以是你」的记忆和心智。风险和基因(如 **ApoE4** 变异)有关,但 Attia 强调一个关键观念——**真正的预防窗口,在发病之前几十年**,等症状出来往往为时已晚。而且脑血管和心血管本是一套系统,他一句话点破:**「护心,就是护脑」**——你为心脏做的那些事,同时也在保护大脑。"
+  },
+  {
+   "type": "quote",
+   "original": "你不能在发病之后才开始预防——那时候,你要防的东西早就来了。",
+   "translation": "对四骑士共性的转述。慢病是几十年的慢火,医学 3.0 的全部主张,都建立在「提前几十年动手」这个时间观上。"
+  },
+  {
+   "type": "h2",
+   "text": "四、五大杠杆:我们真正能拉动的是什么"
+  },
+  {
+   "type": "p",
+   "text": "认清了对手,剩下的问题是:普通人到底能做什么?Attia 把可拉动的抓手归成**五根杠杆**——运动、营养、睡眠、药物/激素、情绪健康。他反复说,这里没有什么神药秘方,就是这几件「老掉牙」的事,难在**认真做、长期做、按你的身体做**。"
+  },
+  {
+   "type": "p",
+   "text": "别小看这几件旧事。Attia 强调,长寿从来不是靠某一次「大动作」赢下来的,而是靠**几十年的复利**——每天多睡半小时、每周几次 Zone 2、每顿吃够蛋白、和家人好好说话,单独看每一件都微不足道,叠加几十年却是天差地别的两条曲线。这也解释了为什么他把「提前几十年动手」看得那么重:复利最怕的就是起步晚,你 40 岁开始攒,和 65 岁才开始攒,终点根本不在一个量级。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "五根杠杆里,Attia 把运动排在第一,称它是「最强效的长寿药」——没有任何一种药或补剂,能在延长健康寿命上和规律运动相比。",
+   "svg": "<svg viewBox='0 0 640 340' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='30' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>五根杠杆(运动最强)</text><line x1='40' y1='268' x2='600' y2='268' style='stroke:var(--line)' stroke-width='1.5'/><rect x='58' y='72' width='84' height='196' rx='8' style='fill:var(--cinnabar)'/><rect x='170' y='140' width='84' height='128' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><rect x='282' y='158' width='84' height='110' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><rect x='394' y='150' width='84' height='118' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><rect x='506' y='132' width='84' height='136' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='100' y='176' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--paper-raised)'>运动</text><text x='100' y='198' text-anchor='middle' font-size='11' style='fill:var(--paper-raised)'>最强长寿药</text><text x='212' y='296' text-anchor='middle' font-size='13.5' style='fill:var(--ink-soft)'>营养</text><text x='324' y='296' text-anchor='middle' font-size='13.5' style='fill:var(--ink-soft)'>睡眠</text><text x='436' y='296' text-anchor='middle' font-size='13.5' style='fill:var(--ink-soft)'>药物激素</text><text x='548' y='296' text-anchor='middle' font-size='13.5' style='fill:var(--ink-soft)'>情绪健康</text><text x='320' y='326' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>柱高只示意侧重,不代表精确权重</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "**运动:最强效的长寿药。** Attia 在这一章几乎不留余地。大量数据显示,两项指标对「你还能活多久、活多好」的预测力极强:**VO₂max**(最大摄氧量,衡量你的有氧引擎有多强)和**肌肉力量**——它们和死亡率的关系,比几乎任何药物都硬。他把训练拆成四块:**Zone 2**(能边运动边说话的中低强度有氧,练线粒体、打底子)、**高强度间歇**(顶一顶 VO₂max 的天花板)、**力量训练**(对抗年纪大了最要命的肌肉流失和骨质疏松)、以及**稳定性**(核心与平衡,防摔倒——老年最凶险的往往不是病,是一次骨折)。"
+  },
+  {
+   "type": "p",
+   "text": "他还给了一个特别好用的思维工具——**「百岁十项全能」(Centenarian Decathlon)**:先想清楚你 **90 岁**时最想还能做的十件事(自己爬楼、抱起孙辈、拧开瓶盖、从地上站起来、拎两袋菜走回家……),然后**从现在就倒推着去训练它们**。因为体能是会随年纪打折的,你想 90 岁做到的,必须 50 岁、60 岁就练得远超那个门槛。一句话:**你现在,就该练你 90 岁想做的动作。**"
+  },
+  {
+   "type": "quote",
+   "original": "先想清楚你九十岁时想做的十件事,然后从今天起,倒着把它们练出来。",
+   "translation": "「百岁十项全能」的核心。它把「长寿」从抽象目标,变成一份此刻就能开练的具体清单——这是全书最落地的一个工具。"
+  },
+  {
+   "type": "figure",
+   "ftype": "金句卡",
+   "caption": "全书最落地的一句话:把长寿倒过来想——先定 90 岁想做的十件事,再从今天倒推着练。",
+   "svg": "<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><rect x='24' y='24' width='592' height='252' rx='14' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><circle cx='320' cy='82' r='23' style='fill:var(--cinnabar)'/><text x='320' y='90' text-anchor='middle' font-size='20' font-weight='bold' style='fill:var(--paper-raised)'>观</text><text x='320' y='158' text-anchor='middle' font-size='25' font-weight='bold' style='fill:var(--ink)'>现在,就练你</text><text x='320' y='196' text-anchor='middle' font-size='25' font-weight='bold' style='fill:var(--cinnabar)'>九十岁想做的动作</text><line x1='252' y1='224' x2='388' y2='224' style='stroke:var(--ink-faint)' stroke-width='1'/><text x='320' y='252' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>《超越百岁》 · 百岁十项全能</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "**营养:没有万能饮食,只有约束与测量。** 这一章 Attia 最「反教条」。他不站任何饮食门派——低碳、生酮、纯素、地中海……在他看来,**没有一种饮食适合所有人**。他把五花八门的吃法归成三种底层「约束」:**CR(限热量)**、**DR(限种类,比如少糖、断某类食物)**、**TR(限时,即在固定时间窗内进食)**——每种都可能有用,也各有代价,关键看你自己的身体怎么反应。他尤其强调两点:**蛋白质要吃够**(对抗年纪大了的「肌少症」——肌肉是长寿的本钱);以及**用数据说话**,比如戴**连续血糖监测(CGM)**看看到底哪种食物把你的血糖顶上天——把「我该怎么吃」从信仰之争,变成一件可以测量、可以调的私人工程。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "Attia 不站任何饮食门派,而是把五花八门的吃法归成三种底层「约束」——它们可以单用,也可以叠着用,各有代价,该选哪种,由你自己的身体数据说了算。",
+   "svg": "<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='32' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>没有万能饮食,只有三种「约束」</text><rect x='30' y='66' width='186' height='166' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><rect x='227' y='66' width='186' height='166' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><rect x='424' y='66' width='186' height='166' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='123' y='108' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--cinnabar)'>CR · 限热量</text><text x='123' y='146' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>吃得比消耗少</text><text x='123' y='174' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>在总量上做减法</text><text x='320' y='108' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--cinnabar)'>DR · 限种类</text><text x='320' y='146' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>少糖 / 断某类食物</text><text x='320' y='174' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>挑着吃</text><text x='517' y='108' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--cinnabar)'>TR · 限时</text><text x='517' y='146' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>只在时间窗内进食</text><text x='517' y='174' text-anchor='middle' font-size='13' style='fill:var(--ink-soft)'>控住进食时段</text><text x='320' y='270' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>三种各有用、也各有代价——别信教条,先量了再说</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "剩下三根杠杆,Attia 讲得相对短,但都点到要害。**睡眠**:长期被现代人当成可牺牲的东西,其实它直接牵动代谢、心血管和大脑清理废物的能力,欠的觉都要还。**药物与激素**:他不排斥在个性化评估后审慎使用(如某些降脂药、在合适人群中的激素替代),但一再强调「因人而异、需专业评估」——这也是全书争议较多的一块。而最后一根,他留到全书压轴,郑重其事地单独讲。"
+  },
+  {
+   "type": "h2",
+   "text": "五、压轴的那根支柱:情绪健康"
+  },
+  {
+   "type": "p",
+   "text": "全书最动人的转折,来自 Attia 的**自我坦白**。他花了大半本书讲 VO₂max、apoB、血糖曲线这些硬邦邦的指标,却在结尾承认:自己曾经是个「情绪上很糟糕」的人——易怒、苛刻、被童年创伤和完美主义驱使,把家人越推越远。他一度以为,只要身体数据够漂亮,就算把长寿这件事做成了。直到他明白:**如果一个人活到一百岁,身体硬朗、脑子清楚,却孤独、愤怒、和所有亲近的人都断了连接,那这「长寿」到底有什么意义?**"
+  },
+  {
+   "type": "p",
+   "text": "而且情绪健康并不只是「软性」的锦上添花。大量研究一再发现,**社会连接的质量**——你有没有能说心里话的人、有没有稳定温暖的亲密关系——是预测一个人活多久、活多好的强变量,分量不输给血压和血糖。长期的孤独和敌意,本身就是一种慢性的健康损耗,会实打实地反映到身体上。所以 Attia 把它郑重写进长寿处方,不是为了煽情,而是在认账:人到底是关系里的动物,身体这台机器再保养得好,也架不住心里长期的荒芜。"
+  },
+  {
+   "type": "p",
+   "text": "所以他把**情绪健康**郑重列为第五根杠杆,而且分量最重。前面说过,健康寿命有身体、认知、情绪三个维度——情绪这一维如果塌了,前两维修得再好也撑不住整个人。这也是这本长寿书最不「技术」、却最点睛的一笔:**再精密的健康工程,如果没有值得活的关系和内心的安宁,都是空的。** 长寿的终点,不是一具保养得当的躯壳,是一个还愿意去爱、也被爱着的人。"
+  },
+  {
+   "type": "quote",
+   "original": "如果活得很久,身体也很好,却孤独、愤怒、谁也不亲近,那这份长寿,又有什么意义?",
+   "translation": "Attia 在收尾处的自省。全书最硬核的一位长寿医生,最后把最重的一票投给了情绪健康——这是《超越百岁》真正的落点。"
+  },
+  {
+   "type": "h2",
+   "text": "六、怎么读这本书:一份「提前下注」的蓝图"
+  },
+  {
+   "type": "p",
+   "text": "最后,几句研读提醒,请务必带着读。第一,**这是一位长寿医学医生的一家框架,不是官方指南。** 书里一些相当激进的主张——比如把降脂目标定得**极早、极低**,某些补剂和激素替代,某些生物标志物的具体阈值——在主流医学指南里**仍有争议**,并非共识。这不是说他一定错,而是说你该知道它们「有争议」,别当成铁律照搬。"
+  },
+  {
+   "type": "p",
+   "text": "第二,**要理解「医学 3.0」这套逻辑的两面性。** 它最大的优点是主动、提前;但它也承认自己常常要在**「证据还不完美」时就行动**——这本质上是一种「提前下注」:赌对了收益巨大,但它终究是下注,不是板上钉钉。所以读的时候,请把这些具体建议看成「值得认真评估的高质量下注」,而不是「照做必长寿」的保证。第三,**这是蓝图,不是速成法。** 它给的是一套需要几十年、按你个人情况长期经营的框架,**千万别读成「照抄某套饮食或某几种补剂就能长寿」**——那恰恰是这本书最反对的教条思维。"
+  },
+  {
+   "type": "p",
+   "text": "说到底,《超越百岁》真正想改的,是我们对「长寿」两个字的默认想象:不是把生命那根线尽量拖长,而是把「健康、清醒、还笑得出来」的那一段,尽量拉到最后、压得最实。它不承诺让你活到一百岁——没有谁能承诺——它只是提醒你:那个 90 岁还想爬山、抱孙子、认得家人的自己,能不能等到,答案藏在你从今天起怎么运动、怎么吃、怎么睡、怎么和人相处里。"
+  },
+  {
+   "type": "pull",
+   "text": "具体到你自己的身体,书里任何建议都请与你的医生商量后再定——这本书能给你的,是一张好问题的清单,不是一份可以照抄的处方。"
+  },
+  {
+   "type": "refs",
+   "items": [
+    "Peter Attia, Bill Gifford《超越百岁》(Outlive: The Science and Art of Longevity, 2023):健康寿命 vs 寿命、医学 3.0、四骑士、五大杠杆的原始框架",
+    "书中关键词速查:healthspan(健康寿命)/ marginal decade(边际的十年)/ Centenarian Decathlon(百岁十项全能)/ apoB · Lp(a)· ApoE4 · VO₂max · Zone 2 · CGM · CR/DR/TR",
+    "研读定位:属预防/长寿医学的一家之言,部分主张(激进早期降脂、某些补剂激素、生物标志物阈值)在主流指南中仍有争议;书本身承认医学 3.0 常需在证据不完美时行动",
+    "本文为原创转述与导读,非医疗建议;涉及个人健康决策请遵医嘱"
+   ]
+  }
+ ]
 }

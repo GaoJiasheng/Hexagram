@@ -47,7 +47,11 @@
   },
   {
    "type": "p",
-   "text": "这个数字一算出来，盖伦那套立刻就崩了。如果血真是「造出来、烧光、再造」，那肝脏得在一个钟头里凭空造出好几个人份的血，身体又得把这么多血统统烧掉——这在物质上根本讲不通，无中不能生有。哈维于是得出唯一站得住的结论：血没有被用光，**它是同一批血，在体内一圈一圈地循环，反复经过心脏。**"
+   "text": "这个数字一算出来，盖伦那套立刻就崩了。如果血真是「造出来、烧光、再造」，那肝脏得在一个钟头里凭空造出好几个人份的血，身体又得把这么多血统统烧掉——这在物质上根本讲不通，无中不能生有。哈维于是得出唯一站得住的结论：血没有被用光，"
+  },
+  {
+   "type": "pull",
+   "text": "它是同一批血，在体内一圈一圈地循环，反复经过心脏。"
   },
   {
    "type": "p",
@@ -118,8 +122,11 @@
    "svg": "<svg viewBox=\"0 0 560 300\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"19\">一个闭合的圈：心脏这台泵</text><circle cx=\"280\" cy=\"170\" r=\"92\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><path d=\"M340 100 A92 92 0 0 1 372 170\" fill=\"none\" style=\"stroke:var(--cinnabar)\" stroke-width=\"1.6\"/><path d=\"M366 156 L373 172 L358 168\" style=\"fill:var(--cinnabar)\"/><circle cx=\"280\" cy=\"78\" r=\"26\" style=\"fill:var(--cinnabar)\"/><text x=\"280\" y=\"83\" text-anchor=\"middle\" style=\"fill:var(--paper-raised)\" font-size=\"15\">心</text><text x=\"408\" y=\"176\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">动脉</text><text x=\"280\" y=\"290\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">全身组织</text><text x=\"150\" y=\"176\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">静脉</text><text x=\"280\" y=\"174\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">收缩即压出</text><text x=\"280\" y=\"196\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">血不生不灭，只是转</text></svg>"
   },
   {
-   "type": "p",
-   "text": "值得一提的是，真理并没有当场获胜。《心血运动论》出版后，哈维遭到不少同行的嘲讽，有人给他起了个外号叫「循环贩子」，把他当成不知天高地厚的异想天开者；据说有一阵他的行医生意还因此清淡了下来。**推翻一千五百年的权威，代价是先被这权威的信徒们围攻。**好在算术和实验都摆在那里，任谁都能复核——时间站在证据这一边，哈维终究在有生之年看到自己的学说被广泛接受。"
+   "type": "callout",
+   "tone": "mute",
+   "items": [
+    "值得一提的是，真理并没有当场获胜。《心血运动论》出版后，哈维遭到不少同行的嘲讽，有人给他起了个外号叫「循环贩子」，把他当成不知天高地厚的异想天开者；据说有一阵他的行医生意还因此清淡了下来。**推翻一千五百年的权威，代价是先被这权威的信徒们围攻。**好在算术和实验都摆在那里，任谁都能复核——时间站在证据这一边，哈维终究在有生之年看到自己的学说被广泛接受。"
+   ]
   },
   {
    "type": "h2",

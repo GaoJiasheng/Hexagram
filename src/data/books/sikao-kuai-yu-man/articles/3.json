@@ -1,118 +1,122 @@
 {
-  "title": "锚定效应：第一个数字，如何悄悄绑架你的判断",
-  "subtitle": "《思考，快与慢》第3章导读——一个明知无关的数字，为什么能拉动你的答案",
-  "centralIdea": "锚定效应说的是：当你要估一个自己不知道的数量时，只要事先在你眼前晃过一个数字（哪怕明显跟问题无关），你的答案就会朝那个数字偏。卡尼曼和特沃斯基用一个做了手脚、只会停在 10 或 65 的幸运转盘证明了这点——刚看到 10 的人平均猜非洲国家占联合国 25%，刚看到 65 的人平均猜 45%，一个纯随机的数字系统性地拉动了判断。它同时走两条暗道：慢系统2「从锚出发、调整不足」，快系统1被锚「启动」了相关联想。锚定无处不在——房产标价、超市限购、谈判先开价、法官量刑、慈善建议额，都在设锚，而且很难免疫，知道有锚也躲不掉。唯一有点用的对策，是刻意去想「这个锚凭什么对」、往反方向找理由，在重要谈判里对荒唐的开价干脆不接招。分寸：这是反复验证过的稳健效应，但具体偏多少因情境而异——讲的是「第一个数字会绑架判断」，不是「随便给个数就能操控一切」。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "先玩个一秒钟的游戏。第一问：甘地去世时，是不是超过 144 岁？第二问：他究竟活到几岁？——几乎没人真信甘地活了 144 岁，可只要这个荒唐的大数刚在你脑子里闪过，你对第二问给出的岁数就会不知不觉往高处飘；要是第一问改成「他去世时不到 35 岁吗」，你猜的数又会明显偏小。同一个人、同一段生平，答案却被前面那个你明知无关的数字悄悄拨动了。这就是本章的主角——锚定效应（anchoring）。"
-    },
-    {
-      "type": "h2",
-      "text": "一个明摆着无关的数字，凭什么能改你的答案"
-    },
-    {
-      "type": "p",
-      "text": "锚定效应说的是这样一件事：当你要估计一个自己并不知道的数量时，只要事先接触到某个数字，你最后的估计就会朝那个数字的方向偏——**哪怕那个数字明显跟问题八竿子打不着**。那个先入为主的数字，卡尼曼管它叫「锚」（anchor）：它像抛进海里的铁锚，你的判断就是那条船，看似能自由漂，其实被一根看不见的链子拴住，离锚飘不远。注意，这跟「参考有用信息」是两码事——真正诡异的地方在于，**连一个你明知毫无根据的数字，也照样能拽住你。**"
-    },
-    {
-      "type": "p",
-      "text": "这话听起来太玄，于是卡尼曼和他的搭档特沃斯基设计了一个几乎不讲道理的实验。他们请人先转一个大转盘、记下停在哪个数——可这转盘被做了手脚，**只会停在 10 或 65 上**。转完盘，再问同一个跟数字毫不相干的问题：非洲国家占联合国会员国的比例是多少？结果耐人寻味：刚转到 10 的人，平均猜 25%；刚转到 65 的人，平均猜 45%。一个人人都眼睁睁看着它随机蹦出来、和联合国毫无关系的数字，硬是把答案拉开了近一倍。"
-    },
-    {
-      "type": "p",
-      "text": "要知道，被试是**亲眼看着转盘随机停下**的，没有谁会真觉得「转盘懂非洲」。可这一点儿都不妨碍那个数字钻进他们的判断。这个实验后来被反复重做、换各种题目，效应稳稳地在，成了心理学里最结实的发现之一。它之所以让人不安，正是因为它拆穿了一个我们珍视的错觉：我们总以为自己的估计是「独立掂量」出来的，其实起点常常是别人随手扔给你的一个数。"
-    },
-    {
-      "type": "quote",
-      "original": "任意的锚也能影响判断，哪怕人们清楚这个数字毫无信息可言",
-      "translation": ""
-    },
-    {
-      "type": "figure",
-      "ftype": "对照图",
-      "caption": "幸运转盘锚定实验：转盘做了手脚，只停 10 或 65。刚看到 10 的人平均猜 25%，刚看到 65 的人平均猜 45%——同一个问题，被一个随机数字拉开近一倍。",
-      "svg": "<svg viewBox=\"0 0 560 340\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">做了手脚的幸运转盘：只会停在 10 或 65</text><circle cx=\"280\" cy=\"82\" r=\"40\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><line x1=\"280\" y1=\"82\" x2=\"280\" y2=\"42\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\"/><line x1=\"280\" y1=\"82\" x2=\"320\" y2=\"82\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\"/><line x1=\"280\" y1=\"82\" x2=\"280\" y2=\"122\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\"/><line x1=\"280\" y1=\"82\" x2=\"240\" y2=\"82\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\"/><text x=\"298\" y=\"64\" font-size=\"12\" style=\"fill:var(--ink-soft)\">10</text><text x=\"250\" y=\"108\" font-size=\"12\" style=\"fill:var(--ink-soft)\">65</text><path d=\"M280 38 l-6 -13 h12 Z\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"280\" y=\"146\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">转出的数字纯属随机，跟问题毫不相干</text><text x=\"280\" y=\"172\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">问：非洲国家占联合国会员国的比例是多少？</text><line x1=\"238\" y1=\"184\" x2=\"150\" y2=\"202\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\" stroke-dasharray=\"4 4\"/><line x1=\"322\" y1=\"184\" x2=\"410\" y2=\"202\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\" stroke-dasharray=\"4 4\"/><text x=\"150\" y=\"216\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">刚看到「10」的人</text><rect x=\"60\" y=\"238\" width=\"180\" height=\"20\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"60\" y=\"238\" width=\"45\" height=\"20\" rx=\"4\" style=\"fill:var(--ink-faint)\"/><text x=\"150\" y=\"286\" text-anchor=\"middle\" font-size=\"16\" style=\"fill:var(--ink)\">平均猜 25%</text><text x=\"410\" y=\"216\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">刚看到「65」的人</text><rect x=\"320\" y=\"238\" width=\"180\" height=\"20\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"320\" y=\"238\" width=\"81\" height=\"20\" rx=\"4\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"410\" y=\"286\" text-anchor=\"middle\" font-size=\"16\" style=\"fill:var(--cinnabar-pure)\">平均猜 45%</text><text x=\"280\" y=\"318\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">同一个问题，答案被眼前那个随机数字拉开了近一倍</text></svg>"
-    },
-    {
-      "type": "h2",
-      "text": "大脑里的两条暗道：一条在「调整」，一条在「联想」"
-    },
-    {
-      "type": "p",
-      "text": "锚为什么这么好使？卡尼曼说，它其实同时走了两条暗道，分别对应大脑里的两套系统。第一条走的是慢而费力的**系统2**：你被那个数字定住后，会**从锚出发、朝你觉得对的方向一点点挪**——比如从 65 往下调，觉得「非洲国家没那么多」，于是调到 45% 左右就停了；从 10 往上调，调到 25% 就停了。问题在于，这种调整几乎总是**不充分**：人一旦挪到「勉强说得过去」的区间就松手，很少继续往真值走。锚设得越高，你松手的地方也越高。"
-    },
-    {
-      "type": "p",
-      "text": "第二条走的是快而自动的**系统1**，机制叫「启动」（priming），也叫联想效应。锚就像一颗投进水里的石子：数字 65 一落，脑子里那些「跟 65 合拍」的念头——非洲国家很多、很大、名字数不清——会被激起、变得格外容易浮现；换成 10，被激起的就是相反那批念头。你以为自己在「客观回想」，其实系统1早替你挑好了要想起哪些证据。两条道方向一致，都把答案往锚那边推，所以效果叠加得又快又稳。"
-    },
-    {
-      "type": "figure",
-      "ftype": "机制图",
-      "caption": "锚走两条暗道：慢系统2 从锚出发、还没调到真值就停手（调整不足）；快系统1 被锚「启动」，让与锚合拍的念头更容易冒出来。两条道方向一致。",
-      "svg": "<svg viewBox=\"0 0 560 250\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">同一个锚，顺着两条暗道拨动你</text><rect x=\"18\" y=\"42\" width=\"256\" height=\"188\" rx=\"10\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><text x=\"146\" y=\"70\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">慢系统2：从锚出发，调不够</text><line x1=\"48\" y1=\"150\" x2=\"252\" y2=\"150\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.5\"/><circle cx=\"60\" cy=\"150\" r=\"6\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"60\" y=\"176\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">锚</text><circle cx=\"240\" cy=\"150\" r=\"6\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"240\" y=\"176\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">真值</text><line x1=\"66\" y1=\"128\" x2=\"150\" y2=\"128\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><path d=\"M150 128 l-10 -5 v10 Z\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"150\" y=\"112\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--cinnabar-pure)\">调到这就停了</text><rect x=\"286\" y=\"42\" width=\"256\" height=\"188\" rx=\"10\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><text x=\"414\" y=\"70\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">快系统1：锚一落，联想四起</text><circle cx=\"414\" cy=\"150\" r=\"10\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><circle cx=\"414\" cy=\"150\" r=\"24\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"1.3\"/><circle cx=\"414\" cy=\"150\" r=\"40\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"1\"/><circle cx=\"414\" cy=\"150\" r=\"3\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"414\" y=\"200\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">跟锚合拍的念头，更容易冒出来</text><text x=\"414\" y=\"98\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">锚＝投进水里的石子</text><text x=\"280\" y=\"246\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">两条道方向一致，都把答案往锚那边推</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "把这两条道搬到你最熟的场景，一秒就懂。逛网店时，商品页先甩出一个划掉的「原价 ¥999」，再标「现价 ¥599」——那个 999 就是精心埋的锚。系统1一看，「599 比 999 便宜太多了」的省钱感瞬间被点亮；系统2就算想核算「这东西到底值多少」，也只会从 999 往下挪，挪到 599 附近就觉得「差不多」。可要是它本来就只值 300，你被锚拽着，压根挪不到那儿。商家很清楚：**决定你觉得贵不贵的，往往不是东西本身，而是它旁边那个先出现的数字。**"
-    },
-    {
-      "type": "p",
-      "text": "这也解释了一个反常的现象：锚定这么荒唐，为什么连提醒都挡不住？因为系统1那条道是自动的，**你根本意识不到它在替你筛念头**；而系统2那条道，你以为自己在「独立思考、认真调整」，其实只是从别人给的起点出发、挪了几步就交卷。两套系统都在暗中配合那只锚，你却以为答案是自己一手拿的主意。"
-    },
-    {
-      "type": "h2",
-      "text": "你以为的「独立判断」，其实到处都被人设了锚"
-    },
-    {
-      "type": "p",
-      "text": "实验室里的转盘只是极端演示，锚定真正的可怕之处，是它埋伏在日常的每一次估价与谈判里。最经典的一例是房产：卡尼曼提到，给一批**专业房产中介**看同一套房子、同一份资料，只把「挂牌价」这一个数字换高或换低，他们对房子合理价值的评估就随之明显偏移——而事后问他们，几乎所有人都信誓旦旦地说，标价**根本没影响**自己的判断。越是自认专业、越觉得自己不受影响的人，往往越察觉不到锚已经拽住了他。"
-    },
-    {
-      "type": "p",
-      "text": "顺着看下去，你会发现锚无处不在：超市货架写上「每人限购 12 罐」，顾客平均买得比不限购时还多，因为「12」成了心里的参照；谈判桌上**先开价**的一方常占便宜，因为那个数字先落地，就成了双方来回拉扯的锚；连法官量刑，也被实验证明会被一个明显无关的数字（比如掷骰子掷出的点数）拉动；慈善募捐时先给个建议数额，人们的捐款也会随之抬高。凡是要人「估一个数」的场合，第一个抛出来的数字，几乎都在偷偷设锚。"
-    },
-    {
-      "type": "quote",
-      "original": "先开价的人占优势——那个数字会成为整场谈判绕不开的参照点",
-      "translation": ""
-    },
-    {
-      "type": "figure",
-      "ftype": "示意图",
-      "caption": "生活里的锚：卖家的标价、货架上的「限购 12」、谈判里的先开价——量刑与捐款同理。谁先抛出数字，谁就替这场判断埋下了锚。",
-      "svg": "<svg viewBox=\"0 0 560 250\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">生活里，第一个数字早就替你设好了锚</text><rect x=\"24\" y=\"48\" width=\"156\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><text x=\"102\" y=\"82\" text-anchor=\"middle\" font-size=\"26\" style=\"fill:var(--cinnabar-pure)\">&#165;</text><text x=\"102\" y=\"112\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">标价</text><text x=\"102\" y=\"138\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">卖家先挂高价，</text><text x=\"102\" y=\"158\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">你的还价也随之抬高</text><text x=\"102\" y=\"182\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">连专业中介也中招</text><rect x=\"202\" y=\"48\" width=\"156\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><text x=\"280\" y=\"84\" text-anchor=\"middle\" font-size=\"20\" style=\"fill:var(--cinnabar-pure)\">&#215;12</text><text x=\"280\" y=\"112\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">每人限购</text><text x=\"280\" y=\"138\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">「限购 12 罐」，</text><text x=\"280\" y=\"158\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">反而买得比平时多</text><text x=\"280\" y=\"182\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">数字 12 成了参照</text><rect x=\"380\" y=\"48\" width=\"156\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><text x=\"458\" y=\"86\" text-anchor=\"middle\" font-size=\"22\" style=\"fill:var(--cinnabar-pure)\">&#187;</text><text x=\"458\" y=\"112\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">先开价</text><text x=\"458\" y=\"138\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">谈判里先抛数字的人，</text><text x=\"458\" y=\"158\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">往往定了整场的基调</text><text x=\"458\" y=\"182\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">量刑、捐款同理</text><text x=\"280\" y=\"230\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">谁先抛出数字，谁就替这场判断埋下了锚</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "最贴身的例子，是谈工资。很多人被教「别先开口，让对方先报」，这背后正是锚定：谁先说出一个数，那个数就成了整场拉锯的中心，后面所有讨价还价都绕着它转。你张口要「两万五」，哪怕对方觉得高，最后往往落在离两万五不远处；你要是先说「两万」，天花板也就悄悄降到了两万附近。反过来，卡尼曼也提醒了硬币的另一面——有时**你主动先抛一个（合理的高）锚，反而对自己有利**，因为你把参照点定在了自己想要的地方。关键从来不是「先开还是后开」的死规矩，而是心里始终清楚：**桌上第一个数字，正在替所有人定基调。**"
-    },
-    {
-      "type": "h2",
-      "text": "明知有锚也躲不开——那还能做点什么"
-    },
-    {
-      "type": "p",
-      "text": "坏消息先说：锚定效应**极难免疫**。卡尼曼坦言，即便你事先知道有锚、被明确提醒「别被那个数字带偏」，也很难完全摆脱它的拉扯——因为拉你的那条道大半在意识之下。承认这一点本身就有用：别高估自己「不受影响」的定力，尤其在你最自信的领域。"
-    },
-    {
-      "type": "p",
-      "text": "好消息是，还是有一点能做的，方向都指向同一个动作——**刻意调头想**。碰到一个锚，别顺着它往下算，先问自己：这个数字凭什么是对的？然后**专门往反方向去找理由**，把「它可能太高了 / 太低了」的证据一条条摆出来。心理学的说法是「考虑相反面」：既然锚会自动激活跟它同向的念头，你就手动逼自己去想反向的念头，一正一反，多少能把偏差往中间拉回来一点。在重要的谈判里更直接：如果对方抛出一个荒唐的开价，**别在它的基础上还价**——一旦你还了，就等于默认它是起点、把锚认了；正确的做法是干脆不接招，明确表示这个数字离谱、不能作为讨论的基础，逼对方重新报一个。你压不掉锚，但可以不让它当那个起点。"
-    },
-    {
-      "type": "quote",
-      "original": "想一想那个锚为什么可能是错的，是对抗它为数不多的有效办法",
-      "translation": ""
-    },
-    {
-      "type": "figure",
-      "ftype": "对策图",
-      "caption": "对付锚，唯一有点用的动作是「先调头想」：先问它凭什么是对的、专门往反方向找理由；碰上荒唐开价直接不接招。这只把偏差压小，不能清零。",
-      "svg": "<svg viewBox=\"0 0 560 230\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">对付锚，唯一有点用的动作：先调头想</text><circle cx=\"150\" cy=\"118\" r=\"34\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"2\"/><text x=\"150\" y=\"114\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink-soft)\">眼前的</text><text x=\"150\" y=\"132\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--cinnabar-pure)\">锚</text><path d=\"M198 118 q92 -58 176 0\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><path d=\"M374 118 l-11 -4 4 11 Z\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"286\" y=\"58\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">它凭什么是对的？往反方向找理由</text><circle cx=\"422\" cy=\"118\" r=\"34\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"2\"/><text x=\"422\" y=\"114\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">自己的</text><text x=\"422\" y=\"132\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">判断</text><text x=\"280\" y=\"188\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">碰上荒唐的开价，别在它基础上还价——直接不接招</text><text x=\"280\" y=\"212\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">提醒：知道有锚仍难免疫，这一招只把偏差压小，不能清零</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "最后把分寸摆正。锚定是心理学里被反复验证、相当稳健的一个效应，但它不是魔法——**具体偏多少，随情境、随人、随你对该领域懂不懂而变**，卡尼曼讲的是「第一个碰到的数字会绑架判断」，不是「随便报个数就能操控一切」。真正值得你记住的，是那个视角翻转：下次你觉得某个数字是自己「独立估」出来的，尤其在标价、报价、谈判、估值这些场合，先回头看一眼——**眼前第一个撞上你的数字，是不是早替你把锚下好了。谁先抛出数字，谁就悄悄设了那只锚。**"
-    }
-  ]
+ "title": "锚定效应：第一个数字，如何悄悄绑架你的判断",
+ "subtitle": "《思考，快与慢》第3章导读——一个明知无关的数字，为什么能拉动你的答案",
+ "centralIdea": "锚定效应说的是：当你要估一个自己不知道的数量时，只要事先在你眼前晃过一个数字（哪怕明显跟问题无关），你的答案就会朝那个数字偏。卡尼曼和特沃斯基用一个做了手脚、只会停在 10 或 65 的幸运转盘证明了这点——刚看到 10 的人平均猜非洲国家占联合国 25%，刚看到 65 的人平均猜 45%，一个纯随机的数字系统性地拉动了判断。它同时走两条暗道：慢系统2「从锚出发、调整不足」，快系统1被锚「启动」了相关联想。锚定无处不在——房产标价、超市限购、谈判先开价、法官量刑、慈善建议额，都在设锚，而且很难免疫，知道有锚也躲不掉。唯一有点用的对策，是刻意去想「这个锚凭什么对」、往反方向找理由，在重要谈判里对荒唐的开价干脆不接招。分寸：这是反复验证过的稳健效应，但具体偏多少因情境而异——讲的是「第一个数字会绑架判断」，不是「随便给个数就能操控一切」。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "先玩个一秒钟的游戏。第一问：甘地去世时，是不是超过 144 岁？第二问：他究竟活到几岁？——几乎没人真信甘地活了 144 岁，可只要这个荒唐的大数刚在你脑子里闪过，你对第二问给出的岁数就会不知不觉往高处飘；要是第一问改成「他去世时不到 35 岁吗」，你猜的数又会明显偏小。同一个人、同一段生平，答案却被前面那个你明知无关的数字悄悄拨动了。这就是本章的主角——锚定效应（anchoring）。"
+  },
+  {
+   "type": "h2",
+   "text": "一个明摆着无关的数字，凭什么能改你的答案"
+  },
+  {
+   "type": "p",
+   "text": "锚定效应说的是这样一件事：当你要估计一个自己并不知道的数量时，只要事先接触到某个数字，你最后的估计就会朝那个数字的方向偏——**哪怕那个数字明显跟问题八竿子打不着**。那个先入为主的数字，卡尼曼管它叫「锚」（anchor）：它像抛进海里的铁锚，你的判断就是那条船，看似能自由漂，其实被一根看不见的链子拴住，离锚飘不远。注意，这跟「参考有用信息」是两码事——真正诡异的地方在于，**连一个你明知毫无根据的数字，也照样能拽住你。**"
+  },
+  {
+   "type": "p",
+   "text": "这话听起来太玄，于是卡尼曼和他的搭档特沃斯基设计了一个几乎不讲道理的实验。他们请人先转一个大转盘、记下停在哪个数——可这转盘被做了手脚，**只会停在 10 或 65 上**。转完盘，再问同一个跟数字毫不相干的问题：非洲国家占联合国会员国的比例是多少？结果耐人寻味：刚转到 10 的人，平均猜 25%；刚转到 65 的人，平均猜 45%。一个人人都眼睁睁看着它随机蹦出来、和联合国毫无关系的数字，硬是把答案拉开了近一倍。"
+  },
+  {
+   "type": "p",
+   "text": "要知道，被试是**亲眼看着转盘随机停下**的，没有谁会真觉得「转盘懂非洲」。可这一点儿都不妨碍那个数字钻进他们的判断。这个实验后来被反复重做、换各种题目，效应稳稳地在，成了心理学里最结实的发现之一。它之所以让人不安，正是因为它拆穿了一个我们珍视的错觉：我们总以为自己的估计是「独立掂量」出来的，其实起点常常是别人随手扔给你的一个数。"
+  },
+  {
+   "type": "quote",
+   "original": "任意的锚也能影响判断，哪怕人们清楚这个数字毫无信息可言",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "对照图",
+   "caption": "幸运转盘锚定实验：转盘做了手脚，只停 10 或 65。刚看到 10 的人平均猜 25%，刚看到 65 的人平均猜 45%——同一个问题，被一个随机数字拉开近一倍。",
+   "svg": "<svg viewBox=\"0 0 560 340\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">做了手脚的幸运转盘：只会停在 10 或 65</text><circle cx=\"280\" cy=\"82\" r=\"40\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><line x1=\"280\" y1=\"82\" x2=\"280\" y2=\"42\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\"/><line x1=\"280\" y1=\"82\" x2=\"320\" y2=\"82\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\"/><line x1=\"280\" y1=\"82\" x2=\"280\" y2=\"122\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\"/><line x1=\"280\" y1=\"82\" x2=\"240\" y2=\"82\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\"/><text x=\"298\" y=\"64\" font-size=\"12\" style=\"fill:var(--ink-soft)\">10</text><text x=\"250\" y=\"108\" font-size=\"12\" style=\"fill:var(--ink-soft)\">65</text><path d=\"M280 38 l-6 -13 h12 Z\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"280\" y=\"146\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">转出的数字纯属随机，跟问题毫不相干</text><text x=\"280\" y=\"172\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">问：非洲国家占联合国会员国的比例是多少？</text><line x1=\"238\" y1=\"184\" x2=\"150\" y2=\"202\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\" stroke-dasharray=\"4 4\"/><line x1=\"322\" y1=\"184\" x2=\"410\" y2=\"202\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.4\" stroke-dasharray=\"4 4\"/><text x=\"150\" y=\"216\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">刚看到「10」的人</text><rect x=\"60\" y=\"238\" width=\"180\" height=\"20\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"60\" y=\"238\" width=\"45\" height=\"20\" rx=\"4\" style=\"fill:var(--ink-faint)\"/><text x=\"150\" y=\"286\" text-anchor=\"middle\" font-size=\"16\" style=\"fill:var(--ink)\">平均猜 25%</text><text x=\"410\" y=\"216\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">刚看到「65」的人</text><rect x=\"320\" y=\"238\" width=\"180\" height=\"20\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><rect x=\"320\" y=\"238\" width=\"81\" height=\"20\" rx=\"4\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"410\" y=\"286\" text-anchor=\"middle\" font-size=\"16\" style=\"fill:var(--cinnabar-pure)\">平均猜 45%</text><text x=\"280\" y=\"318\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">同一个问题，答案被眼前那个随机数字拉开了近一倍</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "大脑里的两条暗道：一条在「调整」，一条在「联想」"
+  },
+  {
+   "type": "p",
+   "text": "锚为什么这么好使？卡尼曼说，它其实同时走了两条暗道，分别对应大脑里的两套系统。第一条走的是慢而费力的**系统2**：你被那个数字定住后，会**从锚出发、朝你觉得对的方向一点点挪**——比如从 65 往下调，觉得「非洲国家没那么多」，于是调到 45% 左右就停了；从 10 往上调，调到 25% 就停了。问题在于，这种调整几乎总是**不充分**：人一旦挪到「勉强说得过去」的区间就松手，很少继续往真值走。锚设得越高，你松手的地方也越高。"
+  },
+  {
+   "type": "p",
+   "text": "第二条走的是快而自动的**系统1**，机制叫「启动」（priming），也叫联想效应。锚就像一颗投进水里的石子：数字 65 一落，脑子里那些「跟 65 合拍」的念头——非洲国家很多、很大、名字数不清——会被激起、变得格外容易浮现；换成 10，被激起的就是相反那批念头。你以为自己在「客观回想」，其实系统1早替你挑好了要想起哪些证据。两条道方向一致，都把答案往锚那边推，所以效果叠加得又快又稳。"
+  },
+  {
+   "type": "figure",
+   "ftype": "机制图",
+   "caption": "锚走两条暗道：慢系统2 从锚出发、还没调到真值就停手（调整不足）；快系统1 被锚「启动」，让与锚合拍的念头更容易冒出来。两条道方向一致。",
+   "svg": "<svg viewBox=\"0 0 560 250\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">同一个锚，顺着两条暗道拨动你</text><rect x=\"18\" y=\"42\" width=\"256\" height=\"188\" rx=\"10\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><text x=\"146\" y=\"70\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">慢系统2：从锚出发，调不够</text><line x1=\"48\" y1=\"150\" x2=\"252\" y2=\"150\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.5\"/><circle cx=\"60\" cy=\"150\" r=\"6\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"60\" y=\"176\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">锚</text><circle cx=\"240\" cy=\"150\" r=\"6\" style=\"fill:none;stroke:var(--ink-soft)\" stroke-width=\"2\"/><text x=\"240\" y=\"176\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">真值</text><line x1=\"66\" y1=\"128\" x2=\"150\" y2=\"128\" style=\"stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><path d=\"M150 128 l-10 -5 v10 Z\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"150\" y=\"112\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--cinnabar-pure)\">调到这就停了</text><rect x=\"286\" y=\"42\" width=\"256\" height=\"188\" rx=\"10\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><text x=\"414\" y=\"70\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">快系统1：锚一落，联想四起</text><circle cx=\"414\" cy=\"150\" r=\"10\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><circle cx=\"414\" cy=\"150\" r=\"24\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"1.3\"/><circle cx=\"414\" cy=\"150\" r=\"40\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"1\"/><circle cx=\"414\" cy=\"150\" r=\"3\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"414\" y=\"200\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">跟锚合拍的念头，更容易冒出来</text><text x=\"414\" y=\"98\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">锚＝投进水里的石子</text><text x=\"280\" y=\"246\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">两条道方向一致，都把答案往锚那边推</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "把这两条道搬到你最熟的场景，一秒就懂。逛网店时，商品页先甩出一个划掉的「原价 ¥999」，再标「现价 ¥599」——那个 999 就是精心埋的锚。系统1一看，「599 比 999 便宜太多了」的省钱感瞬间被点亮；系统2就算想核算「这东西到底值多少」，也只会从 999 往下挪，挪到 599 附近就觉得「差不多」。可要是它本来就只值 300，你被锚拽着，压根挪不到那儿。商家很清楚：**决定你觉得贵不贵的，往往不是东西本身，而是它旁边那个先出现的数字。**"
+  },
+  {
+   "type": "p",
+   "text": "这也解释了一个反常的现象：锚定这么荒唐，为什么连提醒都挡不住？因为系统1那条道是自动的，**你根本意识不到它在替你筛念头**；而系统2那条道，你以为自己在「独立思考、认真调整」，其实只是从别人给的起点出发、挪了几步就交卷。两套系统都在暗中配合那只锚，你却以为答案是自己一手拿的主意。"
+  },
+  {
+   "type": "h2",
+   "text": "你以为的「独立判断」，其实到处都被人设了锚"
+  },
+  {
+   "type": "p",
+   "text": "实验室里的转盘只是极端演示，锚定真正的可怕之处，是它埋伏在日常的每一次估价与谈判里。最经典的一例是房产：卡尼曼提到，给一批**专业房产中介**看同一套房子、同一份资料，只把「挂牌价」这一个数字换高或换低，他们对房子合理价值的评估就随之明显偏移——而事后问他们，几乎所有人都信誓旦旦地说，标价**根本没影响**自己的判断。越是自认专业、越觉得自己不受影响的人，往往越察觉不到锚已经拽住了他。"
+  },
+  {
+   "type": "p",
+   "text": "顺着看下去，你会发现锚无处不在：超市货架写上「每人限购 12 罐」，顾客平均买得比不限购时还多，因为「12」成了心里的参照；谈判桌上**先开价**的一方常占便宜，因为那个数字先落地，就成了双方来回拉扯的锚；连法官量刑，也被实验证明会被一个明显无关的数字（比如掷骰子掷出的点数）拉动；慈善募捐时先给个建议数额，人们的捐款也会随之抬高。凡是要人「估一个数」的场合，第一个抛出来的数字，几乎都在偷偷设锚。"
+  },
+  {
+   "type": "quote",
+   "original": "先开价的人占优势——那个数字会成为整场谈判绕不开的参照点",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "生活里的锚：卖家的标价、货架上的「限购 12」、谈判里的先开价——量刑与捐款同理。谁先抛出数字，谁就替这场判断埋下了锚。",
+   "svg": "<svg viewBox=\"0 0 560 250\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">生活里，第一个数字早就替你设好了锚</text><rect x=\"24\" y=\"48\" width=\"156\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><text x=\"102\" y=\"82\" text-anchor=\"middle\" font-size=\"26\" style=\"fill:var(--cinnabar-pure)\">&#165;</text><text x=\"102\" y=\"112\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">标价</text><text x=\"102\" y=\"138\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">卖家先挂高价，</text><text x=\"102\" y=\"158\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">你的还价也随之抬高</text><text x=\"102\" y=\"182\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">连专业中介也中招</text><rect x=\"202\" y=\"48\" width=\"156\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><text x=\"280\" y=\"84\" text-anchor=\"middle\" font-size=\"20\" style=\"fill:var(--cinnabar-pure)\">&#215;12</text><text x=\"280\" y=\"112\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">每人限购</text><text x=\"280\" y=\"138\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">「限购 12 罐」，</text><text x=\"280\" y=\"158\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">反而买得比平时多</text><text x=\"280\" y=\"182\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">数字 12 成了参照</text><rect x=\"380\" y=\"48\" width=\"156\" height=\"150\" rx=\"10\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"2\"/><text x=\"458\" y=\"86\" text-anchor=\"middle\" font-size=\"22\" style=\"fill:var(--cinnabar-pure)\">&#187;</text><text x=\"458\" y=\"112\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">先开价</text><text x=\"458\" y=\"138\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">谈判里先抛数字的人，</text><text x=\"458\" y=\"158\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">往往定了整场的基调</text><text x=\"458\" y=\"182\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">量刑、捐款同理</text><text x=\"280\" y=\"230\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">谁先抛出数字，谁就替这场判断埋下了锚</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "最贴身的例子，是谈工资。很多人被教「别先开口，让对方先报」，这背后正是锚定：谁先说出一个数，那个数就成了整场拉锯的中心，后面所有讨价还价都绕着它转。你张口要「两万五」，哪怕对方觉得高，最后往往落在离两万五不远处；你要是先说「两万」，天花板也就悄悄降到了两万附近。反过来，卡尼曼也提醒了硬币的另一面——有时**你主动先抛一个（合理的高）锚，反而对自己有利**，因为你把参照点定在了自己想要的地方。关键从来不是「先开还是后开」的死规矩，而是心里始终清楚："
+  },
+  {
+   "type": "pull",
+   "text": "桌上第一个数字，正在替所有人定基调。"
+  },
+  {
+   "type": "h2",
+   "text": "明知有锚也躲不开——那还能做点什么"
+  },
+  {
+   "type": "p",
+   "text": "坏消息先说：锚定效应**极难免疫**。卡尼曼坦言，即便你事先知道有锚、被明确提醒「别被那个数字带偏」，也很难完全摆脱它的拉扯——因为拉你的那条道大半在意识之下。承认这一点本身就有用：别高估自己「不受影响」的定力，尤其在你最自信的领域。"
+  },
+  {
+   "type": "p",
+   "text": "好消息是，还是有一点能做的，方向都指向同一个动作——**刻意调头想**。碰到一个锚，别顺着它往下算，先问自己：这个数字凭什么是对的？然后**专门往反方向去找理由**，把「它可能太高了 / 太低了」的证据一条条摆出来。心理学的说法是「考虑相反面」：既然锚会自动激活跟它同向的念头，你就手动逼自己去想反向的念头，一正一反，多少能把偏差往中间拉回来一点。在重要的谈判里更直接：如果对方抛出一个荒唐的开价，**别在它的基础上还价**——一旦你还了，就等于默认它是起点、把锚认了；正确的做法是干脆不接招，明确表示这个数字离谱、不能作为讨论的基础，逼对方重新报一个。你压不掉锚，但可以不让它当那个起点。"
+  },
+  {
+   "type": "quote",
+   "original": "想一想那个锚为什么可能是错的，是对抗它为数不多的有效办法",
+   "translation": ""
+  },
+  {
+   "type": "figure",
+   "ftype": "对策图",
+   "caption": "对付锚，唯一有点用的动作是「先调头想」：先问它凭什么是对的、专门往反方向找理由；碰上荒唐开价直接不接招。这只把偏差压小，不能清零。",
+   "svg": "<svg viewBox=\"0 0 560 230\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"280\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">对付锚，唯一有点用的动作：先调头想</text><circle cx=\"150\" cy=\"118\" r=\"34\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"2\"/><text x=\"150\" y=\"114\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink-soft)\">眼前的</text><text x=\"150\" y=\"132\" text-anchor=\"middle\" font-size=\"15\" style=\"fill:var(--cinnabar-pure)\">锚</text><path d=\"M198 118 q92 -58 176 0\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"2\"/><path d=\"M374 118 l-11 -4 4 11 Z\" style=\"fill:var(--cinnabar-pure)\"/><text x=\"286\" y=\"58\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">它凭什么是对的？往反方向找理由</text><circle cx=\"422\" cy=\"118\" r=\"34\" style=\"fill:none;stroke:var(--ink-faint)\" stroke-width=\"2\"/><text x=\"422\" y=\"114\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">自己的</text><text x=\"422\" y=\"132\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">判断</text><text x=\"280\" y=\"188\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-faint)\">碰上荒唐的开价，别在它基础上还价——直接不接招</text><text x=\"280\" y=\"212\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">提醒：知道有锚仍难免疫，这一招只把偏差压小，不能清零</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "最后把分寸摆正。锚定是心理学里被反复验证、相当稳健的一个效应，但它不是魔法——**具体偏多少，随情境、随人、随你对该领域懂不懂而变**，卡尼曼讲的是「第一个碰到的数字会绑架判断」，不是「随便报个数就能操控一切」。真正值得你记住的，是那个视角翻转：下次你觉得某个数字是自己「独立估」出来的，尤其在标价、报价、谈判、估值这些场合，先回头看一眼——**眼前第一个撞上你的数字，是不是早替你把锚下好了。谁先抛出数字，谁就悄悄设了那只锚。**"
+  }
+ ]
 }

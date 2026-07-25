@@ -1,106 +1,110 @@
 {
-  "title": "大脑说了算:肥胖不是意志力问题",
-  "subtitle": "把理解肥胖的框架,从「道德与意志」整个搬到「大脑与环境」上——不是你不够努力,是你的大脑在按几十万年前的程序运行",
-  "centralIdea": "我们几乎都被同一套说法教育过:胖,是因为你管不住嘴、意志力差、不够自律。这套「道德叙事」听上去天经地义,却既不公平也不管用——它把一件大脑说了算的事,错算到了意志头上。神经科学给出的图景完全不同:决定我们吃多少、什么时候停,主要不是那个会「下决心」的理性自我,而是一套深藏在脑干和下丘脑里、古老到几十万年、几乎不受意识指挥的摄食回路。想靠「今天起少吃」去长期压制它,就像想靠憋气对抗呼吸——短时间做得到,时间一长必然败下阵来。这一章要做的,是把理解肥胖的地基从「道德与意志」整个搬到「大脑与环境」上。这不是替放纵开脱,也不是说努力毫无用处,而是说——单靠意志谴责,既冤枉了人,也解决不了问题。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "元旦那天,你信誓旦旦:今年一定要瘦下来,少吃,管住嘴。头两周执行得漂亮,第三周开始松动,一个月后,深夜的冰箱前又站着那个「明知不该吃、手却已经伸过去」的你。然后是熟悉的自我审判——我怎么这么没用,连吃都控制不了。**这套剧本,几乎每个试过减肥的人都演过。**问题是:如果几乎所有人都在同一个地方失败,失败的真的是「每个人的意志力」,还是我们从一开始就找错了对手?这一章要做的第一件事,就是把这个对手看清楚。"
-    },
-    {
-      "type": "h2",
-      "text": "那套人人都信的说法:胖 = 意志力不合格"
-    },
-    {
-      "type": "p",
-      "text": "关于肥胖,社会流传着一套近乎默认的解释,我们不妨叫它**「道德叙事」**:胖的人之所以胖,是因为贪吃、懒惰、自控力差;瘦下来的关键,无非是「少吃多动」四个字,做不到就是不够努力、不够自律。这套叙事的潜台词很重——它把体重直接换算成了品格,仿佛腰围上写着一个人的意志强弱和道德高低。于是胖成了一件羞耻的事,减肥失败成了一次次人格考试的不及格;而旁人给出的建议,永远绕不开那句轻飘飘的「你就是不够想瘦」。"
-    },
-    {
-      "type": "p",
-      "text": "这套说法为什么这么深入人心?因为它**简单、直觉,还自带道德快感**。它符合我们对世界最朴素的因果想象:结果不好,一定是有人不努力。它也给了旁观者一个居高临下的位置——我瘦,是因为我自律;你胖,是因为你不行。可只要你认真看数据就会发现不对劲:如果减肥真的只是「下决心少吃」这么简单,为什么全世界节食的人里,长期真正维持住的只是极少数?为什么反弹几乎高到成了规律?**当一件事几乎所有人都做不到,问题多半不在「所有人」,而在这件事本身被理解错了。**把责任一股脑推给意志力,听上去痛快,却经不起这个最基本的追问。"
-    },
-    {
-      "type": "figure",
-      "ftype": "compare",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><line x1='280' y1='36' x2='280' y2='288' style='stroke:var(--line);stroke-width:1;stroke-dasharray:4 4'/><text x='140' y='40' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:15px;font-weight:600'>意志力叙事</text><text x='420' y='40' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:15px;font-weight:600'>大脑与环境叙事</text><circle cx='140' cy='104' r='15' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><line x1='140' y1='119' x2='140' y2='162' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='140' y1='130' x2='121' y2='150' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='140' y1='130' x2='159' y2='150' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='140' y1='162' x2='125' y2='188' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='140' y1='162' x2='155' y2='188' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='66' y1='92' x2='110' y2='100' style='stroke:var(--ink-faint);stroke-width:1.5'/><path d='M104 95 L116 101 L103 105 Z' style='fill:var(--ink-faint)'/><line x1='214' y1='92' x2='170' y2='100' style='stroke:var(--ink-faint);stroke-width:1.5'/><path d='M176 95 L164 101 L177 105 Z' style='fill:var(--ink-faint)'/><text x='140' y='226' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px'>胖 = 贪吃 + 懒惰 + 不自律</text><text x='140' y='254' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:12px'>结论:是你的错</text><ellipse cx='378' cy='108' rx='30' ry='24' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><path d='M362 108 Q370 96 378 108 Q386 96 394 108' style='fill:none;stroke:var(--ink-soft);stroke-width:1'/><text x='420' y='114' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:18px'>×</text><circle cx='462' cy='108' r='20' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><line x1='446' y1='104' x2='478' y2='104' style='stroke:var(--cinnabar-pure);stroke-width:1.5'/><line x1='448' y1='114' x2='476' y2='114' style='stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='378' y='150' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:11px'>古老脑回路</text><text x='462' y='150' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:11px'>现代食物环境</text><text x='420' y='226' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px'>胖 = 大脑 × 环境</text><text x='420' y='254' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:12px'>结论:是机制的问题</text></svg>",
-      "caption": "两种叙事:一种把胖算成品格的失败、矛头指向人;另一种把胖看成古老大脑撞上现代食物环境的结果、矛头指向机制"
-    },
-    {
-      "type": "h2",
-      "text": "换一个对手:吃多少,大多不是「你」在决定"
-    },
-    {
-      "type": "p",
-      "text": "神经科学提供了一个截然不同的框架。本书作者古耶内特(Stephan Guyenet)是研究肥胖与摄食调控的神经科学家,他的核心主张可以浓缩成一句话:**决定我们吃多少的,主要不是那个会反思、会下决心的「理性自我」,而是一套深藏在大脑底层的摄食回路。**这些回路盘踞在**脑干和下丘脑**一带——那是大脑里极其古老、极其基础的区域,和调节呼吸、体温、心跳、血压的中枢是邻居。它们的运转基本不经过你的意识:你不会先「决定」自己饿,饿意自己就来了;吃到某个点,身体让你停,你也很难违抗太久。你能感觉到饥饱,却几乎无法直接命令它们——这套系统在你「拿主意」之前,就已经把主意拿好了。"
-    },
-    {
-      "type": "p",
-      "text": "想理解这种「不受意志指挥」是什么感觉,看几个身边的例子就够了。**呼吸**:你能主动屏住气,但憋不了太久,身体会强行接管、逼你吸气;**口渴**:再有毅力的人,也没法靠决心让自己在严重缺水时「不想喝水」。饥饿与饱足,和它们是同一类东西——是身体为了活下去演化出的**自动调节信号**,而不是等你审批的一份申请。你当然能短暂地压制它:憋气可以,忍着不喝可以,咬牙少吃也可以。但只要时间一拉长,那套古老的系统总会重新掌舵。**用意志去长期对抗摄食回路,本质上和用意志去阻止呼吸,是同一类难题。**这不是软弱,这是生理。"
-    },
-    {
-      "type": "p",
-      "text": "你可能会立刻反驳:可确实有人靠意志瘦下来、还维持住了啊?没错,总有极少数人做到了——但请留意他们付出的代价。研究者追踪那些成功长期维持减重的人,发现许多人几乎把「控制体重」当成一份全职工作在做:天天称重、精算入口的每一份热量、对食物时刻保持警觉,稍一松懈,体重就有回弹之势。这非但不能反驳前面的结论,反而反过来坐实了对手有多强悍——**如果吃真的只是「下决心」这么简单,维持体重本该像成年后不再尿床一样毫不费力,而不该需要一个人终身绷紧、高强度地自我监控。**能靠意志硬扛住的,是少数人押上大量心力换来的特例,而不是可以拿来要求所有人的常态。把特例当标准,再拿它去责备做不到的大多数,正是这套道德叙事最不讲理的地方。"
-    },
-    {
-      "type": "quote",
-      "original": "决定你吃多少的,主要不是会下决心的理性自我,而是一套古老到几十万年、几乎不受意识指挥的深层脑回路。",
-      "translation": "这是全书翻案的支点。一旦接受「摄食主要由非自主的脑回路掌管」,「胖=意志力差」的道德叙事就站不住了——你要对抗的,根本不是你的懒惰,而是你的生理构造。"
-    },
-    {
-      "type": "figure",
-      "ftype": "diagram",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='200' y='34' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:14px;font-weight:600'>大脑里,谁在开车?</text><ellipse cx='200' cy='168' rx='150' ry='112' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='200' y='84' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:12px'>意识 / 理智自我(薄)</text><ellipse cx='190' cy='188' rx='96' ry='66' style='fill:var(--ink-faint);opacity:.22'/><ellipse cx='190' cy='188' rx='96' ry='66' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><circle cx='190' cy='188' r='27' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><line x1='190' y1='161' x2='190' y2='215' style='stroke:var(--cinnabar-pure);stroke-width:2'/><line x1='163' y1='188' x2='217' y2='188' style='stroke:var(--cinnabar-pure);stroke-width:2'/><circle cx='190' cy='188' r='6' style='fill:var(--cinnabar-pure)'/><text x='190' y='244' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:11.5px'>摄食回路(脑干·下丘脑)</text><text x='190' y='262' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:11px'>古老 · 深层 · 不受意识指挥</text><line x1='190' y1='104' x2='190' y2='150' style='stroke:var(--ink-faint);stroke-width:1.5;stroke-dasharray:4 4'/><path d='M185 144 L190 154 L195 144 Z' style='fill:var(--ink-faint)'/><text x='250' y='126' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:10.5px'>意识→只有微弱影响</text><line x1='288' y1='188' x2='402' y2='170' style='stroke:var(--cinnabar-pure);stroke-width:2.5'/><path d='M394 164 L408 169 L395 176 Z' style='fill:var(--cinnabar-pure)'/><rect x='410' y='150' width='128' height='44' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='474' y='170' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>吃多少</text><text x='474' y='187' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>何时停</text></svg>",
-      "caption": "会「下决心」的意识只是薄薄的外层,真正握着摄食方向盘的,是深层那套古老的脑回路——它对进食的影响强,意识对它的影响弱"
-    },
-    {
-      "type": "h2",
-      "text": "「自动驾驶的大脑」:一套几十万年前写好的程序"
-    },
-    {
-      "type": "p",
-      "text": "这套系统为什么这么固执?因为它是**为另一个世界设计的**。在人类演化的绝大部分时间里,食物稀缺、获取费力、下一顿没有着落是常态。在那样的环境里,一颗「见到高热量食物就想多吃、有机会就把富余能量存成脂肪」的大脑,是巨大的生存优势——它帮祖先熬过了一次又一次饥荒和青黄不接。于是自然选择把这套倾向牢牢写进了我们的脑回路里。问题在于,**环境在短短几百年间天翻地覆,这套程序却还是几十万年前的旧版本**:今天的我们,揣着一个「随时准备应对饥荒」的大脑,活在一个高热量食物唾手可得、廉价、诱人、二十四小时不打烊的世界里。错位就是从这里开始的。"
-    },
-    {
-      "type": "p",
-      "text": "作者用了一个很贴切的画面:我们的摄食,大部分时间是由大脑在**「自动驾驶」**。就像熟练的司机开车回家,一路上手脚自己在操作,意识几乎没参与——你什么时候伸手拿零食、抓一把还是抓两把、吃到多少算够,很多也是这套自动程序在替你决定,等你「回过神」,袋子往往已经空了。而**意志力,更像是偶尔从后座探身去抢方向盘的乘客**:它能在关键时刻猛地干预一下,但它累得快、注意力有限,一旦你分心、疲惫、压力大、情绪低落,方向盘立刻又滑回自动驾驶手里。这就解释了那个人人都熟悉的现象——白天靠意志硬扛还撑得住,越到深夜、越是累到不行的时候,越容易破功。**不是你一到晚上就道德滑坡,是你那位「后座乘客」下班了。**"
-    },
-    {
-      "type": "figure",
-      "ftype": "chart",
-      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><line x1='60' y1='240' x2='524' y2='240' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='60' y1='52' x2='60' y2='240' style='stroke:var(--ink-soft);stroke-width:1.5'/><text x='40' y='150' text-anchor='middle' transform='rotate(-90 40 150)' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:11px'>掌控力</text><text x='500' y='262' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:11px'>时间(天)→</text><line x1='60' y1='120' x2='524' y2='120' style='stroke:var(--cinnabar-pure);stroke-width:2.5'/><text x='372' y='112' text-anchor='start' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:11.5px'>自动驾驶(摄食回路)· 始终在线</text><path d='M60 74 C 150 92 220 118 300 150 S 460 202 524 214' style='fill:none;stroke:var(--ink-soft);stroke-width:2.5'/><text x='96' y='68' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>意志力 · 随时间衰减</text><circle cx='214' cy='120' r='5' style='fill:var(--cinnabar-pure)'/><line x1='214' y1='120' x2='214' y2='240' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 4'/><text x='214' y='258' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:11px'>破功点</text><text x='300' y='150' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:10.5px'>此后:自动驾驶重新接管</text></svg>",
-      "caption": "意志力是会耗尽的资源,一路衰减;摄食回路却二十四小时不下班。两条线一旦交叉,就是「破功点」——这不是决心作假,是资源本就有限"
-    },
-    {
-      "type": "quote",
-      "original": "意志力像偶尔来抢方向盘的乘客,摄食回路才是那个一直在开车的司机——乘客会累,司机从不下班。",
-      "translation": "这解释了减肥为什么常常「越到后面越难」:不是你的决心从一开始就是假的,而是意志本就是一种会被消耗殆尽的资源,而它对抗的那套系统,却全天候运转、永不疲倦。"
-    },
-    {
-      "type": "h2",
-      "text": "说清分寸:这不是替放纵开脱"
-    },
-    {
-      "type": "p",
-      "text": "到这里必须把话说透,免得走向另一个极端。说「肥胖不是意志力问题」,**不等于说「所以怎么吃都行、努力毫无意义」**。行为当然有用——你吃什么、把什么食物放进家里、睡够没睡够、压力大不大,都实实在在地影响着那套摄食回路的运转,后面的每一章其实都在讲这些「杠杆」。作者要拆掉的,从来不是「行为有影响」这个事实,而是**「体重 = 意志强弱 = 品格高低」这套道德换算**。这两件事完全不同:承认对手是大脑与环境,不是叫你躺平认命,恰恰是叫你别再把力气全砸在「谴责自己不够自律」这件既不公平、又没效果的事情上——那是一场你注定赢不了、也不该独自去打的仗。"
-    },
-    {
-      "type": "p",
-      "text": "所以这一章真正想完成的,是一次**框架的搬家**:把理解肥胖的地基,从「道德与意志」整个挪到**「大脑与环境」**上。在旧框架里,胖是一个人的失败,解法是「更自律一点」——这条路我们已经集体走了几十年,结果是肥胖率一路走高。在新框架里,问题变成了:是什么样的大脑机制、遇上什么样的食物环境,让这么多人「明知不该吃却停不下来」?一旦问题这样问出来,答案就不再是「骂自己」,而是「看懂机制、再改造环境」。**这既是一种更准确的解释,也是一种更善意的解释:它把矛头从人的品格,转向了机制与环境。**准确,是因为它对得上证据;善意,是因为它终于不再把一场生理层面的博弈,记在某个人的道德账上。"
-    },
-    {
-      "type": "quote",
-      "original": "把肥胖归咎于意志力,既不公平也没效果:它冤枉了人,又拦住了真正该问的问题——大脑和食物环境,到底出了什么错。",
-      "translation": "全书接下来要做的,正是顺着「大脑 + 环境」这条线,一层层拆开:我们为什么天生爱吃(奖赏回路)、食物环境如何被设计得让人停不下来、身体又是怎样把体重「锁」在某个点上。看懂了机制,才谈得上和它合作。"
-    },
-    {
-      "type": "figure",
-      "ftype": "diagram",
-      "svg": "<svg viewBox='0 0 560 260' xmlns='http://www.w3.org/2000/svg'><rect x='36' y='74' width='196' height='104' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='134' y='104' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>道德与意志叙事</text><text x='134' y='132' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>「胖 = 不够自律」</text><text x='134' y='156' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:11.5px'>解法:更努力一点</text><line x1='240' y1='126' x2='316' y2='126' style='stroke:var(--cinnabar-pure);stroke-width:2.5'/><path d='M308 120 L322 126 L308 132 Z' style='fill:var(--cinnabar-pure)'/><text x='280' y='110' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:11px'>框架搬家</text><rect x='328' y='74' width='196' height='104' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='426' y='104' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:13px;font-weight:600'>大脑与环境叙事</text><text x='426' y='132' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:11.5px'>「胖 = 脑回路 × 食物环境」</text><text x='426' y='156' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>解法:看懂机制 · 改造环境</text><text x='280' y='214' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:11.5px'>换个问法,答案就从「骂自己」变成「懂机制」——这正是全书的路线</text></svg>",
-      "caption": "全书的第一次「搬家」:不是换个口号安慰人,而是换个更对得上证据的问题——从「我为什么这么没用」,搬到「我的大脑和环境到底在怎样运作」"
-    },
-    {
-      "type": "p",
-      "text": "这一章你只需带走一张定位卡:**你之所以在吃这件事上屡屡「败给自己」,多半不是因为你意志薄弱,而是因为你在用一个会累的乘客,去对抗一个从不下班、还专为饥荒时代量身打造的司机。**理解肥胖的第一步,是把「我为什么这么没用」这个问题,换成「我的大脑和我所处的食物环境,到底在怎样运作」。前者通向羞耻和反复失败,后者通向真正的解法。往下的每一章,都是在回答后一个问题——先看懂那套让我们爱吃、让我们停不下来的机制,再谈怎么顺着它、和它合作,而不是硬碰硬地跟它较劲。"
-    }
-  ]
+ "title": "大脑说了算:肥胖不是意志力问题",
+ "subtitle": "把理解肥胖的框架,从「道德与意志」整个搬到「大脑与环境」上——不是你不够努力,是你的大脑在按几十万年前的程序运行",
+ "centralIdea": "我们几乎都被同一套说法教育过:胖,是因为你管不住嘴、意志力差、不够自律。这套「道德叙事」听上去天经地义,却既不公平也不管用——它把一件大脑说了算的事,错算到了意志头上。神经科学给出的图景完全不同:决定我们吃多少、什么时候停,主要不是那个会「下决心」的理性自我,而是一套深藏在脑干和下丘脑里、古老到几十万年、几乎不受意识指挥的摄食回路。想靠「今天起少吃」去长期压制它,就像想靠憋气对抗呼吸——短时间做得到,时间一长必然败下阵来。这一章要做的,是把理解肥胖的地基从「道德与意志」整个搬到「大脑与环境」上。这不是替放纵开脱,也不是说努力毫无用处,而是说——单靠意志谴责,既冤枉了人,也解决不了问题。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "元旦那天,你信誓旦旦:今年一定要瘦下来,少吃,管住嘴。头两周执行得漂亮,第三周开始松动,一个月后,深夜的冰箱前又站着那个「明知不该吃、手却已经伸过去」的你。然后是熟悉的自我审判——我怎么这么没用,连吃都控制不了。**这套剧本,几乎每个试过减肥的人都演过。**问题是:如果几乎所有人都在同一个地方失败,失败的真的是「每个人的意志力」,还是我们从一开始就找错了对手?这一章要做的第一件事,就是把这个对手看清楚。"
+  },
+  {
+   "type": "h2",
+   "text": "那套人人都信的说法:胖 = 意志力不合格"
+  },
+  {
+   "type": "p",
+   "text": "关于肥胖,社会流传着一套近乎默认的解释,我们不妨叫它**「道德叙事」**:胖的人之所以胖,是因为贪吃、懒惰、自控力差;瘦下来的关键,无非是「少吃多动」四个字,做不到就是不够努力、不够自律。这套叙事的潜台词很重——它把体重直接换算成了品格,仿佛腰围上写着一个人的意志强弱和道德高低。于是胖成了一件羞耻的事,减肥失败成了一次次人格考试的不及格;而旁人给出的建议,永远绕不开那句轻飘飘的「你就是不够想瘦」。"
+  },
+  {
+   "type": "p",
+   "text": "这套说法为什么这么深入人心?因为它**简单、直觉,还自带道德快感**。它符合我们对世界最朴素的因果想象:结果不好,一定是有人不努力。它也给了旁观者一个居高临下的位置——我瘦,是因为我自律;你胖,是因为你不行。可只要你认真看数据就会发现不对劲:如果减肥真的只是「下决心少吃」这么简单,为什么全世界节食的人里,长期真正维持住的只是极少数?为什么反弹几乎高到成了规律?**当一件事几乎所有人都做不到,问题多半不在「所有人」,而在这件事本身被理解错了。**把责任一股脑推给意志力,听上去痛快,却经不起这个最基本的追问。"
+  },
+  {
+   "type": "figure",
+   "ftype": "compare",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><line x1='280' y1='36' x2='280' y2='288' style='stroke:var(--line);stroke-width:1;stroke-dasharray:4 4'/><text x='140' y='40' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:15px;font-weight:600'>意志力叙事</text><text x='420' y='40' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:15px;font-weight:600'>大脑与环境叙事</text><circle cx='140' cy='104' r='15' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><line x1='140' y1='119' x2='140' y2='162' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='140' y1='130' x2='121' y2='150' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='140' y1='130' x2='159' y2='150' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='140' y1='162' x2='125' y2='188' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='140' y1='162' x2='155' y2='188' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='66' y1='92' x2='110' y2='100' style='stroke:var(--ink-faint);stroke-width:1.5'/><path d='M104 95 L116 101 L103 105 Z' style='fill:var(--ink-faint)'/><line x1='214' y1='92' x2='170' y2='100' style='stroke:var(--ink-faint);stroke-width:1.5'/><path d='M176 95 L164 101 L177 105 Z' style='fill:var(--ink-faint)'/><text x='140' y='226' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px'>胖 = 贪吃 + 懒惰 + 不自律</text><text x='140' y='254' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:12px'>结论:是你的错</text><ellipse cx='378' cy='108' rx='30' ry='24' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><path d='M362 108 Q370 96 378 108 Q386 96 394 108' style='fill:none;stroke:var(--ink-soft);stroke-width:1'/><text x='420' y='114' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:18px'>×</text><circle cx='462' cy='108' r='20' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><line x1='446' y1='104' x2='478' y2='104' style='stroke:var(--cinnabar-pure);stroke-width:1.5'/><line x1='448' y1='114' x2='476' y2='114' style='stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='378' y='150' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:11px'>古老脑回路</text><text x='462' y='150' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:11px'>现代食物环境</text><text x='420' y='226' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px'>胖 = 大脑 × 环境</text><text x='420' y='254' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:12px'>结论:是机制的问题</text></svg>",
+   "caption": "两种叙事:一种把胖算成品格的失败、矛头指向人;另一种把胖看成古老大脑撞上现代食物环境的结果、矛头指向机制"
+  },
+  {
+   "type": "h2",
+   "text": "换一个对手:吃多少,大多不是「你」在决定"
+  },
+  {
+   "type": "p",
+   "text": "神经科学提供了一个截然不同的框架。本书作者古耶内特(Stephan Guyenet)是研究肥胖与摄食调控的神经科学家,他的核心主张可以浓缩成一句话:**决定我们吃多少的,主要不是那个会反思、会下决心的「理性自我」,而是一套深藏在大脑底层的摄食回路。**这些回路盘踞在**脑干和下丘脑**一带——那是大脑里极其古老、极其基础的区域,和调节呼吸、体温、心跳、血压的中枢是邻居。它们的运转基本不经过你的意识:你不会先「决定」自己饿,饿意自己就来了;吃到某个点,身体让你停,你也很难违抗太久。你能感觉到饥饱,却几乎无法直接命令它们——这套系统在你「拿主意」之前,就已经把主意拿好了。"
+  },
+  {
+   "type": "p",
+   "text": "想理解这种「不受意志指挥」是什么感觉,看几个身边的例子就够了。**呼吸**:你能主动屏住气,但憋不了太久,身体会强行接管、逼你吸气;**口渴**:再有毅力的人,也没法靠决心让自己在严重缺水时「不想喝水」。饥饿与饱足,和它们是同一类东西——是身体为了活下去演化出的**自动调节信号**,而不是等你审批的一份申请。你当然能短暂地压制它:憋气可以,忍着不喝可以,咬牙少吃也可以。但只要时间一拉长,那套古老的系统总会重新掌舵。**用意志去长期对抗摄食回路,本质上和用意志去阻止呼吸,是同一类难题。**这不是软弱,这是生理。"
+  },
+  {
+   "type": "p",
+   "text": "你可能会立刻反驳:可确实有人靠意志瘦下来、还维持住了啊?没错,总有极少数人做到了——但请留意他们付出的代价。研究者追踪那些成功长期维持减重的人,发现许多人几乎把「控制体重」当成一份全职工作在做:天天称重、精算入口的每一份热量、对食物时刻保持警觉,稍一松懈,体重就有回弹之势。这非但不能反驳前面的结论,反而反过来坐实了对手有多强悍——**如果吃真的只是「下决心」这么简单,维持体重本该像成年后不再尿床一样毫不费力,而不该需要一个人终身绷紧、高强度地自我监控。**能靠意志硬扛住的,是少数人押上大量心力换来的特例,而不是可以拿来要求所有人的常态。把特例当标准,再拿它去责备做不到的大多数,正是这套道德叙事最不讲理的地方。"
+  },
+  {
+   "type": "quote",
+   "original": "决定你吃多少的,主要不是会下决心的理性自我,而是一套古老到几十万年、几乎不受意识指挥的深层脑回路。",
+   "translation": "这是全书翻案的支点。一旦接受「摄食主要由非自主的脑回路掌管」,「胖=意志力差」的道德叙事就站不住了——你要对抗的,根本不是你的懒惰,而是你的生理构造。"
+  },
+  {
+   "type": "figure",
+   "ftype": "diagram",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='200' y='34' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:14px;font-weight:600'>大脑里,谁在开车?</text><ellipse cx='200' cy='168' rx='150' ry='112' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='200' y='84' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:12px'>意识 / 理智自我(薄)</text><ellipse cx='190' cy='188' rx='96' ry='66' style='fill:var(--ink-faint);opacity:.22'/><ellipse cx='190' cy='188' rx='96' ry='66' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><circle cx='190' cy='188' r='27' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><line x1='190' y1='161' x2='190' y2='215' style='stroke:var(--cinnabar-pure);stroke-width:2'/><line x1='163' y1='188' x2='217' y2='188' style='stroke:var(--cinnabar-pure);stroke-width:2'/><circle cx='190' cy='188' r='6' style='fill:var(--cinnabar-pure)'/><text x='190' y='244' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:11.5px'>摄食回路(脑干·下丘脑)</text><text x='190' y='262' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:11px'>古老 · 深层 · 不受意识指挥</text><line x1='190' y1='104' x2='190' y2='150' style='stroke:var(--ink-faint);stroke-width:1.5;stroke-dasharray:4 4'/><path d='M185 144 L190 154 L195 144 Z' style='fill:var(--ink-faint)'/><text x='250' y='126' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:10.5px'>意识→只有微弱影响</text><line x1='288' y1='188' x2='402' y2='170' style='stroke:var(--cinnabar-pure);stroke-width:2.5'/><path d='M394 164 L408 169 L395 176 Z' style='fill:var(--cinnabar-pure)'/><rect x='410' y='150' width='128' height='44' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='474' y='170' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>吃多少</text><text x='474' y='187' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:12px'>何时停</text></svg>",
+   "caption": "会「下决心」的意识只是薄薄的外层,真正握着摄食方向盘的,是深层那套古老的脑回路——它对进食的影响强,意识对它的影响弱"
+  },
+  {
+   "type": "h2",
+   "text": "「自动驾驶的大脑」:一套几十万年前写好的程序"
+  },
+  {
+   "type": "p",
+   "text": "这套系统为什么这么固执?因为它是**为另一个世界设计的**。在人类演化的绝大部分时间里,食物稀缺、获取费力、下一顿没有着落是常态。在那样的环境里,一颗「见到高热量食物就想多吃、有机会就把富余能量存成脂肪」的大脑,是巨大的生存优势——它帮祖先熬过了一次又一次饥荒和青黄不接。于是自然选择把这套倾向牢牢写进了我们的脑回路里。问题在于,**环境在短短几百年间天翻地覆,这套程序却还是几十万年前的旧版本**:今天的我们,揣着一个「随时准备应对饥荒」的大脑,活在一个高热量食物唾手可得、廉价、诱人、二十四小时不打烊的世界里。错位就是从这里开始的。"
+  },
+  {
+   "type": "p",
+   "text": "作者用了一个很贴切的画面:我们的摄食,大部分时间是由大脑在**「自动驾驶」**。就像熟练的司机开车回家,一路上手脚自己在操作,意识几乎没参与——你什么时候伸手拿零食、抓一把还是抓两把、吃到多少算够,很多也是这套自动程序在替你决定,等你「回过神」,袋子往往已经空了。而**意志力,更像是偶尔从后座探身去抢方向盘的乘客**:它能在关键时刻猛地干预一下,但它累得快、注意力有限,一旦你分心、疲惫、压力大、情绪低落,方向盘立刻又滑回自动驾驶手里。这就解释了那个人人都熟悉的现象——白天靠意志硬扛还撑得住,越到深夜、越是累到不行的时候,越容易破功。"
+  },
+  {
+   "type": "pull",
+   "text": "不是你一到晚上就道德滑坡,是你那位「后座乘客」下班了。"
+  },
+  {
+   "type": "figure",
+   "ftype": "chart",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><line x1='60' y1='240' x2='524' y2='240' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='60' y1='52' x2='60' y2='240' style='stroke:var(--ink-soft);stroke-width:1.5'/><text x='40' y='150' text-anchor='middle' transform='rotate(-90 40 150)' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:11px'>掌控力</text><text x='500' y='262' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:11px'>时间(天)→</text><line x1='60' y1='120' x2='524' y2='120' style='stroke:var(--cinnabar-pure);stroke-width:2.5'/><text x='372' y='112' text-anchor='start' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:11.5px'>自动驾驶(摄食回路)· 始终在线</text><path d='M60 74 C 150 92 220 118 300 150 S 460 202 524 214' style='fill:none;stroke:var(--ink-soft);stroke-width:2.5'/><text x='96' y='68' text-anchor='start' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>意志力 · 随时间衰减</text><circle cx='214' cy='120' r='5' style='fill:var(--cinnabar-pure)'/><line x1='214' y1='120' x2='214' y2='240' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 4'/><text x='214' y='258' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:11px'>破功点</text><text x='300' y='150' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:10.5px'>此后:自动驾驶重新接管</text></svg>",
+   "caption": "意志力是会耗尽的资源,一路衰减;摄食回路却二十四小时不下班。两条线一旦交叉,就是「破功点」——这不是决心作假,是资源本就有限"
+  },
+  {
+   "type": "quote",
+   "original": "意志力像偶尔来抢方向盘的乘客,摄食回路才是那个一直在开车的司机——乘客会累,司机从不下班。",
+   "translation": "这解释了减肥为什么常常「越到后面越难」:不是你的决心从一开始就是假的,而是意志本就是一种会被消耗殆尽的资源,而它对抗的那套系统,却全天候运转、永不疲倦。"
+  },
+  {
+   "type": "h2",
+   "text": "说清分寸:这不是替放纵开脱"
+  },
+  {
+   "type": "p",
+   "text": "到这里必须把话说透,免得走向另一个极端。说「肥胖不是意志力问题」,**不等于说「所以怎么吃都行、努力毫无意义」**。行为当然有用——你吃什么、把什么食物放进家里、睡够没睡够、压力大不大,都实实在在地影响着那套摄食回路的运转,后面的每一章其实都在讲这些「杠杆」。作者要拆掉的,从来不是「行为有影响」这个事实,而是**「体重 = 意志强弱 = 品格高低」这套道德换算**。这两件事完全不同:承认对手是大脑与环境,不是叫你躺平认命,恰恰是叫你别再把力气全砸在「谴责自己不够自律」这件既不公平、又没效果的事情上——那是一场你注定赢不了、也不该独自去打的仗。"
+  },
+  {
+   "type": "p",
+   "text": "所以这一章真正想完成的,是一次**框架的搬家**:把理解肥胖的地基,从「道德与意志」整个挪到**「大脑与环境」**上。在旧框架里,胖是一个人的失败,解法是「更自律一点」——这条路我们已经集体走了几十年,结果是肥胖率一路走高。在新框架里,问题变成了:是什么样的大脑机制、遇上什么样的食物环境,让这么多人「明知不该吃却停不下来」?一旦问题这样问出来,答案就不再是「骂自己」,而是「看懂机制、再改造环境」。**这既是一种更准确的解释,也是一种更善意的解释:它把矛头从人的品格,转向了机制与环境。**准确,是因为它对得上证据;善意,是因为它终于不再把一场生理层面的博弈,记在某个人的道德账上。"
+  },
+  {
+   "type": "quote",
+   "original": "把肥胖归咎于意志力,既不公平也没效果:它冤枉了人,又拦住了真正该问的问题——大脑和食物环境,到底出了什么错。",
+   "translation": "全书接下来要做的,正是顺着「大脑 + 环境」这条线,一层层拆开:我们为什么天生爱吃(奖赏回路)、食物环境如何被设计得让人停不下来、身体又是怎样把体重「锁」在某个点上。看懂了机制,才谈得上和它合作。"
+  },
+  {
+   "type": "figure",
+   "ftype": "diagram",
+   "svg": "<svg viewBox='0 0 560 260' xmlns='http://www.w3.org/2000/svg'><rect x='36' y='74' width='196' height='104' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='134' y='104' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:13px;font-weight:600'>道德与意志叙事</text><text x='134' y='132' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>「胖 = 不够自律」</text><text x='134' y='156' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:11.5px'>解法:更努力一点</text><line x1='240' y1='126' x2='316' y2='126' style='stroke:var(--cinnabar-pure);stroke-width:2.5'/><path d='M308 120 L322 126 L308 132 Z' style='fill:var(--cinnabar-pure)'/><text x='280' y='110' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:11px'>框架搬家</text><rect x='328' y='74' width='196' height='104' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='426' y='104' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--cinnabar-pure);font-size:13px;font-weight:600'>大脑与环境叙事</text><text x='426' y='132' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink);font-size:11.5px'>「胖 = 脑回路 × 食物环境」</text><text x='426' y='156' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-soft);font-size:11.5px'>解法:看懂机制 · 改造环境</text><text x='280' y='214' text-anchor='middle' style='font-family:var(--font-serif);fill:var(--ink-faint);font-size:11.5px'>换个问法,答案就从「骂自己」变成「懂机制」——这正是全书的路线</text></svg>",
+   "caption": "全书的第一次「搬家」:不是换个口号安慰人,而是换个更对得上证据的问题——从「我为什么这么没用」,搬到「我的大脑和环境到底在怎样运作」"
+  },
+  {
+   "type": "p",
+   "text": "这一章你只需带走一张定位卡:**你之所以在吃这件事上屡屡「败给自己」,多半不是因为你意志薄弱,而是因为你在用一个会累的乘客,去对抗一个从不下班、还专为饥荒时代量身打造的司机。**理解肥胖的第一步,是把「我为什么这么没用」这个问题,换成「我的大脑和我所处的食物环境,到底在怎样运作」。前者通向羞耻和反复失败,后者通向真正的解法。往下的每一章,都是在回答后一个问题——先看懂那套让我们爱吃、让我们停不下来的机制,再谈怎么顺着它、和它合作,而不是硬碰硬地跟它较劲。"
+  }
+ ]
 }

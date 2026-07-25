@@ -1,88 +1,92 @@
 {
-  "title": "认知革命:一场想象力的政变",
-  "subtitle": "《人类简史》第一章导读——一只平平无奇的猿,如何靠「讲故事」开始改写地球",
-  "centralIdea": "十万年前,地球上至少同时住着六种人类,智人只是其中平平无奇的一支,在食物链里位置尴尬。大约七万年前,智人的大脑发生了某种变化——赫拉利称之为「认知革命」:语言学会了描述「不存在的东西」。从此智人能编织神话、图腾、部落传说,靠共同相信的虚构故事,组织起远超熟人上限的协作,一路走出非洲、取代所有人类兄弟、并在所到之处引发大型动物灭绝。这一章要立住的是全书的地基:让智人称霸的不是体力或个体智力,而是「集体虚构」的能力。读它需留一个心眼——「一次突变造就认知革命」是赫拉利的假说,不是学界定论。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "如果把地球四十六亿年的历史压缩成一天,人类要到最后几秒才登场;而智人真正开始「不一样」,更是这几秒里的最后一瞬。可就在这一瞬,一种此前毫不起眼的动物,突然造船出海、画壁画、办葬礼、发明弓箭——然后用不到几万年时间,爬到了整个食物链的顶端。赫拉利《人类简史》的第一章,就是要回答那个最朴素也最难的问题:**凭什么是我们?**"
-    },
-    {
-      "type": "h2",
-      "text": "我们曾经不是唯一的人类"
-    },
-    {
-      "type": "p",
-      "text": "先破除一个根深蒂固的错觉:「人类」不是一条从猿到智人的笔直进化线,而是一片枝繁叶茂的家族树。十万年前的地球上,至少同时生活着六种不同的人类——欧洲和西亚有身强体壮、脑容量不输我们的**尼安德特人**,东亚有存续了近两百万年的**直立人**,印尼弗洛勒斯岛上甚至有身高只有一米上下、被戏称为「霍比特人」的矮小人种。**「地球上只有一种人类」,在漫长的历史里其实是异常状态,而不是常态。**"
-    },
-    {
-      "type": "p",
-      "text": "而智人偏偏是这几种人类里,一开始最不起眼的一个。我们没有尼安德特人耐寒,没有他们壮,脑子也未必更大。在很长一段时间里,智人在草原食物链上的位置相当尴尬:狮子吃饱、鬣狗啃完,人类才凑上去砸开骨头吸点骨髓。赫拉利提醒我们,这段「中层猎食者」的经历留下了后遗症——人类是一种**「刚爬上食物链顶端不久、心里还发虚」的物种**,很多恐惧、焦虑与残忍,都源于这份没来得及消化的、暴发户式的紧张。"
-    },
-    {
-      "type": "figure",
-      "ftype": "示意图",
-      "svg": "<svg viewBox='0 0 520 240' xmlns='http://www.w3.org/2000/svg'><text x='260' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>十万年前:同时存在的人类兄弟</text><circle cx='90' cy='96' r='30' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='90' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>尼安德特人</text><text x='90' y='110' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-faint)'>耐寒·强壮</text><circle cx='200' cy='96' r='30' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='200' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>直立人</text><text x='200' y='110' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-faint)'>存续近200万年</text><circle cx='310' cy='96' r='30' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='310' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>弗洛勒斯人</text><text x='310' y='110' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-faint)'>身高约1米</text><circle cx='430' cy='96' r='34' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='430' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar)'>智人</text><text x='430' y='108' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-faint)'>起初最不起眼</text><text x='260' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>数万年后,只剩智人一种——其余全部消失</text><text x='260' y='204' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>是灭绝,还是同化?学界仍在争,但结局只有一个赢家</text></svg>",
-      "caption": "曾经六种人类并存,如今只剩其一——智人到哪里,兄弟物种就消失到哪里。这是全章的悬念。"
-    },
-    {
-      "type": "h2",
-      "text": "认知革命:语言学会了「说谎」"
-    },
-    {
-      "type": "p",
-      "text": "转折发生在大约七万年前。考古记录显示,智人突然「开窍」了:更精巧的工具、装饰品、艺术、宗教仪式、远距离贸易接连出现。赫拉利把这次跃迁称为**认知革命**,并推测其根源是某次基因变异,重新布线了智人的大脑,让语言能力发生了质变。但他反复强调:关键不在于智人能传递**更多**信息,而在于能传递一种**全新种类**的信息。"
-    },
-    {
-      "type": "p",
-      "text": "很多动物都有语言。绿猴能用不同叫声区分「小心,老鹰!」和「小心,狮子!」;蜜蜂能用舞蹈告诉同伴花在哪个方向。这些都是关于**真实存在之物**的信息。智人语言的独门绝技,是能说出一句在物理世界里找不到对应物的话——"
-    },
-    {
-      "type": "quote",
-      "original": "无论河边有没有狮子,人类都能够谈论狮子。",
-      "translation": "认知革命的分水岭:动物只能就眼前实有之物交流,而智人可以讨论根本不存在的东西——部落的守护神、祖先的英灵、图腾的禁忌。「虚构」的能力,由此诞生。"
-    },
-    {
-      "type": "p",
-      "text": "别小看这个能力。它意味着智人可以谈论神灵、祖先、传说,可以为一件根本不存在的东西哭、笑、拼命。这就是「讲故事」——而故事,恰恰是把陌生人拧成一股绳的绳子。这一步,是全书所有后续论证的原点:金钱、国家、公司、宗教、人权,全都是这次「学会讲故事」之后长出来的枝叶。"
-    },
-    {
-      "type": "h2",
-      "text": "八卦的天花板,故事的破壁"
-    },
-    {
-      "type": "p",
-      "text": "为什么讲故事能带来这么大的优势?因为它突破了协作的规模上限。赫拉利借用了一个概念:靠面对面的熟人关系和「八卦」(互相打听谁靠得住、谁爱占便宜)来维系的群体,人数大约到**150人**就见顶——超过这个数,人和人之间不再彼此了解,光靠交情的组织就会散架。这也是为什么,一家公司超过百来人,就必须靠制度、头衔和流程来运转,而不能再靠「大家都是哥们」。"
-    },
-    {
-      "type": "p",
-      "text": "而共同的虚构故事,一举捅破了这层天花板。两个素不相识的天主教徒,可以因为都相信「基督为我们而死」而并肩东征;两个素未谋面的塞尔维亚人,可以因为都相信「塞尔维亚民族」而彼此舍命相助;成千上万的陌生人,可以因为都相信「这张纸值一百块」而井然有序地交易。**共同的想象,让「陌生人」瞬间变成「自己人」。** 靠着这套本领,智人组织起了几百人、几千人、乃至今天几十亿人的协作网络,而尼安德特人再壮,也只能停留在几十人的小团伙里。胜负,就在这里分出。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对比图",
-      "svg": "<svg viewBox='0 0 520 250' xmlns='http://www.w3.org/2000/svg'><text x='260' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>为什么智人赢了:协作规模的天花板</text><rect x='30' y='48' width='210' height='150' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='135' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>只靠熟人 · 八卦</text><text x='135' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:26px;font-weight:bold;fill:var(--ink-soft)'>≈150人</text><text x='135' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>超过就散架</text><text x='135' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>其他人类止步于此</text><rect x='280' y='48' width='210' height='150' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='385' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>共同相信一个故事</text><text x='385' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:24px;font-weight:bold;fill:var(--cinnabar)'>无上限</text><text x='385' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>陌生人也能协作</text><text x='385' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>神·民族·货币·公司</text><text x='260' y='228' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>注:150(邓巴数)本身在学界有争议,但「熟人网络有上限」是可靠直觉</text></svg>",
-      "caption": "熟人协作有硬天花板,虚构故事没有——这条「规模差」,就是智人击败所有对手的底牌。"
-    },
-    {
-      "type": "h2",
-      "text": "历史开始跑步,生物还在爬行"
-    },
-    {
-      "type": "p",
-      "text": "认知革命还带来一个深远的后果:**人类的行为方式,从此可以脱离基因、快速改变。** 一只黑猩猩想改变群体的社会结构,得等基因进化,那是几万年的事;而智人只要换一个故事,就能在一代人里改天换地。1789年法国人推翻国王的前后,他们的DNA一个碱基都没变,可整个社会的运作逻辑却翻了个底朝天——因为大家换了一套共同相信的故事(从「君权神授」换成「主权在民」)。赫拉利由此点出一条贯穿全书的分野:**认知革命之后,文化演化的速度把生物演化远远甩在了身后**,历史学从此接管了生物学的方向盘。"
-    },
-    {
-      "type": "h2",
-      "text": "扩张的账单:第一波大灭绝"
-    },
-    {
-      "type": "p",
-      "text": "这一章的结尾,赫拉利算了一笔冷冰冰的账。智人携带着「讲故事—大协作」这件武器走出非洲,所到之处不只是取代了其他人类,还清空了大量大型动物。他给出了一组触目惊心的数字:智人抵达澳洲后,当地体重超过50公斤的24属大型动物,灭绝了23属;抵达美洲后,猛犸、剑齿虎、巨型地懒等接连从地球上消失。**「第一波物种灭绝浪潮,是采集者的扩张造成的。」** 换句话说,早在工业烟囱冒烟之前几万年,智人就已经是地球上最致命的物种了。"
-    },
-    {
-      "type": "p",
-      "text": "这里要提醒一句研读的分寸:大灭绝到底是人类猎杀,还是气候剧变,抑或两者叠加,学界至今没有定论,不同大陆的证据也不一样。赫拉利在几种解释里,明显选了「对人类最不客气」的那一种来讲——这符合他一贯的写作风格:观点鲜明、金句锋利,但不总是把争议和反例摆全。读第一章,最好把两个收获分开装:「智人靠集体虚构而非体力称霸」这个核心洞见,极具启发,可以放心带走;而「一次基因突变引爆认知革命」「大灭绝主要怪人类」这类具体断言,是**有力的假说**,记得后面还有别的声音,别当成铁案。这也正是接下来每一章都要练的功夫——**洞见照收,断言存疑。**"
-    }
-  ]
+ "title": "认知革命:一场想象力的政变",
+ "subtitle": "《人类简史》第一章导读——一只平平无奇的猿,如何靠「讲故事」开始改写地球",
+ "centralIdea": "十万年前,地球上至少同时住着六种人类,智人只是其中平平无奇的一支,在食物链里位置尴尬。大约七万年前,智人的大脑发生了某种变化——赫拉利称之为「认知革命」:语言学会了描述「不存在的东西」。从此智人能编织神话、图腾、部落传说,靠共同相信的虚构故事,组织起远超熟人上限的协作,一路走出非洲、取代所有人类兄弟、并在所到之处引发大型动物灭绝。这一章要立住的是全书的地基:让智人称霸的不是体力或个体智力,而是「集体虚构」的能力。读它需留一个心眼——「一次突变造就认知革命」是赫拉利的假说,不是学界定论。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "如果把地球四十六亿年的历史压缩成一天,人类要到最后几秒才登场;而智人真正开始「不一样」,更是这几秒里的最后一瞬。可就在这一瞬,一种此前毫不起眼的动物,突然造船出海、画壁画、办葬礼、发明弓箭——然后用不到几万年时间,爬到了整个食物链的顶端。赫拉利《人类简史》的第一章,就是要回答那个最朴素也最难的问题:**凭什么是我们?**"
+  },
+  {
+   "type": "h2",
+   "text": "我们曾经不是唯一的人类"
+  },
+  {
+   "type": "p",
+   "text": "先破除一个根深蒂固的错觉:「人类」不是一条从猿到智人的笔直进化线,而是一片枝繁叶茂的家族树。十万年前的地球上,至少同时生活着六种不同的人类——欧洲和西亚有身强体壮、脑容量不输我们的**尼安德特人**,东亚有存续了近两百万年的**直立人**,印尼弗洛勒斯岛上甚至有身高只有一米上下、被戏称为「霍比特人」的矮小人种。"
+  },
+  {
+   "type": "pull",
+   "text": "「地球上只有一种人类」,在漫长的历史里其实是异常状态,而不是常态。"
+  },
+  {
+   "type": "p",
+   "text": "而智人偏偏是这几种人类里,一开始最不起眼的一个。我们没有尼安德特人耐寒,没有他们壮,脑子也未必更大。在很长一段时间里,智人在草原食物链上的位置相当尴尬:狮子吃饱、鬣狗啃完,人类才凑上去砸开骨头吸点骨髓。赫拉利提醒我们,这段「中层猎食者」的经历留下了后遗症——人类是一种**「刚爬上食物链顶端不久、心里还发虚」的物种**,很多恐惧、焦虑与残忍,都源于这份没来得及消化的、暴发户式的紧张。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "svg": "<svg viewBox='0 0 520 240' xmlns='http://www.w3.org/2000/svg'><text x='260' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>十万年前:同时存在的人类兄弟</text><circle cx='90' cy='96' r='30' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='90' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>尼安德特人</text><text x='90' y='110' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-faint)'>耐寒·强壮</text><circle cx='200' cy='96' r='30' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='200' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>直立人</text><text x='200' y='110' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-faint)'>存续近200万年</text><circle cx='310' cy='96' r='30' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='310' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>弗洛勒斯人</text><text x='310' y='110' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-faint)'>身高约1米</text><circle cx='430' cy='96' r='34' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='430' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar)'>智人</text><text x='430' y='108' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-faint)'>起初最不起眼</text><text x='260' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>数万年后,只剩智人一种——其余全部消失</text><text x='260' y='204' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>是灭绝,还是同化?学界仍在争,但结局只有一个赢家</text></svg>",
+   "caption": "曾经六种人类并存,如今只剩其一——智人到哪里,兄弟物种就消失到哪里。这是全章的悬念。"
+  },
+  {
+   "type": "h2",
+   "text": "认知革命:语言学会了「说谎」"
+  },
+  {
+   "type": "p",
+   "text": "转折发生在大约七万年前。考古记录显示,智人突然「开窍」了:更精巧的工具、装饰品、艺术、宗教仪式、远距离贸易接连出现。赫拉利把这次跃迁称为**认知革命**,并推测其根源是某次基因变异,重新布线了智人的大脑,让语言能力发生了质变。但他反复强调:关键不在于智人能传递**更多**信息,而在于能传递一种**全新种类**的信息。"
+  },
+  {
+   "type": "p",
+   "text": "很多动物都有语言。绿猴能用不同叫声区分「小心,老鹰!」和「小心,狮子!」;蜜蜂能用舞蹈告诉同伴花在哪个方向。这些都是关于**真实存在之物**的信息。智人语言的独门绝技,是能说出一句在物理世界里找不到对应物的话——"
+  },
+  {
+   "type": "quote",
+   "original": "无论河边有没有狮子,人类都能够谈论狮子。",
+   "translation": "认知革命的分水岭:动物只能就眼前实有之物交流,而智人可以讨论根本不存在的东西——部落的守护神、祖先的英灵、图腾的禁忌。「虚构」的能力,由此诞生。"
+  },
+  {
+   "type": "p",
+   "text": "别小看这个能力。它意味着智人可以谈论神灵、祖先、传说,可以为一件根本不存在的东西哭、笑、拼命。这就是「讲故事」——而故事,恰恰是把陌生人拧成一股绳的绳子。这一步,是全书所有后续论证的原点:金钱、国家、公司、宗教、人权,全都是这次「学会讲故事」之后长出来的枝叶。"
+  },
+  {
+   "type": "h2",
+   "text": "八卦的天花板,故事的破壁"
+  },
+  {
+   "type": "p",
+   "text": "为什么讲故事能带来这么大的优势?因为它突破了协作的规模上限。赫拉利借用了一个概念:靠面对面的熟人关系和「八卦」(互相打听谁靠得住、谁爱占便宜)来维系的群体,人数大约到**150人**就见顶——超过这个数,人和人之间不再彼此了解,光靠交情的组织就会散架。这也是为什么,一家公司超过百来人,就必须靠制度、头衔和流程来运转,而不能再靠「大家都是哥们」。"
+  },
+  {
+   "type": "p",
+   "text": "而共同的虚构故事,一举捅破了这层天花板。两个素不相识的天主教徒,可以因为都相信「基督为我们而死」而并肩东征;两个素未谋面的塞尔维亚人,可以因为都相信「塞尔维亚民族」而彼此舍命相助;成千上万的陌生人,可以因为都相信「这张纸值一百块」而井然有序地交易。**共同的想象,让「陌生人」瞬间变成「自己人」。** 靠着这套本领,智人组织起了几百人、几千人、乃至今天几十亿人的协作网络,而尼安德特人再壮,也只能停留在几十人的小团伙里。胜负,就在这里分出。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "svg": "<svg viewBox='0 0 520 250' xmlns='http://www.w3.org/2000/svg'><text x='260' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>为什么智人赢了:协作规模的天花板</text><rect x='30' y='48' width='210' height='150' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='135' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>只靠熟人 · 八卦</text><text x='135' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:26px;font-weight:bold;fill:var(--ink-soft)'>≈150人</text><text x='135' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>超过就散架</text><text x='135' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>其他人类止步于此</text><rect x='280' y='48' width='210' height='150' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='385' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>共同相信一个故事</text><text x='385' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:24px;font-weight:bold;fill:var(--cinnabar)'>无上限</text><text x='385' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>陌生人也能协作</text><text x='385' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>神·民族·货币·公司</text><text x='260' y='228' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>注:150(邓巴数)本身在学界有争议,但「熟人网络有上限」是可靠直觉</text></svg>",
+   "caption": "熟人协作有硬天花板,虚构故事没有——这条「规模差」,就是智人击败所有对手的底牌。"
+  },
+  {
+   "type": "h2",
+   "text": "历史开始跑步,生物还在爬行"
+  },
+  {
+   "type": "p",
+   "text": "认知革命还带来一个深远的后果:**人类的行为方式,从此可以脱离基因、快速改变。** 一只黑猩猩想改变群体的社会结构,得等基因进化,那是几万年的事;而智人只要换一个故事,就能在一代人里改天换地。1789年法国人推翻国王的前后,他们的DNA一个碱基都没变,可整个社会的运作逻辑却翻了个底朝天——因为大家换了一套共同相信的故事(从「君权神授」换成「主权在民」)。赫拉利由此点出一条贯穿全书的分野:**认知革命之后,文化演化的速度把生物演化远远甩在了身后**,历史学从此接管了生物学的方向盘。"
+  },
+  {
+   "type": "h2",
+   "text": "扩张的账单:第一波大灭绝"
+  },
+  {
+   "type": "p",
+   "text": "这一章的结尾,赫拉利算了一笔冷冰冰的账。智人携带着「讲故事—大协作」这件武器走出非洲,所到之处不只是取代了其他人类,还清空了大量大型动物。他给出了一组触目惊心的数字:智人抵达澳洲后,当地体重超过50公斤的24属大型动物,灭绝了23属;抵达美洲后,猛犸、剑齿虎、巨型地懒等接连从地球上消失。**「第一波物种灭绝浪潮,是采集者的扩张造成的。」** 换句话说,早在工业烟囱冒烟之前几万年,智人就已经是地球上最致命的物种了。"
+  },
+  {
+   "type": "p",
+   "text": "这里要提醒一句研读的分寸:大灭绝到底是人类猎杀,还是气候剧变,抑或两者叠加,学界至今没有定论,不同大陆的证据也不一样。赫拉利在几种解释里,明显选了「对人类最不客气」的那一种来讲——这符合他一贯的写作风格:观点鲜明、金句锋利,但不总是把争议和反例摆全。读第一章,最好把两个收获分开装:「智人靠集体虚构而非体力称霸」这个核心洞见,极具启发,可以放心带走;而「一次基因突变引爆认知革命」「大灭绝主要怪人类」这类具体断言,是**有力的假说**,记得后面还有别的声音,别当成铁案。这也正是接下来每一章都要练的功夫——**洞见照收,断言存疑。**"
+  }
+ ]
 }

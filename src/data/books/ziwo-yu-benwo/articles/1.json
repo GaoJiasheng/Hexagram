@@ -1,91 +1,95 @@
 {
-  "title": "一张旧地图的裂缝：「无意识」比你想的更复杂",
-  "subtitle": "弗洛伊德《自我与本我》第1章导读——意识与无意识：旧框架为何不够用了",
-  "centralIdea": "本章是全书的「诊断书」：弗洛伊德先回顾自己用了二十多年的旧地图——把心智分成意识、前意识、无意识三层——然后亲手指出它的裂缝。「无意识」这个词其实混着两种含义：一种是描述性的（此刻不在意识里、但一提就能想起，严格说是前意识），一种是动力学的（被压抑、被阻抗死死摁住）；更要命的是，自我本身有一大块功能——比如执行压抑的那只手——既不属于被压抑的内容，又确实是无意识的。结论：光靠「意识 vs 无意识」一条线切分心智已经不够，必须换一张按结构画的新地图，下一章的本我／自我／超我由此登场。提醒：这是弗洛伊德的理论自省与建构，论证值得细看，结论不必照单全收。",
-  "blocks": [
-    {
-      "type": "lead",
-      "text": "很少有理论家愿意当众拆自己的招牌。1923 年的弗洛伊德六十七岁，《梦的解析》已出版二十三年，他那套「意识—前意识—无意识」的心智分层几乎就是精神分析的商标。可《自我与本我》的第一章，干的偏偏是拿放大镜找自家地图裂缝的活儿：「无意识」这个词，被他自己用出了两种意思；诊疗室里冒出的新证据，更是旧地图怎么折都盖不住。这一章没有推出任何新结论——它是一份诊断书，诊断对象是弗洛伊德自己的旧理论。看懂了这份诊断，下一章那套大名鼎鼎的「本我／自我／超我」才不会显得凭空冒出来。"
-    },
-    {
-      "type": "h2",
-      "text": "先摊开旧地图：心理不等于意识"
-    },
-    {
-      "type": "p",
-      "text": "故事得从精神分析的地基说起。日常直觉是：我心里想什么，我自己最清楚——心理活动就等于我意识到的活动。弗洛伊德的整个学说恰恰建立在否定这条直觉上：**意识只是心理过程的一小部分**，更像一盏聚光灯打在舞台的一角，而不是舞台本身。他反复援引的证据是梦、口误、催眠后暗示、神经症症状——这些行为背后明明有心理活动在运转，当事人却对它一无所知。承认「有心理活动不被意识到」，正是精神分析和当时主流心理学分道扬镳的地方。"
-    },
-    {
-      "type": "quote",
-      "original": "把心理划分为意识的与无意识的，是精神分析的基本前提",
-      "translation": ""
-    },
-    {
-      "type": "p",
-      "text": "在这个前提上，他早年（《梦的解析》第七章）画出了那张著名的三层地图。**意识**：聚光灯下的那一小块，你此刻正在体验的念头和感受。**前意识**：后台待命区——你现在没在想自己的手机号、昨晚吃了什么，可一被问起立刻就能答上来，从后台走到台前几乎不费力气。**无意识**（严格意义上的）：地下室——住在这里的是被压抑的内容，那些不被允许露面的愿望和记忆；它们不是自己走下后台的，是被推下去的，而且门口有人把着，死活不让上来。想让它们浮出水面，得跟一股顽强的「阻抗」较劲，精神分析的全部技术差不多就是为这场较劲发明的。"
-    },
-    {
-      "type": "figure",
-      "ftype": "结构图",
-      "caption": "旧地图：心智三层楼。前意识到意识之间是一道虚掩的门，随叫随到；无意识到前意识之间是一道被把守的闸，阻抗死死顶着。",
-      "svg": "<svg viewBox=\"0 0 480 340\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"240\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">旧地图：同一栋心智楼的三层</text><rect x=\"40\" y=\"40\" width=\"300\" height=\"66\" rx=\"6\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"60\" y=\"68\" font-size=\"14\" style=\"fill:var(--ink)\">意识</text><text x=\"60\" y=\"92\" font-size=\"12\" style=\"fill:var(--ink-soft)\">聚光灯下：此刻正在想的、正在感受的</text><line x1=\"40\" y1=\"122\" x2=\"340\" y2=\"122\" style=\"stroke:var(--azure)\" stroke-width=\"2\" stroke-dasharray=\"7 5\"/><rect x=\"40\" y=\"138\" width=\"300\" height=\"66\" rx=\"6\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"60\" y=\"166\" font-size=\"14\" style=\"fill:var(--ink)\">前意识</text><text x=\"60\" y=\"190\" font-size=\"12\" style=\"fill:var(--ink-soft)\">后台待命：手机号、昨晚的饭，一提就想起</text><line x1=\"40\" y1=\"222\" x2=\"340\" y2=\"222\" style=\"stroke:var(--cinnabar)\" stroke-width=\"3.5\"/><rect x=\"40\" y=\"240\" width=\"300\" height=\"80\" rx=\"6\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"60\" y=\"270\" font-size=\"14\" style=\"fill:var(--ink)\">无意识（严格意义）</text><text x=\"60\" y=\"296\" font-size=\"12\" style=\"fill:var(--ink-soft)\">地下室：被压抑的内容，被摁住不许露面</text><line x1=\"390\" y1=\"170\" x2=\"390\" y2=\"84\" style=\"stroke:var(--azure)\" stroke-width=\"2\"/><path d=\"M390 84 l-6 10 h12 Z\" style=\"fill:var(--azure)\"/><text x=\"404\" y=\"120\" font-size=\"12\" style=\"fill:var(--azure)\">随叫随到</text><text x=\"404\" y=\"138\" font-size=\"12\" style=\"fill:var(--azure)\">（虚掩的门）</text><line x1=\"390\" y1=\"300\" x2=\"390\" y2=\"236\" style=\"stroke:var(--cinnabar)\" stroke-width=\"2\"/><line x1=\"378\" y1=\"228\" x2=\"402\" y2=\"228\" style=\"stroke:var(--cinnabar)\" stroke-width=\"3.5\"/><text x=\"404\" y=\"262\" font-size=\"12\" style=\"fill:var(--cinnabar)\">阻抗把门</text><text x=\"404\" y=\"280\" font-size=\"12\" style=\"fill:var(--cinnabar)\">（推不上去）</text></svg>"
-    },
-    {
-      "type": "h2",
-      "text": "第一道裂缝：「无意识」一词两义"
-    },
-    {
-      "type": "p",
-      "text": "地图画得挺清楚，可弗洛伊德自己承认：**「无意识」这个词一直在打架**。如果只按字面描述——「此刻不在意识里的，就叫无意识」——那前意识里的手机号也符合定义：你没在想它的时候，它确实不被意识到。可它跟地下室里那些被压抑的内容天差地别：一个随叫随到，一个死活不肯出来、还得跟阻抗搏斗。于是同一个词有了两种含义。**描述性含义**：只说「此刻不被意识到」，不问原因，这一类里既有潜伏的（很容易变回意识），也有被压抑的；**动力学含义**：专指被一股力量压下去、又被阻抗死死摁住的内容——不是「没被照到」，而是「被禁止上台」。为了不添乱，他约定：能轻易回到意识的叫**前意识**，「无意识」这个称号留给严格意义上被压抑的那部分。换句话说，描述意义上有两种无意识，动力学意义上只有一种。"
-    },
-    {
-      "type": "figure",
-      "ftype": "对比图",
-      "caption": "同一个词，两种含义：描述性的「无意识」只看在不在场上；动力学的「无意识」看的是有没有一股力量不许它上场。",
-      "svg": "<svg viewBox=\"0 0 520 290\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"260\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">「无意识」的一词两义</text><rect x=\"22\" y=\"46\" width=\"228\" height=\"180\" rx=\"10\" style=\"fill:none;stroke:var(--azure)\" stroke-width=\"2\"/><text x=\"136\" y=\"74\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--azure)\">描述性含义</text><text x=\"136\" y=\"98\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">「此刻不在意识里」——不问原因</text><text x=\"40\" y=\"130\" font-size=\"13\" style=\"fill:var(--ink)\">· 潜伏的：一提醒就想起</text><text x=\"56\" y=\"152\" font-size=\"12\" style=\"fill:var(--ink-faint)\">（严格说这是「前意识」）</text><text x=\"40\" y=\"182\" font-size=\"13\" style=\"fill:var(--ink)\">· 被压抑的：怎么提也想不起</text><text x=\"56\" y=\"204\" font-size=\"12\" style=\"fill:var(--ink-faint)\">（两类都「不在场上」）</text><rect x=\"270\" y=\"46\" width=\"228\" height=\"180\" rx=\"10\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"2\"/><text x=\"384\" y=\"74\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--cinnabar)\">动力学含义</text><text x=\"384\" y=\"98\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">「被摁住不许上场」——有力量在压</text><text x=\"288\" y=\"130\" font-size=\"13\" style=\"fill:var(--ink)\">· 只指被压抑的内容</text><text x=\"288\" y=\"158\" font-size=\"13\" style=\"fill:var(--ink)\">· 靠阻抗把门，浮现要费大力</text><text x=\"288\" y=\"186\" font-size=\"13\" style=\"fill:var(--ink)\">· 精神分析较劲的对象</text><text x=\"260\" y=\"258\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">描述意义上：两种无意识；动力学意义上：一种</text></svg>"
-    },
-    {
-      "type": "p",
-      "text": "到这一步，问题还只是术语别扭——忍一忍、约定好用法，地图照样能用。真正让旧地图报废的，是下面这个从诊疗室里撞出来的发现。"
-    },
-    {
-      "type": "h2",
-      "text": "第二道裂缝：连「压抑者」自己也是无意识的"
-    },
-    {
-      "type": "p",
-      "text": "先认识一下这一章的主角。弗洛伊德把心智里那个**有组织、连贯的部分**称为「自我」：知觉从它这儿进来，行动的闸门由它控制，白天它做现实检验，晚上它审查梦的内容——而且，正是它执行**压抑**，把那些不受欢迎的冲动摁进地下室。按旧地图想当然地推：自我该站在「意识」这一侧，被压抑的内容待在「无意识」那一侧，一条线，两个阵营，泾渭分明。"
-    },
-    {
-      "type": "p",
-      "text": "可治疗里反复撞见一个尴尬的场面：分析师让病人自由联想，联想快要碰到被压抑的东西时，病人忽然卡壳、绕开、顾左右而言他——**阻抗正在工作**。这股阻抗明明发自病人的自我，病人自己却对它毫无察觉：他只觉得「没什么可说的了」，完全不知道自己正在用力把什么东西推回去。也就是说，自我里负责防御的那部分，行事方式跟被压抑的内容一模一样——无意识地运作，也得费同样的功夫才能揭示——可它偏偏**不是**被压抑的内容，它是干压抑这活儿的那只手。"
-    },
-    {
-      "type": "quote",
-      "original": "自我之中也有一部分是无意识的",
-      "translation": ""
-    },
-    {
-      "type": "p",
-      "text": "这一下，「无意识＝被压抑」这个等式就塌了。正确的关系是单向的：**被压抑的都是无意识的，但无意识的并不都是被压抑的**——自我的一部分，而且是分量不轻、绝非可有可无的一部分，也是无意识的。这意味着，如果坚持拿「是否被意识到」这一条线去切分心智，自我会被拦腰切成两半，而神经症的冲突也没法再描述成「意识对抗无意识」——真实的战线是「连贯的自我」对抗「被压抑的内容」，而交战双方各自都有无意识的地带。这条线，跟心智的实际结构对不上。"
-    },
-    {
-      "type": "figure",
-      "ftype": "示意图",
-      "caption": "裂缝所在：自我横跨新旧两界，它的下半截（执行压抑的操作、防御的机制）既不在意识里，也不属于被压抑的内容——旧地图没给它留格子。",
-      "svg": "<svg viewBox=\"0 0 520 310\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"260\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">「意识 vs 无意识」这条线，切不动自我</text><line x1=\"30\" y1=\"130\" x2=\"490\" y2=\"130\" style=\"stroke:var(--ink-soft)\" stroke-width=\"2\" stroke-dasharray=\"8 6\"/><text x=\"36\" y=\"116\" font-size=\"12\" style=\"fill:var(--ink-faint)\">线上＝意识</text><text x=\"36\" y=\"152\" font-size=\"12\" style=\"fill:var(--ink-faint)\">线下＝无意识</text><ellipse cx=\"215\" cy=\"130\" rx=\"90\" ry=\"72\" style=\"fill:none;stroke:var(--ink)\" stroke-width=\"2\"/><text x=\"215\" y=\"96\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">自我</text><text x=\"215\" y=\"118\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-soft)\">（有组织、连贯）</text><path d=\"M126 133 a90 72 0 0 0 178 0 Z\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"2.5\" stroke-dasharray=\"5 4\"/><text x=\"215\" y=\"166\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--cinnabar)\">自我的无意识部分</text><text x=\"215\" y=\"184\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--cinnabar)\">（压抑的运作、防御）</text><ellipse cx=\"410\" cy=\"235\" rx=\"72\" ry=\"46\" style=\"fill:none;stroke:var(--azure)\" stroke-width=\"2\"/><text x=\"410\" y=\"230\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--azure)\">被压抑的内容</text><text x=\"410\" y=\"252\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">（这才是旧地图的「地下室」）</text><line x1=\"296\" y1=\"178\" x2=\"346\" y2=\"210\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\"/><text x=\"260\" y=\"296\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink)\">同是无意识，却不是同一类东西——一条线装不下两种区别</text></svg>"
-    },
-    {
-      "type": "h2",
-      "text": "诊断完毕：该换一张按结构画的地图了"
-    },
-    {
-      "type": "p",
-      "text": "于是本章收在一个方法论的结论上：「被意识到与否」只是心理内容的一种**属性、一种状态**——同一个念头可以此刻在场、下一刻退场——它回答的是「这东西现在亮不亮」，回答不了「心智由哪些机构组成、谁在跟谁较劲」。拿属性当结构用，就是旧地图全部麻烦的根源。弗洛伊德的出路，是干脆按**机构**重新制图：不再问「意识还是无意识」，而是问「这是哪个机构在运作」——下一章将正式推出「自我」与「本我」这对新主角（第三章再加上「超我」）。所以读到这里请把定位记牢：**这一章是「发现旧地图不够用」的诊断，下一章才是「新地图」登场**。"
-    },
-    {
-      "type": "p",
-      "text": "最后把研读的分寸立好。这一章最动人的地方，是弗洛伊德的理论诚实——肯当众承认自己用了二十年的框架有裂缝，这在任何学派里都不多见；他「从属性走向结构」的论证思路，也确实值得细看。但也要看清它的证据形态：全部论据来自诊疗室里的临床解释（病人卡壳＝阻抗在工作），没有独立的实验检验，后世科学哲学家批评精神分析难以证伪，并非无的放矢。持平地说，「心智的大部分运作不在意识之内」这个大方向，后来的认知科学用完全不同的机制（自动加工、内隐记忆）部分地印证了——但那不等于弗洛伊德式「被压抑的欲望」得到了证实。所以合适的姿势是：把这一章当作一次精彩的概念手术来欣赏，盯紧每一步从证据到结论的跳跃；下一章的本我／自我／超我，当**思想工具**用，别当**解剖图**信。"
-    }
-  ]
+ "title": "一张旧地图的裂缝：「无意识」比你想的更复杂",
+ "subtitle": "弗洛伊德《自我与本我》第1章导读——意识与无意识：旧框架为何不够用了",
+ "centralIdea": "本章是全书的「诊断书」：弗洛伊德先回顾自己用了二十多年的旧地图——把心智分成意识、前意识、无意识三层——然后亲手指出它的裂缝。「无意识」这个词其实混着两种含义：一种是描述性的（此刻不在意识里、但一提就能想起，严格说是前意识），一种是动力学的（被压抑、被阻抗死死摁住）；更要命的是，自我本身有一大块功能——比如执行压抑的那只手——既不属于被压抑的内容，又确实是无意识的。结论：光靠「意识 vs 无意识」一条线切分心智已经不够，必须换一张按结构画的新地图，下一章的本我／自我／超我由此登场。提醒：这是弗洛伊德的理论自省与建构，论证值得细看，结论不必照单全收。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "很少有理论家愿意当众拆自己的招牌。1923 年的弗洛伊德六十七岁，《梦的解析》已出版二十三年，他那套「意识—前意识—无意识」的心智分层几乎就是精神分析的商标。可《自我与本我》的第一章，干的偏偏是拿放大镜找自家地图裂缝的活儿：「无意识」这个词，被他自己用出了两种意思；诊疗室里冒出的新证据，更是旧地图怎么折都盖不住。这一章没有推出任何新结论——它是一份诊断书，诊断对象是弗洛伊德自己的旧理论。看懂了这份诊断，下一章那套大名鼎鼎的「本我／自我／超我」才不会显得凭空冒出来。"
+  },
+  {
+   "type": "h2",
+   "text": "先摊开旧地图：心理不等于意识"
+  },
+  {
+   "type": "p",
+   "text": "故事得从精神分析的地基说起。日常直觉是：我心里想什么，我自己最清楚——心理活动就等于我意识到的活动。弗洛伊德的整个学说恰恰建立在否定这条直觉上：**意识只是心理过程的一小部分**，更像一盏聚光灯打在舞台的一角，而不是舞台本身。他反复援引的证据是梦、口误、催眠后暗示、神经症症状——这些行为背后明明有心理活动在运转，当事人却对它一无所知。承认「有心理活动不被意识到」，正是精神分析和当时主流心理学分道扬镳的地方。"
+  },
+  {
+   "type": "quote",
+   "original": "把心理划分为意识的与无意识的，是精神分析的基本前提",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "在这个前提上，他早年（《梦的解析》第七章）画出了那张著名的三层地图。**意识**：聚光灯下的那一小块，你此刻正在体验的念头和感受。**前意识**：后台待命区——你现在没在想自己的手机号、昨晚吃了什么，可一被问起立刻就能答上来，从后台走到台前几乎不费力气。**无意识**（严格意义上的）：地下室——住在这里的是被压抑的内容，那些不被允许露面的愿望和记忆；它们不是自己走下后台的，是被推下去的，而且门口有人把着，死活不让上来。想让它们浮出水面，得跟一股顽强的「阻抗」较劲，精神分析的全部技术差不多就是为这场较劲发明的。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "旧地图：心智三层楼。前意识到意识之间是一道虚掩的门，随叫随到；无意识到前意识之间是一道被把守的闸，阻抗死死顶着。",
+   "svg": "<svg viewBox=\"0 0 480 340\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"240\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">旧地图：同一栋心智楼的三层</text><rect x=\"40\" y=\"40\" width=\"300\" height=\"66\" rx=\"6\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"60\" y=\"68\" font-size=\"14\" style=\"fill:var(--ink)\">意识</text><text x=\"60\" y=\"92\" font-size=\"12\" style=\"fill:var(--ink-soft)\">聚光灯下：此刻正在想的、正在感受的</text><line x1=\"40\" y1=\"122\" x2=\"340\" y2=\"122\" style=\"stroke:var(--azure)\" stroke-width=\"2\" stroke-dasharray=\"7 5\"/><rect x=\"40\" y=\"138\" width=\"300\" height=\"66\" rx=\"6\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"60\" y=\"166\" font-size=\"14\" style=\"fill:var(--ink)\">前意识</text><text x=\"60\" y=\"190\" font-size=\"12\" style=\"fill:var(--ink-soft)\">后台待命：手机号、昨晚的饭，一提就想起</text><line x1=\"40\" y1=\"222\" x2=\"340\" y2=\"222\" style=\"stroke:var(--cinnabar)\" stroke-width=\"3.5\"/><rect x=\"40\" y=\"240\" width=\"300\" height=\"80\" rx=\"6\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.5\"/><text x=\"60\" y=\"270\" font-size=\"14\" style=\"fill:var(--ink)\">无意识（严格意义）</text><text x=\"60\" y=\"296\" font-size=\"12\" style=\"fill:var(--ink-soft)\">地下室：被压抑的内容，被摁住不许露面</text><line x1=\"390\" y1=\"170\" x2=\"390\" y2=\"84\" style=\"stroke:var(--azure)\" stroke-width=\"2\"/><path d=\"M390 84 l-6 10 h12 Z\" style=\"fill:var(--azure)\"/><text x=\"404\" y=\"120\" font-size=\"12\" style=\"fill:var(--azure)\">随叫随到</text><text x=\"404\" y=\"138\" font-size=\"12\" style=\"fill:var(--azure)\">（虚掩的门）</text><line x1=\"390\" y1=\"300\" x2=\"390\" y2=\"236\" style=\"stroke:var(--cinnabar)\" stroke-width=\"2\"/><line x1=\"378\" y1=\"228\" x2=\"402\" y2=\"228\" style=\"stroke:var(--cinnabar)\" stroke-width=\"3.5\"/><text x=\"404\" y=\"262\" font-size=\"12\" style=\"fill:var(--cinnabar)\">阻抗把门</text><text x=\"404\" y=\"280\" font-size=\"12\" style=\"fill:var(--cinnabar)\">（推不上去）</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "第一道裂缝：「无意识」一词两义"
+  },
+  {
+   "type": "p",
+   "text": "地图画得挺清楚，可弗洛伊德自己承认：**「无意识」这个词一直在打架**。如果只按字面描述——「此刻不在意识里的，就叫无意识」——那前意识里的手机号也符合定义：你没在想它的时候，它确实不被意识到。可它跟地下室里那些被压抑的内容天差地别：一个随叫随到，一个死活不肯出来、还得跟阻抗搏斗。于是同一个词有了两种含义。**描述性含义**：只说「此刻不被意识到」，不问原因，这一类里既有潜伏的（很容易变回意识），也有被压抑的；**动力学含义**：专指被一股力量压下去、又被阻抗死死摁住的内容——不是「没被照到」，而是「被禁止上台」。为了不添乱，他约定：能轻易回到意识的叫**前意识**，「无意识」这个称号留给严格意义上被压抑的那部分。换句话说，描述意义上有两种无意识，动力学意义上只有一种。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "caption": "同一个词，两种含义：描述性的「无意识」只看在不在场上；动力学的「无意识」看的是有没有一股力量不许它上场。",
+   "svg": "<svg viewBox=\"0 0 520 290\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"260\" y=\"26\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">「无意识」的一词两义</text><rect x=\"22\" y=\"46\" width=\"228\" height=\"180\" rx=\"10\" style=\"fill:none;stroke:var(--azure)\" stroke-width=\"2\"/><text x=\"136\" y=\"74\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--azure)\">描述性含义</text><text x=\"136\" y=\"98\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">「此刻不在意识里」——不问原因</text><text x=\"40\" y=\"130\" font-size=\"13\" style=\"fill:var(--ink)\">· 潜伏的：一提醒就想起</text><text x=\"56\" y=\"152\" font-size=\"12\" style=\"fill:var(--ink-faint)\">（严格说这是「前意识」）</text><text x=\"40\" y=\"182\" font-size=\"13\" style=\"fill:var(--ink)\">· 被压抑的：怎么提也想不起</text><text x=\"56\" y=\"204\" font-size=\"12\" style=\"fill:var(--ink-faint)\">（两类都「不在场上」）</text><rect x=\"270\" y=\"46\" width=\"228\" height=\"180\" rx=\"10\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"2\"/><text x=\"384\" y=\"74\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--cinnabar)\">动力学含义</text><text x=\"384\" y=\"98\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink-soft)\">「被摁住不许上场」——有力量在压</text><text x=\"288\" y=\"130\" font-size=\"13\" style=\"fill:var(--ink)\">· 只指被压抑的内容</text><text x=\"288\" y=\"158\" font-size=\"13\" style=\"fill:var(--ink)\">· 靠阻抗把门，浮现要费大力</text><text x=\"288\" y=\"186\" font-size=\"13\" style=\"fill:var(--ink)\">· 精神分析较劲的对象</text><text x=\"260\" y=\"258\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--ink)\">描述意义上：两种无意识；动力学意义上：一种</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "到这一步，问题还只是术语别扭——忍一忍、约定好用法，地图照样能用。真正让旧地图报废的，是下面这个从诊疗室里撞出来的发现。"
+  },
+  {
+   "type": "h2",
+   "text": "第二道裂缝：连「压抑者」自己也是无意识的"
+  },
+  {
+   "type": "p",
+   "text": "先认识一下这一章的主角。弗洛伊德把心智里那个**有组织、连贯的部分**称为「自我」：知觉从它这儿进来，行动的闸门由它控制，白天它做现实检验，晚上它审查梦的内容——而且，正是它执行**压抑**，把那些不受欢迎的冲动摁进地下室。按旧地图想当然地推：自我该站在「意识」这一侧，被压抑的内容待在「无意识」那一侧，一条线，两个阵营，泾渭分明。"
+  },
+  {
+   "type": "p",
+   "text": "可治疗里反复撞见一个尴尬的场面：分析师让病人自由联想，联想快要碰到被压抑的东西时，病人忽然卡壳、绕开、顾左右而言他——**阻抗正在工作**。这股阻抗明明发自病人的自我，病人自己却对它毫无察觉：他只觉得「没什么可说的了」，完全不知道自己正在用力把什么东西推回去。也就是说，自我里负责防御的那部分，行事方式跟被压抑的内容一模一样——无意识地运作，也得费同样的功夫才能揭示——可它偏偏**不是**被压抑的内容，它是干压抑这活儿的那只手。"
+  },
+  {
+   "type": "quote",
+   "original": "自我之中也有一部分是无意识的",
+   "translation": ""
+  },
+  {
+   "type": "p",
+   "text": "这一下，「无意识＝被压抑」这个等式就塌了。正确的关系是单向的：**被压抑的都是无意识的，但无意识的并不都是被压抑的**——自我的一部分，而且是分量不轻、绝非可有可无的一部分，也是无意识的。这意味着，如果坚持拿「是否被意识到」这一条线去切分心智，自我会被拦腰切成两半，而神经症的冲突也没法再描述成「意识对抗无意识」——真实的战线是「连贯的自我」对抗「被压抑的内容」，而交战双方各自都有无意识的地带。这条线，跟心智的实际结构对不上。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "裂缝所在：自我横跨新旧两界，它的下半截（执行压抑的操作、防御的机制）既不在意识里，也不属于被压抑的内容——旧地图没给它留格子。",
+   "svg": "<svg viewBox=\"0 0 520 310\" style=\"width:100%;height:auto;font-family:var(--font-serif)\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"260\" y=\"24\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">「意识 vs 无意识」这条线，切不动自我</text><line x1=\"30\" y1=\"130\" x2=\"490\" y2=\"130\" style=\"stroke:var(--ink-soft)\" stroke-width=\"2\" stroke-dasharray=\"8 6\"/><text x=\"36\" y=\"116\" font-size=\"12\" style=\"fill:var(--ink-faint)\">线上＝意识</text><text x=\"36\" y=\"152\" font-size=\"12\" style=\"fill:var(--ink-faint)\">线下＝无意识</text><ellipse cx=\"215\" cy=\"130\" rx=\"90\" ry=\"72\" style=\"fill:none;stroke:var(--ink)\" stroke-width=\"2\"/><text x=\"215\" y=\"96\" text-anchor=\"middle\" font-size=\"14\" style=\"fill:var(--ink)\">自我</text><text x=\"215\" y=\"118\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-soft)\">（有组织、连贯）</text><path d=\"M126 133 a90 72 0 0 0 178 0 Z\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"2.5\" stroke-dasharray=\"5 4\"/><text x=\"215\" y=\"166\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--cinnabar)\">自我的无意识部分</text><text x=\"215\" y=\"184\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--cinnabar)\">（压抑的运作、防御）</text><ellipse cx=\"410\" cy=\"235\" rx=\"72\" ry=\"46\" style=\"fill:none;stroke:var(--azure)\" stroke-width=\"2\"/><text x=\"410\" y=\"230\" text-anchor=\"middle\" font-size=\"13\" style=\"fill:var(--azure)\">被压抑的内容</text><text x=\"410\" y=\"252\" text-anchor=\"middle\" font-size=\"11\" style=\"fill:var(--ink-faint)\">（这才是旧地图的「地下室」）</text><line x1=\"296\" y1=\"178\" x2=\"346\" y2=\"210\" style=\"stroke:var(--ink-faint)\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\"/><text x=\"260\" y=\"296\" text-anchor=\"middle\" font-size=\"12\" style=\"fill:var(--ink)\">同是无意识，却不是同一类东西——一条线装不下两种区别</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "诊断完毕：该换一张按结构画的地图了"
+  },
+  {
+   "type": "p",
+   "text": "于是本章收在一个方法论的结论上：「被意识到与否」只是心理内容的一种**属性、一种状态**——同一个念头可以此刻在场、下一刻退场——它回答的是「这东西现在亮不亮」，回答不了「心智由哪些机构组成、谁在跟谁较劲」。拿属性当结构用，就是旧地图全部麻烦的根源。弗洛伊德的出路，是干脆按**机构**重新制图：不再问「意识还是无意识」，而是问「这是哪个机构在运作」——下一章将正式推出「自我」与「本我」这对新主角（第三章再加上「超我」）。所以读到这里请把定位记牢："
+  },
+  {
+   "type": "pull",
+   "text": "这一章是「发现旧地图不够用」的诊断，下一章才是「新地图」登场。"
+  },
+  {
+   "type": "p",
+   "text": "最后把研读的分寸立好。这一章最动人的地方，是弗洛伊德的理论诚实——肯当众承认自己用了二十年的框架有裂缝，这在任何学派里都不多见；他「从属性走向结构」的论证思路，也确实值得细看。但也要看清它的证据形态：全部论据来自诊疗室里的临床解释（病人卡壳＝阻抗在工作），没有独立的实验检验，后世科学哲学家批评精神分析难以证伪，并非无的放矢。持平地说，「心智的大部分运作不在意识之内」这个大方向，后来的认知科学用完全不同的机制（自动加工、内隐记忆）部分地印证了——但那不等于弗洛伊德式「被压抑的欲望」得到了证实。所以合适的姿势是：把这一章当作一次精彩的概念手术来欣赏，盯紧每一步从证据到结论的跳跃；下一章的本我／自我／超我，当**思想工具**用，别当**解剖图**信。"
+  }
+ ]
 }
