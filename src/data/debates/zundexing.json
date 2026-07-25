@@ -1,0 +1,203 @@
+{
+  "id": "zundexing",
+  "title": "尊德性与道问学",
+  "category": "工夫与学",
+  "concept": "尊德性与道问学",
+  "question": "工夫入手,在涵养本心,还是在读书穷理?《中庸》两者并举,后人何以分作两路?",
+  "framing": "《中庸》并举尊德性与道问学;程朱一系谓尊德性矣必道问学,阳明则以道问学为尊德性之工夫。朱陆异同之轴,正在这一句上分。此为会讲,不判胜负。",
+  "schools": [
+    {
+      "key": "zhongyong",
+      "label": "《中庸》",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "两者并举"
+    },
+    {
+      "key": "cheng",
+      "label": "程朱",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "必道问学"
+    },
+    {
+      "key": "yang",
+      "label": "阳明",
+      "group": "xin",
+      "seal": "观心",
+      "stance": "问学即德性之功"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "并举",
+      "turns": [
+        {
+          "school": "zhongyong",
+          "rebut": null,
+          "point": "君子尊德性而道问学,致广大而尽精微,极高明而道中庸;本是并举之辞,未分先后。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "zhongyong",
+            "ch": 1,
+            "quote": "故君子尊德性，而道问学",
+            "label": "中庸"
+          }
+        },
+        {
+          "school": "cheng",
+          "rebut": null,
+          "point": "尊德性矣,必道问学;明乎道体、知所指归,而后为学之大凡可得而究。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "jinsilu",
+            "ch": 2,
+            "quote": "盖「尊德性」矣，必「道问学」",
+            "label": "近思录·为学"
+          }
+        },
+        {
+          "school": "yang",
+          "rebut": null,
+          "point": "道问学是尊德性的工夫,如博文是约礼的工夫;非两事并列,乃一事之两名。",
+          "cite": {
+            "corpus": "xin",
+            "slug": "chuanxilu",
+            "ch": 1,
+            "quote": "『道问学』是『尊德性』的工夫",
+            "label": "传习录·卷上"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "由学",
+      "turns": [
+        {
+          "school": "cheng",
+          "rebut": "yang",
+          "point": "只说一个工夫,恐学者废讲习。须今日格一件、明日格一件,积习既多,然后脱然自有贯通处。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "jinsilu",
+            "ch": 3,
+            "quote": "积习既多，然后脱然自有贯通处",
+            "label": "近思录·致知"
+          }
+        },
+        {
+          "school": "yang",
+          "rebut": "cheng",
+          "point": "于事事物物上求至善,却是义外;至善是心之本体,不须外面添一分。",
+          "cite": {
+            "corpus": "xin",
+            "slug": "chuanxilu",
+            "ch": 1,
+            "quote": "于事事物物上求至善，却是义外也",
+            "label": "传习录·卷上"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "头脑之诘",
+      "turns": [
+        {
+          "school": "yang",
+          "rebut": "cheng",
+          "point": "非不讲求,只是须有个头脑:讲求温凊定省,亦只在此心去人欲、存天理上讲求。",
+          "cite": {
+            "corpus": "xin",
+            "slug": "chuanxilu",
+            "ch": 1,
+            "quote": "如何不讲求？只是有个头脑",
+            "label": "传习录·卷上"
+          }
+        },
+        {
+          "school": "cheng",
+          "rebut": "yang",
+          "point": "博学、审问、慎思、明辨、笃行,五者废其一非学;有头脑而无次第,亦无以成学。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "jinsilu",
+            "ch": 2,
+            "quote": "博学之，审问之，慎思之，明辨之，笃行之，五者废其一，非学也",
+            "label": "近思录·为学"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "支离之难",
+      "turns": [
+        {
+          "school": "yang",
+          "rebut": "cheng",
+          "point": "若泥文逐句、不识本领,即支离决裂,工夫都无下落;所争不在读书与否,在有无头脑。",
+          "cite": {
+            "corpus": "xin",
+            "slug": "chuanxilu",
+            "ch": 1,
+            "quote": "若泥文逐句，不识本领，即支离决裂，工夫都无下落",
+            "label": "传习录·卷上"
+          }
+        },
+        {
+          "school": "cheng",
+          "rebut": "yang",
+          "point": "穷理亦多端:或读书讲明义理,或论古今人物别其是非,或应接事物而处其当,非徒记诵。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "jinsilu",
+            "ch": 3,
+            "quote": "或读书讲明义理，或论古今人物，别其是非",
+            "label": "近思录·致知"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "两端相须",
+      "turns": [
+        {
+          "school": "zhongyong",
+          "rebut": null,
+          "point": "人一能之己百之,人十能之己千之;果能此道,虽愚必明、虽柔必强,只在肯下工夫。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "zhongyong",
+            "ch": 1,
+            "quote": "人一能之，己百之。人十能之，己千之",
+            "label": "中庸"
+          }
+        },
+        {
+          "school": "cheng",
+          "rebut": "zhongyong",
+          "point": "并举非无次第。只将尊德性而道问学为心,日自省于问学有所背否、于德性有所懈否。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "jinsilu",
+            "ch": 2,
+            "quote": "今且只将尊德性而道问学为心",
+            "label": "近思录·为学"
+          }
+        },
+        {
+          "school": "yang",
+          "rebut": "zhongyong",
+          "point": "道问学即尊德性之功,明善即诚身之功;所谓并举者,正是无二说。",
+          "cite": {
+            "corpus": "xin",
+            "slug": "chuanxilu",
+            "ch": 1,
+            "quote": "『道问学』即『尊德性』之功",
+            "label": "传习录·卷上"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "《中庸》一句本自并举,后人却分作两路:程朱以为德性须由问学而明,故立格物穷理之阶;阳明以为问学即所以尊德性,故只提一个头脑。所争不是读书与否,而是工夫的头脑安在。朱陆异同数百年未决,此处只陈其分歧,不代读者定其从违。"
+}

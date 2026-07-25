@@ -1714,6 +1714,158 @@
         }
       ],
       "format": "intra"
+    },
+    {
+      "id": "zhitian",
+      "title": "知天可求否",
+      "division": "tiandao",
+      "category": "天人 · 形上 · 道",
+      "concept": "知天可求否",
+      "question": "天之所以然,可求而知否?求之当以观象,当以尽人事,抑或本不在可论之列?",
+      "turns": 12,
+      "status": "done",
+      "schools": [
+        {
+          "label": "《系辞》",
+          "group": "yijing",
+          "seal": "观象",
+          "stance": "观象知幽明"
+        },
+        {
+          "label": "荀子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "不求知天"
+        },
+        {
+          "label": "庄子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "存而不论"
+        }
+      ]
+    },
+    {
+      "id": "yinyang",
+      "title": "阴阳消息",
+      "division": "tiandao",
+      "category": "天人 · 形上 · 道",
+      "concept": "阴阳",
+      "question": "阴阳是道本身,还是道所生之一层?是天地自然之过程,抑或只是用兵者所校计的时令?",
+      "turns": 14,
+      "status": "done",
+      "schools": [
+        {
+          "label": "《系辞》",
+          "group": "yijing",
+          "seal": "观象",
+          "stance": "阴阳即道"
+        },
+        {
+          "label": "老子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "道生阴阳"
+        },
+        {
+          "label": "荀子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "阴阳大化·天职"
+        },
+        {
+          "label": "孙子",
+          "group": "bing",
+          "seal": "观兵",
+          "stance": "阴阳为时制"
+        }
+      ]
+    },
+    {
+      "id": "bushi",
+      "title": "卜筮可信否",
+      "division": "tiandao",
+      "category": "天人 · 形上 · 道",
+      "concept": "卜筮",
+      "question": "占筮能否知来?其用在决疑,在文饰人情,还是徒使人委事于命而怠于所为?",
+      "turns": 12,
+      "status": "done",
+      "schools": [
+        {
+          "label": "《系辞》",
+          "group": "yijing",
+          "seal": "观象",
+          "stance": "极数知来"
+        },
+        {
+          "label": "荀子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "善为易者不占"
+        },
+        {
+          "label": "墨子",
+          "group": "mo",
+          "seal": "观兼",
+          "stance": "非命·斥日者"
+        }
+      ]
+    },
+    {
+      "id": "liqi",
+      "title": "理与气",
+      "division": "tiandao",
+      "category": "天人 · 形上 · 道",
+      "concept": "理与气",
+      "question": "理与气是可分之二物,还是一物之两名?工夫是变化气质以复天地之性,还是即气之条理而识理?",
+      "turns": 10,
+      "status": "done",
+      "schools": [
+        {
+          "label": "程朱",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "理气可分"
+        },
+        {
+          "label": "阳明",
+          "group": "xin",
+          "seal": "观心",
+          "stance": "即气言理"
+        }
+      ],
+      "format": "intra"
+    },
+    {
+      "id": "zundexing",
+      "title": "尊德性与道问学",
+      "division": "weixue",
+      "category": "工夫与学",
+      "concept": "尊德性与道问学",
+      "question": "工夫入手,在涵养本心,还是在读书穷理?《中庸》两者并举,后人何以分作两路?",
+      "turns": 12,
+      "status": "done",
+      "schools": [
+        {
+          "label": "《中庸》",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "两者并举"
+        },
+        {
+          "label": "程朱",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "必道问学"
+        },
+        {
+          "label": "阳明",
+          "group": "xin",
+          "seal": "观心",
+          "stance": "问学即德性之功"
+        }
+      ],
+      "format": "intra"
     }
   ],
   "planned": []

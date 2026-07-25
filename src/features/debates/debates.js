@@ -12,7 +12,9 @@ export const PLANNED = index.planned          // 路线图(整理中)
 const GROUP_ACCENT = {
   ru: 'var(--confucian)', xin: 'var(--xinxue)', dao: 'var(--azure)',
   fo: 'var(--buddha)', fa: 'var(--legalist)', mo: 'var(--mohist)',
-  bing: 'var(--military)', zong: 'var(--zongheng)', yijing: 'var(--cinnabar)',
+  // yijing 用 --cinnabar-pure:辩论走中立 portal 外壳,而该壳把 --cinnabar 压成 --ink-soft
+  // (即未知组的兜底色),易经会因此失色;--cinnabar-pure 是不被门户 muted 覆盖的真朱砂。
+  bing: 'var(--military)', zong: 'var(--zongheng)', yijing: 'var(--cinnabar-pure)',
 }
 export function groupAccent(group) { return GROUP_ACCENT[group] || 'var(--ink-soft)' }
 
@@ -49,7 +51,7 @@ export const FORMATS = [
 ]
 
 // 入场阵营(按现有家次降序固定,空档一目了然——正好是补辩题的路线图)
-export const SCHOOL_GROUPS = ['ru', 'dao', 'mo', 'fa', 'xin', 'fo', 'bing', 'zong']
+export const SCHOOL_GROUPS = ['ru', 'dao', 'mo', 'fa', 'xin', 'fo', 'bing', 'yijing', 'zong']
 
 // 某门下按类目分好组的辩题:[{ category, topics }]
 export function categoriesOf(division, topics = TOPICS) {

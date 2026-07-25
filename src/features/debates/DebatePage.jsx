@@ -121,7 +121,11 @@ export default function DebatePage() {
           const s = byKey[t.school]
           const header = t.phase !== lastPhase
           lastPhase = t.phase
+          // 易经经传(系辞/说卦…)在 booksIndex 里只有「易经」一条总目(slug 为 null),
+          // 按 slug 查不到书 → 直接走经传阅读路由,否则易经引文没有「读原文」入口。
           const book = bookBySlug(t.cite.slug)
+          const srcHref = book ? chapterHref(book, t.cite.ch)
+            : t.cite.corpus === 'yijing' ? `/classics/${t.cite.slug}/${t.cite.ch}` : null
           return (
             <div key={i}>
               {header && <div className="debate-phase">{t.phase}</div>}
@@ -134,7 +138,7 @@ export default function DebatePage() {
                 <p className="debate-turn__point">{t.point}</p>
                 <div className="debate-turn__cite">
                   <span className="debate-turn__quote">「{t.cite.quote}」</span>
-                  {book && <Link to={chapterHref(book, t.cite.ch)} className="debate-turn__src">{t.cite.label} · 读原文 →</Link>}
+                  {srcHref && <Link to={srcHref} className="debate-turn__src">{t.cite.label} · 读原文 →</Link>}
                 </div>
               </div>
             </div>

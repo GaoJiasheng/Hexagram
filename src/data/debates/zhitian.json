@@ -1,0 +1,203 @@
+{
+  "id": "zhitian",
+  "title": "知天可求否",
+  "category": "天人 · 形上 · 道",
+  "concept": "知天可求否",
+  "question": "天之所以然,可求而知否?求之当以观象,当以尽人事,抑或本不在可论之列?",
+  "framing": "《系辞》立仰观俯察之法,以为幽明之故可知;荀子明言唯圣人为不求知天;庄子则以六合之外存而不论。同一「知天」,一求之、一置之、一悬之。(《系辞》旧题孔子作,今多以为战国以下所集,非一人一时之笔。)此为会讲,不判胜负。",
+  "schools": [
+    {
+      "key": "xici",
+      "label": "《系辞》",
+      "group": "yijing",
+      "seal": "观象",
+      "stance": "观象知幽明"
+    },
+    {
+      "key": "xun",
+      "label": "荀子",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "不求知天"
+    },
+    {
+      "key": "zhuang",
+      "label": "庄子",
+      "group": "dao",
+      "seal": "观道",
+      "stance": "存而不论"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "仰观",
+      "turns": [
+        {
+          "school": "xici",
+          "rebut": null,
+          "point": "易与天地相准,故能弥纶天地之道;仰观天文、俯察地理,则幽明之故可得而知。",
+          "cite": {
+            "corpus": "yijing",
+            "slug": "xici-shang",
+            "ch": 4,
+            "quote": "仰以观于天文，俯以察于地理，是故知幽明之故",
+            "label": "系辞上·第四章"
+          }
+        },
+        {
+          "school": "xun",
+          "rebut": null,
+          "point": "天有其时,地有其财,人有其治,各有分职;圣人所以不求知天,正因其非人所能与。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 17,
+            "quote": "唯圣人为不求知天",
+            "label": "荀子·天论"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "有分有辩,便已入畛。六合之外,圣人存而不论——不是不能论,是不必论。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 2,
+            "quote": "六合之外，圣人存而不论",
+            "label": "庄子·齐物论"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "天职",
+      "turns": [
+        {
+          "school": "xun",
+          "rebut": "xici",
+          "point": "天不为而成、不求而得,是谓天职;人所能志者,不过见象之可以期者,余非可求。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 17,
+            "quote": "所志于天者，已其见象之可以期者矣",
+            "label": "荀子·天论"
+          }
+        },
+        {
+          "school": "xici",
+          "rebut": "xun",
+          "point": "易之为书,开物成务、冒天下之道;所通者人事之通塞,非欲窥天之所以然。",
+          "cite": {
+            "corpus": "yijing",
+            "slug": "xici-shang",
+            "ch": 11,
+            "quote": "夫易，开物成务，冒天下之道",
+            "label": "系辞上·第十一章"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "畛外",
+      "turns": [
+        {
+          "school": "zhuang",
+          "rebut": "xici",
+          "point": "立象系辞,已落分辩。六合之内圣人论而不议,愈辩则愈有所不见,故辩也者有不见也。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 2,
+            "quote": "六合之内，圣人论而不议",
+            "label": "庄子·齐物论"
+          }
+        },
+        {
+          "school": "xici",
+          "rebut": "zhuang",
+          "point": "正因书不尽言、言不尽意,故立象以尽意;象非言辩,不入是非之畛。",
+          "cite": {
+            "corpus": "yijing",
+            "slug": "xici-shang",
+            "ch": 12,
+            "quote": "圣人立象以尽意",
+            "label": "系辞上·第十二章"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "涯与无涯",
+      "turns": [
+        {
+          "school": "zhuang",
+          "rebut": "xun",
+          "point": "生也有涯而知也无涯,以有涯随无涯则殆;分天人、治人事,毕竟仍是逐知。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 3,
+            "quote": "吾生也有涯，而知也无涯",
+            "label": "庄子·养生主"
+          }
+        },
+        {
+          "school": "xun",
+          "rebut": "zhuang",
+          "point": "无用之辩、不急之察,固当弃而不治;然君臣父子之义则日切磋不舍,不可一并置之。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 17,
+            "quote": "无用之辩，不急之察，弃而不治",
+            "label": "荀子·天论"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "三知殊途",
+      "turns": [
+        {
+          "school": "xun",
+          "rebut": "xici",
+          "point": "荀子亦自言知天:行曲治、养曲适、生不伤,知其所为与所不为而已,不在测天。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 17,
+            "quote": "其行曲治，其养曲适，其生不伤，夫是之谓知天",
+            "label": "荀子·天论"
+          }
+        },
+        {
+          "school": "xici",
+          "rebut": null,
+          "point": "旁行而不流,乐天知命故不忧;所谓知者,是安于所处而不忧,非预知未来之谓。",
+          "cite": {
+            "corpus": "yijing",
+            "slug": "xici-shang",
+            "ch": 4,
+            "quote": "旁行而不流，乐天知命，故不忧",
+            "label": "系辞上·第四章"
+          }
+        },
+        {
+          "school": "zhuang",
+          "rebut": null,
+          "point": "注焉而不满,酌焉而不竭,而不知其所由来,是之谓葆光;其为知也,正在不知其所由来。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "zhuangzi-neipian",
+            "ch": 2,
+            "quote": "注焉而不满，酌焉而不竭",
+            "label": "庄子·齐物论"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "三家之异,在「知」字所指:《系辞》之知,是观象以通人事之故;荀子之知,是尽人之所治而不慕在天者;庄子之知,是知其所不知而止于所不知。故一立象数,一立分职,一立畛限。此处只陈其分歧,不代读者判其是非。"
+}

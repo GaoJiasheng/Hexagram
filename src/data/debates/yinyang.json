@@ -1,0 +1,234 @@
+{
+  "id": "yinyang",
+  "title": "阴阳消息",
+  "category": "天人 · 形上 · 道",
+  "concept": "阴阳",
+  "question": "阴阳是道本身,还是道所生之一层?是天地自然之过程,抑或只是用兵者所校计的时令?",
+  "framing": "《系辞》以一阴一阳为道,老子则道生一而后有阴阳,荀子把阴阳大化列为天职之一,孙子把阴阳收进「天者」的作战条件。同一名而四家各安其位。此为会讲,不判胜负。",
+  "schools": [
+    {
+      "key": "xici",
+      "label": "《系辞》",
+      "group": "yijing",
+      "seal": "观象",
+      "stance": "阴阳即道"
+    },
+    {
+      "key": "laozi",
+      "label": "老子",
+      "group": "dao",
+      "seal": "观道",
+      "stance": "道生阴阳"
+    },
+    {
+      "key": "xun",
+      "label": "荀子",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "阴阳大化·天职"
+    },
+    {
+      "key": "sunzi",
+      "label": "孙子",
+      "group": "bing",
+      "seal": "观兵",
+      "stance": "阴阳为时制"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "立象",
+      "turns": [
+        {
+          "school": "xici",
+          "rebut": null,
+          "point": "一阴一阳之谓道:继之者善,成之者性。阴阳往来即道之显,不在阴阳之外别求一道。",
+          "cite": {
+            "corpus": "yijing",
+            "slug": "xici-shang",
+            "ch": 5,
+            "quote": "一阴一阳之谓道",
+            "label": "系辞上·第五章"
+          }
+        },
+        {
+          "school": "laozi",
+          "rebut": null,
+          "point": "道生一,一生二,二生三,三生万物;阴阳是道所生,道则先之而不与之同层。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 42,
+            "quote": "道生一，一生二，二生三，三生万物",
+            "label": "道德经·四十二章"
+          }
+        },
+        {
+          "school": "xun",
+          "rebut": null,
+          "point": "列星随旋、日月递炤、四时代御、阴阳大化,皆天之职分;不见其事而见其功,无所偏私。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 17,
+            "quote": "列星随旋，日月递炤，四时代御，阴阳大化",
+            "label": "荀子·天论"
+          }
+        },
+        {
+          "school": "sunzi",
+          "rebut": null,
+          "point": "兵法经之以五事,天者即阴阳、寒暑、时制;于将者,阴阳是可校计的时候,不是形上之本。",
+          "cite": {
+            "corpus": "bing",
+            "slug": "sunzi",
+            "ch": 1,
+            "quote": "天者，阴阳、寒暑、时制也",
+            "label": "孙子·始计"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "溯本",
+      "turns": [
+        {
+          "school": "laozi",
+          "rebut": "xici",
+          "point": "若径以一阴一阳为道,则道与所生者同居一层。万物负阴而抱阳,冲气以为和——和者非阴非阳。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 42,
+            "quote": "万物负阴而抱阳，冲气以为和",
+            "label": "道德经·四十二章"
+          }
+        },
+        {
+          "school": "xici",
+          "rebut": "laozi",
+          "point": "阴阳不测之谓神。言一阴一阳之谓道,正为其往来不可测度,非以两物名道。",
+          "cite": {
+            "corpus": "yijing",
+            "slug": "xici-shang",
+            "ch": 5,
+            "quote": "阴阳不测之谓神",
+            "label": "系辞上·第五章"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "大化",
+      "turns": [
+        {
+          "school": "xun",
+          "rebut": "xici",
+          "point": "阴阳之化是天功,人所当志者只其见和之可以治者;至于测其不测,非人之分。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 17,
+            "quote": "所志于阴阳者，已其见和之可以治者矣",
+            "label": "荀子·天论"
+          }
+        },
+        {
+          "school": "xici",
+          "rebut": "xun",
+          "point": "百姓日用而不知,故君子之道鲜矣;言阴阳者非教人测天,乃教人识其所日用。",
+          "cite": {
+            "corpus": "yijing",
+            "slug": "xici-shang",
+            "ch": 5,
+            "quote": "百姓日用而不知，故君子之道鲜矣",
+            "label": "系辞上·第五章"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "校计",
+      "turns": [
+        {
+          "school": "sunzi",
+          "rebut": "xun",
+          "point": "兵事不问其所以然,只以五事校之七计而索其情;阴阳于此,与寒暑时制同为可算之条件。",
+          "cite": {
+            "corpus": "bing",
+            "slug": "sunzi",
+            "ch": 1,
+            "quote": "故经之以五事，校之以七计，而索其情",
+            "label": "孙子·始计"
+          }
+        },
+        {
+          "school": "xun",
+          "rebut": "sunzi",
+          "point": "星坠木鸣,不过天地之变、阴阳之化;取以为时制可也,若因之而生畏惧,则失其分。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 17,
+            "quote": "是天地之变，阴阳之化，物之罕至者也",
+            "label": "荀子·天论"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "各就其位",
+      "turns": [
+        {
+          "school": "laozi",
+          "rebut": "sunzi",
+          "point": "有物混成,先天地生;若只把阴阳看作可算之数,则所得者术,所遗者正是其所从来。",
+          "cite": {
+            "corpus": "dao",
+            "slug": "daodejing",
+            "ch": 25,
+            "quote": "有物混成，先天地生",
+            "label": "道德经·二十五章"
+          }
+        },
+        {
+          "school": "sunzi",
+          "rebut": "laozi",
+          "point": "五行无常胜,四时无常位,日有短长,月有死生;兵无成势,故因敌变化而不立定数。",
+          "cite": {
+            "corpus": "bing",
+            "slug": "sunzi",
+            "ch": 6,
+            "quote": "故五行无常胜，四时无常位，日有短长，月有死生",
+            "label": "孙子·虚实"
+          }
+        },
+        {
+          "school": "xici",
+          "rebut": null,
+          "point": "乾阳坤阴,阴阳合德而刚柔有体,以体天地之撰;所言非二物相加,是一体之两面。",
+          "cite": {
+            "corpus": "yijing",
+            "slug": "xici-xia",
+            "ch": 5,
+            "quote": "阴阳合德，而刚柔有体",
+            "label": "系辞下·第五章"
+          }
+        },
+        {
+          "school": "xun",
+          "rebut": null,
+          "point": "不见其事而见其功,夫是之谓神;所谓神者,是其功可见而其事不可见,非有神灵司之。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 17,
+            "quote": "不见其事，而见其功，夫是之谓神",
+            "label": "荀子·天论"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "四家之别,在阴阳落在哪一层:《系辞》以为即道之显,老子以为道所生,荀子以为天职之自然,孙子则收为将者可校之时制。一形上、一生成、一自然、一操作。同一名而各有其位,故不能相代,亦不必强合。"
+}

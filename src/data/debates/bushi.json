@@ -1,0 +1,203 @@
+{
+  "id": "bushi",
+  "title": "卜筮可信否",
+  "category": "天人 · 形上 · 道",
+  "concept": "卜筮",
+  "question": "占筮能否知来?其用在决疑,在文饰人情,还是徒使人委事于命而怠于所为?",
+  "framing": "《系辞》以极数知来为易之一用,荀子言善为易者不占、以卜筮为文,墨子非命且当面驳日者。古人于此本自争论未已。此处只陈三说,不作吉凶断语,亦不代读者判其信否。此为会讲,不判胜负。",
+  "schools": [
+    {
+      "key": "xici",
+      "label": "《系辞》",
+      "group": "yijing",
+      "seal": "观象",
+      "stance": "极数知来"
+    },
+    {
+      "key": "xun",
+      "label": "荀子",
+      "group": "ru",
+      "seal": "观仁",
+      "stance": "善为易者不占"
+    },
+    {
+      "key": "mo",
+      "label": "墨子",
+      "group": "mo",
+      "seal": "观兼",
+      "stance": "非命·斥日者"
+    }
+  ],
+  "rounds": [
+    {
+      "phase": "极数",
+      "turns": [
+        {
+          "school": "xici",
+          "rebut": null,
+          "point": "极数知来之谓占,通变之谓事;占者,易之一用——以数之推衍,通乎变动之几。",
+          "cite": {
+            "corpus": "yijing",
+            "slug": "xici-shang",
+            "ch": 5,
+            "quote": "极数知来之谓占",
+            "label": "系辞上·第五章"
+          }
+        },
+        {
+          "school": "xun",
+          "rebut": null,
+          "point": "善为诗者不说,善为易者不占,善为礼者不相,其心一也;通其理者,不待占而决。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 27,
+            "quote": "善为易者不占",
+            "label": "荀子·大略"
+          }
+        },
+        {
+          "school": "mo",
+          "rebut": null,
+          "point": "执有命者之言曰:命富则富,命贫则贫。此说使人怠于从事,故墨者先非其命。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 28,
+            "quote": "命富则富，命贫则贫",
+            "label": "墨子·非命上"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "尚占",
+      "turns": [
+        {
+          "school": "xici",
+          "rebut": "xun",
+          "point": "易有圣人之道四:尚其辞、尚其变、尚其象、尚其占。一概不占,则四者去其一。",
+          "cite": {
+            "corpus": "yijing",
+            "slug": "xici-shang",
+            "ch": 10,
+            "quote": "以卜筮者尚其占",
+            "label": "系辞上·第十章"
+          }
+        },
+        {
+          "school": "xun",
+          "rebut": "xici",
+          "point": "卜筮然后决大事,非以为得求也,以文之也;所重在临事之慎,不在其果有应。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 17,
+            "quote": "卜筮然后决大事，非以为得求也，以文之也",
+            "label": "荀子·天论"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "非命",
+      "turns": [
+        {
+          "school": "mo",
+          "rebut": "xici",
+          "point": "先王之宪、之刑、之誓,何尝有「福不可请，而祸不可讳」之言?知来之说,于典无据。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 28,
+            "quote": "福不可请，而祸不可讳",
+            "label": "墨子·非命上"
+          }
+        },
+        {
+          "school": "xici",
+          "rebut": "mo",
+          "point": "易不许人以定命。吉凶与民同患,兴神物以前民用,所重在临事戒惧、先事有备。",
+          "cite": {
+            "corpus": "yijing",
+            "slug": "xici-shang",
+            "ch": 11,
+            "quote": "吉凶与民同患",
+            "label": "系辞上·第十一章"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "以文",
+      "turns": [
+        {
+          "school": "xun",
+          "rebut": "mo",
+          "point": "雩而雨,何也?曰无何也,犹不雩而雨也;君子以为文,百姓以为神——分际正在此。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 17,
+            "quote": "故君子以为文，而百姓以为神",
+            "label": "荀子·天论"
+          }
+        },
+        {
+          "school": "mo",
+          "rebut": "xun",
+          "point": "明知无所应而犹以为文,恐终成虚文。墨者言必有仪,当下原察百姓耳目之实。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 28,
+            "quote": "下原察百姓耳目之实",
+            "label": "墨子·非命上"
+          }
+        }
+      ]
+    },
+    {
+      "phase": "日者之难",
+      "turns": [
+        {
+          "school": "mo",
+          "rebut": "xici",
+          "point": "日者以色黑不可北,墨子不听而北行;若从其言,则是禁天下之行者也。",
+          "cite": {
+            "corpus": "mo",
+            "slug": "mozi",
+            "ch": 39,
+            "quote": "若用子之言，则是禁天下之行者也",
+            "label": "墨子·贵义"
+          }
+        },
+        {
+          "school": "xici",
+          "rebut": "mo",
+          "point": "易无思也,无为也,寂然不动,感而遂通天下之故;所通者天下之故,非许人以趋避。",
+          "cite": {
+            "corpus": "yijing",
+            "slug": "xici-shang",
+            "ch": 10,
+            "quote": "易，无思也，无为也，寂然不动，感而遂通天下之故",
+            "label": "系辞上·第十章"
+          }
+        },
+        {
+          "school": "xun",
+          "rebut": "xici",
+          "point": "同一卜筮,君子以为文则得其正,百姓以为神则失之;其别在用之者,不在蓍龟。",
+          "cite": {
+            "corpus": "ru",
+            "slug": "xunzi",
+            "ch": 17,
+            "quote": "以为文则吉，以为神则凶也",
+            "label": "荀子·天论"
+          }
+        }
+      ]
+    }
+  ],
+  "coda": "三说各有所对:《系辞》说占,重在临事之几与戒惧,并不许人以定命;荀子不废卜筮而移其义于「文」,使决疑之礼归于人事之慎;墨子非命、斥日者,所争在勿使人委事于不可验之说。此处只陈其分歧,不作吉凶断语,亦不代读者判占筮之信否。"
+}
