@@ -50,6 +50,47 @@ function Block({ block }) {
           <ul>{(block.items || []).map((t, i) => <li key={i}>{rich(t)}</li>)}</ul>
         </div>
       )
+    // ── v22.1 富文本块(参照 owner 提供的科普 PDF 排版)────────────────
+    case 'list': {
+      // ordered 为真出编号,否则出圆点;项内仍走 rich() 支持 **加粗**
+      const Tag = block.ordered ? 'ol' : 'ul'
+      return (
+        <Tag className={`baihua-list ${block.ordered ? 'baihua-list--ol' : ''}`}>
+          {(block.items || []).map((t, i) => <li key={i} className="baihua-li">{rich(t)}</li>)}
+        </Tag>
+      )
+    }
+    case 'callout': {
+      // tone: note(青·比方/补充) | warn(赭·澄清/警示) | mute(灰·免责/旁注)
+      const tone = ['note', 'warn', 'mute'].includes(block.tone) ? block.tone : 'note'
+      return (
+        <aside className={`baihua-callout baihua-callout--${tone}`}>
+          {block.label && <span className="baihua-callout__label">{block.label}</span>}
+          {(block.items || []).map((t, i) => <p key={i} className="baihua-callout__p">{rich(t)}</p>)}
+        </aside>
+      )
+    }
+    case 'pull':
+      // 全章最要紧的一句:粗左竖条、无底色,与 callout 的「框」区分开
+      return <p className="baihua-pull">{rich(block.text)}</p>
+    case 'steps':
+      // 带状态的次第:圆号 + 左侧竖线串联;done/now/todo 决定灰度与药丸
+      return (
+        <ol className="baihua-steps">
+          {(block.items || []).map((s, i) => (
+            <li key={i} className={`baihua-step baihua-step--${['done', 'now', 'todo'].includes(s.state) ? s.state : 'done'}`}>
+              <span className="baihua-step__no" aria-hidden="true">{i + 1}</span>
+              <div className="baihua-step__body">
+                <p className="baihua-step__title">
+                  {rich(s.title)}
+                  {s.badge && <span className="baihua-step__badge">{s.badge}</span>}
+                </p>
+                {s.text && <p className="baihua-step__text">{rich(s.text)}</p>}
+              </div>
+            </li>
+          ))}
+        </ol>
+      )
     default:
       return null
   }
