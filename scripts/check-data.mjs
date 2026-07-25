@@ -567,7 +567,18 @@ if (fs.existsSync(glossaryPath)) {
       if (!topic) err(`debate ${id}: index.json 未登记`)
       else if (topic.turns !== turns.length) err(`debate ${id}: index turns(${topic.turns}) ≠ 实际 ${turns.length}`)
     }
+    // 分类体系(v21.1):议题两级树(四门→类目)+ 正交的形态标签
+    const DIVISIONS = new Set(['tiandao', 'xinxing', 'zhidao', 'weixue'])
+    const FORMATS = new Set(['intra', 'synthesis'])
+    const divCount = {}
+    for (const tp of dbIndex.topics || []) {
+      if (!DIVISIONS.has(tp.division)) err(`debate ${tp.id}: division 非法「${tp.division}」`)
+      else divCount[tp.division] = (divCount[tp.division] || 0) + 1
+      if (!tp.category) err(`debate ${tp.id}: 缺 category`)
+      if (tp.format && !FORMATS.has(tp.format)) err(`debate ${tp.id}: format 非法「${tp.format}」`)
+    }
     infos.push(`百家争鸣: ${files.length} 辩 · ${turnTotal} 轮 · 参辩 ${partyTotal} 家次`)
+    infos.push(`  义理四门: ${['tiandao', 'xinxing', 'zhidao', 'weixue'].map((d) => `${d} ${divCount[d] || 0}`).join(' · ')}`)
   }
 }
 

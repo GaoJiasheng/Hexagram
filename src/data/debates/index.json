@@ -7,6 +7,7 @@
     {
       "id": "renxing",
       "title": "人性之辨",
+      "division": "xinxing",
       "category": "性与心",
       "concept": "人性之辨",
       "question": "人性本善、本恶,还是善恶之上别有本体?",
@@ -36,6 +37,7 @@
     {
       "id": "jianai",
       "title": "兼爱与仁爱",
+      "division": "zhidao",
       "category": "伦理 · 义利 · 爱孝",
       "concept": "兼爱与仁爱",
       "question": "爱当无差等地兼及天下,还是亲亲有别、推之以及人?",
@@ -65,6 +67,7 @@
     {
       "id": "gewu",
       "title": "格物致知",
+      "division": "weixue",
       "category": "工夫与学",
       "concept": "格物致知",
       "question": "「格物」是即物穷其理,还是正心去其非?",
@@ -94,6 +97,7 @@
     {
       "id": "wuwei",
       "title": "无为",
+      "division": "tiandao",
       "category": "天人 · 形上 · 道",
       "concept": "无为",
       "question": "「无为」是任物自化的玄默,还是不先物为以治世的术?",
@@ -123,6 +127,7 @@
     {
       "id": "siduan",
       "title": "仁与四端",
+      "division": "xinxing",
       "category": "性与心",
       "concept": "仁与四端",
       "question": "为仁,是安仁守之、扩端充之,还是克己复礼?",
@@ -152,6 +157,7 @@
     {
       "id": "zhidao",
       "title": "治国总纲",
+      "division": "zhidao",
       "category": "治道与政治",
       "concept": "治国总纲",
       "question": "治天下,当以德、以法,还是无为?",
@@ -181,6 +187,7 @@
     {
       "id": "yili",
       "title": "义利之辨",
+      "division": "zhidao",
       "category": "伦理 · 义利 · 爱孝",
       "concept": "义利之辨",
       "question": "立身治国,当先义,还是因利?",
@@ -210,6 +217,7 @@
     {
       "id": "tianren",
       "title": "天人关系",
+      "division": "tiandao",
       "category": "天人 · 形上 · 道",
       "concept": "天人关系",
       "question": "人于天，当畏顺、当制用，还是顺其自然？",
@@ -239,6 +247,7 @@
     {
       "id": "zhengming",
       "title": "名实·正名",
+      "division": "weixue",
       "category": "名实 · 言辩 · 知",
       "concept": "名实·正名",
       "question": "名与实，当如何正？",
@@ -268,6 +277,7 @@
     {
       "id": "lizhi",
       "title": "礼之本",
+      "division": "zhidao",
       "category": "礼 · 文 · 乐",
       "concept": "礼之本",
       "question": "礼,是人道之极、忠信之薄,还是不如法?",
@@ -297,6 +307,7 @@
     {
       "id": "shengsi",
       "title": "生死之态",
+      "division": "xinxing",
       "category": "生死 · 身 · 苦乐",
       "concept": "生死之态",
       "question": "生死之际,当如何安之?",
@@ -326,6 +337,7 @@
     {
       "id": "guishen",
       "title": "鬼神之辨",
+      "division": "tiandao",
       "category": "天人 · 形上 · 道",
       "concept": "鬼神之辨",
       "question": "鬼神,当明信、敬远,还是任其自然?",
@@ -355,6 +367,7 @@
     {
       "id": "zhanzheng",
       "title": "战争观",
+      "division": "zhidao",
       "category": "治道与政治",
       "concept": "战争观",
       "question": "兵者,当非攻、当诡道用兵,还是有义不义?",
@@ -384,6 +397,7 @@
     {
       "id": "zhixing",
       "title": "知与行",
+      "division": "weixue",
       "category": "工夫与学",
       "concept": "知与行",
       "question": "知与行,孰先孰重?",
@@ -413,6 +427,7 @@
     {
       "id": "junmin",
       "title": "君民关系",
+      "division": "zhidao",
       "category": "治道与政治",
       "concept": "君民关系",
       "question": "君与民,孰为贵、孰为本?",
@@ -442,6 +457,7 @@
     {
       "id": "xinti",
       "title": "心之本体",
+      "division": "xinxing",
       "category": "性与心",
       "concept": "心之本体",
       "question": "心之本体,是天理、是良知,还是虚静?",
@@ -471,6 +487,7 @@
     {
       "id": "qingyu",
       "title": "情与欲",
+      "division": "xinxing",
       "category": "性与心",
       "concept": "情与欲",
       "question": "情欲当节、当寡,还是任其自然?",
@@ -500,6 +517,7 @@
     {
       "id": "lixin",
       "title": "性即理 vs 心即理",
+      "division": "xinxing",
       "category": "性与心",
       "concept": "性即理 vs 心即理",
       "question": "天理究竟安顿在「性」中,还是当下即在「心」上?求理是向所禀之性、事事物物上格穷,还是返求此心之本体?",
@@ -523,6 +541,7 @@
     {
       "id": "shangen",
       "title": "善之根源",
+      "division": "xinxing",
       "category": "性与心",
       "concept": "善之根源",
       "question": "善，源于内在本心，还是外铄人为、上法于天？",
@@ -552,6 +571,7 @@
     {
       "id": "dunjian",
       "title": "顿与渐",
+      "division": "weixue",
       "category": "工夫与学",
       "concept": "顿与渐",
       "question": "悟道,是当下顿了,还是渐次修习?",
@@ -575,6 +595,7 @@
     {
       "id": "weixue",
       "title": "为学之道",
+      "division": "weixue",
       "category": "工夫与学",
       "concept": "为学之道",
       "question": "为学,贵积、贵思,还是贵损?",
@@ -604,6 +625,7 @@
     {
       "id": "gongfu",
       "title": "工夫入手",
+      "division": "weixue",
       "category": "工夫与学",
       "concept": "工夫入手",
       "question": "修养工夫,究竟从主敬穷理入手,还是从致良知入手,抑或归于坐忘心斋?",
@@ -633,6 +655,7 @@
     {
       "id": "fade",
       "title": "法与德孰先",
+      "division": "zhidao",
       "category": "治道与政治",
       "concept": "法与德孰先",
       "question": "治民,当以德礼为先,还是以法刑为本?",
@@ -662,6 +685,7 @@
     {
       "id": "shangxian",
       "title": "尚贤与否",
+      "division": "zhidao",
       "category": "治道与政治",
       "concept": "尚贤与否",
       "question": "治国，当尚贤使能，还是不尚贤使民不争？",
@@ -691,6 +715,7 @@
     {
       "id": "fashushi",
       "title": "法术势",
+      "division": "zhidao",
       "category": "治道与政治",
       "concept": "法术势",
       "question": "君主治国,所恃在法、在术,还是在势?",
@@ -720,6 +745,7 @@
     {
       "id": "fuguo",
       "title": "富国之道",
+      "division": "zhidao",
       "category": "治道与政治",
       "concept": "富国之道",
       "question": "富国,在耕战、节用、先富后教,还是寡欲?",
@@ -749,6 +775,7 @@
     {
       "id": "jieyong",
       "title": "节用 vs 礼乐",
+      "division": "zhidao",
       "category": "治道与政治",
       "concept": "节用 vs 礼乐",
       "question": "财用,当节俭非乐,还是以礼乐养情?",
@@ -772,6 +799,7 @@
     {
       "id": "zhmrenyi",
       "title": "纵横之术 vs 仁义",
+      "division": "zhidao",
       "category": "治道与政治",
       "concept": "纵横之术 vs 仁义",
       "question": "取天下,凭揣摩纵横之术,还是凭仁义?",
@@ -795,6 +823,7 @@
     {
       "id": "sangqi",
       "title": "丧期与孝",
+      "division": "zhidao",
       "category": "伦理 · 义利 · 爱孝",
       "concept": "丧期与孝",
       "question": "丧亲之际，当守三年之丧以尽哀,还是节葬短丧以恤生?",
@@ -818,6 +847,7 @@
     {
       "id": "baoyuan",
       "title": "报怨以德否",
+      "division": "zhidao",
       "category": "伦理 · 义利 · 爱孝",
       "concept": "报怨以德否",
       "question": "报怨,当以德,还是以直?",
@@ -841,6 +871,7 @@
     {
       "id": "yanxin",
       "title": "言信与权变",
+      "division": "zhidao",
       "category": "伦理 · 义利 · 爱孝",
       "concept": "言信与权变",
       "question": "言出必信,还是惟义所在、因势权变?",
@@ -864,6 +895,7 @@
     {
       "id": "zhongxiao",
       "title": "忠孝之先",
+      "division": "zhidao",
       "category": "伦理 · 义利 · 爱孝",
       "concept": "忠孝之先",
       "question": "忠君与孝亲,孰为先?",
@@ -887,6 +919,7 @@
     {
       "id": "daowei",
       "title": "道之为道",
+      "division": "tiandao",
       "category": "天人 · 形上 · 道",
       "concept": "道之为道",
       "question": "道,是法自然之常,是有情有信之化,还是人之所道?",
@@ -916,6 +949,7 @@
     {
       "id": "youwu",
       "title": "有无之辨",
+      "division": "tiandao",
       "category": "天人 · 形上 · 道",
       "concept": "有无之辨",
       "question": "万物,生于无,还是自生自化?",
@@ -939,6 +973,7 @@
     {
       "id": "mingli",
       "title": "命与力",
+      "division": "tiandao",
       "category": "天人 · 形上 · 道",
       "concept": "命与力",
       "question": "成败,系于天命,还是系于强力?",
@@ -962,6 +997,7 @@
     {
       "id": "bianchang",
       "title": "变与常",
+      "division": "tiandao",
       "category": "天人 · 形上 · 道",
       "concept": "变与常",
       "question": "世道,以变为枢、以反为动,还是守其常?",
@@ -991,6 +1027,7 @@
     {
       "id": "yanbian",
       "title": "言辩有用否",
+      "division": "weixue",
       "category": "名实 · 言辩 · 知",
       "concept": "言辩有用否",
       "question": "言辩,能明是非,还是辩无定准?",
@@ -1020,6 +1057,7 @@
     {
       "id": "yanyi",
       "title": "言与意",
+      "division": "weixue",
       "category": "名实 · 言辩 · 知",
       "concept": "言与意",
       "question": "言能尽意否？",
@@ -1049,6 +1087,7 @@
     {
       "id": "shifei",
       "title": "是非有定否",
+      "division": "weixue",
       "category": "名实 · 言辩 · 知",
       "concept": "是非有定否",
       "question": "是非,有真定之准,还是彼亦一是非?",
@@ -1072,6 +1111,7 @@
     {
       "id": "shenti",
       "title": "身之态度",
+      "division": "xinxing",
       "category": "生死 · 身 · 苦乐",
       "concept": "身之态度",
       "question": "于此身,当全生养之,杀身成仁,还是观其无我?",
@@ -1101,6 +1141,7 @@
     {
       "id": "kule",
       "title": "苦与乐",
+      "division": "xinxing",
       "category": "生死 · 身 · 苦乐",
       "concept": "苦与乐",
       "question": "人生,是苦海,是安贫之乐,还是逍遥之乐?",
@@ -1130,6 +1171,7 @@
     {
       "id": "chuchu",
       "title": "出处 · 隐与仕",
+      "division": "xinxing",
       "category": "生死 · 身 · 苦乐",
       "concept": "出处 · 隐与仕",
       "question": "士之出处,当逍遥辞世,知不可而为,还是尽用其能?",
@@ -1159,6 +1201,7 @@
     {
       "id": "wenzhi",
       "title": "文与质",
+      "division": "zhidao",
       "category": "礼 · 文 · 乐",
       "concept": "文与质",
       "question": "立身处世,当以文质相称为美,还是返朴去饰、先实用而后文采?",
@@ -1188,6 +1231,7 @@
     {
       "id": "yueyong",
       "title": "乐之用",
+      "division": "zhidao",
       "category": "礼 · 文 · 乐",
       "concept": "乐之用",
       "question": "乐,能化民成俗,徒费无用,还是大音希声?",
@@ -1217,7 +1261,8 @@
     {
       "id": "bingjia",
       "title": "兵家三家",
-      "category": "组内多方",
+      "division": "zhidao",
+      "category": "治道与政治",
       "concept": "兵家三家",
       "question": "用兵之要，在诡道、在治军，还是在形势刑赏？",
       "turns": 8,
@@ -1241,12 +1286,14 @@
           "seal": "观兵",
           "stance": "刑赏形势"
         }
-      ]
+      ],
+      "format": "intra"
     },
     {
       "id": "ruxing",
       "title": "儒门性论流变",
-      "category": "组内多方",
+      "division": "xinxing",
+      "category": "性与心",
       "concept": "儒门性论流变",
       "question": "儒门论性:性善、性恶、性即理、心即理,流变如何?",
       "turns": 9,
@@ -1276,12 +1323,14 @@
           "seal": "观心",
           "stance": "心即理"
         }
-      ]
+      ],
+      "format": "intra"
     },
     {
       "id": "buxiu",
       "title": "名与无名",
-      "category": "会通",
+      "division": "weixue",
+      "category": "名实 · 言辩 · 知",
       "concept": "名与无名",
       "question": "人生在世,当求扬名不朽,守无名之朴,还是取势致富贵?",
       "turns": 8,
@@ -1305,7 +1354,8 @@
           "seal": "观衡",
           "stance": "取卿相之尊"
         }
-      ]
+      ],
+      "format": "synthesis"
     }
   ],
   "planned": []

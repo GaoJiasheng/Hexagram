@@ -24,6 +24,46 @@ const GROUP_SEAL = {
 }
 export function schoolSeal(group) { return GROUP_SEAL[group] || group }
 
+// ── 分类体系(v21.1)────────────────────────────────────────
+// 议题走两级树(义理四门 → 八类目),阵营/形态走筛选——因为一辩天然跨 2–4 家,
+// 塞进单一父节点必然丢信息。四门本身即内容:它告诉读者诸子在争的是哪几件大事。
+export const DIVISIONS = [
+  { key: 'tiandao', label: '天道 · 形上', desc: '天与人、有与无、常与变——世界的根底' },
+  { key: 'xinxing', label: '心性 · 生命', desc: '性善性恶、心之本体、生死苦乐——人的根底' },
+  { key: 'zhidao', label: '治道 · 群己', desc: '治国、义利、爱与孝、礼乐——人间秩序如何立' },
+  { key: 'weixue', label: '为学 · 知言', desc: '工夫、知行、名实、言意——如何求知与立言' },
+]
+
+// 各门下的类目次序(未列出的类目按首次出现追加,加新类目不会漏显)
+const CATEGORY_ORDER = {
+  tiandao: ['天人 · 形上 · 道'],
+  xinxing: ['性与心', '生死 · 身 · 苦乐'],
+  zhidao: ['治道与政治', '伦理 · 义利 · 爱孝', '礼 · 文 · 乐'],
+  weixue: ['工夫与学', '名实 · 言辩 · 知'],
+}
+
+// 对辩形态(与议题正交:讲的是「谁跟谁辩」,不是「辩什么」)
+export const FORMATS = [
+  { key: 'intra', label: '组内多方' },
+  { key: 'synthesis', label: '跨组会通' },
+]
+
+// 入场阵营(按现有家次降序固定,空档一目了然——正好是补辩题的路线图)
+export const SCHOOL_GROUPS = ['ru', 'dao', 'mo', 'fa', 'xin', 'fo', 'bing', 'zong']
+
+// 某门下按类目分好组的辩题:[{ category, topics }]
+export function categoriesOf(division, topics = TOPICS) {
+  const inDiv = topics.filter((t) => t.division === division)
+  const order = CATEGORY_ORDER[division] || []
+  const seen = [...order, ...inDiv.map((t) => t.category).filter((c) => !order.includes(c))]
+  return [...new Set(seen)]
+    .map((category) => ({ category, topics: inDiv.filter((t) => t.category === category) }))
+    .filter((c) => c.topics.length)
+}
+
+// 一辩涉及的阵营(去重;三家参辩即跨三组,故为多值)
+export function groupsOf(topic) { return [...new Set(topic.schools.map((s) => s.group))] }
+
 export function debateById(id) { return TOPICS.find((t) => t.id === id) || null }
 
 export async function loadDebate(id) {
