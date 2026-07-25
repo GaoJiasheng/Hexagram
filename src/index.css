@@ -30,16 +30,23 @@
   --line: #e4ddce;
   --font-serif: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
   --font-mono: ui-monospace, monospace;
-  --font-scale: 1;                 /* 用户字号档位(SettingsContext 内联设于 :root):0.9/1/1.15/1.35 */
+  --font-scale: 1.15;              /* 用户字号档位(SettingsContext 内联设于 :root):1/1.15/1.35/1.55 */
   --read-boost: 1;                 /* 窄屏默认略大(见下方 media query);桌面为 1 */
   --read-scale: calc(var(--font-scale) * var(--read-boost)); /* 读经/白话正文实际缩放系数 */
-  --content-w: 960px;
-  --read-w: 680px;
+  --content-w: clamp(960px, 100vw, 1280px);
+  --read-w: clamp(680px, calc(373px + 38.6vw), 940px);
 }
+
+:root[data-read-width='narrow'] { --read-w: clamp(600px, calc(337px + 31.3vw), 820px); }
+:root[data-read-width='normal'] { --read-w: clamp(680px, calc(373px + 38.6vw), 940px); }
+:root[data-read-width='wide'] { --read-w: clamp(820px, calc(393px + 46.6vw), 1120px); }
 
 /* 手机(窄屏)正文默认略大一档,不动设置也更舒服;桌面不受影响 */
 @media (max-width: 640px) {
-  :root { --read-boost: 1.06; }
+  :root { --read-boost: 1.06; --read-w: 680px; }
+  :root[data-read-width='narrow'] { --read-w: 600px; }
+  :root[data-read-width='normal'] { --read-w: 680px; }
+  :root[data-read-width='wide'] { --read-w: 820px; }
 }
 
 [data-theme='dark'] {
@@ -142,6 +149,11 @@ button { cursor: pointer; font-family: var(--font-serif); }
   margin: 0 auto;
   padding: 40px 24px 80px;
   width: 100%;
+}
+
+/* iPad 竖屏缩小页面留白,把增加的视口宽度留给正文；手机区间保持原样。 */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .app-main { padding-left: 16px; padding-right: 16px; }
 }
 
 /* ── Navigation ────────────────────────────────────────────── */
@@ -1799,7 +1811,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .read-page {
   display: flex;
   gap: 40px;
-  max-width: 900px;
+  max-width: calc(var(--read-w) + 180px);
   margin: 0 auto;
 }
 
@@ -2004,7 +2016,11 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 /* 诗体经(黄庭等)按句读换行排版(#143)——句间略加行距,显诗行节奏 */
 .classic-text__original--verse { line-height: 2.2; }
 
-@media (max-width: 768px) {
+/* 侧边目录的隐藏阈值(960px):.read-page 的 max-width 已预留侧栏的 180px,
+   故视口 ≥960 时显示侧栏不损失正文宽度(iPad Pro 13" 竖屏 1024 正文仍是 768);
+   低于此宽度才需牺牲侧栏换正文,改用下方的章节下拉。 */
+@media (max-width: 960px) {
+  .read-page { max-width: var(--read-w); }
   .read-toc { display: none; }
   .read-toc-mobile {
     display: flex;

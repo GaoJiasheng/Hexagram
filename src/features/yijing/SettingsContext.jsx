@@ -37,10 +37,9 @@ export function SettingsProvider({ children }) {
     document.documentElement.style.setProperty('--font-scale', settings.fontScale)
   }, [settings.fontScale])
 
-  // 行宽应用(读经正文宽度;narrow/normal/wide → --read-w)
+  // 行宽应用:JS 只写档位,CSS 负责各视口下的实际宽度。
   useEffect(() => {
-    const W = { narrow: '600px', normal: '680px', wide: '820px' }
-    document.documentElement.style.setProperty('--read-w', W[settings.readWidth] || W.normal)
+    document.documentElement.setAttribute('data-read-width', settings.readWidth)
   }, [settings.readWidth])
 
   return (

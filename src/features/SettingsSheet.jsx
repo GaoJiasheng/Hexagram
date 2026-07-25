@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useSettings } from './yijing/SettingsContext.jsx'
-import { exportData, importData, clearAllData, getLastSyncAt } from './yijing/storage.js'
+import { FONT_SCALE_STEPS, exportData, importData, clearAllData, getLastSyncAt } from './yijing/storage.js'
 import { useAuth } from './auth/AuthContext.jsx'
 import { syncNow } from './auth/sync.js'
 import PixelAvatar from './auth/PixelAvatar.jsx'
@@ -167,7 +167,7 @@ export default function SettingsSheet({ open, onClose }) {
         <div className="settings-section">
           <h3 className="settings-section__title">正文字号</h3>
           <div className="seg-control">
-            {[[0.9, '小'], [1, '中'], [1.15, '大'], [1.35, '特大']].map(([v, l]) => (
+            {FONT_SCALE_STEPS.map(([v, l]) => (
               <button key={v} className={`seg-btn ${settings.fontScale === v ? 'seg-btn--active' : ''}`} onClick={() => setSettings({ fontScale: v })}>{l}</button>
             ))}
           </div>

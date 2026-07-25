@@ -3,11 +3,8 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import ClassicText from '../yijing/components/ClassicText.jsx'
 import QuoteCard from './QuoteCard.jsx'
 import { useSettings } from '../yijing/SettingsContext.jsx'
-import { getCorpusMarks, toggleCorpusMark, getCorpusNotes, saveCorpusNote } from '../yijing/storage.js'
+import { FONT_SCALE_STEPS, getCorpusMarks, toggleCorpusMark, getCorpusNotes, saveCorpusNote } from '../yijing/storage.js'
 import CommentSection from '../comments/CommentSection.jsx'
-
-const FONT_SCALES = [0.9, 1, 1.15, 1.35]
-const FONT_SCALE_LABELS = { 0.9: '小', 1: '中', 1.15: '大', 1.35: '特大' }
 
 // 本章注疏一览(Tier 1):遍历该章各段 anchors,折叠列出,替逐词悬停。
 function ChapterNotes({ chapter, getAnchors }) {
@@ -180,13 +177,13 @@ export default function ClassicReader({
   const Toolbar = (
     <div className="read-toolbar">
       <div className="seg-control">
-        {FONT_SCALES.map((s) => (
+        {FONT_SCALE_STEPS.map(([value, label]) => (
           <button
-            key={s}
-            className={`seg-btn ${settings.fontScale === s ? 'seg-btn--active' : ''}`}
-            onClick={() => setSettings({ fontScale: s })}
+            key={value}
+            className={`seg-btn ${settings.fontScale === value ? 'seg-btn--active' : ''}`}
+            onClick={() => setSettings({ fontScale: value })}
           >
-            {FONT_SCALE_LABELS[s]}
+            {label}
           </button>
         ))}
       </div>

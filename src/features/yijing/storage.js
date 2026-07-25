@@ -59,35 +59,56 @@ export function saveAuthHint() { return set('authHint', true) }
 export function clearAuthHint() { remove('authHint') }
 
 // ── Settings ─────────────────────────────────────────────
+const FONT_SCALE_TIER = 2
+const LEGACY_FONT_SCALES = [0.9, 1, 1.15, 1.35]
+export const FONT_SCALE_STEPS = [[1, '小'], [1.15, '中'], [1.35, '大'], [1.55, '特大']]
+
 export const DEFAULT_SETTINGS = {
   theme: 'system', // 'light' | 'dark' | 'system'
   showTranslation: true,
-  fontScale: 1, // 0.9 | 1 | 1.15 | 1.35
+  fontScale: 1.15, // 1 | 1.15 | 1.35 | 1.55
   readWidth: 'normal', // 'narrow' | 'normal' | 'wide'
   transLayout: 'stack', // 'stack'(译文在下) | 'side'(原文/译文左右对照)
   quoteTheme: 'classic', // 'classic'(朱印经典) | 'ink'(水墨留白) | 'moon'(暗夜月白)
 }
 const VALID_THEMES = ['light', 'dark', 'system']
-const VALID_FONT_SCALES = [0.9, 1, 1.15, 1.35]
+const VALID_FONT_SCALES = FONT_SCALE_STEPS.map(([value]) => value)
 const VALID_READ_WIDTHS = ['narrow', 'normal', 'wide']
 const VALID_TRANS_LAYOUTS = ['stack', 'side']
 const VALID_QUOTE_THEMES = ['classic', 'ink', 'moon']
 
 // 白名单校验:旧结构/损坏值不直接进 state(防非法 fontScale 写入 --font-scale 等)
 export function getSettings() {
-  const s = { ...DEFAULT_SETTINGS, ...get('settings') }
+  const saved = get('settings', null)
+  let stored = saved && typeof saved === 'object' && !Array.isArray(saved) ? saved : null
+
+  // v2 字号档位按序号迁移,不能仅靠值白名单判断(新旧 1/1.15/1.35 重叠)。
+  // fontScaleTier 随 settings 持久化/同步,保证本地、导入或云端数据都只迁移一次。
+  if (stored && stored.fontScaleTier !== FONT_SCALE_TIER) {
+    const legacyIndex = LEGACY_FONT_SCALES.indexOf(stored.fontScale)
+    const fontScale = stored.fontScale === 1.55
+      ? 1.55
+      : legacyIndex >= 0
+        ? FONT_SCALE_STEPS[legacyIndex][0]
+        : DEFAULT_SETTINGS.fontScale
+    stored = { ...stored, fontScale, fontScaleTier: FONT_SCALE_TIER }
+    saveSettings(stored)
+  }
+
+  const s = { ...DEFAULT_SETTINGS, ...stored }
   if (!VALID_THEMES.includes(s.theme)) s.theme = DEFAULT_SETTINGS.theme
   if (!VALID_FONT_SCALES.includes(s.fontScale)) s.fontScale = DEFAULT_SETTINGS.fontScale
   if (!VALID_READ_WIDTHS.includes(s.readWidth)) s.readWidth = DEFAULT_SETTINGS.readWidth
   if (!VALID_TRANS_LAYOUTS.includes(s.transLayout)) s.transLayout = DEFAULT_SETTINGS.transLayout
   s.quoteTheme = getQuoteTheme()
   s.showTranslation = !!s.showTranslation
+  delete s.fontScaleTier
   return s
 }
 
 export function saveSettings(s) {
   // quoteTheme 有规格指定的独立键；保存其他设置时仍以该键为准，避免旧 context 覆盖新选项。
-  set('settings', { ...s, quoteTheme: getQuoteTheme() })
+  set('settings', { ...s, fontScaleTier: FONT_SCALE_TIER, quoteTheme: getQuoteTheme() })
 }
 
 // ── Quote card theme ──────────────────────────────────────
@@ -103,7 +124,7 @@ export function getQuoteTheme() {
 export function saveQuoteTheme(theme) {
   const next = VALID_QUOTE_THEMES.includes(theme) ? theme : DEFAULT_SETTINGS.quoteTheme
   set('quoteTheme', next)
-  set('settings', { ...getSettings(), quoteTheme: next })
+  saveSettings({ ...getSettings(), quoteTheme: next })
   return next
 }
 

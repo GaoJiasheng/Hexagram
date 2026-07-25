@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import HexagramCard from '../components/HexagramCard.jsx'
 import EmptyState from '../components/EmptyState.jsx'
-import { getBookmarks, getNotes, getCorpusMarks, getCorpusNotes, getDivinations, getDivinationsRaw, deleteDivination, saveDivinations, setDivinationOutcome, exportData, importData, clearAllData, saveSettings, getProgress } from '../storage.js'
+import { FONT_SCALE_STEPS, getBookmarks, getNotes, getCorpusMarks, getCorpusNotes, getDivinations, getDivinationsRaw, deleteDivination, saveDivinations, setDivinationOutcome, exportData, importData, clearAllData, saveSettings, getProgress } from '../storage.js'
 import { getHexagram, hexagramById } from '../data.js'
 import { useSettings } from '../SettingsContext.jsx'
 import { lineTitle } from '../engine/transforms.js'
@@ -374,7 +374,7 @@ export default function MePage() {
             <div className="settings-section">
               <h3 className="settings-section__title">经文字号</h3>
               <div className="seg-control">
-                {[[0.9, '小'], [1, '中'], [1.15, '大']].map(([v, l]) => (
+                {FONT_SCALE_STEPS.map(([v, l]) => (
                   <button key={v} className={`seg-btn ${settings.fontScale === v ? 'seg-btn--active' : ''}`} onClick={() => setSettings({ fontScale: v })}>{l}</button>
                 ))}
               </div>
