@@ -145,17 +145,21 @@ node scripts/verify-reblock.mjs <corpus> <slug> <改后文件> /tmp/before.json
 
 ---
 
-## 5. 新文章一律按新模板(必须同步改的三处)
+## 5. ✅ 新文章一律按新模板(已完成)
 
-否则新写的文章还是老五块,越写越欠账:
+**已止血**——此后新写的白话/观书文章自带富文本,不再欠账。改动:
 
-1. **`scripts/gen-baihua-wf.mjs`** —— 白话生成 workflow 的 prompt 里有三处块规格说明
-   (搜 `blocks:` / `blocks 顺序(脊柱)`),需把 4 种新块加进去,并写明 §2 的「用哪种块」与分寸。
-2. **`docs/books-production-standard.md` §6** —— 观书文章的块规格表(搜 `blocks[] 块类型`),同上。
-3. **`docs/design-v22.md` §3** —— 白话模块的块结构规格(canonical 出处),补记 v22.1 新块。
+1. **`scripts/gen-baihua-wf.mjs`** —— 新增 `RICHSPEC` 常量(4 种块 + label 规矩 + 分寸),
+   注入三条 draft 支线(易经卦 / 易经经传 / 通用 corpus)与三条 verify 支线;
+   `SCHEMA` 的 `type` enum 补 `list/callout/pull/steps`,并补 `ordered`/`tone`/`label`/`steps` 字段。
+   > `steps` 的项是**对象**,而 `items` 已被约束为字符串数组,故 schema 里单开 `steps` 字段,
+   > 由 `assemble-baihua.mjs` 归一到 `items`(顺带丢弃空块、丢弃超长 label)。
+2. **`docs/books-production-standard.md` §6** —— 块规格表补 4 行 + 分寸/label 两条。
+3. **`docs/design-v22.md` §3.3b** —— 新开一节作 canonical 出处(块清单 + 用哪种块 + 分寸 + label)。
+4. **`scripts/check-data.mjs`** —— 新增校验:`pull` 每章至多 1 处、`callout.label` ≤12 字、
+   `list/callout/steps` 不许空。
 
-> 做完 §5 之后,新文章自带富文本;§4 的存量批次可以慢慢推。**§5 优先级高于 §4**——
-> 先止血再补旧账。
+余下只剩 §4 的存量补账。
 
 ---
 

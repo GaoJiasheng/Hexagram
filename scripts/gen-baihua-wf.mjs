@@ -120,6 +120,21 @@ const FIGSPEC = [
   '- 每图配 caption(讲清它在说什么 + 出处)。',
 ].join('\n')
 
+// ── 富文本块(v22.1,参照 owner 提供的科普 PDF 排版;规格见 docs/richtext-rollout.md §2)──
+// 三条 draft 支线(易经卦/易经经传/通用 corpus)共用,verify 也复述一遍。
+const RICHSPEC = [
+  '富文本块(v22.1,除 lead/h2/p/quote/figure/refs 外还可用这四种,让长文有节奏、不是一色的段落墙):',
+  '- list —— 并列要点。{ "type":"list", "ordered":true, "items":["…","…"] };ordered 出编号,否则出圆点。**项内不要再写「一、」「第一，」这类行首序号**(编号由排版出)。',
+  '- callout —— 提示框。{ "type":"callout", "tone":"note|warn|mute", "label":"可选短签", "items":["…"] }。',
+  '  tone:note(青)放比方/举例/补充;warn(赭)纠正误读、划清界限(「这不等于…」);mute(灰)旁注、版本存疑、免责。',
+  '  **label 只在正文没自报家门时才挂**:正文若已是「打个比方：」「举个例子：」开头,再挂个「一个比方」纯属重复,此时 label 留空。',
+  '  要挂就挂 ≤8 字短签且对得上正文语气,如:留意用字 / 留意句式 / 放到今天 / 设想一下 / 一处澄清 / 一处提醒 / 容易读岔 / 全章转折。',
+  '- pull —— 全章最该被记住的那一句。{ "type":"pull", "text":"…" };**一章至多一处,宁缺毋滥**。',
+  '- steps —— 有明确先后的过程/阶段。{ "type":"steps", "steps":[{ "title":"…", "text":"…", "state":"done|now|todo", "badge":"可选" }] }。',
+  '**分寸(最重要):不是每篇都要用满。** 结构服从内容——该并列才用 list、真有比方才用 callout、确有先后才用 steps;',
+  '一整章一个新块都不加也正常,**绝不为了用新块而硬拆段落**。',
+].join('\n')
+
 // ── corpus 加厚档(owner:佛经按易经标准——更厚、更多图、更多生活场景;短章逐句、长章摘录精华)──
 const THICK = new Set([])   // 整组走加厚档的 corpus(空:当前无整组加厚;按书加厚见 THICK_BOOKS)
 // 按「书」加厚(只某 corpus 里的部分书走加厚,其余书普通档)——owner 2026-06-22:道只道德经、纵横只鬼谷子(战国策选普通档)
@@ -164,9 +179,10 @@ const yijingDraft = (u) => {
     `   - 错综卦:错卦=六爻阴阳全反、综卦=整体上下颠倒;可在 hexagrams.json 里按 binary 找出对应卦名,点出本卦与哪些卦相反相成(拿不准只讲卦象本身,勿编卦名)。\n` +
     `   - 卦序:用 xugua/zagua 讲此卦为何排在第 ${u.no} 位、与前后卦怎样承接。\n` +
     `   - 成语典故:由本卦/爻生出的成语(确有才写,如乾「飞龙在天/亢龙有悔」、谦「谦谦君子」),勾连今天语用。八宫/纳甲拿不准不要写。\n\n` +
-    SPEC_Y + '\n\n' + FIGSPEC_Y + '\n\n' +
+    SPEC_Y + '\n\n' + FIGSPEC_Y + '\n\n' + RICHSPEC + '\n\n' +
     `篇幅:${band}。\n\n按 schema 产出文章:\n` +
     `- title:"白话易经 · ${u.title}";subtitle:一句副题;centralIdea:一句话中心思想。\n` +
+    `- 块类型:lead/h2/p/quote/figure/refs + 富文本块 list/callout/pull/steps(见上「富文本块」,按分寸用,不硬凑)。\n` +
     `- blocks 顺序(脊柱):①lead 导语 hook + 共情入口(一个谁都遇到过的现代瞬间)②卦名与卦象(上下两经卦取象 + 大象传「君子以…」修身落点;配卦画六爻图、上下经卦分解图)③卦辞 + 彖传(整卦主旨;配金句卡)④**六爻逐爻走读**——每爻一段:引爻辞(quote)→大白话→该爻小象(quote)怎么补充→爻位身份(初/二/三/四/五/上,当位/中正/应比/承乘,随手用人话解释)→**落到一个今人日常场景或比喻**;用九/用六若有也讲(配爻位身份图、六爻爻义一览图)⑤(仅乾坤)文言传逐节白话,把文言整段织进⑥周边关联(卦序/错综/卦主/筮例/史事/成语,有则带)⑦中心思想贯通(重头戏)⑧落地启发(1–3 条,守不算命红线、不宿命预言)⑨收束首尾呼应⑩refs 出处与参考。\n` +
     `- quote{original,translation}:original 必为本卦经传原文(卦辞/爻辞/彖/大象/小象/用九六/文言/序卦/杂卦)的精确连续子串,translation 与站内译文一致。\n` +
     (u.featured ? `- 这是全书开篇总纲(乾卦):额外给 featured:true 和 hero:{badge:"开篇 · 易之门户",headline:本卦关键句(如「天行健,君子以自强不息」),tagline:一句题词}。\n` : `- **不要**输出 featured 或 hero 字段。\n`) +
@@ -178,6 +194,7 @@ const yijingVerify = (u, draft) => `校对修正《易经·${u.title}》整卦�
   `- 守不算命红线:吉凶悔吝只作古人对处境的判语训读,删去任何「对读者命运的预言/占卜趋避/宿命」措辞;象数(错综/卦变/纳甲/八宫)凡无据或编造一律删。\n` +
   `- 三传齐:确认彖传、大象、每爻小象都讲到了;乾坤须含文言传逐节。六爻须逐爻铺、每爻有现代场景或比喻,不沦为逐字翻译清单。\n` +
   `- 每张 figure 的 svg:颜色只用 var(--…),不得写死 #hex;有 viewBox 与 caption;卦画图阴阳爻按本卦 binary(自下而上)画对。每卦应有 5–8 图。\n` +
+  `- 富文本块:list 项内不留「一、」这类行首序号;callout 的 label 只在正文没自报家门时才留(正文已是「打个比方：」就删签)、且 ≤8 字;pull 每章至多 1 处;空的 list/callout/steps 一律删。**不许为了用新块而硬拆段落**,该不用就不用。\n` +
   `- 周边关联(卦序/错综/卦主/筮例/史事/成语)有则保留、错则删;末尾保留 refs 块。\n\n只返回修正后的结构化结果。`
 
 // ── 易经经传(十翼)加厚支线:义理散论/取象/卦序,非卦爻;系辞/说卦/序卦/杂卦各配专图 ──
@@ -200,10 +217,10 @@ const jzDraft = (u) => {
   return `你在为「观象」易经研习站写《${bookTitle}·${u.title}》的「白话」整章加厚深读 —— 这是易经「十翼」之经传(义理散论/取象/卦序),不是某一卦的卦爻。${RED.yijing}\n\n` +
     `第一步:用 Read 读 ${JZ_FILE(slug)},找到 chapters 里 no===${u.no} 的那一章(paragraphs 为原文段,每段含 original 与 translation)。以这章原文为底成文。\n` +
     (slug !== 'xici-shang' && slug !== 'xici-xia' ? `如需卦名/卦象/取象/卦序,可 Grep ${Y_FILE} 查证(name/binary/upperTrigram/lowerTrigram/xugua/zagua),八卦符号与卦名务必与原文一致,勿凭记忆编造。\n` : '') +
-    `\n${SPEC}\n${THICK_EXTRA}\n\n${FIGSPEC_THICK}\n${JZ_FIG[slug] || ''}${approach}\n\n` +
+    `\n${SPEC}\n${THICK_EXTRA}\n\n${FIGSPEC_THICK}\n${JZ_FIG[slug] || ''}\n\n${RICHSPEC}${approach}\n\n` +
     `篇幅:${band}。\n\n按 schema 产出文章:\n` +
     `- title:"白话${bookTitle} · ${u.title}";subtitle:一句副题;centralIdea:一句话中心思想。\n` +
-    `- blocks:lead/p/h2/quote{original,translation}/figure{ftype,svg,caption}/refs。quote.original 必为该章原文段精确连续子串、translation 与站内译文一致。脊柱顺序铺;走读用 quote+p 穿插;金句卡每章必出;末尾一个 refs 块。\n` +
+    `- blocks:lead/p/h2/quote{original,translation}/figure{ftype,svg,caption}/refs,外加富文本块 list/callout/pull/steps(见上,按分寸用)。quote.original 必为该章原文段精确连续子串、translation 与站内译文一致。脊柱顺序铺;走读用 quote+p 穿插;金句卡每章必出;末尾一个 refs 块。\n` +
     (u.featured ? `- 这是系辞开篇(全经传义理总纲):额外给 featured:true 和 hero:{badge:"十翼 · 义理总纲",headline:本章关键句(如「天尊地卑,乾坤定矣」),tagline:一句题词}。\n` : `- 本章非开篇,**不要**输出 featured 或 hero 字段。\n`) +
     `\n只返回结构化结果。`
 }
@@ -213,6 +230,7 @@ const jzVerify = (u, draft) => `校对修正《${bookTitle}·${u.title}》白话
   `- 守不算命红线:删去任何对读者命运的预言/占卜趋避/宿命措辞;吉凶悔吝只作古人对处境的判语训读。\n` +
   `- 卦象/八卦符号(☰☷☳☴☵☶☱☲)/方位/卦序如出现于图或文,须与原文及 ${Y_FILE} 一致,无据或编造一律删(可 Grep 查证)。\n` +
   `- 每张 figure 的 svg:颜色只用 var(--…)不写死 #hex;有 viewBox 与 caption;本章按加厚标准应有 5–8 图。\n` +
+  `- 富文本块:list 项内不留「一、」这类行首序号;callout 的 label 只在正文没自报家门时才留(正文已是「打个比方：」就删签)、且 ≤8 字;pull 每章至多 1 处;空的 list/callout/steps 一律删。**不许为了用新块而硬拆段落**,该不用就不用。\n` +
   `- 中心思想突出、脑回路与比喻到位、不沦为逐字翻译清单;末尾保留 refs 块。\n\n只返回修正后的结构化结果。`
 
 const draftPrompt = (u) => {
@@ -229,11 +247,11 @@ const draftPrompt = (u) => {
   const approach = !thick ? '' : longCh
     ? '\n\n【本章较长——分段摘录】把本章**分成几段**,每段挑出**精华/关键的句子**(quote)逐一深读解释;次要的叙述/重复句可并讲带过,**不必逐句翻每一句**。引文仍须精确子串。'
     : '\n\n【本章较短——全文逐句】**全文逐句展开**:每个原文句子都引(quote)并讲透,不漏句。'
-  return `你在为研习站写《${bookTitle}·${u.title}》的「白话」整章深读。${RED[corpus] || ''}\n\n${spec}\n\n${figspec}${approach}\n\n` +
+  return `你在为研习站写《${bookTitle}·${u.title}》的「白话」整章深读。${RED[corpus] || ''}\n\n${spec}\n\n${figspec}\n\n${RICHSPEC}${approach}\n\n` +
     `第一步:用 Read 读 ${FILE(corpus, slug)},找到 chapters 里 no===${u.no} 的那一章(paragraphs 为原文段,每段含 original 与 translation)。以这章原文为底成文。\n\n` +
     `篇幅:${band}。\n\n按 schema 产出一篇白话文章:\n` +
     `- title:"白话${bookTitle} · ${u.title}";subtitle:一句副题;centralIdea:一句话中心思想。\n` +
-    `- blocks:有序数组,块类型 lead(导语)/p(段落)/h2(小节标题)/quote{original,translation}(引文,original 必为该章原文段精确子串、translation 与站内译文一致)/figure{ftype,svg,caption}(内联 SVG 图)/refs{items:[…]}(出处与参考)。按脊柱顺序铺;走读用 quote+p 穿插;金句卡等图穿插在合适处;末尾一个 refs 块。\n` +
+    `- blocks:有序数组,块类型 lead(导语)/p(段落)/h2(小节标题)/quote{original,translation}(引文,original 必为该章原文段精确子串、translation 与站内译文一致)/figure{ftype,svg,caption}(内联 SVG 图)/refs{items:[…]}(出处与参考),外加富文本块 list/callout/pull/steps(见上「富文本块」,按分寸用、不硬凑)。按脊柱顺序铺;走读用 quote+p 穿插;金句卡等图穿插在合适处;末尾一个 refs 块。\n` +
     (u.featured ? `- 这是全书开篇总纲章:额外给 featured:true 和 hero:{badge:"开篇 · 全书总纲",headline:本章关键句,tagline:一句题词};正文不必再单列与 hero 重复的金句卡。\n` : `- 本章非开篇,**不要**输出 featured 或 hero 字段。\n`) +
     `\n只返回结构化结果。`
 }
@@ -244,6 +262,7 @@ const verifyPrompt = (u, draft) => IS_HEX ? yijingVerify(u, draft) : IS_JZ ? jzV
   `- 守红线:删去违红线的措辞(${corpus === 'zhongyi' ? '诊疗/功效用法用量/疗效断语' : (corpus === 'moulue' && !MOULUE_REAL_BOOKS.has(slug)) ? '为伪书张目/教施用' : corpus === 'moulue' ? '权术施用教程/成功学鸡汤式发挥' : corpus === 'fo' ? '果报/往生劝信' : '鸡汤/成功学/权术/政治影射'})。\n` +
   `- 每张 figure 的 svg:颜色只用 var(--…)/currentColor,**不得写死 #hex**;有 viewBox 与 caption。${IS_THICK ? '本书按加厚标准,应有 5–8 张图、每处义理都落到日常场景+比喻;' : ''}\n` +
   (IS_THICK && u.chars >= 1500 ? `- 本章较长:应是「分段 + 摘录精华句逐一深读」,不必逐句翻全篇;确认未遗漏关键句、也未沦为流水账。\n` : IS_THICK ? `- 本章较短:应「全文逐句展开」,确认无漏句。\n` : '') +
+  `- 富文本块:list 项内不留「一、」这类行首序号;callout 的 label 只在正文没自报家门时才留(正文已是「打个比方：」就删签)、且 ≤8 字;pull 每章至多 1 处;空的 list/callout/steps 一律删。**不许为了用新块而硬拆段落**,该不用就不用。\n` +
   `- 中心思想突出、脑回路与比喻到位、不沦为逐字翻译清单;篇幅合宜。\n- 末尾保留 refs 块。\n\n只返回修正后的结构化结果。`
 
 const script = `export const meta = {
@@ -262,10 +281,17 @@ const SCHEMA = {
     blocks: { type: 'array', items: {
       type: 'object', additionalProperties: false, required: ['type'],
       properties: {
-        type: { enum: ['lead', 'p', 'h2', 'quote', 'figure', 'refs'] },
+        type: { enum: ['lead', 'p', 'h2', 'quote', 'figure', 'refs', 'list', 'callout', 'pull', 'steps'] },
         text: { type: 'string' }, original: { type: 'string' }, translation: { type: 'string' },
         ftype: { type: 'string' }, svg: { type: 'string' }, caption: { type: 'string' },
         items: { type: 'array', items: { type: 'string' } },
+        // 富文本块(v22.1):list 的 ordered、callout 的 tone/label;
+        // steps 的项是对象,单开 steps 字段(items 已被约束为字符串数组),装配时归一到 items
+        ordered: { type: 'boolean' }, tone: { enum: ['note', 'warn', 'mute'] }, label: { type: 'string' },
+        steps: { type: 'array', items: {
+          type: 'object', additionalProperties: false, required: ['title'],
+          properties: { title: { type: 'string' }, text: { type: 'string' }, state: { enum: ['done', 'now', 'todo'] }, badge: { type: 'string' } },
+        } },
       },
     } },
   },

@@ -657,6 +657,17 @@ if (fs.existsSync(glossaryPath)) {
             warn(`${tag}: figure SVG 疑写死颜色(应用 var()/currentColor)`)
           }
         }
+        // 富文本块(v22.1):pull 每章至多一处;label 只许短签;list/callout/steps 不许空
+        const pulls = blocks.filter((b) => b.type === 'pull').length
+        if (pulls > 1) err(`${tag}: pull 块 ${pulls} 处(每章至多 1 处)`)
+        for (const b of blocks) {
+          if (b.type === 'callout' && b.label && [...b.label].length > 12) {
+            err(`${tag}: callout.label 过长(${[...b.label].length} 字)「${b.label}」——标签是排版短签,正文该放 items`)
+          }
+          if ((b.type === 'list' || b.type === 'callout' || b.type === 'steps') && !(b.items || []).length) {
+            err(`${tag}: ${b.type} 块无 items`)
+          }
+        }
         // 红线软扫描(整篇)
         const re = REDLINE[corpus]
         if (re && re.test(JSON.stringify(a))) warn(`${tag}: 疑触组红线词,请人工复核`)

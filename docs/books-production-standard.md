@@ -109,7 +109,15 @@ src/data/books/
 | `quote` | `.original`(+ `.translation?`) | 引文,守版权红线 |
 | `figure` | `.svg` `.caption` `.ftype` | 内联 SVG 配图 |
 | `refs` | `.items[]` | 出处/参考(可省) |
+| `list` | `.items[]` `.ordered?` | **v22.1** 并列要点;项内不写「一、」行首序号(编号由排版出) |
+| `callout` | `.tone` `.items[]` `.label?` | **v22.1** 提示框;tone: `note` 青(比方/举例/补充)· `warn` 赭(纠误读/划界限)· `mute` 灰(旁注/存疑) |
+| `pull` | `.text` | **v22.1** 全章最该记住的一句;**一篇至多一处** |
+| `steps` | `.items[]{title,text?,state?,badge?}` | **v22.1** 有先后的过程;state: `done`/`now`/`todo` |
 
+- **v22.1 富文本块的分寸**:结构服从内容——该并列才 `list`、真有比方才 `callout`、确有先后才 `steps`;
+  **一篇一个新块都不加也正常,绝不为了用新块而硬拆段落**。
+- **`callout.label` 只在正文没自报家门时才挂**:正文若已是「打个比方：」开头,再挂「一个比方」纯属重复,此时留空。
+  要挂就 ≤8 字短签且对得上语气(留意用字 / 放到今天 / 一处澄清 / 容易读岔 / 全章转折…)。
 - **配图 SVG 上色必须用 `style="fill:var(--cinnabar)…"`,不能用 `fill` 属性**(SVG presentation 属性不认 `var()`);字体用 `var(--font-serif)`;明暗与主色自适应。
 - 文风照站内白话:**中心思想优先 + 脑回路 + 生活化比喻 + 逐段服务主线**,讲给完全没读过的人听。
 

@@ -91,6 +91,13 @@ for (const [key, list] of Object.entries(byBook)) {
         b.original = snapped
       }
       if (b.type === 'figure') figHere++
+      // 富文本块(v22.1)归一:steps 的项是对象,schema 里单开了 steps 字段(items 被约束为字符串数组)
+      if (b.type === 'steps' && Array.isArray(b.steps)) { b.items = b.steps; delete b.steps }
+      // 空块不落盘(模型偶尔给 {type:'list'} 却没 items)
+      if ((b.type === 'list' || b.type === 'callout' || b.type === 'steps') && !(b.items || []).length) continue
+      if (b.type === 'pull' && !b.text) continue
+      // label 是排版短签,超长多半是把正文塞进来了 → 丢签保正文(正文另在 items 里)
+      if (b.type === 'callout' && b.label && [...b.label].length > 12) delete b.label
       cleanBlocks.push(b)
     }
     const goodQuotes = cleanBlocks.filter((b) => b.type === 'quote' && b.original).length
