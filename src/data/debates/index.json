@@ -2124,6 +2124,97 @@
           "stance": "功用为的"
         }
       ]
+    },
+    {
+      "id": "xuesi",
+      "title": "学与思孰先",
+      "division": "weixue",
+      "category": "名实 · 言辩 · 知",
+      "concept": "学与思",
+      "question": "为学的着力处,在学、在思,还是本不容分先后?",
+      "turns": 17,
+      "status": "done",
+      "schools": [
+        {
+          "label": "孔子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "两端相须"
+        },
+        {
+          "label": "荀子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "思不如学"
+        },
+        {
+          "label": "孟子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "思则得之"
+        }
+      ],
+      "format": "intra"
+    },
+    {
+      "id": "boyue",
+      "title": "博与约",
+      "division": "weixue",
+      "category": "工夫与学",
+      "concept": "博与约",
+      "question": "博与约是两道工序、一往一返,还是本无二事?",
+      "turns": 14,
+      "status": "done",
+      "schools": [
+        {
+          "label": "孔子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "博文约礼"
+        },
+        {
+          "label": "孟子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "反说约"
+        },
+        {
+          "label": "阳明",
+          "group": "xin",
+          "seal": "观心",
+          "stance": "博即约之功"
+        }
+      ]
+    },
+    {
+      "id": "qiaozhuo",
+      "title": "巧与拙",
+      "division": "zhidao",
+      "category": "礼 · 文 · 乐",
+      "concept": "巧与拙",
+      "question": "什么才算巧?是不见其巧而近于拙,是器巧则心随之坏,还是凡利于人者方配称巧?",
+      "turns": 14,
+      "status": "done",
+      "schools": [
+        {
+          "label": "老子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "大巧若拙"
+        },
+        {
+          "label": "庄子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "机事生机心"
+        },
+        {
+          "label": "墨子",
+          "group": "mo",
+          "seal": "观兼",
+          "stance": "利人谓之巧"
+        }
+      ]
     }
   ],
   "planned": []
