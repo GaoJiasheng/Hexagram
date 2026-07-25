@@ -1866,6 +1866,132 @@
         }
       ],
       "format": "intra"
+    },
+    {
+      "id": "wangba",
+      "title": "王霸之辨",
+      "division": "zhidao",
+      "category": "治道与政治",
+      "concept": "王霸之辨",
+      "question": "凭什么服天下?霸道是王道之伪、王道之次,还是本无所谓王道?",
+      "turns": 14,
+      "status": "done",
+      "schools": [
+        {
+          "label": "孟子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "尊王贱霸"
+        },
+        {
+          "label": "荀子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "王霸有序"
+        },
+        {
+          "label": "韩非",
+          "group": "fa",
+          "seal": "观法",
+          "stance": "明君务力"
+        }
+      ]
+    },
+    {
+      "id": "luanqi",
+      "title": "乱何自起",
+      "division": "zhidao",
+      "category": "治道与政治",
+      "concept": "乱何自起",
+      "question": "天下之乱,起于人不相爱、起于分位不明、起于治得太多,还是起于法令不一?",
+      "turns": 16,
+      "status": "done",
+      "schools": [
+        {
+          "label": "墨子",
+          "group": "mo",
+          "seal": "观兼",
+          "stance": "起不相爱"
+        },
+        {
+          "label": "荀子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "群而无分"
+        },
+        {
+          "label": "老子",
+          "group": "dao",
+          "seal": "观道",
+          "stance": "治之太多"
+        },
+        {
+          "label": "韩非",
+          "group": "fa",
+          "seal": "观法",
+          "stance": "法禁变易"
+        }
+      ]
+    },
+    {
+      "id": "gongsi",
+      "title": "公与私",
+      "division": "zhidao",
+      "category": "治道与政治",
+      "concept": "公与私",
+      "question": "公与私是天然相背而须以法灭私,是靠礼义与制度使私门自塞,还是靠客观之器使私无所施?",
+      "turns": 12,
+      "status": "done",
+      "schools": [
+        {
+          "label": "韩非",
+          "group": "fa",
+          "seal": "观法",
+          "stance": "公私相背"
+        },
+        {
+          "label": "荀子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "公道达而私门塞"
+        },
+        {
+          "label": "慎子",
+          "group": "fa",
+          "seal": "观法",
+          "stance": "立公器以弃私"
+        }
+      ]
+    },
+    {
+      "id": "xingqing",
+      "title": "刑之轻重",
+      "division": "zhidao",
+      "category": "治道与政治",
+      "concept": "刑之轻重",
+      "question": "刑当重到使人不敢犯,当与罪相称,还是本就不足恃而须归于德礼?",
+      "turns": 15,
+      "status": "done",
+      "schools": [
+        {
+          "label": "商鞅",
+          "group": "fa",
+          "seal": "观法",
+          "stance": "以刑去刑"
+        },
+        {
+          "label": "荀子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "刑称罪"
+        },
+        {
+          "label": "孔子",
+          "group": "ru",
+          "seal": "观仁",
+          "stance": "刑不足恃"
+        }
+      ]
     }
   ],
   "planned": []
