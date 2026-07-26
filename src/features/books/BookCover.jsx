@@ -1093,6 +1093,74 @@ function GiftCircuit() {
   )
 }
 
+// 母题:位置不当之物——一张规整的三乘三分类格,每一格里安放一枚归位的圆点;唯独中间一格
+// 空着(留一圈虚线示其原位),那枚点跑到了格线的交点上,不属于任何一格,遂被朱色圈出。
+// 呼应道格拉斯的核心定义:污秽不是物质本身的属性,而是分类系统里的越界——鞋子放鞋柜里是
+// 干净的,放上餐桌就成了「脏东西」;脏的是位置,不是东西。
+function MatterOutOfPlace() {
+  const cell = 36, x0 = 82, y0 = 258
+  const ticks = [0, 1, 2, 3]
+  const cells = []
+  for (let r = 0; r < 3; r += 1) for (let c = 0; c < 3; c += 1) cells.push([c, r])
+  const cx = (c) => x0 + c * cell + cell / 2
+  const cy = (r) => y0 + r * cell + cell / 2
+  const strayX = x0 + 3 * cell, strayY = y0 + 2 * cell
+  return (
+    <g>
+      {ticks.map((i) => (
+        <path key={`v${i}`} d={`M${x0 + i * cell},${y0} L${x0 + i * cell},${y0 + 3 * cell}`}
+          stroke={CREAM} strokeOpacity="0.28" strokeWidth="1" />
+      ))}
+      {ticks.map((i) => (
+        <path key={`h${i}`} d={`M${x0},${y0 + i * cell} L${x0 + 3 * cell},${y0 + i * cell}`}
+          stroke={CREAM} strokeOpacity="0.28" strokeWidth="1" />
+      ))}
+      {cells.filter(([c, r]) => !(c === 1 && r === 1)).map(([c, r]) => (
+        <circle key={`d${c}${r}`} cx={cx(c)} cy={cy(r)} r="5" fill={CREAM} fillOpacity="0.5" />
+      ))}
+      <circle cx={cx(1)} cy={cy(1)} r="5" fill="none" stroke={CREAM} strokeOpacity="0.22"
+        strokeWidth="1" strokeDasharray="2 3" />
+      <path d={`M${cx(1) + 9},${cy(1) + 3} Q${cx(2) + 16},${cy(1) + 15} ${strayX - 4},${strayY - 6}`}
+        fill="none" stroke={CINNABAR} strokeOpacity="0.45" strokeWidth="1" strokeDasharray="3 4" />
+      <circle cx={strayX} cy={strayY} r="12" fill="none" stroke={CINNABAR} strokeOpacity="0.5" strokeWidth="1.1" />
+      <circle cx={strayX} cy={strayY} r="5" fill={CINNABAR} />
+    </g>
+  )
+}
+
+// 母题:制度的分岔——同一个起点(一枚朱点)伸出两条路:左边一条细而收拢,通向一扇窄门,
+// 门扇紧闭、横木上闩,朱色勾边(汲取型制度:权力与财富被小圈子把持,门只为少数人开);
+// 右边一条渐次张开成一道亮带,通向一扇宽门,门扇向外敞着、门内透光(包容型制度:产权有
+// 保障、人人可入场、新来者被允许挑战旧势力)。两条路一旦分岔,便各自越走越远。
+function InstitutionalFork() {
+  const narrow = 'M108,350 C96,336 74,324 57,308'
+  const wideIn = 'M114,350 C126,336 138,324 146,308'
+  const wideOut = 'M118,354 C136,342 154,330 168,310'
+  return (
+    <g>
+      <path d="M62,362 L166,362" stroke={CREAM} strokeOpacity="0.16" strokeWidth="1" strokeDasharray="3 5" />
+      <path d={`${wideIn} L168,310 C154,330 136,342 118,354 Z`} fill={CREAM} fillOpacity="0.08" stroke="none" />
+      <path d={wideIn} fill="none" stroke={CREAM} strokeOpacity="0.42" strokeWidth="1.2" strokeLinecap="round" />
+      <path d={wideOut} fill="none" stroke={CREAM} strokeOpacity="0.42" strokeWidth="1.2" strokeLinecap="round" />
+      <path d={narrow} fill="none" stroke={CINNABAR} strokeOpacity="0.85" strokeWidth="1.7"
+        strokeLinecap="round" strokeDasharray="7 4" />
+      <rect x="44" y="266" width="26" height="44" fill="rgba(0,0,0,0.24)"
+        stroke={CINNABAR} strokeOpacity="0.9" strokeWidth="1.5" />
+      <path d="M38,262 L76,262" stroke={CINNABAR} strokeOpacity="0.75" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M38,288 L76,288" stroke={CINNABAR} strokeOpacity="0.9" strokeWidth="2.1" strokeLinecap="round" />
+      <circle cx="64" cy="297" r="2.2" fill={CINNABAR} fillOpacity="0.9" />
+      <rect x="120" y="258" width="56" height="52" fill="none" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.3" />
+      <rect x="125" y="263" width="46" height="47" fill={CREAM} fillOpacity="0.15" stroke="none" />
+      <path d="M125,263 L141,254 L141,304 L125,310 Z" fill="rgba(0,0,0,0.16)"
+        stroke={CREAM} strokeOpacity="0.55" strokeWidth="1.2" />
+      <path d="M147,273 L169,273 M147,285 L169,285 M147,297 L169,297"
+        stroke={CREAM} strokeOpacity="0.28" strokeWidth="1" strokeLinecap="round" />
+      <circle cx="112" cy="356" r="4.4" fill={CINNABAR} />
+      <circle cx="112" cy="356" r="9" fill="none" stroke={CINNABAR} strokeOpacity="0.4" strokeWidth="1" />
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'panopticon') return <Panopticon />
   if (motif === 'manifest-latent') return <ManifestLatent />
@@ -1196,6 +1264,8 @@ function Motif({ motif }) {
   if (motif === 'mirror-pattern') return <MirrorPattern />
   if (motif === 'gift-circuit') return <GiftCircuit />
   if (motif === 'signifying-web') return <SignifyingWeb />
+  if (motif === 'matter-out-of-place') return <MatterOutOfPlace />
+  if (motif === 'institutional-fork') return <InstitutionalFork />
   return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
 }
 
