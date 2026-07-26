@@ -1,0 +1,164 @@
+{
+ "title": "重组的年代:人类第一次动手改写基因",
+ "subtitle": "剪刀、胶水与运货车凑齐之后——一次罕见的自我刹车,第一批基因工程药物,和一场持续十余年的基因追猎",
+ "centralIdea": "1970 年代初,几样工具凑齐了:能在特定位置切开 DNA 的限制酶、能把断口接上的连接酶、能把外来片段送进细菌并大量复制的载体,以及能从 RNA 反向抄出 DNA 的逆转录酶。把它们组合起来,人类第一次能把一段来自任意生物的基因搬进另一种生物体内并让它工作。这项能力立刻显出两面:一面是让细菌替人类生产稀缺的药物蛋白,一面是没人知道把危险病毒的基因塞进大肠杆菌会发生什么。于是出现了科学史上少见的一幕——推动这项技术的科学家自己按下暂停键,在 1975 年的阿西洛马会议上制定分级安全规范。这一章的另一半是「读」的能力同步爆发:测序与 DNA 扩增技术让基因可被逐字读出、微量样本可被放大,而一场持续十余年的家族追猎最终锁定了亨廷顿病的基因——并立刻带来一个新困境:一种可以预知却无法治疗的命运,该不该去查?",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "前四章讲的都是「读」:找到基因、定位基因、看清它的形状、破译它的书写规则。这一章开始讲「写」。分界线很清楚:一旦知道 DNA 是一段可以逐字读出的文本,而且所有生物用的是同一套密码本,那么「把这一段文字剪下来,贴到另一个生物身上」在原理上就不再荒唐,只差工具。1970 年代初,工具凑齐了。**从这一刻起,遗传学不再只是一门观察的学问,它成了一门可以动手的技术**——而所有能动手的技术,都会立刻带来一个新问题:该动到哪里为止?这一章的两半——技术的突飞猛进与研究者的自我克制——恰好是这个问题的一次真实预演。"
+  },
+  {
+   "type": "h2",
+   "text": "工具箱:剪刀、胶水、运货车,还有一支倒抄的笔"
+  },
+  {
+   "type": "p",
+   "text": "第一样是剪刀。研究者在细菌里发现了一类酶,它们本是细菌用来对付入侵病毒的防御武器:识别一小段特定的序列,然后在那里把 DNA 切断。这个「认字下刀」的特性极其宝贵——**它让剪切从随机变成定点**。不同的酶认不同的字,于是研究者有了一整套形状各异的剪刀。"
+  },
+  {
+   "type": "p",
+   "text": "第二样是胶水:一类能把 DNA 断口接起来的连接酶。第三样是运货车:细菌里那种独立于主染色体的小型环状 DNA,可以携带外来片段进入细菌,并随细菌繁殖被复制成千千万万份;某些病毒也能干这活。第四样最巧妙:有人发现某些病毒带着一种能「倒着抄」的酶,可以以 RNA 为模板反过来合成 DNA。这为什么重要?因为高等生物的基因在 DNA 上是断开的、中间夹着不参与编码的片段,细菌不会剪接;而**从成熟的 RNA 抄件反抄回来的那份 DNA,恰好已经是剪接好的完整版,拿去交给细菌正好能用**。"
+  },
+  {
+   "type": "figure",
+   "ftype": "流程图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>把一段基因搬进细菌:四步</text><rect x='34' y='48' width='118' height='72' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='93' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar)'>① 剪</text><text x='93' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>限制酶认准序列</text><text x='93' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>定点切开</text><path d='M152,84 L176,84' style='stroke:var(--ink-soft);stroke-width:1.4'/><path d='M168,79 L178,84 L168,89' style='fill:none;stroke:var(--ink-soft);stroke-width:1.4'/><rect x='180' y='48' width='118' height='72' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><text x='239' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>② 贴</text><text x='239' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>连接酶把目标基因</text><text x='239' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>接进环状载体</text><path d='M298,84 L322,84' style='stroke:var(--ink-soft);stroke-width:1.4'/><path d='M314,79 L324,84 L314,89' style='fill:none;stroke:var(--ink-soft);stroke-width:1.4'/><rect x='326' y='48' width='118' height='72' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><text x='385' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>③ 送</text><text x='385' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>载体带着它</text><text x='385' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>进入细菌</text><path d='M385,120 L385,148' style='stroke:var(--ink-soft);stroke-width:1.4'/><path d='M380,140 L385,150 L390,140' style='fill:none;stroke:var(--ink-soft);stroke-width:1.4'/><rect x='200' y='152' width='370' height='0' style='fill:none'/><rect x='326' y='152' width='118' height='72' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='385' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar)'>④ 印</text><text x='385' y='200' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>细菌繁殖即复制</text><text x='385' y='216' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>还能照着造蛋白</text><rect x='34' y='152' width='264' height='72' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 3'/><text x='166' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>另一支笔:逆转录酶</text><text x='166' y='200' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>以成熟 RNA 为模板倒抄回 DNA,</text><text x='166' y='216' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>得到已剪接好、细菌能直接用的版本</text><line x1='60' y1='250' x2='500' y2='250' style='stroke:var(--line);stroke-width:1'/><text x='280' y='278' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>细菌既是复印机,也是工厂</text></svg>",
+   "caption": "重组 DNA 的四步并不神秘,难的是每一步都要有一样称手的酶——这些酶几乎全是从微生物身上「借」来的。"
+  },
+  {
+   "type": "p",
+   "text": "1970 年代初,这些工具被组合起来使用:一段外来基因被接进载体、送入细菌,细菌繁殖时便顺带把它复制无数份,有时还能照着它生产相应的蛋白质。这件事的分量在于**它同时给出了两种能力:大量复制某一段特定 DNA(读的前提),和让活细胞替你生产某种蛋白(写的成果)**。这就是所谓的基因克隆——注意这个「克隆」指的是把一段基因扩增成许多份,和后来那种复制一整只动物的克隆是两回事,不要混为一谈。"
+  },
+  {
+   "type": "h2",
+   "text": "一次罕见的自我刹车:阿西洛马会议"
+  },
+  {
+   "type": "p",
+   "text": "能力刚露头,担忧就来了,而且是从做这件事的人内部先提出来的:如果把致癌病毒的基因接进大肠杆菌——一种在人肠道里到处都有的细菌——会发生什么?没人知道。1970 年代中期,一批研究者公开呼吁自愿暂停某几类高风险实验,随后在加州海滨的阿西洛马开会讨论。会议的产出是一套分级的安全规范:按风险高低分档,规定相应的实验室防护等级,某些实验暂时不做。"
+  },
+  {
+   "type": "p",
+   "text": "这次会议常被当作「科学界自我治理」的样板,而它也一直伴随着争议。**批评的要点很实在:与会者几乎全是内行,议题被有意限定在生物安全的技术层面,伦理、社会与谁来监督这类更大的问题被推到了会外**。据记载,当时有的城市还就本地实验室是否可以开展此类研究举行过公开听证,普通居民要求参与决定——科学家关起门来议定的规则,并不总能让邻居安心。"
+  },
+  {
+   "type": "quote",
+   "original": "我们能做到的事,已经超过了我们知道如何评判的事。",
+   "translation": "这是对阿西洛马前后那种气氛的概括,而不是原书的逐字引用。它道出了此后半个世纪一切生物技术争论的基本结构:技术能力的增长速度,总是快于社会形成共识的速度。"
+  },
+  {
+   "type": "p",
+   "text": "怎么评价这次刹车?两句话都要说。它确实证明了自律是可能的:一群前途大好的研究者主动放慢自己的项目,这在任何行业都不常见。它也确实暴露了自律的边界:**被邀请进屋的人,决定了哪些问题会被讨论**。这个教训在第七章会重新用到——当基因编辑变得便宜好用时,「谁有资格参与决定」比「技术上能不能做」更棘手。"
+  },
+  {
+   "type": "steps",
+   "items": [
+    {
+     "title": "凑齐工具",
+     "text": "定点剪切的限制酶、接口的连接酶、运货的载体、倒抄 RNA 的逆转录酶。",
+     "state": "done"
+    },
+    {
+     "title": "让基因搬家",
+     "text": "把一段外来基因接进载体送进细菌,细菌繁殖即大量复制,并可照着它生产蛋白。",
+     "state": "done"
+    },
+    {
+     "title": "自我刹车",
+     "text": "自愿暂停高风险实验,开会制定分级安全规范——把「先做了再说」换成「先议好再做」。",
+     "state": "done"
+    },
+    {
+     "title": "变成药",
+     "text": "工程菌批量生产人的蛋白药物,取代从动物脏器提取的旧路线,基因技术第一次进入普通人的生活。",
+     "state": "done"
+    }
+   ]
+  },
+  {
+   "type": "h2",
+   "text": "第一批产品:药瓶里的基因工程"
+  },
+  {
+   "type": "p",
+   "text": "最早也最有说服力的成果是胰岛素。糖尿病患者需要终身注射胰岛素,而在此之前,它只能从猪、牛的胰腺里提取——**产量受屠宰量限制,纯度有限,还可能引起免疫反应**。有了重组技术,人的胰岛素基因可以交给工程菌,让它们在发酵罐里成批生产,序列与人自身的完全一致。1980 年代初,这类产品陆续获批上市。"
+  },
+  {
+   "type": "p",
+   "text": "这件事的意义超出医学。它意味着**基因技术第一次以药品的形式落进普通人的生活,而不是停在论文里**;它也催生了一个新行业:大学实验室里的科学家开始创办公司,专利、投资、竞争进入了原本以论文和荣誉为货币的世界。这带来了效率,也带来了新的紧张——一项研究成果究竟属于公共知识还是商业资产,自此成为一个长期争论的问题。"
+  },
+  {
+   "type": "callout",
+   "tone": "note",
+   "label": "放到今天",
+   "items": [
+    "今天药房与医院里许多东西都走的是这条路:重组胰岛素、生长激素、促红细胞生成素、乙肝疫苗、各类抗体药物,原理上都是「把人(或病原体)的一段基因交给细胞去表达」。这条产业链已经太常规,以至于人们不再觉得它与「基因工程」有关——**一项技术真正成熟的标志,是它变得无人谈论**。"
+   ]
+  },
+  {
+   "type": "p",
+   "text": "同一套技术也很快进入了农业与工业:抗虫抗除草剂的作物、发酵罐里生产的酶与添加剂。围绕转基因作物的争论至今未息,涉及生态、贸易、标识与公众信任等许多不属于遗传学的问题,这本书的重心并不在此;这里只提示一件事——**同一项技术在医学上被广泛接受,在食品上却引起长期抵触,差别往往不在风险大小,而在人们对「谁在决定、我有没有选择」的感受**。这个观察在第七章还会用到。"
+  },
+  {
+   "type": "h2",
+   "text": "读的能力同步爆发:测序与扩增"
+  },
+  {
+   "type": "p",
+   "text": "写的能力起飞时,读的能力也在爆发。1970 年代末出现了可用的测序方法,能把一段 DNA 的字母顺序逐个读出来;1980 年代出现了一种把微量 DNA 反复加倍放大的技术,几个小时就能把极少量的样本扩增到足以分析的数量。后者的影响远远越出实验室:**亲子鉴定、刑事侦查里的生物痕迹比对、传染病的核酸检测,底层用的都是这种「把一小段 DNA 反复复印」的思路**。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意",
+   "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>把一小段 DNA 反复对折加倍</text><rect x='40' y='60' width='16' height='26' rx='3' style='fill:var(--cinnabar);fill-opacity:0.85'/><text x='48' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>1 份</text><rect x='100' y='60' width='16' height='26' rx='3' style='fill:var(--cinnabar);fill-opacity:0.85'/><rect x='122' y='60' width='16' height='26' rx='3' style='fill:var(--cinnabar);fill-opacity:0.85'/><text x='119' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>2 份</text><rect x='180' y='60' width='11' height='26' rx='2' style='fill:var(--cinnabar);fill-opacity:0.85'/><rect x='195' y='60' width='11' height='26' rx='2' style='fill:var(--cinnabar);fill-opacity:0.85'/><rect x='210' y='60' width='11' height='26' rx='2' style='fill:var(--cinnabar);fill-opacity:0.85'/><rect x='225' y='60' width='11' height='26' rx='2' style='fill:var(--cinnabar);fill-opacity:0.85'/><text x='208' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>4 份</text><rect x='270' y='60' width='6' height='26' rx='2' style='fill:var(--cinnabar);fill-opacity:0.8'/><rect x='280' y='60' width='6' height='26' rx='2' style='fill:var(--cinnabar);fill-opacity:0.8'/><rect x='290' y='60' width='6' height='26' rx='2' style='fill:var(--cinnabar);fill-opacity:0.8'/><rect x='300' y='60' width='6' height='26' rx='2' style='fill:var(--cinnabar);fill-opacity:0.8'/><rect x='310' y='60' width='6' height='26' rx='2' style='fill:var(--cinnabar);fill-opacity:0.8'/><rect x='320' y='60' width='6' height='26' rx='2' style='fill:var(--cinnabar);fill-opacity:0.8'/><rect x='330' y='60' width='6' height='26' rx='2' style='fill:var(--cinnabar);fill-opacity:0.8'/><rect x='340' y='60' width='6' height='26' rx='2' style='fill:var(--cinnabar);fill-opacity:0.8'/><text x='308' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>8 份</text><text x='440' y='78' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>……三十轮之后</text><text x='440' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>数以亿计的拷贝</text><line x1='40' y1='134' x2='520' y2='134' style='stroke:var(--line);stroke-width:1'/><text x='280' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>一点点样本,就够拿去读、去比对、去检测</text><text x='280' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>亲子鉴定 · 刑侦痕迹比对 · 传染病核酸检测</text><text x='280' y='224' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>都建立在这套「反复复印」的思路上</text></svg>",
+   "caption": "指数级扩增是一项容易被忽略的基础技术:它把「样本太少」这个长期障碍,变成了几个小时就能解决的常规步骤。"
+  },
+  {
+   "type": "p",
+   "text": "顺便提一句这些工具的来处,它们几乎都是「借」的:定点剪切的剪刀来自细菌对付病毒的防御系统,倒抄的笔来自病毒自身的复制机制,后来第七章那把编辑工具同样来自细菌的免疫装置。**人类在生物技术上最擅长的事,不是发明,而是发现别的生物早已备好的工具并学会使用**。这一点也提示了基础研究的价值:当年研究细菌怎么抵抗病毒的人,并没打算发明生物技术产业;若当时有人要求他们先说清「这项研究有什么用」,后面半个世纪的医药进展多半就不会发生。"
+  },
+  {
+   "type": "p",
+   "text": "读与写同时成熟,带来一个必然的念头:既然能读,为什么不把人的全部 DNA 通读一遍?这就是第六章的人类基因组计划。但在那之前,还有一件更具体的事要做完——把某些致病基因一个个找出来。"
+  },
+  {
+   "type": "h2",
+   "text": "追猎一个基因:十余年,一个家族,一份两难"
+  },
+  {
+   "type": "p",
+   "text": "全书最动人的一段追猎,目标是亨廷顿病的致病基因。这是一种迟发的神经退行性疾病,通常在中年发病,逐渐夺走运动与认知能力,呈显性遗传——患者的每个子女有约一半的概率携带同一份变异。研究者的方法正是第二章那套连锁分析的放大版:找到一个患者众多的大家族,采集尽可能多的样本,看哪些遗传标记总与疾病一同出现,再一步步收窄区间。"
+  },
+  {
+   "type": "p",
+   "text": "据记载,这项工作的关键样本来自南美一个湖畔地区几个庞大的家族,研究团队年复一年地上门访问、绘制家系、采集血样,当地许多家庭为此付出了信任与耐心。**从确定大致区段到最终锁定那个基因,前后花了十余年**,1990 年代初才告成功。这段历史值得记住的不只是科学:它提醒人们,基因研究的原料从来不是抽象数据,而是一个个具体家庭愿意交出的隐私与希望。"
+  },
+  {
+   "type": "callout",
+   "tone": "warn",
+   "label": "一处两难",
+   "items": [
+    "基因一找到,一个残酷的选项立刻出现:高危家族的成年人现在可以做检测,提前知道自己是否携带。可当时(在很大程度上今天依然)并没有能阻止发病的疗法——**这是一种可预知却无法改变的命运**。",
+    "于是每个人都要面对一道没有正确答案的题:知道了,可以安排人生、决定要不要生育,也可能提前几十年活在阴影里;不知道,保留了希望,也保留了不确定。书中如实呈现了两种选择都有人做,也都有人后悔。**这类困境不能靠科学解决,只能靠陪伴与支持来承受;而一个成熟的医疗体系,应当保证「不想知道」也是一个被尊重的选项**——这正是遗传咨询作为一门专业存在的理由。"
+   ]
+  },
+  {
+   "type": "p",
+   "text": "紧接着被找到的另一类基因,把这道题变得更普遍。1990 年代,与乳腺癌、卵巢癌显著相关的易感基因被定位并克隆出来。**但它与亨廷顿病有一处根本不同:携带这类变异意味着风险显著升高,而不是必然发病**。于是问题从「知道与否」变成了更细的一层:得到一个「风险大幅升高」的结果之后,该做什么?加密监测?预防性手术?什么都不做?不同的人在同样的数字面前会做出完全不同、且都站得住的选择。**从「确定型」到「概率型」的这一步跨越,正是第六章要处理的核心难题——也是今天绝大多数基因检测报告的真实形态**。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照",
+   "svg": "<svg viewBox='0 0 560 280' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>一道没有正确答案的题</text><text x='280' y='52' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>可以检测,却没有能阻止发病的疗法</text><rect x='34' y='68' width='232' height='140' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><text x='150' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>选择去查</text><text x='150' y='120' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>可以安排人生与积蓄</text><text x='150' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>可以决定是否生育</text><text x='150' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>也可能提前数十年</text><text x='150' y='184' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>活在阴影里</text><rect x='294' y='68' width='232' height='140' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><text x='410' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>选择不查</text><text x='410' y='120' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>保留希望与如常的日子</text><text x='410' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>不必替一个未定的未来焦虑</text><text x='410' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>也要长期承受</text><text x='410' y='184' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>不确定的悬置</text><line x1='60' y1='228' x2='500' y2='228' style='stroke:var(--line);stroke-width:1'/><text x='280' y='254' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>两种选择都有人做,也都有人后悔</text><text x='280' y='274' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>这不是科学问题,而是需要陪伴与支持的人生问题</text></svg>",
+   "caption": "预测能力先于治疗能力到达,是遗传医学最典型的困境;它也说明为什么遗传咨询必须是一门独立的专业。"
+  },
+  {
+   "type": "pull",
+   "text": "技术给了人新的知情权,却常常给不出与之匹配的疗法。"
+  },
+  {
+   "type": "p",
+   "text": "这一章结束时,人类手里已经有了一整套本事:能定点剪切、能拼接、能让细胞替自己生产蛋白、能逐字读出序列、能把微量样本放大、能在家族里追猎一个致病基因。**「基因」不再只是知识对象,它成了原料、产品、专利和诊断项目**。下一步顺理成章:把整本书通读一遍。但正如第六章会讲的,读完之后最大的收获,恰恰是发现此前问的问题问错了——而在读完之前,没有人预料到这一点。**这也是科学最迷人的一点:最重要的收获常常不是预期中的那个答案,而是它顺手改掉的那个问题**。"
+  }
+ ]
+}

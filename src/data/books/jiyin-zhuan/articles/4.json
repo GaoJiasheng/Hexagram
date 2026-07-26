@@ -1,0 +1,134 @@
+{
+ "title": "双螺旋与密码:生命的信息怎样被读出来",
+ "subtitle": "从「嫌疑犯是 DNA 还是蛋白质」到一张被低估的衍射照片,再到一套所有生物共用的密码本",
+ "centralIdea": "基因有了位置与功能之后,只剩最后一个问题:它是什么材料做的、长什么形状?1940 年代一连串实验把嫌疑锁定在 DNA 上——尽管当时多数人更看好蛋白质,因为 DNA 只有四个字母,看起来太单调,装不下生命的复杂。1953 年双螺旋结构被提出,而这个结构本身就把答案写在脸上:两条链反向缠绕、碱基一一配对,一分开,每条都是重建另一条的模板——「怎么复制」与「长什么样」同时被解决。这段历史里有一处必须交代的公正问题:关键的衍射数据出自罗莎琳德·富兰克林之手,而她的贡献长期被低估。结构之后是「怎么读」:DNA 抄成 RNA、RNA 译成蛋白质,每三个碱基一个字,而这套密码本几乎为所有生物共用。至此基因从抽象符号变成一段可以逐字读出的文本——也正因为可读,它才第一次变得可改。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "到 1950 年前后,关于基因,人类已经知道不少:它坐在染色体上、线性排列、能被射线打坏、负责指挥制造酶。但有一个最基本的问题始终悬着——**它是什么做的**?这个问题不解决,前面所有知识都停在描述层面:你知道城里有居民、知道门牌号、知道他们在干什么活,却没见过他们的样子。这一章讲的就是「见到样子」的那一刻,以及紧随其后的十几年——人类不仅看清了这个分子的形状,还破译了它书写信息的规则。这也是全书节奏最快、最像侦探小说的一段,同时也是最需要一点公正感的一段——因为最漂亮的成果背后,有一份长期没被算清的功劳账。"
+  },
+  {
+   "type": "h2",
+   "text": "嫌疑犯换人:为什么大家一开始都赌蛋白质"
+  },
+  {
+   "type": "p",
+   "text": "线索最早来自 1920 年代末的一个细菌实验:研究者发现,把一种致病细菌杀死后,它的某种物质仍能被另一种无害细菌吸收,并让后者获得致病的特性——**「性状」竟然可以像物件一样从一个细胞转移到另一个细胞**。这意味着承担遗传的东西是一种可以提纯的化学物质,而不是某种玄妙的生命力。剩下的问题是:是哪一种物质?"
+  },
+  {
+   "type": "p",
+   "text": "1940 年代中期,有研究团队把这种「转化因子」一步步提纯、去掉杂质、逐项检验,结论指向 DNA。但学界的反应相当冷淡,原因很实在:**DNA 只有四种碱基,看上去太单调了**——一门只有四个字母的语言,怎么可能写下从眼睛的颜色到大脑构造的全部说明?这个疑虑今天看来很好笑——计算机只用两个字母就装下了整个数字世界——但在信息论尚未普及的年代,它相当有说服力。蛋白质有二十种氨基酸、结构千变万化,直觉上更像是能承载复杂信息的那一方。直到 1950 年代初,用病毒做的实验进一步确认:进入细菌并决定后代性状的是 DNA,不是蛋白质外壳。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照",
+   "svg": "<svg viewBox='0 0 560 280' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>当年的直觉:为什么大家赌蛋白质</text><rect x='34' y='48' width='232' height='150' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><text x='150' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>蛋白质</text><text x='150' y='102' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>二十种氨基酸</text><text x='150' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>形态千变万化</text><text x='150' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>「看起来装得下复杂」</text><text x='150' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>结果:不是它</text><rect x='294' y='48' width='232' height='150' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.7'/><text x='410' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>DNA</text><text x='410' y='102' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>只有四个字母</text><text x='410' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>被嫌太单调</text><text x='410' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>却能排出无穷长的序列</text><text x='410' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar)'>结果:就是它</text><line x1='60' y1='220' x2='500' y2='220' style='stroke:var(--line);stroke-width:1'/><text x='280' y='248' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>二进制只有两个字母,却写下了整个数字世界</text><text x='280' y='272' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>信息量不取决于字母有多少种,而取决于能排多长、排法有多少</text></svg>",
+   "caption": "「四个字母太少」是一次典型的直觉误判:决定信息容量的是序列的长度与排列方式,不是字母表的大小。"
+  },
+  {
+   "type": "h2",
+   "text": "结构竞赛:两条链、四个字母、一个 1953 年的春天"
+  },
+  {
+   "type": "p",
+   "text": "嫌疑犯确定之后,竞赛的焦点变成结构。当时至少有三路人在追:剑桥的沃森与克里克,主要靠搭建实物模型加推理;伦敦国王学院的威尔金斯与富兰克林,靠 X 射线衍射拍摄 DNA 晶体的图样;还有加州那位刚在蛋白质结构上大获成功的化学家,他也提出过一个 DNA 模型,但方向错了。**这说明这个问题在当时并不显然:世界上最好的化学头脑之一也曾走错**。"
+  },
+  {
+   "type": "p",
+   "text": "拼图的关键碎片有几块。一块来自化学分析:有人统计发现,任何来源的 DNA 里,A 的量总是约等于 T,G 的量总是约等于 C。这个等量关系当时无人能解释,后来才知道它正是配对的直接后果。另一块来自衍射照片:X 射线穿过 DNA 晶体后留下的图样,能告诉人这个分子是螺旋、有几条链、螺距多大。1953 年,沃森与克里克把这些线索凑成一个模型:两条链反向缠绕成双螺旋,碱基在内侧成对,A 只配 T,G 只配 C。"
+  },
+  {
+   "type": "p",
+   "text": "这个结构最动人的地方,是它把「怎么复制」一并解释了。既然 A 必配 T、G 必配 C,那么两条链的信息是彼此的镜像:**只要把两条链拉开,每一条都足以指导重建另一条**。遗传的复制之谜,在结构被看清的那一刻自动落地。他们在论文里那句克制的补充,后来成了科学史上最著名的低调表述之一。"
+  },
+  {
+   "type": "quote",
+   "original": "我们注意到,我们所假定的这种配对方式,立即暗示了遗传物质可能的复制机制。",
+   "translation": "这是 1953 年那篇双螺旋论文里的一句话。大白话就是:我们不只画出了它的样子,还顺手解释了它怎么自我复印——一句轻描淡写,抵得上整篇论文。几年后的实验证实,复制时两条链确实各自作为模板,新分子一半是旧的、一半是新的。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>结构即答案:拉开就是两份模板</text><text x='120' y='58' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>配对规则</text><line x1='70' y1='76' x2='70' y2='196' style='stroke:var(--ink-soft);stroke-width:2.5'/><line x1='170' y1='76' x2='170' y2='196' style='stroke:var(--ink-soft);stroke-width:2.5'/><line x1='70' y1='96' x2='170' y2='96' style='stroke:var(--cinnabar);stroke-width:1.6'/><text x='120' y='91' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar)'>A—T</text><line x1='70' y1='126' x2='170' y2='126' style='stroke:var(--cinnabar);stroke-width:1.6'/><text x='120' y='121' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar)'>G—C</text><line x1='70' y1='156' x2='170' y2='156' style='stroke:var(--cinnabar);stroke-width:1.6'/><text x='120' y='151' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar)'>T—A</text><line x1='70' y1='186' x2='170' y2='186' style='stroke:var(--cinnabar);stroke-width:1.6'/><text x='120' y='181' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar)'>C—G</text><path d='M196,136 L240,136' style='stroke:var(--ink-soft);stroke-width:1.5'/><path d='M232,131 L242,136 L232,141' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='218' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>拉开</text><line x1='290' y1='76' x2='290' y2='196' style='stroke:var(--ink-soft);stroke-width:2.5'/><line x1='290' y1='96' x2='330' y2='96' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:3 3'/><line x1='290' y1='126' x2='330' y2='126' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:3 3'/><line x1='290' y1='156' x2='330' y2='156' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:3 3'/><line x1='290' y1='186' x2='330' y2='186' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:3 3'/><line x1='330' y1='76' x2='330' y2='196' style='stroke:var(--cinnabar);stroke-width:2;stroke-dasharray:5 4'/><text x='310' y='218' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>旧链 + 新链</text><line x1='420' y1='76' x2='420' y2='196' style='stroke:var(--cinnabar);stroke-width:2;stroke-dasharray:5 4'/><line x1='420' y1='96' x2='460' y2='96' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:3 3'/><line x1='420' y1='126' x2='460' y2='126' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:3 3'/><line x1='420' y1='156' x2='460' y2='156' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:3 3'/><line x1='420' y1='186' x2='460' y2='186' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:3 3'/><line x1='460' y1='76' x2='460' y2='196' style='stroke:var(--ink-soft);stroke-width:2.5'/><text x='440' y='218' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>新链 + 旧链</text><line x1='60' y1='244' x2='500' y2='244' style='stroke:var(--line);stroke-width:1'/><text x='280' y='272' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>一条链的信息 = 另一条链的镜像</text><text x='280' y='292' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>所以「形状」与「复制机制」是同一个发现的两面</text></svg>",
+   "caption": "双螺旋之所以是伟大的答案,因为它同时回答了两个问题:基因长什么样,以及它凭什么能一代代抄下去。"
+  },
+  {
+   "type": "h2",
+   "text": "一份被低估的贡献:照片背后的人"
+  },
+  {
+   "type": "p",
+   "text": "这段历史里有一处不能省略。当时在伦敦从事 X 射线衍射研究的罗莎琳德·富兰克林,拍到了一张质量极高的 DNA 衍射照片,那是判断双螺旋结构最关键的实验证据之一;她本人也已从数据中推进到相当接近的结论。问题在于,**这张照片是在她不知情的情况下被展示给沃森的**。她后来转向其他研究,1958 年因病早逝,年仅三十七岁;四年后的诺贝尔奖颁给了三位在世的男性研究者,而该奖项按规则不授予已故者。"
+  },
+  {
+   "type": "p",
+   "text": "穆克吉写这一段并不含糊其辞:双螺旋不是两位天才在真空里的灵光一闪,而是**踩在一批实验者的数据之上,而其中一份关键数据的取得者,没有得到应有的位置**。这里有当时科研界对女性研究者的普遍轻视,也有数据归属与学术礼节上的实际过失。今天回看这件事的意义不在追责,而在提醒:**科学的荣誉分配是一套人造制度,它会出错,而纠正它需要有人反复讲述这段事实**。今天不少教材已把她的名字与那张照片一并写进去,这就是反复讲述的结果。"
+  },
+  {
+   "type": "p",
+   "text": "顺带说一件与科学同样重要的事:后来那本由发现者之一写下的畅销回忆录,以轻快甚至轻慢的笔调描写了这段竞赛,其中对富兰克林的描述引起持续的批评,反倒让更多读者去追问真实情况如何。**一段历史被讲述的方式,会改变后人对它的判断**——这也是为什么在讲科学史时,谁被写进去、以什么口吻写,不是文学问题,而是事实问题。"
+  },
+  {
+   "type": "h2",
+   "text": "从结构到密码:每三个字母一个词"
+  },
+  {
+   "type": "p",
+   "text": "结构解开之后的十几年,主题变成「怎么读」。大致的流程后来被称作中心法则:DNA 待在细胞核里当原本,先被抄成 RNA 这样的「抄件」送出去,再由细胞里的机器照着抄件把氨基酸一个个接起来,做成蛋白质。**打个比方,DNA 是不外借的馆藏原本,RNA 是复印件,蛋白质是照着复印件做出来的成品**。"
+  },
+  {
+   "type": "p",
+   "text": "密码本也被一步步破译:每三个碱基为一组,对应一种氨基酸,还有专门表示「开始」和「停止」的组合。这套密码有两个耐人寻味的性质。一是**冗余**:多种三联体可以对应同一种氨基酸,所以有些位置的突变换了字母却不换氨基酸,后果为零——这给生命留了一层缓冲。二是**通用**:从细菌到人,几乎所有生物用的是同一套密码本。这件事的分量常被低估——**它是所有现存生物拥有共同祖先的最有力证据之一**,也正因为通用,才可能把人的基因搬进细菌让它照着造蛋白,那正是下一章的技术前提。"
+  },
+  {
+   "type": "figure",
+   "ftype": "流程图",
+   "svg": "<svg viewBox='0 0 560 270' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>三个字母一个词:密码本怎么用</text><rect x='40' y='50' width='480' height='40' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><text x='280' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink);letter-spacing:2'>A U G · G C C · A A A · U C U · U A A</text><text x='72' y='112' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar)'>起始</text><text x='168' y='112' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>氨基酸</text><text x='264' y='112' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>氨基酸</text><text x='360' y='112' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>氨基酸</text><text x='452' y='112' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar)'>停止</text><path d='M40,124 L520,124' style='stroke:var(--line);stroke-width:1'/><text x='280' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>读法有两条要紧的性质</text><rect x='60' y='166' width='200' height='58' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><text x='160' y='188' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>冗余</text><text x='160' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>多组密码对应同一氨基酸</text><rect x='300' y='166' width='200' height='58' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='400' y='188' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar)'>通用</text><text x='400' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>细菌到人几乎共用一套</text><text x='280' y='254' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>冗余给突变留了缓冲;通用暗示所有现存生物有共同祖先</text></svg>",
+   "caption": "密码本的冗余与通用,一个解释了为什么很多突变无害,一个解释了为什么基因可以在物种之间搬家。"
+  },
+  {
+   "type": "p",
+   "text": "有了密码本,「突变」这个词也第一次有了确切含义:它就是文本里的错字——某个字母被换掉、漏掉或多出来。后果大小取决于错在哪:落在冗余位置上可能毫无影响;落在关键位置上,可能只换掉蛋白质里的一个氨基酸,却足以改变整个分子的形状。有一种著名的血液病正是这样:**一个字母之差,让红细胞在缺氧时变形,患者一生受苦**;而有意思的是,只带一份这种变异的人在某些疟疾流行地区反而有生存上的好处——**同一个「错字」是好是坏,要看它落在什么环境里**。"
+  },
+  {
+   "type": "p",
+   "text": "错字的来源也变得清楚了:复制时偶尔出错、辐射、某些化学物质。这带来一个必须并置的双面认识:突变是许多疾病的源头,同时也是演化唯一的原材料——没有错字,就没有变异可供自然选择,生命将停在原地。**因此「消灭一切突变」既不可能,也不可取**。这一点在第三章那条暗线上尤其要紧:优生学的想象是「把坏基因清干净」,而分子生物学的实际图景是,好坏取决于环境与组合,清单本身就不成立。"
+  },
+  {
+   "type": "h2",
+   "text": "基因不是一直在响:它有开关"
+  },
+  {
+   "type": "p",
+   "text": "同一时期还有一个发现,后来变得越来越重要:**基因平时是关着的**。研究者在细菌里看到,某些基因只有在特定营养出现时才被打开,平时被一个调控元件按住。这解释了一个此前难以理解的事实:一个人身上所有细胞带的基因几乎完全一样,可肝细胞和神经细胞长得、干的活完全不同——**区别不在带了哪些基因,而在哪些被打开、哪些被关掉**。"
+  },
+  {
+   "type": "p",
+   "text": "这个视角在几十年后成了理解发育、癌症乃至细胞重编程的钥匙,也从内部松动了「基因即命运」的说法:**同一份序列,读法不同,结局就不同**。第六章会讲到,环境经历甚至能改变基因被读取的方式而不改动序列本身,这层「基因之上的开关」正是那里的主题。"
+  },
+  {
+   "type": "p",
+   "text": "还有一件事在这一章之后逐渐显露:**「基因」这个定义刚变精确,就又开始变模糊**。人们发现,高等生物的一个基因在 DNA 上往往不是连成一段的,中间夹着不参与编码的插入片段,抄成 RNA 之后要先把它们剪掉、再把剩下的接起来;而剪接的方式可以不止一种,于是同一段 DNA 能产出好几种不同的蛋白质。这一下,「一个基因一种酶」那句朗朗上口的口号就不够用了。**科学的常态正是如此:每一次把概念定清楚,新的观察就会把它的边界再撑开一点**——这也是为什么第六章读完整个基因组后,人们反而更难简单回答「人有多少个基因」。"
+  },
+  {
+   "type": "callout",
+   "tone": "note",
+   "label": "放到今天",
+   "items": [
+    "近年广为人知的 mRNA 疫苗,原理正是这条法则的直接应用:它送进人体的不是病毒,也不是蛋白质,而是一段「抄件」——细胞读到这段抄件,自己照着造出一小段病毒表面的蛋白,免疫系统认识了这个形状,便有了应对准备;抄件本身不进细胞核、不改动你的基因组,很快就被降解。一门 1960 年代破译出来的读写规则,半个世纪后变成了几十亿人打进胳膊里的东西——这是基础科学「慢变量」性质的一个极好例证。"
+   ]
+  },
+  {
+   "type": "p",
+   "text": "把这一章的收获摆在一起,会发现它们其实是同一件事的不同侧面:**信息**。DNA 是存储介质,碱基配对是校验与复制机制,密码本是编码规则,调控元件是执行时序。二十世纪中期,「信息」这个概念正同时在通信、计算与生物学里成为核心词,而生命被看成一套可读写的编码,这个视角的威力在此后七十年里持续释放——从测序到基因编辑,从疫苗到癌症分型,全都建立在「它是可读的文本」这一前提上。**这也是全书开篇把基因与原子、字节并列的理由**。"
+  },
+  {
+   "type": "pull",
+   "text": "基因从一个记账符号,变成了一段可以逐字读出的文本;而凡能读的东西,迟早会有人想改。"
+  },
+  {
+   "type": "p",
+   "text": "这一章结束时,分子生物学作为一门学科基本成型了:基因是 DNA 上的一段序列,通过 RNA 指导蛋白质的合成,依靠碱基配对精确复制,受调控元件控制何时开启。所有这些知识合起来,产生了一个几乎无法回避的后果——**既然它是一段可以逐字读出的文本,原则上就可以被逐字改写**。剪开、换掉、接上、放进另一个生物体里,这些动作在原理上不再是幻想,只差工具。工具将在 1970 年代凑齐,那是第五章;而工具一凑齐,人类就要面对一个更难的问题:改了之后,谁来负责?这个问题从此再没离开过遗传学,直到今天仍是这门学科最沉的那一头。"
+  }
+ ]
+}

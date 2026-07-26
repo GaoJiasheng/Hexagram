@@ -1,0 +1,141 @@
+{
+ "title": "基因在哪里:果蝇把抽象概念钉在了染色体上",
+ "subtitle": "从一只白眼果蝇到人类第一张基因图谱——一个记账符号如何拿到了自己的门牌号",
+ "centralIdea": "1909 年「基因」这个词诞生时,它没有形状、没有位置、没有化学成分,只是一个「必须存在的东西」。这一章讲的是它如何被落实:细胞学家早已看到染色体在生殖细胞形成时成对分开、各去一方,行为与孟德尔的因子惊人一致;哥伦比亚大学一间闷热的「蝇室」用一只白眼果蝇坐实了这个猜想——决定眼色的基因就坐在决定性别的那条染色体上。更漂亮的是接下来的推理:同一条染色体上的基因倾向于一起遗传,而离得越远越容易被交换打断,于是统计「一起遗传的比例」就能算出相对距离,人类由此画出了第一张基因图谱。随后 X 射线被证明能大幅提高突变率(基因是能被物理手段打坏的实体),「一个基因对应一种酶」又把基因与具体的化学功能挂上钩。到这一步,基因有了位置、有了排列、有了功能——只差最后一样:它的物理形状。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "假设有人告诉你,城里住着一群从不露面的居民,他们决定了这座城的一切运作方式:哪条街热闹、哪栋楼漏水、谁家的花开得艳。你相信他们存在,因为一切迹象都指向他们;但你不知道他们长什么样,更不知道他们住在哪儿。1909 年之后的遗传学就处在这个境地:「基因」这个词已经有了,规律已经能算,可它到底是什么、藏在身体的什么地方,一无所知。给这群隐形居民挂上门牌号的地方,是哥伦比亚大学一间狭小闷热、堆满牛奶瓶和烂香蕉的房间,人称「蝇室」。"
+  },
+  {
+   "type": "h2",
+   "text": "嫌疑犯:显微镜下那些成对分开的丝状体"
+  },
+  {
+   "type": "p",
+   "text": "线索其实早就有了,只是来自另一个行当。十九世纪末的细胞学家用显微镜观察细胞分裂,看到细胞核里有一批能被染料染上色的丝状结构,因此叫染色体。他们注意到一件极耐人寻味的事:染色体成对存在,在形成生殖细胞时,每一对会分开,各去一个配子;受精时,来自父方与母方的两套又重新配成对。**这个行为和孟德尔的因子简直是同一套动作:成对存在、分开传递、重新配对**。二十世纪初,有研究者据此明确提出:孟德尔的因子,就在染色体上。"
+  },
+  {
+   "type": "p",
+   "text": "这在当时只是一个漂亮的类比,证据并不硬。有人反对得也有道理:染色体数目很少,基因却显然很多,一条染色体上要塞多少东西?更麻烦的是,那时根本没有办法把某一个具体性状指认到某一条具体染色体上。**要把类比变成事实,需要一个能被反复繁殖、性状清楚、还能出现明显异常个体的实验对象**。这个要求听起来平常,却是整章的关键:科学里许多久拖不决的争论,最后都不是靠更聪明的辩论解决的,而是靠有人找到了一种合适的材料。"
+  },
+  {
+   "type": "p",
+   "text": "不过那个「染色体太少」的反对意见,其实反而指向了正确答案:既然性状成千上万而染色体只有几对,那就说明**一条染色体上必定串着许许多多基因**。这个推论后来被证实,并且带来一个重要后果:同一条染色体上的邻居们会倾向于一起被传下去,不再各自独立发牌。孟德尔当年之所以没撞上这个例外,一部分原因是他所选的那几对性状恰好分布得比较分散——**运气也是他实验成功的一部分**。而这个例外一旦被发现,就成了下一节那把量距离的尺子。"
+  },
+  {
+   "type": "h2",
+   "text": "蝇室:一只白眼果蝇改变了一切"
+  },
+  {
+   "type": "p",
+   "text": "托马斯·亨特·摩尔根选中了果蝇,理由极其现实:便宜(烂水果就能养)、繁殖快(十几天一代)、个头小(一屋子能养几万只)。有意思的是,他起初对染色体学说并不热心,甚至对孟德尔式的解释持保留态度——他是被自己的数据说服的,这一点让这段历史格外可信。**一个原本的怀疑者被自己的实验逼着改变立场,这比任何拥护者的宣言都更有说服力**。"
+  },
+  {
+   "type": "p",
+   "text": "转折点是一只白眼雄蝇。在成千上万只红眼果蝇里,出现了这么一只异常个体。摩尔根让它繁殖,追踪后代,发现一件反常的事:白眼这个性状的传递,总是和性别纠缠在一起,白眼几乎只出现在雄蝇身上。若基因与染色体无关,眼色和性别应当各自独立发牌,不该这样牵手同行。唯一简洁的解释是:**决定眼色的那个基因,就坐在决定性别的那条染色体上,所以它只能跟着这条染色体一起走**。抽象的因子第一次有了一个具体的落脚点。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>白眼为什么只出现在雄蝇身上</text><text x='280' y='54' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>雌性带两条同型性染色体,雄性只带一条</text><rect x='70' y='76' width='190' height='120' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><text x='165' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>雌蝇</text><rect x='104' y='112' width='16' height='54' rx='4' style='fill:var(--ink-soft);fill-opacity:0.35'/><rect x='140' y='112' width='16' height='54' rx='4' style='fill:var(--ink-soft);fill-opacity:0.35'/><circle cx='112' cy='139' r='4.5' style='fill:var(--cinnabar)'/><text x='196' y='134' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>一条带白眼因子</text><text x='196' y='152' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>另一条正常 → 被盖住</text><text x='165' y='186' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>外观:红眼(隐藏携带)</text><rect x='300' y='76' width='190' height='120' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.6'/><text x='395' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>雄蝇</text><rect x='334' y='112' width='16' height='54' rx='4' style='fill:var(--ink-soft);fill-opacity:0.35'/><path d='M370,126 L386,126 L386,152 L370,152' style='fill:none;stroke:var(--ink-faint);stroke-width:1.4;stroke-dasharray:3 3'/><circle cx='342' cy='139' r='4.5' style='fill:var(--cinnabar)'/><text x='404' y='134' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>只有一条,无从遮盖</text><text x='404' y='152' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>带上就一定表现出来</text><text x='395' y='186' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar)'>外观:白眼</text><line x1='60' y1='218' x2='500' y2='218' style='stroke:var(--line);stroke-width:1'/><text x='280' y='246' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>性状与性别绑在一起,只有一种解释:</text><text x='280' y='274' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>这个基因就坐在那条性染色体上</text></svg>",
+   "caption": "性连锁是把基因钉在染色体上的第一枚钉子:性状的传递方式泄露了它所在的位置。"
+  },
+  {
+   "type": "p",
+   "text": "蝇室的日常并不浪漫:养蝇、麻醉、在放大镜下一只只挑出异常个体、按性状分类、记录后代数目,循环往复。摩尔根带着一批学生把这件枯燥的事做了十几年,陆续找到了几十种可稳定遗传的突变体——翅膀短的、身体黑的、眼色变异的,每一种都是一枚可用的路标。**科学史上很多突破就是这样:一个足够简单的实验对象,加上足够长时间的笨功夫**。这项工作后来为摩尔根赢得了诺贝尔奖,也让果蝇成为此后几代生物学家共用的实验动物——到今天,实验室里那些嗡嗡作响的小瓶子,仍是发育、神经、衰老研究的常规起点。"
+  },
+  {
+   "type": "h2",
+   "text": "连锁与交换:距离是怎么算出来的"
+  },
+  {
+   "type": "p",
+   "text": "接下来的推理是这一章最漂亮的部分。如果两个基因坐在同一条染色体上,它们就会倾向于一起遗传,这叫连锁——孟德尔说的「各性状独立发牌」在这里就出现了例外。但连锁不是铁板一块:染色体在形成生殖细胞时会彼此交换片段,一交换,原本在一起的两个基因就可能被分开。关键在于:**交换发生的位置大体是随机的,因此两个基因离得越远,中间被剪开的机会就越大**。"
+  },
+  {
+   "type": "p",
+   "text": "反过来用,这就成了一把尺子。统计大量后代里「这两个性状没有一起传下来」的比例,比例越高,说明两个基因离得越远;比例越低,说明它们挨得越近。摩尔根的学生斯特蒂文特把这个思路推到底,用一批性状的重组比例排出了它们在染色体上的先后次序与相对距离,画出了人类历史上第一张基因图谱。**基因从此不只是「在染色体上」,而是「在染色体上的第几号位置」**——它像珠子一样,线性地串在一条线上。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意",
+   "svg": "<svg viewBox='0 0 560 260' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>用「被拆开的概率」当尺子量距离</text><line x1='60' y1='86' x2='500' y2='86' style='stroke:var(--ink-soft);stroke-width:3'/><circle cx='110' cy='86' r='7' style='fill:var(--cinnabar)'/><text x='110' y='68' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>甲</text><circle cx='170' cy='86' r='7' style='fill:var(--cinnabar)'/><text x='170' y='68' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>乙</text><circle cx='430' cy='86' r='7' style='fill:var(--cinnabar)'/><text x='430' y='68' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>丙</text><path d='M110,102 L170,102' style='stroke:var(--ink-faint);stroke-width:1'/><text x='140' y='120' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>很近</text><text x='140' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>几乎总是一起走</text><path d='M170,102 L430,102' style='stroke:var(--ink-faint);stroke-width:1'/><text x='300' y='120' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>很远</text><text x='300' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>常被交换拆开</text><path d='M250,60 L250,112' style='stroke:var(--cinnabar);stroke-width:1.4;stroke-dasharray:4 3'/><text x='250' y='48' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar)'>剪刀落点随机</text><line x1='60' y1='170' x2='500' y2='170' style='stroke:var(--line);stroke-width:1'/><text x='280' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>拆开的比例 = 相对距离</text><text x='280' y='224' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>只靠数后代的性状组合,就能画出一张地图</text><text x='280' y='250' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>这套方法后来放大到人类家族尺度,用于追猎致病基因</text></svg>",
+   "caption": "第一张基因图谱不靠任何成像技术,全靠统计——把「多久被拆开一次」换算成「隔多远」。"
+  },
+  {
+   "type": "p",
+   "text": "打个比方:想象一条铁路线上排着若干车站,有人随机在某处剪断这条线。若两个车站紧挨着,剪刀落在它们中间的机会很小,它们几乎总是留在同一段上;若两站隔着大半条线,被分到两段的机会就大得多。你完全看不见这条线,也不知道站在哪儿,但只要统计足够多次「哪两个站被分开了」,就能把整条线的站序和间距还原出来。**这是一次纯粹靠间接证据完成的测绘——不用看见,只需数清**。"
+  },
+  {
+   "type": "callout",
+   "tone": "note",
+   "label": "放到今天",
+   "items": [
+    "这套逻辑至今在用。今天说的「某个致病基因定位在几号染色体的某个区段」,方法上就是摩尔根这一路的直系后代:找到一个多人患病的大家族,看哪些遗传标记总是与疾病一同出现,再一步步收窄范围。第五、六章里亨廷顿病基因那场长达十余年的追猎,用的正是放大到人类尺度的连锁分析——只不过样本从牛奶瓶里的果蝇,换成了一个个愿意献出血样的家庭。"
+   ]
+  },
+  {
+   "type": "h2",
+   "text": "基因可以被打坏:X 射线带来的第一次不安"
+  },
+  {
+   "type": "p",
+   "text": "蝇室最早的困难之一是等突变——异常个体是自然出现的,可遇不可求。1920 年代,摩尔根的学生穆勒发现,用 X 射线照射果蝇,能把突变率提高许多倍。这项工作有两重意义。第一重是技术上的:研究者从此不必守着运气,可以主动制造材料。第二重要紧得多——**如果一束射线能改变基因,那么基因必定是一个物质实体,而不是某种抽象的原则**。"
+  },
+  {
+   "type": "p",
+   "text": "这里也埋下了全书的第一处不安。既然基因能被物理手段改变,那么「改造遗传」在原理上就不再是空话了。穆勒本人后来对遗传与社会问题有过许多公开主张,而那个年代关于「改良人类」的言论正在四处流行——**关于这条线怎样一路滑向强制绝育与更可怕的地方,是下一章的内容**。这里只需记住:基因可以被打坏这件事,在一九二○年代就已经被证实了,比人类学会看清它的形状早了整整三十年。"
+  },
+  {
+   "type": "h2",
+   "text": "一个基因,一种酶:它究竟在干什么活"
+  },
+  {
+   "type": "p",
+   "text": "位置有了,还差功能。1940 年代,两位研究者用一种霉菌做了一系列漂亮的实验:先用射线制造突变体,再一个个测试它们缺了什么营养才活不下去。结果发现,每一个突变都对应着某一条代谢链上某一步的失效,而每一步由一种酶负责。结论顺势而出:**一个基因,负责指挥制造一种酶**。"
+  },
+  {
+   "type": "p",
+   "text": "这句话今天知道并不完全准确(后来发现一个基因可以产生多种产物,许多性状由多个基因共同参与),但在当时它是决定性的一步:基因不再只是一个坐标,它成了一份具体的工作指令。**基因与身体之间那段黑箱,第一次被撬开一条缝:基因 → 酶 → 化学反应 → 性状**。也正因为如此,后面那个问题变得再也躲不开了——一份能被复制、能被打坏、能指挥造出蛋白质的指令,得是什么材料做的?"
+  },
+  {
+   "type": "p",
+   "text": "这一步在临床上的分量,可以用一件今天极常规的事来体会:很多地方的新生儿会做足跟血筛查,其中一项查的是一种氨基酸代谢病——因为某个酶失效,一种氨基酸在体内堆积,若不及早干预会损伤发育中的大脑;而只要及早发现并调整饮食结构,孩子可以正常长大。**这套「基因缺陷 → 酶失效 → 代谢物堆积 → 症状」的因果链,正是「一个基因一种酶」这句话的临床版**。它也顺带说明一件重要的事:知道病因在基因上,不等于只能束手无策——干预可以发生在链条的任何一环,未必非要动基因本身。"
+  },
+  {
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "**它有位置**:坐在染色体上,而且是线性排列,像珠子串在一条线上。",
+    "**它可以定位**:靠统计「一起遗传的比例」就能算出彼此的相对距离,画成图谱。",
+    "**它是实体**:能被 X 射线改变,说明是物质,不是抽象原则。",
+    "**它有工作**:指挥制造酶,通过化学反应影响性状。",
+    "**它还缺一样**:形状与化学身份——这是第四章要解决的最后一块。"
+   ]
+  },
+  {
+   "type": "quote",
+   "original": "基因像珠子一样,串在染色体这根线上。",
+   "translation": "这是对蝇室时代那个经典模型的概括,而非逐字引用。它在当时极为有用——把抽象的因子变成可以排序、可以量距的实体;它也终将被修正:后来发现基因在 DNA 上并非一颗颗整齐排开,中间夹着不编码的片段,还有大量控制开关的区域。**好模型的标志不是永远正确,而是让人得以往下走一步。**"
+  },
+  {
+   "type": "pull",
+   "text": "三十年里,基因从一个记账符号,变成了一个有门牌号、会干活的实体。"
+  },
+  {
+   "type": "p",
+   "text": "顺便说一句蝇室留下的另一份遗产,和知识无关,和风气有关:那间屋子挤、吵、闷,学生与老师混在一起争论,材料与品系互相赠送,谁的想法好就用谁的。果蝇也因此成了几代生物学家共用的模式生物——一种材料一旦被许多人共用,积累就会变成复利。**这种开放协作的实验室文化,后来被反复视为现代生物学的一种原型**。相比之下,第四章那场围绕双螺旋的竞赛就没这么厚道:数据的归属与荣誉的分配,在那里会成为一个至今仍被讨论的问题。"
+  },
+  {
+   "type": "p",
+   "text": "回到那个比方:孟德尔证明了城里确实住着居民,摩尔根这一路把街道画出来、给每户挂上门牌。有了门牌号,后面的一切才成为可能——要修哪一户的水管,总得先知道它在第几条街第几号。今天医学上说的「定位到某个基因」就是查门牌;第五章之后的「改写」,则是拿着门牌号上门施工。**没有这张地图,一切精确操作都无从谈起**。而这一章最该带走的一句话或许是:整张地图是在完全看不见目标的情况下画出来的——研究者手里只有一堆后代的性状统计,却据此推出了看不见的东西的排列次序。**在证据不足的地方能推得又远又准,靠的不是想象力,而是设计得极干净的实验加上肯数的耐心**。"
+  },
+  {
+   "type": "figure",
+   "ftype": "时间线",
+   "svg": "<svg viewBox='0 0 560 220' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>给一个符号找肉身:四步落实</text><line x1='60' y1='104' x2='510' y2='104' style='stroke:var(--ink-faint);stroke-width:1.2'/><circle cx='105' cy='104' r='5' style='fill:var(--ink-soft)'/><text x='105' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>1900年代初</text><text x='105' y='130' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>染色体成为</text><text x='105' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>嫌疑对象</text><circle cx='235' cy='104' r='6' style='fill:var(--cinnabar)'/><text x='235' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar)'>1910年前后</text><text x='235' y='130' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>白眼果蝇:</text><text x='235' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>性连锁坐实位置</text><circle cx='360' cy='104' r='5' style='fill:var(--ink)'/><text x='360' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>1910年代</text><text x='360' y='130' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>第一张</text><text x='360' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>基因图谱</text><circle cx='480' cy='104' r='5' style='fill:var(--ink-soft)'/><text x='480' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>1920—40年代</text><text x='480' y='130' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>可被射线改变</text><text x='480' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>一个基因一种酶</text><text x='280' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>还差最后一样:它是什么材料做的,长什么形状</text><text x='280' y='212' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>这个问题的答案,要等到 1953 年那个春天</text></svg>",
+   "caption": "四十年,四步落实:位置、坐标、实体、功能。剩下的最后一步——形状——恰好也是最著名的一步。"
+  }
+ ]
+}

@@ -1,0 +1,156 @@
+{
+ "title": "编辑生命:「能做」与「该做」之间那条线",
+ "subtitle": "从第一例基因治疗到基因编辑时代——一次死亡带来的十年停摆,三条苛刻的门槛,以及谁有资格定义「缺陷」",
+ "centralIdea": "既然能读、能改,自然想到治病。1990 年代初,第一批基因治疗尝试在一种严重的先天免疫缺陷病上取得鼓舞人心的效果;但 1999 年一名年轻志愿者在试验中死亡,让整个领域几乎停摆十年,后来的复兴靠的是把工程做扎实。2010 年代,一套源自细菌免疫机制的工具让精确编辑变得便宜好用,于是一个原本遥远的问题推到眼前:改一个人的体细胞,和改一个胚胎,完全不是同一件事——后者会写进这个人的每一个细胞并传给后代,而被改动的人从未也不可能表示同意。书中给出的不是简单的赞成或反对,而是一组苛刻的门槛:痛苦极其严重、基因与后果的关联极其确定、干预确实合理且无更好替代,才有讨论动手的余地。门槛之所以这么高,是因为第三章的历史摆在那里:一旦「什么算缺陷」交给市场偏好或一句「为孩子好」去定义,筛选就会以自愿的形式回来。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "把前六章连起来,故事的走向几乎是注定的:人类知道了基因是什么、在哪里、怎么读、怎么改,那么下一步一定会有人问——能不能把有病的那一段修好?这一章讲的就是这个念头如何变成临床试验、如何撞上一次死亡、如何在十年沉寂后重新站起来,以及当工具变得便宜好用之后,人类第一次真正面对那道自己给自己划的线:**技术上能做的事,哪些是该做的**?这也是全书的收尾,穆克吉在这里把镜头从实验室拉回自己的家族——因为所有这些抽象的决定,最终都要由一个个具体的家庭在深夜里做出——伦理讨论听起来遥远,落地时永远是某个人在诊室里签一个名字。"
+  },
+  {
+   "type": "h2",
+   "text": "第一次尝试,和一次让整个领域停摆的死亡"
+  },
+  {
+   "type": "p",
+   "text": "1990 年代初,基因治疗的第一批临床尝试展开。最著名的一例针对一种严重的先天免疫缺陷:因为某个酶的基因失效,患者的免疫系统几乎无法工作,一场普通感染就可能致命。思路直截了当——**把正常版本的基因导入患者的细胞,让它们自己造出缺失的酶**。结果令人鼓舞,这一路后来也确实发展出了可用的疗法。那几年,舆论一片乐观,「基因治疗将治愈一切遗传病」的说法四处流传,几乎没人愿意提醒一句慢一点。"
+  },
+  {
+   "type": "p",
+   "text": "1999 年,一名参加基因治疗试验的年轻志愿者在治疗后死亡。据后续调查,直接原因与递送基因所用的病毒载体引发的剧烈免疫反应有关;调查也暴露出知情同意与风险披露方面的问题。**这次死亡让整个领域几乎停摆了十年**:审查趋严,资金撤退,乐观情绪骤冷,不少团队转向。"
+  },
+  {
+   "type": "p",
+   "text": "但这十年并非白费。后来的复兴靠的正是把工程功课做扎实:改用免疫反应更温和的载体、把适用范围收窄到机制最清楚的少数疾病、在体外改造细胞再回输以减少全身暴露、把风险与不确定性向患者讲清楚。**这段挫折是全书给技术乐观主义开的一剂药:能改和改得安全,中间隔着许多具体的、无法跳过的工程与伦理功课**——而跳过它们的代价,是具体的人。后来的研究者提起那次事故时语气都很低,因为它不是一个统计数字,而是一位有名字的年轻人。"
+  },
+  {
+   "type": "steps",
+   "items": [
+    {
+     "title": "起步",
+     "text": "1990 年代初,针对单基因免疫缺陷病的首批尝试展开,效果令人鼓舞,舆论极度乐观。",
+     "state": "done"
+    },
+    {
+     "title": "挫折",
+     "text": "1999 年一名志愿者在试验中死亡,与病毒载体引发的剧烈免疫反应有关;领域几乎停摆十年。",
+     "state": "done"
+    },
+    {
+     "title": "反省",
+     "text": "改换更温和的载体、收窄适应症、把细胞取出体外改造再回输、严格知情同意与风险披露。",
+     "state": "done"
+    },
+    {
+     "title": "复兴",
+     "text": "针对少数病因极明确的严重疾病,基因层面的疗法从设想变成获批上市的药;适用面窄,但确凿。",
+     "state": "now"
+    }
+   ]
+  },
+  {
+   "type": "h2",
+   "text": "从细菌那里借来的一把精确剪刀"
+  },
+  {
+   "type": "p",
+   "text": "2010 年代,一套源自细菌免疫机制的工具被改造成精确的基因编辑手段,通常以 CRISPR 之名为人熟知。它的原理可以说得很通俗:细菌为了对付反复入侵的病毒,会把病毒序列的片段存档,下次遇到就照着存档去识别并切断入侵者的 DNA。研究者把这套装置拆开重装,**换成「你给我一段导航序列,我就去基因组里找到与它匹配的位置,在那里切一刀」**;细胞在修复这个断口时,可以被引导着把一段新序列填进去,或让某个基因失效。"
+  },
+  {
+   "type": "p",
+   "text": "与此前的方法相比,它的革命性不在于「首次能编辑」,而在于**便宜、快、门槛低**:一个普通实验室、一名研究生,几周就能上手做一个之前需要大团队数年才能完成的改造。技术史上,门槛骤降往往比能力突破更有后果——**当一件事只有少数国家级实验室能做时,规范尚可依靠共识;当它变成寻常操作时,拦住它的就只剩规则本身**。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意",
+   "svg": "<svg viewBox='0 0 560 260' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>导航 + 剪刀:精确编辑的两件套</text><line x1='40' y1='120' x2='520' y2='120' style='stroke:var(--ink-soft);stroke-width:3'/><text x='40' y='146' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>基因组:三十亿个字母</text><rect x='262' y='108' width='40' height='24' rx='3' style='fill:none;stroke:var(--cinnabar);stroke-width:1.8'/><text x='282' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar)'>目标位点</text><path d='M282,60 L282,104' style='stroke:var(--cinnabar);stroke-width:1.3;stroke-dasharray:4 3'/><rect x='202' y='36' width='160' height='26' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.4'/><text x='282' y='54' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--cinnabar)'>导航序列:按字母找位置</text><path d='M282,132 L282,164' style='stroke:var(--ink-soft);stroke-width:1.3'/><path d='M277,156 L282,166 L287,156' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><rect x='192' y='168' width='180' height='28' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><text x='282' y='187' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>在此切开,细胞随即修复</text><text x='430' y='186' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>可让基因失效</text><text x='430' y='204' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>或填入新序列</text><text x='280' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>这套装置本是细菌用来对付反复入侵病毒的免疫系统</text><text x='280' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>又一次:人类不是发明工具,而是发现别的生物早已备好的工具</text></svg>",
+   "caption": "革命性不在「能编辑」,而在门槛骤降——从少数大实验室的绝技,变成寻常操作。"
+  },
+  {
+   "type": "h2",
+   "text": "两种编辑,两种完全不同的责任"
+  },
+  {
+   "type": "p",
+   "text": "全部争议的轴心,是一条听起来技术性、实则伦理性的分界:**改一个人已经长成的细胞(体细胞编辑),和改一个胚胎或生殖细胞(生殖系编辑),完全不是同一件事**。前者影响的是这一位患者本人,风险与收益由他自己权衡、自己承担,伦理框架与常规医疗基本相同;后者的改动会写进这个人的每一个细胞,并且传给他的后代,而**那个被改动的人从未、也不可能表示同意**。"
+  },
+  {
+   "type": "p",
+   "text": "还有两层技术性的顾虑同样重要。一是脱靶:导航偶尔会带着剪刀落在相似但错误的位置,后果未知;在体细胞里,坏细胞可以被清除,在胚胎里则会长成整个人。二是连带效应:第六章讲过,一个基因常影响多个性状,一个「有害」变异在别的环境里可能有别的用处——**你以为只改了一件事,实际上动了一张网**。这两点意味着,即便伦理上被允许,技术上的把握也远远不够。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>改一个人,还是改一条世系</text><rect x='34' y='48' width='232' height='176' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><text x='150' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>体细胞编辑</text><circle cx='150' cy='112' r='16' style='fill:none;stroke:var(--cinnabar);stroke-width:1.6'/><text x='150' y='117' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar)'>患者</text><text x='150' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>止于本人,不传后代</text><text x='150' y='174' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>本人可知情同意</text><text x='150' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>接近常规医疗的框架</text><rect x='294' y='48' width='232' height='176' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.8'/><text x='410' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>生殖系编辑</text><circle cx='410' cy='104' r='13' style='fill:none;stroke:var(--cinnabar);stroke-width:1.6'/><text x='410' y='108' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--cinnabar)'>胚胎</text><path d='M410,117 L380,136 M410,117 L440,136' style='stroke:var(--cinnabar);stroke-width:1.1'/><circle cx='380' cy='144' r='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.2'/><circle cx='440' cy='144' r='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.2'/><path d='M380,152 L364,168 M380,152 L396,168 M440,152 L424,168 M440,152 L456,168' style='stroke:var(--cinnabar);stroke-width:1;stroke-opacity:0.7'/><circle cx='364' cy='174' r='5' style='fill:none;stroke:var(--cinnabar);stroke-width:1;stroke-opacity:0.7'/><circle cx='396' cy='174' r='5' style='fill:none;stroke:var(--cinnabar);stroke-width:1;stroke-opacity:0.7'/><circle cx='424' cy='174' r='5' style='fill:none;stroke:var(--cinnabar);stroke-width:1;stroke-opacity:0.7'/><circle cx='456' cy='174' r='5' style='fill:none;stroke:var(--cinnabar);stroke-width:1;stroke-opacity:0.7'/><text x='410' y='200' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>写进每个细胞,一路传下去</text><text x='410' y='218' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>被改的人无法同意</text><line x1='60' y1='244' x2='500' y2='244' style='stroke:var(--line);stroke-width:1'/><text x='280' y='270' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>同一套工具,用在两种细胞上,责任结构完全不同</text><text x='280' y='292' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>再加上脱靶与连带效应:胚胎里的一次失误,会长成整个人</text></svg>",
+   "caption": "这条分界线是当代基因伦理讨论的轴心;左边已在常规医疗轨道上,右边的争议至今没有共识。"
+  },
+  {
+   "type": "h2",
+   "text": "三条苛刻的门槛:什么情况下才配得上讨论"
+  },
+  {
+   "type": "p",
+   "text": "面对这道题,书中给出的不是简单的赞成或反对,而是一组门槛式的判据。只有当三个条件同时满足时,才有讨论动手的余地:**第一,所针对的痛苦极其严重**——是那种让生命难以维系的疾病,而不是不便、差异或不合时下审美;**第二,基因与后果的关联极其确定**——是近乎必然发病的单基因病,而不是「风险偏高」这类概率性关联;**第三,所采取的干预确实合理、必要,且没有更好的替代办法**。"
+  },
+  {
+   "type": "p",
+   "text": "这三条为什么写得这么苛刻?因为第六章的科学结论已经把大门关上了一半:绝大多数我们在意的特质(智力、性情、身高、才华)是成百上千个位点加环境的产物,**你根本不知道该改哪里,也不知道改了会连带影响什么**。而第三章的历史又把另一半门关上:一旦「什么算缺陷」由市场偏好、社会时尚或某种流行的完美标准来定义,筛选的逻辑就会回来。**门槛的作用不是禁止一切,而是把讨论限制在真正的苦难上,不让它蔓延到偏好上**。"
+  },
+  {
+   "type": "p",
+   "text": "「谁来定义缺陷」这个问题必须交给当事人一同回答,而这正是最容易被忽略的地方。有些被主流视为需要消除的状况,当事群体本身并不这么看:例如一些聋人社群把手语与共同的文化视为身份而非缺失,一些神经多样性的社群反对把自己的存在方式当成待修的故障。**这些声音不是反科学,而是在提醒:「什么值得被治疗」不是一个纯医学判断,它包含着对何为好生活的看法**。任何绕过当事人做出的「为你好」,在历史上都很难让人放心。"
+  },
+  {
+   "type": "callout",
+   "tone": "warn",
+   "label": "全章转折",
+   "items": [
+    "上一次大规模筛选靠的是国家强制,下一次可能只需要一句「为孩子好」。产前筛查、辅助生殖中的胚胎选择、日益便宜的检测,都是真实的医疗进步,目的是帮助具体家庭在知情的情况下做出自己的决定——这与国家剥夺生育权有本质区别。",
+    "需要被看见的是机制上的相似:当大量个体的自愿选择朝同一个方向汇聚时,结果可以在人口层面等同于一次筛选,而这中间没有任何人做过恶。**所以真正的防线不在动机,而在制度:什么信息必须告知、什么选择不得被推销、哪些差异不允许被定价**。"
+   ]
+  },
+  {
+   "type": "quote",
+   "original": "极端的痛苦、极高的确定性、合理的干预——三者缺一,便不该动手。",
+   "translation": "这是对书中所提门槛的概括,而非逐字引用。三条门槛的共同点是把举证责任放在动手的一方:不是「你能证明它有害吗」,而是「你能证明它值得吗」。这与新药审批、临床试验的伦理逻辑一致——**在可能造成不可逆后果的领域,默认答案是「不做」,除非被充分说服。**"
+  },
+  {
+   "type": "p",
+   "text": "这三条门槛还有一个容易被忽略的用处:它给出了一个判断新闻的工具。下一次读到「科学家实现某种基因编辑突破」时,可以逐条去对:针对的是极端痛苦,还是某种偏好?基因与后果的关联是近乎必然,还是「风险相关」?有没有更成熟、更少不可逆风险的替代路径?**三个问题问完,多数耸动标题会自己缩水**;而少数真正过关的进展,也值得被认真而不夸张地欢迎。"
+  },
+  {
+   "type": "h2",
+   "text": "本书写完之后:现实追上了担忧"
+  },
+  {
+   "type": "p",
+   "text": "值得补记一笔的是,本书出版之后不久,现实里真的出现了对人类胚胎进行基因编辑并使婴儿出生的事件,遭到国际科学界的普遍谴责,相关责任人也受到了法律追究。这件事从反面印证了书中的判断:**当一项技术足够便宜、足够顺手时,拦住它的就只剩规范与共识,而规范总是比技术走得慢**。它也重演了第五章阿西洛马会议的那个教训——**自律有用,但自律的边界取决于谁被允许进屋讨论**。仅靠学界自我约束,不足以应对一个人人都能上手的工具。"
+  },
+  {
+   "type": "p",
+   "text": "那么该怎么办?书里的态度是分层而非一刀切:治疗性的体细胞干预,按常规医疗的轨道推进,该做的临床试验一步不省;生殖系的改动,在安全性与共识远远不足的现状下,不应进入实践;而所有讨论都不该只由科学家和监管者关门决定,**患者、残障社群、伦理学者与普通公众都得在场**——因为最终承受后果的是他们。这不是一个能被「支持/反对」两个按钮解决的问题,它需要持续的、有具体条款的公共讨论——而讨论的质量,取决于有多少人真的弄懂了前六章讲的那些东西。**这也是读这本书的实际用处:它让一个普通人有资格参与一场关乎所有人的对话**。"
+  },
+  {
+   "type": "pull",
+   "text": "上一次筛选靠的是国家强制,下一次可能只需要「为孩子好」这四个字。"
+  },
+  {
+   "type": "h2",
+   "text": "回到家族:一部私人史的落点"
+  },
+  {
+   "type": "p",
+   "text": "全书的最后,穆克吉把镜头拉回自己的家族。基因组时代给他的答案并不干净:家族里精神疾病的聚集提示遗传确有分量,而同一家族中许多人终生无恙,又提示那分量远不是判决。**他没有得到一个「是」或「不是」,只得到一个概率和一份责任**——照顾好还在受苦的亲人,注意自己的状态,同时不把每一次情绪起落都读成命运的伏笔。这是绝大多数人在基因时代真实会遇到的处境:**知道一点,但不够多;够多到不能不管,又不足以让人认命**。"
+  },
+  {
+   "type": "p",
+   "text": "所以这本书的落点既不悲观也不亢奋。基因确实塑造了我们;但读完这部一百五十年的历史之后,最该记住的反而是另一半:**一个人是什么样子,是基因、经历、环境与选择共同写成的,而这份合著里,基因从来不是唯一的作者**。理解这一点,既能让人不轻易把自己的困境推给一纸检测报告,也能让人在面对「筛掉某种人」的诱惑时,想起一百年前那些同样自信、同样自称科学的理据,和它们最后通向的地方。一百五十年的这部编年史,最终留下的不是一套知识,而是一种分寸:**对能力保持敬畏,对定论保持怀疑,对被判定的人保持尊重**。"
+  },
+  {
+   "type": "figure",
+   "ftype": "金句卡",
+   "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><rect x='16' y='16' width='528' height='218' style='fill:none;stroke:var(--line);stroke-width:1'/><line x1='200' y1='52' x2='252' y2='52' style='stroke:var(--cinnabar);stroke-width:1'/><line x1='308' y1='52' x2='360' y2='52' style='stroke:var(--cinnabar);stroke-width:1'/><circle cx='280' cy='52' r='4' style='fill:var(--cinnabar)'/><text x='280' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:18px;font-weight:bold;fill:var(--ink)'>先问该不该,</text><text x='280' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:18px;font-weight:bold;fill:var(--ink)'>再问能不能。</text><text x='280' y='188' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink-soft)'>——写在《基因传》最后一章</text><text x='280' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>技术给出的从来是选项,不是答案;答案要由承受后果的人一起给</text></svg>",
+   "caption": "这句话不是原书的逐字引用,而是对末章主张的提炼:门槛先于能力,讨论先于动手。"
+  }
+ ]
+}

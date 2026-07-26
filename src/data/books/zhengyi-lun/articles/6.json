@@ -1,0 +1,126 @@
+{
+  "title": "从原则到制度:四阶段序列与公民不服从",
+  "subtitle": "抽象原则怎么变成能吵、能改、能落地的具体规则——以及守不住的时候可以做什么",
+  "centralIdea": "《正义论》常被当成一本只谈抽象原则的书,其实第二部分老老实实回答了「怎么落地」。罗尔斯设计了一个四阶段序列:第一阶段在幕后选原则;第二阶段开制宪会议,知道社会的一般情况,把基本权利与政体框架写进宪法;第三阶段立法,知道更多经济社会事实,制定税制、教育、医保等具体政策并检验其是否通得过差别原则;第四阶段由法官、行政人员与公民把规则用到个案上。幕随阶段推进一层层掀开——越根本的规则,越应在不知道自己是谁的条件下定下。他还给了一份粗线条的制度清单:立宪民主、竞争性市场,加上四个功能分支(维持竞争、保障就业、托底转移、矫正财富集中),以及一条明确的社会最低保障线。第二部分另一块常被单独引用的内容是公民不服从:定义很窄(公开、非暴力、出于良知、诉诸多数人的正义感),条件很严(针对严重明显的不义、常规途径已失效、愿意承担法律后果),而且它是「近乎正义」社会里的最后手段,不是任何不满都能援引的通行证。"
+  ,
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "假设两条原则已经被接受了。现在有人问一个很实在的问题:**某个县的乡镇中学该不该多拿一笔钱,而市区的重点中学少拿一点?**你翻回两条原则,会发现它们答不上来——原则说机会要公平开放、说不平等要让最不利者更好,但它不知道这个县有多少学生、财政有多少钱、这笔钱投进去几年后有没有效果。**抽象原则不能直接判案,它给出的是判据,而不是现成的答案。**可如果放着不管,政策又会离原则越来越远,最后各说各话。罗尔斯这一部分要解决的正是这段落差:从「原则」到「今天该批哪份文件」,中间需要几级台阶。"
+    },
+    { "type": "h2", "text": "这一章在全书的什么位置" },
+    {
+      "type": "p",
+      "text": "前五章是全书第一部分「理论」的内容。这一章进入第二部分「制度」,它常被读者跳过,却是回答「你这套东西能用吗」的地方。它也是全书里最不哲学、最像政治学的一部分:讲宪法、讲税制、讲政府该有哪些职能、讲违法抗议在什么条件下正当。"
+    },
+    { "type": "h2", "text": "四阶段序列:幕一层层掀开" },
+    {
+      "type": "p",
+      "text": "罗尔斯的解法叫**四阶段序列**。它的巧妙之处在于:幕不是一直蒙着,而是随着阶段推进逐层掀开——**越根本的规则,越应该在不知道自己是谁的条件下定下来;越具体的决定,越需要真实的信息。**"
+    },
+    {
+      "type": "p",
+      "text": "**第一阶段:原初状态。**幕最厚,只知一般规律,不知自己是谁。这里选定的是两条正义原则和它们的优先次序。这一阶段的产出是**判据**,不是政策。"
+    },
+    {
+      "type": "p",
+      "text": "**第二阶段:制宪会议。**掀开一层——现在知道这个社会的一般情况了:大致的经济水平、人口构成、文化传统、面临的外部环境;但仍不知道自己在其中是谁。这一阶段的任务是把原则变成**宪法**:列出基本权利清单、设计政体结构、安排权力如何分立与制衡、规定修宪的门槛。为什么基本权利要写进宪法、而不是留给日常立法?因为第一原则的优先性要有制度上的锁——**放在宪法里,就意味着它不能靠一次简单多数被改掉。**"
+    },
+    {
+      "type": "p",
+      "text": "**第三阶段:立法。**再掀一层——现在知道具体的经济社会事实:财政收入多少、失业率多高、教育资源怎么分布、哪些地区最落后。这里制定的是税制、教育投入、医保、福利、劳动法这些政策,而检验标准正是第二原则:机会是否更公平开放,最不利者是否确实更好。**差别原则真正开始工作是在这一层**,因为只有到这里才有数据可查。"
+    },
+    {
+      "type": "p",
+      "text": "**第四阶段:适用。**幕基本掀开——法官、行政人员与普通公民把规则用到具体个案上:这份合同该不该被认定无效、这个人该不该获得救助、这条命令该不该服从。这一阶段处理的是「张三这件事该怎么办」,而它的正当性依赖于上面三层都站得住。"
+    },
+    {
+      "type": "figure",
+      "ftype": "阶段图",
+      "caption": "四阶段序列:自上而下,幕越来越薄、信息越来越多、决定越来越具体。罗尔斯的主张不是永远蒙着眼睛做决定,而是把最根本的规则放在最不知道自己是谁的时候定下来。",
+      "svg": "<svg viewBox='0 0 640 330' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='26' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>幕一层层掀开</text><rect x='60' y='44' width='500' height='58' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar)' stroke-width='1.8'/><text x='86' y='68' font-size='13' font-weight='bold' style='fill:var(--ink)'>① 原初状态</text><text x='86' y='88' font-size='11.5' style='fill:var(--ink-soft)'>幕最厚:只知一般规律 → 产出两条原则与优先次序</text><text x='576' y='78' text-anchor='end' font-size='11' style='fill:var(--cinnabar)'>■■■■</text><rect x='60' y='112' width='500' height='58' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='86' y='136' font-size='13' font-weight='bold' style='fill:var(--ink)'>② 制宪会议</text><text x='86' y='156' font-size='11.5' style='fill:var(--ink-soft)'>知社会一般情况 → 基本权利清单、政体与制衡、修宪门槛</text><text x='576' y='146' text-anchor='end' font-size='11' style='fill:var(--cinnabar)'>■■■</text><rect x='60' y='180' width='500' height='58' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='86' y='204' font-size='13' font-weight='bold' style='fill:var(--ink)'>③ 立法</text><text x='86' y='224' font-size='11.5' style='fill:var(--ink-soft)'>知经济社会数据 → 税制、教育、医保、福利;差别原则在此开工</text><text x='576' y='214' text-anchor='end' font-size='11' style='fill:var(--cinnabar)'>■■</text><rect x='60' y='248' width='500' height='58' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.5'/><text x='86' y='272' font-size='13' font-weight='bold' style='fill:var(--ink)'>④ 适用</text><text x='86' y='292' font-size='11.5' style='fill:var(--ink-soft)'>信息齐备 → 法官、行政与公民把规则用到具体个案</text><text x='576' y='282' text-anchor='end' font-size='11' style='fill:var(--cinnabar)'>■</text><text x='320' y='324' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>右侧方块表示幕的厚度</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这个设计还解决了一个理论难题:**多数决的位置。**如果两条原则是正确的,为什么还要投票?罗尔斯的回答是:在立法这一层,差别原则的应用高度依赖经验判断——某项政策到底有没有抬高底层,常常没有确定答案,合理的人会有分歧。这时候需要一个程序来做决定,而民主的多数决是最合适的程序。但他给多数决划了边界:**它是「不完全的程序正义」**——程序本身正当,却不保证结果一定正确;而在宪法这一层,基本权利不交给多数决处置。**多数可以决定怎么办事,不能决定谁算人。**这也解释了他为什么重视司法审查:那不是让法官代替选民做主,而是给宪法里那些「不交给多数决」的条款配一把可以随时被援引的锁。"
+    },
+    { "type": "h2", "text": "一份粗线条的制度清单" },
+    {
+      "type": "p",
+      "text": "罗尔斯并不停在框架上,他给了一份具体的方向。政体是**立宪民主**:基本自由写进宪法、交给独立司法守护。经济上他接受**竞争性市场**——不是出于对市场的信仰,而是因为它在配置资源与保护职业选择自由上确实有效。然后是关键的配套:他设想政府应有几个功能分支,各管一件事。"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**维持竞争的分支**:防止垄断与价格操纵,处理污染这类外部成本,让市场保持真正的竞争性。",
+        "**稳定就业的分支**:尽力维持充分就业,让愿意工作的人找得到工作——失业不只是收入问题,它直接打击自尊这项基本善。",
+        "**转移支付的分支**:设定并守住一条**社会最低保障线**,让每个人不论境遇如何都有一份可预期的托底。",
+        "**矫正分配的分支**:通过税收(尤其是遗产与赠与)防止财富与政治权力的过度集中——注意他关心的不只是钱,更是钱变成政治影响力这条通道。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "这里有个容易被忽略的重点:他关心的**不是等财富集中之后再靠转移支付去补,而是让财富与人力资本的分布本身不至于过度悬殊。**他后来用「财产所有的民主制」来描述这个方向,并明确把它与「福利国家资本主义」区分开:前者从源头上分散生产性资产与教育机会,后者只在事后发补贴。差别是深远的——只靠事后补贴的社会,底层永远是被照顾的对象;而分散了资产与技能的社会,底层是有议价能力的参与者。"
+    },
+    {
+      "type": "p",
+      "text": "还要重复一句前面说过的话,因为它常被忘记:**两条原则不指定唯一一种经济体制。**罗尔斯说私有制与公有制在原则上都可能满足要求,取决于具体条件下哪一种更好地实现原则。他给的是检验标准,不是制度处方——这也是为什么同一套原则在不同国家可以长出很不一样的政策组合。"
+    },
+    {
+      "type": "figure",
+      "ftype": "分支图",
+      "caption": "四个功能分支各管一件事。值得注意最右一支:罗尔斯关心的不只是钱本身,而是钱变成政治影响力那条通道——若不掐住它,第一原则里那份「政治自由的公平价值」就会被悄悄买走。",
+      "svg": "<svg viewBox='0 0 640 260' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='26' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>政府该有的四个分支</text><rect x='28' y='48' width='140' height='150' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='98' y='76' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>维持竞争</text><text x='98' y='104' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>反垄断</text><text x='98' y='126' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>治外部成本</text><text x='98' y='148' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>让市场真竞争</text><rect x='180' y='48' width='140' height='150' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='250' y='76' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>稳定就业</text><text x='250' y='104' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>争取充分就业</text><text x='250' y='126' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>愿工作者有工作</text><text x='250' y='148' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>失业直接伤自尊</text><rect x='332' y='48' width='140' height='150' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='402' y='76' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>转移托底</text><text x='402' y='104' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>社会最低保障线</text><text x='402' y='126' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>可预期的兜底</text><text x='402' y='148' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>不论境遇如何</text><rect x='484' y='48' width='140' height='150' rx='9' style='fill:var(--paper-raised);stroke:var(--cinnabar)' stroke-width='1.7'/><text x='554' y='76' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>矫正分配</text><text x='554' y='104' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>遗产与赠与税</text><text x='554' y='126' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>防财富过度集中</text><text x='554' y='148' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>掐住钱变权的通道</text><text x='320' y='232' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>另加:立宪民主 + 竞争性市场 + 公共教育与基本医疗的普遍供给</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "把这份清单和第三章那三道闸门放在一起看,会看出罗尔斯制度设想的一个特点:**它把不同的任务交给不同的层级,不指望任何一层包办全部。**宪法层管「不可交易的东西」——基本权利,锁起来,不随每次投票摆动;立法层管「需要算的东西」——税率、投入、保障线,允许试错、允许根据数据调整;司法与行政层管「个案的东西」——把规则用到具体人身上时的公平。这个分层解释了一件常令人困惑的事:为什么一个社会可以在政策上不断争吵、频繁修改,却仍然被称为稳定?**因为吵的是可以吵的那一层,而不可以吵的那一层被锁在宪法里。**换个说法:稳定并不来自没有分歧,而来自分歧被限制在合适的层级里解决。反过来,一个把基本权利也拿来当政策筹码的社会,越吵越不稳。"
+    },
+    { "type": "h2", "text": "守不住的时候:公民不服从" },
+    {
+      "type": "p",
+      "text": "假设制度已经大体正义,但某条法律明显不义,而正常途径都试过了——请愿、诉讼、投票、游说,全都无效。这时候可以违法吗?罗尔斯的回答是可以,但他给的定义窄得出人意料:**公民不服从是一种公开的、非暴力的、出于良知却又是政治性的违法行为,目的是促成法律或政策的改变。**"
+    },
+    {
+      "type": "p",
+      "text": "逐个拆开看,每个词都在排除一些东西。**公开**:不是秘密破坏,行为者事先声明并当众进行——因为它的力量恰恰来自被看见。**非暴力**:一旦使用暴力,它诉诸的就不再是别人的正义感,而是恐惧。**出于良知**:不是为自己谋利,也不是趁乱取利。**政治性**:它诉诸的是**多数人共有的正义感**,是一种表达而非胁迫——用罗尔斯的说法,它是在向共同体的正义感发出呼吁。"
+    },
+    {
+      "type": "quote",
+      "original": "公民不服从是一种公开的、非暴力的、出于良知而又违法的政治行为,通常旨在改变法律或政策。",
+      "translation": "罗尔斯给的定义。四个限定词一起构成一道很窄的门:公开、非暴力、出于良知、政治性——缺一项就不属于他所论证的那种正当行为。"
+    },
+    {
+      "type": "p",
+      "text": "条件同样严格。第一,**所针对的必须是严重且明显的不义**——尤其是侵犯第一原则的基本自由,或公然破坏机会的公平开放;至于差别原则的应用是否得当,因为高度依赖经验判断、合理的人会有分歧,通常不足以构成理由。第二,**常规途径已经试过而失效**,不是一遇不满就上街。第三,**行为者愿意承担法律后果**——愿意被逮捕、受审、接受处罚,正是这份承担让它区别于普通的违法,也向社会证明了行为者对法治整体的尊重。第四,要顾及**后果与协调**:如果许多群体同时诉诸这种手段,可能损害整个宪政秩序,因此需要一种克制。"
+    },
+    {
+      "type": "p",
+      "text": "他还区分了另一种行为:**良心拒绝**。公民不服从是公开地诉诸多数人的正义感、希望改变法律;良心拒绝则是私下地拒绝服从一项自己认为不义的命令——比如拒绝参与一场自己认为不正义的战争。前者是政治表达,后者更接近个人良知的守卫,不必公开、也不以说服他人为目的。罗尔斯写这一部分的年代,正是美国民权运动与反战运动最激烈的时期;这些讨论有其现实语境,但他的论证并不依附于任何一场具体运动。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "别读岔了",
+      "items": [
+        "**它有一个前提:这是「近乎正义」的社会里的最后手段。**在一个宪政大体运转、只是某条法律出了问题的社会里,违法抗议才能被这样论证。罗尔斯明确说过,面对彻底不义的暴政,需要讨论的是另一套问题,不在本书范围内。",
+        "**它不是任何不满都能援引的通行证。**「我认为这不公平」远不等于「严重且明显的不义」;差别原则应用上的分歧,通常不构成理由。",
+        "**它也不是「违法但免责」。**愿意承担法律后果是这套论证的组成部分,不是可以省掉的姿态——把责任摘掉之后,剩下的就只是一次普通的违法。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "顺着这条线,罗尔斯还回答了一个更基本的问题:**我为什么该守法?**他给了两层理由。一层是「公平」的要求:你已经在享受这套合作体系带来的好处(治安、道路、教育、契约被履行),而这些好处依赖别人也守规则,那么你单方面搭便车就不公平。另一层更根本,他称之为一种自然义务:**支持并推进正义的制度。**这层义务不依赖你有没有答应过什么——你没签过任何契约,但只要那套制度确实是正义的,你就有理由支持它。**反过来说也成立:这份义务的强度取决于制度的正义程度**,而这恰恰给公民不服从留出了空间。守法与抗议在他这里并不是两种立场,而是同一份义务在不同处境下的两种表达。"
+    },
+    {
+      "type": "figure",
+      "ftype": "条件清单",
+      "caption": "公民不服从的四道门槛。罗尔斯把门开得很窄,不是为了打击抗议,而是为了让这条通道保持可信——一旦什么都能叫公民不服从,它就不再能诉诸任何人的正义感。",
+      "svg": "<svg viewBox='0 0 640 260' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='26' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>四道门槛</text><rect x='30' y='46' width='142' height='176' rx='9' style='fill:var(--paper-raised);stroke:var(--cinnabar)' stroke-width='1.6'/><text x='101' y='76' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>不义要够重</text><text x='101' y='104' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>侵犯基本自由</text><text x='101' y='126' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>或公然破坏</text><text x='101' y='148' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>机会的公平</text><text x='101' y='184' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>差别原则的分歧</text><text x='101' y='204' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>通常不够</text><rect x='182' y='46' width='142' height='176' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='253' y='76' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>常规途径已尽</text><text x='253' y='104' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>请愿、诉讼</text><text x='253' y='126' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>投票、游说</text><text x='253' y='148' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>都试过且无效</text><rect x='334' y='46' width='142' height='176' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='405' y='76' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>方式要合规格</text><text x='405' y='104' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>公开进行</text><text x='405' y='126' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>非暴力</text><text x='405' y='148' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>诉诸正义感</text><rect x='486' y='46' width='142' height='176' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='557' y='76' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>愿担后果</text><text x='557' y='104' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>接受逮捕与处罚</text><text x='557' y='126' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>以此表明</text><text x='557' y='148' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>尊重法治整体</text><text x='557' y='184' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>摘掉责任,就只是</text><text x='557' y='204' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>一次普通违法</text><text x='320' y='248' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>四道全过,才是罗尔斯所论证的那种正当行为</text></svg>"
+    },
+    {
+      "type": "pull",
+      "text": "多数可以决定怎么办事,不能决定谁算人——这就是为什么基本权利要写进宪法,而不是留给每一次投票。"
+    }
+  ]
+}

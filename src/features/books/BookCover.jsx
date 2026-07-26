@@ -1161,6 +1161,62 @@ function InstitutionalFork() {
   )
 }
 
+// 母题:遗传的代码——生命被写成一段可读的序列条(方块与短横交替的格子,像一段代码或
+// 一卷纸带),两端以虚线向外延伸,示意这段文本远比画面里看到的长;其中一格被朱色框出,
+// 格内立着一个编辑光标,下方一枚朱色箭头精确指向它(在整部生命之书里改掉一个字母)。
+// 上方一行更淡的同款序列,是尚未被改写的原样。刻意不画双螺旋,只画「可被读写的代码」。
+function InheritanceCode() {
+  const x0 = 60, y0 = 292, cw = 19, chh = 24, n = 8, target = 4
+  const cells = [0, 1, 2, 3, 4, 5, 6, 7]
+  const kinds = ['block', 'dash', 'block', 'block', 'edit', 'dash', 'block', 'dash']
+  const tx = x0 + target * cw
+  const tcx = tx + cw / 2
+  return (
+    <g>
+      {cells.map((i) => (
+        <rect key={`f${i}`} x={x0 + i * cw + 4} y="260" width="11" height="3"
+          fill={CREAM} fillOpacity={i === target ? 0.3 : 0.16} />
+      ))}
+      <path d={`M${tcx},${266} L${tcx},${274}`} stroke={CINNABAR} strokeOpacity="0.35"
+        strokeWidth="1" strokeDasharray="2 3" />
+      <path d={`M${tx + 1},${282} L${tx + 1},${277} L${tx + cw - 1},${277} L${tx + cw - 1},${282}`}
+        fill="none" stroke={CINNABAR} strokeOpacity="0.55" strokeWidth="1.2" />
+      <rect x="54" y="286" width={n * cw + 8} height={chh + 8} fill="rgba(0,0,0,0.14)"
+        stroke={CREAM} strokeOpacity="0.3" strokeWidth="1" />
+      <path d={`M40,${y0 + chh / 2} L54,${y0 + chh / 2}`} stroke={CREAM} strokeOpacity="0.22"
+        strokeWidth="1" strokeDasharray="3 4" />
+      <path d={`M${54 + n * cw + 8},${y0 + chh / 2} L${54 + n * cw + 24},${y0 + chh / 2}`}
+        stroke={CREAM} strokeOpacity="0.22" strokeWidth="1" strokeDasharray="3 4" />
+      {cells.slice(1).map((i) => (
+        <path key={`s${i}`} d={`M${x0 + i * cw},${y0} L${x0 + i * cw},${y0 + chh}`}
+          stroke={CREAM} strokeOpacity="0.16" strokeWidth="1" />
+      ))}
+      {cells.map((i) => {
+        if (kinds[i] === 'block') {
+          return <rect key={`c${i}`} x={x0 + i * cw + 4} y={y0 + 4} width="11" height="16"
+            fill={CREAM} fillOpacity="0.44" />
+        }
+        if (kinds[i] === 'dash') {
+          return <rect key={`c${i}`} x={x0 + i * cw + 3} y={y0 + 11} width="13" height="3"
+            fill={CREAM} fillOpacity="0.32" />
+        }
+        return null
+      })}
+      <rect x={tx + 1} y={y0 + 1} width={cw - 2} height={chh - 2} fill="rgba(0,0,0,0.26)"
+        stroke={CINNABAR} strokeOpacity="0.9" strokeWidth="1.5" />
+      <path d={`M${tcx},${y0 + 5} L${tcx},${y0 + chh - 5}`} stroke={CINNABAR} strokeWidth="2" />
+      <path d={`M${tcx - 4},${y0 + 5} L${tcx + 4},${y0 + 5} M${tcx - 4},${y0 + chh - 5} L${tcx + 4},${y0 + chh - 5}`}
+        stroke={CINNABAR} strokeOpacity="0.8" strokeWidth="1" />
+      <path d={`M${tcx},${344} L${tcx},${y0 + chh + 10}`} stroke={CINNABAR} strokeOpacity="0.85"
+        strokeWidth="1.4" />
+      <path d={`M${tcx - 4.5},${y0 + chh + 14} L${tcx},${y0 + chh + 6} L${tcx + 4.5},${y0 + chh + 14}`}
+        fill="none" stroke={CINNABAR} strokeOpacity="0.9" strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx={tcx} cy="350" r="3.6" fill={CINNABAR} />
+      <circle cx={tcx} cy="350" r="8" fill="none" stroke={CINNABAR} strokeOpacity="0.4" strokeWidth="1" />
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'panopticon') return <Panopticon />
   if (motif === 'manifest-latent') return <ManifestLatent />
@@ -1266,6 +1322,8 @@ function Motif({ motif }) {
   if (motif === 'signifying-web') return <SignifyingWeb />
   if (motif === 'matter-out-of-place') return <MatterOutOfPlace />
   if (motif === 'institutional-fork') return <InstitutionalFork />
+  if (motif === 'veil-of-ignorance') return <VeilOfIgnorance />
+  if (motif === 'inheritance-code') return <InheritanceCode />
   return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
 }
 
@@ -1914,6 +1972,46 @@ function SignifyingWeb() {
       <circle cx={hx} cy={hy + 12} r="2.8" fill={CINNABAR} stroke="none" />
       <path d={`M${hx},${hy + 15} L${hx},${hy + 23} M${hx - 5},${hy + 18.5} L${hx + 5},${hy + 18.5} M${hx},${hy + 23} L${hx - 4},${hy + 29} M${hx},${hy + 23} L${hx + 4},${hy + 29}`}
         stroke={CINNABAR} strokeWidth="1.5" />
+    </g>
+  )
+}
+
+// 母题:无知之幕——一道横贯的半透明帷幕。幕下,各人的身形高矮胖瘦分明可辨(现实里的
+// 阶级、天赋、际遇本就参差);幕上,只剩一排一模一样的头影,谁也看不出谁是谁——因为
+// 立规则的人并不知道幕掀开后自己会是哪一个。其中一枚朱色头影是正在做选择的人。
+// (与《作为意志和表象的世界》的 veil-of-maya 刻意区分:那里是层层垂帘遮住世界本体、
+// 重点在「深」;这里只有一道幕、重点在幕上幕下「同与异」的横向对照。)
+function VeilOfIgnorance() {
+  const veilTop = 286, veilBot = 300, base = 368, headCy = 274
+  // 身形各异:宽窄不同、高矮不同——代表贫富、天赋、际遇的参差
+  const people = [
+    { x: 62, w: 14, h: 58 },
+    { x: 96, w: 26, h: 40 },
+    { x: 130, w: 11, h: 62 },
+    { x: 164, w: 20, h: 48, hi: true },
+    { x: 198, w: 30, h: 34 },
+    { x: 230, w: 16, h: 56 },
+  ]
+  return (
+    <g>
+      {/* 幕下:各不相同的身形,清清楚楚 */}
+      {people.map((p, i) => (
+        <g key={`b${i}`}>
+          <rect x={p.x - p.w / 2} y={base - p.h} width={p.w} height={p.h} rx={Math.min(p.w * 0.42, 9)}
+            fill="none" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.2" />
+          <line x1={p.x} y1={base - p.h} x2={p.x} y2={veilBot} stroke={CREAM} strokeOpacity="0.26" strokeWidth="1" />
+        </g>
+      ))}
+      <line x1="46" y1={base} x2="254" y2={base} stroke={CREAM} strokeOpacity="0.3" strokeWidth="1.1" />
+      {/* 幕:一道抹平差异的横带 */}
+      <rect x="44" y={veilTop} width="212" height={veilBot - veilTop} fill={CREAM} fillOpacity="0.15" />
+      <line x1="44" y1={veilTop} x2="256" y2={veilTop} stroke={CREAM} strokeOpacity="0.58" strokeWidth="1.4" />
+      <line x1="44" y1={veilBot} x2="256" y2={veilBot} stroke={CREAM} strokeOpacity="0.3" strokeWidth="1" strokeDasharray="4 5" />
+      {/* 幕上:一模一样的头影,看不出谁是谁;朱色那枚是正在立规则的人 */}
+      {people.map((p, i) => (
+        <circle key={`h${i}`} cx={p.x} cy={headCy} r="8" fill={p.hi ? CINNABAR : CREAM}
+          fillOpacity={p.hi ? 0.95 : 0.24} />
+      ))}
     </g>
   )
 }

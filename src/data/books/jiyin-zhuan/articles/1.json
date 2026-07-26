@@ -1,0 +1,148 @@
+{
+ "title": "遗传之谜:修士在豌豆里找到了「不会被稀释的东西」",
+ "subtitle": "从达尔文留下的空缺,到一座修道院菜园里数出来的三比一——遗传学的第一块基石",
+ "centralIdea": "十九世纪的人默认遗传像调颜料:父母的特征在孩子身上混合、稀释。这个直觉不但错,还给达尔文的进化论留下一个致命窟窿——若每代都稀释,有利变异根本无法积累。填上这块砖的是修道院里的孟德尔:他种了近八年豌豆,一粒粒数出稳定的三比一,证明遗传单位是一份份离散、不可分割、不会互相溶解的「因子」;隐性的性状不是消失,只是暂时不出声。这项研究发表后被埋没三十余年,1900 年才被重新发现,随后才有了 genetics(遗传学)与 gene(基因)这两个词。要紧的是这个次序:基因这个词被造出来时,没人知道它是什么物质、藏在哪里——它先是一个记账符号,此后几十年的科学史,都是在给这个符号找肉身。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "《基因传》的第一页不是实验室,是一个家庭。书中记述,作者家族中有多位亲人先后为精神疾病所困,长辈们谈起时会绕开病名,只反复念一个词——「遗传」。这个词在饭桌上是宿命的意思:好像某种东西已经写在身体里,轮到谁就是谁。穆克吉说,他后来花了半生去弄清这个词到底指什么,而这本书就是那份追问的报告。追问的起点,是一个人人都见过、却极少有人真正想清楚的现象:孩子为什么像父母?像,又为什么只是「像」而不是复制?这一章要讲的,就是人类第一次给这个问题找到确切答案的过程——它发生在一个修道院的菜园里,主角种了近八年豌豆。"
+  },
+  {
+   "type": "h2",
+   "text": "达尔文的窟窿:如果遗传是掺水,进化就无从积累"
+  },
+  {
+   "type": "p",
+   "text": "1859 年《物种起源》出版,自然选择的逻辑讲得极为透彻:变异存在,环境筛选,有利的变异被留下,一代代积累,新物种就出现了。可这套逻辑有一个前提没人交代清楚——**变异是怎样被完整传给下一代的**?当时流行的看法叫混合遗传:父母的特征在后代身上混合、平均。听起来很符合日常观察(孩子的身高常在父母之间),但只要往下推一步就出事了:如果每一代都要和另一半混合、稀释,那么一个新出现的有利变异,就像一滴墨滴进水缸,第二代淡一半,第三代再淡一半,几代之后什么都不剩。自然选择还能积累什么?"
+  },
+  {
+   "type": "p",
+   "text": "达尔文本人也为此困扰。他后来提出过一套猜想:身体各部分会释放极微小的颗粒,汇集到生殖细胞里,把当下的状态传给后代。这套说法今天已知并不成立,但它暴露了那个时代的困境——**进化论的地基上,缺着「遗传机制」这块砖,而当时谁也不知道该去哪里找**。有意思的是,这块砖其实已经被烧好了:孟德尔的论文发表于 1866 年,达尔文有生之年从未读到它。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照",
+   "svg": "<svg viewBox='0 0 560 280' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>两种遗传观:掺水,还是发牌</text><text x='140' y='58' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink-soft)'>混合遗传(错)</text><rect x='60' y='72' width='160' height='22' rx='4' style='fill:var(--ink-soft);fill-opacity:0.55'/><rect x='60' y='104' width='160' height='22' rx='4' style='fill:var(--ink-soft);fill-opacity:0.32'/><rect x='60' y='136' width='160' height='22' rx='4' style='fill:var(--ink-soft);fill-opacity:0.18'/><rect x='60' y='168' width='160' height='22' rx='4' style='fill:var(--ink-soft);fill-opacity:0.08'/><text x='140' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>每代淡一半,几代后</text><text x='140' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>新变异消失无踪</text><line x1='280' y1='60' x2='280' y2='240' style='stroke:var(--line);stroke-width:1'/><text x='420' y='58' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>颗粒式遗传(对)</text><rect x='340' y='72' width='40' height='22' rx='4' style='fill:var(--cinnabar);fill-opacity:0.75'/><rect x='396' y='72' width='40' height='22' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><rect x='340' y='104' width='40' height='22' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><rect x='396' y='104' width='40' height='22' rx='4' style='fill:var(--cinnabar);fill-opacity:0.75'/><rect x='340' y='136' width='40' height='22' rx='4' style='fill:var(--cinnabar);fill-opacity:0.75'/><rect x='396' y='136' width='40' height='22' rx='4' style='fill:var(--cinnabar);fill-opacity:0.75'/><rect x='340' y='168' width='40' height='22' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><rect x='396' y='168' width='40' height='22' rx='4' style='fill:var(--cinnabar);fill-opacity:0.75'/><text x='420' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>整份传递,不被稀释</text><text x='420' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>要么给,要么不给</text><text x='280' y='268' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>只有右边这种方式,自然选择才有东西可积累</text></svg>",
+   "caption": "混合遗传会把新变异稀释掉,颗粒式遗传则让它整份保存——孟德尔的发现,正好补上了进化论最缺的那一块。"
+  },
+  {
+   "type": "p",
+   "text": "当时还有另一种更古老的说法在流行:获得性状可以遗传——铁匠常年打铁练出的粗壮手臂,会传给儿子;长颈鹿因为总去够高处的叶子,脖子变长了,后代便生下更长的脖子。这类解释非常符合直觉,也非常受欢迎,因为它给了人一种掌控感:努力会写进血脉。但它经不起检验:一代人辛苦练出来的东西,并不会因此写进生殖细胞。**十九世纪关于遗传的两种主流意见,一种把遗传当作稀释,一种把遗传当作履历,两种都错**——真相要靠一个人在菜园里数豆子数出来。"
+  },
+  {
+   "type": "h2",
+   "text": "修道院里的八年:一个会算数的修士"
+  },
+  {
+   "type": "p",
+   "text": "格雷戈尔·孟德尔出身贫寒农家,进修道院一定程度上是为了求学的机会。他被派往维也纳深造,受过物理学与数学的训练,这一点极关键:**在一个习惯于描述形态的学科里,他带回了一双数数的眼睛**。回到布尔诺的修道院后,他在一小片菜园里开始了那项持续近八年的工作。"
+  },
+  {
+   "type": "p",
+   "text": "他的实验设计里有三处极高明的选择。第一,他先花了几年时间培育纯种——只有确保亲本世代稳定不变,后面的比例才有意义。第二,他挑的性状全是非此即彼、不会混成中间态的:圆粒与皱粒、种子黄与绿、花的位置、豆荚形状、茎的高与矮等若干对性状。**若他挑的是「甜度」或「产量」这类连续变化的指标,数据就会糊成一团,规律永远浮不出来**。第三,他数得极多——成千上万株后代,一粒粒记录。规律不是靠灵感看出来的,是靠样本量把噪声压下去之后自己显形的。"
+  },
+  {
+   "type": "p",
+   "text": "为什么偏偏是豌豆?它身上凑齐了实验材料所有的好处:平常自花授粉,因此纯种容易保持;花的结构又便于人工去雄、指定父本,想让谁跟谁杂交由实验者说了算;一年就有一代,还能在小片土地上种出成百上千株;性状清楚,圆的就是圆的,皱的就是皱的,不必争论。**在没有显微镜、没有化学分析、没有任何分子概念的年代,他靠的是一种极朴素的方法论:把变量控制到只剩一个,然后数**。这也是这一章最值得学的东西——重大突破未必来自昂贵设备,常常来自把问题问得足够小。"
+  },
+  {
+   "type": "callout",
+   "tone": "note",
+   "items": [
+    "打个比方,这就像研究一副扑克的规律:如果你只看「这一局手气好不好」,永远得不出结论;但如果记录几万局里每种牌型出现的频率,牌的构成就会自己浮出水面。孟德尔做的正是后者——他不是在观察植物,他是在统计一场持续八年的发牌记录。"
+   ]
+  },
+  {
+   "type": "p",
+   "text": "结果非常干净。让纯种高茎与纯种矮茎杂交,子一代全是高茎——矮的性状仿佛消失了。若按混合遗传,这里本该出现中等高度。更关键的是下一步:让子一代自交,矮茎又回来了,而且高与矮的比例稳定接近三比一。其他几对性状,做法一样,比例也一样。**「消失」的东西完好无损地回来了,这一件事就足以推翻整个混合遗传的图景**。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意",
+   "svg": "<svg viewBox='0 0 560 320' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>三比一是怎么来的:两份因子,四种组合</text><text x='280' y='56' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>子一代各带一份高(显)与一份矮(隐),自交后随机配对</text><rect x='170' y='72' width='90' height='30' rx='5' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><text x='215' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>高 + 矮</text><text x='280' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink-faint)'>×</text><rect x='300' y='72' width='90' height='30' rx='5' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><text x='345' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>高 + 矮</text><rect x='60' y='134' width='106' height='64' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><text x='113' y='160' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>高 + 高</text><text x='113' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>表现:高</text><rect x='190' y='134' width='106' height='64' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><text x='243' y='160' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>高 + 矮</text><text x='243' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>表现:高</text><rect x='320' y='134' width='106' height='64' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><text x='373' y='160' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>矮 + 高</text><text x='373' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>表现:高</text><rect x='450' y='134' width='106' height='64' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.7'/><text x='503' y='160' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar)'>矮 + 矮</text><text x='503' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar)'>表现:矮</text><text x='280' y='236' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>四种组合里三种显高、一种显矮 → 稳定的 3 : 1</text><text x='280' y='266' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>矮的那份因子在中间两种组合里一直好好地待着,只是被盖住了</text><text x='280' y='300' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>看不见 ≠ 不存在,这是全部遗传学的起点</text></svg>",
+   "caption": "三比一并不神秘:两份因子随机配对得到四种组合,只要一份显性就盖住隐性,统计上必然出现三比一。"
+  },
+  {
+   "type": "h2",
+   "text": "他到底发现了什么:三条可以说给孩子听的结论"
+  },
+  {
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "**遗传单位是颗粒式的**。决定一个性状的不是一团可以稀释的「特质浓度」,而是一份份完整的因子。一个个体从父母各拿一份,传给后代时又只传一份。",
+    "**有显有隐**。两份因子不一样时,一份会把另一份盖住,表现出来的只是显性那一份。但被盖住的那份毫发无损,还会照原样传下去——所以某个性状可以隔代冒出来。",
+    "**不同性状各自独立发牌**。种子的颜色怎么传,和豆荚的形状怎么传,基本互不干扰(后来发现这条有例外,恰恰成了第二章的突破口)。"
+   ]
+  },
+  {
+   "type": "pull",
+   "text": "遗传不是调颜料,是发牌。"
+  },
+  {
+   "type": "p",
+   "text": "这三条结论今天听起来平常,当年却是一次世界观级别的更替:它把遗传从一门描述性的经验之谈(「他这一点像他爹」),变成了一门可以计算、可以预测的学问。**你可以事先算出一批后代里各种表现的比例,再去数一数对不对**——这就是科学的样子。也是从这里开始,「像不像」这类模糊的家族议论,第一次有了确切的解剖对象。"
+  },
+  {
+   "type": "callout",
+   "tone": "warn",
+   "label": "容易读岔",
+   "items": [
+    "「显性」不等于优越,「隐性」也不等于劣等。这两个词只描述一件事:两份因子放在一起时,哪一份会在外观上出声。矮茎并不比高茎「差」,在风大的地方它可能活得更好。这个分寸看着不起眼,却极其要紧——三十年后,恰恰是有人把「显/隐」偷偷读成「优/劣」,再把「优/劣」套到人身上,才有了第三章那段历史。"
+   ]
+  },
+  {
+   "type": "h2",
+   "text": "放到今天:为什么孩子既像父母,又不像"
+  },
+  {
+   "type": "p",
+   "text": "这套「发牌」的机制,恰好解释了家族里那些让人纳闷的现象。同一对父母生的几个孩子,长得并不一样——因为每一次生育都是重新发一次牌,拿到哪一份是随机的。某个特征在祖辈身上有、父辈身上没有、到孙辈又冒出来,也不必假设它「跳过了一代」:它一直在,只是在父辈身上被显性的那份盖住,没有出声。**「隔代遗传」其实是一种误说,隐性因子从不缺席,它只是轮到能出声的时候才出声**。"
+  },
+  {
+   "type": "p",
+   "text": "更实际的一处应用在今天的医院里。有些遗传病是隐性的:只带一份致病因子的人完全健康,一辈子可能都不知道自己带着;但如果夫妻双方恰好都带一份,每一次怀孕就有约四分之一的概率让两份碰在一起,孩子发病。这个「四分之一」不是玄学,正是孟德尔那四种组合里的最后一格。婚前与孕前的携带者筛查、遗传咨询里那些概率的推算,底层用的都还是一百六十年前菜园里的算术。**要注意的是,这类清晰的比例只适用于由单个因子主导的少数性状**;身高、性情、常见慢性病风险这类由成百上千个位点加环境共同决定的事,并不遵守这么干净的比例——这个分寸,是全书后面反复要澄清的重点。"
+  },
+  {
+   "type": "h2",
+   "text": "然后,它被遗忘了三十多年"
+  },
+  {
+   "type": "p",
+   "text": "1865 年,孟德尔在当地自然科学学会的会议上宣读了这项工作,次年发表论文。反响几乎为零。他后来当选修道院院长,行政与事务缠身,再未回到这条线索上,晚年主要与税务、教务打交道,直到 1884 年去世。这项足以重写生物学的工作,在期刊架上沉睡了三十余年。"
+  },
+  {
+   "type": "callout",
+   "tone": "mute",
+   "label": "为何被埋没",
+   "items": [
+    "刊物影响力有限,流通面窄,少有相关领域的人读到。",
+    "时代的胃口不对:当时生物学界最热的议题是物种如何演变这类宏大问题,一个修士在菜园里数豆子得出的比例,看起来像园艺技巧而非自然法则。",
+    "他的语言是数学的。用比例和统计说话,在当时以形态描述为主的生物学界近乎异类,读者未必看得出那些数字的分量。"
+   ]
+  },
+  {
+   "type": "p",
+   "text": "1900 年前后,几位欧洲植物学家在各自的杂交实验里撞上了同样的规律,查文献时才发现这条路早有人走完。这次「重新发现」立刻引爆了一门新学科:1905 年前后,英国学者贝特森为它取名 genetics(遗传学),他也是把孟德尔的工作大力介绍给英语世界的关键推手;1909 年,丹麦植物学家约翰森给孟德尔的「因子」起了一个更短的名字——**gene,基因**;他同时还提出了另一对至今仍在用的概念:基因型(带着什么)与表现型(表现出什么)。这对区分极有用:同一份基因型在不同环境里可以给出不同的表现型,而看起来一样的两个人,底下的牌未必相同。**日后一切关于「基因决定论」的争论,都要在这一对概念之间来回拉锯**。"
+  },
+  {
+   "type": "quote",
+   "original": "基因,一个便于使用的小词。",
+   "translation": "这是对当年造词者态度的概括:他刻意不给这个词附加任何关于物质形态的假设——因为那时谁也不知道基因是什么做的。要点在于,「基因」最初只是一个记账用的符号,后面几十年的科学史,都是在给这个符号找肉身。"
+  },
+  {
+   "type": "p",
+   "text": "这个次序值得反复强调。**基因这个词诞生的时候,它没有形状、没有位置、没有化学成分,只是一个「必须存在的东西」**。此后的故事就是一场层层落实的追猎:它在哪里(第二章:染色体上,并且能画出坐标)、它长什么样(第四章:双螺旋)、它怎么被读出来(第四章:遗传密码)、能不能改(第五章)、全部读完会看到什么(第六章)。而在这条追猎线刚起步时,另一条线也已经悄悄启动了——有人已经在盘算:既然性状可以遗传,能不能通过控制谁来生育,「改良」人类自己?那是第三章,全书最黑的一章。"
+  },
+  {
+   "type": "p",
+   "text": "回到开头那张饭桌。长辈们说的「遗传」,意思是宿命;而这一章讲完之后,这个词的含义已经变了:它指的是一份份可以被数清、被计算、有概率可言的东西。**从「命中注定」到「四分之一」,这不是一个小小的措辞变化,而是人类第一次把遗传从命运手里拿过来,放到桌面上端详**。当然,这只是第一步——它还只是一个名字和一套算术。名字底下究竟是什么、坐在身体的哪个位置,得由下一章那间闷热的果蝇房来回答。而在那之前,请先记住这一章最朴素的一课:一个把问题缩到最小、然后老老实实数了八年的人,推翻了整个时代关于遗传的共识。"
+  },
+  {
+   "type": "figure",
+   "ftype": "时间线",
+   "svg": "<svg viewBox='0 0 560 210' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>从一个空缺到一个名字</text><line x1='50' y1='96' x2='510' y2='96' style='stroke:var(--ink-faint);stroke-width:1.2'/><circle cx='80' cy='96' r='4' style='fill:var(--ink-soft)'/><text x='80' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>1859</text><text x='80' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>物种起源</text><text x='80' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>遗传留空</text><circle cx='190' cy='96' r='5.5' style='fill:var(--cinnabar)'/><text x='190' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar)'>1865/66</text><text x='190' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>孟德尔宣读</text><text x='190' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>并发表论文</text><line x1='190' y1='96' x2='330' y2='96' style='stroke:var(--ink-faint);stroke-width:3;stroke-dasharray:5 5'/><text x='260' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>沉睡三十余年</text><circle cx='330' cy='96' r='5' style='fill:var(--ink)'/><text x='330' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>1900</text><text x='330' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>被重新发现</text><circle cx='420' cy='96' r='4' style='fill:var(--ink-soft)'/><text x='420' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>1905前后</text><text x='420' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>遗传学得名</text><circle cx='500' cy='96' r='5' style='fill:var(--cinnabar)'/><text x='500' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar)'>1909</text><text x='500' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>「基因」定名</text><text x='280' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>请留意:名字有了,但它是什么做的、藏在哪里,当时一无所知</text></svg>",
+   "caption": "五十年走完一段路:遗传从进化论的空缺,变成一门有名字的学科和一个有名字的单位——肉身还要再等四十年。"
+  }
+ ]
+}

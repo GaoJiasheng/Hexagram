@@ -1,0 +1,302 @@
+{
+ "title": "白话《基因传》· 全书总览",
+ "subtitle": "一篇文章读懂穆克吉:孟德尔的豌豆、摩尔根的果蝇、双螺旋与遗传密码、优生学的暗影、人类基因组计划,直到 CRISPR 面前那条「能做」与「该做」的界线",
+ "centralIdea": "《基因传》是一部编年体的科学史,追问一个看起来简单的问题:是什么东西,让子女像父母?一百五十年里,人类把这个东西从一个抽象的记账单位(孟德尔的「遗传因子」),钉到了染色体上的具体位置(摩尔根的果蝇),读出了它的物理形状(双螺旋)和书写规则(遗传密码),最后学会了剪切、拼接乃至精确改写它(重组DNA与基因编辑)。但这部史书里有两条线始终交缠:一条是「读懂」,一条是「筛选」——每当人类觉得自己终于读懂了遗传,几乎都紧跟着一次想用它评判、分类甚至清除同类的冲动,优生学与纳粹德国的暴行就是这条线最黑暗的一段。穆克吉把这两条线并置着写,还带进了自己家族三代人的精神疾病记忆,所以这本书的副题叫「一部私人史」。读它最大的收获不是记住一串发现,而是获得一副看待「基因决定论」的清醒眼光。",
+ "featured": true,
+ "hero": {
+  "badge": "全书 · 核心",
+  "headline": "人类用了一百五十年读懂基因,却一再想用它来筛选同类。",
+  "tagline": "一部遗传学的编年史,也是一份写给基因技术时代的伦理备忘录。"
+ },
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "今天做一次体检,报告上可能会附一页「遗传风险」:某种病的风险高于人群平均,某种代谢能力偏弱。很多人看完只记住了一句话——「我的基因不好」。这句话背后藏着一部长达一个半世纪的历史:人类是怎么从「孩子为什么像父母」这个朴素疑问出发,一步步找到基因、读出基因、最后学会改写基因的?悉达多·穆克吉的《基因传》就是这部历史的讲述者。他是一位肿瘤医生,也是《众病之王》的作者,而他写这本书的私人动机写在开篇:他的家族里有多位亲人受精神疾病困扰,他从小就在长辈的闲谈里反复听到一个词——「遗传」。于是这本书有两个身份:它既是一部严肃的科学史,也是一个人对「我身上带着什么」这个问题的追问。这篇总览带你把这一百五十年走一遍,看清科学怎样一点点逼近真相,也看清它在哪几个路口曾被彻底带偏。"
+  },
+  {
+   "type": "h2",
+   "text": "先看地图:七章,两条交缠的线"
+  },
+  {
+   "type": "p",
+   "text": "原书篇幅浩大,人物众多,但脉络其实非常清楚:**它按时间顺序推进,每一章解决一个「基因到底是什么」的问题**。第一章问「有没有这种东西」,第二章问「它在哪里」,第四章问「它长什么样、怎么被读出来」,第五章问「能不能动手改」,第六章问「全部读完会看到什么」,第七章问「该不该改人类自己」。而第三章插进来的那条线——优生学——不解决任何科学问题,却是全书最重的一章:它讲的是这门年轻的科学如何被意识形态劫持,变成筛选人的工具。"
+  },
+  {
+   "type": "quote",
+   "original": "原子、字节、基因。",
+   "translation": "穆克吉在开篇把二十世纪最具颠覆性的三个观念并列在一起:原子让人类学会拆解物质,字节让人类学会拆解信息,基因让人类学会拆解生命本身。三者都威力巨大,也都在被掌握之后立刻引出了「该不该用」的问题——这个并列,定下了全书的调子。"
+  },
+  {
+   "type": "figure",
+   "ftype": "流程图",
+   "svg": "<svg viewBox='0 0 560 640' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>《基因传》七章:一条读懂的线,一条筛选的线</text><rect x='40' y='42' width='480' height='44' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='62' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>一 · 豌豆里的「不会被稀释的东西」</text><text x='280' y='79' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>1865—1900 · 孟德尔提出遗传因子,被埋没三十余年</text><line x1='280' y1='86' x2='280' y2='98' style='stroke:var(--ink-faint);stroke-width:1'/><rect x='40' y='98' width='480' height='44' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>二 · 果蝇把抽象概念钉在染色体上</text><text x='280' y='135' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>1905—1940 · 摩尔根的蝇室、连锁与基因图谱</text><line x1='280' y1='142' x2='280' y2='154' style='stroke:var(--ink-faint);stroke-width:1'/><rect x='40' y='154' width='480' height='50' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='280' y='175' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar)'>三 · 优生学:一门科学被意识形态劫持 ⚠</text><text x='280' y='193' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>1883—1945 · 从高尔顿的构想到强制绝育与种族灭绝</text><line x1='280' y1='204' x2='280' y2='216' style='stroke:var(--ink-faint);stroke-width:1'/><rect x='40' y='216' width='480' height='44' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='236' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>四 · 双螺旋与遗传密码:信息如何被读出</text><text x='280' y='253' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>1943—1970 · 结构、中心法则、三联体密码</text><line x1='280' y1='260' x2='280' y2='272' style='stroke:var(--ink-faint);stroke-width:1'/><rect x='40' y='272' width='480' height='44' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='292' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>五 · 重组的年代:剪切、拼接与一次自我刹车</text><text x='280' y='309' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>1970—1990 · 重组DNA、阿西洛马会议、基因工程药物</text><line x1='280' y1='316' x2='280' y2='328' style='stroke:var(--ink-faint);stroke-width:1'/><rect x='40' y='328' width='480' height='44' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='348' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>六 · 读完三十亿个字母之后</text><text x='280' y='365' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>1990—2010 · 人类基因组计划与「基因决定论」的破产</text><line x1='280' y1='372' x2='280' y2='384' style='stroke:var(--ink-faint);stroke-width:1'/><rect x='40' y='384' width='480' height='50' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><text x='280' y='405' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar)'>七 · 编辑生命:「能做」与「该做」之间那条线 ⚠</text><text x='280' y='423' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>1990—今 · 基因治疗的挫折与复兴、CRISPR、生殖系争议</text><line x1='60' y1='458' x2='500' y2='458' style='stroke:var(--line);stroke-width:1'/><text x='280' y='486' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>两条线的关系,是全书真正的主题:</text><rect x='70' y='502' width='190' height='60' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><text x='165' y='526' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>读懂的线</text><text x='165' y='548' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>一、二、四、五、六章</text><rect x='300' y='502' width='190' height='60' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='395' y='526' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>筛选的线</text><text x='395' y='548' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>三、七章</text><path d='M260,522 L300,522' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:3 3'/><path d='M300,542 L260,542' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:3 3'/><text x='280' y='592' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>每一次「读懂」都会喂养一次「筛选」的冲动,</text><text x='280' y='614' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>这是这部编年史给基因技术时代留下的最大警示</text></svg>",
+   "caption": "七章的顺序基本对应原书的时间线;标红的两章不解决科学问题,却是全书分量最重的伦理章节。"
+  },
+  {
+   "type": "h2",
+   "text": "一、豌豆:遗传原来不是「掺水」,而是「发牌」"
+  },
+  {
+   "type": "p",
+   "text": "十九世纪的人默认遗传像调颜料:父母的特征在孩子身上混合、稀释,一代代匀开去。达尔文 1859 年出版《物种起源》,把自然选择讲得极为透彻,却在遗传这一环上留下了大窟窿——如果每一代都在混合稀释,那么新出现的有利变异会像一滴墨落进大海,几代之后就淡得看不见了,自然选择还能积累什么?达尔文自己提出过一套猜想式的解释,认为身体各部分会释放微小颗粒汇入生殖细胞,后来被证明并不成立。**遗传的机制,是进化论地基上一块长期空缺的砖**。"
+  },
+  {
+   "type": "p",
+   "text": "填上这块砖的人,是奥地利布尔诺一座修道院里的修士孟德尔。他种了近八年豌豆,一株株人工授粉、一粒粒数种子,记录了成千上万株后代的性状。他挑的性状很聪明:圆粒与皱粒、黄色与绿色、高茎与矮茎——全都是非此即彼、不会混成中间态的。结果出来了:高茎与矮茎杂交,子一代全是高茎,矮的性状「消失」了;可让子一代自交,矮茎又冒了出来,而且高矮之比稳定接近三比一。"
+  },
+  {
+   "type": "p",
+   "text": "这个三比一是全书的第一块基石。它说明**遗传不是掺水,而是发牌**:决定性状的东西是一份份离散的、不会互相溶解的「因子」,每个个体从父母各拿一份,显性的那份把隐性的那份盖住,但隐性的并没有消失,只是暂时不出声。孟德尔 1865 年在当地的自然科学学会宣读了这项研究,次年发表论文——然后几乎无人理会。他后来当了修道院院长,事务繁忙,再未回到这项工作上。**一个足以重写生物学的结论,在期刊里睡了三十多年**。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>孟德尔的豌豆:消失的性状又回来了</text><text x='60' y='62' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>亲代</text><rect x='140' y='48' width='110' height='30' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><text x='195' y='68' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>纯种高茎</text><text x='275' y='68' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink-faint)'>×</text><rect x='300' y='48' width='110' height='30' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><text x='355' y='68' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>纯种矮茎</text><line x1='275' y1='78' x2='275' y2='100' style='stroke:var(--ink-faint);stroke-width:1'/><text x='60' y='124' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>子一代</text><rect x='170' y='104' width='210' height='34' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><text x='275' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>全部高茎——矮的性状「消失」了</text><line x1='275' y1='138' x2='275' y2='160' style='stroke:var(--ink-faint);stroke-width:1'/><text x='60' y='186' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>子二代</text><rect x='140' y='164' width='170' height='40' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><text x='225' y='189' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>高茎 约 3 份</text><rect x='330' y='164' width='110' height='40' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.6'/><text x='385' y='189' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>矮茎 约 1 份</text><text x='280' y='236' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>隐性的那份从未被稀释,它只是暂时不出声</text><text x='280' y='266' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>遗传不是调颜料,是发牌</text><text x='280' y='288' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>这个稳定的 3:1,是整门遗传学的第一块基石</text></svg>",
+   "caption": "「消失又回来」的隐性性状,证明遗传单位是离散的、不可分割的——这正是后来「基因」这个概念的雏形。"
+  },
+  {
+   "type": "p",
+   "text": "1900 年前后,几位欧洲植物学家在各自的杂交实验里撞上了同样的规律,查文献时才发现孟德尔早已走完这条路。这次「重新发现」引爆了一门新学科:1905 年前后,英国学者贝特森为它取名 genetics(遗传学);1909 年,丹麦植物学家约翰森给孟德尔的「因子」起了一个更短的名字——**gene,基因**。请注意这个次序:**基因这个词被造出来的时候,没有人知道它是什么物质、长什么样、藏在哪里**。它先是一个记账用的抽象符号,后面几十年的工作,都是在给这个符号找肉身。"
+  },
+  {
+   "type": "p",
+   "text": "为什么这样一个漂亮的结论会被埋没三十多年?一部分原因是渠道:它发表在一份影响力有限的地方性刊物上,读者寥寥。更深的原因是时代的胃口不对——当时生物学界最关心的是物种如何演变这样的大问题,一个修士在菜园里数豆子得出的比例关系,看起来像是园艺技巧而不是自然的基本法则。**科学史里常有这种事:答案早已写下,却要等到有人带着对应的问题回来翻它**。这一点在后面还会重演:遗传的许多关键线索,都是先被记录下来、多年后才被读懂。"
+  },
+  {
+   "type": "h2",
+   "text": "二、果蝇:把一个抽象符号钉在具体位置上"
+  },
+  {
+   "type": "p",
+   "text": "给基因找肉身的关键实验室,是哥伦比亚大学一间狭小闷热、堆满牛奶瓶和烂香蕉的房间,人称「蝇室」,主持人是托马斯·亨特·摩尔根。他选果蝇是因为它便宜、繁殖快、十几天一代。转折点是一只白眼雄蝇——在一片红眼果蝇里出现的突变体。摩尔根和学生们追踪它的后代,发现白眼这个性状总是跟性别一起传递,几乎只出现在雄蝇身上。这意味着:**决定眼色的那个基因,就坐在决定性别的那条染色体上**。"
+  },
+  {
+   "type": "p",
+   "text": "接下来的推理更漂亮。如果两个基因在同一条染色体上,它们就会倾向于一起遗传，这叫连锁;但染色体在形成生殖细胞时会互相交换片段,所以连锁偶尔会被打断,而**两个基因离得越远,被打断的概率就越大**。反过来,只要统计「一起遗传的比例」,就能算出它们之间的相对距离。摩尔根的学生斯特蒂文特把这个思路变成了一张图——人类历史上第一张基因图谱,基因从此有了坐标。"
+  },
+  {
+   "type": "callout",
+   "tone": "note",
+   "label": "放到今天",
+   "items": [
+    "这套逻辑至今仍在用。今天医院里说的「某个致病基因定位在几号染色体的某个区段」,方法上就是摩尔根这一路的直系后代:先找到一群患者与不患者,看哪些遗传标记总是跟疾病一起出现,再一步步收窄区间。第六章里亨廷顿病基因的漫长追猎,用的正是这套放大到人类家族尺度的连锁分析。"
+   ]
+  },
+  {
+   "type": "p",
+   "text": "同一时期,穆勒用X射线照射果蝇,发现辐射能大幅提高突变率——这既证明基因是能被物理手段改变的实体,也第一次给出了一个不安的暗示:**基因可以被人为地打坏**。到 1940 年代,比德尔与塔特姆在链孢霉上得出「一个基因对应一种酶」的结论,基因终于和具体的生化功能挂上了钩。基因是什么?到这一步的答案是:染色体上一段有确定位置、能被辐射改变、负责指挥某个化学反应的东西。它还差最后一步——**它的物理形状**。"
+  },
+  {
+   "type": "p",
+   "text": "打个比方:孟德尔证明了城里确实住着一些「居民」,但谁也不知道他们住哪儿;摩尔根这一路做的事,是把这座城的街道画出来、给每户挂上门牌号。有了门牌号,后面的事才可能发生——要修哪一户的水管,总得先知道它在第几条街第几号。今天医学上说的「定位到某个基因」,本质上就是查门牌;而第五章之后的「改写」,是拿着门牌号上门施工。**没有这张地图,一切精确操作都无从谈起**。"
+  },
+  {
+   "type": "h2",
+   "text": "三、暗影:一门年轻的科学怎样被劫持"
+  },
+  {
+   "type": "p",
+   "text": "科学史读起来常常像一路向上的登山记,但这一章必须停下来。孟德尔的规律刚被重新发现,一套完全不同的用法就已经在酝酿:既然性状可以遗传,能不能通过控制谁生育来「改良」人类?提出这个构想并为它造词的是弗朗西斯·高尔顿——达尔文的表弟。他在 1880 年代造出 eugenics 一词,即优生学,字面意思是「生得好」。这里必须把两件事分清楚:**遗传规律的科学发现,与用这些发现去筛选人的政治工程,是两件截然不同的事**。混淆它们,是二十世纪最惨痛的教训之一。"
+  },
+  {
+   "type": "p",
+   "text": "优生学在二十世纪初并非边缘思潮,而是相当体面的「进步事业」,有学会、有国际会议、有名流站台。它在美国走得最远:多个州先后通过法律,允许对被判定为「低能」「不适宜生育」的人实施强制绝育。1927 年美国最高法院在一起著名案件中支持了这类法律,判决书里那句「三代低能已经足够」出自大法官笔下——一位在司法史上备受尊敬的法官,为强制绝育提供了合法性。据后世统计,美国在这类法律下被强制绝育的人数达数万之众,其中大量是贫穷女性、少数族裔与被误判智力的人。**科学的外衣,让一次针对弱者的社会清理显得理据充分**。"
+  },
+  {
+   "type": "quote",
+   "original": "三代低能已经足够。",
+   "translation": "这是 1927 年美国最高法院支持强制绝育法的判决书中的一句话。把它单独摘出来,是因为这句话浓缩了这一章最刺人的地方:说这话的人不是暴徒,而是一位受人尊敬的大法官,他相信自己是在依据科学做出理性判断。"
+  },
+  {
+   "type": "p",
+   "text": "更黑暗的一段发生在纳粹德国。1933 年掌权之后,一部法律为大规模强制绝育开路,据估计有数十万人被施以手术;随后是以「安乐死」为名对残障者与精神病人的系统性杀害;最终，这套「清理不良遗传」的逻辑与种族主义合流,走到了对犹太人、罗姆人等群体的种族灭绝。集中营里还进行过以双胞胎为对象的所谓「遗传研究」,那是对人的酷刑,不是科学。**这条路的每一步都自称有科学依据,而它的终点是奥斯维辛**。"
+  },
+  {
+   "type": "figure",
+   "ftype": "提醒",
+   "svg": "<svg viewBox='0 0 560 320' xmlns='http://www.w3.org/2000/svg'><rect x='20' y='16' width='520' height='288' rx='10' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5;stroke-dasharray:7 5'/><text x='280' y='52' text-anchor='middle' style='font-family:var(--font-serif);font-size:16px;font-weight:bold;fill:var(--cinnabar)'>⚠ 必须分清的两件事</text><rect x='44' y='70' width='222' height='96' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><text x='155' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>科学发现</text><text x='155' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>性状可以遗传,遗传有规律</text><text x='155' y='136' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>可被观察、检验、修正</text><text x='155' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>本身不含价值判断</text><rect x='294' y='70' width='222' height='96' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.6'/><text x='405' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>优生学工程</text><text x='405' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>由谁来定义「优」与「劣」?</text><text x='405' y='136' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>用国家权力剥夺生育与生命</text><text x='405' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>是政治选择,不是科学结论</text><path d='M266,118 L294,118' style='stroke:var(--cinnabar);stroke-width:1.4;stroke-dasharray:4 3'/><text x='280' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>被借用为「理据」的那一步,是全部悲剧的起点</text><line x1='60' y1='214' x2='500' y2='214' style='stroke:var(--line);stroke-width:1'/><text x='280' y='242' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>优生学在当年不是边缘怪论,而是体面的「进步事业」</text><text x='280' y='268' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>——这正是它最值得警惕的地方</text><text x='280' y='292' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>今天的基因技术同样会被「为了孩子好」这类温和说法包装</text></svg>",
+   "caption": "科学发现与优生学工程之间那条虚线,是全书反复回望的地方:每一次技术跃进,都可能重新点亮这条线。"
+  },
+  {
+   "type": "p",
+   "text": "还有一层容易被忽略的事实:**优生学连按当时的遗传学都站不住脚**。它的整套操作前提是「贫穷、犯罪、酗酒、智力低下这类复杂状况由少数遗传因子决定,因此把携带者剔除就能一劳永逸」——可即便在孟德尔规律刚被重新发现的年代,已经有研究者指出,这类涉及行为与社会境遇的表现远非单一因子所能决定,更不是仅靠遗传就能解释的。换句话说,优生学不是「科学算错了」,而是**先有了想筛掉某些人的意图,再去科学里挑拣可用的零件**。这正是它今天仍值得警惕的原因:被借用的科学可以更换,那份意图却相当顽固。"
+  },
+  {
+   "type": "p",
+   "text": "写这段历史,分寸很重要。它不是猎奇材料,也不能推给「几个疯子」了事——**真正可怕的地方,恰恰是当时它显得多么正常、多么理性、多么进步**。战后,优生学作为公开纲领破产了,但它留下的问题一个都没解决:什么算病、什么算缺陷、谁有权决定哪种人不该出生?这些问题在第六、七章会以更温和的面貌重新出现——不再由国家强制,而是包装成父母的自由选择、医学的技术进步。这也是穆克吉把这一章放在全书正中的用意:**它不是历史的插曲,而是这部编年史的另一条主线**。"
+  },
+  {
+   "type": "h2",
+   "text": "四、双螺旋:基因终于有了形状,和一套书写规则"
+  },
+  {
+   "type": "p",
+   "text": "1940 年代,一连串实验把嫌疑锁定在 DNA 上:细菌能把「性状」从死细胞传给活细胞,而承担这份传递的物质经提纯鉴定是 DNA,不是当时更被看好的蛋白质;随后用病毒做的实验进一步确认,进入细胞、决定后代的是 DNA。剩下的问题是结构——一个能装下遗传信息、又能被精确复制的分子,该长什么样?"
+  },
+  {
+   "type": "p",
+   "text": "1953 年,沃森与克里克在剑桥给出了答案:双螺旋。两条链反向缠绕,碱基在内侧成对配合,A 对 T、G 对 C。这个结构本身就把「复制」写在脸上:两条链一分开，每条都是重建另一条的模板。他们在论文里那句克制的补充,后来成了科学史上最著名的低调表述之一。"
+  },
+  {
+   "type": "quote",
+   "original": "我们注意到,我们所假定的这种配对方式,立即暗示了遗传物质可能的复制机制。",
+   "translation": "这是 1953 年那篇双螺旋论文里的一句话。翻译成大白话:我们不只画出了它的样子,还顺手解释了它怎么自我复印——一句轻描淡写,抵得上整篇论文。"
+  },
+  {
+   "type": "p",
+   "text": "这段历史里有一处不能省略的公正问题:**罗莎琳德·富兰克林的贡献长期被低估**。她当时在伦敦用X射线衍射研究 DNA,得到了一张质量极高的衍射照片,那是判断双螺旋结构最关键的实验证据之一;而这张照片在她本人不知情的情况下被给沃森看过。她 1958 年因病早逝,四年后的诺贝尔奖颁给了另外三位在世的研究者。穆克吉写这段时并不含糊其辞:双螺旋不是两个天才在真空里的灵光一闪,而**踩在一批实验者的数据之上,其中一份关键数据的取得者,没有得到应有的位置**。"
+  },
+  {
+   "type": "p",
+   "text": "结构解开之后,接下来的十几年在解决「怎么读」。基因是一段 DNA 序列,先被抄成 RNA,再被翻译成蛋白质——这条单向流程被称为中心法则。密码本也被逐个字破译:每三个碱基是一个字,对应一种氨基酸。到 1960 年代末,人类已经能说出一个基因是怎样一步步变成一个蛋白质分子的。**基因从一个记账符号,变成了一段可以被逐字读出的文本**。"
+  },
+  {
+   "type": "figure",
+   "ftype": "流程图",
+   "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>中心法则:一段文本如何变成一台机器</text><rect x='30' y='60' width='128' height='56' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.6'/><text x='94' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar)'>DNA</text><text x='94' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>原本 · 存档不外借</text><path d='M158,88 L206,88' style='stroke:var(--ink-soft);stroke-width:1.5'/><path d='M198,83 L208,88 L198,93' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='182' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>转录</text><rect x='212' y='60' width='128' height='56' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.4'/><text x='276' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>RNA</text><text x='276' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>抄件 · 送去车间</text><path d='M340,88 L388,88' style='stroke:var(--ink-soft);stroke-width:1.5'/><path d='M380,83 L390,88 L380,93' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5'/><text x='364' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>翻译</text><rect x='394' y='60' width='136' height='56' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.4'/><text x='462' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>蛋白质</text><text x='462' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>成品 · 干活的机器</text><text x='280' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>密码本:每三个碱基是一个字,对应一种氨基酸</text><rect x='150' y='168' width='260' height='34' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>A · T · G · C 四个字母,三个一组</text><text x='280' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>后来发现这条流程远比单向箭头复杂,但它至今是理解基因表达的骨架</text></svg>",
+   "caption": "中心法则把基因从「看不见的因子」变成了「可以逐字读出的文本」——这是后面所有改写技术的前提。"
+  },
+  {
+   "type": "p",
+   "text": "但同一时期还有一个发现,后来变得越来越重要:**基因不是一直在响,它有开关**。研究者在细菌里看到,某些基因只有在特定营养出现时才被打开,平时被一个调控元件按住。这件事说明,一个细胞里的基因绝大多数时候是沉默的,真正决定一个细胞是肝细胞还是神经细胞的,不是它带了哪些基因(同一个人的所有细胞带的基因几乎一样),而是**哪些基因被打开、哪些被关掉**。这个视角在几十年后会成为理解发育、癌症乃至干细胞重编程的钥匙,也让「基因即命运」的说法从内部松动:同一份序列,读法不同,结局就不同。"
+  },
+  {
+   "type": "h2",
+   "text": "五、动手:剪切、拼接,以及一次罕见的自我刹车"
+  },
+  {
+   "type": "p",
+   "text": "1970 年代初,几样工具凑齐了:能在特定位置切开 DNA 的酶(限制酶)、能把断口接起来的酶,以及能把外来片段带进细菌并让它大量复制的载体。把它们组合起来,就得到了重组 DNA 技术——**人类第一次能把一段来自任意生物的基因,搬进另一种生物体内并让它工作**。这项能力立刻显出两面性:一面是可以让细菌替人类生产稀缺的药物蛋白;另一面是,没人知道把致癌病毒的基因塞进大肠杆菌会发生什么。"
+  },
+  {
+   "type": "p",
+   "text": "此时发生了科学史上少见的一幕:**推动这项技术的科学家自己按下了暂停键**。1975 年,一批研究者在加州阿西洛马开会,自愿暂停部分高风险实验,讨论并制定分级的安全规范。这次会议后来常被当作「科学界自我治理」的样板,也一直伴随着争议——批评者指出,与会者几乎全是内行,议题被限定在生物安全的技术层面,伦理与社会层面的追问被推到了会外。**它证明了自律是可能的,也暴露了自律的边界:被邀请进屋的人,决定了哪些问题会被讨论**。"
+  },
+  {
+   "type": "steps",
+   "items": [
+    {
+     "title": "凑齐工具",
+     "text": "限制酶负责在特定序列处剪开,连接酶负责把断口接上,质粒等载体负责把外来片段送进细菌并大量复制。",
+     "state": "done"
+    },
+    {
+     "title": "把基因搬家",
+     "text": "把人的一段基因接进细菌的环状 DNA,细菌繁殖时便顺带把它复制无数份,还能照着它生产蛋白质。",
+     "state": "done"
+    },
+    {
+     "title": "自我刹车",
+     "text": "1975 年阿西洛马会议:研究者自愿暂停部分实验,制定分级安全规范——把「先做了再说」换成「先议好再做」。",
+     "state": "done"
+    },
+    {
+     "title": "变成药",
+     "text": "让工程菌批量生产人的胰岛素等蛋白药物,取代从动物脏器提取的旧路线,是这项技术最早的普惠成果。",
+     "state": "done"
+    }
+   ]
+  },
+  {
+   "type": "p",
+   "text": "很快，实用成果落地了:让细菌照着人的基因生产胰岛素,取代了从动物胰腺里提取的老办法——**基因技术第一次以药品的形式进入普通人的生活**,而不是停在论文里。与此同时,测序方法与后来的 DNA 扩增技术把「读」的能力推到了新的量级。到 1990 年代初,有的人类致病基因已经被一步步定位、克隆出来,其中最有名的一场追猎持续了十余年,靠的是在一个大家族里挨家挨户采集样本、比对遗传标记,最终把亨廷顿病的基因锁定下来。**读和写的能力同时成熟,基因组这本大书,人类开始考虑通读一遍**。"
+  },
+  {
+   "type": "h2",
+   "text": "六、读完之后:「一个基因决定一种性状」错在哪"
+  },
+  {
+   "type": "p",
+   "text": "人类基因组计划 1990 年启动,目标是把人类的全部 DNA 序列读出来。中途一家私营公司以更快的策略加入竞争,双方一度剑拔弩张,最终在 2000 年共同宣布完成工作草图,2003 年宣告完成。这是一项组织学上的壮举,但**它最重要的成果是一连串「意外」**——而这些意外,恰好把二十世纪流行的基因决定论击得粉碎。"
+  },
+  {
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "基因数目远比预想的少。此前流行的估计动辄十万个,实测结果只有约两万个,和一些结构简单得多的生物相比并没有多出多少——**复杂性不写在基因的数量上**。",
+    "直接编码蛋白质的序列只占基因组很小的比例,余下的大片区域长期被称作「垃圾」,后来发现其中相当一部分承担着调控功能:决定哪个基因在什么时候、在哪种细胞里被打开。",
+    "同一段序列可以被剪接、组合成多种产物,一个基因往往影响多个性状,一个性状又常由成百上千个基因加上环境共同塑造。",
+    "基因之上还有一层开关:环境经历能改变基因被读取的方式而不改变序列本身,这就是表观遗传学关心的事。"
+   ]
+  },
+  {
+   "type": "callout",
+   "tone": "warn",
+   "label": "容易读岔",
+   "items": [
+    "「一个基因决定一种性状」这种流行说法,只在极少数情况下近似成立——那类由单个基因主导、几乎必然发病的遗传病。绝大多数我们关心的东西(身高、性情、学业表现、常见慢性病的风险)都是成百上千个位点的微小效应叠加,再乘上一辈子的环境与偶然。",
+    "所以基因检测报告上的「患病风险 18%」不等于「你会得这个病」,也不等于「你比别人差」。它说的是:在与你携带相似位点的一大群人里,统计上大约这个比例的人会发病;至于你个人会不会,报告并不知道。把统计概率当成个人命运,是今天最常见的一种基因误读。"
+   ]
+  },
+  {
+   "type": "p",
+   "text": "同卵双胞胎是理解这件事最好的窗口:他们的序列几乎完全相同,却仍然长成两个不同的人——性格有别,患病与否常常不同步。**基因不是剧本,更像是一把牌:发到手里的牌固定了可能性的范围,怎么打、在什么牌局里打,却不由牌本身决定**。这也解释了为什么穆克吉一家的故事没有简单答案:家族里有精神疾病的聚集,提示确有遗传的分量;但同一个家族里的其他人终生无恙,又提示那分量远不是判决书。"
+  },
+  {
+   "type": "p",
+   "text": "原书在这一段还处理了一批更敏感的题目:性别的生物学决定、性取向、智力测验分数、以及所谓的「种族差异」。穆克吉的处理方式值得学:凡是**证据不足或研究本身经不起重复的,就明说它经不起重复**,不拿它当谈资;凡是牵涉群体比较的,先讲清一个统计常识——同一群体内部的个体差异,往往远远大于群体之间的平均差异,因此用群体平均去推断某个具体的人,在方法上就是错的。这一段读起来不刺激,却是全书最负责任的部分之一:**在数据薄弱处保持沉默,本身就是一种科学品格**。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>读完基因组,推翻了什么</text><rect x='34' y='48' width='232' height='176' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><text x='150' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink-soft)'>读之前的想象</text><text x='150' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>基因约十万个</text><text x='150' y='130' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>一个基因 → 一种性状</text><text x='150' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>非编码区是「垃圾」</text><text x='150' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>读完序列即读懂人</text><text x='150' y='208' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>基因 = 命运的剧本</text><rect x='294' y='48' width='232' height='176' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.6'/><text x='410' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>读完之后的现实</text><text x='410' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>约两万个</text><text x='410' y='130' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>多基因 + 环境 → 一种性状</text><text x='410' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>大量非编码区负责调控</text><text x='410' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>序列只是问题的开始</text><text x='410' y='208' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>基因 = 一把牌,不是剧本</text><text x='280' y='254' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>最大的发现,是发现自己问错了问题</text><text x='280' y='280' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>不是「哪个基因决定它」,而是「哪些位点、在什么环境里、以多大概率影响它」</text></svg>",
+   "caption": "基因组计划最有价值的产出不是一串答案,而是一次问题的重写——它同时也拆掉了基因决定论的地基。"
+  },
+  {
+   "type": "h2",
+   "text": "七、编辑:能做与该做之间那条线"
+  },
+  {
+   "type": "p",
+   "text": "既然能读、能改,自然就想到治病。1990 年代初,第一批基因治疗尝试在一种严重的先天免疫缺陷病上取得了鼓舞人心的效果。但 1999 年,一名参加基因治疗试验的年轻志愿者在治疗后死亡——直接原因与递送基因所用的病毒载体引发的剧烈免疫反应有关。**这次死亡让整个领域几乎停摆了十年**:审查趋严,资金撤退,乐观情绪骤冷。后来的复兴靠的是把工程做扎实:换更安全的载体、缩小适用范围、把风险讲清楚。这段挫折是全书给技术乐观主义开的一剂药:**能改和改得安全,中间隔着很多具体的、无法跳过的工程与伦理功课**。"
+  },
+  {
+   "type": "p",
+   "text": "顺带说一句今天的进展:这一路走下来,针对少数由单个基因主导的严重疾病,基因层面的疗法已经从设想变成了获批上市的药,患者是具体的人而不是论文里的编号。这类成果的共同特征很说明问题——**都盯着「病因极其明确、后果极其严重」的那一小类**,而不是去改写性情、身高或聪明程度。技术真正走得通的地方,恰好也是伦理上最没有争议的地方,这不是巧合。"
+  },
+  {
+   "type": "p",
+   "text": "2010 年代,一套源自细菌免疫机制的工具被改造成精确的基因编辑手段,通常以 CRISPR 之名为人熟知。它便宜、上手快、可以指定位置改写。技术门槛的骤降把一个原本遥远的问题推到了眼前:**改一个人的体细胞,和改一个胚胎,完全不是同一件事**。前者影响的是这一位患者本人,风险与收益由他自己承担;后者的改动会写进这个人的每一个细胞并传给后代,而那个被改动的人从未、也不可能表示同意。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照",
+   "svg": "<svg viewBox='0 0 560 280' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>体细胞编辑 × 生殖系编辑</text><rect x='34' y='48' width='232' height='150' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><text x='150' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>体细胞编辑</text><text x='150' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>改患者自己的细胞</text><text x='150' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>不传给后代</text><text x='150' y='148' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>本人可以知情同意</text><text x='150' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>接近常规医疗的伦理框架</text><rect x='294' y='48' width='232' height='150' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.7'/><text x='410' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>生殖系编辑</text><text x='410' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>改胚胎或生殖细胞</text><text x='410' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>写进每个细胞,传给后代</text><text x='410' y='148' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>被改的人无法同意</text><text x='410' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--cinnabar)'>一旦跨过便难以撤回</text><line x1='60' y1='218' x2='500' y2='218' style='stroke:var(--line);stroke-width:1'/><text x='280' y='246' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>争议几乎全部集中在右边这一栏,而技术门槛已经很低</text><text x='280' y='270' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>治病与「优化」之间的界线由谁划定,是这一章留给现实的问题</text></svg>",
+   "caption": "这条分界线是当代基因伦理讨论的轴心:同一套工具,用在两种细胞上,责任结构完全不同。"
+  },
+  {
+   "type": "p",
+   "text": "书里给出的分寸不是简单的赞成或反对,而是一组门槛式的判据:只有当所针对的痛苦极其严重、当那个基因与后果的关联极其确定(不是概率上的偏好而是近乎必然)、当所采取的干预确实合理且不可替代时,才有讨论动手的余地。这三条门槛之所以要写得这么苛刻,是因为**第三章的历史就摆在那里**:一旦「什么算缺陷」交给市场偏好、社会时尚或某种「为孩子好」的温和说法去定义,筛选的逻辑就会以自愿的形式回来——这一次不必由国家强制,由父母的爱与焦虑就够了。"
+  },
+  {
+   "type": "p",
+   "text": "值得补记一笔的是,本书出版之后不久,现实里真的出现了对人类胚胎进行基因编辑并使婴儿出生的事件,遭到国际科学界的普遍谴责,相关责任人也受到了法律追究。这件事从反面印证了书中的担忧:**当一项技术足够便宜、足够顺手时,拦住它的就只剩下规范与共识,而规范总是比技术走得慢**。与此同时,更平常的一幕正在每天发生:产前筛查、婚前检查、消费级基因检测已经普及,每一次「要不要留下这个胚胎」「知道了风险要不要告诉家人」的决定,都是这条线上的一个具体选择——**基因伦理不是实验室里的远景议题,它已经在医院走廊和体检报告上了**。"
+  },
+  {
+   "type": "pull",
+   "text": "上一次筛选靠的是国家强制,下一次可能只需要「为孩子好」这四个字。"
+  },
+  {
+   "type": "h2",
+   "text": "尾声:这部编年史留下了什么"
+  },
+  {
+   "type": "p",
+   "text": "把七章串起来,你会发现《基因传》真正给的不是一堆知识点,而是三样东西。第一样是**尺度感**:从孟德尔数豌豆到读完三十亿个字母,只花了一个半世纪,而这中间人类对遗传的理解被彻底改写过好几次——这提醒我们对当下的定论保持谦逊。第二样是**分辨力**:分得清「科学发现」与「用它筛选人」,分得清「统计概率」与「个人命运」,分得清「治病」与「优化」。第三样是**私人视角**:穆克吉始终把镜头留一格给自己的家族,因为遗传从来不只是实验室里的课题,它是一个具体的人在深夜里想的那句「我会不会也这样」。"
+  },
+  {
+   "type": "p",
+   "text": "所以这本书的落点既不悲观也不亢奋。基因确实塑造了我们——身高、体质、患病的倾向、也许还有性情的底色;但读完这部历史之后,最该记住的反而是它的另一半:**一个人是什么样子,是基因、经历、环境与选择共同写成的,而这份合著里,基因从来不是唯一的作者**。理解这一点,既能让我们不轻易把自己的困境推给一纸检测报告,也能让我们在面对「筛掉某种人」的诱惑时,想起一百年前那些自信满满的科学理据,和它们最后通向的地方。"
+  },
+  {
+   "type": "p",
+   "text": "最后说一句读法。这本书人物密集、年代绵长,若逐个名字去记,很容易读成一本词典。更好的读法是抓住每一章要回答的那个问题——有没有这种东西、它在哪里、它长什么样、能不能改、全读完会看到什么、该不该改人类自己——**把人物当作解题的人,把实验当作解题的步骤**。至于第三章那条暗线,建议单独慢读一遍:它不提供任何知识点,却决定了你读完这本书后,面对下一次「基因新突破」的新闻时,会不会多问一句「谁来定义什么算缺陷」。"
+  },
+  {
+   "type": "figure",
+   "ftype": "金句卡",
+   "svg": "<svg viewBox='0 0 560 260' xmlns='http://www.w3.org/2000/svg'><rect x='16' y='16' width='528' height='228' style='fill:none;stroke:var(--line);stroke-width:1'/><line x1='196' y1='54' x2='252' y2='54' style='stroke:var(--cinnabar);stroke-width:1'/><line x1='308' y1='54' x2='364' y2='54' style='stroke:var(--cinnabar);stroke-width:1'/><circle cx='280' cy='54' r='4' style='fill:var(--cinnabar)'/><text x='280' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:19px;font-weight:bold;fill:var(--ink)'>基因是一手牌,</text><text x='280' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:19px;font-weight:bold;fill:var(--ink)'>不是一份判决书。</text><text x='280' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink-soft)'>——写在《基因传》全书总览的最后</text><text x='280' y='222' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>读懂它是为了少受它摆布,不是为了替筛选找理据</text></svg>",
+   "caption": "这句话不是原书的逐字引用,而是对全书结论的提炼:理解遗传的分量,同时守住不把人简化为序列的底线。"
+  }
+ ]
+}

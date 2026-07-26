@@ -1,0 +1,119 @@
+{
+  "title": "功利主义之外:为什么正义要重新奠基",
+  "subtitle": "一门几乎沉寂的学科,被一句话重新叫醒:正义是社会制度的首要美德",
+  "centralIdea": "这一章讲罗尔斯跟谁过不去,以及他为什么必须另起一套地基。当时占主流的是功利主义:把所有人的苦乐加总,总量最大就是对。这套算法清楚、可操作,历史上还站在改革一边。但罗尔斯提出一句致命的指控——它把「一个人如何权衡自己的苦乐」直接搬到了社会上,于是原则上允许拿一部分人的损失去换总量的增加,而这两笔账并不在同一个人身上抵销。它没有认真对待人与人之间的分别。另一条备选路线是直觉主义:承认好东西有好几样,却在冲突时只会说「综合权衡」——方向不错,给不出答案。于是罗尔斯回到洛克、卢梭、康德的社会契约传统,但砍掉了「历史上真签过约」这一头,把契约改造成一台检验规则的思想装置。此外他还定下了全书的评价对象:不是评价个人品行,而是评价社会基本结构。"
+  ,
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "一九七一年之前,如果你在英美的大学里说自己研究「政治哲学」,同行大概会礼貌地换个话题。这门从柏拉图算起两千多年的学问,当时几乎被判了死刑:分析哲学家忙着分析语言,认为「什么是正义」这类问题只是概念混乱;实证社会科学忙着测量数据,认为价值判断不是学术;而在具体政策上,能一路通用的尺子只剩一把——**加总。**这一年,一位不爱抛头露面的哈佛教授出版了一本六百多页、几乎没有一句漂亮话的大书,开头第一段就把桩子钉下去:**正义是社会制度的首要美德,正如真理是思想体系的首要美德。**这句话的意思很硬:一套制度可以效率不高、可以不够富裕,但若它不正义,别的优点都补不回来——就像一个理论再精巧,只要是假的,就没有价值。"
+    },
+    { "type": "h2", "text": "这一章在全书的什么位置" },
+    {
+      "type": "p",
+      "text": "这是全书的**清场**。罗尔斯要立一套新东西,先得说明旧的为什么不够用;否则读者会一直嫌他麻烦:直接说「要公平」不就完了吗?他做了三件事:第一,把评价的对象钉死在社会基本结构上,免得讨论滑向个人道德;第二,把功利主义讲到最强再指出它的破口;第三,说明为什么直觉主义也不行,从而交代自己的野心——他要一套**能给出优先次序**的理论。这一章不出结论,只是把地基清出来。"
+    },
+    { "type": "h2", "text": "评价谁:社会基本结构" },
+    {
+      "type": "p",
+      "text": "先看一个容易被跳过的规定。罗尔斯说,他谈的正义主题是**社会基本结构**——宪法与政体、产权制度、市场的基本规则、税制、公共教育、医疗与社会保障、职位与地位如何开放。不是某个人善不善,不是某笔买卖公不公,也不是某个国际组织该怎么办,而是**一个社会最底层那套安排人一生处境的规则。**"
+    },
+    {
+      "type": "p",
+      "text": "为什么单挑它?罗尔斯给的理由很难反驳:**这套结构在你出生之前就已经布好局了。**你生在哪个家庭、上什么学校、能接触到什么人、努力能换回多少钱与尊重,这些统统由它先划了框。你没有选择过它,也不能像退出一个俱乐部那样退出它——除了极少数人,大部分人一辈子活在自己出生时那套规则里。一件影响所有人一生、又无人事先同意过的东西,它的正当性理应被特别严格地追问。这个定位还有一层战术意义:它把讨论从「谁更善良」挪到「规则怎么定」,**避免把制度问题化约成人品问题**——这正是后来许多政治哲学论争的分水岭。顺着这个定位往下走,还能挡掉一种常见的辩解:一个社会里若有大量人长期困在底层,按罗尔斯的问法,不能先归因于他们不够努力,而要先问那套规则给他们留了什么位置。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "罗尔斯的评价对象:不是内圈的个人德行,不是中圈的具体交易,而是最外那圈决定一生起点与预期的基本结构。三圈都重要,但只有最外一圈是《正义论》要审的东西。",
+      "svg": "<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='26' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>正义评价谁</text><circle cx='240' cy='170' r='118' style='fill:none;stroke:var(--cinnabar)' stroke-width='1.8'/><circle cx='240' cy='170' r='78' style='fill:none;stroke:var(--line)' stroke-width='1.4'/><circle cx='240' cy='170' r='38' style='fill:none;stroke:var(--line)' stroke-width='1.4'/><text x='240' y='175' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>个人德行</text><text x='240' y='122' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>具体交易与约定</text><text x='240' y='76' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar)'>社会基本结构</text><line x1='362' y1='120' x2='404' y2='120' style='stroke:var(--cinnabar)' stroke-width='1.4' stroke-dasharray='4 4'/><text x='412' y='92' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>基本结构包含</text><text x='412' y='116' font-size='12' style='fill:var(--ink-soft)'>宪法与政体 · 产权制度</text><text x='412' y='140' font-size='12' style='fill:var(--ink-soft)'>市场规则 · 税制</text><text x='412' y='164' font-size='12' style='fill:var(--ink-soft)'>公共教育 · 医疗与保障</text><text x='412' y='188' font-size='12' style='fill:var(--ink-soft)'>职位与地位如何开放</text><text x='412' y='224' font-size='12' style='fill:var(--cinnabar)'>特点:出生前已布好局</text><text x='412' y='246' font-size='12' style='fill:var(--cinnabar)'>无人事先同意,又退不出</text></svg>"
+    },
+    {
+      "type": "quote",
+      "original": "正义是社会制度的首要美德,正如真理是思想体系的首要美德。",
+      "translation": "全书的开场,也是它的态度。首要美德不是「最好也有」的加分项,而是资格线——不正义的制度,不能靠富裕或高效来补偿。"
+    },
+    { "type": "h2", "text": "功利主义为什么曾经那么有说服力" },
+    {
+      "type": "p",
+      "text": "要看懂罗尔斯,得先承认他的对手很强。功利主义的主张可以一句话说完:**一项制度或政策的好坏,取决于它带来的满足减去痛苦、加总起来是不是最大。**古典的版本看总量,后来也有版本看人均。这套想法在历史上并不保守——恰恰相反,它长期是改革的武器:主张废除奴隶制,主张改善工厂里的劳动条件,主张刑罚不该以报复为目的,主张把动物的痛苦也算进来,也主张女性的苦乐与男性一样计入。因为它只问「谁在受苦、能不能减少」,不问「他是什么身份」,所以对特权天然不友好。"
+    },
+    {
+      "type": "p",
+      "text": "它在方法上也漂亮:**一元、可比较、可操作。**只要能把不同的好处折算到同一个尺度上,复杂的政策争论就变成一道加减法。今天的成本效益分析、政策评估里那些「每花一元能挽回多少生命年」的算法,基本都是它的后代。罗尔斯本人多次称赞这套理论的清晰与体系性——他要挑战的不是一个草率的对手,而是当时唯一成型的完整体系。"
+    },
+    {
+      "type": "p",
+      "text": "顺手说清一个区分,后面几章会用到:功利主义有两个常见版本。**古典版看总量**——所有人的满足加起来最大;**平均版看人均**——总量除以人数最大。两者在很多场合结论一致,但在人口规模上会分岔:古典版原则上偏向「多生几个不那么幸福的人,只要总量更高」,平均版则不会。罗尔斯之所以要分清,是因为他后来要论证:即便换成看起来更温和的平均版,幕后的人也不会选它——因为平均值同样不告诉你**最低的那一层有多低**,而幕后的人恰恰最怕自己落在那一层。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "换成公司里的场景就很好懂。老板说:今年这个方案能让**公司总利润**创新高,虽然要砍掉一个部门。按加总的算法,方案通过——总量确实变大了。",
+        "但被砍掉的那些人不会因为公司总利润创新高而感觉好一点。**他们的损失不在别人的收益里抵销。**加总的算法之所以顺畅,恰恰因为它在计算的那一步就把「谁」这个问题抹掉了。",
+        "这就是罗尔斯要抓的破口:一个人**自己**忍今天的苦换明天的甜,账是对得上的;把同样的算法套到不同人之间,账其实从来没对上过。"
+      ]
+    },
+    { "type": "h2", "text": "一句话的致命指控" },
+    {
+      "type": "p",
+      "text": "罗尔斯对功利主义的核心指控是:**它没有认真对待人与人之间的分别。**这句话不是修辞,它指出了一个具体的推理错误。功利主义的算法原型是**个人的审慎选择**:我今天少吃一点、多跑两公里,换将来更健康的身体;我读三年书没有收入,换往后更有意思的工作。这类权衡完全正当,因为吃苦的和受益的是同一个我,损失与补偿在同一条命里结算。"
+    },
+    {
+      "type": "p",
+      "text": "问题出在把这套模型放大到社会。社会不是一个会享乐、会受苦的大主体;它没有一条统一的命,可以在里面结算亏盈。当我们说「让一部分人承受损失,换来社会总幸福更多」,**这笔补偿从未发生在被减掉的那个人身上。**他只是被减掉了。功利主义的算式在数字上很整齐,恰恰因为它在做加总的那一刻,把「谁在承受」这个信息扔掉了。"
+    },
+    {
+      "type": "p",
+      "text": "推到极端就露馅。假设有一种制度安排,让一小群人处于近乎奴役的地位,而它带来的总量幸福比任何替代方案都高。功利主义在**原则上**无法一口否掉这种安排——它只能说「事实上大概算不出这个结果」,或者补一句「实际上这种制度会引发动乱、长期未必划算」。罗尔斯的态度很干脆:这类回答太脆弱了。**一件根本不该被拿上台面算的事,不能靠「算下来大概不合算」来阻止。**要挡住它,需要一条不参与加总的原则——一条说「这不在交易范围内」的原则。"
+    },
+    {
+      "type": "quote",
+      "original": "每个人都拥有一种基于正义的不可侵犯性,这种不可侵犯性即使以社会整体的福利之名也不能逾越。",
+      "translation": "全书最著名的一句反功利主义宣言。重点在「即使」:不是说通常不该,而是说这笔账不许重算。如果能在足够大的收益前重算,权利就只是一个比较贵的价格。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "caption": "同一套权衡,搬家之后就变了性质。左边是正当的审慎:吃苦与受益在同一条命里结算。右边是罗尔斯要挡住的推理:同样的算式跨到不同人之间,补偿从未落到被减掉的那个人身上。",
+      "svg": "<svg viewBox='0 0 640 280' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='26' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>一个人的权衡 vs 社会的权衡</text><rect x='24' y='48' width='286' height='206' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='167' y='74' text-anchor='middle' font-size='13.5' font-weight='bold' style='fill:var(--ink)'>正当:同一个人</text><rect x='56' y='96' width='96' height='40' rx='6' style='fill:none;stroke:var(--ink-soft)' stroke-width='1.3'/><text x='104' y='121' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>今天忍着</text><path d='M156,116 L188,116' style='stroke:var(--ink-soft)' stroke-width='1.4'/><path d='M180,110 L190,116 L180,122' fill='none' style='stroke:var(--ink-soft)' stroke-width='1.4'/><rect x='192' y='96' width='92' height='40' rx='6' style='fill:none;stroke:var(--ink-soft)' stroke-width='1.3'/><text x='238' y='121' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>明天受益</text><text x='167' y='176' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>吃苦的和受益的是同一条命</text><text x='167' y='202' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>账对得上,所以是审慎</text><text x='167' y='228' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>没有人被当作别人的手段</text><rect x='330' y='48' width='286' height='206' rx='10' style='fill:var(--paper-raised);stroke:var(--cinnabar)' stroke-width='1.6'/><text x='473' y='74' text-anchor='middle' font-size='13.5' font-weight='bold' style='fill:var(--cinnabar)'>可疑:不同的人</text><rect x='362' y='96' width='96' height='40' rx='6' style='fill:none;stroke:var(--cinnabar)' stroke-width='1.5'/><text x='410' y='121' text-anchor='middle' font-size='12' style='fill:var(--cinnabar)'>张三受损</text><path d='M462,116 L494,116' style='stroke:var(--cinnabar)' stroke-width='1.4'/><path d='M486,110 L496,116 L486,122' fill='none' style='stroke:var(--cinnabar)' stroke-width='1.4'/><rect x='498' y='96' width='92' height='40' rx='6' style='fill:none;stroke:var(--ink-soft)' stroke-width='1.3'/><text x='544' y='121' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>他人得益</text><text x='473' y='176' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>补偿从未落到张三身上</text><text x='473' y='202' text-anchor='middle' font-size='12' style='fill:var(--cinnabar)'>总量变大,他只是被减掉</text><text x='473' y='228' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>「没有认真对待人与人的分别」</text></svg>"
+    },
+    { "type": "h2", "text": "另一条路也走不通:直觉主义" },
+    {
+      "type": "p",
+      "text": "有人会说:那就别只用一把尺子,好东西本来就有好几样——自由、平等、效率、安全、稳定,各有各的道理。罗尔斯把这种立场叫**直觉主义**,并承认它比功利主义更贴近常人的道德感受。问题在于它**没有优先规则**:当自由与效率撞上、当平等与稳定撞上,它只能说「要综合考量、把握分寸」。"
+    },
+    {
+      "type": "p",
+      "text": "「综合考量」听着稳妥,实践中却常常等于**谁有权谁说了算**。历史上每一次削减基本自由,给出的理由都很像样:非常时期、多数人的意愿、发展需要、社会稳定。若没有事先约定的次序,这些理由每次都能重新赢一遍;而每一次退让又都会成为下一次的先例,直到那条底线已经退到没人记得它原本在哪里。罗尔斯因此立下自己的任务:一套正义理论不仅要说出好东西有哪些,还必须**明确说出冲突时谁让谁**——而且这个次序不能临场再议。"
+    },
+    {
+      "type": "p",
+      "text": "他还给一套合格的正义原则列了几个形式要求,读起来枯燥,但每一条都在挡一种耍滑头的方式。原则必须是**一般的**:不能点名道姓,不能写「凡姓王者免税」。必须是**普遍适用的**:所有人都能理解、都能照着做,而不是只对某些人生效。必须是**公开的**:大家都知道它,也都知道别人知道它——偷偷执行的规则不算正义原则,因为它的说服力恰恰来自能摆在桌面上。必须是**终局的**:它是争议的最高裁断,不能上头还有一个更高的算盘随时推翻它。这几条合起来,已经把「先定原则、有事再破例」这条最常见的后路堵住了。"
+    },
+    { "type": "h2", "text": "回到社会契约,但砍掉历史那一头" },
+    {
+      "type": "p",
+      "text": "正面主张从哪里来?罗尔斯选择回到**社会契约**这条老传统:洛克、卢梭、康德那一脉,政治权威的正当性来自被统治者的同意。但老契约论有个软肋:它往往带着历史叙事——曾有一个自然状态,人们为了走出它而立了约。历史上并没有谁真的签过;哪怕真签过,凭什么约束今天出生的人?"
+    },
+    {
+      "type": "p",
+      "text": "罗尔斯的改造干脆而巧妙:**把历史那一头砍掉。**契约不是发生过的事件,而是一台**检验规则的思想装置**。它不问「祖先同意了什么」,只问「在一个足够公平的处境里,任何理性的人都会同意什么」。于是「同意」不再是史实,而变成一种检验标准:一条规则若在那样的处境中不可能被一致接受,它就不正当。这一步同时解决了两个难题——既保住了契约论「不许把人当手段」的道德内核,又摆脱了「查无此约」的尴尬。至于那个「足够公平的处境」具体长什么样,就是下一章的事:原初状态与无知之幕。"
+    },
+    {
+      "type": "figure",
+      "ftype": "路线图",
+      "caption": "三条路线的分工:功利主义有尺子却会牺牲个人;直觉主义有价值清单却没有次序;罗尔斯要的是两者兼得——一套有明确优先序、又不允许拿个人去换总量的原则。",
+      "svg": "<svg viewBox='0 0 640 250' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='26' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>清场之后要立什么</text><rect x='24' y='50' width='182' height='170' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='115' y='76' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--ink)'>功利主义</text><text x='115' y='104' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>有一把统一的尺子</text><text x='115' y='128' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>结论清楚可算</text><text x='115' y='164' text-anchor='middle' font-size='12' style='fill:var(--cinnabar)'>代价:允许牺牲个人</text><text x='115' y='192' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>加总时抹掉了「谁」</text><rect x='226' y='50' width='182' height='170' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='317' y='76' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--ink)'>直觉主义</text><text x='317' y='104' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>承认价值是多元的</text><text x='317' y='128' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>贴近日常道德感</text><text x='317' y='164' text-anchor='middle' font-size='12' style='fill:var(--cinnabar)'>代价:冲突时无解</text><text x='317' y='192' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>「综合考量」= 谁强谁定</text><rect x='428' y='50' width='188' height='170' rx='10' style='fill:var(--paper-raised);stroke:var(--cinnabar)' stroke-width='1.8'/><text x='522' y='76' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar)'>公平的正义</text><text x='522' y='104' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>契约改造成思想装置</text><text x='522' y='128' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>原则 + 明确优先次序</text><text x='522' y='164' text-anchor='middle' font-size='12' style='fill:var(--ink)'>个人不进加总</text><text x='522' y='192' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>下一章:幕怎么装</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这一章留下三根桩子,后面全书都钉在上面。第一根:**要评价的是基本结构**,所以任何「这不是制度问题、是个人素质问题」的辩解在这本书里不成立。第二根:**个人不进加总**,所以任何「牺牲少数换总量」的方案,不论收益多大,都要先过一道原则性的关卡。第三根:**次序必须事先讲定**,所以罗尔斯后面会不惜笨拙地把优先规则一条条写清楚。有了这三根桩子,才能理解他为什么要造那台看起来很怪的装置——如果只是想说「要公平一点」,他完全不必写六百页。"
+    },
+    {
+      "type": "pull",
+      "text": "一件根本不该被拿上台面算的事,不能靠「算下来大概不合算」来阻止——要挡住它,得有一条不参与加总的原则。"
+    }
+  ]
+}
