@@ -1323,7 +1323,9 @@ function Motif({ motif }) {
   if (motif === 'matter-out-of-place') return <MatterOutOfPlace />
   if (motif === 'institutional-fork') return <InstitutionalFork />
   if (motif === 'veil-of-ignorance') return <VeilOfIgnorance />
+  if (motif === 'genealogy-branch') return <GenealogyBranch />
   if (motif === 'inheritance-code') return <InheritanceCode />
+  if (motif === 'sisyphus-boulder') return <SisyphusBoulder />
   return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
 }
 
@@ -2012,6 +2014,62 @@ function VeilOfIgnorance() {
         <circle key={`h${i}`} cx={p.x} cy={headCy} r="8" fill={p.hi ? CINNABAR : CREAM}
           fillOpacity={p.hi ? 0.95 : 0.24} />
       ))}
+    </g>
+  )
+}
+
+// 母题:谱系之枝——一条根上分出两支。左支笔直上行(主人道德:强者直接把自身状态命名为「好」);
+// 右支要先在朱色的结上打一个弯、自我缠绕一圈,才继续长上去(奴隶道德:力量转不出去,经由怨恨
+// 折回自身,把强者的「好」重贴为「恶」)。抽象克制,不画成写实的树。
+function GenealogyBranch() {
+  return (
+    <g>
+      {/* 地面与共同的根 */}
+      <line x1="116" y1="374" x2="176" y2="374" stroke={CREAM} strokeOpacity="0.22" strokeWidth="1" />
+      <path d="M146,374 L146,338" fill="none" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.6" strokeLinecap="round" />
+      {/* 左支:一条不打弯的直线 */}
+      <path d="M146,338 L102,254" fill="none" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.4" strokeLinecap="round" />
+      <circle cx="102" cy="254" r="3.2" fill={CREAM} fillOpacity="0.55" />
+      {/* 右支:上行—打结—再上行 */}
+      <path d="M146,338 C154,329 162,322 169,315" fill="none" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M192,304 C198,291 200,277 201,266 L202,254" fill="none" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.4" strokeLinecap="round" />
+      <circle cx="202" cy="254" r="3.2" fill={CREAM} fillOpacity="0.55" />
+      {/* 朱色的结:转折发生的地方 */}
+      <path d="M169,315 C191,321 202,306 188,299 C176,293 166,303 180,309 C187,312 191,310 192,304"
+        fill="none" stroke={CINNABAR} strokeOpacity="0.95" strokeWidth="1.8" strokeLinecap="round" />
+      <circle cx="180.5" cy="307" r="2.4" fill={CINNABAR} />
+    </g>
+  )
+}
+
+// 母题:推石之坡——一道向上的坡线,坡上一枚朱色巨石被推到半山腰;坡下三道渐淡的虚线弧
+// 是这块石头一次次滚落的「回声」(同一件事已经做过无数遍),两枚极淡的残影是从前的那些石头;
+// 石后一个极简的推石者轮廓。清醒平静、不作悲情——重点是他知道石头会滚下来,仍在推。
+function SisyphusBoulder() {
+  const echoes = [
+    { d: 'M214,268 Q170,330 74,360', op: 0.26 },
+    { d: 'M198,278 Q158,324 78,356', op: 0.17 },
+    { d: 'M182,288 Q148,318 82,352', op: 0.1 },
+  ]
+  return (
+    <g>
+      <path d="M52,368 L238,254" fill="none" stroke={CREAM} strokeOpacity="0.42" strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M238,254 L231,243" fill="none" stroke={CREAM} strokeOpacity="0.22" strokeWidth="1" strokeDasharray="2 4" />
+      {echoes.map((e, i) => (
+        <path key={i} d={e.d} fill="none" stroke={CREAM} strokeOpacity={e.op} strokeWidth="1.1"
+          strokeDasharray="3 6" strokeLinecap="round" />
+      ))}
+      {[[92, 352, 4.5, 0.16], [116, 342, 5.5, 0.1]].map(([x, y, r, op], i) => (
+        <circle key={`g${i}`} cx={x} cy={y} r={r} fill={CREAM} fillOpacity={op} />
+      ))}
+      <g fill="none" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.3" strokeLinecap="round">
+        <circle cx="121" cy="299" r="5" />
+        <path d="M121,304 L127,316" />
+        <path d="M124,307 L139,297" />
+        <path d="M127,316 L122,325" />
+        <path d="M127,316 L136,317" />
+      </g>
+      <circle cx="152" cy="291" r="13" fill={CINNABAR} opacity="0.92" />
     </g>
   )
 }
