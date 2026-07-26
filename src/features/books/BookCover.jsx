@@ -1051,6 +1051,48 @@ function MirrorPattern() {
   )
 }
 
+// 母题:礼物回环——给予(实心)、接受(空心)、回报三个结点由弧线首尾相连成一个闭环,
+// 箭头指示单向流动;最后一段「回流」朱色,呼应莫斯的核心论点:礼物看似自愿无偿,实由
+// 给予—接受—回报三重义务撑着,物上附着送礼者的一部分(毛利人所说的 hau),驱使它必须
+// 流回原点——世上没有真正「免费」的礼物。
+function GiftCircuit() {
+  const cx = 148, cy = 306, R = 62
+  const rad = (d) => (d * Math.PI) / 180
+  const pt = (d, r = R) => [cx + Math.cos(rad(d)) * r, cy + Math.sin(rad(d)) * r]
+  const fmt = (p) => p.map((v) => v.toFixed(1)).join(',')
+  const arcs = [[-78, 18], [42, 138], [162, 258]]
+  const nodeAngles = [-90, 30, 150]
+  const arrow = (d) => {
+    const [x, y] = pt(d)
+    const tx = -Math.sin(rad(d)), ty = Math.cos(rad(d))
+    const px = -ty, py = tx
+    return [
+      [x + tx * 8, y + ty * 8],
+      [x - tx * 4 + px * 5, y - ty * 4 + py * 5],
+      [x - tx * 4 - px * 5, y - ty * 4 - py * 5],
+    ].map(fmt).join(' ')
+  }
+  const [gx, gy] = pt(nodeAngles[0])
+  const [rx, ry] = pt(nodeAngles[1])
+  const [bx, by] = pt(nodeAngles[2])
+  return (
+    <g>
+      {arcs.map(([a, b], i) => (
+        <path key={i} d={`M${fmt(pt(a))} A${R},${R} 0 0 1 ${fmt(pt(b))}`} fill="none"
+          stroke={i === 2 ? CINNABAR : CREAM} strokeOpacity={i === 2 ? 0.92 : 0.4}
+          strokeWidth={i === 2 ? 1.9 : 1.3} strokeLinecap="round" />
+      ))}
+      {arcs.map(([a, b], i) => (
+        <polygon key={`h${i}`} points={arrow((a + b) / 2)} fill={i === 2 ? CINNABAR : CREAM} fillOpacity={i === 2 ? 0.92 : 0.5} />
+      ))}
+      <circle cx={gx} cy={gy} r="9" fill={CREAM} fillOpacity="0.6" />
+      <circle cx={rx} cy={ry} r="8.5" fill="none" stroke={CREAM} strokeOpacity="0.55" strokeWidth="1.5" />
+      <circle cx={bx} cy={by} r="8.5" fill="none" stroke={CINNABAR} strokeOpacity="0.9" strokeWidth="1.7" />
+      <circle cx={cx} cy={cy} r="3.6" fill={CINNABAR} fillOpacity="0.75" />
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'panopticon') return <Panopticon />
   if (motif === 'manifest-latent') return <ManifestLatent />
@@ -1152,6 +1194,8 @@ function Motif({ motif }) {
   if (motif === 'chrysanthemum-blade') return <ChrysanthemumBlade />
   if (motif === 'diff-order-ripple') return <DiffOrderRipple />
   if (motif === 'mirror-pattern') return <MirrorPattern />
+  if (motif === 'gift-circuit') return <GiftCircuit />
+  if (motif === 'signifying-web') return <SignifyingWeb />
   return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
 }
 
@@ -1757,6 +1801,49 @@ function DiffOrderRipple() {
           strokeDasharray={i < 3 ? undefined : (i === 3 ? '9 6' : '4 10')} />
       ))}
       <circle cx={cx} cy={cy} r="6" fill={CINNABAR} stroke="none" />
+    </g>
+  )
+}
+
+// 母题:意义之网——一张不规则的蛛网。几条主丝从不同角度斜拉出去、长短不一,
+// 螺旋丝松紧不匀、微微向内下垂,网眼大小不等(有机而非格子);网的一侧留着缺口,
+// 外缘几根牵丝虚虚地系向别处。网上悬着一个朱色的小小人形——
+// 「人是悬挂在自己编织的意义之网上的动物,文化就是这张网」(格尔茨)。
+function SignifyingWeb() {
+  const cx = 143, cy = 308, sq = 0.72
+  const A = [-100, -58, -18, 22, 58, 100, 140, 176, 214]
+  const L = [48, 64, 76, 60, 72, 52, 68, 56, 46]
+  const T = A.map((d) => (d * Math.PI) / 180)
+  const at = (i, f) => [cx + Math.cos(T[i]) * L[i] * f, cy + Math.sin(T[i]) * L[i] * f * sq]
+  const spokes = A.map((_, i) => { const [x, y] = at(i, 1); return `M${cx},${cy} L${x.toFixed(1)},${y.toFixed(1)}` }).join(' ')
+  const fracs = [
+    [0.30, 0.43, 0.33, 0.47, 0.31, 0.41, 0.29, 0.45, 0.36],
+    [0.59, 0.73, 0.61, 0.79, 0.55, 0.70, 0.60, 0.75, 0.64],
+    [0.87, 0.97, 0.89, 1.00, 0.85, 0.94, 0.88, 0.98, 0.92],
+  ]
+  const rings = fracs.map((fs, k) => {
+    let d = ''
+    for (let i = 0; i < A.length - 1; i++) {
+      const [x1, y1] = at(i, fs[i]), [x2, y2] = at(i + 1, fs[i + 1])
+      const mx = (x1 + x2) / 2, my = (y1 + y2) / 2, s = 0.8 - k * 0.04
+      d += `M${x1.toFixed(1)},${y1.toFixed(1)} Q${(cx + (mx - cx) * s).toFixed(1)},${(cy + (my - cy) * s).toFixed(1)} ${x2.toFixed(1)},${y2.toFixed(1)} `
+    }
+    return d
+  })
+  const guy = at(3, 0.86)
+  const hx = +guy[0].toFixed(1), hy = +guy[1].toFixed(1)
+  return (
+    <g fill="none" strokeLinecap="round">
+      <path d="M96,250 L84,244 M198,260 L218,252 M188,352 L212,364" stroke={CREAM} strokeOpacity="0.2" strokeWidth="1" strokeDasharray="3 4" />
+      <path d={spokes} stroke={CREAM} strokeOpacity="0.3" strokeWidth="1" />
+      {rings.map((d, i) => (
+        <path key={i} d={d} stroke={CREAM} strokeOpacity={0.44 - i * 0.08} strokeWidth={1.15 - i * 0.1} />
+      ))}
+      <circle cx={cx} cy={cy} r="2.2" fill={CREAM} fillOpacity="0.5" stroke="none" />
+      <path d={`M${hx},${hy} L${hx},${hy + 9}`} stroke={CINNABAR} strokeOpacity="0.85" strokeWidth="1.1" />
+      <circle cx={hx} cy={hy + 12} r="2.8" fill={CINNABAR} stroke="none" />
+      <path d={`M${hx},${hy + 15} L${hx},${hy + 23} M${hx - 5},${hy + 18.5} L${hx + 5},${hy + 18.5} M${hx},${hy + 23} L${hx - 4},${hy + 29} M${hx},${hy + 23} L${hx + 4},${hy + 29}`}
+        stroke={CINNABAR} strokeWidth="1.5" />
     </g>
   )
 }
