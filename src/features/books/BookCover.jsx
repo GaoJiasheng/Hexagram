@@ -1328,6 +1328,8 @@ function Motif({ motif }) {
   if (motif === 'sisyphus-boulder') return <SisyphusBoulder />
   if (motif === 'eternal-recurrence-circle') return <EternalRecurrenceCircle />
   if (motif === 'apollo-dionysus') return <ApolloDionysus />
+  if (motif === 'madmans-lantern') return <MadmansLantern />
+  if (motif === 'toppled-idols') return <ToppledIdols />
   return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
 }
 
@@ -2140,6 +2142,68 @@ function ApolloDionysus() {
       <circle cx="159" cy="331" r="2.4" fill={CINNABAR} fillOpacity="0.6" />
       {/* 弦与藤交汇处的火花:悲剧就诞生在这里 */}
       <circle cx="104" cy="299" r="3.2" fill={CINNABAR} />
+    </g>
+  )
+}
+
+// 母题:疯子的灯笼——全书第 125 条那则寓言:一个疯子在大白天点着灯笼冲进市集找上帝。
+// 上方一枚淡淡的太阳(光明本已充足),下方一条细线暗示举灯的手臂,挑着一盏小灯笼,
+// 灯里一簇朱色小火苗——大白天打着灯笼找一个已经不在的东西,荒诞正在这处对照里。
+function MadmansLantern() {
+  return (
+    <g>
+      {/* 大白天:一枚淡到近乎不被注意的太阳 */}
+      <circle cx="96" cy="206" r="44" fill={CREAM} fillOpacity="0.11" />
+      <circle cx="96" cy="206" r="44" fill="none" stroke={CREAM} strokeOpacity="0.22" strokeWidth="1.1" />
+      <circle cx="96" cy="206" r="58" fill="none" stroke={CREAM} strokeOpacity="0.12" strokeWidth="1" strokeDasharray="2 7" />
+      {/* 举灯的手臂:只一条细线 */}
+      <path d="M64,388 Q104,346 148,300" fill="none" stroke={CREAM} strokeOpacity="0.38" strokeWidth="1.4" strokeLinecap="round" />
+      {/* 提梁与挂钩 */}
+      <path d="M138,300 Q150,286 162,300" fill="none" stroke={CREAM} strokeOpacity="0.45" strokeWidth="1.2" />
+      <line x1="150" y1="300" x2="150" y2="306" stroke={CREAM} strokeOpacity="0.45" strokeWidth="1.2" />
+      {/* 灯笼:上下盖与略外张的灯身 */}
+      <line x1="132" y1="306" x2="168" y2="306" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M136,306 L164,306 L169,344 L131,344 Z" fill="none" stroke={CREAM} strokeOpacity="0.48" strokeWidth="1.3" strokeLinejoin="round" />
+      <line x1="127" y1="346" x2="173" y2="346" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="143" y1="308" x2="141" y2="342" stroke={CREAM} strokeOpacity="0.2" strokeWidth="1" />
+      <line x1="157" y1="308" x2="159" y2="342" stroke={CREAM} strokeOpacity="0.2" strokeWidth="1" />
+      {/* 灯里的小火苗 */}
+      <path d="M150,314 C158,323 158,333 150,339 C142,333 142,323 150,314 Z" fill={CINNABAR} fillOpacity="0.92" />
+    </g>
+  )
+}
+
+// 母题:叩过之后的偶像——一排小小的偶像剪影立在同一道基座上,黄昏的地平线低低横在身后。
+// 副标题「如何用锤子从事哲学」里的锤子不是砸烂用的破坏锤,是医生叩诊用的小锤:一一敲过去,
+// 听哪一个是空心的。所以这里没有被打倒在地的雕像——只有其中一尊表面依旧完好,却裂开一道
+// 细细的朱色缝,缝里透出中空;旁边两道浅浅的弧线,是刚刚那一记轻叩荡开的回声。
+function ToppledIdols() {
+  return (
+    <g>
+      {/* 黄昏:低低的落日与地平线 */}
+      <circle cx="150" cy="344" r="34" fill={CREAM} fillOpacity="0.08" />
+      <line x1="46" y1="344" x2="244" y2="344" stroke={CREAM} strokeOpacity="0.16" strokeWidth="1" />
+      {/* 基座 */}
+      <line x1="52" y1="357" x2="216" y2="357" stroke={CREAM} strokeOpacity="0.42" strokeWidth="1.6" strokeLinecap="round" />
+      {/* 一号:立着 */}
+      <path d="M64,357 L67,300 L81,300 L84,357 Z" fill={CREAM} fillOpacity="0.2" />
+      <circle cx="74" cy="292" r="6" fill={CREAM} fillOpacity="0.2" />
+      {/* 二号:立着,更高 */}
+      <path d="M96,357 L99,282 L113,282 L116,357 Z" fill={CREAM} fillOpacity="0.26" />
+      <circle cx="106" cy="274" r="6.4" fill={CREAM} fillOpacity="0.26" />
+      {/* 三号:被叩过的那一尊——外形完好,只是裂了一道缝,缝里是空的 */}
+      <path d="M130,357 L133,288 L151,288 L154,357 Z" fill="none" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.3" strokeLinejoin="round" />
+      <circle cx="142" cy="280" r="6.4" fill="none" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.3" />
+      {/* 缝里透出的中空 */}
+      <path d="M137,300 L147,300 L148,350 L136,350 Z" fill="rgba(0,0,0,0.26)" />
+      {/* 那道细朱缝 */}
+      <path d="M142,290 L139.5,308 L143,326 L140.5,348" fill="none" stroke={CINNABAR} strokeWidth="1.5" strokeLinecap="round" />
+      {/* 轻叩荡开的两道回声 */}
+      <path d="M164,306 Q172,318 164,330" fill="none" stroke={CREAM} strokeOpacity="0.3" strokeWidth="1" strokeLinecap="round" />
+      <path d="M172,299 Q184,318 172,337" fill="none" stroke={CREAM} strokeOpacity="0.17" strokeWidth="1" strokeLinecap="round" />
+      {/* 四号:立着 */}
+      <path d="M186,357 L189,304 L201,304 L204,357 Z" fill={CREAM} fillOpacity="0.18" />
+      <circle cx="195" cy="296" r="5.6" fill={CREAM} fillOpacity="0.18" />
     </g>
   )
 }
