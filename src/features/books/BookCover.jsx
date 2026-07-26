@@ -1023,6 +1023,34 @@ function ManifestLatent() {
   )
 }
 
+// 母题:镜纹——卡杜维欧人脸部彩绘式的二元分裂构图:一张抽象的「脸」被一道斜轴分作两半,
+// 两侧的弧线纹样彼此呼应却不完全对称(轴上一侧三道、另一侧两道,朱色菱格只落在一边),
+// 呼应列维-斯特劳斯从这类图案里读出的「对立—镜像—转换」——后来长成结构主义方法的一个例证。
+function MirrorPattern() {
+  const face = 'M128,252 C170,252 202,280 202,310 C202,344 168,368 128,368 C88,368 54,344 54,310 C54,280 86,252 128,252 Z'
+  const upper = [
+    'M92,278 C108,290 112,304 104,318',
+    'M104,272 C124,288 128,306 118,324',
+    'M118,268 C142,286 146,308 134,330',
+  ]
+  const lower = [
+    'M152,344 C136,332 132,318 140,304',
+    'M140,350 C120,334 116,316 126,298',
+  ]
+  const diamond = (cx, cy, r) => `M${cx},${cy - r} L${cx + r},${cy} L${cx},${cy + r} L${cx - r},${cy} Z`
+  return (
+    <g fill="none">
+      <path d={face} stroke={CREAM} strokeOpacity="0.42" strokeWidth="1.4" />
+      <path d="M70,266 L186,354" stroke={CREAM} strokeOpacity="0.3" strokeWidth="1" strokeDasharray="4 5" />
+      {upper.map((d, i) => <path key={`u${i}`} d={d} stroke={CREAM} strokeOpacity={0.46 - i * 0.07} strokeWidth="1.2" strokeLinecap="round" />)}
+      {lower.map((d, i) => <path key={`l${i}`} d={d} stroke={CREAM} strokeOpacity={0.4 - i * 0.07} strokeWidth="1.2" strokeLinecap="round" />)}
+      <path d={diamond(80, 336, 9)} stroke={CREAM} strokeOpacity="0.34" strokeWidth="1.1" />
+      <path d={diamond(176, 288, 9)} stroke={CINNABAR} strokeOpacity="0.9" strokeWidth="1.6" />
+      <path d={diamond(176, 288, 3.4)} fill={CINNABAR} stroke="none" />
+    </g>
+  )
+}
+
 function Motif({ motif }) {
   if (motif === 'panopticon') return <Panopticon />
   if (motif === 'manifest-latent') return <ManifestLatent />
@@ -1122,6 +1150,8 @@ function Motif({ motif }) {
   if (motif === 'gyro-radar' ) return <GyroRadar />
   if (motif === 'corner-network') return <CornerNetwork />
   if (motif === 'chrysanthemum-blade') return <ChrysanthemumBlade />
+  if (motif === 'diff-order-ripple') return <DiffOrderRipple />
+  if (motif === 'mirror-pattern') return <MirrorPattern />
   return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
 }
 
@@ -1701,6 +1731,32 @@ function SnowballRoll() {
       {balls.map(([x, y, r], i) => (
         <circle key={i} cx={x} cy={y} r={r} fill={i === 3 ? CINNABAR : 'none'} stroke={CREAM} strokeOpacity={i === 3 ? 1 : 0.4} strokeWidth="1.3" />
       ))}
+    </g>
+  )
+}
+
+// 母题:差序波纹——一枚朱色实心的「己」投在水面,推出一圈圈不规则的同心波纹:
+// 一侧(熟人多)推得远、纹路密而清晰,另一侧稀疏;愈往外愈淡、愈虚、愈不成规矩
+// (呼应费孝通「差序格局」的原始比喻:以己为中心,愈推愈远,也愈推愈薄)。
+function DiffOrderRipple() {
+  const cx = 132, cy = 310
+  const radii = [12, 26, 42, 60, 78]
+  const ring = (R) => {
+    let d = ''
+    for (let i = 0; i <= 72; i++) {
+      const a = (i / 72) * Math.PI * 2
+      const r = R * (1 + 0.3 * Math.cos(a) + 0.06 * Math.cos(2 * a + 0.6))
+      d += (i === 0 ? 'M' : 'L') + (cx + Math.cos(a) * r).toFixed(1) + ',' + (cy + Math.sin(a) * r * 0.62).toFixed(1) + ' '
+    }
+    return d + 'Z'
+  }
+  return (
+    <g fill="none" strokeLinecap="round">
+      {radii.map((R, i) => (
+        <path key={R} d={ring(R)} stroke={CREAM} strokeOpacity={0.5 - i * 0.085} strokeWidth={i === 0 ? 1.5 : 1.15}
+          strokeDasharray={i < 3 ? undefined : (i === 3 ? '9 6' : '4 10')} />
+      ))}
+      <circle cx={cx} cy={cy} r="6" fill={CINNABAR} stroke="none" />
     </g>
   )
 }
