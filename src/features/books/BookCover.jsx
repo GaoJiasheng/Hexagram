@@ -1326,6 +1326,8 @@ function Motif({ motif }) {
   if (motif === 'genealogy-branch') return <GenealogyBranch />
   if (motif === 'inheritance-code') return <InheritanceCode />
   if (motif === 'sisyphus-boulder') return <SisyphusBoulder />
+  if (motif === 'eternal-recurrence-circle') return <EternalRecurrenceCircle />
+  if (motif === 'apollo-dionysus') return <ApolloDionysus />
   return <path d="M0,420 L0,362 L300,322 L300,420 Z" fill="rgba(0,0,0,0.22)" />
 }
 
@@ -2070,6 +2072,74 @@ function SisyphusBoulder() {
         <path d="M127,316 L136,317" />
       </g>
       <circle cx="152" cy="291" r="13" fill={CINNABAR} opacity="0.92" />
+    </g>
+  )
+}
+
+// 母题:永恒轮回之环——一个完整闭合的正圆(不是螺旋、不是带箭头的反馈环:此生不通向别处,
+// 只是原样回来)。圆周顶点上立着一座极简山峰剪影(查拉图斯特拉常年独居的那座山)。圆周下方
+// 一串由淡转浓、由小转大的朱色小点,是「一次次经过同一点」留下的印记——不是箭头,是痕迹。
+function EternalRecurrenceCircle() {
+  const cx = 128, cy = 312, r = 52
+  // 沿圆周走向最低点的一串印记:越靠近那一点,痕迹越深、越大
+  const marks = [
+    { a: 196, rad: 1.4, op: 0.28 },
+    { a: 214, rad: 1.9, op: 0.42 },
+    { a: 232, rad: 2.5, op: 0.58 },
+    { a: 250, rad: 3.3, op: 0.78 },
+    { a: 270, rad: 4.4, op: 1 },
+  ]
+  return (
+    <g>
+      {/* 闭合的圆:走到头就是回到原处 */}
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke={CREAM} strokeOpacity="0.46" strokeWidth="1.5" />
+      {/* 圆周顶点上的山:极简剪影,主峰偏右、旁有一道低肩 */}
+      <path d="M100,268 L114,249 L122,257 L134,231 L156,268 Z" fill={CREAM} fillOpacity="0.4" />
+      <path d="M100,268 L114,249 L122,257 L134,231 L156,268" fill="none" stroke={CREAM}
+        strokeOpacity="0.6" strokeWidth="1.2" strokeLinejoin="round" />
+      {/* 经过同一点留下的印记 */}
+      {marks.map((m, i) => {
+        const t = (m.a * Math.PI) / 180
+        return (
+          <circle key={i} cx={+(cx + r * Math.cos(t)).toFixed(1)} cy={+(cy - r * Math.sin(t)).toFixed(1)}
+            r={m.rad} fill={CINNABAR} fillOpacity={m.op} />
+        )
+      })}
+    </g>
+  )
+}
+
+// 母题:日神的弦与酒神的藤——左侧一把里拉琴,琴弦等距、笔直、可数(阿波罗:清晰的形式、
+// 个体化的边界感);从弦间蔓出几缕葡萄卷须,越往右越自由、越缠绕(狄俄尼索斯:打破边界的
+// 生命之流)。两者在中间交织,朱色点出几粒葡萄与一处交汇的火花——悲剧正诞生于这处交汇。
+function ApolloDionysus() {
+  const strings = [66, 78, 90, 102, 114]
+  return (
+    <g>
+      {/* 日神:里拉琴的两臂与上下横木 */}
+      <path d="M60,354 C50,322 50,292 56,266" fill="none" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M120,354 C130,322 130,292 124,266" fill="none" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.6" strokeLinecap="round" />
+      <line x1="52" y1="266" x2="128" y2="266" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.6" strokeLinecap="round" />
+      <line x1="58" y1="354" x2="122" y2="354" stroke={CREAM} strokeOpacity="0.5" strokeWidth="1.6" strokeLinecap="round" />
+      {/* 五根等距直弦:规整、可数、各有边界 */}
+      {strings.map((x) => (
+        <line key={x} x1={x} y1="270" x2={x} y2="350" stroke={CREAM} strokeOpacity="0.34" strokeWidth="1" />
+      ))}
+      {/* 酒神:自弦间蔓出的卷须,越向右越松弛 */}
+      <path d="M96,346 C118,342 128,318 152,312 C176,306 182,282 172,262" fill="none" stroke={CREAM} strokeOpacity="0.46" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M108,300 C132,296 142,320 166,330 C186,338 200,332 206,316" fill="none" stroke={CREAM} strokeOpacity="0.32" strokeWidth="1.2" strokeLinecap="round" />
+      {/* 卷须末端的小卷 */}
+      <path d="M206,316 C213,306 205,298 199,304 C195,309 200,314 204,310" fill="none" stroke={CREAM} strokeOpacity="0.32" strokeWidth="1.1" strokeLinecap="round" />
+      <path d="M172,262 C180,256 188,260 186,268" fill="none" stroke={CREAM} strokeOpacity="0.4" strokeWidth="1.1" strokeLinecap="round" />
+      {/* 两片叶 */}
+      <path d="M150,310 C157,298 169,298 173,305 C166,315 155,317 150,310 Z" fill={CREAM} fillOpacity="0.16" />
+      <path d="M129,332 C136,324 146,326 148,332 C142,339 133,338 129,332 Z" fill={CREAM} fillOpacity="0.12" />
+      {/* 朱色葡萄粒 */}
+      <circle cx="157" cy="323" r="3.1" fill={CINNABAR} fillOpacity="0.9" />
+      <circle cx="164" cy="327" r="2.8" fill={CINNABAR} fillOpacity="0.75" />
+      <circle cx="159" cy="331" r="2.4" fill={CINNABAR} fillOpacity="0.6" />
+      {/* 弦与藤交汇处的火花:悲剧就诞生在这里 */}
+      <circle cx="104" cy="299" r="3.2" fill={CINNABAR} />
     </g>
   )
 }
