@@ -9,7 +9,7 @@
 
 - **【已就绪】** Apple 开发者账号 · Team `D33974QQTD`
 - **【已就绪】** App 记录已存在(在 TestFlight 能看到「观象」)
-- **【已就绪】** 构建 **build 10 · 版本 1.0.0** 已上传并进内部测试组
+- **【已就绪】** 构建 **build 43 · 版本 1.32.0** 已上传并进内部测试组(build 号每次 `./ship-ios.sh` 自增,以 TestFlight 实际最新为准)
 - **【已就绪】** Bundle ID `pub.gavin.hexa` · 显示名「观象」
 - **【已就绪】** 出口合规声明(Info.plist `ITSAppUsesNonExemptEncryption=NO`)
 - **【已就绪】** 隐私政策页代码(`/privacy`)——但**需先把 dist 发到 CF 才线上可访问**
@@ -28,7 +28,7 @@
 
 ## 阶段 A · 上线前素材与部署(可并行,约 0.5–1 天)
 
-- [ ] **A1【你做】发 web dist 到 Cloudflare**——`dist/` 已构建好(Finder 里),拖进 CF 后台 Pages 项目部署。
+- [ ] **A1【已就绪】发 web 到 Cloudflare**——`npm run build && npx wrangler pages deploy dist --project-name=hexa-gavin-pub`(owner 2026-07-14 起改用 CLI,不再拖后台;我可直接执行)。
 - [ ] **A2【验证】** 浏览器打开 `https://hexa.gavin.pub/privacy`,确认隐私政策页能打开(这是 ASC 必填项的前提)。
 - [ ] **A3 截图**(iPhone 6.9″ + iPad 13″ 各一套,每套 3–10 张)——两条路二选一:
   - **让我拍**:我装 build 到模拟器逐屏截给你选(你只需定明/暗、拍哪几卦);或
@@ -45,7 +45,7 @@
   - 副标题:`易经道藏诸子 原文白话译注`
   - 宣传文本、描述、关键词、What's New(首版填「首个版本。」)
 - [ ] **B3 上传截图**:iPhone 6.9″ 一套 + iPad 13″ 一套(阶段 A3 产出)。
-- [ ] **B4 选构建**:在「构建」处选 **build 10**(若还没出现,等 Apple 处理 10–30 分钟刷新)。
+- [ ] **B4 选构建**:在「构建」处选**最新 build**(截至本次刷新为 43;若还没出现,等 Apple 处理 10–30 分钟刷新)。
 - [ ] **B5 隐私政策 URL**:填 `https://hexa.gavin.pub/privacy`(A2 已验证可打开)。
 - [ ] **B6 支持 URL**:`https://hexa.gavin.pub/about`;营销 URL 可留空或填 `https://hexa.gavin.pub`。
 - [ ] **B7 App 隐私问卷**(左侧「App 隐私」):选 **不收集数据 / Data Not Collected**(本 App 只存本机 localStorage、无后端无 SDK)。
@@ -88,9 +88,9 @@
 
 ## 一页速查(最短路径:先发海外)
 
-1. 【你】拖 dist 发 CF → 验证 `/privacy` 打开
+1. 【我】wrangler 发 CF → 验证 `/privacy` 打开
 2. 截图(我拍 or 你拍)iPhone 6.9″ + iPad 13″
 3. ASC → 观象 → App Store → 新版本 1.0.0
-4. 贴文案(listing.md)+ 传截图 + 选 build 10 + 隐私URL + 隐私/年龄问卷 + 类目=教育 + 免费 + **去掉中国大陆** + 贴 Review Notes
+4. 贴文案(listing.md)+ 传截图 + 选最新 build + 隐私URL + 隐私/年龄问卷 + 类目=教育 + 免费 + **去掉中国大陆** + 贴 Review Notes
 5. 提交 → 等审核 → 通过后发布
 6. (并行)办 APP备案 → 拿号后加中国大陆区

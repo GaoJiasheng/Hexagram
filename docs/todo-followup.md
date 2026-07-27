@@ -32,7 +32,7 @@
 ## P3 — 可选增强
 
 6. **部署**:一份构建推 `tao/con/bud.gavingao.cn`(owner 操作);访问 `/hexagram` 是隐藏三教总入口。
-7. **搜索 / 续读接入**:佛/儒现 `hasSearch=false`、未进全局搜索索引;若要,仿 `searchIndex.js` 加多源。
+7. ~~**搜索 / 续读接入**~~ ✅ 已完成(v1.22.0 全站搜索接入 9 读经站 + 道藏,后并为 `GlobalSearchPalette` 恒全站;原记「佛/儒 hasSearch=false」已过期)。
 8. **儒 孟子段数**:并发期 owner/另一会话给管线加了 `stripHeaderBlock`、孟子 →743 段;
    `ru-translations.json` 的告子上/下译文数组可能各多 1 条尾项(已被 fetch-corpus 忽略,check-data 绿),
    有洁癖可 trim 对齐,非必须。
