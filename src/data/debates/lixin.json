@@ -1,126 +1,126 @@
 {
-  "id": "lixin",
-  "title": "性即理 vs 心即理",
-  "category": "性与心",
-  "concept": "性即理 vs 心即理",
-  "question": "天理究竟安顿在「性」中,还是当下即在「心」上?求理是向所禀之性、事事物物上格穷,还是返求此心之本体?",
-  "framing": "同一个「理」字,程朱安之于性、阳明即之于心,会而讲之,各还其本旨。",
-  "schools": [
+ "id": "lixin",
+ "title": "性即理 vs 心即理",
+ "category": "性与心",
+ "concept": "性即理 vs 心即理",
+ "question": "天理究竟安顿在「性」中,还是当下即在「心」上?求理是向所禀之性、事事物物上格穷,还是返求此心之本体?",
+ "framing": "同一个「理」字,程朱安之于性、阳明即之于心,会而讲之,各还其本旨。",
+ "schools": [
+  {
+   "key": "cheng",
+   "label": "程朱",
+   "group": "ru",
+   "seal": "观仁",
+   "stance": "性即理"
+  },
+  {
+   "key": "yangming",
+   "label": "阳明",
+   "group": "xin",
+   "seal": "观心",
+   "stance": "心即理"
+  }
+ ],
+ "rounds": [
+  {
+   "phase": "立论",
+   "turns": [
     {
-      "key": "cheng",
-      "label": "程朱",
-      "group": "ru",
-      "seal": "观仁",
-      "stance": "性即理"
+     "school": "cheng",
+     "rebut": null,
+     "point": "理即是性。天下之理推其本源无有不善,人所禀之性正是此理的安顿处,故曰性即理。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "jinsilu",
+      "ch": 1,
+      "quote": "性即理也。天下之理，原其所自，未有不善",
+      "label": "近思录·道体"
+     }
     },
     {
-      "key": "wang",
-      "label": "阳明",
-      "group": "xin",
-      "seal": "观心",
-      "stance": "心即理"
+     "school": "yangming",
+     "rebut": null,
+     "point": "理不在身外。天下并无心外之事、心外之理,此心便是理之所在,故曰心即理。",
+     "cite": {
+      "corpus": "xin",
+      "slug": "chuanxilu",
+      "ch": 1,
+      "quote": "心即理也。天下又有心外之事、心外之理乎",
+      "label": "传习录·卷上"
+     }
     }
-  ],
-  "rounds": [
+   ]
+  },
+  {
+   "phase": "诘难",
+   "turns": [
     {
-      "phase": "立论",
-      "turns": [
-        {
-          "school": "cheng",
-          "rebut": null,
-          "point": "理即是性。天下之理推其本源无有不善,人所禀之性正是此理的安顿处,故曰性即理。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "jinsilu",
-            "ch": 1,
-            "quote": "性即理也。天下之理，原其所自，未有不善",
-            "label": "近思录·道体"
-          }
-        },
-        {
-          "school": "wang",
-          "rebut": null,
-          "point": "理不在身外。天下并无心外之事、心外之理,此心便是理之所在,故曰心即理。",
-          "cite": {
-            "corpus": "xin",
-            "slug": "chuanxilu",
-            "ch": 1,
-            "quote": "心即理也。天下又有心外之事、心外之理乎",
-            "label": "传习录·卷上"
-          }
-        }
-      ]
+     "school": "yangming",
+     "rebut": "cheng",
+     "point": "若理须向性、向事物上求,则事父当去父身上讨孝之理矣。其实孝理只在此心,不待外添。",
+     "cite": {
+      "corpus": "xin",
+      "slug": "chuanxilu",
+      "ch": 1,
+      "quote": "且如事父，不成去父上求个孝的理",
+      "label": "传习录·卷上"
+     }
     },
     {
-      "phase": "诘难",
-      "turns": [
-        {
-          "school": "wang",
-          "rebut": "cheng",
-          "point": "若理须向性、向事物上求,则事父当去父身上讨孝之理矣。其实孝理只在此心,不待外添。",
-          "cite": {
-            "corpus": "xin",
-            "slug": "chuanxilu",
-            "ch": 1,
-            "quote": "且如事父，不成去父上求个孝的理",
-            "label": "传习录·卷上"
-          }
-        },
-        {
-          "school": "cheng",
-          "rebut": "wang",
-          "point": "命、理、性、心本是一事的不同安立:在天为命,在物为理,在人为性,主于身方为心,不可径以心混理。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "jinsilu",
-            "ch": 1,
-            "quote": "在天为命，在物为理，在人为性，主于身为心",
-            "label": "近思录·道体"
-          }
-        }
-      ]
-    },
-    {
-      "phase": "申辩",
-      "turns": [
-        {
-          "school": "wang",
-          "rebut": "cheng",
-          "point": "至善正是心的本体,虚灵不昧而众理具,故曰心外无理、心外无事,无须于事物上别求。",
-          "cite": {
-            "corpus": "xin",
-            "slug": "chuanxilu",
-            "ch": 1,
-            "quote": "心外无理，心外无事",
-            "label": "传习录·卷上"
-          }
-        },
-        {
-          "school": "cheng",
-          "rebut": "wang",
-          "point": "心命物性,究其实是一,然须分际而言。心本善而发为思虑则有善有不善,故立性以为理之准。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "jinsilu",
-            "ch": 1,
-            "quote": "主于身为心，其实一也",
-            "label": "近思录·道体"
-          }
-        },
-        {
-          "school": "wang",
-          "rebut": "cheng",
-          "point": "心与理本非二物,若强析心与理为两截而言,恐亦未为尽善——无私心即是当理。",
-          "cite": {
-            "corpus": "xin",
-            "slug": "chuanxilu",
-            "ch": 1,
-            "quote": "若析心与理言之，恐亦未善",
-            "label": "传习录·卷上"
-          }
-        }
-      ]
+     "school": "cheng",
+     "rebut": "yangming",
+     "point": "命、理、性、心本是一事的不同安立:在天为命,在物为理,在人为性,主于身方为心,不可径以心混理。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "jinsilu",
+      "ch": 1,
+      "quote": "在天为命，在物为理，在人为性，主于身为心",
+      "label": "近思录·道体"
+     }
     }
-  ],
-  "coda": "分歧落在「理」字的安顿处:程朱重「分际」,命、性、心各有名位,立性即理以为天下之公准,使人有所禀循;阳明重「合一」,即此心之本体说理,使工夫不外驰而归于一念之诚。一主分而立准,一主合而归约,皆为求此理之贞,各成一路功夫,会而通之,各还其本。"
+   ]
+  },
+  {
+   "phase": "申辩",
+   "turns": [
+    {
+     "school": "yangming",
+     "rebut": "cheng",
+     "point": "至善正是心的本体,虚灵不昧而众理具,故曰心外无理、心外无事,无须于事物上别求。",
+     "cite": {
+      "corpus": "xin",
+      "slug": "chuanxilu",
+      "ch": 1,
+      "quote": "心外无理，心外无事",
+      "label": "传习录·卷上"
+     }
+    },
+    {
+     "school": "cheng",
+     "rebut": "yangming",
+     "point": "心命物性,究其实是一,然须分际而言。心本善而发为思虑则有善有不善,故立性以为理之准。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "jinsilu",
+      "ch": 1,
+      "quote": "主于身为心，其实一也",
+      "label": "近思录·道体"
+     }
+    },
+    {
+     "school": "yangming",
+     "rebut": "cheng",
+     "point": "心与理本非二物,若强析心与理为两截而言,恐亦未为尽善——无私心即是当理。",
+     "cite": {
+      "corpus": "xin",
+      "slug": "chuanxilu",
+      "ch": 1,
+      "quote": "若析心与理言之，恐亦未善",
+      "label": "传习录·卷上"
+     }
+    }
+   ]
+  }
+ ],
+ "coda": "分歧落在「理」字的安顿处:程朱重「分际」,命、性、心各有名位,立性即理以为天下之公准,使人有所禀循;阳明重「合一」,即此心之本体说理,使工夫不外驰而归于一念之诚。一主分而立准,一主合而归约,皆为求此理之贞,各成一路功夫,会而通之,各还其本。"
 }

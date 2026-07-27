@@ -3,6 +3,11 @@ import { useParams, Link } from 'react-router-dom'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import { loadDebate, groupAccent, schoolSeal, EPIGRAPH } from './debates.js'
 import { bookBySlug, chapterHref } from '../reader/booksIndex.js'
+import { SITE_MAP } from '../../sites/registry.js'
+import concepts from '../../data/concepts.json'
+
+// 概念页只收了少数几个跨派聚类;命中才给「义理专题」出链,不硬凑
+const CONCEPT_TERMS = new Set(concepts.clusters.map((c) => c.term))
 
 // 圆桌节点坐标:n 家匀布于圆周(自顶部顺时针)
 function nodePositions(n, cx, cy, r) {
@@ -64,6 +69,22 @@ export default function DebatePage() {
   const activeKey = turns[revealed - 1]?.school
   const done = revealed >= total
 
+  // 收束处的出链:读完对辩正想深入某一方,而被引各章几乎都有白话深读(实测 459/459 皆有)。
+  // 路由按 corpus/slug 直接构造(与 BaihuaBlock 同一套规则)——不能拿阅读页 href 改写:
+  // 单页书(心经/大学/中庸等 9 部被引)的 href 带 #锚点,易经又另走 /hexagram|/classics 两路。
+  const deeper = (() => {
+    const seen = new Map()
+    for (const t of turns) {
+      const { corpus, slug, ch, label } = t.cite
+      const href = corpus === 'yijing'
+        ? (slug === 'hexagrams' ? `/hexagram/${ch}/baihua` : `/classics/${slug}/${ch}/baihua`)
+        : `${SITE_MAP[corpus]?.home || ''}/${slug}/baihua/${ch}`
+      if (!seen.has(href)) seen.set(href, { href, label })
+    }
+    return [...seen.values()].slice(0, 6)
+  })()
+  const conceptHit = CONCEPT_TERMS.has(d.concept) ? d.concept : null
+
   let lastPhase = null
 
   return (
@@ -113,7 +134,8 @@ export default function DebatePage() {
           {playing ? '⏸ 暂停' : '▶ 自动展开'}
         </button>
         <button className="btn btn--ghost" onClick={() => { setPlaying(false); setRevealed((r) => Math.min(r + 1, total)) }} disabled={done}>下一句 →</button>
-        <button className="btn btn--ghost" onClick={() => { setPlaying(false); setRevealed(total) }} disabled={done}>跳到收束</button>
+        {/* 「跳到收束」原名易被当作「只看结论」而略过,实为一次铺开全部对辩——想通读的人该点它 */}
+        <button className="btn btn--ghost" onClick={() => { setPlaying(false); setRevealed(total) }} disabled={done}>全部展开</button>
         {done && <button className="btn btn--ghost" onClick={() => setRevealed(1)}>↺ 重看</button>}
         <span className="debate-progress">{Math.min(revealed, total)} / {total}</span>
       </div>
@@ -153,6 +175,17 @@ export default function DebatePage() {
         <div className="debate-coda">
           <div className="debate-coda__tag">会讲 · 殊途</div>
           <p className="debate-coda__text">{d.coda}</p>
+          {deeper.length > 0 && (
+            <div className="debate-deeper">
+              <span className="debate-deeper__label">接着深读</span>
+              <div className="debate-deeper__links">
+                {deeper.map((x) => (
+                  <Link key={x.href} to={x.href} className="debate-deeper__link">白话 · {x.label}</Link>
+                ))}
+                {conceptHit && <Link to="/concepts" className="debate-deeper__link">义理专题 · {d.concept || conceptHit}</Link>}
+              </div>
+            </div>
+          )}
           <p className="debate-coda__epigraph">{EPIGRAPH.text} ——《{EPIGRAPH.source}》</p>
           <Link to="/debates" className="btn btn--secondary">换一辩 →</Link>
         </div>

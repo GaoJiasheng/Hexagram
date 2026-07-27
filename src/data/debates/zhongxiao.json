@@ -1,114 +1,114 @@
 {
-  "id": "zhongxiao",
-  "title": "忠孝之先",
-  "category": "伦理 · 义利 · 爱孝",
-  "concept": "忠孝之先",
-  "question": "忠君与孝亲,孰为先?",
-  "framing": "人臣之身,既属于家,又属于国——侍亲之孝与事君之忠相遇于一身,二者孰先?",
-  "schools": [
+ "id": "zhongxiao",
+ "title": "忠孝之先",
+ "category": "伦理 · 义利 · 爱孝",
+ "concept": "忠孝之先",
+ "question": "忠君与孝亲,孰为先?",
+ "framing": "人臣之身,既属于家,又属于国——侍亲之孝与事君之忠相遇于一身,二者孰先?",
+ "schools": [
+  {
+   "key": "kong",
+   "label": "孔子",
+   "group": "ru",
+   "seal": "观仁",
+   "stance": "孝悌为本"
+  },
+  {
+   "key": "hanfei",
+   "label": "韩非",
+   "group": "fa",
+   "seal": "观法",
+   "stance": "尽忠于君"
+  }
+ ],
+ "rounds": [
+  {
+   "phase": "立论",
+   "turns": [
     {
-      "key": "kong",
-      "label": "孔子",
-      "group": "ru",
-      "seal": "观仁",
-      "stance": "孝悌为本"
+     "school": "kong",
+     "rebut": null,
+     "point": "孝悌是为仁的根本,人先在家中事亲敬长,德行立稳了,治国事君之道自然由此生发。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "lunyu",
+      "ch": 1,
+      "quote": "君子务本，本立而道生；孝弟也者，其为仁之本与",
+      "label": "论语·学而"
+     }
     },
     {
-      "key": "han",
-      "label": "韩非",
-      "group": "fa",
-      "seal": "观法",
-      "stance": "尽忠于君"
+     "school": "hanfei",
+     "rebut": null,
+     "point": "鲁人因奉养老父而临阵脱逃,仲尼嘉其孝而擢升之——可见在父为孝子的,正是于君背离之臣。",
+     "cite": {
+      "corpus": "fa",
+      "slug": "hanfeizi",
+      "ch": 49,
+      "quote": "夫父之孝子，君之背臣也",
+      "label": "韩非子·五蠹"
+     }
     }
-  ],
-  "rounds": [
+   ]
+  },
+  {
+   "phase": "诘难",
+   "turns": [
     {
-      "phase": "立论",
-      "turns": [
-        {
-          "school": "kong",
-          "rebut": null,
-          "point": "孝悌是为仁的根本,人先在家中事亲敬长,德行立稳了,治国事君之道自然由此生发。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "lunyu",
-            "ch": 1,
-            "quote": "君子务本，本立而道生；孝弟也者，其为仁之本与",
-            "label": "论语·学而"
-          }
-        },
-        {
-          "school": "han",
-          "rebut": null,
-          "point": "鲁人因奉养老父而临阵脱逃,仲尼嘉其孝而擢升之——可见在父为孝子的,正是于君背离之臣。",
-          "cite": {
-            "corpus": "fa",
-            "slug": "hanfeizi",
-            "ch": 49,
-            "quote": "夫父之孝子，君之背臣也",
-            "label": "韩非子·五蠹"
-          }
-        }
-      ]
+     "school": "hanfei",
+     "rebut": "kong",
+     "point": "楚人之父窃羊而子告于吏,这在君为正直的,在父却是横暴之子——徇私与奉公本相背,不能两全。",
+     "cite": {
+      "corpus": "fa",
+      "slug": "hanfeizi",
+      "ch": 49,
+      "quote": "夫君之直臣，父之暴子也",
+      "label": "韩非子·五蠹"
+     }
     },
     {
-      "phase": "诘难",
-      "turns": [
-        {
-          "school": "han",
-          "rebut": "kong",
-          "point": "楚人之父窃羊而子告于吏,这在君为正直的,在父却是横暴之子——徇私与奉公本相背,不能两全。",
-          "cite": {
-            "corpus": "fa",
-            "slug": "hanfeizi",
-            "ch": 49,
-            "quote": "夫君之直臣，父之暴子也",
-            "label": "韩非子·五蠹"
-          }
-        },
-        {
-          "school": "kong",
-          "rebut": "han",
-          "point": "二者并非相斥:在上者以孝慈待民,民自然以忠相报——居家行孝正是事君尽忠之所由出。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "lunyu",
-            "ch": 2,
-            "quote": "孝慈，则忠；举善而教不能，则劝",
-            "label": "论语·为政"
-          }
-        }
-      ]
-    },
-    {
-      "phase": "申辩",
-      "turns": [
-        {
-          "school": "kong",
-          "rebut": "han",
-          "point": "父子之间彼此回护,正直便寓于其中——若令子告父之罪,反失了人伦相亲的本真。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "lunyu",
-            "ch": 13,
-            "quote": "父为子隐，子为父隐，直在其中矣",
-            "label": "论语·子路"
-          }
-        },
-        {
-          "school": "han",
-          "rebut": "kong",
-          "point": "在上者之利与匹夫之私行,根本各异;若君主兼取私门之孝行,而望社稷得福,势必难成。",
-          "cite": {
-            "corpus": "fa",
-            "slug": "hanfeizi",
-            "ch": 49,
-            "quote": "上下之利，若是其异也",
-            "label": "韩非子·五蠹"
-          }
-        }
-      ]
+     "school": "kong",
+     "rebut": "hanfei",
+     "point": "二者并非相斥:在上者以孝慈待民,民自然以忠相报——居家行孝正是事君尽忠之所由出。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "lunyu",
+      "ch": 2,
+      "quote": "孝慈，则忠；举善而教不能，则劝",
+      "label": "论语·为政"
+     }
     }
-  ],
-  "coda": "分歧落在「家与国是否同源」一处。孔子视孝悌为仁德之本,事君之忠由侍亲之孝推扩而生,二者一脉相贯;韩非则把私门之孝与公朝之忠看作利之相异、势所难并,故主张以法令归本于君。一以亲亲为治道之源,一以奉公为国本之要,各陈其所重而已。"
+   ]
+  },
+  {
+   "phase": "申辩",
+   "turns": [
+    {
+     "school": "kong",
+     "rebut": "hanfei",
+     "point": "父子之间彼此回护,正直便寓于其中——若令子告父之罪,反失了人伦相亲的本真。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "lunyu",
+      "ch": 13,
+      "quote": "父为子隐，子为父隐，直在其中矣",
+      "label": "论语·子路"
+     }
+    },
+    {
+     "school": "hanfei",
+     "rebut": "kong",
+     "point": "在上者之利与匹夫之私行,根本各异;若君主兼取私门之孝行,而望社稷得福,势必难成。",
+     "cite": {
+      "corpus": "fa",
+      "slug": "hanfeizi",
+      "ch": 49,
+      "quote": "上下之利，若是其异也",
+      "label": "韩非子·五蠹"
+     }
+    }
+   ]
+  }
+ ],
+ "coda": "分歧落在「家与国是否同源」一处。孔子视孝悌为仁德之本,事君之忠由侍亲之孝推扩而生,二者一脉相贯;韩非则把私门之孝与公朝之忠看作利之相异、势所难并,故主张以法令归本于君。一以亲亲为治道之源,一以奉公为国本之要,各陈其所重而已。"
 }

@@ -1,174 +1,174 @@
 {
-  "id": "fade",
-  "title": "法与德孰先",
-  "category": "治道与政治",
-  "concept": "法与德孰先",
-  "question": "治民,当以德礼为先,还是以法刑为本?",
-  "framing": "一问之下,德礼与法刑各执其端,会而讲之,各明其理而不相较。",
-  "schools": [
+ "id": "fade",
+ "title": "法与德孰先",
+ "category": "治道与政治",
+ "concept": "法与德孰先",
+ "question": "治民,当以德礼为先,还是以法刑为本?",
+ "framing": "一问之下,德礼与法刑各执其端,会而讲之,各明其理而不相较。",
+ "schools": [
+  {
+   "key": "hanfei",
+   "label": "韩非",
+   "group": "fa",
+   "seal": "观法",
+   "stance": "务法不务德"
+  },
+  {
+   "key": "kong",
+   "label": "孔子",
+   "group": "ru",
+   "seal": "观仁",
+   "stance": "德礼为先"
+  },
+  {
+   "key": "xun",
+   "label": "荀子",
+   "group": "ru",
+   "seal": "观仁",
+   "stance": "隆礼重法"
+  }
+ ],
+ "rounds": [
+  {
+   "phase": "立论",
+   "turns": [
     {
-      "key": "han",
-      "label": "韩非",
-      "group": "fa",
-      "seal": "观法",
-      "stance": "务法不务德"
+     "school": "kong",
+     "rebut": null,
+     "point": "以政令刑罚驱民,民只求免罪而无羞耻;以德教礼范导民,则民既有羞耻又能自归于正。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "lunyu",
+      "ch": 2,
+      "quote": "道之以德，齐之以礼，有耻且格",
+      "label": "论语·为政"
+     }
     },
     {
-      "key": "kong",
-      "label": "孔子",
-      "group": "ru",
-      "seal": "观仁",
-      "stance": "德礼为先"
+     "school": "hanfei",
+     "rebut": null,
+     "point": "治国当用人之多数而舍其少数,使人不得为非比靠人自善更可恃,故重在立法而不在养德。",
+     "cite": {
+      "corpus": "fa",
+      "slug": "hanfeizi",
+      "ch": 50,
+      "quote": "为治者用众而舍寡，故不务德而务法",
+      "label": "韩非子·显学"
+     }
     },
     {
-      "key": "xun",
-      "label": "荀子",
-      "group": "ru",
-      "seal": "观仁",
-      "stance": "隆礼重法"
+     "school": "xun",
+     "rebut": null,
+     "point": "治道之大端在隆礼与至法并举,二者俱立则国有常轨,赏罚分明则民不懈怠。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "xunzi",
+      "ch": 12,
+      "quote": "隆礼至法则国有常",
+      "label": "荀子·君道"
+     }
     }
-  ],
-  "rounds": [
+   ]
+  },
+  {
+   "phase": "诘难",
+   "turns": [
     {
-      "phase": "立论",
-      "turns": [
-        {
-          "school": "kong",
-          "rebut": null,
-          "point": "以政令刑罚驱民,民只求免罪而无羞耻;以德教礼范导民,则民既有羞耻又能自归于正。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "lunyu",
-            "ch": 2,
-            "quote": "道之以德，齐之以礼，有耻且格",
-            "label": "论语·为政"
-          }
-        },
-        {
-          "school": "han",
-          "rebut": null,
-          "point": "治国当用人之多数而舍其少数,使人不得为非比靠人自善更可恃,故重在立法而不在养德。",
-          "cite": {
-            "corpus": "fa",
-            "slug": "hanfeizi",
-            "ch": 50,
-            "quote": "为治者用众而舍寡，故不务德而务法",
-            "label": "韩非子·显学"
-          }
-        },
-        {
-          "school": "xun",
-          "rebut": null,
-          "point": "治道之大端在隆礼与至法并举,二者俱立则国有常轨,赏罚分明则民不懈怠。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "xunzi",
-            "ch": 12,
-            "quote": "隆礼至法则国有常",
-            "label": "荀子·君道"
-          }
-        }
-      ]
+     "school": "hanfei",
+     "rebut": "kong",
+     "point": "父母之爱、乡人之责、师长之教三者并加而不才之子不改,终须官吏执公法严刑才使其畏惧改行,见德教之不足恃。",
+     "cite": {
+      "corpus": "fa",
+      "slug": "hanfeizi",
+      "ch": 49,
+      "quote": "父母之爱不足以教子，必待州部之严刑者",
+      "label": "韩非子·五蠹"
+     }
     },
     {
-      "phase": "诘难",
-      "turns": [
-        {
-          "school": "han",
-          "rebut": "kong",
-          "point": "父母之爱、乡人之责、师长之教三者并加而不才之子不改,终须官吏执公法严刑才使其畏惧改行,见德教之不足恃。",
-          "cite": {
-            "corpus": "fa",
-            "slug": "hanfeizi",
-            "ch": 49,
-            "quote": "父母之爱不足以教子，必待州部之严刑者",
-            "label": "韩非子·五蠹"
-          }
-        },
-        {
-          "school": "kong",
-          "rebut": "han",
-          "point": "若仅以政刑驭民,民虽暂免于罚却失其羞耻之心;治之本在使人心知耻而自正,非刑威所能成。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "lunyu",
-            "ch": 2,
-            "quote": "道之以政，齐之以刑，民免而无耻",
-            "label": "论语·为政"
-          }
-        }
-      ]
-    },
-    {
-      "phase": "夹击",
-      "turns": [
-        {
-          "school": "han",
-          "rebut": "xun",
-          "point": "隆礼至法并举,终究要人自善而后礼行;明主不恃自善之民,礼义之化在法度之外,不可倚为常。",
-          "cite": {
-            "corpus": "fa",
-            "slug": "hanfeizi",
-            "ch": 50,
-            "quote": "不恃赏罚而恃自善之民，明主弗贵也",
-            "label": "韩非子·显学"
-          }
-        },
-        {
-          "school": "kong",
-          "rebut": "xun",
-          "point": "以礼为矫治之器,则礼成外束;人而不仁,如礼何?礼之本在仁,不在制度之密。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "lunyu",
-            "ch": 3,
-            "quote": "人而不仁，如礼何？",
-            "label": "论语·八佾"
-          }
-        }
-      ]
-    },
-    {
-      "phase": "申辩",
-      "turns": [
-        {
-          "school": "han",
-          "rebut": "kong",
-          "point": "民众本服于权势而少能怀仰仁义,孔子以圣德行道而归服者仅数十人,可见单凭德义难以驭众。",
-          "cite": {
-            "corpus": "fa",
-            "slug": "hanfeizi",
-            "ch": 49,
-            "quote": "民者固服于势，寡能怀于义",
-            "label": "韩非子·五蠹"
-          }
-        },
-        {
-          "school": "xun",
-          "rebut": "han",
-          "point": "人之天性本好利争夺,礼义法度乃圣人后起所制以矫治之;故法不可废,而立法之源仍在礼义之化。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "xunzi",
-            "ch": 23,
-            "quote": "人之性恶，其善者伪也",
-            "label": "荀子·性恶"
-          }
-        },
-        {
-          "school": "kong",
-          "rebut": "han",
-          "point": "为政若能以德为本,君如北辰居所而众星环拱,人心自然归向,非徒恃刑势压服。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "lunyu",
-            "ch": 2,
-            "quote": "为政以德，譬如北辰，居其所",
-            "label": "论语·为政"
-          }
-        }
-      ]
+     "school": "kong",
+     "rebut": "hanfei",
+     "point": "若仅以政刑驭民,民虽暂免于罚却失其羞耻之心;治之本在使人心知耻而自正,非刑威所能成。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "lunyu",
+      "ch": 2,
+      "quote": "道之以政，齐之以刑，民免而无耻",
+      "label": "论语·为政"
+     }
     }
-  ],
-  "coda": "三家分歧落在治民之本的安放:孔子归于德礼,使民有耻而自正;韩非归于法刑,使民不得为非而齐一;荀子据性恶而隆礼至法并举,以礼为源、以法为辅。同问「孰先」,而所重各异、所据之人性各别,会讲至此,各陈其旨而并存。"
+   ]
+  },
+  {
+   "phase": "夹击",
+   "turns": [
+    {
+     "school": "hanfei",
+     "rebut": "xun",
+     "point": "隆礼至法并举,终究要人自善而后礼行;明主不恃自善之民,礼义之化在法度之外,不可倚为常。",
+     "cite": {
+      "corpus": "fa",
+      "slug": "hanfeizi",
+      "ch": 50,
+      "quote": "不恃赏罚而恃自善之民，明主弗贵也",
+      "label": "韩非子·显学"
+     }
+    },
+    {
+     "school": "kong",
+     "rebut": "xun",
+     "point": "以礼为矫治之器,则礼成外束;人而不仁,如礼何?礼之本在仁,不在制度之密。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "lunyu",
+      "ch": 3,
+      "quote": "人而不仁，如礼何？",
+      "label": "论语·八佾"
+     }
+    }
+   ]
+  },
+  {
+   "phase": "申辩",
+   "turns": [
+    {
+     "school": "hanfei",
+     "rebut": "kong",
+     "point": "民众本服于权势而少能怀仰仁义,孔子以圣德行道而归服者仅数十人,可见单凭德义难以驭众。",
+     "cite": {
+      "corpus": "fa",
+      "slug": "hanfeizi",
+      "ch": 49,
+      "quote": "民者固服于势，寡能怀于义",
+      "label": "韩非子·五蠹"
+     }
+    },
+    {
+     "school": "xun",
+     "rebut": "hanfei",
+     "point": "人之天性本好利争夺,礼义法度乃圣人后起所制以矫治之;故法不可废,而立法之源仍在礼义之化。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "xunzi",
+      "ch": 23,
+      "quote": "人之性恶，其善者伪也",
+      "label": "荀子·性恶"
+     }
+    },
+    {
+     "school": "kong",
+     "rebut": "hanfei",
+     "point": "为政若能以德为本,君如北辰居所而众星环拱,人心自然归向,非徒恃刑势压服。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "lunyu",
+      "ch": 2,
+      "quote": "为政以德，譬如北辰，居其所",
+      "label": "论语·为政"
+     }
+    }
+   ]
+  }
+ ],
+ "coda": "三家分歧落在治民之本的安放:孔子归于德礼,使民有耻而自正;韩非归于法刑,使民不得为非而齐一;荀子据性恶而隆礼至法并举,以礼为源、以法为辅。同问「孰先」,而所重各异、所据之人性各别,会讲至此,各陈其旨而并存。"
 }

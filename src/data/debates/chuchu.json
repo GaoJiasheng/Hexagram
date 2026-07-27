@@ -1,157 +1,157 @@
 {
-  "id": "chuchu",
-  "title": "出处 · 隐与仕",
-  "category": "生死 · 身 · 苦乐",
-  "concept": "出处 · 隐与仕",
-  "question": "士之出处,当逍遥辞世,知不可而为,还是尽用其能?",
-  "framing": "士有用世之能,而世道未必容其行,出处之间,各家自有安顿。",
-  "schools": [
+ "id": "chuchu",
+ "title": "出处 · 隐与仕",
+ "category": "生死 · 身 · 苦乐",
+ "concept": "出处 · 隐与仕",
+ "question": "士之出处,当逍遥辞世,知不可而为,还是尽用其能?",
+ "framing": "士有用世之能,而世道未必容其行,出处之间,各家自有安顿。",
+ "schools": [
+  {
+   "key": "zhuang",
+   "label": "庄子",
+   "group": "dao",
+   "seal": "观道",
+   "stance": "逍遥辞世"
+  },
+  {
+   "key": "kong",
+   "label": "孔子",
+   "group": "ru",
+   "seal": "观仁",
+   "stance": "知不可而为"
+  },
+  {
+   "key": "hanfei",
+   "label": "韩非",
+   "group": "fa",
+   "seal": "观法",
+   "stance": "尽用其能"
+  }
+ ],
+ "rounds": [
+  {
+   "phase": "立论",
+   "turns": [
     {
-      "key": "zhuang",
-      "label": "庄子",
-      "group": "dao",
-      "seal": "观道",
-      "stance": "逍遥辞世"
+     "school": "zhuang",
+     "rebut": null,
+     "point": "至高之人不以治天下为务,神人不矜功,圣人不慕名,何苦劳神去为世事所累。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "zhuangzi-neipian",
+      "ch": 1,
+      "quote": "世蕲乎乱，孰弊弊焉以天下为事",
+      "label": "庄子·逍遥游"
+     }
     },
     {
-      "key": "kong",
-      "label": "孔子",
-      "group": "ru",
-      "seal": "观仁",
-      "stance": "知不可而为"
+     "school": "kong",
+     "rebut": null,
+     "point": "明知道之不行,仍不肯避世自洁,君子出仕只为践行其义,这才合于人伦。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "lunyu",
+      "ch": 18,
+      "quote": "不仕无义",
+      "label": "论语·微子"
+     }
     },
     {
-      "key": "han",
-      "label": "韩非",
-      "group": "fa",
-      "seal": "观法",
-      "stance": "尽用其能"
+     "school": "hanfei",
+     "rebut": null,
+     "point": "贤明之国不靠空谈与先王之语,而以法令为教、以功效用人,百姓动作皆归于实功。",
+     "cite": {
+      "corpus": "fa",
+      "slug": "hanfeizi",
+      "ch": 49,
+      "quote": "以法为教",
+      "label": "韩非子·五蠹"
+     }
     }
-  ],
-  "rounds": [
+   ]
+  },
+  {
+   "phase": "诘难",
+   "turns": [
     {
-      "phase": "立论",
-      "turns": [
-        {
-          "school": "zhuang",
-          "rebut": null,
-          "point": "至高之人不以治天下为务,神人不矜功,圣人不慕名,何苦劳神去为世事所累。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "zhuangzi-neipian",
-            "ch": 1,
-            "quote": "世蕲乎乱，孰弊弊焉以天下为事",
-            "label": "庄子·逍遥游"
-          }
-        },
-        {
-          "school": "kong",
-          "rebut": null,
-          "point": "明知道之不行,仍不肯避世自洁,君子出仕只为践行其义,这才合于人伦。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "lunyu",
-            "ch": 18,
-            "quote": "不仕无义",
-            "label": "论语·微子"
-          }
-        },
-        {
-          "school": "han",
-          "rebut": null,
-          "point": "贤明之国不靠空谈与先王之语,而以法令为教、以功效用人,百姓动作皆归于实功。",
-          "cite": {
-            "corpus": "fa",
-            "slug": "hanfeizi",
-            "ch": 49,
-            "quote": "以法为教",
-            "label": "韩非子·五蠹"
-          }
-        }
-      ]
+     "school": "kong",
+     "rebut": "zhuang",
+     "point": "避世自洁固然清高,但抛下君臣长幼之伦,反而扰乱了大伦理,这并非士之正道。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "lunyu",
+      "ch": 18,
+      "quote": "欲洁其身，而乱大伦",
+      "label": "论语·微子"
+     }
     },
     {
-      "phase": "诘难",
-      "turns": [
-        {
-          "school": "kong",
-          "rebut": "zhuang",
-          "point": "避世自洁固然清高,但抛下君臣长幼之伦,反而扰乱了大伦理,这并非士之正道。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "lunyu",
-            "ch": 18,
-            "quote": "欲洁其身，而乱大伦",
-            "label": "论语·微子"
-          }
-        },
-        {
-          "school": "han",
-          "rebut": "zhuang",
-          "point": "治国不能指望人人自善,而要用法度使人无从为非;空守清虚无为,无补于安治。",
-          "cite": {
-            "corpus": "fa",
-            "slug": "hanfeizi",
-            "ch": 50,
-            "quote": "不务德而务法",
-            "label": "韩非子·显学"
-          }
-        },
-        {
-          "school": "zhuang",
-          "rebut": "kong",
-          "point": "汲汲于功名利禄,正如蜩鸠笑大鹏,所见者小;不如顺乘天地之正而游于无穷。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "zhuangzi-neipian",
-            "ch": 1,
-            "quote": "乘天地之正，而御六气之辨，以游无穷者",
-            "label": "庄子·逍遥游"
-          }
-        }
-      ]
+     "school": "hanfei",
+     "rebut": "zhuang",
+     "point": "治国不能指望人人自善,而要用法度使人无从为非;空守清虚无为,无补于安治。",
+     "cite": {
+      "corpus": "fa",
+      "slug": "hanfeizi",
+      "ch": 50,
+      "quote": "不务德而务法",
+      "label": "韩非子·显学"
+     }
     },
     {
-      "phase": "申辩",
-      "turns": [
-        {
-          "school": "kong",
-          "rebut": "han",
-          "point": "为政若只恃刑法功效,而轻人伦之义,士之出处便失了根本;出仕本为行义,非为逐利。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "lunyu",
-            "ch": 18,
-            "quote": "君子之仕也，行其义也",
-            "label": "论语·微子"
-          }
-        },
-        {
-          "school": "han",
-          "rebut": "kong",
-          "point": "圣人治国不依赖人主动向善,而是使人不得为非;此乃必然之道,非系于一二贤者出处。",
-          "cite": {
-            "corpus": "fa",
-            "slug": "hanfeizi",
-            "ch": 50,
-            "quote": "用其不得为非也",
-            "label": "韩非子·显学"
-          }
-        },
-        {
-          "school": "zhuang",
-          "rebut": "kong",
-          "point": "无用之大树正因无所可用,反得栖息逍遥于其下,不夭于斧斤——辞世自有其全身之安。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "zhuangzi-neipian",
-            "ch": 1,
-            "quote": "逍遥乎寝卧其下",
-            "label": "庄子·逍遥游"
-          }
-        }
-      ]
+     "school": "zhuang",
+     "rebut": "kong",
+     "point": "汲汲于功名利禄,正如蜩鸠笑大鹏,所见者小;不如顺乘天地之正而游于无穷。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "zhuangzi-neipian",
+      "ch": 1,
+      "quote": "乘天地之正，而御六气之辨，以游无穷者",
+      "label": "庄子·逍遥游"
+     }
     }
-  ],
-  "coda": "三家所争,实在「能」之所归:庄子以辞世全其逍遥,孔子以出仕行其道义,韩非以法度尽其功效。隐者求身之安、仕者求义之行、法者求治之效,各安一处,分歧不在能不能用世,而在何者为士之所当务。"
+   ]
+  },
+  {
+   "phase": "申辩",
+   "turns": [
+    {
+     "school": "kong",
+     "rebut": "hanfei",
+     "point": "为政若只恃刑法功效,而轻人伦之义,士之出处便失了根本;出仕本为行义,非为逐利。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "lunyu",
+      "ch": 18,
+      "quote": "君子之仕也，行其义也",
+      "label": "论语·微子"
+     }
+    },
+    {
+     "school": "hanfei",
+     "rebut": "kong",
+     "point": "圣人治国不依赖人主动向善,而是使人不得为非;此乃必然之道,非系于一二贤者出处。",
+     "cite": {
+      "corpus": "fa",
+      "slug": "hanfeizi",
+      "ch": 50,
+      "quote": "用其不得为非也",
+      "label": "韩非子·显学"
+     }
+    },
+    {
+     "school": "zhuang",
+     "rebut": "kong",
+     "point": "无用之大树正因无所可用,反得栖息逍遥于其下,不夭于斧斤——辞世自有其全身之安。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "zhuangzi-neipian",
+      "ch": 1,
+      "quote": "逍遥乎寝卧其下",
+      "label": "庄子·逍遥游"
+     }
+    }
+   ]
+  }
+ ],
+ "coda": "三家所争,实在「能」之所归:庄子以辞世全其逍遥,孔子以出仕行其道义,韩非以法度尽其功效。隐者求身之安、仕者求义之行、法者求治之效,各安一处,分歧不在能不能用世,而在何者为士之所当务。"
 }

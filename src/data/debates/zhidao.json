@@ -1,174 +1,174 @@
 {
-  "id": "zhidao",
-  "title": "治国总纲",
-  "category": "治道与政治",
-  "concept": "治国总纲",
-  "question": "治天下,当以德、以法,还是无为?",
-  "framing": "同问安民,而入手处各异:或修德,或立法,或去为。",
-  "coda": "三家分歧落在「治理的着力点」:孔子主在上者修德立礼,使民自生羞耻而向化;老子主在上者收敛有为,不扰民而任其自然;韩非主立公开法度、循赏罚,使人「不得为非」。一重感召,一重不扰,一重制度,各为一条治道,会讲并陈,各存其理。",
-  "schools": [
+ "id": "zhidao",
+ "title": "治国总纲",
+ "category": "治道与政治",
+ "concept": "治国总纲",
+ "question": "治天下,当以德、以法,还是无为?",
+ "framing": "同问安民,而入手处各异:或修德,或立法,或去为。",
+ "coda": "三家分歧落在「治理的着力点」:孔子主在上者修德立礼,使民自生羞耻而向化;老子主在上者收敛有为,不扰民而任其自然;韩非主立公开法度、循赏罚,使人「不得为非」。一重感召,一重不扰,一重制度,各为一条治道,会讲并陈,各存其理。",
+ "schools": [
+  {
+   "key": "kong",
+   "label": "孔子",
+   "group": "ru",
+   "seal": "观仁",
+   "stance": "为政以德"
+  },
+  {
+   "key": "laozi",
+   "label": "老子",
+   "group": "dao",
+   "seal": "观道",
+   "stance": "无为而治"
+  },
+  {
+   "key": "hanfei",
+   "label": "韩非",
+   "group": "fa",
+   "seal": "观法",
+   "stance": "以法治国"
+  }
+ ],
+ "rounds": [
+  {
+   "phase": "立论",
+   "turns": [
     {
-      "key": "kong",
-      "label": "孔子",
-      "group": "ru",
-      "seal": "观仁",
-      "stance": "为政以德"
+     "school": "kong",
+     "rebut": null,
+     "point": "治理的根本在上位者自身有德。君主端正德行,百姓自然环绕归向,如众星拱卫北辰。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "lunyu",
+      "ch": 2,
+      "quote": "为政以德，譬如北辰，居其所，而众星共之",
+      "label": "论语·为政"
+     }
     },
     {
-      "key": "lao",
-      "label": "老子",
-      "group": "dao",
-      "seal": "观道",
-      "stance": "无为而治"
+     "school": "laozi",
+     "rebut": null,
+     "point": "治理贵在不强行作为。在上者收敛干预、清静无事,百姓便自我化育、自我端正、自我富足。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "daodejing",
+      "ch": 57,
+      "quote": "我无为而民自化，我好静而民自正",
+      "label": "老子·五十七章"
+     }
     },
     {
-      "key": "han",
-      "label": "韩非",
-      "group": "fa",
-      "seal": "观法",
-      "stance": "以法治国"
+     "school": "hanfei",
+     "rebut": null,
+     "point": "国之强弱系于是否奉行法度。法立而上下遵守则国强,法弛则国弱。",
+     "cite": {
+      "corpus": "fa",
+      "slug": "hanfeizi",
+      "ch": 6,
+      "quote": "奉法者强，则国强；奉法者弱，则国弱",
+      "label": "韩非子·有度"
+     }
     }
-  ],
-  "rounds": [
+   ]
+  },
+  {
+   "phase": "诘难",
+   "turns": [
     {
-      "phase": "立论",
-      "turns": [
-        {
-          "school": "kong",
-          "rebut": null,
-          "point": "治理的根本在上位者自身有德。君主端正德行,百姓自然环绕归向,如众星拱卫北辰。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "lunyu",
-            "ch": 2,
-            "quote": "为政以德，譬如北辰，居其所，而众星共之",
-            "label": "论语·为政"
-          }
-        },
-        {
-          "school": "lao",
-          "rebut": null,
-          "point": "治理贵在不强行作为。在上者收敛干预、清静无事,百姓便自我化育、自我端正、自我富足。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "daodejing",
-            "ch": 57,
-            "quote": "我无为而民自化，我好静而民自正",
-            "label": "老子·五十七章"
-          }
-        },
-        {
-          "school": "han",
-          "rebut": null,
-          "point": "国之强弱系于是否奉行法度。法立而上下遵守则国强,法弛则国弱。",
-          "cite": {
-            "corpus": "fa",
-            "slug": "hanfeizi",
-            "ch": 6,
-            "quote": "奉法者强，则国强；奉法者弱，则国弱",
-            "label": "韩非子·有度"
-          }
-        }
-      ]
+     "school": "hanfei",
+     "rebut": "kong",
+     "point": "治国不能指望人人自愿为善——这样的人一国凑不出几个;当立制度使众人无从作恶,故重在务法而非务德。",
+     "cite": {
+      "corpus": "fa",
+      "slug": "hanfeizi",
+      "ch": 50,
+      "quote": "不务德而务法",
+      "label": "韩非子·显学"
+     }
     },
     {
-      "phase": "诘难",
-      "turns": [
-        {
-          "school": "han",
-          "rebut": "kong",
-          "point": "治国不能指望人人自愿为善——这样的人一国凑不出几个;当立制度使众人无从作恶,故重在务法而非务德。",
-          "cite": {
-            "corpus": "fa",
-            "slug": "hanfeizi",
-            "ch": 50,
-            "quote": "不务德而务法",
-            "label": "韩非子·显学"
-          }
-        },
-        {
-          "school": "lao",
-          "rebut": "han",
-          "point": "法令条文愈是繁密彰显,反而盗贼愈多;过度的制度本身会扰动民心。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "daodejing",
-            "ch": 57,
-            "quote": "法令滋彰，盗贼多有",
-            "label": "老子·五十七章"
-          }
-        }
-      ]
-    },
-    {
-      "phase": "诘难",
-      "turns": [
-        {
-          "school": "kong",
-          "rebut": "han",
-          "point": "单用政令刑罚去约束,百姓只求免于受罚而无羞耻之心;以德礼引导,才能使人既知耻又自正。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "lunyu",
-            "ch": 2,
-            "quote": "道之以政，齐之以刑，民免而无耻",
-            "label": "论语·为政"
-          }
-        },
-        {
-          "school": "han",
-          "rebut": "lao",
-          "point": "圣人治国不依赖人天生向善,而是凭借制度使人不能为非;放任不立法,难保一国整齐。",
-          "cite": {
-            "corpus": "fa",
-            "slug": "hanfeizi",
-            "ch": 50,
-            "quote": "不恃人之为吾善也，而用其不得为非也",
-            "label": "韩非子·显学"
-          }
-        }
-      ]
-    },
-    {
-      "phase": "申辩",
-      "turns": [
-        {
-          "school": "kong",
-          "rebut": "han",
-          "point": "以德礼引导、不靠单纯刑罚,百姓自会有羞耻而归于正道,这正是为政的着力所在。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "lunyu",
-            "ch": 2,
-            "quote": "道之以德，齐之以礼，有耻且格",
-            "label": "论语·为政"
-          }
-        },
-        {
-          "school": "lao",
-          "rebut": "han",
-          "point": "治道收束在「为无为」三字:不妄加作为,反而无所不治。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "daodejing",
-            "ch": 3,
-            "quote": "为无为，则无不治",
-            "label": "老子·三章"
-          }
-        },
-        {
-          "school": "han",
-          "rebut": "lao",
-          "point": "明君使群臣的心思不游离于法之外,一举一动皆有法可循,治理遂有定准。",
-          "cite": {
-            "corpus": "fa",
-            "slug": "hanfeizi",
-            "ch": 6,
-            "quote": "明主使其群臣不游意于法之外",
-            "label": "韩非子·有度"
-          }
-        }
-      ]
+     "school": "laozi",
+     "rebut": "hanfei",
+     "point": "法令条文愈是繁密彰显,反而盗贼愈多;过度的制度本身会扰动民心。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "daodejing",
+      "ch": 57,
+      "quote": "法令滋彰，盗贼多有",
+      "label": "老子·五十七章"
+     }
     }
-  ]
+   ]
+  },
+  {
+   "phase": "诘难",
+   "turns": [
+    {
+     "school": "kong",
+     "rebut": "hanfei",
+     "point": "单用政令刑罚去约束,百姓只求免于受罚而无羞耻之心;以德礼引导,才能使人既知耻又自正。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "lunyu",
+      "ch": 2,
+      "quote": "道之以政，齐之以刑，民免而无耻",
+      "label": "论语·为政"
+     }
+    },
+    {
+     "school": "hanfei",
+     "rebut": "laozi",
+     "point": "圣人治国不依赖人天生向善,而是凭借制度使人不能为非;放任不立法,难保一国整齐。",
+     "cite": {
+      "corpus": "fa",
+      "slug": "hanfeizi",
+      "ch": 50,
+      "quote": "不恃人之为吾善也，而用其不得为非也",
+      "label": "韩非子·显学"
+     }
+    }
+   ]
+  },
+  {
+   "phase": "申辩",
+   "turns": [
+    {
+     "school": "kong",
+     "rebut": "hanfei",
+     "point": "以德礼引导、不靠单纯刑罚,百姓自会有羞耻而归于正道,这正是为政的着力所在。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "lunyu",
+      "ch": 2,
+      "quote": "道之以德，齐之以礼，有耻且格",
+      "label": "论语·为政"
+     }
+    },
+    {
+     "school": "laozi",
+     "rebut": "hanfei",
+     "point": "治道收束在「为无为」三字:不妄加作为,反而无所不治。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "daodejing",
+      "ch": 3,
+      "quote": "为无为，则无不治",
+      "label": "老子·三章"
+     }
+    },
+    {
+     "school": "hanfei",
+     "rebut": "laozi",
+     "point": "明君使群臣的心思不游离于法之外,一举一动皆有法可循,治理遂有定准。",
+     "cite": {
+      "corpus": "fa",
+      "slug": "hanfeizi",
+      "ch": 6,
+      "quote": "明主使其群臣不游意于法之外",
+      "label": "韩非子·有度"
+     }
+    }
+   ]
+  }
+ ]
 }

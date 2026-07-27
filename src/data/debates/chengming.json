@@ -1,186 +1,186 @@
 {
-  "id": "chengming",
-  "title": "诚与明",
-  "category": "工夫与学",
-  "concept": "诚与明",
-  "question": "「诚」是天之道而人从性上直下,还是由积学而致?抑或只在意念上诚之?",
-  "framing": "《中庸》分「自诚明」与「自明诚」两路,荀子把诚收在积伪化性之中,阳明则以诚意即致良知。工夫入手处之别,于此最见。此为会讲,不判胜负。",
-  "schools": [
+ "id": "chengming",
+ "title": "诚与明",
+ "category": "工夫与学",
+ "concept": "诚与明",
+ "question": "「诚」是天之道而人从性上直下,还是由积学而致?抑或只在意念上诚之?",
+ "framing": "《中庸》分「自诚明」与「自明诚」两路,荀子把诚收在积伪化性之中,阳明则以诚意即致良知。工夫入手处之别,于此最见。此为会讲,不判胜负。",
+ "schools": [
+  {
+   "key": "zhongyong",
+   "label": "《中庸》",
+   "group": "ru",
+   "seal": "观仁",
+   "stance": "自诚明·天道"
+  },
+  {
+   "key": "xun",
+   "label": "荀子",
+   "group": "ru",
+   "seal": "观仁",
+   "stance": "积伪·致诚"
+  },
+  {
+   "key": "yangming",
+   "label": "阳明",
+   "group": "xin",
+   "seal": "观心",
+   "stance": "诚意即致良知"
+  }
+ ],
+ "rounds": [
+  {
+   "phase": "问津",
+   "turns": [
     {
-      "key": "yong",
-      "label": "《中庸》",
-      "group": "ru",
-      "seal": "观仁",
-      "stance": "自诚明·天道"
+     "school": "zhongyong",
+     "rebut": null,
+     "point": "诚者天之道,诚之者人之道。自诚明谓之性,自明诚谓之教——两条路本自一处出。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "zhongyong",
+      "ch": 1,
+      "quote": "诚者，天之道也。诚之者，人之道也",
+      "label": "中庸"
+     }
     },
     {
-      "key": "xun",
-      "label": "荀子",
-      "group": "ru",
-      "seal": "观仁",
-      "stance": "积伪·致诚"
+     "school": "xun",
+     "rebut": null,
+     "point": "君子养心莫善于诚。然诚非天授,须积善成德而神明自得,是由学而至者。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "xunzi",
+      "ch": 3,
+      "quote": "君子养心莫善于诚",
+      "label": "荀子·不苟篇"
+     }
     },
     {
-      "key": "yang",
-      "label": "阳明",
-      "group": "xin",
-      "seal": "观心",
-      "stance": "诚意即致良知"
+     "school": "yangming",
+     "rebut": null,
+     "point": "明明德之功只是个诚意,诚意之功只是个格物。诚不在悬空,只在事上见。",
+     "cite": {
+      "corpus": "xin",
+      "slug": "chuanxilu",
+      "ch": 1,
+      "quote": "『诚意』之功，只是个『格物』",
+      "label": "传习录·卷上"
+     }
     }
-  ],
-  "rounds": [
+   ]
+  },
+  {
+   "phase": "析诚",
+   "turns": [
     {
-      "phase": "问津",
-      "turns": [
-        {
-          "school": "yong",
-          "rebut": null,
-          "point": "诚者天之道,诚之者人之道。自诚明谓之性,自明诚谓之教——两条路本自一处出。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "zhongyong",
-            "ch": 1,
-            "quote": "诚者，天之道也。诚之者，人之道也",
-            "label": "中庸"
-          }
-        },
-        {
-          "school": "xun",
-          "rebut": null,
-          "point": "君子养心莫善于诚。然诚非天授,须积善成德而神明自得,是由学而至者。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "xunzi",
-            "ch": 3,
-            "quote": "君子养心莫善于诚",
-            "label": "荀子·不苟篇"
-          }
-        },
-        {
-          "school": "yang",
-          "rebut": null,
-          "point": "明明德之功只是个诚意,诚意之功只是个格物。诚不在悬空,只在事上见。",
-          "cite": {
-            "corpus": "xin",
-            "slug": "chuanxilu",
-            "ch": 1,
-            "quote": "『诚意』之功，只是个『格物』",
-            "label": "传习录·卷上"
-          }
-        }
-      ]
+     "school": "xun",
+     "rebut": "zhongyong",
+     "point": "若诚是天之道,则圣可不学而至。然圣人化性而起伪,伪起而生礼义,皆学之功。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "xunzi",
+      "ch": 23,
+      "quote": "故圣人化性而起伪",
+      "label": "荀子·性恶篇"
+     }
     },
     {
-      "phase": "析诚",
-      "turns": [
-        {
-          "school": "xun",
-          "rebut": "yong",
-          "point": "若诚是天之道,则圣可不学而至。然圣人化性而起伪,伪起而生礼义,皆学之功。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "xunzi",
-            "ch": 23,
-            "quote": "故圣人化性而起伪",
-            "label": "荀子·性恶篇"
-          }
-        },
-        {
-          "school": "yong",
-          "rebut": "xun",
-          "point": "未尝废学。博学、审问、慎思、明辨、笃行,人一能之己百之,此正是「诚之者」。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "zhongyong",
-            "ch": 1,
-            "quote": "博学之，审问之，慎思之，明辨之，笃行之",
-            "label": "中庸"
-          }
-        }
-      ]
-    },
-    {
-      "phase": "入手处",
-      "turns": [
-        {
-          "school": "yang",
-          "rebut": "xun",
-          "point": "积学固不可少,然心上无一诚,所积皆是外面装点。良知是天理之昭明灵觉处。",
-          "cite": {
-            "corpus": "xin",
-            "slug": "chuanxilu",
-            "ch": 2,
-            "quote": "良知是天理之昭明灵觉处",
-            "label": "传习录·卷中"
-          }
-        },
-        {
-          "school": "xun",
-          "rebut": "yang",
-          "point": "天地为大矣,不诚则不能化万物。然化万物者亦须有事功可指,不止于一段觉照。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "xunzi",
-            "ch": 3,
-            "quote": "天地为大矣，不诚则不能化万物",
-            "label": "荀子·不苟篇"
-          }
-        },
-        {
-          "school": "yong",
-          "rebut": "yang",
-          "point": "诚者物之终始,不诚无物。成己仁也,成物知也;诚意须在成物处见其实。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "zhongyong",
-            "ch": 1,
-            "quote": "诚者，物之终始。不诚无物",
-            "label": "中庸"
-          }
-        }
-      ]
-    },
-    {
-      "phase": "相成",
-      "turns": [
-        {
-          "school": "yang",
-          "rebut": "yong",
-          "point": "所言正合。某说无心外之理、无心外之物,「不诚无物」一语,正取以证格物之旨。",
-          "cite": {
-            "corpus": "xin",
-            "slug": "chuanxilu",
-            "ch": 1,
-            "quote": "所以某说无心外之理，无心外之物",
-            "label": "传习录·卷上"
-          }
-        },
-        {
-          "school": "yong",
-          "rebut": null,
-          "point": "诚则明矣,明则诚矣。唯天下至诚为能尽其性——由性由教,末后同归一路。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "zhongyong",
-            "ch": 1,
-            "quote": "诚则明矣；明则诚矣",
-            "label": "中庸"
-          }
-        },
-        {
-          "school": "xun",
-          "rebut": null,
-          "point": "真积力久则入,学至乎没而后止。诚在积处见,不在一悟处见。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "xunzi",
-            "ch": 1,
-            "quote": "真积力久则入",
-            "label": "荀子·劝学篇"
-          }
-        }
-      ]
+     "school": "zhongyong",
+     "rebut": "xun",
+     "point": "未尝废学。博学、审问、慎思、明辨、笃行,人一能之己百之,此正是「诚之者」。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "zhongyong",
+      "ch": 1,
+      "quote": "博学之，审问之，慎思之，明辨之，笃行之",
+      "label": "中庸"
+     }
     }
-  ],
-  "coda": "《中庸》以诚为天道、以明为教,两路互通;荀子把「诚」收进积学化性之中,故重在真积力久;阳明则将诚意与致良知合为一事,故重在意念之实。分歧全在入手:或从性上直下,或从积上渐进,或从念上察识。所求者同是一个真实无妄。此为会讲,不判胜负。"
+   ]
+  },
+  {
+   "phase": "入手处",
+   "turns": [
+    {
+     "school": "yangming",
+     "rebut": "xun",
+     "point": "积学固不可少,然心上无一诚,所积皆是外面装点。良知是天理之昭明灵觉处。",
+     "cite": {
+      "corpus": "xin",
+      "slug": "chuanxilu",
+      "ch": 2,
+      "quote": "良知是天理之昭明灵觉处",
+      "label": "传习录·卷中"
+     }
+    },
+    {
+     "school": "xun",
+     "rebut": "yangming",
+     "point": "天地为大矣,不诚则不能化万物。然化万物者亦须有事功可指,不止于一段觉照。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "xunzi",
+      "ch": 3,
+      "quote": "天地为大矣，不诚则不能化万物",
+      "label": "荀子·不苟篇"
+     }
+    },
+    {
+     "school": "zhongyong",
+     "rebut": "yangming",
+     "point": "诚者物之终始,不诚无物。成己仁也,成物知也;诚意须在成物处见其实。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "zhongyong",
+      "ch": 1,
+      "quote": "诚者，物之终始。不诚无物",
+      "label": "中庸"
+     }
+    }
+   ]
+  },
+  {
+   "phase": "相成",
+   "turns": [
+    {
+     "school": "yangming",
+     "rebut": "zhongyong",
+     "point": "所言正合。某说无心外之理、无心外之物,「不诚无物」一语,正取以证格物之旨。",
+     "cite": {
+      "corpus": "xin",
+      "slug": "chuanxilu",
+      "ch": 1,
+      "quote": "所以某说无心外之理，无心外之物",
+      "label": "传习录·卷上"
+     }
+    },
+    {
+     "school": "zhongyong",
+     "rebut": null,
+     "point": "诚则明矣,明则诚矣。唯天下至诚为能尽其性——由性由教,末后同归一路。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "zhongyong",
+      "ch": 1,
+      "quote": "诚则明矣；明则诚矣",
+      "label": "中庸"
+     }
+    },
+    {
+     "school": "xun",
+     "rebut": null,
+     "point": "真积力久则入,学至乎没而后止。诚在积处见,不在一悟处见。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "xunzi",
+      "ch": 1,
+      "quote": "真积力久则入",
+      "label": "荀子·劝学篇"
+     }
+    }
+   ]
+  }
+ ],
+ "coda": "《中庸》以诚为天道、以明为教,两路互通;荀子把「诚」收进积学化性之中,故重在真积力久;阳明则将诚意与致良知合为一事,故重在意念之实。分歧全在入手:或从性上直下,或从积上渐进,或从念上察识。所求者同是一个真实无妄。此为会讲,不判胜负。"
 }

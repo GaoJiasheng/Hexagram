@@ -1,162 +1,162 @@
 {
-  "id": "zhixing",
-  "title": "知与行",
-  "category": "工夫与学",
-  "concept": "知与行",
-  "question": "知与行,孰先孰重?",
-  "framing": "一会三家,各陈其于知行先后轻重之旨,但求并观其义,会而通之。",
-  "schools": [
+ "id": "zhixing",
+ "title": "知与行",
+ "category": "工夫与学",
+ "concept": "知与行",
+ "question": "知与行,孰先孰重?",
+ "framing": "一会三家,各陈其于知行先后轻重之旨,但求并观其义,会而通之。",
+ "schools": [
+  {
+   "key": "yangming",
+   "label": "阳明",
+   "group": "xin",
+   "seal": "观心",
+   "stance": "知行合一"
+  },
+  {
+   "key": "xun",
+   "label": "荀子",
+   "group": "ru",
+   "seal": "观仁",
+   "stance": "知之不若行之"
+  },
+  {
+   "key": "laozi",
+   "label": "老子",
+   "group": "dao",
+   "seal": "观道",
+   "stance": "为学日益"
+  }
+ ],
+ "rounds": [
+  {
+   "phase": "立论",
+   "turns": [
     {
-      "key": "wang",
-      "label": "阳明",
-      "group": "xin",
-      "seal": "观心",
-      "stance": "知行合一"
+     "school": "yangming",
+     "rebut": null,
+     "point": "知与行原是一件事,知是行的起头,行是知的完成,把二者拆开正是病根。",
+     "cite": {
+      "corpus": "xin",
+      "slug": "chuanxilu",
+      "ch": 1,
+      "quote": "知是行之始，行是知之成",
+      "label": "传习录·卷上"
+     }
     },
     {
-      "key": "xun",
-      "label": "荀子",
-      "group": "ru",
-      "seal": "观仁",
-      "stance": "知之不若行之"
+     "school": "xun",
+     "rebut": null,
+     "point": "由闻而见、由见而知、由知而行,学问到了能践行才算到顶,知毕竟不如行。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "xunzi",
+      "ch": 8,
+      "quote": "知之不若行之，学至于行之而止矣",
+      "label": "荀子·儒效"
+     }
     },
     {
-      "key": "lao",
-      "label": "老子",
-      "group": "dao",
-      "seal": "观道",
-      "stance": "为学日益"
+     "school": "laozi",
+     "rebut": null,
+     "point": "求学是一天天往里加,体道却是一天天往外减;知与行不在多积,而在向道处自然。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "daodejing",
+      "ch": 48,
+      "quote": "为学日益，为道日损",
+      "label": "老子·四十八章"
+     }
     }
-  ],
-  "rounds": [
+   ]
+  },
+  {
+   "phase": "诘难",
+   "turns": [
     {
-      "phase": "立论",
-      "turns": [
-        {
-          "school": "wang",
-          "rebut": null,
-          "point": "知与行原是一件事,知是行的起头,行是知的完成,把二者拆开正是病根。",
-          "cite": {
-            "corpus": "xin",
-            "slug": "chuanxilu",
-            "ch": 1,
-            "quote": "知是行之始，行是知之成",
-            "label": "传习录·卷上"
-          }
-        },
-        {
-          "school": "xun",
-          "rebut": null,
-          "point": "由闻而见、由见而知、由知而行,学问到了能践行才算到顶,知毕竟不如行。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "xunzi",
-            "ch": 8,
-            "quote": "知之不若行之，学至于行之而止矣",
-            "label": "荀子·儒效"
-          }
-        },
-        {
-          "school": "lao",
-          "rebut": null,
-          "point": "求学是一天天往里加,体道却是一天天往外减;知与行不在多积,而在向道处自然。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "daodejing",
-            "ch": 48,
-            "quote": "为学日益，为道日损",
-            "label": "老子·四十八章"
-          }
-        }
-      ]
+     "school": "xun",
+     "rebut": "yangming",
+     "point": "向阳明问:若只称合一而轻了践行的位次,知了却不去做,纵然学得敦厚也终究困窘。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "xunzi",
+      "ch": 8,
+      "quote": "知之而不行，虽敦必困",
+      "label": "荀子·儒效"
+     }
     },
     {
-      "phase": "诘难",
-      "turns": [
-        {
-          "school": "xun",
-          "rebut": "wang",
-          "point": "向阳明问:若只称合一而轻了践行的位次,知了却不去做,纵然学得敦厚也终究困窘。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "xunzi",
-            "ch": 8,
-            "quote": "知之而不行，虽敦必困",
-            "label": "荀子·儒效"
-          }
-        },
-        {
-          "school": "lao",
-          "rebut": "xun",
-          "point": "向荀子问:若把行之而止当作学的终点,可圣人不必历行而能知、不必亲见而能名,知行之外别有所通。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "daodejing",
-            "ch": 47,
-            "quote": "是以圣人不行而知，不见而名",
-            "label": "老子·四十七章"
-          }
-        }
-      ]
-    },
-    {
-      "phase": "诘难",
-      "turns": [
-        {
-          "school": "wang",
-          "rebut": "xun",
-          "point": "回向荀子:所谓知不如行,正缘把知当作未到的知;在我看,知而不肯行,本就只是还没真知。",
-          "cite": {
-            "corpus": "xin",
-            "slug": "chuanxilu",
-            "ch": 1,
-            "quote": "知而不行，只是未知",
-            "label": "传习录·卷上"
-          }
-        }
-      ]
-    },
-    {
-      "phase": "申辩",
-      "turns": [
-        {
-          "school": "wang",
-          "rebut": "xun",
-          "point": "合一非凭空杜撰,只是还原知行本来面目;果真见得宗旨,说一说二都不碍。",
-          "cite": {
-            "corpus": "xin",
-            "slug": "chuanxilu",
-            "ch": 1,
-            "quote": "知行本体原是如此",
-            "label": "传习录·卷上"
-          }
-        },
-        {
-          "school": "xun",
-          "rebut": "lao",
-          "point": "圣不圣不在天性而在积累:求而后得、为而后成,皆须落到一桩桩去做。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "xunzi",
-            "ch": 8,
-            "quote": "彼求之而后得，为之而后成",
-            "label": "荀子·儒效"
-          }
-        },
-        {
-          "school": "lao",
-          "rebut": null,
-          "point": "知人是智、自知是明,向内返照亦是一种工夫,不必尽以外向的知与行为量。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "daodejing",
-            "ch": 33,
-            "quote": "知人者智，自知者明",
-            "label": "老子·三十三章"
-          }
-        }
-      ]
+     "school": "laozi",
+     "rebut": "xun",
+     "point": "向荀子问:若把行之而止当作学的终点,可圣人不必历行而能知、不必亲见而能名,知行之外别有所通。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "daodejing",
+      "ch": 47,
+      "quote": "是以圣人不行而知，不见而名",
+      "label": "老子·四十七章"
+     }
     }
-  ],
-  "coda": "三家分歧落在「知行之间何处着力」:阳明将知行收归一体,以真知必含行;荀子分知行为层级,以行为学问之归宿与验证;老子则跳出知行加减之辨,以损之向道、内观自知另立一路。一者合、一者重行、一者超越,并存而各有所安。"
+   ]
+  },
+  {
+   "phase": "诘难",
+   "turns": [
+    {
+     "school": "yangming",
+     "rebut": "xun",
+     "point": "回向荀子:所谓知不如行,正缘把知当作未到的知;在我看,知而不肯行,本就只是还没真知。",
+     "cite": {
+      "corpus": "xin",
+      "slug": "chuanxilu",
+      "ch": 1,
+      "quote": "知而不行，只是未知",
+      "label": "传习录·卷上"
+     }
+    }
+   ]
+  },
+  {
+   "phase": "申辩",
+   "turns": [
+    {
+     "school": "yangming",
+     "rebut": "xun",
+     "point": "合一非凭空杜撰,只是还原知行本来面目;果真见得宗旨,说一说二都不碍。",
+     "cite": {
+      "corpus": "xin",
+      "slug": "chuanxilu",
+      "ch": 1,
+      "quote": "知行本体原是如此",
+      "label": "传习录·卷上"
+     }
+    },
+    {
+     "school": "xun",
+     "rebut": "laozi",
+     "point": "圣不圣不在天性而在积累:求而后得、为而后成,皆须落到一桩桩去做。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "xunzi",
+      "ch": 8,
+      "quote": "彼求之而后得，为之而后成",
+      "label": "荀子·儒效"
+     }
+    },
+    {
+     "school": "laozi",
+     "rebut": null,
+     "point": "知人是智、自知是明,向内返照亦是一种工夫,不必尽以外向的知与行为量。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "daodejing",
+      "ch": 33,
+      "quote": "知人者智，自知者明",
+      "label": "老子·三十三章"
+     }
+    }
+   ]
+  }
+ ],
+ "coda": "三家分歧落在「知行之间何处着力」:阳明将知行收归一体,以真知必含行;荀子分知行为层级,以行为学问之归宿与验证;老子则跳出知行加减之辨,以损之向道、内观自知另立一路。一者合、一者重行、一者超越,并存而各有所安。"
 }

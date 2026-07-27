@@ -66,6 +66,23 @@ export function categoriesOf(division, topics = TOPICS) {
 // 一辩涉及的阵营(去重;三家参辩即跨三组,故为多值)
 export function groupsOf(topic) { return [...new Set(topic.schools.map((s) => s.group))] }
 
+// 一辩的参辩家(以 label 为准:check-data 已保证同一家全站同名同 key,故 label 可作稳定标识)
+export function thinkersOf(topic) { return [...new Set(topic.schools.map((s) => s.label))] }
+
+// 全站参辩家表,按出场辩数降序。阵营分面只到「儒家/道家」这一层,
+// 但读者读完《荀子》想看的是「荀子跟谁辩过」——故另开一层。
+export const THINKERS = (() => {
+  const m = new Map()
+  for (const t of TOPICS) {
+    for (const s of t.schools) {
+      const e = m.get(s.label) || { label: s.label, group: s.group, count: 0 }
+      e.count += 1
+      m.set(s.label, e)
+    }
+  }
+  return [...m.values()].sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, 'zh'))
+})()
+
 export function debateById(id) { return TOPICS.find((t) => t.id === id) || null }
 
 export async function loadDebate(id) {

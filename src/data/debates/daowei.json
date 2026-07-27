@@ -1,145 +1,145 @@
 {
-  "id": "daowei",
-  "title": "道之为道",
-  "category": "天人 · 形上 · 道",
-  "concept": "道之为道",
-  "question": "道,是法自然之常,是有情有信之化,还是人之所道?",
-  "framing": "同问一「道」字,而三家所指各异:或指天地未生之自然,或指生天生地之真宰,或指人伦当行之路。",
-  "schools": [
+ "id": "daowei",
+ "title": "道之为道",
+ "category": "天人 · 形上 · 道",
+ "concept": "道之为道",
+ "question": "道,是法自然之常,是有情有信之化,还是人之所道?",
+ "framing": "同问一「道」字,而三家所指各异:或指天地未生之自然,或指生天生地之真宰,或指人伦当行之路。",
+ "schools": [
+  {
+   "key": "laozi",
+   "label": "老子",
+   "group": "dao",
+   "seal": "观道",
+   "stance": "道法自然"
+  },
+  {
+   "key": "zhuang",
+   "label": "庄子",
+   "group": "dao",
+   "seal": "观道",
+   "stance": "道·有情有信"
+  },
+  {
+   "key": "xun",
+   "label": "荀子",
+   "group": "ru",
+   "seal": "观仁",
+   "stance": "人之所道"
+  }
+ ],
+ "rounds": [
+  {
+   "phase": "立论",
+   "turns": [
     {
-      "key": "lao",
-      "label": "老子",
-      "group": "dao",
-      "seal": "观道",
-      "stance": "道法自然"
+     "school": "laozi",
+     "rebut": null,
+     "point": "道是天地未生即有的混成之物,它不效法别处,只以其自身的本然为法。人地天层层取法,终归于自然。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "daodejing",
+      "ch": 25,
+      "quote": "人法地，地法天，天法道，道法自然",
+      "label": "道德经·二十五章"
+     }
     },
     {
-      "key": "zhuang",
-      "label": "庄子",
-      "group": "dao",
-      "seal": "观道",
-      "stance": "道·有情有信"
+     "school": "zhuang",
+     "rebut": null,
+     "point": "道虽无形无为,却真实可信:它自为本根,先天地而存,生出天地万物,并非空洞的法则。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "zhuangzi-neipian",
+      "ch": 6,
+      "quote": "夫道，有情有信，无为无形",
+      "label": "庄子·大宗师"
+     }
     },
     {
-      "key": "xun",
-      "label": "荀子",
-      "group": "ru",
-      "seal": "观仁",
-      "stance": "人之所道"
+     "school": "xun",
+     "rebut": null,
+     "point": "我所论的道不是天之道、地之道,而是人据以立身行事之道,即礼义,是君子所行之路。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "xunzi",
+      "ch": 8,
+      "quote": "道者，非天之道，非地之道，人之所以道也",
+      "label": "荀子·儒效"
+     }
     }
-  ],
-  "rounds": [
+   ]
+  },
+  {
+   "phase": "诘难",
+   "turns": [
     {
-      "phase": "立论",
-      "turns": [
-        {
-          "school": "lao",
-          "rebut": null,
-          "point": "道是天地未生即有的混成之物,它不效法别处,只以其自身的本然为法。人地天层层取法,终归于自然。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "daodejing",
-            "ch": 25,
-            "quote": "人法地，地法天，天法道，道法自然",
-            "label": "道德经·二十五章"
-          }
-        },
-        {
-          "school": "zhuang",
-          "rebut": null,
-          "point": "道虽无形无为,却真实可信:它自为本根,先天地而存,生出天地万物,并非空洞的法则。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "zhuangzi-neipian",
-            "ch": 6,
-            "quote": "夫道，有情有信，无为无形",
-            "label": "庄子·大宗师"
-          }
-        },
-        {
-          "school": "xun",
-          "rebut": null,
-          "point": "我所论的道不是天之道、地之道,而是人据以立身行事之道,即礼义,是君子所行之路。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "xunzi",
-            "ch": 8,
-            "quote": "道者，非天之道，非地之道，人之所以道也",
-            "label": "荀子·儒效"
-          }
-        }
-      ]
+     "school": "xun",
+     "rebut": "laozi",
+     "point": "把道一味推给自然,恐怕会令人废弃人为而空想天命。天有常行,不因尧桀而改,人当各尽其治分,而非以自然取代人事。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "xunzi",
+      "ch": 17,
+      "quote": "天行有常，不为尧存，不为桀亡",
+      "label": "荀子·天论"
+     }
     },
     {
-      "phase": "诘难",
-      "turns": [
-        {
-          "school": "xun",
-          "rebut": "lao",
-          "point": "把道一味推给自然,恐怕会令人废弃人为而空想天命。天有常行,不因尧桀而改,人当各尽其治分,而非以自然取代人事。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "xunzi",
-            "ch": 17,
-            "quote": "天行有常，不为尧存，不为桀亡",
-            "label": "荀子·天论"
-          }
-        },
-        {
-          "school": "lao",
-          "rebut": "xun",
-          "point": "道并非无所作为而废人事。它常处无为,却无一事不成;侯王守此,万物自然化育——无为正是更深的成全。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "daodejing",
-            "ch": 37,
-            "quote": "道常无为",
-            "label": "道德经·三十七章"
-          }
-        },
-        {
-          "school": "zhuang",
-          "rebut": "xun",
-          "point": "以礼义为道,是从『小成』处立分别;但道本无是非彼此,儒墨各执所是,皆隐道之全。立人道之名,易失道通为一之本。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "zhuangzi-neipian",
-            "ch": 2,
-            "quote": "道行之而成，物谓之而然",
-            "label": "庄子·齐物论"
-          }
-        }
-      ]
+     "school": "laozi",
+     "rebut": "xun",
+     "point": "道并非无所作为而废人事。它常处无为,却无一事不成;侯王守此,万物自然化育——无为正是更深的成全。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "daodejing",
+      "ch": 37,
+      "quote": "道常无为",
+      "label": "道德经·三十七章"
+     }
     },
     {
-      "phase": "申辩",
-      "turns": [
-        {
-          "school": "xun",
-          "rebut": "zhuang",
-          "point": "道通为一固为高论,但人能与天地参,正在于尽其治分。明于天人之别,才不致以天废人——这是人之所道的根基。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "xunzi",
-            "ch": 17,
-            "quote": "明于天人之分，则可谓至人矣",
-            "label": "荀子·天论"
-          }
-        },
-        {
-          "school": "lao",
-          "rebut": "xun",
-          "point": "名一落言诠便非常道。可言说之道已非那恒常之道,故道终须返于不可名状的自然本然,而非系于人为之名相。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "daodejing",
-            "ch": 1,
-            "quote": "道可道，非常道",
-            "label": "道德经·一章"
-          }
-        }
-      ]
+     "school": "zhuang",
+     "rebut": "xun",
+     "point": "以礼义为道,是从『小成』处立分别;但道本无是非彼此,儒墨各执所是,皆隐道之全。立人道之名,易失道通为一之本。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "zhuangzi-neipian",
+      "ch": 2,
+      "quote": "道行之而成，物谓之而然",
+      "label": "庄子·齐物论"
+     }
     }
-  ],
-  "coda": "三家同举「道」字,而落点各异:老子归于自然之本然,庄子证其为有情有信、通而为一的真体,荀子收于人所当行的礼义之路。形上之常与人伦之分,在此分途并立,各存其旨。"
+   ]
+  },
+  {
+   "phase": "申辩",
+   "turns": [
+    {
+     "school": "xun",
+     "rebut": "zhuang",
+     "point": "道通为一固为高论,但人能与天地参,正在于尽其治分。明于天人之别,才不致以天废人——这是人之所道的根基。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "xunzi",
+      "ch": 17,
+      "quote": "明于天人之分，则可谓至人矣",
+      "label": "荀子·天论"
+     }
+    },
+    {
+     "school": "laozi",
+     "rebut": "xun",
+     "point": "名一落言诠便非常道。可言说之道已非那恒常之道,故道终须返于不可名状的自然本然,而非系于人为之名相。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "daodejing",
+      "ch": 1,
+      "quote": "道可道，非常道",
+      "label": "道德经·一章"
+     }
+    }
+   ]
+  }
+ ],
+ "coda": "三家同举「道」字,而落点各异:老子归于自然之本然,庄子证其为有情有信、通而为一的真体,荀子收于人所当行的礼义之路。形上之常与人伦之分,在此分途并立,各存其旨。"
 }

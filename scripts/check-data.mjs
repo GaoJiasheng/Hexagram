@@ -542,6 +542,9 @@ if (fs.existsSync(glossaryPath)) {
     const dbIndex = JSON.parse(fs.readFileSync(path.join(dir, 'index.json'), 'utf8'))
     const files = fs.readdirSync(dir).filter((f) => f.endsWith('.json') && f !== 'index.json')
     let turnTotal = 0, partyTotal = 0
+    // 跨辩一致性:key 只在文件内解析,故同 key 指两家 / 同一家两 key 在单文件校验里发现不了。
+    // 曾出过 `yang` 既是杨朱又是阳明、老子有 lao/laozi 两个 key,会让「按思想家检索」串味。
+    const schoolKeyMap = new Map(), schoolLabelMap = new Map()
     for (const f of files) {
       const id = f.replace(/\.json$/, '')
       const d = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'))
@@ -566,6 +569,16 @@ if (fs.existsSync(glossaryPath)) {
       const topic = (dbIndex.topics || []).find((tp) => tp.id === id)
       if (!topic) err(`debate ${id}: index.json 未登记`)
       else if (topic.turns !== turns.length) err(`debate ${id}: index turns(${topic.turns}) ≠ 实际 ${turns.length}`)
+      for (const s of d.schools) {
+        const prev = schoolKeyMap.get(s.key)
+        if (prev && prev.group !== s.group) {
+          err(`debate ${id}: 家 key「${s.key}」在 ${prev.id} 是 ${prev.group}/${prev.label},此处却是 ${s.group}/${s.label}——同 key 不可指两家`)
+        } else if (!prev) schoolKeyMap.set(s.key, { id, label: s.label, group: s.group })
+        const pk = schoolLabelMap.get(s.label)
+        if (pk && pk.key !== s.key) {
+          err(`debate ${id}: 家「${s.label}」在 ${pk.id} 用 key「${pk.key}」,此处却用「${s.key}」——同一家须同 key`)
+        } else if (!pk) schoolLabelMap.set(s.label, { id, key: s.key })
+      }
     }
     // 分类体系(v21.1):议题两级树(四门→类目)+ 正交的形态标签
     const DIVISIONS = new Set(['tiandao', 'xinxing', 'zhidao', 'weixue'])

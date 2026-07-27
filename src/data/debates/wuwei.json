@@ -1,145 +1,145 @@
 {
-  "id": "wuwei",
-  "title": "无为",
-  "category": "天人 · 形上 · 道",
-  "concept": "无为",
-  "question": "「无为」是任物自化的玄默,还是不先物为以治世的术?",
-  "framing": "老子言道常无为而无不为,庄子言顺物自然而游心于淡,黄老《文子》承之以无为而治世。一脉相承而各有侧重。此为会讲,不判胜负。",
-  "schools": [
+ "id": "wuwei",
+ "title": "无为",
+ "category": "天人 · 形上 · 道",
+ "concept": "无为",
+ "question": "「无为」是任物自化的玄默,还是不先物为以治世的术?",
+ "framing": "老子言道常无为而无不为,庄子言顺物自然而游心于淡,黄老《文子》承之以无为而治世。一脉相承而各有侧重。此为会讲,不判胜负。",
+ "schools": [
+  {
+   "key": "laozi",
+   "label": "老子",
+   "group": "dao",
+   "seal": "观道",
+   "stance": "无为而无不为"
+  },
+  {
+   "key": "zhuang",
+   "label": "庄子",
+   "group": "dao",
+   "seal": "观道",
+   "stance": "顺物自然"
+  },
+  {
+   "key": "wenzi",
+   "label": "文子",
+   "group": "dao",
+   "seal": "观道",
+   "stance": "黄老·治世"
+  }
+ ],
+ "rounds": [
+  {
+   "phase": "立论",
+   "turns": [
     {
-      "key": "lao",
-      "label": "老子",
-      "group": "dao",
-      "seal": "观道",
-      "stance": "无为而无不为"
+     "school": "laozi",
+     "rebut": null,
+     "point": "道常无为而无不为;侯王若能守之,则万物自化,不待施为而成。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "daodejing",
+      "ch": 37,
+      "quote": "道常无为而无不为",
+      "label": "道德经·三十七章"
+     }
     },
     {
-      "key": "zhuang",
-      "label": "庄子",
-      "group": "dao",
-      "seal": "观道",
-      "stance": "顺物自然"
+     "school": "zhuang",
+     "rebut": null,
+     "point": "至人游心于淡、合气于漠,顺物之自然而不容私,则天下自治——无为乃任其自尔。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "zhuangzi-neipian",
+      "ch": 7,
+      "quote": "顺物自然而无容私焉，而天下治矣",
+      "label": "庄子·应帝王"
+     }
     },
     {
-      "key": "wenzi",
-      "label": "文子",
-      "group": "dao",
-      "seal": "观道",
-      "stance": "黄老·治世"
+     "school": "wenzi",
+     "rebut": null,
+     "point": "无为非不为:无为而无不为,无治而无不治——以无为为术,正所以成治。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "wenzi",
+      "ch": 1,
+      "quote": "无为而无不为也，无治而无不治也",
+      "label": "文子·卷一"
+     }
     }
-  ],
-  "rounds": [
+   ]
+  },
+  {
+   "phase": "溯问",
+   "turns": [
     {
-      "phase": "立论",
-      "turns": [
-        {
-          "school": "lao",
-          "rebut": null,
-          "point": "道常无为而无不为;侯王若能守之,则万物自化,不待施为而成。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "daodejing",
-            "ch": 37,
-            "quote": "道常无为而无不为",
-            "label": "道德经·三十七章"
-          }
-        },
-        {
-          "school": "zhuang",
-          "rebut": null,
-          "point": "至人游心于淡、合气于漠,顺物之自然而不容私,则天下自治——无为乃任其自尔。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "zhuangzi-neipian",
-            "ch": 7,
-            "quote": "顺物自然而无容私焉，而天下治矣",
-            "label": "庄子·应帝王"
-          }
-        },
-        {
-          "school": "wenzi",
-          "rebut": null,
-          "point": "无为非不为:无为而无不为,无治而无不治——以无为为术,正所以成治。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "wenzi",
-            "ch": 1,
-            "quote": "无为而无不为也，无治而无不治也",
-            "label": "文子·卷一"
-          }
-        }
-      ]
+     "school": "zhuang",
+     "rebut": "laozi",
+     "point": "守之以待万物自化,仍存化物之心;至人无己、神人无功,忘功而后为真无为。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "zhuangzi-neipian",
+      "ch": 1,
+      "quote": "至人无己，神人无功，圣人无名",
+      "label": "庄子·逍遥游"
+     }
     },
     {
-      "phase": "溯问",
-      "turns": [
-        {
-          "school": "zhuang",
-          "rebut": "lao",
-          "point": "守之以待万物自化,仍存化物之心;至人无己、神人无功,忘功而后为真无为。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "zhuangzi-neipian",
-            "ch": 1,
-            "quote": "至人无己，神人无功，圣人无名",
-            "label": "庄子·逍遥游"
-          }
-        },
-        {
-          "school": "wenzi",
-          "rebut": "lao",
-          "point": "若解无为为玄默不动,则事至无以应;执道御民者事来而循之、物动而因之,方能无不为。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "wenzi",
-            "ch": 1,
-            "quote": "执道以御民者，事来而循之，物动而因之",
-            "label": "文子·卷一"
-          }
-        }
-      ]
-    },
-    {
-      "phase": "申辩",
-      "turns": [
-        {
-          "school": "lao",
-          "rebut": "zhuang",
-          "point": "无为非坐待,亦非用术:化而欲作,镇之以无名之朴;不欲以静,天下将自定。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "daodejing",
-            "ch": 37,
-            "quote": "化而欲作，吾将镇之以无名之朴",
-            "label": "道德经·三十七章"
-          }
-        },
-        {
-          "school": "wenzi",
-          "rebut": "zhuang",
-          "point": "顺物自然非弃世独逍遥:所谓无为者,不先物为也——因物之性而治,故无不治。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "wenzi",
-            "ch": 1,
-            "quote": "所谓无为者，不先物为也",
-            "label": "文子·卷一"
-          }
-        },
-        {
-          "school": "zhuang",
-          "rebut": "wenzi",
-          "point": "无为名尸、无为谋府,体尽无穷而游于无朕——所重在忘己,非以为治术。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "zhuangzi-neipian",
-            "ch": 7,
-            "quote": "无为名尸，无为谋府",
-            "label": "庄子·应帝王"
-          }
-        }
-      ]
+     "school": "wenzi",
+     "rebut": "laozi",
+     "point": "若解无为为玄默不动,则事至无以应;执道御民者事来而循之、物动而因之,方能无不为。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "wenzi",
+      "ch": 1,
+      "quote": "执道以御民者，事来而循之，物动而因之",
+      "label": "文子·卷一"
+     }
     }
-  ],
-  "coda": "同一「无为」:老子为道之枢、庄子为忘己之游、黄老为治世之术。由玄默而逍遥而经世,一名而三向,正见道家之广。"
+   ]
+  },
+  {
+   "phase": "申辩",
+   "turns": [
+    {
+     "school": "laozi",
+     "rebut": "zhuang",
+     "point": "无为非坐待,亦非用术:化而欲作,镇之以无名之朴;不欲以静,天下将自定。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "daodejing",
+      "ch": 37,
+      "quote": "化而欲作，吾将镇之以无名之朴",
+      "label": "道德经·三十七章"
+     }
+    },
+    {
+     "school": "wenzi",
+     "rebut": "zhuang",
+     "point": "顺物自然非弃世独逍遥:所谓无为者,不先物为也——因物之性而治,故无不治。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "wenzi",
+      "ch": 1,
+      "quote": "所谓无为者，不先物为也",
+      "label": "文子·卷一"
+     }
+    },
+    {
+     "school": "zhuang",
+     "rebut": "wenzi",
+     "point": "无为名尸、无为谋府,体尽无穷而游于无朕——所重在忘己,非以为治术。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "zhuangzi-neipian",
+      "ch": 7,
+      "quote": "无为名尸，无为谋府",
+      "label": "庄子·应帝王"
+     }
+    }
+   ]
+  }
+ ],
+ "coda": "同一「无为」:老子为道之枢、庄子为忘己之游、黄老为治世之术。由玄默而逍遥而经世,一名而三向,正见道家之广。"
 }

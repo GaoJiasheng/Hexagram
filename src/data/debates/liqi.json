@@ -1,172 +1,172 @@
 {
-  "id": "liqi",
-  "title": "理与气",
-  "category": "天人 · 形上 · 道",
-  "concept": "理与气",
-  "question": "理与气是可分之二物,还是一物之两名?工夫是变化气质以复天地之性,还是即气之条理而识理?",
-  "framing": "程朱一系分天地之性与气质之性,理气可析而言;阳明则谓理者气之条理、气者理之运用,不许离析。宋明形上之主轴,正在此一分一合。此为会讲,不判胜负。",
-  "schools": [
+ "id": "liqi",
+ "title": "理与气",
+ "category": "天人 · 形上 · 道",
+ "concept": "理与气",
+ "question": "理与气是可分之二物,还是一物之两名?工夫是变化气质以复天地之性,还是即气之条理而识理?",
+ "framing": "程朱一系分天地之性与气质之性,理气可析而言;阳明则谓理者气之条理、气者理之运用,不许离析。宋明形上之主轴,正在此一分一合。此为会讲,不判胜负。",
+ "schools": [
+  {
+   "key": "cheng",
+   "label": "程朱",
+   "group": "ru",
+   "seal": "观仁",
+   "stance": "理气可分"
+  },
+  {
+   "key": "yangming",
+   "label": "阳明",
+   "group": "xin",
+   "seal": "观心",
+   "stance": "即气言理"
+  }
+ ],
+ "rounds": [
+  {
+   "phase": "分言",
+   "turns": [
     {
-      "key": "cheng",
-      "label": "程朱",
-      "group": "ru",
-      "seal": "观仁",
-      "stance": "理气可分"
+     "school": "cheng",
+     "rebut": null,
+     "point": "形而后有气质之性,善反之则天地之性存焉;性遂有两层,气质之性君子有弗性者。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "jinsilu",
+      "ch": 2,
+      "quote": "形而后有气质之性。善反之，则天地之性存焉",
+      "label": "近思录·为学"
+     }
     },
     {
-      "key": "yang",
-      "label": "阳明",
-      "group": "xin",
-      "seal": "观心",
-      "stance": "即气言理"
+     "school": "yangming",
+     "rebut": null,
+     "point": "理者气之条理,气者理之运用;非二物相对而立,乃一事之两面。",
+     "cite": {
+      "corpus": "xin",
+      "slug": "chuanxilu",
+      "ch": 2,
+      "quote": "理者，气之条理；气者，理之运用",
+      "label": "传习录·卷中"
+     }
     }
-  ],
-  "rounds": [
+   ]
+  },
+  {
+   "phase": "即气",
+   "turns": [
     {
-      "phase": "分言",
-      "turns": [
-        {
-          "school": "cheng",
-          "rebut": null,
-          "point": "形而后有气质之性,善反之则天地之性存焉;性遂有两层,气质之性君子有弗性者。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "jinsilu",
-            "ch": 2,
-            "quote": "形而后有气质之性。善反之，则天地之性存焉",
-            "label": "近思录·为学"
-          }
-        },
-        {
-          "school": "yang",
-          "rebut": null,
-          "point": "理者气之条理,气者理之运用;非二物相对而立,乃一事之两面。",
-          "cite": {
-            "corpus": "xin",
-            "slug": "chuanxilu",
-            "ch": 2,
-            "quote": "理者，气之条理；气者，理之运用",
-            "label": "传习录·卷中"
-          }
-        }
-      ]
+     "school": "yangming",
+     "rebut": "cheng",
+     "point": "无条理则不能运用,无运用则亦无以见其所谓条理;离气而言理,理便无所著落。",
+     "cite": {
+      "corpus": "xin",
+      "slug": "chuanxilu",
+      "ch": 2,
+      "quote": "无条理则不能运用，无运用则亦无以见其所谓条理者矣",
+      "label": "传习录·卷中"
+     }
     },
     {
-      "phase": "即气",
-      "turns": [
-        {
-          "school": "yang",
-          "rebut": "cheng",
-          "point": "无条理则不能运用,无运用则亦无以见其所谓条理;离气而言理,理便无所著落。",
-          "cite": {
-            "corpus": "xin",
-            "slug": "chuanxilu",
-            "ch": 2,
-            "quote": "无条理则不能运用，无运用则亦无以见其所谓条理者矣",
-            "label": "传习录·卷中"
-          }
-        },
-        {
-          "school": "cheng",
-          "rebut": "yang",
-          "point": "性无不善而才有善有不善;正因理气可以分说,昏明厚薄之别方有著落。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "jinsilu",
-            "ch": 1,
-            "quote": "才则有善有不善，性则无不善",
-            "label": "近思录·道体"
-          }
-        }
-      ]
-    },
-    {
-      "phase": "气质之诘",
-      "turns": [
-        {
-          "school": "yang",
-          "rebut": "cheng",
-          "point": "程门自有此说:生之谓性,性即气,气即性。可见析作两物,非程门之定论。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "jinsilu",
-            "ch": 1,
-            "quote": "性即气，气即性，生之谓也",
-            "label": "近思录·道体(明道语)"
-          }
-        },
-        {
-          "school": "cheng",
-          "rebut": "yang",
-          "point": "德不胜气则性命于气,德胜其气则性命于德;正因二者可以相胜,变化气质方有下手处。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "jinsilu",
-            "ch": 2,
-            "quote": "德不胜气，性命于气。德胜其气，性命于德",
-            "label": "近思录·为学"
-          }
-        }
-      ]
-    },
-    {
-      "phase": "太虚",
-      "turns": [
-        {
-          "school": "cheng",
-          "rebut": null,
-          "point": "气块然太虚,升降飞扬未尝止息;气有聚散而理无加损,故须就气上分言其理。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "jinsilu",
-            "ch": 1,
-            "quote": "气块然太虚，升降飞扬，未尝止息",
-            "label": "近思录·道体(横渠语)"
-          }
-        },
-        {
-          "school": "yang",
-          "rebut": "cheng",
-          "point": "天地万物俱在我良知的发用流行中,何尝又有一物起于良知之外?理气之分,分在言说。",
-          "cite": {
-            "corpus": "xin",
-            "slug": "chuanxilu",
-            "ch": 3,
-            "quote": "天地万物俱在我良知的发用流行中",
-            "label": "传习录·卷下"
-          }
-        }
-      ]
-    },
-    {
-      "phase": "同门异调",
-      "turns": [
-        {
-          "school": "cheng",
-          "rebut": null,
-          "point": "穷理尽性,则性天德、命天理;分言者所以立工夫之阶,非谓理气各为一物。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "jinsilu",
-            "ch": 2,
-            "quote": "穷理尽性，则性天德，命天理",
-            "label": "近思录·为学"
-          }
-        },
-        {
-          "school": "yang",
-          "rebut": null,
-          "point": "心一而已:以其条理而言谓之理。既不外心以求仁义,亦不当外气以求理。",
-          "cite": {
-            "corpus": "xin",
-            "slug": "chuanxilu",
-            "ch": 2,
-            "quote": "以其条理而言，谓之理",
-            "label": "传习录·卷中"
-          }
-        }
-      ]
+     "school": "cheng",
+     "rebut": "yangming",
+     "point": "性无不善而才有善有不善;正因理气可以分说,昏明厚薄之别方有著落。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "jinsilu",
+      "ch": 1,
+      "quote": "才则有善有不善，性则无不善",
+      "label": "近思录·道体"
+     }
     }
-  ],
-  "coda": "二说之别,在一个「分」字:程朱析天地之性与气质之性,理气可以对言,故工夫在变化气质、善反其初;阳明即气言理,以条理与运用为一事,故工夫只在致良知。分言者为立阶级,合言者为免支离;所争不在理气之有无,而在如何言之。"
+   ]
+  },
+  {
+   "phase": "气质之诘",
+   "turns": [
+    {
+     "school": "yangming",
+     "rebut": "cheng",
+     "point": "程门自有此说:生之谓性,性即气,气即性。可见析作两物,非程门之定论。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "jinsilu",
+      "ch": 1,
+      "quote": "性即气，气即性，生之谓也",
+      "label": "近思录·道体(明道语)"
+     }
+    },
+    {
+     "school": "cheng",
+     "rebut": "yangming",
+     "point": "德不胜气则性命于气,德胜其气则性命于德;正因二者可以相胜,变化气质方有下手处。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "jinsilu",
+      "ch": 2,
+      "quote": "德不胜气，性命于气。德胜其气，性命于德",
+      "label": "近思录·为学"
+     }
+    }
+   ]
+  },
+  {
+   "phase": "太虚",
+   "turns": [
+    {
+     "school": "cheng",
+     "rebut": null,
+     "point": "气块然太虚,升降飞扬未尝止息;气有聚散而理无加损,故须就气上分言其理。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "jinsilu",
+      "ch": 1,
+      "quote": "气块然太虚，升降飞扬，未尝止息",
+      "label": "近思录·道体(横渠语)"
+     }
+    },
+    {
+     "school": "yangming",
+     "rebut": "cheng",
+     "point": "天地万物俱在我良知的发用流行中,何尝又有一物起于良知之外?理气之分,分在言说。",
+     "cite": {
+      "corpus": "xin",
+      "slug": "chuanxilu",
+      "ch": 3,
+      "quote": "天地万物俱在我良知的发用流行中",
+      "label": "传习录·卷下"
+     }
+    }
+   ]
+  },
+  {
+   "phase": "同门异调",
+   "turns": [
+    {
+     "school": "cheng",
+     "rebut": null,
+     "point": "穷理尽性,则性天德、命天理;分言者所以立工夫之阶,非谓理气各为一物。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "jinsilu",
+      "ch": 2,
+      "quote": "穷理尽性，则性天德，命天理",
+      "label": "近思录·为学"
+     }
+    },
+    {
+     "school": "yangming",
+     "rebut": null,
+     "point": "心一而已:以其条理而言谓之理。既不外心以求仁义,亦不当外气以求理。",
+     "cite": {
+      "corpus": "xin",
+      "slug": "chuanxilu",
+      "ch": 2,
+      "quote": "以其条理而言，谓之理",
+      "label": "传习录·卷中"
+     }
+    }
+   ]
+  }
+ ],
+ "coda": "二说之别,在一个「分」字:程朱析天地之性与气质之性,理气可以对言,故工夫在变化气质、善反其初;阳明即气言理,以条理与运用为一事,故工夫只在致良知。分言者为立阶级,合言者为免支离;所争不在理气之有无,而在如何言之。"
 }

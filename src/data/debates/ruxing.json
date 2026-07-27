@@ -1,181 +1,181 @@
 {
-  "id": "ruxing",
-  "title": "儒门性论流变",
-  "category": "性与心",
-  "concept": "儒门性论流变",
-  "question": "儒门论性:性善、性恶、性即理、心即理,流变如何?",
-  "framing": "同尊孔门,论性各殊:或本心善端,或矫情成伪,或溯性于天理,或归理于本心。",
-  "schools": [
+ "id": "ruxing",
+ "title": "儒门性论流变",
+ "category": "性与心",
+ "concept": "儒门性论流变",
+ "question": "儒门论性:性善、性恶、性即理、心即理,流变如何?",
+ "framing": "同尊孔门,论性各殊:或本心善端,或矫情成伪,或溯性于天理,或归理于本心。",
+ "schools": [
+  {
+   "key": "meng",
+   "label": "孟子",
+   "group": "ru",
+   "seal": "观仁",
+   "stance": "性善"
+  },
+  {
+   "key": "xun",
+   "label": "荀子",
+   "group": "ru",
+   "seal": "观仁",
+   "stance": "性恶"
+  },
+  {
+   "key": "cheng",
+   "label": "程朱",
+   "group": "ru",
+   "seal": "观仁",
+   "stance": "性即理"
+  },
+  {
+   "key": "yangming",
+   "label": "阳明",
+   "group": "xin",
+   "seal": "观心",
+   "stance": "心即理"
+  }
+ ],
+ "rounds": [
+  {
+   "phase": "立论",
+   "turns": [
     {
-      "key": "meng",
-      "label": "孟子",
-      "group": "ru",
-      "seal": "观仁",
-      "stance": "性善"
+     "school": "meng",
+     "rebut": null,
+     "point": "就人本有之情而论,皆可向善;不善是放失本性,不是材质之罪。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "mengzi",
+      "ch": 11,
+      "quote": "乃若其情则可以为善矣，乃所谓善也。若夫为不善，非才之罪也",
+      "label": "孟子·告子上"
+     }
     },
     {
-      "key": "xun",
-      "label": "荀子",
-      "group": "ru",
-      "seal": "观仁",
-      "stance": "性恶"
+     "school": "xun",
+     "rebut": null,
+     "point": "人生而好利疾恶,任其自然必趋争乱;所谓善是后天人为努力的结果。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "xunzi",
+      "ch": 23,
+      "quote": "人之性恶，其善者伪也",
+      "label": "荀子·性恶篇"
+     }
     },
     {
-      "key": "cheng",
-      "label": "程朱",
-      "group": "ru",
-      "seal": "观仁",
-      "stance": "性即理"
+     "school": "cheng",
+     "rebut": null,
+     "point": "性不只是人心一端,而是天下之理,推其根源本无不善。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "jinsilu",
+      "ch": 1,
+      "quote": "性即理也。天下之理，原其所自，未有不善",
+      "label": "近思录·道体"
+     }
     },
     {
-      "key": "wang",
-      "label": "阳明",
-      "group": "xin",
-      "seal": "观心",
-      "stance": "心即理"
+     "school": "yangming",
+     "rebut": null,
+     "point": "理不在心外求取,事亲事君之理都在此心,心外别无所谓理。",
+     "cite": {
+      "corpus": "xin",
+      "slug": "chuanxilu",
+      "ch": 1,
+      "quote": "心即理也。天下又有心外之事、心外之理乎",
+      "label": "传习录·卷上"
+     }
     }
-  ],
-  "rounds": [
+   ]
+  },
+  {
+   "phase": "诘难",
+   "turns": [
     {
-      "phase": "立论",
-      "turns": [
-        {
-          "school": "meng",
-          "rebut": null,
-          "point": "就人本有之情而论,皆可向善;不善是放失本性,不是材质之罪。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "mengzi",
-            "ch": 11,
-            "quote": "乃若其情则可以为善矣，乃所谓善也。若夫为不善，非才之罪也",
-            "label": "孟子·告子上"
-          }
-        },
-        {
-          "school": "xun",
-          "rebut": null,
-          "point": "人生而好利疾恶,任其自然必趋争乱;所谓善是后天人为努力的结果。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "xunzi",
-            "ch": 23,
-            "quote": "人之性恶，其善者伪也",
-            "label": "荀子·性恶篇"
-          }
-        },
-        {
-          "school": "cheng",
-          "rebut": null,
-          "point": "性不只是人心一端,而是天下之理,推其根源本无不善。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "jinsilu",
-            "ch": 1,
-            "quote": "性即理也。天下之理，原其所自，未有不善",
-            "label": "近思录·道体"
-          }
-        },
-        {
-          "school": "wang",
-          "rebut": null,
-          "point": "理不在心外求取,事亲事君之理都在此心,心外别无所谓理。",
-          "cite": {
-            "corpus": "xin",
-            "slug": "chuanxilu",
-            "ch": 1,
-            "quote": "心即理也。天下又有心外之事、心外之理乎",
-            "label": "传习录·卷上"
-          }
-        }
-      ]
+     "school": "xun",
+     "rebut": "meng",
+     "point": "直指性善之说不然:若性本已善,何须圣王礼义来矫正?",
+     "cite": {
+      "corpus": "ru",
+      "slug": "xunzi",
+      "ch": 23,
+      "quote": "孟子曰：「人之性善。」曰：是不然",
+      "label": "荀子·性恶篇"
+     }
     },
     {
-      "phase": "诘难",
-      "turns": [
-        {
-          "school": "xun",
-          "rebut": "meng",
-          "point": "直指性善之说不然:若性本已善,何须圣王礼义来矫正?",
-          "cite": {
-            "corpus": "ru",
-            "slug": "xunzi",
-            "ch": 23,
-            "quote": "孟子曰：「人之性善。」曰：是不然",
-            "label": "荀子·性恶篇"
-          }
-        },
-        {
-          "school": "cheng",
-          "rebut": "xun",
-          "point": "性出于天本无不善,所谓恶者属气禀清浊之差,不宜把材质之偏归于性本身。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "jinsilu",
-            "ch": 1,
-            "quote": "性出于天，才出于气。气清则才清，气浊则才浊",
-            "label": "近思录·道体"
-          }
-        }
-      ]
-    },
-    {
-      "phase": "续诘",
-      "turns": [
-        {
-          "school": "cheng",
-          "rebut": "wang",
-          "point": "径以心为理,则思虑既发之不善何所归?心本善而发有善不善,故须辨性与心,不可一概。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "jinsilu",
-            "ch": 1,
-            "quote": "心本善，发于思虑则有善有不善",
-            "label": "近思录·道体"
-          }
-        }
-      ]
-    },
-    {
-      "phase": "申辩",
-      "turns": [
-        {
-          "school": "meng",
-          "rebut": "xun",
-          "point": "恻隐羞恶恭敬是非四心人人本具,这正是善端内在的凭据,非由外铄。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "mengzi",
-            "ch": 11,
-            "quote": "恻隐之心，人皆有之；羞恶之心，人皆有之",
-            "label": "孟子·告子上"
-          }
-        },
-        {
-          "school": "xun",
-          "rebut": "cheng",
-          "point": "礼义本是圣人积思虑、习人为而造成,源出后天努力,而非天性中现成自有。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "xunzi",
-            "ch": 23,
-            "quote": "凡礼义者，是生于圣人之伪",
-            "label": "荀子·性恶篇"
-          }
-        },
-        {
-          "school": "wang",
-          "rebut": "cheng",
-          "point": "此心去其私欲遮蔽即是天理,工夫只在本心,不必向外再添一分。",
-          "cite": {
-            "corpus": "xin",
-            "slug": "chuanxilu",
-            "ch": 1,
-            "quote": "此心无私欲之蔽，即是天理，不须外面添一分",
-            "label": "传习录·卷上"
-          }
-        }
-      ]
+     "school": "cheng",
+     "rebut": "xun",
+     "point": "性出于天本无不善,所谓恶者属气禀清浊之差,不宜把材质之偏归于性本身。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "jinsilu",
+      "ch": 1,
+      "quote": "性出于天，才出于气。气清则才清，气浊则才浊",
+      "label": "近思录·道体"
+     }
     }
-  ],
-  "coda": "四家同祖孔门、同求成善之路,而落点各异:孟子据四端言性本善,荀子见情欲言善在人为,程朱溯性于天理、以气禀解恶之所自,阳明收理于本心、即心言理。善之根在内或在外、理之所在为天为心,遂分为四脉,各成一家之言。"
+   ]
+  },
+  {
+   "phase": "续诘",
+   "turns": [
+    {
+     "school": "cheng",
+     "rebut": "yangming",
+     "point": "径以心为理,则思虑既发之不善何所归?心本善而发有善不善,故须辨性与心,不可一概。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "jinsilu",
+      "ch": 1,
+      "quote": "心本善，发于思虑则有善有不善",
+      "label": "近思录·道体"
+     }
+    }
+   ]
+  },
+  {
+   "phase": "申辩",
+   "turns": [
+    {
+     "school": "meng",
+     "rebut": "xun",
+     "point": "恻隐羞恶恭敬是非四心人人本具,这正是善端内在的凭据,非由外铄。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "mengzi",
+      "ch": 11,
+      "quote": "恻隐之心，人皆有之；羞恶之心，人皆有之",
+      "label": "孟子·告子上"
+     }
+    },
+    {
+     "school": "xun",
+     "rebut": "cheng",
+     "point": "礼义本是圣人积思虑、习人为而造成,源出后天努力,而非天性中现成自有。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "xunzi",
+      "ch": 23,
+      "quote": "凡礼义者，是生于圣人之伪",
+      "label": "荀子·性恶篇"
+     }
+    },
+    {
+     "school": "yangming",
+     "rebut": "cheng",
+     "point": "此心去其私欲遮蔽即是天理,工夫只在本心,不必向外再添一分。",
+     "cite": {
+      "corpus": "xin",
+      "slug": "chuanxilu",
+      "ch": 1,
+      "quote": "此心无私欲之蔽，即是天理，不须外面添一分",
+      "label": "传习录·卷上"
+     }
+    }
+   ]
+  }
+ ],
+ "coda": "四家同祖孔门、同求成善之路,而落点各异:孟子据四端言性本善,荀子见情欲言善在人为,程朱溯性于天理、以气禀解恶之所自,阳明收理于本心、即心言理。善之根在内或在外、理之所在为天为心,遂分为四脉,各成一家之言。"
 }

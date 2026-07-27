@@ -1,133 +1,133 @@
 {
-  "id": "qingyu",
-  "title": "情与欲",
-  "category": "性与心",
-  "concept": "情与欲",
-  "question": "情欲当节、当寡,还是任其自然?",
-  "framing": "人生而有欲——三家同认欲不可去,而其安顿欲望之道各异:或导而节之,或养心寡之,或抱朴任其自然。",
-  "schools": [
+ "id": "qingyu",
+ "title": "情与欲",
+ "category": "性与心",
+ "concept": "情与欲",
+ "question": "情欲当节、当寡,还是任其自然?",
+ "framing": "人生而有欲——三家同认欲不可去,而其安顿欲望之道各异:或导而节之,或养心寡之,或抱朴任其自然。",
+ "schools": [
+  {
+   "key": "xun",
+   "label": "荀子",
+   "group": "ru",
+   "seal": "观仁",
+   "stance": "化性节欲"
+  },
+  {
+   "key": "meng",
+   "label": "孟子",
+   "group": "ru",
+   "seal": "观仁",
+   "stance": "养心寡欲"
+  },
+  {
+   "key": "laozi",
+   "label": "老子",
+   "group": "dao",
+   "seal": "观道",
+   "stance": "少私寡欲·自然"
+  }
+ ],
+ "rounds": [
+  {
+   "phase": "立论",
+   "turns": [
     {
-      "key": "xun",
-      "label": "荀子",
-      "group": "ru",
-      "seal": "观仁",
-      "stance": "化性节欲"
+     "school": "xun",
+     "rebut": null,
+     "point": "欲生于性、不可去除,故不主灭欲;当立礼义以养欲、给求,使欲望与外物相持而长,各得其度。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "xunzi",
+      "ch": 19,
+      "quote": "故制礼义以分之，以养人之欲，给人之求",
+      "label": "荀子·礼论"
+     }
     },
     {
-      "key": "meng",
-      "label": "孟子",
-      "group": "ru",
-      "seal": "观仁",
-      "stance": "养心寡欲"
+     "school": "meng",
+     "rebut": null,
+     "point": "修养心性最好的办法莫过于减少欲望;欲寡则本心善端虽偶有不存也少,欲多则虽偶存也少。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "mengzi",
+      "ch": 14,
+      "quote": "养心莫善于寡欲",
+      "label": "孟子·尽心下"
+     }
     },
     {
-      "key": "lao",
-      "label": "老子",
-      "group": "dao",
-      "seal": "观道",
-      "stance": "少私寡欲·自然"
+     "school": "laozi",
+     "rebut": null,
+     "point": "返于素朴、减少私心与欲望,不去炫示可欲之物,使人心不为外物搅动而归于安定。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "daodejing",
+      "ch": 19,
+      "quote": "见素抱朴，少私寡欲",
+      "label": "老子·十九章"
+     }
     }
-  ],
-  "rounds": [
+   ]
+  },
+  {
+   "phase": "诘难",
+   "turns": [
     {
-      "phase": "立论",
-      "turns": [
-        {
-          "school": "xun",
-          "rebut": null,
-          "point": "欲生于性、不可去除,故不主灭欲;当立礼义以养欲、给求,使欲望与外物相持而长,各得其度。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "xunzi",
-            "ch": 19,
-            "quote": "故制礼义以分之，以养人之欲，给人之求",
-            "label": "荀子·礼论"
-          }
-        },
-        {
-          "school": "meng",
-          "rebut": null,
-          "point": "修养心性最好的办法莫过于减少欲望;欲寡则本心善端虽偶有不存也少,欲多则虽偶存也少。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "mengzi",
-            "ch": 14,
-            "quote": "养心莫善于寡欲",
-            "label": "孟子·尽心下"
-          }
-        },
-        {
-          "school": "lao",
-          "rebut": null,
-          "point": "返于素朴、减少私心与欲望,不去炫示可欲之物,使人心不为外物搅动而归于安定。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "daodejing",
-            "ch": 19,
-            "quote": "见素抱朴，少私寡欲",
-            "label": "老子·十九章"
-          }
-        }
-      ]
+     "school": "xun",
+     "rebut": "meng",
+     "point": "只讲减少欲望而无导欲之法,终困于多欲;治乱不在欲之多寡,而在心所认可是否合理。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "xunzi",
+      "ch": 22,
+      "quote": "凡语治而待寡欲者，无以节欲而困于多欲者也",
+      "label": "荀子·正名"
+     }
     },
     {
-      "phase": "诘难",
-      "turns": [
-        {
-          "school": "xun",
-          "rebut": "meng",
-          "point": "只讲减少欲望而无导欲之法,终困于多欲;治乱不在欲之多寡,而在心所认可是否合理。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "xunzi",
-            "ch": 22,
-            "quote": "凡语治而待寡欲者，无以节欲而困于多欲者也",
-            "label": "荀子·正名"
-          }
-        },
-        {
-          "school": "lao",
-          "rebut": "xun",
-          "point": "礼义文饰反易激起争逐;不显露可欲之物,使民心不乱,比层层制度更近于安。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "daodejing",
-            "ch": 3,
-            "quote": "不见可欲，使民心不乱",
-            "label": "老子·三章"
-          }
-        }
-      ]
-    },
-    {
-      "phase": "申辩",
-      "turns": [
-        {
-          "school": "xun",
-          "rebut": "lao",
-          "point": "欲乃性中所具,守门之贱者亦不能去;不可去除,但求取可加节制,故主导欲节求而非屏蔽外物。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "xunzi",
-            "ch": 22,
-            "quote": "欲不可去，性之具也",
-            "label": "荀子·正名"
-          }
-        },
-        {
-          "school": "meng",
-          "rebut": "xun",
-          "point": "不灭欲、只求寡;多欲者纵偶存善端亦稀,故养心之要在向内节制而非倚仗外物之防。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "mengzi",
-            "ch": 14,
-            "quote": "其为人也多欲，虽有存焉者，寡矣",
-            "label": "孟子·尽心下"
-          }
-        }
-      ]
+     "school": "laozi",
+     "rebut": "xun",
+     "point": "礼义文饰反易激起争逐;不显露可欲之物,使民心不乱,比层层制度更近于安。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "daodejing",
+      "ch": 3,
+      "quote": "不见可欲，使民心不乱",
+      "label": "老子·三章"
+     }
     }
-  ],
-  "coda": "三家皆不主张灭欲,亦皆认欲不可尽去。分歧落在安顿之法:荀子向外立礼义以养欲、导欲而节求,使欲与物相持而长;孟子向内养心,以寡欲存其本心善端;老子返于素朴,少私寡欲、不见可欲而令心不乱。一从制度之文,一从心性之养,一从自然之返,各成一路,并行不悖。"
+   ]
+  },
+  {
+   "phase": "申辩",
+   "turns": [
+    {
+     "school": "xun",
+     "rebut": "laozi",
+     "point": "欲乃性中所具,守门之贱者亦不能去;不可去除,但求取可加节制,故主导欲节求而非屏蔽外物。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "xunzi",
+      "ch": 22,
+      "quote": "欲不可去，性之具也",
+      "label": "荀子·正名"
+     }
+    },
+    {
+     "school": "meng",
+     "rebut": "xun",
+     "point": "不灭欲、只求寡;多欲者纵偶存善端亦稀,故养心之要在向内节制而非倚仗外物之防。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "mengzi",
+      "ch": 14,
+      "quote": "其为人也多欲，虽有存焉者，寡矣",
+      "label": "孟子·尽心下"
+     }
+    }
+   ]
+  }
+ ],
+ "coda": "三家皆不主张灭欲,亦皆认欲不可尽去。分歧落在安顿之法:荀子向外立礼义以养欲、导欲而节求,使欲与物相持而长;孟子向内养心,以寡欲存其本心善端;老子返于素朴,少私寡欲、不见可欲而令心不乱。一从制度之文,一从心性之养,一从自然之返,各成一路,并行不悖。"
 }

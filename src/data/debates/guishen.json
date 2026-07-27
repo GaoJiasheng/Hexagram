@@ -1,174 +1,174 @@
 {
-  "id": "guishen",
-  "title": "鬼神之辨",
-  "category": "天人 · 形上 · 道",
-  "concept": "鬼神之辨",
-  "question": "鬼神,当明信、敬远,还是任其自然?",
-  "framing": "天地之间,幽明之际,各家所执不同:或以鬼神为治世之实证,或以敬而远之为知,或以道莅天下而鬼不为祟。",
-  "schools": [
+ "id": "guishen",
+ "title": "鬼神之辨",
+ "category": "天人 · 形上 · 道",
+ "concept": "鬼神之辨",
+ "question": "鬼神,当明信、敬远,还是任其自然?",
+ "framing": "天地之间,幽明之际,各家所执不同:或以鬼神为治世之实证,或以敬而远之为知,或以道莅天下而鬼不为祟。",
+ "schools": [
+  {
+   "key": "mo",
+   "label": "墨子",
+   "group": "mo",
+   "seal": "观兼",
+   "stance": "明鬼——鬼神实有"
+  },
+  {
+   "key": "kong",
+   "label": "孔子",
+   "group": "ru",
+   "seal": "观仁",
+   "stance": "敬而远之——敬其当敬"
+  },
+  {
+   "key": "laozi",
+   "label": "老子",
+   "group": "dao",
+   "seal": "观道",
+   "stance": "道法自然——以道莅…"
+  }
+ ],
+ "rounds": [
+  {
+   "phase": "立论",
+   "turns": [
     {
-      "key": "mo",
-      "label": "墨子",
-      "group": "mo",
-      "seal": "观兼",
-      "stance": "明鬼——鬼神实有"
+     "school": "mo",
+     "rebut": null,
+     "point": "天下所以乱,正因人疑惑鬼神之有无,不明鬼神能赏善罚恶;若举世信之,则乱可止。",
+     "cite": {
+      "corpus": "mo",
+      "slug": "mozi",
+      "ch": 26,
+      "quote": "不明乎鬼神之能赏贤而罚暴也",
+      "label": "墨子·明鬼下"
+     }
     },
     {
-      "key": "kong",
-      "label": "孔子",
-      "group": "ru",
-      "seal": "观仁",
-      "stance": "敬而远之——敬其当敬"
+     "school": "kong",
+     "rebut": null,
+     "point": "专力于民众当行之义,对鬼神持敬而保持距离、不强究幽冥,这才称得上明智。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "lunyu",
+      "ch": 6,
+      "quote": "务民之义，敬鬼神而远之，可谓知矣",
+      "label": "论语·雍也"
+     }
     },
     {
-      "key": "lao",
-      "label": "老子",
-      "group": "dao",
-      "seal": "观道",
-      "stance": "道法自然——以道莅…"
+     "school": "laozi",
+     "rebut": null,
+     "point": "以道临御天下,鬼便不显其灵异作祟;并非鬼无灵,而是其灵不伤人。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "daodejing",
+      "ch": 60,
+      "quote": "以道莅天下，其鬼不神",
+      "label": "老子·六十章"
+     }
     }
-  ],
-  "rounds": [
+   ]
+  },
+  {
+   "phase": "诘难",
+   "turns": [
     {
-      "phase": "立论",
-      "turns": [
-        {
-          "school": "mo",
-          "rebut": null,
-          "point": "天下所以乱,正因人疑惑鬼神之有无,不明鬼神能赏善罚恶;若举世信之,则乱可止。",
-          "cite": {
-            "corpus": "mo",
-            "slug": "mozi",
-            "ch": 26,
-            "quote": "不明乎鬼神之能赏贤而罚暴也",
-            "label": "墨子·明鬼下"
-          }
-        },
-        {
-          "school": "kong",
-          "rebut": null,
-          "point": "专力于民众当行之义,对鬼神持敬而保持距离、不强究幽冥,这才称得上明智。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "lunyu",
-            "ch": 6,
-            "quote": "务民之义，敬鬼神而远之，可谓知矣",
-            "label": "论语·雍也"
-          }
-        },
-        {
-          "school": "lao",
-          "rebut": null,
-          "point": "以道临御天下,鬼便不显其灵异作祟;并非鬼无灵,而是其灵不伤人。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "daodejing",
-            "ch": 60,
-            "quote": "以道莅天下，其鬼不神",
-            "label": "老子·六十章"
-          }
-        }
-      ]
+     "school": "mo",
+     "rebut": "kong",
+     "point": "对孔子而言:既敬鬼神而又远之、避谈其有无,则赏罚之实无以立,民何由知善必报、暴必诛?",
+     "cite": {
+      "corpus": "mo",
+      "slug": "mozi",
+      "ch": 26,
+      "quote": "鬼神之能赏贤如罚暴也，盖本施之国家，施之万民",
+      "label": "墨子·明鬼下"
+     }
     },
     {
-      "phase": "诘难",
-      "turns": [
-        {
-          "school": "mo",
-          "rebut": "kong",
-          "point": "对孔子而言:既敬鬼神而又远之、避谈其有无,则赏罚之实无以立,民何由知善必报、暴必诛?",
-          "cite": {
-            "corpus": "mo",
-            "slug": "mozi",
-            "ch": 26,
-            "quote": "鬼神之能赏贤如罚暴也，盖本施之国家，施之万民",
-            "label": "墨子·明鬼下"
-          }
-        },
-        {
-          "school": "kong",
-          "rebut": "mo",
-          "point": "对墨子而言:把治乱系于鬼神之诛,反失其要;怪异神变之事，我向来存而不论。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "lunyu",
-            "ch": 7,
-            "quote": "子不语：怪、力、乱、神",
-            "label": "论语·述而"
-          }
-        },
-        {
-          "school": "lao",
-          "rebut": "mo",
-          "point": "对墨子而言:与其务在彰明鬼神之罚,不如使在上者亦不扰民;上下两不相伤,德乃归焉。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "daodejing",
-            "ch": 60,
-            "quote": "非其鬼不神，其神不伤人",
-            "label": "老子·六十章"
-          }
-        }
-      ]
+     "school": "kong",
+     "rebut": "mo",
+     "point": "对墨子而言:把治乱系于鬼神之诛,反失其要;怪异神变之事，我向来存而不论。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "lunyu",
+      "ch": 7,
+      "quote": "子不语：怪、力、乱、神",
+      "label": "论语·述而"
+     }
     },
     {
-      "phase": "反诘",
-      "turns": [
-        {
-          "school": "mo",
-          "rebut": "lao",
-          "point": "谓其神不伤人,则幽隐之地何所忌惮?鬼神之明无所不烛,故吏不敢不廉、暴不敢不罪。",
-          "cite": {
-            "corpus": "mo",
-            "slug": "mozi",
-            "ch": 26,
-            "quote": "鬼神之明，不可为幽闲、广泽、山林、深谷",
-            "label": "墨子·明鬼下"
-          }
-        },
-        {
-          "school": "kong",
-          "rebut": "lao",
-          "point": "以道莅之而鬼不神,是把幽明推给天道;丧祭之诚何处安顿?祭如在,敬在诚而不在其伤不伤。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "lunyu",
-            "ch": 3,
-            "quote": "祭如在，祭神如神在",
-            "label": "论语·八佾"
-          }
-        }
-      ]
-    },
-    {
-      "phase": "申辩",
-      "turns": [
-        {
-          "school": "mo",
-          "rebut": "kong",
-          "point": "古之圣王治天下,皆先敬事鬼神而后及人,以此为务,非虚设也。",
-          "cite": {
-            "corpus": "mo",
-            "slug": "mozi",
-            "ch": 26,
-            "quote": "古圣王治天下也，故必先鬼神而后人者",
-            "label": "墨子·明鬼下"
-          }
-        },
-        {
-          "school": "lao",
-          "rebut": "mo",
-          "point": "治大国如烹小鲜,不宜频扰;清静无为,则幽明各安其位,无须以神道相督责。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "daodejing",
-            "ch": 60,
-            "quote": "治大国，若烹小鲜",
-            "label": "老子·六十章"
-          }
-        }
-      ]
+     "school": "laozi",
+     "rebut": "mo",
+     "point": "对墨子而言:与其务在彰明鬼神之罚,不如使在上者亦不扰民;上下两不相伤,德乃归焉。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "daodejing",
+      "ch": 60,
+      "quote": "非其鬼不神，其神不伤人",
+      "label": "老子·六十章"
+     }
     }
-  ],
-  "coda": "三家分歧落在对幽明之际的安顿:墨子向鬼神求一治世之实证与赏罚之公,孔子把关切收回到人当行之义、敬之而不究,老子则以道为本、令上下两不相伤而鬼不为祟。一求其明、一守其敬远、一任其自然,各自照见天人之间的一种安身之道。"
+   ]
+  },
+  {
+   "phase": "反诘",
+   "turns": [
+    {
+     "school": "mo",
+     "rebut": "laozi",
+     "point": "谓其神不伤人,则幽隐之地何所忌惮?鬼神之明无所不烛,故吏不敢不廉、暴不敢不罪。",
+     "cite": {
+      "corpus": "mo",
+      "slug": "mozi",
+      "ch": 26,
+      "quote": "鬼神之明，不可为幽闲、广泽、山林、深谷",
+      "label": "墨子·明鬼下"
+     }
+    },
+    {
+     "school": "kong",
+     "rebut": "laozi",
+     "point": "以道莅之而鬼不神,是把幽明推给天道;丧祭之诚何处安顿?祭如在,敬在诚而不在其伤不伤。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "lunyu",
+      "ch": 3,
+      "quote": "祭如在，祭神如神在",
+      "label": "论语·八佾"
+     }
+    }
+   ]
+  },
+  {
+   "phase": "申辩",
+   "turns": [
+    {
+     "school": "mo",
+     "rebut": "kong",
+     "point": "古之圣王治天下,皆先敬事鬼神而后及人,以此为务,非虚设也。",
+     "cite": {
+      "corpus": "mo",
+      "slug": "mozi",
+      "ch": 26,
+      "quote": "古圣王治天下也，故必先鬼神而后人者",
+      "label": "墨子·明鬼下"
+     }
+    },
+    {
+     "school": "laozi",
+     "rebut": "mo",
+     "point": "治大国如烹小鲜,不宜频扰;清静无为,则幽明各安其位,无须以神道相督责。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "daodejing",
+      "ch": 60,
+      "quote": "治大国，若烹小鲜",
+      "label": "老子·六十章"
+     }
+    }
+   ]
+  }
+ ],
+ "coda": "三家分歧落在对幽明之际的安顿:墨子向鬼神求一治世之实证与赏罚之公,孔子把关切收回到人当行之义、敬之而不究,老子则以道为本、令上下两不相伤而鬼不为祟。一求其明、一守其敬远、一任其自然,各自照见天人之间的一种安身之道。"
 }

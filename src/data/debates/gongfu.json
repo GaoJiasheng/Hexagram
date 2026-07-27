@@ -1,133 +1,133 @@
 {
-  "id": "gongfu",
-  "title": "工夫入手",
-  "category": "工夫与学",
-  "concept": "工夫入手",
-  "question": "修养工夫,究竟从主敬穷理入手,还是从致良知入手,抑或归于坐忘心斋?",
-  "framing": "同是为道日损、为学日益,各家自言其下手之处。",
-  "schools": [
+ "id": "gongfu",
+ "title": "工夫入手",
+ "category": "工夫与学",
+ "concept": "工夫入手",
+ "question": "修养工夫,究竟从主敬穷理入手,还是从致良知入手,抑或归于坐忘心斋?",
+ "framing": "同是为道日损、为学日益,各家自言其下手之处。",
+ "schools": [
+  {
+   "key": "cheng",
+   "label": "程朱",
+   "group": "ru",
+   "seal": "观仁",
+   "stance": "主敬穷理"
+  },
+  {
+   "key": "yangming",
+   "label": "阳明",
+   "group": "xin",
+   "seal": "观心",
+   "stance": "致良知"
+  },
+  {
+   "key": "zhuang",
+   "label": "庄子",
+   "group": "dao",
+   "seal": "观道",
+   "stance": "坐忘心斋"
+  }
+ ],
+ "rounds": [
+  {
+   "phase": "立论",
+   "turns": [
     {
-      "key": "cheng",
-      "label": "程朱",
-      "group": "ru",
-      "seal": "观仁",
-      "stance": "主敬穷理"
+     "school": "cheng",
+     "rebut": null,
+     "point": "工夫分两路并进:内以持敬涵养此心,外以致知穷究事理,二者相须不可偏废。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "jinsilu",
+      "ch": 2,
+      "quote": "涵养须用敬，进学则在致知",
+      "label": "近思录·为学"
+     }
     },
     {
-      "key": "wang",
-      "label": "阳明",
-      "group": "xin",
-      "seal": "观心",
-      "stance": "致良知"
+     "school": "yangming",
+     "rebut": null,
+     "point": "工夫只一个头脑,即在事上随时致此心之良知,致知即是格物,不必另立两段。",
+     "cite": {
+      "corpus": "xin",
+      "slug": "chuanxilu",
+      "ch": 2,
+      "quote": "随时就事上致其良知，便是「格物」",
+      "label": "传习录·卷中"
+     }
     },
     {
-      "key": "zhuang",
-      "label": "庄子",
-      "group": "dao",
-      "seal": "观道",
-      "stance": "坐忘心斋"
+     "school": "zhuang",
+     "rebut": null,
+     "point": "工夫在于减损:忘去形骸与机心,离形去知而与大道相通,这才叫坐忘。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "zhuangzi-neipian",
+      "ch": 6,
+      "quote": "离形去知，同于大通，此谓坐忘",
+      "label": "庄子·大宗师"
+     }
     }
-  ],
-  "rounds": [
+   ]
+  },
+  {
+   "phase": "诘难",
+   "turns": [
     {
-      "phase": "立论",
-      "turns": [
-        {
-          "school": "cheng",
-          "rebut": null,
-          "point": "工夫分两路并进:内以持敬涵养此心,外以致知穷究事理,二者相须不可偏废。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "jinsilu",
-            "ch": 2,
-            "quote": "涵养须用敬，进学则在致知",
-            "label": "近思录·为学"
-          }
-        },
-        {
-          "school": "wang",
-          "rebut": null,
-          "point": "工夫只一个头脑,即在事上随时致此心之良知,致知即是格物,不必另立两段。",
-          "cite": {
-            "corpus": "xin",
-            "slug": "chuanxilu",
-            "ch": 2,
-            "quote": "随时就事上致其良知，便是「格物」",
-            "label": "传习录·卷中"
-          }
-        },
-        {
-          "school": "zhuang",
-          "rebut": null,
-          "point": "工夫在于减损:忘去形骸与机心,离形去知而与大道相通,这才叫坐忘。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "zhuangzi-neipian",
-            "ch": 6,
-            "quote": "离形去知，同于大通，此谓坐忘",
-            "label": "庄子·大宗师"
-          }
-        }
-      ]
+     "school": "yangming",
+     "rebut": "cheng",
+     "point": "将涵养与致知分作两事,易使人向外逐物、心理为二,失却为学的根本头脑。",
+     "cite": {
+      "corpus": "xin",
+      "slug": "chuanxilu",
+      "ch": 2,
+      "quote": "「致良知」是学问大头脑，是圣人教人第一义",
+      "label": "传习录·卷中"
+     }
     },
     {
-      "phase": "诘难",
-      "turns": [
-        {
-          "school": "wang",
-          "rebut": "cheng",
-          "point": "将涵养与致知分作两事,易使人向外逐物、心理为二,失却为学的根本头脑。",
-          "cite": {
-            "corpus": "xin",
-            "slug": "chuanxilu",
-            "ch": 2,
-            "quote": "「致良知」是学问大头脑，是圣人教人第一义",
-            "label": "传习录·卷中"
-          }
-        },
-        {
-          "school": "cheng",
-          "rebut": "zhuang",
-          "point": "事事各有其理,须今日格一件明日格一件,若一概离形去知,则伦理事务何处着手。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "jinsilu",
-            "ch": 3,
-            "quote": "凡一物上有一理。须是穷致其理",
-            "label": "近思录·致知"
-          }
-        }
-      ]
-    },
-    {
-      "phase": "申辩",
-      "turns": [
-        {
-          "school": "zhuang",
-          "rebut": "cheng",
-          "point": "层层忘去仁义礼乐而后能坐忘,所损者正是穷究分别之累,非废人事而是不为物役。",
-          "cite": {
-            "corpus": "dao",
-            "slug": "zhuangzi-neipian",
-            "ch": 6,
-            "quote": "回坐忘矣",
-            "label": "庄子·大宗师"
-          }
-        },
-        {
-          "school": "cheng",
-          "rebut": "wang",
-          "point": "持敬以正其内、守义以方其外,内直外方两端皆立,德性自然充盛,非偏执一边。",
-          "cite": {
-            "corpus": "ru",
-            "slug": "jinsilu",
-            "ch": 2,
-            "quote": "君子主敬以直其内，守义以方其外",
-            "label": "近思录·为学"
-          }
-        }
-      ]
+     "school": "cheng",
+     "rebut": "zhuang",
+     "point": "事事各有其理,须今日格一件明日格一件,若一概离形去知,则伦理事务何处着手。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "jinsilu",
+      "ch": 3,
+      "quote": "凡一物上有一理。须是穷致其理",
+      "label": "近思录·致知"
+     }
     }
-  ],
-  "coda": "三家分歧,落在工夫是\"加\"还是\"减\"、是\"分两路\"还是\"归一头脑\":程朱主敬穷理、内外双修,阳明摄归致良知、即事即心,庄子损之又损、坐忘大通。其下手处各异,而所向皆是此心与天地相安之地。"
+   ]
+  },
+  {
+   "phase": "申辩",
+   "turns": [
+    {
+     "school": "zhuang",
+     "rebut": "cheng",
+     "point": "层层忘去仁义礼乐而后能坐忘,所损者正是穷究分别之累,非废人事而是不为物役。",
+     "cite": {
+      "corpus": "dao",
+      "slug": "zhuangzi-neipian",
+      "ch": 6,
+      "quote": "回坐忘矣",
+      "label": "庄子·大宗师"
+     }
+    },
+    {
+     "school": "cheng",
+     "rebut": "yangming",
+     "point": "持敬以正其内、守义以方其外,内直外方两端皆立,德性自然充盛,非偏执一边。",
+     "cite": {
+      "corpus": "ru",
+      "slug": "jinsilu",
+      "ch": 2,
+      "quote": "君子主敬以直其内，守义以方其外",
+      "label": "近思录·为学"
+     }
+    }
+   ]
+  }
+ ],
+ "coda": "三家分歧,落在工夫是\"加\"还是\"减\"、是\"分两路\"还是\"归一头脑\":程朱主敬穷理、内外双修,阳明摄归致良知、即事即心,庄子损之又损、坐忘大通。其下手处各异,而所向皆是此心与天地相安之地。"
 }

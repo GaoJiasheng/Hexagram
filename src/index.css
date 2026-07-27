@@ -3315,6 +3315,8 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .debates-chip--on { background: color-mix(in srgb, var(--cinnabar) 10%, transparent); border-color: var(--cinnabar); color: var(--ink); }
 .debates-chip__dot { width: 7px; height: 7px; border-radius: 2px; display: inline-block; }
 .debates-chip__n { font-size: 0.72rem; color: var(--ink-faint); }
+/* 参辩家长尾折叠钮:与 chip 同高但弱化,不抢已选家的注意 */
+.debates-chip--more { color: var(--ink-soft); border-style: dashed; }
 .debates-chip--on .debates-chip__n { color: var(--ink-soft); }
 .debates-facet__clear { display: flex; align-items: center; gap: 10px; padding-top: 4px; border-top: 1px dashed var(--line); font-size: 0.8rem; }
 .debates-empty { text-align: center; padding: 40px 0; }
@@ -3379,6 +3381,12 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .debate-coda__tag { font-size: 0.74rem; color: var(--cinnabar); letter-spacing: 0.12em; margin-bottom: 8px; }
 .debate-coda__text { font-size: 0.92rem; line-height: 1.9; color: var(--ink-soft); margin: 0 0 12px; }
 .debate-coda__epigraph { font-size: 0.8rem; color: var(--ink-faint); margin: 0 0 14px; letter-spacing: 0.04em; }
+/* 收束处「接着深读」:辩完给一条向内的路(白话深读/义理专题),不然读者只能退回列表 */
+.debate-deeper { margin: 16px 0 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+.debate-deeper__label { display: block; font-size: 0.78rem; color: var(--ink-faint); margin-bottom: 8px; letter-spacing: 0.06em; }
+.debate-deeper__links { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.debate-deeper__link { font-size: 0.82rem; padding: 4px 11px; border: 1px solid var(--line); border-radius: 99px; color: var(--ink-soft); text-decoration: none; transition: border-color .16s ease, color .16s ease; }
+.debate-deeper__link:hover { border-color: var(--cinnabar); color: var(--cinnabar); }
 
 @keyframes dbt-seal-in { from { opacity: 0; } to { opacity: 1; } }
 @keyframes dbt-pulse { 0% { r: 26; opacity: 0.5; } 100% { r: 42; opacity: 0; } }
