@@ -61,6 +61,22 @@ export default function CorpusReadPage({ corpus }) {
   const curChapter = book.chapters.find((c) => c.no === chapter)
   const numberParas = isLunyu || (curChapter && curChapter.paragraphs.length > 3)
 
+  // 一章多首的书(诗经:一组十余首诗,每首以《诗题》独立成段)。诗题升格为诗头,
+  // 并按「组-序」挂诗级白话入口;段号跳过诗题,从诗句起编,引用才对得上。
+  const poemBook = !!meta.poemTitles
+  const isPoemTitle = (p) => /^《[^》]+》$/.test(p.original.trim())
+  const poemOrdinals = {}   // 段下标 → 该诗在本组内的序号
+  if (poemBook && curChapter) {
+    let n = 0
+    curChapter.paragraphs.forEach((p, i) => { if (isPoemTitle(p)) poemOrdinals[i] = ++n })
+  }
+  const poemParaLabel = (no, i) => {
+    if (!curChapter) return null
+    let n = 0
+    for (let k = 0; k <= i; k++) { if (!isPoemTitle(curChapter.paragraphs[k])) n++ }
+    return String(n)
+  }
+
   return (
     <ClassicReader
       mode="paged"
@@ -75,7 +91,21 @@ export default function CorpusReadPage({ corpus }) {
       getAnchors={(no, i) => getAnchors(corpus, slug, no, i)}
       renderYanyi={(no) => <YanyiBlock corpus={corpus} slug={slug} chapter={no} />}
       renderBaihua={(no) => <BaihuaBlock corpus={corpus} slug={slug} chapter={no} bookTitle={meta.title} sectionUnit={meta.sectionUnit || '章'} />}
-      paraLabel={numberParas ? (no, i) => String(i + 1) : undefined}
+      renderPoemHead={poemBook ? (no, i, p) => {
+        const ord = poemOrdinals[i]
+        if (!ord) return null
+        const title = p.original.trim().replace(/^《|》$/g, '')
+        return (
+          <>
+            <span className="poem-head__title">《{title}》<span className="poem-head__ord">其{ord}</span></span>
+            <BaihuaBlock
+              corpus={corpus} slug={slug} chapter={`${no}-${ord}`} variant="inline"
+              bookTitle={meta.title} chapterLabel={`${curChapter?.title || ''} · ${title}`}
+            />
+          </>
+        )
+      } : undefined}
+      paraLabel={poemBook ? poemParaLabel : (numberParas ? (no, i) => String(i + 1) : undefined)}
       markCtx={{ corpus, slug }}
       commentCtx={{ corpus, slug }}
     />

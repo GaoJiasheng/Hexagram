@@ -124,7 +124,7 @@ export function BaihuaArticle({ data }) {
 
 // 白话模块：章末一个低调折叠入口条 → 点开为侧抽屉（桌面）/ 全屏浮层（移动）。
 // 打开后持久（仅手动关）；⤢ 切到「整页研读」独立页（design-v22 §2）。
-export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionUnit = '章', chapterLabel }) {
+export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionUnit = '章', chapterLabel, variant = 'bar' }) {
   const [meta, setMeta] = useState(undefined)
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(false)
@@ -175,17 +175,25 @@ export default function BaihuaBlock({ corpus, slug, chapter, bookTitle, sectionU
 
   return (
     <>
-      <button className={`baihua-entry ${meta.featured ? 'baihua-entry--featured' : ''}`} onClick={() => setOpen(true)} aria-expanded={open}>
-        {seal && <span className="baihua-entry__seal">{seal}</span>}
-        <span className="baihua-entry__text">
-          <span className="baihua-entry__title">
-            {entryLabel} · {chapterName}
-            {meta.featured && <span className="baihua-entry__flag">总纲</span>}
+      {variant === 'inline' ? (
+        // 诗级入口:贴在诗题右侧的药丸（诗经等一章多首的书）。无该首白话时上面已 return null,
+        // 故「有深读的诗」天然被标出来,没有的就是纯诗题——不泛滥,同「桥」的分寸。
+        <button className="baihua-pill" onClick={() => setOpen(true)} aria-expanded={open} aria-label={`${entryLabel} · ${chapterName}`}>
+          白话<span aria-hidden="true"> ›</span>
+        </button>
+      ) : (
+        <button className={`baihua-entry ${meta.featured ? 'baihua-entry--featured' : ''}`} onClick={() => setOpen(true)} aria-expanded={open}>
+          {seal && <span className="baihua-entry__seal">{seal}</span>}
+          <span className="baihua-entry__text">
+            <span className="baihua-entry__title">
+              {entryLabel} · {chapterName}
+              {meta.featured && <span className="baihua-entry__flag">总纲</span>}
+            </span>
+            <span className="baihua-entry__hint">大白话 + 配图，把这一章讲给完全没读过的人 · 点开</span>
           </span>
-          <span className="baihua-entry__hint">大白话 + 配图，把这一章讲给完全没读过的人 · 点开</span>
-        </span>
-        <span className="baihua-entry__chev" aria-hidden="true">▸</span>
-      </button>
+          <span className="baihua-entry__chev" aria-hidden="true">▸</span>
+        </button>
+      )}
 
       {open && createPortal(
         <div

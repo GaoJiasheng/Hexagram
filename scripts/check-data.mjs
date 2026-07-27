@@ -611,6 +611,19 @@ if (fs.existsSync(glossaryPath)) {
     }
     const book = chCache[k]
     if (!book) return null
+    // 诗级白话(诗经):键形如「组-序」(如 1-1 = 周南第一首《关雎》)。
+    // 引文校验池收窄到那一首诗,而非整组——否则《关雎》的引文拿《桃夭》的句子也能过。
+    const poem = /^(\d+)-(\d+)$/.exec(String(ch))
+    if (poem) {
+      const c = book.chapters.find((x) => x.no === Number(poem[1]))
+      if (!c) return null
+      const isTitle = (p) => /^《[^》]+》$/.test(p.original.trim())
+      const heads = c.paragraphs.map((p, i) => (isTitle(p) ? i : -1)).filter((i) => i >= 0)
+      const start = heads[Number(poem[2]) - 1]
+      if (start === undefined) return null
+      const end = heads[Number(poem[2])] ?? c.paragraphs.length
+      return c.paragraphs.slice(start, end).map((p) => p.original).join('')
+    }
     const c = book.chapters.find((x) => x.no === Number(ch))
     return c ? c.paragraphs.map((p) => p.original).join('') : null
   }

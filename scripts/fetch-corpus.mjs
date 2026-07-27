@@ -178,6 +178,22 @@ function parsePoemPage(wikitext, warnings, pageName, sectionFilter = null) {
     if (SHI_XU_LINE_RE.test(simp) || selfTitleRe.test(simp) || SHI_STANZA_NOTE_RE.test(simp) || SHI_BREADCRUMB_RE.test(simp)) continue
     paras.push({ original: simp, translation: null })
   }
+  // 整节重复剔除:个别源页把「===詩文===」连同正文重复贴了数遍(《桃夭》4 遍,系维基页面编辑事故),
+  // 表现为全诗恰好整倍重复。只在「后半段与前半段逐字全等」时截掉,故诗经本有的重章叠句
+  // (如秦风《黄鸟》叠唱「彼苍者天」)不受影响——那是部分重复,不构成整倍。
+  for (let unit = 1; unit <= paras.length / 2; unit++) {
+    if (paras.length % unit) continue
+    const head = paras.slice(0, unit).map((p) => p.original).join(' ')
+    let allSame = true
+    for (let k = unit; k < paras.length; k += unit) {
+      if (paras.slice(k, k + unit).map((p) => p.original).join(' ') !== head) { allSame = false; break }
+    }
+    if (allSame) {
+      if (unit < paras.length) warnings.push(`${pageName}: 正文整倍重复 ${paras.length / unit} 遍,已截为 ${unit} 段`)
+      paras.length = unit
+      break
+    }
+  }
   if (!paras.length) warnings.push(`${pageName}: 解析后无任何段落`)
   return paras
 }

@@ -48,6 +48,7 @@ export default function ClassicReader({
   getAnchors = () => null,
   renderYanyi = () => null,
   renderBaihua = () => null,   // 白话模块入口条（design-v22），挂在章题之下
+  renderPoemHead = () => null, // 一章多首的书(诗经):诗题段升格为诗头 + 诗级白话入口
   paraLabel = () => null,
   header = null,
   sectionUnit = '章',
@@ -212,6 +213,9 @@ export default function ClassicReader({
   )
 
   const Para = (no, p, i) => {
+    // 诗题段(诗经《关雎》一类)升格为「诗头」:不占段号、自带白话入口。返回 null 则走普通段落。
+    const head = renderPoemHead(no, i, p)
+    if (head) return <div key={i} id={`seg-${no}-${i}`} className="poem-head">{head}</div>
     const label = paraLabel(no, i)
     const text = <ClassicText original={p.original} translation={p.translation} anchors={getAnchors(no, i)} verse={verse} />
     if (!markCtx) {
