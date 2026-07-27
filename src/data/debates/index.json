@@ -2280,6 +2280,179 @@
     }
    ],
    "format": "synthesis"
+  },
+  {
+   "id": "nongzhan",
+   "title": "农战与末业",
+   "division": "zhidao",
+   "category": "治道与政治",
+   "concept": "本末",
+   "question": "一国要富强，是把人力都赶到农与战上去、抑制工商末业，还是另有别的算法？",
+   "turns": 13,
+   "status": "done",
+   "schools": [
+    {
+     "label": "商鞅",
+     "group": "fa",
+     "seal": "观法",
+     "stance": "壹于农战"
+    },
+    {
+     "label": "墨子",
+     "group": "mo",
+     "seal": "观兼",
+     "stance": "去其无用"
+    },
+    {
+     "label": "荀子",
+     "group": "ru",
+     "seal": "观仁",
+     "stance": "节用裕民"
+    },
+    {
+     "label": "老子",
+     "group": "dao",
+     "seal": "观道",
+     "stance": "无事自富"
+    }
+   ],
+   "format": "synthesis"
+  },
+  {
+   "id": "shifa",
+   "title": "师法与自得",
+   "division": "weixue",
+   "category": "工夫与学",
+   "concept": "师法与自得",
+   "question": "学问长进，是靠师承规矩把人「化」过来，还是靠自己涵泳体贴、自家得之？",
+   "turns": 13,
+   "status": "done",
+   "schools": [
+    {
+     "label": "荀子",
+     "group": "ru",
+     "seal": "观仁",
+     "stance": "隆师法"
+    },
+    {
+     "label": "孟子",
+     "group": "ru",
+     "seal": "观仁",
+     "stance": "自得"
+    },
+    {
+     "label": "阳明",
+     "group": "xin",
+     "seal": "观心",
+     "stance": "求之于心"
+    },
+    {
+     "label": "庄子",
+     "group": "dao",
+     "seal": "观道",
+     "stance": "不师成心"
+    }
+   ],
+   "format": "synthesis"
+  },
+  {
+   "id": "tonglei",
+   "title": "统类与推知",
+   "division": "weixue",
+   "category": "名实 · 言辩 · 知",
+   "concept": "统类与推类",
+   "question": "人怎么从已知推到未知——是靠贯通全体的「统类」以一驭万，还是靠比类取譬、一条条推出来？",
+   "turns": 13,
+   "status": "done",
+   "schools": [
+    {
+     "label": "荀子",
+     "group": "ru",
+     "seal": "观仁",
+     "stance": "壹统类"
+    },
+    {
+     "label": "墨辩",
+     "group": "mo",
+     "seal": "观兼",
+     "stance": "以类取予"
+    },
+    {
+     "label": "易传",
+     "group": "yijing",
+     "seal": "观象",
+     "stance": "触类而长"
+    }
+   ],
+   "format": "synthesis"
+  },
+  {
+   "id": "zhigong",
+   "title": "志功·动机与效果",
+   "division": "weixue",
+   "category": "工夫与学",
+   "concept": "志功",
+   "question": "评判一件事、一个人,该看他存的什么心,还是看他做出什么结果?",
+   "turns": 13,
+   "status": "done",
+   "schools": [
+    {
+     "label": "孟子",
+     "group": "ru",
+     "seal": "观仁",
+     "stance": "持志"
+    },
+    {
+     "label": "慧能",
+     "group": "fo",
+     "seal": "观空",
+     "stance": "功德在心地"
+    },
+    {
+     "label": "韩非",
+     "group": "fa",
+     "seal": "观法",
+     "stance": "课其功伐"
+    },
+    {
+     "label": "墨子",
+     "group": "mo",
+     "seal": "观兼",
+     "stance": "志功并观"
+    }
+   ],
+   "format": "synthesis"
+  },
+  {
+   "id": "duqun",
+   "title": "独与群",
+   "division": "zhidao",
+   "category": "伦理 · 义利 · 爱孝",
+   "concept": "独与群",
+   "question": "人之所以为人，成于能「群」而有分有义，还是成于能「独」而不待于外？",
+   "turns": 13,
+   "status": "done",
+   "schools": [
+    {
+     "label": "荀子",
+     "group": "ru",
+     "seal": "观仁",
+     "stance": "人能群"
+    },
+    {
+     "label": "庄子",
+     "group": "dao",
+     "seal": "观道",
+     "stance": "见独"
+    },
+    {
+     "label": "杨朱",
+     "group": "dao",
+     "seal": "观道",
+     "stance": "存我全生"
+    }
+   ],
+   "format": "synthesis"
   }
  ],
  "planned": []
