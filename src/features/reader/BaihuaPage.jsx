@@ -17,7 +17,9 @@ export default function BaihuaPage({ corpus }) {
   const isYijing = corpus === 'yijing'
   const isJingzhuan = isYijing && !!params.book   // 经传整页路由带 :book
   const slug = isJingzhuan ? params.book : isYijing ? 'hexagrams' : params.slug
-  const ch = Number(isJingzhuan ? params.chapter : isYijing ? params.id : params.chapter) || 1
+  // 章号一般是数字;诗级白话(诗经)用「组-序」如 1-6,Number() 会得 NaN,故非纯数字键原样透传
+  const rawCh = isJingzhuan ? params.chapter : isYijing ? params.id : params.chapter
+  const ch = /^\d+$/.test(String(rawCh ?? '')) ? Number(rawCh) : (rawCh || 1)
   const [data, setData] = useState(undefined)
   const [quoteOpen, setQuoteOpen] = useState(false)
   const site = SITE_MAP[corpus]
