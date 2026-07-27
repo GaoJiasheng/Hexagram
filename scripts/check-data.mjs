@@ -569,6 +569,31 @@ if (fs.existsSync(glossaryPath)) {
       const topic = (dbIndex.topics || []).find((tp) => tp.id === id)
       if (!topic) err(`debate ${id}: index.json 未登记`)
       else if (topic.turns !== turns.length) err(`debate ${id}: index turns(${topic.turns}) ≠ 实际 ${turns.length}`)
+      // 导读/逐句 gloss(均可选,老辩题不写不报错)。导读只补「真问题/词义分歧/这一驳为什么
+      // 驳得到」三件事,源文交给已有白话——故限长,越界就是又写成一篇长文、喧宾夺主了。
+      if (d.guide) {
+        if (!Array.isArray(d.guide)) err(`debate ${id}: guide 须是数组`)
+        else {
+          const gl = [...d.guide.map((b) => (b.type === 'terms'
+            ? (b.items || []).map((t) => `${t.t}${t.g}`).join('')
+            : b.text || '')).join('')].filter((c) => /[一-鿿]/.test(c)).length
+          if (gl < 500 || gl > 1500) err(`debate ${id}: 导读 ${gl} 字,应在 500–1500(目标 800–1200)`)
+          for (const b of d.guide) {
+            if (b.type === 'terms') {
+              if (!(b.items || []).length) err(`debate ${id}: 导读 terms 块无 items`)
+            } else if (!b.text) err(`debate ${id}: 导读段落缺 text`)
+            if (b.ref && chapterText(b.ref.corpus, b.ref.slug, b.ref.ch) === null) {
+              err(`debate ${id}: 导读 ref 指向不存在的章 ${b.ref.corpus}/${b.ref.slug}#${b.ref.ch}`)
+            }
+          }
+        }
+      }
+      for (const t of turns) {
+        if (!t.gloss) continue
+        const n = [...t.gloss].filter((c) => /[一-鿿]/.test(c)).length
+        if (n < 15 || n > 90) err(`debate ${id}: gloss ${n} 字,应在 15–90(目标 20–60)「${t.gloss.slice(0, 12)}…」`)
+        if (WIN_RE.test(t.gloss)) err(`debate ${id}: gloss 含评胜负字样`)
+      }
       for (const s of d.schools) {
         const prev = schoolKeyMap.get(s.key)
         if (prev && prev.group !== s.group) {

@@ -3381,6 +3381,27 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .debate-coda__tag { font-size: 0.74rem; color: var(--cinnabar); letter-spacing: 0.12em; margin-bottom: 8px; }
 .debate-coda__text { font-size: 0.92rem; line-height: 1.9; color: var(--ink-soft); margin: 0 0 12px; }
 .debate-coda__epigraph { font-size: 0.8rem; color: var(--ink-faint); margin: 0 0 14px; letter-spacing: 0.04em; }
+/* A·导读:折在题解下。收起时只是一行弱按钮,不与题解争视觉重量 */
+.debate-guide { margin: 14px auto 0; max-width: 620px; text-align: left; }
+.debate-guide__toggle { display: inline-flex; align-items: center; gap: 6px; padding: 3px 0; background: none; border: 0; cursor: pointer; font-size: 0.82rem; color: var(--ink-faint); font-family: var(--font-serif); }
+.debate-guide__toggle:hover { color: var(--cinnabar); }
+.debate-guide__chev { font-size: 0.7rem; }
+.debate-guide__body { margin-top: 10px; padding: 14px 16px; border-left: 2px solid var(--line); background: var(--paper-raised); border-radius: 0 8px 8px 0; }
+.debate-guide__p { font-size: 0.9rem; line-height: 1.85; color: var(--ink-soft); margin: 0 0 10px; }
+.debate-guide__p:last-child { margin-bottom: 0; }
+.debate-guide__ref { margin-left: 8px; font-size: 0.8rem; color: var(--cinnabar); text-decoration: none; white-space: nowrap; }
+.debate-guide__ref:hover { text-decoration: underline; }
+.debate-guide__terms { margin: 0 0 10px; }
+.debate-guide__term { display: flex; gap: 10px; padding: 4px 0; font-size: 0.88rem; line-height: 1.7; }
+.debate-guide__term dt { flex-shrink: 0; min-width: 3.2em; color: var(--cinnabar); font-family: var(--font-serif); }
+.debate-guide__term dd { margin: 0; color: var(--ink-soft); }
+
+/* B·逐句 gloss:折在论点下,收起时是一枚小钮——对辩本身仍是主角 */
+.debate-gloss { margin: 6px 0 0; }
+.debate-gloss__toggle { padding: 2px 9px; background: none; border: 1px dashed var(--line); border-radius: 99px; cursor: pointer; font-size: 0.74rem; color: var(--ink-faint); }
+.debate-gloss__toggle:hover { border-color: var(--cinnabar); color: var(--cinnabar); }
+.debate-gloss__text { margin: 8px 0 0; padding-left: 10px; border-left: 2px solid var(--line); font-size: 0.84rem; line-height: 1.8; color: var(--ink-soft); }
+
 /* 收束处「接着深读」:辩完给一条向内的路(白话深读/义理专题),不然读者只能退回列表 */
 .debate-deeper { margin: 16px 0 18px; padding-top: 14px; border-top: 1px solid var(--line); }
 .debate-deeper__label { display: block; font-size: 0.78rem; color: var(--ink-faint); margin-bottom: 8px; letter-spacing: 0.06em; }

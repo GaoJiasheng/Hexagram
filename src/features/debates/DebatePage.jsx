@@ -9,6 +9,66 @@ import concepts from '../../data/concepts.json'
 // 概念页只收了少数几个跨派聚类;命中才给「义理专题」出链,不硬凑
 const CONCEPT_TERMS = new Set(concepts.clusters.map((c) => c.term))
 
+// 引文/导读指向的阅读路由。易经分两路(卦/经传),其余走各站 home + slug + 章。
+function readHref({ corpus, slug, ch }) {
+  if (corpus === 'yijing') return slug === 'hexagrams' ? `/hexagram/${ch}` : `/classics/${slug}/${ch}`
+  const b = bookBySlug(slug)
+  return b ? chapterHref(b, ch) : null
+}
+
+// A·导读:折在题解之下,默认收起——它是给看不懂「这一驳为什么驳得到」的人备的,
+// 不该在读者还没看对辩时就占版面(喧宾夺主正是要避的)。
+function Guide({ guide }) {
+  const [open, setOpen] = useState(false)
+  if (!guide?.length) return null
+  return (
+    <div className="debate-guide">
+      <button className="debate-guide__toggle" onClick={() => setOpen(!open)} aria-expanded={open}>
+        <span className="debate-guide__chev" aria-hidden="true">{open ? '▾' : '▸'}</span>
+        导读 · 这场在争什么
+      </button>
+      {open && (
+        <div className="debate-guide__body">
+          {guide.map((b, i) => {
+            if (b.type === 'terms') {
+              return (
+                <dl key={i} className="debate-guide__terms">
+                  {(b.items || []).map((t, j) => (
+                    <div key={j} className="debate-guide__term">
+                      <dt>{t.t}</dt><dd>{t.g}</dd>
+                    </div>
+                  ))}
+                </dl>
+              )
+            }
+            const href = b.ref ? readHref(b.ref) : null
+            return (
+              <p key={i} className="debate-guide__p">
+                {b.text}
+                {href && <Link to={href} className="debate-guide__ref">→ {b.ref.label}</Link>}
+              </p>
+            )
+          })}
+        </div>
+      )}
+    </div>
+  )
+}
+
+// B·逐句 gloss:折在论点之下。默认收起,免得把「诸家各执一词」的对辩读成带旁白的讲解。
+function Gloss({ text }) {
+  const [open, setOpen] = useState(false)
+  if (!text) return null
+  return (
+    <div className="debate-gloss">
+      <button className="debate-gloss__toggle" onClick={() => setOpen(!open)} aria-expanded={open}>
+        {open ? '收起' : '这一句在驳什么'}
+      </button>
+      {open && <p className="debate-gloss__text">{text}</p>}
+    </div>
+  )
+}
+
 // 圆桌节点坐标:n 家匀布于圆周(自顶部顺时针)
 function nodePositions(n, cx, cy, r) {
   return Array.from({ length: n }, (_, i) => {
@@ -95,6 +155,7 @@ export default function DebatePage() {
         <h1 className="debate-title">{d.title}</h1>
         <p className="debate-question">{d.question}</p>
         <p className="debate-framing text-soft">{d.framing}</p>
+        <Guide guide={d.guide} />
       </div>
 
       {/* 圆桌布阵 + 论辩图谱(合一):印章环坐,诘难成朱线 */}
@@ -161,6 +222,7 @@ export default function DebatePage() {
                   {t.rebut && <span className="debate-turn__rebut">驳 · {byKey[t.rebut]?.label}</span>}
                 </div>
                 <p className="debate-turn__point">{t.point}</p>
+                <Gloss text={t.gloss} />
                 <div className="debate-turn__cite">
                   <span className="debate-turn__quote">「{t.cite.quote}」</span>
                   {srcHref && <Link to={srcHref} className="debate-turn__src">{t.cite.label} · 读原文 →</Link>}
