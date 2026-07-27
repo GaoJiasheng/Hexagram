@@ -77,7 +77,10 @@ export default function DebatePage() {
       </div>
 
       {/* 圆桌布阵 + 论辩图谱(合一):印章环坐,诘难成朱线 */}
-      <svg className="debate-graph" viewBox="0 0 400 300" role="img" aria-label="论辩图谱:各家环坐,诘难关系以朱线相连">
+      {/* viewBox 高度按**实际最低标签**算,不写死:标签在节点 y+42(家名)、y+58(立场),
+          再留 8 余量。原本写死 300 —— 4/5 家时最底那圈节点在 y=268,立场小字落到 326、
+          出了画布被控制条压掉;而写死成 336 又会让 3 家(最低节点才 213)白多出一截。 */}
+      <svg className="debate-graph" viewBox={`0 0 400 ${Math.ceil(Math.max(...pos.map((p) => p.y)) + 66)}`} role="img" aria-label="论辩图谱:各家环坐,诘难关系以朱线相连">
         <defs>
           <marker id="dbt-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
             <path d="M0,0 L8,4 L0,8 Z" style={{ fill: 'var(--cinnabar)' }} />
