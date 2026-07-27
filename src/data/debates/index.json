@@ -2453,6 +2453,178 @@
     }
    ],
    "format": "synthesis"
+  },
+  {
+   "id": "jiaohua",
+   "title": "教与化",
+   "division": "weixue",
+   "category": "工夫与学",
+   "concept": "教化",
+   "question": "把一个人变好，靠学校礼乐、靠不言之教、靠法令吏师，还是靠赏善罚暴？",
+   "turns": 15,
+   "status": "done",
+   "schools": [
+    {
+     "label": "孟子",
+     "group": "ru",
+     "seal": "观仁",
+     "stance": "设教明伦"
+    },
+    {
+     "label": "荀子",
+     "group": "ru",
+     "seal": "观仁",
+     "stance": "化性起伪"
+    },
+    {
+     "label": "墨子",
+     "group": "mo",
+     "seal": "观兼",
+     "stance": "施教赏罚"
+    },
+    {
+     "label": "韩非",
+     "group": "fa",
+     "seal": "观法",
+     "stance": "以法为教"
+    },
+    {
+     "label": "庄子",
+     "group": "dao",
+     "seal": "观道",
+     "stance": "不言之教"
+    }
+   ],
+   "format": "synthesis"
+  },
+  {
+   "id": "rangzheng",
+   "title": "让与争",
+   "division": "zhidao",
+   "category": "伦理 · 义利 · 爱孝",
+   "concept": "让与争",
+   "question": "人为什么争?让能不能止争?",
+   "turns": 14,
+   "status": "done",
+   "schools": [
+    {
+     "label": "孟子",
+     "group": "ru",
+     "seal": "观仁",
+     "stance": "辞让在心"
+    },
+    {
+     "label": "荀子",
+     "group": "ru",
+     "seal": "观仁",
+     "stance": "让由礼出"
+    },
+    {
+     "label": "老子",
+     "group": "dao",
+     "seal": "观道",
+     "stance": "不争故全"
+    },
+    {
+     "label": "慎到",
+     "group": "fa",
+     "seal": "观法",
+     "stance": "分定则息"
+    },
+    {
+     "label": "韩非",
+     "group": "fa",
+     "seal": "观法",
+     "stance": "争起于寡"
+    }
+   ],
+   "format": "synthesis"
+  },
+  {
+   "id": "shijun",
+   "title": "事君之道",
+   "division": "zhidao",
+   "category": "治道与政治",
+   "concept": "事君",
+   "question": "一旦出仕,君臣之义是有条件的交换、无所逃的绝对,还是根本只是利害算计?",
+   "turns": 14,
+   "status": "done",
+   "schools": [
+    {
+     "label": "孔子",
+     "group": "ru",
+     "seal": "观仁",
+     "stance": "以道事君"
+    },
+    {
+     "label": "孟子",
+     "group": "ru",
+     "seal": "观仁",
+     "stance": "视臣如何"
+    },
+    {
+     "label": "庄子",
+     "group": "dao",
+     "seal": "观道",
+     "stance": "无所逃"
+    },
+    {
+     "label": "二程",
+     "group": "ru",
+     "seal": "观仁",
+     "stance": "天下定理"
+    },
+    {
+     "label": "韩非",
+     "group": "fa",
+     "seal": "观法",
+     "stance": "上下百战"
+    }
+   ],
+   "format": "synthesis"
+  },
+  {
+   "id": "yong",
+   "title": "勇之为勇",
+   "division": "xinxing",
+   "category": "性与心",
+   "concept": "勇",
+   "question": "什么才算勇?不退缩是勇,不逞强是勇,还是唯义所在才是勇?",
+   "turns": 14,
+   "status": "done",
+   "schools": [
+    {
+     "label": "孔子",
+     "group": "ru",
+     "seal": "观仁",
+     "stance": "义为勇本"
+    },
+    {
+     "label": "孟子",
+     "group": "ru",
+     "seal": "观仁",
+     "stance": "自反而缩"
+    },
+    {
+     "label": "老子",
+     "group": "dao",
+     "seal": "观道",
+     "stance": "勇于不敢"
+    },
+    {
+     "label": "韩非",
+     "group": "fa",
+     "seal": "观法",
+     "stance": "国定其名"
+    },
+    {
+     "label": "太公",
+     "group": "bing",
+     "seal": "观兵",
+     "stance": "大勇不勇"
+    }
+   ],
+   "format": "synthesis"
   }
  ],
  "planned": []
