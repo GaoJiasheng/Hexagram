@@ -138,6 +138,19 @@ const RICHSPEC = [
 // ── corpus 加厚档(owner:佛经按易经标准——更厚、更多图、更多生活场景;短章逐句、长章摘录精华)──
 const THICK = new Set([])   // 整组走加厚档的 corpus(空:当前无整组加厚;按书加厚见 THICK_BOOKS)
 // 按「书」加厚(只某 corpus 里的部分书走加厚,其余书普通档)——owner 2026-06-22:道只道德经、纵横只鬼谷子(战国策选普通档)
+// 逐书补充的写法约束(在组红线之外,针对该书特有的坑)。键为 <corpus>/<slug>。
+const BOOK_STYLE = {
+  'dao/wuzhenpian': [
+    '【本书特有】《悟真篇》是**内丹**诗词集,通篇「铅汞、龙虎、鼎炉、抽添、火候、金丹」全是隐语:',
+    '- 隐语一律**照字面直译 + 说明它是丹家术语**,再讲这套比喻在说什么样的身心工夫理路;',
+    '  **绝不写成可照做的步骤**(几时行火、如何搬运、坐向时辰一律不写)——道组红线「不演内丹工法」在本书最吃紧。',
+    '- 不下「成仙/长生/得道」的承诺性断语;张伯端讲的「金丹」当作思想史与比喻系统来读。',
+    '- 底本如实:本站只取**张伯端本人所著六部分**(序 + 七言四韵 + 七言绝句六十四首 + 西江月 + 绝句五首 + 读周易参同契);',
+    '  后人注家(翁葆光注本)所附「丹房宝鉴之图」等不在其内,不要引。',
+    '- 诗词体:一首一首讲,别把六十四首拉成流水账;挑得住话的深讲,其余并讲带过。',
+  ].join('\n'),
+}
+
 const THICK_BOOKS = new Set(['dao/daodejing', 'zong/guiguzi', 'xin/chuanxilu', 'xin/daxuewen', 'fo/xinjing', 'fo/tanjing', 'fo/jingangjing'])
 const IS_THICK = THICK.has(corpus) || THICK_BOOKS.has(`${corpus}/${slug}`)
 const THICK_EXTRA = [
@@ -247,7 +260,8 @@ const draftPrompt = (u) => {
   const approach = !thick ? '' : longCh
     ? '\n\n【本章较长——分段摘录】把本章**分成几段**,每段挑出**精华/关键的句子**(quote)逐一深读解释;次要的叙述/重复句可并讲带过,**不必逐句翻每一句**。引文仍须精确子串。'
     : '\n\n【本章较短——全文逐句】**全文逐句展开**:每个原文句子都引(quote)并讲透,不漏句。'
-  return `你在为研习站写《${bookTitle}·${u.title}》的「白话」整章深读。${RED[corpus] || ''}\n\n${spec}\n\n${figspec}\n\n${RICHSPEC}${approach}\n\n` +
+  const bookStyle = BOOK_STYLE[`${corpus}/${slug}`] ? `\n\n${BOOK_STYLE[`${corpus}/${slug}`]}` : ''
+  return `你在为研习站写《${bookTitle}·${u.title}》的「白话」整章深读。${RED[corpus] || ''}${bookStyle}\n\n${spec}\n\n${figspec}\n\n${RICHSPEC}${approach}\n\n` +
     `第一步:用 Read 读 ${FILE(corpus, slug)},找到 chapters 里 no===${u.no} 的那一章(paragraphs 为原文段,每段含 original 与 translation)。以这章原文为底成文。\n\n` +
     `篇幅:${band}。\n\n按 schema 产出一篇白话文章:\n` +
     `- title:"白话${bookTitle} · ${u.title}";subtitle:一句副题;centralIdea:一句话中心思想。\n` +
@@ -256,7 +270,7 @@ const draftPrompt = (u) => {
     `\n只返回结构化结果。`
 }
 
-const verifyPrompt = (u, draft) => IS_HEX ? yijingVerify(u, draft) : IS_JZ ? jzVerify(u, draft) : `校对修正《${bookTitle}·${u.title}》白话草稿,返回修正后完整结构。${RED[corpus] || ''}\n\n` +
+const verifyPrompt = (u, draft) => IS_HEX ? yijingVerify(u, draft) : IS_JZ ? jzVerify(u, draft) : `校对修正《${bookTitle}·${u.title}》白话草稿,返回修正后完整结构。${RED[corpus] || ''}${BOOK_STYLE[`${corpus}/${slug}`] ? `\n${BOOK_STYLE[`${corpus}/${slug}`]}` : ''}\n\n` +
   `先 Read ${FILE(corpus, slug)} 中 no===${u.no} 的章核对。草稿:\n${draft}\n\n` +
   `逐项改正:\n- 每个 quote.original 必须是该章某原文段的精确连续子串,否则改对或删;translation 与站内译文一致。\n` +
   `- 守红线:删去违红线的措辞(${corpus === 'zhongyi' ? '诊疗/功效用法用量/疗效断语' : (corpus === 'moulue' && !MOULUE_REAL_BOOKS.has(slug)) ? '为伪书张目/教施用' : corpus === 'moulue' ? '权术施用教程/成功学鸡汤式发挥' : corpus === 'fo' ? '果报/往生劝信' : '鸡汤/成功学/权术/政治影射'})。\n` +
