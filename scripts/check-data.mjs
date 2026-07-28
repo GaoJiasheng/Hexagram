@@ -633,6 +633,14 @@ if (fs.existsSync(glossaryPath)) {
     parts.push(q.xugua, q.zagua)
     return parts.filter(Boolean).join('')
   }
+  const pieceCache = {}
+  const bookPieces = (corpus, slug) => {
+    if (!(corpus in pieceCache)) {
+      const f = path.join(ROOT, `src/data/${corpus}/texts.json`)
+      pieceCache[corpus] = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : []
+    }
+    return pieceCache[corpus].find((b) => b.slug === slug)?.pieces
+  }
   const chapterText = (corpus, slug, ch) => {
     const k = `${corpus}/${slug}`
     if (corpus === 'yijing' && slug === 'hexagrams') {   // 64 卦;经传 slug 落下方 corpus 分支(classics/<slug>.json 通用)
@@ -655,6 +663,9 @@ if (fs.existsSync(glossaryPath)) {
     if (poem) {
       const c = book.chapters.find((x) => x.no === Number(poem[1]))
       if (!c) return null
+      // 传习录一类:无《诗题》可认,故由 texts.json 的 pieces 显式给出区间(人工策展)。
+      const piece = bookPieces(corpus, slug)?.find((x) => x.key === String(ch))
+      if (piece) return c.paragraphs.slice(piece.from, piece.to).map((p) => p.original).join('')
       const isTitle = (p) => /^《[^》]+》$/.test(p.original.trim())
       const heads = c.paragraphs.map((p, i) => (isTitle(p) ? i : -1)).filter((i) => i >= 0)
       const start = heads[Number(poem[2]) - 1]

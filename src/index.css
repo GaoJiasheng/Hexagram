@@ -3534,6 +3534,13 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .poem-head:first-child { margin-top: 4px; }
 .poem-head__title { font-family: var(--font-serif); font-size: 1.16rem; color: var(--ink); }
 .poem-head__ord { margin-left: 8px; font-size: .74rem; color: var(--ink-faint); }
+/* 条头(传习录一类一章多条的书):原文无标题段,故由 pieces 人工策展、在条首段之前插一行 */
+.piece-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 34px 0 14px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+.piece-head:first-child { margin-top: 4px; }
+.piece-head__title { font-family: var(--font-serif); font-size: 1.1rem; color: var(--ink); }
+.piece-head__title::before { content: '◇'; margin-right: 7px; color: var(--cinnabar); font-size: .8em; }
+@media (max-width: 640px) { .piece-head { flex-wrap: wrap; gap: 6px; } }
+
 .baihua-pill { flex-shrink: 0; padding: 2px 11px; border: 1px solid var(--cinnabar); border-radius: 99px; background: transparent; color: var(--cinnabar); font-size: .76rem; cursor: pointer; transition: background .16s ease, color .16s ease; }
 .baihua-pill:hover { background: var(--cinnabar); color: var(--paper-raised); }
 @media (max-width: 640px) { .poem-head { flex-wrap: wrap; gap: 6px; } }

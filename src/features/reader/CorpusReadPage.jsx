@@ -70,6 +70,11 @@ export default function CorpusReadPage({ corpus }) {
     let n = 0
     curChapter.paragraphs.forEach((p, i) => { if (isPoemTitle(p)) poemOrdinals[i] = ++n })
   }
+  // 一章多条的书(传习录:一卷数百段,名条无标题可认)。区间由 texts.json 的 pieces 人工策展,
+  // 在该条首段之前插条头 + 挂条级白话入口;段号照常从 1 编(不像诗经要跳过诗题段)。
+  const pieceHeads = {}   // 段下标 → piece
+  for (const pc of meta.pieces || []) { if (pc.ch === chapter) pieceHeads[pc.from] = pc }
+
   const poemParaLabel = (no, i) => {
     if (!curChapter) return null
     let n = 0
@@ -101,6 +106,19 @@ export default function CorpusReadPage({ corpus }) {
             <BaihuaBlock
               corpus={corpus} slug={slug} chapter={`${no}-${ord}`} variant="inline"
               bookTitle={meta.title} chapterLabel={`${curChapter?.title || ''} · ${title}`}
+            />
+          </>
+        )
+      } : undefined}
+      renderPieceHead={meta.pieces ? (no, i) => {
+        const pc = pieceHeads[i]
+        if (!pc) return null
+        return (
+          <>
+            <span className="piece-head__title">{pc.title}</span>
+            <BaihuaBlock
+              corpus={corpus} slug={slug} chapter={pc.key} variant="inline"
+              bookTitle={meta.title} chapterLabel={`${curChapter?.title || ''} · ${pc.title}`}
             />
           </>
         )

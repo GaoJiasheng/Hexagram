@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { Fragment, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import ClassicText from '../yijing/components/ClassicText.jsx'
 import QuoteCard from './QuoteCard.jsx'
 import { useSettings } from '../yijing/SettingsContext.jsx'
@@ -49,6 +49,7 @@ export default function ClassicReader({
   renderYanyi = () => null,
   renderBaihua = () => null,   // 白话模块入口条（design-v22），挂在章题之下
   renderPoemHead = () => null, // 一章多首的书(诗经):诗题段升格为诗头 + 诗级白话入口
+  renderPieceHead = () => null, // 一章多条的书(传习录):无标题段可认,故在某段之前插入「条头」
   paraLabel = () => null,
   header = null,
   sectionUnit = '章',
@@ -216,6 +217,18 @@ export default function ClassicReader({
     // 诗题段(诗经《关雎》一类)升格为「诗头」:不占段号、自带白话入口。返回 null 则走普通段落。
     const head = renderPoemHead(no, i, p)
     if (head) return <div key={i} id={`seg-${no}-${i}`} className="poem-head">{head}</div>
+    // 条头(传习录一类):原文无标题段,故在该条首段「之前」插一个头,段落本身照常渲染。
+    const pieceHead = renderPieceHead(no, i)
+    if (pieceHead) return (
+      <Fragment key={`pc${i}`}>
+        <div className="piece-head">{pieceHead}</div>
+        {ParaBody(no, p, i)}
+      </Fragment>
+    )
+    return ParaBody(no, p, i)
+  }
+
+  const ParaBody = (no, p, i) => {
     const label = paraLabel(no, i)
     const text = <ClassicText original={p.original} translation={p.translation} anchors={getAnchors(no, i)} verse={verse} />
     if (!markCtx) {
