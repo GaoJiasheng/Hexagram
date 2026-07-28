@@ -3215,6 +3215,11 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .master-portal__bond-node { display: flex; align-items: center; justify-content: center; width: 27px; height: 27px; border: 1px solid var(--line); border-radius: 50%; background: var(--paper-raised); color: var(--ink-soft); font-size: 0.85rem; font-style: normal; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
 /* 等宽等高网格:所有块(含易经/道藏)同一固定宽,彻底齐整 */
 .master-portal__cards { display: grid; grid-template-columns: repeat(3, var(--portal-card-w)); gap: 16px; justify-content: center; margin: 0 auto; }
+/* 601–759px(平板竖屏/窄窗)三列塞不下(222×3+16×2+边距 ≈ 738)会横向溢出、右列被裁。
+   原先只有 3 列与 ≤600 单列两档,中间这段是缺口。补两列档,不动两端。 */
+@media (min-width: 601px) and (max-width: 759px) {
+  .master-portal__cards { grid-template-columns: repeat(2, var(--portal-card-w)); }
+}
 .master-portal__card { --card-accent: var(--ink-soft); width: var(--portal-card-w); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 13px; min-height: 172px; padding: 26px 20px; border: 1px solid var(--line); border-radius: 11px; background: var(--paper-raised); text-decoration: none; transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; }
 .master-portal__card:hover { border-color: var(--card-accent); transform: translateY(-3px); box-shadow: 0 8px 22px -12px color-mix(in srgb, var(--card-accent) 55%, transparent); }
 .master-portal__seals { display: flex; gap: 8px; }
