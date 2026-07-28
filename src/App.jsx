@@ -2,6 +2,8 @@ import { BrowserRouter, NavLink, Route, Routes, useLocation, useNavigate } from 
 import { useState, useEffect, useCallback, useRef, lazy, Suspense } from 'react'
 import { SettingsProvider } from './features/yijing/SettingsContext.jsx'
 import { AuthProvider } from './features/auth/AuthContext.jsx'
+import { useAuth } from './features/auth/AuthContext.jsx'
+import PixelAvatar from './features/auth/PixelAvatar.jsx'
 import ErrorBoundary from './features/ErrorBoundary.jsx'
 import { siteForPath, activeGroup, sitesInGroup, HOST_GROUPS, MASTER_PORTAL_PATH } from './sites/registry.js'
 import { registerBookShortcut } from './native/appShortcuts.js'
@@ -115,7 +117,8 @@ const switchTargetName = (site) => site.portalTitle.replace(/(研读|研习)$/, 
 // 只在窄屏生效——CSS 媒体查询兜底,宽屏即使算出 hidden 也不会有视觉变化。
 const NAV_HIDE_THRESHOLD = 8, NAV_TOP_SAFE = 12, NAV_BOTTOM_SAFE = 24
 
-function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings }) {
+function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings, neutral = false }) {
+  const { user } = useAuth()
   const [scrolled, setScrolled] = useState(false)
   const [navHidden, setNavHidden] = useState(false)
   const lastY = useRef(0)
@@ -139,13 +142,18 @@ function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings }) {
   }, [])
 
   return (
-    <nav className={`app-nav ${scrolled ? 'app-nav--scrolled' : ''} ${navHidden ? 'app-nav--hidden' : ''}`} role="navigation" aria-label="主导航">
+    <nav className={`app-nav ${neutral ? 'app-nav--neutral' : ''} ${scrolled ? 'app-nav--scrolled' : ''} ${navHidden ? 'app-nav--hidden' : ''}`} role="navigation" aria-label="主导航">
       {/* 左上角 logo → 诸学总门户(公开总入口,全站可达;列全部分组) */}
-      <NavLink to={MASTER_PORTAL_PATH} className="app-nav__brand" aria-label="诸学门户·全部分组" title="诸学门户 · 全部分组">
-        <span className="brand-seal" aria-hidden="true">{module.brand}</span>
+      <NavLink
+        to={neutral ? '/' : MASTER_PORTAL_PATH}
+        className="app-nav__brand"
+        aria-label={neutral ? '观象 · 首页' : '诸学门户·全部分组'}
+        title={neutral ? '观象 · 首页' : '诸学门户 · 全部分组'}
+      >
+        <span className="brand-seal" aria-hidden="true">{neutral ? '观象' : module.brand}</span>
       </NavLink>
       <div className="app-nav__links">
-        {module.nav.map(({ to, label }) => (
+        {!neutral && module.nav.map(({ to, label }) => (
           <NavLink
             key={to}
             to={to}
@@ -174,7 +182,18 @@ function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings }) {
             <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
           </svg>
         </button>
-        {module.hasSearch && (
+        {/* 登录后单独出头像:切换账户/退出不必先猜「它在设置里」。未登录只有齿轮(内含登录) */}
+        {user && (
+          <button
+            className="nav-icon-btn nav-avatar-btn"
+            onClick={onSettings}
+            aria-label={`账户 · ${user.displayName}`}
+            title={`${user.displayName} · 账户与设置`}
+          >
+            <PixelAvatar seed={user.avatarSeed} size={22} />
+          </button>
+        )}
+        {!neutral && module.hasSearch && (
           <NavLink
             to={module.key === 'yijing' ? '/me' : `${module.home}/me`}
             className={({ isActive }) => `nav-icon-btn ${isActive ? 'active' : ''}`}
@@ -184,7 +203,7 @@ function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings }) {
             ☯
           </NavLink>
         )}
-        {otherSite ? (
+        {neutral ? null : otherSite ? (
           // 恰两站的组(易道):直接互切到另一站,钮上显目标站名(道藏 ⇄ / 易经 ⇄)
           <NavLink to={otherSite.home} className="module-switch" title={`切到${switchTargetName(otherSite)}`}>
             {switchTargetName(otherSite)} ⇄
@@ -302,7 +321,8 @@ function AppContent() {
 
   return (
     <div className="app-shell" data-site={isPortal ? 'portal' : module.key}>
-      {!isPortal && <Nav module={module} canSwitch={canSwitch} otherSite={otherSite} onSearch={openSearch} onPortal={openPortal} onSettings={openSettings} />}
+      {/* 中立枢纽也要能改主题/登录/搜索——这些本就是全局功能,不属于任何分站,故给一条精简顶栏(印+搜索+设置+头像) */}
+      <Nav module={module} canSwitch={canSwitch} otherSite={otherSite} onSearch={openSearch} onPortal={openPortal} onSettings={openSettings} neutral={isPortal} />
       <main className="app-main page-fade-in">
         <ErrorBoundary key={location.pathname}>
         <Suspense fallback={<div className="route-loading" aria-label="加载中">⋯</div>}>

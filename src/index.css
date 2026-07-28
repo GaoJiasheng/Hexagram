@@ -189,8 +189,12 @@ button { cursor: pointer; font-family: var(--font-serif); }
   border-bottom: 1px solid var(--line);
   transition: backdrop-filter 0.2s;
 }
-/* 门户/中立页(无 app-nav,如争鸣/义理专题)顶部也让出安全区 */
-.app-shell[data-site="portal"] .app-main { padding-top: env(safe-area-inset-top); }
+/* 中立页(门户/争鸣/书房/义理专题)的精简顶栏:只留全局功能(搜索/设置/账户),
+   不出分站导航、我的、站点切换——门户不属于任何组,列谁的链接都不对。
+   安全区由 .app-nav 自带(height/padding 已含 env(safe-area-inset-top)),故 main 不再重复让位。 */
+.app-nav--neutral .app-nav__links { flex: 1; }
+.nav-avatar-btn { padding: 0; display: inline-flex; align-items: center; justify-content: center; }
+.nav-avatar-btn .pixel-avatar { border-radius: 4px; display: block; }
 
 .app-nav--scrolled {
   backdrop-filter: blur(8px);
