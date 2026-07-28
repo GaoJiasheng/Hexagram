@@ -4559,6 +4559,243 @@
    }
   ]
  },
+ "3-10": {
+  "title": "白话《谷风》",
+  "subtitle": "今天道贺用的「新婚燕尔」，出处是这首诗里一句最凉的话",
+  "centralIdea": "《邶风·谷风》是一个被弃者从头说到尾的长篇怨辞：六章八句，一栏写自己怎样黾勉持家、患难与共，一栏写对方怎样凶怒相待、喜新厌旧。它是《诗经》里篇幅最重的弃逐之辞之一，也是留下现成话最多的一首——「新婚燕尔」「采及葑菲」「泾渭分明」「匍匐之救」都从这里化出，其中「宴尔新昏」由怨语翻成贺词，是汉语里最彻底的一次语义反转。诗旨上，《毛诗序》读作刺卫国夫妇失道、风俗败坏，今人多径读为被弃者的自诉；说话人究竟是已被送出门的追述，还是尚未离家的怨诉，诗中时序两可，历来亦有分歧。本篇如实并陈，不作判定。",
+  "blocks": [
+   {
+    "type": "lead",
+    "text": "有人结婚，我们常说一句「新婚燕尔」。这四个字听起来喜气洋洋，谁也不会多想。可它的出处，是《诗经》里一位被撇下的人说的话——那人站在门外，看着屋里的宴席，说了句「宴尔新昏」。三千年间，一句最凉的话，被磨成了一句最热闹的贺词。"
+   },
+   {
+    "type": "p",
+    "text": "这首诗叫《谷风》，收在《邶风》里。它在《诗经》中是有分量的一篇：国风多是短章，三五章、几十个字就唱完，而《谷风》整整六章，每章八句，一个人从头说到尾，中间没有换过口。站内底本按四句一段排列，所以你在正文里会看到十二段——那是排版的切法，诗本身是六章。"
+   },
+   {
+    "type": "p",
+    "text": "这一篇要讲三件事：这六章到底在说什么，字面上有哪几处最容易读岔；它凭什么留下了四条沿用至今的现成话，其中一条还把意思彻底调了个头；以及历来对这首诗的两种读法，各自的道理在哪里。"
+   },
+   {
+    "type": "h2",
+    "text": "先看骨架：一张两栏的对照表"
+   },
+   {
+    "type": "quote",
+    "original": "习习谷风，以阴以雨。黾勉同心，不宜有怒。",
+    "translation": "习习吹拂的谷风，带来阴云和雨。夫妻本该同心协力，不应当动怒。"
+   },
+   {
+    "type": "p",
+    "text": "「习习」形容风连绵不断地吹，是通行的训释。「谷风」两字，站内注疏给了两说：一说是东风，一说是出自山谷之风，并指出它在这里带着比喻——本该和顺的风，转成了阴雨与暴怒。「黾勉」读作 mǐn miǎn，是尽力、勉力的样子；这两个字在诗里出现两次，第二次是「何有何亡，黾勉求之」，可见说话人反复要交代的，就是自己出过多少力。"
+   },
+   {
+    "type": "p",
+    "text": "读长诗容易读乱，但《谷风》的结构其实极清楚：它从头到尾在做同一件事——把两栏摆在一起。左边一栏是「我做了什么」，右边一栏是「你怎么待我」。每一章都往这两栏里各填一条，填了六遍。"
+   },
+   {
+    "type": "figure",
+    "ftype": "对比图",
+    "svg": "<svg viewBox=\"0 0 780 366\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>谷风的对照骨架</title><text x=\"390\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">全诗是一张两栏的对照表</text><line x1=\"56\" y1=\"52\" x2=\"724\" y2=\"52\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"205\" y=\"82\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\" font-weight=\"600\">我这一栏</text><text x=\"575\" y=\"82\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\" font-weight=\"600\">你那一栏</text><line x1=\"390\" y1=\"94\" x2=\"390\" y2=\"336\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"205\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">黾勉同心</text><text x=\"205\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">尽力操持，家里有的没的都去张罗</text><text x=\"575\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">有洸有溃</text><text x=\"575\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">又凶又怒，劳苦的事都推过来</text><line x1=\"56\" y1=\"168\" x2=\"724\" y2=\"168\" style=\"stroke:var(--line)\" stroke-dasharray=\"2 4\"/><text x=\"205\" y=\"198\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">匍匐救之</text><text x=\"205\" y=\"222\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">别人有难，爬也要爬过去帮</text><text x=\"575\" y=\"198\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">反以我为雠</text><text x=\"575\" y=\"222\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">好意被挡回来，像货卖不出去</text><line x1=\"56\" y1=\"240\" x2=\"724\" y2=\"240\" style=\"stroke:var(--line)\" stroke-dasharray=\"2 4\"/><text x=\"205\" y=\"270\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">及尔颠覆</text><text x=\"205\" y=\"294\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">从前穷困，一起扛过来</text><text x=\"575\" y=\"270\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">比予于毒</text><text x=\"575\" y=\"294\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">如今安稳，把我看成毒物</text><line x1=\"56\" y1=\"312\" x2=\"724\" y2=\"312\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"390\" y=\"338\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">六章八句，来回摆的都是这两栏</text></svg>",
+    "caption": "《谷风》的对照骨架：一栏写自己如何尽力，一栏写对方如何相待，六章反复填充这两栏。字词训释参本篇站内注疏。"
+   },
+   {
+    "type": "h2",
+    "text": "「宴尔新昏」：一句贺词的来历"
+   },
+   {
+    "type": "quote",
+    "original": "谁谓荼苦，其甘如荠。宴尔新昏，如兄如弟。",
+    "translation": "谁说苦菜味苦？比起我心中的愁苦，它竟甘甜如荠菜。你和新婚的妻子欢宴，亲密得如同兄弟。"
+   },
+   {
+    "type": "p",
+    "text": "先扫字词。「荼」读 tú，是苦菜；「荠」读 jì，是荠菜，味甘甜——这两条都收在站内注疏里。「昏」通「婚」，古书里婚礼多在黄昏行事，所以本写作「昏」，后来才另造「婚」字。「宴」在这里是欢宴、安乐。"
+   },
+   {
+    "type": "p",
+    "text": "前两句是《诗经》里有名的反衬：苦菜够苦了吧？可我尝着它竟像荠菜一样甜。不是苦菜变了味，是嘴里另有一样更苦的东西压着。这个写法的高明处在于，它一个「苦」字也没往自己身上安，只借一棵野菜作了个对照。"
+   },
+   {
+    "type": "p",
+    "text": "接着就是那四个字：「宴尔新昏」。它在全诗出现了三次——第一次说你们亲密如兄弟，第二次说你们不屑再理我，第三次说你们欢宴，却把我留下来对付穷日子。三次叠用，一次比一次凉。这是《诗经》「重章叠句」的常规写法：同一句原样重来，周围换几个字，情绪就往下压一层。"
+   },
+   {
+    "type": "figure",
+    "ftype": "古今义对比",
+    "svg": "<svg viewBox=\"0 0 760 316\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>宴尔新昏的古今义对比</title><text x=\"380\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">同样四个字，一句怨语变成一句贺词</text><line x1=\"380\" y1=\"56\" x2=\"380\" y2=\"296\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"192\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"15\">诗里的「宴尔新昏」</text><text x=\"192\" y=\"128\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"19\">你和新人正欢宴</text><text x=\"192\" y=\"162\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">说话的是被撇下的那个人</text><text x=\"192\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">全诗三见，一次比一次凉</text><text x=\"192\" y=\"218\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">语气：怨</text><text x=\"192\" y=\"268\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"30\">怨</text><text x=\"568\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"15\">今天的「新婚燕尔」</text><text x=\"568\" y=\"128\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"19\">祝新人甜蜜和美</text><text x=\"568\" y=\"162\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">说话的是道贺的旁人</text><text x=\"568\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">写作「燕尔」，字面也换了</text><text x=\"568\" y=\"218\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">语气：贺</text><text x=\"568\" y=\"268\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"30\">贺</text></svg>",
+    "caption": "「宴尔新昏」由怨语转为贺词「新婚燕尔」：说话人的位置、语气与用字全都换了。"
+   },
+   {
+    "type": "callout",
+    "tone": "warn",
+    "label": "别急着说用错了",
+    "items": [
+     "知道了出处，并不等于今天说「新婚燕尔」就是用错。词语脱离本文另起一生，是汉语里极常见的事：一句话被人反复引用，久而久之只剩下字面的热闹，原来的语境就掉了。「新婚燕尔」正是这样——留下了「新婚」与「欢乐」，丢掉了那个站在门外说话的人。值得记的不是对错，而是同样四个字，在两个时代里各自指着谁。"
+    ]
+   },
+   {
+    "type": "h2",
+    "text": "诗里的比喻，全是从眼前的活计里捡来的"
+   },
+   {
+    "type": "quote",
+    "original": "采葑采菲，无以下体？德音莫违，及尔同死。",
+    "translation": "采摘蔓菁，采摘萝卜，怎能因为根茎不好就把整株都丢弃？往日的誓言不可违背，说好要与你相伴至死。"
+   },
+   {
+    "type": "p",
+    "text": "「葑」读 fēng，是蔓菁；「菲」读 fěi，是萝卜一类的根菜；「下体」指植物的根茎——三条皆见站内注疏，注疏并指出「下体」在此喻指容色衰老的那一部分。「德音」字面是美好的言语，此处指当初说定的话，站内译文作「往日的誓言」。"
+   },
+   {
+    "type": "p",
+    "text": "这个比喻的脑回路值得跟一遍：采蔓菁、采萝卜，人要的本是根；可万一这一棵的根长得不好，难道连叶子一并扔掉？说话人拿这件田间小事作类比——一个人身上不会样样都好，不能因为一处不合意，就把整个人连同当初的约定一起丢开。整首诗里最锋利的道理，是用一棵萝卜讲出来的。"
+   },
+   {
+    "type": "quote",
+    "original": "泾以渭浊，湜湜其沚。宴尔新昏，不我屑以。",
+    "translation": "泾水因渭水而显得浑浊，它水底的沙洲却依旧清澈。你和新婚妻子欢宴，不屑再和我相处。"
+   },
+   {
+    "type": "p",
+    "text": "「泾」「渭」是关中两条河，「湜湜」读 shí shí，是水清见底的样子，「沚」读 zhǐ，指水中沙洲——皆据站内注疏。这两句是一段辩白：泾水本来未必浊，是挨着渭水一比，才显得浊；你且看它水底的沙洲，分明还是清的。放在诗里，意思是——我不是本来就差，是有了对照才被说成差；真要细看，我自有我清楚的地方。"
+   },
+   {
+    "type": "p",
+    "text": "有意思的是，后世成语「泾渭分明」的语源，多被追到这两句。可诗中原意并不是「两者界限清楚」，而是「相形之下显得浑浊」，重点在那个不服气的辩解。同一处出典，后人取走了泾渭并流的画面，却把说话人那点委屈留在了原地。"
+   },
+   {
+    "type": "list",
+    "items": [
+     "采根菜不能因根不好就丢整株——说的是不该因一处不合意而弃人。",
+     "泾水挨着渭水才显浊，水底沙洲仍清——说的是自己经不起那样的对照。",
+     "好意像卖不出去的货（「贾用不售」）——说的是心意递过去，被原样退了回来。",
+     "水深就撑筏行船，水浅就凫水趟过——说的是不论难易，日子都是自己想法子过来的。",
+     "存好干菜为过冬（「旨蓄御冬」）——说的是自己成了备着熬穷日子的那样东西。"
+    ]
+   },
+   {
+    "type": "p",
+    "text": "把这几处排在一起就看得清楚：这首诗没有一个抽象的词。它讲道理，靠的全是采菜、看河、卖货、渡水、腌菜这些手边的活计。《诗经》的比喻多是这种路数——不从概念里来，从一天到晚做的事情里来。"
+   },
+   {
+    "type": "figure",
+    "ftype": "列举图",
+    "svg": "<svg viewBox=\"0 0 800 336\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>谷风留下的成语</title><text x=\"400\" y=\"30\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">一首诗留下的四个现成话</text><line x1=\"48\" y1=\"50\" x2=\"752\" y2=\"50\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"150\" y=\"78\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">诗里的句子</text><text x=\"400\" y=\"78\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">后世化出的话</text><text x=\"650\" y=\"78\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">今天怎么用</text><line x1=\"48\" y1=\"92\" x2=\"752\" y2=\"92\" style=\"stroke:var(--line)\" stroke-dasharray=\"2 4\"/><text x=\"150\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">宴尔新昏</text><text x=\"400\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\">新婚燕尔</text><text x=\"650\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">道贺新人</text><text x=\"150\" y=\"176\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">采葑采菲，无以下体</text><text x=\"400\" y=\"176\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\">采及葑菲</text><text x=\"650\" y=\"176\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">谦辞：不弃我的微长</text><text x=\"150\" y=\"226\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">泾以渭浊</text><text x=\"400\" y=\"226\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\">泾渭分明</text><text x=\"650\" y=\"226\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">界限清清楚楚</text><text x=\"150\" y=\"276\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">凡民有丧，匍匐救之</text><text x=\"400\" y=\"276\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\">匍匐之救</text><text x=\"650\" y=\"276\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">竭尽全力去救</text><line x1=\"48\" y1=\"300\" x2=\"752\" y2=\"300\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"400\" y=\"326\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">四条都由本诗化出，语源归属与用法演变详见正文</text></svg>",
+    "caption": "由《谷风》化出的四条现成话及其今用。语源归属与语义演变详见正文，其中「泾渭分明」之出典历来多系于本诗。"
+   },
+   {
+    "type": "h2",
+    "text": "从「及尔颠覆」到「比予于毒」"
+   },
+   {
+    "type": "quote",
+    "original": "昔育恐育鞫，及尔颠覆。既生既育，比予于毒。",
+    "translation": "从前生活艰难困顿时，我与你共同经历患难。如今日子过得安稳富足了，你却把我看作毒害。"
+   },
+   {
+    "type": "p",
+    "text": "「育恐育鞫」，站内注疏解作生于忧惧、长于困穷，「鞫」是穷困；「颠覆」在此指共患难，不是今天说的政权颠覆。这四句是全诗最重的一击，因为它把时间摆了进来：从前和如今。共过患难的那一段，是任何辩解都抹不掉的事实；而正是这段事实，让「比予于毒」三个字变得格外刺人。"
+   },
+   {
+    "type": "quote",
+    "original": "何有何亡，黾勉求之。凡民有丧，匍匐救之。",
+    "translation": "不论家中有的没的，我都尽力操持求取。凡是众人遭遇患难，我都尽力奔走相助。"
+   },
+   {
+    "type": "p",
+    "text": "「亡」在这里通「无」，读作 wú——站内译文作「有的没的」，取的正是此解。「匍匐」读 pú fú，本义是趴在地上爬，站内注疏点明此处喻尽力奔走。这个词用得极狠：不是走过去帮，是爬过去帮。后世「匍匐之救」一语，就从这里来。"
+   },
+   {
+    "type": "pull",
+    "text": "整首诗只做了一件事：把一个人做过的和另一个人做过的，一条一条摆在一起，然后不说一句结论。"
+   },
+   {
+    "type": "p",
+    "text": "还有一句常被后人借用：「我躬不阅，遑恤我后。」「躬」是自身，「阅」是容纳，「遑恤」站内注疏解作何暇顾及。连起来是说：我自己都容不下了，哪还顾得上身后的事。这份语气，跟今天说的「自身难保」很近——只是诗里说得更冷一些，因为它紧接在「毋逝我梁，毋发我笱」之后：先叮嘱别动我的鱼梁鱼篓，随即又自嘲这叮嘱本身多余。"
+   },
+   {
+    "type": "h2",
+    "text": "旧说与今读"
+   },
+   {
+    "type": "p",
+    "text": "关于这首诗是谁在说、为什么要说，历来有两条路。汉代《毛诗序》读作「刺夫妇失道」——它认为这不只是一家的事，而是卫国上行下效、喜新弃旧的风气，一首诗指着的是一国之俗。汉儒读国风一贯如此：每一首都要系到一段政教背景上去。"
+   },
+   {
+    "type": "p",
+    "text": "宋代以后，尤其到近代，多数人径直把它读作被弃者的一段自诉：从头到尾只有一个人在说话，说的全是采菜、渡水、腌菜、鱼梁这些家常琐事和身体感受，没有一句提到朝政。这样的文字，很难说是为了讽刺国俗而作。"
+   },
+   {
+    "type": "callout",
+    "tone": "mute",
+    "label": "两说并存",
+    "items": [
+     "要注意的是，这两说的距离并不像《关雎》那样远——它们都承认这是一篇弃逐之辞，分歧只在于：诗是否另有一层指向风俗的讽喻。《诗经》在先秦本就是政治与外交场合的公共语言，一首诗被赋予什么意思，往往取决于用它的场合，未必等同作者原意；汉儒是在这一传统里读诗，并非凭空附会。但序中所说的卫国风俗，诗句本身并未提及，也无从坐实。本站照旧例如实并陈，不替读者拍板。"
+    ]
+   },
+   {
+    "type": "figure",
+    "ftype": "对比图",
+    "svg": "<svg viewBox=\"0 0 760 330\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>谷风的两种读法</title><text x=\"380\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">同一首诗，两种读法并存</text><line x1=\"56\" y1=\"54\" x2=\"704\" y2=\"54\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"56\" y=\"80\" width=\"300\" height=\"196\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"206\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"17\" font-weight=\"600\">教化读法（汉《毛诗序》）</text><text x=\"206\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">刺夫妇失道，风俗败坏</text><text x=\"206\" y=\"176\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">卫人上行下效，喜新弃旧</text><text x=\"206\" y=\"204\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">一家之事，指向一国之俗</text><text x=\"206\" y=\"240\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">据：国风皆系于政教背景</text><rect x=\"404\" y=\"80\" width=\"300\" height=\"196\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"554\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"17\" font-weight=\"600\">直读（宋以后至今）</text><text x=\"554\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">被弃者的一段自诉</text><text x=\"554\" y=\"176\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">从头到尾只一个人在说话</text><text x=\"554\" y=\"204\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">全是家常琐事与身体感受</text><text x=\"554\" y=\"240\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">据：无一句提及朝政</text><text x=\"380\" y=\"310\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">两说都承认这是弃逐之辞，分歧在于它是否另有讽喻</text></svg>",
+    "caption": "《谷风》的两种主流读法及各自理据。本站如实并陈，不作判定。"
+   },
+   {
+    "type": "p",
+    "text": "还有一处更细的分歧，关乎说话人此刻站在哪儿。第三段写「行道迟迟，中心有违」，脚步迟缓、心里不甘，「畿」据站内注疏是门槛，像是已被送出家门、走在路上；可后面又说「我有旨蓄，亦以御冬」，储着过冬的干菜，语气又像人还在屋里。"
+   },
+   {
+    "type": "callout",
+    "tone": "mute",
+    "items": [
+     "一说全诗是离去途中的追述，前后并非依时间排列，走着走着想起什么便说什么；一说诗里的时序本不必坐实，怨情来回打转，本就是想到哪说到哪。原文没有交代先后，这道题从字面上判不了。两说各能读通，本篇一并录出。"
+    ]
+   },
+   {
+    "type": "h2",
+    "text": "怨而不怒：它在文学史上的位置"
+   },
+   {
+    "type": "p",
+    "text": "《诗经》里写弃逐的诗不止一首。《卫风·氓》与本篇常被并称，那一首是从相识、成婚一路叙到反目，末尾说「及尔偕老，老使我怨」，是有情节的长诗；《谷风》则不叙事，只把两栏对照来回摆，是另一种写法。同为《邶风》的《击鼓》里那句「与子偕老」，则从反面照出了「及尔同死」这类誓言在当时是何等郑重。"
+   },
+   {
+    "type": "p",
+    "text": "还有一件容易混的事要说清：《诗经》里有两首《谷风》。除本篇外，《小雅》中也有一首同名的，同样以「习习谷风」起头——「习习」二字全书仅见于这两处。但那一首只三章，写的是朋友相弃：当初惶恐不安时你与我相守，等到安乐了你却把我丢开。题目相同、起兴相同、连「共患难而后见弃」的骨架也相通，唯独所指不是一回事。读时须先看清是哪一首。"
+   },
+   {
+    "type": "p",
+    "text": "最后值得留意的是这首诗的分寸。通篇六章，说话人把委屈摆得极细，却没有一句诅咒，没有一句要谁偿还，末了只说「不念昔者，伊余来塈」——你不记得从前了。这正是后人所说《诗经》「怨而不怒」的样子：话全说尽，姿态却仍是收着的。"
+   },
+   {
+    "type": "quote",
+    "original": "不念昔者，伊余来塈。",
+    "translation": "你不记得从前，你曾对我恩爱体贴的时候。"
+   },
+   {
+    "type": "figure",
+    "ftype": "金句卡",
+    "svg": "<svg viewBox=\"0 0 700 380\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>金句卡</title><rect x=\"24\" y=\"24\" width=\"652\" height=\"332\" rx=\"3\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"34\" y=\"34\" width=\"632\" height=\"312\" rx=\"2\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"0.5\"/><text x=\"350\" y=\"132\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"34\" letter-spacing=\"4\">谁谓荼苦，</text><text x=\"350\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"34\" letter-spacing=\"4\">其甘如荠。</text><line x1=\"250\" y1=\"222\" x2=\"450\" y2=\"222\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"350\" y=\"260\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"16\">谁说苦菜味苦？比起我心中的愁苦，</text><text x=\"350\" y=\"288\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"16\">它竟甘甜如荠菜。</text><text x=\"350\" y=\"328\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">《诗经 · 邶风 · 谷风》</text><rect x=\"590\" y=\"286\" width=\"52\" height=\"52\" rx=\"3\" style=\"fill:var(--cinnabar)\"/><text x=\"616\" y=\"306\" text-anchor=\"middle\" style=\"fill:var(--paper)\" font-size=\"17\">观</text><text x=\"616\" y=\"328\" text-anchor=\"middle\" style=\"fill:var(--paper)\" font-size=\"17\">仁</text></svg>",
+    "caption": "《邶风·谷风》金句：谁谓荼苦，其甘如荠。原文与译文逐字取自站内《诗经》管线。"
+   },
+   {
+    "type": "p",
+    "text": "回到开头那四个字。「新婚燕尔」今天挂在喜帖上，谁也不会想到它原本出自谁的口。这大概正是读《诗经》最有意思的地方——许多我们天天在用的现成话，回到出处一看，说话的人、站的位置、语气的冷热，全都不是今天这个样子。知道了这一层，那些话再说出口时，背后就多了一段三千年的来历。"
+   },
+   {
+    "type": "refs",
+    "items": [
+     "原文出处：《诗经·邶风·谷风》，底本据站内《诗经》原文管线，引文与白话译文逐字取自站内原文与译文。传统分六章、章八句，站内底本按四句一段排列，故正文见十二段。",
+     "「谷风」（东风／出自山谷之风两说）、「黾勉」「葑」「菲」「下体」「迟迟」「畿」「荼」「荠」「新昏」（并注「昏」通「婚」）、「泾」「渭」「湜湜」「沚」「梁」「笱」「遑恤」「匍匐」「慉」「雠」「贾用不售」「育恐育鞫」「颠覆」「旨蓄」「御冬」「洸」「溃」「肄」「塈」等训释，皆据本站《诗经》该篇注疏。「习习」「德音」「躬」「阅」及「亡」通「无」诸条为通行训释，站内注疏未另立条目。",
+     "《毛诗序》读此诗为「刺夫妇失道」，谓卫人上行下效、喜新弃旧；今人多径读为被弃者自诉。此说不见于诗句本身，本篇如实并陈、不作判定。",
+     "说话人是已出门的追述抑或未离家的怨诉，诗中时序两可，历来有分歧，本篇一并录出，不作判定。",
+     "《卫风·氓》「及尔偕老，老使我怨」、《邶风·击鼓》「与子偕老」、《小雅·谷风》（三章，写朋友相弃）皆可与本篇对读，引文见站内相应篇章。",
+     "「新婚燕尔」「采及葑菲」「泾渭分明」「匍匐之救」诸语后世由本诗化出，语义已有流转，本篇只述其变，不论其正误。",
+     "本篇为文学与思想史层面的研习文字，不作现代生活劝诫。"
+    ]
+   }
+  ]
+ },
  "3-11": {
   "title": "白话《式微》",
   "subtitle": "两章八句，三十二个字——《诗经》里最短的名篇之一，把「回不去」问成了千古之问",
@@ -4750,6 +4987,688 @@
      "王维《渭川田家》「即此羡闲逸，怅然吟式微」用其思归之意；陶渊明《归去来兮辞》「田园将芜胡不归」，后人多以为化用此诗问句，此说姑存。",
      "《王风·君子于役》《魏风·陟岵》同属思归一类，可与本篇对读。",
      "本篇为文学与思想史层面的研习文字，不作现代生活劝诫。"
+    ]
+   }
+  ]
+ },
+ "3-13": {
+  "title": "白话《简兮》",
+  "subtitle": "一场万舞从正午跳到散场，末了留下四个字——「西方美人」，今天最容易读岔的就是它",
+  "centralIdea": "《简兮》三章十八句，写一场「万舞」的现场：正午开场，领舞者站在最前，先亮力气与御术，再执籥秉翟跳文舞，跳到满脸通红，国君赏他一爵酒；末章忽然一转，说所思念的是「西方美人」。它是《诗经》里少见的正面记录周代乐舞的材料。字词上几处最易读错：「简」不是简单而是威武庄重（一说择选精悍），「组」是编织的丝带，「锡」通「赐」，而「美人」并不专指女子容貌——此词后来一路走窄，今义与诗中所指相去甚远。诗旨历来两说：《毛诗序》一系读作「刺不用贤」、贤者屈居乐官，今人多径读为赞美并思慕舞师之作，本篇如实并陈、不作判定。",
+  "blocks": [
+   {
+    "type": "lead",
+    "text": "《诗经》里写到乐的地方不少，可大多只报个名目——钟鼓、琴瑟、笙磬，听着热闹，看不见人。《邶风·简兮》不一样：它把一场演出从正午开场写到散场，谁站在最前面，手里拿着什么，脸红成什么样，跳完之后国君说了句什么。三章十八句，像一份两千多年前的现场速记。"
+   },
+   {
+    "type": "p",
+    "text": "先说一个今天也有的场景。你去看一场演出，灯一亮，队形站好，最前面那个人一抬手，全场目光就都过去了。散场之后，曲子多半记不全，那个人的样子却还在——他多高，怎么发力，手里举着什么。《简兮》记下来的，就是这么一个人。"
+   },
+   {
+    "type": "p",
+    "text": "这一篇要讲清四件事：诗里跳的「万舞」是什么舞——它在周代不是随便的助兴节目，而是礼制里一个正经名目；诗中有四五个字最容易读岔；末章那个「美人」，今天的意思和诗里所指差得很远；以及这首诗究竟是一份看舞记，还是一声怀才不遇的叹息——历来两说，分歧不小。"
+   },
+   {
+    "type": "h2",
+    "text": "先把这首诗放回它的位置"
+   },
+   {
+    "type": "p",
+    "text": "《诗经》收诗三百零五篇，按音乐性质分「风」「雅」「颂」三大块：风是各地歌谣，共十五国风；雅多用于宫廷宴享朝会；颂是宗庙祭祀的乐章。《简兮》属「风」，具体在《邶风》，是邶风的第十三首。邶、鄘、卫三风，旧说都出自卫国一带的诗。它前面第十一、十二首，正是有名的《式微》与《旄丘》。"
+   },
+   {
+    "type": "p",
+    "text": "还有个前提要先立住：《诗经》里的诗原本都配乐能唱，今天只剩歌词，曲调早已失传。而《简兮》唱的恰恰又是一场舞。读的时候不妨把它当成一段现场解说词：有节拍，有推进，最后收在一个动作上。"
+   },
+   {
+    "type": "h2",
+    "text": "正午开场：镜头是怎么推的"
+   },
+   {
+    "type": "quote",
+    "original": "简兮简兮，方将万舞，日之方中，在前上处，硕人俣俣，公庭万舞。",
+    "translation": "多么威武啊，多么威武，正要表演盛大的万舞。太阳正当正午，站在最前的上位。魁伟的舞者身形健美，在公室庭中表演万舞。"
+   },
+   {
+    "type": "p",
+    "text": "开头两个字就是坑。「简」在今天是简单、简略，可在这里全不相干——站内注疏训作「威武庄重貌」，另有一说是「择选精悍」之意。两个字叠着用两遍，是赞叹的语气，相当于今天连说两声「好家伙，真带劲」。「方将」是正要，好戏还没开场。"
+   },
+   {
+    "type": "p",
+    "text": "接下来三句，镜头一层层往里推：先给时间——「日之方中」，太阳正当头，是大中午；再给位置——「在前上处」，站在队伍最前面的上位，也就是领舞的位置；再给人——「硕人俣俣」，个子高大，身形健美（注疏训「俣俣」为魁梧健美貌）。最后一句「公庭万舞」把地点点明：公室之庭。"
+   },
+   {
+    "type": "p",
+    "text": "这几个字里藏着信息。演出摆在正午、摆在公庭，不在夜里，也不在私宅，可见是公开的正式场合，不是酒后助兴；而「在前上处」说明这支舞有队形、有主次——有人领，有人跟。一支需要排位的舞，背后必然有排练、有制度、有人管。"
+   },
+   {
+    "type": "p",
+    "text": "「硕人」这个词要留个心。今天没人用它夸人，可在《诗经》里这是很高的评价，而且男女通用：《卫风·硕人》「硕人其颀」说的是一位女子，《卫风·考槃》「硕人之宽」说的却是隐居山涧的贤者。古人夸人爱说「大」，看的是整个人的分量。这一点末章还要用到。"
+   },
+   {
+    "type": "figure",
+    "ftype": "流程图",
+    "svg": "<svg viewBox=\"0 0 780 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>简兮一场万舞的现场次第</title><desc>由正午开场到公赐一爵的六个环节</desc><text x=\"390\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">一场万舞的现场次第</text><line x1=\"50\" y1=\"54\" x2=\"730\" y2=\"54\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><line x1=\"70\" y1=\"150\" x2=\"710\" y2=\"150\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><circle cx=\"90\" cy=\"150\" r=\"6\" style=\"fill:var(--ink-soft)\"/><circle cx=\"214\" cy=\"150\" r=\"6\" style=\"fill:var(--ink-soft)\"/><circle cx=\"338\" cy=\"150\" r=\"6\" style=\"fill:var(--ink-soft)\"/><circle cx=\"462\" cy=\"150\" r=\"6\" style=\"fill:var(--ink-soft)\"/><circle cx=\"586\" cy=\"150\" r=\"6\" style=\"fill:var(--ink-soft)\"/><circle cx=\"700\" cy=\"150\" r=\"8\" style=\"fill:var(--cinnabar)\"/><text x=\"90\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">日之方中</text><text x=\"214\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">在前上处</text><text x=\"338\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">有力如虎</text><text x=\"462\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">执籥秉翟</text><text x=\"586\" y=\"122\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">赫如渥赭</text><text x=\"700\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"18\" font-weight=\"600\">公言锡爵</text><text x=\"90\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">正午开场</text><text x=\"214\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">站定最前列</text><text x=\"338\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">武的一段</text><text x=\"462\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">文的一段</text><text x=\"586\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">跳到满脸通红</text><text x=\"700\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"14\">国君赏酒一爵</text><text x=\"390\" y=\"238\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">地点自始至终只有一处：公庭——公室之庭，正式场合</text><text x=\"390\" y=\"266\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">前两章写「看见什么」，末章才转到「想起谁」</text></svg>",
+    "caption": "《邶风·简兮》一场万舞的现场次第：由正午开场、站定前列，到武的一段、文的一段，直至面赤如赭、国君赐酒。"
+   },
+   {
+    "type": "h2",
+    "text": "万舞是什么舞"
+   },
+   {
+    "type": "p",
+    "text": "「万舞」不是这首诗随口起的名字，它是一个正式名目。《诗经》里另有两处提到：《鲁颂·閟宫》说「万舞洋洋，孝孙有庆」，《商颂·那》说「庸鼓有斁，万舞有奕」——两处都出现在宗庙祭祀的场合。站内注疏解「万舞」为「古代兼具文武之舞的大型舞蹈」。合起来看，这是周代礼制中用于祭祀、宴享一类大典的乐舞，规模不小。"
+   },
+   {
+    "type": "p",
+    "text": "古人的思路可以顺着走一遍：乐舞不是娱乐节目，而是礼的一部分；礼要在众人面前把一个共同体最要紧的两件事摆出来——一是能打，二是能和。能打是武，能和是文。于是一场大舞分成两段：前段亮力气身手，后段亮仪容节奏。这不是花样，是把「我们是谁」演给自己看。"
+   },
+   {
+    "type": "quote",
+    "original": "有力如虎，执辔如组，左手执籥，右手秉翟，赫如渥赭，公言锡爵。",
+    "translation": "力大如虎，手握缰绳如同摆弄丝带。左手拿着籥管，右手持着雉羽。脸色红润如同浸湿的赭石，国君下令赐酒一爵。"
+   },
+   {
+    "type": "p",
+    "text": "这一章正好照着文武两段写。「有力如虎」不必解释；「执辔如组」的「组」不是今天的小组，而是编织的丝带——手里的缰绳被理得像一条丝带那样服帖顺滑，形容驾驭得极稳。这是当时的现成套语，《郑风·大叔于田》写猎手也用同一句：「执辔如组，两骖如舞」。至于跳舞的人手里为什么会有缰绳，注家说法不一：一说万舞的武舞段本就含执辔御车之仪，一说只是取其身手矫健作比。诗句本身没有交代，此处存疑。"
+   },
+   {
+    "type": "p",
+    "text": "「左手执籥，右手秉翟」则是文舞的标准配置。籥是竹制管乐器，翟是野雉羽毛（据站内注疏）。这两样在《诗经》别处也是礼乐场合的正器：《小雅·宾之初筵》有「籥舞笙鼓，乐既和奏，烝衎烈祖，以洽百礼」，《小雅·鼓钟》有「以雅以南，以籥不僭」。一手管乐、一手羽饰，就是文舞的样子。"
+   },
+   {
+    "type": "p",
+    "text": "最后两句收在人和事上。「赫如渥赭」——赭是红色的土质颜料，「渥」是浸湿；一个人跳到脸色通红发亮，像被水浸过的赭石。这是全诗最有体温的一笔：前面写的都是威仪，这里忽然让你看见他在出力、在发热。「公言锡爵」的「锡」是「赐」的通假字（《诗经》里常见），爵是青铜酒器；国君发一句话，赏他一爵酒。"
+   },
+   {
+    "type": "callout",
+    "tone": "note",
+    "items": [
+     "打个比方：像一场正式典礼上的表演，前半段是仪仗，后半段是合唱，压轴的不是掌声，而是主人当众端来的那杯酒。赏赐本身也是礼的一环——它把这件事从「跳得好看」变成了「记在案上的一次公事」，也标志着整场仪节的完成。"
+    ]
+   },
+   {
+    "type": "figure",
+    "ftype": "对比图",
+    "svg": "<svg viewBox=\"0 0 760 330\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>万舞的文武两段</title><desc>武的一段与文的一段各自的身姿与道具</desc><text x=\"380\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">一场万舞，分武文两段</text><line x1=\"50\" y1=\"54\" x2=\"710\" y2=\"54\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"60\" y=\"80\" width=\"300\" height=\"212\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"210\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"17\" font-weight=\"600\">武的一段</text><text x=\"210\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"19\">有力如虎 · 执辔如组</text><text x=\"210\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">看的是力气与身手</text><text x=\"210\" y=\"212\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">辔＝缰绳　组＝编织的丝带</text><text x=\"210\" y=\"248\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">同一句亦见《郑风·大叔于田》</text><text x=\"210\" y=\"272\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">是当时形容御术精熟的套语</text><rect x=\"400\" y=\"80\" width=\"300\" height=\"212\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"550\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"17\" font-weight=\"600\">文的一段</text><text x=\"550\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"19\">左手执籥 · 右手秉翟</text><text x=\"550\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">看的是仪容与节奏</text><text x=\"550\" y=\"212\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">籥＝竹制管乐器　翟＝野雉羽</text><text x=\"550\" y=\"248\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">籥为礼乐正器，亦见《小雅·鼓钟》</text><text x=\"550\" y=\"272\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">《小雅·宾之初筵》「籥舞笙鼓」</text><text x=\"380\" y=\"316\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">万舞形制，汉以后注家说法不一，此图只据本篇诗句所见</text></svg>",
+    "caption": "万舞的文武两段：武的一段见身手，文的一段见仪容。万舞具体形制历代注家说法不一，此图只据本篇诗句所见。"
+   },
+   {
+    "type": "h2",
+    "text": "末章一转：镜头忽然离开了舞台"
+   },
+   {
+    "type": "quote",
+    "original": "山有榛，隰有苓，云谁之思，西方美人，彼美人兮，西方之人兮。",
+    "translation": "山上有榛树，洼地有甘草。说是思念着谁呢？是那西方的美人。那位美人啊，是来自西方的人啊。"
+   },
+   {
+    "type": "p",
+    "text": "前两章一直在写「看见什么」，到第三章，忽然转成了「想起谁」。而且转得很突然：上一句还是国君赐酒的公庭，下一句已经是山上的榛树和洼地里的草。"
+   },
+   {
+    "type": "p",
+    "text": "「山有榛，隰有苓」用的是「兴」——先说眼前另一样东西，把情绪带起来，再讲真正要说的事。「隰」是低湿之地（注疏），「榛」是榛树，「苓」注疏训作甘草，又一说是苦菜——连它到底是什么草都有两说。不过这里其实不必在草木上死抠，因为「山有某某，隰有某某」是《诗经》里一个反复出现的固定格式：《郑风·山有扶苏》「山有扶苏，隰有荷华」，《唐风·山有枢》「山有枢，隰有榆」，《秦风·晨风》「山有苞栎，隰有六駮」，《小雅·四月》也有「山有蕨薇，隰有杞桋」。山上有山上的，洼地有洼地的，各自长在该长的地方——底下常常就接一句：唯独我想的那个人不在。"
+   },
+   {
+    "type": "p",
+    "text": "「云谁之思」的「云」是句首语助词（一说训为「曰」），不必落到实处，整句就是「所思念的究竟是谁」。诗人自问，随即自答：「西方美人。」"
+   },
+   {
+    "type": "h2",
+    "text": "「美人」这两个字，今天已经走远了"
+   },
+   {
+    "type": "p",
+    "text": "一个现代读者读到「西方美人」，脑子里几乎必然浮出一位女子。但这四个字在诗里，多半不是这个意思。"
+   },
+   {
+    "type": "p",
+    "text": "先看《诗经》内部。同在《邶风》的《静女》，末句是「匪女之为美，美人之贻」——那里的「美人」指的是赠他茅芽的姑娘。而本篇的「西方美人」，顺着前两章的语脉，最直接的所指就是那位在公庭上领舞的「硕人」，一个男子。同一部书里，这两个字两头都能用。"
+   },
+   {
+    "type": "p",
+    "text": "道理不难想：「美」在先秦是个很宽的字，形貌好是美，德行好是美，才艺好也是美；「美人」就是「美好的人」，并不锁定在女子容貌上。前面的「硕人」是同样的情形——庄姜是硕人，山涧里的隐者也是硕人。"
+   },
+   {
+    "type": "pull",
+    "text": "诗里的「美人」不是一张脸，是一个人身上让人服气的那份分量。"
+   },
+   {
+    "type": "p",
+    "text": "那么它是怎么走窄的？大略有两步。战国以后，辞赋一路把「美人」用作所思慕的君主或贤者的代称，以男女之思来喻君臣之义，成了一个稳定的修辞传统——旧注解释本篇末章，走的正是这条路。而在日常语言那一路，「美人」越用越窄，慢慢锁定在女子容貌上，到今天几乎只剩这一个意思，本义反被盖住。词义由宽变窄，在汉语里很常见：《周易·系辞上》说「其臭如兰」，那里的「臭」还只是气味的意思，如今却专指难闻的那一种了。"
+   },
+   {
+    "type": "figure",
+    "ftype": "时间线",
+    "svg": "<svg viewBox=\"0 0 780 320\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>美人一词的语义流变</title><desc>由美好的人到喻指君贤再到专指女子容貌</desc><text x=\"390\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">「美人」一路走窄</text><line x1=\"50\" y1=\"54\" x2=\"730\" y2=\"54\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><line x1=\"110\" y1=\"140\" x2=\"670\" y2=\"140\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><circle cx=\"130\" cy=\"140\" r=\"8\" style=\"fill:var(--cinnabar)\"/><circle cx=\"390\" cy=\"140\" r=\"6\" style=\"fill:var(--ink-soft)\"/><circle cx=\"650\" cy=\"140\" r=\"6\" style=\"fill:var(--ink-soft)\"/><text x=\"130\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\" font-weight=\"600\">《诗经》</text><text x=\"390\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">战国以降的辞赋</text><text x=\"650\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">后世日常语</text><text x=\"130\" y=\"176\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">美好的人</text><text x=\"390\" y=\"176\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">喻指所思的君主或贤者</text><text x=\"650\" y=\"176\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">专指女子容貌</text><text x=\"130\" y=\"206\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">不限男女　不专说容貌</text><text x=\"390\" y=\"206\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">以男女之思喻君臣之义</text><text x=\"650\" y=\"206\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">今人一见此二字即想到美女</text><text x=\"130\" y=\"236\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">《静女》「美人之贻」指姑娘</text><text x=\"390\" y=\"236\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">旧注解本篇末章走的正是此路</text><text x=\"650\" y=\"236\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">本义反被盖住</text><text x=\"130\" y=\"260\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">本篇「西方美人」或指领舞之人</text><line x1=\"50\" y1=\"286\" x2=\"730\" y2=\"286\" style=\"stroke:var(--line)\" stroke-width=\"0.5\"/><text x=\"390\" y=\"308\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">词义由宽而窄，是汉语常见的一种演变；本篇末章所指为谁，历来两说</text></svg>",
+    "caption": "「美人」一词的语义流变：由《诗经》里泛指美好的人，到辞赋中喻指所思之君贤，再到后世专指女子容貌。本篇末章所指为谁，历来两说。"
+   },
+   {
+    "type": "callout",
+    "tone": "warn",
+    "label": "容易读岔",
+    "items": [
+     "别把「西方美人」读成「西边来的美女」——诗里只交代了两件事：所思的人在西方，那个人美好。至于这人是舞师、是周王，还是别的谁，诗没有说。",
+     "也别急着把「西方」坐实：旧说以为指西周王畿（卫在东，周在西），今说以为指舞师来自西边的周地，诗句本身不足以判定。"
+    ]
+   },
+   {
+    "type": "h2",
+    "text": "两种读法：怀才不遇，还是看舞入了迷"
+   },
+   {
+    "type": "p",
+    "text": "末章这一转，把整首诗的性质推到了岔路口，历代因此分成两派。"
+   },
+   {
+    "type": "p",
+    "text": "汉代《毛诗序》的说法是：这首诗「刺不用贤也」，卫国的贤者只能在乐官队伍里当差。按此读法，前两章那位身手了得、被国君赏酒的舞师，其实是个屈才的人。宋代朱熹《诗集传》大体承此说，并把「西方美人」解作西周的盛王：人在东方衰弱的卫国，心里想的是西边那个礼乐兴盛的旧王朝。这一派的理据在末章的突转——若通篇只是写舞，写到「公言锡爵」就该收了，何必忽然发一声「云谁之思」。"
+   },
+   {
+    "type": "p",
+    "text": "今人多不走这条路，而是径直读作一首赞美舞师的歌，甚至读作观舞者（有说是女子）对领舞者的倾慕。理由也实在：全诗笔墨都花在人的身形、力气、道具、脸色上，兴致勃勃，没有一句怨语；末章的「西方美人」正可指这位来自西边的舞师。按这个读法，转折不是政治感慨，只是从看舞变成了想人。"
+   },
+   {
+    "type": "callout",
+    "tone": "mute",
+    "label": "两说并存",
+    "items": [
+     "分歧的根子在于：「云谁之思」既没有主语，也没有点明所思的是谁，这是全诗最大的一处空白。旧说把它系于一段具体的政教背景，可那段背景并不见于诗句本身；今说贴着字面走，可末章的突转仍然需要解释。《诗经》在先秦本就是政治与外交场合的公共语言，一首诗被赋予什么意思，往往取决于用它的场合，未必等同作者原意；汉儒是在这一传统里读诗，并非凭空附会。本站照旧例如实并陈，不替读者拍板。"
+    ]
+   },
+   {
+    "type": "figure",
+    "ftype": "对比图",
+    "svg": "<svg viewBox=\"0 0 760 340\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>简兮的两种读法</title><desc>刺不用贤之说与赞舞师之说各自理据</desc><text x=\"380\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">同一首诗，两种读法并存</text><line x1=\"50\" y1=\"54\" x2=\"710\" y2=\"54\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"60\" y=\"80\" width=\"300\" height=\"220\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"210\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"17\" font-weight=\"600\">旧说（《毛诗序》一系）</text><text x=\"210\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">刺不用贤，贤者屈居乐官</text><text x=\"210\" y=\"176\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">西方美人＝西周盛王</text><text x=\"210\" y=\"204\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">身在衰卫，心向西周</text><text x=\"210\" y=\"240\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">据：末章忽发一叹，与前两章</text><text x=\"210\" y=\"264\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">的现场描写断开，须有着落</text><text x=\"210\" y=\"288\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">短：本事不见于诗句本身</text><rect x=\"400\" y=\"80\" width=\"300\" height=\"220\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"550\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"17\" font-weight=\"600\">今说（多数今人选本）</text><text x=\"550\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">观舞者赞叹并思慕舞师</text><text x=\"550\" y=\"176\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">西方美人＝来自西方的舞师</text><text x=\"550\" y=\"204\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">通篇兴致勃勃，不见怨语</text><text x=\"550\" y=\"240\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">据：笔墨全在身形力气道具</text><text x=\"550\" y=\"264\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">脸色，贴着字面即可读通</text><text x=\"550\" y=\"288\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">短：末章突转仍待解释</text><text x=\"380\" y=\"328\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">分歧的根子：「云谁之思」没有主语，所思者也未点名</text></svg>",
+    "caption": "《简兮》的两种主流读法及各自理据与短处。本站如实并陈，不作判定。"
+   },
+   {
+    "type": "h2",
+    "text": "抛开诗旨之争，这还是一份难得的现场材料"
+   },
+   {
+    "type": "p",
+    "text": "两说争的是「作者想说什么」，可这首诗还有一重与诗旨无关的价值：它是《诗经》里少见的、正面记下乐舞现场的诗。别处提到乐，多半只报名目——钟鼓、琴瑟、笙磬；《简兮》却把时间、场地、站位、道具、舞者的身体状态，连事后的赏赐都写下来了，等于给「周代乐舞」这个抽象名词配上一张现场照片。"
+   },
+   {
+    "type": "p",
+    "text": "这在思想史上并非可有可无。战国以后，「乐」成了诸子争论的焦点之一。荀子《乐论》以乐为调顺人心的制度，说「乐在宗庙之中，君臣上下同听之，则莫不和敬」，并当面质问：「而墨子非之，奈何！」墨子《非乐上》算的是另一笔账：造乐器要「厚措敛乎万民」，而他的判准是「上考之不中圣王之事，下度之不中万民之利。是故子墨子曰：为乐非也」。两家吵的那样东西具体长什么样？那个正午站在公庭最前、跳到满脸通红、被赏了一杯酒的人，就是它的一个侧影。"
+   },
+   {
+    "type": "h2",
+    "text": "散场之后"
+   },
+   {
+    "type": "p",
+    "text": "回到开头那场演出。灯灭了，队形散了，留下的是一个人的样子——他站在最前面，力气使得足，脸涨得通红，一杯酒喝完就下场了。《简兮》最后没有再写他，只写了一句「彼美人兮，西方之人兮」：那个人啊，是从西边来的。"
+   },
+   {
+    "type": "p",
+    "text": "这句话轻，也重。轻在什么也没交代，重在把整场热闹忽然拉远，拉成一个背影。至于望着这背影的是失意的贤者，还是看舞入迷的旁观者，两千多年过去仍无定论——这首诗之所以还值得读，或许正因为它把那个空白留在了那里。"
+   },
+   {
+    "type": "figure",
+    "ftype": "金句卡",
+    "svg": "<svg viewBox=\"0 0 700 380\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>金句卡</title><desc>邶风简兮末章金句</desc><rect x=\"24\" y=\"24\" width=\"652\" height=\"332\" rx=\"3\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"34\" y=\"34\" width=\"632\" height=\"312\" rx=\"2\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"0.5\"/><text x=\"350\" y=\"132\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"34\" letter-spacing=\"4\">彼美人兮，</text><text x=\"350\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"34\" letter-spacing=\"4\">西方之人兮。</text><line x1=\"250\" y1=\"224\" x2=\"450\" y2=\"224\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"350\" y=\"262\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"16\">那位美人啊，是来自西方的人啊。</text><text x=\"350\" y=\"296\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">《诗经 · 邶风 · 简兮》</text><rect x=\"590\" y=\"286\" width=\"52\" height=\"52\" rx=\"3\" style=\"fill:var(--cinnabar)\"/><text x=\"616\" y=\"312\" text-anchor=\"middle\" style=\"fill:var(--paper)\" font-size=\"17\">观</text><text x=\"616\" y=\"332\" text-anchor=\"middle\" style=\"fill:var(--paper)\" font-size=\"17\">象</text></svg>",
+    "caption": "《邶风·简兮》金句：彼美人兮，西方之人兮。原文与白话取自站内《诗经》管线。"
+   },
+   {
+    "type": "list",
+    "items": [
+     "遇到熟词先查古义：「简」不是简单，「组」不是小组，「锡」是「赐」的通假，「美人」不专指女子——古今同形而异义，是读《诗经》最常见的坑。",
+     "「山有某某，隰有某某」这类反复出现的开头是起兴的套语，不必逐字追问榛树、甘草各自象征什么，它们只是把情绪带起来的由头。",
+     "碰上历代分歧（诗旨是刺不用贤还是赞舞师、「执辔」是仪节还是取譬、「苓」是甘草还是苦菜），先把各家理据看清楚，不急着选边站。"
+    ]
+   },
+   {
+    "type": "refs",
+    "items": [
+     "原文出处：《诗经·邶风·简兮》，底本据站内《诗经》原文管线，引文逐字取自站内原文。",
+     "「简兮」（威武庄重貌，一说择选精悍）、「万舞」「俣俣」「辔」「籥」「翟」「渥赭」「榛」「隰」「苓」（甘草，一说苦菜）诸训，皆据本站该篇注疏；「锡」通「赐」为通行训释，注疏未收，此处另行说明。",
+     "《毛诗序》以本篇为「刺不用贤」，谓卫之贤者仕于伶官；朱熹《诗集传》大体承此，以「西方美人」托指西周盛王。今人多径读为赞美思慕舞师之作。两说如实并陈，不作判定。",
+     "文中所引旁证之句，均逐字取自站内原文：《鲁颂·閟宫》《商颂·那》之「万舞」，《小雅·宾之初筵》《小雅·鼓钟》之「籥」，《郑风·大叔于田》「执辔如组」，《邶风·静女》「美人之贻」，《卫风·硕人》《卫风·考槃》之「硕人」，《郑风·山有扶苏》等四篇「山有…隰有…」句，《周易·系辞上》「其臭如兰」，及《荀子·乐论》《墨子·非乐上》论乐两段。",
+     "万舞的具体形制（几人、几段、各执何器）与「执辔如组」在舞中的性质，汉以后注家说法不一，可参证的出土材料也有限，本篇只据诗句所见叙述、如实存疑。",
+     "本篇为文学与思想史层面的研习文字。"
+    ]
+   }
+  ]
+ },
+ "3-15": {
+  "title": "白话《北门》",
+  "subtitle": "三章十八句，一个低级官吏的一天——公门里的事推不掉，家门里的话听不完，末了把一切交给天",
+  "centralIdea": "《北门》写一个在诸侯国里当差的小官吏：走出北门，忧心重重，穷得家徒四壁而无人知道他的艰难；王室的差事、本国的政务都往他身上加，回到家里，家里人又轮番责怪他。三章的末句一字不改，都以「已焉哉，天实为之，谓之何哉」收住——这句叠句才是全篇的骨。它是《诗经》里把基层职事者处境写得最直接的一首，可借它看周代士一级的职事与俸禄。字词上「窭」「殷殷」「埤益」「交徧」「讁」「敦」诸条最易读错。《毛诗序》以为此诗刺仕不得志、写卫之忠臣不得志，今人多径读为下级官吏自述劳苦贫窘，本篇如实并陈、不作判定。",
+  "blocks": [
+   {
+    "type": "lead",
+    "text": "《诗经》里的诗，开头多半先写点别的——一对水鸟，一片荇菜，几声鸟鸣。《邶风·北门》不然。它一上来就是一个人走出城门：「出自北门」。没有草木，没有鸟兽，没有任何铺垫，画面里只有他自己，和他一肚子说不出去的话。"
+   },
+   {
+    "type": "p",
+    "text": "这个人不是农夫，也不是征夫。从诗里的用词看，他是个当差的——王室的差事、本国的政务，都压在他一个人身上。三章十八句，他说了三件事：外头的事推不掉，家里的人不体谅，最后把这一切归给了天。三章的末句一模一样，一个字都没改。"
+   },
+   {
+    "type": "p",
+    "text": "这一篇要讲三件事：这十八句字面上到底在说什么，其中有几个字最容易读错；诗里的「王事」「政事」透露了他是个什么身份，周代的职事与俸禄大致是怎么回事；以及那句重复了三遍的「天实为之」，在《诗经》乃至后来的思想里，处在什么位置。"
+   },
+   {
+    "type": "h2",
+    "text": "先把这三章读通"
+   },
+   {
+    "type": "quote",
+    "original": "出自北门，忧心殷殷，终窭且贫，莫知我艰，已焉哉，天实为之，谓之何哉。",
+    "translation": "走出北门，忧心忡忡。终究贫穷困窘，没有人知道我的艰难。罢了啊，这实在是上天所致，还能说什么呢？"
+   },
+   {
+    "type": "p",
+    "text": "「殷殷」不是殷实、殷切那种丰厚恳切的意思，站内注疏训作忧伤深重的样子。「窭」读 jù，站内注疏训为贫寒、家徒四壁；旧注还有把「窭」与「贫」分开讲的，说「窭」偏在穷得连该有的礼数都办不起，「贫」偏在财用不足——两个字连用，是把两头都占了。「莫知我艰」的「艰」是艰难处境，这半句直说：没有一个人知道我难在哪里。"
+   },
+   {
+    "type": "p",
+    "text": "至于「北门」，注家有两种讲法：一说就是实指城的北门，他当差出入由此门；一说北面背阳向阴，取其幽暗之意，用来映衬处境。诗里没有更多线索可以坐实，姑且两说并存。"
+   },
+   {
+    "type": "quote",
+    "original": "王事适我，政事一埤益我，我入自外，室人交徧讁我，已焉哉，天实为之，谓之何哉。",
+    "translation": "王室的差事都落到我身上，政务全都加派给我。我从外面回到家中，家里人轮番责怪我。罢了啊，这实在是上天所致，还能说什么呢？"
+   },
+   {
+    "type": "p",
+    "text": "这一章的字最密。「适」旧注训作「往、之」，即差事都往我这边来；今人也有读为「擿」（zhì）、训作投掷的，说那些差事是被人一件件扔过来的，语气更重些，此说姑存。「一」是副词，全、都。「埤益」读 pí yì，站内注疏训为增加、加派。「室人」指家里的人。「交徧」的「徧」即「遍」，站内注疏训「交徧」为轮番、交替。「讁」读 zhé，同「谪」，责怪。"
+   },
+   {
+    "type": "quote",
+    "original": "王事敦我，政事一埤遗我，我入自外，室人交徧摧我，已焉哉，天实为之，谓之何哉。",
+    "translation": "王室的差事催逼着我，政务全都遗留给我。我从外面回到家中，家里人轮番摧折我。罢了啊，这实在是上天所致，还能说什么呢？"
+   },
+   {
+    "type": "p",
+    "text": "第三章与第二章句式全同，只换了三个字：「适」换成「敦」，「埤益」换成「埤遗」，「讁」换成「摧」。站内注疏训「敦」为逼迫、催促，训「埤遗」为加派留给。「摧」站内注疏未收，注家多训作摧折、挫伤，也有读为「催」、解作逼迫的。三个字一换，事情还是那些事情，力道却重了一层：差事由「送来」变成「催逼」，家人的话由「责怪」变成「摧折」。"
+   },
+   {
+    "type": "figure",
+    "ftype": "结构图",
+    "svg": "<svg viewBox=\"0 0 800 380\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>北门三章的推进</title><text x=\"400\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">三章十八句，三层处境</text><line x1=\"50\" y1=\"56\" x2=\"750\" y2=\"56\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"150\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">首章</text><text x=\"400\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">二章</text><text x=\"650\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">三章</text><line x1=\"50\" y1=\"104\" x2=\"750\" y2=\"104\" style=\"stroke:var(--line)\" stroke-dasharray=\"2 4\"/><text x=\"150\" y=\"140\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">出自北门</text><text x=\"400\" y=\"140\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">王事适我</text><text x=\"650\" y=\"140\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">王事敦我</text><text x=\"150\" y=\"170\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">终窭且贫</text><text x=\"400\" y=\"170\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">政事一埤益我</text><text x=\"650\" y=\"170\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">政事一埤遗我</text><text x=\"150\" y=\"206\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">莫知我艰</text><text x=\"400\" y=\"206\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"15\">室人交徧讁我</text><text x=\"650\" y=\"206\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"15\">室人交徧摧我</text><line x1=\"50\" y1=\"232\" x2=\"750\" y2=\"232\" style=\"stroke:var(--line)\" stroke-dasharray=\"2 4\"/><text x=\"150\" y=\"264\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">先说自己：穷，没人懂</text><text x=\"400\" y=\"264\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">再说公门与家门两头</text><text x=\"650\" y=\"264\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">同一处境，用字更重</text><rect x=\"220\" y=\"292\" width=\"360\" height=\"52\" rx=\"4\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1\"/><text x=\"400\" y=\"325\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"18\">已焉哉，天实为之，谓之何哉</text><text x=\"400\" y=\"366\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">三章末句一字不改，原样收住</text></svg>",
+    "caption": "《北门》三章的推进：首章写自身贫窘，二三章写公门与家门两头受压，末句叠句三章一字不改。原文逐字取自站内《诗经》管线。"
+   },
+   {
+    "type": "h2",
+    "text": "「王事」与「政事」：他到底是个什么人"
+   },
+   {
+    "type": "p",
+    "text": "读懂这首诗的关键，在第二章开头那两个词。「王事」在《诗经》里是个常见说法，多指王室征调下来的差役；《唐风·鸨羽》三章都用「王事靡盬」，说的是差事没完没了，连庄稼都种不成。「政事」则指他所在这个国家自己的政务。两样都往他身上加，说明他不是临时被征调的役夫，而是有职在身、常年当差的人。"
+   },
+   {
+    "type": "p",
+    "text": "这样的人，在周代的等级里叫「士」。按《孟子·万章下》追述的旧制，一国之内自上而下是君、卿、大夫、上士、中士、下士六等，士是最低的一级贵族——有职事，有俸禄，但俸禄很薄。孟子说到最下面一级时的原话是：下士与在官的庶人同禄，那点俸禄「足以代其耕」，也就是刚够抵上自己种地的收成。"
+   },
+   {
+    "type": "callout",
+    "tone": "mute",
+    "label": "一处存疑",
+    "items": [
+     "这套等级并非板上钉钉。孟子自己就说「其详不可得闻也」——诸侯嫌旧制碍事，把典籍都毁了，他所讲的也只是「闻其略」。所以后人谈周代爵禄，能说的多是大概轮廓，具体到某国某职的实况，本就不可尽考。本篇借它来看诗中人的大致位置，不当作精确的制度记录。"
+    ]
+   },
+   {
+    "type": "figure",
+    "ftype": "结构图",
+    "svg": "<svg viewBox=\"0 0 800 400\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>周代爵禄等级之略</title><text x=\"400\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">他站在这个梯子的最下面一两级</text><line x1=\"60\" y1=\"54\" x2=\"740\" y2=\"54\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"250\" y=\"72\" width=\"300\" height=\"34\" rx=\"3\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"400\" y=\"96\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">君</text><rect x=\"250\" y=\"112\" width=\"300\" height=\"34\" rx=\"3\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"400\" y=\"136\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">卿</text><rect x=\"250\" y=\"152\" width=\"300\" height=\"34\" rx=\"3\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"400\" y=\"176\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">大夫</text><rect x=\"250\" y=\"192\" width=\"300\" height=\"34\" rx=\"3\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"400\" y=\"216\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">上士</text><rect x=\"250\" y=\"232\" width=\"300\" height=\"34\" rx=\"3\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"400\" y=\"256\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">中士</text><rect x=\"250\" y=\"272\" width=\"300\" height=\"34\" rx=\"3\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1.5\"/><text x=\"400\" y=\"296\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\">下士</text><line x1=\"556\" y1=\"289\" x2=\"600\" y2=\"289\" style=\"stroke:var(--cinnabar)\" stroke-width=\"1\"/><text x=\"676\" y=\"284\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">禄与在官庶人同</text><text x=\"676\" y=\"304\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">仅足以代其耕</text><text x=\"124\" y=\"284\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">诗中人大致</text><text x=\"124\" y=\"304\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">在此一带</text><line x1=\"196\" y1=\"289\" x2=\"244\" y2=\"289\" style=\"stroke:var(--line)\" stroke-dasharray=\"2 3\"/><line x1=\"60\" y1=\"330\" x2=\"740\" y2=\"330\" style=\"stroke:var(--line)\" stroke-dasharray=\"2 4\"/><text x=\"400\" y=\"360\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">此等级据《孟子·万章下》所述之略</text><text x=\"400\" y=\"386\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">孟子自言「其详不可得闻也」，诸侯去其籍，细目本不可尽考</text></svg>",
+    "caption": "周代一国之内爵禄等级之略，据《孟子·万章下》所述。孟子自言其详不可得闻，图中所列仅为一说，为研习示意。"
+   },
+   {
+    "type": "p",
+    "text": "把这层背景放进诗里，「终窭且贫」四个字就落到实处了：他有官位，却没有家资。这不是他一个人的偶然，是那个位置本身的常态——有职事在身，须有相应的车服礼数，而俸禄仅够糊口，于是越是尽职，越是拮据。《小雅·北山》里另一个当差的人把这层不平说得更直白：「偕偕士子，朝夕从事」，可是「大夫不均，我从事独贤」；接着一句「或燕燕居息，或尽瘁事国」——有人安安稳稳歇着，有人为国事把自己耗干。同一类处境，《北门》只写自己，《北山》则写出了对比。"
+   },
+   {
+    "type": "h2",
+    "text": "从公门回到家门：这首诗最沉的一句"
+   },
+   {
+    "type": "p",
+    "text": "《诗经》里写差事辛苦的诗不少，《四牡》写「岂不怀归？王事靡盬，我心伤悲」，《君子于役》写日暮时鸡回了窝、牛羊下了山而人未归。它们大多止步于「回不了家」。《北门》却往前多走了一步：他回到家了——「我入自外」——然后被家里人轮番责怪。"
+   },
+   {
+    "type": "p",
+    "text": "这一步很要命。外头没人知道他的艰难，家里也没有人站在他这边，一个人两头都没有落脚处。同在《邶风》的《柏舟》写过相似的孤立：「亦有兄弟，不可以据。薄言往愬，逢彼之怒」——想找兄弟靠一靠，靠不住；想去诉诉苦，反倒撞上人家的火气。《北门》连诉苦这一步都省了，只用「室人交徧讁我」六个字带过，然后就接上那句「已焉哉」。"
+   },
+   {
+    "type": "callout",
+    "tone": "warn",
+    "label": "容易读岔",
+    "items": [
+     "读到这里最容易出的岔子，是把它当成一篇古代版的加班牢骚，顺手换算成今天的处境。这样读会把最要紧的东西丢掉：诗里的「王事」不是一份可以辞掉的差使，而是身份带来的职事——士的位置、俸禄与差役是绑在一起的，不当这个差，也就不再是这个身份；家人的责怪也未必只是不体谅辛苦，更可能是俸禄不足以养家的实际窘迫。他之所以只能说一句「已焉哉」，正因为这套安排在他那里根本没有退出的余地。古今之间的这道坎，先看清楚，再谈感受不迟。"
+    ]
+   },
+   {
+    "type": "h2",
+    "text": "「已焉哉，天实为之，谓之何哉」：叠句才是骨"
+   },
+   {
+    "type": "p",
+    "text": "三章的末句完全相同。「已焉哉」是罢了吧、算了吧，「已」是停止、了结；「天实为之」是这实在是天做的；「谓之何哉」是还能说它什么呢。三句连下来，是一个人把话说到尽头之后的收手动作。"
+   },
+   {
+    "type": "p",
+    "text": "这种整章重复、只换关键几字的写法叫「重章叠句」，是《诗经》最基本的结构——《诗经》原本都是配乐能唱的，今天只剩歌词，曲调早已失传，重复不是啰嗦，而是歌的结构。同在《邶风》的《式微》也是如此，问句原样重来，答句步步落到更低处。《北门》的做法略有不同：变的是前面那些具体的事，不变的是最后这句收束。事情一章比一章重，而他的回答一次也没有变过。"
+   },
+   {
+    "type": "pull",
+    "text": "他没有骂人，也没有骂天——只是把说不出口的话，交给了一个不会回答的对象。"
+   },
+   {
+    "type": "p",
+    "text": "值得注意的是这句话的分寸。他说「天实为之」，既没有称颂天的公道，也没有指责天的不公，只是陈述：这事是天做的。这与《小雅》里那些西周末年的怨天之诗很不一样——《节南山》直斥「昊天不佣，降此鞠讻」，说老天不公，降下这场大祸；《雨无正》开口就是「浩浩昊天，不骏其德」。那些诗把怨气冲着天去，《北门》没有。"
+   },
+   {
+    "type": "p",
+    "text": "再往后看，同一个动作在儒家那里又转了一次向。《论语·宪问》记孔子说「莫我知也夫」——没有人了解我啊；子贡问何至于此，孔子答：「不怨天，不尤人，下学而上达，知我者，其天乎！」同样是无人知我，同样把话头引向天，孔子给出的却是不怨不尤、下学上达的自处之道。《孟子·尽心上》说得更明白：「莫非命也，顺受其正。」从《北门》的「天实为之」，到《论语》的「不怨天」，再到《孟子》的「顺受其正」，是从一句无可奈何的话，一步步长成一套关于处境的说法。这中间的转变，本身就是一段思想史。"
+   },
+   {
+    "type": "figure",
+    "ftype": "对比图",
+    "svg": "<svg viewBox=\"0 0 800 340\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>三种对天的说法</title><text x=\"400\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">同样抬头看天，说法却有三种</text><line x1=\"50\" y1=\"54\" x2=\"750\" y2=\"54\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"50\" y=\"78\" width=\"216\" height=\"192\" rx=\"4\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1.5\"/><text x=\"158\" y=\"108\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\" font-weight=\"600\">归之于天</text><text x=\"158\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">天实为之</text><text x=\"158\" y=\"180\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">不夸天，也不责天</text><text x=\"158\" y=\"206\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">只说这事是天做的</text><text x=\"158\" y=\"244\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">《邶风·北门》</text><rect x=\"292\" y=\"78\" width=\"216\" height=\"192\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"400\" y=\"108\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\" font-weight=\"600\">直接责天</text><text x=\"400\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">昊天不佣</text><text x=\"400\" y=\"180\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">天不公，降此祸乱</text><text x=\"400\" y=\"206\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">怨气冲着天去</text><text x=\"400\" y=\"244\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">《小雅·节南山》</text><rect x=\"534\" y=\"78\" width=\"216\" height=\"192\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"642\" y=\"108\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\" font-weight=\"600\">不怨天</text><text x=\"642\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">知我者其天乎</text><text x=\"642\" y=\"180\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">没人懂我也不怨</text><text x=\"642\" y=\"206\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">转成一种自处之道</text><text x=\"642\" y=\"244\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">《论语·宪问》</text><text x=\"400\" y=\"304\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">同是无可奈何处的一句话，分寸各不相同</text><text x=\"400\" y=\"330\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">为思想史脉络示意，不作高下之判</text></svg>",
+    "caption": "同是把话引向天，《北门》只陈述、《小雅》怨责、《论语》不怨不尤，分寸各不相同。引文皆取自站内原文，为思想史脉络示意。"
+   },
+   {
+    "type": "h2",
+    "text": "两种读法：忠臣不得志，还是小吏自述"
+   },
+   {
+    "type": "p",
+    "text": "这首诗是谁在说，历来有两种读法。"
+   },
+   {
+    "type": "p",
+    "text": "汉代《毛诗序》的说法是：《北门》所刺者，乃仕而不得志——写的是卫国的忠臣不得其志。按这条路读，诗中人不是普通小吏，而是一位有才有德却被冷落的臣子；「莫知我艰」的言外之意是国君不识贤，「天实为之」则是不便直斥其君，只好把话推给天，是一种委婉。宋代以后的注家多沿此说而各有出入，大体都把它看作贤者处乱世、事暗君而不得志的自伤。"
+   },
+   {
+    "type": "p",
+    "text": "今人多不取这条路，而是径直读作一个下级官吏的自述：差事重、俸禄薄、家人不谅，如实写来而已。理由也很实在——全诗只讲差事与家计，没有一句涉及君德政事的得失；「终窭且贫」是极具体的家境，不像忠臣不遇的比喻说法。"
+   },
+   {
+    "type": "callout",
+    "tone": "mute",
+    "label": "两说并存",
+    "items": [
+     "《诗经》在先秦本就是政治与外交场合的公共语言，诸侯宴享时赋诗言志，一首诗被赋予什么意思，往往取决于用它的场合，未必等同作者原意。汉儒是在这一传统里读诗，并非凭空附会；但一层不见于诗句本身的政教用意，也确实无从坐实。本站照旧例如实并陈，不替读者拍板。"
+    ]
+   },
+   {
+    "type": "h2",
+    "text": "它在《诗经》里的位置"
+   },
+   {
+    "type": "p",
+    "text": "《诗经》里写职事之苦的诗自成一系：《四牡》《鸨羽》写在路上的辛劳，《北山》写劳逸不均的愤懑，《君子于役》写留在家里的人如何盼望。《北门》与它们都不同——它是唯一一首把公门与家门两头都写尽的。别的诗里，家往往是一个想回而回不去的方向，是苦的对面；到了《北门》，家也成了苦的一部分。这首诗因此格外冷，也格外真。"
+   },
+   {
+    "type": "p",
+    "text": "还有一处可留意的痕迹。「已焉哉」这样近乎口语的收束句，在《诗经》里并不多见，《卫风·氓》的结尾也用过一次：「反是不思，亦已焉哉」——既然当初的誓言你自己都不想了，那就算了吧。两首诗的内容毫不相干，收手时的那口气却是一样的：话说到这里为止，不再往下说了。这种「不再说」的收法，后来成了中国诗里很长的一条脉络。"
+   },
+   {
+    "type": "figure",
+    "ftype": "金句卡",
+    "svg": "<svg viewBox=\"0 0 700 380\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>金句卡</title><rect x=\"24\" y=\"24\" width=\"652\" height=\"332\" rx=\"3\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"34\" y=\"34\" width=\"632\" height=\"312\" rx=\"2\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"0.5\"/><text x=\"350\" y=\"140\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"32\" letter-spacing=\"4\">已焉哉，天实为之，</text><text x=\"350\" y=\"192\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"32\" letter-spacing=\"4\">谓之何哉。</text><line x1=\"250\" y1=\"224\" x2=\"450\" y2=\"224\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"350\" y=\"262\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"16\">罢了啊，这实在是上天所致，</text><text x=\"350\" y=\"290\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"16\">还能说什么呢？</text><text x=\"350\" y=\"328\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">《诗经 · 邶风 · 北门》</text><rect x=\"590\" y=\"286\" width=\"52\" height=\"52\" rx=\"3\" style=\"fill:var(--cinnabar)\"/><text x=\"616\" y=\"306\" text-anchor=\"middle\" style=\"fill:var(--paper)\" font-size=\"17\">观</text><text x=\"616\" y=\"328\" text-anchor=\"middle\" style=\"fill:var(--paper)\" font-size=\"17\">仁</text></svg>",
+    "caption": "《邶风·北门》金句：已焉哉，天实为之，谓之何哉。原文与译文逐字取自站内《诗经》管线。"
+   },
+   {
+    "type": "p",
+    "text": "回到开头那个走出北门的人。他没有名字，没有留下任何别的事迹，我们甚至不能确定他到底是位不得志的忠臣，还是个普通的下级职事者。留下来的只有十八句：他走出城门，他穷，他没人懂，他被差事追着，他回家挨了一顿数落，然后他说了三遍同样的话。三千年间，读这首诗的人各有各的感慨，而诗本身始终没有多说一个字。"
+   },
+   {
+    "type": "list",
+    "items": [
+     "先认字，再谈感受：「殷殷」是忧伤深重不是丰厚，「窭」是穷得办不起礼数，「交徧」是轮番，「讁」同「谪」是责怪——这几个字不落实，整首诗就读散了。",
+     "把「王事」「政事」当线索读：它们透露了诗中人的身份是有职在身的士，据此才能看清「终窭且贫」不是个人的倒霉，而是那个位置的常态。",
+     "注意重复的地方：三章末句一字不改，那不是偷懒，那是全篇的骨；《诗经》里凡是原样重来的句子，都值得多看两眼。"
+    ]
+   },
+   {
+    "type": "refs",
+    "items": [
+     "原文出处：《诗经·邶风·北门》，底本据站内《诗经》原文管线，引文逐字取自站内原文。",
+     "「殷殷」「窭」「埤益」「交徧」「讁」「敦」「埤遗」诸条训释，据本站该篇注疏；「摧」「适」「一」「北门」等条站内注疏未收，文中所述为注家通说与并存异说，已随文标出。",
+     "《毛诗序》以《北门》为刺仕不得志、言卫之忠臣不得其志；今人多径读为下级官吏自述劳苦贫窘。两说并陈，不作判定。",
+     "周代爵禄六等与「下士与庶人在官者同禄，禄足以代其耕也」，见站内《孟子·万章下》；孟子自言「其详不可得闻也」，故此制细目本不可尽考。",
+     "《小雅·北山》「大夫不均，我从事独贤」「或燕燕居息，或尽瘁事国」、《唐风·鸨羽》「王事靡盬」、《小雅·四牡》「岂不怀归」、《王风·君子于役》、《邶风·柏舟》「亦有兄弟，不可以据。薄言往愬，逢彼之怒」、《卫风·氓》「反是不思，亦已焉哉」，引文皆取自站内《诗经》原文，可与本篇对读。",
+     "《小雅·节南山》「昊天不佣，降此鞠讻」、《雨无正》「浩浩昊天，不骏其德」、《论语·宪问》「不怨天，不尤人，下学而上达，知我者，其天乎」、《孟子·尽心上》「莫非命也，顺受其正」，皆取自站内原文。",
+     "本篇为文学与思想史层面的研习文字，不作现代职场处世劝诫。"
+    ]
+   }
+  ]
+ },
+ "3-16": {
+  "title": "白话《北风》",
+  "subtitle": "风雪里的一次出走——三章叠唱，一遍比一遍急",
+  "centralIdea": "《北风》三章十二句，写风雪之中相约出走：风一章比一章紧，雪一章比一章大，同行的方式由「同行」到「同归」再到「同车」，而每章末尾那句「其虚其邪，既亟只且」原样重来，是催促——你怎么还这样不慌不忙，来不及了。末章忽然插进「莫赤匪狐，莫黑匪乌」两句以「莫」字发问式的双重否定，站内注疏解为满眼所见无非狐乌、喻小人当道，是全篇由景转到人的转折处。字词上最易读错的有四处：「雨雪」的「雨」是动词，「匪」通「非」，「邪」旧读作「徐」，「只且」是句末语气词。诗旨旧说系于卫国虐政、国人相携去国，今人多不拘本事、径读作乱世中的出走，本篇如实并陈、不作判定。",
+  "blocks": [
+   {
+    "type": "lead",
+    "text": "《诗经》里写风的诗不少，单是《邶风》一卷十九首，拿风起头的就有好几首：《终风》起句是「终风且暴」，《凯风》起句是「凯风自南」，《谷风》起句是「习习谷风」。轮到排在第十六的《北风》，风里多了一样东西——雪。而且这不是用来写景的雪，是催人上路的雪。"
+   },
+   {
+    "type": "p",
+    "text": "先设想一个谁都经历过的场面。天气极坏，风大雪大，你还在屋里磨磨蹭蹭地收拾东西，门口有人一遍一遍地催：「走不走？来不及了。」你说再等一等。过了一会儿，同样一句话又喊了一遍，一个字都没换，只是更急。《北风》全篇十二句，写的就是这么一个场面：风、雪、一只拉住你的手，和一句反复重来的催促。"
+   },
+   {
+    "type": "p",
+    "text": "这一篇要说清三件事：三章叠唱是怎么一层一层加急的；哪几个字最容易读错；以及末章突然冒出来的「莫赤匪狐，莫黑匪乌」到底在说什么——那是全篇的转折处。"
+   },
+   {
+    "type": "h2",
+    "text": "先把三章读通"
+   },
+   {
+    "type": "quote",
+    "original": "北风其凉，雨雪其雱，惠而好我，携手同行，",
+    "translation": "北风寒冷，雪下得纷纷扬扬，承蒙你厚爱我，与我携手同行，"
+   },
+   {
+    "type": "p",
+    "text": "「其凉」的「凉」是寒冷；「其雱」的「雱」读 pāng，站内注疏训为雪盛的样子，就是雪下得又大又密。这里两个「其」都不是「他的」，而是搁在形容词前头的一个词头，相当于说「……的样子」——北风冷得那样，雪大得那样。「惠而好我」，站内注疏训作「爱我而善待我」，是说话人对同行之人的一句体认：难为你还这样待我。"
+   },
+   {
+    "type": "quote",
+    "original": "北风其喈，雨雪其霏，惠而好我，携手同归，",
+    "translation": "北风呼啸，雪花纷飞，承蒙你厚爱我，与我携手同归，"
+   },
+   {
+    "type": "p",
+    "text": "第二章只换了三个字：「凉」换成「喈」，「雱」换成「霏」，「行」换成「归」。「喈」读 jiē，站内注疏训为风声疾的样子——第一章写的是风冷（身上的感觉），第二章写的是风响（耳朵里的动静），同一场风，换了一个器官去接。「霏」是雪飞的样子。至于「归」，可以理解成回去，也可以理解成一同前往、归往一处；诗里没有交代要去哪里，这一层如实存疑。"
+   },
+   {
+    "type": "quote",
+    "original": "莫赤匪狐，莫黑匪乌，惠而好我，携手同车，",
+    "translation": "没有红的不是狐狸，没有黑的不是乌鸦，承蒙你厚爱我，与我携手同车，"
+   },
+   {
+    "type": "p",
+    "text": "第三章前两句先按下不表，留到后面专门讲。要紧的是末尾那两个字：「同车」。前两章是「同行」「同归」，都是靠两条腿；到这里换成了车。车是能跑起来的——一路读下来，走的方式在升级，也就是说，急的程度在升级。"
+   },
+   {
+    "type": "h2",
+    "text": "一章比一章急"
+   },
+   {
+    "type": "p",
+    "text": "《诗经》大半篇章都用「重章叠句」：整首诗分成几章，各章句式相同，只在几个关键位置换字。这不是啰嗦，而是结构——这些诗原本都配乐能唱，曲调今天已经失传，重来一遍就像一首歌唱到第二段，旋律照旧，只换几个词，情绪却比第一遍更沉。"
+   },
+   {
+    "type": "p",
+    "text": "所以读这类诗有个笨办法却最管用：把三章并排放好，只盯着换掉的那几个字看。《北风》换字的位置极其整齐——风换了一次（凉、喈），雪换了一次（雱、霏），同行的方式换了两次（行、归、车）；而剩下的部分，「惠而好我」四个字和末尾那一整句，三章一字未动。"
+   },
+   {
+    "type": "figure",
+    "ftype": "结构图",
+    "svg": "<svg viewBox=\"0 0 800 372\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>北风三章的换字与不变</title><desc>三章并排，风、雪、同行方式逐章换字，其余两句一字未动</desc><text x=\"400\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">三章并排：只有三处在换字</text><line x1=\"56\" y1=\"52\" x2=\"744\" y2=\"52\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"110\" y=\"86\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">章</text><text x=\"245\" y=\"86\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">风</text><text x=\"380\" y=\"86\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">雪</text><text x=\"515\" y=\"86\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">同行的方式</text><text x=\"665\" y=\"86\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">章末不变的一句</text><line x1=\"56\" y1=\"100\" x2=\"744\" y2=\"100\" style=\"stroke:var(--line)\" stroke-dasharray=\"2 4\"/><text x=\"110\" y=\"138\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">一</text><text x=\"245\" y=\"138\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">其凉（冷）</text><text x=\"380\" y=\"138\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">其雱（雪大）</text><text x=\"515\" y=\"138\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"17\">携手同行</text><text x=\"665\" y=\"138\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">其虚其邪</text><text x=\"110\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">二</text><text x=\"245\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">其喈（响）</text><text x=\"380\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">其霏（雪飞）</text><text x=\"515\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"17\">携手同归</text><text x=\"665\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">既亟只且</text><text x=\"110\" y=\"242\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">三</text><text x=\"245\" y=\"242\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"15\">改说狐与乌</text><text x=\"380\" y=\"242\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"15\">（不再写雪）</text><text x=\"515\" y=\"242\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"17\">携手同车</text><text x=\"665\" y=\"242\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">三章一字未改</text><line x1=\"56\" y1=\"272\" x2=\"744\" y2=\"272\" style=\"stroke:var(--line)\" stroke-dasharray=\"2 4\"/><text x=\"245\" y=\"306\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">由身上的冷转到耳中的响</text><text x=\"515\" y=\"306\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">两条腿 → 两条腿 → 车</text><text x=\"400\" y=\"346\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">底本另标三章韵脚：雱—行、霏—归、乌—车</text></svg>",
+    "caption": "《北风》三章并排：换字只在风、雪、同行方式三处，「惠而好我」与章末的催促句一字未动。走的方式由步行到乘车，急迫层层加码。"
+   },
+   {
+    "type": "h2",
+    "text": "「其虚其邪，既亟只且」：全篇的催促"
+   },
+   {
+    "type": "quote",
+    "original": "其虚其邪，既亟只且。",
+    "translation": "怎能还这样从容不迫，事情已经很紧急了啊。"
+   },
+   {
+    "type": "p",
+    "text": "这一句是全诗的心跳，三章各出现一次，一字不改。站内注疏把「其虚其邪」训为从容不迫的样子，又出一说：舒缓徐行，「虚」「邪」都是语助，用来形容那份不紧不慢。要紧的是——这个「邪」不是邪恶的邪，旧注多读作「徐」（舒缓）；照今天的字面去猜，一定读岔。"
+   },
+   {
+    "type": "p",
+    "text": "「亟」是急。同样的用法在《诗经》里还有，《豳风·七月》说农夫忙完田里的活还得赶紧修屋顶，用的就是「亟其乘屋」的「亟」。「只且」读 zhǐ jū，站内注疏说得明白：句末语气词，无实义——它不表示任何意思，只负责把语气顿在那儿，像口语句尾拖出来的一声「啊」。"
+   },
+   {
+    "type": "callout",
+    "tone": "warn",
+    "label": "容易读岔",
+    "items": [
+     "「只且」两个字，看着像今天的「只是」「而且」，其实一个意思也不担；「邪」也不作邪恶讲。古诗文里这类虚字最坑人：它们不参与表意，却长着一副实词的脸。读不通的时候，先怀疑它是不是虚字，往往比查典故管用。"
+    ]
+   },
+   {
+    "type": "p",
+    "text": "把三章合起来看，这句话的位置就很有意思了。前面刚说完「携手同行」——手已经拉上了，人已经在一起了；紧接着却是一句埋怨式的催促：你怎么还这么慢条斯理，都火烧眉毛了。这不是对陌生人说的话，是对同伴说的话。风景可以换，雪可以换，走路的方式可以换，唯独这句催促三遍都一样。"
+   },
+   {
+    "type": "pull",
+    "text": "三章的风雪各不相同，催促的那一句却一个字都没换——真正急的，从来不是天气。"
+   },
+   {
+    "type": "h2",
+    "text": "几个字最容易读错"
+   },
+   {
+    "type": "p",
+    "text": "这首诗字面不难，坑却都埋在最不起眼的地方。四处最要紧的，一并点破。"
+   },
+   {
+    "type": "list",
+    "ordered": true,
+    "items": [
+     "「雨雪」的「雨」不是名词。今天读「雨雪」，会当成「雨和雪」两样东西；诗里的「雨」是动词，读 yù，意思是「下」，「雨雪」就是下雪。站内译文正作「雪下得纷纷扬扬」。这是古汉语里常见的名词用作动词，认得这一处，《诗经》里所有的「雨雪」都通了。",
+     "「匪」不是土匪，通「非」，就是「不是」。《卫风·氓》里那句「匪我愆期」，说的是「不是我拖延婚期」，同一个用法。本诗末章两句全靠它撑着。",
+     "「邪」读作「徐」，是舒缓，不是邪恶。「其虚其邪」四个字，说的是那份磨磨蹭蹭、不慌不忙的样子。",
+     "「只且」读 zhǐ jū，是句末的语气词，不表意。整句「既亟只且」的分量全在「亟」（急）这一个字上。"
+    ]
+   },
+   {
+    "type": "figure",
+    "ftype": "古今义对比",
+    "svg": "<svg viewBox=\"0 0 800 320\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>北风四处易读错的字</title><desc>雨、匪、邪、只且四字的今天字面与诗中本义对照</desc><text x=\"400\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">四个字，照今天的字面读一定读岔</text><line x1=\"56\" y1=\"52\" x2=\"744\" y2=\"52\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"56\" y=\"74\" width=\"330\" height=\"104\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"96\" y=\"116\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"30\">雨</text><text x=\"250\" y=\"104\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">今天的字面：雨水，名词</text><text x=\"250\" y=\"134\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\">诗中读 yù，动词：下</text><text x=\"250\" y=\"162\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">「雨雪」＝下雪，不是雨和雪</text><rect x=\"414\" y=\"74\" width=\"330\" height=\"104\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"454\" y=\"116\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"30\">匪</text><text x=\"608\" y=\"104\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">今天的字面：土匪、匪徒</text><text x=\"608\" y=\"134\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\">诗中通「非」：不是</text><text x=\"608\" y=\"162\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">参《卫风·氓》「匪我愆期」</text><rect x=\"56\" y=\"196\" width=\"330\" height=\"104\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"96\" y=\"238\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"30\">邪</text><text x=\"250\" y=\"226\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">今天的字面：邪恶、不正</text><text x=\"250\" y=\"256\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\">旧注读作「徐」：舒缓</text><text x=\"250\" y=\"284\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">「其虚其邪」＝不慌不忙的样子</text><rect x=\"414\" y=\"196\" width=\"330\" height=\"104\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"454\" y=\"238\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"26\">只且</text><text x=\"608\" y=\"226\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">今天的字面：只是、而且</text><text x=\"608\" y=\"256\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\">读 zhǐ jū，句末语气词</text><text x=\"608\" y=\"284\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">无实义，只把语气顿住</text></svg>",
+    "caption": "《北风》四处最易读错的字。「雱」「喈」「霏」「只且」等释义参本篇注疏，「邪」读为「徐」系旧注通说。"
+   },
+   {
+    "type": "callout",
+    "tone": "mute",
+    "label": "关于韵脚标注",
+    "items": [
+     "本站底本在三章的第二句后各附一处韵脚标注（雱—行、霏—归、乌—车），标明该章押韵所在。站内注疏已注明：那是底本所附的标注，不是诗句正文，读的时候跳过即可。它顺带告诉我们一件事——这三章各自换韵，本来是三段能唱的曲子。"
+    ]
+   },
+   {
+    "type": "h2",
+    "text": "「莫赤匪狐，莫黑匪乌」：全篇的转折"
+   },
+   {
+    "type": "p",
+    "text": "前两章都在写天气：风怎么冷、雪怎么大。到了第三章，起头的两句忽然换了内容——不写风雪了，改说狐狸和乌鸦。这是全篇的转折处，也是最不好懂的两句。"
+   },
+   {
+    "type": "p",
+    "text": "先把句子的骨头拆开。「莫」是「没有谁／没有什么」，「匪」通「非」，是「不是」。两个否定摞在一起，等于一个斩钉截铁的肯定：「没有红的不是狐狸」＝凡是红的，都是狐狸；「没有黑的不是乌鸦」＝凡是黑的，都是乌鸦。这种「莫……匪……」的双重否定，语气比直说强得多——直说是陈述，双重否定是把话堵死，不留一点例外。"
+   },
+   {
+    "type": "figure",
+    "ftype": "流程图",
+    "svg": "<svg viewBox=\"0 0 800 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>莫赤匪狐的双重否定</title><desc>由双重否定还原为全称肯定的三步</desc><text x=\"400\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">两个否定摞起来，是把话堵死</text><line x1=\"56\" y1=\"52\" x2=\"744\" y2=\"52\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"56\" y=\"84\" width=\"200\" height=\"78\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"156\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"19\">莫赤匪狐</text><text x=\"156\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">原句</text><path d=\"M264 123 L296 123\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><path d=\"M290 118 L300 123 L290 128 Z\" style=\"fill:var(--line)\"/><rect x=\"304\" y=\"84\" width=\"200\" height=\"78\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"404\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">没有红的不是狐狸</text><text x=\"404\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">照字面直译</text><path d=\"M512 123 L544 123\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><path d=\"M538 118 L548 123 L538 128 Z\" style=\"fill:var(--line)\"/><rect x=\"552\" y=\"84\" width=\"192\" height=\"78\" rx=\"4\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1\"/><text x=\"648\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"17\">凡红者皆狐</text><text x=\"648\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">还原成肯定句</text><line x1=\"56\" y1=\"192\" x2=\"744\" y2=\"192\" style=\"stroke:var(--line)\" stroke-dasharray=\"2 4\"/><text x=\"400\" y=\"226\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">「莫黑匪乌」同一造句：凡黑者皆乌</text><text x=\"400\" y=\"260\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">站内注疏：喻小人当道，触目皆是</text><text x=\"400\" y=\"288\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">另有读法以为此二句只是起兴，引出下文的相从同车</text></svg>",
+    "caption": "「莫赤匪狐，莫黑匪乌」的句法：双重否定还原为全称肯定。比喻义据本篇注疏，另一读法（视为起兴）如实并存。"
+   },
+   {
+    "type": "p",
+    "text": "那么，为什么偏偏挑狐狸和乌鸦？站内注疏的解释是：这是比喻，说小人当道，触目所及全是这类东西。狐与乌在古人的观感里都不算好兆头，一红一黑，颜色又极扎眼；「满眼看去，红的都是狐狸，黑的都是乌鸦」，等于说这地方已经没有一处干净。也有人读得更朴素，把这两句只当作起兴，先说眼前所见的鸟兽，再引出下文的相从同车——本站如实并存，不替读者拍板。"
+   },
+   {
+    "type": "p",
+    "text": "但无论取哪一读，这两句在结构上的作用是一样的：前两章的理由都在天上（风冷、雪大），第三章的理由落到了地上（人）。天气再坏也能等它过去，人若坏成了满眼狐乌，那就只剩走这一条路。诗到这里，才把「为什么非走不可」交代出来。"
+   },
+   {
+    "type": "h2",
+    "text": "这首诗到底在说谁的事"
+   },
+   {
+    "type": "p",
+    "text": "关于这十二句是谁在说、说的是哪一桩事，历来有两条读法。"
+   },
+   {
+    "type": "p",
+    "text": "汉代《毛诗序》把它系在一段具体的政教背景上：卫国政令苛虐，百姓离心，于是相互招呼、携手离开。按这个读法，风雪是乱世的写照，狐乌是当权者的比方，「携手同行」是国人结伴出走。汉儒读《国风》一向如此，每首都要落到一段本事上。"
+   },
+   {
+    "type": "p",
+    "text": "今人多不拘泥本事，径直读作乱离之世的一次出走：风雪交加，有人拉着我的手说走吧，而我还在犹豫，于是他一遍遍催。这样读，诗里的一切都是眼前实景，不必替它找一个具体的年代与国君。也有人把它读得更轻，看作朋友之间的招邀之辞——这一说流传较窄，聊备一格。"
+   },
+   {
+    "type": "callout",
+    "tone": "mute",
+    "label": "两说并存",
+    "items": [
+     "《诗经》在先秦本就是政治与外交场合的公共语言，一首诗被赋予什么含义，往往取决于用它的场合，未必等同作者原意。汉儒是在这个传统里读诗，不能简单斥为附会；但一桩不见于诗句本身的史事，也确实无从坐实。本站照旧例如实并陈，不作判定。"
+    ]
+   },
+   {
+    "type": "figure",
+    "ftype": "对比图",
+    "svg": "<svg viewBox=\"0 0 760 320\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>北风的两种读法</title><desc>本事读法与今人读法的理据对照</desc><text x=\"380\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">这场风雪里走的是谁</text><line x1=\"56\" y1=\"52\" x2=\"704\" y2=\"52\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"56\" y=\"78\" width=\"300\" height=\"198\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"206\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"17\" font-weight=\"600\">本事读法（汉《毛诗序》）</text><text x=\"206\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">卫国政虐，百姓离心</text><text x=\"206\" y=\"176\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">国人相携而去</text><text x=\"206\" y=\"204\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">风雪喻乱世，狐乌喻当权者</text><text x=\"206\" y=\"244\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">据：先秦赋诗多有政教之用</text><rect x=\"404\" y=\"78\" width=\"300\" height=\"198\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"554\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"17\" font-weight=\"600\">今人读法（多不拘本事）</text><text x=\"554\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">乱离之世相约出走</text><text x=\"554\" y=\"176\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">风雪即眼前实景</text><text x=\"554\" y=\"204\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">催促之语出自同行者之口</text><text x=\"554\" y=\"244\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">据：诗中不见年代与国君</text><text x=\"380\" y=\"304\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">两说并存，本站如实并陈、不作判定</text></svg>",
+    "caption": "《北风》的两种主流读法及各自理据。另有读作朋友招邀之辞的少数说法，流传较窄，一并存录。"
+   },
+   {
+    "type": "h2",
+    "text": "同一场雪，两个方向"
+   },
+   {
+    "type": "p",
+    "text": "「雨雪其霏」的「霏」字，《诗经》里还有一处用得极有名——《小雅·采薇》的末章：「昔我往矣，杨柳依依。今我来思，雨雪霏霏。」同样是漫天大雪，那里的人是往回走的，走了很久终于到家；这里的人是往外走的，刚要出门。一样的雪落在两首诗里，一首成了归乡的背景，一首成了出走的催促。《诗经》写景从不为写景，景是给情让位的。"
+   },
+   {
+    "type": "p",
+    "text": "还有一个词值得记一笔：「携手」。在三百零五篇里，这两个字只出现在《北风》这一首，而且一连三次——同行、同归、同车。今天说「携手」，多半用在合作、共赴一件好事上（携手共进、携手合作）；可它最早的这三次，说的是风雪中被人拉住的一只手，是逃难时的相扶。一个词的底色，有时和它今天的用法差得很远。"
+   },
+   {
+    "type": "figure",
+    "ftype": "金句卡",
+    "svg": "<svg viewBox=\"0 0 760 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>北风金句卡</title><desc>惠而好我，携手同行</desc><rect x=\"16\" y=\"16\" width=\"728\" height=\"268\" rx=\"6\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"380\" y=\"96\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"32\" letter-spacing=\"4\">惠而好我，携手同行</text><line x1=\"280\" y1=\"124\" x2=\"480\" y2=\"124\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"380\" y=\"164\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"17\">承蒙你厚爱我，与我携手同行</text><text x=\"380\" y=\"200\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">「携手」二字，三百篇中仅见于此诗，一连三次</text><rect x=\"330\" y=\"222\" width=\"100\" height=\"38\" rx=\"3\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1.5\"/><text x=\"380\" y=\"248\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"17\">邶风·北风</text></svg>",
+    "caption": "《邶风·北风》金句：惠而好我，携手同行。原文与白话逐字取自站内《诗经》管线。"
+   },
+   {
+    "type": "h2",
+    "text": "读这类诗，可以带走三条"
+   },
+   {
+    "type": "list",
+    "items": [
+     "遇到重章叠句，先把各章并排，只看换掉的那几个字——换字的地方就是诗在推进的地方，没换的地方就是它反复要说的话。",
+     "遇到「莫……匪……」这类双重否定，先老老实实翻成肯定句再读，语气的分量马上就出来了；古文里虚字最坑人，读不通时先怀疑虚字，往往比查典故管用。",
+     "遇到旧说与今说打架，不必急着二选一。汉儒的本事之说与今人的实景之读，各有各的依据，知道分歧在哪里，比记住一个标准答案更要紧。"
+    ]
+   },
+   {
+    "type": "p",
+    "text": "回到开头那个场面。门口的人喊了三遍「走不走」，风一次比一次响，雪一次比一次密，最后他把车都备好了。诗到这里就停了，没有交代他们究竟走没走、走去了哪里。《北风》留下的只是那一刻：手已经拉住了，话已经说到第三遍了，而门还开着。"
+   },
+   {
+    "type": "refs",
+    "items": [
+     "原文出处：《诗经·邶风·北风》，凡三章十二句，为《邶风》十九篇之第十六。原文与白话逐字取自站内《诗经》管线，异体与标点一仍底本。",
+     "字词训释：「雱」「喈」「霏」「惠而好我」「其虚其邪」「只且」「莫赤匪狐」诸条参本篇站内注疏；「邪」读作「徐」、「雨」读 yù 为动词，系旧注与古汉语通例。",
+     "他篇参证：《邶风·终风》「终风且暴」、《邶风·凯风》「凯风自南」、《邶风·谷风》「习习谷风」、《卫风·氓》「匪我愆期」、《豳风·七月》「亟其乘屋」、《小雅·采薇》「今我来思，雨雪霏霏」，均见站内《诗经》原文。",
+     "诗旨分歧：《毛诗序》系于卫国虐政、国人相携去国；今人多不拘本事，径读为乱离之世的出走；另有读作招邀之辞者。三说如实并陈，本站不作判定。",
+     "底本所附【韵：雱行】等标注为韵脚标记，非诗句正文（见本篇注疏）。"
     ]
    }
   ]
@@ -4965,6 +5884,263 @@
      "刺时、以静女之德相对照之说，见汉《毛诗序》一系旧解；今人多径读为情诗，两说本篇如实并陈，不作判定。",
      "「彤管」的所指，历代有红管、乐管、赤管之笔、初生红草诸说，无定论，本篇如实存疑并陈诸说。",
      "「爱（薆）」「说怿」「女（汝）」「归（馈）」「荑」「洵」等字词训释，参本篇站内注疏与译文。"
+    ]
+   }
+  ]
+ },
+ "4-1": {
+  "title": "白话《柏舟》（鄘风）",
+  "subtitle": "两章十四句，一句赌咒——「之死矢靡它」怎样走成了三千年的成语",
+  "centralIdea": "《鄘风·柏舟》全篇只有两章：柏木船漂在河心，那个额前垂着两绺头发的少年正是我认定的人；我发誓到死也不会有别的，可母亲啊、老天啊，就是不肯体谅我。两章之间只动了三处字，全诗的分量压在「之死矢靡它」这一句誓上——不说自己多情深，只用一个绝对的期限加一个彻底的否定把话说死。四个字最易照今义读岔：「矢」是发誓不是箭，「它」是别的人，「只」是句末语气词，「仪」与「特」都训作配偶。诗旨历来两说：汉《毛诗序》读作共伯之妻共姜拒绝改嫁的自誓之词，今人多读作女子认定所爱而母亲不许，本篇如实并陈、不作判定。另需先分清：《诗经》里有两首《柏舟》，本篇是《鄘风》开卷第一首，与《邶风·柏舟》不是一回事。",
+  "blocks": [
+   {
+    "type": "lead",
+    "text": "《诗经》里有一句誓，只有五个字，却被后人一路用了三千年：之死矢靡它——到死我也发誓不会有别的。它出自《鄘风·柏舟》，一首两章十四句的小诗；诗极短，可后世凡要表白「我不改」，几乎都绕不开它。"
+   },
+   {
+    "type": "p",
+    "text": "先把场面摆出来。一条柏木船没人系着，漂在河心；说话的这个人眼里只有一位额前垂着两绺头发的少年——她认定，那就是自己要的人。接着赌了个咒：到死也不会有第二个。然后抬起头喊了一声：母亲啊，老天啊，怎么就是不肯体谅我。"
+   },
+   {
+    "type": "p",
+    "text": "全诗到这里就完了。母亲没有回话，事情没有下文。这一篇要讲四件事：这十四句字面上说什么，哪几个字最容易照今义读岔；一句誓词是怎么搭起来的；说话人历来有哪两种截然不同的认法；以及它后来怎样变成了一个成语和一个符号。"
+   },
+   {
+    "type": "h2",
+    "text": "先认门：《诗经》里有两首《柏舟》"
+   },
+   {
+    "type": "callout",
+    "tone": "mute",
+    "label": "先分清两首",
+    "items": [
+     "《诗经》里有两首诗都叫《柏舟》，且都排在各自那一风的开卷第一篇：一首在《邶风》，一首在《鄘风》——也就是本篇。两首都从柏木船起兴，内容却不搭界：《邶风》那首有五章，写一个人满腹委屈无处可诉，睡不着，找兄弟诉说反被顶了回来，最硬的一段是「我心匪石，不可转也」；本篇只有两章，写一个人认定了另一个人，母亲不体谅，她赌咒到死也不改。二者常被混着引用，读时先看清是哪一风。"
+    ]
+   },
+   {
+    "type": "p",
+    "text": "顺带把「鄘」（yōng）说清楚：武王灭商后把商的旧都一带分成邶、鄘、卫三片，后来邶、鄘并入卫国，所以《邶风》《鄘风》《卫风》采到的其实都是卫地一带的歌——三风相连，同名的篇目自然就多。"
+   },
+   {
+    "type": "p",
+    "text": "至于为何都从柏木船起头：柏木纹理密、耐水，古人拿它造船；而一条好船没人系着、漂到哪儿算哪儿，这画面本身就有味道。这就是《诗经》最常用的「兴」——先摆一件眼前的东西把情绪带起来，再说人事，不必追问「这条船比喻谁」。"
+   },
+   {
+    "type": "h2",
+    "text": "十四句，逐句读通"
+   },
+   {
+    "type": "quote",
+    "original": "泛彼柏舟，在彼中河，髧彼两髦，实维我仪，之死矢靡它，母也天只，不谅人只。",
+    "translation": "那柏木船儿飘荡，飘在河水中央。垂发齐眉的青年，正是我的佳偶。至死发誓不变心，母亲啊苍天啊，为何就不肯体谅我！"
+   },
+   {
+    "type": "p",
+    "text": "「泛」是漂浮，无所依傍地漂。「中河」不是「中间的河」，而是「河中」的倒装，指河水中央——站内注疏正作此解。这种倒装成批出现，同属卫地的《邶风·式微》就有「胡为乎中露」，「中露」即露中。认死今天的语序，这类词一个也读不通。"
+   },
+   {
+    "type": "p",
+    "text": "「髧」（dàn）是头发下垂的样子；「两髦」（máo）据站内注疏，指未成年男子额前分梳、垂下的两绺头发，是「还没行冠礼」的标志。所以「髧彼两髦」等于给这位少年拍了张特写：别的不写，只写他额前那两绺垂发——全诗写人只此一笔，年纪、身份、样子却一并交代了。"
+   },
+   {
+    "type": "p",
+    "text": "「实维我仪」的「实」是「是」，「维」是句中系词，「仪」旧训为「匹」，即配偶——站内译文正作「正是我的佳偶」。所以这句是斩钉截铁的认定：他就是我的人。注意语气不是「我想要他」，是「他正是」；这与《周南·关雎》「窈窕淑女，君子好逑」同一路数，都是郑重的判断，不是主动的追逐。"
+   },
+   {
+    "type": "p",
+    "text": "接着是全诗的骨头：「之死矢靡它」。「之」在这里是动词「到」，「之死」即到死为止；「矢」据站内注疏就是「誓」；「靡」是无；「它」同「他」，指别的人。五个字连起来：一直到死，我发誓不会有第二个人。"
+   },
+   {
+    "type": "p",
+    "text": "末两句「母也天只，不谅人只」。「只」（zhǐ）据站内注疏是句末语气助词，没有实义——既不是「只有」也不是「仅仅」，只管托住语气，相当于今天的「啊」。所以「母也天只」就是「母亲啊，老天啊」；「谅」是体谅，「不谅人只」的「人」是说话人自指，站内译文作「为何就不肯体谅我」。"
+   },
+   {
+    "type": "quote",
+    "original": "泛彼柏舟，在彼河侧，髧彼两髦，实维我特，之死矢靡慝，母也天只，不谅人只。",
+    "translation": "那柏木船儿飘荡，飘在河水一侧。垂发齐眉的青年，正是我的良配。至死发誓不改变，母亲啊苍天啊，为何就不肯体谅我！"
+   },
+   {
+    "type": "p",
+    "text": "第二章几乎是第一章原样重来，只动了三处：「中河」换成「河侧」，「仪」换成「特」，「它」换成「慝」。这是《诗经》最基本的写法，叫「重章叠句」——各章句式相同，只在关键处换一两个字。前提是：《诗经》里的诗原本都配乐能唱，今天只剩歌词，曲调早失传。既然是歌，重复就不是啰嗦，而是结构，像副歌。"
+   },
+   {
+    "type": "p",
+    "text": "三处换字，两处只是换说法：「河侧」是河边，与「中河」同指那条水；「特」据站内注疏也是配偶之义，与「仪」同训。真正走了一步的是第三处——「慝」（tè）据站内注疏是邪恶，此处指变心。「靡它」说的是外头：再没有别人；「靡慝」说的是里头：再不生二心。第一遍把别人挡在外面，第二遍把自己的心也钉死——一首歌唱第二遍，力气就是这样加上去的。"
+   },
+   {
+    "type": "figure",
+    "ftype": "结构图",
+    "svg": "<svg viewBox=\"0 0 800 386\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>鄘风柏舟两章的对照</title><text x=\"400\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">两章十四句，只动了三处</text><line x1=\"46\" y1=\"56\" x2=\"754\" y2=\"56\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"150\" y=\"88\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">起兴</text><text x=\"290\" y=\"88\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">所在</text><text x=\"430\" y=\"88\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">其人</text><text x=\"566\" y=\"88\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">认定</text><text x=\"700\" y=\"88\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">立誓</text><line x1=\"46\" y1=\"104\" x2=\"754\" y2=\"104\" style=\"stroke:var(--line)\" stroke-dasharray=\"2 4\"/><text x=\"30\" y=\"152\" style=\"fill:var(--ink-faint)\" font-size=\"13\">一章</text><text x=\"150\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">泛彼柏舟</text><text x=\"290\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\">在彼中河</text><text x=\"430\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">髧彼两髦</text><text x=\"566\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\">实维我仪</text><text x=\"700\" y=\"150\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\">之死矢靡它</text><text x=\"30\" y=\"208\" style=\"fill:var(--ink-faint)\" font-size=\"13\">二章</text><text x=\"150\" y=\"206\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">泛彼柏舟</text><text x=\"290\" y=\"206\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\">在彼河侧</text><text x=\"430\" y=\"206\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">髧彼两髦</text><text x=\"566\" y=\"206\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\">实维我特</text><text x=\"700\" y=\"206\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\">之死矢靡慝</text><line x1=\"46\" y1=\"234\" x2=\"754\" y2=\"234\" style=\"stroke:var(--line)\" stroke-dasharray=\"2 4\"/><text x=\"150\" y=\"262\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">一条没人系的船</text><text x=\"150\" y=\"282\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">两章全同</text><text x=\"290\" y=\"262\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">河心 → 河边</text><text x=\"290\" y=\"282\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">中河即河中，倒文</text><text x=\"430\" y=\"262\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">额前垂发的少年</text><text x=\"430\" y=\"282\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">两章全同</text><text x=\"566\" y=\"262\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">仪、特皆训配偶</text><text x=\"566\" y=\"282\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">换字不换义</text><text x=\"700\" y=\"262\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">它：再无别人</text><text x=\"700\" y=\"282\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">慝：再无二心</text><rect x=\"180\" y=\"304\" width=\"440\" height=\"46\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"400\" y=\"334\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">母也天只，不谅人只</text><text x=\"400\" y=\"374\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">收尾这一声呼告，两章一字未改</text></svg>",
+    "caption": "《鄘风·柏舟》两章的对照：起兴、写人、呼告全同，只在所在、认定、立誓三处换字，而「靡它」到「靡慝」由外而内进了一层。训释参本篇站内注疏。"
+   },
+   {
+    "type": "h2",
+    "text": "「矢」不是箭，是誓"
+   },
+   {
+    "type": "p",
+    "text": "这句里最容易读错的是「矢」字。今天见到「矢」，第一反应总是弓箭——「有的放矢」的矢；可在这里它是「誓」的借字。这也不是孤例：同在卫地的《卫风·考槃》，三章末句分别是「永矢弗谖」「永矢弗过」「永矢弗告」，那位隐居涧边的人一连发了三个誓，用的都是这个「矢」。有此旁证，训「矢」为誓就不是随口一说。"
+   },
+   {
+    "type": "figure",
+    "ftype": "古今义对比",
+    "svg": "<svg viewBox=\"0 0 780 380\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>柏舟四字的古今义</title><text x=\"390\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">四个字最容易照今义读岔</text><line x1=\"390\" y1=\"58\" x2=\"390\" y2=\"352\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><line x1=\"46\" y1=\"206\" x2=\"734\" y2=\"206\" style=\"stroke:var(--line)\" stroke-dasharray=\"2 4\"/><text x=\"195\" y=\"100\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"28\">矢</text><text x=\"195\" y=\"128\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">照今天的字面：箭</text><text x=\"195\" y=\"156\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"15\">诗中作「誓」，发誓</text><text x=\"195\" y=\"182\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">《卫风·考槃》「永矢弗谖」同</text><text x=\"585\" y=\"100\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"28\">它</text><text x=\"585\" y=\"128\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">照今天的字面：指物之词</text><text x=\"585\" y=\"156\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"15\">诗中同「他」，别的人</text><text x=\"585\" y=\"182\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">靡它＝再没有别人</text><text x=\"195\" y=\"252\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"28\">只</text><text x=\"195\" y=\"280\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">照今天的字面：只有、仅仅</text><text x=\"195\" y=\"308\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"15\">诗中是句末语气词，无实义</text><text x=\"195\" y=\"334\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">母也天只＝母亲啊，老天啊</text><text x=\"585\" y=\"252\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"28\">仪</text><text x=\"585\" y=\"280\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">照今天的字面：仪表、仪式</text><text x=\"585\" y=\"308\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"15\">诗中训「匹」，即配偶</text><text x=\"585\" y=\"334\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">下章的「特」也是这个意思</text></svg>",
+    "caption": "「矢」「它」「只」「仪」四字的古今义之别。前三字与「特」「慝」等训释据本篇站内注疏，「仪」训「匹」为旧训，站内译文作「佳偶」。"
+   },
+   {
+    "type": "p",
+    "text": "再看这句誓怎么搭起来：只有两个零件——先给一个绝对的期限「之死」，再用一个彻底的否定收口「靡它」，中间那个「矢」字把两半焊在一起。全句没有一个形容感情的字，没有「爱」，没有「思」，没有「愿」。"
+   },
+   {
+    "type": "callout",
+    "tone": "note",
+    "items": [
+     "打个比方：说「我一定做到」听起来很满，可「一定」是能打折的，人总能给自己留一道缝；说「我不会有第二种做法」，就把缝一次堵死了。誓词爱用否定，正是这个道理——不是夸自己有多强，是把退路一条条划掉。"
+    ]
+   },
+   {
+    "type": "p",
+    "text": "《诗经》里的誓大多是这个搭法。《王风·大车》里那位说：「谷则异室，死则同穴。谓予不信，有如皦日。」——活着不能同屋，死了也要同穴；你若不信我，有太阳在上头作证。同样以死为界，同样拿天上的东西担保。《邶风·击鼓》「死生契阔，与子成说」的「成说」也就是订下的约。可见先秦立誓有一套现成句法：期限推到极处，可能性堵到尽头。"
+   },
+   {
+    "type": "p",
+    "text": "那首同名的《邶风·柏舟》正可对看：它最硬的一段也用否定立誓——我的心不是石头，不能被人转动；不是席子，不能被人卷起。一首说「我不在可以被搬动的那一类里」，一首说「到死也不会有别的」，同一种硬法子，说的是同一件事：我不改。"
+   },
+   {
+    "type": "h2",
+    "text": "「母也天只」：全诗唯一一次抬头"
+   },
+   {
+    "type": "p",
+    "text": "前面五句说的都是眼前之物、心里之志，语气是平的，像自己对自己说话；到末两句忽然一转，成了呼告——她抬起头，喊了两个对象：母亲，和老天。"
+   },
+   {
+    "type": "p",
+    "text": "这一喊把处境交代清楚了：前面立誓再硬也只是一个人的事，喊出「母也天只」才知道这誓不是白发的——对面有人拦着。而她喊的两个对象，一个是眼前正拦着她的人，一个是拦不住也帮不了她的天。人间的路走到头，才会去喊天。"
+   },
+   {
+    "type": "pull",
+    "text": "不说自己有多深情，只说到死也不会有别的——这是《柏舟》立誓的方式。"
+   },
+   {
+    "type": "p",
+    "text": "还要留意：这两句是全诗唯一一处两章一字未改的地方。「中河」改了，「仪」改了，「它」改了，唯独这一声喊原样又来一遍——第一遍喊完没人答，隔了一会儿，同一句又冒上来。诗里翻来覆去的话，往往就是心里翻来覆去的念头。"
+   },
+   {
+    "type": "callout",
+    "tone": "warn",
+    "label": "此处存疑",
+    "items": [
+     "有一个小疑点值得标出来：诗里只呼「母」，没有呼「父」。旧注中有一路把「天」解作父亲，好与旧说所讲的「父母欲令改嫁」相合；也有径直读作苍天的，站内译文即作「苍天」。诗句本身没有交代，两解都补不上这一块，此处如实标存疑，不作判定。"
+    ]
+   },
+   {
+    "type": "h2",
+    "text": "立誓的人是谁：两说并陈"
+   },
+   {
+    "type": "p",
+    "text": "这首诗从头到尾没交代说话人的身份，于是「她是谁」成了一桩长公案。"
+   },
+   {
+    "type": "p",
+    "text": "汉代《毛诗序》给出的答案是一桩史事：这是「共姜自誓」。卫国世子共伯早死，其妻共姜守义不肯再嫁，父母要她改嫁，她发誓不许，遂作此诗。按这条路读，「髧彼两髦」的少年就是已故的共伯，全诗是寡妇拒绝改嫁的誓词，「母也天只」正对着逼她的父母。至于「两髦」这未成年的发式，旧注另有一路解作人子事奉父母时所留，父母在世便留着，因而也可用在成年男子身上。"
+   },
+   {
+    "type": "p",
+    "text": "今人多不取这条路，而径直读作一个女子的自择：她认定了那位额前垂发的少年，母亲不许，便赌咒到死也不改。理由也实在：全诗没有一个字提到亡故与守节；「实维我仪」「实维我特」是当下的认定，语气朝前，不像追念一个已死的人；而「两髦」按本义是未行冠礼的少年，用在已娶妻的世子身上，须先绕一道弯。"
+   },
+   {
+    "type": "callout",
+    "tone": "mute",
+    "label": "两说并存",
+    "items": [
+     "《诗经》在先秦本是政治与外交场合的公共语言，诸侯宴享时赋诗言志，一首诗被赋予什么意思往往取决于用它的场合，未必等同作者原意；汉儒是在这一传统里读诗，并非凭空附会。但共伯、共姜这桩事不见于诗句本身，也无从坐实。本站照旧例如实并陈，不替读者拍板。"
+    ]
+   },
+   {
+    "type": "figure",
+    "ftype": "对比图",
+    "svg": "<svg viewBox=\"0 0 780 356\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>鄘风柏舟的两种读法</title><text x=\"390\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">立誓的人是谁</text><line x1=\"46\" y1=\"56\" x2=\"734\" y2=\"56\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"46\" y=\"82\" width=\"320\" height=\"222\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"206\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"17\" font-weight=\"600\">守节读法（汉《毛诗序》）</text><text x=\"206\" y=\"148\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">共姜自誓</text><text x=\"206\" y=\"178\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">卫世子共伯早死，其妻守义</text><text x=\"206\" y=\"204\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">父母欲令改嫁，誓而不许</text><text x=\"206\" y=\"230\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">「两髦」解作人子之饰</text><text x=\"206\" y=\"266\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">据：先秦赋诗多系于政教本事</text><text x=\"206\" y=\"288\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">「母也天只」正合父母相逼</text><rect x=\"414\" y=\"82\" width=\"320\" height=\"222\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"574\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"17\" font-weight=\"600\">自择读法（今人多取）</text><text x=\"574\" y=\"148\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">女子认定所爱而母亲不许</text><text x=\"574\" y=\"178\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">「实维我仪」是认定，不是追念</text><text x=\"574\" y=\"204\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">两髦为未冠少年的发式</text><text x=\"574\" y=\"230\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">全诗无一字及亡夫、及守节</text><text x=\"574\" y=\"266\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">据：诗句本身只见眼前之人</text><text x=\"574\" y=\"288\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">语气是赌咒，不像追述</text><text x=\"390\" y=\"338\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">两说并存，本站如实并陈、不作判定</text></svg>",
+    "caption": "《鄘风·柏舟》说话人身份的两种主流读法及各自理据。本站如实并陈，不作判定。"
+   },
+   {
+    "type": "h2",
+    "text": "一句誓，走出了两条路"
+   },
+   {
+    "type": "p",
+    "text": "一条是成语。「之死矢靡它」截去一个「矢」字，成了「之死靡它」（也写作「之死靡他」），意思是到死也不生二心。原句里的「它」本指别的人，是具体的；成语用久了，对象就泛开去——可以是人，可以是事，也可以是一辈子认下的那点志向。最硬的几个字被摘出来磨成现成的词，具体的那层反倒掉了。"
+   },
+   {
+    "type": "p",
+    "text": "另一条是符号，走的是旧说那边。既然《毛诗序》把此诗系于共姜守节，「柏舟」二字便与「寡居守志」绑到了一起，后世史传、碑志、旌表里「柏舟之节」一类说法屡见不鲜；同名的《邶风·柏舟》也常被牵连进去，一并当作守节的出典。"
+   },
+   {
+    "type": "p",
+    "text": "要说明白的是：符号义是后起的，不是诗本身有的。诗里只有一条船、一个少年、一句赌咒和一声呼告，没有一个字在讲礼法。《邶风·式微》也是这样——本义只是「天黑了」，因旧说而沾上「衰落」，如今本义反被盖住。一个篇名被经解带出新义，新义用久了就把老义挤到一边，这是读古书要留心的一层。"
+   },
+   {
+    "type": "figure",
+    "ftype": "时间线",
+    "svg": "<svg viewBox=\"0 0 800 320\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>之死矢靡它与柏舟的流变</title><text x=\"400\" y=\"32\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">一句誓，走出了两条路</text><line x1=\"70\" y1=\"152\" x2=\"730\" y2=\"152\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><circle cx=\"120\" cy=\"152\" r=\"8\" style=\"fill:var(--cinnabar)\"/><circle cx=\"320\" cy=\"152\" r=\"6\" style=\"fill:var(--ink-soft)\"/><circle cx=\"520\" cy=\"152\" r=\"6\" style=\"fill:var(--ink-soft)\"/><circle cx=\"700\" cy=\"152\" r=\"6\" style=\"fill:var(--ink-soft)\"/><text x=\"120\" y=\"116\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\" font-weight=\"600\">诗中本义</text><text x=\"320\" y=\"116\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">经解之义</text><text x=\"520\" y=\"116\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">后世符号</text><text x=\"700\" y=\"116\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">今日常语</text><text x=\"120\" y=\"186\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">之死矢靡它</text><text x=\"120\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">到死不会有别人</text><text x=\"320\" y=\"186\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">《序》系于共姜自誓</text><text x=\"320\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">遂沾上守节之意</text><text x=\"520\" y=\"186\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">「柏舟」代称寡居守志</text><text x=\"520\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">屡见于碑志旌表</text><text x=\"700\" y=\"186\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">成语「之死靡它」</text><text x=\"700\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">泛指绝无二心</text><line x1=\"70\" y1=\"242\" x2=\"730\" y2=\"242\" style=\"stroke:var(--line)\" stroke-dasharray=\"2 4\"/><text x=\"400\" y=\"276\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">誓词化为成语，篇名化为符号——后起之义，皆非诗中本有</text><text x=\"400\" y=\"304\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">为源流示意</text></svg>",
+    "caption": "「之死矢靡它」与「柏舟」的流变：由诗中誓词与起兴之物，经旧说而分别走成成语与守节符号。为源流示意，后起之义非诗中本有。"
+   },
+   {
+    "type": "h2",
+    "text": "同一组诗里的两种声气"
+   },
+   {
+    "type": "p",
+    "text": "把这首诗放回《鄘风》里看，还有一层意思。《鄘风》共十篇，《柏舟》排第一，排在第七的是《蝃𬟽》（dì dōng，指虹），其末章说：「乃如之人也，怀昏姻也，大无信也，不知命也。」——像这样的人啊，一心想着婚事，太没信义，不懂天命。说的正是一个自行奔就婚事的女子，语气是斥责的。"
+   },
+   {
+    "type": "p",
+    "text": "一编之内，一首赌咒非他不嫁，一首斥人自求婚配为「不知命」。两种声气并排放着，本身就值得记一笔：「风」是各地采来的歌，不是统一的教条，里头本就有互相顶撞的说法。反过来看也就明白，后世注家为何非要给《柏舟》安一个合礼的背景——若照字面读作女子自择，它与《蝃𬟽》正好撞车。"
+   },
+   {
+    "type": "figure",
+    "ftype": "金句卡",
+    "svg": "<svg viewBox=\"0 0 720 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>鄘风柏舟金句</title><rect x=\"40\" y=\"30\" width=\"640\" height=\"240\" rx=\"5\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"52\" y=\"42\" width=\"616\" height=\"216\" rx=\"3\" style=\"fill:none;stroke:var(--line)\" stroke-dasharray=\"2 5\"/><text x=\"360\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"30\">之死矢靡它</text><text x=\"360\" y=\"166\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"24\">母也天只，不谅人只</text><line x1=\"240\" y1=\"192\" x2=\"480\" y2=\"192\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"360\" y=\"222\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">到死我也发誓不会有别的人</text><text x=\"360\" y=\"248\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"14\">《诗经·鄘风·柏舟》</text></svg>",
+    "caption": "《鄘风·柏舟》金句。原文逐字取自站内《诗经》管线，白话据站内译文。"
+   },
+   {
+    "type": "h2",
+    "text": "十四句，凭什么留下来"
+   },
+   {
+    "type": "p",
+    "text": "《诗经》里写婚姻受阻的诗不止这一首。《郑风·将仲子》写一位姑娘一再劝仲子别翻墙进来，理由是「畏我父母」，末了叹一句「父母之言，亦可畏也」；《齐风·南山》则把规矩摆得明白：「取妻如之何？必告父母。」婚事要经父母之命，那是一套实实在在的制度。"
+   },
+   {
+    "type": "p",
+    "text": "跟这些诗比，《柏舟》最短，也最不讲道理：不辩解，不诉苦，不列理由，只把一句誓砸下去，再喊一声天。短到这个份上，反而留下一个最空、也最公用的架子——有人拦着，我不改。三千年间，守节的人可以站进去，不肯听命的人也可以站进去，连那些与婚姻毫不相干的坚持，也借它的句式说话。"
+   },
+   {
+    "type": "p",
+    "text": "它还有一点特别：没有结局。诗停在呼告上，母亲没有答话，话说到最满，事却悬在半空——这份没有下文的紧，正是它经得起反复读的地方。"
+   },
+   {
+    "type": "p",
+    "text": "最后提一句读法上的提醒：诗里那道阻力长在周代宗法制度里——婚姻须告父母，与今天的家庭关系不是一回事；旧说所讲的守节、后世由它生出的贞节符号，更须放回历史里去看。今人读它宜作文学与思想史的体会：看古人被拦住时，怎么把一句话说得没有余地。若直接搬作今日婚恋或家庭关系的现成方子，古今之间那道坎，还是要先看清楚。"
+   },
+   {
+    "type": "list",
+    "items": [
+     "先分清是哪一首《柏舟》：《邶风》那首五章写委屈无处诉，《鄘风》这首两章写认定与赌咒。",
+     "遇到熟字先查古义：「矢」是誓不是箭，「它」是别的人，「只」是语气词，「仪」「特」都训配偶——古今同形而异义，是读古诗最常见的坑。",
+     "碰上历代分歧处，先把各家理据看清楚，不急着选边站；后起的成语义与符号义，也别倒过来当成诗的本义。"
+    ]
+   },
+   {
+    "type": "refs",
+    "items": [
+     "原文出处：《诗经·鄘风·柏舟》，底本据站内《诗经》原文管线，引文与白话逐字取自站内原文与译文。",
+     "「中河」为「河中」倒文、「髧」为发下垂貌、「两髦」为未冠男子额前分垂之发、「只」为句末语气助词、「矢」为誓、「特」为匹偶、「慝」指变心，皆据站内注疏；「仪」训「匹」为旧训，站内译文作「佳偶」。",
+     "「共姜自誓」及共伯早死、父母欲令改嫁诸说见汉《毛诗序》，今人多读为女子自择之辞，二说如实并陈不作判定；「天」旧注有解作父者，站内译文作「苍天」，如实标存疑。",
+     "旁证诗句均出自站内《诗经》：《邶风》之柏舟、式微、击鼓，《卫风·考槃》《王风·大车》《郑风·将仲子》《齐风·南山》《周南·关雎》《鄘风·蝃𬟽》。",
+     "成语「之死靡它」与以「柏舟」代称守节，皆后起之义。",
+     "本篇为文学与思想史层面的研习文字，不作现代劝诫。"
     ]
    }
   ]
