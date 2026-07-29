@@ -105,14 +105,32 @@ function stripStarTemplates(wikitext) {
   return out
 }
 
+// 底本讹字校正表(逐字、极少、须有确证才加)。维基文库个别页与通行本有出入,属源页之误
+// 而非管线之误——改在这里而非手改生成物,重跑才不会被覆盖。
+// 每条须注明:通行本作什么、凭什么判定源页有误。
+const SOURCE_TYPOS = [
+  // 《卫风·硕人》「美目盻兮」:通行《毛诗》作「盼」(pàn,目黑白分明),源页作「盻」(xì,恨视),
+  // 二字义不相涉。铁证是站内《论语·八佾》子夏引此句即作「盼」——同一站内两书用字打架。
+  { book: 'shijing', from: '美目盻兮', to: '美目盼兮' },
+]
+const fixTypos = (slug, text) => SOURCE_TYPOS.reduce(
+  (t, r) => (r.book === slug ? t.replaceAll(r.from, r.to) : t), text)
+
 // 行清洗 → 简体正文;若为导航/标题/标记/空行返回 null
 function cleanLine(raw) {
   if (/^\*+\s*\[\[/.test(raw.trim())) return null          // *[[…]] 导航链接行
   if (/^\[\d+\][^[]{0,16}[：:]/.test(raw.trim())) return null  // 校勘脚注行(如难经「[1]字：原作…据《…》改」),整行剔除
   // 剥离正文内联校注锚 [数字](难经经文如「其脉浮[1]在…」);经典正文不用 [数字] 故他书 no-op
+  // 源页编者所加的韵脚标注(《邶风·北风》「惠而好我，携手同行，【韵：雱行】」),
+  // 是编者标注非诗句正文——站内注疏一度专出两条解释它,等于拿注疏给数据缺陷打补丁。
+  // 标注为行尾内联、不独立成段,故剔除不改段数,译文/注疏的位置索引安全。
   const text = clean(replaceAnother(preResolve(stripRef(raw))).replace(/^[*#:;]+/, '').replace(/\[\d+\]/g, ''))
   if (isJunk(text)) return null
   const simp = t2s(text).replaceAll('愼', '慎').replaceAll('擧', '举')   // OpenCC 未规范的异体字补正(慎/举)
+    // 源页编者所加的韵脚标注(《邶风·北风》「携手同行，【韵：雱行】」),是编者标注非诗句正文。
+    // 须在繁转简之后剔——源页作繁体「韻」,在 t2s 之前匹配「韵」命不中(踩过一次)。
+    // 标注为行尾内联、不独立成段,故剔除不改段数,译文/注疏的位置索引安全。
+    .replace(/【韵[：:][^】]*】/g, '').trim()
   if (!simp || CHAPTER_MARK_RE.test(simp) || NAV_LINE_RE.test(simp) || PIN_TITLE_RE.test(simp) || LOSS_NOTE_RE.test(simp) || /^__\w+__$/.test(simp) || /^目\s*[录錄]/.test(simp)) return null
   return simp
 }
@@ -328,6 +346,9 @@ async function main() {
     if (book.exactChapters && chapters.length !== book.exactChapters) {
       errors.push(`${book.title}: 应恰 ${book.exactChapters} 章,实得 ${chapters.length}`)
     }
+
+    // 底本讹字校正(SOURCE_TYPOS):须在合并译文之前,且不改段数
+    for (const c of chapters) for (const p of c.paragraphs) p.original = fixTypos(book.slug, p.original)
 
     // 合并人工译文(章号 → 段序数组)
     const bookTr = translations[book.slug] ?? {}
