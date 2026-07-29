@@ -527,6 +527,7 @@ if (fs.existsSync(glossaryPath)) {
   if (fs.existsSync(dir)) {
     const BANNED = new Set(['zhongyi', 'moulue'])              // 中医/谋略不入场
     const WIN_RE = /(胜负|输赢|赢了|碾压|击败|完胜|败北|谁赢|分高下|谁对谁错)/  // 论点禁评胜负
+    let nArticle = 0, nBadArtCite = 0
     const chCache = {}
     const chapterText = (corpus, slug, ch) => {
       const k = `${corpus}/${slug}`
@@ -604,6 +605,35 @@ if (fs.existsSync(glossaryPath)) {
           err(`debate ${id}: 家「${s.label}」在 ${pk.id} 用 key「${pk.key}」,此处却用「${s.key}」——同一家须同 key`)
         } else if (!pk) schoolLabelMap.set(s.label, { id, key: s.key })
       }
+      // 白话导读(owner 2026-07-29):辩论页门槛高,另出整篇文章解释「他们在辩什么」。
+      // 引文校验池 = 该辩所据的那些章节(与辩本身 cite 同一个池),跨章引用即判错。
+      const artPath = path.join(ROOT, `src/data/debates/articles/${id}.json`)
+      if (fs.existsSync(artPath)) {
+        const art = JSON.parse(fs.readFileSync(artPath, 'utf8'))
+        nArticle++
+        const pool = new Set()
+        for (const r of d.rounds || []) for (const t of r.turns || []) {
+          const c = t.cite || {}
+          const txt = chapterText(c.corpus, c.slug, c.ch)
+          if (txt) pool.add(txt)
+        }
+        const inPool = (q) => [...pool].some((t) => t.includes(q))
+        const blocks = Array.isArray(art.blocks) ? art.blocks : []
+        if (!art.title) err(`debate-article ${id}: 缺 title`)
+        if (!art.centralIdea) err(`debate-article ${id}: 缺 centralIdea`)
+        if (art.hero || art.featured) err(`debate-article ${id}: 不该有 hero/featured`)
+        if (blocks.filter((b) => b.type === 'h2').length < 1) err(`debate-article ${id}: 无分节`)
+        if (blocks.filter((b) => b.type === 'pull').length > 1) err(`debate-article ${id}: pull 超 1 处`)
+        for (const b of blocks) {
+          if (b.type === 'quote' && b.original && !inPool(b.original)) {
+            err(`debate-article ${id}: 引文非该辩所据章节的子串「${b.original.slice(0, 14)}…」`); nBadArtCite++
+          }
+          if (b.type === 'quote' && b.text && !b.translation) err(`debate-article ${id}: quote 白话须用 translation`)
+          if ((b.type === 'list' || b.type === 'callout' || b.type === 'steps') && !(b.items || []).length) err(`debate-article ${id}: ${b.type} 空块`)
+        }
+        // 会讲不评输赢:整篇软扫,导读尤忌替读者判高下
+        if (WIN_RE.test(JSON.stringify(art))) err(`debate-article ${id}: 含评胜负字样——导读只讲「在辩什么」,不判谁对`)
+      }
     }
     // 分类体系(v21.1):议题两级树(四门→类目)+ 正交的形态标签
     const DIVISIONS = new Set(['tiandao', 'xinxing', 'zhidao', 'weixue'])
@@ -616,6 +646,7 @@ if (fs.existsSync(glossaryPath)) {
       if (tp.format && !FORMATS.has(tp.format)) err(`debate ${tp.id}: format 非法「${tp.format}」`)
     }
     infos.push(`百家争鸣: ${files.length} 辩 · ${turnTotal} 轮 · 参辩 ${partyTotal} 家次`)
+    if (nArticle) infos.push(`辩题白话导读: ${nArticle} 篇 · ${nBadArtCite} 坏引文`)
     infos.push(`  义理四门: ${['tiandao', 'xinxing', 'zhidao', 'weixue'].map((d) => `${d} ${divCount[d] || 0}`).join(' · ')}`)
   }
 }

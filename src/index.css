@@ -3343,6 +3343,12 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   .debates-facet__label { flex: none; }
 }
 .debates-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+/* 辩题白话导读入口(owner 2026-07-29):卡片是 Link 不能嵌 Link,故作兄弟节点 */
+.debate-card-wrap { display: flex; flex-direction: column; }
+.debate-card-wrap .debate-card { flex: 1; }
+.debate-card__guide { display: block; margin-top: -1px; padding: 7px 14px; border: 1px solid var(--line); border-top: none; border-radius: 0 0 9px 9px; background: var(--paper-raised); color: var(--cinnabar-pure); font-size: .78rem; text-decoration: none; transition: background .16s ease; }
+.debate-card__guide:hover { background: color-mix(in srgb, var(--cinnabar-pure) 8%, var(--paper-raised)); }
+
 .debate-card { display: block; padding: 16px 18px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper-raised); text-decoration: none; color: var(--ink); transition: border-color 0.15s, transform 0.15s; }
 .debate-card:hover { border-color: var(--cinnabar); transform: translateY(-2px); }
 .debate-card__title { font-family: var(--font-serif); font-size: 1.1rem; }

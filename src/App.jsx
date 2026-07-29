@@ -60,6 +60,7 @@ const PrivacyPage = lazy(() => import('./features/PrivacyPage.jsx'))
 const ConceptsPage = lazy(() => import('./features/ConceptsPage.jsx'))
 const DebateListPage = lazy(() => import('./features/debates/DebateListPage.jsx'))
 const DebatePage = lazy(() => import('./features/debates/DebatePage.jsx'))
+const DebateArticlePage = lazy(() => import('./features/debates/DebateArticlePage.jsx'))
 const BooksIndexPage = lazy(() => import('./features/books/BooksIndexPage.jsx'))
 const BookHomePage = lazy(() => import('./features/books/BookHomePage.jsx'))
 const BookArticlePage = lazy(() => import('./features/books/BookArticlePage.jsx'))
@@ -400,6 +401,7 @@ function AppContent() {
           <Route path="/concepts" element={<ConceptsPage />} />
           <Route path="/debates" element={<DebateListPage />} />
           <Route path="/debates/:id" element={<DebatePage />} />
+          <Route path="/debates/:id/article" element={<DebateArticlePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/ba" element={<ColophonPage />} />

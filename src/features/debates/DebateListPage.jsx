@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import {
-  TOPICS, PLANNED, EPIGRAPH, DIVISIONS, FORMATS, SCHOOL_GROUPS, THINKERS,
+  TOPICS, PLANNED, EPIGRAPH, DIVISIONS, FORMATS, SCHOOL_GROUPS, THINKERS, HAS_ARTICLE,
   categoriesOf, groupsOf, thinkersOf, groupAccent, schoolSeal,
 } from './debates.js'
 
@@ -118,16 +118,22 @@ export default function DebateListPage() {
                 <div className="debates-cat-block__name">{category}</div>
                 <div className="debates-grid">
                   {topics.map((t) => (
-                    <Link key={t.id} to={`/debates/${t.id}`} className="debate-card">
-                      <div className="debate-card__title">{t.title}</div>
-                      <div className="debate-card__q">{t.question}</div>
-                      <div className="debate-card__seals">
-                        {t.schools.map((s, i) => (
-                          <span key={i} className="debate-card__seal" style={{ background: groupAccent(s.group) }} title={`${s.label}·${s.stance}`}>{schoolSeal(s.group)}</span>
-                        ))}
-                      </div>
-                      <div className="debate-card__meta">{t.schools.map((s) => s.label).join(' · ')} · {t.turns} 轮</div>
-                    </Link>
+                    // 卡片本身是 Link,不能嵌 Link,故导读入口作兄弟节点挂在卡内底部
+                    <div key={t.id} className="debate-card-wrap">
+                      <Link to={`/debates/${t.id}`} className="debate-card">
+                        <div className="debate-card__title">{t.title}</div>
+                        <div className="debate-card__q">{t.question}</div>
+                        <div className="debate-card__seals">
+                          {t.schools.map((s, i) => (
+                            <span key={i} className="debate-card__seal" style={{ background: groupAccent(s.group) }} title={`${s.label}·${s.stance}`}>{schoolSeal(s.group)}</span>
+                          ))}
+                        </div>
+                        <div className="debate-card__meta">{t.schools.map((s) => s.label).join(' · ')} · {t.turns} 轮</div>
+                      </Link>
+                      {HAS_ARTICLE.has(t.id) && (
+                        <Link to={`/debates/${t.id}/article`} className="debate-card__guide">白话导读 · 他们在辩什么 ›</Link>
+                      )}
+                    </div>
                   ))}
                 </div>
               </div>
