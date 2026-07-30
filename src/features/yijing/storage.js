@@ -4,7 +4,7 @@ const PREFIX = 'guanxiang.v1.'
 
 // Keep this client list in sync with the independent backend allow-list in
 // functions/api/[[route]].js.
-export const DATA_KEYS = ['settings', 'quoteTheme', 'bookmarks', 'notes', 'divinations', 'reading', 'recentHexagrams', 'progress', 'corpusMarks', 'corpusNotes']
+export const DATA_KEYS = ['settings', 'quoteTheme', 'bookmarks', 'notes', 'divinations', 'reading', 'readPos', 'recentHexagrams', 'progress', 'corpusMarks', 'corpusNotes']
 const DATA_KEY_SET = new Set(DATA_KEYS)
 const SYNC_DEFAULTS = {
   settings: null,
@@ -238,6 +238,18 @@ export function getReadingProgress() {
 export function saveReadingProgress(book, chapter) {
   const p = getReadingProgress()
   set('reading', { ...p, [book]: chapter })
+}
+
+// ── 段级续读位置(owner 2026-07-30)──────────────────────
+// 旧的 reading 只记到「章」,打开 403 段的传习录卷下给你第 1 段,等于没记。
+// 这里另存一个键记「书→{章,段}」,旧键不动(书架/门户足迹/续读章都还读它),零破坏。
+export function getReadPos() {
+  const v = get('readPos', {})
+  return v && typeof v === 'object' && !Array.isArray(v) ? v : {}
+}
+export function saveReadPos(book, chapter, seg) {
+  const p = getReadPos()
+  set('readPos', { ...p, [book]: { ch: chapter, seg } })
 }
 
 // ── Recent hexagrams ──────────────────────────────────────

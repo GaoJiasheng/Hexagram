@@ -3,7 +3,7 @@ import { Fragment, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import ClassicText from '../yijing/components/ClassicText.jsx'
 import QuoteCard from './QuoteCard.jsx'
 import { useSettings } from '../yijing/SettingsContext.jsx'
-import { FONT_SCALE_STEPS, getCorpusMarks, toggleCorpusMark, getCorpusNotes, saveCorpusNote } from '../yijing/storage.js'
+import { FONT_SCALE_STEPS, getCorpusMarks, toggleCorpusMark, getCorpusNotes, saveCorpusNote, saveReadPos, getReadPos} from '../yijing/storage.js'
 import CommentSection from '../comments/CommentSection.jsx'
 
 // 本章注疏一览(Tier 1):遍历该章各段 anchors,折叠列出,替逐词悬停。
@@ -52,6 +52,7 @@ export default function ClassicReader({
   renderPieceHead = () => null, // 一章多条的书(传习录):无标题段可认,故在某段之前插入「条头」
   // 长章拆页(owner 2026-07-30):章仍是第 N 章(全站译文/注疏/白话/收藏/锚点皆按章号索引,
   // 不可动),只在「显示层」把超长章分屏。partOf(章) → [{from,to,label}] 或 null(不拆)。
+  posCtx = null,               // {slug} —— 记段级续读位置;不传则不记
   partsOf = () => null,
   part = 1,                    // 当前部分(1 起),由 ?p= 驱动
   partHref = () => '#',        // (章号, 部分号) → 链接
@@ -218,15 +219,49 @@ export default function ClassicReader({
     </div>
   )
 
+  // 段级续读(owner 2026-07-30):滚动时记下当前屏顶那一段,回来标出「上次读到这里」。
+  // 章级续读对 400 段的章没用——那只能把你送回第 1 段。
+  const [resumeSeg, setResumeSeg] = useState(null)
+  useEffect(() => {
+    if (!posCtx || single) return
+    const saved = getReadPos()[posCtx.slug]
+    setResumeSeg(saved && saved.ch === chapter ? saved.seg : null)
+  }, [posCtx?.slug, chapter, single])
+  useEffect(() => {
+    if (!posCtx || single) return
+    // 节流用时间戳,**不用 rAF**——headless/后台标签页里 rAF 被节流,记位会静默失效(踩过)
+    let last = 0
+    const onScroll = () => {
+      const now = Date.now()
+      if (now - last < 250) return
+      last = now
+      // 屏顶线之下的第一段即「读到这里」
+      for (const el of document.querySelectorAll('.read-para')) {
+        if (el.getBoundingClientRect().bottom > 120) {
+          const m = /^p(\d+)$/.exec(el.id)
+          if (m) saveReadPos(posCtx.slug, chapter, Number(m[1]) - 1)
+          break
+        }
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [posCtx?.slug, chapter, single])
+
   const Para = (no, p, i) => {
     // 诗题段(诗经《关雎》一类)升格为「诗头」:不占段号、自带白话入口。返回 null 则走普通段落。
     const head = renderPoemHead(no, i, p)
     if (head) return <div key={i} id={`seg-${no}-${i}`} className="poem-head">{head}</div>
+    // 上次读到这里(段级续读标记),与条头同处插在段前
+    const resumeMark = resumeSeg === i
+      ? <div key={`rm${i}`} className="read-resume"><span>上次读到这里</span></div>
+      : null
     // 条头(传习录一类):原文无标题段,故在该条首段「之前」插一个头,段落本身照常渲染。
     const pieceHead = renderPieceHead(no, i)
-    if (pieceHead) return (
+    if (pieceHead || resumeMark) return (
       <Fragment key={`pc${i}`}>
-        <div className="piece-head">{pieceHead}</div>
+        {resumeMark}
+        {pieceHead && <div className="piece-head">{pieceHead}</div>}
         {ParaBody(no, p, i)}
       </Fragment>
     )

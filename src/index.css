@@ -1932,6 +1932,10 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 }
 
 /* 长章拆页(owner 2026-07-30):章号不变,只在显示层分屏;页头列出本章各部分 */
+.read-resume { display: flex; align-items: center; gap: 10px; margin: 20px 0 6px; color: var(--cinnabar); font-size: .74rem; }
+.read-resume::before, .read-resume::after { content: ''; flex: 1; height: 1px; background: color-mix(in srgb, var(--cinnabar) 35%, transparent); }
+.read-resume span { flex-shrink: 0; }
+
 .read-parts { margin: 0 0 22px; padding: 10px 14px; border: 1px solid var(--line); border-left: 3px solid var(--cinnabar); border-radius: 8px; background: var(--paper-raised); }
 .read-parts__label { display: block; font-size: .76rem; color: var(--ink-faint); margin-bottom: 7px; }
 .read-parts__list { display: flex; flex-wrap: wrap; gap: 6px; }

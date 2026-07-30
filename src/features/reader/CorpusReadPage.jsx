@@ -1,6 +1,6 @@
 import { useParams, Link, useLocation, useNavigate, useSearchParams} from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { saveReadingProgress } from '../yijing/storage.js'
+import { saveReadingProgress, getReadPos} from '../yijing/storage.js'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import { SITE_MAP } from '../../sites/registry.js'
 import { loadText, getMeta, getAnchors } from './corpus.js'
@@ -13,7 +13,7 @@ import { chapterParts } from './chapterParts.js'
 export default function CorpusReadPage({ corpus }) {
   // 长章拆页(owner 2026-07-30):?p= 驱动,章号语义不变
   const [sp] = useSearchParams()
-  const part = Math.max(1, Number(sp.get('p')) || 1)
+  const partParam = Number(sp.get('p')) || 0
 
   const site = SITE_MAP[corpus]
   const navigate = useNavigate()
@@ -68,6 +68,15 @@ export default function CorpusReadPage({ corpus }) {
 
   // 一章多首的书(诗经:一组十余首诗,每首以《诗题》独立成段)。诗题升格为诗头,
   // 并按「组-序」挂诗级白话入口;段号跳过诗题,从诗句起编,引用才对得上。
+  // 无显式 ?p= 时,按上次读到的段号自动落到对应那一屏(这才真正省掉「重新翻找」)
+  const savedPos = getReadPos()[slug]
+  const partsCur = curChapter ? chapterParts(curChapter, meta) : null
+  const resumePart = partParam || (() => {
+    if (!partsCur || !savedPos || savedPos.ch !== chapter) return 1
+    const i = partsCur.findIndex((pt) => savedPos.seg >= pt.from && savedPos.seg < pt.to)
+    return i >= 0 ? i + 1 : 1
+  })()
+
   const poemBook = !!meta.poemTitles
   const isPoemTitle = (p) => /^《[^》]+》$/.test(p.original.trim())
   const poemOrdinals = {}   // 段下标 → 该诗在本组内的序号
@@ -129,9 +138,10 @@ export default function CorpusReadPage({ corpus }) {
         )
       } : undefined}
       partsOf={(c) => chapterParts(c, meta)}
-      part={part}
+      part={resumePart}
       partHref={(no, p) => `${site.home}/${slug}/${no}${p > 1 ? `?p=${p}` : ''}`}
       paraLabel={poemBook ? poemParaLabel : (numberParas ? (no, i) => String(i + 1) : undefined)}
+      posCtx={{ slug }}
       markCtx={{ corpus, slug }}
       commentCtx={{ corpus, slug }}
     />
