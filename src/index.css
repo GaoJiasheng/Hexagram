@@ -1931,6 +1931,14 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   .read-toolbar .seg-btn { padding: 6px 12px; }
 }
 
+/* 长章拆页(owner 2026-07-30):章号不变,只在显示层分屏;页头列出本章各部分 */
+.read-parts { margin: 0 0 22px; padding: 10px 14px; border: 1px solid var(--line); border-left: 3px solid var(--cinnabar); border-radius: 8px; background: var(--paper-raised); }
+.read-parts__label { display: block; font-size: .76rem; color: var(--ink-faint); margin-bottom: 7px; }
+.read-parts__list { display: flex; flex-wrap: wrap; gap: 6px; }
+.read-parts__item { padding: 3px 10px; border: 1px solid var(--line); border-radius: 99px; background: var(--paper); color: var(--ink-soft); font-size: .78rem; text-decoration: none; transition: border-color .16s ease, color .16s ease; }
+.read-parts__item:hover { border-color: var(--cinnabar); color: var(--cinnabar); }
+.read-parts__item--active { border-color: var(--cinnabar); background: var(--cinnabar); color: var(--paper-raised); }
+
 .read-chapter-title {
   text-align: center;
   font-size: 0.875rem;

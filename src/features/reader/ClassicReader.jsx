@@ -50,6 +50,11 @@ export default function ClassicReader({
   renderBaihua = () => null,   // 白话模块入口条（design-v22），挂在章题之下
   renderPoemHead = () => null, // 一章多首的书(诗经):诗题段升格为诗头 + 诗级白话入口
   renderPieceHead = () => null, // 一章多条的书(传习录):无标题段可认,故在某段之前插入「条头」
+  // 长章拆页(owner 2026-07-30):章仍是第 N 章(全站译文/注疏/白话/收藏/锚点皆按章号索引,
+  // 不可动),只在「显示层」把超长章分屏。partOf(章) → [{from,to,label}] 或 null(不拆)。
+  partsOf = () => null,
+  part = 1,                    // 当前部分(1 起),由 ?p= 驱动
+  partHref = () => '#',        // (章号, 部分号) → 链接
   paraLabel = () => null,
   header = null,
   sectionUnit = '章',
@@ -385,13 +390,46 @@ export default function ClassicReader({
           const idx = chapters.findIndex((c) => c.no === chapter)
           const prev = chapters[idx - 1]
           const next = chapters[idx + 1]
+          const parts = partsOf(cur)
+          const curPart = parts ? Math.min(Math.max(1, part), parts.length) : 1
+          const pt = parts ? parts[curPart - 1] : null
+          const slice = (pt
+            ? cur.paragraphs.slice(pt.from, pt.to).map((p, k) => [p, pt.from + k])
+            : cur.paragraphs.map((p, k) => [p, k]))
+          const lastPart = !parts || curPart === parts.length
+          // 上下一屏:章内先走部分,到头再跨章
+          const prevLink = parts && curPart > 1
+            ? { to: partHref(cur.no, curPart - 1), label: `${parts[curPart - 2].label}` }
+            : (prev ? { to: chapterHref(prev.no), label: chapterLabel(prev) } : null)
+          const nextLink = parts && curPart < parts.length
+            ? { to: partHref(cur.no, curPart + 1), label: `${parts[curPart].label}` }
+            : (next ? { to: chapterHref(next.no), label: chapterLabel(next) } : null)
           return (
             <>
               <h2 className="read-chapter-title">{chapterLabel(cur)}</h2>
-              {cur.paragraphs.map((p, i) => Para(cur.no, p, i))}
-              <ChapterNotes chapter={cur} getAnchors={getAnchors} />
-              {renderYanyi(cur.no)}
-              {renderBaihua(cur.no)}
+              {parts && (
+                <div className="read-parts">
+                  <span className="read-parts__label">
+                    第 {cur.no} {sectionUnit} · 共 {parts.length} 部分
+                  </span>
+                  <div className="read-parts__list">
+                    {parts.map((pt, i) => (
+                      <Link
+                        key={i}
+                        to={partHref(cur.no, i + 1)}
+                        className={`read-parts__item ${i + 1 === curPart ? 'read-parts__item--active' : ''}`}
+                      >
+                        {i + 1}. {pt.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {slice.map(([p, i]) => Para(cur.no, p, i))}
+              {/* 注疏/延伸/白话只挂在最后一部分,不逐屏重复 */}
+              {lastPart && <ChapterNotes chapter={cur} getAnchors={getAnchors} />}
+              {lastPart && renderYanyi(cur.no)}
+              {lastPart && renderBaihua(cur.no)}
               {commentCtx && (
                 <CommentSection
                   key={`${commentCtx.corpus}:${commentCtx.slug}:${cur.no}`}
@@ -401,11 +439,11 @@ export default function ClassicReader({
                 />
               )}
               <div className="read-nav">
-                {prev ? (
-                  <Link to={chapterHref(prev.no)} className="read-nav__prev">← {chapterLabel(prev)}</Link>
+                {prevLink ? (
+                  <Link to={prevLink.to} className="read-nav__prev">← {prevLink.label}</Link>
                 ) : <span />}
-                {next && (
-                  <Link to={chapterHref(next.no)} className="read-nav__next">{chapterLabel(next)} →</Link>
+                {nextLink && (
+                  <Link to={nextLink.to} className="read-nav__next">{nextLink.label} →</Link>
                 )}
               </div>
             </>

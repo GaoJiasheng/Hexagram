@@ -1,4 +1,4 @@
-import { useParams, Link, useLocation, useNavigate } from 'react-router-dom'
+import { useParams, Link, useLocation, useNavigate, useSearchParams} from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { saveReadingProgress } from '../yijing/storage.js'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
@@ -7,9 +7,14 @@ import { loadText, getMeta, getAnchors } from './corpus.js'
 import ClassicReader from './ClassicReader.jsx'
 import YanyiBlock from './YanyiBlock.jsx'
 import BaihuaBlock from './BaihuaBlock.jsx'
+import { chapterParts } from './chapterParts.js'
 
 // 通用逐章阅读器(v16 §1)——佛/儒共用,薄包装通用 ClassicReader 的 paged 模式。
 export default function CorpusReadPage({ corpus }) {
+  // 长章拆页(owner 2026-07-30):?p= 驱动,章号语义不变
+  const [sp] = useSearchParams()
+  const part = Math.max(1, Number(sp.get('p')) || 1)
+
   const site = SITE_MAP[corpus]
   const navigate = useNavigate()
   const { hash } = useLocation()
@@ -123,6 +128,9 @@ export default function CorpusReadPage({ corpus }) {
           </>
         )
       } : undefined}
+      partsOf={(c) => chapterParts(c, meta)}
+      part={part}
+      partHref={(no, p) => `${site.home}/${slug}/${no}${p > 1 ? `?p=${p}` : ''}`}
       paraLabel={poemBook ? poemParaLabel : (numberParas ? (no, i) => String(i + 1) : undefined)}
       markCtx={{ corpus, slug }}
       commentCtx={{ corpus, slug }}
