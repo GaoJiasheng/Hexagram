@@ -1,0 +1,245 @@
+{
+ "title": "志功之辨：判一个人，看他存的什么心，还是看他做出什么",
+ "subtitle": "韩非说心验不到、只能课功，孟子举王霸为例说只看功会把两类事算成一件，墨子两边都不站，而惠能根本不在这条轴上",
+ "centralIdea": "这不像一场「动机论对效果论」的两方对垒：四家里惠能那一路不在这条轴上——他不是在动机与效果之间选一头，是把「功德」二字整个搬进心地。另外三家的分歧则可以收到一个更硬的问题上：什么才算「可验」。而「功」这个字在四家嘴里所指本不相同，这是分歧的另一半。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "先看一个很具体的难题。鲁君有两个儿子，一个爱读书，一个爱把财物分给别人，他问墨子：立哪个当太子？这不是思辨题，是明天就要拍板的事。墨子的回答出人意料——他一个也不选，只说「还说不准」。理由更刺人：**也许人家这么做，本来就是冲着赏来的。**《志功之辨》整场辩就是从这个位置展开的：判一件事、一个人，究竟该看他心里存着什么，还是看他最后做出了什么。四家四种答法，而其中一家根本不在这条轴上——这一点不先挑明，整场都会读岔。"
+  },
+  {
+   "type": "h2",
+   "text": "一、这在当年是一道要拍板的题"
+  },
+  {
+   "type": "quote",
+   "original": "我有二子，一人者好学，一人者好分人财，孰以为太子而可？",
+   "translation": "我有两个儿子，一个好学，一个喜欢把财物分给人，立哪个作太子好？"
+  },
+  {
+   "type": "p",
+   "text": "留意鲁君给出的两条信息，全是**举动**：好学、好分人财。他以为报上这两样就够判了。墨子说「未可知也」，接着补上那半句要命的——「或所为赏与为是也」，也许他们做这些，正是为了得赏。**一旦承认这一点，「看举动」这条路立刻不牢靠了。**"
+  },
+  {
+   "type": "p",
+   "text": "而这在战国是很实在的一件事：立嗣、选官、赏罚，都要凭一个判准把人分成两堆。判准定在哪里，直接决定谁得势、资源往哪儿流。韩非那一路尤其是奔着操作去的——他要的是一套官府拿起来就能用的考核办法，不是一句评语。"
+  },
+  {
+   "type": "h2",
+   "text": "二、四张判准摆开"
+  },
+  {
+   "type": "figure",
+   "ftype": "contrast",
+   "svg": "<svg viewBox=\"0 0 700 254\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"350\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif)\" font-size=\"20\" font-weight=\"600\">判准落在哪里</text><g><rect x=\"16\" y=\"52\" width=\"156\" height=\"166\" rx=\"7\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.2\"/><rect x=\"188\" y=\"52\" width=\"156\" height=\"166\" rx=\"7\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><rect x=\"360\" y=\"52\" width=\"156\" height=\"166\" rx=\"7\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.2\"/><rect x=\"532\" y=\"52\" width=\"152\" height=\"166\" rx=\"7\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.2\"/></g><g style=\"fill:var(--cinnabar-pure);font-family:var(--font-serif)\" font-size=\"17\" text-anchor=\"middle\"><text x=\"94\" y=\"80\">孟 子</text><text x=\"266\" y=\"80\">惠 能</text><text x=\"438\" y=\"80\">韩 非</text><text x=\"608\" y=\"80\">墨 子</text></g><g style=\"fill:var(--ink);font-family:var(--font-serif)\" font-size=\"21\" text-anchor=\"middle\"><text x=\"94\" y=\"118\">志</text><text x=\"266\" y=\"118\">心 地</text><text x=\"438\" y=\"118\">功</text><text x=\"608\" y=\"118\">志功并观</text></g><g style=\"fill:var(--ink)\" font-size=\"12.5\" text-anchor=\"middle\" opacity=\"0.84\"><text x=\"94\" y=\"148\">心之所向</text><text x=\"94\" y=\"168\">气之统帅</text><text x=\"266\" y=\"148\">福与功德两字</text><text x=\"266\" y=\"168\">事迹规模不入判</text><text x=\"438\" y=\"148\">言核其当</text><text x=\"438\" y=\"168\">事责其功</text><text x=\"608\" y=\"148\">一件事的两面</text><text x=\"608\" y=\"168\">拆开都判不准</text></g><g style=\"fill:var(--ink);font-family:var(--font-serif)\" font-size=\"13.5\" text-anchor=\"middle\" opacity=\"0.9\"><text x=\"94\" y=\"200\">持其志无暴其气</text><text x=\"266\" y=\"200\">功德不在修福</text><text x=\"438\" y=\"200\">课其功伐</text><text x=\"608\" y=\"200\">合其志功而观</text></g><text x=\"266\" y=\"240\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure)\" font-size=\"12.5\">虚线：此家不在志—功这条轴上</text></svg>",
+   "caption": "四张判准。中间那一格用虚线画出，因为它根本不在「动机还是效果」这条轴上——理由见下一节。"
+  },
+  {
+   "type": "quote",
+   "original": "持其志，无暴其气",
+   "translation": "守住心之所向，别糟践那股气。"
+  },
+  {
+   "type": "callout",
+   "tone": "note",
+   "label": "志 不是念头",
+   "items": [
+    "孟子的「志」不是一时起的念头，是**心之所向、气之统帅**。志定在哪里，一身的力气才往哪里去。所以他说看人先看存心，不是看表情，也不是看那一刻的情绪。"
+   ]
+  },
+  {
+   "type": "quote",
+   "original": "听其言而求其当，任其身而责其功",
+   "translation": "听他说话就核对说得当不当，交给他事情就追究他做出多少功。"
+  },
+  {
+   "type": "p",
+   "text": "韩非这一句几乎是一份操作手册。而墨子既不站孟子也不站韩非——"
+  },
+  {
+   "type": "quote",
+   "original": "合其志功而观焉",
+   "translation": "把他的用心和他做出的结果合起来一并看。"
+  },
+  {
+   "type": "h2",
+   "text": "三、先把惠能那一路挪出这条轴"
+  },
+  {
+   "type": "p",
+   "text": "《坛经》记着一桩公案：梁武帝问达摩，我一生造寺度僧、布施设斋，有什么功德？达摩答：**实无功德。**这四个字最容易被误读成「你做得还不够」——可恰恰相反，梁武帝做的事极多、规模极大。《坛经》给的解释是另一个方向："
+  },
+  {
+   "type": "quote",
+   "original": "不可将福便为功德。功德在法身中，不在修福",
+   "translation": "不能拿福当作功德。功德在法身之中，不在修福这件事上。"
+  },
+  {
+   "type": "callout",
+   "tone": "warn",
+   "label": "两个字之辨",
+   "items": [
+    "这一段不是说那些事没有意义，而是说**福与功德是两个词，不能拿福来充功德**。所以它既不是「看动机」也不是「看效果」——它是在辨两个名目的分际。判准整个被搬进心地，事迹的规模于是不入判准。"
+   ]
+  },
+  {
+   "type": "quote",
+   "original": "功德须自性内见，不是布施供养之所求也",
+   "translation": "功德要在自己的本性里见得，不是靠布施供养换来的。"
+  },
+  {
+   "type": "p",
+   "text": "那这一路是不是就无处下手？也不是。《坛经》给了自己的验处，只是这验处不看事迹大小——"
+  },
+  {
+   "type": "quote",
+   "original": "见性是功，平等是德",
+   "translation": "见到自己的本性叫作功，待人平等叫作德。"
+  },
+  {
+   "type": "p",
+   "text": "**注意这里的「功」字已经换了所指。**在韩非嘴里，功是官府可以考核的事效；在这里，功指的是心地本身的状态——念念之间有无滞碍、待人是否平直。同一个字，两处根本不是一件事。所以他与韩非那一记看似交锋，其实是两把量不同东西的尺子摆在一处。"
+  },
+  {
+   "type": "callout",
+   "tone": "mute",
+   "label": "研习分寸",
+   "items": [
+    "此处只作义理与名相的训读，述其说而不作劝信，也不据以下任何吉凶果报的断语。文中所引均为《坛经·疑问品》中辨「福与功德」一节，同品后段另涉他事，与本场无关，不取。"
+   ]
+  },
+  {
+   "type": "h2",
+   "text": "四、剩下三家的真正战场：什么才算「可验」"
+  },
+  {
+   "type": "p",
+   "text": "韩非那一记是全场最硬的，因为他不跟你争存心重不重要，他只问一句：**你拿什么验？**"
+  },
+  {
+   "type": "quote",
+   "original": "观容服，听辞言，仲尼不能以必士；试之官职，课其功伐，则庸人不疑于愚智",
+   "translation": "看穿着神态、听言辞谈吐，连孔子也不敢断定谁是人才；可放到官职上考核他实做出的功绩，平常人也分得清谁愚谁智。"
+  },
+  {
+   "type": "p",
+   "text": "这句话的分寸要掐准：**他不是说存心不重要，是说它不能当尺子用。**判准若落在验不到的地方，就等于没有判准——鲁君那道题就永远拍不了板。孟子的回答不是辩解，是举一个反例："
+  },
+  {
+   "type": "quote",
+   "original": "以力假仁者霸，霸必有大国；以德行仁者王，王不待大",
+   "translation": "凭实力假借仁的叫霸，霸必得有个大国作底子；由德而行仁的叫王，王不必等国大。"
+  },
+  {
+   "type": "p",
+   "text": "王与霸，摆在外面的事功可以相仿，甚至霸的排场更大；可存心一变，评价就全然两样。**孟子要证明的不是「心可验」，而是「只看功，会把两类事算成同一件」**——这一记打得很准，它绕开了韩非的可验性问题，直接质疑那把尺子的分辨率。他后来把自己的位置说得更清楚："
+  },
+  {
+   "type": "quote",
+   "original": "由仁义行，非行仁义也",
+   "translation": "是从仁义里做出来的，不是拿仁义当一件事去做。"
+  },
+  {
+   "type": "p",
+   "text": "「照着仁义去做」和「从仁义中做出来」，外面看着一模一样，里头是两回事。**所以孟子从来不是不要事功，他是要事功从心里长出来。**而韩非反手看的是后果："
+  },
+  {
+   "type": "quote",
+   "original": "行身者竞于为高而不合于功",
+   "translation": "立身的人争着把姿态摆得高，却不去对上实做出来的功。"
+  },
+  {
+   "type": "p",
+   "text": "这一记很实在：**判准挂在哪里，人就往哪里使劲。**姿态是可以竞的——谁都能把自己摆得清高；功却竞不出来，只能做出来。两人至此完全咬上了：一个说尺子的位置决定分辨率，一个说尺子的位置决定人往哪儿用力。"
+  },
+  {
+   "type": "figure",
+   "ftype": "structure",
+   "svg": "<svg viewBox=\"0 0 700 232\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"350\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif)\" font-size=\"20\" font-weight=\"600\">尺子放在哪里，各有各的代价</text><rect x=\"30\" y=\"56\" width=\"296\" height=\"146\" rx=\"8\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.2\"/><rect x=\"374\" y=\"56\" width=\"296\" height=\"146\" rx=\"8\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1.2\"/><text x=\"178\" y=\"84\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure);font-family:var(--font-serif)\" font-size=\"17\">尺子放在志上</text><text x=\"522\" y=\"84\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure);font-family:var(--font-serif)\" font-size=\"17\">尺子放在功上</text><text x=\"178\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13.5\">好处：分得开王与霸</text><text x=\"522\" y=\"118\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13.5\">好处：人人可核，庸人也判得清</text><line x1=\"70\" y1=\"134\" x2=\"286\" y2=\"134\" style=\"stroke:var(--line)\" stroke-width=\"0.8\"/><line x1=\"414\" y1=\"134\" x2=\"630\" y2=\"134\" style=\"stroke:var(--line)\" stroke-width=\"0.8\"/><text x=\"178\" y=\"160\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13.5\">难处：验不到，拍不了板</text><text x=\"522\" y=\"160\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13.5\">难处：两类事被算成同一件</text><text x=\"178\" y=\"186\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12.5\" opacity=\"0.78\">人便竞于把姿态摆高</text><text x=\"522\" y=\"186\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12.5\" opacity=\"0.78\">借仁义之名者亦入王道</text><text x=\"350\" y=\"222\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\" opacity=\"0.75\">两处各有得失，这才是墨子要「合观」的由来</text></svg>",
+   "caption": "尺子放在志上与放在功上，各自换来一样东西，也各自付出一样代价。"
+  },
+  {
+   "type": "h2",
+   "text": "五、墨子从第三处插进来，两边都不全站"
+  },
+  {
+   "type": "p",
+   "text": "墨子对惠能那一路追问的是：心地纯不纯，拿什么验？他自己有一套现成的验法，就是「三表」，其中末一表最实："
+  },
+  {
+   "type": "quote",
+   "original": "废以为刑政，观其中国家百姓人民之利",
+   "translation": "把它放到刑法政令上去施行，看它于国家百姓究竟有没有实在的好处。"
+  },
+  {
+   "type": "p",
+   "text": "可他转过身来，对韩非又补了一刀——而且用的是全场最生动的两个例子："
+  },
+  {
+   "type": "quote",
+   "original": "魡者之恭，非为鱼赐也；饵鼠以虫，非爱之也",
+   "translation": "钓鱼的人躬着身子，不是要给鱼行礼；拿虫子喂老鼠，不是疼爱它。"
+  },
+  {
+   "type": "p",
+   "text": "躬身和喂食，从外面看是再标准不过的恭敬与爱护，里头的存心却完全相反。**所以他要「合其志功而观」不是和稀泥，是不肯让任何一面单独作准。**韩非答合观的话同样值得看："
+  },
+  {
+   "type": "quote",
+   "original": "夫言行者，以功用为之的彀者也",
+   "translation": "言论和行为，得拿实际功用当作瞄准的靶子。"
+  },
+  {
+   "type": "p",
+   "text": "他接着打了个比方：箭磨得再快，胡乱发出去也偶尔能射中细毫，可这不能叫善射，因为**没有固定的靶**；反过来，立一个五寸的靶子在十步开外，能必中的就只有神射手了。合观听着周全，做起来仍得先有一个可以落定的准星，否则末了还是各说各话。到这一步，两人的分歧已经不在要不要看心，而在**判准能不能只有一个**。"
+  },
+  {
+   "type": "h2",
+   "text": "六、别只看对立：几处容易漏掉的联系"
+  },
+  {
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "**没有一家主张不看结果。**孟子说「由仁义行」，落点仍在一个「行」字；《坛经》说的是别拿福充功德，不是别做事；墨子三表的末一表就是实实在在的利；韩非更不必说。四家分的是「结果记在哪一栏」，不是「要不要结果」。",
+    "**「功」这个字四处所指不同，这是分歧的另一半。**韩非的功是官府可考核的事效，墨子的功是于国家百姓的实利，《坛经》的「见性是功」指的是心地。同一个字换了三种所指，难怪他们的往来常显得错身而过。",
+    "**韩非与墨子站得比看上去近。**两人都要一个可以落定的准星，都不信漂亮话，都拿「有没有实际用处」当最后一道验关。分歧只剩一处：这准星能不能只有一个。",
+    "**最见功力的一处：同一个观察，两个相反的结论。**外表相同的举动，里头可以完全不同——这个观察韩非同样承认（他自己就说姿态可以竞、可以饰）。可他由此推出「所以更要只认功，别去猜心」；墨子由此推出「所以功不能单独作准，得合起来看」。分歧不生于看见的东西不同，而生于对同一件事该如何应对。"
+   ]
+  },
+  {
+   "type": "figure",
+   "ftype": "insight",
+   "svg": "<svg viewBox=\"0 0 700 214\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"350\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif)\" font-size=\"20\" font-weight=\"600\">同一个观察，分出两个相反的结论</text><rect x=\"200\" y=\"48\" width=\"300\" height=\"52\" rx=\"7\" style=\"fill:none;stroke:var(--cinnabar-pure)\" stroke-width=\"1.6\"/><text x=\"350\" y=\"72\" text-anchor=\"middle\" style=\"fill:var(--cinnabar-pure);font-family:var(--font-serif)\" font-size=\"16\">外表相同的举动</text><text x=\"350\" y=\"92\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\" opacity=\"0.85\">里头的存心可以全然相反</text><line x1=\"250\" y1=\"100\" x2=\"160\" y2=\"136\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><polygon points=\"152,141 166,136 162,146\" style=\"fill:var(--line)\"/><line x1=\"450\" y1=\"100\" x2=\"540\" y2=\"136\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><polygon points=\"548,141 534,136 538,146\" style=\"fill:var(--line)\"/><text x=\"144\" y=\"166\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif)\" font-size=\"16\">韩非</text><text x=\"144\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\" opacity=\"0.85\">所以更要只认功，别猜心</text><text x=\"556\" y=\"166\" text-anchor=\"middle\" style=\"fill:var(--ink);font-family:var(--font-serif)\" font-size=\"16\">墨子</text><text x=\"556\" y=\"190\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\" opacity=\"0.85\">所以功不能单独作准</text></svg>",
+   "caption": "钓者躬身、饵鼠以虫——同一件事被两人看见，推出的方向却正好相反。"
+  },
+  {
+   "type": "h2",
+   "text": "七、这场会讲摆出来的，究竟是什么问题"
+  },
+  {
+   "type": "p",
+   "text": "回到鲁君那道题。四家给出的不是四个答案，而是四种**判准的安放法**：孟子以为心之所向自己回头一问便知，故判在志；《坛经》把功德二字整个搬进心地，事迹的规模于是不入判准；韩非以为人心无从参验，可验的只有做出来的功；墨子不肯偏取一端，要合志功而观。"
+  },
+  {
+   "type": "pull",
+   "text": "**分歧不在谁看重效果、谁不看重，而在两处：判准该落在哪里，以及什么算得上「可验」。**"
+  },
+  {
+   "type": "p",
+   "text": "而这两处一旦摆开，你会发现每一种安放都各有代价：判在志上，分得开王与霸，却常常拍不了板，还容易让人竞于摆姿态；判在功上，人人可核，却可能把两类事算成同一件；合起来看，最周全，可也最需要先立一个靶；整个搬进心地的那一路，则干脆退出了「拿什么来考核别人」这个问题——它说的那一层要自己见，别人替不得。"
+  },
+  {
+   "type": "p",
+   "text": "各就一节，相发而相成。这是会讲，不是较量——鲁君那道题今天仍然会以别的样子出现在人面前，四种安放法各能照见它的一角，哪一角贴着你眼前的处境，读完之后自己掂量。"
+  },
+  {
+   "type": "refs",
+   "items": [
+    "本场会讲所据章节：《孟子·公孙丑上》（/ru/mengzi/3）与《离娄下》（/ru/mengzi/8）、《坛经·疑问品》（/fo/tanjing/3）、《韩非子·问辩》（/fa/hanfeizi/41）、《六反》（/fa/hanfeizi/46）、《五蠹》（/fa/hanfeizi/49）、《显学》（/fa/hanfeizi/50）、《墨子·非命上》（/mo/mozi/28）与《鲁问》（/mo/mozi/41）。本文引文均出自这九章，不跨章取材。",
+    "**研习分寸**：涉《坛经》处只作义理与名相的训读，述其说而不劝人信从，也不据以下吉凶果报的断语；达摩答梁武帝一节，本文只取《坛经》所记与所解，不旁涉其他史传异说。",
+    "**一处分寸**：韩非一路如实呈现其课功责实、循名核验的主张，属思想史训读，不作现代管理或御下之术的教程，亦不作政治比附。"
+   ]
+  }
+ ]
+}
