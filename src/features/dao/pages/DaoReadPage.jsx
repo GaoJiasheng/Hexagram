@@ -1,16 +1,22 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useSearchParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { saveReadingProgress } from '../../yijing/storage.js'
+import { saveReadingProgress, getReadPos } from '../../yijing/storage.js'
 import { loadDaoText, getDaoMeta } from '../data.js'
 import { getDaoAnchors } from '../daoAnchored.js'
 import { usePageTitle } from '../../yijing/hooks/usePageTitle.js'
 import ClassicReader from '../../reader/ClassicReader.jsx'
+import { chapterParts } from '../../reader/chapterParts.js'
 import YanyiBlock from '../components/YanyiBlock.jsx'
 import BaihuaBlock from '../../reader/BaihuaBlock.jsx'
 import { Link } from 'react-router-dom'
 
 // 道藏逐章阅读器(v14 §3:薄包装,核心走通用 ClassicReader)
 export default function DaoReadPage() {
+  // 长章拆页 + 段级续读(owner 2026-07-30)。hook 必须在任何提前 return 之前——
+  // 插在 `if (loading) return` 之后会 Rendered more hooks 白屏(踩过)。
+  const [sp] = useSearchParams()
+  const partParam = Number(sp.get('p')) || 0
+
   const { slug, chapter: chapterParam } = useParams()
   const [book, setBook] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -44,6 +50,15 @@ export default function DaoReadPage() {
   }
 
   const multi = book.chapters.length > 1
+  // 无显式 ?p= 时按上次读到的段号自动落屏
+  const curChapter = book.chapters.find((c) => c.no === chapter)
+  const savedPos = getReadPos()[slug]
+  const partsCur = curChapter ? chapterParts(curChapter, meta) : null
+  const resumePart = partParam || (() => {
+    if (!partsCur || !savedPos || savedPos.ch !== chapter) return 1
+    const i = partsCur.findIndex((pt) => savedPos.seg >= pt.from && savedPos.seg < pt.to)
+    return i >= 0 ? i + 1 : 1
+  })()
   const label = (c) => c.title ?? (multi ? `第${c.no}${meta.sectionUnit}` : '全文')
 
   return (
@@ -60,6 +75,10 @@ export default function DaoReadPage() {
       getAnchors={(no, i) => getDaoAnchors(slug, no, i)}
       renderYanyi={(no) => <YanyiBlock slug={slug} chapter={no} />}
       renderBaihua={(no) => <BaihuaBlock corpus="dao" slug={slug} chapter={no} bookTitle={meta.title} sectionUnit={meta.sectionUnit || '章'} />}
+      partsOf={(c) => chapterParts(c, meta)}
+      part={resumePart}
+      partHref={(no, p) => `/dao/${slug}/${no}${p > 1 ? `?p=${p}` : ''}`}
+      posCtx={{ slug }}
       markCtx={{ corpus: 'dao', slug }}
       commentCtx={{ corpus: 'dao', slug }}
     />
