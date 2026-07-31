@@ -82,11 +82,11 @@ Phase 3,与上面三项**不构成阻塞**,可并行办。
 |---|---|
 | 辩题白话导读 | **84 / 84 满** ✅ |
 | 长短经篇级白话 | **65 / 65 满** ✅(64 篇 + 卷一序) |
-| 诗经诗级白话 | **277 / 305** |
+| 诗经诗级白话 | **305 / 305 满** ✅ |
 | 传习录条级白话 | 34 条(精选,普通档 owner 定不做) |
 | 难经 | owner 定不铺 |
 
-诗经余 28 首,**批量生产手册见 [agent-specs/batch-production-playbook.md](agent-specs/batch-production-playbook.md)**
+**批量生产手册见 [agent-specs/batch-production-playbook.md](agent-specs/batch-production-playbook.md)**
 ——并发编排、合并校验、内容质量、红线守法四类经验,每条都注明是怎么踩出来的。
 
 ### 2.1a 站内数据瑕疵 —— **三处已全修(2026-07-29)**
