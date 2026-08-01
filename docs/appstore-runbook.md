@@ -9,7 +9,7 @@
 
 - **【已就绪】** Apple 开发者账号 · Team `D33974QQTD`
 - **【已就绪】** App 记录已存在(在 TestFlight 能看到「观象」)
-- **【已就绪】** 构建 **build 43 · 版本 1.32.0** 已上传并进内部测试组(build 号每次 `./ship-ios.sh` 自增,以 TestFlight 实际最新为准)
+- **【已就绪】** 构建 **build 45** 已上传并进内部测试组(build 号每次 `./ship-ios.sh` 自增,以 TestFlight 实际最新为准)
 - **【已就绪】** Bundle ID `pub.gavin.hexa` · 显示名「观象」
 - **【已就绪】** 出口合规声明(Info.plist `ITSAppUsesNonExemptEncryption=NO`)
 - **【已就绪】** 隐私政策页代码(`/privacy`)——但**需先把 dist 发到 CF 才线上可访问**
