@@ -1,21 +1,63 @@
-Creative Commons Attribution-NonCommercial 4.0 International
-CC BY-NC 4.0
+观象 · hexagram —— 分层授权
+Copyright © 2026 Gavin Gao（高家升 / gaojiasheng）
 
-Copyright © 2026 Gavin Gao (gaojiasheng)
+本仓库包含两类东西，授权不同，请分别对待：
 
-除下文明确排除的内容外，本仓库受版权保护的作品采用「知识共享 署名—非商业性使用 4.0 国际」许可协议（CC BY-NC 4.0）授权。
+  一、源代码 ————————— MIT License
+  二、原创内容 ——————— CC BY-NC 4.0
 
-官方协议说明（Deed）：
-https://creativecommons.org/licenses/by-nc/4.0/
+第三方素材（公版古籍原文、字体、npm 依赖）不属本仓库所有，各依其许可，
+详见根目录 COPYRIGHT.md。
 
-法律全文（Legal Code）：
-https://creativecommons.org/licenses/by-nc/4.0/legalcode
+变更记录：2026-07-14 起本仓库整体采用 CC BY-NC 4.0；2026-08-01 起将源代码
+一节改为 MIT——Creative Commons 官方即不建议以 CC 协议授权软件（缺专利授予、
+缺针对软件的免责条款、与其他开源协议不兼容）。此变更只对其后的版本生效；
+在此之前依 CC BY-NC 4.0 获得代码的人，对那些版本的权利不受影响。
+原创内容一节维持 CC BY-NC 4.0 不变。
+
+
+═══════════════════════════════════════════════════════════════════════════
+一、源代码：MIT License
+═══════════════════════════════════════════════════════════════════════════
+
+涵盖：src/ 下的 .js / .jsx / .css，scripts/ 下的构建与数据管线脚本，
+ios/ 原生壳配置，以及根目录各项工程配置文件。
+不涵盖 src/data/ 与 public/content/ 下的文字内容（见第二节）。
+
+Copyright (c) 2026 Gavin Gao
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+═══════════════════════════════════════════════════════════════════════════
+二、原创内容：Creative Commons 署名—非商业性使用 4.0 国际（CC BY-NC 4.0）
+═══════════════════════════════════════════════════════════════════════════
+
+官方协议说明（Deed）：https://creativecommons.org/licenses/by-nc/4.0/
+法律全文（Legal Code）：https://creativecommons.org/licenses/by-nc/4.0/legalcode
 
 ## 中文人类可读摘要
 
 在遵守协议条件的前提下，你可以复制、分享、转载、改编本协议覆盖的作品：
 
-- 署名：须以合理方式注明 Gavin Gao（gaojiasheng）及作品来源，附上本协议链接，并说明是否作过修改。
+- 署名：须以合理方式注明 Gavin Gao（gaojiasheng）及作品来源，附上本协议链接，
+  并说明是否作过修改。
 - 非商业性使用：不得将本协议覆盖的作品用于商业目的。
 - 不得附加限制：不得施加会阻止他人行使本协议所授权利的法律条款或技术措施。
 
@@ -23,16 +65,35 @@ https://creativecommons.org/licenses/by-nc/4.0/legalcode
 
 ## 授权范围声明
 
-本协议覆盖 Gavin Gao（gaojiasheng）在本仓库中的原创内容与全部源代码，包括但不限于：
+本协议覆盖 Gavin Gao（gaojiasheng）在本仓库中的原创文字与图，包括但不限于：
 
-- 白话文章（`src/data/*/baihua/`）；
-- 逐段注疏与译文（`scripts/authored/`、各 `zhushi-anchored/` 目录及相关原创译注数据）；
-- 每章延伸、思想脑图；
-- 「观书」模块的原创封面、脑图与文章；
+- 白话讲解（`src/data/*/baihua/`）；
+- 书级导读「前世今生」（`src/data/*/daodu/`）；
+- 逐段译文与字词注疏（`scripts/authored/`、各 `zhushi-anchored/` 目录）；
+- 每章延伸（各 `yanyi.json`）、思想脑图；
+- 辩题、白话讲解与逐句 gloss（`src/data/debates/`）；
+- 诸子拓扑图的人物释文与关系说明（`src/data/zhuzi-topology.json`）；
+- 义理专题概念释（`src/data/concepts.json`）；
+- 「观书」模块的原创封面、脑图与文章（`src/data/books/`，另见 COPYRIGHT.md 第四节）；
 - 原创 SVG 配图；
-- 辩论内容（`debates`）；
-- 本仓库全部源代码。
+- 各页面文案。
 
-本协议不覆盖公版古籍原文本身，包括 `hexagrams.json`、`classics/*.json` 等数据管线抓取或生成文件中的古籍原文。这些古籍原文属于公共领域，不属于任何个人可以重新主张版权或授权的范围，任何人均可依其公共领域状态自由使用。
+**本协议不覆盖公版古籍原文本身**，包括 `hexagrams.json`、各 `classics/*.json` 等
+数据管线抓取或生成文件中的古籍原文。古籍原文属于公共领域，不属于任何个人可以
+重新主张版权或授权的范围，任何人均可依其公共领域状态自由使用。
 
-若同一数据文件同时包含公版古籍原文与原创译文、注疏或编排，只有其中的原创部分受本协议覆盖；古籍原文部分仍为公共领域。仓库中另有明确权利标注的第三方材料，依其各自的权利状态或许可条款处理。
+若同一数据文件同时包含公版古籍原文与原创译文、注疏或编排，只有其中的原创部分受
+本协议覆盖；古籍原文部分仍为公共领域。
+
+
+═══════════════════════════════════════════════════════════════════════════
+三、第三方素材
+═══════════════════════════════════════════════════════════════════════════
+
+- 古籍原文：抓自维基文库等公开来源。底本为公版古籍；维基文库贡献者所作的录入、
+  标点与校勘按 CC BY-SA 3.0 / 4.0 授权，本站按该许可署名。
+- 正文字体 Noto Serif SC：SIL Open Font License 1.1。
+- npm 依赖：各自许可（MIT / ISC / Apache-2.0 / BSD / BlueOak-1.0.0 / OFL-1.1 等），
+  清单见 package-lock.json。
+
+以上权利归各自权利人所有，不因收入本仓库而改变。完整说明见 COPYRIGHT.md。
