@@ -39,7 +39,14 @@ npm run check-data     # 数据校验(结构/繁简哨兵/译注覆盖/注疏锚
 
 ## 授权范围
 
-Gavin Gao（gaojiasheng）的原创内容与本仓库全部源代码采用 [CC BY-NC 4.0](./LICENSE)；`hexagrams.json`、`classics/*.json` 等管线数据中的公版古籍原文本身属于公共领域，不在本协议授权范围内。若文件同时包含古籍原文与原创译注，只有原创部分受协议覆盖。
+本仓库**分两层授权**：
+
+- **源代码** —— [MIT](./LICENSE)（`src/**/*.{js,jsx,css}`、`scripts/`、`ios/`、根目录配置）
+- **原创文字与图** —— [CC BY-NC 4.0](./LICENSE-CONTENT)（白话、导读、译注、延伸、辩题、观书文章等）
+
+`hexagrams.json`、`classics/*.json` 等管线数据中的**公版古籍原文本身属于公共领域**，不在任何一层的授权范围内；其录入与校点来自维基文库，按 CC BY-SA 使用。若文件同时包含古籍原文与原创译注，只有原创部分受协议覆盖。
+
+各类素材的权利人、许可与来源依据，见 [COPYRIGHT.md](./COPYRIGHT.md)。
 
 ## 目录
 

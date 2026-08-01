@@ -1,7 +1,12 @@
 # 版权与来源说明
 
 本文件说明《观象》仓库里**每一类东西分别属于谁、按什么许可使用**。
-授权条款本身在根目录 [LICENSE](./LICENSE)；这里补的是 LICENSE 放不下的来源交代与依据。
+授权条款本身分两个文件：
+
+- **[LICENSE](./LICENSE)** —— 源代码，MIT（保持为纯 MIT 文本，好让 GitHub 与依赖扫描工具正确识别）
+- **[LICENSE-CONTENT](./LICENSE-CONTENT)** —— 原创文字与图，CC BY-NC 4.0
+
+这里补的是两份协议放不下的来源交代与依据。
 
 > 本文件是作者本人整理的事实与依据说明，**不是法律意见**。
 
@@ -11,8 +16,8 @@
 
 | 类别 | 权利人 | 许可 | 位置 |
 |---|---|---|---|
-| 源代码 | Gavin Gao | **MIT** | `src/**/*.{js,jsx,css}`、`scripts/`、`ios/`、根目录配置 |
-| 原创文字与图 | Gavin Gao | **CC BY-NC 4.0** | `src/data/*/baihua`、`daodu`、`zhushi-anchored`、`yanyi.json`、`debates`、`concepts.json`、`zhuzi-topology.json`、`books`、`scripts/authored` |
+| 源代码 | Gavin Gao | **MIT**（`LICENSE`） | `src/**/*.{js,jsx,css}`、`scripts/`、`ios/`、根目录配置 |
+| 原创文字与图 | Gavin Gao | **CC BY-NC 4.0**（`LICENSE-CONTENT`） | `src/data/*/baihua`、`daodu`、`zhushi-anchored`、`yanyi.json`、`debates`、`concepts.json`、`zhuzi-topology.json`、`books`、`scripts/authored` |
 | 古籍原文（正文） | 无人所有 | **公共领域** | `src/data/*/classics/*.json`、`hexagrams.json` 的 `original` 字段 |
 | 古籍的录入与标点 | 维基文库贡献者 | **CC BY-SA** | 同上（与原文同一字段，见第二节） |
 | 正文字体 | Google Inc. | **OFL-1.1** | `@fontsource/noto-serif-sc` |
@@ -24,9 +29,13 @@
 
 平台代码、数据管线脚本、iOS 原生壳配置。任何人可自由取用，包括商用，保留版权声明即可。
 
-**2026-08-01 的变更**：此前源代码与内容一并按 CC BY-NC 4.0 授权。
+**2026-08-01 的变更**：此前源代码与内容一并按 CC BY-NC 4.0 授权（单一 `LICENSE` 文件）。
 Creative Commons 官方明确不建议以 CC 协议授权软件——它缺少专利授予条款、
 缺少针对软件的免责与责任限制、且与主流开源协议不兼容。故将代码一节改为 MIT。
+
+拆成两个文件还有个实际理由：GitHub 的许可识别器（licensee）要求 `LICENSE` 是一份
+干净、可识别的协议文本。两份协议混在一个文件里会被判为 `Other`，仓库页不显示 MIT，
+依赖扫描工具也读不到。
 
 此变更**只对其后的版本生效**。在 2026-07-14 至 2026-08-01 之间依 CC BY-NC 4.0
 取得本仓库代码的人，对**那些版本**的权利不受影响（CC 协议不可撤销）。
