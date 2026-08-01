@@ -709,6 +709,19 @@ if (fs.existsSync(glossaryPath)) {
           err(`daodu ${slug}: 引文非第 ${b.cite.ch} 章原文子串「${b.original.slice(0, 14)}…」`); nBadQ++
         }
       }
+      // 富文本:图/表是这个体裁的骨头(版本谱系、异文对照、各家读法,散文说不清)。
+      const figs = blocks.filter((b) => b.type === 'figure')
+      const tbls = blocks.filter((b) => b.type === 'table')
+      if (figs.length + tbls.length < 3) warn(`daodu ${slug}: 图表仅 ${figs.length + tbls.length} 处,加厚档建议 4 处以上`)
+      for (const f of figs) {
+        if (!f.svg) err(`daodu ${slug}: figure 缺 svg`)
+        else if (/(fill|stroke)="#/.test(f.svg)) err(`daodu ${slug}: figure 写死了前景色,须用 style="fill:var(--…)"`)
+      }
+      for (const t of tbls) {
+        if (!(t.rows || []).length) err(`daodu ${slug}: table 无数据行`)
+        const w = (t.head || []).length
+        if (w && (t.rows || []).some((r) => r.length !== w)) err(`daodu ${slug}: table 有行的列数与表头不符`)
+      }
       if (!blocks.some((b) => b.type === 'refs')) warn(`daodu ${slug}: 无 refs 块——站外材料的出处交代建议写在这里`)
     }
   }

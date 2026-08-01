@@ -4058,3 +4058,17 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .daodu-entry__sub { font-size: calc(0.8rem * var(--read-scale)); line-height: 1.65; color: var(--ink-soft); }
 .daodu-entry__go { margin-left: auto; color: var(--ink-soft); font-size: 1.15rem; }
 @media (max-width: 560px) { .daodu-entry { flex-wrap: wrap; } .daodu-entry__go { display: none; } }
+
+/* v22.2 表格块:异文/版本/各家读法这类对照,图画不了、散文说不清。
+   窄屏横向滚动而不压列宽——三四个字挤成一列反而更难读。 */
+.baihua-table { margin: 28px 0; }
+.baihua-table__cap { margin: 0 0 10px; font-size: calc(.78rem * var(--read-scale)); line-height: 1.6; color: var(--ink-faint); }
+.baihua-table__scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.baihua-table table { border-collapse: collapse; width: 100%; min-width: 420px; font-size: calc(.86rem * var(--read-scale)); }
+.baihua-table th, .baihua-table td { padding: 9px 12px; text-align: left; vertical-align: top; line-height: 1.7;
+  border-bottom: 1px solid var(--line); }
+.baihua-table th { font-family: var(--font-serif); font-weight: 500; color: var(--cinnabar); white-space: nowrap;
+  border-bottom: 1px solid color-mix(in srgb, var(--cinnabar) 45%, transparent); }
+.baihua-table td { color: var(--ink); }
+.baihua-table td:first-child, .baihua-table th:first-child { font-family: var(--font-serif); white-space: nowrap; }
+.baihua-table tbody tr:last-child td { border-bottom: 0; }

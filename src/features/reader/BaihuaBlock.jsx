@@ -71,6 +71,29 @@ function Block({ block }) {
         </aside>
       )
     }
+    case 'table': {
+      // v22.2 表格块:图画不了、散文说不清的对照(异文/版本/各家读法)用它。
+      // 首行为表头;窄屏由外层容器横向滚动,不压缩列宽。
+      const head = block.head || []
+      const rows = block.rows || []
+      return (
+        <figure className="baihua-table">
+          {block.caption && <figcaption className="baihua-table__cap">{rich(block.caption)}</figcaption>}
+          <div className="baihua-table__scroll">
+            <table>
+              {head.length > 0 && (
+                <thead><tr>{head.map((h, i) => <th key={i}>{rich(h)}</th>)}</tr></thead>
+              )}
+              <tbody>
+                {rows.map((r, i) => (
+                  <tr key={i}>{r.map((c, j) => <td key={j}>{rich(c)}</td>)}</tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </figure>
+      )
+    }
     case 'pull':
       // 全章最要紧的一句:粗左竖条、无底色,与 callout 的「框」区分开
       return <p className="baihua-pull">{rich(block.text)}</p>
