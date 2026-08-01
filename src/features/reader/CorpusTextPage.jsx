@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import DaoduEntry from './DaoduEntry.jsx'
 import { useParams, Link } from 'react-router-dom'
 import EmptyState from '../yijing/components/EmptyState.jsx'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
@@ -58,6 +59,7 @@ export default function CorpusTextPage({ corpus }) {
         {text.dubious && <p className="dubious-badge">⚠ 托名·真伪存疑：学界多判为现代伪作。本站作文献批判材料研读，非处世权术教程。</p>}
         {text.caveat && !text.dubious && <p className="caveat-badge">⚠ {text.caveat}——详见撰人小传，本站作文献存疑研读。</p>}
         {text.authorNote && <p className="dao-text-authornote">{text.authorNote}</p>}
+        <DaoduEntry corpus={corpus} slug={text.slug} bookTitle={text.title} />
         {resumeCh > 0 && (
           <Link to={`${site.home}/${slug}/${resumeCh}`} className="dao-text-resume">
             继续读 · 第 {resumeCh} {text.sectionUnit} →

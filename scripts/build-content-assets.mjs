@@ -6,6 +6,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const SRC_DATA = path.join(ROOT, 'src/data')
 const OUT_ROOT = path.join(ROOT, 'public/content')
 const OUT_BAIHUA = path.join(OUT_ROOT, 'baihua')
+const OUT_DAODU = path.join(OUT_ROOT, 'daodu')
 const OUT_SEARCH = path.join(OUT_ROOT, 'search')
 const SEARCH_SHARDS = 128
 
@@ -181,6 +182,25 @@ function buildBaihuaAssets(records, manifest) {
       }
       // 按书写一个文件 = { 章号: article }（源 baihua json 本就是这个结构，直接落盘）
       writeJson(path.join(OUT_BAIHUA, corpus, `${slug}.json`), book)
+    }
+  }
+}
+
+// 书级导读(前世今生):一书一篇,与白话同走分片,免得 62 篇 × 数千字打进 JS chunk。
+function buildDaoduAssets(manifest) {
+  const dirs = fs.readdirSync(SRC_DATA).filter((n) => exists(path.join(SRC_DATA, n, 'daodu')))
+  manifest.daodu ??= {}
+  for (const corpus of dirs.sort()) {
+    const dir = path.join(SRC_DATA, corpus, 'daodu')
+    for (const file of fs.readdirSync(dir).filter((f) => f.endsWith('.json')).sort()) {
+      const slug = file.replace(/\.json$/, '')
+      const art = readJson(path.join(dir, file))
+      manifest.daodu[corpus] ??= {}
+      manifest.daodu[corpus][slug] = {
+        title: art.title || '', subtitle: art.subtitle || '',
+        path: `/content/daodu/${corpus}/${slug}.json`,
+      }
+      writeJson(path.join(OUT_DAODU, corpus, `${slug}.json`), art)
     }
   }
 }
@@ -444,6 +464,7 @@ indexYijing(records)
 for (const corpus of CORPORA) indexCorpus(records, corpus)
 indexConceptsAndDebates(records)
 buildBaihuaAssets(records, manifest)
+buildDaoduAssets(manifest)
 
 writeJson(path.join(OUT_ROOT, 'manifest.json'), manifest)
 buildSearchAssets(records)

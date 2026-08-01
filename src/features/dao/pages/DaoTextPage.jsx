@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import DaoduEntry from '../../reader/DaoduEntry.jsx'
 import { useParams, Link } from 'react-router-dom'
 import EmptyState from '../../yijing/components/EmptyState.jsx'
 import texts from '../../../data/dao/texts.json'
@@ -54,6 +55,7 @@ export default function DaoTextPage() {
         <p className="dao-text-brief">{text.brief}</p>
         {text.caveat && <p className="caveat-badge">⚠ {text.caveat}——详见撰人小传，本站作文献存疑研读。</p>}
         {text.authorNote && <p className="dao-text-authornote">{text.authorNote}</p>}
+        <DaoduEntry corpus="dao" slug={text.slug} bookTitle={text.title} />
         {resumeCh > 0 && (
           <Link to={`/dao/${text.slug}/${resumeCh}`} className="dao-text-resume">
             继续读 · 第 {resumeCh} {text.sectionUnit} →

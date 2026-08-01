@@ -679,6 +679,42 @@ if (fs.existsSync(glossaryPath)) {
   if (nName) infos.push(`章名(chapterNames): ${nName} 条 · ${nBadName} 条非原文`)
 }
 
+// ---------- 7b3. 书级导读(前世今生)----------
+// 体裁与章级白话不同:讲其人/其时/成书/流传,义理只末尾几百字带过。
+// 引文规矩:**引本书原文的 quote 必须逐字命中该章**(带 cite 即校验);
+// 站外材料(《史记》、出土简帛)只许在正文里转述并标出处,不许伪装成站内引文。
+{
+  let nDaodu = 0, nBadQ = 0
+  for (const d of fs.readdirSync(path.join(ROOT, 'src/data'), { withFileTypes: true })) {
+    if (!d.isDirectory()) continue
+    const dir = path.join(ROOT, `src/data/${d.name}/daodu`)
+    if (!fs.existsSync(dir)) continue
+    for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.json'))) {
+      const slug = f.replace(/\.json$/, '')
+      const a = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'))
+      nDaodu++
+      if (!a.title) err(`daodu ${slug}: 缺 title`)
+      if (!a.centralIdea) err(`daodu ${slug}: 缺 centralIdea`)
+      const blocks = Array.isArray(a.blocks) ? a.blocks : []
+      if (blocks.filter((b) => b.type === 'h2').length < 4) err(`daodu ${slug}: 分节少于 4(其人/其时/其书/其传至少各一)`)
+      if (blocks.filter((b) => b.type === 'pull').length > 1) err(`daodu ${slug}: pull 超 1 处`)
+      const cf = path.join(ROOT, `src/data/${d.name}/classics/${slug}.json`)
+      const book = fs.existsSync(cf) ? JSON.parse(fs.readFileSync(cf, 'utf8')) : null
+      for (const b of blocks) {
+        if (b.type !== 'quote' || !b.original) continue
+        if (!b.cite) { err(`daodu ${slug}: quote 缺 cite(站外材料请在正文转述并标出处,不要作 quote 块)`); nBadQ++; continue }
+        const c = book?.chapters?.find((x) => String(x.no) === String(b.cite.ch))
+        if (!c) { err(`daodu ${slug}: quote 指向不存在的第 ${b.cite.ch} 章`); nBadQ++; continue }
+        if (!c.paragraphs.map((p) => p.original).join('').includes(b.original)) {
+          err(`daodu ${slug}: 引文非第 ${b.cite.ch} 章原文子串「${b.original.slice(0, 14)}…」`); nBadQ++
+        }
+      }
+      if (!blocks.some((b) => b.type === 'refs')) warn(`daodu ${slug}: 无 refs 块——站外材料的出处交代建议写在这里`)
+    }
+  }
+  if (nDaodu) infos.push(`书级导读: ${nDaodu} 篇 · ${nBadQ} 坏引文`)
+}
+
 // ---------- 7c. 诸子拓扑图 ----------
 // 图的价值全在「每根线都点得开、看得到出处」——引文一旦不是站内原文,整张图就是编的。
 // 故引文逐字校验(同 debate cite),校验池收窄到该 cite 所指的那一章:跨章拼接即判错。

@@ -4044,3 +4044,17 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   .debate-explain { flex-wrap: wrap; }
   .debate-explain__go { display: none; }
 }
+
+/* 书级导读入口(篇目页,撰人小传之下)。与章级白话入口条同族,但用「传」印与更实的边框
+   区分层级:白话逐章,导读一书一篇。 */
+.daodu-entry { display: flex; align-items: center; gap: 12px; margin: 14px 0 0; padding: 12px 14px;
+  border: 1px solid var(--line); border-left: 3px solid var(--cinnabar); border-radius: 8px;
+  background: var(--paper-raised); text-decoration: none; transition: border-color .18s, box-shadow .18s; }
+.daodu-entry:hover { border-color: var(--cinnabar); box-shadow: 0 2px 14px color-mix(in srgb, var(--cinnabar) 12%, transparent); }
+.daodu-entry__tag { flex: 0 0 auto; padding: 3px 10px; font-size: calc(0.76rem * var(--read-scale));
+  border-radius: 4px; background: var(--cinnabar); color: var(--paper); font-family: var(--font-serif); white-space: nowrap; }
+.daodu-entry__text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.daodu-entry__title { font-family: var(--font-serif); font-size: calc(0.98rem * var(--read-scale)); color: var(--ink); }
+.daodu-entry__sub { font-size: calc(0.8rem * var(--read-scale)); line-height: 1.65; color: var(--ink-soft); }
+.daodu-entry__go { margin-left: auto; color: var(--ink-soft); font-size: 1.15rem; }
+@media (max-width: 560px) { .daodu-entry { flex-wrap: wrap; } .daodu-entry__go { display: none; } }
