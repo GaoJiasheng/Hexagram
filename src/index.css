@@ -36,7 +36,10 @@
   --font-mono: ui-monospace, monospace;
   --font-scale: 1.15;              /* 用户字号档位(SettingsContext 内联设于 :root):1/1.15/1.35/1.55 */
   --read-boost: 1;                 /* 窄屏默认略大(见下方 media query);桌面为 1 */
-  --read-scale: calc(var(--font-scale) * var(--read-boost)); /* 读经/白话正文实际缩放系数 */
+  --read-scale: calc(var(--font-scale) * var(--read-boost)); /* 正文实际缩放系数 */
+  /* 【约定】正文类文字一律写 `font-size: calc(<基准> * var(--read-scale))`,不要写死 rem。
+     否则用户调了字号、这块纹丝不动(2026-08-01 修:书架/篇目页/争鸣/拓扑图/概念页原先全不跟随)。
+     界面元件不跟随——导航、按钮、筛选筹码、工具条放大会挤坏栅格。 */
   --content-w: clamp(960px, 100vw, 1280px);
   --read-w: clamp(680px, calc(373px + 38.6vw), 940px);
 }
@@ -455,7 +458,7 @@ button { cursor: pointer; font-family: var(--font-serif); }
   color: var(--ink);
 }
 
-.page-subtitle { margin: 0; font-size: 0.9rem; }
+.page-subtitle { margin: 0; font-size: calc(0.9rem * var(--read-scale)); }
 
 .text-soft { color: var(--ink-soft); }
 .text-faint { color: var(--ink-faint); font-size: 0.875rem; }
@@ -2086,7 +2089,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .me-backup { margin: 12px 0 0; padding: 10px 14px; border: 1px solid color-mix(in srgb, var(--cinnabar) 35%, var(--line)); border-radius: 6px; background: color-mix(in srgb, var(--cinnabar) 5%, transparent); font-size: 0.84rem; line-height: 1.7; color: var(--ink-soft); }
 
 /* 铁律/真伪声明横幅(#149)——从 page-subtitle 一行升为独立横幅,权重够、不被略过 */
-.shelf-disclaimer { margin: 4px 0 18px; padding: 10px 14px; border-left: 3px solid var(--cinnabar); border-radius: 0 5px 5px 0; background: color-mix(in srgb, var(--cinnabar) 6%, transparent); font-size: 0.84rem; line-height: 1.7; color: var(--ink-soft); }
+.shelf-disclaimer { margin: 4px 0 18px; padding: 10px 14px; border-left: 3px solid var(--cinnabar); border-radius: 0 5px 5px 0; background: color-mix(in srgb, var(--cinnabar) 6%, transparent); font-size: calc(0.84rem * var(--read-scale)); line-height: 1.7; color: var(--ink-soft); }
 .corpus-me__title { font-size: 0.95rem; color: var(--ink-soft); margin: 0 0 12px; font-weight: 600; }
 .corpus-me__list { display: flex; flex-direction: column; gap: 8px; }
 .corpus-me__row { display: flex; flex-direction: column; gap: 4px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper-raised); text-decoration: none; transition: border-color 0.15s; }
@@ -2319,7 +2322,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .fangyuan-note { margin-top: 12px; line-height: 1.8; }
 
 /* 续读(v10 §6) */
-.dao-book__continue { font-size: 0.74rem; color: var(--ink-faint); margin-top: 4px; }
+.dao-book__continue { font-size: calc(0.74rem * var(--read-scale)); color: var(--ink-faint); margin-top: 4px; }
 
 /* 路由懒加载占位(v11 §2) */
 .route-loading { text-align: center; padding-top: 120px; color: var(--ink-faint); font-size: 1.4rem; letter-spacing: 0.3em; }
@@ -3156,7 +3159,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .renwu-entry .shishi-refs { margin-bottom: 8px; }
 
 /* 道藏题解撰人小传(v9 §3,authorNote) */
-.dao-text-authornote { font-size: 0.88rem; line-height: 1.8; color: var(--ink-soft); margin: 14px 0 0; padding-top: 12px; border-top: 1px dashed var(--line); }
+.dao-text-authornote { font-size: calc(0.88rem * var(--read-scale)); line-height: 1.8; color: var(--ink-soft); margin: 14px 0 0; padding-top: 12px; border-top: 1px dashed var(--line); }
 
 /* 每章延伸(v13 §2) */
 .yanyi-block { margin: 18px 0 8px; padding: 14px 16px; background: var(--paper); border-left: 2px solid var(--yanyi-border); border-radius: 0 4px 4px 0; }
@@ -3315,8 +3318,8 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .concepts-page { max-width: 720px; margin: 0 auto; }
 .concepts-list { display: flex; flex-direction: column; gap: 18px; margin-top: 8px; }
 .concept-card { padding: 16px 18px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper-raised); }
-.concept-card__term { font-family: var(--font-serif); font-size: 1.1rem; margin: 0 0 6px; color: var(--ink); }
-.concept-card__gloss { font-size: 0.88rem; line-height: 1.8; color: var(--ink-soft); margin: 0 0 12px; }
+.concept-card__term { font-family: var(--font-serif); font-size: calc(1.1rem * var(--read-scale)); margin: 0 0 6px; color: var(--ink); }
+.concept-card__gloss { font-size: calc(0.88rem * var(--read-scale)); line-height: 1.8; color: var(--ink-soft); margin: 0 0 12px; }
 .concept-card__loci { display: flex; flex-wrap: wrap; gap: 8px 16px; }
 .concept-card__locus { font-size: 0.86rem; color: var(--cinnabar); text-decoration: none; border-bottom: 1px dotted var(--cinnabar); }
 .concept-card__locus:hover { border-bottom-style: solid; }
@@ -3364,7 +3367,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .debate-card { display: block; padding: 16px 18px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper-raised); text-decoration: none; color: var(--ink); transition: border-color 0.15s, transform 0.15s; }
 .debate-card:hover { border-color: var(--cinnabar); transform: translateY(-2px); }
 .debate-card__title { font-family: var(--font-serif); font-size: 1.1rem; }
-.debate-card__q { font-size: 0.82rem; color: var(--ink-soft); line-height: 1.6; margin: 6px 0 10px; }
+.debate-card__q { font-size: calc(0.82rem * var(--read-scale)); color: var(--ink-soft); line-height: 1.6; margin: 6px 0 10px; }
 .debate-card__seals { display: flex; gap: 6px; margin-bottom: 8px; }
 .debate-card__seal { width: 30px; height: 30px; border-radius: 6px; color: #f5f2ea; font-size: 0.72rem; display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); }
 .debate-card__meta { font-size: 0.72rem; color: var(--ink-faint); }
@@ -3377,8 +3380,8 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 
 .debate-head { text-align: center; margin-bottom: 6px; }
 .debate-title { font-family: var(--font-serif); font-size: 1.6rem; margin: 0 0 8px; }
-.debate-question { font-size: 1rem; color: var(--ink-soft); margin: 0 0 8px; }
-.debate-framing { font-size: 0.82rem; line-height: 1.7; max-width: 32em; margin: 0 auto; }
+.debate-question { font-size: calc(1rem * var(--read-scale)); color: var(--ink-soft); margin: 0 0 8px; }
+.debate-framing { font-size: calc(0.82rem * var(--read-scale)); line-height: 1.7; max-width: 32em; margin: 0 auto; }
 
 .debate-graph { display: block; width: 100%; max-width: 420px; height: auto; margin: 6px auto 0; }
 .debate-node { animation: dbt-seal-in 0.5s both; }
@@ -3399,35 +3402,35 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .debate-turn__seal { width: 28px; height: 28px; border-radius: 6px; color: #f5f2ea; font-size: 0.7rem; display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); flex: none; }
 .debate-turn__name { font-family: var(--font-serif); font-size: 1rem; }
 .debate-turn__rebut { font-size: 0.72rem; color: var(--cinnabar); border: 1px solid var(--cinnabar); border-radius: 10px; padding: 0 8px; line-height: 1.5; }
-.debate-turn__point { font-size: 0.96rem; line-height: 1.85; margin: 0 0 8px; }
+.debate-turn__point { font-size: calc(0.96rem * var(--read-scale)); line-height: 1.85; margin: 0 0 8px; }
 .debate-turn__cite { font-size: 0.84rem; line-height: 1.7; }
 .debate-turn__quote { color: var(--ink-soft); }
 .debate-turn__src { display: inline-block; margin-left: 4px; color: var(--cinnabar); text-decoration: none; border-bottom: 1px dotted var(--cinnabar); font-size: 0.78rem; }
 .debate-turn__src:hover { border-bottom-style: solid; }
 .debate-coda { margin-top: 22px; padding: 18px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper-raised); text-align: center; animation: dbt-turn-in 0.4s ease-out both; }
 .debate-coda__tag { font-size: 0.74rem; color: var(--cinnabar); letter-spacing: 0.12em; margin-bottom: 8px; }
-.debate-coda__text { font-size: 0.92rem; line-height: 1.9; color: var(--ink-soft); margin: 0 0 12px; }
+.debate-coda__text { font-size: calc(0.92rem * var(--read-scale)); line-height: 1.9; color: var(--ink-soft); margin: 0 0 12px; }
 .debate-coda__epigraph { font-size: 0.8rem; color: var(--ink-faint); margin: 0 0 14px; letter-spacing: 0.04em; }
 /* A·导读:折在题解下。收起时只是一行弱按钮,不与题解争视觉重量 */
 .debate-guide { margin: 14px auto 0; max-width: 620px; text-align: left; }
-.debate-guide__toggle { display: inline-flex; align-items: center; gap: 6px; padding: 3px 0; background: none; border: 0; cursor: pointer; font-size: 0.82rem; color: var(--ink-faint); font-family: var(--font-serif); }
+.debate-guide__toggle { display: inline-flex; align-items: center; gap: 6px; padding: 3px 0; background: none; border: 0; cursor: pointer; font-size: calc(0.82rem * var(--read-scale)); color: var(--ink-faint); font-family: var(--font-serif); }
 .debate-guide__toggle:hover { color: var(--cinnabar); }
-.debate-guide__chev { font-size: 0.7rem; }
+.debate-guide__chev { font-size: calc(0.7rem * var(--read-scale)); }
 .debate-guide__body { margin-top: 10px; padding: 14px 16px; border-left: 2px solid var(--line); background: var(--paper-raised); border-radius: 0 8px 8px 0; }
-.debate-guide__p { font-size: 0.9rem; line-height: 1.85; color: var(--ink-soft); margin: 0 0 10px; }
+.debate-guide__p { font-size: calc(0.9rem * var(--read-scale)); line-height: 1.85; color: var(--ink-soft); margin: 0 0 10px; }
 .debate-guide__p:last-child { margin-bottom: 0; }
-.debate-guide__ref { margin-left: 8px; font-size: 0.8rem; color: var(--cinnabar); text-decoration: none; white-space: nowrap; }
+.debate-guide__ref { margin-left: 8px; font-size: calc(0.8rem * var(--read-scale)); color: var(--cinnabar); text-decoration: none; white-space: nowrap; }
 .debate-guide__ref:hover { text-decoration: underline; }
 .debate-guide__terms { margin: 0 0 10px; }
-.debate-guide__term { display: flex; gap: 10px; padding: 4px 0; font-size: 0.88rem; line-height: 1.7; }
+.debate-guide__term { display: flex; gap: 10px; padding: 4px 0; font-size: calc(0.88rem * var(--read-scale)); line-height: 1.7; }
 .debate-guide__term dt { flex-shrink: 0; min-width: 3.2em; color: var(--cinnabar); font-family: var(--font-serif); }
 .debate-guide__term dd { margin: 0; color: var(--ink-soft); }
 
 /* B·逐句 gloss:折在论点下,收起时是一枚小钮——对辩本身仍是主角 */
 .debate-gloss { margin: 6px 0 0; }
-.debate-gloss__toggle { padding: 2px 9px; background: none; border: 1px dashed var(--line); border-radius: 99px; cursor: pointer; font-size: 0.74rem; color: var(--ink-faint); }
+.debate-gloss__toggle { padding: 2px 9px; background: none; border: 1px dashed var(--line); border-radius: 99px; cursor: pointer; font-size: calc(0.74rem * var(--read-scale)); color: var(--ink-faint); }
 .debate-gloss__toggle:hover { border-color: var(--cinnabar); color: var(--cinnabar); }
-.debate-gloss__text { margin: 8px 0 0; padding-left: 10px; border-left: 2px solid var(--line); font-size: 0.84rem; line-height: 1.8; color: var(--ink-soft); }
+.debate-gloss__text { margin: 8px 0 0; padding-left: 10px; border-left: 2px solid var(--line); font-size: calc(0.84rem * var(--read-scale)); line-height: 1.8; color: var(--ink-soft); }
 
 /* 收束处「接着深读」:辩完给一条向内的路(白话深读/义理专题),不然读者只能退回列表 */
 .debate-deeper { margin: 16px 0 18px; padding-top: 14px; border-top: 1px solid var(--line); }
@@ -3490,11 +3493,11 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 /* 总门户:中立全组枢纽,主色取墨调,不偏向任一分站 */
 [data-site="portal"] { --cinnabar: var(--ink-soft); --cinnabar-bg: color-mix(in srgb, var(--ink-soft) 8%, transparent); }
 /* 伪书真伪徽标(谋略杂纂):题解/书架卡片显著标「托名·疑现代伪作」 */
-.dubious-badge { display: inline-block; margin: 8px 0 0; padding: 3px 10px; border: 1px solid color-mix(in srgb, var(--cinnabar) 40%, var(--line)); border-radius: 4px; background: var(--cinnabar-bg); color: var(--cinnabar); font-size: 0.78rem; letter-spacing: 0.02em; }
-.dao-book__dubious { display: inline-block; margin-top: 4px; font-size: 0.72rem; color: var(--cinnabar); font-weight: 600; }
+.dubious-badge { display: inline-block; margin: 8px 0 0; padding: 3px 10px; border: 1px solid color-mix(in srgb, var(--cinnabar) 40%, var(--line)); border-radius: 4px; background: var(--cinnabar-bg); color: var(--cinnabar); font-size: calc(0.78rem * var(--read-scale)); letter-spacing: 0.02em; }
+.dao-book__dubious { display: inline-block; margin-top: 4px; font-size: calc(0.72rem * var(--read-scale)); color: var(--cinnabar); font-weight: 600; }
 /* caveat:中性存疑标记(托名/今本辑佚),弱于 dubious 的伪书强批判 */
-.caveat-badge { display: inline-block; margin: 8px 0 0; padding: 3px 10px; border: 1px solid var(--line); border-radius: 4px; background: color-mix(in srgb, var(--ink) 4%, transparent); color: var(--ink-soft); font-size: 0.78rem; letter-spacing: 0.02em; }
-.dao-book__caveat { display: inline-block; margin-top: 4px; font-size: 0.72rem; color: var(--ink-soft); }
+.caveat-badge { display: inline-block; margin: 8px 0 0; padding: 3px 10px; border: 1px solid var(--line); border-radius: 4px; background: color-mix(in srgb, var(--ink) 4%, transparent); color: var(--ink-soft); font-size: calc(0.78rem * var(--read-scale)); letter-spacing: 0.02em; }
+.dao-book__caveat { display: inline-block; margin-top: 4px; font-size: calc(0.72rem * var(--read-scale)); color: var(--ink-soft); }
 
 /* 书架·整理中卡片(v15) */
 .dao-book--pending { opacity: 0.72; cursor: default; }
@@ -3505,43 +3508,43 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 /* 今日一章卡(读经站/道藏首页) */
 .shelf-today { display: flex; align-items: center; gap: 12px; margin: 0 0 22px; padding: 13px 18px; border: 1px solid var(--cinnabar); border-radius: 8px; background: var(--cinnabar-bg); text-decoration: none; transition: transform 0.15s; }
 .shelf-today:hover { transform: translateY(-1px); }
-.shelf-today__badge { flex: none; font-size: 0.72rem; padding: 3px 10px; border-radius: 12px; background: var(--cinnabar); color: #fdfbf6; letter-spacing: 0.04em; }
-.shelf-today__book { font-family: var(--font-serif); font-size: 1rem; color: var(--ink); }
-.shelf-today__arrow { margin-left: auto; color: var(--cinnabar); font-size: 1.1rem; }
+.shelf-today__badge { flex: none; font-size: calc(0.72rem * var(--read-scale)); padding: 3px 10px; border-radius: 12px; background: var(--cinnabar); color: #fdfbf6; letter-spacing: 0.04em; }
+.shelf-today__book { font-family: var(--font-serif); font-size: calc(1rem * var(--read-scale)); color: var(--ink); }
+.shelf-today__arrow { margin-left: auto; color: var(--cinnabar); font-size: calc(1.1rem * var(--read-scale)); }
 .dao-shelf { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
 .dao-book { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 22px 24px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper-raised); text-decoration: none; transition: border-color 0.15s, transform 0.15s; }
 .dao-book:hover { border-color: var(--cinnabar); transform: translateY(-2px); }
-.dao-book__title { font-family: var(--font-serif); font-size: 1.3rem; color: var(--ink); }
-.dao-book__alias { font-size: 0.78rem; color: var(--ink-soft); }
-.dao-book__meta { display: flex; gap: 12px; align-items: center; font-size: 0.74rem; color: var(--ink-faint); }
-.dao-book__brief { font-size: 0.84rem; line-height: 1.7; color: var(--ink); margin: 6px 0 0; }
+.dao-book__title { font-family: var(--font-serif); font-size: calc(1.3rem * var(--read-scale)); color: var(--ink); }
+.dao-book__alias { font-size: calc(0.78rem * var(--read-scale)); color: var(--ink-soft); }
+.dao-book__meta { display: flex; gap: 12px; align-items: center; font-size: calc(0.74rem * var(--read-scale)); color: var(--ink-faint); }
+.dao-book__brief { font-size: calc(0.84rem * var(--read-scale)); line-height: 1.7; color: var(--ink); margin: 6px 0 0; }
 
 /* 篇幅档 pill(#148)——短/中/长 读时信号,弱色描边,不抢主色 */
-.book-tier { font-size: 0.66rem; padding: 0 6px; border-radius: 8px; border: 1px solid var(--line); line-height: 1.5; }
+.book-tier { font-size: calc(0.66rem * var(--read-scale)); padding: 0 6px; border-radius: 8px; border: 1px solid var(--line); line-height: 1.5; }
 .book-tier--short { color: #5b8a5b; border-color: color-mix(in srgb, #5b8a5b 40%, var(--line)); }
 .book-tier--mid { color: var(--ink-soft); }
 .book-tier--long { color: #9a6b4f; border-color: color-mix(in srgb, #9a6b4f 40%, var(--line)); }
-.dao-book__status { position: absolute; top: 14px; right: 14px; font-size: 0.68rem; padding: 1px 7px; border-radius: 3px; border: 1px solid var(--line); color: var(--ink-faint); }
+.dao-book__status { position: absolute; top: 14px; right: 14px; font-size: calc(0.68rem * var(--read-scale)); padding: 1px 7px; border-radius: 3px; border: 1px solid var(--line); color: var(--ink-faint); }
 .dao-book__status--done { color: var(--cinnabar); border-color: currentColor; }
 
 /* 道藏文本框架页 */
 .dao-text-page { max-width: var(--read-w); margin: 0 auto; }
 .dao-text-header { margin-bottom: 32px; }
-.dao-text-title { font-family: var(--font-serif); font-size: 2rem; color: var(--ink); margin: 0 0 8px; }
-.dao-text-meta { color: var(--ink-soft); font-size: 0.85rem; margin: 0 0 12px; }
-.dao-text-brief { font-size: 0.95rem; line-height: 1.9; color: var(--ink); }
-.dao-text-sections__title { font-family: var(--font-serif); font-size: 1.1rem; color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 8px; margin-bottom: 16px; }
+.dao-text-title { font-family: var(--font-serif); font-size: calc(2rem * var(--read-scale)); color: var(--ink); margin: 0 0 8px; }
+.dao-text-meta { color: var(--ink-soft); font-size: calc(0.85rem * var(--read-scale)); margin: 0 0 12px; }
+.dao-text-brief { font-size: calc(0.95rem * var(--read-scale)); line-height: 1.9; color: var(--ink); }
+.dao-text-sections__title { font-family: var(--font-serif); font-size: calc(1.1rem * var(--read-scale)); color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 8px; margin-bottom: 16px; }
 .dao-section-grid { display: flex; flex-wrap: wrap; gap: 6px; }
-.dao-section-cell { display: inline-flex; align-items: center; justify-content: center; min-width: 34px; height: 34px; padding: 0 6px; border: 1px solid var(--line); border-radius: 4px; color: var(--ink-faint); font-size: 0.8rem; background: var(--paper-raised); cursor: not-allowed; }
+.dao-section-cell { display: inline-flex; align-items: center; justify-content: center; min-width: 34px; height: 34px; padding: 0 6px; border: 1px solid var(--line); border-radius: 4px; color: var(--ink-faint); font-size: calc(0.8rem * var(--read-scale)); background: var(--paper-raised); cursor: not-allowed; }
 .dao-section-cell--link { cursor: pointer; color: var(--ink-soft); text-decoration: none; transition: border-color 0.15s, color 0.15s; }
 .dao-section-cell--current { border-color: var(--cinnabar); background: var(--cinnabar-bg); color: var(--cinnabar); }
-.dao-text-resume { display: inline-block; margin-top: 12px; padding: 6px 14px; border: 1px solid var(--cinnabar); border-radius: 6px; color: var(--cinnabar); background: var(--cinnabar-bg); text-decoration: none; font-size: 0.85rem; transition: background 0.15s; }
+.dao-text-resume { display: inline-block; margin-top: 12px; padding: 6px 14px; border: 1px solid var(--cinnabar); border-radius: 6px; color: var(--cinnabar); background: var(--cinnabar-bg); text-decoration: none; font-size: calc(0.85rem * var(--read-scale)); transition: background 0.15s; }
 .dao-text-resume:hover { background: color-mix(in srgb, var(--cinnabar) 16%, transparent); }
 .dao-section-cell--link:hover { border-color: var(--cinnabar); color: var(--cinnabar); }
 /* 带标题的篇目格(图国第一、初见秦…):序号徽 + 篇名,自适应宽度换行 */
 .dao-section-grid--titled { gap: 8px; }
-.dao-section-cell--titled { min-width: 0; height: auto; padding: 7px 12px 7px 8px; gap: 7px; justify-content: flex-start; font-size: 0.9rem; line-height: 1.35; }
-.dao-section-cell__no { flex: none; display: inline-flex; align-items: center; justify-content: center; min-width: 20px; height: 20px; padding: 0 4px; border-radius: 3px; background: var(--cinnabar-bg); color: var(--cinnabar); font-size: 0.72rem; }
+.dao-section-cell--titled { min-width: 0; height: auto; padding: 7px 12px 7px 8px; gap: 7px; justify-content: flex-start; font-size: calc(0.9rem * var(--read-scale)); line-height: 1.35; }
+.dao-section-cell__no { flex: none; display: inline-flex; align-items: center; justify-content: center; min-width: 20px; height: 20px; padding: 0 4px; border-radius: 3px; background: var(--cinnabar-bg); color: var(--cinnabar); font-size: calc(0.72rem * var(--read-scale)); }
 .dao-section-cell__title { white-space: nowrap; }
 /* 目录骨架占位:章名异步载入时占住网格,避免「序号格→带章名」重排闪烁 */
 .dao-section-cell--skeleton { border-style: dashed; background: color-mix(in srgb, var(--paper-raised) 60%, transparent); opacity: 0.5; animation: skeleton-pulse 1.2s ease-in-out infinite; }
@@ -3550,7 +3553,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 @media (max-width: 560px) { .dao-section-cell--titled { font-size: 0.85rem; } }
 .read-toc__back { color: inherit; text-decoration: none; }
 .read-toc__back:hover { color: var(--cinnabar); }
-.dao-section-note { margin-top: 14px; font-size: 0.78rem; }
+.dao-section-note { margin-top: 14px; font-size: calc(0.78rem * var(--read-scale)); }
 
 /* 卦主小章(v2 §4,赭石描边) */
 .line-chip--guazhu { color: var(--ochre); border: 1px solid var(--ochre); background: transparent; cursor: help; }
@@ -3899,9 +3902,9 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .topo-page { max-width: 1000px; margin: 0 auto; }
 .topo-head h1 { font-family: var(--font-serif); font-size: 1.5rem; margin: 0 0 4px; color: var(--ink); }
 .topo-sub { font-size: 0.9rem; color: var(--cinnabar); margin: 0 0 14px; }
-.topo-intro { font-size: 0.9rem; line-height: 1.9; color: var(--ink); margin: 0 0 10px; }
+.topo-intro { font-size: calc(0.9rem * var(--read-scale)); line-height: 1.9; color: var(--ink); margin: 0 0 10px; }
 .topo-intro b { color: var(--cinnabar); font-weight: 600; }
-.topo-note { font-size: 0.78rem; line-height: 1.75; color: var(--ink-soft); margin: 0; }
+.topo-note { font-size: calc(0.78rem * var(--read-scale)); line-height: 1.75; color: var(--ink-soft); margin: 0; }
 
 .topo-bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; margin: 20px 0 10px; }
 .topo-types { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -3950,9 +3953,9 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   border-radius: 8px; background: var(--paper-raised); }
 .topo-detail h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; font-family: var(--font-serif);
   font-size: 1.12rem; margin: 0 0 8px; color: var(--ink); }
-.topo-detail__when, .topo-detail__school { font-size: 0.76rem; color: var(--ink-soft); font-family: var(--font-sans); }
-.topo-detail p { font-size: 0.88rem; line-height: 1.85; color: var(--ink); margin: 0 0 10px; }
-.topo-detail__caveat { font-size: 0.8rem !important; color: var(--ink-soft) !important; }
+.topo-detail__when, .topo-detail__school { font-size: calc(0.76rem * var(--read-scale)); color: var(--ink-soft); font-family: var(--font-sans); }
+.topo-detail p { font-size: calc(0.88rem * var(--read-scale)); line-height: 1.85; color: var(--ink); margin: 0 0 10px; }
+.topo-detail__caveat { font-size: calc(0.8rem !important * var(--read-scale)); color: var(--ink-soft) !important; }
 .topo-detail__book a { color: var(--cinnabar); text-decoration: none; border-bottom: 1px dotted var(--cinnabar); }
 .topo-detail__arrow { color: var(--tc); }
 
@@ -3964,9 +3967,9 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   color: var(--tc); border: 1px solid color-mix(in srgb, var(--tc) 45%, transparent); }
 .topo-rel__who { font-family: var(--font-serif); font-size: 0.95rem; color: var(--ink); background: none; border: 0;
   border-bottom: 1px dotted var(--ink-soft); padding: 0; cursor: pointer; }
-.topo-rel__gist { font-size: 0.82rem; color: var(--ink-soft); margin-left: 8px; }
+.topo-rel__gist { font-size: calc(0.82rem * var(--read-scale)); color: var(--ink-soft); margin-left: 8px; }
 .topo-cites { list-style: none; padding: 0; margin: 6px 0 0; display: flex; flex-direction: column; gap: 5px; }
-.topo-cites li { font-size: 0.84rem; line-height: 1.8; }
+.topo-cites li { font-size: calc(0.84rem * var(--read-scale)); line-height: 1.8; }
 .topo-cites q { font-family: var(--font-serif); color: var(--ink); quotes: '「' '」'; }
 .topo-cite__src { margin-left: 8px; font-size: 0.76rem; color: var(--cinnabar); text-decoration: none; white-space: nowrap; }
 
@@ -3989,7 +3992,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 
 @media (max-width: 760px) {
   .topo-bar { justify-content: flex-start; }
-  .topo-detail h2 { font-size: 1rem; }
+  .topo-detail h2 { font-size: calc(1rem * var(--read-scale)); }
 }
 .topo-edge--far { opacity: 0.1; }
 /* 深色底下 600 档的青/灰偏暗,提一档亮度;朱线本已够亮不动。
@@ -4014,8 +4017,8 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .debates-map-entry__go { margin-left: auto; color: var(--ink-soft); font-size: 1.2rem; }
 
 /* 拓扑图 ↔ 争鸣的互指 */
-.topo-vs { margin-top: 12px; font-size: 0.84rem; }
-.topo-vs summary { cursor: pointer; color: var(--cinnabar); font-size: 0.82rem; }
+.topo-vs { margin-top: 12px; font-size: calc(0.84rem * var(--read-scale)); }
+.topo-vs summary { cursor: pointer; color: var(--cinnabar); font-size: calc(0.82rem * var(--read-scale)); }
 .topo-vs p { margin: 8px 0 0; line-height: 1.85; color: var(--ink-soft); }
 .topo-vs b { color: var(--ink); font-weight: 600; }
 .topo-debates { margin-top: 12px; }
@@ -4035,7 +4038,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   box-shadow: 0 2px 12px color-mix(in srgb, var(--cinnabar) 12%, transparent); }
 .debate-explain__tag { flex: 0 0 auto; padding: 2px 9px; font-size: 0.76rem; border-radius: 4px;
   background: var(--cinnabar); color: var(--paper); font-family: var(--font-serif); }
-.debate-explain__text { font-size: 0.82rem; line-height: 1.6; color: var(--ink-soft); }
+.debate-explain__text { font-size: calc(0.82rem * var(--read-scale)); line-height: 1.6; color: var(--ink-soft); }
 .debate-explain__go { margin-left: auto; color: var(--ink-soft); font-size: 1.1rem; }
 @media (max-width: 560px) {
   .debate-explain { flex-wrap: wrap; }

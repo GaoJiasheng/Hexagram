@@ -4,7 +4,7 @@ import EmptyState from '../../yijing/components/EmptyState.jsx'
 import texts from '../../../data/dao/texts.json'
 import { usePageTitle } from '../../yijing/hooks/usePageTitle.js'
 import { loadDaoText } from '../data.js'
-import { tocTitle } from '../../reader/tocTitle.js'
+import { tocTitle, tocTitleOf } from '../../reader/tocTitle.js'
 import { getReadingProgress } from '../../yijing/storage.js'
 import DaoSinglePage from './DaoSinglePage.jsx'
 
@@ -74,13 +74,13 @@ export default function DaoTextPage() {
             </div>
             <p className="text-faint dao-section-note">经文整理中——录入后此处即为{text.sectionUnit}节阅读入口。</p>
           </>
-        ) : chapters && chapters.length && chapters.some((c) => tocTitle(c.title)) ? (
+        ) : chapters && chapters.length && chapters.some((c) => tocTitleOf(c, text)) ? (
           <>
             <div className="dao-section-grid dao-section-grid--titled" aria-label={`共 ${text.sections} ${text.sectionUnit}`}>
               {chapters.map((c) => (
                 <Link key={c.no} to={`/dao/${text.slug}/${c.no}`} className={`dao-section-cell dao-section-cell--link dao-section-cell--titled ${c.no === resumeCh ? 'dao-section-cell--current' : ''}`}>
                   <span className="dao-section-cell__no">{c.no}</span>
-                  <span className="dao-section-cell__title">{tocTitle(c.title)}</span>
+                  <span className="dao-section-cell__title">{tocTitleOf(c, text)}</span>
                 </Link>
               ))}
             </div>

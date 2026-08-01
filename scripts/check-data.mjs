@@ -652,6 +652,33 @@ if (fs.existsSync(glossaryPath)) {
   }
 }
 
+// ---------- 7b2. 章名(chapterNames)----------
+// 纯序数章名的书可在 texts.json 配 chapterNames 补显示名。铁律同引文:**必须是本章原文子串**,
+// 否则就是替古人编标题——道德经 81 章取的是首句(上善若水/天地不仁…),零编造。
+{
+  let nName = 0, nBadName = 0
+  for (const tf of fs.readdirSync(path.join(ROOT, 'src/data'), { withFileTypes: true })) {
+    if (!tf.isDirectory()) continue
+    const metaPath = path.join(ROOT, `src/data/${tf.name}/texts.json`)
+    if (!fs.existsSync(metaPath)) continue
+    for (const b of JSON.parse(fs.readFileSync(metaPath, 'utf8'))) {
+      if (!b.chapterNames) continue
+      const cf = path.join(ROOT, `src/data/${tf.name}/classics/${b.slug}.json`)
+      if (!fs.existsSync(cf)) { err(`chapterNames ${b.slug}: 无 classics 文件`); continue }
+      const book = JSON.parse(fs.readFileSync(cf, 'utf8'))
+      for (const [no, name] of Object.entries(b.chapterNames)) {
+        nName++
+        const c = book.chapters.find((x) => String(x.no) === no)
+        if (!c) { err(`chapterNames ${b.slug} 第${no}章: 无此章`); nBadName++; continue }
+        const text = c.paragraphs.map((p) => p.original).join('')
+        if (!text.includes(name)) { err(`chapterNames ${b.slug} 第${no}章:「${name}」非本章原文子串`); nBadName++ }
+        else if (name.length > 8) err(`chapterNames ${b.slug} 第${no}章:「${name}」超 8 字,篇目格放不下`)
+      }
+    }
+  }
+  if (nName) infos.push(`章名(chapterNames): ${nName} 条 · ${nBadName} 条非原文`)
+}
+
 // ---------- 7c. 诸子拓扑图 ----------
 // 图的价值全在「每根线都点得开、看得到出处」——引文一旦不是站内原文,整张图就是编的。
 // 故引文逐字校验(同 debate cite),校验池收窄到该 cite 所指的那一章:跨章拼接即判错。
