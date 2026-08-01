@@ -718,6 +718,12 @@ if (fs.existsSync(glossaryPath)) {
       // 富文本:图/表是这个体裁的骨头(版本谱系、异文对照、各家读法,散文说不清)。
       const figs = blocks.filter((b) => b.type === 'figure')
       const tbls = blocks.filter((b) => b.type === 'table')
+      // 篇幅底线(owner 2026-08-01):不得低于 4000 字。写短了不是「这本书料少」,
+      // 是没把来路挖够——短经同样有版本、注家、流传、被谁怎么读。
+      {
+        const n = (JSON.stringify(blocks).match(/[\u4e00-\u9fff]/g) || []).length
+        if (n < 4000) err(`daodu ${slug}: 仅 ${n} 字,低于 4000 字底线`)
+      }
       // 图表数按篇幅缩放:1800 字的短经硬塞 4 张图是凑数,6000 字的长文只给 1 张才是不够。
       const nChar = (JSON.stringify(blocks).match(/[\u4e00-\u9fff]/g) || []).length
       const wantFig = nChar >= 5000 ? 4 : nChar >= 3000 ? 3 : 2
