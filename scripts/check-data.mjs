@@ -718,7 +718,12 @@ if (fs.existsSync(glossaryPath)) {
       // 富文本:图/表是这个体裁的骨头(版本谱系、异文对照、各家读法,散文说不清)。
       const figs = blocks.filter((b) => b.type === 'figure')
       const tbls = blocks.filter((b) => b.type === 'table')
-      if (figs.length + tbls.length < 3) warn(`daodu ${slug}: 图表仅 ${figs.length + tbls.length} 处,加厚档建议 4 处以上`)
+      // 图表数按篇幅缩放:1800 字的短经硬塞 4 张图是凑数,6000 字的长文只给 1 张才是不够。
+      const nChar = (JSON.stringify(blocks).match(/[\u4e00-\u9fff]/g) || []).length
+      const wantFig = nChar >= 5000 ? 4 : nChar >= 3000 ? 3 : 2
+      if (figs.length + tbls.length < wantFig) {
+        warn(`daodu ${slug}: ${nChar} 字仅 ${figs.length + tbls.length} 处图表,建议 ${wantFig} 处以上`)
+      }
       for (const f of figs) {
         if (!f.svg) err(`daodu ${slug}: figure 缺 svg`)
         else if (/(fill|stroke)="#/.test(f.svg)) err(`daodu ${slug}: figure 写死了前景色,须用 style="fill:var(--…)"`)
