@@ -4000,3 +4000,28 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   :root:not([data-theme]) .topo-edge,
   :root:not([data-theme]) .topo-type__dash { filter: brightness(1.75) saturate(0.9); }
 }
+
+/* 争鸣列表页 → 拓扑图入口 */
+.debates-map-entry { display: flex; align-items: center; gap: 14px; padding: 14px 16px; margin: 16px 0 4px;
+  border: 1px solid var(--line); border-radius: 8px; background: var(--paper-raised); text-decoration: none;
+  transition: border-color .18s, box-shadow .18s; }
+.debates-map-entry:hover { border-color: var(--cinnabar); box-shadow: 0 2px 14px color-mix(in srgb, var(--cinnabar) 12%, transparent); }
+.debates-map-entry__seal { flex: 0 0 auto; width: 40px; height: 40px; display: grid; place-items: center;
+  border-radius: 6px; background: var(--cinnabar); color: var(--paper); font-family: var(--font-serif); font-size: 0.86rem; }
+.debates-map-entry__body { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.debates-map-entry__title { font-family: var(--font-serif); font-size: 1rem; color: var(--ink); }
+.debates-map-entry__sub { font-size: 0.8rem; line-height: 1.7; color: var(--ink-soft); }
+.debates-map-entry__go { margin-left: auto; color: var(--ink-soft); font-size: 1.2rem; }
+
+/* 拓扑图 ↔ 争鸣的互指 */
+.topo-vs { margin-top: 12px; font-size: 0.84rem; }
+.topo-vs summary { cursor: pointer; color: var(--cinnabar); font-size: 0.82rem; }
+.topo-vs p { margin: 8px 0 0; line-height: 1.85; color: var(--ink-soft); }
+.topo-vs b { color: var(--ink); font-weight: 600; }
+.topo-debates { margin-top: 12px; }
+.topo-debates h3 { font-size: 0.8rem; color: var(--ink-soft); margin: 0 0 6px; font-weight: 500; }
+.topo-debates__n { margin-left: 6px; color: var(--cinnabar); }
+.topo-debates__list { display: flex; flex-wrap: wrap; gap: 6px 8px; margin: 0 !important; }
+.topo-debates__one { font-size: 0.78rem; padding: 2px 9px; border: 1px solid var(--line); border-radius: 999px;
+  color: var(--ink-soft); text-decoration: none; }
+.topo-debates__one:hover { border-color: var(--cinnabar); color: var(--cinnabar); }

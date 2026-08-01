@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import {
   topology, computeLayout, edgeGeometry, nodeById, typeById, schoolById,
-  citeHref, relationsOf, GUTTER, ERA_W, NODE_W, NODE_H, HEADER_H,
+  citeHref, relationsOf, debatesOf, GUTTER, ERA_W, NODE_W, NODE_H, HEADER_H,
 } from './topology.js'
 
 const ALL_TYPES = topology.edgeTypes.map((t) => t.key)
@@ -76,11 +76,20 @@ export default function ZhuziTopologyPage() {
 
   return (
     <main className="topo-page">
+      <div className="basics-breadcrumb"><Link to="/debates" className="basics-breadcrumb__link">← 赛博 · 百家争鸣</Link></div>
       <header className="topo-head">
         <h1>{topology.title}</h1>
         <p className="topo-sub">{topology.subtitle}</p>
         <p className="topo-intro" dangerouslySetInnerHTML={{ __html: mdBold(topology.intro) }} />
         <p className="topo-note">{topology.note}</p>
+        {topology.inDebates && (
+          <details className="topo-vs">
+            <summary>{topology.inDebates.label}</summary>
+            {topology.inDebates.text.split('\n\n').map((para, i) => (
+              <p key={i} dangerouslySetInnerHTML={{ __html: mdBold(para) }} />
+            ))}
+          </details>
+        )}
       </header>
 
       <div className="topo-bar">
@@ -210,7 +219,7 @@ export default function ZhuziTopologyPage() {
         <p className="topo-note">{topology.end.note}</p>
       </section>
 
-      <p className="topo-back"><Link to="/hexagram">← 诸学门户</Link> · <Link to="/debates">赛博 · 百家争鸣</Link></p>
+      <p className="topo-back"><Link to="/debates">← 回辩题库</Link> · <Link to="/hexagram">诸学门户</Link></p>
     </main>
   )
 }
@@ -241,6 +250,22 @@ function ListView({ onPick, sel }) {
           </section>
         )
       })}
+    </div>
+  )
+}
+
+/** 同一个人在争鸣里参过的辩 —— 拓扑图看「当时谁理他」,争鸣看「今天让他开口」。 */
+function DebateLinks({ node }) {
+  const list = debatesOf(node)
+  if (!list.length) return null
+  return (
+    <div className="topo-debates">
+      <h3>他在争鸣里参过的辩<span className="topo-debates__n">{list.length}</span></h3>
+      <p className="topo-debates__list">
+        {list.map((t) => (
+          <Link key={t.id} to={`/debates/${t.id}`} className="topo-debates__one">{t.title}</Link>
+        ))}
+      </p>
     </div>
   )
 }
@@ -292,6 +317,7 @@ function Detail({ sel, onPick }) {
         <p>{n.note}</p>
         {n.caveat && <p className="topo-detail__caveat">⚠ {n.caveat}</p>}
         {n.book && <p className="topo-detail__book"><Link to={`/${n.book.corpus}/${n.book.slug}`}>读《{n.book.title}》›</Link></p>}
+        <DebateLinks node={n} />
         {!out.length && !inc.length
           ? <p className="topo-list__none">先秦文献里没有与他相涉的互评记载——图上是孤立的,这不是遗漏。</p>
           : <>

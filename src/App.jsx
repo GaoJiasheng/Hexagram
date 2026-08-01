@@ -1,4 +1,4 @@
-import { BrowserRouter, NavLink, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
+import { BrowserRouter, NavLink, Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import { useState, useEffect, useCallback, useRef, lazy, Suspense } from 'react'
 import { SettingsProvider } from './features/yijing/SettingsContext.jsx'
 import { AuthProvider } from './features/auth/AuthContext.jsx'
@@ -400,8 +400,10 @@ function AppContent() {
           {/* 诸学总门户(v15):左上角 logo 全站可达的公开总入口,列全部分组 */}
           <Route path={MASTER_PORTAL_PATH} element={<MasterPortalPage onSearch={openSearch} />} />
           <Route path="/concepts" element={<ConceptsPage />} />
-          <Route path="/zhuzi" element={<ZhuziTopologyPage />} />
           <Route path="/debates" element={<DebateListPage />} />
+          <Route path="/debates/map" element={<ZhuziTopologyPage />} />
+          {/* 旧路径:拓扑图曾独立于 /zhuzi,并入争鸣后保留重定向(已部署过,可能被点过) */}
+          <Route path="/zhuzi" element={<Navigate to="/debates/map" replace />} />
           <Route path="/debates/:id" element={<DebatePage />} />
           <Route path="/debates/:id/article" element={<DebateArticlePage />} />
           <Route path="/about" element={<AboutPage />} />

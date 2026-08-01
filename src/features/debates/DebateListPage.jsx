@@ -79,6 +79,16 @@ export default function DebateListPage() {
       </div>
       <p className="debates-epigraph">{EPIGRAPH.text} ——《{EPIGRAPH.source}》</p>
 
+      {/* 拓扑图与辩题是同一件事的两种视图:辩题是编排的会讲,拓扑图是史上真实的互评 */}
+      <Link to="/debates/map" className="debates-map-entry">
+        <span className="debates-map-entry__seal" aria-hidden="true">互评</span>
+        <span className="debates-map-entry__body">
+          <span className="debates-map-entry__title">诸子拓扑图</span>
+          <span className="debates-map-entry__sub">上面是让他们就一个题目对辩;这张图是他们历史上真的怎么说彼此——22 人 · 37 条关系,每根线都挂着一句原文</span>
+        </span>
+        <span className="debates-map-entry__go" aria-hidden="true">›</span>
+      </Link>
+
       <div className="debates-facets">
         <Chips title="义理" items={divItems} active={divs} onToggle={(v) => toggle('div', v)} />
         <Chips title="阵营" items={schoolItems} active={schools} onToggle={(v) => toggle('school', v)} />

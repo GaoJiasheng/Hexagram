@@ -68,13 +68,12 @@ export default function MasterPortalPage({ onSearch }) {
         <span className="master-portal__debates-seal" aria-hidden="true">争鸣</span>
         <span className="master-portal__debates-body">
           <span className="master-portal__debates-title">赛博 · 百家争鸣</span>
-          <span className="master-portal__debates-sub">诸子隔空对辩 · 跨派交锋,持续增补</span>
+          <span className="master-portal__debates-sub">诸子隔空对辩 · 另附拓扑图:他们历史上真的怎么说彼此</span>
         </span>
         <span className="master-portal__debates-go" aria-hidden="true">›</span>
       </Link>
       <PortalStudyTrail />
       <p className="master-portal__links">
-        <Link to="/zhuzi" className="master-portal__about-link">诸子拓扑图 · 先秦互评网</Link>
         <Link to="/concepts" className="master-portal__about-link">义理专题 · 跨派概念</Link>
       </p>
       <p className="master-portal__about">

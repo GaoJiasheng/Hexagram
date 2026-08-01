@@ -698,6 +698,14 @@ if (fs.existsSync(glossaryPath)) {
         }
       }
     }
+    // debateKey 指向争鸣的参辩家 key。写错就是一串死链,且页面上看不出来(只是不显示),故校验。
+    const dbIdx = path.join(ROOT, 'src/data/debates/index.json')
+    if (fs.existsSync(dbIdx)) {
+      const keys = new Set(JSON.parse(fs.readFileSync(dbIdx, 'utf8')).topics.flatMap((t) => (t.schools || []).map((s) => s.key)))
+      for (const n of T.nodes) {
+        if (n.debateKey && !keys.has(n.debateKey)) err(`topology 节点 ${n.id}: debateKey「${n.debateKey}」在争鸣里无此参辩家`)
+      }
+    }
     // 孤立节点不是错(兵家/纵横本就不在先秦诸子的自评名单里),但须在 note 里交代清楚。
     const linked = new Set(T.edges.flatMap((e) => [e.from, e.to]))
     for (const n of T.nodes) {

@@ -53,7 +53,9 @@ const topicOf = (d, prev) => {
     question: d.question,
     turns: d.rounds.reduce((n, r) => n + r.turns.length, 0),
     status: 'done',
-    schools: d.schools.map((s) => ({ label: s.label, group: s.group, seal: s.seal, stance: s.stance })),
+    // key 是全站统一过的参辩家标识(check-data 有跨辩一致性校验),拓扑图靠它对接同一批人;
+    // 早先 index 只留 label,按 label 匹配会踩「同名不同人 / 书名人名混用」的坑。
+    schools: d.schools.map((s) => ({ key: s.key, label: s.label, group: s.group, seal: s.seal, stance: s.stance })),
     format: prev?.format || derivedFormat(d),
   }
 }

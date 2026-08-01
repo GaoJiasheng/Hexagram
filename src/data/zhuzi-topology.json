@@ -108,7 +108,8 @@
         "corpus": "ru",
         "slug": "lunyu",
         "title": "论语"
-      }
+      },
+      "debateKey": "kong"
     },
     {
       "id": "laozi",
@@ -122,7 +123,8 @@
         "corpus": "dao",
         "slug": "daodejing",
         "title": "道德经"
-      }
+      },
+      "debateKey": "laozi"
     },
     {
       "id": "sunwu",
@@ -136,7 +138,8 @@
         "corpus": "bing",
         "slug": "sunzi",
         "title": "孙子兵法"
-      }
+      },
+      "debateKey": "sunzi"
     },
     {
       "id": "dengxi",
@@ -157,7 +160,8 @@
         "corpus": "mo",
         "slug": "mozi",
         "title": "墨子"
-      }
+      },
+      "debateKey": "mo"
     },
     {
       "id": "zisi",
@@ -174,7 +178,8 @@
       "school": "dao",
       "when": "生卒不详，约战国早中期",
       "note": "站内无其书，其说全靠他人转述。孟子说当时「天下之言，不归杨则归墨」，可见声势；而「杨氏为我，是无君也」这句定性，也几乎决定了他此后两千年的形象。",
-      "caveat": "《列子·杨朱篇》旧题其说，然今本《列子》成书存疑，不宜径作杨朱本人之言。"
+      "caveat": "《列子·杨朱篇》旧题其说，然今本《列子》成书存疑，不宜径作杨朱本人之言。",
+      "debateKey": "yangzhu"
     },
     {
       "id": "wuqi",
@@ -187,7 +192,8 @@
         "corpus": "bing",
         "slug": "wuzi",
         "title": "吴子"
-      }
+      },
+      "debateKey": "wuzi"
     },
     {
       "id": "mengzi",
@@ -200,7 +206,8 @@
         "corpus": "ru",
         "slug": "mengzi",
         "title": "孟子"
-      }
+      },
+      "debateKey": "meng"
     },
     {
       "id": "zhuangzi",
@@ -214,7 +221,8 @@
         "corpus": "dao",
         "slug": "zhuangzi-zapian",
         "title": "庄子"
-      }
+      },
+      "debateKey": "zhuang"
     },
     {
       "id": "huishi",
@@ -239,7 +247,8 @@
       "era": "mid",
       "school": "mo",
       "when": "墨子身后",
-      "note": "墨子死后墨家分裂。《庄子·天下》说三派「俱诵《墨经》，而倍谲不同，相谓别墨」——互指对方是假墨；《韩非子·显学》则记为「相里氏之墨，相夫氏之墨，邓陵氏之墨」。两书各记一面，同一件事。"
+      "note": "墨子死后墨家分裂。《庄子·天下》说三派「俱诵《墨经》，而倍谲不同，相谓别墨」——互指对方是假墨；《韩非子·显学》则记为「相里氏之墨，相夫氏之墨，邓陵氏之墨」。两书各记一面，同一件事。",
+      "debateKey": "bian"
     },
     {
       "id": "shangyang",
@@ -252,7 +261,8 @@
         "corpus": "fa",
         "slug": "shangjunshu",
         "title": "商君书"
-      }
+      },
+      "debateKey": "shang"
     },
     {
       "id": "shenbuhai",
@@ -273,7 +283,8 @@
         "corpus": "fa",
         "slug": "shenzi",
         "title": "慎子"
-      }
+      },
+      "debateKey": "shen"
     },
     {
       "id": "yinwen",
@@ -287,7 +298,8 @@
         "corpus": "fa",
         "slug": "yinwenzi",
         "title": "尹文子"
-      }
+      },
+      "debateKey": "yinwen"
     },
     {
       "id": "xunzi",
@@ -300,7 +312,8 @@
         "corpus": "ru",
         "slug": "xunzi",
         "title": "荀子"
-      }
+      },
+      "debateKey": "xun"
     },
     {
       "id": "hanfei",
@@ -313,7 +326,8 @@
         "corpus": "fa",
         "slug": "hanfeizi",
         "title": "韩非子"
-      }
+      },
+      "debateKey": "hanfei"
     },
     {
       "id": "gongsunlong",
@@ -334,7 +348,8 @@
         "corpus": "bing",
         "slug": "weiliaozi",
         "title": "尉缭子"
-      }
+      },
+      "debateKey": "wei"
     },
     {
       "id": "guiguzi",
@@ -348,7 +363,8 @@
         "corpus": "zong",
         "slug": "guiguzi",
         "title": "鬼谷子"
-      }
+      },
+      "debateKey": "gui"
     }
   ],
   "edges": [
@@ -1035,5 +1051,9 @@
         }
       ]
     }
-  ]
+  ],
+  "inDebates": {
+    "label": "与「赛博 · 百家争鸣」的分工",
+    "text": "争鸣是**让他们就同一个题目隔空对辩**——题目是编排的,发言是各家原文。这张图反过来:**他们历史上真的怎么说彼此**,一条关系一句原文,没有编排。\n\n两边互补得最明显的是孙武:图上他是孤立的(先秦三份点名单里没有兵家),争鸣里他却参了 6 场——一个记的是「当时谁理他」,一个是「今天让他开口」。"
+  }
 }

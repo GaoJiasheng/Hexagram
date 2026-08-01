@@ -1,5 +1,6 @@
 import DATA from '../../data/zhuzi-topology.json'
 import { bookBySlug, chapterHref } from '../reader/booksIndex.js'
+import { TOPICS } from '../debates/debates.js'
 
 export const topology = DATA
 
@@ -87,4 +88,12 @@ export function relationsOf(id, edges = DATA.edges) {
     out: edges.filter((e) => e.from === id),
     in: edges.filter((e) => e.to === id),
   }
+}
+
+/** 某人参与过哪些辩题 —— 拓扑图记「史上真实的互评」,争鸣记「编排的会讲」,两边同一批人。
+ *  争鸣用短 key(kong/xun/zhuang),拓扑用全名 id,故靠数据里显式的 debateKey 对接,
+ *  不按 label 模糊匹配(会错配:同名不同人、书名与人名混用都出现过)。 */
+export function debatesOf(node) {
+  if (!node?.debateKey) return []
+  return TOPICS.filter((t) => (t.schools || []).some((s) => s.key === node.debateKey))
 }
