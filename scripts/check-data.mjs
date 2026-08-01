@@ -692,21 +692,27 @@ if (fs.existsSync(glossaryPath)) {
     for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.json'))) {
       const slug = f.replace(/\.json$/, '')
       const a = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'))
+      if (a.aliasOf) {   // 一书多 slug:只校验指向的那篇存在
+        if (!fs.existsSync(path.join(dir, `${a.aliasOf}.json`))) err(`daodu ${slug}: aliasOf 指向不存在的 ${a.aliasOf}`)
+        continue
+      }
       nDaodu++
       if (!a.title) err(`daodu ${slug}: 缺 title`)
       if (!a.centralIdea) err(`daodu ${slug}: 缺 centralIdea`)
       const blocks = Array.isArray(a.blocks) ? a.blocks : []
       if (blocks.filter((b) => b.type === 'h2').length < 4) err(`daodu ${slug}: 分节少于 4(其人/其时/其书/其传至少各一)`)
       if (blocks.filter((b) => b.type === 'pull').length > 1) err(`daodu ${slug}: pull 超 1 处`)
-      const cf = path.join(ROOT, `src/data/${d.name}/classics/${slug}.json`)
-      const book = fs.existsSync(cf) ? JSON.parse(fs.readFileSync(cf, 'utf8')) : null
       for (const b of blocks) {
         if (b.type !== 'quote' || !b.original) continue
         if (!b.cite) { err(`daodu ${slug}: quote 缺 cite(站外材料请在正文转述并标出处,不要作 quote 块)`); nBadQ++; continue }
+        // 按 cite 自身的 corpus/slug 取章 —— 一书拆多文件时(庄子内/外/杂、内经素问/灵枢)
+        // 导读会引到同书的别一部分,拿文章 slug 去查必然落空。
+        const cf = path.join(ROOT, `src/data/${b.cite.corpus || d.name}/classics/${b.cite.slug || slug}.json`)
+        const book = fs.existsSync(cf) ? JSON.parse(fs.readFileSync(cf, 'utf8')) : null
         const c = book?.chapters?.find((x) => String(x.no) === String(b.cite.ch))
-        if (!c) { err(`daodu ${slug}: quote 指向不存在的第 ${b.cite.ch} 章`); nBadQ++; continue }
+        if (!c) { err(`daodu ${slug}: quote 指向不存在的章 ${b.cite.slug || slug}#${b.cite.ch}`); nBadQ++; continue }
         if (!c.paragraphs.map((p) => p.original).join('').includes(b.original)) {
-          err(`daodu ${slug}: 引文非第 ${b.cite.ch} 章原文子串「${b.original.slice(0, 14)}…」`); nBadQ++
+          err(`daodu ${slug}: 引文非 ${b.cite.slug || slug}#${b.cite.ch} 原文子串「${b.original.slice(0, 14)}…」`); nBadQ++
         }
       }
       // 富文本:图/表是这个体裁的骨头(版本谱系、异文对照、各家读法,散文说不清)。

@@ -1,0 +1,310 @@
+{
+  "title": "《庄子》的前世今生",
+  "subtitle": "一部五十二篇的书只剩三十三篇，删定它的人自己成了它最大的解释者",
+  "centralIdea": "《庄子》与《老子》并称，可它的命运完全是另一回事：老子其人不可考而书大体完整，庄子其人有名有姓有事迹，书却在流传中被删掉了近四成。今天读的三十三篇，是西晋郭象从五十二篇里定下来的；而郭象凭什么这么定、他的注是不是抄了向秀的，又成了另一桩一千七百年没断的公案。这篇讲这部书怎么写成、怎么被删、怎么在魏晋被重新发现，以及「内七篇」为什么被公认最可靠。",
+  "hero": {
+    "badge": "书级导读 · 前世今生",
+    "headline": "道术将为天下裂",
+    "tagline": "写下这句话的人，大概没想到自己的书也会裂"
+  },
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "《庄子》在站内分作内篇、外篇、杂篇三部，但那是阅读上的切分——它本来就是一部书，前世今生也只有一套。这篇讲的是这一部书的来路与去路：庄周其人、他写作的年代、五十二篇怎么变成三十三篇、以及后世为什么读它读出了截然不同的东西。至于书里那些寓言各自说了什么，三十三篇各有白话，点进去看。"
+    },
+    {
+      "type": "h2",
+      "text": "一个有名有姓，却不肯做官的人"
+    },
+    {
+      "type": "p",
+      "text": "与老子的扑朔迷离相比，庄子的记载踏实得多。《史记》说他是蒙人，名周，做过蒙地的漆园吏——一个管漆树园子的小官。与梁惠王、齐宣王同时，也就是与孟子同代。这些信息虽简，却没有「或曰」。"
+    },
+    {
+      "type": "p",
+      "text": "最出名的一段是他的辞聘。《秋水》篇里，楚王派两位大夫来请他去做官，庄子正在濮水边钓鱼，头也不回，说楚国有只神龟死了三千年，被楚王用锦缎包着供在庙堂之上——你说这龟是宁愿死了留下骨头受人供奉，还是宁愿活着在泥里拖着尾巴爬？两位大夫说，当然宁愿活着拖尾巴。庄子说：那你们回去吧，我也要在泥里拖尾巴。"
+    },
+    {
+      "type": "quote",
+      "original": "庄子钓于濮水",
+      "translation": "庄子在濮水边钓鱼。",
+      "cite": {
+        "corpus": "dao",
+        "slug": "zhuangzi-waipian",
+        "ch": 10,
+        "label": "庄子 · 秋水"
+      }
+    },
+    {
+      "type": "p",
+      "text": "这类记载还有不少，笔法都很一致：一个穷而不窘、拒绝进入体制的人，用一个比喻打发掉来劝他的人。他的妻子死了，惠施去吊唁，见他叉着腿坐在地上敲着盆唱歌——这一幕在《至乐》篇。以今天的眼光看这几乎是失礼，但那正是他要说的事：生死是气的聚散，哭一场无非是自己还没想明白。"
+    },
+    {
+      "type": "p",
+      "text": "值得注意的是，这些故事**多数出自外篇与杂篇**，而不是学界公认最可靠的内七篇。也就是说，我们熟悉的那个庄子形象——爱说怪话、拒绝做官、妻死鼓盆——有相当一部分是后学笔下的形象。这不是说它假，只是提醒：书里那个「庄周」，与历史上那个漆园吏之间，隔着一层他的追随者。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照",
+      "caption": "两人终生抬杠，却是彼此唯一的对手。惠施死后庄子路过其墓，说自此再无可与言者——《庄子》里最深的一句情话，是说给论敌的。",
+      "svg": "<svg viewBox=\"0 0 620 214\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\">\n<text x=\"310\" y=\"24\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">庄子与惠施：论敌，也是唯一的对手</text>\n<rect x=\"26\" y=\"48\" width=\"256\" height=\"140\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.2\"/>\n<text x=\"154\" y=\"74\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\">庄子</text>\n<line x1=\"54\" y1=\"86\" x2=\"254\" y2=\"86\" style=\"stroke:var(--cinnabar)\" stroke-width=\"1.2\"/>\n<text x=\"154\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">漆园吏 · 终身不仕</text>\n<text x=\"154\" y=\"134\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">问「你凭什么认为有中立的裁判席」</text>\n<text x=\"154\" y=\"160\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">以寓言、卮言、重言说理</text>\n<rect x=\"338\" y=\"48\" width=\"256\" height=\"140\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/>\n<text x=\"466\" y=\"74\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">惠施</text>\n<line x1=\"366\" y1=\"86\" x2=\"566\" y2=\"86\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/>\n<text x=\"466\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12.5\">名家 · 曾为魏相</text>\n<text x=\"466\" y=\"134\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">以名辩析物，要把话说到分毫不差</text>\n<text x=\"466\" y=\"160\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">历物十事全赖《天下》篇保存</text>\n<text x=\"310\" y=\"206\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">濠梁观鱼那场辩论，是中国哲学史上最著名的对话之一</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "同一个乱世，他选择不下场"
+    },
+    {
+      "type": "p",
+      "text": "庄子活动的年代是战国中期，也就是孟子在齐梁之间奔走、各国变法竞相图强的那几十年。当时的知识人有一条相当明确的上升通道：带着一套主张去游说君主，说动了就能位极人臣。孟子、商鞅、苏秦、张仪走的都是这条路。"
+    },
+    {
+      "type": "p",
+      "text": "庄子看见的是这条路的另一面。诸侯争地以战，杀人盈野；成功的说客位极人臣，失败的车裂弃市；而所有这些争夺，都建立在一套「什么是对、什么是错」的判断之上。他的处理方式不是给出更好的主张，而是往回退一步，去问那个判断本身靠不靠得住。"
+    },
+    {
+      "type": "quote",
+      "original": "彼亦一是非，此亦一是非",
+      "translation": "那边有那边的一套是非，这边有这边的一套是非。",
+      "cite": {
+        "corpus": "dao",
+        "slug": "zhuangzi-neipian",
+        "ch": 2,
+        "label": "庄子 · 齐物论"
+      }
+    },
+    {
+      "type": "p",
+      "text": "这一步退得很远。别家争的是「谁的方案对」，他问的是「你凭什么认为存在一个中立的裁判席」。也正因如此，他不像老子那样还留着一套治国的话可讲——《老子》毕竟还谈侯王、谈治大国，《庄子》则几乎彻底不谈了。他关心的是一个人在这种世道里怎么活得不那么憋屈。"
+    },
+    {
+      "type": "p",
+      "text": "值得说清的是，不下场是有代价的。《史记》说他终身不仕，生活相当窘迫——有篇里记他去向监河侯借粮，对方说等我收了封邑的税再借你三百金，庄子当场讲了个涸辙之鲋的故事：车辙里快干死的鱼要一升水，你却许诺去引西江之水来。这些故事真伪难辨，但它们共同勾出的形象是一致的：这个人是在明知代价的情况下选择站在外面的，不是没机会进去。"
+    },
+    {
+      "type": "p",
+      "text": "另一件事也塑造了这部书的样貌：他有一个高质量的论敌。惠施是名家的代表人物，做过魏国的相，两人交往密切又终生抬杠。《秋水》里濠梁观鱼的那段辩论——你不是鱼，怎么知道鱼快乐——是中国哲学史上最著名的对话之一。而惠施死后，庄子路过他的墓，说自从这个人走了，我就没有可以说话的对手了。"
+    },
+    {
+      "type": "quote",
+      "original": "鯈鱼出游从容，是鱼之乐也",
+      "translation": "鯈鱼游得那么从容，这是鱼的快乐啊。",
+      "cite": {
+        "corpus": "dao",
+        "slug": "zhuangzi-waipian",
+        "ch": 10,
+        "label": "庄子 · 秋水"
+      }
+    },
+    {
+      "type": "h2",
+      "text": "五十二篇，只剩三十三篇"
+    },
+    {
+      "type": "p",
+      "text": "现在说这部书本身。《汉书·艺文志》著录《庄子》五十二篇。而今天所有人读到的，是三十三篇：内篇七、外篇十五、杂篇十一。中间少掉的十九篇，去哪儿了？"
+    },
+    {
+      "type": "p",
+      "text": "答案在西晋。郭象整理《庄子》时作了大幅删汰，把五十二篇定为三十三篇，并为之作注。他的理由大意是：其中有不少是后人附会的怪诞之说，与庄子本旨不合，故删。这个三十三篇本此后成为唯一通行的本子，五十二篇本则彻底失传——我们今天连被删掉的是些什么内容都不知道，只能从别的古书征引的零星片段里看到一点影子。"
+    },
+    {
+      "type": "pull",
+      "text": "一个后世的编者，一次性决定了此后一千七百年所有人能读到的《庄子》是什么样。"
+    },
+    {
+      "type": "figure",
+      "ftype": "流变",
+      "caption": "《汉书·艺文志》著录五十二篇，西晋郭象删定为三十三篇，五十二篇本自此失传。今天的三分法与「内篇最可靠」的判断，都来自这次删定之后的传统。",
+      "svg": "<svg viewBox=\"0 0 640 268\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><text x=\"320\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">五十二篇 → 三十三篇</text><rect x=\"48\" y=\"56\" width=\"180\" height=\"72\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"138\" y=\"82\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">五十二篇</text><text x=\"138\" y=\"103\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">《汉书·艺文志》著录</text><text x=\"138\" y=\"120\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">今已全佚</text><path d=\"M228 92 L292 92\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/><text x=\"260\" y=\"82\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"11.5\">西晋</text><text x=\"260\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"11.5\">郭象删定</text><rect x=\"292\" y=\"56\" width=\"300\" height=\"72\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.2\"/><text x=\"442\" y=\"82\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"15\">三十三篇（今本 · 本站底本）</text><text x=\"442\" y=\"106\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">内七 · 外十五 · 杂十一</text><rect x=\"48\" y=\"156\" width=\"170\" height=\"90\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.2\"/><text x=\"133\" y=\"180\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"14\">内篇 · 七</text><text x=\"133\" y=\"202\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">篇名皆三字义理题</text><text x=\"133\" y=\"221\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">逍遥游 · 齐物论 …</text><text x=\"133\" y=\"239\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">学界公认最可靠</text><rect x=\"236\" y=\"156\" width=\"170\" height=\"90\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"321\" y=\"180\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">外篇 · 十五</text><text x=\"321\" y=\"202\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">篇名取首二字</text><text x=\"321\" y=\"221\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">骈拇 · 马蹄 · 秋水 …</text><text x=\"321\" y=\"239\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">多出后学之手</text><rect x=\"424\" y=\"156\" width=\"168\" height=\"90\" rx=\"7\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"508\" y=\"180\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">杂篇 · 十一</text><text x=\"508\" y=\"202\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">来源最杂</text><text x=\"508\" y=\"221\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">庚桑楚 · 天下 …</text><text x=\"508\" y=\"239\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">《天下》篇最要紧</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "内、外、杂这个三分法，也是删定之后才稳定下来的。它不是随意的编排：**内七篇的篇名全是三个字的义理标题**——逍遥游、齐物论、养生主、人间世、德充符、大宗师、应帝王，每一个都点出该篇的主旨；而**外篇与杂篇的篇名，绝大多数取的是该篇开头的两三个字**——骈拇、马蹄、胠箧、秋水、至乐。"
+    },
+    {
+      "type": "p",
+      "text": "这个差别很能说明问题：拟一个概括全篇的题目，需要先读懂全篇；而取首二字为题，是最省事的编目办法。所以历来的共识是，**内七篇最可能出自庄周本人之手，外杂篇则多是后学所作或搜辑而成**。今天引用《庄子》讨论庄子本人的思想时，通常以内篇为准，这个规矩就是从这里来的。"
+    },
+    {
+      "type": "h2",
+      "text": "郭象注：一桩一千七百年没断的公案"
+    },
+    {
+      "type": "p",
+      "text": "郭象不只删了这部书，还注了它。《庄子注》是此后最通行的注本，也是魏晋玄学最重要的著作之一。但围绕它有一桩著名的疑案。"
+    },
+    {
+      "type": "p",
+      "text": "《世说新语》里记了这么一件事：向秀先注《庄子》，未完而卒；郭象为人「薄行」，见向秀的注在世间未曾流传，就据为己有，只补了《秋水》《至乐》两篇，又改了《马蹄》一篇，其余「点定文句而已」。这段记载流传极广，「郭象窃向秀注」几乎成了定案。"
+    },
+    {
+      "type": "p",
+      "text": "但《晋书》另有说法，称向秀的注本有旧本存世，郭象是在其基础上「述而广之」——继承发挥，不是剽窃。后世学者在这两说之间反复，至今没有定论。今天较持平的看法是：郭象的注确实吸收了向秀的成果，但其中亦有他自己的系统，那套「万物各自独化、各安其性即是逍遥」的思想，与向秀所存残注并不完全相同。"
+    },
+    {
+      "type": "p",
+      "text": "无论真相如何，有一点是确定的：**我们今天读到的《庄子》，形态是郭象定的，读法在很大程度上也是郭象带出来的**。他的「独化」「适性」之说，把庄子那种超越性的逍遥，落成了各安其位、各得其所——这在魏晋门阀社会里是一个相当受用的解释。原书是否本来就是这个意思，另说。"
+    },
+    {
+      "type": "h2",
+      "text": "从一部子书，到「南华真经」"
+    },
+    {
+      "type": "p",
+      "text": "《庄子》在先秦并不与《老子》并称。《庄子·天下》篇评点当世各家，与关尹、老聃并列的是他们自己那一路，庄周被单独放在后面另作一段。而「道家」这个名目本身，是汉代司马谈在《论六家要指》里才追认的分类。今天顺口说的「道家老庄」，要到魏晋玄学兴起之后才定型。"
+    },
+    {
+      "type": "p",
+      "text": "真正把它推上去的是两股力量。一是魏晋玄学：《老子》《庄子》《周易》并称「三玄」，成为士人清谈与安身立命的依据，郭象注即出于此时。二是唐代的国家推崇：唐玄宗诏封庄子为「南华真人」，《庄子》因此被尊为《南华真经》，与《道德经》一同进入道教的经典体系。"
+    },
+    {
+      "type": "figure",
+      "ftype": "分岔",
+      "caption": "同一部书的四种读法。禅宗与它的关系尤其耐琢磨——佛教传入后，中国人理解「空」「无住」时借用的语汇，很多来自这里。",
+      "svg": "<svg viewBox=\"0 0 640 254\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><text x=\"320\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">《庄子》被读成了什么</text><circle cx=\"320\" cy=\"76\" r=\"30\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.4\"/><text x=\"320\" y=\"82\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"14\">庄子</text><path d=\"M320 106 L104 146\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/><path d=\"M320 106 L248 146\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/><path d=\"M320 106 L392 146\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/><path d=\"M320 106 L536 146\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/><rect x=\"26\" y=\"146\" width=\"156\" height=\"84\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"104\" y=\"168\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"13.5\">魏晋玄学</text><text x=\"104\" y=\"189\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">与老、易并称三玄</text><text x=\"104\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">郭象「独化」「适性」</text><rect x=\"190\" y=\"146\" width=\"140\" height=\"84\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"260\" y=\"168\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"13.5\">道教</text><text x=\"260\" y=\"189\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">南华真经</text><text x=\"260\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">唐封「南华真人」</text><rect x=\"338\" y=\"146\" width=\"140\" height=\"84\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"408\" y=\"168\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"13.5\">禅宗</text><text x=\"408\" y=\"189\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">借其语汇解空</text><text x=\"408\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">忘 · 无待 · 自然</text><rect x=\"486\" y=\"146\" width=\"128\" height=\"84\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"550\" y=\"168\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"13.5\">文学</text><text x=\"550\" y=\"189\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">寓言与文风之祖</text><text x=\"550\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">李白 · 苏轼所宗</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "另有两条线也值得一提。一是佛教传入之后，中国人理解「空」「无住」「不落两边」这类概念时，大量借用了《庄子》的语汇——「忘」「无待」「自然」这些词进入禅宗语录，源头多在此处。二是文学：这部书本身就是先秦最好的散文，汪洋恣肆、寓言迭出，李白、苏轼一路的文风与心境都以它为宗。中国文学里那种「乘物以游心」的调子，几乎都能追到这里。"
+    },
+    {
+      "type": "p",
+      "text": "还有一条线索贯穿始终：这部书的每一次大热，几乎都对应着一段乱世或压抑期。魏晋士人在司马氏的高压下读它，读出的是安身之道；唐宋文人在贬谪途中读它，苏轼一生数次远窜，笔下最好的文字都带着它的调子；晚明党争与文字狱之下，它又一次被大量刊刻批点。"
+    },
+    {
+      "type": "p",
+      "text": "这大概不是巧合。一套教人怎么在世上取得成功的学问，太平时最有市场；而《庄子》提供的是另一样东西——当你无法改变处境、也不打算认同它时，怎么让自己不至于被拧碎。这一点，是它在中国士人精神史上分量特别重的原因。"
+    },
+    {
+      "type": "figure",
+      "ftype": "时间线",
+      "caption": "它的每一次大热，几乎都对应一段乱世或压抑期。这不像是巧合。",
+      "svg": "<svg viewBox=\"0 0 640 200\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\">\n<text x=\"320\" y=\"24\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">《庄子》的几次大热</text>\n<line x1=\"56\" y1=\"98\" x2=\"592\" y2=\"98\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/>\n<circle cx=\"110\" cy=\"98\" r=\"5\" style=\"fill:var(--cinnabar)\"/><text x=\"110\" y=\"84\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">战国中期</text>\n<text x=\"110\" y=\"124\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">成书</text>\n<text x=\"110\" y=\"142\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">诸侯争地以战</text>\n<circle cx=\"248\" cy=\"98\" r=\"5\" style=\"fill:var(--cinnabar)\"/><text x=\"248\" y=\"84\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">魏晋</text>\n<text x=\"248\" y=\"124\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">郭象删定并注</text>\n<text x=\"248\" y=\"142\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">三玄之一 · 司马氏高压下</text>\n<circle cx=\"392\" cy=\"98\" r=\"5\" style=\"fill:var(--cinnabar)\"/><text x=\"392\" y=\"84\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">唐</text>\n<text x=\"392\" y=\"124\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">尊为《南华真经》</text>\n<text x=\"392\" y=\"142\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">封庄子为南华真人</text>\n<circle cx=\"530\" cy=\"98\" r=\"5\" style=\"fill:var(--cinnabar)\"/><text x=\"530\" y=\"84\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">宋 · 明</text>\n<text x=\"530\" y=\"124\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13\">贬谪与党争中重读</text>\n<text x=\"530\" y=\"142\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">苏轼所宗 · 晚明大量批点</text>\n<text x=\"320\" y=\"184\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">它给的不是取得成功的方法，是在无法改变处境时不被拧碎的办法</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "它到底说了什么"
+    },
+    {
+      "type": "p",
+      "text": "前面讲了这么多来路，这里用几百字交代它的主张。三十三篇各有白话，要细看点进去读。"
+    },
+    {
+      "type": "p",
+      "text": "开篇讲一条大鱼变成大鸟、飞往南冥的故事，然后指出：这只鸟看似逍遥，其实还要靠风。真正的逍遥是「无待」——不依赖任何外部条件。这是全书的起点：先把「自由需要什么条件」这个问题问到底。"
+    },
+    {
+      "type": "quote",
+      "original": "北冥有鱼，其名为鲲",
+      "translation": "北方的大海里有一条鱼，它的名字叫鲲。",
+      "cite": {
+        "corpus": "dao",
+        "slug": "zhuangzi-neipian",
+        "ch": 1,
+        "label": "庄子 · 逍遥游"
+      }
+    },
+    {
+      "type": "p",
+      "text": "《齐物论》处理是非。他的做法不是判定谁对，而是指出各种是非都出于各自的立场，彼此无法互证；那个能作出判断的「我」本身也未必牢靠——梦见自己是蝴蝶，醒来不知是庄周梦蝶还是蝶梦庄周。"
+    },
+    {
+      "type": "quote",
+      "original": "天地与我并生，而万物与我为一",
+      "translation": "天地与我一同存在，万物与我浑然一体。",
+      "cite": {
+        "corpus": "dao",
+        "slug": "zhuangzi-neipian",
+        "ch": 2,
+        "label": "庄子 · 齐物论"
+      }
+    },
+    {
+      "type": "p",
+      "text": "《养生主》开篇就把问题摆出来：生命有限而知识无限，拿有限去追无限是危险的。接着给出办法——庖丁解牛，顺着骨节本有的空隙下刀，「以无厚入有间」，十九年而刀刃如新。这不是消极，恰恰是把一件事做到极致之后才有的从容。"
+    },
+    {
+      "type": "quote",
+      "original": "吾生也有涯，而知也无涯",
+      "translation": "我的生命是有限的，而知识是无限的。",
+      "cite": {
+        "corpus": "dao",
+        "slug": "zhuangzi-neipian",
+        "ch": 3,
+        "label": "庄子 · 养生主"
+      }
+    },
+    {
+      "type": "p",
+      "text": "《人间世》处理的是最现实的问题：一个人被派去劝谏暴君，怎么才能既说了话又活着回来。全篇给的办法是「心斋」——先把自己那套成见虚掉。收尾处讲了一棵因为木质太差而没被砍掉的大树，提出「无用之用」：在一个要把万物都派上用场的世界里，没用有时是保命的本事。"
+    },
+    {
+      "type": "quote",
+      "original": "乘物以游心",
+      "translation": "顺着事物本身的势去走，让心在其中游。",
+      "cite": {
+        "corpus": "dao",
+        "slug": "zhuangzi-neipian",
+        "ch": 4,
+        "label": "庄子 · 人间世"
+      }
+    },
+    {
+      "type": "quote",
+      "original": "相濡以沫，不如相忘于江湖",
+      "translation": "与其困在一处互相吐沫求活，不如各自回到江湖里彼此相忘。",
+      "cite": {
+        "corpus": "dao",
+        "slug": "zhuangzi-neipian",
+        "ch": 6,
+        "label": "庄子 · 大宗师"
+      }
+    },
+    {
+      "type": "p",
+      "text": "外杂篇里还有一种声音，比内篇锋利得多，读的时候不该略过。《胠箧》说防盗要把箱子捆紧，可大盗来了连箱子一起扛走，你捆得越结实反而越省他的事；由此推出一句极狠的话——偷带钩的被杀，偷国家的却当上诸侯，而仁义道德恰恰是随着诸侯一起被偷走的东西。"
+    },
+    {
+      "type": "quote",
+      "original": "窃钩者诛，窃国者为诸侯",
+      "translation": "偷带钩的人被处死，窃取国家的人却成了诸侯。",
+      "cite": {
+        "corpus": "dao",
+        "slug": "zhuangzi-waipian",
+        "ch": 3,
+        "label": "庄子 · 胠箧"
+      }
+    },
+    {
+      "type": "p",
+      "text": "这一路的批判在外篇里不止一处。它与内篇那种超然的调子并不一样，也是学界判断外杂篇另有来源的依据之一。但它同样属于这部书——只读内篇的逍遥而不读外篇的这几刀，看到的《庄子》是不完整的。"
+    },
+    {
+      "type": "p",
+      "text": "有两处最容易读岔。一是**把「齐物」读成不分好坏的相对主义**——他要取消的是把一己之见当作绝对标准，不是取消一切分辨；这两者在原文里的分量很不一样。二是**把「逍遥」读成放弃与躺平**——内七篇里讲得最多的其实是怎么在极危险的处境里保全自己、怎么把一件事做到极致（庖丁那把刀是练了十九年的），那不是不作为的姿态。"
+    },
+    {
+      "type": "h2",
+      "text": "从哪儿读起"
+    },
+    {
+      "type": "p",
+      "text": "先读内七篇，而且不必按顺序。最好入口是**《养生主》**——庖丁解牛有情节、有画面，讲的道理也最落地。然后是**《逍遥游》**开篇的鲲鹏，全书的调子在那里。再是**《大宗师》**，生死观最集中。**《齐物论》放最后**，它是内篇里最难的一篇，前面几篇读顺了再回来会容易得多。"
+    },
+    {
+      "type": "p",
+      "text": "外杂篇里必读的是**《秋水》**（濠梁观鱼、庄子钓于濮水都在这里）与**《天下》**——后者是现存最早的诸子学术史，一篇点名十四人，站内的《诸子拓扑图》有一半的线索出自那一篇。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本篇是《庄子》的**书级导读**，讲其人、其时、成书与流传，不逐篇展开义理——逐章白话见各篇。站内将《庄子》分作内、外、杂三部阅读，本篇为三部共用。",
+        "所引《庄子》原文均出自本站底本，逐字可核；文中所标篇次即站内篇次。",
+        "庄周生平出自《史记·老子韩非列传》，篇数著录出自《汉书·艺文志》，郭象与向秀之事见《世说新语》与《晋书》；**这些书不在本站书目**，故只作转述与标注，不作站内引文。",
+        "郭象注是否袭自向秀，《世说新语》与《晋书》所载不同，历代聚讼未决，文中并陈两说而不裁断。",
+        "内七篇出自庄周本人、外杂篇多出后学，是学界较通行的看法，仍有讨论空间；篇名体例之别（内篇三字义理题 / 外杂篇取首二字）为客观事实。",
+        "本站作思想史与文献研读，不作宗教宣化，不下吉凶、福报、成仙一类断语。"
+      ]
+    }
+  ]
+}

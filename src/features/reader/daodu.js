@@ -13,6 +13,12 @@ export async function getDaoduMeta(corpus, slug) {
   return m?.daodu?.[corpus]?.[slug] || null
 }
 
+/** 一书多 slug 的情形(《庄子》拆内/外/杂三部、《黄帝内经》拆素问/灵枢),
+ *  前世今生本是同一套,只写一篇、其余以 aliasOf 指过去,免得写三遍近乎一样的文章。 */
+export function resolveAlias(meta) {
+  return meta?.aliasOf || null
+}
+
 export async function loadDaodu(corpus, slug) {
   const meta = await getDaoduMeta(corpus, slug)
   if (!meta) return null

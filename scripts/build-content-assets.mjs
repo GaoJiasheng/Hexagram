@@ -196,6 +196,16 @@ function buildDaoduAssets(manifest) {
       const slug = file.replace(/\.json$/, '')
       const art = readJson(path.join(dir, file))
       manifest.daodu[corpus] ??= {}
+      // aliasOf:一书多 slug(庄子内/外/杂、内经素问/灵枢)只写一篇,别的 slug 指同一份文件
+      if (art.aliasOf) {
+        // 标题取自被指向的那一篇 —— alias 存根本身没有 title,不接过来入口会是空的
+        const tgt = readJson(path.join(dir, `${art.aliasOf}.json`))
+        manifest.daodu[corpus][slug] = {
+          title: tgt?.title || '', subtitle: tgt?.subtitle || '', aliasOf: art.aliasOf,
+          path: `/content/daodu/${corpus}/${art.aliasOf}.json`,
+        }
+        continue
+      }
       manifest.daodu[corpus][slug] = {
         title: art.title || '', subtitle: art.subtitle || '',
         path: `/content/daodu/${corpus}/${slug}.json`,
