@@ -1,0 +1,1039 @@
+{
+  "title": "诸子拓扑图",
+  "subtitle": "先秦诸家互相怎么说 · 每根线都点得开",
+  "intro": "这张图不讲「诸子有哪几家」，讲的是**他们互相怎么说**——而且说得自相矛盾。同一个人身上可能同时插着一根朱线和一根青线：荀子骂子思孟轲，却又最推崇孔子；《庄子·天下》评墨子先贬后褒，前说「其道大觳」，后转「才士也夫」。图上每一条关系都挂着一句站内原文，点开即可看出处、跳原章。",
+  "note": "横轴只到「时代」这一层——诸子生卒多不可考（杨朱无生卒、墨子仅「约前468—前376」、鬼谷子系托名），钉在精确年份上等于造假。大致年代写在每个人的详情里。",
+  "eras": [
+    {
+      "key": "chunqiu",
+      "label": "春秋末",
+      "when": "约前6世纪末—前5世纪初"
+    },
+    {
+      "key": "early",
+      "label": "战国早",
+      "when": "约前5世纪—前4世纪初"
+    },
+    {
+      "key": "mid",
+      "label": "战国中",
+      "when": "约前4世纪"
+    },
+    {
+      "key": "late",
+      "label": "战国晚",
+      "when": "约前3世纪"
+    }
+  ],
+  "schools": [
+    {
+      "key": "ru",
+      "label": "儒",
+      "group": "ru"
+    },
+    {
+      "key": "dao",
+      "label": "道",
+      "group": "dao"
+    },
+    {
+      "key": "mo",
+      "label": "墨",
+      "group": "mo"
+    },
+    {
+      "key": "fa",
+      "label": "法",
+      "group": "fa"
+    },
+    {
+      "key": "ming",
+      "label": "名辩",
+      "group": "fa"
+    },
+    {
+      "key": "bing",
+      "label": "兵 · 纵横",
+      "group": "bing"
+    }
+  ],
+  "edgeTypes": [
+    {
+      "key": "criticize",
+      "label": "指摘 · 批评",
+      "color": "#A32D2D"
+    },
+    {
+      "key": "praise",
+      "label": "推许 · 称引",
+      "color": "#0F6E56"
+    },
+    {
+      "key": "debate",
+      "label": "论辩 · 相非",
+      "color": "#534AB7"
+    },
+    {
+      "key": "lineage",
+      "label": "师承 · 取用",
+      "color": "#8A8880",
+      "dash": "5 4"
+    }
+  ],
+  "end": {
+    "label": "百家争鸣的终局",
+    "items": [
+      {
+        "when": "前213",
+        "label": "秦 · 焚书",
+        "note": "《韩非子·和氏》已记商君「燔诗书而明法令」，是这条路的先声。"
+      },
+      {
+        "when": "前134",
+        "label": "汉 · 独尊儒术",
+        "note": "自此争鸣收束为一家独尊。诸子之学转入注疏与旁支，不复有战国那种当面互斥的场面。"
+      }
+    ],
+    "note": "这一格没有站内原文可挂——《史记》《汉书》均不在站内书目。此处只作时间标记，出处在站外。"
+  },
+  "nodes": [
+    {
+      "id": "kongzi",
+      "label": "孔子",
+      "era": "chunqiu",
+      "school": "ru",
+      "when": "约前551—前479",
+      "note": "诸子互评网络的原点。战国诸家无论褒贬都绕不开他：孟子推为「自有生民以来，未有孔子也」，墨子《非儒下》直斥其行「相反谬」，韩非则把儒墨并列为「世之显学」而一并否掉。",
+      "book": {
+        "corpus": "ru",
+        "slug": "lunyu",
+        "title": "论语"
+      }
+    },
+    {
+      "id": "laozi",
+      "label": "老子",
+      "era": "chunqiu",
+      "school": "dao",
+      "when": "生卒不详，旧说春秋末",
+      "note": "《庄子·天下》与关尹并称「古之博大真人」，是全篇给出的最高评价。韩非另作《解老》《喻老》，把《老子》读成君人南面之术——同一部书，道家读出「真人」，法家读出「术」。",
+      "caveat": "其人其书的年代自古有争议，本站底本取王弼本，如实存疑。",
+      "book": {
+        "corpus": "dao",
+        "slug": "daodejing",
+        "title": "道德经"
+      }
+    },
+    {
+      "id": "sunwu",
+      "label": "孙武",
+      "era": "chunqiu",
+      "school": "bing",
+      "when": "约前6世纪末—前5世纪初",
+      "note": "先秦诸家的自评名单里没有兵家。《庄子·天下》《荀子·非十二子》《韩非子·显学》三份点名单，一个兵家人物都没有——兵学自成一路，不在「争鸣」这张网里。",
+      "caveat": "《尉缭子·制谈》称「武子」或即孙武，然仅一名之称，本站不据以成边。",
+      "book": {
+        "corpus": "bing",
+        "slug": "sunzi",
+        "title": "孙子兵法"
+      }
+    },
+    {
+      "id": "dengxi",
+      "label": "邓析",
+      "era": "chunqiu",
+      "school": "ming",
+      "when": "约前545—前501",
+      "note": "名辩之祖。荀子把他与惠施并为一组批掉，是「好治怪说，玩琦辞」的代表。站内无其书。"
+    },
+    {
+      "id": "mozi",
+      "label": "墨子",
+      "era": "early",
+      "school": "mo",
+      "when": "约前468—前376",
+      "note": "被评得最两极的人。《庄子·天下》同一段里先说其道「使人忧，使人悲」「反天下之心」，转头又赞「墨子真天下之好也……才士也夫」；荀子两度批他（「僈差等」「蔽于用」）；韩非承认墨是显学，却连儒墨一并归为「愚诬之学」。",
+      "book": {
+        "corpus": "mo",
+        "slug": "mozi",
+        "title": "墨子"
+      }
+    },
+    {
+      "id": "zisi",
+      "label": "子思",
+      "era": "early",
+      "school": "ru",
+      "when": "约前483—前402",
+      "note": "《韩非子·显学》列孔子身后「儒分为八」，其中有「子思之儒」。荀子把他与孟轲绑作一组痛批，说二人「案往旧造说，谓之五行」——儒门内部的裂痕，由敌论与自家人各记了一笔。"
+    },
+    {
+      "id": "yangzhu",
+      "label": "杨朱",
+      "era": "early",
+      "school": "dao",
+      "when": "生卒不详，约战国早中期",
+      "note": "站内无其书，其说全靠他人转述。孟子说当时「天下之言，不归杨则归墨」，可见声势；而「杨氏为我，是无君也」这句定性，也几乎决定了他此后两千年的形象。",
+      "caveat": "《列子·杨朱篇》旧题其说，然今本《列子》成书存疑，不宜径作杨朱本人之言。"
+    },
+    {
+      "id": "wuqi",
+      "label": "吴起",
+      "era": "early",
+      "school": "bing",
+      "when": "约前440—前381",
+      "note": "兵家中唯一进了诸子互评网络的人——但进来的方式是被法家当作变法的先例引用，而非作为兵学家被评论。韩非记他「枝解于楚」，与商鞅「车裂于秦」并举。",
+      "book": {
+        "corpus": "bing",
+        "slug": "wuzi",
+        "title": "吴子"
+      }
+    },
+    {
+      "id": "mengzi",
+      "label": "孟子",
+      "era": "mid",
+      "school": "ru",
+      "when": "约前372—前289",
+      "note": "对外辟杨墨，对内被荀子点名。他自陈「予未得为孔子徒也，予私淑诸人也」——不是亲炙，是隔代自认的师承。",
+      "book": {
+        "corpus": "ru",
+        "slug": "mengzi",
+        "title": "孟子"
+      }
+    },
+    {
+      "id": "zhuangzi",
+      "label": "庄子",
+      "era": "mid",
+      "school": "dao",
+      "when": "约前369—前286",
+      "note": "《天下》篇是现存最早的诸子学术史，一篇点名十四人。而他自己也被荀子一句「庄子蔽于天而不知人」归了档。他与惠施既是论敌又是挚友，《秋水》濠梁之辩与《逍遥游》大瓠之论都是两人对讲。",
+      "caveat": "《天下》篇是否庄周本人手笔，自古有争议，多以为出于后学。本站如实标出。",
+      "book": {
+        "corpus": "dao",
+        "slug": "zhuangzi-zapian",
+        "title": "庄子"
+      }
+    },
+    {
+      "id": "huishi",
+      "label": "惠施",
+      "era": "mid",
+      "school": "ming",
+      "when": "约前370—前310",
+      "note": "站内无其书，「历物十事」全赖《庄子·天下》保存。被荀子、庄子从两个方向批：荀子说他「辩而无用」，庄子说他「其道舛驳，其言也不中」——可庄子记他的话最多，惋惜他的话也最重。"
+    },
+    {
+      "id": "songjian",
+      "label": "宋钘",
+      "era": "mid",
+      "school": "mo",
+      "when": "约前370—前291",
+      "note": "《庄子》与尹文并称，《荀子》与墨翟并称，《韩非子》写作「宋荣子」——三家给他排的位置各不相同，学派归属本无定论。主张「见侮不辱，救民之鬬，禁攻寝兵」。",
+      "caveat": "站内三书对其名的写法不一（宋钘/宋銒/宋子/宋荣子），本站按各书原文照录。"
+    },
+    {
+      "id": "biemo",
+      "label": "别墨三派",
+      "era": "mid",
+      "school": "mo",
+      "when": "墨子身后",
+      "note": "墨子死后墨家分裂。《庄子·天下》说三派「俱诵《墨经》，而倍谲不同，相谓别墨」——互指对方是假墨；《韩非子·显学》则记为「相里氏之墨，相夫氏之墨，邓陵氏之墨」。两书各记一面，同一件事。"
+    },
+    {
+      "id": "shangyang",
+      "label": "商鞅",
+      "era": "mid",
+      "school": "fa",
+      "when": "约前390—前338",
+      "note": "韩非《定法》取其「法」，又指其不知用术；《和氏》记其「燔诗书而明法令」而秦国富强，也记其「车裂于秦」。取其术、录其功、记其死，三笔都在同一家书里。",
+      "book": {
+        "corpus": "fa",
+        "slug": "shangjunshu",
+        "title": "商君书"
+      }
+    },
+    {
+      "id": "shenbuhai",
+      "label": "申不害",
+      "era": "mid",
+      "school": "fa",
+      "when": "约前385—前337",
+      "note": "韩非「法术势」三支里「术」的来源。《定法》取其术而指其失：「申不害不擅其法，不一其宪令，则奸多」。荀子则一句「申子蔽于埶而不知知」把他归到「势」那边——两家给他的定位不同。"
+    },
+    {
+      "id": "shendao",
+      "label": "慎到",
+      "era": "mid",
+      "school": "fa",
+      "when": "约前395—前315",
+      "note": "「势」的提出者。《韩非子·难势》整篇引其说而后辨析。他被三家从三个方向说过：庄子说他的路「非生人之行而至死人之理」，荀子说他「尚法而无法」「蔽于法而不知贤」。",
+      "book": {
+        "corpus": "fa",
+        "slug": "shenzi",
+        "title": "慎子"
+      }
+    },
+    {
+      "id": "yinwen",
+      "label": "尹文",
+      "era": "mid",
+      "school": "ming",
+      "when": "约前360—前280",
+      "note": "名法之间。其书开篇即引老子论道，再以名法收束——先秦学派边界并不像后世分类那样清楚。站内《尹文子》归在法家书架。",
+      "caveat": "今本《尹文子》有伪托之疑，本站如实存疑。",
+      "book": {
+        "corpus": "fa",
+        "slug": "yinwenzi",
+        "title": "尹文子"
+      }
+    },
+    {
+      "id": "xunzi",
+      "label": "荀子",
+      "era": "late",
+      "school": "ru",
+      "when": "约前313—前238",
+      "note": "先秦诸子里点名最狠的一位。《非十二子》一篇把六组十二人逐一批掉，连自家的子思、孟轲都不放过，还骂了「子张氏之贱儒」「子夏氏之贱儒」；《解蔽》又一句一个，把六家的病各下一断语。而他推许的只有孔子。",
+      "book": {
+        "corpus": "ru",
+        "slug": "xunzi",
+        "title": "荀子"
+      }
+    },
+    {
+      "id": "hanfei",
+      "label": "韩非",
+      "era": "late",
+      "school": "fa",
+      "when": "约前280—前233",
+      "note": "荀子的学生，却把儒家一并否掉。集商鞅之「法」、申不害之「术」、慎到之「势」，又注《老子》成《解老》《喻老》。《显学》一篇是先秦学术史的收官之作——也是争鸣行将结束的信号。",
+      "book": {
+        "corpus": "fa",
+        "slug": "hanfeizi",
+        "title": "韩非子"
+      }
+    },
+    {
+      "id": "gongsunlong",
+      "label": "公孙龙",
+      "era": "late",
+      "school": "ming",
+      "when": "约前320—前250",
+      "note": "《庄子·天下》把他与桓团归为「辩者之徒」，下了一句极重的话：「能胜人之口，不能服人之心」。站内无其书。"
+    },
+    {
+      "id": "weiliao",
+      "label": "尉缭",
+      "era": "late",
+      "school": "bing",
+      "when": "生卒不详，约战国晚期",
+      "note": "书中称吴起「提七万之众，而天下莫敢当」——兵家内部自有其推许的谱系，只是这套谱系与诸子互评那张网几乎不相交。",
+      "book": {
+        "corpus": "bing",
+        "slug": "weiliaozi",
+        "title": "尉缭子"
+      }
+    },
+    {
+      "id": "guiguzi",
+      "label": "鬼谷子",
+      "era": "late",
+      "school": "bing",
+      "when": "托名，其人存疑",
+      "note": "图上是孤立的——这不是遗漏。先秦三份诸子点名单（《天下》《非十二子》《显学》）里没有纵横家，站内也找不到先秦文献评说鬼谷子的原文。硬把他连进网里就是造假，故如实留白。",
+      "caveat": "《鬼谷子》系托名之书，成书年代存疑。",
+      "book": {
+        "corpus": "zong",
+        "slug": "guiguzi",
+        "title": "鬼谷子"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "zhuangzi",
+      "to": "mozi",
+      "type": "criticize",
+      "gist": "说墨家之道太苦，违逆人情",
+      "cites": [
+        {
+          "quote": "其生也勤，其死也薄，其道大觳",
+          "corpus": "dao",
+          "slug": "zhuangzi-zapian",
+          "ch": 11,
+          "label": "庄子 · 天下"
+        },
+        {
+          "quote": "反天下之心，天下不堪",
+          "corpus": "dao",
+          "slug": "zhuangzi-zapian",
+          "ch": 11,
+          "label": "庄子 · 天下"
+        }
+      ]
+    },
+    {
+      "from": "zhuangzi",
+      "to": "mozi",
+      "type": "praise",
+      "gist": "同一段里转口称他是真才士",
+      "note": "先贬后褒都在《天下》篇评墨子的同一段文字里——这是全图最能说明「一人两面」的一处。",
+      "cites": [
+        {
+          "quote": "墨子真天下之好也，将求之不得也，虽枯槁不舍也。才士也夫",
+          "corpus": "dao",
+          "slug": "zhuangzi-zapian",
+          "ch": 11,
+          "label": "庄子 · 天下"
+        }
+      ]
+    },
+    {
+      "from": "zhuangzi",
+      "to": "songjian",
+      "type": "criticize",
+      "gist": "说他为别人想得太多、为自己想得太少",
+      "cites": [
+        {
+          "quote": "其为人太多，其自为太少",
+          "corpus": "dao",
+          "slug": "zhuangzi-zapian",
+          "ch": 11,
+          "label": "庄子 · 天下"
+        }
+      ]
+    },
+    {
+      "from": "zhuangzi",
+      "to": "shendao",
+      "type": "criticize",
+      "gist": "借时人之口，说慎到的路是死人的道理",
+      "cites": [
+        {
+          "quote": "慎到之道，非生人之行而至死人之理",
+          "corpus": "dao",
+          "slug": "zhuangzi-zapian",
+          "ch": 11,
+          "label": "庄子 · 天下"
+        },
+        {
+          "quote": "彭蒙田骈慎到不知道",
+          "corpus": "dao",
+          "slug": "zhuangzi-zapian",
+          "ch": 11,
+          "label": "庄子 · 天下"
+        }
+      ]
+    },
+    {
+      "from": "zhuangzi",
+      "to": "laozi",
+      "type": "praise",
+      "gist": "《天下》篇给出的最高评价",
+      "cites": [
+        {
+          "quote": "关尹老耼乎！古之博大真人哉",
+          "corpus": "dao",
+          "slug": "zhuangzi-zapian",
+          "ch": 11,
+          "label": "庄子 · 天下"
+        }
+      ]
+    },
+    {
+      "from": "zhuangzi",
+      "to": "huishi",
+      "type": "criticize",
+      "gist": "说他书虽多而道杂、言不中要害",
+      "cites": [
+        {
+          "quote": "惠施多方，其书五车，其道舛驳，其言也不中",
+          "corpus": "dao",
+          "slug": "zhuangzi-zapian",
+          "ch": 11,
+          "label": "庄子 · 天下"
+        },
+        {
+          "quote": "惜乎！惠施之才，骀荡而不得，逐万物而不反",
+          "corpus": "dao",
+          "slug": "zhuangzi-zapian",
+          "ch": 11,
+          "label": "庄子 · 天下"
+        }
+      ]
+    },
+    {
+      "from": "zhuangzi",
+      "to": "huishi",
+      "type": "debate",
+      "gist": "濠梁观鱼、大瓠之用——两人当面对讲",
+      "note": "批得最重的人，也是记得最多、对讲最多的人。",
+      "cites": [
+        {
+          "quote": "鯈鱼出游从容，是鱼之乐也",
+          "corpus": "dao",
+          "slug": "zhuangzi-waipian",
+          "ch": 10,
+          "label": "庄子 · 秋水"
+        },
+        {
+          "quote": "惠子谓庄子曰：「魏王贻我大瓠之种",
+          "corpus": "dao",
+          "slug": "zhuangzi-neipian",
+          "ch": 1,
+          "label": "庄子 · 逍遥游"
+        }
+      ]
+    },
+    {
+      "from": "zhuangzi",
+      "to": "gongsunlong",
+      "type": "criticize",
+      "gist": "说辩者只赢得了嘴，赢不了人心",
+      "cites": [
+        {
+          "quote": "能胜人之口，不能服人之心，辩者之囿也",
+          "corpus": "dao",
+          "slug": "zhuangzi-zapian",
+          "ch": 11,
+          "label": "庄子 · 天下"
+        }
+      ]
+    },
+    {
+      "from": "zhuangzi",
+      "to": "kongzi",
+      "type": "praise",
+      "gist": "借孔子之口讲「心斋」",
+      "note": "庄子书里的孔子是两副面孔：此处被借来讲最高的道理，别处又是被嘲的对象。所以这根线只标「称引」，不等于宗奉。",
+      "cites": [
+        {
+          "quote": "仲尼曰：「若一志，无听之以耳而听之以心",
+          "corpus": "dao",
+          "slug": "zhuangzi-neipian",
+          "ch": 4,
+          "label": "庄子 · 人间世"
+        }
+      ]
+    },
+    {
+      "from": "mozi",
+      "to": "biemo",
+      "type": "lineage",
+      "gist": "墨子身后分为三派，互指对方是假墨",
+      "cites": [
+        {
+          "quote": "俱诵《墨经》，而倍谲不同，相谓别墨",
+          "corpus": "dao",
+          "slug": "zhuangzi-zapian",
+          "ch": 11,
+          "label": "庄子 · 天下"
+        },
+        {
+          "quote": "自墨子之死也，有相里氏之墨，有相夫氏之墨，有邓陵氏之墨",
+          "corpus": "fa",
+          "slug": "hanfeizi",
+          "ch": 50,
+          "label": "韩非子 · 显学"
+        }
+      ]
+    },
+    {
+      "from": "mozi",
+      "to": "kongzi",
+      "type": "criticize",
+      "gist": "《非儒下》直指孔子所行与君子之道相反",
+      "cites": [
+        {
+          "quote": "以所闻孔丘之行，则本与此相反谬也",
+          "corpus": "mo",
+          "slug": "mozi",
+          "ch": 31,
+          "label": "墨子 · 非儒下"
+        },
+        {
+          "quote": "儒者曰：「亲亲有术，尊贤有等。」言亲疏尊卑之异也",
+          "corpus": "mo",
+          "slug": "mozi",
+          "ch": 31,
+          "label": "墨子 · 非儒下"
+        }
+      ]
+    },
+    {
+      "from": "mengzi",
+      "to": "yangzhu",
+      "type": "criticize",
+      "gist": "斥为无君",
+      "note": "「杨氏为我，是无君也」这一句，几乎决定了杨朱此后两千年的形象——而杨朱本人的书早已不存。",
+      "cites": [
+        {
+          "quote": "杨氏为我，是无君也",
+          "corpus": "ru",
+          "slug": "mengzi",
+          "ch": 6,
+          "label": "孟子 · 滕文公下"
+        },
+        {
+          "quote": "天下之言，不归杨则归墨",
+          "corpus": "ru",
+          "slug": "mengzi",
+          "ch": 6,
+          "label": "孟子 · 滕文公下"
+        }
+      ]
+    },
+    {
+      "from": "mengzi",
+      "to": "mozi",
+      "type": "criticize",
+      "gist": "斥兼爱为无父",
+      "cites": [
+        {
+          "quote": "墨氏兼爱，是无父也",
+          "corpus": "ru",
+          "slug": "mengzi",
+          "ch": 6,
+          "label": "孟子 · 滕文公下"
+        }
+      ]
+    },
+    {
+      "from": "mengzi",
+      "to": "kongzi",
+      "type": "praise",
+      "gist": "推为有生民以来第一人",
+      "cites": [
+        {
+          "quote": "自有生民以来，未有孔子也",
+          "corpus": "ru",
+          "slug": "mengzi",
+          "ch": 3,
+          "label": "孟子 · 公孙丑上"
+        }
+      ]
+    },
+    {
+      "from": "mengzi",
+      "to": "kongzi",
+      "type": "lineage",
+      "gist": "自陈是隔代私淑，非亲炙",
+      "cites": [
+        {
+          "quote": "予未得为孔子徒也，予私淑诸人也",
+          "corpus": "ru",
+          "slug": "mengzi",
+          "ch": 8,
+          "label": "孟子 · 离娄下"
+        }
+      ]
+    },
+    {
+      "from": "kongzi",
+      "to": "zisi",
+      "type": "lineage",
+      "gist": "孔子身后儒分为八，其一为子思之儒",
+      "note": "这条线的出处是法家的《显学》——记录儒门谱系的，反倒是要否掉儒家的那个人。",
+      "cites": [
+        {
+          "quote": "自孔子之死也，有子张之儒，有子思之儒",
+          "corpus": "fa",
+          "slug": "hanfeizi",
+          "ch": 50,
+          "label": "韩非子 · 显学"
+        }
+      ]
+    },
+    {
+      "from": "zisi",
+      "to": "mengzi",
+      "type": "lineage",
+      "gist": "子思倡之、孟轲和之",
+      "note": "这条师承线出自敌论——荀子是要连着骂这一系，反倒把它的传承关系记了下来。",
+      "cites": [
+        {
+          "quote": "子思唱之，孟轲和之",
+          "corpus": "ru",
+          "slug": "xunzi",
+          "ch": 6,
+          "label": "荀子 · 非十二子"
+        }
+      ]
+    },
+    {
+      "from": "xunzi",
+      "to": "zisi",
+      "type": "criticize",
+      "gist": "斥其造「五行」之说，僻违无类",
+      "cites": [
+        {
+          "quote": "案往旧造说，谓之五行，甚僻违而无类",
+          "corpus": "ru",
+          "slug": "xunzi",
+          "ch": 6,
+          "label": "荀子 · 非十二子"
+        },
+        {
+          "quote": "是则子思、孟轲之罪也",
+          "corpus": "ru",
+          "slug": "xunzi",
+          "ch": 6,
+          "label": "荀子 · 非十二子"
+        }
+      ]
+    },
+    {
+      "from": "xunzi",
+      "to": "mengzi",
+      "type": "criticize",
+      "gist": "与子思绑作一组，同罪并斥",
+      "note": "儒门内部批得最重的一处——批人的和被批的，后世同列孔庙。",
+      "cites": [
+        {
+          "quote": "是则子思、孟轲之罪也",
+          "corpus": "ru",
+          "slug": "xunzi",
+          "ch": 6,
+          "label": "荀子 · 非十二子"
+        }
+      ]
+    },
+    {
+      "from": "xunzi",
+      "to": "kongzi",
+      "type": "praise",
+      "gist": "《非十二子》里唯一被立为标准的人",
+      "cites": [
+        {
+          "quote": "下则法仲尼、子弓之义",
+          "corpus": "ru",
+          "slug": "xunzi",
+          "ch": 6,
+          "label": "荀子 · 非十二子"
+        }
+      ]
+    },
+    {
+      "from": "xunzi",
+      "to": "mozi",
+      "type": "criticize",
+      "gist": "两处各下一断语：僈差等、蔽于用",
+      "cites": [
+        {
+          "quote": "上功用、大俭约而僈差等",
+          "corpus": "ru",
+          "slug": "xunzi",
+          "ch": 6,
+          "label": "荀子 · 非十二子"
+        },
+        {
+          "quote": "墨子蔽于用而不知文",
+          "corpus": "ru",
+          "slug": "xunzi",
+          "ch": 21,
+          "label": "荀子 · 解蔽"
+        }
+      ]
+    },
+    {
+      "from": "xunzi",
+      "to": "songjian",
+      "type": "criticize",
+      "gist": "与墨翟并列而斥，另断其「蔽于欲」",
+      "cites": [
+        {
+          "quote": "是墨翟、宋銒也",
+          "corpus": "ru",
+          "slug": "xunzi",
+          "ch": 6,
+          "label": "荀子 · 非十二子"
+        },
+        {
+          "quote": "宋子蔽于欲而不知得",
+          "corpus": "ru",
+          "slug": "xunzi",
+          "ch": 21,
+          "label": "荀子 · 解蔽"
+        }
+      ]
+    },
+    {
+      "from": "xunzi",
+      "to": "shendao",
+      "type": "criticize",
+      "gist": "说他讲法却无法，只见法不见贤",
+      "cites": [
+        {
+          "quote": "尚法而无法，下修而好作",
+          "corpus": "ru",
+          "slug": "xunzi",
+          "ch": 6,
+          "label": "荀子 · 非十二子"
+        },
+        {
+          "quote": "慎子蔽于法而不知贤",
+          "corpus": "ru",
+          "slug": "xunzi",
+          "ch": 21,
+          "label": "荀子 · 解蔽"
+        }
+      ]
+    },
+    {
+      "from": "xunzi",
+      "to": "shenbuhai",
+      "type": "criticize",
+      "gist": "断为只见势不见知",
+      "note": "《解蔽》把申不害归到「势」，而韩非《定法》取他的是「术」——两家给他的定位不同。",
+      "cites": [
+        {
+          "quote": "申子蔽于埶而不知知",
+          "corpus": "ru",
+          "slug": "xunzi",
+          "ch": 21,
+          "label": "荀子 · 解蔽"
+        }
+      ]
+    },
+    {
+      "from": "xunzi",
+      "to": "huishi",
+      "type": "criticize",
+      "gist": "说他辩而无用、只见辞不见实",
+      "cites": [
+        {
+          "quote": "甚察而不惠，辩而无用，多事而寡功",
+          "corpus": "ru",
+          "slug": "xunzi",
+          "ch": 6,
+          "label": "荀子 · 非十二子"
+        },
+        {
+          "quote": "惠子蔽于辞而不知实",
+          "corpus": "ru",
+          "slug": "xunzi",
+          "ch": 21,
+          "label": "荀子 · 解蔽"
+        }
+      ]
+    },
+    {
+      "from": "xunzi",
+      "to": "dengxi",
+      "type": "criticize",
+      "gist": "与惠施并列，同斥其好治怪说",
+      "cites": [
+        {
+          "quote": "不法先王，不是礼义，而好治怪说，玩琦辞",
+          "corpus": "ru",
+          "slug": "xunzi",
+          "ch": 6,
+          "label": "荀子 · 非十二子"
+        },
+        {
+          "quote": "是惠施、邓析也",
+          "corpus": "ru",
+          "slug": "xunzi",
+          "ch": 6,
+          "label": "荀子 · 非十二子"
+        }
+      ]
+    },
+    {
+      "from": "xunzi",
+      "to": "zhuangzi",
+      "type": "criticize",
+      "gist": "断为只见天不见人",
+      "cites": [
+        {
+          "quote": "庄子蔽于天而不知人",
+          "corpus": "ru",
+          "slug": "xunzi",
+          "ch": 21,
+          "label": "荀子 · 解蔽"
+        }
+      ]
+    },
+    {
+      "from": "hanfei",
+      "to": "kongzi",
+      "type": "criticize",
+      "gist": "承认儒是显学，却把儒墨一并归为无据之学",
+      "cites": [
+        {
+          "quote": "世之显学，儒、墨也",
+          "corpus": "fa",
+          "slug": "hanfeizi",
+          "ch": 50,
+          "label": "韩非子 · 显学"
+        },
+        {
+          "quote": "孔子、墨子俱道尧、舜，而取舍不同，皆自谓真尧、舜",
+          "corpus": "fa",
+          "slug": "hanfeizi",
+          "ch": 50,
+          "label": "韩非子 · 显学"
+        }
+      ]
+    },
+    {
+      "from": "hanfei",
+      "to": "mozi",
+      "type": "criticize",
+      "gist": "同上，儒墨并斥",
+      "cites": [
+        {
+          "quote": "故孔、墨之后，儒分为八，墨离为三，取舍相反不同，而皆自谓真孔、墨",
+          "corpus": "fa",
+          "slug": "hanfeizi",
+          "ch": 50,
+          "label": "韩非子 · 显学"
+        },
+        {
+          "quote": "愚诬之学，杂反之行，明主弗受也",
+          "corpus": "fa",
+          "slug": "hanfeizi",
+          "ch": 50,
+          "label": "韩非子 · 显学"
+        }
+      ]
+    },
+    {
+      "from": "hanfei",
+      "to": "laozi",
+      "type": "lineage",
+      "gist": "作《解老》，把《老子》读成君人之术",
+      "cites": [
+        {
+          "quote": "德者，内也；得者，外也。「上德不德」，言其神不淫于外也",
+          "corpus": "fa",
+          "slug": "hanfeizi",
+          "ch": 20,
+          "label": "韩非子 · 解老"
+        }
+      ]
+    },
+    {
+      "from": "hanfei",
+      "to": "shangyang",
+      "type": "lineage",
+      "gist": "取其「法」，并录其治秦之效",
+      "cites": [
+        {
+          "quote": "公孙鞅之治秦也，设告相坐而责其实",
+          "corpus": "fa",
+          "slug": "hanfeizi",
+          "ch": 43,
+          "label": "韩非子 · 定法"
+        },
+        {
+          "quote": "商君教秦孝公以连什伍，设告坐之过，燔诗书而明法令",
+          "corpus": "fa",
+          "slug": "hanfeizi",
+          "ch": 13,
+          "label": "韩非子 · 和氏"
+        }
+      ]
+    },
+    {
+      "from": "hanfei",
+      "to": "shenbuhai",
+      "type": "lineage",
+      "gist": "取其「术」",
+      "cites": [
+        {
+          "quote": "申不害，韩昭侯之佐也",
+          "corpus": "fa",
+          "slug": "hanfeizi",
+          "ch": 43,
+          "label": "韩非子 · 定法"
+        }
+      ]
+    },
+    {
+      "from": "hanfei",
+      "to": "shenbuhai",
+      "type": "criticize",
+      "gist": "取其术，同时指其不整饬法令之失",
+      "cites": [
+        {
+          "quote": "申不害不擅其法，不一其宪令，则奸多",
+          "corpus": "fa",
+          "slug": "hanfeizi",
+          "ch": 43,
+          "label": "韩非子 · 定法"
+        }
+      ]
+    },
+    {
+      "from": "hanfei",
+      "to": "shendao",
+      "type": "lineage",
+      "gist": "《难势》整篇引其「势」说而后辨析",
+      "note": "《难势》是引说、客难、再答的三层结构，中间「应慎子曰」一段是客难，不是韩非本人的话。此处只取所引慎到原说。",
+      "cites": [
+        {
+          "quote": "慎子曰：飞龙乘云，腾蛇游雾",
+          "corpus": "fa",
+          "slug": "hanfeizi",
+          "ch": 40,
+          "label": "韩非子 · 难势"
+        },
+        {
+          "quote": "吾以此知势位之足恃而贤智之不足慕也",
+          "corpus": "fa",
+          "slug": "hanfeizi",
+          "ch": 40,
+          "label": "韩非子 · 难势"
+        }
+      ]
+    },
+    {
+      "from": "hanfei",
+      "to": "wuqi",
+      "type": "praise",
+      "gist": "与商鞅并举，叹变法者身死而法效存",
+      "cites": [
+        {
+          "quote": "楚不用吴起而削乱，秦行商君法而富强",
+          "corpus": "fa",
+          "slug": "hanfeizi",
+          "ch": 13,
+          "label": "韩非子 · 和氏"
+        }
+      ]
+    },
+    {
+      "from": "weiliao",
+      "to": "wuqi",
+      "type": "praise",
+      "gist": "兵家内部的推许",
+      "cites": [
+        {
+          "quote": "有提七万之众，而天下莫敢当者，谁？曰：「吴起也。」",
+          "corpus": "bing",
+          "slug": "weiliaozi",
+          "ch": 3,
+          "label": "尉缭子 · 制谈"
+        }
+      ]
+    },
+    {
+      "from": "yinwen",
+      "to": "laozi",
+      "type": "lineage",
+      "gist": "开篇即引老子论道，再以名法收束",
+      "cites": [
+        {
+          "quote": "老子曰：「道者，万物之奥，善人之宝，不善人之所宝。」",
+          "corpus": "fa",
+          "slug": "yinwenzi",
+          "ch": 1,
+          "label": "尹文子 · 大道上"
+        }
+      ]
+    }
+  ]
+}

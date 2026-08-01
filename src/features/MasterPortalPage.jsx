@@ -74,6 +74,7 @@ export default function MasterPortalPage({ onSearch }) {
       </Link>
       <PortalStudyTrail />
       <p className="master-portal__links">
+        <Link to="/zhuzi" className="master-portal__about-link">诸子拓扑图 · 先秦互评网</Link>
         <Link to="/concepts" className="master-portal__about-link">义理专题 · 跨派概念</Link>
       </p>
       <p className="master-portal__about">

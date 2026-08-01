@@ -61,6 +61,7 @@ const ConceptsPage = lazy(() => import('./features/ConceptsPage.jsx'))
 const DebateListPage = lazy(() => import('./features/debates/DebateListPage.jsx'))
 const DebatePage = lazy(() => import('./features/debates/DebatePage.jsx'))
 const DebateArticlePage = lazy(() => import('./features/debates/DebateArticlePage.jsx'))
+const ZhuziTopologyPage = lazy(() => import('./features/zhuzi/ZhuziTopologyPage.jsx'))
 const BooksIndexPage = lazy(() => import('./features/books/BooksIndexPage.jsx'))
 const BookHomePage = lazy(() => import('./features/books/BookHomePage.jsx'))
 const BookArticlePage = lazy(() => import('./features/books/BookArticlePage.jsx'))
@@ -70,7 +71,7 @@ const AdminStatsPage = lazy(() => import('./features/admin/AdminStatsPage.jsx'))
 
 // 中立外壳路径(总门户 / 义理专题 / 百家争鸣):不套分站 nav/搜索/底栏,域名着陆豁免
 function isNeutralPath(p) {
-  return p === '/' || p === MASTER_PORTAL_PATH || p === '/concepts' || p === '/privacy' || p === '/ba' || p === '/legal' || p === '/admin/stats' || p === '/debates' || p.startsWith('/debates/') || p === '/books' || p.startsWith('/books/')
+  return p === '/' || p === MASTER_PORTAL_PATH || p === '/concepts' || p === '/privacy' || p === '/ba' || p === '/legal' || p === '/admin/stats' || p === '/debates' || p.startsWith('/debates/') || p === '/zhuzi' || p === '/books' || p.startsWith('/books/')
 }
 // 全站设置浮层(Tier 0):任何站 nav 齿轮就地打开(主题/字号/译文 + 数据导出导入)
 const SettingsSheet = lazy(() => import('./features/SettingsSheet.jsx'))
@@ -399,6 +400,7 @@ function AppContent() {
           {/* 诸学总门户(v15):左上角 logo 全站可达的公开总入口,列全部分组 */}
           <Route path={MASTER_PORTAL_PATH} element={<MasterPortalPage onSearch={openSearch} />} />
           <Route path="/concepts" element={<ConceptsPage />} />
+          <Route path="/zhuzi" element={<ZhuziTopologyPage />} />
           <Route path="/debates" element={<DebateListPage />} />
           <Route path="/debates/:id" element={<DebatePage />} />
           <Route path="/debates/:id/article" element={<DebateArticlePage />} />

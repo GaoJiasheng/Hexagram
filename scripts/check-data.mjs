@@ -651,6 +651,64 @@ if (fs.existsSync(glossaryPath)) {
   }
 }
 
+// ---------- 7c. 诸子拓扑图 ----------
+// 图的价值全在「每根线都点得开、看得到出处」——引文一旦不是站内原文,整张图就是编的。
+// 故引文逐字校验(同 debate cite),校验池收窄到该 cite 所指的那一章:跨章拼接即判错。
+{
+  const topoPath = path.join(ROOT, 'src/data/zhuzi-topology.json')
+  if (fs.existsSync(topoPath)) {
+    const T = JSON.parse(fs.readFileSync(topoPath, 'utf8'))
+    const chCache = {}
+    const chapterText = (corpus, slug, ch) => {
+      const k = `${corpus}/${slug}`
+      if (!(k in chCache)) {
+        const f = path.join(ROOT, `src/data/${corpus}/classics/${slug}.json`)
+        chCache[k] = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null
+      }
+      const book = chCache[k]
+      if (!book) return null
+      const c = book.chapters.find((x) => x.no === ch)
+      return c ? c.paragraphs.map((p) => p.original).join('') : null
+    }
+    const ids = new Set(T.nodes.map((n) => n.id))
+    const eras = new Set(T.eras.map((e) => e.key))
+    const schools = new Set(T.schools.map((s) => s.key))
+    const types = new Set(T.edgeTypes.map((t) => t.key))
+    if (ids.size !== T.nodes.length) err('topology: 节点 id 有重复')
+    for (const n of T.nodes) {
+      if (!eras.has(n.era)) err(`topology 节点 ${n.id}: era 非法「${n.era}」`)
+      if (!schools.has(n.school)) err(`topology 节点 ${n.id}: school 非法「${n.school}」`)
+      if (!n.when) err(`topology 节点 ${n.id}: 缺 when(大致年代)`)
+      if (!n.note) err(`topology 节点 ${n.id}: 缺 note`)
+    }
+    let nCite = 0, nBad = 0
+    for (const e of T.edges) {
+      if (!ids.has(e.from)) err(`topology 边: from「${e.from}」无此节点`)
+      if (!ids.has(e.to)) err(`topology 边: to「${e.to}」无此节点`)
+      if (e.from === e.to) err(`topology 边: ${e.from} 自指`)
+      if (!types.has(e.type)) err(`topology 边 ${e.from}→${e.to}: type 非法「${e.type}」`)
+      if (!e.gist) err(`topology 边 ${e.from}→${e.to}: 缺 gist`)
+      if (!(e.cites || []).length) err(`topology 边 ${e.from}→${e.to}: 一条引文都没有——无出处的关系不许上图`)
+      for (const c of e.cites || []) {
+        nCite++
+        const txt = chapterText(c.corpus, c.slug, c.ch)
+        if (!txt) { err(`topology 边 ${e.from}→${e.to}: 章不存在 ${c.corpus}/${c.slug} ch${c.ch}`); nBad++; continue }
+        if (!txt.includes(c.quote)) {
+          err(`topology 边 ${e.from}→${e.to}: 引文非 ${c.label} 原文子串「${c.quote.slice(0, 16)}…」`); nBad++
+        }
+      }
+    }
+    // 孤立节点不是错(兵家/纵横本就不在先秦诸子的自评名单里),但须在 note 里交代清楚。
+    const linked = new Set(T.edges.flatMap((e) => [e.from, e.to]))
+    for (const n of T.nodes) {
+      if (!linked.has(n.id) && !/孤立|没有|无(其书)?.{0,6}(记载|原文)/.test(n.note || '')) {
+        warn(`topology 节点 ${n.id}(${n.label}): 图上孤立却未在 note 里交代原因`)
+      }
+    }
+    infos.push(`诸子拓扑图: ${T.nodes.length} 人 · ${T.edges.length} 条关系 · ${nCite} 条引文 · ${nBad} 坏引文`)
+  }
+}
+
 // ---------- 8c. 白话模块(design-v22)校验 ----------
 {
   const corpora = ['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'yijing']

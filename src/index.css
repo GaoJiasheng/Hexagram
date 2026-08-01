@@ -3892,3 +3892,111 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   .admin-comments__body, .admin-comments__actions { grid-column: 1; grid-row: auto; }
   .admin-comments__actions { justify-content: flex-end; }
 }
+
+/* ── 诸子拓扑图(先秦互评网)───────────────────────────────
+   横轴时代 · 纵轴学派 · 连线为诸家互评,每条边挂站内原文。
+   默认只亮「师承·取用」骨架:37 条边全画上去是毛线球。 */
+.topo-page { max-width: 1000px; margin: 0 auto; }
+.topo-head h1 { font-family: var(--font-serif); font-size: 1.5rem; margin: 0 0 4px; color: var(--ink); }
+.topo-sub { font-size: 0.9rem; color: var(--cinnabar); margin: 0 0 14px; }
+.topo-intro { font-size: 0.9rem; line-height: 1.9; color: var(--ink); margin: 0 0 10px; }
+.topo-intro b { color: var(--cinnabar); font-weight: 600; }
+.topo-note { font-size: 0.78rem; line-height: 1.75; color: var(--ink-soft); margin: 0; }
+
+.topo-bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; margin: 20px 0 10px; }
+.topo-types { display: flex; flex-wrap: wrap; gap: 8px; }
+.topo-type { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; font-size: 0.8rem;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--paper); color: var(--ink-soft); cursor: pointer; }
+.topo-type__dash { width: 16px; height: 0; border-top: 2px solid var(--tc); opacity: 0.35; }
+.topo-type--on { color: var(--ink); border-color: var(--tc); background: color-mix(in srgb, var(--tc) 8%, var(--paper)); }
+.topo-type--on .topo-type__dash { opacity: 1; }
+.topo-type__n { font-size: 0.72rem; color: var(--ink-soft); }
+.topo-type--all { font-size: 0.78rem; }
+.topo-view { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+.topo-view button { padding: 5px 14px; font-size: 0.8rem; border: 0; background: var(--paper); color: var(--ink-soft); cursor: pointer; }
+.topo-view button.on { background: var(--cinnabar); color: var(--paper); }
+
+.topo-canvas { position: relative; border: 1px solid var(--line); border-radius: 8px; background: var(--paper-raised);
+  overflow: hidden; touch-action: none; cursor: grab; }
+.topo-canvas:active { cursor: grabbing; }
+.topo-zoom { position: absolute; right: 10px; top: 10px; z-index: 2; display: flex; gap: 6px; align-items: center; }
+.topo-zoom button { min-width: 28px; height: 28px; padding: 0 9px; line-height: 1; font-size: 0.78rem; border: 1px solid var(--line);
+  border-radius: 5px; background: var(--paper); color: var(--ink-soft); cursor: pointer; }
+.topo-svg { display: block; width: 100%; height: auto; }
+
+.topo-era { font-family: var(--font-serif); font-size: 13px; fill: var(--ink); }
+.topo-era-when { font-size: 10px; fill: var(--ink-soft); }
+.topo-row-label { font-family: var(--font-serif); font-size: 12px; fill: var(--ink-soft); }
+.topo-end { font-family: var(--font-serif); font-size: 12px; fill: var(--cinnabar); }
+.topo-end-when { font-size: 10px; fill: var(--ink-soft); }
+
+.topo-edge { cursor: pointer; transition: stroke-width .15s, opacity .15s; opacity: 0.72; }
+.topo-edge:hover { opacity: 1; stroke-width: 2.2; }
+.topo-edge--on { opacity: 1; }
+.topo-node { cursor: pointer; }
+.topo-node rect { fill: var(--paper); stroke: var(--line); stroke-width: 0.8; transition: opacity .18s; }
+.topo-node text { font-family: var(--font-serif); font-size: 13px; fill: var(--ink); pointer-events: none; }
+.topo-node:hover rect { stroke: var(--cinnabar); }
+.topo-node:focus-visible rect { stroke: var(--cinnabar); stroke-width: 1.6; outline: none; }
+.topo-node--sel rect { fill: var(--cinnabar); stroke: var(--cinnabar); }
+.topo-node--sel text { fill: var(--paper); }
+.topo-node--dim { opacity: 0.26; }
+.topo-node__flag { fill: var(--ink-soft); opacity: 0.55; }
+
+.topo-hint { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 0.76rem; color: var(--ink-soft); margin: 8px 0 0; }
+.topo-hint__flag { opacity: 0.8; }
+
+.topo-detail { margin-top: 18px; padding: 16px 18px; border: 1px solid var(--line); border-left: 3px solid var(--cinnabar);
+  border-radius: 8px; background: var(--paper-raised); }
+.topo-detail h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; font-family: var(--font-serif);
+  font-size: 1.12rem; margin: 0 0 8px; color: var(--ink); }
+.topo-detail__when, .topo-detail__school { font-size: 0.76rem; color: var(--ink-soft); font-family: var(--font-sans); }
+.topo-detail p { font-size: 0.88rem; line-height: 1.85; color: var(--ink); margin: 0 0 10px; }
+.topo-detail__caveat { font-size: 0.8rem !important; color: var(--ink-soft) !important; }
+.topo-detail__book a { color: var(--cinnabar); text-decoration: none; border-bottom: 1px dotted var(--cinnabar); }
+.topo-detail__arrow { color: var(--tc); }
+
+.topo-rel { margin-top: 12px; }
+.topo-rel h3 { font-size: 0.8rem; color: var(--ink-soft); margin: 0 0 6px; font-weight: 500; }
+.topo-rel ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.topo-rel > ul > li { padding-left: 10px; border-left: 2px solid var(--line); }
+.topo-rel__tag { display: inline-block; padding: 1px 8px; margin-right: 6px; font-size: 0.72rem; border-radius: 999px;
+  color: var(--tc); border: 1px solid color-mix(in srgb, var(--tc) 45%, transparent); }
+.topo-rel__who { font-family: var(--font-serif); font-size: 0.95rem; color: var(--ink); background: none; border: 0;
+  border-bottom: 1px dotted var(--ink-soft); padding: 0; cursor: pointer; }
+.topo-rel__gist { font-size: 0.82rem; color: var(--ink-soft); margin-left: 8px; }
+.topo-cites { list-style: none; padding: 0; margin: 6px 0 0; display: flex; flex-direction: column; gap: 5px; }
+.topo-cites li { font-size: 0.84rem; line-height: 1.8; }
+.topo-cites q { font-family: var(--font-serif); color: var(--ink); quotes: '「' '」'; }
+.topo-cite__src { margin-left: 8px; font-size: 0.76rem; color: var(--cinnabar); text-decoration: none; white-space: nowrap; }
+
+.topo-list { display: flex; flex-direction: column; gap: 22px; }
+.topo-list__school > h2 { font-family: var(--font-serif); font-size: 1rem; color: var(--cinnabar); margin: 0 0 10px;
+  padding-bottom: 5px; border-bottom: 1px solid var(--line); }
+.topo-list__person { padding: 12px 0; border-bottom: 1px dotted var(--line); }
+.topo-list__person.is-sel { background: color-mix(in srgb, var(--cinnabar) 5%, transparent); }
+.topo-list__name { font-family: var(--font-serif); font-size: 1.05rem; color: var(--ink); background: none; border: 0;
+  padding: 0; cursor: pointer; }
+.topo-list__when { font-family: var(--font-sans); font-size: 0.74rem; color: var(--ink-soft); margin-left: 10px; }
+.topo-list__none { font-size: 0.82rem; color: var(--ink-soft); margin: 6px 0 0; }
+
+.topo-end-note { margin-top: 26px; padding-top: 16px; border-top: 1px solid var(--line); }
+.topo-end-note h2 { font-family: var(--font-serif); font-size: 1rem; color: var(--ink); margin: 0 0 8px; }
+.topo-end-note ul { padding-left: 18px; margin: 0 0 10px; }
+.topo-end-note li { font-size: 0.86rem; line-height: 1.85; color: var(--ink); margin-bottom: 5px; }
+.topo-back { margin-top: 24px; text-align: center; font-size: 0.84rem; }
+.topo-back a { color: var(--cinnabar); text-decoration: none; }
+
+@media (max-width: 760px) {
+  .topo-bar { justify-content: flex-start; }
+  .topo-detail h2 { font-size: 1rem; }
+}
+.topo-edge--far { opacity: 0.1; }
+/* 深色底下 600 档的青/灰偏暗,提一档亮度;朱线本已够亮不动。
+   主题有三档(自动/纸白/暗),故两种选择器都写。 */
+[data-theme='dark'] .topo-edge,
+[data-theme='dark'] .topo-type__dash { filter: brightness(1.75) saturate(0.9); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .topo-edge,
+  :root:not([data-theme]) .topo-type__dash { filter: brightness(1.75) saturate(0.9); }
+}
