@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
-import { loadDebate, groupAccent, schoolSeal, EPIGRAPH, HAS_ARTICLE } from './debates.js'
+import { loadDebate, loadDebateArticle, groupAccent, schoolSeal, EPIGRAPH, HAS_ARTICLE } from './debates.js'
+import ArticleDrawer from '../reader/ArticleDrawer.jsx'
 import { bookBySlug, chapterHref } from '../reader/booksIndex.js'
 import { SITE_MAP } from '../../sites/registry.js'
 import concepts from '../../data/concepts.json'
@@ -88,6 +89,9 @@ function edgePath(F, T, sign) {
 }
 
 export default function DebatePage() {
+  const navigate = useNavigate()
+  const [explainOpen, setExplainOpen] = useState(false)
+  const [explain, setExplain] = useState(null)
   const { id } = useParams()
   const [d, setD] = useState(null)
   const [revealed, setRevealed] = useState(1)
@@ -102,6 +106,15 @@ export default function DebatePage() {
     loadDebate(id).then((x) => { if (alive) setD(x) })
     return () => { alive = false }
   }, [id])
+
+  // 白话讲解:点开才载,不拖累辩论页首屏。**必须在 `if (!d) return` 之前**——
+  // hook 排在提前 return 之后会「Rendered more hooks than during the previous render」整页白屏。
+  useEffect(() => {
+    if (!explainOpen || explain) return
+    let alive = true
+    loadDebateArticle(id).then((x) => { if (alive) setExplain(x) })
+    return () => { alive = false }
+  }, [explainOpen, explain, id])
 
   const turns = d ? d.rounds.flatMap((r) => r.turns.map((t) => ({ ...t, phase: r.phase }))) : []
   const total = turns.length
@@ -159,11 +172,19 @@ export default function DebatePage() {
         {/* 白话讲解(owner 2026-08-01:入口从列表页卡片挪进来,并与页内那条折叠「导读」区分命名)。
             两者成一对:导读是就地展开的短篇,白话讲解是另开的整篇文章。 */}
         {HAS_ARTICLE.has(id) && (
-          <Link to={`/debates/${id}/article`} className="debate-explain">
+          <a
+            href={`/debates/${id}/article`}
+            className="debate-explain"
+            onClick={(e) => {
+              // ⌘/Ctrl/Shift/中键 → 交给浏览器开新标签;普通左键 → 弹右侧抽屉
+              if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return
+              e.preventDefault(); setExplainOpen(true)
+            }}
+          >
             <span className="debate-explain__tag">白话讲解</span>
             <span className="debate-explain__text">完整一篇讲清这场辩:分歧在哪、彼此又牵着什么线</span>
             <span className="debate-explain__go" aria-hidden="true">›</span>
-          </Link>
+          </a>
         )}
       </div>
 
@@ -261,6 +282,20 @@ export default function DebatePage() {
           <Link to="/debates" className="btn btn--secondary">换一辩 →</Link>
         </div>
       )}
+
+      {/* 白话讲解抽屉:与经典白话、观书文章同一个 ArticleDrawer —— 右侧弹出、可就这么放着,
+          ⤢ 再进整页 URL(可收藏/分享/刷新保留)。印章用本辩首家的组色,不套分站皮。 */}
+      <ArticleDrawer
+        open={explainOpen}
+        accent={groupAccent(schools[0]?.group)}
+        seal="讲"
+        brand={`白话讲解 · ${d.title}`}
+        chap={d.question}
+        data={explain}
+        empty="这场辩还没有白话讲解。"
+        onFull={() => { setExplainOpen(false); navigate(`/debates/${id}/article`) }}
+        onClose={() => setExplainOpen(false)}
+      />
     </div>
   )
 }

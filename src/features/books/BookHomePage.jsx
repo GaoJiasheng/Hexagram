@@ -3,7 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import MindTree from './MindTree.jsx'
 import BookCover from './BookCover.jsx'
-import BookArticleDrawer from './BookArticleDrawer.jsx'
+import ArticleDrawer from '../reader/ArticleDrawer.jsx'
 import HomeSeal from './HomeSeal.jsx'
 import CommentSection from '../comments/CommentSection.jsx'
 import books from '../../data/books/index.json'
@@ -76,7 +76,7 @@ export default function BookHomePage() {
 
       <CommentSection key={`books:${slug}`} corpus="books" slug={slug} chapter="home" />
 
-      <BookArticleDrawer
+      <ArticleDrawer
         open={!!drawer}
         accent={book.accent}
         brand={drawer?.brand}
