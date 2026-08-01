@@ -605,7 +605,8 @@ if (fs.existsSync(glossaryPath)) {
           err(`debate ${id}: 家「${s.label}」在 ${pk.id} 用 key「${pk.key}」,此处却用「${s.key}」——同一家须同 key`)
         } else if (!pk) schoolLabelMap.set(s.label, { id, key: s.key })
       }
-      // 白话导读(owner 2026-07-29):辩论页门槛高,另出整篇文章解释「他们在辩什么」。
+      // 白话讲解(owner 2026-07-29):辩论页门槛高,另出整篇文章解释「他们在辩什么」。
+      // (2026-08-01 owner 改名并把入口从列表页卡片挪进辩论页,与页内折叠「导读」区分)
       // 引文校验池 = 该辩所据的那些章节(与辩本身 cite 同一个池),跨章引用即判错。
       const artPath = path.join(ROOT, `src/data/debates/articles/${id}.json`)
       if (fs.existsSync(artPath)) {
@@ -646,7 +647,7 @@ if (fs.existsSync(glossaryPath)) {
       if (tp.format && !FORMATS.has(tp.format)) err(`debate ${tp.id}: format 非法「${tp.format}」`)
     }
     infos.push(`百家争鸣: ${files.length} 辩 · ${turnTotal} 轮 · 参辩 ${partyTotal} 家次`)
-    if (nArticle) infos.push(`辩题白话导读: ${nArticle} 篇 · ${nBadArtCite} 坏引文`)
+    if (nArticle) infos.push(`辩题白话讲解: ${nArticle} 篇 · ${nBadArtCite} 坏引文`)
     infos.push(`  义理四门: ${['tiandao', 'xinxing', 'zhidao', 'weixue'].map((d) => `${d} ${divCount[d] || 0}`).join(' · ')}`)
   }
 }

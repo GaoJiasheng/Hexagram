@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import {
-  TOPICS, PLANNED, EPIGRAPH, DIVISIONS, FORMATS, SCHOOL_GROUPS, THINKERS, HAS_ARTICLE,
+  TOPICS, PLANNED, EPIGRAPH, DIVISIONS, FORMATS, SCHOOL_GROUPS, THINKERS,
   categoriesOf, groupsOf, thinkersOf, groupAccent, schoolSeal,
 } from './debates.js'
 
@@ -140,9 +140,7 @@ export default function DebateListPage() {
                         </div>
                         <div className="debate-card__meta">{t.schools.map((s) => s.label).join(' · ')} · {t.turns} 轮</div>
                       </Link>
-                      {HAS_ARTICLE.has(t.id) && (
-                        <Link to={`/debates/${t.id}/article`} className="debate-card__guide">白话导读 · 他们在辩什么 ›</Link>
-                      )}
+
                     </div>
                   ))}
                 </div>

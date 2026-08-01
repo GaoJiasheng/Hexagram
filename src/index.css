@@ -3355,7 +3355,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   .debates-facet__label { flex: none; }
 }
 .debates-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
-/* 辩题白话导读入口(owner 2026-07-29):卡片是 Link 不能嵌 Link,故作兄弟节点 */
+/* 辩题白话讲解入口(owner 2026-07-29):卡片是 Link 不能嵌 Link,故作兄弟节点 */
 .debate-card-wrap { display: flex; flex-direction: column; }
 .debate-card-wrap .debate-card { flex: 1; }
 .debate-card__guide { display: block; margin-top: -1px; padding: 7px 14px; border: 1px solid var(--line); border-top: none; border-radius: 0 0 9px 9px; background: var(--paper-raised); color: var(--cinnabar-pure); font-size: .78rem; text-decoration: none; transition: background .16s ease; }
@@ -4025,3 +4025,19 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .topo-debates__one { font-size: 0.78rem; padding: 2px 9px; border: 1px solid var(--line); border-radius: 999px;
   color: var(--ink-soft); text-decoration: none; }
 .topo-debates__one:hover { border-color: var(--cinnabar); color: var(--cinnabar); }
+
+/* 辩论页内的「白话讲解」入口(owner 2026-08-01:从列表页卡片挪进来)。
+   与紧邻的折叠「导读」成一对——导读就地展开、讲解另开整篇,故用实心签区分。 */
+.debate-explain { display: flex; align-items: center; gap: 10px; margin-top: 10px; padding: 9px 12px;
+  border: 1px solid var(--line); border-left: 3px solid var(--cinnabar); border-radius: 6px;
+  background: var(--paper-raised); text-decoration: none; transition: border-color .18s, box-shadow .18s; }
+.debate-explain:hover { border-color: var(--cinnabar);
+  box-shadow: 0 2px 12px color-mix(in srgb, var(--cinnabar) 12%, transparent); }
+.debate-explain__tag { flex: 0 0 auto; padding: 2px 9px; font-size: 0.76rem; border-radius: 4px;
+  background: var(--cinnabar); color: var(--paper); font-family: var(--font-serif); }
+.debate-explain__text { font-size: 0.82rem; line-height: 1.6; color: var(--ink-soft); }
+.debate-explain__go { margin-left: auto; color: var(--ink-soft); font-size: 1.1rem; }
+@media (max-width: 560px) {
+  .debate-explain { flex-wrap: wrap; }
+  .debate-explain__go { display: none; }
+}

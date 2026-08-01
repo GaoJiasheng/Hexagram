@@ -3,7 +3,7 @@ import index from '../../data/debates/index.json'
 // 《赛博:百家争鸣》数据层(v21)——index.json 列已建辩题 + 46 题路线;各辩一文件懒加载。
 const loaders = import.meta.glob('../../data/debates/*.json')
 
-// 白话导读(owner 2026-07-29:辩论页门槛高,另出整篇白话文章解释「他们到底在辩什么」)。
+// 白话讲解(owner 2026-07-29:辩论页门槛高,另出整篇白话文章解释「他们到底在辩什么」)。
 // 与辩本身分文件、懒加载;辩论页不改,入口挂在辩题列表。
 const articleLoaders = import.meta.glob('../../data/debates/articles/*.json')
 export const HAS_ARTICLE = new Set(

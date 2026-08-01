@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
-import { loadDebate, groupAccent, schoolSeal, EPIGRAPH } from './debates.js'
+import { loadDebate, groupAccent, schoolSeal, EPIGRAPH, HAS_ARTICLE } from './debates.js'
 import { bookBySlug, chapterHref } from '../reader/booksIndex.js'
 import { SITE_MAP } from '../../sites/registry.js'
 import concepts from '../../data/concepts.json'
@@ -156,6 +156,15 @@ export default function DebatePage() {
         <p className="debate-question">{d.question}</p>
         <p className="debate-framing text-soft">{d.framing}</p>
         <Guide guide={d.guide} />
+        {/* 白话讲解(owner 2026-08-01:入口从列表页卡片挪进来,并与页内那条折叠「导读」区分命名)。
+            两者成一对:导读是就地展开的短篇,白话讲解是另开的整篇文章。 */}
+        {HAS_ARTICLE.has(id) && (
+          <Link to={`/debates/${id}/article`} className="debate-explain">
+            <span className="debate-explain__tag">白话讲解</span>
+            <span className="debate-explain__text">完整一篇讲清这场辩:分歧在哪、彼此又牵着什么线</span>
+            <span className="debate-explain__go" aria-hidden="true">›</span>
+          </Link>
+        )}
       </div>
 
       {/* 圆桌布阵 + 论辩图谱(合一):印章环坐,诘难成朱线 */}
