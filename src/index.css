@@ -3635,6 +3635,13 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .baihua-idea__tag { flex-shrink: 0; font-size: .72rem; color: var(--paper-raised); background: var(--cinnabar); padding: 2px 8px; border-radius: 5px; font-family: var(--font-serif); }
 /* 白话正文走无衬线(--font-sans):与原文的衬线形成古今对照,也是「现代解说」
    这一层该有的声音。标题加粗拉开层级,行高放宽到 1.95 便于长段落阅读。 */
+/* 正文字体(设置 readFont):默认与站内其余部分一致的衬线,可切系统无衬线。
+   2026-08-01 owner 发现设置里没有这一项 —— 补进设置浮层的同时,把作用域从「只管白话」
+   扩到**经文阅读页的正文与译文**,否则在设置里改了字体、翻到经文页却纹丝不动。
+   经文原文另有讲究:文言用衬线是排版上的定见,但既然这是用户的显式选择,一并跟随。 */
+:root[data-read-font='sans'] .classic-text__original,
+:root[data-read-font='sans'] .classic-text__translation,
+:root[data-read-font='sans'] .read-para__body { font-family: var(--font-sans); }
 /* 白话/观书正文字体:默认与站内其余部分一致的衬线;工具条可切系统无衬线(设置 readFont) */
 .baihua-article { font-family: var(--font-serif); }
 :root[data-read-font='sans'] .baihua-article { font-family: var(--font-sans); }

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import FontFamilyControl from './reader/FontFamilyControl.jsx'
 import { useSettings } from './yijing/SettingsContext.jsx'
 import { FONT_SCALE_STEPS, exportData, importData, clearAllData, getLastSyncAt } from './yijing/storage.js'
 import { useAuth } from './auth/AuthContext.jsx'
@@ -162,6 +163,11 @@ export default function SettingsSheet({ open, onClose }) {
           >
             {settings.showTranslation ? '开' : '关'}
           </button>
+        </div>
+
+        <div className="settings-section">
+          <h3 className="settings-section__title">正文字体</h3>
+          <FontFamilyControl />
         </div>
 
         <div className="settings-section">
