@@ -1,0 +1,405 @@
+{
+  "title": "《黄帝内经·灵枢》的前世今生",
+  "subtitle": "一部在本土残缺的中国经典，是靠高丽献来的抄本才回到中国的",
+  "centralIdea": "《灵枢》本名《针经》，汉魏时称《九卷》，「灵枢」二字要到唐代王冰才叫开。它比《素问》更依赖师徒口传，也更早在中土残缺——北宋校正医书局校成了《素问》，却凑不出一部完整的《针经》。元祐八年，朝廷把高丽所献的《黄帝针经》颁行天下，这部书才重新流通；南宋史崧又以家藏本重编为二十四卷，即今本之祖。这篇讲它的名字、它的散亡与回流、它与《素问》各管一头的分工。至于书里讲了什么，末尾几百字点到为止。本站作医史文献研读，不作诊疗指导。",
+  "hero": {
+    "badge": "书级导读 · 前世今生",
+    "headline": "令终而不灭，久而不绝",
+    "tagline": "它在开篇许下这个愿，然后差一点就断在了自己的故土上"
+  },
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "中国典籍里，有一部经典差一点就没了。北宋朝廷组织人马校勘医书时，《素问》有本可校，与它配对的另一半却凑不出一个全本——那时距它被写下已经一千多年。真正把它救回来的不是中国人：元祐八年，高丽使者献来的书里有一部《黄帝针经》，朝廷据以刊行天下，这部书才重新在故土流通。今天摊开的《灵枢》八十一篇，走的就是这条路。这篇讲的正是它的名字、它的散亡与回流、以及它与《素问》各管一头的分工。至于《黄帝内经》整体的成书与托名，另有《素问》一篇专讲，此处不重复。"
+    },
+    {
+      "type": "h2",
+      "text": "它本来不叫这个名字"
+    },
+    {
+      "type": "p",
+      "text": "先要说清一件事：这部书叫《灵枢》的时间，比它存在的时间短得多。"
+    },
+    {
+      "type": "p",
+      "text": "汉末魏晋的人提到它，称《九卷》——就是「九卷本的那一部」，连书名都懒得起，因为当时它与《素问》是配套流通的一对。西晋皇甫谧编《针灸甲乙经》，称它《针经》，并说《素问》九卷加《针经》九卷，二九一十八卷，就是《汉志》著录的《黄帝内经》。六朝隋唐间它还有《九墟》《九灵》一类别称，见于历代书目。"
+    },
+    {
+      "type": "p",
+      "text": "「灵枢」这个名字，通行的说法是始于唐代王冰。王冰注《素问》时引用这部书，就写作《灵枢》。这两个字比前面几个名字都要玄——「枢」是门的转轴，引申为关键；「灵」则带着浓厚的道教语汇色彩。王冰本人号启玄子，与道教关系密切，故有学者认为这个书名出自他所处的那个语境。此说未成定论，但可以确定的是：今天写在封面上的这两个字，是唐朝人叫开的，此前一千年的人不这么叫。"
+    },
+    {
+      "type": "p",
+      "text": "而书里自己给出的名字，是第一个。《九针十二原》篇里，黄帝交代要立一部书，用的词是这样的："
+    },
+    {
+      "type": "quote",
+      "original": "令各有形，先立针经，愿闻其情",
+      "translation": "让每一样都有确定的形制，先立起一部《针经》来，我想听听其中的道理。",
+      "cite": {
+        "corpus": "zhongyi",
+        "slug": "lingshu",
+        "ch": 1,
+        "label": "灵枢 · 九针十二原"
+      }
+    },
+    {
+      "type": "p",
+      "text": "「先立针经」四个字，是这部书对自己的命名。它明白无误地告诉读者：这是一部关于针的经。后世那些名字——九卷、九墟、九灵、灵枢——都是外人给的，只有「针经」是它自报的家门。"
+    },
+    {
+      "type": "figure",
+      "ftype": "流变",
+      "caption": "一部书，五个名字。名称的更替本身就是流传史的刻度：什么时代的人怎么叫它，就说明它在那个时代是被怎么用的。",
+      "svg": "<svg viewBox=\"0 0 640 250\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\">\n<text x=\"320\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">一部书，五个名字</text>\n<rect x=\"12\" y=\"70\" width=\"116\" height=\"102\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/>\n<text x=\"70\" y=\"100\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">九卷</text>\n<text x=\"70\" y=\"124\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">汉末魏晋</text>\n<text x=\"70\" y=\"144\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">张仲景、王叔和</text>\n<text x=\"70\" y=\"164\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">只以卷数称之</text>\n<rect x=\"140\" y=\"70\" width=\"116\" height=\"102\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/>\n<text x=\"198\" y=\"100\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">针经</text>\n<text x=\"198\" y=\"124\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">西晋</text>\n<text x=\"198\" y=\"144\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">皇甫谧</text>\n<text x=\"198\" y=\"164\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">与素问合为十八卷</text>\n<path d=\"M128 121 L138 121\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/>\n<rect x=\"268\" y=\"70\" width=\"116\" height=\"102\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/>\n<text x=\"326\" y=\"100\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">九墟</text>\n<text x=\"326\" y=\"124\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">六朝</text>\n<text x=\"326\" y=\"144\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">别称之一</text>\n<text x=\"326\" y=\"164\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">见于历代书目</text>\n<path d=\"M256 121 L266 121\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/>\n<rect x=\"396\" y=\"70\" width=\"116\" height=\"102\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/>\n<text x=\"454\" y=\"100\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">九灵</text>\n<text x=\"454\" y=\"124\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">隋唐</text>\n<text x=\"454\" y=\"144\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">别称之一</text>\n<text x=\"454\" y=\"164\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">亦作九灵经</text>\n<path d=\"M384 121 L394 121\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/>\n<rect x=\"524\" y=\"70\" width=\"116\" height=\"102\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.2\"/>\n<text x=\"582\" y=\"100\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\">灵枢</text>\n<text x=\"582\" y=\"124\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">唐</text>\n<text x=\"582\" y=\"144\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">王冰</text>\n<text x=\"582\" y=\"164\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">今名自此始行</text>\n<path d=\"M512 121 L522 121\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/>\n<text x=\"320\" y=\"208\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">书名换了几轮，书还是那部书——名称流变本身就是流传史的刻度</text>\n<text x=\"320\" y=\"230\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">今天写在封面上的两个字，是唐朝人叫开的</text>\n</svg>"
+    },
+    {
+      "type": "h2",
+      "text": "口耳之间的学问"
+    },
+    {
+      "type": "p",
+      "text": "《黄帝内经》整体的成书情形——托名黄帝、众手所集、战国至西汉间陆续写定——在《素问》那篇里已经讲过，这里不重复。要补的只是《灵枢》这一半特有的一点：它所记的知识，本来是靠师徒口传的。"
+    },
+    {
+      "type": "quote",
+      "original": "余闻先师，有所心藏，弗著于方",
+      "translation": "我听说先师有些东西是藏在心里的，并不写在简册上。",
+      "cite": {
+        "corpus": "zhongyi",
+        "slug": "lingshu",
+        "ch": 8,
+        "label": "灵枢 · 师传"
+      }
+    },
+    {
+      "type": "p",
+      "text": "《师传》篇开头这一句，把当时的知识形态说得很清楚：一部分内容记在竹帛上，另一部分只在师徒之间口耳相传，不落文字。「弗著于方」的「方」在这里指的是书写的板牍，不是方剂。这种传授方式在先秦两汉的技术性知识里相当普遍——天文、律历、方技，都有类似的规矩。"
+    },
+    {
+      "type": "p",
+      "text": "这句话与这部书后来的命运构成了一种苦涩的呼应。越是依赖师承与私藏抄本的知识，越经不起战乱与断代；一旦某一代的传人死绝，那一支就断了。《灵枢》比《素问》更早、更彻底地在中土残缺，与它这种更接近手艺、更依赖口传的性格未必没有关系。"
+    },
+    {
+      "type": "p",
+      "text": "书里还留着别的痕迹。《内经》问答的对手不止岐伯一人，《灵枢》里就有伯高、雷公、少俞等好几位——《五味》篇答话的是伯高，《经脉》篇提问的是雷公。不同的篇出自不同的师承，编在一起时也没有统一成一个人。"
+    },
+    {
+      "type": "p",
+      "text": "另有一处很容易被读过去的托名痕迹，在开篇第一句："
+    },
+    {
+      "type": "quote",
+      "original": "余子万民，养百姓，而收租税",
+      "translation": "我视万民如子，养育百姓，并向他们征收租税。",
+      "cite": {
+        "corpus": "zhongyi",
+        "slug": "lingshu",
+        "ch": 1,
+        "label": "灵枢 · 九针十二原"
+      }
+    },
+    {
+      "type": "p",
+      "text": "黄帝在这里是以一个征收租税的君主口吻说话的。租税制度、编户齐民，这些都不是传说中黄帝之世的事，而是战国以下国家治理的语言。托名之迹，第一句就露了出来。"
+    },
+    {
+      "type": "h2",
+      "text": "一部专讲经脉与针的书"
+    },
+    {
+      "type": "p",
+      "text": "《灵枢》讲什么，开篇那段自述交代得极清楚。黄帝说自己不忍百姓有病，因此想要一套办法："
+    },
+    {
+      "type": "quote",
+      "original": "余欲勿使被毒药，无用砭石，欲以微针通其经脉",
+      "translation": "我想不用药石，不用砭石，而以细小的针来通调经脉。",
+      "cite": {
+        "corpus": "zhongyi",
+        "slug": "lingshu",
+        "ch": 1,
+        "label": "灵枢 · 九针十二原"
+      }
+    },
+    {
+      "type": "p",
+      "text": "这一句在文献上的意义，是给全书划定了范围：它要处理的是针，不是药。这是《灵枢》与《素问》最大的分工——需要说明的是，这里引它只作文献学上的定位说明，篇中所述的一切器具与手法，本站不述功效、用法与用量，宜作医史文献训读，非为对照自诊。"
+    },
+    {
+      "type": "p",
+      "text": "由「针」这个入口进去，整部书的骨架就立起来了：要用针，必先知道经脉从哪儿走到哪儿，所以有《经脉》篇那样逐条描述十二经循行的长文；必先知道经脉与内在藏府怎么连，所以有《海论》一类讲整体关联的篇章；必先知道气血在人身里怎么运行，所以有《营卫生会》讲营气卫气的昼夜循环。"
+    },
+    {
+      "type": "quote",
+      "original": "经脉者，所以能决死生，处百病，调虚实，不可不通",
+      "translation": "经脉这套东西，关系到生死判断、百病的处置、虚实的调节，不能不通晓。",
+      "cite": {
+        "corpus": "zhongyi",
+        "slug": "lingshu",
+        "ch": 4,
+        "label": "灵枢 · 经脉"
+      }
+    },
+    {
+      "type": "p",
+      "text": "《经脉》篇是全书最长也最有名的一篇。十二经脉的循行路线在这里第一次被完整、系统地写下来——起于何处、循行何路、络于何藏、终于何指——此后两千年，凡讲经络者无不以此为祖本。中医那张著名的经络图，源头就在这一篇。"
+    },
+    {
+      "type": "quote",
+      "original": "夫十二经脉者，内属于府藏，外络于肢节",
+      "translation": "十二经脉这套系统，向内隶属于藏府，向外联络着四肢关节。",
+      "cite": {
+        "corpus": "zhongyi",
+        "slug": "lingshu",
+        "ch": 5,
+        "label": "灵枢 · 海论"
+      }
+    },
+    {
+      "type": "p",
+      "text": "值得一提的是训诂上的小关口。《九针十二原》里说「小针之要，易陈而难入，麤守形，上守神」，这个「麤」就是「粗」的古字，指粗率的人只盯着形迹，高明的人守的是神机。类似这样的古字、通假、异文，在《灵枢》里比《素问》更密集——这也是它长期靠抄本流传、缺乏权威定本所留下的痕迹。"
+    },
+    {
+      "type": "quote",
+      "original": "小针之要，易陈而难入，麤守形，上守神",
+      "translation": "小针的要领，说起来容易而真正入门难；粗率的人只守着形迹，高明的人守的是神机。",
+      "cite": {
+        "corpus": "zhongyi",
+        "slug": "lingshu",
+        "ch": 1,
+        "label": "灵枢 · 九针十二原"
+      }
+    },
+    {
+      "type": "h2",
+      "text": "宋朝校书局那道空缺"
+    },
+    {
+      "type": "p",
+      "text": "北宋嘉祐年间设立的校正医书局，是这部书命运的转折点，但转折的方式是——它校不了。"
+    },
+    {
+      "type": "p",
+      "text": "林亿等人手上有王冰次注的《素问》，有全元起的旧注可以参校，有《甲乙经》可以比勘，于是校成了《重广补注黄帝内经素问》。可是轮到与《素问》配对的另一半时，问题来了：这部《针经》在中土已经找不到完帙。校书局能做的，只是在《素问》的校语里一次次引用《甲乙经》与《太素》所存的针经文字，间接留下它的影子。"
+    },
+    {
+      "type": "p",
+      "text": "一部与《素问》地位相当的经典，在国家级的校书工程里缺席，这件事本身就说明了当时的残缺程度。要注意，这不是个别现象——唐末五代的战乱、雕版印刷普及之前的抄本流通方式，让大量典籍就在那几十年里消失了。《灵枢》几乎成为其中之一。"
+    },
+    {
+      "type": "h2",
+      "text": "元祐八年，一部书从高丽回来"
+    },
+    {
+      "type": "p",
+      "text": "转机来自朝鲜半岛。"
+    },
+    {
+      "type": "p",
+      "text": "据《宋史》哲宗本纪与宋人的记载，元祐八年正月，朝廷下诏，把高丽所献的《黄帝针经》颁行天下。此前数年，高丽遣使入宋，所献书籍中即有此书。一部在本土残缺的经典，靠邻国保存的抄本回到了故土，随即由官方刊布——这是中国文献史上最漂亮的一次回流，也是《灵枢》能有今天的直接原因。"
+    },
+    {
+      "type": "p",
+      "text": "这件事还有一个耐人寻味的背景。同一段年月里，苏轼连上数道奏章，反对朝廷与高丽在书籍上的往来，理由包括耗费国力、恐中国典籍外流为他人所用（见《东坡奏议》中论高丽诸札）。站在他的位置上，那些担忧未必没有道理；但从结果看，正是这条被他反对的通道，把一部中国自己丢掉的经典送了回来。历史在这里开了一个不大不小的玩笑。"
+    },
+    {
+      "type": "p",
+      "text": "这也提醒我们，东亚的汉籍从来不是按国界流动的。《素问》那篇里说到的杨上善《黄帝内经太素》，中土散佚而在日本仁和寺的库房里躺了八百年，清末才影写回传；《灵枢》则由高丽送还。两件事发生在不同的世纪、不同的方向，性质却完全一样。"
+    },
+    {
+      "type": "figure",
+      "ftype": "时间线",
+      "caption": "一条断过又接上的线。中间那一格是全篇的关键——一部中国经典，靠高丽的献本回到中国。",
+      "svg": "<svg viewBox=\"0 0 640 452\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\">\n<text x=\"320\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">《灵枢》失而复得</text>\n<line x1=\"112\" y1=\"50\" x2=\"112\" y2=\"402\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/>\n<circle cx=\"112\" cy=\"70\" r=\"5\" style=\"fill:var(--ink-soft)\"/>\n<text x=\"98\" y=\"75\" text-anchor=\"end\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">汉 — 唐</text>\n<rect x=\"132\" y=\"48\" width=\"490\" height=\"48\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/>\n<text x=\"148\" y=\"68\" style=\"fill:var(--ink)\" font-size=\"13.5\">以《九卷》《针经》之名流传</text>\n<text x=\"148\" y=\"88\" style=\"fill:var(--ink-soft)\" font-size=\"11\">唐代太医署以《素问》《黄帝针经》为教材</text>\n<circle cx=\"112\" cy=\"132\" r=\"5\" style=\"fill:var(--ink-soft)\"/>\n<text x=\"98\" y=\"137\" text-anchor=\"end\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">北宋 嘉祐—治平</text>\n<rect x=\"132\" y=\"110\" width=\"490\" height=\"48\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/>\n<text x=\"148\" y=\"130\" style=\"fill:var(--ink)\" font-size=\"13.5\">校正医书局校《素问》，而《针经》无全本可校</text>\n<text x=\"148\" y=\"150\" style=\"fill:var(--ink-soft)\" font-size=\"11\">《素问》有王冰本可据，针经一系中土已残</text>\n<circle cx=\"112\" cy=\"194\" r=\"6\" style=\"fill:var(--cinnabar)\"/>\n<text x=\"98\" y=\"199\" text-anchor=\"end\" style=\"fill:var(--cinnabar)\" font-size=\"11.5\">北宋 元祐八年</text>\n<rect x=\"132\" y=\"172\" width=\"490\" height=\"48\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.2\"/>\n<text x=\"148\" y=\"192\" style=\"fill:var(--cinnabar)\" font-size=\"13.5\">高丽所献《黄帝针经》诏颁天下</text>\n<text x=\"148\" y=\"212\" style=\"fill:var(--ink-soft)\" font-size=\"11\">见《宋史》哲宗本纪及宋人记载——靠邻国回传保住</text>\n<circle cx=\"112\" cy=\"256\" r=\"6\" style=\"fill:var(--cinnabar)\"/>\n<text x=\"98\" y=\"261\" text-anchor=\"end\" style=\"fill:var(--cinnabar)\" font-size=\"11.5\">南宋 绍兴间</text>\n<rect x=\"132\" y=\"234\" width=\"490\" height=\"48\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.2\"/>\n<text x=\"148\" y=\"254\" style=\"fill:var(--cinnabar)\" font-size=\"13.5\">史崧献家藏九卷本，重编为二十四卷</text>\n<text x=\"148\" y=\"274\" style=\"fill:var(--ink-soft)\" font-size=\"11\">并附音释，今本《灵枢》即出此系统</text>\n<circle cx=\"112\" cy=\"318\" r=\"5\" style=\"fill:var(--ink-soft)\"/>\n<text x=\"98\" y=\"323\" text-anchor=\"end\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">元 至元后</text>\n<rect x=\"132\" y=\"296\" width=\"490\" height=\"48\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/>\n<text x=\"148\" y=\"316\" style=\"fill:var(--ink)\" font-size=\"13.5\">古林书堂刊本</text>\n<text x=\"148\" y=\"336\" style=\"fill:var(--ink-soft)\" font-size=\"11\">现存较早的《灵枢》全帙刻本之一</text>\n<circle cx=\"112\" cy=\"380\" r=\"5\" style=\"fill:var(--ink-soft)\"/>\n<text x=\"98\" y=\"385\" text-anchor=\"end\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">明</text>\n<rect x=\"132\" y=\"358\" width=\"490\" height=\"48\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/>\n<text x=\"148\" y=\"378\" style=\"fill:var(--ink)\" font-size=\"13.5\">赵府居敬堂本等递刻</text>\n<text x=\"148\" y=\"398\" style=\"fill:var(--ink-soft)\" font-size=\"11\">明清递相翻刻，遂成通行之本</text>\n<text x=\"320\" y=\"436\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">中间那一格是全篇的关键：一部中国经典，靠高丽的献本才回到中国</text>\n</svg>"
+    },
+    {
+      "type": "pull",
+      "text": "书里说「令可传于后世，必明为之法，令终而不灭，久而不绝」——它差一点就没做到。"
+    },
+    {
+      "type": "p",
+      "text": "回过头看，开篇那句祈愿读起来格外有分量："
+    },
+    {
+      "type": "quote",
+      "original": "令可传于后世，必明为之法，令终而不灭，久而不绝",
+      "translation": "要能传给后世，就必须把法度定得明白，使它有始有终而不湮灭，历久而不断绝。",
+      "cite": {
+        "corpus": "zhongyi",
+        "slug": "lingshu",
+        "ch": 1,
+        "label": "灵枢 · 九针十二原"
+      }
+    },
+    {
+      "type": "p",
+      "text": "写下这句话的人大概想不到，这部书真的走到了「几乎断绝」的那一步，而把它接上的是一千多年后一位外国使臣带来的箱笼。"
+    },
+    {
+      "type": "h2",
+      "text": "史崧的家藏本"
+    },
+    {
+      "type": "p",
+      "text": "元祐八年颁行的那个本子，后来也没能完整传下来。今天所据的《灵枢》，还要再经一道手。"
+    },
+    {
+      "type": "p",
+      "text": "南宋绍兴年间，一位叫史崧的人把自己家藏的《灵枢》九卷献出，并重新编次为二十四卷，共八十一篇，还在卷末附上了音释。他在序里说明了这是家藏旧本、如何整理。今本《灵枢》即出自这个系统——换句话说，我们读的是南宋人整理过的本子，不是元祐颁行的原样，更不是高丽献本的原样。"
+    },
+    {
+      "type": "p",
+      "text": "此后是刻本时代：元代古林书堂刊本是现存较早的全帙之一，明代赵府居敬堂本等递相翻刻，遂成明清以下的通行本。层层递刻之间，文字自然又有出入，这是所有古籍的常态。"
+    },
+    {
+      "type": "p",
+      "text": "正因为这条链路上环节太多，历来有人怀疑今本《灵枢》未必就是汉唐旧帙的原貌。宋以后即有学者提出，史崧所献之本与皇甫谧当年见到的《针经》之间隔了多少改动，已经无从核实；明清也有人对其中若干篇的年代表示保留。今天较稳妥的说法是：今本《灵枢》主体确属古《针经》一系，但经过宋人编次，其中篇次分合与个别文字已非原样。这个分歧至今存在，本站如实标出，不替读者拍板。"
+    },
+    {
+      "type": "table",
+      "caption": "今本《灵枢》经过的三只手。每一只手都必要，也每一只手都留下了痕迹。",
+      "head": [
+        "环节",
+        "做了什么",
+        "留下的问题"
+      ],
+      "rows": [
+        [
+          "高丽献本（北宋元祐八年颁行）",
+          "把中土已残的《黄帝针经》送回并由官方刊布",
+          "献本本身未能完整传世，今天见不到原样"
+        ],
+        [
+          "史崧本（南宋绍兴间）",
+          "以家藏九卷本重编为二十四卷八十一篇，附音释",
+          "今本即出此系统，与古《针经》的距离已难核实"
+        ],
+        [
+          "元明递刻（古林书堂本、赵府居敬堂本等）",
+          "刻本流通，遂成通行之本",
+          "层层翻刻，文字互有出入，需据诸本互校"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "两半书，各管一头"
+    },
+    {
+      "type": "p",
+      "text": "把《素问》和《灵枢》摆在一起看，分工其实相当清楚。"
+    },
+    {
+      "type": "p",
+      "text": "《素问》偏理论：阴阳五行的框架、藏象学说、病因病机、诊法的原则，多以「为什么」的方式展开。《灵枢》偏形体与技术：经脉的具体走向、腧穴、气血运行、针具与刺法，多以「是什么、在哪里」的方式展开。一个说理，一个说形。"
+    },
+    {
+      "type": "p",
+      "text": "这不意味着两者截然二分——《素问》里也有讲刺法的篇章，《灵枢》里也有《本神》《天年》那样纯讲义理的长篇。《灵枢·天年》讲人一生的阶段，从十岁到百岁一段一段说下来，是先秦两汉文献里少见的生命历程描述；《本神》讲精、神、魂、魄、心、意、志、思、智、虑这一整套词的分界，几乎是一篇古汉语心理术语的辞典。这些都不属于「针」的范围。"
+    },
+    {
+      "type": "quote",
+      "original": "以母为基，以父为楯，失神者死，得神者生也",
+      "translation": "以母为根基，以父为凭依；失去神的死，得到神的生。",
+      "cite": {
+        "corpus": "zhongyi",
+        "slug": "lingshu",
+        "ch": 6,
+        "label": "灵枢 · 天年"
+      }
+    },
+    {
+      "type": "table",
+      "caption": "两半书的分工。合起来才是《黄帝内经》，缺一半就只剩半部。",
+      "head": [
+        "",
+        "素问",
+        "灵枢"
+      ],
+      "rows": [
+        [
+          "自报家门",
+          "以「问」为名，问的是根本之理",
+          "篇中自称「先立针经」"
+        ],
+        [
+          "重心",
+          "阴阳五行、藏象、病因、诊法原则",
+          "经脉循行、腧穴、气血运行、针具刺法"
+        ],
+        [
+          "文体",
+          "长篇问答，说理为主",
+          "问答与条列并用，述形为主"
+        ],
+        [
+          "流传",
+          "全元起注、王冰次注、宋人新校正，链条完整",
+          "中土一度残缺，赖高丽献本回传，宋人重编"
+        ],
+        [
+          "最有名的篇",
+          "《上古天真论》《阴阳应象大论》",
+          "《九针十二原》《经脉》"
+        ]
+      ]
+    },
+    {
+      "type": "figure",
+      "ftype": "时间线",
+      "caption": "《灵枢》之后，针灸之学有自己的一条书脉。此处只列文献谱系，不涉任何操作、适应范围与效果判断。",
+      "svg": "<svg viewBox=\"0 0 640 240\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\">\n<text x=\"320\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">从《灵枢》流出的一条学脉</text>\n<line x1=\"40\" y1=\"90\" x2=\"605\" y2=\"90\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/>\n<circle cx=\"70\" cy=\"90\" r=\"6\" style=\"fill:var(--cinnabar)\"/>\n<text x=\"70\" y=\"72\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">汉</text>\n<line x1=\"70\" y1=\"90\" x2=\"70\" y2=\"108\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/>\n<text x=\"70\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"13.5\">灵枢（针经）</text>\n<text x=\"70\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">经脉、腧穴、刺法</text>\n<text x=\"70\" y=\"164\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">针灸之学的源头</text>\n<circle cx=\"200\" cy=\"90\" r=\"5\" style=\"fill:var(--ink-soft)\"/>\n<text x=\"200\" y=\"72\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">西晋</text>\n<line x1=\"200\" y1=\"90\" x2=\"200\" y2=\"108\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/>\n<text x=\"200\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13.5\">甲乙经</text>\n<text x=\"200\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">皇甫谧分类编次</text>\n<text x=\"200\" y=\"164\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">腧穴系统首次整理</text>\n<circle cx=\"330\" cy=\"90\" r=\"5\" style=\"fill:var(--ink-soft)\"/>\n<text x=\"330\" y=\"72\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">北宋</text>\n<line x1=\"330\" y1=\"90\" x2=\"330\" y2=\"108\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/>\n<text x=\"330\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13.5\">铜人图经</text>\n<text x=\"330\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">王惟一奉敕撰</text>\n<text x=\"330\" y=\"164\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">并铸针灸铜人为式</text>\n<circle cx=\"460\" cy=\"90\" r=\"5\" style=\"fill:var(--ink-soft)\"/>\n<text x=\"460\" y=\"72\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">元</text>\n<line x1=\"460\" y1=\"90\" x2=\"460\" y2=\"108\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/>\n<text x=\"460\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13.5\">十四经发挥</text>\n<text x=\"460\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">滑寿撰</text>\n<text x=\"460\" y=\"164\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">经络学说的定本之一</text>\n<circle cx=\"580\" cy=\"90\" r=\"5\" style=\"fill:var(--ink-soft)\"/>\n<text x=\"580\" y=\"72\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">明</text>\n<line x1=\"580\" y1=\"90\" x2=\"580\" y2=\"108\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/>\n<text x=\"580\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13.5\">针灸大成</text>\n<text x=\"580\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">杨继洲集成</text>\n<text x=\"580\" y=\"164\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">此后流传最广</text>\n<text x=\"320\" y=\"206\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">此处只列文献谱系，不涉任何操作与适应范围</text>\n<text x=\"320\" y=\"228\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"12\">诸书今存与否、卷帙分合，各家著录不尽相同</text>\n</svg>"
+    },
+    {
+      "type": "p",
+      "text": "这条学脉一直延伸到近世。皇甫谧把《针经》的内容拆开重编成《甲乙经》，把腧穴系统整理了一遍；北宋王惟一奉敕撰《铜人腧穴针灸图经》，并铸造针灸铜人作为标准——一部书变成了一具铜像，这在中国典籍史上是很特别的一次转译；元代滑寿《十四经发挥》、明代杨继洲《针灸大成》则各自成为后世流传最广的读本。这些书都不在本站书目内，此处只作源流的说明。"
+    },
+    {
+      "type": "h2",
+      "text": "那么它到底说了什么"
+    },
+    {
+      "type": "p",
+      "text": "前面讲了这么多来路，这里用几百字交代它的大概。要细看，各篇另有白话，点进去读。"
+    },
+    {
+      "type": "p",
+      "text": "《灵枢》的核心是一套关于「通路」的学说。它认为人身之内有一套贯通上下内外的路径，藏府在内、肢节在外，气血循着这些路径周流不息；健康与否，取决于这套通路是否顺畅。整部书的绝大部分内容，都是在描述这套通路的形制与规律。"
+    },
+    {
+      "type": "p",
+      "text": "《营卫生会》把气血分成营与卫两支，一支行于脉中、一支行于脉外，昼夜各行二十五度而大会于某时——这是一套精密的时间模型，把人身的运行与昼夜相配。《海论》则用地理作比，说人有髓海、血海、气海、水谷之海，与天下的四海相应。《本神》给出了精神魂魄一系列词的定义；《天年》讲人生百年、十年一变；《师传》讲的是问诊时该有的态度，那句「入国问俗，入家问讳，上堂问礼，临病人问所便」，今天读来仍是一段关于分寸与尊重的好文字。"
+    },
+    {
+      "type": "p",
+      "text": "需要再说一遍的是：以上只是内容的概述，本站不就其中任何一项作功效、用法或适应范围的说明，也不下病症与疗效的断语。这部书在今天的价值，一半在医史与文献，一半在它所呈现的那种把人身当作一个整体系统来看的思路——两者都不需要通过自诊来体会。"
+    },
+    {
+      "type": "h2",
+      "text": "从哪儿读起"
+    },
+    {
+      "type": "p",
+      "text": "本站选录八篇，不必按序硬读。《九针十二原》是全书开篇，也是它的自序，读它等于听这部书自报家门；《天年》讲一生的阶段，最不需要专业背景；《师传》短而有味，讲的是医者与人打交道的分寸。这三篇进去，门就开了。"
+    },
+    {
+      "type": "p",
+      "text": "《经脉》是全书最长的一篇，也是最专的一篇，术语密集、路线繁复。它值得读，但不必第一篇就读——先知道这部书是干什么的，再看那些路线，才不会一上来就被专名淹没。"
+    },
+    {
+      "type": "p",
+      "text": "《素问》另有一篇导读，讲的是《黄帝内经》整体的成书、托名与四次重编。那篇不重复这里的失而复得，两篇合看，才是完整的《黄帝内经》。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本篇是《黄帝内经·灵枢》的**书级导读**，重心在名称流变与散亡回传，不逐篇展开义理——逐篇白话见各篇；《黄帝内经》整体的成书与托名见《素问》导读，此处不重复。",
+        "所引《灵枢》原文均出自本站底本，逐字可核，文中所标篇名即站内篇名。",
+        "《汉书·艺文志》著录、皇甫谧《针灸甲乙经》自序、王冰《素问》次注、《宋史》所载元祐八年颁高丽所献《黄帝针经》、苏轼论高丽诸札、史崧序、《甲乙经》《铜人腧穴针灸图经》《十四经发挥》《针灸大成》等，**均不在本站书目**，故只作转述与标注，不作站内引文。",
+        "「灵枢」之名始于王冰、今本是否即古《针经》原貌、史崧本与高丽献本的关系，学界均有分歧；元祐八年颁书之事有史籍可据，而献书年月各家记载略有出入，文中已按「共识直写、分歧标出」处理，不给确数。",
+        "**本站作医史与文献研读，不作诊疗指导。** 文中引及的经脉、针具、刺法等内容，只作文献与训诂层面的说明，不述功效、用法与用量，不下病症或疗效断语——**宜作医史文献训读，非为对照自诊**；身体不适请就医。"
+      ]
+    }
+  ]
+}

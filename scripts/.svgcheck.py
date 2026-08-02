@@ -4,7 +4,7 @@ def chk(f):
     for bi,b in enumerate(a.get('blocks',[])):
         sv=b.get('svg')
         if not sv: continue
-        m=re.search(r'viewBox="([\d\.\s\-]+)"',sv)
+        m=re.search(r'viewBox=["\']([\d\.\s\-]+)["\']',sv)
         if not m: bad.append((bi,'no viewBox')); continue
         x0,y0,W,H=[float(v) for v in m.group(1).split()]
         try: root=ET.fromstring(sv)
