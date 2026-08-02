@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import PixelAvatar from '../auth/PixelAvatar.jsx'
+import SchoolAvatar from '../auth/SchoolAvatar.jsx'
 import { useAuth } from '../auth/AuthContext.jsx'
 import { TURNSTILE_SITE_KEY } from './config.js'
 import { apiFetch, IS_NATIVE } from '../auth/apiClient.js'
@@ -280,7 +280,7 @@ export default function CommentSection({ corpus, slug, chapter }) {
                   className={`comment-section__item${hidden ? ' comment-section__item--hidden' : ''}`}
                 >
                   <div className="comment-section__avatar">
-                    <PixelAvatar seed={comment.user.avatarSeed} size={28} />
+                    <SchoolAvatar seed={comment.user.avatarSeed} size={28} />
                   </div>
                   <div className="comment-section__content">
                     <div className="comment-section__meta">

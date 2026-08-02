@@ -6,7 +6,7 @@ import { FONT_SCALE_STEPS, exportData, importData, clearAllData, getLastSyncAt }
 import { useAuth } from './auth/AuthContext.jsx'
 import { syncNow } from './auth/sync.js'
 import { apiFetch } from './auth/apiClient.js'
-import PixelAvatar from './auth/PixelAvatar.jsx'
+import SchoolAvatar from './auth/SchoolAvatar.jsx'
 
 function syncTimeLabel(timestamp) {
   if (!timestamp) return '尚未同步过'
@@ -21,13 +21,17 @@ function syncTimeLabel(timestamp) {
 // 任何分站点 nav 齿轮就地打开,不再把读经站用户甩进易经 /me。数据变更后刷新页面以全站生效。
 export default function SettingsSheet({ open, onClose }) {
   const { settings, setSettings } = useSettings()
-  const { user, loading: authLoading, enabled: authEnabled, openAuth, logout } = useAuth()
+  const { user, loading: authLoading, enabled: authEnabled, openAuth, logout, refresh } = useAuth()
   const [clearConfirm, setClearConfirm] = useState('')
   const [accountError, setAccountError] = useState('')
   const [syncing, setSyncing] = useState(false)
   // 已屏蔽名单:拉黑必须能解除,否则「拉黑能力」不成立(App Store 1.2 那一条要的是
   // 能力,不是单向操作)。只在登录且面板打开时才拉,免得给游客白发请求。
   const [blocks, setBlocks] = useState(null)
+  // 改名:默认昵称是注册邮箱的 @ 前半段,等于把邮箱前缀挂在每条评论上,该给个改的口子
+  const [renaming, setRenaming] = useState(false)
+  const [nameDraft, setNameDraft] = useState('')
+  const [savingName, setSavingName] = useState(false)
   const [lastSyncAt, setLastSyncAt] = useState(getLastSyncAt)
 
   // 锁背景滚动 + Esc 关闭 + 关闭还原焦点
@@ -107,6 +111,29 @@ export default function SettingsSheet({ open, onClose }) {
     }
   }
 
+  async function saveName(event) {
+    event.preventDefault()
+    const next = nameDraft.trim()
+    if (!next || next === user.displayName) { setRenaming(false); return }
+    setSavingName(true)
+    setAccountError('')
+    try {
+      const response = await apiFetch('/api/me', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ displayName: next }),
+      })
+      const data = await response.json().catch(() => null)
+      if (!response.ok) throw new Error(data?.error || '改名失败,请稍后重试')
+      await refresh()
+      setRenaming(false)
+    } catch (error) {
+      setAccountError(error.message)
+    } finally {
+      setSavingName(false)
+    }
+  }
+
   useEffect(() => {
     if (!open || !user) { setBlocks(null); return }
     let alive = true
@@ -142,12 +169,39 @@ export default function SettingsSheet({ open, onClose }) {
             ) : user ? (
               <>
                 <div className="settings-account__user">
-                  <PixelAvatar seed={user.avatarSeed} size={38} />
+                  <SchoolAvatar seed={user.avatarSeed} size={38} />
                   <div className="settings-account__identity">
-                    <strong>{user.displayName}</strong>
+                    {renaming ? (
+                      <form className="settings-account__rename" onSubmit={saveName}>
+                        <input
+                          value={nameDraft}
+                          onChange={(event) => setNameDraft(event.target.value)}
+                          maxLength={24}
+                          aria-label="昵称"
+                          autoFocus
+                        />
+                        <button className="btn-text" type="submit" disabled={savingName}>
+                          {savingName ? '保存中…' : '保存'}
+                        </button>
+                        <button className="btn-text" type="button" onClick={() => setRenaming(false)}>取消</button>
+                      </form>
+                    ) : (
+                      <strong>
+                        {user.displayName}
+                        <button
+                          className="btn-text settings-account__rename-open"
+                          type="button"
+                          onClick={() => { setNameDraft(user.displayName); setRenaming(true) }}
+                        >
+                          改名
+                        </button>
+                      </strong>
+                    )}
                     <span>{user.email}</span>
                   </div>
-                  <button className="btn-text settings-account__logout" onClick={handleLogout}>退出登录</button>
+                  {!renaming && (
+                    <button className="btn-text settings-account__logout" onClick={handleLogout}>退出登录</button>
+                  )}
                 </div>
                 <div className="settings-account__sync">
                   <span><strong>云同步</strong> · {syncTimeLabel(lastSyncAt)}</span>

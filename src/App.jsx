@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback, useRef, lazy, Suspense } from 'react'
 import { SettingsProvider } from './features/yijing/SettingsContext.jsx'
 import { AuthProvider } from './features/auth/AuthContext.jsx'
 import { useAuth } from './features/auth/AuthContext.jsx'
-import PixelAvatar from './features/auth/PixelAvatar.jsx'
+import SchoolAvatar from './features/auth/SchoolAvatar.jsx'
 import ErrorBoundary from './features/ErrorBoundary.jsx'
 import { siteForPath, activeGroup, sitesInGroup, HOST_GROUPS, MASTER_PORTAL_PATH } from './sites/registry.js'
 import { registerBookShortcut } from './native/appShortcuts.js'
@@ -195,7 +195,7 @@ function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings, neu
             aria-label={`账户 · ${user.displayName}`}
             title={`${user.displayName} · 账户与设置`}
           >
-            <PixelAvatar seed={user.avatarSeed} size={22} />
+            <SchoolAvatar seed={user.avatarSeed} size={22} />
           </button>
         )}
         {!neutral && module.hasSearch && (

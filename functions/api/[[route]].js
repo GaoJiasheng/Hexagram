@@ -720,6 +720,36 @@ app.post('/auth/login', async (c) => {
   }
 })
 
+// 昵称改名。默认昵称是注册邮箱的 @ 前半段(见 register),等于把邮箱前缀公开在每条评论上 ——
+// 有人不愿意,也有人就是想换个名字,所以给一个改名口。
+// 约束照 users 表的 CHECK:trim 后 1–80 字。**不做全站唯一**:这是研读站不是社交平台,
+// 强制唯一只会逼出「张三2」「张三_」这种名字,收益抵不上麻烦。
+app.patch('/me', async (c) => {
+  try {
+    const user = await requireUser(c)
+    const input = await readJsonBody(c)
+    const raw = typeof input?.displayName === 'string' ? input.displayName : ''
+    // 归一化:压掉连续空白、剔除零宽字符与换行 —— 否则可以用空白字符冒充别人的名字,
+    // 或者用超长零宽串把评论区的版式撑坏。
+    const name = raw
+      .replace(/[\u200b-\u200f\u2028\u2029\ufeff]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim()
+    if (name.length < 1) throw new RequestError(400, '昵称不能为空')
+    if ([...name].length > 24) throw new RequestError(400, '昵称最长 24 个字')
+
+    const flagged = screenComment(name)
+    if (flagged) throw new RequestError(400, `昵称${flagged.message},请换一个`)
+
+    await getDb(c).prepare('UPDATE users SET display_name = ? WHERE id = ?').bind(name, user.id).run()
+    return c.json({ ok: true, user: publicUser({ ...user, display_name: name }) })
+  } catch (error) {
+    if (error instanceof RequestError) return c.json({ ok: false, error: error.message }, error.status)
+    console.error('Rename failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
 app.post('/auth/logout', async (c) => {
   clearSessionCookie(c)
   try {

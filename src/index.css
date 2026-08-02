@@ -2412,6 +2412,14 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .settings-blocks { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); }
 .settings-blocks__title { color: var(--ink-soft); font-size: 0.78rem; font-weight: 600; }
 .settings-blocks ul { list-style: none; margin: 6px 0 0; padding: 0; }
+.settings-account__rename-open { margin-left: 8px; font-size: 0.74rem; font-weight: 400; color: var(--ink-faint); }
+.settings-account__rename-open:hover { color: var(--cinnabar); }
+.settings-account__rename { display: flex; align-items: center; gap: 6px; }
+.settings-account__rename input { flex: 1 1 auto; min-width: 0; padding: 4px 8px;
+  border: 1px solid var(--line); border-radius: 6px; background: var(--paper);
+  color: var(--ink); font-family: inherit; font-size: 0.86rem; }
+.settings-account__rename input:focus { outline: none; border-color: var(--cinnabar); }
+.school-avatar { display: block; flex: 0 0 auto; }
 .settings-blocks li { display: flex; align-items: center; justify-content: space-between;
   gap: 10px; padding: 4px 0; color: var(--ink-soft); font-size: 0.8rem; }
 
