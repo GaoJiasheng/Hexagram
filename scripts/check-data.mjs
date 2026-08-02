@@ -751,6 +751,45 @@ if (fs.existsSync(glossaryPath)) {
   if (nDaodu) infos.push(`书级导读: ${nDaodu} 篇 · ${nBadQ} 坏引文`)
 }
 
+// ---------- 8e-2. 中医:研习不诊疗(全站最严的一条铁律,机器守住)----------
+// 人工审过一轮(2026-08-03,81.6 万字五层):既有内容零违规。但这条线必须由机器接着守,
+// 不然下一批产出就靠运气。两项:
+//   ① 每章白话必须带研习声明 —— 读者是逐章读的,声明只写在书首等于没写;
+//   ② 文章不得用**自己的口吻**给出用药/进补/自疗的祈使或建议。
+// **原文与译文豁免**:方剂、主治、「久服神仙不死」都是原典的话,照译不是背书。
+{
+  const dir = path.join(ROOT, 'src/data/zhongyi/baihua')
+  if (fs.existsSync(dir)) {
+    const DISCLAIMER = /非医疗建议|不诊疗|不作诊断|请就医|咨询专业医生|不构成.{0,6}(医疗|诊断)/
+    // 祈使/建议式:第二人称或劝告词 + 用药动作
+    const ADVICE = /(你|读者|我们|大家|不妨|建议|应当|应该|最好|试试|照此|按此)[^。！？]{0,14}(服用|服食|煎服|外敷|抓药|进补|自疗|开方)/g
+    // 同句里有否定就是在撇清(「不是要你照方吃药」),不算违规
+    const NEG = /不(要|可|应|宜|得|能|是|为|在|必|敢|学)|切勿|绝不|请勿|禁止|而非|并非|未必|无须|别/
+    let nCh = 0, nMissing = 0, nAdvice = 0
+    for (const file of fs.readdirSync(dir).filter((f) => f.endsWith('.json'))) {
+      const book = JSON.parse(fs.readFileSync(path.join(dir, file), 'utf8'))
+      for (const [ch, article] of Object.entries(book)) {
+        nCh++
+        const text = JSON.stringify(article)
+        if (!DISCLAIMER.test(text)) {
+          err(`中医白话 ${file.replace('.json', '')}#${ch}: 缺「研习不诊疗」声明`)
+          nMissing++
+        }
+        let m
+        ADVICE.lastIndex = 0
+        while ((m = ADVICE.exec(text))) {
+          const ctx = text.slice(Math.max(0, m.index - 45), m.index + 45)
+          if (!NEG.test(ctx)) {
+            warn(`中医白话 ${file.replace('.json', '')}#${ch}: 疑似以本文口吻给用药建议「${m[0]}」,请人工复核`)
+            nAdvice++
+          }
+        }
+      }
+    }
+    if (nCh) infos.push(`中医白话: ${nCh} 章 · 缺声明 ${nMissing} · 待复核建议句 ${nAdvice}`)
+  }
+}
+
 // ---------- 8f. 家级导读「一家之来路」校验(docs/school-intro-standard.md)----------
 // 与书级同源但更严:体裁要求散文,故**禁用 callout/list/steps**(那三种会把散文剁碎);
 // 字数按 owner 定的加厚档分组;易经不做(那一层已由学堂/源流页覆盖)。
