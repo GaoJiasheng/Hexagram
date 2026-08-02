@@ -1,0 +1,193 @@
+{
+  "title": "它写在什么年代，以及怎么读它",
+  "subtitle": "书出版的同一年，AlexNet 出场——这本书正好站在两个时代的接缝上。此后十年，楼层被换了个遍，地基一块没动",
+  "centralIdea": "这一章讲的不是书里的内容，是读完之后必须补上的一层：坐标。它底子是作者在谷歌黑板报上的专栏，二〇一二年前后结集成书；而二〇一二年恰好是一道分水岭——那一年 AlexNet 在图像识别比赛上大胜，深度学习开场，此后十年把书里的具体技术换了个遍：N 元语言模型让位给 Transformer，隐含马尔可夫做语音让位给端到端模型，中文分词从「第一道工序」退成子词切分，关键词匹配之外多了一层语义向量检索。但被换掉的是楼层，地基一块没动：信息熵与交叉熵（今天训练大模型的损失函数就是它）、贝叶斯、动态规划、倒排索引、余弦相似度、「数据量决定该用多复杂的模型」，全都还在原地。更要紧的是那个主张不但没塌，还被放大了一倍——通用方法加上数据和算力，会赢过人手工塞进去的专家知识。所以读它的正确姿势不是当技术手册，而是当一份身在其中的人写下的胜负记录：带着年份读，带着「这一章替我省掉了哪份苦工」这一问读。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "把「这本书写于什么年代」单拎出来说一章，听着有点多余——可对这本书来说，年份是理解它的前提。**它结集出版的那一年，恰好是它所记录的那个时代结束的那一年。**不交代这一点，你会拿它当今天的技术手册读，然后困惑于书里郑重其事讲了一整章的东西，为什么在今天的招聘要求里一个字都见不着。"
+    },
+
+    { "type": "h2", "text": "一、它是从哪儿来的" },
+    {
+      "type": "p",
+      "text": "它的出身是**专栏**。作者当时在谷歌做搜索和自然语言处理，从二〇〇六年前后开始在「谷歌黑板报」上连载，一篇讲一个话题，写给中文世界的普通读者看。二〇一二年前后结集成书，后来又出过增补的版本，补进了神经网络、大数据这些新内容——所以不同版本的章目会有出入，这很正常。"
+    },
+    {
+      "type": "p",
+      "text": "知道它是专栏结集，很多事就解释得通了。**它的好看是专栏体带来的**：每章从一个故事进去，中间讲道理，结尾收一句感受，读起来毫不费力，坐地铁能读两章。**它的浅也是专栏体带来的**：一个模型常常讲到「大致是这么回事」就收住，章与章之间不严格递进，同一个概念在不同章里重复解释。**拿它当教材会失望，拿它当引路的书则刚刚好。**"
+    },
+    {
+      "type": "p",
+      "text": "还有一点得摆在明面上：这是一本**从谷歌视角写的书**。例子大量来自那家公司的实战，人物章节写的是作者的同事和前辈，语气里带着敬意。这给了它别处读不到的现场感——你能读到一个决策当时是怎么被拍下来的；但也意味着，行业里的另一些路线、另一些争论，在这本书里基本是缺席的。"
+    },
+
+    { "type": "h2", "text": "二、二〇一二年这道坎" },
+    {
+      "type": "p",
+      "text": "现在说那个关键年份。二〇一二年在人工智能史上是一道坎：那一年，一个叫 AlexNet 的神经网络在图像识别比赛上把所有传统方法甩开一大截，深度学习从此开场，十年之内横扫图像、语音和语言。**而这本书，正好在这前后出版。**"
+    },
+    {
+      "type": "p",
+      "text": "所以它的位置相当特殊：**它是统计学习黄金时代的总结之作，而它总结完的那一刻，下一个时代开场了。**这听着像倒霉，其实是它罕见的价值所在——一个时代结束的时候，恰好有一个身在其中的人，把这个时代赢在哪里、怎么赢的，用中文完整讲了一遍。**这样的书不是每个时代都有的。**"
+    },
+    {
+      "type": "p",
+      "text": "那一年具体变的是什么？**是「特征」这件事。**在那之前，不管做图像还是做语言，人得先想清楚该让机器看哪些线索——图像看边缘和角点，文字看词频和词性——这一步叫特征工程，是这一行吃饭的手艺，也是最耗人的一步。AlexNet 之后，这一步交给模型自己去学了。**而这恰恰是本书那个主张的又一次胜利：连「该看什么」都不再由人来定。**它被自己主张的东西超越了。"
+    },
+    {
+      "type": "figure",
+      "ftype": "时间轴",
+      "caption": "这本书的视野，覆盖的是从香农到统计学习黄金时代的那一段。它收笔的地方，正是下一个时代的起点。",
+      "svg": "<svg viewBox='0 0 660 272' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>这本书站在哪一段时间上</text><rect x='58' y='140' width='382' height='22' rx='5' style='fill:var(--ink-faint)' opacity='0.2'/><line x1='48' y1='151' x2='632' y2='151' style='stroke:var(--line)' stroke-width='1.5'/><line x1='70' y1='112' x2='70' y2='144' style='stroke:var(--line)' stroke-width='0.8' stroke-dasharray='3 3'/><circle cx='70' cy='151' r='4.5' style='fill:var(--ink-soft)'/><text x='70' y='104' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>香农 · 信息熵</text><text x='70' y='180' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>1948</text><line x1='196' y1='126' x2='196' y2='144' style='stroke:var(--line)' stroke-width='0.8' stroke-dasharray='3 3'/><circle cx='196' cy='151' r='4.5' style='fill:var(--ink-soft)'/><text x='196' y='118' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>语音识别交给统计</text><text x='196' y='180' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>1972</text><line x1='330' y1='112' x2='330' y2='144' style='stroke:var(--line)' stroke-width='0.8' stroke-dasharray='3 3'/><circle cx='330' cy='151' r='4.5' style='fill:var(--ink-soft)'/><text x='330' y='104' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>网页排名 PageRank</text><text x='330' y='180' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>1998</text><line x1='434' y1='126' x2='434' y2='144' style='stroke:var(--cinnabar-pure)' stroke-width='1' stroke-dasharray='3 3'/><circle cx='434' cy='151' r='6' style='fill:var(--cinnabar-pure)'/><text x='434' y='118' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar-pure)'>本书出版 ＝ AlexNet</text><text x='434' y='180' text-anchor='middle' font-size='11' font-weight='bold' style='fill:var(--cinnabar-pure)'>2012</text><line x1='528' y1='112' x2='528' y2='144' style='stroke:var(--line)' stroke-width='0.8' stroke-dasharray='3 3'/><circle cx='528' cy='151' r='4.5' style='fill:var(--ink-faint)'/><text x='528' y='104' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>Transformer</text><text x='528' y='180' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>2017</text><line x1='608' y1='126' x2='608' y2='144' style='stroke:var(--line)' stroke-width='0.8' stroke-dasharray='3 3'/><circle cx='608' cy='151' r='4.5' style='fill:var(--ink-faint)'/><text x='652' y='118' text-anchor='end' font-size='11.5' style='fill:var(--ink-faint)'>大模型进入公众视野</text><text x='608' y='180' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>2022</text><text x='249' y='210' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>本书的视野窗口</text><text x='560' y='210' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>书里没有的十年</text><text x='330' y='246' text-anchor='middle' font-size='12' style='fill:var(--cinnabar-pure)'>它总结完一个时代的那一刻，下一个时代开场了</text></svg>"
+    },
+
+    { "type": "h2", "text": "三、被换掉的那些楼层" },
+    {
+      "type": "p",
+      "text": "先老实交代过时的部分，免得你照着它去找今天的工作。**书里花力气讲的具体技术，十年间被换掉了一大半。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照表",
+      "caption": "左边是书里郑重讲过的，右边是今天在跑的。请注意最后一列的小字——换掉不等于作废。",
+      "svg": "<svg viewBox='0 0 660 316' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>被换掉的楼层</text><text x='250' y='54' text-anchor='end' font-size='12.5' font-weight='bold' style='fill:var(--ink-soft)'>书里讲的</text><text x='368' y='54' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>今天用的</text><line x1='40' y1='66' x2='620' y2='66' style='stroke:var(--line)' stroke-width='1'/><text x='250' y='96' text-anchor='end' font-size='12' style='fill:var(--ink)'>N 元语言模型</text><text x='309' y='96' text-anchor='middle' font-size='13' style='fill:var(--ink-faint)'>→</text><text x='368' y='96' font-size='12' style='fill:var(--ink)'>Transformer 语言模型</text><text x='250' y='134' text-anchor='end' font-size='12' style='fill:var(--ink)'>隐含马尔可夫的语音流水线</text><text x='309' y='134' text-anchor='middle' font-size='13' style='fill:var(--ink-faint)'>→</text><text x='368' y='134' font-size='12' style='fill:var(--ink)'>端到端语音模型</text><text x='250' y='172' text-anchor='end' font-size='12' style='fill:var(--ink)'>中文分词作为第一道工序</text><text x='309' y='172' text-anchor='middle' font-size='13' style='fill:var(--ink-faint)'>→</text><text x='368' y='172' font-size='12' style='fill:var(--ink)'>子词切分（这个工位取消了）</text><text x='250' y='210' text-anchor='end' font-size='12' style='fill:var(--ink)'>关键词匹配 TF-IDF</text><text x='309' y='210' text-anchor='middle' font-size='13' style='fill:var(--ink-faint)'>→</text><text x='368' y='210' font-size='12' style='fill:var(--ink)'>语义向量检索</text><text x='250' y='248' text-anchor='end' font-size='12' style='fill:var(--ink)'>PageRank 为主的排序</text><text x='309' y='248' text-anchor='middle' font-size='13' style='fill:var(--ink-faint)'>→</text><text x='368' y='248' font-size='12' style='fill:var(--ink)'>上千种信号的排序模型</text><line x1='40' y1='268' x2='620' y2='268' style='stroke:var(--line)' stroke-width='0.8' stroke-dasharray='4 4'/><text x='330' y='294' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar-pure)'>但 TF-IDF 至今仍是检索的基线 · 隐含马尔可夫在生物信息学里仍是常规工具</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "其中三处值得单说。**最彻底的是语言模型**：书里是用前一两个词去猜下一个词，参数靠数出来；今天的模型一次看几千个词的上下文，参数是几千亿个学出来的——同一件事，尺度差了好几个数量级。**其次是语音识别**：那套「声学模型加语言模型，用隐含马尔可夫串起来」的流水线，被一个从声音直接出文字的模型整体端掉了。"
+    },
+    {
+      "type": "p",
+      "text": "**第三处最有意思：中文分词。**书里把它当成中文处理的第一道工序，专讲一章，讲得也确实精彩。而今天的模型直接把句子切成更小的「子词」片段丢进去，分词作为一道独立工序基本退场了。**注意这不是「有人把分词做得更好了」，是整条流水线取消了这个工位。**技术过时有两种方式，一种是被更强的同类顶掉，另一种是问题本身消失了——分词属于后者，而后者更彻底。"
+    },
+    {
+      "type": "p",
+      "text": "还有一种更体面的过时方式，值得单独提一句：**被吸收。**书里专讲过的最大熵模型，今天很少有人单独拿它做一个系统了，可它并没有消失——神经网络最后一层那个把分数变成概率的运算，形式上正是最大熵模型的解。**它没有被淘汰，它变成了别人身上的一个零件。**一个方法能落到这个下场，其实是它最好的归宿。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "容易读岔",
+      "items": [
+        "**「过时」说的是它不再站在最前沿，不是说它错了。**这些模型当年都实打实扛过活，被换下来是因为出现了更强的，不是因为被证伪。把「旧」直接读成「错」，是外行看技术史最常犯的错。",
+        "**旧方法有不少还在生产线上跑。**关键词检索的那套权重算法至今是各种检索系统的基线，新方法常常要跟它比一比才敢上；隐含马尔可夫在生物信息学等领域仍是常规工具。**工业界换技术看的是性价比，不是新旧。**"
+      ]
+    },
+
+    { "type": "h2", "text": "四、一块没动的地基" },
+    {
+      "type": "p",
+      "text": "说完过时的，说更要紧的：**没动的那部分。**很多人读到「书里的技术过时了」就把书合上了，这是亏的——**被换掉的是楼层，地基一块没动。**"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**信息熵与交叉熵。**今天训练一个大模型，用的损失函数就是交叉熵——完完全全是书里讲信息熵那一章的东西，一个符号都没改。",
+        "**贝叶斯。**先验、证据、后验，用新信息更新旧判断——这套思维方式没有版本号，它是概率这门学问本身。",
+        "**动态规划与维特比。**今天的模型出字时用的束搜索，是维特比的近亲，思路一模一样：别穷举所有路，只留下有希望的那几条。",
+        "**倒排索引。**如今让大模型「先查资料再回答」，查的那一层底下还是它，四十年没换过原理。",
+        "**余弦相似度。**语义向量检索听着很新，算的仍然是两个向量之间的夹角。",
+        "**「数据量决定该用多复杂的模型」。**这条在今天只会更真——它现在有个更常见的名字，叫规模定律。"
+      ]
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "读技术书的一个通用姿势：先分清哪些是楼层、哪些是地基。楼层每十年拆一次，地基几十年不动。",
+      "svg": "<svg viewBox='0 0 660 322' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>楼层被换了个遍，地基一块没动</text><rect x='170' y='44' width='320' height='36' rx='6' style='fill:none;stroke:var(--ink-faint)' stroke-width='1' stroke-dasharray='5 4'/><text x='330' y='68' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>N 元语言模型 · 已被替换</text><rect x='170' y='88' width='320' height='36' rx='6' style='fill:none;stroke:var(--ink-faint)' stroke-width='1' stroke-dasharray='5 4'/><text x='330' y='112' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>隐含马尔可夫语音流水线 · 已被替换</text><rect x='170' y='132' width='320' height='36' rx='6' style='fill:none;stroke:var(--ink-faint)' stroke-width='1' stroke-dasharray='5 4'/><text x='330' y='156' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>分词作为独立工序 · 工位取消</text><text x='600' y='112' text-anchor='end' font-size='11.5' style='fill:var(--ink-faint)'>楼层</text><line x1='120' y1='184' x2='540' y2='184' style='stroke:var(--cinnabar-pure)' stroke-width='2'/><rect x='120' y='194' width='420' height='96' rx='8' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar-pure)' stroke-width='1.5'/><text x='330' y='220' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>地基 · 一块没动</text><text x='330' y='246' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>信息熵 · 交叉熵 · 贝叶斯 · 动态规划</text><text x='330' y='268' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>倒排索引 · 余弦相似度 · 哈希指纹 · 数据与模型的匹配</text><text x='600' y='246' text-anchor='end' font-size='11.5' style='fill:var(--cinnabar-pure)'>地基</text><text x='330' y='312' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>越靠近「具体怎么算」的过时越快，越靠近「怎么化成数学」的越不过时</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "规律其实一句话能说完：**越靠近「具体怎么算」的东西，过时得越快；越靠近「怎么把一个乱糟糟的现实问题化成能算的数学问题」的东西，越不过时。**按这个标准回看，书里最不值钱的是那些模型的细节，最值钱的反而是每章开头那一小段——**一个含混的业务问题，是怎么一步步被翻译成一道数学题的。那一步教材里从来不写，教材总是从「已经翻译好了」的地方开始。**"
+    },
+
+    { "type": "h2", "text": "五、主张不但没塌，还被放大了一倍" },
+    {
+      "type": "p",
+      "text": "技术说完了，说主张。这本书从头到尾在证明一件事：**把问题化成数学模型、让数据说话，会赢过人手工写规则。**这个主张在深度学习时代不但没塌，还被放大了一倍——**深度学习本质上是更极端的统计方法**：人写的规则更少、人加的假设更少、要的数据更多、流程越来越端到端。书里那场「统计派打败规则派」的改朝换代，只是同一场战争的上半场。"
+    },
+    {
+      "type": "quote",
+      "original": "七十年人工智能研究最大的教训是：能利用算力的通用方法，最终最有效，而且优势巨大。",
+      "translation": "萨顿《苦涩的教训》开篇一句的中文译述（2019 年，非本书内容）。它说的比这本书还狠：这本书主张「统计胜过规则」，这句主张的是「通用方法加算力，胜过一切人类塞进去的先验知识」。**贾里尼克一九七二年做的那件事和今天大模型做的事，是同一件事，只是尺度差了几个数量级。**"
+    },
+    {
+      "type": "p",
+      "text": "**但有一处，这本书的美学和今天的现实对不上了。**书里反复推崇「简单」，而作者说的简单里藏着一个隐含要求：**你讲得清楚它为什么管用。**一个两参数的模型、一条最短路径，你能拆开摊在桌上给人看。今天最强的模型做不到这一点——效果上去了，可解释性掉下来了。"
+    },
+    {
+      "type": "quote",
+      "original": "所有模型都是错的，但有些是有用的。",
+      "translation": "统计学家乔治·博克斯的名言，非本书原话，但它正好接住上面那道裂缝：模型从来不是世界本身，只是够用的近似。**当「有效」和「讲得清楚」不再是同一件事，你选哪个**——这是这本书留给今天读者的真题，而书里没有答案，因为写书的时候还不需要选。"
+    },
+
+    { "type": "h2", "text": "六、它的局限，得说在前头" },
+    {
+      "type": "p",
+      "text": "**第一，数学深度浅。**它能给你直觉，给不了能力——读完你会有种「懂了」的舒服感，可真让你写一个出来，还是得翻教材。这是它的优点也是它的天花板：它是一本让你想学的书，不是一本让你学会的书。**第二，视角单一**，前面说过，谷歌视角、致敬口吻，人物章节读起来偶尔像赞歌。"
+    },
+    {
+      "type": "p",
+      "text": "**第三，史实是通俗化的。**科普书有个通病：把一段漫长的、许多人反复试错的集体演进，讲成一两个聪明人的灵光一闪，因为后者好看。读的时候心里留个余量就好——**真要考据某个方法的来龙去脉，得另找专著，别拿科普书当史料。**"
+    },
+    {
+      "type": "p",
+      "text": "把这三条都摆完，结论仍然是它值得读。**在中文世界里，把「一个数学模型如何顶掉一整支人力大军」这件事讲得这么清楚、这么好看的书，二十年来仍然屈指可数。**它的对手从来不是今天的深度学习教材——**它的对手是「完全不知道这行在干什么」。**"
+    },
+
+    { "type": "h2", "text": "七、如果今天重写，会多出哪几章" },
+    {
+      "type": "p",
+      "text": "换个角度问年份，比「哪些过时了」更有用：**假如让作者今天重写这本书，会多出哪几章？**这个问题标出的不是几个被换掉的零件，而是**这本书结构性缺掉的那一块**——它缺的地方，恰好就是这十年新长出来的地方。"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**词向量与语义表示。**书里判断两段文字像不像，靠的是有没有用同一批词；今天靠的是把词和句子变成一串数字，意思相近的自然排在一起。「字面完全不同、意思一模一样」这件事，书里几乎没有办法。",
+        "**注意力与 Transformer。**书里的模型看上下文，看得又近又死——就前一两个词；注意力机制让模型自己决定该回头看哪几个词，哪怕隔了几百个字。这是十年里最要紧的一处结构变化。",
+        "**预训练与规模定律。**先用海量文本把模型整个喂一遍、再针对具体任务微调，这套路数整个不在书里；而「模型越大、数据越多，效果越好而且好得可预测」这条规律，是书里那句「数据决定模型」的极端版本。",
+        "**检索增强。**倒排索引没死，它换了个岗位：从「把结果排给人看」变成「把材料喂给模型」。这一层今天有个新名字，地基还是书里那一套。",
+        "**评测与对齐。**书里衡量好坏靠准确率，指标清清楚楚；今天更难的问题是「它说得对不对、该不该说」，这是一整个新领域，写书的时候还不存在。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "有意思的是，**这五章里有四章的地基，仍然是书里讲过的东西**：语义表示背后是余弦相似度，检索增强背后是倒排索引，规模定律背后是「数据量决定该用多复杂的模型」。**只有最后那一块——机器该说什么、不该说什么——是真正的新问题，而且是这本书的整套框架回答不了的问题**，因为它已经不是数学题了。**这大概是对一本技术书生命力最好的度量：十年之后，新东西大多还是长在它讲过的地基上，除了那些从根上就换了性质的。**"
+    },
+
+    { "type": "h2", "text": "八、怎么读它" },
+    {
+      "type": "list",
+      "items": [
+        "**每章问自己一句：这个数学工具，替我省掉了哪一份苦工？**答不出来就回去重读那一章。这是检验有没有读懂的唯一标准，比记住公式管用得多。",
+        "**公式可以跳，故事不能跳。**它的价值不在推导，在于让你相信「化成模型」这件事真的会赢——那是靠故事传达的，不是靠公式。",
+        "**从通信模型和信息熵那两章读起。**它们是全书的地基，其余章节的顺序其实可以打乱，挑你关心的先看，看不懂的公式一律跳过，不影响。",
+        "**想真学，得配教材。**这本书是让你愿意去翻教材的那一本，不是替你翻完的那一本。读完立刻转教材，效果最好。"
+      ]
+    },
+    {
+      "type": "figure",
+      "ftype": "路线图",
+      "caption": "同一本书，三种人该有三种读法。最忌讳的是外行硬啃公式、内行只看故事——两边都拿不到自己最该拿的那份。",
+      "svg": "<svg viewBox='0 0 660 268' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>三种人，三条路</text><rect x='24' y='46' width='196' height='176' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='122' y='76' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>完全的外行</text><line x1='56' y1='90' x2='188' y2='90' style='stroke:var(--line)' stroke-width='0.8'/><text x='122' y='116' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>只读通信模型</text><text x='122' y='138' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>与信息熵两章</text><text x='122' y='166' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>公式一律跳过</text><text x='122' y='198' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar-pure)'>拿走：一种世界观</text><rect x='232' y='46' width='196' height='176' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='330' y='76' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>想入门这一行</text><line x1='264' y1='90' x2='396' y2='90' style='stroke:var(--line)' stroke-width='0.8'/><text x='330' y='116' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>语言模型 · 马尔可夫</text><text x='330' y='138' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>维特比，三章读透</text><text x='330' y='166' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>然后立刻转教材</text><text x='330' y='198' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar-pure)'>拿走：一张地图</text><rect x='440' y='46' width='196' height='176' rx='10' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar-pure)' stroke-width='1.3'/><text x='538' y='76' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>已经在做工程</text><line x1='472' y1='90' x2='604' y2='90' style='stroke:var(--cinnabar-pure)' stroke-width='0.8' opacity='0.5'/><text x='538' y='116' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>只看每章开头</text><text x='538' y='138' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>业务问题怎么被</text><text x='538' y='160' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>翻译成数学问题</text><text x='538' y='198' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar-pure)'>拿走：那一步的手法</text><text x='330' y='250' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>翻译问题的那一步，教材里从来不写</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "最后给一句总的：**带着年份读它。**把它当成一份现场报道，而不是一份操作手册——报道的是二〇一二年那个节点上，一群人如何用几个朴素的数学思想，把搜索、翻译、语音识别这些看着最「工程」的活干成了。报道里提到的设备后来都换代了，**但那份把问题化成数学的手法，和那个「数据比规则更可靠」的判断，十年之后被验证得比作者写下它们时更彻底。**"
+    },
+    {
+      "type": "pull",
+      "text": "被换掉的是楼层，地基一块没动——这就是为什么一本讲着过时技术的书，今天仍然值得读。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "吴军《数学之美》，人民邮电出版社，2012 年第一版；底本为作者在谷歌黑板报的专栏，后有增补第二版及修订版，章目略有出入。本章为读后所加的时代坐标与读法建议，不对应原书某一章。",
+        "年代事实为学界公认：香农信息论 1948 年；贾里尼克在 IBM 将语音识别转向统计方法约 1972 年起；PageRank 论文 1998 年；AlexNet 2012 年；Transformer 2017 年。",
+        "萨顿《苦涩的教训》(Rich Sutton, The Bitter Lesson)，2019 年；「所有模型都是错的，但有些是有用的」出自统计学家 George Box。两者均为延伸对照，非本书内容。",
+        "延伸：格雷克《信息简史》（信息论通俗史）、李航《统计学习方法》（把书里的模型学扎实）、Jurafsky & Martin《语音与语言处理》（自然语言处理标准教材）。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "title": "尺度律:代谢的 3/4 次方与城市的超线性",
+  "subtitle": "大象比老鼠省油二十倍,而且省得很有规矩——全书最像「物理学定律」的一节,以及它至今没结案的那部分",
+  "centralIdea": "几乎所有动物都遵守一条奇怪的规律:体型越大,单位体重耗掉的能量越少,而且减少的幅度贴着一个固定的指数——代谢率大约随体重的 3/4 次方增长。按散热面积推理本该是 2/3,实测却顽固地停在 3/4,从细菌到蓝鲸跨十几个数量级都落在同一条直线上。韦斯特等人 1997 年给出的解释是:限制代谢的不是皮肤散热,是「把养分送到每一个细胞」的物流成本——一套层层分叉、末端口径固定的分形供给网络,在「用最小代价送达所有地方」的约束下,自然导出 3/4。同一套问法后来被搬到城市:基础设施亚线性(人口翻倍,加油站不用翻倍),社会产出超线性(人口翻倍,专利和 GDP 涨得更多)——但犯罪率和传染病扩散也在超线性那一栏里。这一节漂亮得像定律,而它的指数、它的推导、它被搬去比喻组织的那部分,都还有该打的问号。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "一头非洲象的体重大约是一只小鼠的二十万倍。那它每天要吃掉二十万倍的东西吗?不用。它消耗的能量大约只有小鼠的一万倍上下——**折算到每一克身体上,大象比小鼠省了差不多二十倍。**这不是大象特别节俭,而是几乎所有活物都遵守的一条规律:越大越省,而且省得很有规矩。这一章讲的就是这条规矩。它是全书最像「物理学定律」的一节:一条式子,跨越从细菌到蓝鲸十几个数量级,数据点乖乖落在同一条直线上。也正因为它这么漂亮,它更值得被仔细打量一遍。"
+    },
+    {
+      "type": "h2",
+      "text": "一、一条从牲畜棚里量出来的定律"
+    },
+    {
+      "type": "p",
+      "text": "1932 年,一位在加州农业实验站工作的生物学家克莱伯,把手头各种牲畜和实验动物的体重与耗能数据放到一张图上。他用的不是普通坐标纸,而是**双对数坐标**——两根轴都按数量级刻度,10、100、1000 在轴上是等距的。结果那些点排成了一条相当整齐的直线,斜率大约是 0.75。写成式子就是:**代谢率 ∝ 体重的 3/4 次方。**"
+    },
+    {
+      "type": "p",
+      "text": "双对数坐标是读这一类图的基本功,值得先说清楚。**只要两个量之间是幂律关系,在双对数图上就一定是直线,而直线的斜率就是那个指数。**地震震级、声音分贝用的都是这种压缩刻度。3/4 具体意味着什么呢?意味着体重翻到 16 倍,耗能只翻到 8 倍——每一克身体的耗能因此掉了一半。所以「越大越省」不是一句形容,是一个能算出来的比例。"
+    },
+    {
+      "type": "p",
+      "text": "这条规律有一个人人都体验过的日常版本。婴儿按每公斤体重算,吃得比成年人多得多;小鸟几乎一睁眼就在找吃的,蜂鸟停下来太久会直接饿死;而一头鲸可以几个月不怎么进食。同样是「怕冷」这件事:体型小的动物散热快、耗能猛,所以怕冷得更厉害——冬天里最先扛不住的从来是小家伙。**这些零散的常识其实是同一条式子在不同地方冒出来的头。**克莱伯做的事,是把这些头连成了一条线,并且给出了那条线的斜率。"
+    },
+    {
+      "type": "h2",
+      "text": "二、一个本该是 2/3 的漂亮论证,输给了数据"
+    },
+    {
+      "type": "p",
+      "text": "在克莱伯之前,已经有一个非常干净的理论推理。动物产的热要靠体表散掉,散热能力正比于**表面积**。而几何学告诉我们:一个东西按比例放大,体积按边长的三次方涨,表面积只按二次方涨,所以表面积正比于体重的 2/3 次方。既然产热必须等于散热,代谢率也该随体重的 2/3 次方走。这个论证有物理、有几何、无懈可击。"
+    },
+    {
+      "type": "p",
+      "text": "问题是数据不听。实测的斜率顽固地停在 0.75 附近,而不是 0.667,而且这个偏差不是某一种动物的怪癖——它跨越了单细胞生物、昆虫、鸟、哺乳类,一路到牛、象、鲸。**一个漂亮的推理输给了一堆脏数据,这在科学史上通常意味着推理里有个前提错了。**"
+    },
+    {
+      "type": "p",
+      "text": "错的不是几何学。表面积确实随体重的 2/3 次方走,这一步永远成立。错的是那个隐含的前提——**默认「散热」是那个卡脖子的环节。**如果卡脖子的其实是另一件事,那么整条推理链再严密也指向了错误的方向。这类失误在各行各业都常见:模型没算错,只是管错了地方。所以当一个「无懈可击」的论证被数据顶回来时,值得做的不是给数据找理由,而是回头去数一遍那些没被写下来的前提。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>数据落在 3/4 那条线上,不是 2/3 那条</text><path d='M70 250 L520 250 M70 56 L70 250' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='76' y='50' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>代谢率(对数刻度)</text><text x='516' y='268' text-anchor='end' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>体重(对数刻度)</text><path d='M90 236 L470 106' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><path d='M90 236 L470 158' style='fill:none;stroke:var(--ink-faint);stroke-width:1.4;stroke-dasharray:4 3'/><circle cx='110' cy='229' r='3.4' style='fill:var(--ink)'/><circle cx='170' cy='209' r='3.4' style='fill:var(--ink)'/><circle cx='240' cy='185' r='3.4' style='fill:var(--ink)'/><circle cx='310' cy='161' r='3.4' style='fill:var(--ink)'/><circle cx='390' cy='134' r='3.4' style='fill:var(--ink)'/><circle cx='455' cy='111' r='3.4' style='fill:var(--ink)'/><text x='110' y='220' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>小鼠</text><text x='310' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>人</text><text x='452' y='102' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>大象</text><text x='500' y='108' text-anchor='end' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>实测斜率 ≈ 3/4</text><text x='500' y='174' text-anchor='end' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>按散热面积该是 2/3</text><text x='280' y='288' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>横轴跨十几个数量级——正因为跨得这么远,那一点点斜率差才藏不住</text></svg>",
+      "caption": "两条线在图上看着只差一点点,但它们代表两种完全不同的机制:一条说「限制在体表」,另一条说「限制在别处」。数据选了后者,于是问题变成:别处是哪里?"
+    },
+    {
+      "type": "p",
+      "text": "更奇怪的是,3/4 不是孤例。一整族生理量都贴着 **1/4 的整数倍**在走:心率大约随体重的 −1/4 次方(越大跳得越慢),寿命大约随 1/4 次方(越大活得越长),发育时间、血液循环一圈所需的时间也是同一族。这两条一乘就得到一个漂亮得让人起疑的推论:**不同体型的哺乳动物,一辈子的心跳总数居然是同一个量级。**小鼠心跳飞快、活两三年;大象心跳缓慢、活几十年;两边乘起来差不多打平。人类是显著的例外,因为现代医学把寿命那一头拉长了。"
+    },
+    {
+      "type": "figure",
+      "ftype": "金句卡",
+      "svg": "<svg viewBox='0 0 560 234' xmlns='http://www.w3.org/2000/svg'><rect x='24' y='16' width='512' height='202' rx='10' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='280' y='46' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>一整族「四分之一次方」</text><g><rect x='58' y='62' width='150' height='30' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><text x='133' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>代谢率 ∝ M ^ 3/4</text><text x='224' y='82' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>越大越省——每克身体耗能更少</text></g><g><rect x='58' y='102' width='150' height='30' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><text x='133' y='122' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>心率 ∝ M ^ −1/4</text><text x='224' y='122' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>越大跳得越慢</text></g><g><rect x='58' y='142' width='150' height='30' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><text x='133' y='162' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>寿命 ∝ M ^ 1/4</text><text x='224' y='162' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>越大活得越久</text></g><path d='M58 186 L502 186' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='206' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>两条一乘:一生的心跳总数,大小动物落在同一个量级</text></svg>",
+      "caption": "指数上的 −1/4 和 +1/4 正好抵消,这是「一辈子心跳数差不多」这个说法的来源。它是个粗略的规律,不是精确守恒律——但指数能抵消这件事本身,提示这一族现象背后有同一个机制。"
+    },
+    {
+      "type": "h2",
+      "text": "三、韦斯特他们的解释:限制不在皮肤,在物流"
+    },
+    {
+      "type": "p",
+      "text": "1997 年,物理学家韦斯特和两位生态学家布朗、恩奎斯特提出了一个解释。他们的出发点是换了一个限制项:**真正卡住新陈代谢的不是「热怎么散出去」,而是「养分怎么送到每一个细胞」。**一个活物越大,它的配送网络就越难做。整个推导只用三条假设。"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**网络必须填满空间。**血管(或植物的导管)得层层分叉,一直分到能够触及身体里的每一个细胞——不能有哪块组织收不到货。",
+        "**末端单元的尺寸不随体型变。**毛细血管在小鼠体内和在鲸体内粗细基本一样,因为它的尺寸由「红细胞要挤过去」这类微观约束定死了,和整只动物多大无关。",
+        "**演化把输送能耗压到尽可能低。**在能送达所有地方的前提下,泵血这件事的代价被自然选择尽量削薄。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "三条假设摆好之后,剩下的是数学。推导下来,指数不多不少正是 **3/4**。这一步的分量在于:3/4 不再是一个从数据里拟合出来的经验数字,而是从三条可以独立检验的物理约束里**推**出来的。这就是这一节最像物理学的地方。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "打个比方就很清楚了。一座城市的人口涨十倍,自来水公司不会把每一根水管都加粗十倍——它是**多分几级干线和支线**,而通到你家厨房那一段管子的口径,几乎不变。快递网络也是一样:货量涨十倍,加的是分拨中心和层级,不是把最后那辆小车做大十倍。末端固定、中间多分层,这个结构的后果就是:**服务每一个终端所需的网络成本,会随着系统变大而下降。**大象省的那二十倍,省的正是这一项。"
+      ]
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "svg": "<svg viewBox='0 0 560 260' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>身体大 N 倍,不是把管子加粗 N 倍,是多分几层</text><g transform='translate(20,40)'><path d='M110 20 L110 46 M110 46 L76 76 M110 46 L144 76 M76 76 L58 108 M76 76 L94 108 M144 76 L126 108 M144 76 L162 108' style='fill:none;stroke:var(--ink-soft);stroke-width:1.4'/><circle cx='58' cy='112' r='3.6' style='fill:var(--cinnabar-pure)'/><circle cx='94' cy='112' r='3.6' style='fill:var(--cinnabar-pure)'/><circle cx='126' cy='112' r='3.6' style='fill:var(--cinnabar-pure)'/><circle cx='162' cy='112' r='3.6' style='fill:var(--cinnabar-pure)'/><text x='110' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>小鼠</text><text x='110' y='160' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>分叉三级</text></g><path d='M258 110 L292 110 M284 104 L292 110 L284 116' style='fill:none;stroke:var(--line);stroke-width:1.2'/><g transform='translate(300,40)'><path d='M120 8 L120 30 M120 30 L70 52 M120 30 L170 52 M70 52 L44 76 M70 52 L96 76 M170 52 L144 76 M170 52 L196 76 M44 76 L32 104 M44 76 L56 104 M96 76 L84 104 M96 76 L108 104 M144 76 L132 104 M144 76 L156 104 M196 76 L184 104 M196 76 L208 104' style='fill:none;stroke:var(--ink-soft);stroke-width:1.4'/><circle cx='32' cy='108' r='3.6' style='fill:var(--cinnabar-pure)'/><circle cx='56' cy='108' r='3.6' style='fill:var(--cinnabar-pure)'/><circle cx='84' cy='108' r='3.6' style='fill:var(--cinnabar-pure)'/><circle cx='108' cy='108' r='3.6' style='fill:var(--cinnabar-pure)'/><circle cx='132' cy='108' r='3.6' style='fill:var(--cinnabar-pure)'/><circle cx='156' cy='108' r='3.6' style='fill:var(--cinnabar-pure)'/><circle cx='184' cy='108' r='3.6' style='fill:var(--cinnabar-pure)'/><circle cx='208' cy='108' r='3.6' style='fill:var(--cinnabar-pure)'/><text x='120' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>鲸</text><text x='120' y='160' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>同一套分叉规则 · 多分几级</text></g><rect x='40' y='214' width='480' height='34' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2'/><text x='280' y='236' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>朱点是末端(毛细血管):两边一样粗——正是这个「不变」逼出了 3/4</text></svg>",
+      "caption": "把两棵树并排放,差别不在末梢的粗细,而在中间多出来的层数。末端尺寸被微观约束钉死、干线却可以随体型变粗,这两件事一夹,指数就不再是几何学上那个 2/3 了。"
+    },
+    {
+      "type": "quote",
+      "original": "大象不是放大的老鼠——它是按另一套比例重新长出来的。",
+      "translation": "这是这一节最该记住的一句。生物界不存在「等比例放大」这回事:体型一变,骨骼占比、心跳快慢、寿命长短、每克身体的耗能全都要按各自的指数重排一遍。**放大不是复制,放大是改配方。**"
+    },
+    {
+      "type": "h2",
+      "text": "四、把同一套问法搬到城市"
+    },
+    {
+      "type": "p",
+      "text": "米歇尔书里主要讲的是生物那条线。而同一批人后来把这套问法搬去了城市:方法完全一样——把一个国家所有城市的人口和某个指标放上双对数图,看斜率是多少。**指数大于 1 叫超线性(人口翻倍,这一项涨得比翻倍还多),小于 1 叫亚线性(涨得比翻倍少)。**结果干净得出人意料,所有指标分成了两栏。"
+    },
+    {
+      "type": "p",
+      "text": "**基础设施那一栏是亚线性的,指数大约 0.85:**加油站数量、道路总长、管线和电缆长度。人口翻倍,这些只需要长到大约 1.8 倍。这和生物那条是同一个道理——都是配送网络的效率随规模上升。**社会产出那一栏是超线性的,指数大约 1.15:**工资总额、专利数、GDP、餐馆数量。人口翻倍,这些涨到大约 2.2 倍,也就是说**人均**还在往上走。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "svg": "<svg viewBox='0 0 560 292' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>城市变大时,两栏指标往相反方向偏</text><path d='M70 232 L510 232 M70 46 L70 232' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='506' y='250' text-anchor='end' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>人口(对数刻度)</text><path d='M80 224 L420 58' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><path d='M80 224 L420 108' style='fill:none;stroke:var(--ink-faint);stroke-width:1.3;stroke-dasharray:4 3'/><path d='M80 224 L420 148' style='fill:none;stroke:var(--ink-soft);stroke-width:1.8'/><text x='428' y='58' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>β ≈ 1.15</text><text x='428' y='72' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>超线性</text><text x='428' y='110' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>β = 1</text><text x='428' y='124' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>正比参照</text><text x='428' y='150' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--ink)'>β ≈ 0.85</text><text x='428' y='164' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>亚线性</text><text x='280' y='268' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>超线性那一栏:工资 · 专利 · GDP —— 还有犯罪率与传染病扩散</text><text x='280' y='284' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>亚线性那一栏:加油站 · 路网 · 管线 —— 城市越大,人均基础设施越省</text></svg>",
+      "caption": "注意这和生物是反过来的:动物越大,单位质量的代谢越慢;城市越大,人均产出反而越快。同一套数学工具,量出两种相反的方向——这本身就说明「城市像生物」只是一句方便的话。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "别只记一半",
+      "items": [
+        "超线性那一栏经常被单独摘出来讲,变成「大城市更有创造力」的证据。可是同一栏里还坐着犯罪率、传染病扩散速度、精神压力相关的就诊率,以及生活成本。**这不是巧合,而是同一个机制的两面**:人和人碰面的次数随城市规模超线性增长,而碰面既传播点子,也传播病毒和麻烦。任何一个指标要引用,先看看它的同栏邻居是谁——**同一条斜率上,好事和坏事是一起涨的。**"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "顺着这条线还有一个耐人寻味的对比。同一批人后来也把公司放上了同一张图,发现公司的社会性指标并**不**呈现城市那样的超线性——更接近甚至低于正比。于是有了一个说法:城市几乎不死(战争和瘟疫之后往往还能长回来),而公司几乎全都会死。**如果一个组织变大之后,产出的增速追不上内部消耗的增速,那么它的规模终究会变成负担。**这个对比很有启发性,但要记得它仍是一个观察加一段推测,不是被证明的定律——公司的边界怎么划、指标怎么选,本身就能改变拟合出来的斜率。"
+    },
+    {
+      "type": "h2",
+      "text": "五、该打的问号"
+    },
+    {
+      "type": "p",
+      "text": "这一节漂亮到容易让人忘了它其实还没结案。米歇尔在书里的处理方式很值得学:**把它有多漂亮讲透,同时把它还没被公认这件事也讲明白。**问号主要有三个。"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**指数到底是不是 3/4,一直有争论。**有人重新分析数据后指出,双对数图上那条「直线」其实是略带弯曲的,并不是一个干净的幂律;不同类群(鸟、哺乳、植物、单细胞)拟合出来的指数也不完全一致,某些体重区间反而更贴近 2/3。",
+        "**推导本身被质疑。**三条假设里最强的是第三条——「演化把输送能耗压到最低」。这是一个目的论味道很重的前提,而且从假设走到 3/4 的那几步数学,有人认为并不是唯一的路:换一组听起来同样合理的假设,能推出别的接近的指数。",
+        "**「城市是有机体」是修辞,不是结论。**尺度律说的只是若干指标随人口的幂次关系,它没有说城市有新陈代谢、有寿命、会生病、会衰老。把一个指数关系读成一整套生物学类比,是这套结果被误用得最多的方式。"
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "mute",
+      "label": "留意坐标",
+      "items": [
+        "双对数坐标是一副会美化关系的眼镜。在这种图上,「差三倍」和「差三十倍」看起来只隔一小段,散布得挺开的点也能显得贴着一条线。所以下次看到「数据漂亮地落在一条直线上」,先问三件事:**两根轴是不是对数刻度?一共跨了几个数量级?点在纵向散得有多宽?**跨的数量级越多,直线越容易「看起来成立」——这不是造假,这是刻度本身的性质。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "六、能带走什么"
+    },
+    {
+      "type": "p",
+      "text": "这一章的实用价值不在于记住 0.75 或者 1.15 这两个数字,而在于养成一个问法。日常讨论里,「规模效应」几乎是一句万能理由:公司大了成本会摊薄、城市大了效率会更高、平台大了边际成本趋近于零。但真正该问的从来不是「变大好不好」,而是:**哪一项在按什么指数变?**"
+    },
+    {
+      "type": "pull",
+      "text": "规模变大的时候,别问「会不会更好」,要问「哪一项按什么指数变」——省下来的和涨上去的,通常不是同一项。"
+    },
+    {
+      "type": "p",
+      "text": "还有一条最常被忽略的读法:**尺度律描述的是一条趋势线,不是任何一个具体个案的命运。**同样人口规模的两座城市,人均专利数可以差出好几倍;同样体重的两种动物,代谢率也未必贴着那条线。指数刻画的是「整个云团的走向」,而每个点离那条线有多远,恰恰是另一批同样要紧的问题——制度、文化、产业结构、地理位置,全在这个「离多远」里面。把趋势线当成宿命,和把它当成万能理由,是同一种误读的两个方向。"
+    },
+    {
+      "type": "p",
+      "text": "还有一个类比要格外小心。这条式子常被搬去谈组织:「团队越大越省」。可是组织里最有名的那条规模关系恰恰是反的——人数增加,需要协调的两两通道数按人数的平方涨,《人月神话》里那条著名的「加人反而更慢」说的就是它。**那是另一条式子,和 3/4 没有任何关系。**真正可以迁移的从来不是指数本身,而是那个问法:把你关心的每一项分别放上双对数图,看它是亚线性还是超线性。**基础设施那一栏和协调成本那一栏,方向多半是反的。**"
+    },
+    {
+      "type": "p",
+      "text": "最后交待一下这一章在全书里的位置。它是《复杂》里最像「物理学定律」的一节——有推导、有预测、有跨十几个数量级的数据。可即便是它,量的也只是**大小**,不是**复杂**。那个悬了整本书的问题还没被正面回答:复杂到底能不能量?下一章就去回答,而答案会有点扫兴——**人们提出了几十把尺子,没有一把是通用的。**"
+    }
+  ]
+}
