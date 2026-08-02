@@ -52,3 +52,6 @@ scripts/.baihua-attempts.json
 scripts/.polish-*
 
 scripts/.bold-*
+
+# 观书并发产出的中转文件(由 scripts/merge-books.mjs 合并进 index.json 后删除)
+src/data/books/*/_entry.json
