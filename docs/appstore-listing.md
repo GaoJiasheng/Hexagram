@@ -1,5 +1,7 @@
 # App Store 上架材料（观象 / hexa）
 
+> ℹ️ **进度不记在本文** —— 勾选状态以 [todo.md §1](./todo.md) 为准;本文只提供操作步骤与可粘贴文案。
+
 > 首发范围:含中国大陆 + 全球;设备:iPhone + iPad(通用);类目定位「教育 / 参考」,非占卜生活类。
 > 隐私政策 URL: https://hexa.gavin.pub/privacy  ·  支持 URL: https://hexa.gavin.pub/about
 > Bundle ID: pub.gavin.hexa  ·  版本: 1.0.0  ·  价格: 免费  ·  无账号(不需演示账号)

@@ -1,5 +1,7 @@
 # 观象 · App Store 上架执行手册(runbook)
 
+> ℹ️ **进度不记在本文** —— 勾选状态以 [todo.md §1](./todo.md) 为准;本文只提供操作步骤与可粘贴文案。
+
 > 配套文档:文案素材见 [appstore-listing.md](appstore-listing.md);大陆区 APP备案见 [appstore-china-icp.md](appstore-china-icp.md)。
 > 本手册是**执行顺序**:从上到下照做,`[ ]` 打勾。标 **【你做】** 的是账号/后台操作(只能你本人);标 **【已就绪】** 的是我已经备好、你直接用。
 
