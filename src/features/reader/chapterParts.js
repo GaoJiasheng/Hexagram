@@ -8,26 +8,30 @@ const MIN_SPLIT = 60   // 章长超过此数才拆(短章不受影响)
 
 // 自然边界:诗经的《诗题》段、传习录一类由 texts.json pieces 给出的条首段。
 // 有边界就切在边界上(不把一首诗、一条语录腰斩),没有则按目标段数均分。
+// 两套机制**可以并用**(长短经就是:8 卷各有《篇题》段自动认,而卷6/卷7 整卷即一篇、
+// 内部无标记,只能人工给 pieces 区间)。原先是 if/else,poemTitles 命中就直接 return,
+// 同一本书里的 pieces 会被无声吞掉。改成取并集。
 function boundaries(chapter, meta) {
   const ps = chapter.paragraphs
+  const out = new Set()
   if (meta?.poemTitles) {
-    const isTitle = (p) => /^《[^》]+》$/.test(p.original.trim())
-    return ps.map((p, i) => (isTitle(p) ? i : -1)).filter((i) => i > 0)
+    ps.forEach((p, i) => { if (i > 0 && /^《[^》]+》$/.test(p.original.trim())) out.add(i) })
   }
   if (meta?.pieces) {
-    return meta.pieces.filter((x) => x.ch === chapter.no && x.from > 0).map((x) => x.from).sort((a, b) => a - b)
+    meta.pieces.filter((x) => x.ch === chapter.no && x.from > 0).forEach((x) => out.add(x.from))
   }
-  return []
+  return [...out].sort((a, b) => a - b)
 }
 
 // 段范围 → 该屏的标题。有自然边界时用那一段的题名,否则用「第 X 部分」+ 段号区间。
 function labelFor(chapter, from, to, meta, i) {
   const first = chapter.paragraphs[from]
+  // pieces 优先:人工策展的标题比自动取的《篇题》更准(两者并用时同一处可能都命中)
+  const pc = meta?.pieces?.find((x) => x.ch === chapter.no && x.from === from)
+  if (pc) return pc.title
   if (meta?.poemTitles && /^《[^》]+》$/.test(first.original.trim())) {
     return first.original.trim().replace(/^《|》$/g, '')
   }
-  const pc = meta?.pieces?.find((x) => x.ch === chapter.no && x.from === from)
-  if (pc) return pc.title
   return `第 ${i + 1} 部分（${from + 1}–${to} 段）`
 }
 
