@@ -1,0 +1,79 @@
+{
+  "title": "本能：蜂房、杜鹃与不育的工蜂",
+  "subtitle": "行为不留化石，却比骨头更难解释——他偏偏挑了三个最硬的例子",
+  "centralIdea": "骨头能挖出来，行为挖不出来。所以「本能怎么可能是一点点攒出来的」在当时是极强的反驳：蜜蜂造出接近几何最优的蜂房，杜鹃把蛋下在别人窝里，蚂蚁抓来别的蚁做工——这些精巧到诡异的行为，看上去只能是被赋予的。达尔文的应对策略和处理眼睛时完全一样：找梯度。凡是能找到从简单到复杂的现成序列，「一步到位」就不再是唯一解释。这一章还包含全书最险的一处：不育的工蜂——他自己说这一条曾像是能推翻整个学说的致命一击，而他的解法（选择可以作用于家族）在一百年后长成了亲缘选择，也成了《自私的基因》的地基。",
+  "blocks": [
+    { "type": "lead", "text": "假设你要反驳达尔文，最该攻哪里？不是骨头——骨头能一块块比对。要攻就攻**行为**。一只从没见过父母的雏鸟，第一次筑巢就能织出跟同类一模一样的结构；蜜蜂造出的六棱柱蜂房精确到几乎是省料的最优解；杜鹃刚孵出来就会把宿主的蛋顶出巢外。这些东西不留化石、无从追溯，而且精巧得不像是攒出来的。**十九世纪的反对者很清楚这一点，达尔文也很清楚。**所以他专门写了一章，而且挑的全是最硬的例子。" },
+
+    { "type": "h2", "text": "一、他先把问题切小" },
+    { "type": "p", "text": "开篇他做了一件很聪明的事：**划掉一半问题。**他明说，自己不打算讨论本能的心理起源——动物有没有意识、感觉是什么、心智从哪来，这些他一概不碰。他只问一个能回答的问题：**本能能不能像骨头一样，被遗传、发生变异、被选择改造？**" },
+    { "type": "p", "text": "这个切法是全书的通用手法。**把一个大到无从下手的问题切成一个小到能验证的问题，剩下的诚实地留白。**他要的只是三个条件：本能有个体差异吗？这些差异能遗传吗？它们影响存活和繁殖吗？" },
+    { "type": "p", "text": "前两条他随手就能举证：牧羊犬不用教就懂得绕圈驱赶，指示犬见到猎物会僵住抬爪——**这些行为是被人一代代选育出来的，不是训练出来的。**同一窝小狗之间，这些倾向的强弱也参差不齐。有变异、能遗传、可被选择改造，三条齐了，本能就跟骨头一样进了自然选择的射程。" },
+
+    { "type": "h2", "text": "二、蜜蜂的蜂房：一道几何题" },
+    { "type": "p", "text": "第一个硬例子是蜂房。蜜蜂造的巢是六棱柱、底面由三个菱形拼成，这个形状在「用最少的蜡围出最大的空间」这道题上接近最优解。当时相当一部分人把它当作神授知识的直接证据——**一只脑子只有针尖大的昆虫，怎么会解几何题？**" },
+    { "type": "p", "text": "达尔文的回答分两步。第一步照例是找梯度：熊蜂造的是粗糙的圆蜡罐，随便堆在一起；另有一类蜂造的巢介于两者之间——蜡罐仍是圆的，但排列得相当规则，**凡是相邻两个罐挨到一起的地方，就自然形成了共用的平面。**从这里再往前一小步，就是蜜蜂的六棱柱。" },
+    { "type": "p", "text": "第二步更精彩：**蜜蜂根本不需要懂几何。**只要每只蜂从彼此大致等距的点开始，向外挖出球面、挖到碰见邻居的进度就停手，剩下的形状是几何自己给的——等大的球等距排列，交界面必然是平面，围出来的必然接近六边形。**规则藏在物理里，蜂只要遵守一条简单的行为规则就够了。**" },
+    { "type": "p", "text": "这一段的思路值得单独记住：**看上去需要智慧的结果，往往只需要一条笨规则加上环境的约束。**这个想法后来在很多领域反复出现——鸟群的队形、蚁群的路径、市场里的价格，都不需要谁在中央计算。" },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "svg": "<svg viewBox='0 0 560 280' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>蜂房也有梯度：从乱堆的圆罐到六棱柱</text><g transform='translate(60,54)'><circle cx='16' cy='30' r='15' style='fill:none;stroke:var(--ink-soft);stroke-width:1.6'/><circle cx='46' cy='16' r='13' style='fill:none;stroke:var(--ink-soft);stroke-width:1.6'/><circle cx='40' cy='52' r='16' style='fill:none;stroke:var(--ink-soft);stroke-width:1.6'/><circle cx='70' cy='36' r='12' style='fill:none;stroke:var(--ink-soft);stroke-width:1.6'/><text x='43' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>熊蜂</text><text x='43' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>大小不一，随便堆</text></g><g transform='translate(230,54)'><circle cx='18' cy='20' r='16' style='fill:none;stroke:var(--ink-soft);stroke-width:1.6'/><circle cx='50' cy='20' r='16' style='fill:none;stroke:var(--ink-soft);stroke-width:1.6'/><circle cx='34' cy='48' r='16' style='fill:none;stroke:var(--ink-soft);stroke-width:1.6'/><circle cx='66' cy='48' r='16' style='fill:none;stroke:var(--ink-soft);stroke-width:1.6'/><line x1='34' y1='10' x2='34' y2='30' style='stroke:var(--cinnabar);stroke-width:1.8'/><line x1='50' y1='38' x2='50' y2='58' style='stroke:var(--cinnabar);stroke-width:1.8'/><text x='42' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>中间型</text><text x='42' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>等大等距，交界处成平面</text></g><g transform='translate(410,54)'><path d='M16,10 L32,2 L48,10 L48,28 L32,36 L16,28 Z' style='fill:none;stroke:var(--cinnabar);stroke-width:1.8'/><path d='M48,28 L64,20 L80,28 L80,46 L64,54 L48,46 Z' style='fill:none;stroke:var(--cinnabar);stroke-width:1.8'/><path d='M16,28 L32,36 L32,54 L16,62 L0,54 L0,36 Z' style='fill:none;stroke:var(--cinnabar);stroke-width:1.8'/><path d='M32,36 L48,46 L48,62 L32,70 L16,62 L16,44 Z' style='fill:none;stroke:var(--cinnabar);stroke-width:1.8'/><text x='40' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>蜜蜂</text><text x='40' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>六棱柱，接近省蜡最优</text></g><g style='stroke:var(--ink-faint);stroke-width:1'><line x1='160' y1='88' x2='200' y2='88'/><line x1='330' y1='88' x2='380' y2='88'/></g><line x1='40' y1='196' x2='520' y2='196' style='stroke:var(--line);stroke-width:1'/><text x='280' y='222' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>蜂不需要懂几何，只需要一条笨规则</text><text x='280' y='246' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>从等距的点向外挖，碰到邻居就停——形状是几何自己给的</text><text x='280' y='268' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>看上去需要智慧的结果，往往只需要笨规则加上环境的约束</text></svg>",
+      "caption": "找梯度是他对付「太精巧了」这类反驳的通用招数：只要现存动物身上就摆着中间档，「一步到位」就不再是唯一解释。"
+    },
+
+    { "type": "h2", "text": "三、杜鹃与蓄奴蚁：同一招用第二遍、第三遍" },
+    { "type": "p", "text": "第二个例子是杜鹃把蛋下在别的鸟窝里。这个行为看起来是一整套：认准宿主、算好时机、蛋的花纹还能仿得像、雏鸟孵出来会把宿主的蛋顶出去。整套一起出现，确实难以想象。" },
+    { "type": "p", "text": "达尔文的回答还是找梯度：**这条路上的每一档，自然界里都有现成的鸟在走。**有的鸟偶尔在别人窝里下一枚蛋，自己照样筑巢育雏；有的鸟经常这么干；有的完全不筑巢，全靠寄生。每一档对当事的鸟都有当下的好处——省下筑巢和育雏的开销，多下几枚蛋。**从「偶尔占便宜」到「彻底靠这个活」，中间没有一步是跳过去的。**" },
+    { "type": "p", "text": "第三个例子是蓄奴蚁。有一种蚁会突袭别的蚁巢、搬回蛹，孵出来的蚁替它们干活；这一种自己还能觅食、还能自理。另一种就彻底退化了：不会觅食、不会筑巢，甚至不会自己进食，**离开奴蚁就会饿死。**同一种行为的两个强度档次，又一次把梯度摆在了眼前。" },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "svg": "<svg viewBox='0 0 560 260' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>寄生育雏也有梯度：每一档都有现成的鸟在走</text><line x1='60' y1='96' x2='500' y2='96' style='stroke:var(--ink-soft);stroke-width:1.4'/><g style='fill:var(--ink-soft)'><circle cx='84' cy='96' r='5'/><circle cx='230' cy='96' r='5'/><circle cx='360' cy='96' r='5'/></g><circle cx='480' cy='96' r='6.5' style='fill:var(--cinnabar)'/><g style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink);text-anchor:middle'><text x='84' y='76'>自己筑巢育雏</text><text x='230' y='76'>偶尔在别人窝下一枚</text><text x='360' y='76'>经常这么干</text><text x='480' y='76'>完全靠寄生</text></g><g style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint);text-anchor:middle'><text x='84' y='122'>全部开销自付</text><text x='230' y='122'>省下一点，多下一枚</text><text x='360' y='122'>自己的巢越造越糙</text><text x='480' y='122'>已经不会筑巢了</text></g><line x1='40' y1='156' x2='520' y2='156' style='stroke:var(--line);stroke-width:1'/><text x='280' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>关键：每一档对当事的鸟都有当下的好处</text><text x='280' y='202' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>省下筑巢与育雏的开销 → 能多下几枚蛋</text><text x='280' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>从「偶尔占便宜」到「彻底靠这个活」，中间没有一步是跳过去的</text></svg>",
+      "caption": "同一招用第二遍。看上去必须整套一起出现的行为，一旦摆开梯度，每一步都只是上一步的小小加码。"
+    },
+    { "type": "p", "text": "这里还有一层他点到、后人接着做深的东西：**寄生者和宿主之间会互相追着变。**杜鹃的蛋能仿出宿主蛋的花色，正是因为那些认得出假蛋、会把它扔掉的宿主留下了更多后代；而宿主越挑剔，仿得越像的杜鹃就越占便宜。**两边各自被对方推着走**，谁也停不下来。今天这类现象有专门的名字，而在这一章里，它只是达尔文顺手记下的一个观察。" },
+    { "type": "p", "text": "这里达尔文加了一句提醒，很值得注意：**这些行为在人看来残忍，但道德评价与这里的讨论无关。**杜鹃不是坏鸟，蓄奴蚁也不构成对任何人类制度的评价。他反复守住的这条界，正是第十一章要展开的那件事——**自然界的「是」，跟人间的「应当」，是两个不通气的房间。**" },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "一处容易读岔",
+      "items": [
+        "「本能是被选择出来的」不等于「本能都是最优的」。**很多本能明显笨拙**：飞蛾扑火、海龟朝错误方向爬、鸟把塑料喂给幼雏。",
+        "自然选择留下的是**在过去那套条件下够用**的规则。条件一变，同一条规则就会把动物带进沟里——这一点对理解人自己身上的许多冲动，同样成立。"
+      ]
+    },
+
+    { "type": "h2", "text": "四、不育的工蜂：他说这一条曾像是致命一击" },
+    { "type": "p", "text": "然后是这一章、也许是全书最险的一处。" },
+    { "type": "p", "text": "问题是这样的：蜂群里的工蜂终生不生育。它们身上有一整套专门的构造和行为——采蜜的器官、造巢的本领、为蜂群拼死的倾向。可自然选择的整套逻辑建立在「留下更多后代」上，**一个根本不留后代的个体，它的特征怎么可能被选择保留下来？**" },
+    { "type": "p", "text": "达尔文自己形容，这一条一度像是无法克服，甚至足以推翻他的整个学说。这不是谦辞，从他的逻辑出发，这确实是一记正中要害的攻击。" },
+    { "type": "p", "text": "他的解法是把**选择的单位挪了一格**：被留下的不是那只工蜂，而是**「能产出好工蜂的那个家族」**。一窝蜂里，蜂后产出的工蜂越能干，整窝的存活和繁殖就越好，这窝的蜂后就留下更多后代——而工蜂的特征，正是随着蜂后的血脉一起传下去的。**工蜂不必自己留后，它只要让自己的母亲留后就行。**" },
+    { "type": "p", "text": "他还给了一个育种者的类比，特别接地气：一头肉牛的肉好不好，得宰了才知道；一株蔬菜好不好吃，得吃掉才知道。**被检验的那一个已经没了，可育种者照样能推进品种**——他看的是同一家族里其他个体的表现，然后从这个家族继续留种。选择完全可以隔着一层作用。" },
+    {
+      "type": "figure",
+      "ftype": "机制图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>选择的单位挪了一格</text><rect x='30' y='46' width='210' height='176' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='135' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink-soft)'>如果只看个体</text><circle cx='135' cy='112' r='20' style='fill:none;stroke:var(--ink-soft);stroke-width:1.4'/><text x='135' y='117' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>工蜂</text><path d='M135,132 L135,158' style='stroke:var(--ink-faint);stroke-width:1.2;stroke-dasharray:4 3'/><text x='135' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>没有后代</text><text x='135' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>它的特征传不下去 → 死结</text><rect x='320' y='46' width='210' height='176' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.4'/><text x='425' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>看整个家族</text><circle cx='425' cy='104' r='18' style='fill:none;stroke:var(--cinnabar);stroke-width:1.4'/><text x='425' y='109' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>蜂后</text><g style='stroke:var(--ink-faint);stroke-width:1'><line x1='425' y1='122' x2='386' y2='146'/><line x1='425' y1='122' x2='425' y2='146'/><line x1='425' y1='122' x2='464' y2='146'/></g><g style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'><circle cx='386' cy='158' r='11'/><circle cx='425' cy='158' r='11'/><circle cx='464' cy='158' r='11'/></g><text x='425' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>工蜂越能干 → 整窝越兴旺</text><text x='425' y='208' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>→ 蜂后留下更多后代</text><path d='M248,134 L306,134 M298,128 L308,134 L298,140' style='fill:none;stroke:var(--cinnabar);stroke-width:1.3'/><line x1='40' y1='244' x2='520' y2='244' style='stroke:var(--line);stroke-width:1'/><text x='280' y='266' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>工蜂不必自己留后，它只要让自己的母亲留后就行</text><text x='280' y='288' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>一百年后，这个转念被写成公式，成了《自私的基因》的地基</text></svg>",
+      "caption": "全书最险的一处，也是最有远见的一处。他没有工具去算这笔账，但他把方向指对了：被选择的可以不是那个身体。"
+    },
+
+    { "type": "h2", "text": "五、一个转念，一百年后长成了一门学问" },
+    { "type": "p", "text": "达尔文当时没有工具去算这笔账——他不知道遗传的单位是什么，也就无法说清「让母亲留后」为什么能等价于「自己留后」。**他只能把方向指对，剩下的留给后人。**" },
+    { "type": "p", "text": "一百年后，这个转念被写成了一条公式：**如果一个行为给亲属带来的好处，乘以亲缘关系的紧密程度，超过它给自己造成的损失，这个行为就会被选择保留。**兄弟姐妹之间共享一半的遗传物质，所以为两个兄弟牺牲自己，在这本账上是持平的——生物学家霍尔丹那句半开玩笑的「我愿为两个兄弟或八个表兄弟去死」，说的就是这笔账。" },
+    { "type": "p", "text": "再往后，道金斯把这套算法推到底，写出了《自私的基因》：**如果被选择的真正单位是遗传单位而不是身体，那么工蜂的自我牺牲就一点也不反常**——它保住的是自己那份遗传物质在别处的副本。站在书房里回头看，那本书整个是从达尔文这一章的一句话上长出来的。**不读源头，你不会知道那一步跨了多远。**" },
+
+    { "type": "h2", "text": "六、他在这一章划下的两条界" },
+    { "type": "p", "text": "最后收一收这一章的分寸感。达尔文在这里划了两条界，都守得很干净。" },
+    { "type": "p", "text": "**第一条：不谈心理起源。**动物有没有意识、本能在感觉上是什么样子，他一律不碰。这不是回避，是知道自己手里没有工具。**把能回答的问题和不能回答的问题分开摆，是这本书最稳的地方。**" },
+    { "type": "p", "text": "**第二条：不谈道德。**蓄奴蚁的行为不构成对奴隶制的任何评价，杜鹃的托卵也不是对育儿责任的暗示。**自然界里发生了什么，跟人应该怎么做，是两码事。**他在这一章说得很轻，但守得很牢；一百多年后，恰恰是这条界被踩得最烂——那是第十一章的事了。" },
+    { "type": "pull", "text": "被选择的可以不是那个身体——这句话他没有工具去证明，但方向指对了，一百年后它长成了一门学问。" },
+    {
+      "type": "refs",
+      "items": [
+        "对应原书第七章《本能》（第六版中为第八章）",
+        "延伸：汉密尔顿的亲缘选择（1964）与道金斯《自私的基因》（1976），均可溯源至本章的家族选择思路",
+        "本篇为原创消化与转述，非原文翻译"
+      ]
+    }
+  ]
+}

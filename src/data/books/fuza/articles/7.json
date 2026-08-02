@@ -1,0 +1,138 @@
+{
+  "title": "网络:小世界、无标度与幂律",
+  "subtitle": "不看部件是什么,只看谁连着谁——一副新眼镜,让神经元、社交、万维网、食物链能摆在同一张纸上比较",
+  "centralIdea": "1998 到 1999 短短两年,复杂科学多了一门新语言:网络科学。它的诀窍是彻底忽略部件的性质,只看连接结构。这一章讲三个核心发现:小世界(在抱团的网络里随机加几条远程连线,平均距离立刻塌下来)、无标度(增长加上「富者愈富」自然产生幂律度分布,少数枢纽连着一切)、以及由此而来的「又结实又脆弱」(随机失效几乎无感,针对枢纽的打击迅速致命)。幂律这一条,正是塔勒布讲黑天鹅时反复强调的那件事的数学形式。但米歇尔在同一章里也把该打的问号打了:很多被宣称的幂律经不起严格检验,而且「两个网络长得像」离「背后机制相同」还差得很远。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "换一副眼镜。前面几章我们一直在问「部件在做什么」——蚂蚁在闻信息素、神经元在放电、淋巴细胞在瞎猜。这一章把这些统统忽略掉,**只问一件事:谁连着谁。**把蚂蚁、神经元、网页、物种、银行都抽象成点,把它们之间的关系抽象成线,剩下的就是一张纯粹的图。这么一抽象,神经网络、社交关系、万维网、食物链、代谢通路、金融体系,忽然可以放在同一张纸上比较了。这是复杂科学最近一次真正意义上的突破,而它发生在很晚——1998 到 1999 短短两年之内。"
+    },
+    {
+      "type": "h2",
+      "text": "一、为什么这么晚才发生"
+    },
+    {
+      "type": "p",
+      "text": "图论本身很老,一般追到 1736 年欧拉解决哥尼斯堡七桥问题。二十世纪五六十年代,厄多斯和雷尼研究了「随机图」:给定一堆点,每两点之间以某个固定概率连一条线,看会长出什么。这套数学很漂亮,但它描述的网络和现实中的网络长得完全不一样。"
+    },
+    {
+      "type": "p",
+      "text": "真正的障碍是**数据**。要研究一张真实的大网络,你得先有它的完整连接表——谁认识谁、哪个网页链到哪个网页、哪种酶催化哪个反应。这种数据在互联网出现之前基本拿不到。**所以网络科学不是等一个新想法,是等一批新数据;而九十年代末,数据一下子有了。**这是科学史上常见的模式:一个领域的爆发,往往是测量能力先到位。"
+    },
+    {
+      "type": "h2",
+      "text": "二、小世界:少数几条远程连线就够了"
+    },
+    {
+      "type": "p",
+      "text": "1967 年,社会心理学家米尔格拉姆做了那个著名的转信实验:给中西部的一批人一封信,请他们转给某个自己认识、且可能离目标更近的人,一手一手传下去,看要几步能到达波士顿的一个指定收信人。结果传说中是「六度分隔」。"
+    },
+    {
+      "type": "callout",
+      "tone": "mute",
+      "label": "证据没那么硬",
+      "items": [
+        "这个实验的真实情况值得说清楚:寄出的信里,**只有大约五分之一最终送达**,而「平均六步」是在那些送达的链条上算出来的。没送到的那些,很可能正是链条更长、更难走通的路径,把它们排除掉必然低估了真实距离。所以「六度分隔」作为一个流行说法过硬了,作为科学结论则相当软。这不影响后面的理论价值——**它提出了一个好问题,只是没有给出可靠的答案。**这个区分在读任何「著名实验」时都值得保留。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "1998 年,瓦茨和斯托加茨给出了机制,而且干净得像一个数学玩具。从一个「每个人只跟身边邻居来往」的环状网络出发——这种网络抱团很紧,但从一头走到另一头要绕很远;然后**随机挑出极少数几条边,把一端拽到网络的随机位置上**。神奇的事情发生了:只重连百分之几的边,**整个网络的平均距离就断崖式下跌,而抱团程度几乎没变。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "svg": "<svg viewBox='0 0 560 280' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>只挪动百分之几的边,世界就变小了</text><g transform='translate(50,46)'><circle cx='90' cy='90' r='72' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='90' cy='18' r='4' style='fill:var(--ink-soft)'/><circle cx='141' cy='39' r='4' style='fill:var(--ink-soft)'/><circle cx='162' cy='90' r='4' style='fill:var(--ink-soft)'/><circle cx='141' cy='141' r='4' style='fill:var(--ink-soft)'/><circle cx='90' cy='162' r='4' style='fill:var(--ink-soft)'/><circle cx='39' cy='141' r='4' style='fill:var(--ink-soft)'/><circle cx='18' cy='90' r='4' style='fill:var(--ink-soft)'/><circle cx='39' cy='39' r='4' style='fill:var(--ink-soft)'/><text x='90' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--ink)'>只和邻居来往</text><text x='90' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>抱团紧 · 但绕远</text></g><path d='M242 136 L282 136 M274 130 L282 136 L274 142' style='fill:none;stroke:var(--cinnabar);stroke-width:1.4'/><text x='262' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--cinnabar)'>随机重连</text><text x='262' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--cinnabar)'>两条边</text><g transform='translate(300,46)'><circle cx='90' cy='90' r='72' style='fill:none;stroke:var(--line);stroke-width:1'/><path d='M90 18 L90 162 M39 39 L141 141' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><circle cx='90' cy='18' r='4' style='fill:var(--ink-soft)'/><circle cx='141' cy='39' r='4' style='fill:var(--ink-soft)'/><circle cx='162' cy='90' r='4' style='fill:var(--ink-soft)'/><circle cx='141' cy='141' r='4' style='fill:var(--ink-soft)'/><circle cx='90' cy='162' r='4' style='fill:var(--ink-soft)'/><circle cx='39' cy='141' r='4' style='fill:var(--ink-soft)'/><circle cx='18' cy='90' r='4' style='fill:var(--ink-soft)'/><circle cx='39' cy='39' r='4' style='fill:var(--ink-soft)'/><text x='90' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar)'>加两条跨圈子的线</text><text x='90' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>还是一样抱团 · 但不再绕远</text></g><text x='280' y='268' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>「熟人抱团」和「六步可达」并不矛盾——少数几条弱连接就够了</text></svg>",
+      "caption": "这个模型最漂亮的地方在于它解释了一个看似矛盾的现象:我们的社交圈明明高度抱团,世界却又小得离谱。答案是那几条不起眼的跨圈子关系。"
+    },
+    {
+      "type": "p",
+      "text": "这一条对现实的解释力很强。你朋友的朋友大多也是你朋友(抱团),可你和地球另一端的某人之间居然只隔几步(短路径)——支撑后一件事的,就是那些**你不常联系、也不属于你圈子的关系**:老同学、前同事、旅途上认识的人。社会学那边早在 1973 年就有一篇著名论文讲「弱连接的强度」,说找工作的关键信息往往来自这类关系而不是密友;网络科学在二十五年后给了它一个数学解释。**弱连接的价值不在于它多亲密,而在于它接到了你圈子之外的信息。**"
+    },
+    {
+      "type": "h2",
+      "text": "三、无标度:富者愈富,和一条没有「典型值」的分布"
+    },
+    {
+      "type": "p",
+      "text": "第二个发现来自另一个方向。有人去数万维网上每个网页有多少条链接指向它,发现分布长得很怪:**绝大多数网页只有零星几个链接,而极少数网页有几十万个。**这不是正态分布——正态分布有个明确的「典型值」,大家都围着平均值上下浮动,极端值罕见到可以忽略。这种分布叫**幂律**,它没有典型值可言。"
+    },
+    {
+      "type": "p",
+      "text": "巴拉巴西等人给出的机制同样简洁,只要两条:**一、网络在不断长大**(新网页不断出现);**二、新来的更愿意连已经很红的**(你建站时更可能链到已经很有名的站)。这两条一凑,富者愈富,最终的度分布就是幂律,而那些超级节点被称为「枢纽」。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "svg": "<svg viewBox='0 0 560 280' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>两种世界:有典型值的,和没有典型值的</text><g transform='translate(20,44)'><path d='M40 180 L240 180 M40 40 L40 180' style='fill:none;stroke:var(--line);stroke-width:1'/><path d='M46 178 C90 176,110 150,140 70 C170 150,190 176,234 178' style='fill:none;stroke:var(--ink-soft);stroke-width:1.8'/><path d='M140 70 L140 180' style='fill:none;stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:3 3'/><text x='140' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>平均值 = 典型值</text><text x='140' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>正态分布</text><text x='140' y='220' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>身高:没有人高 10 米</text></g><g transform='translate(290,44)'><path d='M40 180 L240 180 M40 40 L40 180' style='fill:none;stroke:var(--line);stroke-width:1'/><path d='M44 44 C56 120,70 160,100 172 C140 178,180 179,234 179.5' style='fill:none;stroke:var(--cinnabar);stroke-width:1.8'/><text x='140' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar)'>幂律分布</text><text x='60' y='36' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>绝大多数极小</text><text x='150' y='166' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>尾巴很长、很厚</text><text x='140' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--cinnabar)'>没有「典型值」这回事</text><text x='140' y='220' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>财富、城市规模、网页链接数</text></g><rect x='40' y='236' width='480' height='36' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.2'/><text x='280' y='259' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar)'>在左边那个世界里极端值可以忽略;在右边那个世界里,极端值就是全部</text></svg>",
+      "caption": "塔勒布整本《黑天鹅》讲的其实就是这张图:我们的直觉、我们的统计训练,都是在左边那个世界里养成的,而很多要紧的事发生在右边。"
+    },
+    {
+      "type": "quote",
+      "original": "在正态分布的世界里,极端值可以忽略;在幂律的世界里,极端值就是全部。",
+      "translation": "这是这一章和书房里塔勒布那两本书之间最直接的接口。米歇尔提供的是机制(增长 + 优先连接),塔勒布提供的是应对(别去预测尾部,去改造你的暴露结构)。"
+    },
+    {
+      "type": "h2",
+      "text": "四、又结实又脆弱:同一条性质的两面"
+    },
+    {
+      "type": "p",
+      "text": "枢纽的存在带来一个很有意思的后果。**随机敲掉一批节点**——比如某些路由器随机故障——网络几乎无感。为什么?因为节点绝大多数是小节点,随机抽中的大概率也是小节点,而小节点掉了不影响连通。这解释了互联网为什么出奇地耐操。"
+    },
+    {
+      "type": "p",
+      "text": "**但如果有人专挑枢纽下手**,情况完全反过来:敲掉极少数几个枢纽,网络就迅速碎成互不相通的碎片。同一条结构性质——「连接高度集中在少数节点」——同时带来了对随机故障的强韧和对定向打击的脆弱。这个组合有个说法叫「又结实又脆弱」。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>同一张网,两种敲法,两种结局</text><g transform='translate(40,44)'><text x='100' y='14' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>随机敲掉几个</text><circle cx='100' cy='84' r='9' style='fill:var(--ink)'/><circle cx='56' cy='48' r='5' style='fill:var(--ink-soft)'/><circle cx='144' cy='48' r='5' style='fill:var(--ink-soft)'/><circle cx='46' cy='96' r='3.5' style='fill:var(--ink-faint)'/><circle cx='154' cy='96' r='3.5' style='fill:var(--ink-faint)'/><circle cx='72' cy='132' r='3.5' style='fill:var(--ink-faint)'/><circle cx='100' cy='142' r='3.5' style='fill:var(--ink-faint)'/><path d='M100 84 L56 48 M100 84 L144 48 M100 84 L46 96 M100 84 L154 96 M100 84 L72 132 M100 84 L100 142' style='fill:none;stroke:var(--ink-faint);stroke-width:0.9'/><path d='M40 90 L52 102 M52 90 L40 102' style='fill:none;stroke:var(--cinnabar);stroke-width:1.6'/><path d='M66 126 L78 138 M78 126 L66 138' style='fill:none;stroke:var(--cinnabar);stroke-width:1.6'/><text x='100' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>大概率敲到的是小节点</text><text x='100' y='194' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>网络几乎无感</text></g><path d='M280 110 L280 60 M280 130 L280 180' style='fill:none;stroke:var(--line);stroke-width:1'/><g transform='translate(320,44)'><text x='100' y='14' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar)'>专挑枢纽敲</text><circle cx='100' cy='84' r='9' style='fill:none;stroke:var(--cinnabar);stroke-width:1.4;stroke-dasharray:3 2'/><path d='M91 75 L109 93 M109 75 L91 93' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><circle cx='56' cy='48' r='5' style='fill:var(--ink-soft)'/><circle cx='144' cy='48' r='5' style='fill:var(--ink-soft)'/><circle cx='46' cy='96' r='3.5' style='fill:var(--ink-faint)'/><circle cx='154' cy='96' r='3.5' style='fill:var(--ink-faint)'/><circle cx='72' cy='132' r='3.5' style='fill:var(--ink-faint)'/><circle cx='100' cy='142' r='3.5' style='fill:var(--ink-faint)'/><text x='100' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>剩下的点彼此不再相连</text><text x='100' y='194' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>网络碎成一地</text></g><text x='280' y='240' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>耐操和易碎不是两条性质,是同一条性质的两面</text></svg>",
+      "caption": "这张图的实用价值很直接:如果你的系统里有枢纽,那么「它平时很稳」这个观察,恰恰不能用来证明它安全。"
+    },
+    {
+      "type": "p",
+      "text": "这个结论在好几个方向上都有分量。**传染病**:在有枢纽的网络里,病原体扩散的门槛低得多,几乎沾上就散得开;反过来,如果能优先给枢纽人群接种,效果远好于随机接种同样的人数。**金融**:少数几家机构与所有人都有敞口,平时看起来是效率的来源,危机时就是级联崩塌的传导路径。**基础设施**:电网、航空网、供应链的道理一样。"
+    },
+    {
+      "type": "pull",
+      "text": "「它平时很稳」这个观察,恰恰不能用来证明它安全——那可能只是还没人往枢纽上打。"
+    },
+    {
+      "type": "h2",
+      "text": "五、该打的问号"
+    },
+    {
+      "type": "p",
+      "text": "网络科学出场的姿态很高,一度像是找到了万物通用的语言。米歇尔在同一章里把该打的问号打了,而这几个问号今天更该记住。"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**很多「幂律」经不起检验。** 判断一个分布是不是幂律,不能靠「在双对数坐标上看着像直线」。严格的做法要拟合参数、要和别的重尾分布(比如对数正态)比拼,还要做统计检验。这么一查,过去十几年被宣称为幂律的分布里,相当一部分站不住——**要么根本不是幂律,要么数据不足以区分它和别的候选分布。**",
+        "**「结构像」不等于「机制同」。** 两个网络的度分布都是幂律,不代表它们是同一个过程产生的。优先连接能产生幂律,但别的机制也能;看到幂律就宣布「一定是富者愈富」,是把一条充分条件当成了必要条件。",
+        "**度分布不是网络的全部。** 只知道每个点连了几条边,你其实还不知道这张网长什么样——连接的相关性、社群结构、边的方向和权重,都可能比度分布更能决定系统行为。**「无标度」是一个关于分布的说法,不是关于网络的完整描述。**"
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "常见的滥用",
+      "items": [
+        "「幂律」被搬进日常讨论时,最常见的是被当成二八法则的高级说法,用来给「资源应该向头部集中」背书。这里有两个偷换:第一,**二八法则是一个经验比例,幂律是一族有具体指数的分布**,两者不能互换;第二,更要紧的是,**幂律描述的是现状,不是应然**。「头部占了大部分流量」是一个事实陈述,「所以应该只投头部」是一个策略判断,后者还需要另外的论证(比如边际收益、风险集中度、尾部的期权价值)。把描述当成建议,是这套词汇被误用得最多的一种方式。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "六、和书房里其他书怎么接"
+    },
+    {
+      "type": "p",
+      "text": "这一章有两条清晰的对读线索。一条通向**塔勒布**:《黑天鹅》整本书讲的就是那张幂律图右半边的世界,而这一章给了它机制(增长 + 优先连接)和结构后果(又结实又脆弱)。另一条通向**《独自打保龄》**:帕特南量的是真实社会网络的疏密和它几十年来的衰减,而这一章给的是那张网的数学骨架——为什么弱连接比密友更能带来新信息、为什么枢纽人物的退出比普通人退出影响大得多。**两本书一个提供数据,一个提供结构,合起来读比单读任何一本都清楚。**"
+    },
+    {
+      "type": "p",
+      "text": "下一章继续在「结构」这条线上走,但换一个问题:不问「连接怎么分布」,而问「规模变大的时候,什么按什么比例变」。答案会带出全书最像物理学定律的一节——以及同样值得打的一串问号。"
+    }
+  ]
+}

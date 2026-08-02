@@ -1,0 +1,75 @@
+{
+  "title": "自然选择：这是一个演绎，不是一次观察",
+  "subtitle": "他没看见任何一个物种诞生——他证明的是：只要那几件事成立，物种就非诞生不可",
+  "centralIdea": "第四章是全书的心脏，也是最被讲糊的一章。流行的故事是「达尔文在加拉帕戈斯看到鸟嘴，于是想通了演化」——这把书的性质讲反了。《物种起源》不是一份观察报告，它是一个论证：给定五个谁都能查证的前提，演化不是可能发生，而是跑不掉。这一章还做了三件事：把「选择」这个拟人的词澄清成对结果的概括；引入性选择（活下来不够，还得被选中）；提出分歧原则，解释为什么生命会分叉成树而不是沿一条线变。最后，他亲手给出了推翻自己的条件——这在当时的著作里极其罕见。",
+  "blocks": [
+    { "type": "lead", "text": "前两章给了原料（到处都是可遗传的变异），第三章算了一笔账（生下来的远多于活得下去的）。第四章要做的事只有一个动作：**把这两样扣在一起。**扣上之后会发生什么，达尔文自己心里清楚——那是一个会让整个时代不安的结论。所以这一章他写得极慢、极稳，一句都不肯多说。" },
+
+    { "type": "h2", "text": "一、把链条完整地扣一遍" },
+    { "type": "p", "text": "先看清链条的形状。它一共只有五个前提，每一个都能在田间地头查证：**其一**，任何物种若不受限制，数量按几何级数增长；**其二**，现实中数量大体稳定；**其三**，资源有限。这三条推出第一个结论：多数个体活不到留下后代——生存斗争。" },
+    { "type": "p", "text": "**其四**，同种个体之间到处是细微差异；**其五**，这些差异有一部分能传给后代。把它们跟前面的结论拼上：既然多数要被淘汰，而个体之间又不一样，那么**淘汰就不可能是抽签**。凡是让持有者哪怕多一丁点机会活到繁殖的差异，都会在下一代里占比更高。这就是自然选择。" },
+    { "type": "p", "text": "第三步只是把时间拉长：这点偏差每一代发生一次，累积上万代，形态就会大幅偏离起点；再叠上分歧与灭绝，长出来的形状就是一棵树。**注意这里没有一处需要你「相信」什么。**每个方框里装的都是事实，方框之间的箭头是逻辑。" },
+    { "type": "p", "text": "所以要反驳这套东西，光说「我不信」是没用的——你得指着某一个前提说它不成立。这也正是这套论证的强悍之处：**它把攻击面全部摊在明处，而且每一面都薄得像纸，谁都能上手检验。**一百六十多年来，这五个入口被反复冲击，没有一个被攻破；相反，每一个都被后来的证据加固了。" },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "svg": "<svg viewBox='0 0 560 340' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>要推翻它，你有五个入口</text><text x='280' y='46' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>——而且每一个都薄得像纸，谁都能上手检验</text><rect x='24' y='62' width='512' height='42' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='44' y='89' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>① 证明生物的繁殖能力不是几何级数</text><text x='516' y='89' text-anchor='end' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar)'>数一窝卵即可</text><rect x='24' y='112' width='512' height='42' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='44' y='139' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>② 证明种群数量在长期持续暴涨</text><text x='516' y='139' text-anchor='end' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar)'>野外普查即可</text><rect x='24' y='162' width='512' height='42' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='44' y='189' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>③ 证明资源无限</text><text x='516' y='189' text-anchor='end' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar)'>不必试</text><rect x='24' y='212' width='512' height='42' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='44' y='239' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>④ 证明同种个体之间毫无差异</text><text x='516' y='239' text-anchor='end' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar)'>量一量就知道</text><rect x='24' y='262' width='512' height='42' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.4'/><text x='44' y='289' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>⑤ 证明这些差异一概不能遗传</text><text x='516' y='289' text-anchor='end' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar)'>育种者天天在反证</text><text x='280' y='328' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>一百六十多年过去，五个入口没有一个被攻破，反而个个被加固</text></svg>",
+      "caption": "一套好理论的标志，是它自己指出了哪里可以被打。这五条前提就是达尔文摊开的攻击面。"
+    },
+
+    { "type": "h2", "text": "二、「选择」是个比喻，他自己知道" },
+    { "type": "p", "text": "「自然选择」这个词一出来就挨批，批评的点很实在：**自然又没有眼睛，它凭什么「选」？**这个拟人的说法容易让人以为背后站着一个有意图的东西——这恰恰是达尔文最想赶走的东西。" },
+    { "type": "p", "text": "他后来在再版里专门补了说明：自然选择不是一种「力量」，也不是谁在挑挑拣拣，**它只是对一个结果的概括**——有些个体留下了后代，有些没有，而这不是随机的。用大白话说：自然没有在挑，只是有些死得早。所谓「被选中」，不过是「碰巧没被筛掉」的另一种说法。" },
+    { "type": "p", "text": "这个澄清今天听着啰嗦，可它是一切误用的分水岭。**一旦你以为自然在「挑选优秀者」，你就已经偷偷塞进了一个价值判断**——优秀、进步、更高级。而在原来的框架里，被留下的只是「在这一时一地碰巧更能留后的那些」，跟优秀与否没有关系。深海里的盲鱼、失去翅膀的岛屿昆虫，都是自然选择的产物，没有一样看着像「进步」。" },
+
+    { "type": "h2", "text": "三、它慢到看不见，可它一直在" },
+    { "type": "p", "text": "达尔文写过一段近乎抒情的话形容这个过程：它每日每时都在审视世界上最细微的变异，把坏的清除、把好的保存下来，静默无声，看不出在动，但只要有机会就在做工。" },
+    { "type": "quote", "original": "它静默无声，看不出在动，但只要有机会，就在做工。", "translation": "他形容自然选择的一句。这里的难点不在道理，在**尺度感**：一件慢到看不见的事，人本能地会觉得它没发生。就像盯着时钟的分针，你看不见它动，可你不会因此说它不走。" },
+    { "type": "p", "text": "读这本书最需要克服的心理障碍就是尺度。人的一生七八十年，而他要的时间以百万年计——这中间差着五个数量级。**很多人拒绝接受自然选择，不是因为逻辑上想不通，是因为身体上感觉不到。**达尔文很清楚这一点，所以他上一本畅销书（《小猎犬号航海记》的地质部分）和赖尔的地质学，早就替他把「地球极其古老」这个前提铺好了路。" },
+
+    { "type": "h2", "text": "四、性选择：活下来不够，还得被选中" },
+    { "type": "p", "text": "这一章里他还塞进了一个原创的补充，后来单独长成了一本书。问题是这样的：孔雀那身大尾巴明显不利于逃命，雄鹿的角笨重又费养分，公鸟的艳色等于向天敌招手——**如果自然选择只筛「能不能活」，这些东西早该被淘汰干净。**" },
+    { "type": "p", "text": "他的回答是：**留下后代要过两关，活着只是第一关，第二关是能不能繁殖。**如果一个特征在第二关上带来的好处，超过它在第一关上造成的损失，它就会留下来。他把这一关拆成两种方式：一种是同性之间的直接竞争（鹿角就是为此长的），一种是异性的偏好（雌孔雀更愿意选尾巴气派的）。" },
+    { "type": "p", "text": "性选择在《物种起源》里只是简笔，十二年后的《人类的由来》才展开成半本书。但这个概念在这里已经完成了一件重要的事：**它证明「自然选择」不等于「适者更强」。**很多在生存上纯属拖累的东西，照样能被留下来——只要它在留后这件事上占便宜。这一条后来成了拆穿「优胜劣汰」式误读的利器。" },
+
+    { "type": "h2", "text": "五、分歧原则：为什么生命会分叉，而不是沿一条线变" },
+    { "type": "p", "text": "这是达尔文自己最得意的一个补充，也是他动笔较晚才想通的一环。前面的机制只解释了「一个物种会逐渐改变」，可它解释不了「一个物种怎么变成两个」——如果所有个体都朝同一个最优方向被推，结果应该是一条线，而不是一棵树。" },
+    { "type": "p", "text": "他的答案接的是第三章那条伏笔：**同种个体之间竞争最凶，因为它们要的东西一模一样。**所以在同一块地上，越是长得像的后代，越是彼此掐得厉害；而那些恰好偏离了一点、能去啃别人不啃的东西、能占别人不占的角落的个体，日子反而好过。于是选择不只是往前推，它还在持续地**往两边推**。" },
+    { "type": "p", "text": "他还给了一个漂亮的旁证：同样面积的一块地，**种上亲缘关系越远、生活方式越不同的植物，长出来的总量越大。**因为它们分别取用了不同的资源。自然界的道理和这个一样——分化得越开，同一块地能养活的总量越多。所以分歧不只是可能发生，它是被奖励的。" },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>为什么是树，不是一条线</text><text x='150' y='56' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink-soft)'>如果只有「往前推」</text><path d='M80,90 L220,90' style='stroke:var(--ink-faint);stroke-width:2'/><g style='fill:var(--ink-faint)'><circle cx='80' cy='90' r='4'/><circle cx='150' cy='90' r='4'/><circle cx='220' cy='90' r='4'/></g><text x='150' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>一个物种慢慢变形，还是一个物种</text><text x='410' y='56' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar)'>加上「往两边推」</text><path d='M330,90 L390,90 M390,90 L470,62 M390,90 L470,118' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><g style='fill:var(--cinnabar)'><circle cx='330' cy='90' r='4'/><circle cx='470' cy='62' r='4'/><circle cx='470' cy='118' r='4'/></g><text x='410' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>分开吃、分开住 → 两支都活得下去</text><line x1='40' y1='168' x2='520' y2='168' style='stroke:var(--line);stroke-width:1'/><text x='280' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>推力从哪来：越像越挤</text><text x='280' y='222' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>同种个体吃同样的东西、住同样的地方、抢同样的配偶</text><text x='280' y='244' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>偏离一点的个体反而松快，于是偏离被持续奖励</text><rect x='90' y='260' width='380' height='34' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.2'/><text x='280' y='283' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>分歧不只是可能发生，它是被奖励的</text></svg>",
+      "caption": "分歧原则是达尔文想通得较晚的一环，却是「树」这个形状的来源。没有它，自然选择只能解释变形，解释不了分家。"
+    },
+
+    { "type": "h2", "text": "六、于是分类表变成了家谱" },
+    { "type": "p", "text": "分歧再叠上灭绝，全书唯一的那张插图就长出来了：一堆从下往上分岔的线，绝大多数中途断掉，少数抵达顶端。**今天活着的每一个物种，都是一份漫长幸存者名单上的一行。**" },
+    { "type": "p", "text": "这里有一个漂亮的回旋。林奈以来，分类学家把生物排成「种套属、属套科、科套目」的层层嵌套，谁也说不清世界为什么这么整齐——为什么不是一片连续的渐变，或者一堆互不相干的孤岛？达尔文的答案是：**因为那张分类表本来就是一张家谱。**你把任何一个家族的谱系画成图，天然就是嵌套的：堂兄弟共一个祖父，远房共一个高祖。分类学干了两百年而不自知的事，被他一句话点破了。" },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "svg": "<svg viewBox='0 0 560 260' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>分类的嵌套，是分枝留下的痕迹</text><text x='140' y='54' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink-soft)'>分类学家看到的</text><rect x='40' y='68' width='200' height='140' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='140' y='90' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>目</text><rect x='58' y='98' width='164' height='100' rx='5' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='140' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>科</text><rect x='76' y='126' width='128' height='62' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='140' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>属</text><rect x='94' y='154' width='92' height='26' rx='3' style='fill:none;stroke:var(--cinnabar);stroke-width:1.2'/><text x='140' y='172' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>种</text><text x='420' y='54' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar)'>底下真正发生的</text><path d='M420,200 L420,170 M420,170 L360,140 M420,170 L480,140 M360,140 L330,105 M360,140 L390,105 M480,140 L450,105 M480,140 L510,105' style='fill:none;stroke:var(--cinnabar);stroke-width:1.4'/><g style='fill:var(--cinnabar)'><circle cx='420' cy='204' r='4'/><circle cx='330' cy='100' r='3.5'/><circle cx='390' cy='100' r='3.5'/><circle cx='450' cy='100' r='3.5'/><circle cx='510' cy='100' r='3.5'/></g><text x='420' y='222' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>共同祖先</text><text x='420' y='88' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>今天的物种</text><path d='M250,138 L280,138 M280,132 L290,138 L280,144' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><text x='280' y='248' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>把任何家族的谱系画成图，天然就是嵌套的</text></svg>",
+      "caption": "左边那套盒子套盒子的体系，两百年来没人说得清为什么。达尔文的回答只有一句：因为它本来就是家谱。"
+    },
+
+    { "type": "h2", "text": "七、他亲手写下了推翻自己的条件" },
+    { "type": "p", "text": "最后要说这一章——其实是全书——最了不起的一处。达尔文明确写下了什么样的发现能让他的理论彻底垮掉：" },
+    { "type": "quote", "original": "若能证明有任何复杂器官，不可能由无数细微而连续的改变形成，我的学说就将彻底崩溃。", "translation": "这是一句**自设的证伪条件**，在十九世纪的著作里罕见到近乎孤例。他不是在夸口，他是在给对手递刀：想推翻我，去找这样一个器官。一百六十多年过去，被反复提名的候选（眼睛、鞭毛、凝血系统）一个个都被找出了梯度或前身。" },
+    { "type": "p", "text": "这句话也顺带回答了一个常见的挑衅——「演化论不是科学，因为它不能被证伪」。**提出者本人在第一版里就写好了证伪条件，而且写得比后来的批评者更严格。**顺带一提，哲学家波普尔早年确实说过自然选择近乎同义反复，但他在 1978 年公开改口，承认自己想错了，并说它是可检验的。" },
+    { "type": "p", "text": "所以，怎么概括这一章？**他没有看见任何一个物种诞生**——这是事实，他自己也承认。他做的是另一件更难的事：证明只要那五件谁都能查证的事成立，物种就非诞生不可。**观察能被质疑「你会不会看错了」，演绎只能被质疑「你的前提对不对」。**而他把每一个前提都摊在了光天化日之下。" },
+    { "type": "h2", "text": "八、他没等到的那一幕，今天可以直接看" },
+    { "type": "p", "text": "达尔文一辈子的遗憾之一，是他相信这个过程慢到人类永远看不见。**这一点他错了，而且错得很幸运。**" },
+    { "type": "p", "text": "最有名的一例是英国的桦尺蛾。工业革命把树干熏黑之后，原本占多数的浅色型在深色树干上无所遁形，深色型的比例在几十年里升到压倒性优势；等到空气治理见效、树干重新变浅，浅色型又反弹回来。**同一个物种，同一片林子，两个方向各走了一遍**——所谓「适」，跟着环境走，这句话在这里能看得清清楚楚。" },
+    { "type": "p", "text": "更精细的证据来自加拉帕戈斯。一对生物学家夫妇在那里连续测量了几十年的地雀：一场大旱之后，剩下的种子又大又硬，喙深一点的个体才嗑得开，于是下一代的平均喙深明显增加；几年后一场大雨带来大量小而软的种子，风向又反过来。**这就是达尔文说的那台机器，被人拿着卡尺一代一代量了下来。**" },
+    { "type": "p", "text": "还有前面提过的培养皿：加一点抗生素，几十代之后整皿都是耐药菌。没有谁在指挥，细菌也不会「想要」耐药——只要变异、遗传、差别存活三条同时成立，结果就是必然的。**他在 1859 年靠推理得出的东西，今天可以在实验台上按天观察。**" },
+    { "type": "pull", "text": "观察可以被反问「你会不会看错」，演绎只能被反问「你的前提对不对」——而他把每个前提都摊在了光天化日之下。" },
+    {
+      "type": "refs",
+      "items": [
+        "对应原书第四章《自然选择；或适者生存》（「或适者生存」自第五版起加入标题）",
+        "本篇为原创消化与转述，引文为点睛式短引、按文意重译"
+      ]
+    }
+  ]
+}

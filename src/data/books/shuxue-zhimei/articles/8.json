@@ -1,0 +1,129 @@
+{
+  "title": "相关性与网页排名：TF-IDF、余弦定理与 PageRank",
+  "subtitle": "找得到只是第一步，排得对才算搜索——一把尺子量「有多沾边」，一把尺子量「值不值得信」",
+  "centralIdea": "含有你搜的那几个词的网页有几千万个，真正的问题是把哪一个放在第一位。这一章给了两把尺子。第一把管相关性：一个词在这篇文章里出现得多说明这篇讲得多（词频），但这个词要是到处都是就不值钱（逆文本频率），两者一乘就是 TF-IDF；它还有一个漂亮的信息论解释——逆文本频率量的正是这个词携带的信息量。把每篇文章的词权重排成一串数，文章就成了空间里的一个向量，两篇像不像看夹角余弦，中学几何于是解决了新闻自动分类。第二把管权威性：PageRank 把「网页重要不重要」定义成「谁链向它、链它的又有多重要」——一个看似循环论证的死结，写成矩阵反复相乘就收敛了，答案正是这个矩阵的主特征向量。最终排序是两把尺子相乘。今天 PageRank 已只是几百个信号中的一个，排序早已交给机器学习，但「相关 × 权威」这个骨架至今没变。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "你在搜索框里敲下三个词，按下回车，**符合条件的网页可能有几千万个**。倒排索引负责把它们找出来，这活儿上一章讲完了。真正决定搜索好不好用的，是接下来这一步：**这几千万个里，把哪一个放在第一位。**这一章给了两把尺子，一把量「这篇跟你要的有多沾边」，一把量「这篇本身值不值得信」。"
+    },
+
+    { "type": "h2", "text": "一、第一把尺子：词频与逆文本频率" },
+    {
+      "type": "p",
+      "text": "最直觉的想法是数数：**你搜的词在哪篇里出现得多，哪篇就更相关。**这个指标叫词频。它有道理——一篇通篇讲原子能的文章，「原子能」出现的次数一定比顺带提一句的文章多。为了不让长文章天然占便宜，还要除以文章总词数，做个归一化。"
+    },
+    {
+      "type": "p",
+      "text": "但只用词频立刻会出事。你搜「原子能的应用」，机器会把这五个字拆成几个词，其中「的」这个字在任何一篇中文文章里都出现几十上百次。**结果是一篇跟原子能毫无关系、但「的」字特别多的文章，词频得分反而很高。**最土的补救办法是列一份停用词表，把「的」「是」「在」这类字词直接扔掉——**可这只是打补丁，因为「值不值钱」是连续的，不是有无之分。**"
+    },
+    {
+      "type": "p",
+      "text": "真正的解法叫**逆文本频率**：一个词如果在很多很多文档里都出现，那它就不值钱；只在少数文档里出现的词，才有区分力。「原子能」在整个语料里出现的文档很少，所以它的权重高；「的」几乎每篇都有，权重低到可以忽略。**把词频和逆文本频率一乘，就是 TF-IDF**——搜索引擎用了几十年的相关性基础，一九七〇年代初就被提出来了。"
+    },
+    {
+      "type": "p",
+      "text": "**这本书最漂亮的一处解释，是给逆文本频率找到了信息论的根据。**回想第三章：一条消息的信息量，取决于它消除了多少不确定性。**一个词出现在越少的文档里，它一旦出现，就替你排除掉越多的可能性，也就携带越多的信息量。**所以逆文本频率不是一个凑出来的经验公式，它量的就是这个词的信息量——**一个用了几十年的工程窍门，回头一看原来早就有理论根据，这种时刻在这本书里出现过好几次。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "四象限",
+      "caption": "两把尺子缺一不可：只有「这篇里出现得多」且「别处不常见」的词，才是真正的关键词。停用词表因此可以退休了。",
+      "svg": "<svg viewBox='0 0 660 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>词频 × 逆文本频率</text><line x1='180' y1='250' x2='530' y2='250' style='stroke:var(--line)' stroke-width='1.4'/><line x1='180' y1='250' x2='180' y2='48' style='stroke:var(--line)' stroke-width='1.4'/><line x1='355' y1='48' x2='355' y2='250' style='stroke:var(--line)' stroke-width='0.8' stroke-dasharray='3 4'/><line x1='180' y1='150' x2='530' y2='150' style='stroke:var(--line)' stroke-width='0.8' stroke-dasharray='3 4'/><text x='355' y='274' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>逆文本频率（别处越少见越高）→</text><text x='160' y='150' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)' transform='rotate(-90 160 150)'>词频（本篇里出现越多越高）→</text><rect x='196' y='62' width='142' height='72' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='267' y='92' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>「的」「是」「在」</text><text x='267' y='114' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>到处都是，不值钱</text><rect x='372' y='62' width='142' height='72' rx='8' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar)' stroke-width='1.6'/><text x='443' y='86' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink)'>真正的关键词</text><text x='443' y='108' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>「原子能」</text><text x='443' y='126' text-anchor='middle' font-size='11' style='fill:var(--cinnabar)'>本篇多 · 别处少</text><rect x='196' y='166' width='142' height='68' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='267' y='196' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>常见词，偶尔出现</text><text x='267' y='216' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>几乎没信息</text><rect x='372' y='166' width='142' height='68' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='443' y='196' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>生僻词，只提一次</text><text x='443' y='216' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>可能只是顺带一提</text><text x='330' y='294' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>逆文本频率的信息论含义：它量的就是这个词携带的信息量</text></svg>"
+    },
+
+    { "type": "h2", "text": "二、余弦定理：中学几何解决新闻分类" },
+    {
+      "type": "p",
+      "text": "有了词权重，就可以做一件很漂亮的事。**把词汇表里每个词当成一个维度，一篇文章就是一串数**——第一个词的权重、第二个词的权重……一路排下去。词汇表有几十万个词，那就是几十万维。**一篇文章于是变成了这个空间里的一个向量。**"
+    },
+    {
+      "type": "p",
+      "text": "两篇文章像不像？**看这两个向量的夹角。**夹角小说明用词分布接近，讲的多半是同一类事；夹角接近九十度说明八竿子打不着。而算夹角用的正是中学学过的余弦定理。**为什么要用夹角而不是距离？因为夹角跟文章长短无关**——一篇长文和一篇短讯讲同一件事，向量长度差很多，方向却几乎一致。**要比的是方向，不是长短。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "文章变成向量，像不像就看夹角。用夹角而不用距离，是因为一篇长文和一篇短讯讲同一件事时，长度差得远、方向却几乎一致。",
+      "svg": "<svg viewBox='0 0 660 268' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>比方向，不比长短</text><line x1='120' y1='220' x2='420' y2='220' style='stroke:var(--line)' stroke-width='1.3'/><line x1='120' y1='220' x2='120' y2='52' style='stroke:var(--line)' stroke-width='1.3'/><path d='M120,220 L340,84' style='stroke:var(--cinnabar)' stroke-width='2.4'/><path d='M340,84 l-2,-10 l-7,6 z' style='fill:var(--cinnabar)'/><path d='M120,220 L250,140' style='stroke:var(--cinnabar)' stroke-width='2.4'/><path d='M250,140 l-2,-10 l-7,6 z' style='fill:var(--cinnabar)'/><path d='M120,220 L360,190' style='stroke:var(--ink-soft)' stroke-width='2.2'/><path d='M360,190 l-9,-4 l-1,8 z' style='fill:var(--ink-soft)'/><path d='M168,198 A52,52 0 0 0 178,178' fill='none' style='stroke:var(--cinnabar)' stroke-width='1.2'/><text x='196' y='176' font-size='11' style='fill:var(--cinnabar)'>夹角很小</text><text x='352' y='76' font-size='11.5' style='fill:var(--ink-soft)'>长文：体育报道</text><text x='262' y='134' font-size='11.5' style='fill:var(--ink-soft)'>短讯：同一场比赛</text><text x='372' y='188' font-size='11.5' style='fill:var(--ink-soft)'>另一篇：财经新闻</text><text x='270' y='246' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>每个维度 = 一个词的权重（几十万维，这里只画两维）</text><text x='545' y='106' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>夹角小 → 同类</text><text x='545' y='130' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>夹角大 → 不相干</text><text x='545' y='164' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>新闻自动分类</text><text x='545' y='186' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>相似文章推荐</text><text x='545' y='208' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>去重与聚类</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这一手直接解决了新闻自动分类：**不需要事先定义什么叫「体育新闻」，只要两两算夹角，自然会聚成一堆一堆。**当文章数量大到两两比对也算不动时，还有一招矩阵的奇异值分解，能一次性把「词的类别」和「文章的类别」同时算出来，粗糙但极快，适合先粗分再细分。"
+    },
+    {
+      "type": "p",
+      "text": "**这里值得停一下**：把对象变成向量、用几何关系度量语义——这个想法在二〇一二年之后被推到了极致。今天的词向量、句向量、各种嵌入表示，玩的还是同一件事，只是那串数不再是词频权重，而是神经网络学出来的。**你在这一章学到的直觉，可以原封不动地搬去理解今天的语义检索。**"
+    },
+
+    { "type": "h2", "text": "三、第二把尺子：PageRank" },
+    {
+      "type": "p",
+      "text": "相关性解决了「沾不沾边」，但还有个更要命的问题：**一个词堆得满满当当的垃圾页面，相关性得分可能比权威媒体的报道还高。**九十年代的搜索引擎大都栽在这儿——搜出来的东西很「相关」，但没法看。"
+    },
+    {
+      "type": "p",
+      "text": "佩奇和布林一九九八年给出的答案，是把互联网的链接当成投票：**一个网页被越多网页链接，说明它越重要。**但这还不够——如果只数链接数量，随便建一万个空页面互相链接就能刷上去。所以还要加一句：**链向它的网页本身越重要，这一票就越值钱。**"
+    },
+    {
+      "type": "p",
+      "text": "麻烦在于这是个**循环定义**：要算 A 的重要性，得先知道链向 A 的 B 的重要性；而要算 B 的，又得先知道链向 B 的 C 的……绕回来了。**这是个死结，而数学解开它的方式非常漂亮**：把所有网页的重要性排成一列数，把链接关系写成一个巨大的矩阵，随便给一组初始值（比如所有网页一样重要），拿矩阵乘一遍得到新的一组值，再乘一遍，再乘一遍……**这个过程会收敛，收敛到的那组值就是答案。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "循环定义看着是死结，反复迭代却会收敛。收敛到的那组数，正是这个链接矩阵的主特征向量——线性代数课本上那个抽象概念，在这里就是「网页的权威度」。",
+      "svg": "<svg viewBox='0 0 660 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>链接就是投票，票的分量各不相同</text><circle cx='80' cy='96' r='16' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><circle cx='80' cy='168' r='16' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><circle cx='190' cy='132' r='22' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.3'/><circle cx='330' cy='132' r='34' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar)' stroke-width='1.8'/><circle cx='190' cy='214' r='14' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><circle cx='450' cy='84' r='13' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><circle cx='450' cy='180' r='13' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='330' y='137' text-anchor='middle' font-size='12' style='fill:var(--ink)'>权威</text><path d='M96,102 L170,124' style='stroke:var(--ink-faint)' stroke-width='1.2'/><path d='M96,162 L170,142' style='stroke:var(--ink-faint)' stroke-width='1.2'/><path d='M212,132 L294,132' style='stroke:var(--cinnabar)' stroke-width='2.6'/><path d='M296,132 l-9,-4 l0,8 z' style='fill:var(--cinnabar)'/><path d='M204,208 L302,150' style='stroke:var(--ink-faint)' stroke-width='1.1'/><path d='M304,148 l-9,-1 l3,7 z' style='fill:var(--ink-faint)'/><path d='M362,120 L438,92' style='stroke:var(--ink-faint)' stroke-width='1.1'/><path d='M362,146 L438,174' style='stroke:var(--ink-faint)' stroke-width='1.1'/><text x='250' y='118' text-anchor='middle' font-size='11' style='fill:var(--cinnabar)'>重要网页的一票，分量重</text><text x='240' y='236' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>小站的一票，分量轻</text><line x1='40' y1='252' x2='620' y2='252' style='stroke:var(--line)' stroke-width='1' stroke-dasharray='4 5'/><text x='330' y='274' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>循环定义 → 写成矩阵 → 随便给一组初值反复相乘 → 收敛</text><text x='330' y='294' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>收敛到的那组数 ＝ 这个矩阵的主特征向量 ＝ 网页的权威度</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**这组收敛值，就是那个矩阵的主特征向量。**线性代数课本上那个抽象得让人打瞌睡的概念——特征向量——在这里恰好就是「网页的权威度」。**这就是这本书取名「数学之美」的那种时刻**：不是公式好看，是一个纯粹抽象的东西，在另一个完全不相干的地方，正好就是你要找的答案。"
+    },
+    {
+      "type": "p",
+      "text": "实际做起来还有两处工程上的讲究。一是**要防止「掉进死胡同」**：有些网页只进不出，迭代时权重会被它们吃干净。解法是假设浏览者有一定概率不点链接、随机跳到别的网页去，这个概率就是所谓的阻尼系数——**顺手也让那些互相刷链接的小团体没法把权重锁死在自己人手里。**二是**矩阵大得吓人**：几十亿乘几十亿。但它极其稀疏（绝大多数网页之间没有链接），所以可以只存非零项，再把计算切成小块分到成千上万台机器上并行——**这正是后来那套分布式计算框架诞生的土壤之一。**"
+    },
+
+    { "type": "h2", "text": "四、两把尺子怎么合起来" },
+    {
+      "type": "p",
+      "text": "最终的排序，粗略地说就是**相关性乘以权威性**：既要跟你搜的东西对得上，又要本身靠谱。这个组合看似简单，却是搜索引擎当年拉开差距的关键——**只有相关性会被垃圾页面刷屏，只有权威性则永远返回那几个大站。**"
+    },
+    {
+      "type": "p",
+      "text": "有了排序，就有人来钻空子：堆关键词、买链接、建链接农场。**书里处理反作弊的思路很有意思——它把作弊当成通信里的噪声。**你不需要枚举每一种作弊手法（那又回到规则派的老路了），你要做的是提高信噪比：找出作弊信号的统计特征（比如链接来源高度集中、增长曲线异常），把它们当噪声滤掉。**又是那个动作：先换一个框架，再解题。**"
+    },
+
+    { "type": "h2", "text": "五、今天，这两把尺子还在吗" },
+    {
+      "type": "p",
+      "text": "**都还在，但地位变了。**相关性那一族仍然是基础设施——工业界更常用 TF-IDF 的改良版 BM25，它至今仍是检索排序里跑不掉的强基线。而 PageRank **已经从「排序的核心」降格成了「几百个信号里的一个」**：今天的排序由机器学习模型来做（这一路叫排序学习），输入是成百上千个特征——点击率、停留时间、页面速度、内容新鲜度、设备、地域、你的历史……链接权威只是其中一项。"
+    },
+    {
+      "type": "p",
+      "text": "**但那个骨架没变**：任何一个检索系统，最后都要在「跟需求对不对得上」和「这个来源值不值得信」之间做加权。今天的推荐系统、大模型的检索增强，做的还是同一件事。**读懂这一章，你就有了一副能看穿几乎所有信息分发产品的骨架图**——不管它前端多花哨，底下都是这两把尺子在打分。"
+    },
+
+    { "type": "h2", "text": "六、这一章省掉了什么苦工" },
+    {
+      "type": "p",
+      "text": "省掉了两份人工。**一份是维护关键词权重**：靠人去判断哪个词重要、哪个词是废话，做不完也不客观；逆文本频率让数据自己说话，而且有信息论的根据。**另一份更彻底——省掉了「编一份权威网站名单」。**在 PageRank 之前，早期的网络目录真的是靠编辑一条条人工收录和分类的；PageRank 把这件事变成了一次矩阵迭代。"
+    },
+    {
+      "type": "pull",
+      "text": "线性代数课本上那个抽象得让人打瞌睡的「特征向量」，在这里恰好就是「网页的权威度」——这就是「数学之美」四个字的意思。"
+    },
+    {
+      "type": "p",
+      "text": "最后提醒一句这一章的边界，书里没细说，但今天不能不想：**把「谁被链接得多」当成「谁更可信」，是一个假设，不是真理。**它在一个由专业站点和学术网页构成的早期互联网上相当灵；当内容开始为了排名而生产，当链接可以被买卖，这个假设就一直在被侵蚀。**任何一把好尺子，一旦被当成目标，就会开始失效**——这是排序系统里最深的一个坑，也是我们今天所有关于算法与信息环境的争论的源头。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本章对应原书讲网页与查询相关性（TF-IDF）的一章、讲余弦定理与新闻分类的一章、讲 PageRank 的一章，以及讲搜索反作弊的一章。",
+        "史实补充：逆文本频率的概念由 Karen Spärck Jones 于 1972 年提出；向量空间模型出自康奈尔大学 Gerard Salton 一系的工作；PageRank 见 Brin 与 Page 1998 年的论文，专利署名发明人为 Lawrence Page，权利归斯坦福大学。",
+        "BM25、排序学习、语义向量检索的现状为本文所作的时代补充，非原书内容。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "title": "隐含马尔可夫模型：序列问题的通用框架",
+  "subtitle": "语音识别、机器翻译、拼音输入、词性标注——四件不相干的事，被写成了同一个公式",
+  "centralIdea": "这是全书最漂亮的一手。设定很简单：有一串东西藏在里面看不见（说话人心里的那句话），有一串东西露在外面看得见（麦克风收到的声波），任务永远是同一句——给定看得见的一串，反推最可能的看不见的那一串。用贝叶斯公式一翻，这个问题自动裂成两半：一半问「这句话像不像人话」，那正是上一章的语言模型；一半问「这句话会不会发出这种声音」，那是声学模型。妙处在于，只要换掉「看得见的是什么」，同一个公式就变成另一件事：观测换成外文句子就是机器翻译，换成一串拼音字母就是输入法，换成一个个汉字就是词性标注和分词。四个领域，一套方法，这就是数学模型的复利。它也有三个绕不开的基本问题：算概率、找最优路径、训练参数；其中无监督训练那一招（先瞎猜一组参数，用它标注数据，再用标注反过来修参数，转圈到不动）意味着不必先攒一大堆人工标注也能起步。今天语音识别早已换成端到端的神经网络，但这套「先抽象成同一个形状、再统一求解」的思路，仍是理解序列问题最好的入口。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "如果要在这本书里挑一个「读到会起鸡皮疙瘩」的地方，多数人会挑这一章。原因不是它多难，恰恰相反——**它简单得不像话，却一口气把四件看上去毫不相干的事变成了同一件事。**语音识别、机器翻译、拼音输入、词性标注，各自有各自的行业、术语和专家；这一章说：它们是同一道题，只是「看得见的东西」不一样。"
+    },
+
+    { "type": "h2", "text": "一、先说马尔可夫链：一个偷懒的假设" },
+    {
+      "type": "p",
+      "text": "马尔可夫链的假设只有一句话：**下一个状态是什么，只跟当前状态有关，跟更早的历史无关。**拿天气打比方：今天晴，明天晴的概率七成、阴两成、雨一成；今天雨，明天雨的概率高一些。至于前天、大前天什么天气，一律不管。"
+    },
+    {
+      "type": "p",
+      "text": "这个假设当然不完全对——真实世界里历史当然有影响。但它换来的东西太值了：**整个系统只需要一张转移概率表就能描述完**，而且这张表能从数据里直接数出来。上一章的语言模型用的就是同一个假设，只不过状态换成了词。你会发现这本书里的模型一个接一个都在做同一件事：**用一个已知有错但代价可控的假设，换取「这件事终于算得动了」。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "状态图",
+      "caption": "马尔可夫链：只看当前在哪个状态，不管怎么走到这儿的。整个系统压缩成一张转移概率表，而这张表可以直接从数据里数出来。",
+      "svg": "<svg viewBox='0 0 660 260' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>下一步只看现在站在哪儿</text><circle cx='160' cy='120' r='40' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar)' stroke-width='1.5'/><text x='160' y='126' text-anchor='middle' font-size='14' style='fill:var(--ink)'>晴</text><circle cx='400' cy='90' r='38' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.3'/><text x='400' y='96' text-anchor='middle' font-size='14' style='fill:var(--ink)'>阴</text><circle cx='400' cy='200' r='38' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.3'/><text x='400' y='206' text-anchor='middle' font-size='14' style='fill:var(--ink)'>雨</text><path d='M199,112 L360,94' fill='none' style='stroke:var(--ink-faint)' stroke-width='1.3'/><path d='M362,94 l-9,-3 l1,8 z' style='fill:var(--ink-faint)'/><text x='276' y='92' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>0.2</text><path d='M196,140 L362,192' fill='none' style='stroke:var(--ink-faint)' stroke-width='1.3'/><path d='M364,193 l-9,-5 l-1,8 z' style='fill:var(--ink-faint)'/><text x='268' y='182' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>0.1</text><path d='M400,128 L400,160' fill='none' style='stroke:var(--ink-faint)' stroke-width='1.3'/><path d='M400,162 l-4,-9 l8,0 z' style='fill:var(--ink-faint)'/><text x='420' y='150' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>0.3</text><path d='M138,84 A28,28 0 1 1 186,88' fill='none' style='stroke:var(--cinnabar)' stroke-width='1.4'/><path d='M186,88 l-8,-4 l-1,8 z' style='fill:var(--cinnabar)'/><text x='160' y='58' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>0.7</text><text x='560' y='104' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>前天什么天气？</text><text x='560' y='124' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>不管。</text><text x='330' y='246' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>一个已知有错、但代价可控的假设 —— 换来「这件事终于算得动了」</text></svg>"
+    },
+
+    { "type": "h2", "text": "二、「隐」在哪里" },
+    {
+      "type": "p",
+      "text": "现在加一层。假设状态本身你看不见，你只能看见每个状态**吐出来的东西**。打个比方：隔壁房间有个人，他按某种规律在几个骰子之间切换（换哪个骰子就是状态转移），你隔着墙看不见他拿的是哪个骰子，只能听见他报出来的点数。**你要从一串点数，反推他每一步用的是哪个骰子。**这就是隐含马尔可夫模型。"
+    },
+    {
+      "type": "p",
+      "text": "对上语音识别：**说话人心里的那串词是状态**（你看不见），**麦克风收到的声波特征是观测**（你看得见）。对上机器翻译：原文是状态，你看到的译文是观测。对上拼音输入法：你想打的汉字是状态，敲进去的字母串是观测。**任务在所有场合都是同一句话——给定看得见的一串，反推最可能的看不见的那一串。**"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "回到第一章那条链子就明白了：**这个模型就是通信模型的数学版。**信源发出状态序列，编码器和信道把它变成观测序列，接收端要做解码。所谓「隐」，不过是「信道那头的东西你本来就看不见」这件事的正式说法。**书里前后呼应最漂亮的一处，就在这儿。**"
+      ]
+    },
+
+    { "type": "h2", "text": "三、贝叶斯一翻，问题裂成两半" },
+    {
+      "type": "p",
+      "text": "直接算「给定这段声音，这句话的概率」很难——你没法为每一段声音准备一张表。贝叶斯公式提供了一个转身的动作：**把「给定声音求句子」翻成「给定句子求声音」，再乘上「这句话本身有多常见」。**分母对所有候选都一样，比大小时可以丢掉。于是要最大化的东西变成两项相乘。"
+    },
+    {
+      "type": "p",
+      "text": "这两项各有各的名分，而且各自都好办得多。**第一项是「这句话会不会发出这种声音」**——这是声学模型，可以从录音和文本对照的数据里训练。**第二项是「这句话像不像人话」**——这正是上一章的统计语言模型，从纯文本里数出来就行，而纯文本要多少有多少。**上一章之所以必须先讲，就是为了这一刻。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "贝叶斯翻转之后，一道难题裂成两道好办的题：一道管「对不对得上」，一道管「顺不顺口」。两边各自训练，最后相乘取最大。",
+      "svg": "<svg viewBox='0 0 660 288' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>一翻，就裂成了两半</text><rect x='150' y='40' width='360' height='44' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='330' y='68' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>给定这段声音，最可能的句子是哪句？</text><path d='M330,86 L330,104' style='stroke:var(--cinnabar)' stroke-width='1.5'/><path d='M330,106 l-4,-9 l8,0 z' style='fill:var(--cinnabar)'/><text x='388' y='102' font-size='11.5' style='fill:var(--cinnabar)'>贝叶斯翻转</text><rect x='40' y='112' width='260' height='72' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar)' stroke-width='1.3'/><text x='170' y='138' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>这句话会不会发出这种声音</text><text x='170' y='160' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>声学模型</text><text x='170' y='176' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>用「录音＋对应文本」训练</text><text x='330' y='152' text-anchor='middle' font-size='20' style='fill:var(--cinnabar)'>×</text><rect x='360' y='112' width='260' height='72' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar)' stroke-width='1.3'/><text x='490' y='138' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>这句话像不像人说的话</text><text x='490' y='160' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>统计语言模型（上一章）</text><text x='490' y='176' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>用纯文本训练，要多少有多少</text><path d='M170,186 L300,214' style='stroke:var(--ink-faint)' stroke-width='1.2'/><path d='M490,186 L360,214' style='stroke:var(--ink-faint)' stroke-width='1.2'/><rect x='190' y='216' width='280' height='40' rx='8' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar)' stroke-width='1.5'/><text x='330' y='241' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>两项相乘，取最大的那句</text><text x='330' y='278' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>翻译、输入法、纠错，全是同一副骨架，只换掉左边那一项</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这个「裂成两半」还有个工程上的大好处：**两边可以分头做、分头改进。**语言模型那边的人只管去弄更多文本、把模型调好；声学模型那边的人只管去弄更多录音。**两支队伍不必坐在一起开会，各自的进步会自动汇合到最终效果上。**一个好的数学分解，往往同时也是一个好的组织分工——这一点在工程里被低估得厉害。"
+    },
+
+    { "type": "h2", "text": "四、一套方法，四个领域" },
+    {
+      "type": "p",
+      "text": "现在到了这一章最爽的部分。**你只要换掉「看得见的那一串是什么」，同一个公式就变成了另一件事**：观测换成外文句子，它就是机器翻译；换成一串拼音字母，它就是输入法；换成一个个汉字、状态换成词性标签，它就是词性标注；换成一串没有空格的汉字、状态换成词的边界，它就是中文分词。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照表",
+      "caption": "换掉「看得见的是什么」，方法一个字不用改。抽象一次，四个领域一起受益——这就是数学模型的复利。",
+      "svg": "<svg viewBox='0 0 660 268' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>同一个模型，四张面孔</text><line x1='24' y1='38' x2='636' y2='38' style='stroke:var(--line)' stroke-width='1'/><text x='108' y='58' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>应用</text><text x='320' y='58' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar)'>看得见的（观测）</text><text x='540' y='58' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>看不见的（状态）</text><line x1='24' y1='66' x2='636' y2='66' style='stroke:var(--line)' stroke-width='1'/><text x='108' y='94' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>语音识别</text><text x='320' y='94' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>麦克风收到的声波</text><text x='540' y='94' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>说话人心里那句话</text><line x1='24' y1='108' x2='636' y2='108' style='stroke:var(--line)' stroke-width='0.6' stroke-dasharray='3 4'/><text x='108' y='136' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>机器翻译</text><text x='320' y='136' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>你读到的外文句子</text><text x='540' y='136' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>对应的中文句子</text><line x1='24' y1='150' x2='636' y2='150' style='stroke:var(--line)' stroke-width='0.6' stroke-dasharray='3 4'/><text x='108' y='178' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>拼音输入</text><text x='320' y='178' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>敲进去的字母串</text><text x='540' y='178' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>你想打的那串汉字</text><line x1='24' y1='192' x2='636' y2='192' style='stroke:var(--line)' stroke-width='0.6' stroke-dasharray='3 4'/><text x='108' y='220' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>词性标注</text><text x='320' y='220' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>一个个汉字或单词</text><text x='540' y='220' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>名词、动词、形容词…</text><line x1='24' y1='234' x2='636' y2='234' style='stroke:var(--line)' stroke-width='1'/><text x='330' y='256' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>抽象一次，四个领域一起受益 —— 这就是数学模型的复利</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**这件事的意义远超省事。**它意味着一个新问题来了，你的第一反应不再是「这个领域该怎么做」，而是「它能不能套进这个框架」——能套进去，几十年积累的算法立刻全部可用。书里那种「原来它们是同一件事」的时刻，正是数学在工程里最值钱的样子：**不是算得更快，是让原本不相干的东西共用一条通路。**"
+    },
+
+    { "type": "h2", "text": "五、三个绕不开的基本问题" },
+    {
+      "type": "p",
+      "text": "任何一本讲这个模型的书都会列三个问题，这本书也不例外，但它讲得更像人话。**第一个：给定一串观测，算出它出现的概率是多少。**用来评估、比较、做检验。**第二个：给定一串观测，找出最可能的那串状态。**这是实际用起来最重要的一个，也就是解码——下一章的维特比算法专门解决它。**第三个：参数从哪来。**"
+    },
+    {
+      "type": "p",
+      "text": "第三个问题最有意思。**如果有标注好的数据**——比如一批录音配着准确的文字稿——那就简单，数数就行。**难的是没有标注。**这时用一招叫鲍姆—韦尔奇的算法，它的思路可以用一句大白话讲清楚：**先随便瞎猜一组参数，用这组参数去给数据打标注；再拿这批（不太准的）标注反过来重新估参数；参数变好了，标注也就更准；如此转圈，直到不再变化。**"
+    },
+    {
+      "type": "p",
+      "text": "这一招是更一般的期望最大化算法的一个特例，书里在讲聚类那一章还会再遇到它，作者半开玩笑地叫它「上帝的算法」——**因为它像是无中生有：没有人告诉过它答案，它自己转着转着就转出了一个像样的结果。**当然它也有代价，它只保证越转越好，不保证转到全局最优，起点不同结果可能不同。顺便一提，鲍姆—韦尔奇里的鲍姆后来离开学界去了华尔街，和数学家西蒙斯一起做量化投资——**同一套关于隐藏状态和可观测信号的数学，被搬去猜市场了。**"
+    },
+
+    {
+      "type": "p",
+      "text": "第一个问题也值得多说一句，因为它跟第二个问题的差别很能说明问题。**「算这串观测出现的概率」要把所有可能的状态序列的概率加起来；「找最可能的状态序列」只要取其中最大的那一条。**一个求和，一个取最大，算法结构几乎一样（都是从左到右一列列推），只是每一步的动作换了。**很多看着高深的算法差别，落到实处就是这么一个动词的区别**——知道这一点，你读教材时会轻松很多。"
+    },
+    {
+      "type": "p",
+      "text": "再给一个你每天都在用的例子。你打字输入 zhe shi yi ge li zi，输入法要在几千种组合里挑一串汉字。它的状态是候选汉字，观测是你敲的字母；「这个字母串对应哪些字」是发射概率（音同字不同的一大把），「这个字后面接哪个字更常见」是转移概率（语言模型）。**两项一乘，取最大，「这是一个例子」就出来了。**你从没觉得这里发生过什么复杂的事，但那一瞬间，这一章讲的所有东西都跑了一遍。"
+    },
+    {
+      "type": "p",
+      "text": "还有一件事值得留意：**这个模型的假设明明是错的，为什么效果还这么好？**因为它要做的是排序，不是精确预报。所有候选都被同一个有偏的模型打分，偏差在很大程度上会互相抵消，最后剩下的相对高低往往还是对的。**「模型错了但排序对了」——这是统计方法里一个反复出现的、值得记住的现象**，它也解释了为什么这本书里那些粗糙的假设居然撑起了一个个真实系统。"
+    },
+
+    { "type": "h2", "text": "六、它的局限，和它今天的位置" },
+    {
+      "type": "p",
+      "text": "这个模型的假设很硬：状态只依赖前一个状态，观测只依赖当前状态。真实世界当然不这么听话。**更麻烦的是，它不太好加特征**——你想把「这个词是不是在句首」「前面有没有出现过数字」这类线索一起塞进去，这个框架会很别扭。正是这个痛点催生了后面几章的最大熵模型和条件随机场：**它们的卖点就是「什么特征都能往里扔」。**"
+    },
+    {
+      "type": "p",
+      "text": "至于今天：语音识别早已换成端到端的神经网络，中间不再显式地分成声学模型和语言模型两块；机器翻译也一样。**但这套框架没有死，它换了个身份继续活着**——序列标注、时间序列的状态推断、生物信息里的基因序列分析、金融里的状态切换模型，都还在用；而更重要的是，**它至今仍是理解「序列问题」最好的入口**，因为它把该有的要素都摆在明面上：什么是隐藏的、什么是可观测的、转移和发射各管什么。今天那些端到端模型把这些要素都揉进了参数里，效果更好，但也更看不清了。"
+    },
+
+    { "type": "h2", "text": "七、这一章省掉了什么苦工" },
+    {
+      "type": "p",
+      "text": "它省掉的是**重复造轮子**。在这个框架出现之前，语音识别有语音识别的一套流程和术语，机器翻译有另一套，做词性标注的人又自己搞一套；一个领域的进展很难传到另一个领域，因为连问题的说法都不一样。**这个模型把它们翻译成了同一种语言。**从此，维特比算法一次实现，四个领域都能用；训练算法一次改进，四个领域一起受益。"
+    },
+    {
+      "type": "pull",
+      "text": "好的抽象不是让人算得更快，是让原本不相干的东西共用同一条通路——一次改进，四个领域一起受益。"
+    },
+    {
+      "type": "p",
+      "text": "顺带说一句，这条经验完全可以搬出工程之外。**你手上那些看着各不相干的麻烦，有多少其实是同一道题换了层皮？**能把它们看成同一件事的人，做一次功课能解四个问题；看不出来的人，一件件地耗。**这本书用一章的篇幅告诉你这件事有多值钱。**"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本章对应原书讲隐含马尔可夫模型的一章，以及讲期望最大化算法的一章。",
+        "史实补充：隐含马尔可夫模型的训练算法由 Leonard Baum 与 Lloyd Welch 于 1960 年代提出；期望最大化算法的一般形式由 Dempster、Laird、Rubin 于 1977 年整理提出；Baum 后来与数学家 James Simons 合作从事量化投资。",
+        "「今天已换成端到端神经网络」的对照是本文为读者做的时代连接，非原书内容。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "title": "地理分布：岛屿是天然的实验室",
+  "subtitle": "不需要化石，只要问一个笨问题：为什么这里有它，那里没有",
+  "centralIdea": "第十一、十二两章是全书最不费力却最有杀伤力的一段。达尔文不再谈化石、不再谈解剖，只是把世界地图摊开，问：为什么南美的热带和非洲的热带气候相仿，物种却完全不同？为什么远洋岛屿上普遍没有陆生哺乳动物和两栖类，却有鸟、蝙蝠和满山的植物？如果每个物种是为它的环境量身定制的，这些事都说不通；如果物种是从邻近的祖先扩散过去、再各自改变的，这些正是应有的样子。为了坐实「能不能过得去」这一环，他在自家院子里泡种子、筛泥巴，把「有可能」算成了「有多可能」。",
+  "blocks": [
+    { "type": "lead", "text": "这一段是全书最好读的部分，因为它不需要任何专业知识，只需要一张世界地图和一个笨问题：**为什么这里有它，那里没有？**如果生物是按环境配发的，那么环境相同的地方就该有相似的生物。这个预期非常清楚，也非常容易检验——**而它一检验就崩了。**" },
+
+    { "type": "h2", "text": "一、三条把「按环境定制」打穿的事实" },
+    { "type": "p", "text": "**第一条：气候相同，物种却完全不同。**南美的热带雨林和非洲的热带雨林，温度、湿度、日照几乎一样。可两边的动植物属于完全不同的类群——一边是美洲的猴、树懒、蜂鸟，一边是非洲的猿、羚羊、太阳鸟。**同样的考卷，交出来的却是两份毫不相干的答案。**" },
+    { "type": "p", "text": "**第二条：同一片大陆上，跨着气候带的物种反而互相像。**南美从赤道一路延伸到寒冷的南端，气候差别巨大，可这一路上的生物却带着明显的「南美腔」：一层层看下去，能看出它们是亲戚。**决定它们长什么样的，不是所在纬度，是它们的出身。**" },
+    { "type": "p", "text": "**第三条：屏障两侧，差异悬殊。**中美地峡两边的海水，深浅、温度、盐度都接近，可两侧的海洋生物差别极大——因为那条陆地把它们隔开了。山脉、荒漠、海峡，都是同样的道理。**分割生物分布的，是「过不过得去」，不是「适不适合住」。**" },
+    { "type": "p", "text": "三条合起来，指向同一个结论：**分布跟着血缘走、跟着通路走，不跟着环境走。**而这正是「从共同祖先扩散、再各自改变」这套解释的直接预言。" },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>如果生物是按环境配发的，这三条都说不通</text><rect x='24' y='44' width='512' height='68' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='44' y='68' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar)'>① 气候相同，物种迥异</text><text x='44' y='90' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>南美雨林 vs 非洲雨林：同一份考卷，两份毫不相干的答案</text><text x='44' y='106' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>猴、树懒、蜂鸟　—　猿、羚羊、太阳鸟</text><rect x='24' y='122' width='512' height='68' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='44' y='146' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar)'>② 气候不同，物种反而像</text><text x='44' y='168' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>南美从赤道到寒带：一路上都带着同一种「南美腔」</text><text x='44' y='184' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>决定长相的不是纬度，是出身</text><rect x='24' y='200' width='512' height='68' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.4'/><text x='44' y='224' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar)'>③ 屏障两侧，差异悬殊</text><text x='44' y='246' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>地峡两边的海水条件接近，生物却几乎不搭界</text><text x='44' y='262' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>分割分布的是「过不过得去」，不是「适不适合住」</text><text x='280' y='290' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>三条合起来：分布跟着血缘走、跟着通路走</text></svg>",
+      "caption": "这一段不需要显微镜也不需要化石，只需要一张地图。它的杀伤力恰恰来自这种朴素。"
+    },
+
+    { "type": "h2", "text": "二、海岛的名录：缺席比在场更说明问题" },
+    { "type": "p", "text": "最漂亮的证据来自远洋岛屿——那些从来没和大陆连过的火山岛。达尔文注意到，它们的物种名录呈现一个极其规整的模式。" },
+    { "type": "p", "text": "**有的是：**鸟、蝙蝠、飞虫、还有大量植物，其中不少是当地独有的。**没有的是：**陆生哺乳动物（蝙蝠不算，它会飞）、两栖类几乎绝迹、陆生爬行类也很少。" },
+    { "type": "p", "text": "把这份名单对照一下「能不能过得去」，答案立刻清楚：**能飞的、能被风吹去的、能靠种子漂过去的，全都在；只能走路的、卵一沾海水就死的，全都不在。**蛙的卵遇到海水就完了，所以蛙过不去；蝙蝠会飞，所以蝙蝠到处都有。" },
+    { "type": "p", "text": "反对者可以说：也许那些岛的环境不适合蛙。**可这一条能被检验，而且检验结果站在达尔文这边**——人把青蛙、兔子、老鼠、山羊带上这些岛之后，它们往往泛滥成灾。**环境明明适合得很，它们只是自己到不了。**" },
+    { "type": "p", "text": "这一步的逻辑很值得体会：**他先用「缺席名单」提出一个解释，再指出这个解释可以被一次意外的自然实验检验。**而人类的引种，恰好把这个实验做了无数遍。" },
+    {
+      "type": "figure",
+      "ftype": "清单图",
+      "svg": "<svg viewBox='0 0 560 280' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>远洋岛屿的名录，是被扩散能力筛出来的</text><rect x='24' y='44' width='250' height='176' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='149' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>有</text><g style='font-family:var(--font-serif);font-size:11px;fill:var(--ink);text-anchor:middle'><text x='149' y='100'>鸟</text><text x='149' y='126'>蝙蝠</text><text x='149' y='152'>飞虫</text><text x='149' y='178'>植物（种子能漂能被带）</text></g><text x='149' y='206' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--cinnabar)'>共同点：过得去</text><rect x='286' y='44' width='250' height='176' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.4'/><text x='411' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>没有</text><g style='font-family:var(--font-serif);font-size:11px;fill:var(--ink);text-anchor:middle'><text x='411' y='100'>陆生哺乳动物</text><text x='411' y='126'>两栖类（卵遇海水即死）</text><text x='411' y='152'>多数陆生爬行类</text><text x='411' y='178'>——但引进去就泛滥</text></g><text x='411' y='206' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--cinnabar)'>共同点：过不去</text><text x='280' y='248' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>「引进去就泛滥」是关键一步：证明不是环境不合，是到不了</text><text x='280' y='270' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>人类的引种，把这个实验替他做了无数遍</text></svg>",
+      "caption": "名单上「没有」的那一栏，比「有」的那一栏更能说明问题：一份按扩散能力筛出来的名单，正是「扩散 + 改变」这套解释的指纹。"
+    },
+
+    { "type": "h2", "text": "三、他在自家院子里做的扩散实验" },
+    { "type": "p", "text": "论证到这里还差一环：植物的种子真的能漂过几千公里的海吗？这是可以被质疑的地方，**而达尔文的做法是——去试。**" },
+    { "type": "p", "text": "他弄来八十几种植物的种子，泡在盐水里，隔一段时间捞出来种下，看还发不发芽。结果多数种子泡了将近一个月依然能长，个别品种泡了好几个月还活着。然后他去查洋流速度，做了一道简单的乘法：**按当时已知的海流每天能走多远，这些种子在存活期内足够漂上千英里。**" },
+    { "type": "p", "text": "他还试了别的路。他从池塘边挖了一小把泥，摊在温室里养着，几个月后数出五百多株幼苗——**而这么一小把泥，随便一只涉禽的脚上就带得走。**他还想到鸟吃下种子后可以带到远处再排出、猛禽吃掉吃过种子的小鸟等于二次搬运、浮木和冰山可以载着土块和种子漂洋过海。" },
+    { "type": "p", "text": "这些实验朴素得近乎可笑，可它们做的事很关键：**把一个「可能吗」的争论，变成了一个「有多可能」的估算。**反对者原本可以说「种子怎么可能漂那么远」，现在他得先解释那八十几种泡了一个月还发芽的种子。**这就是达尔文最典型的功夫：不辩论，去量。**" },
+
+    { "type": "h2", "text": "四、关于「达尔文雀」的一个更正" },
+    { "type": "p", "text": "既然讲到岛屿，必须澄清一个流传极广的说法。教科书和纪录片里常有这样一幕：年轻的达尔文站在加拉帕戈斯的礁石上，看着各岛雀鸟不同形状的喙，灵光一闪，想通了演化。" },
+    { "type": "p", "text": "**这一幕基本上是后人整理出来的。**《物种起源》里几乎没有专门讲那些雀；他在船上甚至没有把不同岛屿采到的雀分开标注，回国后是靠一位鸟类学家整理标本，才看出它们分属不同种、且各岛有别。而「达尔文雀」这个叫法，要到二十世纪中叶一位生态学家的书里才叫响。" },
+    { "type": "p", "text": "加拉帕戈斯在书里当然有分量，但支撑他的不是雀嘴的细节，而是一个整体印象：**这群离南美好几百英里的火山岛，岛上的生物明显带着「美洲腔」**——它们像的是最近的那块大陆，而不是气候相似的其他地方；而且各岛之间还有细微差别。" },
+    { "type": "p", "text": "为什么要费笔墨更正这个？因为传奇故事会误导人对科学的想象：**它让人以为答案来自一次灵光一现。**真实过程是二十年的笨功夫——量鸽子的骨头、泡种子、数幼苗、翻几十年的杂交记录。**顿悟的故事好听，但它把最该学的那部分省掉了。**" },
+
+    { "type": "h2", "text": "五、冰期：他用一次历史事件解释了一堆孤岛" },
+    { "type": "p", "text": "还有一个当时的难题：欧洲和北美好些相隔遥远的高山顶上，长着同一批或极近缘的高山植物。山顶彼此隔着广阔的温暖低地，这些植物既过不去，又不可能各自独立出现——除非每座山顶都被单独安排过。" },
+    { "type": "p", "text": "达尔文借用了当时刚被地质学界接受的冰期理论，给出一个纯历史的解释：**冰期时气候变冷，寒带生物大举南下，在低地连成一片；冰退之后气温回升，这些不耐热的物种只能往高处退，最后被困在各个山顶上。**山顶不是它们的起点，是它们的避难所。" },
+    { "type": "p", "text": "这个解释的漂亮之处在于：**它把一个看似需要无数次特殊安排的分布格局，还原成了一次全球性的气候事件加上普通的扩散与退缩。**一个原因，解释了一整片大陆上几十座山头。" },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "svg": "<svg viewBox='0 0 560 260' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>山顶不是起点，是退守之后的避难所</text><text x='150' y='56' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink-soft)'>冰期：连成一片</text><path d='M40,150 L90,100 L140,150 M150,150 L200,96 L250,150' style='fill:none;stroke:var(--ink-faint);stroke-width:1.4'/><rect x='30' y='126' width='230' height='24' style='fill:var(--cinnabar);opacity:0.16'/><text x='145' y='172' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>寒带植物在低地铺开、彼此相连</text><text x='410' y='56' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar)'>冰退：各守一峰</text><path d='M300,150 L350,100 L400,150 M410,150 L460,96 L510,150' style='fill:none;stroke:var(--ink-faint);stroke-width:1.4'/><path d='M336,114 L350,100 L364,114 Z' style='fill:var(--cinnabar);opacity:0.5'/><path d='M446,110 L460,96 L474,110 Z' style='fill:var(--cinnabar);opacity:0.5'/><text x='405' y='172' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>气温回升，只能往高处退，被困在山顶</text><line x1='40' y1='196' x2='520' y2='196' style='stroke:var(--line);stroke-width:1'/><text x='280' y='220' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>一次全球气候事件，解释了几十座山头上的同源植物</text><text x='280' y='244' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>不需要为每一座山单独安排一次「创造」</text></svg>",
+      "caption": "把看似需要无数次特殊安排的格局，还原成一次事件加上普通的扩散与退缩——这是达尔文式解释的标准动作。"
+    },
+
+    { "type": "h2", "text": "六、一个先到者，满岛的后代" },
+    { "type": "p", "text": "岛屿还给了达尔文一件更好的东西：**一个可以直接观察分歧原则的现场。**" },
+    { "type": "p", "text": "他注意到，岛上的特有种有一个反复出现的模式——**它们彼此之间关系很近，而整群又和最近的大陆有关系。**换句话说，它们更像是一小群近亲各自变了样，而不是从各处凑来的一批住户。" },
+    { "type": "p", "text": "把第三章那套逻辑套上去，这个模式立刻讲通了：一个物种偶然抵达一座空荡荡的岛，**这里没有原住的竞争者，也没有现成的天敌**，各种生活方式全都空着；于是那些偏离得多一点、能去啃别人不啃的东西、能占别人不占的角落的后代，日子都过得下去。分歧被大幅放开，几十万年下来，一个祖先就摊成了一群形态各异的物种——有的喙粗有的喙细，有的吃虫有的吃果。" },
+    { "type": "p", "text": "**这就是加拉帕戈斯那些雀真正的意义所在**，也是夏威夷群岛上那一大群蜜旋木雀、非洲大湖里那几百种丽鱼的意义所在：它们不是「顿悟的道具」，而是**分歧原则在低竞争条件下被按了快进键**的现场。达尔文当年只勾了个轮廓，后人在这些现场里把细节量了个遍。" },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "为什么岛屿好用",
+      "items": [
+        "**边界清楚**：谁来过、什么时候来的、能不能出去，都比大陆上干净得多。",
+        "**时间可查**：火山岛有形成年代，等于给整场实验盖了一个开始的时间戳。",
+        "**竞争者少**：分歧被放开，本来要几百万年的过程，在这里跑得快得多。"
+      ]
+    },
+
+    { "type": "h2", "text": "七、他缺了一块拼图，而后人补上了" },
+    { "type": "p", "text": "这两章里也有他解释得比较吃力的地方。比如南半球那几块相隔遥远的大陆——南美、非洲南部、澳洲、新西兰——上面有些类群相似得可疑，光靠漂流和风力很难说通。他只能推测曾经有更多的陆地或岛链充当跳板。" },
+    { "type": "p", "text": "真正的答案他不可能知道：**那几块大陆本来就是连在一起的。**大陆漂移的学说要到二十世纪初才被提出，到六十年代才被广泛接受。板块运动补上这块拼图之后，他那套「跟着通路走」的框架不但没被推翻，反而更完整了——**通路本身也是会移动的。**" },
+    { "type": "p", "text": "而海岛作为「天然实验室」的地位，从他那时一直延续到今天：面积可控、隔离清楚、历史可查，是研究物种形成最好的场地之一。**他在这两章里开辟的问法——先问「它是怎么到那儿的」，再问「它到了之后变成了什么」——今天已是一门独立学科的基本姿势。**" },
+    { "type": "pull", "text": "先问「它是怎么到那儿的」，再问「它到了之后变成了什么」——这两个问题一摆，地图本身就成了证据。" },
+    {
+      "type": "refs",
+      "items": [
+        "对应原书第十一、十二章《地理分布》与《地理分布（续）》",
+        "文中的种子盐水浸泡实验、池塘泥培苗实验均出自达尔文本人在唐恩宅的实验记录",
+        "本篇为原创消化与转述，非原文翻译"
+      ]
+    }
+  ]
+}

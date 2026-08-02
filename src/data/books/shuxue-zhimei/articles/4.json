@@ -1,0 +1,141 @@
+{
+  "title": "统计语言模型：怎么判断一句话像不像人话",
+  "subtitle": "不问它合不合语法，只问它出现的概率有多大——一个粗暴到不像话的简化，却把整个领域推开了",
+  "centralIdea": "语音识别、机器翻译、拼音输入、拼写纠错，这些看着毫不相干的事，全都卡在同一个问题上：机器手里有一堆候选，得知道哪个「更像人说的话」。规则派的答案是看它合不合语法，可这条路一开始就歪了——合语法的句子未必通顺，不合语法的话我们天天在说也照样听懂。贾里尼克换了个问法：别问合不合语法，问它在真实语料里出现的概率有多大。一句话的概率是逐词条件概率的连乘，但这个式子精确却算不动，于是有了那个决定性的偷懒——马尔可夫假设：只看前一个词，或者前两个。明知不完全对，却把一件不可算的事变成了可算的事，剩下的只是在语料里数数。之后所有的功夫都花在两件事上：没见过的搭配不能算零概率（平滑与退避），以及训练语料必须跟应用场景对得上。今天的大模型仍然在做同一件事——给句子打概率，只是不再把上下文截断在前两个词。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "语音识别、机器翻译、拼音输入、拼写纠错、手写识别——这几件事看着八竿子打不着，其实全都卡在同一道关口上：**机器手里有一堆候选，它得知道哪一个更像人会说的话。**你说「wo men」，是「我们」还是「我闷」？听清了一句英文，译成中文有五种说法，哪种最自然？这道题解不开，上面所有应用都是空中楼阁。而这本书最想让你惊讶的地方是：**解开它的办法，粗暴到几乎有点可笑。**"
+    },
+
+    { "type": "h2", "text": "一、先绕开一个陷阱：合语法 ≠ 像人话" },
+    {
+      "type": "p",
+      "text": "最自然的想法当然是查语法：合语法的就是好句子。可这条路有个从一开始就存在的漏洞，**而且是乔姆斯基本人举的例子**：「无色的绿色想法愤怒地睡觉」——语法完美无缺，主谓宾定状补一个不缺，可它什么也不是。反过来，「这事儿吧，回头说」这种话根本不合书面语法，我们每天说几十遍，谁都听得懂。"
+    },
+    {
+      "type": "p",
+      "text": "**所以「合语法」和「像人话」是两码事**，而我们真正要的是后者。贾里尼克的转向就发生在这个缝里：既然合不合语法既不充分也不必要，那就别问了，**改问一句话在真实语言里出现的概率有多大。**「我们」这两个字连着出现的概率，比「我闷」高出几个数量级——这个判断不需要懂任何语法，只需要数过足够多的句子。"
+    },
+
+    { "type": "h2", "text": "二、三步走：从不可算到可算" },
+    {
+      "type": "p",
+      "text": "**第一步是把问题写下来。**一句话出现的概率，等于第一个词出现的概率，乘以在第一个词之后出现第二个词的概率，乘以在前两个词之后出现第三个词的概率……一路乘到句尾。这个式子完全精确，没有任何近似——它就是概率论里连锁法则的直接应用。"
+    },
+    {
+      "type": "p",
+      "text": "**第二步是承认它算不动。**「在前面十七个词都确定的情况下，第十八个词是什么」——这种组合，世上再多的语料也数不出几次，绝大多数组合的出现次数是零。式子写得再漂亮，一个参数都估不出来，等于废纸。"
+    },
+    {
+      "type": "p",
+      "text": "**第三步就是那个决定性的偷懒：马尔可夫假设。**假设下一个词只跟前一个词有关，跟更早的词无关。这显然不对——人说话当然会回指很远的东西——**但它把一件不可能的事变成了一件小学生都能干的事**：在语料里数一数，「我们」后面跟着「的」出现了多少次，除以「我们」总共出现了多少次，就是那个概率。整个模型的全部参数，就是这样数出来的。"
+    },
+    {
+      "type": "figure",
+      "ftype": "流程图",
+      "caption": "三步走。第二步的承认和第三步的偷懒，才是这一章真正的智慧——一个理论上完美但估不出参数的模型，工程价值是零。",
+      "svg": "<svg viewBox='0 0 660 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>从不可算，到可算</text><rect x='60' y='40' width='540' height='54' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='330' y='63' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>① 精确写法：每个词都看它前面所有的词</text><text x='330' y='83' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>完全正确 · 但绝大多数组合在语料里一次都没出现过 → 估不出参数</text><path d='M330,96 L330,112' style='stroke:var(--ink-faint)' stroke-width='1.4'/><path d='M330,114 l-4,-9 l8,0 z' style='fill:var(--ink-faint)'/><rect x='60' y='118' width='540' height='54' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='330' y='141' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>② 马尔可夫假设：只看前一个词（或前两个）</text><text x='330' y='161' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>明知不完全对 · 但换来了可以估计的参数量</text><path d='M330,174 L330,190' style='stroke:var(--cinnabar)' stroke-width='1.4'/><path d='M330,192 l-4,-9 l8,0 z' style='fill:var(--cinnabar)'/><rect x='60' y='196' width='540' height='54' rx='8' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar)' stroke-width='1.5'/><text x='330' y='219' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>③ 参数怎么来：数出来的</text><text x='330' y='239' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>「我们·的」出现次数 ÷ 「我们」出现次数 —— 全部功夫就是数数</text><text x='330' y='276' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>一个理论上完美却估不出参数的模型，工程价值是零</text><text x='330' y='294' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>知道该在哪里偷懒，是这门手艺里最难的部分</text></svg>"
+    },
+
+    { "type": "h2", "text": "三、这么粗暴，凭什么管用" },
+    {
+      "type": "p",
+      "text": "很多人第一次听到「只看前一个词」都会本能地不信：这也太糙了。**但它真的管用，理由有两条。**其一，语言的约束大部分是局部的——决定下一个词的，通常就是紧挨着的那一两个词，隔了十几个词的影响虽然有，但比重小得多。其二也是更重要的一条：**它不需要每次都对，它只需要比对手准。**语音识别要做的是在几个候选之间挑一个，不是从零凭空造句；哪怕模型对语言的理解粗糙得可笑，只要它给「我们」的分比「我闷」高，这道题就做对了。"
+    },
+    {
+      "type": "p",
+      "text": "举个中文里的现成例子。你用拼音打 shi ji shang，可能是「实际上」「世纪上」「事迹上」。三个候选里，「实际上」这个组合在真实语料里出现的次数高出别的一大截，模型直接选中，**你甚至不觉得这里发生过一次判断。**每天你敲键盘时，这个模型都在替你做几十次这样的裁决——它不懂你在说什么，它只是数过很多很多话。"
+    },
+
+    {
+      "type": "p",
+      "text": "再举一个更有说服力的场合：**拼写纠错。**你打出「我明天去帮公室」，机器凭什么知道该改成「办公室」？它并不认识办公室是什么，它只知道「帮·公室」这个组合在语料里几乎不出现，而「办·公室」多得是；同时「帮」和「办」在字形和拼音上都近。**两个信号一合，改哪个字、改成什么，答案就出来了。**你会发现这套办法有个很讨喜的性质：**它不需要预先列出所有可能的错误。**规则派要做纠错，得先整理一份错别字对照表；统计模型不用，它只要发现「这里的概率突然掉下去了」，就知道这儿有问题。"
+    },
+
+    { "type": "h2", "text": "四、零概率：最现实的一道坎" },
+    {
+      "type": "p",
+      "text": "接下来就是工程上最要命的麻烦。语料再大，也一定有些合理的搭配从没出现过。而只要有一项概率是零，整句话的概率连乘之后就是零——**一个完全正常的句子，被模型判了死刑。**更糟的是，这种情况不是偶发，是常态：语言的长尾极长，大量搭配的出现次数是一次、两次，或者零次。"
+    },
+    {
+      "type": "p",
+      "text": "解法叫**平滑**，思路朴素得可爱：**把见过的那部分概率抠出来一点点，匀给从没见过的。**具体怎么抠？最经典的一招是古德—图灵估计——**这套办法的根子在二战期间的密码破译工作**，图灵和他的同事古德为了估计「还没出现过的密钥模式有多少」发展出了它，后来被搬到语言模型上，严丝合缝。它的直觉是：出现过一次的东西越多，说明你没见过的东西也越多，该匀出去的份额就越大。"
+    },
+    {
+      "type": "p",
+      "text": "另一招叫**退避**：三个词的组合数据不够，就退回两个词的统计；两个词也不够，再退回单个词的频率。像下台阶一样，一级级往下靠，保证任何时候都能给出一个不为零的、可用的估计。**这两招合起来撑住了整个统计语言模型的实用性**——听着都是补丁，但它们补的是真实世界里数据永远不够这个根本困难。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "平滑的直觉：把见过的概率抠一点出来，匀给从没见过的。补丁听着不体面，但它补的是「数据永远不够」这个根本困难。",
+      "svg": "<svg viewBox='0 0 660 280' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>平滑：给没见过的留一条活路</text><text x='166' y='52' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink-soft)'>原始统计</text><rect x='60' y='64' width='40' height='120' rx='4' style='fill:var(--ink-faint)' opacity='0.7'/><rect x='110' y='104' width='40' height='80' rx='4' style='fill:var(--ink-faint)' opacity='0.6'/><rect x='160' y='144' width='40' height='40' rx='4' style='fill:var(--ink-faint)' opacity='0.5'/><rect x='210' y='176' width='40' height='8' rx='3' style='fill:var(--ink-faint)' opacity='0.4'/><line x1='52' y1='184' x2='276' y2='184' style='stroke:var(--line)' stroke-width='1.3'/><text x='80' y='202' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>常见</text><text x='130' y='202' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>较少</text><text x='180' y='202' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>见过 1 次</text><text x='240' y='202' text-anchor='middle' font-size='11' style='fill:var(--cinnabar)'>没见过 → 0</text><text x='250' y='224' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>只要有一个 0，整句概率归零</text><path d='M296,124 L344,124' style='stroke:var(--cinnabar)' stroke-width='1.6'/><path d='M346,124 l-9,-4 l0,8 z' style='fill:var(--cinnabar)'/><text x='494' y='52' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar)'>平滑之后</text><rect x='388' y='72' width='40' height='112' rx='4' style='fill:var(--cinnabar)' opacity='0.6'/><rect x='438' y='110' width='40' height='74' rx='4' style='fill:var(--cinnabar)' opacity='0.5'/><rect x='488' y='148' width='40' height='36' rx='4' style='fill:var(--cinnabar)' opacity='0.42'/><rect x='538' y='164' width='40' height='20' rx='4' style='fill:var(--cinnabar)' opacity='0.35'/><line x1='380' y1='184' x2='604' y2='184' style='stroke:var(--line)' stroke-width='1.3'/><text x='408' y='202' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>削一点</text><text x='458' y='202' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>削一点</text><text x='508' y='202' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>削一点</text><text x='568' y='202' text-anchor='middle' font-size='11' style='fill:var(--cinnabar)'>分到一点</text><text x='494' y='224' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>没见过的不再是 0，句子活了</text><text x='330' y='258' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>退避：三元数据不够 → 退回二元 → 再不够 → 退回一元，像下台阶</text></svg>"
+    },
+
+    { "type": "h2", "text": "五、语料比模型更要命" },
+    {
+      "type": "p",
+      "text": "这一章还有一条极实在的忠告，书里反复讲：**训练语料必须跟应用场景对得上。**拿报纸社论训出来的模型，去猜网页上的口语和网络用语，会很吃力，因为那根本是两种语言。这个道理听着像废话，但在实践里被违反的次数多得惊人——**人们总是拿手头最容易搞到的、最干净的数据去训练，然后拿到一个跟真实场景对不上的模型。**"
+    },
+    {
+      "type": "p",
+      "text": "与之配套的还有一条反直觉的经验：**数据的量往往比数据的干净更重要。**网页数据脏得一塌糊涂，错字、乱码、重复、广告，可当它的量大到一定程度，噪声会被大量正确的样本淹没，最后的效果反而好过一份小而精的语料。这条经验在深度学习时代被验证得更彻底，几乎成了行业常识。**当然它有个边界：噪声要是系统性的偏差而不是随机的杂音，量再大也救不回来**——那种情况下，你数得越多，错得越自信。"
+    },
+    {
+      "type": "p",
+      "text": "还有阶数的取舍。只看前一个词叫二元模型，看前两个叫三元。**阶数越高越准，代价是参数量指数增长**：词汇量假设两万，二元模型是两万的平方，三元就是两万的三次方，数据量再大也撑不住。谷歌当年公开过一份规模惊人的多元语法统计数据，从整个互联网上数出来的，这在别处根本做不到——**这也是那个时代的一个残酷事实：同样的算法，谁有数据谁赢。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "caption": "阶数每加一，参数量乘上一个词汇量。理论上越高越准，实际上很快就没有足够的数据把参数喂饱——这就是当年模型阶数的天花板。",
+      "svg": "<svg viewBox='0 0 660 268' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>阶数越高越准，也越喂不饱</text><line x1='24' y1='40' x2='636' y2='40' style='stroke:var(--line)' stroke-width='1'/><text x='110' y='60' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>模型</text><text x='300' y='60' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>看多远</text><text x='500' y='60' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar)'>参数量（词汇量按 2 万算）</text><line x1='24' y1='68' x2='636' y2='68' style='stroke:var(--line)' stroke-width='1'/><text x='110' y='94' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>一元</text><text x='300' y='94' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>只看这个词自己</text><rect x='400' y='82' width='16' height='16' rx='3' style='fill:var(--ink-faint)' opacity='0.6'/><text x='430' y='94' font-size='11.5' style='fill:var(--ink-soft)'>2 万</text><line x1='24' y1='108' x2='636' y2='108' style='stroke:var(--line)' stroke-width='0.6' stroke-dasharray='3 4'/><text x='110' y='134' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>二元</text><text x='300' y='134' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>看前一个词</text><rect x='400' y='122' width='60' height='16' rx='3' style='fill:var(--cinnabar)' opacity='0.45'/><text x='474' y='134' font-size='11.5' style='fill:var(--ink-soft)'>4 亿</text><line x1='24' y1='148' x2='636' y2='148' style='stroke:var(--line)' stroke-width='0.6' stroke-dasharray='3 4'/><text x='110' y='174' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>三元</text><text x='300' y='174' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>看前两个词</text><rect x='400' y='162' width='140' height='16' rx='3' style='fill:var(--cinnabar)' opacity='0.7'/><text x='554' y='174' font-size='11.5' style='fill:var(--ink-soft)'>8 万亿</text><line x1='24' y1='188' x2='636' y2='188' style='stroke:var(--line)' stroke-width='0.6' stroke-dasharray='3 4'/><text x='110' y='214' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>四元</text><text x='300' y='214' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>看前三个词</text><rect x='400' y='202' width='210' height='16' rx='3' style='fill:var(--cinnabar)' opacity='0.9'/><text x='330' y='244' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>绝大多数组合在语料里出现零次 —— 参数再多也是空的</text><text x='330' y='262' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>同样的算法，谁有数据谁赢</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "顺着这条往下想一层，会看到一个当年很现实的格局：**统计方法把竞争的重心从「谁更聪明」挪到了「谁有数据」。**算法是公开的，论文谁都能读，可语料不是——搜索引擎公司手里握着整个互联网的文本，实验室里的人没有。这是那个年代产业界能在很多任务上压过学术界的根本原因，**而这个格局在今天只有更极端**：模型结构大家都知道，真正的门槛在数据和算力。这本书写在这个格局刚刚成形的时候，它没有点破，但字里行间都是。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "容易读岔",
+      "items": [
+        "**「统计语言模型不懂语义」是对的，但不构成反驳。**它确实不知道「我们」是什么意思，它只知道这两个字常连着出现。可它要解的题是「在候选里挑一个」，这道题不需要懂意思也能解对——**理解目标，比理解语言更重要。**",
+        "**别把马尔可夫假设当成真理。**它是个已知有错的近似，用它是因为划算，不是因为它对。工程里很多决定都是这个性质：明知不对，但代价小、收益大、错的地方可控。**能坦然做这种交易，是成熟的标志。**"
+      ]
+    },
+
+    { "type": "h2", "text": "六、它今天变成了什么" },
+    {
+      "type": "p",
+      "text": "这一章的具体技术，今天基本被换掉了。二元三元的统计模型早已让位给神经网络语言模型，再让位给 Transformer；上下文不再截断在前两个词，而是一次看几千甚至几十万个词；平滑和退避那套手工补丁，被连续的向量表示自然地解决掉了——**在向量空间里，没见过的搭配可以从相似的搭配那里借到合理的估计，不需要人为地匀概率。**"
+    },
+    {
+      "type": "p",
+      "text": "但**那个问法一个字都没变**：给一句话打一个概率，挑概率最大的。今天的大语言模型，从数学定义上讲仍然是「语言模型」这三个字最原始的意思——预测下一个词。连评价它好坏的常用指标「困惑度」，都是上一章那个熵的直接变形。**所以读完这一章你会有个奇怪的收获：你会发现今天最时髦的东西，用的还是一九七〇年代那句任务书**，变的是上下文能看多远、参数从哪来。"
+    },
+
+    { "type": "h2", "text": "七、这一章省掉了什么苦工" },
+    {
+      "type": "p",
+      "text": "省掉的是**写语法书**这件事。规则派要判断一句话好不好，得先有一部尽可能完备的语法，而语法要靠专家一条条写、一门语言写一遍。统计语言模型把这件事换成了「数数」：**给我语料，我自己数。**换一门语言，换语料重数一遍，方法一个字不用改。"
+    },
+    {
+      "type": "pull",
+      "text": "它不懂语言，它只是数过很多很多话——然后它在你每天敲下的每一行字里，替你做了几十次你根本没察觉的裁决。"
+    },
+    {
+      "type": "p",
+      "text": "更值得带走的，是这一章的做事顺序：**先把问题写成一个精确但算不动的式子，再找一个明知有错但划算的假设让它算得动，最后把全部力气花在数据和边角料（零概率、平滑、语料匹配）上。**这三步是这本书里反复出现的节奏。很多人以为高手赢在第一步的聪明，其实**高手赢在第二步敢于偷懒、第三步肯下笨功夫。**"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本章对应原书讲统计语言模型的一章，以及讲模型训练、语料选取与零概率平滑的部分。",
+        "史实补充：「无色的绿色想法愤怒地睡觉」出自乔姆斯基《句法结构》(1957)，原用来论证语法与语义可分；古德—图灵估计由 I. J. Good 于 1953 年整理发表，方法源自二战期间与图灵的密码分析工作；退避平滑常见的一种由 Slava Katz 于 1987 年提出。",
+        "关于「今天的大模型仍是语言模型」的对照，是本文为读者做的时代连接，非原书内容。"
+      ]
+    }
+  ]
+}

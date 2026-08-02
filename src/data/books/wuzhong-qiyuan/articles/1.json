@@ -1,0 +1,85 @@
+{
+  "title": "变异：一切从鸽舍和菜园开始",
+  "subtitle": "他把最难的一步，放在读者最熟的地方——你已经相信育种能改变生物，剩下的只是放大",
+  "centralIdea": "全书前两章满纸是家鸽、绵羊、草莓、醋栗，读者容易以为掉了书袋。其实这是精心设计的第一步：自然选择这个想法在 1859 年是骇人听闻的，但「育种者能把一个品种改得面目全非」在当年是常识。达尔文要做的，是让你在自己熟悉的地方点头，然后把同一件事放大到自然里。这两章要立三根桩子：其一，变异到处都是，且有一部分能遗传；其二，变异不是按需要产生的（这是他和拉马克真正的分水岭）；其三，物种和变种之间根本没有一条干净的界线，变种就是「正在形成中的物种」。至于变异究竟从哪儿来，他坦白说不知道——那块空白要等六十年后的遗传学来填。",
+  "blocks": [
+    { "type": "lead", "text": "很多人翻开《物种起源》，在第一页就想合上：满眼都是鸽子。扇尾鸽的尾羽有多少根、球胸鸽的嗉囊能鼓多大、信鸽的喙和眼睑肉瘤长什么样，一段接一段，像一份养禽手册。再往后是绵羊、牛、狗、草莓、醋栗、风信子。八百页的巨著，头两章几乎全给了后院和菜园。这看上去像是老先生的爱好压过了分寸感，其实完全不是。**这是他最精明的一步棋。**" },
+
+    { "type": "h2", "text": "一、他自己就是个养鸽的" },
+    { "type": "p", "text": "达尔文不只是读了育种的书，他亲自动手养鸽子，还加入了伦敦的养鸽俱乐部，跟那些工匠出身的鸽友泡在一起。他杀过、量过、拼过鸽子骨架，为的是搞清一件事：那些形态千差万别的家鸽品种，到底是不是同一个祖先来的？" },
+    { "type": "p", "text": "有意思的是，当时的养鸽人自己坚决不同意「同一个祖先」。在他们眼里，扇尾鸽和球胸鸽差得那么远，怎么可能是一家？必然各有各的野生祖种。达尔文一条条把证据摆出来：所有家鸽的骨骼、习性、叫声都能对得上一种野生的岩鸽；家鸽全都能互相杂交、后代全都能生育（这在真正的不同物种之间是罕见的）；最漂亮的一条是**返祖**——把几个毫不相干的品种杂交，后代身上常常会冒出祖先那身蓝灰羽色、翅上两道黑横纹、尾端一道黑带。" },
+    { "type": "p", "text": "这段考据看起来琐碎，功能却极大：**它是一次小型的完整演示。**在一个人人可查、时间跨度只有几百年的范围里，他让你亲眼看见「共同祖先 + 逐步分歧 = 看上去像不同的属」是怎么发生的。等到后面他把同一件事放大到几百万年，你已经在这里点过一次头了。" },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>一种野鸽，几百年，几十个品种</text><rect x='210' y='44' width='140' height='40' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.4'/><text x='280' y='69' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>野生岩鸽</text><path d='M280,84 L280,104 M80,104 L480,104 M80,104 L80,124 M213,104 L213,124 M347,104 L347,124 M480,104 L480,124' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><rect x='24' y='124' width='112' height='38' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='80' y='148' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>扇尾鸽</text><rect x='157' y='124' width='112' height='38' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='213' y='148' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>球胸鸽</text><rect x='291' y='124' width='112' height='38' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='347' y='148' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>翻飞鸽</text><rect x='424' y='124' width='112' height='38' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='480' y='148' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>信鸽</text><text x='280' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>形态差异之大，分类学家若在野外遇见会判成不同的属</text><rect x='60' y='210' width='440' height='68' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='80' y='234' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar)'>他用来坐实「同源」的三条证据</text><text x='80' y='254' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>① 骨骼与习性都能对上岩鸽　② 品种间杂交后代全可育</text><text x='80' y='271' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>③ 返祖：杂交后代常冒出祖先的蓝灰羽色与翅上黑纹</text></svg>",
+      "caption": "养鸽人当年坚信各品种各有野生祖先。达尔文用返祖等证据证明它们同源——这是一次可查证的、小尺度的「共同由来」演示。"
+    },
+
+    { "type": "h2", "text": "二、育种者做的事，比你想的还平淡" },
+    { "type": "p", "text": "接下来他要拆开「选择」这个动作，让你看清它有多不神秘。育种者不给动物做手术，也不改造什么，他只做一件事：**从这一代里挑几个留后，其余的不让它们留后。**方向由人给，改变由时间攒。仅此而已。" },
+    { "type": "p", "text": "这里有一个他特别强调、后人却常忽略的区分。一种是「有计划的选择」：育种家心里有个目标，比如要更长的羊毛，于是照着目标一代代挑。另一种他叫**「无意识的选择」**：没人打算改良品种，农民只是每次都留下看着最顺眼、最好使的那几只，杀掉或卖掉其余的。几十代下来，品种照样面目全非——只是没有任何人计划过这个结果。" },
+    { "type": "p", "text": "这个区分为什么关键？因为**它把「意图」从过程里抽掉了一半**。如果连人在改变生物这件事上都可以是无意识的，那么再往前推一步——连那个「挑的人」也去掉，只留下环境按「能不能活到留后」来筛——就不再是难以想象的跳跃了。他不是在讲育种史，他是在给读者的想象力搭台阶。" },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "svg": "<svg viewBox='0 0 560 280' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>两级台阶：从有意到无意，再到没有人</text><rect x='24' y='42' width='160' height='150' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='104' y='68' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>有计划的选择</text><text x='104' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>心里先有一个目标</text><text x='104' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>照目标逐代挑选</text><text x='104' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>育种家、鸽会比赛</text><text x='104' y='172' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar)'>意图：有</text><rect x='200' y='42' width='160' height='150' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='68' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>无意识的选择</text><text x='280' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>没人想改良品种</text><text x='280' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>只是每次留下顺眼的</text><text x='280' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>几十代后品种已变</text><text x='280' y='172' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar)'>意图：半个</text><rect x='376' y='42' width='160' height='150' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.4'/><text x='456' y='68' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>自然选择</text><text x='456' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>没有谁在挑</text><text x='456' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>标准只有一条：</text><text x='456' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>能不能活到留后</text><text x='456' y='172' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar)'>意图：没有</text><path d='M184,117 L200,117 M360,117 L376,117' style='stroke:var(--cinnabar);stroke-width:1.4'/><text x='280' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>中间那一格是他布的关键台阶：连人改变生物都可以是无意识的</text><text x='280' y='256' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>那么再把「挑的人」也去掉，就不是什么难以想象的跳跃了</text></svg>",
+      "caption": "「无意识的选择」是全书最被低估的一个概念。它的作用不是描述农业史，是把读者的想象力送上台阶。"
+    },
+
+    { "type": "h2", "text": "三、原料：变异到处都是，而且不按需产生" },
+    { "type": "p", "text": "选择要成立，前提是有东西可挑。第二章他转向野外，要证明变异不是家养环境的特产：野外同样没有两个个体完全一样，只是差异更细微，需要博物学家拿着尺子一个个量。他甚至去翻各国的植物志，统计一件事——个体多、分布广的大属，记录在案的变种是不是也更多？答案是肯定的。" },
+    { "type": "p", "text": "更要紧的是变异的**性质**，这里藏着他和拉马克真正的分水岭。拉马克那一路的想法是：需要什么就长出什么，长颈鹿为了够高处的叶子而伸长脖子，伸出来的长脖子再传给后代。达尔文的框架里，**变异是先有的、方向是随机的**——脖子有长有短，不是因为谁想要，而是本来就参差不齐；环境做的事只是在既有的参差里做减法。" },
+    { "type": "p", "text": "这个差别听着抽象，其实是全部要害所在。**「按需产生」意味着自然有个方向、有个目标；「先有参差、后被筛选」则彻底不需要目标。**前者还留着一个隐形的设计者（哪怕它叫「需要」），后者把设计者请了出去。达尔文的整套逻辑之所以能立住，就靠这一步。" },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "容易读岔",
+      "items": [
+        "常见的误说是「用进废退被达尔文推翻了」——**没那么干净**。第一版里他就给用进废退留了位置，越到后面的版本给得越多，因为他被詹金那类批评逼得没办法。",
+        "真正把这条路彻底关掉的是二十世纪的遗传学，不是 1859 年的达尔文。**准确的说法是：他提出的机制不需要用进废退，而他本人并没有放弃它。**"
+      ]
+    },
+
+    { "type": "p", "text": "把这一步讲透，可以打个比方。有人往台上撒了一把大小不一的沙子，然后拿一张筛网去筛——留在网上的都是大颗粒。这时候你会说「筛网把沙子变大了」吗？不会。**筛网什么也没造，它只是让某一类先就存在的东西留了下来。**拉马克的图景是「沙子为了留在网上而自己长大」，达尔文的图景是「沙子本来就有大有小，网决定谁留下」。同样看到「留下来的都是大颗粒」这个结果，两套解释的世界观天差地别。" },
+    { "type": "p", "text": "所以他对变异有三条要求，缺一不可：**要普遍**（不然没得挑）、**要随机**（不然就等于有个方向在指挥）、**要能遗传**（不然这一代挑出来的，下一代就散了）。这三条里，他能拿证据的是第一和第三条——育种者天天在验证；第二条他给不出机制，只能靠「看不出有什么力量能让生物按需要变异」这样的反面论证撑着。这块地基要等六十年后的遗传学才夯实。" },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "svg": "<svg viewBox='0 0 560 260' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>选择要成立，变异必须满足三条</text><rect x='24' y='44' width='160' height='120' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='104' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>① 普遍</text><text x='104' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>没有两个个体一样</text><text x='104' y='120' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>否则无从挑起</text><text x='104' y='148' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--cinnabar)'>证据充分</text><rect x='200' y='44' width='160' height='120' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.4'/><text x='280' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>② 不按需产生</text><text x='280' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>先有参差，后被筛选</text><text x='280' y='120' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>与拉马克的分水岭</text><text x='280' y='148' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--cinnabar)'>当时只有反面论证</text><rect x='376' y='44' width='160' height='120' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='456' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>③ 可遗传</text><text x='456' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>否则一代就散了</text><text x='456' y='120' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>育种者天天验证</text><text x='456' y='148' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--cinnabar)'>证据充分</text><line x1='40' y1='188' x2='520' y2='188' style='stroke:var(--line);stroke-width:1'/><text x='280' y='212' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>筛网什么也没造，它只是让某一类先就存在的东西留下来</text><text x='280' y='236' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>第二条是他给不出机制、却最要命的一条——它决定了要不要一个设计者</text></svg>",
+      "caption": "三条里最要害的是中间那条。「按需产生」还留着一个隐形的设计者；「先有参差、后被筛选」才彻底不需要目标。"
+    },
+
+    { "type": "h2", "text": "四、物种与变种之间，本来就没有干净的线" },
+    { "type": "p", "text": "第二章还有一枚埋得很深的钉子。达尔文注意到一个尴尬的现实：博物学家们为「这到底是一个独立物种，还是某个物种的变种」吵了几百年，同一批标本换个人看就换个结论。一般人会把这看成分类学没做好，他却反过来读——**吵不清，恰恰因为那条线本来就不存在。**" },
+    { "type": "p", "text": "于是他给出一个当时很刺耳的判断：变种就是**「雏形的物种」**，是正在形成中、还没走远的物种。两者之间只差程度，不差性质。今天分得开的两个物种，往上追总有一段是分不开的；今天分不开的两个变种，往下走可能就分开了。" },
+    { "type": "p", "text": "这一钉子扎下去，「物种」这个概念的地位就变了：它不再是造物主分好的一只只盒子，而是一条连续河流上，人为切下来的一段。**这本书叫《物种起源》，可它做的头一件事，是把「物种」这个词的坚硬外壳敲出裂纹。**" },
+
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "svg": "<svg viewBox='0 0 560 240' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>一条连续的河，被人切成几段</text><defs><linearGradient id='wzqy-sp' x1='0' y1='0' x2='1' y2='0'><stop offset='0%' style='stop-color:var(--line)'/><stop offset='100%' style='stop-color:var(--cinnabar)'/></linearGradient></defs><rect x='40' y='60' width='480' height='26' rx='13' style='fill:url(#wzqy-sp);opacity:0.35'/><g style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:3 3'><line x1='170' y1='50' x2='170' y2='96'/><line x1='300' y1='50' x2='300' y2='96'/><line x1='420' y1='50' x2='420' y2='96'/></g><g style='font-family:var(--font-serif);font-size:11px;fill:var(--ink);text-anchor:middle'><text x='105' y='118'>个体差异</text><text x='235' y='118'>变种</text><text x='360' y='118'>亚种</text><text x='470' y='118'>物种</text></g><g style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint);text-anchor:middle'><text x='105' y='136'>同窝里的高矮</text><text x='235' y='136'>「雏形的物种」</text><text x='360' y='136'>吵得最凶的一段</text><text x='470' y='136'>已经走远了</text></g><text x='280' y='172' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>虚线是人划的，河是连续的——所以分类学家才会吵几百年</text><rect x='90' y='188' width='380' height='38' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.2'/><text x='280' y='212' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>变种 = 正在形成中、还没走远的物种</text></svg>",
+      "caption": "书名叫《物种起源》，可它做的头一件事，是把「物种」这个词的坚硬外壳敲出裂纹：界线之所以吵不清，是因为它本来就在移动。"
+    },
+
+    { "type": "h2", "text": "五、变异的法则：他能说的，和不能说的" },
+    { "type": "p", "text": "第五章专门讲变异的规律，这一章今天读起来最尴尬，也最能看出一个诚实的人在没有工具时是什么样子。" },
+    { "type": "p", "text": "他确实抓到了一些真东西。比如**相关变异**：身体各部分不是各管各的，改一处常常连带改另一处——他举过蓝眼睛的白猫多半是聋的，也提到过毛色与体质常常绑在一起。这个观察后来在遗传学里有了准确的名字和解释，但在 1859 年，他只能说「它们之间有某种我们不了解的联系」。他还注意到，变化最多的往往是那些近期才被强烈改造过的部位，以及那些对生存不太要紧的部位。" },
+    { "type": "p", "text": "他没抓到的，是原因。为什么会有变异？他一遍遍地写「我们对此深深无知」。而正因为手里空着，他就更容易被别人的批评推着走：1867 年工程师詹金指出，如果遗传是父母性状的调和，任何新变异都会被稀释掉——达尔文没有反驳的武器，于是在后面几版里越来越多地借助「用进废退」来解释变异的来源。**这是他一生中最明显的一次退让，而且退错了方向。**" },
+    { "type": "p", "text": "把这段摆出来不是要挑他的错，而是为了看清一件事：**一套理论的核心，可以在它的某些部件是错的情况下依然成立。**自然选择这台机器要的只是「有可遗传的变异」这个输入；至于输入是怎么产生的，换一套机制照样能运转。所以孟德尔和 DNA 出现之后，这台机器不但没散架，反而跑得更顺了。" },
+
+    { "type": "h2", "text": "六、这两章立下的三根桩子" },
+    { "type": "p", "text": "他也试着填过那个坑。1868 年他提出「泛生论」，设想身体各部分放出微小的颗粒汇集到生殖细胞里去——这个假说是错的，而且错得挺彻底。真正的答案在他身后才浮出水面：孟德尔的颗粒式遗传 1900 年被重新发现，一路通到 1953 年的双螺旋。**他在 1859 年老老实实圈出来的那块空白，后人花了将近一百年才填上。**把不知道的部分圈出来、不拿猜测冒充答案，这恰恰是这本书最硬气的地方。" },
+    { "type": "p", "text": "回头看，这两章看似闲散，其实立下了三根桩子，后面十二章全靠它们撑着：**第一根，变异是普遍的、可遗传的，所以有得可挑；第二根，变异不按需要产生，所以不需要一个方向的给予者；第三根，物种与变种之间没有硬界线，所以「新物种」不必是一次特殊事件，它就是分歧走远之后的自然结果。**" },
+    { "type": "p", "text": "这三根桩子的门槛低得惊人——低到今天在实验室里几天就能看一遍。一皿细菌里本来就有耐药性略强和略弱的个体（普遍的变异），这点差别会传给子代（可遗传），加一点抗生素，弱的死掉（差别存活）。几十代之后，整皿都是耐药的。**没有谁在指挥，也不需要细菌「想要」耐药**——只要那三条同时成立，结果就是必然的。达尔文当年只能靠鸽子和草莓来说的事，今天可以在培养皿里看着它发生。" },
+    { "type": "p", "text": "所以别急着跳过这两章。它们不精彩，但它们是承重墙。读的时候只要记住一句话：**他没有要求你相信任何新东西，他只是要求你把已经相信的东西放大。**" },
+    { "type": "pull", "text": "他没有要求读者相信任何新东西，只要求他们把已经相信的东西放大。" },
+    {
+      "type": "refs",
+      "items": [
+        "对应原书第一章《家养状况下的变异》、第二章《自然状况下的变异》，并旁及第五章《变异的法则》",
+        "本篇为原创消化与转述，非原文翻译"
+      ]
+    }
+  ]
+}

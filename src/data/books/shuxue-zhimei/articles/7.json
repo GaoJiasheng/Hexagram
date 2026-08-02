@@ -1,0 +1,138 @@
+{
+  "title": "搜索的地基：布尔代数、倒排索引与爬虫",
+  "subtitle": "搜索引擎只做三件事：下载、索引、排序——前两件靠的是最土、也最扛得住规模的数学",
+  "centralIdea": "搜索引擎说穿了只有三件事：把网页下载回来、建好索引、按好坏排序。这一章讲前两件，而它们用的数学土得让人意外。检索的内核是布尔代数——十九世纪一个只有真和假两个值的代数，当年被认为毫无实用价值，一百年后成了整个数字电路和信息检索的地基。索引的关键动作是「倒过来」：不做「这篇文章里有哪些词」，而做「这个词出现在哪些文章里」，于是查询就变成了查表加求交集，而求交集在计算机上是位运算，快得离谱。爬虫那一半则是图论：互联网是一张有向图，抓网页就是遍历它，广度优先管覆盖、深度优先省握手，判重靠哈希指纹和布隆过滤器——用一点点误判率换回巨大的内存。这一章真正要教的是一种品味：在十亿级的规模面前，聪明的复杂方案往往跑不动，能扛住的只有那些笨而快的操作。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "很多人以为搜索引擎的核心是某种深不可测的算法。这一章会让你有点失望，也有点痛快：**它的地基是三样非常朴素的东西——一个只有真假两个值的代数、一张倒过来的表、一次图的遍历。**更有意思的是，正因为它们朴素，才扛得住每天几十亿次查询。**在规模面前，聪明是要付费的，而笨而快的东西不用。**"
+    },
+
+    { "type": "h2", "text": "一、布尔代数：曾被当作毫无用处的东西" },
+    {
+      "type": "p",
+      "text": "一八五四年，英国人布尔出了一本书，想用代数的方法研究思维的规律。他搞出的这套代数只有两个值——真和假，一和零——运算也只有三种：与、或、非。**在当时，这被看成一件优雅但没用的智力游戏**：数学家们的兴趣在连续、在无穷、在微积分，谁会去理会一个只有两个数的代数？"
+    },
+    {
+      "type": "p",
+      "text": "转机在八十多年后。一九三七年，还在读硕士的香农写了一篇论文，指出**继电器开关电路的通断，恰好可以用布尔代数来描述**：串联是与，并联是或。这篇被称为史上最重要的硕士论文之一的东西，把一个纯数学玩具变成了整个数字电路的设计语言。**今天你手边所有的芯片，底下跑的都是布尔。**"
+    },
+    {
+      "type": "p",
+      "text": "而检索这件事，本质上就是布尔运算。你搜「数学 之美」，机器要找的是**同时含有这两个词的文档**——那是一个「与」。你要排除某类结果，那是「非」。早期的文献检索系统就是这么干的，用户甚至要自己写查询表达式。**这套东西简单到不像技术，可正因为简单，它才能在十亿量级的数据上一秒钟跑完**——机器执行「与」这个动作，快得几乎不要钱。"
+    },
+
+    { "type": "h2", "text": "二、倒排索引：把表倒过来" },
+    {
+      "type": "p",
+      "text": "现在问题来了：几十亿个网页，怎么知道哪些同时含有这两个词？**笨办法是一篇篇翻**，那是「文章 → 有哪些词」的表，叫正排。用它来查词，等于每次查字典都从第一页开始读。"
+    },
+    {
+      "type": "p",
+      "text": "关键的一步是把它**倒过来**：做「词 → 出现在哪些文章里」的表。「数学」这个词对应一串文档编号，「之美」对应另一串。查询的时候，把这两串编号求个交集就完事了。**这就是倒排索引**——听起来平平无奇，但它是搜索引擎能存在的物理前提。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "把表倒过来，查询就从「一篇篇翻」变成了「查两次表 + 求一次交集」。而交集在机器上就是位运算，快得几乎不要钱。",
+      "svg": "<svg viewBox='0 0 660 296' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>正排 与 倒排</text><text x='166' y='52' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink-soft)'>正排：文章 → 有哪些词</text><rect x='36' y='64' width='260' height='30' rx='6' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='166' y='84' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>文章 3：数学、模型、之美…</text><rect x='36' y='100' width='260' height='30' rx='6' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='166' y='120' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>文章 7：数学、之美、搜索…</text><rect x='36' y='136' width='260' height='30' rx='6' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='166' y='156' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>文章 12：数学、之美、语言…</text><text x='166' y='190' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>查一个词 → 得把所有文章翻一遍</text><path d='M306,120 L352,120' style='stroke:var(--cinnabar)' stroke-width='1.8'/><path d='M354,120 l-9,-4 l0,8 z' style='fill:var(--cinnabar)'/><text x='330' y='108' text-anchor='middle' font-size='11' style='fill:var(--cinnabar)'>倒过来</text><text x='494' y='52' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar)'>倒排：词 → 出现在哪些文章</text><rect x='364' y='64' width='260' height='30' rx='6' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar)' stroke-width='1.2'/><text x='494' y='84' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>数学 → 3, 7, 12, 88, 104…</text><rect x='364' y='100' width='260' height='30' rx='6' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar)' stroke-width='1.2'/><text x='494' y='120' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>之美 → 7, 12, 40, 88…</text><rect x='364' y='140' width='260' height='34' rx='6' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='494' y='162' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>求交集 → 7, 12, 88</text><text x='494' y='196' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>查两次表，做一次交集，完事</text><line x1='36' y1='218' x2='624' y2='218' style='stroke:var(--line)' stroke-width='1' stroke-dasharray='4 5'/><text x='330' y='242' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>交集在机器上就是位运算：两串二进制按位「与」，一次算一大片</text><text x='330' y='266' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>代价：索引往往比原文还大 —— 于是有了压缩、分块、分布式那一整套工程</text><text x='330' y='288' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>二十多年过去，现代检索系统的底层仍然是这张倒过来的表</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "代价当然有：**索引往往比原文还大。**因为除了文档编号，实际系统还要存这个词在文中出现了几次、出现在什么位置（判断词组要用）、在标题里还是正文里（权重不同）。于是围绕索引长出了一整套工程：压缩（编号排序后存差值，能省掉大量空间）、分块（按词或按文档切成许多份）、分布式（放在成千上万台机器上，查询时并行取回再合并）。**搜索引擎公司的真本事，很大一部分就体现在这些看不见的地方。**"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "这里有个很实用的启发，跟搜索没关系也用得上：**当一件事查起来很慢，先问问「表能不能倒过来」。**通讯录按姓名排是一种表，按电话号码排是另一种；账目按日期排和按客户排是两张表。**大部分「查得慢」的问题，本质是你手上那张表的组织方式和你的问法对不上。**多存一份倒过来的表，用空间换时间——这是计算机里最古老也最有效的一笔交易。"
+      ]
+    },
+
+    { "type": "h2", "text": "三、爬虫：互联网是一张图" },
+    {
+      "type": "p",
+      "text": "索引要有内容才能建，内容从哪儿来？**把网页一个个下载回来。**这件事在数学上是图论问题：每个网页是一个点，每个超链接是一条有方向的边，整个互联网是一张巨大的有向图。抓网页就是**遍历这张图**——从几个起点出发，把页面上的链接全都记下来，接着去抓，如此往复。"
+    },
+    {
+      "type": "p",
+      "text": "遍历有两种基本走法。**广度优先**是一层层往外扩，先把首页上所有链接抓完，再抓下一层——好处是重要页面（通常离首页近）先被抓到，覆盖面均匀。**深度优先**是顺着一条路一直往下钻——好处是跟同一个网站保持连接、少握手，对方服务器也舒服些。**实际系统是两者混着用，还要加一堆调度策略。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "抓网页就是遍历一张有向图。真正难的不是遍历本身，是「哪些该重抓、多久抓一次、抓多快不惹人烦」这类分配问题。",
+      "svg": "<svg viewBox='0 0 660 280' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>互联网是一张有向图</text><circle cx='90' cy='140' r='20' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar)' stroke-width='1.6'/><text x='90' y='145' text-anchor='middle' font-size='11' style='fill:var(--ink)'>起点</text><circle cx='210' cy='84' r='16' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><circle cx='210' cy='140' r='16' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><circle cx='210' cy='196' r='16' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><circle cx='330' cy='60' r='14' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><circle cx='330' cy='112' r='14' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><circle cx='330' cy='168' r='14' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><circle cx='330' cy='222' r='14' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><circle cx='446' cy='90' r='12' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><circle cx='446' cy='150' r='12' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><circle cx='446' cy='206' r='12' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><g style='stroke:var(--cinnabar)' stroke-width='1.4'><path d='M108,132 L192,90'/><path d='M110,140 L192,140'/><path d='M108,148 L192,190'/></g><g style='stroke:var(--ink-faint)' stroke-width='1.1'><path d='M225,76 L316,62'/><path d='M225,92 L316,108'/><path d='M225,132 L316,116'/><path d='M225,148 L316,164'/><path d='M225,204 L316,218'/><path d='M344,64 L434,88'/><path d='M344,116 L434,146'/><path d='M344,172 L434,200'/><path d='M344,220 L434,210'/></g><text x='150' y='250' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>第一层：先抓完</text><text x='330' y='250' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>第二层</text><text x='470' y='250' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>第三层…</text><text x='568' y='120' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>抓过的要判重</text><text x='568' y='142' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>变了的要重抓</text><text x='568' y='164' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>抓太快会被封</text><text x='330' y='274' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>算法只占一小半，工程与分寸占一大半</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**真正难的从来不是「怎么遍历」，是那些分配问题**：新闻站点几分钟就更新一次，个人主页几年不动一下，各该多久回来看一次？带宽和机器有限，先抓哪些？抓太快会给对方服务器造成压力甚至被封，怎么把握分寸？成千上万台机器一起抓，怎么保证不重复、不遗漏？**这一段书里讲得不多，但它提醒了一件事：一个真实系统里，漂亮算法通常只占一小半，剩下的是分寸和取舍。**"
+    },
+
+    { "type": "h2", "text": "四、信息指纹与布隆过滤器" },
+    {
+      "type": "p",
+      "text": "遍历中最高频的一个动作是**判重**：这个网址是不是已经抓过了？几百亿个网址，每个几十上百个字符，一条条比对是不可能的。办法是**信息指纹**——用哈希算法把每个网址压成一个固定长度的短数（比如六十四位），比对指纹就行。指纹相同几乎必然是同一个，不同则必然不同。**这就是把「比对内容」换成了「比对一个数」。**"
+    },
+    {
+      "type": "p",
+      "text": "同样的思路还能判断两个网页内容是不是重复：给正文算一个指纹，甚至用一种叫相似哈希的技巧，让**内容相近的网页指纹也相近**，于是「改了几个字的抄袭页」也能被抓出来。视频反盗版用的也是这套办法：给每段画面算指纹，比对指纹库。"
+    },
+    {
+      "type": "p",
+      "text": "而当指纹表大到内存都放不下时，还有一件更省的兵器：**布隆过滤器。**它的做法是用几个哈希函数把每个元素映射到一个大位数组的若干位上，标成一。查询时看那几位是不是都为一：**只要有一位是零，这个东西肯定没见过；如果全是一，那多半见过，但也可能是碰巧被别的元素占满了。**换句话说，它可能误报「见过」，绝不会漏报「没见过」。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "布隆过滤器：拿一点点误判率，换回几十倍的内存。工程里最常见也最值钱的一类交易——想清楚自己能容忍哪种错误。",
+      "svg": "<svg viewBox='0 0 660 258' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>用误判率换内存</text><text x='90' y='68' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>一个网址</text><path d='M132,62 L186,62' style='stroke:var(--ink-faint)' stroke-width='1.2'/><path d='M188,62 l-9,-4 l0,8 z' style='fill:var(--ink-faint)'/><text x='236' y='68' text-anchor='middle' font-size='12' style='fill:var(--cinnabar)'>3 个哈希</text><path d='M280,62 L330,62' style='stroke:var(--ink-faint)' stroke-width='1.2'/><path d='M332,62 l-9,-4 l0,8 z' style='fill:var(--ink-faint)'/><text x='420' y='68' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>把 3 个位置标成 1</text><g><rect x='60' y='96' width='36' height='30' rx='4' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><rect x='100' y='96' width='36' height='30' rx='4' style='fill:var(--cinnabar)' opacity='0.75'/><rect x='140' y='96' width='36' height='30' rx='4' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><rect x='180' y='96' width='36' height='30' rx='4' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><rect x='220' y='96' width='36' height='30' rx='4' style='fill:var(--cinnabar)' opacity='0.75'/><rect x='260' y='96' width='36' height='30' rx='4' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><rect x='300' y='96' width='36' height='30' rx='4' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><rect x='340' y='96' width='36' height='30' rx='4' style='fill:var(--cinnabar)' opacity='0.75'/><rect x='380' y='96' width='36' height='30' rx='4' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><rect x='420' y='96' width='36' height='30' rx='4' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><rect x='460' y='96' width='36' height='30' rx='4' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><rect x='500' y='96' width='36' height='30' rx='4' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><rect x='540' y='96' width='36' height='30' rx='4' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><rect x='580' y='96' width='36' height='30' rx='4' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/></g><text x='330' y='152' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>查询时：那 3 位里只要有一个是 0 → 这个网址肯定没抓过</text><text x='330' y='176' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>3 位全是 1 → 多半抓过，也可能是被别的网址碰巧占满了</text><text x='330' y='206' text-anchor='middle' font-size='12' style='fill:var(--cinnabar)'>会误报「见过」，绝不会漏报「没见过」</text><text x='330' y='234' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>对爬虫来说，偶尔漏抓一个页面无所谓 —— 这个错误方向恰好是能接受的那个</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**这个不对称性正是它的精髓。**对爬虫来说，偶尔把一个没抓过的页面误判成抓过，代价不过是漏了一个网页；而换来的是内存占用降低几十倍。**能不能做这笔交易，取决于你分不分得清自己能容忍哪一种错误。**这本书里这类「拿一点点错误换巨大效率」的例子很多，它们合起来是一种工程上的成熟：**不追求零错误，追求错在能承受的方向上。**"
+    },
+
+    { "type": "h2", "text": "五、为什么在这里，「简单」是硬道理" },
+    {
+      "type": "p",
+      "text": "把这一章的几样东西摆在一起看，会发现一个共同点：**它们都笨得可以。**布尔运算只有三种；倒排索引就是一张倒过来的表；遍历图是数据结构课第一周的内容；哈希判重、位图求交，全是基本功。**没有一处需要天才。**"
+    },
+    {
+      "type": "p",
+      "text": "**这恰恰是它们能活下来的原因。**当规模是几十亿的时候，任何一个操作只要复杂一点点，乘以几十亿就成了灾难；而简单的操作能被硬件直接支持、能被压缩、能被切成小块分到几万台机器上并行。**规模会淘汰聪明，只留下又笨又快的东西。**这个道理不只在搜索里成立——任何一件事一旦要做几十亿次，简单就从美德变成了刚需。"
+    },
+
+    { "type": "h2", "text": "六、今天它们还在吗" },
+    {
+      "type": "p",
+      "text": "在，而且是全书里最没被时代动过的一章。**倒排索引至今仍是现代检索系统的底层**，你用的每一个搜索框、每一个数据库的全文检索、每一个日志分析系统，底下都是它。基于词频的经典打分方法（TF-IDF 那一族，工业界更常用的是它的改良版 BM25）**至今仍是搜索排序里跑不掉的强基线**——新方法要证明自己有用，通常得先赢过它。"
+    },
+    {
+      "type": "p",
+      "text": "变化的部分是多了一层：**语义向量检索。**把查询和文档都变成一串数字（向量），用向量的接近程度来找「字面不同但意思相近」的内容——这解决了倒排索引的老毛病：你搜「怎么让电脑跑快点」，一篇讲「加内存和换固态硬盘」的文章一个查询词都没有，倒排索引找不到它。**但注意，向量检索是补充而不是替代**，今天主流做法是两者混着用：倒排负责精确和速度，向量负责语义和召回。"
+    },
+
+    { "type": "h2", "text": "七、这一章省掉了什么苦工" },
+    {
+      "type": "p",
+      "text": "答案很干脆：**它把「找」变成了「查表」。**在倒排索引之前，找东西意味着一份份地看；有了它，找东西意味着查两次表、做一次交集。这中间的差别不是快了几倍，是**从做不到变成了做得到**。"
+    },
+    {
+      "type": "pull",
+      "text": "规模会淘汰聪明，只留下又笨又快的东西——任何一件事一旦要做几十亿次，简单就从美德变成了刚需。"
+    },
+    {
+      "type": "p",
+      "text": "还有一层意思值得记：**布尔在一八五四年做那套代数时，完全不知道它会有什么用。**是八十年后的香农把它接到了电路上，又过了几十年，它成了每天几十亿次查询的地基。这本书里这样的故事不止一个——余弦定理帮着做新闻分类，线性代数的特征向量成了网页的权威度。**基础数学的价值从来不在它当下能用来干什么，而在它足够干净，干净到能在几十年后被安到谁也没想到的地方去。**"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本章对应原书讲布尔代数与搜索引擎索引的一章、讲图论与网络爬虫的一章，以及讲信息指纹的一章。",
+        "史实补充：布尔《思维规律的研究》出版于 1854 年；香农 1937 年的硕士论文首次把布尔代数与开关电路对应起来；布隆过滤器由 Burton Bloom 于 1970 年提出。",
+        "BM25 与语义向量检索的现状为本文所作的时代补充，非原书内容。"
+      ]
+    }
+  ]
+}

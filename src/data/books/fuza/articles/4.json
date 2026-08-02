@@ -1,0 +1,162 @@
+{
+  "title": "计算与元胞自动机:图灵机、生命游戏与规则 110",
+  "subtitle": "把「计算」从人和机器身上剥下来,变成任何系统都可能在做的事——这一步跨出去,「蚁群在计算」才不再是修辞",
+  "centralIdea": "这一章是四根柱子里最抽象、也最关键的一根。它要证明的事情只有一件:计算不是硅片的特权。路线是——先看图灵为了回答一个数学基础问题而发明的抽象机器,顺便拿到「通用性」和「有些事情算不出来」这两个结论;再看冯·诺依曼纯凭逻辑推出的自我复制必要条件(同一份描述必须既当指令又当数据),而这个结论比 DNA 结构被解出还早;然后落到元胞自动机——一排只会开关的格子、一条短到能背下来的局部规则,却能长出会移动的图案,其中编号 110 的那条规则被证明与最强的超级计算机等价。这一步跨出去之后,「某个自然系统正在进行计算」就从比喻变成了一个可以被严格判断的命题。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "「计算」这个词在日常语言里指的是人拿笔算账,或者机器跑程序。这一章要做的事,是把这个词从人和机器身上整个剥下来,变成一件**任何系统都可能在做的事**。听上去有点玄,但它其实是一段非常具体的数学史:起点是二十世纪初关于「数学到底靠不靠得住」的一场危机,终点是一条短到能写在便签上的规则,被证明和世界上最强的超级计算机等价。走完这一段,你就明白为什么米歇尔敢说蚁群和免疫系统「在进行信息处理」,而那不是一句文学化的形容。"
+    },
+    {
+      "type": "h2",
+      "text": "一、一场关于数学本身的危机"
+    },
+    {
+      "type": "p",
+      "text": "二十世纪初,数学界正在经历一次信心动摇:集合论里冒出了自相矛盾的悖论,基础似乎松动了。希尔伯特提出了一个纲领,核心是三个问题:数学是**完备的**吗(每条真命题都能被证明)?是**一致的**吗(不会同时证出一件事和它的反面)?是**可判定的**吗(有没有一套机械步骤,输入任何命题,就能输出它是真是假)?"
+    },
+    {
+      "type": "p",
+      "text": "1931 年,二十五岁的哥德尔回答了前两问,答案是**不能**。任何足够强(强到能表达算术)且一致的形式系统里,总存在真而不可证的命题;而且这个系统也无法在自己内部证明自己一致。这两条结论对二十世纪的思想影响之大,已经溢出了数学本身。"
+    },
+    {
+      "type": "p",
+      "text": "第三问留给了图灵。1936 年,他要回答「有没有一套机械步骤」,可当时根本没有人定义过「机械步骤」是什么意思——那还是个直觉概念。**所以他必须先造一个定义。**他造的东西极其简朴:一条无限长的纸带分成格子,一个读写头,读写头能读当前格、改写当前格、左右移动一格,再加一张有限的状态表规定「在什么状态下读到什么符号,就写什么、往哪走、转到什么状态」。就这些。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>图灵机:「机械地做」的最小定义</text><rect x='60' y='104' width='40' height='40' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='100' y='104' width='40' height='40' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='140' y='104' width='40' height='40' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='180' y='104' width='40' height='40' style='fill:none;stroke:var(--cinnabar);stroke-width:1.6'/><rect x='220' y='104' width='40' height='40' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='260' y='104' width='40' height='40' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='300' y='104' width='40' height='40' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='80' y='131' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;fill:var(--ink)'>1</text><text x='120' y='131' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;fill:var(--ink)'>0</text><text x='160' y='131' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;fill:var(--ink)'>1</text><text x='200' y='131' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;fill:var(--cinnabar)'>1</text><text x='240' y='131' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;fill:var(--ink)'>0</text><text x='280' y='131' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;fill:var(--ink)'>0</text><text x='320' y='131' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;fill:var(--ink)'>1</text><text x='36' y='131' style='font-family:var(--font-serif);font-size:14px;fill:var(--ink-faint)'>…</text><text x='348' y='131' style='font-family:var(--font-serif);font-size:14px;fill:var(--ink-faint)'>…</text><path d='M200 96 L200 74' style='fill:none;stroke:var(--cinnabar);stroke-width:1.4'/><rect x='158' y='42' width='84' height='32' rx='5' style='fill:none;stroke:var(--cinnabar);stroke-width:1.3'/><text x='200' y='63' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>读写头</text><text x='190' y='168' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>无限长的纸带 · 只有 0 和 1</text><rect x='378' y='60' width='152' height='120' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='454' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--ink)'>一张有限的状态表</text><text x='454' y='106' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>在状态 A 读到 1</text><text x='454' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>→ 写 0 · 右移 · 转状态 B</text><text x='454' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>全部规则就这么几行</text><rect x='60' y='198' width='440' height='36' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.2'/><text x='280' y='221' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar)'>就这么点东西,能算出一切「可以被算出来」的东西</text></svg>",
+      "caption": "图灵机不是一台真机器,它是「计算」这个概念的定义。今天所有的编程语言、所有的 CPU,能力上限都和这台纸带机器一样。"
+    },
+    {
+      "type": "p",
+      "text": "然后图灵证明了两件大事。第一,**存在一台通用图灵机**:把别的机器的状态表编码成一串符号写在纸带上,这台机器就能模拟那台机器——这是「可编程」这个概念的数学原型,今天你的手机能装任何 app,底层原理就在这。第二,**停机问题不可判定**:不存在任何程序,能对所有程序判断它会不会停下来。这也就顺带回答了希尔伯特的第三问:不,没有那套万能的机械步骤。"
+    },
+    {
+      "type": "quote",
+      "original": "计算这件事,从一开始就自带边界:有些问题不是「还没算出来」,而是永远算不出来。",
+      "translation": "这条结论后来在复杂性讨论里反复出现。第 9 章讲复杂性度量时你会看到,好几把最漂亮的尺子都栽在同一件事上——定义清楚,但不可计算。"
+    },
+    {
+      "type": "h2",
+      "text": "二、冯·诺依曼:一台机器怎么造出自己"
+    },
+    {
+      "type": "p",
+      "text": "1940 年代末,冯·诺依曼问了一个当时看起来很怪的问题:一台机器,能不能造出一台和自己完全一样的机器?直觉上这里有个死循环——机器要造自己,就得有一份自己的完整图纸;可这份图纸也是机器的一部分,那图纸里就得包含图纸自己,于是无穷倒退。"
+    },
+    {
+      "type": "p",
+      "text": "他的解法漂亮极了:**让同一份描述扮演两个不同的角色。**第一次,机器**照着**这份描述去造(把描述当作指令来执行);第二次,机器**原样抄写**这份描述,把副本装进新机器(把描述当作数据来复制)。这样一来,描述里不需要包含描述自己——它只需要描述那台机器,而「再抄一份自己」是执行流程里的一个动作,不是图纸里的一项内容。无穷倒退就此消解。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "留意时间",
+      "items": [
+        "这段推理写在 1940 年代末,而 DNA 的双螺旋结构 1953 年才被解出、遗传密码更晚才被破译。**而 DNA 恰恰就是这么工作的**:同一段序列,一会儿被转录翻译成蛋白质(当指令用),一会儿被整段复制成两份传给子代(当数据用)。一个数学家仅凭逻辑推理,提前推出了生命复制机制的必要结构。这是全书最能说明「抽象层面的规律确实存在」的一个例子——它不依赖碳基化学,不依赖任何具体分子,它是关于「自我复制」这件事本身的约束。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "三、元胞自动机:最小的复杂系统"
+    },
+    {
+      "type": "p",
+      "text": "冯·诺依曼为了研究自我复制,借用了乌拉姆建议的一种玩具模型,后来叫元胞自动机。设定简单到能在方格纸上手算:一片格子,每格只有「活」或「死」两种状态;每一步,每格**只看自己和邻居**的状态,按同一条规则同时更新。没有中央控制,没有全局信息,规则对所有格子一视同仁——**这就是第 1 章那份定义的最小实现。**"
+    },
+    {
+      "type": "p",
+      "text": "最有名的版本是康威 1970 年做的「生命游戏」,二维格子,规则只有三条:活细胞邻居是 2 或 3 个就继续活,否则死(太挤或太孤单);死细胞正好有 3 个活邻居就复活。就这么三句话,却能长出一大批稳定图案、周期振荡的图案,以及最有名的「滑翔机」——一个五格图案,每四步复原一次,同时向斜对角挪动一格,**它会永远飞下去。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "svg": "<svg viewBox='0 0 560 230' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>三条规则,长出一架永远在飞的滑翔机</text><g transform='translate(40,46)'><rect x='0' y='0' width='96' height='96' style='fill:none;stroke:var(--line);stroke-width:1'/><path d='M24 0 L24 96 M48 0 L48 96 M72 0 L72 96 M0 24 L96 24 M0 48 L96 48 M0 72 L96 72' style='fill:none;stroke:var(--line);stroke-width:0.5'/><rect x='24' y='0' width='24' height='24' style='fill:var(--ink)'/><rect x='48' y='24' width='24' height='24' style='fill:var(--ink)'/><rect x='0' y='48' width='24' height='24' style='fill:var(--ink)'/><rect x='24' y='48' width='24' height='24' style='fill:var(--ink)'/><rect x='48' y='48' width='24' height='24' style='fill:var(--ink)'/><text x='48' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>第 0 步</text></g><path d='M150 94 L172 94 M166 89 L172 94 L166 99' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><g transform='translate(182,46)'><rect x='0' y='0' width='96' height='96' style='fill:none;stroke:var(--line);stroke-width:1'/><path d='M24 0 L24 96 M48 0 L48 96 M72 0 L72 96 M0 24 L96 24 M0 48 L96 48 M0 72 L96 72' style='fill:none;stroke:var(--line);stroke-width:0.5'/><rect x='0' y='24' width='24' height='24' style='fill:var(--ink)'/><rect x='48' y='24' width='24' height='24' style='fill:var(--ink)'/><rect x='24' y='48' width='24' height='24' style='fill:var(--ink)'/><rect x='48' y='48' width='24' height='24' style='fill:var(--ink)'/><rect x='24' y='72' width='24' height='24' style='fill:var(--ink)'/><text x='48' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>第 1 步</text></g><path d='M292 94 L314 94 M308 89 L314 94 L308 99' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><g transform='translate(324,46)'><rect x='0' y='0' width='96' height='96' style='fill:none;stroke:var(--line);stroke-width:1'/><path d='M24 0 L24 96 M48 0 L48 96 M72 0 L72 96 M0 24 L96 24 M0 48 L96 48 M0 72 L96 72' style='fill:none;stroke:var(--line);stroke-width:0.5'/><rect x='48' y='24' width='24' height='24' style='fill:var(--ink)'/><rect x='0' y='48' width='24' height='24' style='fill:var(--ink)'/><rect x='48' y='48' width='24' height='24' style='fill:var(--ink)'/><rect x='24' y='72' width='24' height='24' style='fill:var(--ink)'/><rect x='48' y='72' width='24' height='24' style='fill:var(--ink)'/><text x='48' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>第 2 步</text></g><path d='M434 94 L456 94 M450 89 L456 94 L450 99' style='fill:none;stroke:var(--cinnabar);stroke-width:1.2'/><g transform='translate(466,46)'><rect x='0' y='0' width='72' height='96' style='fill:none;stroke:var(--cinnabar);stroke-width:1.2'/><path d='M24 0 L24 96 M48 0 L48 96 M0 24 L72 24 M0 48 L72 48 M0 72 L72 72' style='fill:none;stroke:var(--line);stroke-width:0.5'/><rect x='24' y='24' width='24' height='24' style='fill:var(--cinnabar)'/><rect x='48' y='48' width='24' height='24' style='fill:var(--cinnabar)'/><rect x='0' y='72' width='24' height='24' style='fill:var(--cinnabar)'/><rect x='24' y='72' width='24' height='24' style='fill:var(--cinnabar)'/><rect x='48' y='72' width='24' height='24' style='fill:var(--cinnabar)'/><text x='36' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>第 4 步</text></g><text x='280' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>四步之后图案完全复原,只是整体往右下挪了一格——于是它就一直飞下去</text><text x='280' y='218' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>没有人「设计」过滑翔机,它是那三条规则的一个后果</text></svg>",
+      "caption": "康威定规则的时候并不知道滑翔机存在,是玩家们后来在格子上发现它的。这就是涌现最干净的一个演示:后果在规则里,却不在设计者脑子里。"
+    },
+    {
+      "type": "p",
+      "text": "更狠的在后头:生命游戏被证明可以用来搭出一台通用计算机——用滑翔机当信号、用特定图案当逻辑门,原则上能算任何可计算的东西。**三条关于「太挤会死、太孤单也会死」的规则,里面居然藏着一整台计算机。**"
+    },
+    {
+      "type": "p",
+      "text": "生命游戏还顺带演示了一件对复杂科学很要紧的事:**规则的作者根本不知道自己造出了什么。**康威定下那三条规则时并不知道滑翔机存在——滑翔机是玩家们在格子上一格一格试出来的;至于「能搭出通用计算机」,那更是许多年后才被证明的。这就是「涌现」最干净的一次演示:**后果完完全全包含在规则里(没有任何神秘成分),却完全不在设计者的脑子里。**你可以说滑翔机是被规则决定的,同时也可以说它是被发现的而非被设计的——这两句话不矛盾,而理解这一点,就理解了这本书想让你养成的那种看法。"
+    },
+    {
+      "type": "h2",
+      "text": "四、256 条规则,和其中那条 110"
+    },
+    {
+      "type": "p",
+      "text": "沃尔弗拉姆研究的是更简的一维版本:一排格子,每格只看自己和左右两个邻居。三个格子每个两种状态,一共 8 种邻居组合;每种组合规定一个输出,于是**总共只有 2 的 8 次方 = 256 条可能的规则**。全部编上号,从规则 0 到规则 255,一条一条跑给你看——这是一个小到可以穷举完的宇宙。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "svg": "<svg viewBox='0 0 560 200' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>规则 110 的全部内容:八行,写完了</text><g transform='translate(30,44)'><g><rect x='0' y='0' width='16' height='16' style='fill:var(--ink)'/><rect x='16' y='0' width='16' height='16' style='fill:var(--ink)'/><rect x='32' y='0' width='16' height='16' style='fill:var(--ink)'/><rect x='16' y='24' width='16' height='16' style='fill:none;stroke:var(--line);stroke-width:1'/></g><g transform='translate(64,0)'><rect x='0' y='0' width='16' height='16' style='fill:var(--ink)'/><rect x='16' y='0' width='16' height='16' style='fill:var(--ink)'/><rect x='32' y='0' width='16' height='16' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='16' y='24' width='16' height='16' style='fill:var(--cinnabar)'/></g><g transform='translate(128,0)'><rect x='0' y='0' width='16' height='16' style='fill:var(--ink)'/><rect x='16' y='0' width='16' height='16' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='32' y='0' width='16' height='16' style='fill:var(--ink)'/><rect x='16' y='24' width='16' height='16' style='fill:var(--cinnabar)'/></g><g transform='translate(192,0)'><rect x='0' y='0' width='16' height='16' style='fill:var(--ink)'/><rect x='16' y='0' width='16' height='16' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='32' y='0' width='16' height='16' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='16' y='24' width='16' height='16' style='fill:none;stroke:var(--line);stroke-width:1'/></g><g transform='translate(256,0)'><rect x='0' y='0' width='16' height='16' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='16' y='0' width='16' height='16' style='fill:var(--ink)'/><rect x='32' y='0' width='16' height='16' style='fill:var(--ink)'/><rect x='16' y='24' width='16' height='16' style='fill:var(--cinnabar)'/></g><g transform='translate(320,0)'><rect x='0' y='0' width='16' height='16' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='16' y='0' width='16' height='16' style='fill:var(--ink)'/><rect x='32' y='0' width='16' height='16' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='16' y='24' width='16' height='16' style='fill:var(--cinnabar)'/></g><g transform='translate(384,0)'><rect x='0' y='0' width='16' height='16' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='16' y='0' width='16' height='16' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='32' y='0' width='16' height='16' style='fill:var(--ink)'/><rect x='16' y='24' width='16' height='16' style='fill:var(--cinnabar)'/></g><g transform='translate(448,0)'><rect x='0' y='0' width='16' height='16' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='16' y='0' width='16' height='16' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='32' y='0' width='16' height='16' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='16' y='24' width='16' height='16' style='fill:none;stroke:var(--line);stroke-width:1'/></g></g><text x='280' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>上排 = 我和左右邻居现在的样子 · 下排 = 我下一步变成什么</text><rect x='60' y='146' width='440' height='42' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.2'/><text x='280' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar)'>这八行的表达能力,和世界上最强的超级计算机是同一类</text><text x='280' y='181' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>库克证明了规则 110 是图灵完备的</text></svg>",
+      "caption": "把规则 110 的八种情况列全就是这张图。「图灵完备」不是说它跑得快——它慢得离谱——而是说它能算的东西的**范围**和超级计算机一样大。"
+    },
+    {
+      "type": "p",
+      "text": "沃尔弗拉姆把 256 条规则的行为归成四类:**一类**很快死成一片空白;**二类**变成简单的周期或稳定图案;**三类**变成一片没有结构的乱码;**四类**最有意思——既不死也不乱,长出会移动、会碰撞、会互相作用的局部结构。规则 110 就是四类的代表。后来马修·库克证明了一件震动性的事:**规则 110 是图灵完备的。**"
+    },
+    {
+      "type": "pull",
+      "text": "计算不是硅片的特权。一条八行写完的局部规则,能力上限和最强的超级计算机是同一类。"
+    },
+    {
+      "type": "h2",
+      "text": "五、沃尔弗拉姆的大主张,和米歇尔的保留"
+    },
+    {
+      "type": "p",
+      "text": "2002 年,沃尔弗拉姆出了一本一千两百页的书,主张这类研究构成「一种新科学」:自然界里的复杂现象,本质上都可以理解为简单程序在跑;他还提出一条「计算等价原理」,大意是绝大多数不那么平凡的系统,计算能力其实都彼此等价。这本书在圈外影响很大,在圈内争议也很大。"
+    },
+    {
+      "type": "p",
+      "text": "米歇尔的态度很值得学:她**认真介绍了这套主张,然后明确表示保留**。她的疑问不是「元胞自动机不重要」——她自己就靠这个吃饭——而是:**能做出复杂图案,不等于解释了自然界为什么长成这样。**贝壳上的花纹和某条元胞自动机规则的图案长得像,这是一条值得追的线索,但它离「贝壳花纹就是这么产生的」还差着一整套实证工作。她也指出,「计算等价原理」目前更像一个哲学猜想而不是可检验的科学命题。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "items": [
+        "这里有一个贯穿全书的分寸问题,值得单独记住:**「A 和 B 长得像」和「A 就是 B 的机制」之间隔着很远。**复杂科学因为跨学科,特别容易掉进这个坑——看到两个领域的曲线形状相似就宣布找到了普适规律。米歇尔在这一章、在网络那一章、在尺度律那一章,反复提醒同一件事。这也是判断一篇「复杂性」文章靠不靠谱的最好标准之一:它是停在「像」上,还是往下做了机制的功课?"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "六、米歇尔自己的活:把「涌现的计算」解剖开"
+    },
+    {
+      "type": "p",
+      "text": "这一章还有一段是她自己的研究,虽然细节技术性强,但结论对全书很关键。她和同事用遗传算法(下一章讲)去**演化**元胞自动机的规则,让它完成一个任务:一排格子随机涂上黑白,规则要让整排格子最终全变成占多数的那个颜色。**难点在于,每个格子只能看到自己的左右邻居——没有谁能数出总数。**"
+    },
+    {
+      "type": "p",
+      "text": "演化出来的规则确实能相当好地完成任务。然后她做了最有价值的一步:**把它拆开看它是怎么算的。**结果发现,格子上会形成几片颜色均匀的区域,而真正在干活的是这些区域之间的**边界**——它们在格子上移动,相遇时按一定方式湮灭或转向,信息就是靠这些移动的边界传递和比较的。她把它们叫做「粒子」。"
+    },
+    {
+      "type": "p",
+      "text": "为什么这件事值得单独讲?因为「涌现层面在进行计算」这句话,在整个领域里被说了几十年,**而真正把某个具体例子拆开、指出信息载体是什么、怎么被传递、在哪里被合并的工作,极少。**大多数时候人们只能指着现象说「你看,它算出来了」,却说不出中间过程。米歇尔这项工作的价值不在于任务本身有多重要(让格子变成一种颜色显然没什么用),而在于它提供了一个可以完整解剖的样本:**在这里,「涌现的计算」不是一句形容,而是一套能画出来的机制。**顺带一提,这也是遗传算法那个老毛病的又一次现身——演化交给她的是一串数字,它能用,但为什么能用得她自己花力气去逆向分析。"
+    },
+    {
+      "type": "quote",
+      "original": "计算不是发生在单个格子的层面,而是发生在那些谁也没有设计过的移动边界上。",
+      "translation": "这是全书为数不多的、把「涌现层面的计算」真正解剖开给你看的例子。它同时说明两件事:涌现的计算确实存在;而要看懂它,得先放弃在部件层面找答案。"
+    },
+    {
+      "type": "h2",
+      "text": "七、这一步买到了什么"
+    },
+    {
+      "type": "p",
+      "text": "把这一章的收获列一下,后面几章会不断取用:**第一**,通用性——能力上限和物理载体无关,纸带、格子、神经元、蚂蚁都可能达到同一个上限;**第二**,不可判定性——有些事情不是还没算出来,而是永远算不出来,这条边界后面会以别的面目再次出现;**第三**,自我复制的逻辑结构——同一份描述既当指令又当数据;**第四**,也是最重要的:**「某个自然系统正在进行计算」这句话,现在是一个可以被严格判断真假的命题,而不是一个比喻。**"
+    },
+    {
+      "type": "p",
+      "text": "有了这一条,下一章讲演化、第 6 章讲蚁群和免疫系统,才站得住脚。**同时也请记住这一步的限度:说一个系统「在计算」,并不等于说它在计算什么有用的东西,更不等于说它聪明。**一锅开水在某种极宽松的意义上也在「计算」,但那个说法没有内容。有内容的问法永远是那三个:计算的输入是什么、输出是什么、这个输出对系统有什么用。"
+    }
+  ]
+}

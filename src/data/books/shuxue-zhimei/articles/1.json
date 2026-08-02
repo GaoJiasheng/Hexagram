@@ -1,0 +1,149 @@
+{
+  "title": "通信模型：文字、数字和信息本来是一回事",
+  "subtitle": "说话是编码，听懂是解码——承认这一点，「理解语言」就从玄学变成了一道能动手的题",
+  "centralIdea": "这一章是全书的世界观，也是最容易被当成闲笔跳过去的一章。它想让你接受一个视角：信息是能脱离载体的东西，文字、数字、语言都不是「内容」本身，而是三种编码方案；一个人说话是编码，另一个人听懂是解码，中间那段空气就是带噪声的信道。一旦你接受这个视角，「让机器理解语言」这件听上去玄乎的事，就固定成了一道明确的题：在所有可能的原文里，找出最可能产生眼前这段观测的那一个。剩下的全是技术。而这一章最有意思的地方是它顺手证明了：这套东西不是现代人的发明——抄经的人用字母求和做校验、罗塞塔石碑用三种文字刻同一段话、一词多义靠上下文消歧，古人早就在跟冗余、纠错、编码效率打交道，只是没给它起名字。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "很多人读这本书，读到第二三章讲统计模型才觉得「开始有干货了」，前面讲埃及象形文字和阿拉伯数字的部分被当成开胃菜翻过去。**那是全书最不该跳的一章。**因为它不是在讲历史掌故，它是在换你脑子里的一个开关：把「说话」看成编码，把「听懂」看成解码。开关一换，后面每一件事都顺理成章；开关不换，你会一路觉得那些统计方法「怎么可能真的懂语言」。"
+    },
+
+    { "type": "h2", "text": "一、信息，是可以脱离载体的东西" },
+    {
+      "type": "p",
+      "text": "先做个最简单的实验。同一件事——「明天下午三点在老地方见」——你可以喊出来、写在纸条上、发条微信、拍电报、打手语，甚至托人捎口信。这六种做法，**载体全不一样，传过去的东西却是同一个**。这个「同一个」，就是信息。"
+    },
+    {
+      "type": "p",
+      "text": "这话听着像废话，但它其实是很晚才被人明确说出来的。在信息论出现之前，人们谈论的是「话」「文字」「电报」这些具体的东西，没有一个可以横跨它们的概念。**香农那一代人做的事，就是把这个「同一个」单独拎出来，给它一个名字，并且让它可以被度量。**从此才有可能说出「这条消息有多少信息量」「这个信道每秒能传多少信息」这样的话。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "六种载体，一件信息。承认「信息可以脱离载体」，才谈得上度量它、压缩它、传输它、还原它。",
+      "svg": "<svg viewBox='0 0 660 268' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>载体各不相同，信息是同一个</text><ellipse cx='330' cy='142' rx='96' ry='40' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar)' stroke-width='1.6'/><text x='330' y='138' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--ink)'>明天下午三点</text><text x='330' y='158' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--ink)'>在老地方见</text><rect x='24' y='56' width='120' height='36' rx='7' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='84' y='79' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>当面说出来</text><rect x='24' y='128' width='120' height='36' rx='7' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='84' y='151' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>写在纸条上</text><rect x='24' y='200' width='120' height='36' rx='7' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='84' y='223' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>打一封电报</text><rect x='516' y='56' width='120' height='36' rx='7' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='576' y='79' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>发一条微信</text><rect x='516' y='128' width='120' height='36' rx='7' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='576' y='151' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>比一段手语</text><rect x='516' y='200' width='120' height='36' rx='7' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='576' y='223' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>托人捎口信</text><path d='M144,74 L232,124' style='stroke:var(--ink-faint)' stroke-width='1.1'/><path d='M144,146 L232,143' style='stroke:var(--ink-faint)' stroke-width='1.1'/><path d='M144,218 L232,162' style='stroke:var(--ink-faint)' stroke-width='1.1'/><path d='M516,74 L428,124' style='stroke:var(--ink-faint)' stroke-width='1.1'/><path d='M516,146 L428,143' style='stroke:var(--ink-faint)' stroke-width='1.1'/><path d='M516,218 L428,162' style='stroke:var(--ink-faint)' stroke-width='1.1'/><text x='330' y='254' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>把这个「同一个」拎出来命名并度量 —— 信息论就是从这里开始的</text></svg>"
+    },
+
+    {
+      "type": "p",
+      "text": "换成今天的说法更直观：**同一句话，录成高清音频有几百 KB，存成文字只有几十个字节，两者的文件大小差着几千倍，可传过去的信息是同一件事。**这说明「文件多大」根本不是「信息有多少」——载体的开销和信息量是两回事。那么信息量到底该怎么量？这个问题这一章不回答，它只负责让你意识到问题存在；答案在讲信息熵那一章，那是这本书的地基。"
+    },
+
+    { "type": "h2", "text": "二、那条要背下来的链子" },
+    {
+      "type": "p",
+      "text": "**信源 → 编码 → 信道 → 解码 → 信宿。**这五个格子是全书的骨架。你脑子里有个意思，这是信源；你把它组织成一句中文说出去，这是编码；声音穿过一屋子的杂音传到对方耳朵，这是信道，**信道上必然有噪声**；对方的耳朵和大脑把声波还原成意思，这是解码；他听懂了，这是信宿。"
+    },
+    {
+      "type": "p",
+      "text": "关键在噪声那一格。**因为有噪声，解码就永远不是「还原」，而是「猜最可能的那个」。**你在嘈杂的餐厅里没听清对方说的是「四点」还是「十点」，你不会当场死机，你会根据前后文猜一个最合理的。你已经在做这本书后面所有模型做的事了——只不过你是靠经验，机器要靠概率。"
+    },
+    {
+      "type": "p",
+      "text": "这个视角带来的最大好处是：**它把「理解一句话」这件玄乎的事，变成了一句能写下来的任务书**——在所有可能的原文里，找出最可能产生眼前这段观测的那一个。这句话看似平淡，却是一道分水岭：分水岭这边的人在争论「机器到底能不能真的懂语言」，那边的人已经开始干活了。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "同一条链子，把三件不相干的事变成了同一件：语音识别里，看不见的是要说的话、看得见的是声波；机器翻译里，看不见的是原文、看得见的是译文；拼音输入法里，看不见的是想打的汉字、看得见的是一串字母。**你只要换掉「看得见的是什么」，方法本身一个字都不用改。**这就是第五章那个模型能一统四个领域的原因。"
+      ]
+    },
+
+    { "type": "h2", "text": "三、文字和数字，都是编码方案" },
+    {
+      "type": "p",
+      "text": "顺着这条链子回头看人类的文字史，会看到一件挺震撼的事：**文字的演化史，基本就是一部编码优化史。**最早的象形文字是一物一画，画得越像越好，可东西是无穷的，字不能无穷。于是发生了第一次压缩：**把意思相近的东西归到同一个符号下**——一个字担起好几个意思。代价随之而来，就是一词多义。"
+    },
+    {
+      "type": "p",
+      "text": "而一词多义的解药，古人也早就找到了：**看上下文。**「日」是太阳还是日子，「打」是击打还是打酱油，从来不靠字本身，靠它周围的字。**请注意这件事的分量**：人类从有文字起就在用上下文消歧，而这本书后面所有统计模型做的事，本质上就是把这个「看上下文」写成公式、交给机器去做。第四章的语言模型、第五章的隐含马尔可夫，全是这一件事的机器版。"
+    },
+    {
+      "type": "p",
+      "text": "数字那一段同样有意思。十进制来自我们有十根手指，玛雅人用二十进制——大概是把脚趾也算上了。而真正的分水岭不是几进制，是**位置计数法**：同一个符号放在不同位置代表不同的量。罗马数字没有这一手，写一九八四要写成 MCMLXXXIV，读得费劲，加减更是灾难；换成阿拉伯数字（其实源自印度，经阿拉伯人传入欧洲）只要四个字符。**这不是审美差异，这是编码效率的差异**，而编码效率的差异，最后会变成一个文明能不能做复杂计算的差异。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "同一个数，两种编码。位置计数法不只是「写起来短」，它让加减乘除有了可机械执行的步骤——这就是好编码的价值。",
+      "svg": "<svg viewBox='0 0 660 260' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>编码效率：同一个数，两种写法</text><line x1='330' y1='38' x2='330' y2='214' style='stroke:var(--line)' stroke-width='1' stroke-dasharray='4 5'/><text x='166' y='60' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink-soft)'>罗马数字</text><rect x='40' y='72' width='252' height='52' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='166' y='106' text-anchor='middle' font-size='22' style='fill:var(--ink)'>MCMLXXXIV</text><text x='166' y='150' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>九个字符 · 每个符号自带固定值</text><text x='166' y='172' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>做加法要背规则，做乘法几乎没法做</text><text x='494' y='60' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar)'>位置计数法</text><rect x='368' y='72' width='252' height='52' rx='8' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar)' stroke-width='1.4'/><text x='494' y='108' text-anchor='middle' font-size='26' font-weight='bold' style='fill:var(--ink)'>1984</text><text x='494' y='150' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>四个字符 · 同一符号在不同位置代表不同量</text><text x='494' y='172' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>竖式加减乘除，一套步骤走天下</text><text x='330' y='206' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>文字那边是同一件事：一物一画 → 意思归并 → 一词多义 → 靠上下文消歧</text><text x='330' y='234' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>编码方式选得好不好，决定了后面能做多复杂的事</text></svg>"
+    },
+
+    {
+      "type": "p",
+      "text": "还有一条更隐蔽的规律，藏在所有编码方案里：**常用的东西，编码要短。**汉语里最常用的字通常笔画不多；英语里最常用的词是 the、of、and 这类三两个字母的短词；摩尔斯电码给出现最多的 E 分配了一个点，给冷僻的 Q 分配了一长串。这不是巧合，也不是谁规定的，**是长年累月的使用自己磨出来的**——高频的东西如果编码很长，整体的效率就会被拖垮。有意思的是，这条几千年里由人自发磨出来的规律，一九四〇年代被写成了数学：给高频符号短码、给低频符号长码，能让平均编码长度逼近这串信息的熵。**语言早就在做最优编码，只是它不知道自己在做。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "caption": "谁常用，谁的码短。这条规律语言自己磨了几千年，信息论用一个定理把它说清楚了：平均编码长度的下限，就是这串信息的熵。",
+      "svg": "<svg viewBox='0 0 660 236' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>常用的编码短，冷僻的编码长</text><text x='84' y='56' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>符号</text><text x='250' y='56' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>使用频率</text><text x='500' y='56' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar)'>摩尔斯电码长度</text><line x1='24' y1='64' x2='636' y2='64' style='stroke:var(--line)' stroke-width='1'/><text x='84' y='92' text-anchor='middle' font-size='14' style='fill:var(--ink)'>E</text><rect x='150' y='78' width='200' height='18' rx='4' style='fill:var(--cinnabar)' opacity='0.75'/><text x='500' y='92' text-anchor='middle' font-size='14' style='fill:var(--ink)'>·</text><text x='84' y='126' text-anchor='middle' font-size='14' style='fill:var(--ink)'>T</text><rect x='150' y='112' width='148' height='18' rx='4' style='fill:var(--cinnabar)' opacity='0.6'/><text x='500' y='126' text-anchor='middle' font-size='14' style='fill:var(--ink)'>—</text><text x='84' y='160' text-anchor='middle' font-size='14' style='fill:var(--ink)'>S</text><rect x='150' y='146' width='96' height='18' rx='4' style='fill:var(--ink-faint)' opacity='0.7'/><text x='500' y='160' text-anchor='middle' font-size='14' style='fill:var(--ink)'>· · ·</text><text x='84' y='194' text-anchor='middle' font-size='14' style='fill:var(--ink)'>Q</text><rect x='150' y='180' width='22' height='18' rx='4' style='fill:var(--ink-faint)' opacity='0.5'/><text x='500' y='194' text-anchor='middle' font-size='14' style='fill:var(--ink)'>— — · —</text><line x1='24' y1='208' x2='636' y2='208' style='stroke:var(--line)' stroke-width='1'/><text x='330' y='228' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>汉字笔画、英文常用词、摩尔斯电码 —— 三处独立长出同一条规律</text></svg>"
+    },
+
+    { "type": "h2", "text": "四、校验、冗余、双语语料——古人早就在做" },
+    {
+      "type": "p",
+      "text": "书里讲了一个特别提神的例子。古时抄写经卷是件大事，一个字都不能错，可人手抄必然出错，怎么办？**办法是给每个字母配一个数字，抄完一页，把每一行、每一列的数字分别加起来核对。**行的和对不上，说明这一行有问题；再看列的和对不上是哪一列，两条线一交叉，出错的位置就锁定了。这不就是校验和吗？这不就是二维奇偶校验吗？**一千多年前的抄经房里，跑的是今天硬盘和网络协议里的同一套思路。**"
+    },
+    {
+      "type": "p",
+      "text": "为什么能这么干？因为**冗余**。加了校验位，信息就有了多余的部分，多余的部分才有本钱去纠错。这一条在语言里也一样：自然语言天生有大量冗余，所以你在嘈杂环境里漏掉几个字照样听懂，所以短信少打一个字对方也能猜到。**冗余是代价，也是保险**——后面讲信息熵那一章会告诉你，正因为语言有冗余，它才能被压缩；也正因为它有冗余，机器才有可能把被噪声弄糊的部分猜回来。而反过来，密码学追求的恰恰是**把冗余榨干**：好的密文看起来必须像一串纯粹的随机数，一点规律都不留，让人无从下手。"
+    },
+    {
+      "type": "p",
+      "text": "还有罗塞塔石碑。一七九九年拿破仑远征埃及时被发现的那块石头，上面用三种文字刻着同一段诏书，商博良靠它在一八二二年破译了失传千年的古埃及文。**用今天的话说，那是一份对照语料。**同一段信息用两种编码各写一遍，就能反推出编码规则——这正是后来统计机器翻译赖以起家的东西：拿海量的双语对照文本去数，哪个词常和哪个词对上。**古人和现代人，用的是同一个杠杆，只是一个人手撬，一个机器撬。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "抄经房里的二维校验：行和列各算一遍，两条线一交叉，出错的位置就锁定了。今天的硬盘和网络协议还在用同一个思路。",
+      "svg": "<svg viewBox='0 0 660 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>校验和：一千年前的纠错码</text><g style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'><rect x='150' y='46' width='58' height='42' rx='5'/><rect x='214' y='46' width='58' height='42' rx='5'/><rect x='278' y='46' width='58' height='42' rx='5'/><rect x='342' y='46' width='58' height='42' rx='5'/><rect x='150' y='94' width='58' height='42' rx='5'/><rect x='214' y='94' width='58' height='42' rx='5'/><rect x='278' y='94' width='58' height='42' rx='5'/><rect x='342' y='94' width='58' height='42' rx='5'/><rect x='150' y='142' width='58' height='42' rx='5'/><rect x='214' y='142' width='58' height='42' rx='5'/><rect x='342' y='142' width='58' height='42' rx='5'/></g><rect x='278' y='142' width='58' height='42' rx='5' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar)' stroke-width='1.6'/><g font-size='14' text-anchor='middle' style='fill:var(--ink-soft)'><text x='179' y='73'>7</text><text x='243' y='73'>3</text><text x='307' y='73'>9</text><text x='371' y='73'>2</text><text x='179' y='121'>4</text><text x='243' y='121'>8</text><text x='307' y='121'>1</text><text x='371' y='121'>6</text><text x='179' y='169'>5</text><text x='243' y='169'>2</text><text x='371' y='169'>3</text></g><text x='307' y='169' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--cinnabar)'>?</text><rect x='420' y='46' width='72' height='42' rx='5' style='fill:none;stroke:var(--line)' stroke-width='1' stroke-dasharray='3 3'/><rect x='420' y='94' width='72' height='42' rx='5' style='fill:none;stroke:var(--line)' stroke-width='1' stroke-dasharray='3 3'/><rect x='420' y='142' width='72' height='42' rx='5' style='fill:none;stroke:var(--cinnabar)' stroke-width='1.4'/><g font-size='12.5' text-anchor='middle'><text x='456' y='72' style='fill:var(--ink-faint)'>行和 21</text><text x='456' y='120' style='fill:var(--ink-faint)'>行和 19</text><text x='456' y='168' style='fill:var(--cinnabar)'>行和 对不上</text></g><rect x='150' y='196' width='58' height='34' rx='5' style='fill:none;stroke:var(--line)' stroke-width='1' stroke-dasharray='3 3'/><rect x='214' y='196' width='58' height='34' rx='5' style='fill:none;stroke:var(--line)' stroke-width='1' stroke-dasharray='3 3'/><rect x='278' y='196' width='58' height='34' rx='5' style='fill:none;stroke:var(--cinnabar)' stroke-width='1.4'/><rect x='342' y='196' width='58' height='34' rx='5' style='fill:none;stroke:var(--line)' stroke-width='1' stroke-dasharray='3 3'/><g font-size='11.5' text-anchor='middle'><text x='179' y='218' style='fill:var(--ink-faint)'>列和 16</text><text x='243' y='218' style='fill:var(--ink-faint)'>列和 13</text><text x='307' y='218' style='fill:var(--cinnabar)'>对不上</text><text x='371' y='218' style='fill:var(--ink-faint)'>列和 11</text></g><text x='330' y='258' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>哪一行不对 × 哪一列不对 → 出错的那个字，位置唯一确定</text><text x='330' y='282' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>能纠错的前提是有冗余；冗余是代价，也是保险</text></svg>"
+    },
+
+    {
+      "type": "p",
+      "text": "把这三件事摆在一起看会有点恍惚：校验和、对照语料、上下文消歧——**信息处理里最基本的几个套路，全都在没有数学、没有计算机的年代就被人用出来了。**这不是说古人先知先觉，而是说明这些套路本来就是「传递信息」这件事本身逼出来的：只要你要把一个意思准确送到远处或者送到后世，你迟早会撞上噪声、撞上歧义、撞上要不要多写一遍的取舍。**信息论的贡献不是发明了这些办法，是把它们从手艺变成了可以计算的东西。**"
+    },
+
+    { "type": "h2", "text": "五、这一章替我们省掉了什么" },
+    {
+      "type": "p",
+      "text": "按全书的读法，每章都该问一句：这一章的数学替我省掉了什么苦工？这一章的答案有点特别——**它省掉的不是计算量，是争论。**"
+    },
+    {
+      "type": "p",
+      "text": "在这个视角出现之前，「机器能不能理解语言」是个哲学问题，可以吵到天荒地老：什么叫理解？机器有没有意识？意义是不是必须依附于经验？这些问题至今没有定论。而通信模型的做法是**绕开它**：我不谈理解，我谈解码；我不问机器懂不懂，我问它猜得准不准。**把一个无法验证的问题，换成一个可以打分的问题——这是这本书最重要的方法论，比书里任何一个具体算法都重要。**"
+    },
+    {
+      "type": "pull",
+      "text": "不谈「理解」，谈「解码」；不问机器懂不懂，问它猜得准不准。一个无法验证的问题，就这样换成了一个可以打分的问题。"
+    },
+    {
+      "type": "p",
+      "text": "这个换法还有个附带的好处，工程上非常实在：**能打分，就能比较；能比较，就能一点点改。**你没法比较两个系统「谁更理解语言」，但你能比较它们在同一批测试句子上谁错得少。一旦有了这把尺子，进步就不再依赖天才的顿悟，而变成一件可以排班、可以分工、可以按周推进的事——**贾里尼克那批人后来能一路推着识别率往上走，靠的正是这把尺子。**这也是为什么书里反复强调评测集和数据的重要性：没有尺子的领域，热闹归热闹，是不会积累的。"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**信息可以脱离载体**——先有这个抽象，才谈得上度量、压缩、传输、还原。",
+        "**解码永远是猜**——因为信道上有噪声，所以答案是「最可能的那个」，不是「唯一正确的那个」。这是后面所有概率模型的入口。",
+        "**一词多义靠上下文消歧**——人类几千年来的老办法，机器版就是第四、五章的语言模型。",
+        "**冗余是代价，也是保险**——它让语言可压缩、可纠错；而密码学要做的恰恰相反，是把冗余榨干。",
+        "**能打分的问题才能被推进**——这本书最重要的方法论，不在任何一个算法里。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "当然，这个换法是有代价的，而且代价至今还在。**你把「理解」换成「猜得准」，就得接受一件事：模型可能在完全不理解的情况下，答得非常对**——这正是今天人们围着大模型争论不休的那个点。这本书写在二〇一二年前后，还没到需要正面处理这个问题的时候；但你会发现，今天所有关于「它到底懂不懂」的争论，用的还是这一章给出的那副框架。**它的老，恰恰老得很有用。**"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本章对应原书开篇讲文字、语言与信息的部分。",
+        "史实补充：罗塞塔石碑 1799 年发现，商博良 1822 年破译；香农《通信的数学理论》发表于 1948 年；位置计数法源自印度，经阿拉伯人传入欧洲，故称阿拉伯数字。",
+        "「盒子在笔里」式的常识歧义，最早由巴尔-希列尔（Yehoshua Bar-Hillel）在 1960 年前后用来论证全自动高质量机器翻译之难，下一章会细讲。"
+      ]
+    }
+  ]
+}

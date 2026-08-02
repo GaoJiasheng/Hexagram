@@ -1,0 +1,88 @@
+{
+  "title": "生存斗争：马尔萨斯的那道乘法",
+  "subtitle": "生下来的远多于活得下去的——这不是一句悲观的感慨，是一道能算出来的账",
+  "centralIdea": "第三章是全书的引信。达尔文从马尔萨斯那里借来一个纯粹的数学事实：任何生物的繁殖能力都是几何级数，而资源不是。两条曲线不可能一直并行，于是必然的结论是——绝大多数生下来的个体活不到留下后代。这个「必然」是整套论证的起爆点：一旦承认多数要被淘汰，「谁被淘汰不是随机的」就成了一个可以追问的问题。这一章还有一件事必须讲清：「斗争」这个词他明说是在广义上用的，既包括个体间的争夺，也包括对干旱严寒的抵抗，还包括彼此依赖。后世把它读成「血盆大口的丛林」，是所有误用的第一块砖。",
+  "blocks": [
+    { "type": "lead", "text": "1838 年 10 月的一个晚上，一个二十九岁的年轻人在读一本已经出版四十年的小册子。那是马尔萨斯的《人口论》，讲的是人口和粮食，跟藤壶、鸽子、珊瑚礁全无关系。可他读着读着，脑子里那堆散了好几年的零件突然咔哒一声全合上了。多年后他在自传里说，那一刻他终于有了一个可以着手的理论。**这本书里最锋利的一章，就是从那个晚上开始的。**" },
+
+    { "type": "h2", "text": "一、他从马尔萨斯那里拿走了什么" },
+    { "type": "p", "text": "马尔萨斯的核心论断是一道对比：**人口若不受限制会按几何级数增长（1、2、4、8……），而粮食产量顶多按算术级数增长（1、2、3、4……）。**两条线一开始差不多，越往后差距越是骇人。所以人口必然被饥荒、疾病和战争拉回来——这是他的结论。" },
+    { "type": "p", "text": "有一点必须说明白，因为它跟后面几章的误用直接相关：马尔萨斯写这本书是有政策意图的，他反对当时的济贫法，认为救济只会让人口涨得更快、最后更惨。**这个政策主张是马尔萨斯的，不是达尔文的。**达尔文从这本书里拿走的只有那道数学：繁殖是乘法，资源是加法。他把这道乘法从人身上挪到了全部生物身上，剩下的政策部分，他一个字也没有搬。" },
+    { "type": "p", "text": "这个区分在今天读起来像挑刺，其实极其要紧。一百多年里，无数人拿「达尔文说的」去论证不该救济穷人——**而那句话真正的出处是马尔萨斯，而且是马尔萨斯的政治主张，不是任何一门生物学。**这本书里从头到尾没有一句这样的话。" },
+
+    { "type": "h2", "text": "二、那道乘法到底有多凶" },
+    { "type": "p", "text": "为了让读者感受到量级，达尔文挑了繁殖最慢的动物来算：大象。假定三十岁开始生育、九十岁停、一辈子生六胎、活到一百岁——这已经是保守到不能再保守的估计了。按这个速度往下推，几百年之后，一对大象的后代会有上千万头。（顺带一提，这段算术他后来还修订过一次，因为第一版里的数字算错了。他改了，也没藏着。）" },
+    { "type": "p", "text": "植物更夸张。一株一年生植物哪怕只结两粒能活的种子——这是低到不能再低的假设——二十年后也会有一百多万株。而真实的植物一次结几百上千粒种子。**照这个算法，任何一个物种只要几十年、几百年，就足以铺满整个地球表面。**" },
+    { "type": "p", "text": "可现实是什么？现实是每个物种的数量年复一年大体稳定。这里就出现了那个无法回避的缺口：**如果每一代生下来的远多于上一代的总数，而总数并没有涨，那么中间那个巨大的差额，只能是死亡。**不是偶尔的、意外的死亡，是常态的、大规模的、每一代都在发生的死亡。" },
+    { "type": "p", "text": "这句话值得停一下：**你在野外看到的每一只成年动物、每一棵开花的树，都是一场大规模淘汰的幸存者。**它们身边曾经有成百上千个同代，绝大多数没能走到这一步。这不是文学修辞，这是从两个可查证的事实（繁殖速度、种群稳定）算出来的。" },
+    {
+      "type": "figure",
+      "ftype": "曲线图",
+      "svg": "<svg viewBox='0 0 560 320' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>两条不可能并行的线</text><line x1='60' y1='250' x2='520' y2='250' style='stroke:var(--ink-soft);stroke-width:1.2'/><line x1='60' y1='250' x2='60' y2='50' style='stroke:var(--ink-soft);stroke-width:1.2'/><text x='300' y='276' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>世代</text><text x='30' y='150' text-anchor='middle' transform='rotate(-90 30 150)' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>个体数</text><path d='M60,248 C180,244 280,214 360,160 C420,118 470,78 508,54' style='fill:none;stroke:var(--cinnabar);stroke-width:2'/><line x1='60' y1='206' x2='508' y2='198' style='stroke:var(--ink-soft);stroke-width:1.6;stroke-dasharray:6 4'/><path d='M60,248 C180,244 280,214 360,160 C420,118 470,78 508,54 L508,198 L60,206 Z' style='fill:var(--cinnabar);opacity:0.09'/><text x='400' y='96' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--cinnabar)'>繁殖能力（几何级数）</text><text x='330' y='192' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>实际数量（大体稳定）</text><text x='276' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>这块差额</text><text x='276' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>只能是死亡</text><line x1='40' y1='292' x2='520' y2='292' style='stroke:var(--line);stroke-width:1'/><text x='280' y='312' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>你看到的每一只成年动物，都是这块阴影的幸存者</text></svg>",
+      "caption": "整章的引信就在这块阴影里。它不是悲观的感慨，是由「繁殖速度」和「种群稳定」两个可查证事实算出来的差额。"
+    },
+
+    { "type": "p", "text": "几何级数这个词今天听着平常，但它凶在哪里，得换成身边的事才有感觉。一张纸对折四十次，理论上厚度能超过地球到月球的距离——每一次对折都只是「乘以二」这么一个不起眼的动作。**生物的繁殖就是在不停对折。**一对麻雀一年生几窝，每窝几只，你只要不去打断它，几十年就是一场雪崩。真正需要解释的从来不是「为什么它们没有铺满地球」，而是「是什么每一代都把这场雪崩按了回去」。" },
+
+    { "type": "h2", "text": "三、他还真跑去数了" },
+    { "type": "p", "text": "这一章最像达尔文的地方，是他没有满足于算术。他在自家院子里划出一小块地——大约三英尺长、两英尺宽——翻好、清空，然后把冒出来的每一株野草幼苗都做上记号，一株株盯着看它们的下场。" },
+    { "type": "p", "text": "结果是：**三百五十七株里，有两百九十五株没能活下来**，凶手主要是蛞蝓和昆虫。这不是饥荒年、不是灾害现场，就是一块普普通通的英国菜地。淘汰率高到这个程度，而且发生得悄无声息——如果他没有蹲在那儿数，谁也不会注意到那块地上曾经死过什么。" },
+    { "type": "p", "text": "他还做过另一个观察：一小片长期被牲畜啃食的草皮上共有二十来种植物，一旦停止啃食、让它们自由生长，其中相当一部分就会被更强势的邻居挤掉。**同一块地，规则一变，名单就换了。**这个观察后面会反复用到——所谓「适」，从来是对着某一套具体条件说的。" },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "他的方法",
+      "items": [
+        "算术给出必然性，蹲在地上数三百五十七株草给出真实感。**这两样他都要。**",
+        "整本书都是这个路子：一个大胆到吓人的推论，配上一堆琐碎到可笑的实测。他知道读者最容易在哪里不信，就在哪里多下笨功夫。"
+      ]
+    },
+
+    { "type": "h2", "text": "四、「斗争」这个词，他是在广义上用的" },
+    { "type": "p", "text": "接下来是全书被误读得最惨的一个词。达尔文在这一章里特意声明：**他用「生存斗争」这个词，取的是广义、比喻性的含义。**他甚至担心读者会望文生义，专门举了几组例子来划范围。" },
+    { "type": "p", "text": "第一种，是同一份资源上的直接争夺——两条狗在饥荒时抢一块肉，这是最接近字面意思的一种。第二种，是对物理环境的抵抗：沙漠边缘的一株植物「与干旱斗争」。注意，这株植物没有跟谁打架，它只是在缺水的条件下能不能活下来的问题。**说它在「斗争」，说的是存活的比例，不是它跟谁动了手。**" },
+    { "type": "p", "text": "第三种，是捕食与被捕食。第四种最反直觉，也最能说明他的用意：**依赖也算。**槲寄生依赖树木，也依赖鸟把它的种子带走；几株槲寄生长在同一根枝上，它们「彼此斗争」，因为它们会一起把这根枝压死。达尔文明说，把这些统统叫「斗争」是为了方便，不是因为它们真的都在打仗。" },
+    { "type": "p", "text": "把这四种含义摆在一起，你会发现「弱肉强食的丛林」只是其中一小格。**大多数「斗争」根本没有对手**——冻死一半的幼苗跟谁都没打过照面。可后世传播开来的偏偏是最血腥的那一格，然后被拿去描述工厂、市场、国家和种族。**误用的第一块砖，就砌在这个词上。**" },
+    {
+      "type": "figure",
+      "ftype": "澄清图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>他说的「斗争」，其实是四件不同的事</text><rect x='24' y='44' width='250' height='92' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.3'/><text x='44' y='70' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>① 直接争夺</text><text x='44' y='92' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>饥荒时两条狗抢同一块肉</text><text x='44' y='114' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>只有这一格接近字面意思</text><rect x='286' y='44' width='250' height='92' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='306' y='70' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>② 抵抗环境</text><text x='306' y='92' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>沙漠边缘的植物「与干旱斗争」</text><text x='306' y='114' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>它没有跟任何人动手</text><rect x='24' y='148' width='250' height='92' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='44' y='174' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>③ 捕食与被捕食</text><text x='44' y='196' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>狼与鹿，鸟与虫</text><text x='44' y='218' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>数量互相牵制，不是单向压制</text><rect x='286' y='148' width='250' height='92' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='306' y='174' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>④ 相互依赖</text><text x='306' y='196' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>槲寄生依赖树、也依赖鸟</text><text x='306' y='218' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>连「依赖」他都算进来了</text><text x='280' y='268' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>大多数「斗争」根本没有对手——冻死一半的幼苗跟谁都没照过面</text><text x='280' y='290' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>后世偏偏只传播了最血腥的那一格</text></svg>",
+      "caption": "他自己在书里就划过范围，还担心读者望文生义。可流传下来的仍是「弱肉强食」四个字——这是所有误用的起点。"
+    },
+
+    { "type": "h2", "text": "五、最激烈的竞争，发生在最像的个体之间" },
+    { "type": "p", "text": "这一章还埋了一条后面要用的伏笔。达尔文指出：**竞争最激烈的地方，不在天敌之间，而在同种个体之间。**道理很朴素——它们吃同样的东西、住同样的地方、找同样的配偶，需求重叠得严丝合缝。一只狐狸和一只兔子的关系是捕食，两只狐狸之间的关系才是真正的贴身肉搏。" },
+    { "type": "p", "text": "同理，亲缘越近的物种之间竞争越凶。他举过外来物种把本地近亲挤走的例子——两个物种若生态位几乎重合，往往容不下彼此。这条观察在第四章会被反过来用：既然越像越挤，那么**越不像就越松快**，于是选择会持续把后代往两头推。分歧原则的种子就埋在这里。" },
+
+    { "type": "p", "text": "这条观察还带来一个很实用的推论：**一个物种的数量，往往不是被它的天敌卡住的，而是被某个最紧缺的东西卡住的。**冬天的食物、筑巢的树洞、幼苗需要的那一小块光——这类瓶颈平时看不见，只在数量往上顶的时候才显形。达尔文因此提醒读者，别一看到某个物种少就去找凶手，先问它缺什么。" },
+    { "type": "p", "text": "他还注意到外来物种的例子：某些欧洲植物被带到新大陆之后疯长成灾，把当地的近亲挤得没有立足之地。**能挤掉谁，靠的不是绝对的强弱，而是跟谁抢同一份东西。**一个物种在老家平平无奇，换个地方可能横扫一片——因为在那里，压制它的那些条件不在了。" },
+
+    { "type": "h2", "text": "六、致命的常常不是天敌，是关系网上一个不起眼的结" },
+    { "type": "p", "text": "全章最好看的部分是他举的那些连锁例子，读起来像侦探小说。" },
+    { "type": "p", "text": "他在苏格兰见过一片荒地：围栏外光秃秃，围栏里几年之内长出了茂密的苏格兰冷杉。种子一直都在，土也一样，唯一的差别是栏内没有牛啃。**一道栅栏改写了整片植被。**" },
+    { "type": "p", "text": "更妙的是那条三叶草的链子：红三叶草结籽要靠土蜂来授粉，土蜂的巢常被田鼠掏掉，而田鼠又被猫吃。**于是村子里猫多的地方，三叶草反而结籽更多。**猫和三叶草之间隔着两个环节，谁也想不到它们有关系，可关系确实在那儿。（后来赫胥黎拿这条链子开过玩笑，说照这么推，英格兰的三叶草长得好要归功于爱养猫的老姑娘。）" },
+    { "type": "p", "text": "这些例子的用意不只是有趣。它们说明：**决定一个物种能否存活的，常常不是它最凶的敌人，而是一整张看不见的网上某个不起眼的结。**这也解释了为什么达尔文对「谁更强」这类问题始终不感兴趣——在这样的网里，「强」根本不是一个能单独定义的属性。" },
+    {
+      "type": "figure",
+      "ftype": "关系图",
+      "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>猫多的地方，三叶草结籽更多</text><g style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink);text-anchor:middle'><circle cx='70' cy='110' r='34' style='fill:none;stroke:var(--cinnabar);stroke-width:1.4'/><text x='70' y='115'>猫</text><circle cx='210' cy='110' r='34' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='210' y='115'>田鼠</text><circle cx='350' cy='110' r='34' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='350' y='115'>土蜂</text><circle cx='490' cy='110' r='34' style='fill:none;stroke:var(--cinnabar);stroke-width:1.4'/><text x='490' y='104'>红三叶草</text><text x='490' y='122' style='font-size:10px;fill:var(--ink-soft)'>结籽</text></g><g style='stroke:var(--ink-soft);stroke-width:1.2'><line x1='104' y1='110' x2='176' y2='110'/><line x1='244' y1='110' x2='316' y2='110'/><line x1='384' y1='110' x2='456' y2='110'/></g><g style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint);text-anchor:middle'><text x='140' y='100'>吃掉</text><text x='280' y='100'>掏巢</text><text x='420' y='100'>授粉</text></g><g style='font-family:var(--font-serif);font-size:11px;text-anchor:middle'><text x='140' y='128' style='fill:var(--cinnabar)'>−</text><text x='280' y='128' style='fill:var(--cinnabar)'>−</text><text x='420' y='128' style='fill:var(--ink-soft)'>+</text></g><text x='280' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>猫压住田鼠 → 田鼠少了 → 土蜂巢保住 → 授粉充足 → 三叶草结籽多</text><text x='280' y='218' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>隔着两个环节的两种生物，命运是绑在一起的</text><text x='280' y='240' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>在这样的网里，「谁更强」根本不是一个能单独定义的属性</text></svg>",
+      "caption": "这类连锁是全章最好看的部分。它顺带解释了达尔文为什么对「谁更强」这种问题始终不感兴趣。"
+    },
+
+    { "type": "h2", "text": "七、这一章为什么让人不舒服" },
+    { "type": "p", "text": "第三章读完，很多人心里会堵一下。它算的是死亡的账，而且算得毫不动容：绝大多数生命一出生就注定活不到成年，这件事年年在发生，规模大到无法想象。" },
+    { "type": "p", "text": "达尔文自己也不轻松。这一章的结尾他写了一句近乎安慰的话——" },
+    { "type": "quote", "original": "自然界的战争并非无休无止，恐惧不被感知，死亡通常来得迅速。", "translation": "章末的收尾。这句话在科学论证里其实是多余的，它纯粹是作者在替读者、也替自己缓一口气。**一个能把死亡的账算得如此彻底的人，写完之后仍然需要说一句这样的话——这大概是这本书最有人味的一处。**" },
+    { "type": "p", "text": "但堵住的地方也要说清楚：**这一章描述的是自然界的账目，不是给人类社会开的处方。**「多数个体活不到留后」是一个关于蒲公英、藤壶和鹿的观察；它不含任何一句「所以人类社会也该如此」。这两者之间的那道断崖，第十一章会专门去量。" },
+    { "type": "p", "text": "把这一章的作用收成一句话：**它把一个模糊的印象（「自然界竞争很激烈」）变成了一个精确的、必然的缺口（「多数必须被淘汰」）。**有了这个缺口，下一章那个问题才成立——被淘汰的，是随机的一批吗？" },
+    { "type": "pull", "text": "生下来的远多于活得下去的——这不是一句悲观的感慨，是一道能算出来的账；而正是这道账，逼出了下一章的全部内容。" },
+    {
+      "type": "refs",
+      "items": [
+        "对应原书第三章《生存斗争》",
+        "背景：马尔萨斯《人口论》（1798 年初版），达尔文 1838 年 10 月读到",
+        "本篇为原创消化与转述，引文为点睛式短引、按文意重译"
+      ]
+    }
+  ]
+}

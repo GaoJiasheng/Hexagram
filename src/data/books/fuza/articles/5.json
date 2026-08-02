@@ -1,0 +1,157 @@
+{
+  "title": "演化与遗传算法:把达尔文写成一段代码",
+  "subtitle": "自然选择不只是生物学的一条定律,它是一套可以写成几十行代码、拿去解别的问题的搜索方法",
+  "centralIdea": "这一章要说明的是:达尔文那套机制的核心其实与生物无关。只要满足三个条件——个体有差异、差异能遗传、差异影响留下多少后代——选择就自动运转,不需要任何人主持,而且能找到设计者想不到的解。米歇尔先老实讲清演化论本身(包括现代综合之后那些让教科书版本变复杂的松动:中性演化、拱肩、间断平衡),再讲霍兰德怎么把这套逻辑搬进计算机变成遗传算法,最后用一个捡易拉罐的机器人做实证:遗传算法演化出来的策略,明显赢过她自己精心手写的策略,而且赢的方式是人类设计者根本不会想到的一招。这一章同时埋下一个今天格外要紧的教训:演化交给你的是一个能用但说不清为什么能用的东西。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "人的眼睛有角膜、晶状体、可调的光圈、感光细胞层,还配了自动对焦和自动曝光。这么一件东西如果摆在你面前,你的第一反应几乎必然是「这肯定是被设计出来的」。达尔文那本书要说服所有人的,就是这个第一反应错了——**眼睛不是被设计的,它是被筛出来的。**这一章讲的是这套「筛」的机制到底怎么运作,以及一件更有意思的事:这套机制其实和生物没有必然关系,它可以被写成代码,拿去解跟生命毫不相干的问题。"
+    },
+    {
+      "type": "h2",
+      "text": "一、三个条件,一台自动运转的机器"
+    },
+    {
+      "type": "p",
+      "text": "自然选择只需要三件事同时成立:**一、个体之间有差异**(同一窝兔子跑得有快有慢);**二、这些差异能遗传**(跑得快的父母,后代倾向于也跑得快);**三、这些差异影响留下多少后代**(跑得慢的更容易被吃掉)。三条凑齐,不需要任何人主持,后代里跑得快的比例就会一代代上升。"
+    },
+    {
+      "type": "p",
+      "text": "米歇尔特别强调的一点是:**这是一套没有目标的搜索。**没有谁在追求「更好的兔子」,也没有一个「兔子该长成什么样」的蓝图。每一代只是被环境筛了一遍,而环境本身还在变——今年冷、明年热、捕食者换了一批。所以演化不是朝着某个方向前进,它更像是在一片不断起伏的地形上盲目地摸索,只不过摸索的是几百万个个体、几千万年。"
+    },
+    {
+      "type": "quote",
+      "original": "没有设计者,也能造出看起来像被设计过的东西——只要有变异、有遗传、有差别的存活。",
+      "translation": "这句话是这本书里「没有中央控制却能产生精巧结构」这一主题最古老、也最有说服力的版本。第 1 章那份定义里的「适应」二字,靠的就是这台机器。"
+    },
+    {
+      "type": "p",
+      "text": "达尔文自己缺了关键一环:他不知道遗传是怎么发生的。当时流行的看法是「混合遗传」——后代是父母的平均——可这套说法有个致命毛病:如果每代都取平均,差异会被越混越小,几代之后大家都一样,选择就没东西可选了。这个反驳在当年相当致命。答案其实已经躺在孟德尔的豌豆实验里(**遗传是一颗一颗的,不是掺和的**),但那篇论文被埋了三十多年才被重新发现。到二十世纪三四十年代,统计遗传学和达尔文主义终于被缝合成「现代综合」,演化论才有了完整的骨架。"
+    },
+    {
+      "type": "h2",
+      "text": "二、教科书版本之后的松动"
+    },
+    {
+      "type": "p",
+      "text": "米歇尔没有停在这个漂亮的骨架上,她老实交代了后来的一堆麻烦——这一节值得读,因为它是全书那份克制的一次预演。"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**中性演化。** 木村资生指出,分子层面上大量的基因变化对生存繁殖根本没影响,它们的命运是随机漂变而不是被选择。这意味着**基因组里的变化,大部分不是「适应」的故事**。",
+        "**拱肩。** 古尔德和列万廷用威尼斯圣马可教堂的建筑做比方:拱门之间那些三角形空间上画着精美的图案,但那些空间不是为了画画才留的,它们是拱门这个结构的副产品。生物身上也有大量这样的性状——**不是每一处都被优化过,有些只是别的东西的连带结果。**",
+        "**间断平衡。** 化石记录里,物种常常长期几乎不变,然后在相对短的时间里快速变化。这跟「缓慢均匀累积」的图景不完全一致。",
+        "**发育与横向转移。** 发育生物学发现,少数调控基因的微小改动就能带来形态上的巨大变化;而细菌之间可以直接交换基因,不必经过亲子相传。**「基因只沿着家谱树往下传」这个前提,在微生物世界里根本不成立。**"
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "mute",
+      "items": [
+        "要说清楚:这些不是「达尔文错了」,而是「达尔文对,但故事比那复杂」。自然选择依然是解释适应性结构的唯一有效机制,只是它不再是唯一在起作用的力量。米歇尔在这里的处理方式,和她在末章处理复杂科学自身欠账的方式一模一样——**先讲清主线为什么成立,再一条条列出主线解释不了的东西,不替任何一方打圆场。**"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "三、把选择搬进计算机:遗传算法"
+    },
+    {
+      "type": "p",
+      "text": "既然那三个条件跟生物没有必然关系,那能不能在计算机里也凑齐它们?霍兰德在六七十年代做的正是这件事,方法直白得惊人。"
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "把候选解编码成一串符号", "text": "就像染色体。要解什么问题就编什么——一条路线、一组参数、一套行动规则,都能编成一串数字。", "state": "done" },
+        { "title": "随机造出一大群", "text": "几百上千个,全是瞎猜的,一开始个个都很烂。这一步不需要任何领域知识。", "state": "done" },
+        { "title": "给每个打分", "text": "这是唯一需要你动脑的地方:写一个「适应度函数」,能对任意一个候选解打出分数。注意——你**不需要知道正确答案长什么样**,只需要能评价。", "state": "now" },
+        { "title": "让高分的多留后代", "text": "分数越高被选中当「父母」的概率越大。低分的也不是全灭,保留一点随机性。", "state": "todo" },
+        { "title": "交叉 + 变异", "text": "取两个父母的编码,在某处剪断互换(交叉),再随机改动几位(变异),得到下一代。", "state": "todo" },
+        { "title": "回到第三步,循环几百代", "text": "然后看看群体里最好的那个变成了什么样。", "state": "todo" }
+      ]
+    },
+    {
+      "type": "figure",
+      "ftype": "循环图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>遗传算法:一个不需要知道答案的求解器</text><rect x='196' y='44' width='168' height='40' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='69' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>随机造一群候选解</text><path d='M364 64 L430 64 L430 116 M424 110 L430 116 L436 110' style='fill:none;stroke:var(--ink-faint);stroke-width:1.1'/><rect x='346' y='116' width='168' height='40' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.3'/><text x='430' y='141' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>逐个打分(适应度)</text><path d='M430 156 L430 200 L364 200 M370 194 L364 200 L370 206' style='fill:none;stroke:var(--ink-faint);stroke-width:1.1'/><rect x='196' y='180' width='168' height='40' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='205' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>高分的多留后代</text><path d='M196 200 L130 200 L130 156 M124 162 L130 156 L136 162' style='fill:none;stroke:var(--ink-faint);stroke-width:1.1'/><rect x='46' y='116' width='168' height='40' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='130' y='141' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>交叉重组 + 随机变异</text><path d='M130 116 L130 64 L196 64 M190 58 L196 64 L190 70' style='fill:none;stroke:var(--ink-faint);stroke-width:1.1'/><text x='280' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--ink-soft)'>循环几百代</text><rect x='46' y='244' width='468' height='42' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.2'/><text x='280' y='262' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar)'>关键:你不需要知道正确答案长什么样,只需要能给答案打分</text><text x='280' y='279' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>这就是它能解决「我知道好坏、但不知道怎么做」那类问题的原因</text></svg>",
+      "caption": "整个循环里没有一处涉及「理解问题」。它靠的全是筛——和自然界那台机器一模一样,只是快了一亿倍。"
+    },
+    {
+      "type": "p",
+      "text": "这里有个值得多问一句的地方:**为什么要有「交叉」?**光靠变异不行吗?霍兰德当年的想法是,好的解往往由一些好的「零件」拼成——某一段编码负责的那个小功能表现不错,另一段负责另一个小功能表现不错,交叉的作用就是把两个不同个体身上的好零件拼到一起,这比一位一位地随机变异快得多。这个想法被称为「积木块假说」,直觉上很有说服力。**不过米歇尔自己在专业著作里对它有过更谨慎的评价**:它在什么条件下真的成立、成立到什么程度,理论上并没有被彻底讲清楚。这是一个很小的细节,但它又一次体现了这本书的性格——**连自己领域里最顺口的解释,她也会顺手加一句「这条还没被证严」。**"
+    },
+    {
+      "type": "h2",
+      "text": "四、捡易拉罐的机器人:一次干净的对照实验"
+    },
+    {
+      "type": "p",
+      "text": "米歇尔用了一个特别好的例子来演示这件事。有一个叫 Robby 的机器人待在一个方格房间里,地上随机散着易拉罐。它的任务是在有限步数内尽量多捡罐子。它的感官极其有限:**只能看到自己脚下那一格,以及东南西北四个相邻格**,每格的状态是「空 / 有罐子 / 是墙」。它每一步能做的动作也就那么几个:往某个方向走、原地捡、随机走。"
+    },
+    {
+      "type": "p",
+      "text": "一套「策略」就是一张查表:面对每一种可能看到的情形,规定做什么动作。米歇尔先自己动手,凭常识精心设计了一套——看到脚下有罐子就捡,没有就往有罐子的方向走,都没有就随机走,别撞墙。这套策略非常合理,你我大概也会这么设计。然后她让遗传算法从一堆完全随机的策略开始跑。"
+    },
+    {
+      "type": "p",
+      "text": "**结果是演化出来的那个明显赢了她。**而更有意思的是它赢的方式。分析下来发现,演化出的策略在某些情况下会做一件反常识的事:**脚下明明有罐子,它却不捡,先走开。**为什么?因为 Robby 没有记忆——它记不住自己刚才走过哪里,于是很容易在同一片区域来回打转。而那个没被捡起来的罐子,**成了它留给自己的一个路标**:下次再走到附近,看到那个罐子,它就知道这一带的相对位置,从而更系统地把整片区域扫完。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "svg": "<svg viewBox='0 0 560 280' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>它想出了一招人类不会想到的:把罐子留着当路标</text><g transform='translate(48,44)'><rect x='0' y='0' width='180' height='180' style='fill:none;stroke:var(--line);stroke-width:1.2'/><path d='M36 0 L36 180 M72 0 L72 180 M108 0 L108 180 M144 0 L144 180 M0 36 L180 36 M0 72 L180 72 M0 108 L180 108 M0 144 L180 144' style='fill:none;stroke:var(--line);stroke-width:0.5'/><circle cx='18' cy='54' r='7' style='fill:var(--ink-faint)'/><circle cx='90' cy='18' r='7' style='fill:var(--ink-faint)'/><circle cx='162' cy='90' r='7' style='fill:var(--ink-faint)'/><circle cx='54' cy='126' r='7' style='fill:var(--ink-faint)'/><circle cx='126' cy='162' r='7' style='fill:var(--ink-faint)'/><circle cx='90' cy='90' r='7' style='fill:var(--cinnabar)'/><rect x='114' y='114' width='24' height='24' rx='4' style='fill:none;stroke:var(--ink);stroke-width:1.6'/><text x='126' y='131' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>R</text><text x='90' y='204' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>它只看得见相邻四格</text></g><rect x='276' y='52' width='240' height='76' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='396' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--ink)'>人手写的策略</text><text x='396' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>脚下有罐子 → 立刻捡</text><text x='396' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>合理、直觉、但容易原地打转</text><rect x='276' y='144' width='240' height='96' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.3'/><text x='396' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar)'>演化出的策略</text><text x='396' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>脚下有罐子 → 有时先不捡</text><text x='396' y='208' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>把它留在原地当作定位标记</text><text x='396' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--cinnabar)'>用环境代替了记忆</text><text x='280' y='266' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>它不是更聪明,它是绕开了「必须有记忆」这个人类默认的前提</text></svg>",
+      "caption": "这一招之所以人想不到,是因为人默认「要记住走过哪里就得有记忆」。演化没有这个默认,它只是碰巧撞上了「把信息存在环境里」这条路。"
+    },
+    {
+      "type": "pull",
+      "text": "它不是更聪明,它是绕开了一个人类根本没意识到自己有的前提。"
+    },
+    {
+      "type": "p",
+      "text": "这一招在自然界里其实很常见——蚂蚁的信息素就是同一个思路:**不必在脑子里记住路,把标记留在世界上就行。**下一章讲蚁群时你会再看到它。它有个专门的名字叫「借助环境的间接协作」,而这类办法之所以经常被人类设计者错过,是因为我们习惯把「信息」放在系统内部。"
+    },
+    {
+      "type": "h2",
+      "text": "五、演化是在一片地形上摸索"
+    },
+    {
+      "type": "p",
+      "text": "有个很好用的图像叫「适应度地形」:把所有可能的解摆成一片地面,每个点的**高度**代表它有多好。演化就是一群点在这片地形上移动,倾向于往高处走。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>适应度地形:为什么光靠「爬坡」会卡住</text><path d='M50 208 L516 208' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='36' y='96' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>好</text><text x='36' y='206' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>差</text><path d='M52 196 C100 190,120 140,158 138 C196 136,206 186,250 190 C300 194,320 96,372 72 C420 50,450 130,514 148' style='fill:none;stroke:var(--ink-soft);stroke-width:1.6'/><circle cx='158' cy='138' r='5' style='fill:var(--ink)'/><text x='158' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink)'>局部最优</text><text x='158' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>只会爬坡就卡这儿</text><circle cx='372' cy='72' r='5.5' style='fill:var(--cinnabar)'/><text x='372' y='60' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--cinnabar)'>真正的高峰</text><path d='M182 152 C210 178,226 186,246 189' style='fill:none;stroke:var(--cinnabar);stroke-width:1.2;stroke-dasharray:4 3'/><text x='250' y='212' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--cinnabar)'>要先下坡,才能去更高的地方</text><rect x='60' y='224' width='440' height='22' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='240' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>变异和随机选择的作用,就是允许偶尔往下走一步</text></svg>",
+      "caption": "这张图解释了为什么遗传算法一定要保留随机性:一个只接受「变得更好」的算法,会永远卡在离出发点最近的那个小土包上。"
+    },
+    {
+      "type": "p",
+      "text": "这张图解释了几件事。第一,**为什么必须有变异和随机性**——一个只肯往上走的算法,会卡在离出发点最近的那个小土包上,再也出不来;必须允许偶尔往下走一步,才有机会翻过山谷去更高的地方。第二,**为什么演化的产物常常不是最优解**:它找到的是「从当时所在位置能爬到的最高点」,而不是全局最高点。人的脊椎、视网膜上那个盲点,都是这种「从当时位置只能这么改」留下的痕迹。第三,这正是第 6 章那条「探索与利用要平衡」的另一副面孔——**利用 = 爬眼前这座坡,探索 = 冒险去别处看看。**"
+    },
+    {
+      "type": "h2",
+      "text": "六、遗传算法给今天的两条教训"
+    },
+    {
+      "type": "p",
+      "text": "第一条是能力上的:遗传算法特别适合那类**「我能判断好坏,但不知道怎么做」**的问题——天线形状设计、排班调度、参数调优。你只要写得出评分函数,它就能替你去搜。它不需要你懂问题的内在结构,这既是它的优势,也是它的天花板:**它永远不会「理解」问题,它只会试。**"
+    },
+    {
+      "type": "p",
+      "text": "反过来说,它的失败模式也很好认,而且这几种失败在别处也常见。**评分函数写歪了,它就精准地朝歪的方向优化**——如果你按「捡起的罐子数」打分却忘了限制步数,它可能演化出一套疯狂乱走的策略;这在今天有个更时髦的名字叫「目标错位」,但它在遗传算法里已经是几十年的老现象了。**搜索空间太大而评分太粗**,它就退化成瞎撞。**评分一次太贵**(比如每评一个方案要跑三天仿真),它就跑不动——它靠的是评上百万次。这三条合起来其实是一句话:**这套方法把全部智力都压在了「你怎么评分」上面。**"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "别读成鸡汤",
+      "items": [
+        "第二条教训更重要,而且在今天格外应景:**演化交给你的是一个能用、但说不清为什么能用的东西。**遗传算法给你一串数字,不附带任何解释;米歇尔是花了不少力气去逆向分析,才看懂 Robby 那个「留罐子当路标」的招数。这是今天大模型那套「效果很好但没人说得清内部在干什么」困境的一个更早、更小、也更容易看清的版本。**顺带提醒:「演化 / 试错 / 快速迭代」这套词被搬进产品和组织管理时,常常只搬走了「多试」这一半,而丢掉了另外两个必要条件——严格的评分标准,以及淘汰。**没有真正的淘汰,那就不是选择,只是折腾。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "到这里,四根柱子就齐了:混沌告诉我们为什么算不出未来,信息论给了「处理信息」一个能算的定义,可计算性说明计算不是硅片的特权,演化说明没有设计者也能造出精巧的东西。**下一章把它们合起来用,去解开本书开头那个问题:蚁群到底是怎么知道最短路径的。**而你会发现,答案里几乎每一个零件都已经在前四章出现过了。"
+    }
+  ]
+}

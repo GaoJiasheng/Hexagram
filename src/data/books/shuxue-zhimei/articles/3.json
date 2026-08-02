@@ -1,0 +1,141 @@
+{
+  "title": "信息熵：信息第一次有了单位",
+  "subtitle": "「这条消息有多少信息」——这个今天听着理所当然的问题，在一九四八年之前没有人能回答",
+  "centralIdea": "这一章是全书的地基，后面每个模型都站在它上面。香农问了一个当时没人当成问题的问题：信息能不能称重？他的答案是能，量的是「消除了多少不确定性」。三十二支球队猜冠军，二分五次必中，所以这条消息值五比特；而如果你本来就知道谁强谁弱，同一条消息就不值五比特了——信息量从来不是消息本身的属性，是它相对于你已有的不确定性的属性。从这个起点长出三件天天要用的东西：条件熵证明了「多知道点相关的事，不确定性只会变小」，这是所有「看上下文」的模型的合法性来源；互信息量化了「两件事有多相关」，一个词该取哪个义项，让数据投票；相对熵量化了「两个分布差多远」，今天训练神经网络用的交叉熵损失就是它的直系亲属。这一章真正的功劳，是把「信息多不多」「相关不相关」「模型好不好」这些原本只能靠感觉说的事，变成了可以比较的数。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "「信息」这个词我们天天在用，但你有没有想过：**一条消息里到底有多少信息，能不能说出个数来？**在一九四八年之前，这个问题不是难，是压根问不出口——没有单位，没有定义，只能说「这条消息很重要」「那条没什么用」。香农那年发表的论文做的事，是给信息装上了一把尺子。而这本书之所以要用整整一章讲它，是因为**后面每一个模型，量的都是这把尺子上的刻度。**"
+    },
+
+    { "type": "h2", "text": "一、猜冠军：五个问题的价钱" },
+    {
+      "type": "p",
+      "text": "书里那个例子已经成了经典。三十二支球队踢比赛，我知道冠军是谁，你不知道，你要猜，猜错我不告诉你答案，只回答是或否。**你会怎么问？**外行的问法是「是不是巴西」「是不是德国」，最坏情况要问三十一次。聪明的问法是：「在前十六支里吗？」无论我答是还是否，剩下的可能性都砍掉一半。三十二 → 十六 → 八 → 四 → 二 → 一，**五个问题必中。**"
+    },
+    {
+      "type": "p",
+      "text": "所以「谁是冠军」这条消息，**值五个是非问题，也就是五比特**。比特这个词就是这么来的：一个是非问题的答案，就是一比特。三十二是二的五次方，所以答案是五；如果有六十四支球队，就是六比特。你看，信息量和可能性的多少直接挂钩，而且挂的是对数关系——**可能性翻倍，信息量只加一。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "每问一次砍掉一半可能，五次到底。信息量与可能性之间是对数关系：可能性翻倍，信息量只加一。",
+      "svg": "<svg viewBox='0 0 660 288' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>三十二支球队，五个是非问题</text><g text-anchor='middle'><rect x='230' y='40' width='200' height='30' rx='6' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='330' y='60' font-size='12' style='fill:var(--ink-soft)'>32 支球队都有可能</text><path d='M280,70 L200,92' style='stroke:var(--ink-faint)' stroke-width='1.1'/><path d='M380,70 L460,92' style='stroke:var(--ink-faint)' stroke-width='1.1'/><text x='330' y='88' font-size='11' style='fill:var(--cinnabar)'>在前 16 支里吗？</text><rect x='120' y='94' width='160' height='28' rx='6' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar)' stroke-width='1.2'/><text x='200' y='113' font-size='11.5' style='fill:var(--ink)'>是 → 剩 16</text><rect x='380' y='94' width='160' height='28' rx='6' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='460' y='113' font-size='11.5' style='fill:var(--ink-soft)'>否 → 剩 16</text><path d='M200,122 L160,142' style='stroke:var(--ink-faint)' stroke-width='1'/><path d='M200,122 L240,142' style='stroke:var(--ink-faint)' stroke-width='1'/><rect x='96' y='144' width='128' height='26' rx='6' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar)' stroke-width='1.2'/><text x='160' y='162' font-size='11' style='fill:var(--ink)'>剩 8</text><rect x='236' y='144' width='128' height='26' rx='6' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><text x='300' y='162' font-size='11' style='fill:var(--ink-soft)'>剩 8</text><rect x='104' y='186' width='112' height='24' rx='6' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar)' stroke-width='1.2'/><text x='160' y='203' font-size='11' style='fill:var(--ink)'>剩 4</text><rect x='104' y='222' width='112' height='24' rx='6' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar)' stroke-width='1.2'/><text x='160' y='239' font-size='11' style='fill:var(--ink)'>剩 2 → 剩 1</text><path d='M160,170 L160,184' style='stroke:var(--cinnabar)' stroke-width='1.2'/><path d='M160,210 L160,220' style='stroke:var(--cinnabar)' stroke-width='1.2'/></g><text x='460' y='190' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>32 = 2 的 5 次方</text><text x='460' y='214' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>所以这条消息 = 5 比特</text><text x='460' y='240' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>64 支队？只需 6 比特</text><text x='330' y='276' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>可能性翻一倍，信息量只加一 —— 这就是取对数的意思</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "但这里有个更要紧的转折。**如果你本来就知道哪几支是强队呢？**那你未必需要五次——先问「是不是那四支夺冠热门之一」，很可能一下子就问到了。也就是说，**同一条消息，对不同的人价值不同**。信息量不是消息本身的属性，是它**相对于你原有的不确定性**的属性。你越是早就知道，同一句话越不值钱；对一个什么都不知道的人，同一句话价值连城。"
+    },
+
+    {
+      "type": "p",
+      "text": "这个小转折的实用价值比它看上去大。它意味着：**同一句话该不该说、值不值得传，取决于听的人已经知道多少。**天气预报说「明天太阳从东边升起」，信息量是零，因为你毫无不确定性；说「明天下雨」，信息量就大，因为你原本说不准。做产品、写文档、开会汇报，本质上都在做同一件事——**把对方不确定的部分消掉，而不是把你知道的都说一遍。**这本书讲的是工程，但这一条是可以直接搬进日常的。"
+    },
+
+    { "type": "h2", "text": "二、熵：把「不确定性」写成一个数" },
+    {
+      "type": "p",
+      "text": "把上面这套想法一般化，就是熵。公式长这样：**把每一种可能的概率乘上它的「意外程度」，加起来。**概率越小的事情一旦发生越意外、信息量越大；概率越大的事越是意料之中、信息量越小。熵就是这些信息量按概率加权的平均值——**你事先对这件事的平均不确定性有多大。**"
+    },
+    {
+      "type": "p",
+      "text": "有两个极端值得记住。**一枚公平的硬币，熵是一比特**：正反各一半，你完全猜不准，看一眼结果正好获得一比特信息。**而一枚九十九次正面、一次反面的硬币，熵只有约零点零八比特**：你几乎已经知道结果了，看一眼几乎没获得什么新东西。**所以熵最大的时候是「什么都说不准」，熵最小的时候是「几乎已成定局」。**记住这条，第九章讲最大熵模型时你会立刻明白它在干什么。"
+    },
+    {
+      "type": "figure",
+      "ftype": "曲线图",
+      "caption": "两种结果的熵。越接近五五开越不确定、熵越大；越一边倒越确定、熵越接近零。「最大熵」的意思就是：在允许的范围里，站在这条曲线的最高点。",
+      "svg": "<svg viewBox='0 0 660 288' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>越说不准，熵越大</text><line x1='110' y1='226' x2='560' y2='226' style='stroke:var(--line)' stroke-width='1.4'/><line x1='110' y1='226' x2='110' y2='58' style='stroke:var(--line)' stroke-width='1.4'/><path d='M110,226 C160,110 210,74 335,74 C460,74 510,110 560,226' fill='none' style='stroke:var(--cinnabar)' stroke-width='2.4'/><line x1='110' y1='74' x2='560' y2='74' style='stroke:var(--line)' stroke-width='0.8' stroke-dasharray='3 4'/><text x='92' y='78' text-anchor='end' font-size='11.5' style='fill:var(--ink-faint)'>1 比特</text><text x='92' y='230' text-anchor='end' font-size='11.5' style='fill:var(--ink-faint)'>0</text><circle cx='335' cy='74' r='5' style='fill:var(--cinnabar)'/><text x='335' y='58' text-anchor='middle' font-size='11.5' font-weight='bold' style='fill:var(--cinnabar)'>公平硬币：熵最大</text><circle cx='542' cy='202' r='4.5' style='fill:var(--ink-soft)'/><text x='548' y='190' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>99 比 1 的硬币</text><text x='548' y='174' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>约 0.08 比特</text><text x='110' y='250' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>全是反面</text><text x='335' y='250' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>五五开</text><text x='560' y='250' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>全是正面</text><text x='330' y='278' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>熵最大 ＝ 什么都说不准；熵趋零 ＝ 几乎已成定局</text></svg>"
+    },
+
+    { "type": "h2", "text": "三、一本五十万字的书，有多少信息" },
+    {
+      "type": "p",
+      "text": "书里算过一笔很提神的账。常用汉字大约几千个，如果每个字出现的机会均等，一个字大约值十三比特。**但汉字的使用频率极不均匀**——「的」「是」「在」出现得极多，很多字一辈子见不到几次；把频率算进去，一个汉字降到八九比特。**再把上下文算进去**——看到「我们」后面跟着什么字，你能猜个八九不离十——一个字大约只剩五比特上下。"
+    },
+    {
+      "type": "p",
+      "text": "顺着这个数字往下推：一本五十万字的书，信息量大约两百五十万比特，也就是三百来 KB。**这就是为什么一本厚书压缩成文本文件只有几百 KB，而且还能再压。**语言里有大量冗余，冗余就是可以被榨掉的部分。这里还藏着一条硬边界，叫香农第一定理：**任何编码方案的平均长度，都不可能低于这段信息的熵。**压缩软件再厉害也压不过这条线——这是物理定律级别的下限，不是技术不够好。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "同一条定理还管着一件你每天在做的事：**用拼音打字，平均每个汉字最少要敲几下键？**这个下限也是由汉字的熵决定的。输入法能做的，是尽量逼近这个下限——办法是猜得更准（整句输入、结合上下文），而不是让你少打字。这也解释了为什么好的输入法一定要带语言模型：**它省的不是你的手指，是不确定性。**"
+      ]
+    },
+
+    {
+      "type": "p",
+      "text": "冗余这件事还有一个反向的用法，书里专门讲过：**密码学追求的恰恰是把冗余榨干。**一段好的密文，看上去必须像一串纯粹的随机数——每个字符出现的机会都差不多，前后毫无规律，也就是熵接近最大。为什么？因为**只要还有规律，破译者就有下手的地方**。历史上很多密码被攻破，不是因为数学被算穿了，是因为明文里的冗余透过密文露了出来：某个字母出奇地多、某个词组反复出现、每封电报都以同一句问候开头。**从信息论看，加密的本质就是消灭规律，而破译的本质就是找规律——两边争的是同一样东西。**"
+    },
+
+    { "type": "h2", "text": "四、条件熵：上下文为什么有用" },
+    {
+      "type": "p",
+      "text": "接下来这条，是全书最被低估的一句话：**在已知另一件相关事情的前提下，某件事的不确定性只会变小或者不变，绝不会变大。**这就是条件熵。听着像常识，但它被证明出来了，这一点很重要——因为它是后面所有「看上下文」的模型的合法性来源。"
+    },
+    {
+      "type": "p",
+      "text": "有多重要？想想第四章的统计语言模型：为什么看前一个词能提高对下一个词的预测？为什么看前两个词比看前一个更准？**答案就在这里：多一个相关条件，不确定性只会降，不会升。**同样，为什么语音识别要结合语言模型、为什么输入法要看你前面打了什么、为什么搜索要看你上一次搜了什么——**全是这一条在背后撑着。**它还顺带给出了一个判断标准：如果加进来的信息没让不确定性变小，说明那个信息跟这件事无关，别加。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "每加一个相关的条件，不确定性就被削掉一块。这就是「看上下文有用」的数学表述——也是它的边界：不相关的条件，一分都削不掉。",
+      "svg": "<svg viewBox='0 0 660 268' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>条件越多，不确定性越小</text><rect x='60' y='52' width='420' height='36' rx='6' style='fill:var(--ink-faint)' opacity='0.32'/><text x='506' y='75' font-size='11.5' style='fill:var(--ink-soft)'>什么都不知道</text><text x='270' y='75' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>下一个字是什么？完全说不准</text><rect x='60' y='100' width='300' height='36' rx='6' style='fill:var(--ink-faint)' opacity='0.45'/><text x='506' y='123' font-size='11.5' style='fill:var(--ink-soft)'>知道前一个字</text><text x='210' y='123' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>范围缩小了一截</text><rect x='60' y='148' width='190' height='36' rx='6' style='fill:var(--cinnabar)' opacity='0.5'/><text x='506' y='171' font-size='11.5' style='fill:var(--ink-soft)'>知道前两个字</text><text x='155' y='171' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>又小一截</text><rect x='60' y='196' width='120' height='36' rx='6' style='fill:var(--cinnabar)' opacity='0.75'/><text x='506' y='219' font-size='11.5' style='fill:var(--cinnabar)'>再加上语义与场景</text><text x='120' y='219' text-anchor='middle' font-size='11.5' style='fill:var(--paper-raised)'>几乎能猜到</text><text x='330' y='258' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>注意：条件必须相关。不相关的条件加进来，这条不确定性的长条一分都不会缩短。</text></svg>"
+    },
+
+    { "type": "h2", "text": "五、互信息与相对熵：两把常用的量尺" },
+    {
+      "type": "p",
+      "text": "**互信息**量的是「两件事有多相关」：知道了甲，能替乙消掉多少不确定性。它比「共同出现了多少次」高明的地方在于**它会自动扣掉两边本来就很常见这一因素**——「的」和任何词都常一起出现，但它跟谁的互信息都不高，因为它到处都是，知道它等于什么也没知道。"
+    },
+    {
+      "type": "p",
+      "text": "书里用它解掉了一个规则派头疼多年的问题：**词义消歧。**英文的 Bush 既是人名也是灌木丛，机器该怎么选？办法朴素得可爱：事先从语料里统计出，跟「总统」这个义项互信息高的词有哪些（总统、白宫、国会、演讲……），跟「灌木」义项互信息高的又有哪些（土壤、植物、修剪……）；翻译时看看这句话周围出现的是哪一类词，投票决定。**没有语法，没有词典编纂，没有专家——只有数据。**"
+    },
+    {
+      "type": "p",
+      "text": "**相对熵**量的是另一件事：两个概率分布差多远。你可以拿它比较两篇文章的用词习惯像不像，也可以拿它衡量「我这个模型给出的分布，离真实分布有多远」。**后面这个用法，今天每一个训练神经网络的人每天都在用**——训练时那个叫交叉熵损失的东西，就是它的直系亲属。你让模型学着把损失降下来，本质上就是让它猜出来的分布，去逼近数据里真实的分布。**一九四八年的概念，二〇二〇年代还在每一块显卡上跑。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "总表",
+      "caption": "四个概念，四个问句。把它们背成公式没什么用，记住各自回答哪一句话，读后面所有章节都会顺畅得多。",
+      "svg": "<svg viewBox='0 0 660 250' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>四把尺子，各量一件事</text><line x1='24' y1='36' x2='636' y2='36' style='stroke:var(--line)' stroke-width='1'/><text x='120' y='56' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>概念</text><text x='330' y='56' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>它回答的问句</text><text x='540' y='56' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar)'>书里用它做什么</text><line x1='24' y1='64' x2='636' y2='64' style='stroke:var(--line)' stroke-width='1'/><text x='120' y='90' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>信息熵</text><text x='330' y='90' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>这件事我有多说不准？</text><text x='540' y='90' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>压缩下限 · 输入法击键下限</text><line x1='24' y1='104' x2='636' y2='104' style='stroke:var(--line)' stroke-width='0.6' stroke-dasharray='3 4'/><text x='120' y='130' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>条件熵</text><text x='330' y='130' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>知道了乙，甲还剩多少说不准？</text><text x='540' y='130' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>证明「看上下文」有用</text><line x1='24' y1='144' x2='636' y2='144' style='stroke:var(--line)' stroke-width='0.6' stroke-dasharray='3 4'/><text x='120' y='170' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>互信息</text><text x='330' y='170' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>甲和乙有多相关？</text><text x='540' y='170' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>词义消歧 · 搭配强度</text><line x1='24' y1='184' x2='636' y2='184' style='stroke:var(--line)' stroke-width='0.6' stroke-dasharray='3 4'/><text x='120' y='210' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>相对熵</text><text x='330' y='210' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>两个分布差多远？</text><text x='540' y='210' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>今天的交叉熵损失就是它</text><line x1='24' y1='224' x2='636' y2='224' style='stroke:var(--line)' stroke-width='1'/><text x='330' y='244' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>背公式没用，记住这四个问句就够了</text></svg>"
+    },
+
+    {
+      "type": "p",
+      "text": "这两把尺子合起来，还悄悄解决了一个每个做模型的人都会遇到的现实问题：**手上有几十个候选特征，该留哪些？**在没有度量之前，这靠拍脑袋和资历；有了互信息之后，可以逐个算一算它跟目标之间到底能消掉多少不确定性，消得多的留下，几乎消不掉的砍掉。**今天机器学习里那个叫「信息增益」的东西——决策树每一步选哪个特征来分叉——用的就是这套算法。**一九四八年的一个定义，最后长成了无数工程师每天点的一个按钮。"
+    },
+    {
+      "type": "p",
+      "text": "说到这里，可以把这一章的味道点出来了。**熵这个概念的迷人之处在于它跨界跨得离谱**：它出自热力学，被香农借来量信息，又成了压缩的下限、输入法的下限、消歧的判据、特征选择的判据、神经网络的损失函数。一个抽象抽得足够干净的概念，会在完全没预料到的地方反复冒出来——**这正是书名里「数学之美」四个字想说的那件事**：美不是公式好看，是同一个东西在很多地方都对。"
+    },
+
+    { "type": "h2", "text": "六、这一章省掉了什么苦工" },
+    {
+      "type": "p",
+      "text": "它省掉的是**吵架**。在有这把尺子之前，「这两个词相关吗」「这条特征有用吗」「这个模型比那个好吗」，全靠经验、直觉和资历来定，谁资格老谁说了算。有了熵和互信息之后，这些问题都变成了可以算出一个数、当场比较的事。"
+    },
+    {
+      "type": "pull",
+      "text": "有了尺子，进步就不再依赖谁的直觉更准，而变成一件可以排班、可以分工、可以按周推进的事。"
+    },
+    {
+      "type": "p",
+      "text": "这件事的连锁反应比它看上去大得多。**一个领域一旦有了公认的度量，它就开始积累了**——每个人的改进都能被验证、被比较、被叠加，而不是各说各话。自然语言处理后来几十年的高速推进，靠的正是这个：统一的评测集、统一的指标、公开的排行榜。**反过来说，一个还在靠感觉评价好坏的领域，无论多热闹，都很难真正积累起来。**这一点从工程外推到别处也成立，值得记一辈子。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本章对应原书讲信息的度量与作用的一章（信息熵、条件熵、互信息、相对熵）。",
+        "史实补充：香农《通信的数学理论》1948 年发表于《贝尔系统技术期刊》；信源编码定理（香农第一定理）给出平均码长的下限即信息熵。",
+        "文中汉字信息量的数量级（单字八九比特、结合上下文约五比特、五十万字的书约二百五十万比特）取自原书的估算，属数量级示意，不同语料统计会有出入。"
+      ]
+    }
+  ]
+}

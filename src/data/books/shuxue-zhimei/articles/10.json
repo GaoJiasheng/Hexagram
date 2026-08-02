@@ -1,0 +1,142 @@
+{
+  "title": "简单即美：数学模型的品味",
+  "subtitle": "托勒密用四十多个小圆把行星算得极准，开普勒用一个椭圆把那些圆全省了——准，不等于对",
+  "centralIdea": "这一章讲的不是某个算法，是一种品味。托勒密的地心说并不粗糙，它靠在大圆上套小圆，把行星位置算得相当准，准到航海用了一千多年；问题在于每发现一点偏差就得再加一个圆。开普勒把圆换成椭圆之后，那些补丁一个都不需要了——不是更准一点，是更对。书里把这个故事当工作方法讲：当你在给一个模型加第七个特例、第八个补丁，别急着夸自己勤奋，那多半是模型选错了的信号。与之配套的是工程上的忠告：先做一个简单可用的版本上线，用真实数据迭代，比闭门造完美方案快得多；简单的方案可维护、可调试、能交给别人接手，那是长期成本而不是审美洁癖。但要划清两条线：简单不等于简陋，省掉的应该是不必要的结构而不是必要的严谨；「简单模型加大数据能赢过精巧模型」也有前提，那就是你真的拿得到那么多数据。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "这一章在书里像是个休息站——没有新算法，只有一个天文学的老故事和几条工作忠告。**但很多读者读完全书，记得最牢的恰恰是这一章。**因为前面九章讲的是「怎么做」，这一章讲的是「怎么判断自己做对了没有」，而后者是可以带到任何行业去的。"
+    },
+
+    { "type": "h2", "text": "一、四十个小圆" },
+    {
+      "type": "p",
+      "text": "先纠正一个常见的误解：**托勒密的地心说不是「愚昧的错误」，它是一套相当精密的计算体系。**古人观测到行星在天上有时会走走回头路（逆行），托勒密的办法是让行星在一个小圆上转，而这个小圆的圆心又沿着大圆绕地球转。**这套办法算出来的位置相当准**，加上后人不断修补，精度足够用于历法和航海，用了一千多年。"
+    },
+    {
+      "type": "p",
+      "text": "问题出在**修补的方式**上。每当观测精度提高、发现算得不准了，办法就是再加一个小圆，或者把某个圆心挪一挪。加到最后，这套系统里有四十来个圆。**每一次修补都是有效的，每一次修补都让它更准；但整套东西越来越难懂、越来越难教、越来越难往下推。**"
+    },
+    {
+      "type": "p",
+      "text": "转折是开普勒。**他把圆换成了椭圆，太阳在其中一个焦点上**——那些小圆一个都不需要了。这里最值得琢磨的一点是：**开普勒的模型不是「准一点点」，而是让那些补丁整体消失。**顺带一提，哥白尼最初的日心说仍然坚持用正圆，所以精度并没有比托勒密好多少；真正的简化是等到开普勒换了曲线形状才发生的——**换对了那个东西，才叫简化；只是换个说法，不算。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "补丁能让模型越来越准，但准不等于对。真正的简化不是「少一点复杂」，而是让那些补丁整体消失。",
+      "svg": "<svg viewBox='0 0 660 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>准 ≠ 对</text><line x1='330' y1='38' x2='330' y2='250' style='stroke:var(--line)' stroke-width='1' stroke-dasharray='4 5'/><text x='165' y='58' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink-soft)'>加了四十来个圆</text><circle cx='165' cy='158' r='74' style='fill:none;stroke:var(--ink-faint)' stroke-width='1.3'/><circle cx='165' cy='158' r='6' style='fill:var(--ink-soft)'/><circle cx='239' cy='158' r='19' style='fill:none;stroke:var(--ink-faint)' stroke-width='1' stroke-dasharray='3 3'/><circle cx='112' cy='105' r='16' style='fill:none;stroke:var(--ink-faint)' stroke-width='1' stroke-dasharray='3 3'/><circle cx='112' cy='211' r='16' style='fill:none;stroke:var(--ink-faint)' stroke-width='1' stroke-dasharray='3 3'/><circle cx='218' cy='211' r='13' style='fill:none;stroke:var(--ink-faint)' stroke-width='1' stroke-dasharray='3 3'/><circle cx='218' cy='105' r='13' style='fill:none;stroke:var(--ink-faint)' stroke-width='1' stroke-dasharray='3 3'/><circle cx='165' cy='84' r='10' style='fill:none;stroke:var(--ink-faint)' stroke-width='1' stroke-dasharray='3 3'/><text x='165' y='262' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>每有偏差就再加一个圆 · 每次都有效 · 越来越难懂</text><text x='495' y='58' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar)'>换成一个椭圆</text><ellipse cx='495' cy='158' rx='98' ry='58' style='fill:none;stroke:var(--cinnabar)' stroke-width='1.8'/><circle cx='437' cy='158' r='8' style='fill:var(--cinnabar)'/><circle cx='566' cy='134' r='5' style='fill:var(--ink-soft)'/><text x='495' y='262' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>不是更准一点 —— 是那些补丁整体消失了</text><text x='330' y='290' text-anchor='middle' font-size='12' style='fill:var(--cinnabar)'>需要不停打补丁的模型，多半是模型本身错了</text></svg>"
+    },
+
+    { "type": "h2", "text": "二、这个故事在工程里长什么样" },
+    {
+      "type": "p",
+      "text": "书里讲这个故事不是为了科普天文学，是为了给你一个**自查的信号**。在工程里，「加小圆」的样子非常好认：**代码里的特例分支越来越多**（「如果是这个客户就走另一套逻辑」）；**规则表越滚越长**，而且没人敢删；**每次出问题的解法都是再加一条判断**。单看每一条都合理，都是被真实问题逼出来的，可整体在腐坏。"
+    },
+    {
+      "type": "p",
+      "text": "作者的判断标准很实用：**看补丁是在收敛还是在发散。**如果每加一个补丁能解决一大类问题，往后要补的越来越少，那说明主干是对的，补丁是正常的打磨；**如果每个补丁只能解决一个具体案例，而且新案例源源不断，那就是模型错了**——你不是在打磨，你是在给一个错误的骨架不断续命。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "别学成教条",
+      "items": [
+        "**补丁本身不是罪。**线上着火时先加个判断止血，是完全正确的做法；错的是止完血就不回头看了。**成熟的做法是：补丁照打，但同时记一笔账**——这已经是第几个了、它们是不是都指向同一处。",
+        "**也别一见复杂就喊重构。**真实世界本身就有一部分是不规则的（税法、各国地址格式、历史遗留），那种复杂不是模型错了，是世界就长这样。**要分清「你的模型不对」和「这件事本来就乱」。**"
+      ]
+    },
+
+    { "type": "h2", "text": "三、先上线，再迭代" },
+    {
+      "type": "p",
+      "text": "书里有一章专门讲一位搜索排序的负责人，用了个很有画面感的比喻：**他的设计像 AK-47——不追求精密，追求可靠、好造、好修、谁拿起来都能用。**做法是：先用最简单能想到的办法做一个版本，赶紧上线，拿真实用户的数据看哪里不行，再一处处改。"
+    },
+    {
+      "type": "p",
+      "text": "**这条路线赢在哪儿？**赢在它每一步都踩在真实反馈上。闭门造一个「理论上最优」的复杂方案，往往要花一年，而这一年里你所有的判断都建立在猜测之上——**等你造出来，很可能发现当初以为最重要的那个问题，用户根本不在乎。**简单版本上线得早，你就早一年开始收集「什么才是真问题」的信息。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "caption": "同一段时间，两条路线。差别不在谁更勤奋，在谁更早开始接触真实反馈——而反馈的价值是随时间复利的。",
+      "svg": "<svg viewBox='0 0 660 268' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>两条路线</text><text x='90' y='62' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink-soft)'>完美方案</text><line x1='150' y1='76' x2='620' y2='76' style='stroke:var(--line)' stroke-width='1.3'/><rect x='150' y='60' width='330' height='32' rx='6' style='fill:var(--ink-faint)' opacity='0.28'/><text x='315' y='81' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>设计 · 论证 · 开发（全程靠猜）</text><rect x='486' y='60' width='134' height='32' rx='6' style='fill:var(--ink-faint)' opacity='0.5'/><text x='553' y='81' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>上线，开始学</text><text x='90' y='150' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar)'>简单先上</text><line x1='150' y1='164' x2='620' y2='164' style='stroke:var(--line)' stroke-width='1.3'/><rect x='150' y='148' width='80' height='32' rx='6' style='fill:var(--cinnabar)' opacity='0.4'/><text x='190' y='169' text-anchor='middle' font-size='11' style='fill:var(--ink)'>做个能用的</text><rect x='236' y='148' width='90' height='32' rx='6' style='fill:var(--cinnabar)' opacity='0.55'/><text x='281' y='169' text-anchor='middle' font-size='11' style='fill:var(--ink)'>看数据改</text><rect x='332' y='148' width='90' height='32' rx='6' style='fill:var(--cinnabar)' opacity='0.7'/><text x='377' y='169' text-anchor='middle' font-size='11' style='fill:var(--paper-raised)'>再改</text><rect x='428' y='148' width='90' height='32' rx='6' style='fill:var(--cinnabar)' opacity='0.85'/><text x='473' y='169' text-anchor='middle' font-size='11' style='fill:var(--paper-raised)'>再改</text><rect x='524' y='148' width='96' height='32' rx='6' style='fill:var(--cinnabar)'/><text x='572' y='169' text-anchor='middle' font-size='11' style='fill:var(--paper-raised)'>已经很好用</text><text x='330' y='218' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>差别不在谁更勤奋，在谁更早开始接触真实反馈</text><text x='330' y='244' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>还有一层：简单的方案可维护、可调试、能交给别人接手 —— 那是长期成本</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "还有一层更长远的账：**简单的方案是可以被别人接手的。**一个精巧到只有作者本人能维护的系统，在他离职那天就变成了负债。**代码要被读的次数远多于被写的次数，系统要被别人改的次数远多于被你改的次数**——从这个角度看，简单不是审美偏好，是**实打实的长期成本控制。**"
+    },
+
+    { "type": "h2", "text": "四、但简单不等于简陋" },
+    {
+      "type": "p",
+      "text": "这一章最容易被读歪的地方就在这儿。**「简单即美」不是「怎么省事怎么来」。**托勒密的四十个圆和开普勒的一个椭圆，比的不是元件数量，比的是**有没有抓住那个真正起作用的结构**。开普勒的椭圆之所以简单，是因为它对；如果你把行星轨道简化成一条直线，那也很简单，但那叫简陋。"
+    },
+    {
+      "type": "p",
+      "text": "怎么区分？**看你省掉的东西会不会在关键场合报复你。**省掉不必要的中间层、省掉从没被触发过的配置项、省掉为想象中的需求预留的扩展点——这些是好的简单。**而省掉必要的校验、省掉边界情况的处理、省掉那个真正决定结果的变量**——那是简陋，它会在最不合适的时候把账单送来。**这本书里所有的简化都属于前者：马尔可夫假设省的是远距离的弱依赖，不是近处的强依赖。**"
+    },
+
+    { "type": "h2", "text": "五、数据与模型：谁更值钱" },
+    {
+      "type": "p",
+      "text": "这一章还有条经验，在书里反复出现：**当数据足够多的时候，一个简单模型常常打得过一个精巧模型。**理由不难懂——精巧的模型参数多，参数多就需要更多数据去喂；数据不够时，它学到的往往是噪声而不是规律。而简单模型虽然天花板低，却能被大量数据稳稳地喂饱。"
+    },
+    {
+      "type": "figure",
+      "ftype": "四象限",
+      "caption": "选模型不是选「谁更高级」，是看你落在哪个格子里。数据稀薄的地方，人的先验知识仍然值钱；数据充沛的地方，让数据说话。",
+      "svg": "<svg viewBox='0 0 660 292' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>数据的多少，决定了该用多复杂的模型</text><line x1='170' y1='250' x2='540' y2='250' style='stroke:var(--line)' stroke-width='1.4'/><line x1='170' y1='250' x2='170' y2='48' style='stroke:var(--line)' stroke-width='1.4'/><line x1='355' y1='48' x2='355' y2='250' style='stroke:var(--line)' stroke-width='0.8' stroke-dasharray='3 4'/><line x1='170' y1='150' x2='540' y2='150' style='stroke:var(--line)' stroke-width='0.8' stroke-dasharray='3 4'/><text x='355' y='274' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>数据量 →</text><text x='150' y='150' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)' transform='rotate(-90 150 150)'>模型复杂度 →</text><rect x='184' y='62' width='158' height='74' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='263' y='90' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar)'>最危险的格子</text><text x='263' y='112' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>参数多、数据少</text><text x='263' y='128' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>学到的多半是噪声</text><rect x='368' y='62' width='158' height='74' rx='8' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar)' stroke-width='1.4'/><text x='447' y='90' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink)'>今天的大模型</text><text x='447' y='112' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>参数多、数据海量</text><text x='447' y='128' text-anchor='middle' font-size='11' style='fill:var(--cinnabar)'>成立，但门槛极高</text><rect x='184' y='166' width='158' height='70' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='263' y='192' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>小数据 ＋ 简单模型</text><text x='263' y='214' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>人的先验知识最值钱</text><rect x='368' y='166' width='158' height='70' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar)' stroke-width='1.2'/><text x='447' y='192' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>大数据 ＋ 简单模型</text><text x='447' y='214' text-anchor='middle' font-size='11' style='fill:var(--cinnabar)'>书里最推崇的一格</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这条经验在这本书出版之后被验证得更彻底了。**二〇一九年萨顿写过一篇被反复引用的短文《苦涩的教训》**，说得比这本书还狠：七十年人工智能史反复证明，**那些能吃掉更多算力和数据的通用方法，最终会赢过人手工塞进去的专家知识**，而且赢的幅度很大。**这几乎就是这本书那个主张的加强版**——只不过这本书说的是「统计胜过规则」，苦涩的教训说的是「通用方法加算力，胜过一切人类先验」。"
+    },
+    {
+      "type": "quote",
+      "original": "如无必要，勿增实体。",
+      "translation": "奥卡姆剃刀的通行译法，不是本书原话，但它是这一章的祖师爷。另一句常被一起引用的「一切应尽可能简单，但不能过于简单」，**其实是后人对爱因斯坦一次讲演的浓缩，并非他的原句**。两句合起来正是这一章的分寸：能省的省掉，该有的别省。"
+    },
+    {
+      "type": "p",
+      "text": "**但要把前提说清楚，书里没细讲，今天却很要紧**：「简单模型加大数据能赢」的前提是**你真的拿得到那么多数据**。搜索引擎公司手里有整个互联网，所以这条对它们成立；一个只有三千条样本的业务，照搬这条只会翻车。**数据稀薄的地方，人的先验知识仍然是最值钱的东西**——这不是退步，这是选对了格子。"
+    },
+
+    { "type": "h2", "text": "六、术与道" },
+    {
+      "type": "p",
+      "text": "书里还有一组分别，作者在别处也反复讲过：**具体的做事方法是「术」，做事的原理和原则是「道」。**术是招式，学得快，也过时得快；道是那件事本身的道理，慢，但站得住。他的意思是，做一件事如果只在术的层面打转，就会陷入不断追新、不断打补丁的循环；**而抓住了道，很多术上的问题会自己消失。**"
+    },
+    {
+      "type": "quote",
+      "original": "具体的做事方法是术，做事的原理和原则是道。",
+      "translation": "这句话按流传较广的说法引用（原书及作者后来的书中多处申说，措辞略有出入）。放到这一章的语境里，它就是那个天文学故事的另一种说法：**加小圆是术，换椭圆是道。**在术上再勤奋，也走不到道那一层去。"
+    },
+    {
+      "type": "p",
+      "text": "回头看整本书，这条线其实一直在：**通信模型是道，具体某个平滑算法是术；「把问题化成数学模型」是道，某个模型的参数怎么调是术。**这也是为什么这本书在具体技术大半过时之后仍然值得读——**过时的是术，那一层道还在。**"
+    },
+
+    { "type": "h2", "text": "七、这一章省掉了什么苦工" },
+    {
+      "type": "p",
+      "text": "它省掉的是**在错误的方向上继续勤奋**。这是所有苦工里最贵的一种：不是你不够努力，是你努力的每一步都在给一个错的骨架续命，而且因为每一步都有可见的成效，你很难察觉。**「我是不是在加第七个小圆」这一句自问，可能比这本书里任何一个算法都更值钱。**"
+    },
+    {
+      "type": "pull",
+      "text": "当你在给模型加第七个补丁，别急着夸自己勤奋——那多半不是勤奋，那是信号。"
+    },
+    {
+      "type": "p",
+      "text": "最后给一个可以直接用的检查表：**这个方案能不能在五分钟内向一个新同事讲清楚？**讲不清楚，通常不是他笨，是它复杂得没道理。**它上一次出问题，你是加了一条规则还是改了结构？**总是加规则，说明骨架可能不对。**如果明天你休假一个月，别人能不能维护它？**不能的话，你造的不是资产，是负债。这三问跟数学没关系，但它们正是这一章的全部内容。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本章对应原书讲数学模型重要性的一章（托勒密与开普勒），以及讲搜索排序设计者与工程简单性的一章。",
+        "史实补充：托勒密体系用本轮与均轮描述行星运动，精度长期够用；哥白尼早期的日心说仍使用正圆，精度未见明显优势；开普勒以椭圆轨道取代之，才实现了真正的简化。",
+        "萨顿《苦涩的教训》(Rich Sutton, The Bitter Lesson) 发表于 2019 年，为本文所作的延伸对照，非原书内容。「一切应尽可能简单，但不能过于简单」通常归于爱因斯坦，实为后人对其 1933 年讲演的浓缩转述。"
+      ]
+    }
+  ]
+}

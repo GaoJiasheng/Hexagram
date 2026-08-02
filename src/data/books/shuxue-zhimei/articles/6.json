@@ -1,0 +1,129 @@
+{
+  "title": "分词与维特比：把选择题变成一条最短路径",
+  "subtitle": "一句十几个字的中文有上千种切法，穷举到宇宙尽头也算不完——直到有人发现，只需要从左到右扫一遍",
+  "centralIdea": "中文的字和字之间没有空格，所以机器处理中文的第一道工序是分词。第一代办法是查字典，从左往右尽量取长词，简单但一遇歧义就露怯；第二代是切出来的词越少越好，仍然解不了真歧义。第三代把问题彻底换了个问法：不再纠结哪种切法「对」，而是把所有可能的切法都摆出来，用语言模型给每一种打分，挑概率最大的那一种。这一换，分词就从一道语言学难题变成了一道数学题——在一张图上找最优路径。而维特比算法负责让这道题算得动，它的洞察小得让人不服气：走到某个点的最优路径只需要保留一条，因为后面怎么走跟你怎么走到这儿无关。于是指数级的穷举被压成一遍扫描。这一章还给了一个很成熟的态度：分词没有唯一正确答案，颗粒度取决于用途——机器翻译要大词、搜索要小词；承认这一点之后，问题反而好解了。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "英文的单词之间有空格，天然就是切好的；中文没有。所以中文要交给机器处理，**第一道工序就是把连成一串的字切成词**——搜索要切（不切没法做索引），翻译要切，语音识别的输出要切。这道工序看着不起眼，却是个经典的难题：**「上海大学城书店」该怎么切？**上海／大学城／书店，还是上海大学／城／书店？两种都说得通。而这一章最漂亮的地方在于，它最后没有去回答「哪种切法对」，它换了个问题。"
+    },
+
+    { "type": "h2", "text": "一、第一代：查字典" },
+    {
+      "type": "p",
+      "text": "最早的办法非常朴素：**手里拿一本词典，从左往右扫，能凑成词的尽量往长了凑。**「中华人民共和国」优先当成一个词，凑不成再退一步。这个办法上世纪八十年代就有人做出来了，简单、快、绝大多数句子都对——**在中文信息处理刚起步的年代，它解决了大部分实际问题。**"
+    },
+    {
+      "type": "p",
+      "text": "但它一遇到真歧义就露怯。「发展中国家」，从左往右最长匹配会先看到「发展」，然后剩下「中国家」，很可能切成「中国／家」，于是「发展中国家」变成了「发展／中国／家」。**问题不在于词典不够大，而在于这个策略压根没有权衡的能力**——它只有一条死规矩，遇到需要比较利弊的场合就没辙。"
+    },
+
+    { "type": "h2", "text": "二、第二代：切出来的词越少越好" },
+    {
+      "type": "p",
+      "text": "第二代改进换了个准则：**在所有能切通的方案里，挑词数最少的那一种。**这背后有个不错的直觉——词是有意义的单位，能凑成大词说明搭配是真的，切得零碎往往说明切错了。它确实比查字典强，很多长匹配的坑被填上了。"
+    },
+    {
+      "type": "p",
+      "text": "**但它还是没有触及问题的本质。**「上海大学城书店」两种切法词数可能一样，它就无从选择；更要命的是，词数少并不总是对的，有些场合恰恰该切碎。到这一步，路走到头了：**只要你还在找一条「普适的死规矩」，就总能构造出让它出丑的句子。**"
+    },
+
+    { "type": "h2", "text": "三、第三代：换个问法，它就成了数学题" },
+    {
+      "type": "p",
+      "text": "第三代的做法，是这本书里那个标志性动作的又一次上演：**不问哪种切法对，问哪种切法的概率最大。**把所有可能的切分方案都摆出来，用上一章的统计语言模型给每一种打分——「上海／大学城／书店」这三个词连起来出现的概率有多大？「上海大学／城／书店」呢？**谁的概率高，就取谁。**"
+    },
+    {
+      "type": "p",
+      "text": "这一换，性质全变了。原来是一道需要语言学知识、需要人来判断的难题，现在成了一道**求最大值**的数学题；原来歧义是个要专门处理的例外，现在歧义根本不是问题，**它天然就被概率吸收掉了**——两种切法都合法，那就比分数，分高的赢。而分数从哪来？从语料里数出来的。到这一步，分词的成败就跟语言学家没什么关系了，跟你有多少语料有关系。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "把所有切法画成一张图：每个可能的词是一条边，一种切法就是从头走到尾的一条路。分词于是变成了「在图上找一条分数最高的路」。",
+      "svg": "<svg viewBox='0 0 660 288' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>一句话的所有切法，就是一张图</text><g font-size='15' text-anchor='middle' style='fill:var(--ink)'><text x='70' y='96'>上</text><text x='140' y='96'>海</text><text x='210' y='96'>大</text><text x='280' y='96'>学</text><text x='350' y='96'>城</text><text x='420' y='96'>书</text><text x='490' y='96'>店</text></g><g style='fill:var(--ink-faint)'><circle cx='36' cy='120' r='4'/><circle cx='106' cy='120' r='4'/><circle cx='176' cy='120' r='4'/><circle cx='246' cy='120' r='4'/><circle cx='316' cy='120' r='4'/><circle cx='386' cy='120' r='4'/><circle cx='456' cy='120' r='4'/><circle cx='526' cy='120' r='4'/></g><path d='M36,120 Q71,84 106,120' fill='none' style='stroke:var(--ink-faint)' stroke-width='1.1'/><path d='M36,120 Q106,72 176,120' fill='none' style='stroke:var(--cinnabar)' stroke-width='2'/><path d='M176,120 Q246,72 316,120' fill='none' style='stroke:var(--ink-faint)' stroke-width='1.1'/><path d='M176,120 Q281,56 386,120' fill='none' style='stroke:var(--cinnabar)' stroke-width='2'/><path d='M316,120 Q351,84 386,120' fill='none' style='stroke:var(--ink-faint)' stroke-width='1.1'/><path d='M386,120 Q456,72 526,120' fill='none' style='stroke:var(--cinnabar)' stroke-width='2'/><path d='M36,120 Q176,164 316,120' fill='none' style='stroke:var(--ink-faint)' stroke-width='1.1' stroke-dasharray='4 4'/><path d='M316,120 Q351,152 386,120' fill='none' style='stroke:var(--ink-faint)' stroke-width='1.1' stroke-dasharray='4 4'/><text x='106' y='66' text-anchor='middle' font-size='11' style='fill:var(--cinnabar)'>上海</text><text x='281' y='50' text-anchor='middle' font-size='11' style='fill:var(--cinnabar)'>大学城</text><text x='456' y='66' text-anchor='middle' font-size='11' style='fill:var(--cinnabar)'>书店</text><text x='176' y='176' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>上海大学</text><text x='351' y='166' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>城</text><line x1='30' y1='196' x2='630' y2='196' style='stroke:var(--line)' stroke-width='1' stroke-dasharray='4 5'/><text x='330' y='220' text-anchor='middle' font-size='12' style='fill:var(--cinnabar)'>朱线：上海 ／ 大学城 ／ 书店 —— 概率更高的一条路</text><text x='330' y='244' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>虚线：上海大学 ／ 城 ／ 书店 —— 也合法，只是分数低</text><text x='330' y='272' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>歧义不再是要专门处理的例外，它被概率自动吸收了</text></svg>"
+    },
+
+    { "type": "h2", "text": "四、可是候选太多了" },
+    {
+      "type": "p",
+      "text": "换成数学题之后，新麻烦立刻来了：**切法实在太多。**一句 n 个字的话，每两个字之间都可以选择切或不切，理论上就有二的 n 减一次方种切法。一句二十个字的话，五十多万种；三十个字，五亿多种。**一句一句去打分，谁也扛不住。**"
+    },
+    {
+      "type": "p",
+      "text": "解法是**动态规划**，在这个场合它有个专名叫维特比算法。它的洞察小到让人不服气：**你走到某个位置时，只需要保留「到这里为止分数最高的那一条路」，其余全部扔掉。**为什么可以扔？因为后面怎么走，只跟你现在站在哪儿有关，跟你是怎么走到这儿的完全无关。**既然后半程对所有走法一视同仁，那前半程输了的路，就永远不可能翻盘。**"
+    },
+    {
+      "type": "p",
+      "text": "于是算法变成：从左到右扫一遍，每到一个位置，把「从上一批幸存者走过来」的几种可能算一下，留下最好的一条。扫到句尾，回溯一遍，答案就出来了。**计算量从指数级掉到线性**——原本要算五亿次的句子，现在几十步搞定。这就是这本书反复在说的那句话的最好例证：**数学模型省掉的不是聪明，是苦工。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "caption": "同一道题，两种算法的计算量。指数与线性之间隔的不是「快一点」，是「能做」与「不能做」。",
+      "svg": "<svg viewBox='0 0 660 276' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>穷举 与 动态规划</text><line x1='70' y1='210' x2='620' y2='210' style='stroke:var(--line)' stroke-width='1.4'/><line x1='70' y1='210' x2='70' y2='52' style='stroke:var(--line)' stroke-width='1.4'/><path d='M70,208 C210,206 300,196 380,160 C440,132 470,90 500,54' fill='none' style='stroke:var(--ink-soft)' stroke-width='2.4'/><path d='M70,208 L620,186' fill='none' style='stroke:var(--cinnabar)' stroke-width='2.4'/><text x='500' y='44' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-soft)'>穷举：指数增长</text><text x='566' y='176' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar)'>维特比：线性增长</text><text x='345' y='232' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>句子长度 →</text><text x='44' y='130' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)' transform='rotate(-90 44 130)'>计算量 →</text><text x='170' y='96' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>20 个字 → 50 多万种切法</text><text x='170' y='120' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>30 个字 → 5 亿多种</text><text x='170' y='144' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>维特比：扫一遍，几十步</text><text x='330' y='264' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>关键洞察：到某点的最优路只留一条 —— 前半程输了的，后面永远翻不了盘</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "顺便认识一下维特比这个人。他一九六七年提出这个算法时，本意是解决通信中的纠错译码问题，跟中文分词八竿子打不着。**后来他和人合伙创办了高通，把这套东西用在了移动通信上**——你今天手机能打通电话、能上网，背后跑的就有他的算法。**一个纯粹的数学结果，先横扫了通信，又横扫了语言处理**：这也是「数学之美」的一层意思，好东西不认领域。"
+    },
+
+    { "type": "h2", "text": "五、颗粒度：承认没有标准答案" },
+    {
+      "type": "p",
+      "text": "这一章还有个特别成熟的观点，值得单独拎出来：**分词根本没有唯一正确的答案。**「北京大学」该算一个词还是两个词？**取决于你要拿它干什么。**做机器翻译，最好当成一个词，因为它整体对应一个英文名字，拆开会译错；做搜索，最好能拆开，因为有人搜「北京 大学」也该找到它。同一串字，两种用途，两种切法，**谁也不比谁更正确。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "同一串字，两种切法，各自都对——因为它们服务的用途不同。工程上的解法不是二选一，是维护两层词表、按用途取不同颗粒度。",
+      "svg": "<svg viewBox='0 0 660 250' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>颗粒度取决于用途</text><rect x='230' y='40' width='200' height='38' rx='7' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='330' y='65' text-anchor='middle' font-size='14' style='fill:var(--ink)'>北京大学生活动</text><path d='M300,80 L190,110' style='stroke:var(--ink-faint)' stroke-width='1.2'/><path d='M360,80 L470,110' style='stroke:var(--ink-faint)' stroke-width='1.2'/><text x='180' y='132' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar)'>机器翻译：要大词</text><rect x='40' y='144' width='280' height='38' rx='7' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar)' stroke-width='1.3'/><text x='180' y='169' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>北京大学 ／ 生活 ／ 动…</text><text x='180' y='204' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>拆开会把校名译错</text><text x='480' y='132' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink-soft)'>搜索：要小词</text><rect x='340' y='144' width='280' height='38' rx='7' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='480' y='169' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>北京 ／ 大学 ／ 生活 ／ 动…</text><text x='480' y='204' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>不拆就召回不到</text><text x='330' y='236' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>工程解法：一张基本词表 ＋ 一张复合词表，按用途取不同层</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "书里给的工程解法很务实：**维护一张基本词表和一张复合词表，先按小颗粒切，再按需要合并成大词。**一套系统同时供给两种颗粒度，各家应用各取所需。这个处理方式背后是一种很值钱的态度：**当一个问题争论不休时，先看看是不是「它本来就没有唯一答案」——承认之后，问题往往立刻变简单。**规则派当年在分词标准上争了很久，争的其实是一个不该有标准答案的问题。"
+    },
+
+    { "type": "h2", "text": "六、同一个套路，还用在哪儿" },
+    {
+      "type": "p",
+      "text": "这一章真正的收获不是分词，是那个**套路**：把一堆选择摆成一张图，给每条边打分，然后找一条总分最高的路。认出这个形状之后，你会在无数地方看见它。**语音识别的解码**是它——每个时刻的候选音／词排成列，找一条最优路径。**拼音输入法**是它。**词性标注**是它。**地址解析**（把「北京市海淀区中关村大街一号」拆成省市区街号）也可以是它。"
+    },
+    {
+      "type": "p",
+      "text": "再往外走，形状还是它：**编辑距离**（把一个词改成另一个词最少要几步）是在一张网格上找最短路；**语音的时间对齐、生物信息里的基因序列比对**，用的是同一族算法。这就是这本书想让你养成的眼力——**别管它叫什么名字、属于哪个行业，先看它是不是那张图。**是的话，几十年积累的算法立刻全部可用。"
+    },
+
+    { "type": "h2", "text": "七、今天：中文分词还需要吗" },
+    {
+      "type": "p",
+      "text": "这一章是全书里被时代改动比较大的一章。今天的神经网络模型很少再把中文分词当成必须的第一道工序，**主流做法是子词切分**——用一套算法（比如按出现频率不断合并高频字符对）把文本切成介于字和词之间的碎片，不追求语言学上的合理，只追求统计上的划算。对中文来说，很多时候干脆就按字处理，让模型自己去学词的边界。**「分词」作为一个独立的、要单独评测的工序，确实退场了。**"
+    },
+    {
+      "type": "p",
+      "text": "**但两件东西没退场。**一是那个问法：不纠结「对不对」，只问「哪种切法在数据上更划算」——子词算法用的还是这个思路，只是判据从语言模型概率换成了压缩效率。二是动态规划：**在需要从大量候选里挑一条最优路径的地方，它仍然是标准答案**，今天的语音识别解码、序列对齐、约束解码里都还跑着它。**技术会过时，套路不会。**"
+    },
+
+    { "type": "h2", "text": "八、这一章省掉了什么苦工" },
+    {
+      "type": "p",
+      "text": "省掉了两份。一份是**人工消歧规则**：查字典的年代，每遇到一类歧义就得加一条规则，规则表越滚越大还互相冲突；统计分词把这一整套换成了「比分数」。另一份是**穷举**：维特比算法把一个原理上做不完的计算，压成了一遍扫描。**前者省的是人的时间，后者省的是机器的时间**——这本书里最典型的一章，两样都占了。"
+    },
+    {
+      "type": "pull",
+      "text": "到某个点的最优路径只需要留一条——因为后面怎么走，跟你是怎么走到这儿的无关。就这一句话，把五亿次计算压成了几十步。"
+    },
+    {
+      "type": "p",
+      "text": "最后留一句可以带走的：**那个「保留最优、扔掉其余」的洞察，本身就有点人生的味道。**你走到今天这一步，之前是怎么走过来的、绕了多少弯路，对接下来怎么走并不重要；重要的只有你现在站在哪儿、手里有什么。**算法里管这叫无后效性，是动态规划能成立的前提。**这当然是借题发挥，但这类借题发挥，正是一本好的科普书能给外行的额外礼物。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本章对应原书讲中文分词的一章，以及讲维特比算法的一章。",
+        "史实补充：维特比算法由 Andrew Viterbi 于 1967 年提出，最初用于通信中的卷积码译码；他后来与人共同创办高通，该算法广泛用于移动通信。中文分词早期的查字典法与最少词数法，原书归于国内几位研究者的工作。",
+        "子词切分（如 BPE、WordPiece）在 2016 年前后成为神经机器翻译与大模型的标准做法，属本文所作的时代补充，非原书内容。"
+      ]
+    }
+  ]
+}
