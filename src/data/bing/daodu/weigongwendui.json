@@ -1,0 +1,411 @@
+{
+  "title": "《李卫公问对》的前世今生",
+  "subtitle": "武经七书里唯一一部回头讨论其余六部的书，也是唯一一部几乎可以确定不是署名者所写的书",
+  "centralIdea": "《唐太宗李卫公问对》分上中下三卷，以唐太宗与卫国公李靖问答论兵的形式写成。它在七书里有三个「唯一」：唯一以唐人为主角，唯一成书于唐宋之际因而年代最晚，唯一整部书都在辨析前代兵法——《孙子》《司马法》《吴子》《尉缭子》乃至太公诸说被逐条拿来对质，讲奇正、讲虚实、讲攻守、讲阵法源流，是中国兵学史上最好的一次学术总结之一。可它的作者身份最成问题：新旧《唐志》都不著录，北宋才见于世，宋人笔记里已有「阮逸伪作」之说。这篇要做的事，是把「它是不是李靖写的」与「它写得好不好」分开讲：前者如实并陈两面而不裁断，后者不因托名而抹杀。",
+  "hero": {
+    "badge": "书级导读 · 前世今生",
+    "headline": "一部读兵书的书",
+    "tagline": "七部兵书摆在一起，只有这一部是回头看着其余六部写的"
+  },
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "《武经七书》里，六部成于先秦两汉，讲的是各自那个时代的战争。只有一部不同：它出得最晚，主角是唐朝人，而且通篇不在讲「仗该怎么打」，而在讲「前人那些讲仗怎么打的书，哪一句说得对、哪一句被后人读岔了」。这就是《唐太宗李卫公问对》。它是七书中唯一一部把其余六部当作讨论对象的书，也是唯一一部几乎可以确定不是署名者亲手所写的书。这两件事凑在一起，使它成了七书里最尴尬也最耐读的一部。这篇讲它的来路：李靖其人、唐初的军政、它在目录学上的破绽、宋人的指控，以及它作为一次学术总结的分量。至于三卷各讲了什么，站内有逐卷白话与译注，点进去看。"
+    },
+    {
+      "type": "h2",
+      "text": "一个把突厥打没了的人"
+    },
+    {
+      "type": "p",
+      "text": "先说书上署名的那个人。李靖，字药师，京兆三原人，生于北周天和年间，卒于唐贞观二十三年，年七十九。他的舅父是隋朝名将韩擒虎——灭陈之役率先攻入建康的那一位。据《旧唐书》本传，韩擒虎每与他谈兵，都要感叹一句：可与论孙、吴者，唯此人。这件事书里也留着回声，卷上唐太宗提起过。"
+    },
+    {
+      "type": "quote",
+      "original": "卿舅韩擒虎，尝言卿可与论孙、吴",
+      "translation": "你的舅父韩擒虎，曾说过能和你谈论孙武、吴起的兵法。",
+      "cite": { "corpus": "bing", "slug": "weigongwendui", "ch": 1, "label": "问对 · 卷上" }
+    },
+    {
+      "type": "p",
+      "text": "他的起点却相当难看。隋末他做马邑郡丞，察觉李渊有异志，打算赴江都告发，走到长安因道路阻塞没走成。李渊攻下长安，把他抓来要斩，他在刑场上大声说：您起义兵本是为天下除暴乱，如今要成大事，怎么因为私怨杀壮士？李世民为他求情，这才免死，被引入幕府。一个差点被当作告密者斩掉的人，后来成了这个王朝最能打的将军。"
+    },
+    {
+      "type": "p",
+      "text": "他一生的战绩集中在三个方向。武德四年，随李孝恭平萧铣：当时秋水暴涨，诸将都主张等水退再走，他偏要趁涨水出兵，直下江陵，一战平定长江中游。随后又随李孝恭平辅公祐，江南遂定。贞观三年到四年，他任定襄道行军总管征东突厥，先以三千骑夜袭定襄，随后趁唐朝使者在突厥营中议和之际，率精骑冒雪突袭阴山，俘颉利可汗——东突厥就此覆亡。贞观八九年间又西破吐谷浑，深入数千里。此后官至尚书右仆射，封卫国公，晚年称病阖门自守，谢绝宾客；死后陪葬昭陵，画像列于凌烟阁。"
+    },
+    {
+      "type": "figure",
+      "ftype": "时间线",
+      "caption": "李靖的一生。书中反复出现的突厥、吐谷浑、萧铣、蕃汉杂处，都不是泛泛的例子——那是他自己打过的仗、经过的事。这也是这部书读起来极有实感的原因。",
+      "svg": "<svg viewBox='0 0 640 216' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><line x1='40' y1='128' x2='600' y2='128' style='stroke:var(--line)' stroke-width='1.1'/><circle cx='76' cy='128' r='5' style='fill:var(--ink-soft)'/><line x1='76' y1='118' x2='76' y2='128' style='stroke:var(--line)' stroke-width='1.1'/><text x='76' y='66' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11.5'>五七一</text><text x='76' y='90' text-anchor='middle' style='fill:var(--ink)' font-size='13.5'>生于三原</text><text x='76' y='110' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>舅父韩擒虎</text><circle cx='180' cy='128' r='5' style='fill:var(--ink-soft)'/><line x1='180' y1='128' x2='180' y2='138' style='stroke:var(--line)' stroke-width='1.1'/><text x='180' y='152' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11.5'>隋末</text><text x='180' y='176' text-anchor='middle' style='fill:var(--ink)' font-size='13.5'>马邑郡丞</text><text x='180' y='196' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>几乎斩于长安</text><circle cx='284' cy='128' r='5' style='fill:var(--ink-soft)'/><line x1='284' y1='118' x2='284' y2='128' style='stroke:var(--line)' stroke-width='1.1'/><text x='284' y='66' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11.5'>六二一</text><text x='284' y='90' text-anchor='middle' style='fill:var(--ink)' font-size='13.5'>平萧铣</text><text x='284' y='110' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>乘涨水下江陵</text><circle cx='388' cy='128' r='6' style='fill:var(--cinnabar)'/><line x1='388' y1='128' x2='388' y2='138' style='stroke:var(--line)' stroke-width='1.1'/><text x='388' y='152' text-anchor='middle' style='fill:var(--cinnabar)' font-size='11.5'>六三〇</text><text x='388' y='176' text-anchor='middle' style='fill:var(--cinnabar)' font-size='13.5'>夜袭阴山</text><text x='388' y='196' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>俘颉利，东突厥亡</text><circle cx='492' cy='128' r='5' style='fill:var(--ink-soft)'/><line x1='492' y1='118' x2='492' y2='128' style='stroke:var(--line)' stroke-width='1.1'/><text x='492' y='66' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11.5'>六三五</text><text x='492' y='90' text-anchor='middle' style='fill:var(--ink)' font-size='13.5'>西破吐谷浑</text><text x='492' y='110' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>深入数千里</text><circle cx='580' cy='128' r='5' style='fill:var(--ink-soft)'/><line x1='580' y1='128' x2='580' y2='138' style='stroke:var(--line)' stroke-width='1.1'/><text x='580' y='152' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11.5'>六四九</text><text x='580' y='176' text-anchor='middle' style='fill:var(--ink)' font-size='13.5'>卒，年七十九</text><text x='580' y='196' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>封卫国公</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "唐代的目录里著录过李靖的几种兵书，可惜全都亡佚了。也就是说，这位公认最会打仗、又确实写过兵书的人，一个字的兵学著作也没有可靠地传下来——只留下一部署着他名字、却来路可疑的问答录。"
+    },
+    {
+      "type": "h2",
+      "text": "太宗为什么要跟他谈兵"
+    },
+    {
+      "type": "p",
+      "text": "这部书能让人读进去，很大程度上因为它谈的都是当时的真问题。"
+    },
+    {
+      "type": "p",
+      "text": "唐初面对的军事局面与前代很不一样。它的兵制是府兵，平时散在州县、战时集结，训练与教阅因此格外要紧；它的对手多在草原与高原，机动距离动辄数千里，不是春秋那种一天分胜负的仗；它的军队里混编着大量归附的部族，蕃将蕃兵与汉军并肩作战。书中卷上就有一段，太宗问蕃汉杂处怎么长治久安，李靖的回答是：汉军自成一套办法，蕃部另成一套，教习各不相同，不要混同；一旦有寇，就临时换旗易服，出其不意。"
+    },
+    {
+      "type": "quote",
+      "original": "汉戍宜自为一法，蕃落宜自为一法",
+      "translation": "汉人的戍军应当自成一套办法，归附的部落也应当自成一套办法。",
+      "cite": { "corpus": "bing", "slug": "weigongwendui", "ch": 1, "label": "问对 · 卷上" }
+    },
+    {
+      "type": "p",
+      "text": "整部书里这类内容极多：高丽、薛延陀、契丹与奚、瑶池都督府、松漠与饶乐都督府、蕃汉分制、府兵的教阅次第、结伍之法。它讨论的既是兵法，也是唐初那一套羁縻建置与军事组织。这使它在七书里的气质完全不同——别的六部都在讲某种普遍的道理，只有它是从一个具体王朝的具体麻烦里长出来的。"
+    },
+    {
+      "type": "p",
+      "text": "李靖的经验也随处可见。他讲远征必须用正兵，因为奇袭走不了几千里；他讲治军要先有恩信而后可以用刑；他讲自己平萧铣时不许诸将抄没降臣之家，因而江汉望风归顺。这些都是他打过的仗、做过的决定。"
+    },
+    {
+      "type": "quote",
+      "original": "臣讨突厥，西行数千里，若非正兵，安能致远",
+      "translation": "我讨伐突厥时，向西行军数千里，如果不是靠堂堂正正的用兵，怎么能走那么远。",
+      "cite": { "corpus": "bing", "slug": "weigongwendui", "ch": 1, "label": "问对 · 卷上" }
+    },
+    {
+      "type": "h2",
+      "text": "《唐志》里没有它"
+    },
+    {
+      "type": "p",
+      "text": "然后是麻烦的部分。"
+    },
+    {
+      "type": "p",
+      "text": "唐代的两部正史目录——《旧唐书·经籍志》与《新唐书·艺文志》——都没有著录这部书。这一点分量很重：《新唐书·艺文志》兵家类收录得相当宽，连许多今天已经亡佚的小书都记着，偏偏漏掉一部由本朝开国名将与太宗对答的兵学要籍，很难用「疏漏」解释过去。它可靠地见于记载，要到北宋。"
+    },
+    {
+      "type": "p",
+      "text": "宋人自己就起了疑。何薳《春渚纪闻》一类的笔记里，直接指它是北宋人阮逸所作。阮逸是仁宗朝人，以精于乐律与校书著称，替古书作注、编次旧籍是他的本行。此后这个说法被反复征引，几乎成了定谳；清代《四库全书总目》为它写的提要，一面采信宋人依托之说，一面又承认书中论兵颇有可取，不肯把它一笔勾销。"
+    },
+    {
+      "type": "p",
+      "text": "另一条内证在书里自己身上。书中议论所及的松漠、饶乐、瑶池诸都督府，都是贞观后期乃至末年的建置，而那几年李靖已经老病阖门、谢客不出；卷上开篇太宗议讨高丽、李靖请以三万兵擒盖苏文的场面，与《旧唐书》本传所记也不尽相同——本传说的是贞观十八年太宗将伐高丽，召李靖问计，李靖抱病请行，太宗怜他年老没有答应。书中还有李靖当面评点长孙无忌「内实嫉贤」、劝太宗先贬李勣好让太子日后施恩这样的话，读起来更像后人替他设计的言语。"
+    },
+    {
+      "type": "table",
+      "caption": "三条线索，两个方向。本站不替读者裁断——把两边的理由都摆出来，比给一个结论有用。",
+      "head": [
+        "线索",
+        "指向「非李靖亲撰」",
+        "指向「不能全然否定」"
+      ],
+      "rows": [
+        [
+          "目录著录",
+          "新旧《唐志》均不著录，北宋始见于世",
+          "唐人兵书亡佚极多，不著录不等于当时不存在"
+        ],
+        [
+          "宋人记载",
+          "何薳《春渚纪闻》等笔记直指为阮逸所作",
+          "笔记之言别无旁证，宋人亦未尽信"
+        ],
+        [
+          "书中制度与史事",
+          "所及羁縻建置多在贞观末年，其时李靖已老病阖门；开篇议高丽事与本传所记不合",
+          "问答体本非编年实录，或系李靖兵法遗说经后人缀辑成篇"
+        ],
+        [
+          "论兵的水准",
+          "文辞畅达、结构完整，不像奏对的实录，更像整理成篇的著述",
+          "所辨奇正、虚实、攻守、节制，非熟于兵事者不能道"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "把这些摆在一起，比较稳妥的说法是：**这部书出于唐宋之际，成书晚于李靖，是不是阮逸一人所为，则没有确证。** 它也可能是唐人所记李靖兵法的遗说，经后人整理、增补、缀合成今天这个样子。站内的处理与其他托名之书一致：如实标出，并陈异说，不为托名张目，也不因托名而否定它的内容。"
+    },
+    {
+      "type": "h2",
+      "text": "一部读兵书的书"
+    },
+    {
+      "type": "p",
+      "text": "现在说它写得好不好——这是与作者问题完全无关的另一件事。"
+    },
+    {
+      "type": "p",
+      "text": "《问对》最特别的地方，在于它讨论的对象不是战争，而是**关于战争的书**。三卷之中，《孙子》被提到三十来处，太公与《六韬》二十余处，曹操和他的《新书》十七处，《司马法》与司马穰苴十六处，此外还有诸葛亮的八阵、吴起、《尉缭子》、《三略》、管仲的军制、范蠡的阴阳、《左传》里的鱼丽之阵与荀吴毁车为行……几乎把当时能见到的兵学传统全部过了一遍。它不是引用，是对质：把各家的话摆出来，一句句问「这话什么意思」「这样理解对不对」「后人是怎么读岔的」。"
+    },
+    {
+      "type": "figure",
+      "ftype": "分岔",
+      "caption": "《问对》三卷所征引与辨析的对象（依本站底本逐字统计的出现次数，含太宗与李靖双方的话；「孙武」与「《孙子》」合计）。一部三卷的书，把当时能见到的兵学传统几乎过了一遍——这是它真正的分量所在。",
+      "svg": "<svg viewBox='0 0 640 330' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='24' text-anchor='middle' style='fill:var(--ink)' font-size='17'>它在跟谁说话</text><rect x='240' y='40' width='160' height='48' rx='7' style='fill:var(--paper-raised);stroke:var(--cinnabar)' stroke-width='1.3'/><text x='320' y='62' text-anchor='middle' style='fill:var(--cinnabar)' font-size='14'>《问对》三卷</text><text x='320' y='80' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>一部讨论兵书的书</text><line x1='320' y1='88' x2='320' y2='290' style='stroke:var(--line)' stroke-width='1.2'/><line x1='250' y1='130' x2='320' y2='130' style='stroke:var(--line)' stroke-width='1'/><rect x='30' y='111' width='220' height='38' rx='6' style='fill:var(--paper-raised);stroke:var(--cinnabar)' stroke-width='1.2'/><text x='140' y='135' text-anchor='middle' style='fill:var(--cinnabar)' font-size='12.5'>孙武与《孙子》 三十一处</text><line x1='390' y1='130' x2='320' y2='130' style='stroke:var(--line)' stroke-width='1'/><rect x='390' y='111' width='220' height='38' rx='6' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><text x='500' y='135' text-anchor='middle' style='fill:var(--ink)' font-size='12.5'>太公与《六韬》 二十二处</text><line x1='250' y1='175' x2='320' y2='175' style='stroke:var(--line)' stroke-width='1'/><rect x='30' y='156' width='220' height='38' rx='6' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><text x='140' y='180' text-anchor='middle' style='fill:var(--ink)' font-size='12.5'>曹操及其《新书》 十七处</text><line x1='390' y1='175' x2='320' y2='175' style='stroke:var(--line)' stroke-width='1'/><rect x='390' y='156' width='220' height='38' rx='6' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><text x='500' y='180' text-anchor='middle' style='fill:var(--ink)' font-size='12.5'>《司马法》与穰苴 十六处</text><line x1='250' y1='220' x2='320' y2='220' style='stroke:var(--line)' stroke-width='1'/><rect x='30' y='201' width='220' height='38' rx='6' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><text x='140' y='225' text-anchor='middle' style='fill:var(--ink)' font-size='12.5'>诸葛亮与八阵 七处</text><line x1='390' y1='220' x2='320' y2='220' style='stroke:var(--line)' stroke-width='1'/><rect x='390' y='201' width='220' height='38' rx='6' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><text x='500' y='225' text-anchor='middle' style='fill:var(--ink)' font-size='12.5'>吴起 ·《尉缭子》·《三略》</text><line x1='250' y1='265' x2='320' y2='265' style='stroke:var(--line)' stroke-width='1'/><rect x='30' y='246' width='220' height='38' rx='6' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><text x='140' y='270' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12.5'>《左传》《春秋》《尚书》</text><line x1='390' y1='265' x2='320' y2='265' style='stroke:var(--line)' stroke-width='1'/><rect x='390' y='246' width='220' height='38' rx='6' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><text x='500' y='270' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12.5'>管仲 · 范蠡 · 黄帝之法</text><text x='320' y='314' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12'>它不是引用，是对质：把各家的话摆出来，一句句问「这话到底什么意思」</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这种做法在中国兵学史上此前没有过。《孙子》讲的是用兵的道理，《六韬》讲的是治国与军制，《司马法》保存的是古军礼——它们各说各的。到了《问对》，兵学已经积累了一千多年，书与书之间的说法开始互相打架，于是需要有人来做一次清账：哪些是同一件事的不同说法，哪些是后人误读，哪些干脆是古人故意设的迷障。**它是一部读书人的兵书，也是中国兵学第一次系统地回头审视自己。**"
+    },
+    {
+      "type": "p",
+      "text": "最能见其功力的是它对曹操的态度。曹操是《孙子》最早也最权威的注家，唐人读《孙子》基本上是读曹注。《问对》却毫不客气地纠他：曹注说「先出合战为正，后出为奇」，李靖说这是把奇正拘死在先后与方位上了，其实是「大众所合为正，将所自出为奇」；曹操《新书》讲对敌时先立标杆再引兵就位，李靖说临敌才立表已经晚了，那只是平时教战之法；太宗听完笑说，多少人被曹公绕进去了。要知道曹操在唐代兵学里的地位近乎不可动摇，敢这样逐条驳他，本身就说明作者对兵法有自己的把握。"
+    },
+    {
+      "type": "table",
+      "caption": "它跟前人过招的几处。这类辨析在书中比比皆是——它真正的贡献不在提出新说，而在把前代众说理出一条可以走的路。",
+      "head": [
+        "所对之说",
+        "前人的说法",
+        "《问对》的说法"
+      ],
+      "rows": [
+        [
+          "曹操注《孙子》论奇正",
+          "先出合战为正，后出为奇；奇兵旁击",
+          "大众所合为正，将所自出为奇——不在先后，也不在旁不旁"
+        ],
+        [
+          "曹操《新书》论布阵",
+          "对敌必先立表，引兵就表而阵",
+          "临敌立表已经晚了，那只是平时教战的办法"
+        ],
+        [
+          "诸葛亮论将与兵",
+          "有制之兵，无能之将，不可败也",
+          "这是有为而发的激词，本意在说教阅须有法度"
+        ],
+        [
+          "《尚书》论威与爱",
+          "威克厥爱，允济",
+          "爱要设在前，威要设在后，次序颠倒就无益于事"
+        ],
+        [
+          "《孙子》以《用间》殿全书",
+          "三军之事莫亲于间，赏莫厚于间",
+          "用间实为下策；水能载舟，亦能覆舟"
+        ],
+        [
+          "《六韬》的铁蒺藜、行马",
+          "太公所制的守御之具",
+          "那只是拒敌之具；兵贵在调动敌人，不在于拒"
+        ]
+      ]
+    },
+    {
+      "type": "quote",
+      "original": "爱设于先，威设于后，不可反是也",
+      "translation": "恩爱要施在前面，威刑要施在后面，不能反过来。",
+      "cite": { "corpus": "bing", "slug": "weigongwendui", "ch": 2, "label": "问对 · 卷中" }
+    },
+    {
+      "type": "quote",
+      "original": "太公《六韬》言守御之具尔，非攻战所施也",
+      "translation": "太公《六韬》讲的只是守御的器具，不是进攻作战所用的。",
+      "cite": { "corpus": "bing", "slug": "weigongwendui", "ch": 2, "label": "问对 · 卷中" }
+    },
+    {
+      "type": "h2",
+      "text": "三卷，三个轴"
+    },
+    {
+      "type": "p",
+      "text": "全书三卷，各有一个明显的重心，而且重心的位置是可以数出来的。"
+    },
+    {
+      "type": "p",
+      "text": "卷上是奇正。这两个字在卷上出现十六处，是全书密度最高的一处；从霍邑之战右军后退究竟算奇还是算正问起，一路问到奇正是预先分好的还是临阵定的，最后落在一句话上：奇正之分在人，不在兵。卷中转到虚实与教战：虚实八处，六花阵与伍法各四处，谈的是怎么把奇正的道理变成可以教、可以练、可以在校场上摆出来的队形。卷下则是攻守与节制：攻守八处，节制五处，术数四处，谈的是主与客、战与不战、将将之道，以及要不要保留阴阳术数这类东西。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构",
+      "caption": "三卷的重心（括号内为该词在本站底本各卷中的出现次数）。从原理到操作到判断，这是一条相当自觉的线——一部拼凑之书不容易有这样的结构。",
+      "svg": "<svg viewBox='0 0 640 262' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='26' text-anchor='middle' style='fill:var(--ink)' font-size='17'>三卷各有一个轴</text><rect x='16' y='48' width='196' height='150' rx='7' style='fill:var(--paper-raised);stroke:var(--cinnabar)' stroke-width='1.2'/><text x='114' y='74' text-anchor='middle' style='fill:var(--cinnabar)' font-size='15'>卷上 · 奇正</text><line x1='40' y1='86' x2='188' y2='86' style='stroke:var(--cinnabar)' stroke-width='1.2'/><text x='114' y='110' text-anchor='middle' style='fill:var(--ink)' font-size='12'>奇正（十六）</text><text x='114' y='132' text-anchor='middle' style='fill:var(--ink)' font-size='12'>教阅（五） 八陈（三）</text><text x='114' y='158' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11.5'>从霍邑之战的一次后退</text><text x='114' y='178' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11.5'>问到奇正相生之理</text><rect x='222' y='48' width='196' height='150' rx='7' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><text x='320' y='74' text-anchor='middle' style='fill:var(--ink)' font-size='15'>卷中 · 虚实与教战</text><line x1='246' y1='86' x2='394' y2='86' style='stroke:var(--line)' stroke-width='1.1'/><text x='320' y='110' text-anchor='middle' style='fill:var(--ink)' font-size='12'>虚实（八）</text><text x='320' y='132' text-anchor='middle' style='fill:var(--ink)' font-size='12'>伍法（四） 六花（四）</text><text x='320' y='158' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11.5'>把道理变成可教可练的</text><text x='320' y='178' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11.5'>队形与号令</text><rect x='428' y='48' width='196' height='150' rx='7' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><text x='526' y='74' text-anchor='middle' style='fill:var(--ink)' font-size='15'>卷下 · 攻守与节制</text><line x1='452' y1='86' x2='600' y2='86' style='stroke:var(--line)' stroke-width='1.1'/><text x='526' y='110' text-anchor='middle' style='fill:var(--ink)' font-size='12'>攻守（八）</text><text x='526' y='132' text-anchor='middle' style='fill:var(--ink)' font-size='12'>节制（五） 术数（四）</text><text x='526' y='158' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11.5'>主与客、战与不战</text><text x='526' y='178' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11.5'>以及将将之道</text><path d='M212 123 L222 123' style='stroke:var(--line)' stroke-width='1.2'/><path d='M418 123 L428 123' style='stroke:var(--line)' stroke-width='1.2'/><text x='320' y='226' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12'>原理 → 操作 → 判断：三卷的次序是有意安排的</text><text x='320' y='248' text-anchor='middle' style='fill:var(--ink-faint)' font-size='11'>括号内为该词在本站底本各卷中出现的次数</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "卷下有一处最见分寸，也最需要读者留神。太宗问阴阳术数能不能废掉，李靖说不能废——因为兵是诡道，托之以阴阳术数，可以「使贪使愚」。可他转过头又说，后世的庸将拘泥于术数，因此常常吃败仗。同一个人，一面承认这是驱使士卒的工具，一面又提醒将领自己别当真。"
+    },
+    {
+      "type": "quote",
+      "original": "后世庸将，泥于术数，是以多败",
+      "translation": "后世平庸的将领拘泥于术数，所以常常打败仗。",
+      "cite": { "corpus": "bing", "slug": "weigongwendui", "ch": 3, "label": "问对 · 卷下" }
+    },
+    {
+      "type": "p",
+      "text": "这话在兵家理性一脉里是有位置的——《尉缭子》说黄帝的刑德不是天官时日之谓，《三略》引《军势》禁止巫祝为将士卜问吉凶，都是同一个方向。但「使贪使愚」四个字并不好听，本站如实译出、如实记下，把它看作那个时代军中实情的一份记录，不为它张目，也不把它当作可以搬用的办法。"
+    },
+    {
+      "type": "h2",
+      "text": "七书里最晚的一部"
+    },
+    {
+      "type": "p",
+      "text": "北宋神宗元丰三年，朝廷把七部兵书校定合编，颁行武学，作为武举的教科书，这就是《武经七书》。《问对》名列其中，位置在最后。"
+    },
+    {
+      "type": "p",
+      "text": "把七部书按年代排开，会看到一个很奇怪的队形：《孙子》出于春秋末，《吴子》《司马法》《尉缭子》出于战国，《六韬》成于战国至西汉之间，《三略》约在西汉末东汉初，而《问对》出于唐宋之际——最早与最晚之间隔着一千五六百年。它是这条线的末端，也是唯一一部站在末端回头看的书：其余六部它都议论过，《孙子》辨得最细，《六韬》《三略》被它当作张良所学而提及，《司马法》被它追到搜狩之礼上去，《吴子》被它拿来与孙武比高下。"
+    },
+    {
+      "type": "quote",
+      "original": "张良所学，太公《六韬》、《三略》是也",
+      "translation": "张良所学的，就是太公的《六韬》和《三略》。",
+      "cite": { "corpus": "bing", "slug": "weigongwendui", "ch": 1, "label": "问对 · 卷上" }
+    },
+    {
+      "type": "figure",
+      "ftype": "流变",
+      "caption": "七书的年代次第与《问对》的回望。顺带一提：上面那句「张良所学是《六韬》《三略》」，正是唐人已把圯上老人的传说与这两部书合并起来的证据——它本身不是史实，却是流传史的一条实证。",
+      "svg": "<svg viewBox='0 0 640 272' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='26' text-anchor='middle' style='fill:var(--ink)' font-size='17'>七书的年代次第</text><line x1='40' y1='110' x2='608' y2='110' style='stroke:var(--line)' stroke-width='1.1'/><circle cx='70' cy='110' r='4.5' style='fill:var(--ink-soft)'/><text x='70' y='74' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>春秋末</text><text x='70' y='96' text-anchor='middle' style='fill:var(--ink)' font-size='12.5'>孙子</text><circle cx='150' cy='110' r='4.5' style='fill:var(--ink-soft)'/><text x='150' y='74' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>战国</text><text x='150' y='96' text-anchor='middle' style='fill:var(--ink)' font-size='12.5'>吴子</text><circle cx='230' cy='110' r='4.5' style='fill:var(--ink-soft)'/><text x='230' y='74' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>战国</text><text x='230' y='96' text-anchor='middle' style='fill:var(--ink)' font-size='12.5'>司马法</text><circle cx='310' cy='110' r='4.5' style='fill:var(--ink-soft)'/><text x='310' y='74' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>战国</text><text x='310' y='96' text-anchor='middle' style='fill:var(--ink)' font-size='12.5'>尉缭子</text><circle cx='390' cy='110' r='4.5' style='fill:var(--ink-soft)'/><text x='390' y='74' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>战国至汉</text><text x='390' y='96' text-anchor='middle' style='fill:var(--ink)' font-size='12.5'>六韬</text><circle cx='470' cy='110' r='4.5' style='fill:var(--ink-soft)'/><text x='470' y='74' text-anchor='middle' style='fill:var(--ink-soft)' font-size='11'>两汉之际</text><text x='470' y='96' text-anchor='middle' style='fill:var(--ink)' font-size='12.5'>三略</text><circle cx='580' cy='110' r='6' style='fill:var(--cinnabar)'/><text x='580' y='74' text-anchor='middle' style='fill:var(--cinnabar)' font-size='11'>唐宋之际</text><text x='580' y='96' text-anchor='middle' style='fill:var(--cinnabar)' font-size='13'>问对</text><path d='M580 120 Q325 260 70 120' fill='none' style='stroke:var(--cinnabar)' stroke-width='1' stroke-dasharray='3 3'/><path d='M580 120 Q365 244 150 120' fill='none' style='stroke:var(--cinnabar)' stroke-width='1' stroke-dasharray='3 3'/><path d='M580 120 Q405 228 230 120' fill='none' style='stroke:var(--cinnabar)' stroke-width='1' stroke-dasharray='3 3'/><path d='M580 120 Q445 212 310 120' fill='none' style='stroke:var(--cinnabar)' stroke-width='1' stroke-dasharray='3 3'/><path d='M580 120 Q485 196 390 120' fill='none' style='stroke:var(--cinnabar)' stroke-width='1' stroke-dasharray='3 3'/><path d='M580 120 Q525 180 470 120' fill='none' style='stroke:var(--cinnabar)' stroke-width='1' stroke-dasharray='3 3'/><text x='320' y='236' text-anchor='middle' style='fill:var(--cinnabar)' font-size='12.5'>最早与最晚之间隔着一千五六百年</text><text x='320' y='258' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12'>而只有末端这一部，是回头把其余六部逐一议论过的</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这个位置带来一个后果：**它是七书里唯一一部把其余六部当作研究对象的书，因此也最适合放在最后读。** 先读过《孙子》《六韬》《司马法》，再看它怎么把这些说法拆开重排，才知道它讲得有多细；反过来先读它，就只会看见一堆陌生的书名。"
+    },
+    {
+      "type": "h2",
+      "text": "此后的流传，与站内这个底本"
+    },
+    {
+      "type": "p",
+      "text": "列入武经之后，它的命运就与其余六部绑在一起了：官定的文本、官刻的版本、武举考场上的必读，宋以后的讲章与直解一部部出，明代刘寅的《武经七书直解》一类的通俗注本把它逐句讲了下来；随《武经七书》流布，朝鲜半岛与日本的武学传统中也有人读它、注它。一部真伪成问题的书，因为被列进了一套官定教材，反而获得了最稳定的流传。这与《六韬》《三略》的遭遇是同一种。"
+    },
+    {
+      "type": "p",
+      "text": "也正因为它出得晚、篇幅大、又几乎是一部兵学的综论，明清以来讲阵法、讲奇正、讲教阅的书，大多绕不开它。它对诸葛亮八阵的解释、它所述的六花阵、它归纳的伍法层级，成了后世谈古阵法时的基本参照——尽管这些说法本身是不是唐代的原貌，同样存疑。"
+    },
+    {
+      "type": "p",
+      "text": "最后交代站内的底本情况。本站兵家书架收《武经七书》全七部，《问对》是最后补齐的一部：此前所据的维基文库来源里卷下的子页缺失，只能暂时搁置；后来补齐，现在收的是完整的上、中、下三卷，与其余六书一样配有逐段译注、每卷延伸与白话讲解。所以这部书在站内出现得最晚——这倒与它在七书里的位置意外地一致。"
+    },
+    {
+      "type": "h2",
+      "text": "那么它到底说了什么"
+    },
+    {
+      "type": "p",
+      "text": "前面讲的都是来路，这里用几百字交代它的主张。要细看，三卷各有白话与译注，点进去读。"
+    },
+    {
+      "type": "p",
+      "text": "它的第一个主张是奇正相生。所谓正兵，是堂堂正正的正面之师；奇兵，是出乎意料的那一支。旧说往往把二者当作两种固定的部队，或者按先后、按方位来分。《问对》说不是：正与奇是相对的、可以互相转化的——凡是向前的算正，后撤的就成了奇；我的正让敌人看成奇，我的奇让敌人看成正，敌人就再也测不透。所以奇正不在兵，在人。"
+    },
+    {
+      "type": "quote",
+      "original": "凡兵以前向为正，后却为奇",
+      "translation": "凡是用兵，向前进攻的算正，向后退却的算奇。",
+      "cite": { "corpus": "bing", "slug": "weigongwendui", "ch": 1, "label": "问对 · 卷上" }
+    },
+    {
+      "type": "quote",
+      "original": "故善用兵者，奇正在人而已",
+      "translation": "所以善于用兵的人，奇与正的分别只在人的运用罢了。",
+      "cite": { "corpus": "bing", "slug": "weigongwendui", "ch": 1, "label": "问对 · 卷上" }
+    },
+    {
+      "type": "p",
+      "text": "但它同时把次序说得很清楚：自黄帝以来，先有正而后有奇，先讲仁义而后才谈权谲。奇是从正里生出来的，没有正就没有奇——只会用奇的是斗将，只会用正的是守将，两样都会的才是国家的辅弼。"
+    },
+    {
+      "type": "quote",
+      "original": "臣案兵法，自黄帝以来，先正而后奇，先仁义而后权谲",
+      "translation": "我考察兵法，自黄帝以来，都是先有正而后有奇，先讲仁义而后才谈权变诡谲。",
+      "cite": { "corpus": "bing", "slug": "weigongwendui", "ch": 1, "label": "问对 · 卷上" }
+    },
+    {
+      "type": "p",
+      "text": "第二个主张是虚实由奇正而来。太宗说自己读遍兵书，没有超过孙武的，孙武十三篇里又没有超过《虚实》的；可将领们嘴上都会说避实击虚，临阵却认不出虚实在哪里。李靖的回答是：先教他们奇正相变，虚实自然就看得出来了——因为虚实不是敌人摆在那里等你看的，是你用奇正调动出来的。而千言万语归结起来只有一句话：调动别人，不被别人调动。"
+    },
+    {
+      "type": "quote",
+      "original": "朕观诸兵书，无出孙武；孙武十三篇，无出虚实",
+      "translation": "我看过的各种兵书，没有超过孙武的；孙武的十三篇里，没有超过《虚实》一篇的。",
+      "cite": { "corpus": "bing", "slug": "weigongwendui", "ch": 2, "label": "问对 · 卷中" }
+    },
+    {
+      "type": "quote",
+      "original": "千章万句，不出乎『致人而不致于人』而已",
+      "translation": "千章万句，说到底不过是「调动敌人而不被敌人调动」这一句罢了。",
+      "cite": { "corpus": "bing", "slug": "weigongwendui", "ch": 2, "label": "问对 · 卷中" }
+    },
+    {
+      "type": "p",
+      "text": "第三个主张在卷下：攻与守本是一件事。世人把「守则不足，攻则有余」读成弱者守、强者攻，《问对》说这是误读——不可胜的时候就守，可胜的时候才攻，说的是时机不是强弱；而且守的要领在于示敌以不足，攻的要领在于示敌以有余。攻是守的时机，守是攻的谋划，两者同归于胜。太宗接着把这层意思推到「知彼知己」上：攻其心是知彼，守吾气是知己。"
+    },
+    {
+      "type": "quote",
+      "original": "攻是守之机，守是攻之策，同归乎胜而已矣",
+      "translation": "进攻是防守的时机，防守是进攻的谋划，两者同样归结到取胜罢了。",
+      "cite": { "corpus": "bing", "slug": "weigongwendui", "ch": 3, "label": "问对 · 卷下" }
+    },
+    {
+      "type": "p",
+      "text": "此外还有两句常被引用的。一句是太宗的总结：千章万句，不过「多方以误之」一句——用兵的全部功夫，说到底是让对方犯错。另一句是关于战与不战的分工：不打的主动权在我，非打不可的局面则由敌人造成。"
+    },
+    {
+      "type": "quote",
+      "original": "夫不战者在我，必战者在敌",
+      "translation": "能够不打，主动在我；不得不打，是因为敌人有可乘之机。",
+      "cite": { "corpus": "bing", "slug": "weigongwendui", "ch": 3, "label": "问对 · 卷下" }
+    },
+    {
+      "type": "p",
+      "text": "全书末尾，李靖把兵法分成三等：最上是道，其次是天地，再次是将法；学兵的人要从下往上一层层走，不能一上来就谈道，否则只是空话与记诵。这段话是整部书的自我定位——它承认兵法有可学的部分，也承认有学不来的部分。"
+    },
+    {
+      "type": "quote",
+      "original": "一曰道，二曰天地，三曰将法",
+      "translation": "第一等是道，第二等是天时地利，第三等是将领的法度。",
+      "cite": { "corpus": "bing", "slug": "weigongwendui", "ch": 3, "label": "问对 · 卷下" }
+    },
+    {
+      "type": "p",
+      "text": "然后书就结束了：太宗嘱咐说，道家忌讳三代为将，这些东西不可乱传，你要慎重；李靖再拜而出，把他的书全部传给了李勣。一部君臣问答录以「尽传其书」作结，收得干净利落，读起来像传奇的结尾——而这份太过完整的收束感，恰恰也是后人怀疑它的理由之一。"
+    },
+    {
+      "type": "pull",
+      "text": "「它是不是李靖写的」与「它写得好不好」，是两个问题。前一个至今无解，后一个几乎没有争议。"
+    },
+    {
+      "type": "h2",
+      "text": "从哪儿读起"
+    },
+    {
+      "type": "p",
+      "text": "三卷不长，全书一万余字，但它默认读者已经读过别的兵书。所以最好的顺序不是从它读起，而是把它放在最后：先读《孙子》十三篇，至少读过《始计》《谋攻》《军形》《兵势》《虚实》五篇，再来看卷上——那里对「奇正」的辨析，本来就是接着《兵势》篇往下讲的。"
+    },
+    {
+      "type": "p",
+      "text": "卷上最好读，也最要紧，从霍邑之战那次差点酿成大败的后退问起，一路问到奇正相生，是全书立论的地方。卷中偏技术，讲教阅、伍法、六花阵、蕃汉分制，古代军制的细节多，可以读慢些，当作了解唐初军队是怎么组织与训练的。卷下最像文章，攻守一体、主客之变、将将之道、术数存废，几段都可以单独看；末尾论兵法三等的那一段，是全书最好的收尾。"
+    },
+    {
+      "type": "p",
+      "text": "读的时候不妨随时留意一件事：每当它说「臣案某书曰」的时候，被案的那部书，站内多半也有。《孙子》《六韬》《司马法》《吴子》《尉缭子》《三略》都在同一个书架上，可以随时点过去对读。这大概是这部书在站内最好的用法——把它当作一份读兵书的向导，而不是一部兵书。"
+    },
+    {
+      "type": "p",
+      "text": "站内三卷都配有白话讲解与逐段译注，读到某句想深究，点进那一卷即可。这篇导读的用处，只是让你在进去之前先知道：手里这部书署着一位唐代名将的名字，多半不是他写的；但书里那些对前代兵法的辨析，确实是中国兵学史上最好的一次清账。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本篇是《李卫公问对》的**书级导读**，讲其人、其时、真伪公案与流传，不逐卷展开义理——逐卷白话与译注见站内。",
+        "所引《问对》原文均出自本站底本（维基文库通行本，上中下三卷），逐字可核；文中所标卷次即站内卷次。**站内底本情况**：此前所据来源的卷下子页缺失，本书一度搁置，后已补齐，现收完整三卷，武经七书至此在站内七部全齐。",
+        "李靖生平（京兆三原人、舅父韩擒虎、隋末马邑郡丞与长安获免、平萧铣与辅公祐、贞观四年夜袭阴山俘颉利、西破吐谷浑、封卫国公、贞观二十三年卒年七十九、陪葬昭陵）出自《旧唐书》《新唐书》本传；贞观十八年太宗将伐高丽召李靖问计、李靖抱病请行而未获许，亦见本传。**这些书不在本站书目**，故只作转述并标出处，不作站内引文。",
+        "**托名与真伪如实标出，不作裁断**：新旧《唐志》均不著录此书，北宋始见于世；宋人笔记（何薳《春渚纪闻》等）有阮逸伪作之说，此说别无旁证；清《四库全书总目》采信依托之说而不废其书。另有以为系李靖兵法遗说经后人缀辑者。文中已按「共识直写、分歧并陈」处理，未替读者下断语。",
+        "书中所及松漠、饶乐、瑶池诸都督府等羁縻建置的设置年代，属唐代制度史通行记载；以此为疑点者与以为问答体不必逐条对榫者两说并存，文中并陈。",
+        "书中引书与人物的出现次数（孙武与《孙子》、太公与《六韬》、曹操与其《新书》、《司马法》与穰苴、诸葛亮、奇正／虚实／攻守等语词的分卷分布），系据本站底本逐字统计所得，含太宗与李靖双方的话，只用以见其重心，不作精确的文献计量。",
+        "北宋元丰三年校定《武经七书》、明刘寅《武经七书直解》、东传朝鲜半岛与日本随《武经七书》流布，均属通行的文献史与制度史记载，此处只述大略，不给细节。",
+        "本站作兵学思想史与文献研读，不作兵法实操、不作现代战例推演、不作权谋教程；卷下「托之以阴阳术数，使贪使愚」一节涉驱使士卒者，如实译出并点破，不为之张目，亦不作施用。"
+      ]
+    }
+  ]
+}
