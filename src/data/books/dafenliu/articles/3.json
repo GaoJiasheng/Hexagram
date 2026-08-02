@@ -57,6 +57,20 @@
    "text": "再往细处看:江南中等人家里的硬木家具、瓷器餐具、时兴衣料,苏州与杭州的商业出版让廉价书籍进入了寻常士子甚至工商之家。这些东西合起来说明一件事——**那里存在一个规模可观的日常消费市场,而不是一个只够糊口、余钱全靠储藏的经济。**如果一个社会的普通人只在吃饱线上挣扎,他不会去买第二把椅子、第三种茶。"
   },
   {
+   "type": "callout",
+   "tone": "note",
+   "items": [
+    "为什么「买不必要的东西」比「吃饱」更能说明问题?打个比方:看一个家庭过得怎么样,光看他家米缸满不满是不够的——米缸满只说明没饿着。真正泄露底细的是别的:家里有没有第二双鞋、孩子有没有课外书、待客时舍不舍得泡好茶。**这些支出可有可无,所以它们出现,就说明手里真有余钱。**",
+    "一个社会也一样。糖、茶、烟、多出来的那几尺布,都是可以省掉的东西。它们在江南普遍出现,意味着那里的普通人手里有余钱、有可支配的选择——而这正是「停滞的糊口经济」这个印象最难解释的地方。"
+   ]
+  },
+  {
+   "type": "figure",
+   "ftype": "清单图",
+   "caption": "「消费革命」原本被当成欧洲独有的现象:普通人开始买那些不吃不穿也死不了的东西。把同一份清单拿到江南,几乎每一项都能勾上。一个只在温饱线上挣扎的社会,不会形成这样的市场。",
+   "svg": "<svg viewBox='0 0 640 320' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='28' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>同一份「非必需品」清单</text><text x='214' y='60' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink-soft)'>英格兰</text><text x='448' y='60' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>江南</text><text x='40' y='96' font-size='13' style='fill:var(--ink)'>糖</text><text x='214' y='96' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>西印度群岛供应,已日常化</text><text x='448' y='96' text-anchor='middle' font-size='12' style='fill:var(--cinnabar-pure)'>岭南与台湾供应,进了寻常灶台</text><line x1='36' y1='108' x2='604' y2='108' style='stroke:var(--line)' stroke-width='0.8'/><text x='40' y='136' font-size='13' style='fill:var(--ink)'>茶</text><text x='214' y='136' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>从中国进口,成为国民饮料</text><text x='448' y='136' text-anchor='middle' font-size='12' style='fill:var(--cinnabar-pure)'>本地出产,日常至极</text><line x1='36' y1='148' x2='604' y2='148' style='stroke:var(--line)' stroke-width='0.8'/><text x='40' y='176' font-size='13' style='fill:var(--ink)'>棉布</text><text x='214' y='176' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>先进口印度布,后自产</text><text x='448' y='176' text-anchor='middle' font-size='12' style='fill:var(--cinnabar-pure)'>自产并外销全国,人均量不低</text><line x1='36' y1='188' x2='604' y2='188' style='stroke:var(--line)' stroke-width='0.8'/><text x='40' y='216' font-size='13' style='fill:var(--ink)'>烟草</text><text x='214' y='216' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>北美殖民地供应</text><text x='448' y='216' text-anchor='middle' font-size='12' style='fill:var(--cinnabar-pure)'>明末传入,迅速普及</text><line x1='36' y1='228' x2='604' y2='228' style='stroke:var(--line)' stroke-width='0.8'/><text x='40' y='256' font-size='13' style='fill:var(--ink)'>家具 · 书籍</text><text x='214' y='256' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>中等人家添置家什与印刷品</text><text x='448' y='256' text-anchor='middle' font-size='12' style='fill:var(--cinnabar-pure)'>硬木家具 · 商业出版的廉价书</text><text x='320' y='298' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>清单能勾满,说明那里存在一个真正的日常消费市场,而不只是糊口经济</text></svg>"
+  },
+  {
    "type": "figure",
    "ftype": "对照图",
    "caption": "一七五〇年前后可测量指标的粗略对照。这张图要传达的不是「谁高谁低」——那些细微差别在数据误差范围之内——而是「都在同一个区间里」。彭慕兰要排除的正是「欧洲此时已遥遥领先」这种解释。",
@@ -82,6 +96,10 @@
   },
   {
    "type": "p",
+   "text": "有一个旁证值得留意:**粮食的方向。**江南在十八世纪是粮食净输入区,大量稻米从长江中上游顺流而下。一个地方之所以敢把本地的地和人腾出来去种棉、去纺纱,前提是它相信粮食买得到、买得起、年年都有。这需要稳定的价格、可靠的商路和成熟的商业信用——**这三样凑齐,才叫分工;缺一样,农户就会退回去先把自家口粮种够。**从这个角度看,江南的产业结构本身就是市场成熟度的证据。"
+  },
+  {
+   "type": "p",
    "text": "但这个立场没有服人。反方会说:农家女性和孩童在夜里纺纱,报酬折算下来低得可怜,她们之所以纺,是因为**别无去处**,不是因为纺纱比种地划算。这两种解读用的是同一批史料。这一节先把分歧点标出来,判断留到第八章。"
   },
   {
@@ -95,6 +113,10 @@
   {
    "type": "p",
    "text": "这份对照里有一个细节值得留意:中国并非没有过机械化的苗头。元代的农书里就记载过一种水力驱动的大纺车,用于麻苎的纺绩,规模可观;但它没有延续下来,也没有被移用到棉花上。**一项技术出现过而没能长大,和一项技术从未出现,是两码事。**这个例子提示:分岔的关键也许不在于「有没有想到」,而在于有没有一个持续逼着它改进的场景——这正是第五章要讲的煤矿抽水机。"
+  },
+  {
+   "type": "p",
+   "text": "还得替一七五〇年的人设身处地想一想:那时的蒸汽机并不是什么了不起的东西。纽科门式的机器又大又笨,效率低到荒唐,烧掉的煤远多于它省下的力气,除了守在煤矿口给矿井抽水,几乎放在哪儿都不划算。**站在当时看,它更像一件昂贵的地方性工具,而不是一个新时代的开端。**一个江南的读书人如果在那一年听说英格兰有这么台机器,大概只会觉得新奇,不会觉得可怕。后来的意义是后来才长出来的。"
   },
   {
    "type": "quote",
@@ -112,6 +134,10 @@
   {
    "type": "p",
    "text": "**没有证明的东西更该记住。**它没有证明江南更强,更没有证明中国「本来该赢」;它也没有证明两地的**结构**相同——相似的是水平,不同的是各自面对的约束与手里的选项。最后,它同样没有回答那个悬着的问题:亩产的高,到底是效率的高还是投入的高?这个问题会在第八章被做成一把刀,直插这本书的地基。"
+  },
+  {
+   "type": "p",
+   "text": "最后提一个读法上的建议。这一章里的每一个数字,你都不必记住,也不该拿去跟人争。真正值得带走的是它的**姿态**:当有人告诉你两个东西差距巨大时,先问一句「差在哪个可测量的项目上」。很多看似不可撼动的判断,一落到具体指标就开始松动——不是因为判断全错,而是因为**笼统的印象里,总掺着大量没被检查过的成分。**"
   },
   {
    "type": "pull",

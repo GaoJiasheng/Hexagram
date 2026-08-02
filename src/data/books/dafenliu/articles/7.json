@@ -1,0 +1,127 @@
+{
+ "title": "分流到底发生在什么时候",
+ "subtitle": "「哪一年开始拉开的」听上去像个细节,其实是这场争论的全部赌注——因为时点决定了你该去哪里找原因",
+ "centralIdea": "这一章讲的是「大分流」这个词真正指的东西:不是名次的更替,而是曲线的形状。彭慕兰主张的形状是长期并行、一八〇〇年前后急转;此后煤、机器、殖民地、海军、市场几条线互相喂养,到十九世纪中叶,差距已经不再需要最初那两样偶然来维持,它自己会长——原因和结果在这里换了位置。反方主张的形状是更早就在缓慢分开:布罗德伯里等人重建的国民账户把中国人均产出的高点放在宋代,此后长期回落,西欧则缓慢爬升;艾伦与布罗德伯里、古普塔的工资比较把分流起点推到十七世纪甚至更前;连李伯重与范赞登的对比也显示十九世纪二十年代荷兰已明显领先江南。为什么定不下来?因为数据全是重建的,更因为「什么算分流」本身没有共识:人均产出、生活水平、技术能力、增长机制,这四样可能在四个不同的时间分开。所以分流也许不是一个点,而是一束先后错开的线。而争时点之所以吵得凶,是因为时点越早,原因越像结构性的、内生的;越晚,越像偶然的、外部的。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "两个同班同学,高考成绩差了两百分。你想弄明白为什么,第一件该问的事其实不是「谁更聪明」,而是:**这两百分是从初中就慢慢拉开的,还是高三下学期某几个月里突然拉开的?**如果是前者,你该去查基础、习惯、家庭;如果是后者,你该去查那几个月里到底发生了什么——搬家、生病、换了老师、谈了恋爱。**问对时间,才可能问对原因。**关于中国与西欧的那道差距,整个学界吵了二十多年的,正是这个问题。"
+  },
+  {
+   "type": "h2",
+   "text": "一、时点就是解释"
+  },
+  {
+   "type": "p",
+   "text": "这一点必须先说透,否则会觉得学者们在为一些年份斤斤计较。**时点与解释是绑死的。**如果差距从十三世纪就开始缓慢积累,那么解释就必须是长期的、结构性的:制度、宗教、家庭形态、政治传统——这些东西变得慢,正好配得上一条缓慢分开的曲线。反过来,如果两地到十八世纪中叶还并驾齐驱,而差距是在几十年里裂开的,那么长期结构就解释不了它,你必须去找那个时段里的具体机制。"
+  },
+  {
+   "type": "p",
+   "text": "所以彭慕兰把时点定在一八〇〇年前后,不是一个技术判断,而是**整个论证的地基**。地基一旦被挪早,煤和新大陆就从「主因」降格成「加速器」,而「欧洲早有内生优势」就重新站了起来。**反过来,只要一七五〇年的相似性站得住,那些宏大的长期解释就全部落空——它们解释的是一个当时还不存在的差距。**这就是为什么双方寸步不让。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "caption": "三种主张的曲线形状。红线是彭慕兰:长期并行,一八〇〇年前后急转。灰虚线是量化重估一派:更早就在缓慢分开。点线是更极端的版本:宋代之后中国长期回落。同一段历史,三种形状,对应三套完全不同的原因。",
+   "svg": "<svg viewBox='0 0 640 350' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='26' text-anchor='middle' font-size='18.5' font-weight='bold' style='fill:var(--ink)'>三种曲线,三套原因</text><line x1='68' y1='276' x2='600' y2='276' style='stroke:var(--line)' stroke-width='1.4'/><line x1='68' y1='276' x2='68' y2='56' style='stroke:var(--line)' stroke-width='1.4'/><text x='58' y='62' text-anchor='end' font-size='11' style='fill:var(--ink-faint)'>人均产出</text><text x='110' y='296' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>1100</text><text x='230' y='296' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>1400</text><text x='350' y='296' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>1700</text><text x='430' y='296' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>1800</text><text x='560' y='296' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>1900</text><line x1='430' y1='276' x2='430' y2='60' style='stroke:var(--cinnabar-pure)' stroke-width='1.1' stroke-dasharray='5 5'/><path d='M96,244 C200,240 320,236 430,232 C470,206 506,158 540,116 C556,96 572,82 586,72' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='2.6'/><path d='M96,250 C200,248 320,246 430,244 C480,244 530,248 586,250' fill='none' style='stroke:var(--ink-soft)' stroke-width='2.2'/><text x='592' y='68' text-anchor='end' font-size='11' style='fill:var(--cinnabar-pure)'>英格兰</text><text x='592' y='266' text-anchor='end' font-size='11' style='fill:var(--ink-soft)'>江南</text><path d='M96,252 C180,242 260,226 350,206 C390,196 414,190 430,186' fill='none' style='stroke:var(--ink-faint)' stroke-width='1.8' stroke-dasharray='6 4'/><text x='250' y='196' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>量化重估:十七世纪已在分开</text><path d='M96,214 C140,220 180,236 240,248 C300,258 360,262 430,262' fill='none' style='stroke:var(--ink-faint)' stroke-width='1.5' stroke-dasharray='2 4'/><text x='176' y='208' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>宋代高点之后长期回落</text><text x='320' y='330' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>争的从来不是年份,是「该到哪一段历史里去找原因」</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "二、彭慕兰的形状:并行、急转、然后自己加速"
+  },
+  {
+   "type": "p",
+   "text": "他的曲线有三段。**第一段是并行**:直到十八世纪中叶,江南与英格兰在生活水平、市场发育、消费能力上相去不远(第三、四章的内容)。**第二段是急转**:煤解开能量约束、新大陆解开土地约束,英格兰从有机经济的天花板下钻了出去(第五、六章)。**第三段最容易被忽略,却是理解全局的关键——差距开始自己养自己。**"
+  },
+  {
+   "type": "p",
+   "text": "第三段是这样运转的:蒸汽机让纺纱织布的成本骤降,英国的机制棉布开始倾销全球,冲垮印度与中国的手工纺织,那些原本靠纺纱贴补家用的农户失去了副业收入;失去的市场变成英国的市场,更大的市场支撑更大的工厂,更大的工厂需要更多的煤与铁;财富养起海军,海军保住航路与港口,航路又送来更廉价的原料。**每一环都在给下一环添柴。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "循环图",
+   "caption": "分流之后的自我加速。这个循环里的每一环都能强化下一环,而且它已经不再需要「煤在哪里」「新大陆有多少地」这两个初始条件了。这就是为什么彭慕兰说:解释分流的原因,与解释分流为何持续扩大的原因,不是同一批东西。",
+   "svg": "<svg viewBox='0 0 640 360' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='28' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>原因和结果,在这里换了位置</text><rect x='244' y='56' width='152' height='48' rx='8' style='fill:var(--cinnabar-pure)'/><text x='320' y='86' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--paper-raised)'>机器与廉价煤</text><rect x='452' y='138' width='152' height='48' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.3'/><text x='528' y='159' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>成本骤降</text><text x='528' y='178' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>棉布倾销全球</text><rect x='452' y='234' width='152' height='48' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.3'/><text x='528' y='255' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>他国手工纺织萎缩</text><text x='528' y='274' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>市场转到英国手里</text><rect x='244' y='288' width='152' height='48' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.3'/><text x='320' y='309' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>更大的工厂</text><text x='320' y='328' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>更多的煤与铁</text><rect x='36' y='234' width='152' height='48' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.3'/><text x='112' y='255' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>财富养海军</text><text x='112' y='274' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>海军保航路</text><rect x='36' y='138' width='152' height='48' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.3'/><text x='112' y='159' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>更廉价的原料</text><text x='112' y='178' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>更稳的市场</text><path d='M396,86 C440,96 476,116 500,134' fill='none' style='stroke:var(--ink-faint)' stroke-width='1.5'/><polygon points='506,140 498,128 492,138' style='fill:var(--ink-faint)'/><path d='M528,186 L528,228' style='stroke:var(--ink-faint)' stroke-width='1.5'/><polygon points='528,234 523,224 533,224' style='fill:var(--ink-faint)'/><path d='M470,282 C440,300 420,308 400,312' fill='none' style='stroke:var(--ink-faint)' stroke-width='1.5'/><polygon points='394,314 404,306 405,316' style='fill:var(--ink-faint)'/><path d='M244,312 C220,308 200,300 174,282' fill='none' style='stroke:var(--ink-faint)' stroke-width='1.5'/><polygon points='168,278 176,290 182,280' style='fill:var(--ink-faint)'/><path d='M112,234 L112,192' style='stroke:var(--ink-faint)' stroke-width='1.5'/><polygon points='112,186 107,196 117,196' style='fill:var(--ink-faint)'/><path d='M140,134 C164,116 200,96 244,86' fill='none' style='stroke:var(--ink-faint)' stroke-width='1.5'/><polygon points='250,84 238,80 240,91' style='fill:var(--ink-faint)'/><text x='320' y='196' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>这个圈转起来之后</text><text x='320' y='220' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar-pure)'>已经不需要最初那两样偶然了</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "这一段有个不太舒服的推论:**分流一旦开始,强弱关系本身就变成了新的原因。**十九世纪中叶之后,炮舰、条约、关税自主权的丧失、赔款,都在把差距进一步撑大。这些事在一七五〇年是不存在的,它们是分流的**结果**,而后又成了分流延续的**原因**。理解这个先后顺序很重要:它既不允许你把一切归咎于外部侵略(因为分岔在此之前已经开始),也不允许你把它们当成无关的枝节(因为它们确实在加码)。"
+  },
+  {
+   "type": "quote",
+   "original": "解释分流为何开始的原因,与解释分流为何越来越大的原因,不是同一批东西。",
+   "translation": "这是全章最该记住的一句。很多争论之所以各说各话,是因为一方在谈起点、另一方在谈过程,而两者的机制确实不同。"
+  },
+  {
+   "type": "p",
+   "text": "顺带纠正一个常见印象:工业革命本身并不是一场烟花。后来的量化研究发现,英国在所谓革命期间的整体经济增长率其实相当温和,变化集中在棉纺、冶铁、采煤等少数部门,大部分行业照旧慢慢走。**它更像一场持续几十年的渗透,而不是某一年的爆炸。**这个修正对本章很重要:急转的曲线是就长时段而言的,若把镜头拉近,你会看到一个漫长、局部、时断时续的过程——所以「哪一年」这个问题本身,永远不会有一个干净的答案。"
+  },
+  {
+   "type": "h2",
+   "text": "三、反方的形状:更早"
+  },
+  {
+   "type": "p",
+   "text": "过去二十年,最有力的挑战来自量化经济史。**布罗德伯里等人**用历史国民账户的方法把中国的人均产出一路倒推到一千年前,结论是:中国的高点在宋代,此后长期缓慢回落;意大利在十四世纪前后超过中国,荷兰与英国在十八世纪之前就已经领先。**艾伦以及布罗德伯里与古普塔**从工资与物价入手,把工资折成同一篮子生活必需品来比,发现中国主要城市的实际工资更接近欧洲的落后地区,而不是伦敦与阿姆斯特丹;按这条线索,分流的起点要推到十七世纪甚至更早。"
+  },
+  {
+   "type": "p",
+   "text": "最耐人寻味的是**李伯重与范赞登**的合作。李伯重是江南研究的权威,立场上一直是「东亚不落后」这一派的重要支撑;但他与范赞登用同一套方法对比十九世纪二十年代的江南某地与荷兰,得出的结论是荷兰已明显领先。这个时点在彭慕兰的分岔之后,不算直接推翻,可差距之大让人怀疑起点更早。**当同路人的数据也指向这个方向时,分量就不一样了。**"
+  },
+  {
+   "type": "callout",
+   "tone": "mute",
+   "label": "别急着算总账",
+   "items": [
+    "这些反方研究彼此也不一致:有人说十七世纪,有人说十四世纪,有人说宋代之后。**它们只在一点上一致——比彭慕兰早。**方向一致而落点分散,通常说明数据还没有硬到能定案。",
+    "同时也要看到,这些研究几乎都承认一件事:**江南仍然是当时中国最好的地区,水平高于欧洲的多数地方。**争的是它与英格兰、荷兰这两个尖子的差距,而不是它与欧洲平均水平的差距。这个分寸,在转述时很容易被丢掉。"
+   ]
+  },
+  {
+   "type": "p",
+   "text": "不过量化这条路也有它自己的偏向,值得说明白。把不同地方的工资放到一起比,必须先折算:先把工资换成白银,再把白银换成一篮子生活必需品。**可两地的「必需品篮子」根本不一样**——中国人的口粮是米,欧洲人的是面包与啤酒;两地的相对价格结构也不同,同样一份工钱在两处能买的东西差别很大。折算里的每一步都要做假设,而假设的方向往往会系统性地偏向某一边。**这不是说这些研究不可靠,而是说它们的结论天然带着方法的指纹。**"
+  },
+  {
+   "type": "h2",
+   "text": "四、为什么这么难定"
+  },
+  {
+   "type": "p",
+   "text": "第一个原因是数据。十八世纪的两边都没有统计局,所有数字都得从税册、账本、方志、物价簿里重建,再用一套折算规则换成可比单位。**折算规则一改,结论就动。**这一点第九章会细说。"
+  },
+  {
+   "type": "p",
+   "text": "第二个原因更根本:**「分流」到底指什么分开了?**至少有四种可能:人均产出分开、生活水平分开、技术能力分开、增长机制分开。这四样完全可以在不同的时间分开。举个例子:即便两地的人均产出在一七五〇年还差不多,**增长的引擎可能早已不同**——一边靠增加工时,一边已经在往「用机器替人」的方向试探。若按产出算,分流很晚;若按机制算,分流很早。**两边可能都对,只是量的不是同一件事。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "也许分流不是一个点,而是一束先后错开的线:不同的指标在不同的时间分开。这样看,「哪一年」这个问题本身就问得太粗——更有意义的追问是「哪一项,什么时候」。",
+   "svg": "<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='28' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>分流也许不是一个点</text><line x1='176' y1='250' x2='600' y2='250' style='stroke:var(--line)' stroke-width='1.3'/><text x='210' y='270' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>1300</text><text x='330' y='270' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>1600</text><text x='430' y='270' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>1750</text><text x='530' y='270' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>1850</text><text x='40' y='80' font-size='12.5' style='fill:var(--ink)'>增长机制</text><line x1='176' y1='74' x2='330' y2='74' style='stroke:var(--ink-faint)' stroke-width='2' stroke-dasharray='4 4'/><line x1='330' y1='74' x2='596' y2='74' style='stroke:var(--cinnabar-pure)' stroke-width='3'/><circle cx='330' cy='74' r='4' style='fill:var(--cinnabar-pure)'/><text x='40' y='124' font-size='12.5' style='fill:var(--ink)'>技术能力</text><line x1='176' y1='118' x2='400' y2='118' style='stroke:var(--ink-faint)' stroke-width='2' stroke-dasharray='4 4'/><line x1='400' y1='118' x2='596' y2='118' style='stroke:var(--cinnabar-pure)' stroke-width='3'/><circle cx='400' cy='118' r='4' style='fill:var(--cinnabar-pure)'/><text x='40' y='168' font-size='12.5' style='fill:var(--ink)'>人均产出</text><line x1='176' y1='162' x2='450' y2='162' style='stroke:var(--ink-faint)' stroke-width='2' stroke-dasharray='4 4'/><line x1='450' y1='162' x2='596' y2='162' style='stroke:var(--cinnabar-pure)' stroke-width='3'/><circle cx='450' cy='162' r='4' style='fill:var(--cinnabar-pure)'/><text x='40' y='212' font-size='12.5' style='fill:var(--ink)'>生活水平</text><line x1='176' y1='206' x2='490' y2='206' style='stroke:var(--ink-faint)' stroke-width='2' stroke-dasharray='4 4'/><line x1='490' y1='206' x2='596' y2='206' style='stroke:var(--cinnabar-pure)' stroke-width='3'/><circle cx='490' cy='206' r='4' style='fill:var(--cinnabar-pure)'/><text x='320' y='292' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>(示意)虚线=尚未分开,实线=已经分开;圆点是各自的分岔时刻</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "第三个原因是**参照系在动**。我们今天说「差距」,脑子里装的是二十世纪的画面:一边是流水线、铁路、电力,一边是牛耕与手工。可在一七五〇年,这套画面里的东西一样都还没有。当时的人若要判断哪边更发达,会看城市的规模、市集的热闹、织机的多少、粮价稳不稳——**按那个年代的评判标准,江南拿的分数不低。**用后来的尺子回头量前面的时代,本身就是一种事后归因,这正是第一章要提防的毛病。"
+  },
+  {
+   "type": "h2",
+   "text": "五、分流之后,以及分流之后的分流"
+  },
+  {
+   "type": "p",
+   "text": "还有一件事值得摆进来:**十九世纪的中国不只是没跟上,而是绝对地退了。**人口在一百年里增长了三分之一以上,人均耕地持续下降;鸦片战争之后是持续的战乱,太平天国造成的死亡以千万计,江南这个最富的核心区被打得残破不堪。**这些不是「没有工业革命」的后果,而是另一堆事情。**把它们与分流混为一谈,会高估分流本身的破坏力。"
+  },
+  {
+   "type": "p",
+   "text": "反过来看,二十世纪后期东亚的追赶,在彭慕兰的框架里并不奇怪。如果分流的原因是煤的位置与殖民地这类具体条件,而不是某种深植于文明内部的缺陷,那么**当条件改变——能源可以买、技术可以学、市场可以进——追赶就是可预期的。**相反,如果分流真的源于文化或制度基因,那么这场追赶就成了需要额外解释的谜。这也是这套框架至今仍被反复引用的原因之一:它对后来发生的事,给出了一个自洽的位置。"
+  },
+  {
+   "type": "pull",
+   "text": "争的从来不是年份。定在一八〇〇年,答案是运气;定在一三〇〇年,答案是本性。"
+  },
+  {
+   "type": "p",
+   "text": "读到这里,你可以把这一章的方法收进口袋:**看到任何「A 比 B 强」的判断,先问差距是什么时候出现的。**公司之间、行业之间、地区之间都一样。差距若是三十年慢慢拉开的,原因大概在积累与惯性里;若是三年内突然拉开的,原因多半在某一次具体的转折上——某项技术、某个政策、某笔资源。**把这两种混为一谈,是最常见的误诊。**"
+  }
+ ]
+}

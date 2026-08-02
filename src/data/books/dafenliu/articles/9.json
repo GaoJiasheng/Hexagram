@@ -1,0 +1,135 @@
+{
+ "title": "数据撑得住吗:工资、GDP 与缺席的国家",
+ "subtitle": "二十多年里,一批人拿着计算器重算了这本书的每一笔账,另一批人问了一个它几乎没提的问题:国家去哪儿了?",
+ "centralIdea": "《大分流》出版之后,对它最持久的压力来自两个方向。一个方向是重算:艾伦一派把各地工资折成同一篮子生活必需品来比,发现中国主要城市的实际工资更接近欧洲的落后地区而非伦敦与阿姆斯特丹;而艾伦自己又把英国的高工资当成机械化的原因——人贵、煤便宜,用机器换人才划算,这是一种半友半敌的立场:同意煤重要,不同意生活水平相当。布罗德伯里等人用历史国民账户把中国人均产出一路倒推到一千年前,把高点放在宋代,此后长期回落。另一个方向是补缺:弗里斯指出书里几乎不谈国家,而英国那台能借钱、能征税、能养舰队的财政—军事机器,与清朝那个税负极轻、不举债、不设垄断贸易公司的小政府,差别大到不能忽略;莫基尔则把重点放在「有用知识」的文化上——工匠的手艺与学者的原理能不能接通。要紧的是同时记住数据的脆弱:十八世纪没有统计局,每个数字背后都是一条假设链,链条上任一环松动,结论就会跟着动。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "一本书出版二十多年后仍被反复讨论,通常有两种原因:它说对了,或者它把问题提得足够具体,具体到别人可以拿数字来跟它较真。《大分流》属于后者。**它给出的每一个「大体相当」,都是一句可以被重算的话**——而过去二十多年,一大批经济史学者确实把它们逐一重算了一遍。这一章讲的是那些重算,以及一个更根本的追问:这本书从头到尾几乎没有谈到的那个东西——国家——真的可以不谈吗?"
+  },
+  {
+   "type": "h2",
+   "text": "一、先弄清数字是怎么来的"
+  },
+  {
+   "type": "p",
+   "text": "十八世纪的中国与英国都没有统计局。所有关于产出、工资、消费的数字,都是研究者从税册、账本、方志、物价簿、族谱、海关记录里一点点拼出来的。拼的过程大致是这样:先找到一批零散记载,再假定它们能代表更大的范围,再选一套折算规则把不同单位换算成可比的东西,最后加总。**每一步都要做假设,而假设是可以换的。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "链条图",
+   "caption": "一个历史数字是怎么造出来的。四道假设串在一起,任何一环换个选择,最终结论都会动。这不是说这些研究不严肃——相反,它们通常会把假设写得清清楚楚;要提防的是转述者,他们往往只搬走结论,把假设留在原地。",
+   "svg": "<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='28' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>一个数字背后的四道假设</text><rect x='30' y='70' width='134' height='72' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='97' y='96' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>零散记载</text><text x='97' y='118' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>某县某年的账册</text><rect x='188' y='70' width='134' height='72' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='255' y='96' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>代表性假设</text><text x='255' y='118' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>它能代表整个区域吗</text><rect x='346' y='70' width='134' height='72' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='413' y='96' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>折算规则</text><text x='413' y='118' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>石 → 斤 → 卡 → 银</text><rect x='504' y='70' width='134' height='72' rx='8' style='fill:var(--cinnabar-pure)'/><text x='571' y='96' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--paper-raised)'>可比的数字</text><text x='571' y='118' text-anchor='middle' font-size='11' style='fill:var(--paper-raised)'>被引用的那一个</text><path d='M166,106 L184,106' style='stroke:var(--ink-faint)' stroke-width='1.4'/><polygon points='190,106 180,101 180,111' style='fill:var(--ink-faint)'/><path d='M324,106 L342,106' style='stroke:var(--ink-faint)' stroke-width='1.4'/><polygon points='348,106 338,101 338,111' style='fill:var(--ink-faint)'/><path d='M482,106 L500,106' style='stroke:var(--ink-faint)' stroke-width='1.4'/><polygon points='506,106 496,101 496,111' style='fill:var(--ink-faint)'/><text x='97' y='172' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>样本本身可能有偏</text><text x='255' y='172' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>换个县,结论就变</text><text x='413' y='172' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>两地的篮子并不相同</text><text x='571' y='172' text-anchor='middle' font-size='11' style='fill:var(--cinnabar-pure)'>误差在这里汇总</text><rect x='120' y='210' width='400' height='54' rx='9' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.3'/><text x='320' y='234' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>看到任何历史数字,先问一句:</text><text x='320' y='254' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>它是数出来的,还是算出来的?</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "二、把工资折成一篮子面包"
+  },
+  {
+   "type": "p",
+   "text": "在看结论之前,先记住这条路子自带的一个盲点:**它比的是雇工的工资。**十八世纪的英格兰,拿日薪的雇工已经是相当常见的一群人,工资能大体代表普通人的处境;而同期的中国农村,主流是自家种自家地、全家一起干的小农家庭,雇工只是其中一小部分,而且往往是最没有依靠的那部分人。**拿一个边缘群体的工价去代表整个社会的生活水平,本身就可能压低读数。**这不是致命缺陷,但足以说明为什么这类比较很难一锤定音。"
+  },
+  {
+   "type": "p",
+   "text": "最有影响的重算路线来自艾伦一派。思路很朴素:光比工资的数额没有意义,因为各地的钱不一样、物价不一样;那就把工资先换成白银,再看这些银子能买多少**同一篮子生活必需品**——粮食、豆类、油、燃料、布。这个比值高,说明日子好过。这套方法后来被用到欧洲、中国、日本、印度的许多城市上。"
+  },
+  {
+   "type": "p",
+   "text": "结论对《大分流》不太友好:按这套算法,北京、广州、苏州等地的实际工资水平,更接近欧洲的中等与落后地区(比如意大利、德意志的一些城市),而明显低于伦敦与阿姆斯特丹。**也就是说,若拿最尖的比最尖,差距在十八世纪已经存在。**当然,数据本身也有争议——中国的工资记录来源有限,而且雇工在当时的中国农村并非主流的劳动形态,用它代表整体生活水平是否合适,一直有人质疑。"
+  },
+  {
+   "type": "callout",
+   "tone": "note",
+   "label": "一处反转",
+   "items": [
+    "有意思的是,艾伦并没有因此回到「欧洲文化优越」的老路上去。他的解释是**「高工资经济」**:正因为英国人工贵、煤便宜,用机器替代人力才算得过账;在人工便宜的地方,即便造得出机器,也不划算装。",
+    "这个说法有两层效果。一方面它拆了彭慕兰的「生活水平相当」;**另一方面它又强化了彭慕兰的另一半——煤的便宜确实是关键变量。**更妙的是,它给「中国为什么不机械化」提供了一个完全非文化的答案:**不是不懂,是不划算。**这一点与彭慕兰的精神其实是相通的。"
+   ]
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "caption": "实际工资比较的大致图景(示意,非精确数据)。要点是:江南与中国主要城市并不垫底,它们落在欧洲的中段;真正拉开距离的是伦敦与阿姆斯特丹这两个尖子。所以这份数据既反驳了「两地相当」,也反驳了「中国远远落后」。",
+   "svg": "<svg viewBox='0 0 640 330' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='28' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>同一篮子必需品,能买几篮</text><text x='40' y='76' font-size='12.5' style='fill:var(--ink)'>伦敦</text><rect x='170' y='62' width='300' height='20' rx='3' style='fill:var(--ink-soft)'/><text x='40' y='110' font-size='12.5' style='fill:var(--ink)'>阿姆斯特丹</text><rect x='170' y='96' width='282' height='20' rx='3' style='fill:var(--ink-soft)'/><text x='40' y='144' font-size='12.5' style='fill:var(--ink)'>江南</text><rect x='170' y='130' width='188' height='20' rx='3' style='fill:var(--cinnabar-pure)'/><text x='40' y='178' font-size='12.5' style='fill:var(--ink)'>意大利 · 德意志诸城</text><rect x='170' y='164' width='176' height='20' rx='3' style='fill:var(--ink-faint)' opacity='0.7'/><text x='40' y='212' font-size='12.5' style='fill:var(--ink)'>北京 · 广州</text><rect x='170' y='198' width='164' height='20' rx='3' style='fill:var(--cinnabar-pure)' opacity='0.75'/><text x='40' y='246' font-size='12.5' style='fill:var(--ink)'>欧洲较贫困地区</text><rect x='170' y='232' width='140' height='20' rx='3' style='fill:var(--ink-faint)' opacity='0.55'/><line x1='170' y1='54' x2='170' y2='258' style='stroke:var(--line)' stroke-width='1.2'/><text x='320' y='292' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>(示意图,不代表具体数值;不同研究的排序与幅度互有出入)</text><text x='320' y='316' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>拿最尖比最尖,差距已在;拿中段比中段,差距不大——所以结论取决于你比哪两个</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "三、把 GDP 倒推一千年"
+  },
+  {
+   "type": "p",
+   "text": "另一条路更宏大:用历史国民账户的方法,把一个经济体的产出结构一层层复原,估算出各个世纪的人均 GDP。布罗德伯里与合作者对中国做了这项工作,时间跨度从北宋一直到十九世纪中叶。他们的结论是:**中国人均产出的高点出现在宋代,此后长期缓慢下滑;意大利在十四世纪前后超过中国,荷兰与英国在十八世纪之前就已经领先。**若这套估算成立,那么分流的起点要比一八〇〇年早得多。"
+  },
+  {
+   "type": "p",
+   "text": "还有一项特别值得一提:李伯重与范赞登合作,把十九世纪二十年代江南的一个具体地区与荷兰做了细致对比,结论是荷兰已明显领先。**李伯重本人是「江南不落后」这一派最重要的实证支柱之一,他的数据指向这个方向,分量就格外不同。**当然,这个时点在彭慕兰的分岔之后,不构成直接反驳,但差距之大,让人怀疑起点更早。"
+  },
+  {
+   "type": "p",
+   "text": "这条路的力气很大,局限也一样大,而且做这项工作的人自己写得很清楚:把一个前现代经济拆成农业、手工业、服务业再逐项估产,需要海量的替代性假设——用某几个州的亩产代表全国、用某个时期的价格反推另一个时期、用后世的结构比例往前套。**误差不是随机分布的,它会顺着假设的方向系统性地偏。**所以这些曲线更适合看**趋势的形状**,不适合抠某一年的具体数值;而恰恰在「形状」这个层面,不同团队的结论还没有收敛。"
+  },
+  {
+   "type": "h2",
+   "text": "四、缺席的国家"
+  },
+  {
+   "type": "p",
+   "text": "第三种压力完全不谈数字,它问的是:**这本书为什么几乎不谈国家?**弗里斯把这一点做成了系统的批评。他的对照非常刺眼:同一时期的英国是一台「财政—军事国家」——它有能力从社会中抽取很高比例的税收,有能力靠国债借到巨额资金,有一家中央银行、一支世界最强的海军、一套航海法与特许垄断公司,还有议会通过的、专门服务于本国制造业的关税与专利安排。"
+  },
+  {
+   "type": "p",
+   "text": "清朝几乎是它的反面。田赋的基准长期冻结不动,朝廷刻意维持极低的税负;财政规模占经济的比重很小,不举国债,不设垄断贸易公司,也没有一支用来护送商船、开拓市场的远洋海军。**在很多现代人的直觉里,「税少、政府小」是好事;可弗里斯要说的恰恰是:那台看似贪婪的英国机器,正是在替它的制造业开路、买单、护航。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照图",
+   "caption": "弗里斯提出的那个缺口。这一栏栏摆开会发现:两边的国家能力不在一个量级上。这不是道德评价——高税负与常年战争对当时的英国人是苦事——而是指出一个被《大分流》放在视野之外的巨大结构差异。",
+   "svg": "<svg viewBox='0 0 640 320' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='28' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>两台性质完全不同的国家机器</text><text x='234' y='62' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink-soft)'>英国</text><text x='476' y='62' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>清朝</text><line x1='36' y1='72' x2='604' y2='72' style='stroke:var(--line)' stroke-width='1'/><text x='40' y='100' font-size='12.5' style='fill:var(--ink)'>税负</text><text x='234' y='100' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>人均税负高,且持续上升</text><text x='476' y='100' text-anchor='middle' font-size='12' style='fill:var(--cinnabar-pure)'>刻意维持轻税,基准长期冻结</text><line x1='36' y1='114' x2='604' y2='114' style='stroke:var(--line)' stroke-width='0.8'/><text x='40' y='142' font-size='12.5' style='fill:var(--ink)'>举债</text><text x='234' y='142' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>国债 + 中央银行,能打长期战争</text><text x='476' y='142' text-anchor='middle' font-size='12' style='fill:var(--cinnabar-pure)'>基本不举债,靠库存银两</text><line x1='36' y1='156' x2='604' y2='156' style='stroke:var(--line)' stroke-width='0.8'/><text x='40' y='184' font-size='12.5' style='fill:var(--ink)'>海上力量</text><text x='234' y='184' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>常备海军护航并开拓市场</text><text x='476' y='184' text-anchor='middle' font-size='12' style='fill:var(--cinnabar-pure)'>无远洋海军,不为商船护航</text><line x1='36' y1='198' x2='604' y2='198' style='stroke:var(--line)' stroke-width='0.8'/><text x='40' y='226' font-size='12.5' style='fill:var(--ink)'>贸易组织</text><text x='234' y='226' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>特许垄断公司 + 航海法</text><text x='476' y='226' text-anchor='middle' font-size='12' style='fill:var(--cinnabar-pure)'>商人自组商帮,无国家背书</text><line x1='36' y1='240' x2='604' y2='240' style='stroke:var(--line)' stroke-width='0.8'/><text x='40' y='268' font-size='12.5' style='fill:var(--ink)'>产业政策</text><text x='234' y='268' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>关税与专利偏向本国制造业</text><text x='476' y='268' text-anchor='middle' font-size='12' style='fill:var(--cinnabar-pure)'>以稳粮价、赈灾荒为要务</text><text x='320' y='306' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>「小政府有利于经济」这句常识,在这张表前面要打个问号</text></svg>"
+  },
+  {
+   "type": "p",
+   "text": "彭慕兰并非完全无视国家,他在书中确实谈到了武装贸易与殖民扩张——那本身就是国家行为。但他的重心放在**资源与生态**上,国家更多是背景板而不是主角。而弗里斯要说的是:如果两边的市场、人口、技术都差不多,那么剩下最大的结构差异就在这里,不该被放进背景。**这个批评的分量在于它没有回到「欧洲精神」的老路上**——财政、国债、海军、关税都是硬邦邦、可测量的东西,它把「制度重要」这句话变成了可以查账的主张。"
+  },
+  {
+   "type": "h2",
+   "text": "五、另一种补缺:有用的知识"
+  },
+  {
+   "type": "p",
+   "text": "莫基尔补的是另一块。他关注的不是「文化」这种笼统的东西,而是一个具体的机制:**工匠手里的经验,和学者头脑里的原理,能不能接上?**他认为十八世纪的西欧出现了一种「工业启蒙」——学者们开始认真对待作坊里的问题,工匠开始接触系统的原理;通信网络、学会、百科全书、公开讲座把这两群人连了起来,使得改良不再是一次次孤立的巧思,而是可以累积、可以传播、可以被别人接着往下做的东西。"
+  },
+  {
+   "type": "p",
+   "text": "这条线与老式的文化论不同:它讲的不是民族性格,而是**知识流通的制度安排**。这也让它更难被彭慕兰式的反驳打中——因为它并不主张欧洲人更聪明,只主张那里的知识更容易被汇集与复用。至于中国是否也存在类似机制、程度如何,仍是一个有争议的经验问题。"
+  },
+  {
+   "type": "p",
+   "text": "把弗里斯与莫基尔放在一起看还能发现一件事:**他们补的其实是同一个缺口的两半。**一边是国家如何把资源、武力与法律组织起来推着产业走,一边是社会如何把分散的知识汇集起来让改良能够累积。这两样都属于「组织能力」,都不是自然禀赋,也都不是民族性格。**这也是这场二十多年的争论最健康的地方:即便是反对彭慕兰最力的人,也没有退回「因为他们是欧洲人」那种解释。**在这个意义上,他这本书要打的那一仗,其实已经赢了。"
+  },
+  {
+   "type": "quote",
+   "original": "十八世纪没有统计局,所以这里的每一个数字,都是一次带着假设的重建。",
+   "translation": "读所有这些争论时,这句话应当一直悬在心里。数字看起来比文字硬,但历史数字的硬度取决于它背后那条假设链——链子有多长,数字就有多软。"
+  },
+  {
+   "type": "h2",
+   "text": "六、二十多年后,领域变成了什么样"
+  },
+  {
+   "type": "p",
+   "text": "把这些压力加在一起,《大分流》的处境大致是:**它的具体结论受到严重挑战,它的提问方式却几乎成了标准配置。**今天很少有严肃学者还会简单地说「欧洲一直遥遥领先」——那种叙述在方法上已经站不住;但也很少有人敢说「一七五〇年两地完全相当」——量化研究的压力太大了。多数人的位置在中间:**分流是多因素、多阶段的,不同指标在不同时间分开,而煤与殖民地是其中真实且重要的一部分,但不是全部。**"
+  },
+  {
+   "type": "p",
+   "text": "这其实是一本书最体面的下场。它没有变成教条,也没有被扫进废纸堆,而是**把整个领域的讨论水位抬高了一截**:此后任何人要谈东西方比较,都得先说清楚自己比的是哪两个单位、用的是哪一年的数据、依据的是哪套折算。这三条要求,在这本书出版之前并不是常规。"
+  },
+  {
+   "type": "pull",
+   "text": "数字看起来比文字硬。但历史里的数字,硬度取决于它背后那条假设链有多长。"
+  },
+  {
+   "type": "p",
+   "text": "最后给一条实用的读法。以后再看到任何跨时空、跨国别的量化比较——历史 GDP、幸福指数、城市排名、行业对标——可以顺手问三个问题:**这个数字是数出来的还是算出来的?折算时用了谁的标准?换一个合理的假设,结论会不会翻?**这三问不需要专业知识,却能挡掉大部分似是而非的结论。这大概是这一章最值钱的东西。"
+  }
+ ]
+}

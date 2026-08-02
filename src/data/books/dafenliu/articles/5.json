@@ -1,0 +1,155 @@
+{
+ "title": "煤在哪里:一场地质学的运气",
+ "subtitle": "问题从来不是英国有没有煤——中国的煤更多。问题是煤埋在离用它的人多远的地方,以及矿井里进的是水还是空气",
+ "centralIdea": "在化石燃料大规模使用之前,人类能拿到的几乎全部能量都来自当年的阳光:粮食、柴薪、牲畜的草料、水力风力,统统要占地。里格利把这种状态叫「有机经济」,它可以很繁荣,但上限被土地锁死。十八世纪末,英格兰与江南都撞上了这块天花板。煤是唯一能绕开它的东西——那是几亿年前积攒下来的阳光,不占地。但煤能不能被用起来,取决于三重巧合:第一,英国的煤浅、靠近水运、又恰好埋在人口与作坊密集处,而前工业时代的陆运成本高到能让煤在一百多里外就变得不值得挖;第二,英国的矿井会积水,抽水成了刚需,于是效率低到荒唐的早期蒸汽机在坑口找到了唯一划算的场景——那里的燃料几乎不要钱;第三,煤养机器、机器挖更多煤,正反馈一转起来就再没停过。中国这边三条都没接上:大煤田在西北,离江南上千里且无水道直达;北方矿井偏干,怕的是自燃与通风,「因为要抽水所以造机器」这条线索根本没出现;宋代华北曾有过煤铁重镇,战乱与河道变迁后经济重心南移,链条断了。这不是优越性,也不是宿命,是位置。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "先破一个常见的误解:**英国的煤储量并不比中国多,恰恰相反,中国的煤储量大得多。**如果「有煤」就足以引发工业革命,那这场革命该发生在山西。彭慕兰这一章要讲的,是一件比「有没有」精细得多的事——煤埋在离用它的人多远的地方,埋得深还是浅,运出去要花多少钱,以及一个听起来毫不重要的细节:**矿井里渗进来的是水,还是空气。**这几个问题的答案,把两个原本相似的地方送上了完全不同的轨道。"
+  },
+  {
+   "type": "h2",
+   "text": "一、天花板长什么样"
+  },
+  {
+   "type": "p",
+   "text": "要理解煤的意义,得先理解没有煤的世界是什么样。经济史家里格利把工业革命之前的经济叫「有机经济」:它所能动用的一切能量,归根到底都来自**当年的阳光**。粮食是阳光变的,柴薪是阳光变的,拉车的牛马吃的草料是阳光变的,连水车转动靠的水循环也是太阳晒出来的。而阳光要被收集起来,只有一个装置——土地。"
+  },
+  {
+   "type": "p",
+   "text": "于是所有需求都在抢同一块地:多种一亩棉花就少一亩粮,多留一片林子烧柴就少一片田。**这个经济可以很繁荣、很精致、很商业化,但它的上限被土地面积锁死了。**打个比方:整个社会像一个只能靠当月工资过活的家庭,没有存款,收入天花板就是天花板,再会理财也变不出第二份收入。"
+  },
+  {
+   "type": "p",
+   "text": "十八世纪后期,英格兰与江南都撞上了这块天花板。英格兰的森林早已大面积消失,木材要从波罗的海进口,柴薪价格节节上涨;江南更极端,那里的燃料主要靠稻草、桑柴与芦苇,连做饭的柴都得精打细算,烧砖烧瓷的窑业常年为燃料发愁。**两边都在同一堵墙前面站着。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "caption": "两种经济的能量来源。左边只能花「当年的阳光」,一切能量都要占地,所以土地就是天花板;右边动用的是几亿年前积攒下来的阳光,不占地、几乎无上限。工业革命的实质,是从左边跨到右边。",
+   "svg": "<svg viewBox='0 0 640 330' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='28' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>当年的阳光,与几亿年的存款</text><rect x='24' y='52' width='280' height='214' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='164' y='78' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--ink)'>有机经济</text><circle cx='164' cy='112' r='16' style='fill:var(--ink-faint)' opacity='0.6'/><text x='164' y='117' text-anchor='middle' font-size='11' style='fill:var(--paper-raised)'>阳光</text><line x1='164' y1='130' x2='164' y2='148' style='stroke:var(--ink-faint)' stroke-width='1.4'/><rect x='60' y='150' width='208' height='26' rx='4' style='fill:var(--ink-faint)' opacity='0.45'/><text x='164' y='168' text-anchor='middle' font-size='12' style='fill:var(--ink)'>土地(唯一的收集装置)</text><text x='164' y='198' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>粮食 · 柴薪 · 草料 · 纤维 · 木材</text><text x='164' y='222' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>全都要占地,互相挤</text><text x='164' y='246' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>上限 = 国土面积</text><rect x='336' y='52' width='280' height='214' rx='10' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='476' y='78' text-anchor='middle' font-size='14' font-weight='bold' style='fill:var(--ink)'>矿物能源经济</text><rect x='396' y='96' width='160' height='22' rx='3' style='fill:var(--ink-faint)' opacity='0.3'/><rect x='396' y='122' width='160' height='22' rx='3' style='fill:var(--ink-faint)' opacity='0.45'/><rect x='396' y='148' width='160' height='26' rx='3' style='fill:var(--cinnabar-pure)'/><text x='476' y='167' text-anchor='middle' font-size='12' style='fill:var(--paper-raised)'>煤层</text><text x='476' y='198' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>几亿年前的阳光,压在地下</text><text x='476' y='222' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>不占地面,不与粮食争田</text><text x='476' y='246' text-anchor='middle' font-size='12' style='fill:var(--cinnabar-pure)'>上限 = 挖得动多少</text><text x='320' y='306' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>只靠当月工资过活的家庭,与突然发现自己有一笔祖产的家庭——差别就是这么大</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "二、煤有多划算"
+  },
+  {
+   "type": "p",
+   "text": "煤的意义正在于它不占地。里格利做过一个著名的换算:**如果十九世纪前期英国烧掉的煤改用木柴来提供同等热量,所需的薪炭林面积会超过整个不列颠的国土。**也就是说,把这个岛从海岸到山顶全部种上树,再全部砍来烧,也供不上它当时的能耗。这不是修辞,这是量级——煤把土地这个约束整个绕开了。"
+  },
+  {
+   "type": "figure",
+   "ftype": "换算图",
+   "caption": "把煤换算成木柴,是理解这件事最直观的方式。里格利的估算显示,十九世纪前期英国的煤耗若改用薪炭林供应,所需林地已超过不列颠的国土面积——把整个岛种满树也不够烧。煤不是「多了一种燃料」,而是把土地这个天花板整个拆掉了。",
+   "svg": "<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='28' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>把煤折算成森林</text><text x='40' y='84' font-size='13' style='fill:var(--ink)'>不列颠国土面积</text><rect x='224' y='68' width='210' height='28' rx='4' style='fill:var(--ink-faint)' opacity='0.55'/><text x='448' y='88' font-size='11.5' style='fill:var(--ink-soft)'>整个岛</text><text x='40' y='140' font-size='13' style='fill:var(--ink)'>供同等热量所需林地</text><rect x='224' y='124' width='310' height='28' rx='4' style='fill:var(--cinnabar-pure)'/><text x='548' y='144' font-size='11.5' style='fill:var(--cinnabar-pure)'>还不够</text><text x='320' y='184' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>(示意,非精确比例;不同年份与折算口径下的数字差别不小)</text><rect x='96' y='208' width='448' height='62' rx='9' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.3'/><text x='320' y='234' text-anchor='middle' font-size='13' style='fill:var(--ink)'>结论不是「英国燃料充足」</text><text x='320' y='256' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar-pure)'>而是「有机经济根本供不起工业革命」</text></svg>"
+  },
+  {
+   "type": "quote",
+   "original": "煤不是多了一种燃料,而是把「一切能量都要占地」这条规矩废掉了。",
+   "translation": "这是理解这一章的钥匙。在此之前,任何增长最终都会撞上土地;在此之后,能量供给与土地面积脱了钩。工业革命的物质基础,就是这次脱钩。"
+  },
+  {
+   "type": "p",
+   "text": "但「地下有煤」离「用得上煤」还隔着很远。煤又重又不值钱,运输成本是它的死穴:在只有畜力车与土路的年代,一车煤走上一百多里,运费就能超过煤本身的价钱;再远,这笔生意就不成立。**所以真正决定命运的不是储量,是储量与用户之间的距离,以及这段距离上有没有水路。**"
+  },
+  {
+   "type": "h2",
+   "text": "三、英国的三重巧合"
+  },
+  {
+   "type": "steps",
+   "items": [
+    {
+     "title": "巧合一:煤在该在的地方",
+     "text": "英国的主要煤田埋得浅、靠近可通航的河流与海岸,而且就分布在英格兰中北部——人口稠密、纺织与冶铁作坊集中的地带。挖出来装船,顺水就到用户门口。纽卡斯尔的煤从海路运到伦敦,是当时世界上规模最大的大宗货物运输之一。",
+     "state": "done"
+    },
+    {
+     "title": "巧合二:矿井会积水",
+     "text": "矿越挖越深就会渗水,不抽干就没法采。抽水是刚需,而且是一笔愿意为它花钱的刚需。早期的纽科门蒸汽机效率低到荒唐——烧掉的煤远超它省下的力气——放在任何别处都是赔本买卖,唯独放在煤矿坑口划算:那里的燃料就在脚下,近乎白送。于是这台笨机器有了一个能养活它、让它慢慢改进的地方。",
+     "state": "done"
+    },
+    {
+     "title": "巧合三:正反馈转了起来",
+     "text": "煤养活了蒸汽机,改进后的蒸汽机能抽更深的水、挖出更多的煤;煤又用来炼铁,铁用来造更好的机器与轨道,轨道再把煤运得更远更便宜。链条一旦闭合,它就开始自己给自己加速——这一步之后,已经不需要任何额外的运气了。",
+     "state": "now"
+    }
+   ]
+  },
+  {
+   "type": "p",
+   "text": "三条里最容易被略过的是第二条。我们习惯把蒸汽机当成天才发明,但一项技术能不能活下来,取决于它在**幼稚阶段**有没有一个愿意容忍它的场景。早期蒸汽机笨重、危险、极其费煤,如果它诞生在一个煤要从千里之外运来的地方,第一台就会因为烧不起而被拆掉。**它需要的不是聪明的发明家,而是一个燃料几乎免费、且非用它不可的角落。**英国的煤矿恰好就是这个角落。"
+  },
+  {
+   "type": "figure",
+   "ftype": "分岔图",
+   "caption": "一个看似无关紧要的地质细节,如何决定了技术走向。英国矿井渗水,于是「抽水」成为一个必须解决的问题,蒸汽机应运而生并被养大;中国北方矿井偏干,难题是通风与自燃,那条通往蒸汽机的路根本没有被提出来。",
+   "svg": "<svg viewBox='0 0 640 350' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='28' text-anchor='middle' font-size='19' font-weight='bold' style='fill:var(--ink)'>矿井里渗进来的是什么</text><rect x='230' y='52' width='180' height='44' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.3'/><text x='320' y='80' text-anchor='middle' font-size='13.5' style='fill:var(--ink)'>矿越挖越深</text><path d='M280,100 L176,132' style='stroke:var(--cinnabar-pure)' stroke-width='1.6'/><polygon points='168,134 180,127 180,138' style='fill:var(--cinnabar-pure)'/><path d='M360,100 L464,132' style='stroke:var(--ink-faint)' stroke-width='1.6'/><polygon points='472,134 460,127 460,138' style='fill:var(--ink-faint)'/><rect x='34' y='138' width='266' height='168' rx='10' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='167' y='164' text-anchor='middle' font-size='13.5' font-weight='bold' style='fill:var(--ink)'>英国 · 渗的是水</text><text x='167' y='190' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>不抽干就采不了 → 抽水成刚需</text><text x='167' y='214' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>坑口燃料近乎免费 → 笨机器也划算</text><text x='167' y='240' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>蒸汽机有了活下去的场景</text><text x='167' y='266' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>→ 改进 → 挖更深 → 更多煤</text><text x='167' y='290' text-anchor='middle' font-size='12' style='fill:var(--cinnabar-pure)'>→ 炼铁 · 轨道 · 工厂</text><rect x='340' y='138' width='266' height='168' rx='10' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.4'/><text x='473' y='164' text-anchor='middle' font-size='13.5' font-weight='bold' style='fill:var(--ink)'>中国北方 · 渗的是气</text><text x='473' y='190' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>矿井偏干 → 难题是通风与自燃</text><text x='473' y='214' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>要解决的是排气与防火,不是抽水</text><text x='473' y='240' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink-soft)'>没有人需要一台抽水机</text><text x='473' y='266' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>那条技术路径未被提出</text><text x='473' y='290' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>不是造不出,是没有人要它</text><text x='320' y='336' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>技术往哪个方向长,取决于有人肯为哪个问题掏钱——问题都不同,答案自然不同</text></svg>"
+  },
+  {
+   "type": "h2",
+   "text": "四、中国这边为什么没接上"
+  },
+  {
+   "type": "p",
+   "text": "**先是位置。**中国最大的煤田在西北——山西、陕西一带,而经济与人口的重心在东南的江南。两者之间隔着上千里,而且没有一条能把煤顺流送到三角洲的水道。大运河是南北向的,可它连不上山西的矿区;从矿口到运河还要走漫长的陆路,一路运费叠加,煤到江南时早已贵得不能用来烧锅炉。**这就是那道死穴:煤在这头,用煤的人在那头。**"
+  },
+  {
+   "type": "p",
+   "text": "**其次是矿井本身。**北方的煤矿偏干燥,矿工要对付的是瓦斯、粉尘、通风不良和煤层自燃,而不是积水。听起来这只是技术细节,后果却是决定性的:**没有「必须抽水」这个刚需,就没有人愿意在坑口养一台费煤的笨机器,那条通往蒸汽机的路根本没有被提出来。**技术不是凭空长出来的,它长在有人肯为之付钱的问题上面。"
+  },
+  {
+   "type": "p",
+   "text": "**最后是历史的断裂。**中国并非从未走到过这条路的门口。宋代的华北曾经有过规模可观的煤铁产业,以煤炼铁,供应军器与农具,当时的产量在世界上遥遥领先。后来女真南下、战乱频仍、黄河多次改道,华北残破,经济与人口重心南移到长江流域——**煤留在了北方,用煤的人却搬到了南方,那条已经接上的链条就此断开,再没接回去。**"
+  },
+  {
+   "type": "p",
+   "text": "江南自己也在硬撑。那里的人把能烧的都烧了:稻草、麦秸、桑枝、芦苇、豆萁,连收割后的根茬都要挖回去。这套精打细算相当高明,它让一个人口极密的地区维持住了日常生活。但它有个致命的性质——**这些燃料本身就是农业的副产品,产量被田亩绑死了。**你可以把它们用到极致,却不可能凭空多出一倍。用来煮饭尚可,用来昼夜不停地烧锅炉,从一开始就不在选项里。"
+  },
+  {
+   "type": "callout",
+   "tone": "warn",
+   "label": "两种误读",
+   "items": [
+    "**不是说英国人不聪明。**从纽科门到瓦特,一代代工匠的改进是实打实的工作,没有他们,煤也只是黑石头。彭慕兰说的是:同样的聪明才智,在别处遇不到这个问题、也拿不到这么便宜的燃料,就不会往这个方向使劲。**运气决定的不是能力,是能力被投向哪里。**",
+    "**也不是说中国注定不行。**如果宋代华北的煤铁链条没有被战乱打断,如果经济重心没有南移,故事可能完全是另一副样子。这一章讲的是历史的偶然,而偶然是双向的——它同样可以偏向另一边。"
+   ]
+  },
+  {
+   "type": "h2",
+   "text": "五、反方怎么说"
+  },
+  {
+   "type": "p",
+   "text": "在进入质疑之前,先把这一章的主张说得再精确一点,免得被简化成口号。彭慕兰并没有说「有煤就有工业革命」,他说的是:在有机经济的天花板下,**煤是当时唯一可能的出口之一**,而能不能走通这个出口,取决于一串具体到近乎琐碎的条件——埋深、水运、与用户的距离、矿井里渗的是什么、坑口的煤值几个钱。这些条件在英国凑齐了,在江南一条都不占。**主张越具体,越容易被检验,也越容易被挑毛病。**"
+  },
+  {
+   "type": "p",
+   "text": "这套论证漂亮,但也招来一个尖锐的质疑:**它是不是把历史讲得太像运气了?**批评者说,煤田的位置固然是天定的,可「把煤挖出来、运出去、用起来」需要资本、技术、法律和组织,这些不是运气。艾伦的补充最有代表性:英国之所以值得用机器代替人,是因为它同时具备两个条件——**工资高**(人贵)与**能源便宜**(煤贱)。在工资低廉的地方,即便有煤,用机器换人也不划算。照他的说法,煤很重要,但煤要与其他条件配合,才构成机械化的动机。"
+  },
+  {
+   "type": "p",
+   "text": "还有人指出:江南其实并非完全用不上煤——它可以从更近的地方获取部分燃料,只是价格更高;真正的问题也许是需求侧而非供给侧。这些质疑没有推翻这一章,但确实给它加了限定:**煤的位置是一个必要条件,而不是全部条件。**彭慕兰自己也没有说煤能单独解释一切——他的另一半答案在下一章。"
+  },
+  {
+   "type": "pull",
+   "text": "煤埋在哪里,是几亿年前的地质事件决定的。这件事与制度无关、与文化无关、与谁更勤奋更无关。"
+  },
+  {
+   "type": "h2",
+   "text": "六、可以带走的一个道理"
+  },
+  {
+   "type": "p",
+   "text": "在讲道理之前,先把这一章在全书里的位置摆正。煤只解决了四样东西里的一样——燃料。粮食、纤维、木材这三样仍然压在土地上,而英格兰的地并没有变多。**所以单靠煤,故事讲不完:纺织厂开起来了,棉花从哪儿来?**这就是为什么下一章非讲不可。第五章与第六章其实是一个论证的两半,拆开任何一半,都撑不住结论。"
+  },
+  {
+   "type": "p",
+   "text": "这一章其实讲了一个很普遍的道理:**一项新东西能不能长大,常常不取决于它有多好,而取决于早期有没有一个能容忍它的场景。**早期蒸汽机放到今天的标准看简直不能用,可煤矿坑口不在乎——那里燃料免费、问题紧迫,愿意忍受它的所有毛病。等它在这个角落里被养到足够好,才有资格走出去,进纺织厂、上铁轨、下海。"
+  },
+  {
+   "type": "p",
+   "text": "新技术几乎都是这么长大的:先在一个对成本不敏感或对痛点极敏感的小角落里活下来,再向外扩张。**所以判断一件新事物的前途,与其问「它现在够不够好」,不如问「有没有一个地方现在就非它不可」。**这个思路,比记住任何一个历史结论都更耐用。"
+  }
+ ]
+}
