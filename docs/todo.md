@@ -52,9 +52,13 @@ npm run check-data
 
 ## 1.1 登录 + 评论上生产 ⬅ **最该先办**
 
-**现状**:八批代码 2026-07-19 全部完成、逐批 review + 本地验证,后端接口
-(`functions/api/[[route]].js`)与 D1 迁移(`migrations/0001-auth-base.sql`、
-`0002-comments-index.sql`)都在仓库里,**至今未上生产**。
+**2026-08-02 已上生产**:D1 迁移 0001/0002/0003 已跑、Google 登录已配并实测通过、
+owner 账号已设、`ADMIN_PASSPHRASE` 已删(有 owner 后该通道自动失效)、
+评论治理四件套(举报/拉黑/过滤/联系方式)已上线并实测、iOS build 48 已带登录与云同步。
+
+**唯一剩下的硬阻塞:Turnstile。** `TURNSTILE_SECRET_KEY` 没配 → 后端 `verifyTurnstile`
+密钥缺失时直接返回 false → **任何人发评论都是 403,评论功能在生产上从没能用过**。
+配好前评论区等于不存在。
 
 ### 你要办的四件事
 
@@ -286,7 +290,12 @@ SOP:[school-intro-standard.md](./school-intro-standard.md)。数据 `src/data/<c
 
 ## 4.1 待做
 
-**空。** §四 六项已全部收官(见 4.2),暂无新增。
+- [ ] **`hexa@gavin.pub` 建转发** ⬅ **现在是个死地址** —— 它已经公开挂在
+      [关于页「评论与联系」节](https://hexa.gavin.pub/about#community) 与每个章末评论区,
+      是 App Store 审核指南 1.2 要求的「公开联系方式」。**没有转发 = 用户申诉/侵权投诉发出去没人收**,
+      审核员若去信验证也会石沉大海。
+      去 `gavin.pub` 的域名邮箱服务商加一条 `hexa@` → 你的 gmail 的转发即可(不必建独立信箱)。
+      建好后回信自测一封。
 
 ## 4.2 已完成(2026-08-02)
 
