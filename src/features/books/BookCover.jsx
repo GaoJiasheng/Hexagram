@@ -1217,7 +1217,19 @@ function InheritanceCode() {
   )
 }
 
+// 母题按需扩容:每本书一个专属母题,而全部母题都写在本文件里 —— 于是「加一本书」就等于
+// 「改这个共享文件」,多人/多 agent 并发产书时必撞。改成**外挂目录**:
+// 新母题只需在 motifs/ 下新增一个独立文件(默认导出一个返回 <g> 的组件),这里自动收录,
+// 谁也不用碰本文件。既有的一百多个内联母题原样保留,不动。
+const EXTERNAL_MOTIFS = import.meta.glob('./motifs/*.jsx', { eager: true, import: 'default' })
+function externalMotif(motif) {
+  return EXTERNAL_MOTIFS[`./motifs/${motif}.jsx`] || null
+}
+
 function Motif({ motif }) {
+  const External = externalMotif(motif)
+  if (External) return <External />
+
   if (motif === 'panopticon') return <Panopticon />
   if (motif === 'manifest-latent') return <ManifestLatent />
   if (motif === 'liquid-melt') return <LiquidMelt />
