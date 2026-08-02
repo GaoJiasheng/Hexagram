@@ -1,0 +1,186 @@
+{
+  "title": "怎么读它:哪些有数学、哪些只是隐喻",
+  "subtitle": "这本书最大的实用价值,不在于教了你几个新词,而在于教你分辨这些词什么时候有内容、什么时候只是修辞",
+  "centralIdea": "最后一章做一件很实际的事:把全书教会的这套词汇拆开验货,分成三层。第一层有硬内容、能算能测——香农熵、费根鲍姆常数、图灵完备性、遗传算法、幂律指数与 3/4 次方(但必须过统计检验)。第二层有严格定义却拿不到数——算法信息量、逻辑深度,做定性论证可以,给系统排名不行。第三层目前主要还是隐喻——涌现、自组织、适应性、混沌边缘、临界:它们指向的现象是真的,但作为概念还没有统一的可操作定义。三层不是真假之分,而是用法之分:第一层可以拿来下结论,第二层只能拿来讲道理,第三层只能拿来提问。随后逐个点破五个被滥用最多的词(尤其是「蝴蝶效应」——原意讲的是预测无能,借用后变成行动有力,方向整个反了),给出一个三问检验法,并交代这本书和书房里其他书怎么对读。最后一句:兴奋是对的,但要兴奋在正确的地方。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "走到这里,这本书已经交给你一整套词汇:涌现、自组织、混沌、熵、算法信息量、通用计算、适应度地形、枢纽、幂律、超线性。**这套词汇今天在中文互联网上被借用的密度极高,而其中大部分借用是空的。**难的从来不是学会这些词——它们个个上口,说出来就显得有见识;难的是知道自己在什么时候是在陈述事实,什么时候只是在打一个比方。这最后一章就干这一件事:**把它们拆开验货。**"
+    },
+    {
+      "type": "h2",
+      "text": "一、三层货架"
+    },
+    {
+      "type": "p",
+      "text": "把全书出现过的概念摊开,会发现它们的成色差别极大,大致能分成三层。分层的标准只有一个,而且很朴素:**你能不能拿它算出一个具体的数,或者做出一个能被推翻的预测。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "svg": "<svg viewBox='0 0 560 292' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>同一本书里的词,成色分三层</text><rect x='36' y='42' width='372' height='62' rx='7' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='52' y='64' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>一 · 有硬内容,能算能测</text><text x='52' y='84' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>香农熵 · 费根鲍姆常数 · 图灵完备性 · 遗传算法</text><text x='52' y='98' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>幂律指数 · 3/4 次方(须过统计检验)</text><text x='488' y='78' text-anchor='end' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>可以下结论</text><rect x='36' y='114' width='372' height='54' rx='7' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><text x='52' y='136' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>二 · 有严格定义,却拿不到数</text><text x='52' y='157' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>算法信息量 · 逻辑深度(不可计算,只能估上界)</text><text x='488' y='144' text-anchor='end' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>只能讲道理</text><rect x='36' y='178' width='372' height='62' rx='7' style='fill:none;stroke:var(--ink-faint);stroke-width:1.3;stroke-dasharray:4 3'/><text x='52' y='200' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink-soft)'>三 · 目前主要还是隐喻</text><text x='52' y='220' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>涌现 · 自组织 · 适应性 · 混沌边缘 · 临界</text><text x='52' y='234' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>现象是真的,概念还没有公认的可操作定义</text><text x='488' y='210' text-anchor='end' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>只能提问</text><text x='280' y='268' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>三层不是真假之分,是用法之分——第三层的词不假,只是还不能用来结账</text><text x='280' y='286' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>「热」在十八世纪也住在第三层</text></svg>",
+      "caption": "这张图是这本书能留给你的最实用的一件东西。它不判断谁对谁错,只标出每个词现在站在哪一格——而绝大多数误用,都是把第三层的词当成第一层来使。"
+    },
+    {
+      "type": "p",
+      "text": "特别要说清的是**第三层不等于「假的」**。涌现、自组织所指向的现象千真万确:蚁群确实在没有指挥官的情况下找到了最短路径,免疫系统确实认得出从没见过的病原体。它们只是**方向正确、但还没被磨清的词**——上一章说过,「热」在十八世纪也住在第三层。区别不在真假,在**用法**:住在第三层的词,你可以用它来提出问题、指出一类现象,但不能用它来给一个结论收尾。"
+    },
+    {
+      "type": "p",
+      "text": "分层之所以要紧,是因为**混层使用几乎不会被察觉。**典型的句式是这样的:前半句用第一层的词建立可信度——「按信息熵算,这个流程的冗余度高达四成」;后半句用第三层的词下结论——「所以这个组织正在涌现出新的秩序」。听的人会不自觉地把前半句的硬度借给后半句,而这两句之间其实没有任何逻辑连接:熵算的是那份流程文档,「涌现出新秩序」既没说部件、也没说规则、更没说怎么测。**这不是撒谎,大多数时候连说的人自己都没意识到——那一步论证被一个漂亮的词悄悄跳过去了。**"
+    },
+    {
+      "type": "quote",
+      "original": "第三层的词不假,只是还不能用来结账。",
+      "translation": "它们可以用来命名一类现象、可以用来提出一个值得研究的问题,唯独不能承担一段论证的收尾。**看到一段分析以「这是一个复杂系统」或者「这是涌现出来的」作结,基本可以判定:结论那一步被跳过了。**"
+    },
+    {
+      "type": "h2",
+      "text": "二、五个被滥用最多的词"
+    },
+    {
+      "type": "p",
+      "text": "下面这五个是中文语境里被借走得最频繁的。它们的共同点是:**借用的版本听起来都比原版更励志。**这不是巧合——一个概念在传播中被改写的方向,通常朝着听众更爱听的那一头。"
+    },
+    {
+      "type": "table",
+      "caption": "五个词的原意与借用",
+      "head": ["词", "原意(有内容的版本)", "常见的借用", "偷换在哪"],
+      "rows": [
+        ["涌现", "简单部件按简单规则互动,产生规则里没写的、可测的宏观性质", "整体大于部分之和", "没说清哪些规则、哪个尺度、哪个可测的量"],
+        ["蝴蝶效应", "确定的系统里初值的微小差别被指数放大,长期预测因此失效", "小事能撬动大结果", "原意讲的是预测无能,借用讲的是行动有力"],
+        ["自组织", "没有中心控制,靠局部规则产生全局秩序", "所以不需要管理", "蚁群那套规则是演化调了上亿年的,不是撤掉管理就会自己长出来"],
+        ["混沌边缘", "系统卡在有序与混沌之间才有信息处理能力", "团队要留点混乱才有创造力", "它引用的原始证据已被推翻(见第 10 章)"],
+        ["幂律", "一族有具体指数的重尾分布,极端值主导全局", "二八法则的高级说法", "比例不等于分布;而且它描述现状,不是应然"]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "五个里面最值得单独拎出来的是**蝴蝶效应**,因为它的偷换最彻底——不是走了样,是**掉了个头**。洛伦兹当年那句「巴西的蝴蝶扇动翅膀,会不会引起得州的龙卷风」,原本是一句关于**预测极限**的话:既然初值上一个小到测不出来的差别,几周之后就能长成完全不同的天气,那么长期天气预报在原理上就做不到。**它是一个投降声明。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "svg": "<svg viewBox='0 0 560 244' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>同一个词,两个相反的结论</text><g transform='translate(18,44)'><text x='120' y='14' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>原意(洛伦兹)</text><path d='M24 92 C 66 88, 108 74, 200 36' style='fill:none;stroke:var(--ink-soft);stroke-width:1.6'/><path d='M24 96 C 66 100, 108 116, 200 152' style='fill:none;stroke:var(--ink-soft);stroke-width:1.6'/><circle cx='24' cy='94' r='3.4' style='fill:var(--cinnabar-pure)'/><text x='30' y='114' style='font-family:var(--font-serif);font-size:10px;fill:var(--cinnabar-pure)'>初值差一点点</text><text x='120' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>越走越远,几周后面目全非</text><text x='120' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>结论:长期预测做不到</text></g><path d='M280 90 L280 176' style='fill:none;stroke:var(--line);stroke-width:1'/><g transform='translate(310,44)'><text x='120' y='14' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>常见的借用</text><rect x='30' y='84' width='16' height='16' rx='3' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><path d='M56 92 L112 92 M104 86 L112 92 L104 98' style='fill:none;stroke:var(--ink-faint);stroke-width:1.3'/><rect x='122' y='58' width='68' height='68' rx='5' style='fill:none;stroke:var(--ink-soft);stroke-width:1.4'/><text x='38' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>小事</text><text x='156' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>大结果</text><path d='M52 158 L68 178 M68 158 L52 178' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><text x='128' y='174' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>结论:我的小努力能改变世界</text><text x='128' y='192' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>方向整个反了</text></g><text x='280' y='236' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>原意是一句投降声明:正因为小差别会被放大,你才既算不准、也指不准是哪一只蝴蝶</text></svg>",
+      "caption": "关键在于「指不准」这三个字。混沌系统里确实有小扰动被放大成大结果的事,但你**事前无法知道**是哪一个小扰动、会放大成什么——这正是它不能被当成行动指南的原因。把它读成励志故事,恰恰把它最核心的那层意思删掉了。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "自组织尤其危险",
+      "items": [
+        "这五个里,**「自组织」在组织管理场景下的误用后果最实在。**「蚁群没有指挥官」是事实,但接着推出「所以团队不需要管理」有两处断裂:第一,蚁群那套局部规则是自然选择花了上亿年调出来的,不是把管理层撤掉就会自动长出来;第二,**蚁群没有战略**——它不会决定明年改做别的、不会在环境彻底变了之后转型,它只会在既定的规则集里响应。**一个组织如果同时需要「自下而上的响应」和「自上而下的转向」,那么蚁群这个类比只覆盖了前一半。**拿它当撤销管理的许可证,是把一个描述性发现读成了一份处方。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "那么**有内容的涌现**长什么样?看三个例子就清楚了。生命游戏里的「滑翔机」:规则里根本没有这个词,但它稳定地出现、能被数出有几个、能算出它每四步斜移一格。蚁群找到的路径:能量出长度,能和数学上的最优解比对,能预测破坏某一段之后多久恢复。高速公路上的「幽灵堵车」:前方没有任何事故,堵塞却凭空出现并向后传播——它的传播速度能测,大约每小时向后退十几公里。**这三个例子都答得出「哪些部件、什么规则、怎么测」。**而「我们团队涌现出了默契」一问都答不上来。差别不在于哪个更玄妙,而在于**前者可以被观测推翻,后者不能。**"
+    },
+    {
+      "type": "h2",
+      "text": "三、一个三问检验法"
+    },
+    {
+      "type": "p",
+      "text": "上面这些逐条记不住也没关系,因为有一个更省事的办法。**听到有人用这套词汇下结论时,问三个问题就够了。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "金句卡",
+      "svg": "<svg viewBox='0 0 560 232' xmlns='http://www.w3.org/2000/svg'><rect x='24' y='14' width='512' height='200' rx='10' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='280' y='44' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>三问,足以分辨内容与形容词</text><text x='52' y='78' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>一</text><text x='76' y='78' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>你说的「部件」和「规则」,具体是什么?</text><text x='428' y='78' text-anchor='end' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>——有没有一个具体模型</text><text x='52' y='118' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>二</text><text x='76' y='118' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>涌现出来的那个宏观性质,怎么测?</text><text x='428' y='118' text-anchor='end' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>——有没有一个可观测量</text><text x='52' y='158' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>三</text><text x='76' y='158' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>换一套规则,你预测会有什么不同?</text><text x='428' y='158' text-anchor='end' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>——有没有可证伪的预测</text><path d='M52 176 L508 176' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>三个都答不上来,这套词汇在他嘴里就只是形容词</text></svg>",
+      "caption": "这三问不是刁难,而是把一个说法从第三层往第一层推的三级台阶:先要有模型,再要有可测量,最后要有能被推翻的预测。答得出前两问已经很不错了,能答第三问的说法在这个领域里非常少。"
+    },
+    {
+      "type": "p",
+      "text": "这三问之所以有效,是因为它们对应的正是**把隐喻变成科学的三道门槛**。第一问要的是**具体模型**:说不出部件和规则,「系统」就只是个泛称。第二问要的是**可观测量**:说不出怎么测,「涌现出了协同效应」和「大家配合得不错」就是同一句话的两种说法。第三问要的是**可证伪的预测**:一个无论发生什么都能解释的框架,其实什么也没说。**注意这三问对自己同样适用**——它最常见的用途,是在你自己正准备用「这是个复杂系统」来收尾一段分析的时候拦你一下。"
+    },
+    {
+      "type": "h2",
+      "text": "四、按目的选三条读法"
+    },
+    {
+      "type": "p",
+      "text": "如果你要回头读原书,不必从第一页读到最后一页。按你想拿到什么,有三条路线。"
+    },
+    {
+      "type": "steps",
+      "items": [
+        {
+          "title": "只有一个下午:第 2 章 + 末章",
+          "text": "第 2 章讲混沌,是全书的地基,也是唯一必须慢读的一章——「确定不等于可预测」这一条读通了,后面全部顺着走。末章是作者的诚实,它决定了你会把这本书当成一套万能理论还是一个正在施工的工地。**这两章加起来,已经是这本书最值钱的部分。**",
+          "state": "now"
+        },
+        {
+          "title": "想要能上手的东西:第 4、5、6、7 章",
+          "text": "计算(元胞自动机)、演化(遗传算法)、集体智能(蚁群与免疫系统)、网络。这四章里有可以直接拿走的方法和判断:怎么在没有梯度的空间里搜索、探索与利用怎么平衡、一个网络的脆弱点在哪。前两者在网上都能找到现成的可视化,**亲手拨两下参数,比读十页文字管用。**",
+          "state": "todo"
+        },
+        {
+          "title": "想要世界观上的东西:第 1、3、10、11 章",
+          "text": "问题是怎么被提出来的(第 1 章)、信息与熵这一层最基本的语言(第 3 章)、这门学科的欠账(第 10 章)、以及怎么分辨这套词汇(第 11 章)。这条线读完,你不会多记住几个术语,但会多一套判断新概念成色的手艺——**而这套手艺的适用范围远远超出复杂科学。**",
+          "state": "todo"
+        }
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "五、和书房里其他书怎么对读"
+    },
+    {
+      "type": "p",
+      "text": "《复杂》在这个书房里不是孤岛,它几乎是好几本书共同的底层解释。"
+    },
+    {
+      "type": "figure",
+      "ftype": "关系图",
+      "svg": "<svg viewBox='0 0 560 306' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>《复杂》在书房里的五条线</text><path d='M280 132 L280 76 M336 148 L432 106 M330 176 L430 216 M228 176 L128 216 M226 148 L130 106' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='280' cy='162' r='42' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='280' y='158' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--cinnabar-pure)'>复杂</text><text x='280' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:9px;fill:var(--ink-faint)'>不确定性从哪来</text><rect x='214' y='46' width='132' height='30' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><text x='280' y='60' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>第五项修炼</text><text x='280' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:9px;fill:var(--cinnabar-pure)'>不带数学的版本 · 当心</text><rect x='428' y='84' width='118' height='30' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><text x='487' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>黑天鹅 · 反脆弱</text><text x='487' y='110' text-anchor='middle' style='font-family:var(--font-serif);font-size:9px;fill:var(--ink-soft)'>它讲怎么应付</text><rect x='428' y='202' width='118' height='30' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><text x='487' y='216' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>超级预测</text><text x='487' y='228' text-anchor='middle' style='font-family:var(--font-serif);font-size:9px;fill:var(--ink-soft)'>极限之内还能做什么</text><rect x='14' y='202' width='118' height='30' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><text x='73' y='216' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>独自打保龄</text><text x='73' y='228' text-anchor='middle' style='font-family:var(--font-serif);font-size:9px;fill:var(--ink-soft)'>那张网的数据</text><rect x='14' y='84' width='118' height='30' rx='6' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><text x='73' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>自私的基因</text><text x='73' y='110' text-anchor='middle' style='font-family:var(--font-serif);font-size:9px;fill:var(--ink-soft)'>复制因子的一半</text><text x='280' y='268' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>它很少是主角,却常常是别人那本书没写出来的那一层解释</text><text x='280' y='290' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>另可对读:《这才是心理学》(可证伪性)、《美国大城市的死与生》(城市的自组织)</text></svg>",
+      "caption": "把它放在中间是有道理的:塔勒布讲应对、帕特南讲数据、道金斯讲生物学、泰特洛克讲预测的手艺,而它们各自绕不开的那层机制——为什么不可预测、为什么会有厚尾、为什么复制加变异就能出结构——都在这本书里。"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**塔勒布(《黑天鹅》《反脆弱》)是最自然的邻居。**塔勒布讲不确定性该怎么应付,《复杂》讲这份不确定性从哪里来。他说不要预测、要改结构,这本书给出了理由:在对初值敏感的系统里,你提高精度的速度永远追不上误差被放大的速度。他说要盯着尾部,这本书给出了机制:增长加优先连接自然产生幂律。",
+        "**《超级预测》正好接在混沌那一章后面读。**《复杂》告诉你长期预测在原理上做不到,而泰特洛克那本书回答的是剩下的问题:**在这个极限之内,还有多少事是能做的?**答案是:缩短时间尺度、拆成小问题、频繁更新、记录并复盘自己的准确率。两本书合起来,才是一个完整的态度——不是不预测,是知道预测能走多远。",
+        "**《独自打保龄》和这本书是数据与骨架的关系。**帕特南量的是真实社会网络的疏密和它几十年的衰减,这本书给的是那张网的数学结构:为什么弱连接比密友更能带来新信息、为什么枢纽人物的退出比普通人退出影响大得多。",
+        "**《自私的基因》讲的是同一套逻辑的生物学一半。**道金斯把「复制因子」讲成演化的主角,这本书把同一套逻辑抽象成可以在任何介质上跑的算法——所以遗传算法里没有一个碱基,却照样在演化。",
+        "**《第五项修炼》那一类要反着读。**它讲的系统思考方向是对的:反馈回路、时滞、结构决定行为。但那是**不带数学的版本**——回路的正负号可以画出来,增益、时滞长度、稳定性边界却没有。读过这本书之后再回头看,会更清楚哪些部分是真的结构分析,哪些部分只是把「事情很复杂」画成了图。"
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "mute",
+      "label": "一句提醒",
+      "items": [
+        "把《复杂》当成上面这些书的「底层解释」是合适的,但别倒过来用——**别把它当成一把能拆开所有书的万能螺丝刀。**它解释得了为什么天气预报只能到十几天、为什么财富分布有厚尾、为什么蚁群不需要指挥官;它解释不了一个具体的组织为什么衰败、一段关系为什么破裂、一个国家为什么转型。那些问题有它们各自的学科和证据,而「这是个复杂系统」这句话对它们**一个字的信息量都没有增加**。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "六、最后一句:兴奋在正确的地方"
+    },
+    {
+      "type": "p",
+      "text": "这本书里让人兴奋的东西非常多:一条只有几个符号的式子里冒出混沌;一条 8 位的规则里藏着一台通用计算机;蚂蚁靠碰触角的频率就把分工调好了;代谢率跨十几个数量级贴着同一条直线。这些兴奋都是正当的。**但要兴奋在正确的地方——兴奋于这些具体的、可验证的发现,而不是兴奋于「万物皆复杂系统」这种大而化之的世界观。**"
+    },
+    {
+      "type": "pull",
+      "text": "一个能解释一切的框架,通常什么也没预测——所以要爱那些具体的发现,而不是那句包罗万象的话。"
+    },
+    {
+      "type": "p",
+      "text": "米歇尔做的事,是把一个**正在施工的工地**原原本本领着你走了一遍:哪几栋已经封顶、哪几根柱子还没浇完、哪块招牌是刚拆下来的,她一处都没有绕开。市面上讲同一批内容的书,大多把工地拍成了竣工照——那更好卖,也更容易读完就用。**而这本书交给你的不是一套结论,是一副能看清工地的眼睛。**这副眼睛拿去看别的领域同样管用:任何一个正在流行、词汇漂亮、结论好听的新学问,都可以用这三层货架和那三个问题过一遍。"
+    },
+    {
+      "type": "p",
+      "text": "所以这本书真正的收获,大概不是你从此知道了什么叫涌现,而是**你从此会在别人说「这是涌现出来的」时,多问一句:哪些部件、什么规则、怎么测?**这句追问不是抬杠,它是这本书教给读者最实在的一件工具——**也是它自己反复用在自己身上的那一件。**"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "Melanie Mitchell,《Complexity: A Guided Tour》(Oxford University Press, 2009),中译本题作《复杂》",
+        "本章涉及的自我修正:关于「混沌边缘」那句口号被重做实验推翻的经过,见第 10 章;关于复杂性度量为何量不到一起,见第 9 章",
+        "延伸:米歇尔后来另著《AI: A Guide for Thinking Humans》(2019),把同一份克制用在了另一个更热的领域上"
+      ]
+    }
+  ]
+}
