@@ -67,18 +67,14 @@ owner 账号已设、`ADMIN_PASSPHRASE` 已删(有 owner 后该通道自动失�
 3. **`_redirects` 的 SPA 回退会让任何不存在的 `/assets/*.js` 返回 200 的 HTML** ——
    拿 HTTP 码判断「部署成功了没」会被骗;要 grep 文件内容才作数。
 
-### 你要办的四件事
+### 四件事的结果(2026-08-02 全部完成)
 
-| | 事项 | 性质 | 怎么办 |
-|---|---|---|---|
-| **A** | **Cloudflare Turnstile 生产站点** | **硬阻塞** | Cloudflare Dashboard → Turnstile → Add site → 域名填 `hexa.gavin.pub` → widget 模式选 **Managed** → 拿 **sitekey + secret** 给我 |
-| **B** | **Google OAuth 客户端** | 阻塞 Google 登录(邮箱登录不受影响) | Google Cloud Console → OAuth 同意屏幕(**External**)→ 凭据 → 创建 OAuth 客户端 ID(**Web application**)→ Authorized redirect URIs 填**两条**:`https://hexa.gavin.pub/api/auth/google/callback` 与 `http://localhost:8788/api/auth/google/callback` → 拿 **client_id + client_secret** 给我 |
-| **C** | **Resend 邮件账号** | **可跳过** | 注册 Resend → Domains 添加 `gavin.pub` → 按提示到 DNS 加 SPF/DKIM → 等验证通过 → 建 API key。不配只是收不到「有人评论了」的邮件,登录/评论/同步全不受影响 |
-| **D** | **部署后**用你自己的邮箱在 `hexa.gavin.pub` 注册一个正式账号,把邮箱告诉我 | 部署完成后的收尾 | 我在生产 D1 跑一次 `UPDATE users SET is_owner=1 WHERE email='<你的邮箱>'`,之后你用这个账号进 `/admin/stats`、管评论;旧的 `ADMIN_PASSPHRASE` 口令通道自动失效(设计如此) |
-
-> ⚠️ **A 为什么是硬阻塞**:`src/features/comments/config.js` 第 1 行现在是
-> `TURNSTILE_SITE_KEY = '1x00000000000000000000AA'` —— 这是 Cloudflare **官方测试 key,永远直接判过**,
-> 本是给本地开发跑通链路用的。**不换成真凭证就上线,评论区等于完全没有机器人防护。**
+| | 事项 | 结果 |
+|---|---|---|
+| A | Turnstile | ✅ sitekey 进代码 · secret 进环境变量 · **站上第一条真实评论已发出** |
+| B | Google OAuth | ✅ 项目 `hexagram` / 客户端 `hexa-web` / 同意屏幕已发布正式版(非敏感范围,无需 Google 审核) |
+| C | Resend 邮件 | ⏸ **未做,可跳过**。不配只是收不到「有人评论了」的通知邮件 |
+| D | owner 账号 | ✅ `gaojiasheng.him@gmail.com` 已置 `is_owner=1`;`ADMIN_PASSPHRASE` 已删 |
 
 ### 我这边拿到凭证后做什么(你不用管)
 
@@ -90,6 +86,23 @@ owner 账号已设、`ADMIN_PASSPHRASE` 已删(有 owner 后该通道自动失�
 
 **细节参考**:[platform-upgrade-plan.md §8](./platform-upgrade-plan.md) ·
 [auth-comments-design.md](./auth-comments-design.md)(§4.8 Google · §7.8 Turnstile · §8.8 Resend)
+
+---
+
+## 1.1b 隐私口径已与事实不符 ⬅ **上架前必须改,这是合规问题**
+
+登录 / 邮箱 / 云同步 / 评论上线后,以下三处**说的都不再是事实**:
+
+- [ ] **`/privacy` 页**(`src/features/PrivacyPage.jsx`)——「不收集姓名、**联系方式**」
+      (现在注册就收邮箱)、「收藏批注推演**仍只保存在你的设备上**」(登录后同步到服务器)、
+      儿童节「不收集任何用户的个人信息」。三处都要改写成分「不登录 / 登录后」两种情形。
+- [ ] **App Store 隐私问卷**(原 B7 填的「不收集数据 / Data Not Collected」)——
+      现在至少是 **Contact Info → Email(与身份关联)** + **User Content → 其他用户内容**
+      (足迹同步)。**填错等于向 Apple 作不实申报**,比被拒更麻烦。
+- [ ] **年龄分级问卷**里关于「用户生成内容」的那几问 —— App 现在**展示**评论,要如实勾。
+
+> 顺带:评论治理四件套(举报/拉黑/过滤/联系方式)已于 2026-08-02 上线并实测,
+> 审核问到时,举报与屏蔽入口就在每条评论下面。
 
 ---
 
@@ -105,7 +118,7 @@ owner 账号已设、`ADMIN_PASSPHRASE` 已删(有 owner 后该通道自动失�
 
 ### 阶段 A · 上线前准备
 
-- [ ] **A1 发 web 到 Cloudflare**(我做)——`npm run build && npx wrangler pages deploy dist --project-name=hexa-gavin-pub`
+- [x] ~~**A1 发 web 到 Cloudflare**~~(已发,多次)——`npm run build && npx wrangler pages deploy dist --project-name=hexa-gavin-pub`
 - [ ] **A2 验证隐私政策页**:浏览器打开 `https://hexa.gavin.pub/privacy` 确认能打开(ASC 必填项的前提)
 - [ ] **A3 截图**(你做)——iPhone 6.9″ 一套 + iPad 13″ 一套,每套 3–10 张。
       模拟器截图即可(我也能用 iOS 模拟器工具出图)。建议内容:
@@ -116,10 +129,10 @@ owner 账号已设、`ADMIN_PASSPHRASE` 已删(有 owner 后该通道自动失�
 - [ ] **B1** 新建版本,版本号 **1.0.0**
 - [ ] **B2** 填列表信息(名称/副标题/关键词/描述/宣传文本)—— 照 `appstore-listing.md §一` 复制粘贴
 - [ ] **B3** 上传截图(A3 产出)
-- [ ] **B4** 选构建 —— 选**最新 build**(现为 46;刚上传的话等 Apple 处理 10–30 分钟)
+- [ ] **B4** 选构建 —— 选**最新 build**(现为 48;刚上传的话等 Apple 处理 10–30 分钟)
 - [ ] **B5** 隐私政策 URL:`https://hexa.gavin.pub/privacy`
 - [ ] **B6** 支持 URL:`https://hexa.gavin.pub/about`;营销 URL 可空
-- [ ] **B7** App 隐私问卷:选 **不收集数据 / Data Not Collected**
+- [ ] **B7** App 隐私问卷:**⚠ 不能再选「不收集数据」** —— 见 §1.1b,现已收邮箱并同步用户内容
       ⚠️ **这一项与 §1.1 有先后关系**:登录+评论上线后会收集邮箱,届时须重填问卷。
       **建议先上架、后开登录**,可避免返工
 - [ ] **B8** 年龄分级问卷:如实答。本 App 是易经**义理研读**、明示非吉凶预言
