@@ -1,0 +1,250 @@
+{
+  "title": "《阿Q正传》：精神胜利法的解剖",
+  "subtitle": "一个连姓什么都要由别人批准的人，和他唯一还能自己操作的那样东西",
+  "centralIdea": "这一章要证明的是：精神胜利法不是愚蠢，而是一个人被剥夺了一切之后，唯一还能自己动手的东西。阿Q不能不挨打，但他能决定挨打这件事叫什么名字；他不能翻身，但他能在心里把失败重新命名为胜利。这套机制之所以可怕，恰恰因为它有用——它把痛苦消化掉了，于是痛苦不再推动任何改变。鲁迅用九章把它拆开：第一章证明阿Q连被写进历史的最低条件都不具备；中间几章拆解它的运转，以及那条更黑的支路——向下转嫁；革命两章证明牌子换了而链子一环没动；最后一章让他画一个画不圆的圆圈，然后死在一片喝采里。全篇的冷不在讽刺，在于它写的是一种普遍的人类心理，谁都可能用得上。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "《阿Q正传》是《呐喊》里最有名的一篇，也是最容易被读浅的一篇。读浅的读法是：把它当成一出讽刺喜剧，笑一个又蠢又贱的乡下短工，笑完合上书，庆幸自己不是阿Q。但鲁迅为这一篇花了九章——从一个人连姓什么都定不下来写起，一直写到他被枪毙、被围观、被评价为「不够好看」。他解剖的不是一个蠢人，而是一套机制：当一个人完全无力改变自己的处境时，他还剩下什么可以自己操作。这一篇 1921 年底至 1922 年初连载于《晨报副刊》，署名「巴人」，篇末原署「一九二一年十二月」。"
+    },
+
+    { "type": "h2", "text": "一、先读那篇一本正经的「序」" },
+    {
+      "type": "p",
+      "text": "小说的第一章不讲故事，是一篇正经的考据文章，题目就叫《序》。鲁迅在里面煞有介事地讨论了四件事，四件事一件也没有结论。第一件是体例：该叫「列传」还是「自传」「内传」「外传」「别传」「家传」「小传」？他一一试过去，又一一排除——列传是和阔人排在正史里的，阿Q不配；自传要作者就是传主；内传得是神仙；家传要么同宗、要么受了子孙的拜托；小传的前提是另有一部大传。最后只好从小说家「闲话休题言归正传」那句套话里抠出「正传」两个字来充数。"
+    },
+    {
+      "type": "p",
+      "text": "第二件是姓。阿Q有一回喝了两碗黄酒，说自己和赵太爷原是本家，细排起来还比刚中秀才的赵少爷长三辈。第二天地保就把他叫到赵府，赵太爷一个嘴巴打过去，说他怎么会姓赵、那里配姓赵。从此未庄再没有人提起他的氏族，作者的考证线索也就此断掉。**一个人的姓，要由本村最有钱的那一位批准**——这一句已经把整篇小说的权力关系写完了。姓氏本是一个人与祖先、与一群人之间的连接凭据，阿Q连这个凭据都不许持有。"
+    },
+    {
+      "type": "p",
+      "text": "第三件是名。他活着时人叫他阿Quei，死了以后再没有人叫。到底是阿桂还是阿贵？鲁迅一本正经地推论：他若号叫月亭、或在八月里做过生日，就该是「桂」；若有个兄弟叫阿富，就该是「贵」。可是他既没有号也没有兄弟，两条路都断；托同乡去查他犯事的案卷，八个月后回信说，案卷里根本没有声音相近的人。第四件是籍贯：他虽然多住未庄，却也常宿别处，写成「未庄人也」都不合史法。"
+    },
+    {
+      "type": "p",
+      "text": "这几页考据不是玩笑铺垫，它是全篇的定调。**正史的体例，是给有名有姓有籍贯的人预备的**：它要求传主先具备一批身份凭据，然后才谈得上把他写进去。阿Q一样也没有。所以这篇《序》真正说出的是——**这个人连被写进历史的最低条件都不具备**。他不是被历史写坏了，他压根不在历史的收件范围之内。而鲁迅偏要给这样一个人立传，还偏要用最堂皇的正史腔调来立，这件事本身就是一次冒犯。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照表",
+      "caption": "第一章《序》里考据了四样，一样也定不下来——这不是玩笑，是全篇的定调。",
+      "svg": "<svg viewBox='0 0 540 250' xmlns='http://www.w3.org/2000/svg'><text x='270' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>立传的四道门槛，阿Q一道也过不去</text><text x='58' y='48' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>要考据的</text><text x='268' y='48' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>小说里怎么查的</text><text x='466' y='48' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>结果</text><line x1='20' y1='56' x2='520' y2='56' style='stroke:var(--line);stroke-width:1'/><text x='58' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>体例</text><text x='268' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>列传·自传·内传·外传·别传·家传·小传</text><text x='466' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--cinnabar)'>都不合</text><line x1='20' y1='92' x2='520' y2='92' style='stroke:var(--line);stroke-width:0.5'/><text x='58' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>姓</text><text x='268' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>自称与赵太爷是本家，换来一个嘴巴</text><text x='466' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--cinnabar)'>不许姓</text><line x1='20' y1='128' x2='520' y2='128' style='stroke:var(--line);stroke-width:0.5'/><text x='58' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>名</text><text x='268' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>阿Quei——阿桂？阿贵？案卷里查无此人</text><text x='466' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--cinnabar)'>无从考</text><line x1='20' y1='164' x2='520' y2='164' style='stroke:var(--line);stroke-width:0.5'/><text x='58' y='188' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>籍贯</text><text x='268' y='188' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>多住未庄，又常宿别处，不合史法</text><text x='466' y='188' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--cinnabar)'>不成立</text><line x1='20' y1='200' x2='520' y2='200' style='stroke:var(--line);stroke-width:1'/><text x='270' y='228' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--azure)'>结论：他连被写进历史的最低条件，都不具备。</text></svg>"
+    },
+
+    { "type": "h2", "text": "二、精神胜利法：拆成一套可以复述的流程" },
+    {
+      "type": "p",
+      "text": "接下来两章的题目叫《优胜记略》和《续优胜记略》——「优胜」两个字是反着说的，这两章记的全是败仗。鲁迅在这里做的事，是把一种心理拆成可以一步步复述的工序。最典型的一次是：未庄的闲人撩他，终于动手，揪住他的黄辫子在墙下碰了四五个响头，然后心满意足地走了。到这里现实的账已经结清，他一点便宜也没占。可是紧接着——"
+    },
+    {
+      "type": "quote",
+      "original": "「我总算被儿子打了，现在的世界真不像样……」于是也心满意足的得胜的走了。",
+      "translation": "第二章《优胜记略》。这是全篇最要紧的一句，精神胜利法的三道工序都在里面。"
+    },
+    {
+      "type": "p",
+      "text": "这一句里有三步。**第一步是现实**：被人揪着头发往墙上碰。**第二步是改写**：他并不否认挨打，他只是给这件事换了一个名字——打我的人既然是我儿子，这场殴打就不再是失败，反倒成了辈分上的一次胜利。**第三步是结算**：「心满意足的得胜的走了」。要留意的是，这个短句在原文里连着出现两次，前一次属于闲人，后一次属于阿Q——同一场架，两个人都拿去用了。事情的物理部分只发生过一次，而胜利被发放了两回。这就是这套工艺的全部：**不改变事实，只改变事实的名字，然后按新名字结账。**"
+    },
+    {
+      "type": "p",
+      "text": "更值得注意的是这套系统被识破之后的反应。阿Q心里想的话后来常常说出口，未庄人于是摸清了他这一招，再揪他辫子的时候就先把退路堵死——"
+    },
+    {
+      "type": "quote",
+      "original": "「阿Q，这不是儿子打老子，是人打畜生。自己说，人打畜生！」",
+      "translation": "第二章。闲人先一着替他把话说完，等于当面拆掉他那条改名字的路。"
+    },
+    {
+      "type": "p",
+      "text": "换了别人，退路被堵死也就认了。阿Q不。他捏住自己的辫根，歪着头改口：打虫豸好不好？我是虫豸——还不放么？闲人照旧给他碰了五六个响头，可是不到十秒钟，他又心满意足地走了，理由是——"
+    },
+    {
+      "type": "quote",
+      "original": "他觉得他是第一个能够自轻自贱的人，除了「自轻自贱」不算外，馀下的就是「第一个」。",
+      "translation": "第二章。原文下一句紧接着问：状元不也是「第一个」么？"
+    },
+    {
+      "type": "p",
+      "text": "这是全篇最精密的一处。对方封死了「我是老子」那条向上的路，他当场换到相反方向——**既然往上走不通，那就往下走，而往下走到底，也仍然是一种「到底」**。「自轻自贱」四个字被他拆成两截：难听的那一截不算，只留下「第一个」，再往上一接——状元不也是第一个么？于是一个自称虫豸的人和状元并排站到了一起。这说明它不是一句固定的说辞，而是一台能自我修复的机器：**你堵掉它一个出口，它当场再开一个。**它的目标从来不是把某句话讲得圆，而是保证每一次都以「得胜」收场。"
+    },
+    {
+      "type": "figure",
+      "ftype": "流程图",
+      "caption": "精神胜利法的循环：事实一分未变，账却每次都能结平。堵死一个出口，它就再开一个。",
+      "svg": "<svg viewBox='0 0 540 300' xmlns='http://www.w3.org/2000/svg'><text x='270' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>一套能自我修复的机器</text><rect x='20' y='42' width='108' height='50' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='74' y='63' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>① 现实</text><text x='74' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>被揪着碰响头</text><rect x='151' y='42' width='108' height='50' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='205' y='63' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--cinnabar)'>② 改写</text><text x='205' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>是儿子打老子</text><rect x='282' y='42' width='108' height='50' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='336' y='63' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>③ 结算</text><text x='336' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>得胜的走了</text><rect x='413' y='42' width='108' height='50' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='467' y='63' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>④ 处境</text><text x='467' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>一分未变</text><path d='M128 67 L149 67' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><path d='M143 63 L150 67 L143 71 Z' style='fill:var(--ink-faint)'/><path d='M259 67 L280 67' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><path d='M274 63 L281 67 L274 71 Z' style='fill:var(--ink-faint)'/><path d='M390 67 L411 67' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><path d='M405 63 L412 67 L405 71 Z' style='fill:var(--ink-faint)'/><path d='M467 92 L467 116 L74 116 L74 94' style='fill:none;stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 3'/><path d='M70 100 L74 93 L78 100 Z' style='fill:var(--ink-faint)'/><text x='270' y='133' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>下一次照旧，因为什么都没有变过</text><line x1='20' y1='150' x2='520' y2='150' style='stroke:var(--line);stroke-width:0.5'/><text x='20' y='174' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>出口被堵住时，它换方向：</text><rect x='20' y='186' width='150' height='44' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='95' y='203' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>不许说「儿子打老子」</text><text x='95' y='219' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>（向上的路封死）</text><rect x='195' y='186' width='150' height='44' rx='6' style='fill:none;stroke:var(--azure);stroke-width:1.2'/><text x='270' y='203' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--azure)'>那就往下走到底</text><text x='270' y='219' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--azure)'>「我是虫豸」</text><rect x='370' y='186' width='150' height='44' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.2'/><text x='445' y='203' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>自轻自贱的第一个</text><text x='445' y='219' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar)'>也还是「第一个」</text><path d='M170 208 L193 208' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><path d='M187 204 L194 208 L187 212 Z' style='fill:var(--ink-faint)'/><path d='M345 208 L368 208' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><path d='M362 204 L369 208 L362 212 Z' style='fill:var(--ink-faint)'/><text x='20' y='258' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>另有两条更省事的支路：</text><text x='36' y='278' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>· 向过去借——「我们先前比你阔的多啦」</text><text x='36' y='294' style='font-family:var(--font-serif);font-size:12px;fill:var(--cinnabar)'>· 向下面转嫁——挨了打，转身去欺负更弱的人</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "还有一条更省事的路子，是把祖上的阔气拿来抵押当下的窘迫。他和人口角时，间或瞪着眼睛说——"
+    },
+    {
+      "type": "quote",
+      "original": "「我们先前——比你阔的多啦！你算是什么东西！」",
+      "translation": "第二章。他先前阔到什么程度、什么时候不阔的，小说里一个字也没有交代。"
+    },
+    {
+      "type": "p",
+      "text": "这句话里没有一个字是可以核对的。他先前究竟阔到什么地步、凭什么现在住在土谷祠里给人做短工，一概不问，也无从问起。**一份无法查证的过去，被拿来抵消一份确凿无疑的现在。**这和「我总算被儿子打了」是同一个动作的两个方向：一个向辈分借，一个向时间借，借来的都是虚的；可是在他的账本上，都能销掉一笔实在的亏空。"
+    },
+
+    { "type": "h2", "text": "三、更黑的一条支路：向下转嫁" },
+    {
+      "type": "p",
+      "text": "如果精神胜利法只是自我安慰，它还只是可怜。鲁迅偏要再写一条支路，这条支路黑得多。有一天阿Q连挨两次打：先是王胡——那个他一向瞧不起、连捉虱子都捉不过的人——扭住他的辫子在墙上连碰五下，又一推把他推出六尺多远，这是他记忆里生平第一件屈辱；接着是钱太爷的大儿子、那个留过洋剪了辫子的「假洋鬼子」，他刚骂了半句，那根黄漆棍子（他叫作哭丧棒）就落在头上，这是生平第二件屈辱。"
+    },
+    {
+      "type": "p",
+      "text": "然后他遇见了静修庵的小尼姑。他迎上去吐一口唾沫，伸手摩她新剃的头皮，说了句下流话；酒店里的人大笑起来，他看见自己的「勋业」得了赏识，越发兴高采烈，又扭住她的面颊，并且为了满足那些「赏鉴家」，再用力一拧才放手。走开时他觉得今天所有的晦气都报了仇，浑身比挨完打之后还轻松，「飘飘然的似乎要飞去了」。"
+    },
+    {
+      "type": "p",
+      "text": "这一段要看清楚三件事。**第一，他没有去找打他的人。**王胡和假洋鬼子都还在未庄，他一个也没去找，他找的是比他更弱的那一个。**第二，他并不认为自己在欺负人**，他认为自己在报仇，而且报得很成功。**第三，这场戏是有观众的**，观众的笑声就是他兴致的燃料：第一次笑，他兴高采烈；第二次笑，他加倍用力。**受辱的人不去找施辱者，去找更弱的人**——这条线路比在心里改名字黑得多，因为它把痛苦真实地传了下去：伤害的总量一分没少，只是换了个人承担。"
+    },
+    {
+      "type": "p",
+      "text": "还有一次，他在赛神的晚上赌钱，难得赢了一大堆洋钱，又在一场混乱里全丢了。这一回他是真觉出苦来了：说是被儿子拿去，不管用；说自己是虫豸，也不管用。于是他抬起右手，在自己脸上连打两个嘴巴，打完反倒心平气和——「似乎打的是自己，被打的是别一个自己」。这一笔极准：**当外面再也找不到人可以转嫁时，他就把自己劈成两半，一半打，一半挨**，好让「打人的那一个」仍然归自己所有。这已经不只是自欺，是一个人在毫无资源的情况下硬造出一个可以赢的对手。"
+    },
+
+    { "type": "h2", "text": "四、这套东西为什么会长出来" },
+    {
+      "type": "p",
+      "text": "到这里必须问一句：阿Q为什么不干点别的？为什么不还手、不记仇、不攒钱、不换个地方过活？——因为这些他都做不到，而且不是因为懒。他没有家，住在土谷祠里；没有固定职业，割麦便割麦，舂米便舂米，撑船便撑船，活一干完就走；他连一件完整的衣服都保不住，棉被、毡帽、布衫先后当掉卖掉。**他的处境不是他选来的，也不是他改得动的。**在这种情形下，一个人还能自己动手的只剩一样：**给发生在他身上的事情命名的权力。**别的都被拿走了，这一样拿不走，因为它长在他脑子里。"
+    },
+    { "type": "pull", "text": "他不能不挨打，但他能决定挨打这件事叫什么名字。" },
+    {
+      "type": "p",
+      "text": "认清这一点，读法就完全不同了。精神胜利法不是一个蠢人身上可笑的毛病，它是**在完全无力的处境里发育出来的一件求生装置**，而且确实管用——靠着它，阿Q每天还睡得着，还能唱着小孤孀上坟去酒店，第二天照常去舂米。任何一个长期承受着自己无法改变的境遇的人，都可能长出类似的东西：把落榜说成不屑，把被排挤说成清高，把没赶上说成本来就不想要。这不是哪一国人的专利，也不是哪一个时代的专利，它是人在无力时的通用配件。"
+    },
+    {
+      "type": "p",
+      "text": "而这恰恰是它最可怕的地方。**它把痛苦消化掉了，于是痛苦不再推动任何改变。**痛苦本来是有功能的：疼说明有伤，伤说明得处理。精神胜利法做的事，正是在疼和伤之间切断那根线——疼当场被翻译成别的东西，伤就永远留在原地。阿Q挨的每一顿打都当天结清了，所以他一辈子也没有想过一个问题：为什么总是他挨打。**这套装置救了他的命，也锁死了他的一生。**"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "打个比方：身上有一处伤，疼起来吃一片止痛药，药是有用的，人当天能睡着。可是如果每次疼就吃一片，永远不去看那道伤口，药越有效，伤就越安全地烂在那里。"
+      ]
+    },
+
+    { "type": "h2", "text": "五、未庄这台机器" },
+    {
+      "type": "p",
+      "text": "阿Q不是孤零零的一个怪人，他是一整套结构最下面的那一格。把小说里的人排一排，能排出一条相当清楚的链子：城里的举人老爷和把总；未庄的赵太爷、钱太爷两家大屋；他们的儿子赵秀才与假洋鬼子；专管传话训斥的地保；王胡、赵白眼、赵司晨、邹七嫂这一批闲人和邻居；然后才轮到阿Q——而阿Q底下还有小D和小尼姑。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "未庄的链子：每一级都从上面挨了打，再往下面找补。阿Q在最末端，他下面只剩小D和小尼姑。",
+      "svg": "<svg viewBox='0 0 540 330' xmlns='http://www.w3.org/2000/svg'><text x='270' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>权力向下传导的一条链子</text><rect x='70' y='38' width='300' height='28' rx='5' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='220' y='57' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>举人老爷 · 把总（城里）</text><rect x='70' y='74' width='300' height='28' rx='5' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='220' y='93' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>赵太爷 · 钱太爷（未庄两家大屋）</text><rect x='70' y='110' width='300' height='28' rx='5' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='220' y='129' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>赵秀才 · 假洋鬼子（两家的儿子）</text><rect x='70' y='146' width='300' height='28' rx='5' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='220' y='165' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>地保（传话 · 训斥 · 收酒钱）</text><rect x='70' y='182' width='300' height='28' rx='5' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='220' y='201' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>王胡 · 赵白眼 · 赵司晨 · 邹七嫂 · 闲人们</text><rect x='70' y='218' width='300' height='28' rx='5' style='fill:none;stroke:var(--cinnabar);stroke-width:1.6'/><text x='220' y='237' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--cinnabar)'>阿Q</text><rect x='70' y='254' width='300' height='28' rx='5' style='fill:none;stroke:var(--line);stroke-width:1;stroke-dasharray:4 3'/><text x='220' y='273' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>小D · 小尼姑</text><path d='M420 40 L420 276' style='fill:none;stroke:var(--azure);stroke-width:1'/><path d='M416 268 L420 278 L424 268 Z' style='fill:var(--azure)'/><text x='434' y='140' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--azure)'>每一级都</text><text x='434' y='158' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--azure)'>从上面挨</text><text x='434' y='176' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--azure)'>了打，再</text><text x='434' y='194' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--azure)'>往下找补</text><text x='270' y='308' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>赵太爷打他一个嘴巴，地保再训一顿，他还得谢地保二百文酒钱</text><text x='270' y='324' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>——挨了打的人，还要给传话的人付钱</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这条链子的运转方式是：**每一级都从上面挨了打，再往下面找补。**赵太爷打了阿Q一个嘴巴，又叫地保去训他一顿，末了阿Q还得谢地保二百文酒钱——**挨了打的人，还要给传话的人付钱**，这一笔写得极狠。阿Q挨了哭丧棒，转身去拧小尼姑的脸；后来他骂小D是畜生，小D的回答是「我是虫豸，好么？」——一模一样的话，阿Q对闲人说过。这套说辞顺着链子一级一级往下传，人人都会，人人都在等下一个更弱的。"
+    },
+    {
+      "type": "p",
+      "text": "链子对阿Q的处置，在第四、第五两章里最见分明。他在赵府舂米，吃过晚饭坐在厨房吸旱烟，听女仆吴妈说家常，忽然抢上去跪下，说了一句「我和你困觉」。这一句唐突，在今天看是骚扰，在当时的未庄则被处理成一桩风化案：赵秀才的大竹杠劈头打下来，地保当夜上门训斥，加倍的酒钱四百文，还开出五条件——"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "次日备一斤重的红烛一对、香一封，上赵府赔罪",
+        "赵府请道士驱鬼的费用，由他来出",
+        "从此不准再踏进赵府的门槛",
+        "吴妈日后若有任何不测，惟他是问",
+        "不准再去讨工钱，也不准再去要那件布衫"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "这五条里没有一条关于吴妈的意愿，也没有一条关于他该悔改什么。五条全部指向两件事：赵府的花销要由他赔，赵府的门以后不许他进。**一桩风化案的处理结果，是一次经济清算加一次逐出。**他把过冬的棉被当了二千大钱才履行完这份条约。"
+    },
+    {
+      "type": "p",
+      "text": "真正要紧的是后果。从那天起，未庄的女人见他就躲，酒店不肯赊欠，管土谷祠的老头子催他走，而最要命的一条是：再没有人叫他做短工——活儿都给了小D。**一次唐突，把他彻底挤出了整个村子的经济链条。**后面他跳进静修庵的园子拔萝卜、进城去给窃贼在门外接赃物，常被读成道德堕落；可小说交代得清清楚楚：这中间他挨过饿，卖光了棉袄，出门去「求食」时连自己求的是什么都说不上来。**他的堕落不是一个道德问题，是没饭吃。**这台机器判了他的罪，罚的方式是断他的活路，而机器里没有任何一处设着申诉的地方。"
+    },
+
+    { "type": "h2", "text": "六、革命来了：他要的不是平等" },
+    {
+      "type": "p",
+      "text": "第七、第八两章写辛亥的消息传到未庄，是全篇第二个重心。他起初对革命党「深恶而痛绝之」，因为在他听来，革命党就是造反，造反就是与他为难。等他看见百里闻名的举人老爷都吓得把箱子往赵府里寄、未庄一群人慌张失措，他忽然「神往」了，午间喝了两碗空肚酒，就上街嚷起来——"
+    },
+    {
+      "type": "quote",
+      "original": "「好，……我要什么就要什么，我欢喜谁就是谁。",
+      "translation": "第七章《革命》。这是他对「造反」二字全部的理解，原文此处没有收尾的引号。"
+    },
+    {
+      "type": "p",
+      "text": "当晚他躺在土谷祠里把革命细细想了一遍：白盔白甲的人拿着板刀、钢鞭走过土谷祠叫他同去；未庄那伙人跪下叫饶命，他一个也不听；第一个该死的是小D和赵太爷，还有秀才，还有假洋鬼子；东西要搬，秀才娘子的宁式床先搬到土谷祠，自己不动手，叫小D来搬，搬得不快就打嘴巴；最后是女人，一个一个数过去。**这份清单里没有一条与平等有关。**他要的不是拆掉那条链子，是把自己搬到链子的顶端去——**他要的是当赵太爷，而不是没有赵太爷。**这是最容易被忽略的一层：一个在底层受尽欺压的人，向往的常常不是压迫的消失，而是压迫权的转手。"
+    },
+    {
+      "type": "p",
+      "text": "接着是第八章，题目就叫《不准革命》。真正把这场革命做成生意的，是赵秀才和假洋鬼子。消息一到，这两个素来不相能的人立刻成了「情投意合的同志」，一早商量出一件可革的事：静修庵里有一块写着「皇帝万岁万万岁」的龙牌，该赶紧革掉。两人同去砸了龙牌，老尼姑上来阻拦，被他们当作满政府，在头上给了不少棍子；等他们走后清点，龙牌固然碎在地上，观音座前的宣德炉也不见了。随后假洋鬼子进城，替赵秀才办进了自由党——未庄人念不准，叫它「柿油党」——四块洋钱换回一块银桃子挂在大襟上，赵太爷因此比儿子当初中秀才时还神气。"
+    },
+    {
+      "type": "p",
+      "text": "阿Q也想革命。他学赵司晨的样，用一支竹筷把辫子盘在头顶上，可街上没有人多看他一眼。他终于想明白：光宣布投降不行，盘上辫子也不行，第一着还得去和革命党结识；而他生平知道的革命党只剩一个假洋鬼子。他怯怯地躄进钱府，那位正在院子中央讲自己如何劝「洪哥」动手的洋先生连话都不让他说完，扬起哭丧棒喝了一声「滚出去！」——**这是全篇最关键的一次拒绝。**他一口气跑出六十多步，心里明白过来：从此决不会再有白盔白甲的人来叫他，他所有的抱负、志向、希望、前程，全被一笔勾销。"
+    },
+    {
+      "type": "p",
+      "text": "于是就有了这篇小说最冷的一处洞察。**革命来了，牌子换了，链子一环没动。**知县大老爷还是原官，不过改称了什么；带兵的还是先前那个老把总；举人老爷做了帮办民政；赵秀才胸口多了一块银桃子。地位、田产、说话的分量，一样也没有重新分配。真正变了的只有一件：**链子最末端的那个人，连原来那个挨骂的位置都没保住。**几天之后赵家遭抢，阿Q隔着夜色看见「白盔白甲的人」把箱子、器具、宁式床一样样抬出来，而他连做贼的份都没有。再过四天，他半夜被抓走，顶了这桩抢案的罪。"
+    },
+
+    { "type": "h2", "text": "七、画那个圆圈" },
+    {
+      "type": "p",
+      "text": "第九章的题目叫《大团圆》，是全篇最重的一句反话。公堂上，那个满面剃得精光的老头子和气地问他还有什么话说，他想了一想，回答说没有。长衫人物拿了纸笔要塞在他手里，他一把抓住笔，惶恐而且惭愧地说：我不认得字。对方说：那么便宜你，画一个圆圈。"
+    },
+    {
+      "type": "quote",
+      "original": "阿Q要画圆圈了，那手捏着笔却只是抖。他生怕被人笑话，立志要画得圆",
+      "translation": "第九章《大团圆》。他画的那一纸，是自己的死刑供状。"
+    },
+    {
+      "type": "p",
+      "text": "这个细节值得停下来想很久。他就要被押去枪毙了，而这一刻他全副心力集中在一件事上：**别让人笑话，圈要画得圆。**圆圈到底还是画成了瓜子模样，他为此羞愧；被押回栅栏后又替自己开解——孙子才画得很圆的圆圈呢——然后就睡着了。**一个人可以什么都没有，却仍然留着一份对体面的执念；而这份执念活得比他的命还长。**鲁迅在这里没有用一个嘲笑的字眼，他只是把那只发抖的手放在那儿：阿Q至死不知道自己签的是什么，他只知道不能画得难看。"
+    },
+    {
+      "type": "p",
+      "text": "押赴刑场的路上，他在人丛里认出了吴妈。他忽然羞愧起来——羞愧的不是自己就要死了，是自己没志气，竟没有唱几句戏。他在脑子里挑了一遍：小孤孀上坟不够堂皇，龙虎斗里那句「悔不该」也太乏，还是「手执钢鞭将你打」罢；一扬手才想起两只手原来都捆着。最后他「无师自通」地喊出半句从来不说的话：「过了二十年又是一个……」——**连临死的一句豪言，都是从戏文里借来的。**他一生的语言都是别人给的：骂人的话是听来的，唱的曲是台上的，连告别世界的方式也得照戏台上的死囚学。他没有一句属于自己的话。"
+    },
+    {
+      "type": "quote",
+      "original": "「好！」从人丛里，便发出豺狼的嗥叫一般的声音来。",
+      "translation": "第九章。他喊出那半句戏文，换来的是这一声喝采。"
+    },
+    {
+      "type": "p",
+      "text": "这一声「好」，是《呐喊》全书里「看客」这个母题最响的一次，也必须和这本书的第一页连起来读。鲁迅在《自序》里讲过弃医从文的缘由：在日本的课堂上看时事画片，见一个中国人被当作侦探处决，周围站着一圈同样是中国人的看客，来赏鉴这场示众的盛举。他当时的结论是，体格再健壮的人，若精神是麻木的，也只能做「毫无意义的示众的材料和看客」。**《阿Q正传》就是把那张画片重新拍了一遍**，而且这一次他把镜头掉了个方向，对准被看的那一个，让读者从法场中央往外看——"
+    },
+    {
+      "type": "quote",
+      "original": "这些眼睛们似乎连成一气，已经在那里咬他的灵魂。",
+      "translation": "第九章。此前他回忆起四年前山脚下那只饿狼的眼睛，说这一回见到的更可怕。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "caption": "看客的两次出场：《自序》里那张幻灯片，与《阿Q正传》的法场，是同一副眼睛。前者让鲁迅弃医从文，后者是他把那张画片重写了一遍。",
+      "svg": "<svg viewBox='0 0 540 230' xmlns='http://www.w3.org/2000/svg'><text x='270' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>看客的两次出场</text><rect x='20' y='40' width='210' height='128' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='125' y='62' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--azure)'>《呐喊·自序》</text><text x='125' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>日本课堂上的一张时事画片</text><text x='125' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>一个人被当作侦探处决</text><text x='125' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>四围站着一圈赏鉴的看客</text><text x='125' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>镜头在人群这一边</text><rect x='310' y='40' width='210' height='128' rx='6' style='fill:none;stroke:var(--cinnabar);stroke-width:1.4'/><text x='415' y='62' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--cinnabar)'>《阿Q正传》第九章</text><text x='415' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>从未庄游街到县城法场</text><text x='415' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>他喊半句戏文，人丛里喝采</text><text x='415' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>那些眼睛在咬他的灵魂</text><text x='415' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>镜头掉转，站到被看的那一个身上</text><path d='M236 104 L304 104' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><path d='M242 100 L235 104 L242 108 Z' style='fill:var(--ink-faint)'/><path d='M298 100 L305 104 L298 108 Z' style='fill:var(--ink-faint)'/><text x='270' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--azure)'>同一副</text><text x='270' y='122' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--azure)'>眼睛</text><line x1='20' y1='186' x2='520' y2='186' style='stroke:var(--line);stroke-width:0.5'/><text x='270' y='208' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>一个人的死，先被当成戏看，再被嫌演得不够精彩。</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "结局的荒谬还要再往下一层，而且要分成两处来读，因为说话的是两批人。**未庄这一边**是没有异议的：都说阿Q坏，被枪毙就是他坏的证据——不坏又何至于被枪毙呢？**这是一句完美的循环论证**：处死这件事本身成了处死的理由，罪名是从结果倒推出来的。**城里那一边**更冷：他们多半不满足，觉得枪毙并没有杀头那般好看，而且这么一个可笑的死囚，游了那么久的街竟没有唱一句戏——他们白跟了一趟。**一个人的死，最后被评价为一场不够精彩的演出。**这就是「大团圆」三个字的全部含义。"
+    },
+
+    { "type": "h2", "text": "八、不争，是因为不幸得太久" },
+    {
+      "type": "p",
+      "text": "常有人用「哀其不幸，怒其不争」来概括这一篇。这话不算错，但它容易让人把重音落在「怒」上，读成一篇恨铁不成钢的斥责，读完只剩下对阿Q的鄙夷。把九章从头看一遍就知道，这两半是有先后的：**他的不争，恰恰是因为不幸得太久了。**姓是被一个嘴巴打掉的，名字是无从考证的，籍贯是不成立的，饭碗是被那台机器收走的，连革命的资格也是被人当面驳回的。一个人身上凡是可以被拿走的东西都被拿走以后，剩下的那一点点本事，就只能用在心里。"
+    },
+    {
+      "type": "p",
+      "text": "所以这一篇的分量不在阿Q可笑。它在于：他从头到尾没有被允许拥有一个姓、一个名字、一份产业、一次参加的资格；而他仅有的反抗，是在心里把每一次失败改写成胜利。鲁迅让人笑他，又不许人只是笑他——笑到中途会发现，那套给事情改名字的本事并不陌生：凡是一个人陷在自己无力改变的事情里，多少都会伸手去拿它。**这一篇过了一百年还在被读，不是因为它写死了一个乡下短工，是因为它把人在无力时的那个动作，拆开摆在了桌面上。**"
+    }
+  ]
+}
