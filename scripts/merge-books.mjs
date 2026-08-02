@@ -51,7 +51,13 @@ for (const slug of pending) {
   }
 
   if (entry.slug !== slug) problems.push(`_entry.json 的 slug「${entry.slug}」与目录名「${slug}」不一致`)
-  if (known.has(slug)) problems.push('slug 与已有书重复')
+  // 已在 index.json 里却还留着 _entry.json:多半是合并后 agent 又写回了一份。
+  // 直接删掉残留、跳过,不要报错也不要重复追加(踩过)。
+  if (known.has(slug)) {
+    fs.rmSync(path.join(dir, '_entry.json'))
+    console.log(`· ${slug} 已在 index.json 中,清掉残留的 _entry.json`)
+    continue
+  }
   for (const k of ['title', 'author', 'oneLine', 'accent', 'chapters']) {
     if (!entry[k]) problems.push(`缺字段 ${k}`)
   }
