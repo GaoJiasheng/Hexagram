@@ -33,7 +33,7 @@ for f in glob.glob('src/data/books/*/overview.json')+glob.glob('src/data/books/*
 print(f'典籍 {len(glob.glob("src/data/*/classics/*.json"))} 部 · 白话 {bh} 章(富文本 {rich})')
 print(f'观书 {len(glob.glob("src/data/books/*/"))} 本 {ba} 篇(富文本 {br})')
 print(f'争鸣 {len(json.load(open("src/data/debates/index.json"))["topics"])} 辩 · 书级导读 {len(glob.glob("src/data/*/daodu/*.json"))} 篇')
-print(f'家级导读 {len(glob.glob("src/data/*/school.json"))} 篇(目标 9,易经不做)')
+print(f'家级导读 {len(glob.glob("src/data/*/school.json"))} 篇(目标 10,易经不做)')
 print('无白话的书:', gap or '无')
 EOF
 npm run check-data
@@ -41,7 +41,7 @@ npm run check-data
 
 **2026-08-02 快照**:典籍 67 部 · 白话 1337 章(5555 图 · 0 坏引文)· 观书 112 本 1034 篇 ·
 争鸣 84 辩 · 书级导读 62 篇 · **家级导读 10 篇 ✅** ·
-名句集 746 句 · iOS build 46 / 版本 1.0.0。
+名句集 746 句 · iOS build 47 / 版本 1.0.0。
 
 ---
 
