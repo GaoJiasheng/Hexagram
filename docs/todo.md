@@ -297,18 +297,27 @@ npm run check-data
 ### 选题与方法
 | 文档 | 管什么 |
 |---|---|
-| [debates-roadmap.md](./debates-roadmap.md) | 争鸣选题铁律 · 概念索引法 · **已否决清单**(别再提) |
+| [debates-roadmap.md](./debates-roadmap.md) | 争鸣选题铁律 · 概念索引法 · **已否决清单**(别再提)。代码也引它 |
 | [books-roadmap.md](./books-roadmap.md) | 观书选书法(14 本已收官,留作方法留档) |
 | [expansion-ideas.md](./expansion-ideas.md) | 典籍拓展(Wave 1–8 已收官) |
-| [baihua-fine-grained.md](./baihua-fine-grained.md) | 细粒度白话的勘定档案(**已收官,别再照它开工**) |
+| [richtext-rollout.md](./richtext-rollout.md) | 富文本块规格 + `reblock-auto` 用法(收官留档;`gen-baihua-wf.mjs` 与 design-v22 都引它) |
 
-### 已完成、仅留档(**不要再当待办读**)
-`baihua-todo.md` · `baihua-plan-next.md` · `todo-followup.md` · `richtext-rollout.md` ·
-`baihua-richmedia-handoff.md` · `product-ux-review.md` · `ux-review.md` · `ux-opportunities.md` ·
-`optimize-rufo.md` · `copy-review.md` · `content-qa.md` · `baihua-review-yidao.md` ·
-`design-v4..v22` / `yijing-design*`(设计稿——里面的 `[ ]` 是当年的里程碑清单,**均已落地**,
-别误当待办)
+### 历史报告 / 设计稿(**不是待办**)
+- **审查报告**(所列各项均已实施):`product-ux-review.md` · `ux-review.md` · `ux-opportunities.md` ·
+  `baihua-review-yidao.md`(后者被 `scripts/gen-polish-wf.mjs` 引用)
+- **旧 plan**:`baihua-plan-next.md`(白话铺开的总 plan,已收官;CLAUDE.md 的历史条目引它)
+- **设计稿** `design-v4..v22` / `yijing-design*` —— 里面的 `[ ]` 是当年的里程碑清单,
+  **均已落地**,别误当待办
+
+### 2026-08-02 已删除(内容全部收官且无处引用,git 历史可查)
+`baihua-todo.md` · `todo-followup.md` · `baihua-richmedia-handoff.md` ·
+`baihua-fine-grained.md` · `optimize-rufo.md` · `copy-review.md` · `content-qa.md`
+
+> 删前逐份核过:copy-review 的 A 节三条(「个人易学研习」「三教门户」「整理中」)在代码里
+> 已是 0 次出现、早改完;content-qa 的「存疑」节是空表、真错已于 v1.31.0/1 全部订正;
+> 其余五份是纯进度清单,活已做完。
 
 ---
+
 
 _维护约定:改完任何一项,回来更新本文对应行。新开的活也写进这里,不要另起清单。_
