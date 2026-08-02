@@ -54,6 +54,7 @@ export default function ClassicReader({
   // 不可动),只在「显示层」把超长章分屏。partOf(章) → [{from,to,label}] 或 null(不拆)。
   posCtx = null,               // {slug} —— 记段级续读位置;不传则不记
   partsOf = () => null,
+  anchorsOf = () => null,      // (章) → [{from, label}] 章内锚点(诗题/条目);没有则 null
   part = 1,                    // 当前部分(1 起),由 ?p= 驱动
   partHref = () => '#',        // (章号, 部分号) → 链接
   paraLabel = () => null,
@@ -369,13 +370,34 @@ export default function ClassicReader({
             <a key={c.no} href={`#${anchorId(c.no)}`}
               className={`read-toc__item ${c.no === activeAnchor ? 'read-toc__item--active' : ''}`}>{chapterLabel(c)}</a>
           ) : (
-            <Link
-              key={c.no}
-              to={chapterHref(c.no)}
-              className={`read-toc__item ${c.no === chapter ? 'read-toc__item--active' : ''}`}
-            >
-              {chapterLabel(c)}
-            </Link>
+            <Fragment key={c.no}>
+              <Link
+                to={chapterHref(c.no)}
+                className={`read-toc__item ${c.no === chapter ? 'read-toc__item--active' : ''}`}
+              >
+                {chapterLabel(c)}
+              </Link>
+              {/* 当前章展开章内锚点(诗经的诗、传习录的条):TOC 原先只到篇/卷级,
+                  进了章就只能滚。锚点跨屏也能点——先算它落在哪一屏,连屏带锚一起跳。 */}
+              {c.no === chapter && (() => {
+                const anchors = anchorsOf(c)
+                if (!anchors || anchors.length < 2) return null
+                const ps = partsOf(c)
+                return (
+                  <div className="read-toc__sub">
+                    {anchors.map((a) => {
+                      const pi = ps ? ps.findIndex((x) => a.from >= x.from && a.from < x.to) : -1
+                      const base = pi >= 0 ? partHref(c.no, pi + 1) : chapterHref(c.no)
+                      return (
+                        <Link key={a.from} to={`${base}#${a.id}`} className="read-toc__subitem">
+                          {a.label}
+                        </Link>
+                      )
+                    })}
+                  </div>
+                )
+              })()}
+            </Fragment>
           ),
         )}
       </nav>

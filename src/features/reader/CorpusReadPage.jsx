@@ -7,7 +7,7 @@ import { loadText, getMeta, getAnchors } from './corpus.js'
 import ClassicReader from './ClassicReader.jsx'
 import YanyiBlock from './YanyiBlock.jsx'
 import BaihuaBlock from './BaihuaBlock.jsx'
-import { chapterParts } from './chapterParts.js'
+import { chapterParts, chapterAnchors } from './chapterParts.js'
 
 // 通用逐章阅读器(v16 §1)——佛/儒共用,薄包装通用 ClassicReader 的 paged 模式。
 export default function CorpusReadPage({ corpus }) {
@@ -138,6 +138,7 @@ export default function CorpusReadPage({ corpus }) {
         )
       } : undefined}
       partsOf={(c) => chapterParts(c, meta)}
+      anchorsOf={(c) => chapterAnchors(c, meta)}
       part={resumePart}
       partHref={(no, p) => `${site.home}/${slug}/${no}${p > 1 ? `?p=${p}` : ''}`}
       paraLabel={poemBook ? poemParaLabel : (numberParas ? (no, i) => String(i + 1) : undefined)}

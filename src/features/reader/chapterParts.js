@@ -31,6 +31,26 @@ function labelFor(chapter, from, to, meta, i) {
   return `第 ${i + 1} 部分（${from + 1}–${to} 段）`
 }
 
+// 章内锚点(2026-08-02):侧栏 TOC 原先只到篇/卷/品,进了章就只能滚 ——
+// 诗经一章十余首诗、传习录一卷数百段,找某一首/某一条全靠翻。
+// 这里把**全部**自然边界(不只是拆屏用的那几个切点)连同首段一起列出来,
+// 供 TOC 在当前章下展开成子目录。没有自然边界的书返回 null,TOC 不变。
+export function chapterAnchors(chapter, meta) {
+  const bs = boundaries(chapter, meta)
+  if (!bs.length) return null
+  const froms = [0, ...bs]          // 首段也是一个锚(第一首诗 / 第一条)
+  const n = chapter.paragraphs.length
+  // 锚点 id 两种形态,由书的机制决定(渲染层就是这么给的,不能一律写 p{n}):
+  //   诗经一类:诗题段**升格为诗头**,那个 div 的 id 是 seg-<章>-<段>,原段号不再挂在它身上
+  //   传习录一类:条头是**插在段前**的独立 div,段落本身照常带 id p<段+1>
+  const idOf = (from) => (meta?.poemTitles ? `seg-${chapter.no}-${from}` : `p${from + 1}`)
+  return froms.map((from, i) => ({
+    from,
+    id: idOf(from),
+    label: labelFor(chapter, from, froms[i + 1] ?? n, meta, i),
+  }))
+}
+
 export function chapterParts(chapter, meta) {
   const n = chapter.paragraphs.length
   if (n <= MIN_SPLIT) return null

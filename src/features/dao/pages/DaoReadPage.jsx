@@ -5,7 +5,7 @@ import { loadDaoText, getDaoMeta } from '../data.js'
 import { getDaoAnchors } from '../daoAnchored.js'
 import { usePageTitle } from '../../yijing/hooks/usePageTitle.js'
 import ClassicReader from '../../reader/ClassicReader.jsx'
-import { chapterParts } from '../../reader/chapterParts.js'
+import { chapterParts, chapterAnchors } from '../../reader/chapterParts.js'
 import YanyiBlock from '../components/YanyiBlock.jsx'
 import BaihuaBlock from '../../reader/BaihuaBlock.jsx'
 import { Link } from 'react-router-dom'
@@ -76,6 +76,7 @@ export default function DaoReadPage() {
       renderYanyi={(no) => <YanyiBlock slug={slug} chapter={no} />}
       renderBaihua={(no) => <BaihuaBlock corpus="dao" slug={slug} chapter={no} bookTitle={meta.title} sectionUnit={meta.sectionUnit || '章'} />}
       partsOf={(c) => chapterParts(c, meta)}
+      anchorsOf={(c) => chapterAnchors(c, meta)}
       part={resumePart}
       partHref={(no, p) => `/dao/${slug}/${no}${p > 1 ? `?p=${p}` : ''}`}
       posCtx={{ slug }}

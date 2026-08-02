@@ -1868,6 +1868,13 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   transition: color 0.1s, border-color 0.1s;
 }
 
+/* 章内子目录(2026-08-02):当前章下展开它的诗题/条目。TOC 原先只到篇/卷级,
+   诗经一章十余首、传习录一卷数百段,进了章只能滚。缩进 + 细左线表示从属。 */
+.read-toc__sub { margin: 2px 0 8px 10px; padding-left: 9px; border-left: 1px solid var(--line); display: flex; flex-direction: column; }
+.read-toc__subitem { display: block; padding: 3px 6px; font-size: 0.82rem; line-height: 1.5; color: var(--ink-faint);
+  text-decoration: none; border-radius: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.read-toc__subitem:hover { color: var(--cinnabar); background: var(--paper-raised); }
+
 .read-toc__item:hover { color: var(--ink); }
 .read-toc__item--active { color: var(--cinnabar); border-left-color: var(--cinnabar); }
 
