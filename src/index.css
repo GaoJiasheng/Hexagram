@@ -2389,6 +2389,45 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .settings-account__sync strong { color: var(--ink-soft); font-weight: 600; }
 .settings-account__sync .btn-text:disabled { cursor: wait; opacity: 0.55; }
 
+/* 评论区 · 举报 / 屏蔽 / 规则(App Store 1.2 四件套的界面部分)。
+   举报与屏蔽刻意做得**弱**:它们是给少数情况用的,不该在正常阅读时抢注意力。 */
+.comment-section__report { border: 0; background: none; padding: 0 2px; cursor: pointer;
+  color: var(--ink-faint); font-size: calc(0.72rem * var(--read-scale)); font-family: inherit; }
+.comment-section__report:hover:not(:disabled) { color: var(--cinnabar); text-decoration: underline; }
+.comment-section__report:disabled { opacity: 0.5; cursor: default; }
+.comment-section__rules { margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed var(--line);
+  color: var(--ink-faint); font-size: calc(0.74rem * var(--read-scale)); line-height: 1.7; }
+.comment-section__rules a { color: var(--ink-soft); }
+.comment-section__notice { margin: 8px 0 0; color: var(--ink-soft);
+  font-size: calc(0.78rem * var(--read-scale)); }
+.comment-section__readonly { color: var(--ink-faint); }
+.comment-section__report-panel { display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+  margin-top: 6px; padding: 7px 9px; border: 1px solid var(--line); border-radius: 6px;
+  background: var(--paper-raised); font-size: calc(0.74rem * var(--read-scale)); color: var(--ink-faint); }
+.comment-section__report-panel button { padding: 3px 9px; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--paper); color: var(--ink-soft); font-family: inherit; font-size: inherit; cursor: pointer; }
+.comment-section__report-panel button:hover { border-color: var(--cinnabar); color: var(--cinnabar); }
+
+/* 设置 · 已屏蔽的人 */
+.settings-blocks { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); }
+.settings-blocks__title { color: var(--ink-soft); font-size: 0.78rem; font-weight: 600; }
+.settings-blocks ul { list-style: none; margin: 6px 0 0; padding: 0; }
+.settings-blocks li { display: flex; align-items: center; justify-content: space-between;
+  gap: 10px; padding: 4px 0; color: var(--ink-soft); font-size: 0.8rem; }
+
+/* owner 专属:站点后台入口。与云同步行同一条虚线分隔的节奏,朱印做标识。 */
+.settings-account__admin { display: flex; align-items: center; gap: 10px; margin-top: 10px; padding: 9px 11px;
+  border: 1px solid var(--line); border-radius: 8px; background: var(--paper-raised);
+  text-decoration: none; color: inherit; transition: border-color .18s, box-shadow .18s; }
+.settings-account__admin:hover { border-color: var(--cinnabar-pure);
+  box-shadow: 0 2px 12px color-mix(in srgb, var(--cinnabar-pure) 12%, transparent); }
+.settings-account__admin > span:last-child { margin-left: auto; color: var(--ink-faint); font-size: 1.05rem; }
+.settings-account__admin-seal { flex: 0 0 auto; display: grid; place-items: center; width: 26px; height: 26px;
+  border-radius: 4px; background: var(--cinnabar-pure); color: var(--paper);
+  font-family: var(--font-serif); font-size: 0.82rem; }
+.settings-account__admin strong { display: block; font-size: 0.86rem; color: var(--ink); font-weight: 600; }
+.settings-account__admin strong + span { font-size: 0.74rem; color: var(--ink-faint); }
+
 .auth-overlay { z-index: 210; }
 .auth-sheet { max-width: 420px; padding-bottom: 24px; }
 .auth-sheet__head { align-items: flex-start; margin-bottom: 18px; }

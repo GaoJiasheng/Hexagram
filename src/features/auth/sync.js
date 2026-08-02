@@ -1,3 +1,4 @@
+import { apiFetch } from './apiClient.js'
 import {
   DATA_KEYS,
   applySyncSnapshot,
@@ -21,7 +22,7 @@ export async function syncNow() {
   const snapshot = getSyncSnapshot()
 
   try {
-    const response = await fetch('/api/sync', {
+    const response = await apiFetch('/api/sync', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ data: snapshot }),

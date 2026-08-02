@@ -52,7 +52,20 @@ export default function AboutPage() {
 
       <section className="about-section">
         <h2 className="about-section__title">你的数据</h2>
-        <p>收藏、笔记、推演历史、研习进度等<strong>全部只存于此浏览器的 localStorage,不上传任何服务器</strong>。清浏览器缓存或更换设备会丢失——请在<strong>设置 → 数据管理</strong>里定期「导出全部数据」做备份,换设备时再导入。详见 <Link to="/privacy">隐私政策</Link>。</p>
+        <p><strong>不登录</strong>时,收藏、笔记、推演历史、研习进度<strong>只存于此浏览器的 localStorage,不上传任何服务器</strong>;清缓存或换设备会丢失,请在<strong>设置 → 数据管理</strong>里定期「导出全部数据」做备份。</p>
+        <p><strong>登录后</strong>,这些足迹会同步到服务器,以便换设备接着读;账号本身只保存一个邮箱地址。随时可以退出登录,导出/清空本地数据的按钮照常可用。详见 <Link to="/privacy">隐私政策</Link>。</p>
+      </section>
+
+      <section className="about-section" id="community">
+        <h2 className="about-section__title">评论与联系</h2>
+        <p>章末评论区供研读交流。请<strong>就文本说话</strong>——不同读法尽可以争,但不做人身攻击、不发广告、不发与经义无关的内容。</p>
+        <ul className="about-list">
+          <li><strong>看到不妥的内容</strong>:点该条评论的「举报」。同一条被若干人举报会<strong>先自动隐藏</strong>,再由我人工复核。</li>
+          <li><strong>不想再看到某个人</strong>:点「屏蔽此人」。这只影响你自己的浏览——对方不会收到通知,内容也不会被删除;随时可在<strong>设置</strong>里解除。</li>
+          <li><strong>发布时会过一道自动过滤</strong>。它只拦最露骨的一层,难免有误判——若你的正常发言被拦,请直接来信告诉我。</li>
+          <li><strong>iOS App 内暂不支持发表评论</strong>,可在网页版参与;App 里仍可阅读、举报与屏蔽。</li>
+        </ul>
+        <p>任何问题、申诉、侵权或纠错,来信:<a href="mailto:hexa@gavin.pub">hexa@gavin.pub</a>。这是个人学习站,我会尽快回复,但不保证即时。</p>
       </section>
 
       <div className="about-back">

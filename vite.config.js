@@ -57,6 +57,11 @@ export default defineConfig({
         // 且在网络层打穿了分组隔离(别组数据全下到本地)。现仅按实际访问逐片缓存。
         globPatterns: ['**/*.{css,html,svg,webmanifest}', 'hexagram.svg', 'pwa-*.png', 'apple-touch-icon*.png'],
         navigateFallback: 'index.html',
+        // /api/* 必须排除:navigateFallback 会拦**所有导航请求**,包括
+        // `/api/auth/google/start` 这种「靠服务端 302 跳走」的接口 —— 装了 SW 的回访用户
+        // 点「用 Google 登录」会被喂一份缓存的 index.html,渲染成假的「页面不存在」,永远登不进去。
+        // curl 看不出来(没有 SW),只有真在浏览器里走一遍才会暴露。
+        navigateFallbackDenylist: [/^\/api\//],
         cleanupOutdatedCaches: true,
         runtimeCaching: [
           {

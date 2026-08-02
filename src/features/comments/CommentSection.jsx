@@ -2,6 +2,15 @@ import { useEffect, useRef, useState } from 'react'
 import PixelAvatar from '../auth/PixelAvatar.jsx'
 import { useAuth } from '../auth/AuthContext.jsx'
 import { TURNSTILE_SITE_KEY } from './config.js'
+import { apiFetch, IS_NATIVE } from '../auth/apiClient.js'
+
+const REPORT_REASONS = [
+  ['abuse', '辱骂'],
+  ['porn', '色情'],
+  ['spam', '广告'],
+  ['illegal', '违法'],
+  ['other', '其他'],
+]
 
 const TURNSTILE_SCRIPT = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'
 let turnstileScriptPromise = null
@@ -56,6 +65,9 @@ export default function CommentSection({ corpus, slug, chapter }) {
   const [submitting, setSubmitting] = useState(false)
   const [deletingId, setDeletingId] = useState(null)
   const [moderatingId, setModeratingId] = useState(null)
+  const [actingId, setActingId] = useState(null)
+  const [notice, setNotice] = useState('')
+  const [reportingId, setReportingId] = useState(null)
   const [turnstileReady, setTurnstileReady] = useState(false)
   const requestedRef = useRef(false)
   const turnstileContainerRef = useRef(null)
@@ -69,7 +81,7 @@ export default function CommentSection({ corpus, slug, chapter }) {
     setLoading(true)
     setError('')
 
-    fetch(`/api/comments?${query}`, { signal: controller.signal })
+    apiFetch(`/api/comments?${query}`, { signal: controller.signal })
       .then(async (response) => {
         const data = await responseData(response)
         if (!response.ok) throw new Error(data?.error || '评论加载失败,请稍后重试')
@@ -131,7 +143,7 @@ export default function CommentSection({ corpus, slug, chapter }) {
     setSubmitting(true)
     setError('')
     try {
-      const response = await fetch('/api/comments', {
+      const response = await apiFetch('/api/comments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ corpus, slug, chapter, body: trimmed, turnstileToken }),
@@ -153,7 +165,7 @@ export default function CommentSection({ corpus, slug, chapter }) {
     setDeletingId(id)
     setError('')
     try {
-      const response = await fetch(`/api/comments/${encodeURIComponent(id)}`, { method: 'DELETE' })
+      const response = await apiFetch(`/api/comments/${encodeURIComponent(id)}`, { method: 'DELETE' })
       if (!response.ok) {
         const data = await responseData(response)
         throw new Error(data?.error || '评论删除失败,请稍后重试')
@@ -171,7 +183,7 @@ export default function CommentSection({ corpus, slug, chapter }) {
     setModeratingId(comment.id)
     setError('')
     try {
-      const response = await fetch(`/api/admin/comments/${encodeURIComponent(comment.id)}`, {
+      const response = await apiFetch(`/api/admin/comments/${encodeURIComponent(comment.id)}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status }),
@@ -187,6 +199,56 @@ export default function CommentSection({ corpus, slug, chapter }) {
       setError(moderateError.message)
     } finally {
       setModeratingId(null)
+    }
+  }
+
+  // ── 举报 / 拉黑(App Store 1.2)────────────────────────
+  // 两者都是**别人的内容**上的动作,所以只对已登录且非本人的评论显示。
+  // 拉黑按评论走(前端不知道也不该知道对方的 user id),服务端自己查作者。
+  // 举报走**内联选项**而不是 window.prompt:在 Capacitor 壳里原生弹窗会顶着
+  // 「capacitor://localhost 说:」的标题,审核时很难看,而且没法本地化。
+  async function submitReport(comment, reason) {
+    setActingId(comment.id)
+    setReportingId(null)
+    setNotice('')
+    try {
+      const response = await apiFetch(`/api/comments/${encodeURIComponent(comment.id)}/report`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ reason }),
+      })
+      const data = await responseData(response)
+      if (!response.ok) throw new Error(data?.error || '举报失败,请稍后重试')
+      setNotice(data?.hidden
+        ? '已收到举报,该评论已暂时隐藏待复核。'
+        : '已收到举报,我们会尽快处理。')
+    } catch (reportError) {
+      setError(reportError.message)
+    } finally {
+      setActingId(null)
+    }
+  }
+
+  async function blockAuthor(comment) {
+    setActingId(comment.id)
+    setNotice('')
+    try {
+      const response = await apiFetch('/api/blocks', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ commentId: comment.id }),
+      })
+      if (!response.ok) {
+        const data = await responseData(response)
+        throw new Error(data?.error || '屏蔽失败,请稍后重试')
+      }
+      // 就地移除该作者的全部评论,不必等下次拉取
+      setComments((current) => current.filter((item) => item.user.displayName !== comment.user.displayName))
+      setNotice('已屏蔽。对方不会收到通知;可在「设置 · 已屏蔽的人」里解除。')
+    } catch (blockError) {
+      setError(blockError.message)
+    } finally {
+      setActingId(null)
     }
   }
 
@@ -245,15 +307,53 @@ export default function CommentSection({ corpus, slug, chapter }) {
                           {deletingId === comment.id ? '删除中…' : '删除'}
                         </button>
                       )}
+                      {/* 举报与屏蔽在 iOS 上同样要有 —— 只要 App「展示」UGC 就落进
+                          App Store 1.2,不是只有能发才算。 */}
+                      {user && !comment.mine && (
+                        <>
+                          <button
+                            type="button"
+                            className="comment-section__report"
+                            disabled={actingId !== null}
+                            onClick={() => setReportingId(reportingId === comment.id ? null : comment.id)}
+                          >
+                            {actingId === comment.id ? '处理中…' : '举报'}
+                          </button>
+                          <button
+                            type="button"
+                            className="comment-section__report"
+                            disabled={actingId !== null}
+                            onClick={() => blockAuthor(comment)}
+                            title="只影响你自己的浏览,对方不会收到通知"
+                          >
+                            屏蔽此人
+                          </button>
+                        </>
+                      )}
                     </div>
                     <p className="comment-section__body">{comment.body}</p>
+                    {reportingId === comment.id && (
+                      <div className="comment-section__report-panel" role="group" aria-label="举报理由">
+                        <span>举报理由:</span>
+                        {REPORT_REASONS.map(([value, label]) => (
+                          <button key={value} type="button" onClick={() => submitReport(comment, value)}>{label}</button>
+                        ))}
+                        <button type="button" onClick={() => setReportingId(null)}>取消</button>
+                      </div>
+                    )}
                   </div>
                 </article>
               )
             })}
           </div>
 
-          {user ? (
+          {/* iOS 端只读:App 不开 UGC 发布(见 docs/todo.md §1.2),
+              但云端已有的评论照常展示,举报/屏蔽也照常可用。 */}
+          {IS_NATIVE ? (
+            <p className="comment-section__state comment-section__readonly">
+              App 内暂不支持发表评论,可在网页版 hexa.gavin.pub 参与讨论。
+            </p>
+          ) : user ? (
             <form className="comment-section__composer" onSubmit={submitComment}>
               <textarea
                 className="comment-section__textarea"
@@ -286,6 +386,14 @@ export default function CommentSection({ corpus, slug, chapter }) {
             </button>
           )}
 
+          {/* 规则与联系方式必须在评论区当场可达,不能只藏在「关于」页 */}
+          <p className="comment-section__rules">
+            请就文本说话,勿人身攻击或发广告。看到不妥内容可「举报」,不想再看到某人可「屏蔽此人」。
+            <a href="/about#community" target="_blank" rel="noreferrer">社区规则</a>
+            <span aria-hidden="true"> · </span>
+            <a href="mailto:hexa@gavin.pub">联系我们</a>
+          </p>
+          {notice && <p className="comment-section__notice" role="status">{notice}</p>}
           {error && <p className="comment-section__error" role="alert">{error}</p>}
         </div>
       )}

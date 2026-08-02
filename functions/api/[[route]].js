@@ -8,6 +8,7 @@ import {
   validateGoogleIdToken,
 } from '../../server/google-auth.js'
 import { sendCommentNotification } from '../../server/comment-notification.js'
+import { AUTO_HIDE_REPORTS, screenComment } from '../../server/content-filter.js'
 import {
   mergeCollectionEntry,
   mergeDivinations,
@@ -148,6 +149,13 @@ async function createSession(db, userId) {
   return raw
 }
 
+// 原生壳拿不到 Cookie,只能把 token 存进设备。但**网页端绝不能拿到它** —— 那等于把 httpOnly
+// 白设了(一旦 XSS 就能读走长期凭证)。所以只在客户端显式声明自己是原生壳时才回传,
+// 网页那条路上 token 永远只存在于 Set-Cookie 里、JS 摸不到。
+function wantsToken(c) {
+  return (c.req.header('X-Client') || '').toLowerCase() === 'native'
+}
+
 function setSessionCookie(c, raw) {
   setCookie(c, SESSION_COOKIE, raw, {
     httpOnly: true,
@@ -217,8 +225,21 @@ function publicUser(row) {
   }
 }
 
+// 会话凭证有两条来路:
+//   网页 —— httpOnly Cookie(最安全,JS 碰不到)
+//   iOS  —— Authorization: Bearer(壳里页面从 capacitor://localhost 加载,跨源请求带不上
+//           SameSite=Lax 的 Cookie,WKWebView 的 ITP 也会拦第三方 Cookie)
+// 两者是**同一张 sessions 表、同一个 token**,只是搬运方式不同,后端逻辑完全一致。
+function readSessionToken(c) {
+  const cookie = getCookie(c, SESSION_COOKIE)
+  if (cookie) return cookie
+  const header = c.req.header('Authorization') || ''
+  const match = /^Bearer\s+(.+)$/i.exec(header.trim())
+  return match ? match[1].trim() : null
+}
+
 async function getSessionUser(c) {
-  const raw = getCookie(c, SESSION_COOKIE)
+  const raw = readSessionToken(c)
   if (!raw) return null
 
   const db = getDb(c)
@@ -583,7 +604,13 @@ app.get('/auth/google/callback', async (c) => {
       .run()
     const rawSession = await createSession(db, user.id)
     setSessionCookie(c, rawSession)
-    return c.redirect(returnTo, 302)
+    // 回跳带 ?auth=google:前端挂载时只在本地有「登录痕迹」标记才会去问 /api/me
+    // (匿名访客不该白发一次请求)。而 Google 登录是**服务端整页重定向**,cookie 由服务端种下、
+    // 前端代码从没跑过 saveAuthHint(),没有这个标记就永远显示未登录 —— 后端已登录、界面却是游客。
+    // 邮箱登录走前端表单会写标记,所以只有这一条路会中招。
+    const dest = new URL(returnTo, new URL(c.req.url).origin)
+    dest.searchParams.set('auth', 'google')
+    return c.redirect(`${dest.pathname}${dest.search}${dest.hash}`, 302)
   } catch (error) {
     if (error instanceof RequestError || error instanceof GoogleIdTokenError) {
       return googleAuthErrorPage(c, error.status, error.message, returnTo)
@@ -639,6 +666,7 @@ app.post('/auth/register', async (c) => {
         email,
         is_owner: 0,
       }),
+      ...(wantsToken(c) ? { token: rawSession } : {}),
     }, 201)
   } catch (error) {
     if (error instanceof RequestError) {
@@ -682,7 +710,7 @@ app.post('/auth/login', async (c) => {
       .run()
     const rawSession = await createSession(db, row.id)
     setSessionCookie(c, rawSession)
-    return c.json({ ok: true, user: publicUser(row) })
+    return c.json({ ok: true, user: publicUser(row), ...(wantsToken(c) ? { token: rawSession } : {}) })
   } catch (error) {
     if (error instanceof RequestError) {
       return c.json({ ok: false, error: error.message }, error.status)
@@ -737,9 +765,20 @@ app.get('/comments', async (c) => {
       LIMIT 100
     `).bind(anchor.corpus, anchor.slug, anchor.chapter).all()
 
+    // 拉黑是**单向、仅对本人生效**的视图过滤:不删对方内容、不通知对方、别人照常看得见。
+    // 所以在这里按请求者过滤,而不是在写入侧做任何事。
+    let blocked = new Set()
+    if (sessionUser) {
+      const rows = await getDb(c)
+        .prepare('SELECT blocked_id FROM user_blocks WHERE user_id = ?')
+        .bind(sessionUser.id).all()
+      blocked = new Set(resultRows(rows).map((r) => r.blocked_id))
+    }
+
     const isOwner = !!sessionUser?.is_owner
     const comments = resultRows(result)
       .filter((row) => isOwner || row.status === 'visible')
+      .filter((row) => !blocked.has(row.user_id))
       .map((row) => commentItem(row, sessionUser, isOwner))
     return c.json({ ok: true, comments })
   } catch (error) {
@@ -773,6 +812,14 @@ app.post('/comments', async (c) => {
 
     if (!await verifyTurnstile(c, input.turnstileToken)) {
       throw new RequestError(403, '人机验证未通过,请重试')
+    }
+
+    // 内容过滤(App Store 1.2 四件套之一)。只拦最露骨的一层,其余靠举报 + owner 复核 ——
+    // 详见 server/content-filter.js 顶部那三条约束(尤其「宁可漏过不可误伤」:
+    // 这站的正文本来就有「杀」「淫」这类字)。
+    const flagged = screenComment(body)
+    if (flagged) {
+      throw new RequestError(400, `${flagged.message},请修改后再发。若你认为这是误判,可在「关于」页联系我们。`)
     }
 
     const now = Date.now()
@@ -809,6 +856,111 @@ app.post('/comments', async (c) => {
       return c.json({ ok: false, error: error.message }, error.status)
     }
     console.error('Comment creation failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
+// ── 举报 / 拉黑(App Store 1.2)──────────────────────────
+// 这两条网页与 iOS 共用:**只要 App「展示」UGC 就落进 1.2**,不是只有能发才算,
+// 所以原生端虽不开发帖,举报与拉黑仍必须可用。
+
+const REPORT_REASONS = new Set(['abuse', 'porn', 'spam', 'illegal', 'other'])
+
+app.post('/comments/:id/report', async (c) => {
+  try {
+    const user = await requireUser(c)
+    const commentId = c.req.param('id')
+    const input = await readJsonBody(c)
+    const reason = REPORT_REASONS.has(input?.reason) ? input.reason : 'other'
+    const note = typeof input?.note === 'string' ? input.note.trim().slice(0, 200) : ''
+    const db = getDb(c)
+
+    const comment = await db.prepare('SELECT id, user_id, status FROM comments WHERE id = ?')
+      .bind(commentId).first()
+    if (!comment) throw new RequestError(404, '该评论不存在或已被删除')
+    if (comment.user_id === user.id) throw new RequestError(400, '不能举报自己的评论')
+
+    // 一人对一条只记一次(UNIQUE),重复点当成功处理 —— 对用户没必要报错,
+    // 也免得靠反复提交去刷高计数。
+    await db.prepare(`
+      INSERT INTO comment_reports (id, comment_id, reporter_id, reason)
+      VALUES (?, ?, ?, ?)
+      ON CONFLICT (comment_id, reporter_id) DO NOTHING
+    `).bind(crypto.randomUUID(), commentId, user.id, note ? `${reason}: ${note}` : reason).run()
+
+    // 够 N 个**不同的人**举报就先隐藏、等 owner 复核。这是 1.2 里「及时响应」的机械兜底:
+    // 人不在线时也能把内容先挡住,而不是等到有空才处理。
+    const counted = await db
+      .prepare('SELECT COUNT(*) AS n FROM comment_reports WHERE comment_id = ?')
+      .bind(commentId).first()
+    let hidden = comment.status === 'hidden'
+    if (!hidden && Number(counted?.n || 0) >= AUTO_HIDE_REPORTS) {
+      await db.prepare("UPDATE comments SET status = 'hidden' WHERE id = ?").bind(commentId).run()
+      hidden = true
+    }
+    return c.json({ ok: true, hidden })
+  } catch (error) {
+    if (error instanceof RequestError) return c.json({ ok: false, error: error.message }, error.status)
+    console.error('Comment report failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
+app.get('/blocks', async (c) => {
+  try {
+    const user = await requireUser(c)
+    const rows = await getDb(c).prepare(`
+      SELECT b.blocked_id, b.created_at, u.display_name, u.avatar_seed
+      FROM user_blocks b JOIN users u ON u.id = b.blocked_id
+      WHERE b.user_id = ? ORDER BY b.created_at DESC
+    `).bind(user.id).all()
+    return c.json({
+      ok: true,
+      blocks: resultRows(rows).map((r) => ({
+        userId: r.blocked_id, displayName: r.display_name,
+        avatarSeed: r.avatar_seed, createdAt: r.created_at,
+      })),
+    })
+  } catch (error) {
+    if (error instanceof RequestError) return c.json({ ok: false, error: error.message }, error.status)
+    console.error('Block list failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
+app.post('/blocks', async (c) => {
+  try {
+    const user = await requireUser(c)
+    const input = await readJsonBody(c)
+    // 前端只知道评论 id,不知道作者 id(commentItem 有意不返回 user_id —— 那是别人的标识符)。
+    // 所以拉黑按评论走:服务端自己查出作者。
+    const commentId = typeof input?.commentId === 'string' ? input.commentId : ''
+    const db = getDb(c)
+    const comment = await db.prepare('SELECT user_id FROM comments WHERE id = ?').bind(commentId).first()
+    if (!comment) throw new RequestError(404, '该评论不存在或已被删除')
+    if (comment.user_id === user.id) throw new RequestError(400, '不能屏蔽自己')
+
+    await db.prepare(`
+      INSERT INTO user_blocks (user_id, blocked_id) VALUES (?, ?)
+      ON CONFLICT (user_id, blocked_id) DO NOTHING
+    `).bind(user.id, comment.user_id).run()
+    return c.json({ ok: true })
+  } catch (error) {
+    if (error instanceof RequestError) return c.json({ ok: false, error: error.message }, error.status)
+    console.error('Block failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
+app.delete('/blocks/:userId', async (c) => {
+  try {
+    const user = await requireUser(c)
+    await getDb(c).prepare('DELETE FROM user_blocks WHERE user_id = ? AND blocked_id = ?')
+      .bind(user.id, c.req.param('userId')).run()
+    return c.body(null, 204)
+  } catch (error) {
+    if (error instanceof RequestError) return c.json({ ok: false, error: error.message }, error.status)
+    console.error('Unblock failed', error)
     return c.json({ ok: false, error: 'service unavailable' }, 503)
   }
 })
@@ -862,6 +1014,47 @@ app.get('/admin/comments', async (c) => {
     return c.json({ ok: true, comments })
   } catch (error) {
     console.error('Admin comment list failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
+app.get('/admin/reports', async (c) => {
+  try {
+    const rows = await getDb(c).prepare(`
+      SELECT r.id, r.comment_id, r.reason, r.created_at, r.handled_at,
+             c.body, c.status, c.corpus, c.slug, c.chapter,
+             u.display_name AS author_name
+      FROM comment_reports r
+      JOIN comments c ON c.id = r.comment_id
+      JOIN users u ON u.id = c.user_id
+      WHERE r.handled_at IS NULL
+      ORDER BY r.created_at DESC
+      LIMIT 100
+    `).all()
+    return c.json({
+      ok: true,
+      reports: resultRows(rows).map((r) => ({
+        id: r.id, commentId: r.comment_id, reason: r.reason, createdAt: r.created_at,
+        body: r.body, status: r.status, corpus: r.corpus, slug: r.slug,
+        chapter: r.chapter, authorName: r.author_name,
+      })),
+    })
+  } catch (error) {
+    console.error('Report list failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
+// 处理即标记 handled_at —— 该评论的**全部**待处理举报一起结掉,
+// 不然同一条被 5 个人报过就要点 5 次。
+app.patch('/admin/reports/:commentId', async (c) => {
+  try {
+    await getDb(c)
+      .prepare('UPDATE comment_reports SET handled_at = ? WHERE comment_id = ? AND handled_at IS NULL')
+      .bind(Date.now(), c.req.param('commentId')).run()
+    return c.json({ ok: true })
+  } catch (error) {
+    console.error('Report resolve failed', error)
     return c.json({ ok: false, error: 'service unavailable' }, 503)
   }
 })

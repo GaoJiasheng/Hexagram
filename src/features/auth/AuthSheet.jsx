@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { saveAuthHint } from '../yijing/storage.js'
 import { useAuth } from './AuthContext.jsx'
+import { IS_NATIVE } from './apiClient.js'
 
 export default function AuthSheet({ open, initialMode = 'login', onClose }) {
   const { login, register } = useAuth()
@@ -104,7 +105,9 @@ export default function AuthSheet({ open, initialMode = 'login', onClose }) {
             {submitting ? '请稍候…' : mode === 'register' ? '注册并登录' : '登录'}
           </button>
         </form>
-        {mode === 'login' && (
+        {/* Google 登录只在网页可用:原生要另建 iOS OAuth 客户端 + 走
+            ASWebAuthenticationSession 才能回跳,现在点了回不来,所以直接不渲染。 */}
+        {mode === 'login' && !IS_NATIVE && (
           <div className="auth-sheet__oauth">
             <div className="auth-sheet__divider"><span>或</span></div>
             <button className="auth-sheet__submit auth-sheet__google" type="button" onClick={handleGoogleLogin} disabled={submitting}>

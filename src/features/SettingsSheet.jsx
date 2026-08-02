@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import FontFamilyControl from './reader/FontFamilyControl.jsx'
 import { useSettings } from './yijing/SettingsContext.jsx'
 import { FONT_SCALE_STEPS, exportData, importData, clearAllData, getLastSyncAt } from './yijing/storage.js'
 import { useAuth } from './auth/AuthContext.jsx'
 import { syncNow } from './auth/sync.js'
+import { apiFetch } from './auth/apiClient.js'
 import PixelAvatar from './auth/PixelAvatar.jsx'
 
 function syncTimeLabel(timestamp) {
@@ -23,6 +25,9 @@ export default function SettingsSheet({ open, onClose }) {
   const [clearConfirm, setClearConfirm] = useState('')
   const [accountError, setAccountError] = useState('')
   const [syncing, setSyncing] = useState(false)
+  // 已屏蔽名单:拉黑必须能解除,否则「拉黑能力」不成立(App Store 1.2 那一条要的是
+  // 能力,不是单向操作)。只在登录且面板打开时才拉,免得给游客白发请求。
+  const [blocks, setBlocks] = useState(null)
   const [lastSyncAt, setLastSyncAt] = useState(getLastSyncAt)
 
   // 锁背景滚动 + Esc 关闭 + 关闭还原焦点
@@ -102,6 +107,25 @@ export default function SettingsSheet({ open, onClose }) {
     }
   }
 
+  useEffect(() => {
+    if (!open || !user) { setBlocks(null); return }
+    let alive = true
+    apiFetch('/api/blocks')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => { if (alive) setBlocks(d?.blocks || []) })
+      .catch(() => { if (alive) setBlocks([]) })
+    return () => { alive = false }
+  }, [open, user])
+
+  async function unblock(userId) {
+    try {
+      await apiFetch(`/api/blocks/${encodeURIComponent(userId)}`, { method: 'DELETE' })
+      setBlocks((current) => (current || []).filter((b) => b.userId !== userId))
+    } catch {
+      setAccountError('解除屏蔽失败,请稍后重试')
+    }
+  }
+
   return (
     <div className="settings-overlay" onClick={(e) => { if (e.target === e.currentTarget) onClose() }}>
       <div className="settings-sheet" role="dialog" aria-modal="true" aria-label="设置">
@@ -131,6 +155,32 @@ export default function SettingsSheet({ open, onClose }) {
                     {syncing ? '同步中…' : '立即同步'}
                   </button>
                 </div>
+                {/* owner 才出这一行。它只是**入口**,不是权限本身 —— /admin/stats 的内容
+                    全部来自 /api/admin/stats,服务端逐次校验会话是不是 owner,
+                    藏起这个链接不等于保护,露出来也不等于放行。 */}
+                {blocks?.length > 0 && (
+                  <div className="settings-blocks">
+                    <span className="settings-blocks__title">已屏蔽的人 · {blocks.length}</span>
+                    <ul>
+                      {blocks.map((b) => (
+                        <li key={b.userId}>
+                          <span>{b.displayName}</span>
+                          <button className="btn-text" type="button" onClick={() => unblock(b.userId)}>解除</button>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {user.isOwner && (
+                  <Link to="/admin/stats" className="settings-account__admin" onClick={onClose}>
+                    <span className="settings-account__admin-seal" aria-hidden="true">统</span>
+                    <span>
+                      <strong>站点后台</strong>
+                      <span>阅读统计 · 评论管理</span>
+                    </span>
+                    <span aria-hidden="true">›</span>
+                  </Link>
+                )}
               </>
             ) : (
               <div className="settings-account__guest">
