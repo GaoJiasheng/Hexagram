@@ -1,0 +1,145 @@
+{
+  "title": "怎么读它：版本、译本，和书房里的邻居",
+  "subtitle": "这本书没有「标准版」——十三年六版，是一个人被批评追着跑留下的六道年轮",
+  "centralIdea": "前十一章讲的是这本书说了什么，这一章讲手艺：怎么把它读下来。第一件事是挑版本——1859 到 1872 年他改了六版，第一版最利落、论证最裸，第六版最厚、让步最多，而流传最广、多数中译本所据的恰恰是第六版，所以「最容易买到的」和「最值得初读的」不是同一本。第二件事是知道副标题里那个词（races）在当时指品种族系而非人种，以及中文「进化」这个译名从一开始就装进了一个原文没有的箭头。第三件事是路线：十四章不是均匀的，第三、四章是心脏，第六章是他自己请来的反对者，第十三章是最硬的证据，其余可缓可跳。最后再卸下三个预设、拆掉两个假故事，然后往书房里的五个方向接着走。",
+  "blocks": [
+    { "type": "lead", "text": "到这里，这本书的内容已经讲完了。这一章不讲思想，讲手艺：你真要把它请回家，该买哪一版、哪个译本，从哪一页翻起，哪几章可以先跳过，读之前要先卸下什么，读完之后往哪儿走。**一本厚书的门槛，一半在思想，一半在这些琐碎处——而后一半，通常没有人告诉你。**" },
+
+    { "type": "h2", "text": "一、六个版本，其实是一部被追着改的书" },
+    { "type": "p", "text": "先说一件很多人不知道的事：**《物种起源》没有一个「标准版本」。**1859 到 1872 年，十三年里他改了六版。这不是通常意义上的修订——不是订正错字、更新数据，而是**一个人被质疑追着跑，一路补、一路辩、一路让步**留下的六道年轮。" },
+    { "type": "p", "text": "第一版 1859 年 11 月出版，印了一千两百多册，当天就被书商订光。这一版**最利落，也最锋芒毕露**：前面没有史略，中间没有答辩章，从鸽舍讲到生命之树，一条链条扣到底，中间不停下来跟谁争。" },
+    { "type": "p", "text": "此后每一版都在往里加东西。**第二版**（1860）在全书最后那句话里添了「由造物主」几个字——这一处让步，他后来在私信里明说自己后悔了。**第三版**（1861）在正文之前加了一篇《史略》，把在他之前主张过物种可变的人一一列出，那是回应「你没有交代前人」的指责。**第五版**（1869）第一次把「适者生存」写进正文——这五个字的来历，第十一章已经交代过。" },
+    { "type": "p", "text": "**改动最大的是第六版**（1872）。书名从这一版起简化，开头那个「论」字去掉；更要紧的是他**新加了整整一章**，专门回应当时最难缠的一批质疑——其中一位曾经的支持者写了一整本书来挑他的毛病，那一章有大半是冲着他去的。为了堵住这些窟窿，他在这一版里对「用进废退」让步更多。第六版比第一版长了约三分之一，定价反而压低了，销量最大，**也成了后来大多数译本的底本。**" },
+    { "type": "p", "text": "于是出现了一个反直觉的局面：**流传最广的那一版，恰恰是作者退让最多、论证被稀释得最厉害的那一版。**这不怪他——每一处让步背后都有一个当时答不上来的真问题（遗传机制那张欠条尤其致命，第十章讲过）。但对今天的读者来说，结果是明确的：**要看那条链条是怎么扣紧的，得回第一版去看，因为只有那一版里，链条是裸的。**" },
+    {
+      "type": "table",
+      "head": ["版次", "年份", "这一版发生了什么", "给读者的一句话"],
+      "rows": [
+        ["第一版", "1859", "一千二百余册当天订光；无史略、无答辩章，论证最裸", "初读首选"],
+        ["第二版", "1860", "末句添「由造物主」——他后来在信里说后悔了", "与初版差别不大"],
+        ["第三版", "1861", "正文前加《史略》，列出主张过物种可变的前人", "想看学术礼节的看这里"],
+        ["第四版", "1866", "继续增补修订，篇幅进一步变厚", "无特别理由不必单挑"],
+        ["第五版", "1869", "首次把「适者生存」写进正文", "这个词的来历见第十一章"],
+        ["第六版", "1872", "增答辩一章、书名简化、对「用进废退」让步更多；销量最大", "多数中译本的底本"]
+      ],
+      "caption": "六版之间的差别不在数据，在姿态：从一条裸的链条，改成一份附着全部答辩记录的卷宗。"
+    },
+
+    { "type": "h2", "text": "二、副标题里的那个词，和一笔中文译名的旧账" },
+    { "type": "p", "text": "第一版的书名很长，长到后来干脆被砍掉一半。而被砍掉的那半句，正是后来被断章取义最多的一句。" },
+    {
+      "type": "quote",
+      "original": "依据自然选择的物种起源，或生存斗争中优势族系的保存",
+      "translation": "第一版书名全译。**要留意后半句里的「族系」。**原文那个词在十九世纪的博物学里指的是**品种、族系、变种**——鸽子的球胸种、卷心菜的各个品系，都算在内。它和今天说的「人种」是同一个词，**却不是同一个意思**；而全书正文从头到尾谈的是动植物的品种，没有一处在给人分等。这半句副标题被引用了一百多年，绝大多数引用者做的都是同一件事：拿今天的词义去套一百六十多年前的用法。"
+    },
+    { "type": "p", "text": "中文这边还有一笔更旧的账：**「进化」这两个字。**原词的本义近于「展开」，它本身不含高低、不带方向。译成「进化」，等于在书名里就预装了一个「越变越好」的箭头——**读者从看到封面的那一刻起，就已经被推向了误读。**近些年不少学者主张改译「演化」，做的事情很简单：把那个箭头拆掉，让这个词回到中性。" },
+    { "type": "p", "text": "有意思的是，达尔文自己对这个名词也很警惕。**在第一版里，它只以动词的形态出现过一次，就在全书最后一个句号之前**（第十章讲过那句收尾）；名词形式要到后来的版本才被他放进正文。他绕开它，正是因为它在当时带着「按预定的方向层层展开」的意味——**而他要说的，恰恰是没有预定的方向。**一个作者刻意躲了一辈子的词，最后成了这套学说在中文里的名字，这件事本身就值得记一笔。" },
+
+    { "type": "h2", "text": "三、挑译本：先翻版权页，看它据的是第几版" },
+    { "type": "p", "text": "知道了版本的事，挑译本就简单了：**先翻版权页，看它据的是第几版。**这一句比任何推荐语都管用，也是本章最实用的一条。" },
+    { "type": "p", "text": "中译的历史比想象中长。**1920 年出版的马君武译本，是第一个中文全译本**，书名作《达尔文物种原始》——比严复那本《天演论》晚了二十来年，而《天演论》译的根本不是这本书（这段公案第十一章拆过）。**也就是说，中文世界先认识了这套思想的转写版，二十年后才读到原著。**这个先后顺序，解释了后来很多误读为什么那么顽固：口号先入了场，论证是后来才补上的。" },
+    { "type": "p", "text": "今天容易买到的主要是两条线。**一条是商务印书馆「汉译世界学术名著」本**，周建人、叶笃庄、方宗熙合译，据第六版——顺带一提，译者之一周建人是鲁迅的三弟，本身就是生物学者。这个本子沉稳、注释扎实，长期是通行本。**另一条是译林出版社的苗德岁译本，据第一版**，语言更近今天的口语，适合初读。此外还有依第二版翻译的本子。" },
+    { "type": "p", "text": "怎么选？**只打算读一遍的，选据第一版的译本**，论证最干净。**想看这个人怎么在压力下应战的，选据第六版的**，那一章答辩本身就是一份精彩的文献。**两样都想要，就把第一版当正餐、第六版新增的答辩章当补篇。**另外提醒一句：不同译本的术语差别不小，同一个概念可能作「自然选择」也可能作「天择」，「生存斗争」也有译成「生存竞争」的。**换本子时别被措辞绊住，认概念、不认字面。**" },
+    {
+      "type": "figure",
+      "ftype": "决策图",
+      "svg": "<svg viewBox='0 0 560 282' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>你该读哪一版</text><rect x='20' y='106' width='140' height='68' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='90' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>先问自己一句</text><text x='90' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>你要它做什么</text><g style='fill:none;stroke:var(--ink-faint);stroke-width:1.1'><path d='M160,140 L188,140 L188,79 L296,79'/><path d='M160,140 L296,140'/><path d='M160,140 L188,140 L188,205 L296,205'/></g><rect x='300' y='52' width='240' height='54' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='420' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>只想读一遍，看清那条链条</text><text x='420' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>据第一版的译本</text><rect x='300' y='113' width='240' height='54' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='420' y='135' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>想看他怎么在压力下应战</text><text x='420' y='155' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>据第六版的译本</text><rect x='300' y='178' width='240' height='54' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='420' y='200' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>两样都想要</text><text x='420' y='220' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>第一版正餐，答辩章作补篇</text><line x1='20' y1='250' x2='540' y2='250' style='stroke:var(--line);stroke-width:1'/><text x='280' y='272' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>买之前先翻版权页——它据的是第几版，那里写着</text></svg>",
+      "caption": "「最容易买到的」和「最值得初读的」在这本书上不是同一本。这是极少数需要先挑版本、再谈内容的经典。"
+    },
+
+    { "type": "h2", "text": "四、三条读法路线" },
+    { "type": "p", "text": "接下来是最实际的问题：这本书八百来页，怎么读才不会卡死在第二章的鸽子上。" },
+    { "type": "p", "text": "关键在于知道**它的章节不是均匀的**。有些章是论证的心脏，有些章是他为了取信而铺的台阶，有些章是他主动请进门的反对者，还有几章是那个年代的资料库。分清哪是哪，就能按自己手上的时间安排路线。" },
+    {
+      "type": "figure",
+      "ftype": "章节地图",
+      "svg": "<svg viewBox='0 0 560 344' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>十四章不是均匀的：哪是心脏，哪是台阶</text><g><rect x='24' y='42' width='84' height='28' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='66' y='61' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>第 1–2 章</text><text x='122' y='61' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>鸽舍与菜园：取信的台阶，不是论证</text><text x='536' y='61' text-anchor='end' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>可缓</text></g><g><rect x='24' y='82' width='84' height='28' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='66' y='101' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>第 3–4 章</text><text x='122' y='101' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>生存斗争与自然选择：全书的心脏</text><text x='536' y='101' text-anchor='end' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar-pure)'>★ 先读</text></g><g><rect x='24' y='122' width='84' height='28' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='66' y='141' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>第 5 章</text><text x='122' y='141' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>变异的法则：材料密，收获少</text><text x='536' y='141' text-anchor='end' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>可缓</text></g><g><rect x='24' y='162' width='84' height='28' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='66' y='181' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>第 6–8 章</text><text x='122' y='181' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>难点·本能·杂种：他自己请来的反对者</text><text x='536' y='181' text-anchor='end' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar-pure)'>★ 看写法</text></g><g><rect x='24' y='202' width='84' height='28' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='66' y='221' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>第 9–12 章</text><text x='122' y='221' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>地质记录与地理分布：那个年代的资料库</text><text x='536' y='221' text-anchor='end' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>可跳读</text></g><g><rect x='24' y='242' width='84' height='28' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='66' y='261' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>第 13 章</text><text x='122' y='261' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>形态·胚胎·退化器官：他认为最硬的证据</text><text x='536' y='261' text-anchor='end' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar-pure)'>★ 先读</text></g><g><rect x='24' y='282' width='84' height='28' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='66' y='301' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>第 14 章</text><text x='122' y='301' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>复述与结论：把全书重走一遍</text><text x='536' y='301' text-anchor='end' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar-pure)'>★ 最后读</text></g><line x1='24' y1='320' x2='536' y2='320' style='stroke:var(--line);stroke-width:1'/><text x='280' y='338' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>章号按第一版；第六版从第七章起新增答辩一章，其后各章顺延加一</text></svg>",
+      "caption": "四颗星就是全书的骨架：心脏、他自己写的反驳、最硬的证据、收尾。其余各章都是围着这四处做的取证与铺垫。"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**只有两小时。**读第三、四章，再读第十四章的收尾，完。这三章之外的一切，都是为它们做的辩护和取证。第一、二章的鸽子和草莓可以先搁着——**那是他的取信策略，不是论证本身。**",
+        "**有一两周。**在上面的基础上补第六章和第十三章：一个教你怎么替对手把话说到最狠，一个给你摆在解剖台上的硬证据。**读完这五章，你已经拿到了全书。**",
+        "**想读全本。**按顺序走，但允许自己在第九到第十二章放慢甚至跳读——那几章材料极密，是他那个年代的资料库，今天的读者不必逐条跟。第五章同理。**跳读不丢人，卡死在资料库里才可惜。**"
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "一个小动作",
+      "items": [
+        "每读完一章，只记一句话：**他在这一章承认了什么。**",
+        "十四章记下来，你会得到一张很奇特的清单——**那几乎就是此后一百年科学进展的路线图。**把漏洞写进正文的作者极少，所以这本书的读法也与众不同：跟着他的坦白走，比跟着他的结论走收获大得多。"
+      ]
+    },
+
+    { "type": "h2", "text": "五、读之前，先卸下三个预设" },
+    { "type": "p", "text": "有三个预设几乎人人都带着进门，而它们会让你把每一句都读歪。翻开书之前，先卸下来。" },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**「演化 = 进步」。**这是最顽固的一个（第十一章拆过）。带着它读，你会一路在找「谁更高级」，而书里根本没有这条轴。**读到「适应」二字，请翻译成「跟当下这套条件对上了」，不要翻译成「更优秀」。**",
+        "**「缺失的环节」。**这个说法本身就是错的——它预设演化是一条链，缺一环就断。**可这本书给的是一棵树。**树上没有「环节」，只有一个个真实活过的分支；挖到一块化石，不是补上了链条中间的一格，而是认出了树上的一个岔口。带着「链」的想象去读第九章，会觉得处处是缺口；换成「树」，那一章立刻通顺。",
+        "**「它只是一个理论」。**这句话玩的是一个词的双关。日常说的「理论」是「还没证实的猜想」；科学里说的「理论」是**已被大量证据支撑、并且能作出预测的解释框架**——是学问的成品，不是半成品。自然选择从提出的第一天起就是按后一种意思在用：它处处在承诺「如果世界不是这样，我就错了」。"
+      ]
+    },
+
+    { "type": "h2", "text": "六、两个流传很广的假故事" },
+    { "type": "p", "text": "还有两个故事流传极广，值得单独拆一下——因为它们常常就是别人递给你的第一印象。" },
+    { "type": "p", "text": "**第一个：达尔文临终反悔、重归信仰。**这个故事出自 1915 年一位自称守在他病榻旁的女士发表的文章——那时他已去世三十多年。**他的女儿和儿子先后公开否认**：那位女士从未在他临终时到过场，他也从未收回过任何东西。这个故事至今仍在流传，讲的人多半是善意的，但它不是史实。" },
+    { "type": "p", "text": "他真实的立场，他自己在一封回信里说得很清楚——" },
+    {
+      "type": "quote",
+      "original": "我想，总的说来（而且越老越是如此），「不可知论者」是描述我心境最恰当的称呼。",
+      "translation": "1879 年答一位询问者的信。**要点是：他既没有宣称神不存在，也没有回到信仰里去。**他说的是「我不知道，而且我认为人无从知道」。这跟「临终反悔」是两回事，跟「反宗教斗士」也是两回事。他一生小心地不让这套生物学变成一份宣言——**倒是后来对立的两派人，都很想替他把那份宣言写出来。**"
+    },
+    { "type": "p", "text": "**第二个：1860 年牛津的那场著名辩论。**流传的版本是：一位主教讥讽赫胥黎，问他猴子血统是从祖父还是祖母那边来的，赫胥黎当场反唇相讥，满场哗然，新学说大获全胜。**那场交锋确实发生过，但「决定性时刻」这个框架是后人追述出来的**——当时的现场报道并没有把它写成一场胜负分明的对决，几位在场者的回忆彼此也对不上，而最出名的那个版本是许多年之后才写下的。**另外，达尔文本人根本不在场**，他身体不好，那几天在家。" },
+    {
+      "type": "callout",
+      "tone": "mute",
+      "label": "分寸",
+      "items": [
+        "拆掉这两个故事，不是为了替谁挽尊。**是因为一套论证一旦开始靠轶事支撑，它就已经离开了自己最擅长的地面。**",
+        "这本书的力量始终在那条链条上。**它不需要临终的戏剧，也不需要辩论场上的名场面。**"
+      ]
+    },
+
+    { "type": "h2", "text": "七、书房里的邻居：五个方向" },
+    { "type": "p", "text": "读完之后往哪儿走？按你想追的问题分五个方向，书房里都有现成的邻居。" },
+    {
+      "type": "list",
+      "items": [
+        "**往下游追「到底是谁在被选择」。**《自私的基因》站在这块地基上再往前推了一步：达尔文说个体在被选择，道金斯追问被选择的究竟是哪一层单位，一路把答案收窄到基因。**不读源头，看不出那一步跨了多远。**",
+        "**往回补那张最大的欠条。**《基因传》接的正是他一辈子没还上的第一张欠条：遗传究竟是怎么回事。那本书还接着写了这门学问被误用时发生过什么——**和第十一章是同一条线的延长。**",
+        "**往人类史看这套逻辑的迁移。**《枪炮、病菌与钢铁》《人类简史》都在用演化的眼光重述人类的来路。读的时候记住一件事：**那是历史学在借用一副眼镜，不是生物学在推导历史。**两者一旦混同，第十一章讲的那一步跳跃就又发生了。",
+        "**往自己的身体看。**《燃烧》讲人类的能量代谢是怎么被演化塑造的，《饥饿的大脑》讲那套古老的食欲线路为什么在今天频频出错。**这两本是「演化解释现状」最好用的示范**——它们解释「为什么会这样」，而不去裁决「所以该怎么办」。",
+        "**往误用的尽头看。**《极权主义的起源》不是生物学的书，但它写的正是「科学的必然」这类说辞被推到极端之后的样子。**和第十一章合起来读，会让人对那块被悄悄垫上的木板格外敏感。**"
+      ]
+    },
+    {
+      "type": "figure",
+      "ftype": "关系图",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='18' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>读完往哪儿走：五个方向</text><g style='fill:none;stroke:var(--ink-faint);stroke-width:1'><line x1='280' y1='124' x2='280' y2='74'/><line x1='215' y1='140' x2='170' y2='102'/><line x1='345' y1='140' x2='390' y2='102'/><line x1='224' y1='172' x2='188' y2='212'/><line x1='336' y1='172' x2='372' y2='212'/></g><rect x='215' y='124' width='130' height='48' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='280' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>《物种起源》</text><text x='280' y='163' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>你刚读完的这本</text><rect x='198' y='26' width='164' height='48' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='48' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>《基因传》</text><text x='280' y='65' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>接他最大的那张欠条</text><rect x='14' y='78' width='156' height='48' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='92' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>《自私的基因》</text><text x='92' y='117' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>谁在被选择，再往下一层</text><rect x='390' y='78' width='156' height='48' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='468' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>《燃烧》《饥饿的大脑》</text><text x='468' y='117' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>用它解释自己的身体</text><rect x='14' y='212' width='176' height='52' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='102' y='234' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>《枪炮、病菌与钢铁》</text><text x='102' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>《人类简史》· 眼镜的迁移</text><rect x='370' y='212' width='176' height='52' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='458' y='234' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>《极权主义的起源》</text><text x='458' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>「科学的必然」的尽头</text><text x='280' y='288' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>左下那一支要当心：那是历史学在借眼镜，不是生物学在推导历史</text></svg>",
+      "caption": "五个方向里，唯有「往人类史」那一支需要额外小心——它最好读，也最容易在不知不觉中把第十一章那块木板重新垫上。"
+    },
+
+    { "type": "h2", "text": "八、最后：今天还读它的理由" },
+    { "type": "p", "text": "有人会问：结论中学课本上就有了，为什么还要啃一本一百六十多年前的厚书？" },
+    { "type": "p", "text": "因为**结论是这本书里最不重要的东西。**它真正给的是一个示范：一个人手里没有一条决定性的铁证，面对一个会让整个社会不适的结论，他该怎么办。他的办法是——把前提摆到人人都能验证的地方，把反对意见自己先说到最狠，把还不上的账写进正文而不是脚注，然后请你掂量总账。" },
+    { "type": "p", "text": "这套做法今天依然稀缺。**我们更常遇到的是反过来的写法**：结论先行，证据挑着放，漏洞塞进注释，反对者的话被复述得软绵绵。读过这本书，再读那样的东西，会立刻觉得不对劲——**这才是它作为一本「怎么想事情」的教科书的价值，远大于它作为一本生物学著作的价值。**" },
+    { "type": "p", "text": "所以最后一句是：**别把它当成一本你已经知道答案的书去读。**把它当成一份论证的样本，一页一页看他怎么把话说圆、又在哪些地方明说自己没说圆。**读完你带走的不会是「物种会变」——那是常识；你带走的是一副掂量证据的手感。**" },
+    { "type": "pull", "text": "结论是这本书里最不重要的东西。它真正给的是一个示范：手里没有铁证、结论又惹人不适时，一个诚实的人怎么把话说出来。" },
+    {
+      "type": "refs",
+      "items": [
+        "版本：1859 年初版，至 1872 年共六版；第二版添「由造物主」、第三版增《史略》、第五版起采用「适者生存」、第六版增答辩一章并将书名简作《物种起源》",
+        "中译：马君武译《达尔文物种原始》（1920，首个中文全译本）；商务印书馆「汉译世界学术名著」本（周建人、叶笃庄、方宗熙译，据第六版）；译林苗德岁译本（据第一版）；另有依第二版的译本。各本所据版次以版权页为准",
+        "史料：1915 年「临终皈依」故事及达尔文子女的公开否认；1879 年他自述「不可知论者」的信；1860 年牛津辩论的当时报道与后世追述之差异",
+        "本篇为原创消化与转述，引文为点睛式短引、按文意重译"
+      ]
+    }
+  ]
+}
