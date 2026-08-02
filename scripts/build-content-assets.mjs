@@ -464,6 +464,32 @@ function indexConceptsAndDebates(records) {
   }
 }
 
+// 逐页分享卡(OG)索引:href → [标题, 副标]。
+// 复用搜索索引的同一批 records —— 标题/副标/链接本来就是同一套,另建一份必然走样。
+// 消费者是 functions/_middleware.js:只有爬虫 UA 才会读它,普通访客不受影响。
+// 只收「分享出去有意义」的页(有 subtitle 或属内容页),纯功能页不收。
+function buildOgIndex(records) {
+  // 按路径首段分片(og/ru.json、og/debates.json…):中间件每次只取它要的那一片。
+  // 不分片就是单文件 500KB+,而一次爬虫请求只用得上其中一条。
+  const shards = {}
+  let n = 0
+  for (const r of records) {
+    if (!r.href || !r.title) continue
+    if (r.href.includes('#')) continue          // 段锚共用整页的卡,不单列
+    const seg = r.href.split('/')[1] || '_root'
+    // 副标常常就是站名(章页尤其),那样的卡等于没信息 —— 退回用正文开头当预览。
+    const sub = (r.subtitle || '').trim()
+    const desc = (sub && sub !== r.siteTitle ? sub : (r.text || '').trim()).slice(0, 70)
+    const site = r.siteTitle && r.siteTitle !== '观象' ? ` · ${r.siteTitle}` : ''
+    ;(shards[seg] ??= {})[r.href] = [`${r.title}${site}`, desc]
+    n++
+  }
+  for (const [seg, map] of Object.entries(shards)) {
+    writeJson(path.join(OUT_ROOT, 'og', `${seg}.json`), map)
+  }
+  console.log(`og index: ${n} 条 / ${Object.keys(shards).length} 片`)
+}
+
 cleanOutDir(OUT_BAIHUA)
 cleanOutDir(OUT_SEARCH)
 
@@ -478,6 +504,7 @@ buildDaoduAssets(manifest)
 
 writeJson(path.join(OUT_ROOT, 'manifest.json'), manifest)
 buildSearchAssets(records)
+buildOgIndex(records)
 
 const baihuaCount = Object.values(manifest.baihua)
   .flatMap((books) => Object.values(books))
