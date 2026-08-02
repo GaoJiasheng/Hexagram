@@ -2420,6 +2420,15 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   color: var(--ink); font-family: inherit; font-size: 0.86rem; }
 .settings-account__rename input:focus { outline: none; border-color: var(--cinnabar); }
 .school-avatar { display: block; flex: 0 0 auto; }
+.settings-account__danger { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); }
+.settings-account__danger > button { color: var(--ink-faint); font-size: 0.76rem; }
+.settings-account__danger > button:hover { color: var(--cinnabar-pure); }
+.settings-account__danger p { margin: 0 0 6px; color: var(--ink-soft); font-size: 0.76rem; line-height: 1.7; }
+.settings-account__danger code { font-size: 0.74rem; color: var(--ink); }
+.settings-account__danger input { width: 100%; margin: 4px 0 6px; padding: 5px 8px;
+  border: 1px solid var(--line); border-radius: 6px; background: var(--paper);
+  color: var(--ink); font-family: inherit; font-size: 0.82rem; }
+.settings-account__danger-go { color: var(--cinnabar-pure); font-weight: 600; margin-right: 10px; }
 .settings-blocks li { display: flex; align-items: center; justify-content: space-between;
   gap: 10px; padding: 4px 0; color: var(--ink-soft); font-size: 0.8rem; }
 

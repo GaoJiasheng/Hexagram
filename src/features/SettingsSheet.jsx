@@ -32,6 +32,9 @@ export default function SettingsSheet({ open, onClose }) {
   const [renaming, setRenaming] = useState(false)
   const [nameDraft, setNameDraft] = useState('')
   const [savingName, setSavingName] = useState(false)
+  // 注销账号:App Store 5.1.1(v) 要求支持注册的 App 必须提供删除入口,光有「退出登录」不算
+  const [closing, setClosing] = useState(false)
+  const [closeConfirm, setCloseConfirm] = useState('')
   const [lastSyncAt, setLastSyncAt] = useState(getLastSyncAt)
 
   // 锁背景滚动 + Esc 关闭 + 关闭还原焦点
@@ -108,6 +111,25 @@ export default function SettingsSheet({ open, onClose }) {
       setLastSyncAt(getLastSyncAt())
     } finally {
       setSyncing(false)
+    }
+  }
+
+  async function closeAccount(event) {
+    event.preventDefault()
+    setAccountError('')
+    try {
+      const response = await apiFetch('/api/me', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ confirm: closeConfirm }),
+      })
+      const data = await response.json().catch(() => null)
+      if (!response.ok) throw new Error(data?.error || '注销失败,请稍后重试')
+      // 云端已清空,本机副本也一并清掉 —— 否则下次登录会把旧足迹又同步上去
+      clearAllData()
+      window.location.href = '/'
+    } catch (error) {
+      setAccountError(error.message)
     }
   }
 
@@ -212,6 +234,32 @@ export default function SettingsSheet({ open, onClose }) {
                 {/* owner 才出这一行。它只是**入口**,不是权限本身 —— /admin/stats 的内容
                     全部来自 /api/admin/stats,服务端逐次校验会话是不是 owner,
                     藏起这个链接不等于保护,露出来也不等于放行。 */}
+                {/* 注销入口刻意做得低调且要抄一遍邮箱 —— 不可撤销的操作不该一键完成 */}
+                <div className="settings-account__danger">
+                  {closing ? (
+                    <form onSubmit={closeAccount}>
+                      <p>
+                        注销会<strong>永久删除</strong>你的邮箱、登录方式、云端足迹、
+                        已发表的评论与举报屏蔽记录,<strong>不可撤销</strong>。想留档请先导出数据。
+                      </p>
+                      <p>请输入本账号邮箱 <code>{user.email}</code> 以确认:</p>
+                      <input
+                        value={closeConfirm}
+                        onChange={(event) => setCloseConfirm(event.target.value)}
+                        placeholder="输入邮箱确认"
+                        aria-label="输入邮箱确认注销"
+                      />
+                      <button className="btn-text settings-account__danger-go" type="submit" disabled={!closeConfirm}>
+                        确认注销
+                      </button>
+                      <button className="btn-text" type="button" onClick={() => { setClosing(false); setCloseConfirm('') }}>
+                        取消
+                      </button>
+                    </form>
+                  ) : (
+                    <button className="btn-text" type="button" onClick={() => setClosing(true)}>注销账号</button>
+                  )}
+                </div>
                 {blocks?.length > 0 && (
                   <div className="settings-blocks">
                     <span className="settings-blocks__title">已屏蔽的人 · {blocks.length}</span>

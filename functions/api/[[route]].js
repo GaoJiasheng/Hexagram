@@ -750,6 +750,29 @@ app.patch('/me', async (c) => {
   }
 })
 
+// 注销账号。**App Store 5.1.1(v):支持注册的 App 必须提供账号删除入口** ——
+// 光有「退出登录」不算,必须能真删。也是隐私政策里「你的权利」那条的兑现。
+// users 上挂的外键都是 ON DELETE CASCADE,删一行即连带清掉:
+// identities(登录方式)/ sessions(会话)/ user_data(云同步足迹)/ comments(评论)
+// / comment_reports(其发出的举报)/ user_blocks(其屏蔽名单)。
+app.delete('/me', async (c) => {
+  try {
+    const user = await requireUser(c)
+    const input = await readJsonBody(c)
+    // 要求把自己的邮箱抄一遍再删 —— 不可撤销的操作不该一键完成
+    if (typeof input?.confirm !== 'string' || normalizeEmail(input.confirm) !== normalizeEmail(user.email || '')) {
+      throw new RequestError(400, '请输入本账号的邮箱以确认注销')
+    }
+    await getDb(c).prepare('DELETE FROM users WHERE id = ?').bind(user.id).run()
+    clearSessionCookie(c)
+    return c.json({ ok: true })
+  } catch (error) {
+    if (error instanceof RequestError) return c.json({ ok: false, error: error.message }, error.status)
+    console.error('Account deletion failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
 app.post('/auth/logout', async (c) => {
   clearSessionCookie(c)
   try {
