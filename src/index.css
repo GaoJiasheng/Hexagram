@@ -4075,7 +4075,8 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 
 /* 家级导读入口(挂组首页书架之上):与书级同形,但**着组色**且下留白拉开与书架的距离——
    它讲的是「这一架书是怎么来的」,统摄下面全部书目,不是与某一本并列。 */
-.school-entry { margin: 4px 0 18px; border-color: color-mix(in srgb, var(--cinnabar) 26%, var(--rule)); }
+.school-entry { margin: 4px 0 18px; border-color: color-mix(in srgb, var(--cinnabar) 26%, var(--line));
+  border-left: 4px solid var(--cinnabar); }
 .school-entry .daodu-entry__tag { background: color-mix(in srgb, var(--cinnabar) 12%, transparent);
   color: var(--cinnabar); border-color: color-mix(in srgb, var(--cinnabar) 30%, transparent); }
 
