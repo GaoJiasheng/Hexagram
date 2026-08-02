@@ -7,10 +7,13 @@
    "type": "lead",
    "text": "如果只带一句话进《呐喊》,大多数人带的是「礼教吃人」。这句话流传太广,以至于很多人以为它是鲁迅写的。**它不是。**《狂人日记》里只有「吃人」两个字,「吃人的礼教」是读者替他总结的。这个小小的出入,恰恰是读这本书最要紧的一道关口:**过了这道关,你看见的是一个从传统内部走出来、对准了某个具体东西开火的人;过不了这道关,你看见的只是一个骂了两千年历史的愤怒者。** 这一章要做的,就是把这道关口拆开——先看清那双从头看到尾的眼睛,再看清「吃人」两个字究竟指着谁,最后把原典说的话和它两千年后的样子并排放一次。"
   },
-  { "type": "h2", "text": "一、看客:一双从头看到尾的眼睛" },
+  {
+   "type": "h2",
+   "text": "一、看客:一双从头看到尾的眼睛"
+  },
   {
    "type": "p",
-   "text": "《呐喊》里最恒定的角色不是狂人,不是阿Q,是那些**围着看的人**。这条线的起点甚至不在小说里,而在《自序》——在日本仙台的课堂上,鲁迅看见一张时事画片:一个体格强壮的同胞将被处决,而四周站着的,也是一圈体格强壮、神情麻木的同胞。让他弃医的不是那场处决,**是那一圈观众**。他随即得出了那个判断:愚弱的国民即使体格再健全,也只能做「示众的材料和看客」。"
+   "text": "《呐喊》里最恒定的角色不是狂人,不是阿Q,是那些**围着看的人**。这条线的起点甚至不在小说里,而在《自序》——在日本仙台的课堂上,鲁迅看见一张时事画片(自序里说是课间放的「电影」画片):一个体格强壮的同胞将被处决,而四周站着的,也是一圈体格强壮、神情麻木的同胞。让他弃医的不是那场处决,**是那一圈观众**。他随即得出了那个判断:愚弱的国民即使体格再健全,也只能做「示众的材料和看客」。"
   },
   {
    "type": "quote",
@@ -24,7 +27,7 @@
   {
    "type": "figure",
    "ftype": "线索图",
-   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>同一双眼睛,四次出场</text><line x1='60' y1='60' x2='60' y2='262' style='stroke:var(--line);stroke-width:1;stroke-dasharray:4 4'/><circle cx='60' cy='78' r='5' style='fill:var(--cinnabar)'/><text x='80' y='74' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>自序 · 幻灯片</text><text x='80' y='94' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>一圈围观同胞被处决的同胞 —— 让他弃医的不是刀,是眼睛</text><circle cx='60' cy='126' r='5' style='fill:var(--ink-faint)'/><text x='80' y='122' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>孔乙己 · 酒店的哄笑</text><text x='80' y='142' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>「店内外充满了快活的空气」 —— 没有恶意,只有乐子</text><circle cx='60' cy='174' r='5' style='fill:var(--ink-faint)'/><text x='80' y='170' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>药 · 茶馆的议论</text><text x='80' y='190' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>「简直是发了疯了」 —— 连二十多岁的年轻人也跟着说</text><circle cx='60' cy='222' r='5' style='fill:var(--cinnabar)'/><text x='80' y='218' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>阿Q正传 · 刑场的喝采</text><text x='80' y='238' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>「豺狼的嗥叫一般的声音」 —— 死后还嫌他没唱一句戏</text><text x='280' y='282' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>起点在小说之外,终点在一个人的死上;中间没有一处断过</text></svg>",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>同一双眼睛,四次出场</text><line x1='60' y1='60' x2='60' y2='262' style='stroke:var(--line);stroke-width:1;stroke-dasharray:4 4'/><circle cx='60' cy='78' r='5' style='fill:var(--cinnabar-pure)'/><text x='80' y='74' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>自序 · 幻灯片</text><text x='80' y='94' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>一圈围观同胞被处决的同胞 —— 让他弃医的不是刀,是眼睛</text><circle cx='60' cy='126' r='5' style='fill:var(--ink-faint)'/><text x='80' y='122' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>孔乙己 · 酒店的哄笑</text><text x='80' y='142' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>「店内外充满了快活的空气」 —— 没有恶意,只有乐子</text><circle cx='60' cy='174' r='5' style='fill:var(--ink-faint)'/><text x='80' y='170' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>药 · 茶馆的议论</text><text x='80' y='190' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>「简直是发了疯了」 —— 连二十多岁的年轻人也跟着说</text><circle cx='60' cy='222' r='5' style='fill:var(--cinnabar-pure)'/><text x='80' y='218' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>阿Q正传 · 刑场的喝采</text><text x='80' y='238' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>「豺狼的嗥叫一般的声音」 —— 死后还嫌他没唱一句戏</text><text x='280' y='282' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>起点在小说之外,终点在一个人的死上;中间没有一处断过</text></svg>",
    "caption": "看客不是某一篇的配角,是《呐喊》唯一一个从头演到尾的角色。"
   },
   {
@@ -43,7 +46,10 @@
    "type": "p",
    "text": "第三条最要紧。**看客不是一群特定的坏人,是一个人人都在其中轮流坐庄的位置。** 今天你站在圈外看,明天你就站在圈里被看。鲁迅从来没有把这个圈子写成「他们」——这一点,到本章最后还要再说一次。"
   },
-  { "type": "h2", "text": "二、「吃人」的靶子,究竟指着谁" },
+  {
+   "type": "h2",
+   "text": "二、「吃人」的靶子,究竟指着谁"
+  },
   {
    "type": "p",
    "text": "现在进入这本书最容易被读岔的地方。《狂人日记》里那段被引用了一百年的话是:翻开历史一查,满纸「仁义道德」,从字缝里看出来的却是「吃人」两个字。很多人读到这里,顺手就把结论推成了「儒家是吃人的」。**这个推论跳过了一步,而跳掉的那一步恰恰是全部关键。**"
@@ -66,7 +72,10 @@
     "**鲁迅不是「不懂传统所以骂传统」的人。** 他辑校过《嵇康集》,编过《古小说钩沉》,写过《中国小说史略》——旧学功底在同代人里也属上乘。**他是从里面出来的人,不是从外面砸门的人。** 一个人骂自己最熟的东西,和一个人骂自己没读过的东西,分量完全不同。"
    ]
   },
-  { "type": "h2", "text": "三、一件出人意料的事:「吃人」这个指控,原典自己先说过" },
+  {
+   "type": "h2",
+   "text": "三、一件出人意料的事:「吃人」这个指控,原典自己先说过"
+  },
   {
    "type": "p",
    "text": "读到这里,可能会以为接下来是「鲁迅批的是后世,原典是清白的」这种和稀泥的结论。不是。真正有意思的地方在于:**「把人当材料」这个指控,不是二十世纪才发明的,它本来就长在儒家原典里,而且下手一样重。**"
@@ -100,14 +109,17 @@
   {
    "type": "figure",
    "ftype": "对照",
-   "svg": "<svg viewBox='0 0 560 268' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>两次「吃人」,同一个靶子</text><rect x='24' y='46' width='240' height='150' rx='9' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='144' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>孟子(约公元前 3 世纪)</text><text x='144' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>「率兽而食人」</text><text x='144' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>厨有肥肉、野有饿莩</text><text x='144' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>骂的是:当权者的安排</text><text x='144' y='174' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>无人举刀,而人已被吃</text><rect x='296' y='46' width='240' height='150' rx='9' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='416' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar)'>狂人日记(1918)</text><text x='416' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>「满本都写着两个字是『吃人』」</text><text x='416' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>字缝里的历史</text><text x='416' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>骂的是:制度化之后的礼</text><text x='416' y='174' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>无人举刀,而人已被吃</text><path d='M264,121 L296,121' style='stroke:var(--ink-faint);stroke-width:1.5'/><text x='280' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>相隔两千二百多年,同一个词,同一种结构</text><text x='280' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>差别在于:孟子指着君主,鲁迅指着一套已经不需要君主也能自行运转的秩序</text></svg>",
+   "svg": "<svg viewBox='0 0 560 268' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>两次「吃人」,同一个靶子</text><rect x='24' y='46' width='240' height='150' rx='9' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='144' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>孟子(约公元前 3 世纪)</text><text x='144' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>「率兽而食人」</text><text x='144' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>厨有肥肉、野有饿莩</text><text x='144' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>骂的是:当权者的安排</text><text x='144' y='174' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>无人举刀,而人已被吃</text><rect x='296' y='46' width='240' height='150' rx='9' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='416' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>狂人日记(1918)</text><text x='416' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>「满本都写着两个字是『吃人』」</text><text x='416' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>字缝里的历史</text><text x='416' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>骂的是:制度化之后的礼</text><text x='416' y='174' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>无人举刀,而人已被吃</text><path d='M264,121 L296,121' style='stroke:var(--ink-faint);stroke-width:1.5'/><text x='280' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>相隔两千二百多年,同一个词,同一种结构</text><text x='280' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>差别在于:孟子指着君主,鲁迅指着一套已经不需要君主也能自行运转的秩序</text></svg>",
    "caption": "「吃人」不是鲁迅发明的骂法。孟子用它骂当权者,鲁迅用它骂一套已经不需要谁下令的秩序。"
   },
   {
    "type": "p",
    "text": "所以更准确的说法是:**鲁迅和孟子打的是同一件事——把人当材料的安排;区别只在于,孟子那里还有一个可以被指着骂的对象(国君),而鲁迅面对的东西已经没有主语了。** 它散在每一句「从来如此」里,散在每一次哄笑里,散在闰土教儿子磕头的那个动作里。**没有人在下令,所以也没有人需要负责。** 这就是为什么《狂人日记》的结论比《孟子》更绝望:孟子还能劝君主行仁政,狂人却发现连自己也在名单上。"
   },
-  { "type": "h2", "text": "四、原典说的话,和它两千年后在村口的样子" },
+  {
+   "type": "h2",
+   "text": "四、原典说的话,和它两千年后在村口的样子"
+  },
   {
    "type": "p",
    "text": "既然原典本身有这样的锋刃,那么问题就变成了:**从这里到《呐喊》里那个村子,中间发生了什么?** 把几组话并排放一次,那段距离会看得很清楚。"
@@ -134,10 +146,13 @@
   {
    "type": "figure",
    "ftype": "对照表",
-   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>原典说的话 → 两千年后在村口的样子</text><text x='96' y='56' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>题目</text><text x='268' y='56' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>原典</text><text x='456' y='56' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar)'>《呐喊》里的实况</text><line x1='24' y1='68' x2='536' y2='68' style='stroke:var(--line);stroke-width:1'/><text x='96' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>人与人</text><text x='268' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>己所不欲,勿施于人(双向)</text><text x='456' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>闰土的一声「老爷」(单向)</text><line x1='24' y1='108' x2='536' y2='108' style='stroke:var(--line);stroke-width:0.5;stroke-dasharray:3 3'/><text x='96' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>上与下</text><text x='268' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>视臣如土芥,则视君如寇雠</text><text x='456' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>赵太爷打掉阿Q姓赵的资格</text><line x1='24' y1='148' x2='536' y2='148' style='stroke:var(--line);stroke-width:0.5;stroke-dasharray:3 3'/><text x='96' y='174' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>身体</text><text x='268' y='174' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>身体发肤,不敢毁伤(《孝经》)</text><text x='456' y='174' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>割股疗亲被当作孝行表彰</text><line x1='24' y1='188' x2='536' y2='188' style='stroke:var(--line);stroke-width:0.5;stroke-dasharray:3 3'/><text x='96' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>人与物</text><text x='268' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>厩焚,曰「伤人乎」,不问马</text><text x='456' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>革命者的血被论斤两卖作药</text><rect x='24' y='236' width='512' height='50' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='280' y='257' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>同一个传统的两端:一端要求相互,一端只剩服从</text><text x='280' y='276' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>鲁迅打的是右边这一栏;把左右两栏当成一回事,才是真正的误读</text></svg>",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>原典说的话 → 两千年后在村口的样子</text><text x='96' y='56' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>题目</text><text x='268' y='56' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>原典</text><text x='456' y='56' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>《呐喊》里的实况</text><line x1='24' y1='68' x2='536' y2='68' style='stroke:var(--line);stroke-width:1'/><text x='96' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>人与人</text><text x='268' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>己所不欲,勿施于人(双向)</text><text x='456' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>闰土的一声「老爷」(单向)</text><line x1='24' y1='108' x2='536' y2='108' style='stroke:var(--line);stroke-width:0.5;stroke-dasharray:3 3'/><text x='96' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>上与下</text><text x='268' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>视臣如土芥,则视君如寇雠</text><text x='456' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>赵太爷打掉阿Q姓赵的资格</text><line x1='24' y1='148' x2='536' y2='148' style='stroke:var(--line);stroke-width:0.5;stroke-dasharray:3 3'/><text x='96' y='174' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>身体</text><text x='268' y='174' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>身体发肤,不敢毁伤(《孝经》)</text><text x='456' y='174' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>割股疗亲被当作孝行表彰</text><line x1='24' y1='188' x2='536' y2='188' style='stroke:var(--line);stroke-width:0.5;stroke-dasharray:3 3'/><text x='96' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>人与物</text><text x='268' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>厩焚,曰「伤人乎」,不问马</text><text x='456' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>革命者的血被论斤两卖作药</text><rect x='24' y='236' width='512' height='50' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='257' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>同一个传统的两端:一端要求相互,一端只剩服从</text><text x='280' y='276' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>鲁迅打的是右边这一栏;把左右两栏当成一回事,才是真正的误读</text></svg>",
    "caption": "把两栏并排放一次,那段距离就看得见了——而《呐喊》里的实况,全部落在右边这一栏。"
   },
-  { "type": "h2", "text": "五、不给谁开脱:那段距离是自己一步步走出来的" },
+  {
+   "type": "h2",
+   "text": "五、不给谁开脱:那段距离是自己一步步走出来的"
+  },
   {
    "type": "p",
    "text": "把话说到这里,很容易滑向一个廉价的收场:「原典是好的,是后人念歪了经。」**这个说法不诚实,本章不采用。** 因为那段距离不是被外人硬掰出来的,是这个传统内部一代代人自己走出来的,而且每一步都说得出理由。"
@@ -167,7 +182,10 @@
    "type": "p",
    "text": "所以本章不给任何一边判胜负。**不能说「鲁迅误读了儒家」**——他写的童养媳、贞节、宗族私刑、家长权,都是那个年代真实存在的事实,不是他想象出来的;**也不能说「儒家就是吃人」**——那等于把孟子骂当权者的话、孔子问「伤人乎」的那一句,和贞节牌坊算作同一样东西。**要看的是那段距离本身:它怎样开始,怎样被制度接手,怎样在几百年里硬化成一件谁也搬不动的东西。**"
   },
-  { "type": "h2", "text": "六、两边合看,才是完整的" },
+  {
+   "type": "h2",
+   "text": "六、两边合看,才是完整的"
+  },
   {
    "type": "p",
    "text": "这也是《呐喊》值得和儒家典籍放在一起读的原因。**这两样东西不是互相拆台,是同一件事的两个视角:一头是这套学问说自己要做什么,一头是它在两千年后的村口实际做成了什么。**"
@@ -175,16 +193,31 @@
   {
    "type": "steps",
    "items": [
-    { "title": "只读原典,会漏掉什么", "text": "容易把两千年的实际后果当成不存在——好像那些牌坊、那些族规、那些被处置掉的人生,都只是「执行走样」,与这套学问无关。而《呐喊》里那些人,是真的活过。", "state": "done" },
-    { "title": "只读鲁迅,会漏掉什么", "text": "容易把「仁」和「三纲」当成一回事,把一个复杂了两千年、内部争吵不休的传统,压成一个骂名。那样一来,连孟子骂「率兽而食人」的那份锋利,也一并被扔掉了。", "state": "done" },
-    { "title": "两边合看,才看得见那段距离", "text": "原典说要相互,后来只剩服从;原典说不许毁伤身体,后来割肉成了孝行;原典问「伤人乎」,后来人血论价。真正值得研究的,是这中间发生了什么——而不是急着替谁站队。", "state": "now" }
+    {
+     "title": "只读原典,会漏掉什么",
+     "text": "容易把两千年的实际后果当成不存在——好像那些牌坊、那些族规、那些被处置掉的人生,都只是「执行走样」,与这套学问无关。而《呐喊》里那些人,是真的活过。",
+     "state": "done"
+    },
+    {
+     "title": "只读鲁迅,会漏掉什么",
+     "text": "容易把「仁」和「三纲」当成一回事,把一个复杂了两千年、内部争吵不休的传统,压成一个骂名。那样一来,连孟子骂「率兽而食人」的那份锋利,也一并被扔掉了。",
+     "state": "done"
+    },
+    {
+     "title": "两边合看,才看得见那段距离",
+     "text": "原典说要相互,后来只剩服从;原典说不许毁伤身体,后来割肉成了孝行;原典问「伤人乎」,后来人血论价。真正值得研究的,是这中间发生了什么——而不是急着替谁站队。",
+     "state": "now"
+    }
    ]
   },
   {
    "type": "p",
    "text": "《呐喊》在这场对读里的位置很特别:**它不是一份关于制度的论文,它是一份关于人的记录。** 它不告诉你三纲哪一年定型、贞节牌坊哪一朝最多,它只让你看见一个叫单四嫂子的女人抱着孩子去看病,看见一个叫闰土的人张了张嘴最后叫出「老爷」,看见一个连姓什么都要人批准的人在临刑前认真地想把那个圆圈画圆。**制度史是骨头,这本书是肉。**"
   },
-  { "type": "h2", "text": "七、最后一层:这本书不许任何人站在外面" },
+  {
+   "type": "h2",
+   "text": "七、最后一层:这本书不许任何人站在外面"
+  },
   {
    "type": "p",
    "text": "还剩最后一件事,而它决定了这一整章该用什么姿势读完。"
@@ -201,7 +234,7 @@
   {
    "type": "figure",
    "ftype": "示意",
-   "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>这张网没有外面</text><circle cx='280' cy='140' r='86' style='fill:none;stroke:var(--line);stroke-width:1;stroke-dasharray:4 4'/><circle cx='280' cy='140' r='40' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='280' y='136' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar)'>被看的人</text><text x='280' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>示众的材料</text><text x='280' y='44' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>看客</text><text x='406' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>看客</text><text x='154' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>看客</text><text x='280' y='240' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>看客</text><path d='M280,58 L280,96' style='stroke:var(--ink-faint);stroke-width:1'/><path d='M388,142 L322,141' style='stroke:var(--ink-faint);stroke-width:1'/><path d='M172,142 L238,141' style='stroke:var(--ink-faint);stroke-width:1'/><path d='M280,226 L280,182' style='stroke:var(--ink-faint);stroke-width:1'/><text x='280' y='212' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>圈上任何一点,都随时会挪到圆心</text></svg>",
+   "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>这张网没有外面</text><circle cx='280' cy='140' r='86' style='fill:none;stroke:var(--line);stroke-width:1;stroke-dasharray:4 4'/><circle cx='280' cy='140' r='40' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='136' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>被看的人</text><text x='280' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>示众的材料</text><text x='280' y='44' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>看客</text><text x='406' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>看客</text><text x='154' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>看客</text><text x='280' y='240' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>看客</text><path d='M280,58 L280,96' style='stroke:var(--ink-faint);stroke-width:1'/><path d='M388,142 L322,141' style='stroke:var(--ink-faint);stroke-width:1'/><path d='M172,142 L238,141' style='stroke:var(--ink-faint);stroke-width:1'/><path d='M280,226 L280,182' style='stroke:var(--ink-faint);stroke-width:1'/><text x='280' y='212' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>圈上任何一点,都随时会挪到圆心</text></svg>",
    "caption": "狂人说自己也吃过人,叙述者说自己皮袍下面藏着一个「小」——这本书从不提供一个安全的旁观位置。"
   },
   {

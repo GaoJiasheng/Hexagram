@@ -1,0 +1,211 @@
+{
+  "title": "白话《数学之美》· 全书总览",
+  "subtitle": "搜索、翻译、语音识别这些最像「工程」的活，底下不过是几个朴素的数学思想；而全书真正想证明的是——把问题化成数学模型，比堆规则走得远。",
+  "centralIdea": "这本书只主张一件事：凡是有数据、有明确目标的问题，别急着请专家来定规则，先想想它能不能写成一个数学模型。作者用了一段真实的公案来证明——上世纪五六十年代，一批顶尖语言学家用文法规则做机器翻译，做了二十年没做成；七十年代起，一群搞通信的人把语音识别当成「收到一段带噪声的信号、反推发送的是什么」，改用统计模型，几年就把局面推动了。之后每一章讲一件工具，而每件工具都在替人省掉一份苦工：信息熵让「信息」第一次有了单位，从此「相关不相关」「模型好不好」可以比较；统计语言模型让机器不必懂语法也能判断一句话像不像人话；隐含马尔可夫模型把语音识别、机器翻译、拼音输入写成同一个公式；维特比算法把指数级的穷举压成一遍扫描；布尔代数和倒排索引让「找」变成查表加位运算；TF-IDF 管相关、PageRank 管权威；最大熵负责「已知的全用上、未知的一分不多假设」。它写在二〇一二年前后，正卡在深度学习大爆发的门槛上：书里的具体技术大半已被神经网络方法覆盖，但它那句核心主张不但没塌，反而被后来的历史放大了一倍。",
+  "featured": true,
+  "hero": {
+    "badge": "全书 · 核心",
+    "headline": "顶尖语言学家用文法规则做了二十年机器翻译没做成，一群搞通信的人把它当成解码问题，几年就推动了——这不是谁更聪明，是两种世界观的胜负。",
+    "tagline": "搜索、翻译、语音识别这些最像工程的活，底下起作用的不过是几个朴素的数学思想；每一章都在回答同一个问题——这个数学工具，替人省掉了哪一份苦工。"
+  },
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "外行看搜索引擎，看到的是一堆代码和一屋子服务器；看机器翻译，看到的是一件需要精通两门语言才敢碰的手艺。这本书要告诉你的是：**这些东西底下起作用的，是几个朴素到有点扫兴的数学思想**。而它最好看的部分不是任何一个公式，是一段真实的公案——五六十年代一批顶尖的语言学家用文法规则做机器翻译，做了二十年没做成；七十年代之后，一群不太懂语言学的通信工程师改用统计模型，几年就把这件事推动了。全书十几章，全是这场胜负的注脚。"
+    },
+
+    { "type": "h2", "text": "一、先说清楚，这是一本什么书" },
+    {
+      "type": "p",
+      "text": "它的底子是作者在谷歌黑板报上写的一个专栏，二〇〇六年前后开始连载，写了两三年，二〇一二年整理成书。作者吴军当时在谷歌做搜索，更早在约翰霍普金斯大学读博士，导师是贾里尼克——正是书里那位把语音识别从规则派手里抢过来的关键人物。**这个身份很要紧：书里讲的不是他读来的知识，是他和他老师那一代人亲手做过的事。**所以读起来有一种教科书没有的东西：当事人的语气。"
+    },
+    {
+      "type": "p",
+      "text": "它不是数学教材。全书几乎没有推导，公式屈指可数，把公式全跳过也读得下去。它也不是编程书，你读完不会写出一个搜索引擎。它是第三种东西：**一本讲「数学在真实的大规模系统里到底怎么起作用」的故事集**。每章拿一个具体问题——中文怎么断词、网页怎么排序、拼音怎么变成汉字、垃圾邮件怎么挡——然后告诉你，把它化成某个数学模型之后，原本要一群人苦干十年的活，怎么就变成了机器扫一遍就完的事。"
+    },
+    {
+      "type": "p",
+      "text": "所以读者不必是学数学的。你需要的只是听说过概率和向量，其余书里会重讲。真正的门槛在别处：**你得愿意接受一种看世界的方式**——先把一件乱糟糟的人类活动（说话、写字、找东西）粗暴地简化成一个能算的东西，算出结果，再回头补它简化掉的那部分。这个动作让很多人本能地不舒服，觉得「语言哪有那么简单」。这本书用一整本的篇幅回答：是没那么简单，但简化之后反而做成了，而不简化的那一派做了二十年没做成。"
+    },
+    {
+      "type": "callout",
+      "tone": "mute",
+      "label": "买哪一版",
+      "items": [
+        "第一版二〇一二年出；后来的版本陆续增补了人工神经网络、大数据等几章，也做过修订。**章数因版本而异**——你手上那本要是没有讲神经网络的那一章，不是缺页，是版本早。本文按全书主线来讲，不依赖某一版特有的章节。"
+      ]
+    },
+
+    { "type": "h2", "text": "二、全书就一个主张" },
+    {
+      "type": "p",
+      "text": "把它压成一句话：**能化成数学模型的问题，不要用堆规则的办法去解。**"
+    },
+    {
+      "type": "p",
+      "text": "五十年代人们刚开始想让机器翻译，思路特别自然：**先让语言学家把语法规则写全，再让机器照规则分析句子结构，然后按规则换成另一门语言。**这条路在小例子上很像那么回事。可一旦放到真实的句子上，麻烦就来了：规则越写越多，规则之间开始互相打架，加一条堵住这个漏洞，另一处又漏了；句子长一点，可能的分析结构就成倍增长，机器要在几万条规则里翻来覆去地试。更要命的是歧义——语言学家巴尔-希列尔早在六十年代就举过一个著名的例子：「盒子在笔里」这句话，你之所以知道这里的 pen 是围栏不是钢笔，靠的不是语法，**是你知道盒子和钢笔有多大**。这种常识写不进有限条规则里。一九六六年美国那份著名的评估报告出来，机器翻译的经费被大幅砍掉，这条路基本停了。"
+    },
+    {
+      "type": "p",
+      "text": "转折发生在七十年代的 IBM。贾里尼克带的团队要做语音识别，他没有请语言学家，他请的是搞通信和统计的人。因为在他眼里，**语音识别根本不是语言学问题，是通信问题**：一个人心里想说一句话，通过嘴巴编码成声波，声波经过有噪声的空气传到麦克风，接收端要做的事，跟解一封带乱码的电报没有本质区别——在所有可能的句子里，找出最可能发出这段声音的那一句。这个视角一换，工具全变了：概率、统计、信息论、动态规划，全是通信工程师的家什。结果是识别率的大幅提升，语音识别第一次从「实验室玩具」往「能用」的方向挪了一大步。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "同一个问题，两种世界观。左边那套并不笨，它输在「靠人枚举」这件事本身撑不住真实语言的复杂度。",
+      "svg": "<svg viewBox='0 0 660 316' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>规则派 与 统计派</text><text x='130' y='50' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--ink-soft)'>规则派（1950—1970）</text><text x='530' y='50' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar)'>统计派（1972 起）</text><rect x='20' y='62' width='220' height='48' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='130' y='84' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>先把语法规则写全，</text><text x='130' y='100' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>让机器照规则分析句子</text><text x='330' y='92' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>出 发 点</text><rect x='420' y='62' width='220' height='48' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar)' stroke-width='1.2'/><text x='530' y='84' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>先弄一大堆真实语料，</text><text x='530' y='100' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>让机器数出词与词的搭配</text><rect x='20' y='122' width='220' height='48' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='130' y='144' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>再写一条规则去堵，</text><text x='130' y='160' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>规则之间开始互相打架</text><text x='330' y='152' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>遇 歧 义</text><rect x='420' y='122' width='220' height='48' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar)' stroke-width='1.2'/><text x='530' y='144' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>看哪一种解释在真实语料里</text><text x='530' y='160' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>出现得更多，概率说了算</text><rect x='20' y='182' width='220' height='48' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='130' y='204' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>从头请一批懂这门语言的</text><text x='130' y='220' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>专家，重写一套规则</text><text x='330' y='212' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>换 语 言</text><rect x='420' y='182' width='220' height='48' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar)' stroke-width='1.2'/><text x='530' y='204' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>换一批语料重新数一遍，</text><text x='530' y='220' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>方法本身不用改</text><rect x='20' y='242' width='220' height='52' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='130' y='265' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>二十年没做成，</text><text x='130' y='283' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>经费被砍</text><text x='330' y='274' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>结 果</text><rect x='420' y='242' width='220' height='52' rx='8' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar)' stroke-width='1.4'/><text x='530' y='265' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>几年之内大幅推进，</text><text x='530' y='283' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>此后一路扩张到所有语言任务</text></svg>"
+    },
+    {
+      "type": "quote",
+      "original": "每当我开除一个语言学家，语音识别系统的错误率就下降一点。",
+      "translation": "贾里尼克最著名的一句话，书里也引了。要说明的是：这句话流传的版本不止一个，他本人后来更正过措辞、也强调那是玩笑。**别把它读成「语言学没用」**——它真正的意思是，在那个阶段，把人的先验知识硬塞进系统，反而挡住了数据自己说话。"
+    },
+    {
+      "type": "p",
+      "text": "规则派为什么会输？书里给的理由很朴素，但站得住：**自然语言不是设计出来的，是长出来的。**它没有一份原始设计文档，语法书是后人对现象的事后总结，总结永远追不上现象。你想用有限条规则罩住一个自然演化了几千年的东西，等于用渔网去装水。而统计方法不去追问「为什么这么说」，它只统计「人们实际上怎么说」——**它对付的正是分布本身**。"
+    },
+    {
+      "type": "p",
+      "text": "但也别把这条学成偏见。书里的胜负发生在「有海量数据、目标明确、允许出错」的场合。换个场合，比如解析一段日期格式、编译一门程序语言、检查一张发票的字段——规则至今仍是更对的选择，因为那些东西真的是人设计出来的，真的有一份说明书。**真正该记住的道理不是「统计好、规则坏」，是「别拿手工枚举去对付一个天然带分布的问题」。**"
+    },
+
+    { "type": "h2", "text": "三、一条链子贯穿全书：通信模型" },
+    {
+      "type": "p",
+      "text": "如果这本书只让你记住一张图，就是这一张。香农在一九四八年画出的那条链子：**信源 → 编码 → 信道 → 解码 → 信宿**。一个人脑子里有个意思（信源），把它说成话（编码），声音穿过空气（信道，一路带着噪声），对方的耳朵和大脑还原出意思（解码），于是听懂了（信宿）。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "全书的骨架。把「听懂一句话」看成解码，任务就固定了：在所有可能的原文里，找出最可能产生这段观测的那一个。",
+      "svg": "<svg viewBox='0 0 660 250' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='22' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>信源 — 编码 — 信道 — 解码 — 信宿</text><rect x='12' y='44' width='112' height='44' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='68' y='71' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>信源</text><rect x='144' y='44' width='112' height='44' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='200' y='71' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>编码</text><rect x='276' y='44' width='112' height='44' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar)' stroke-width='1.3'/><text x='332' y='71' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>信道（噪声）</text><rect x='408' y='44' width='112' height='44' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar)' stroke-width='1.3'/><text x='464' y='71' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>解码</text><rect x='540' y='44' width='108' height='44' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='594' y='71' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>信宿</text><path d='M124,66 L142,66' style='stroke:var(--ink-faint)' stroke-width='1.4'/><path d='M144,66 l-9,-4 l0,8 z' style='fill:var(--ink-faint)'/><path d='M256,66 L274,66' style='stroke:var(--ink-faint)' stroke-width='1.4'/><path d='M276,66 l-9,-4 l0,8 z' style='fill:var(--ink-faint)'/><path d='M388,66 L406,66' style='stroke:var(--ink-faint)' stroke-width='1.4'/><path d='M408,66 l-9,-4 l0,8 z' style='fill:var(--ink-faint)'/><path d='M520,66 L538,66' style='stroke:var(--ink-faint)' stroke-width='1.4'/><path d='M540,66 l-9,-4 l0,8 z' style='fill:var(--ink-faint)'/><text x='332' y='112' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>口音 · 杂音 · 错字 · 丢包</text><line x1='12' y1='130' x2='648' y2='130' style='stroke:var(--line)' stroke-width='1' stroke-dasharray='4 5'/><text x='68' y='152' text-anchor='middle' font-size='11.5' font-weight='bold' style='fill:var(--ink-soft)'>说话人心里的话</text><text x='200' y='152' text-anchor='middle' font-size='11.5' font-weight='bold' style='fill:var(--ink-soft)'>发声</text><text x='332' y='152' text-anchor='middle' font-size='11.5' font-weight='bold' style='fill:var(--ink-soft)'>声波</text><text x='464' y='152' text-anchor='middle' font-size='11.5' font-weight='bold' style='fill:var(--ink-soft)'>识别模型</text><text x='594' y='152' text-anchor='middle' font-size='11.5' font-weight='bold' style='fill:var(--ink-soft)'>转成文字</text><text x='68' y='178' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>中文原句</text><text x='200' y='178' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>译成英文</text><text x='332' y='178' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>你读到的英文</text><text x='464' y='178' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>翻译模型</text><text x='594' y='178' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>还原中文</text><text x='68' y='204' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>想打的汉字</text><text x='200' y='204' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>敲成拼音</text><text x='332' y='204' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>一串字母</text><text x='464' y='204' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>输入法</text><text x='594' y='204' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>出汉字</text><text x='330' y='232' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar)'>三件看着毫不相干的事，在这条链子上是同一件事</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这条链子的价值在于它**把任务定死了**。一旦你承认「听懂」就是解码，那么机器要做的事没有第二种可能：在所有可能的原文里，找出最可能产生眼前这段观测的那一个。剩下的全是技术问题——怎么给「可能」打分（语言模型），怎么在天文数字的候选里找最优（维特比），怎么估参数（数数、平滑、期望最大化）。**你会发现这本书后面每一章，都能在这条链子上找到自己的位置。**"
+    },
+
+    { "type": "h2", "text": "四、七件工具，各自省掉了哪份苦工" },
+    {
+      "type": "p",
+      "text": "读这本书最好的姿势，是每读完一章就逼自己回答一句话：**这一章的数学，替谁省掉了什么苦工？**答不上来，就是没读懂——因为数学在这本书里从来不是装饰，它每次出场都是来顶掉一堆人力的。"
+    },
+    {
+      "type": "figure",
+      "ftype": "总表",
+      "caption": "全书工具箱。中间一列是它回答的问题，右边一列才是它真正的功劳。",
+      "svg": "<svg viewBox='0 0 660 392' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='22' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>七件工具，七份被省掉的苦工</text><line x1='20' y1='34' x2='640' y2='34' style='stroke:var(--line)' stroke-width='1'/><text x='95' y='52' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>工具</text><text x='300' y='52' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>它回答的问题</text><text x='520' y='52' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar)'>省掉的苦工</text><line x1='20' y1='60' x2='640' y2='60' style='stroke:var(--line)' stroke-width='1'/><text x='95' y='82' text-anchor='middle' font-size='12' style='fill:var(--ink)'>信息熵</text><text x='300' y='82' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>一条消息到底有多少信息</text><text x='520' y='82' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>把「感觉」变成可比较的数</text><line x1='20' y1='94' x2='640' y2='94' style='stroke:var(--line)' stroke-width='0.6' stroke-dasharray='3 4'/><text x='95' y='116' text-anchor='middle' font-size='12' style='fill:var(--ink)'>统计语言模型</text><text x='300' y='116' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>这句话像不像人说的话</text><text x='520' y='116' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>不必写一部语法书</text><line x1='20' y1='128' x2='640' y2='128' style='stroke:var(--line)' stroke-width='0.6' stroke-dasharray='3 4'/><text x='95' y='150' text-anchor='middle' font-size='12' style='fill:var(--ink)'>隐含马尔可夫</text><text x='300' y='150' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>看得见的一串，背后是什么</text><text x='520' y='150' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>四个领域不必各造一套方法</text><line x1='20' y1='162' x2='640' y2='162' style='stroke:var(--line)' stroke-width='0.6' stroke-dasharray='3 4'/><text x='95' y='184' text-anchor='middle' font-size='12' style='fill:var(--ink)'>维特比算法</text><text x='300' y='184' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>天文数字的候选里哪条最好</text><text x='520' y='184' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>指数级穷举压成一遍扫描</text><line x1='20' y1='196' x2='640' y2='196' style='stroke:var(--line)' stroke-width='0.6' stroke-dasharray='3 4'/><text x='95' y='218' text-anchor='middle' font-size='12' style='fill:var(--ink)'>布尔代数＋索引</text><text x='300' y='218' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>哪些网页里有这几个词</text><text x='520' y='218' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>把「找」变成查表和位运算</text><line x1='20' y1='230' x2='640' y2='230' style='stroke:var(--line)' stroke-width='0.6' stroke-dasharray='3 4'/><text x='95' y='252' text-anchor='middle' font-size='12' style='fill:var(--ink)'>TF-IDF ＋余弦</text><text x='300' y='252' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>这篇跟我要的有多沾边</text><text x='520' y='252' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>不必人工维护关键词权重</text><line x1='20' y1='264' x2='640' y2='264' style='stroke:var(--line)' stroke-width='0.6' stroke-dasharray='3 4'/><text x='95' y='286' text-anchor='middle' font-size='12' style='fill:var(--ink)'>PageRank</text><text x='300' y='286' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>这个网页值不值得信</text><text x='520' y='286' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>不必人工编一份权威名单</text><line x1='20' y1='298' x2='640' y2='298' style='stroke:var(--line)' stroke-width='0.6' stroke-dasharray='3 4'/><text x='95' y='320' text-anchor='middle' font-size='12' style='fill:var(--ink)'>最大熵</text><text x='300' y='320' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>一堆线索该怎么合在一起</text><text x='520' y='320' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>不必手工拍各项权重</text><line x1='20' y1='332' x2='640' y2='332' style='stroke:var(--line)' stroke-width='1'/><text x='330' y='356' text-anchor='middle' font-size='12' style='fill:var(--cinnabar)'>右边这一列，才是这本书真正在讲的东西</text><text x='330' y='378' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>每读完一章，逼自己填一遍这一行</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "把这张表读第二遍，你会注意到一个共同点：**被省掉的从来不是「聪明」，是「人力」。**没有哪个模型是因为比人聪明才赢的——统计语言模型对语言的理解，跟一个大二学生比都不如；它赢在能把几十亿句话数一遍，而人不能。维特比算法一点也不深奥，它只是发现了一件小事：走到某个点的最优路径只需要留一条，前面怎么来的不影响后面怎么走。**这本书的美学就在这儿：不是奇技淫巧的胜利，是一个恰当的抽象把苦工消灭掉的那种痛快。**"
+    },
+    {
+      "type": "pull",
+      "text": "数学模型省掉的从来不是聪明，是苦工——它把一件必须靠人堆出来的事，变成一件机器扫一遍就完的事。"
+    },
+
+    { "type": "h2", "text": "五、信息熵：信息第一次有了单位" },
+    {
+      "type": "p",
+      "text": "全书最该先读懂的是这一章，因为后面所有东西都站在它上面。香农在一九四八年问了一个当时没人当成问题的问题：**信息能不能称重？**他的回答是：能，而且量的是「消除了多少不确定性」。书里那个例子已经成了经典——三十二支球队踢世界杯，我知道谁是冠军，你不知道，你要猜。你不必一支一支问，你可以问「在前十六支里吗」，无论答是或否，剩下的可能性都砍掉一半。这样问五次必中。**所以「谁是冠军」这条消息，值五比特。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "信息量不是消息本身的属性，是它相对于你已有的不确定性的属性。你越是本来就知道，同一条消息越不值钱。",
+      "svg": "<svg viewBox='0 0 660 268' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='22' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>三十二支球队，五次二分</text><rect x='60' y='40' width='480' height='24' rx='4' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='560' y='57' font-size='11.5' style='fill:var(--ink-faint)'>32 种可能</text><rect x='60' y='74' width='240' height='24' rx='4' style='fill:var(--paper-raised);stroke:var(--cinnabar)' stroke-width='1.1'/><text x='320' y='91' font-size='11.5' style='fill:var(--ink-soft)'>第 1 问后 → 16</text><rect x='60' y='108' width='120' height='24' rx='4' style='fill:var(--paper-raised);stroke:var(--cinnabar)' stroke-width='1.1'/><text x='200' y='125' font-size='11.5' style='fill:var(--ink-soft)'>第 2 问后 → 8</text><rect x='60' y='142' width='60' height='24' rx='4' style='fill:var(--paper-raised);stroke:var(--cinnabar)' stroke-width='1.1'/><text x='140' y='159' font-size='11.5' style='fill:var(--ink-soft)'>第 3 问后 → 4</text><rect x='60' y='176' width='30' height='24' rx='4' style='fill:var(--paper-raised);stroke:var(--cinnabar)' stroke-width='1.1'/><text x='110' y='193' font-size='11.5' style='fill:var(--ink-soft)'>第 4 问后 → 2</text><rect x='60' y='210' width='15' height='24' rx='4' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar)' stroke-width='1.3'/><text x='95' y='227' font-size='11.5' style='fill:var(--ink)'>第 5 问后 → 1，答案出来了</text><text x='36' y='57' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>始</text><text x='330' y='256' text-anchor='middle' font-size='12' style='fill:var(--cinnabar)'>所以这条消息值 5 比特；若你早知道谁强谁弱，它值不到 5 比特</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "从这里长出三样后面天天要用的东西。**其一是条件熵**：多知道一点相关的事，不确定性只会变小、绝不会变大——这一条就是「看上下文有用」的数学证明，后面所有语言模型的合法性都来自它。书里顺手算过一笔账：汉字单看大约值八九比特，一放进上下文就掉到五比特上下；也就是说一本五十万字的书，信息量大约两百五十万比特，压缩好了三百来 KB。**语言里有大量冗余，而冗余正是能压缩、能纠错、也能被机器猜出来的原因。**其二是互信息，量两件事有多相关：Bush 这个词该译成人名还是灌木丛，看它周围的词跟哪个义项互信息更高，一个困扰规则派多年的难题就这么用数据解掉了。**其三是相对熵**，量两个分布差多远——今天训练神经网络用的交叉熵损失，就是它的直系亲属。"
+    },
+
+    { "type": "h2", "text": "六、搜索引擎：说穿了只有三件事" },
+    {
+      "type": "p",
+      "text": "书里花了最多篇幅的是搜索，也难怪，那是作者的本行。它把搜索引擎拆成三件事：**下载、索引、排序**。下载是爬虫，把互联网这张有向图遍历一遍；索引是把「每篇文章里有哪些词」倒过来做成「每个词出现在哪些文章里」，于是查询变成查表加求交集，而交集靠的是布尔代数——**一个十九世纪看着毫无用处的代数，一百年后成了整个信息工业的地基**；排序则分两半：一半问「这篇跟你要的有多沾边」（相关性，TF-IDF 那一路），一半问「这篇本身值不值得信」（权威性，PageRank 那一路）。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "下载靠图论，索引靠布尔代数，排序靠相关性与权威性两把尺。PageRank 的妙处在于它把「谁值得信」这件事，变成了一次矩阵反复相乘。",
+      "svg": "<svg viewBox='0 0 660 330' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='22' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>搜索引擎的三件事</text><rect x='24' y='38' width='176' height='52' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='112' y='60' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>下载</text><text x='112' y='79' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>爬虫 · 图的遍历 · 判重</text><rect x='242' y='38' width='176' height='52' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='330' y='60' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>索引</text><text x='330' y='79' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>布尔代数 · 倒排表</text><rect x='460' y='38' width='176' height='52' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar)' stroke-width='1.3'/><text x='548' y='60' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>排序</text><text x='548' y='79' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>相关性 × 权威性</text><path d='M200,64 L240,64' style='stroke:var(--ink-faint)' stroke-width='1.4'/><path d='M242,64 l-9,-4 l0,8 z' style='fill:var(--ink-faint)'/><path d='M418,64 L458,64' style='stroke:var(--ink-faint)' stroke-width='1.4'/><path d='M460,64 l-9,-4 l0,8 z' style='fill:var(--ink-faint)'/><line x1='24' y1='108' x2='636' y2='108' style='stroke:var(--line)' stroke-width='1' stroke-dasharray='4 5'/><text x='150' y='132' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink-soft)'>倒排索引</text><text x='150' y='156' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>数学 → 3, 7, 12, 88 …</text><text x='150' y='176' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>之美 → 7, 12, 40 …</text><text x='150' y='196' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>求交集 → 7, 12</text><text x='150' y='222' text-anchor='middle' font-size='11' style='fill:var(--cinnabar)'>「找」变成了查表和位运算</text><text x='470' y='132' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink-soft)'>PageRank：链接就是投票</text><circle cx='350' cy='176' r='13' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><circle cx='350' cy='240' r='13' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><circle cx='420' cy='208' r='13' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><circle cx='520' cy='196' r='21' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar)' stroke-width='1.6'/><circle cx='596' cy='246' r='11' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><path d='M363,180 L406,202' style='stroke:var(--ink-faint)' stroke-width='1.2'/><path d='M406,202 l-9,-1 l3,-7 z' style='fill:var(--ink-faint)'/><path d='M363,236 L406,214' style='stroke:var(--ink-faint)' stroke-width='1.2'/><path d='M406,214 l-9,1 l3,7 z' style='fill:var(--ink-faint)'/><path d='M441,204 L497,199' style='stroke:var(--cinnabar)' stroke-width='1.6'/><path d='M497,199 l-9,-3 l1,8 z' style='fill:var(--cinnabar)'/><path d='M541,206 L586,238' style='stroke:var(--ink-faint)' stroke-width='1.2'/><path d='M586,238 l-9,-2 l2,-7 z' style='fill:var(--ink-faint)'/><text x='520' y='200' text-anchor='middle' font-size='11' style='fill:var(--ink)'>权威</text><text x='470' y='286' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>被谁链、链它的又有多重要 —— 一个递归定义</text><text x='470' y='306' text-anchor='middle' font-size='11' style='fill:var(--cinnabar)'>写成矩阵反复相乘，它就收敛了</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "PageRank 那一章是全书最能体现「数学之美」四个字的地方。**一个网页有多重要？看谁链向它；可链向它的网页本身重不重要呢？看谁链向那些网页。**这听着像循环论证，是个死结。数学的解法是：把这个递归写成矩阵乘向量，随便给一组初始值，反复乘下去，它会收敛到一个稳定的答案——那个答案就是这个矩阵的主特征向量。**一个高中生都嫌抽象的线性代数概念，在这里恰好就是「网页的权威度」。**这种「原来它就是它」的时刻，是这本书最想让你尝到的味道。"
+    },
+
+    { "type": "h2", "text": "七、简单即美：一种关于模型的品味" },
+    {
+      "type": "p",
+      "text": "书里反复讲一个天文学的老故事。托勒密的地心说并不是「粗糙的错误」，恰恰相反，它算得相当准——为了让行星的位置对得上，古人在大圆上套小圆，一层层加，最后加了四十来个圆，精度足够航海用上一千多年。**问题不在准不准，在于每发现一点偏差就得再加一个圆。**后来开普勒把圆换成椭圆，那些小圆一个都不需要了。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "打补丁能让模型越来越准，但准不等于对。当你在加第七个补丁，那不是勤奋，那是信号。",
+      "svg": "<svg viewBox='0 0 660 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='22' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>四十个小圆，与一个椭圆</text><line x1='330' y1='36' x2='330' y2='266' style='stroke:var(--line)' stroke-width='1' stroke-dasharray='4 5'/><text x='165' y='56' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink-soft)'>地心说：不断加小圆</text><circle cx='165' cy='160' r='72' style='fill:none;stroke:var(--ink-faint)' stroke-width='1.2'/><circle cx='165' cy='160' r='5' style='fill:var(--ink-soft)'/><circle cx='237' cy='160' r='18' style='fill:none;stroke:var(--ink-faint)' stroke-width='1' stroke-dasharray='3 3'/><circle cx='114' cy='109' r='15' style='fill:none;stroke:var(--ink-faint)' stroke-width='1' stroke-dasharray='3 3'/><circle cx='114' cy='211' r='15' style='fill:none;stroke:var(--ink-faint)' stroke-width='1' stroke-dasharray='3 3'/><circle cx='216' cy='211' r='12' style='fill:none;stroke:var(--ink-faint)' stroke-width='1' stroke-dasharray='3 3'/><circle cx='216' cy='109' r='12' style='fill:none;stroke:var(--ink-faint)' stroke-width='1' stroke-dasharray='3 3'/><text x='165' y='258' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>准，够航海用一千年；每有偏差就再加一个圆</text><text x='495' y='56' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar)'>日心说：一个椭圆</text><ellipse cx='495' cy='160' rx='96' ry='58' style='fill:none;stroke:var(--cinnabar)' stroke-width='1.6'/><circle cx='438' cy='160' r='7' style='fill:var(--cinnabar)'/><circle cx='560' cy='138' r='4.5' style='fill:var(--ink-soft)'/><text x='495' y='258' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>不是更准一点，是那些补丁一个都不需要了</text><text x='330' y='288' text-anchor='middle' font-size='12' style='fill:var(--cinnabar)'>需要不停打补丁的模型，多半是模型本身错了</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这个故事在书里是当作**工作方法**讲的，不是科学史掌故。作者的意思是：当你发现自己在给一个模型加第七个特例、第八个补丁，别急着夸自己勤奋，那多半是模型选错了的信号。与之配套的还有一条工程上的忠告：**先做一个简单可用的版本上线，用真实数据迭代，比闭门造一个完美方案快得多**；而且简单的方案可维护、可调试、能交给别人接手——那是长期成本，不是审美洁癖。要注意的是，简单不等于简陋：省掉的应该是不必要的结构，不是必要的严谨。"
+    },
+    {
+      "type": "quote",
+      "original": "如无必要，勿增实体。",
+      "translation": "奥卡姆剃刀的通行译法，不是本书原话，但它是这本书的价值观。常和它一起被引用的还有那句「一切应尽可能简单，但不能过于简单」——**那句其实是后人对爱因斯坦一次讲演的浓缩，并非他的原句**，引用时值得说明。两句话合起来正好是这一章的分寸：能省的省掉，该有的别省。"
+    },
+
+    { "type": "h2", "text": "八、它写在什么年代" },
+    {
+      "type": "p",
+      "text": "这件事必须交代，否则你会误读整本书。它成书于二〇一二年前后，而**二〇一二年恰好是一道分水岭**：那一年 AlexNet 在图像识别比赛上大胜，深度学习开始横扫一切。此后十年，书里的具体技术被大面积替换掉了——用前两个词预测下一个词的 N 元模型，被神经网络语言模型和 Transformer 取代；语音识别里那套隐含马尔可夫加声学模型，被端到端模型取代；中文分词作为独立的第一道工序，在神经时代大大弱化，取而代之的是子词切分；关键词匹配之外，多了一层「字面不同但意思相同」的语义向量检索。"
+    },
+    {
+      "type": "figure",
+      "ftype": "时间轴",
+      "caption": "这本书站在两个时代的接缝上。它总结了统计学习黄金时代，而书出版的同一年，下一个时代开场了。",
+      "svg": "<svg viewBox='0 0 660 236' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='22' text-anchor='middle' font-size='16' font-weight='bold' style='fill:var(--ink)'>它站在哪一格上</text><line x1='40' y1='120' x2='624' y2='120' style='stroke:var(--line)' stroke-width='1.6'/><circle cx='60' cy='120' r='5' style='fill:var(--ink-soft)'/><text x='60' y='100' text-anchor='middle' font-size='11.5' font-weight='bold' style='fill:var(--ink-soft)'>1948</text><text x='60' y='146' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>香农</text><text x='60' y='162' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>信息论</text><circle cx='176' cy='120' r='5' style='fill:var(--ink-soft)'/><text x='176' y='100' text-anchor='middle' font-size='11.5' font-weight='bold' style='fill:var(--ink-soft)'>1972</text><text x='176' y='146' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>贾里尼克</text><text x='176' y='162' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>统计做语音</text><circle cx='292' cy='120' r='5' style='fill:var(--ink-soft)'/><text x='292' y='100' text-anchor='middle' font-size='11.5' font-weight='bold' style='fill:var(--ink-soft)'>1998</text><text x='292' y='146' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>PageRank</text><text x='292' y='162' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>与谷歌</text><circle cx='400' cy='120' r='8' style='fill:var(--cinnabar)'/><text x='400' y='96' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar)'>2012</text><text x='400' y='146' text-anchor='middle' font-size='11.5' font-weight='bold' style='fill:var(--cinnabar)'>本书成书</text><text x='400' y='163' text-anchor='middle' font-size='11' style='fill:var(--cinnabar)'>同年 AlexNet</text><text x='400' y='179' text-anchor='middle' font-size='11' style='fill:var(--cinnabar)'>深度学习开场</text><circle cx='508' cy='120' r='5' style='fill:var(--ink-soft)'/><text x='508' y='100' text-anchor='middle' font-size='11.5' font-weight='bold' style='fill:var(--ink-soft)'>2017</text><text x='508' y='146' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>Transformer</text><circle cx='604' cy='120' r='5' style='fill:var(--ink-soft)'/><text x='604' y='100' text-anchor='middle' font-size='11.5' font-weight='bold' style='fill:var(--ink-soft)'>2022</text><text x='604' y='146' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>ChatGPT</text><text x='226' y='214' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>← 统计学习的黄金时代，这本书是它最好的总结 →</text><text x='540' y='214' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>← 神经网络时代 →</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "但**它的主张不但没塌，还被放大了一倍**。深度学习本质上是更极端的统计方法：规则更少、假设更少、数据更多、越来越端到端。二〇一九年萨顿那篇被反复引用的《苦涩的教训》说得更直接——七十年人工智能史反复证明，能吃掉算力的通用方法，最终会赢过人手工塞进去的专家知识。**这正是贾里尼克在一九七二年做的那件事，只是尺度大了几个数量级。**从这个角度看，这本书不是一本过时的书，它是那场胜负的第一手记录。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "两处得说清",
+      "items": [
+        "**别拿它当今天的 AI 入门书。**想了解大模型怎么回事，这本书给不了；它能给的是「为什么统计方法会赢」的直觉，那是理解大模型的前提，不是替代品。",
+        "**它有一处主张的含义已经变了。**书里的「简单」指模型形式简单——一个公式、两个参数；今天赢的模型结构确实简单，规模却大到不可思议。另外，当年作者最看重的「你能讲清楚它为什么работает」，在今天的模型上变难了：效果上去了，可解释性下来了。这是这本书的美学与当下现实之间，最真实的一处裂缝。"
+      ]
+    },
+
+    { "type": "h2", "text": "九、怎么读它" },
+    {
+      "type": "list",
+      "items": [
+        "**公式可以跳，故事不能跳。**这本书的价值不在推导，在让你相信「化成模型」这件事真的会赢——那是靠故事传达的。",
+        "**每章问一句：省掉了哪份苦工。**答不出来就回去重读那一章，这是检验有没有读懂的唯一标准。",
+        "**从第一、二章和讲信息熵那章开始。**通信模型和熵是全书的地基，剩下的章节顺序其实可打乱，挑你关心的先看。",
+        "**已经在做算法的人，重点看它怎么把一个业务问题翻译成数学问题**——那一步在教材里是没有的，教材总是从「已经翻译好」的地方开始。",
+        "**想真学，得配教材。**这本书是让你愿意去翻教材的那一本，不是替你翻完的那一本。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "最后说一句它的局限，免得被这篇总览捧过头。这本书是从谷歌视角写的，人物章节带着行业内部的致敬口吻，读起来偶尔像赞歌；数学深度浅是它的优点也是它的天花板——它能给你直觉，给不了能力。但在中文世界里，**把「一个数学模型如何顶掉一整支人力大军」这件事讲得这么清楚、这么好看的书，二十年来仍然屈指可数**。它值得读，只是要带着年份读。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "吴军《数学之美》，人民邮电出版社，2012 年第一版；后有增补第二版及修订版，章目略有出入。",
+        "本文所述历史事实（香农 1948 年的信息论、1966 年美国那份机器翻译评估报告、维特比算法 1967 年、斯巴克·琼斯 1972 年提出逆文本频率、佩奇与布林 1998 年的 PageRank 论文、2012 年 AlexNet、2017 年 Transformer）为学界公认年代，非本书独有。",
+        "萨顿《苦涩的教训》(Rich Sutton, The Bitter Lesson)，2019 年——书中主张在深度学习时代的延伸阅读。",
+        "延伸：格雷克《信息简史》（信息论的通俗史）、李航《统计学习方法》（把书里的模型学扎实）、Jurafsky & Martin《语音与语言处理》（自然语言处理的标准教材）。"
+      ]
+    }
+  ]
+}

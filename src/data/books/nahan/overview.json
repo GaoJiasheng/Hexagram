@@ -11,9 +11,12 @@
  "blocks": [
   {
    "type": "lead",
-   "text": "关于《呐喊》,流传最广的印象大概是两句话:一句是「礼教吃人」,一句是「哀其不幸,怒其不争」。这两句都不是鲁迅在这本书里写下的。**第一句是同时代的读者吴虞替他总结的,第二句出自他另一处文字、且常被用反了。** 这不是要抠字眼,而是想说明一件事:这本书被引用得太多、被概括得太快,以至于很多人「知道」它,却没真读过它。这篇总览要做的,是把它从那几句现成的标语底下挖出来——先看清它的形状,再看清它到底在跟什么东西过不去,最后看清它为什么在一百年后仍然不好读、也不该被读轻。"
+   "text": "关于《呐喊》,流传最广的印象大概是两句话:一句是「礼教吃人」,一句是「哀其不幸,怒其不争」。这两句都不是鲁迅在这本书里写下的。**第一句是同时代的读者吴虞替他总结的;第二句也不出自这本书,而且它容易让人把重音落在「怒」上,读成一篇恨铁不成钢的斥责。** 这不是要抠字眼,而是想说明一件事:这本书被引用得太多、被概括得太快,以至于很多人「知道」它,却没真读过它。这篇总览要做的,是把它从那几句现成的标语底下挖出来——先看清它的形状,再看清它到底在跟什么东西过不去,最后看清它为什么在一百年后仍然不好读、也不该被读轻。"
   },
-  { "type": "h2", "text": "一、先看清这本书的形状" },
+  {
+   "type": "h2",
+   "text": "一、先看清这本书的形状"
+  },
   {
    "type": "p",
    "text": "《呐喊》是鲁迅的第一部小说集,收的是他 1918 到 1922 年间写的短篇,1923 年 8 月由北京新潮社出版。初版收了十五篇,其中一篇《不周山》后来被他自己抽了出去(改名《补天》放进另一本《故事新编》),所以今天通行的《呐喊》是**十四篇小说加一篇自序**。"
@@ -29,21 +32,24 @@
   {
    "type": "figure",
    "ftype": "全书地图",
-   "svg": "<svg viewBox='0 0 560 372' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>《呐喊》十四篇 · 一张地图</text><rect x='22' y='40' width='516' height='40' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='280' y='65' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--cinnabar)'>自序 —— 铁屋子:这本书为什么会存在</text><text x='60' y='106' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>总纲</text><rect x='120' y='90' width='418' height='36' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='329' y='113' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>狂人日记 —— 「吃人」二字,全书的题目</text><text x='60' y='154' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>读书人</text><rect x='120' y='138' width='418' height='36' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='329' y='161' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>孔乙己 · 白光 · 端午节 —— 慢慢消失 / 一次崩断 / 自我豁免</text><text x='60' y='202' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>革命</text><rect x='120' y='186' width='418' height='36' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='329' y='209' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>药 · 阿Q正传 · 风波 · 头发的故事 —— 血、名分、辫子</text><text x='60' y='250' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>故乡</text><rect x='120' y='234' width='418' height='36' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='329' y='257' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>故乡 · 社戏 —— 距离怎样产生 / 距离还没产生时</text><text x='60' y='298' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>无声处</text><rect x='120' y='282' width='418' height='36' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='329' y='305' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>明天 · 一件小事 · 兔和猫 · 鸭的喜剧 —— 没人在场的那些消失</text><text x='280' y='348' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>不是一部长篇切成十四段,是同一把刀下了十五次</text></svg>",
+   "svg": "<svg viewBox='0 0 560 372' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>《呐喊》十四篇 · 一张地图</text><rect x='22' y='40' width='516' height='40' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='65' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--cinnabar-pure)'>自序 —— 铁屋子:这本书为什么会存在</text><text x='60' y='106' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>总纲</text><rect x='120' y='90' width='418' height='36' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='329' y='113' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>狂人日记 —— 「吃人」二字,全书的题目</text><text x='60' y='154' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>读书人</text><rect x='120' y='138' width='418' height='36' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='329' y='161' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>孔乙己 · 白光 · 端午节 —— 慢慢消失 / 一次崩断 / 自我豁免</text><text x='60' y='202' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>革命</text><rect x='120' y='186' width='418' height='36' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='329' y='209' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>药 · 阿Q正传 · 风波 · 头发的故事 —— 血、名分、辫子</text><text x='60' y='250' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>故乡</text><rect x='120' y='234' width='418' height='36' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='329' y='257' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>故乡 · 社戏 —— 距离怎样产生 / 距离还没产生时</text><text x='60' y='298' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>无声处</text><rect x='120' y='282' width='418' height='36' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='329' y='305' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>明天 · 一件小事 · 兔和猫 · 鸭的喜剧 —— 没人在场的那些消失</text><text x='280' y='348' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>不是一部长篇切成十四段,是同一把刀下了十五次</text></svg>",
    "caption": "十四篇各有各的人和事,切的却是同一样东西:那套不用下令就能处置人的秩序。"
   },
-  { "type": "h2", "text": "二、《自序》:铁屋子,这本书的开关" },
+  {
+   "type": "h2",
+   "text": "二、《自序》:铁屋子,这本书的开关"
+  },
   {
    "type": "p",
    "text": "读《呐喊》,最不该跳过的是《自序》。它不是客套的序言,而是**这本书的说明书**——鲁迅在里面交代了三件事:他为什么写、他为什么犹豫、以及他在小说里动过哪些手脚。"
   },
   {
    "type": "p",
-   "text": "先是那条从「治病」到「写字」的路。他家道中落,父亲久病,少年时期有四年多几乎每天出入当铺和药店:药店的柜台和他一样高,当铺的高一倍,他从高柜台外递上衣服首饰,**「在侮蔑里接了钱」**,再去给父亲买药。父亲最终还是死了。他后来说,一个人从小康坠入困顿,在这条路上「大概可以看见世人的真面目」。于是他「走异路,逃异地」,先进新式学堂,后来到日本学医——梦想是回来救治像他父亲那样被耽误的病人。"
+   "text": "先是那条从「治病」到「写字」的路。他家道中落,父亲久病,少年时期有四年多几乎每天出入质铺(当铺)和药店:药店的柜台和他一样高,质铺的高一倍,他从那个高一倍的柜台外递上衣服首饰,**「在侮蔑里接了钱」**,再去给父亲买药。父亲最终还是死了。他后来说,一个人从小康坠入困顿,在这条路上「大概可以看见世人的真面目」。于是他「走异路,逃异地」,先进新式学堂,后来到日本学医——梦想是回来救治像他父亲那样被耽误的病人。"
   },
   {
    "type": "p",
-   "text": "让他掉头的,是课堂上的一张画片。那是日俄战争期间,老师用剩下的时间放时事画片:一个中国人被绑在中间将要被处决,四周站着一圈中国人,**「一样是强壮的体格,而显出麻木的神情」**——他们是来「赏鉴这示众的盛举的人们」。"
+   "text": "让他掉头的,是课堂上的一张画片。那是日俄战争期间,老师把讲义讲完后剩下的时间用来放些风景或时事的画片:一个中国人被绑在中间将要被处决,四周站着一圈中国人,**「一样是强壮的体格,而显出麻木的神情」**——而围着的那些人,用他自己的措辞,是来**「赏鉴这示众的盛举」**的。"
   },
   {
    "type": "quote",
@@ -95,10 +101,13 @@
   {
    "type": "figure",
    "ftype": "结构图",
-   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>铁屋子:一道没有正解的题</text><rect x='150' y='42' width='260' height='42' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='68' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>前提:绝无窗户,万难破毁,人将闷死</text><path d='M240,84 L150,116' style='stroke:var(--ink-faint);stroke-width:1'/><path d='M320,84 L410,116' style='stroke:var(--ink-faint);stroke-width:1'/><rect x='24' y='118' width='250' height='76' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='149' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>不喊</text><text x='149' y='163' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>从昏睡入死灭</text><text x='149' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>不感到就死的悲哀</text><rect x='286' y='118' width='250' height='76' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='411' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>喊</text><text x='411' y='163' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>惊起较清醒的几个人</text><text x='411' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>让他们清醒着受苦</text><rect x='96' y='214' width='368' height='60' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='280' y='238' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>他选了「喊」,但理由不是「能赢」</text><text x='280' y='260' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>而是:不能拿我确信的「必无」,去折服别人所谓的「可有」</text></svg>",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>铁屋子:一道没有正解的题</text><rect x='150' y='42' width='260' height='42' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='68' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>前提:绝无窗户,万难破毁,人将闷死</text><path d='M240,84 L150,116' style='stroke:var(--ink-faint);stroke-width:1'/><path d='M320,84 L410,116' style='stroke:var(--ink-faint);stroke-width:1'/><rect x='24' y='118' width='250' height='76' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='149' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>不喊</text><text x='149' y='163' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>从昏睡入死灭</text><text x='149' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>不感到就死的悲哀</text><rect x='286' y='118' width='250' height='76' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='411' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>喊</text><text x='411' y='163' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>惊起较清醒的几个人</text><text x='411' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>让他们清醒着受苦</text><rect x='96' y='214' width='368' height='60' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='238' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>他选了「喊」,但理由不是「能赢」</text><text x='280' y='260' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>而是:不能拿我确信的「必无」,去折服别人所谓的「可有」</text></svg>",
    "caption": "《呐喊》的底色不是信心,是一个人承认自己没有资格替别人下结论。"
   },
-  { "type": "h2", "text": "三、「吃人」两个字,究竟指着谁" },
+  {
+   "type": "h2",
+   "text": "三、「吃人」两个字,究竟指着谁"
+  },
   {
    "type": "p",
    "text": "《狂人日记》是全书第一篇,1918 年发表在《新青年》上,是中国第一篇现代白话短篇小说,也是「鲁迅」这个笔名的第一次使用。它写一个人得了「迫害狂」,觉得所有人都要吃他;他翻遍史书,终于看出了那两个字。"
@@ -124,7 +133,7 @@
   {
    "type": "figure",
    "ftype": "层次图",
-   "svg": "<svg viewBox='0 0 560 296' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>「吃人」的三层</text><rect x='40' y='42' width='480' height='62' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='72' y='68' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>一 · 字面</text><text x='170' y='68' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>易牙蒸子 · 挖心肝下酒 · 割股疗亲</text><text x='170' y='90' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>真的吃,但只是引子</text><rect x='40' y='114' width='480' height='62' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='72' y='140' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>二 · 制度</text><text x='170' y='140' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>名分等级 · 节烈牌坊 · 宗族与家长的处置权</text><text x='170' y='162' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>不用刀,靠所有人都觉得理所当然 —— 这是靶子</text><rect x='40' y='186' width='480' height='62' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='72' y='212' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>三 · 共谋</text><text x='170' y='212' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>「我也吃过人」 —— 批判者本人也在名单上</text><text x='170' y='234' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>从控诉变成自认,于是没有人能站在外面</text><text x='280' y='276' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>只看第一层,是猎奇;只看第二层,是控诉;三层都看见,才是这篇小说</text></svg>",
+   "svg": "<svg viewBox='0 0 560 296' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>「吃人」的三层</text><rect x='40' y='42' width='480' height='62' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='72' y='68' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>一 · 字面</text><text x='170' y='68' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>易牙蒸子 · 挖心肝下酒 · 割股疗亲</text><text x='170' y='90' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>真的吃,但只是引子</text><rect x='40' y='114' width='480' height='62' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='72' y='140' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>二 · 制度</text><text x='170' y='140' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>名分等级 · 节烈牌坊 · 宗族与家长的处置权</text><text x='170' y='162' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>不用刀,靠所有人都觉得理所当然 —— 这是靶子</text><rect x='40' y='186' width='480' height='62' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='72' y='212' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>三 · 共谋</text><text x='170' y='212' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>「我也吃过人」 —— 批判者本人也在名单上</text><text x='170' y='234' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>从控诉变成自认,于是没有人能站在外面</text><text x='280' y='276' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>只看第一层,是猎奇;只看第二层,是控诉;三层都看见,才是这篇小说</text></svg>",
    "caption": "三层缺一不可。少了第三层,《狂人日记》就变成一篇可以拿去指认别人的檄文——那恰恰是它拒绝成为的东西。"
   },
   {
@@ -155,7 +164,10 @@
    "type": "p",
    "text": "顺带说一句:《狂人日记》有个极冷的机关,常被漏掉。全篇开头有一段**文言小序**,交代这位狂人是作者旧友的弟弟,而他**「然已早愈,赴某地候补矣」**——病好了,去等着补官缺了。也就是说,他曾经看穿的一切,在他恢复「正常」之后自己也接受了,并且加入了。**清醒是病,痊愈是投降。** 结尾那句「救救孩子……」也因此变了味道——它的原文是「没有吃过人的孩子,或者还有?救救孩子……」,前一句是疑问,后一句带删节号,**不是一句昂扬的呼告,是一句没有把握、拖着尾巴的话**。"
   },
-  { "type": "h2", "text": "四、看客:全书唯一从头演到尾的角色" },
+  {
+   "type": "h2",
+   "text": "四、看客:全书唯一从头演到尾的角色"
+  },
   {
    "type": "p",
    "text": "如果说「吃人」是这本书的题目,那么「看客」就是它的主角——不是狂人,不是阿Q,是那些**围着看的人**。"
@@ -180,7 +192,10 @@
    "type": "p",
    "text": "第三条最要紧。**看客不是一群特定的坏人,是一个人人轮流坐庄的位置。** 鲁迅从来没把这个圈子写成「他们」——他在《狂人日记》里说自己也吃过人,在《一件小事》里说一个车夫的背影「榨出皮袍下面藏著的『小』来」。**这本书从不提供一个安全的旁观位置。**"
   },
-  { "type": "h2", "text": "五、四种被吃掉的人" },
+  {
+   "type": "h2",
+   "text": "五、四种被吃掉的人"
+  },
   {
    "type": "p",
    "text": "十四篇里死了很多人,但死法各不相同。把其中四种放在一起看,这本书的完整版图就出来了。"
@@ -209,10 +224,13 @@
   {
    "type": "figure",
    "ftype": "对照",
-   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>四种被吃掉的人</text><text x='84' y='56' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>人物</text><text x='236' y='56' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>怎样被吃掉</text><text x='438' y='56' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>吃他的是谁</text><line x1='24' y1='68' x2='536' y2='68' style='stroke:var(--line);stroke-width:1'/><text x='84' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>孔乙己</text><text x='236' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>在笑声里慢慢消失</text><text x='438' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>需要一点乐子的普通人</text><line x1='24' y1='110' x2='536' y2='110' style='stroke:var(--line);stroke-width:0.5;stroke-dasharray:3 3'/><text x='84' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>瑜儿(《药》)</text><text x='236' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>血被当成药吃掉</text><text x='438' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>他要救的那些人</text><line x1='24' y1='152' x2='536' y2='152' style='stroke:var(--line);stroke-width:0.5;stroke-dasharray:3 3'/><text x='84' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>单四嫂子</text><text x='236' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>无人在场地熬过去</text><text x='438' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>没有人 —— 这正是问题</text><line x1='24' y1='194' x2='536' y2='194' style='stroke:var(--line);stroke-width:0.5;stroke-dasharray:3 3'/><text x='84' y='222' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>阿Q</text><text x='236' y='222' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>顶罪、游街、被喝采</text><text x='438' y='222' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>一整条向下传导的链子</text><rect x='24' y='240' width='512' height='46' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='280' y='268' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>四种死法,没有一个凶手 —— 这就是「不用刀的吃人」</text></svg>",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>四种被吃掉的人</text><text x='84' y='56' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>人物</text><text x='236' y='56' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>怎样被吃掉</text><text x='438' y='56' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>吃他的是谁</text><line x1='24' y1='68' x2='536' y2='68' style='stroke:var(--line);stroke-width:1'/><text x='84' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>孔乙己</text><text x='236' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>在笑声里慢慢消失</text><text x='438' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>需要一点乐子的普通人</text><line x1='24' y1='110' x2='536' y2='110' style='stroke:var(--line);stroke-width:0.5;stroke-dasharray:3 3'/><text x='84' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>瑜儿(《药》)</text><text x='236' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>血被当成药吃掉</text><text x='438' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>他要救的那些人</text><line x1='24' y1='152' x2='536' y2='152' style='stroke:var(--line);stroke-width:0.5;stroke-dasharray:3 3'/><text x='84' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>单四嫂子</text><text x='236' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>无人在场地熬过去</text><text x='438' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>没有人 —— 这正是问题</text><line x1='24' y1='194' x2='536' y2='194' style='stroke:var(--line);stroke-width:0.5;stroke-dasharray:3 3'/><text x='84' y='222' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>阿Q</text><text x='236' y='222' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>顶罪、游街、被喝采</text><text x='438' y='222' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>一整条向下传导的链子</text><rect x='24' y='240' width='512' height='46' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='268' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>四种死法,没有一个凶手 —— 这就是「不用刀的吃人」</text></svg>",
    "caption": "四个人死于四种方式,而你找不出一个可以送上法庭的人。鲁迅要写的正是这种「找不出凶手」的死。"
   },
-  { "type": "h2", "text": "六、精神胜利法:一件被逼出来的心理器官" },
+  {
+   "type": "h2",
+   "text": "六、精神胜利法:一件被逼出来的心理器官"
+  },
   {
    "type": "p",
    "text": "《阿Q正传》是全书最有名的一篇,也是最容易被读浅的一篇。很多人把「精神胜利法」当成一个笑话来记,但它其实是全书最精密的一次心理解剖。"
@@ -228,7 +246,7 @@
   {
    "type": "figure",
    "ftype": "循环图",
-   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>精神胜利法:一台不产出任何改变的机器</text><rect x='40' y='48' width='150' height='46' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='115' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>① 现实:挨打</text><path d='M190,71 L228,71' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='228,71 220,66 220,76' style='fill:var(--ink-faint)'/><rect x='232' y='48' width='150' height='46' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='307' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--cinnabar)'>② 改写:儿子打老子</text><path d='M382,71 L420,71' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='420,71 412,66 412,76' style='fill:var(--ink-faint)'/><rect x='424' y='48' width='112' height='46' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='480' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>③ 心满意足</text><path d='M480,94 L480,124 L115,124 L115,94' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 4;fill:none'/><polygon points='115,94 110,104 120,104' style='fill:var(--ink-faint)'/><text x='297' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>痛苦被消化掉了,于是什么也不必改变</text><rect x='40' y='158' width='230' height='58' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='155' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>升级:自轻自贱也算赢</text><text x='155' y='202' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>「第一个能够自轻自贱的人」</text><rect x='290' y='158' width='230' height='58' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='405' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>支路:向下转嫁</text><text x='405' y='202' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>挨了棍子,转身去欺负更弱的人</text><rect x='40' y='234' width='480' height='48' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='280' y='263' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>它有用 —— 这正是它最可怕的地方</text></svg>",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>精神胜利法:一台不产出任何改变的机器</text><rect x='40' y='48' width='150' height='46' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='115' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>① 现实:挨打</text><path d='M190,71 L228,71' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='228,71 220,66 220,76' style='fill:var(--ink-faint)'/><rect x='232' y='48' width='150' height='46' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='307' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--cinnabar-pure)'>② 改写:儿子打老子</text><path d='M382,71 L420,71' style='stroke:var(--ink-faint);stroke-width:1.5'/><polygon points='420,71 412,66 412,76' style='fill:var(--ink-faint)'/><rect x='424' y='48' width='112' height='46' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='480' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>③ 心满意足</text><path d='M480,94 L480,124 L115,124 L115,94' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 4;fill:none'/><polygon points='115,94 110,104 120,104' style='fill:var(--ink-faint)'/><text x='297' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>痛苦被消化掉了,于是什么也不必改变</text><rect x='40' y='158' width='230' height='58' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='155' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>升级:自轻自贱也算赢</text><text x='155' y='202' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>「第一个能够自轻自贱的人」</text><rect x='290' y='158' width='230' height='58' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='405' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>支路:向下转嫁</text><text x='405' y='202' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>挨了棍子,转身去欺负更弱的人</text><rect x='40' y='234' width='480' height='48' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='263' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>它有用 —— 这正是它最可怕的地方</text></svg>",
    "caption": "这不是愚蠢,是一个人在完全无力改变处境时,唯一还能自己操作的东西。"
   },
   {
@@ -243,7 +261,10 @@
    "type": "p",
    "text": "结局是全书最荒诞的一笔。他画押时不会写字,只能画一个圆圈,「那手捏着笔却只是抖」,而**「他生怕被人笑话,立志要画得圆」**——马上要被枪毙的人,最在意的是圆圈画得圆不圆。**体面的执念活得比命还长。** 游街时他想唱两句戏却唱不出,只「无师自通」地喊出半句「过了二十年又是一个……」——**连临死的豪言都是从戏文里借来的。** 而未庄的舆论是:他被枪毙就是他坏的证据;城里的舆论则嫌枪毙不如杀头好看。**一条命,一头被当作有罪的证明,一头被当作一场不够精彩的演出。**"
   },
-  { "type": "h2", "text": "七、回不去的水乡:厚障壁,和那句被念滥的「路」" },
+  {
+   "type": "h2",
+   "text": "七、回不去的水乡:厚障壁,和那句被念滥的「路」"
+  },
   {
    "type": "p",
    "text": "《故乡》是全书最柔软也最锋利的一篇。「我」冒着严寒回到别了二十余年的故乡,不是为了怀旧,而是为了卖掉老屋、把母亲接走——**回去是为了永远离开。**"
@@ -279,7 +300,10 @@
    "original": "真的,一直到现在,我实在再没有吃到那夜似的好豆,——也不再看到那夜似的好戏了。",
    "translation": "《社戏》结尾。好的其实不是豆,也不是戏,**是那时人和人之间还没有隔着什么**——那里还没有「老爷」这两个字。《故乡》写距离怎样产生,《社戏》写距离还没产生时是什么样。"
   },
-  { "type": "h2", "text": "八、被跳过的那些篇" },
+  {
+   "type": "h2",
+   "text": "八、被跳过的那些篇"
+  },
   {
    "type": "p",
    "text": "余下几篇很少被谈起,但它们决定了《呐喊》不是一本只有几篇名作的书。"
@@ -317,7 +341,10 @@
    "type": "p",
    "text": "这一篇的位置极重要:**它决定了整本《呐喊》的性质。** 它不是一个明白人对糊涂人的训斥,而是**一个自认也在其中的人写的**——车夫什么道理都不懂,却做了;而懂得所有道理的「我」,坐在车上算计。这和《狂人日记》里那句「我也吃过人」,是同一种自认。"
   },
-  { "type": "h2", "text": "九、手艺:白话第一次成为文学的语言" },
+  {
+   "type": "h2",
+   "text": "九、手艺:白话第一次成为文学的语言"
+  },
   {
    "type": "p",
    "text": "谈《呐喊》容易只谈思想,而它同时是一次技术上的开创。1918 年之前,白话主要用在通俗小说和报章上;**《狂人日记》是第一篇证明白话可以承载最复杂的心理与最锋利的思想的短篇小说。** 而且它一出手就是成熟的——这一点在文学史上很罕见。"
@@ -330,7 +357,10 @@
    "type": "p",
    "text": "**四是反讽的分寸。** 《阿Q正传》第一章一本正经地考据该给阿Q作什么传、他姓什么、名字怎么写,考据了半天一样都定不下来——**正史的体例是给有名有姓有籍贯的人预备的,而阿Q连被写进历史的最低条件都不具备。** 这个玩笑一点也不好笑,而鲁迅写得像在写学术小注。"
   },
-  { "type": "h2", "text": "十、和儒家典籍对读:那段距离" },
+  {
+   "type": "h2",
+   "text": "十、和儒家典籍对读:那段距离"
+  },
   {
    "type": "p",
    "text": "《呐喊》值得和儒家典籍放在一起读,但不是为了让它们打架。**它们其实是同一件事的两个视角:一头是这套学问说自己要做什么,一头是它两千年后在村口实际做成了什么。**"
@@ -342,7 +372,7 @@
   {
    "type": "figure",
    "ftype": "对照",
-   "svg": "<svg viewBox='0 0 560 254' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>原典说的话 → 两千年后在村口的样子</text><text x='268' y='54' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>原典</text><text x='452' y='54' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar)'>《呐喊》里的实况</text><line x1='24' y1='66' x2='536' y2='66' style='stroke:var(--line);stroke-width:1'/><text x='92' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>人与人</text><text x='268' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>己所不欲,勿施于人(双向)</text><text x='452' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>闰土的一声「老爷」(单向)</text><line x1='24' y1='106' x2='536' y2='106' style='stroke:var(--line);stroke-width:0.5;stroke-dasharray:3 3'/><text x='92' y='132' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>上与下</text><text x='268' y='132' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>视臣如土芥,则视君如寇雠</text><text x='452' y='132' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>赵太爷打掉阿Q姓赵的资格</text><line x1='24' y1='146' x2='536' y2='146' style='stroke:var(--line);stroke-width:0.5;stroke-dasharray:3 3'/><text x='92' y='172' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>身体</text><text x='268' y='172' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>身体发肤,不敢毁伤</text><text x='452' y='172' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>割股疗亲被当作孝行表彰</text><rect x='24' y='192' width='512' height='48' rx='8' style='fill:none;stroke:var(--cinnabar);stroke-width:1.5'/><text x='280' y='213' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar)'>他打的是右边这一栏</text><text x='280' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>把左右两栏当成一回事,才是真正的误读</text></svg>",
+   "svg": "<svg viewBox='0 0 560 254' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>原典说的话 → 两千年后在村口的样子</text><text x='268' y='54' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>原典</text><text x='452' y='54' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>《呐喊》里的实况</text><line x1='24' y1='66' x2='536' y2='66' style='stroke:var(--line);stroke-width:1'/><text x='92' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>人与人</text><text x='268' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>己所不欲,勿施于人(双向)</text><text x='452' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>闰土的一声「老爷」(单向)</text><line x1='24' y1='106' x2='536' y2='106' style='stroke:var(--line);stroke-width:0.5;stroke-dasharray:3 3'/><text x='92' y='132' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>上与下</text><text x='268' y='132' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>视臣如土芥,则视君如寇雠</text><text x='452' y='132' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>赵太爷打掉阿Q姓赵的资格</text><line x1='24' y1='146' x2='536' y2='146' style='stroke:var(--line);stroke-width:0.5;stroke-dasharray:3 3'/><text x='92' y='172' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>身体</text><text x='268' y='172' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>身体发肤,不敢毁伤</text><text x='452' y='172' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>割股疗亲被当作孝行表彰</text><rect x='24' y='192' width='512' height='48' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='213' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>他打的是右边这一栏</text><text x='280' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>把左右两栏当成一回事,才是真正的误读</text></svg>",
    "caption": "把两栏并排放一次,那段距离就看得见了——而《呐喊》里的实况,全部落在右边这一栏。"
   },
   {
@@ -353,7 +383,10 @@
    "type": "pull",
    "text": "一句话被写下来是一回事,被一整套制度执行两千年是另一回事;鲁迅打的是后者,而后者也确实是从前者长出来的。"
   },
-  { "type": "h2", "text": "十一、怎样读这本书" },
+  {
+   "type": "h2",
+   "text": "十一、怎样读这本书"
+  },
   {
    "type": "p",
    "text": "最后是几条实用的建议。"
@@ -371,12 +404,12 @@
   },
   {
    "type": "p",
-   "text": "如果只带一句话离开这本书,不必是「礼教吃人」,也不必是「哀其不幸」。可以是狂人在第十则里问出的那六个字——它不提供任何答案,只是拒绝把「一直这样」当成理由。**整本《呐喊》,方法只有这一个。**"
+   "text": "如果只带一句话离开这本书,不必是「礼教吃人」,也不必是「哀其不幸」。可以是狂人在第八则里问出的那七个字——它不提供任何答案,只是拒绝把「一直这样」当成理由。**整本《呐喊》,方法只有这一个。**"
   },
   {
    "type": "figure",
    "ftype": "金句卡",
-   "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><rect x='16' y='16' width='528' height='218' style='fill:none;stroke:var(--line);stroke-width:1'/><line x1='192' y1='48' x2='250' y2='48' style='stroke:var(--cinnabar);stroke-width:1'/><line x1='310' y1='48' x2='368' y2='48' style='stroke:var(--cinnabar);stroke-width:1'/><circle cx='280' cy='48' r='4' style='fill:var(--cinnabar)'/><text x='280' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:30px;font-weight:bold;fill:var(--ink)'>从来如此,便对么?</text><text x='280' y='162' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink-soft)'>——《狂人日记》</text><text x='280' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>它不提供答案,只拒绝把「一直这样」当成理由</text><text x='280' y='216' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>整本《呐喊》,方法只有这一个</text></svg>",
+   "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><rect x='16' y='16' width='528' height='218' style='fill:none;stroke:var(--line);stroke-width:1'/><line x1='192' y1='48' x2='250' y2='48' style='stroke:var(--cinnabar-pure);stroke-width:1'/><line x1='310' y1='48' x2='368' y2='48' style='stroke:var(--cinnabar-pure);stroke-width:1'/><circle cx='280' cy='48' r='4' style='fill:var(--cinnabar-pure)'/><text x='280' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:30px;font-weight:bold;fill:var(--ink)'>从来如此,便对么?</text><text x='280' y='162' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink-soft)'>——《狂人日记》</text><text x='280' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>它不提供答案,只拒绝把「一直这样」当成理由</text><text x='280' y='216' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>整本《呐喊》,方法只有这一个</text></svg>",
    "caption": "全书最短的一句,也是它留下的唯一一件工具。"
   },
   {
