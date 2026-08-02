@@ -46,6 +46,7 @@ const compact = (s) => String(s || '').replace(/\s+/g, ' ').trim()
 const uniqText = (...parts) => [...new Set(parts.map(compact).filter(Boolean))].join('\n')
 const siteOf = (corpus) => SITES.find((s) => s.key === corpus)
 const siteLabel = (corpus) => siteOf(corpus)?.portalTitle || corpus
+const homeOf = (corpus) => siteOf(corpus)?.home || `/${corpus}`
 const searchText = (s) => compact(s).toLowerCase().replace(/\s+/g, '')
 
 function shardKey(token) {
@@ -188,7 +189,7 @@ function buildBaihuaAssets(records, manifest) {
 }
 
 // 书级导读(前世今生):一书一篇,与白话同走分片,免得 62 篇 × 数千字打进 JS chunk。
-function buildDaoduAssets(manifest) {
+function buildDaoduAssets(manifest, records) {
   const dirs = fs.readdirSync(SRC_DATA).filter((n) => exists(path.join(SRC_DATA, n, 'daodu')))
   manifest.daodu ??= {}
   for (const corpus of dirs.sort()) {
@@ -212,6 +213,11 @@ function buildDaoduAssets(manifest) {
         path: `/content/daodu/${corpus}/${slug}.json`,
       }
       writeJson(path.join(OUT_DAODU, corpus, `${slug}.json`), art)
+      addRecord(records, {
+        id: `daodu:${corpus}:${slug}`, kind: '导读', site: corpus,
+        title: art.title, subtitle: art.subtitle,
+        href: `${homeOf(corpus)}/${slug}/daodu`, text: art.centralIdea,
+      })
     }
   }
 }
@@ -219,7 +225,7 @@ function buildDaoduAssets(manifest) {
 // 家级导读(一家之来路):一组一篇。与书级同走分片。
 // 分工:书级讲「这一本的前世今生」,家级讲「这些书之间、这些人之间」——
 // 谁接谁 · 在哪一步转了向 · 哪一支断了 · 这几本按什么顺序读。
-function buildSchoolAssets(manifest) {
+function buildSchoolAssets(manifest, records) {
   manifest.school ??= {}
   for (const corpus of fs.readdirSync(SRC_DATA).sort()) {
     const f = path.join(SRC_DATA, corpus, 'school.json')
@@ -230,6 +236,12 @@ function buildSchoolAssets(manifest) {
       path: `/content/school/${corpus}.json`,
     }
     writeJson(path.join(OUT_SCHOOL, `${corpus}.json`), art)
+    // 导读页分享出去原本是裸链接 —— 收进 og 索引,爬虫来取时能拿到题与摘要
+    addRecord(records, {
+      id: `school:${corpus}`, kind: '来路', site: corpus,
+      title: art.title, subtitle: art.subtitle,
+      href: `${homeOf(corpus)}/school`, text: art.centralIdea,
+    })
   }
 }
 
@@ -518,8 +530,8 @@ indexYijing(records)
 for (const corpus of CORPORA) indexCorpus(records, corpus)
 indexConceptsAndDebates(records)
 buildBaihuaAssets(records, manifest)
-buildDaoduAssets(manifest)
-buildSchoolAssets(manifest)
+buildDaoduAssets(manifest, records)
+buildSchoolAssets(manifest, records)
 
 writeJson(path.join(OUT_ROOT, 'manifest.json'), manifest)
 buildSearchAssets(records)

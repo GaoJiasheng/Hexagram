@@ -99,6 +99,14 @@ function verifyPath(rawHref) {
   m = href.match(/^\/debates\/([^/]+)$/)
   if (m) return debateIds.has(m[1])
 
+  // 家级导读 /<组>/school 与书级导读 /<组>/<书>/daodu ——
+  // 必须排在下面那条 /<组>/<slug> 之前,否则 school 会被当成书名去查 texts.json。
+  m = href.match(/^\/(dao|fo|ru|xin|fa|mo|bing|zong|zhongyi|moulue)\/school$/)
+  if (m) return !!manifest.school?.[m[1]]
+
+  m = href.match(/^\/(dao|fo|ru|xin|fa|mo|bing|zong|zhongyi|moulue)\/([^/]+)\/daodu$/)
+  if (m) return !!manifest.daodu?.[m[1]]?.[m[2]]
+
   m = href.match(/^\/(dao|fo|ru|xin|fa|mo|bing|zong|zhongyi|moulue)\/([^/]+)$/)
   if (m) return !!textMeta[m[1]]?.find((t) => t.slug === m[2] && t.status !== 'pending')
 

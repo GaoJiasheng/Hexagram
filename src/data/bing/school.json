@@ -26,11 +26,34 @@
     },
     {
       "type": "p",
-      "text": "一千二百年是什么概念？可以拿隔壁一组作参照：从孔子到朱熹，也就是这个数。但儒家那一千七百年是一条有人接着人的线——孔子传曾子，曾子传子思，子思之门人传孟子，宋人再从这条线上接过去。这七部书之间没有这条线。没有一部书说自己承的是谁的学，也没有一部书说自己要驳谁。"
+      "text": "一千二百年是什么概念？拿隔壁一组作参照：从孔子到朱熹是一千七百年，比这还长五百年——可儒家那一千七百年是一条有人接着人的线，孔子传曾子，曾子传子思，子思之门人传孟子，宋人再从这条线上接过去。这七部书之间没有这条线。没有一部书说自己承的是谁的学，也没有一部书说自己要驳谁。"
     },
     {
       "type": "p",
-      "text": "更能说明问题的是引用。七部书里，前六部谁也不提谁——《吴子》不提孙武，《尉缭子》不引《司马法》，《六韬》与《三略》各说各的。唯一的例外是排在最后的《李卫公问对》，它整部书都在讨论前面几部，而那已经是一千年以后的事了。"
+      "text": "更能说明问题的是引用。把七部书从头翻一遍，前六部之间几乎不发生关系：《孙子》通篇只说「孙子曰」，《吴子》只讲吴起自己的事，《司马法》一个后人的名字都不提，《三略》引的是《军谶》《军势》两部早已失传的古书，《六韬》里说话的自始至终是太公。"
+    },
+    {
+      "type": "p",
+      "text": "唯一的两处例外都值得记下来。一处在《尉缭子》——它举了一串以少胜多的名将，其中有这么一问一答："
+    },
+    {
+      "type": "quote",
+      "original": "有提七万之众，而天下莫敢当者，谁？曰：「吴起也。」",
+      "translation": "率领七万人马而天下没有谁敢抵挡的，是谁？回答：吴起。",
+      "cite": {
+        "corpus": "bing",
+        "slug": "weiliaozi",
+        "ch": 3,
+        "label": "尉缭子 · 制谈"
+      }
+    },
+    {
+      "type": "p",
+      "text": "请注意它推许的是**人**，不是**书**：它佩服吴起带兵的本事，没有说自己承接《吴子》的学说，更没有引过《吴子》一句话。这就是兵书之间那种关系的典型样子——同行之间知道彼此的名声，但没有师承，也没有学派内部那种「我这一支是从他那里来的」。"
+    },
+    {
+      "type": "p",
+      "text": "另一处例外是排在最后的《李卫公问对》，它整部书都在讨论前面几部。可那已经是一千年以后的事了，而且它更像是后人回头做的整理，不是当时人之间的对话。"
     },
     {
       "type": "figure",
@@ -48,7 +71,7 @@
     },
     {
       "type": "p",
-      "text": "话说回来，这个书箱也不是宋人凭空造的。把这几个名字排在一起，唐代就有人做过了。排在七书最末的那部书里，李靖对太宗有这么一段答话："
+      "text": "话说回来，这个书箱也不是宋人凭空造的。把这几个名字排成一份书单，在元丰之前就有人做过了。排在七书最末的那部书里，李靖对太宗有这么一段答话："
     },
     {
       "type": "quote",
@@ -63,7 +86,7 @@
     },
     {
       "type": "p",
-      "text": "这句话里做了一件很要紧的事：它把「兵法」讲成了一份可以列举的书单。而这份唐代的书单里，已经有了后来七书中的四个名字——六韬、三略、司马穰苴、孙武。距离元丰校定还有四百年，名单已经在成形了。宋人做的不是发明，是拍板。"
+      "text": "这句话做了一件很要紧的事：它把「兵法」讲成了一份可以列举的书单，而这份书单里已经有了后来七书中的四个名字——六韬、三略、司马穰苴、孙武。（《问对》自己的年代存疑：或谓唐人所记，或谓北宋人依托。但两说都在元丰之前，所以无论按哪一说，把这几部书当成一组来谈，都早于那道诏书。）名单在成形，宋人做的不是发明，是拍板。"
     },
     {
       "type": "h2",
@@ -192,7 +215,7 @@
     },
     {
       "type": "p",
-      "text": "这个句式在《天下》篇里重复了六次，先后请进墨翟与禽滑厘、宋钘与尹文、彭蒙田骈慎到、关尹与老聃、庄周，最后带出惠施与公孙龙一路的辩者。一个拿刀的人也没有。而《天下》成篇的时候，《孙子》已经流传了两百年。"
+      "text": "这个句式在《天下》篇里连用五次，先后请进墨翟与禽滑厘、宋钘与尹文、彭蒙田骈慎到、关尹与老聃、庄周；篇末另起一段，又带出惠施与公孙龙一路的辩者。一个拿刀的人也没有。而《天下》成篇的时候，《孙子》已经流传了两百年。"
     },
     {
       "type": "p",
@@ -459,7 +482,7 @@
     },
     {
       "type": "p",
-      "text": "这一支几乎踩在法家的门槛上——制度、刑赏、连坐、什伍，这些词与《商君书》《韩非子》里的是同一批。本站对这一面的处理与法家组一致：如实呈现它的严刻，作思想史读，不当作驭下之术来讲。"
+      "text": "这一支几乎踩在法家的门槛上——制度、刑赏、什伍、号令，这些词与《商君书》《韩非子》里的是同一批。本站对这一面的处理与法家组一致：如实呈现它的严刻，作思想史读，不当作驭下之术来讲。"
     },
     {
       "type": "p",
@@ -624,7 +647,7 @@
     },
     {
       "type": "p",
-      "text": "这话说在元丰校定之前四百年。也就是说，早在这一套书被编出来以前，其中一部已经被单独抬到了别的高度。此后宋元明清的注家、评点、选本，直到近现代的外译，都是围着这一部转的——那条线在《孙子兵法》的书级导读里讲过，这里不重复。"
+      "text": "这话早于元丰校定（《问对》的年代无论取唐说还是取北宋说，都在校定之前）。也就是说，早在这一套书被编出来以前，其中一部已经被单独抬到了别的高度。此后宋元明清的注家、评点、选本，直到近现代的外译，都是围着这一部转的——那条线在《孙子兵法》的书级导读里讲过，这里不重复。"
     },
     {
       "type": "p",
@@ -669,11 +692,11 @@
     },
     {
       "type": "p",
-      "text": "先读《孙子》。它最短、最系统，而且是其余六部的共同坐标——《问对》整部书在跟它对话，后世注家的话题也基本由它设定。十三篇不到六千字，读完再往下走，后面每一部书都有了参照。"
+      "text": "先读《孙子》。它篇幅不大而最成体系，又是其余六部的共同坐标——《问对》整部书在跟它对话，后世注家的话题也基本由它设定。十三篇六千字上下，读完再往下走，后面每一部书都有了参照。"
     },
     {
       "type": "p",
-      "text": "紧接着读《司马法》，为的是解毒。刚读完「兵者诡道」，很容易以为兵学就是那么回事；《司马法》会让人看见战争曾经有另一副样子——成列而鼓、逐奔百步、不逼绝境。看见了这一层，才不至于用诡道概括全部。"
+      "text": "紧接着读《司马法》，为的是解毒。它是七部里最短的一部（本站底本三千四百余字，一顿饭的工夫就能读完）。刚读完「兵者诡道」，很容易以为兵学就是那么回事；《司马法》会让人看见战争曾经有另一副样子——成列而鼓、逐奔百步、不逼绝境。看见了这一层，才不至于用诡道概括全部。"
     },
     {
       "type": "p",
@@ -685,11 +708,11 @@
     },
     {
       "type": "p",
-      "text": "第五读《六韬》。它篇幅最大，前几卷几乎不谈打仗，谈的是怎么让天下归附。把一部兵书的前三分之一花在治国上，这件事本身就值得想一想：在这一套书里，「兵」从来不是一个独立的题目。"
+      "text": "第五读《六韬》。它篇幅最大，前几卷几乎不谈打仗，谈的是怎么让天下归附。把一部兵书的头两卷花在怎么得人心上，这件事本身就值得想一想：在这一套书里，「兵」从来不是一个独立的题目。"
     },
     {
       "type": "p",
-      "text": "第六读《三略》。它最短，黄老气最重，可以与《道德经》第三十一章对着读——同一句「兵者不祥之器」，在道家书里是劝人少用兵，在兵书里成了用兵的原则。"
+      "text": "第六读《三略》。它也很短，黄老气最重，可以与《道德经》第三十一章对着读——同一句「兵者不祥之器」，在《道德经》里是劝人别轻易动武，到了《三略》里成了带兵的人该有的一份自觉。"
     },
     {
       "type": "p",
@@ -699,7 +722,7 @@
       "type": "figure",
       "ftype": "次第",
       "caption": "七部书的一条阅读次第。前六部按「从原则到落地、从军事到治国」排，最后一部因为在讨论前六部，只能压轴。",
-      "svg": "<svg viewBox=\"0 0 640 330\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\">\n<text x=\"320\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">一条可以走的次第（不是优劣排名）</text>\n<line x1=\"44\" y1=\"58\" x2=\"44\" y2=\"300\" style=\"stroke:var(--line)\" stroke-width=\"1\"/>\n<circle cx=\"44\" cy=\"62\" r=\"12\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.2\"/>\n<text x=\"44\" y=\"67\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"12\">一</text>\n<text x=\"70\" y=\"67\" style=\"fill:var(--ink)\" font-size=\"14\">孙子兵法</text>\n<text x=\"176\" y=\"67\" style=\"fill:var(--ink-soft)\" font-size=\"12\">最短最系统，是其余六部的共同坐标</text>\n<circle cx=\"44\" cy=\"102\" r=\"12\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.1\"/>\n<text x=\"44\" y=\"107\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">二</text>\n<text x=\"70\" y=\"107\" style=\"fill:var(--ink)\" font-size=\"14\">司马法</text>\n<text x=\"176\" y=\"107\" style=\"fill:var(--ink-soft)\" font-size=\"12\">先看见战争曾有规矩，才不至以诡道概全</text>\n<circle cx=\"44\" cy=\"142\" r=\"12\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.1\"/>\n<text x=\"44\" y=\"147\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">三</text>\n<text x=\"70\" y=\"147\" style=\"fill:var(--ink)\" font-size=\"14\">吴子</text>\n<text x=\"176\" y=\"147\" style=\"fill:var(--ink-soft)\" font-size=\"12\">把原则落到治军、选将、励士</text>\n<circle cx=\"44\" cy=\"182\" r=\"12\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.1\"/>\n<text x=\"44\" y=\"187\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">四</text>\n<text x=\"70\" y=\"187\" style=\"fill:var(--ink)\" font-size=\"14\">尉缭子</text>\n<text x=\"176\" y=\"187\" style=\"fill:var(--ink-soft)\" font-size=\"12\">制度与刑赏的一面，可与法家对读</text>\n<circle cx=\"44\" cy=\"222\" r=\"12\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.1\"/>\n<text x=\"44\" y=\"227\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">五</text>\n<text x=\"70\" y=\"227\" style=\"fill:var(--ink)\" font-size=\"14\">六韬</text>\n<text x=\"176\" y=\"227\" style=\"fill:var(--ink-soft)\" font-size=\"12\">治国的那一半：兵书怎么谈天下</text>\n<circle cx=\"44\" cy=\"262\" r=\"12\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.1\"/>\n<text x=\"44\" y=\"267\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">六</text>\n<text x=\"70\" y=\"267\" style=\"fill:var(--ink)\" font-size=\"14\">三略</text>\n<text x=\"176\" y=\"267\" style=\"fill:var(--ink-soft)\" font-size=\"12\">黄老的一面，可与《道德经》对读</text>\n<circle cx=\"44\" cy=\"302\" r=\"12\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.2\"/>\n<text x=\"44\" y=\"307\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"12\">七</text>\n<text x=\"70\" y=\"307\" style=\"fill:var(--ink)\" font-size=\"14\">李卫公问对</text>\n<text x=\"176\" y=\"307\" style=\"fill:var(--ink-soft)\" font-size=\"12\">回头讨论前六部，故须放在最后</text>\n</svg>"
+      "svg": "<svg viewBox=\"0 0 640 330\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\">\n<text x=\"320\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"13\">一条可以走的次第（不是优劣排名）</text>\n<line x1=\"44\" y1=\"58\" x2=\"44\" y2=\"300\" style=\"stroke:var(--line)\" stroke-width=\"1\"/>\n<circle cx=\"44\" cy=\"62\" r=\"12\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.2\"/>\n<text x=\"44\" y=\"67\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"12\">一</text>\n<text x=\"70\" y=\"67\" style=\"fill:var(--ink)\" font-size=\"14\">孙子兵法</text>\n<text x=\"176\" y=\"67\" style=\"fill:var(--ink-soft)\" font-size=\"12\">篇幅不大而最成体系，是六部的共同坐标</text>\n<circle cx=\"44\" cy=\"102\" r=\"12\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.1\"/>\n<text x=\"44\" y=\"107\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">二</text>\n<text x=\"70\" y=\"107\" style=\"fill:var(--ink)\" font-size=\"14\">司马法</text>\n<text x=\"176\" y=\"107\" style=\"fill:var(--ink-soft)\" font-size=\"12\">先看见战争曾有规矩，才不至以诡道概全</text>\n<circle cx=\"44\" cy=\"142\" r=\"12\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.1\"/>\n<text x=\"44\" y=\"147\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">三</text>\n<text x=\"70\" y=\"147\" style=\"fill:var(--ink)\" font-size=\"14\">吴子</text>\n<text x=\"176\" y=\"147\" style=\"fill:var(--ink-soft)\" font-size=\"12\">把原则落到治军、选将、励士</text>\n<circle cx=\"44\" cy=\"182\" r=\"12\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.1\"/>\n<text x=\"44\" y=\"187\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">四</text>\n<text x=\"70\" y=\"187\" style=\"fill:var(--ink)\" font-size=\"14\">尉缭子</text>\n<text x=\"176\" y=\"187\" style=\"fill:var(--ink-soft)\" font-size=\"12\">制度与刑赏的一面，可与法家对读</text>\n<circle cx=\"44\" cy=\"222\" r=\"12\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.1\"/>\n<text x=\"44\" y=\"227\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">五</text>\n<text x=\"70\" y=\"227\" style=\"fill:var(--ink)\" font-size=\"14\">六韬</text>\n<text x=\"176\" y=\"227\" style=\"fill:var(--ink-soft)\" font-size=\"12\">治国的那一半：兵书怎么谈天下</text>\n<circle cx=\"44\" cy=\"262\" r=\"12\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1.1\"/>\n<text x=\"44\" y=\"267\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12\">六</text>\n<text x=\"70\" y=\"267\" style=\"fill:var(--ink)\" font-size=\"14\">三略</text>\n<text x=\"176\" y=\"267\" style=\"fill:var(--ink-soft)\" font-size=\"12\">黄老的一面，可与《道德经》对读</text>\n<circle cx=\"44\" cy=\"302\" r=\"12\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.2\"/>\n<text x=\"44\" y=\"307\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"12\">七</text>\n<text x=\"70\" y=\"307\" style=\"fill:var(--ink)\" font-size=\"14\">李卫公问对</text>\n<text x=\"176\" y=\"307\" style=\"fill:var(--ink-soft)\" font-size=\"12\">回头讨论前六部，故须放在最后</text>\n</svg>"
     },
     {
       "type": "p",
@@ -721,6 +744,8 @@
         "银雀山汉简（一九七二）与定县汉简对《孙子》《孙膑兵法》《尉缭子》《六韬》的意义，另见三书各自的书级导读，本篇只取其与「编成一套」相关的一面。",
         "真伪一律如实：《六韬》托名太公、《三略》托名黄石公、《李卫公问对》历代疑其为宋人依托、《司马法》今存五篇为原书残余、《尉缭子》曾长期被列入伪书——本篇不为任何一部回护，也不因署名可疑而抹杀其内容。",
         "本组守思想史与文献史视角：不作兵法实操教程，不作现代商战、职场或权术发挥，不在诸家之间评定高下。",
+        "文中所说的篇幅长短（《司马法》最短、《六韬》最大、《孙子》六千字上下）均依**本站底本的汉字数**统计，与别本可能略有出入。",
+        "「今存最早的七书合刻本为南宋刻本、今藏日本」属版本学的通行著录，本文照录而未作复核。",
         "站内《赛博·百家争鸣》中「兵家三家」「义战与诡道」「奇正之辨」「柔与刚」「将与君」诸辩，可与本篇第五节对读。"
       ]
     }

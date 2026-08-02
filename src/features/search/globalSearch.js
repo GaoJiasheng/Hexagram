@@ -2,7 +2,7 @@ const BASE = (import.meta.env.BASE_URL || '/').replace(/\/$/, '')
 const urlFor = (p) => `${BASE}${p.startsWith('/') ? p : `/${p}`}`
 
 const GROUP_CAP = 10
-const KIND_ORDER = ['页面', '经典', '易经', '正文', '白话', '注疏', '专题']
+const KIND_ORDER = ['页面', '经典', '来路', '导读', '易经', '正文', '白话', '注疏', '专题']
 
 let indexPromise = null
 let records = []
