@@ -751,6 +751,45 @@ if (fs.existsSync(glossaryPath)) {
   if (nDaodu) infos.push(`书级导读: ${nDaodu} 篇 · ${nBadQ} 坏引文`)
 }
 
+// ---------- 8f. 家级导读「一家之来路」校验(docs/school-intro-standard.md)----------
+// 与书级同源但更严:体裁要求散文,故**禁用 callout/list/steps**(那三种会把散文剁碎);
+// 字数按 owner 定的加厚档分组;易经不做(那一层已由学堂/源流页覆盖)。
+{
+  const FLOOR = { ru: 11000, dao: 11000, fo: 10000, fa: 9000, bing: 9000, zhongyi: 9000, moulue: 9000, mo: 8000, zong: 8000, xin: 8000 }
+  let nSchool = 0, nBad = 0
+  for (const corpus of Object.keys(FLOOR)) {
+    const f = path.join(ROOT, `src/data/${corpus}/school.json`)
+    if (!fs.existsSync(f)) continue
+    nSchool++
+    const a = JSON.parse(fs.readFileSync(f, 'utf8'))
+    const blocks = Array.isArray(a.blocks) ? a.blocks : []
+    if (!a.title) err(`school ${corpus}: 缺 title`)
+    if (!a.centralIdea) err(`school ${corpus}: 缺 centralIdea`)
+    if (blocks.filter((b) => b.type === 'h2').length < 5) err(`school ${corpus}: 分节少于 5`)
+    if (blocks.filter((b) => b.type === 'pull').length > 1) err(`school ${corpus}: pull 超 1 处`)
+    for (const t of ['callout', 'list', 'steps']) {
+      const n = blocks.filter((b) => b.type === t).length
+      if (n) err(`school ${corpus}: 用了 ${n} 个 ${t} 块 —— 家级导读是散文体,这三种块一律不用`)
+    }
+    const nChar = (JSON.stringify(blocks).match(/[\u4e00-\u9fff]/g) || []).length
+    if (nChar < FLOOR[corpus]) err(`school ${corpus}: 仅 ${nChar} 字,低于加厚档底线 ${FLOOR[corpus]}`)
+    const vis = blocks.filter((b) => b.type === 'figure' || b.type === 'table').length
+    if (vis < 4) err(`school ${corpus}: 图表仅 ${vis},少于 4(谱系图 + 对照表至少各一)`)
+    for (const b of blocks) {
+      if (b.type !== 'quote' || !b.original) continue
+      if (!b.cite) { err(`school ${corpus}: quote 缺 cite(站外材料请在正文转述并标出处)`); nBad++; continue }
+      const cf = path.join(ROOT, `src/data/${b.cite.corpus || corpus}/classics/${b.cite.slug}.json`)
+      const book = fs.existsSync(cf) ? JSON.parse(fs.readFileSync(cf, 'utf8')) : null
+      const c = book?.chapters?.find((x) => String(x.no) === String(b.cite.ch))
+      if (!c) { err(`school ${corpus}: quote 指向不存在的章 ${b.cite.slug}#${b.cite.ch}`); nBad++; continue }
+      if (!c.paragraphs.map((p) => p.original).join('').includes(b.original)) {
+        err(`school ${corpus}: 引文非 ${b.cite.slug}#${b.cite.ch} 原文子串「${b.original.slice(0, 14)}…」`); nBad++
+      }
+    }
+  }
+  if (nSchool) infos.push(`家级导读: ${nSchool}/10 篇 · ${nBad} 坏引文`)
+}
+
 // ---------- 7c. 诸子拓扑图 ----------
 // 图的价值全在「每根线都点得开、看得到出处」——引文一旦不是站内原文,整张图就是编的。
 // 故引文逐字校验(同 debate cite),校验池收窄到该 cite 所指的那一章:跨章拼接即判错。

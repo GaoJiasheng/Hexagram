@@ -5,6 +5,7 @@ import texts from '../../../data/fo/texts.json'
 export default function FoHomePage() {
   return (
     <ScriptureShelf
+      corpus="fo"
       texts={texts}
       title="释典研读"
       subtitle="心经、金刚经、坛经、四十二章经——原文、白话译注、每章延伸俱全。研习不宣化。"

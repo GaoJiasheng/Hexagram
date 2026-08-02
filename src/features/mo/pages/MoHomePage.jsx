@@ -5,6 +5,7 @@ import texts from '../../../data/mo/texts.json'
 export default function MoHomePage() {
   return (
     <ScriptureShelf
+      corpus="mo"
       texts={texts}
       title="墨家研读"
       subtitle="兼爱、非攻、尚贤、天志：先秦与儒并称的显学，兼重名辩逻辑与科学技术。"

@@ -63,6 +63,7 @@ const DebateListPage = lazy(() => import('./features/debates/DebateListPage.jsx'
 const DebatePage = lazy(() => import('./features/debates/DebatePage.jsx'))
 const DebateArticlePage = lazy(() => import('./features/debates/DebateArticlePage.jsx'))
 const ZhuziTopologyPage = lazy(() => import('./features/zhuzi/ZhuziTopologyPage.jsx'))
+const SchoolPage = lazy(() => import('./features/reader/SchoolPage.jsx'))
 const DaoduPage = lazy(() => import('./features/reader/DaoduPage.jsx'))
 const BooksIndexPage = lazy(() => import('./features/books/BooksIndexPage.jsx'))
 const BookHomePage = lazy(() => import('./features/books/BookHomePage.jsx'))
@@ -362,43 +363,53 @@ function AppContent() {
           {/* 道藏研读 */}
           <Route path="/dao" element={<DaoHomePage />} />
           <Route path="/dao/:slug" element={<DaoTextPage />} />
+          <Route path="/dao/school" element={<SchoolPage corpus="dao" />} />
           <Route path="/dao/:slug/daodu" element={<DaoduPage corpus="dao" />} />
           <Route path="/dao/:slug/:chapter" element={<DaoReadPage />} />
           {/* 释典 / 儒典(v15:经文阅读路由待内容期接 ClassicReader) */}
           <Route path="/fo" element={<FoHomePage />} />
           <Route path="/fo/:slug" element={<CorpusTextPage corpus="fo" />} />
+          <Route path="/fo/school" element={<SchoolPage corpus="fo" />} />
           <Route path="/fo/:slug/daodu" element={<DaoduPage corpus="fo" />} />
           <Route path="/fo/:slug/:chapter" element={<CorpusReadPage corpus="fo" />} />
           <Route path="/ru" element={<RuHomePage />} />
           <Route path="/ru/:slug" element={<CorpusTextPage corpus="ru" />} />
+          <Route path="/ru/school" element={<SchoolPage corpus="ru" />} />
           <Route path="/ru/:slug/daodu" element={<DaoduPage corpus="ru" />} />
           <Route path="/ru/:slug/:chapter" element={<CorpusReadPage corpus="ru" />} />
           <Route path="/xin" element={<XinHomePage />} />
           <Route path="/xin/:slug" element={<CorpusTextPage corpus="xin" />} />
+          <Route path="/xin/school" element={<SchoolPage corpus="xin" />} />
           <Route path="/xin/:slug/daodu" element={<DaoduPage corpus="xin" />} />
           <Route path="/xin/:slug/:chapter" element={<CorpusReadPage corpus="xin" />} />
           <Route path="/fa" element={<FaHomePage />} />
           <Route path="/fa/:slug" element={<CorpusTextPage corpus="fa" />} />
+          <Route path="/fa/school" element={<SchoolPage corpus="fa" />} />
           <Route path="/fa/:slug/daodu" element={<DaoduPage corpus="fa" />} />
           <Route path="/fa/:slug/:chapter" element={<CorpusReadPage corpus="fa" />} />
           <Route path="/mo" element={<MoHomePage />} />
           <Route path="/mo/:slug" element={<CorpusTextPage corpus="mo" />} />
+          <Route path="/mo/school" element={<SchoolPage corpus="mo" />} />
           <Route path="/mo/:slug/daodu" element={<DaoduPage corpus="mo" />} />
           <Route path="/mo/:slug/:chapter" element={<CorpusReadPage corpus="mo" />} />
           <Route path="/bing" element={<BingHomePage />} />
           <Route path="/bing/:slug" element={<CorpusTextPage corpus="bing" />} />
+          <Route path="/bing/school" element={<SchoolPage corpus="bing" />} />
           <Route path="/bing/:slug/daodu" element={<DaoduPage corpus="bing" />} />
           <Route path="/bing/:slug/:chapter" element={<CorpusReadPage corpus="bing" />} />
           <Route path="/zong" element={<ZongHomePage />} />
           <Route path="/zong/:slug" element={<CorpusTextPage corpus="zong" />} />
+          <Route path="/zong/school" element={<SchoolPage corpus="zong" />} />
           <Route path="/zong/:slug/daodu" element={<DaoduPage corpus="zong" />} />
           <Route path="/zong/:slug/:chapter" element={<CorpusReadPage corpus="zong" />} />
           <Route path="/zhongyi" element={<ZhongyiHomePage />} />
           <Route path="/zhongyi/:slug" element={<CorpusTextPage corpus="zhongyi" />} />
+          <Route path="/zhongyi/school" element={<SchoolPage corpus="zhongyi" />} />
           <Route path="/zhongyi/:slug/daodu" element={<DaoduPage corpus="zhongyi" />} />
           <Route path="/zhongyi/:slug/:chapter" element={<CorpusReadPage corpus="zhongyi" />} />
           <Route path="/moulue" element={<MoulueHomePage />} />
           <Route path="/moulue/:slug" element={<CorpusTextPage corpus="moulue" />} />
+          <Route path="/moulue/school" element={<SchoolPage corpus="moulue" />} />
           <Route path="/moulue/:slug/daodu" element={<DaoduPage corpus="moulue" />} />
           <Route path="/moulue/:slug/:chapter" element={<CorpusReadPage corpus="moulue" />} />
           {/* 读经站「我的」(Tier 2):续读 + 收藏 + 批注;静态段优先于 /:slug,顺序无关 */}

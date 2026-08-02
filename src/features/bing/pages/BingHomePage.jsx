@@ -5,6 +5,7 @@ import texts from '../../../data/bing/texts.json'
 export default function BingHomePage() {
   return (
     <ScriptureShelf
+      corpus="bing"
       texts={texts}
       title="兵家研读"
       subtitle="武经七书选：孙子、吴子、司马法、尉缭子、三略。论形势虚实奇正，以兵学思想史视角研读。"

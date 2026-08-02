@@ -6,6 +6,7 @@ import texts from '../../../data/zhongyi/texts.json'
 export default function ZhongyiHomePage() {
   return (
     <ScriptureShelf
+      corpus="zhongyi"
       texts={texts}
       title="中医典籍"
       subtitle="黄帝内经、伤寒论、神农本草经——医经与经方之祖，以医学史与文献视角研读。"

@@ -5,6 +5,7 @@ import texts from '../../../data/zong/texts.json'
 export default function ZongHomePage() {
   return (
     <ScriptureShelf
+      corpus="zong"
       texts={texts}
       title="纵横研读"
       subtitle="捭阖游说之术：鬼谷子言其法，战国策见其用。以思想史视角研读，不作权术教程。"

@@ -3,6 +3,7 @@ import texts from '../../../data/dao/texts.json'
 import { getReadingProgress } from '../../yijing/storage.js'
 import { usePageTitle } from '../../yijing/hooks/usePageTitle.js'
 import { sizeTier } from '../../reader/bookSizes.js'
+import SchoolEntry from '../../reader/SchoolEntry.jsx'
 
 const STATUS_LABEL = { pending: '整理中', partial: '可读·译注中', done: '可阅读' }
 
@@ -41,6 +42,8 @@ export default function DaoHomePage() {
           <span className="shelf-today__arrow" aria-hidden="true">→</span>
         </Link>
       )}
+
+      <SchoolEntry corpus="dao" />
 
       <div className="dao-shelf">
         {texts.map(t => {

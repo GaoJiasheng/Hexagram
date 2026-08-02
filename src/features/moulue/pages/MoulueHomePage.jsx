@@ -7,6 +7,7 @@ import texts from '../../../data/moulue/texts.json'
 export default function MoulueHomePage() {
   return (
     <ScriptureShelf
+      corpus="moulue"
       texts={texts}
       title="谋略杂纂"
       subtitle="权谋与处世的文献杂纂：真实古籍与托名伪书并陈，逐书标明真伪、各归其类。"

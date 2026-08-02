@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import { getReadingProgress } from '../yijing/storage.js'
 import { sizeTier } from './bookSizes.js'
+import SchoolEntry from './SchoolEntry.jsx'
 
 const STATUS_LABEL = { pending: '整理中', partial: '可读·译注中', done: '可阅读' }
 
@@ -21,7 +22,7 @@ function pickToday(texts, basePath) {
   return { book, ch, to }
 }
 
-export default function ScriptureShelf({ texts, title, subtitle, basePath, brand, disclaimer }) {
+export default function ScriptureShelf({ texts, title, subtitle, basePath, brand, disclaimer, corpus }) {
   usePageTitle(null, brand)
   const progress = getReadingProgress()
   const today = pickToday(texts, basePath)
@@ -43,6 +44,8 @@ export default function ScriptureShelf({ texts, title, subtitle, basePath, brand
           <span className="shelf-today__arrow" aria-hidden="true">→</span>
         </Link>
       )}
+
+      {corpus && <SchoolEntry corpus={corpus} />}
 
       <div className="dao-shelf">
         {texts.map(t => {

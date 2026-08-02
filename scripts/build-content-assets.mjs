@@ -7,6 +7,7 @@ const SRC_DATA = path.join(ROOT, 'src/data')
 const OUT_ROOT = path.join(ROOT, 'public/content')
 const OUT_BAIHUA = path.join(OUT_ROOT, 'baihua')
 const OUT_DAODU = path.join(OUT_ROOT, 'daodu')
+const OUT_SCHOOL = path.join(OUT_ROOT, 'school')
 const OUT_SEARCH = path.join(OUT_ROOT, 'search')
 const SEARCH_SHARDS = 128
 
@@ -212,6 +213,23 @@ function buildDaoduAssets(manifest) {
       }
       writeJson(path.join(OUT_DAODU, corpus, `${slug}.json`), art)
     }
+  }
+}
+
+// 家级导读(一家之来路):一组一篇。与书级同走分片。
+// 分工:书级讲「这一本的前世今生」,家级讲「这些书之间、这些人之间」——
+// 谁接谁 · 在哪一步转了向 · 哪一支断了 · 这几本按什么顺序读。
+function buildSchoolAssets(manifest) {
+  manifest.school ??= {}
+  for (const corpus of fs.readdirSync(SRC_DATA).sort()) {
+    const f = path.join(SRC_DATA, corpus, 'school.json')
+    if (!exists(f)) continue
+    const art = readJson(f)
+    manifest.school[corpus] = {
+      title: art.title || '', subtitle: art.subtitle || '',
+      path: `/content/school/${corpus}.json`,
+    }
+    writeJson(path.join(OUT_SCHOOL, `${corpus}.json`), art)
   }
 }
 
@@ -501,6 +519,7 @@ for (const corpus of CORPORA) indexCorpus(records, corpus)
 indexConceptsAndDebates(records)
 buildBaihuaAssets(records, manifest)
 buildDaoduAssets(manifest)
+buildSchoolAssets(manifest)
 
 writeJson(path.join(OUT_ROOT, 'manifest.json'), manifest)
 buildSearchAssets(records)

@@ -5,6 +5,7 @@ import texts from '../../../data/xin/texts.json'
 export default function XinHomePage() {
   return (
     <ScriptureShelf
+      corpus="xin"
       texts={texts}
       title="阳明心学"
       subtitle="《传习录》：心即理、知行合一、致良知——王阳明讲学语录与论学书信。"
