@@ -75,6 +75,7 @@ export default function MasterPortalPage({ onSearch }) {
       <PortalStudyTrail />
       <p className="master-portal__links">
         <Link to="/concepts" className="master-portal__about-link">义理专题 · 跨派概念</Link>
+        <Link to="/mingju" className="master-portal__about-link">名句集 · 每日一句</Link>
       </p>
       <p className="master-portal__about">
         <Link to="/about" className="master-portal__about-link">关于本站 · 研读铁律与数据说明</Link>
