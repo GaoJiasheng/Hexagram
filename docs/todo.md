@@ -56,9 +56,16 @@ npm run check-data
 owner 账号已设、`ADMIN_PASSPHRASE` 已删(有 owner 后该通道自动失效)、
 评论治理四件套(举报/拉黑/过滤/联系方式)已上线并实测、iOS build 48 已带登录与云同步。
 
-**唯一剩下的硬阻塞:Turnstile。** `TURNSTILE_SECRET_KEY` 没配 → 后端 `verifyTurnstile`
-密钥缺失时直接返回 false → **任何人发评论都是 403,评论功能在生产上从没能用过**。
-配好前评论区等于不存在。
+**Turnstile 已配完(2026-08-02)**:sitekey `0x4AAAAAAEEfc0sGSrkQXqXQ` 进代码、
+`TURNSTILE_SECRET_KEY` 进 Pages 环境变量。**站上第一条真实评论已发出并落库**,
+过滤器实测拦下「加微信…」并返回申诉指引。§1.1 至此全部完成。
+
+**这一轮踩的三个坑,记下来免得重犯**:
+1. `wrangler pages secret put` 的**第一个参数是变量名不是值** —— 把密钥当名字传进去,
+   而**变量名是不加密的**(`secret list` 直接明文打出来),等于密钥泄露。已删并轮换。
+2. wrangler 的 OAuth 登录态会过期,过期后非交互环境直接报「需要 CLOUDFLARE_API_TOKEN」。
+3. **`_redirects` 的 SPA 回退会让任何不存在的 `/assets/*.js` 返回 200 的 HTML** ——
+   拿 HTTP 码判断「部署成功了没」会被骗;要 grep 文件内容才作数。
 
 ### 你要办的四件事
 
