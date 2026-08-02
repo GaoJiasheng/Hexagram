@@ -732,7 +732,13 @@ if (fs.existsSync(glossaryPath)) {
       }
       for (const f of figs) {
         if (!f.svg) err(`daodu ${slug}: figure 缺 svg`)
-        else if (/(fill|stroke)="#/.test(f.svg)) err(`daodu ${slug}: figure 写死了前景色,须用 style="fill:var(--…)"`)
+        // 单双引号都要认 —— 有的批次写 style='fill:var(--ink)',只匹配双引号会漏(踩过)。
+        else if (/(fill|stroke)\s*=\s*['"]#[0-9a-fA-F]/.test(f.svg) || /(fill|stroke)\s*:\s*#[0-9a-fA-F]/.test(f.svg)) {
+          err(`daodu ${slug}: figure 写死了前景色,须用 style="fill:var(--…)"`)
+        } else if (/(fill|stroke)\s*=\s*['"]var\(/.test(f.svg)) {
+          // presentation 属性不认 var(),必须写进 style
+          err(`daodu ${slug}: figure 用了 fill="var(…)" 属性写法,须改 style="fill:var(--…)"`)
+        }
       }
       for (const t of tbls) {
         if (!(t.rows || []).length) err(`daodu ${slug}: table 无数据行`)
