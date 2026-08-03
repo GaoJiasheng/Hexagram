@@ -1,0 +1,200 @@
+{
+  "title": "回归均值：最容易被读成因果的那件事",
+  "subtitle": "一本被写反了的书，一句被讲滥了的管理经验，和一种筛出来的假相关",
+  "centralIdea": "上世纪三十年代有位统计学者发现：当年利润最高的公司几年后普遍下滑，最差的普遍回升。他把这写成一本书，宣称商业世界的趋势是走向平庸。同行的一篇书评一句话就把它拆了——这不是经济规律，是任何带随机成分的数据都必然出现的算术现象。这就是回归均值：极端表现里既有真实水平也有运气，运气不会连续，于是数字自然往中间靠。它最著名的日常版本是「批评有效、表扬无效」——你总在他表现最差时批评、最好时表扬，哪怕两者都毫无作用，你也会分毫不差地观察到那个模式。这一章还讲了相关的两条边界：相关不具有传递性；以及在某个条件下筛选样本，会凭空造出负相关（「帅的都不太好相处」）。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "这一章是全书里离日常最近的一课。它讲的那个错误，你几乎肯定犯过，而且犯的时候有一种非常真切的「我亲眼看见的」的确信感——**这正是它难破的地方：错的不是你的观察，是你把观察归给了自己。**"
+    },
+    {
+      "type": "h2",
+      "text": "一、一本被写反了的书"
+    },
+    {
+      "type": "p",
+      "text": "上世纪三十年代，一位统计学者做了一件在当时很了不起的事：他收集了大量企业的经营数据，跨了很多年、很多行业，规模在那个年代相当惊人。然后他发现了一个清晰的规律——"
+    },
+    {
+      "type": "p",
+      "text": "**当年利润率最高的那批公司，几年后普遍下滑了；当年最差的那批，几年后普遍回升了。**"
+    },
+    {
+      "type": "p",
+      "text": "他把这个发现写成一本书，起了个很有气势的名字，主张是：**商业世界的长期趋势是走向平庸**。竞争会磨平一切优势，卓越无法维持，最终大家都会向中间靠拢。这个结论在当时颇受重视——它有大量数据支撑，看起来无懈可击。"
+    },
+    {
+      "type": "p",
+      "text": "然后同行的一篇书评把这本书拆得干干净净。理由只有一句话：**这根本不是经济规律，这是任何带随机成分的数据都必然出现的算术现象。**"
+    },
+    {
+      "type": "h2",
+      "text": "二、为什么它是算术必然"
+    },
+    {
+      "type": "p",
+      "text": "拆解只需要两步。"
+    },
+    {
+      "type": "p",
+      "text": "**第一步：任何一年的观测成绩，都由两部分组成。**一家公司某年利润特别高，通常既因为它确实经营得好（真实水平），也因为那一年运气不错（随机成分）——赶上了行业风口、大客户续了约、竞争对手出了事。"
+    },
+    {
+      "type": "p",
+      "text": "**第二步：你是按观测成绩排的序。**当你挑出「利润率最高的那批」时，你挑中的是**两部分同时都高**的那些公司——水平高，而且那一年运气也好。因为要冲到最顶端，光靠水平往往不够，通常还得加上一点运气。"
+    },
+    {
+      "type": "p",
+      "text": "到了第二年，真实水平还在，**但运气重新洗牌了**。于是这批公司的平均成绩必然回落。反过来，被你挑出的「最差的那批」，是水平低且那一年运气也差的那些；第二年运气重洗，成绩必然回升。"
+    },
+    {
+      "type": "p",
+      "text": "**关键在于：这一切在公司的真实能力一点没变的情况下也会发生。**你按第一年的成绩排序，第二年就一定会看到「高的降、低的升」。这不是发现，这是排序这个动作本身带来的。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "第一次的极端成绩里，运气那一份是「借来的」，第二次要还回去。所以两端往中间走，跟能力有没有变化毫无关系。",
+      "svg": "<svg viewBox='0 0 660 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>成绩 = 真实水平 + 当年运气</text><rect x='60' y='60' width='220' height='72' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='170' y='84' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink-soft)'>第一年冲到榜首的公司</text><rect x='84' y='96' width='104' height='20' rx='4' style='fill:var(--azure)' opacity='0.7'/><text x='136' y='111' text-anchor='middle' font-size='11' style='fill:var(--paper)'>真实水平高</text><rect x='192' y='96' width='64' height='20' rx='4' style='fill:var(--cinnabar-pure)' opacity='0.7'/><text x='224' y='111' text-anchor='middle' font-size='11' style='fill:var(--paper)'>运气好</text><path d='M290,96 L346,96' style='stroke:var(--ink-faint)' stroke-width='2' marker-end='url(#d1)'/><rect x='356' y='60' width='220' height='72' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='466' y='84' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink-soft)'>第二年的同一批公司</text><rect x='380' y='96' width='104' height='20' rx='4' style='fill:var(--azure)' opacity='0.7'/><text x='432' y='111' text-anchor='middle' font-size='11' style='fill:var(--paper)'>真实水平没变</text><rect x='488' y='96' width='30' height='20' rx='4' style='fill:var(--cinnabar-pure)' opacity='0.35'/><text x='534' y='111' font-size='11' style='fill:var(--ink-soft)'>运气重洗</text><line x1='24' y1='158' x2='636' y2='158' style='stroke:var(--line)' stroke-width='1'/><text x='330' y='188' text-anchor='middle' font-size='13' style='fill:var(--ink)'>你是按「成绩」排的序，于是挑中的是两栏同时高的那些</text><text x='330' y='218' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar-pure)'>运气那一份，第二年要还回去</text><text x='330' y='254' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>榜尾同理：运气差的那一份，第二年也不会再差一次</text><text x='330' y='282' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>——两端往中间走，与能力变没变毫无关系</text><defs><marker id='d1' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L7,3 L0,6 z' style='fill:var(--ink-faint)'/></marker></defs></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这个现象叫**回归均值**，名字来自十九世纪的高尔顿。他研究遗传，发现**高个子父亲的儿子平均没那么高，矮个子父亲的儿子平均没那么矮**，管这叫「向中等回归」。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "容易读岔",
+      "items": [
+        "**回归均值不等于所有人最后都会趋同。**高尔顿那个发现常被读成「人类身高会越来越平均」，可实际上每一代人的身高分布并没有变窄。原因是：极端值不断从中间冒出来——今天的高个子父亲生出略矮的儿子，同时也有中等身高的父亲生出很高的儿子。**「已经在极端的那些会往中间走」和「整体会变平」是两回事**，被写反了的那本书，错的正是这一步。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "三、批评有效、表扬有害？"
+    },
+    {
+      "type": "p",
+      "text": "现在来看它最常被误读成因果的场合，那是一段几乎人人都有的经验："
+    },
+    {
+      "type": "p",
+      "text": "**「我一批评他，他就进步；我一表扬他，他就退步。所以批评有用，表扬会让人飘。」**"
+    },
+    {
+      "type": "p",
+      "text": "这句话流传极广，进过教材、进过管理培训、也进过无数家长的经验之谈。而它可能什么也没说明。"
+    },
+    {
+      "type": "p",
+      "text": "想想你**什么时候**会批评一个人：在他表现特别差的时候。而按上一节的算术，表现特别差之后本来就大概率回升。你**什么时候**会表扬一个人：在他表现特别好的时候。而表现特别好之后本来就大概率回落。"
+    },
+    {
+      "type": "p",
+      "text": "**结论：哪怕你的批评和表扬完全没有作用，你也会分毫不差地观察到「批评有效、表扬有害」这个模式。**"
+    },
+    {
+      "type": "quote",
+      "original": "你总是在他最差的时候骂他、最好的时候夸他；而最差之后本来就会好一点，最好之后本来就会差一点。",
+      "translation": "回归均值最贵的一个日常版本。它难破，是因为「我试过，确实有效」这句话在主观上完全真实——错的不是观察，是把观察归因给了自己的动作。"
+    },
+    {
+      "type": "figure",
+      "ftype": "流程图",
+      "caption": "整个链条里没有一步是假的，唯独最后那一步的箭头指错了方向。要拆掉它，只需要一个对照组：那些同样表现极差、但你没有批评的人，后来怎么样了。",
+      "svg": "<svg viewBox='0 0 660 268' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>那个箭头指错了方向</text><rect x='24' y='58' width='140' height='58' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='94' y='84' text-anchor='middle' font-size='12' style='fill:var(--ink)'>他这次考砸了</text><text x='94' y='104' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>（水平 + 运气都差）</text><path d='M172,87 L206,87' style='stroke:var(--ink-faint)' stroke-width='2' marker-end='url(#e1)'/><rect x='214' y='58' width='140' height='58' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='284' y='92' text-anchor='middle' font-size='12' style='fill:var(--ink)'>于是你批评了他</text><path d='M362,87 L396,87' style='stroke:var(--ink-faint)' stroke-width='2' marker-end='url(#e1)'/><rect x='404' y='58' width='140' height='58' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='474' y='84' text-anchor='middle' font-size='12' style='fill:var(--ink)'>下一次好了一些</text><text x='474' y='104' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>（运气重洗）</text><path d='M284,126 C284,156 284,156 284,164' style='stroke:var(--cinnabar-pure)' stroke-width='2' stroke-dasharray='4 4'/><path d='M474,126 C474,156 474,156 474,164' style='stroke:var(--cinnabar-pure)' stroke-width='2' stroke-dasharray='4 4'/><rect x='214' y='166' width='330' height='44' rx='8' style='fill:var(--cinnabar-pure)' opacity='0.09'/><rect x='214' y='166' width='330' height='44' rx='8' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='379' y='194' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>「所以是我的批评起了作用」← 这一步没有根据</text><text x='330' y='244' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>拆它只需一个对照组：同样考砸、但没被批评的那些人，后来怎么样了</text><defs><marker id='e1' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L7,3 L0,6 z' style='fill:var(--ink-faint)'/></marker></defs></svg>"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "**这不等于「批评一定没用」。**回归均值说的是：**这段经验不足以证明批评有用**，因为无效也会产生同样的观察。要真的知道有没有用，只有一个办法——找一批同样表现极差的人，一半批评、一半不批评，然后比较。这就是对照组的全部意义，也是为什么医学、心理学非要做随机对照试验不可：**不是因为研究者不相信自己的眼睛，恰恰是因为眼睛在这种场合一定会骗人。**"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "同一个陷阱还有很多变体，认出来之后你会发现它们到处都是：某种疗法「我一吃就好了」（大多数不适本来就会自愈，而你恰恰在最难受的时候去吃）；某位教练「一接手球队就起飞」（他接手的往往正是刚刚跌到谷底的球队）；某只股票「跌到这个价位一定会反弹」（前半句是回归均值，后半句是外推）。"
+    },
+    {
+      "type": "h2",
+      "text": "四、相关的两条边界"
+    },
+    {
+      "type": "p",
+      "text": "这一部分还顺手拆了关于「相关」的两个直觉。"
+    },
+    {
+      "type": "p",
+      "text": "**第一条：相关不具有传递性。**A 和 B 正相关，B 和 C 正相关，推不出 A 和 C 正相关。这一点违反直觉，因为我们太习惯「朋友的朋友也是朋友」那类推理。但相关性不是这么工作的——A 与 B 的相关可能来自某一部分特征，B 与 C 的相关来自另一部分，两者接不上。"
+    },
+    {
+      "type": "p",
+      "text": "**第二条更有意思，也更实用：筛选会凭空造出相关。**这是全书里我最喜欢的一个例子，他用来解释一句抱怨——**「为什么帅的男人都不太好相处？」**"
+    },
+    {
+      "type": "p",
+      "text": "假设在整个人群里，长相和性格**毫无关系**（大致是真的）。现在假设你只跟「要么长得好看、要么性格好」的人来往——不好看又难相处的人，你压根不会跟他熟起来。那么在**你认识的这批人**里会发生什么？"
+    },
+    {
+      "type": "p",
+      "text": "一个人如果长得不好看却还在你的圈子里，那他一定是性格特别好；一个人如果性格一般还在你的圈子里，那他一定是长得特别好看。**于是在你的样本里，长相和性格呈现出明显的负相关**——尽管在整个人群里它们毫无关系。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "整个人群里两个维度毫无关系（左）；一旦按「至少满足其一」筛过（右），剩下的那批人里就出现了负相关。这条假相关不是数据造假造出来的，是筛子造出来的。",
+      "svg": "<svg viewBox='0 0 660 288' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>筛子凭空造出的负相关</text><text x='166' y='52' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink-soft)'>整个人群：毫无关系</text><line x1='60' y1='240' x2='276' y2='240' style='stroke:var(--line)' stroke-width='1.2'/><line x1='60' y1='240' x2='60' y2='68' style='stroke:var(--line)' stroke-width='1.2'/><text x='168' y='262' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>长相 →</text><text x='48' y='72' text-anchor='end' font-size='11' style='fill:var(--ink-faint)'>性格</text><g style='fill:var(--ink-faint)'><circle cx='84' cy='210' r='3.6'/><circle cx='102' cy='142' r='3.6'/><circle cx='118' cy='196' r='3.6'/><circle cx='132' cy='102' r='3.6'/><circle cx='146' cy='168' r='3.6'/><circle cx='160' cy='222' r='3.6'/><circle cx='176' cy='120' r='3.6'/><circle cx='190' cy='186' r='3.6'/><circle cx='204' cy='148' r='3.6'/><circle cx='220' cy='96' r='3.6'/><circle cx='236' cy='204' r='3.6'/><circle cx='252' cy='134' r='3.6'/><circle cx='94' cy='118' r='3.6'/><circle cx='262' cy='176' r='3.6'/><circle cx='210' cy='224' r='3.6'/><circle cx='140' cy='230' r='3.6'/></g><text x='494' y='52' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>你认识的那批：负相关</text><line x1='388' y1='240' x2='604' y2='240' style='stroke:var(--line)' stroke-width='1.2'/><line x1='388' y1='240' x2='388' y2='68' style='stroke:var(--line)' stroke-width='1.2'/><path d='M388,150 L470,240' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4' stroke-dasharray='5 4'/><text x='420' y='232' font-size='10.5' style='fill:var(--cinnabar-pure)'>筛掉</text><g style='fill:var(--ink)'><circle cx='430' cy='142' r='3.6'/><circle cx='460' cy='102' r='3.6'/><circle cx='474' cy='168' r='3.6'/><circle cx='504' cy='120' r='3.6'/><circle cx='518' cy='186' r='3.6'/><circle cx='548' cy='96' r='3.6'/><circle cx='564' cy='204' r='3.6'/><circle cx='580' cy='134' r='3.6'/><circle cx='422' cy='118' r='3.6'/><circle cx='590' cy='176' r='3.6'/><circle cx='538' cy='224' r='3.6'/><circle cx='494' cy='148' r='3.6'/></g><path d='M416,104 L596,214' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='2.2'/><text x='494' y='262' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>「帅的都不太好相处」</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这个机制适用范围极广，而且极难察觉，因为**筛子通常是隐形的**。名校学生里「勤奋」和「聪明」常常呈负相关（能进来要么靠一样、要么靠另一样）；投过的项目里「团队强」和「赛道好」常常呈负相关（两样都差的你不会投）。**每一次你只在满足某个条件的样本里做观察，就有可能看到一条现实中并不存在的关系。**"
+    },
+    {
+      "type": "p",
+      "text": "把它和第二章接起来看，你会发现这依然是同一个动作的第 N 次出现：**先问这批样本是怎么被选出来的。**沃德问的是「哪些飞机没回来」，这里问的是「哪些人没进入我的观察范围」。"
+    },
+    {
+      "type": "h2",
+      "text": "五、怎么把这一课用起来"
+    },
+    {
+      "type": "p",
+      "text": "回归均值这一课有个特别的地方：**知道它之后，你会立刻发现自己过去很多「经验」都站不住了。**这有点不舒服，但也正因为如此，它的实际价值很高。下面是几处值得立刻检查的地方。"
+    },
+    {
+      "type": "p",
+      "text": "**第一，任何在极端时刻启动的干预。**业绩最差的部门换了负责人、状态最差的球员换了教练、跌得最惨的股票被抄了底、最难受的时候吃了某种偏方——**这些干预之后的好转，至少有一部分是必然会发生的**。要判断干预本身有没有用，得有个对照。没有对照时，正确的说法是「不知道」，而不是「有效」。"
+    },
+    {
+      "type": "p",
+      "text": "**第二，任何「第二年不如第一年」的评价。**新人第一年表现惊艳、第二年平平，常被解释成「飘了」「被捧坏了」。可如果第一年的惊艳里有运气成分，第二年回落就是必然的。**同理，「二年级现象」「续集不如首作」「冠军之后的低谷」，都得先扣掉这一层再谈。**"
+    },
+    {
+      "type": "p",
+      "text": "**第三，任何按当期成绩排序后的追踪。**「去年最好的十只基金，今年平均跑输大盘」——这句话每年都能成立，而它主要说明的不是基金经理不行，是**你按去年成绩排序这个动作本身**。"
+    },
+    {
+      "type": "figure",
+      "ftype": "总表",
+      "caption": "三类场合，同一个陷阱。它们的共同点是：判断的时机不是随机的——你总是在数据最极端的时候开始看。",
+      "svg": "<svg viewBox='0 0 660 250' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>该扣掉这一层再谈的三类判断</text><line x1='24' y1='42' x2='636' y2='42' style='stroke:var(--line)' stroke-width='1'/><text x='160' y='66' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>你观察到的</text><text x='450' y='66' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar-pure)'>先扣掉的那一层</text><line x1='24' y1='78' x2='636' y2='78' style='stroke:var(--line)' stroke-width='1'/><text x='160' y='110' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>换了负责人之后好转了</text><text x='450' y='110' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>你是在最差的时候换的</text><line x1='24' y1='126' x2='636' y2='126' style='stroke:var(--line)' stroke-width='0.6'/><text x='160' y='158' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>新人第二年不如第一年</text><text x='450' y='158' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>第一年的惊艳里有运气</text><line x1='24' y1='174' x2='636' y2='174' style='stroke:var(--line)' stroke-width='0.6'/><text x='160' y='206' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>去年的冠军基金今年跑输</text><text x='450' y='206' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>你是按去年成绩排的序</text><line x1='24' y1='222' x2='636' y2='222' style='stroke:var(--line)' stroke-width='1'/></svg>"
+    },
+    {
+      "type": "p",
+      "text": "最后提醒一句边界，免得矫枉过正：**回归均值不能证明干预无效，正如它不能证明干预有效。**它只是把「这段经验本身没有说服力」这件事讲清楚了。真正的效果仍然可能存在——只是要用别的办法去测。**它教你的不是别信，是别用这种方式去信。**"
+    },
+    {
+      "type": "pull",
+      "text": "「我试过，确实有效」这句话在主观上完全真实——回归均值不否认你的观察，它只是提醒你，无效也会产生一模一样的观察。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本章为对原书第四部分（回归）的原创消化与转述。",
+        "史实补充：上世纪三十年代那部主张「商业趋向平庸」的著作与随后指出其为回归均值的书评，均为统计学史上的真实事件；本文不列具体书名与人名以免与转述混淆，读者可在原书中查到。",
+        "「向中等回归」一名出自高尔顿十九世纪对遗传身高的研究。",
+        "「筛选造出负相关」这一现象在统计学中通常称为伯克森谬误（Berkson's paradox），原书用「为什么帅的男人不好相处」作例。"
+      ]
+    }
+  ]
+}

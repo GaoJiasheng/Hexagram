@@ -1,0 +1,171 @@
+{
+  "title": "它其实叫「如何不犯错」：这本书到底在讲什么",
+  "subtitle": "中译名借了《魔鬼经济学》的势，把一本正经的防错手册说成了猎奇读物",
+  "centralIdea": "这一章交代三件事：书名、作者、以及全书的问题意识。原名 How Not to Be Wrong 直译是「如何不出错」，副题「数学思维的力量」——中文版加的「魔鬼」和「大数据时代」都是营销词，与内容无关。作者艾伦伯格是数论教授兼小说作者，这个双重身份决定了书的形态：例子取自真实的公共争论，笔调是专栏作家的。全书的起点是那句每个数学老师都被问过的话——「我这辈子什么时候会用到这个」；他的回答是：具体的题目你确实用不上，但它练的是另一样东西，就像球员练折返跑。他给数学下的定义是理解全书的钥匙：数学是常识的延伸。这句话有两层——数学与常识本是一路（所以一个反常识又说不清的结论多半错了），但常识在几个特定的地方会系统失灵，全书就是去那几处把常识接上一截。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "先把书名这件事说清楚，因为它会影响你带着什么期待翻开第一页。这本书原名 **How Not to Be Wrong**，直译「如何不出错」，副题是「数学思维的力量」。中文版叫《魔鬼数学：大数据时代，数学思维的力量》——**「魔鬼」两个字借的是几年前《魔鬼经济学》的势**（那本的原名 Freakonomics，与本书作者、主题都无关），「大数据时代」也是中文版加的。两处营销痕迹加起来，很容易让人以为这是一本讲奇闻怪谈、专挑反直觉结论来讲的书。它不是。它是一本正经的防错手册。"
+    },
+    {
+      "type": "h2",
+      "text": "一、作者：一个写小说的数论学家"
+    },
+    {
+      "type": "p",
+      "text": "乔丹·艾伦伯格是威斯康星大学麦迪逊分校的数学教授，本行是**数论**——数学里最抽象的一支，研究整数的性质，跟「有什么用」这个问题隔得最远。按理说，这种人写的科普最容易写成两种样子：要么高高在上，要么勉强讨好。"
+    },
+    {
+      "type": "p",
+      "text": "但他还有另一重身份：他写小说，出过长篇；也长期给面向大众的媒体写数学专栏，写了很多年。**这个双重身份是这本书的形态之源。**他习惯从新闻里取材，习惯用段子开场，习惯把一个数学史上的掌故插进论证中间。所以你读到的不是教材，是一叠**写得很好的专栏文章**——好处是几乎每一页都有可读性，坏处后面会说到：它不成体系。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "他自己就是那个「学数学有什么用」问题的活样本：一个研究纯数学的人，跑来告诉你数学的用处不在数学题里。这个立场比一个应用数学家来讲更有意思——**他没打算论证数学有多实用，他论证的是数学思维能让你少上多少当。**"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "二、全书的起点是一句课堂上的抱怨"
+    },
+    {
+      "type": "p",
+      "text": "他把全书的引子设在教室里。学生解着一道又一道三角函数题，忍不住问：**「我这辈子什么时候会用到这个？」**这是每个数学老师都被问过、也大都答不好的问题。常见的敷衍有两种：一种说「以后当工程师就用得上」（对绝大多数学生是谎话），一种说「锻炼逻辑思维」（听起来像在打太极）。"
+    },
+    {
+      "type": "p",
+      "text": "他给的回答很实在，先承认了一半：**那些具体的题目，你这辈子确实很可能一次也用不上。**然后他打了个比方——职业球员每天练折返跑，可你去看一场比赛，从头到尾找不到一次跟训练场上一模一样的折返跑；训练动作不会原样出现在比赛里，但没练过的人跑不动全场。"
+    },
+    {
+      "type": "p",
+      "text": "数学课上那些看起来无用的练习，练的是同一种东西：**一种判断「这话站不站得住」的本能**。这本能不表现为你能算出什么，而表现为你在听到某个用数字包装过的结论时，会本能地停一下，问一句「等等」。全书的每一章，都是在教你那一句「等等」该在什么时候出现。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "他的回答分两步走：先老实承认题目本身用不上，再指出练的是别的东西。这个结构本身就是全书的示范——先把对方的话认下来，再指出它默认了什么。",
+      "svg": "<svg viewBox='0 0 660 250' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>「我什么时候会用到这个？」</text><rect x='36' y='52' width='176' height='64' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='124' y='78' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>课堂上的三角函数题</text><text x='124' y='100' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>这辈子确实用不上</text><path d='M220,84 L268,84' style='stroke:var(--ink-faint)' stroke-width='2' marker-end='url(#a1)'/><rect x='276' y='52' width='176' height='64' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='364' y='78' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>球员练的折返跑</text><text x='364' y='100' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>比赛里也不会原样出现</text><path d='M460,84 L508,84' style='stroke:var(--cinnabar-pure)' stroke-width='2' marker-end='url(#a2)'/><rect x='516' y='52' width='120' height='64' rx='8' style='fill:var(--cinnabar-pure)' opacity='0.09'/><rect x='516' y='52' width='120' height='64' rx='8' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='576' y='80' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>但没练过的</text><text x='576' y='102' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>跑不动全场</text><line x1='36' y1='148' x2='636' y2='148' style='stroke:var(--line)' stroke-width='1'/><text x='330' y='178' text-anchor='middle' font-size='13' style='fill:var(--ink)'>数学练的不是「你能算出什么」</text><text x='330' y='206' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar-pure)'>是听到一个数字结论时，那一句「等等」出现得够不够早</text><defs><marker id='a1' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L7,3 L0,6 z' style='fill:var(--ink-faint)'/></marker><marker id='a2' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L7,3 L0,6 z' style='fill:var(--cinnabar-pure)'/></marker></defs></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "三、他给数学下的定义：常识的延伸"
+    },
+    {
+      "type": "p",
+      "text": "全书最关键的一句话是他给数学下的定义：**数学是常识的延伸。**这个句式是有出处的——克劳塞维茨说「战争是政治以另一种手段的延续」（站内《战争论》讲的就是那本），他把句式借了过来。"
+    },
+    {
+      "type": "p",
+      "text": "这句话有两层意思，两层都要紧。"
+    },
+    {
+      "type": "p",
+      "text": "**第一层是安慰。**数学不是一门与人的直觉无关的外星语言。它跟你的常识是一路的，只是走得更远、更细。这意味着：如果一个数学论证得出的结论与常识彻底相反，而且你怎么想都想不通它凭什么，那么**很有可能是哪里错了**——可能是模型的假设不成立，可能是数据有问题，也可能是有人在偷换概念。这一层给了普通读者一个立足点：你不必懂那些符号，也有资格说「这个结论我不接受，请你解释」。"
+    },
+    {
+      "type": "p",
+      "text": "**第二层才是狠的。**既然是「延伸」，就意味着常识本身有个尽头。常识在几个特定的地方会**系统性地**失灵——不是偶尔出错，是每次都往同一个方向错。而数学存在的意义，正是在那几处把常识接上一截。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "常识不是不可靠，是有边界。全书做的事就是把边界画出来，并在边界之外接上一截。知道自己在哪一侧，比记住任何公式都重要。",
+      "svg": "<svg viewBox='0 0 660 272' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>常识可靠的地方，与它失灵的地方</text><rect x='40' y='52' width='250' height='188' rx='10' style='fill:var(--ink-faint)' opacity='0.14'/><rect x='40' y='52' width='250' height='188' rx='10' fill='none' style='stroke:var(--line)' stroke-width='1.4'/><text x='165' y='80' text-anchor='middle' font-size='13.5' font-weight='bold' style='fill:var(--ink-soft)'>常识够用的地方</text><text x='165' y='112' text-anchor='middle' font-size='12' style='fill:var(--ink)'>看得见的因果</text><text x='165' y='138' text-anchor='middle' font-size='12' style='fill:var(--ink)'>身边尺度的比较</text><text x='165' y='164' text-anchor='middle' font-size='12' style='fill:var(--ink)'>亲身经历过的事</text><text x='165' y='190' text-anchor='middle' font-size='12' style='fill:var(--ink)'>短期、局部的变化</text><text x='165' y='222' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>这里不用数学也不会错</text><rect x='370' y='52' width='250' height='188' rx='10' style='fill:var(--cinnabar-pure)' opacity='0.08'/><rect x='370' y='52' width='250' height='188' rx='10' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='495' y='80' text-anchor='middle' font-size='13.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>常识会系统失灵的地方</text><text x='495' y='112' text-anchor='middle' font-size='12' style='fill:var(--ink)'>被筛选过的样本</text><text x='495' y='138' text-anchor='middle' font-size='12' style='fill:var(--ink)'>不是直线的关系</text><text x='495' y='164' text-anchor='middle' font-size='12' style='fill:var(--ink)'>极小与极大的概率</text><text x='495' y='190' text-anchor='middle' font-size='12' style='fill:var(--ink)'>随机波动与真实变化</text><text x='495' y='222' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar-pure)'>全书要去的就是这一边</text><path d='M296,146 L364,146' style='stroke:var(--ink-faint)' stroke-width='1.6' stroke-dasharray='5 4'/></svg>"
+    },
+    {
+      "type": "p",
+      "text": "值得留意的是，这个定义顺手回答了一个常见的抬杠：**「数学都是理论，现实哪有这么简单。」**按他的说法，数学从不宣称自己等于现实，它宣称的是「在常识撑不住的地方，我能替你多走一步」。它替你走的那一步是可以检查的——假设写在纸上，推理可以复核。**这跟「凭感觉」的区别不是准与不准，是能不能被别人查出错来。**"
+    },
+    {
+      "type": "h2",
+      "text": "四、全书的骨架：五个部分"
+    },
+    {
+      "type": "p",
+      "text": "原书分五个部分——**线性、推断、期望、回归、存在**。这五个词不是数学分支的名字，是五类错觉的名字。每一部分挑一个人们最容易犯的毛病，用几章的篇幅从各个角度捶打。"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**线性**：治「更多总是更好」。把不是直线的关系当成直线，是全书排第一位的毛病——福利与繁荣、税率与税收、趋势与未来，都在这一栏里。",
+        "**推断**：治「显著所以是真的」。这是篇幅最大、火力最猛的一部分，p 值、多重比较、发表偏倚、贝叶斯都在这里。",
+        "**期望**：治「算出来了就该这么做」。期望值、效用、彩票、误机——它把「概率」和「决定」之间那道缝隙撕开给你看。",
+        "**回归**：治「一批评他就进步」。回归均值、相关与因果、被条件筛选出来的假相关。",
+        "**存在**：治「多数人的意思很清楚」。投票悖论、计票规则、以及数学自身历史上的几次危机。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**这五部分之间没有严密的递进关系。**你可以按任意顺序读，也可以只读其中两部分。这既是它的方便，也是它的松散——后面会专门谈这一点。"
+    },
+    {
+      "type": "figure",
+      "ftype": "总表",
+      "caption": "五个部分对应的招牌场景。它们没有先后依赖，哪一栏戳到你，就从哪一栏读起。",
+      "svg": "<svg viewBox='0 0 660 292' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>五个部分，五类错觉，五个招牌场景</text><line x1='24' y1='40' x2='636' y2='40' style='stroke:var(--line)' stroke-width='1'/><text x='84' y='60' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>部分</text><text x='300' y='60' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>招牌场景</text><text x='540' y='60' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar-pure)'>它反对的那句话</text><line x1='24' y1='70' x2='636' y2='70' style='stroke:var(--line)' stroke-width='1'/><text x='84' y='98' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>线性</text><text x='300' y='98' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>该不该学瑞典 · 拉弗曲线</text><text x='540' y='98' text-anchor='middle' font-size='12' style='fill:var(--ink)'>「越多越好」</text><line x1='24' y1='114' x2='636' y2='114' style='stroke:var(--line)' stroke-width='0.6'/><text x='84' y='142' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>推断</text><text x='300' y='142' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>核磁共振里的死鱼 · 占卜学报</text><text x='540' y='142' text-anchor='middle' font-size='12' style='fill:var(--ink)'>「显著就是真的」</text><line x1='24' y1='158' x2='636' y2='158' style='stroke:var(--line)' stroke-width='0.6'/><text x='84' y='186' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>期望</text><text x='300' y='186' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>算得过来的彩票 · 该误几班机</text><text x='540' y='186' text-anchor='middle' font-size='12' style='fill:var(--ink)'>「算出来就照做」</text><line x1='24' y1='202' x2='636' y2='202' style='stroke:var(--line)' stroke-width='0.6'/><text x='84' y='230' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>回归</text><text x='300' y='230' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>走向平庸的企业 · 高尔顿的身高</text><text x='540' y='230' text-anchor='middle' font-size='12' style='fill:var(--ink)'>「一骂他就进步」</text><line x1='24' y1='246' x2='636' y2='246' style='stroke:var(--line)' stroke-width='0.6'/><text x='84' y='274' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>存在</text><text x='300' y='274' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>循环的多数 · 非欧几何</text><text x='540' y='274' text-anchor='middle' font-size='12' style='fill:var(--ink)'>「民意很清楚」</text><line x1='24' y1='288' x2='636' y2='288' style='stroke:var(--line)' stroke-width='1'/></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "五、它反对的是论证，不是结论"
+    },
+    {
+      "type": "p",
+      "text": "读之前还有一件事值得先说，因为它决定了你会不会把这本书读成一本「拆台的书」。"
+    },
+    {
+      "type": "p",
+      "text": "全书拆了很多个具体的论证：某条曲线不能支持某项政策、某项研究的显著性不能支持某个结论、某个排行榜不能支持某项改革。但你几乎找不到他说「所以那个结论是错的」。**他反对的一直是从证据到结论的那一步跳跃，不是结论本身。**"
+    },
+    {
+      "type": "p",
+      "text": "这个区分在今天格外重要，因为公共讨论里最常见的偷懒方式，就是把「你的论证有问题」听成「你的立场是错的」，然后开始防守。而这本书示范的是另一种态度：**「我不知道你对不对，但你这个理由不成立。」**这句话听起来不解气，可它是唯一能让讨论继续下去的说法。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "举个书里的例子。他花了不少篇幅拆拉弗曲线被误用的方式，但从头到尾没说过「减税不能增收」。因为**那是个实证问题**，可能对也可能不对，取决于你现在处在曲线的哪一侧。他反对的只是拿一张示意图当证据。**看清这个分寸，你才不会把这本书读成一本党派读物**——事实上，他拆的例子在政治光谱两边都取。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "这也解释了为什么由一个**纯数学家**来写这本书恰好合适。一个应用领域的专家写这类书，多半会顺带推销自己领域的结论；而一个研究数论的人对这些具体议题没有利益，他关心的只是**推理有没有毛病**。全书那种「我只管这一步走没走通」的超然，正是从这个位置来的。"
+    },
+    {
+      "type": "h2",
+      "text": "六、它不承诺什么"
+    },
+    {
+      "type": "p",
+      "text": "最后把期待值调准。这本书**不承诺教你算**：它几乎没有推导，公式屈指可数，跳过所有公式也读得下来。它**不承诺给你方法论**：没有清单，没有流程，没有「三步搞定」。它甚至**不承诺让你变得更聪明**——它承诺的只有一件事，就是让你在若干个特定的场合**少上一次当**。"
+    },
+    {
+      "type": "p",
+      "text": "这个定位其实相当谦虚，也相当诚实。原名「如何不出错」摆明了姿态：**它教的是防守，不是进攻。**你读完不会变成能一眼看穿数据的人，但会变成一个在别人拿数字压你的时候，知道该问哪几句话的人。就日常而言，后者的性价比高得多。"
+    },
+    {
+      "type": "p",
+      "text": "为什么防守比进攻更值得学？因为**出错的方式是有限的，而且高度重复**。人们在用数字讲道理时犯的错，翻来覆去就是那么十几种：样本被筛过、曲线当直线、小样本出极端、把回归读成因果、把 p 值读反、把不显著读成没有。**十几种毛病，覆盖了你日常遇到的绝大多数不靠谱的数字论证。**这就是为什么一本不教你算的书，反而更实用——它教的东西复用率极高。"
+    },
+    {
+      "type": "p",
+      "text": "还有一件事得提前说：**这本书会让你变得难缠一点。**读完之后，你听新闻里的「研究表明」会本能地想问样本量，看到排行榜会想找分母，听到「趋势显示」会想知道外推了多远。这在饭桌上未必受欢迎。但换个角度看，**这些问题原本就该有人问**——只是很少有人问，所以说这些话的人从来不必准备答案。"
+    },
+    {
+      "type": "pull",
+      "text": "数学给不了你确定性，它给你的是一种有条理地保持不确定的能力——知道自己知道到哪一步，也知道剩下那一步为什么还得靠判断。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本章为对原书引论部分（含书名、作者立场与全书结构）的原创消化与转述。",
+        "原书 How Not to Be Wrong: The Power of Mathematical Thinking，二〇一四年出版；「魔鬼数学」为中文版书名，与 Freakonomics（中译《魔鬼经济学》）无内容关联。",
+        "「数学是常识的延伸」一句的句式借自克劳塞维茨「战争是政治以另一种手段的延续」，站内《战争论》一书可对读。",
+        "本文的章节划分不是原书的章节编号，是为便于中文读者阅读所作的重新组织。"
+      ]
+    }
+  ]
+}

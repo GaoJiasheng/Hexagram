@@ -1,0 +1,200 @@
+{
+  "title": "期望值与效用：数学不能替你决定在乎什么",
+  "subtitle": "「如果你从没误过飞机，说明你在机场浪费的时间太多了」",
+  "centralIdea": "第三部分讲期望值——把所有可能结果按概率加权的平均，一个你可能一次也拿不到的数。它的力量在于把「值不值」变成可以算的东西：某种彩票在特定规则下会出现期望值高于票价的窗口，历史上确实有几拨人算出来并大规模买票获利。但期望值不能包办一切。一位经济学家说过：如果你从来没误过飞机，说明你在机场浪费的时间太多了——把两种代价加起来，最小值几乎从不在「零风险」那一端。再往下一层是效用：同样的钱对不同处境的人价值不同，那个期望收益无穷大却没人肯出高价的经典赌局说明了这一点。而全书真正的落点是：效用把「你在乎什么」写进了模型，可写进去之后它仍然是你的价值判断。「数据说明什么」和「我们该做什么」是两个问题，数学只包办前一个。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "这一章讲的是全书真正的落点，也是最容易被读漏的一段。前面几章都在教你怎么把事情算对，这一章要说的是：**算对了之后，还有一段路数学走不了。**"
+    },
+    {
+      "type": "h2",
+      "text": "一、期望值：把「值不值」变成可以算的"
+    },
+    {
+      "type": "p",
+      "text": "先把这个概念摆正，因为它的中文名字很误导。**期望值不是「你期望拿到的数」。**它是把所有可能的结果按概率加权后求的平均——**一个你很可能一次也拿不到的数。**"
+    },
+    {
+      "type": "p",
+      "text": "买一张两块钱的彩票，中一千万的概率是千万分之一，那么这张票的期望值大约是一块钱。你实际拿到的要么是零，要么是一千万，永远不会是一块。**但这一块钱是有意义的**：它意味着长期反复地做这件事，平均每次亏一块。"
+    },
+    {
+      "type": "p",
+      "text": "这个概念的力量在于，**它把「值不值」变成了可以算的东西**。而只要能算，就有人会去算。"
+    },
+    {
+      "type": "h2",
+      "text": "二、有人真的算了：那个彩票的窗口"
+    },
+    {
+      "type": "p",
+      "text": "他讲了一个真实的故事，是全书里最好看的一段。"
+    },
+    {
+      "type": "p",
+      "text": "美国某州有一种彩票，规则里藏着一个特别的环节：**当奖池积累到一定额度而始终无人中头奖时，那笔奖金会「下放」到低级别的奖项上。**在那样的日子里，低级别奖项的奖金会大幅膨胀。"
+    },
+    {
+      "type": "p",
+      "text": "有人算了一下，发现了一件事：**在那种日子里，一张票的期望值会超过它的票价。**换句话说，这不再是一个负期望的赌博，而是一笔正期望的生意——只要你买得足够多，让大数定律替你把波动抹平。"
+    },
+    {
+      "type": "p",
+      "text": "于是几拨人分别行动起来。有大学生组成的团队，有开小店的退休夫妇。他们在那些特定的日子里**大规模买票**——不是买几十张，是几万张、几十万张，动员人手一张张地填。**他们赚到了钱。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "同一张彩票，多数日子是负期望，特定日子是正期望。区别不在运气，在规则——而规则是公开的，只是没人去算。",
+      "svg": "<svg viewBox='0 0 660 272' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>期望值高于票价的那几天</text><line x1='70' y1='176' x2='600' y2='176' style='stroke:var(--line)' stroke-width='1.4'/><line x1='70' y1='240' x2='70' y2='56' style='stroke:var(--line)' stroke-width='1.4'/><text x='56' y='180' text-anchor='end' font-size='11.5' style='fill:var(--ink-faint)'>票价</text><line x1='70' y1='176' x2='600' y2='176' style='stroke:var(--cinnabar-pure)' stroke-width='1.2' stroke-dasharray='4 4'/><g style='fill:var(--ink-faint)'><rect x='96' y='176' width='24' height='36' rx='3'/><rect x='136' y='176' width='24' height='40' rx='3'/><rect x='176' y='176' width='24' height='34' rx='3'/><rect x='216' y='176' width='24' height='42' rx='3'/><rect x='296' y='176' width='24' height='36' rx='3'/><rect x='336' y='176' width='24' height='40' rx='3'/><rect x='416' y='176' width='24' height='34' rx='3'/><rect x='456' y='176' width='24' height='38' rx='3'/><rect x='496' y='176' width='24' height='36' rx='3'/><rect x='536' y='176' width='24' height='40' rx='3'/></g><g style='fill:var(--cinnabar-pure)'><rect x='256' y='108' width='24' height='68' rx='3'/><rect x='376' y='96' width='24' height='80' rx='3'/></g><text x='268' y='98' text-anchor='middle' font-size='11' style='fill:var(--cinnabar-pure)'>下放日</text><text x='388' y='86' text-anchor='middle' font-size='11' style='fill:var(--cinnabar-pure)'>下放日</text><text x='330' y='246' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>多数日子：期望值低于票价（柱子在线下）</text><text x='330' y='266' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar-pure)'>少数日子：期望值高于票价（柱子在线上）</text></svg>"
+    },
+    {
+      "type": "quote",
+      "original": "这不是「运气好」的故事，是「有人认真算了一遍」的故事。",
+      "translation": "整段最要紧的一句。规则是公开的，数据是公开的，机会一直摆在那儿——差别只在于有没有人真的坐下来把它算出来。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "别读成攻略",
+      "items": [
+        "这个故事很容易被读成「原来彩票能赚钱」。**恰恰相反**：它成立的前提是那个规则漏洞（下放机制）、是巨额的资金和人力、是承受短期波动的能力，而且这个窗口后来就被关掉了。**绝大多数彩票在绝大多数时候，期望值都远低于票价**——这个故事真正的教训不是「去买彩票」，是「先算一遍，再决定要不要动」。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "三、为什么该多错过几班飞机"
+    },
+    {
+      "type": "p",
+      "text": "期望值能算的东西很多，但它不能包办一切。作者在这里引了一位经济学家的名言，我认为是全书最值得记住的一句实用建议："
+    },
+    {
+      "type": "p",
+      "text": "**「如果你从来没误过飞机，说明你在机场浪费的时间太多了。」**"
+    },
+    {
+      "type": "p",
+      "text": "这句话的逻辑一说就通。误机是有代价的——改签费、耽误的行程、心情。但为了把误机概率压到零，你要付出的是**每一次都提前很久到机场**，而那些反复累积的等待时间同样是代价。**两种代价方向相反：一个随着提前量增加而下降，一个随着提前量增加而上升。**把它们加起来，就是一条 U 形曲线。"
+    },
+    {
+      "type": "p",
+      "text": "**而 U 形曲线的最低点，几乎从来不在最左端。**在总代价最小的那个提前量上，你的误机概率是一个不为零的数——也许每年一次，也许每三年一次，但绝不是零。"
+    },
+    {
+      "type": "figure",
+      "ftype": "曲线图",
+      "caption": "两种代价方向相反，加起来是一条 U 形。最低点不在「零风险」那一端——这不是鼓励马虎，是指出「一次都不许出错」本身有价钱。",
+      "svg": "<svg viewBox='0 0 660 288' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>总代价最低的那一点，误机率不是零</text><line x1='110' y1='234' x2='580' y2='234' style='stroke:var(--line)' stroke-width='1.4'/><line x1='110' y1='234' x2='110' y2='52' style='stroke:var(--line)' stroke-width='1.4'/><text x='345' y='260' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>提前到机场的时间 →</text><text x='96' y='58' text-anchor='end' font-size='11.5' style='fill:var(--ink-faint)'>代价</text><path d='M120,212 C220,150 300,88 560,64' fill='none' style='stroke:var(--azure)' stroke-width='2' stroke-dasharray='5 4'/><text x='452' y='86' font-size='11.5' style='fill:var(--azure)'>等待的时间成本</text><path d='M120,64 C220,148 320,204 560,220' fill='none' style='stroke:var(--ink-faint)' stroke-width='2' stroke-dasharray='5 4'/><text x='128' y='56' font-size='11.5' style='fill:var(--ink-soft)'>误机的代价</text><path d='M120,150 C210,104 290,94 340,94 C420,94 500,140 560,184' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='2.6'/><circle cx='336' cy='94' r='5' style='fill:var(--cinnabar-pure)'/><line x1='336' y1='94' x2='336' y2='234' style='stroke:var(--line)' stroke-width='1' stroke-dasharray='3 4'/><text x='336' y='82' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar-pure)'>总代价最低点</text><text x='336' y='280' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>这一点对应的误机率，明显不是零</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这条道理可以往外推很远，而且推得越远越有用："
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "**追求零缺陷的产品**：把最后那 0.1% 的缺陷消灭掉，成本往往超过它造成的损失。",
+        "**一份从不出错的报告**：反复校对第七遍的时间，本可以用来做别的事。",
+        "**从不冒险的职业路径**：把失败概率压到零，同时也把上限压掉了。",
+        "**一段从不吵架的关系**：为了不吵而不说的那些话，也是代价。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**「追求一次都不出错」，本身就是一种可以量化的浪费。**这句话听起来像在为马虎辩护，其实相反：**它要求你把「不出错」的代价也算进去**，而不是默认那一栏是零。"
+    },
+    {
+      "type": "h2",
+      "text": "四、效用：钱不是线性的"
+    },
+    {
+      "type": "p",
+      "text": "再往下一层，期望值本身也有边界。同样一百块钱，对不同处境的人价值完全不同：对一个下个月房租没着落的人，那是救命的；对一个存款丰厚的人，那只是一顿饭。**所以只按钱的期望值来决策，会得出荒谬的结论。**"
+    },
+    {
+      "type": "p",
+      "text": "有一个经典的赌局最能说明这一点：不断抛硬币，直到抛出反面为止；正面出现的次数越多，奖金翻倍越多。算一下，**这个赌局的期望收益是无穷大。**按纯粹的期望值原则，你应该愿意付出任何价钱去玩它。"
+    },
+    {
+      "type": "p",
+      "text": "可现实里没有人愿意为它出很高的价钱。**这不是人不理性，是期望值这个尺子在这里不合用。**解法是引入**效用**：钱带来的满足是递减的，第一个一百万和第一百个一百万带来的感受完全不同。用效用而不是钱去算期望，这个赌局的价值就变得有限了。"
+    },
+    {
+      "type": "figure",
+      "ftype": "曲线图",
+      "caption": "同样是一笔钱，落在曲线不同位置上带来的效用天差地别。这条曲线的形状因人而异——而它的形状，正是「你在乎什么」的数学写法。",
+      "svg": "<svg viewBox='0 0 660 276' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>钱越多，每一块的分量越轻</text><line x1='100' y1='226' x2='600' y2='226' style='stroke:var(--line)' stroke-width='1.4'/><line x1='100' y1='226' x2='100' y2='52' style='stroke:var(--line)' stroke-width='1.4'/><text x='350' y='252' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>财富 →</text><text x='86' y='58' text-anchor='end' font-size='11.5' style='fill:var(--ink-faint)'>效用</text><path d='M100,226 C180,120 300,84 590,68' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='2.6'/><line x1='140' y1='226' x2='140' y2='190' style='stroke:var(--azure)' stroke-width='1.4' stroke-dasharray='3 3'/><line x1='200' y1='226' x2='200' y2='142' style='stroke:var(--azure)' stroke-width='1.4' stroke-dasharray='3 3'/><rect x='140' y='190' width='60' height='48' fill='none' style='stroke:var(--azure)' stroke-width='1.6'/><text x='170' y='262' text-anchor='middle' font-size='11' style='fill:var(--azure)'>同样多的钱</text><line x1='460' y1='226' x2='460' y2='76' style='stroke:var(--azure)' stroke-width='1.4' stroke-dasharray='3 3'/><line x1='520' y1='226' x2='520' y2='72' style='stroke:var(--azure)' stroke-width='1.4' stroke-dasharray='3 3'/><rect x='460' y='72' width='60' height='6' fill='none' style='stroke:var(--azure)' stroke-width='1.6'/><text x='490' y='262' text-anchor='middle' font-size='11' style='fill:var(--azure)'>同样多的钱</text><text x='236' y='196' font-size='11.5' style='fill:var(--ink)'>换来一大截效用</text><text x='548' y='78' font-size='11.5' style='fill:var(--ink)'>只换来一点点</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "五、这才是全书的落点"
+    },
+    {
+      "type": "p",
+      "text": "效用这个概念看起来是个技术补丁，其实它把全书带到了真正的落点上。请留意这句话——"
+    },
+    {
+      "type": "p",
+      "text": "**效用把「你在乎什么」写进了模型；而写进去之后，它仍然是你的价值判断，不是数学推出来的。**"
+    },
+    {
+      "type": "p",
+      "text": "数学能告诉你：这个方案有 30% 的概率损失一百万，有 10% 的概率赚三百万。它算得清清楚楚，一分不差。但它**没法告诉你**：你该更怕那个损失还是更想要那个收益。它没法告诉你，为了家人的安稳，你应该放弃多少个人的机会。它没法告诉你，一条人命该折算成多少钱——**而任何一项公共安全政策，背后都藏着这个数字。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "两个问题，一道分界线。左边可以外包给数据和计算，右边不能——凡是把这两件事说成一件的人，不管手上的数字多漂亮，都该多问一句。",
+      "svg": "<svg viewBox='0 0 660 250' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>推断与决策的分界线</text><rect x='24' y='48' width='288' height='150' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='168' y='76' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--azure)'>这批数据说明什么</text><text x='168' y='106' text-anchor='middle' font-size='12' style='fill:var(--ink)'>概率是多少</text><text x='168' y='130' text-anchor='middle' font-size='12' style='fill:var(--ink)'>效应有多大</text><text x='168' y='154' text-anchor='middle' font-size='12' style='fill:var(--ink)'>不确定性有多宽</text><text x='168' y='182' text-anchor='middle' font-size='11.5' style='fill:var(--azure)'>数学包办这一半</text><line x1='330' y1='48' x2='330' y2='198' style='stroke:var(--cinnabar-pure)' stroke-width='2' stroke-dasharray='6 5'/><rect x='348' y='48' width='288' height='150' rx='9' style='fill:var(--cinnabar-pure)' opacity='0.07'/><rect x='348' y='48' width='288' height='150' rx='9' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='492' y='76' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar-pure)'>因此我们该做什么</text><text x='492' y='106' text-anchor='middle' font-size='12' style='fill:var(--ink)'>更怕损失还是更想要收益</text><text x='492' y='130' text-anchor='middle' font-size='12' style='fill:var(--ink)'>谁承担风险、谁得好处</text><text x='492' y='154' text-anchor='middle' font-size='12' style='fill:var(--ink)'>什么代价是不可接受的</text><text x='492' y='182' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar-pure)'>这一半交不出去，也不该交</text><text x='330' y='232' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>「用数据说话」的真相是：数据不会说话，是你在替它说</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**「这批数据说明什么」与「因此我们该做什么」是两个问题，数学只包办前一个。**这句话回头看，能解释很多事。上一章讲的显著性检验之所以被滥用得那么厉害，根子正在这里：**人们想让一个数字替自己做第二个决定。**只要 p<0.05 就批准、就发表、就上线——这样谁也不用为判断负责，因为「是数据说的」。"
+    },
+    {
+      "type": "p",
+      "text": "但数据不会说话。**是你在替它说。**承认这一点，反而让讨论变得可能：如果分歧的实质是「我们各自看重什么不同」，那就该在那个层面上谈，而不是互相甩数字。"
+    },
+    {
+      "type": "h2",
+      "text": "六、期望值什么时候不该用"
+    },
+    {
+      "type": "p",
+      "text": "最后要补一条边界，否则「按期望值决策」会被当成万能公式。**期望值成立的前提是这件事你能反复做很多次。**"
+    },
+    {
+      "type": "p",
+      "text": "那些买彩票的团队之所以能赚钱，不是因为期望值为正，而是因为**他们买了几十万张票**——大数定律替他们把波动抹平了。同样一个正期望的赌局，如果你只玩一次，而且赌上全部身家，那么期望值这个数字对你几乎没有意义：**它描述的是长期的平均，而你没有长期。**"
+    },
+    {
+      "type": "p",
+      "text": "这条边界在现实里非常要紧。一个期望收益很高但有 5% 概率归零的机会，对一家能同时押二十个项目的机构是好生意，对一个把全部积蓄押上的人是坏主意——**同一个数字，因为「能不能重复」而含义不同**。凡是遇到「不可逆」「押上全部」「只有一次机会」的场合，期望值就该让位给另一类考虑：**最坏情况我承受得住吗？**"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "全章转折",
+      "items": [
+        "而「承受不承受得住」这句话，本身就不是数学问题——它取决于你有多少家底、有多少人靠你、你能接受什么样的生活。**你看，绕了一圈又回到同一处：数学算得出概率，算不出你在乎什么。**这一章的两半（期望值很有用 / 期望值有边界）不是互相矛盾，它们指向的是同一条界线的两侧。"
+      ]
+    },
+    {
+      "type": "pull",
+      "text": "「用数据说话」这句话里藏着一次悄悄的推卸：数据不会说话，是你在替它说，而你替它说了什么，取决于你在乎什么。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本章为对原书第三部分（期望）的原创消化与转述。",
+        "彩票的例子指的是美国马萨诸塞州曾发行的一种带「奖金下放」机制的彩票，二〇〇〇年代确有数个团队据期望值计算大规模购票获利，该玩法后已终止。",
+        "「如果你从没误过飞机，说明你在机场浪费的时间太多了」出自经济学家乔治·斯蒂格勒。",
+        "「期望收益无穷大却没人愿出高价」的赌局即圣彼得堡悖论，效用递减的解法出自伯努利。",
+        "本文对「推断与决策分界」的表述在原书中散见于多处，此处作了集中整理。"
+      ]
+    }
+  ]
+}

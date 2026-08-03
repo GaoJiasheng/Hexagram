@@ -1,0 +1,159 @@
+{
+  "title": "青铜饕餮：狞厉的美",
+  "subtitle": "一件专门用来吓人的东西，凭什么被叫作美？这是全书最有名、也最需要小心读的一章",
+  "centralIdea": "商周礼器上那张对称的兽面，鼓着两只不成比例的大眼，狰狞、沉重、盯着你看。李泽厚不回避它的可怕，反而把可怕当成立论的起点：它美，美在它凝住了一个用暴力立国的时代——那种力量不温和、不讲道理，可它是真实的历史力量。他有一句冷硬的话：历史从来不是在温情脉脉的人道牧歌声中前进的。这一章的价值在于，它拆掉了「美 = 和谐愉悦」这个默认设置：崇高、恐怖、压迫，也是审美的正当范畴。但这一章也最需要一副刹车。说一件器物有审美力量，和承认它所记录的内容在道德上说得过去，是两件事；而他用来托底的那套「历史必然的力量」，恰恰是 1981 年那个框架里今天最该打折的部分——一不小心，「历史必然」就会变成为一切既成暴力开脱的万能句式。这一章还讲了另一件大事：中国艺术从此走上「线」的路，汉字与书法成了「有意味的形式」最纯粹的标本。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "很多人在博物馆的青铜器展厅里有过同一种反应：**明明没什么好看的，可就是走不动。**那些鼎、尊、觥又黑又沉，表面爬满密密麻麻看不懂的花纹，中间一张对称的兽脸瞪着你。它不亲切，不优美，不让人愉快——**可你会不由自主地放轻脚步。**李泽厚这一章要回答的就是：这种反应是从哪儿来的，以及，它算不算「美」。他的答案很直接：**算，而且是一种高级的美。**他给了它一个词：狞厉。"
+    },
+    { "type": "h2", "text": "一、那张脸到底是什么" },
+    {
+      "type": "p",
+      "text": "先做一点必要的澄清。**「饕餮纹」这个叫法是宋代金石学家定的**，依据是一条古书里的描述：说周鼎上刻着饕餮，有头没有身子，吃人还没咽下去，就先害了自己。"
+    },
+    { "type": "quote", "original": "周鼎著饕餮，有首无身，食人未咽，害及其身。" },
+    {
+      "type": "p",
+      "text": "这条记载后来被当成了标准答案。**但今天的学界多半改称「兽面纹」**——因为那些纹样究竟画的是什么、商人自己管它叫什么、有没有一个统一的名目，都不确定；说不定同一类构图在不同时期意思根本不同。**李泽厚沿用「饕餮」这个旧称，方便，也带来一点风险**：一旦叫了这个名字，「吃人」这层意思就被预设进去了，而这恰好是他要论证的东西。**读的时候可以留个心眼：他的论证有一部分是从名字里来的。**"
+    },
+    {
+      "type": "callout",
+      "tone": "mute",
+      "label": "名字的力量",
+      "items": [
+        "这是一个很好的方法论小例子：**命名会替你完成一半论证。**如果那张脸一直被叫作「兽面纹」，李泽厚那套「吃人的时代」的论述就要费力得多；叫「饕餮」，读者一上来就已经在想「吃人」了。**这不是说他做错了**——所有人都在用继承来的词汇思考。但读任何论著时，把关键术语的来历查一查，常常能看出论证真正的承重点在哪儿。"
+      ]
+    },
+    { "type": "h2", "text": "二、它凭什么镇得住人：把开关拆开看" },
+    {
+      "type": "p",
+      "text": "抛开一切历史解释，先纯粹从形式上看：**这类纹样是怎么做到让人不适又移不开眼的？**拆开来其实是几个很硬的设计选择。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构示意",
+      "caption": "兽面纹的构图原理（**抽象示意，非摹写任何具体器物**）。四个开关同时打开：**中轴对称 + 巨眼 + 有首无身 + 填满不留白。**任何一个单独用都不吓人，四个叠在一起就成了。",
+      "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>把「吓人」拆成四个开关</text><rect x='150' y='44' width='260' height='170' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><line x1='280' y1='44' x2='280' y2='214' style='stroke:var(--cinnabar-pure);stroke-width:1.2;stroke-dasharray:5 4'/><g style='fill:none;stroke:var(--ink);stroke-width:1.3'><path d='M164,60 l16,14 l-10,14 l14,12 M396,60 l-16,14 l10,14 l-14,12'/><path d='M170,110 l14,10 l-8,12 l12,10 M390,110 l-14,10 l8,12 l-12,10'/><path d='M168,166 l18,10 l-12,14 M392,166 l-18,10 l12,14'/><path d='M264,180 l16,10 l16,-10' /><path d='M240,196 l40,12 l40,-12'/></g><ellipse cx='232' cy='118' rx='27' ry='19' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2.2'/><circle cx='232' cy='118' r='9' style='fill:var(--cinnabar-pure)'/><ellipse cx='328' cy='118' rx='27' ry='19' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2.2'/><circle cx='328' cy='118' r='9' style='fill:var(--cinnabar-pure)'/><path d='M196,70 C230,58 330,58 364,70' style='fill:none;stroke:var(--ink);stroke-width:1.5'/><g style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'><text x='76' y='72' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>① 中轴对称</text><text x='76' y='90' text-anchor='middle'>人脸识别的本能</text><text x='76' y='106' text-anchor='middle'>立刻把它读成脸</text><text x='76' y='150' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>② 巨眼</text><text x='76' y='168' text-anchor='middle'>信息全压在眼上</text><text x='76' y='184' text-anchor='middle'>其余含混 → 更像在盯</text><text x='484' y='72' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>③ 有首无身</text><text x='484' y='90' text-anchor='middle'>没有躯干可判断</text><text x='484' y='106' text-anchor='middle'>不知它有多大</text><text x='484' y='150' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>④ 填满不留白</text><text x='484' y='168' text-anchor='middle'>细密云雷纹铺底</text><text x='484' y='184' text-anchor='middle'>视线无处休息</text></g><rect x='60' y='240' width='440' height='42' rx='5' style='fill:var(--paper-raised);stroke:var(--ink-faint);stroke-width:1'/><text x='280' y='258' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>再加上材料本身：黑、重、冷、硬</text><text x='280' y='276' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>这不是一件观赏品，是一件不许你放松的东西</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**最狠的一条是「有首无身」。**一张有身体的兽脸，你能估出它多大、多远、能不能跑得过；只有一张脸浮在器物上，这些判断全部落空。**人对无法估量的东西最不安。**再加上填满器身的细密底纹——眼睛在上面找不到一处可以歇的空白，**焦虑就是这么被维持住的。**"
+    },
+    {
+      "type": "p",
+      "text": "**这些不是审美上的失误，是精确的功能实现。**这些器物是礼器，用在最庄严的场合，面对的是需要被震住的人。**它成功了，而且成功了三千年**——今天你走进展厅，那套装置对你仍然有效。"
+    },
+    {
+      "type": "p",
+      "text": "**这套开关至今还在被使用，只是换了行当。**留意一下那些希望你「肃然」的地方：法庭、纪念堂、大教堂、政府建筑的正立面——**几乎无一例外是严格中轴对称的。**再留意那些希望你「放松」的地方：咖啡馆、儿童医院、游乐场，**它们全都刻意打破对称。**对称传达的是不可协商，非对称传达的是可以商量。"
+    },
+    {
+      "type": "p",
+      "text": "「巨眼」那一条也一样。**你会不会觉得某些监控摄像头的造型让人不适？**那多半不是错觉——**很多这类设备被刻意做成了一只显眼的、可见的眼睛**，因为让人知道自己被看着，本来就是它一半的功能。**三千年前那张脸做的是同一件事**：真正起作用的不是它能看见什么，是你知道它在看。"
+    },
+    { "type": "h2", "text": "三、为什么偏偏是青铜" },
+    {
+      "type": "p",
+      "text": "还有一层容易被跳过：**材料本身就是内容的一部分。**青铜是铜锡合金，矿要开、要运、要冶炼，铸一件大器需要成套的模范、大量的燃料和几十上百人的协作。**在那个年代，这是一个国家能调动的最高级别的资源。**"
+    },
+    {
+      "type": "p",
+      "text": "而这些资源被拿去做了什么？**不是农具，不是水利，是礼器和兵器。**《左传》里那句话把这件事说得很干脆：国家的大事，就在祭祀和打仗两样。"
+    },
+    { "type": "quote", "original": "国之大事，在祀与戎。" },
+    {
+      "type": "p",
+      "text": "**所以一件鼎摆在那里，本身就是一份国力声明。**它的重量、它的黑、它的冷、它铸造时留下的接缝，都在无声地说「做这个是要花很多人力的」。**李泽厚讲「狞厉」时讲的是纹样，但真正压住人的其实是纹样加材料加体量的合力**——同样的兽面画在一块木板上，效果会立刻塌掉一大半。"
+    },
+    {
+      "type": "p",
+      "text": "**这一点在今天照样成立。**为什么纪念碑要用石头不用塑料？为什么重要的证书要用厚纸和烫金？**材料是最不需要翻译的一种表达**：它直接说出「为做成这件事，付出了多少」。而付出本身，就是诚意与权力最原始的证明。"
+    },
+    { "type": "h2", "text": "四、「狞厉的美」：这句话的分量" },
+    {
+      "type": "p",
+      "text": "到这里为止都还是形式分析。**李泽厚的那一步是：把这套形式接到它所处的那个社会上去。**商代与西周初年是一个什么样的年代？战争频繁，人牲人殉，方国被征服，俘虏被献祭。这些不是野史，是甲骨卜辞里成批的记录。**那张兽面就长在这样一个年代里。**"
+    },
+    {
+      "type": "p",
+      "text": "所以他的结论是：**这种美不是形式游戏，它凝固的是那个时代的力量本身。**那种力量野蛮、残酷、不讲情面，可它是真实存在的历史力量——是它把散落的部族捏成了国家。他为此写下了全书最冷的一句话。"
+    },
+    { "type": "quote", "original": "历史从来不是在温情脉脉的人道牧歌声中前进的。" },
+    {
+      "type": "p",
+      "text": "**这句话解开的是一个很实际的困惑。**很多人第一次面对这类器物时的别扭，正在于「我被它震住了，可我知道它背后是很坏的事」——好像被震住就等于赞成。李泽厚等于告诉你：**不必内疚。**一件东西的审美力量和它记录的内容的道德性质，是两个不同的坐标；**你可以承认它有力，同时不承认它有理。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "两把互相独立的尺子。**混用它们会同时犯两种错**：因为一件东西可怕就否认它有力量（看不见了），或者因为它有力量就替它辩护（站错了）。李泽厚这一章的贡献，是把横轴单独拎出来量；**而读者要自己守住纵轴。**",
+      "svg": "<svg viewBox='0 0 560 260' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>审美力量与道德评价，是两把尺子</text><line x1='120' y1='210' x2='470' y2='210' style='stroke:var(--ink-faint);stroke-width:1.3'/><line x1='140' y1='50' x2='140' y2='226' style='stroke:var(--ink-faint);stroke-width:1.3'/><path d='M472,210 l-9,-4 l0,8 Z' style='fill:var(--ink-faint)'/><path d='M140,48 l-4,9 l8,0 Z' style='fill:var(--ink-faint)'/><line x1='140' y1='130' x2='470' y2='130' style='stroke:var(--line);stroke-width:1;stroke-dasharray:4 4'/><line x1='300' y1='50' x2='300' y2='210' style='stroke:var(--line);stroke-width:1;stroke-dasharray:4 4'/><g style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'><text x='300' y='236' text-anchor='middle'>审美力量 →</text><text x='128' y='44' text-anchor='end' style='font-size:11.5px'>道德</text><text x='128' y='60' text-anchor='end' style='font-size:11.5px'>↑</text><text x='388' y='90' text-anchor='middle'>有力，且站得住</text><text x='218' y='90' text-anchor='middle'>无力，但无害</text><text x='218' y='180' text-anchor='middle'>无力，也不义</text></g><rect x='312' y='150' width='150' height='44' rx='5' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='387' y='168' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>有力，但不义</text><text x='387' y='186' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>这一格最容易读岔</text></svg>"
+    },
+    { "type": "pull", "text": "你可以承认它有力，同时不承认它有理。这两句话不冲突。" },
+    { "type": "h2", "text": "五、但这里必须踩一脚刹车" },
+    {
+      "type": "p",
+      "text": "这一章也是全书最容易被读歪的一章，有两个滑坡值得指出来。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "两个滑坡",
+      "items": [
+        "**第一个滑坡：把「有审美力量」读成「值得赞美」。**说饕餮纹美，不是说那个年代好，更不是说暴力本身有什么值得欣赏之处。这条界线在原书里其实是清楚的，但因为文字太有感染力，读的时候极易滑过去。**判断一段文字有没有滑过去，有个简单的检验：把它换成二十世纪的例子还成立吗？**如果一段赞叹换成近代的暴行就立刻让人不适，那它多半已经越界了。",
+        "**第二个滑坡：「历史必然的力量」这个托底。**李泽厚用来给「狞厉之美」正名的，是一套历史必然论——暴力是历史前进必须付出的代价。**这套框架是 1981 年那个思想环境的标准配置，也是今天最该打折的部分。**它的问题在于：一旦承认某种暴力是「必然」的，就很难再对它作道德评价；而「必然」这个判断通常是事后追认的——**赢的那一方总能被说成必然。**读到这类句子，最好把「必然」换成「事实上发生了」，句子的信息量并不会少，语气里那点开脱的味道却没有了。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**去掉这层托底，他的核心洞察反而更稳。**不需要「历史必然」，也可以说：那张脸之所以有力量，是因为它没有粉饰——**它把当时最真实的东西（恐惧、等级、不可违抗）做成了形状。**一个时代最诚实的痕迹，往往不在它的颂词里，在它不假思索做出来的器物上。"
+    },
+    { "type": "h2", "text": "六、线的艺术：中国走了另一条路" },
+    {
+      "type": "p",
+      "text": "这一章还埋着一条很长的伏笔。李泽厚指出，**中国艺术从很早就走上了「线」的路**：青铜纹样是线，玉器是线，后来的书法、白描、山水，主角始终是线条而不是体块与光影。"
+    },
+    {
+      "type": "p",
+      "text": "而**汉字与书法，是「有意味的形式」最纯粹的一个标本**。理由很干净：一个字写在纸上，它的意思由字形负责，而它的美由笔画的走势、快慢、轻重、连断负责——**这两件事是分开的。**同一个字，写成篆是一种性格，写成隶是另一种，写成狂草又是一种，**意思一点没变，感觉全变了。**这几乎是在实验室条件下证明：形式本身能携带情绪。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "同样一根线，三种走法（**性格示意，非临摹任何书迹**）。这就是「线的艺术」的意思：**内容不变，只改线条的行进方式，情绪就换了。**中国艺术后来的全部本事，很大一部分建在这个发现上。",
+      "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>线条的三种性格</text><path d='M40,74 C90,44 150,104 200,74 C250,44 310,104 360,74 C400,50 450,90 520,66' style='fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round'/><text x='280' y='102' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>匀速、圆转、粗细不变 —— 端正、庄严、不动声色</text><path d='M40,142 C88,124 120,150 168,138 C216,126 250,158 300,142 C352,126 396,156 452,138 L520,132' style='fill:none;stroke:var(--ink);stroke-width:4.4;stroke-linecap:butt'/><path d='M452,138 l30,-8 l-4,14 Z' style='fill:var(--ink)'/><text x='280' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>有提有按、收笔外挑 —— 开张、有分量、留得住</text><path d='M40,212 C74,190 92,232 128,208 C170,180 188,236 232,204 C286,164 300,238 352,202 C404,166 430,230 486,196 L524,186' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2.2;stroke-linecap:round'/><text x='280' y='240' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--cinnabar-pure)'>连绵、加速、笔断意连 —— 急切、忘我、不可重来</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**这一条后面会不断兑现。**魏晋讲书法的自觉，盛唐讲张旭的狂草，元人讲「书画同源」、讲笔墨本身成为看点——**都是这条线在往下走。**中国画最后之所以能彻底放弃「像」，靠的就是它早就有了一套不依赖「像」的表现手段。"
+    },
+    {
+      "type": "p",
+      "text": "**顺带说一句对照。**西方艺术史上，「抽象的形式能独立表达情感」这件事要到二十世纪初才被正式提出来，被当作一场革命；而在中国，**这件事在书法里被实践了近两千年，并且是所有读书人从小就要练的日课。**这不是要比高下——两边解决的根本不是同一道题。但它确实解释了一个常被问到的现象：为什么现代抽象艺术进入中国时，接受起来比想象中顺。**那块地基早就在了。**"
+    },
+    { "type": "h2", "text": "七、然后它就松掉了" },
+    {
+      "type": "p",
+      "text": "最后一节讲的是这种美的散场，李泽厚给了它一个准确的名字：**解体和解放。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "演变示意",
+      "caption": "同一门手艺，三百年里表情全换了。**神退场，人上来。**要留意这不是「进步」——铸造技术其实越来越好，可那种镇得住人的力量，随着它所记录的那套秩序一起没了。",
+      "svg": "<svg viewBox='0 0 560 240' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>青铜纹样的三段</text><line x1='40' y1='60' x2='520' y2='60' style='stroke:var(--line);stroke-width:1.2'/><g style='font-family:var(--font-serif);font-size:12.5px'><circle cx='108' cy='60' r='4.5' style='fill:var(--cinnabar-pure)'/><circle cx='280' cy='60' r='4' style='fill:var(--ink-faint)'/><circle cx='452' cy='60' r='4' style='fill:var(--ink-faint)'/><text x='108' y='88' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>商 · 殷墟</text><text x='280' y='88' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>西周</text><text x='452' y='88' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>春秋战国</text></g><g style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'><text x='108' y='114' text-anchor='middle'>兽面凸出，深峻</text><text x='108' y='132' text-anchor='middle'>神秘、威慑</text><text x='108' y='150' text-anchor='middle'>纹样填满每一寸</text><text x='280' y='114' text-anchor='middle'>纹样变浅、变规整</text><text x='280' y='132' text-anchor='middle'>成了整齐的图案</text><text x='280' y='150' text-anchor='middle'>神秘感一点点漏掉</text><text x='452' y='114' text-anchor='middle'>宴饮、狩猎、攻战</text><text x='452' y='132' text-anchor='middle'>大量人的活动</text><text x='452' y='150' text-anchor='middle'>热闹、世俗、好看</text></g><rect x='40' y='176' width='480' height='50' rx='5' style='fill:var(--paper-raised);stroke:var(--ink-faint);stroke-width:1'/><text x='280' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>失掉的：压迫感、神圣性、不可违抗</text><text x='280' y='218' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>得到的：人间的活气、题材的自由</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**这一节其实是全书史观的第一次示范。**李泽厚从不说后来的比先前的好：春秋战国的铜器更精巧、题材更活泼、也更好看，可**商代那种镇得住人的东西，从此再没有过。**得到与失掉是同一件事的两面——**旧秩序垮了，恐惧散了，与恐惧绑在一起的那种崇高也一起散了。**"
+    },
+    {
+      "type": "p",
+      "text": "下一章接着这个「散」字往下讲。**神退场之后，谁来给这个世界立规矩？**答案是两拨人：一拨要把秩序重新安在人心里（孔子），一拨干脆说规矩本身就是问题（庄子）。**中国美学最长的一条线索，从这里开始。**"
+    },
+    {
+      "type": "p",
+      "text": "读完这一章，可以带走一个很实用的判断力。**下次遇到一件让你不舒服却又移不开眼的东西**——一段刺耳的音乐、一部让人难受的电影、一栋压得人喘不过气的建筑——**先别急着用「喜不喜欢」下结论。**换两个问题：它是怎么做到的（拆开那几个开关），以及它里面沉着什么（那种不适感对应着什么真实处境）。**「狞厉的美」这个词最大的用处，就是提醒你：让人不舒服，从来不等于做得不好。**"
+    }
+  ]
+}

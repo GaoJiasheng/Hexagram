@@ -1,0 +1,195 @@
+{
+  "title": "弹孔在哪里：沃德与全书的第一课",
+  "subtitle": "该加装甲的是没有弹孔的地方——因为打中那里的飞机根本没回来",
+  "centralIdea": "全书用一个二战的真实案例开场，而这一个例子几乎把全书的方法交代完了。军方统计返航轰炸机的弹孔分布，机身多、发动机少，于是打算给机身加装甲。统计学家沃德给了相反的答案：该加在发动机上。理由不需要任何公式——弹片不挑地方落，发动机中弹的比例本该差不多；它在样本里少，是因为那些飞机没有回来。数据里的空白不是「那里没事」，而是「那里出事的样本被删掉了」。这一课今天叫幸存者偏差，它的当代版本随处可见：成功者的作息、基金的业绩榜、创业方法论的样本。真正该练的不是记住这个名词，是养成那个动作——面对任何一份数据，先问「这批样本是怎么活到我眼前来的」。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "如果这本书你只读三页，就读开头这三页。**它讲了一个二战的真实故事，而这一个故事几乎把全书的方法交代完了。**后面所有的章节——直线、p 值、回归均值、贝叶斯——都可以看成这个故事的变奏。"
+    },
+    {
+      "type": "h2",
+      "text": "一、军方的问题：装甲加在哪里"
+    },
+    {
+      "type": "p",
+      "text": "二战期间，美军在哥伦比亚大学设了一个统计研究小组，把一批当时最好的数学家和统计学家集中起来，替军方算各种作战问题：炸弹怎么投命中率最高、机枪该用多大口径、护航编队怎么排。这是一份很实在的差事——**算错了要死人。**"
+    },
+    {
+      "type": "p",
+      "text": "空军拿来一个难题。轰炸机被击落的比例太高，想加装甲。可装甲很沉，加多了飞机爬不高、飞不远、载弹量下降，本身也会增加损失。所以问题不是「要不要加」，而是**「加在哪里、加多厚」**——这是一笔必须做取舍的账。"
+    },
+    {
+      "type": "p",
+      "text": "军方手里有数据，而且是很扎实的数据：他们仔细检查了执行任务后飞回来的飞机，统计每一处的弹孔密度。结论很清楚——**机身和机翼上弹孔密密麻麻，发动机部位反而稀少。**顺着往下想，答案似乎是现成的：哪里挨打最多，就给哪里加装甲。"
+    },
+    {
+      "type": "h2",
+      "text": "二、沃德的回答"
+    },
+    {
+      "type": "p",
+      "text": "小组里有位统计学家叫亚伯拉罕·沃德。他的答案跟军方相反：**装甲该加在没有弹孔的地方，也就是发动机上。**"
+    },
+    {
+      "type": "p",
+      "text": "理由一说就懂，可就是没人先想到。高射炮的弹片和敌机的机枪子弹不会挑地方落——它们打中飞机各个部位的概率大体是差不多的。既然如此，**返航飞机上发动机部位的弹孔为什么这么少？**"
+    },
+    {
+      "type": "p",
+      "text": "只有一个解释：那些打中发动机的飞机**没有回来**。你手里那批飞机，从来不是「所有中弹的飞机」，而是「中弹之后还飞得回来的飞机」。机身上有弹孔的飞机能飞回来，说明机身挨打是**扛得住的**；发动机部位的弹孔在样本里罕见，恰恰说明那里挨打是**扛不住的**。"
+    },
+    {
+      "type": "quote",
+      "original": "数据上那块空白不是「那里没挨过打」，是「那里挨了打的都不在这份数据里」。",
+      "translation": "沃德那句结论的实质。它的力量不在结论本身，在那个动作——先追问这批样本是怎么被筛出来的，再看它说了什么。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "关键在最后一栏：飞不回来的那些飞机，压根不在你的统计表里。你以为自己在统计「中弹的飞机」，实际上你统计的是「中弹且能返航的飞机」——两者的差别，正是全部信息所在。",
+      "svg": "<svg viewBox='0 0 660 296' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>你统计的到底是哪一批飞机</text><rect x='24' y='52' width='150' height='120' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='99' y='80' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink-soft)'>出击的全部飞机</text><g style='fill:var(--ink-faint)'><circle cx='52' cy='106' r='5'/><circle cx='74' cy='106' r='5'/><circle cx='96' cy='106' r='5'/><circle cx='118' cy='106' r='5'/><circle cx='140' cy='106' r='5'/><circle cx='52' cy='128' r='5'/><circle cx='74' cy='128' r='5'/><circle cx='96' cy='128' r='5'/><circle cx='118' cy='128' r='5'/><circle cx='140' cy='128' r='5'/><circle cx='52' cy='150' r='5'/><circle cx='74' cy='150' r='5'/><circle cx='96' cy='150' r='5'/><circle cx='118' cy='150' r='5'/><circle cx='140' cy='150' r='5'/></g><path d='M182,112 L226,112' style='stroke:var(--ink-faint)' stroke-width='2' marker-end='url(#b1)'/><rect x='234' y='52' width='150' height='120' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='309' y='80' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink-soft)'>返航的那些</text><g style='fill:var(--ink)'><circle cx='262' cy='106' r='5'/><circle cx='284' cy='106' r='5'/><circle cx='306' cy='106' r='5'/><circle cx='328' cy='106' r='5'/><circle cx='262' cy='128' r='5'/><circle cx='284' cy='128' r='5'/><circle cx='306' cy='128' r='5'/><circle cx='350' cy='106' r='5'/><circle cx='328' cy='128' r='5'/><circle cx='262' cy='150' r='5'/><circle cx='284' cy='150' r='5'/></g><text x='309' y='190' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>← 军方数的是这一批</text><path d='M182,140 L226,206' style='stroke:var(--cinnabar-pure)' stroke-width='2' stroke-dasharray='5 4' marker-end='url(#b2)'/><rect x='234' y='196' width='150' height='76' rx='8' style='fill:var(--cinnabar-pure)' opacity='0.08'/><rect x='234' y='196' width='150' height='76' rx='8' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4' stroke-dasharray='5 4'/><text x='309' y='222' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>没回来的那些</text><text x='309' y='244' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>多半是发动机中弹</text><text x='309' y='262' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar-pure)'>一架也不在统计表里</text><path d='M394,150 L438,150' style='stroke:var(--cinnabar-pure)' stroke-width='2' marker-end='url(#b2)'/><rect x='446' y='94' width='190' height='112' rx='8' style='fill:var(--cinnabar-pure)' opacity='0.08'/><rect x='446' y='94' width='190' height='112' rx='8' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='541' y='122' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar-pure)'>所以结论要反过来</text><text x='541' y='152' text-anchor='middle' font-size='12' style='fill:var(--ink)'>弹孔少的地方 = 挨打就回不来</text><text x='541' y='178' text-anchor='middle' font-size='12' style='fill:var(--ink)'>装甲加在发动机上</text><defs><marker id='b1' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L7,3 L0,6 z' style='fill:var(--ink-faint)'/></marker><marker id='b2' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L7,3 L0,6 z' style='fill:var(--cinnabar-pure)'/></marker></defs></svg>"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "留意用字",
+      "items": [
+        "沃德关于飞机易损性估计的技术备忘录是真实文献，思路也确实是从返航飞机的损伤分布反推整体。但**流传最广的那个版本——会议室里军官争得面红耳赤、沃德一句话点醒全场——是后来的演绎**，不是当时的记录。这本书讲的是故事版本。结论站得住，情节是修饰过的：读的时候心里有个数，反而更符合全书教你的那种警觉。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "三、这一课为什么值得放在全书开头"
+    },
+    {
+      "type": "p",
+      "text": "沃德的推理里**一个公式也没有**。它不需要你会算任何东西，只需要你做一个动作：**在读一份数据之前，先问这份数据是怎么来的。**"
+    },
+    {
+      "type": "p",
+      "text": "作者把它放在开头，是有用意的。它先摆明了这本书的层次——**不是教你计算，是教你在计算之前先站对位置。**一个不会算的人只要问对了这句话，就能胜过一屋子算得很快但问错了问题的人。这也呼应了他给数学下的定义：这是纯粹的常识延伸，你完全能跟得上，只是常识自己走不到那一步。"
+    },
+    {
+      "type": "p",
+      "text": "更重要的是，**这个动作在全书里会反复出现**，只是换了衣服："
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "讲**发表偏倚**时，没被发表的阴性结果就是那些没飞回来的飞机——你翻遍学报也看不见它们。",
+        "讲**回归均值**时，你之所以只在极端时刻下判断，是因为你只在极端时刻才会去看——观察时机本身就是一次筛选。",
+        "讲**小样本**时，排行榜两头都被小地方占着，是因为榜单只呈现名次不呈现分母。",
+        "讲**贝叶斯**时，先验的作用正是替你补上「我原本还知道些什么」——同样是在追问数据之外的东西。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "所以这一课不是全书的第一个知识点，是全书的**总纲**。记住这一条，其余各章你自己都能推出个大概。"
+    },
+    {
+      "type": "h2",
+      "text": "四、它在今天长成什么样"
+    },
+    {
+      "type": "p",
+      "text": "这一课今天有个通俗的名字叫**幸存者偏差**。它在生活里出现的频率高得惊人，而且往往裹着励志或专业的外衣。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "四个日常场景，同一个结构。左边是你看见的样本，右边是被系统性删掉的那部分——删得越干净，结论看上去越漂亮。",
+      "svg": "<svg viewBox='0 0 660 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>今天的「返航飞机」</text><line x1='24' y1='40' x2='636' y2='40' style='stroke:var(--line)' stroke-width='1'/><text x='130' y='62' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>你看见的</text><text x='420' y='62' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar-pure)'>被删掉的</text><line x1='24' y1='72' x2='636' y2='72' style='stroke:var(--line)' stroke-width='1'/><text x='130' y='102' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>「成功者都四点起床」</text><text x='420' y='102' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>四点起床然后失败的人，没有人来采访</text><line x1='24' y1='118' x2='636' y2='118' style='stroke:var(--line)' stroke-width='0.6'/><text x='130' y='148' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>基金十年年化排行榜</text><text x='420' y='148' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>亏光清盘的基金早已从榜单上消失</text><line x1='24' y1='164' x2='636' y2='164' style='stroke:var(--line)' stroke-width='0.6'/><text x='130' y='194' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>「这套打法被验证有效」</text><text x='420' y='194' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>用同一套打法死掉的公司不写案例</text><line x1='24' y1='210' x2='636' y2='210' style='stroke:var(--line)' stroke-width='0.6'/><text x='130' y='240' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>老物件「以前的东西结实」</text><text x='420' y='240' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>不结实的早坏了扔了，留到今天的都是结实的</text><line x1='24' y1='256' x2='636' y2='256' style='stroke:var(--line)' stroke-width='1'/><text x='330' y='284' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>该问的那句话很短：这份名单是怎么来的，谁被删掉了？</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "最后一行那个例子值得多说一句，因为它最不像。**「以前的东西结实，现在的都是垃圾」**——这句话几乎人人说过。可你今天见到的老物件，是从当年海量的产品里**被时间筛过一遍**留下来的：不结实的早坏了、扔了、化成灰了。你手上那台还能转的老机器，正是一架返航的飞机。**它证明的不是「那个年代造得好」，而是「那个年代造得好的那些能撑到今天」。**"
+    },
+    {
+      "type": "h2",
+      "text": "五、它在工作里最贵的一次出现"
+    },
+    {
+      "type": "p",
+      "text": "上面那些例子还算容易识破。真正贵的那一类，出现在你**主动收集数据**的时候——因为收集的方式本身就是一道筛子，而这道筛子是你自己装上的，所以更看不见。"
+    },
+    {
+      "type": "p",
+      "text": "**问用户为什么不用你的产品。**你能问到的，是那些还在用的人和愿意回你消息的人。真正流失的那批，早就不理你了——他们的意见永远进不了这份调研。于是你收到一堆「希望增加某某功能」的建议，照着做了，流失率纹丝不动。**因为流失的原因从来没进入过你的数据。**"
+    },
+    {
+      "type": "p",
+      "text": "**复盘成功项目的经验。**你复盘的是做成的那几个，总结出一套「关键成功因素」。可如果失败的那些项目**同样具备**这些因素呢？没有对照，你总结出的可能只是「大家都在做的事」。这也是各种「优秀企业共同特征」类研究反复翻车的原因——**它们只研究了返航的飞机。**"
+    },
+    {
+      "type": "p",
+      "text": "**看简历筛人。**你判断「什么样的人能干成事」，依据是你共事过的人。可你共事过的人，是被之前的招聘标准筛过一轮的。**用被旧标准筛出的样本，去验证旧标准是否正确**——这个循环可以维持很多年而不被发现。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "这三个例子有个共同点：**筛子恰恰跟你想研究的那件事咬在一起。**问不到流失用户，而流失原因正是你要找的；看不到失败项目，而失败原因正是你要避的；接触不到被筛掉的候选人，而他们正是检验标准的关键。**沃德那个案例之所以能整个翻转，也是这个原因**——飞机能否返航，恰恰由中弹部位决定。"
+      ]
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "三个工作场景，同一个结构：你能接触到的样本，恰恰把你最需要的那部分排除在外。而这道筛子是你自己装上的，所以格外难发现。",
+      "svg": "<svg viewBox='0 0 660 268' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>你自己装上的那道筛子</text><line x1='24' y1='42' x2='636' y2='42' style='stroke:var(--line)' stroke-width='1'/><text x='120' y='66' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>你在做什么</text><text x='330' y='66' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>你够得着的样本</text><text x='540' y='66' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar-pure)'>正好缺了谁</text><line x1='24' y1='78' x2='636' y2='78' style='stroke:var(--line)' stroke-width='1'/><text x='120' y='110' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>问用户为什么不用</text><text x='330' y='110' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>还在用、且愿意回你的人</text><text x='540' y='110' text-anchor='middle' font-size='12' style='fill:var(--ink)'>已经走掉的那批</text><line x1='24' y1='126' x2='636' y2='126' style='stroke:var(--line)' stroke-width='0.6'/><text x='120' y='158' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>复盘成功经验</text><text x='330' y='158' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>做成了的那几个项目</text><text x='540' y='158' text-anchor='middle' font-size='12' style='fill:var(--ink)'>同样做法却失败的</text><line x1='24' y1='174' x2='636' y2='174' style='stroke:var(--line)' stroke-width='0.6'/><text x='120' y='206' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>总结用人标准</text><text x='330' y='206' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>被旧标准筛进来的同事</text><text x='540' y='206' text-anchor='middle' font-size='12' style='fill:var(--ink)'>当年被刷掉的人</text><line x1='24' y1='222' x2='636' y2='222' style='stroke:var(--line)' stroke-width='1'/><text x='330' y='250' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>缺的那一栏，恰恰是能回答你问题的那一栏</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "六、这个动作怎么练"
+    },
+    {
+      "type": "p",
+      "text": "把它变成一句可以随身携带的问话，比记住「幸存者偏差」这个词有用得多。作者没有给清单，但从这个例子里可以提出三步。"
+    },
+    {
+      "type": "steps",
+      "items": [
+        {
+          "title": "先问：这份数据是谁、在什么条件下收集到的？",
+          "text": "军方的数据来自「降落在自家机场的飞机」。任何数据都有一个收集场所，而收集场所本身就是一道筛子。",
+          "state": "done"
+        },
+        {
+          "title": "再问：什么样的对象会进不了这份数据？",
+          "text": "坠毁的飞机、清盘的基金、失败的创业者、没被发表的实验、早就报废的老物件。这一问最有产出。",
+          "state": "done"
+        },
+        {
+          "title": "最后问：如果把它们补回来，结论会不会翻个个儿？",
+          "text": "有时只是削弱结论，有时会像沃德那样彻底反过来。区别在于筛选是否与你关心的那个变量直接相关——飞机能否返航，恰恰取决于中弹部位。",
+          "state": "now"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "text": "第三步是关键，也是常被讲成口号的那部分需要补上的严谨。**不是所有筛选都会毁掉结论。**如果筛选跟你关心的变量无关（比如只统计了周一收集的数据，而周几与结论无关），那影响就有限。**沃德那个案例之所以能整个翻转，是因为筛选条件（能不能飞回来）恰恰就是由中弹部位决定的**——筛子和结论咬在同一个齿轮上。所以真正的问题不是「有没有筛选」，是**「这道筛子跟我的结论有没有关系」**。"
+    },
+    {
+      "type": "p",
+      "text": "把这条讲清楚很重要，否则这一课会退化成一种廉价的怀疑主义：**「什么数据都有偏差，所以什么都别信。」**那不是这本书的意思，而且是一种更糟的错误——它让你在该被说服的时候也不被说服。真正的用法是**定向的**：想清楚这道筛子会往哪个方向歪、歪多少，然后据此调整结论，而不是把结论整个扔掉。"
+    },
+    {
+      "type": "p",
+      "text": "举个例子。医院里重症病人的死亡率高于社区诊所，这不说明医院比诊所差——**筛子（谁会来医院）跟结局（会不会死）强相关**，方向也很清楚：越重的病人越会来医院。知道方向之后你就不会得出「别去医院」这种结论，而会去问一个更对的问题：**同样严重的病人，在哪儿治结局更好？**这才是「问一句样本怎么来的」应有的产出——不是拒绝相信，是把问题问得更准。"
+    },
+    {
+      "type": "pull",
+      "text": "面对任何一份数据，先问一句：它是怎么活到我眼前来的？"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本章为对原书开篇案例的原创消化与转述，不含原书文字的复制。",
+        "史实补充：亚伯拉罕·沃德（Abraham Wald，1902—1950）为匈牙利出生的统计学家，二战期间在哥伦比亚大学的统计研究小组（Statistical Research Group）工作，其关于飞机易损性估计的备忘录为真实文献；沃德于一九五〇年因空难去世。",
+        "「幸存者偏差」这一通俗名称并非原书用语的直译，此处沿用中文语境里通行的叫法；站内《清醒思考的艺术》开篇讲的是同一件事，可对读。"
+      ]
+    }
+  ]
+}

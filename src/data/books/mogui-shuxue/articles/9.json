@@ -1,0 +1,197 @@
+{
+  "title": "贝叶斯与先验：有证据，不等于你该改变多少信念",
+  "subtitle": "同一份证据，起点不同的人合理地得出不同结论",
+  "centralIdea": "p 值的误读之所以那么顽固，是因为人们真正想问的那个问题（这个结论有多可信）需要一样 p 值不含的东西：先验，也就是你在看到数据之前本来觉得这事有多大可能。贝叶斯把这个日常动作写成了算式：先验乘以证据强度得出后验。它马上解释三件事——同一份证据在不同人那里合理地产生不同结论；极小概率下的筛查一定会误伤（万分之一的目标，再准的系统标出来的人也多半无辜）；以及为什么面对「密码」「超能力」这类主张，先验极低就要求证据强度极高。这一章也划边界：先验不是随便填的，它可以被数据一点点修正，起点不同的人在足够的数据面前会靠拢；但把先验设成零的人，任何证据都改变不了他——那已经不是推断问题了。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "上一章留了个尾巴：**p 值不能回答「这个结论有多可信」，因为它缺一样东西。**这一章就是讲那样东西——**先验**，以及处理它的框架：贝叶斯。"
+    },
+    {
+      "type": "p",
+      "text": "这个词听起来技术，但它描述的是你每天都在做的一个动作。你之所以觉得它陌生，只是因为没人把它写成算式给你看过。"
+    },
+    {
+      "type": "h2",
+      "text": "一、你本来就在用它"
+    },
+    {
+      "type": "p",
+      "text": "先看两条消息。"
+    },
+    {
+      "type": "p",
+      "text": "**第一条**：朋友告诉你，楼下便利店卖出了一张中大奖的彩票。你大概率会信——便利店本来就卖彩票，中奖每天都在某个地方发生，这事儿一点也不离奇。"
+    },
+    {
+      "type": "p",
+      "text": "**第二条**：同一个朋友告诉你，他能用意念让硬币立在桌面上，还给你看了一段视频。你多半不会信，而是开始想：视频剪辑过吗？桌子有磁铁吗？他练过什么手法吗？"
+    },
+    {
+      "type": "p",
+      "text": "两条消息的证据强度差不多（都是一个熟人的转述，第二条甚至还多一段视频）。**你的反应之所以天差地别，不是因为证据不同，是因为你的起点不同。**第一件事在你心里本来就有相当的可能性，第二件事本来就近乎为零。"
+    },
+    {
+      "type": "p",
+      "text": "**这就是先验。**贝叶斯做的事，只是把这个你本来就在做的动作写成算式："
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "证据不给结论，证据给的是一个「倍率」。乘在高起点上得到高结果，乘在极低起点上仍然很低——这就是为什么同一份证据在不同人那里，合理地产生不同的结论。",
+      "svg": "<svg viewBox='0 0 660 276' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>证据是倍率，不是结论</text><rect x='36' y='52' width='140' height='50' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='106' y='74' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>先验</text><text x='106' y='92' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>看到数据之前的判断</text><text x='196' y='84' text-anchor='middle' font-size='16' style='fill:var(--ink-soft)'>×</text><rect x='216' y='52' width='140' height='50' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='286' y='74' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>证据强度</text><text x='286' y='92' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>这份数据有多偏向它</text><text x='376' y='84' text-anchor='middle' font-size='16' style='fill:var(--ink-soft)'>=</text><rect x='396' y='52' width='140' height='50' rx='8' style='fill:var(--cinnabar-pure)' opacity='0.09'/><rect x='396' y='52' width='140' height='50' rx='8' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='466' y='74' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>后验</text><text x='466' y='92' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>看完之后该信多少</text><line x1='24' y1='128' x2='636' y2='128' style='stroke:var(--line)' stroke-width='1'/><text x='150' y='156' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>同一份证据</text><text x='150' y='192' text-anchor='middle' font-size='12' style='fill:var(--ink)'>便利店中奖</text><text x='150' y='230' text-anchor='middle' font-size='12' style='fill:var(--ink)'>意念立硬币</text><text x='360' y='156' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>你的起点</text><rect x='300' y='178' width='120' height='18' rx='4' style='fill:var(--azure)' opacity='0.7'/><rect x='300' y='216' width='4' height='18' rx='2' style='fill:var(--cinnabar-pure)'/><text x='540' y='156' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>看完之后</text><rect x='480' y='178' width='132' height='18' rx='4' style='fill:var(--azure)' opacity='0.8'/><rect x='480' y='216' width='12' height='18' rx='2' style='fill:var(--cinnabar-pure)'/><text x='540' y='260' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>抬高了三倍，但仍然很低</text></svg>"
+    },
+    {
+      "type": "quote",
+      "original": "证据改变的是概率的比值，不是直接给出结论；起点极低的假设，被一份中等强度的证据抬起来，仍然很低。",
+      "translation": "贝叶斯最要紧的一句话。它解释了为什么两个诚实的人看到同一份数据仍可以合理地不同意——只要他们的起点不同，同一个倍率乘出来就是不同的结果。"
+    },
+    {
+      "type": "h2",
+      "text": "二、它顺手解释了三件事"
+    },
+    {
+      "type": "p",
+      "text": "**第一件：为什么两个诚实的人可以合理地不同意。**"
+    },
+    {
+      "type": "p",
+      "text": "在日常争论里，我们常默认「摆事实就该达成一致，不一致就是有人不讲理」。贝叶斯告诉你不一定：**起点不同的人，被同一份证据推动之后，落点仍然可以差得很远。**这不是谁在耍赖。真正该追问的不是「你为什么不接受这个证据」，而是**「你的起点为什么和我不一样」**——那才是分歧的所在，而且往往是可以谈的。"
+    },
+    {
+      "type": "p",
+      "text": "**第二件：极小概率下的筛查一定会误伤。**这是全书里最该被更多人知道的一段算术。"
+    },
+    {
+      "type": "p",
+      "text": "假设某类人在人群中只占万分之一。现在有一套识别系统，准确率很高——真的那类人有 99% 会被标出来，普通人被误标的只有 1%。听起来相当可靠。那么，一个被标出来的人，真的是那类人的概率有多大？"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "在一百万人里：目标只有一百个，标中九十九个；而九十九万九千九百个普通人里，1% 被误标，就是约一万人。被标出来的人当中，真的不到百分之一。",
+      "svg": "<svg viewBox='0 0 660 288' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>准确率 99% 的系统，为什么标出来的多半是无辜的</text><line x1='24' y1='44' x2='636' y2='44' style='stroke:var(--line)' stroke-width='1'/><text x='150' y='68' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>一百万人中</text><text x='390' y='68' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>系统的表现</text><text x='570' y='68' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar-pure)'>被标出来</text><line x1='24' y1='78' x2='636' y2='78' style='stroke:var(--line)' stroke-width='1'/><text x='150' y='112' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>真的那类人：100 个</text><text x='390' y='112' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>标中率 99%</text><text x='570' y='112' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>99 人</text><line x1='24' y1='128' x2='636' y2='128' style='stroke:var(--line)' stroke-width='0.6'/><text x='150' y='162' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>普通人：999900 个</text><text x='390' y='162' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>误标率 1%</text><text x='570' y='162' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>约 9999 人</text><line x1='24' y1='178' x2='636' y2='178' style='stroke:var(--line)' stroke-width='1'/><rect x='120' y='202' width='420' height='30' rx='5' style='fill:var(--cinnabar-pure)' opacity='0.22'/><rect x='120' y='202' width='4' height='30' rx='2' style='fill:var(--azure)'/><text x='120' y='252' text-anchor='middle' font-size='11' style='fill:var(--azure)'>真的</text><text x='340' y='252' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>误标的</text><text x='330' y='278' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>被标出来的人里，真的只占约百分之一</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "答案是**约百分之一**。在一百万人里，真的那类人有一百个，标中九十九个；而剩下的九十九万九千九百个普通人里，哪怕只有 1% 被误标，也有将近一万人。这一万人和那九十九人混在一起，**被标出来的人当中，真的不到百分之一。**"
+    },
+    {
+      "type": "p",
+      "text": "**这不是算法做得差，这是基数太小的必然后果。**同样的算术适用于罕见病的普查、反欺诈系统、内容审核、以及任何针对小众目标的大规模筛查。它给出的教训很硬：**在极小基数的问题上，「提高准确率」的边际效果远不如「先缩小筛查范围」。**"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "这段算术在体检上尤其值得记住。**一项针对罕见病的普查，即使很准，阳性结果里也会有大量假阳性。**所以医生看到阳性通常会安排复查——不是不信任第一次检查，而是第一次检查把你从「万分之一」抬到了「百分之几」，第二次再抬一次。**两次独立的中等强度证据，胜过一次很强的证据**，这正是贝叶斯的思路在实务中的样子。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**第三件：为什么面对「密码」「超能力」这类主张，需要的证据强度格外高。**"
+    },
+    {
+      "type": "p",
+      "text": "上一章提到过，有人宣称在古代经典里用等间距抽字母的方法，找出了后世的人名与事件。反驳者用同样的方法在别的长篇著作里抽出了同样惊人的对应——这是从「方法自由度」的角度反驳。**贝叶斯给的是一个更根本的回答**：这类主张的先验极低（它要求推翻我们关于时间和因果的全部认识），因此需要的证据强度也就极高。**一份看起来很惊人、但同样能用巧合解释的证据，远远不够。**"
+    },
+    {
+      "type": "p",
+      "text": "这条道理有个流传很广的通俗版本：「非同寻常的主张需要非同寻常的证据」。贝叶斯让这句话从格言变成了算术——**「非同寻常」的程度，正是先验有多低；「需要多强」，正是那个倍率要多大。**"
+    },
+    {
+      "type": "h2",
+      "text": "三、先验从哪里来，这是不是主观"
+    },
+    {
+      "type": "p",
+      "text": "到这里最常见的质疑是：**先验不就是「我觉得」吗？那不成了想信什么就信什么？**"
+    },
+    {
+      "type": "p",
+      "text": "这是个好问题，也是贝叶斯方法历史上争议最大的地方。有两点值得说清。"
+    },
+    {
+      "type": "p",
+      "text": "**第一，先验不是凭空捏的。**很多时候它有实实在在的来源：这种病在人群中的患病率、这类项目的历史成功率、同类实验以往的结果。上面那个筛查的例子里，「万分之一」就是一个客观的先验。**在有基础数据的场合，先验是可以查的。**"
+    },
+    {
+      "type": "p",
+      "text": "**第二，也是更重要的一点：先验会被数据修正。**贝叶斯不是一次性的判决，是一个**不断更新**的过程：每来一份新证据，就调整一次。这带来一个很好的性质——**起点不同的两个人，在足够多的数据面前会逐渐靠拢。**你原本很怀疑，我原本很相信；证据一份份累积，我们的判断会越来越接近。"
+    },
+    {
+      "type": "figure",
+      "ftype": "曲线图",
+      "caption": "起点相差很远的两个人，随着证据累积会逐渐靠拢——只要两人的起点都不是零。这正是「先验主观」这一质疑的答案：主观的是起点，收敛的是过程。",
+      "svg": "<svg viewBox='0 0 660 280' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>证据一份份来，判断会靠拢</text><line x1='90' y1='236' x2='600' y2='236' style='stroke:var(--line)' stroke-width='1.4'/><line x1='90' y1='236' x2='90' y2='56' style='stroke:var(--line)' stroke-width='1.4'/><text x='345' y='262' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>累积的证据 →</text><text x='76' y='62' text-anchor='end' font-size='11' style='fill:var(--ink-faint)'>相信程度</text><path d='M96,80 C200,104 300,132 560,148' fill='none' style='stroke:var(--azure)' stroke-width='2.4'/><circle cx='96' cy='80' r='5' style='fill:var(--azure)'/><text x='104' y='70' font-size='11.5' style='fill:var(--azure)'>本来就比较信的人</text><path d='M96,224 C200,208 300,176 560,156' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='2.4'/><circle cx='96' cy='224' r='5' style='fill:var(--cinnabar-pure)'/><text x='104' y='240' font-size='11.5' style='fill:var(--cinnabar-pure)'>本来很怀疑的人</text><circle cx='560' cy='148' r='4.4' style='fill:var(--azure)'/><circle cx='560' cy='156' r='4.4' style='fill:var(--cinnabar-pure)'/><text x='576' y='142' font-size='11.5' style='fill:var(--ink-soft)'>靠拢</text><path d='M96,236 L560,236' fill='none' style='stroke:var(--ink-faint)' stroke-width='2' stroke-dasharray='5 4'/><text x='320' y='232' font-size='11.5' style='fill:var(--ink-faint)'>把先验设成零的人：证据再多也纹丝不动</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "但这里有个例外，而且是硬性的例外：**如果有人把先验设成了零，那么任何证据都改变不了他。**因为零乘以任何倍率还是零。这在算式上是一目了然的，在现实里也一样——一个说「这件事绝无可能，我不需要看任何证据」的人，你确实没法用数据说服他。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "全章转折",
+      "items": [
+        "而这一点反过来也成立：**把先验设成 1（「这事我绝对确定」）的人，同样不可能被任何反面证据动摇。**贝叶斯给出的这个提醒很有分量——**「绝无可能」和「绝对确定」在结构上是同一种毛病**，它们都把自己挪出了推断的范围。留一点余地不是软弱，是让证据还有作用的余地。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "四、回头看 p 值"
+    },
+    {
+      "type": "p",
+      "text": "现在可以把这两章连起来了。上一章说 p 值不能回答「结论有多可信」，因为缺一环；这一章补上了那一环。"
+    },
+    {
+      "type": "p",
+      "text": "这意味着**同一个 p 值，在不同的场合含义完全不同**。一项检验一个高度可信的机制的实验，p=0.03 是有分量的；一项在几十个变量里乱翻、寻找任何相关的探索性研究，p=0.03 几乎什么也不说明——**因为后者的先验太低，而它做的检验太多。**"
+    },
+    {
+      "type": "p",
+      "text": "所以，看到一个显著结果时，值得多问一句：**这个假设，在做实验之前听起来靠谱吗？**如果一个结论在你听来本来就荒诞（某种颜色的袜子影响股市收益），那么就算它 p 值很漂亮，也更可能是一次多重比较的产物。**这不是拒绝证据，这是给证据一个恰当的权重。**"
+    },
+    {
+      "type": "h2",
+      "text": "五、它在日常判断里怎么用"
+    },
+    {
+      "type": "p",
+      "text": "贝叶斯听起来是个统计工具，但它最有用的地方其实是**改口的方式**。下面三个场合，是我认为最值得练的。"
+    },
+    {
+      "type": "p",
+      "text": "**第一，把「信不信」换成「信几成」。**日常争论之所以容易僵住，是因为大家都在用二元语言：信 / 不信、真 / 假、支持 / 反对。而贝叶斯的语言是连续的：「我原本觉得三成，看了这份材料觉得五成」。**这种说法有个好处——它让「改变一点」成为可能。**在二元语言里，改变意味着认输；在连续语言里，改变只是调了个数。"
+    },
+    {
+      "type": "p",
+      "text": "**第二，先问「如果这件事是假的，我会看到什么」。**这是把 p 值那一章和这一章接起来的关键动作。很多所谓的证据，在真和假两种情形下**看起来是一样的**——那它就没有提供任何倍率，无论它看上去多有说服力。「他成功了，因为他每天读书」——如果他没成功，他也可能每天读书；那这个证据的倍率接近 1，等于什么都没说。"
+    },
+    {
+      "type": "p",
+      "text": "**第三，注意起点是从哪里来的。**这是贝叶斯最容易被滥用的地方：**用一个凭空的先验去压证据**。「我不信」如果只是因为「我一向不信」，那不是先验，是成见。真正的先验应该说得出来源——基础发生率、同类事情的历史、机制上的可能性。**说不出来源的先验，至少要承认它可能是错的，因而该给证据更大的权重。**"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "打个比方。**体检报告上一个异常指标，和一个持续了三个月的症状，哪个更该让你担心？**按贝叶斯：症状把你的起点抬得高，因为有症状的人里患病比例本来就高；而一次体检异常发生在一个没有任何症状的人身上，起点极低——所以同样的异常值，在两个人身上意味着完全不同的事。**医生实际上就是这么想的**，只是他们不叫它贝叶斯。"
+      ]
+    },
+    {
+      "type": "pull",
+      "text": "真正该问的不是「你为什么不接受这个证据」，而是「你的起点为什么和我不一样」——分歧几乎总在那里。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本章为对原书第二部分（推断）中贝叶斯推断一章的原创消化与转述。",
+        "极小基数筛查的算术（万分之一目标、99% 灵敏度、1% 误标率）为按贝叶斯定理所作的示意计算，数值为整数近似。",
+        "「非同寻常的主张需要非同寻常的证据」一语流传甚广，常被归于卡尔·萨根；本文用它作贝叶斯思路的通俗对应，非原书用语。",
+        "关于先验主观性的争论（频率派与贝叶斯派之别）在统计学史上由来已久，本文只取与原书论述直接相关的部分。"
+      ]
+    }
+  ]
+}

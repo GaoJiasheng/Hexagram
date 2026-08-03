@@ -1,0 +1,197 @@
+{
+  "title": "民意、几何与「无中生有」：书的后半为什么忽然拐了个弯",
+  "subtitle": "多数人的意见可以自相矛盾；而数学每次遇到危机，最后都只是被扩大了",
+  "centralIdea": "读到后半你会发现这本书拐了个弯，从统计走进了逻辑、投票和几何。最有意思的一节叫「并不存在一个叫民意的东西」：同一批人可以多数支持削减总开支，同时在每一个具体项目上都多数反对削减——这不是虚伪，是加总本身的产物。更极端的是循环多数：三个选项两两对决，可以出现 A 胜 B、B 胜 C、C 又胜 A。既然多数意见可能自相矛盾，「人民想要什么」这句话就不总有确定含义；而由此还有一条更硬的结论——没有任何一套计票规则能同时满足所有看起来理所应当的公平条件。最后一章他讲数学自己的历史：放弃平行公理造出的新几何、悖论与不完备性——每一次危机都像要毁掉这门学问，结果每一次只是把它扩大了。他借这段历史反对天才神话。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "读到全书后半，你会明显感到它拐了个弯。前面都在讲数据、概率、检验，忽然就跳进了投票、逻辑和几何。这个转弯让不少读者掉队——**但如果知道他为什么要拐，这一部分其实是全书最有野心的一段。**"
+    },
+    {
+      "type": "p",
+      "text": "他要谈的是**「存在」**：有些我们天天挂在嘴边的东西，可能根本不存在；而有些我们以为不可能存在的东西，造出来了。"
+    },
+    {
+      "type": "h2",
+      "text": "一、并不存在一个叫「民意」的东西"
+    },
+    {
+      "type": "p",
+      "text": "先看一个真实的调查现象。同一批受访者："
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "多数人赞成**削减政府总开支**。",
+        "但问到具体项目时——教育、医疗、养老、基建、国防——**每一项都是多数人反对削减**。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "很容易把这读成「群众又要马儿跑又要马儿不吃草」。作者提醒：**这不一定是虚伪，它可能只是加总的产物。**"
+    },
+    {
+      "type": "p",
+      "text": "想想看：主张砍教育的人可能是一批，主张砍国防的是另一批，主张砍医保的是第三批。**每一批都不构成多数，但「主张砍点什么」的人加起来是多数。**于是「多数人赞成削减开支」和「每一项都不该砍」同时成立，**而且每个人的立场都是前后一致的。**不一致的不是人，是「多数意见」这个东西本身。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "每个人的主张都清清楚楚、前后一致；可把他们的意见加总之后，得到的却是一组自相矛盾的「多数意见」。矛盾不在人身上，在加总这个动作里。",
+      "svg": "<svg viewBox='0 0 660 276' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>三种人，三种主张，一个矛盾的「民意」</text><line x1='24' y1='42' x2='636' y2='42' style='stroke:var(--line)' stroke-width='1'/><text x='110' y='66' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>各占三分之一</text><text x='300' y='66' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>他主张砍</text><text x='500' y='66' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>他反对砍</text><line x1='24' y1='78' x2='636' y2='78' style='stroke:var(--line)' stroke-width='1'/><text x='110' y='106' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>甲组</text><text x='300' y='106' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>教育</text><text x='500' y='106' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>医疗 · 国防</text><line x1='24' y1='120' x2='636' y2='120' style='stroke:var(--line)' stroke-width='0.6'/><text x='110' y='148' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>乙组</text><text x='300' y='148' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>医疗</text><text x='500' y='148' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>教育 · 国防</text><line x1='24' y1='162' x2='636' y2='162' style='stroke:var(--line)' stroke-width='0.6'/><text x='110' y='190' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>丙组</text><text x='300' y='190' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>国防</text><text x='500' y='190' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>教育 · 医疗</text><line x1='24' y1='204' x2='636' y2='204' style='stroke:var(--line)' stroke-width='1'/><text x='330' y='232' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>「该砍点什么」：三组都赞成 → 多数赞成削减开支</text><text x='330' y='258' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>而每一项具体开支，都是三分之二反对削减</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "二、循环的多数"
+    },
+    {
+      "type": "p",
+      "text": "更极端的情形叫**循环多数**，它比上面那个还要违反直觉。"
+    },
+    {
+      "type": "p",
+      "text": "设想三个候选方案 A、B、C，三组人数相等的选民，各自的偏好顺序如下：甲组是 A>B>C，乙组是 B>C>A，丙组是 C>A>B。现在两两对决："
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**A 对 B**：甲组和丙组都更喜欢 A，三分之二胜出，**A 赢**。",
+        "**B 对 C**：甲组和乙组都更喜欢 B，三分之二胜出，**B 赢**。",
+        "**C 对 A**：乙组和丙组都更喜欢 C，三分之二胜出，**C 赢**。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**A 胜 B，B 胜 C，C 又胜 A。**每一次都是干干净净的多数，可合起来是一个转圈。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "每一场对决都是三分之二对三分之一，堂堂正正；可三场加起来是个圈。这时候问「多数人到底想要哪个」，这句话没有答案——不是没查清楚，是问题本身没有定义。",
+      "svg": "<svg viewBox='0 0 660 288' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>A 胜 B，B 胜 C，C 又胜 A</text><g><circle cx='330' cy='90' r='30' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.6'/><text x='330' y='97' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>A</text><circle cx='448' cy='210' r='30' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.6'/><text x='448' y='217' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>B</text><circle cx='212' cy='210' r='30' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure)' stroke-width='1.6'/><text x='212' y='217' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>C</text></g><path d='M352,110 L426,186' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='2.2' marker-end='url(#h1)'/><path d='M418,218 L244,218' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='2.2' marker-end='url(#h1)'/><path d='M234,186 L308,110' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='2.2' marker-end='url(#h1)'/><text x='412' y='142' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>2 : 1</text><text x='330' y='240' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>2 : 1</text><text x='244' y='142' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>2 : 1</text><rect x='40' y='60' width='140' height='96' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='110' y='84' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>三组人的偏好</text><text x='110' y='108' text-anchor='middle' font-size='12' style='fill:var(--ink)'>甲：A &gt; B &gt; C</text><text x='110' y='128' text-anchor='middle' font-size='12' style='fill:var(--ink)'>乙：B &gt; C &gt; A</text><text x='110' y='148' text-anchor='middle' font-size='12' style='fill:var(--ink)'>丙：C &gt; A &gt; B</text><text x='330' y='276' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>「多数人想要哪个」——这句话在这里没有答案</text><defs><marker id='h1' markerWidth='9' markerHeight='9' refX='7' refY='3.2' orient='auto'><path d='M0,0 L8,3.2 L0,6.4 z' style='fill:var(--cinnabar-pure)'/></marker></defs></svg>"
+    },
+    {
+      "type": "quote",
+      "original": "既然多数意见可能自相矛盾，「人民想要什么」这句话就不总是有确定含义。",
+      "translation": "这一节的核心。它不是在否定民主，而是在指出：把众人的偏好加总成一个「集体意志」，这个动作本身有它的数学限度。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "别读成犬儒",
+      "items": [
+        "这一节最容易被读成「所以民主没意义」。**那正是作者要防的读法。**他指出的不是民主无效，而是**「多数决」这个具体工具有它的限度**：它在两个选项之间工作得很好，在三个以上就可能失效。**认清工具的限度，是为了把工具用对，不是为了扔掉它。**这与全书对 p 值的态度完全一致——指出误用，不是取消工具。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "三、计票规则本身就是结论的一部分"
+    },
+    {
+      "type": "p",
+      "text": "顺着往下有一条更硬的结论：**同一批选票，换一套计票规则，可以选出不同的人。**"
+    },
+    {
+      "type": "p",
+      "text": "这在真实选举里发生过。简单多数制下，得票第一的人当选，哪怕他只有三成多的支持——如果反对他的七成人分散在两个相近的候选人身上，这个结果就出现了。为了修正这一点，有些地方改用排序投票、多轮淘汰之类的办法。可作者举了一个真实案例说明：**这些规则本身也会出现反常**——存在这样的情形，某位候选人如果被更多人喜欢一点，反而会因为淘汰顺序改变而落选。"
+    },
+    {
+      "type": "p",
+      "text": "这不是某套规则设计得不好。有一条被证明了的定理说明：**没有任何一套计票规则，能同时满足所有那些看起来理所应当的公平条件。**你只能选择放弃哪一条。"
+    },
+    {
+      "type": "p",
+      "text": "所以结论是：**选举规则不是中立的技术细节，它是结论的一部分。**争论「用哪套规则」不是程序问题，是实质问题——**这可能是这一部分对现实最有用的一句话。**"
+    },
+    {
+      "type": "p",
+      "text": "这一条其实可以直接搬进任何一个开会的房间。**一个五人小组投票选方案，用不同的方式征集意见，结论可以完全不同**：让大家各投一票选最喜欢的？让大家给每个方案打分求和？两两 PK 打擂台？先淘汰得票最少的再重投？这四种做法在同一批人身上，很可能选出四个不同的方案。"
+    },
+    {
+      "type": "p",
+      "text": "所以「我们民主决定」这句话是不完整的——**必须补上「怎么个民主法」**。而定规则的人（通常是主持会议的那个人）实际上已经参与了结论。这不是阴谋，是数学：**加总偏好这件事，本来就没有中立的做法。**"
+    },
+    {
+      "type": "h2",
+      "text": "四、无中生有的新宇宙"
+    },
+    {
+      "type": "p",
+      "text": "最后一章他掉头讲数学自己的历史，而且讲得相当动情。"
+    },
+    {
+      "type": "p",
+      "text": "两千多年里，欧几里得几何被当成绝对真理的样板：从几条不言自明的公理出发，一步步推出整座大厦。其中有一条**平行公理**——过直线外一点，有且只有一条平行线——总让人觉得不够「自明」，历代数学家都想把它从别的公理推出来，都失败了。"
+    },
+    {
+      "type": "p",
+      "text": "十九世纪，有人换了个思路：**不去证明它，而是干脆假设它不成立**，看看会推出什么。按常理，应该会推出矛盾。可结果没有——推出来的是**一套自洽的、与直觉不符的新几何**。那位年轻的数学家写信给父亲，说了一句后来非常有名的话：**他从无中创造了一个奇异的新宇宙。**"
+    },
+    {
+      "type": "p",
+      "text": "这件事的冲击力在当时难以想象。它意味着**几何不是唯一的**，意味着「不言自明的公理」也可以换，意味着数学不是在描述某个既定的真理，而是在**构造**。"
+    },
+    {
+      "type": "figure",
+      "ftype": "时间线",
+      "caption": "每一次危机看起来都要毁掉这门学问，结果每一次只是把它扩大了。这是他反对「天才神话」的证据：数学的进展不是靠灵感领受，是靠允许自己出错并且有办法改回来。",
+      "svg": "<svg viewBox='0 0 660 250' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>三次危机，三次扩大</text><line x1='60' y1='120' x2='612' y2='120' style='stroke:var(--line)' stroke-width='1.6'/><circle cx='140' cy='120' r='7' style='fill:var(--cinnabar-pure)'/><circle cx='330' cy='120' r='7' style='fill:var(--cinnabar-pure)'/><circle cx='520' cy='120' r='7' style='fill:var(--cinnabar-pure)'/><text x='140' y='72' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>放弃平行公理</text><text x='140' y='94' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>几何原来不止一种</text><text x='140' y='152' text-anchor='middle' font-size='11.5' style='fill:var(--azure)'>不是崩塌</text><text x='140' y='172' text-anchor='middle' font-size='11.5' style='fill:var(--azure)'>是多出一片天地</text><text x='330' y='72' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>集合论里的悖论</text><text x='330' y='94' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>地基上发现裂缝</text><text x='330' y='152' text-anchor='middle' font-size='11.5' style='fill:var(--azure)'>不是崩塌</text><text x='330' y='172' text-anchor='middle' font-size='11.5' style='fill:var(--azure)'>是把地基重新浇了一遍</text><text x='520' y='72' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>不完备性定理</text><text x='520' y='94' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>有些真话证不出来</text><text x='520' y='152' text-anchor='middle' font-size='11.5' style='fill:var(--azure)'>不是崩塌</text><text x='520' y='172' text-anchor='middle' font-size='11.5' style='fill:var(--azure)'>是知道了边界在哪</text><text x='330' y='222' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>一门允许自己出错、并且有办法把错改回来的手艺</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "后来数学又经历了两次类似的震动：集合论里冒出了自我指涉的悖论，动摇了整个地基；再后来是不完备性定理，证明了任何足够强的系统里都存在**真但证不出来**的命题。**每一次看上去都像要毁掉这门学问，结果每一次都只是把它扩大了。**"
+    },
+    {
+      "type": "p",
+      "text": "他讲这段历史，是为了反对一种流行的**天才神话**：以为数学是少数天赋异禀的人凭灵感领受的天启，普通人只能仰望。**这段历史给出的图景恰恰相反**——数学的进展来自一代代人试错、争论、发现漏洞、修补漏洞。它之所以可靠，不是因为从不出错，**是因为它有一套把错误暴露出来并改掉的办法。**"
+    },
+    {
+      "type": "p",
+      "text": "这一点跟全书的落点接上了：**「如何不出错」的意思，从来不是「永远正确」，而是「有办法知道自己错了」。**这对数学是这样，对一个人的判断也是这样。"
+    },
+    {
+      "type": "h2",
+      "text": "五、这一部分为什么值得读"
+    },
+    {
+      "type": "p",
+      "text": "客观地说，这是全书门槛最高、最容易被跳过的一部分。它跟前面几部分的「实用性」也差得远——你不会在下周的工作里用上非欧几何。那它凭什么留在这本书里？"
+    },
+    {
+      "type": "p",
+      "text": "我的理解是：**前面四个部分讲的都是「怎样不被骗」，这一部分讲的是「怎样承认自己可能是错的」——而后者才是前者的地基。**"
+    },
+    {
+      "type": "p",
+      "text": "你可以把前面所有的技巧都学会：问样本怎么来的、问曲线凭什么是直线、问 p 值到底说了什么。但如果心里那个「我这次肯定没错」的开关一直开着，这些技巧就只会被用来拆别人的论证，不会被用来拆自己的。**而这一部分讲的正是：连欧几里得几何这种两千年的确定性都被换掉过；连数学的地基都塌过又重浇过。**在这个背景下，一个人对自己的判断留几分余地，就不算什么难为情的事了。"
+    },
+    {
+      "type": "p",
+      "text": "第一部分「并不存在民意」也是同一个意思的另一面：**有些我们天天在用的概念，可能根本没有确定的所指。**「多数人的意见」如此，「公司的战略」「市场的看法」「大家都觉得」多半也如此。承认某些说法没有确定含义，比争论它是什么更有价值。"
+    },
+    {
+      "type": "callout",
+      "tone": "mute",
+      "label": "读不动就跳",
+      "items": [
+        "话虽如此，也不必勉强。这一部分里讲射影几何、纠错码、球堆积的那些段落，是作者自己最兴奋而读者最容易掉队的地方；跳过去不影响你从这本书里拿到的任何东西。**要是只读一节，就读「并不存在民意」那一节**——它最短，也最实用。"
+      ]
+    },
+    {
+      "type": "pull",
+      "text": "数学之所以可靠，不是因为它从不出错，是因为它有一套把错误暴露出来并改掉的办法。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本章为对原书第五部分（存在）的原创消化与转述。",
+        "「三个选项两两对决出现循环」即孔多塞悖论；「没有一套计票规则能同时满足全部合理公平条件」即阿罗不可能定理。",
+        "关于排序投票在真实选举中出现反常的案例，原书取自美国一次市长选举；本文只保留其结构，不复述具体人事。",
+        "「我从无中创造了一个奇异的新宇宙」出自匈牙利数学家鲍耶写给父亲的信，时间在十九世纪二十年代，说的是非欧几何。",
+        "集合论悖论与不完备性定理分别指罗素悖论与哥德尔不完备定理，本文只作直观转述，不涉及证明。"
+      ]
+    }
+  ]
+}

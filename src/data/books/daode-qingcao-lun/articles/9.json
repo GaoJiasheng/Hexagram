@@ -1,0 +1,180 @@
+{
+  "title": "所谓「斯密问题」",
+  "subtitle": "十九世纪德国学者提出的一个问题。今天基本判为伪问题——但比记住这个结论更有用的,是看清它当初是怎么被提出来的",
+  "centralIdea": "两本书的开场白摆在一起,像出自两个人:一本说人天性里总有些原则使他关心别人的命运,一本说别指望屠夫的仁慈。十九世纪一些德国学者由此提出所谓「亚当·斯密问题」,还有人猜他游历法国之后转变了。今天它基本被判为伪问题,但更值得看清的是它当初是怎么被提出来的——它不是从文本里冒出来的,是从一场学派之争里冒出来的:德国历史学派要批的是英国古典经济学那套利己人性论,把斯密立成祖师爷批起来最省力;而他们手边通行的多是这本书的早期版本,恰恰缺了后来把两本书焊到一起的内容。至于误读本身,出在一个词上:他们把「同情」读成了「仁慈」。可斯密的同情从来不是一种利他的动机,它是一套判断的机制,对自私与不自私的情感一视同仁地起作用——你完全可以同情一个守财奴的焦虑。这一条讲清楚,矛盾当场散架:两本书根本不在同一层上,一本讲人怎么判断,一本讲财富怎么生成。而最硬的证据是他自己写的:一七九〇年第六版卷首那则告白,明说他在这本书末尾许下的承诺已在《国富论》里部分兑现,剩下的法理学仍未放弃、只是年老力衰。一九七六年格拉斯哥版编者判定这是一个建立在无知与误解上的伪问题,此后基本无异议。不过伪问题背后有一个真问题,而且是斯密自己提出来的:商业社会会不会反过来侵蚀掉这本书所依赖的那些德性。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "**把两本书的开场白摆在一起,确实像出自两个人。**"
+    },
+    {
+      "type": "p",
+      "text": "**《道德情操论》第一句:**人无论被认为多么自私,天性里总有些原则**使他关心别人的命运**,把别人的幸福看成自己的事——尽管他从中除了看着舒服之外,什么也得不到。"
+    },
+    {
+      "type": "p",
+      "text": "**《国富论》第一篇第二章:**我们的晚餐并非来自屠夫、酿酒师或面包师的恩惠,**而是出于他们对自身利益的考虑。**"
+    },
+    {
+      "type": "p",
+      "text": "**十九世纪的一些德国学者由此提出了一个问题**,在德语学界流行到有了专名:**「亚当·斯密问题」。**有人甚至给出了一个具体的剧本——**他游历法国、接触了那里的思想之后,转变了。**"
+    },
+    {
+      "type": "p",
+      "text": "**今天这个问题基本被判为伪问题。**但只记住这个结论意义不大;**真正有用的,是看清它当初是怎么被造出来的。**"
+    },
+    { "type": "h2", "text": "一、它不是从文本里冒出来的" },
+    {
+      "type": "p",
+      "text": "**这个问题的诞生,需要三个条件同时具备,而当时它们确实都具备了。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "三个条件缺一不可。要留意最左边那一格:一个学派需要一个靶子,而把对手的祖师爷立成「利己人性论」的化身,是最省力的打法。理解了这一层,就知道为什么这个问题在德国学界流行、而在英国几乎没人当回事。",
+      "svg": "<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg'><text x='320' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:16px;font-weight:bold;fill:var(--ink)'>一个问题被造出来的三个条件</text><rect x='26' y='50' width='186' height='142' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><rect x='226' y='50' width='186' height='142' rx='6' style='fill:none;stroke:var(--line);stroke-width:1.1'/><rect x='426' y='50' width='188' height='142' rx='6' style='fill:none;stroke:var(--line);stroke-width:1.1'/><text x='119' y='78' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>一 · 需要一个靶子</text><text x='319' y='78' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>二 · 一个好剧本</text><text x='520' y='78' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>三 · 手边的版本</text><text x='119' y='106' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>德国历史学派要批的是</text><text x='119' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>英国古典经济学</text><text x='319' y='106' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>「他去法国之后</text><text x='319' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>就变了个人」</text><text x='520' y='106' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>通行的多是早期版本</text><text x='520' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>缺了第六版新增的部分</text><text x='119' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>把祖师爷立成</text><text x='119' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar-pure)'>利己人性论的化身</text><text x='319' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>时间上对得太好</text><text x='319' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>一七六四—六六在法国</text><text x='520' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>而恰恰是那部分</text><text x='520' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>把两本书焊在了一起</text><text x='320' y='240' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>三个条件缺一不可,而当时它们确实都在</text><text x='320' y='266' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--cinnabar-pure)'>所以这个问题在德国学界流行,在英国几乎没人当回事</text><text x='320' y='290' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>一个问题被提出的动机,常常比它的答案更能说明问题</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**关于那个剧本,还有一个尴尬:送他去法国的,正是这本据说被他后来抛弃的书。**当年是一位财政大臣读了《道德情操论》,**才聘他去做家庭教师、带学生游历欧洲的。**——**如果他在那趟旅行里改了主意,那真是一次代价高昂的巧合。**"
+    },
+    { "type": "h2", "text": "二、误读出在一个词上" },
+    {
+      "type": "p",
+      "text": "**现在说这个问题真正的病根。它出在一个词上:他们把「同情」读成了「仁慈」。**"
+    },
+    {
+      "type": "p",
+      "text": "**如果《道德情操论》讲的是「人本性仁慈」,《国富论》讲的是「人本性自私」——那当然矛盾。**这两句话没法同时成立。"
+    },
+    {
+      "type": "p",
+      "text": "**可斯密的同情从来不是一种利他的动机。**第二章已经讲透了:**它是一套判断的机制**,靠想象中的位置互换运转,**对任何情绪都一视同仁地起作用。**"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "一句就能拆掉",
+      "items": [
+        "**你完全可以同情一个守财奴对钱的焦虑。**你未必赞成他,但你能设想那种「一想到要花钱就心疼」的感觉——**这台机器照样在转。**",
+        "**所以它根本不站队。**它不推着你去行善,**它只让你判断得出「这样合不合适」。**一台不站队的机器,和一本讲财富如何生成的书,**在逻辑上没有任何冲突。**"
+      ]
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "两本书从来不在同一层上。上一层讲的是人怎么判断(包括怎么判断自己),下一层讲的是一群人凑在一起时财富怎么生出来。把它们摆成对立的两面,等于把一栋房子的地基和二楼放在天平的两端比高低。",
+      "svg": "<svg viewBox='0 0 640 290' xmlns='http://www.w3.org/2000/svg'><text x='320' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:16px;font-weight:bold;fill:var(--ink)'>它们不在同一层</text><rect x='90' y='48' width='460' height='76' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='320' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>《道德情操论》· 一七五九</text><text x='320' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>人怎么判断别人,以及怎么判断自己</text><text x='320' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>同情 · 合宜性 · 公正的旁观者 · 正义与仁慈 · 三种德性</text><rect x='90' y='150' width='460' height='76' rx='6' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='320' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>《国富论》· 一七七六</text><text x='320' y='202' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>一群人凑在一起时,财富怎么生出来</text><text x='320' y='220' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>分工 · 交换 · 市场范围 · 价格 · 资本 · 政府的三项义务</text><path d='M320,124 L320,150' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><path d='M315,142 L320,151 L325,142' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='320' y='262' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>把它们摆成对立的两面,等于把地基和二楼放上天平比高低</text><text x='320' y='284' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>顺带:那句「别指望屠夫的仁慈」,同样的意思在一七五九年就写过一次了</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**这个误会今天仍在流通,只是换了一层皮。**常听见的说法是:**「经济学假设人是自私的」**——然后紧跟一句「所以经济学看人看得太窄」。**这两句话合起来,几乎就是十九世纪那个误会的现代版:把一个用来做分析的假设,当成了对人性的断言。**"
+    },
+    {
+      "type": "p",
+      "text": "**斯密本人从来没有做过这个断言。**他笔下的人有虚荣、有同情、会攀比、会自欺、会因为高估自己的运气而去买彩票,**还会因为一份不该得的表扬而不安。**——**要在他的书里找一个「只会算计的经济人」,是找不到的;那是后人从一段话里抽象出来的模型。**"
+    },
+    { "type": "h2", "text": "三、最硬的证据是他自己写的" },
+    {
+      "type": "p",
+      "text": "**驳倒「转变说」最常被引用的证据是时间线:**这本书他改了六版,**最后一版在《国富论》出版十四年之后**——他有的是时间改口,却没有。"
+    },
+    {
+      "type": "p",
+      "text": "**但还有一条比时间线更硬,而且很少有人提:一七九〇年第六版的卷首,斯密加了一则告白。**"
+    },
+    {
+      "type": "quote",
+      "original": "在本书第一版的末尾,我曾说过要写一部关于法律与治理之一般原理的著作。",
+      "translation": "第六版卷首告白的开头。这是他一七五九年就许下的承诺,三十一年间每一版都留着。接下来的那一句,把两本书直接拴到了一起。"
+    },
+    {
+      "type": "quote",
+      "original": "在《国民财富的性质和原因的研究》中,我已部分履行了这一诺言——至少在治安、岁入与军备方面。",
+      "translation": "同一则告白。白纸黑字:那本讲经济的书,是这本讲道德的书许下的承诺的一部分。他还接着说,关于法理学的其余部分他仍未完全放弃,只是年事已高,恐难如愿。写完这则告白后不多久,他就去世了。"
+    },
+    {
+      "type": "p",
+      "text": "**请体会这条证据的分量。**它不是后人的推断,不是从文本里推出来的暗示——**是作者本人在临终那一年,亲手把两本书写进了同一个计划。**"
+    },
+    {
+      "type": "pull",
+      "text": "他不是没来得及澄清;他在最后一版的第一页就澄清了,只是很少有人翻到那一页。"
+    },
+    { "type": "h2", "text": "四、几条旁证" },
+    {
+      "type": "p",
+      "text": "**除了那则告白,还有几件事顺着摆一摆,「两个斯密」就更站不住了。**"
+    },
+    {
+      "type": "table",
+      "caption": "所谓「温情的那本」和「冷酷的那本」,其实两边都各有两种句子。这不是他自相矛盾,而是他本来就在一个个具体问题上具体判断——摘句的人各取所需罢了。要留意最后一行:那句最能证明他「冷酷」的话,一七五九年就写过了,比《国富论》早十七年。",
+      "head": ["", "《道德情操论》", "《国富论》"],
+      "rows": [
+        ["被当作「温情」的", "人天性里总有些原则使他关心别人的命运", "占绝大多数的人陷于贫困,不算繁荣幸福的社会"],
+        ["被当作「冷酷」的", "**陌生人可以像商人之间那样相处**", "别指望屠夫、酿酒师、面包师的仁慈"],
+        ["对财富的态度", "钦羡富贵、鄙视贫贱是道德情感败坏的最大原因", "改善自身境况的愿望,从生到死一刻未停"],
+        ["对商人的态度", "体系中人把活人当棋子摆布", "来自这个阶级的立法建议要以最猜疑的态度审查"],
+        ["写作时间", "**一七五九**", "一七七六 —— 晚十七年"]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**最要紧的一条在最后一行。**那句最常被拿来证明斯密冷酷的意思——**「陌生人之间不必靠感情,靠有用就够了」——一七五九年就写在这本讲同情的书里。**如果这是一次「转变」,**那他在写那本讲同情的书时就已经转变了。**"
+    },
+    { "type": "h2", "text": "五、一九七六年的定论" },
+    {
+      "type": "p",
+      "text": "**这场争论的收尾发生在一九七六年——《国富论》出版两百周年。**当年出版的格拉斯哥版斯密全集,**编者在《道德情操论》的长篇导论里对这个问题下了明确的判词:它建立在无知与误解之上。**"
+    },
+    {
+      "type": "p",
+      "text": "**「无知」指的是不了解修订史与文本的实际内容**(尤其是第六版的新增部分与那则告白);**「误解」指的就是把同情当成了仁慈。**——**此后学界基本无异议**,这个题目从「一个待解的难题」变成了「一段值得研究的接受史」。"
+    },
+    {
+      "type": "p",
+      "text": "**不过学界结案,不等于误会消失。**它今天仍然顽固,原因很朴素:**这两本书的读者本来就是两拨人。**读经济学的很少去读道德哲学,**读道德哲学的又很少关心分工与价格**;而《国富论》的名气比这本大得多,**多数人对斯密的全部印象,来自一本他们也没通读过的书里的一句话。**"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "三道检查",
+      "items": [
+        "**下次再看见有人引斯密,可以过三道检查。**第一:**这句话出自哪本书、哪一卷?**——说不出来的,基本是在借名头。",
+        "**第二:上下文在谈什么问题?**「看不见的手」谈的是关税与分配,不是「市场万能」;「别指望屠夫的仁慈」谈的是交换的机制,不是「人应该自私」。",
+        "**第三:这是描述还是主张?**斯密常常先说「事情就是这么运转的」,再说「所以别去拦它」——**前一句是观察,后一句是政策建议,两句要分别评价。**"
+      ]
+    },
+    { "type": "h2", "text": "六、伪问题背后的真问题" },
+    {
+      "type": "p",
+      "text": "**这一章不该停在「伪问题」三个字上,因为它背后确实压着一个真问题——而且是斯密自己提出来的。**"
+    },
+    {
+      "type": "p",
+      "text": "**真问题不是「两本书矛不矛盾」,而是:那本书描述的那套秩序,会不会反过来侵蚀掉这本书所依赖的那些品质?**"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**斯密自己在《国富论》第五篇里写下了第一块碎片:**分工使人多产,可**一个终身只做几个简单动作的人,理解力会停止发展**——他因此主张国家出钱办小学。**这是他亲手写下的、关于商业社会代价的一笔账。**",
+        "**第二块碎片就在这本书里,而且是他晚年新加的:**钦羡富贵、鄙视贫贱**是道德情感败坏的最大最普遍的原因。**一个把财富当作被看见的通货的社会,**恰恰最容易把尊敬按财产来分配。**",
+        "**两块碎片指向同一个问题:**商业社会需要审慎、守约、有自制的人才转得动;**可它同时又在训练人去追逐排场、崇拜富贵。**——**它会不会把自己的地基吃掉?**"
+      ]
+    },
+    {
+      "type": "figure",
+      "ftype": "循环图",
+      "caption": "伪问题散架之后剩下的那个真问题,是一个循环:这套秩序需要某些品质才转得动,而它运转起来又在消耗那些品质。斯密给了三样对冲的东西,但他没有说这三样够不够——这是他留给后人的题目,不是他的疏漏。",
+      "svg": "<svg viewBox='0 0 640 320' xmlns='http://www.w3.org/2000/svg'><text x='320' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:16px;font-weight:bold;fill:var(--ink)'>一个他自己提出、没有答完的问题</text><rect x='60' y='52' width='220' height='60' rx='6' style='fill:none;stroke:var(--line);stroke-width:1.1'/><text x='170' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>商业社会要转得动,需要</text><text x='170' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>审慎 · 守约 · 自制</text><rect x='360' y='52' width='220' height='60' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='470' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>可它运转起来,又在训练</text><text x='470' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>攀比 · 排场 · 崇拜富贵</text><path d='M280,70 L356,70' style='fill:none;stroke:var(--ink-faint);stroke-width:1.1'/><path d='M348,65 L357,70 L348,75' style='fill:none;stroke:var(--ink-faint);stroke-width:1.1'/><path d='M356,96 L280,96' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2'/><path d='M288,91 L279,96 L288,101' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2'/><text x='320' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>它会不会把自己的地基吃掉?</text><text x='320' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>他给的三样对冲</text><rect x='34' y='196' width='180' height='70' rx='5' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='230' y='196' width='180' height='70' rx='5' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='426' y='196' width='180' height='70' rx='5' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='124' y='220' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>国民教育</text><text x='320' y='220' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>司法与竞争</text><text x='516' y='220' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>胸中那个看客</text><text x='124' y='244' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>补上分工吃掉的那部分</text><text x='320' y='244' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>不让人靠损人得利</text><text x='516' y='244' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>不让人只求被赞美</text><text x='124' y='260' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>《国富论》第五篇</text><text x='320' y='260' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>两本书都讲</text><text x='516' y='260' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>这本书第三卷</text><text x='320' y='300' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--cinnabar-pure)'>够不够,他没有说死——这是题目,不是疏漏</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**斯密没有完整回答这个问题。**他给的对冲手段是零散的:**国民教育**(补上分工吃掉的那部分)、**司法与竞争**(不让人靠损人得利)、以及**心里那个不偏不倚的看客**。至于这些够不够,**他没有说死。**"
+    },
+    {
+      "type": "p",
+      "text": "**而这恰恰是今天把两本书对着读最有意思的入口。**——**不是去数他有没有前后矛盾,而是接着他没答完的那个问题往下想。**这个问题两百多年来没有过期,**反而越来越像一个当下的问题。**"
+    }
+  ]
+}

@@ -1,0 +1,370 @@
+{
+  "title": "白话《魔鬼数学》· 全书总览",
+  "subtitle": "原名叫「如何不出错」——这不是一本教你算的书，是一本教你别算错方向的书。",
+  "centralIdea": "这本书的中译名是个误会。原名 How Not to Be Wrong，直译「如何不出错」，全书从头到尾在做同一件事：把人们在用数字讲道理时最常掉进去的几个坑，一个一个挖出来给你看。开篇那个例子已经把全书的方法交代完了——二战时军方数返航轰炸机身上的弹孔，想给挨弹最多的部位加装甲，统计学家沃德说，该加的是**没有**弹孔的地方，因为打中那里的飞机根本没飞回来。你数的是幸存者。接下来的每一章都是这句话的变奏：以为「更多总是更好」，其实偷偷假设了一条直线（曲线不是直线，这一点一旦承认，争论的问题就换了）；看排行榜上小地方总占两头，以为那里有玄机，其实只是分母太小；看到极端表现之后回落，以为是自己批评有效，其实是回归均值；把 p 值读成「假设为真的概率」，把「不显著」读成「没有效应」；一门完全无效的学问，只要期刊只发阳性结果，照样能攒出一份漂亮的文献。而全书真正的落点在最后：数学能告诉你概率是多少，但**该做什么取决于你在乎什么**——那一段它交不出答案，也不该交。它的写法是随笔式的、跳跃的、爱开玩笑的，不成体系；读它不是为了学会算，是为了在别人拿数字压你的时候，知道该问哪三句话。",
+  "featured": true,
+  "hero": {
+    "badge": "全书 · 核心",
+    "headline": "军方数着返航飞机的弹孔，要给挨弹最多的地方加装甲；统计学家说，该加的是没有弹孔的地方——因为打中那里的飞机没有回来。",
+    "tagline": "全书讲的不是怎么算题，是数学直觉在哪几处会系统地骗人；而算完之后该做什么，取决于你在乎什么——那一段数学替你决定不了。"
+  },
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "先说中译名。这本书原名叫 **How Not to Be Wrong**，直译过来是「如何不出错」，副题是「数学思维的力量」。中文版封面上那两个字「魔鬼」，借的是几年前《魔鬼经济学》的势——两本书没有任何关系，作者不同，主题也不同。这个误会值得先摘掉，因为它会让人以为这是一本讲奇闻怪谈的书。它不是。它是一本讲**防错**的书：把人们在用数字讲道理时最常踩的几个坑挖出来，一个一个指给你看。"
+    },
+    {
+      "type": "h2",
+      "text": "一、先说清楚，这是一本什么书"
+    },
+    {
+      "type": "p",
+      "text": "作者乔丹·艾伦伯格是威斯康星大学麦迪逊分校的数学教授，专业是数论——那是数学里最抽象、最不像会跟日常生活打交道的一支。但他同时是个写小说的人，也长期给大众媒体写数学专栏。这个双重身份决定了这本书的语气：**例子全部来自真实的公共争论**（税收、肥胖率、彩票、选举、医学论文），**笔调却是专栏作家的**，随时准备开个玩笑，随时准备把一个数学史上的段子插进来。"
+    },
+    {
+      "type": "p",
+      "text": "他给这本书设的起点，是每个数学老师都被问过的那句话：**「我这辈子什么时候会用到这个？」**他的回答很实在：那些具体的题目你确实一辈子也用不上一次。但他打了个比方——球员每天练折返跑，比赛里一次折返跑都用不上，可没练过的人跑不动全场。数学课上那些看起来无用的练习，练的是同一种东西：**一种判断「这话站不站得住」的本能**。"
+    },
+    {
+      "type": "p",
+      "text": "他还给数学下了一个定义，这个定义是理解全书的钥匙：**数学是常识的延伸**。这句话的句式借自克劳塞维茨那句著名的「战争是政治以另一种手段的延续」（站内《战争论》讲的就是那本）。它有两层意思。第一层是安慰：数学不是外星语言，它跟你的常识是一路的，所以一个数学结论如果与常识彻底相反、又说不出所以然，多半是哪里错了。第二层才是狠的：**常识在几个特定的地方会系统性地失灵**，而数学正是为了在那几处把常识接上一截才存在的。全书要做的，就是把那几处一一点名。"
+    },
+    {
+      "type": "callout",
+      "tone": "mute",
+      "label": "版本与书名",
+      "items": [
+        "原书二〇一四年出版，中译本书名《魔鬼数学：大数据时代，数学思维的力量》。副题里的「大数据时代」也是中文版加的，原副题只是「数学思维的力量」。**读的时候把这两处营销痕迹先摘掉**，你面对的是一本正经的防错手册。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "二、全书的第一课：弹孔在哪里"
+    },
+    {
+      "type": "p",
+      "text": "开篇讲的是二战期间的一件真事。当时美军在哥伦比亚大学设了一个统计研究小组，把一批顶尖数学家集中起来，替军方算各种作战问题。空军拿来一个难题：轰炸机被打下来太多，想加装甲；可装甲很重，加多了飞不动、载弹少，所以只能加在最要紧的部位。他们统计了返航飞机身上的弹孔分布，结果很清楚——**机身和机翼上弹孔密密麻麻，发动机部位反而很少**。军方的结论顺理成章：装甲加在机身上。"
+    },
+    {
+      "type": "p",
+      "text": "小组里有位叫亚伯拉罕·沃德的统计学家，给了一个相反的答案：**装甲该加在没有弹孔的地方，也就是发动机上。**"
+    },
+    {
+      "type": "p",
+      "text": "理由一说就懂，但没人先想到。高射炮的弹片不会挑地方落，打在飞机各处的概率本该差不多。既然返航的飞机上发动机部位弹孔那么少，那些打中发动机的弹片去哪了？答案是：**它们打中的飞机没有回来。**你统计的从来不是「所有中弹的飞机」，你统计的是「中弹之后还飞得回来的飞机」。数据里的那块空白不是「那里没事」，而是「那里出事的样本已经被删掉了」。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "同一张弹孔分布图，两种读法。军方读到的是「哪里挨打最多」，沃德读到的是「哪里挨打之后回不来」。差别不在数据，在你有没有问「这批样本是怎么被选出来的」。",
+      "svg": "<svg viewBox='0 0 660 306' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>返航飞机的弹孔分布</text><g transform='translate(0,14)'><rect x='150' y='58' width='24' height='170' rx='12' style='fill:var(--ink-faint)' opacity='0.22'/><polygon points='72,148 148,112 176,112 252,148 252,160 176,138 148,138 72,160' style='fill:var(--ink-faint)' opacity='0.22'/><polygon points='114,214 148,196 176,196 210,214 210,222 176,208 148,208 114,222' style='fill:var(--ink-faint)' opacity='0.22'/><g style='fill:var(--ink)'><circle cx='84' cy='155' r='3'/><circle cx='96' cy='150' r='2.4'/><circle cx='108' cy='156' r='2.6'/><circle cx='140' cy='125' r='3'/><circle cx='158' cy='130' r='2.4'/><circle cx='186' cy='126' r='2.8'/><circle cx='230' cy='152' r='3'/><circle cx='242' cy='156' r='2.4'/><circle cx='218' cy='148' r='2.4'/><circle cx='156' cy='90' r='2.6'/><circle cx='166' cy='108' r='2.2'/><circle cx='158' cy='172' r='2.8'/><circle cx='166' cy='188' r='2.4'/><circle cx='156' cy='206' r='2.6'/><circle cx='128' cy='218' r='2.4'/><circle cx='196' cy='218' r='2.2'/></g><circle cx='120' cy='136' r='15' style='fill:var(--cinnabar-pure)' opacity='0.14'/><circle cx='120' cy='136' r='15' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='2' stroke-dasharray='4 3.4'/><circle cx='204' cy='136' r='15' style='fill:var(--cinnabar-pure)' opacity='0.14'/><circle cx='204' cy='136' r='15' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='2' stroke-dasharray='4 3.4'/></g><line x1='300' y1='58' x2='300' y2='268' style='stroke:var(--line)' stroke-width='1.2'/><g><rect x='330' y='72' width='296' height='72' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='346' y='96' font-size='13' font-weight='bold' style='fill:var(--ink-soft)'>军方的读法</text><text x='346' y='118' font-size='12.5' style='fill:var(--ink)'>机身弹孔最多 → 给机身加装甲</text><text x='346' y='136' font-size='11.5' style='fill:var(--ink-faint)'>（把「看见的」当成「全部的」）</text><rect x='330' y='166' width='296' height='86' rx='8' style='fill:var(--cinnabar-pure)' opacity='0.08'/><rect x='330' y='166' width='296' height='86' rx='8' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='346' y='190' font-size='13' font-weight='bold' style='fill:var(--cinnabar-pure)'>沃德的读法</text><text x='346' y='212' font-size='12.5' style='fill:var(--ink)'>发动机弹孔最少 → 给发动机加装甲</text><text x='346' y='232' font-size='11.5' style='fill:var(--ink-soft)'>打中那里的飞机，根本没有回来</text><text x='346' y='248' font-size='11.5' style='fill:var(--ink-faint)'>（空白 ≠ 安全，空白 = 样本被删掉了）</text></g></svg>"
+    },
+    {
+      "type": "quote",
+      "original": "装甲不该加在有弹孔的地方，该加在没有弹孔的地方。",
+      "translation": "全书第一课的一句话版本。它的分量不在这句结论，在那个动作——面对一份数据，先问「这批样本是怎么活到我眼前来的」。"
+    },
+    {
+      "type": "p",
+      "text": "这一课今天有个通俗的名字叫**幸存者偏差**。它的当代版本随处可见：「成功的人都在凌晨四点起床」——因为凌晨四点起床然后失败的人没有人来采访；「这只基金过去十年年化 20%」——因为亏光清盘的那些基金早就从排行榜上消失了；「这套创业方法论被验证有效」——因为样本里没有死掉的公司。**该问的那句话很短：这份名单是怎么来的，谁被删掉了？**"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "留意用字",
+      "items": [
+        "沃德关于飞机易损性的技术备忘录是真的，方法也确实基于「返航飞机的损伤分布」这一思路。但**流传最广的那个版本——会议室里军官争辩、沃德一句话点醒全场——是后来的演绎**，不是当时的记录。这本书讲的是故事的版本，你读的时候心里有个数：结论站得住，情节是修饰过的。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "三、线性：知道曲线不是直线，结论就已经变了"
+    },
+    {
+      "type": "p",
+      "text": "全书第一部分讲「线性」，也就是**把不是直线的关系当成直线**。这个毛病最常见的形式是一句我们天天在说的话：「更多总是更好」。"
+    },
+    {
+      "type": "p",
+      "text": "他举的例子是一场关于福利国家的争论。一方说：别学瑞典，福利越高越拖垮经济。另一方反驳：可瑞典自己这些年也在削减福利、往市场化的方向走啊。**这两句话看起来针锋相对，其实可以同时成立**——只要「福利水平」和「经济繁荣」之间不是一条直线，而是一条中间有峰的曲线。那么福利过低的国家该往上加，福利过高的国家该往下减，两边都在朝着峰顶走，谁也没有自相矛盾。"
+    },
+    {
+      "type": "p",
+      "text": "这就是他要传达的那个动作：**一旦你承认这条关系可能是弯的，争论的题目就换了**。原来吵的是「福利该多还是该少」，现在吵的是「我们现在站在峰的哪一侧」。后者是个实证问题——可以查数据、可以估算；前者是个立场问题，吵一百年也吵不出结果。**知道曲线不是直线，本身就已经改变了结论。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "左边那条直线不是谁明说的假设，是默认。一旦改成右边这条曲线，两个看似对立的主张就都能安放：一个在往上走，一个在往回走，方向相反，目标相同。",
+      "svg": "<svg viewBox='0 0 660 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>「更多总是更好」背后的那条线</text><text x='166' y='52' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--ink-soft)'>默认的假设：直线</text><line x1='56' y1='250' x2='286' y2='250' style='stroke:var(--line)' stroke-width='1.4'/><line x1='56' y1='250' x2='56' y2='72' style='stroke:var(--line)' stroke-width='1.4'/><line x1='56' y1='250' x2='276' y2='84' style='stroke:var(--ink-faint)' stroke-width='2.4'/><text x='166' y='272' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>投入 / 力度 →</text><text x='236' y='114' font-size='11.5' style='fill:var(--ink-soft)'>越多越好</text><text x='494' y='52' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar-pure)'>实际的形状：有峰的曲线</text><line x1='384' y1='250' x2='614' y2='250' style='stroke:var(--line)' stroke-width='1.4'/><line x1='384' y1='250' x2='384' y2='72' style='stroke:var(--line)' stroke-width='1.4'/><path d='M384,240 C440,240 460,96 499,96 C538,96 558,240 614,244' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='2.6'/><line x1='499' y1='96' x2='499' y2='250' style='stroke:var(--line)' stroke-width='1' stroke-dasharray='3 4'/><circle cx='499' cy='96' r='4.6' style='fill:var(--cinnabar-pure)'/><text x='499' y='84' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar-pure)'>最优点</text><path d='M418,208 L452,178' fill='none' style='stroke:var(--azure)' stroke-width='2' marker-end='url(#ar1)'/><path d='M580,206 L546,176' fill='none' style='stroke:var(--azure)' stroke-width='2' marker-end='url(#ar1)'/><defs><marker id='ar1' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L7,3 L0,6 z' style='fill:var(--azure)'/></marker></defs><text x='414' y='230' text-anchor='middle' font-size='11.5' style='fill:var(--azure)'>该加</text><text x='586' y='228' text-anchor='middle' font-size='11.5' style='fill:var(--azure)'>该减</text><text x='499' y='276' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>两边都朝峰顶走，并不矛盾</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "同一部分里还有一个更有名的例子：**拉弗曲线**。税率定在 0%，政府一分钱收不到；税率定在 100%，没人愿意干活，政府还是一分钱收不到。所以从 0 到 100 的中间，一定存在一个税收总额最大的点。这个推理无可辩驳——但它**什么政策也没证明**。据说这条曲线当年是在餐巾纸上画给两位官员看的，后来被反复引用为「减税能增加税收」的依据。可曲线的存在只说明有个峰，它没说峰在哪儿，更没说我们现在站在峰的左边还是右边。**「减税会增收」只有在你已经处于峰的右侧时才成立，而那是一个要靠数据回答的实证问题，不是靠一张示意图。**这是全书里最典型的一次「图形冒充证据」。"
+    },
+    {
+      "type": "p",
+      "text": "为什么直线这么难摆脱？他给了一个来自微积分的解释，很漂亮：**任何光滑的曲线，放得足够近看都是直的。**这正是微积分的立身之本。而人的全部经验都是局部的——你只见过自己生活的这一小段，在这一小段里关系确实近似是直线，于是「按现在的斜率一路推下去」成了最自然的想法。**局部是直的，全局是弯的**——这句话可以当成第一部分的题词。"
+    },
+    {
+      "type": "p",
+      "text": "把直线往前推得太远，会推出很好笑的结论。他举了一项关于肥胖率的研究：按当时超重人口比例的上升趋势线性外推，得出「到本世纪四十年代，美国成年人将全部超重」。**直线不知道 100% 是个天花板**。他还反过来玩了一次：拿同一批数据点用一条抛物线去拟合，往过去推，能算出上个世纪某一年「负数个人超重」。荒唐是故意的——荒唐正是要说明，**外推的可信度不取决于拟合得多好看，取决于你有没有理由相信这个形状在数据之外还成立**。"
+    },
+    {
+      "type": "h2",
+      "text": "四、小数字：极端值总出在小地方"
+    },
+    {
+      "type": "p",
+      "text": "第二个坑跟第一个一样朴素，但更常被拿来做决策。问题是这样的：按人口比率统计某种罕见病的发病率，哪个州最高？答案是一个人口很少的小州。哪个州最低？答案是另一个人口很少的小州。"
+    },
+    {
+      "type": "p",
+      "text": "这里面没有任何玄机。**分母越小，比率越容易走极端**。抛十次硬币，出现八次正面不算稀奇；抛一万次出现八千次正面，你就该去查那枚硬币了。大数定律说的是「样本越多，比率越靠近真实值」，而它的另一面——**样本越少，比率越可以随便乱跳**——却常常被人忘掉。"
+    },
+    {
+      "type": "p",
+      "text": "这个误读是要花钱的。有一段时间，教育研究者统计发现成绩最好的学校普遍规模较小，于是有大笔资金投向「把大学校拆成小学校」。可只要再看一眼榜尾就会发现：**成绩最差的学校也普遍规模较小**。小学校的成绩不是更高，是更散。把「方差大」读成了「均值高」，是这一类误读里最贵的一种——它能推动一整轮改革。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "同一个真实水平，样本量不同，观测到的比率散布天差地别。榜首榜尾被小样本包场，不是因为它们特别，是因为它们晃得厉害。",
+      "svg": "<svg viewBox='0 0 660 268' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>样本越小，越容易冲到两头</text><line x1='330' y1='50' x2='330' y2='230' style='stroke:var(--cinnabar-pure)' stroke-width='1.4' stroke-dasharray='4 4'/><text x='330' y='248' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar-pure)'>真实水平</text><text x='96' y='86' text-anchor='end' font-size='12.5' style='fill:var(--ink-soft)'>小地方</text><text x='96' y='102' text-anchor='end' font-size='11' style='fill:var(--ink-faint)'>样本少</text><line x1='110' y1='84' x2='560' y2='84' style='stroke:var(--line)' stroke-width='1'/><g style='fill:var(--ink)'><circle cx='128' cy='84' r='4'/><circle cx='188' cy='84' r='4'/><circle cx='262' cy='84' r='4'/><circle cx='356' cy='84' r='4'/><circle cx='430' cy='84' r='4'/><circle cx='512' cy='84' r='4'/><circle cx='548' cy='84' r='4'/></g><text x='96' y='150' text-anchor='end' font-size='12.5' style='fill:var(--ink-soft)'>中等</text><line x1='110' y1='148' x2='560' y2='148' style='stroke:var(--line)' stroke-width='1'/><g style='fill:var(--ink)'><circle cx='268' cy='148' r='4'/><circle cx='300' cy='148' r='4'/><circle cx='322' cy='148' r='4'/><circle cx='344' cy='148' r='4'/><circle cx='374' cy='148' r='4'/><circle cx='402' cy='148' r='4'/></g><text x='96' y='214' text-anchor='end' font-size='12.5' style='fill:var(--ink-soft)'>大地方</text><text x='96' y='230' text-anchor='end' font-size='11' style='fill:var(--ink-faint)'>样本多</text><line x1='110' y1='212' x2='560' y2='212' style='stroke:var(--line)' stroke-width='1'/><g style='fill:var(--ink)'><circle cx='312' cy='212' r='4'/><circle cx='324' cy='212' r='4'/><circle cx='336' cy='212' r='4'/><circle cx='346' cy='212' r='4'/></g><text x='128' y='68' text-anchor='middle' font-size='11' style='fill:var(--cinnabar-pure)'>榜尾</text><text x='548' y='68' text-anchor='middle' font-size='11' style='fill:var(--cinnabar-pure)'>榜首</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "五、回归均值：最容易被读成因果的那件事"
+    },
+    {
+      "type": "p",
+      "text": "上世纪三十年代，一位统计学者收集了大量企业的经营数据，发现了一个规律：**当年利润率最高的那批公司，几年后普遍下滑了；当年最差的那批，几年后普遍回升了。**他把这个发现写成一本书，起了个很有气势的名字，宣称商业世界的长期趋势是走向平庸——竞争会磨平一切优势。"
+    },
+    {
+      "type": "p",
+      "text": "同行的一篇书评把这本书拆得干干净净，理由只有一句：**这根本不是经济规律，这是任何带随机成分的数据都必然出现的算术现象。**一家公司某年利润特别高，通常既因为它确实经营得好，也因为那一年运气不错；第二年经营水平还在，运气却会重新洗牌，于是数字回落。反过来也一样。你把它拿去按第一年的成绩排序，第二年就一定会看到「高的降、低的升」——**哪怕这些公司的真实能力一点没变。**"
+    },
+    {
+      "type": "p",
+      "text": "这个现象叫**回归均值**，名字来自十九世纪的高尔顿。他发现高个子父亲的儿子平均没那么高，矮个子父亲的儿子平均没那么矮，管这叫「向中等回归」。要注意的是：**回归不等于所有人最后都会趋同**——每一代人的身高分布并没有变窄，因为总有新的极端值从中间冒出来。"
+    },
+    {
+      "type": "p",
+      "text": "它最常被误读成因果的场合，是那个人人熟悉的经验：**「我一批评他，他就进步；我一表扬他，他就退步。所以批评有效，表扬有害。」**这句话流传极广，甚至进过一些管理培训。但只要想想上一段的算术就明白了：你**总是在他表现极差的时候批评他**——而极差之后本来就大概率回升；你**总是在他表现极好的时候表扬他**——而极好之后本来就大概率回落。哪怕你的批评和表扬完全没有作用，你也会分毫不差地观察到这个模式。**在没有对照组的情况下，这段经验什么也没证明。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "第一次的极端成绩里，既有真实水平也有当天的运气；第二次运气重洗，数字自然往中间靠。两端的箭头不是因为你做了什么，是算术。",
+      "svg": "<svg viewBox='0 0 660 280' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>回归均值：两端都往中间走</text><text x='180' y='54' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--ink-soft)'>第一次</text><text x='480' y='54' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--ink-soft)'>第二次</text><line x1='180' y1='68' x2='180' y2='240' style='stroke:var(--line)' stroke-width='1.4'/><line x1='480' y1='68' x2='480' y2='240' style='stroke:var(--line)' stroke-width='1.4'/><line x1='120' y1='154' x2='540' y2='154' style='stroke:var(--line)' stroke-width='1' stroke-dasharray='4 4'/><text x='576' y='158' font-size='11.5' style='fill:var(--ink-faint)'>平均线</text><circle cx='180' cy='86' r='5.4' style='fill:var(--cinnabar-pure)'/><text x='166' y='90' text-anchor='end' font-size='11.5' style='fill:var(--ink)'>表现最好</text><path d='M190,88 C300,96 360,110 470,128' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='2' opacity='0.75'/><circle cx='480' cy='130' r='5.4' style='fill:var(--cinnabar-pure)' opacity='0.75'/><text x='496' y='134' font-size='11.5' style='fill:var(--ink-soft)'>回落了</text><circle cx='180' cy='222' r='5.4' style='fill:var(--azure)'/><text x='166' y='226' text-anchor='end' font-size='11.5' style='fill:var(--ink)'>表现最差</text><path d='M190,220 C300,212 360,196 470,180' fill='none' style='stroke:var(--azure)' stroke-width='2' opacity='0.8'/><circle cx='480' cy='178' r='5.4' style='fill:var(--azure)' opacity='0.8'/><text x='496' y='182' font-size='11.5' style='fill:var(--ink-soft)'>回升了</text><text x='330' y='266' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>——即使中间你什么也没做</text></svg>"
+    },
+    {
+      "type": "quote",
+      "original": "极差之后总会好一点，极好之后总会差一点；如果你正好在那两个时刻分别骂人和夸人，你会以为是自己的功劳。",
+      "translation": "对回归均值日常版本的转述。它之所以难破，是因为「我试过，有效」这句话在主观上完全真实——错的不是观察，是把观察归因给了自己。"
+    },
+    {
+      "type": "h2",
+      "text": "六、推断：p 值、发表偏倚，和贝叶斯"
+    },
+    {
+      "type": "p",
+      "text": "这是全书批评最狠、也最该慢读的一段。核心是一个几乎所有行业都在用、几乎所有人都用错的工具：**显著性检验**，以及它吐出来的那个数字——**p 值**。"
+    },
+    {
+      "type": "p",
+      "text": "先把定义摆正。p 值是这么一个东西：**假设「什么效应也没有」是真的，那么出现眼下这么极端（或更极端）的数据的概率有多大。**注意这句话的方向：它从「假设无效应」出发，去算「数据有多罕见」。"
+    },
+    {
+      "type": "p",
+      "text": "而人们几乎总是把它读成反方向的那句：**「无效应这个假设为真的概率」**——「p=0.03，所以有 97% 的把握它是真的」。这句话是错的，而且错得很彻底。这两个概率之间隔着一个东西，就是**先验**：你在看到数据之前，本来觉得这事儿有多大可能。忽略先验去反推，等于假装自己此前一无所知——而你从来不是一无所知。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "同一个数字，两个方向截然不同的读法。左边是它的定义，右边是它被读成的样子。这两句话之间不能互相推导，除非你补上先验。",
+      "svg": "<svg viewBox='0 0 660 250' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>p 值是什么，不是什么</text><rect x='24' y='48' width='288' height='158' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='168' y='74' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--azure)'>它是这个方向</text><rect x='52' y='94' width='106' height='34' rx='6' style='fill:var(--paper);stroke:var(--line)' stroke-width='1'/><text x='105' y='116' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>假设无效应</text><path d='M164,111 L196,111' style='stroke:var(--azure)' stroke-width='2' marker-end='url(#ar2)'/><rect x='200' y='94' width='90' height='34' rx='6' style='fill:var(--paper);stroke:var(--line)' stroke-width='1'/><text x='245' y='116' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>数据多罕见</text><text x='168' y='158' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>「若本来没事，会这么巧吗」</text><text x='168' y='182' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>——这才是 p 值的定义</text><rect x='348' y='48' width='288' height='158' rx='9' style='fill:var(--cinnabar-pure)' opacity='0.07'/><rect x='348' y='48' width='288' height='158' rx='9' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='492' y='74' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar-pure)'>它被读成这个方向</text><rect x='376' y='94' width='90' height='34' rx='6' style='fill:var(--paper);stroke:var(--line)' stroke-width='1'/><text x='421' y='116' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>看到数据</text><path d='M472,111 L504,111' style='stroke:var(--cinnabar-pure)' stroke-width='2' marker-end='url(#ar3)'/><rect x='508' y='94' width='106' height='34' rx='6' style='fill:var(--paper);stroke:var(--line)' stroke-width='1'/><text x='561' y='116' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>结论有多可信</text><text x='492' y='158' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>「所以有 97% 把握是真的」</text><text x='492' y='182' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar-pure)'>✕ 中间缺了「先验」这一环</text><defs><marker id='ar2' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L7,3 L0,6 z' style='fill:var(--azure)'/></marker><marker id='ar3' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L7,3 L0,6 z' style='fill:var(--cinnabar-pure)'/></marker></defs><text x='330' y='234' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>0.05 这条线是二十世纪初的一个约定俗成，不是自然常数</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "接下来是那条著名的死鱼。有研究者把一条死掉的三文鱼放进核磁共振仪，给它「看」一些人物照片，然后按当时论文里通行的分析流程处理数据——结果在鱼脑里扫出了几处「显著」的活动区。这不是恶作剧，这是一次**方法学示范**：脑成像要同时检验成千上万个体素，每个体素都有 5% 的概率碰巧过线，那么总有几个会过。**你问的问题越多，撞上小概率的机会越大。**"
+    },
+    {
+      "type": "p",
+      "text": "同一条道理解释了另一类现象：有人宣称在古代经典里用等间距抽取字母的办法，找出了后世人名与事件的「密码」。反驳者用同一套方法在别的长篇著作里抽出了同样惊人的对应。**在一个足够长的文本里，只要你允许自己调整抽取的间隔、起点和拼写，你想找什么都找得到。**"
+    },
+    {
+      "type": "p",
+      "text": "还有一个方向相反的误用，同样常见：**把「不显著」读成「没有效应」。**样本不够大的时候，真实存在的效应也算不出显著。「我们没测出差异」和「没有差异」是两句完全不同的话，但前者常常被写成后者。"
+    },
+    {
+      "type": "p",
+      "text": "然后是全书最锋利的一个虚构：他假想了一份**《国际占卜学报》**——一群人认真研究羊肝占卜，方法严谨、同行评议、显著性水平 0.05 一丝不苟。假设羊肝占卜完全无效，这门学问的文献会长成什么样？答案是：**会长得很好看。**每一百项做出来的研究，大约有五项碰巧显著；那五项被写成论文发表，另外九十五项躺进抽屉。几年下来，学报上全是阳性结果，还能互相印证、形成流派。"
+    },
+    {
+      "type": "figure",
+      "ftype": "流程图",
+      "caption": "一门完全无效的学问，如何攒出一份漂亮的文献。注意最后那一步：读者看到的从来不是全部研究，是通过了筛选的那一小撮——又一次弹孔问题。",
+      "svg": "<svg viewBox='0 0 660 268' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>《国际占卜学报》是怎么繁荣起来的</text><rect x='24' y='52' width='168' height='170' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='108' y='76' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink-soft)'>做了 100 项研究</text><text x='108' y='94' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>（羊肝占卜其实完全无效）</text><g><circle cx='44.0' cy='112.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='57.5' cy='112.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='71.0' cy='112.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='84.5' cy='112.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='98.0' cy='112.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='111.5' cy='112.0' r='3.4' style='fill:var(--cinnabar-pure)'/><circle cx='125.0' cy='112.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='138.5' cy='112.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='152.0' cy='112.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='165.5' cy='112.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='44.0' cy='122.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='57.5' cy='122.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='71.0' cy='122.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='84.5' cy='122.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='98.0' cy='122.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='111.5' cy='122.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='125.0' cy='122.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='138.5' cy='122.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='152.0' cy='122.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='165.5' cy='122.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='44.0' cy='133.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='57.5' cy='133.0' r='3.4' style='fill:var(--cinnabar-pure)'/><circle cx='71.0' cy='133.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='84.5' cy='133.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='98.0' cy='133.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='111.5' cy='133.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='125.0' cy='133.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='138.5' cy='133.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='152.0' cy='133.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='165.5' cy='133.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='44.0' cy='143.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='57.5' cy='143.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='71.0' cy='143.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='84.5' cy='143.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='98.0' cy='143.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='111.5' cy='143.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='125.0' cy='143.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='138.5' cy='143.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='152.0' cy='143.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='165.5' cy='143.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='44.0' cy='154.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='57.5' cy='154.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='71.0' cy='154.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='84.5' cy='154.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='98.0' cy='154.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='111.5' cy='154.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='125.0' cy='154.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='138.5' cy='154.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='152.0' cy='154.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='165.5' cy='154.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='44.0' cy='164.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='57.5' cy='164.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='71.0' cy='164.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='84.5' cy='164.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='98.0' cy='164.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='111.5' cy='164.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='125.0' cy='164.5' r='3.4' style='fill:var(--cinnabar-pure)'/><circle cx='138.5' cy='164.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='152.0' cy='164.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='165.5' cy='164.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='44.0' cy='175.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='57.5' cy='175.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='71.0' cy='175.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='84.5' cy='175.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='98.0' cy='175.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='111.5' cy='175.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='125.0' cy='175.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='138.5' cy='175.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='152.0' cy='175.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='165.5' cy='175.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='44.0' cy='185.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='57.5' cy='185.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='71.0' cy='185.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='84.5' cy='185.5' r='3.4' style='fill:var(--cinnabar-pure)'/><circle cx='98.0' cy='185.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='111.5' cy='185.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='125.0' cy='185.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='138.5' cy='185.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='152.0' cy='185.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='165.5' cy='185.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='44.0' cy='196.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='57.5' cy='196.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='71.0' cy='196.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='84.5' cy='196.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='98.0' cy='196.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='111.5' cy='196.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='125.0' cy='196.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='138.5' cy='196.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='152.0' cy='196.0' r='3.4' style='fill:var(--cinnabar-pure)'/><circle cx='165.5' cy='196.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='44.0' cy='206.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='57.5' cy='206.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='71.0' cy='206.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='84.5' cy='206.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='98.0' cy='206.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='111.5' cy='206.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='125.0' cy='206.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='138.5' cy='206.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='152.0' cy='206.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='165.5' cy='206.5' r='3' style='fill:var(--ink-faint)' opacity='0.55'/></g><path d='M200,140 L246,140' style='stroke:var(--ink-faint)' stroke-width='2' marker-end='url(#ar4)'/><rect x='254' y='52' width='168' height='170' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='338' y='76' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink-soft)'>约 5 项碰巧显著</text><text x='338' y='94' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>（0.05 这条线的必然产物）</text><circle cx='294' cy='134' r='7' style='fill:var(--cinnabar-pure)'/><circle cx='316' cy='134' r='7' style='fill:var(--cinnabar-pure)'/><circle cx='338' cy='134' r='7' style='fill:var(--cinnabar-pure)'/><circle cx='360' cy='134' r='7' style='fill:var(--cinnabar-pure)'/><circle cx='382' cy='134' r='7' style='fill:var(--cinnabar-pure)'/><text x='338' y='176' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>另外 95 项</text><text x='338' y='196' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>躺进抽屉，没人发表</text><path d='M430,140 L476,140' style='stroke:var(--cinnabar-pure)' stroke-width='2' marker-end='url(#ar5)'/><rect x='484' y='52' width='152' height='170' rx='8' style='fill:var(--cinnabar-pure)' opacity='0.08'/><rect x='484' y='52' width='152' height='170' rx='8' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='560' y='76' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>学报上全是阳性</text><text x='560' y='108' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>结论互相印证</text><text x='560' y='130' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>形成流派与权威</text><text x='560' y='152' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>看不出任何破绽</text><text x='560' y='184' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar-pure)'>——而它其实全是</text><text x='560' y='202' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar-pure)'>被筛出来的巧合</text><defs><marker id='ar4' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L7,3 L0,6 z' style='fill:var(--ink-faint)'/></marker><marker id='ar5' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L7,3 L0,6 z' style='fill:var(--cinnabar-pure)'/></marker></defs><text x='330' y='250' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>读者看到的从来不是全部研究，而是通过了筛选的那一小撮</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这个虚构不是在骂谁。它要说明的是一件结构性的事：**当一个领域只发表阳性结果时，这个领域的公开文献就是一份被筛选过的样本。**你翻遍学报也看不出问题，因为反例根本不在学报里——它们在抽屉里。这正是弹孔那一课在学术生产上的翻版。"
+    },
+    {
+      "type": "p",
+      "text": "更麻烦的是，研究者甚至不必作弊。同一批数据往往有很多条都说得过去的分析路径：要不要剔除异常值、按什么分组、控制哪几个变量、用哪个时间窗口。一路走下来总有一条能出显著结果——而且每一步单看都是合理的选择。这条路上没有坏人，只有**一堆无害的小决定叠成的一个假发现**。"
+    },
+    {
+      "type": "p",
+      "text": "那怎么办？他没有开出万灵药，但方向是清楚的：**别盯着单篇论文里的那颗星号。**看效应有多大（而不只是显著不显著）、看有没有人重复出来、看研究方案是不是事先注册过。他也提醒：这些批评不是要废掉统计学，恰恰是统计学自己内部的批评——最早提出 0.05 这条线的人，本来也只是把它当作「值得再看一眼」的提示，从没打算把它当判决书。"
+    },
+    {
+      "type": "p",
+      "text": "补上先验这一环的工具是**贝叶斯**。它的思路很朴素：你原先觉得某件事有多大可能（先验），看到证据之后按证据的强度调整（后验）。这个框架马上能解释两件事。第一，**同一份证据，不同的人合理地得出不同结论**——因为起点不同。一个荒诞主张的先验极低，一份中等强度的证据把它抬起来，它仍然很低。第二，**极小概率下的筛查一定会误伤**：假设某类人在人群中只占万分之一，哪怕识别系统准确率很高，被标出来的人里绝大多数依然是无辜的。这不是算法做得差，这是基数太小的算术后果。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "打个比方。你听说楼下便利店中了一张大奖彩票，这条消息很容易信——便利店卖彩票，中奖每天都在某处发生，你的先验不低。你听说邻居能用意念让硬币立起来，同样一段视频摆在面前，你却不会信——不是视频更差，是你的先验低到需要一份强得多的证据。**贝叶斯做的事，就是把这个你本来就在做的动作写成算式。**"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "七、期望与效用：数学不能替你决定在乎什么"
+    },
+    {
+      "type": "p",
+      "text": "第三部分讲期望值。**期望值不是「你期望拿到的数」**，它是把所有可能结果按概率加权后的平均——一个你可能一次也拿不到的数。这个概念的力量在于，它把「值不值」变成了可以算的东西。"
+    },
+    {
+      "type": "p",
+      "text": "他讲了一个真实的故事：美国某州有一种彩票，规则里有个环节——奖池积累到一定额度而无人中头奖时，奖金会下放到低级别奖项。在那种特定的日子里，一张票的期望值会超过票价。几拨人算出了这一点，然后**大规模买票**：有大学生团队，也有开小店的退休夫妇。他们赚到了钱。**这不是运气的故事，是「有人认真算了一遍」的故事。**"
+    },
+    {
+      "type": "p",
+      "text": "但期望值不能包办一切，这正是他要往下走的地方。有一句被他反复引用的话，出自一位经济学家：**「如果你从来没误过飞机，说明你在机场浪费的时间太多了。」**为了把误机概率压到零，你要付出的是每次都提前几个小时到机场——那些时间也是成本。把两种代价加在一起，最小值几乎从来不在「零风险」那一端。**追求「一次都不出错」，本身就是一种可以量化的浪费。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "曲线图",
+      "caption": "两种代价方向相反，加起来是一条 U 形。最低点不在最左端——「零风险」通常是一个昂贵而且并不聪明的目标。",
+      "svg": "<svg viewBox='0 0 660 286' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>为什么该多错过几班飞机</text><line x1='110' y1='232' x2='580' y2='232' style='stroke:var(--line)' stroke-width='1.4'/><line x1='110' y1='232' x2='110' y2='52' style='stroke:var(--line)' stroke-width='1.4'/><text x='345' y='258' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>提前到机场的时间 →</text><text x='96' y='60' text-anchor='end' font-size='11.5' style='fill:var(--ink-faint)'>代价</text><path d='M120,214 C220,150 300,84 560,64' fill='none' style='stroke:var(--azure)' stroke-width='2' stroke-dasharray='5 4'/><text x='520' y='84' font-size='11.5' style='fill:var(--azure)'>等待的时间成本</text><path d='M120,66 C220,150 320,206 560,222' fill='none' style='stroke:var(--ink-faint)' stroke-width='2' stroke-dasharray='5 4'/><text x='132' y='58' font-size='11.5' style='fill:var(--ink-soft)'>误机的代价</text><path d='M120,150 C210,102 290,92 340,92 C420,92 500,140 560,186' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='2.6'/><circle cx='334' cy='92' r='5' style='fill:var(--cinnabar-pure)'/><line x1='334' y1='92' x2='334' y2='232' style='stroke:var(--line)' stroke-width='1' stroke-dasharray='3 4'/><text x='334' y='80' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar-pure)'>总代价最低点</text><text x='334' y='276' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>这一点对应的误机率，明显不是零</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "再往下一层是**效用**。同样一百块钱，对不同处境的人价值完全不同，所以只按钱的期望值决策会得出荒谬结论。有一个经典的赌局：不断抛硬币直到出反面，正面出现次数越多奖金翻倍越多——算下来期望收益是无穷大，可现实里没有人愿意为它出很高的价钱。解法是引入「效用」：钱带来的满足是递减的。**效用把「你在乎什么」写进了模型。**"
+    },
+    {
+      "type": "p",
+      "text": "而这正是全书真正的落点，也是最容易被读漏的一句：**写进去之后，它仍然是你的价值判断，不是数学推出来的。**数学能告诉你一个方案有多大概率带来什么后果，但它没法告诉你，你该更怕损失还是更想要收益、你该为家人的安稳牺牲多少个人的机会、一条命值多少钱。**「这批数据说明什么」和「因此我们该做什么」是两个问题，数学只包办前一个。**"
+    },
+    {
+      "type": "pull",
+      "text": "显著性检验之所以被滥用得这么厉害，根子正在这里：人们想让一个数字替自己做第二个决定。"
+    },
+    {
+      "type": "h2",
+      "text": "八、存在：书的后半为什么忽然拐了个弯"
+    },
+    {
+      "type": "p",
+      "text": "读到后面你会发现这本书拐了个弯，从统计走进了逻辑、投票和几何。最有意思的一节叫「并不存在一个叫民意的东西」。它讲的是一件让人不太舒服的事：**多数人的意见可以自相矛盾**。同一批人可以在民调里多数支持「削减政府总开支」，同时在每一个具体项目上都多数反对削减。这不是虚伪，这是**加总本身的产物**——多数意见并不保证前后一致。"
+    },
+    {
+      "type": "p",
+      "text": "更极端的情形叫循环多数：三个选项两两对决，可以出现 A 胜 B、B 胜 C、C 又胜 A。既然多数意见可能循环，「人民想要什么」这句话就不总是有确定含义。由此还有一条更硬的结论：**没有任何一套计票规则能同时满足所有看起来理所应当的公平条件**——这是被证明了的定理。所以选举规则不是中立的技术细节，**它本身就是结论的一部分**：同一批选票，换一套规则可以选出不同的人。"
+    },
+    {
+      "type": "p",
+      "text": "最后一章他讲数学自身的历史。十九世纪有人试着放弃平行公理，结果造出了一套自洽却与直觉不符的几何，年轻的作者写信告诉父亲：他从无中创造了一个奇异的新宇宙。后来数学又经历了悖论与不完备性的冲击——每一次危机都像是要毁掉这门学问，结果每一次都只是把它扩大了。他拿这段历史反对流行的**天才神话**：数学不是少数人凭灵感领受的天启，它是一门允许自己出错、并且有办法把错改回来的手艺。"
+    },
+    {
+      "type": "quote",
+      "original": "数学是常识的延伸——只是延伸到了常识开始失灵的那几处。",
+      "translation": "作者给数学下的定义（句式借自「战争是政治的延续」）。这句话既是安慰也是警告：它与你的直觉本是一路，但正因为如此，你才更要知道直觉在哪几处会拐弯。"
+    },
+    {
+      "type": "h2",
+      "text": "九、它的边界：一本随笔，不是一本教程"
+    },
+    {
+      "type": "p",
+      "text": "该如实交代它的短处。**这本书是随笔式的，不成体系。**它有五个部分，但五部分之间没有严密的推进关系，更像五个专题拼在一起；一章之内也常常从彩票跳到几何、再跳回政治，跳跃处不一定接得上。**读完你不会获得一套可以照着执行的方法论**，也不会做题——它没有习题，也几乎没有推导。"
+    },
+    {
+      "type": "p",
+      "text": "它的门槛也不均匀。前面讲线性、讲回归、讲显著性的部分，中学数学水平就能顺着读下来；但讲射影几何与纠错码的那一部分明显更硬，很多读者会在那里卡住。**卡住就跳过去**，不影响后面。它不是那种必须逐章通关的书。"
+    },
+    {
+      "type": "p",
+      "text": "还有一层要提醒的：他的例子密集地取自美国的公共议题——某年的税制争论、某次选举、某份医学期刊。这些例子生动，但也意味着**书里有相当一部分篇幅是在解释背景**，而那些背景对中文读者未必有共鸣。**读的时候把例子当成载体，别当成重点**：他要讲的道理是可迁移的，例子不是。"
+    },
+    {
+      "type": "figure",
+      "ftype": "总表",
+      "caption": "五个部分，各治一类错觉。把这张表记住，比记住任何一个例子都管用——遇到一个用数字说服你的结论，从左边一列往下问一遍。",
+      "svg": "<svg viewBox='0 0 660 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>五个部分，各治一类错觉</text><line x1='24' y1='40' x2='636' y2='40' style='stroke:var(--line)' stroke-width='1'/><text x='96' y='60' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>部分</text><text x='300' y='60' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>它治的那个错觉</text><text x='540' y='60' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar-pure)'>该问的一句话</text><line x1='24' y1='70' x2='636' y2='70' style='stroke:var(--line)' stroke-width='1'/><text x='96' y='96' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>线性</text><text x='300' y='96' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>「更多总是更好」</text><text x='540' y='96' text-anchor='middle' font-size='12' style='fill:var(--ink)'>凭什么是直线？</text><line x1='24' y1='112' x2='636' y2='112' style='stroke:var(--line)' stroke-width='0.6'/><text x='96' y='140' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>推断</text><text x='300' y='140' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>「显著，所以是真的」</text><text x='540' y='140' text-anchor='middle' font-size='12' style='fill:var(--ink)'>没显著的去哪了？</text><line x1='24' y1='156' x2='636' y2='156' style='stroke:var(--line)' stroke-width='0.6'/><text x='96' y='184' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>期望</text><text x='300' y='184' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>「算出来了就该这么做」</text><text x='540' y='184' text-anchor='middle' font-size='12' style='fill:var(--ink)'>我在乎的是什么？</text><line x1='24' y1='200' x2='636' y2='200' style='stroke:var(--line)' stroke-width='0.6'/><text x='96' y='228' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>回归</text><text x='300' y='228' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>「一批评他就进步」</text><text x='540' y='228' text-anchor='middle' font-size='12' style='fill:var(--ink)'>不做会怎样？</text><line x1='24' y1='244' x2='636' y2='244' style='stroke:var(--line)' stroke-width='0.6'/><text x='96' y='272' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>存在</text><text x='300' y='272' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>「多数人的意思很清楚」</text><text x='540' y='272' text-anchor='middle' font-size='12' style='fill:var(--ink)'>换个规则还一样吗？</text><line x1='24' y1='288' x2='636' y2='288' style='stroke:var(--line)' stroke-width='1'/></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "十、和站内哪几本合看"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "**《清醒思考的艺术》**——幸存者偏差、回归均值那几条两本都讲。那本是清单式的，一条一页，适合速查；这本讲的是同一批坑背后的**数学结构**。先读那本认门，再读这本知其所以然。",
+        "**《思考，快与慢》与《噪声》**——那两本讲的是**人脑**为什么偏、为什么散；这本讲的是**工具**本身怎么被用歪。人会犯错和方法会被误用，是两条不同的病因，合起来才是完整的图。",
+        "**《这才是心理学》**——与本书关于显著性检验的批评几乎是同一场仗的两条战线。那本从「什么算科学」的角度切，这本从「这个数字到底是什么意思」的角度切。",
+        "**《超级预测》**——它是本书那句「算得出概率、算不出你在乎什么」的实践版：真正的好预测者怎么给概率、怎么根据新证据一点点调整，正是贝叶斯那一节的操作示范。",
+        "**《数学之美》**——同样讲数学建模，但方向相反：那本讲「用对了有多强」（搜索、翻译、语音识别），这本讲「用歪了有多险」。两本并读，对「数学思维」的印象才不会一边倒。",
+        "**《黑天鹅》**——小概率大冲击那一条上两本有分歧：本书更相信概率工具能用好，《黑天鹅》更怀疑。看两个聪明人在同一个问题上不同意，本身就很有营养。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "十一、读完该带走的东西"
+    },
+    {
+      "type": "p",
+      "text": "如果这本书只留下三句话，我会留这三句。它们不是口诀，是三个提问的动作——遇到任何一个拿数字来说服你的结论，从头到尾问一遍。"
+    },
+    {
+      "type": "steps",
+      "items": [
+        {
+          "title": "这批数据是怎么被选出来的？",
+          "text": "谁被删掉了？没回来的飞机在哪里？没发表的研究在哪里？没上榜的公司在哪里？——这是弹孔那一课，也是全书用得最广的一问。",
+          "state": "done"
+        },
+        {
+          "title": "这条关系凭什么是直线？",
+          "text": "「越多越好」是不是一个没人明说的假设？如果它其实是一条有峰的曲线，我们现在站在峰的哪一侧？——顺带也要问：这个趋势往外推得这么远，有什么理由？",
+          "state": "done"
+        },
+        {
+          "title": "算出来的概率，和我该做的决定，中间隔着什么？",
+          "text": "隔着「我在乎什么」。这一段数学交不出答案，也不该交。凡是把这两件事说成一件的人，不管他手上的数字多漂亮，都该多问一句。",
+          "state": "now"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "text": "最后回到书名。**「如何不出错」**这个原名其实相当谦虚：它没许诺教你怎么做对，只承诺帮你少错。这也正是全书的分寸所在——数学给不了你确定性，它给你的是**一种有条理地保持不确定的能力**：知道自己知道到哪一步，知道剩下那一步为什么还得靠判断。用这个标准看，「魔鬼」两个字确实卖得动书，但也确实把这本书讲小了。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本文是对全书的原创消化与转述，不是原书内容的复制；文中引文均为核心观点的中文概括，非逐字引用。",
+        "原书 How Not to Be Wrong: The Power of Mathematical Thinking，Jordan Ellenberg 著，二〇一四年出版；中译本作《魔鬼数学：大数据时代，数学思维的力量》。",
+        "史实补充：沃德（Abraham Wald）二战期间在哥伦比亚大学的统计研究小组（Statistical Research Group）工作，其关于飞机易损性估计的技术备忘录是真实文献；广为流传的「会议室对话」版本属后世演绎。沃德于一九五〇年因空难去世。",
+        "文中「死鱼核磁共振」指的是一项以死亡三文鱼为对象、用于演示多重比较问题的脑成像研究，作者本意即为提醒同行修正统计方法。",
+        "关于「没有一套计票规则能同时满足全部合理公平条件」，指的是社会选择理论中的阿罗不可能定理。",
+        "本文未采用原书的章节编号，章节划分是为便于中文读者理解所作的重新组织。"
+      ]
+    }
+  ]
+}

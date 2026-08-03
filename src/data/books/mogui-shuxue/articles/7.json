@@ -1,0 +1,191 @@
+{
+  "title": "p 值到底是什么，以及它不是什么",
+  "subtitle": "「假设没有效应，数据会这么巧吗」——它回答的是这一句，不是「结论有多可信」",
+  "centralIdea": "p 值的定义是：假设「什么效应也没有」为真，出现眼下这么极端或更极端的数据的概率。它从假设出发去算数据的罕见程度。而人们几乎总是把它读成反方向的那句——「无效应这个假设为真的概率」，于是「p=0.03 所以有 97% 把握」这种说法满天飞。这两个概率之间隔着先验，不补上就不能互推。这一章还讲三件事：0.05 这条线是二十世纪初的约定俗成而非自然常数，提出它的人本意是「值得再看一眼」而不是判决书；多重比较会让「显著」变得廉价，那条被放进核磁共振仪的死鱼就是为演示这一点而做的；以及方向相反的第二类误用——把「不显著」读成「没有效应」，那只是「没测出来」。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "接下来这一部分是全书批评最狠、也最该慢读的一段。它针对的是一个几乎所有行业都在用、几乎所有人都用错的工具：**显著性检验**，以及它吐出来的那个数字——**p 值**。"
+    },
+    {
+      "type": "p",
+      "text": "先说明这一章的分寸。作者不是在说统计学没用，也不是在说做实验的人都在骗人。**他批评的是一个数字被赋予了它承担不起的功能**：人们希望它替自己下结论，而它做不到。"
+    },
+    {
+      "type": "h2",
+      "text": "一、先把定义摆正"
+    },
+    {
+      "type": "p",
+      "text": "**p 值是这么一个东西：假设「什么效应也没有」是真的，那么出现眼下这么极端（或更极端）的数据，概率有多大。**"
+    },
+    {
+      "type": "p",
+      "text": "请注意这句话的**方向**：它从「假设无效应」出发，去算「这批数据有多罕见」。用大白话说就是：**「如果本来什么事也没有，会这么巧吗？」**"
+    },
+    {
+      "type": "p",
+      "text": "这里的「什么效应也没有」有个专名叫**零假设**——新药和安慰剂一样、这个按钮改版没有影响、这两组人没有差别。检验的逻辑是一种带概率的反证法：**先假装什么也没发生，看看在这个前提下，我们观察到的数据有多不合常理。**如果非常不合常理，那就有理由怀疑「什么也没发生」这个前提。"
+    },
+    {
+      "type": "p",
+      "text": "这个逻辑本身是漂亮的。问题出在人们怎么读那个数字。"
+    },
+    {
+      "type": "h2",
+      "text": "二、它被读成了什么"
+    },
+    {
+      "type": "p",
+      "text": "人们几乎总是把它读成**反方向**的那句话：**「无效应这个假设为真的概率」**。于是就有了那种到处都能听到的说法——「p 等于 0.03，所以我们有 97% 的把握它是真的」。"
+    },
+    {
+      "type": "p",
+      "text": "**这句话是错的。**它把「若 A 则 B 的概率」换成了「若 B 则 A 的概率」，而这两个数字可以差得非常远。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "左边是它的定义，右边是它被读成的样子。两个方向之间不能互相推导，除非你补上「我原本觉得这事有多大可能」这一环。",
+      "svg": "<svg viewBox='0 0 660 268' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>方向反了</text><rect x='24' y='48' width='288' height='170' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='168' y='74' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--azure)'>p 值的定义</text><rect x='48' y='94' width='116' height='36' rx='6' style='fill:var(--paper);stroke:var(--line)' stroke-width='1'/><text x='106' y='117' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>假设「本来没事」</text><path d='M170,112 L200,112' style='stroke:var(--azure)' stroke-width='2' marker-end='url(#f1)'/><rect x='206' y='94' width='84' height='36' rx='6' style='fill:var(--paper);stroke:var(--line)' stroke-width='1'/><text x='248' y='117' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>数据多罕见</text><text x='168' y='158' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>「若本来没事，会这么巧吗」</text><text x='168' y='186' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>——这是它唯一回答的问题</text><rect x='348' y='48' width='288' height='170' rx='9' style='fill:var(--cinnabar-pure)' opacity='0.07'/><rect x='348' y='48' width='288' height='170' rx='9' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='492' y='74' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar-pure)'>它被读成的样子</text><rect x='374' y='94' width='84' height='36' rx='6' style='fill:var(--paper);stroke:var(--line)' stroke-width='1'/><text x='416' y='117' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>看到数据</text><path d='M464,112 L494,112' style='stroke:var(--cinnabar-pure)' stroke-width='2' marker-end='url(#f2)'/><rect x='500' y='94' width='116' height='36' rx='6' style='fill:var(--paper);stroke:var(--line)' stroke-width='1'/><text x='558' y='117' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>结论有多可信</text><text x='492' y='158' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>「所以有 97% 把握是真的」</text><text x='492' y='186' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar-pure)'>✕ 中间缺了「先验」这一环</text><defs><marker id='f1' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L7,3 L0,6 z' style='fill:var(--azure)'/></marker><marker id='f2' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L7,3 L0,6 z' style='fill:var(--cinnabar-pure)'/></marker></defs><text x='330' y='248' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>「若 A 则 B 的概率」与「若 B 则 A 的概率」，从来不是同一个数</text></svg>"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "打个比方就清楚了。**「如果他是小偷，他半夜在街上走的概率很高」**——这句话可能是真的。但**「他半夜在街上走，所以他是小偷的概率很高」**显然不成立，因为半夜在街上走的人绝大多数不是小偷。两句话之间差的正是「小偷在人群里占多大比例」——那就是先验。**p 值只给你前一句，你却想用它推出后一句。**"
+      ]
+    },
+    {
+      "type": "quote",
+      "original": "p 值回答的是「若本来没事，数据会这么巧吗」；它从不回答「这个结论有多可信」。",
+      "translation": "全书对 p 值最要紧的一句澄清。这两个问题都合理，但只有第一个是 p 值能答的；把第二个也交给它，是绝大多数误用的源头。"
+    },
+    {
+      "type": "h2",
+      "text": "三、0.05 是怎么来的"
+    },
+    {
+      "type": "p",
+      "text": "那条人人皆知的线——**p < 0.05 就算显著**——是从哪儿来的？它不是任何自然常数，也不是从理论推出来的。**它是二十世纪初一位统计学家随手定下的一个方便阈值，后来变成了习惯。**"
+    },
+    {
+      "type": "p",
+      "text": "更要紧的是，**提出它的人本意也不是把它当判决书。**在最初的设想里，「显著」的意思大致是：**这个结果值得再看一眼、值得做个后续实验**。它是一个筛选提示，不是一个真伪裁定。可后来它被制度化了——期刊按它决定发不发，评审按它决定过不过，于是它从「值得再看一眼」变成了「这就是结论」。"
+    },
+    {
+      "type": "p",
+      "text": "顺带说一句，这条线**从来不是二分的**。p=0.049 和 p=0.051 之间没有任何实质差别，可在很多领域里，前者能发表、后者进抽屉。**把一条连续的证据强度，砍成「有」和「无」两档，本身就丢掉了大量信息**——这是后面讲发表偏倚时最要紧的伏笔。"
+    },
+    {
+      "type": "h2",
+      "text": "四、那条死鱼"
+    },
+    {
+      "type": "p",
+      "text": "接下来是全书最有名的一个例子。有研究者把**一条死掉的三文鱼**放进核磁共振仪，给它「看」一组人物照片，问它这些人处在什么情绪状态里，然后按当时脑成像论文中通行的分析流程处理数据。"
+    },
+    {
+      "type": "p",
+      "text": "**结果在鱼脑里扫出了几处「显著」的活动区。**"
+    },
+    {
+      "type": "p",
+      "text": "这不是恶作剧，这是一次方法学示范——研究者做这件事，正是为了提醒同行修正统计方法。原因很简单：脑成像要同时检验成千上万个小区域，**每一个区域都有大约 5% 的概率碰巧越过那条线**。检验一万次，就算什么效应也没有，也会有几百次「显著」。**你只要把那几百个报告出来，图就非常好看。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "同时问一万个问题，就算每个问题的答案都是「没事」，也会有几百个碰巧越线。挑出那几百个来讲故事，图会非常漂亮——而且每一步计算都没错。",
+      "svg": "<svg viewBox='0 0 660 280' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>问的问题越多，撞上「显著」越容易</text><line x1='24' y1='42' x2='636' y2='42' style='stroke:var(--line)' stroke-width='1'/><text x='150' y='66' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>同时检验的次数</text><text x='390' y='66' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>就算全无效应，也会「显著」的次数</text><text x='580' y='66' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar-pure)'>你会看到</text><line x1='24' y1='76' x2='636' y2='76' style='stroke:var(--line)' stroke-width='1'/><text x='150' y='104' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>1 次</text><text x='390' y='104' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>0.05 次</text><text x='580' y='104' text-anchor='middle' font-size='12' style='fill:var(--ink)'>基本没有</text><line x1='24' y1='118' x2='636' y2='118' style='stroke:var(--line)' stroke-width='0.6'/><text x='150' y='146' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>20 次</text><text x='390' y='146' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>约 1 次</text><text x='580' y='146' text-anchor='middle' font-size='12' style='fill:var(--ink)'>一个发现</text><line x1='24' y1='160' x2='636' y2='160' style='stroke:var(--line)' stroke-width='0.6'/><text x='150' y='188' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>1000 次</text><text x='390' y='188' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>约 50 次</text><text x='580' y='188' text-anchor='middle' font-size='12' style='fill:var(--ink)'>一篇论文</text><line x1='24' y1='202' x2='636' y2='202' style='stroke:var(--line)' stroke-width='0.6'/><text x='150' y='230' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>10000 次</text><text x='390' y='230' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>约 500 次</text><text x='580' y='230' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar-pure)'>一条死鱼在思考</text><line x1='24' y1='244' x2='636' y2='244' style='stroke:var(--line)' stroke-width='1'/><text x='330' y='270' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>（每次检验独立、显著性水平取 0.05 时的粗略估算）</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这叫**多重比较问题**。它的含义比脑成像宽得多：**只要你在同一批数据上问了很多个问题，「显著」这件事就变得廉价。**"
+    },
+    {
+      "type": "p",
+      "text": "它还解释了另一类现象。有人宣称在某部古代经典里，用**等间距抽取字母**的办法找出了后世的人名和事件——看上去神乎其神。反驳者用同一套方法，在别的长篇著作里抽出了同样惊人的对应。**道理是一样的：在一个足够长的文本里，只要你允许自己调整抽取的间隔、起点、拼写和匹配标准，你想找什么都找得到。**自由度就是隐形的「检验次数」。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "一处澄清",
+      "items": [
+        "统计学对多重比较是有对策的——把阈值按检验次数收紧，或者控制「报出来的发现里有多大比例是假的」。**问题从来不是没有办法，是很多研究没有用**，或者是**用完之后又悄悄地换一种分法再试一次**。工具是好的，麻烦出在使用的纪律上。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "五、方向相反的第二类误用"
+    },
+    {
+      "type": "p",
+      "text": "如果说前面那些是「把不存在的说成存在」，那么还有一种误用刚好相反，而且同样常见：**把「不显著」读成「没有效应」。**"
+    },
+    {
+      "type": "p",
+      "text": "「我们的研究没有发现这两组之间的显著差异」——这句话在新闻里，几乎必然被写成「研究表明这两者没有差异」。**这是两句完全不同的话。**"
+    },
+    {
+      "type": "p",
+      "text": "样本不够大的时候，真实存在的效应也算不出显著。一个真实但不大的差异，在一百人的实验里可能测不出来，在一万人的实验里就出来了。**「没测出来」和「不存在」之间，隔着的是你的样本量和测量精度。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "两类误用方向相反，但根子是同一个：把一个连续的证据强度当成了「有/无」的开关。真正该看的是效应有多大、区间有多宽。",
+      "svg": "<svg viewBox='0 0 660 258' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>两类相反的误用</text><rect x='24' y='48' width='290' height='168' rx='9' style='fill:var(--cinnabar-pure)' opacity='0.07'/><rect x='24' y='48' width='290' height='168' rx='9' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='169' y='76' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar-pure)'>显著 → 「是真的」</text><text x='169' y='106' text-anchor='middle' font-size='12' style='fill:var(--ink)'>多问几个问题就会撞上</text><text x='169' y='132' text-anchor='middle' font-size='12' style='fill:var(--ink)'>没算先验，方向反了</text><text x='169' y='158' text-anchor='middle' font-size='12' style='fill:var(--ink)'>0.049 与 0.051 被当成两个世界</text><text x='169' y='192' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>把不存在的说成存在</text><rect x='346' y='48' width='290' height='168' rx='9' style='fill:var(--azure)' opacity='0.08'/><rect x='346' y='48' width='290' height='168' rx='9' fill='none' style='stroke:var(--azure)' stroke-width='1.4'/><text x='491' y='76' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--azure)'>不显著 → 「没有效应」</text><text x='491' y='106' text-anchor='middle' font-size='12' style='fill:var(--ink)'>样本太小，测不出来</text><text x='491' y='132' text-anchor='middle' font-size='12' style='fill:var(--ink)'>测量太粗，淹在噪声里</text><text x='491' y='158' text-anchor='middle' font-size='12' style='fill:var(--ink)'>效应是真的，只是不够大</text><text x='491' y='192' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>把存在的说成不存在</text><text x='330' y='244' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>共同的病根：把连续的证据强度，当成了「有 / 无」的开关</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这一点在公共讨论里代价很高。某种物质「没有被证明有害」，常被说成「已被证明无害」；某项政策「效果不显著」，常被说成「毫无作用」。**在证据不足的地方，正确的说法是「还不知道」，而不是「没有」。**这句话不好听，但它是诚实的。"
+    },
+    {
+      "type": "p",
+      "text": "那么该怎么做？作者的建议不复杂，也不新奇，但一直没被普遍执行：**别只看显不显著，要看效应有多大**（差 0.1% 和差 30% 都可以是「显著」的，但意义天差地别）；**要看置信区间有多宽**（区间宽说明你其实什么也没测准）；**要看有没有别人重复出来**。这三件事，比那颗星号有信息量得多。"
+    },
+    {
+      "type": "h2",
+      "text": "六、为什么这个错误特别顽固"
+    },
+    {
+      "type": "p",
+      "text": "值得多想一层：p 值的定义并不难，为什么读错的人这么多、这么久？"
+    },
+    {
+      "type": "p",
+      "text": "**第一个原因是人们真正想问的问题不是它。**你做实验，心里想知道的是「这个药到底有没有用」，也就是「假设为真的概率是多少」。这是个自然得不能再自然的问题。**而显著性检验能给的，只是一个方向相反的答案。**于是人们拿着手上那个数字，去回答自己心里那个问题——这是需求和供给的错配，不是智力问题。"
+    },
+    {
+      "type": "p",
+      "text": "**第二个原因是制度把它固化了。**期刊要一个能过滤稿件的标准，评审要一个能写进意见的依据，监管要一个能写进条文的门槛。**一个连续的证据强度不好写进制度，一条线好写。**于是 0.05 从一个提示变成了一道闸门，而闸门两侧的世界差别巨大：发表与不发表、批准与不批准、有成果与没成果。"
+    },
+    {
+      "type": "p",
+      "text": "**第三个原因最人性：它让人不必负责。**「是数据说的」——只要那个数字过了线，做决定的人就把责任交出去了。这一点在后面讲期望值与决策时还会遇到，那才是全书真正的落点。"
+    },
+    {
+      "type": "callout",
+      "tone": "mute",
+      "label": "留意用字",
+      "items": [
+        "顺带一提，「显著」这个词的翻译也帮了倒忙。统计学里的 significant 意思接近「可辨识的、值得注意的」，而中文的「显著」听起来像「效果明显」。**于是「有显著差异」在日常语感里被理解成了「差别很大」，可它真正的意思只是「这个差别不太像纯粹的巧合」——哪怕差别本身小得可以忽略。**"
+      ]
+    },
+    {
+      "type": "pull",
+      "text": "在证据不足的地方，诚实的说法是「还不知道」——而不是「没有」，也不是「已经证明」。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本章为对原书第二部分（推断）中关于显著性检验各章的原创消化与转述。",
+        "「死鱼核磁共振」指的是一项以死亡三文鱼为对象、用于演示多重比较问题的脑成像研究，研究者本意即为提醒同行修正统计方法。",
+        "p < 0.05 这一惯例源自二十世纪初的统计学实践；其提出者在原始语境中将其视为「值得进一步研究」的提示，而非真伪判据。",
+        "「用等间距字母在长文本中找出预言」的争论，指的是上世纪九十年代关于所谓「圣经密码」的一场学术往复，反驳方以同法在其他长篇著作中得到了类似结果。",
+        "多重比较的常见对策（阈值校正、错误发现率控制）为本文所作的补充说明，非原书重点。"
+      ]
+    }
+  ]
+}

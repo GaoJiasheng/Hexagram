@@ -1,0 +1,205 @@
+{
+  "title": "发表偏倚：一门假学问也能有一份漂亮的文献",
+  "subtitle": "《国际占卜学报》——只要期刊只发阳性结果，无效的学问也会繁荣",
+  "centralIdea": "他虚构了一份《国际占卜学报》：一群人认真研究羊肝占卜，方法严谨、同行评议、0.05 一丝不苟。假设占卜完全无效，这门学问的文献会长成什么样？答案是会长得很好看——每一百项研究约有五项碰巧显著，那五项被发表，另外九十五项躺进抽屉；几年下来学报上全是阳性结果，还能互相印证、形成流派。这是弹孔那一课在学术生产上的翻版：读者看到的从来不是全部研究，是通过了筛选的那一小撮。更麻烦的是研究者不必作弊——同一批数据有很多条都说得过去的分析路径，一路走下来总有一条出显著，每一步单看都合理。补救方向是清楚的：预注册、报告效应量、看重复实验，别盯着单篇的星号。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "上一章讲的是一个数字怎么被读错。这一章更狠：**就算每一篇论文的统计都做得一丝不苟，整个领域的文献仍然可以是假的。**作者用一个虚构的学科把这件事讲透了。"
+    },
+    {
+      "type": "h2",
+      "text": "一、《国际占卜学报》"
+    },
+    {
+      "type": "p",
+      "text": "他请你想象这样一个学界：有一群人认真研究**羊肝占卜**——古代真有这门手艺，杀一只羊，看它的肝的形状纹理，据此预测吉凶。现在设想这门学问被现代化了：有大学教席，有严格的实验设计，有同行评议的期刊《国际占卜学报》，投稿要报显著性水平，0.05 那条线一丝不苟。"
+    },
+    {
+      "type": "p",
+      "text": "现在提一个残酷的假设：**羊肝占卜完全无效，肝的纹理和未来一点关系也没有。**在这个前提下，这门学问的公开文献会长成什么样？"
+    },
+    {
+      "type": "p",
+      "text": "**答案是：会长得很好看。**"
+    },
+    {
+      "type": "p",
+      "text": "算一下就明白。假设这个领域一年做了一百项研究，每项都诚实地做、诚实地算。既然占卜无效，那么按 0.05 的显著性水平，**平均约有五项会碰巧显著**——纯属运气，不是因为发现了什么。"
+    },
+    {
+      "type": "p",
+      "text": "接下来是关键的一步：**那五项被写成论文发表了。**另外九十五项呢？「我们研究了肝叶形状与来年收成的关系，没有发现显著相关」——这种论文谁要看？作者自己都懒得写，写了期刊也未必发。**它们躺进了抽屉。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "流程图",
+      "caption": "每一步都合规，最后却得到一份全是假发现的文献。注意最后一环：读者看到的从来不是全部研究，只是通过了筛选的那一小撮——这就是弹孔那一课的学术版。",
+      "svg": "<svg viewBox='0 0 660 272' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>一门无效的学问，怎样攒出漂亮的文献</text><rect x='24' y='52' width='168' height='172' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='108' y='76' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink-soft)'>一年做了 100 项</text><text x='108' y='94' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>（占卜其实完全无效）</text><g><circle cx='44.0' cy='110.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='57.5' cy='110.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='71.0' cy='110.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='84.5' cy='110.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='98.0' cy='110.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='111.5' cy='110.0' r='3.4' style='fill:var(--cinnabar-pure)'/><circle cx='125.0' cy='110.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='138.5' cy='110.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='152.0' cy='110.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='165.5' cy='110.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='44.0' cy='120.4' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='57.5' cy='120.4' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='71.0' cy='120.4' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='84.5' cy='120.4' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='98.0' cy='120.4' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='111.5' cy='120.4' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='125.0' cy='120.4' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='138.5' cy='120.4' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='152.0' cy='120.4' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='165.5' cy='120.4' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='44.0' cy='130.8' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='57.5' cy='130.8' r='3.4' style='fill:var(--cinnabar-pure)'/><circle cx='71.0' cy='130.8' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='84.5' cy='130.8' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='98.0' cy='130.8' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='111.5' cy='130.8' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='125.0' cy='130.8' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='138.5' cy='130.8' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='152.0' cy='130.8' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='165.5' cy='130.8' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='44.0' cy='141.2' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='57.5' cy='141.2' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='71.0' cy='141.2' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='84.5' cy='141.2' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='98.0' cy='141.2' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='111.5' cy='141.2' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='125.0' cy='141.2' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='138.5' cy='141.2' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='152.0' cy='141.2' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='165.5' cy='141.2' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='44.0' cy='151.6' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='57.5' cy='151.6' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='71.0' cy='151.6' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='84.5' cy='151.6' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='98.0' cy='151.6' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='111.5' cy='151.6' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='125.0' cy='151.6' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='138.5' cy='151.6' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='152.0' cy='151.6' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='165.5' cy='151.6' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='44.0' cy='162.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='57.5' cy='162.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='71.0' cy='162.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='84.5' cy='162.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='98.0' cy='162.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='111.5' cy='162.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='125.0' cy='162.0' r='3.4' style='fill:var(--cinnabar-pure)'/><circle cx='138.5' cy='162.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='152.0' cy='162.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='165.5' cy='162.0' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='44.0' cy='172.4' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='57.5' cy='172.4' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='71.0' cy='172.4' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='84.5' cy='172.4' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='98.0' cy='172.4' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='111.5' cy='172.4' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='125.0' cy='172.4' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='138.5' cy='172.4' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='152.0' cy='172.4' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='165.5' cy='172.4' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='44.0' cy='182.8' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='57.5' cy='182.8' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='71.0' cy='182.8' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='84.5' cy='182.8' r='3.4' style='fill:var(--cinnabar-pure)'/><circle cx='98.0' cy='182.8' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='111.5' cy='182.8' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='125.0' cy='182.8' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='138.5' cy='182.8' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='152.0' cy='182.8' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='165.5' cy='182.8' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='44.0' cy='193.2' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='57.5' cy='193.2' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='71.0' cy='193.2' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='84.5' cy='193.2' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='98.0' cy='193.2' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='111.5' cy='193.2' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='125.0' cy='193.2' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='138.5' cy='193.2' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='152.0' cy='193.2' r='3.4' style='fill:var(--cinnabar-pure)'/><circle cx='165.5' cy='193.2' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='44.0' cy='203.6' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='57.5' cy='203.6' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='71.0' cy='203.6' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='84.5' cy='203.6' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='98.0' cy='203.6' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='111.5' cy='203.6' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='125.0' cy='203.6' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='138.5' cy='203.6' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='152.0' cy='203.6' r='3' style='fill:var(--ink-faint)' opacity='0.55'/><circle cx='165.5' cy='203.6' r='3' style='fill:var(--ink-faint)' opacity='0.55'/></g><path d='M200,140 L246,140' style='stroke:var(--ink-faint)' stroke-width='2' marker-end='url(#g1)'/><rect x='254' y='52' width='168' height='172' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='338' y='76' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink-soft)'>约 5 项碰巧显著</text><text x='338' y='94' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>（0.05 那条线的必然产物）</text><circle cx='294' cy='128' r='7' style='fill:var(--cinnabar-pure)'/><circle cx='316' cy='128' r='7' style='fill:var(--cinnabar-pure)'/><circle cx='338' cy='128' r='7' style='fill:var(--cinnabar-pure)'/><circle cx='360' cy='128' r='7' style='fill:var(--cinnabar-pure)'/><circle cx='382' cy='128' r='7' style='fill:var(--cinnabar-pure)'/><text x='338' y='170' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>另外 95 项</text><text x='338' y='192' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>躺进抽屉，没人发表</text><path d='M430,140 L476,140' style='stroke:var(--cinnabar-pure)' stroke-width='2' marker-end='url(#g2)'/><rect x='484' y='52' width='152' height='172' rx='8' style='fill:var(--cinnabar-pure)' opacity='0.08'/><rect x='484' y='52' width='152' height='172' rx='8' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='560' y='78' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>学报上全是阳性</text><text x='560' y='110' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>结论互相印证</text><text x='560' y='134' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>形成流派与权威</text><text x='560' y='158' text-anchor='middle' font-size='11.5' style='fill:var(--ink)'>看不出任何破绽</text><text x='560' y='190' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar-pure)'>——而它全是被筛出来的巧合</text><defs><marker id='g1' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L7,3 L0,6 z' style='fill:var(--ink-faint)'/></marker><marker id='g2' markerWidth='8' markerHeight='8' refX='6' refY='3' orient='auto'><path d='M0,0 L7,3 L0,6 z' style='fill:var(--cinnabar-pure)'/></marker></defs><text x='330' y='256' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>翻遍学报也看不出问题——因为反例根本不在学报里</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "几年下来，这份学报上**全是阳性结果**。后来的研究者会引用前人的发现，在此基础上做新研究，形成流派、形成争论、形成权威。一个外人翻开这份学报，**看不出任何破绽**——每篇论文都合规，统计都对，同行评议都过了。"
+    },
+    {
+      "type": "quote",
+      "original": "翻遍学报也挑不出毛病——因为反例根本不在学报里，它们在抽屉里。",
+      "translation": "发表偏倚的实质。这不是某个人造假，是整个生产流程的筛选规则导致的；每一环都合规，合起来却得到一份系统性失真的文献。"
+    },
+    {
+      "type": "h2",
+      "text": "二、这是弹孔那一课的学术版"
+    },
+    {
+      "type": "p",
+      "text": "看出来了吗？**这就是第二章那些飞机。**"
+    },
+    {
+      "type": "p",
+      "text": "军方统计的是返航的飞机，你翻阅的是**被发表的研究**。没飞回来的飞机不在停机坪上，没被发表的阴性结果不在学报上。**两者的结构完全一样：你面对的是一份被筛选过的样本，而筛子恰恰跟你关心的那个变量咬在一起**——飞机能否返航取决于中弹部位，论文能否发表取决于结果是否显著。"
+    },
+    {
+      "type": "p",
+      "text": "这就是为什么第二章值得当成全书总纲。**当你把「样本被筛过」这个念头装进脑子里，它会在你完全没预料到的地方冒出来。**"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "这个虚构不是在骂谁，也不是说所有学科都是占卜。它要说明的是一件**结构性**的事：**当一个领域只发表阳性结果时，这个领域的公开文献就是一份被筛选过的样本。**至于失真到什么程度，取决于两件事——这个领域真实效应的比例有多高，以及阴性结果被埋掉的比例有多大。真效应多的领域受影响小，靠碰运气找关联的领域受影响大。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "三、更麻烦的是：研究者不必作弊"
+    },
+    {
+      "type": "p",
+      "text": "如果发表偏倚只是「期刊偏爱阳性结果」，那还算好办。真正棘手的是另一层：**在同一项研究内部，研究者不必作弊，也能一路走到显著。**"
+    },
+    {
+      "type": "p",
+      "text": "同一批数据，摆在面前的从来不止一条分析路径："
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "那三个明显异常的样本，剔不剔除？（剔除有理由，不剔除也有理由）",
+        "按年龄分组还是按收入分组？分几档？",
+        "控制哪几个变量？加进去还是不加？",
+        "取哪一段时间窗口？三个月还是六个月？",
+        "用哪个指标衡量结果？主指标不显著，次指标呢？"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "每一个岔口都有两三个说得过去的选择，几个岔口连起来，**可能的分析路径就有几十上百条**。而只要路径够多，总有一条能出显著结果——**这跟上一章那条死鱼是同一个道理，只不过检验次数是隐形的。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "这条路上没有坏人。每一个岔口的选择单看都合理，可选择本身是在看过数据之后做的——于是「检验了多少次」这个数字，连研究者自己也不知道。",
+      "svg": "<svg viewBox='0 0 660 268' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>一堆无害的小决定，叠成一个假发现</text><circle cx='60' cy='140' r='7' style='fill:var(--ink)'/><text x='60' y='168' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>原始数据</text><g fill='none' style='stroke:var(--ink-faint)' stroke-width='1'><path d='M68,140 L160,86'/><path d='M68,140 L160,194'/><path d='M168,86 L260,58'/><path d='M168,86 L260,114'/><path d='M168,194 L260,166'/><path d='M168,194 L260,222'/><path d='M268,58 L360,44'/><path d='M268,58 L360,74'/><path d='M268,114 L360,100'/><path d='M268,114 L360,130'/><path d='M268,166 L360,152'/><path d='M268,166 L360,182'/><path d='M268,222 L360,208'/><path d='M268,222 L360,238'/></g><g style='fill:var(--ink-faint)'><circle cx='164' cy='86' r='5'/><circle cx='164' cy='194' r='5'/><circle cx='264' cy='58' r='4.4'/><circle cx='264' cy='114' r='4.4'/><circle cx='264' cy='166' r='4.4'/><circle cx='264' cy='222' r='4.4'/><circle cx='364' cy='44' r='4'/><circle cx='364' cy='74' r='4'/><circle cx='364' cy='100' r='4'/><circle cx='364' cy='152' r='4'/><circle cx='364' cy='182' r='4'/><circle cx='364' cy='208' r='4'/><circle cx='364' cy='238' r='4'/></g><circle cx='364' cy='130' r='6' style='fill:var(--cinnabar-pure)'/><path d='M68,140 L160,86 L260,114 L360,130' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='2.4'/><text x='164' y='72' text-anchor='middle' font-size='10.5' style='fill:var(--ink-faint)'>剔不剔异常值</text><text x='264' y='44' text-anchor='middle' font-size='10.5' style='fill:var(--ink-faint)'>怎么分组</text><text x='264' y='250' text-anchor='middle' font-size='10.5' style='fill:var(--ink-faint)'>控制哪些变量</text><rect x='400' y='104' width='236' height='58' rx='8' style='fill:var(--cinnabar-pure)' opacity='0.09'/><rect x='400' y='104' width='236' height='58' rx='8' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='518' y='128' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar-pure)'>报告出来的只有这一条</text><text x='518' y='150' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>其余岔口，论文里不会写</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这一点特别值得强调，因为它改变了我们对「学术不端」的理解。**这条路上没有坏人。**每一步都是研究者在真诚地思考「怎么分析才对」，只不过他是**在看过数据之后**才做的这些选择。人的心理机制会自动偏向那条出结果的路——不是撒谎，是**看见了才知道自己想要什么**。"
+    },
+    {
+      "type": "p",
+      "text": "结果就是：连研究者自己也说不清「我到底检验了多少次」。**多重比较问题的严重性，被隐藏在了一堆看似合理的小决定里。**"
+    },
+    {
+      "type": "h2",
+      "text": "四、那怎么办"
+    },
+    {
+      "type": "p",
+      "text": "作者没有开万灵药——这本书从不开万灵药。但方向是清楚的，而且这些年学界确实在往这个方向走。"
+    },
+    {
+      "type": "steps",
+      "items": [
+        {
+          "title": "预先注册研究方案",
+          "text": "在收集数据之前，就把「我要检验什么假设、怎么分组、怎么处理异常值」写下来公开登记。这一步直接掐掉了「看过数据再选路径」的空间——也是上面那张岔路图最有效的解药。",
+          "state": "done"
+        },
+        {
+          "title": "报告效应量，不只报显著与否",
+          "text": "「有差异」和「差异有多大」是两回事。一个统计上显著但实际微小的效应，对决策毫无意义。看区间比看星号有信息量得多。",
+          "state": "done"
+        },
+        {
+          "title": "看重复实验，不看单篇",
+          "text": "一项发现只有在别人独立重复出来之后才值得认真对待。这些年不少领域做过大规模重复检验，结果都不算好看——而这正说明这件事必要。",
+          "state": "done"
+        },
+        {
+          "title": "让阴性结果也有地方发表",
+          "text": "从根子上说，只要抽屉还在，筛子就还在。若阴性结果能被登记和发表，整个文献才可能是完整的样本。",
+          "state": "now"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "text": "还有一句必须说清楚的：**这些批评不是外人对统计学的攻击，它们本来就是统计学界内部的批评。**指出多重比较问题的是统计学家，做那条死鱼实验的是脑科学研究者自己，推动预注册的是各领域的期刊编辑。**这本书讲的不是「科学不可信」，而是「科学正在修自己的一个漏洞」**——这两句话的态度差别极大，读的时候别读混了。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "别读成犬儒",
+      "items": [
+        "这一章最容易被读成「所以论文都不能信」。那是把一个精细的批评读成了一个粗糙的态度。**正确的读法是：单篇论文的一个 p 值，权重应该被调低；而重复过的、效应量大的、预注册过的结果，权重应该被调高。**这是一次加权方式的调整，不是全盘否定。凡是拿这一章去论证「专家的话都不用听」的人，恰恰没读懂它。"
+      ]
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "同一套结构换个场景就认不出来了。左边是学术界的版本，右边是公司里的版本——每一行都对得上。",
+      "svg": "<svg viewBox='0 0 660 262' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>换个场景，同一套结构</text><line x1='24' y1='42' x2='636' y2='42' style='stroke:var(--line)' stroke-width='1'/><text x='200' y='66' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>学术界的版本</text><text x='480' y='66' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar-pure)'>公司里的版本</text><line x1='24' y1='78' x2='636' y2='78' style='stroke:var(--line)' stroke-width='1'/><text x='200' y='110' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>只发表阳性结果</text><text x='480' y='110' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>只复盘做成的项目</text><line x1='24' y1='126' x2='636' y2='126' style='stroke:var(--line)' stroke-width='0.6'/><text x='200' y='158' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>一路挑分析路径</text><text x='480' y='158' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>事后挑一个涨了的指标</text><line x1='24' y1='174' x2='636' y2='174' style='stroke:var(--line)' stroke-width='0.6'/><text x='200' y='206' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>预注册研究方案</text><text x='480' y='206' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>上线前先定成功标准</text><line x1='24' y1='222' x2='636' y2='222' style='stroke:var(--line)' stroke-width='1'/><text x='330' y='250' text-anchor='middle' font-size='12' style='fill:var(--ink-faint)'>阻力也一样：这些做法都会让「我做成了一件事」更难说出口</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "五、同一个结构，在你的公司里"
+    },
+    {
+      "type": "p",
+      "text": "这一课不只属于学术界。任何一个「只汇报成功案例」的组织，都在生产自己的《国际占卜学报》。"
+    },
+    {
+      "type": "p",
+      "text": "**方法论的自我印证。**一套打法被推广开来，接下来只有用它做成的项目会被写成案例、拿去分享；用它做砸的项目要么不复盘，要么被归因为「执行不到位」。**几年下来，公司内部关于这套打法的全部证据都是正面的**——而这跟打法本身有没有用，几乎没有关系。"
+    },
+    {
+      "type": "p",
+      "text": "**试点项目的筛选。**同时开十个试点，半年后留下表现最好的两个继续推。这个做法听起来很审慎，但它和「只发表阳性结果」是同一个动作：**留下来的那两个，有多少是真的更好，有多少只是运气？**如果试点周期短、样本小（回到第五章那一课），那么留下来的多半是波动的赢家。"
+    },
+    {
+      "type": "p",
+      "text": "**指标的事后挑选。**改版上线后，主指标没动，但发现某个次要指标涨了 8%，于是汇报时讲那个指标。**这就是「一路挑下去总能挑出显著」的公司版**，而且往往没有任何人觉得自己在造假——大家真诚地认为「总得找出点信号来」。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "对策也是同一套，只是换了名字：**在开始之前就说清楚要看哪个指标、达到多少算成功**（这就是预注册）；**失败的项目也要复盘并且留档**（这就是让阴性结果可见）；**别只看单次结果，看重复**。这三件事在公司里的阻力，和在学术界一模一样——因为它们都会让「我做成了一件事」这句话变得更难说出口。"
+      ]
+    },
+    {
+      "type": "pull",
+      "text": "问题不在于有人撒谎，而在于每个人都诚实的时候，一套只发表阳性结果的制度依然会生产出一份假的文献。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本章为对原书第二部分（推断）中关于发表偏倚一章的原创消化与转述；《国际占卜学报》是原书虚构的例子。",
+        "「同一批数据存在多条合理分析路径」这一问题，学界通常称为研究者自由度或「分岔路径」问题；本文以直观方式转述。",
+        "预注册、报告效应量、重复实验等改进方向为本文所作的补充，方向与原书一致，具体制度进展不在原书讨论范围内。",
+        "本文所举的路径数量与比例（100 项中约 5 项显著）为按 0.05 显著性水平所作的粗略示意，非精确统计。"
+      ]
+    }
+  ]
+}

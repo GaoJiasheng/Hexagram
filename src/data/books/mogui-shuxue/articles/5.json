@@ -1,0 +1,182 @@
+{
+  "title": "小数字骗人：大数定律与那些出极端值的小地方",
+  "subtitle": "排行榜的榜首和榜尾常常是同一批小地方——这不是发现，是噪声",
+  "centralIdea": "大数定律说样本越多、比率越靠近真实值；它的另一面常被忘掉——样本越少，比率越可以随便乱跳。于是按人口比率排某种罕见病的发病率，最高的是小地方，最低的也是小地方；教育研究发现成绩最好的学校普遍规模小，可成绩最差的学校同样普遍规模小。把「方差大」读成「均值高」，是这类误读里最贵的一种，因为它能推动一整轮改革和一大笔钱。这一章还要澄清两个常见的误解：大数定律不保证「多抛几次就会补回来」（赌徒谬误），也不意味着大样本一定更接近真相——大样本只压得住随机误差，压不住系统性偏差。真正该练的动作是：看到任何排行榜，先找分母。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "先做一道题。某种罕见病，按人口比率统计，**哪个地区的发病率最高？**答案是一个人口很少的小地方。**哪个地区最低？**答案是另一个人口很少的小地方。"
+    },
+    {
+      "type": "p",
+      "text": "如果你觉得这里面一定藏着什么原因——水质、饮食、工业污染、气候——那就恰好掉进这一章要讲的坑里了。**里面什么原因也没有。**"
+    },
+    {
+      "type": "h2",
+      "text": "一、分母越小，比率越野"
+    },
+    {
+      "type": "p",
+      "text": "道理用硬币就能说清。抛十次硬币，出现八次正面——这一点也不稀奇，随手抛几轮就能碰上。抛一万次，出现八千次正面——**这时候你该去查那枚硬币了**，因为在一枚公平硬币上，这种事实际上不会发生。"
+    },
+    {
+      "type": "p",
+      "text": "同样是「八成正面」，在十次里毫不出奇，在一万次里近乎奇迹。**比率相同，含义天差地别，差别全在分母。**"
+    },
+    {
+      "type": "p",
+      "text": "这就是**大数定律**：样本越多，观测到的比率越向真实概率收敛。这一条大家都听说过。但它有个同样重要、却常被忘掉的另一面——**样本越少，观测到的比率越可以离真实值很远。**"
+    },
+    {
+      "type": "p",
+      "text": "现在回到那个地区发病率的问题。一个人口几十万的小地方，一年里这种罕见病可能只有几例；多两例、少两例，比率就能翻倍或腰斩。而一个人口几千万的大地方，一年几百例，多两例少两例几乎看不出来。**结果就是：小地方在榜单上到处乱跑，大地方老老实实地待在中间。**排行榜的两头，自然被小地方包场。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "三条线上的点，背后的真实水平完全一样。差别只在样本量：分母小的那一行散得到处都是，榜首和榜尾必然被它们占据。",
+      "svg": "<svg viewBox='0 0 660 288' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>同一个真实水平，三种样本量</text><line x1='330' y1='52' x2='330' y2='236' style='stroke:var(--cinnabar-pure)' stroke-width='1.4' stroke-dasharray='4 4'/><text x='330' y='256' text-anchor='middle' font-size='11.5' style='fill:var(--cinnabar-pure)'>真实发病率</text><text x='100' y='86' text-anchor='end' font-size='12.5' style='fill:var(--ink-soft)'>人口 10 万</text><line x1='112' y1='84' x2='578' y2='84' style='stroke:var(--line)' stroke-width='1'/><g style='fill:var(--ink)'><circle cx='130' cy='84' r='4.4'/><circle cx='176' cy='84' r='4.4'/><circle cx='238' cy='84' r='4.4'/><circle cx='306' cy='84' r='4.4'/><circle cx='368' cy='84' r='4.4'/><circle cx='440' cy='84' r='4.4'/><circle cx='508' cy='84' r='4.4'/><circle cx='558' cy='84' r='4.4'/></g><text x='100' y='150' text-anchor='end' font-size='12.5' style='fill:var(--ink-soft)'>人口 200 万</text><line x1='112' y1='148' x2='578' y2='148' style='stroke:var(--line)' stroke-width='1'/><g style='fill:var(--ink)'><circle cx='262' cy='148' r='4.4'/><circle cx='292' cy='148' r='4.4'/><circle cx='318' cy='148' r='4.4'/><circle cx='340' cy='148' r='4.4'/><circle cx='366' cy='148' r='4.4'/><circle cx='398' cy='148' r='4.4'/></g><text x='100' y='214' text-anchor='end' font-size='12.5' style='fill:var(--ink-soft)'>人口 3000 万</text><line x1='112' y1='212' x2='578' y2='212' style='stroke:var(--line)' stroke-width='1'/><g style='fill:var(--ink)'><circle cx='314' cy='212' r='4.4'/><circle cx='326' cy='212' r='4.4'/><circle cx='336' cy='212' r='4.4'/><circle cx='346' cy='212' r='4.4'/></g><text x='130' y='68' text-anchor='middle' font-size='11' style='fill:var(--cinnabar-pure)'>榜尾</text><text x='558' y='68' text-anchor='middle' font-size='11' style='fill:var(--cinnabar-pure)'>榜首</text><text x='330' y='280' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>榜单只给你名次，不给你分母</text></svg>"
+    },
+    {
+      "type": "quote",
+      "original": "抛十次出现八次正面不稀奇；抛一万次出现八千次正面，才该去查那枚硬币。",
+      "translation": "同一个比率，在不同分母下的含义完全不同。这句话可以当成这一章的全部——看到比率先找分母，比记住「大数定律」这个词有用得多。"
+    },
+    {
+      "type": "h2",
+      "text": "二、那笔花出去的钱：小学校的故事"
+    },
+    {
+      "type": "p",
+      "text": "这个误读听起来无害，但它是要花钱的。作者举了一个真实的例子。"
+    },
+    {
+      "type": "p",
+      "text": "有一段时间，教育研究者统计学校成绩，发现一个引人注目的规律：**成绩最好的那批学校，普遍规模较小。**这个发现太合乎直觉了——小班教学、老师顾得过来、学生不会被淹没。于是有大笔资金投向「把大学校拆成小学校」的改革。"
+    },
+    {
+      "type": "p",
+      "text": "可是只要再看一眼榜单的另一端就会发现：**成绩最差的那批学校，也普遍规模较小。**"
+    },
+    {
+      "type": "p",
+      "text": "小学校的成绩不是更高，**是更散**。一所两百人的学校，赶上一届学生特别好或者特别差，平均分就能大幅波动；一所三千人的学校，个体差异互相抵消，成绩稳稳地待在中间。**榜首和榜尾都被小学校占着，中间清一色是大学校**——这不是发现，这是分母在说话。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "只看榜首那一栏，结论是「小学校更好」；把榜尾也放进来，结论就没了。这个错误之所以特别贵，是因为它看上去有数据支持，而且很符合直觉。",
+      "svg": "<svg viewBox='0 0 660 276' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>只看榜首，与两头都看</text><rect x='24' y='50' width='290' height='196' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='169' y='78' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--ink-soft)'>只看成绩最好的 50 所</text><g style='fill:var(--azure)'><rect x='60' y='100' width='36' height='14' rx='3'/><rect x='60' y='122' width='30' height='14' rx='3'/><rect x='60' y='144' width='42' height='14' rx='3'/><rect x='60' y='166' width='28' height='14' rx='3'/><rect x='60' y='188' width='38' height='14' rx='3'/></g><text x='120' y='112' font-size='11.5' style='fill:var(--ink)'>规模小</text><text x='120' y='134' font-size='11.5' style='fill:var(--ink)'>规模小</text><text x='120' y='156' font-size='11.5' style='fill:var(--ink)'>规模小</text><text x='120' y='178' font-size='11.5' style='fill:var(--ink)'>规模小</text><text x='120' y='200' font-size='11.5' style='fill:var(--ink)'>规模小</text><text x='169' y='228' text-anchor='middle' font-size='12' style='fill:var(--azure)'>结论：该办小学校</text><rect x='346' y='50' width='290' height='196' rx='9' style='fill:var(--cinnabar-pure)' opacity='0.07'/><rect x='346' y='50' width='290' height='196' rx='9' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='491' y='78' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar-pure)'>两头一起看</text><text x='382' y='108' font-size='12' style='fill:var(--ink)'>成绩最好的 50 所 → 规模小</text><text x='382' y='136' font-size='12' style='fill:var(--ink)'>成绩最差的 50 所 → 也规模小</text><text x='382' y='164' font-size='12' style='fill:var(--ink)'>中间那一大批 → 规模大</text><line x1='378' y1='182' x2='604' y2='182' style='stroke:var(--line)' stroke-width='1'/><text x='491' y='208' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>小学校不是更好，是更散</text><text x='491' y='230' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>把方差大读成了均值高</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**「把方差大读成均值高」**——这句话值得记住，因为它涵盖的场合远不止学校。哪个部门的人效最高？往往是人最少的那个。哪个渠道的转化率最高？往往是量最小的那个。哪个基金经理的收益率最亮眼？往往是管钱最少、只买了几只股票的那个。**在所有这些场合，你首先看到的都是波动，然后才是能力。**"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "那怎么办？一个朴素而有效的做法是：**别看榜首，看中等规模里的极端值。**如果一所三千人的学校成绩排进了前列，那才是真正值得研究的对象——它的分母足够大，波动压得住，剩下的那部分更可能是真本事。同理，一个管理规模很大的基金经理若能长期跑赢，比一个小基金的年度冠军有信息量得多。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "三、两个常见的误解，顺手澄清"
+    },
+    {
+      "type": "p",
+      "text": "大数定律太有名，以至于被误用的方式也格外多。有两个误解值得在这里澄清。"
+    },
+    {
+      "type": "p",
+      "text": "**第一个是赌徒谬误。**「已经连开五把红了，下一把该开黑了吧？」——不该。大数定律说的是「随着次数增加，比率会向 50% 靠拢」，它靠拢的方式**不是让后面的结果去补偿前面的**，而是让前面那几把在越来越大的总数里**被稀释掉**。硬币没有记忆，它不知道自己刚才开了什么。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "偏差不会被「补回来」，它是被后面越来越大的分母稀释掉的。这个区别听起来像抠字眼，实际上是赌徒谬误的全部要害。",
+      "svg": "<svg viewBox='0 0 660 250' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>它不是补偿，是稀释</text><rect x='24' y='50' width='290' height='170' rx='9' style='fill:var(--cinnabar-pure)' opacity='0.07'/><rect x='24' y='50' width='290' height='170' rx='9' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='169' y='78' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar-pure)'>✕ 以为是这样</text><text x='169' y='108' text-anchor='middle' font-size='12' style='fill:var(--ink)'>前面多开了 5 把红</text><text x='169' y='134' text-anchor='middle' font-size='12' style='fill:var(--ink)'>↓</text><text x='169' y='160' text-anchor='middle' font-size='12' style='fill:var(--ink)'>后面要多开几把黑「补回来」</text><text x='169' y='192' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>——硬币没有记忆，不会补</text><rect x='346' y='50' width='290' height='170' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='491' y='78' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--azure)'>✓ 实际是这样</text><text x='378' y='108' font-size='12' style='fill:var(--ink)'>10 把里多 5 把 → 偏差 50%</text><text x='378' y='136' font-size='12' style='fill:var(--ink)'>1000 把里还是多 5 把 → 0.5%</text><text x='378' y='164' font-size='12' style='fill:var(--ink)'>100 万把里还是多 5 把 → 微不足道</text><text x='491' y='196' text-anchor='middle' font-size='11.5' style='fill:var(--azure)'>那 5 把一直在，只是不再重要了</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**第二个误解更微妙：以为「样本大就更接近真相」。**大数定律只管一件事——**压住随机波动**。它对**系统性偏差**一点办法也没有。如果你的抽样方式本身是歪的（比如只调查了会接电话的人、只统计了返航的飞机），那么样本再大，你也只是**更精确地得到了一个错的答案**。"
+    },
+    {
+      "type": "p",
+      "text": "这两点合起来，正好把这一章和上一章、以及第二章连在了一起：**小样本的问题是噪声，大样本的问题是偏差**——前者靠加大样本能解决，后者靠加大样本永远解决不了。"
+    },
+    {
+      "type": "h2",
+      "text": "四、它在工作和生活里的样子"
+    },
+    {
+      "type": "p",
+      "text": "这一课的应用场合多得惊人，而且几乎每一处都涉及资源分配——所以它不只是认知上的洁癖，是真会省钱的。"
+    },
+    {
+      "type": "p",
+      "text": "**A／B 测试的早期数据。**新版本上线两小时，转化率高出 40%，团队一片欢腾。可两小时只有几百个样本，这个 40% 里绝大部分是波动。**「先看一眼有没有效果」这个习惯，本身就是在鼓励你在分母最小、噪声最大的时候下判断。**"
+    },
+    {
+      "type": "p",
+      "text": "**月度业绩排名。**十来个人的小组，按月排名，冠军和末位每月轮换。管理者据此认为「谁最近状态好、谁在滑坡」，然后调整资源、调整信心。但一个人一个月的业绩里，可控的部分能占多少？**排名的波动，很可能主要是运气在排队。**"
+    },
+    {
+      "type": "p",
+      "text": "**「这个城市的某某率全国最高」。**看到这种新闻，先想想那个城市多大。人口越少的地方，越容易在各种榜单上出现在两头——不管榜单是关于犯罪、疾病、离婚还是幸福感。"
+    },
+    {
+      "type": "p",
+      "text": "**罕见事件的「集中出现」。**某小区半年里出了三例同一种罕见病，居民自然会怀疑水质或者基站。这种怀疑完全合情合理，也确实该去查。但同时要知道：**在足够多的小区里，总会有某些小区偶然地出现聚集**——就像掷很多次骰子，总会有连着出三个六的时候。**「有没有异常聚集」这个问题，必须跟「一共有多少个这样的小区」一起问**，否则你永远能找到一个看起来可疑的地方。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "别读成冷漠",
+      "items": [
+        "上面最后一条最容易被读成「所以居民的担心是没根据的」。**不是这个意思。**统计上的解释和实际去查一遍，两件事不冲突——真有污染源的案例历史上也不少。这一课要防的只是**跳过检验直接下结论**那一步：先算清楚「纯属偶然的话，本来会有多少个小区出现这种聚集」，再看眼前这一处是不是明显超出。**它让调查更有针对性，而不是取消调查。**"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "五、一个可以随身带的问句"
+    },
+    {
+      "type": "p",
+      "text": "这一章的可操作性很强，几乎可以浓缩成一个动作。"
+    },
+    {
+      "type": "steps",
+      "items": [
+        {
+          "title": "看到排行榜，先找分母",
+          "text": "每一项背后有多少样本？如果榜单不给，那这份榜单大概率没什么信息量。榜单越是「按比率排」、样本量越是差得远，这个问题越致命。",
+          "state": "done"
+        },
+        {
+          "title": "再看榜尾",
+          "text": "如果榜首和榜尾是同一类对象（都是小地方、小团队、小样本），那么你看到的就是波动，不是水平。这一步只要五秒钟，却能挡掉大部分伪发现。",
+          "state": "done"
+        },
+        {
+          "title": "然后才问：中等规模里有没有极端值",
+          "text": "那才是值得研究的对象。分母够大而仍然突出，才有可能是真本事。",
+          "state": "now"
+        }
+      ]
+    },
+    {
+      "type": "pull",
+      "text": "榜单只给你名次，不给你分母；而那些排在最前和最后的名字，往往正是分母最小的那些。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本章为对原书中关于大数定律与小样本极端值一节的原创消化与转述。",
+        "「按人口比率排罕见病发病率，最高与最低都是小地区」是这一类现象的经典示例；原书用美国各州的数据说明，本文只保留其结构。",
+        "「小学校成绩更好」的研究与随后的办学规模改革，是美国教育政策史上的真实案例；本文不评价该改革的其余成效，只讨论其统计推论。",
+        "赌徒谬误与「大样本压不住系统性偏差」两点为本文所作的延伸澄清，方向与原书一致。"
+      ]
+    }
+  ]
+}
