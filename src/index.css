@@ -216,9 +216,10 @@ button { cursor: pointer; font-family: var(--font-serif); }
    而上面那条 #157 的导航一收起,正文就直接滚进状态栏那一条 —— 系统时钟和电量画在最上层,
    把正文压成一团(iOS 上每页下滑必中,浏览器里因为有浏览器自己的顶栏所以看不出来)。
    这里铺一条与纸同色的挡板长驻在那个高度上,导航在不在都盖得住。
-   z-index 高于 .app-nav 的 100,才能在导航平移经过时也压住它;
-   浮层(抽屉/搜索面板)z-index 更高,且各自带 env(safe-area-inset-top),不受影响。
-   非独立/非刘海时 env() 为 0 → 高度 0,浏览器里完全无副作用。 */
+   z-index 取 99:压在正文之上、却在 .app-nav(100)**之下** —— 导航在时由导航自己那条
+   padding-top 盖住(含 --scrolled 的半透明+模糊,观感不被这块实色破坏),导航收起了才轮到挡板兜底。
+   非独立/非刘海时 env() 为 0 → 高度 0,浏览器里完全无副作用。
+   注:抽屉是 createPortal 到 body 的,不在 .app-shell 内,另见 .baihua-drawer::before。 */
 .app-shell::before {
   content: '';
   position: fixed;
@@ -227,7 +228,7 @@ button { cursor: pointer; font-family: var(--font-serif); }
   right: 0;
   height: env(safe-area-inset-top);
   background: var(--paper);
-  z-index: 101;
+  z-index: 99;
   pointer-events: none;
 }
 
@@ -3673,6 +3674,22 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .baihua-overlay__backdrop { position: absolute; inset: 0; background: rgba(20,16,12,.42); animation: baihua-fade .2s ease; }
 .baihua-drawer { position: relative; display: flex; flex-direction: column; width: clamp(360px, 52vw, 680px); max-width: 100%; height: 100%; background: var(--paper); border-left: 1px solid var(--line); box-shadow: -12px 0 44px -18px rgba(0,0,0,.45); animation: baihua-slide .26s cubic-bezier(.2,.7,.3,1); }
 .baihua-overlay--max .baihua-drawer { width: 100%; }
+/* 抽屉自己的状态栏挡板。头部条 __bar 是 absolute + 收起时 translateY(-100%)(#156),
+   一收起,正文就滚进 iOS 状态栏那一条、被系统时钟压住(实机截图逮到,与主导航同一个成因)。
+   抽屉 createPortal 到 body、不在 .app-shell 内,够不着那边的挡板,故自带一块。
+   底色用 --paper-raised 与 __bar 一致 —— 条在时由条盖住(z-index 3 > 2),
+   条收起时挡板顶上,两种状态同色,不留接缝。 */
+.baihua-drawer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: env(safe-area-inset-top);
+  background: var(--paper-raised);
+  z-index: 2;
+  pointer-events: none;
+}
 /* 顶部让出 iOS 安全区(刘海/状态栏):抽屉 createPortal 到 body、不在带安全区的 app 壳内,故头部须自带 env(safe-area-inset-top)。非独立/非刘海 env=0 不影响 */
 .baihua-drawer__head { flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: calc(13px + env(safe-area-inset-top)) 20px 13px; border-bottom: 1px solid var(--line); background: var(--paper-raised); }
 .baihua-drawer__titles { display: flex; align-items: center; gap: 10px; min-width: 0; }
