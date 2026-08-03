@@ -5,7 +5,7 @@
 > 哪份管什么见 §六 文档地图。
 >
 > **别信本文的数字**(会过时)—— 先跑 §0 的脚本对现状。
-> 最后通盘整理:2026-08-02。
+> 最后通盘整理:**2026-08-03**。
 
 ---
 
@@ -39,250 +39,166 @@ EOF
 npm run check-data
 ```
 
-**2026-08-02 快照**:典籍 67 部 · 白话 1337 章(5555 图 · 0 坏引文)· 观书 112 本 1034 篇 ·
-争鸣 84 辩 · 书级导读 62 篇 · **家级导读 10 篇 ✅** ·
-名句集 746 句 · iOS build 47 / 版本 1.0.0。
+**2026-08-03 快照**:典籍 **67 部** · 白话 **1337 章**(富文本 1308)· 观书 **140 本 1371 篇**(富文本 1270)·
+争鸣 **88 辩** · 书级导读 **62 篇** · 家级导读 **10 篇** · 名句集 746 句 ·
+iOS **build 50** / 版本 1.0.0 · 生产 `hexa.gavin.pub`(Cloudflare Pages)。
+
+> 脚本会报「无白话的书:zhongyi/nanjing(81章)」—— **那是 owner 定的不做,不是缺口。**
 
 ---
 
-# 一、上线(全部卡在 owner 的外部账号与审批,我替不了)
+# 一、还卡着的(全是要你本人去外部控制台点的)
 
-> 这一节是**目前唯一真正卡住的东西**。代码与内容都齐了,差的是几个需要你本人去外部
-> 控制台点的东西。三条线互不阻塞,可并行。
+> 代码与内容都齐了。这一节里我替不了的部分已标「**你做**」。
 
-## 1.1 登录 + 评论上生产 ⬅ **最该先办**
+## 1.1 App Store 上架 · 海外区 ⬅ **当前唯一主线**
 
-**2026-08-02 已上生产**:D1 迁移 0001/0002/0003 已跑、Google 登录已配并实测通过、
-owner 账号已设、`ADMIN_PASSPHRASE` 已删(有 owner 后该通道自动失效)、
-评论治理四件套(举报/拉黑/过滤/联系方式)已上线并实测、iOS build 48 已带登录与云同步。
-
-**Turnstile 已配完(2026-08-02)**:sitekey `0x4AAAAAAEEfc0sGSrkQXqXQ` 进代码、
-`TURNSTILE_SECRET_KEY` 进 Pages 环境变量。**站上第一条真实评论已发出并落库**,
-过滤器实测拦下「加微信…」并返回申诉指引。§1.1 至此全部完成。
-
-**这一轮踩的三个坑,记下来免得重犯**:
-1. `wrangler pages secret put` 的**第一个参数是变量名不是值** —— 把密钥当名字传进去,
-   而**变量名是不加密的**(`secret list` 直接明文打出来),等于密钥泄露。已删并轮换。
-2. wrangler 的 OAuth 登录态会过期,过期后非交互环境直接报「需要 CLOUDFLARE_API_TOKEN」。
-3. **`_redirects` 的 SPA 回退会让任何不存在的 `/assets/*.js` 返回 200 的 HTML** ——
-   拿 HTTP 码判断「部署成功了没」会被骗;要 grep 文件内容才作数。
-
-### 四件事的结果(2026-08-02 全部完成)
-
-| | 事项 | 结果 |
-|---|---|---|
-| A | Turnstile | ✅ sitekey 进代码 · secret 进环境变量 · **站上第一条真实评论已发出** |
-| B | Google OAuth | ✅ 项目 `hexagram` / 客户端 `hexa-web` / 同意屏幕已发布正式版(非敏感范围,无需 Google 审核) |
-| C | Resend 邮件 | ⏸ **未做,可跳过**。不配只是收不到「有人评论了」的通知邮件 |
-| D | owner 账号 | ✅ `gaojiasheng.him@gmail.com` 已置 `is_owner=1`;`ADMIN_PASSPHRASE` 已删 |
-
-### 我这边拿到凭证后做什么(你不用管)
-
-1. 换 `config.js` 的 sitekey;把 `TURNSTILE_SECRET_KEY` / `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET`
-   /(可选)`RESEND_API_KEY` + `OWNER_NOTIFY_EMAIL` 配进 Cloudflare Pages 环境变量(secret 类加密)。
-2. 跑生产 D1 迁移(`wrangler d1 execute --remote`)。
-3. 部署,线上复验一轮:注册 → 退出 → 登录 → Google 登录并账 → 发评论 → 删自己的评论 → 云同步。
-4. 引导你走 D,然后把 `ADMIN_PASSPHRASE` 从环境变量里删掉。
-
-**细节参考**:[platform-upgrade-plan.md §8](./platform-upgrade-plan.md) ·
-[auth-comments-design.md](./auth-comments-design.md)(§4.8 Google · §7.8 Turnstile · §8.8 Resend)
-
----
-
-## 1.1b 隐私口径 ✅ **已改(2026-08-03)**
-
-`/privacy` 全页重写:以**登录与否**为分界线,如实写明登录后收邮箱、同步研习数据、
-评论与昵称公开、Turnstile 与 Google 登录的第三方处理;儿童节改为「不面向 13 岁以下提供账号服务」;
-新增「你的权利」(导出 / 更正 / **注销账号** / 只用本地);英文摘要同步重写;
-联系方式统一为 `hexa@gavin.pub`(备用 foxmail)。
-
-**顺带补了一个上架硬阻塞**:App Store **5.1.1(v) 要求支持注册的 App 必须提供账号删除入口**,
-光有「退出登录」不算。已加 `DELETE /api/me`(要抄一遍自己的邮箱确认)+ 设置里的低调入口;
-users 上的外键全是 CASCADE,一删连带清掉登录方式/会话/云端足迹/评论/举报/屏蔽,
-本机副本也一并清空(否则下次登录又把旧足迹同步上去)。
-
-**仍待你办**:
-- [ ] **App Store 隐私问卷**不能再填「不收集数据」——至少 **Contact Info → Email(与身份关联)**
-      + **User Content**(足迹同步、评论)。填错等于向 Apple 作不实申报。
-- [ ] **年龄分级问卷**里「用户生成内容」那几问要如实勾(App 现在展示评论)。
-
----
-
-## 1.2 App Store 上架 · 海外区
-
-**现状**:TestFlight 内测已通;版本 **1.0.0**、当前 **build 46**;
+**现状**:版本 **1.0.0**、**build 50** 已在 TestFlight 内部组(可直接装);
 出口合规已在 `Info.plist` 声明(`ITSAppUsesNonExemptEncryption=NO`);
 一键发版 `./ship-ios.sh`(bump → 构建 → 上传 → 自动加内部测试组)。
 
-> 📋 **可粘贴的文案**(名称/副标题/关键词/描述/宣传文本/Review Notes)在
-> [appstore-listing.md](./appstore-listing.md);**逐步操作手册 + 被拒应对附录**在
-> [appstore-runbook.md](./appstore-runbook.md)。**进度只记在本文这里**,那两份不再打勾。
+> 📋 **可粘贴的文案**(名称/副标题/关键词/描述/Review Notes)在
+> [appstore-listing.md](./appstore-listing.md);**逐步操作 + 被拒应对**在
+> [appstore-runbook.md](./appstore-runbook.md)。**进度只记在本文这里**,那两份不打勾。
 
 ### 阶段 A · 上线前准备
 
-- [x] ~~**A1 发 web 到 Cloudflare**~~(已发,多次)——`npm run build && npx wrangler pages deploy dist --project-name=hexa-gavin-pub`
-- [ ] **A2 验证隐私政策页**:浏览器打开 `https://hexa.gavin.pub/privacy` 确认能打开(ASC 必填项的前提)
+- [x] ~~**A1 发 web 到 Cloudflare**~~ —— `npm run build && npx wrangler pages deploy dist --project-name=hexa-gavin-pub`
+      ⚠️ **发之前确认 `dist/sw.js` 在**:`build:cap` 会产出禁掉 service worker 的版本,
+      发完 iOS 若直接推 dist,等于把没有 SW 的构建发上线。
+- [ ] **A2 验证隐私政策页**(你做):浏览器打开 `https://hexa.gavin.pub/privacy` 确认能开(ASC 必填项的前提)
 - [x] ~~**A3 截图**~~(2026-08-03 已出,在 `~/Desktop/hexa-shots/`)——
-      **iPhone 6.9″ 7 张**(1320×2868):门户 / 卦象矩阵 / 乾卦详情 / 六爻(带爻位身份)/
-      白话 hero / 推演工作台 / 百家争鸣圆桌;
-      **iPad 13″ 5 张**(2064×2752):门户 / 易经首页 / 8×8 全矩阵 / 乾卦(带侧栏目录)/
-      白话左右对读。尺寸即 ASC 所需,直接上传,不用再改。
-      **注**:iPhone 的 1–3 张出自修 iOS 三个显示缺陷之前的构建,但那三屏的可见内容不受影响
-      (导航常驻故无状态栏问题、视野内无未着色按钮),已逐张核过。
+      **iPhone 6.9″ 7 张**(1320×2868)· **iPad 13″ 5 张**(2064×2752)。
+      尺寸即 ASC 所需,直接上传。全部出自含四处 iOS 修复的构建。
 
-### 阶段 B · App Store Connect 填表(你做,约 1–2 小时)
+### 阶段 B · App Store Connect 填表(**你做**,约 1–2 小时)
+
+**真要动脑子的只有 4 个:B4 / B7 / B8 / B10。其余是复制粘贴。**
 
 - [ ] **B1** 新建版本,版本号 **1.0.0**
-- [ ] **B2** 填列表信息(名称/副标题/关键词/描述/宣传文本)—— 照 `appstore-listing.md §一` 复制粘贴
+- [ ] **B2** 列表信息(名称/副标题/关键词/描述/宣传文本)—— 照 `appstore-listing.md §一` 粘贴
 - [ ] **B3** 上传截图(A3 产出)
-- [ ] **B4** 选构建 —— 选**最新 build**(现为 **50**,已在 TestFlight 内部组)。
-      ⚠️ **别选 49 及更早**:build 50 才带上 2026-08-03 修的四个 iOS 显示/交互缺陷
-      (状态栏挡板 ×2、按钮变系统蓝、触摸目标过小)
+- [ ] **B4** 选构建 —— 选 **build 50**。
+      ⚠️ **别选 49 及更早**:50 才带上 2026-08-03 修的四个 iOS 缺陷(见 §4.2)
 - [ ] **B5** 隐私政策 URL:`https://hexa.gavin.pub/privacy`
 - [ ] **B6** 支持 URL:`https://hexa.gavin.pub/about`;营销 URL 可空
-- [ ] **B7** App 隐私问卷:**⚠ 不能选「不收集数据」**。登录与云同步已在 build 48+ 上线,
-      「先上架后开登录」那条旧建议**已作废**。照 [appstore-listing.md §四](./appstore-listing.md)
-      的三行表填(Email Address / User ID / Other User Content,均 Linked=是、Tracking=否);
-      **阅读埋点不申报** —— iOS 构建里 `telemetry.js` 直接关掉了
-- [ ] **B8** 年龄分级问卷:如实答。两件事:① 易经是**义理研读**、明示非吉凶预言;
-      ② **App 内展示用户评论**(只读,不能在 App 内发),凡问到 UGC/社交/用户互动的**都要答有**,
-      并说明有举报、屏蔽与审核 —— 见 [appstore-listing.md §三](./appstore-listing.md)
-- [ ] **B9** 类目:主 **教育(Education)** · 次 **参考(Reference)** 或图书。**不要选生活/占卜类**
+- [ ] **B7** App 隐私问卷:**⚠ 不能选「不收集数据」**。照
+      [appstore-listing.md §四](./appstore-listing.md) 的三行表填
+      (Email Address / User ID / Other User Content,均 Linked=是、Tracking=否);
+      **阅读埋点不申报** —— iOS 构建里 `telemetry.js` 直接关掉了。
+      填错等于向 Apple 作不实申报。
+- [ ] **B8** 年龄分级问卷:如实答。两件事 —— ① 易经是**义理研读**、明示非吉凶预言;
+      ② **App 内展示用户评论**(只读,不能在 App 内发),凡问到 UGC/社交/用户互动的**都答有**,
+      并说明有举报、屏蔽与审核。见 [appstore-listing.md §三](./appstore-listing.md)
+- [ ] **B9** 类目:主 **教育** · 次 **参考** 或图书。**不要选生活/占卜类**
 - [ ] **B10** 价格 **免费**;销售范围 → **取消勾选「中国大陆」**(先发海外区的关键一步)
 - [ ] **B11** 版权行:`© 2026 高嘉晟`
-- [ ] **B12** Review Notes:把 `appstore-listing.md §五` 那段**原样贴入**「App 审核信息 → 备注」
-      (§五 已按登录/评论上线重写;**旧版写的「无需登录、无需账号、不上传服务器」是不实陈述,别再用**)
-- [ ] **B12b** 「App 审核信息 → 登录信息」填一个演示账号(在 hexa.gavin.pub 注册一个专用邮箱即可)。
-      登录虽非必需,但审核员想验同步/评论区时有账号更顺
-- [ ] **B13** 发布方式:建议「手动发布」(审核通过后你点一下才上架)
+- [ ] **B12** Review Notes:把 `appstore-listing.md §五` **原样贴入**「App 审核信息 → 备注」
+      (§五 已按登录/评论上线重写;**旧版的「无需登录、无需账号、不上传服务器」是不实陈述,别再用**)
+- [ ] **B12b** 「App 审核信息 → 登录信息」填一个演示账号(在 hexa.gavin.pub 注册一个专用邮箱)。
+      登录非必需,但审核员想验同步/评论区时有账号更顺
+- [ ] **B13** 发布方式:建议「手动发布」(通过后你点一下才上架)
 - [ ] **B14** 提交审核
 
 ### 阶段 C · 审核
 
 - [ ] **C1** 等审核(通常 24–48 小时)
-- [ ] **C2** 若被拒 —— 三个高概率理由已备好应对(见 `appstore-runbook.md` 文末附录):
+- [ ] **C2** 若被拒 —— 三个高概率理由已备好应对(`appstore-runbook.md` 文末附录):
       **4.2 套壳最低功能** / **占卜内容** / **中医医疗**
 - [ ] **C3** 通过后:若选手动发布,点「发布此版本」
 
 ---
 
+## 1.2 邮件:以 `hexa@` 发信 + 评论通知
+
+`hexa@gavin.pub` **收信已通**(2026-08-03,见 §4.2)。剩两件,一次 DNSPod 能一起办:
+
+- [ ] **配 Resend,把评论通知打通**(你做)—— `RESEND_API_KEY` 与 `OWNER_NOTIFY_EMAIL`
+      **两个 secret 都没配**(线上只有 `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` / `TURNSTILE_SECRET_KEY`),
+      [comment-notification.js:26](../server/comment-notification.js:26) 的
+      `if (!apiKey || !ownerEmail) return null` 静默跳过 ——
+      **所以现在有人评论你收不到任何通知**。不是 bug,是没配完。
+      Resend 验证 `gavin.pub` → 把它给的 SPF/DKIM TXT 加进 DNSPod →
+      `npx wrangler pages secret put RESEND_API_KEY --project-name=hexa-gavin-pub`(同理 OWNER_NOTIFY_EMAIL)。
+- [ ] **以 `hexa@gavin.pub` 的身份回信**(等上一条做完)—— ImprovMX 免费版**只能收不能发**,
+      现在从 foxmail 点回复,对方看到的是 `gaojiasheng.him@foxmail.com`,
+      **专门弄这个地址就是为了不露个人邮箱,一回复就露了**。
+      不必买付费版:Resend 验完域名后用它的 SMTP 在邮箱里加「以此地址发信」——
+      `smtp.resend.com:587`,用户名 `resend`,密码即 API key。**在那之前先别用 hexa@ 回信。**
+
+> ⚠️ **SPF 一个域只能有一条**。要与 ImprovMX 那条合并成
+> `v=spf1 include:spf.improvmx.com include:_spf.resend.com ~all`,**不能加两条**。
+>
+> ⚠️ `wrangler pages secret put` 的**第一个参数是变量名不是值**,而**变量名不加密**
+> (`secret list` 明文打出来)。传错等于密钥泄露 —— 踩过一次,已轮换。
+
+---
+
 ## 1.3 中国大陆区(APP 备案 + 站点 ICP)
 
-**与 1.2 不冲突**:海外区可以先上,大陆区后补。**没有备案号上不了陆区,这是硬门槛。**
+**与 §1.1 不冲突**:海外区先上,陆区后补。**没有备案号上不了陆区,这是硬门槛。**
 
-- [ ] **D1** 登录 `gavingao.cn` 备案所在的云厂商控制台(阿里云/腾讯云)→「移动应用备案 / APP 备案」
+- [ ] **D1**(你做)登录 `gavingao.cn` 备案所在的云厂商控制台 →「移动应用备案 / APP 备案」
       → 在**已有备案主体**下新增「观象 iOS」→ 拿 **APP 备案号**
-- [ ] **D2**(可选)把站点解析/部署到 `gavingao.cn`,隐私/支持 URL 换成该域
+- [ ] **D2**(可选)把站点解析到 `gavingao.cn`,隐私/支持 URL 换成该域
 - [ ] **D3** 陆区文案/截图**收敛**为「国学古籍 · 传统文化教育」,剥离占卜/宗教/诊疗暗示
-- [ ] **D4** ASC「App 信息」填 APP 备案号 → 销售范围勾回「中国大陆」
+- [ ] **D4** ASC「App 信息」填备案号 → 销售范围勾回「中国大陆」
 
-**另一条独立的**:站点本身的**个人 ICP 备案**(给大陆访问加 CDN 用),见
-[platform-upgrade-plan.md §3](./platform-upgrade-plan.md) —— 与 App 备案是两回事,可并行,
-审批以周计。owner 已拍板:**不注册企业/个体工商户,微信登录彻底放弃,只办个人备案**。
+**另一条独立的**:站点自身的**个人 ICP 备案**(给大陆访问加 CDN),见
+[platform-upgrade-plan.md §3](./platform-upgrade-plan.md) —— 与 App 备案是两回事,可并行,审批以周计。
+owner 已拍板:**不注册企业/个体工商户,微信登录彻底放弃,只办个人备案**。
 
 **参考**:[appstore-china-icp.md](./appstore-china-icp.md)
 
 ---
 
-## 1.4 安卓端
+## 1.4 安卓端 —— 优先级最低
 
 需本机装 **Java + Android SDK**。Capacitor 壳复用 100% web 代码,方案见
-[mobile-app-plan.md](./mobile-app-plan.md)。iOS 那条路已跑通,安卓是同一条。**优先级最低**。
+[mobile-app-plan.md](./mobile-app-plan.md)。iOS 那条路已跑通,安卓是同一条。
 
 ---
 
-# 二、内容(我可以直接开工,不卡你)
+# 二、内容 —— **没有缺口了**
 
-## 2.1 家级导读「一家之来路」✅ **十篇收官(2026-08-02)**
-
-十组各一篇(易经不做,那一层已由学堂/源流页/人物志覆盖),**11.4 万字 · 70 图表 · 223 条引文 · 0 坏引文**。
-SOP:[school-intro-standard.md](./school-intro-standard.md)。数据 `src/data/<corpus>/school.json`。
-
-| 组 | 篇名 | 字数 |
+| 层 | 数 | 状态 |
 |---|---|---|
-| 儒 | 儒家的来路 | 12433 |
-| 道 | 道家的来路 | 11764 |
-| 佛 | 释典的来路 | 10800 |
-| 心学 | 心学这一支的来路 | 12818 |
-| 法 | 法家的来路 | 11137 |
-| 墨 | 墨家的来路 | 12123 |
-| 兵 | 《武经七书》是怎么被编成一套的 | 10420 |
-| 纵横 | 纵横家的来路 | 10570 |
-| 中医 | 医经与经方:两条脉是怎么各自成的 | 10713 |
-| 谋略 | 这一架书是怎么摆起来的 | 10879 |
+| 十组典籍 原文 + 译文 + 注疏 + 延伸 | 67 部 | 全 done |
+| 白话 | 1337 章 · 5555 图 | **0 坏引文**,每章有图 |
+| 书级导读「前世今生」 | 62 / 62 | ✅ |
+| 家级导读「一家之来路」 | 10 / 10 | ✅(易经不做,那层由学堂/源流/人物志覆盖) |
+| 《赛博·百家争鸣》 | 88 辩 · 941 轮 | ✅ 白话讲解 88/88 满覆盖 |
+| 观书 | 140 本 1371 篇 | ✅ |
+| 名句集 `/mingju` | 746 句 | ✅ 全部取自已逐字校验的站内引文 |
 
-**基建**:`school.js` 懒加载 · `SchoolEntry`(组首页书架之上,抽屉 → ⤢ 整页)· `SchoolPage`
-· 10 条 `/<组>/school` 路由 · `build-content-assets` 出 `public/content/school/` 分片
-· check-data `school` 段(h2 ≥5 · pull ≤1 · **禁 callout/list/steps** · 字数分档 · 图表 ≥4 · 引文逐字校)。
-**顺带**:62 篇书级 + 10 篇家级导读接进 **og 索引与全站搜索**(原本分享是裸链接、且搜不到)。
-
-**这一批验证下来最该记住的**:机器校验(引文子串/块型/字数)一条事实错误都抓不到。
-兵篇自查揪出 8 处(《天下》「闻其风而悦之」是 5 次非通说的 6 次、「七部互不引用」有例外
-《尉缭子·制谈》推许吴起、按底本实测字数纠正「哪部最短」);谋略篇反过来纠正了派工里
-两处凭记忆写的托名对象(权谋术托张居正非岳飞、韬晦术托杨慎与苏轼无涉)。
-**扩写这一层时,事实一律回站内核、引文一律脚本切片,并且人要读一遍。**
-
-## 2.2 观书 ✅ **两批 28 本收官(2026-08-03)**
-
-书房 **112 → 140 本**,新增 **309 篇章文章**。
-
-**第二批 14 本**:卡拉马佐夫兄弟 · 局外人 · 呐喊 · 变形记 ｜ 物种起源 · 复杂 · 数学之美 ｜
-旧制度与大革命 · 大分流 · 叫魂 ｜ 第二性 · 战争论 · 技术的本质 · 瓦尔登湖
-**第三批 14 本**:中国哲学简史 · 士与中国文化 · 万古江河 ｜ 科学革命的结构 · 上帝掷骰子吗 ·
-魔鬼数学 ｜ 娱乐至死 · 艺术的故事 · 美的历程 · 教育的目的 ｜ 最好的告别 · 禅与摩托车维修艺术 ｜
-国富论 · 道德情操论
-
-**这一轮固化下来的做法**(下次产书直接复用):
-- `scripts/merge-books.mjs` —— agent 只写自己书目录下的 `_entry.json`,由它统一并入 index.json
-  并做落库体检(章数不齐 / 引文超 100 字或 16 条 / slug 重复 / 母题文件不存在 一律不合并)
-- 封面母题改**外挂目录** `src/features/books/motifs/`(`import.meta.glob` 自动收录),
-  加书不再需要改共享文件
-- 派工必写「**不许委派、交付即文件落盘**」(踩过:agent 把活派给下级后提前返回,磁盘上只留空目录)
-- **续写优于重跑**:agent 逐章落盘,撞额度只丢正在写的那一章;
-  续写派工要写明「哪些文件已完成、一个字都不要改、只写缺的那几章」
-
-**顺带修的存量 bug**:观书走中立外壳,`[data-site="portal"]` 把 `--cinnabar` 重绑成 `--ink-soft`
-(实测同为 `#6b6157`),而 SOP §148 早写明书内朱色该用 `--cinnabar-pure` ——
-115 本里 79 本用的是裸 `--cinnabar`,图里的「朱色点睛」与次级文字同色、等于没有强调。
-781 文件 9335 处已修。
-
-## 2.3 争鸣 ✅ **84 → 88 辩(2026-08-03)**
-
-新增四辩:**法先王与法后王 · 时与势 · 舍生取义与全生保真 · 君子可恃否**。
-现 88 辩 · 941 轮 · 275 家次 · **0 坏引文**;配套白话讲解同步补齐,**88/88 满覆盖**。
-
-**选题标准照 owner 定的执行**:必须是各家在**同一个点**上真有共鸣或冲突,不为凑题硬拼;
-派工写明「查下来不成立就报『此题不成立』,那也是合格交付」。四题均由 agent 回原文坐实后判定成立。
-
-**顺带订正一处存量错误**:《韩非子·难势》是三层结构 ——
-`慎子曰`(0)→ **`应慎子曰`(184,客难)** → `复应之曰`(780,韩非自答)。
-既有的《法术势》一辩把位于 218 的「释贤而专任势,足以为治乎」当作韩非本人立论,
-而那句出自客难之口、韩非接下来恰恰是要回应它。已订正。
-
-**下次再扩的做法**:先 grep 坐实再落笔;引文一律脚本切片(这批救了三次 ——
-异体字「为**髙**必因丘陵」、底本作「茍得」非「苟」、『予子冠履』用双角引号,手打全错);
-**新辩必须同时补 `articles/<id>.json` 白话讲解**,否则讲解层出缺口(这批漏过一次,已补)。
-
-## 2.4 白话 —— **已满,无缺口**
-
-| 项 | 状态 |
-|---|---|
-| 全站白话 | **1337 章 · 5555 图 · 0 坏引文**,每章都有图 |
-| 诗经诗级 | **305 / 305 满** |
-| 长短经篇级 | **65 / 65 满** |
-| 悟真篇 | **6 / 6 满** |
-| 传习录条级 | 34 条精选(**普通档 owner 定不做**) |
-| 中医 · 难经 81 章 | **owner 定不铺**(不属未完成) |
+**细粒度白话也已满**:诗经 305/305 · 长短经 65/65 · 悟真篇 6/6;
+传习录条级 34 条精选(普通档 owner 定不做);**中医·难经 81 章 owner 定不铺**。
 
 > ⚠️ **别再把「难经 81」当缺口** —— 那是 owner 的决定。
 > **加新书时四样都要补**:白话 · 书级导读 · `reblock-auto` 富文本 · `gen-book-sizes` 篇幅档。
+> **新增争鸣必须同时补 `articles/<id>.json` 白话讲解**,否则讲解层出缺口(漏过一次)。
+
+## 2.1 下次再产内容时记住的(经验留档,不是待办)
+
+完整手册在 [batch-production-playbook.md](agent-specs/batch-production-playbook.md),这里只留最贵的几条:
+
+- **机器校验一条事实错误都抓不到。** 引文子串/块型/字数全绿,不代表内容对。
+  家级导读那批:兵篇自查揪出 8 处硬伤;谋略篇反过来纠正了派工里两处凭记忆写的托名对象
+  (权谋术托张居正非岳飞、韬晦术托杨慎与苏轼无涉)。**扩这一层务必人读一遍。**
+- **事实一律回站内核、引文一律脚本切片。** 争鸣那批救了三次:异体字「为**髙**必因丘陵」、
+  底本作「茍得」非「苟」、『予子冠履』用双角引号 —— 手打全错。
+- **派工必写「不许委派、交付即文件落盘」。** 踩过:agent 把活派给下级后提前返回,磁盘上只留空目录。
+- **续写优于重跑。** agent 逐章落盘,撞额度只丢正在写的那一章;
+  续写派工要写明「哪些文件已完成、一个字都不要改、只写缺的那几章」。
+- **共享文件一律不让 agent 碰。** 观书用 `scripts/merge-books.mjs` 统一并入 index.json 并做落库体检;
+  封面母题改外挂目录 `src/features/books/motifs/`(glob 自动收录),加书不再改共享文件。
 
 ---
 
 # 三、质量债(机器产出,未经人眼通校)
 
 内容由并发 workflow 产出 + 程序化装配,经第二代理校验但**未人眼通读**,横跨 67 部书。
-**没有 deadline,是长期活**。改完跑 `fetch-corpus <key>` / `data:fetch` + `check-data`。
+**没有 deadline,是长期活。** 改完跑 `fetch-corpus <key>` / `data:fetch` + `check-data`。
 
 - **3.1 译文抽查校订** ★ —— 纠错译/漏译/臆增/生硬。重点:论语·孟子(歧解)、坛经(公案偈颂)、
   韩非子·墨经(名辩)、传习录(语录)。儒合朱熹《四书章句集注》、佛守字面直译、诸子守思想史立场。
@@ -294,7 +210,7 @@ SOP:[school-intro-standard.md](./school-intro-standard.md)。数据 `src/data/<c
   中医(不诊疗)· 谋略伪书(不为伪书张目)。机器扫描已 0 真违规,人眼再确认潜伏表述。
 - **3.5 注音抽查** —— 异读/破音字拼音。
 - **3.6 「注疏训释 vs 译文用词」冲突批扫** —— **需换思路,暂不做**。写过一版启发式
-  (注疏核心训释词不见于译文即报),跑出 **9635 条候选、几乎全噪声**——正常换词意译也会命中。
+  (注疏核心训释词不见于译文即报),跑出 **9635 条候选、几乎全噪声** —— 正常换词意译也会命中。
   《匏有苦叶》`軓` 那处的真问题是**注疏与译文指了两样不同实物**,不是用词不同,这个启发式抓不住。
 
 > **不算债**:富文本未命中的篇(白话约 29 章 / 观书约 101 篇)。规则找不到可转的结构就不转,
@@ -306,50 +222,77 @@ SOP:[school-intro-standard.md](./school-intro-standard.md)。数据 `src/data/<c
 
 ## 4.1 待做
 
-- [ ] **以 `hexa@gavin.pub` 的身份回信**(不急,等 Resend 那步)—— ImprovMX 免费版**只能收不能发**,
-      现在从 foxmail 点回复,对方看到的是 `gaojiasheng.him@foxmail.com`,
-      **专门弄这个地址就是为了不露个人邮箱,一回复就露了**。
-      不必买 ImprovMX 付费版:配 Resend 域名验证时顺手用它的 SMTP 在邮箱里加「以此地址发信」——
-      `smtp.resend.com:587`,用户名 `resend`,密码即 API key。**在那之前先别用 hexa@ 回信。**
-- [ ] **配 Resend,把评论通知打通** —— `RESEND_API_KEY` 与 `OWNER_NOTIFY_EMAIL` **两个 secret 都没配**
-      (线上只有 GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET / TURNSTILE_SECRET_KEY),
-      [comment-notification.js:26](../server/comment-notification.js:26) 里 `if (!apiKey || !ownerEmail) return null`
-      静默跳过 —— **所以现在有人评论你收不到任何通知**。不是 bug,是没配完。
-      Resend 验证 `gavin.pub` 后把它给的 SPF/DKIM TXT 加进 DNSPod,再
-      `npx wrangler pages secret put RESEND_API_KEY --project-name=hexa-gavin-pub`(同理 OWNER_NOTIFY_EMAIL)。
-      ⚠️ **SPF 一个域只能有一条**,要与 ImprovMX 那条合并成
-      `v=spf1 include:spf.improvmx.com include:_spf.resend.com ~all`,不能加两条。
+*(暂无。邮件那两条见 §1.2。)*
 
-## 4.2 已完成
+## 4.2 已完成 · 2026-08-03
 
-- ✅ **`hexa@gavin.pub` 转发已通**(2026-08-03)—— 原是个已公开发布的死地址(关于页、隐私页、
-      每条评论下),是 App Store 指南 1.2 要求的公开联系方式。
-      **ImprovMX 免费版**,`gavin.pub` 的 NS 在 DNSPod,不动 NS 只加记录:
-      `MX @ mx1/mx2.improvmx.com`(10/20)+ `TXT @ v=spf1 include:spf.improvmx.com ~all`;
-      别名 `hexa@` → foxmail。**没建 `*` 通配别名**(会把字典扫描的垃圾全灌进来)。
-      自测已收到。注:foxmail 是腾讯的,对转发邮件过滤凶,收不到先翻垃圾箱。
+- ✅ **四个 iOS 独有缺陷**(实机走查逮到,浏览器上全都看不见;**build 50 才含这些修复**):
+  1. **正文滚进状态栏被系统时钟压住** —— 窄屏导航随下滑自动收起(`#157`)后,
+     WebView 顶到状态栏那一条就露出正文。加 `.app-shell::before` 纸色挡板,
+     `z-index: 99` 压在正文之上、导航(100)之下:导航在时由导航自己盖,收起了才轮到挡板。
+  2. **白话/观书抽屉同一个毛病** —— 抽屉 `createPortal` 到 body、够不着上面那块挡板,
+     而它的头部条也是收起时平移出视口(`#156`)。`.baihua-drawer::before` 自带一块,
+     底色取 `--paper-raised` 与头部条一致,两态同色不留接缝。
+  3. **按钮文字在 iOS 上变成系统蓝** —— 全局 `button` 没设 `color`,取 UA 默认字色;
+     桌面上是墨黑看不出,iOS WKWebView 里是系统蓝。逮到卦详情三处折叠箭头 ▲▼、
+     推演工作台 16 个八卦符号 ☰☱☲☳☴☵☶☷。全局补 `color: inherit` 一次治掉。
+  4. **段操作按钮小到点不中** —— ★/✎/🔗/🖼 只有 26×26px,远低于 HIG 的 44pt 下限
+     (按坐标中心的合成点击都会偏)。触屏放大到 36px、间距 4→10px。
+     顺带补上一处漏网:「窄屏把按钮挪到段落下方」那条规则只写了读经页的 `.read-para--markable`,
+     卦详情页的 `.detail-quotable` 不在其中 —— 补上后正文拿回全宽
+     (「象曰:天行健,君子以自强不息。」由两行变一行)。
+     ⚠️ 只在 `(max-width: 640px)` 换行:一度挂到 `(hover: none)` 上,iPad 也吃到,
+     把爻辞与紧随其后的「象曰」撑开一条空档。
+- ✅ **上架三份文档按 build 48+ 的实际行为重写** —— 隐私营养标签 / 年龄分级 / 送审备注。
+  原文写「Data Not Collected」「无用户生成内容」「无需登录、无需账号、不上传服务器」,
+  在登录与评论上线后**全是不实陈述**,照那个提交等于向 App Review 作假。
+- ✅ **`hexa@gavin.pub` 转发已通** —— 原是个已公开发布的死地址(关于页、隐私页、每条评论下),
+  是 App Store 指南 1.2 要求的公开联系方式。**ImprovMX 免费版**,NS 在 DNSPod 不动,只加
+  `MX @ mx1/mx2.improvmx.com`(10/20)+ `TXT @ v=spf1 include:spf.improvmx.com ~all`;
+  别名 `hexa@` → foxmail。**没建 `*` 通配别名**(会把字典扫描的垃圾全灌进来)。自测已收到。
+  注:foxmail 是腾讯的,对转发邮件过滤凶,收不到先翻垃圾箱。
+- ✅ **隐私页 `/privacy` 全页重写** —— 以**登录与否**为分界线,如实写明登录后收邮箱、
+  同步研习数据、评论与昵称公开、Turnstile 与 Google 的第三方处理;
+  新增「你的权利」(导出 / 更正 / **注销账号** / 只用本地);英文摘要同步。
+  **顺带补掉一个上架硬阻塞**:App Store **5.1.1(v) 要求支持注册的 App 必须能删账号**,
+  光有「退出登录」不算。已加 `DELETE /api/me`(要抄一遍自己的邮箱确认)+ 设置里的低调入口;
+  users 的外键全 CASCADE,一删连带清掉登录方式/会话/云端足迹/评论/举报/屏蔽,本机副本一并清空。
+- ✅ **观书两批 28 本**(112 → 140),新增 309 篇章文章。
+  顺带修一处存量 bug:观书走中立外壳,`[data-site="portal"]` 把 `--cinnabar` 重绑成 `--ink-soft`,
+  115 本里 79 本用的裸 `--cinnabar` —— 图里的「朱色点睛」与次级文字同色、等于没有强调。
+  781 文件 9335 处已修。
+- ✅ **争鸣 84 → 88 辩** —— 法先王与法后王 · 时与势 · 舍生取义与全生保真 · 君子可恃否。
+  顺带订正存量错误:《韩非子·难势》是三层结构,既有的《法术势》一辩把位于客难之口的
+  「释贤而专任势,足以为治乎」当成了韩非本人立论。
 
-## 4.2 之前完成的(2026-08-02)
+## 4.3 已完成 · 2026-08-02
 
+- ✅ **家级导读「一家之来路」十篇** —— 11.4 万字 · 70 图表 · 223 条引文 · 0 坏引文。
+  SOP [school-intro-standard.md](./school-intro-standard.md),数据 `src/data/<corpus>/school.json`。
+  基建:`school.js` 懒加载 · `SchoolEntry` · `SchoolPage` · 10 条 `/<组>/school` 路由 ·
+  `public/content/school/` 分片 · check-data `school` 段(h2 ≥5 · pull ≤1 ·
+  **禁 callout/list/steps** · 字数分档 · 图表 ≥4 · 引文逐字校)。
+  顺带把 62 篇书级 + 10 篇家级导读接进 **og 索引与全站搜索**(原本分享是裸链接、且搜不到)。
+- ✅ **登录 + 评论上生产** —— D1 迁移 0001/0002/0003 已跑、Google 登录已配并实测、
+  owner 账号已设、`ADMIN_PASSPHRASE` 已删、评论治理四件套(举报/拉黑/过滤/联系方式)已上线并实测。
+  Turnstile 已配完(sitekey 进代码、secret 进环境变量),**站上第一条真实评论已发出并落库**,
+  过滤器实测拦下「加微信…」并返回申诉指引。
 - ✅ **长短经「七雄略 / 三国权」两卷分屏** —— 整卷即一篇(卷6 四万余字)、内部无任何标记,
-  按方案 (b) 人工策展 38 个 `pieces` 区间(苏秦如赵 / 张仪说楚 / 汉高祖 / 光武 / 魏太祖…),
-  卷7 更省事——源文本自带「蜀」「吴」「魏」单字标题段。
-  **坑**:piece 键原用 `6-1` 与该书既有的篇级白话键撞了,把引文校验池缩到单条 → check-data 报
-  「引文非原文子串」。改用 `6-s1` 形态避开。另 `chapterParts.boundaries()` 原是 if/else,
-  `poemTitles` 命中就直接 return,**同一本书的 pieces 会被无声吞掉**,已改成取并集。
+  人工策展 38 个 `pieces` 区间。**坑**:piece 键原用 `6-1` 与该书既有的篇级白话键撞了,
+  把引文校验池缩到单条 → check-data 报「引文非原文子串」,改用 `6-s1` 避开;
+  `chapterParts.boundaries()` 原是 if/else,`poemTitles` 命中就 return,
+  **同一本书的 pieces 会被无声吞掉**,已改成取并集。
 - ✅ **章内 TOC 跳转** —— 侧栏当前章下展开它的诗题 / 条目,跨屏也能点。
-  没有自然边界的书完全不变(论语/道德经子目录 0 条)。
-- ✅ **逐页动态 OG meta** —— `functions/_middleware.js` 只对爬虫 UA 注入该页标题与摘要;
-  索引复用搜索索引的同一批 records,按路径首段分片。观书 `/books/*` **有意不收**(隐藏入口)。
-- ✅ **名句集** `/mingju` —— 746 句 + 今日一句。**一句不是新写的**,全部取自站内已逐字校验的引文。
+- ✅ **逐页动态 OG meta** —— `functions/_middleware.js` 只对爬虫 UA 注入该页标题与摘要。
+  观书 `/books/*` **有意不收**(隐藏入口)。
+- ✅ **名句集** `/mingju` 746 句 + 今日一句。
 
-## 4.3 已废弃(**别再捡回来**)
+## 4.4 已废弃(**别再捡回来**)
 
 - ❌ **书页面小传加厚** —— owner 2026-08-02 拍板废掉。
   这项是**在 62 篇书级导读做完之前**记的,那时书页上只有 137 字确实薄。现在导读齐了,
   而书页上小传与「前世今生」入口条**紧挨着**,小传写的「谁写的·什么底本·怎么流传」
-  正是导读展开讲的那几节(《论语》小传 82 字里的「汉代三家 → 张侯论 → 朱熹入四书」,
-  导读里就是整整两节)。加厚只会变成导读的又一个缩写版,读者感受是同一件事说了两遍。
+  正是导读展开讲的那几节。加厚只会变成导读的又一个缩写版,读者感受是同一件事说了两遍。
   > 若日后想在书页上补点什么,**换个题目**:页面上真正没人回答的是「这本从哪篇入手」——
   > 导读末尾有「从哪儿读起」一节,但那在 4000 字文章里面,页面上看不见。
   > 可把那节的推荐篇目提成书页上的可点药丸(数据现成,只是挪到看得见的地方)。
@@ -357,32 +300,27 @@ SOP:[school-intro-standard.md](./school-intro-standard.md)。数据 `src/data/<c
 - ⚠️ **孟子章号体例** —— **我查证后判为不做,理由如下;owner 未表态,要做请推翻我**。
   TODO 原写「纯体例小事」,实际不是:① 现在的引用已是《孟子》· 梁惠王上 + 段号,
   citation 需求九成已满足;② 传统章号需约 **260 个章界**,而**站内没有权威可依**
-  (朱子章句不在库);③ 自动识别不可靠——实测「孟子对曰」是**章内应答**不是章首,
+  (朱子章句不在库);③ 自动识别不可靠 —— 实测「孟子对曰」是**章内应答**不是章首,
   梁惠王上传统 7 章、正则却命中 10 处。只能人工逐章界定,且无校验源。
   **不凭记忆造章界**(全站原文一律走管线)。
 
 ---
 
-# 五、已收官(留档,**别再当 TODO**)
+# 五、工程上会重复踩的坑
 
-一句话记住:**内容层面已经没有缺口了**。下面这些都做完了,不要重做、不要重新调研。
+> 只列**跨会话仍会再踩**的。一次性的坑写在上面对应条目里。
 
-| 项 | 状态 |
-|---|---|
-| 十组典籍原文 + 译文 + 注疏 + 延伸 | 67 部全 done |
-| 白话 | 1337 章,每章有图,0 坏引文 |
-| 书级导读「前世今生」 | **62 / 62** ✅ 2026-08-02 |
-| 《赛博·百家争鸣》 | **84 辩** + 白话讲解 + 逐句 gloss(877 条)✅ |
-| 诸子拓扑图 | 22 人 · 37 关系,并入 `/debates/map` ✅ 2026-08-01 |
-| 观书 | 112 本 1034 篇 ✅ |
-| 富文本化 v22.1 | 白话 + 观书全量;新文章由生成规格自带 ✅ |
-| 白话富媒体化(配图) | 全 1337 章 0 缺图 ✅ |
-| 产品/UX/国学 review 18 项 | ✅ |
-| 典籍拓展 Wave 1–8 | ✅ |
-| 站内数据瑕疵三处(北风韵脚 / 硕人盻→盼 / 匏有苦叶軓) | ✅ 2026-07-29 |
-| 全站搜索、概念页 `/concepts`、门户按组着色、单域名路径分组 | ✅ |
-| 章内 TOC 跳转 / 逐页 OG meta / 名句集 746 句 | ✅ 2026-08-02(见 §4.2) |
-| 登录+评论代码(八批) | 代码 ✅,**未部署**(见 §1.1) |
+- **`_redirects` 的 SPA 回退让任何不存在的路径都返回 200 的 HTML** ——
+  拿 HTTP 码判断「部署成功了没」会被骗,**必须 grep 文件内容才作数**。
+- **Cloudflare 边缘有传播延迟** —— 部署后第一次查自定义域可能还是旧 chunk,
+  等一分钟再查;先用 `wrangler pages deployment list` 确认环境确实是 Production。
+- **发 CF 前确认 `dist/sw.js` 在** —— `build:cap` 产出的是禁掉 service worker 的版本。
+- **`wrangler pages secret put` 第一个参数是变量名不是值**,且**变量名不加密**。
+- **wrangler 的 OAuth 登录态会过期**,过期后非交互环境直接报「需要 CLOUDFLARE_API_TOKEN」。
+- **iOS 独有的显示问题在浏览器里一个都看不见** —— `env(safe-area-inset-*)` 恒为 0、
+  `hover: none` 不匹配、`<button>` 的 UA 默认字色不同。**改动涉及这三样,必须上模拟器验。**
+- 其余通用坑(rAF 节流 / Hook 顺序 / `content-visibility` 裁剪 / SVG `var()` /
+  繁简顺序 / 大小写不敏感 / 改真源不改生成物)见 **CLAUDE.md「工程上踩过的坑」**。
 
 ---
 
@@ -393,7 +331,7 @@ SOP:[school-intro-standard.md](./school-intro-standard.md)。数据 `src/data/<c
 ### 作业标准(动手前必读)
 | 文档 | 管什么 |
 |---|---|
-| [school-intro-standard.md](./school-intro-standard.md) | **家级导读** SOP(§2.1 用) |
+| [school-intro-standard.md](./school-intro-standard.md) | **家级导读** SOP |
 | [daodu-production-standard.md](./daodu-production-standard.md) | **书级导读** SOP |
 | [books-production-standard.md](./books-production-standard.md) | **观书** SOP(十步清单 + 版权红线) |
 | [agent-specs/batch-production-playbook.md](agent-specs/batch-production-playbook.md) | **批量并发生产**手册:编排 / 合并校验 / 内容质量 / 红线守法 |
@@ -403,7 +341,7 @@ SOP:[school-intro-standard.md](./school-intro-standard.md)。数据 `src/data/<c
 ### 上线与平台
 | 文档 | 管什么 |
 |---|---|
-| [appstore-listing.md](./appstore-listing.md) | 上架**文案**(可直接粘贴) |
+| [appstore-listing.md](./appstore-listing.md) | 上架**文案**(可直接粘贴);§三/四/五 已按 build 48+ 重写 |
 | [appstore-runbook.md](./appstore-runbook.md) | 上架**逐步操作** + 被拒应对附录 |
 | [appstore-china-icp.md](./appstore-china-icp.md) | 陆区 APP 备案 |
 | [platform-upgrade-plan.md](./platform-upgrade-plan.md) | 登录 / 评论 / 统计的总规划 |
@@ -414,13 +352,12 @@ SOP:[school-intro-standard.md](./school-intro-standard.md)。数据 `src/data/<c
 | 文档 | 管什么 |
 |---|---|
 | [debates-roadmap.md](./debates-roadmap.md) | 争鸣选题铁律 · 概念索引法 · **已否决清单**(别再提)。代码也引它 |
-| [books-roadmap.md](./books-roadmap.md) | 观书选书法(14 本已收官,留作方法留档) |
+| [books-roadmap.md](./books-roadmap.md) | 观书选书法(留作方法留档) |
 | [expansion-ideas.md](./expansion-ideas.md) | 典籍拓展(Wave 1–8 已收官) |
-| [richtext-rollout.md](./richtext-rollout.md) | 富文本块规格 + `reblock-auto` 用法(收官留档;`gen-baihua-wf.mjs` 与 design-v22 都引它) |
 
 ### 历史报告 / 设计稿(**不是待办**)
 - **审查报告**(所列各项均已实施):`product-ux-review.md` · `ux-review.md` · `ux-opportunities.md` ·
-  `baihua-review-yidao.md`(后者被 `scripts/gen-polish-wf.mjs` 引用)
+  `baihua-review-yidao.md`(被 `scripts/gen-polish-wf.mjs` 引用)
 - **旧 plan**:`baihua-plan-next.md`(白话铺开的总 plan,已收官;CLAUDE.md 的历史条目引它)
 - **设计稿** `design-v4..v22` / `yijing-design*` —— 里面的 `[ ]` 是当年的里程碑清单,
   **均已落地**,别误当待办
@@ -429,11 +366,6 @@ SOP:[school-intro-standard.md](./school-intro-standard.md)。数据 `src/data/<c
 `baihua-todo.md` · `todo-followup.md` · `baihua-richmedia-handoff.md` ·
 `baihua-fine-grained.md` · `optimize-rufo.md` · `copy-review.md` · `content-qa.md`
 
-> 删前逐份核过:copy-review 的 A 节三条(「个人易学研习」「三教门户」「整理中」)在代码里
-> 已是 0 次出现、早改完;content-qa 的「存疑」节是空表、真错已于 v1.31.0/1 全部订正;
-> 其余五份是纯进度清单,活已做完。
-
 ---
-
 
 _维护约定:改完任何一项,回来更新本文对应行。新开的活也写进这里,不要另起清单。_
