@@ -1930,6 +1930,17 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 @media (hover: none), (max-width: 640px) {
   .read-para--markable { flex-wrap: wrap; }
   .read-para--markable .para-actions { flex-basis: 100%; justify-content: flex-end; align-self: auto; margin-top: 3px; }
+  /* 卦详情页用的是 .detail-quotable,当初漏在这条规则外面 —— 同一排按钮在读经页已经挪到
+     段落下方,在卦详情页却还挤在正文右侧,既压窄正文又难点中。补上,两处行为一致。 */
+  .detail-quotable { flex-wrap: wrap; }
+  .detail-quotable .para-actions { flex-basis: 100%; justify-content: flex-end; align-self: auto; margin-top: 3px; }
+}
+/* 触摸目标。26px 远低于 Apple HIG 的 44pt 下限 —— 实机走查时连按坐标中心的合成点击都会打偏,
+   真手指只会更难。触屏上放大到 36px、间距拉到 10px(节距 46pt,相邻按钮不再抢命中区);
+   鼠标端保持原样,那里 26px 配 hover 提示是合适的。 */
+@media (hover: none) {
+  .para-act { width: 36px; height: 36px; font-size: 0.95rem; }
+  .para-actions { gap: 10px; }
 }
 .para-act { position: relative; width: 26px; height: 26px; flex: none; border: 1px solid var(--line); border-radius: 5px; background: var(--paper-raised); color: var(--ink-faint); cursor: pointer; font-size: 0.82rem; line-height: 1; display: inline-flex; align-items: center; justify-content: center; }
 .para-act:hover { border-color: var(--cinnabar); color: var(--cinnabar); }
