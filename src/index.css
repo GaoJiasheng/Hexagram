@@ -212,6 +212,25 @@ button { cursor: pointer; font-family: var(--font-serif); }
   .app-nav--hidden { transform: translateY(-100%); }
 }
 
+/* 状态栏挡板。独立运行时(Capacitor 壳 / PWA standalone)WebView 是顶到状态栏的,
+   而上面那条 #157 的导航一收起,正文就直接滚进状态栏那一条 —— 系统时钟和电量画在最上层,
+   把正文压成一团(iOS 上每页下滑必中,浏览器里因为有浏览器自己的顶栏所以看不出来)。
+   这里铺一条与纸同色的挡板长驻在那个高度上,导航在不在都盖得住。
+   z-index 高于 .app-nav 的 100,才能在导航平移经过时也压住它;
+   浮层(抽屉/搜索面板)z-index 更高,且各自带 env(safe-area-inset-top),不受影响。
+   非独立/非刘海时 env() 为 0 → 高度 0,浏览器里完全无副作用。 */
+.app-shell::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: env(safe-area-inset-top);
+  background: var(--paper);
+  z-index: 101;
+  pointer-events: none;
+}
+
 .app-nav__brand {
   flex-shrink: 0;
   margin-right: 32px;
@@ -1432,6 +1451,10 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 }
 
 .detail-section__toggle h2 { margin: 0; font-size: 0.8rem; /* inherited from .detail-section__title */ }
+/* 折叠箭头。原先这个 <span> 没设 color,吃的是 <button> 的 UA 默认色 —— 桌面浏览器里是墨黑看不出来,
+   iOS WKWebView 里却渲染成一枚扎眼的系统蓝三角(实机截图逮到)。显式着成与标题同色;
+   JSX 侧另给 ▲▼ 缀了 U+FE0E(文字呈现选择符),避免被当 emoji 走彩色字体——彩色字体会无视 color。 */
+.detail-section__toggle > span { color: var(--ink-faint); font-size: 0.7rem; line-height: 1; }
 
 .lines-list {
   background: var(--paper-raised);

@@ -48,7 +48,7 @@ function NajiaSection({ binary }) {
           纳甲
           <span className="detail-section__subtitle">——给每一爻配上天干地支，是汉代六爻占法的底盘</span>
         </h2>
-        <span>{open ? '▲' : '▼'}</span>
+        <span>{open ? '▲\uFE0E' : '▼\uFE0E'}</span>
       </button>
       {open && (
         <div className="najia-body">
@@ -372,7 +372,7 @@ export default function HexagramDetailPage() {
         <section id="tuan" className="detail-section">
           <button className="detail-section__toggle" onClick={() => setTuanOpen(o => !o)}>
             <h2 className="detail-section__title">彖传</h2>
-            <span>{tuanOpen ? '▲' : '▼'}</span>
+            <span>{tuanOpen ? '▲\uFE0E' : '▼\uFE0E'}</span>
           </button>
           {tuanOpen && (
             <MarkableBlock
@@ -394,7 +394,7 @@ export default function HexagramDetailPage() {
         <section id="xiang" className="detail-section">
           <button className="detail-section__toggle" onClick={() => setXiangOpen(o => !o)}>
             <h2 className="detail-section__title">象传</h2>
-            <span>{xiangOpen ? '▲' : '▼'}</span>
+            <span>{xiangOpen ? '▲\uFE0E' : '▼\uFE0E'}</span>
           </button>
           {xiangOpen && (
             <MarkableBlock
@@ -484,7 +484,7 @@ export default function HexagramDetailPage() {
           <section id="wenyan" className="detail-section">
             <button className="detail-section__toggle" onClick={() => setWenyangOpen(o => !o)}>
               <h2 className="detail-section__title">文言传</h2>
-              <span>{wenyangOpen ? '▲' : '▼'}</span>
+              <span>{wenyangOpen ? '▲\uFE0E' : '▼\uFE0E'}</span>
             </button>
             {wenyangOpen && (
               <div className="wenyan-body">
