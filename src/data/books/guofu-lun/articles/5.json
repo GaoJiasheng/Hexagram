@@ -1,0 +1,141 @@
+{
+  "title": "资本与积累,和那条架在空中的马车道",
+  "subtitle": "第二篇:分工要先有人垫钱——于是问题变成资本从哪来、怎么用,以及一个至今仍有人误读的银行主张",
+  "centralIdea": "第二篇转了个身:分工听起来很美,可十个人分做十八道工序之前,得有人先买下厂房、工具、原料,还得先养活这些人到针卖出去为止。于是问题变成资本从哪来、怎么用。他先把一个人手里的东西分成三堆:留着自己消费的部分(不算资本)、固定资本(机器、厂房、土地改良,还有他特意加上的一项——人身上后天学到的本事,这是人力资本的先声)、流动资本(原料、存货、在手的钱)。接着是一句反直觉的话:增加资本的直接原因是节俭,不是勤劳;勤劳提供可积累的东西,但全部当年吃掉就积不起来。他还澄清了一个常见误解——省下来的钱并没有闲着,它立刻被另一批人花掉了,只不过花在生产上。这一条后来被凯恩斯顶了回去:萧条里人人节俭会让总需求塌掉,这就是节俭的悖论。第二篇里最精彩也最少被引的一节讲银行:纸币把睡在流通渠道里的金银解放出来投进生产,像在空中架了一条马车道;但他自己接着提醒,这条路悬在纸做的翅膀上,不如金银大道安稳。所以他主张禁止小额钞票、要求无条件即期兑付,并明明白白承认这是对天然自由的限制——正如所有房屋都必须砌防火墙。这是「他不是自由放任教条主义者」最硬的一条文本证据。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "第一篇讲完分工,故事听起来很顺:把活拆细,产量翻几百倍。**但第二篇一开头,斯密就把一件没说的事摆了出来:那十个人在针卖出去之前,吃什么?**"
+    },
+    {
+      "type": "p",
+      "text": "分工不是免费的。**十个人分做十八道工序之前,得有人先买下厂房、买齐工具、备好铁线,还得先养活这十个人到第一批针换回钱为止。**活拆得越细,这笔先垫的钱就越大——**因为每个人手里都只有半成品,谁也不能靠自己的产出过活。**"
+    },
+    {
+      "type": "p",
+      "text": "**所以第二篇的问题很实在:这笔垫的钱是什么、从哪来、怎么用。**斯密管它叫**资财**,而其中被投进生产、指望着生利的那部分,叫**资本**。"
+    },
+    { "type": "h2", "text": "一、把手里的东西分成三堆" },
+    {
+      "type": "p",
+      "text": "他先做了一次很实用的分类。**一个人手里的全部家当,分成三堆。**"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**留着自己消费的那一堆。**存粮、衣服、住的房子、家具。这些是好东西,但**它们不算资本**——因为它们不再往回带钱。他特意提到:自己住的房子虽然贵重,却「不给主人带来任何收入」。",
+        "**固定资本。**机器、工具、厂房、经过改良的土地——它们不易手,靠留在原地干活来生利。",
+        "**流动资本。**原料、半成品、货架上的存货、手里的钱——它们**靠不断易手来生利**,一转手就换回更多。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**这个分类里藏着一个很超前的东西。**他在固定资本那一项下,除了机器和厂房,还认真地列进了一样看不见的东西:**社会全体成员后天学到的有用才能。**理由说得很清楚——学一门手艺要花时间、花学费、花掉本可以挣钱的那些年,**这笔支出跟买一台机器是一回事:先掏出去,再靠它一年年往回收。**"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "一个先声",
+      "items": [
+        "「人身上的本事也是一种资本」——这句话要到二十世纪才被正式命名为**人力资本**,并因此拿了诺贝尔经济学奖。斯密在一七七六年已经把它当成固定资本的一项写进了清单。",
+        "**这一条今天特别好用。**一个人花两年时间学一门难的手艺,账要这么算:两年的学费加上两年本可以挣到的钱,是本金;此后每年多出来的收入,是回报。**「值不值」这个问题一旦这样摆出来,就从情绪问题变成了算术问题。**"
+      ]
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "三堆东西的分法。中间那一栏最容易被漏掉:斯密把「人后天学到的本事」明确放进了固定资本——两百年后它才有了名字叫人力资本。判据不是这东西看不看得见,是它「先掏出去、再一年年往回收」。",
+      "svg": "<svg viewBox='0 0 620 270' xmlns='http://www.w3.org/2000/svg'><text x='310' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>手里的东西,三堆</text><rect x='20' y='48' width='180' height='110' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='220' y='48' width='180' height='110' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><rect x='420' y='48' width='180' height='110' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='110' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>供直接消费</text><text x='310' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>固定资本</text><text x='510' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>流动资本</text><text x='110' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>存粮 · 衣服 · 自住的房</text><text x='310' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>机器 · 厂房 · 改良过的地</text><text x='510' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>原料 · 存货 · 在手的钱</text><text x='310' y='122' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;font-weight:bold;fill:var(--cinnabar-pure)'>+ 人后天学到的本事</text><text x='110' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>不带来收入 → 不算资本</text><text x='310' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>留在原地干活</text><text x='510' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>靠不断易手生利</text><text x='310' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>判据不是看不看得见,是「先掏出去、再一年年往回收」</text><text x='310' y='224' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>两百年后,那一行小字才有了名字:人力资本</text><text x='310' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>学一门手艺 = 学费 + 那几年本可以挣到的钱</text></svg>"
+    },
+    { "type": "h2", "text": "二、一句反直觉的话:资本靠节俭增加" },
+    {
+      "type": "p",
+      "text": "资本从哪来?**斯密的答案不是「靠努力干活」,而是「靠省」。**他的原话大意是:**资本因节俭而增加,因奢侈与妄为而减少。**"
+    },
+    {
+      "type": "p",
+      "text": "这话乍看反直觉,细想很朴素:**勤劳提供了可以积累的东西,但如果全都当年吃掉,再勤劳也积不起来。**一个村子今年多打了三成粮,如果全吃了,明年还是老样子;**留出一部分去换犁、换牛、换种子,明年才不一样。**"
+    },
+    {
+      "type": "p",
+      "text": "**他还特意澄清了一个到今天仍然常见的误解:省下来的钱并没有闲着。**很多人以为「储蓄」就是把钱塞进箱子,于是这笔钱退出了流通。斯密说不是——**被节省下来的那部分,几乎立刻就被花掉了,而且花得几乎同样快**,只不过花它的是另一批人:**用它买原料、发工资、添设备的人。**"
+    },
+    {
+      "type": "p",
+      "text": "**这一条后来被顶了回去,而且顶得很有力,应当如实记下。**凯恩斯指出:斯密的推理默认「省下来的钱一定会被投出去」,**而这个默认在萧条里会失效。**当所有人同时因为害怕而勒紧裤带,东西卖不掉,厂商不敢投资,那笔钱就真的停在了那里;**结果是大家一起变穷——这就是有名的「节俭的悖论」。**斯密没有错在逻辑,他错在**把一个充分就业的世界当成了唯一的世界。**"
+    },
+    {
+      "type": "p",
+      "text": "顺带说一句第二篇里最容易被忽略、却是全书最乐观的一句话。他说,**每个人不断努力改善自己境况的那种一致、持续、不间断的努力**,是公共富裕与私人富裕最初的来源;**而这种努力常常强大到足以维持事情向好的自然进程,哪怕政府在浪费、行政在犯错。**这句话与「看不见的手」是同一个意思的另一种说法,**而且这一句其实说得更清楚、更有分寸**——它说的是「常常足以」,不是「必然能」。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "caption": "同一个动作,在两种世界里结果相反。斯密的世界里东西不愁卖,省下的钱立刻被人拿去投;凯恩斯看的是东西卖不掉的世界,省下的钱就真的停在那里。两人都对,只是各自说的是不同的年份——这也是读一切经济学结论时最该先问的一句:它默认的是哪一种世道。",
+      "svg": "<svg viewBox='0 0 620 270' xmlns='http://www.w3.org/2000/svg'><text x='310' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>同一个动作,两种世道</text><rect x='28' y='46' width='262' height='150' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><rect x='330' y='46' width='262' height='150' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='159' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>斯密的世界</text><text x='461' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>凯恩斯看的世界</text><text x='159' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>东西不愁卖,人手不愁用</text><text x='461' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>东西卖不掉,厂子不敢开</text><text x='159' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>省下一笔 → 立刻被人拿去投</text><text x='461' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>省下一笔 → 真的停在那里</text><text x='159' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>资本变多,明年更富</text><text x='461' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>东西更卖不掉,一起变穷</text><text x='159' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>节俭是美德</text><text x='461' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--ink-soft)'>节俭的悖论</text><text x='310' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>两人都对,只是各自说的是不同的年份</text><text x='310' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>读任何经济学结论,先问一句:它默认的是哪一种世道</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**这个对照值得记住,因为它是一条通用的读法。**经济学里几乎每一条结论都默认了一种世道:**东西不愁卖的年份,和东西卖不掉的年份,同一个动作的后果可以正好相反。**斯密写书的时候,英国正处在一个需求旺盛、人手紧俏的上升期;**他没有理由去想象一个「所有人都想卖、没有人想买」的世界**,而那种世界在他身后一百五十年才真正震动了整个学科。"
+    },
+    { "type": "h2", "text": "三、生产性劳动:一个他自己也拿不太稳的分类" },
+    {
+      "type": "p",
+      "text": "第二篇里有一个后来被批得最多的分类:**生产性劳动与非生产性劳动。**斯密的判据是**留不留得下东西**:一个工匠干一天活,那价值固定在了一件可以卖、可以存的产品上;而一个家仆干一天活,**服务当场就消失了,什么也没留下。**"
+    },
+    {
+      "type": "p",
+      "text": "**问题出在这个分类的覆盖面上。**照这个标准,他把一长串人划进了「非生产性」:君主和他手下所有的文武官员、整支陆军和海军、法官、牧师、律师、医生、各类文人,**以及演员、乐师、歌手、舞者。**他没有说这些人无用——他明说其中有些是「最崇高、最有用的」;**他只是说他们的劳动不留下可以积累的东西。**"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "一处澄清",
+      "items": [
+        "**这个分类今天已经被放弃了。**现代的算法里,理发、看病、教书、写代码、演一场戏都算产出——**因为「服务」也是人真正要买的东西**,它当场消失不代表它没被消费。",
+        "**但别急着笑他。**这个分类背后有个真问题,至今没过时:**一个社会把多少份额投在「明年还能生更多」的东西上,把多少份额当年就享用掉了?**这两者的比例决定了它十年后的样子。斯密的分类粗糙,可他想量的那个东西是真的。"
+      ]
+    },
+    { "type": "h2", "text": "四、空中的马车道,和那道防火墙" },
+    {
+      "type": "p",
+      "text": "第二篇最精彩的一节,是讲银行的。**可惜大多数人读不到这里就停了,于是错过了这本书里最能说明作者真实立场的一段。**"
+    },
+    {
+      "type": "p",
+      "text": "他先讲纸币的好处,用了一个漂亮的比喻。**金银在流通里其实是「睡着的」——它们本身不生产任何东西,只是在人手里转。**如果用纸币把它们替换出来,这些金银就可以拿去买机器、买原料、投进生产。**这就好像在空中架起了一条马车道**,让地上原来那条被车轮碾着的公路,可以改成良田和牧场。"
+    },
+    {
+      "type": "p",
+      "text": "**但他自己紧接着按住了这个比喻。**他说,靠纸币悬起来的商业与工业,**终究不如走在金银这条坚实大路上的时候安稳**——他用的词是:它们像是被悬挂在纸币那对代达罗斯的翅膀上。**那对翅膀在神话里是会化掉的。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "他自己给出的比喻和自己给的警告,是一对。左边说纸币把沉睡的金银解放去生产,右边说这条空中之路悬在会化掉的翅膀上。同一个人先说好处、再说危险、最后给出具体的管束办法——这是这本书典型的写法。",
+      "svg": "<svg viewBox='0 0 620 250' xmlns='http://www.w3.org/2000/svg'><text x='310' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>一条架在空中的马车道</text><line x1='40' y1='170' x2='580' y2='170' style='stroke:var(--line);stroke-width:1.4'/><text x='310' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>原来的公路:金银在这里转,自己不生产什么</text><path d='M70,104 C170,84 260,84 330,92 C420,102 500,110 560,104' fill='none' style='stroke:var(--cinnabar-pure);stroke-width:1.8;stroke-dasharray:7 4'/><text x='310' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>纸币:一条凭空多出来的路</text><text x='150' y='134' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>省下的金银去买机器、原料</text><text x='310' y='216' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>可是他自己接着说:这条路悬在会化掉的翅膀上</text><text x='310' y='240' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>先说好处、再说危险、最后给出管束办法 —— 全书典型的写法</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**说完危险,他给了具体的办法。**他主张:**禁止发行面额太小的钞票**(在他那里是五英镑以下),因为小额钞票会流进普通人手里,而普通人分辨不了哪家银行靠不靠得住;**要求钞票必须无条件、即期兑付**,不许附加任何「银行可以延后兑现」的条款。他还用整整一大段,复盘了当时苏格兰一家过度发钞的银行如何在短短几年里垮掉,以及它垮掉时把多少人拖下了水。"
+    },
+    {
+      "type": "quote",
+      "original": "少数人的天然自由,若有危害全社会安全的可能,就应当而且必须受法律的制裁……正如为防火灾而强令砌造间壁墙。",
+      "translation": "第二篇论银行的一节。这段话之所以要紧,是因为他把话说得毫不含糊:他承认这确实是对天然自由的限制,然后说这种限制该有。判据也说得很清楚——不是「政府想管」,是「少数人的自由会危及全社会」。防火墙这个比喻,把「个人自由」与「共同安全」的关系摆得很平实。"
+    },
+    {
+      "type": "p",
+      "text": "**这一段值得反复读,因为它一句话拆掉了「斯密是自由放任教条主义者」这个说法。**他没有绕弯子说「这不算限制自由」,**他直接承认这就是限制自由,然后说这种限制该有。**而他给的判据非常具体:**不是「政府想管」,是「少数人的自由会危及全社会」。**"
+    },
+    {
+      "type": "pull",
+      "text": "他不说「这不算限制自由」,他说「这就是限制自由,而且该限制」——理由是所有房子都得砌防火墙。"
+    },
+    {
+      "type": "p",
+      "text": "**防火墙这个比喻挑得极好。**没有人会说「强制砌防火墙侵犯了我的产权所以不该有」;**大家默认这条规矩合理,是因为你家着火烧的不只是你家。**斯密的意思是:**银行也是这样一种东西**——一家滥发钞票的银行倒下时,倒霉的是拿着它钞票的所有人。**两百多年后,金融监管的整套理由,基本还是这句话。**"
+    }
+  ]
+}

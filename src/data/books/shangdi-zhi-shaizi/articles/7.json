@@ -1,0 +1,154 @@
+{
+  "title": "第五届索尔维:一场被浪漫化的对决",
+  "subtitle": "史上最著名的一张合影,一段「早餐出题、晚餐破解」的佳话——以及这段佳话里,哪些是史料,哪些是后人一层层加上去的",
+  "centralIdea": "1927 年 10 月,布鲁塞尔,第五届索尔维会议以「电子与光子」为题召开。二十九位与会者中,后来有十七人获得诺贝尔奖,那张合影至今被称为「物理学全明星照」。真正的交锋不在正式报告里,而在早餐桌和走廊上:爱因斯坦端出一个又一个思想实验,试图证明不确定性关系可以被绕过;玻尔一伙人当天或隔天给出破解。1930 年那个「光子盒」最出名——玻尔据说用爱因斯坦自己的广义相对论反将一军。但这一章要做的事,是把这段佳话拆开看:故事的主要来源是多年之后的追述,戏剧成分被一代代转述加强;玻尔那晚的论证是否真的切中要害,物理学界至今仍有讨论。更要紧的是,把它讲成「玻尔赢了、爱因斯坦老了」,恰好错过了爱因斯坦真正在问的问题——1927 到 1930 年他攻的是「不确定性能否被绕过」,这一路他确实输了;而从 1935 年起他换了靶子,攻的是「这个理论完不完备、是不是非定域」,那才是他真正的立场,也是下一章的主题。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "如果只允许物理学史留下一张照片,多半就是这张:1927 年 10 月,布鲁塞尔,二十九个人分三排坐着站着,神情各异。**这二十九人里,先后有十七位获得诺贝尔奖**;唯一的女性坐在前排,是居里夫人——**至今唯一一位在两个不同科学领域获得诺贝尔奖的人。**这张照片被称为「人类史上最聪明的一次合影」,而照片背后那几天里真正发生的事,比合影本身有意思得多。"
+    },
+    {
+      "type": "h2",
+      "text": "一、那几天到底是个什么场合"
+    },
+    {
+      "type": "p",
+      "text": "索尔维会议由一位比利时实业家出资创办,规模很小、只邀请、闭门讨论,大约每三年一届。**第五届的主题定为「电子与光子」**,时间点选得极准:矩阵力学、波动力学、概率解释、不确定性关系,全都是过去二十四个月里刚刚出现的东西。**这相当于把一门刚刚成型的学问的所有创始人,关进同一个房间待上五天。**"
+    },
+    {
+      "type": "p",
+      "text": "会场里坐着三代人。**老一代**:洛伦兹(会议主席,第二年就去世了)、普朗克、居里夫人。**中生代**:爱因斯坦(四十八岁)、玻尔(四十二岁)、玻恩、德布罗意、康普顿。**年轻一代**:海森堡二十六岁,泡利二十七岁,狄拉克二十五岁——**他们提出改变整门学科的东西时,大多不到三十岁。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "座次图",
+      "svg": "<svg viewBox='0 0 560 254' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>那张合影的三排(只标出本文提到的人)</text><g style='font-family:var(--font-serif);font-size:11px'><text x='34' y='68' style='fill:var(--ink-faint)'>后排</text><g style='fill:var(--ink-soft)'><circle cx='120' cy='62' r='9'/><circle cx='200' cy='62' r='9'/><circle cx='280' cy='62' r='9'/><circle cx='360' cy='62' r='9'/></g><text x='120' y='90' text-anchor='middle' style='fill:var(--ink)'>埃伦费斯特</text><text x='200' y='90' text-anchor='middle' style='fill:var(--ink)'>薛定谔</text><text x='280' y='90' text-anchor='middle' style='fill:var(--ink)'>泡利</text><text x='360' y='90' text-anchor='middle' style='fill:var(--ink)'>海森堡</text><text x='34' y='128' style='fill:var(--ink-faint)'>中排</text><g style='fill:var(--ink-soft)'><circle cx='120' cy='122' r='9'/><circle cx='200' cy='122' r='9'/><circle cx='280' cy='122' r='9'/><circle cx='360' cy='122' r='9'/><circle cx='440' cy='122' r='9'/></g><text x='120' y='150' text-anchor='middle' style='fill:var(--ink)'>狄拉克</text><text x='200' y='150' text-anchor='middle' style='fill:var(--ink)'>康普顿</text><text x='280' y='150' text-anchor='middle' style='fill:var(--ink)'>德布罗意</text><text x='360' y='150' text-anchor='middle' style='fill:var(--ink)'>玻恩</text><text x='440' y='150' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>玻尔</text><text x='34' y='190' style='fill:var(--ink-faint)'>前排</text><g style='fill:var(--ink-soft)'><circle cx='120' cy='184' r='9'/><circle cx='200' cy='184' r='9'/><circle cx='280' cy='184' r='9'/></g><circle cx='360' cy='184' r='9.5' style='fill:var(--cinnabar-pure)'/><text x='120' y='212' text-anchor='middle' style='fill:var(--ink)'>普朗克</text><text x='200' y='212' text-anchor='middle' style='fill:var(--ink)'>居里夫人</text><text x='280' y='212' text-anchor='middle' style='fill:var(--ink)'>洛伦兹</text><text x='360' y='212' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>爱因斯坦</text></g><text x='280' y='240' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>前排坐着奠基者与长者,后排站着二十几岁的年轻人——而争论正是在这两端之间发生的</text></svg>",
+      "caption": "这张座次里藏着一个常被忽略的事实:**站在后排的那几位年轻人,正是「新理论」最坚定的一方;而前排那几位——普朗克、爱因斯坦、德布罗意、薛定谔——恰恰是量子论的开创者,却都对它的新解释持保留态度。**第 2 章说过普朗克十几年想把 h 塞回去,第 6 章说过薛定谔后悔卷进来,**这不是巧合:开门的人和进门的人,看到的往往不是同一间屋子。**"
+    },
+    {
+      "type": "h2",
+      "text": "二、会上到底在争什么"
+    },
+    {
+      "type": "p",
+      "text": "正式议程上是几场技术报告:德布罗意讲他的「导波」设想(粒子由一个波引导着走,后来被他自己放弃、二十五年后又被玻姆重新拾起);玻恩和海森堡合讲矩阵力学与概率解释,并且断言这门理论**已经完备,不需要再修改**;薛定谔讲波动力学;玻尔讲他刚在意大利提出的互补原理。"
+    },
+    {
+      "type": "p",
+      "text": "**真正的交锋不在这些报告里。**据在场者回忆,爱因斯坦在会上很少正式发言,他的火力全部集中在**早餐桌**上:每天早上端出一个新的思想实验,试图证明「不确定性关系可以被绕过」;然后玻尔、海森堡、泡利一伙人在会议间隙讨论,**通常到晚餐时就给出破解。**第二天早上,爱因斯坦再拿出一个新的。"
+    },
+    {
+      "type": "p",
+      "text": "他的思路始终是同一个:**能不能设计一个装置,同时拿到那些「不该同时拿到」的信息?**比如让电子穿过一道狭缝,狭缝所在的挡板做成可以自由移动的——电子偏转时会给挡板一个反冲,**测出挡板的反冲就知道电子往哪边偏,同时屏上还有干涉条纹**,这样不就既知道了路径、又保住了波动?"
+    },
+    {
+      "type": "p",
+      "text": "**玻尔的反击有一个很漂亮的共同套路:把量子规则用到测量仪器自己身上。**那块挡板要能测出微弱的反冲,它自己的动量就必须被确定得很准;而动量确定得越准,**它自己的位置就越不确定**;挡板位置一晃,干涉条纹就糊掉了。**你要么拿到路径,要么拿到条纹,拿不到两个。**——注意这个论证的形状:**它没有说「观察者干扰了电子」,它说的是「仪器也是物理体系,也逃不掉这条关系」。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "svg": "<svg viewBox='0 0 560 262' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>爱因斯坦的算盘,和玻尔的还击</text><g style='font-family:var(--font-serif);font-size:11.5px'><rect x='26' y='46' width='232' height='168' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='142' y='70' text-anchor='middle' style='font-size:12.5px;font-weight:bold;fill:var(--ink)'>爱因斯坦:让挡板可动</text><path d='M60 100 L110 130' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><rect x='112' y='96' width='7' height='30' style='fill:var(--ink);opacity:0.7'/><rect x='112' y='134' width='7' height='30' style='fill:var(--ink);opacity:0.7'/><path d='M119 130 L214 106' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><path d='M119 130 L214 156' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><path d='M126 168 L126 186 M121 180 L126 187 L131 180' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2'/><text x='142' y='202' text-anchor='middle' style='fill:var(--cinnabar-pure)'>测挡板的反冲 → 知道走了哪边</text><rect x='302' y='46' width='232' height='168' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='418' y='70' text-anchor='middle' style='font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>玻尔:挡板自己也是量子体系</text><text x='418' y='102' text-anchor='middle' style='fill:var(--ink-soft)'>要测准反冲 → 挡板动量要很确定</text><text x='418' y='128' text-anchor='middle' style='fill:var(--ink-soft)'>动量越确定 → 挡板位置越不确定</text><text x='418' y='154' text-anchor='middle' style='fill:var(--ink-soft)'>挡板位置一晃 → 条纹糊掉</text><text x='418' y='188' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>路径与条纹,只能二选一</text></g><text x='280' y='240' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>注意玻尔用的不是「人一看就变了」,而是「仪器也逃不掉同一条定律」</text><text x='280' y='258' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>这一点是后面拆「意识决定现实」时最有力的一块材料</text></svg>",
+      "caption": "这一轮交手的结论常被概括为「爱因斯坦输了」,更准确的说法是:**他试图证明量子力学「自相矛盾」,没有成功。**这是两件不同的事——**证明不了自相矛盾,不等于证明了它完备。**爱因斯坦本人很快就意识到了这个区别,并把火力换了方向,那才有了第 8 章的 EPR。"
+    },
+    {
+      "type": "p",
+      "text": "会场的气氛留下过一个有名的段子:埃伦费斯特——他是爱因斯坦和玻尔共同的朋友,夹在中间左右为难——**据说在黑板上写下了《圣经》里巴别塔那句「上帝在那里变乱了天下人的言语」。**这个细节几乎每本书都会引,而它准确地捕捉到了那几天的实质:**双方都在讲物理,却像在用两种不同的语言。**"
+    },
+    {
+      "type": "h2",
+      "text": "三、1930 年的光子盒,和那个「绝杀之夜」"
+    },
+    {
+      "type": "p",
+      "text": "三年后的第六届索尔维,爱因斯坦端出了他最精巧的一个装置。**一个盒子,四壁镀满反光,里面装着光,壁上有一道快门,由盒内的钟控制。**打开快门放出一个光子,**时间由钟给出,精确到你想要多准都行;而能量呢?**把盒子放在弹簧秤上,放光子前后各称一次,**按质能关系,减少的质量就是放走的能量。**于是能量与时间都被任意精确地测定——**这直接顶在能量与时间的不确定关系上。**"
+    },
+    {
+      "type": "p",
+      "text": "流传的版本是:那天晚上玻尔一夜没睡,在房间里踱步,第二天早餐时给出了反击——**而反击用的是爱因斯坦自己的广义相对论。**要称重就得让盒子在引力场中移动一点;而按广义相对论,**处在不同高度的钟走得快慢不同**;盒子位置的不确定,反过来造成钟读数的不确定,**算下来,恰好补上了那条不确定关系。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "svg": "<svg viewBox='0 0 560 260' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>光子盒:一个太漂亮以至于被讲成传奇的思想实验</text><g style='font-family:var(--font-serif);font-size:11.5px'><path d='M180 46 L180 66' style='stroke:var(--ink-soft);stroke-width:1.2'/><path d='M172 66 Q180 78 188 66 Q180 54 172 66 M172 78 Q180 90 188 78 Q180 66 172 78 M172 90 Q180 102 188 90 Q180 78 172 90' style='fill:none;stroke:var(--ink-soft);stroke-width:1.1'/><rect x='140' y='104' width='80' height='68' rx='4' style='fill:none;stroke:var(--ink);stroke-width:1.6'/><circle cx='166' cy='138' r='11' style='fill:none;stroke:var(--ink-soft);stroke-width:1.1'/><path d='M166 138 L166 131 M166 138 L171 141' style='stroke:var(--ink-soft);stroke-width:1.1'/><rect x='216' y='128' width='6' height='20' style='fill:var(--cinnabar-pure)'/><path d='M226 138 L286 138 M279 133 L287 138 L279 143' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='300' y='142' style='fill:var(--cinnabar-pure)'>放出一个光子</text><text x='180' y='196' text-anchor='middle' style='fill:var(--ink-soft)'>盒内有钟控制快门</text><text x='180' y='216' text-anchor='middle' style='fill:var(--ink-soft)'>整盒挂在弹簧秤上称重</text><text x='300' y='170' style='fill:var(--ink)'>时间:由钟给出</text><text x='300' y='192' style='fill:var(--ink)'>能量:由前后重量差给出</text><text x='300' y='216' style='font-weight:bold;fill:var(--cinnabar-pure)'>两者都任意精确?</text></g><text x='280' y='246' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>玻尔的回答:称重要让盒子在引力场里挪动,而高度一变,钟的快慢就变</text></svg>",
+      "caption": "**这个故事之所以流传极广,是因为它太完美了**:反对者被自己的武器击败,而且是在一夜苦思之后。**完美的故事需要额外的警惕。**下面这段就是本章最重要的一节。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "这里要打折",
+      "items": [
+        "**第一,来源。**这段绝杀的主要出处是玻尔身边的人多年之后的追述,细节(踱步一夜、次日早餐反击、爱因斯坦的表情)在一次次转述里被不断加强。**它未必是假的,但它属于回忆录,不属于当场记录。**",
+        "**第二,论证本身。**玻尔那晚给出的推导,后来一直有物理学家和科学史家提出异议:有人认为它并没有真正切中要害,有人给出了不同的分析方式。**「玻尔赢了这一局」是学界的大致共识,「玻尔那晚的具体论证是对的」则不是。**",
+        "**第三,叙事的副作用。**把它讲成一场决斗,会自然地推出一个错误结论:**爱因斯坦从此就没道理了。**恰恰相反——正是这次失败让他换了方向,而换了方向之后提出的问题,四十年后才被实验回答,并且成了今天整个量子信息学的起点。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "四、「对决」这个框架本身的问题"
+    },
+    {
+      "type": "p",
+      "text": "读这一段最实用的一条提醒是:**把爱因斯坦的立场分成两个阶段。**"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**1927—1930,他攻的是「自洽性」:**能不能造出一个装置,让不确定性关系失效?**这一路他确实输了**,而且输得干净——每一个装置都被拆掉了。",
+        "**1935 年之后,他攻的是「完备性」:**就算这套理论的每一条预言都对,它是不是讲完了整个故事?**这是一个完全不同的问题,它至今仍然开着。**"
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "打个官司上的比方。**第一阶段像是主张「对方的程序违法、这案子根本不成立」**——这个主张被一条条驳回了,爱因斯坦确实没赢。**第二阶段像是改口说:程序我不争了,但你们的证据链是不完整的,中间缺了一环。**这是完全不同的诉求,需要完全不同的回应。**把两个阶段混在一起,就会得出「他连输两场」的错觉;分开看才知道:第二场的判决书要等到 1964 年才有人写得出来,而写它的人还得先发明一种新的判法。**"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "只讲第一阶段,你会得到「固执的老人输给了新时代」;把两个阶段分开,你会看到一个更准确的画面:**一个人先试图证明对手自相矛盾,失败之后,提出了一个更深、更难、也更有价值的问题。**下一章要讲的 EPR,正是这个转向的产物。"
+    },
+    {
+      "type": "p",
+      "text": "还有一句必须交代的:**「爱因斯坦,别再指挥上帝该怎么做了。」**这句据说是玻尔的回敬,流传极广,几乎成了这场争论的官方句号。**它很可能被润色过**——这类对仗工整、恰到好处的名场面台词,在科学史里通常都是后来慢慢长出来的。**把它当作一句流传下来的机锋来欣赏没问题,当作史料引用就不合适了。**"
+    },
+    {
+      "type": "pull",
+      "text": "他先想证明对手自相矛盾,没成功;然后换了个问题——那个问题,四十年后才被实验回答。"
+    },
+    {
+      "type": "h2",
+      "text": "五、会议之后:为什么是玻尔那一派占了上风"
+    },
+    {
+      "type": "p",
+      "text": "1927 年之后的二三十年里,「哥本哈根一派」成了事实上的正统。**原因不全是哲学上的说服力,更多是现实的:有活要干。**新力学一旦到手,整个物理学和化学都需要重算一遍——原子结构、分子键、固体的导电性、原子核、恒星内部的反应。**这些工作只需要会算就够了,完全不必先想清楚 ψ 到底是什么。**"
+    },
+    {
+      "type": "p",
+      "text": "于是形成了一种默契:**基础问题被划给了哲学**,谁在正经期刊上追问「测量到底是什么」,谁就显得不务正业。这个风气一直持续到六十年代——**下一章那位贝尔,正是在这种气氛里,只能把这件事当业余爱好来做。**这一点值得记住:**一门学问「暂时不谈某个问题」是完全理性的选择,但时间一长,「不谈」会被误当成「已经解决」。**"
+    },
+    {
+      "type": "p",
+      "text": "最后一个细节,大概是这整段历史里最动人的。**爱因斯坦与玻尔争了近三十年,私交却始终极好**——两人互相都认为对方是当世最值得辩的那个人。爱因斯坦 1955 年去世;**七年后玻尔也去世,人们后来在他书房的黑板上,发现他最后画的是那个光子盒。**三十多年过去,那个装置还在他脑子里。**这个画面胜过任何「谁赢了」的结论。**"
+    },
+    {
+      "type": "h2",
+      "text": "六、这一章该带走什么"
+    },
+    {
+      "type": "p",
+      "text": "**第一,记住玻尔反击的形状。**他从不说「因为有人在看」,他说的永远是「仪器也是物理体系,同样受这条定律管」。**这是后面拆「意识决定现实」时最直接的一块材料:连玻尔本人的论证里,都没有意识的位置。**"
+    },
+    {
+      "type": "p",
+      "text": "**第二,给所有「一夜之间想通、次日当场反杀」的桥段打折。**这本书里这类桥段不少,好看是真好看。**打折不等于不信,而是把它归到「回忆录」那一栏,别归到「实验记录」那一栏。**"
+    },
+    {
+      "type": "p",
+      "text": "**第三,别用胜负去读这场争论。**它真正的结构是:**一方要求理论自洽且好用,另一方要求理论描述实在。**前者赢得了当下,后者留下了问题。**而物理学后来的发展证明:留下问题的那个人,给这门学科的贡献一点也不比赢的人小。**"
+    }
+  ]
+}

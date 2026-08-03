@@ -1,0 +1,330 @@
+{
+  "title": "白话《上帝掷骰子吗》· 全书总览",
+  "subtitle": "一篇文章读懂这场革命:量子是怎么被一道炉火的题目逼出来的、波粒二象性为什么不是「两副面孔」而是「我们的词不够用」、爱因斯坦到底在反对什么、贝尔怎么把哲学争论变成了一道能做实验的算术题、以及为什么「观察者创造现实」是彻头彻尾的挪用",
+  "centralIdea": "这本书讲的是二十世纪最颠覆的一场认识论革命,是怎么从一道关于炉火颜色的技术小题一步步长成的。主线是一场争论:光是波还是粒子——争到最后没有一方赢,赢的是「我们日常的词不够用」;波粒二象性又逼出了概率诠释,而爱因斯坦终生不接受。「上帝不掷骰子」不是老年人的固执,是一份很硬的要求:如果一个理论只能给出概率,那它要么不完备,要么就得承认幽灵般的超距作用——他认为两者都不可接受。四十年后贝尔做了一件谁也没想到的事:把这场看似纯哲学的争论改写成一道可以做实验的算术题。实验判了爱因斯坦输,但输掉的是「定域 + 实在」这个组合,不是「量子力学已经讲完」——测量问题至今没有共识,诠释之争是物理学界真实存在的分歧。读这本书要同时拿到三样东西:一条清楚的历史主线;一份对「观测」「不确定」「纠缠」这几个被挪用得最狠的词的免疫力;以及一个提醒——它是史话不是教科书,把人写活的代价是把史料写利落了。",
+  "featured": true,
+  "hero": {
+    "badge": "全书 · 核心",
+    "headline": "「上帝不掷骰子」不是固执,是一道逼问:一个只能给出概率的理论,要么不完备,要么就得承认超距作用。",
+    "tagline": "四十年后贝尔把这道哲学题变成了一道算术题,实验判了爱因斯坦输——但输的是「定域实在论」,不是「他全错了」。"
+  },
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "十九世纪最后一年,德国的工业界正被一个很实际的问题困扰:炼钢炉里的温度该怎么从颜色推算出来?为此需要一条公式,把热物体发出的光的颜色分布,和它的温度对应起来。这是一道又枯燥又工程的题,做出来能拿去卖钱,做不出来也不至于动摇谁的世界观。**然而正是这道题,把「世界是确定的、可以被完整描述的」这个信念拆掉了。**这本书从这里开始讲,一直讲到一场吵了近一百年、至今没有结论的争论。它的书名来自爱因斯坦的一句话——而全书真正的主角,是那句话背后那个不肯让步的问题:**自然界的底层,到底是不是随机的?**"
+    },
+    {
+      "type": "h2",
+      "text": "一、先说清这是一本什么书"
+    },
+    {
+      "type": "p",
+      "text": "《上帝掷骰子吗:量子物理史话》的作者曹天元,写作时是一位业余爱好者——**这不是贬低,是理解全书风格的钥匙,而且是他自己在书里交代过的**。全书最早以网络连载的形式出现,一节一节贴出来,读者在底下追更、抬杠、催稿;后来才结集成书。所以它的语调是**说书人**的:有插科打诨,有「列位看官」式的招呼,有大段的闲话和跑题,几乎不出现公式。"
+    },
+    {
+      "type": "p",
+      "text": "这决定了它的长处和短处。**长处是:它把人写活了。**教科书里的量子力学是一串定义和方程,读起来像天上掉下来的;这本书里的量子力学是一群有脾气的人在四十年里吵出来的——普朗克保守到自己都不信自己的结果,爱因斯坦提出光量子后又长期对它不安,玻尔说话绕到连朋友都听不懂,泡利刻薄得出名,海森堡在一座小岛上熬了一夜。**短处是:为了好看,史料被写利落了。**对决被戏剧化,转折被写成灵光一现,若干在史学上已被打上问号的流行说法,被照单收下。这一点第 11 章会专门摊开。"
+    },
+    {
+      "type": "p",
+      "text": "还有一件要先说清的事:**读完这本书,你不会「懂」量子力学。**你会得到一张相当好的地图——知道谁在什么时候提出了什么、为什么那件事在当时是石破天惊的、争论的分歧点在哪里。但量子力学的核心是一套能算的数学,**不会算就还不算懂**。这本书的价值恰恰在于,它让你在不会算的情况下,也能站到那场争论的边上听懂人话——而这已经很难得了。"
+    },
+    {
+      "type": "h2",
+      "text": "二、一条主线:三百年的波粒之争"
+    },
+    {
+      "type": "p",
+      "text": "全书最见功力的结构,是把光的历史写成了**三场战争**。第一场发生在十七世纪:牛顿说光是一颗颗微粒,惠更斯说光是一种波。**牛顿的权威把这场仗压了将近一百年**——反讽的是,牛顿自己发现的「牛顿环」(把凸透镜压在平板玻璃上看到的彩色圆环)恰恰是波的干涉,证据握在他手里,他读成了别的东西。"
+    },
+    {
+      "type": "p",
+      "text": "第二场在十九世纪初,波动说全胜。托马斯·杨让光穿过两道靠得极近的缝,在屏上看到了明暗相间的条纹——**两束光叠加起来,居然能出现「暗」**,这是粒子说无论如何解释不了的。1818 年法国科学院悬赏征文,菲涅尔提交了完整的波动理论;评委之一泊松从他的公式里推出一个荒唐结论:**如果这理论是对的,那么在一个圆盘的影子正中央,应该有一个亮点。**这显然违反常识,泊松以此作为反驳。阿拉果去做了这个实验——**亮点真的在那里。**这个斑点今天叫「泊松亮斑」,是科学史上最著名的一次「反例反成了铁证」。"
+    },
+    {
+      "type": "p",
+      "text": "第三场就是本书的正题。1900 年前后,一批新的实验事实开始咬不动波动说:黑体辐射的能量分布、光电效应里那些倔强的规律。**1905 年,爱因斯坦提出光是一份一份的「光量子」——微粒说以一种谁也没料到的形式回来了。**但这一次不是波动说输了,而是两边都没赢:**光既不是我们说的波,也不是我们说的粒子。**这个结论听起来像和稀泥,其实是全书第一个真正的哲学冲击——**它说的是,我们从日常经验里带来的那两个词,不足以描述这个世界。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "时间线",
+      "svg": "<svg viewBox='0 0 580 300' xmlns='http://www.w3.org/2000/svg'><text x='290' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>一条主线,一百二十年</text><path d='M40 96 L540 96' style='fill:none;stroke:var(--line);stroke-width:1.4'/><g style='font-family:var(--font-serif);font-size:11px'><g><circle cx='58' cy='96' r='4' style='fill:var(--ink-soft)'/><text x='58' y='84' text-anchor='middle' style='fill:var(--ink)'>1900</text><text x='58' y='118' text-anchor='middle' style='fill:var(--ink-soft)'>普朗克</text><text x='58' y='132' text-anchor='middle' style='fill:var(--ink-faint)'>能量成份</text></g><g><circle cx='118' cy='96' r='4' style='fill:var(--ink-soft)'/><text x='118' y='84' text-anchor='middle' style='fill:var(--ink)'>1905</text><text x='118' y='118' text-anchor='middle' style='fill:var(--ink-soft)'>光量子</text><text x='118' y='132' text-anchor='middle' style='fill:var(--ink-faint)'>爱因斯坦</text></g><g><circle cx='178' cy='96' r='4' style='fill:var(--ink-soft)'/><text x='178' y='84' text-anchor='middle' style='fill:var(--ink)'>1913</text><text x='178' y='118' text-anchor='middle' style='fill:var(--ink-soft)'>玻尔原子</text><text x='178' y='132' text-anchor='middle' style='fill:var(--ink-faint)'>半经典补丁</text></g><g><circle cx='246' cy='96' r='4' style='fill:var(--ink-soft)'/><text x='246' y='84' text-anchor='middle' style='fill:var(--ink)'>1925–26</text><text x='246' y='118' text-anchor='middle' style='fill:var(--ink-soft)'>新力学</text><text x='246' y='132' text-anchor='middle' style='fill:var(--ink-faint)'>矩阵·波动·概率</text></g><g><circle cx='320' cy='96' r='4.6' style='fill:var(--cinnabar-pure)'/><text x='320' y='84' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>1927</text><text x='320' y='118' text-anchor='middle' style='fill:var(--ink-soft)'>不确定性·索尔维</text><text x='320' y='132' text-anchor='middle' style='fill:var(--ink-faint)'>争论正式开打</text></g><g><circle cx='388' cy='96' r='4' style='fill:var(--ink-soft)'/><text x='388' y='84' text-anchor='middle' style='fill:var(--ink)'>1935</text><text x='388' y='118' text-anchor='middle' style='fill:var(--ink-soft)'>EPR·那只猫</text><text x='388' y='132' text-anchor='middle' style='fill:var(--ink-faint)'>两篇同年</text></g><g><circle cx='446' cy='96' r='4.6' style='fill:var(--cinnabar-pure)'/><text x='446' y='84' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>1964</text><text x='446' y='118' text-anchor='middle' style='fill:var(--ink-soft)'>贝尔不等式</text><text x='446' y='132' text-anchor='middle' style='fill:var(--ink-faint)'>哲学变算术</text></g><g><circle cx='504' cy='96' r='4' style='fill:var(--ink-soft)'/><text x='504' y='84' text-anchor='middle' style='fill:var(--ink)'>1982</text><text x='504' y='118' text-anchor='middle' style='fill:var(--ink-soft)'>阿斯佩实验</text></g></g><rect x='40' y='176' width='300' height='34' rx='4' style='fill:none;stroke:var(--line);stroke-width:1.1'/><text x='190' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>这本书讲的主要是这一段(1900 起)</text><rect x='352' y='176' width='188' height='34' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='446' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>成书之后又发生了两件大事</text><g style='font-family:var(--font-serif);font-size:12px'><text x='290' y='240' text-anchor='middle' style='fill:var(--ink)'>2015:三组无漏洞贝尔实验,把最后的技术后路堵死</text><text x='290' y='262' text-anchor='middle' style='fill:var(--ink)'>2022:诺贝尔物理学奖发给阿斯佩、克劳泽、蔡林格</text><text x='290' y='288' text-anchor='middle' style='fill:var(--ink-faint)'>本书成于 2006 年前后,读时请把这两条补上</text></g></svg>",
+      "caption": "看这条线要注意两个节奏。**前二十七年是一路狂奔**(1900 到 1927,从一条凑出来的公式到一整套新力学);**后面九十年是一场慢仗**——争论的形式一变再变,从思想实验到不等式到实验室,而核心问题一直没换。"
+    },
+    {
+      "type": "h2",
+      "text": "三、量子是怎么被逼出来的:普朗克的绝望之举"
+    },
+    {
+      "type": "p",
+      "text": "回到那道炉火的题。物理学家要算的是:一个理想的「黑体」在某个温度下,各种波长的光各发出多少能量。当时手上有两条公式:**维恩公式在短波端符合得很好,长波端偏掉;瑞利—金斯公式在长波端符合得很好,短波端一路发散到无穷大。**后一种失败特别难堪——按那条公式,任何一个温热的物体都会在紫外和更短的波段放出无穷多的能量,你打开烤箱门就该被瞬间蒸发。"
+    },
+    {
+      "type": "p",
+      "text": "普朗克 1900 年 10 月先做了一件很不体面的事:他**凑**了一条公式,让它在长波端趋近瑞利—金斯、在短波端趋近维恩。**凑出来的东西和实验符合得好到可疑。**于是接下来两个月他拼命给它找一个物理根据,最后是这样找到的:假设炉壁上的振子只能以**一份一份**的方式吸收和放出能量,每份的大小是 ε = hν(ν 是频率,h 是一个新常数)。1900 年 12 月 14 日他把这个推导讲了出来——**这一天后来被算作量子论的生日。**"
+    },
+    {
+      "type": "quote",
+      "original": "这是一个绝望之举……我准备牺牲我此前关于物理学的任何一条信念。",
+      "translation": "普朗克 1931 年在给伍德的信里回忆 1900 年那一步。要记住:他并不认为自己发现了什么新世界,他是在别无他法之下动的手,此后十几年一直试图把这个常数塞回经典物理里去,始终没成功。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "一处流行说法",
+      "items": [
+        "几乎所有科普都这样讲:**「紫外灾难」逼得普朗克提出了量子。**这个因果顺序其实是倒的。「紫外灾难」这个说法是埃伦费斯特 1911 年才起的名字,比普朗克那一步晚了十年;而瑞利—金斯公式的最终形式也在 1905 年才补齐。**普朗克真正的入口是熵**——他在处理振子的熵与能量的关系,而不是被一场「灾难」逼到墙角。这不是抠字眼:**真实的科学史里,人往往不知道自己正站在转折点上**;而「灾难—英雄—拯救」这个叙事模板,恰恰是史话最容易滑进去的那个坑。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "接下来的五年,几乎没人认真对待这个 h。**第一个当真的人是爱因斯坦。**1905 年他把「一份一份」从炉壁推到了光本身:光在传播时也是一份一份的。用这个假设,光电效应里那几条让人困惑的规律立刻变得平常——为什么低于某个频率的光无论多强都打不出电子(单份能量不够)、为什么打出的电子能量只跟频率有关而跟强度无关(强度只决定份数)、为什么响应几乎是瞬时的(不需要慢慢攒能量)。**在他自己那年发表的几篇论文里,他只把这一篇称为「革命性的」**——而不是狭义相对论那篇。"
+    },
+    {
+      "type": "figure",
+      "ftype": "尺度图",
+      "svg": "<svg viewBox='0 0 580 250' xmlns='http://www.w3.org/2000/svg'><text x='290' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>为什么日常世界看不到量子:h 是一把极小的尺子</text><path d='M60 132 L530 132' style='fill:none;stroke:var(--line);stroke-width:1.3'/><g style='font-family:var(--font-serif);font-size:11.5px'><g><path d='M96 132 L96 112' style='stroke:var(--cinnabar-pure);stroke-width:1.6'/><circle cx='96' cy='110' r='4' style='fill:var(--cinnabar-pure)'/><text x='96' y='100' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>≈ h</text><text x='96' y='154' text-anchor='middle' style='fill:var(--ink)'>原子里的电子</text><text x='96' y='170' text-anchor='middle' style='fill:var(--ink-faint)'>量子效应就是全部</text></g><g><path d='M250 132 L250 112' style='stroke:var(--ink-soft);stroke-width:1.3'/><circle cx='250' cy='110' r='3.4' style='fill:var(--ink-soft)'/><text x='250' y='100' text-anchor='middle' style='fill:var(--ink)'>≈ 10¹⁴ h</text><text x='250' y='154' text-anchor='middle' style='fill:var(--ink)'>一粒花粉的晃动</text><text x='250' y='170' text-anchor='middle' style='fill:var(--ink-faint)'>量子效应已难察觉</text></g><g><path d='M430 132 L430 112' style='stroke:var(--ink-soft);stroke-width:1.3'/><circle cx='430' cy='110' r='3.4' style='fill:var(--ink-soft)'/><text x='430' y='100' text-anchor='middle' style='fill:var(--ink)'>≈ 10³⁴ h</text><text x='430' y='154' text-anchor='middle' style='fill:var(--ink)'>你走出的一步</text><text x='430' y='170' text-anchor='middle' style='fill:var(--ink-faint)'>完全退回经典</text></g></g><text x='60' y='200' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>横轴是「作用量」(能量×时间)的量级,每一格差很多个数量级</text><text x='290' y='228' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>凡是说「你的人生也可以量子跃迁」的,都跳过了这条横轴</text></svg>",
+      "caption": "**h ≈ 6.626×10⁻³⁴,这个数字是全书最重要的一道防线。**量子效应只在与 h 可比的尺度上显形;一旦体系大到日常尺度,那些怪事会自动、迅速、彻底地退回经典。所以「既生又死的猫」「同时在两个地方的人」在物理上不成立——**不是因为没人观察,而是因为尺度差了三十几个数量级。**"
+    },
+    {
+      "type": "h2",
+      "text": "四、新力学:两条路走到同一个地方,然后概率进来了"
+    },
+    {
+      "type": "p",
+      "text": "中间跳过一段(第 4 章会细讲):玻尔 1913 年给原子打了个漂亮却站不住的补丁,规定电子只能待在某些轨道上、跃迁时一次吞吐一份能量;算氢原子准得惊人,算氦就完全不行。这种「经典力学 + 若干条硬规定」的拼装货撑了十来年,越补越难看。**真正的突破在 1925—1926 年,而且是两拨人从两个完全不同的方向同时到达的。**"
+    },
+    {
+      "type": "p",
+      "text": "一条路是海森堡的。1925 年 6 月,他为躲花粉症躲到北海的一座小岛上,决定采取一个极端立场:**只处理能被观测到的量**(谱线的频率和强度),不再去画那些谁也没见过的电子轨道。他凑出的一套运算规则有个怪毛病——**A 乘 B 不等于 B 乘 A**。玻恩认出来那是矩阵。另一条路是薛定谔的:他接过德布罗意「电子也是波」的想法,在 1926 年初写出了那条著名的波动方程。**两套数学看起来毫无共同之处,不久却被证明完全等价。**"
+    },
+    {
+      "type": "p",
+      "text": "然后是最要命的一步。薛定谔本人以为他那个波函数 ψ 描述的是电子真实地「摊开」在空间里。**玻恩说不是。**1926 年 6 月,玻恩在一篇讨论碰撞的论文里提出:**|ψ|² 是概率**——波函数不告诉你电子在哪里,只告诉你在各处找到它的概率有多大。(有个常被提起的细节:那句最关键的话,是他在校样阶段以脚注形式补上的。)"
+    },
+    {
+      "type": "p",
+      "text": "这一步的分量,当时并非所有人都立刻意识到。**它把决定论从物理学的底层拿掉了。**在牛顿的世界里,只要初始条件足够精确,未来就是注定的;概率只是我们无知的度量。而玻恩说的是:**方程算得出概率分布,算不出这一次的结果——不是因为你不知道,而是因为那个结果在事前根本不存在。**同年 12 月,爱因斯坦写了那封信。"
+    },
+    {
+      "type": "quote",
+      "original": "量子力学确实令人肃然起敬。可是内心有个声音告诉我,它还不是那个真东西……无论如何,我确信老头子不掷骰子。",
+      "translation": "爱因斯坦 1926 年 12 月致玻恩。原文里的「老头子」(der Alte)是他惯用的对造物者的戏称。这句话后来被简化成「上帝不掷骰子」,也成了这本书的书名——但要注意,他反对的重点其实不在「随机」两个字上,这一点第 8 章会拆开。"
+    },
+    {
+      "type": "h2",
+      "text": "五、不确定性:最被误读的一条原理"
+    },
+    {
+      "type": "p",
+      "text": "1927 年,海森堡给出了那条众所周知的关系:**位置与动量,不可能同时被任意精确地确定**(Δx·Δp ≥ ħ/2)。他当时用一个思想实验来讲它:要「看见」一个电子,就得拿光去照它;波长越短看得越清,而波长越短的光子动量越大,撞上去把电子的动量搅得越乱。**于是「看它就得撞它」成了流传最广的解释——也成了后来一切玄学的第一块跳板。**"
+    },
+    {
+      "type": "p",
+      "text": "**玻尔当场就不满意这个讲法**,而他是对的。现代表述里,这条关系说的**不是**「我们的测量把它撞乱了」,而是:**一个量子态本身就不同时具备确定的位置和确定的动量。**这不是知识的欠缺,是这个东西的性质。数学上它是一条早在量子力学之前就成立的定理:**位置分布和动量分布是一对傅里叶对偶**——一个波包在空间上越窄,它含有的频率成分就必然越宽。这跟手抖、仪器精度、有没有人在看,统统没有关系。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "svg": "<svg viewBox='0 0 580 268' xmlns='http://www.w3.org/2000/svg'><text x='290' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>不确定性不是「撞乱了」,是同一块面积的两种摊法</text><g style='font-family:var(--font-serif);font-size:11.5px'><rect x='40' y='52' width='230' height='168' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='155' y='74' text-anchor='middle' style='font-size:13px;font-weight:bold;fill:var(--ink)'>把位置定得很准</text><rect x='140' y='92' width='30' height='46' style='fill:var(--cinnabar-pure);opacity:0.7'/><text x='155' y='154' text-anchor='middle' style='fill:var(--ink-soft)'>位置分布:窄</text><rect x='62' y='170' width='186' height='20' style='fill:var(--ink-soft);opacity:0.32'/><text x='155' y='208' text-anchor='middle' style='fill:var(--ink-soft)'>动量分布:必然变宽</text><rect x='310' y='52' width='230' height='168' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='425' y='74' text-anchor='middle' style='font-size:13px;font-weight:bold;fill:var(--ink)'>把动量定得很准</text><rect x='332' y='92' width='186' height='20' style='fill:var(--cinnabar-pure);opacity:0.42'/><text x='425' y='132' text-anchor='middle' style='fill:var(--ink-soft)'>位置分布:必然变宽</text><rect x='410' y='150' width='30' height='40' style='fill:var(--ink-soft);opacity:0.55'/><text x='425' y='208' text-anchor='middle' style='fill:var(--ink-soft)'>动量分布:窄</text></g><text x='290' y='240' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>两块面积的乘积有个下限:Δx·Δp ≥ ħ/2——你只能选怎么摊,不能同时压扁</text><text x='290' y='262' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>这是「态」的性质,不是「测量手法」的缺陷</text></svg>",
+      "caption": "这张图值得记住,因为**「测不准」这三个字的中译几乎凭一己之力,养活了半个玄学市场**。它被读成「所以万物皆不确定」「所以科学也说不准」「所以你信什么都行」。而原文说的只是:**有些成对的物理量,在数学上就不可能同时都窄。**顺便一提,现代物理已经把「态的弥散」与「测量造成的扰动」明确分成了两条不同的关系式——海森堡当年那个显微镜的讲法,属于后者,而且不完全准确。"
+    },
+    {
+      "type": "h2",
+      "text": "六、那只猫:一个被用反了的反证"
+    },
+    {
+      "type": "p",
+      "text": "1935 年,薛定谔写下了科学史上最出名的一个思想实验:一只猫关在盒子里,盒中有放射性原子、盖革计数器、锤子和毒药瓶。原子在一小时内衰变的概率是二分之一;若衰变,计数器触发,锤子砸碎毒药瓶,猫死。**按照「波函数描述实在」的读法,一小时后整个体系处在「衰变+死猫」与「未衰变+活猫」的叠加态里——猫既死又活。**"
+    },
+    {
+      "type": "quote",
+      "original": "甚至可以构造出十分滑稽的例子。",
+      "translation": "薛定谔在提出这个例子时的原话。他的用意是归谬:如果把波函数当作实在的描述、又允许微观的叠加不受限制地放大到宏观,你就会推出一个荒唐结论——所以那个读法有问题。这是一次反驳,不是一次展示。"
+    },
+    {
+      "type": "p",
+      "text": "**换句话说,那只猫是一件用来嘲笑对手的道具,今天却被当成了对手的招牌。**这是全书最值得记住的一次颠倒:一个用来说明「这样读会得出荒谬结论」的例子,被后人反过来当成了「量子世界多神奇」的证据,进而成了「所以意识可以决定现实」这一整套话术的门面。而现代物理对这只猫的部分回答叫**退相干**:猫这么大的东西与环境(空气分子、热辐射、光子)的耦合极强,叠加会在难以想象的短时间内散成经典的「要么死要么活」。**问题从来不是「猫会不会既死又活」,而是「方程为什么总是只兑现一个结果」——这个问题至今没有共识。**"
+    },
+    {
+      "type": "p",
+      "text": "同一篇文章里,薛定谔还做了一件更重要的事:**他给「纠缠」起了名字**,并且说了一句在今天看来极有预见性的话。"
+    },
+    {
+      "type": "quote",
+      "original": "我不把它称为量子力学的一个特征,而是那个特征。",
+      "translation": "薛定谔 1935 年论纠缠。三十年后贝尔正是从这个「那个特征」下手,把一场哲学争论改写成了可判决的实验问题;而今天的量子密钥分发、量子计算,都建在这个特征上。"
+    },
+    {
+      "type": "h2",
+      "text": "七、爱因斯坦到底在反对什么"
+    },
+    {
+      "type": "p",
+      "text": "这是全书最容易被讲坏的一节。流行版本是:**玻尔代表新潮,爱因斯坦代表守旧,老人跟不上时代了。**这个版本既不公道也不准确。"
+    },
+    {
+      "type": "p",
+      "text": "爱因斯坦的第一层不满确实是随机性——「老头子不掷骰子」。但那只是入口。**他真正的靶子是两条:一,量子力学是不完备的(它没有讲完整个故事,就像用统计学描述一屋子人,不等于否认每个人有确定的身高);二,如果它是完备的,那就必须承认一种超距的、瞬时的影响。**而后者在他看来是不可容忍的——他刚刚用相对论把「瞬时作用」从物理学里赶出去。"
+    },
+    {
+      "type": "p",
+      "text": "1935 年,他和波多尔斯基、罗森写出那篇著名的文章,标题本身就是一个问句:**量子力学对物理实在的描述能被认为是完备的吗?**论文构造了一对相互关联的粒子:测量其中一个,就能立刻推知另一个的状态,哪怕它们相距很远。他们的推理是:既然测量这边不可能影响那边,那么那边的性质**在测量之前就已经存在**;而量子力学不写这些性质,所以量子力学不完备。"
+    },
+    {
+      "type": "quote",
+      "original": "我不能认真相信有那种幽灵般的超距作用。",
+      "translation": "爱因斯坦 1947 年致玻恩。这句话比「上帝不掷骰子」更准确地说出了他真正的底线:他要的不是决定论本身,而是「定域性」——发生在这里的事,不该瞬间改变那里的事实。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "svg": "<svg viewBox='0 0 580 276' xmlns='http://www.w3.org/2000/svg'><text x='290' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>爱因斯坦的三层不满,以及后来各自的下场</text><g style='font-family:var(--font-serif);font-size:12px'><rect x='60' y='46' width='460' height='56' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='84' y='70' style='font-weight:bold;fill:var(--ink)'>表层:随机性</text><text x='84' y='90' style='font-size:11.5px;fill:var(--ink-soft)'>「上帝不掷骰子」——一个只给概率的理论,不该是最终答案</text><text x='496' y='80' text-anchor='end' style='font-size:11.5px;fill:var(--ink-faint)'>被引用最多,也最被误当成全部</text><rect x='60' y='114' width='460' height='56' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='84' y='138' style='font-weight:bold;fill:var(--ink)'>中层:不完备</text><text x='84' y='158' style='font-size:11.5px;fill:var(--ink-soft)'>理论没讲完故事,底下应还有更细的实在(隐变量)</text><text x='496' y='148' text-anchor='end' style='font-size:11.5px;fill:var(--ink-faint)'>至今仍是开着的问题</text><rect x='60' y='182' width='460' height='56' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='84' y='206' style='font-weight:bold;fill:var(--cinnabar-pure)'>底层:定域性</text><text x='84' y='226' style='font-size:11.5px;fill:var(--ink-soft)'>这里发生的事,不该瞬间改变那里的事实——这才是他真正的底线</text><text x='496' y='216' text-anchor='end' style='font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>1964 年之后被实验否掉</text></g><text x='290' y='266' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>只讲第一层,就会把一位最深刻的反对者,读成一个跟不上潮流的老人</text></svg>",
+      "caption": "读这本书(以及所有讲这段历史的书)时,请把这三层分开。**爱因斯坦输掉的是最底下那一层,而那一层恰恰是他自己指出来、并且逼着物理学去检验的。**中间那一层——量子力学是不是最终故事——今天仍然没有定论。"
+    },
+    {
+      "type": "h2",
+      "text": "八、贝尔:把哲学变成算术"
+    },
+    {
+      "type": "p",
+      "text": "从 1935 到 1964,这场争论几乎停摆了三十年。原因很实际:**双方都同意量子力学的所有预言正确,分歧在于「它是不是全部故事」——这看起来是个纯哲学问题,做不了实验。**大多数物理学家因此认为这是无意义的争吵,该干活干活去。"
+    },
+    {
+      "type": "p",
+      "text": "1964 年,一位在欧洲核子中心做加速器设计的爱尔兰人约翰·贝尔,用业余时间做了一件让所有人震惊的事。**他证明了:任何一种「定域 + 隐变量」的理论(也就是爱因斯坦所要的那类理论),它给出的关联都必须满足一个不等式;而量子力学预言这个不等式会被违反,而且违反的幅度可以测出来。**换句话说:**这不再是哲学立场之争了,可以拿到实验室里判决。**"
+    },
+    {
+      "type": "p",
+      "text": "顺带说一段迟到的公道。1932 年,冯·诺依曼曾给出一个「隐变量不可能」的证明,这个证明的权威压制了整个方向近三十年。**它有一个不该有的假设。**德国女数学家格蕾特·赫尔曼早在 1935 年就指出了这个漏洞——**她的文章被忽视了三十年**,直到贝尔在 1966 年独立发现同一个问题,这段公案才被翻出来。"
+    },
+    {
+      "type": "p",
+      "text": "实验随后一步步逼近:1972 年克劳泽与弗里德曼做了第一个像样的检验;1981—1982 年阿斯佩把开关做得足够快,堵上了「两边偷偷通气」的可能;2015 年三个小组几乎同时完成了**无漏洞**的实验,把最后的技术后路封死。**结论一边倒:不等式确实被违反,自然界站在量子力学这边。**2022 年的诺贝尔物理学奖发给了阿斯佩、克劳泽和蔡林格。"
+    },
+    {
+      "type": "figure",
+      "ftype": "逻辑图",
+      "svg": "<svg viewBox='0 0 580 288' xmlns='http://www.w3.org/2000/svg'><text x='290' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>贝尔实验逼出的三选一:总得放弃一个</text><g style='font-family:var(--font-serif);font-size:12px'><rect x='34' y='54' width='158' height='84' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='113' y='80' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>定域性</text><text x='113' y='102' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>这里的操作不能瞬时</text><text x='113' y='120' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>改变那里的事实</text><rect x='211' y='54' width='158' height='84' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='290' y='80' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>实在性</text><text x='290' y='102' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>测量之前,性质就</text><text x='290' y='120' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>已经有确定的值</text><rect x='388' y='54' width='158' height='84' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='467' y='80' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>自由选择</text><text x='467' y='102' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>两端测什么,可以</text><text x='467' y='120' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>独立地随机决定</text></g><path d='M290 146 L290 170 M283 162 L290 171 L297 162' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><rect x='140' y='176' width='300' height='40' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='290' y='201' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>实验事实:不等式被违反(而且违反得很干脆)</text><text x='290' y='244' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>三条不能全留。放弃「实在性」→ 标准量子力学;放弃「定域性」→ 玻姆理论</text><text x='290' y='266' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>放弃「自由选择」→ 超决定论(逻辑上可行,代价大到几乎没人愿付)</text><text x='290' y='286' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>注意:三条里没有一条叫「所以意识参与其中」</text></svg>",
+      "caption": "这张图请对着任何一段「量子证明了心灵的力量」的说辞看一遍。**贝尔实验逼出的三选一里,没有任何一支通向「意识」。**它逼出的是一个纯粹关于世界结构的选择:要么放弃「测量前性质就已确定」,要么放弃「远处的事不受这里瞬时影响」——而无论选哪一支,**都不能用来传递一个比特的信息**,这是另一条被严格证明的定理。"
+    },
+    {
+      "type": "quote",
+      "original": "在这件事上,我觉得爱因斯坦的智识远在玻尔之上。",
+      "translation": "贝尔本人的评价(见其访谈)。这句话来自那个用实验判了爱因斯坦「输」的人,很能说明这场争论的性质:爱因斯坦提出的是一个足够清楚、以至于最终可以被检验的问题;而玻尔的回应虽然被接受,却晦涩到今天仍有人在争论他到底说了什么。"
+    },
+    {
+      "type": "pull",
+      "text": "输的是「定域实在论」这个组合,不是「爱因斯坦全错了」——而那个被判死刑的组合,恰恰是他自己写清楚、并且逼着物理学去检验的。"
+    },
+    {
+      "type": "h2",
+      "text": "九、诠释之争:一桩至今未决的公案"
+    },
+    {
+      "type": "p",
+      "text": "这是本书最需要读者端正态度的一节。**量子力学的数学没有争议,怎么用也没有争议——争的是它到底在说什么。**这不是外行的疑惑,是物理学界真实存在、且从未收口的分歧。下面这张表列的都是活着的立场,而不是历史遗迹。"
+    },
+    {
+      "type": "table",
+      "caption": "五种活着的读法(左边越靠上越「正统」,但没有一种是共识)",
+      "head": ["读法", "对「坍缩」的处理", "代价", "现状"],
+      "rows": [
+        ["哥本哈根一系", "承认有,但不说机制", "把测量当成不可再分析的原语", "教科书默认,占比最高;其实内部分歧也很大,连名字都是后来才叫开的"],
+        ["多世界(埃弗雷特)", "取消,方程一路线性演化", "分支不断增殖,概率怎么来需要另作交代", "近几十年支持者明显增多,尤其在宇宙学界"],
+        ["导波/玻姆", "取消,粒子始终有确定位置", "必须明确非定域", "小众但完全自洽;它的存在正说明贝尔杀的只是「定域」隐变量"],
+        ["客观坍缩(GRW 一类)", "改方程,让坍缩自发发生", "多出可调参数", "难得地能被实验区分,近年一直在被逼窄"],
+        ["退相干 + 闭嘴算就是了", "回避", "把「为什么只出一个结果」搁置", "务实派;严格说退相干解释的是「为什么看不到叠加」,不是「为什么只出一个」"]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**真正的悬案有一个正式名字:测量问题。**它可以用一句话讲清楚:薛定谔方程是线性的、连续的、从不挑结果——按它演化,一个叠加态永远是叠加态;可我们每一次测量,都只看到一个结果。**这两件事之间的接缝,九十多年了,没有一种被普遍接受的解释。**这不是科普作者的煽情,是这门学科的实际状态。"
+    },
+    {
+      "type": "quote",
+      "original": "我想我可以有把握地说,没有人懂量子力学。",
+      "translation": "费曼 1965 年的名言。请注意他说这话时的身份——他是量子电动力学的奠基者之一、诺奖得主。他的意思不是「这门学问算不准」(它是人类有史以来预言最精确的理论),而是「没有人能把它讲成一个符合直觉的故事」。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "两个相反的坑",
+      "items": [
+        "**坑一:「早就解决了,剩下的是哲学家的事。」**不对。少数几次针对物理学家的问卷调查(样本都不大,只能当参考)一致显示:没有任何一种诠释接近多数共识,而且回答者对同一个问题的答案分布得很散。",
+        "**坑二:「既然没定论,那我说什么都行。」**更不对。任何一种诠释都必须**复现全部已有的实验结果**——这道门槛极高,把百分之九十九点九的民间说法挡在门外。「未决」指的是在四五种严格自洽、且都与全部实验相符的方案之间未决,**不是「什么都能算一种说法」**。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "十、必须堵死的一扇门:量子玄学"
+    },
+    {
+      "type": "p",
+      "text": "如果这本书只让你记住一句话,应该是这句:**在物理学里,「观测」指的是相互作用,不是人的意识。**具体说,一次「测量」意味着体系与外部的大量自由度发生了不可逆的纠缠,路径信息被环境记录下来。**一台探测器、一颗空气分子、一个被散射的光子,就足够了。**不需要有人在场,不需要有人知道,更不需要有人「相信」。"
+    },
+    {
+      "type": "figure",
+      "ftype": "实验图",
+      "svg": "<svg viewBox='0 0 580 268' xmlns='http://www.w3.org/2000/svg'><text x='290' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>双缝实验里,「谁在看」到底重要不重要</text><g style='font-family:var(--font-serif);font-size:11.5px'><rect x='26' y='48' width='168' height='150' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='110' y='72' text-anchor='middle' style='font-size:12.5px;font-weight:bold;fill:var(--ink)'>不放探测器</text><g style='stroke:var(--cinnabar-pure);stroke-width:3;opacity:0.75'><path d='M62 96 L62 132'/><path d='M78 96 L78 132'/><path d='M94 96 L94 132'/><path d='M110 96 L110 132'/><path d='M126 96 L126 132'/><path d='M142 96 L142 132'/><path d='M158 96 L158 132'/></g><text x='110' y='156' text-anchor='middle' style='fill:var(--ink-soft)'>屏上有干涉条纹</text><text x='110' y='180' text-anchor='middle' style='fill:var(--ink-faint)'>「哪条缝」的信息不存在</text><rect x='206' y='48' width='168' height='150' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='290' y='72' text-anchor='middle' style='font-size:12.5px;font-weight:bold;fill:var(--ink)'>放探测器,没人看记录</text><rect x='250' y='96' width='36' height='36' style='fill:var(--ink-soft);opacity:0.4'/><rect x='296' y='96' width='36' height='36' style='fill:var(--ink-soft);opacity:0.4'/><text x='290' y='156' text-anchor='middle' style='fill:var(--ink-soft)'>条纹消失</text><text x='290' y='180' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>没有任何人「知道」</text><rect x='386' y='48' width='168' height='150' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='470' y='72' text-anchor='middle' style='font-size:12.5px;font-weight:bold;fill:var(--ink)'>把路径信息彻底抹掉</text><g style='stroke:var(--cinnabar-pure);stroke-width:3;opacity:0.55'><path d='M422 96 L422 132'/><path d='M438 96 L438 132'/><path d='M454 96 L454 132'/><path d='M470 96 L470 132'/><path d='M486 96 L486 132'/><path d='M502 96 L502 132'/><path d='M518 96 L518 132'/></g><text x='470' y='156' text-anchor='middle' style='fill:var(--ink-soft)'>条纹在符合计数里重现</text><text x='470' y='180' text-anchor='middle' style='fill:var(--ink-faint)'>仍然不能传任何信息</text></g><text x='290' y='224' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>决定条纹在不在的,是「路径信息有没有被环境记下来」这一物理事实</text><text x='290' y='248' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>不是「有没有人知道」,更不是「有没有人相信」</text></svg>",
+      "caption": "中间那一格是全部要害:**探测器一放,哪怕它的记录被锁进抽屉、永远没人翻开,条纹照样消失。**这一条实验事实,单独就足以驳倒「意识使波函数坍缩」的整套说辞。右边那一格(量子擦除)常被拿去证明「可以改变过去」,而实情是:**它需要事后把两边的数据用经典方式比对,才能把条纹从一堆散点里筛出来**——不比对,你什么也看不见,更没法用它传出一个比特。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "三个被挪用的词",
+      "items": [
+        "**观察者。**物理上指的是仪器与环境,被换成了「有意识的人」。它的来路不完全是空穴来风——历史上确有少数派(维格纳等人)主张过意识导致坍缩,但**他本人后来放弃了这个立场,而且这一主张从未获得任何实验支持**。",
+        "**不确定性。**说的是位置与动量这类共轭量的取值弥散,被换成了「一切都不确定,所以你怎么想都行」。这是从一条极精确的数学关系,滑到一句什么都没说的空话。",
+        "**纠缠。**它确实是真的、确实很奇怪,但**它不能传递任何信息**——这有一条严格证明的定理(不可通信定理)。两边各自看到的都是纯随机的结果,关联只有在事后用经典通道比对数据时才显形。「量子纠缠证明心灵感应」是对这个词最彻底的误用。",
+        "**顺带一个反讽:**上世纪七十年代加州确实有一批物理学家热衷于用纠缠做超光速通信,他们的追问反倒逼出了「量子态不可克隆」这条硬定理(1982)。**玄学没能证明什么,却意外地帮物理学关上了一扇门。**"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "十一、怎么读这本书"
+    },
+    {
+      "type": "p",
+      "text": "最后给一份使用说明。这本书值得读,但要带着一点手艺读。"
+    },
+    {
+      "type": "steps",
+      "items": [
+        {
+          "title": "把它当「人的故事」读,不当「知识清单」读",
+          "text": "它最好的部分是人的犹豫、固执和意气:普朗克不敢相信自己的结果、爱因斯坦提出光量子后自己也不安、玻尔和海森堡为一篇论文吵到几乎翻脸。这些是教科书永远不会写的,也是这本书最难被替代的地方。",
+          "state": "done"
+        },
+        {
+          "title": "遇到「于是他豁然开朗」,默认打个折",
+          "text": "真实的转折通常拖了好几年、绕了好几个弯,而且当事人常常不知道自己正站在转折点上。史话为了好读,会把这些过程压成一个瞬间。",
+          "state": "done"
+        },
+        {
+          "title": "每读到一个精彩比喻,追问一句它哪里不该延伸",
+          "text": "骰子、分裂的宇宙、那只猫——这些比喻好用,也正是玄学的原料。比喻负责让你入门,不负责替你思考;判断一个比喻的边界在哪里,是读科普最重要的一项手艺。",
+          "state": "now"
+        },
+        {
+          "title": "读完,拿三条底线防身",
+          "text": "观测 = 相互作用,不是意识;纠缠 ≠ 超光速通信;猫是反证,不是奇观。再加两条:不确定 ≠ 什么都行,未决 ≠ 怎么说都行。",
+          "state": "todo"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "text": "还有一条很朴素的提醒:**量子力学不是玄学的反面例证,它是人类有史以来最精确的理论。**你手上的手机、家里的 LED 灯、医院的核磁共振、电脑里的闪存和激光唱头,全都建立在它之上。**一门能把预言做到小数点后十几位的学问,恰恰是最没有含糊余地的学问。**争论只发生在「它到底在说什么」这一层,而不发生在「它准不准」这一层——**这个区分,是读完这本书最该带走的东西。**"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "曹天元《上帝掷骰子吗:量子物理史话》。原为网络连载,后结集成书,此后多次再版并有增订。",
+        "书中反复出现的名字:普朗克、爱因斯坦、玻尔、卢瑟福、德布罗意、海森堡、薛定谔、玻恩、泡利、狄拉克、埃伦费斯特、居里夫人、贝尔、埃弗雷特、玻姆、费曼。",
+        "想更严谨:费曼《物理学讲义》第三卷开篇一章(通篇只讲双缝);想把这场争论看深:曼吉特·库马尔《量子:爱因斯坦、玻尔与关于世界本质的大辩论》、亚当·贝克尔 What Is Real?;想看玄学的来路:大卫·凯泽《嬉皮士如何拯救了物理学》。",
+        "成书之后的两件大事,请自行补上:2015 年三组无漏洞贝尔实验;2022 年诺贝尔物理学奖授予阿斯佩、克劳泽、蔡林格。"
+      ]
+    }
+  ]
+}

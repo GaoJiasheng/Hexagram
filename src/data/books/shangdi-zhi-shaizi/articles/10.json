@@ -1,0 +1,161 @@
+{
+  "title": "量子玄学是怎么长出来的",
+  "subtitle": "「观测」在物理上指相互作用,不指人的意识——把这一句钉死,大半个市场就塌了",
+  "centralIdea": "这一章是全书最实用的一章:它要把「量子」这两个字被挪用的每一处接口逐个堵上。核心只有一句话——在物理学里,「观测」指的是与外部自由度发生了不可逆的相互作用、信息被环境记录下来;一台探测器、一颗空气分子、一个被散射的光子就够了,不需要有人在场、有人知道、有人相信。有一条实验事实单独就足以定案:双缝里放上探测器后,哪怕它的记录被锁进抽屉永远没人翻开,干涉条纹照样消失。「意识使波函数坍缩」在历史上确有少数派主张,但主张者本人后来放弃了,而且从无实验支持。除此之外还有三个被挪用得最狠的词:不确定性(被换成「一切都不确定,所以你想什么都行」)、纠缠(被换成心灵感应,而不可通信定理严格禁止它传递任何信息)、叠加与平行宇宙(被换成「另一个更成功的你」,而分支之间恰恰无法互相影响)。最后是一个反讽:上世纪七十年代那批热衷于用纠缠做超光速通信的人,他们的追问反倒逼出了「量子态不可克隆」这条硬定理。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "2019 年前后,国内不少城市出现过一种收费不菲的培训班,叫「量子波动速读」。**宣传说,孩子只要蒙上眼睛把书快速翻动,就能用「量子波动」感知全书内容**,几分钟读完十万字。培训现场的视频里,一排孩子闭着眼疯狂翻书,像在扇风。**这件事最后被媒体逐一戳穿,但值得追问的是另一个问题:为什么骗子偏偏选中了「量子」这两个字?**答案是:因为它同时具备三样东西——**极高的科学权威、极强的反直觉、以及公众极低的辨识度。**"
+    },
+    {
+      "type": "h2",
+      "text": "一、先把「观测」这个词钉死"
+    },
+    {
+      "type": "p",
+      "text": "整座玄学大厦压在同一根柱子上:**「量子力学说,观察者的观察会改变现实。」**所以先说清楚,物理学里的「观测」到底指什么。"
+    },
+    {
+      "type": "p",
+      "text": "**它指的是:被观测的体系与外部的大量自由度发生了不可逆的相互作用,以至于「它是哪种状态」这个信息被环境记录了下来。**注意这句话里没有任何一个词涉及人。**一台探测器算;一颗撞上来的空气分子算;一个被散射走的光子也算。**只要信息跑到了外面,相干性就散了,叠加就变成了普通的「要么这样要么那样」。这个过程叫**退相干**,它是可以计算、可以测量、可以在实验室里被人为控制快慢的**物理过程**。"
+    },
+    {
+      "type": "p",
+      "text": "有一条实验事实单独就足以定案。**在双缝实验里装一个能记录「光子走了哪条缝」的探测器,干涉条纹立刻消失。**关键在于:**哪怕这台探测器的记录被自动存进硬盘、锁进抽屉、永远没有人去看,条纹照样消失。**反过来,如果用某种手段把路径信息彻底抹掉(让它在物理上不可恢复),条纹又能在数据里重现。**决定条纹在不在的,是「路径信息是否被环境记录」这个物理事实,不是「有没有人知道」。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "机制图",
+      "svg": "<svg viewBox='0 0 560 262' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>「测量」的物理含义:信息漏进环境</text><g style='font-family:var(--font-serif);font-size:11.5px'><circle cx='104' cy='110' r='30' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='104' y='114' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>叠加</text><text x='104' y='160' text-anchor='middle' style='fill:var(--ink-soft)'>孤立的量子体系</text><path d='M142 110 L214 110 M206 104 L215 110 L206 116' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><text x='178' y='100' text-anchor='middle' style='fill:var(--ink-faint)'>相互作用</text><g style='fill:var(--ink-soft);opacity:0.6'><circle cx='250' cy='70' r='5'/><circle cx='286' cy='58' r='5'/><circle cx='320' cy='76' r='5'/><circle cx='258' cy='148' r='5'/><circle cx='296' cy='162' r='5'/><circle cx='330' cy='142' r='5'/><circle cx='276' cy='110' r='5'/><circle cx='318' cy='110' r='5'/></g><text x='290' y='196' text-anchor='middle' style='fill:var(--ink-soft)'>环境:空气分子、光子、热辐射、探测器的原子</text><path d='M356 110 L420 110 M412 104 L421 110 L412 116' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><rect x='428' y='82' width='100' height='56' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='478' y='106' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>经典混合</text><text x='478' y='126' text-anchor='middle' style='fill:var(--ink-soft)'>要么这样,要么那样</text></g><text x='280' y='228' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>整条链子里没有任何一个环节需要「有人知道」——它只需要信息跑出去</text><text x='280' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>所以:没人看的时候,月亮当然在;桌子也不会既在这儿又在那儿</text></svg>",
+      "caption": "顺便回答那个被问烂的问题:**「没人看的时候月亮还在吗?」**在。月亮时时刻刻被太阳的光子打着、被地球引力拽着、被宇宙微波背景照着——**它每一秒都在被环境「测量」无数次。**要让一个物体处在叠加态,得把它从环境里极端地隔离出来,用极低温、极高真空、极短时间——**实验室里花大价钱做到的,也只是几个原子、几百个光子的量级。**"
+    },
+    {
+      "type": "h2",
+      "text": "二、「意识使波函数坍缩」的真实历史"
+    },
+    {
+      "type": "p",
+      "text": "这个说法不是凭空捏造的,它有一段真实的学术来路,而这段来路恰恰说明了它今天的地位。**起点是冯·诺依曼 1932 年那本书。**他指出:测量链可以一直往后推——粒子影响仪器,仪器影响指针,指针的光影响你的视网膜,视网膜影响你的大脑……**这条链子在物理上没有天然的断点。**于是他说,你可以把「切断点」放在链条的任何地方,而结果都一样。"
+    },
+    {
+      "type": "p",
+      "text": "**后来有人把这个「任意」读成了「必然」:既然链条到意识为止,那就把切断点放在意识上。**六十年代,物理学家维格纳明确主张过这一点,还设计了那个著名的「维格纳的朋友」思想实验(朋友在实验室里看了结果,而屋外的维格纳还没听说,那么此刻朋友处在叠加态里吗?)。**这确实是一位一流物理学家提出过的立场,不是民科臆造。**"
+    },
+    {
+      "type": "p",
+      "text": "**但结局要说清楚:维格纳本人后来放弃了这个立场。**一个原因是退相干理论的发展——它表明链条早在到达任何神经元之前,就已经在探测器那里断掉了;另一个原因更哲学:**如果只有意识才能让波函数坍缩,那么「另一个人的意识」算不算数?**如果算,那意识就没什么特殊;如果不算,你就滑向了「只有我存在」的唯我论。**今天,主张意识导致坍缩的专业物理学家极少,而且这一主张从来没有得到过任何实验支持。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "链条图",
+      "svg": "<svg viewBox='0 0 560 244' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>那条链子在哪里断掉</text><g style='font-family:var(--font-serif);font-size:11px'><rect x='24' y='60' width='86' height='46' rx='4' style='fill:none;stroke:var(--line);stroke-width:1.1'/><text x='67' y='88' text-anchor='middle' style='fill:var(--ink)'>粒子</text><rect x='134' y='60' width='86' height='46' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='177' y='82' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>探测器</text><text x='177' y='98' text-anchor='middle' style='fill:var(--ink-soft)'>信息在此漏出</text><rect x='244' y='60' width='86' height='46' rx='4' style='fill:none;stroke:var(--line);stroke-width:1.1'/><text x='287' y='88' text-anchor='middle' style='fill:var(--ink)'>指针 / 硬盘</text><rect x='354' y='60' width='86' height='46' rx='4' style='fill:none;stroke:var(--line);stroke-width:1.1'/><text x='397' y='88' text-anchor='middle' style='fill:var(--ink)'>视网膜</text><rect x='464' y='60' width='72' height='46' rx='4' style='fill:none;stroke:var(--line);stroke-width:1.1;stroke-dasharray:4 3'/><text x='500' y='88' text-anchor='middle' style='fill:var(--ink-faint)'>意识</text></g><g style='fill:none;stroke:var(--ink-soft);stroke-width:1.1'><path d='M112 83 L130 83 M124 78 L131 83 L124 88'/><path d='M222 83 L240 83 M234 78 L241 83 L234 88'/><path d='M332 83 L350 83 M344 78 L351 83 L344 88'/><path d='M442 83 L460 83 M454 78 L461 83 L454 88'/></g><path d='M177 116 L177 140' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='177' y='158' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>退相干说:断在这里</text><text x='500' y='130' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>曾有人主张断在这里</text><text x='500' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>提出者后来放弃了</text><text x='280' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>决定性的实验证据:把探测器的记录锁起来永不查看,干涉照样消失</text><text x='280' y='224' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>——链条早在任何「知道」发生之前,就已经断了</text></svg>",
+      "caption": "这张图值得存下来。**遇到「意识决定物质,这是量子力学证明的」,最省事的回应是:那请解释一下,为什么把探测记录锁进抽屉、全世界没有一个人知道结果,干涉条纹也照样不见了?**这个实验事实,把意识排除在必要条件之外。"
+    },
+    {
+      "type": "h2",
+      "text": "三、四个被挪用的词,逐个解剖"
+    },
+    {
+      "type": "table",
+      "caption": "术语挪用对照表(遇到时可以直接对照)",
+      "head": ["词", "物理上的意思", "被挪用成", "一句话破解"],
+      "rows": [
+        ["观察者", "仪器与环境;一次不可逆的相互作用", "有意识的人;念头改变现实", "记录锁进抽屉没人看,干涉照样消失"],
+        ["不确定性", "位置与动量这类共轭量的取值弥散有下限", "一切都不确定,所以想什么都成立", "短促的声音没有确定音高,与谁在听无关"],
+        ["纠缠", "两个体系的关联;不能传递任何信息", "心灵感应;远程同步;意念影响他人", "两端各看都是纯随机,不用经典通道比对就看不见关联"],
+        ["叠加 / 平行宇宙", "态的线性组合;分支之间不再互相影响", "另一个更成功的你;可以切换人生", "分支之间不通信、不穿越,你永远不会体验到另一支"]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "还可以加上第五个:**「量子跃迁」被拿去讲人生的一步登天。**第 4 章说过,跃迁的「不经过中间」是因为中间那些能级**根本不存在**,而且它需要**恰好一份**能量,不多不少。**要真拿它作类比,得出的结论应该是「必须刚好凑够那一份」,而不是「可以凭空跳级」。**"
+    },
+    {
+      "type": "h2",
+      "text": "四、为什么纠缠一个字节也传不了"
+    },
+    {
+      "type": "p",
+      "text": "这一条最值得单独讲透,因为「量子纠缠 = 心灵感应」是所有挪用里最流行的一个,而它错得最干脆。"
+    },
+    {
+      "type": "p",
+      "text": "设想一对纠缠光子,一个给北京的甲,一个给上海的乙。**甲测自己那个,得到一串结果:上下下上上下下……**看上去就是一串随机的硬币。**乙也一样,得到一串随机的硬币。**两人各自盯着自己的数据看一辈子,**都看不出任何异常——那就是两串纯随机数。**"
+    },
+    {
+      "type": "p",
+      "text": "**神奇的地方只在把两串数据放到一起时才出现:**在特定的测量角度组合下,两串数的吻合程度超过任何「事先约定好」的方案所能达到的上限——**这就是贝尔不等式被违反。**但请注意关键:**要看到这一点,必须先把两边的数据用普通方式送到一起比对**——打电话、发邮件、寄硬盘,**而这些都不超光速。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "数据图",
+      "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>各看各的:两串纯随机数;凑到一起:才看出关联</text><g style='font-family:var(--font-serif);font-size:11.5px'><text x='96' y='58' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>北京的甲</text><text x='96' y='84' text-anchor='middle' style='fill:var(--ink-soft)'>上 下 下 上 上 下 上 下</text><text x='96' y='106' text-anchor='middle' style='fill:var(--ink-faint)'>看不出任何规律</text><text x='464' y='58' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>上海的乙</text><text x='464' y='84' text-anchor='middle' style='fill:var(--ink-soft)'>下 上 上 下 下 上 下 上</text><text x='464' y='106' text-anchor='middle' style='fill:var(--ink-faint)'>同样看不出任何规律</text></g><path d='M150 92 L246 130' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><path d='M410 92 L314 130' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><text x='280' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>用电话/网络(不超光速)把数据凑到一起</text><rect x='150' y='142' width='260' height='48' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>比对之后:吻合度超出任何「事先约定」的上限</text><text x='280' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>这才是贝尔不等式被违反的样子</text><text x='280' y='218' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>甲无论怎么操作自己那一端,乙那边的统计分布都不会有任何改变</text><text x='280' y='242' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>所以:纠缠传不了信息——这是被严格证明的定理,不是暂时做不到</text></svg>",
+      "caption": "**这不是「目前技术还做不到」,是有定理禁止的。**它叫不可通信定理:**无论甲怎么摆弄自己那一端,乙端观测到的统计分布分毫不变。**顺便,这也解释了量子密钥分发为什么可行却不违反相对论:**它保证的是「有人偷听你会知道」,而不是「信息瞬间到达」。**"
+    },
+    {
+      "type": "h2",
+      "text": "五、这套话术是怎么长出来的"
+    },
+    {
+      "type": "p",
+      "text": "有一段很具体的历史。**上世纪七十年代的加州,聚集了一批年轻物理学家**,他们对贝尔定理极感兴趣,同时也深深浸在当时的反主流文化里——东方神秘主义、意识研究、超感官知觉。**这批人一边认真讨论量子基础(在当时这几乎是学界弃儿的领域),一边热衷于把它和心灵现象接起来。**同一时期出现了几本影响极大的畅销书,把量子物理与东方哲学并置,销量以百万计。"
+    },
+    {
+      "type": "p",
+      "text": "**然后是最妙的一处反讽。**这批人里有人认真提出过用量子纠缠实现超光速通信的方案——办法是把接收端的量子态复制很多份,从而绕过统计限制。**为了驳倒它,有物理学家去证明「量子态能不能被复制」这个问题,结论是:不能。**这就是 1982 年问世的**「不可克隆定理」**,今天它是量子密码学的基石之一。**一群想证明心灵感应的人,意外地帮物理学关上了一扇门,并顺手为一门新技术打了地基。**"
+    },
+    {
+      "type": "p",
+      "text": "此后的路线就熟悉了:**从畅销书到纪录片,从纪录片到成功学课程,从「吸引力法则」到「量子波动速读」、量子鞋垫、量子饮水机。**每一层都比上一层更远离物理,而每一层都借用了上一层积累的模糊权威。"
+    },
+    {
+      "type": "callout",
+      "tone": "mute",
+      "label": "为什么它好卖",
+      "items": [
+        "**第一,它借的是真权威。**量子力学确实是人类最成功的理论,确实反直觉,确实有科学家自己都没解决的问题(第 9 章那道接缝)。**这三条都是真的,所以借起来特别顺手。**",
+        "**第二,它说的是不可证伪的话。**「你的念力改变了概率云」——这句话无论发生什么都不会错。第 1 章那条分辨法在这里最管用:**看它敢不敢说一句可能被证明是错的话。**",
+        "**第三,它迎合一个非常强的愿望:念头能改变世界。**这个愿望本身没什么可耻的,**但把它挂在物理学名下,就等于用一门讲不清的学问,去支撑一个说不清的承诺。**"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "六、一份现场分辨清单"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**它有没有提到尺度?**量子效应发生在与 h 可比的尺度上。凡是把它直接套到人、公司、人生上的,第一步就跳过了三十几个数量级。",
+        "**它说的「观测」是谁在观测?**如果答案是「人的意识」,而不是「仪器或环境」,那它已经错了。",
+        "**它有没有承诺传递信息或能量?**只要出现「远程感应」「意念影响」「同频共振」,直接对照不可通信定理。",
+        "**它给不给可能被证伪的预言?**给不出,就不是科学主张,是话术。",
+        "**它最后是不是要你付钱、报班、买东西?**这一条不判断真假,但它决定了对方有多大动力把话说得含糊。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "还要补一句公道话:**「量子」并不总是骗人的招牌。**量子计算、量子密钥分发、量子传感都是真刀真枪的工程领域,有实验室、有论文、有失败率、有明确的技术指标。**它们和「量子鞋垫」的区别,一眼就能看出来:真的那一支永远在谈条件和限制**——需要多低的温度、能维持多久的相干、错误率多少、能解哪一类问题不能解哪一类。**假的那一支只谈效果,不谈条件。**这条分辨法比任何物理知识都好用:**看它讲不讲「我做不到什么」。**"
+    },
+    {
+      "type": "pull",
+      "text": "把「观测=相互作用,不是意识」这一句钉死,量子玄学的九成话术就没有落脚点了。"
+    },
+    {
+      "type": "h2",
+      "text": "七、这一章该带走什么"
+    },
+    {
+      "type": "p",
+      "text": "**第一,记住那个锁进抽屉的实验。**它是一条实验事实,不是一种立场,而且它单独就足以把意识排除在必要条件之外。**遇到争论时,先摆这一条。**"
+    },
+    {
+      "type": "p",
+      "text": "**第二,别因为反玄学而走到另一个极端。**说「量子力学不神秘」是错的——**它确实极其反直觉,测量问题确实没解决,纠缠确实怪。**正确的姿态是:**承认真实的怪异,同时拒绝虚假的引申。**把真问题也一起否掉,和把假答案照单全收,是同一种偷懒。"
+    },
+    {
+      "type": "p",
+      "text": "**第三,把这份清单和这本书的读法接起来。**这本书本身是干净的——它没有卖玄学。**但它提供了大量好用的比喻和意象,而那些正是玄学的原料。**下一章就来谈这件事:一本史话的长处、短处,以及读它时该在哪里打折。"
+    }
+  ]
+}

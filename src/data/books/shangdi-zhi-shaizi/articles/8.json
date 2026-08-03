@@ -1,0 +1,171 @@
+{
+  "title": "EPR 与贝尔不等式:爱因斯坦输在哪、又对在哪",
+  "subtitle": "他提出的那个「反例」,四十年后变成了一道可以做实验的算术题;实验判他输,而那道题本身是他出的",
+  "centralIdea": "1935 年,爱因斯坦与两位年轻同事发表了一篇标题就是问句的论文:量子力学对物理实在的描述能被认为是完备的吗?他们构造了一对相互关联的粒子,论证说:既然测量这边不可能影响远处的那边,那么那边的性质在测量之前就已经存在;而量子力学不写这些性质,所以它不完备。玻尔当年就在同一份刊物上以同一个标题作答,但他的回应至今被认为难懂。此后三十年,这场争论几乎停摆——双方预言完全一致,看起来做不了实验。1964 年,一位在欧洲核子中心做加速器的爱尔兰人贝尔,用业余时间证明了一件谁也没想到的事:任何「定域 + 隐变量」的理论,其关联都必须满足一个不等式;而量子力学预言这个不等式会被违反。哲学争论从此变成了算术题。实验一路逼近:1972、1982、2015 的无漏洞版本,结论一边倒——不等式确实被违反。爱因斯坦输了,但输掉的是「定域 + 实在」这个组合,而不是「他全错了」:他对在把一个含糊的不满逼成了可判决的问题,而今天整个量子信息学,正是从这场争论里长出来的。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "1935 年 5 月,《纽约时报》登出一条消息,标题大意是「爱因斯坦攻击量子理论」。**一篇技术性的物理论文上了大报,这在当时极其罕见**;更罕见的是,爱因斯坦本人对提前见报很不高兴。论文的标题是一个问句:**量子力学对物理实在的描述,能被认为是完备的吗?**三位作者姓氏的首字母连起来,就是后来所有物理系学生都知道的三个字母:**EPR。**"
+    },
+    {
+      "type": "h2",
+      "text": "一、EPR 到底在论证什么"
+    },
+    {
+      "type": "p",
+      "text": "先要理解他们给「实在」下的那个判据,这是全篇的支点:**如果在完全不干扰一个体系的情况下,你能确定地预言它某个量的值,那么就存在一个与这个量对应的「实在要素」。**说人话:**你不用碰它就知道答案,那这个答案本来就在那儿。**这条判据听上去朴素得像常识——而它正是后来被实验否掉的东西之一。"
+    },
+    {
+      "type": "p",
+      "text": "然后是那个装置。**让两个粒子先相互作用,再分开,越飞越远。**由于守恒律,它们的状态是关联的:**测出这边的位置,就能立刻推知那边的位置;测出这边的动量,也能立刻推知那边的动量。**注意这里的关键:**测的始终是这边这一个,那边那一个从头到尾没被碰过。**"
+    },
+    {
+      "type": "p",
+      "text": "推理到这里就成立了:既然我不碰远处那个粒子就能确定地预言它的位置,那么按判据,**它的位置是实在的**;同样,我也可以选择去测这边的动量,从而确定地预言那边的动量,**那么它的动量也是实在的**。**于是那个粒子同时拥有确定的位置和确定的动量。**——而量子力学明确地说这两者不能同时确定。**结论:量子力学没有把故事讲完,它不完备。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "推理图",
+      "svg": "<svg viewBox='0 0 560 264' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>EPR 的推理链:三个前提,一个结论</text><g style='font-family:var(--font-serif);font-size:11.5px'><circle cx='120' cy='68' r='12' style='fill:var(--ink-soft)'/><circle cx='440' cy='68' r='12' style='fill:var(--ink-soft)'/><path d='M136 68 L424 68' style='fill:none;stroke:var(--line);stroke-width:1;stroke-dasharray:4 4'/><text x='280' y='62' text-anchor='middle' style='fill:var(--ink-faint)'>曾经作用过,现已相距很远</text><text x='120' y='96' text-anchor='middle' style='fill:var(--ink)'>我在这边测</text><text x='440' y='96' text-anchor='middle' style='fill:var(--ink)'>那边没人碰过</text><rect x='30' y='118' width='158' height='58' rx='4' style='fill:none;stroke:var(--line);stroke-width:1.1'/><text x='109' y='140' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>前提一:定域</text><text x='109' y='160' text-anchor='middle' style='fill:var(--ink-soft)'>这边的操作不影响那边</text><rect x='200' y='118' width='158' height='58' rx='4' style='fill:none;stroke:var(--line);stroke-width:1.1'/><text x='279' y='140' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>前提二:实在判据</text><text x='279' y='160' text-anchor='middle' style='fill:var(--ink-soft)'>不碰就能预言 → 本来就在</text><rect x='370' y='118' width='158' height='58' rx='4' style='fill:none;stroke:var(--line);stroke-width:1.1'/><text x='449' y='140' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>前提三:关联为真</text><text x='449' y='160' text-anchor='middle' style='fill:var(--ink-soft)'>量子力学自己承认的</text></g><path d='M280 182 L280 200 M274 193 L280 201 L286 193' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><rect x='140' y='204' width='280' height='40' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='229' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>那边同时有确定的位置与动量 → 理论不完备</text><text x='280' y='260' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>三十年后贝尔做的事,是把这三个前提中的两个变成可以实验检验的算术</text></svg>",
+      "caption": "请记住这张图的形状:**EPR 不是一次「反驳」,是一次「二选一」。**它的真正结论是:**要么量子力学不完备,要么定域性不成立。**爱因斯坦认为后者绝不可接受(他刚用相对论把瞬时作用赶出物理学),所以他选了前者。**四十年后实验告诉我们:该选的是后者。**"
+    },
+    {
+      "type": "h2",
+      "text": "二、玻尔的回应,以及爱因斯坦自己的不满"
+    },
+    {
+      "type": "p",
+      "text": "玻尔的反应据说很激动,搁下手头的一切,几个月后在同一份刊物上以**同一个标题**发表了回应。他的核心意思是:**EPR 那条「不干扰」的判据本身有问题。**在量子力学里,你选择测什么,就等于选定了整个实验安排;而「实在要素」这种东西**不能脱离实验安排来谈**。你选择测位置的那一刻,「动量是实在的」这句话就已经失去了意义。"
+    },
+    {
+      "type": "p",
+      "text": "**这个回应至今被公认为难懂。**很多物理学家承认自己读了多遍仍不确定他到底论证了什么;后来的研究者甚至发现玻尔手稿改了又改。**结果是:玻尔的立场赢得了共识,却没有赢得清晰。**这一点在后面很要紧——**当一方的胜利建立在难以复述的论证上时,这场争论其实并没有真正结束。**"
+    },
+    {
+      "type": "p",
+      "text": "更有意思的是爱因斯坦对自己那篇论文也不满意。**执笔的是波多尔斯基**,爱因斯坦后来在给薛定谔的信里抱怨:**要点被学问淹没了。**他自己想说的其实更简单,而且他一生反复强调的重点,是下面这句话。"
+    },
+    {
+      "type": "quote",
+      "original": "我不能认真相信有那种幽灵般的超距作用。",
+      "translation": "爱因斯坦 1947 年致玻恩。「幽灵般的超距作用」这个说法后来成了这场争论的关键词。请注意:他的底线不是「世界必须是决定论的」,而是「远处的事不该被这里瞬间改变」——这才是他真正押上的那一条。"
+    },
+    {
+      "type": "h2",
+      "text": "三、然后是三十年的停摆"
+    },
+    {
+      "type": "p",
+      "text": "1935 到 1964,这场争论几乎冻结。原因有三层。**第一,双方对所有实验结果的预言完全一致**,看起来没有可做的实验,那就只剩下嘴皮子官司。**第二,风气。**上一章说过,战后物理学有大量实打实的活要干,追问基础问题被视为不务正业。"
+    },
+    {
+      "type": "p",
+      "text": "**第三层最要命:一个错误的「不可能性证明」。**1932 年,数学家冯·诺依曼在他那本影响极大的著作里,给出了一个证明,大意是:**任何隐变量理论都不可能复现量子力学的全部预言。**这个证明出自当时最有威望的数学头脑,于是「隐变量」这条路被普遍认为已经死了。"
+    },
+    {
+      "type": "p",
+      "text": "**可这个证明里有一条不该有的假设。**德国女数学家格蕾特·赫尔曼在 **1935 年**就把这个漏洞写了出来——**她的文章几乎无人理会,被埋了三十年**,直到贝尔在六十年代独立发现同一个问题,这段公案才重见天日。**科学史上不乏这类事,而这一件的代价格外大:整整一代人因为一个有瑕疵的证明,放弃了一个方向。**"
+    },
+    {
+      "type": "p",
+      "text": "打破僵局的第一记是玻姆。**1952 年,他真的造出了一个能复现量子力学全部预言的隐变量理论**——粒子始终有确定的位置,被一个「导波」引着走。它的代价是**明确的非定域性**:一个粒子的行为要依赖于远处另一个粒子的状态。**这个理论的存在本身就是对冯·诺依曼那个证明的活体反驳。**有意思的是,爱因斯坦并不喜欢它,他给玻恩写信说这条路「太廉价了」——**因为它保住了确定性,却牺牲了他更看重的定域性。**"
+    },
+    {
+      "type": "h2",
+      "text": "四、贝尔 1964:把哲学变成算术"
+    },
+    {
+      "type": "p",
+      "text": "约翰·贝尔在欧洲核子中心的正职是加速器设计,**量子力学基础是他的业余爱好**——那个年代,这件事确实只能当业余爱好做。他读了玻姆,想通了两件事:**冯·诺依曼错了;而玻姆那套东西的非定域性,也许不是它的毛病,而是任何这类理论都逃不掉的宿命。**于是他去证明这一点。"
+    },
+    {
+      "type": "p",
+      "text": "贝尔不等式的精髓,可以用一个完全不涉及物理的例子讲清楚。**假设有一群人,每个人都有三个非此即彼的属性:高不高、男不男、戴不戴眼镜。**注意关键前提:**每个人的这三个属性,在你去问之前就已经是确定的。**那么下面这条式子必然成立,你不需要做任何调查就能断定它成立:"
+    },
+    {
+      "type": "figure",
+      "ftype": "推理图",
+      "svg": "<svg viewBox='0 0 560 268' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>贝尔不等式的日常版本:一条纯数数的定理</text><rect x='40' y='48' width='480' height='58' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='280' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--ink)'>(高个 且 非男性)的人数 + (男性 且 不戴眼镜)的人数</text><text x='280' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>≥ (高个 且 不戴眼镜)的人数</text><text x='280' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>为什么必然成立:凡「高个且不戴眼镜」的人,要么是男的(那他属于第二堆),</text><text x='280' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>要么不是男的(那他属于第一堆)——左边两堆已经把右边这一堆全装下了</text><rect x='40' y='174' width='232' height='68' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.1'/><text x='156' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>它依赖的唯一前提</text><text x='156' y='222' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>每个人的三个属性事先就定了</text><rect x='288' y='174' width='232' height='68' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='404' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>量子力学的预言</text><text x='404' y='222' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>换成三个测量角度,这条式子会被违反</text><text x='280' y='262' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>一条数数的定理被实验推翻,只能说明那个前提不成立</text></svg>",
+      "caption": "这张图是全书最该被理解的一页。**左边那条式子不是物理定律,是逻辑——只要每个个体的属性事先确定,它就必须成立,和你怎么测、测多少人都无关。**贝尔做的事是:把「三个属性」换成「三个测量方向」,把「一群人」换成「一对对纠缠粒子」,**结果发现量子力学预言这条式子会被违反。**于是问题变成:**自然界到底站哪一边?**——而这,是可以用钱和仪器去问的。"
+    },
+    {
+      "type": "p",
+      "text": "**这一步的分量怎么强调都不过分。**在贝尔之前,「粒子有没有事先确定的性质」是一个形而上学问题,属于饭桌闲聊;在贝尔之后,它是一个**可以在实验室里花几个月做出来的测量。**一个人把一场持续三十年的哲学僵局,改写成了一道能判决的算术题——**二十世纪物理学里最漂亮的一次转身。**"
+    },
+    {
+      "type": "h2",
+      "text": "五、实验一步步把后路堵死"
+    },
+    {
+      "type": "p",
+      "text": "接下来的五十年是实验的活。**1972 年,克劳泽和弗里德曼做出了第一个像样的检验**,结果支持量子力学。但早期实验有几处「漏洞」——**不是造假,而是逻辑上还留着后路**:两端的设置也许来得及互相「通气」(定域性漏洞);探测器效率太低,也许只是恰好漏掉了那些会让不等式成立的事件(探测漏洞);测量方向的选择也许并不真的独立(自由选择漏洞)。"
+    },
+    {
+      "type": "p",
+      "text": "**1981—1982 年,阿斯佩把测量方向的切换做得极快**,快到光都来不及从一端跑到另一端,基本封死了第一条后路。此后三十年,人们不断改进探测效率、拉长距离(从实验室到几公里,再到星地之间)。**2015 年,三个小组几乎同时完成了同时封住主要漏洞的实验**;后来甚至有人用几十亿年前发出的星光来决定测量方向,**把「选择是否真的独立」这条后路也推到了宇宙学尺度。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "时间线",
+      "svg": "<svg viewBox='0 0 560 240' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>五十年,把每一条后路逐个封死</text><path d='M46 108 L520 108' style='fill:none;stroke:var(--line);stroke-width:1.3'/><g style='font-family:var(--font-serif);font-size:11px'><g><circle cx='80' cy='108' r='4' style='fill:var(--ink-soft)'/><text x='80' y='96' text-anchor='middle' style='fill:var(--ink)'>1964</text><text x='80' y='132' text-anchor='middle' style='fill:var(--ink-soft)'>贝尔的论文</text><text x='80' y='148' text-anchor='middle' style='fill:var(--ink-faint)'>刊在一份短命的期刊上</text></g><g><circle cx='196' cy='108' r='4' style='fill:var(--ink-soft)'/><text x='196' y='96' text-anchor='middle' style='fill:var(--ink)'>1972</text><text x='196' y='132' text-anchor='middle' style='fill:var(--ink-soft)'>第一次检验</text><text x='196' y='148' text-anchor='middle' style='fill:var(--ink-faint)'>结果支持量子力学</text></g><g><circle cx='312' cy='108' r='4.6' style='fill:var(--cinnabar-pure)'/><text x='312' y='96' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>1982</text><text x='312' y='132' text-anchor='middle' style='fill:var(--ink-soft)'>阿斯佩:快速切换</text><text x='312' y='148' text-anchor='middle' style='fill:var(--ink-faint)'>封死「两端通气」</text></g><g><circle cx='428' cy='108' r='4.6' style='fill:var(--cinnabar-pure)'/><text x='428' y='96' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>2015</text><text x='428' y='132' text-anchor='middle' style='fill:var(--ink-soft)'>三组无漏洞实验</text><text x='428' y='148' text-anchor='middle' style='fill:var(--ink-faint)'>探测效率也过关</text></g><g><circle cx='508' cy='108' r='4' style='fill:var(--ink-soft)'/><text x='508' y='96' text-anchor='middle' style='fill:var(--ink)'>2022</text><text x='508' y='132' text-anchor='middle' style='fill:var(--ink-soft)'>诺贝尔奖</text></g></g><text x='280' y='188' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>结论从第一次实验起就没变过,变的只是「还能不能找到别的解释」</text><text x='280' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>这五十年才是科学最典型的样子:不是一锤定音,是一条条堵死退路</text></svg>",
+      "caption": "2022 年的诺贝尔物理学奖发给了阿斯佩、克劳泽和蔡林格,**等于给这场从 1935 年打起的争论盖了一个官方图章。**顺便一提:**这本书成于 2006 年前后,上面这条线的最后两格,它没赶上。**读的时候记得自己把它们补上。"
+    },
+    {
+      "type": "h2",
+      "text": "六、那么,他到底输在哪、对在哪"
+    },
+    {
+      "type": "p",
+      "text": "**输的部分很清楚:「定域 + 实在」这个组合被自然界否掉了。**你不能同时坚持「粒子的性质在测量前就已确定」和「这里的操作绝不瞬时影响那里」。**必须放弃一个。**标准量子力学放弃前者,玻姆理论放弃后者;还有一条逻辑上的出路是放弃「实验者的选择是自由的」(所谓超决定论),**但那要付出的代价大到几乎没人愿意付。**"
+    },
+    {
+      "type": "p",
+      "text": "**对的部分则更耐人寻味,而且有四条。**"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**问题是他提的。**没有 EPR 就没有贝尔。他把一句含糊的不满(「这不像话」)锤炼成了一个结构清晰、前提可数的论证——**清晰到后来居然能被做成实验。**这是哲学争论能给科学的最大贡献。",
+        "**纠缠这件事,他是第一个认真对待的人。**在他之前,大多数人把这种关联当作数学上的怪现象;他坚持说这里有真问题。**今天量子密钥分发、量子隐形传态、量子计算,全都建在这个「真问题」上。**",
+        "**「完备性」这一问仍然开着。**贝尔实验否掉的是**定域的**隐变量,不是所有隐变量;而「量子力学是不是最终故事」——第 9 章的测量问题——至今没有共识。",
+        "**他的方法论是对的。**他坚持:一个理论应该能讲清楚世界是什么样子,而不只是给出正确的数字。**正是这种「不肯只要数字」的执拗,把一个被视为哲学口水的问题推进了实验室。**"
+      ]
+    },
+    {
+      "type": "quote",
+      "original": "在这件事上,我觉得爱因斯坦的智识远在玻尔之上。",
+      "translation": "贝尔本人的评价。说这话的人,正是那个最终用数学与实验判了爱因斯坦「输」的人——他的意思是:爱因斯坦清楚地看到了需要被弄清楚的是什么,而玻尔的回应至今难以复述。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "三种最常见的误读",
+      "items": [
+        "**「贝尔实验证明了超光速通信是可能的。」**恰恰相反。**有一条被严格证明的定理(不可通信定理)保证:纠缠不能传递任何信息。**两端各自看到的都是纯随机的结果;那种「诡异的关联」只有把两边的数据放在一起、用普通(不超光速的)方式比对时才显现出来。**不比对,你连关联都看不见。**",
+        "**「它证明了万物一体/意识相连。」**它证明的是:**自然界不能同时满足「性质事先确定」和「远处不受瞬时影响」。**这是一个关于世界结构的结论,里面没有任何一支通向意识、心念或人与人之间的联结。",
+        "**「既然定域实在论错了,那科学也就没有客观性了。」**反过来才对:**这是科学客观性的一次极致展示——一个纯哲学的分歧,被人改写成了可判决的实验,然后由自然界给出了答案。**能把「我认为世界应该是这样」交给实验去裁决,正是这门手艺最了不起的地方。"
+      ]
+    },
+    {
+      "type": "pull",
+      "text": "他输掉的那个组合,是他自己写清楚、并且逼着物理学去检验的——世界上没有几个人能输得这么有价值。"
+    },
+    {
+      "type": "h2",
+      "text": "七、这一章该带走什么"
+    },
+    {
+      "type": "p",
+      "text": "**第一,记住那条数数的不等式。**它是纯逻辑,不含物理;它被违反,只能说明「每个个体事先就有确定属性」这个前提不成立(或者定域性不成立)。**下次听到「贝尔不等式」四个字,想的应该是这条数人头的式子,而不是什么神秘咒语。**"
+    },
+    {
+      "type": "p",
+      "text": "**第二,把「输」的范围划准。**输的是「定域 + 实在」这个组合;**没输的是**:纠缠不能传信息(这是定理)、量子力学是否完备(仍开着)、隐变量理论(非定域的那种还活着)。**划不准这条线,就会一脚踩进第 10 章那片沼泽。**"
+    },
+    {
+      "type": "p",
+      "text": "**第三,留意贝尔这个人的位置。**他是业余做这件事的,论文发在一份存活很短的刊物上,**而他动手的起点,是发现一位权威的证明有漏洞。**这段历史里最值得记住的一课也许是这个:**当一个方向被「已经有人证明不行」挡住时,值得回去把那个证明本身读一遍。**"
+    }
+  ]
+}

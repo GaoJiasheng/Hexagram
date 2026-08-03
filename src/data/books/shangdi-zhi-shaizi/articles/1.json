@@ -1,0 +1,148 @@
+{
+  "title": "两朵乌云:被讲得太整齐的开场",
+  "subtitle": "开尔文那场演讲是真的,「物理学大厦已经落成」那句话却查无实据——而这个开场怎么讲,决定了你会把后面整部历史读成什么",
+  "centralIdea": "几乎所有讲量子史的书都从同一个场景开始:1900 年,一位老爵士宣布物理学已经完工,只剩下天边两朵小小的乌云;然后乌云化作暴风雨,把整座大厦掀翻。这个开场太好用了,以至于很少有人去核对。核对的结果是:演讲确实存在(1900 年 4 月 27 日,伦敦皇家研究所,题目就叫《在热和光的动力学理论上空的十九世纪乌云》),两朵乌云也确实是那两朵;但「大厦已经落成、只剩小数点后第六位」这句最有戏剧性的话,找不到开尔文说过的可靠出处——有据可查的相近说法出自迈克尔逊 1894 年的一次致辞,而他自己还说这个意思是从别人那里听来的。较这个真不是为了考据癖:开场越整齐,后面的「颠覆」就越像神话,而神话会顺手带来两个错误——以为旧物理学愚蠢,以及以为科学进步靠的是几个天才推倒重来。真实的情形要有意思得多:那两朵乌云恰恰是十九世纪物理学太成功的副产品——正因为它把话说得极死,偏差才可能被认出来是偏差。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "1900 年 4 月 27 日的傍晚,伦敦皇家研究所。七十六岁的开尔文勋爵——就是那个把绝对温标定下来、名字被拿去当温度单位的威廉·汤姆孙——做了一场演讲,题目有点长:**《在热和光的动力学理论上空的十九世纪乌云》**。他说,这座建筑得很漂亮的大厦上空,还飘着两朵乌云。**这个场景后来被讲了无数遍,而且越讲越顺口。**顺口到什么程度呢?顺口到大多数版本里,还会顺手加上一句他其实没说过的话。"
+    },
+    {
+      "type": "h2",
+      "text": "一、那两朵乌云是真的,而且很具体"
+    },
+    {
+      "type": "p",
+      "text": "先说属实的部分。演讲确实有,日期地点都确凿,讲稿次年发表在学术刊物上。**第一朵乌云**是:地球在以太中运动,为什么测不出来?按当时的图景,光是一种波,波总要有介质,这个介质叫「以太」;地球在以太里穿行,应该能测出一个「以太风」。**迈克尔逊和莫雷把干涉仪的精度做到了当时的极限,结果是零。**什么也没有。"
+    },
+    {
+      "type": "p",
+      "text": "**第二朵乌云**更技术,也更少被认真解释:麦克斯韦—玻尔兹曼的**能量均分定理**在两处失灵了。这条定理说,热平衡时能量会平均分配到体系的每一个自由度上。它在很多地方灵验,但在固体的比热上对不上,在热辐射的能量分布上更是对不上。**说白了就是:按这条极其基本的定理去算,算不出实验室里量到的那条曲线。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对应图",
+      "svg": "<svg viewBox='0 0 560 264' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>两朵乌云,和后人给它们安排的下场</text><g style='font-family:var(--font-serif);font-size:12px'><rect x='28' y='46' width='226' height='76' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='141' y='70' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>第一朵:以太测不到</text><text x='141' y='92' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>迈克尔逊—莫雷实验的零结果</text><text x='141' y='110' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>开尔文原话里的第一朵</text><rect x='306' y='46' width='226' height='76' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='419' y='70' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>第二朵:能量均分失灵</text><text x='419' y='92' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>比热与热辐射都对不上</text><text x='419' y='110' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>开尔文原话里的第二朵</text></g><path d='M141 128 L141 156 M134 148 L141 157 L148 148' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><path d='M419 128 L419 156 M412 148 L419 157 L426 148' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><g style='font-family:var(--font-serif);font-size:12px'><rect x='28' y='162' width='226' height='50' rx='5' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><text x='141' y='192' text-anchor='middle' style='fill:var(--ink)'>五年后:狭义相对论</text><rect x='306' y='162' width='226' height='50' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='419' y='192' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>当年年底:量子</text></g><text x='280' y='238' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>这个对应大体不错,但它是后人回头整理出来的</text><text x='280' y='258' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>1900 年 4 月那天,没有任何人知道这两朵云会下成什么雨</text></svg>",
+      "caption": "有意思的是时间差:开尔文 4 月讲完,**同一年的 12 月,普朗克就在第二朵乌云里点着了火**——而他本人完全不认为自己在革命,他觉得自己是在补一个技术漏洞。**当事人几乎从不知道自己正站在转折点上**,这是读所有科学史都该带着的一条常识。"
+    },
+    {
+      "type": "h2",
+      "text": "二、那句最有名的话,大概没人说过"
+    },
+    {
+      "type": "p",
+      "text": "现在说不属实的部分。流传最广的版本里,开尔文还说了这样一句:**「物理学的大厦已经落成,后辈只需做一些修饰工作,把测量结果推进到小数点后第六位。」**这句话被引用了成千上万次,几乎成了「傲慢的科学在被打脸前一刻」的标准配图。"
+    },
+    {
+      "type": "p",
+      "text": "**但没有人能拿出开尔文说过这句话的可靠出处。**能查到的、意思最接近的一段,出自迈克尔逊 1894 年在芝加哥一座新实验室落成典礼上的致辞:他说物理学那些宏大的基本原理看来都已经稳固地建立起来了,未来的真理大概要到小数点后第六位里去找。**而迈克尔逊自己在讲这段话时还补了一句:这个意思是他从一位著名物理学家那里听来的。**至于那位物理学家是谁,他没说。"
+    },
+    {
+      "type": "callout",
+      "tone": "mute",
+      "label": "为什么要较这个真",
+      "items": [
+        "较真不是为了给开尔文平反(他确实低估了这两朵云,而且他晚年还反对过原子的实在性、算错过地球年龄)。较真是因为**开场决定了整个故事的形状**。「傲慢—打脸—革命」这个模板一旦装上,你就会不自觉地相信两件不真的事:**一是旧物理学又蠢又满**,二是**科学进步靠的是几个天才把前人推倒**。这本书的开头就用了这个模板,而后面十几章的真实内容,恰恰一次次地反驳它——普朗克是被逼的,爱因斯坦是孤立的,玻尔是打补丁的,谁也没有推倒谁。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "三、当时的物理学到底有多强"
+    },
+    {
+      "type": "p",
+      "text": "要读懂后面的震撼,得先明白那座大厦为什么真的很牢。十九世纪末的物理学有三根柱子,而且三根互相咬合。**牛顿力学**:从苹果落地到天体运行,一套公式全包。**麦克斯韦电磁学**:把电、磁、光统一成一件事。**热力学与统计力学**:把热、功、熵这些看似模糊的东西变成了可算的量。"
+    },
+    {
+      "type": "p",
+      "text": "它们的战绩不是吹出来的。**1846 年,勒维耶和亚当斯只凭天王星轨道的一点偏差,用笔算出了一颗没人见过的行星的位置**,天文台照着那个坐标一看,海王星就在那儿——「在笔尖上发现的行星」。**1865 年麦克斯韦从方程里推出电磁波的存在和它的速度**,二十多年后赫兹在实验室里把它做了出来。**这是人类第一次靠纯粹的理论,预言了一整类此前完全不知道的现象。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "svg": "<svg viewBox='0 0 560 276' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>三根柱子:战绩与裂缝</text><g style='font-family:var(--font-serif);font-size:11.5px'><rect x='24' y='48' width='160' height='150' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='104' y='72' text-anchor='middle' style='font-size:13px;font-weight:bold;fill:var(--ink)'>牛顿力学</text><text x='104' y='100' text-anchor='middle' style='fill:var(--ink-soft)'>战绩</text><text x='104' y='120' text-anchor='middle' style='fill:var(--ink)'>笔尖上算出海王星</text><text x='104' y='148' text-anchor='middle' style='fill:var(--ink-soft)'>裂缝</text><text x='104' y='168' text-anchor='middle' style='fill:var(--cinnabar-pure)'>水星近日点差一点</text><rect x='200' y='48' width='160' height='150' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='280' y='72' text-anchor='middle' style='font-size:13px;font-weight:bold;fill:var(--ink)'>麦克斯韦电磁学</text><text x='280' y='100' text-anchor='middle' style='fill:var(--ink-soft)'>战绩</text><text x='280' y='120' text-anchor='middle' style='fill:var(--ink)'>预言并做出电磁波</text><text x='280' y='148' text-anchor='middle' style='fill:var(--ink-soft)'>裂缝</text><text x='280' y='168' text-anchor='middle' style='fill:var(--cinnabar-pure)'>以太怎么也测不到</text><rect x='376' y='48' width='160' height='150' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='456' y='72' text-anchor='middle' style='font-size:13px;font-weight:bold;fill:var(--ink)'>热力学·统计力学</text><text x='456' y='100' text-anchor='middle' style='fill:var(--ink-soft)'>战绩</text><text x='456' y='120' text-anchor='middle' style='fill:var(--ink)'>把热变成可算的量</text><text x='456' y='148' text-anchor='middle' style='fill:var(--ink-soft)'>裂缝</text><text x='456' y='168' text-anchor='middle' style='fill:var(--cinnabar-pure)'>能量均分算不出辐射曲线</text></g><text x='280' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>另外还有三件刚发生的怪事:X 射线(1895)、放射性(1896)、电子(1897)</text><text x='280' y='250' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>也就是说,1900 年的物理学远不是「已经完工」,而是刚刚被撬开了几道口子</text><text x='280' y='270' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>裂缝都很细——细到只有精度极高的领域才看得见</text></svg>",
+      "caption": "请注意这张图的对称:**每根柱子的裂缝,都出在它最精确的地方。**水星近日点每百年差几十角秒、以太风的零结果、辐射曲线在短波端的偏离——**这些偏差全都小得可怜,小到只有这门学问已经足够精确时才会被发现。**"
+    },
+    {
+      "type": "h2",
+      "text": "四、地基其实早就在动了"
+    },
+    {
+      "type": "p",
+      "text": "还有一件事,「大厦落成」的说法完全盖住了:**在开尔文演讲之前的五年里,已经连着出了三件谁也没预料到的事。**1895 年伦琴发现 X 射线——一支被人研究了很久的放电管,居然让房间另一头的荧光屏发了光,而当时没有任何理论说该有这种东西。1896 年贝克勒尔发现放射性——铀盐把包好的底片曝了光,也就是说,**有些物质会自己不停地往外放能量**,这在能量守恒的框架里当场就是个大麻烦。1897 年 J.J. 汤姆孙确认了电子——**原子里面有更小的东西,而「原子」这个词的字面意思正是「不可分割」。**"
+    },
+    {
+      "type": "p",
+      "text": "这三件事和两朵乌云一起,构成了 1900 年真实的局面:**不是一座完工的大厦上飘着两朵云,而是一座极其结实的建筑,同时在好几处开始漏水,而且没人知道这些漏点彼此有没有关系。**事实上它们全都有关系——X 射线、放射性、电子,后来统统要靠量子力学才讲得通。**但在当时,它们看上去只是几件互不相干的怪事。**"
+    },
+    {
+      "type": "p",
+      "text": "这一点值得对着今天想一想。**我们总以为「重大突破」发生时会有敲锣打鼓的感觉**,其实当事人看到的通常是:几个对不上的数据、几件说不清的怪事、几篇被大多数人当作技术细节跳过去的论文。**回头看是一条清晰的线索,身在其中时是一地零件。**"
+    },
+    {
+      "type": "h2",
+      "text": "五、乌云是成就的副产品"
+    },
+    {
+      "type": "p",
+      "text": "这是这一章真正想讲的道理,也是全书隐含的方法论。**一个说话含糊的理论是不会有反常的。**你说「天气可能会变」,那么无论下不下雨,你都没错;你说「明天下午三点这里下雨」,才可能被证伪。十九世纪物理学之所以会在 1900 年撞见两朵乌云,**恰恰是因为它把话说得极死**——死到把一个测量做到小数点后第六位,就能看出理论错了。"
+    },
+    {
+      "type": "p",
+      "text": "所以「旧物理学愚蠢」是个彻底的误读。**被推翻的从来不是它在自己范围内的正确性,而是它的适用范围。**今天造桥、发射卫星、算发动机,用的仍然是牛顿力学;电机、天线、光纤仍然按麦克斯韦方程设计。**量子力学没有取消它们,只是告诉了我们它们在哪儿到头。**这一条如果读不进去,后面所有的「颠覆」都会被读成「科学也不过如此」——那就正好掉进了本书第 10 章要防的那个坑。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "打个身边的比方。一份体检报告写着「白细胞 6.8,参考范围 3.5–9.5」,你才可能拿它去判断有没有问题;而一句「你最近气有点虚」,无论你之后是生病还是健步如飞,它都不会错。**前者随时可能被打脸,后者永远安全。**十九世纪物理学之所以能被自然界打脸,正因为它一直在开前一种单子;**而后面我们要防的那些「量子玄学」话术,清一色是后一种。**这是全书最有用的一条分辨法,值得提前记下:**看它敢不敢说一句可能被证明是错的话。**"
+      ]
+    },
+    {
+      "type": "pull",
+      "text": "一个说话含糊的理论不会有反常。乌云不是无能的证据,是精确的副产品。"
+    },
+    {
+      "type": "h2",
+      "text": "六、第二朵乌云底下,其实是一道工程题"
+    },
+    {
+      "type": "p",
+      "text": "最后说一件几乎所有版本都会略过、却特别值得知道的事:**引爆量子革命的那道题,一开始是一道生意题。**十九世纪末的德国正在拼命发展电灯和炼钢工业,而这两件事都需要同一样东西:**一条把物体的温度和它发出的光的颜色分布对应起来的公式。**炼钢的人想靠炉膛的颜色判断温度,做灯的人想知道怎样才能让电能尽可能多地变成可见光而不是白白发热。"
+    },
+    {
+      "type": "p",
+      "text": "德国为此专门设了一个国家级的研究机构(帝国物理技术研究所),里面有一批人日复一日地测**黑体**——一种理想化的、把落上来的光全部吸收的物体——在各个温度下的辐射曲线。**他们把数据测得极准,准到任何一条不太对的公式都会当场露馅。**普朗克后来那一步之所以躲不过去,一半的功劳要记在这批默默测数据的人头上。"
+    },
+    {
+      "type": "figure",
+      "ftype": "流程图",
+      "svg": "<svg viewBox='0 0 560 224' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>一道生意题,是怎么变成一场认识论革命的</text><g style='font-family:var(--font-serif);font-size:11.5px'><rect x='20' y='52' width='118' height='62' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='79' y='76' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>工业需求</text><text x='79' y='96' text-anchor='middle' style='fill:var(--ink-soft)'>电灯与炼钢</text><rect x='158' y='52' width='118' height='62' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='217' y='76' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>精密测量</text><text x='217' y='96' text-anchor='middle' style='fill:var(--ink-soft)'>黑体辐射曲线</text><rect x='296' y='52' width='118' height='62' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='355' y='76' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>理论对不上</text><text x='355' y='96' text-anchor='middle' style='fill:var(--ink-soft)'>两条公式各对一半</text><rect x='434' y='52' width='118' height='62' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='493' y='76' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>能量成份</text><text x='493' y='96' text-anchor='middle' style='fill:var(--ink-soft)'>1900 年 12 月</text></g><g style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'><path d='M142 83 L154 83 M147 78 L155 83 L147 88'/><path d='M280 83 L292 83 M285 78 L293 83 L285 88'/><path d='M418 83 L430 83 M423 78 L431 83 L423 88'/></g><text x='280' y='148' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>没有前两格,第三格根本不会被发现——精度不够,偏差就藏得住</text><text x='280' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>科学史上大多数革命都长这样:先有一群人把一件小事做到极致</text><text x='280' y='204' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>「天才灵光一现」是结果,不是起点</text></svg>",
+      "caption": "把这条链子记住,它在后面还会反复出现:**光电效应的规律是密立根花十年精测出来的、贝尔不等式的判决是靠光学技术进步一步步逼出来的。**理论史的每一次转折背后,几乎都站着一批测数据的人——而史话体裁最容易漏掉的,恰恰就是他们。"
+    },
+    {
+      "type": "h2",
+      "text": "七、这一章该带走什么"
+    },
+    {
+      "type": "p",
+      "text": "先说这本书自己的开场。它用的正是那个经典模板——老爵士、大厦、乌云、暴风雨——**而且用得相当漂亮,这是它能让人一口气读下去的原因之一。**我们没有必要因此责怪作者:一本二十万字的史话必须有个抓人的开头,而这个开头在「大意」上并不算错。**只是读者最好自己知道哪里被上了色。**这也是本文接下来十一章会反复做的一件事:把好看的叙述和站得住的史料分开摆,让你两样都拿到。"
+    },
+    {
+      "type": "p",
+      "text": "**第一,记住哪些是史实,哪些是修辞。**演讲、日期、两朵乌云的具体内容,是史实;「大厦落成,只剩小数点后第六位」出自开尔文之口,是流传;两朵乌云一朵生出相对论、一朵生出量子论,是后人整理出来的漂亮对应——大体不错,但当时无人这么看。"
+    },
+    {
+      "type": "p",
+      "text": "**第二,别把「被推翻」读成「被证明愚蠢」。**牛顿力学在它的地盘上仍然完全正确;量子力学接管的是它管不着的那一段。这一条是后面对付「科学也说不准,所以我信什么都行」这类话术的第一道防线。"
+    },
+    {
+      "type": "p",
+      "text": "**第三,留意那道时间差。**开尔文 4 月说完,普朗克 12 月就动了手;而爱因斯坦解决第一朵乌云,是五年之后的事。**也就是说,这两朵云从被指出来到被处理,都不到十年。**这个速度本身说明了一件事:它们不是天边偶然飘过的云,而是当时最好的一批头脑都盯着的地方——**开尔文没有预见到风暴,但他确实指对了地方。**这也是为什么这场演讲值得被记住,哪怕后人给它加了一句台词。"
+    },
+    {
+      "type": "p",
+      "text": "**第四,准备好换一种阅读姿势。**从下一章开始,你会看到一连串「不得不」:普朗克不得不切开能量,爱因斯坦不得不承认光有粒子性,玻尔不得不硬性规定轨道。**没有人是想革命的,所有人都是被数据推着走的。**这才是这段历史最动人的地方——比「天才推倒大厦」动人得多。"
+    }
+  ]
+}

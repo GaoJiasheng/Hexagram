@@ -1,0 +1,149 @@
+{
+  "title": "价值与价格",
+  "subtitle": "水、钻石、海狸与鹿——全书最难啃的几章,也是后一百年所有争吵的分岔口",
+  "centralIdea": "地基砌完之后,斯密要处理一个更棘手的问题:东西之间怎么定价。他先把「值」拆成两个:使用价值(有多有用)和交换价值(能换来多少别的东西)。一拆开就冒出一个悖论——没有什么比水更有用,可水几乎换不到任何东西;钻石几乎没什么用处,却能换来一大堆。这个悖论他没有解决,答案要等一百年后的边际效用理论:决定价格的从来不是「水」这个类别,而是「再多一杯水」。他自己给的答案是劳动:一件东西的真实代价,是取得它所付出的辛苦和麻烦;在只有猎人的原始社会里,打一只海狸要花打一只鹿两倍的功夫,一只海狸就该换两只鹿。但他紧接着自己泼了冷水——这个模型只适用于资本积累与土地私有之前;一旦有了老板和地主,价格就分解成工资、利润、地租三份,不再等于耗掉的劳动。所以斯密只是劳动价值论的雏形,而且是一个自己知道有裂缝的雏形:李嘉图沿着一条缝往下走,马克思走得更远,边际学派干脆换了条路,三条路的岔口都在这几页里。他真正留给后世、至今还在用的,是自然价格与市场价格的双层结构,以及那个很硬的限定——有效需求。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "读到第一篇第四章末尾,一路顺畅的《国富论》突然卡住了。斯密抛出一个看起来像脑筋急转弯的东西:**没有什么比水更有用,可你几乎不能用水换到任何东西;钻石几乎没有什么用处,却常常能换来一大堆别的货物。**"
+    },
+    {
+      "type": "p",
+      "text": "**这不是修辞,是他给自己出的难题。**因为他要给「值多少」找一把尺子,而这把尺子第一次量东西就量出了荒唐的结果。接下来的几章是全书最难啃的部分,**也是后一百年所有经济学争吵的分岔口。**"
+    },
+    { "type": "h2", "text": "一、把「值」拆成两半" },
+    {
+      "type": "p",
+      "text": "第一刀切得干脆:**「价值」这个词有两个意思。**一个是**使用价值**——这东西有多有用;另一个是**交换价值**——拿它能换来多少别的东西。"
+    },
+    {
+      "type": "p",
+      "text": "**这一刀今天听起来平淡无奇,当时却是个大动作。**在此之前,人们默认「有用」和「值钱」是一回事,一件东西卖得贵,总归是因为它好。**斯密把这两件事分开之后,水与钻石的悖论才有可能被提出来**——不分开,你根本说不出哪里奇怪。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "caption": "把「有用」和「值钱」分开之后,悖论才浮出水面。斯密提出了它却没能解开;答案要等一百年后的边际效用——决定价格的从来不是「水」这个类别,是「眼下再多一杯水」值多少。沙漠里那一杯水,谁都愿意拿钻石换。",
+      "svg": "<svg viewBox='0 0 620 280' xmlns='http://www.w3.org/2000/svg'><text x='310' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>水与钻石</text><rect x='34' y='46' width='250' height='128' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='336' y='46' width='250' height='128' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='159' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>水</text><text x='461' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>钻石</text><text x='159' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>使用价值:极高</text><text x='461' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>使用价值:几乎没有</text><text x='159' y='132' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>交换价值:几乎为零</text><text x='461' y='132' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>交换价值:极高</text><text x='159' y='158' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>没它活不了</text><text x='461' y='158' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>没它照样活</text><rect x='90' y='196' width='440' height='62' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='310' y='220' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>一百年后的答案:问错了单位</text><text x='310' y='242' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>决定价格的不是「水」这个类别,是「眼下再多一杯水」</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**这个悖论斯密没有解决。**他绕过去了——他转身去找另一把尺子,把这个问题留在了原地。**真正的答案要到一八七〇年代才出现**:决定价格的从来不是「水」这个类别值多少,而是**「眼下再多一杯水」**值多少。你身边已经有一整条河的时候,再多一杯几乎不值钱;**你在沙漠里走了两天的时候,那一杯水,谁都愿意拿钻石换。**"
+    },
+    {
+      "type": "callout",
+      "tone": "mute",
+      "label": "一处存疑",
+      "items": [
+        "有研究者指出,斯密其实隐约摸到过这个方向——他在别处谈到「稀少」时并非全无察觉。**但可以确定的是:他没有把它变成一条清晰的原理,更没有用它去解释价格。**这一层留给经济学史专著,读这本书时知道「他到这里为止」就够了。"
+      ]
+    },
+    { "type": "h2", "text": "二、他的答案:劳动" },
+    {
+      "type": "p",
+      "text": "斯密要找的是一把**不会自己变形的尺子。**他先排除了货币:金银本身的价值一直在变——美洲的银矿一开,银子就便宜了;**用一把自己会伸缩的尺子,量不出两个世纪之间的长短。**"
+    },
+    {
+      "type": "quote",
+      "original": "一切东西的真实价格,对于想要取得它的人来说,就是取得它所付出的辛苦和麻烦。",
+      "translation": "第一篇第五章。他要找的是一把不会自己变形的尺子:金银的价值会随矿的丰歉浮动,而「一个人得费多大力气」在漫长的年代里相对稳定。所以他说,劳动是第一性的价格,是最初用来购买一切东西的货币。"
+    },
+    {
+      "type": "p",
+      "text": "然后是那个极简的模型。在一个只有猎人的原始社会里,**如果打一只海狸要花打一只鹿两倍的功夫,那么一只海狸自然该换两只鹿。**没有老板,没有地主,没有机器——**产品全归干活的人,东西的比价就等于花掉的功夫的比价。**"
+    },
+    {
+      "type": "p",
+      "text": "**但斯密紧接着自己把这个模型收了回去。**他明说:这只适用于「资本积累与土地私有之前」的那种状态。**一旦有了老板和地主,情况就变了。**老板垫了本钱,他要一份利润;地主拥有土地,他要一份地租。于是一件东西的价格要分成三份——**工资、利润、地租**——而这时候,**价格就不再等于耗掉的劳动了。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "同一件产品,在两种社会里的分法。左边价格等于劳动,右边价格分成三份。斯密自己划出了这条界线,也就等于承认:他的劳动尺子只在界线左边严格成立。后来一百年的争论,大半是在追问右边那三份该怎么解释。",
+      "svg": "<svg viewBox='0 0 620 290' xmlns='http://www.w3.org/2000/svg'><text x='310' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>一件产品,两种分法</text><text x='158' y='56' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>资本与地权出现之前</text><text x='462' y='56' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>之后</text><rect x='58' y='74' width='200' height='96' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='158' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>全归干活的人</text><text x='158' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>一只海狸 = 两只鹿</text><rect x='362' y='74' width='200' height='32' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2'/><rect x='362' y='106' width='200' height='32' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2'/><rect x='362' y='138' width='200' height='32' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2'/><text x='462' y='95' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>工资 —— 给干活的人</text><text x='462' y='127' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>利润 —— 给垫本钱的人</text><text x='462' y='159' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>地租 —— 给拥有土地的人</text><text x='158' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>价格 = 劳动</text><text x='462' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>价格 ≠ 劳动</text><text x='310' y='236' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>这条界线是斯密自己划的 —— 也就等于承认尺子只在左边严格成立</text><text x='310' y='262' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>后来一百年的争论,大半是在追问右边那三份该怎么解释</text><text x='310' y='284' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>李嘉图 · 马克思 · 边际学派 —— 三条路的岔口都在这里</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**这条裂缝很要紧,值得说清楚。**斯密其实混着用了两个不同的「劳动尺子」:一个是**做这件东西花了多少劳动**,另一个是**拿这件东西能换到多少别人的劳动**。在原始社会里两者相等,**在有老板和地主的社会里两者分开了**——因为你交换来的东西里,有一部分是给资本和土地的报酬,不是给劳动的。"
+    },
+    {
+      "type": "p",
+      "text": "**后来的人各自沿着一条缝往下走。**李嘉图抓住第一个含义,试图把价值严格归结到劳动上;马克思接过这条线走得更远,把利润解释成对劳动的一种扣除;**而边际学派干脆放弃了成本这一侧,改从「买的人愿意出多少」入手。**三条路后来吵了一个多世纪,**而岔口就在斯密这几页自己写下的那句「但是」里。**"
+    },
+    { "type": "h2", "text": "三、他为什么这么在意「尺子会不会变形」" },
+    {
+      "type": "p",
+      "text": "第五章里还有一层容易被跳过、却很实用的区分:**名义价格与真实价格。**名义价格就是标价多少钱;真实价格是它实际值多少东西。**两者之所以必须分开,是因为钱本身的价值一直在变。**"
+    },
+    {
+      "type": "p",
+      "text": "**斯密对这件事有切身的痛感,因为他真的在做长时段的比较。**书里有整整一章在考据几百年间的银价——他要弄清楚:**一四〇〇年的一先令和一七七〇年的一先令,到底是不是同一样东西?**美洲银矿一开,欧洲的银子就便宜了一大截;**你若不做换算,就会得出「工资涨了很多」这种完全错误的结论。**"
+    },
+    {
+      "type": "p",
+      "text": "**他给的替代尺子是劳动,但劳动没法直接观测,于是他退了一步:用谷物。**理由是谷物是劳动者的主要口粮,**它换得动的劳动量在长时段里相对稳定。**这个办法并不完美(荒年丰年谷价起落很大),**但方向是对的:量长时段的价值变化,必须找一个自己不怎么变形的参照物。**"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "放到今天",
+      "items": [
+        "这就是今天说的**「名义」与「实际」**。工资涨了百分之五、物价涨了百分之七,那么真实工资是跌的——**这个换算今天是常识,而它的第一次系统表述就在这几页。**",
+        "**顺带一提,这也是判断历史数据最容易翻车的地方。**「三十年前一个月工资多少钱」这种对比,不换算就毫无意义;**斯密两百五十年前就为了做对这件事,啃了几百年的银价档案。**"
+      ]
+    },
+    { "type": "h2", "text": "四、真正留下来的东西:自然价格与市场价格" },
+    {
+      "type": "p",
+      "text": "价值论争到今天也没有定论,**但斯密在第七章给出的另一个结构,却几乎原封不动地活到了现在。**"
+    },
+    {
+      "type": "p",
+      "text": "他说:工资、利润、地租在一个地方、一个时期,各有一个**「自然率」**;把三者按自然率加起来,就是一件东西的**自然价格**——**大致相当于「刚好够本、卖得下去」的那个价。**而它在市场上实际卖多少,叫**市场价格**,由供给量与需求的关系决定。"
+    },
+    {
+      "type": "p",
+      "text": "这里有个限定必须留意,今天仍然很硬:**他说的需求是「有效需求」。**光是想要不算——**一个很穷的人也可以说他想要一辆马车,但他的愿望不构成需求**,因为他不会、也不可能照那个价钱把钱掏出来。**能进入价格计算的,只有「肯照自然价格付钱」的那部分想要。**"
+    },
+    {
+      "type": "quote",
+      "original": "自然价格可以说是一个中心价格,一切商品的价格都不断向它引力般地靠拢。",
+      "translation": "第一篇第七章。这个双层结构今天还在每一本经济学教科书的前几章里:市场价格围着自然价格摆动,供给少了就涨过头,多了就跌过头,而资本闻着利润跑,把偏离一次次拉回来。他用的比喻是引力——不是绳子,是引力,所以允许长时间的偏离。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "市场价格围着自然价格摆动。要留意他用的是「引力」这个词,不是「绳子」——引力允许长时间、大幅度的偏离,只保证方向。这个分寸拿捏得很好:它既不说市场总是对的,也不说价格可以永远乱来。",
+      "svg": "<svg viewBox='0 0 620 260' xmlns='http://www.w3.org/2000/svg'><text x='310' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>市场价格围着自然价格摆</text><line x1='50' y1='140' x2='580' y2='140' style='stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='584' y='136' style='font-family:var(--font-serif);font-size:10px;fill:var(--cinnabar-pure)'>自然</text><path d='M50,140 C90,86 130,90 168,132 C200,168 236,192 272,166 C306,142 330,96 372,104 C412,112 436,168 476,172 C512,176 544,150 578,142' fill='none' style='stroke:var(--ink-soft);stroke-width:1.6'/><text x='120' y='76' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>供给不足 → 涨过头</text><text x='420' y='202' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>供给过剩 → 跌过头</text><text x='310' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>资本闻着利润跑,把偏离一次次拉回来</text><text x='310' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>他用的词是「引力」,不是「绳子」—— 允许长时间、大幅度的偏离</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**这个「引力」的用词很讲究。**如果他说的是绳子,那意思是价格被牢牢栓着,偏离一点就弹回去;**而引力允许长时间、大幅度的偏离**,只保证方向。**这个分寸拿捏得极好:它既不说市场总是对的,也不说价格可以永远乱来。**"
+    },
+    {
+      "type": "p",
+      "text": "而把价格长期钉死在自然价格之上的,是什么?**他的答案是垄断。**他说得极冷:**垄断价格在任何场合都是能榨到的最高价;而自然价格,也就是自由竞争下的价格,恰恰相反,是能拿到的最低价。**这句话把「竞争」的功能说透了——**竞争不是让人辛苦,是把价格往地板上压,而地板那一侧站着的是买东西的普通人。**"
+    },
+    { "type": "h2", "text": "五、这几章今天怎么用" },
+    {
+      "type": "p",
+      "text": "抛开学术史,这几章留下三样随身可用的东西。"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**分清「有用」和「值钱」。**一件东西对你很重要,不等于它在市场上贵;一件东西很贵,也不等于它对谁都重要。**这两条老被混在一起,混在一起就会生出很多委屈。**",
+        "**看到反常的高价,先找垄断。**一个价格长期高高地钉在成本之上而不回落,按斯密的框架,那里多半有一堵墙:牌照、专营、信息不通、或者搬走的代价太大。**问「为什么没人来抢这块肥肉」,常常比问「为什么这么贵」更快找到答案。**",
+        "**「有效需求」是一把很省事的尺子。**说「这个东西大家都需要」几乎不提供任何信息;**问「肯照这个价钱掏钱的有多少人」才提供信息。**很多一厢情愿的计划,是在第一句上算的账。"
+      ]
+    },
+    {
+      "type": "pull",
+      "text": "竞争不是让人辛苦,是把价格往地板上压——而地板那一侧站着的,是买东西的普通人。"
+    },
+    {
+      "type": "p",
+      "text": "价格讲完,他还欠一件事:**那笔垫在分工前头的本钱,是从哪里来的?**十个人分做十八道工序之前,得有人先买下厂房、工具、原料,还得先养活这十个人到针卖出去为止。**这就是第二篇要处理的问题。**"
+    }
+  ]
+}

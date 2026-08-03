@@ -1,0 +1,160 @@
+{
+  "title": "薛定谔和他的猫:方程、概率与一个被用反了的反证",
+  "subtitle": "他写出了那个方程,却拒绝方程被解释成概率;而那只猫,本来是他造出来嘲笑这种解释的道具",
+  "centralIdea": "1926 年初,三十八岁的薛定谔写出了那条以他名字命名的方程。物理学界如释重负——终于有一个连续的、可视化的、用熟悉的数学就能算的东西了。可是紧接着出现了一个问题:方程里那个 ψ 到底是什么?薛定谔以为它描述的是电子真实地摊开在空间里;玻恩在同年 6 月给出了另一个答案:|ψ|² 是概率。这一步把决定论从物理学底层拿掉了,而薛定谔本人到死都不接受。九年后,他造出那只著名的猫,用意是归谬:如果波函数真的描述实在,又允许微观的叠加不受限制地放大到宏观,你就会推出「猫既死又活」这种荒唐结论——所以那种读法有问题。这是一次反驳,不是一次展示。今天它被反过来当成「量子世界多神奇」乃至「意识决定现实」的招牌,是这段历史中最彻底的一次颠倒。顺带一提,「纠缠」这个词也出自那同一篇文章,而他当时就说:这不是量子力学的一个特征,而是那个特征。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "1925 年的圣诞假期,三十八岁的薛定谔到阿尔卑斯山里的一处雪场度假,随身带着德布罗意的论文。**在当时那个平均年龄二十几岁的圈子里,三十八岁差不多算是老先生了**——海森堡二十三,泡利二十五,狄拉克二十三,以至于那几年常被戏称为「男孩物理学」的年代。**这位「老先生」在假期里想通了一件事:如果电子真的是一种波,那就应该有一个描述这种波怎么随时间变化的方程。**假期结束时,他把它写了出来。"
+    },
+    {
+      "type": "h2",
+      "text": "一、一个让所有人松了口气的方程"
+    },
+    {
+      "type": "p",
+      "text": "先说这个方程为什么受欢迎。上一章那套矩阵力学,虽然算得出结果,但**没有人喜欢它**:抽象、反直觉、算起来极其别扭,连专业物理学家都要重新学一门陌生的数学。而薛定谔方程是一个**微分方程**——这是物理学家从上学起就在用的东西;它的解是一个在空间里连续分布的波,**可以画出来、可以想象**。"
+    },
+    {
+      "type": "p",
+      "text": "更妙的是它一算就中:氢原子的能级不再需要「规定」,**它们自动地作为方程的解冒出来**,就像一根两端固定的弦只能振出某些特定的音一样。上一章那些别别扭扭的量子数,在这里成了驻波的节点数目。**玻尔当年硬性规定的东西,现在有了来历。**"
+    },
+    {
+      "type": "p",
+      "text": "然后是那年最漂亮的一个结果:**这两套看上去毫无关系的理论,被证明是等价的。**矩阵力学和波动力学给出的所有预言完全相同,只是同一件事的两种写法(严格的数学证明要再等几年)。**两拨人从两个方向出发,爬到了同一个山顶。**这本身就是一个强烈的信号——**当两条完全不同的路通向同一个地方时,那个地方多半是真的。**"
+    },
+    {
+      "type": "p",
+      "text": "顺带说一件教科书通常不提的事:**这个方程不是从更基本的原理推出来的,它是猜出来的。**薛定谔从德布罗意的物质波出发,连蒙带凑地写下一个形式,然后拿它去算已知的体系,发现结果对得上,于是它被接受了。**物理学里最基本的那几条方程,几乎都是这样来的**——牛顿第二定律、麦克斯韦方程组也一样。**「基本定律」的意思正是:它下面没有更基本的东西可以拿来推它,它的资格来自它管用。**这一点在下一章会变得很要紧:当爱因斯坦说「这个理论不完备」时,他要的正是「底下还应该有更基本的东西」。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "svg": "<svg viewBox='0 0 560 244' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>两条路,一座山顶</text><g style='font-family:var(--font-serif);font-size:11.5px'><rect x='28' y='50' width='190' height='84' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='123' y='74' text-anchor='middle' style='font-size:12.5px;font-weight:bold;fill:var(--ink)'>矩阵力学(1925)</text><text x='123' y='96' text-anchor='middle' style='fill:var(--ink-soft)'>只谈可观测量,不画轨道</text><text x='123' y='116' text-anchor='middle' style='fill:var(--ink-faint)'>抽象·难算·反直觉</text><rect x='342' y='50' width='190' height='84' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='437' y='74' text-anchor='middle' style='font-size:12.5px;font-weight:bold;fill:var(--ink)'>波动力学(1926)</text><text x='437' y='96' text-anchor='middle' style='fill:var(--ink-soft)'>一个熟悉的微分方程</text><text x='437' y='116' text-anchor='middle' style='fill:var(--ink-faint)'>连续·可画·好上手</text></g><path d='M123 140 L266 172' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><path d='M437 140 L294 172' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><rect x='176' y='176' width='208' height='42' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='202' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>预言完全相同:它们是等价的</text><text x='280' y='238' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>物理内容一致,「好不好懂」却天差地别——这一点后来影响了整场争论的走向</text></svg>",
+      "caption": "这里有个容易忽略的后果:**因为波动力学好用又好想象,大多数人从此都用它来思考**,于是「电子是一团弥散的云」这个图像深入人心。**而这个图像恰恰是被下一节否掉的那个。**——好用的图像会活得比它的正确性更久,这在科普里是常态。"
+    },
+    {
+      "type": "h2",
+      "text": "二、ψ 到底是什么?第一个答案很快出了问题"
+    },
+    {
+      "type": "p",
+      "text": "薛定谔本人的答案是:**ψ 描述的是电子真实的分布**——电子不是一个点,而是一团摊开的东西,「电荷云」。这个想法很自然,也很讨人喜欢:**它把那些讨厌的跃迁、跳跃、不连续统统消解掉了**,世界重新变得连续而可画。"
+    },
+    {
+      "type": "p",
+      "text": "但它撑不住,有两个硬伤。**第一,波包会散开。**一个自由电子的波包按方程演化,会越摊越大;可你在探测器上永远只测到一个完整的电子打在一个点上,**从来没人看到过「半个电子」。**第二个硬伤更致命:**如果有两个电子,ψ 不再是三维空间里的一个波,它住在一个六维的空间里**;三个电子就是九维。**一个「真实存在的波」怎么会住在一个不是我们这个空间的地方?**这一条至今仍是所有诠释都要面对的难题。"
+    },
+    {
+      "type": "h2",
+      "text": "三、玻恩的一脚:它是概率"
+    },
+    {
+      "type": "p",
+      "text": "1926 年 6 月,玻恩在一篇讨论粒子碰撞的论文里给出了另一个答案:**ψ 本身不是任何实在的东西,|ψ|² 给出的是「在这里找到粒子」的概率。**关于这一步有个常被提起的细节:**最关键的那句话,是他在校样上以脚注形式补上的**——物理学最重要的一次转向,以一条脚注的形式进了历史。"
+    },
+    {
+      "type": "p",
+      "text": "这一步的分量,当时不是所有人都立刻掂得出来。**它把决定论从物理学的底层拿掉了。**牛顿的世界里,只要知道初始条件,未来就是注定的;概率只是我们无知的度量,掷骰子之所以随机,是因为我们没算清手腕的力度和空气的扰动。**玻恩说的是另一回事:方程能算出概率分布,算不出这一次的结果;而这不是因为你算得不够细,是因为那个结果在事前根本不存在。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "三层图",
+      "svg": "<svg viewBox='0 0 560 262' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>ψ、|ψ|² 与你真正测到的东西</text><g style='font-family:var(--font-serif);font-size:11.5px'><text x='60' y='62' style='font-weight:bold;fill:var(--ink)'>① 方程算出的 ψ</text><path d='M200 78 Q236 30 272 78 Q308 126 344 78 Q380 30 416 78 Q452 126 488 78' style='fill:none;stroke:var(--ink-soft);stroke-width:1.6'/><text x='60' y='82' style='font-size:10.5px;fill:var(--ink-faint)'>有正有负,可干涉</text><text x='60' y='138' style='font-weight:bold;fill:var(--ink)'>② |ψ|²:概率密度</text><path d='M200 158 Q218 118 236 158 Q254 118 272 158 Q290 118 308 158 Q326 118 344 158 Q362 118 380 158 Q398 118 416 158 Q434 118 452 158 Q470 118 488 158' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='60' y='158' style='font-size:10.5px;fill:var(--ink-faint)'>永远非负,是一条分布</text><text x='60' y='214' style='font-weight:bold;fill:var(--ink)'>③ 实验里看到的</text><g style='fill:var(--ink-soft)'><circle cx='208' cy='196' r='2'/><circle cx='214' cy='210' r='2'/><circle cx='240' cy='202' r='2'/><circle cx='268' cy='192' r='2'/><circle cx='272' cy='214' r='2'/><circle cx='302' cy='204' r='2'/><circle cx='310' cy='190' r='2'/><circle cx='344' cy='212' r='2'/><circle cx='348' cy='196' r='2'/><circle cx='378' cy='206' r='2'/><circle cx='412' cy='194' r='2'/><circle cx='418' cy='210' r='2'/><circle cx='450' cy='200' r='2'/><circle cx='484' cy='208' r='2'/></g><text x='60' y='234' style='font-size:10.5px;fill:var(--ink-faint)'>一个个整颗的点</text></g><text x='280' y='254' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>你从来测不到 ψ,你测到的永远是③;②是③的统计规律</text></svg>",
+      "caption": "这张图能解掉很多困惑。**「波函数坍缩」听起来神秘,说的其实就是从②跳到③那一下:分布是连续的,而结果是一个点。**全书余下的争论——第 7 章的对峙、第 9 章的诠释之争——几乎都集中在这一步上:**②到③这一跳,到底是一个物理过程,还是仅仅是我们知识的更新?**"
+    },
+    {
+      "type": "p",
+      "text": "薛定谔的反应可以想见:**他被自己方程的这个解释激怒了。**1926 年秋天他到哥本哈根做客,和玻尔从早辩到晚,据说辩到病倒在客房里,玻尔还坐在床边继续说。**他留下过一句非常有名的抱怨。**"
+    },
+    {
+      "type": "quote",
+      "original": "要是这些该死的量子跳跃真要留下来,我真后悔自己曾经卷进量子理论。",
+      "translation": "薛定谔 1926 年在哥本哈根与玻尔争论时说的话(据海森堡回忆)。玻尔当时回了一句大意是:可是我们其余的人都非常感激你卷了进来——因为你的方程,正是我们眼下最好用的工具。"
+    },
+    {
+      "type": "p",
+      "text": "还有一个细节值得记:**玻恩因为这条「概率解释」拿到诺贝尔奖,是在二十八年之后的 1954 年。**海森堡、薛定谔、狄拉克、泡利都比他早得多。**一句写在脚注里的话,成了整门学科的地基,却等了将近三十年才被正式承认**——这大概是这段历史里最安静的一个注脚。"
+    },
+    {
+      "type": "h2",
+      "text": "四、九年后,他造了一只猫"
+    },
+    {
+      "type": "p",
+      "text": "1935 年是这场争论的爆发年:爱因斯坦等人发表了 EPR(下一章的主角),薛定谔与爱因斯坦频繁通信,越聊越确信「波函数描述实在」这个读法有大麻烦。**爱因斯坦在信里举过一个例子:一堆不稳定的火药,按量子力学的写法,一段时间后它的状态是「已爆炸」与「未爆炸」的叠加——这显然不像话。**薛定谔把这个思路做成了一个更有戏剧性的版本。"
+    },
+    {
+      "type": "p",
+      "text": "装置是这样的:一只猫关在钢盒里,盒中有一小块放射性物质、一台盖革计数器、一个锤子和一瓶氢氰酸。**放射性原子在一小时内衰变的概率恰好是二分之一。**若衰变,计数器响,锤子落下,毒瓶破碎,猫死;若不衰变,猫活。**一小时后,如果我们坚持波函数描述实在,那么整个盒子的状态就是「原子未衰变+猫活」与「原子已衰变+猫死」的叠加。**"
+    },
+    {
+      "type": "quote",
+      "original": "甚至可以构造出十分滑稽的例子。",
+      "translation": "薛定谔在引出这个装置时的原话。原文里他还说,活猫与死猫「以相等的份额被涂抹在一起」——「涂抹」这个用词本身就带着嘲讽。这是一次归谬,而不是一次奇观展示。"
+    },
+    {
+      "type": "figure",
+      "ftype": "逻辑图",
+      "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>这只猫的论证结构:它是一次归谬</text><g style='font-family:var(--font-serif);font-size:11.5px'><rect x='24' y='48' width='128' height='62' rx='4' style='fill:none;stroke:var(--line);stroke-width:1.1'/><text x='88' y='72' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>前提</text><text x='88' y='92' text-anchor='middle' style='fill:var(--ink-soft)'>ψ 描述实在</text><rect x='168' y='48' width='128' height='62' rx='4' style='fill:none;stroke:var(--line);stroke-width:1.1'/><text x='232' y='72' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>装置</text><text x='232' y='92' text-anchor='middle' style='fill:var(--ink-soft)'>把微观放大到宏观</text><rect x='312' y='48' width='128' height='62' rx='4' style='fill:none;stroke:var(--line);stroke-width:1.1'/><text x='376' y='72' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>推论</text><text x='376' y='92' text-anchor='middle' style='fill:var(--ink-soft)'>猫既死又活</text><rect x='456' y='48' width='80' height='62' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='496' y='72' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>荒谬</text><text x='496' y='92' text-anchor='middle' style='fill:var(--ink-soft)'>所以…</text></g><g style='fill:none;stroke:var(--ink-soft);stroke-width:1.1'><path d='M156 79 L164 79 M159 75 L165 79 L159 83'/><path d='M300 79 L308 79 M303 75 L309 79 L303 83'/><path d='M444 79 L452 79 M447 75 L453 79 L447 83'/></g><path d='M496 116 L496 140 L88 140 L88 156 M82 149 L88 157 L94 149' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3;stroke-dasharray:4 3'/><rect x='140' y='162' width='280' height='40' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='187' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>所以前提有问题——这才是他的结论</text><text x='280' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>今天的通俗版本把箭头砍掉了一半,停在「猫既死又活」这一格,还给它加上了惊叹号</text></svg>",
+      "caption": "**归谬法的用法是:先假设对方的说法成立,推出一个荒唐结论,从而否定那个假设。**把结论那一步砍掉,只留下中间最刺激的画面,就等于把「这样想会出笑话」变成了「快看这个笑话多神奇」。**这是全书最值得记住的一次误读,也是后面所有量子玄学最爱用的一块砖。**"
+    },
+    {
+      "type": "h2",
+      "text": "五、今天怎么看那只猫"
+    },
+    {
+      "type": "p",
+      "text": "九十年过去,这个思想实验并没有过时,但答案的重心变了。**现代物理给出的第一层回答叫退相干。**任何宏观物体都不可能与外界隔绝:空气分子在撞它,热辐射在照它,连宇宙微波背景都在打它。**每一次这样的相互作用,都会把「猫的状态」信息带到环境里去**;而一旦信息跑到环境里,叠加态就迅速变成了普通的「要么这样要么那样」的经典混合。"
+    },
+    {
+      "type": "p",
+      "text": "**这个过程有多快?快到荒谬。**对一粒在空气中的尘埃,估算给出的时间大约在十的负三十几次方秒的量级——**比原子核里发生的事情还快得多。**所以「猫既死又活」在现实中根本没有机会成立:**不是因为没人打开盒子,而是因为一只猫与环境的耦合强到无法想象。**这也解释了为什么实验室里要做那种「像猫的叠加态」,得用极低温、极高真空、极强隔离,而且做出来的也只是几个原子、几百个光子那种量级的「微型猫」。"
+    },
+    {
+      "type": "p",
+      "text": "这里必须澄清一个几乎人人都会犯的混淆:**「叠加」不等于「我不知道」。**把一枚硬币扣在杯子底下,它已经是正面或反面了,只是你不知道——**这叫无知,不叫叠加。**量子叠加和它有一个可以做实验区分的差别:**叠加会产生干涉,无知不会。**第 3 章那张点子累积图里的条纹,就是干涉的痕迹;如果电子只是「已经走了某条缝但我们不知道」,条纹根本不会出现。**所以判断一件事是不是真的处于叠加,标准不是「有没有人知道」,而是「干涉还在不在」。**"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "别把这里读过头",
+      "items": [
+        "退相干**解释了「为什么我们看不到宏观叠加」,但它没有解释「为什么最终只出现一个结果」。**它把「既死又活」变成了「死或活,概率各半」,可我们打开盒子看到的是**这一只具体的猫**。**从「概率各半」到「就是这一个」这一步,仍然没有公认的说法**——这就是第 9 章要讲的测量问题。**任何声称「退相干已经彻底解决了量子力学的解释问题」的说法,都跑得太快了。**"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "六、顺带,「纠缠」这个词也是他起的"
+    },
+    {
+      "type": "p",
+      "text": "在提出那只猫的同一篇文章里,薛定谔还做了一件影响更深远的事:**他给两个粒子之间那种「一旦作用过就再也分不开」的关系起了名字——纠缠。**他说的这句话,今天读来近乎预言。"
+    },
+    {
+      "type": "quote",
+      "original": "我不把它称为量子力学的一个特征,而是那个特征——正是它,迫使量子力学与经典思路彻底分家。",
+      "translation": "薛定谔 1935 年。三十年后贝尔正是从这个「那个特征」下手,把哲学争论改写成了可判决的实验;而今天的量子密钥分发、量子计算,全都建在它上面。"
+    },
+    {
+      "type": "pull",
+      "text": "那只猫是造来嘲笑一种读法的;今天它成了那种读法的招牌,还被拿去卖课。"
+    },
+    {
+      "type": "h2",
+      "text": "七、这一章该带走什么"
+    },
+    {
+      "type": "p",
+      "text": "**第一,分清 ψ 和 |ψ|²。**你从来没有测到过 ψ;你测到的永远是一个个具体的点,而 |ψ|² 是这些点的分布规律。**「波函数坍缩」说的就是从分布到具体那一跳。**"
+    },
+    {
+      "type": "p",
+      "text": "**第二,记住那只猫的箭头是往回指的。**它的结论不是「猫既死又活」,而是「所以把 ψ 当实在有问题」。**下次看到有人用这只猫论证「观察创造现实」,你可以问一句:你知道提出它的人是站在哪一边的吗?**"
+    },
+    {
+      "type": "p",
+      "text": "**第三,记住写出这个方程的人一辈子没接受它的标准解释。**这不是老糊涂——**薛定谔、爱因斯坦、德布罗意,这几位新理论的直接创造者,最后都站到了「这不是最终故事」那一边。**下一章要讲的,就是这场分裂最集中的一次爆发:1927 年的布鲁塞尔。"
+    }
+  ]
+}

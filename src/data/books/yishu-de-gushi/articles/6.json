@@ -1,0 +1,119 @@
+{
+  "title": "文艺复兴解决了什么",
+  "subtitle": "不是「重新发现了美」这种空话——是拿到手几件很硬的工具：一套可算的透视、一副解剖过的身体、一门能反复罩染的颜料",
+  "centralIdea": "文艺复兴最实在的成就，是把「怎么在平面上做出深度」这道两千年的老题，变成了一道可算的题。透视不是画得像的诀窍，是一套规矩：所有向纵深去的平行线交于一点，那一点的高度就是观看者眼睛的高度。规矩一立，画家第一次可以事先把画面里的空间算好，而不是靠一次次试。同一时期的北方走的是另一条路：不靠几何靠材料，油彩能反复罩染、慢慢做，于是把反光、毛发、镜中人影一一做了出来。两条路各解一半，最后互相学。而这一章最要紧的一课在后半程：新工具会带来新麻烦。空间都算对了以后，画面反而容易发僵，人物像被钉在格子里。于是下一道题冒出来了——怎么让一群人既守规矩又摆得自然、又整体均衡。这道题耗掉了一整代最好的头脑，而它被解到极致之后，紧跟着就是一场「没题可解」的危机。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "有那么一个时刻，值得反复想象：**一个十五世纪的普通人走进佛罗伦萨的一间教堂，抬头看见墙上新画的一幅画，然后停住了——因为他觉得那面墙被凿穿了。**画上是一间带筒形拱顶的小室，向后凹进去，深度那么确凿，连拱顶上一格格的方井都随着距离规规矩矩地缩小。他此前一辈子看见的宗教画，都是平的、金底的、庄严的。而这一幅，是**一个洞**。这一章讲的就是这个洞是怎么被凿出来的，以及凿开之后，画家们发现自己掉进了什么新麻烦。"
+    },
+    { "type": "h2", "text": "一、「复兴」到底复兴了什么" },
+    {
+      "type": "p",
+      "text": "先破一个词。「文艺复兴」听上去像是「古代的东西又回来了」，这个说法容易让人以为艺术家们是在**模仿**古人。真实的情况更有意思：**他们是被古人刺激的。**当时的人开始重新接触古代的雕像和记载，发现一千多年前的人能把身体做得那样真、那样活，而自己做不到——**这不是模仿的冲动，这是被比下去的羞耻和好胜。**"
+    },
+    {
+      "type": "p",
+      "text": "于是他们要做的不是「回到古代」，而是**把古人做到的那件事，用自己的办法重新做到，而且做得更彻底。**古人是靠眼睛一点点试出来的；这一代人手里多了一样古人没有的东西——**几何。**他们要的不是「看起来差不多对」，是「可以证明它对」。这个野心，才是这个时代真正新的东西。"
+    },
+    { "type": "h2", "text": "二、透视：把深度变成算术" },
+    {
+      "type": "p",
+      "text": "把这件事说清楚只需要两句话。**第一句：现实里所有互相平行、并且伸向远方的直线，在画面上会交于同一个点。**你站在笔直的马路中间往前看，两侧的路沿、电线、栏杆，最后都并到一处去。**第二句：那个点的高度，就是你眼睛的高度。**你蹲下来，那个点跟着降；你站到二楼，它跟着升。"
+    },
+    {
+      "type": "p",
+      "text": "就这两句，构成了整套一点透视。它的威力在于**可算**：知道了灭点在哪、视平线在哪，画里每一样东西该多大、该画在什么位置，都能推出来。**画家从此可以先在心里（或者纸上）把这间屋子搭好，再往里面摆人**——而在此之前，深度只能靠感觉一点点凑。当时有人为此着了魔，据说夜里被叫去睡觉还舍不得放下，嘴里念叨着透视多么迷人。"
+    },
+    { "type": "figure", "ftype": "示意图", "caption": "同一个场面，只挪动一样东西：**视平线的高低。**低视平线让人物显得高大、庄严（观者是仰视的）；高视平线让场面铺开、一览无余（观者是俯视的）。**看一张画时先找视平线，你就知道画家把你安排在了哪儿——站着、跪着，还是在楼上。**", "svg": "<svg viewBox='0 0 560 270' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>视平线放在哪里，就是把观者放在哪里</text><rect x='24' y='42' width='248' height='160' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><line x1='24' y1='172' x2='272' y2='172' style='stroke:var(--cinnabar-pure);stroke-width:1.2'/><circle cx='148' cy='172' r='3.4' style='fill:var(--cinnabar-pure)'/><g style='stroke:var(--line);stroke-width:0.9'><line x1='148' y1='172' x2='40' y2='202'/><line x1='148' y1='172' x2='96' y2='202'/><line x1='148' y1='172' x2='200' y2='202'/><line x1='148' y1='172' x2='256' y2='202'/><line x1='36' y1='202' x2='260' y2='202'/><line x1='84' y1='188' x2='212' y2='188'/></g><g style='stroke:var(--ink);stroke-width:3'><line x1='76' y1='196' x2='76' y2='96'/><line x1='120' y1='190' x2='120' y2='104'/><line x1='196' y1='192' x2='196' y2='102'/></g><text x='148' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>视平线低</text><text x='148' y='246' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>人物高过你的眼睛，显得高大</text><rect x='292' y='42' width='248' height='160' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><line x1='292' y1='74' x2='540' y2='74' style='stroke:var(--cinnabar-pure);stroke-width:1.2'/><circle cx='416' cy='74' r='3.4' style='fill:var(--cinnabar-pure)'/><g style='stroke:var(--line);stroke-width:0.9'><line x1='416' y1='74' x2='300' y2='202'/><line x1='416' y1='74' x2='360' y2='202'/><line x1='416' y1='74' x2='472' y2='202'/><line x1='416' y1='74' x2='532' y2='202'/><line x1='300' y1='202' x2='532' y2='202'/><line x1='348' y1='152' x2='484' y2='152'/><line x1='372' y1='122' x2='460' y2='122'/></g><g style='stroke:var(--ink);stroke-width:3'><line x1='340' y1='198' x2='340' y2='150'/><line x1='388' y1='170' x2='388' y2='126'/><line x1='448' y1='150' x2='448' y2='112'/></g><text x='416' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>视平线高</text><text x='416' y='246' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>场面向后铺开，一览无余</text></svg>" },
+    {
+      "type": "p",
+      "text": "而且这套规矩很快被**写下来了**——有人把它整理成一部给画家看的论著，从此它不再是某个作坊的秘诀，而是一门可以教、可以学、可以检验的公共技术。**这一步比发明本身还重要。**上一章说过，解法一旦被看见就成了公共财产；写成书之后，连「看见」都不必了，隔着几百里也学得走。"
+    },
+    { "type": "pull", "text": "写下来的那一刻，一个作坊的秘诀变成了一门公共的技术。" },
+    {
+      "type": "p",
+      "text": "不过有一件事必须说清楚，否则会把透视误当成「真理」：**透视不是世界的真相，是一个约定。**它成立的前提相当苛刻——**假设你只用一只眼睛，站在一个固定的点上，一动不动。**可人有两只眼睛，而且会晃、会走近、会转头。真实的视觉经验其实是流动的、双眼的、带着余光的，跟一张透视图并不完全一样。"
+    },
+    {
+      "type": "p",
+      "text": "这一点在当时无关紧要，因为那个约定太好用了；但它埋下了一颗种子。**几百年后，正是「凭什么非得假设观者是一只不动的独眼」这个疑问，把立体主义那批人推了出去**——他们说，人明明是绕着一件东西走动着看的，那就把好几个角度一起画上来。**所以现代主义那次断裂，不是从天而降的胡闹，是对这个古老约定的一次追问。**这本书的好处就在这里：它让四百年后的「胡闹」，在四百年前就有了根。"
+    },
+    { "type": "h2", "text": "三、跟透视一起来的另外两件" },
+    {
+      "type": "p",
+      "text": "透视名气最大，但它单独一件不够用。同时被啃下来的还有两样。**一是解剖。**要让人物在任何角度都站得住、动得对，光看外表不行，得知道底下有什么。于是画家开始研究骨骼和肌肉，有人甚至亲手解剖尸体、画满整本笔记。**这件事的意义不在于「画得准」，在于画家从此可以凭想象把一个人放到任何姿势里去**——不必再等一个模特恰好摆出那个动作。"
+    },
+    {
+      "type": "p",
+      "text": "**二是光影。**要让一个形体看上去有厚度，就得让光从一处来，然后老老实实地把亮部、暗部、投影都交代出来。这听着简单，可它要求整幅画共用一个光源，任何一处偷懒都会露馅。**从这时起，「光从哪儿来」成了每一幅画的必答题**——而这道题在两百年后会被巴洛克那批人做成主菜。"
+    },
+    { "type": "h2", "text": "四、北方那条路：不靠几何，靠材料" },
+    {
+      "type": "p",
+      "text": "同一时期，阿尔卑斯山以北的人在解同一道题，但走的完全是另一条路。他们没有那么强的数学冲动，可他们手里有一样东西极其管用：**能用油调和的颜料。**"
+    },
+    {
+      "type": "p",
+      "text": "这不是小事。此前主流的颜料干得快、不能反复叠，画家必须一次画准；而油彩干得慢，可以一层层薄薄地罩上去，可以刮掉重来，可以在画到一半时改主意。**于是「无限细」成为可能**：一件铜器上的高光、一条狗身上一根根的毛、一面凸镜里映出的一小群人和一扇窗——这些东西第一次真的出现在画里，而且经得起你凑到二十厘米远去看。"
+    },
+    { "type": "figure", "ftype": "对照图", "caption": "两条路都在解「让人相信这是真的」，但下的赌注不同：**南边赌整体的构造，北边赌局部的证据。**南边让你远看时觉得空间成立，北边让你近看时找不出破绽。最后两边互相学——**这也是这本书里最常见的结局：不同的解法最终汇流。**", "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>同一道题，南北两种解法</text><rect x='20' y='40' width='240' height='150' rx='6' style='fill:var(--paper-raised);stroke:var(--ink-faint);stroke-width:1'/><rect x='300' y='40' width='240' height='150' rx='6' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.4'/><g style='font-family:var(--font-serif);font-size:13px;font-weight:bold'><text x='140' y='66' text-anchor='middle' style='fill:var(--ink)'>意大利：算</text><text x='420' y='66' text-anchor='middle' style='fill:var(--cinnabar-pure)'>尼德兰：磨</text></g><g style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'><text x='40' y='94'>工具：几何、解剖、比例</text><text x='40' y='118'>思路：先把空间搭好再摆人</text><text x='40' y='142'>强项：整体成立，气派，可推演</text><text x='40' y='170' style='fill:var(--ink)'>看的方式：退开三步</text><text x='320' y='94'>工具：油彩、罩染、耐心</text><text x='320' y='118'>思路：一样一样把质感做出来</text><text x='320' y='142'>强项：细节无懈可击，可信</text><text x='320' y='170' style='fill:var(--ink)'>看的方式：凑近了看</text></g><path d='M140,196 C140,222 260,232 280,232 C300,232 420,222 420,196' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2;stroke-dasharray:5 4'/><text x='280' y='246' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>最终互相学：南边学质感，北边学空间</text></svg>" },
+    { "type": "h2", "text": "五、算对了之后，画面开始发僵" },
+    {
+      "type": "p",
+      "text": "这是这一章最值得记住的转折，也是全书那条主线最漂亮的一次演示。**所有人都掌握了透视之后，出现了一个谁也没预料到的问题：画面变得死板。**"
+    },
+    {
+      "type": "p",
+      "text": "道理不难懂。**透视是一套很霸道的规矩**——它规定了每样东西在什么位置该有多大、地面的格子怎么走、人的脚必须踩在哪条线上。于是画家在摆人的时候忽然没了自由：**过去可以为了画面好看而把某个人挪一挪、放大一点，现在不行了，一挪就「错」。**结果是很多早期作品有一种奇特的僵硬感：空间无懈可击，人却像被钉在棋盘格上的棋子。"
+    },
+    {
+      "type": "p",
+      "text": "**于是下一道题出现了：怎么让一群人既守规矩，又摆得自然，而且整幅画看上去是均衡的？**这道题听着不如透视那么硬核，其实难得多——因为它没有公式。它耗掉了此后一整代最好的头脑，而解得最漂亮的那几个人，也正是今天名气最大的那几个。"
+    },
+    {
+      "type": "p",
+      "text": "难在哪里？**难在这三个要求彼此打架。**要自然，人就得随意站；要均衡，人就得摆得讲究；要守透视，人还得站在该站的位置上。三条同时满足，几乎是不可能的——**所以真正的高手做的事，是让你看不出他在安排。**一幅好的群像，人物看上去全是随便站着的，可你把任何一个挪开半步，整张画就塌了。这种「看不见的严密」，是这一代人交出的答卷，也是他们最难被超越的地方。"
+    },
+    {
+      "type": "p",
+      "text": "顺便说一句，这也解释了为什么有些画「说不出哪里好，但就是舒服」。**那种舒服不是玄学，是骨架在起作用**：主要的形被安排在一个稳定的几何里，明暗的重量左右大致抵消，视线被引成一条闭合的路线，走一圈能回到起点。**你感觉到的「和谐」，是这些安排的总和。**而当你学会把骨架找出来，那种「说不出」就会变成「说得出」——这大概是看画这件事最上瘾的时刻。"
+    },
+    { "type": "figure", "ftype": "结构图", "caption": "解法的核心是**给画面装一副看不见的骨架**：把人物安排进一个稳定的几何形里，于是既自然又不散。三角形最稳（适合庄严的场面），对角线最有劲（适合动作），环形最亲密（适合围拢的一群人）。**看画时把这副骨架找出来，你就看见了画家的算盘。**", "svg": "<svg viewBox='0 0 560 240' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>看不见的骨架：三种最常用的构图</text><g><rect x='24' y='42' width='156' height='130' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M102,62 L166,158 L38,158 Z' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><circle cx='102' cy='86' r='11' style='fill:var(--ink)' opacity='0.5'/><circle cx='64' cy='138' r='9' style='fill:var(--ink)' opacity='0.35'/><circle cx='140' cy='138' r='9' style='fill:var(--ink)' opacity='0.35'/></g><g><rect x='202' y='42' width='156' height='130' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><line x1='214' y1='160' x2='346' y2='56' style='stroke:var(--cinnabar-pure);stroke-width:1.4'/><circle cx='238' cy='142' r='9' style='fill:var(--ink)' opacity='0.35'/><circle cx='280' cy='108' r='11' style='fill:var(--ink)' opacity='0.5'/><circle cx='322' cy='74' r='9' style='fill:var(--ink)' opacity='0.35'/></g><g><rect x='380' y='42' width='156' height='130' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><ellipse cx='458' cy='108' rx='58' ry='42' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><circle cx='458' cy='68' r='10' style='fill:var(--ink)' opacity='0.5'/><circle cx='406' cy='100' r='8' style='fill:var(--ink)' opacity='0.35'/><circle cx='510' cy='100' r='8' style='fill:var(--ink)' opacity='0.35'/><circle cx='430' cy='142' r='8' style='fill:var(--ink)' opacity='0.35'/><circle cx='486' cy='142' r='8' style='fill:var(--ink)' opacity='0.35'/></g><g style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'><text x='102' y='196' text-anchor='middle' style='font-weight:bold'>三角形</text><text x='280' y='196' text-anchor='middle' style='font-weight:bold'>对角线</text><text x='458' y='196' text-anchor='middle' style='font-weight:bold'>环形</text></g><g style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'><text x='102' y='216' text-anchor='middle'>最稳，主角在顶</text><text x='280' y='216' text-anchor='middle'>最有劲，眼睛顺着走</text><text x='458' y='216' text-anchor='middle'>最亲密，围出一个中心</text></g></svg>" },
+    { "type": "h2", "text": "六、把话说一半：一个反着来的解法" },
+    {
+      "type": "p",
+      "text": "这一段单独拿出来讲，因为它反常识，而且好用。**当所有人都在把轮廓画得更准的时候，有人发现：把轮廓化开、让边缘含糊，形象反而更活。**"
+    },
+    {
+      "type": "p",
+      "text": "为什么？因为**眼角和嘴角只要交代得清清楚楚，表情就被钉死了**——你看到的永远是同一个确定的表情。而让这两处融进阴影里、化在模糊里，看画的人会不由自主地自己去补；**补出来的那个表情，比任何画上去的都生动，而且每个人补的还不一样，甚至同一个人在不同时候补的也不一样。**那种「她好像刚才还在笑」的著名感觉，就是这么来的。"
+    },
+    { "type": "figure", "ftype": "对比图", "caption": "**边缘的硬软，决定了观者是「接收」还是「参与」。**硬边把话说完，软边留一半让你补——而人只要动手补过，就会觉得那形象是活的。这一手今天在摄影、电影、插画里到处都是。", "svg": "<svg viewBox='0 0 560 230' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>硬边与软边</text><g style='fill:none;stroke:var(--ink);stroke-width:2'><path d='M120,70 C156,70 174,96 174,124 C174,156 152,178 120,178 C88,178 66,156 66,124 C66,96 84,70 120,70 Z'/><path d='M92,116 L104,116 M136,116 L148,116'/><path d='M104,146 C112,152 128,152 136,146'/></g><g style='fill:none;stroke:var(--ink);stroke-width:2'><path d='M400,70 C436,70 454,96 454,124 C454,156 432,178 400,178 C368,178 346,156 346,124 C346,96 364,70 400,70 Z' opacity='0.85'/></g><g style='fill:none;stroke:var(--ink);stroke-width:2' opacity='0.35'><path d='M372,116 L384,116 M416,116 L428,116'/></g><g style='fill:none;stroke:var(--ink);stroke-width:2' opacity='0.18'><path d='M384,146 C392,152 408,152 416,146'/></g><g style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1;stroke-dasharray:3 3'><circle cx='378' cy='118' r='16'/><circle cx='422' cy='118' r='16'/><circle cx='400' cy='148' r='16'/></g><g style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold'><text x='120' y='202' text-anchor='middle' style='fill:var(--ink)'>硬边：表情被钉死</text><text x='400' y='202' text-anchor='middle' style='fill:var(--cinnabar-pure)'>软边：留给你去补</text></g><text x='280' y='222' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>朱色虚线圈出的，正是历来被特意做模糊的三个地方：两个眼角、一个嘴角</text></svg>" },
+    { "type": "h2", "text": "七、然后，题目用完了" },
+    {
+      "type": "p",
+      "text": "这一章的结尾不是高潮，是一个尴尬。**到了十六世纪，该解的似乎都解掉了：透视有公式，解剖有图谱，光影有章法，构图有范式，而且都被前一辈做到了几乎无法超越的地步。**"
+    },
+    {
+      "type": "p",
+      "text": "对后来的人来说，这是一个残酷的处境：**照着做，你只是个熟练工；想被看见，就只剩下「故意做得不一样」这一条路。**于是出现了拉长的脖子、拧过头的姿态、故意失衡的构图、明知不合规矩偏要那么摆的安排。贡布里希把这一段直接称作**艺术的危机**——注意他的措辞：不是水平掉了，是**没题可解了**。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "别急着说堕落",
+      "items": [
+        "这一段常被后人说成「矫揉造作」。**但按这本书的逻辑，它是一个必然结果，而且里面有真东西。**当「做对」不再能让人注意到你，剩下的可探索空间就只有「明知规矩、偏要越过去，还得让你觉得好」——**这其实是一种更高阶的游戏，只是玩砸的概率也高得多。**这个机制此后反复出现：任何一门手艺被彻底掌握之后，都会进入这个阶段。看见它，就不会把「怪」一律当成堕落，也不会把「新」一律当成进步。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "而真正的出路，要等到有人不再纠缠「怎么做得更对」，转而问一个新问题：**怎么让画面动起来？怎么让光变成主角？**——那就是下一章的事了。"
+    },
+    {
+      "type": "p",
+      "text": "临走前把这一章的账结一下。**这一代人交出去的东西是三样：一套可算的空间、一副能凭想象摆到任何姿势的身体、一门能反复修改的颜料。**这三样此后再没丢过，直到二十世纪才有人认真质疑其中的第一样。**而他们留下的麻烦也是三样：画面容易发僵、题目被解到无题可解、以及一条最隐蔽的——「正确」变成了唯一被承认的标准。**最后这一条，是后面所有反叛的火种。"
+    }
+  ]
+}

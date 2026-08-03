@@ -1,0 +1,153 @@
+{
+  "title": "光的两副面孔:打了三百年的那场仗",
+  "subtitle": "牛顿说是粒子,惠更斯说是波,杨和菲涅尔让波动说全胜,爱因斯坦又把粒子请了回来——最后没有一方赢,输的是我们日常的那两个词",
+  "centralIdea": "这本书最见结构功力的地方,是把光的历史写成了三场战争。第一场,牛顿的微粒说靠权威压了惠更斯的波动说近一百年——而反讽的是,牛顿自己发现的牛顿环恰恰是干涉。第二场,托马斯·杨用双缝让两束光叠加出「暗」,菲涅尔的理论又逼出了那个著名的「泊松亮斑」:反对者用它来证明理论荒谬,实验却证明亮斑真的在;麦克斯韦和赫兹随后把光并入电磁波,波动说封神——赫兹在同一批实验里还顺手撞见了光电效应,而那正是波动说的掘墓工具。第三场,1905 年爱因斯坦提出光量子,粒子以谁也没想到的方式回来了。但要点在于:这场三百年的仗最后没有一方获胜。正确的结论不是「光是粒子」,也不是「光既是波又是粒子」这句听着圆满其实含糊的话,而是——光不是我们从日常经验里搬来的任何一样东西,是「波」和「粒子」这两个词都不够用。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "1818 年,法国科学院悬赏征文,题目是光的衍射。一位叫菲涅尔的年轻工程师交上了一篇完整的波动理论。评委之一泊松是位极出色的数学家,他把菲涅尔的公式拿来推了一下,得出一个在他看来足以终结整篇论文的结论:**按这套理论,拿一个圆盘去挡住光,它影子的正中央应该有一个亮点。**这显然荒唐——**影子中心怎么可能是亮的?**另一位评委阿拉果说,那就试试看吧。**他试了。亮点就在那里,正中央,明晃晃的。**这个斑点今天叫「泊松亮斑」,以那位提出它来反驳的人命名。"
+    },
+    {
+      "type": "h2",
+      "text": "一、第一次波粒战争:牛顿压住了惠更斯"
+    },
+    {
+      "type": "p",
+      "text": "十七世纪的争论双方是牛顿和惠更斯。**牛顿主张光是一颗颗微粒**,理由很硬:光走直线,影子边缘清楚;而波会绕过障碍物——你在墙角能听见说话声,却看不见说话的人。**惠更斯主张光是波**,理由同样硬:两束光可以交叉而过,互不干扰,如果是小球早该撞得乱七八糟了;而且波动说能自然地解释折射。"
+    },
+    {
+      "type": "p",
+      "text": "这一局微粒说赢了,而且赢的方式不太光彩:**主要靠牛顿的名气。**牛顿在《光学》里的分量太重,以至于后来近一百年,英国乃至欧洲的主流都默认光是微粒。**最讽刺的是,牛顿自己做过一个漂亮的实验:把一块凸透镜压在平板玻璃上,会看到一圈圈彩色的环**——今天我们知道那是上下两个表面反射的光互相干涉的结果,**是波的铁证。**牛顿把它记录得极为细致,却用一套复杂的「阵发」假说去解释,没有走向波。"
+    },
+    {
+      "type": "callout",
+      "tone": "mute",
+      "label": "留意用字",
+      "items": [
+        "说「牛顿压住了波动说」并不是指控他压制别人——他去世时惠更斯的书还在流传,这不是一桩学术迫害案。**真正起作用的是「权威的引力」:当一位公认最聪明的人给出了一种解释,后来者会不自觉地把精力用在完善它、而不是挑战它上面。**这一点在这本书里会反复上演——玻尔的权威后来也起过类似作用,让贝尔那条路整整晚了三十年才被人认真走一遍。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "二、第二次:杨的双缝,和一个用来反驳的亮点"
+    },
+    {
+      "type": "p",
+      "text": "1801 年前后,英国人托马斯·杨做了那个后来成为量子力学核心的实验。他让光穿过两道靠得极近的狭缝,在后面的屏上看到了明暗相间的条纹。**要害在于那些「暗」条纹:那里两道缝的光都到得了,合起来却是黑的。**两份光加在一起等于没有——**这件事微粒说无论如何解释不了,而波动说一句话就说清了:波峰对上波谷,互相抵消。**"
+    },
+    {
+      "type": "p",
+      "text": "杨的下场值得一提。**他的论文在英国被刊物刻薄地攻击**,评论者措辞轻蔑,认为这套东西既无价值也无原创性(那篇评论是匿名的,而作者身份后来被查了出来)。**在牛顿的祖国挑战牛顿,代价不小。**波动说真正被扶正,还得等十几年后海峡对岸的菲涅尔——以及本文开头那个亮点。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>泊松亮斑:用来反驳的推论,成了最硬的证据</text><g style='font-family:var(--font-serif);font-size:11.5px'><text x='60' y='70' style='fill:var(--ink-soft)'>平行光</text><g style='fill:none;stroke:var(--ink-soft);stroke-width:1.1'><path d='M52 88 L168 88'/><path d='M52 110 L168 110'/><path d='M52 132 L168 132'/><path d='M52 154 L168 154'/><path d='M52 176 L168 176'/></g><rect x='172' y='96' width='9' height='72' rx='2' style='fill:var(--ink);opacity:0.8'/><text x='176' y='190' text-anchor='middle' style='fill:var(--ink-soft)'>圆盘</text><path d='M420 60 L420 208' style='fill:none;stroke:var(--line);stroke-width:2'/><text x='420' y='226' text-anchor='middle' style='fill:var(--ink-soft)'>屏</text><rect x='410' y='96' width='10' height='72' style='fill:var(--ink);opacity:0.28'/><text x='466' y='120' style='fill:var(--ink-soft)'>影子</text><circle cx='415' cy='132' r='6' style='fill:var(--cinnabar-pure)'/><text x='466' y='146' style='font-weight:bold;fill:var(--cinnabar-pure)'>亮点在这里</text><g style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1;opacity:0.7'><path d='M181 100 L412 130'/><path d='M181 164 L412 134'/></g></g><text x='280' y='244' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>绕过圆盘边缘的波,到达中心时走的路程一样长,于是叠加加强——影子中心反而最亮</text></svg>",
+      "caption": "有个更妙的后续:**这个亮斑其实早在一百年前就有人观察到过,只是被遗忘了。**科学史上这种事不少见——**一个现象在没有理论去接它的时候,常常连「被看见」都做不到。**这一点在第 4、第 5 章还会以更戏剧的方式重演。"
+    },
+    {
+      "type": "p",
+      "text": "波动说的封顶发生在十九世纪下半叶。**1865 年麦克斯韦从他的方程组里推出:电磁扰动会以波的形式传播,速度恰好等于光速。**于是光被并进了电磁学——它就是一段电磁波。二十多年后赫兹在实验室里发出并接收到了电磁波,**给这套理论钉上了最后一颗钉子。**至此,微粒说看上去被彻底埋葬。"
+    },
+    {
+      "type": "p",
+      "text": "而历史在这里安排了一个几乎像小说的细节:**赫兹在做那批实验时,注意到一件小事**——用紫外光照射接收电极,放电会变得容易些。他随手记了下来,没有深究。**那就是光电效应,几十年后微粒说正是从这里杀回来的。**"
+    },
+    {
+      "type": "h2",
+      "text": "三、第三次:光量子回来了"
+    },
+    {
+      "type": "p",
+      "text": "1905 年,爱因斯坦提出:**光在传播时也是一份一份的**,每份能量 hν。用这个假设,光电效应里那些让人别扭的规律立刻变得平常。下面这张表值得慢慢看一遍,因为它是「实验事实如何逼死一个理论」的教科书式样本。"
+    },
+    {
+      "type": "table",
+      "caption": "光电效应:四条实验事实,波动说一条也接不住",
+      "head": ["实验事实", "波动说应有的预期", "光量子的解释"],
+      "rows": [
+        ["低于某个频率,光再强也打不出电子", "光够强、照够久,总能攒够能量", "单份能量不够,攒多少份也没用"],
+        ["电子的能量只跟频率有关,跟强度无关", "光越强,打出的电子应该越有劲", "频率决定每份多大,强度只决定份数"],
+        ["光一照几乎立刻就有电子出来", "弱光下应该要等很久才攒够能量", "一份能量一次交割,不需要攒"],
+        ["强度只影响电子的数量", "强度应该同时影响数量和能量", "份数多了,被打出来的电子就多"]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "这一步在当时被认为过分。**连普朗克都不接受**——他 1913 年推荐爱因斯坦进科学院时,还专门替他求过情,大意是别因为他在光量子上走得太远就否定他。真正让物理学界低头的是实验:**密立根花了将近十年,一心想证明爱因斯坦是错的**,结果把光电效应的每一条规律都测得极准,**成了最漂亮的一次验证**,而他本人仍然长期不认同背后那套解释。"
+    },
+    {
+      "type": "p",
+      "text": "压死骆驼的最后一根稻草是 1923 年的康普顿散射:**X 射线打在电子上,散射后波长变长了,而且变长的量恰好符合「两个小球相撞」的算法。**光在这里不只是携带一份一份的能量,**它还带着动量,撞人的时候像台球一样服从守恒律。**到这一步,再固执的人也得承认:光身上确实有某种粒子性。顺带一提,**「光子」这个名字直到 1926 年才由一位化学家起出来。**"
+    },
+    {
+      "type": "quote",
+      "original": "整整五十年的苦思冥想,并没有使我更接近「光量子究竟是什么」这个问题的答案。",
+      "translation": "爱因斯坦 1951 年写给老友贝索的信。提出光量子的人,在四十六年之后仍然说自己不懂它——这句话该被贴在每一篇声称「用量子力学讲清了人生真相」的文章开头。"
+    },
+    {
+      "type": "h2",
+      "text": "四、结论不是「光是粒子」"
+    },
+    {
+      "type": "p",
+      "text": "这一节是全章的要害,请务必读慢一点。三场仗打完,标准答案不是「微粒说赢了」,也不是那句听着圆满其实很含糊的**「光既是波又是粒子」**。更准确的说法是:**光既不是我们说的波,也不是我们说的粒子。**"
+    },
+    {
+      "type": "p",
+      "text": "「波」和「粒子」这两个词,都是我们从日常经验里搬来的:粒子是小石子,波是水面的涟漪。**这两个概念的适用范围,恰好都止于我们能直接看见的尺度。**到了微观世界,某些实验里光表现出只有波才有的行为(双缝干涉),另一些实验里表现出只有粒子才有的行为(光电效应、康普顿散射),**而没有任何一个实验能同时逼出两种行为。**玻尔后来把这件事叫作**互补**:两套描述都必要,却永远不会在同一次实验里撞车。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "svg": "<svg viewBox='0 0 560 256' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>两套词各管一半,而且从不在同一次实验里碰面</text><g style='font-family:var(--font-serif);font-size:11.5px'><rect x='24' y='48' width='214' height='134' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='131' y='72' text-anchor='middle' style='font-size:13px;font-weight:bold;fill:var(--ink)'>只有波才有的行为</text><text x='131' y='98' text-anchor='middle' style='fill:var(--ink-soft)'>双缝干涉的明暗条纹</text><text x='131' y='120' text-anchor='middle' style='fill:var(--ink-soft)'>绕过障碍的衍射</text><text x='131' y='142' text-anchor='middle' style='fill:var(--ink-soft)'>偏振与叠加抵消</text><text x='131' y='166' text-anchor='middle' style='fill:var(--ink-faint)'>粒子图像在这里全线失效</text><rect x='322' y='48' width='214' height='134' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='429' y='72' text-anchor='middle' style='font-size:13px;font-weight:bold;fill:var(--ink)'>只有粒子才有的行为</text><text x='429' y='98' text-anchor='middle' style='fill:var(--ink-soft)'>光电效应的截止频率</text><text x='429' y='120' text-anchor='middle' style='fill:var(--ink-soft)'>康普顿散射像台球相撞</text><text x='429' y='142' text-anchor='middle' style='fill:var(--ink-soft)'>探测器一次响一整下</text><text x='429' y='166' text-anchor='middle' style='fill:var(--ink-faint)'>波动图像在这里全线失效</text></g><path d='M244 115 L316 115' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2;stroke-dasharray:4 4'/><text x='280' y='108' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>互补</text><text x='280' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>两栏都必要,却没有一个实验能让它们同时露面——这就是玻尔说的互补</text><text x='280' y='236' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>它说的是「两套语言各有地盘」,不是「什么都是相对的」</text></svg>",
+      "caption": "互补原理常被当成一句人生哲理转发(「凡事都有两面」),这是彻底的误用。**它是一条很硬的技术规定:在同一个实验安排里,你能问的问题被安排本身限死了。**要看清干涉条纹,就不能知道光子走了哪条缝;要知道走了哪条缝,条纹就必然消失。**不是「两种说法都对」,而是「两种问题不能同时问」。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "过程图",
+      "svg": "<svg viewBox='0 0 560 268' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>一次放一个光子,条纹还是会长出来</text><g style='font-family:var(--font-serif);font-size:11.5px'><rect x='24' y='46' width='160' height='140' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='104' y='68' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>打了几十个</text><g style='fill:var(--ink-soft);opacity:0.8'><circle cx='58' cy='96' r='2'/><circle cx='96' cy='108' r='2'/><circle cx='142' cy='92' r='2'/><circle cx='74' cy='134' r='2'/><circle cx='120' cy='150' r='2'/><circle cx='158' cy='126' r='2'/><circle cx='88' cy='166' r='2'/><circle cx='134' cy='118' r='2'/></g><text x='104' y='180' text-anchor='middle' style='fill:var(--ink-faint)'>看着像随机的雨点</text><rect x='200' y='46' width='160' height='140' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='280' y='68' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>打了几千个</text><g style='fill:var(--ink-soft);opacity:0.8'><circle cx='222' cy='96' r='2'/><circle cx='224' cy='128' r='2'/><circle cx='246' cy='104' r='2'/><circle cx='248' cy='150' r='2'/><circle cx='270' cy='92' r='2'/><circle cx='272' cy='120' r='2'/><circle cx='274' cy='158' r='2'/><circle cx='296' cy='106' r='2'/><circle cx='298' cy='140' r='2'/><circle cx='320' cy='98' r='2'/><circle cx='322' cy='132' r='2'/><circle cx='344' cy='116' r='2'/><circle cx='346' cy='152' r='2'/></g><text x='280' y='180' text-anchor='middle' style='fill:var(--ink-faint)'>隐约有了竖着的疏密</text><rect x='376' y='46' width='160' height='140' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='456' y='68' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>打了几十万个</text><g style='stroke:var(--cinnabar-pure);stroke-width:6;opacity:0.55'><path d='M400 88 L400 166'/><path d='M420 88 L420 166'/><path d='M440 88 L440 166'/><path d='M460 88 L460 166'/><path d='M480 88 L480 166'/><path d='M500 88 L500 166'/></g><text x='456' y='180' text-anchor='middle' style='fill:var(--ink-faint)'>干涉条纹清清楚楚</text></g><text x='280' y='218' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>每一个都是一个整颗的点(粒子),而它们落点的分布是一条波(概率)</text><text x='280' y='244' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>请注意:单独一个光子并不「变成」条纹,条纹是统计出来的</text><text x='280' y='264' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>这类弱光实验早在 1909 年就有人做过,当时曝光了几个月</text></svg>",
+      "caption": "这张图是全书最该记住的一幅画面,它同时封死了两种误读。**对「光就是小球」的误读:**一个个的小球不会自己排成条纹。**对「光就是水波」的误读:**水波不会在屏上留下一个个孤立的点。**真实情况是第三样东西:落点一个一个是随机的,而随机的分布严格遵守一条波的规律。**——这正是全书标题那句话的物理内容:**骰子确实在掷,但掷法本身是铁律。**"
+    },
+    {
+      "type": "h2",
+      "text": "五、德布罗意:把二象性推给所有东西"
+    },
+    {
+      "type": "p",
+      "text": "1924 年,一位法国贵族出身的博士生德布罗意在论文里提了一个大胆得近乎鲁莽的想法:**既然光这种「波」有粒子性,那么电子这种「粒子」会不会也有波动性?**他给出了那条著名的关系:波长等于 h 除以动量。论文评审拿不准,寄给爱因斯坦看,**爱因斯坦回话说这里面有真东西**——这几乎是德布罗意学位的救命稻草。"
+    },
+    {
+      "type": "p",
+      "text": "三年后,实验来了:**电子被打到晶体上,反射回来的强度分布出现了只有波才会有的衍射花样。**这里又有一个绝妙的巧合:**证明电子是粒子的 J.J. 汤姆孙拿过诺贝尔奖,而证明电子是波的人之一,是他的儿子 G.P. 汤姆孙,后来也拿了诺贝尔奖。**父子二人为同一样东西的两副面孔各得一次奖。"
+    },
+    {
+      "type": "p",
+      "text": "这条路后来一直往大里走。**1999 年,有人拿由六十个碳原子组成的足球状分子做双缝干涉,条纹照样出来了**;此后被送去做干涉的分子越来越大,近年已经做到上千个原子的量级。**这件事在两个方向上都很重要:一方面它说明二象性不是光的特权,是所有物质的属性;另一方面它也提醒我们——之所以要用这么精巧的装置、这么大的代价才做得出来,恰恰因为一旦东西大起来,量子行为就迅速地、彻底地藏了起来。**"
+    },
+    {
+      "type": "pull",
+      "text": "三百年的仗打完,赢的不是波也不是粒子,是「我们日常的词不够用」这个认识。"
+    },
+    {
+      "type": "h2",
+      "text": "六、这一章该带走什么"
+    },
+    {
+      "type": "p",
+      "text": "**第一,「波粒二象性」不是一句和稀泥。**它说的是:两套来自日常经验的图像,各自只在一部分实验里管用,而且永远不在同一次实验里同时管用。**遇到「万物皆有两面性,所以量子力学证明了辩证法/中庸之道」这类引申,可以直接关掉**——那是把一个极其具体的物理结论,兑水成了一句放之四海皆准的空话。"
+    },
+    {
+      "type": "p",
+      "text": "**第二,记住那张点子累积图。**它是后面所有讨论的基础画面:**个体随机,整体有律。**第 6 章的概率诠释、第 8 章的贝尔实验、第 10 章拆玄学,全都要回到这张图上来。"
+    },
+    {
+      "type": "p",
+      "text": "**第三,想一想这场仗为什么打得动三百年。**不是因为哪一方笨。**是因为双方手里都有真证据**——牛顿看到的直线传播和清晰影子是真的,惠更斯看到的交叉不干扰也是真的;杨的条纹是真的,赫兹随手记下的那个小现象也是真的。**当一个问题的两边都握着无法否认的事实时,通常说明问题本身被问错了。**这条经验在后面第 9 章讨论「诠释之争」时还会用到:一场吵了很久、双方都拿得出硬货的争论,往往要等到有人把问题重新问一遍才有出路——而贝尔做的正是这件事。"
+    },
+    {
+      "type": "p",
+      "text": "**第四,留意这本书讲这一段时的兴奋劲儿。**三次波粒战争是全书写得最好看的部分,人物、口角、翻案一应俱全。**好看是真好看,但也正是在这种地方,史料最容易被压成一个个利落的瞬间。**比如「杨的书只卖出一本」「泊松被当场打脸」这类段子,流传的版本往往比可考的记载更利落——**读的时候不妨在心里给每个「当场」二字打个问号。**"
+    }
+  ]
+}

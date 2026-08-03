@@ -1,0 +1,140 @@
+{
+  "title": "从一根针说起",
+  "subtitle": "十个人,十八道工序,一天四万八千枚——全书的第一块砖,和藏在这个例子底下的三件事",
+  "centralIdea": "《国富论》正文第一句就是分工:劳动生产力的最大改进来自分工。紧接着是那个被引用了两百五十年的例子——一个没学过这行的人一天做不出二十枚针,也许连一枚也做不出;但把做针拆成十八道工序,一间只雇十个人、设备很差的小厂,一天能出四万八千多枚,平均每人四千八百枚。同样的人、同样的时间、同样的力气,只改了排列方式,差的不是一倍两倍,是几百倍。他给了三个原因:熟练;省下从一件活换到另一件活的时间(而且他点明损失的不只是走过去那几步,还有心思散掉又收回的那一段);以及机器往往是干这个活的人自己想出来的。更要紧的是他接着追问分工从哪来:不是谁设计的,而是从人身上一种互通有无、以物易物的倾向里长出来的——我们的晚餐不来自屠夫、酿酒师和面包师的恩惠,而来自他们对自身利益的考虑;没有人见过两条狗公平地拿一根骨头换另一根。最后他抛出一句十八世纪相当激进的话:哲学家与街头挑夫的差别,与其说来自天性,不如说来自习惯、风俗和教育——分工不只是天赋的结果,更是天赋的原因。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "《国富论》正文的第一句话,没有铺垫,没有开场白,直接就是结论:**劳动生产力最大的改进,以及运用劳动时所表现的更大的熟练、技巧和判断力,似乎都是分工的结果。**接下来是一个例子,而这个例子后来成了整个经济学最有名的一段文字。"
+    },
+    {
+      "type": "p",
+      "text": "他为什么挑做针?他自己说了理由,而且这个理由很讲究:**因为这是一件小事。**大工厂里的分工其实更彻底,但一个大工厂太大,你一眼看不全,**「往往只能看到一个部门」**;而做针这件小活,所有工序可以在同一间屋子里同时摆开,**一眼就能看尽。**"
+    },
+    { "type": "h2", "text": "一、十八道工序" },
+    {
+      "type": "p",
+      "text": "一个没学过这一行的人,再怎么用力,一天也做不出二十枚针,**他补了一句:也许连一枚也做不出来。**这句话不是夸张——做一枚合格的针,要抽线、拉直、切断、把一头磨尖、把另一头磨出装针头的形状、做针头、把针头装上、刷白、最后连包装都是一道单独的手艺。**每一道都是一门手艺,一个人从头学到尾要多久?**"
+    },
+    {
+      "type": "p",
+      "text": "但如果把它拆开:**一个人专管抽线,一个人专管拉直,第三个人专管切断,第四个人专管磨尖……**斯密数下来大约十八道工序。他说他亲眼见过这样一间小厂:**只雇十个人,设备很差**,有些人还得兼做两三道工序,可他们尽力干活的时候,一天能做出四万八千多枚针——**平均每人四千八百枚。**"
+    },
+    {
+      "type": "p",
+      "text": "**把这两个数字并排放着看:不到二十,和四千八百。**同样的人、同样的一天、同样的力气,**唯一变的是这十个人的排列方式。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "他为什么挑做针?因为它小到可以一眼看尽。大工厂里的分工其实更细,但你站在车间里只看得见一个部门;做针这件小活,所有工序能在同一间屋子里同时摆开——这是一个把抽象讲法变成眼见为实的选择。",
+      "svg": "<svg viewBox='0 0 620 260' xmlns='http://www.w3.org/2000/svg'><text x='310' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>一枚针要过多少手</text><line x1='40' y1='96' x2='580' y2='96' style='stroke:var(--line);stroke-width:1.2'/><g><circle cx='70' cy='96' r='4' style='fill:var(--ink-soft)'/><text x='70' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>抽线</text><text x='70' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>一人</text></g><g><circle cx='155' cy='96' r='4' style='fill:var(--ink-soft)'/><text x='155' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>拉直</text><text x='155' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>一人</text></g><g><circle cx='240' cy='96' r='4' style='fill:var(--ink-soft)'/><text x='240' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>切断</text><text x='240' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>一人</text></g><g><circle cx='325' cy='96' r='4' style='fill:var(--ink-soft)'/><text x='325' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>磨尖</text><text x='325' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>一人</text></g><g><circle cx='410' cy='96' r='4' style='fill:var(--ink-soft)'/><text x='410' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>做针头</text><text x='410' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>要两三道</text></g><g><circle cx='495' cy='96' r='4' style='fill:var(--ink-soft)'/><text x='495' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>刷白</text><text x='495' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>一人</text></g><g><circle cx='566' cy='96' r='5' style='fill:var(--cinnabar-pure)'/><text x='566' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;font-weight:bold;fill:var(--cinnabar-pure)'>包装</text><text x='566' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>也是手艺</text></g><text x='310' y='158' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>约十八道工序 · 十个人 · 有人兼做两三道</text><text x='310' y='186' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>一天四万八千余枚 · 每人四千八百枚</text><text x='310' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>各干各的:每人一天不到二十枚,也许连一枚都做不出</text><text x='310' y='242' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>设备很差的一间小作坊 —— 他说他亲眼见过</text></svg>"
+    },
+    { "type": "h2", "text": "二、三个原因,第三个才是关键" },
+    {
+      "type": "p",
+      "text": "这个差距大到需要解释。斯密给了三个原因。"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**熟练。**同一个动作重复上万遍,手上的活会变快、变准。这一条最好懂,也最容易被当成全部——很多人对分工的理解就到这里为止。",
+        "**省下换手的时间。**从一件活转到另一件活,要放下这套工具、拿起那套工具、走到那张台子边上。**但他特别点明:损失的不只是走过去那几步路。**一个人换活之后,通常会有一小段「心不在焉」——手还在动,心思还没跟上来。他用了一个很准的说法:人在换活之后往往会**闲荡一阵子**,那是不知不觉的。",
+        "**机器往往是干这个活的人自己想出来的。**眼睛长期只盯着一个动作,才会琢磨出一个装置替掉它。**分工不只提高了现有工艺的效率,它还提高了「改进工艺」的概率。**"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**第二条今天有个专门的名字,叫「上下文切换」。**任何一个被会议切碎过一天的人都懂:开完一小时的会回到桌前,真正损失的不是那一小时,**是重新把脑子装回那件事里去的那二十分钟。**斯密在一七七六年就把这一条写下来了,而且他强调这种损耗**通常大于人们的估计。**"
+    },
+    {
+      "type": "p",
+      "text": "第三条则是他最有远见的一笔。他讲了一个可能不太可靠、但极其动人的故事:早期的蒸汽机需要一个男孩守在旁边,不停地开关一个阀门。有个男孩想跟同伴去玩,**就用一根绳子把阀门的把手拴到机器的另一个会动的部件上**;从此阀门自己会开关,他跑掉了。**一项改良,来自一个想偷懒的孩子。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "三个原因里,前两个是省,第三个是生。省下来的效率有上限——手再快也快不过极限;而「生」是没有上限的:一台替掉这个动作的机器,把整条线的水平抬到另一个高度。斯密把最不显眼的一条放在最后,却是它把分工从「干得快些」变成了「进步」。",
+      "svg": "<svg viewBox='0 0 620 260' xmlns='http://www.w3.org/2000/svg'><text x='310' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>为什么会多产:三个原因</text><rect x='22' y='48' width='176' height='96' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='222' y='48' width='176' height='96' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='422' y='48' width='176' height='96' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='110' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>一 · 熟练</text><text x='310' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>二 · 不必换手</text><text x='510' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>三 · 长出机器</text><text x='110' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>同一动作重复上万遍</text><text x='310' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>省的不只是那几步路</text><text x='510' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>盯久了才想得出替代它的装置</text><text x='110' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>手上的活变快变准</text><text x='310' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>今天叫「上下文切换」</text><text x='510' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>那个拴绳子的男孩</text><text x='210' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>前两个是「省」 —— 有上限</text><text x='470' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>第三个是「生」 —— 没有上限</text><line x1='310' y1='158' x2='310' y2='190' style='stroke:var(--line);stroke-width:1'/><text x='310' y='218' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>手再快也快不过极限;一台机器却把整条线抬到另一个高度</text><text x='310' y='244' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>最不显眼的一条放在最后,却是它把分工从「干得快些」变成了「进步」</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**这三条排的顺序值得留意:前两个是「省」,第三个是「生」。**省是有上限的——手再快也快不过人的极限,换手的时间省到零也就到头了。**而「生」没有上限**:一台替掉这个动作的机器,把整条线的水平抬到另一个高度,然后新的分工又在新高度上重新开始。**斯密把最不显眼的一条放在最后,却正是它把分工从「干得快一些」变成了「进步」。**"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "留意用字",
+      "items": [
+        "斯密说,这类改良「**是由使用机器的普通工人发明的**」——他把发明的功劳给了车间里的人,而不是发明家或工程师。这在十八世纪是个很不寻常的姿态。",
+        "但他没有把话说死。他接着补充:也有很多改良来自**专门制造机器的人**,还有一些来自那些「什么也不做、只负责观察一切」的**哲学家或思想家**——因为他们的本行就是把毫不相干的东西联在一起看。**而「专职思考」本身,也是分工的产物。**这个回环很漂亮:分工造出了一批专门想事情的人,这批人反过来又推进了分工。"
+      ]
+    },
+    { "type": "h2", "text": "三、分工从哪来:一个没有设计者的秩序" },
+    {
+      "type": "p",
+      "text": "如果分工这么好,那是谁想出来的?**斯密的回答是全书方法论的定音一击:没有谁想出来的。**"
+    },
+    {
+      "type": "p",
+      "text": "他明说,分工**不是任何人智慧的产物**,不是有人预见到它会带来富裕才去推行的;它是人性中某一种倾向缓慢生长的结果,而那个倾向是:**互通有无、以物易物、互相交易。**"
+    },
+    {
+      "type": "p",
+      "text": "这一步很要紧。**它意味着经济秩序是「长出来的」,不是「造出来的」。**后来整个「自发秩序」的思想传统——从苏格兰启蒙到二十世纪的哈耶克——都是从这句话往下接的。**而它也解释了斯密全书的语气:他很少说「应该建立什么」,他更常说「拆掉什么之后,东西自己会长」。**"
+    },
+    {
+      "type": "p",
+      "text": "接着是全书被引用得第二多的那句话。他在讲人怎么从别人那里得到帮助时说:靠乞求是不行的,**你得让对方觉得帮你对他自己有好处。**"
+    },
+    {
+      "type": "quote",
+      "original": "我们的晚餐并非来自屠夫、酿酒师或面包师的恩惠,而是出于他们对自身利益的考虑。",
+      "translation": "第一篇第二章。这句话常被当成「人性自私」的宣言,其实它讲的是一件更技术性的事:一个陌生人社会靠什么运转。你没法请求全城的人都爱你,但你可以让他们各自觉得跟你做这笔买卖划算——所以斯密紧接着说,我们不谈自己的需要,只谈对方的利益。"
+    },
+    {
+      "type": "p",
+      "text": "**这句话最容易被读岔的地方是:它并不否认仁慈存在。**斯密另一本书《道德情操论》开篇第一句就说,人无论被认为多么自私,天性里总有些东西使他关心别人的命运。**他要说的是:仁慈这种东西,规模上不够用。**你可以指望父母的仁慈、朋友的仁慈,**但你没法指望一座城市里几万个陌生人的仁慈**——而一顿晚餐背后,恰恰站着几万个陌生人。"
+    },
+    {
+      "type": "p",
+      "text": "他还举了个古怪的旁证:**没有人见过两条狗公平审慎地拿一根骨头换另一根骨头。**动物也会合作——两条猎犬追同一只兔子时,配合得像有默契;**但那是本能的同向,不是交换。**交换需要「我知道你想要什么,而且我愿意用你想要的,换我想要的」,**这一步只有人类走出来了。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "全书前三章其实是一条因果链:先有交换的倾向,才有分工;先有市场的范围,分工才细得下去;分工细了,产物才多,财富才增。这条链是斯密对「财富从哪来」这个问题的完整回答,而它的第一环是人性,不是政策。",
+      "svg": "<svg viewBox='0 0 620 250' xmlns='http://www.w3.org/2000/svg'><text x='310' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>第一篇前三章的那条链</text><rect x='16' y='58' width='126' height='58' rx='5' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='166' y='58' width='126' height='58' rx='5' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='316' y='58' width='126' height='58' rx='5' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='466' y='58' width='134' height='58' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='79' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>交换的倾向</text><text x='229' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>分工</text><text x='379' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>劳动生产力大增</text><text x='533' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>年产物变多</text><text x='79' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>人性里的老根</text><text x='229' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>没有设计者</text><text x='379' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>熟练 · 省时 · 生机器</text><text x='533' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>这就是国富</text><path d='M146 87 L162 87' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M156 83 L162 87 L156 91' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M296 87 L312 87' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M306 83 L312 87 L306 91' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M446 87 L462 87' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M456 83 L462 87 L456 91' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M229 124 L229 152' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1;stroke-dasharray:4 3'/><rect x='140' y='156' width='180' height='36' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1'/><text x='230' y='179' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>但它被市场范围卡住(下一章)</text><text x='310' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>这条链的第一环是人性,不是政策 —— 所以他很少说「该建什么」</text></svg>"
+    },
+    { "type": "h2", "text": "四、一句十八世纪的激进话" },
+    {
+      "type": "p",
+      "text": "第二章的末尾,斯密顺手把一个更大的东西掀了。当时的常识是:**人生下来就分三六九等,聪明的人做聪明的事,粗笨的人做粗笨的活。**斯密说:**未必。**"
+    },
+    {
+      "type": "p",
+      "text": "他的说法是:**哲学家与街头挑夫之间的差别,与其说来自天性,不如说来自习惯、风俗和教育。**两个人在六七岁的时候,父母和玩伴都看不出他们有多少分别;**是后来各自被摆到不同的位置上,才一年年磨出了那道鸿沟。**"
+    },
+    {
+      "type": "p",
+      "text": "**这句话有两层意思,第二层更狠。**第一层是「天赋差距被高估了」。第二层是:**那道鸿沟本身是分工的产物**——不是因为一个人聪明才去做哲学家,而是因为他被放在了做哲学家的位置上,**几十年后才显得聪明。**所以斯密说:**分工不只是天赋差异的结果,也是天赋差异的原因。**"
+    },
+    {
+      "type": "p",
+      "text": "他甚至把这一条推得更远:正因为人与人的天生差别不大,人才**特别需要交换**——狗与狗之间的天赋差别其实比人大得多(猎犬、牧羊犬、獒犬各有绝活),可它们没法交换,**于是每条狗的特长对别的狗毫无用处**;人的天赋差别虽小,却因为能交换而**汇成了一个公共的池子**,每个人都能从别人的特长里取用。"
+    },
+    {
+      "type": "p",
+      "text": "**这个对照要慢一点读,因为它把「交换」的地位抬得很高。**没有交换,天赋是各自锁死的:你会做这个,我会做那个,谁也用不上谁。**有了交换,天赋才第一次变成公共财产**——你身上那点特长,通过一次次买卖,进了所有人的日子里。**所以在斯密这里,市场不只是买卖的场所,它还是一个把个人的能力汇总起来的装置。**"
+    },
+    {
+      "type": "pull",
+      "text": "不是聪明的人去做了那件事,而是做了那件事的人,几十年后显得聪明。"
+    },
+    {
+      "type": "p",
+      "text": "**这一层要记住,因为它埋着一个伏笔。**既然位置能把人磨成哲学家,它当然也能把人磨成别的样子。**斯密在第五篇里会把这句话翻过来再说一遍,而且说得非常难听**——那时他要算的,是分工在人身上留下的另一笔账。同一本书的开头和结尾,对同一件事给了两个方向的评价,**而这恰恰是这本书比它的名声可靠得多的地方。**"
+    }
+  ]
+}

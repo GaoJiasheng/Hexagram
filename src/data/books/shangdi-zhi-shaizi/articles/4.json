@@ -1,0 +1,163 @@
+{
+  "title": "玻尔的原子:一个漂亮却站不住的补丁",
+  "subtitle": "按当时最好的理论,原子根本不该存在;玻尔的办法是直接规定它存在——算得极准,却说不出凭什么",
+  "centralIdea": "1911 年卢瑟福用一束粒子打金箔,打出了一个让所有人头疼的图景:原子的质量几乎全挤在中心一个极小的核里,电子在外面绕。麻烦在于,按当时最可靠的电磁理论,绕圈的电子会不停辐射能量,应该在千亿分之一秒内螺旋着掉进核里——也就是说,按最好的理论,原子根本不该存在。玻尔 1913 年的解法在方法上近乎耍赖:他直接规定电子只能待在某些轨道上、在这些轨道上不辐射、跃迁时一次性吞吐一整份 hν。凭这三条硬规定,他算出了氢原子的全部谱线,还能从电荷、质量和 h 反推出实验上早已测得的里德伯常数——精确到当时人们不敢相信。但这个模型只对氢灵,算氦就完全不行;它给不出谱线的强弱;更根本的是,它说不出凭什么是这些轨道。它是一件把经典力学和量子规定硬绑在一起的拼装货,自己也知道自己是过渡。这一章要讲的正是这种「明知不对却极其有用」的中间状态——科学史上,这才是常态。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "1909 年,卢瑟福的两个助手用一束带正电的粒子去轰击一张极薄的金箔。按当时流行的原子图景(正电荷像布丁一样均匀摊开,电子像葡萄干嵌在里面),这些粒子应该几乎全部直穿过去,顶多偏一点点。**结果有极少数粒子被弹了回来。**卢瑟福后来形容这件事时用了一个后来被引用了无数遍的比方:**这就好像你拿一发十五英寸的炮弹去打一张薄纸,炮弹却被弹回来打中了你自己。**"
+    },
+    {
+      "type": "h2",
+      "text": "一、按最好的理论,原子不该存在"
+    },
+    {
+      "type": "p",
+      "text": "卢瑟福由此推出:**原子的正电荷和几乎全部质量,挤在中心一个极小的核里**——小到什么程度?如果把原子放大成一个体育场,原子核大约只有场中央的一粒米。电子在外面很远的地方绕着它转。这个图景直观、好记,今天还印在各种商标和教科书封面上。**它有一个致命问题。**"
+    },
+    {
+      "type": "p",
+      "text": "按麦克斯韦电磁学,**任何做加速运动的带电粒子都会辐射电磁波**,也就是不断损失能量。而绕圈就是一种加速运动(方向一直在变)。**于是电子会一边转一边失能,螺旋着掉进核里。**算一下这个过程要多久:**大约千亿分之一秒。**换句话说,按当时最可靠的理论,**所有原子都应该在一眨眼之前就塌掉了,物质根本不该存在。**"
+    },
+    {
+      "type": "p",
+      "text": "还有第二个问题。电子在螺旋下落时,轨道半径连续变小,**辐射的频率应该连续变化**,于是我们该看到一条连续的、彩虹一样的光谱。**可实验上看到的完全不是这样。**把氢气点亮,分光后看到的是**几条孤零零的亮线**,位置固定得像刻在那儿一样。**自然界似乎只允许某些特定的颜色被发出来。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "svg": "<svg viewBox='0 0 560 262' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>理论说的和实验看到的,差得不是一点</text><g style='font-family:var(--font-serif);font-size:11.5px'><rect x='24' y='46' width='240' height='150' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='144' y='70' text-anchor='middle' style='font-size:13px;font-weight:bold;fill:var(--ink)'>经典理论的预言</text><path d='M144 132 m0,-46 a46,46 0 1,1 -0.1,0 M144 132 m0,-34 a34,34 0 1,1 -0.1,0 M144 132 m0,-22 a22,22 0 1,1 -0.1,0 M144 132 m0,-10 a10,10 0 1,1 -0.1,0' style='fill:none;stroke:var(--ink-soft);stroke-width:1'/><circle cx='144' cy='132' r='4' style='fill:var(--ink)'/><text x='144' y='192' text-anchor='middle' style='fill:var(--ink-soft)'>电子螺旋坠落,约 10⁻¹¹ 秒塌缩</text><rect x='296' y='46' width='240' height='150' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='416' y='70' text-anchor='middle' style='font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>实验看到的</text><rect x='316' y='96' width='200' height='40' style='fill:var(--ink-soft);opacity:0.14'/><g style='stroke:var(--cinnabar-pure);stroke-width:2.6'><path d='M346 96 L346 136'/><path d='M394 96 L394 136'/><path d='M434 96 L434 136'/><path d='M462 96 L462 136'/><path d='M480 96 L480 136'/></g><text x='416' y='160' text-anchor='middle' style='fill:var(--ink-soft)'>几条位置固定的亮线</text><text x='416' y='182' text-anchor='middle' style='fill:var(--ink-faint)'>而且间距有规律,像一串密码</text></g><text x='280' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>一边是「原子活不过一瞬间」,一边是原子稳定得能构成整个世界</text><text x='280' y='250' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>这不是精度不够,是方向性的、整条命的矛盾</text></svg>",
+      "caption": "留意这里的反常有多硬:**它不是「小数点后第六位对不上」,而是「按理论算,你我都不该存在」。**上一章说过,乌云通常出现在理论最精确的地方;而这一次的裂口大到无法打补丁绕过——**必须有人做点出格的事。**"
+    },
+    {
+      "type": "h2",
+      "text": "二、那几条谱线是一串没人读得懂的密码"
+    },
+    {
+      "type": "p",
+      "text": "还有一段前史值得说。早在 1885 年,一位瑞士的中学教师巴尔末做了一件在专业物理学家看来很不入流的事:**他盯着氢原子那几条可见谱线的波长数字,硬凑出了一个公式。**这个公式没有任何理论依据,纯粹是数字游戏,**但它算得分毫不差**,而且预言了当时还没测到的几条线,后来一一被找到。"
+    },
+    {
+      "type": "p",
+      "text": "此后又有人把它推广成更一般的形式,里面出现一个常数(里德伯常数),这个常数被测得极准,**却没有人知道它是从哪儿来的。**当时的局面像这样:**大自然给了我们一串精确到小数点后好几位的数字,而没有人认得这门语言。**——这也是一切理论突破前最典型的场面:**数据早就在那儿,缺的是读法。**"
+    },
+    {
+      "type": "h2",
+      "text": "三、玻尔的做法:直接规定"
+    },
+    {
+      "type": "p",
+      "text": "1913 年,二十七岁的丹麦人玻尔发表了三篇论文,他的做法在方法论上近乎耍赖。**他没有解释矛盾,他绕过了矛盾——用几条硬性规定。**"
+    },
+    {
+      "type": "p",
+      "text": "有个小插曲很能说明「读法」的重要。玻尔当时在英国跟着卢瑟福做事,一直在琢磨原子的稳定性,却**并不熟悉光谱学那一摊数字**——那在当时被许多物理学家看作偏门的分类工作,像集邮。直到有位同事把巴尔末公式指给他看,**他后来回忆说,一看到那个公式,整件事立刻就清楚了。**这里的教训不在于「天才一点就通」,而在于:**那串数字在桌上已经躺了二十八年,缺的从来不是数据,是把它和另一个问题接起来的那一下。**"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**电子只能待在某些特定的轨道上**,不是想在哪就在哪。这些轨道由一个整数编号(后来叫量子数)。",
+        "**在这些轨道上,电子不辐射能量。**——这一条直接和麦克斯韦电磁学冲突,玻尔就是明说「这里不适用」。",
+        "**只有在轨道之间跳变时,才一次性吞进或吐出一整份能量**,大小是两条轨道的能量差,对应的光的频率由 hν 定。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "然后奇迹发生了。**用这三条规定算下去,巴尔末那个凑出来的公式自动跑了出来**;更漂亮的是,**那个来路不明的里德伯常数,可以由电子的电荷、质量和普朗克常数三个已知量算出来**,算出的值和实验测的对上了。玻尔还顺手解决了一桩悬案:某些恒星光谱里一组本以为属于氢的谱线,**他指出那其实是失去一个电子的氦**——后来实验证实他是对的。"
+    },
+    {
+      "type": "p",
+      "text": "但同行的第一反应不是欢呼。他的老师卢瑟福读完稿子,写信提了一个极其要命的问题——**这个问题在往后的一百年里从未被真正回答,只是被换了说法。**"
+    },
+    {
+      "type": "quote",
+      "original": "当电子从一个定态跳到另一个定态时,它怎么知道自己要以什么频率振动?看来你不得不假定,电子事先就知道它要在哪里停下。",
+      "translation": "卢瑟福 1913 年读了玻尔的稿子后写给他的信。这个诘问直指要害:一次跃迁的「结果」似乎在跃迁「之前」就已经参与了决定。十几年后,这个困惑会以更尖锐的形式重新出现,叫作测量问题。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "svg": "<svg viewBox='0 0 560 268' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>能级与谱线:那串密码是这样被读出来的</text><g style='font-family:var(--font-serif);font-size:11.5px'><path d='M60 190 L300 190' style='stroke:var(--ink);stroke-width:2'/><text x='40' y='194' style='fill:var(--ink)'>n=1</text><path d='M60 146 L300 146' style='stroke:var(--ink-soft);stroke-width:1.6'/><text x='40' y='150' style='fill:var(--ink-soft)'>n=2</text><path d='M60 116 L300 116' style='stroke:var(--ink-soft);stroke-width:1.4'/><text x='40' y='120' style='fill:var(--ink-soft)'>n=3</text><path d='M60 96 L300 96' style='stroke:var(--ink-faint);stroke-width:1.2'/><text x='40' y='100' style='fill:var(--ink-faint)'>n=4</text><path d='M60 82 L300 82' style='stroke:var(--ink-faint);stroke-width:1.2'/><text x='40' y='86' style='fill:var(--ink-faint)'>n=5</text><g style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'><path d='M120 116 L120 144 M115 137 L120 145 L125 137'/><path d='M180 96 L180 144 M175 137 L180 145 L185 137'/><path d='M240 82 L240 144 M235 137 L240 145 L245 137'/></g><text x='180' y='214' text-anchor='middle' style='fill:var(--ink-soft)'>落回 n=2 的那几种跳法</text><text x='180' y='234' text-anchor='middle' style='fill:var(--ink-faint)'>正好对应可见光区的几条亮线</text><rect x='340' y='72' width='196' height='128' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='438' y='96' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>屏上看到的</text><rect x='356' y='112' width='164' height='34' style='fill:var(--ink-soft);opacity:0.14'/><g style='stroke:var(--cinnabar-pure);stroke-width:2.6'><path d='M386 112 L386 146'/><path d='M424 112 L424 146'/><path d='M456 112 L456 146'/></g><text x='438' y='172' text-anchor='middle' style='fill:var(--ink-soft)'>每条线 = 一种跳法</text><text x='438' y='192' text-anchor='middle' style='fill:var(--ink-faint)'>能量差决定颜色</text></g><text x='280' y='256' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>谱线不是「元素的颜色」,是它内部能级之间的差价表</text></svg>",
+      "caption": "这张图值得多看一眼,因为它是「量子」这个概念第一次从辐射走进**物质结构**。**谱线的位置之所以固定,是因为能级的位置固定;而能级之所以固定,是因为玻尔规定它固定。**——注意最后半句:这正是这个模型漂亮而又站不住的地方。"
+    },
+    {
+      "type": "h2",
+      "text": "四、「跃迁」这个词,后来被用坏了"
+    },
+    {
+      "type": "p",
+      "text": "既然这里第一次出现了「跃迁」,就得把它的意思钉住,因为**这个词后来在中文世界的命运非常糟糕。**在物理里,跃迁指的是**体系从一个能级换到另一个能级**,同时吞吐一份对应的能量。它的「跳」不是空间上的瞬移,不是电子从这个圈子里嗖地一下出现在那个圈子里——**在后来成熟的量子力学里,根本就没有「轨道」这回事,电子是一片概率云,谈不上在哪个圈上跑。**"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "容易读岔",
+      "items": [
+        "「量子跃迁」被搬去讲人生,大意是:**「人可以不经过中间过程,直接跳到一个更高的层次。」**这个用法把两件事都搞错了。第一,**跃迁的「不经过中间」是因为中间那些能级根本不存在**,不是因为跳过了努力;人生的「中间状态」显然是存在的。第二,**跃迁需要恰好一份能量,不多不少**——多了少了都不发生。**要真拿它类比,得出的结论也该是「必须刚好凑够那一份」,而不是「可以凭空一步登天」。**"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "五、漂亮,却站不住"
+    },
+    {
+      "type": "p",
+      "text": "玻尔模型的问题,在它成功的当天就摆在那儿了。**第一,它只对氢原子(以及只剩一个电子的类氢离子)灵。**加到氦——第二简单的元素、两个电子——就算不出来了,而且不是精度问题,是根本算不动。**第二,它给不出谱线的强弱。**实验上有的线亮有的线暗,模型对此一言不发。**第三,也是最要命的:凭什么是这些轨道?**为什么在上面不辐射?玻尔的回答只能是:因为这样才和实验对得上。"
+    },
+    {
+      "type": "p",
+      "text": "接下来的十来年,一批人往这个模型上不停打补丁。**索末菲把圆轨道推广成椭圆轨道,又加进相对论修正**,居然把一些精细的谱线分裂也算对了;为了对付更复杂的情形,又陆续加进新的量子数。**这段时期后来被称为「旧量子论」:一半经典、一半规定,靠不断增加规则来对付不断增加的实验事实。**每加一条,模型就更准一点,也更难看一点。"
+    },
+    {
+      "type": "p",
+      "text": "**玻尔自己是最清楚这件事的人。**他提出过一条「对应原理」:量子理论在体系变大、量子数变高时,必须自动退回经典物理的结果。**这条原理与其说是一个定律,不如说是一根拐杖**——它承认新理论还立不住,得靠和旧理论对表来找方向。**一个理论如果需要靠「在极限情况下别出错」来自我校准,说明它自己还没有地基。**"
+    },
+    {
+      "type": "p",
+      "text": "1925 年前后又添了两块很重的补丁。**泡利提出「不相容原理」:同一个状态上不能有两个电子。**这条规定同样是从实验倒推出来的——它一举讲清了元素周期表为什么长成那个样子、为什么电子要一层一层往外排。几乎同时,两个荷兰研究生提出电子还带有一种叫**自旋**的内禀属性。**这两样东西都极其管用,也都不是从任何更基本的原理推出来的,而是被数据逼着加上去的。**旧量子论到这里已经像一件补丁摞补丁的衣服:每一块都合身,整体却没有一根统一的线。"
+    },
+    {
+      "type": "figure",
+      "ftype": "清单图",
+      "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>旧量子论:十二年,一层层补丁</text><g style='font-family:var(--font-serif);font-size:11.5px'><rect x='34' y='48' width='118' height='58' rx='4' style='fill:none;stroke:var(--line);stroke-width:1.1'/><text x='93' y='70' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>1913 圆轨道</text><text x='93' y='90' text-anchor='middle' style='fill:var(--ink-soft)'>氢原子一算就中</text><rect x='168' y='48' width='118' height='58' rx='4' style='fill:none;stroke:var(--line);stroke-width:1.1'/><text x='227' y='70' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>1916 椭圆轨道</text><text x='227' y='90' text-anchor='middle' style='fill:var(--ink-soft)'>加相对论修正</text><rect x='302' y='48' width='118' height='58' rx='4' style='fill:none;stroke:var(--line);stroke-width:1.1'/><text x='361' y='70' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>更多量子数</text><text x='361' y='90' text-anchor='middle' style='fill:var(--ink-soft)'>对付谱线分裂</text><rect x='436' y='48' width='118' height='58' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='495' y='70' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>1925 不相容</text><text x='495' y='90' text-anchor='middle' style='fill:var(--ink-soft)'>与自旋</text></g><g style='fill:none;stroke:var(--ink-soft);stroke-width:1.1'><path d='M156 77 L164 77 M159 73 L165 77 L159 81'/><path d='M290 77 L298 77 M293 73 L299 77 L293 81'/><path d='M424 77 L432 77 M427 73 L433 77 L427 81'/></g><text x='280' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>每加一条,算得更准一点,理论也更难看一点</text><text x='280' y='168' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>共同点:全部是从实验倒推出来的规定,没有一条能从更基本的原理导出</text><text x='280' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>1925 年夏天,有人决定不再修这件衣服,而是重新裁一件</text><text x='280' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>——那就是下一章的海森堡</text></svg>",
+      "caption": "看这条补丁链有个实用的启发:**「补丁越打越多」本身就是一个信号。**当一个框架需要不断增加特设规则才能跟上数据时,通常说明它的地基有问题。**但请注意,这个信号只有在事后才清晰**——身在其中的人,面对的永远是「再加一条就能对上了」的诱惑,而那多半也是真的。"
+    },
+    {
+      "type": "pull",
+      "text": "它算得比谁都准,也承认自己讲不出道理——这种「明知不对却极其有用」的中间状态,才是科学史的常态。"
+    },
+    {
+      "type": "h2",
+      "text": "六、那这个补丁的价值在哪"
+    },
+    {
+      "type": "p",
+      "text": "如果只看对错,玻尔模型今天已经全错了:没有轨道,没有绕圈,连「电子在某处」这句话都要小心地说。**但它的历史价值极大,而且是三重的。**"
+    },
+    {
+      "type": "p",
+      "text": "**第一,它把量子从「辐射的性质」搬进了「物质的结构」。**在此之前,h 只是炉壁振子和光身上的怪事;从此以后,**整个物质世界的骨架都是量子化的。**第二,**它把一批模糊的实验数字变成了可算的东西**,让整整一代人有活可干、有靶可打——包括后来推翻它的那批年轻人。第三,也许最重要:**它在哥本哈根聚起了一个人群。**玻尔 1921 年建起自己的研究所,此后十几年里,海森堡、泡利、狄拉克这些名字都在那里进进出出。**那种没完没了地讨论、争吵、把一个念头磨到透亮的风气,是后来那场突破的土壤。**"
+    },
+    {
+      "type": "p",
+      "text": "顺带说一句流传甚广的话:**「任何不为量子论感到震惊的人,都还没有理解它。」**这句话通常被安在玻尔头上,但可靠的原始出处并不清楚。**意思当然是对的——本章讲的这个模型,恰恰是「知道自己不对却不得不用」的最好样本。**只是引用时,不妨把它当作一句流传下来的行话,而不是某人某年某日的原话。"
+    },
+    {
+      "type": "h2",
+      "text": "七、这一章该带走什么"
+    },
+    {
+      "type": "p",
+      "text": "**第一,记住「原子不该存在」这个反常的量级。**它不是精度问题,而是整条命的矛盾。**当一个理论推出「你我不该存在」时,该被换掉的一定是理论。**这条判断在下一章会再用一次。"
+    },
+    {
+      "type": "p",
+      "text": "**第二,把「跃迁」这个词钉死。**它是能级换挡,不是一步登天;它需要刚好一份能量,不多不少。**这是本文第 10 章那份「防身清单」的第一条。**"
+    },
+    {
+      "type": "p",
+      "text": "**第三,别急着嘲笑「打补丁」。**旧量子论确实丑陋,但那十来年的补丁把问题一点点逼到了死角:哪些东西非量子化不可、哪些经典概念必须扔掉,都是在这一轮轮修修补补里试出来的。**下一章那两位二十几岁的年轻人之所以能一步跨过去,是因为前面已经有人把死路一条条走完了。**"
+    }
+  ]
+}
