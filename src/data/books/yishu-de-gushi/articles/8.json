@@ -7,7 +7,10 @@
       "type": "lead",
       "text": "1874 年，一群被官方沙龙冷落的画家凑钱办了个展览。有位记者去看了，写了篇尖刻的评论，从其中一幅题作《日出·印象》的小画里挑出一个词，用来嘲笑这整批人：**印象派。**他的意思很明确——**这些人交上来的不是画，是印象，是没画完的草稿。**这个当年的骂名后来成了美术史上最响亮的招牌之一。这一章要讲的是：他们究竟改了什么，为什么改得那么刺眼，以及这次改动付出了什么代价。"
     },
-    { "type": "h2", "text": "一、他们到底改了什么" },
+    {
+      "type": "h2",
+      "text": "一、他们到底改了什么"
+    },
     {
       "type": "p",
       "text": "一句话说完：**他们不再画「东西」，改画「此刻落在东西上的光」。**"
@@ -25,8 +28,16 @@
         "**笔触不再抹平。**一笔颜色摆上去，不去揉、不去接，就让它留在那儿。相邻的几笔各是各的颜色，**要退开几步，它们才在你眼睛里混成一片。**这是最刺眼的一条，也是「没画完」这个骂名的直接来源。"
       ]
     },
-    { "type": "figure", "ftype": "对照图", "caption": "同一片颜色，两种做法。**左边在调色板上先调好，右边把两种颜色分开摆、让眼睛去调。**右边的结果更亮、更跳、更有空气感——因为颜料混合会越混越暗，而光在眼睛里的混合不会。**这就是为什么印象派的画必须退开几步看。**", "svg": "<svg viewBox='0 0 560 240' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>在调色板上混，还是在眼睛里混</text><rect x='36' y='44' width='196' height='120' rx='4' style='fill:var(--ochre)' opacity='0.55'/><rect x='36' y='44' width='196' height='120' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><g><rect x='328' y='44' width='196' height='120' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2'/><g style='fill:var(--gold)' opacity='0.85'><rect x='336' y='52' width='16' height='16'/><rect x='368' y='52' width='16' height='16'/><rect x='400' y='52' width='16' height='16'/><rect x='432' y='52' width='16' height='16'/><rect x='464' y='52' width='16' height='16'/><rect x='496' y='52' width='16' height='16'/><rect x='352' y='84' width='16' height='16'/><rect x='384' y='84' width='16' height='16'/><rect x='416' y='84' width='16' height='16'/><rect x='448' y='84' width='16' height='16'/><rect x='480' y='84' width='16' height='16'/><rect x='336' y='116' width='16' height='16'/><rect x='368' y='116' width='16' height='16'/><rect x='400' y='116' width='16' height='16'/><rect x='432' y='116' width='16' height='16'/><rect x='464' y='116' width='16' height='16'/><rect x='496' y='116' width='16' height='16'/><rect x='352' y='140' width='16' height='16'/><rect x='384' y='140' width='16' height='16'/><rect x='416' y='140' width='16' height='16'/><rect x='448' y='140' width='16' height='16'/><rect x='480' y='140' width='16' height='16'/></g><g style='fill:var(--azure)' opacity='0.7'><rect x='352' y='52' width='16' height='16'/><rect x='384' y='52' width='16' height='16'/><rect x='416' y='52' width='16' height='16'/><rect x='448' y='52' width='16' height='16'/><rect x='480' y='52' width='16' height='16'/><rect x='336' y='84' width='16' height='16'/><rect x='368' y='84' width='16' height='16'/><rect x='400' y='84' width='16' height='16'/><rect x='432' y='84' width='16' height='16'/><rect x='464' y='84' width='16' height='16'/><rect x='496' y='84' width='16' height='16'/><rect x='352' y='116' width='16' height='16'/><rect x='384' y='116' width='16' height='16'/><rect x='416' y='116' width='16' height='16'/><rect x='448' y='116' width='16' height='16'/><rect x='480' y='116' width='16' height='16'/><rect x='336' y='140' width='16' height='16'/><rect x='368' y='140' width='16' height='16'/><rect x='400' y='140' width='16' height='16'/><rect x='432' y='140' width='16' height='16'/><rect x='464' y='140' width='16' height='16'/><rect x='496' y='140' width='16' height='16'/></g></g><g style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold'><text x='134' y='190' text-anchor='middle' style='fill:var(--ink)'>先调好，再涂上去</text><text x='426' y='190' text-anchor='middle' style='fill:var(--cinnabar-pure)'>分开摆，退远了自己会混</text></g><g style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'><text x='134' y='212' text-anchor='middle'>颜料越混越暗、越混越死</text><text x='426' y='212' text-anchor='middle'>凑近是一堆色块，退开是一片会呼吸的颜色</text></g></svg>" },
-    { "type": "h2", "text": "二、为什么当年那么刺眼" },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "caption": "同一片颜色，两种做法。**左边在调色板上先调好，右边把两种颜色分开摆、让眼睛去调。**右边的结果更亮、更跳、更有空气感——因为颜料混合会越混越暗，而光在眼睛里的混合不会。**这就是为什么印象派的画必须退开几步看。**",
+      "svg": "<svg viewBox='0 0 560 240' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>在调色板上混，还是在眼睛里混</text><rect x='36' y='44' width='196' height='120' rx='4' style='fill:var(--ochre)' opacity='0.55'/><rect x='36' y='44' width='196' height='120' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><g><rect x='328' y='44' width='196' height='120' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2'/><g style='fill:var(--gold)' opacity='0.85'><rect x='336' y='52' width='16' height='16'/><rect x='368' y='52' width='16' height='16'/><rect x='400' y='52' width='16' height='16'/><rect x='432' y='52' width='16' height='16'/><rect x='464' y='52' width='16' height='16'/><rect x='496' y='52' width='16' height='16'/><rect x='352' y='84' width='16' height='16'/><rect x='384' y='84' width='16' height='16'/><rect x='416' y='84' width='16' height='16'/><rect x='448' y='84' width='16' height='16'/><rect x='480' y='84' width='16' height='16'/><rect x='336' y='116' width='16' height='16'/><rect x='368' y='116' width='16' height='16'/><rect x='400' y='116' width='16' height='16'/><rect x='432' y='116' width='16' height='16'/><rect x='464' y='116' width='16' height='16'/><rect x='496' y='116' width='16' height='16'/><rect x='352' y='140' width='16' height='16'/><rect x='384' y='140' width='16' height='16'/><rect x='416' y='140' width='16' height='16'/><rect x='448' y='140' width='16' height='16'/><rect x='480' y='140' width='16' height='16'/></g><g style='fill:var(--azure)' opacity='0.7'><rect x='352' y='52' width='16' height='16'/><rect x='384' y='52' width='16' height='16'/><rect x='416' y='52' width='16' height='16'/><rect x='448' y='52' width='16' height='16'/><rect x='480' y='52' width='16' height='16'/><rect x='336' y='84' width='16' height='16'/><rect x='368' y='84' width='16' height='16'/><rect x='400' y='84' width='16' height='16'/><rect x='432' y='84' width='16' height='16'/><rect x='464' y='84' width='16' height='16'/><rect x='496' y='84' width='16' height='16'/><rect x='352' y='116' width='16' height='16'/><rect x='384' y='116' width='16' height='16'/><rect x='416' y='116' width='16' height='16'/><rect x='448' y='116' width='16' height='16'/><rect x='480' y='116' width='16' height='16'/><rect x='336' y='140' width='16' height='16'/><rect x='368' y='140' width='16' height='16'/><rect x='400' y='140' width='16' height='16'/><rect x='432' y='140' width='16' height='16'/><rect x='464' y='140' width='16' height='16'/><rect x='496' y='140' width='16' height='16'/></g></g><g style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold'><text x='134' y='190' text-anchor='middle' style='fill:var(--ink)'>先调好，再涂上去</text><text x='426' y='190' text-anchor='middle' style='fill:var(--cinnabar-pure)'>分开摆，退远了自己会混</text></g><g style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'><text x='134' y='212' text-anchor='middle'>颜料越混越暗、越混越死</text><text x='426' y='212' text-anchor='middle'>凑近是一堆色块，退开是一片会呼吸的颜色</text></g></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "二、为什么当年那么刺眼"
+    },
     {
       "type": "p",
       "text": "今天印象派挂满了日历和马克杯，是最没有攻击性的一类画。**所以必须费点力气才能想起来它当年有多冒犯。**"
@@ -47,13 +58,24 @@
       "type": "p",
       "text": "把他放在这里，是因为他标出了这条路的真正方向：**一路走下去，最后会走到「承认画布是平的」。**而这件事，要再过四十年才有人敢挑明说出来。"
     },
-    { "type": "pull", "text": "分歧一旦从「水平」升级成「立场」，就不好收场了。" },
-    { "type": "h2", "text": "三、背后有四股力在推" },
+    {
+      "type": "pull",
+      "text": "分歧一旦从「水平」升级成「立场」，就不好收场了。"
+    },
+    {
+      "type": "h2",
+      "text": "三、背后有四股力在推"
+    },
     {
       "type": "p",
       "text": "这一节最能体现贡布里希的方法：**他不满足于说「他们想创新」，而要问「什么条件让这个方向变得可能、甚至变得必要」。**"
     },
-    { "type": "figure", "ftype": "结构图", "caption": "四股力，方向不同但合力一致。**其中照相术那一条最要紧**：一门手艺被机器接走了它最赚钱的功能之后，它必须重新回答「那我是干什么的」——这个问题在此后一百年里推动了几乎所有的转变。", "svg": "<svg viewBox='0 0 560 260' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>把画家推出画室的四股力</text><g style='font-family:var(--font-serif);font-size:11.5px'><rect x='16' y='48' width='128' height='60' rx='5' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='80' y='70' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>照相术</text><text x='80' y='88' text-anchor='middle' style='font-size:10.5px;fill:var(--ink-soft)'>「留个影」这门生意</text><text x='80' y='102' text-anchor='middle' style='font-size:10.5px;fill:var(--ink-soft)'>被机器接走了</text><rect x='158' y='48' width='128' height='60' rx='5' style='fill:var(--paper-raised);stroke:var(--ink-faint);stroke-width:1'/><text x='222' y='70' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>颜料装进了锡管</text><text x='222' y='88' text-anchor='middle' style='font-size:10.5px;fill:var(--ink-soft)'>颜料能带着走了</text><text x='222' y='102' text-anchor='middle' style='font-size:10.5px;fill:var(--ink-soft)'>户外当场作画成为可能</text><rect x='300' y='48' width='128' height='60' rx='5' style='fill:var(--paper-raised);stroke:var(--ink-faint);stroke-width:1'/><text x='364' y='70' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>日本版画</text><text x='364' y='88' text-anchor='middle' style='font-size:10.5px;fill:var(--ink-soft)'>大胆的裁切、平涂</text><text x='364' y='102' text-anchor='middle' style='font-size:10.5px;fill:var(--ink-soft)'>不对称、奇特的视角</text><rect x='442' y='48' width='104' height='60' rx='5' style='fill:var(--paper-raised);stroke:var(--ink-faint);stroke-width:1'/><text x='494' y='70' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>沙龙体制</text><text x='494' y='88' text-anchor='middle' style='font-size:10.5px;fill:var(--ink-soft)'>评审拒之门外</text><text x='494' y='102' text-anchor='middle' style='font-size:10.5px;fill:var(--ink-soft)'>只好自己办展</text><g style='stroke:var(--ink-faint);stroke-width:1'><line x1='80' y1='110' x2='250' y2='152'/><line x1='222' y1='110' x2='266' y2='152'/><line x1='364' y1='110' x2='296' y2='152'/><line x1='494' y1='110' x2='312' y2='152'/></g><rect x='176' y='156' width='208' height='48' rx='5' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='280' y='177' text-anchor='middle' style='font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>去画光，去画此刻</text><text x='280' y='195' text-anchor='middle' style='font-size:10.5px;fill:var(--ink-soft)'>因为「留个影」这件事已经不归画家管了</text></g><text x='280' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>贡布里希的问法：不问「他们为什么想创新」，问「什么条件让这个方向变得必要」</text></svg>" },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "四股力，方向不同但合力一致。**其中照相术那一条最要紧**：一门手艺被机器接走了它最赚钱的功能之后，它必须重新回答「那我是干什么的」——这个问题在此后一百年里推动了几乎所有的转变。",
+      "svg": "<svg viewBox='0 0 560 260' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>把画家推出画室的四股力</text><g style='font-family:var(--font-serif);font-size:11.5px'><rect x='16' y='48' width='128' height='60' rx='5' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='80' y='70' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>照相术</text><text x='80' y='88' text-anchor='middle' style='font-size:10.5px;fill:var(--ink-soft)'>「留个影」这门生意</text><text x='80' y='102' text-anchor='middle' style='font-size:10.5px;fill:var(--ink-soft)'>被机器接走了</text><rect x='158' y='48' width='128' height='60' rx='5' style='fill:var(--paper-raised);stroke:var(--ink-faint);stroke-width:1'/><text x='222' y='70' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>颜料装进了锡管</text><text x='222' y='88' text-anchor='middle' style='font-size:10.5px;fill:var(--ink-soft)'>颜料能带着走了</text><text x='222' y='102' text-anchor='middle' style='font-size:10.5px;fill:var(--ink-soft)'>户外当场作画成为可能</text><rect x='300' y='48' width='128' height='60' rx='5' style='fill:var(--paper-raised);stroke:var(--ink-faint);stroke-width:1'/><text x='364' y='70' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>日本版画</text><text x='364' y='88' text-anchor='middle' style='font-size:10.5px;fill:var(--ink-soft)'>大胆的裁切、平涂</text><text x='364' y='102' text-anchor='middle' style='font-size:10.5px;fill:var(--ink-soft)'>不对称、奇特的视角</text><rect x='442' y='48' width='104' height='60' rx='5' style='fill:var(--paper-raised);stroke:var(--ink-faint);stroke-width:1'/><text x='494' y='70' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>沙龙体制</text><text x='494' y='88' text-anchor='middle' style='font-size:10.5px;fill:var(--ink-soft)'>评审拒之门外</text><text x='494' y='102' text-anchor='middle' style='font-size:10.5px;fill:var(--ink-soft)'>只好自己办展</text><g style='stroke:var(--ink-faint);stroke-width:1'><line x1='80' y1='110' x2='250' y2='152'/><line x1='222' y1='110' x2='266' y2='152'/><line x1='364' y1='110' x2='296' y2='152'/><line x1='494' y1='110' x2='312' y2='152'/></g><rect x='176' y='156' width='208' height='48' rx='5' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='280' y='177' text-anchor='middle' style='font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>去画光，去画此刻</text><text x='280' y='195' text-anchor='middle' style='font-size:10.5px;fill:var(--ink-soft)'>因为「留个影」这件事已经不归画家管了</text></g><text x='280' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>贡布里希的问法：不问「他们为什么想创新」，问「什么条件让这个方向变得必要」</text></svg>"
+    },
     {
       "type": "p",
       "text": "四股里，**照相术那一股值得多说两句。**在照相机之前，如果你想留住一个人的样子、一处风景、一场典礼，唯一的办法是找人画。这门生意养活了几百年的画家。而照相术出现之后，**它做同样的事又快、又便宜、又准。**"
@@ -62,7 +84,10 @@
       "type": "p",
       "text": "一门手艺被机器接走了最赚钱的功能之后，只有两条路：**要么去比机器做得更好（不可能），要么去做机器做不到的事。**印象派选了第二条——**机器可以留住形状，但留不住「我此刻看见的那种感觉」。**这个逻辑此后一百年反复上演，而且今天仍在上演：每当一项技术接管了某个环节，那个行当就会被迫回答「那我到底是干什么的」。**这本书里这段历史，是这个问题最早、也最完整的一次演练。**"
     },
-    { "type": "h2", "text": "四、日本版画教了他们什么" },
+    {
+      "type": "h2",
+      "text": "四、日本版画教了他们什么"
+    },
     {
       "type": "p",
       "text": "这一股力值得单独讲，因为它是这本书里少见的、**东方对西方产生直接技术影响**的时刻，而且影响的方式很具体。当时日本的木版画作为包装纸、廉价商品流进欧洲，画家们一看就傻了——**那上面的做法，条条都是他们被教导过绝不能做的。**"
@@ -80,7 +105,10 @@
       "type": "p",
       "text": "这段影响还有一层值得留意的反讽。**在日本，这些版画属于市井消费品**——歌舞伎明星的画像、旅游名胜、时装图样，跟高雅艺术不沾边；而它们漂到欧洲，恰好击中了一批正在找出路的画家。**一件东西的价值，很大程度上取决于它落在谁手里、被拿去解什么题。**这也是这本书反复暗示的事：**没有天生高级的形式，只有恰好用对了地方的形式。**"
     },
-    { "type": "h2", "text": "五、影子是什么颜色的" },
+    {
+      "type": "h2",
+      "text": "五、影子是什么颜色的"
+    },
     {
       "type": "p",
       "text": "挑一件小事说透，因为它最能说明「所知」和「所见」的差别有多大。**问：一块白布上的影子是什么颜色？**几乎所有人脱口而出：灰色，或者浅黑。"
@@ -89,8 +117,24 @@
       "type": "p",
       "text": "**但你去看一眼就知道不是。**晴天里，那块影子会明显偏蓝——因为它照不到直射的太阳，却照得到整片蓝天。傍晚的阳光偏橙，影子就会偏蓝紫；如果光源本身偏冷，影子反而会偏暖。**「影子是灰的」是我们知道的，「影子是蓝的」是我们看见的**——而这件事，人不专门去看是不会发现的。"
     },
-    { "type": "figure", "ftype": "示意图", "caption": "**光暖，影就冷；光冷，影就暖。**这条规律在自然光下几乎总成立。它不是印象派发明的，但他们是第一批把它当成主要武器的人——**画面之所以忽然「亮」了起来，一半功劳在这里：暗部不再是往下压的黑，而是另一种颜色的光。**", "svg": "<svg viewBox='0 0 560 230' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>影子不是黑的</text><g><rect x='40' y='48' width='210' height='120' rx='4' style='fill:var(--paper-raised);stroke:var(--ink-faint);stroke-width:1'/><circle cx='118' cy='96' r='26' style='fill:var(--gold)' opacity='0.55'/><ellipse cx='176' cy='140' rx='42' ry='13' style='fill:var(--ink)' opacity='0.42'/><text x='145' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>我们「知道」的影子</text><text x='145' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>灰的、黑的、往下压的</text></g><g><rect x='310' y='48' width='210' height='120' rx='4' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.2'/><circle cx='388' cy='96' r='26' style='fill:var(--gold)' opacity='0.62'/><ellipse cx='446' cy='140' rx='42' ry='13' style='fill:var(--azure)' opacity='0.55'/><text x='415' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>我们「看见」的影子</text><text x='415' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>暖光下偏蓝，是另一种颜色的光</text></g></svg>" },
-    { "type": "h2", "text": "六、代价：亮了，可是散了" },
+    {
+      "type": "p",
+      "text": "这件小事把全书那根弦拉到了最紧的地方。**从第三章那位埃及画工到这里，两千多年，「所知」被一寸寸往后逼**：先是脚可以画短，然后人可以被遮住，然后远处的东西可以变小变模糊，最后连「影子是黑的」这条最顽固的常识也被推翻了。**印象派站的位置，就是这根弦的最右端。**"
+    },
+    {
+      "type": "p",
+      "text": "**而弦拉到头，就会断。**再往前一步不是「更忠于眼睛」，而是「凭什么非得忠于眼睛」——**因为已经没有更忠实的忠实了。**这就是为什么下一章的转折来得那么突然、那么彻底：**不是有人忽然想造反，是这条路真的走到了尽头。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "**光暖，影就冷；光冷，影就暖。**这条规律在自然光下几乎总成立。它不是印象派发明的，但他们是第一批把它当成主要武器的人——**画面之所以忽然「亮」了起来，一半功劳在这里：暗部不再是往下压的黑，而是另一种颜色的光。**",
+      "svg": "<svg viewBox='0 0 560 230' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>影子不是黑的</text><g><rect x='40' y='48' width='210' height='120' rx='4' style='fill:var(--paper-raised);stroke:var(--ink-faint);stroke-width:1'/><circle cx='118' cy='96' r='26' style='fill:var(--gold)' opacity='0.55'/><ellipse cx='176' cy='140' rx='42' ry='13' style='fill:var(--ink)' opacity='0.42'/><text x='145' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>我们「知道」的影子</text><text x='145' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>灰的、黑的、往下压的</text></g><g><rect x='310' y='48' width='210' height='120' rx='4' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.2'/><circle cx='388' cy='96' r='26' style='fill:var(--gold)' opacity='0.62'/><ellipse cx='446' cy='140' rx='42' ry='13' style='fill:var(--azure)' opacity='0.55'/><text x='415' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>我们「看见」的影子</text><text x='415' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>暖光下偏蓝，是另一种颜色的光</text></g></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "六、代价：亮了，可是散了"
+    },
     {
       "type": "p",
       "text": "现在到了这本书最擅长的部分：**算账。**"
@@ -116,6 +160,21 @@
     {
       "type": "p",
       "text": "接下来那一代人，各自给了答案：**有人一辈子在啃「结实的秩序」这一半，有人转身去画心里的劲，有人干脆离开这套体系去找更简朴的形。**这三个答案，正是全书总览里那张「一个难题，三条出路」的图——它们分头长成了整个二十世纪。**而下一章要讲的，就是这三条路走到尽头之后发生的事：链条断了。**"
+    },
+    {
+      "type": "p",
+      "text": "临了留一个提醒，是关于我们自己的。**印象派今天是最没有威胁性的一类画**——它挂在办公室、日历、马克杯上，是「好看」的代名词。可它当年确确实实让人愤怒过。**这两件事之间隔的不是画，是一百五十年的眼睛。**"
+    },
+    {
+      "type": "callout",
+      "tone": "mute",
+      "items": [
+        "这个落差本身很有教育意义：**你今天觉得刺眼的东西，很可能是下一代人的日历图；而你今天觉得理所当然的东西，曾经把某些人气得写文章骂街。**贡布里希在书的后面专门写过一段类似的意思——**新艺术会改变我们看旧艺术的眼光。**所以遇到自己反感的作品时，除了「我不喜欢」之外，还可以多留一句：**「我是不是只是还没习惯」。**这句话不要求你改变判断，只要求你把判断先放一放。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**顺带说一句我们今天的处境。**照相术当年逼着画家去找机器做不到的事；而今天，图像的生成又便宜了一个数量级。**这本书里那段历史给出的提示很朴素：被替代的从来不是一门手艺，而是这门手艺的某一项功能。**功能被拿走之后，剩下的问题永远是同一个——**那我到底是干什么的。**印象派给出的答案是「我画的是你看的方式」；今天的答案是什么，得由今天的人自己解。**这本书里这一段之所以特别值得反复读，是因为它是唯一一段我们还能亲眼验证的历史**：那些当年被骂的画就挂在墙上，而我们今天看着它们只觉得赏心悦目。**证据就在眼前——眼睛是会变的。**"
     }
   ]
 }

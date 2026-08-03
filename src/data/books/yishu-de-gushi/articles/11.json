@@ -7,7 +7,10 @@
       "type": "lead",
       "text": "先说一句实话：**《艺术的故事》一半的力量在图版。**贡布里希的写法是「你看这里」——你看这只手为什么伸出来，你看这道光从哪儿进来，你看这个人的膝盖朝着哪边。**离开了那张图，这些句子会变成空转的抽象。**所以这一章的任务有两个：一是告诉你图去哪儿找；二是把那**另一半**交给你——一套看画的动作。**这一半是真正能带走的东西：图会换，动作不会。**"
     },
-    { "type": "h2", "text": "一、图从哪儿来" },
+    {
+      "type": "h2",
+      "text": "一、图从哪儿来"
+    },
     {
       "type": "p",
       "text": "好消息是：**这本书里提到的作品，绝大多数都很老，图像本身早已进入公共领域。**近年各大博物馆纷纷开放了藏品数据，很多是可以直接下载的高清图，能放大到看清笔触和裂纹——**这一点甚至比纸质图版还强，因为印刷品放不大。**"
@@ -19,23 +22,50 @@
     {
       "type": "steps",
       "items": [
-        { "title": "先读文字，把他说的那几处记下来", "text": "「注意这只手」「看那道光」「留意这几个人是怎么分组的」——把这些指路的句子挑出来，它们就是你等下要找的东西。", "state": "done" },
-        { "title": "再调出图，一处一处去找", "text": "**按他说的顺序找**，找到一处，停一下，确认自己真的看见了，再找下一处。这个过程慢得让人不耐烦，但它是整件事的核心。", "state": "now" },
-        { "title": "全部找完之后，退开来整体看一遍", "text": "这一遍不看细节，只看整幅画给人的感觉。**你会发现它跟第一眼完全不同了**——因为现在你知道那种感觉是怎么被造出来的。", "state": "todo" },
-        { "title": "最后合上书，用自己的话说一遍", "text": "说不出来，就是还没看懂；说出来了，这件作品此后就是你的了。", "state": "todo" }
+        {
+          "title": "先读文字，把他说的那几处记下来",
+          "text": "「注意这只手」「看那道光」「留意这几个人是怎么分组的」——把这些指路的句子挑出来，它们就是你等下要找的东西。",
+          "state": "done"
+        },
+        {
+          "title": "再调出图，一处一处去找",
+          "text": "**按他说的顺序找**，找到一处，停一下，确认自己真的看见了，再找下一处。这个过程慢得让人不耐烦，但它是整件事的核心。",
+          "state": "now"
+        },
+        {
+          "title": "全部找完之后，退开来整体看一遍",
+          "text": "这一遍不看细节，只看整幅画给人的感觉。**你会发现它跟第一眼完全不同了**——因为现在你知道那种感觉是怎么被造出来的。",
+          "state": "todo"
+        },
+        {
+          "title": "最后合上书，用自己的话说一遍",
+          "text": "说不出来，就是还没看懂；说出来了，这件作品此后就是你的了。",
+          "state": "todo"
+        }
       ]
     },
-    { "type": "h2", "text": "二、看画的第一步：光从哪儿来" },
+    {
+      "type": "h2",
+      "text": "二、看画的第一步：光从哪儿来"
+    },
     {
       "type": "p",
       "text": "这一步最容易做，也最见效。**在画里找一处清楚的影子，顺着它反推：影子朝哪边倒，光就从相反的方向来。**再找第二处、第三处，看看结论是否一致。"
     },
-    { "type": "figure", "ftype": "示意图", "caption": "**顺着投影倒推，几处的结论应当交在同一个方向上。**如果对不上——比如这个人的影子朝左、那个人的朝右——那不是画家糊涂，多半是他有意为之：**要么他在拼贴几个不同时刻，要么他想让某个东西自己发光。**发现不一致的地方，往往就发现了这幅画的秘密。", "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>从影子倒推光源</text><rect x='40' y='42' width='480' height='158' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><line x1='40' y1='172' x2='520' y2='172' style='stroke:var(--ink-faint);stroke-width:1'/><g style='fill:var(--ink)' opacity='0.55'><rect x='150' y='120' width='18' height='52'/><rect x='268' y='104' width='18' height='68'/><rect x='388' y='132' width='18' height='40'/></g><g style='fill:var(--ink)' opacity='0.26'><path d='M168,172 L226,186 L212,172 Z'/><path d='M286,172 L362,190 L344,172 Z'/><path d='M406,172 L456,184 L444,172 Z'/></g><g style='stroke:var(--gold);stroke-width:1.4;stroke-dasharray:5 4'><line x1='226' y1='186' x2='96' y2='62'/><line x1='362' y1='190' x2='100' y2='66'/><line x1='456' y1='184' x2='104' y2='70'/></g><circle cx='94' cy='60' r='14' style='fill:var(--gold)' opacity='0.5'/><circle cx='94' cy='60' r='6' style='fill:var(--gold)'/><text x='94' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>光源在这里</text><text x='280' y='224' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>三条反推线交在同一处，说明这幅画只有一个光源——画面因此稳</text><text x='280' y='242' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>交不到一处时，别急着说画错了，先问他为什么要这样</text></svg>" },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "**顺着投影倒推，几处的结论应当交在同一个方向上。**如果对不上——比如这个人的影子朝左、那个人的朝右——那不是画家糊涂，多半是他有意为之：**要么他在拼贴几个不同时刻，要么他想让某个东西自己发光。**发现不一致的地方，往往就发现了这幅画的秘密。",
+      "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>从影子倒推光源</text><rect x='40' y='42' width='480' height='158' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><line x1='40' y1='172' x2='520' y2='172' style='stroke:var(--ink-faint);stroke-width:1'/><g style='fill:var(--ink)' opacity='0.55'><rect x='150' y='120' width='18' height='52'/><rect x='268' y='104' width='18' height='68'/><rect x='388' y='132' width='18' height='40'/></g><g style='fill:var(--ink)' opacity='0.26'><path d='M168,172 L226,186 L212,172 Z'/><path d='M286,172 L362,190 L344,172 Z'/><path d='M406,172 L456,184 L444,172 Z'/></g><g style='stroke:var(--gold);stroke-width:1.4;stroke-dasharray:5 4'><line x1='226' y1='186' x2='96' y2='62'/><line x1='362' y1='190' x2='100' y2='66'/><line x1='456' y1='184' x2='104' y2='70'/></g><circle cx='94' cy='60' r='14' style='fill:var(--gold)' opacity='0.5'/><circle cx='94' cy='60' r='6' style='fill:var(--gold)'/><text x='94' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>光源在这里</text><text x='280' y='224' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>三条反推线交在同一处，说明这幅画只有一个光源——画面因此稳</text><text x='280' y='242' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>交不到一处时，别急着说画错了，先问他为什么要这样</text></svg>"
+    },
     {
       "type": "p",
       "text": "找到光源之后，紧接着问第二个问题：**他把光给了谁？**画面里最亮的那一块落在哪儿——是主角的脸？是某个人的手？是一件器物？**光是画家的手指，它在替你指方向。**上一章之前讲过的那句话值得再说一遍：**看一张画时问「他把光给了谁」，往往比问「他画的是谁」更能读出心思。**"
     },
-    { "type": "h2", "text": "三、第二步：眼睛被怎么牵着走" },
+    {
+      "type": "h2",
+      "text": "三、第二步：眼睛被怎么牵着走"
+    },
     {
       "type": "p",
       "text": "一幅画不是让你一眼看完的，它有**顺序**。画家会安排你先看哪儿、再看哪儿、最后停在哪里——**这条路线是被铺出来的，不是随机的。**"
@@ -44,8 +74,16 @@
       "type": "p",
       "text": "怎么找？三条最管用的线索：**一是最亮的那块**（眼睛天生先去最亮处）；**二是最长的那条线**（视线会顺着长线滑走——一条伸出的手臂、一根柱子、一道台阶）；**三是画里人物的目光**（如果画里有人在看什么，你会不由自主地跟着他看）。把这三样连起来，路线基本就出来了。"
     },
-    { "type": "figure", "ftype": "示意图", "caption": "**好的构图会把这条路线做成闭合的**——你顺着走一圈，会被送回起点，于是不停地看下去；而失败的构图往往有一条「出口」，视线顺着它溜出画外，人就走神了。**下次看画走神时，找一找是不是有一条线把你带出去了。**", "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>视线是画家铺的一条路</text><rect x='60' y='42' width='440' height='166' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><circle cx='196' cy='96' r='24' style='fill:var(--gold)' opacity='0.45'/><g style='fill:var(--ink)' opacity='0.4'><circle cx='196' cy='96' r='11'/><circle cx='320' cy='84' r='9'/><circle cx='400' cy='132' r='9'/><circle cx='288' cy='166' r='9'/><circle cx='150' cy='150' r='9'/></g><path d='M196,96 C246,74 292,72 320,84 C358,100 396,110 400,132 C404,156 344,166 288,166 C232,166 158,172 150,150 C142,128 168,106 196,96' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.6;stroke-dasharray:6 4'/><g style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure);font-weight:bold'><text x='196' y='74' text-anchor='middle'>1 最亮</text><text x='340' y='72'>2</text><text x='420' y='134'>3</text><text x='288' y='190' text-anchor='middle'>4</text><text x='124' y='154'>5</text></g><text x='280' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>路线闭合，眼睛就一圈一圈转下去；路线有出口，人就走神</text></svg>" },
-    { "type": "h2", "text": "四、第三步：这个姿势在解决什么" },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "**好的构图会把这条路线做成闭合的**——你顺着走一圈，会被送回起点，于是不停地看下去；而失败的构图往往有一条「出口」，视线顺着它溜出画外，人就走神了。**下次看画走神时，找一找是不是有一条线把你带出去了。**",
+      "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>视线是画家铺的一条路</text><rect x='60' y='42' width='440' height='166' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><circle cx='196' cy='96' r='24' style='fill:var(--gold)' opacity='0.45'/><g style='fill:var(--ink)' opacity='0.4'><circle cx='196' cy='96' r='11'/><circle cx='320' cy='84' r='9'/><circle cx='400' cy='132' r='9'/><circle cx='288' cy='166' r='9'/><circle cx='150' cy='150' r='9'/></g><path d='M196,96 C246,74 292,72 320,84 C358,100 396,110 400,132 C404,156 344,166 288,166 C232,166 158,172 150,150 C142,128 168,106 196,96' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.6;stroke-dasharray:6 4'/><g style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure);font-weight:bold'><text x='196' y='74' text-anchor='middle'>1 最亮</text><text x='340' y='72'>2</text><text x='420' y='134'>3</text><text x='288' y='190' text-anchor='middle'>4</text><text x='124' y='154'>5</text></g><text x='280' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>路线闭合，眼睛就一圈一圈转下去；路线有出口，人就走神</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "四、第三步：这个姿势在解决什么"
+    },
     {
       "type": "p",
       "text": "这一步最有意思，因为它把你从「看见」推到「读懂」。**规则很简单：凡是让你觉得别扭、不自然、「现实里没人这么站」的地方，都值得追问。**"
@@ -64,8 +102,14 @@
         "**「这幅画原来挂在哪儿？」**——很多别扭在换了场合之后就消失了：一幅要仰头看的天顶画，人物比例本来就该是变形的；一幅只在烛光下被看的祭坛画，对比本来就该狠。"
       ]
     },
-    { "type": "pull", "text": "别扭往往不是失误，是约束留下的痕迹。" },
-    { "type": "h2", "text": "五、第四步：数一遍造深度的工具" },
+    {
+      "type": "pull",
+      "text": "别扭往往不是失误，是约束留下的痕迹。"
+    },
+    {
+      "type": "h2",
+      "text": "五、第四步：数一遍造深度的工具"
+    },
     {
       "type": "p",
       "text": "最后一步是清点。在平面上造深度，翻来覆去就那么五件工具：**遮挡**（谁挡住谁）、**大小递减**（同类的东西越远越小）、**线条收拢**（平行线交向一点）、**远处发灰发蓝**（空气把远景洗淡）、**暖进冷退**（暖色像贴着脸，冷色往后退）。"
@@ -74,8 +118,24 @@
       "type": "p",
       "text": "对着一张画逐条数一遍，你会立刻知道这位画家用的是哪几件。**而最有信息量的往往不是他用了什么，是他放弃了什么。**一张金底的圣像，五件一件不用——那不是不会，是它压根不打算造深度。一张印象派的风景，可能主要靠第四第五件，前三件都松了——那是因为它要的是空气，不是结构。**「放弃」是一份声明。**"
     },
-    { "type": "figure", "ftype": "流程图", "caption": "**一张卡片，四步走完。**练上十来张画，这四步会变成本能——到那时你不再是「看不懂」，而是能说出自己看到了什么、以及为什么。**这是这本书能给一个外行的最大礼物。**", "svg": "<svg viewBox='0 0 560 260' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>看一张画的四步走查卡</text><g style='font-family:var(--font-serif);font-size:12px'><rect x='20' y='48' width='120' height='72' rx='5' style='fill:var(--paper-raised);stroke:var(--ink-faint);stroke-width:1'/><text x='80' y='72' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>一 · 光</text><text x='80' y='92' text-anchor='middle' style='font-size:10.5px;fill:var(--ink)'>从哪儿来</text><text x='80' y='108' text-anchor='middle' style='font-size:10.5px;fill:var(--ink)'>给了谁</text><rect x='160' y='48' width='120' height='72' rx='5' style='fill:var(--paper-raised);stroke:var(--ink-faint);stroke-width:1'/><text x='220' y='72' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>二 · 路</text><text x='220' y='92' text-anchor='middle' style='font-size:10.5px;fill:var(--ink)'>眼睛先看哪</text><text x='220' y='108' text-anchor='middle' style='font-size:10.5px;fill:var(--ink)'>路线闭不闭合</text><rect x='300' y='48' width='120' height='72' rx='5' style='fill:var(--paper-raised);stroke:var(--ink-faint);stroke-width:1'/><text x='360' y='72' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>三 · 姿</text><text x='360' y='92' text-anchor='middle' style='font-size:10.5px;fill:var(--ink)'>哪里别扭</text><text x='360' y='108' text-anchor='middle' style='font-size:10.5px;fill:var(--ink)'>不这样会损失什么</text><rect x='440' y='48' width='120' height='72' rx='5' style='fill:var(--paper-raised);stroke:var(--ink-faint);stroke-width:1'/><text x='500' y='72' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>四 · 深</text><text x='500' y='92' text-anchor='middle' style='font-size:10.5px;fill:var(--ink)'>五件工具用了几件</text><text x='500' y='108' text-anchor='middle' style='font-size:10.5px;fill:var(--ink)'>放弃了哪几件</text><g style='stroke:var(--ink-faint);stroke-width:1.2'><line x1='144' y1='84' x2='156' y2='84'/><line x1='284' y1='84' x2='296' y2='84'/><line x1='424' y1='84' x2='436' y2='84'/></g><line x1='280' y1='124' x2='280' y2='150' style='stroke:var(--ink-faint);stroke-width:1.2'/><path d='M280,152 l-4,-8 l8,0 Z' style='fill:var(--ink-faint)'/><rect x='150' y='156' width='260' height='40' rx='5' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='280' y='181' text-anchor='middle' style='font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>合上书，用自己的话说一遍</text><text x='280' y='222' text-anchor='middle' style='font-size:11.5px;fill:var(--ink-soft)'>说得出，这张画此后就是你的了；说不出，回到第一步再走一遍</text></g></svg>" },
-    { "type": "h2", "text": "六、什么时候该凑近，什么时候该退开" },
+    {
+      "type": "p",
+      "text": "补充一个小窍门：**这五件工具里，最好用也最容易被忽略的是第一件——遮挡。**它不需要任何技术，只需要决定谁在前、谁在后。**而它是所有深度线索里最强的一条**：哪怕大小、颜色、线条全都不对，只要 A 挡住了 B，你就一定觉得 A 在前面，这个判断连大脑都推翻不了。**很多看上去「说不清哪儿不对」的画面，问题就出在遮挡关系含糊——谁在前谁在后交代不清，眼睛就会一直不安。**"
+    },
+    {
+      "type": "p",
+      "text": "这也是为什么第三章里埃及人那套「一律不许遮挡」的做法效果那么强烈：**他们不是没能力画遮挡，而是主动把最强的那条深度线索关掉了。**关掉之后，画面立刻从「一个空间」变成「一份清单」。**一个开关，两种世界。**同样的开关今天也在用：产品爆炸图之所以要把零件在空中悬开、绝不叠压，用的正是这一条——**一旦允许遮挡，它就从说明书变回了照片。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "流程图",
+      "caption": "**一张卡片，四步走完。**练上十来张画，这四步会变成本能——到那时你不再是「看不懂」，而是能说出自己看到了什么、以及为什么。**这是这本书能给一个外行的最大礼物。**",
+      "svg": "<svg viewBox='0 0 560 260' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>看一张画的四步走查卡</text><g style='font-family:var(--font-serif);font-size:12px'><rect x='20' y='48' width='120' height='72' rx='5' style='fill:var(--paper-raised);stroke:var(--ink-faint);stroke-width:1'/><text x='80' y='72' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>一 · 光</text><text x='80' y='92' text-anchor='middle' style='font-size:10.5px;fill:var(--ink)'>从哪儿来</text><text x='80' y='108' text-anchor='middle' style='font-size:10.5px;fill:var(--ink)'>给了谁</text><rect x='160' y='48' width='120' height='72' rx='5' style='fill:var(--paper-raised);stroke:var(--ink-faint);stroke-width:1'/><text x='220' y='72' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>二 · 路</text><text x='220' y='92' text-anchor='middle' style='font-size:10.5px;fill:var(--ink)'>眼睛先看哪</text><text x='220' y='108' text-anchor='middle' style='font-size:10.5px;fill:var(--ink)'>路线闭不闭合</text><rect x='300' y='48' width='120' height='72' rx='5' style='fill:var(--paper-raised);stroke:var(--ink-faint);stroke-width:1'/><text x='360' y='72' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>三 · 姿</text><text x='360' y='92' text-anchor='middle' style='font-size:10.5px;fill:var(--ink)'>哪里别扭</text><text x='360' y='108' text-anchor='middle' style='font-size:10.5px;fill:var(--ink)'>不这样会损失什么</text><rect x='440' y='48' width='120' height='72' rx='5' style='fill:var(--paper-raised);stroke:var(--ink-faint);stroke-width:1'/><text x='500' y='72' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>四 · 深</text><text x='500' y='92' text-anchor='middle' style='font-size:10.5px;fill:var(--ink)'>五件工具用了几件</text><text x='500' y='108' text-anchor='middle' style='font-size:10.5px;fill:var(--ink)'>放弃了哪几件</text><g style='stroke:var(--ink-faint);stroke-width:1.2'><line x1='144' y1='84' x2='156' y2='84'/><line x1='284' y1='84' x2='296' y2='84'/><line x1='424' y1='84' x2='436' y2='84'/></g><line x1='280' y1='124' x2='280' y2='150' style='stroke:var(--ink-faint);stroke-width:1.2'/><path d='M280,152 l-4,-8 l8,0 Z' style='fill:var(--ink-faint)'/><rect x='150' y='156' width='260' height='40' rx='5' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='280' y='181' text-anchor='middle' style='font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>合上书，用自己的话说一遍</text><text x='280' y='222' text-anchor='middle' style='font-size:11.5px;fill:var(--ink-soft)'>说得出，这张画此后就是你的了；说不出，回到第一步再走一遍</text></g></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "六、什么时候该凑近，什么时候该退开"
+    },
     {
       "type": "p",
       "text": "还有一条很实际的经验，能省下你很多时间：**不同的画，要在不同的距离上看，而这个距离是画家替你定好的。**"
@@ -92,7 +152,10 @@
       "type": "p",
       "text": "怎么判断该用哪一种？**看笔触。**看得见一笔一笔的痕迹，就退开；看不出笔触、表面像瓷一样平滑，就凑近。**在美术馆里看到有人在一张画前忽远忽近地挪，那不是做作，那是在找画家给他定的那个位置。**"
     },
-    { "type": "h2", "text": "七、这本书本身怎么读" },
+    {
+      "type": "h2",
+      "text": "七、这本书本身怎么读"
+    },
     {
       "type": "p",
       "text": "说完看画，说读书。这本书的读法其实只有一条硬规矩：**别当参考书查，当故事从头读。**"
@@ -125,7 +188,10 @@
       "type": "p",
       "text": "**第二，边读边找身边的例子。**这本书讲的每一条道理，几乎都能在你今天见到的东西上找到对应：手机里的照片为什么要那样构图；一张海报为什么把主体切掉一半；某个产品页为什么把零件摊开画；某部电影为什么在关键时刻只留一束光。**每找到一处，那条道理就在你脑子里扎下一次根。**贡布里希整本书都在示范这件事——**他谈的从来不是远方的珍宝，是人怎么解决看得见的麻烦。**"
     },
-    { "type": "h2", "text": "八、读完之后" },
+    {
+      "type": "h2",
+      "text": "八、读完之后"
+    },
     {
       "type": "p",
       "text": "全书读完，做一件事：**回到第一章，重看那头画在洞壁上的野牛。**"
@@ -137,6 +203,18 @@
     {
       "type": "p",
       "text": "**这大概就是贡布里希最想让你带走的东西**，也是他为什么非要用第一句话，把那个大写的「艺术」拆掉不可。拆掉之后剩下的，不是虚无，是一群人——**两万年来，一个接一个，盯着自己面前那个具体的麻烦，想办法。**"
+    },
+    {
+      "type": "p",
+      "text": "如果还想再走一步，有两个方向。**一个是往深里走：找一本专讲某一段、某一个人的书，把这一章里被压缩成两页的东西铺开。**这本书像一张全国地图，比例尺很小；有了它之后，任何一张城市地图你都知道该往哪儿贴。"
+    },
+    {
+      "type": "p",
+      "text": "**另一个方向是往身边走：不再只看画册，开始看自己每天遇见的图像。**手机相册里为什么有些照片好看、有些不好看；地铁广告为什么把主体放在那个位置；一部电影为什么在关键时刻把整个画面压暗只留一束光。**这些东西用的全是这本书里讲过的招数**，而且往往用得很自觉。**看得出招数，是这本书给你的第二次视力。**"
+    },
+    {
+      "type": "p",
+      "text": "**至于喜欢什么、不喜欢什么，这本书从头到尾没打算替你决定。**它只是把两千年的手艺摊在你面前，然后说：你自己看。**看完了，说得出来了，那就已经够了。**剩下的，交给你自己往后几十年里遇到的每一张画。"
     }
   ]
 }
