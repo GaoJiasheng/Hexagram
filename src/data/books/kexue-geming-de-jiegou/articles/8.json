@@ -1,0 +1,159 @@
+{
+  "title": "与波普尔的争论:证伪,还是解谜",
+  "subtitle": "1965 年伦敦的一场会议,把二十世纪科学哲学最有名的两个人放在了同一个房间——而真正有意思的是,他们吵的其实不是同一个问题",
+  "centralIdea": "波普尔的立场:科学的划界标准是可证伪性,科学靠大胆猜想加严厉反驳前进,科学家应当是永久的革命者;所以他对常规科学的评价极重——那是被教坏了的人,是对科学乃至文明的危险。库恩的回应有三层:一,描述上不成立,反例永远都有,若一遇反例就丢掉理论,所有理论在任何时候都该被丢掉;二,波普尔自己也承认没有理论会被决定性地证伪,那么「何时算被推翻」就得靠判断,而判断需要共同体与共有价值;三,波普尔举的例子几乎全是革命期的,他把非常时期当成了科学的常态,而恰恰是常规科学那份被他厌恶的教条,才让反常显形。两人被忽略的共识同样重要:都反对朴素归纳主义,都不认为存在配方式的科学方法,举的历史案例甚至常常是同一批。拉卡托斯用研究纲领做调停,费耶阿本德走向另一头。而「谁赢了」这个问法本身就错:波普尔问科学应当怎样,库恩问科学实际怎样。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "1965 年,伦敦的一场国际学术会议把二十世纪科学哲学最有名的两个人放进了同一个房间。会议论文后来结集出版,成了这一行最著名的一次交锋:**波普尔说科学靠证伪前进,而库恩笔下那种「不检验理论、只顾解谜」的常规科学,是对科学乃至文明的危险;库恩则说,如果一遇反例就丢掉理论,所有理论在任何时候都该被丢掉。**两人吵得很凶,而这一章要说的是:**这场争论最有价值的部分,不在谁赢了,而在他们其实问的不是同一个问题。**"
+    },
+    {
+      "type": "h2",
+      "text": "一、波普尔的立场"
+    },
+    {
+      "type": "p",
+      "text": "先把波普尔讲清楚,否则这场争论没法看。他要解决的是一个很古老的困难:**归纳法靠不住。**看见一万只白天鹅,推不出「所有天鹅都是白的」;可科学又似乎正是靠这类推广工作的。波普尔的解法极漂亮:**科学根本不靠归纳。**一条普遍陈述永远无法被有限的观察证实,**但可以被一个反例决定性地推翻**——**这个不对称,就是全部秘密所在。**"
+    },
+    {
+      "type": "p",
+      "text": "由此推出两件事。**第一是划界标准:**一个说法算不算科学,不看它有没有证据支持,看它**有没有可能被观察推翻**。一个能解释一切、无论发生什么都说得通的理论,不是特别强,而是**根本没说什么**。**第二是方法论:**科学家应当提出**尽可能大胆**的猜想(大胆 = 容易被推翻 = 内容多),然后**尽最大努力去打倒它**,而不是去为它找支持。用他的话说,科学家应当是**永久的革命者**。"
+    },
+    {
+      "type": "p",
+      "text": "**所以他对常规科学的反应非常激烈。**他的原话相当不客气:"
+    },
+    {
+      "type": "quote",
+      "original": "库恩笔下的那种「常规科学家」,是个让人同情的人:他被教坏了,是灌输的牺牲品。"
+    },
+    {
+      "type": "p",
+      "text": "他并不否认库恩描述的那种人存在——他说那种人当然有,而且很多;但在他看来,那是职业训练的产物,是一种病。他甚至用了更重的词:这种状态是**对科学、乃至对我们文明的危险**。**对波普尔而言,库恩不是在描述一个中性的事实,而是在替一种应当被反对的状态背书**——而这也是他们之间最深的裂痕:一个人眼里的中性描述,在另一个人眼里是变相的辩护。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "svg": "<svg viewBox='0 0 560 262' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>同一件事,两条流程</text><rect x='24' y='44' width='250' height='168' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='149' y='68' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink-soft)'>波普尔:猜想与反驳</text><g style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'><text x='149' y='96' text-anchor='middle'>提出大胆猜想</text><text x='149' y='128' text-anchor='middle'>设计最严厉的检验</text><text x='149' y='160' text-anchor='middle'>没被打倒 → 暂时留着</text><text x='149' y='190' text-anchor='middle'>被打倒 → 立刻丢掉,另提</text></g><g style='fill:none;stroke:var(--ink-faint);stroke-width:1.1'><path d='M149 104 L149 118 M144 112 L149 119 L154 112'/><path d='M149 136 L149 150 M144 144 L149 151 L154 144'/><path d='M149 168 L149 180 M144 174 L149 181 L154 174'/></g><rect x='286' y='44' width='250' height='168' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='411' y='68' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>库恩:解谜与危机</text><g style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'><text x='411' y='96' text-anchor='middle'>在范式内解谜</text><text x='411' y='128' text-anchor='middle'>解不掉 → 先算自己的失败</text><text x='411' y='160' text-anchor='middle'>攒够了、顶在核心上 → 危机</text><text x='411' y='190' text-anchor='middle'>有了候选者才换,不空着换</text></g><g style='fill:none;stroke:var(--ink-faint);stroke-width:1.1'><path d='M411 104 L411 118 M406 112 L411 119 L416 112'/><path d='M411 136 L411 150 M406 144 L411 151 L416 144'/><path d='M411 168 L411 180 M406 174 L411 181 L416 174'/></g><text x='280' y='240' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>最大的差别在第二步:一边立刻丢,一边先归给自己</text></svg>",
+      "caption": "右边流程的最后一句常被忽略:**库恩说,人们不会因为一个理论被驳倒就抛弃它,而是要等到有另一个候选者可以接手。**这既是一句描述(历史上确实如此),也解释了为什么「先证伪、再想办法」在实践中很少发生——**空着手离开一个还能干活的框架,代价太大。**"
+    },
+    {
+      "type": "h2",
+      "text": "二、库恩的三层回应"
+    },
+    {
+      "type": "p",
+      "text": "**第一层:描述上不成立。**如果科学家真的一遇反例就丢掉理论,那么**所有理论在任何时候都该被丢掉**——因为任何一个成熟理论,手上永远同时挂着一堆对不上的地方(第 3 章讲过,这不是丑闻,这是常态)。牛顿力学从诞生起就有算不准的地方(月球运动的一些细节让人头疼了很久),**若照证伪主义办,它出生第二天就该被扔了。**"
+    },
+    {
+      "type": "p",
+      "text": "库恩把这一层压成了一句话。"
+    },
+    {
+      "type": "quote",
+      "original": "如果每一次对不上都算作反驳,那么所有的理论,在任何时候,都可以被反驳掉。"
+    },
+    {
+      "type": "p",
+      "text": "**第二层:「被证伪」本身就需要判断。**波普尔自己也承认,**没有哪个理论会被决定性地证伪**——因为任何一次检验都牵扯到一大堆辅助假设(仪器可靠、样品纯净、背景条件成立),出了偏差,你永远可以选择怀疑其中任何一环。**那么「什么时候该认为主理论被推翻了」就不是逻辑能决定的,得靠判断。**而判断需要什么?需要一群受过同一套训练、共有那五项价值的人——**这恰恰就是库恩要讲的东西。**换句话说:**证伪主义留下的那个空缺,正好是库恩理论要填的位置。**"
+    },
+    {
+      "type": "p",
+      "text": "**第三层:他把非常时期当成了常态。**波普尔举的例子几乎全是革命期的——相对论、量子力学、达尔文。**那些确实是「大胆猜想 + 严厉检验」的漂亮范例。**但库恩说,那是科学史上极小的一部分;绝大多数时间里,科学家做的是解谜,而**恰恰是这份被波普尔厌恶的「教条」,才让反常显形**(第 2 章那条因果链)。**没有一套把话说死的范式,就没有什么能算作「严厉的检验」——因为你根本不知道什么结果算不合格。**"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "一处值得琢磨",
+      "items": [
+        "第三层其实是一个很有意思的反转:**库恩在用波普尔自己的标准反驳波普尔。**波普尔说科学的可贵在于「它能被驳倒」;库恩说,**「能被驳倒」这件事本身是有前提的**——你得先有一套精确到能预言具体数值的理论,和一群共同承认「这个数值就是不对」的人。**而这两样东西,只有常规科学才生产得出来。**所以在库恩看来,常规科学不是可证伪性的敌人,是它的**制造车间**。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "三、被忽略的共识"
+    },
+    {
+      "type": "p",
+      "text": "这场争论被讲得太像一场对决,以至于两人极大的共同点常常被忘掉。而这些共识其实比分歧更能说明二十世纪科学哲学发生了什么。"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**两人都反对朴素归纳主义。**「科学家收集大量事实,然后从中归纳出规律」——这个中学课本式的图景,两人都认为是错的。**观察从来不是中立的**:你得先有想法,才知道该看什么。",
+        "**两人都不认为科学靠「证实」前进。**支持一个理论的例子再多,也不构成证明;这一点两人完全一致,只是给出的替代方案不同(一个是证伪,一个是解谜与范式更替)。",
+        "**两人都不认为存在配方式的「科学方法」。**没有一套步骤,照着做就能产出科学。波普尔认为科学的理性在于**态度**(愿意被驳倒),库恩认为在于**共同体的判断**;但「有一份操作手册」这个想法,两人都拒绝。",
+        "**两人举的历史案例常常是同一批。**哥白尼、牛顿、拉瓦锡、爱因斯坦——**同一段历史,两套读法。**这本身就说明,史料不会自己讲出结论。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "四、另外两个人:拉卡托斯与费耶阿本德"
+    },
+    {
+      "type": "p",
+      "text": "这场论战真正的产物,是逼出了两个想在中间或另一头站住的方案。"
+    },
+    {
+      "type": "p",
+      "text": "**拉卡托斯做的是调停。**他的想法很聪明:评价的对象不该是**单个理论**,而是**理论的序列**——他叫它「研究纲领」。一个纲领有一个**不许碰的硬核**(比如牛顿三定律加万有引力),外面裹一圈**可以修改的保护带**(各种辅助假设);遇到反常时,你修改保护带而不动硬核——**这正是科学家实际在做的事,也正是波普尔认为不该做的事。**那怎么判断一个纲领该不该继续?看它是在**进步**还是在**退化**:**进步的纲领,它的修改会带来新的、后来被证实的预言;退化的纲领,它的修改只是在事后圆场,不带来任何新东西。**"
+    },
+    {
+      "type": "p",
+      "text": "这个判据很好,**代价是它往往只能事后作出**:一个修改是不是能带来新预言,常常要过好些年才看得出。**所以身处其中的人,当下依然不知道自己在哪一边**——这一点被批评了很多次,而它也恰恰印证了库恩说的:当下的选择需要判断,而判断会分歧。"
+    },
+    {
+      "type": "p",
+      "text": "**费耶阿本德走向了另一头。**他基本同意库恩对科学实践的描述,**却认为常规科学是应当被反对的东西**。他的主张是理论应当尽可能**增殖**——多几套互不相容的说法同时存在,才有可能看出任何一套的毛病;而任何一条被立为普遍规则的方法论,历史上都能找到「违反它反而成功」的案例。他因此提出了那句最出名、也最容易被断章取义的口号:**「怎么都行。」**"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "一处必须分清",
+      "items": [
+        "**库恩明确与「怎么都行」划清了界限。**他的整套理论恰恰在强调:**共同体有非常严格的标准**,只是那些标准以范例和价值的形式存在,而不是以规则的形式存在。**把库恩和费耶阿本德混为一谈,是中文语境里极常见的一个错误**——两人都用了「不可通约」,也都被当成「科学相对主义者」,但费耶阿本德是主动挑衅的反方法论者,库恩终其一生都在拒绝这顶帽子。**引用时务必分清是谁说的。**"
+      ]
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "svg": "<svg viewBox='0 0 560 258' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>同一场争论里的四个位置</text><g style='font-family:var(--font-serif);font-size:11.5px'><rect x='22' y='46' width='250' height='90' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='147' y='68' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>波普尔</text><text x='147' y='90' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>猜想 + 反驳;常规科学是病</text><text x='147' y='112' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>留下:一条纪律</text><rect x='288' y='46' width='250' height='90' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='413' y='68' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>库恩</text><text x='413' y='90' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>解谜→危机→革命;教条有生产力</text><text x='413' y='112' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>留下:一副诊断</text><rect x='22' y='148' width='250' height='90' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='147' y='170' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>拉卡托斯</text><text x='147' y='192' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>硬核 + 保护带;进步 vs 退化</text><text x='147' y='214' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>留下:一个判据,但多半事后才明</text><rect x='288' y='148' width='250' height='90' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='413' y='170' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>费耶阿本德</text><text x='413' y='192' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>理论增殖,「怎么都行」</text><text x='413' y='214' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>留下:一记警钟,也最易被滥用</text></g></svg>",
+      "caption": "四个位置里,**只有库恩那一格是纯描述的**,其余三格都带着「应当」。这也解释了为什么库恩老是被两边都不满意:**规范派嫌他不表态,而想拿他当武器的人,又发现他什么许可证也没发。**"
+    },
+    {
+      "type": "h2",
+      "text": "五、「谁赢了」是个错问题"
+    },
+    {
+      "type": "p",
+      "text": "这场争论最常见的读法错误,就是问谁赢了。**若非要给一个粗略的历史结论**:在科学哲学内部,严格意义上的证伪主义作为一套科学观已经很少有人完整持有了——批评它的理由,大半就是库恩和拉卡托斯当年提的那些;而库恩的强版本主张(不可通约、拒绝逼近真理)也同样没有成为共识。**两人都没有赢下自己想赢的那一局,却都永久地改变了这个领域能问什么问题。**而这个结果之所以不奇怪,是因为**他们问的本来就不是同一个问题**。"
+    },
+    {
+      "type": "p",
+      "text": "**波普尔问的是:科学应当怎样。**这是一个**规范**问题,答案是一套关于态度和方法的要求——你应当把话说得可被推翻,你应当认真去打自己的脸。**库恩问的是:科学实际怎样运转。**这是一个**描述**问题,答案是一套关于人群、训练、危机与更替的经验刻画。**把两个问题当成同一个问题的两个答案,才会觉得必须选边。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "svg": "<svg viewBox='0 0 560 240' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>两条都要用:一条纪律,一副诊断</text><rect x='24' y='46' width='250' height='134' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='149' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>波普尔给你一条纪律</text><g style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'><text x='149' y='102' text-anchor='middle'>「这个说法在什么情况下</text><text x='149' y='124' text-anchor='middle'>会被证明是错的?」</text><text x='149' y='156' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>答不上来的说法,内容为零</text></g><rect x='286' y='46' width='250' height='134' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='411' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>库恩给你一副诊断</text><g style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'><text x='411' y='102' text-anchor='middle'>「我为什么一直没看见</text><text x='411' y='124' text-anchor='middle'>自己错了?」</text><text x='411' y='156' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>解释一群聪明人为何集体绕开显眼的问题</text></g><text x='280' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>前者管你怎么设计检验,后者管你怎么理解自己所在的那个圈子</text><text x='280' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>它们不冲突,因为它们回答的不是同一个问题</text></svg>",
+      "caption": "实际做事的人两条都用得上。**做方案评审时用波普尔那条**:这个判断如果错了,我们会从哪里看出来?**做复盘时用库恩那条**:这个问题明明存在很久,为什么没有人当回事?——两个问题问的是同一件事的两端。"
+    },
+    {
+      "type": "pull",
+      "text": "波普尔问「你怎么可能错」,库恩问「你为什么看不见自己错了」。"
+    },
+    {
+      "type": "p",
+      "text": "最后一句公道话给波普尔:**他的那条纪律,今天比库恩的诊断更常被真正需要。**因为在日常的争论里,最普遍的毛病不是「一群人集体绕开一个反常」,而是**大量说法根本没被表述成可以被推翻的形式**——「我们要更重视用户体验」「这个方向长期看是对的」。**这类话没有敌人,也就没有内容。**库恩的框架很好用,但它是用来理解一个已经把话说清楚的共同体的;**在话还没说清楚的地方,先用波普尔。**"
+    },
+    {
+      "type": "p",
+      "text": "另外值得记的一点:**这场论战本身,就是库恩理论的一个例证。**双方都是极聪明、极诚实的人,都读过同一批史料,吵了很多年,谁也没有说服谁——**因为分歧不在证据,在于「一门学问该拿什么当标准」。**这正是第 4 章讲的那种争论:没有第三把尺子,只能靠各自的理由慢慢累积分量。**用库恩的框架去看这场关于库恩的争论,居然对得上,这件事本身就有点意思。**"
+    },
+    {
+      "type": "p",
+      "text": "下一章处理这本书最实际的那笔账:**它是怎么被用歪的。**两种误用方向正好相反——一种把它变成时髦话,一种把它变成挡箭牌;**而库恩对两种都说过不。**"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "title": "躲猫猫的世界",
+  "subtitle": "断裂不是从电视开始的——第一张骨牌是电报,第二张是照片",
+  "centralIdea": "这是全书最被低估的一章,也是今天最值钱的一章。波兹曼说电视只是把牌打完的那个人,真正发牌的是电报和照片。一八四四年电报出现后,信息第一次跑得比人快,世界上从此有了一类全新的东西:与你毫无关系、但你「必须知道」的消息。他为此给了一把好用的尺子——信息—行动比:衡量一条消息的分量,看你收到它之后能做的事多了几件。从前的消息大多能用(上游发水要搬东西,谷价涨了要卖粮),现在的消息大多只能有个态度,于是「知道」本身变成了一种消费。照片补上了最后一块:它给这些无根的事实配上似乎在场的画面,而照片有个致命特点——它没有提出任何可被反驳的说法,所以无所谓真假;「通货膨胀」「正义」「因为所以」也根本拍不出来。两者合谋,还催生出「伪语境」:填字游戏、知识竞猜、饭桌谈资,专门为用不上的信息制造一个用处。合起来就是他说的躲猫猫的世界——东西不断闪现又消失,好玩,但没有连贯性,也不要求你负责。这一章的框架今天几乎可以原样搬用,但有一处失灵:互联网上的信息不再转瞬即逝,它可搜索、可回看、可核对。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "一八四四年,莫尔斯从华盛顿向巴尔的摩发出第一封长途电报。在此之前的整部人类史里,**消息传得再快也快不过一匹马、一艘船、一个人**;从那天起,信息第一次跑到了人的前面。**波兹曼说,这是断裂的开始——不是电视,是电报。**"
+    },
+    {
+      "type": "p",
+      "text": "为什么是电报?因为它一次性取消了空间对信息的限制,而空间原本承担着一个没人注意到的功能:**筛选。**离你三百里外的事,原本传不到你这里;传得到你这里的事,通常都与你有关。**电报把这个天然的筛子拆了。**从那天起,世界上开始出现一类全新的东西:**与你毫无关系、但你「必须知道」的消息。**"
+    },
+    {
+      "type": "quote",
+      "original": "我们急于建设从缅因州到得克萨斯州的磁力电报线,但缅因州和得克萨斯州或许没有什么重要的话要说。",
+      "translation": "波兹曼引的是梭罗《瓦尔登湖》里的话——写下这句时电报刚刚问世。它一句点破了后来一百八十年的处境:通道建好了,内容还没有;而通道一旦建好,内容会被造出来填满它。"
+    },
+    {
+      "type": "p",
+      "text": "这里有一步很容易被略过:**「必须知道」这个义务感,是被造出来的。**电报把通道修好之后,报纸发现每天都能拿到全国各地的消息,而每天都有新东西可登,意味着每天都能卖报、能卖广告。**于是「今天发生了什么」从一个偶尔的疑问,变成了一种每天都得被满足的胃口。**读者被训练成「一天不看就心慌」,而这份心慌恰恰是生意的基础。**注意这里的因果:不是人们先想知道世界各地的事,才有了电报;是先有了电报,才有了这种想知道。**"
+    },
+    { "type": "h2", "text": "一、信息—行动比:一把随身的尺子" },
+    {
+      "type": "p",
+      "text": "他由此给出全书最实用的一个工具,叫**信息—行动比**。它不问「这条消息是真是假」,也不问「重不重要」,只问一件事:**你收到它之后,能做的事多了几件?**"
+    },
+    {
+      "type": "p",
+      "text": "在电报之前,一个人一天里收到的消息几乎都是可用的:上游发大水了,得把东西往高处搬;今年谷价涨三成,该考虑卖粮;邻村有匪,晚上要关门。**收到即行动,这是那个世界里「消息」这个词的默认含义。**而现在,你一天里刷到的绝大部分内容,**收到之后能做的只有一件事:有个态度。**点头或摇头,转发或划走。"
+    },
+    {
+      "type": "p",
+      "text": "波兹曼要说的不是「别关心远方的事」——**他要指出的是一次功能上的偷换:当「知道」不再连着「做」,「知道」本身就变成了一种消费行为。**它给你的是一点参与感、一点谈资、一点情绪起伏——**这些都是娱乐的产物,不是信息的产物。**你以为自己在了解世界,实际上在消磨时间,而且是以一种极其体面的方式消磨,体面到你根本不会为此感到愧疚。"
+    },
+    {
+      "type": "figure",
+      "ftype": "公式图",
+      "caption": "这把尺子今天比一八四四年更好用,因为分母涨了几个数量级,分子几乎没动。它不是让人别关心世界,而是提醒你分清两件事:哪些是信息,哪些其实是消遣披着信息的外衣。",
+      "svg": "<svg viewBox='0 0 620 250' xmlns='http://www.w3.org/2000/svg'><text x='310' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>信息—行动比</text><line x1='210' y1='96' x2='410' y2='96' style='stroke:var(--ink);stroke-width:1.4'/><text x='310' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>你因此能做的事</text><text x='310' y='120' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>你收到的信息量</text><text x='452' y='104' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink-soft)'>→ 越接近零</text><text x='452' y='126' style='font-family:var(--font-serif);font-size:13px;fill:var(--cinnabar-pure)'>→ 它越是消遣</text><rect x='30' y='158' width='260' height='68' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='330' y='158' width='260' height='68' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2'/><text x='160' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>电报之前</text><text x='460' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>今天</text><text x='160' y='204' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>消息少,而且大多要动手</text><text x='460' y='204' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>消息海量,而且大多只能表态</text><text x='160' y='220' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>比值高</text><text x='460' y='220' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>比值趋近于零</text></svg>"
+    },
+    { "type": "h2", "text": "二、照片:给无根的事实配上画面" },
+    {
+      "type": "p",
+      "text": "第二张骨牌是照片。它做了电报做不到的事:**给那些飘着的、与你无关的事实,配上一个似乎在场的画面。**一条「某地发生冲突」的电文是抽象的,配一张照片,你就「看见」了——你会觉得自己知道得更多了。"
+    },
+    {
+      "type": "p",
+      "text": "但照片有个致命的特点,波兹曼把它挑得很清楚:**照片不提出任何主张,所以它无所谓真假。**一个句子可以被反驳(「不对,那年的失业率没那么高」),一张照片没法被反驳,因为它压根没说什么。它只是把某一瞬间、某个角度、某个框内的东西端给你——**而框外有什么、之前之后发生了什么、这一瞬是不是典型,它一概不说,也不承担说的义务。**"
+    },
+    {
+      "type": "p",
+      "text": "更要命的是它拍不出的那些东西。**「通货膨胀」拍不出来,「正义」拍不出来,「因为所以」拍不出来,「在大多数情况下」也拍不出来。**你只能拍一个愁眉苦脸的主妇站在货架前——**于是「通货膨胀」这个需要一整套论证的东西,被换成了一张脸。**换完之后,讨论的形状就变了:大家开始比谁的脸更惨,而不是比谁的解释更站得住。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "caption": "照片的偏向不在它会骗人,而在它只能承载一类东西。当一个社会主要靠画面来了解公共事务,右边那一列就会慢慢从讨论里消失——不是被禁止,是拍不出来。",
+      "svg": "<svg viewBox='0 0 620 246' xmlns='http://www.w3.org/2000/svg'><text x='310' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>拍得出的,与拍不出的</text><rect x='28' y='44' width='262' height='158' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='330' y='44' width='262' height='158' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2'/><text x='159' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>拍得出</text><text x='461' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>拍不出</text><text x='159' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>一张愁苦的脸</text><text x='461' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>通货膨胀</text><text x='159' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>倒塌的房屋</text><text x='461' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>「因为所以」</text><text x='159' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>握手的两个人</text><text x='461' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>「在多数情况下」</text><text x='159' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>此刻 · 此处 · 此框内</text><text x='461' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>过去 · 别处 · 框外</text><text x='310' y='228' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>照片不提出主张,所以它没法被反驳 —— 它不是在骗你,它是不承担说话的义务</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "把这一节挪到今天,几乎不用改:**短视频是会动的照片。**它同样把某个瞬间、某个角度、某个框内的东西端到你面前,同样不提出可被反驳的主张,同样把「框外发生了什么」留在框外。**而且它比照片更强:它有声音、有节奏、有情绪,你会更确信自己「看到了真相」。**一段十五秒的争执视频能让几百万人形成判断,但没有一个人知道摄像机打开之前的十分钟发生了什么——**而这恰恰是唯一能决定谁对谁错的那十分钟。**"
+    },
+    { "type": "h2", "text": "三、伪语境:给用不上的信息找个用处" },
+    {
+      "type": "p",
+      "text": "这里有个概念特别好用,叫**伪语境**。既然新出现的信息大多用不上,总得给它找个去处——**于是社会发明了一批专门消化无用信息的装置。**波兹曼举的例子是填字游戏和知识竞猜:你知道非洲第二长的河叫什么,这条信息对你的生活毫无用处,**但在填字格里,它突然有用了。**"
+    },
+    {
+      "type": "p",
+      "text": "他的判断很冷:**伪语境不是在恢复信息的用处,它只是给信息找了个消遣的用处。**换句话说,它把「知道」正式改行成了「玩」。这个概念今天几乎不用改一个字:**热搜、玩梗、饭桌谈资、以及那种「不知道这个就落伍了」的焦虑,全都是伪语境。**它们让海量与你无关的信息有了存在的理由——理由是好玩,是能接上话,是能证明你在场。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "放到今天",
+      "items": [
+        "一条社会新闻你转发了、评论了、和同事聊了十分钟,**这十分钟就是这条信息的全部用途**。它没有改变你任何一个决定,但它确实为你提供了一段愉快的社交。",
+        "这不是说这十分钟没价值——**闲聊本身是好东西**。波兹曼要提醒的只是别弄混:**那十分钟的性质是娱乐,不是了解。**弄混了才是麻烦:一个人会真心以为自己「在关心公共事务」,并因此心安理得。"
+      ]
+    },
+    { "type": "h2", "text": "四、躲猫猫的世界" },
+    {
+      "type": "p",
+      "text": "这几样合起来,他给出了这章的名字:**躲猫猫的世界。**躲猫猫是逗婴儿的那个游戏——脸藏起来,又冒出来,再藏起来。**婴儿咯咯笑,因为它有趣;但它不连贯、不需要解释,也不要求任何人负责。**"
+    },
+    {
+      "type": "p",
+      "text": "他说,电报和照片一起,把公共信息变成了这样一个世界:一件事冒出来,还没等你搞清来龙去脉,它就沉下去了;紧接着另一件冒出来。**你一整天都在「知道事情」,但没有一件事在你这里落地生根。**这个世界不是虚假的,它的每一条可能都是真的——**它的问题是没有结构:没有先后,没有轻重,没有「所以呢」。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "同样是一天的信息,左边有结构:少、慢、连得起来、指向行动;右边没有结构:多、快、彼此无关、看完就散。波兹曼说,后者不是内容出了问题,是它根本没有形状。",
+      "svg": "<svg viewBox='0 0 620 244' xmlns='http://www.w3.org/2000/svg'><text x='310' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>一天的信息,两种形状</text><rect x='28' y='44' width='262' height='150' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='159' y='68' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>有结构</text><circle cx='78' cy='104' r='7' style='fill:var(--ink-soft)'/><circle cx='140' cy='104' r='7' style='fill:var(--ink-soft)'/><circle cx='202' cy='104' r='7' style='fill:var(--ink-soft)'/><line x1='85' y1='104' x2='133' y2='104' style='stroke:var(--ink-faint);stroke-width:1.2'/><line x1='147' y1='104' x2='195' y2='104' style='stroke:var(--ink-faint);stroke-width:1.2'/><path d='M202 112 L202 136' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M198 128 L202 136 L206 128' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><text x='202' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>所以要做某件事</text><text x='159' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>少 · 慢 · 连得起来</text><rect x='330' y='44' width='262' height='150' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2'/><text x='461' y='68' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>躲猫猫</text><circle cx='362' cy='96' r='5' style='fill:var(--ink-faint)'/><circle cx='398' cy='120' r='6.5' style='fill:var(--ink-faint)'/><circle cx='432' cy='90' r='4' style='fill:var(--ink-faint)'/><circle cx='466' cy='126' r='7' style='fill:var(--ink-faint)'/><circle cx='500' cy='98' r='5' style='fill:var(--ink-faint)'/><circle cx='534' cy='118' r='4.5' style='fill:var(--ink-faint)'/><circle cx='566' cy='94' r='6' style='fill:var(--ink-faint)'/><circle cx='384' cy='150' r='4' style='fill:var(--ink-faint)'/><circle cx='448' cy='156' r='5.5' style='fill:var(--ink-faint)'/><circle cx='516' cy='152' r='4' style='fill:var(--ink-faint)'/><text x='461' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>多 · 快 · 彼此无关 · 看完就散</text><text x='310' y='224' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>右边每一条可能都是真的 —— 它的问题不是假,是没有形状</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "还有一层他说得很轻、但值得挑明:**躲猫猫的世界是舒服的。**它没有任何压迫感——没人逼你看,你随时可以停;它源源不断地给你新鲜感和小小的情绪起伏;它甚至让你觉得自己见多识广。**一个让人不适的东西会被抵抗,一个让人舒服的东西不会。**这就是为什么这一章明明在讲十九世纪的技术,却是全书通往赫胥黎的那条路:**要毁掉一种公共生活,不需要谁去禁止它,只要提供一个更舒服的替代品就够了。**"
+    },
+    { "type": "h2", "text": "五、这一章为什么今天最值钱" },
+    {
+      "type": "p",
+      "text": "因为电视只是把这套东西做成了默认设置,而互联网把它推到了极致。**「无限下滑」这个交互,几乎是「躲猫猫」四个字的产品化实现**:一条接一条,彼此无关,永不结束,而且比电视更彻底——电视好歹还有节目表和结束时间。**这一章的框架不需要改一个字就能搬到今天。**"
+    },
+    {
+      "type": "p",
+      "text": "但要老实指出一处失灵,而且这一处很关键:**他假定信息是转瞬即逝的**——闪一下就沉下去,你想追也追不回。**这个前提今天不成立了。**网上的东西可搜索、可回看、可核对、可以顺着链接一路挖到原始文件。**理论上,今天的读者比历史上任何时候都更容易把一件事查清楚。**"
+    },
+    {
+      "type": "p",
+      "text": "所以真正的问题被换了位置:**不再是「你追不回来」,而是「你不会去追」。**能力有了,动作没有——**这已经不是媒介形式的问题,是习惯和意愿的问题了。**波兹曼的模型里没有位置放这一格,这是第八章要重算的账。"
+    },
+    {
+      "type": "p",
+      "text": "还有一处也得记在账上:**他把「信息过载」只当成坏事,而它同时也是件好事。**一个县城里的高中生今天能读到最好的公开课,一个病人家属能查到几十篇研究综述,一个想学做菜的人能在十分钟内学会一道菜——**这些在铅字时代都不可能,而它们全都是同一条通道带来的。**这本书对这一面几乎没有着墨,读的时候要自己补上,否则会把它读成一篇单纯的挽歌。"
+    },
+    {
+      "type": "pull",
+      "text": "他担心的是信息像烟一样散掉;而今天的麻烦是信息全都留着,只是没有人回头去看。"
+    },
+    {
+      "type": "p",
+      "text": "这一章读完,可以随身带走一个小习惯:**每天挑一条你最投入的消息,问自己一句「我因此要做什么」。**如果连着一周答案都是「没有,就是有点想法」,那不必自责——**只要认清那一小时的性质是消遣,就够了。**这本书从头到尾没要求任何人苦行,它只要求你别把消遣误认成了解。"
+    }
+  ]
+}

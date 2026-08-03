@@ -1,0 +1,151 @@
+{
+  "title": "不可通约性:革命前后的人「生活在不同的世界里」",
+  "subtitle": "全书最锋利、最有争议、也最被误解的一节——第一件要做的事不是评价它,是把这个词的意思弄准:它是个数学词,而且从一开始就不等于「不可比较」",
+  "centralIdea": "incommensurable 原是数学词,意思是「没有公度」——正方形的边和对角线找不到共同的度量单位。但边和对角线当然可以比较,谁长谁短一眼就看得出;没有的只是一把两边都能约尽的尺子。所以这个词从一开始就不等于「不可比较」,更不等于「不可交流」。库恩说革命前后的两套说法在三个层面不可通约:问题与标准变了(考卷都不是同一张)、词义变了(牛顿的质量守恒,爱因斯坦的质量可与能量互换)、看见的东西变了(亚里士多德的人看见受约束的落体,伽利略看见一个摆)。而「革命之后科学家面对一个不同的世界」这句最惹祸的话,必须连着他自己的限定一起读:世界没有变,变的是他此后在其中工作的那个世界。晚年他更后悔这个说法太形而上学,改说革命改变的是分类体系,并把主张收窄成「局部不可通约」——翻不过去的只是一小组分类词。补救办法不是翻译,是学第二语言:把对方的话在对方的框架里学会说。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "「不可通约」大概是这本书里被引用最多、也被误解最深的一个词。它被拿去证明科学是主观的、真理是相对的、任何两套说法都无法沟通;也被拿去替各种「你们不理解我们」的立场撑腰。**而这些用法有一个共同点:它们都从这个词的字面猜意思,没有去查它原本指什么。**所以这一章从词源开始——**因为一旦把词源弄清,一半误读会自己消失。**"
+    },
+    {
+      "type": "h2",
+      "text": "一、先把词义弄准"
+    },
+    {
+      "type": "p",
+      "text": "incommensurable 是个**数学词**,原义是「**没有公度**」:两个量之间找不到一个共同的度量单位,使它们都能被这个单位整除。经典例子是**正方形的边和它的对角线**——你想找一段长度,让边是它的整数倍、对角线也是它的整数倍,**找不到,而且能证明永远找不到**(这正是根号二不是分数这件事的几何说法)。"
+    },
+    {
+      "type": "p",
+      "text": "现在请注意关键的一步:**边和对角线当然可以比较。**谁长谁短一眼就看得出,谁也可以把比值算到小数点后一百位。**没有的只是一把两边都能约尽的公用尺子,而不是比较本身。**所以这个词从数学那里带过来的含义,从一开始就是:**没有共同的度量,不是没有可比性。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "svg": "<svg viewBox='0 0 560 246' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>词源:边与对角线「没有公度」</text><rect x='86' y='58' width='120' height='120' style='fill:none;stroke:var(--ink-soft);stroke-width:1.6'/><path d='M86 178 L206 58' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='146' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>边</text><text x='168' y='108' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>对角线</text><g style='font-family:var(--font-serif);font-size:11.5px'><text x='252' y='80' style='fill:var(--ink)'>找不到一段长度,能同时量尽两者</text><text x='252' y='106' style='fill:var(--ink)'>—— 这就是「没有公度」</text><text x='252' y='142' style='font-weight:bold;fill:var(--cinnabar-pure)'>但是:</text><text x='252' y='166' style='fill:var(--ink-soft)'>谁长谁短一眼看得出</text><text x='252' y='188' style='fill:var(--ink-soft)'>比值可以算到小数点后一百位</text></g><text x='280' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>没有共同的度量 ≠ 没有可比性。这是全章最该记住的一句</text></svg>",
+      "caption": "顺带说,库恩和费耶阿本德**在 1962 年各自独立地用了这个词**,而两人给它的分量不同——费耶阿本德把它推得更远。后世那个「什么都不能比」的极端版本,更多是从他那一支、以及从更后来的人手里长出来的。"
+    },
+    {
+      "type": "h2",
+      "text": "二、三个层面"
+    },
+    {
+      "type": "p",
+      "text": "库恩说,革命前后的两套说法在三个层面上不可通约。**这三层要分开看,因为它们的硬度差别很大**:第一层几乎没有争议,历史上到处是例子;第二层证据也相当扎实,但要小心它能推出什么;第三层最惹眼、也最脆弱,是库恩后来退让最多的一层。**很多关于这本书的争论,坏就坏在把三层混作一谈——用第一层的证据,去撑第三层的结论。**"
+    },
+    {
+      "type": "p",
+      "text": "**第一层:问题与标准。**双方对「一个像样的理论必须回答什么」意见不同,连什么算合格的解答都不同。第 4 章讲牛顿与笛卡尔派的那笔账就是这一层:一边认为「必须说明作用如何传递」,另一边把这条要求划掉了。**所以他们不只是答案不同,是考卷都不是同一张**——用各自的考卷去打对方的分,当然谁都不及格。"
+    },
+    {
+      "type": "p",
+      "text": "**第二层:词义。**这一层最硬,也最有说服力。**同一个词在两张网里的位置不同,而词的意思正来自它在网里的位置。**最标准的例子是「**质量**」:在牛顿体系里,质量是守恒的,是物体固有的、与运动状态无关的量;在相对论里,质量可以与能量互换,而且随运动状态变。**两套公式在低速下能对上,但那是数值对上,不是概念相同。**这一点让「牛顿力学不过是相对论的低速特例」这句流行说法变得含糊:**数学上成立,概念上不成立**——因为你没法把一个守恒的量说成一个不守恒的量的特例。"
+    },
+    {
+      "type": "p",
+      "text": "「**行星**」也是同一回事。哥白尼之后,地球被划进了行星,太阳和月亮被划了出去。**这不是给一个已有的类别增删几个成员,而是重排了整张分类表**——而分类表一变,一大批以前说得通的话就说不通了。「行星围绕地球运行」这句话在旧表里是一条经验事实,在新表里连合乎语法的陈述都算不上。"
+    },
+    {
+      "type": "p",
+      "text": "**第三层:所见。**从同一个位置朝同一个方向看,两边看见的不是同一件事。库恩最喜欢的例子是**摆**:一块石头拴在绳上来回晃,**亚里士多德传统里的人看见的是一次「受阻碍的落体」**——石头本要回到它该待的位置,被绳子拦住了,所以只能一点点耗尽,最终停在最低处;**伽利略看见的是一个摆**:一个近乎等时、可以反复往返、周期只跟绳长有关的现象。**同一块石头,一个看见的是「未完成的下落」,另一个看见的是「一种运动本身」。**"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "放到今天",
+      "items": [
+        "第三层听起来最玄,其实最容易在日常里验证。**同一份用户数据摆在两个团队面前**:做增长的人看见一条转化漏斗和几个可优化的节点;做客服的人看见一批具体的、正在发火的人。**他们不是对同一件事有不同意见,是根本没在看同一件事。**开会时双方都觉得对方「避重就轻」,而实际情况是各自眼里的「重」不在同一个地方。**库恩的贡献是指出:这种差别不是态度问题,是训练的产物**——训练教会你注意什么、忽略什么,而这一课学得越扎实,越察觉不到自己在忽略。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "三、「不同的世界」这句话该怎么读"
+    },
+    {
+      "type": "quote",
+      "original": "革命之后,科学家面对的是一个不同的世界。"
+    },
+    {
+      "type": "p",
+      "text": "这是全书最锋利、也最惹祸的一句。**要连着他自己的限定一起读**:库恩紧接着就说,**世界当然没有变,变的是科学家此后在其中工作的那个世界**;而且他用了「仿佛」「在某种意义上」这类词。**被引用的版本几乎总是把这些限定剥掉了**——剥掉之后,一句关于「看见什么取决于准备好看什么」的说法,就变成了一句关于「有多个真实世界」的形而上学主张。"
+    },
+    {
+      "type": "p",
+      "text": "他举的史实是很硬的。**天王星在被赫歇尔认出来之前,至少有十七次被人当成一颗恒星记录下来。**它一直在那儿,亮度足够,位置也被记下了——**缺的只是一个「它可能不是恒星」的类别**。更漂亮的一组对比是天象:中国的观测者很早就系统地记录过天上的变化(新星、彗星、太阳黑子这类);而欧洲在「天界永恒不变」的框架下,这类记录长期稀少——**直到哥白尼之后,西方天文学家在短短几十年里,忽然在那片本该不变的天上看见了一连串新东西。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>同一片天,看见什么取决于准备好看什么</text><rect x='24' y='46' width='250' height='142' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='149' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink-soft)'>「天界永恒不变」的框架下</text><g style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'><text x='42' y='98'>天上不该有新东西</text><text x='42' y='122'>于是异象被当成大气现象,</text><text x='42' y='142'>或者干脆不被记下</text><text x='42' y='170' style='fill:var(--ink-faint)'>天王星:十七次被记成恒星</text></g><rect x='286' y='46' width='250' height='142' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='411' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>框架一松动之后</text><g style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'><text x='304' y='98'>短短几十年里,</text><text x='304' y='122'>新星、彗星、太阳黑子</text><text x='304' y='142'>接连被「看见」</text><text x='304' y='170' style='fill:var(--cinnabar-pure)'>望远镜有帮助,但不是全部原因</text></g><text x='280' y='218' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>库恩要说的不是「天变了」,是「什么算值得记下的东西」变了</text><text x='280' y='240' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>——这是一句关于注意力和分类的话,不是一句形而上学</text></svg>",
+      "caption": "这里要给一句公道的分寸:**望远镜的出现当然是重要原因之一**,不能把所有变化都归给观念。库恩的论点是较弱、也较可辩护的那个版本:**在证据相同的地方,框架决定了什么会被记下、什么会被当成噪声抹掉。**"
+    },
+    {
+      "type": "h2",
+      "text": "四、它不等于哪四件事"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**不等于「两边没法比较」。**词源已经说明了这一点,而库恩本人从头到尾都在比较——他说牛顿力学比亚里士多德的更好用,这本身就是一次跨范式比较。**他否认的只是「存在一把中立的、双方都接受的公用尺子」。**",
+        "**不等于「两边没法交流」。**他说的是**部分**失灵:大部分话照样说得通,只在若干关节处会出现「明明每个字都懂,合起来不知道你在说什么」。**这正是本书开头那个读亚里士多德的体验。**",
+        "**不等于「证据不起作用」。**这是最要命的一个误推。不可通约性是关于**意义与标准**的主张,**不是关于证据无效的主张**。第 4 章列的那五条论证理由,条条都以证据为骨。",
+        "**不等于「全部词都翻不过去」。**晚年他把主张明确收窄成「**局部不可通约**」:翻不过去的只是**一小组分类词**(那些指「哪一类东西」的词),其余绝大部分照译不误。**把「局部」两个字丢掉,就得到了那个他本人不承认的相对主义版本。**"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "五、他给的补救:不是翻译,是学第二语言"
+    },
+    {
+      "type": "p",
+      "text": "这是全章最实用、也最少被引用的一段。**如果两套说法之间有几处翻不过去,该怎么办?**库恩的答案不是「那就各说各的」,而是一个具体的、要下功夫的建议:**去学对方的语言。**"
+    },
+    {
+      "type": "p",
+      "text": "他的类比是自然语言之间的翻译。**没有一段翻译是完美的**——总有些词在另一种语言里没有对应,总有些语感会掉。**但双语者是存在的**:一个真正学会了第二语言的人,不是在脑子里做逐词替换,而是能**直接用那套语言去想事情**。库恩说,理解一个过去的或对立的范式,要的就是这种能力:**不是把他们的话翻成我们的话(那必然走样),而是学会用他们的话说话。**这正是他自己 1947 年对亚里士多德做的事——**他没有把亚里士多德翻译成牛顿,他学会了用亚里士多德的方式说「运动」。**"
+    },
+    {
+      "type": "pull",
+      "text": "没有共同的度量,不等于没有可比性——这是这个词从数学那里带过来的、最该记住的一句。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "最隐蔽的那种误用",
+      "items": [
+        "有了上面这一段,一种流行用法就现了形:**拿不可通约替自己的小圈子挡话——「你们不理解我们,因为我们不可通约。」**这把库恩说反了。他的整个建议是**双方都得去做那件麻烦事**:学对方的语言,学到能用对方的框架把对方的立场说出来为止。**「我们之间不可通约」如果是一句真话,它意味着接下来有很多功课要做;如果被当成结论,它就只是一句拒绝沟通的漂亮话。**第 9 章会看到,这种用法在跨专业、跨部门的争论里出现得极其频繁。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "六、他后来改口的那部分"
+    },
+    {
+      "type": "p",
+      "text": "最后必须交代:**库恩自己对这一节做过大幅让步,而且不是被迫的敷衍。**晚年他明确表示后悔「不同的世界」那个说法——它听起来像在主张有多个世界,而他真正想说的要窄得多。他改用**词汇表**和**分类树**来说同一件事:**一个共同体的语言里有一批「种类词」**(元素、行星、酸、力……),它们彼此的从属与排斥关系构成一棵树;**革命就是这棵树被重新剪过一次。**树一变,某些陈述在新树上就无法被表达——不是被驳倒,是**说不出来**。"
+    },
+    {
+      "type": "p",
+      "text": "拿「行星」这棵树画出来,这件事一眼就清楚了。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "svg": "<svg viewBox='0 0 560 268' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>革命 = 分类树被重新剪过一次</text><text x='140' y='56' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink-soft)'>哥白尼之前</text><rect x='96' y='68' width='88' height='24' rx='3' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><text x='140' y='85' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>行星(游星)</text><path d='M140 92 L140 106 M62 106 L218 106 M62 106 L62 120 M101 106 L101 120 M140 106 L140 120 M179 106 L179 120 M218 106 L218 120' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><g style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'><text x='62' y='134' text-anchor='middle'>太阳</text><text x='101' y='134' text-anchor='middle'>月亮</text><text x='140' y='134' text-anchor='middle'>金星</text><text x='179' y='134' text-anchor='middle'>火星</text><text x='218' y='134' text-anchor='middle'>木星…</text></g><rect x='104' y='158' width='72' height='24' rx='3' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><text x='140' y='175' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>地球:不在树上</text><path d='M280 52 L280 208' style='fill:none;stroke:var(--line);stroke-width:1;stroke-dasharray:4 4'/><text x='420' y='56' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>哥白尼之后</text><rect x='376' y='68' width='88' height='24' rx='3' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='420' y='85' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>行星</text><path d='M420 92 L420 106 M342 106 L498 106 M342 106 L342 120 M381 106 L381 120 M420 106 L420 120 M459 106 L459 120 M498 106 L498 120' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><g style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'><text x='342' y='134' text-anchor='middle' style='fill:var(--cinnabar-pure);font-weight:bold'>地球</text><text x='381' y='134' text-anchor='middle'>金星</text><text x='420' y='134' text-anchor='middle'>火星</text><text x='459' y='134' text-anchor='middle'>木星</text><text x='498' y='134' text-anchor='middle'>土星…</text></g><g style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'><text x='420' y='168' text-anchor='middle'>太阳 → 另立一类(恒星那一侧)</text><text x='420' y='186' text-anchor='middle'>月亮 → 另立一类(卫星)</text></g><text x='280' y='234' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>「行星绕地球运行」在旧树上是经验事实,在新树上连话都说不成</text><text x='280' y='258' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>——不是被驳倒,是说不出来。这就是「局部不可通约」的实际含义</text></svg>",
+      "caption": "留意「卫星」这个类:**它在旧树上根本不存在**,是望远镜看到木星的几颗伴星之后才被造出来的。**革命常常不只是把成员挪个位置,还会凭空长出新的类**——而一个新类一旦立住,过去那些含糊的说法就再也回不去了。"
+    },
+    {
+      "type": "p",
+      "text": "**这个新说法的好处是它可以被具体检查。**你可以摊开两个时期的文献,看某几个种类词的从属关系是不是真的变了。**它把一句听着玄妙的话,变成了一件可查的事**——而这正是一个哲学主张能变得健康的方向。这个收窄同时也意味着:**两个范式之间绝大部分内容是互相听得懂的**,争论完全可以进行下去,只是有几个关节处要格外小心。"
+    },
+    {
+      "type": "p",
+      "text": "顺带记一个判断标准,它能帮你识别别人是在用这个概念还是在滥用它。**真用它的人,会指得出具体是哪几个词出了问题**——「你说的『完成』和我说的不是一回事」「你们的『用户』包不包括试用期的?」;**滥用它的人,只会笼统地说「我们之间存在认知鸿沟」。**前者接下来会去做对齐词义的苦活,后者接下来什么也不做。**能不能指出具体的词,是这条分界线上最好用的一根探针。**"
+    },
+    {
+      "type": "p",
+      "text": "下一章接着这条线走下去,处理最后一个大问题:**如果革命前后的标准都变了,那科学到底还算不算在进步?**库恩的回答会让两边都不满意——**他拆掉的是「累积」,却坚决保留了「进步」。**"
+    }
+  ]
+}
