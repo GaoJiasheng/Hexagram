@@ -1,0 +1,158 @@
+{
+  "title": "宋元山水：无我之境到有我之境",
+  "subtitle": "同样是山水，北宋人画的是一个可以住进去的世界，元人画的是自己。三百年里，画面上的人越来越小，最后一个也不剩",
+  "centralIdea": "中国画最深的心事全在这三步里。北宋是「无我之境」：全景式的大山大水，人小得要找一找才看得见，画家的情绪一点不外露，全部化进客观景色里；郭熙说好山水要「可行可望可游可居」——它是一个能住进去的世界。南宋转向「一角半边」：马远夏圭把画面剪下一个角，大片留白，追求的不再是装下整个世界，而是捕捉一个特定的诗意瞬间。元代是「有我之境」：士人失去了仕途，画画成了自己跟自己说话，笔墨第一次从描摹对象里独立出来成为主角，诗书画印合在一张纸上；倪瓒那种一河两岸、空亭无人，画的不是某座山，是画的人自己。「无我 / 有我」这对概念李泽厚借自王国维，用来量绘画极为顺手。要打的折是：三段切得太齐，同一时期各家差别极大，而所谓「无我」的北宋画其实同样高度主观。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "把两张画并排放。**一张是北宋的：一座大山占满整幅，云雾在山腰断开，山下有小路、有溪、有屋舍，仔细找才能看见两个赶驴的人，小得像米粒。**另一张是元代的：**一条河，近岸几株枯树，一个空亭，对岸一抹远山，画面大半是空白，一个人也没有。**它们都叫「山水画」，用的也是同一套工具和技法。**可它们要的根本不是同一件事。**这一章讲的就是中间那三百年发生了什么。"
+    },
+    { "type": "h2", "text": "一、山水在中国为什么是最高的画科" },
+    {
+      "type": "p",
+      "text": "先说一件容易被忽略的事。**在西方绘画的传统排序里，风景长期属于低等题材**——历史画和宗教画最高，人物次之，风景和静物排在后面。**中国正相反：山水是最高的。**为什么？"
+    },
+    {
+      "type": "p",
+      "text": "**因为中国的山水画根本不是「风景画」。**风景画是看的，山水画是**进去住的**。北宋的郭熙在《林泉高致》里说得极清楚：山水有可以走过去的，有可以远望的，有可以游玩的，有可以住下来的——**而其中「可游」「可居」的才是好的。**"
+    },
+    { "type": "quote", "original": "可行、可望、可游、可居。" },
+    {
+      "type": "p",
+      "text": "**这句话把中国山水画的性质一次性交代完了。**它服务的是一个具体的心理需求：**一个被公务、人情、规矩绑住的人，需要一个可以在想象里搬进去的地方。**画挂在书房里，不是为了好看，是为了**随时可以走进去待一会儿。**这也接上了第四章那条线——**儒家的那一半负责办事，道家的那一半负责这张画。**"
+    },
+    { "type": "h2", "text": "二、北宋：无我之境" },
+    {
+      "type": "p",
+      "text": "北宋的山水几乎是一种「世界的说明书」。**画面通常很满**：主峰高踞正中，前景中景远景层层推开，树石、屋宇、水口、行旅一应俱全。**画家的情绪在哪里？看不见。**没有夸张的笔触，没有强烈的对比，没有一处在提醒你「作者此刻很激动」。"
+    },
+    {
+      "type": "figure",
+      "ftype": "空间示意",
+      "caption": "北宋人组织空间的三种办法（**原理示意，非摹写任何具体作品**）。留意它们的共同点：**每一种都在提供一条可以走进去的路线。**这与西方的焦点透视是两条路——焦点透视把你钉在一个位置上看；这套办法带着你走。",
+      "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>可以走进去的三种空间</text><g style='fill:none;stroke:var(--ink-faint);stroke-width:1'><rect x='30' y='44' width='150' height='130'/><rect x='205' y='44' width='150' height='130'/><rect x='380' y='44' width='150' height='130'/></g><g style='fill:none;stroke:var(--ink);stroke-width:1.4'><path d='M46,166 L84,88 L104,116 L128,60 L166,166'/></g><path d='M105,164 L105,120' style='stroke:var(--cinnabar-pure);stroke-width:1.4;fill:none'/><path d='M105,116 l-4,8 l8,0 Z' style='fill:var(--cinnabar-pure)'/><g style='fill:none;stroke:var(--ink);stroke-width:1.3'><path d='M215,166 L245,128 L268,146 L292,120 L320,150 L345,132'/><path d='M222,140 L248,110 L268,124'/><path d='M232,112 L256,88 L276,102'/></g><path d='M258,164 C268,140 276,120 288,104' style='stroke:var(--cinnabar-pure);stroke-width:1.4;fill:none;stroke-dasharray:4 3'/><path d='M289,100 l-1,9 l7,-4 Z' style='fill:var(--cinnabar-pure)'/><g style='fill:none;stroke:var(--ink);stroke-width:1.3'><path d='M390,158 L418,142 L440,152 L466,138 L492,150 L520,140'/><path d='M392,120 L424,108 L452,116 L484,104 L520,112'/></g><path d='M400,166 C440,150 480,132 516,118' style='stroke:var(--cinnabar-pure);stroke-width:1.4;fill:none;stroke-dasharray:4 3'/><path d='M518,116 l-8,2 l4,7 Z' style='fill:var(--cinnabar-pure)'/><g style='font-family:var(--font-serif);font-size:12.5px'><text x='105' y='198' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>高远：自下仰上</text><text x='280' y='198' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>深远：自前窥后</text><text x='455' y='198' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>平远：自近望远</text></g><g style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'><text x='105' y='220' text-anchor='middle'>山的压迫感</text><text x='280' y='220' text-anchor='middle'>一层层往里绕</text><text x='455' y='220' text-anchor='middle'>开阔、平静、无尽</text></g></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**李泽厚借王国维的一对概念，把这叫作「无我之境」。**要小心别把它读成「没有情感」——**情感全在，只是不出面。**一片萧瑟的秋山会让你感到萧瑟，但那萧瑟被完全交给了景物本身，画家没有在旁边加一句「我很惆怅」。**这是一种极高的克制，也和第四章说的那套「乐而不淫」是一路的。**"
+    },
+    {
+      "type": "p",
+      "text": "**人在画里为什么那么小？**这不是技术问题，是态度问题。**在这套世界观里，人本来就是天地中的一小部分**，画得小才对。而且人小、山大，这幅画才「住得下」——**一个占满画面的人物会立刻把画变成人物画，你就进不去了。**"
+    },
+    {
+      "type": "p",
+      "text": "**这里可以做一个很有意思的对照。**大约同一时期，西方绘画正在往相反的方向走：**把人放到画面正中，越画越大，越画越像。**文艺复兴的核心命题是「怎么在平面上做出真实的深度与体积」，而中国这边**从来没把这当成主要难题。**两边的高手都很多，可他们在解完全不同的题——**一边要让你相信「那里真有一个空间」，一边要让你愿意「搬进那个空间里住」。**"
+    },
+    {
+      "type": "p",
+      "text": "**这也是读贡布里希那本书时最容易产生的误会：**以为艺术史就是一条越来越真实的进化线。**放在中国这条线上，那个坐标整个失效了。**中国画技法当然也在积累，但积累的方向是**笔墨的表现力**，不是视觉的逼真度。**两条线不在同一个坐标系里，没法比高低。**"
+    },
+    { "type": "h2", "text": "三、南宋：剪下一个角" },
+    {
+      "type": "p",
+      "text": "南宋的变化很显眼：**画面被大幅裁剪。**马远、夏圭那一路被称为「马一角、夏半边」——**主体挤在一个角落，其余大片留白。**"
+    },
+    {
+      "type": "p",
+      "text": "**这是从「装下整个世界」转向「捕捉一个瞬间」。**北宋那种全景要的是完整，南宋这种一角要的是**情调**：一枝斜出的梅，一只泊在苇边的船，一个凭栏远望的人。**画的不再是「这地方是什么样」，是「此刻是什么感觉」。**"
+    },
+    {
+      "type": "p",
+      "text": "**院体画的命题传统把这一点推到了极致。**画院考试出的题目是诗句——比如要画出「踏花归去马蹄香」这样的意思。**「香」怎么画？据说得分的办法是画几只蝴蝶追着马蹄。**这类故事真伪难辨，但它反映的取向很真实：**从这时起，一幅好画被要求「有诗意」，而诗意的意思是——画出来的东西之外，还得剩下点什么。**"
+    },
+    {
+      "type": "p",
+      "text": "**南宋这一步还有一个常被忽略的前提：观看方式变了。**北宋那种全景大轴是挂起来远看的，要「气象」；南宋大量作品是册页、团扇、小卷——**拿在手里、凑近了、一个人细看的东西。**尺幅一小，那种堂堂正正的大山就摆不下了，**画面必须找到一个更亲密的说话方式。**载体的变化，往往比观念的变化更早、也更硬——**很多被说成「审美转向」的事情，追到底其实是「东西的尺寸变了」。**这一条在今天同样成立：手机屏幕的尺寸，也在悄悄改写什么样的画面算好看。"
+    },
+    {
+      "type": "p",
+      "text": "**这一步的意义常被低估：留白从此成了正式的语言。**空白不再是没画完的地方，而是画的一部分，**而且往往是最重要的那部分。**这跟上一章讲的「韵外之致」是同一件事在纸上的版本——**说出来的只占一小段，大半在说完之后。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "构图示意",
+      "caption": "留白从「没画完」变成「一句话」（**构图示意，非摹写具体作品**）。**右边那张的重点不在树，在那片空。**这一手一旦成立，中国画就获得了一种别处没有的自由：**它可以靠不画来说话。**",
+      "svg": "<svg viewBox='0 0 560 220' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>满，与一角</text><rect x='60' y='44' width='180' height='120' rx='3' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><g style='fill:none;stroke:var(--ink);stroke-width:1.3'><path d='M68,158 L96,104 L118,124 L142,80 L168,116 L192,88 L232,158'/><path d='M74,158 L92,132 L110,158'/><path d='M150,158 L164,138 L178,158'/><path d='M200,140 C210,130 222,132 230,140'/></g><circle cx='128' cy='152' r='2' style='fill:var(--cinnabar-pure)'/><rect x='320' y='44' width='180' height='120' rx='3' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><g style='fill:none;stroke:var(--ink);stroke-width:1.3'><path d='M328,156 L392,156'/><path d='M344,156 L344,120 M344,132 L332,120 M344,138 L356,124'/><path d='M362,156 L362,128 M362,140 L352,130 M362,136 L372,126'/><path d='M436,86 C458,78 480,80 496,86'/></g><g style='font-family:var(--font-serif);font-size:12.5px'><text x='150' y='188' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>北宋：满而有序</text><text x='410' y='188' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>南宋以后：一角与空</text></g><g style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'><text x='150' y='208' text-anchor='middle'>处处可行，处处可居</text><text x='410' y='208' text-anchor='middle'>空白是话，不是没画</text></g></svg>"
+    },
+    { "type": "h2", "text": "四、元：有我之境" },
+    {
+      "type": "p",
+      "text": "元代这一转最彻底，而它的社会原因也最清楚。**科举长期停废，汉族士人的仕途基本断了。**一个读了一辈子书、原本准备去做官的人，忽然没有了那条路——**他画画不再是为了给谁看，是自己跟自己说话。**"
+    },
+    {
+      "type": "p",
+      "text": "**后果是笔墨独立了。**在此之前，笔墨是手段——用它来表现山石树木；从元人开始，**笔墨本身成了看点。**同一块石头，用干笔擦出来和用湿墨染出来是两种东西；不是哪个更像石头，是哪个更像**画的人此刻的状态。**倪瓒说自己画画不过是随手几笔、不求形似，聊以自娱——**这话在此前的绘画传统里是说不通的。**"
+    },
+    { "type": "quote", "original": "逸笔草草，不求形似。" },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "同一块石头，三种笔性（**性格示意，非临摹任何作品**）。**这就是「笔墨独立」的意思**：形还是那个形，可看的人先感觉到的是用笔的脾气。**中国画从这里彻底放弃了以「像」为目标——因为它已经有了更要紧的事要说。**",
+      "svg": "<svg viewBox='0 0 560 220' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>形一样，笔不一样</text><g style='fill:none;stroke:var(--ink);stroke-width:1.6'><path d='M50,150 L74,92 L106,74 L142,96 L156,150 Z'/><path d='M74,96 L100,118 L142,100 M100,118 L96,150'/></g><g style='fill:none;stroke:var(--ink);stroke-width:1'><path d='M62,140 l10,-14 M70,146 l12,-16 M84,144 l10,-12 M112,140 l10,-16 M124,146 l12,-16 M100,130 l10,-14 M118,120 l10,-12 M132,128 l8,-10'/></g><g style='fill:none;stroke:var(--ink);stroke-width:4.6;stroke-linecap:round'><path d='M226,150 L248,94 L280,76 L316,98 L330,150'/></g><g style='fill:none;stroke:var(--ink);stroke-width:2.6;stroke-linecap:round' opacity='0.55'><path d='M248,98 L274,120 L316,102 M274,120 L270,150'/></g><g style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'><path d='M400,150 C404,120 414,96 428,80 C446,70 470,78 486,96 C498,116 502,134 504,150'/><path d='M424,96 C438,110 460,116 480,104'/></g><g style='fill:none;stroke:var(--cinnabar-pure);stroke-width:0.9' opacity='0.7'><path d='M414,138 C422,128 430,126 438,132 M446,142 C456,132 466,132 474,138 M436,116 C446,110 456,112 464,118'/></g><g style='font-family:var(--font-serif);font-size:12.5px'><text x='104' y='182' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>干笔 · 皴擦</text><text x='280' y='182' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>浓墨 · 阔笔</text><text x='452' y='182' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>淡笔 · 松散</text></g><g style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'><text x='104' y='204' text-anchor='middle'>枯瘦、冷、有涩感</text><text x='280' y='204' text-anchor='middle'>沉、重、有压力</text><text x='452' y='204' text-anchor='middle'>轻、疏、像随手</text></g></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**同时发生的是诗书画印的合一。**画上题诗、落款、盖印，从此成为一幅作品的完整部分——**这意味着画不再是一件匿名的手艺品，它是某个具体的人在某一天的表达。**「有我」这两个字，最直白的证据就是那行落款。"
+    },
+    {
+      "type": "p",
+      "text": "**倪瓒那种「一河两岸、空亭无人」是这条路的终点形态。**近处几株树，一个空亭，中间一片水（其实是空白），远处一抹淡山。**画里没有人，也没有路，你进不去。**它不再是「可居可游」的世界了——**它是一个人内心的样子。**"
+    },
+    {
+      "type": "p",
+      "text": "**那个空亭尤其值得停一下。**亭子是给人歇脚的，是最需要有人的建筑；**画一个空亭，等于把「本来该有人」这件事明白地摆出来。**如果什么都不画，那只是荒野；画一个空亭，那就是**「有人来过，或者本该有人」。**这一手的分寸极精细——**它靠一个物件，把缺席变成了在场。**"
+    },
+    {
+      "type": "p",
+      "text": "**这也是「兴」那套办法的终极版本。**第四章说过，《诗经》教会中国人「不直接说情绪，把景摆在那里，让情绪自己起来」。**元人的画把这一手做到了极限：连情绪的方向都不指定，只给你一个空亭、一片水、几株枯树，剩下的全交给看的人。**这是一种极度自信的做法——**它默认看画的人和画画的人是同一种人，有同一套心事。**"
+    },
+    { "type": "pull", "text": "北宋的画你可以住进去；元人的画你进不去——因为那里面已经住了一个人。" },
+    { "type": "h2", "text": "五、把三步放在一起看" },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "三百年，三个变量同步移动。**最能说明问题的是第一行**：人从「小」到「更小」到「没有」。**画面上人的消失，恰恰是画家本人的出现**——他不再需要在画里安排一个替身，因为整幅画已经是他了。",
+      "svg": "<svg viewBox='0 0 560 260' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>三步走</text><g style='font-family:var(--font-serif);font-size:12.5px'><text x='150' y='56' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>北宋</text><text x='300' y='56' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>南宋</text><text x='452' y='56' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>元</text></g><g style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'><text x='56' y='88' text-anchor='end'>画里的人</text><text x='56' y='120' text-anchor='end'>留白</text><text x='56' y='152' text-anchor='end'>要给的是</text><text x='56' y='184' text-anchor='end'>笔墨</text><text x='56' y='216' text-anchor='end'>境</text></g><g style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'><text x='150' y='88' text-anchor='middle'>小如米粒</text><text x='300' y='88' text-anchor='middle'>一两个，凭栏</text><text x='452' y='88' text-anchor='middle' style='fill:var(--cinnabar-pure)'>一个也没有</text><text x='150' y='120' text-anchor='middle'>几乎没有</text><text x='300' y='120' text-anchor='middle'>大半是空</text><text x='452' y='120' text-anchor='middle' style='fill:var(--cinnabar-pure)'>空得更冷</text><text x='150' y='152' text-anchor='middle'>一个世界</text><text x='300' y='152' text-anchor='middle'>一个瞬间</text><text x='452' y='152' text-anchor='middle' style='fill:var(--cinnabar-pure)'>一种心境</text><text x='150' y='184' text-anchor='middle'>为造景服务</text><text x='300' y='184' text-anchor='middle'>精工、讲究</text><text x='452' y='184' text-anchor='middle' style='fill:var(--cinnabar-pure)'>自己就是主角</text><text x='150' y='216' text-anchor='middle'>无我</text><text x='300' y='216' text-anchor='middle'>过渡</text><text x='452' y='216' text-anchor='middle' style='fill:var(--cinnabar-pure)'>有我</text></g><line x1='70' y1='232' x2='510' y2='232' style='stroke:var(--line);stroke-width:1'/><text x='280' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>人从画面上消失的过程，就是画家本人出现的过程</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**「无我之境」和「有我之境」这对概念，李泽厚是从王国维《人间词话》里借来的。**王国维原是用来说词的：**「有我之境」是以我观物，万物都带上了我的颜色；「无我之境」是以物观物，分不清哪是我哪是物。**李泽厚把它挪到绘画上，用得非常顺手——**这也是他常用的做法：借一个现成的好概念，扩大它的适用范围。**"
+    },
+    { "type": "h2", "text": "六、要打的折" },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "四处",
+      "items": [
+        "**第一，「无我」其实并不无我。**北宋那些大山水的构图、取舍、笔法都是高度主观的选择，**只是它们的主观藏在结构里而不是笔触上。**说北宋「客观」、元代「主观」，是程度之别被说成了性质之别。",
+        "**第二，三段切得太齐。**南宋同时存在着与院体完全不同的路子；元四家（黄公望、吴镇、倪瓒、王蒙）彼此差别极大——王蒙的画繁密得几乎不留空，跟倪瓒正相反。**「元人尚意、画得空」这个概括，主要是从倪瓒身上提炼的。**",
+        "**第三，社会解释太直。**「士人失去仕途所以转向笔墨」听着顺，但元代也有做官的画家，也有职业画师；**而在科举照常的明清，文人画反而更盛。**一个原因如果在别处不成立，就不能算充分原因。",
+        "**第四，这条线索本身带着后世的价值判断。**「文人画高于院体画」是明代以后逐渐确立的看法，**并非天经地义。**用这个排序去回看宋元，容易把当时并行的多条路讲成一条主线加几条支流。"
+      ]
+    },
+    { "type": "h2", "text": "七、该看什么" },
+    {
+      "type": "list",
+      "items": [
+        "**先找人。**有没有人？有几个？多大？在干什么？——**这一条几乎能替你定年代，也能替你定这幅画的性质。**",
+        "**再量空白。**空白占多少？空白在哪里（中间、边上、还是把主体挤到角上）？**空白的位置比它的面积更能说明问题。**",
+        "**看有没有路。**北宋的画里几乎总有一条可以走的路、一座可以过的桥、一间可以进的屋。**路一旦消失，这幅画就不再邀请你进去了。**",
+        "**看笔触本身。**眯起眼睛，别看画的是什么，只看线条的脾气：急还是缓、干还是湿、松还是紧。**元以后的画，这一层往往就是全部内容。**",
+        "**最后看题跋和印。**谁题的、什么时候题的、说了什么。**一幅画上密密麻麻的后人题印，本身就是一部流传史**——而这也是中国画独有的、把「后来的观看」直接留在作品上的做法。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**最后说一句这三步的整体意味。**从「可居可游的世界」到「一个人内心的样子」，中国画用三百年完成了一次彻底的内转——**它放弃了对外部世界的描摹责任，换来了对内部状态的表达自由。**这笔交易极划算，也极危险：**划算在于笔墨从此可以独立地好看，危险在于它越来越只对懂行的人说话。**明清以后文人画的程式化，根子就在这里。"
+    },
+    {
+      "type": "p",
+      "text": "**换个角度看，这也是全书那条「向外—向内」曲线最清楚的一段。**汉代要把整个世界塞进一块石头，北宋要把整座山装进一幅画，南宋只取一角，元人连人都不画了。**同一个动作重复了一千多年：往回收。**收到最后，剩下的是一片空白和几笔干枯的线——**而那片空白里，站着一个再也走不出去的读书人。**"
+    },
+    {
+      "type": "p",
+      "text": "下一章离开士大夫的书房，走到街上。**明代中叶以后，一批新的读者出现了**：他们不写诗，也不看画，他们要看的是长篇小说和热闹戏文。**中国文艺的重心，第一次从雅的这一头，挪到了俗的那一头。**"
+    }
+  ]
+}
