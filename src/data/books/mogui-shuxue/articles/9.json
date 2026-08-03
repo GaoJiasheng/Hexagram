@@ -101,7 +101,33 @@
     },
     {
       "type": "h2",
-      "text": "三、先验从哪里来，这是不是主观"
+      "text": "三、它跟前一章的工具是什么关系"
+    },
+    {
+      "type": "p",
+      "text": "这里得插一句背景，否则容易以为「贝叶斯好、p 值坏」——那是把一场持续了一百年的方法论之争，读成了一道是非题。"
+    },
+    {
+      "type": "p",
+      "text": "显著性检验属于所谓的**频率派**：它把概率理解成「长期重复下的频率」。在这个框架里，「这个假设为真的概率」这句话根本没有意义——一个假设要么真要么假，它不会有概率。**所以 p 值不回答那个问题，不是因为它做得不好，而是因为在它的世界观里，那个问题不成立。**"
+    },
+    {
+      "type": "p",
+      "text": "**贝叶斯派**把概率理解成「相信的程度」。在这个框架里，「这个假设为真的概率是七成」是一句有意义的话，而先验是必需的输入。代价是：先验从哪来，得有个交代。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "两种世界观，两套合法的问法。这场争论持续了近一个世纪，实务上多数人是混着用的——要紧的不是站队，是别把一边的答案安到另一边的问题上。",
+      "svg": "<svg viewBox='0 0 660 250' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>概率是什么：两种回答</text><rect x='24' y='48' width='290' height='166' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='169' y='76' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--azure)'>频率派</text><text x='169' y='104' text-anchor='middle' font-size='12' style='fill:var(--ink)'>概率＝长期重复下的频率</text><text x='169' y='130' text-anchor='middle' font-size='12' style='fill:var(--ink)'>假设本身没有概率</text><text x='169' y='156' text-anchor='middle' font-size='12' style='fill:var(--ink)'>输出：p 值、置信区间</text><text x='169' y='188' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>不必填先验，也答不了「有多可信」</text><rect x='346' y='48' width='290' height='166' rx='9' style='fill:var(--cinnabar-pure)' opacity='0.07'/><rect x='346' y='48' width='290' height='166' rx='9' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='491' y='76' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar-pure)'>贝叶斯派</text><text x='491' y='104' text-anchor='middle' font-size='12' style='fill:var(--ink)'>概率＝相信的程度</text><text x='491' y='130' text-anchor='middle' font-size='12' style='fill:var(--ink)'>假设可以有概率</text><text x='491' y='156' text-anchor='middle' font-size='12' style='fill:var(--ink)'>输出：后验概率</text><text x='491' y='188' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>能答「有多可信」，但要交代先验</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "作者的态度不是站队，而是**指出错配**：人们用着频率派的工具，问着贝叶斯派的问题，然后把前者的答案当成后者的答案。**这才是问题所在。**至于该用哪一套，取决于场合——有可靠基础发生率的时候，贝叶斯很自然（医学筛查就是典型）；做一次全新的、没有历史可参照的实验时，频率派的克制也有它的道理。"
+    },
+    {
+      "type": "h2",
+      "text": "四、先验从哪里来，这是不是主观"
     },
     {
       "type": "p",
@@ -139,7 +165,7 @@
     },
     {
       "type": "h2",
-      "text": "四、回头看 p 值"
+      "text": "五、回头看 p 值"
     },
     {
       "type": "p",
@@ -155,7 +181,7 @@
     },
     {
       "type": "h2",
-      "text": "五、它在日常判断里怎么用"
+      "text": "六、它在日常判断里怎么用"
     },
     {
       "type": "p",

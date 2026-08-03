@@ -1,0 +1,196 @@
+{
+  "title": "与儒家:可比的与不可比的",
+  "subtitle": "问题意识确有相通,机制完全不同。看清差别,比凑成「东西方所见略同」有意思得多",
+  "centralIdea": "这一章最容易走样,所以先立三条规矩:只比问题意识不比高下;结论相似不等于道理相通,要看机制;不生硬比附,两边要解决的问题与社会形态都不一样。相通的那个问题很实在——没人看见的时候,人凭什么还守得住?《大学》说小人独处时无所不为,见了君子才遮掩,可人看你像看透肺肝一样;《中庸》说越是隐微处越显露,所以君子慎其独;斯密则安置了一位公正的旁观者。形态确实像,都设想了一个「看着你」的存在。但机制正好岔开:斯密说荒岛上独自长大的人想不到打量自己的品格,镜子是别人给的,社会先于良心;孟子说仁义礼智非由外铄我也、我固有之也,恰恰不待外求。最锋利的对照是孺子入井——孟子用它证性善,并特意排除了「为了在乡党朋友那里博个名声」,把旁人的目光从根据里剔了出去;而斯密的整台装置正建在旁人的目光上。同一个现象,两条相反的推论。「爱有差等」与斯密「关心的次序」几乎同构,可理由不同:一个是由本心推恩,一个是想象力照得到多远;而且斯密在描述人事实上如此,孟子兼含本该如此。墨子的兼爱是第三方,要打破这个次序。最后不作高下评断:两套体系各自面对的社会不是一回事,硬对冲两边都会走样;知道这个问题不止一种问法,读起来会宽一点。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "**这一章最容易走样,所以先把话说在前面。**"
+    },
+    {
+      "type": "p",
+      "text": "把斯密和儒家放在一起,有两种常见的失手:**一种是急着凑成「东西方所见略同」**,把形态相似的东西直接当成同一件事;**另一种是急着分高下**,不是说「其实我们早就有了」,就是说「他们讲得更透」。**两种都会让人错过真正有意思的部分。**"
+    },
+    { "type": "h2", "text": "一、先立三条规矩" },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**只比问题意识,不比高下。**两边处理的是各自社会里的真问题,**没有一个共同的考场可以给它们打分。**",
+        "**结论相似不等于道理相通。**判断两套说法是不是一回事,**要看机制,不看结论**——这一条是本章的主刀。",
+        "**不生硬比附。**斯密要解释的是一个陌生人越来越多的商业社会里,道德判断如何可能;**先秦诸子面对的是一个宗法与礼制的世界。**要解决的问题不同,答案的形状自然不同。"
+      ]
+    },
+    { "type": "h2", "text": "二、相通的那个问题:没人看见的时候" },
+    {
+      "type": "p",
+      "text": "**先说确实相通的地方,而且它相通得相当深。**两边都盯着同一个难题:**没有人看见的时候,人凭什么还守得住?**"
+    },
+    {
+      "type": "quote",
+      "original": "小人闲居为不善,无所不至;见君子而后厌然,揜其不善而著其善。人之视己,如见其肺肝然,则何益矣。",
+      "translation": "《大学》诚意章。这段与斯密那位「知情的旁观者」形态极像:你以为掩饰得住,可看你的人像看透你的肺肝一样。两边都指出了同一件事——遮掩没有用,因为总有一双眼睛看得见内里。"
+    },
+    {
+      "type": "quote",
+      "original": "莫见乎隐,莫显乎微,故君子慎其独也。",
+      "translation": "《中庸》。越是隐蔽处越显露,越是细微处越分明,所以君子在独处时格外戒慎。这就是「慎独」。与斯密的公正旁观者相比,它同样解决「无人在场时的自我约束」这个问题,只是所依据的东西完全不同——下一节要说的就是这一点。"
+    },
+    {
+      "type": "p",
+      "text": "**斯密的答案是那位公正的旁观者:一个知情的、不偏不倚的、与此事无涉的看客,住在你心里。**你想知道刚才那件事站不站得住,**就问他会怎么看。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "caption": "三段话都在处理同一个难题,而且形态相似到会让人误以为是一回事。看清相似很容易,难的是看清下一节那个分岔——三者所依据的东西并不相同,甚至方向相反。",
+      "svg": "<svg viewBox='0 0 640 290' xmlns='http://www.w3.org/2000/svg'><text x='320' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:16px;font-weight:bold;fill:var(--ink)'>同一个难题:无人看见时</text><rect x='26' y='48' width='186' height='150' rx='6' style='fill:none;stroke:var(--line);stroke-width:1.1'/><rect x='226' y='48' width='186' height='150' rx='6' style='fill:none;stroke:var(--line);stroke-width:1.1'/><rect x='426' y='48' width='188' height='150' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='119' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>《大学》</text><text x='319' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>《中庸》</text><text x='520' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>斯密</text><text x='119' y='106' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>人之视己</text><text x='119' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>如见其肺肝然</text><text x='319' y='106' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>莫见乎隐</text><text x='319' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>故君子慎其独</text><text x='520' y='106' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>胸中那个不偏不倚</text><text x='520' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>而知情的看客</text><text x='119' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>掩饰是没有用的</text><text x='319' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>越隐微越显露</text><text x='520' y='156' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>他知道全部内情</text><text x='119' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>依据:诚于中形于外</text><text x='319' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>依据:本心的真实</text><text x='520' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--cinnabar-pure)'>依据:被内化的目光</text><text x='320' y='236' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>形态相似到会让人误以为是一回事</text><text x='320' y='262' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--cinnabar-pure)'>可最后一行已经露出了分岔:依据不同,甚至方向相反</text></svg>"
+    },
+    { "type": "h2", "text": "三、机制的分岔:观众,还是本心" },
+    {
+      "type": "p",
+      "text": "**这是本章最要紧的一节。相似止于形态,机制正好岔开。**"
+    },
+    {
+      "type": "p",
+      "text": "**斯密的路子是:社会先于良心。**荒岛上独自长大的人,**想不到去打量自己的品格**;把他带进人群,他才得到那面镜子。**换句话说:没有别人,就没有良心。**心里那位是从外面搬进来的——**再理想化,他的原型仍是「别人的目光」。**"
+    },
+    {
+      "type": "quote",
+      "original": "仁义礼智,非由外铄我也,我固有之也,弗思耳矣。",
+      "translation": "《孟子·告子上》。「非由外铄」四个字,恰好把斯密那条路堵死了:仁义礼智不是从外面熔铸进来的,是我本来就有的,只是没去想它罢了。孟子的根据在内,不待外求;斯密的根据在外,内化而成。这不是程度差别,是方向相反。"
+    },
+    {
+      "type": "p",
+      "text": "**「非由外铄」这四个字,几乎是针对斯密那条路说的。**在孟子这里,**道德的根据在内,不待外求**;修养的功夫是「思」、是「求其放心」,**是把本来就有的东西找回来、养起来**,而不是把外面的什么装进来。"
+    },
+    {
+      "type": "p",
+      "text": "**《大学》的慎独也是同一个方向。**「人之视己如见其肺肝然」这句常被当成「怕人看穿」,**其实它的落点不在那里。**上文说的是「诚其意者,毋自欺也」——**根据是「诚」,是内里的真实**;而「掩饰没有用」只是一个推论:**因为里面是什么,外面就会显出什么。**"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "别读反了",
+      "items": [
+        "**斯密:因为有观众,所以有良心。**——观众是原因。",
+        "**《大学》:因为里面是真的,所以外面遮不住。**——被看穿只是结果,不是根据。",
+        "**这个差别不是细节。**它决定了两套修养功夫完全不同:**一边是学着站到旁人的位置上看自己**,一边是**向内求诚、把本有的四端养大。**"
+      ]
+    },
+    { "type": "h2", "text": "四、孺子入井:同一个例子,两种用法" },
+    {
+      "type": "p",
+      "text": "**最锋利的对照在这里,而且是个巧合般的对照:两边都用了「突然看见有人要出事」这个例子。**"
+    },
+    {
+      "type": "quote",
+      "original": "今人乍见孺子将入于井,皆有怵惕恻隐之心;非所以内交于孺子之父母也,非所以要誉于乡党朋友也。",
+      "translation": "《孟子·公孙丑上》。这是四端说最著名的论证。要留意后半句:孟子特意排除了「为了结交孩子的父母」和「为了在乡亲朋友那里博个好名声」——他要把一切外在的目光从根据里剔出去,才好证明这份恻隐是本心自发。"
+    },
+    {
+      "type": "p",
+      "text": "**斯密那边的对应例子是:看见别人的眼睛快挨一下,我们自己先眨了眼;看走钢丝的人,底下的观众跟着扭动身子。**同样是不受意志控制的即刻反应,**同样被拿来当作论证的起点。**"
+    },
+    {
+      "type": "p",
+      "text": "**但两人要证明的东西完全不同。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "同一类现象,两条走向相反的推论。孟子往「性」上走,要立一个规范的根据;斯密往「机制」上走,只想说明判断是怎么发生的。而最有意思的是那句排除语——孟子要把旁人的目光剔出去,斯密的整台装置恰恰建在旁人的目光上。",
+      "svg": "<svg viewBox='0 0 640 310' xmlns='http://www.w3.org/2000/svg'><text x='320' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:16px;font-weight:bold;fill:var(--ink)'>同一个现象,两条推论</text><rect x='180' y='44' width='280' height='48' rx='6' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='320' y='66' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>看见别人要出事,身体先于思考地一动</text><text x='320' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>怵惕恻隐 · 跟着眨眼 · 跟着扭身</text><path d='M280,92 L160,124' style='fill:none;stroke:var(--ink-faint);stroke-width:1.1'/><path d='M360,92 L480,124' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2'/><rect x='34' y='124' width='252' height='142' rx='6' style='fill:none;stroke:var(--line);stroke-width:1.1'/><rect x='354' y='124' width='252' height='142' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='160' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>孟子</text><text x='480' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>斯密</text><text x='160' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>证明:人性本善</text><text x='480' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>证明:判断机制存在</text><text x='160' y='204' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>这是「四端」,我固有之</text><text x='480' y='204' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>这是想象力泄漏到肌肉上</text><text x='160' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>规范:所以人应当扩而充之</text><text x='480' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>描述:所以共感靠位置互换</text><text x='160' y='254' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>特意排除:非要誉于乡党朋友</text><text x='480' y='254' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar-pure)'>整台装置建在旁人的目光上</text><text x='320' y='296' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>最后一行是全章的分水岭:一个要剔除目光,一个要靠目光</text></svg>"
+    },
+    { "type": "h2", "text": "五、爱有差等,与「关心的次序」" },
+    {
+      "type": "p",
+      "text": "**再看一处形态几乎同构、理由却完全不同的。**"
+    },
+    {
+      "type": "p",
+      "text": "斯密在第六卷里说,人关心他人有一个天然的次序:**自己、同住的家人、亲属、朝夕相处的人、恩人、邻里同事、国家。**——这与「亲亲而仁民,仁民而爱物」**几乎是同一个形状。**"
+    },
+    {
+      "type": "table",
+      "caption": "三方摆在一起,差别就清楚了。结论上斯密与儒家接近、与墨子相远;可他给的理由既不是「亲亲」也不是「兼爱」,而是一个认知能力的事实:想象力照不到那么远。理由不同,后果就不同——认知的限制是可以被信息与制度改变的,而本心的推恩不是这么个改法。",
+      "head": ["", "根据", "性质", "对远人"],
+      "rows": [
+        ["**儒家**", "由本心推恩:亲亲而仁民,仁民而爱物", "既是描述,也是规范", "该爱,但次序在后"],
+        ["**墨家**", "兼相爱、交相利,要打破这个次序", "规范性主张", "视人之国若视其国"],
+        ["**斯密**", "**想象力的射程**:近的想得真切,远的想不真切", "**主要是描述**", "不是不该管,是想不真切"]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**斯密关于「普遍仁爱不能当日常向导」的说法,表面上与墨子对立,理由却不是墨子的对手会给的那种。**他不说「兼爱不该」,**他说的是:照看全宇宙是神的事,人分到的是一小块地界。**——**这是一句关于能力边界的话,不是一句关于亲疏该不该分的话。**"
+    },
+    { "type": "h2", "text": "六、还有两处,可以对,但要更小心" },
+    {
+      "type": "p",
+      "text": "**第一处:「合宜性」与「礼」。**两边都讲分寸、都由共同体的眼睛来校准,**看上去很近。**但礼有**具体的条文与制度化的传承**——什么场合穿什么、行什么礼,是可以学、可以教、可以考的;**斯密的合宜性没有条文,它每一次都是一场现场的比对。**"
+    },
+    {
+      "type": "p",
+      "text": "**有意思的是,斯密其实处理过「礼」这一类东西——只是他把它放在「习俗与风尚」那一卷里。**在他的框架里,**一套成文的礼,正是习俗塑造判断的典型例子**:它让某些分寸变得自然而然,**也可能让某些不该被接受的东西显得理所当然。**——**这个位置本身就说明两者不在同一层。**"
+    },
+    {
+      "type": "p",
+      "text": "**第二处:「自制」与「克己」。**形态也像,**落点不同。**克己复礼的那个「礼」是外在的规范体系,**功夫是把自己收进那个体系里**;斯密的自制没有体系可收,**它的标尺是「旁观者跟不跟得上」**——一个随处境浮动的水平线。"
+    },
+    { "type": "h2", "text": "七、还有王阳明那一点良知" },
+    {
+      "type": "p",
+      "text": "**如果只能再举一处对照,那应该是王阳明。**因为在全部中文文献里,**没有比这一段更像「公正的旁观者」的说法了——而它的根据,又恰恰是最不像的。**"
+    },
+    {
+      "type": "quote",
+      "original": "尔那一点良知,是尔自家底准则。尔意念着处,他是便知是,非便知非,更瞒他一些不得。",
+      "translation": "《传习录》。「更瞒他一些不得」这半句,与斯密那位「知情的旁观者」几乎可以互换——两边都指出:你可以骗过所有人,骗不过那一个。可下一步就分岔了:阳明说良知是「你自家的准则」、是不虑而知的本体;斯密说那位看客是从别人的目光里内化来的。"
+    },
+    {
+      "type": "p",
+      "text": "**「更瞒他一些不得」——这半句与斯密那句「他知道全部内情,所以骗不过他」几乎可以互换。**两边都抓住了同一个经验:**你可以骗过所有人,唯独骗不过那一个。**"
+    },
+    {
+      "type": "p",
+      "text": "**可再往下一步,分岔就出来了,而且是本章讲过的同一个分岔。**阳明说良知是**「你自家的准则」**,是不虑而知、不学而能的本体,**功夫是「致」它、不要被私欲遮蔽**;斯密说心里那位是**从别人的目光里内化来的**,功夫是**学着站到那个位置上去看自己。**"
+    },
+    {
+      "type": "callout",
+      "tone": "mute",
+      "items": [
+        "**一句话记住这个差别:阳明要你把已经有的那点光擦亮;斯密要你学会请一位客人进来。**",
+        "**两种功夫论因此完全不同。**一边是**向内**——省察克治、事上磨炼、不使私欲遮蔽;**一边是向外再回来**——多与人相处、多设身处地,把那双眼睛养熟。",
+        "**顺带一提,阳明的「独知」与《中庸》的慎独是一路的**,所以这三家(《大学》《中庸》、孟子、阳明)在根据上是同一个方向;**站在对面的,只有斯密一个。**"
+      ]
+    },
+    { "type": "h2", "text": "八、为什么不做高下评断" },
+    {
+      "type": "p",
+      "text": "**最后回到开头那三条规矩。**"
+    },
+    {
+      "type": "p",
+      "text": "**两套体系面对的社会不是一回事。**斯密要解释的,是一个**陌生人越来越多**的世界:人们在市场上、在城市里,与大量素不相识的人打交道,**旧的宗族与身份纽带正在松开。**他问的是——**在这样的世界里,道德判断还怎么可能?**他的答案(靠想象、靠内化的旁观者)**正是为这样的世界准备的。**"
+    },
+    {
+      "type": "p",
+      "text": "**先秦诸子面对的是另一个世界:宗法、礼制、熟人。**在那样的世界里,**「本心」与「礼」都是极有力的答案**,而「设想一个与你毫无关系的中立看客」这种装置,**反而没有那么迫切。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "caption": "答案的形状,跟着社会的形状走。一个到处是陌生人的世界,需要一个「与谁都没关系」的中立位置来当准绳;一个熟人与宗法的世界,更需要把本心与礼养厚。看清这一层,就不必再问谁高谁低——它们本来就不是同一道题的两个答案。",
+      "svg": "<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg'><text x='320' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:16px;font-weight:bold;fill:var(--ink)'>两个世界,两种答案</text><rect x='32' y='48' width='264' height='176' rx='6' style='fill:none;stroke:var(--line);stroke-width:1.1'/><rect x='344' y='48' width='264' height='176' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='164' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink)'>宗法与礼制的世界</text><text x='476' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>陌生人越来越多的世界</text><text x='164' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>打交道的多是熟人</text><text x='476' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>市场与城市里全是生人</text><text x='164' y='130' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>身份与名分给出位置</text><text x='476' y='130' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>旧的纽带正在松开</text><text x='164' y='160' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>答案:本心与礼</text><text x='476' y='160' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>答案:一个中立的旁观者</text><text x='164' y='184' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>向内求诚,养大四端</text><text x='476' y='184' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>与谁都没关系,所以判得公道</text><text x='164' y='206' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>功夫在慎独、克己</text><text x='476' y='206' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>功夫在设身处地</text><text x='320' y='256' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>答案的形状,跟着社会的形状走</text><text x='320' y='282' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--cinnabar-pure)'>它们本来就不是同一道题的两个答案</text></svg>"
+    },
+    {
+      "type": "pull",
+      "text": "问题相通,答案各自长在各自的土壤里;硬拿来对冲,两边都会走样。"
+    },
+    {
+      "type": "p",
+      "text": "**所以这一章的收尾很朴素:知道这个问题不止一种问法,读起来会宽一点。**——**下次读到「慎独」,可以顺手想一想斯密那位知情的看客;读到斯密的公正旁观者,也可以想一想「毋自欺」三个字。**两边互相照一照,各自的轮廓反而更清楚。**至于谁更高明,那是一个没有考场的问题。**"
+    }
+  ]
+}

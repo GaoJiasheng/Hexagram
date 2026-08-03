@@ -106,6 +106,10 @@
       "text": "这两点合起来，正好把这一章和上一章、以及第二章连在了一起：**小样本的问题是噪声，大样本的问题是偏差**——前者靠加大样本能解决，后者靠加大样本永远解决不了。"
     },
     {
+      "type": "p",
+      "text": "这个区分在今天特别值得记住。**动辄「千万级样本」「全量数据」的说法，会让人以为样本量已经不成问题了。**可如果这批数据只覆盖了会用某个 App 的人、只覆盖了愿意填问卷的人、只覆盖了没退货的订单，那么样本从一百万涨到一亿，**歪的方向一点没变，只是把那个歪掉的答案算得更精确了。**"
+    },
+    {
       "type": "h2",
       "text": "四、它在工作和生活里的样子"
     },
@@ -139,7 +143,37 @@
     },
     {
       "type": "h2",
-      "text": "五、一个可以随身带的问句"
+      "text": "五、大数定律的正面用法"
+    },
+    {
+      "type": "p",
+      "text": "前面都在讲它被误用的样子，也该说说它被用对的样子——**因为整个保险业、整个赌场业、以及那些靠彩票赚钱的团队，靠的都是它。**"
+    },
+    {
+      "type": "p",
+      "text": "保险公司卖一份意外险，对单个客户来说完全说不准：这个人可能一辈子平安，也可能明天就出事。**但卖给一百万个人，赔付总额就变得相当可预测。**它的生意不是预测某个人，是**把一大堆不可预测的个体，加总成一个可预测的整体**。赌场也是同一个道理：每一局它都可能输，但只要它的每一局都有微弱的正期望，局数一多，结果就是稳定的。"
+    },
+    {
+      "type": "p",
+      "text": "**这里藏着一个非常实用的推论：同一个概率优势，在小样本上毫无意义，在大样本上就是印钞机。**一个只有 51% 胜率的策略，玩十局跟抛硬币差不多；玩十万局，几乎必赢。这解释了为什么很多看起来「优势微弱」的生意能成立，也解释了为什么同样的策略在个人身上完全不成立——**你没有十万局。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "同一条定律，两种用法。误用是「拿小样本当结论」，正用是「主动把样本做大到波动可以忽略」。判断自己在哪一边，只要问一句：我能重复多少次？",
+      "svg": "<svg viewBox='0 0 660 250' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>同一条定律的两种用法</text><rect x='24' y='48' width='290' height='166' rx='9' style='fill:var(--cinnabar-pure)' opacity='0.07'/><rect x='24' y='48' width='290' height='166' rx='9' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='169' y='76' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar-pure)'>误用：拿小样本当结论</text><text x='169' y='106' text-anchor='middle' font-size='12' style='fill:var(--ink)'>上线两小时的转化率</text><text x='169' y='132' text-anchor='middle' font-size='12' style='fill:var(--ink)'>十人小组的月度排名</text><text x='169' y='158' text-anchor='middle' font-size='12' style='fill:var(--ink)'>小地方的发病率榜首</text><text x='169' y='190' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>看到的主要是波动</text><rect x='346' y='48' width='290' height='166' rx='9' style='fill:var(--azure)' opacity='0.08'/><rect x='346' y='48' width='290' height='166' rx='9' fill='none' style='stroke:var(--azure)' stroke-width='1.4'/><text x='491' y='76' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--azure)'>正用：主动把样本做大</text><text x='491' y='106' text-anchor='middle' font-size='12' style='fill:var(--ink)'>保险：一百万份保单</text><text x='491' y='132' text-anchor='middle' font-size='12' style='fill:var(--ink)'>赌场：每局微弱优势</text><text x='491' y='158' text-anchor='middle' font-size='12' style='fill:var(--ink)'>买彩票的团队：几十万张</text><text x='491' y='190' text-anchor='middle' font-size='11.5' style='fill:var(--azure)'>波动被抹平，只剩优势</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "把两边合起来，这一章就能给出一条相当锋利的建议：**做决定之前，先问「这件事我能重复多少次」。**"
+    },
+    {
+      "type": "p",
+      "text": "**能重复很多次**（每天的运营决策、大量的小额投放、长期的定投），那就按概率优势办事，别管单次结果——**单次的成败在这里基本没有信息量**。**只能做一次**（换工作、押上积蓄、一次性的重大投入），那就别拿期望值当护身符，先看最坏情况能不能承受。这两句建议看似相反，其实来自同一条定律的两端。"
+    },
+    {
+      "type": "h2",
+      "text": "六、一个可以随身带的问句"
     },
     {
       "type": "p",
@@ -164,6 +198,10 @@
           "state": "now"
         }
       ]
+    },
+    {
+      "type": "p",
+      "text": "最后补一句这一课与全书的关系。**这一章和第二章讲的是数据的两种毛病，方向刚好相反：**第二章讲的是**样本被筛过**（你看到的那批不是全部），这一章讲的是**样本太少**（你看到的那批不够多）。前者加大样本救不了，后者加大样本正好能救。**遇到一份可疑的数据，先分清是哪一种毛病，再决定该怎么办**——这个分诊动作，比记住任何一个名词都实用。"
     },
     {
       "type": "pull",

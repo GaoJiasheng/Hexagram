@@ -114,6 +114,12 @@
       "text": "所以「我们民主决定」这句话是不完整的——**必须补上「怎么个民主法」**。而定规则的人（通常是主持会议的那个人）实际上已经参与了结论。这不是阴谋，是数学：**加总偏好这件事，本来就没有中立的做法。**"
     },
     {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "同一批人、同一批偏好，四种征集方式。它们没有哪一种不讲理，可它们给出的答案不同——这就是「加总没有中立做法」的意思。",
+      "svg": "<svg viewBox='0 0 660 262' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>「我们民主决定」——怎么个民主法</text><line x1='24' y1='42' x2='636' y2='42' style='stroke:var(--line)' stroke-width='1'/><text x='180' y='66' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>征集方式</text><text x='470' y='66' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar-pure)'>它偏向什么</text><line x1='24' y1='78' x2='636' y2='78' style='stroke:var(--line)' stroke-width='1'/><text x='180' y='108' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>各投一票选最喜欢的</text><text x='470' y='108' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>偏向有铁杆拥护者的方案</text><line x1='24' y1='124' x2='636' y2='124' style='stroke:var(--line)' stroke-width='0.6'/><text x='180' y='154' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>每个方案打分求和</text><text x='470' y='154' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>偏向大家都不讨厌的方案</text><line x1='24' y1='170' x2='636' y2='170' style='stroke:var(--line)' stroke-width='0.6'/><text x='180' y='200' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>两两 PK 打擂台</text><text x='470' y='200' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>可能根本选不出（循环）</text><line x1='24' y1='216' x2='636' y2='216' style='stroke:var(--line)' stroke-width='0.6'/><text x='180' y='246' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>淘汰最少票的再重投</text><text x='470' y='246' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>结果取决于淘汰的顺序</text></svg>"
+    },
+    {
       "type": "h2",
       "text": "四、无中生有的新宇宙"
     },
@@ -141,11 +147,23 @@
     },
     {
       "type": "p",
-      "text": "后来数学又经历了两次类似的震动：集合论里冒出了自我指涉的悖论，动摇了整个地基；再后来是不完备性定理，证明了任何足够强的系统里都存在**真但证不出来**的命题。**每一次看上去都像要毁掉这门学问，结果每一次都只是把它扩大了。**"
+      "text": "后来数学又经历了两次类似的震动。**第一次是集合论里冒出了自我指涉的悖论**——那类「所有不包含自己的集合构成的集合，包不包含自己」的问题，怎么回答都出矛盾。这不是某个定理错了，是**地基上出现了裂缝**。数学家们花了几十年重浇地基，把公理系统重新写了一遍。"
+    },
+    {
+      "type": "p",
+      "text": "**第二次是不完备性定理**：任何足够强的形式系统里，都存在**真但在系统内证不出来**的命题。这一下打碎的是当时最大的一个野心——把整个数学建成一台能自动判定一切的机器。"
+    },
+    {
+      "type": "p",
+      "text": "**每一次看上去都像要毁掉这门学问，结果每一次都只是把它扩大了。**放弃平行公理，多出了一整片几何；重浇地基，得到了更清楚的基础；接受不完备，反而看清了这套工具的边界在哪儿。**「知道边界在哪」不是失败，是一种更高级的掌握。**"
     },
     {
       "type": "p",
       "text": "他讲这段历史，是为了反对一种流行的**天才神话**：以为数学是少数天赋异禀的人凭灵感领受的天启，普通人只能仰望。**这段历史给出的图景恰恰相反**——数学的进展来自一代代人试错、争论、发现漏洞、修补漏洞。它之所以可靠，不是因为从不出错，**是因为它有一套把错误暴露出来并改掉的办法。**"
+    },
+    {
+      "type": "p",
+      "text": "这个反对不只是姿态，它有实际后果。**天才神话最坏的效果，是让人在遇到困难时把它当成天赋的判决书**——「我理解不了，说明我不是这块料」。而按他的图景，理解不了通常只说明一件事：**你还没走到那一步。**几百年里那么多一流的头脑都试图证明平行公理而失败，最后是有人换了个问法才走通的——**换问法，而不是更聪明。**这跟第二章沃德的那一课其实是同一件事。"
     },
     {
       "type": "p",

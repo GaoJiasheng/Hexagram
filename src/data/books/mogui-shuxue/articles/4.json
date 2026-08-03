@@ -89,6 +89,10 @@
     },
     {
       "type": "p",
+      "text": "换个更直观的说法：**当整体只挪动了一小步，而内部各方向的挪动都很大时，任何一个分项相对于那「一小步」都会显得巨大。**这就像一场拔河，两边各使了很大的劲，绳子只往一边挪了十厘米——这时说「某人贡献了这十厘米的三倍」，算术上没错，但它描述的不是那个人有多强，是**净结果太小**。"
+    },
+    {
+      "type": "p",
       "text": "这个算术没有任何错误，但它可以被用来说非常有倾向性的话。比如「某一类人承担了这段时间就业损失的九成以上」——这种句子在选举季常常出现。它成立与否，**极大地取决于你从哪一天开始算**。把起点往前挪几个月或往后挪几个月，同一批数据能给出完全不同的百分比，甚至能让正负号翻过来。"
     },
     {
@@ -173,6 +177,33 @@
       "ftype": "总表",
       "caption": "三种毛病，三句没说出口的话。把右边那一栏念出来，多数结论会自己软下去——这是全书里最省力的一个动作。",
       "svg": "<svg viewBox='0 0 660 250' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>把没说出口的那句话补上</text><line x1='24' y1='42' x2='636' y2='42' style='stroke:var(--line)' stroke-width='1'/><text x='150' y='66' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--ink-faint)'>你听到的</text><text x='450' y='66' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar-pure)'>他没说出口的那句</text><line x1='24' y1='78' x2='636' y2='78' style='stroke:var(--line)' stroke-width='1'/><text x='150' y='110' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>「加大投入就能提升」</text><text x='450' y='110' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>这里假设了它是一条直线</text><line x1='24' y1='126' x2='636' y2='126' style='stroke:var(--line)' stroke-width='0.6'/><text x='150' y='158' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>「照这个趋势，几年后……」</text><text x='450' y='158' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>这里假设了斜率会一直保持</text><line x1='24' y1='174' x2='636' y2='174' style='stroke:var(--line)' stroke-width='0.6'/><text x='150' y='206' text-anchor='middle' font-size='12.5' style='fill:var(--ink)'>「某类占了增长的九成」</text><text x='450' y='206' text-anchor='middle' font-size='12.5' style='fill:var(--ink-soft)'>这里假设了总量是正的、各部分同向</text><line x1='24' y1='222' x2='636' y2='222' style='stroke:var(--line)' stroke-width='1'/></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "六、为什么这一类数字特别好用来说服人"
+    },
+    {
+      "type": "p",
+      "text": "最后想多说一层书里没细讲、但很值得想的事：**为什么外推和比例这两样东西，特别容易被拿来做说服的工具？**"
+    },
+    {
+      "type": "p",
+      "text": "**第一，它们自带确定感。**「到某年将有百分之百」听起来像一个已经算好的事实，而不是一个假设加一个外推。数字越具体，越像知识——「大约在几十年后」听起来像猜测，「到二〇四八年」听起来像预报。**精确度是可以伪造的，而人对精确度几乎没有免疫力。**"
+    },
+    {
+      "type": "p",
+      "text": "**第二，它们能把小事说大、大事说小，而且不必撒谎。**同一个事实，说「增长了 300%」和说「从一件涨到四件」，唤起的感受完全不同；说「事故率上升一倍」和说「从十万分之一升到十万分之二」，也是同一回事的两种说法。**这两种说法都不假**——所以拆穿它们不能靠指责对方造假，只能靠把另一种说法也摆出来。"
+    },
+    {
+      "type": "p",
+      "text": "**第三，它们检查起来很费劲。**要验证一个外推，你得知道数据跨度、拟合方式、有没有边界；要验证一个百分比，你得知道分母是什么、基准年怎么选的。**说一句话只要三秒，查清楚要三十分钟**——这个不对称，是所有数字修辞的温床。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "所以有一个省力的应对：**遇到这类数字，先把它翻译回绝对数和具体人。**「增长 300%」→「从一件涨到四件」；「占了增长的九成」→「多了多少个、少了多少个」；「到某年将百分之百」→「按现在每年涨零点几个百分点算，那得涨多少年、中间会不会有个头」。**翻译这一步几乎不需要任何数学，但它能挡掉大部分花招。**"
+      ]
     },
     {
       "type": "pull",

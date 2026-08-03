@@ -117,7 +117,33 @@
     },
     {
       "type": "h2",
-      "text": "四、相关的两条边界"
+      "text": "四、高尔顿的椭圆：相关系数是怎么来的"
+    },
+    {
+      "type": "p",
+      "text": "这一部分还讲了一段科学史，值得记一下，因为它解释了一个我们天天在用却很少想过来历的东西——**相关系数**。"
+    },
+    {
+      "type": "p",
+      "text": "高尔顿收集了大量父子身高的数据，把每一对画成平面上的一个点：横轴是父亲的身高，纵轴是儿子的。点画多了之后，他发现这团点不是杂乱的，也不是一条线，**而是一个倾斜的椭圆**——像一片被压扁的云。"
+    },
+    {
+      "type": "p",
+      "text": "这个形状里藏着全部信息。**椭圆越扁越接近一条线，说明两者关系越紧；越圆越接近一团，说明越没关系。**而椭圆的倾斜方向，说明是正相关还是负相关。于是「两件事有多相关」这个原本只能靠感觉说的问题，第一次有了一个可以计算的数——这就是相关系数的由来。"
+    },
+    {
+      "type": "p",
+      "text": "回归均值在这张图上是**看得见**的：从椭圆最右端（父亲最高的那一批）往上看，那一竖条点的平均高度，并没有落在椭圆的最高处，而是稍稍偏中间一点。**「向中等回归」不是一个需要解释的现象，它就是椭圆这个形状的几何后果。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "一团点画成椭圆之后，两件事就都看得见了：椭圆有多扁，就是相关有多强；每一竖条的平均值连起来那条线，比椭圆的主轴平缓——那就是「回归」。",
+      "svg": "<svg viewBox='0 0 660 268' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>高尔顿的那团点</text><line x1='90' y1='232' x2='600' y2='232' style='stroke:var(--line)' stroke-width='1.4'/><line x1='90' y1='232' x2='90' y2='52' style='stroke:var(--line)' stroke-width='1.4'/><text x='345' y='256' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>父亲身高 →</text><text x='76' y='60' text-anchor='end' font-size='11.5' style='fill:var(--ink-faint)'>儿子身高</text><ellipse cx='340' cy='140' rx='190' ry='62' transform='rotate(-22 340 140)' style='fill:var(--ink-faint)' opacity='0.16'/><ellipse cx='340' cy='140' rx='190' ry='62' transform='rotate(-22 340 140)' fill='none' style='stroke:var(--ink-faint)' stroke-width='1.2'/><g style='fill:var(--ink)'><circle cx='200' cy='196' r='3'/><circle cx='232' cy='178' r='3'/><circle cx='250' cy='196' r='3'/><circle cx='276' cy='166' r='3'/><circle cx='300' cy='150' r='3'/><circle cx='312' cy='176' r='3'/><circle cx='340' cy='140' r='3'/><circle cx='356' cy='118' r='3'/><circle cx='372' cy='152' r='3'/><circle cx='398' cy='114' r='3'/><circle cx='424' cy='128' r='3'/><circle cx='440' cy='96' r='3'/><circle cx='462' cy='110' r='3'/><circle cx='210' cy='166' r='3'/><circle cx='268' cy='198' r='3'/><circle cx='404' cy='146' r='3'/><circle cx='478' cy='90' r='3'/></g><line x1='170' y1='210' x2='510' y2='72' style='stroke:var(--ink-faint)' stroke-width='1.4' stroke-dasharray='5 4'/><text x='514' y='68' font-size='11' style='fill:var(--ink-faint)'>椭圆主轴</text><path d='M176,196 C260,168 420,120 506,102' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='2.4'/><text x='512' y='106' font-size='11' style='fill:var(--cinnabar-pure)'>回归线（更平）</text><line x1='462' y1='60' x2='462' y2='232' style='stroke:var(--azure)' stroke-width='1.2' stroke-dasharray='3 4'/><text x='462' y='250' text-anchor='middle' font-size='10.5' style='fill:var(--azure)'>最高的父亲们</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "五、相关的两条边界"
     },
     {
       "type": "p",
@@ -155,7 +181,7 @@
     },
     {
       "type": "h2",
-      "text": "五、怎么把这一课用起来"
+      "text": "六、怎么把这一课用起来"
     },
     {
       "type": "p",

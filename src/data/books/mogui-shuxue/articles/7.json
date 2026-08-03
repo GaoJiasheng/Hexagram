@@ -117,7 +117,41 @@
     },
     {
       "type": "h2",
-      "text": "五、方向相反的第二类误用"
+      "text": "五、这套逻辑的祖宗：带概率的反证法"
+    },
+    {
+      "type": "p",
+      "text": "他还讲了一件很有意思的事：**显著性检验其实是一个古老逻辑的概率版本，而正是「概率版」这三个字，让它失去了原来那种可靠性。**"
+    },
+    {
+      "type": "p",
+      "text": "古典的反证法长这样：假设 A 为真 → 推出一个必然的结论 → 那个结论与事实矛盾 → 所以 A 为假。**这个推理是严丝合缝的**，因为中间那一步是「必然」。"
+    },
+    {
+      "type": "p",
+      "text": "显著性检验把「必然」换成了「很可能」：假设无效应为真 → 那么这种数据**很不可能**出现 → 而它出现了 → 所以假设很可能为假。"
+    },
+    {
+      "type": "p",
+      "text": "看起来只是把「必然」放松成「很可能」，代价却很大。他举了一个例子说明这种推理会怎样失灵：**「如果某人是美国人，那么他当过总统的概率极低；这个人当过总统；所以他很可能不是美国人。」**每一步都符合上面那个模式，结论却荒唐透顶。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "把「必然」换成「很可能」，推理就不再自动成立了。上面那个荒唐结论之所以出现，正是因为漏掉了「当过总统的人绝大多数是美国人」这一层——也就是先验。",
+      "svg": "<svg viewBox='0 0 660 262' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>反证法与它的概率版本</text><rect x='24' y='48' width='290' height='170' rx='9' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.2'/><text x='169' y='76' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--azure)'>古典反证法：可靠</text><text x='169' y='106' text-anchor='middle' font-size='12' style='fill:var(--ink)'>假设 A 为真</text><text x='169' y='130' text-anchor='middle' font-size='12' style='fill:var(--ink)'>→ 必然推出 B</text><text x='169' y='154' text-anchor='middle' font-size='12' style='fill:var(--ink)'>→ 而 B 与事实矛盾</text><text x='169' y='186' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--azure)'>所以 A 一定为假 ✓</text><rect x='346' y='48' width='290' height='170' rx='9' style='fill:var(--cinnabar-pure)' opacity='0.07'/><rect x='346' y='48' width='290' height='170' rx='9' fill='none' style='stroke:var(--cinnabar-pure)' stroke-width='1.4'/><text x='491' y='76' text-anchor='middle' font-size='13' font-weight='bold' style='fill:var(--cinnabar-pure)'>换成「很可能」：会翻车</text><text x='491' y='106' text-anchor='middle' font-size='12' style='fill:var(--ink)'>若他是美国人</text><text x='491' y='130' text-anchor='middle' font-size='12' style='fill:var(--ink)'>→ 当过总统的概率极低</text><text x='491' y='154' text-anchor='middle' font-size='12' style='fill:var(--ink)'>→ 而他当过总统</text><text x='491' y='186' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar-pure)'>所以他很可能不是美国人 ✕</text><text x='330' y='244' text-anchor='middle' font-size='12' style='fill:var(--ink-soft)'>漏掉的那一层：当过总统的人，绝大多数就是美国人</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**问题出在哪儿？**出在只看了「若 A 则这事多罕见」，没看「不是 A 的时候这事又有多罕见」。当过总统这件事在非美国人那里更罕见——罕见得多。**忽略了这个对比，罕见性本身就没有指向。**"
+    },
+    {
+      "type": "p",
+      "text": "这正是下一章要补的那一环。**显著性检验单独用的时候，天然缺少「另一边有多罕见」这个比较**，而补上这个比较，就是贝叶斯。"
+    },
+    {
+      "type": "h2",
+      "text": "六、方向相反的第二类误用"
     },
     {
       "type": "p",
@@ -147,7 +181,7 @@
     },
     {
       "type": "h2",
-      "text": "六、为什么这个错误特别顽固"
+      "text": "七、为什么这个错误特别顽固"
     },
     {
       "type": "p",
