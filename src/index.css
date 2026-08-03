@@ -1930,8 +1930,11 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 @media (hover: none), (max-width: 640px) {
   .read-para--markable { flex-wrap: wrap; }
   .read-para--markable .para-actions { flex-basis: 100%; justify-content: flex-end; align-self: auto; margin-top: 3px; }
-  /* 卦详情页用的是 .detail-quotable,当初漏在这条规则外面 —— 同一排按钮在读经页已经挪到
-     段落下方,在卦详情页却还挤在正文右侧,既压窄正文又难点中。补上,两处行为一致。 */
+}
+/* 卦详情页用的是 .detail-quotable,当初漏在上面那条规则外面 —— 手机上按钮还挤在正文右侧,
+   既压窄正文又难点中。补上换行,但**只在窄屏**:平板宽度绰绰有余,按钮留在右侧更紧凑;
+   若跟着 hover:none 一起换行,爻辞与紧随其后的「象曰」之间会被生生撑开一条空档(iPad 实机见过)。 */
+@media (max-width: 640px) {
   .detail-quotable { flex-wrap: wrap; }
   .detail-quotable .para-actions { flex-basis: 100%; justify-content: flex-end; align-self: auto; margin-top: 3px; }
 }
