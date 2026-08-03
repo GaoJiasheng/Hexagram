@@ -1,0 +1,169 @@
+{
+  "title": "常规科学:它不是在检验理论,是在解谜",
+  "subtitle": "科学家上班到底在干什么?答案不是「检验理论」——绝大多数人一辈子做的,是在假定理论成立的前提下把细节做出来;而库恩最漂亮的一步棋是:他先把这件事描述得像在批评科学界僵化,然后掉头证明,正是这份僵化让科学有能力被自然驳倒",
+  "centralIdea": "这是全书最原创、也最容易被跳过的一章。库恩说,科学的常态叫「常规科学」:它建立在一两项被共同体承认的过去成就上,而它做的事不是检验那些成就,是在假定它们成立的前提下,把常数测得更准、把定性关系写成公式、把理论管不到的地方一点点接上。他给这类工作起的名字是「解谜」——谜与问题不同,谜保证有解,而且限定了什么样的解法算数;吸引人的不是结果多重要,而是「这一个能不能被我解开」。由此推出一个让人不舒服的结论:在常规科学里,被检验的不是理论,是科学家本人;做不出来算做的人本事不够,不算理论有问题。读到这里几乎所有人都以为库恩在骂科学界僵化,而他接下来一步正好相反:唯有把预期定得极死,偏差才可能被认出来是偏差。没有严格的范式,就没有反常;没有反常,就没有危机;没有危机,就没有革命。科学之所以能被自然驳倒,恰恰因为它先把话说死了。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "问一个普通人「科学家在干什么」,答案多半是:提出假说,设计实验,检验它是对是错。这个画面来自中学课本,也来自新闻里那些「某某理论被推翻」的标题。库恩说,**这个画面描述的是科学史上极少数的时刻,而不是科学的日常**。真正的日常长这样:一位光谱学家花三年把某条谱线的位置又往后精确了两位小数;一位晶体学家把一族已知结构的化合物再多测二十个;一位理论物理学家把一个现成方程套到一个还没人套过的边界条件上。**这些工作没有一件是在问「这套理论对不对」——它们全都以那套理论为真作为出发点。**库恩把这类工作叫**常规科学**,而这本书的骨架,就架在他对这类工作的重新评价上。"
+    },
+    {
+      "type": "h2",
+      "text": "一、什么算「常规科学」"
+    },
+    {
+      "type": "p",
+      "text": "库恩给的定义是:**常规科学是一种建立在过去某一项或几项科学成就之上的研究,而这些成就被某个专业共同体承认为进一步实践的基础。**注意这句里的三个要点。第一,**它有一个具体的落脚点**——不是一套抽象原理,而是「过去做出来的那几件事」。第二,**它是被承认的**,承认它的是一个具体的人群,不是全人类。第三,**它是基础,不是对象**:大家在它之上盖房子,不是把它拆开来检查。"
+    },
+    {
+      "type": "p",
+      "text": "什么样的成就能当这个基础?库恩说要同时满足两条,而这两条正好互相拉扯。**一是足够空前**——它得漂亮到能把一批人从别的路子上吸引过来,让他们愿意放弃自己原来的做法。**二是足够开放**——它必须留下一大堆没做完的活,让后来者有事可做。**只满足第一条的成就会变成一座纪念碑,让人赞叹却无法接续;只满足第二条的则根本没有号召力。**牛顿的《原理》、拉瓦锡的化学、达尔文的《物种起源》之所以能开出一整代人的工作,靠的正是这个组合:**它们既让人服气,又留了很多活。**"
+    },
+    {
+      "type": "quote",
+      "original": "常规科学不以新奇的事实或理论为目标;而当它成功时,它也确实找不到新奇。"
+    },
+    {
+      "type": "p",
+      "text": "这句话听着像贬低,其实是一句冷静的描述。**去看任何一个真实的研究计划书:它必须写清楚预期结果。**如果一个项目连自己会得到什么都说不上来,它多半拿不到经费,也上不了日程——这不是官僚主义,这就是常规科学的运作方式。而反过来,**正因为大家都知道该出什么结果,一个「不该出现的结果」才有可能被注意到。**"
+    },
+    {
+      "type": "h2",
+      "text": "二、日常干的三类活"
+    },
+    {
+      "type": "p",
+      "text": "库恩把常规科学的事实性工作分成三类,这个分类相当好用,拿它去看任何一个成熟领域的论文目录都对得上。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "svg": "<svg viewBox='0 0 560 260' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>常规科学每天在做的三类活</text><rect x='24' y='46' width='160' height='150' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='104' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>① 把重要的量测准</text><g style='font-family:var(--font-serif);font-size:10.8px;fill:var(--ink-soft)'><text x='104' y='98' text-anchor='middle'>恒星的位置与亮度</text><text x='104' y='118' text-anchor='middle'>物质的比重、沸点</text><text x='104' y='138' text-anchor='middle'>谱线波长、导电率</text><text x='104' y='170' text-anchor='middle'>范式说这些量要紧,</text><text x='104' y='186' text-anchor='middle'>于是它们值得测一辈子</text></g><rect x='200' y='46' width='160' height='150' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='280' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>② 让理论与事实咬合</text><g style='font-family:var(--font-serif);font-size:10.8px;fill:var(--ink-soft)'><text x='280' y='98' text-anchor='middle'>能直接对上的地方</text><text x='280' y='118' text-anchor='middle'>其实少得可怜</text><text x='280' y='138' text-anchor='middle'>天文预报是少数之一</text><text x='280' y='170' text-anchor='middle'>大部分功夫花在</text><text x='280' y='186' text-anchor='middle'>把两头凑到能比的地步</text></g><rect x='376' y='46' width='160' height='150' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='456' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>③ 把范式本身做实</text><g style='font-family:var(--font-serif);font-size:10.8px;fill:var(--ink-soft)'><text x='456' y='98' text-anchor='middle'>定出物理常数</text><text x='456' y='118' text-anchor='middle'>把定性关系写成公式</text><text x='456' y='138' text-anchor='middle'>扩大它能管的范围</text><text x='456' y='170' text-anchor='middle'>工作量最大的一类,</text><text x='456' y='186' text-anchor='middle'>也是最看不出「新」的一类</text></g><text x='280' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>三类活没有一类在问「这套理论对不对」</text><text x='280' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>它们全都以理论为真作为出发点——这正是它们能干得这么细的原因</text></svg>",
+      "caption": "第②类里有个常被忽略的事实:**理论与观测能直接对上的地方,其实少得可怜。**大量工作花在「把两头凑到能够比较的地步」——造仪器、算修正、做近似。**这些工序本身也全都依赖范式**,所以「让事实说话」这句话在实践中远比听上去复杂。"
+    },
+    {
+      "type": "h2",
+      "text": "三、一门唯一不读原著的学问"
+    },
+    {
+      "type": "p",
+      "text": "库恩注意到一件很多人习以为常、其实相当古怪的事:**科学大概是唯一一门,学生从头到尾读教科书而不读原著的学问。**学哲学要读柏拉图和康德的原文,学文学要读作品本身,学法律要读判例原文;可一个物理系学生可以一路读到博士,从没打开过牛顿的《原理》——他读的是**已经被整理、被翻译成当代语言、被按逻辑顺序重排过**的版本。"
+    },
+    {
+      "type": "p",
+      "text": "库恩对此的判断很有意思:**这不是缺陷,这是效率。**教科书的职责是**尽快把一个新人训练成能干活的人**,而不是让他了解这门学问的曲折来路。把历史拉直、把弯路删掉、把当年的争论化约成结论,能极大地缩短训练周期。**代价是,科学从业者对自己这一行的历史,往往有一种系统性的误解**——而这个误解会反过来支撑那个「科学是累积进步」的形象。这条线索第 7 章会展开。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "留意用字",
+      "items": [
+        "库恩用了「**教条式的**」来形容科学教育,而且**他不是在骂人**。他的意思是:这套教育刻意不给学生别的选项、不展示还有哪些走不通的路、不培养对基础的怀疑——它培养的是**熟练**。而熟练正是解谜所需要的。**一个从第一天起就对基础充满怀疑的人,做不了精细的工作。**这个判断对任何一门手艺都成立:学写字先临帖不问为什么,学中医先背条文不先质疑经络,学工程先按规范做不先质疑规范。**质疑的能力是后来才长出来的,而且必须长在熟练之上。**"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "四、「谜」和「问题」不是一回事"
+    },
+    {
+      "type": "p",
+      "text": "这是全章最锋利的一个概念。库恩说,常规科学做的事最像**解谜**——填字、拼图、残局。而谜有两个定义性的特征,**问题**则未必有。"
+    },
+    {
+      "type": "table",
+      "caption": "谜与问题:两个特征之差",
+      "head": ["", "谜(常规科学做的)", "一般意义上的问题"],
+      "rows": [
+        ["有没有解", "保证有解;没人担心这盘残局无解", "可能根本无解,或者无从判断"],
+        ["解法受不受限", "只有某几类步骤算数,别的不算", "怎么解出来的都行"],
+        ["吸引力来自", "「这一个能不能被我解开」", "结果本身有多重要"],
+        ["失败说明什么", "解题者本事不够", "可能是问题本身提错了"]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "第二条比第一条更要紧,却更少被提。**一个填字游戏,你写进一串确实符合提示的怪词,但它不是常用词,那也不算解开。**科学里同样如此:一个能拟合数据的模型,如果它引入了这个领域不接受的实体、或者用了不被承认的推理方式,它照样不被算作解答。**「什么样的解法算数」是范式的一部分,而且往往是没有明说的那一部分。**"
+    },
+    {
+      "type": "p",
+      "text": "由此还带出一件事:**一个共同体随范式一起拿到的,还有一份「哪些问题可以假定有解」的判据。**至于那些不能假定有解的问题——比如「宇宙为什么存在」「意识究竟是什么」——常规科学**根本不碰**,甚至不认为它们是科学问题。库恩说,这份「不碰什么」的自觉,正是一门成熟学问和一堆聪明议论之间的分界线。**它当然会关掉一些门,但正是关门省下的力气,让开着的那扇门后面能挖得极深。**"
+    },
+    {
+      "type": "h2",
+      "text": "五、被检验的是科学家,不是理论"
+    },
+    {
+      "type": "p",
+      "text": "现在到了让人不舒服的推论。**如果谜保证有解,那么解不出来意味着什么?**意味着解题的人不行。实验做不出预期结果,一个训练有素的科学家的第一反应绝不是「牛顿错了」,而是:样品不纯?校准漂了?模型少算了一项?温度没控住?**而且这个反应通常是对的**——在成熟领域里,一个异常结果绝大多数时候确实是操作问题。"
+    },
+    {
+      "type": "quote",
+      "original": "一个失败,算作科学家的失败,而不是理论的失败。怪工具的,是拙劣的木匠。"
+    },
+    {
+      "type": "p",
+      "text": "值得留意的是,失败被吸收掉的方式通常不止一种。**一种是归给操作**(重做一遍,或者干脆不写进论文);**一种是归给复杂性**(这个体系太脏,理想条件下应该是对的);**还有一种是记下来但存而不论**(「此处与理论略有出入,原因待查」——这句话在文献里的出现频率高得惊人)。第三种最要紧,因为**它把反常保留了下来**:它没被解释掉,只是被暂时寄存。等到很多年后有人重新翻出这些「待查」,常常会发现它们指向同一个方向。"
+    },
+    {
+      "type": "p",
+      "text": "这套规矩有惊人的日常对应。写代码的人都熟悉那个默认:**「这不可能是框架的 bug,一定是我用错了。」**这个默认在绝大多数时候是对的,而且正因为它对,它才成了默认——一个每次报错都先怀疑编译器的人,什么活也干不成。**但也正因为它是默认,当那真的是框架的 bug 时,它会格外难被发现:所有人都在自己身上找了三天。**库恩说的常规科学,就是这个默认被制度化、被写进教科书、被用几年的训练打进一个人身体里之后的样子。"
+    },
+    {
+      "type": "h2",
+      "text": "六、转折:这份教条是有生产力的"
+    },
+    {
+      "type": "p",
+      "text": "读到这里,几乎所有人都会得出一个结论:库恩在批评科学界僵化、盲从、不肯质疑权威。**而他接下来的一步正好相反,这是全书最反直觉、也最有分量的一步。**"
+    },
+    {
+      "type": "p",
+      "text": "他的论证可以压成一句话:**唯有把预期定得极死,偏差才可能被认出来是偏差。**设想一个相反的领域——它对什么结果都能给出解释,任何数据都能被某个说法容纳,没有任何观测会让从业者感到意外。**这样的领域永远不会被自然驳倒**,不是因为它太正确,而是因为它太软。而一个把话说死了的领域:它规定了这条谱线该在哪个位置、这个反应该放出多少热、这颗行星该在什么时刻出现在什么方位——**任何一点偏差都会立刻显形。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "因果链",
+      "svg": "<svg viewBox='0 0 560 236' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>为什么「教条」反而是革命的前提</text><g style='font-family:var(--font-serif);font-size:11.5px'><rect x='16' y='58' width='96' height='44' rx='4' style='fill:var(--paper-raised);stroke:var(--ink-faint);stroke-width:1'/><text x='64' y='78' text-anchor='middle' style='fill:var(--ink)'>范式把话</text><text x='64' y='94' text-anchor='middle' style='fill:var(--ink)'>说死了</text><rect x='140' y='58' width='96' height='44' rx='4' style='fill:var(--paper-raised);stroke:var(--ink-faint);stroke-width:1'/><text x='188' y='78' text-anchor='middle' style='fill:var(--ink)'>预期变得</text><text x='188' y='94' text-anchor='middle' style='fill:var(--ink)'>极精确</text><rect x='264' y='58' width='96' height='44' rx='4' style='fill:var(--paper-raised);stroke:var(--ink-faint);stroke-width:1'/><text x='312' y='78' text-anchor='middle' style='fill:var(--ink)'>偏差无处</text><text x='312' y='94' text-anchor='middle' style='fill:var(--ink)'>可藏</text><rect x='388' y='58' width='96' height='44' rx='4' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='436' y='78' text-anchor='middle' style='fill:var(--cinnabar-pure);font-weight:bold'>反常显形</text><text x='436' y='94' text-anchor='middle' style='fill:var(--cinnabar-pure)'>危机·革命</text></g><g style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'><path d='M116 80 L134 80 M127 74 L135 80 L127 86'/><path d='M240 80 L258 80 M251 74 L259 80 L251 86'/><path d='M364 80 L382 80 M375 74 L383 80 L375 86'/></g><path d='M64 120 L64 148 L436 148' style='fill:none;stroke:var(--line);stroke-width:1;stroke-dasharray:4 4'/><rect x='150' y='160' width='260' height='40' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>反过来:一个什么结果都能容纳的领域,</text><text x='280' y='194' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>永远不会有意外,也就永远不会被驳倒</text><text x='280' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>科学之所以能被自然驳倒,恰恰因为它先把话说死了</text></svg>",
+      "caption": "这张图解释了一件常让人困惑的事:**为什么最保守的领域反而最容易出革命,而最「开放包容」的说法反而永远原地踏步。**下一章要讲的反常,只能长在一块被夯得很硬的地上。"
+    },
+    {
+      "type": "pull",
+      "text": "科学之所以能被自然驳倒,恰恰因为它先把话说死了。"
+    },
+    {
+      "type": "h2",
+      "text": "七、一笔时间账"
+    },
+    {
+      "type": "p",
+      "text": "还有一个数量上的直觉值得建立起来,因为它是后面所有分寸的基础:**在科学史上,常规时期占的比例大到不成比例。**以力学为例,从牛顿的《原理》到相对论,中间隔着两百多年——这两百多年不是空白,恰恰是力学最辉煌的时期:天体力学把行星轨道算到令人难以置信的精度,分析力学被重写成好几套等价的漂亮形式,连海王星都是先在纸上算出来、再照着位置找到的。**这些全是常规科学。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "时间线",
+      "svg": "<svg viewBox='0 0 560 218' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>力学的两百年:红色那一小段才是革命</text><rect x='40' y='62' width='452' height='26' rx='3' style='fill:none;stroke:var(--line);stroke-width:1.2'/><rect x='40' y='62' width='16' height='26' style='fill:var(--cinnabar-pure);opacity:0.85'/><rect x='456' y='62' width='36' height='26' style='fill:var(--cinnabar-pure);opacity:0.85'/><text x='48' y='54' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar-pure)'>1687</text><text x='474' y='54' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar-pure)'>1905 起</text><text x='256' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>常规科学:两百多年,力学最辉煌的时期</text><g style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'><text x='140' y='114' text-anchor='middle'>把行星轨道</text><text x='140' y='130' text-anchor='middle'>算到极高精度</text><text x='268' y='114' text-anchor='middle'>把力学重写成</text><text x='268' y='130' text-anchor='middle'>几套等价形式</text><text x='396' y='114' text-anchor='middle'>先在纸上算出</text><text x='396' y='130' text-anchor='middle'>海王星再去找</text></g><g style='fill:none;stroke:var(--ink-faint);stroke-width:1'><path d='M140 92 L140 102'/><path d='M268 92 L268 102'/><path d='M396 92 L396 102'/></g><text x='280' y='168' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>把这条带子按比例画出来,你就明白「范式转换」有多稀罕</text><text x='280' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>而中间那一大片,才是绝大多数科学家一辈子工作的地方</text></svg>",
+      "caption": "这笔账在第 9 章还要用一次:**把任何一次改动都叫「范式转换」,等于把这条带子上百分之一的部分说成全部。**顺带说,中间那一大片里也不是没有戏剧——海王星那件事在当时是一次极漂亮的解谜,而它恰恰因为范式够硬才做得成。"
+    },
+    {
+      "type": "h2",
+      "text": "八、这一章的分寸"
+    },
+    {
+      "type": "p",
+      "text": "最后要划三条线,免得把这一章读偏。"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**「常规」不是贬义。**库恩自己说过,常规科学是人类智力活动中效率最高的形式之一——它把一群极聪明的人集中在一小片可解的地面上,几十年不散,挖出的深度是任何「广泛探索」都达不到的。**说它保守,和说它低级,是两回事。**",
+        "**不是说科学家不批判。**常规科学内部的批评极其严厉:方法、数据、推理、显著性,每一步都会被同行挑刺。**不被批判的只有那个共同的基础**——而且只在常规时期不被批判。",
+        "**更不是说「所以搞创新要先反对范式」。**这是最常见的一种借题发挥。库恩的意思恰恰相反:**没有先把一套东西学到熟练的程度,你根本看不出哪里不对劲。**看不出不对劲,就谈不上反常;谈不上反常,「创新」就只是换个说法而已。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "带着这三条往下走。下一章的问题是:**既然常规科学如此善于把失败算到自己头上,那么一个真正的反常,究竟是怎么被认出来的?**答案里会出现一副被动了手脚的扑克牌,和一种被叫作「脱燃素空气」的气体。"
+    }
+  ]
+}

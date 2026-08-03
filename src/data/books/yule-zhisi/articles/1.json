@@ -1,0 +1,139 @@
+{
+  "title": "媒介不是容器",
+  "subtitle": "全书的地基:不是「电视上的东西不好」,而是形式先决定了什么样的内容说得出口",
+  "centralIdea": "大多数人默认媒介是容器——同一件事写成文章、拍成视频、剪成十五秒,只是换包装,里面的东西不变。波兹曼要推翻的正是这个默认。他给了两个名字:一是「媒介即隐喻」,媒介不把世界搬给你,它悄悄规定了世界该长什么样(有了钟表,时间才被切成一格一格;有了文字,思想才第一次可以被翻回去检验);二是更狠的「媒介即认识论」,什么算「有道理」「可信」「说清楚了」,这套标准是随主导媒介换的——部落里一句谚语能当判案依据,印刷社会里白纸黑字才算数,屏幕上则是「看起来可信」就够了。他用「烟信号里没有哲学」把这条命题推到极端:不是酋长不许你讲,是烟柱这个形式撑不住一段论证。所以每问一个媒介「它擅长什么」,必须接着问「它几乎说不出什么」。这条命题有两个边界要守住:它不是说内容不重要,也不是说人被机器决定——它说的是,某些表达在某种形式里会越来越难开口,而没有人会宣布它们被禁止了。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "先做个思想实验。假设你要用**烟信号**跟远处山头的人讲一段哲学:先立三个前提,再指出其中一个有例外,最后推出结论。你会发现这事根本没法开始——你还没升到第二个前提,风就把第一柱烟吹散了,对面看到的是几团彼此无关的白气。**「烟信号里没有哲学」,不是因为有人禁止,是因为这个形式撑不住。**"
+    },
+    {
+      "type": "p",
+      "text": "这个略显好笑的例子,是《娱乐至死》的整块地基。波兹曼要对付的是一个几乎人人自带的默认设置:**媒介是容器。**同一件事,写成文章、录成播客、拍成视频、剪成十五秒,不过是换了个包装,里面那件事还是那件事。他说:**不对。换容器就换了内容,因为有些内容根本装不进某些容器。**"
+    },
+    { "type": "h2", "text": "一、媒介即隐喻:它不搬运世界,它规定世界的样子" },
+    {
+      "type": "p",
+      "text": "他给这条命题起的第一个名字叫「媒介即隐喻」。隐喻的意思是**暗示**,不是命令——媒介从不下令你必须怎么想,它只是让某些话越来越顺口、某些话越来越难开口。"
+    },
+    {
+      "type": "p",
+      "text": "最好懂的例子是**钟表**。在机械钟出现之前,人当然也知道天亮天黑、日中日暮,但「上午九点十七分」这种东西不存在。不是没人想得到,是没有这个器物就长不出这个念头。**钟表把时间切成了一格一格,人于是开始按刻度活**:上班时间、课时、时薪、迟到三分钟。今天我们说「时间就是金钱」,这句话里的时间已经是钟表造出来的时间——**它可以被分割、被计量、被买卖,而这三件事在钟表之前都做不到。**"
+    },
+    {
+      "type": "p",
+      "text": "第二个例子是**文字**。一句话说出口就散了,写下来却可以被翻回去比对。**「可被翻回去检验」这件事,是文字带来的,不是人变严谨了。**有了它才可能出现契约、法条、账本、注疏,以及一种非常特别的活动:挑另一个人写的东西的毛病,而且是逐字挑。口头文化里当然也有争论,但没法说「你上一段第三句和这一段矛盾」——**上一段已经不在了。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "三个例子,同一个动作:一件器物进来,人的某种念头跟着长出来。波兹曼说这就是「隐喻」——它不告诉你想什么,它改变你能想什么。",
+      "svg": "<svg viewBox='0 0 620 250' xmlns='http://www.w3.org/2000/svg'><text x='310' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>器物进来,念头跟着长出来</text><g><rect x='30' y='46' width='150' height='38' rx='5' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='105' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>机械钟</text><path d='M105 92 L105 116' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><path d='M101 108 L105 116 L109 108' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><text x='105' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--cinnabar-pure)'>「分秒」出现了</text><text x='105' y='162' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>时间可分割、可计量</text><text x='105' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>于是也可以买卖</text></g><g><rect x='235' y='46' width='150' height='38' rx='5' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='310' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>文字</text><path d='M310 92 L310 116' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><path d='M306 108 L310 116 L314 108' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><text x='310' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--cinnabar-pure)'>「可被检验」出现了</text><text x='310' y='162' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>能指着上一段说</text><text x='310' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>「你这里前后矛盾」</text></g><g><rect x='440' y='46' width='150' height='38' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2'/><text x='515' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>屏幕</text><path d='M515 92 L515 116' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><path d='M511 108 L515 116 L519 108' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><text x='515' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--cinnabar-pure)'>「看起来可信」出现了</text><text x='515' y='162' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>语气、神情、亲切感</text><text x='515' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>先于「他核对过没有」</text></g><text x='310' y='222' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>没有人开会决定过这些更换,它们是跟着形式一起来的</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这里插一句很要紧的旁证:**每一次媒介更换,都有人在当时就担心过。**柏拉图在《斐德罗篇》里借苏格拉底之口抱怨过文字——说人一旦能把东西写下来,记性就废了,而且写下的话不能回答提问,你问它,它只会重复同一句。**两千多年后回头看,这个担心一半说中一半落空:**记诵的能力确实退化了,但文字换来的东西(可检验、可积累、可远距离传播)大到没法拿记性去换。**这个先例值得贴在这本书的封面上**:媒介更换从来是有得有失的交易,而当代人往往只看得见自己正在失去的那一半。"
+    },
+    { "type": "h2", "text": "二、媒介即认识论:真理的标准也会被换掉" },
+    {
+      "type": "p",
+      "text": "第二个名字更狠:**媒介即认识论。**认识论听着吓人,意思其实很朴素——**什么算「有道理」、什么算「证据」、什么算「说清楚了」。**波兹曼说,这套标准不是天上掉下来的,它随主导媒介一起换。"
+    },
+    {
+      "type": "p",
+      "text": "在没有文字的部落社会,长老断案时引一句祖传的谚语,案子就断了。今天听起来荒唐,**但在那个社会,「有传统为证」正是「有道理」的标准形式**,就像我们这里「有合同为证」一样天经地义。同一句祖训搬到印刷社会,写不进合同就不再有效力——**「白纸黑字」这四个字本身就是一整套认识论**:一件事要算数,得能被写下来、被翻出来、被逐条对照。"
+    },
+    {
+      "type": "p",
+      "text": "到了屏幕上,判断一个人可不可信的第一道关口,变成了他的语气、神情、语速和亲切感。**真理的门槛从「论证是否成立」滑到了「这个人像不像可信的人」。**这不是谁堕落了——一个只提供画面和声音的形式,本来就没法让你验算,它能提供的最强证据,就是「他看起来不像在骗人」。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "caption": "同一个问题「凭什么信你」,三个社会给的答案完全不同。三种答案在各自的形式里都成立;麻烦出在一个社会已经换了主导媒介,而它的很多制度还按上一套标准设计着。",
+      "svg": "<svg viewBox='0 0 620 250' xmlns='http://www.w3.org/2000/svg'><text x='310' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>「凭什么信你」的三种答案</text><rect x='24' y='44' width='180' height='134' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='220' y='44' width='180' height='134' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='416' y='44' width='180' height='134' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2'/><text x='114' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>口传社会</text><text x='310' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>印刷社会</text><text x='506' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>屏幕社会</text><text x='114' y='102' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>「祖上有这句话」</text><text x='310' y='102' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>「白纸黑字写着」</text><text x='506' y='102' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>「他看着不像在骗人」</text><text x='114' y='132' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>证据 = 传统</text><text x='310' y='132' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>证据 = 可逐条对照的文本</text><text x='506' y='132' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>证据 = 表情与语气</text><text x='114' y='158' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>不可验算</text><text x='310' y='158' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>可以验算</text><text x='506' y='158' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>无从验算</text><text x='310' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>波兹曼:这不是谁堕落了,是形式能提供的最强证据变了</text><text x='310' y='234' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>屏幕给不了你验算的机会,它只能给你一张脸</text></svg>"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "别读成排序",
+      "items": [
+        "他不是在说口传社会愚昧、印刷社会高级、屏幕社会堕落。他说的是**三种标准各自成立于各自的形式**,彼此没有一把公共的尺子。",
+        "真正的麻烦发生在**换挡的时候**:社会已经换了主导媒介,但很多制度、很多期待,还是按上一套标准设计的。法庭还要求书面证据,选举却在比谁上镜——**两套标准在同一个社会里同时运行,人就会普遍地觉得哪里不对劲,却说不出哪里不对劲。**"
+      ]
+    },
+    { "type": "h2", "text": "三、形式的偏向:它不禁止,它只是不给位置" },
+    {
+      "type": "p",
+      "text": "回到烟信号。这个例子的价值在于它足够极端,极端到没人会误会成「内容问题」。**没有人会说「那个部落的哲学水平低」,所有人都会说「烟信号讲不了这个」。**波兹曼要做的,就是把这个显而易见的判断,搬到我们身处其中、因而看不清的那些形式上。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "打个比方。给一位好厨师一台只有微波炉的厨房,他做不出爆炒——**不是他手艺退步了,是这套设备没有猛火**。他会慢慢把菜单调整成微波炉做得好的那些菜,而且做得越来越精。几年后有人翻他的菜单说「现在的厨师不会爆炒了」,这话对一半:**菜单确实变了,但原因在设备,不在厨师。**"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "所以这本书教人的第一个动作是:**每问一个媒介「它擅长什么」,必须紧接着问「它几乎说不出什么」。**十五秒的竖屏擅长情绪、反转和认同,几乎说不出「但是」「在某些条件下」「这件事有三种解释」;一条群消息擅长即时和在场,几乎说不出需要铺垫五百字的东西。**这些东西不会被谁宣布禁止,它们只是慢慢没有地方可去。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "caption": "「说不出口」有两种。一种是被禁止的,你知道它存在、也知道它被禁了;另一种是没有位置的,久了之后,连它曾经存在这件事都会被忘掉。波兹曼担心的是后一种。",
+      "svg": "<svg viewBox='0 0 620 232' xmlns='http://www.w3.org/2000/svg'><text x='310' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>两种「说不出口」</text><rect x='28' y='44' width='262' height='150' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='330' y='44' width='262' height='150' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2'/><text x='159' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>被禁止</text><text x='461' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>没有位置</text><text x='159' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>有人下令</text><text x='461' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>没有人下令</text><text x='159' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>你知道它存在</text><text x='461' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>久了会忘记它存在过</text><text x='159' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>可以反抗</text><text x='461' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>不知道该反抗谁</text><text x='159' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>奥威尔担心的那种</text><text x='461' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>本书担心的那种</text><text x='310' y='220' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>全书的路线:从这一格出发,最后走到赫胥黎</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "要提醒一句:**「偏向」不等于「阴谋」。**没有谁在会议室里决定「从今天起复杂的东西不许上电视」,也没有哪个产品经理写下过「我们要让人们不再讲道理」。**它是无数个各自合理的小决定累加出来的结果**:这条太长了剪掉一点,这段太绕了换个说法,这个数据太枯燥了配张图——每一步都很有道理,合起来就是一个再也放不下「不过」和「但是」的形式。**正因为没有人负责,这件事才特别难被指出来。**"
+    },
+    {
+      "type": "p",
+      "text": "还有一个更硬的证据:**同一个人,换个形式,说出来的东西真的不一样。**一位学者写论文时会写满限定条件——「在样本量足够、且排除了某某因素的前提下,倾向于支持」;同一个人上访谈节目,面对镜头,几乎必然会被逼出一句「所以结论就是,某某确实有效」。**中间那些限定条件不是被他放弃了,是没地方放。**镜头前每多说一个「不过」,观众流失一分;而论文里每少写一个「不过」,审稿人就多划一道红线。**同一个人,两套奖惩,两种说法。**"
+    },
+    { "type": "h2", "text": "四、两个边界,不要把这条命题推太远" },
+    {
+      "type": "p",
+      "text": "**第一,他不是说内容不重要。**同样是九十秒的电视新闻,认真核过事实的和胡编的,当然不一样。他只是说:在这个形式里,「认真核过」这件事**很难被观众看见**,因而也很难被奖励——**形式决定的是奖励什么,不是内容有没有差别。**"
+    },
+    {
+      "type": "p",
+      "text": "**第二,他不是说人被机器决定了。**这一点尤其要按住,因为「媒介即隐喻」这类说法一顺口,很容易滑成「有了短视频,人就注定变浅」——那是宿命论,不是分析。**形式给的是坡度,不是轨道。**坡度会让某个方向省力、另一个方向费力,但人仍然可以费力地往上走:一群人可以约定在文档里写清楚再讨论,一个平台可以把「读完再评论」做成默认。这些都是逆着坡度的设计,而它们真的有用。"
+    },
+    {
+      "type": "p",
+      "text": "这一点他自己守得并不算稳,后来最有力的批评正是从这里进来的(见第九章):美国电视那种碎片化的编排,很大程度上是广告制度的产物,而不是显像管的天性——**同样的技术,在不同的制度里会长出不同的东西。**读的时候把这条记在旁边:**形式有偏向,但形式本身也是被人做出来的。**"
+    },
+    { "type": "h2", "text": "五、这条命题怎么用" },
+    {
+      "type": "p",
+      "text": "它最好的用法不是拿去评判别人刷什么,而是拿去看你自己每天在用的东西。三个问题就够:**这是什么形式?这个形式让什么容易说、让什么几乎说不出口?我看完之后,能做的事多了几件?**"
+    },
+    {
+      "type": "p",
+      "text": "举个身边的例子。工作群里那种「大家看一下这个方案」——**群聊这个形式擅长的是即时、在场、表态**,它天生适合「收到」「同意」「+1」;它几乎说不出的是「这个方案在第三种情况下会出问题,理由有两条」。**于是同样一群人,在文档里评论时讲道理,在群里就只剩表态。**这不是那群人在群里变笨了,是形式换了,能说出口的东西跟着换了。真要让复杂的意见出得来,得换个地方说——**这就是这条命题最实际的用处:遇到「怎么大家都不好好讨论」,先别怪人,先看形式。**"
+    },
+    {
+      "type": "p",
+      "text": "顺带说一句,这也是为什么这本书虽然写的是电视,读起来却像在写今天。**他真正留给后人的不是「电视有害」这个结论,是这套问法。**结论会过期,问法不会——只要还有新的形式冒出来,这三个问题就还能接着问下去。"
+    },
+    {
+      "type": "callout",
+      "tone": "mute",
+      "label": "留意用字",
+      "items": [
+        "他挑的词是「隐喻」,不是「工具」。工具是你拿起来用完放下的东西,谁用都一样;隐喻是**你还没开口它就已经在起作用**的东西。这个用词本身就是他的立场:媒介不在你手里,你在它里面。",
+        "所以这本书从头到尾不讨论「怎么正确使用电视」。在他看来那个问题本身就问错了——**问题不在你怎么用它,在它已经把「什么算说清楚了」改掉了。**"
+      ]
+    },
+    {
+      "type": "pull",
+      "text": "问一个媒介「它擅长什么」的同时,一定要问「它几乎说不出什么」——后一半才是这本书的贡献。"
+    },
+    {
+      "type": "p",
+      "text": "接下来两章,他要为这条命题找证据:**他得证明曾经真有过另一种公众**,而且那种公众不是因为更聪明,是因为被另一种形式训练过。于是有了那场开了七个钟头的辩论。"
+    }
+  ]
+}

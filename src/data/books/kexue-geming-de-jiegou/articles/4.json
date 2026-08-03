@@ -1,0 +1,165 @@
+{
+  "title": "革命:为什么不能靠讲道理一次讲完",
+  "subtitle": "两边都在认真讲理,而且都讲得通——因为他们手里的尺子不是同一把;库恩由此把科学中最不像政治的事,和政治革命放在了同一张图上",
+  "centralIdea": "当新的候选范式真的出现,为什么两边不能坐下来把道理讲清楚?库恩的答案不是「有一方不讲理」,而是:常规科学那套评判程序本身以范式为前提,所以它不能拿来裁决范式。这和政治革命的处境一样——制度内部没有更高一级的机构能裁决「该不该换掉这套制度」,于是只剩下诉诸群体说服。由此他写下了全书最常被断章取义的一句:在范式选择上,没有比相关共同体的同意更高的标准。但「没有更高的标准」不等于「没有标准」:他在同一节里详细列了实际发生的论证——能不能解掉引发危机的那个问题、量的精度、简洁、以及有没有前途。这些都是真理由,只是都不构成证明。还有两点最少被引用却最能防止误读:革命有大有小,一个几十人的小社群内部也能发生;革命是有代价的,新范式会丢掉旧范式解决过的问题。明白后一条,你会对老一辈的抵抗多一分敬意——他们抵抗的常常是真实的损失,而不只是习惯。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "设想一个理想化的场景:危机已经很深,一个新的候选理论摆在桌上,双方都是这个领域里最聪明、最诚实、最愿意讲道理的人。**他们坐下来,把证据摊开,把逻辑理清,应该在一个下午之内得出结论。**——这个场景在科学史上几乎从未发生过。库恩要解释的正是这件事:**不是因为有一方不讲理,而是因为他们手里的尺子不是同一把。**"
+    },
+    {
+      "type": "h2",
+      "text": "一、为什么用「革命」这个词"
+    },
+    {
+      "type": "p",
+      "text": "库恩用「革命」不是修辞上的借力,他是认真在做类比,而且这个类比相当严密。政治革命起于一种感觉:**现有制度已经应付不了它自己造出来的处境**——注意后半句,那些问题往往正是这套制度自己制造的。而一旦争论上升到「该不该换掉这套制度」,**制度内部就没有任何一级机构有资格裁决**:法院、议会、行政程序,全都以这套制度的合法性为前提,拿它们来裁决自己的存废是循环的。**于是只剩下一条路:诉诸群体说服。**"
+    },
+    {
+      "type": "p",
+      "text": "范式之争一模一样。评审、实验、数学推导、同行评议——**这些程序全都以某个范式为前提**:什么算合格的证据、什么算有效的推理、哪些问题值得算数,都是范式的一部分(第 2 章讲过,这是「谜」的第二个特征)。所以拿常规科学那套程序去裁决范式本身,同样是循环的。库恩由此写下了全书最常被断章取义的一句话:"
+    },
+    {
+      "type": "quote",
+      "original": "在范式选择上,没有比相关共同体的同意更高的标准。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "svg": "<svg viewBox='0 0 560 244' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>为什么争论会转圈:两把尺子各量各的</text><rect x='26' y='48' width='226' height='128' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='139' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink-soft)'>旧范式的尺子</text><g style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'><text x='44' y='98'>· 我们这行必须回答 A、B、C</text><text x='44' y='120'>· 这样的推理才算数</text><text x='44' y='142'>· 用这把尺子量:</text><text x='58' y='162' style='fill:var(--ink)'>新说法在 B 上一塌糊涂</text></g><rect x='308' y='48' width='226' height='128' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='421' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>新范式的尺子</text><g style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'><text x='326' y='98'>· B 根本不是个真问题</text><text x='326' y='120'>· 该回答的是 A、D、E</text><text x='326' y='142'>· 用这把尺子量:</text><text x='340' y='162' style='fill:var(--cinnabar-pure)'>旧说法连 D 都问不出来</text></g><path d='M258 112 L302 112 M270 106 L259 112 L270 118 M290 106 L301 112 L290 118' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><text x='280' y='202' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>两边都在认真讲理,而且各自都讲得通——问题是没有第三把尺子</text><text x='280' y='228' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>这不是「有人不讲理」,这是「讲理的前提本身在争论之中」</text></svg>",
+      "caption": "这张图也是理解第 6 章「不可通约」的入口:**分歧不在结论,在考卷。**顺带说,这在日常争论里极常见——两个团队争一个方案好坏,吵了两小时才发现各自的「好」指的是不同的指标。"
+    },
+    {
+      "type": "h2",
+      "text": "二、「没有更高的标准」不等于「没有标准」"
+    },
+    {
+      "type": "p",
+      "text": "这是必须立刻堵住的一个口子。库恩在同一节里,**详细列了革命期实际发生的论证长什么样**,而它们全都是货真价实的理由,不是嗓门大小。"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**它能解掉引发危机的那个问题,而旧的那个解不掉。**这是最有力的一条,几乎每一次革命都靠它开局。氧化说一上来就把煅烧增重那笔账平了。",
+        "**量的精度。**这一条最硬,也最难反驳。牛顿和拉瓦锡靠的都是把数算到旧说法够不着的地方——**当一个新框架能把一个旧框架永远差着一截的数值算准,争论的性质就变了。**",
+        "**简洁、整齐、「更像样」。**这类审美理由听起来最不可靠,却在历史上反复起作用。哥白尼最初能吸引人的,正是他不必为每颗行星单独编一套本轮。",
+        "**它有没有前途。**它能不能孕育出一批新问题、新工具、新方向。**一个还很粗糙但打开了一整片新地面的框架,常常胜过一个成熟但已经没什么活可做的框架。**",
+        "**它跟别的领域合不合得上。**一个能与化学、与热学、与天文学彼此支援的力学,比一个孤立自洽的力学更有说服力。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "**但这五条都不构成证明。**理由在于:在争论发生的那个当口,**新范式往往还很粗糙**——它只处理了少数几个问题,在大量旧问题上表现更差,还欠着一堆解释债。支持它的人是在拿现有的一点成绩,去赌它未来的开阔。库恩说这需要一点**信心**,而这个词让很多读者不舒服——但它描述的是一件常识:**任何一个在早期就选择了新方向的人,拿到的证据在当时都不足以定案。**"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "一处澄清",
+      "items": [
+        "「诉诸说服而非证明」不等于「诉诸权力、人脉或嗓门」。库恩说的说服,**内容仍然是上面那五条理由**——只是这些理由不能像数学证明那样强制人同意,而要靠它们逐步累积起来的分量。**这个区分很要紧**:一个说「你看这条数据我们算得更准、而且你们那套至今算不出来」的人,和一个说「时代变了,你们跟不上」的人,做的完全不是同一件事。第 9 章会看到,后一种腔调最爱借库恩的词。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "三、普朗克那句话该怎么读"
+    },
+    {
+      "type": "p",
+      "text": "讲到转变实际怎么完成,库恩引了普朗克一句很沉重的话。"
+    },
+    {
+      "type": "quote",
+      "original": "一个新的科学真理并不靠说服它的反对者取胜,而是因为反对者终于死去,熟悉它的新一代成长起来。"
+    },
+    {
+      "type": "p",
+      "text": "**这句话极容易被读成犬儒:科学靠死人推进。**库恩引它的用意不是这个。他要说的是**转变的形态**:它没有一个「大家一起改主意」的时刻,也没有一场决定性的辩论;它是**一个人一个人地**发生的——先是几个年轻人,然后是几个有分量的中年人,然后天平慢慢倾斜;等到某一天,坚持旧说的人变成了少数,再变成古怪,最后不再有人接他们的班。**革命完成在共同体的层面,而不是在某一场辩论的结尾。**"
+    },
+    {
+      "type": "p",
+      "text": "为什么年轻人更容易改?**不是因为他们更聪明或更勇敢**,而是因为他们的**沉没成本**低:他们没有把二十年的技艺押在旧框架上,没有一整套只在旧框架里才有意义的实验设备和职业声誉。**这既是他们的优势,也是他们的局限**——第 2 章说过,看不出哪里不对劲的人是做不出反常的,而看得出的人往往正是浸得最深的老手。**所以真实的历史里,提出革命的常常是老手,接受革命的常常是新人。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "过程图",
+      "svg": "<svg viewBox='0 0 560 240' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>转变是一个人一个人发生的</text><path d='M52 172 L508 172' style='fill:none;stroke:var(--line);stroke-width:1.2'/><path d='M52 172 L52 52' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='44' y='58' text-anchor='end' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>全</text><text x='44' y='170' text-anchor='end' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>零</text><text x='30' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)' transform='rotate(-90 30 118)'>接受新范式的人数</text><path d='M52 168 C150 166 190 158 232 130 C274 102 312 72 400 62 C450 57 480 56 508 56' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><g style='fill:none;stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 4'><path d='M232 130 L232 172'/><path d='M400 62 L400 172'/></g><text x='140' y='194' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>只有几个年轻人</text><text x='316' y='194' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>天平开始倾斜</text><text x='458' y='194' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>旧说不再有人接班</text><text x='280' y='224' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>没有哪一天是「革命成功日」——这正是它在教科书里消失的原因之一</text></svg>",
+      "caption": "这条曲线还解释了一个常见错觉:**回头看总觉得「当时明明那么明显」。**因为我们看到的是曲线的终点,而身处曲线中段的人,面对的是一个还没长成的新框架和一堆看得见的损失。"
+    },
+    {
+      "type": "h2",
+      "text": "四、革命有大有小"
+    },
+    {
+      "type": "p",
+      "text": "这一条极常被漏掉,漏掉之后会闹很大的误会。库恩明确说过,**革命不都是哥白尼、拉瓦锡、爱因斯坦级别的**。一个只有几十号人的小专业社群内部,同样可以发生一次不折不扣的革命:他们共有的那套范例被换掉了,问题清单重排了,过去做的一批工作变得没意义了——**只是这件事在外人看来毫无声响,连隔壁实验室都不一定注意到。**"
+    },
+    {
+      "type": "p",
+      "text": "**为什么这一条要紧?**因为它把「革命」的判准从**规模**挪到了**性质**。判断一次变动是不是革命,不是看它有多轰动、影响多少人,而是看:**共有的范例换了吗?什么算好问题、什么算好解答的标准换了吗?**一个只影响五十个人的变动可以是革命;一个上了头条、改变了整个行业营收结构的变动,可能只是一次很成功的常规科学。这一区分在第 9 章会变成一把很好用的刀。"
+    },
+    {
+      "type": "h2",
+      "text": "五、革命是有代价的"
+    },
+    {
+      "type": "p",
+      "text": "现在说全书最少被引用、却最能防止误读的一点。**换范式不只是拿到新东西,也会丢掉旧东西。**"
+    },
+    {
+      "type": "p",
+      "text": "最清楚的例子是牛顿。在他之前,笛卡尔一派的机械论哲学对「什么算一个合格的解释」有明确要求:**一切作用必须通过接触传递**——推、撞、涡旋,不能有隔空生效的东西。而牛顿的引力恰恰是隔空生效的:他给出了极精确的**定律**,却拒绝说明引力**靠什么传过去**。在当时不少一流头脑看来,这不是一个新解释,而是**放弃了解释**,退回到了他们刚刚花大力气赶走的那类神秘属性。**他们的反对不是顽固,是按当时公认的标准在提要求。**后来的结果是:牛顿赢了,而「必须说明作用如何传递」这条要求被从问题清单上划掉了——**一个问题不是被解决,是被取消了资格。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "svg": "<svg viewBox='0 0 560 252' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>革命是一次交换,不是一次净升级</text><path d='M280 52 L280 176' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M180 62 L380 62' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M180 62 L180 84 M380 62 L380 84' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><rect x='58' y='90' width='210' height='86' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='163' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>得到</text><g style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'><text x='163' y='134' text-anchor='middle'>极精确的引力定律</text><text x='163' y='154' text-anchor='middle'>天体运动一举算通</text></g><rect x='292' y='90' width='210' height='86' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='397' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink-soft)'>失去</text><g style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'><text x='397' y='134' text-anchor='middle'>「作用如何传递」这个问题</text><text x='397' y='154' text-anchor='middle'>——不是被解决,是被取消资格</text></g><text x='280' y='208' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>反对牛顿的人不是顽固,他们是在按当时公认的标准提要求</text><text x='280' y='234' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>而「什么才算一个合格的解释」,本身就是范式的一部分</text></svg>",
+      "caption": "这一条对读今天的争论极有用。**当有人说「新方法解决了老方法解决不了的问题」时,值得追问一句:它有没有顺手把某些老问题从清单上划掉?**划掉不一定是坏事(科学史上很多次划掉都划对了),但把「划掉」说成「解决」,是两回事。"
+    },
+    {
+      "type": "pull",
+      "text": "有些问题不是被解决的,是被取消了资格。"
+    },
+    {
+      "type": "h2",
+      "text": "六、走一遍完整的一场:哥白尼"
+    },
+    {
+      "type": "p",
+      "text": "把上面几节合起来,在一个真实案例上走一遍,这套结构才立得住。**危机**:托勒密体系为了对上观测,本轮加了又加,不同天文学家各行其是,而历法的误差是一个躲不掉的实际压力;哥白尼自己在书的序言里用了「怪物」这个词。**候选者出现**:日心说把行星的逆行运动从「每颗行星各配一套小圈」变成了地球与它们的相对运动造成的视觉效果——**一个此前必须逐个安排的现象,忽然只需要一个原因。**这正是「简洁」那条理由最漂亮的一次登场。"
+    },
+    {
+      "type": "p",
+      "text": "**但账不是一边倒的。**日心说刚提出时,预报精度并不比托勒密体系高多少(它也用了圆轨道,同样要靠一堆修正);它还欠下几笔巨额解释债:**地球在飞快地动,为什么我们感觉不到?**抛起的石头为什么落回原处?**恒星为什么看不出周年视差?**——最后这一条只有两种答案,要么地球不动,要么恒星远得不可想象;哥白尼选了后者,而这在当时是一个惊人的、无从验证的假设。**反对者不是没读懂,是他们看到的损失确实存在。**"
+    },
+    {
+      "type": "p",
+      "text": "**收场也不是靠一场辩论。**它靠的是此后近一个世纪里陆续补上的东西:望远镜看到的木星卫星与金星相位、把圆轨道换成椭圆之后精度的跃升、以及最后一块拼图——一套能解释「地球在动而我们感觉不到」的新力学。**换句话说,支持哥白尼的决定性理由,在哥白尼活着的时候一条都还没到齐。**这就是上一节说的「需要一点信心」的实际含义:**早期支持者押的不是已有的证据,是这个方向能长出东西来。**"
+    },
+    {
+      "type": "h2",
+      "text": "七、这一章的分寸"
+    },
+    {
+      "type": "p",
+      "text": "最后三条界线,和前两章一样重要。"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**不是说革命中没有理性。**是说理性在这里不以「证明」的形式出现,而以「一堆各有分量的理由逐步累积」的形式出现。**这依然是理性,只是形状不同**——第 8 章会看到,这正是波普尔最不能接受、也最被库恩反驳的一点。",
+        "**不是说谁人多谁就对。**「共同体的同意」指的是一群受过同一套训练、共有那几项价值(精确、一致、广度、简洁、多产)的人在长期争论后的收敛,**不是投票,也不是舆论**。把它读成「多数决定真理」,是把一个描述读成了一套程序。",
+        "**不是说老一辈只是顽固。**这一章最该带走的一句就是这个:**他们抵抗的常常是真实的损失。**一个把「作用必须靠接触传递」当作解释底线的人反对牛顿,和一个凭情绪抗拒新事物的人,是完全不同的两件事。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "顺带记一句实用的:这一章给的最好用的工具,是那五条论证理由**加上**「代价」这一项。下次遇到路线之争,把它们列成一张表,双方各填一遍——你会发现,**很多看起来势不两立的争论,填完表就变成了「我们看重的指标不同」**,而这比「谁对谁错」清楚得多,也好谈得多。"
+    },
+    {
+      "type": "p",
+      "text": "下一章要处理一件更棘手的事:这本书从头到尾都在用的那个词——**范式**——究竟是什么意思?答案有点尴尬:**有人从这本书里数出了二十一种用法**,而作者本人后来基本同意这个指控,并把这个词拆成了两个。"
+    }
+  ]
+}

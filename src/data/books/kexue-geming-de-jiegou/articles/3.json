@@ -1,0 +1,166 @@
+{
+  "title": "反常与危机:意外是怎么被看见的",
+  "subtitle": "一副被动过手脚的扑克牌、一种被叫作「脱燃素空气」的气体、一支让远处荧光屏发光的射线管——库恩用这三件事说明:反常从来不是「事实摆在那里谁都看得见」",
+  "centralIdea": "这一章回答上一章留下的问题:既然常规科学如此善于把失败算到自己头上,一个真正的反常究竟是怎么被认出来的?库恩的答案借自一个心理学实验:给人看混了假牌的扑克(红色的黑桃),被试起初一口报出正常牌名、毫无迟疑——他们真的没看见异常;看多了才开始迟疑、不适,最后才「啪」地认出来。科学里的反常就是这个过程:先被同化进旧类别,然后是困惑,最后才是识别。所以「谁发现了氧气」这个问题本身就问错了——普利斯特利制出了它却读成「脱燃素空气」,发现是一段过程,不是一个时刻。反常到处都有,有反常不等于有危机:要触到范式的核心承诺、要顽抗最好的人的最好努力、最好还带着实践上的紧迫性,一个反常才会升级成危机。而危机的症状很好认——版本增殖、补丁越打越多、公开抱怨,以及最典型的一条:科学家开始像哲学家一样说话。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "上一章留下一个问题。如果常规科学如此善于把失败算到自己头上——**样品不纯、校准漂了、模型少算一项**——那么一个真正的反常,究竟凭什么能穿过这层厚厚的防护,被人认出来?库恩的回答出人意料:他没有从科学史开始讲,而是先讲了一个心理学实验。因为他要说的第一件事是:**反常不是「事实摆在那里,谁都看得见」;它是一件需要被感知的事,而感知本身是被训练塑造的。**"
+    },
+    {
+      "type": "h2",
+      "text": "一、那副被动过手脚的扑克牌"
+    },
+    {
+      "type": "p",
+      "text": "实验很简单。快速给受试者看一批扑克牌,里面混了几张动过手脚的——**红色的黑桃、黑色的红心**。每张牌只展示很短的时间,然后问他们看到了什么。"
+    },
+    {
+      "type": "p",
+      "text": "结果分三个阶段。**第一阶段,受试者一口报出正常的牌名**,毫不迟疑:那张红色的黑桃,他们要么说是黑桃,要么说是红心——**把它同化进一个已有的类别**,并且完全不觉得有任何异常。请注意这一点:他们不是猜错了,是**根本没看见**。**第二阶段,随着展示次数增加,开始出现迟疑**:有人说不上来哪里不对,有人形容得很怪(「这黑桃边上好像有点红」),有人明显不舒服,甚至相当难受。**第三阶段,才是「啪」地一下认出来**——之后,同一张牌再也不会被看错,而且往往连带着,别的假牌也一下子都能认出来了。"
+    },
+    {
+      "type": "figure",
+      "ftype": "过程图",
+      "svg": "<svg viewBox='0 0 560 236' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>反常被认出来的三个阶段</text><g style='font-family:var(--font-serif);font-size:12px'><rect x='20' y='54' width='150' height='96' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='95' y='78' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>① 同化</text><text x='95' y='102' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>报出正常牌名</text><text x='95' y='122' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>毫不迟疑</text><text x='95' y='142' text-anchor='middle' style='font-size:10.5px;fill:var(--ink-faint)'>不是猜错,是没看见</text><rect x='205' y='54' width='150' height='96' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='280' y='78' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>② 困惑</text><text x='280' y='102' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>说不上哪里不对</text><text x='280' y='122' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>迟疑·不适</text><text x='280' y='142' text-anchor='middle' style='font-size:10.5px;fill:var(--ink-faint)'>最难熬的一段</text><rect x='390' y='54' width='150' height='96' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='465' y='78' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>③ 识别</text><text x='465' y='102' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>新类别建立</text><text x='465' y='122' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>此后再也不会看错</text><text x='465' y='142' text-anchor='middle' style='font-size:10.5px;fill:var(--cinnabar-pure)'>连别的假牌也一起认出</text></g><g style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'><path d='M176 102 L199 102 M191 96 L200 102 L191 108'/><path d='M361 102 L384 102 M376 96 L385 102 L376 108'/></g><text x='280' y='184' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>科学里的发现走的是同一条路,只是每一段的长度以年甚至几十年计</text><text x='280' y='212' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>所以「谁在哪一天发现了它」这个问法,常常无解</text></svg>",
+      "caption": "第②阶段最值得留意:**那份说不出所以然的不舒服,是最有价值的信号,却也是最容易被压下去的信号。**在实验里它只持续几秒;在科学史里它可以持续几十年,而且在此期间,持有这份不安的人往往显得挑剔、找茬、不合群。"
+    },
+    {
+      "type": "h2",
+      "text": "二、氧气:发现是一段过程,不是一个时刻"
+    },
+    {
+      "type": "p",
+      "text": "把这个三阶段放到史实上,最漂亮的案例是氧气。十八世纪七十年代,普利斯特利用一个凸透镜聚焦阳光加热氧化汞,收集到一种奇特的气体:蜡烛在里面烧得更旺,小鼠在里面活得更久。**他制出了氧气。**可他给它起的名字是「**脱燃素空气**」——在燃素说的框架里,燃烧是物体放出燃素,所以一种能让火烧得更旺的气体,一定是**特别缺燃素、特别能吸收燃素**的空气。这个读法在他的框架里**完全说得通**,一点也不牵强。"
+    },
+    {
+      "type": "p",
+      "text": "真正的转变发生在拉瓦锡手里,而他换掉的不是一个名字,是**整套提问方式**:燃烧不再是物体**放出**什么,而是与空气中的某种成分**结合**。这个翻转解释了那个长期让人不安的旧账——**金属煅烧之后为什么变重**(结合了东西,当然变重),同时把这种气体从「缺了某物的空气」变成了「一种独立的元素」。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "一个被问错的问题",
+      "items": [
+        "所以「**谁发现了氧气**」这个问题本身就有毛病。要说第一个把它制出来,还有比普利斯特利更早却没有及时发表的人;要说第一个明确说出「这是什么」,那是拉瓦锡;而拉瓦锡起初也曾认为自己拿到的是某种更纯的普通空气,**他也是慢慢才想清楚的**。库恩由此得出一个很硬的结论:**发现包含两步——「意识到有东西不对」和「弄清它是什么」——而后一步往往需要换掉整套框架。**当我们要求指出「发现的那一天」时,我们是在用一个后来才有的、干净利落的类别,去切一段本来就模糊的过程。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "三、燃素的负重量:一个被容忍了几十年的反常"
+    },
+    {
+      "type": "p",
+      "text": "上一节顺带提到的那笔旧账,值得单独摊开,因为它是全书最好的一个「反常被容忍」的样本。燃素说的核心是:可燃物里含有一种叫燃素的东西,燃烧就是把它放出去。这套说法在十八世纪相当成功——它把燃烧、呼吸、金属生锈这些看起来无关的现象统一成了同一件事,**而「统一了一批现象」正是一个好范式的标志**。"
+    },
+    {
+      "type": "p",
+      "text": "麻烦出在秤上。**金属在空气里煅烧之后,变重了。**按燃素说,它放出了燃素,应该变轻才对。这个反常不是没人知道——它被反复测过、被写进文献、被讨论过很多次。而当时的应对方式,今天看起来相当有想象力:有人说秤上称到的是别的东西;有人说燃素在不同物质里表现不同;**还有人干脆提出,燃素带有负的重量。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>同一个称重结果,两套账</text><rect x='24' y='46' width='250' height='150' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='149' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink-soft)'>燃素说的账</text><g style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'><text x='42' y='98'>燃烧 = 放出燃素</text><text x='42' y='124'>可是金属煅烧后变重了</text><text x='42' y='150'>补丁:燃素带负重量?</text><text x='42' y='176' style='fill:var(--ink-faint)'>补丁能圆得上,但越来越难看</text></g><rect x='286' y='46' width='250' height='150' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='411' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>拉瓦锡的账</text><g style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'><text x='304' y='98'>燃烧 = 与空气中某成分结合</text><text x='304' y='124'>结合了东西,当然变重</text><text x='304' y='150'>不需要补丁</text><text x='304' y='176' style='fill:var(--cinnabar-pure);font-weight:bold'>同一笔账,一下子平了</text></g><text x='280' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>要紧的不是「哪一边聪明」——两边都在认真算账,而且都算得通</text><text x='280' y='244' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>差别在于:一边靠加补丁维持,另一边靠换一个方向就自然平了</text></svg>",
+      "caption": "「负重量」今天听着荒谬,但它在逻辑上并不比后来某些被接受的假设更离谱。**真正让它站不住的,不是它荒谬,是它孤立**——它只为了平这一笔账而设,不带来任何别的可检验后果。这一点是分辨「合理修正」与「硬凑补丁」的实用标准:**这个修正除了救这一处,还能不能预言别的事?**"
+    },
+    {
+      "type": "p",
+      "text": "而库恩要我们看的重点在这里:**在一套还在正常运转的框架里,把一个反常搁置、打补丁、暂时不管,是完全理性的做法。**反常永远有;一遇反常就掀桌子,任何理论都活不过一个星期。**分辨「可以先放一放的毛病」和「要命的裂缝」,没有公式可算,只能靠判断——而判断需要一个共同体。**这也是为什么下一章会说,革命不能靠一个人讲道理讲完。"
+    },
+    {
+      "type": "h2",
+      "text": "四、另一类反常:X 射线"
+    },
+    {
+      "type": "p",
+      "text": "伦琴那件事长得不一样,值得单独说,因为它展示了反常的另一种形态。**X 射线没有推翻任何一条已有的理论。**当时没有哪个公式说「不许存在这样一种射线」。它推翻的是**「仪器该做什么」的预期**:一支被研究了很久、被无数人用过的阴极射线管,居然让房间另一头的荧光屏发了光。开尔文最初的反应很能说明这件事有多不合常理——**他说这大概是一场精心设计的骗局。**"
+    },
+    {
+      "type": "p",
+      "text": "这件事最要紧的后果不是多了一种射线,而是:**此后所有用过阴极射线管的既有实验,原则上都得重做一遍。**因为谁也不知道,当年那些结果里有多少是这个从未被察觉的东西造成的。**一个反常可以不推翻任何理论,却让一大片已完成的工作瞬间变得可疑。**这一类反常在今天的科研里其实很常见:一个被广泛使用的试剂被发现有杂质、一个统计方法被发现有系统偏差、一个测量仪器被发现在某个区间失准——**理论一个字没改,但一整批文献的地基松了。**"
+    },
+    {
+      "type": "h2",
+      "text": "五、什么时候一个反常升级成危机"
+    },
+    {
+      "type": "p",
+      "text": "这是本章最实用的一节,也是最容易被跳过的一节。**反常到处都有。**任何一个活着的领域,手上都同时挂着几十个「对不上」的地方——这不是丑闻,这是正常状态。上一章说过,它们通常被归给操作、归给复杂性,或者被记下来存而不论。**所以「有反常」离「有危机」还差得远。**库恩给的升级条件大致是三条。"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**它触到了核心承诺。**一个边角上的偏差可以永远挂着;可如果那个对不上的地方,恰恰卡在范式最基本的那几条假设上,它就没法被无限期寄存。金属煅烧增重之所以要命,是因为它直接顶在「燃烧是放出燃素」这条根上。",
+        "**它顶住了最好的人使出的最好办法。**一个反常真正开始有分量,是在这个领域里几位最强的人认真攻过、而且失败了之后。**没有被认真攻过的问题不算数**——它可能只是没人有空。",
+        "**它还带着实践上的紧迫性。**这条最容易被忽略,却常常是压垮骆驼的那根稻草。托勒密体系的问题之所以躲不过去,一部分原因是**历法**:节气算不准是要出事的,而这是一个不能靠「以后再说」搪塞的需求。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "三条不一定全占,但占得越多,越难善了。**而这三条也解释了一个常见现象:为什么很多明明「早就有人指出」的问题,要过很久才变成大事。**不是因为大家瞎,是因为在前面那段时间里,它确实还没有满足升级的条件。"
+    },
+    {
+      "type": "h2",
+      "text": "六、危机的症状"
+    },
+    {
+      "type": "p",
+      "text": "危机一旦开始,症状相当好认,而且跨学科通用。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "svg": "<svg viewBox='0 0 560 262' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>危机的四个症状(跨学科通用)</text><g style='font-family:var(--font-serif);font-size:12px'><rect x='26' y='48' width='240' height='84' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='146' y='72' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>① 版本增殖</text><text x='146' y='96' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>同一理论冒出许多互相竞争的版本,</text><text x='146' y='116' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>各自打补丁,本轮越加越多</text><rect x='294' y='48' width='240' height='84' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='414' y='72' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>② 精度不升反降</text><text x='414' y='96' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>补丁把式子搞得越来越复杂,</text><text x='414' y='116' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>可算出来的东西并没有更准</text><rect x='26' y='144' width='240' height='84' rx='5' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='146' y='168' text-anchor='middle' style='font-weight:bold;fill:var(--ink)'>③ 公开抱怨</text><text x='146' y='192' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>从业者开始在正式场合说</text><text x='146' y='212' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>「这一行有点不对劲」</text><rect x='294' y='144' width='240' height='84' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='414' y='168' text-anchor='middle' style='font-weight:bold;fill:var(--cinnabar-pure)'>④ 回到基础争论</text><text x='414' y='192' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>科学家开始像哲学家一样说话:</text><text x='414' y='212' text-anchor='middle' style='font-size:11px;fill:var(--ink-soft)'>「我们这行到底在研究什么?」</text></g><text x='280' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>第 ④ 条最灵:平时没人碰的基础问题,一到危机就被翻出来吵</text></svg>",
+      "caption": "第④条是最好用的一个探针。**一个领域顺风顺水时,没人有兴趣讨论「我们这行的对象到底是什么」**——那被认为是浪费时间。当这种讨论突然大量出现在正经期刊和正经会议上,通常说明底下有东西松了。"
+    },
+    {
+      "type": "p",
+      "text": "哥白尼那本书的序言里抱怨的正是第①和第②条:天文学家各行其是,补丁堆在补丁上,拼出来的东西已经不成样子——**他用的字眼是「怪物」**。而这句抱怨有意思的地方在于:它不是从外面来的攻击,是**行家里手的自我评价**。"
+    },
+    {
+      "type": "pull",
+      "text": "科学家开始像哲学家一样说话,通常说明底下有东西松了。"
+    },
+    {
+      "type": "h2",
+      "text": "七、危机的三种结局"
+    },
+    {
+      "type": "steps",
+      "items": [
+        {
+          "title": "常规科学最终把它啃下来了",
+          "text": "这是最常见的结局,而且常常是在原来那套框架里、用一个此前没人想到的巧办法解决的。危机解除,一切照旧——只是这套范式此后更硬了,因为它扛过了一次。",
+          "state": "done"
+        },
+        {
+          "title": "问题顽抗,被搁置起来",
+          "text": "打上标签,列进「悬案」,留给将来有新工具的一代。这不是逃避:很多问题确实要等到某个仪器、某种数学被造出来之后才有可能碰。",
+          "state": "done"
+        },
+        {
+          "title": "出现新的候选范式,开始一场争夺",
+          "text": "只有这一条通向革命。而且请注意顺序:候选者是在危机之中出现的,不是先有一个更好的理论摆在那里、大家却顽固不用。",
+          "state": "now"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "text": "第三条的顺序值得多说一句,因为它推翻了一个很流行的想象。**流行的想象是:天才早早提出了正确理论,而保守的建制派压制了他很多年。**真实的历史通常是另一个样子:**在危机真正到来之前,那个「正确理论」往往还不够好**——它粗糙、只解释了少数几件事、在很多现成的问题上表现比旧理论差。哥白尼的日心说在刚提出时,预报精度并不比托勒密体系高多少,而且要付出「地球在动却感觉不到」这样一笔巨大的解释债。**旧派的抵抗在当时是有道理的**,这一点第 4 章还要展开。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "容易读岔",
+      "items": [
+        "这一章最容易被引申成一句话:「所以主流总是压制新思想,而离经叛道者往往是对的。」**这个引申完全站不住。**库恩给出的图景恰恰相反:**离经叛道者绝大多数是错的**,这也正是共同体倾向于不理他们的理由——而且那个倾向在统计上很划算。真正区分「有价值的反常」和「噪声」的,不是提出者有多不合群,而是本章第四节那三条:**它顶不顶在核心上、有没有被最强的人认真攻过、有没有实际的紧迫性。**拿库恩来给「我被主流忽视」找说法,是把一份诊断书当成了荣誉证书。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "下一章进入这个循环最戏剧的一段:当新的候选者真的出现,两边为什么不能坐下来把道理讲清楚?**答案不是「有一方不讲理」,而是——他们手里的尺子不是同一把。**"
+    }
+  ]
+}
