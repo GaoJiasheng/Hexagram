@@ -300,14 +300,30 @@ SOP:[school-intro-standard.md](./school-intro-standard.md)。数据 `src/data/<c
 
 ## 4.1 待做
 
-- [ ] **`hexa@gavin.pub` 建转发** ⬅ **现在是个死地址** —— 它已经公开挂在
-      [关于页「评论与联系」节](https://hexa.gavin.pub/about#community) 与每个章末评论区,
-      是 App Store 审核指南 1.2 要求的「公开联系方式」。**没有转发 = 用户申诉/侵权投诉发出去没人收**,
-      审核员若去信验证也会石沉大海。
-      去 `gavin.pub` 的域名邮箱服务商加一条 `hexa@` → 你的 gmail 的转发即可(不必建独立信箱)。
-      建好后回信自测一封。
+- [ ] **以 `hexa@gavin.pub` 的身份回信**(不急,等 Resend 那步)—— ImprovMX 免费版**只能收不能发**,
+      现在从 foxmail 点回复,对方看到的是 `gaojiasheng.him@foxmail.com`,
+      **专门弄这个地址就是为了不露个人邮箱,一回复就露了**。
+      不必买 ImprovMX 付费版:配 Resend 域名验证时顺手用它的 SMTP 在邮箱里加「以此地址发信」——
+      `smtp.resend.com:587`,用户名 `resend`,密码即 API key。**在那之前先别用 hexa@ 回信。**
+- [ ] **配 Resend,把评论通知打通** —— `RESEND_API_KEY` 与 `OWNER_NOTIFY_EMAIL` **两个 secret 都没配**
+      (线上只有 GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET / TURNSTILE_SECRET_KEY),
+      [comment-notification.js:26](../server/comment-notification.js:26) 里 `if (!apiKey || !ownerEmail) return null`
+      静默跳过 —— **所以现在有人评论你收不到任何通知**。不是 bug,是没配完。
+      Resend 验证 `gavin.pub` 后把它给的 SPF/DKIM TXT 加进 DNSPod,再
+      `npx wrangler pages secret put RESEND_API_KEY --project-name=hexa-gavin-pub`(同理 OWNER_NOTIFY_EMAIL)。
+      ⚠️ **SPF 一个域只能有一条**,要与 ImprovMX 那条合并成
+      `v=spf1 include:spf.improvmx.com include:_spf.resend.com ~all`,不能加两条。
 
-## 4.2 已完成(2026-08-02)
+## 4.2 已完成
+
+- ✅ **`hexa@gavin.pub` 转发已通**(2026-08-03)—— 原是个已公开发布的死地址(关于页、隐私页、
+      每条评论下),是 App Store 指南 1.2 要求的公开联系方式。
+      **ImprovMX 免费版**,`gavin.pub` 的 NS 在 DNSPod,不动 NS 只加记录:
+      `MX @ mx1/mx2.improvmx.com`(10/20)+ `TXT @ v=spf1 include:spf.improvmx.com ~all`;
+      别名 `hexa@` → foxmail。**没建 `*` 通配别名**(会把字典扫描的垃圾全灌进来)。
+      自测已收到。注:foxmail 是腾讯的,对转发邮件过滤凶,收不到先翻垃圾箱。
+
+## 4.2 之前完成的(2026-08-02)
 
 - ✅ **长短经「七雄略 / 三国权」两卷分屏** —— 整卷即一篇(卷6 四万余字)、内部无任何标记,
   按方案 (b) 人工策展 38 个 `pieces` 区间(苏秦如赵 / 张仪说楚 / 汉高祖 / 光武 / 魏太祖…),
