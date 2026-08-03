@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import { BaihuaArticle } from '../reader/BaihuaBlock.jsx'
@@ -5,19 +6,22 @@ import FontScaleControl from '../reader/FontScaleControl.jsx'
 import FontFamilyControl from '../reader/FontFamilyControl.jsx'
 import HomeSeal from './HomeSeal.jsx'
 import books from '../../data/books/index.json'
+import { loadArticle, loadOverview } from './bookContent.js'
 import './books.css'
-
-const OVERVIEWS = import.meta.glob('../../data/books/*/overview.json', { eager: true })
-const ARTICLES = import.meta.glob('../../data/books/*/articles/*.json', { eager: true })
-const pick = (obj, test) => { const h = Object.entries(obj).find(([p]) => test(p)); return h ? (h[1].default || h[1]) : null }
 
 export default function BookArticlePage({ kind }) {
   const { slug, chapter } = useParams()
   const book = books.find((b) => b.slug === slug)
   const isOverview = kind === 'overview'
-  const data = isOverview
-    ? pick(OVERVIEWS, (p) => p.includes(`/${slug}/`))
-    : pick(ARTICLES, (p) => p.includes(`/${slug}/`) && p.endsWith(`/${chapter}.json`))
+  // 正文按需拉取(见 bookContent.js:全量打包曾超 Cloudflare 单文件上限)
+  const [data, setData] = useState(null)
+  useEffect(() => {
+    let alive = true
+    setData(null)
+    const p = isOverview ? loadOverview(slug) : loadArticle(slug, chapter)
+    p.then((d) => { if (alive) setData(d) })
+    return () => { alive = false }
+  }, [slug, chapter, isOverview])
   const ch = book && !isOverview && (book.chapters || []).find((c) => String(c.no) === String(chapter))
   usePageTitle(book ? `${isOverview ? '全书总览' : (ch ? ch.title : '第' + chapter + '章')} · ${book.title}` : '观书')
 
