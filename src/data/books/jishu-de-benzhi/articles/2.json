@@ -1,0 +1,133 @@
+{
+  "title": "组合与递归:新技术是旧技术拼出来的",
+  "subtitle": "全书的中心主张——不是「常常」,是「几乎总是」;而且这句话可以一层层往下递归,直到撞上自然为止",
+  "centralIdea": "这一章是全书的主干。阿瑟的主张是:新技术几乎总是既有技术的重新组合,凭空的创造极其罕见——回头去看任何一件被称为革命性的东西,拆开都是一堆早已存在的部件,新的只是接法与用途。更关键的是第二步:组成一件技术的部件本身也是技术,部件的部件还是技术,于是「它是一个由更小的有目的系统组成的有目的系统」这句话在每一层都成立,这就是递归。由此他给出一套解剖法:任何技术 = 一个执行核心原理的主集合 + 一堆管供能、控制、散热、例外的支持集合 + 把它们组织起来的架构;而数零件的话,支持集合往往远远多过主集合——这个观察后面会长成「结构深化」。这条原理的解释力很强(技术为什么加速、为什么同时发明如此常见、为什么外行常能拼出内行想不到的东西),但也有一个必须同时记住的软肋:任何东西事后都能被拆成组合,而事后总能套上的说法,作为理论是站不稳的。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "做一个思想实验:给你无限的钱和一群顶尖的人,要求造一台笔记本电脑,但有一条限制——不许用任何已经存在的技术,一切从头来。你会立刻发现这是不可能的任务:你得先发明冶金,才能有金属外壳;先发明高分子化学,才有塑料和绝缘;先发明光刻,才有芯片;而光刻又要先有精密光学、超净厂房、特种气体……**推到最后你会发现,你要重演的是整部工业史。**这个荒谬的实验说明了阿瑟这一章的全部意思:没有一件技术是从零开始造出来的,每一件都站在一大堆已经存在的技术上面。"
+    },
+
+    { "type": "h2", "text": "一、组合原理:新的东西是拼出来的" },
+    {
+      "type": "p",
+      "text": "阿瑟的核心主张只有一句:**新技术几乎总是既有技术的重新组合。**注意分寸,他说的不是「常常」,是「几乎全部」。真正凭空出现的东西少到可以忽略——而且严格说,连那少数几件也不算凭空,它们只是新捕获了一个自然现象,组合的部分照旧。"
+    },
+    {
+      "type": "p",
+      "text": "随便挑几件在历史上被称为革命性的东西,拆开看看。**喷气发动机**:压气机、燃烧室、涡轮——这三样在它出现之前都已经是成熟的东西,压气机在工业上到处都是,燃烧室是锅炉的近亲,涡轮已经在蒸汽电站里转了几十年。新的是把它们首尾接成一个环:涡轮抽走一部分能量去驱动前面的压气机,剩下的高速气流推着飞机走。**部件全是旧的,新的是拓扑和用途。**"
+    },
+    {
+      "type": "p",
+      "text": "**激光打印机**:静电复印这套东西(带电鼓、墨粉、加热定影)在办公室里已经用了很多年,激光和它的控制电路在别的领域也已经成熟,计算机排版则是第三条线。把三条线接起来——用激光在鼓上「写」出图像,而不是靠镜头去照原稿——就得到了一件在当时看来石破天惊的东西。**互联网**同样:分组交换是一套想法,电话线路是现成的物理层,计算机是现成的端点,把它们按新协议接起来就是了。"
+    },
+    {
+      "type": "figure",
+      "ftype": "汇流图",
+      "caption": "所谓「新技术」,看结构往往是几条早已成熟的旧线在一个新点上汇合。真正新的东西,是那个接法和它服务的目的。",
+      "svg": "<svg viewBox='0 0 560 246' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>三条旧线,一个新点</text><g transform='translate(0,16)'><rect x='24' y='46' width='132' height='32' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='90' y='67' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>静电复印</text><rect x='24' y='96' width='132' height='32' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='90' y='117' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>激光与控制电路</text><rect x='24' y='146' width='132' height='32' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='90' y='167' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>计算机排版</text><text x='90' y='200' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>三样都已成熟多年</text><path d='M156 62 C230 62 250 100 288 108' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M156 112 L288 112' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M156 162 C230 162 250 124 288 116' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><rect x='292' y='92' width='150' height='44' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='367' y='112' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>激光打印机</text><text x='367' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>新的只是接法与目的</text><text x='367' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>它自己也随即成为</text><text x='367' y='186' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>别人的一条「旧线」</text></g></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这里要说清「组合」到底指什么,因为它比日常理解的「拼装」宽。它至少有三种形态。**其一是换接法**:部件都是老的,连接关系是新的,喷气发动机属于这一种。**其二是换用途**:一件东西被搬到一个完全没想过的场合去用,原本给军用测距做的东西被拿去做民用导航,原本给实验室做的东西被拿去做工业检测。**其三是降格**:昨天还是一整台设备的东西,今天变成别人机器里的一个零件——计算机曾经是一栋楼里的庞然大物,后来成了汽车里的一个模块、洗衣机里的一颗芯片。**第三种最容易被忽略,却是技术层级不断加高的主要方式:每一代的「整机」都会变成下一代的「元件」。**"
+    },
+    {
+      "type": "p",
+      "text": "这条原理有一个立刻可用的推论:**技术库存越大,能拼出的东西越多。**元件从十件涨到一百件,可能的搭配远不止涨十倍。这就是为什么技术看起来在加速——不是人变聪明了,是可组合的备件多了。它也解释了另一个常被当成玄学的现象:**同时发明。**同一件东西被互不相识的几拨人在同一两年里做出来,历史上比比皆是。既然大家手上是同一批部件、盯着同一个悬而未决的目的,撞车就是概率问题,不是巧合。"
+    },
+
+    { "type": "h2", "text": "二、递归:同一句话在每一层都成立" },
+    {
+      "type": "p",
+      "text": "组合只是第一步,阿瑟真正的推进在第二步:**那些被拿来组合的部件,本身也是技术。**压气机是一件技术,它由叶片、轴、机匣、轴承组成;叶片是一件技术,它由合金、内部冷却气道、涂层组成;冷却气道又依赖一套精密铸造工艺,那还是一件技术。每一级都是「有目的的系统」,每一级都可以被单独改进、单独替换、被别的地方借去用。"
+    },
+    {
+      "type": "p",
+      "text": "这就是递归的含义:**「它是一个由更小的有目的系统组成的有目的系统」这句话,在每一层重复成立。**它不像是修辞,更像是结构本身的一个性质,就像一棵树的每一根分枝看起来还是一棵树。而递归总要有个尽头——阿瑟说,尽头不是「最小的零件」,而是**自然现象**。这是下一章的主题。"
+    },
+    {
+      "type": "p",
+      "text": "递归这个说法还有一个不太显眼但很重要的后果:**技术是有「深度」的,而这个深度一直在增加。**古代一件器物,从成品拆到自然现象可能只有两三层——一把青铜剑,往下是合金配比,再往下是金属的硬度与韧性,到底了。今天一台手机拆到自然现象要经过十几层,而且每一层都凝结着一个完整的产业。**深度增加意味着两件事:一是没有任何个人能理解全部,二是任何一层出问题,上面所有层都会跟着晃。**近年反复上演的供应链故事——某一种特种材料、某一台设备、某一家工厂停摆,几万公里外的整车厂就停产——本质上就是这个深度在暴露它的另一面。"
+    },
+    {
+      "type": "p",
+      "text": "递归还带来一个工程上极重要的机制:**封装。**一个部件一旦成熟,它就被封成黑箱——上层只管它的接口(输入什么、输出什么、多大功率、多少延迟),不管它内部怎么实现。你设计一台设备时不会去想螺栓的金相组织,你只知道它能扛多大力。**正因为可以不管,复杂度才是可控的。**这也是为什么现代技术能堆到今天这个高度:没有人需要理解全部,每个人只要理解自己那一层加上下一层的接口就够了。"
+    },
+    {
+      "type": "figure",
+      "ftype": "机制图",
+      "caption": "封装是递归能一直堆下去的秘诀:每一层只需要懂自己和相邻接口。代价是,当底层出问题时,上层往往完全看不懂发生了什么。",
+      "svg": "<svg viewBox='0 0 560 224' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>封装:每层只管一层</text><g transform='translate(40,40)'><rect x='0' y='0' width='230' height='160' rx='5' style='fill:none;stroke:var(--ink);stroke-width:1.3'/><text x='115' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>上层设计者看到的</text><rect x='26' y='38' width='80' height='40' rx='3' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='66' y='63' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>部件 A</text><rect x='126' y='38' width='80' height='40' rx='3' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='166' y='63' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>部件 B</text><rect x='76' y='98' width='80' height='40' rx='3' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='116' y='123' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>部件 C</text><path d='M106 58 L126 58 M66 78 L100 98 M166 78 L136 98' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/></g><path d='M282 120 L318 120' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M312 115 L322 120 L312 125 Z' style='fill:var(--ink-faint)'/><text x='300' y='110' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>拆开</text><g transform='translate(330,40)'><rect x='0' y='0' width='190' height='160' rx='5' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3;stroke-dasharray:4 3'/><text x='95' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>部件 B 内部</text><rect x='18' y='38' width='66' height='32' rx='3' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='51' y='58' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>子件 b1</text><rect x='104' y='38' width='66' height='32' rx='3' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='137' y='58' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>子件 b2</text><rect x='18' y='84' width='66' height='32' rx='3' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='51' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>子件 b3</text><rect x='104' y='84' width='66' height='32' rx='3' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='137' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>子件 b4</text><text x='95' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>还能再拆一层,一直拆下去</text></g></svg>"
+    },
+
+    { "type": "h2", "text": "三、解剖一件技术:主集合与支持集合" },
+    {
+      "type": "p",
+      "text": "有了递归的眼光,阿瑟给出一套很实用的解剖法。任何一件技术都可以拆成三部分:**主集合**——真正执行核心原理的那一串;**支持集合**——供能、控制、散热、润滑、监测、安全、维护接口;以及把它们组织起来的**架构**。"
+    },
+    {
+      "type": "p",
+      "text": "有意思的是数量对比。如果你数零件,**支持集合往往远远多过主集合。**一台喷气发动机真正干活的是压气—燃烧—膨胀这条主线,但围着它的是滑油系统、燃油调节、防冰、点火、引气、振动监测、防喘振控制、灭火——这些加起来占了绝大部分零件。写过软件的人对此更有体感:实现核心逻辑的代码可能只有几百行,剩下几万行在处理输入校验、异常、重试、日志、权限、兼容旧版本。**核心永远是小的,外围永远是大的。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "一件成熟技术的零件分布大致长这样:真正执行核心原理的只是一小块,其余全在伺候它。而技术每成熟一步,右边那块就再厚一层。",
+      "svg": "<svg viewBox='0 0 560 214' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>核心永远是小的</text><g transform='translate(40,44)'><rect x='0' y='0' width='96' height='58' rx='3' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='48' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>主集合</text><text x='48' y='44' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>执行核心原理</text><rect x='108' y='0' width='372' height='58' rx='3' style='fill:none;stroke:var(--ink);stroke-width:1.2'/><text x='294' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>支持集合</text><text x='294' y='44' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>供能 · 控制 · 散热 · 监测 · 安全 · 容错 · 维护接口</text><text x='0' y='84' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>发动机</text><text x='72' y='84' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>压气—燃烧—膨胀这条主线</text><text x='266' y='84' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>滑油 · 燃调 · 防冰 · 点火 · 引气 · 防喘 · 灭火</text><text x='0' y='108' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>软件</text><text x='72' y='108' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>几百行核心逻辑</text><text x='266' y='108' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>校验 · 异常 · 重试 · 日志 · 权限 · 兼容旧版</text><path d='M0 126 L480 126' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='240' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>示意比例,不是实测数据;要点是量级差,不是具体数字</text></g></svg>"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "这个观察不是闲笔,它是第六章「结构深化」的种子。既然外围天然比核心大,而且每遇到一个新问题就要再加一层外围,那么一件技术随着成熟必然越来越复杂——**不是因为设计者贪心,是因为解决问题的唯一办法就是加东西。**记住这一点,后面看到「为什么老系统改不动」时就不会觉得突兀。"
+      ]
+    },
+
+    { "type": "h2", "text": "四、这条原理能解释什么" },
+    {
+      "type": "p",
+      "text": "组合与递归立住之后,一批原本各说各话的现象忽然被同一条线串起来了。"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**技术为什么在加速。** 不需要假设人变聪明了。元件多了,可搭的花样就多;新搭出来的东西又成为新元件,循环自己给自己加速。",
+        "**为什么跨界的人常常拼出内行想不到的东西。** 组合的前提是你手上有那些部件。一个同时熟悉两个领域的人,手里的备件库是别人的两倍,而且他见过的接法别人没见过。",
+        "**为什么「什么都不缺,就是做不出来」。** 因为缺的往往不是部件,是那个把它们接起来的想法,以及大量看不见的配套(工艺、公差、标准、经验)。",
+        "**为什么技术转移常常失败。** 买来整套图纸和设备,却造不出同样的东西——因为组合关系里有一部分从来没被写下来,它长在人和地方上。"
+      ]
+    },
+    {
+      "type": "pull",
+      "text": "创新很少是发明积木,多半是找到一种别人没试过的搭法。"
+    },
+    {
+      "type": "p",
+      "text": "它还顺手解释了一件让很多人困惑的事:**为什么落后者有时候能跳过一整代。**如果技术是一条必须逐级爬的梯子,后来者永远追不上;但如果技术是可组合的库存,后来者完全可以直接取用最新的那批部件,跳过中间几代——很多地方没经历过固定电话普及就直接进了移动通信,没经历过支票和信用卡就直接进了手机支付。**这不是运气,是组合原理的直接后果:你取用的是当下的库存,不是历史的顺序。**反过来也成立,先行者反而常常被自己那套已经铺好的旧配套拖住,这一点第六章会讲透。"
+    },
+
+    { "type": "h2", "text": "五、必须同时记住的两条保留" },
+    {
+      "type": "p",
+      "text": "第一条:**「新即组合」不是阿瑟首创。**熊彼特一九一二年就把创新定义为「生产要素的新组合」;厄舍讲过发明是「累积综合」;吉尔菲兰、巴萨拉都系统论证过技术演化的连续性——巴萨拉一九八八年那本《技术的演化》几乎就是在说「每一件新器物都有它的祖先」。阿瑟自己也提到这些前人。他真正的推进在于两点:**把组合做成严格的递归层级**,以及**把「域」抬成变革的基本单位**。清楚这一层,读的时候兴奋会更准确一点。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "最该打的问号",
+      "items": [
+        "第二条更要紧:**任何一件新技术,事后回头看都能被拆成「若干旧技术的组合」。**这既是这条原理最强的说服力,也正是它作为理论最大的软肋——一个怎么样都能被验证的说法,其实等于没有被验证。它说不出下一个重要的组合会是什么,也说不出为什么是这几样凑到了一起而不是另外几样。**把它当描述框架用,它非常好使;把它当预测理论用,它给不了你任何东西。**这笔账在第十章会算得更细。"
+      ]
+    },
+
+    { "type": "h2", "text": "六、这一章接到哪儿去" },
+    {
+      "type": "p",
+      "text": "组合与递归立住之后,下一个问题自动跳出来:**如果一切都是旧东西拼的,那第一块积木从哪儿来?**总不能一直往下推到无穷。阿瑟的回答是:递归的尽头不是更小的零件,而是**被捕获的自然现象**——电磁感应、受激辐射、半导体的能隙、原子核的进动。人做的事情是发现一个效应、想办法可靠地唤起它、再把它嵌进一条能重复的流程。这是下一章的内容,也是整本书真正的地基。"
+    },
+    {
+      "type": "p",
+      "text": "读完这一章可以随身带一个动作:**看到任何号称「全新」的东西,先拆一遍。**它由哪几块构成,每块在哪儿早已存在,新的到底是接法、是用途,还是真的捕获了一个新现象。这三种「新」的分量完全不同,而绝大多数宣传把它们混为一谈。"
+    }
+  ]
+}

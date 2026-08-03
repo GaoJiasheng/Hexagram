@@ -1,0 +1,155 @@
+{
+  "title": "技术到底是什么:三个定义,和一个被问漏的问题",
+  "subtitle": "这个词我们天天在用,却几乎没人给它下过定义;而定义没下清楚,后面所有关于技术的争论都在各说各话",
+  "centralIdea": "这一章做两件事。第一件是指出一个奇怪的空白:技术显然是塑造现代世界最有力的东西,可「技术自身是怎么产生、怎么变化的」这个问题,掉在了所有学科的缝里——经济学把它当成外生的黑箱,技术史在讲一个个故事,工程学教你造具体的东西却不问「造东西」这件事自身的逻辑。阿瑟说,我们对技术的了解大致相当于达尔文之前的生物学:标本堆积如山,机制无人说清。第二件是给「技术」下定义,而且是三个:达成目的的手段 / 实践与元件的集合 / 一个文化中全部装置与工程实践的总和。这三层是全书的坐标系,混着用就会各说各话。最后他把技术归结为「有目的的系统」——这个定义把方法、流程、组织形式也一并收了进来,这一步看似不起眼,却是后面「经济是技术的表达」那个大结论的前提。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "先做一个小实验:不查任何资料,用一句话定义「技术」。大部分人第一反应是「机器」,想想又觉得不对——算法算不算?复式记账算不算?流水线算不算?于是改口说「科学的应用」,想想还是不对——中国的青铜冶炼、罗马的拱券、蒸汽机,都在相应的科学出现之前很久就成熟了。**一个我们天天挂在嘴边、并且深信它塑造了整个现代世界的东西,我们竟然说不清它是什么。**阿瑟这本书就从这个尴尬开始。"
+    },
+
+    { "type": "h2", "text": "一、一个掉进学科缝里的问题" },
+    {
+      "type": "p",
+      "text": "为什么这么重要的问题会没人正面回答?因为它不属于任何一个学科的地盘。"
+    },
+    {
+      "type": "p",
+      "text": "**经济学**最关心技术,却把它处理成一个外生的黑箱。增长核算的做法是:先算资本贡献了多少、劳动贡献了多少,剩下算不出来的那一大块——在经典的估算里那是大头——统统记在「技术进步」名下。这个做法本身没错,但要看清它的性质:**给剩余项起一个名字,不等于解释了它。**技术从哪儿来、按什么规律变、为什么有时候几十年不动有时候突然爆发,这些问题在模型里是不出现的。"
+    },
+    {
+      "type": "p",
+      "text": "**技术史**写得精彩,但它多数时候在讲故事:谁在哪一年做成了什么,遇到了什么阻力,后来怎样。这些故事各自成立,却拼不出一套能贯穿所有案例的机制——就像有一屋子精彩的病例报告,却没有生理学。"
+    },
+    {
+      "type": "p",
+      "text": "**工程学**离技术最近,却问的是另一个问题。它教你怎么造这台机器、怎么算这个结构、怎么优化这段代码,但「造东西」这件事自身的逻辑是什么、新的东西从哪里来,不在课程表上。阿瑟打了一个很扎人的比方:**我们对技术的了解,大致相当于生物学在达尔文之前的水平**——标本收集得极其丰富,分类做得极其精细,唯独缺一套讲得通的产生机制。"
+    },
+    {
+      "type": "p",
+      "text": "这个类比值得多咂摸一下,因为它同时说明了阿瑟想干什么、以及这件事有多难。达尔文之前的博物学并不无知,林奈的分类体系精密得惊人,化石、解剖、地理分布的证据堆成山。缺的是一句话:**这些形态是怎么来的。**达尔文给出「变异 + 遗传 + 选择」之后,原先散落的一切突然被同一条线串起来了。阿瑟明说自己想做的就是这件事:给技术找到那条线。**至于他找到的那条线够不够格算「达尔文时刻」,是这本书最该被讨论的地方**——本篇文章的第十章会专门算这笔账,这里先记住他的野心有多大。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "三门学科各自贴着这个问题的一边,而正中间那块——「技术自身怎么产生、怎么变化」——是空的。阿瑟想填的就是这一块。",
+      "svg": "<svg viewBox='0 0 560 236' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>谁都挨着,谁都没答</text><g transform='translate(20,42)'><rect x='0' y='0' width='158' height='84' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='79' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>经济学</text><text x='79' y='48' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>把技术当外生变量</text><text x='79' y='66' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>算不出的都归它名下</text></g><g transform='translate(200,42)'><rect x='0' y='0' width='158' height='84' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='79' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>技术史</text><text x='79' y='48' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>一个个精彩的案例</text><text x='79' y='66' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>缺一条贯穿的机制</text></g><g transform='translate(380,42)'><rect x='0' y='0' width='158' height='84' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='79' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>工程学</text><text x='79' y='48' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>教你造具体的东西</text><text x='79' y='66' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>不问「造」本身的逻辑</text></g><rect x='140' y='152' width='280' height='58' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4;stroke-dasharray:5 3'/><text x='280' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>技术自身是怎么长出来的?</text><text x='280' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>这一块一直空着</text><path d='M99 126 L200 152 M279 126 L279 152 M459 126 L360 152' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/></svg>"
+    },
+
+    { "type": "h2", "text": "二、三个定义,不是一个" },
+    {
+      "type": "p",
+      "text": "阿瑟解决混乱的办法很朴素:承认「技术」这个词在三个尺度上被使用,然后把三层分开。"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**达成目的的手段。** 一台柴油机、一条排序算法、一套复式记账法、一种炼钢工艺——单件的装置或方法。这是最日常的那个意思。",
+        "**实践与元件的集合。** 「电子技术」「基因技术」「数控加工」指的不是某一件东西,而是一整套相互配套的部件、工具、工艺、经验和门道。它是一群,不是一件。",
+        "**某个文化中全部装置与工程实践的总和。** 「技术改变了我们的生活」里的那个技术——一个社会此刻手上握着的全部本事。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "分层这件事看着琐碎,实际用处极大。举个例子:「技术在加速」这句话,在第一层上说的是某台具体机器在改良——这未必成立,很多机器几十年没大变;在第三层上说的是人类工具库整体在膨胀——这基本成立。**两句话用同一个词,却是两件事**,吵架往往吵在这儿。再比如「我们公司要做技术升级」,到底是换一台设备(第一层)、引入一整套新工艺体系(第二层),还是整个行业的家什换代(第三层)?这三种「升级」的代价差着数量级。"
+    },
+    {
+      "type": "p",
+      "text": "第二层特别值得单独看一眼,因为它是全书后面「域」那个核心概念的雏形。当我们说「电子技术」,指的其实是一整套东西:一堆标准化的元件(电阻、电容、晶体管、集成电路)、一套设计方法(电路图、仿真、布线规则)、一套工艺(蚀刻、封装、测试)、一套只有内行才有的直觉(这个地方要加个滤波、那个地方会有寄生电感)。**这一整套东西合起来才是「一门技术」,而它比其中任何一件具体产品都长寿得多。**一款芯片三年就过时,可整个电子技术这一套家什用了七十年还在长。第五章会告诉你,真正翻天覆地的变化正是发生在这一层上。"
+    },
+    {
+      "type": "table",
+      "caption": "三层的对照:同一个词,问的其实是三个问题",
+      "head": ["", "举例", "「它变了」意味着什么", "变化的时间尺度"],
+      "rows": [
+        ["① 单件的手段", "一台涡轮、一条算法", "这件东西被改良或被替换", "几个月到几年"],
+        ["② 配套的集合", "电子技术、基因技术", "整套家什的能力边界挪了", "几年到几十年"],
+        ["③ 一个文化的全部本事", "「技术改变了生活」", "社会的组织方式被重排", "几十年到几百年"]
+      ]
+    },
+    {
+      "type": "figure",
+      "ftype": "层次图",
+      "caption": "同一个词的三层用法。往上一层,尺度大一级,「变化」的含义也完全不同。全书之后的每一句话,都发生在其中某一层上。",
+      "svg": "<svg viewBox='0 0 560 226' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>「技术」的三层用法</text><rect x='128' y='42' width='304' height='48' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='63' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>③ 一个文化手上的全部本事</text><text x='280' y='81' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>「技术改变了生活」说的是这一层</text><rect x='158' y='100' width='244' height='48' rx='4' style='fill:none;stroke:var(--line);stroke-width:1.1'/><text x='280' y='121' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>② 一整套配套的元件与实践</text><text x='280' y='139' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>「电子技术」「基因技术」是这一层</text><rect x='188' y='158' width='184' height='48' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='280' y='179' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>① 达成目的的手段</text><text x='280' y='197' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>单件的装置或方法</text><text x='452' y='70' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>社会</text><text x='418' y='128' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>领域</text><text x='388' y='186' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>单件</text></svg>"
+    },
+
+    { "type": "h2", "text": "三、技术是「有目的的系统」" },
+    {
+      "type": "p",
+      "text": "三层之上,阿瑟还给了一个更凝练的说法:技术是**有目的的系统**。这五个字里有两个关键词,缺一不可。"
+    },
+    {
+      "type": "p",
+      "text": "**目的是人给的。**电磁感应本身不是技术,它是自然现象;把它接进一套装置去发电,才成为技术。而且注意,同一堆铜线和磁铁,通了电让它转就是电动机,让它转来发电就是发电机——**分野不在材料,在你要它做什么。**这一点后面会反复回响:技术永远是「为了某件事」而存在的,脱开目的谈技术就成了谈物理。"
+    },
+    {
+      "type": "p",
+      "text": "**它必须成系统。**一堆零件不是技术,零件按某种架构组织起来、能把一个输入变成想要的输出,才是。这也解释了为什么技术总是可以被「拆开」——它有结构,所以能被分析。"
+    },
+    {
+      "type": "quote",
+      "original": "技术是达成人类目的的一种手段。",
+      "translation": "看似平淡的一句,却是全书最大胆的一步。因为按这个定义,**方法也是技术**——算法、合同、流水线、复式记账、一套管理制度,统统进来了。这一步不做,后面「经济是技术的一种表达」那个结论根本推不出来。"
+    },
+    {
+      "type": "p",
+      "text": "把方法收进来,是这本书最容易被读者滑过去、却最有后劲的一个决定。想想复式记账:它没有一个零件,却是一套精确的「达成目的的手段」,而且它像任何机器一样有结构、有原理、可以被改进、可以和别的东西组合(它后来被搬进数字域,变成了 ERP)。**如果承认它是技术,那么公司、市场、法律程序、供应链的组织方式,就都是技术。**经济于是不再是装技术的盒子,它本身就是由技术编排出来的——这是全书最后一章的结论,而伏笔埋在这里。"
+    },
+
+    { "type": "h2", "text": "四、三个必须先清掉的误读" },
+    {
+      "type": "p",
+      "text": "定义立住之后,几个流行说法就站不住了,值得单独点破。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "容易读岔",
+      "items": [
+        "**技术 = 机器?** 不是。机器只是技术里能摸到的一小部分,方法与流程同样是技术,而且往往更有威力。",
+        "**技术 = 应用科学?** 不是,而且顺序常常是反的。蒸汽机比热力学早,冶金比化学早,酿造比微生物学早。科学与技术互为因果,这一点第三章会专门讲。",
+        "**技术 = 工具?** 工具是技术的一个子集。工具强调「人拿着用」,而大量技术是自动运行的系统,或者根本没有实体。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "还有一个更微妙的:很多人默认技术是「中性的工具,好坏全看用的人」。阿瑟这本书不直接讨论伦理,但他的定义已经暗示了另一种看法——**既然技术必定内嵌一个目的,它就不可能完全中性。**一套流程被设计出来的时候,「什么算成功」已经被写进去了。一套绩效考核系统度量什么,员工就往哪里跑;一个推荐算法优化什么,内容就往哪里长。这不是使用者的选择,这是那件技术自带的目的在起作用。这条线索到全书末章会重新浮上来。"
+    },
+    {
+      "type": "figure",
+      "ftype": "辨析图",
+      "caption": "判定很简单:有没有目的?成不成系统?两条都过才算技术。注意最右边那栏——把方法收进来,是这本书后面所有大结论的入场券。",
+      "svg": "<svg viewBox='0 0 560 218' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>是不是技术?过两道闸</text><g transform='translate(30,44)'><rect x='0' y='0' width='142' height='128' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='71' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink-soft)'>电磁感应</text><text x='71' y='58' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>有目的? ✗</text><text x='71' y='78' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>成系统? ✗</text><text x='71' y='110' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>自然现象</text></g><g transform='translate(196,44)'><rect x='0' y='0' width='142' height='128' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='71' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink-soft)'>一箱零件</text><text x='71' y='58' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>有目的? ✓</text><text x='71' y='78' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>成系统? ✗</text><text x='71' y='110' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>只是材料</text></g><g transform='translate(362,44)'><rect x='0' y='0' width='170' height='128' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='85' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>发电机 · 复式记账</text><text x='85' y='58' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>有目的? ✓</text><text x='85' y='78' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>成系统? ✓</text><text x='85' y='110' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>都是技术</text></g><text x='280' y='206' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>是不是硬件,根本不在判据里</text></svg>"
+    },
+    {
+      "type": "pull",
+      "text": "一件东西是不是技术,不看它由什么做成,看它是不是为了某个目的被组织起来的。"
+    },
+
+    { "type": "h2", "text": "五、写这本书的是什么人" },
+    {
+      "type": "p",
+      "text": "顺带交代一下作者,因为他的来路解释了这本书为什么长成这样。阿瑟一九四六年生于北爱尔兰贝尔法斯特,受的是运筹学与数学的训练,后来转做经济学,三十多岁就在斯坦福拿到讲席教授。他真正的成名工作是**报酬递增与路径依赖**:主流经济学假设收益递减、市场会收敛到最优,而阿瑟证明在有正反馈的场合(用的人越多越好用),先起步的技术可能把整个市场锁死,**最后胜出的未必是最好的那个,而是运气好、先站住的那个。**这套想法在八十年代相当不受欢迎,发表过程一波三折,如今已成常识。"
+    },
+    {
+      "type": "p",
+      "text": "后来他长期在圣塔菲研究所,主持过那里最早的经济学项目——就是《复杂》那本书里反复出现的那个圈子。这两段经历合起来解释了本书的两个特点:**一,他天生关心「一个系统怎么在没有指挥的情况下自己长出结构」;二,他对经济学把技术当黑箱这件事憋了很久。**所以这本书的野心其实是双重的:表面上讲技术,底下是想把技术重新塞回经济学的正中央。"
+    },
+
+    { "type": "h2", "text": "六、这一章接到哪儿去" },
+    {
+      "type": "p",
+      "text": "定义做完,真正的问题才露出来:这些「有目的的系统」是从哪儿冒出来的?每年成千上万件新技术出现,它们不可能一件件从虚空里被创造出来。阿瑟接下来给的答案只有两个词——**组合**与**递归**:新技术几乎总是既有技术的重新组合,而组成它的部件本身又是技术,于是这句话可以一层层往下说。"
+    },
+    {
+      "type": "p",
+      "text": "读到这里可以先做个练习,后面几章会一直用得上:**随便挑一件你熟悉的东西,试着说出它由哪几块构成,再问每一块是从哪儿来的。**几乎每一次,你都会发现那几块在别处早就存在了很多年。这个练习本身,就是第二章的全部内容。"
+    },
+    {
+      "type": "p",
+      "text": "最后提醒一件容易被忽略的事:这一章看起来只是「下定义」,却已经悄悄决定了后面所有结论的形状。**把方法收进技术,经济才可能是技术的表达;把技术定义成有目的的系统,它才可以被拆解、被组合;强调目的由人给出,技术才不会被写成一个自主的怪物。**定义不是开场白,它是全书的地基。所以如果你后面读到某个结论觉得别扭,值得回头看一眼——多半不是那一步推错了,而是你和作者对「技术」这个词的用法本来就不一样。"
+    }
+  ]
+}
