@@ -1,0 +1,136 @@
+{
+  "title": "经济是技术的表达:不是容器,是编排",
+  "subtitle": "我们习惯说「经济里出现了新技术」;阿瑟把这句话整个翻过来——经济本身就是那套技术当下的一种排法",
+  "centralIdea": "这是阿瑟作为经济学家真正想说的话。我们习惯把经济当成一个盒子,技术是往里放的东西;他反过来说:经济不是容器,它是这些技术的一种表达。推理很干净——按第一章的定义,技术是「达成目的的手段」,那么行业、职位、合同、组织形式、供应链、结算方式统统都是技术,经济不过是这些手段此刻的一种编排。既然如此,当底层的技术组合变了,经济就不是被「冲击」了一下,而是重新排列:旧位置消失,新位置出现,行业边界重画。所以结构性变化不是经济的例外状态,而是它的常态。这一章还有两条很实际的推论:新域带来的好处总要迟到很久(配套、技能、组织形式都得重新长一遍),以及阿瑟的老本行——报酬递增与锁定,先起步的未必最好,却可能因为配套先齐而把格局定住。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "问一个看起来很蠢的问题:经济是什么?通常的图景是这样的——有一个叫「经济」的容器,里面装着企业、市场、货币、就业;技术是从外面掉进来的东西,掉进来就搅动一下水面,产生「冲击」,然后水面重新平静。这套图景太顺手了,以至于连经济学的模型都是按它建的:技术是外生的,是一个会跳动的参数。阿瑟这一章要做的事,是**把这个图景整个翻过来**——他说,**经济不是装技术的容器,它就是这些技术当下的一种排法。**"
+    },
+
+    { "type": "h2", "text": "一、推理其实很短" },
+    {
+      "type": "p",
+      "text": "这个结论听起来很大,但推理只有两步,而且第一步在第一章就埋好了。"
+    },
+    {
+      "type": "p",
+      "text": "**第一步:技术 = 达成目的的手段。**注意这个定义没说必须是硬件。所以复式记账是技术,合同是技术,流水线是技术,信用评级是技术,分工方式是技术,一家公司的组织结构也是技术——它们都是为了达成某个目的而被组织起来的系统。"
+    },
+    {
+      "type": "p",
+      "text": "**第二步:经济是什么?**是一个社会用来满足自身需要的那一整套安排——生产什么、怎么生产、谁跟谁交易、按什么规则结算、劳动怎么分工。而这些安排,按第一步的定义,**每一样都是技术。**于是结论自动落下来:经济不是技术的容器,它就是这些技术的一种编排。"
+    },
+    {
+      "type": "p",
+      "text": "「组织形式也是技术」这一步值得多举几个例子,因为它最容易被当成文字游戏。**集装箱**表面上只是一个铁箱子,可它真正的内容是一整套安排:统一尺寸、统一吊装接口、船与港与卡车与铁路的配合、单据与责任的划分。它把「装卸」这件事从码头工人一件件搬,变成了吊机几分钟一箱——**结果不是港口效率提高了几成,而是全球分工的地图被重画了一遍。**一个铁箱子改变的是经济结构,而它改变结构的方式正是「重新编排了达成目的的手段」。"
+    },
+    {
+      "type": "p",
+      "text": "**有限责任公司**同样如此。它没有一个零件,它是一套规则:出资人的损失以出资额为限。这一条规则让陌生人之间的大规模集资成为可能,于是才有了需要巨额资本的铁路、钢铁、化工。**它是一件不折不扣的技术——有明确的目的,有精密的结构,可以被改进,也可以和别的技术组合。**顺着这个思路看,股票市场、保险、专利制度、双向拍卖、信用评分,统统是技术。而经济,就是这些东西加上所有硬件技术,在此刻的一种排法。"
+    },
+    {
+      "type": "quote",
+      "original": "经济并非容纳技术的容器,它是由技术表达出来的一种安排。",
+      "translation": "这是全书对经济学的主要贡献,也是最容易被读成漂亮话的一句。它的实际含义很硬:结构性变化不是经济的例外状态,而是它的常态——因为底层的技术库存一直在长,编排就一直在改。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "左边是通行的图景,技术是从外面掉进来的扰动;右边是阿瑟的图景,经济本身就是那堆技术的一种排法。换了图景,「结构性变化」就从例外变成了常态。",
+      "svg": "<svg viewBox='0 0 560 234' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>两种图景</text><g transform='translate(30,44)'><text x='110' y='0' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink-soft)'>通行:经济是容器</text><rect x='10' y='40' width='200' height='104' rx='6' style='fill:none;stroke:var(--line);stroke-width:1.4'/><text x='110' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>经济</text><circle cx='60' cy='68' r='7' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><circle cx='160' cy='120' r='7' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><path d='M110 6 L110 34' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><path d='M105 28 L110 38 L115 28 Z' style='fill:var(--cinnabar-pure)'/><text x='110' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>技术从外面掉进来,造成「冲击」</text></g><path d='M280 56 L280 200' style='fill:none;stroke:var(--line);stroke-width:1'/><g transform='translate(316,44)'><text x='110' y='0' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>阿瑟:经济是编排</text><g><rect x='16' y='44' width='58' height='26' rx='3' style='fill:none;stroke:var(--ink);stroke-width:1'/><rect x='84' y='44' width='58' height='26' rx='3' style='fill:none;stroke:var(--ink);stroke-width:1'/><rect x='152' y='44' width='58' height='26' rx='3' style='fill:none;stroke:var(--ink);stroke-width:1'/><rect x='50' y='84' width='58' height='26' rx='3' style='fill:none;stroke:var(--ink);stroke-width:1'/><rect x='118' y='84' width='58' height='26' rx='3' style='fill:none;stroke:var(--ink);stroke-width:1'/><rect x='84' y='124' width='58' height='26' rx='3' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><path d='M45 70 L70 84 M113 70 L88 84 M113 70 L138 84 M181 70 L156 84 M79 110 L104 124 M147 110 L122 124' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/></g><text x='110' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar-pure)'>技术组合一变,整张图重排</text></g></svg>"
+    },
+
+    { "type": "h2", "text": "二、于是「结构性变化」不再是例外" },
+    {
+      "type": "p",
+      "text": "翻过来之后,一大批说法要跟着改口。"
+    },
+    {
+      "type": "p",
+      "text": "在容器图景里,经济的「正常状态」是均衡:供给和需求对上了,价格稳定,大家各就各位;技术进步是一次外来的扰动,扰动过后系统会回到一个新的均衡。所以经济学的主力工具是比较静态——比较扰动前和扰动后的两个均衡点。"
+    },
+    {
+      "type": "p",
+      "text": "在编排图景里,这套说法整个失效。**底层的技术库存一直在长(第七章那个自催化的圈从不停),所以编排就一直在改。**没有一个可以回去的均衡,只有不断的重排。旧的岗位消失,新的岗位出现;某些行业整个蒸发,某些行业凭空长出来;行业之间的边界不断被重画。**结构性变化不是经济的例外状态,它是经济的常态本身。**"
+    },
+    {
+      "type": "p",
+      "text": "这也给了「创造性破坏」这个熊彼特的老词一个更具体的机制。为什么破坏和创造总是同时发生?因为**它们是同一个动作的两面:重排。**当一个新域进来,一批位置被腾空,另一批位置被造出来——不是先破后立,是同一次重排的两侧。所以问「新技术会不会消灭工作」这个问题时,单看被消灭的那一侧和单看被创造的那一侧,都是只看了半张图。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "别读成安慰",
+      "items": [
+        "「破坏和创造是同一次重排的两侧」这句话,常常被拿来当安慰话说:别担心,旧岗位没了会有新岗位。但这套框架本身并不保证这件事对**具体的人**成立。**重排是在总量层面成立的,而人是具体的。**新位置未必出现在旧位置消失的地方,未必需要同一批技能,未必落在同一代人身上。阿瑟这本书对这个落差几乎没有讨论——这正是第十章要说的「社会那一半缺席」。看清框架的边界,比背下它的结论重要。"
+      ]
+    },
+
+    {
+      "type": "p",
+      "text": "还有一个不太舒服但很重要的推论:**这套框架里没有「回到从前」这个选项。**当一个行业被重新编排掉,人们常常希望通过关税、补贴、限制、保护把旧安排留住。这些手段有时能延缓,但按这套逻辑,它们改变不了底层——**因为底层的技术库存还在长,而经济只是它的表达。**这不是说政策没用,政策决定重排的速度、代价由谁承担、缓冲有多厚,这些恰恰是最要紧的事;它只是说,政策改变不了「必须重排」这件事本身。**能选的是怎么重排,不是重不重排。**"
+    },
+    { "type": "h2", "text": "三、好处为什么总是迟到" },
+    {
+      "type": "p",
+      "text": "这一章最实用的一条推论:**一个新域带来的好处,总要迟到很久,有时迟到几十年。**"
+    },
+    {
+      "type": "p",
+      "text": "原因在第五章已经埋好了:重新域化不是换一台设备,是整套安排按新语言重写。而重写需要的东西一样都不能少——**配套要长齐、标准要谈拢、技能要培养、组织形式要重想、法规要跟上、习惯要改过来。**这些统统需要时间,而且顺序还不能太乱。"
+    },
+    {
+      "type": "p",
+      "text": "最干净的例子还是电力。电动机出现后的头几十年,工厂的产出并没有明显起飞,因为大家只是把蒸汽机换成一台大电机,照旧带着天花板上那根总传动轴。真正的跃升发生在很久以后:当每台机床自带一个小电机,总轴不再需要,厂房可以摊平、机器可以按工序排列,于是流水线和现代车间管理被重新想了出来。**中间那段「已经有了新东西,但看不出效果」的年头,是每一次域更替的标准剧目。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "曲线图",
+      "caption": "新域到来和好处显现之间,永远隔着一段令人沮丧的平台期。身在平台期里的人,通常会得出「这东西被高估了」的结论——而这个结论在当下往往是对的,在事后往往是错的。",
+      "svg": "<svg viewBox='0 0 560 236' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>迟到的好处</text><g transform='translate(50,42)'><path d='M0 150 L0 0 M0 150 L462 150' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='-8' y='8' text-anchor='end' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>产出</text><text x='462' y='168' text-anchor='end' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>时间 →</text><path d='M4 138 C60 136 120 132 200 128 C260 124 300 100 350 62 C400 26 440 14 458 10' style='fill:none;stroke:var(--ink);stroke-width:1.7'/><path d='M40 0 L40 150' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2;stroke-dasharray:4 3'/><text x='44' y='-2' style='font-family:var(--font-serif);font-size:10.5px;font-weight:bold;fill:var(--cinnabar-pure)'>新域到来</text><path d='M40 132 L230 128' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><text x='135' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>平台期:配套 · 技能 · 组织 · 法规都在重长</text><text x='135' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>「这东西被高估了」多半诞生在这一段</text><text x='390' y='46' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>重排完成后才起飞</text></g><text x='280' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>示意曲线,非实测数据</text></svg>"
+    },
+    {
+      "type": "pull",
+      "text": "「有了新东西却看不见效果」不是新东西不行,多半是旧编排还没被重写。"
+    },
+
+    {
+      "type": "p",
+      "text": "平台期还有一个更隐蔽的成因:**新域刚来的时候,人们只会用旧语言去想它能干什么。**于是第一批应用几乎总是「用新工具做旧事情」——电动机先被用来替代蒸汽机,汽车最初被称作「不用马的马车」,早期的网页做成了报纸的样子,早期的在线课堂做成了教室的样子。这不是想象力不够,而是第五章说过的那件事:**你在一门语言里越熟练,越难听出另一门语言的好处。**真正的新用法,通常要等到一批在新语言里长大的人上场——所以平台期的长度,有一部分其实是**一代人交替所需要的时间**。"
+    },
+    { "type": "h2", "text": "四、报酬递增:阿瑟的老本行回来了" },
+    {
+      "type": "p",
+      "text": "讲到经济,阿瑟绕不开他自己最著名的那套东西:**报酬递增与路径依赖。**"
+    },
+    {
+      "type": "p",
+      "text": "标准经济学假设收益递减——投入越多,边际回报越低,于是市场会收敛到一个均衡,而且通常是最优的那个。阿瑟指出,在很多技术领域这个假设不成立:**用的人越多,东西越好用**(配套多了、兼容问题少了、会用的人多了、周边生态齐了)。这时候是正反馈,不是负反馈。而正反馈的系统有一个要命的性质——**早期的偶然会被放大成永久的格局。**"
+    },
+    {
+      "type": "p",
+      "text": "结果就是:**先站住的技术可能把整个市场锁死,而胜出的未必是最好的那个。**键盘布局、录像带制式、轨距、电压标准、文件格式,历史上到处是这种例子。这条洞见和第六章的「结构深化」是一对:一个说系统内部越长越难改,一个说系统外部的配套一旦长齐就更难改。**两者合起来,就解释了为什么技术世界里存在那么多「明明可以更好,但就是换不掉」的东西。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "两种反馈,两种世界。判断自己身处哪一种,比选具体策略更要紧——策略选错还能改,场地认错就一直在做无用功。",
+      "svg": "<svg viewBox='0 0 560 224' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>负反馈的世界 vs 正反馈的世界</text><g transform='translate(28,42)'><rect x='0' y='0' width='236' height='158' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='118' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink-soft)'>收益递减</text><text x='118' y='52' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>多了就贵、就挤、就不划算</text><text x='118' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>市场收敛,多家并存</text><text x='118' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>好东西迟早会赢</text><path d='M40 112 L196 112' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='118' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>踏实做好 &gt; 抢先</text></g><g transform='translate(296,42)'><rect x='0' y='0' width='236' height='158' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='118' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>报酬递增</text><text x='118' y='52' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>用的人越多,越好用</text><text x='118' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>格局被早期偶然定住</text><text x='118' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>赢家未必是最好的那个</text><path d='M40 112 L196 112' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1'/><text x='118' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>时机与先手 &gt; 方案优劣</text></g></svg>"
+    },
+    {
+      "type": "p",
+      "text": "对个人和公司,这条的实用含义是:**在正反馈的领域里,时机和先手比方案的优劣更重要**;而在负反馈的领域里(多数传统制造、多数服务业),踏实做好比抢先重要。搞错了自己身处哪一种,策略就会整个错位——在负反馈领域里烧钱抢份额,和在正反馈领域里慢工出细活,都是把好牌打烂的经典方式。"
+    },
+
+    { "type": "h2", "text": "五、这一章接到哪儿去" },
+    {
+      "type": "p",
+      "text": "到这里,阿瑟那套机制讲完了:技术是有目的的系统,由组合而来,底座是被捕获的现象,诞生于目的与原理的连接,成群地组织为域,成熟时结构深化,整体上自催化地演进,而经济是它当下的一种编排。**一整套解释,自洽、漂亮、可用。**"
+    },
+    {
+      "type": "p",
+      "text": "接下来这本书要换口气了。写完这一整套机制之后,阿瑟在末章问了一个完全不同性质的问题:**既然技术给了我们这一切,为什么我们对它始终有种说不清的不安?**那一章几乎是随笔,而且它的结论并不能从前面的机制里推出来——**它是作者的立场,不是他的结论。**读的时候要把这两样分开,这也是下一章要讲的。"
+    }
+  ]
+}

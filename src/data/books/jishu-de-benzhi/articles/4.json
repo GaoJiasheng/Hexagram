@@ -1,0 +1,139 @@
+{
+  "title": "发明不是灵光一闪:目的与原理的连接",
+  "subtitle": "一个悬着的目的,一堆见过的效应,某一刻两边接上了——这就是发明的内核;接上之后才是真正的十年苦工",
+  "centralIdea": "既然一切都是组合,发明还剩下什么位置?阿瑟的回答:发明是「目的」与「原理」的一次连接。发明者心里挂着一个未解决的目的,脑子里存着一堆见过的效应与部件,某一刻他意识到「用这个效应,应该能办成那件事」——这个意识就是原理,抓住它的那一刻就是发明的内核。注意原理不是设备,是一个概念。而连接只是开头,接下来是一长串递归的子问题求解:要让原理跑起来得解决供能,解决供能又冒出散热,散热要开气道,气道又逼出新工艺——每个子问题的解法仍然是从既有技术里取来的组合。这解释了两件常被当成玄学的事:「灵光一闪」为什么只发生在内行身上(脑子里没存货,闪也闪不出来),以及「同时发明」为什么如此常见(同一批人手上有同一批部件、盯着同一个悬案,撞车是概率问题)。这一章还引出「深层技艺」——那种写不进手册、只长在人和地方上的知识。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "一九二八年,英国一个二十出头的空军学员在毕业论文里写下一个当时听着有点疯的想法:飞机要飞得更高更快,靠螺旋桨是不行的——高空空气稀薄,螺旋桨咬不住,活塞发动机也喘不上气。他的办法是把燃气涡轮和喷气推进接在一起,直接把高速气流喷出去。这个人叫弗兰克·惠特尔。他一九三〇年拿到专利,一九三七年才让第一台试验机在台架上转起来,装着他的发动机的飞机一九四一年才首飞。**从那个想法到能飞,隔了十三年。**这十三年,就是这一章要讲的东西:发明的那一下有多短,后面的活有多长。"
+    },
+
+    { "type": "h2", "text": "一、先划一条界:工程不是发明" },
+    {
+      "type": "p",
+      "text": "这两个词天天被混着用,阿瑟先把它们分开。**标准工程**是:目的已知、部件已知、做法已知,你要做的是在既有的一套语言里挑词造句——选型、配参数、算强度、做取舍。绝大多数工程师一辈子干的是这件事,而且这件事一点也不低级,它需要极高的功力。**发明**则是引入一个新原理:用一个此前没被用于这个目的的效应,去达成这个目的。"
+    },
+    {
+      "type": "p",
+      "text": "为什么必须分开?因为**这两件事的难度、周期、失败率、可预算性完全不同。**标准工程可以排期:给多少人、多少钱、多久交付,估得八九不离十;发明不能排期,它的失败率高得吓人,而且没人能保证第二年就成。把两者混在一起,组织上就会出现一种很常见的悲剧:用管工程的方式去管发明——要里程碑、要季度产出、要可预测的投入产出比——**结果不是把发明管出来了,是把它管没了。**反过来也一样常见:把一个纯粹的工程活儿说成「颠覆式创新」,然后按发明的规格要资源。"
+    },
+
+    {
+      "type": "p",
+      "text": "实际情况当然不是非黑即白,中间还有一大片地带:目的老、原理老,但**组合是新的**——这一档既不是纯工程,也够不上发明,却是产业里最常见、也最赚钱的一档。智能手机就是典型:触摸屏、多核处理器、锂电、加速度计、无线模块,没有一样是为它新发明的,新的是把它们塞进一个口袋大小的东西里,并且围绕它重新想了一遍软件。**认清自己在哪一档,比自我加冕重要得多。**"
+    },
+    {
+      "type": "table",
+      "caption": "三档「新」,难度和可预算性差着量级",
+      "head": ["", "目的", "原理", "部件组合", "能不能排期"],
+      "rows": [
+        ["标准工程", "老", "老", "老", "基本能"],
+        ["新组合", "老或新", "老", "新", "大致能"],
+        ["发明", "老或新", "新", "随之而新", "不能"]
+      ]
+    },
+    { "type": "h2", "text": "二、发明的内核:目的与原理接上的那一刻" },
+    {
+      "type": "p",
+      "text": "阿瑟的说法是:发明是**目的与原理的一次连接**。发明者心里挂着一个未被解决的目的——它可能来自军事需求、来自商业机会、来自一个纯粹的好奇;同时他脑子里存着一大堆见过的效应、装置、做法。某一刻,他意识到:**用这个效应,应该能办成那件事。**这个意识就是「原理」。"
+    },
+    {
+      "type": "p",
+      "text": "要点在于:**原理不是设备,是一个概念。**惠特尔那一刻想到的不是某台具体的发动机,而是一句话——「用燃气涡轮产生高速气流来直接推进」。这句话里没有一个零件的尺寸,但整件事的骨架已经定了。同样,雷达的原理是「发出电磁波,靠回波的时间差判断目标的距离和方位」;核磁共振成像的原理是「用磁场梯度给身体里的每一点编上不同的共振频率」。**原理是一句能说清楚的话,而不是一张图纸。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "机制图",
+      "caption": "发明的那一下,是左右两列之间连上了一根新线。左边的目的一直悬着,右边的效应一直存在,唯独没人把它们接起来——直到某个脑子里同时装着两边的人出现。",
+      "svg": "<svg viewBox='0 0 560 236' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>连接:目的 ↔ 原理</text><text x='104' y='48' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink-soft)'>悬着的目的</text><text x='456' y='48' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink-soft)'>手边的效应</text><g><rect x='30' y='62' width='148' height='30' rx='3' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='104' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>飞得更高更快</text><rect x='30' y='106' width='148' height='30' rx='3' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='104' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>看见远处的飞机</text><rect x='30' y='150' width='148' height='30' rx='3' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='104' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>看清体内的软组织</text></g><g><rect x='382' y='62' width='148' height='30' rx='3' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='456' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>燃气涡轮 · 喷流反作用</text><rect x='382' y='106' width='148' height='30' rx='3' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='456' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>电磁波的反射</text><rect x='382' y='150' width='148' height='30' rx='3' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='456' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>原子核的进动</text></g><path d='M178 77 L382 77' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.6'/><path d='M178 121 L382 121' style='fill:none;stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 3'/><path d='M178 165 L382 165' style='fill:none;stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 3'/><text x='280' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>两边都早就存在,新的只是那根线</text><text x='280' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>而连上之后,才开始真正的十年苦工</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这个说法有一个漂亮的推论:**目的和效应都早就存在,新的只是那根线。**高空高速飞行的愿望在惠特尔之前就有;燃气涡轮的效应在他之前也有(涡轮在电站里转了几十年)。缺的只是把它们接起来的那个念头。**这就是为什么很多重大发明事后看起来「显而易见」——因为两边确实都在明处,只是没人把它们摆在一起看。**"
+    },
+
+    { "type": "h2", "text": "三、接上之后:一长串递归的子问题" },
+    {
+      "type": "p",
+      "text": "原理有了,离能用还差十万八千里。接下来的过程,阿瑟描述得很准确:**每一个「这里过不去」都变成一个新的子问题,而每个子问题的解法,仍然是从既有技术里取来的组合。**"
+    },
+    {
+      "type": "p",
+      "text": "还是看惠特尔。原理是燃气涡轮喷气,那么第一个子问题:压气机效率不够,压不上去整件事就不成立——解法是借用叶轮机械那一套已有的知识,再一轮轮试。第二个子问题:燃烧室里气流速度极高,火焰会被直接吹灭——解法是设计出让一小股气流回旋、形成稳定火焰核心的结构。第三个子问题:涡轮叶片要在近千度的燃气里长时间高速旋转,当时没有材料扛得住——这个问题一直逼出了后来一整个高温合金产业。**每解决一个,就冒出两个新的。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "拆解图",
+      "caption": "发明的形状不是一个点,是一棵树。原理只是树根那一下,真正的工作量分布在每一层的分叉上——而每一片叶子的解法,又都是从既有技术里取来的组合。",
+      "svg": "<svg viewBox='0 0 560 244' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>一个原理,一棵问题树</text><rect x='196' y='40' width='168' height='32' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='280' y='61' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>原理:燃气涡轮喷气</text><path d='M280 72 L280 88 M110 88 L450 88 M110 88 L110 104 M280 88 L280 104 M450 88 L450 104' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><rect x='34' y='104' width='152' height='32' rx='3' style='fill:none;stroke:var(--ink);stroke-width:1.1'/><text x='110' y='125' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>压气机效率不够</text><rect x='204' y='104' width='152' height='32' rx='3' style='fill:none;stroke:var(--ink);stroke-width:1.1'/><text x='280' y='125' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>火焰会被吹灭</text><rect x='374' y='104' width='152' height='32' rx='3' style='fill:none;stroke:var(--ink);stroke-width:1.1'/><text x='450' y='125' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>叶片扛不住高温</text><path d='M110 136 L110 152 M280 136 L280 152 M450 136 L450 152' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><rect x='34' y='152' width='152' height='30' rx='3' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='110' y='171' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>借叶轮机械的既有做法</text><rect x='204' y='152' width='152' height='30' rx='3' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='171' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>造一个回流稳焰的结构</text><rect x='374' y='152' width='152' height='30' rx='3' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='450' y='171' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>逼出一整个高温合金业</text><text x='280' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>每一格底下还能再长一层,一直长到工艺和材料为止</text><text x='280' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>惠特尔:1928 想法 → 1930 专利 → 1937 台架 → 1941 首飞</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这棵树解释了一个反复出现的现象:**为什么原型和产品之间隔着天堑。**做出一台「能转起来」的样机,只需要主干那几个问题被勉强解决;而做出一台能卖、能连续运行、能在各种糟糕条件下不出事的产品,要把树上每一根枝条都走完。行业里常说的「最后一公里最难」,其实说反了——难的不是最后一公里,是那棵树上你还没数清的几百根分叉。"
+    },
+    {
+      "type": "p",
+      "text": "这里也解释了**试错到底在这套图景里扮演什么角色。**流行的说法是「创新靠大量试错」,这话不算错,但位置放歪了:试错主要发生在树上的每一根枝条,而不是发生在树根。**没有人靠随机试错试出「用燃气涡轮喷气」这个原理**——那是想出来的,而且是被一个真问题逼出来的。可一旦原理定了,燃烧室做成什么形状、叶片开几个孔、什么角度、什么材料,那确实是成百上千次试出来的。**所以「多试」是对的,但要先有一根值得试的枝条;在没有原理的地方乱试,试一万次也只是在原地打转。**"
+    },
+    {
+      "type": "pull",
+      "text": "发明的那一下可能只用一个下午,让它变成能用的东西可能要用十年——而后面这十年,仍然是组合。"
+    },
+
+    { "type": "h2", "text": "四、为什么灵光只闪在内行头上" },
+    {
+      "type": "p",
+      "text": "「连接」这个说法,顺带解释了创造力里最被神秘化的部分。既然发明是把一个目的和一个效应接上,那么前提就很明确了:**你脑子里得同时装着这两边。**目的那一侧要求你真的在为某件事发愁——没有真问题,就没有那根悬着的线;效应那一侧要求你见过足够多的东西——没有存货,接不上。所谓「准备好的头脑」,准确的意思就是这个:**不是心态准备好了,是库存准备好了。**"
+    },
+    {
+      "type": "p",
+      "text": "这也解释了为什么跨领域的人常有优势:他们手上有两个不同的库存,而且见过两套完全不同的接法。但要留意一个常被夸大的说法——跨界优势的前提是**在两边都真的懂**,而不是在两边都只懂个热闹。只在一边有真问题、在另一边只有几个名词的人,连的往往是一根假线。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "一个漂亮的旁证",
+      "items": [
+        "喷气发动机本身就是「同时发明」的教科书案例。惠特尔在英国琢磨这件事的同时,德国的汉斯·冯·奥海因在完全不知情的情况下走上了同一条路;而**装着奥海因发动机的飞机在一九三九年就先飞了起来,比英国那架早了将近两年。**两人此前互不相识,战后才认识,并成了朋友。这不是巧合能解释的:同一个时代的人手上有同一批部件(涡轮、压气机、燃烧技术)、面对同一个悬案(活塞螺旋桨在高空的极限),那么撞车就是概率问题。**这正是组合论最有力的一个旁证——如果发明真是天才的独有灵光,同时发明不该这么常见。**"
+      ]
+    },
+
+    { "type": "h2", "text": "五、深层技艺:写不进手册的那一半" },
+    {
+      "type": "p",
+      "text": "这一章还引出书里一个份量不轻、却常被读者滑过去的概念:**深层技艺**。它指的是那种「什么做法通常成、什么坑一定踩、这个参数为什么要留这么大余量、这批材料的手感不对」的知识。它写不进手册,也不在论文里,它长在人身上、长在一群人之间、长在一个具体的地方。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "一项技术能被打包带走的,只有水面以上那一层。水面以下那些说不出口的判断,才是真正决定成败的部分——而它只随人流动,不随文件流动。",
+      "svg": "<svg viewBox='0 0 560 232' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>买得到的,和买不到的</text><g transform='translate(60,40)'><rect x='0' y='0' width='440' height='58' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='220' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink-soft)'>能写下来 · 能打包 · 能买卖</text><text x='220' y='44' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>图纸 · 参数表 · 工艺文件 · 设备清单 · 专利</text><path d='M-10 70 L450 70' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2;stroke-dasharray:5 3'/><text x='450' y='66' text-anchor='end' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>水面</text><rect x='0' y='84' width='440' height='84' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='220' y='108' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>说不出口 · 只长在人身上</text><text x='220' y='130' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>这批料的手感不对 · 这里余量要留大 · 这个坑一定踩</text><text x='220' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>什么做法通常成 · 出了这种响声该停机</text></g><text x='280' y='222' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>整套买走上面那层,常常仍然造不出同样的东西</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "深层技艺解释了一件很反直觉的事:**把图纸、设备、工艺文件整套买走,常常也造不出同样的东西。**因为真正稀缺的那部分从来没被写下来——它是几十年里几万次失败沉淀出的判断力。这也是为什么产业会成簇地长在某几个地方,而不是均匀铺开:**技艺在人之间传得快,在纸上传得慢。**一个人跳槽到隔壁,带走的比一份文档多得多;而隔一个大洋,同样一份文档基本什么也带不动。"
+    },
+    {
+      "type": "p",
+      "text": "对个人也一样成立。一个领域里真正值钱的那部分本事,通常不是你能在教程里学到的那些,而是**你在这个领域里栽过多少跟头、见过多少种失败的样子。**这既是好消息也是坏消息:好消息是它无法被轻易复制,坏消息是它无法被轻易加速。"
+    },
+    {
+      "type": "callout",
+      "tone": "mute",
+      "label": "留意分寸",
+      "items": [
+        "深层技艺这个概念很好用,但也很容易被拿去为落后辩护——「我们的工艺不行是因为技艺积累不够,慢慢来吧」。要留意它成立的条件:**技艺是在高强度、高频次的实践中长出来的,不是在时间里泡出来的。**一个每年只做两台的车间,做三十年也长不出一个每年做两千台的车间的手感。所以真正决定技艺积累速度的,是**有没有足够多的真实迭代**,而不是有没有足够长的历史。"
+      ]
+    },
+
+    { "type": "h2", "text": "六、这一章接到哪儿去" },
+    {
+      "type": "p",
+      "text": "到这里,单件技术的故事讲完了:它由旧技术组合而成,底座是被捕获的现象,诞生于目的与原理的一次连接,成熟于一棵递归的问题树。但阿瑟真正想说的还没出场——**这些单件技术并不是各自孤立地长的,它们成群结队地长。**一族相互配套的部件、实践、理论和直觉会聚在一起,形成一个「域」;而真正翻天覆地的变化,从来不是某一件发明,是整个域的更替。"
+    },
+    {
+      "type": "p",
+      "text": "带走这一章的一个动作:**下次听到「某某突然发明了什么」,追问三件事**——他连的是哪个目的和哪个效应?这个连接之后的问题树走了多久?同时期还有谁在走同一条路?这三个问题会把绝大多数创业神话和天才叙事还原成它本来的样子:一件正常的、可以被理解的事。"
+    }
+  ]
+}

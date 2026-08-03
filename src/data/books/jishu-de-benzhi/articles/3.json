@@ -1,0 +1,138 @@
+{
+  "title": "现象的捕获:技术站在自然这一侧",
+  "subtitle": "递归的尽头不是更小的零件,是被抓住并被编排起来的自然效应;顺带纠正一个流行了很久的误解——技术不是科学的下游",
+  "centralIdea": "如果一切技术都是旧技术的组合,那第一块积木从哪来?这一章给出全书的地基:来自自然现象。技术在最底层不是别的,就是被捕获、被驯服、被编排起来的自然效应——发电机用电磁感应,激光用受激辐射,核磁共振用原子核在磁场里的进动。人做的事情不是无中生有,而是发现一个效应、想办法可靠地把它唤起来、再把它嵌进一条能重复的流程。这个说法有一个立刻能用的推论:一个时代能造出什么,上限由它看见了多少现象决定。由此还引出全书最该被记住的一处纠正:科学与技术不是「科学发现→技术应用」的单线,而是互为因果的循环——科学要靠仪器才看得见现象,而仪器本身是技术;历史上更常见的顺序甚至是反的,蒸汽机比热力学早,冶金比化学早。把技术当科学的下游,会得出很误人的判断。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "上一章的递归留了一个悬案:一层层往下拆,总不能拆到无穷。那么最底下那一层是什么?阿瑟的回答干脆而且有点出人意料——**最底下不是零件,是自然现象。**电磁感应、受激辐射、半导体的能隙、原子核在磁场里的进动、酶在温度循环里的复制、光的干涉。这些东西没有一件是人发明的,它们本来就在那儿,与人无关地存在了几十亿年。人做的事情是把它们**抓住、驯服、编排进一条能重复的流程**。所以在阿瑟这里,技术不属于「人造物」那一侧,它属于自然那一侧——**它是自然效应被组织起来干活的样子。**"
+    },
+
+    { "type": "h2", "text": "一、每一件技术底下都躺着一个现象" },
+    {
+      "type": "p",
+      "text": "这个说法很容易被当成漂亮话,但它其实很具体。随便拿一件东西,一直问「它凭什么能工作」,你最后一定会撞到一个物理、化学或生物的效应,而在那儿问题就终止了——因为那已经不是人能解释成「设计」的东西了。"
+    },
+    {
+      "type": "p",
+      "text": "发电机凭什么能工作?因为导体在变化的磁场里会产生电动势——法拉第一八三一年看到的那件事。激光凭什么能工作?因为受激辐射:一个处于高能态的原子被一个光子撞到,会释放出一个方向、频率、相位都一模一样的光子。核磁共振成像凭什么能工作?因为原子核在磁场里像陀螺一样进动,进动频率和磁场强度成正比,于是你可以用磁场梯度给身体里的每一点「编上地址」。**这三件事都不是被发明的,是被发现的。**技术做的事情是:找到一个把它稳定唤起来的办法,再把它接进一个有目的的系统。"
+    },
+    {
+      "type": "p",
+      "text": "而且一件技术往往不是用一个现象,是**编排一整组现象让它们配合。**一台喷气发动机同时用了燃料的化学放热、气体受热膨胀、动量守恒、气流在叶栅中的偏转、合金在高温下仍保持强度、以及冷却气膜贴附表面的流体效应。**「编排」这个词很准确:每一个现象都有自己的脾气,要在合适的时刻、合适的位置、合适的条件下被唤起,彼此不能打架。**这就是工程真正在做的事。"
+    },
+    {
+      "type": "p",
+      "text": "还要补一句非常重要的分寸:**知道一个现象存在,离能用它还差得很远。**中间隔着一整段「驯服」的工作。受激辐射这件事爱因斯坦一九一七年就在理论上说清楚了,可要造出激光,你得先让高能态的原子数量超过低能态(这本身就违反常态,得想办法泵进能量),还得造一个能让光来回反射不断放大的腔,还得让镜面精度和材料纯度达到当时的极限——**从「知道」到「能用」隔了四十年。**半导体也一样:知道它导电性介于两者之间是一回事,把硅提纯到杂质以十亿分之一计、再精确掺入指定的杂质,是另一回事。**所以「捕获」这个词用得极准:现象不是拿来就能用的,它得被抓住、按住、驯服。**"
+    },
+    {
+      "type": "quote",
+      "original": "技术是被捕获并加以利用的现象——是被编程来服务于我们目的的自然效应。",
+      "translation": "全书最核心的一句定义。「捕获」和「编程」这两个词都选得很讲究:捕获意味着东西本来就在那儿,不是造出来的;编程意味着人的贡献在于安排顺序和条件,而不在于创造效应本身。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "同一句话在每一层都成立,直到最后一层——那里不再有「设计」,只有自然本来就有的效应。人的活动全部发生在虚线以上。",
+      "svg": "<svg viewBox='0 0 560 244' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>三件技术,三个底座</text><g transform='translate(24,42)'><rect x='0' y='0' width='150' height='34' rx='3' style='fill:none;stroke:var(--ink);stroke-width:1.2'/><text x='75' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>发电机</text><path d='M75 34 L75 62' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><rect x='0' y='62' width='150' height='30' rx='3' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='75' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>转子 · 定子 · 换向</text><path d='M75 92 L75 118' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><rect x='0' y='118' width='150' height='34' rx='3' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='75' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>电磁感应</text></g><g transform='translate(204,42)'><rect x='0' y='0' width='150' height='34' rx='3' style='fill:none;stroke:var(--ink);stroke-width:1.2'/><text x='75' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>激光器</text><path d='M75 34 L75 62' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><rect x='0' y='62' width='150' height='30' rx='3' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='75' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>谐振腔 · 泵浦 · 增益</text><path d='M75 92 L75 118' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><rect x='0' y='118' width='150' height='34' rx='3' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='75' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>受激辐射</text></g><g transform='translate(384,42)'><rect x='0' y='0' width='150' height='34' rx='3' style='fill:none;stroke:var(--ink);stroke-width:1.2'/><text x='75' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>核磁共振成像</text><path d='M75 34 L75 62' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><rect x='0' y='62' width='150' height='30' rx='3' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='75' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>梯度线圈 · 重建算法</text><path d='M75 92 L75 118' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><rect x='0' y='118' width='150' height='34' rx='3' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='75' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>原子核的进动</text></g><path d='M24 200 L534 200' style='fill:none;stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 3'/><text x='24' y='220' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>虚线以上:人的编排</text><text x='534' y='220' text-anchor='end' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar-pure)'>虚线以下:自然本来就有</text></svg>"
+    },
+
+    { "type": "h2", "text": "二、一个立刻能用的推论:现象决定天花板" },
+    {
+      "type": "p",
+      "text": "如果技术的地基是现象,那么就有一个很硬的推论:**一个时代能造出什么,上限由它看见了多少现象决定。**十八世纪的人再聪明、再勤奋、钱再多,也造不出雷达——不是因为工艺不够,是因为电磁波这件事还没被看见。同样,没有量子力学那一批发现,晶体管不可能出现;没有发现 DNA 的结构和聚合酶的性质,基因技术无从谈起。"
+    },
+    {
+      "type": "p",
+      "text": "反过来,一个新现象被看见,常常会在几十年内长出一整片技术。半导体的性质被摸清之后,长出了晶体管、集成电路、光电器件、传感器、太阳能电池——**一个现象撑起了一整个时代的物质基础。**所以阿瑟说,现象的库存和技术的库存是同步扩张的:每多看见一个效应,可组合的积木就多一块,而且这一块往往能生出一整个新家族。"
+    },
+    {
+      "type": "p",
+      "text": "这里还藏着一个容易被忽视的不对称:**现象的发现基本不可规划,而组合基本可以规划。**你可以给一个团队下指标,让他们在两年内把现有部件重新组合出某样东西,成功率是可以估的;但你没法给一个团队下指标,让他们在两年内发现一个新的自然效应。这就解释了企业研发的一个长期困境——公司天然更愿意投可规划的那一侧,于是绝大多数研发预算流向组合与优化,而**真正扩展天花板的那一侧,只能靠基础研究、靠运气、靠一个允许长期失败的环境养着。**"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "放到今天",
+      "items": [
+        "这个推论对判断技术前景很有用。当有人说某个方向「快了」,值得问一句:**它是在等一个新现象,还是在等工程做完?**如果只是工程问题——把已知的效应做得更小、更便宜、更可靠——那大概率会到,只是时间问题;如果它在等一个尚未被发现的物理效应,那没有人能给出时间表,因为发现不排期。可控核聚变、常温超导、通用量子计算,难点各自落在这两类的不同位置上,值得分开看。"
+      ]
+    },
+
+    { "type": "h2", "text": "三、纠正一个流行的误解:技术不是科学的下游" },
+    {
+      "type": "p",
+      "text": "这是本章最该被记住的部分。流行的说法是一条单行道:**科学家发现原理 → 工程师做应用 → 产品上市。**这条叙事简洁、动听,还很适合写在拨款申请里,唯一的问题是它经常不成立。"
+    },
+    {
+      "type": "p",
+      "text": "先看历史顺序。**蒸汽机比热力学早。**纽科门和瓦特的机器已经在矿井里抽了几十年水,卡诺才开始思考热机效率的极限,热力学第二定律更是后来的事——**是机器逼出了理论,不是理论指导了机器。**冶金比化学早几千年,酿造比微生物学早几千年,育种比遗传学早几千年。很多时候人先把事情做成了,科学才姗姗来迟解释它为什么成。"
+    },
+    {
+      "type": "p",
+      "text": "再看依赖关系。科学根本没法脱开技术:望远镜、显微镜、真空泵、天平、示波器、加速器、质谱仪、测序仪——**每一台都是技术,而且往往是当时最尖端的技术。**没有它们,新现象压根看不见。这就成了一个循环:仪器造出来才看得见现象,看见现象才编得出新技术,新技术又造出下一代更灵敏的仪器。**科学与技术互为因果,谁也不是谁的附庸。**"
+    },
+    {
+      "type": "quote",
+      "original": "科学与技术以各自的方式互相创造对方。",
+      "translation": "这一句要跟「技术是应用科学」对着读。把技术当科学的下游,会推出一个很误人的判断:只要多投基础研究,技术自然会掉下来。现实是,很多现象是因为有人先想造某样东西、造的过程中才被看见的。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "左边那条是我们习惯的说法,右边那条才是常态。注意右边没有起点——它是个圈,从哪儿切进去都行。",
+      "svg": "<svg viewBox='0 0 560 226' xmlns='http://www.w3.org/2000/svg'><text x='150' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--ink-soft)'>流行说法:一条单行道</text><g transform='translate(24,44)'><rect x='0' y='16' width='106' height='30' rx='3' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='53' y='36' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>科学发现</text><path d='M110 31 L136 31' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M130 26 L140 31 L130 36 Z' style='fill:var(--ink-faint)'/><rect x='144' y='16' width='106' height='30' rx='3' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='197' y='36' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>技术应用</text><text x='125' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>好听,好写进申请书</text><text x='125' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>但蒸汽机比热力学早</text><text x='125' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>冶金比化学早几千年</text></g><path d='M290 40 L290 196' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='424' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>实际:一个循环</text><g transform='translate(320,44)'><rect x='30' y='6' width='150' height='30' rx='3' style='fill:none;stroke:var(--ink);stroke-width:1.1'/><text x='105' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>新仪器(技术)</text><rect x='30' y='66' width='150' height='30' rx='3' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2'/><text x='105' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>看见新现象</text><rect x='30' y='126' width='150' height='30' rx='3' style='fill:none;stroke:var(--ink);stroke-width:1.1'/><text x='105' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>编出新技术</text><path d='M105 36 L105 62' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M100 56 L105 66 L110 56 Z' style='fill:var(--ink-faint)'/><path d='M105 96 L105 122' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M100 116 L105 126 L110 116 Z' style='fill:var(--ink-faint)'/><path d='M186 141 C214 130 214 30 186 21' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M192 16 L182 21 L191 27 Z' style='fill:var(--ink-faint)'/></g></svg>"
+    },
+    {
+      "type": "figure",
+      "ftype": "时间线",
+      "caption": "三对先后关系。每一对里,能用的东西都跑在解释它的理论前面——人先把事情做成了,科学才来说明为什么成。",
+      "svg": "<svg viewBox='0 0 560 214' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>谁在前,谁在后</text><g transform='translate(40,44)'><text x='0' y='16' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>做成</text><text x='480' y='16' text-anchor='end' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>解释</text><g transform='translate(0,32)'><text x='0' y='4' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>蒸汽机</text><path d='M74 0 L390 0' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='74' cy='0' r='3.4' style='fill:var(--cinnabar-pure)'/><circle cx='390' cy='0' r='3.4' style='fill:var(--ink-faint)'/><text x='400' y='4' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>热力学</text></g><g transform='translate(0,74)'><text x='0' y='4' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>冶金</text><path d='M74 0 L390 0' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='74' cy='0' r='3.4' style='fill:var(--cinnabar-pure)'/><circle cx='390' cy='0' r='3.4' style='fill:var(--ink-faint)'/><text x='400' y='4' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>化学</text></g><g transform='translate(0,116)'><text x='0' y='4' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>育种</text><path d='M74 0 L390 0' style='fill:none;stroke:var(--line);stroke-width:1'/><circle cx='74' cy='0' r='3.4' style='fill:var(--cinnabar-pure)'/><circle cx='390' cy='0' r='3.4' style='fill:var(--ink-faint)'/><text x='400' y='4' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>遗传学</text></g><text x='232' y='158' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>示意,不按真实年代比例</text></g></svg>"
+    },
+    {
+      "type": "p",
+      "text": "反过来的例子同样有力:**很多科学发现根本是被仪器带出来的。**没有显微镜就没有细胞学,没有 X 射线晶体衍射这套技术,DNA 的双螺旋结构无从被看见,没有加速器就没有粒子物理这门学科,没有测序仪就没有今天的基因组学。这些仪器出现的时候,往往并没有一个现成的理论在指导它们——是先有了能看的东西,才有了能想的东西。**所以那条单行道不只是顺序错了,它把因果关系整个搞反了一半。**"
+    },
+    {
+      "type": "p",
+      "text": "阿瑟还补了一句更细的观察:**科学与技术互相提供的东西是不同的。**科学给技术的不只是「原理」,更是一套**理解与预测的方法**——有了理论,你才能在造出实物之前算出它大概会怎样,才能把试错的次数从几万次压到几十次。技术给科学的也不只是仪器,还有**一整套让实验可重复的手艺**:恒温、真空、纯化、标定、量产同一批样品。**两边给的都不是成品,是能力。**"
+    },
+    {
+      "type": "pull",
+      "text": "技术的天花板不由聪明程度决定,由人类已经看见多少自然现象决定。"
+    },
+
+    { "type": "h2", "text": "四、这一步棋对整本书意味着什么" },
+    {
+      "type": "p",
+      "text": "把现象放在地基上,是全书最有分量的一步棋,它一下子解决了三个麻烦。"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**递归有了尽头。** 不必担心「一直往下拆到无穷」的悖论:拆到自然效应就停了,再往下就不是技术的问题,是物理的问题。",
+        "**新东西有了来源。** 如果一切只是旧东西的组合,那这个系统就是封闭的,只能在既有积木里排列。现象的捕获相当于**从外面凭空多出一块积木**——这是技术能真正跳跃、而不只是内部重排的唯一通道。",
+        "**技术与自然的关系被理顺了。** 技术不是与自然对立的人造物,它是自然效应被组织起来的一种形态。这一句在全书末章会重新出现,变成一个价值判断的起点。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "第三点值得多说两句,因为它是一个视角的翻转。我们习惯把技术和自然摆成对立面:自然是原生的、和谐的,技术是外来的、侵入的。阿瑟这套说法把这个对立取消了——**技术里没有一样东西是自然之外的,它全部由自然效应构成,人只是重新安排了它们出现的顺序和条件。**一台发电机里没有任何超自然的东西,它只是把电磁感应放在了一个特定的几何构型里,让它持续发生。这个视角不解决伦理问题,但它把问题重新表述了一遍:令人不安的不是「人造」,而是**那种安排本身是否与生命相合**。全书末章接的就是这一句。"
+    },
+    {
+      "type": "p",
+      "text": "这里也埋着阿瑟对「技术是否会无限加速」这个问题的隐含回答。组合这一侧是自催化的、会越滚越快;但现象这一侧不是——**新的自然效应不按人的计划出现,而且越往后越难发现**(容易看见的早就被看见了,剩下的要在极端条件、极小尺度、极高能量下才现身,而那些条件本身又需要极其昂贵的技术)。所以技术的长期节奏,取决于这两侧谁先卡住。这一点书里没有展开,但它是这套框架自然的延伸。"
+    },
+
+    { "type": "h2", "text": "五、这一章接到哪儿去" },
+    {
+      "type": "p",
+      "text": "地基铺好了:上面是组合与递归,底下是被捕获的现象。可还剩一个空白——**从「有一个现象」到「有一件能用的技术」,中间那一步是怎么完成的?**是谁、在什么情况下,想到把这个效应用到那个目的上去的?这就是「发明」,也是下一章的内容。阿瑟对发明的解释同样反浪漫:它不是灵光一闪,而是**目的与原理的一次连接**,连接之后还有一长串递归的子问题要解。"
+    },
+    {
+      "type": "p",
+      "text": "读完这一章可以随身带一个问题:**你手上这件事,卡在哪一侧?**是缺一个尚未被看见的自然效应(那要等,而且没有时间表),还是现象早就有了、只是组合与工程还没做完(那就是钱和人的问题)?这两种「难」经常被混为一谈,而它们的应对方式完全不同。"
+    }
+  ]
+}

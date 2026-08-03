@@ -1,0 +1,144 @@
+{
+  "title": "结构深化:成熟技术为什么越长越复杂、越改不动",
+  "subtitle": "遇到瓶颈就加一套装置,遇到例外就再加一套——性能是被「加东西」买来的,而每加一样,系统就更难被撼动一分",
+  "centralIdea": "这一章对工程和组织的解释力最强。一件技术成熟以后,想再进步通常不是换掉核心原理,而是在原有结构上不断增加子系统:哪儿卡住就在哪儿加装置把限制往后推,遇到极端工况就加一套对付例外的东西,要适用更多场合就加更多模式,要提高性能就加一层层监测与反馈。阿瑟把这叫结构深化。最经典的例子是喷气发动机——原理一点没变,围着它长出来的那一大圈让零件数以万计:性能提高了几倍,复杂度提高了几十倍。这解释了一个到处能看到的现象:老系统难以被改造,不是因为里面的人不想改,是结构本身把改动的成本抬上去了,加上外面已经长出一整圈配套,于是形成锁定。还有一条反直觉的推论:老技术常常在被取代的前夜达到它历史上的最好状态——所以「它现在表现很好」根本不能证明它安全,真正要看的是斜率。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "一九三〇年代最早的那台涡轮喷气发动机,原理简单得能画在一页纸上:吸气、压缩、燃烧、喷出。今天的大涵道比涡扇发动机,零件数以万计——多级压气机、可调静子、带内部气道的空心冷却叶片、巨大的涵道风扇、全权限数字控制系统、防冰、防喘、灭火、振动监测。**核心原理一点没变,变的是围着它长出来的那一大圈。**性能提高了几倍,复杂度提高了几十倍。这不是设计者贪心,这是一件技术走向成熟的必然形状,阿瑟给它起了个名字:**结构深化**。"
+    },
+
+    { "type": "h2", "text": "一、深化的四条路,都是往上加东西" },
+    {
+      "type": "p",
+      "text": "一件技术成熟以后想再进步,通常有四种做法,而**这四种做法有一个共同点:全是加东西,没有一种是换原理。**"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**加子系统突破瓶颈。** 哪儿卡住就在哪儿加一套装置,把限制往后推。压气机压不上去?再加几级。叶片扛不住高温?在里面开冷却气道。",
+        "**加装置对付例外。** 极端工况、误操作、故障、维护——每一种例外都要一套专门的东西。这一类往往占了零件数的大头,却完全不提升正常状态下的性能。",
+        "**拓宽适用范围。** 让同一台东西能在更多条件下工作:更高更低的温度、更宽的功率区间、更多种输入。代价是更多模式、更多切换逻辑、更多可能出错的组合。",
+        "**加反馈提高性能。** 监测—判断—调节的回路一层层叠上去。到最后,控制系统往往比它控制的那个主体还复杂。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "为什么只能加、不能换?因为**换原理意味着整套配套跟着作废。**围绕现有原理,已经长出了供应链、工装、标准、检测方法、维修手册、培训体系、监管认证,还有一整代人的经验。换掉原理,这些统统要重来。而加一套子系统只影响局部——**每一次「加」在当下都是最理性的选择,可这些理性选择加起来,就把系统变成了一头没人敢动的巨兽。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "机制图",
+      "caption": "深化的四条路殊途同归:都在往主干上挂东西。每一次挂都解决了一个真问题,而它们的总和是一个再也拆不开的结构。",
+      "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>只能加,不能换</text><rect x='214' y='108' width='132' height='42' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='280' y='127' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>核心原理</text><text x='280' y='143' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>几十年不变</text><rect x='30' y='46' width='150' height='34' rx='3' style='fill:none;stroke:var(--ink);stroke-width:1.1'/><text x='105' y='67' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>加子系统破瓶颈</text><rect x='380' y='46' width='150' height='34' rx='3' style='fill:none;stroke:var(--ink);stroke-width:1.1'/><text x='455' y='67' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>加装置对付例外</text><rect x='30' y='178' width='150' height='34' rx='3' style='fill:none;stroke:var(--ink);stroke-width:1.1'/><text x='105' y='199' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>拓宽适用范围</text><rect x='380' y='178' width='150' height='34' rx='3' style='fill:none;stroke:var(--ink);stroke-width:1.1'/><text x='455' y='199' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>加反馈提性能</text><path d='M180 63 C215 66 225 96 240 108' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><path d='M380 63 C345 66 335 96 320 108' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><path d='M180 195 C215 192 225 162 240 150' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><path d='M380 195 C345 192 335 162 320 150' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><text x='280' y='240' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>每一次加都解决了一个真问题,总和却是一头动不了的巨兽</text></svg>"
+    },
+
+    {
+      "type": "p",
+      "text": "这个模式不限于机器,组织里一模一样。一家公司刚起步时,做一件事只要两个人碰个头;出过一次事故,加一道审核;被客户投诉过,加一张表单;审计提过意见,加一层签字;有人钻过空子,加一条规则。**每一条流程都对应着一次真实的教训,单独看没有一条是荒谬的**,可十年之后,做同一件事要走十四个环节。这不是官僚主义的道德问题,这是结构深化在组织上的同一副面孔——**只不过机器的复杂度写在图纸上,组织的复杂度写在人的耐心里。**"
+    },
+    { "type": "h2", "text": "二、复杂度的代价:改一处要动十处" },
+    {
+      "type": "p",
+      "text": "结构深化的代价不是「零件多了」这么简单,而是**耦合度上去了。**每一个子系统都被别的子系统依赖着:冷却系统依赖引气,引气影响推力,推力影响控制律,控制律又要照顾防喘裕度。于是没有任何一处是可以单独换掉的——**你以为在改一个部件,实际上在改一张网。**"
+    },
+    {
+      "type": "p",
+      "text": "写过大型软件的人对这件事有最直接的体感。一个跑了十年的系统,里面每一段看起来多余的代码,大概率都对应着历史上某一次真实的事故;每一个奇怪的判断分支,背后都有一个具体的客户或一条具体的法规。所以新人来了说「这里明明可以简化」,往往一改就出事——**那不是冗余,那是结构深化的年轮。**"
+    },
+    {
+      "type": "p",
+      "text": "更麻烦的是,复杂度的增长和改动成本的增长不是同一个速度。零件从一百涨到一千,可能是十倍;但要检验的交互组合、要考虑的边界情况、要回归测试的路径,涨得远比十倍多。**这就是为什么老系统的改造项目几乎总是超期超支:估算的是零件数,遇上的是关系数。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "左边是人们估算时脑子里的图,右边是实际的图。零件是线性增长的,而要照顾的关系不是——项目超期多半超在这个差额上。",
+      "svg": "<svg viewBox='0 0 560 232' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>你以为改的是部件,实际改的是网</text><g transform='translate(50,48)'><text x='90' y='0' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink-soft)'>估算时想的</text><circle cx='30' cy='40' r='11' style='fill:none;stroke:var(--line);stroke-width:1.2'/><circle cx='90' cy='40' r='11' style='fill:none;stroke:var(--line);stroke-width:1.2'/><circle cx='150' cy='40' r='11' style='fill:none;stroke:var(--line);stroke-width:1.2'/><circle cx='30' cy='100' r='11' style='fill:none;stroke:var(--line);stroke-width:1.2'/><circle cx='90' cy='100' r='11' style='fill:none;stroke:var(--line);stroke-width:1.2'/><circle cx='150' cy='100' r='11' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='90' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>六个部件,改一个动一个</text></g><path d='M280 56 L280 200' style='fill:none;stroke:var(--line);stroke-width:1'/><g transform='translate(330,48)'><text x='90' y='0' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>实际面对的</text><path d='M30 40 L90 40 L150 40 L150 100 L90 100 L30 100 Z M30 40 L30 100 M30 40 L90 100 M90 40 L150 100 M90 40 L30 100 M150 40 L90 100 M90 40 L90 100 M30 40 L150 40 M30 100 L150 100 M30 40 L150 100 M150 40 L30 100' style='fill:none;stroke:var(--ink-faint);stroke-width:0.9'/><circle cx='30' cy='40' r='11' style='fill:var(--paper-raised);stroke:var(--ink);stroke-width:1.2'/><circle cx='90' cy='40' r='11' style='fill:var(--paper-raised);stroke:var(--ink);stroke-width:1.2'/><circle cx='150' cy='40' r='11' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.5'/><circle cx='30' cy='100' r='11' style='fill:var(--paper-raised);stroke:var(--ink);stroke-width:1.2'/><circle cx='90' cy='100' r='11' style='fill:var(--paper-raised);stroke:var(--ink);stroke-width:1.2'/><circle cx='150' cy='100' r='11' style='fill:var(--paper-raised);stroke:var(--ink);stroke-width:1.2'/><text x='90' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>同样六个,改一个动一片</text></g></svg>"
+    },
+
+    {
+      "type": "p",
+      "text": "那么深化能一直加下去吗?不能,而且它的尽头有个很讽刺的形状:**到某个点上,新加的子系统主要在应付前面那些子系统带来的问题,而不是在解决原来那个真问题。**控制系统要防止某个装置误动作,监测系统要盯着控制系统别出错,冗余系统要在监测系统失灵时接管——**系统开始大量地自己伺候自己。**当一件技术的改进里有相当一部分是在处理它自身复杂度的副作用时,它就已经接近深化的尽头了。这也是一个很实用的信号,用来判断一套东西还有没有前途。"
+    },
+    { "type": "h2", "text": "三、锁定:外面还长了一整圈" },
+    {
+      "type": "p",
+      "text": "系统内部的耦合只是一半,另一半在外面。一件技术一旦被广泛采用,**围着它会长出一整圈配套:标准、供应链、检测认证、监管条文、培训体系、维修网络、以及数百万人已经形成的习惯。**这一圈的价值,常常远远超过技术本身。"
+    },
+    {
+      "type": "p",
+      "text": "于是就有了阿瑟的老本行——**锁定**。他年轻时的成名工作正是证明:在有正反馈的场合(用的人越多越好用、配套越齐),先站住的技术会把整个市场锁死,**而最后胜出的未必是最好的那个。**键盘布局、录像带制式、铁轨轨距、电压标准、文件格式,历史上到处是这种例子。这些格局往往不是被优选出来的,是被某个早期的偶然事件定住的。"
+    },
+    {
+      "type": "p",
+      "text": "锁定还有一个更隐蔽的形态:**标准一旦定下,后来的所有设计都得绕着它走。**一个早期为了兼容而留下的字段、一个当年硬件条件下不得不做的妥协、一条为了照顾某类老设备而保留的规则,会在几十年后仍然出现在最新的产品里,而且没人敢删——因为不知道世界上还有多少东西在依赖它。**技术里最顽固的东西,往往不是最重要的东西,而是最早的东西。**"
+    },
+    {
+      "type": "p",
+      "text": "把结构深化和锁定放在一起,就得到了那个到处能看到的现象的完整解释:**老系统难以被改造,不是因为里面的人不想改,而是里外两层成本同时压着。**里面每改一处要动十处,外面每改一次要重新协调一整圈利益和标准。所以「为什么他们不干脆重做一个」这个问题,答案通常不是「他们蠢」,而是「重做的代价远超它值的钱」。"
+    },
+    {
+      "type": "quote",
+      "original": "技术在成熟中获得的每一分性能,都是用一分不可逆的复杂度换来的。",
+      "translation": "这是理解全章的一把钥匙:复杂度不是副作用,是价格。承认这一点之后,「简化」就不再是一句道德劝告,而是一个要算清楚的交易——你愿意退回多少性能,来换回多少可改动性。"
+    },
+    {
+      "type": "pull",
+      "text": "老系统改不动,多半不是人的问题,是结构的问题——里面耦合太紧,外面配套太厚。"
+    },
+
+    { "type": "h2", "text": "四、一条反直觉的推论:最好状态往往在被取代前夜" },
+    {
+      "type": "p",
+      "text": "这是这一章最值得记住的一条,而且它经常被搞反。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "最容易读岔",
+      "items": [
+        "老技术常常**在被取代的前夜达到它历史上的最好状态**。原因很简单:面对威胁,人们会拼命给旧原理加装置、拉伸它的极限——阿瑟把这叫**适应性拉伸**。帆船在蒸汽船逼近的年代造得最快最大,活塞式飞机在喷气时代到来前性能达到顶峰,胶片在数码相机出现后的那几年做到了历史最高画质。**所以「它现在表现很好」根本不能证明它安全。**要看的不是当下的高度,是斜率:老原理已经榨到边际,每提升一点要花十倍的力气;新原理还一次没被深化过,起步虽低但空间敞开。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "这条推论还给出了一个判断新旧之争的实用方法:**别比当下的性能,比「再投入同样的资源,各能提升多少」。**新原理起步时几乎总是更差——更贵、更不可靠、指标难看,所以内行看它常常一脸不屑,而且**内行的不屑通常是有道理的**——就当下而言他们是对的。他们错的地方在于把一次快照当成了趋势。"
+    },
+    {
+      "type": "figure",
+      "ftype": "曲线图",
+      "caption": "交叉点之前,老原理在每一项指标上都赢;交叉点之后,它在每一项上都输。而人们做判断的时刻,几乎总是在交叉点之前。",
+      "svg": "<svg viewBox='0 0 560 236' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>比斜率,不比高度</text><g transform='translate(50,42)'><path d='M0 150 L0 0 M0 150 L462 150' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='-8' y='8' text-anchor='end' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>性能</text><text x='462' y='168' text-anchor='end' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>投入 →</text><path d='M4 96 C90 66 180 48 300 42 C380 38 430 37 458 36' style='fill:none;stroke:var(--ink);stroke-width:1.7'/><text x='120' y='40' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--ink)'>老原理(已被深化多年)</text><path d='M4 146 C80 140 160 116 250 78 C330 44 400 20 458 8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.7;stroke-dasharray:5 3'/><text x='300' y='104' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>新原理(一次没深化过)</text><circle cx='272' cy='62' r='4' style='fill:var(--cinnabar-pure)'/><text x='272' y='134' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>交叉点</text><path d='M272 66 L272 122' style='fill:none;stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:2 3'/><path d='M120 0 L120 150' style='fill:none;stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:2 3'/><text x='118' y='-2' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>人们做判断的时刻</text></g><text x='280' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>示意曲线,非实测数据</text></svg>"
+    },
+
+    { "type": "h2", "text": "五、那到底怎么才能换掉" },
+    {
+      "type": "p",
+      "text": "既然老系统里外都锁死了,新东西是怎么进来的?阿瑟的答案是:**通常不是把老系统改好,而是在旁边用新原理另起一套,让它先在老系统看不上的角落里活下来,等它长到够用。**"
+    },
+    {
+      "type": "p",
+      "text": "「老系统看不上的角落」这个条件很关键。新原理起步时性能差,正面打不过,只能去那些老方案嫌麻烦、嫌利薄、嫌不体面的地方——**而恰恰是在那些地方,它获得了活下去的收入和迭代的机会。**等它在角落里被深化了几轮,再回头进入主战场。这个路径在历史上重复了无数次,以至于「它现在只能干点边角料的活」这句话,单独拿出来什么也证明不了。"
+    },
+    {
+      "type": "p",
+      "text": "还有一种情形值得留意:**新原理往往先在一个「限制更少」的场合里长大。**老系统之所以背着那么重的包袱,一部分是因为它必须服务所有既有用户、兼容所有历史情况、满足所有已经写下的规矩。而一个全新的场合——一个新市场、一个新地区、一类新用户——没有这些历史,新原理在那里可以轻装上阵。**所以观察一个新技术有没有前途,与其看它在主战场的表现,不如看它在那些没有历史包袱的地方长得怎么样。**"
+    },
+    {
+      "type": "p",
+      "text": "对组织的启示是同一个道理:**想在一个成熟体系里孵新东西,最难的不是技术,是别让它一出生就被旧体系的评价标准掐死。**新原理在旧尺子下永远难看——成本更高、指标更差、案例更少。如果决策必须过旧尺子那一关,它连长大的机会都没有。所以很多公司的做法是把它放到组织外面去养一段时间,这不是管理时髦,这是结构深化逼出来的无奈。"
+    },
+
+    { "type": "h2", "text": "六、这一章接到哪儿去" },
+    {
+      "type": "p",
+      "text": "结构深化讲的是单件技术怎么变老。把镜头拉远,下一个问题是:**整个技术的集合,作为一个整体,是怎么演化的?**新元素怎么进来、旧元素怎么退场、为什么整件事看起来在加速。这就是下一章的内容——阿瑟会说,技术是一个**用自己搭建自己**的集合,而这个过程虽然叫「进化」,却不是达尔文式的进化。"
+    },
+    {
+      "type": "p",
+      "text": "带走这一章的一个动作:**看到一个「越来越复杂」的系统,先别急着骂。**问三件事——这些复杂度是哪些真实问题逼出来的?哪些子系统其实已经在伺候一个不存在的问题?以及,它现在的好表现,到底来自核心原理还是来自这些年拼命加上去的补丁?第三个问题最狠,因为它能告诉你这套东西还剩多少年可活。"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "title": "技术如何进化:一个用自己搭建自己的集合",
+  "subtitle": "每一件新东西既是产品又是零件,还会自己造出下一个缺口;这是进化,但阿瑟明说——它不是达尔文式的",
+  "centralIdea": "把前面几块拼起来,就得到整体演化的图景:技术的集合有一个奇特性质——里面每一件东西既是被造出来的产品,又是造下一批东西的零件或工具。一件技术一旦成型,就自动进入所有人的备选清单;可组合的花样随元件数快速膨胀;更妙的是,新技术还会自己造出新的需求,阿瑟叫它「机会缺口」——有了汽车才有了加油站、公路网、交规、修理厂的需求,而这些又各自需要新技术。于是整件事是自催化的:元素越多,组合越多,新元素越多。这一章还有一处必须说清的分界:阿瑟自己反复强调,这是进化,但不是达尔文式的进化。渐变加选择解释得了同一物种内部的优化,解释不了全新物种的凭空出现;技术能跨越,靠的是两件生物没有的本事——从任意远的地方借零件,以及捕获新的自然现象。选择当然仍在场,但产生新东西的那一步不一样。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "有一个很旧的问题:技术为什么看起来在加速?常见的答案有两种,一种说人越来越聪明,一种说投入越来越多。这两个答案都不太经得起推敲——古人并不比今人笨,而投入在很多领域是先加速后停滞的。阿瑟给的答案是结构性的,而且不需要假设任何人变了:**技术的集合有一个奇特的性质——它用自己搭建自己。**里面每一件东西既是被造出来的产品,又是造下一批东西的零件或工具。这样一个集合,天然会越滚越快。"
+    },
+
+    { "type": "h2", "text": "一、每一件成品,同时是别人的零件" },
+    {
+      "type": "p",
+      "text": "这是全章的枢纽,而且它只是把前面几章的结论合起来看了一眼。既然新技术是既有技术的组合,那么**任何一件技术一旦成型,就自动进入了所有人的备选清单。**它昨天还是某个团队十年苦工的成果,今天就成了别人图纸上的一个方框。"
+    },
+    {
+      "type": "p",
+      "text": "而且这个「降格」是持续发生的:激光曾经是实验室里的稀罕物,后来成了打印机里的一个零件、光驱里的一个器件、测距仪里的一个模块;计算机曾经是一栋楼里的庞然大物,后来成了汽车里的一块板、洗衣机里的一颗芯片。**每一代的「整机」都会变成下一代的「元件」**,而这正是技术层级不断加高的方式。"
+    },
+    {
+      "type": "figure",
+      "ftype": "阶梯图",
+      "caption": "同一件东西在三个时代的身份:一次一次地从「整机」降格为「元件」。技术的层级就是这样一级级加高的。",
+      "svg": "<svg viewBox='0 0 560 226' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>今天的成果,明天的零件</text><g transform='translate(30,44)'><rect x='0' y='106' width='150' height='46' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='75' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>一栋楼的计算机</text><text x='75' y='143' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>当年的整机</text><rect x='170' y='58' width='150' height='46' rx='4' style='fill:none;stroke:var(--ink);stroke-width:1.2'/><text x='245' y='78' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>机箱里的一块板</text><text x='245' y='95' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>成了别人的部件</text><rect x='340' y='10' width='160' height='46' rx='4' style='fill:none;stroke:var(--ink);stroke-width:1.2'/><text x='420' y='30' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>洗衣机里的一颗芯片</text><text x='420' y='47' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>没人再把它当计算机</text><path d='M150 118 L170 96' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M320 70 L340 48' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><text x='250' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>每降格一次,上面就多出一层可以搭的空间</text></g></svg>"
+    },
+    {
+      "type": "p",
+      "text": "由此得到第一层加速:**可组合的花样,随元件数增长得比线性快得多。**十件东西两两配对是四十五种,一百件是四千九百五十种,而实际的组合还不止两两——可以三件、四件、可以嵌套。所以元件库存每翻一倍,可能性空间的膨胀远不止一倍。**不需要任何人变聪明,光是库存变大,新东西出现的速率就会上去。**"
+    },
+
+    {
+      "type": "p",
+      "text": "这里有一个很容易被忽视的前提:**降格要成立,得先有标准化。**一件东西要能被别人当零件用,必须先有清楚的接口——多大尺寸、多少电压、什么协议、什么误差范围。所以标准化这件看起来最枯燥的工作,其实是技术加速的关键基础设施:**它把一件件孤立的成果,变成了可以互相插拔的库存。**没有螺纹标准就没有可互换的零件,没有集装箱标准就没有全球供应链,没有通信协议就没有互联网。**每一次标准化,都是把一批东西从「作品」变成「元件」。**"
+    },
+    { "type": "h2", "text": "二、机会缺口:技术自己造出需求" },
+    {
+      "type": "p",
+      "text": "第二层加速更有意思,也是这一章最反直觉的一点。我们习惯认为技术是被需求拉出来的:人有需要,于是有人去做。阿瑟指出:**绝大多数需求本身就是技术造出来的。**他给这种由技术产生的空缺起了个名字——**机会缺口**。"
+    },
+    {
+      "type": "p",
+      "text": "看汽车。汽车满足的原始需求是「更快地移动」,这个需求古已有之。但汽车一旦普及,它立刻造出了一大批此前根本不存在的需求:加油站、公路网、交通规则、驾照考试、修理厂、备件供应、汽车保险、停车场、红绿灯、道路照明、事故急救体系。**这些需求不是人本来就有的,是汽车这件东西自己造出来的。**而它们每一个又都需要新的技术去满足,那些技术又会造出下一批缺口。"
+    },
+    {
+      "type": "p",
+      "text": "还有一类缺口来自技术自身的不完美:任何一件技术都有它的瓶颈、它解决不了的例外、它带来的副作用,**每一个都是一个明确的悬赏。**发动机太吵→降噪技术;数据太多→检索技术;联网之后不安全→加密与认证;算力上去了但耗电→功耗管理。这一类缺口的好处是它极其具体——你能清楚指出「这里过不去」,而清楚的问题最容易吸引人去解。"
+    },
+    {
+      "type": "figure",
+      "ftype": "循环图",
+      "caption": "四个环节首尾相接,没有起点也没有终点,更没有人在中央指挥。技术的加速就是这个圈自己转出来的。",
+      "svg": "<svg viewBox='0 0 560 244' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>自己喂自己的圈</text><rect x='196' y='42' width='168' height='36' rx='4' style='fill:none;stroke:var(--ink);stroke-width:1.2'/><text x='280' y='65' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>新技术加入库存</text><rect x='384' y='112' width='156' height='36' rx='4' style='fill:none;stroke:var(--ink);stroke-width:1.2'/><text x='462' y='135' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>可组合花样变多</text><rect x='196' y='182' width='168' height='36' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='280' y='205' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>造出新的机会缺口</text><rect x='20' y='112' width='156' height='36' rx='4' style='fill:none;stroke:var(--ink);stroke-width:1.2'/><text x='98' y='135' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>有人去填这些缺口</text><path d='M364 64 C424 68 456 90 462 110' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M457 104 L464 114 L453 114 Z' style='fill:var(--ink-faint)'/><path d='M452 148 C440 178 404 196 366 202' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M374 197 L364 203 L374 208 Z' style='fill:var(--ink-faint)'/><path d='M196 202 C156 196 118 178 106 148' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M112 154 L104 146 L100 156 Z' style='fill:var(--ink-faint)'/><path d='M102 110 C110 90 142 68 194 64' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M186 59 L196 64 L187 70 Z' style='fill:var(--ink-faint)'/><text x='280' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>没有中央指挥</text><text x='280' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>也没有起点</text></svg>"
+    },
+    {
+      "type": "quote",
+      "original": "技术自己造出了绝大部分它需要去满足的需求。",
+      "translation": "这句话把「需求驱动创新」这个流行说法翻了一半。它不是说需求不重要,而是说需求的来源被搞错了:大多数需求不是从人性里冒出来的,是从上一件技术的副作用和瓶颈里冒出来的。这也解释了为什么需求调研常常问不出未来——**没人能说出自己需要一件尚不存在的东西。**"
+    },
+    {
+      "type": "p",
+      "text": "把两层合起来,阿瑟用了一个来自化学的词:**自催化。**在一个自催化的反应里,产物本身就是催化剂,于是反应会自己给自己加速。技术的集合正是如此——**元素越多 → 组合越多 → 新元素越多 → 缺口越多 → 有人去填 → 元素更多。**这个圈没有起点,也不需要有人在中央指挥。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "顺带说明一件事",
+      "items": [
+        "这个模型顺带解释了「技术无用武之地」的那种停滞。一个孤立的、库存小的环境里,即便偶尔冒出一件好东西,它也很难被组合进别的东西——**没有别的元件跟它配。**所以技术不是一件件独立生长的,它必须长在一片密度足够高的生态里。这也说明了为什么产业集群、开放的供应链、频繁的人员流动这么要紧:它们提高的是**组合的相遇概率**,而不只是效率。"
+      ]
+    },
+
+    { "type": "h2", "text": "三、这是进化,但不是达尔文式的" },
+    {
+      "type": "p",
+      "text": "这是本章必须讲清楚的分界,阿瑟自己反复强调它,而读者最容易在这里一滑而过——因为「技术在进化」这句话听着太顺耳了。"
+    },
+    {
+      "type": "p",
+      "text": "达尔文的机制是:**变异 + 遗传 + 选择。**个体之间有细微差异,差异能传给后代,差异影响留下多少后代——三条一凑齐,选择就自动运转。这套机制解释得极好的是**同一支血脉内部的优化**:喙变得更适合这种种子,毛变得更适合这种气候。"
+    },
+    {
+      "type": "p",
+      "text": "问题在于:**把马车一点点改良,再改一千年也改不出喷气机。**渐变的路径根本到不了那里——中间的每一步都得是一个能工作、能被选中的东西,而从马车通往喷气机的路上,没有这样一条连续的坡道。技术之所以能跨过去,靠的是两件生物基本没有的本事。"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**从任意远的地方借零件。** 生物基本各传各的,基因只沿血脉往下走(微生物之间的水平转移是例外,不是常态)。技术则完全不受这个限制:造飞机的人可以直接把化工、电子、材料、软件领域的成果整块拿来用。**这等于允许「跨物种杂交」,而且不限次数、不限距离。**",
+        "**捕获新的自然现象。** 这相当于凭空多出一块此前不存在的积木。生物没有这个通道——它只能在既有的分子机器上做修改。技术每捕获一个新现象,可能性空间就整体扩张一次。"
+      ]
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "左边只能沿着树枝往上爬,右边可以在任意两根枝条之间搭桥,还能从地下凭空长出新根。这就是「不是达尔文式」的确切意思。",
+      "svg": "<svg viewBox='0 0 560 238' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>两种「进化」的形状</text><g transform='translate(36,44)'><text x='110' y='0' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink-soft)'>生物:只能顺着枝条爬</text><path d='M110 154 L110 110 M110 110 L60 70 M110 110 L160 70 M60 70 L34 38 M60 70 L86 38 M160 70 L134 38 M160 70 L186 38' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><circle cx='110' cy='154' r='4' style='fill:var(--ink-faint)'/><circle cx='34' cy='34' r='4' style='fill:var(--ink-faint)'/><circle cx='86' cy='34' r='4' style='fill:var(--ink-faint)'/><circle cx='134' cy='34' r='4' style='fill:var(--ink-faint)'/><circle cx='186' cy='34' r='4' style='fill:var(--ink-faint)'/><text x='110' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>枝条之间不能搭桥</text></g><path d='M280 56 L280 196' style='fill:none;stroke:var(--line);stroke-width:1'/><g transform='translate(316,44)'><text x='110' y='0' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>技术:可以随处搭桥</text><path d='M110 154 L110 110 M110 110 L60 70 M110 110 L160 70 M60 70 L34 38 M60 70 L86 38 M160 70 L134 38 M160 70 L186 38' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M34 34 C80 8 140 8 186 34' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5;stroke-dasharray:4 3'/><path d='M86 34 C110 54 110 54 134 34' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5;stroke-dasharray:4 3'/><circle cx='110' cy='154' r='4' style='fill:var(--ink-faint)'/><circle cx='34' cy='34' r='4' style='fill:var(--cinnabar-pure)'/><circle cx='86' cy='34' r='4' style='fill:var(--cinnabar-pure)'/><circle cx='134' cy='34' r='4' style='fill:var(--cinnabar-pure)'/><circle cx='186' cy='34' r='4' style='fill:var(--cinnabar-pure)'/><path d='M210 130 L210 154' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><circle cx='210' cy='126' r='4' style='fill:var(--cinnabar-pure)'/><text x='110' y='178' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar-pure)'>还能长出全新的根(新现象)</text></g></svg>"
+    },
+    {
+      "type": "p",
+      "text": "那么选择还在不在?**在,而且很重要——但它管的不是同一件事。**哪些技术被留下、哪些被淘汰,依然靠竞争、采纳、成本、习惯这一整套筛选;阿瑟的区分是:**选择负责决定谁活下来,组合负责产生新东西。**在生物里这两件事共用一套机制(变异同时是产生和被选的对象),在技术里它们是两套。混淆这一点,就会得出「多试错就能创新」这种把顺序搞反的结论——试错是选择那一侧的事,而值得试的东西从哪来,是组合那一侧的事。"
+    },
+    {
+      "type": "pull",
+      "text": "选择决定谁活下来,组合决定有什么东西可以活——这是两件事,别混在一起。"
+    },
+
+    {
+      "type": "p",
+      "text": "还有一个常被忽略的不对称:**技术的「灭绝」和生物的灭绝也不一样。**一个物种灭绝了,它的基因就真的没了;而一件技术被淘汰之后,**它的图纸、原理、经验往往还留在库存里,几十年后可能被重新捡起来。**电动汽车在一百多年前就有过一波,输给了内燃机,然后在电池技术成熟之后卷土重来;很多今天的算法,原理在几十年前就被提出过,只是当时算力配不上。**技术的历史里没有真正的死亡,只有搁置——因为它是被记录下来的,而记录本身也是一件技术。**"
+    },
+    { "type": "h2", "text": "四、这套图景能解释什么,不能解释什么" },
+    {
+      "type": "p",
+      "text": "先说能解释的。**技术为什么加速**——自催化,不需要人变聪明。**为什么后发者能跳代**——他们取用的是当下的库存,不是历史的顺序。**为什么孤立环境难出技术**——组合需要密度。**为什么需求预测总是失败**——大部分需求是被技术自己造出来的,在它出现之前没人能说出自己需要它。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "但要注意边界",
+      "items": [
+        "这套图景里几乎没有人。谁出钱、谁拍板、什么被资助、什么被禁止、哪一批人因此失业、哪一群人因此获利——在这套叙事里基本不出场。技术看起来像在按自己的逻辑往前走,而现实里很多技术路线是被资本、军方、监管和利益斗争选出来的,不是被组合逻辑选出来的。**这不算错,但它是一幅只画了一半的图。**第十章会把这笔账算细。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "还有一条阿瑟没有明说、但从他的框架能自然推出来的:**技术的长期节奏取决于两侧谁先卡住。**组合这一侧是自催化的,会越滚越快;但现象那一侧不是——新的自然效应不按人的计划出现,而且**容易看见的早就被看见了**,剩下的要在极端条件、极小尺度、极高能量下才现身,而那些条件本身又需要极其昂贵的技术。所以「技术会永远加速」这个推论,在这套框架里其实是不成立的。"
+    },
+
+    { "type": "h2", "text": "五、这一章接到哪儿去" },
+    {
+      "type": "p",
+      "text": "整体演化讲完,还剩最后一块拼图,也是阿瑟作为经济学家真正想说的话:**这一切和经济是什么关系?**通常我们说「经济里出现了新技术」,好像经济是一个盒子。阿瑟要把这句话整个翻过来——**经济不是容器,它是这些技术的一种表达。**下一章就讲这个。"
+    },
+    {
+      "type": "p",
+      "text": "带走这一章的一个动作:**别再问「市场需要什么」,先问「现在的技术库存里,刚刚出现了什么新元件」。**因为需求多半会跟着元件走,而不是相反。在一个元件刚出现、缺口还没被填的短暂窗口里,机会最多——而等到「需求已经很明确」的时候,那个窗口通常已经关上了。"
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "title": "域:真正的变革单位",
+  "subtitle": "如果只能从这本书带走一个词,带这个;因为真正翻天覆地的变化从来不是某一件发明,是整个域的更替",
+  "centralIdea": "这一章是全书最有实用价值的部分。「域」是一族相互配套的部件、实践、理论和直觉——机械域、电气域、电子域、数字域、基因工程域。它不是一件技术,是一整套家什外加一套只有内行才有的手感。阿瑟给它的比喻极漂亮:域是一门语言,设计是在这门语言里表达一个目的;工程师做设计,像作家在母语里写文章。由此得出全书最锋利的判断——真正的重大变革不是某一件发明,而是新域的出现,以及各行各业被搬进新域重说一遍,他把这叫「重新域化」。这里的分寸要拿准:把纸质表格搬上屏幕不算换域,那只是把旧句子抄进新本子;换域是流程本身按新语言重写,原来的许多环节因此彻底消失,连「难在哪里」都换了。域还有生命周期,而重述老行业的往往是不背旧包袱的外来户。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "先说一件很多人有体感、却说不清的事。过去二三十年里,有些行业只是「用上了电脑」——流程没怎么变,只是把纸换成了屏幕、把算盘换成了表格;另一些行业则被整个掀翻了——原来的岗位消失,原来的中间环节蒸发,连「这一行到底难在哪里」都换了一个说法。**同样是数字化,为什么差别这么大?**阿瑟这一章给的答案,是全书最有用的一个概念:**域**。前一种是把旧句子抄进新本子,后一种是换一门语言把整件事重说了一遍。"
+    },
+
+    { "type": "h2", "text": "一、什么是「域」" },
+    {
+      "type": "p",
+      "text": "一个域,是**一族相互配套的部件、工具、实践、理论和直觉**。机械域、电气域、电子域、数字域、基因工程域,都是域。它不是一件技术,是一整套家什。"
+    },
+    {
+      "type": "p",
+      "text": "拿电子域举例。它包含一堆标准化的元件(电阻、电容、晶体管、集成电路),一套设计方法(电路图、仿真、布线规则),一套工艺(蚀刻、封装、测试),一套度量和标准(阻抗、噪声、时序),还有一套只有内行才有的直觉——这个地方要加个滤波、那条线不能这么绕、这个电源要单独走。**这一整套合起来才是「一门技术」,而它比其中任何一件具体产品都长寿得多。**一款芯片三年就过时,可整个电子域用了七十年还在长。"
+    },
+    {
+      "type": "p",
+      "text": "域是怎么诞生的?通常从一个新现象被捕获开始:半导体的性质被摸清,先长出几件孤零零的器件;然后有人开始琢磨通用的设计方法,元件被标准化,工艺被稳定下来,理论被写成教科书,最后一代人在这套东西里泡出手感——**到这时,一个域才算真正成型。**这个过程通常要几十年,而且大部分时间外面看不出什么动静。所以「新技术出现」和「新域成型」之间,永远隔着一段长得让人失去耐心的距离。"
+    },
+    {
+      "type": "p",
+      "text": "为什么必须把「域」单拎出来?因为**几乎所有的设计,都是在某一个域里进行的。**当一个工程师接到任务,他做的第一个决定——往往是无意识的——是「用哪一套家什来做这件事」。这个决定一旦做出,后面可选的路就被框定了:能用哪些部件、按什么方式组合、什么算好、什么算难,全部随之而定。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "域不是一件技术,是一整套。注意最下面那一层——它写不进手册,却决定了同样的图纸在不同人手里做出来的东西不一样。",
+      "svg": "<svg viewBox='0 0 560 240' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>一个「域」里装着什么</text><g transform='translate(70,40)'><rect x='0' y='0' width='420' height='34' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='210' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>标准化的元件与材料</text><rect x='0' y='42' width='420' height='34' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='210' y='64' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>设计方法与工具</text><rect x='0' y='84' width='420' height='34' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='210' y='106' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>工艺 · 标准 · 度量</text><rect x='0' y='126' width='420' height='34' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='210' y='148' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>被反复验证的理论</text><rect x='0' y='168' width='420' height='34' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='210' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>只有内行才有的直觉与手感</text></g><text x='280' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>五层都齐了,这个域才算成型;新域最缺的往往是下面两层</text></svg>"
+    },
+
+    { "type": "h2", "text": "二、域是一门语言,设计是在这门语言里表达" },
+    {
+      "type": "p",
+      "text": "阿瑟对域最漂亮的说法是:**域是一门语言,设计是在这门语言里表达一个目的。**"
+    },
+    {
+      "type": "p",
+      "text": "这个比喻不是文学修辞,它对得很严。一门语言有词汇(部件)、语法(组合规则)、文体(什么算优雅的做法)、习语(老手一看就懂的固定搭配),还有一层说不清的语感。工程师做设计,和作家在母语里写文章是同一种活动:选词、造句、遵守语法、追求某种简洁。**而且和写作一样,你的语言限定了你能想到什么。**"
+    },
+    {
+      "type": "p",
+      "text": "这一点值得停下来想想,它比听上去要深。**在机械域里想问题,你想的是杠杆、传动、配合、公差;在数字域里想问题,你想的是状态、消息、幂等、一致性。**同一个目的,在两个域里连「问题是什么」都不一样。所以「换个域重做一遍」从来不是简单的移植——你得先学会用另一种方式思考这件事。这也是为什么老行业的高手在新域里常常不灵:不是他们笨,是**他们太熟练的那门语言在这里不管用了。**"
+    },
+    {
+      "type": "quote",
+      "original": "设计是在某个域的语言中,对一个目的的表达。",
+      "translation": "这句话把「设计」从「画图」还原成了「表达」。它的实际后果是:选域这个动作,比选方案重要得多——因为选了域,可选的方案就已经被这门语言的词汇量框住了。"
+    },
+
+    { "type": "h2", "text": "三、重新域化:真正的变革长什么样" },
+    {
+      "type": "p",
+      "text": "现在到全书最锋利的判断:**真正的重大变革,不是某一件发明,而是整个域的更替,以及各行各业被搬进新域重说一遍。**阿瑟给这个动作起了个名字:**重新域化**。"
+    },
+    {
+      "type": "p",
+      "text": "看一个很干净的例子:**电力对工厂的改造。**蒸汽时代的工厂,动力来自一台大蒸汽机,通过天花板上一根总传动轴和无数皮带分配到每台机器。这就决定了厂房必须是多层的、机器必须紧挨着轴排布、车间布局服从于传动而不是服从于工序。电动机出现后,第一代工厂只是把蒸汽机换成一台大电机——**照旧带着那根总轴。**效率提升有限,很多人因此认为电不过如此。真正的变化发生在几十年后:当每台机床都自带一个小电机,总轴就不需要了,厂房可以摊平成单层,机器可以完全按工序顺序摆放,于是流水线、物料流、车间管理统统被重新想了一遍。**同一件事,前一次是替换,后一次才是重新域化。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "左边是替换,右边是重新域化。区别不在用了什么新东西,在于「组织方式」有没有跟着新语言重写——以及原来那些环节是不是干脆没了。",
+      "svg": "<svg viewBox='0 0 560 244' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>替换 vs 重新域化</text><g transform='translate(24,42)'><rect x='0' y='0' width='240' height='176' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='120' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink-soft)'>只是替换</text><text x='120' y='52' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>蒸汽机 → 一台大电机</text><text x='120' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>总传动轴照旧</text><text x='120' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>厂房照旧多层</text><text x='120' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>布局照旧围着轴</text><path d='M40 136 L200 136' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='120' y='158' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>提升有限 · 「电也不过如此」</text></g><g transform='translate(296,42)'><rect x='0' y='0' width='240' height='176' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='120' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>重新域化</text><text x='120' y='52' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>每台机器自带小电机</text><text x='120' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>总轴消失了</text><text x='120' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>厂房摊平成单层</text><text x='120' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>布局按工序重排</text><path d='M40 136 L200 136' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1'/><text x='120' y='158' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>流水线与现代车间由此而来</text></g><text x='280' y='236' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>两者之间隔了几十年——好处总是迟到</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "再看一个更近的例子:**摄影。**胶片时代,这一行属于化学域——感光乳剂、显影、定影、暗房、冲印店,难点是化学配方、温度控制、曝光宽容度。数码相机刚出来时,做的是替换:还是那套「取景—曝光—得到一张照片」的流程,只是把胶片换成了传感器。真正的重新域化发生在这件事被搬进数字域之后:**照片变成了可以无限复制、即时传输、算法处理、按标签检索的数据。**于是整个行业的构成变了——冲印店、胶卷厂、暗房技师这些环节大面积消失,取而代之的是图像算法、云存储、社交分发。**注意这里的关键:消失的不是「拍照」这个目的,是实现它的那一整套安排。**"
+    },
+    {
+      "type": "p",
+      "text": "分寸在这里:**把纸质表格搬上屏幕不算换域。**那只是把旧句子抄进新本子,流程没变、分工没变、难点没变。换域的标志是:**原来的一些环节干脆不存在了。**当支付被搬进数字域,「押运现钞」「核对印鉴」「等待汇票到账」这些环节不是变快了,是没有了;取而代之的是一批全新的难题——并发怎么不出错、状态怎么保持一致、系统挂了怎么回滚。**连「难在哪里」都换了,这才叫重新域化。**"
+    },
+    {
+      "type": "pull",
+      "text": "问一个行业「有没有被数字化」意义不大;要问的是——它有没有被用新域的语言重新讲过一遍。"
+    },
+
+    { "type": "h2", "text": "四、域有生命周期,而且分段" },
+    {
+      "type": "p",
+      "text": "域不是永远年轻的。阿瑟指出它有明显的生命周期,而**判断一个领域值不值得投入,与其问「它现在有多强」,不如问「它所在的域走到了哪一段」。**"
+    },
+    {
+      "type": "steps",
+      "items": [
+        { "title": "萌芽", "text": "粗糙、不成体系、性能常常不如现有方案,外行看不上眼。但改进空间几乎是敞开的。", "state": "done" },
+        { "title": "活跃", "text": "部件迅速齐备、方法快速积累、标准开始成型;各行各业排着队被它重述,这一段的机会最多。", "state": "done" },
+        { "title": "成熟", "text": "能干的事情基本被穷尽,再进步又贵又小,竞争转向成本与规模。", "state": "now" },
+        { "title": "僵化", "text": "大量精力花在维持、兼容、合规上;真正的新东西开始在另一个域里冒头。", "state": "todo" }
+      ]
+    },
+    {
+      "type": "figure",
+      "ftype": "曲线图",
+      "caption": "同一个域,不同阶段的性价比完全不同。人们通常在最清楚的那一段涌进去,而那恰恰是斜率最小的一段。",
+      "svg": "<svg viewBox='0 0 560 236' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>一个域的一生</text><g transform='translate(50,42)'><path d='M0 150 L0 0 M0 150 L462 150' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='-8' y='8' text-anchor='end' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>能力</text><text x='462' y='168' text-anchor='end' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>时间 →</text><path d='M6 146 C60 142 90 128 130 96 C176 60 240 32 330 22 C390 16 430 14 458 13' style='fill:none;stroke:var(--ink);stroke-width:1.7'/><path d='M112 0 L112 150 M262 0 L262 150 M382 0 L382 150' style='fill:none;stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:2 3'/><text x='56' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>萌芽</text><text x='187' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;font-weight:bold;fill:var(--cinnabar-pure)'>活跃</text><text x='322' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>成熟</text><text x='420' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>僵化</text><text x='56' y='120' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>看着不靠谱</text><text x='187' y='58' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--cinnabar-pure)'>机会最多</text><text x='340' y='46' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>人最多,空间最小</text></g><text x='280' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>示意曲线,非实测数据</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这个周期还解释了一个反复出现的错配:**人们通常在一个域最成熟的时候涌进去,而那恰恰是回报最薄的一段。**因为成熟意味着一切都清楚了——清楚意味着门槛低,门槛低意味着人多,人多意味着利润薄。真正的红利在活跃期,而活跃期的特征恰恰是「看起来还很乱、还不确定、还没有标准答案」。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "为什么常是外来户",
+      "items": [
+        "重述老行业的往往不是这个行业里的高手,而是新域的母语使用者。原因不是老手保守——**是他们在旧域里的熟练本身构成了障碍。**旧域的语言里有一整套「这件事必须这样做」的常识,而这些常识在新语言里可能根本不成立。外来户听不懂那些常识,于是也不受它们约束。这条观察对个人和公司都成立:**你在一门语言里越娴熟,越难听出另一门语言的好处。**"
+      ]
+    },
+
+    { "type": "h2", "text": "五、怎么用这个概念看眼前的事" },
+    {
+      "type": "p",
+      "text": "「域」这个概念真正的价值,是它给了你一把很实用的尺子。听到任何「某某行业要变天了」的说法,可以顺着问四个问题。"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**这是一个新域,还是一件新产品?**如果只是一件新产品,它顶多改变竞争格局;如果是一个新域,它会改变整个行业的构成。",
+        "**这个域的五层齐了吗?**元件、方法、工艺标准、理论、手感——新域早期往往只有前一两层,配套没长齐之前,好处显不出来。",
+        "**这个行业被重述了,还是只被替换了?**看有没有环节干脆消失,看「难在哪里」有没有换。",
+        "**这个域走到了哪一段?**萌芽期的东西看着不靠谱但斜率高,成熟期的东西看着可靠但空间小。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "还有一个对个人很实在的用法:**你的技能是长在部件上,还是长在域上?**长在部件上的技能(某个具体工具、某个具体框架)寿命很短,随部件一起过时;长在域上的技能(那门语言的语法与手感)寿命长得多,可以跟着这个域走几十年。而如果你想换赛道,**真正要花力气学的不是新工具,是新语言的思维方式**——工具几周就能上手,思维方式要几年。"
+    },
+
+    {
+      "type": "p",
+      "text": "这把尺子也能量组织。一家公司往往有一个**主导域**——它的核心人才、决策习惯、评价标准、甚至办公室里的笑话,都长在那一门语言上。这解释了一件很常见的事:当新域来临,公司即使及时买下了新域里的团队,也经常消化不掉。因为审批流程、考核指标、什么算「靠谱」的判断,统统还是旧语言的;新团队说的话在这套体系里听起来永远像是不专业。**所以「转型难」多数时候不是决心问题,是语言问题——一个组织没法用旧语言去评价新语言写出来的东西。**"
+    },
+    { "type": "h2", "text": "六、这一章接到哪儿去" },
+    {
+      "type": "p",
+      "text": "域讲完,一个自然的追问跟着来:**既然新域这么厉害,为什么老的东西还能撑那么久?**为什么很多明显该被替换的系统,一撑就是几十年,而且期间还越做越好?这就是下一章「结构深化」要回答的——成熟技术会靠不断增加子系统来突破自己的瓶颈,于是它一边变得更强,一边变得更复杂、更改不动。**理解了这一条,你就理解了为什么公司里最难改的往往是当年最成功的那套东西。**"
+    },
+    {
+      "type": "p",
+      "text": "带走这一章的一句话:**大变化从来不长成「一件大发明」的样子,它长成「一门新语言慢慢学会了讲所有老故事」的样子。**这个过程往往要几十年,中间大部分时间看起来平平无奇,所以身在其中的人常常认不出来。"
+    }
+  ]
+}
