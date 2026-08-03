@@ -1,0 +1,149 @@
+{
+  "title": "关心：工作的质量与人的状态是一回事",
+  "subtitle": "全书少数具体可用的东西。也是最常被从论证里剪下来、做成海报的一段",
+  "centralIdea": "波西格说：修不好车的人，多半是不关心。这不是道德批评，是一个技术判断——在意一件活儿，你才会注意到那一点点不对劲：轻微的异响、拧起来发涩的一格、装回去差半毫米的位置。不在意的人不是看不见，是根本没在看，他只想快点结束。由此他得出一个把次序反过来的结论：心平气和不是干好活儿的结果，而是它的前提。心里有火的时候拧螺丝，滑丝的概率成倍上升；带着焦虑写字，写出来的东西自己第二天都不想看。所以有那句被引用最多的话——你真正在修的那台机器，是你自己。他还讲了一颗拧不动的侧盖螺丝：它值不了几分钱，可它一旦卡死，整台车就动不了；所以此刻它的价值不由价格决定，由功能决定。这一章是全书最实用的部分，也是最容易被抽干的部分：它在原书里建立在良质那套推理之上，抽掉推理就只剩口号。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "前面几章都在往高处走：良质、主客、形而上学。这一章往下走，走到手上。**波西格问了一个很具体的问题：为什么有的人就是修不好东西？**他的答案听起来像句废话，细想之下却很硬——**因为他不关心。**而更硬的一步在后面：他要论证，**「关心」不是一种可有可无的美德，它就是「看得见良质」这件事本身。**"
+    },
+    { "type": "h2", "text": "一、不关心的人不是看不见，是没在看" },
+    {
+      "type": "p",
+      "text": "先把「关心」从道德的语境里拿出来。**他说的关心不是「态度端正」，是一种非常具体的注意力状态。**一台机器给出的所有信息都是细微的：某一处比平时多半格的松动，某个转速下多出来的一点噪音，某颗螺丝拧到一半开始发涩的手感，某处不该出现的油迹。**这些信号从来不会大声说话。**"
+    },
+    {
+      "type": "p",
+      "text": "在意这件活儿的人，会自动接住这些信号；**不在意的人不是听力不好，是他根本没在听。**他脑子里想的是几点能收工、这单能挣多少、刚才那条消息该怎么回。**手在动，人不在。**结果就是同样的工序、同样的工具、同样的零件，出来的活儿差得很远——而这个差别，用任何流程和考核都补不上，因为**流程能规定动作，规定不了注意力。**"
+    },
+    {
+      "type": "p",
+      "text": "这个诊断的适用范围远远超出修车。**一份报告里那些别扭的句子、一个界面上那个多余的一步、一间屋子里那盏永远刺眼的灯**——做的人不是能力不够，多半是当时没在那儿。**你几乎能从任何一件成品上，读出做它的人当时在不在场。**这也是为什么外行常常也能一眼看出「这东西没被好好对待」，虽然说不出具体哪儿不对。"
+    },
+    {
+      "type": "figure",
+      "ftype": "循环图",
+      "caption": "关心不是玄学，它是一个可以拆开看的循环：在意 → 注意力打开 → 收到细微信号 → 活儿做得好 → 更愿意在意。反过来也一样，只是转的方向相反。",
+      "svg": "<svg viewBox='0 0 640 216' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>关心是怎么变成质量的</text><rect x='24' y='58' width='132' height='50' rx='8' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar-pure)' stroke-width='1.2'/><text x='90' y='88' text-anchor='middle' font-size='12' font-weight='bold' style='fill:var(--cinnabar-pure)'>在意这件活儿</text><path d='M160,83 L188,83' style='stroke:var(--line)' stroke-width='1.3'/><path d='M188,83 l-9,-4 l0,8 z' style='fill:var(--line)'/><rect x='192' y='58' width='132' height='50' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='258' y='80' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>注意力打开</text><text x='258' y='98' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>人真的在这儿</text><path d='M328,83 L356,83' style='stroke:var(--line)' stroke-width='1.3'/><path d='M356,83 l-9,-4 l0,8 z' style='fill:var(--line)'/><rect x='360' y='58' width='132' height='50' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='426' y='80' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>接住细微信号</text><text x='426' y='98' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>异响 · 发涩 · 半格</text><path d='M496,83 L524,83' style='stroke:var(--line)' stroke-width='1.3'/><path d='M524,83 l-9,-4 l0,8 z' style='fill:var(--line)'/><rect x='528' y='58' width='90' height='50' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='573' y='88' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>活儿立得住</text><path d='M573,112 L573,140 L90,140 L90,112' style='fill:none;stroke:var(--cinnabar-pure)' stroke-width='1.2' stroke-dasharray='5 5'/><path d='M90,112 l-4,9 l8,0 z' style='fill:var(--cinnabar-pure)'/><text x='320' y='162' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>做出来的东西越像样，人越愿意在意它</text><text x='320' y='192' text-anchor='middle' font-size='12' style='fill:var(--ink)'>流程能规定动作，规定不了注意力——所以这个环节没法外包</text></svg>"
+    },
+    { "type": "h2", "text": "二、次序被反过来了" },
+    {
+      "type": "p",
+      "text": "接下来是这一章最有分量的一步。常识告诉我们：**先把活儿干好，人自然就舒坦了。**波西格说次序反了——**心平气和不是干好活儿的结果，而是它的前提。**他的证据全是手上的：**心里有火的时候拧螺丝，滑丝的概率成倍上升**；急着收工的时候装零件，装反的概率飙升；带着焦虑写字，写出来的东西自己第二天都不想看。"
+    },
+    {
+      "type": "p",
+      "text": "这一步为什么重要？因为它把「做事」和「做事的人」焊在了一起。**在通常的想法里，人是操作者，活儿是对象，两者可以分开评估**——「他这人状态不好，但活儿还是能干的」。波西格说这句话在实操层面是假的：**状态直接进入产物，而且是从最细的地方进去的。**他甚至说，一个人干活时的情绪，最后会以某种形式留在成品里；用不着神秘化，**因为情绪决定了他在哪些地方肯多看一眼、在哪些地方选择「差不多就行」。**"
+    },
+    {
+      "type": "quote",
+      "original": "你真正在修的那台机器，是你自己。",
+      "translation": "全书最著名的一句。**它不是一句励志口号，是上面那条推理的结论：**既然状态直接决定活儿的成色，那么在动手之前先把自己弄顺，就不是矫情，是工序的一部分。"
+    },
+    {
+      "type": "p",
+      "text": "他还描述过顺手时的那种状态：**手上的动作和心里的判断合成了一件事**——材料一点点变成该有的样子，而人的注意力也一点点安定下来，**到材料对了的那一刻，心也正好落定。**这段描写常被引用来当作「心流」的文学版本。不过要留意他的落点不在体验上：**他关心的是，这种状态下做出来的东西确实更好，而这个「更好」是可以被别人认出来的。**"
+    },
+    {
+      "type": "p",
+      "text": "他还把「心里安静」拆成了三层，这个拆法很实用。**第一层是身上的安静**：手不抖、不赶时间、坐得住——这一层最容易达到，也最容易被忽略。**第二层是脑子里的安静**：没有别的事在后台跑，注意力不被随时拽走。**第三层最难，他叫它「价值上的安静」**：心里没有一堆「我本该在做更要紧的事」的杂音——**你不再一边干这件事，一边觉得这件事配不上你。**"
+    },
+    {
+      "type": "p",
+      "text": "这第三层最能解释一件常见的事：**为什么有些活儿你怎么干都干不好。**不是难度问题，是你打心底里觉得它不值得——于是你的注意力永远只肯给它七成，剩下三成一直在抱怨。**在这种状态下，任何细节都进不来。**书里的意思不是要你假装热爱一切琐事，而是指出一个技术事实：**只要你还在心里贬低手上这件事，你就做不好它。**要么想办法承认它的分量，要么干脆别做。"
+    },
+    {
+      "type": "figure",
+      "ftype": "层次图",
+      "caption": "他把「心里安静」拆成三层。最难的是最后一层——只要你还觉得手上这件事配不上自己，细节就进不来。",
+      "svg": "<svg viewBox='0 0 640 214' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>安静的三层</text><rect x='150' y='44' width='340' height='44' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='320' y='63' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>一 · 身上的安静</text><text x='320' y='81' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>手不抖 · 不赶时间 · 坐得住</text><rect x='120' y='94' width='400' height='44' rx='8' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1.1'/><text x='320' y='113' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink)'>二 · 脑子里的安静</text><text x='320' y='131' text-anchor='middle' font-size='11' style='fill:var(--ink-faint)'>没有别的事在后台跑，注意力不被拽走</text><rect x='90' y='144' width='460' height='48' rx='8' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar-pure)' stroke-width='1.3'/><text x='320' y='164' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>三 · 价值上的安静（最难）</text><text x='320' y='183' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>不再一边干这件事，一边觉得这件事配不上自己</text><text x='320' y='208' text-anchor='middle' font-size='11.5' style='fill:var(--ink-faint)'>越往下越难，也越决定成色</text></svg>"
+    },
+    { "type": "h2", "text": "三、关心与良质，是一件事的两面" },
+    {
+      "type": "p",
+      "text": "先讲一个很小的例子来搭桥。**同样是把一颗螺丝拧到位，有两种「到位」：**一种是照着扭矩表拧到某个数字，一种是拧到手上感觉「对了」就停。**前者是可传授的，后者是说不出的**——而老手往往两样都用：先按数字，再用手感校一遍。**那个手感就是良质，而愿意多花那两秒去校一遍，就是关心。**这两件事在实操里根本分不开。"
+    },
+    {
+      "type": "p",
+      "text": "现在把这一章接回前面的哲学。**良质是那个先于分析的判断——「这样对，那样不对」的一下。**而关心，就是**让自己处在能收到那一下的状态里。**所以这两个词不是两件事：**你说一个人有匠气、有手艺、活儿讲究，跟说他在这件事上看得见良质，讲的是同一件事。**"
+    },
+    {
+      "type": "p",
+      "text": "这也解释了为什么「关心」教不会。**你可以教一个人所有的步骤，却没法教他在意。**能做的只有一件事——**别让他心里那个判断被压死。**上一章讲过撤掉分数的实验：**凡是把「好」外包给指标的做法，都会让人一点点失去分辨力。**反过来说，一个环境要想让人开始关心，第一步不是加考核，是**让人的判断真的算数。**"
+    },
+    {
+      "type": "p",
+      "text": "这里还要补上一层他看得很清楚的现实：**现代分工本身就在跟「关心」作对。**修理店的技工干的不是「他的」车，他一天要处理十几台别人的车；写文案的人不知道这段话最后长在什么页面上；流水线上的人只对一道工序负责。**当一个人只碰到整件事的一小截、而且看不见结果时，「在意」这件事就失去了着力点。**这不是他们道德差，是位置决定的。"
+    },
+    {
+      "type": "p",
+      "text": "所以书里那句「顾客感受到的不是机械的冷，是没人在乎的冷」还有下半句意味：**这种冷是被制度批量生产出来的。**要在这种结构里保住关心，得靠一些很土的办法——**让人看见自己活儿的下游、让他对一整件事而不是一道工序负责、让他的判断真的能改变什么。**波西格没有系统谈组织问题，但他这一章其实给出了一个很硬的判据：**看一个地方的活儿好不好，先看那里的人是否还被允许在意。**"
+    },
+    { "type": "h2", "text": "四、那颗几分钱的螺丝" },
+    {
+      "type": "p",
+      "text": "书里有一个例子特别好记。**一颗侧盖上的小螺丝滑丝了、卡死了**——它值不了几分钱，可只要它拧不下来，整台车就动不了，后面所有的活儿全都堵在这儿。**于是这颗螺丝此刻的价值，不是由它的价格决定的，是由它的功能决定的：在这一刻，它是全车最重要的零件。**"
+    },
+    {
+      "type": "p",
+      "text": "这个小例子拆开来看有两层。**第一层是价值观上的：**人的注意力天然被贵的、显眼的、有面子的东西吸走，而**真正卡住你的往往是那个不起眼的东西。**项目里堵在一个没人愿意接手的小接口上，生活里堵在一件拖了三个月没打的电话上——**它们的「不重要」是价格意义上的，不是功能意义上的。**"
+    },
+    {
+      "type": "p",
+      "text": "**第二层是方法上的：**面对这颗螺丝，急躁的人会加大力气，然后把它彻底拧烂。而正确的做法是**重新看它一眼**——它现在到底是什么？它不再是「一颗标准螺丝」，它是一块特定形状的金属，卡在一个特定的位置上。**一旦你不再按它的名字（螺丝）来处理它，而是按它眼前的实际情况来处理，办法反而会冒出来。**这一段是下一章「卡住」的前奏。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "价格和重要性不是一回事。卡住整件事的，常常是那个最不值钱、最不显眼的部件——而人的注意力天生不往那儿去。",
+      "svg": "<svg viewBox='0 0 640 210' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='320' y='24' text-anchor='middle' font-size='17' font-weight='bold' style='fill:var(--ink)'>价格 ≠ 重要性</text><text x='168' y='56' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--ink-faint)'>按价格排</text><rect x='60' y='68' width='216' height='30' rx='6' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><text x='168' y='88' text-anchor='middle' font-size='11.5' style='fill:var(--ink-soft)'>发动机</text><rect x='84' y='104' width='168' height='26' rx='6' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><text x='168' y='122' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>变速箱</text><rect x='120' y='136' width='96' height='22' rx='5' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><text x='168' y='152' text-anchor='middle' font-size='10.5' style='fill:var(--ink-faint)'>一颗小螺丝</text><line x1='320' y1='44' x2='320' y2='180' style='stroke:var(--line)' stroke-width='1.2' stroke-dasharray='5 5'/><text x='472' y='56' text-anchor='middle' font-size='12.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>按此刻的功能排</text><rect x='364' y='68' width='216' height='30' rx='6' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar-pure)' stroke-width='1.2'/><text x='472' y='88' text-anchor='middle' font-size='11.5' font-weight='bold' style='fill:var(--cinnabar-pure)'>那颗卡死的螺丝</text><rect x='388' y='104' width='168' height='26' rx='6' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><text x='472' y='122' text-anchor='middle' font-size='11' style='fill:var(--ink-soft)'>发动机</text><rect x='424' y='136' width='96' height='22' rx='5' style='fill:var(--paper-raised);stroke:var(--line)' stroke-width='1'/><text x='472' y='152' text-anchor='middle' font-size='10.5' style='fill:var(--ink-faint)'>变速箱</text><text x='320' y='198' text-anchor='middle' font-size='12' style='fill:var(--ink)'>它拧不下来，后面所有的活儿都堵在这儿</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "顺着这颗螺丝还能看出他和一般「效率话术」的区别。**效率的逻辑是：把注意力按重要性排序，抓大放小。**这话大体不错，可它默认「重要性」是事先能排好的。**波西格的经验是：重要性会在过程中突然改变。**昨天那颗螺丝毫不重要，今天它是全车的咽喉。**所以真正的功夫不在于事先排得多准，而在于当情况变了的时候，你有没有在场、有没有察觉。**这一点，再精细的计划也代替不了。"
+    },
+    { "type": "h2", "text": "五、把界限先划出来" },
+    {
+      "type": "p",
+      "text": "这一节要说的话不太讨喜，但必须说在前面：**这一章是全书被引用最多的部分，也是被扭曲得最厉害的部分。**下面三条界限，每一条都是针对一种常见的误用。"
+    },
+    {
+      "type": "p",
+      "text": "这一章是全书最容易被抽走的一段，所以有必要先把界限划清。**第一，它不是在说「把工作当信仰」。**波西格谈的是**做一件事时人和事的关系**，不是雇佣关系、不是加班文化。**把「你真正在修的机器是你自己」贴在办公室墙上，用来要求别人多干活，是对这句话最彻底的误用**——它说的是「先把自己弄顺」，不是「把自己耗光」。"
+    },
+    {
+      "type": "p",
+      "text": "**第二，它也不是「凡事都要做到极致」。**书里那种关心，恰恰包含一种分寸感：**知道哪里该多花两小时，哪里差不多就该收手。**分辨这两者，正是良质判断的一部分。**处处极致的人不是讲究，是没有判断力**——他只是把「用力」当成了「用心」的替代品。"
+    },
+    {
+      "type": "p",
+      "text": "**第三，也是最要紧的：这一章有一笔账。**书里那个把「关心」推到极致的人，最后精神崩溃了。**波西格并没有把关心写成一件安全的、只有好处的事**——他很清楚一个人一旦对什么都不肯将就，会被自己压垮。**这一层在所有摘录版里都消失了**，而它其实是全书对「工匠精神」最重要的一句补充。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "能直接用的",
+      "items": [
+        "**动手之前先看看自己。**心里有火、赶时间、刚吵完架，这时候做精细的事，出错率会高得离谱。**先歇十分钟，不是浪费，是工序。**",
+        "**不顺的时候别加力气。**螺丝拧不动就加力，通常的结果是彻底拧烂。**卡住的正确反应是停下来重新看，不是使更大的劲。**",
+        "**注意那个不起眼的部件。**堵住整件事的往往不是最贵最难的那部分，是那个谁都不愿意碰的小东西。",
+        "**别把「好」外包出去。**一旦你只按指标干活，你心里那个「这样对不对」的判断就会一点点退化，而它一旦退化，很难长回来。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "最后回到这一章的位置。**它之所以在书里排在良质那几章之后，是有道理的：先有「好是真的、而且先于分析」这个主张，才有「关心就是让自己接得住那一下」这个结论。**把它单独拎出来，它就只是一句人生建议，跟无数句同类的建议一样容易被听过就忘。**接着上下文读，它才是一个论证的落地点。**"
+    },
+    {
+      "type": "pull",
+      "text": "手在动，人不在——这就是所有糙活儿的共同来源，也是任何流程都补不上的那一格。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "罗伯特·波西格《禅与摩托车维修艺术》第三部分（关心、心的宁静、卡死的侧盖螺丝）",
+        "本篇为原创消化转述，引文为点睛式短引；各中译本措辞差异较大，以概念脉络为准"
+      ]
+    }
+  ]
+}

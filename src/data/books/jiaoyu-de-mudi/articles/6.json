@@ -1,0 +1,161 @@
+{
+  "title": "技术教育的尊严:那条界线本来就是假的",
+  "subtitle": "《教育的目的》第 6 章——全书火气最大的一篇",
+  "centralIdea": "当时英国教育有一条不成文的排序:古典语文这类「无用之学」高贵,工程手艺这类「实用之学」卑下。怀特海——一位写过《数学原理》的纯数学家——把这条排序整个掀了:技术教育与自由教育的对立是虚妄的,没有不自由的合格技术教育,也没有不技术的自由教育。他的拆解是双向的:只会操作而不明白自己在做什么的技工是残缺的,读满经典却做不成任何事的绅士同样残缺。他还把这个偏见的来历一路追到手上的活由奴隶去做的古代社会。要留意的是,他并不因此倒向实用主义——他同时为古典教育辩护过;他的立场始终是「两边互含」,不是「实用优先」。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "「学这个有什么用?」——这大概是所有关于教育的问题里最招人烦的一个。面对它,通常有两种回答:一种是急着证明有用,列举就业前景与薪资;另一种是不屑于回答,说真正的学问本来就不该问有没有用,问这个问题本身就低了一等。怀特海的态度很特别:**他既不接受第一种,也不接受第二种**——因为在他看来,这两种回答共用了同一个错误的前提,即世上真有「有用之学」和「无用之学」这两类东西。"
+    },
+    { "type": "h2", "text": "他要拆的那条界线" },
+    {
+      "type": "p",
+      "text": "当时英国教育里有一条不成文的排序:古典语文、纯粹科学、哲学这类东西高贵,因为它们「无所为而为」;工程、商科、手艺这类东西卑下,因为它们是拿来谋生的。前者叫**自由教育**(liberal education,取「自由人的教育」之义),后者叫**技术教育**,两者之间有一道体面人心照不宣的界线。"
+    },
+    {
+      "type": "p",
+      "text": "掀这条界线的人,身份很有意思:一位把数学推到最抽象处、与罗素合写《数学原理》的纯数学家,同时长期在伦敦的工科学院任职。**换句话说,界线两边他都待过。** 他的话说得非常硬:"
+    },
+    {
+      "type": "quote",
+      "original": "技术教育与自由教育的对立是虚妄的:没有不自由的合格技术教育,也没有不技术的自由教育。",
+      "translation": "《技术教育及其与科学和文学的关系》一文——全书最锋利的一次拆解,注意它是双向的。"
+    },
+    {
+      "type": "p",
+      "text": "**这句话必须双向地读**,而它常常只被读了一半。读一半的版本是「职业教育也很高尚」,那不过是一句客气话。他真正说的是:**一个只会操作、不明白自己在做什么的技工,教育是残缺的;而一个读了满肚子经典、手上却做不成任何一件事的绅士,教育同样是残缺的。** 后半句在当年的英国讲台上,是真正得罪人的那一半。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "他拆的是两种残缺,不是替其中一种翻案。两边的病因其实是同一个:知识与做事之间断了。",
+      "svg": "<svg viewBox='0 0 660 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='28' text-anchor='middle' style='fill:var(--ink)' font-size='17' font-weight='bold'>两种残缺</text><rect x='30' y='60' width='260' height='150' rx='10' style='fill:var(--paper-raised);stroke:var(--line)'/><rect x='370' y='60' width='260' height='150' rx='10' style='fill:var(--paper-raised);stroke:var(--line)'/><text x='160' y='92' text-anchor='middle' style='fill:var(--ink)' font-size='15' font-weight='bold'>只有技术,没有眼界</text><text x='160' y='126' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12'>会操作,不明白自己在做什么</text><text x='160' y='150' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12'>换一种情形就不会了</text><text x='160' y='186' text-anchor='middle' style='fill:var(--ink-faint)' font-size='12'>—— 教育是残缺的</text><text x='500' y='92' text-anchor='middle' style='fill:var(--ink)' font-size='15' font-weight='bold'>只有眼界,没有技术</text><text x='500' y='126' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12'>读满经典,做不成任何事</text><text x='500' y='150' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12'>见解一碰就碎</text><text x='500' y='186' text-anchor='middle' style='fill:var(--ink-faint)' font-size='12'>—— 教育同样是残缺的</text><path d='M290 135 L366 135' style='fill:none;stroke:var(--line)' stroke-width='1.4' stroke-dasharray='5 4'/><rect x='210' y='238' width='240' height='44' rx='9' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar)'/><text x='330' y='266' text-anchor='middle' style='fill:var(--cinnabar)' font-size='14' font-weight='bold'>同一个病因:知识与做事断了</text></svg>"
+    },
+    { "type": "h2", "text": "这个偏见是从哪来的" },
+    {
+      "type": "p",
+      "text": "更有意思的是他对这条界线的**溯源**。「动手是低等的」这个观念不是凭空长出来的,它来自一个具体的社会事实:**在古代,手上的活是由奴隶去做的。** 有闲阶级不必也不应该动手,于是「不动手」逐渐从一种经济状况变成一种身份标志,再变成一种美德。"
+    },
+    {
+      "type": "p",
+      "text": "这份鄙视被一路继承下来。中世纪的学者、近代的绅士、直到 19 世纪英国那套培养统治阶层的教育,都默认真正体面的学问是不沾手的。**于是一条本来只反映谁有闲、谁没闲的社会分界,被改写成了一条关于学问高低的知识分界**——这是一次典型的偷换,而且偷换得极其成功,成功到几百年后人们已经想不起它的来历。"
+    },
+    {
+      "type": "p",
+      "text": "看清了来历,那条界线的道德分量就塌了大半:**它并不是在说哪种知识更深刻,它只是在重复一句很老的话——干活的人低人一等。** 怀特海要拆的正是这个。他甚至走得更远,说长期不动手会让头脑变得迟钝;这话在当时听起来近乎冒犯,因为它把「不动手」从优越处境说成了一种损伤。"
+    },
+    {
+      "type": "figure",
+      "ftype": "时间线",
+      "caption": "一条社会分界怎样被改写成知识分界:每一步都很自然,合起来却完成了一次偷换——而后来的人只记得结论,忘了来历。",
+      "svg": "<svg viewBox='0 0 660 280' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='28' text-anchor='middle' style='fill:var(--ink)' font-size='17' font-weight='bold'>偏见的谱系</text><line x1='50' y1='150' x2='614' y2='150' style='stroke:var(--line)' stroke-width='1.6'/><circle cx='96' cy='150' r='6' style='fill:var(--ink-faint)'/><circle cx='246' cy='150' r='6' style='fill:var(--ink-faint)'/><circle cx='400' cy='150' r='6' style='fill:var(--ink-faint)'/><circle cx='556' cy='150' r='6' style='fill:var(--cinnabar)'/><text x='96' y='124' text-anchor='middle' style='fill:var(--ink)' font-size='12'>手上的活</text><text x='96' y='106' text-anchor='middle' style='fill:var(--ink)' font-size='12'>由奴隶去做</text><text x='96' y='180' text-anchor='middle' style='fill:var(--ink-faint)' font-size='11'>一个经济事实</text><text x='246' y='124' text-anchor='middle' style='fill:var(--ink)' font-size='12'>不动手</text><text x='246' y='106' text-anchor='middle' style='fill:var(--ink)' font-size='12'>成为身份标志</text><text x='246' y='180' text-anchor='middle' style='fill:var(--ink-faint)' font-size='11'>状况变成标记</text><text x='400' y='124' text-anchor='middle' style='fill:var(--ink)' font-size='12'>不沾手的学问</text><text x='400' y='106' text-anchor='middle' style='fill:var(--ink)' font-size='12'>才叫体面</text><text x='400' y='180' text-anchor='middle' style='fill:var(--ink-faint)' font-size='11'>标记变成美德</text><text x='556' y='124' text-anchor='middle' style='fill:var(--cinnabar)' font-size='12'>无用之学高贵</text><text x='556' y='106' text-anchor='middle' style='fill:var(--cinnabar)' font-size='12'>实用之学卑下</text><text x='556' y='180' text-anchor='middle' style='fill:var(--ink-faint)' font-size='11'>美德变成知识排序</text><text x='330' y='236' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12'>四步走完,一条关于「谁有闲」的分界,变成了一条关于「哪种知识更深刻」的分界</text><text x='330' y='262' text-anchor='middle' style='fill:var(--ink-faint)' font-size='12'>而后来的人只记得最后那一格</text></svg>"
+    },
+    { "type": "h2", "text": "「教育要是没用,它又是什么?」" },
+    {
+      "type": "p",
+      "text": "全书火气最大的一句就在这里。他冲着那些鄙视实用的人反问了一句:"
+    },
+    {
+      "type": "quote",
+      "original": "腐儒嘲笑有用的教育。可教育若是无用,它又是什么?",
+      "translation": "《教育的目的》一文——他接着说:教育当然应该有用,不管你的人生目标是什么。"
+    },
+    {
+      "type": "p",
+      "text": "他随后补的那句话才是关键:教育当然应该有用,**不管你的人生目标是什么**——它对一位古代的教父有用,对一位近代的统帅也有用;它有用,是因为**理解本身就有用**。"
+    },
+    {
+      "type": "p",
+      "text": "这句话把「有用」两个字重新定义了一遍。**日常语义里,有用 = 能变现**:能找到工作、能涨薪、能考上。而他说的有用是:**理解能够起作用**——你看懂了一件事,于是你在这件事上的判断和行动都不一样了。按这个定义,一首诗可以是极其有用的,因为它改变了你看某类处境的方式;而一门被死记下来的职业技能可以是完全无用的,因为它从没被理解、换个情形就失灵。"
+    },
+    {
+      "type": "p",
+      "text": "**于是那条界线彻底垮了**:分类的正确轴线不是「谋生的/不谋生的」,而是「被理解并能起作用的/没被理解只是堆着的」。这条新轴线横切过所有科目——古典和工程各自都有活的一半和死的一半。而这,正好又回到了全书第一句:呆滞与否,才是唯一要紧的分界。"
+    },
+    { "type": "h2", "text": "三种课程,各含其余两种" },
+    {
+      "type": "p",
+      "text": "拆完之后总得给个正面的安排。他的方案是:国民教育需要**文学的、科学的、技术的**三种课程,但要求每一种都**包含另外两种**。"
+    },
+    {
+      "type": "quote",
+      "original": "三种主要课程各有其用:文学的、科学的、技术的;而每一种都应当包含另外两种。",
+      "translation": "《技术教育及其与科学和文学的关系》一文——注意重点在「各含其余两种」,不在三分本身。"
+    },
+    {
+      "type": "p",
+      "text": "重点全在后半句。三分本身没什么新意——任何一张课表都能这么分;新的是那个「互含」的要求:**学工程的要读文学、要懂它背后的科学;学文学的要接触真实的制作过程与科学方法**。理由不是为了博雅好听,而是因为一样东西如果只在自己那一格里被学,它就没有机会进入组合,而不能进入组合的知识必然呆滞。"
+    },
+    {
+      "type": "p",
+      "text": "他还提到发明这件事:一个人有了模糊的构想,**第一步是把它落成一个确定的方案**——而这一步同时需要眼界(知道要做成什么、为什么值得做)和技术(知道用什么、怎么做得出来)。缺前者做的是没意义的精巧,缺后者是永远停在嘴上的好点子。**发明这件事本身,就是对那条界线最直接的反驳。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "把一个模糊的想法变成一个确定的方案,这一步同时需要两样东西——这正是那条界线两边各自缺的那一半。",
+      "svg": "<svg viewBox='0 0 660 290' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto;font-family:var(--font-serif)'><text x='330' y='28' text-anchor='middle' style='fill:var(--ink)' font-size='17' font-weight='bold'>从模糊的想法到确定的方案</text><rect x='26' y='118' width='140' height='58' rx='9' style='fill:var(--paper-raised);stroke:var(--line)'/><text x='96' y='143' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12'>一个模糊的</text><text x='96' y='163' text-anchor='middle' style='fill:var(--ink-soft)' font-size='12'>构想</text><rect x='262' y='118' width='140' height='58' rx='9' style='fill:var(--cinnabar-bg);stroke:var(--cinnabar)'/><text x='332' y='143' text-anchor='middle' style='fill:var(--cinnabar)' font-size='12' font-weight='bold'>一个确定的</text><text x='332' y='163' text-anchor='middle' style='fill:var(--cinnabar)' font-size='12' font-weight='bold'>方案</text><rect x='498' y='118' width='140' height='58' rx='9' style='fill:var(--paper-raised);stroke:var(--line)'/><text x='568' y='153' text-anchor='middle' style='fill:var(--ink)' font-size='12'>做得出来的东西</text><path d='M166 147 L256 147 M402 147 L492 147' style='fill:none;stroke:var(--ink-faint)' stroke-width='1.5'/><path d='M256 147 l-9 -4 l0 8 z M492 147 l-9 -4 l0 8 z' style='fill:var(--ink-faint)'/><path d='M332 118 L332 76' style='fill:none;stroke:var(--azure)' stroke-width='1.5'/><path d='M332 176 L332 218' style='fill:none;stroke:var(--gold)' stroke-width='1.5'/><text x='332' y='66' text-anchor='middle' style='fill:var(--azure)' font-size='13' font-weight='bold'>眼界:做成什么,为什么值得</text><text x='332' y='238' text-anchor='middle' style='fill:var(--gold)' font-size='13' font-weight='bold'>技术:用什么,怎么做得出来</text><text x='332' y='276' text-anchor='middle' style='fill:var(--ink-faint)' font-size='12'>缺上面 = 精巧但无意义 · 缺下面 = 永远停在嘴上</text></svg>"
+    },
+    { "type": "h2", "text": "另一条一模一样的界线" },
+    {
+      "type": "p",
+      "text": "怀特海把这条界线的来历追到了古希腊罗马。有意思的是,**在一个与他毫无往来的传统里,同一条界线也长了出来**,而且长得极像。"
+    },
+    {
+      "type": "p",
+      "text": "《孟子》里有一句流传两千年的话:**「劳心者治人,劳力者治于人。」** 它出自孟子与农家学派的一场辩论——对方主张贤者应当与百姓一同耕作,孟子以社会分工来回应。就分工本身而言,这个论证有它的道理;但这句话在后世被反复引用时,分工的意思渐渐淡了,**留下来的是那条高下的排序**:动脑的在上,动手的在下。这与怀特海追踪的那条路径,几乎是同一种漂移。"
+    },
+    {
+      "type": "p",
+      "text": "《论语》里那句**「君子不器」**同样被卷进过这条线。一种流行的读法是:君子不该沦为某种专门的器具,也就是不该只有一技之长——这个读法很容易滑向对技艺的轻视。而另一种读法认为它说的是君子不该被限定为单一用途,重点在「不被限定」而非「不做具体的事」。**两种读法之间的距离,恰恰就是怀特海要拆的那条界线的距离。**"
+    },
+    {
+      "type": "p",
+      "text": "把这些放在一起,不是要说两边讲的是同一件事——**它们的问题意识、社会背景、论证方式都不同**,拉平就成了偷懒。值得记住的只是那个更朴素的观察:**在两个彼此不通消息的传统里,人们都从「谁在干活」滑向了「哪种学问更高贵」。** 这说明怀特海追的不是英国的一桩地方性偏见,而是一种在有闲阶级存在的地方就容易出现的漂移。看清了漂移的机制,人对它的免疫力才会真的提高一点。"
+    },
+    { "type": "h2", "text": "但他并不是实用主义者" },
+    {
+      "type": "p",
+      "text": "这一章最容易被读歪的地方在这儿:很容易把他读成一个「学以致用、经典无用」的实用派。**恰恰相反。** 同一本书里还收着一篇专门为古典教育辩护的文章,他在那里给出的理由既不是传统也不是体面,而是一个实打实的功能。"
+    },
+    {
+      "type": "quote",
+      "original": "研究古典的理由,是直接观照我们自身文明由之而来的那个文明。",
+      "translation": "《古典在教育中的地位》一文——他为古典辩护的理由是功能性的,不是「传统所以该学」。"
+    },
+    {
+      "type": "p",
+      "text": "他的意思是:通过一门语言直接进入一个完整的文明,是别的方式替代不了的——你读的不只是几篇文章,是**一整套思考方式的源头**。但他同时相当清醒地承认了一件事:**这件事只能是少数人的事**;要求所有人都去啃希腊文拉丁文,既不现实也不必要。"
+    },
+    {
+      "type": "p",
+      "text": "把两篇合起来看,他的立场就清楚了:**不是「实用优先」,而是「两边互含」。** 他既不肯让技术教育做二等公民,也不肯让古典教育被一句「没用」扫掉;他要拆的自始至终是那条**高下的排序**,不是任何一边的内容。这一点在今天尤其值得记住——引用他来打击任何一边,都是拿他的话去做他明确反对的事。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "留意所指",
+      "items": [
+        "这一篇针对的是 1910—20 年代英国教育里那套「绅士学古典、平民学手艺」的等级安排,批评有非常具体的对象。本文只讲他的论证结构,**不对今天任何国家的职业教育、普通教育或升学分流作评议**——那些都需要当地的证据和当地的讨论。",
+        "还要注意他所处的位置:他是在一个分流严重、阶层分明的系统内部说话的改革者,而不是站在系统之外。他抱怨的是这条界线不该按体面来划,但他并没有质疑「一部分人走这条路、一部分人走那条路」这个安排本身。**这是他的时代限度,读的时候记上一笔比替他圆场诚实。**"
+      ]
+    },
+    { "type": "h2", "text": "带走什么" },
+    {
+      "type": "p",
+      "text": "这一章最实用的,是它给了「学这个有什么用」一个不必闪躲的答案。**不用急着证明它能变现,也不必摆出「真学问不问用处」的姿态**——只需要换一根轴:这样东西在我这里,是被理解了并且能起作用,还是只是堆着?"
+    },
+    {
+      "type": "p",
+      "text": "顺带还有一条很具体的建议:**去做点手上的事。** 按全书的逻辑,动手是「使用与检验」最直接的形式——你没法对着一台不转的机器、一份跑不通的代码、一道咸了的菜假装自己懂了。这也是为什么在他看来,一个从不动手的人容易变得迟钝:他失去了那个每天都会告诉他「你其实还没懂」的东西。"
+    },
+    {
+      "type": "pull",
+      "text": "分界线不该划在「谋生的」和「不谋生的」之间,而该划在「被理解并能起作用的」和「只是堆着的」之间。"
+    },
+    {
+      "type": "p",
+      "text": "接下来两章,他把同一套逻辑抬到最高的那一级去用:大学。如果知识本身在书里都有,那么把一群人聚在一个昂贵的地方待上几年,到底是为了什么?"
+    }
+  ]
+}
