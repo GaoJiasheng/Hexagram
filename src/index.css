@@ -153,7 +153,11 @@ a:hover { text-decoration: underline; text-decoration-style: dotted; }
 
 :focus-visible { outline: 2px solid var(--ochre); outline-offset: 2px; }
 
-button { cursor: pointer; font-family: var(--font-serif); }
+/* color: inherit 是必须的,不是可有可无的整洁。没有它,<button> 取浏览器 UA 默认字色 ——
+   桌面上那是墨黑、跟正文一个样,看不出差别;**iOS WKWebView 里却是系统蓝**。
+   实机截图逮到两处:卦详情的折叠箭头 ▲▼、推演工作台上下卦那 16 个八卦符号 ☰☱☲☳☴☵☶☷,
+   全渲染成扎眼的蓝,与站内纸墨朱的配色完全不搭。凡是自己设了 color 的按钮不受影响。 */
+button { cursor: pointer; font-family: var(--font-serif); color: inherit; }
 
 /* ── App Shell ─────────────────────────────────────────────── */
 
