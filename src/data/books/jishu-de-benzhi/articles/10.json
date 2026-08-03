@@ -1,0 +1,151 @@
+{
+  "title": "它是理论还是框架:这本书的性质与欠账",
+  "subtitle": "这套说法读起来太顺了,正因为如此才更该停下来验成色——它能预测什么?它漏了什么?有多少是前人已经说过的?",
+  "centralIdea": "这一章是给这本书算账。它的论证是观察归纳式的,不是可证伪的理论——阿瑟自己在书里就承认,他提供的更接近一套「看待技术的框架」;这句话不是谦辞,是对本书性质的准确描述。具体有三笔账:第一,它几乎给不出预测,说不出下一个重要组合是什么,而任何新技术事后都能被拆成组合——这种事后总能套上的性质既是说服力也是软肋;第二,没有模型也没有数据,全书靠案例与推理推进;第三,社会那一半基本缺席——谁出钱、谁受损、谁说了算、战争与国家扮演什么角色,几乎不出场,而这一派叙事还重发明轻使用,世界上大多数地方技术的真实故事其实是旧东西被修修补补地一直用着。此外「新即组合」并非阿瑟首创,熊彼特、厄舍、吉尔菲兰、巴萨拉都讲过。那它值什么?值一套语言:域、组合、递归、现象、结构深化、机会缺口——把它当镜头用,别当公式用。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "读完前面九章,大概率会有一种很爽的感觉:一堆原本各说各话的现象忽然被同一条线串起来了,而且每一处都对得上自己的经验。**但正是这种「怎么看都对」的顺畅,应该让人警觉。**一个能解释一切的说法,通常什么也没预测。所以这一章要做一件不太讨喜但必要的事——给这本书算账:它到底是一套理论,还是一副看世界的眼镜?它能预测什么?它漏了什么?有多少是别人早就说过的?"
+    },
+
+    { "type": "h2", "text": "一、作者自己先承认了" },
+    {
+      "type": "p",
+      "text": "先说一件让人尊敬的事:**这笔账阿瑟自己开了个头。**他在书里就说明,自己提供的更接近一套「看待技术的方式」,而不是一套可以拿去算的理论。这句话不是客套的谦辞,是对本书性质的准确描述,读者应当照单接受,而不是把它当成作者的自谦然后自己替他加冕。"
+    },
+    {
+      "type": "p",
+      "text": "这里要先把两个词分清楚,后面全靠它们。**理论**在严格意义上要满足几个条件:概念可操作(能指着现实说这是不是它)、能推出未被观察到的结果、而且这些结果**可能是错的**——这就是可证伪。**框架**(或者叫视角、镜头)则是另一种东西:它提供一套划分世界的方式,让你注意到原本注意不到的东西,但它不预言具体的事,因而也无从被证伪。**两者都有价值,只是价值的种类不同,而且不能互相冒充。**"
+    },
+    {
+      "type": "table",
+      "caption": "两种东西,两种用法",
+      "head": ["", "理论", "框架"],
+      "rows": [
+        ["主要功能", "预测与检验", "重新划分、重新注意"],
+        ["怎么算成功", "预言应验,或被证伪后修正", "让你看见了原来看不见的东西"],
+        ["怎么算失败", "预言落空且不能修补", "解释一切,因而什么也没说"],
+        ["《技术的本质》", "不是", "是,而且是很好的一副"]
+      ]
+    },
+
+    { "type": "h2", "text": "二、第一笔账:它几乎给不出预测" },
+    {
+      "type": "p",
+      "text": "把这套框架完整学会之后,你能预测什么?**几乎什么也不能。**它说不出下一个重要的组合会是什么,说不出哪个域会在哪一年成熟,说不出某项技术会不会成功。它甚至说不出为什么是这几样部件凑到了一起而不是另外几样——组合的可能性有无穷多,而框架不提供任何挑选的规则。"
+    },
+    {
+      "type": "p",
+      "text": "更要命的是反过来看:**任何一件已经出现的新技术,回头都能被拆成「若干旧技术的组合 + 某个被捕获的现象」。**这就是它读起来处处应验的原因,也正是它作为理论最大的软肋——**一个怎么样都能被验证的说法,其实等于没有被验证。**这一点是全书最该被读者记在心里的保留,而它恰恰最容易在阅读的快感里被冲掉。"
+    },
+    {
+      "type": "figure",
+      "ftype": "辨析图",
+      "caption": "解释力和预测力不是一回事。这本书在左边那一栏很强,在右边那一栏几乎为零——这不是缺陷,是它的性质;把它当成右边那种东西用,才是真正的错误。",
+      "svg": "<svg viewBox='0 0 560 226' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>解释力 ≠ 预测力</text><g transform='translate(28,42)'><rect x='0' y='0' width='236' height='150' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='118' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>它能做的:事后看清</text><text x='118' y='58' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>这件东西由哪些旧件组成</text><text x='118' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>它踩在哪个现象上</text><text x='118' y='102' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>它属于哪个域,走到哪一段</text><text x='118' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>让你看见结构 —— 很有用</text></g><g transform='translate(296,42)'><rect x='0' y='0' width='236' height='150' rx='4' style='fill:none;stroke:var(--line);stroke-width:1;stroke-dasharray:4 3'/><text x='118' y='28' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink-soft)'>它不能做的:事前预言</text><text x='118' y='58' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>下一个重要组合是什么</text><text x='118' y='80' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>哪个域会在何时成熟</text><text x='118' y='102' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>这项技术会不会成功</text><text x='118' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>一条也给不出</text></g><text x='280' y='218' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>「怎么样都能套上」既是它的说服力,也是它的软肋</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "要给这本书说句公道话:**它并没有假装自己能预测。**真正的问题出在读者和转述者身上——这套语言太顺口了,于是很容易被拿去为任何一个结论背书:「所以我们要多组合」「所以这一定是新域的开始」「所以旧巨头一定会被颠覆」。**这些句子里的「所以」全是假的**,框架给不出任何一个「所以」。"
+    },
+
+    {
+      "type": "p",
+      "text": "公平起见,也得说清「不能预测」并不等于「没有可检验的内容」。这套框架里其实藏着几条**可以被现实反驳的推论**,只是阿瑟自己没把它们提炼出来做检验。比如:如果组合论成立,那么**元件库存越密集的地方,新技术出现的速率应该越高**;如果结构深化成立,那么**成熟技术的零件数与改造成本应该同向上升,而且后者涨得更快**;如果机会缺口成立,那么**新需求的出现应当滞后于新技术,而不是相反**。这几条都是能拿数据去查的。**书里一条也没查——这才是「没有模型也没有数据」这句批评的确切含义。**"
+    },
+    { "type": "h2", "text": "三、第二笔账:没有模型,也没有数据" },
+    {
+      "type": "p",
+      "text": "全书靠案例与推理推进,不含任何可检验的定量结构。这在一位以数理见长的经济学家笔下是刻意的选择——阿瑟年轻时做的是相当硬核的数学工作,他显然知道自己在放弃什么。"
+    },
+    {
+      "type": "p",
+      "text": "选择本身可以理解:技术演化这种事,数据极难获得、边界极难划定,硬套模型很可能得到一堆精确的废话。但代价要认:**没有数据,案例就是被挑出来的。**书里的例子(喷气发动机、雷达、激光、电力改造工厂)全都非常契合他的论点——**而契合论点的例子,任何一套说法都能凑出一堆来。**那些不契合的呢?那些没有被组合出来、明明部件齐全却几十年没人做的东西呢?那些被政治或战争强行推上去、并不符合内在逻辑的技术路线呢?书里基本不谈。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "一个公平的对照",
+      "items": [
+        "拿书房里的《复杂》做个对照会更清楚。米歇尔那本在末章亲手拆掉了自己领域里最上口的一句口号,还专门用一章说明「复杂性至今量不出来」。**阿瑟这本的自我审视没有那么彻底**——他承认了性质,但没有系统地检验自己的说法在哪些情形下不成立。这不是说这本书不好,而是说读的时候要自己补上那一步:**每读到一个漂亮的论断,试着想一个反例。**这个动作做上几次,你对这套框架的信任程度会落到一个更合适的位置。"
+      ]
+    },
+
+    { "type": "h2", "text": "四、第三笔账:社会那一半几乎缺席" },
+    {
+      "type": "p",
+      "text": "这是最大的一笔。在这套叙事里,技术几乎是自己在长:组合、深化、换域、自催化。可现实中,**技术走哪条路,常常是被人和权力选出来的。**"
+    },
+    {
+      "type": "p",
+      "text": "谁出钱决定了什么被研究——大量关键技术的早期资金来自军方和政府,而它们的目标不是「最优的组合」。谁受损决定了什么被抵制——一项技术的推广往往要经过劳资、行业、地方利益的反复博弈。谁定标准决定了格局——很多技术的胜出靠的是联盟、专利池、监管认定,而不是它更好。**这些在本书里几乎不出场。**"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "还有一条",
+      "items": [
+        "这一派叙事还有一个共同的偏向:**重发明、轻使用。**有历史学者尖锐地指出:世界上绝大多数时候、绝大多数地方,技术的真实故事不是「谁发明了什么」,而是**旧东西被修修补补地一直用着**——铁皮屋顶、二手摩托、缝纫机、柴油发电机、用了三十年还在修的机床。这些不产生新组合,也进不了技术史的主线,却承载着大部分人的日常。**阿瑟讲的是技术库存的前沿,不是它的日常。**两者都真,但只读一边会误判世界的样子——你会以为世界在飞速前进,而它的大部分其实在缓慢地维持。"
+      ]
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "本书画的是右上那一块,而且画得很好。问题在于另外三块也在决定技术的走向,而它们在这本书里几乎不出场。",
+      "svg": "<svg viewBox='0 0 560 244' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>四块拼图,这本书画了一块</text><g transform='translate(60,42)'><rect x='0' y='0' width='210' height='84' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='105' y='34' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>技术的内在逻辑</text><text x='105' y='58' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>组合 · 递归 · 现象 · 域 · 深化</text><text x='105' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--cinnabar-pure)'>← 本书在这里</text><rect x='230' y='0' width='210' height='84' rx='4' style='fill:none;stroke:var(--line);stroke-width:1;stroke-dasharray:4 3'/><text x='335' y='34' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink-soft)'>权力与资本</text><text x='335' y='58' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>谁出钱 · 谁定标准 · 谁受损</text><rect x='0' y='96' width='210' height='84' rx='4' style='fill:none;stroke:var(--line);stroke-width:1;stroke-dasharray:4 3'/><text x='105' y='130' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink-soft)'>使用与维护</text><text x='105' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>旧东西被修修补补地用着</text><rect x='230' y='96' width='210' height='84' rx='4' style='fill:none;stroke:var(--line);stroke-width:1;stroke-dasharray:4 3'/><text x='335' y='130' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink-soft)'>文化与制度</text><text x='335' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>什么被接受 · 什么被禁止</text></g><text x='280' y='236' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>只读一块,会以为技术在自己走路</text></svg>"
+    },
+    {
+      "type": "pull",
+      "text": "一个能解释一切的说法,通常什么也没预测——这本书的力量和它的边界,是同一件事。"
+    },
+
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "caption": "同一件事可以被两套语言讲。左边是这本书的讲法,右边是另一派的讲法。两边都能自圆其说,而真相通常需要两边都在场。",
+      "svg": "<svg viewBox='0 0 560 210' xmlns='http://www.w3.org/2000/svg'><text x='280' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>为什么这项技术赢了?</text><g transform='translate(24,42)'><rect x='0' y='0' width='240' height='134' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='120' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>内在逻辑的讲法</text><text x='120' y='54' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>它的组合更有效率</text><text x='120' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>它踩在更好的现象上</text><text x='120' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>它所在的域更年轻</text><text x='120' y='122' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>技术自己走出来的结果</text></g><g transform='translate(296,42)'><rect x='0' y='0' width='240' height='134' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='120' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink-soft)'>社会过程的讲法</text><text x='120' y='54' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>它拿到了早期的钱</text><text x='120' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>它被写进了标准</text><text x='120' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>反对它的人输了博弈</text><text x='120' y='122' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>人选出来的结果</text></g></svg>"
+    },
+    { "type": "h2", "text": "五、第四笔账:有多少是前人说过的" },
+    {
+      "type": "p",
+      "text": "「新即组合」这个想法不是阿瑟首创,这一点读的时候要清楚,否则很容易把一个世纪的思想史算到一本书头上。"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**熊彼特(1912)** 把创新定义为「生产要素的新组合」,这是经济学里这条线的源头。",
+        "**厄舍** 提出发明是「累积综合」——不是一次跳跃,是若干既有元素在一个新的洞察下被合起来。",
+        "**吉尔菲兰** 系统论证过发明的渐进性与社会性,反对天才叙事。",
+        "**巴萨拉(1988)** 的《技术的演化》几乎就是在论证「每一件新器物都有它的祖先」,连续性是那本书的主旋律。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "阿瑟自己提到过这些前人,不存在掠美的问题。他真正的推进在三处:**把组合做成严格的递归层级**(而不只是「新东西由旧东西拼成」这句口号);**把现象放到地基上**,给这个体系一个明确的外部入口;以及**把「域」抬成变革的基本单位**——这一条恐怕是全书最原创、也最有实用价值的贡献。清楚这个分寸,你既不会低估这本书,也不会把它读成横空出世。"
+    },
+
+    { "type": "h2", "text": "六、那它到底值什么" },
+    {
+      "type": "p",
+      "text": "算完账,该说值什么了。**它值一套语言。**域、组合、递归、现象、结构深化、机会缺口——这六个词装进脑子以后,你看很多事的分辨率会不一样。"
+    },
+    {
+      "type": "p",
+      "text": "你会开始问「这次是加了个功能,还是换了个域」;会怀疑那些「性能正处于历史最好」的老系统;会明白为什么公司里最难改的往往是当年最成功的那套东西;会在听到「需求驱动」时反问一句「这个需求是谁造出来的」;会在看到一件「全新」的东西时先拆一遍,分清新的是接法、是用途,还是真的捕获了新现象。**这些都不是预测,是看得更清楚。而在绝大多数场合,看得清楚比猜得准更有用,因为猜本来就猜不准。**"
+    },
+    {
+      "type": "p",
+      "text": "**一句话:把它当镜头用,别当公式用。**镜头的价值在于让你注意到原本注意不到的结构;公式的价值在于给出答案。这本书能给前者,给不了后者。认清这一点之后再读,你会读得更从容——既能享受那套框架的漂亮,也不会在它给不出答案的地方感到被辜负。"
+    },
+
+    {
+      "type": "p",
+      "text": "还有一个判断这类书的通用办法,可以顺手记下:**看作者有没有说出「在什么情况下我这套说法不成立」。**说得出来的,通常是理论或者接近理论的东西;说不出来的,基本就是框架。这不是贬低——人文社科和思想类著作里,好框架比坏理论有价值得多。**真正有害的是把框架当理论用**:它会让你在一种「什么都解释得通」的舒适里,慢慢丧失被现实纠正的机会。"
+    },
+    { "type": "h2", "text": "七、这一章接到哪儿去" },
+    {
+      "type": "p",
+      "text": "账算完了,最后剩下最实际的部分:**这本书具体该怎么读**——先抓什么、哪些可以跳、哪些要慢下来;以及**它和书房里的其他书怎么对读**。有几本正好接在它的前后左右:《枪炮、病菌与钢铁》讲技术如何塑造历史,它讲技术自己怎么被塑造;《复杂》是它的语言背景;《从0到1》和它正面对撞;《自私的基因》《物种起源》是理解「为什么不是达尔文式」的对照组。这是最后一章的内容。"
+    }
+  ]
+}

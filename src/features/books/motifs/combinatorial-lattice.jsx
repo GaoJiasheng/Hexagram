@@ -8,14 +8,15 @@ const CINNABAR = '#c3272b'
 
 export default function CombinatorialLattice() {
   // 画布 300×420。自下而上五层,层层加宽。
+  // 整体偏左布置,右侧 x≳220 留给 BookCover 的竖排书名。
   const rows = [
-    { n: 3, y: 336, span: 84 },
-    { n: 4, y: 292, span: 122 },
-    { n: 5, y: 248, span: 158 },
-    { n: 6, y: 204, span: 194 },
-    { n: 7, y: 160, span: 228 },
+    { n: 3, y: 336, span: 62 },
+    { n: 4, y: 292, span: 90 },
+    { n: 5, y: 248, span: 116 },
+    { n: 6, y: 204, span: 142 },
+    { n: 7, y: 160, span: 166 },
   ]
-  const cx = 150
+  const cx = 124
   const pos = rows.map(({ n, y, span }) => {
     const step = n > 1 ? span / (n - 1) : 0
     return Array.from({ length: n }, (_, i) => ({ x: cx - span / 2 + i * step, y }))
@@ -63,11 +64,11 @@ export default function CombinatorialLattice() {
       )}
 
       {/* 地平线:朱点之下就是自然,技术止步于此 */}
-      <path d="M62 356 L238 356" stroke="rgba(0,0,0,0.26)" strokeWidth="1.2" fill="none" />
+      <path d="M40 356 L208 356" stroke="rgba(0,0,0,0.26)" strokeWidth="1.2" fill="none" />
 
       {/* 顶上仍在长,画布只是截断了它 */}
-      <path d="M60 138 L96 138" stroke="rgba(255,255,255,0.12)" strokeWidth="0.9" fill="none" />
-      <path d="M204 138 L240 138" stroke="rgba(255,255,255,0.12)" strokeWidth="0.9" fill="none" />
+      <path d="M40 138 L70 138" stroke="rgba(255,255,255,0.12)" strokeWidth="0.9" fill="none" />
+      <path d="M178 138 L208 138" stroke="rgba(255,255,255,0.12)" strokeWidth="0.9" fill="none" />
     </g>
   )
 }
