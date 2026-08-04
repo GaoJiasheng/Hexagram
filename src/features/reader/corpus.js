@@ -1,7 +1,9 @@
 // 通用 corpus 装载层(v16 §1)——佛(fo)/儒(ru)等读经类站共用一套装载。
 // 按 corpusKey 动态取 texts.json / classics / 锚定注疏 / 延伸;道藏(dao)保留自己的
 // data.js + daoAnchored.js(含「桥」hex 字段),不并入此处。
-// glob 限定 {fo,ru} 两组,道藏数据不被牵入本 chunk;某 corpus 尚无文件时安全返回空。
+// glob 逐组显式列举(不是自动发现),道藏数据不被牵入本 chunk;某 corpus 尚无文件时安全返回空。
+// ⚠️ 新增一组要改**两处**:下面的 TEXTS 静态映射 + 三条 glob。只改 glob 会让 getMeta 返回 null,
+//    表现为阅读页空白、路由回落书架(踩过)。
 import foTexts from '../../data/fo/texts.json'
 import ruTexts from '../../data/ru/texts.json'
 import xinTexts from '../../data/xin/texts.json'
@@ -11,12 +13,15 @@ import bingTexts from '../../data/bing/texts.json'
 import zongTexts from '../../data/zong/texts.json'
 import zhongyiTexts from '../../data/zhongyi/texts.json'
 import moulueTexts from '../../data/moulue/texts.json'
+import tangshiTexts from '../../data/tangshi/texts.json'
+import songciTexts from '../../data/songci/texts.json'
+import yuanquTexts from '../../data/yuanqu/texts.json'
 
-const TEXTS = { fo: foTexts, ru: ruTexts, xin: xinTexts, fa: faTexts, mo: moTexts, bing: bingTexts, zong: zongTexts, zhongyi: zhongyiTexts, moulue: moulueTexts }
+const TEXTS = { fo: foTexts, ru: ruTexts, xin: xinTexts, fa: faTexts, mo: moTexts, bing: bingTexts, zong: zongTexts, zhongyi: zhongyiTexts, moulue: moulueTexts, tangshi: tangshiTexts, songci: songciTexts, yuanqu: yuanquTexts }
 
-const classicsLoaders = import.meta.glob('../../data/{fo,ru,xin,fa,mo,bing,zong,zhongyi,moulue}/classics/*.json')
-const anchoredMods = import.meta.glob('../../data/{fo,ru,xin,fa,mo,bing,zong,zhongyi,moulue}/zhushi-anchored/*.json', { eager: true })
-const yanyiMods = import.meta.glob('../../data/{fo,ru,xin,fa,mo,bing,zong,zhongyi,moulue}/yanyi.json', { eager: true })
+const classicsLoaders = import.meta.glob('../../data/{fo,ru,xin,fa,mo,bing,zong,zhongyi,moulue,tangshi,songci,yuanqu}/classics/*.json')
+const anchoredMods = import.meta.glob('../../data/{fo,ru,xin,fa,mo,bing,zong,zhongyi,moulue,tangshi,songci,yuanqu}/zhushi-anchored/*.json', { eager: true })
+const yanyiMods = import.meta.glob('../../data/{fo,ru,xin,fa,mo,bing,zong,zhongyi,moulue,tangshi,songci,yuanqu}/yanyi.json', { eager: true })
 
 const cache = {}
 

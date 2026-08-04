@@ -10,7 +10,7 @@ import daoTexts from '../../data/dao/texts.json'
 // 数据源:corpus 站走 corpusTexts(texts.json);道藏走 dao/texts.json;
 // 易经为非书目站(64 卦+工具),以单条「易经」总目登记,链向经传阅读 /classics。
 
-const CORPUS_KEYS = ['fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue']
+const CORPUS_KEYS = ['fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'tangshi', 'songci', 'yuanqu']
 
 // 高频且无歧义的别名(供自动书名链与查名);texts.json 的 alias 字段含「 · 」分隔符、
 // 多为副题不宜整体匹配,故这里只手挑干净别名。键 = `${corpus}:${slug}`。

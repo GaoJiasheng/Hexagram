@@ -50,6 +50,9 @@ const BingHomePage = lazy(() => import('./features/bing/pages/BingHomePage.jsx')
 const ZongHomePage = lazy(() => import('./features/zong/pages/ZongHomePage.jsx'))
 const ZhongyiHomePage = lazy(() => import('./features/zhongyi/pages/ZhongyiHomePage.jsx'))
 const MoulueHomePage = lazy(() => import('./features/moulue/pages/MoulueHomePage.jsx'))
+const TangshiHomePage = lazy(() => import('./features/tangshi/pages/TangshiHomePage.jsx'))
+const SongciHomePage = lazy(() => import('./features/songci/pages/SongciHomePage.jsx'))
+const YuanquHomePage = lazy(() => import('./features/yuanqu/pages/YuanquHomePage.jsx'))
 const CorpusTextPage = lazy(() => import('./features/reader/CorpusTextPage.jsx'))
 const CorpusReadPage = lazy(() => import('./features/reader/CorpusReadPage.jsx'))
 const BaihuaPage = lazy(() => import('./features/reader/BaihuaPage.jsx'))
@@ -412,12 +415,27 @@ function AppContent() {
           <Route path="/moulue/school" element={<SchoolPage corpus="moulue" />} />
           <Route path="/moulue/:slug/daodu" element={<DaoduPage corpus="moulue" />} />
           <Route path="/moulue/:slug/:chapter" element={<CorpusReadPage corpus="moulue" />} />
+          <Route path="/tangshi" element={<TangshiHomePage />} />
+          <Route path="/tangshi/:slug" element={<CorpusTextPage corpus="tangshi" />} />
+          <Route path="/tangshi/school" element={<SchoolPage corpus="tangshi" />} />
+          <Route path="/tangshi/:slug/daodu" element={<DaoduPage corpus="tangshi" />} />
+          <Route path="/tangshi/:slug/:chapter" element={<CorpusReadPage corpus="tangshi" />} />
+          <Route path="/songci" element={<SongciHomePage />} />
+          <Route path="/songci/:slug" element={<CorpusTextPage corpus="songci" />} />
+          <Route path="/songci/school" element={<SchoolPage corpus="songci" />} />
+          <Route path="/songci/:slug/daodu" element={<DaoduPage corpus="songci" />} />
+          <Route path="/songci/:slug/:chapter" element={<CorpusReadPage corpus="songci" />} />
+          <Route path="/yuanqu" element={<YuanquHomePage />} />
+          <Route path="/yuanqu/:slug" element={<CorpusTextPage corpus="yuanqu" />} />
+          <Route path="/yuanqu/school" element={<SchoolPage corpus="yuanqu" />} />
+          <Route path="/yuanqu/:slug/daodu" element={<DaoduPage corpus="yuanqu" />} />
+          <Route path="/yuanqu/:slug/:chapter" element={<CorpusReadPage corpus="yuanqu" />} />
           {/* 读经站「我的」(Tier 2):续读 + 收藏 + 批注;静态段优先于 /:slug,顺序无关 */}
-          {['fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'dao'].map((c) => (
+          {['fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'dao', 'tangshi', 'songci', 'yuanqu'].map((c) => (
             <Route key={c} path={`/${c}/me`} element={<CorpusMePage corpus={c} />} />
           ))}
           {/* 白话「整页研读」(design-v22 A2):/<corpus>/:slug/baihua/:chapter,4 段路由不与逐章 :chapter(3 段)冲突 */}
-          {['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue'].map((c) => (
+          {['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'tangshi', 'songci', 'yuanqu'].map((c) => (
             <Route key={`${c}-baihua`} path={`/${c}/:slug/baihua/:chapter`} element={<BaihuaPage corpus={c} />} />
           ))}
           {/* 诸学总门户(v15):左上角 logo 全站可达的公开总入口,列全部分组 */}

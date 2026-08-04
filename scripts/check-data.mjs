@@ -897,7 +897,7 @@ if (fs.existsSync(glossaryPath)) {
 
 // ---------- 8c. 白话模块(design-v22)校验 ----------
 {
-  const corpora = ['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'yijing']
+  const corpora = ['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'yijing', 'tangshi', 'songci', 'yuanqu']
   const chCache = {}
   // 一卦全经传原文(卦辞+彖+大象+爻辞+小象+用九六+文言+序卦杂卦)——易经引文子串校验池
   const hexAllOriginal = (q) => {

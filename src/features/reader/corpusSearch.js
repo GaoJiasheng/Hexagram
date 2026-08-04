@@ -98,7 +98,7 @@ export function searchCorpus(corpus, query) {
 // ── 全站聚合检索(#140/B1)──────────────────────────────────────────────
 // 9 个 corpus 站(都在 corpus chunk 内)+ 道藏(动态 import,保 dao 数据层不被静态拉进 corpus chunk)。
 // 易经走自己的 SearchPalette(卦/爻为主、结果形态不同),暂不并入本聚合。
-const ALL_CORPORA = ['fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue']
+const ALL_CORPORA = ['fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'tangshi', 'songci', 'yuanqu']
 const PER_SITE_CAP = 5
 // 组栏标签:取 portalTitle 去「研读/研习」后缀,更紧凑(释典/儒典/法家…);道藏单列。
 function siteLabel(corpus) {

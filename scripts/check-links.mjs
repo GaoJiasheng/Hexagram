@@ -13,7 +13,7 @@ const err = (msg) => errors.push(msg)
 const { SITES } = await import(pathToFileURL(path.join(ROOT, 'src/sites/registry.js')).href)
 
 const SITE_KEYS = new Set(SITES.map((s) => s.key))
-const CORPUS_KEYS = new Set(['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue'])
+const CORPUS_KEYS = new Set(['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'tangshi', 'songci', 'yuanqu'])
 const STATIC_ROUTES = new Set([
   '/',
   '/hexagram',
