@@ -14,6 +14,9 @@ const { SITES } = await import(pathToFileURL(path.join(ROOT, 'src/sites/registry
 
 const SITE_KEYS = new Set(SITES.map((s) => s.key))
 const CORPUS_KEYS = new Set(['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'tangshi', 'songci', 'yuanqu'])
+// 下面几条路由正则里的 corpus 分支一律由 CORPUS_KEYS 派生 —— 别再手写第二份清单。
+// (加诗词曲三组时踩过:这个 Set 加了、正则里那三份写死的清单忘了加,整组章链全被判坏链。)
+const CORPUS_ALT = [...CORPUS_KEYS].join('|')
 const STATIC_ROUTES = new Set([
   '/',
   '/hexagram',
@@ -107,17 +110,17 @@ function verifyPath(rawHref) {
   m = href.match(/^\/(dao|fo|ru|xin|fa|mo|bing|zong|zhongyi|moulue)\/([^/]+)\/daodu$/)
   if (m) return !!manifest.daodu?.[m[1]]?.[m[2]]
 
-  m = href.match(/^\/(dao|fo|ru|xin|fa|mo|bing|zong|zhongyi|moulue)\/([^/]+)$/)
+  m = href.match(new RegExp(`^/(${CORPUS_ALT})/([^/]+)$`))
   if (m) return !!textMeta[m[1]]?.find((t) => t.slug === m[2] && t.status !== 'pending')
 
-  m = href.match(/^\/(dao|fo|ru|xin|fa|mo|bing|zong|zhongyi|moulue)\/([^/]+)\/(\d+)$/)
+  m = href.match(new RegExp(`^/(${CORPUS_ALT})/([^/]+)/(\\d+)$`))
   if (m) return hasCorpusChapter(m[1], m[2], Number(m[3]))
 
   // 白话章键有两种:整章用数字,细粒度用「组-序」/「卷-序」(诗经一诗一篇、传习录一条一篇、
   // 长短经一篇一篇)。hasBaihua 本就按字符串查 manifest,故这里只需放开正则、且**不可** Number()
   // ——Number('3-9') 是 NaN,会把所有细粒度白话判成坏链(诗经诗级白话上线时即埋下,
   // 直到本次上线前跑 check-links 才暴露,428 个错误全是它)。
-  m = href.match(/^\/(dao|fo|ru|xin|fa|mo|bing|zong|zhongyi|moulue)\/([^/]+)\/baihua\/(\d+(?:-\d+)?)$/)
+  m = href.match(new RegExp(`^/(${CORPUS_ALT})/([^/]+)/baihua/(\\d+(?:-\\d+)?)$`))
   if (m) return hasBaihua(m[1], m[2], m[3])
 
   return false
