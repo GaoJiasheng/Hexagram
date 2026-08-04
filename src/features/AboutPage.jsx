@@ -13,7 +13,8 @@ export default function AboutPage() {
 
       <section className="about-section">
         <h2 className="about-section__title">这是什么</h2>
-        <p>一个人做的古籍学习站,收易经、道藏、儒、佛、阳明心学、法墨兵纵横诸子、中医、谋略杂纂等十组典籍的原文、白话译注与每章延伸。纯前端、无账号、可离线,你的数据只存在自己的浏览器里。</p>
+        <p>一个人做的古籍学习站,收易经、道藏、儒、佛、阳明心学、法墨兵纵横诸子、中医、谋略杂纂等十组典籍的原文、白话译注与每章延伸。内容随应用打包,<strong>不登录、不联网即可完整阅读</strong>;登录是可选的,只为换设备接着读与查看章末讨论。</p>
+        <p>网页版与 iOS App 是同一个站:<a href="https://hexa.gavin.pub" target="_blank" rel="noreferrer">hexa.gavin.pub</a>。</p>
         <p>解读内容由人工与机器协同整理,<strong>仅供研习参考</strong>,非权威定本,亦非宗教、医疗或处世指导。原文一律取自维基文库等公开底本。</p>
       </section>
 
@@ -43,7 +44,7 @@ export default function AboutPage() {
         <h2 className="about-section__title">怎么用</h2>
         <ul className="about-list">
           <li><strong>读经</strong>:经文字词可悬停看注疏;工具条可开译文 / 上下 ⇄ 左右对照、调字号;每段右侧可 ★收藏、✎批注、🔗复制本段链接。</li>
-          <li><strong>搜索</strong>:顶栏放大镜或按 <kbd>/</kbd> 键,可搜经名、正文、译文、注疏、延伸;读经站面板可切「本站 / 全站」,全站态横跨诸组搜跨派概念(如「无为 / 格物 / 致良知」)。</li>
+          <li><strong>搜索</strong>:顶栏放大镜或按 <kbd>/</kbd> 键,可搜经名、正文、译文、注疏、延伸;<strong>一次横跨诸组</strong>,可直接搜跨派概念(如「无为 / 格物 / 致良知」)。</li>
           <li><strong>设置</strong>:顶栏齿轮——主题(观火 / 观水 / 跟随系统)、字号、行宽、译文开关、数据导出导入。</li>
           <li><strong>我的</strong>:顶栏 ☯——本组的续读、收藏与批注汇总。</li>
           <li><strong>易经</strong>另有推演工作台、学堂十二篇、卦画闪卡、春秋筮例等。</li>
@@ -65,7 +66,7 @@ export default function AboutPage() {
           <li><strong>发布时会过一道自动过滤</strong>。它只拦最露骨的一层,难免有误判——若你的正常发言被拦,请直接来信告诉我。</li>
           <li><strong>iOS App 内暂不支持发表评论</strong>,可在网页版参与;App 里仍可阅读、举报与屏蔽。</li>
         </ul>
-        <p>任何问题、申诉、侵权或纠错,来信:<a href="mailto:hexa@gavin.pub">hexa@gavin.pub</a>。这是个人学习站,我会尽快回复,但不保证即时。</p>
+        <p>任何问题、申诉、侵权或纠错,来信:<a href="mailto:hexa@gavin.pub">hexa@gavin.pub</a>;网页版 <a href="https://hexa.gavin.pub" target="_blank" rel="noreferrer">hexa.gavin.pub</a>。这是个人学习站,我会尽快回复,但不保证即时。</p>
       </section>
 
       <div className="about-back">
