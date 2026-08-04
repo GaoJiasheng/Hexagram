@@ -72,6 +72,29 @@ if (IS_HEX) {
   // 已有白话的章跳过(断点续跑/补缺只生成缺章,不重做)
   const existPath = path.join(ROOT, `src/data/${corpus}/baihua/${slug}.json`)
   const done = fs.existsSync(existPath) ? new Set(Object.keys(JSON.parse(fs.readFileSync(existPath, 'utf8')))) : new Set()
+  if (meta.poemTitles) {
+    // 诗级粒度(唐诗/诗经一路):一章含十几首独立的诗,故白话下沉到「一首一篇」,
+    // 键作「组-序」(如 1-1 = 五言古诗第一首)。check-data 的 chapterText 遇此键
+    // 会把引文校验池收窄到那一首 —— 拿邻首的句子当引文过不了。
+    const isTitle = (p) => /^《[^》]+》$/.test(p.original.trim())
+    units = []
+    for (const c of book.chapters) {
+      if ((chFrom != null && c.no < chFrom) || (chTo != null && c.no > chTo)) continue
+      const heads = c.paragraphs.map((p, i) => (isTitle(p) ? i : -1)).filter((i) => i >= 0)
+      heads.forEach((h, i) => {
+        const key = `${c.no}-${i + 1}`
+        if (done.has(key)) return
+        const end = heads[i + 1] ?? c.paragraphs.length
+        const body = c.paragraphs.slice(h, end)
+        units.push({
+          corpus, book: slug, no: key,
+          title: `${c.title} · ${body[0].original.trim().replace(/^《|》$/g, '')}`,
+          chars: body.map((p) => p.original).join('').length,
+          featured: c.no === firstNo && i === 0,
+        })
+      })
+    }
+  } else {
   units = book.chapters
     .filter((c) => (chFrom == null || c.no >= chFrom) && (chTo == null || c.no <= chTo))
     .filter((c) => !done.has(String(c.no)))
@@ -81,6 +104,7 @@ if (IS_HEX) {
       chars: c.paragraphs.map((p) => p.original).join('').length,
       featured: c.no === firstNo,        // 书首章 = 总纲,给 hero
     }))
+  }
 }
 if (!units.length) { console.log(`${bookTitle}:[${chFrom ?? 1}–${chTo ?? '末'}] 该范围已全有白话,无需生成。`); process.exit(0) }
 
@@ -100,6 +124,11 @@ const RED = {
   moulue: MOULUE_REAL_BOOKS.has(slug)
     ? '【红线·谋略·真书】此书为真实古籍(非托名伪书),不作「伪书批判」框注;译白其识人用人/治乱兴亡/处世智慧,取思想史与处世智慧研习视角,不作现代权术施用教程、不作成功学鸡汤式过度引申。'
     : '【红线·谋略】伪书批判:译白其权术面目,但点真伪、指其偷换史实/泯善恶,绝不为伪书张目、不教施用。',
+  // 诗词曲三组(集部,docs/poetry-production-standard.md)。红线第一条不是「不影射」,是**不鸡汤**
+  // ——给诗写「人生启示」是这一层最坏的失败,比译错一个字严重。
+  tangshi: '【红线·诗】文学研习视角:讲这首在说什么场景、它怎么把话说出来的(炼字/对仗/章法/声律);**不作心灵鸡汤、不作励志格言、不作人生启示与处世哲理发挥**(杜甫「感时花溅泪」不是教人惜时);不把作者生平当诗意的唯一解;不作现实影射(边塞诗不读成当代国际关系);本事传说与史实分开标,相传者标「相传」。',
+  songci: '【红线·词】文学研习视角:讲情境、讲章法与声律(上下片、过片、领字、押韵);**词牌是格律调名、与内容无关**(《木兰花》不写木兰花),首见须点明;**不作心灵鸡汤/励志格言/人生启示**;不把生平当诗意唯一解;不作现实影射;本事与史实分开标。',
+  yuanqu: '【红线·曲】文学研习视角:讲情境、讲曲牌宫调与衬字务头、讲曲语的口语本色(不雅化成诗腔);**曲牌是格律调名、与内容无关**(《天净沙》不写沙),首见须点明;**不作心灵鸡汤/励志格言/人生启示**;不作现实影射;**本编为本站选目、非传世选本**,涉及选目处如实点明。',
   yijing: '【红线·易】释卦象义理,不算命;爻辞「吉/凶/悔/吝/厉/无咎」照原典训读其本义(是古人对处境的判语),绝不引申为对今日读者的命运预言、不教占卜趋避、不下宿命断语。象数(错综/卦变/爻位)只讲能从卦象稳妥推出的,纳甲/八宫拿不准宁略不可杜撰。',
 }
 const FILE = (c, b) => `${ROOT}/src/data/${c}/classics/${b}.json`
