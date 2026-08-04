@@ -104,10 +104,12 @@ function verifyPath(rawHref) {
 
   // 家级导读 /<组>/school 与书级导读 /<组>/<书>/daodu ——
   // 必须排在下面那条 /<组>/<slug> 之前,否则 school 会被当成书名去查 texts.json。
-  m = href.match(/^\/(dao|fo|ru|xin|fa|mo|bing|zong|zhongyi|moulue)\/school$/)
+  // 组名一律从 CORPUS_ALT 派生,**不再手写第二份清单**:诗词曲三组上线时这两条曾漏掉,
+  // 而 build-content-assets 是自动发现 daodu/school 的,于是新组的导读被判成坏链(同 93e906e)。
+  m = href.match(new RegExp(`^/(${CORPUS_ALT})/school$`))
   if (m) return !!manifest.school?.[m[1]]
 
-  m = href.match(/^\/(dao|fo|ru|xin|fa|mo|bing|zong|zhongyi|moulue)\/([^/]+)\/daodu$/)
+  m = href.match(new RegExp(`^/(${CORPUS_ALT})/([^/]+)/daodu$`))
   if (m) return !!manifest.daodu?.[m[1]]?.[m[2]]
 
   m = href.match(new RegExp(`^/(${CORPUS_ALT})/([^/]+)$`))

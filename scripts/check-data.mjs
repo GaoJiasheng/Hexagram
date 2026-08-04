@@ -794,7 +794,9 @@ if (fs.existsSync(glossaryPath)) {
 // 与书级同源但更严:体裁要求散文,故**禁用 callout/list/steps**(那三种会把散文剁碎);
 // 字数按 owner 定的加厚档分组;易经不做(那一层已由学堂/源流页覆盖)。
 {
-  const FLOOR = { ru: 11000, dao: 11000, fo: 10000, fa: 9000, bing: 9000, zhongyi: 9000, moulue: 9000, mo: 8000, zong: 8000, xin: 8000 }
+  // 诗词曲三组(集部)同 C 类:讲的是「这一体怎么成的」而非流派谱系,字数同 bing/fa 档。
+  const FLOOR = { ru: 11000, dao: 11000, fo: 10000, fa: 9000, bing: 9000, zhongyi: 9000, moulue: 9000, mo: 8000, zong: 8000, xin: 8000,
+    tangshi: 9000, songci: 9000, yuanqu: 9000 }
   let nSchool = 0, nBad = 0
   for (const corpus of Object.keys(FLOOR)) {
     const f = path.join(ROOT, `src/data/${corpus}/school.json`)
@@ -826,7 +828,7 @@ if (fs.existsSync(glossaryPath)) {
       }
     }
   }
-  if (nSchool) infos.push(`家级导读: ${nSchool}/10 篇 · ${nBad} 坏引文`)
+  if (nSchool) infos.push(`家级导读: ${nSchool}/${Object.keys(FLOOR).length} 篇 · ${nBad} 坏引文`)
 }
 
 // ---------- 7c. 诸子拓扑图 ----------
