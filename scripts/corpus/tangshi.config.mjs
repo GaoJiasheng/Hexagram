@@ -22,5 +22,7 @@ const GROUPS = PL.tangshi.groups.map((g) => ({
 }))
 
 export const BOOKS = [
-  { slug: 'tangshi300', title: '唐诗三百首', groupPages: GROUPS, exactChapters: GROUPS.length },
+  // preferSection:个别诗页把几种底本并列成节(《静夜思》页有 李太白全集 / 唐詩三百首 / 全唐詩
+  // 三种异文,不选节就三种全抓进来、一首诗变十二句)。本站底本既是《唐诗三百首》,该节存在时只取它。
+  { slug: 'tangshi300', title: '唐诗三百首', groupPages: GROUPS, exactChapters: GROUPS.length, preferSection: '唐詩三百首' },
 ]

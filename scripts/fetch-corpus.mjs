@@ -57,6 +57,10 @@ const preResolve = (s) => s
   .replace(/\{\{(?:Novel|footer|header2?|Textquality|PD-old|NoteTA|检索|檢索|gap|reflist|DEFAULTSORT)[^{}]*\}\}/gi, '')  // 元/导航模板
   .replace(/\{\{[^{}]*?作品\}\}/g, '')                                         // {{唐朝作品}} 等版权模板
   .replace(/\[\[(?:File|Image):[^\]]*\]\]/gi, '')
+  // 分类链接**整条剔除**,不能落到下面的通用链接规则去 —— 那条规则取管道后的显示文本,
+  // 而分类链接管道后是**排序键**([[Category:唐詩三百首|李]] 的「李」),会当正文漏出来。
+  // 唐诗页因此曾漏出 25 个单字段(「李」「杜甫」「王维」)。
+  .replace(/\[\[\s*(?:Category|category|分[类類])\s*:[^\]]*\]\]/g, '')
   .replace(/\[\[(?:[^\][|]*\|)?([^\][]*)\]\]/g, '$1')
 // 含字校勘模板 {{另|主|注}} / {{另2|主|注}}:取首参(主读、即经文),先于通用模板清洗
 const replaceAnother = (s) => s.replace(/\{\{另\d?\|([^|{}]*)(?:\|[^{}]*)*\}\}/g, '$1')
@@ -103,6 +107,26 @@ function stripStarTemplates(wikitext) {
     i++
   }
   return out
+}
+
+// 竖排版式模板({{VH1|题}} {{Vtext|作者}} {{VtextStart}}诗句{{VtextEnd}} {{clr}}):
+// 它是同一首诗的**竖排渲染副本**,与页内 <poem> 正文逐字重复。整行剔除,否则每首诗抓两遍
+// (唐诗 26 页中招:《八阵图》《登乐游原》《登楼》等各出现两套正文,且 {{Vtext|杜甫}} 那行
+// 还会漏出作者名当正文)。他经无此模板,no-op。
+function stripVerticalText(wikitext) {
+  if (!/\{\{\s*(?:VH1|Vtext|VtextStart|clr)\b/i.test(wikitext)) return wikitext
+  // ⚠️ 少数页**只有**竖排一份、没有 <poem>(《隋宫》即是)。那时竖排就是唯一正文,
+  // 剔光会把整首诗剔没(第一版就这么翻的车)。故:有 <poem> 才当副本剔,没有则就地转成正文行。
+  const hasPoem = /<poem>/i.test(wikitext)
+  return wikitext.split('\n').map((line) => {
+    const t = line.trim()
+    if (/^\{\{\s*(?:VH1|Vtext|clr)\b/i.test(t)) return ''          // 题/作者/清除浮动,任何情形都非正文
+    if (/^\{\{\s*VtextStart\b/i.test(t)) {
+      if (hasPoem) return ''                                          // 有横排正本 → 竖排是重复副本
+      return t.replace(/\{\{\s*VtextStart\s*\}\}/gi, '').replace(/\{\{\s*VtextEnd\s*\}\}/gi, '')
+    }
+    return line
+  }).join('\n')
 }
 
 // 底本讹字校正表(逐字、极少、须有确证才加)。维基文库个别页与通行本有出入,属源页之误
@@ -153,21 +177,38 @@ const SHI_SKIP_HEADING_RE = /(诗(序|说|叙)$)|(简本$)|(帛书本?$)|^小序
 // 子串匹配(非锚定):个别多国合页的「注解」标题被语言转换标记包住(如「-{zh-hans:註解; zh-hant:註解}-」
 // 未被通用 clean() 的简化 -{}- 处理器完全拆开),子串匹配可稳健命中。
 const SHI_STOP_HEADING_RE = /注解|注释/
+// 唐诗页另有几类非正文节:「收录」(他本出处清单)、「備注」(注音释义)、「縱」(竖排版式,与「橫」重复)、
+// 「注釋/外部連結」等。其下内容整段跳过。(诗经诸页无这些标题,no-op。)
+const SHI_SKIP_HEADING2_RE = /^(收[录錄]|备注|備注|注[释釋]|外部[连連][结結]|参考|參考|附[录錄])[:：]?$/
+// 编者附录块:【注解】【韵译】【评析】等整行标签,其后到页尾全是今人所加的注释/白话译/赏析,
+// 不是原文。命中即停止解析本页(《将赴吴兴登乐游原》页尾曾漏出 10 段这类文字)。
+const SHI_APPENDIX_RE = /^【\s*(注解|注释|注釋|韵译|韻譯|评析|評析|简析|簡析|译文|譯文|集评|集評|赏析|賞析)\s*】/
 const reEscape = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 // sectionFilter:同页含多首同名诗(如「白华」笙诗〔亡辞〕与魚藻之什实有其辞的「白华」共享一页,
 // 以「----」分隔为两个 === 小节),仅取标题含 sectionFilter 的小节;不传则不作节过滤,遇训诂节即停。
 // (已核实:8 处同页消歧诗均为内嵌无标题的简单形式,不含毛诗序/诗文分节标题,故消歧模式下不需
 // 处理 SHI_SKIP_HEADING_RE 与 sectionFilter 的层级交互——两套机制分工清晰、互不纠缠。)
-function parsePoemPage(wikitext, warnings, pageName, sectionFilter = null) {
+function parsePoemPage(wikitext, warnings, pageName, sectionFilter = null, preferSection = null) {
   const paras = []
+  // preferSection(唐诗用):个别页把同一首诗的**几种底本**并列成节(《静夜思》页有
+  // ===李太白全集=== / ===唐詩三百首=== / ===全唐詩=== 三种异文),不选节就三种全抓进来。
+  // 本站底本是《唐诗三百首》,故该节存在时只取它;页上没有这种分节的(绝大多数)不受影响。
+  if (!sectionFilter && preferSection) {
+    const want = t2s(preferSection)
+    const has = (wikitext.match(/^=+\s*(.+?)\s*=+$/gm) || [])
+      .some((h) => t2s(clean(h.replace(/^=+\s*|\s*=+$/g, ''))).includes(want))
+    if (has) sectionFilter = preferSection
+  }
   const filterSimp = sectionFilter ? t2s(sectionFilter) : null // 标题已简体化,过滤关键字(配置里或写繁体)需同转
   let active = !sectionFilter
   let controlLevel = null // 记录使 active 生效的标题层级,子级标题(层级更深)不重判、继承父级状态
   const poemName = t2s(pageName.slice(pageName.indexOf('/') + 1))
   const selfTitleRe = new RegExp(`^《${reEscape(poemName)}》`)
   // 长短经等篇内含 {{*|议曰：…}} 大段夹注(可能跨行),需先整段剔除(同战国策处理);诗经无此标记,no-op。
-  for (const raw of stripHeaderBlock(stripStarTemplates(wikitext)).split('\n')) {
+  // stripVerticalText:唐诗页的竖排渲染副本,与 <poem> 正文重复,须先剔。
+  for (const raw of stripHeaderBlock(stripStarTemplates(stripVerticalText(wikitext))).split('\n')) {
     if (STOP_RE.test(raw)) break
+    if (SHI_APPENDIX_RE.test(t2s(raw.trim()))) break   // 【注解】【韵译】【评析】以下是今人附录,非原文
     const h = raw.trim().match(/^(=+)\s*(.+?)\s*=+$/)
     if (h) {
       const level = h[1].length
@@ -185,8 +226,8 @@ function parsePoemPage(wikitext, warnings, pageName, sectionFilter = null) {
         continue
       }
       // 无节过滤(单一诗页):序类小标题本身非正文,其下内容跳过;其余标题(诗文/诗题自身重复/
-      // 国风归属行)一律视为正文段起点。
-      active = !SHI_SKIP_HEADING_RE.test(title)
+      // 国风归属行)一律视为正文段起点。SHI_SKIP_HEADING2_RE 是唐诗页那几类(收录/備注/縱…)。
+      active = !SHI_SKIP_HEADING_RE.test(title) && !SHI_SKIP_HEADING2_RE.test(title) && title !== '纵'
       continue
     }
     if (!active) continue
@@ -272,6 +313,33 @@ async function main() {
     : b.pages)
   const pages = await fetchPages(allPages)
 
+  // 转写壳 {{:页名}}:维基文库常把一篇正文放在独立页,合集页只写一行转写指令。
+  // 不解开的话那一章只剩个小标题(《宋词三百首》第 179 首辛弃疾《青玉案·元夕》整首曾因此全阙)。
+  // 同款坑另见 CLAUDE.md 记的黄庭经「全覽」。做法:抓被转写页,把 {{:X}} 就地换成它的正文。
+  const TRANSCLUDE_RE = /\{\{:\s*([^}|]+?)\s*\}\}/g
+  const wanted = new Set()
+  for (const t of Object.values(pages)) {
+    if (typeof t !== 'string') continue
+    for (const m of t.matchAll(TRANSCLUDE_RE)) wanted.add(m[1])
+  }
+  if (wanted.size) {
+    const sub = await fetchPages([...wanted].filter((p) => !(p in pages)))
+    const bodyOf = (raw) => {
+      if (typeof raw !== 'string') return ''
+      const only = raw.match(/<onlyinclude>([\s\S]*?)<\/onlyinclude>/i)
+      return only ? only[1] : stripHeaderBlock(raw)
+    }
+    for (const k of Object.keys(pages)) {
+      if (typeof pages[k] !== 'string') continue
+      pages[k] = pages[k].replace(TRANSCLUDE_RE, (whole, name) => {
+        const body = bodyOf(sub[name] ?? pages[name])
+        if (!body) { warnings.push(`转写页「${name}」抓不到正文,原样保留`); return whole }
+        return body
+      })
+    }
+    console.log(`已解开 ${wanted.size} 处 {{:转写}}`)
+  }
+
   fs.mkdirSync(OUT_DIR, { recursive: true })
   const summary = []
 
@@ -304,7 +372,7 @@ async function main() {
         for (const entry of group.pages) {
           const page = typeof entry === 'string' ? entry : entry.page
           const section = typeof entry === 'string' ? null : entry.section
-          const poemParas = parsePoemPage(pages[page], warnings, page, section)
+          const poemParas = parsePoemPage(pages[page], warnings, page, section, book.preferSection)
           if (!poemParas.length) continue
           const poemTitle = t2s(page.slice(page.indexOf('/') + 1))
           paragraphs.push({ original: `《${poemTitle}》`, translation: null })
