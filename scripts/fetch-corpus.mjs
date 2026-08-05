@@ -253,6 +253,40 @@ function parsePoemPage(wikitext, warnings, pageName, sectionFilter = null, prefe
       break
     }
   }
+  // 「一诗两贴」:个别页把同一首诗贴两遍 —— 一遍白文逐句分行,一遍**整首挤成一段的注本**
+  // (行内夹 <ref> 校注,剥注后成一长行)。《石鼓歌》页即如此,于是卷 2 末尾多出一段 529 字的重复。
+  // 上面那条「整倍重复」判不出来:两份的**分段形状不同**(33 段 vs 1 段),不构成整倍。
+  // 判据收得很紧(全站 65 部书实测只此一处命中):某段汉字数 >=100,且与紧邻其前 >=5 段的拼接
+  // 相似度 >=0.95(留余地是因为两传本间有异文,如「陵迟/凌迟」「嗟予/嗟余」)。
+  {
+    const han = (x) => (x.match(/[\u4e00-\u9fff]/g) || []).join('')
+    const ratio = (a, b) => {           // 最长公共子序列长度 / 较长者
+      if (!a.length || !b.length) return 0
+      const dp = new Array(b.length + 1).fill(0)
+      for (let i = 1; i <= a.length; i++) {
+        let prev = 0
+        for (let j = 1; j <= b.length; j++) {
+          const tmp = dp[j]
+          dp[j] = a[i - 1] === b[j - 1] ? prev + 1 : Math.max(dp[j], dp[j - 1])
+          prev = tmp
+        }
+      }
+      return dp[b.length] / Math.max(a.length, b.length)
+    }
+    for (let i = paras.length - 1; i >= 5; i--) {
+      const cur = han(paras[i].original)
+      if (cur.length < 100) continue
+      for (let run = 5; run <= Math.min(60, i); run++) {
+        const cat = han(paras.slice(i - run, i).map((x) => x.original).join(''))
+        if (Math.abs(cat.length - cur.length) > cur.length * 0.05) continue
+        if (ratio(cat, cur) >= 0.95) {
+          warnings.push(`${pageName}: 同一首诗贴了两遍(白文分行 + 注本整段),已剔除整段的那份`)
+          paras.splice(i, 1)
+          break
+        }
+      }
+    }
+  }
   if (!paras.length) warnings.push(`${pageName}: 解析后无任何段落`)
   return paras
 }
