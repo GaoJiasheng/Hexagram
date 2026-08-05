@@ -234,6 +234,10 @@ function parsePoemPage(wikitext, warnings, pageName, sectionFilter = null, prefe
     if (/^!/.test(raw.trim())) continue // 表格式版式残留的表头行(如「!鳲鳩」)
     const simp = cleanLine(raw)
     if (!simp || simp === poemName) continue
+    // 页首残留的「诗题 + 朝代 + 作者」署名行(《蜀相》页在 header 之后、<onlyinclude> 之前
+    // 裸着一行「蜀相  唐 杜甫」),是页面版式不是诗句。判据须收紧到「诗题 + 空白 + 朝代 + 至多四字」
+    // ——只判「以诗题起首且余下很短」会把《周颂·维清》的「维清缉熙，文王之典」误伤(实测过)。
+    if (simp.startsWith(poemName) && /^[\s\u3000]+[唐宋元明清汉晋魏隋金梁陈周秦][\s\u3000]*\S{1,4}$/.test(simp.slice(poemName.length))) continue
     if (SHI_XU_LINE_RE.test(simp) || selfTitleRe.test(simp) || SHI_STANZA_NOTE_RE.test(simp) || SHI_BREADCRUMB_RE.test(simp)) continue
     paras.push({ original: simp, translation: null })
   }
