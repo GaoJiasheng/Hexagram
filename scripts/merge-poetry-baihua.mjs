@@ -53,24 +53,30 @@ for (const d of dirs) {
   }
 }
 
+// 逐篇独立判定:**有问题的那几篇跳过、其余照收**。
+// 早先是全有全无(一篇不合格整批不写盘),批量作业里这会把几十篇合格的稿子一起挡在门外,
+// 得不偿失 —— 跳过的键会打印出来,也会留在 TODO 的缺口清单里,不会被悄悄吞掉。
 const errs = []
+const skipped = []
 const out = {}
 for (const [key, { a, n }] of [...picked].sort((x, y) => x[0].localeCompare(y[0], undefined, { numeric: true }))) {
+  const bad = []
   const txt = poemText(key)
-  if (txt == null) { errs.push(`${key}: 站内无此键(卷或序号越界)`); continue }
-  if (a.key && a.key !== key) errs.push(`${key}: 文件内 key=${a.key} 与文件名不符`)
-  if (n < 2000) errs.push(`${key}: 仅 ${n} 字`)
+  if (txt == null) { bad.push(`${key}: 站内无此键(卷或序号越界)`); continue }
+  if (a.key && a.key !== key) bad.push(`${key}: 文件内 key=${a.key} 与文件名不符`)
+  if (n < 2000) bad.push(`${key}: 仅 ${n} 字`)
   const blocks = a.blocks || []
   const figs = blocks.filter((b) => b.type === 'figure')
-  if (figs.length < 3) errs.push(`${key}: 图仅 ${figs.length} 张`)
-  if (blocks.filter((b) => b.type === 'pull').length > 1) errs.push(`${key}: pull 超 1 处`)
+  if (figs.length < 3) bad.push(`${key}: 图仅 ${figs.length} 张`)
+  if (blocks.filter((b) => b.type === 'pull').length > 1) bad.push(`${key}: pull 超 1 处`)
   for (const b of figs) {
-    if (/(fill|stroke)\s*=\s*['"]var\(/.test(b.svg || '')) errs.push(`${key}: SVG 用了 fill="var(…)" 属性写法`)
-    if (/#[0-9a-fA-F]{6}/.test(b.svg || '')) errs.push(`${key}: SVG 写死了 #hex`)
+    if (/(fill|stroke)\s*=\s*['"]var\(/.test(b.svg || '')) bad.push(`${key}: SVG 用了 fill="var(…)" 属性写法`)
+    if (/#[0-9a-fA-F]{6}/.test(b.svg || '')) bad.push(`${key}: SVG 写死了 #hex`)
   }
   for (const b of blocks) {
-    if (b.type === 'quote' && !txt.includes(b.original)) errs.push(`${key}: 引文不在本诗内「${b.original.slice(0, 14)}…」`)
+    if (b.type === 'quote' && !txt.includes(b.original)) bad.push(`${key}: 引文不在本诗内「${b.original.slice(0, 14)}…」`)
   }
+  if (bad.length) { skipped.push(key); errs.push(...bad); continue }
   const { key: _k, ...rest } = a
   out[key] = rest
 }
@@ -83,9 +89,8 @@ const sorted = {}
 for (const k of Object.keys(merged).sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))) sorted[k] = merged[k]
 
 if (errs.length) {
-  console.log(`✗ ${errs.length} 处问题,未写盘:`)
+  console.log(`⚠ ${skipped.length} 篇未收(${skipped.join(', ')}),原因:`)
   errs.slice(0, 20).forEach((e) => console.log('   ' + e))
-  process.exit(1)
 }
 fs.mkdirSync(path.dirname(dst), { recursive: true })
 fs.writeFileSync(dst, JSON.stringify(sorted, null, 2) + '\n')
