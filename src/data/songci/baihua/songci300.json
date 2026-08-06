@@ -26245,7 +26245,7 @@
       {
         "type": "figure",
         "ftype": "声情节奏图",
-        "svg": "<svg viewBox=\"0 0 720 340\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>长句之间的两个三字短韵</title><text x=\"360\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">下片：两个三字短韵夹在长句中间</text><line x1=\"40\" y1=\"52\" x2=\"680\" y2=\"52\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"60\" y=\"82\" width=\"600\" height=\"46\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"360\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">教人红消翠减，觉衣宽金缕，都为轻别</text><rect x=\"272\" y=\"146\" width=\"176\" height=\"46\" rx=\"4\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1.5\"/><text x=\"360\" y=\"176\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"18\" font-weight=\"600\">太情切。</text><rect x=\"60\" y=\"210\" width=\"600\" height=\"46\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"360\" y=\"240\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">消魂处、画角黄昏时节</text><rect x=\"272\" y=\"274\" width=\"176\" height=\"46\" rx=\"4\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1.5\"/><text x=\"360\" y=\"304\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"18\" font-weight=\"600\">声呜咽。</text><text x=\"700\" y=\"112\" text-anchor=\"end\" style=\"fill:var(--ink-faint)\" font-size=\"13\"> </text></svg>",
+        "svg": "<svg viewBox=\"0 0 720 340\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>长句之间的两个三字短韵</title><text x=\"360\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">下片：两个三字短韵夹在长句中间</text><line x1=\"40\" y1=\"52\" x2=\"680\" y2=\"52\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"60\" y=\"82\" width=\"600\" height=\"46\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"360\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">教人红消翠减，觉衣宽金缕，都为轻别</text><rect x=\"272\" y=\"146\" width=\"176\" height=\"46\" rx=\"4\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1.5\"/><text x=\"360\" y=\"176\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"18\" font-weight=\"600\">太情切。</text><rect x=\"60\" y=\"210\" width=\"600\" height=\"46\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"360\" y=\"240\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">消魂处、画角黄昏时节</text><rect x=\"272\" y=\"274\" width=\"176\" height=\"46\" rx=\"4\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1.5\"/><text x=\"360\" y=\"304\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"18\" font-weight=\"600\">声呜咽。</text></svg>",
         "caption": "下片两处长句之后各插一个三字短韵，一放一收；句子越短，停得越死，情绪显得越促。"
       },
       {
@@ -29364,6 +29364,407 @@
           "庾信羁留北方不得归、作《哀江南赋》，见其本传与赋序，为历代注家通说。",
           "本卷袁去华《剑器近》有「偷弹清泪寄烟波」，与本篇「寄烟波东去」为同一说法；徐伸《二郎神》结句「倚遍昼长人静」与本篇「永昼春闲」同写昼长难度，此处并列对读。",
           "词中「人人」为谁，词内无交代，本篇不作坐实。"
+        ]
+      }
+    ]
+  },
+  "164": {
+    "title": "白话《瑞鹤仙》（陆淞）",
+    "subtitle": "不直说春天要过完了，只指着花梢教他自己去看",
+    "centralIdea": "这首《瑞鹤仙》全用代言体，通篇作女子口吻，从睡起写到相思。上片写景极省——「屏闲麝煤冷」「风帘露井」各不过五六字，其余笔墨全给了神态：脸上的枕痕、不整的冠儿、压着翠色的眉峰、弹落脂粉的泪珠、宽到极处的衣带。下片「重省」二字独作一顿提起旧事，接三句排比的旧景；末四句一路作问，「先指花梢教看」是极细的动作——不直说春将尽，只教他自己去看花。词至此问而不答，留在半空。全篇语近口语：「冠儿还是不整」「怎生意稳」都是宋人日常说话，放在长调里而不觉得俚。",
+    "blocks": [
+      {
+        "type": "lead",
+        "text": "「瑞鹤仙」是词牌，本卷里出现了两次：前面袁去华那首写旅途重经，是男子口吻；这一首写闺中相思，通篇是女子口吻。**同一个调子，两副面孔**——又一次说明词牌只管格律。"
+      },
+      {
+        "type": "p",
+        "text": "作者陆淞，字子逸，山阴人，**是陆游的从兄**——下一首《卜算子》正是陆游的作品，两位同族的词恰好挨着。"
+      },
+      {
+        "type": "h2",
+        "text": "什么是「代言体」"
+      },
+      {
+        "type": "p",
+        "text": "这首词从头到尾用的是一个女子的口气说话，作者本人不出面。**这种写法叫「代言体」**，是唐五代《花间集》一路留下来的老传统：男性词人替女子说话，写她的妆、她的睡、她的等待。"
+      },
+      {
+        "type": "p",
+        "text": "陆淞这一首的特别之处，在于**语言比《花间集》更近口语**：「冠儿还是不整」「怎生意稳」「因循过了青春」，全是宋人日常说话的腔调。**能把这样的白话放进一首一百多字的长调里而不显得俚俗，是南渡前后词家的本事。**"
+      },
+      {
+        "type": "h2",
+        "text": "上片：一样一样，全写在人身上"
+      },
+      {
+        "type": "quote",
+        "original": "脸霞红印枕，睡觉来、冠儿还是不整。",
+        "translation": "脸上的红霞印在枕上，睡醒起来，冠儿还是不整齐。"
+      },
+      {
+        "type": "p",
+        "text": "开篇五个字是全篇最活的一处：**「脸霞红印枕」——脸上的红晕在枕头上留下了印子。** 这是刚睡醒的人才有的样子，写得极准，也极近。"
+      },
+      {
+        "type": "p",
+        "text": "「睡觉来」的「觉」在这里读「较」，是睡醒的意思。**「冠儿还是不整」——起来了，头上的冠还歪着，没去弄。**「还是」两个字是口语，带着一点自嘲，也说明这不是头一天如此。"
+      },
+      {
+        "type": "quote",
+        "original": "屏闲麝煤冷，但眉峰压翠，泪珠弹粉。",
+        "translation": "屏风闲着，香墨已冷；只是眉峰压着翠色，泪珠弹落了脂粉。"
+      },
+      {
+        "type": "p",
+        "text": "「麝煤」是用麝香和制的香墨（一说指炉中的香灰）——**不管取哪一说，「冷」字都是关键：早就不用了。** 屏风闲着、香墨冷着，屋里的东西都停摆了。"
+      },
+      {
+        "type": "p",
+        "text": "「但」是「只是」，一转就到了人身上。**「眉峰压翠」**——眉画的是翠色，眉头一皱，那点翠色就被压住了；**「泪珠弹粉」**——眼泪落下来，把脸上扑的粉弹开了。"
+      },
+      {
+        "type": "p",
+        "text": "**这两句都不写情绪，只写妆被弄坏了。** 妆是人早上花时间弄好的东西，妆一坏，人的状态也就清楚了。"
+      },
+      {
+        "type": "quote",
+        "original": "堂深昼永，燕交飞、风帘露井。",
+        "translation": "堂屋深，白昼长，燕子交错地飞，风吹着帘子，露水沾着井栏。"
+      },
+      {
+        "type": "p",
+        "text": "这几句是上片唯一一处正经写景，而且很省。**「堂深昼永」四个字，一个说空间，一个说时间**：屋子深、白天长——两样都是难熬的条件。"
+      },
+      {
+        "type": "p",
+        "text": "「燕交飞」三字要留意：**燕子是交错着成双飞的。** 屋里一个人，屋外两只燕，这个对照不必点破。"
+      },
+      {
+        "type": "quote",
+        "original": "恨无人说与，相思近日，带围宽尽。",
+        "translation": "恨没有人替我说给他听：相思到近日，衣带已经宽到极处。"
+      },
+      {
+        "type": "p",
+        "text": "上片收在一句「没人替我带话」上。**「带围宽尽」是说人瘦了**，衣带宽到不能再宽——这个说法本自沈约腰围日减的旧事。**本卷里说人瘦，已经四次借到沈约**（蔡伸称「休文」、徐伸称「沈腰」、曹组称「东阳」、这里说「带围宽尽」）；**可见宋词里确有一批公用的零件**，取的就是读者一看就懂。"
+      },
+      {
+        "type": "figure",
+        "ftype": "笔墨分配图",
+        "svg": "<svg viewBox=\"0 0 720 320\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>笔墨分配：景极省，神态极详</title><text x=\"360\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">上片的笔墨，几乎全给了神态</text><line x1=\"40\" y1=\"52\" x2=\"680\" y2=\"52\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"52\" y=\"82\" width=\"252\" height=\"150\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"178\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"16\">写景 · 极省</text><text x=\"178\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">屏闲麝煤冷</text><text x=\"178\" y=\"174\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">风帘露井</text><text x=\"178\" y=\"206\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">各不过五六字，一带而过</text><rect x=\"336\" y=\"82\" width=\"332\" height=\"150\" rx=\"4\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1.5\"/><text x=\"502\" y=\"112\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"16\">写神态 · 极详</text><text x=\"502\" y=\"144\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"15\">脸霞红印枕 ／ 冠儿还是不整</text><text x=\"502\" y=\"172\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"15\">眉峰压翠 ／ 泪珠弹粉 ／ 带围宽尽</text><text x=\"502\" y=\"204\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">脸、冠、眉、泪、腰——一样一样写过去</text><text x=\"360\" y=\"276\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">景只是背板，人才是正面；这是代言体的常规分配</text><text x=\"360\" y=\"306\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">全篇没有一句直接说「我想他」</text></svg>",
+        "caption": "上片写景各不过五六字，其余全给了神态：脸、冠、眉、泪、腰一样一样写过去。"
+      },
+      {
+        "type": "h2",
+        "text": "过片：两个字，把话带回从前"
+      },
+      {
+        "type": "quote",
+        "original": "重省，残灯朱幌，淡月纱窗，那时风景。",
+        "translation": "再回想，残灯映着朱红的帷幔，淡月照着纱窗，那时的光景。"
+      },
+      {
+        "type": "p",
+        "text": "**「重省」两个字独立成句、独作一顿。** 有意思的是：本卷袁去华那首同调的《瑞鹤仙》，过片处也是两个字——「无语」。**同一个位置留两个字，是这个调子的定格。**"
+      },
+      {
+        "type": "p",
+        "text": "这个定格好在哪里？**上片一路写满，到这里忽然只给两个字，声音一下空出来**；空出来之后，才接得住后面那段旧事。"
+      },
+      {
+        "type": "figure",
+        "ftype": "同调对读图",
+        "svg": "<svg viewBox=\"0 0 720 340\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>同调两首，过片同样是二字短韵</title><text x=\"360\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">本卷两首《瑞鹤仙》，过片都是两个字一顿</text><line x1=\"40\" y1=\"52\" x2=\"680\" y2=\"52\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"48\" y=\"80\" width=\"300\" height=\"168\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"198\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"16\">袁去华「郊原初过雨」</text><text x=\"198\" y=\"152\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"26\" font-weight=\"600\">无语</text><text x=\"198\" y=\"188\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">接：邮亭深静，下马还寻</text><text x=\"198\" y=\"218\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">旅途重经，男子口吻</text><rect x=\"372\" y=\"80\" width=\"300\" height=\"168\" rx=\"4\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1.5\"/><text x=\"522\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"16\">陆淞「脸霞红印枕」</text><text x=\"522\" y=\"152\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"26\" font-weight=\"600\">重省</text><text x=\"522\" y=\"188\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">接：残灯朱幌，淡月纱窗</text><text x=\"522\" y=\"218\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">闺中代言，女子口吻</text><text x=\"360\" y=\"286\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">同一处位置留两个字，是这个调子的定格</text><text x=\"360\" y=\"318\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">上片写满，忽然只给两字，声音一下空出来——然后才接得住旧事</text></svg>",
+        "caption": "本卷两首《瑞鹤仙》，过片处都是二字短韵：一首「无语」，一首「重省」。"
+      },
+      {
+        "type": "p",
+        "text": "接下来三句是排比的旧景：**残灯配朱幌，淡月配纱窗，最后一句「那时风景」四字兜住。** 不说当时做了什么、说了什么，只给两样光线——一盏快灭的灯，一片淡淡的月。**回忆里最先留下的往往就是光线。**"
+      },
+      {
+        "type": "quote",
+        "original": "阳台路回，云雨梦，便无准。",
+        "translation": "阳台的路已经回转，云雨的梦，便没有了准信。"
+      },
+      {
+        "type": "p",
+        "text": "「阳台」「云雨」都出自宋玉《高唐赋》里巫山神女朝云暮雨的旧事，在诗词里是男女相会的代称。**「路回」是路已经绕开了**，「便无准」是从此没有了准头。"
+      },
+      {
+        "type": "h2",
+        "text": "结拍：不说破，只教他看"
+      },
+      {
+        "type": "quote",
+        "original": "待归来，先指花梢教看，却把心期细问。",
+        "translation": "等他回来，先指着花梢教他看，却把心里的约期细细相问。"
+      },
+      {
+        "type": "p",
+        "text": "这三句是全篇写得最细的地方，**而它细在一个动作上。**"
+      },
+      {
+        "type": "p",
+        "text": "她设想那人回来的情形：**第一件事不是问他为什么这么久，而是先指着树梢上的花，教他自己看。** 看什么？看花已经开到梢头、就要谢了——**也就是说，一个春天过去了。**"
+      },
+      {
+        "type": "p",
+        "text": "**这一手极有分寸。** 直接说「你耽误了我一个春天」，就成了埋怨；指着花让他自己看，话是花说的，不是她说的。**等他看明白了，再「把心期细问」——问当初约定的日子。**"
+      },
+      {
+        "type": "quote",
+        "original": "问因循过了青春，怎生意稳。",
+        "translation": "问他就这样因循着过了青春，心里怎么能安稳。"
+      },
+      {
+        "type": "p",
+        "text": "末句是问句。「因循」是拖延、马虎过去；「怎生」是怎么。**整句是问：就这样一天拖一天，把好时候拖过去了，你心里过得去吗？**"
+      },
+      {
+        "type": "p",
+        "text": "**要紧的是：词到这里就停了，问句没有答案。** 而且这一整段都是设想——那人根本还没回来。**问的是一个不在场的人，用的是一个还没发生的场面。** 词把话说到这里悬着，不再往下写。"
+      },
+      {
+        "type": "figure",
+        "ftype": "金句卡",
+        "svg": "<svg viewBox=\"0 0 700 350\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>金句卡</title><rect x=\"24\" y=\"24\" width=\"652\" height=\"302\" rx=\"3\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"34\" y=\"34\" width=\"632\" height=\"282\" rx=\"2\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"0.5\"/><text x=\"350\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"28\" letter-spacing=\"3\">待归来，先指花梢教看，</text><text x=\"350\" y=\"176\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"28\" letter-spacing=\"3\">却把心期细问。</text><line x1=\"250\" y1=\"210\" x2=\"450\" y2=\"210\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"350\" y=\"244\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">等他回来，先指着花梢教他看，</text><text x=\"350\" y=\"268\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">却把心里的约期细细相问。</text><text x=\"350\" y=\"302\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"14\">宋 · 陆淞《瑞鹤仙》</text></svg>",
+        "caption": "结拍。不直说春天过完了，先指着花梢教他自己看——话是花说的，不是她说的。"
+      },
+      {
+        "type": "pull",
+        "text": "直接埋怨就成了埋怨；指着花让他自己看，话就变成花说的了。"
+      },
+      {
+        "type": "h2",
+        "text": "这首词在说什么"
+      },
+      {
+        "type": "p",
+        "text": "说的是一个女子的一天，以及她心里排演过许多遍的一个场面。她午睡起来，脸上还带着枕印，冠也没扶正；屋里的香墨早冷了，眉皱着，泪把粉弹开了。堂深、白昼长，燕子成双飞过。她恨没人替她带一句话，说她已经瘦成这样。她想起从前的残灯与淡月，如今路已绕开，梦也没了准。于是她想：等他回来，先指着花梢教他看，再细细问那个约定——就这样把好时候拖过去了，你心里安稳吗？"
+      },
+      {
+        "type": "p",
+        "text": "它写得好的地方有三处：**一是把笔墨全给神态**，妆坏了、冠歪了、带宽了，一句情绪也不说；**二是过片两个字一顿**，正好用足了调子的定格；**三是结尾那个「指花」的动作**——**极小，极细，也极狠。**"
+      },
+      {
+        "type": "p",
+        "text": "至于词中这个女子是谁、有没有具体所指，词里没有交代。**代言体本来就不必坐实**：它写的是一种处境，不是一个人的事。"
+      },
+      {
+        "type": "refs",
+        "items": [
+          "原文出处：《宋词三百首》（朱孝臧编）陆淞《瑞鹤仙》「脸霞红印枕」一首，底本据站内宋词原文管线，引文逐字取自站内原文。",
+          "「麝煤」「带围宽尽」（本沈约腰减事）「阳台」（用宋玉《高唐赋》巫山神女朝云暮雨事）「因循」「怎生」等训释，参本篇站内注疏。",
+          "陆淞字子逸、山阴人、陆游从兄，及此首全用代言体、通篇作女子口吻、语更近口语、上片写景极省而笔墨全给神态、「重省」二字提起旧事、结拍问而不答，参本篇站内延伸。",
+          "本卷袁去华《瑞鹤仙》过片作「无语」二字短韵，与本篇「重省」同处一位，此处并列对读。",
+          "本卷蔡伸称「休文」、徐伸称「沈腰」、曹组称「东阳」、本篇作「带围宽尽」，皆本沈约腰围日减事，为宋词习用的公共典故。",
+          "代言体为唐五代《花间集》以来的旧传统，本篇不据以坐实词中人物。"
+        ]
+      }
+    ]
+  },
+  "165": {
+    "title": "白话《卜算子·咏梅》（陆游）",
+    "subtitle": "四十四个字，写一株没有人管的梅花",
+    "centralIdea": "这首《卜算子》题作「咏梅」，是陆游数首咏梅词中最传诵的一篇。上片写梅所在之地与所遇之时：驿外、断桥、无主、黄昏、风雨，五层递进，句句加重；「开无主」三字是全篇的根——不是不开，是开了没有人看，下面的风雨也因此才显得不可躲。下片由处境转到自处，「无意苦争春，一任群芳妒」是就花说的，词面并未推及人事；结拍「零落成泥碾作尘，只有香如故」以三个动词一路把「毁掉」写到不能再毁，末五字才立得住。咏物词到南宋渐重寄托，此首仍以花为主，寄托之说系后人读出，宜与词面分开。后世化用甚多，一九六一年毛泽东作同调《咏梅》，题序自云读陆游咏梅词而反其意用之，两首常并列对读。",
+    "blocks": [
+      {
+        "type": "lead",
+        "text": "先把题目分清。**「卜算子」是词牌**，与内容不相干；**「咏梅」是词题**，写在括号里，是作者自标的——**它是词题，不是词句。** 有了这个词题，读者一上来就知道这首词咏的是什么，不必去猜。"
+      },
+      {
+        "type": "p",
+        "text": "陆游的咏梅词有好几首，这一首是最传诵的。全篇四十四个字，四句，短得不能再短；可它几乎是宋代咏梅词里流传最广的一篇。"
+      },
+      {
+        "type": "h2",
+        "text": "上片：把处境一层层往下压"
+      },
+      {
+        "type": "quote",
+        "original": "驿外断桥边，寂寞开无主。",
+        "translation": "驿站外面断桥的旁边，寂寞地开着，没有人照管。"
+      },
+      {
+        "type": "p",
+        "text": "开篇先定地方，而**这个地方是一层一层选出来的**："
+      },
+      {
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "**「驿外」**——不在园子里，也不在人家院中，是驿站外面。驿站已经是路边的地方了，它还在驿站外面。",
+          "**「断桥边」**——桥还断了。桥一断，路就不通；路不通，就更没有人走过来。",
+          "**「开无主」**——没有人照管。**这三个字是全篇的根。**"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "**要紧的是：「无主」不是「无人」。** 梅花照样开了，开得好不好也照样开；只是**没有一个人是它的主人**——没人栽、没人赏、没人替它挡什么。**不是不开，是开了没有人看。**"
+      },
+      {
+        "type": "p",
+        "text": "这一层立住之后，下面的风雨才显得无处可躲——**有主人的花，风雨来了尚有人搭个棚、移进屋；无主的花，只能站在那里挨。**"
+      },
+      {
+        "type": "quote",
+        "original": "已是黄昏独自愁，更著风和雨。",
+        "translation": "已经是黄昏，独自发愁，又加上风和雨。"
+      },
+      {
+        "type": "p",
+        "text": "「更著」的「著」音酌，是加上、遭受的意思。**这两句在上面三层之上又加了两层：黄昏（连光也没有了）、风雨（还要再挨一场）。**"
+      },
+      {
+        "type": "p",
+        "text": "**「已是……更著……」是一个很硬的句式**：已经这样了，还要再添。用在这里，等于把前面所有的坏处再压一道。上片两句十一字，五层递进，**一句比一句重，没有一处放松。**"
+      },
+      {
+        "type": "figure",
+        "ftype": "章法结构图",
+        "svg": "<svg viewBox=\"0 0 720 340\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>上片五层，一层比一层重</title><text x=\"360\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">上片两句，五层递进，句句加重</text><line x1=\"40\" y1=\"52\" x2=\"680\" y2=\"52\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><line x1=\"86\" y1=\"300\" x2=\"660\" y2=\"300\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"100\" y=\"248\" width=\"88\" height=\"52\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"144\" y=\"280\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">驿外</text><text x=\"144\" y=\"326\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"12\">不在园里</text><rect x=\"216\" y=\"216\" width=\"88\" height=\"84\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"260\" y=\"264\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">断桥</text><text x=\"260\" y=\"326\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"12\">路也断了</text><rect x=\"332\" y=\"180\" width=\"88\" height=\"120\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"376\" y=\"246\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">无主</text><text x=\"376\" y=\"326\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"12\">没人照管</text><rect x=\"448\" y=\"144\" width=\"88\" height=\"156\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"492\" y=\"228\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">黄昏</text><text x=\"492\" y=\"326\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"12\">连光也没了</text><rect x=\"564\" y=\"104\" width=\"88\" height=\"196\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1.5\"/><text x=\"608\" y=\"210\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"15\">风和雨</text><text x=\"608\" y=\"326\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"12\">还要再加一层</text><text x=\"360\" y=\"88\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"14\">「更著」二字：已经这样了，还要再添</text></svg>",
+        "caption": "上片五层递进：驿外、断桥、无主、黄昏、风雨——「更著」二字是「已经这样了还要再添」。"
+      },
+      {
+        "type": "h2",
+        "text": "下片：从处境转到自处"
+      },
+      {
+        "type": "quote",
+        "original": "无意苦争春，一任群芳妒。",
+        "translation": "无意于苦苦地争春，任凭群花去嫉妒。"
+      },
+      {
+        "type": "p",
+        "text": "下片换了一个角度：上片写它遇到什么，下片写它自己怎么样。"
+      },
+      {
+        "type": "p",
+        "text": "「无意苦争春」——**梅花本来就开在别的花之前**，冬末春初就开了，等到群芳齐放的时候，它已经谢得差不多。所以说它「无意争春」，在物候上是说得通的：**它根本不在那个季节里。**"
+      },
+      {
+        "type": "p",
+        "text": "「一任」是完全听凭。「群芳妒」是把花拟人：别的花嫉妒它，随它们去。"
+      },
+      {
+        "type": "callout",
+        "tone": "note",
+        "label": "就花说的",
+        "items": [
+          "这两句**在词面上仍是就花说的**，并没有推到人事上去。梅花开得早、不与群花同时，这是它的物性；词把这物性说成一种「无意」，是拟人，但拟的还是花。**词面到此为止，没有再往前一步。**"
+        ]
+      },
+      {
+        "type": "quote",
+        "original": "零落成泥碾作尘，只有香如故。",
+        "translation": "零落后化作泥、碾成尘，只有香气还和从前一样。"
+      },
+      {
+        "type": "p",
+        "text": "结拍七字加五字，是全篇的顶点，而它的力气来自**三个连续的动词**："
+      },
+      {
+        "type": "list",
+        "ordered": true,
+        "items": [
+          "**「零落」**——花从枝上掉下来。这是自然的、每年都发生的事。",
+          "**「成泥」**——落在地上，被雨水泡、被土混，**形状没有了。**",
+          "**「碾作尘」**——「碾」是轧、磨；驿路上有车马来往，泥被轧过、磨过，**成了粉末。**"
+        ]
+      },
+      {
+        "type": "p",
+        "text": "**三步一步比一步碎，把「毁掉」写到不能再毁。** 这一层写足了，末五字「只有香如故」才立得住——**如果只说「落了一地」，后面那句就没有分量。**"
+      },
+      {
+        "type": "p",
+        "text": "「如故」两个字也要留意：**不是「更香」，也不是「香气不散」，只是「和从前一样」。** 分寸就在这里——它没有说香气变得更了不起，只说它没有变。"
+      },
+      {
+        "type": "figure",
+        "ftype": "动词递进图",
+        "svg": "<svg viewBox=\"0 0 720 300\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>三个动词，毁到不能再毁</title><text x=\"360\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">「零落成泥碾作尘」——三步，一步比一步碎</text><line x1=\"40\" y1=\"52\" x2=\"680\" y2=\"52\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"52\" y=\"88\" width=\"164\" height=\"84\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"134\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"19\">零落</text><text x=\"134\" y=\"154\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">花落下来</text><text x=\"240\" y=\"134\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"18\">→</text><rect x=\"268\" y=\"88\" width=\"164\" height=\"84\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><text x=\"350\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"19\">成泥</text><text x=\"350\" y=\"154\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">混进土里，没有形状了</text><text x=\"456\" y=\"134\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"18\">→</text><rect x=\"484\" y=\"88\" width=\"184\" height=\"84\" rx=\"4\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1.5\"/><text x=\"576\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"19\">碾作尘</text><text x=\"576\" y=\"154\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">被车马轧过，磨成粉末</text><text x=\"360\" y=\"222\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">三个动词一路往下，把「毁掉」写到不能再毁</text><text x=\"360\" y=\"256\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">写足了这一层，末五字「只有香如故」才立得住</text><text x=\"360\" y=\"288\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">若只说「落了一地」，后面那句就没有分量</text></svg>",
+        "caption": "零落、成泥、碾作尘——三步一步比一步碎；写足了这一层，末五字才立得住。"
+      },
+      {
+        "type": "figure",
+        "ftype": "金句卡",
+        "svg": "<svg viewBox=\"0 0 700 350\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>金句卡</title><rect x=\"24\" y=\"24\" width=\"652\" height=\"302\" rx=\"3\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"34\" y=\"34\" width=\"632\" height=\"282\" rx=\"2\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"0.5\"/><text x=\"350\" y=\"126\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"30\" letter-spacing=\"3\">零落成泥碾作尘，</text><text x=\"350\" y=\"176\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"30\" letter-spacing=\"3\">只有香如故。</text><line x1=\"250\" y1=\"210\" x2=\"450\" y2=\"210\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"350\" y=\"244\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">零落后化作泥、碾成尘，</text><text x=\"350\" y=\"268\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">只有香气还和从前一样。</text><text x=\"350\" y=\"302\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"14\">宋 · 陆游《卜算子·咏梅》</text></svg>",
+        "caption": "结拍两句。三个动词一路把「毁掉」写到不能再毁，最后只留下一样没变的东西。"
+      },
+      {
+        "type": "h2",
+        "text": "关于「寄托」，要说明分寸"
+      },
+      {
+        "type": "p",
+        "text": "读这首词，很容易听到这样一种讲法：**梅花就是作者自己**——写的是身世、是志节、是不肯随俗。这种读法有它的来历。"
+      },
+      {
+        "type": "p",
+        "text": "**咏物词到了南宋，确实越来越重寄托**：词人借一物说自己的事，读者也习惯从物里读出人来。清人张惠言编《词选》，主张词有比兴寄托，此后这种读法更加通行。"
+      },
+      {
+        "type": "callout",
+        "tone": "warn",
+        "label": "读法非定论",
+        "items": [
+          "但要分清两层：**这一首在词面上仍以花为主**，从头到尾写的是一株梅的地方、时候、处境与结局，**没有一句把话推到人事上去。** 寄托之说是**后人读出来的**，宜与词面分开。有人这样读，读得通；有人认为它就是一首写得极好的咏物词，也读得通。**本篇并陈，不替读者拍板。**"
+        ]
+      },
+      {
+        "type": "figure",
+        "ftype": "读法分层图",
+        "svg": "<svg viewBox=\"0 0 720 320\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><title>词面与读法要分开</title><text x=\"360\" y=\"34\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"21\" font-weight=\"600\">词面是一层，后人的读法是另一层</text><line x1=\"40\" y1=\"52\" x2=\"680\" y2=\"52\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"48\" y=\"80\" width=\"300\" height=\"152\" rx=\"4\" style=\"fill:none;stroke:var(--cinnabar)\" stroke-width=\"1.5\"/><text x=\"198\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"16\" font-weight=\"600\">词面上有的</text><text x=\"198\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">一株梅开在断桥边</text><text x=\"198\" y=\"174\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">没人管，遇上风雨</text><text x=\"198\" y=\"202\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">落了、碎了，香还在</text><rect x=\"372\" y=\"80\" width=\"300\" height=\"152\" rx=\"4\" style=\"fill:none;stroke:var(--line)\" stroke-width=\"1\" stroke-dasharray=\"5 4\"/><text x=\"522\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"16\" font-weight=\"600\">后人读出来的</text><text x=\"522\" y=\"146\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">以花自况、寄托身世</text><text x=\"522\" y=\"174\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"15\">咏物词到南宋渐重寄托</text><text x=\"522\" y=\"202\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">是一种读法，不是词面所说</text><text x=\"360\" y=\"270\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"15\">此首仍以花为主，词面并未推及人事</text><text x=\"360\" y=\"302\" text-anchor=\"middle\" style=\"fill:var(--ink-faint)\" font-size=\"13\">寄托之说系后人读出，宜与词面分开——本篇并陈，不作判定</text></svg>",
+        "caption": "词面上有的与后人读出的，是两层。寄托之说系后人读出，宜与词面分开。"
+      },
+      {
+        "type": "h2",
+        "text": "它后来被怎样用"
+      },
+      {
+        "type": "p",
+        "text": "这首词流传极广，后世化用甚多。**最常被提到的一件事**：一九六一年毛泽东作同调《卜算子·咏梅》，题序自云读陆游咏梅词，**反其意而用之**；此后两首常被并列对读。"
+      },
+      {
+        "type": "p",
+        "text": "**这是流传史，照实记下即可。** 一首词写成之后，后人怎么读它、怎么接着它写，是它自己的命运，与它当初写的是什么，是两回事。"
+      },
+      {
+        "type": "p",
+        "text": "「只有香如故」这五个字，也常被单独摘出来，写成条幅、当作格言。**同样地，这属于流传史。** 在词里，这五个字承的是上面那三个碎掉的动词——**它是一句关于一株花的话**；离开了「零落成泥碾作尘」，它就不是原来那句话了。**读这首词的时候，还是应当把它放回去。**"
+      },
+      {
+        "type": "pull",
+        "text": "不是「更香」，也不是「香气不散」，只是「和从前一样」——分寸就在这两个字上。"
+      },
+      {
+        "type": "h2",
+        "text": "这首词在说什么"
+      },
+      {
+        "type": "p",
+        "text": "说的是一株梅花。它长在驿站外面、断桥旁边，没有人栽它、管它、看它；开花的时候正赶上黄昏，还遇上一场风雨。它并不想跟别的花争春天，别的花嫉妒它也随它们去。后来它落了，落在地上化成泥，又被车马碾成灰；剩下的只有香气，和从前一样。"
+      },
+      {
+        "type": "p",
+        "text": "全篇四十四个字，做了两件事：**上片把处境压到最低**（五层递进，没有一处放松）；**下片把毁坏推到最尽**（三个动词，一步比一步碎）。**两头都做到极处，最后才留下一样没有变的东西。** 词的力气就是这样攒出来的——**不是靠说得重，是靠前面铺得够狠。**"
+      },
+      {
+        "type": "p",
+        "text": "至于这株梅是不是在说什么别的，词自己没有说。**它只是把一株没人管的花，从开到碎，写完了。**"
+      },
+      {
+        "type": "refs",
+        "items": [
+          "原文出处：《宋词三百首》（朱孝臧编）陆游《卜算子》「咏梅」一首，底本据站内宋词原文管线，引文逐字取自站内原文。",
+          "括号内是词题不是词句、《卜算子》是词牌调名，及「更著」「一任」「碾」等训释，参本篇站内注疏。",
+          "陆游咏梅词有数首而此为最传诵的一篇，及上片五层递进、「开无主」三字为全篇的根、下片「无意苦争春」就花说而词面未推及人事、寄托之说系后人读出宜与词面分开，参本篇站内延伸。",
+          "咏物词的寄托之说，为清人张惠言《词选》以来的一种读法，非定论；本篇并陈，不作判定。",
+          "一九六一年毛泽东作同调《卜算子·咏梅》，题序自云读陆游咏梅词、反其意而用之，两首常并列对读——本篇作流传史照实记下，不作评论。",
+          "「只有香如故」后世常被单独摘出作格言，本篇照实记其流传，并说明它在词中所承接的上文。",
+          "本卷陆淞《瑞鹤仙》的作者为陆游从兄，两首相邻，此处并记。"
         ]
       }
     ]
