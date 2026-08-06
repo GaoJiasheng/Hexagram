@@ -4,14 +4,16 @@
 // 「一书一文件、键为章键」的形状。**scratchpad 是会话级临时目录,换 session 就没了**
 // —— 所以每做完一批就要合进仓库,不能把成果留在 /tmp 里过夜。
 //
-// 用法: node scripts/merge-poetry-baihua.mjs <corpus> <slug>
+// 用法: node scripts/merge-poetry-baihua.mjs <corpus> <slug> [scratch子目录名]
+//   scratch 子目录默认 poetry-bh(唐诗);宋词/元曲各用 poetry-bh-songci / poetry-bh-yuanqu,
+//   分开是因为唐诗的键是「组-序」、词曲是纯章号,混在一个目录里文件名会撞。
 //   扫 /private/tmp/claude-501/<项目>/*/scratchpad/poetry-bh/<键>.json(多会话目录一起收,
 //   同键取字数多的那份),校引文子串后合并进仓库,**保留已在库的其它键**。
 import fs from 'node:fs'
 import path from 'node:path'
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..')
-const [corpus, slug] = process.argv.slice(2)
+const [corpus, slug, dirName = 'poetry-bh'] = process.argv.slice(2)
 if (!corpus || !slug) { console.error('用法: node scripts/merge-poetry-baihua.mjs <corpus> <slug>'); process.exit(1) }
 
 const SCRATCH_GLOB = '/private/tmp/claude-501'
@@ -20,7 +22,7 @@ for (const proj of fs.existsSync(SCRATCH_GLOB) ? fs.readdirSync(SCRATCH_GLOB) : 
   const base = path.join(SCRATCH_GLOB, proj)
   if (!fs.statSync(base).isDirectory()) continue
   for (const sess of fs.readdirSync(base)) {
-    const d = path.join(base, sess, 'scratchpad', 'poetry-bh')
+    const d = path.join(base, sess, 'scratchpad', dirName)
     if (fs.existsSync(d)) dirs.push(d)
   }
 }
@@ -29,6 +31,11 @@ const book = JSON.parse(fs.readFileSync(path.join(ROOT, `src/data/${corpus}/clas
 const isTitle = (s) => /^《[^》]+》$/.test(s.trim())
 // 「组-序」键 → 那一首诗的原文(引文校验池,与 check-data 同一套判据)
 function poemText(key) {
+  // 纯章号(宋词/元曲:一首即一章)——整章即校验池
+  if (/^\d+$/.test(key)) {
+    const c = book.chapters.find((x) => x.no === Number(key))
+    return c ? c.paragraphs.map((p) => p.original).join('') : null
+  }
   const m = /^(\d+)-(\d+)$/.exec(key)
   if (!m) return null
   const c = book.chapters.find((x) => x.no === Number(m[1]))
@@ -43,7 +50,7 @@ function poemText(key) {
 const han = (s) => (s.match(/[一-鿿]/g) || []).length
 const picked = new Map()
 for (const d of dirs) {
-  for (const f of fs.readdirSync(d).filter((x) => /^\d+-\d+\.json$/.test(x))) {
+  for (const f of fs.readdirSync(d).filter((x) => /^\d+(-\d+)?\.json$/.test(x))) {
     const key = f.replace(/\.json$/, '')
     let a
     try { a = JSON.parse(fs.readFileSync(path.join(d, f), 'utf8')) } catch { console.warn(`⚠ ${f} 解析失败,跳过`); continue }
@@ -94,6 +101,7 @@ if (errs.length) {
 }
 fs.mkdirSync(path.dirname(dst), { recursive: true })
 fs.writeFileSync(dst, JSON.stringify(sorted, null, 2) + '\n')
-const total = book.chapters.reduce((n, c) => n + c.paragraphs.filter((p) => isTitle(p.original)).length, 0)
+const nPoem = book.chapters.reduce((n, c) => n + c.paragraphs.filter((p) => isTitle(p.original)).length, 0)
+const total = nPoem || book.chapters.length   // 有《诗题》段的按首数,否则一章即一首
 console.log(`✓ 合并 ${Object.keys(out).length} 篇(库中共 ${Object.keys(sorted).length}/${total})→ ${dst.replace(ROOT + '/', '')}`)
 console.log(`  扫描目录 ${dirs.length} 个`)
