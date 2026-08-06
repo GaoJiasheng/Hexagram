@@ -82,6 +82,12 @@ for (const [key, { a, n }] of [...picked].sort((x, y) => x[0].localeCompare(y[0]
   }
   for (const b of blocks) {
     if (b.type === 'quote' && !txt.includes(b.original)) bad.push(`${key}: 引文不在本诗内「${b.original.slice(0, 14)}…」`)
+    // callout 的两条:check-data 也校,在这里先挡住,免得坏稿落库后再回头修
+    // (**label 按原始长度算、含空格** —— 曾按「非空白字符数」判而漏掉「令 · 引 · 近 · 慢」)
+    if (b.type === 'callout') {
+      if (!Array.isArray(b.items) || !b.items.length) bad.push(`${key}: callout 无 items(正文别写在 text 字段)`)
+      if (b.label && b.label.length > 8) bad.push(`${key}: callout.label 过长(${b.label.length} 字)「${b.label}」`)
+    }
   }
   if (bad.length) { skipped.push(key); errs.push(...bad); continue }
   const { key: _k, ...rest } = a
