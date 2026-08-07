@@ -1,0 +1,146 @@
+{
+  "title": "第一层 · 原典：清代乩坛降笔的《太乙金华宗旨》",
+  "subtitle": "把最底下那一层单独看清楚：它从哪来、讲什么、在丹经谱系里坐第几把交椅——以及为什么本站只讲它是什么，不讲它怎么做",
+  "centralIdea": "《太乙金华宗旨》是清代扶乩活动的产物，托名吕洞宾降笔，作者不可考，现存最早的本子出自清初，此后不断被增补重编，版本谱系相当杂乱。它的内容是内丹一路的工法：核心概念是「回光」——认为人的神明平日一味向外耗散，修炼就是让这道光掉转回来照自身；全书十三章，从入手到火候到验证到进度安排，是一部给已入门者看的操作性指点，而不是论说文。在中国丹经的谱系里，它是晚出的、体量很小的一部，本不显赫；它今天的知名度，很大一部分来自「荣格评过」这四个字。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "现在把最底下那一层单独拿出来看。这件事必须做，因为后面两层——卫礼贤的译笔、荣格的评述——都是加在它上面的；不知道底下原本长什么样，就无从判断上面加了多少。要提前说明的是：本篇讲的是**它是什么、它从哪来、它在学说史上什么位置**，不复述任何可照做的步骤。这是本站读道藏诸书一贯的分寸。"
+    },
+    {
+      "type": "h2",
+      "text": "它是「降」下来的，不是「写」出来的"
+    },
+    {
+      "type": "p",
+      "text": "这部书署名吕洞宾——唐末五代的传说人物，八仙之一，道教尊为吕祖。而书是清代的。中间隔着七八百年，这不是署名错误，是这类文本的**生成方式**使然。"
+    },
+    {
+      "type": "p",
+      "text": "扶乩，明清极为普遍的一种宗教活动。做法大致是：设坛请神，由乩笔（一支架在木架或箕上的笔）在沙盘上划字，旁人辨认并恭录下来，写出的文字被视为神明当场降下的教诲。参与者往往是识字的士人或商人，坛有固定的组织，降下的文字积累起来就成篇成卷，再刻印流通。"
+    },
+    {
+      "type": "figure",
+      "ftype": "机制",
+      "caption": "这类文本的生成流程。注意最后一步：作者的位置从一开始就是留给神明的，执笔者的名字不进入文本，也不被认为重要。",
+      "svg": "<svg viewBox='0 0 640 200' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><text x='320' y='24' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:16px'>一部乩坛经卷是怎么出现的</text><rect x='24' y='50' width='128' height='62' rx='7' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.1'/><text x='88' y='76' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px'>设坛请神</text><text x='88' y='97' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11.5px'>士人结社</text><path d='M152 81 L182 81' style='stroke:var(--ink-soft);stroke-width:1.1' fill='none'/><rect x='182' y='50' width='128' height='62' rx='7' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.1'/><text x='246' y='76' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px'>乩笔划沙</text><text x='246' y='97' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11.5px'>旁人辨字恭录</text><path d='M310 81 L340 81' style='stroke:var(--ink-soft);stroke-width:1.1' fill='none'/><rect x='340' y='50' width='128' height='62' rx='7' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.1'/><text x='404' y='76' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px'>积累成篇</text><text x='404' y='97' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11.5px'>刻印流通</text><path d='M468 81 L498 81' style='stroke:var(--cinnabar-pure);stroke-width:1.2' fill='none'/><rect x='498' y='50' width='118' height='62' rx='7' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='557' y='76' text-anchor='middle' style='fill:var(--cinnabar-pure);font-family:var(--font-serif);font-size:13px'>署名吕祖</text><text x='557' y='97' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11.5px'>执笔者不留名</text><rect x='120' y='134' width='400' height='44' rx='7' style='fill:none;stroke:var(--line);stroke-width:1' stroke-dasharray='5 4'/><text x='320' y='161' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:12px'>「作者吕洞宾」的准确含义：这段话被信仰者认为是吕祖降的</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "所以「托名」这个词其实用得不太准。在参与者自己的理解里，这不是假托，是**如实记录**——他们真心相信笔下的字来自吕祖。清代托吕祖之名降下的经卷极多，汇成各种吕祖丛书，这部书就长在这片土壤里。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "换个角度想",
+      "items": [
+        "把它当作「一群清代读书人在共同的信仰框架下写出的修养文献」，比纠结「谁是真作者」更有用。这类文本的价值从来不在个人独创，而在它凝结了一个时代、一个圈子对身心问题的共同理解。",
+        "这也意味着：它的语言必然是**拼合的**——道教的、佛教的、儒家的词汇混在一处，因为坛上那些人本来读的就是这些书。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "现存最早的本子出自清初，此后不断被增补重编、收进各种丛书，版本谱系相当杂乱。哪一段是最早就有的、哪一段是后添的，至今没有干净的答案。卫礼贤手上那一册属于晚出的一系，这是上一章说过的硬伤。"
+    },
+    {
+      "type": "h2",
+      "text": "书名在说什么"
+    },
+    {
+      "type": "p",
+      "text": "书名七个字，每一个都有讲究。**太乙**，取「至高、无上」之意，是道教常用的尊称；**金华**，就是金色的光华；**宗旨**，即纲要、根本主张。合起来大意是：至高的金光之道的根本纲要。"
+    },
+    {
+      "type": "quote",
+      "original": "金华即光也",
+      "translation": "书中解题的一句。它把书名点破了：所谓「金华」不是一朵实有的花，指的就是光。西文译名 The Golden Flower（金花）是照字面译的，因此在欧洲读者那里，「花」的意象被保留甚至放大了——荣格后来把它读成曼陀罗，与这个译名不无关系。"
+    },
+    {
+      "type": "p",
+      "text": "这是个值得记一笔的细节：**中文里说的是光，译名里出现的是花**。原文本已经用「即」字点明了两者的关系，可一旦译成 Goldene Blüte，读者眼前浮起的首先是一朵花的形状。图案化的联想就是这样一步步长出来的。"
+    },
+    {
+      "type": "h2",
+      "text": "它讲什么：一部关于「回光」的书"
+    },
+    {
+      "type": "p",
+      "text": "全书的核心概念是**回光**。它的基本判断是：人的神明平日一味朝外耗散——眼睛追着看的、耳朵跟着听的、心思一刻不停算计的，全是往外走的；这样耗下去，人就散了。修炼要做的事，是让这道光掉转过来，回照自身，聚而不散。"
+    },
+    {
+      "type": "p",
+      "text": "光要回到谁那里去？回到**元神**。书里把人心里作主的东西分成两个：识神是那个整天算计、比较、安排、停不下来的心思，极其有用，但一刻不停朝外抓；元神是人本有的、清明而不动的那一层，平时被识神的噪音盖住，很少露面。整部书的主张就是：让识神退下去，让元神作主。"
+    },
+    {
+      "type": "quote",
+      "original": "自然曰道，道无名相，一性而已，一元神而已",
+      "translation": "书中开篇处的话，大意是：自然而然的那个就叫道；道没有名目形相，说到底只是一个「性」、一个「元神」罢了。这句把全书的落点交代得很清楚——它要处理的是「谁在作主」，而不是外部世界的道理。"
+    },
+    {
+      "type": "p",
+      "text": "这对概念在中国思想里不孤立。儒家讲道心与人心，佛家讲真心与妄心，讲的是同一个结构：人心里有两套东西，一套安静而被遮蔽，一套喧闹而当家。清代的丹书出现这对概念毫不奇怪——那正是三教语汇早已互相渗透的时代，而乩坛上的人读的就是这三家的书。"
+    },
+    {
+      "type": "h2",
+      "text": "十三章：从名目就看得出这是什么书"
+    },
+    {
+      "type": "p",
+      "text": "全书十三章，章目依次是：天心、元神识神、回光守中、回光调息、回光差谬、回光证验、回光活法、逍遥诀、百日立基、性光识光、坎离交媾、周天、劝世歌。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构",
+      "caption": "十三章的分布。有入手、有调节、有做错了怎么办、有做对了什么样、有以百日为期的进度——这是一部操作性文本的标准配置，不是论说文的写法。",
+      "svg": "<svg viewBox='0 0 640 260' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><text x='320' y='24' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:16px'>《太乙金华宗旨》十三章</text><rect x='34' y='44' width='266' height='94' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.1'/><text x='167' y='68' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px'>立说 · 讲道理的部分</text><text x='167' y='94' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:12px'>一 天心　二 元神识神</text><text x='167' y='118' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:12px'>十 性光识光</text><rect x='340' y='44' width='266' height='94' rx='8' style='fill:var(--paper-raised);stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='473' y='68' text-anchor='middle' style='fill:var(--cinnabar-pure);font-family:var(--font-serif);font-size:13px'>工法 · 操作的部分</text><text x='473' y='94' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:12px'>三 回光守中　四 回光调息</text><text x='473' y='118' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:12px'>七 回光活法　十一 坎离交媾　十二 周天</text><rect x='34' y='150' width='266' height='76' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.1'/><text x='167' y='174' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px'>纠错与验证</text><text x='167' y='200' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:12px'>五 回光差谬（做错了怎么办）</text><text x='167' y='219' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:12px'>六 回光证验（做对了什么样）</text><rect x='340' y='150' width='266' height='76' rx='8' style='fill:var(--paper-raised);stroke:var(--ink-soft);stroke-width:1.1'/><text x='473' y='174' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:13px'>进度与收束</text><text x='473' y='200' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:12px'>八 逍遥诀　九 百日立基</text><text x='473' y='219' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:12px'>十三 劝世歌</text><text x='320' y='250' text-anchor='middle' style='fill:var(--ink-faint);font-family:var(--font-serif);font-size:11.5px'>本站只列名目、说明性质，不复述任何可照做的内容</text></svg>"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "这里划一条线",
+      "items": [
+        "本站道组的既定分寸是：**不演内丹工法、不下成仙断语、不作宗教宣化。** 所以上面这张图只列章名、只说明这是一部什么性质的书，几时行火、如何回光、坐向时辰一概不写。",
+        "这不是回避，是判断：这类文本预设了师徒口授的传承结构，文字只作提示与印证，本来就不打算被独立读懂。把它的片段搬出来当作可照做的说明，既不忠于文本，也不负责任。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "它在丹经谱系里坐第几把交椅"
+    },
+    {
+      "type": "p",
+      "text": "最后要给它定个位，因为中文读者常因为「荣格评过」而高估它在中国传统内部的分量。"
+    },
+    {
+      "type": "p",
+      "text": "内丹一系的主干大致是这样几部：东汉《周易参同契》以易理立下框架，语言极隐晦；东晋《黄庭经》代表存思一路的高峰；北宋《悟真篇》把《参同契》那套隐语明确读成身中修炼，完成了内丹的系统化，此后一千年的丹道著述都要与它对话。这三部是主干。"
+    },
+    {
+      "type": "figure",
+      "ftype": "流变",
+      "caption": "内丹文献的大致脉络。《太乙金华宗旨》处在末端，是晚出的、体量很小的一部——在传统内部谈不上显赫，它今天的名气来自另一条路线。",
+      "svg": "<svg viewBox='0 0 640 200' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><text x='320' y='24' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:16px'>丹经谱系里的位置</text><line x1='56' y1='104' x2='592' y2='104' style='stroke:var(--line);stroke-width:1.2'/><circle cx='96' cy='104' r='8' style='fill:var(--ink-soft)'/><text x='96' y='86' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:12.5px'>东汉</text><text x='96' y='130' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:12.5px'>《参同契》</text><text x='96' y='149' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>立框架</text><circle cx='250' cy='104' r='8' style='fill:var(--ink-soft)'/><text x='250' y='86' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:12.5px'>东晋</text><text x='250' y='130' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:12.5px'>《黄庭经》</text><text x='250' y='149' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>存思一路</text><circle cx='404' cy='104' r='8' style='fill:var(--ink-soft)'/><text x='404' y='86' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:12.5px'>北宋</text><text x='404' y='130' text-anchor='middle' style='fill:var(--ink);font-family:var(--font-serif);font-size:12.5px'>《悟真篇》</text><text x='404' y='149' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>系统化，主干</text><circle cx='556' cy='104' r='6' style='fill:var(--cinnabar-pure)'/><text x='556' y='86' text-anchor='middle' style='fill:var(--cinnabar-pure);font-family:var(--font-serif);font-size:12.5px'>清代</text><text x='556' y='130' text-anchor='middle' style='fill:var(--cinnabar-pure);font-family:var(--font-serif);font-size:12px'>《太乙金华宗旨》</text><text x='556' y='149' text-anchor='middle' style='fill:var(--ink-soft);font-family:var(--font-serif);font-size:11px'>晚出小书</text><text x='320' y='182' text-anchor='middle' style='fill:var(--ink-faint);font-family:var(--font-serif);font-size:11.5px'>前三部本站道藏组皆有收录；末一部没有 —— 理由见下</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "《太乙金华宗旨》处在这条线的末端，晚出、简短，在传统丹道文献里本不显赫。而本站的道藏组收了前三部，没有收它。理由 owner 已经定过：**它的主体是工法**；这本书之所以值得讲，是因为荣格那一层带来的思想史事件，而那属于「观书」这一层的事。所以本站写的是**荣格这本书**，不是《太乙金华宗旨》这部经。"
+    },
+    {
+      "type": "pull",
+      "text": "它今天的名气不是从丹经谱系里长出来的，是从一条绕过欧洲的路上带回来的。"
+    },
+    {
+      "type": "p",
+      "text": "把第一层看清楚之后，接下来的问题就具体了：这样一部匿名的、晚出的、隐晦的操作性小书，被译成德文时发生了什么？下一章讲译笔。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本篇为原创消化转述；所引《太乙金华宗旨》文句为极短的点睛式引用，该文本为清代作品。",
+        "扶乩活动的形态、吕祖丛书的编纂、本书的版本谱系等，学界仍有讨论，本篇只作概括陈述，具体考订以专门研究为准。",
+        "文中所述内丹文献脉络为通行的粗线条说法，不代表唯一分期方案。",
+        "本站作思想史与文献研读，不演内丹工法、不下养生长生成仙一类断语、不作宗教宣化；《太乙金华宗旨》原典不收入本站道藏组。"
+      ]
+    }
+  ]
+}

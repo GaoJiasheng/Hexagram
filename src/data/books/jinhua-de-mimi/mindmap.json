@@ -1,0 +1,318 @@
+{
+  "id": "root",
+  "label": "金花的秘密",
+  "note": "一部中国丹经的西行与回流：原典、译笔、评述，三层各是一件事",
+  "children": [
+    {
+      "id": "what",
+      "label": "它是什么 · 一册两作者的书",
+      "ref": { "ch": 1 },
+      "children": [
+        {
+          "id": "what-compose",
+          "label": "一半是译文，一半是评述",
+          "note": "1929 年德文初版：卫礼贤的导言与译文在前，荣格的长篇评述在后",
+          "children": [
+            { "id": "what-compose-parts", "label": "全书由四块拼成：卫礼贤的导言、《太乙金华宗旨》德译、荣格的「欧洲评述」，以及附录里那部带插图的《慧命经》。" },
+            { "id": "what-compose-ratio", "label": "评述的篇幅与正文相当——这是罕见的体例：注释者的分量和被注释的文本平起平坐，读者往往先记住荣格，后记住原典。" }
+          ]
+        },
+        {
+          "id": "what-encounter",
+          "label": "两个人的相遇",
+          "note": "卫礼贤把稿子寄给荣格，荣格当时正陷在无人能懂的处境里",
+          "children": [
+            { "id": "what-encounter-1928", "label": "1928 年卫礼贤把这部小书的译稿寄给荣格，请他写一篇心理学的评论——他找的是一个懂得「内心图像」的人，不是一个汉学家。" },
+            { "id": "what-encounter-death", "label": "卫礼贤 1930 年病逝，荣格为他写了纪念文，后来的版本多把这篇纪念一并收进去，于是这本书也成了两人交谊的纪念物。" }
+          ]
+        },
+        {
+          "id": "what-effect",
+          "label": "它造成了什么",
+          "children": [
+            { "id": "what-effect-west", "label": "在欧洲，它是「东方智慧」进入心理学视野的一个标志性事件，此后一代西方读者从荣格这条路认识中国的修炼传统。" },
+            { "id": "what-effect-east", "label": "在中文世界，一部本来不甚显赫的清代丹书，因为这条西行路线而重新被注意——今天很多人对它的印象，其实是从荣格那边折回来的。" }
+          ]
+        },
+        {
+          "id": "what-threelayer",
+          "label": "读它的唯一要诀：把三层分开",
+          "note": "原典 / 译笔 / 评述，是三件不同的事",
+          "children": [
+            { "id": "what-threelayer-a", "label": "第一层是清代的丹书本身，讲的是回光守中一路的内丹工法，属于道教修炼传统。" },
+            { "id": "what-threelayer-b", "label": "第二层是卫礼贤的译笔，他的选词把这套语言接到了欧洲的哲学与宗教语汇上。" },
+            { "id": "what-threelayer-c", "label": "第三层是荣格的心理学再诠释——集体无意识、自性化、曼陀罗，这些都是荣格的，不是原典的。" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wilhelm",
+      "label": "卫礼贤 · 译者其人",
+      "ref": { "ch": 2 },
+      "children": [
+        {
+          "id": "wilhelm-missionary",
+          "label": "以传教士身份来，以汉学家身份留下",
+          "children": [
+            { "id": "wilhelm-missionary-qingdao", "label": "1899 年他随德国新教差会到青岛，办学校、办医院，在中国前后住了二十余年。" },
+            { "id": "wilhelm-missionary-nobaptism", "label": "他晚年说过一句常被引用的话：自己没有让一个中国人受洗——他把这当作一件值得庆幸的事，而不是失败。" }
+          ]
+        },
+        {
+          "id": "wilhelm-translations",
+          "label": "他译过的那一批书",
+          "note": "《易经》《道德经》《庄子》《论语》……德语世界的中国经典，很多是他打的底",
+          "children": [
+            { "id": "wilhelm-translations-yijing", "label": "他的《易经》德译（1924）影响最大，后来经英译再流布，二十世纪西方的《易经》热多由此发端。" },
+            { "id": "wilhelm-translations-laonaixuan", "label": "译《易经》时他与清末学者劳乃宣合作：老先生逐句讲，他逐句译，再回译成中文核对——一种少见的双向校勘。" }
+          ]
+        },
+        {
+          "id": "wilhelm-stance",
+          "label": "他的立场：不是来纠正，是来学",
+          "children": [
+            { "id": "wilhelm-stance-respect", "label": "在同时代的传教士里他是异类：不把中国典籍当作待破除的迷信，而当作可以与欧洲对话的思想资源。" },
+            { "id": "wilhelm-stance-cost", "label": "这份敬意也有代价——太投入地站在被译者一边，容易在选词时不自觉地替对方说得更「高」一些。" }
+          ]
+        },
+        {
+          "id": "wilhelm-source",
+          "label": "他手上那个本子",
+          "children": [
+            { "id": "wilhelm-source-beijing", "label": "据他自述，底本是一个北京小圈子自印的册子，印数很少，在同好之间流通——不是通行的坊刻大路货。" },
+            { "id": "wilhelm-source-problem", "label": "后来的研究者指出，这类晚出本子与更早的传本差异不小，删节与改窜都有——这是这本书最实在的一处硬伤。" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "text",
+      "label": "第一层 · 原典《太乙金华宗旨》",
+      "ref": { "ch": 3 },
+      "children": [
+        {
+          "id": "text-origin",
+          "label": "它的来路：乩坛降笔，托名吕祖",
+          "note": "清代扶乩活动的产物，署名吕洞宾，实际作者不可考",
+          "children": [
+            { "id": "text-origin-jitan", "label": "扶乩是清代极普遍的宗教活动：设坛请神，由乩笔在沙盘上写字，写出来的文字被视为神明降下的教诲。" },
+            { "id": "text-origin-lu", "label": "托名吕洞宾并非孤例——清代托吕祖之名降下的经卷极多，这是那一整类文本的通例，不必视为造伪。" },
+            { "id": "text-origin-date", "label": "现存最早的本子出自清初，此后不断被增补重编，收入各种吕祖丛书，版本谱系相当杂乱。" }
+          ]
+        },
+        {
+          "id": "text-content",
+          "label": "它讲什么：回光一路的丹法",
+          "note": "十三章，围绕「回光」与「守中」展开",
+          "children": [
+            { "id": "text-content-huiguang", "label": "核心概念是「回光」：认为人的神明平日一味向外耗散，修炼就是让它掉转回来照自身。" },
+            { "id": "text-content-xingming", "label": "它承接内丹的性命之学，讲元神与识神之别、性光与识光之别，把「谁在做主」当作根本问题。" },
+            { "id": "text-content-chapters", "label": "章目如天心、元神识神、回光守中、逍遥诀、百日立基、坎离交媾、周天——从名目就看得出这是一部操作性的书。" }
+          ]
+        },
+        {
+          "id": "text-genre",
+          "label": "它的体裁：工法书",
+          "children": [
+            { "id": "text-genre-manual", "label": "它不是论说文，是给已入门者看的指点：预设了师徒口授的传承，文字只作提示与印证。" },
+            { "id": "text-genre-redline", "label": "本站对这一层只讲「它是什么、在学说史上什么位置」，不复述任何可照做的步骤——工法不演，是站内的铁律。" }
+          ]
+        },
+        {
+          "id": "text-status",
+          "label": "它在中文世界的地位",
+          "children": [
+            { "id": "text-status-minor", "label": "在《参同契》《悟真篇》那一线的丹经谱系里，它本是一部晚出的、体量很小的书，谈不上显赫。" },
+            { "id": "text-status-notin", "label": "本站道藏组没有收它：它的主体是工法，带心理学色彩的是荣格的评述，而不是文本本身。" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "translation",
+      "label": "第二层 · 卫礼贤的译笔",
+      "ref": { "ch": 4 },
+      "children": [
+        {
+          "id": "translation-sinn",
+          "label": "「道」被译成了「意义」",
+          "note": "Wilhelm 用 SINN（意义）译道，取自歌德《浮士德》的那句改写",
+          "children": [
+            { "id": "translation-sinn-faust", "label": "浮士德翻译《约翰福音》时把「太初有道」改译成「太初有意义」——卫礼贤把这个词借了过来。" },
+            { "id": "translation-sinn-effect", "label": "一旦「道」成了「意义」，这套文本就自动接上了欧洲关于意义、精神、内在生命的整条脉络，读者不觉得隔。" }
+          ]
+        },
+        {
+          "id": "translation-hunpo",
+          "label": "魂魄被译成 animus 与 anima",
+          "children": [
+            { "id": "translation-hunpo-latin", "label": "他用两个拉丁词对译魂与魄——而 anima / animus 恰好是荣格自己早已在用的一对术语。" },
+            { "id": "translation-hunpo-mismatch", "label": "两套意思其实对不齐：中国的魂魄是阴阳二气所属的两种神，荣格的阿尼玛阿尼姆斯是心中的异性形象。名字撞车，内容各说各的。" }
+          ]
+        },
+        {
+          "id": "translation-general",
+          "label": "一整套选词的偏向",
+          "children": [
+            { "id": "translation-general-spirit", "label": "神、气、性、命这些字，在德语里各自被安放到一个已有分量的词上，于是原文的技术色彩淡了，哲学与宗教色彩浓了。" },
+            { "id": "translation-general-consequence", "label": "结果是：荣格读到的那部书，比中文原典更「像哲学」——他随后的心理学解读，很大一部分是被这个译本的语感托起来的。" }
+          ]
+        },
+        {
+          "id": "translation-lesson",
+          "label": "这件事的普遍意义",
+          "children": [
+            { "id": "translation-lesson-bridge", "label": "翻译从来不是搬运，是搭桥；桥搭在哪个岸口，行人就从哪个方向走进来。" },
+            { "id": "translation-lesson-check", "label": "读任何一部经由翻译进入的思想，都值得问一句：我读到的这个味道，是原文的，还是译笔的？" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jung-why",
+      "label": "第三层 · 荣格（上）：他为什么需要它",
+      "ref": { "ch": 5 },
+      "children": [
+        {
+          "id": "jung-why-isolation",
+          "label": "1928 年的处境：孤立",
+          "children": [
+            { "id": "jung-why-isolation-freud", "label": "与弗洛伊德决裂之后，他走的是一条无人同行的路：自己下潜、自己记录、自己解释，也自己承受被视为神秘主义者的评价。" },
+            { "id": "jung-why-isolation-mandala", "label": "他从 1916 年起断续画曼陀罗，画了多年却说不清那是什么，只知道每次画完心里会安定下来。" }
+          ]
+        },
+        {
+          "id": "jung-why-confirm",
+          "label": "一份意外的印证",
+          "note": "一个隔着几百年、几千公里的陌生传统，画着同样的图，说着相似的过程",
+          "children": [
+            { "id": "jung-why-confirm-read", "label": "读到卫礼贤寄来的译稿时，他发现书里描述的那个向内回转、聚于中心的过程，与自己多年的经验对得上。" },
+            { "id": "jung-why-confirm-meaning", "label": "对他而言这不是「东方证明了我对」，而是：这类经验可能不是他一个人的病，而是人心里普遍存在的一种运动。" }
+          ]
+        },
+        {
+          "id": "jung-why-method",
+          "label": "他给自己定的身份",
+          "children": [
+            { "id": "jung-why-method-notsino", "label": "他在评述里明说自己不是汉学家，是以心理学家和医生的身份说话——这句自我限定后来常被读者忽略。" },
+            { "id": "jung-why-method-european", "label": "他把自己那部分称作「欧洲评述」：一个欧洲人站在欧洲的处境里，看这部书能对欧洲人说什么。" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jung-what",
+      "label": "第三层 · 荣格（下）：回光被读成了什么",
+      "ref": { "ch": 6 },
+      "children": [
+        {
+          "id": "jung-what-inward",
+          "label": "回光 = 意识的向内回转",
+          "children": [
+            { "id": "jung-what-inward-projection", "label": "他把「光向外耗散」读成心理能量的向外投射：我们把内心的东西挂到别人、事业、敌人身上，然后在外面追着它跑。" },
+            { "id": "jung-what-inward-withdraw", "label": "于是「回光」在他笔下成了把投射收回来：承认那些让你愤怒或着迷的东西，有一部分本来就在你心里。" }
+          ]
+        },
+        {
+          "id": "jung-what-mandala",
+          "label": "金花 = 曼陀罗 = 自性的象征",
+          "children": [
+            { "id": "jung-what-mandala-center", "label": "他关注的是「中心」这个结构：散乱的心理内容围绕一个中心重新排布，人就从混乱里获得秩序感。" },
+            { "id": "jung-what-mandala-caution", "label": "但要注意：原典说的金花是丹法过程里的一个象，荣格说的自性是他理论中的一个假设，两者只是形状相似。" }
+          ]
+        },
+        {
+          "id": "jung-what-individuation",
+          "label": "全过程 = 自性化",
+          "note": "个体化：人逐渐成为自己本来的那个整体",
+          "children": [
+            { "id": "jung-what-individuation-def", "label": "自性化指人把意识与无意识、光明面与阴影面逐步整合成一个较完整的自己，而不是变得更完美。" },
+            { "id": "jung-what-individuation-map", "label": "他把这部丹书当作这一过程的一份东方地图：路线相似，术语不同，出发的动机也不同。" }
+          ]
+        },
+        {
+          "id": "jung-what-limit",
+          "label": "这一层的性质",
+          "children": [
+            { "id": "jung-what-limit-his", "label": "集体无意识、原型、自性化——这些概念是荣格的建构，写在他自己的著作里，不是从中文原典中读出来的。" },
+            { "id": "jung-what-limit-critic", "label": "后来的批评者说得直白：他是拿一部丹书作了自己心理学的插图，被照亮的是他的理论，不是那部书。" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "warning",
+      "label": "荣格自己划的界",
+      "ref": { "ch": 7 },
+      "children": [
+        {
+          "id": "warning-noimitate",
+          "label": "「不要模仿东方」",
+          "note": "这本书最容易被跳过、也最该被记住的一段",
+          "children": [
+            { "id": "warning-noimitate-say", "label": "他反复劝阻欧洲人照搬东方的修炼：借来的法门长在别人的土壤里，移过来往往只剩姿势。" },
+            { "id": "warning-noimitate-reason", "label": "他的理由是心理学的：一套象征之所以有效，是因为它长在那个文化的整套生活里；抽出来单练，容易变成自我欺骗甚至膨胀。" }
+          ]
+        },
+        {
+          "id": "warning-own",
+          "label": "他要人回到自己的根",
+          "children": [
+            { "id": "warning-own-west", "label": "他主张欧洲人去处理自己的传统与自己的病，而不是到东方找一副现成的药。" },
+            { "id": "warning-own-irony", "label": "讽刺的是，这本书恰恰催生了一大批「照着东方练」的西方读者——作者的警告，多数人读到了标题就翻过去了。" }
+          ]
+        },
+        {
+          "id": "warning-here",
+          "label": "站内的分寸与此相合",
+          "children": [
+            { "id": "warning-here-rule", "label": "本站道组的铁律是不演内丹工法、不下成仙断语、不作宗教宣化——讲它是什么，不写成可照做的步骤。" },
+            { "id": "warning-here-consist", "label": "所以这本书放在「观书」这一层：写的是「荣格这本书」，不是「《太乙金华宗旨》这部经」。" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "return",
+      "label": "出口转内销 · 今天怎么读",
+      "ref": { "ch": 8 },
+      "children": [
+        {
+          "id": "return-route",
+          "label": "一条完整的往返路线",
+          "note": "中文 → 德文 → 英文 → 世界 → 中文",
+          "children": [
+            { "id": "return-route-out", "label": "清代的一部小册子，经卫礼贤译成德文、荣格作评，1929 年在欧洲出版，随后有英译本流布。" },
+            { "id": "return-route-back", "label": "几十年后它又被译回中文，以「荣格评述的中国丹经」的身份重新进入中文读者视野——这是典型的出口转内销。" },
+            { "id": "return-route-double", "label": "早期通行的英译是从德译再转译的，等于隔了两道；后来才有人直接从中文重译，并对旧译提出严厉批评。" }
+          ]
+        },
+        {
+          "id": "return-dispute",
+          "label": "两处主要争议",
+          "children": [
+            { "id": "return-dispute-text", "label": "一是底本问题：卫礼贤所据的晚出本子被认为有删节改窜，据之立论，地基就不稳。" },
+            { "id": "return-dispute-read", "label": "二是解读问题：把一部宗教修炼手册整体读成心理过程的象征，究竟是洞见还是越界，至今没有定论。" }
+          ]
+        },
+        {
+          "id": "return-value",
+          "label": "那它还值不值得读",
+          "children": [
+            { "id": "return-value-case", "label": "值得——但换个读法：把它当作一份「跨文化误读如何发生」的活标本，比当作修炼指南或心理学教材都更有收获。" },
+            { "id": "return-value-mirror", "label": "它照出的是两边：欧洲人如何借东方讲自己的心事，以及中文读者如何通过外人的眼睛重新看见自家的旧书。" }
+          ]
+        },
+        {
+          "id": "return-how",
+          "label": "具体的读法建议",
+          "children": [
+            { "id": "return-how-order", "label": "先读卫礼贤的导言看他怎么定位，再读评述看荣格关心什么，最后回头读译文——顺序颠倒容易把评述当成原意。" },
+            { "id": "return-how-flag", "label": "读的时候手边备一句话：这一段是原典说的，还是译者选的词，还是荣格加的？三者一分开，全书立刻清楚。" }
+          ]
+        }
+      ]
+    }
+  ]
+}

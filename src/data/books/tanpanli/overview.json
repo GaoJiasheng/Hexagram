@@ -1,0 +1,280 @@
+{
+ "title": "白话《谈判力》· 全书总览",
+ "subtitle": "一篇文章读懂哈佛谈判项目的原则谈判法:把人和问题分开、着眼利益而非立场、创造双赢选项、坚持客观标准,以及那个流传最广的概念——BATNA",
+ "centralIdea": "《谈判力》是 1981 年哈佛谈判项目交出的一份方法论:大多数人谈判时只有两种打法,要么硬到底、把每一步都当意志较量,要么软到底、为保住关系一路退让——而这两条路都通向同一个结果:效率低、关系伤、协议还不牢。费希尔与尤里提出第三条路,叫「原则谈判法」,骨架是四条原则加一个概念:把人和问题分开、着眼于利益而不是立场、为共同利益创造多个选择方案、坚持用双方都认的客观标准,再加上 BATNA——谈不成时你最好的那个退路,它才是谈判力量真正的来源。这套方法的野心不是教你怎么赢,而是把谈判从「两个人隔着桌子互推」重新定义成「两个人挪到同一侧,一起对付摆在桌上的那个问题」。它至今仍是商学院的标准教材,也至今仍被后来者(比如写《掌控谈话》的克里斯·沃斯)当作头号靶子——那场分歧,本身就值得单独读一节。",
+ "featured": true,
+ "hero": {
+  "badge": "全书 · 核心",
+  "headline": "别在立场上讨价还价——把桌子对面的人,请到桌子的同一侧来。",
+  "tagline": "四条原则加一个 BATNA,把一场意志较量,换成一次共同解题。"
+ },
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "想象一下你正在跟房东谈续租。你想少涨点,他想多涨点。你说三千五,他说四千二,你说三千七,他说四千,你说三千八,他不说话了。这场对话里发生了什么?你们各自报了一个数字,然后一点一点朝中间挪,谁先眨眼谁吃亏。整个过程你没了解到任何新东西——他为什么涨价、他有没有别的租客在等、你搬走对他意味着什么,一概不知;你只是在跟一个数字较劲。谈完之后,不管落在哪儿,你大概率都觉得自己本可以再争一点,而他大概率也这么觉得。**这就是绝大多数人默认的谈判方式,而《谈判力》整本书的开头,就是要说服你:这种方式从根上就是错的。**这篇总览会带你把这本 1981 年的小册子从头走一遍——它先拆掉什么、再装上什么、那个人人都听过却常常用错的 BATNA 到底该怎么理解,以及最后一节:为什么后来会有一位 FBI 谈判专家专门写一本书来反驳它,而这场分歧为什么不是「谁淘汰谁」。"
+  },
+  {
+   "type": "h2",
+   "text": "一、这本书从哪儿来:一个专门研究「怎么谈」的项目"
+  },
+  {
+   "type": "p",
+   "text": "先交代来历,因为它决定了这本书的气质。上世纪七十年代末,哈佛大学成立了一个叫「哈佛谈判项目」的研究小组,专门做一件事:把谈判当成一门可以研究、可以拆解、可以教的手艺,而不是某些人天生就有的本事。罗杰·费希尔是法学院教授,长期研究国际冲突的化解;威廉·尤里是人类学家出身,做的是谈判与调解的田野研究。1981 年,两人把项目的阶段性成果写成了这本《谈判力》,英文原名 *Getting to Yes*,副标题直译过来是「在不让步的前提下达成协议」。"
+  },
+  {
+   "type": "p",
+   "text": "这个副标题其实已经把全书的主张压缩进去了:**不让步,但也要达成协议**。听起来像是自相矛盾——不让步怎么谈得成?书的全部内容,就是在解释这句话为什么不矛盾。它的回答是:你以为的「让步」,是在立场上一寸一寸往后退;而真正该做的,是压根就别把话说成立场,直接去谈立场底下的东西。这个视角一换,「不让步」和「谈成」就不再打架了。"
+  },
+  {
+   "type": "p",
+   "text": "还有一个背景值得一提:这本书面对的读者,从一开始就不限于商人。费希尔研究过中东和谈,书里最常被引用的案例之一是 1978 年的戴维营协议——以色列和埃及为西奈半岛的归属僵持不下,双方在「地图上这条线画在哪儿」上寸步不让,直到调解者把问题换了个问法:以色列要的其实是安全,埃及要的其实是主权。于是有了那个著名的方案——主权归埃及,半岛非军事化。地图上的线没有各让一半,两边却都拿到了自己真正要的东西。**这个案例是全书方法论的原型:分歧看起来不可调和,常常只是因为大家在争一个被提错的问题。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "svg": "<svg viewBox='0 0 560 470' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>《谈判力》的骨架:一个否定 · 四条原则 · 一个概念</text><rect x='60' y='44' width='440' height='46' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.4'/><text x='280' y='66' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>先否定:不要在立场上讨价还价</text><text x='280' y='83' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>软硬两种打法都走不通,出路在第三个维度</text><line x1='280' y1='90' x2='280' y2='106' style='stroke:var(--ink-faint);stroke-width:1'/><rect x='40' y='106' width='230' height='58' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='155' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>① 把人和问题分开</text><text x='155' y='148' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>对人温和,对事强硬</text><rect x='290' y='106' width='230' height='58' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='405' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>② 着眼利益,不是立场</text><text x='405' y='148' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>立场是答案,利益才是题</text><rect x='40' y='176' width='230' height='58' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='155' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>③ 创造多个选择方案</text><text x='155' y='218' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>先把蛋糕做大,再谈怎么分</text><rect x='290' y='176' width='230' height='58' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='405' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>④ 坚持客观标准</text><text x='405' y='218' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>不向压力低头,只向道理低头</text><line x1='280' y1='234' x2='280' y2='252' style='stroke:var(--ink-faint);stroke-width:1'/><rect x='110' y='252' width='340' height='58' rx='8' style='fill:none;stroke:var(--azure);stroke-width:1.8'/><text x='280' y='274' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>BATNA:谈不成时最好的那条退路</text><text x='280' y='294' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>它同时是衡量提议的尺子,和你敢说「算了」的底气</text><line x1='280' y1='310' x2='280' y2='328' style='stroke:var(--ink-faint);stroke-width:1'/><text x='280' y='346' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>「是,但是……」三问</text><rect x='40' y='358' width='150' height='50' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='115' y='380' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>对方更强大?</text><text x='115' y='398' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>去把 BATNA 做强</text><rect x='205' y='358' width='150' height='50' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='380' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>对方不合作?</text><text x='280' y='398' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>谈判柔术:借力不对撞</text><rect x='370' y='358' width='150' height='50' rx='6' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='445' y='380' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>对方使诈?</text><text x='445' y='398' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>把手法本身摆上桌</text><rect x='110' y='424' width='340' height='34' rx='6' style='fill:none;stroke:var(--azure);stroke-width:1.2;stroke-dasharray:4 3'/><text x='280' y='446' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>站内对读:《掌控谈话》正是冲着这套方法来的</text></svg>",
+   "caption": "全书一条主线:先否定立场式讨价还价,再装上四条原则,用 BATNA 解决「实力不对等」的老大难,最后回答读者一定会问的三个「是,但是」。"
+  },
+  {
+   "type": "h2",
+   "text": "二、先拆:立场之争为什么必然低效又伤人"
+  },
+  {
+   "type": "p",
+   "text": "全书从一个否定句开始:**不要在立场上讨价还价。**什么叫立场?就是你摆到台面上的那个具体主张——「三千五,不能再多了」「这个交期必须提前两周」「起薪至少四十万」。立场式谈判的套路人人都会:先报一个留足余量的数,再一点点往回让,让到双方都觉得再让就亏了为止。这套办法之所以流行,是因为它简单、直观,而且看起来很公平——大家各让一半嘛。"
+  },
+  {
+   "type": "p",
+   "text": "费希尔和尤里指出,这种方式至少有三笔账没人算过。第一笔是**效率**:每一次让步都要试探、观望、装作为难,谈得越久越像消耗战;更糟的是,双方都知道对方留了余量,于是开价越来越极端、让步越来越挤牙膏,一场本可以半小时谈完的事拖成三个星期。第二笔是**关系**:立场之争天然把对方放在「敌人」的位置上,你赢下的每一寸,他心里都记着一笔账,下次合作先从这笔账里扣。第三笔是**协议质量**:在中点上砍出来的结果,常常两边都不满意,也没人真正确认过它是不是最优解——它只是「吵到这儿吵不动了」的位置。"
+  },
+  {
+   "type": "quote",
+   "original": "不要在立场上讨价还价。",
+   "translation": "全书的第一句否定,也是所有后续方法的地基:只要谈判还在「我出价你还价」的框架里,双方就注定要在效率、关系、协议质量这三件事上同时吃亏。"
+  },
+  {
+   "type": "p",
+   "text": "更要命的是,人们通常以为出路是在「硬」和「软」之间选一个。硬派把对方当对手,把每一步都当意志较量,守住立场绝不松口;软派把对方当朋友,为保住关系不断让步,生怕气氛僵掉。可这两种打法有一个共同的毛病:**它们都在同一根轴线上——比谁更能扛。**硬派赢了条款输了关系,还常常把对方逼到宁可谈崩;软派保住了气氛却守不住利益,而且一旦遇上硬派,几乎必输——你让一步他进一步,你的善意在他眼里只是可以继续挤压的空间。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比表",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>三种打法:软 · 硬 · 原则</text><rect x='20' y='42' width='170' height='240' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='105' y='66' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>软</text><text x='105' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>对方是朋友</text><text x='105' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>目标是达成协议</text><text x='105' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>为关系不断让步</text><text x='105' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>亮出底线</text><text x='105' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>接受单方损失</text><text x='105' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>向压力屈服</text><text x='105' y='250' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar-pure)'>✗ 谈成了,却守不住</text><rect x='195' y='42' width='170' height='240' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='280' y='66' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>硬</text><text x='280' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>对方是敌人</text><text x='280' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>目标是赢</text><text x='280' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>把让步当作条件</text><text x='280' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>虚报底线</text><text x='280' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>要求单方好处</text><text x='280' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>施加压力</text><text x='280' y='250' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar-pure)'>✗ 赢了事,输了人</text><rect x='370' y='42' width='170' height='240' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='455' y='66' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>原则</text><text x='455' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>对方是共同解题的人</text><text x='455' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>目标是明智的结果</text><text x='455' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>对人温和,对事强硬</text><text x='455' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>不设底线,备好退路</text><text x='455' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>先造多个方案再选</text><text x='455' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>只服从道理</text><text x='455' y='250' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--azure)'>✓ 换一根轴线</text></svg>",
+   "caption": "软和硬其实在同一根轴上——比谁更能扛。原则谈判法的关键动作是换轴:不比意志,比谁的方案更站得住。"
+  },
+  {
+   "type": "h2",
+   "text": "三、第一条原则:把人和问题分开"
+  },
+  {
+   "type": "p",
+   "text": "第一条原则针对的是一个常被忽略的事实:**谈判桌对面坐的不是一家公司、一个部门、一个立场,而是一个人。**这个人有情绪、有面子、有他自己的记忆和偏见,而且他也在向背后的什么人交代。费希尔和尤里说,谈判者永远同时抱着两种利益:一种是实质利益(价格、条款、期限),一种是关系利益(这件事谈完,我们还能不能继续打交道)。立场式讨价还价的致命之处,是把这两种利益死死绑在一起——你在条款上守一步,他就觉得你在人格上冒犯他;你为顾及气氛让一步,你的利益就实实在在少一块。"
+  },
+  {
+   "type": "p",
+   "text": "书里把「人的问题」拆成三类。第一类是**认知**:同一件事,双方看到的常常是两个版本,而每个人都真心觉得自己那版才是事实。费希尔举过一个二手房交易的例子——同一套房,卖家眼里满是「我精心维护了十年」,买家眼里全是「墙皮该重刷了」,两人不是在撒谎,是真的看见了不同的东西。第二类是**情绪**:焦虑、被冒犯、怕吃亏、怕在自己人面前丢脸。第三类是**沟通**:一边说的话是讲给背后的人听的,另一边压根没在听,听了也照自己的预设翻译了一遍。"
+  },
+  {
+   "type": "p",
+   "text": "对应的处理办法也很朴素。对认知问题,最有效的动作是**把对方的推理原样复述一遍**,复述到他愿意点头说「对,我就是这个意思」为止——注意,认可对方的看法不等于同意它,这是很多人迈不过去的一道心理坎。对情绪问题,办法是给它一个出口:允许对方把气发完,不反击、不接招、不针锋相对地澄清,等他发完,事情才谈得下去。对沟通问题,最实用的一条是**说自己,别说对方**——「这件事让我很为难」比「你这个做法很不厚道」有用一百倍,因为前者不需要对方先承认自己错了才能往下接。"
+  },
+  {
+   "type": "quote",
+   "original": "对人温和,对事强硬。",
+   "translation": "全书流传最广的一句口诀。它把「软」和「硬」拆到两个不同的对象上:对人的态度可以尽量温和,不给对方留下被羞辱的感觉;对问题本身则可以寸步不让,该坚持的标准一条不减。"
+  },
+  {
+   "type": "p",
+   "text": "这条原则最好的画面,是全书反复强调的一个空间隐喻:**别隔着桌子面对面坐,挪到同一侧去,把问题摆在你们共同的对面。**这不只是修辞——真去这么坐,对话的气氛会变。费希尔还提醒:预防远胜于补救,和对方的关系应当在分歧出现之前就建立好,而不是等到谈崩了才想起来对方是个活人。这也解释了为什么老练的谈判者会在正题之前先聊几句闲天——那不是浪费时间,是在给后面可能出现的摩擦攒缓冲。"
+  },
+  {
+   "type": "h2",
+   "text": "四、第二条原则:着眼于利益,而不是立场"
+  },
+  {
+   "type": "p",
+   "text": "这是全书最锋利的一刀,也是最容易被记住的一条。费希尔用了一个几乎人人都能秒懂的例子:图书馆里两个人为一扇窗吵起来,一个非要开,一个非要关。管理员问他们为什么。要开窗的说:屋里太闷,想透口气。要关窗的说:我怕穿堂风,会着凉。于是管理员走到隔壁房间,把那边的窗打开了——空气流通了,风也不直吹了,两个人都满意。"
+  },
+  {
+   "type": "p",
+   "text": "**「开还是关」是立场,「透气」和「不吹风」是利益。**这两个立场是对立的,你死我活,中间只有一个恶心的折中(开一半);而这两个利益并不对立,它们完全可以同时被满足——只要有人肯问一句「为什么」。全书的方法论从这里长出来:立场是对方给你的**答案**,利益才是他真正要解的**题**;你只跟答案较劲,就永远看不到题面上其实还有别的解法。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意",
+   "svg": "<svg viewBox='0 0 560 320' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>立场是水面上的,利益在水面下</text><line x1='30' y1='120' x2='530' y2='120' style='stroke:var(--azure);stroke-width:1.4;stroke-dasharray:6 4'/><text x='540' y='116' text-anchor='end' style='font-family:var(--font-serif);font-size:10px;fill:var(--azure)'>说出口的水位线</text><rect x='70' y='56' width='150' height='48' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.4'/><text x='145' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>立场:「把窗打开」</text><rect x='340' y='56' width='150' height='48' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.4'/><text x='415' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>立场:「把窗关上」</text><line x1='145' y1='104' x2='145' y2='150' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:3 3'/><line x1='415' y1='104' x2='415' y2='150' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:3 3'/><rect x='70' y='150' width='150' height='48' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='145' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>利益:想透口气</text><rect x='340' y='150' width='150' height='48' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='415' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>利益:怕吹风着凉</text><line x1='145' y1='198' x2='250' y2='240' style='stroke:var(--ink-faint);stroke-width:1'/><line x1='415' y1='198' x2='310' y2='240' style='stroke:var(--ink-faint);stroke-width:1'/><rect x='160' y='240' width='240' height='50' rx='8' style='fill:none;stroke:var(--azure);stroke-width:1.8'/><text x='280' y='262' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>方案:打开隔壁房间的窗</text><text x='280' y='281' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>两个立场对立,两个利益并不对立</text><text x='280' y='312' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>「开一半」是折中,「开隔壁」才是解题</text></svg>",
+   "caption": "立场对立不代表利益对立。折中是在两个立场之间砍一刀,解题是绕到立场底下去找那个没被说出口的需求。"
+  },
+  {
+   "type": "p",
+   "text": "怎么把利益挖出来?书里给的动作很具体。第一,**多问「为什么」和「为什么不」**——为什么你非要这一条,以及,你为什么不能接受我提的那个方案(后一问往往比前一问更有效,因为它逼对方说出真正卡住的地方)。第二,记住**一个立场底下常常压着好几种利益**,而且对方背后往往还站着一群人,他要向老板、董事会或者家人交代——「回去能不能说得清楚」本身就是他一项真实的利益。第三,回到**最基本的需求**:安全感、经济保障、归属感、被承认、能自己做主。费希尔提醒,大多数看起来关于钱的僵局,最后卡住的都是这几样里的某一样。"
+  },
+  {
+   "type": "p",
+   "text": "还有两条容易被忽略的分寸。一是**把自己的利益也讲清楚、讲生动**:很多人以为谈判就是套对方的话,自己捂得越严越好,结果对方压根不知道你在乎什么,想帮你也无从下手。二是**向前看,别向后看**:说「接下来我们要解决什么」而不是「上次你是怎么对我的」。追究过去是在分配责任,讨论将来才是在寻找方案——同样一件事,问法一换,对话的方向就整个变了。"
+  },
+  {
+   "type": "quote",
+   "original": "立场是他给出的答案,利益才是他要解的题。",
+   "translation": "全书方法论的枢纽。谈判者盯着立场,就只能在两个答案之间选一个或者砍中间;绕到利益那一层,才会发现题目本身可能有第三、第四种解法。"
+  },
+  {
+   "type": "h2",
+   "text": "五、第三条原则:先把选项造出来,再谈怎么选"
+  },
+  {
+   "type": "p",
+   "text": "第三条原则处理的是另一种常见困境:双方都不是不讲理,只是桌上就一个方案,谈来谈去只能在这一个方案上互相拉扯。费希尔说,**大多数谈判的失败不是因为方案不好,是因为方案太少**。他列出四个让人想不出新方案的障碍,每一个都熟悉得让人尴尬:过早下判断(一有想法就先挑毛病,创意在出口之前已经死了)、只找一个答案(以为方案是现成的,不知道可以当场造)、认定蛋糕大小固定(「你多我就少」,于是没人去想做大)、以及觉得「他们的难处该他们自己解决」(替对方想办法被当成软弱)。"
+  },
+  {
+   "type": "p",
+   "text": "对应的解法是一句听起来很像常识、做起来很少有人做的话:**把「出主意」和「做决定」分开。**先开一场只准出主意、不准评价的会——任何方案都先记下来,再离谱也不许当场否定,等方案够多了再一起筛。这个动作看似只是流程安排,实际是在保护一件极其脆弱的东西:人在被评判的预期下,是想不出新东西的。"
+  },
+  {
+   "type": "figure",
+   "ftype": "流程图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>一个问题看四遍:在具体与抽象之间来回走</text><rect x='40' y='50' width='210' height='70' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.4'/><text x='145' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>① 出了什么事</text><text x='145' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>眼前这个具体的糟糕事实</text><rect x='310' y='50' width='210' height='70' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.4'/><text x='415' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>② 病根在哪</text><text x='415' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>归类:这属于哪一种毛病</text><rect x='40' y='180' width='210' height='70' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='145' y='206' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>④ 能做哪些动作</text><text x='145' y='228' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>落到具体的、可执行的一步</text><rect x='310' y='180' width='210' height='70' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='415' y='206' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>③ 有哪些大方向</text><text x='415' y='228' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>理论上能走的几条路</text><line x1='250' y1='85' x2='310' y2='85' style='stroke:var(--ink-faint);stroke-width:1.2'/><line x1='415' y1='120' x2='415' y2='180' style='stroke:var(--ink-faint);stroke-width:1.2'/><line x1='310' y1='215' x2='250' y2='215' style='stroke:var(--ink-faint);stroke-width:1.2'/><text x='280' y='276' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>从一件具体的坏事,走到一类问题,再走回一个可以明天就做的动作</text></svg>",
+   "caption": "费希尔的「四步循环」:困在具体事实里想不出办法时,先升一层做归类,再降回来找动作——同一个问题,来回走两趟,方案自然就多了。"
+  },
+  {
+   "type": "p",
+   "text": "造方案时还有一个反直觉的窍门:**别只找共同点,要找差异。**大家总以为合作靠的是「我们都想要同一样东西」,可交易的空间恰恰藏在双方在乎的东西不同上——你更要现金,我更要时间;你厌恶风险,我愿意为更高的期望值承担波动;你看重眼前,我看重长期。每一处偏好差异,都是一次把蛋糕做大的机会。最后还有一条极其实用的提醒:**给对方一个「好交代」的方案。**再合理的条件,如果对方回去没法向他老板解释清楚,他也不敢答应。让方案带着一个现成的理由,常常比在数字上再让一步更管用。"
+  },
+  {
+   "type": "quote",
+   "original": "先把蛋糕做大,再谈怎么分。",
+   "translation": "这句口号常被误当成廉价的双赢鸡汤,其实它是一条工序规定:分蛋糕之前先花时间造方案——因为一旦进入分配环节,人的注意力就再也回不到「还有没有别的做法」上了。"
+  },
+  {
+   "type": "h2",
+   "text": "六、第四条原则:引一把双方都认的尺子"
+  },
+  {
+   "type": "p",
+   "text": "前三条原则解决了「怎么找到好方案」,但还剩一个硬骨头:利益真的冲突时怎么办?你想少付,他想多收,这不是换个问法就能消解的。费希尔的答案是:**别比谁的意志更硬,比谁的道理更站得住。**具体做法是,把分歧交给一把双方都认的客观尺子——市场价、可比案例、专业评估、行业惯例、法律条文、成本核算、折旧标准。谈判从「我要 X / 我只给 Y」的对峙,变成「我们一起看看这类事情通常怎么定」。"
+  },
+  {
+   "type": "p",
+   "text": "这里有一个心理上的转折值得留意:一旦引入了标准,让步就不再是「输」。按立场谈,你从四千退到三千八,那是你输了两百;按标准谈,你们一起查到同地段同户型的租金中位数是三千八,那不是谁输了,是**事实就在那儿**。这正是客观标准最大的价值——它把「我被你压服了」换成「我被道理说服了」,而后者不留怨气,协议也因此更牢。"
+  },
+  {
+   "type": "p",
+   "text": "书里还提醒了两件事。一是**标准不必唯一**:同一件事往往有好几把尺子(重置成本 vs 市场价 vs 账面价值),那就先把它们都摆出来,再讨论用哪一把更合适——光是这个动作,就把一场争吵变成了讨论。二是**程序本身也可以是标准**:一人切蛋糕、另一人先挑;轮流选;抽签;交给第三方裁断。当结果不好判断谁更公道时,一个公道的程序能替结果背书。"
+  },
+  {
+   "type": "quote",
+   "original": "决不向压力低头,只向道理低头。",
+   "translation": "第四条原则的口诀。压力有很多张面孔——威胁、贿赂、拖延、诉诸交情、干脆耍赖;对付它们的办法不是比谁更能扛,而是把每一次施压都翻译成一个问题:「你这么主张,依据是什么」。"
+  },
+  {
+   "type": "h2",
+   "text": "七、BATNA:全书流传最广的那个词"
+  },
+  {
+   "type": "p",
+   "text": "四条原则讲完,读者一定会问:道理我都懂,可要是对方就是比我强大呢?他是甲方、他是大客户、他手上有十个候选人而我只有这一个 offer——讲道理有什么用?这一问催生了全书最著名的概念:**BATNA(Best Alternative To a Negotiated Agreement),谈判达不成协议时,你手上最好的那个替代方案。**"
+  },
+  {
+   "type": "p",
+   "text": "它的洞见在于把「谈判力量」重新定位了。多数人以为谈判力量来自身份、体量、气势、嘴皮子;费希尔说,不是——**力量来自你走开之后还能过得多好。**如果你手上另有两个 offer,你在这场面试里的从容不是演出来的;如果你只有这一个,再多的话术也遮不住你不敢起身离开的事实。所以 BATNA 同时是两样东西:一把衡量任何提议好坏的**尺子**(这个提议比我的退路更好吗),和你敢不敢说「那就算了」的**底气**。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意",
+   "svg": "<svg viewBox='0 0 560 280' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>谈判力量不在桌上,在桌外</text><rect x='150' y='50' width='260' height='64' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.4'/><text x='280' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>谈判桌</text><text x='280' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>话术 · 气势 · 报价 · 让步节奏</text><line x1='150' y1='82' x2='70' y2='82' style='stroke:var(--cinnabar-pure);stroke-width:1.6;stroke-dasharray:5 4'/><rect x='20' y='140' width='170' height='76' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='105' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>你的 BATNA</text><text x='105' y='188' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>另一个 offer</text><text x='105' y='206' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>另一家供应商 · 自己做</text><line x1='105' y1='140' x2='105' y2='114' style='stroke:var(--cinnabar-pure);stroke-width:1.2'/><line x1='410' y1='82' x2='490' y2='82' style='stroke:var(--ink-faint);stroke-width:1.4;stroke-dasharray:5 4'/><rect x='370' y='140' width='170' height='76' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.4'/><text x='455' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>他的 BATNA</text><text x='455' y='188' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>他谈不成会怎样</text><text x='455' y='206' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>越差,他越是虚张声势</text><line x1='455' y1='140' x2='455' y2='114' style='stroke:var(--ink-faint);stroke-width:1.2'/><text x='280' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>桌上谈得再好,也改不了两条退路的相对高低</text><text x='280' y='272' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>所以真正的备战,是在开谈之前把自己那条退路修好</text></svg>",
+   "caption": "两条退路的高低,在开口之前就已经决定了这场谈判的力量格局——这也是为什么费希尔说,最好的谈判准备工作发生在谈判桌之外。"
+  },
+  {
+   "type": "p",
+   "text": "顺带,BATNA 还替代了另一个人人都在用、其实很糟的工具:**底线**。事先给自己定死一个数(「低于三十五万我就不去」),好处是防止你在气氛压力下被牵着走;坏处有两个,一是让你对谈判过程中冒出来的新信息视而不见(对方给不了这个数,但给了远超预期的期权和弹性,你却因为守着那条线而错过),二是它常常定得过于保守——人在焦虑时定的线,往往比自己真实的退路低得多。用 BATNA 取代底线,是把问题从「我最低能接受多少」换成「不成交我会怎样」。后一个问题有答案,前一个只有情绪。"
+  },
+  {
+   "type": "p",
+   "text": "所以真正的备战不是背话术,是**回去把退路做实**:把「谈不成我能做什么」列成清单,挑最好的一条,再把它推进到真的能落地(不是「我可以去找别家」,而是「我已经跟别家谈到了具体报价」)。同时也估一估对方的退路——他的 BATNA 越差,他嘴上的强硬就越可能是虚张声势。至于要不要把自己的退路亮出来:退路很好时点一句有用;退路一般时说破反而露怯,不如什么都不说。"
+  },
+  {
+   "type": "quote",
+   "original": "谈判的力量,不在桌上,在你能走开去哪里。",
+   "translation": "BATNA 概念最直白的一句概括。它解释了一件事:为什么同一套话术,有人用起来从容、有人用起来发虚——差的不是技巧,是那条没人看见的退路。"
+  },
+  {
+   "type": "h2",
+   "text": "八、对方不肯照这套玩,怎么办"
+  },
+  {
+   "type": "p",
+   "text": "还有两个「是,但是」。第一个:我愿意谈利益,可对方就爱在立场上纠缠,怎么办?费希尔给的招叫**谈判柔术**——名字取自柔道,要义是不迎着来力硬顶,而是让它落空,再顺势导到你想去的方向。他推立场,你不还价也不硬顶,你问「这个数是怎么算出来的」;他攻击你,你不辩解,把攻击接住再转向问题:「你这么说,是担心哪一点」;他质疑你的方案,你不护短,反而请他多讲:「如果按你说的做,会怎么样」。"
+  },
+  {
+   "type": "p",
+   "text": "这里面有一条极实用的小技术:**多问问题,少下陈述。**陈述给对方提供了可以攻击的靶子,问题不给;而且问题会让对方在回答的过程中,自己撞上自己的矛盾。配套动作是沉默——问完一句就闭嘴,不要急着替对方圆场。一个说不通的答案,在几秒钟的安静里会自己显得难堪。如果双方实在僵住,书里还给了一个更重的工具:**单一文本法**——请一个第三方拟一份草案,双方不再互相报价,只对这份草案提修改意见,改到两边都能接受为止。这个办法把「谁先让步」的面子问题整个绕开了。"
+  },
+  {
+   "type": "p",
+   "text": "第二个「是,但是」更棘手:对方使诈怎么办?书里把常见花招分成三类——**故意欺骗**(假数据、假授权、含糊其辞的承诺)、**心理战**(难受的场地、人身攻击、红脸白脸、威胁与最后通牒)、**立场施压**(拒绝谈判、极端开价、层层加码、「我做不了主」、制造既成事实)。面对这些,多数人只想得到两条路:忍,或者以牙还牙。费希尔给了第三条:**把手法本身摆上桌面**——识破它,平静地说出你看到的做法,然后谈一件更根本的事:「我们要用哪一种方式谈下去」。关键分寸是,**只描述做法,不评价人品**;说「我注意到我们每谈成一条,你就会再加一条新要求」,比说「你这人不讲信用」有用得多,也留得住台阶。"
+  },
+  {
+   "type": "quote",
+   "original": "他们攻击你,你就把这一击转向问题。",
+   "translation": "谈判柔术的核心动作。对方的攻击带着力量,硬顶等于两败俱伤,后退等于让出阵地;第三条路是接住这股力,再把它导向双方共同面对的那个问题。"
+  },
+  {
+   "type": "h2",
+   "text": "九、一场真分歧:《掌控谈话》为什么冲着这本书来"
+  },
+  {
+   "type": "p",
+   "text": "读到这里必须交代一件事,否则这套方法会显得比它实际上更没有争议。站内另有一本《掌控谈话》,作者克里斯·沃斯做过十几年 FBI 首席国际人质谈判专家——**那本书基本是写来反驳这一本的**。沃斯的第一章标题就叫「新规则:传统谈判术为何失灵」,矛头指向的正是哈佛这套原则谈判法。他的理由很硬:在绑架现场,没有什么「共同利益」可以找,绑匪不会因为你摆出市场行情就放人;对面那个人正处在极度恐惧和亢奋之中,你跟他谈客观标准,他连听都听不进去。"
+  },
+  {
+   "type": "p",
+   "text": "沃斯的替代方案是把顺序整个调过来:**先处理情绪,再处理条款。**镜像模仿、战术同理心、把对方的情绪说出名字(标注)、刻意引导对方说「不」、触发那句「你说得对」——他的整套工具,目标都是先让对方感到被理解、感到安全,然后才谈得上谈条件。而《谈判力》的顺序是:把人的问题单独隔到一边处理好,然后大家理性地一起解题。这两个顺序背后的人性假设不一样:哈佛这一套默认谈判者**大体上是可以被道理说服的**,沃斯默认谈判者**首先是被情绪驱动的**。"
+  },
+  {
+   "type": "figure",
+   "ftype": "分野图",
+   "svg": "<svg viewBox='0 0 560 380' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>两套方法的分野:看场景,不看谁更新</text><line x1='80' y1='320' x2='520' y2='320' style='stroke:var(--ink-faint);stroke-width:1.2'/><line x1='80' y1='320' x2='80' y2='56' style='stroke:var(--ink-faint);stroke-width:1.2'/><text x='300' y='348' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>一次性交易  →  长期共事 · 重复博弈</text><text x='68' y='190' text-anchor='middle' transform='rotate(-90 68 190)' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>情绪失控  ←  双方大体理性</text><rect x='100' y='70' width='180' height='90' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5;stroke-dasharray:5 3'/><text x='190' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>《掌控谈话》更管用</text><text x='190' y='122' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>人质 · 危机 · 一锤子买卖</text><text x='190' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>对方无意共同解题</text><rect x='310' y='190' width='190' height='110' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='405' y='220' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>《谈判力》更管用</text><text x='405' y='242' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>商业合作 · 团队内部</text><text x='405' y='262' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>家人 · 长期客户 · 联盟</text><text x='405' y='284' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>还要在这段关系里继续相处</text><rect x='150' y='190' width='140' height='70' rx='8' style='fill:none;stroke:var(--azure);stroke-width:1.4;stroke-dasharray:4 3'/><text x='220' y='218' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--ink)'>两套都要用</text><text x='220' y='240' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>先安抚情绪,再谈利益</text></svg>",
+   "caption": "分歧不是「新的淘汰旧的」,而是两套方法各有各的适用区。绝大多数真实谈判落在中间那块——先用沃斯的方法把情绪处理掉,再用费希尔的框架去解题。"
+  },
+  {
+   "type": "p",
+   "text": "那么该信谁?诚实的答案是:**这是一场真分歧,而分歧的解法是分场景,不是分对错。**在沃斯的主场——高风险、一次性、对方情绪失控甚至根本无意合作的对抗场景——他确实更对:那里没有「共同解题」的前提,谈判者唯一能做的就是先把对方从失控状态里拉回来。而在重复博弈的商业合作、需要长期维持关系的场合——你跟这个供应商还要合作五年、跟这位同事还要共事十年、跟这位家人要过一辈子——哈佛这套仍然是骨架:找利益、造方案、立标准,谈出来的协议对方是心服的,才可能被认真执行。"
+  },
+  {
+   "type": "p",
+   "text": "而且值得注意的是,两本书在最底下那一层其实是一致的:**立场之争没有出路。**沃斯反对的是「假设人是理性计算器」这个前提,不是反对「别在立场上拉锯」这个结论;他也从不主张回到硬碰硬,他的一整套技巧同样是为了绕开立场、拿到对方真实的顾虑——只不过他的入口是情绪,费希尔的入口是利益。把两本书叠起来读,得到的是同一件事的两条通道,而不是一场非此即彼的站队。"
+  },
+  {
+   "type": "p",
+   "text": "再加上站内的《影响力》,三本书正好构成一个三角:**《谈判力》讲理性结构**(怎么把一场对峙重组成一次共同解题)、**《掌控谈话》讲情绪通道**(怎么让一个正在戒备的人愿意说真话)、**《影响力》讲顺从心理学**(对方——以及你自己——为什么会在没想清楚的时候点头)。三者互为补充也互为提醒:懂了结构而不懂情绪,方法会显得书生气;懂了情绪而不懂结构,技巧容易滑成话术;而读过《影响力》之后你会知道,谈判桌上那份「我是被说服的」的感觉,有时候只是几个心理开关被按下去而已。"
+  },
+  {
+   "type": "h2",
+   "text": "十、这本书自己的边界"
+  },
+  {
+   "type": "p",
+   "text": "客观地说,这套方法也有它天生的软肋,后来的批评大多集中在几处。第一,**它需要至少一方愿意讲道理**——如果对方就是要赢、就是不在乎长期关系、就是把你的诚意当作可以继续挤压的空间,那么四条原则会显得很无力;书里的第七、八章其实就是在打这个补丁,但补丁终究不是地基。第二,**「客观标准」并不总是存在**:很多分歧根本没有市场价可查,双方各自搬出一把对自己有利的尺子,标准之争就变成了新的立场之争。"
+  },
+  {
+   "type": "p",
+   "text": "第三,也是最容易被忽略的一点:**这套方法对「实力不对等」的解决其实很有限。**BATNA 是个诚实的概念,但它诚实到近乎残酷——它告诉你力量来自退路,可当你确实没有退路时,它并不能凭空造一条出来。一个只有这一份工作机会的人,读完这本书顶多是更清醒地知道自己处境不利,而不是获得了改变处境的办法。这不是书的错,但读的时候要清楚:**它是一套让你不至于把好牌打烂的方法,不是一套能把烂牌变成好牌的魔法。**"
+  },
+  {
+   "type": "p",
+   "text": "还有一层是时代的。这本书写于 1981 年,案例背景多是冷战年代的国际谈判、美国式的商业与法律环境。它默认的沟通文化——把话说清楚、把利益讲明白、把标准摆出来——在一些更讲究含蓄、更看重人情往来的场合里,直接照搬会显得生硬。**这套方法真正可迁移的不是那些具体句式,而是它的三个动作:先问「为什么」、再造几个方案、然后找一把双方都认的尺子。**这三个动作换到任何文化里都成立,只是外壳要换。"
+  },
+  {
+   "type": "h2",
+   "text": "十一、收尾:把桌子对面的人请到同一侧"
+  },
+  {
+   "type": "p",
+   "text": "把全书收成一句话:**谈判不是一场比谁更能扛的意志较量,而是一次两个人一起对付同一个问题的合作。**这句话听起来温和,但它包含的动作其实很硬——你要放弃「先报个高价再慢慢让」的安全感,要在对方摆出立场时忍住不还价而去问为什么,要在明明可以逼一把的时候选择去找那把双方都认的尺子。这些都不是软弱,而是把力气从「压服对方」挪到「找到更好的方案」上。"
+  },
+  {
+   "type": "p",
+   "text": "如果只带走三件东西,大概是这三件:第一,下次听到一个你不同意的主张,先别急着还价,**先问一句「为什么」**——立场底下常常有一个你还不知道的题目。第二,桌上只有一个方案时不要开始谈,**先把方案变成三个**。第三,谈判之前先花时间做的不是话术准备,而是**回去把自己的退路做实**——那条你走开之后要走的路,才是这场谈判里真正给你撑腰的东西。至于沃斯那一套,留着给情绪上头的场合用;而在你要长期相处的人面前,费希尔这一套仍然是那个更稳的框架。"
+  }
+ ]
+}

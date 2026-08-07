@@ -1,0 +1,119 @@
+{
+ "title": "如果对方不肯合作:谈判柔术",
+ "subtitle": "他推立场,你别对推——把力气引到问题上去",
+ "centralIdea": "第二个「是,但是」:我愿意谈利益,可对方就爱在立场上纠缠,怎么办?费希尔的答案叫「谈判柔术」——名字取自柔道,要义是不迎着来力硬顶,而是让它落空,再顺势导向你想去的方向。他亮立场,你不还价也不硬顶,你问它是怎么算出来的;他攻击你,你不辩解,把攻击接住再转向问题;他质疑你的方案,你不护短,请他多讲讲会出什么问题。配套的两件工具是「多问问题少下陈述」加上沉默,以及在彻底僵住时启用「单一文本法」——请第三方拟一份草案,双方只提修改意见,不再互相报价。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "前面四条原则有一个隐含前提:对方也愿意这么谈。可现实里最常见的情形恰恰是——你准备了一肚子利益分析和市场数据,对面一开口就是「四十万,不能再多了,你考虑一下」。你要是还价,就掉回了立场之争;你要是不还价,他就当你默认了。**这一章要解决的就是这种局面:只有一个人愿意讲道理时,怎么让谈判还能往前走。**费希尔的答案很有意思——**你不必说服对方改变打法,你只要改变自己的应对方式,谈判的性质就会跟着变。**"
+  },
+  {
+   "type": "h2",
+   "text": "为什么叫「柔术」"
+  },
+  {
+   "type": "p",
+   "text": "名字取自柔道。柔道的基本思想是:对手用力推过来时,硬顶回去是最笨的办法——那是在比谁力气大;高手的做法是顺着他的力道让开,让这股力落空,再借着它把对手带倒。费希尔把这套思路搬到谈判上:**对方在立场上使劲,你既不对推(那是硬派),也不后退(那是软派),你让开——不接他给的那个招式,而是把力气引到另一个方向。**"
+  },
+  {
+   "type": "p",
+   "text": "具体来说,对方在立场式谈判里通常会打三种拳:**用力主张自己的立场、攻击你的方案、攻击你这个人。**柔术就是分别对应的三个卸力动作。共同点是:**不回应他给出的形式,只回应它底下的内容。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照图",
+   "svg": "<svg viewBox='0 0 520 270' xmlns='http://www.w3.org/2000/svg'><text x='260' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>三种来力,三个卸力动作</text><rect x='20' y='46' width='210' height='64' rx='7' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><text x='125' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>他用力主张立场</text><text x='125' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>「就四十万,别的免谈」</text><rect x='290' y='46' width='210' height='64' rx='7' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='395' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>当成一种可能方案</text><text x='395' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>「这个数是怎么算出来的」</text><rect x='20' y='120' width='210' height='64' rx='7' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><text x='125' y='144' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>他攻击你的方案</text><text x='125' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>「你这方案根本行不通」</text><rect x='290' y='120' width='210' height='64' rx='7' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='395' y='144' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>请他把批评讲完</text><text x='395' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>「按你说的做会怎样」</text><rect x='20' y='194' width='210' height='64' rx='7' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><text x='125' y='218' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>他攻击你这个人</text><text x='125' y='240' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>「你们就是想坑我们」</text><rect x='290' y='194' width='210' height='64' rx='7' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='395' y='218' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>把这一击转向问题</text><text x='395' y='240' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>「你这么说,是担心哪一点」</text><line x1='230' y1='78' x2='290' y2='78' style='stroke:var(--ink-faint);stroke-width:1.2'/><line x1='230' y1='152' x2='290' y2='152' style='stroke:var(--ink-faint);stroke-width:1.2'/><line x1='230' y1='226' x2='290' y2='226' style='stroke:var(--ink-faint);stroke-width:1.2'/></svg>",
+   "caption": "三个动作是同一件事的三种形态:不接对方给出的招式,只处理它底下的内容——立场底下是算法,批评底下是顾虑,攻击底下是担心。"
+  },
+  {
+   "type": "h2",
+   "text": "动作一:把立场当成一种可能方案"
+  },
+  {
+   "type": "p",
+   "text": "对方甩出「四十万,不能再多」时,人的本能反应有两个:还价,或者反驳「这不合理」。前者掉回拉锯,后者引发争吵。柔术的做法是**既不接受也不拒绝,而是把这个数字当作一个待研究的方案**,然后问它是怎么来的:「这个数是按什么算的?是参考了同类岗位的市场水平,还是按内部职级带宽?」"
+  },
+  {
+   "type": "p",
+   "text": "这一问的效果有三层。**第一,它把讨论从「多少」拉到了「凭什么」**,而后者才有客观内容可谈。**第二,它给了对方一个不丢面子的下台阶**——他不需要「让步」,只需要「重新计算」。**第三,如果他答不上来**(很多时候真的答不上来,因为那个数字本来就是随口开的或者从中间往回推的),他自己就会意识到这个立场站不住,后面松动起来会容易得多。"
+  },
+  {
+   "type": "p",
+   "text": "还有一个配套技巧:**主动请对方批评你的方案,并且征求他的建议。**「如果你处在我的位置上,你会怎么做?」这句话在僵局里几乎是万能的——它把对方从「审判者」的位置挪到了「出主意的人」的位置,而人一旦开始出主意,就很难同时维持全盘否定的姿态。"
+  },
+  {
+   "type": "h2",
+   "text": "动作二:把攻击转向问题"
+  },
+  {
+   "type": "p",
+   "text": "被人身攻击时,人的本能是辩解或者反击,而这两条路都会让谈判偏离轨道——辩解让你显得心虚,反击让对话彻底变成争吵。费希尔的建议是:**接住这一击,然后把它导向问题。**具体的动作是把攻击翻译成一个关于问题的问句:对方说「你们就是想趁机敲一笔」,你回「听起来你担心这个价格里有水分——我们一起把成本拆开看看?」"
+  },
+  {
+   "type": "p",
+   "text": "这个动作有一个很重要的心理效果:**它不接受「攻击」这个框架,却也不否认对方的情绪。**你没有说「我们不是那种人」(那是辩解),也没有说「你怎么这么说话」(那是反击),你只是把他那句话里唯一有内容的部分——他的担心——挑出来,当作一个可以处理的议题。多数人在被这样对待两三次之后,会自己降下攻击的调门,因为攻击没有得到它想要的反应。"
+  },
+  {
+   "type": "p",
+   "text": "费希尔还提到一个更被动但极有效的招:**沉默。**当对方说完一句不讲理的话,或者给出一个明显站不住的理由时,什么都不说,就看着他。几秒钟的安静会让那句话在空气里显得格外难堪,而人本能地想填补沉默——很多时候,对方自己就会补上一句「当然,这个数也不是完全没有商量」。"
+  },
+  {
+   "type": "quote",
+   "original": "他们攻击你,你就把这一击转向问题。",
+   "translation": "柔术的核心动作。硬顶等于两败俱伤,后退等于让出阵地,第三条路是接住这股力,再把它导向双方共同面对的那个问题——攻击的能量被保留了,方向变了。"
+  },
+  {
+   "type": "h2",
+   "text": "动作三:多问问题,少下陈述"
+  },
+  {
+   "type": "p",
+   "text": "这是整章最容易上手的一条。费希尔的观察是:**陈述给对方提供了靶子,问题不给。**你说「这个价格明显低于市场水平」,对方立刻有了反驳的对象;你问「你们了解到的市场水平大概是多少」,他就得自己去面对数据。而且问题有一个陈述没有的功能——**它让对方在回答的过程中,自己撞上自己的矛盾。**"
+  },
+  {
+   "type": "p",
+   "text": "问题还有一个副作用值得留意:**它不给对方攻击的抓手。**一句陈述可以被贴上「你太强硬」「你不讲理」的标签,一个问题很难。所以在气氛紧张的时候,把想说的话改写成问句,常常是最省事的降温手段。当然,要注意问法——「你凭什么这么说」是伪装成问句的攻击,而「我想弄明白这个判断是基于什么」才是真的在问。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意",
+   "svg": "<svg viewBox='0 0 520 220' xmlns='http://www.w3.org/2000/svg'><text x='260' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>陈述给靶子,问题给功课</text><rect x='25' y='46' width='215' height='140' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><text x='132' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>陈述</text><text x='132' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>「这个价明显低于市场」</text><text x='132' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>对方:有了反驳的对象</text><text x='132' y='148' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>还可被贴「太强硬」标签</text><text x='132' y='174' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar-pure)'>✗ 力气用在互相顶</text><rect x='280' y='46' width='215' height='140' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='387' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>问题</text><text x='387' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>「你们看到的市场是多少」</text><text x='387' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>对方:得自己面对数据</text><text x='387' y='148' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>没有可攻击的抓手</text><text x='387' y='174' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--azure)'>✓ 力气用在找依据</text></svg>",
+   "caption": "把想说的话改写成问句,是紧张场合里最省事的降温手段——前提是真的在问,不是把攻击伪装成问句。"
+  },
+  {
+   "type": "h2",
+   "text": "彻底僵住时:单一文本法"
+  },
+  {
+   "type": "p",
+   "text": "如果柔术也化不开,费希尔还有一件更重的工具:**单一文本法(one-text procedure)**。做法是:请一位中立的第三方(调解人、双方都信任的顾问、甚至团队里一个没有直接利害的人)先起草一份方案,然后双方都不再互相报价,只对这一份草案提修改意见;第三方收集意见后改出第二版、第三版,一直改到双方都能接受为止。"
+  },
+  {
+   "type": "p",
+   "text": "这个办法的妙处在于**它把「谁先让步」这个面子问题整个绕开了**。双方都不必对彼此让步,他们只是在「对一份草案提意见」;而每一轮修改,实际上都是在向对方的关切靠拢,只是这个动作不再带有投降的意味。费希尔提到,这正是 1978 年戴维营谈判里用过的方式:美方拟稿,以色列和埃及分别提意见,前后改了很多稿,最终双方接受的那一版,是任何一方都不可能直接向对方开口提出的。"
+  },
+  {
+   "type": "p",
+   "text": "还有一个平民版本:**没有第三方时,自己充当起草人。**你可以说「我把我理解的双方关切写成一版草案,不代表任何承诺,你随便改」。这句免责声明很关键——它让草案不成为你的立场,也就不必守;而一旦对方开始在你的文本上改,谈判的框架其实已经悄悄换成了你搭的那个。"
+  },
+  {
+   "type": "figure",
+   "ftype": "流程图",
+   "svg": "<svg viewBox='0 0 520 260' xmlns='http://www.w3.org/2000/svg'><text x='260' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>单一文本法:谁也不用先让步</text><rect x='180' y='44' width='160' height='40' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='260' y='69' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>第三方起草一版</text><line x1='180' y1='64' x2='110' y2='64' style='stroke:var(--ink-faint);stroke-width:1.1'/><line x1='340' y1='64' x2='410' y2='64' style='stroke:var(--ink-faint);stroke-width:1.1'/><rect x='20' y='94' width='180' height='40' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><text x='110' y='119' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>甲方只提修改意见</text><rect x='320' y='94' width='180' height='40' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><text x='410' y='119' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>乙方只提修改意见</text><line x1='110' y1='64' x2='110' y2='94' style='stroke:var(--ink-faint);stroke-width:1.1'/><line x1='410' y1='64' x2='410' y2='94' style='stroke:var(--ink-faint);stroke-width:1.1'/><line x1='110' y1='134' x2='110' y2='158' style='stroke:var(--ink-faint);stroke-width:1.1'/><line x1='410' y1='134' x2='410' y2='158' style='stroke:var(--ink-faint);stroke-width:1.1'/><rect x='150' y='158' width='220' height='40' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='260' y='183' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>改出第二版 · 第三版……</text><line x1='110' y1='178' x2='150' y2='178' style='stroke:var(--ink-faint);stroke-width:1.1'/><line x1='410' y1='178' x2='370' y2='178' style='stroke:var(--ink-faint);stroke-width:1.1'/><text x='260' y='224' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>双方从不互相报价,也就从不需要「先让步」</text><text x='260' y='246' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar-pure)'>每一轮修改都在向对方靠拢,却不带投降的意味</text></svg>",
+   "caption": "单一文本法的全部机巧,是把「向对方让步」换成「对一份草案提意见」——同样的动作,面子的账算法完全不同。"
+  },
+  {
+   "type": "pull",
+   "text": "你不必说服对方改变打法——只要改变自己的应对方式,谈判的性质就跟着变了。"
+  },
+  {
+   "type": "p",
+   "text": "这一章的底层逻辑值得单独说一句:**立场之争需要两个人才能进行下去。**对方推,你不推;他攻击,你不接;他要数字,你要依据——只要有一方持续拒绝按旧规则出牌,那套规则就运转不起来。这不是精神胜利法,而是一个结构性的事实:**拉锯战需要两头都在拉。**"
+  },
+  {
+   "type": "quote",
+   "original": "拉锯战需要两头都在拉。",
+   "translation": "这一章的力学基础。你无法命令对方改变谈法,但你可以决定自己不再提供那一头的拉力——绳子松了,双方就得另找一种方式把事情办完。"
+  }
+ ]
+}

@@ -1,0 +1,134 @@
+{
+ "title": "意图不等于影响:你脑补的那个动机,多半是错的",
+ "subtitle": "我们能感受到的只有结果,却总以为自己看见了对方的居心",
+ "centralIdea": "第一层的第二个陷阱是「发明动机」。我们能直接感受到的只有影响——我被伤到了;至于对方当时在想什么,我们完全看不见,只能猜。而人一旦被伤到,猜出来的动机几乎必然是坏的。更麻烦的是我们对自己和对别人用着两把尺子:看自己用动机,本意是好的只是没做好;看别人用结果,造成了这个后果所以居心不良。作者的解法是把两者拆开:说影响不说动机,把脑补的动机降级成待确认的假设去问对方;同时也不许用「我没那个意思」来抵消已经造成的伤害——好动机和坏影响是两件事,得分别处理。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "回想一下你最近一次被人惹恼的时刻。你多半不只是记得对方做了什么,你还「知道」他为什么这么做:他就是想显摆、他根本不在乎、他是故意让我难堪的。这份「知道」来得毫不费力,几乎是和情绪同时出现的,以至于你从来没怀疑过它。但作者要问一个很扫兴的问题:**你是怎么知道的?**你看到的只有他做了什么、说了什么;至于他脑子里当时在想什么,你其实一眼也没看见。那个让你确信不疑的动机,不是你观察到的,是你**发明**出来的。"
+  },
+  {
+   "type": "h2",
+   "text": "我们只能感受到影响,却以为看见了居心"
+  },
+  {
+   "type": "p",
+   "text": "作者把这里面的两样东西分得很清楚:**影响**是他的行为落在我身上产生的结果——我难堪了、我不安了、我的计划被打乱了。这一样我是有权威的,谁也没法告诉我「你其实没被伤到」。**意图**则是他行为背后的动机,这一样我完全没有权威,因为它在他脑子里,我看不见。"
+  },
+  {
+   "type": "p",
+   "text": "问题在于,人的大脑不能忍受空白。影响一旦发生,大脑会立刻自动地填上一个动机来解释它,而且几乎是瞬间完成的,你根本感觉不到这是一次推理。更糟的是,这个自动填空有明显的偏向:**被伤到的人,填出来的动机几乎必然是坏的**。他不是「没想到」,是「不在乎」;他不是「忙糊涂了」,是「故意的」。然后你就带着这个自己发明的动机去开这场对话——而对方听到的,是一句关于他人品的指控。"
+  },
+  {
+   "type": "figure",
+   "ftype": "机制图",
+   "svg": "<svg viewBox='0 0 540 250' xmlns='http://www.w3.org/2000/svg'><text x='270' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14.5px;font-weight:bold;fill:var(--ink)'>从「我被伤到」到「他是故意的」</text><rect x='24' y='50' width='140' height='60' rx='7' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='94' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>影响</text><text x='94' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>我确实被伤到了</text><line x1='164' y1='80' x2='200' y2='80' style='stroke:var(--ink-faint);stroke-width:1.2'/><rect x='200' y='50' width='150' height='60' rx='7' style='fill:none;stroke:var(--azure);stroke-width:1.5'/><text x='275' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>大脑自动填空</text><text x='275' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>快到察觉不到是推理</text><line x1='350' y1='80' x2='386' y2='80' style='stroke:var(--ink-faint);stroke-width:1.2'/><rect x='386' y='50' width='130' height='60' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='451' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>发明的动机</text><text x='451' y='96' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>「他就是不在乎」</text><rect x='120' y='140' width='300' height='44' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='270' y='167' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>带着这个动机去开口 →「你怎么能这么不在乎」</text><text x='270' y='212' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>对方听到的:一句关于他人品的指控</text><text x='270' y='236' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>于是他必须先证明自己是个好人,才轮得到谈事情</text></svg>",
+   "caption": "整条链子上,只有第一格是你真正知道的,后面全是自动生成的——可你开口时,用的却是最后那一格。"
+  },
+  {
+   "type": "callout",
+   "tone": "note",
+   "label": "一个自测",
+   "items": [
+    "下次要说「你就是想……」的时候,停一秒问自己:这句话我是**看到**的,还是**推出来**的?几乎每一次答案都是后者。而推出来的东西,拿去当指控用,风险高得离谱。"
+   ]
+  },
+  {
+   "type": "h2",
+   "text": "两把尺子:看自己用动机,看别人用结果"
+  },
+  {
+   "type": "p",
+   "text": "这个陷阱还有更隐蔽的一半:我们评价自己和评价别人,用的根本不是同一把尺子。"
+  },
+  {
+   "type": "list",
+   "items": [
+    "**评价自己,看动机。**我上周忘了回消息,那是因为那几天太忙、事情压得喘不过气,我本意绝不是冷落谁。所以我心里给自己的评语是:一次疏忽,不影响我是个重情的人。",
+    "**评价别人,看结果。**他上周忘了回我消息,那说明什么?说明我在他心里没那么重要。至于他那几天是不是也忙得喘不过气——这条信息我没有,所以它不进入我的判断。"
+   ]
+  },
+  {
+   "type": "p",
+   "text": "两把尺子一起用,就制造出一种非常典型的僵局:**双方都真心觉得自己是被冤枉的那个**。他觉得你冤枉了他的心——「我明明不是那个意思」;你觉得他不认自己造成的伤害——「你都把我伤成这样了还说没那个意思」。两句话都是真的,可它们讲的根本不是同一层的事:他在讲动机,你在讲影响。于是越争越拧,谁也说服不了谁。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比",
+   "svg": "<svg viewBox='0 0 540 240' xmlns='http://www.w3.org/2000/svg'><text x='270' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14.5px;font-weight:bold;fill:var(--ink)'>两把尺子,两种冤枉</text><rect x='24' y='48' width='230' height='160' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='139' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>量自己</text><text x='139' y='102' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>用的尺子:我的动机</text><text x='139' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>「我本意不是这样」</text><text x='139' y='158' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>结论:一次疏忽而已</text><text x='139' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>觉得被冤枉的:我的心</text><rect x='286' y='48' width='230' height='160' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='401' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>量别人</text><text x='401' y='102' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>用的尺子:造成的结果</text><text x='401' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>「你把我伤成这样」</text><text x='401' y='158' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>结论:他不在乎我</text><text x='401' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>觉得被冤枉的:我的伤</text></svg>",
+   "caption": "同一场争执里,两个人都觉得自己被冤枉了,而且都没说错——只是一个在讲动机,一个在讲影响,根本不在同一层上。"
+  },
+  {
+   "type": "quote",
+   "original": "我们用动机原谅自己,用结果审判别人。",
+   "translation": "这套双重标准几乎人人都有,而且大多数人从未察觉。察觉它的价值不在于道德自责,而在于:一旦意识到自己也有一整套没被对方看见的「不得已」,你就很难再确信对方一定没有。"
+  },
+  {
+   "type": "h2",
+   "text": "怎么把两者拆开:三个具体动作"
+  },
+  {
+   "type": "p",
+   "text": "作者给的解法很朴素,就是把意图和影响分成两件事,分别处理。落到嘴上是三个动作。"
+  },
+  {
+   "type": "steps",
+   "items": [
+    { "title": "只说影响,不说动机", "text": "「你昨天当着客户的面改我的说法,我当时很难堪,后面半小时都没敢再开口」——这句话里的每一个字都是我有权威的:发生了什么、我什么感受。而「你就是想在客户面前显得比我懂」不是,那是我猜的。前一种说法对方很难反驳,后一种说法他必须反驳。", "state": "done" },
+    { "title": "把猜测降级成问题", "text": "脑补出来的动机不必扔掉,但要降级——从判决降成一个待确认的假设,然后直接摊开来问:「我当时的感觉是你觉得我讲得不清楚,是这样吗?你当时怎么想的?」问出来,你往往会得到一个完全没想到的答案。", "state": "now" },
+    { "title": "别用好动机去抵消坏影响", "text": "这一条是给被指出问题的那一方的。「我没那个意思」是一句真话,却常常被当成免责声明使用——说完就觉得这事该翻篇了。作者说不行:动机是你的,影响是对方的,澄清动机不能消掉影响。正确顺序是先承认影响(「我不知道会让你这么难堪,对不起」),再说动机(「我当时想的是……」)。", "state": "todo" }
+   ]
+  },
+  {
+   "type": "p",
+   "text": "第三个动作值得多说一句,因为它是最容易被跳过的。很多人在被指出伤害之后,第一反应是急着自证清白——我不是那种人、我绝对没那个意思。这个反应完全可以理解(它其实来自身份层,后面会讲到),但在对方那里,它听起来像是在说「你的感受不成立」。而对方要的从来不是给你定罪,只是要那份感受被承认一次。**先承认影响,再澄清动机,顺序颠倒就成了推卸。**"
+  },
+  {
+   "type": "h2",
+   "text": "还要接受一件事:动机本来就是混合的"
+  },
+  {
+   "type": "p",
+   "text": "作者还提了一个更进一步、也更诚实的观察:我们总以为动机要么是好的要么是坏的,可真实的动机几乎总是**混合**的。你替同事指出方案里的漏洞,里面有真心为项目好,大概也掺着一点点想显得自己更专业;你劝朋友分手,里面有真的心疼他,大概也掺着一点点你本来就看那个人不顺眼。"
+  },
+  {
+   "type": "p",
+   "text": "承认这一点,有两个好处。对内,它让你不必再为「我是不是其实存了私心」而恐慌——存了一点是常态,不推翻你整体是善意的;对外,它让你不再要求对方交出一个纯粹的动机。**当你不再需要对方证明自己百分之百无辜,他也就不必再拼死自证**,对话才有机会从「你到底安的什么心」这个死结上挪开。"
+  },
+  {
+   "type": "h2",
+   "text": "把三个动作串成一段真实的话"
+  },
+  {
+   "type": "p",
+   "text": "理论听着都对,落到嘴上还是容易走样,所以看一个完整的例子。场景:你在群里发了一份初稿,同事在群里回了一句「这个逻辑不太通吧」,你当场很难堪。"
+  },
+  {
+   "type": "p",
+   "text": "**没拆开的说法**是:「你有意见私下说不行吗?非要在群里让我下不来台。」——这句话里,「非要」「让我下不来台」都是你替他发明的动机,他听完唯一能做的就是否认:「我哪有那个意思,我就是就事论事。」于是接下来十分钟你们会争论「他到底有没有那个意思」,而这个问题永远争不出结果。"
+  },
+  {
+   "type": "p",
+   "text": "**拆开之后的说法**是:「昨天你在群里说逻辑不通,我当时挺难堪的,后面半天都没敢接话(**影响**)。我不确定你当时是怎么想的——是觉得这事得赶紧提醒,还是觉得公开说更省事?(**问,而不是判**)」这段话里没有一个字是判决,却把你真正在意的东西完整地放在了桌上。而对方极可能给你一个你想不到的答案,比如「我根本没意识到那是公开群」。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照",
+   "svg": "<svg viewBox='0 0 540 240' xmlns='http://www.w3.org/2000/svg'><text x='270' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14.5px;font-weight:bold;fill:var(--ink)'>同一件事,拆开前与拆开后</text><rect x='24' y='46' width='230' height='168' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='139' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>没拆开</text><text x='139' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>「非要让我下不来台」</text><text x='139' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>含成分:发明的动机</text><text x='139' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>对方唯一能做:否认</text><text x='139' y='184' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--cinnabar-pure)'>接下来十分钟:争「有没有那个意思」</text><rect x='286' y='46' width='230' height='168' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='401' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>拆开后</text><text x='401' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>「我当时挺难堪的」+「你当时怎么想的?」</text><text x='401' y='126' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>含成分:影响 + 提问</text><text x='401' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>对方能做:解释真实想法</text><text x='401' y='184' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>接下来十分钟:交换真实信息</text></svg>",
+   "caption": "两种说法要的东西完全一样,可一种把对方推进了否认,另一种把他请进了解释——差别只在有没有把发明的动机拿掉。"
+  },
+  {
+   "type": "pull",
+   "text": "先承认影响,再澄清动机;顺序颠倒,就成了推卸。"
+  },
+  {
+   "type": "p",
+   "text": "这一章的落点其实很温和:它不要求你相信别人都是好人,只要求你承认一件事——**关于对方的居心,你手里的证据比你以为的少得多**。少到不足以当成开场白,少到不足以当成判决。把这份不确定留在心里,你开口的方式就会不一样;而对方一旦不必先花二十分钟证明自己不是坏人,你们才能真的开始谈那件事本身。下一章讲第一层的最后一个陷阱:一门心思找罪魁,会让你彻底看不清事情是怎么运转的。"
+  },
+  {
+   "type": "quote",
+   "original": "影响我有权威,动机我只有猜测。",
+   "translation": "这一章最实用的一句自我提醒。它划出了一条清楚的界:凡是关于「我受到了什么」的部分,你说了算;凡是关于「他为什么这么做」的部分,只能问,不能判。"
+  }
+ ]
+}

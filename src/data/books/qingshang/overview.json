@@ -1,0 +1,260 @@
+{
+ "title": "白话《情商》· 全书总览",
+ "subtitle": "一篇文章读懂丹尼尔·戈尔曼:杏仁核劫持、五个成分、情绪素养教育,以及这个概念在流传三十年后,哪些站得住、哪些被稀释成了口号",
+ "centralIdea": "《情商》要说的核心只有一句话:人脑里负责报警的那条线路,比负责思考的那条快半拍——这半拍里做出的反应,常常比智商更能决定一个人的人生走成什么样。戈尔曼用神经科学解释这半拍从哪来(杏仁核劫持),再把「怎么办」拆成五个可以练的成分:自我觉察、自我调节、动机、同理心、社交技能。这本书最扎实的部分是它的问题意识与教育实践——情绪能力可以被教,而且教了有用;最不扎实的部分是它从证据走向结论的那几步:副标题里那个「可能」在流传中掉了,「情商决定人生八成」这类说法从来没有拿出过对得起它的证据,而书里引用的几个著名实验,后来在更大样本的重复研究中缩水了不少。读这本书的正确姿势,是把它当一份关于情绪的思维地图,而不是一套已被证实的成功公式。",
+ "featured": true,
+ "hero": {
+  "badge": "全书 · 核心",
+  "headline": "报警的那条神经比思考的那条快半拍。",
+  "tagline": "这半拍里发生的事,值得一本书;而它被吹成的样子,值得一个问号。"
+ },
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "先回想一个瞬间:开会时被一句话噎住,你还没来得及判断对方到底什么意思,脸已经烫了、心跳已经上去了、一句更难听的话已经到了嘴边。等到十分钟后终于想明白「他可能只是说得急了点」,场面已经收不回来。这种「反应比理解快」的经验,人人都有,却很少有人认真解释过它。1995 年,《纽约时报》的科学记者丹尼尔·戈尔曼写了一本书专门讲这件事——他把心理学期刊里一个刚提出五年的学术概念搬到大众面前,顺手给了它一个后来响遍全世界的名字:情商。这篇总览带你把全书走一遍:它讲了什么、它凭什么这么说、这些说法在三十年后还剩下多少,以及——它被商业培训业吹起来的那部分,该在哪里打问号。"
+  },
+  {
+   "type": "h2",
+   "text": "一、这本书的来历:一个被普及的学术概念"
+  },
+  {
+   "type": "p",
+   "text": "先把出身讲清楚,因为这决定了后面所有争论的起点。**「情绪智力」这个概念不是戈尔曼发明的。**它由两位心理学家彼得·萨洛维与约翰·梅耶在 1990 年的一篇学术论文里正式提出,指的是一组可界定、可测量的能力:感知情绪、理解情绪、用情绪辅助思考、管理情绪。再往前还有更远的源头——上世纪二十年代桑代克提出过「社会智力」,八十年代加德纳的多元智能理论里也有「人际智能」与「内省智能」两格。戈尔曼在书里明确致谢过这条学术脉络,他做的是另一件事:把期刊语言翻译成人人读得懂的故事,再配上神经科学的最新发现,让这个概念走出实验室。"
+  },
+  {
+   "type": "p",
+   "text": "这项翻译工作做得极为成功,成功到今天几乎没人记得原作者是谁。**而普及与放大是同一枚硬币的两面**:概念被推广出去的同时,它的边界、限定条件和「目前证据只到这里」的谨慎,在传播中一层层被磨掉了。书名副标题原本是「为什么它**可能**比智商更重要」,流传出去时,「可能」两个字第一个掉队。后面第十一章会专门算这笔账,这里先记下这个背景:**这本书的许多争议,与其说是作者写错了,不如说是他写下的克制在传播链条上被逐级删掉了。**"
+  },
+  {
+   "type": "figure",
+   "ftype": "流传链",
+   "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>一个概念是怎么一路变形的</text><rect x='20' y='48' width='118' height='72' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='79' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>1990 学术论文</text><text x='79' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>萨洛维 · 梅耶</text><text x='79' y='108' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>界定清楚的能力集</text><path d='M142,84 L164,84' style='stroke:var(--ink-faint);stroke-width:1.4;fill:none'/><path d='M159,79 L167,84 L159,89' style='stroke:var(--ink-faint);stroke-width:1.4;fill:none'/><rect x='168' y='48' width='118' height='72' rx='7' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='227' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>1995 这本书</text><text x='227' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>加神经科学 + 故事</text><text x='227' y='108' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>副标题带「可能」</text><path d='M290,84 L312,84' style='stroke:var(--ink-faint);stroke-width:1.4;fill:none'/><path d='M307,79 L315,84 L307,89' style='stroke:var(--ink-faint);stroke-width:1.4;fill:none'/><rect x='316' y='48' width='118' height='72' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='375' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>媒体与畅销榜</text><text x='375' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>「可能」掉了</text><text x='375' y='108' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>变成断言</text><path d='M438,84 L460,84' style='stroke:var(--ink-faint);stroke-width:1.4;fill:none'/><path d='M455,79 L463,84 L455,89' style='stroke:var(--ink-faint);stroke-width:1.4;fill:none'/><rect x='442' y='48' width='100' height='72' rx='7' style='fill:none;stroke:var(--line);stroke-width:1;stroke-dasharray:4 3'/><text x='492' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>培训产业</text><text x='492' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>课程 · 测评</text><text x='492' y='108' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>「八成靠情商」</text><rect x='60' y='152' width='440' height='62' rx='8' style='fill:none;stroke:var(--azure);stroke-width:1.4;stroke-dasharray:4 3'/><text x='280' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>每往右一格,限定词少一层,自信多一分</text><text x='280' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>读这本书要做的第一件事,是把掉在路上的限定词捡回来</text><text x='280' y='238' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>戈尔曼站在中间那一格:比源头松,比后面两格严谨得多</text></svg>",
+   "caption": "「情商」不是一个凭空冒出来的口号,它有正经的学术源头;但它从论文走到培训 PPT 的过程中,每经过一站就掉一层限定词。"
+  },
+  {
+   "type": "p",
+   "text": "还有一件事值得先交代:戈尔曼的本行是记者,不是实验室里的研究者——他有心理学的博士训练,但整本书的写法是科学报道的写法:采访研究者、串联最新发现、用故事把抽象的机制讲活。这既是它的长处也是它的短处。长处是,它把当时分散在神经科学、发展心理学、婚姻研究、教育实验里的一堆线索,第一次编成了一条完整的叙事,让普通读者第一次看见「情绪」原来是可以被科学地讨论的;**短处是,记者的叙事本能会挑最有画面感的研究,而最有画面感的研究,往往不是最稳的那一个。**下面要讲的几处「后来缩水了」的结论,基本都出自这个机制。"
+  },
+  {
+   "type": "figure",
+   "ftype": "路线图",
+   "svg": "<svg viewBox='0 0 560 500' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>全书路线:从机制到成分,从场景到清算</text><rect x='24' y='40' width='512' height='96' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='40' y='60' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--ink-soft)'>第一段 · 情绪脑</text><text x='44' y='82' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>一 情绪是干什么用的:一套比理智古老得多的系统</text><text x='44' y='104' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>二 杏仁核劫持:大脑里那条抄近道的线路 ★</text><text x='44' y='126' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>三 聪明人为什么会办蠢事:IQ 之外的那个变量</text><rect x='24' y='146' width='512' height='140' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='40' y='166' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--cinnabar-pure)'>第二段 · 五个成分 ★</text><text x='44' y='188' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>四 自我觉察:给正在发生的情绪起个名字</text><text x='44' y='210' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>五 自我调节:管住那股冲上来的劲</text><text x='44' y='232' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>六 动机:希望、乐观与心流</text><text x='44' y='254' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>七 同理心:读懂那些没说出口的话</text><text x='44' y='276' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>八 社交技能:情绪会传染,人际是一门手艺</text><rect x='24' y='296' width='512' height='74' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='40' y='316' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--ink-soft)'>第三段 · 落到实处</text><text x='44' y='338' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>九 用武之地:婚姻、职场与身体</text><text x='44' y='360' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>十 机会之窗:童年、气质与情绪素养教育</text><rect x='24' y='380' width='512' height='58' rx='8' style='fill:none;stroke:var(--azure);stroke-width:1.5;stroke-dasharray:4 3'/><text x='40' y='400' style='font-family:var(--font-serif);font-size:11px;font-weight:bold;fill:var(--azure)'>第四段 · 站内加的一章</text><text x='44' y='424' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink)'>十一 三十年后回看:EQ 这个词后来怎么了</text><text x='280' y='464' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>前十章顺着原书的骨架走,第十一章是原书没有的——</text><text x='280' y='484' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>它清点这三十年里,哪些被证实、哪些被削掉、哪些被卖成了课程</text></svg>",
+   "caption": "全书路线图。带 ★ 的两段是核心:第二章讲清「为什么会失控」,第四到八章讲清「那怎么办」。最后一章是站内补的清算,原书没有。"
+  },
+  {
+   "type": "h2",
+   "text": "二、情绪是干什么用的:一套比理智古老得多的系统"
+  },
+  {
+   "type": "p",
+   "text": "全书的第一步,是给情绪平反。日常语言里,「情绪化」几乎等于「不理性」「不成熟」,而戈尔曼要说的恰好相反:**每一种情绪都是一套演化出来的应急预案,是身体已经开始执行的动作草案。**愤怒时血流涌向双手、心率上升,是为了随时能抄起东西;恐惧时血液从脸部撤走流向大腿肌肉,是为了拔腿就跑;厌恶时那个皱鼻子的表情,是在关闭鼻腔以隔绝可能有毒的东西。这些反应不需要你同意,它们在你意识到之前就已经启动了。"
+  },
+  {
+   "type": "p",
+   "text": "问题在于,这套预案是为几十万年前的草原写的,而我们现在坐在会议室里。**同一套「要打架了」的生理准备,搬到被同事顶撞一句的场合,就成了用力过猛的错位。**戈尔曼由此提出一个贯穿全书的说法:人身上有两个心智并行运转——理性心智慢、可被觉察、讲得出理由;情绪心智快、不假思索、常常是事后才给自己补一个理由。大部分时候两者配合得天衣无缝,只有在情绪强度冲上去的时候,你才会看清是谁在开车。"
+  },
+  {
+   "type": "callout",
+   "tone": "note",
+   "label": "反过来想",
+   "items": [
+    "如果情绪只是理性的杂音,那么把情绪拆掉的人,应该做决定做得更好才对。可神经科学家达马西奥记录的一类病人恰恰相反:他们前额叶特定区域受损,智商测验分数照旧、逻辑推理毫无问题,却连「约在周二还是周四」这种小事都能权衡一下午,人生也接连出错。",
+    "这类病例说明,情绪不是理性的敌人,而是给无穷多个选项快速贴上「值不值得」标签的那套系统。拆掉它,理性就只剩空转。"
+   ]
+  },
+  {
+   "type": "h2",
+   "text": "三、全书的心脏:杏仁核劫持"
+  },
+  {
+   "type": "p",
+   "text": "如果这本书只留一个概念,那一定是**杏仁核劫持**。它要解释的正是开头那个瞬间:为什么反应会比理解更快。戈尔曼借用的是神经科学家约瑟夫·勒杜的研究——感官信号进入大脑后先到丘脑,然后兵分两路:一路直接插向杏仁核,路径短、传得快,但只能做粗糙的模式匹配;另一路绕经大脑皮层,做精细的辨认和判断,再把结论传给杏仁核,路径长、传得慢,但准确。"
+  },
+  {
+   "type": "p",
+   "text": "**短的那条先到。**于是身体常常在你「看清那是什么」之前,就已经跳开、发火或者僵住了。草地上一根弯曲的东西,你先跳开,零点几秒后才认出那是根绳子——为了不被咬死,演化宁可让你多跳一百次冤枉的。代价是:这条快线路又快又蠢,它只认粗糙的相似性,所以人会对一个语气、一个眼神、一个跟旧事重叠的场景反应过度,事后连自己都解释不清。"
+  },
+  {
+   "type": "figure",
+   "ftype": "机制图",
+   "svg": "<svg viewBox='0 0 560 300' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>两条路:为什么反应比理解快</text><ellipse cx='70' cy='150' rx='42' ry='28' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='70' y='147' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>刺激进来</text><text x='70' y='164' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-soft)'>一句话/一个眼神</text><path d='M114,150 L152,150' style='stroke:var(--ink-faint);stroke-width:1.4;fill:none'/><ellipse cx='192' cy='150' rx='38' ry='26' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='192' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>丘脑分流</text><path d='M228,136 C280,86 330,80 396,96' style='stroke:var(--ink-faint);stroke-width:1.4;fill:none'/><path d='M389,89 L399,97 L387,101' style='stroke:var(--ink-faint);stroke-width:1.4;fill:none'/><rect x='300' y='58' width='150' height='46' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='375' y='78' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>皮层:这到底是什么</text><text x='375' y='95' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-soft)'>长路 · 准确 · 慢</text><path d='M450,90 C500,110 500,180 470,206' style='stroke:var(--ink-faint);stroke-width:1.4;fill:none'/><path d='M477,199 L468,209 L466,197' style='stroke:var(--ink-faint);stroke-width:1.4;fill:none'/><path d='M228,164 C280,206 330,212 396,214' style='stroke:var(--cinnabar-pure);stroke-width:2.4;fill:none'/><path d='M389,208 L400,214 L389,220' style='stroke:var(--cinnabar-pure);stroke-width:2.4;fill:none'/><text x='300' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>短路 · 粗糙 · 快</text><rect x='400' y='196' width='142' height='50' rx='7' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='471' y='217' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>杏仁核:拉响警报</text><text x='471' y='236' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-soft)'>身体已经开始反应</text><text x='280' y='278' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>短路先到 → 你先发火 → 长路才把「他其实没恶意」送到 → 已经晚了</text></svg>",
+   "caption": "「杏仁核劫持」的骨架:同一个刺激走两条路,短的那条为了抢时间牺牲了准确度。理智不是没上场,只是迟到了。"
+  },
+  {
+   "type": "p",
+   "text": "劫持发生时,前额叶那套负责踩刹车、权衡后果的机制会暂时失灵——这就是为什么人在盛怒中说出的话,冷静下来后自己都难以相信。戈尔曼由此得到全书的操作起点:**既然快线路拦不住,那么能下功夫的地方有两处**——一是提前把它的触发阈值调高(平时的休息、压力水平、旧伤口有没有处理过,都在这里起作用),二是在被劫持之后尽快把生理唤起降下来,别在那几分钟里做任何决定。"
+  },
+  {
+   "type": "callout",
+   "tone": "warn",
+   "label": "一处必须说明",
+   "items": [
+    "「杏仁核劫持」是一个极好用的比喻,但它不是一条已经定论的神经机制。那条快线路最扎实的证据来自动物的恐惧条件反射实验,推广到「人在办公室为什么发火」是一次相当大的跨越。",
+    "更值得记一笔的是:提出这项研究的勒杜本人后来反复公开澄清——杏仁核不是「恐惧中枢」,它做的是非意识的威胁探测;而「我很害怕」这种有意识的感受,是皮层大量参与建构出来的。他明确对这类流行化的表述表达过保留。",
+    "所以:拿它理解自己的暴脾气很有用,拿它当铁律来断言「这不是我的错,是我的杏仁核」,就走过头了。"
+   ]
+  },
+  {
+   "type": "p",
+   "text": "从劫持这个机制,还能推出一条很实际的时间表。生理唤起冲上去容易,降下来慢——心跳、血压、应激激素水平回到基线需要的时间,以分钟甚至十几分钟计。**这意味着争吵中那句「你先冷静一下,我们把话说清楚」几乎注定失败**:身体还在应激状态里,再多的道理也只是给对方提供新的攻击靶子。戈尔曼引用婚姻研究者的建议是,一旦发现自己或对方进入了这种「被淹没」的状态,唯一有效的动作是**真的离开现场二十分钟**,而且这二十分钟里不能继续在心里复述对方哪句话最过分——那等于把火重新点起来。"
+  },
+  {
+   "type": "figure",
+   "ftype": "时间轴",
+   "svg": "<svg viewBox='0 0 560 260' xmlns='http://www.w3.org/2000/svg'><text x='280' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>一次劫持的时间形状:上得快,下得慢</text><line x1='56' y1='196' x2='524' y2='196' style='stroke:var(--ink-faint);stroke-width:1'/><line x1='56' y1='60' x2='56' y2='196' style='stroke:var(--ink-faint);stroke-width:1'/><text x='40' y='66' text-anchor='end' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-soft)'>高</text><text x='40' y='196' text-anchor='end' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-soft)'>低</text><path d='M56,190 L96,186 L112,74 C170,66 210,92 260,112 C320,136 400,164 524,182' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2.4'/><line x1='112' y1='74' x2='112' y2='196' style='stroke:var(--line);stroke-width:1;stroke-dasharray:3 3'/><text x='112' y='58' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--cinnabar-pure)'>零点几秒</text><text x='112' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>警报拉响</text><line x1='190' y1='84' x2='190' y2='196' style='stroke:var(--line);stroke-width:1;stroke-dasharray:3 3'/><text x='190' y='230' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>理智到场,但已收不回</text><line x1='420' y1='170' x2='420' y2='196' style='stroke:var(--line);stroke-width:1;stroke-dasharray:3 3'/><text x='420' y='214' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>二十分钟后才回得来</text><rect x='196' y='100' width='214' height='26' rx='5' style='fill:none;stroke:var(--azure);stroke-width:1.2;stroke-dasharray:4 3'/><text x='303' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>这段时间里讲道理 = 火上浇油</text><text x='280' y='250' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>曲线为示意,不表示具体数值 —— 要记的只是这个不对称的形状</text></svg>",
+   "caption": "情绪唤起的不对称曲线:上升以零点几秒计,回落以十几二十分钟计。所有「当场把话说清楚」的努力,都撞在这条曲线的右半边上。"
+  },
+  {
+   "type": "h2",
+   "text": "四、五个成分:情商到底由什么构成"
+  },
+  {
+   "type": "p",
+   "text": "解释完机制,书的第二部分给出「那怎么办」。戈尔曼把情商拆成五个可以分别讨论、分别练习的成分——这也是这本书流传最广的一张图:**自我觉察、自我调节、动机、同理心、社交技能。**前三个朝向自己,后两个朝向别人;而且它们不是并列的五件事,而是有明确的先后依赖关系:觉察是地基,没有它,后面四个都无从谈起。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "svg": "<svg viewBox='0 0 560 330' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>五个成分:三个朝向自己,两个朝向别人</text><text x='150' y='58' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink-soft)'>对自己</text><text x='412' y='58' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink-soft)'>对别人</text><line x1='281' y1='48' x2='281' y2='268' style='stroke:var(--line);stroke-width:1;stroke-dasharray:4 4'/><rect x='30' y='72' width='240' height='58' rx='7' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='150' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>① 自我觉察 · 地基</text><text x='150' y='114' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>知道自己此刻正在感觉什么</text><rect x='30' y='138' width='240' height='58' rx='7' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='150' y='160' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>② 自我调节</text><text x='150' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>不让情绪替你按下发送键</text><rect x='30' y='204' width='240' height='58' rx='7' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='150' y='226' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>③ 动机</text><text x='150' y='246' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>希望 · 乐观 · 心流</text><rect x='292' y='105' width='240' height='58' rx='7' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='412' y='127' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>④ 同理心</text><text x='412' y='147' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>读懂没说出口的部分</text><rect x='292' y='171' width='240' height='58' rx='7' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='412' y='193' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>⑤ 社交技能</text><text x='412' y='213' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>情绪会传染,关系是手艺</text><path d='M150,130 L150,138' style='stroke:var(--ink-faint);stroke-width:1.2'/><path d='M150,196 L150,204' style='stroke:var(--ink-faint);stroke-width:1.2'/><path d='M270,101 C286,101 286,134 292,134' style='stroke:var(--ink-faint);stroke-width:1.2;fill:none'/><path d='M412,163 L412,171' style='stroke:var(--ink-faint);stroke-width:1.2'/><text x='280' y='296' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>依赖关系:察觉不到自己的情绪,就管不住它;读不懂自己,也读不懂别人</text><text x='280' y='316' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>所以五个成分不是清单,是一条链——断在哪里,后面就都不成立</text></svg>",
+   "caption": "五个成分的结构:朱框那一格是地基。这张图后来被无数企业培训 PPT 复制,只是复制时常常把「依赖关系」画成了「并列清单」。"
+  },
+  {
+   "type": "p",
+   "text": "**自我觉察**是在情绪里同时保留一个旁观的自己。「我现在很生气」这句话说出口,人就已经与那股怒气拉开了一点距离。它的反面不是冷漠,而是「述情障碍」——有一类人几乎说不出自己在感觉什么,只能报告身体不适,他们不是没有情绪,是缺一张情绪的词汇表。这一环恰好是全书实证基础最好的部分:后来的脑成像研究确实发现,把感受说成一个具体的词,会让杏仁核的活跃度降下来。**给情绪起名字,本身就是一种降温。**"
+  },
+  {
+   "type": "p",
+   "text": "**自我调节**不等于压抑。目标不是变成一个没有情绪的人——长期压着不表达,代价往往落在身体和关系上,和当场爆发是同一个问题的两个方向。戈尔曼要的是「合宜」:强度和场合对得上,来得快也去得快。这一章里他顺手推翻了一条流行观念:**「发泄出来就好了」多半是错的。**反复向人复述自己为什么生气,是在给火添柴而不是灭火;真正管用的是打断链条——离开现场、让生理唤起降下去、换一个对同一件事的说法。顺序是先降温,再讲道理。"
+  },
+  {
+   "type": "quote",
+   "original": "在真正的情绪风暴里,理智不是被说服的,是被绕过的。",
+   "translation": "全书的机制判断:劫持发生时,负责权衡的前额叶暂时失灵,所以「你冷静点想想」这句话在那几分钟里几乎不起作用——能起作用的是降低生理唤起,而不是补充论据。"
+  },
+  {
+   "type": "p",
+   "text": "**动机**这一章讲的是把情绪调到有利于做事的那一档。戈尔曼谈希望(不是「相信会变好」,而是「我有路子、也有力气走过去」的双重信念)、谈乐观(关键在归因方式:把失败解释成「这次方法不对」还是「我就是不行」,决定了下一次还开不开始),也谈契克森米哈赖的心流——难度刚好卡在能力上沿的那种状态。他把心流称作「统领性能力」,因为它同时解决了动力和效率。这一章还有一条今天仍站得住的观察:**考试焦虑损害成绩,不是因为紧张本身,而是因为「我要考砸了」这类念头占用了本该用来解题的工作记忆。**"
+  },
+  {
+   "type": "p",
+   "text": "**同理心**的根扎得极早:婴儿听见别的婴儿哭会跟着哭,一岁多的孩子会把自己的玩具递给正在哭的大人。而它能不能长起来,很大程度取决于抚养者有没有认真回应过孩子的情绪——**被读懂过的人,才学得会读懂别人。**成年后的同理心主要靠非语言通道运作:语气、停顿、表情、姿势承载了情绪信息的绝大部分,而这类信号的辨识能力可以被测量,也可以被训练。"
+  },
+  {
+   "type": "p",
+   "text": "**社交技能**建立在前四个之上,核心是一条常被低估的事实:**情绪会传染。**两个人待在一起几分钟,心率、表情、语调会不知不觉靠拢,而情绪总是从表达力强的一方流向表达力弱的一方。这解释了为什么一个团队的气氛往往由少数几个人决定,也解释了为什么带团队的人首先是在传染自己的状态。戈尔曼还观察到,受欢迎的孩子并不更聪明,他们只是更懂得先站在旁边看清一场游戏的节奏,再找机会加入,而不是一上来就要求按自己的规则玩——**这类东西是手艺,而手艺意味着能练。**"
+  },
+  {
+   "type": "h2",
+   "text": "五、用武之地:婚姻、职场、身体与学校"
+  },
+  {
+   "type": "p",
+   "text": "第三、四、五部分把五个成分放进真实场景,这也是全书最好看、同时证据最参差的部分。**婚姻**一章依托戈特曼的观察,总结出几种破坏性模式:指责人格而不是就事论事、轻蔑、防卫式反击、以及干脆筑起墙来不理人——其中轻蔑最伤,因为它传递的是「你不配」。他也描述了「情绪淹没」:争吵中一方生理唤起冲高之后,理论上还在听,实际上什么都进不去,这时唯一有用的动作是暂停二十分钟。"
+  },
+  {
+   "type": "p",
+   "text": "**职场**一章讲的是同一件事的两种说法:「你根本不上心」和「这一版少了三处数据,我们对一下」,内容一样,后果完全不同——前者攻击的是人,只会换来防御;后者指向的是事,才可能换来改进。戈尔曼后来把这条线索发展成另一本专著和一篇影响巨大的管理学文章,五个成分也是在那里被最终定型为今天流传的版本。**领导者的情绪状态会被整个团队接收,所以在管理岗上,「管好自己的情绪」不是修养问题,是职责的一部分。**"
+  },
+  {
+   "type": "p",
+   "text": "**身体**一章是全书走得最远的一步。长期敌意与心血管风险的关联、慢性压力对免疫功能的影响,这类证据相对扎实,值得认真对待;但书里对另一类说法的引用过于乐观——比如「情绪支持能延长癌症患者生存期」,那项著名结论出自一项小样本研究,后来更大规模的试验没能重复出来。这一节提醒读者一件事:**同一本书里,不同章节的证据强度可以差得很远,不能因为前面几章讲得扎实,就默认后面几章也一样硬。**"
+  },
+  {
+   "type": "p",
+   "text": "**学校**一章反而是全书最经得起检验的部分。戈尔曼介绍了当时几个把「怎么识别情绪、怎么冷静下来、怎么解决冲突」直接编进课表的实验项目,并主张这些能力应该像识字一样被系统教授——他称之为「情绪素养」。这条主张后来发展成全球性的社会情感学习运动,而且积累出了真证据:一项汇总两百多个校园项目的元分析显示,参与的学生不仅行为问题减少,连学业成绩都有可观提升。**这是全书证据最硬的一块,也是它最实在的遗产。**"
+  },
+  {
+   "type": "h2",
+   "text": "六、哪些站得住,哪些走得太远"
+  },
+  {
+   "type": "p",
+   "text": "读到这里,该做一次清算了。**这本书不是伪科学**——这一点必须先说清楚,因为它经常和真正的心灵鸡汤被放在同一个货架上。它引用的神经科学是当时的前沿,它对情绪功能的解释有扎实的演化生物学基础,它推动的情绪素养教育被后续研究证实有效。它的问题不在造假,而在**推论走得比证据远**:从「快线路在老鼠身上存在」推到「所以你办公室里的暴怒是杏仁核干的」,从「情绪能力与某些结果相关」推到「所以它比智商更重要」,每一步都不算离谱,但每一步都多迈了半格,累加起来就成了一个远比数据自信的结论。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照",
+   "svg": "<svg viewBox='0 0 560 320' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>一本书里,证据强度并不均匀</text><rect x='22' y='48' width='250' height='244' rx='8' style='fill:none;stroke:var(--azure);stroke-width:1.6'/><text x='147' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>站得住的部分</text><text x='40' y='104' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>· 情绪是有功能的应急预案</text><text x='40' y='128' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>· 给情绪命名能降低唤起</text><text x='40' y='152' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>· 情绪调节可以被训练</text><text x='40' y='176' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>· 焦虑挤占工作记忆</text><text x='40' y='200' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>· 情绪会在人群里传染</text><text x='40' y='224' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>· 校园情绪素养课有效</text><text x='40' y='248' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>· 情绪回路终生可塑</text><text x='147' y='276' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--azure)'>有后续研究支持</text><rect x='288' y='48' width='250' height='244' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='413' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>走得太远的部分</text><text x='306' y='104' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>· 「情商比智商更重要」</text><text x='306' y='128' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>· 把动物实验直接推给人</text><text x='306' y='152' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>· 棉花糖实验的预测力</text><text x='306' y='176' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>· 情绪支持延长癌症生存</text><text x='306' y='200' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>· 离婚可被高准确率预测</text><text x='306' y='224' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>· 默认情绪能力必然向善</text><text x='306' y='248' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>· 五成分可被可靠测量</text><text x='413' y='276' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--cinnabar-pure)'>后续研究缩水或质疑</text><text x='280' y='312' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>同一本书两栏并存 —— 这正是它值得读、也必须带着问号读的原因</text></svg>",
+   "caption": "把全书拆成两栏看,比整体判断「这本书好不好」有用得多:左栏可以拿来用,右栏只能拿来了解「当年人们是这么想的」。"
+  },
+  {
+   "type": "p",
+   "text": "两个最该单独拎出来说的例子。第一个是**那颗棉花糖**。米歇尔的实验——四岁孩子若能忍住不吃眼前那颗糖以换取两颗,十几年后在学业与自控上似乎都更占优——是这本书里最脍炙人口的段落。2018 年一次样本大得多、更具代表性的重复研究把这个结论削去了大半:一旦控制住家庭背景与早期认知能力,那点相关几乎所剩无几。**换句话说,能忍的孩子常常不是意志力更强,只是家里更让人放心**——一个吃过「说了给却没给」的亏的孩子,现在就吃掉才是理性的。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比",
+   "svg": "<svg viewBox='0 0 560 230' xmlns='http://www.w3.org/2000/svg'><text x='280' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>棉花糖实验:重复之后剩下多少</text><rect x='24' y='50' width='246' height='140' rx='8' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='147' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>书里引用的版本</text><text x='147' y='102' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>小样本 · 单一校园社区</text><text x='147' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>四岁能忍 → 十几年后更强</text><text x='147' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>结论:自控力是关键变量</text><rect x='60' y='158' width='174' height='14' rx='3' style='fill:var(--cinnabar-pure);opacity:0.75'/><path d='M276,120 L302,120' style='stroke:var(--ink-faint);stroke-width:1.4;fill:none'/><path d='M297,115 L305,120 L297,125' style='stroke:var(--ink-faint);stroke-width:1.4;fill:none'/><rect x='308' y='50' width='228' height='140' rx='8' style='fill:none;stroke:var(--azure);stroke-width:1.6'/><text x='422' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>2018 年的重复研究</text><text x='422' y='102' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>大样本 · 背景更多元</text><text x='422' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>控制家庭背景与认知能力后</text><text x='422' y='146' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>结论:剩下的相关很微弱</text><rect x='380' y='158' width='38' height='14' rx='3' style='fill:var(--azure);opacity:0.7'/><text x='280' y='216' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>色块长度示意「解释力」的大致缩水,不是精确数值</text></svg>",
+   "caption": "这不是说自控不重要,而是说:一个四岁孩子肯不肯等,里面掺着太多家境与信任的成分,不能全记在意志力头上。"
+  },
+  {
+   "type": "p",
+   "text": "第二个是**那个数字**。「智商只能解释人生成就的两成」这句话在书里是有的,但它的意思是「剩下八成由其他各种因素共同决定」,而不是「剩下八成归情商」。传播过程中这两句话被合并了,于是「情商决定人生八成」成了培训业最爱引用的一句从未存在过的结论。戈尔曼本人后来也澄清过他没这么说。**这是一个绝佳的样本,说明一个带条件的判断是怎么在转述中变成一句斩钉截铁的口号的。**"
+  },
+  {
+   "type": "h2",
+   "text": "七、最硬的一记质疑:它到底能不能被测量"
+  },
+  {
+   "type": "p",
+   "text": "学界对情商最认真的批评,不在「情绪重不重要」这种没人会反对的问题上,而在**测量**上。今天的情商测评大致分两派:一派把它当能力考,题目有相对客观的对错;另一派靠自评问卷,问你觉得自己在这些方面表现如何——市面上流行的、企业买单的,绝大多数是后者。麻烦就在这里:**自评式的情商量表与人格测验高度重叠。**扣掉「宜人性」「尽责性」「情绪稳定性」这几个人格维度,再扣掉智商,一份情商问卷还能剩下多少独有的解释力?这个问题被反复研究,答案通常是:剩得不多。"
+  },
+  {
+   "type": "callout",
+   "tone": "mute",
+   "label": "争议的两端",
+   "items": [
+    "严厉的一端认为它根本不该叫「智力」:一个把自控、共情、乐观、社交手腕全捆在一起的词,边界太松,松到几乎无法被证伪——批评者洛克的立场大致如此。",
+    "温和的一端(如马修斯等人那本系统清点证据的专著)并不否定这个领域,只是指出结论跑在了数据前面很远:能力派的测验有一定的独立预测力,但远没有大到可以支撑「比智商更重要」这种说法。",
+    "而能力派测验自身也有个别扭之处:它的「标准答案」往往由多数人共识或专家判断来定——一门用投票决定对错的智力测验,总归有点奇怪。"
+   ]
+  },
+  {
+   "type": "p",
+   "text": "还有一处结构性的软肋,书里几乎没有正面处理:**它默认情绪能力必然导向亲社会。**但读懂别人不等于善待别人。骗子、操纵者往往同理心的「识别」那一半格外发达,只是不接「关切」那一半;后来的组织行为学研究也确实发现,情绪能力强的人同样更擅长在职场中策略性地使用情绪,包括对他人不利的那种用法。**同一套技能,朝向哪里,是另一个问题——而这个问题不在情商的框架之内。**"
+  },
+  {
+   "type": "pull",
+   "text": "问题从来不是「情绪重不重要」,而是「把这么多不同的东西捆成一个词、再宣称它能被一份问卷测出来」,这一步是否成立。"
+  },
+  {
+   "type": "p",
+   "text": "最后还要记一笔的,是这本书催生的那个产业。畅销之后,「情商测评」和「情商培训」迅速成了一门生意:课程、认证、企业内训、招聘筛选,乃至给小学生打分的量表。这门生意的问题不在于收费,而在于它需要一个确定的东西来卖——**而一个还在争论「能不能被可靠测量」的构念,是卖不动的,于是不确定性被悄悄删掉了。**于是「可能比智商更重要」变成「比智商更重要」,「与某些结果相关」变成「能预测绩效」,一个学术概念就这样被包装成了一件有明确规格、可以按人头计价的商品。看清这条链路,比记住书里任何一个技巧都更有用。"
+  },
+  {
+   "type": "h2",
+   "text": "八、那么,今天该怎么读这本书"
+  },
+  {
+   "type": "p",
+   "text": "站内已经有一类书是用「当作现象来研读,别当真理来信」的分寸处理的——那类书连底子都是空的。**这本书不属于那一类,分寸要另调。**戈尔曼有真实的神经科学基础,有正经的学术源头,有被后续研究证实的教育实践;他的问题不是无中生有,而是把一个真实的现象推成了一套过于自信的体系。所以更合适的读法不是「看懂它但不必信它」,而是:**分开读——机制与观察那一层认真读,预测与承诺那一层打问号读。**"
+  },
+  {
+   "type": "steps",
+   "items": [
+    { "title": "第一步:拿走机制", "text": "情绪先于理智抵达、情绪是有功能的、命名能降温、发泄不灭火、焦虑挤占工作记忆——这些是可以直接拿来用的,而且用得上的场合每天都有。", "state": "done" },
+    { "title": "第二步:拿走练法", "text": "五个成分作为「练习清单」是有用的:先练觉察,再练调节,再谈同理与关系。把它当训练顺序,不要当人格评级。", "state": "now" },
+    { "title": "第三步:留下问号", "text": "凡是涉及「能预测什么」「比什么更重要」「测出来是多少分」的部分,一律降一档看待。尤其是任何拿一份问卷给你打出一个情商分数、并据此下人生判断的产品。", "state": "todo" }
+   ]
+  },
+  {
+   "type": "quote",
+   "original": "情绪回路终生可塑——这意味着,晚学也来得及,只是慢一些。",
+   "translation": "全书最重要、也最经得起检验的乐观理由:与固定不变的智商观念相比,情绪能力被认为是可以持续练习和改变的,这也是情绪素养教育得以成立的前提。"
+  },
+  {
+   "type": "p",
+   "text": "最后值得说一句公道话。今天我们觉得「先处理情绪、再处理事情」是常识,觉得学校该教孩子认识自己的感受,觉得一个只会做事不会带人的主管有明显短板——这些在 1995 年之前都不是常识。**一本书能把一件事推成常识,已经是很少有的成就。**它的代价是,常识化的过程也把它变成了口号,变成了培训课件里那张五个圆圈的图,变成了一个可以被随便打分的标签。"
+  },
+  {
+   "type": "p",
+   "text": "所以把全书收成一句话:**你确实有一条比理智更快的神经线路,它在你想明白之前就已经替你做出了反应;而这条线路能不能被认识、被绕开、被重新训练,是一件真实的、值得认真对待的事。**至于它能不能被压缩成一个分数、能不能拿来解释八成的人生成就——那是另一回事,而且答案多半是不能。带着这两句话去读,这本书仍然是关于情绪最好的入门之一。"
+  },
+  {
+   "type": "figure",
+   "ftype": "金句卡",
+   "svg": "<svg viewBox='0 0 560 250' xmlns='http://www.w3.org/2000/svg'><rect x='28' y='24' width='504' height='202' rx='10' style='fill:none;stroke:var(--line);stroke-width:1'/><rect x='40' y='36' width='480' height='178' rx='7' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2;opacity:0.55'/><text x='280' y='92' text-anchor='middle' style='font-family:var(--font-serif);font-size:21px;font-weight:bold;fill:var(--ink)'>报警的那条神经</text><text x='280' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:21px;font-weight:bold;fill:var(--ink)'>比思考的那条快半拍</text><line x1='224' y1='150' x2='336' y2='150' style='stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='280' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>这半拍里发生的事,值得一本书</text><text x='280' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>而它被吹成的样子,值得一个问号</text><text x='498' y='210' text-anchor='end' style='font-family:var(--font-serif);font-size:10px;fill:var(--cinnabar-pure)'>《情商》· 全书总览</text></svg>",
+   "caption": "把这本书收成一句话。左半句是它的贡献,右半句是读它时该留的分寸。"
+  }
+ ]
+}

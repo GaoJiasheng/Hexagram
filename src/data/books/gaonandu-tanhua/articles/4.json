@@ -1,0 +1,148 @@
+{
+ "title": "放弃归罪:改画一张「贡献系统图」",
+ "subtitle": "一门心思找罪魁,就再也看不清事情是怎么运转的",
+ "centralIdea": "第一层的最后一个陷阱是「归罪框架」——把对话组织成「这事该怪谁」。作者列出归罪的三宗代价:它让人只顾自保,它挡住了学习,它治不好病。替代品叫「贡献」:归罪往回看,问该罚谁;贡献往前看,问这套配合是怎么把我们带到这里的、改哪里才不会重来。承认自己有一份贡献不等于承认有错,更不是各打五十大板。作者还点出四种最难看见的贡献:一直躲着不谈、让人不敢找你、两种风格撞在一起、角色本身带来的盲区。同时他们划了一条硬红线:遇到虐待、霸凌这类单方面伤害,「你也有贡献」的说法绝不适用。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "一个项目搞砸了,复盘会上第一句话通常是:「到底是哪个环节出的问题?」听起来像是在追查原因,但只要在这种会上坐过几次你就知道,接下来的一小时不会有任何原因被查清——所有人都在做同一件事:证明这不是自己的锅。作者说,这不是因为大家都不负责任,而是因为**只要话题被组织成「该怪谁」,人就只能自保**。这是归罪框架的本能反应,和人品无关。而这一章要讲的,就是怎么把这个框架整个换掉。"
+  },
+  {
+   "type": "h2",
+   "text": "归罪的三宗代价"
+  },
+  {
+   "type": "p",
+   "text": "作者不是从道德上反对归罪——他们不说归罪「不厚道」,而是说它**不好用**。具体有三宗代价。"
+  },
+  {
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "**它让人只顾自保。**一旦对方察觉到这场对话的走向是给他定罪,他全部的注意力都会转到辩解上。这时候你说的每一句话,他听到的都是「新一条罪状」,而不是信息。你想传递的东西一个字也进不去。",
+    "**它挡住了学习。**定了罪就等于结了案。「都怪小李没盯住」这句话一旦被接受,大家就散会了——可真正导致这件事的那些机制:排期本来就太紧、上游的数据从来不按时、谁都没被授权喊停,一条都没被追下去。",
+    "**它治不好病。**罪判完了,导致问题的那套配合方式一点没变。下个月同样的事再来一遍,大家再开一次同样的会,再判一次同样的罪。这就是为什么有些团队、有些家庭,同一场争吵能一模一样地吵上十年。"
+   ]
+  },
+  {
+   "type": "figure",
+   "ftype": "循环图",
+   "svg": "<svg viewBox='0 0 540 260' xmlns='http://www.w3.org/2000/svg'><text x='270' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14.5px;font-weight:bold;fill:var(--ink)'>归罪为什么让同一件事反复发生</text><rect x='190' y='44' width='160' height='40' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='270' y='69' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>出了问题</text><path d='M350,64 L440,64 L440,124' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><rect x='360' y='124' width='160' height='40' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='440' y='149' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>追问「该怪谁」</text><path d='M440,164 L440,204 L350,204' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><rect x='190' y='184' width='160' height='40' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='270' y='209' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>各方全力自保</text><path d='M190,204 L100,204 L100,144' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><rect x='20' y='124' width='160' height='40' rx='7' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='100' y='149' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>机制没人去查</text><path d='M100,124 L100,64 L190,64' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><text x='270' y='150' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>案子结了</text><text x='270' y='170' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>病还在</text></svg>",
+   "caption": "归罪是一个闭环:定了罪、结了案,真正的机制却始终没人去查,于是同一件事下个月照样发生。"
+  },
+  {
+   "type": "h2",
+   "text": "「贡献」不是「过错」的委婉说法"
+  },
+  {
+   "type": "p",
+   "text": "作者提出的替代品叫「**贡献**」。这两个词最容易被当成同一件事的两种说法,所以要先把它们分清楚。"
+  },
+  {
+   "type": "p",
+   "text": "**归罪是往回看的**,它问的是「该罚谁」,关心的是判决;**贡献是往前看的**,它问的是「这套配合是怎么把我们带到这里的、改哪里才不会重来」,关心的是机制。前者需要一个答案,后者需要一张图。一个更实际的区别是:归罪的结论通常落在一个人身上,而贡献的结论几乎总是落在**一组互相配合的行为**上。"
+  },
+  {
+   "type": "callout",
+   "tone": "warn",
+   "label": "最容易读岔的一处",
+   "items": [
+    "承认自己有一份贡献,**不等于**承认自己有错,更不是「各打五十大板」。你可以完全不认为自己做错了什么,同时清楚地看到:是我一直没把话说破,才让这件事拖到今天。这两句话不矛盾。作者反复强调这一点,因为很多人一听「你也有贡献」,立刻理解成「你也有责任、你也该道歉」,于是本能地拒绝——那就把这件工具的用处整个丢掉了。"
+   ]
+  },
+  {
+   "type": "p",
+   "text": "换个更直观的说法:归罪像是在找肇事者,贡献像是在画一张交通图——哪个路口没有红绿灯、哪段路的标线早就磨没了、哪个时段的车流本来就超载。找肇事者能解一时之气,画交通图才能让下一辆车不撞上。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比",
+   "svg": "<svg viewBox='0 0 540 230' xmlns='http://www.w3.org/2000/svg'><text x='270' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14.5px;font-weight:bold;fill:var(--ink)'>两种提问,两种产物</text><rect x='24' y='48' width='230' height='150' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='139' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>归罪</text><text x='139' y='102' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>问:该怪谁</text><text x='139' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>方向:往回看</text><text x='139' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>产物:一份判决</text><text x='139' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>落点:一个人</text><rect x='286' y='48' width='230' height='150' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='401' y='74' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>贡献</text><text x='401' y='102' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>问:改哪里才不会重来</text><text x='401' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>方向:往前看</text><text x='401' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>产物:一张系统图</text><text x='401' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>落点:一组互相配合的行为</text></svg>",
+   "caption": "归罪要的是一个名字,贡献要的是一张图——前者能解气,后者才能让同一件事不再发生。"
+  },
+  {
+   "type": "quote",
+   "original": "归罪找肇事者,贡献画交通图。",
+   "translation": "两种框架最直观的分别。找肇事者能给出一个交代,画交通图才能让下一辆车不撞上;而真正让人反复受伤的,恰恰是那些从没被画出来的路口。"
+  },
+  {
+   "type": "h2",
+   "text": "四种最难看见的贡献"
+  },
+  {
+   "type": "p",
+   "text": "作者说,大多数人「找自己的贡献」时都找不到,不是因为不诚实,而是因为最要紧的那几种贡献长得根本不像贡献。他们点了四种。"
+  },
+  {
+   "type": "list",
+   "items": [
+    "**一直躲着不谈。**你忍了半年才爆发。在你看来,这半年是你的忍让;可从系统角度看,这半年的沉默本身就是问题的一部分——对方在这半年里完全没有机会知道有问题,更没有机会改。",
+    "**让人不敢找你。**你一被提意见就变脸、就冷笑、就长篇大论地解释。几次之后,没人再敢跟你提任何事,于是你活在一个没有坏消息的世界里,还觉得一切都挺好。等到问题终于爆出来,你会真心觉得「怎么从来没人跟我说过」。",
+    "**两种风格撞在一起。**一个急一个慢、一个直一个绕、一个要先想清楚再动一个要先动起来再想。单独看谁都没错,可撞在一起就是持续摩擦。这一种最不容易接受,因为它不涉及任何人做错事。",
+    "**角色本身带来的。**你的位置决定了你能看见什么、看不见什么。管钱的人天然更在意成本,做业务的人天然更在意速度。这不算过错,却实实在在地在制造分歧。"
+   ]
+  },
+  {
+   "type": "p",
+   "text": "第一种和第二种尤其值得对着自己照一照,因为它们几乎是所有「积压型」冲突的标准配方:一个人不说,另一个人不好问,时间一长,小事变成旧账,旧账变成人品判断。而到了那个阶段,**问题已经不是当初那件事了,是这半年**。"
+  },
+  {
+   "type": "h2",
+   "text": "一条不能越的界"
+  },
+  {
+   "type": "p",
+   "text": "这一章有一处作者写得非常谨慎,读者也必须跟着谨慎。「贡献」这套语言有一个明确的适用边界:**它处理的是双方互相配合、共同造成的僵局,不适用于单方面的伤害**。遇到虐待、霸凌、持续的欺压,任何形式的「你也有一份贡献」都是错的——那不是系统失灵,那是加害。"
+  },
+  {
+   "type": "callout",
+   "tone": "warn",
+   "items": [
+    "这条界之所以要反复强调,是因为「贡献」是一件很容易被反向使用的工具:施加伤害的一方最喜欢的说法之一,就是「你也有责任」。作者自己把这条红线写进了书里,读者更该守住——分辨的标准很简单:双方是否都有实际的选择空间,以及说这话的人是不是那个正在得利的人。"
+   ]
+  },
+  {
+   "type": "h2",
+   "text": "怎么在一场真实对话里用它"
+  },
+  {
+   "type": "p",
+   "text": "落到操作上,作者的建议是**从自己那一份先说**。不是作为姿态,而是作为破局:只要你先说出「这件事我有一份在里面——我一直没跟你直说,拖了太久」,对方的自保姿态几乎立刻会松一档。因为你已经用行动示范了这场对话不是审判。"
+  },
+  {
+   "type": "p",
+   "text": "接下来的提问也要换:不要问「你为什么不……」(那是伪装成问题的指控),换成「**我们这套做法,是怎么一步步走成现在这样的?**」这个问题把两个人放到了同一侧——一起面对那张图,而不是隔着桌子面对彼此。作者说,这种「并肩看问题」的位置感,是贡献框架最实际的收益,比任何措辞技巧都管用。"
+  },
+  {
+   "type": "h2",
+   "text": "画一次系统图:一个真实场景"
+  },
+  {
+   "type": "p",
+   "text": "拿一个再普通不过的团队场景走一遍。事情是:每次交付前一晚都要通宵改,连续三个月。归罪版的复盘只有一句话——「都怪对接那边给资料太晚」。真正画一张图,会长成这样:对接方的资料确实晚,可他们晚是因为上游的审批流程改了两次;你这边没人在资料晚的第一天就喊停,因为大家默认「先做起来再说」;而之所以有这个默认,是因为上次有人喊停之后被说「太死板」;结果就是每个人都在按各自合理的逻辑行事,合起来却稳定地生产出通宵。"
+  },
+  {
+   "type": "p",
+   "text": "这张图里没有一个坏人,却有四五个可以动手改的地方:资料延迟第几天触发预警、谁有权喊停、喊停之后怎么保护那个人不被说死板。**归罪版的复盘只能得到一句抱怨,系统版的复盘能得到一份改法清单**——而这就是作者说的「贡献往前看」的实际含义。"
+  },
+  {
+   "type": "figure",
+   "ftype": "系统图",
+   "svg": "<svg viewBox='0 0 540 250' xmlns='http://www.w3.org/2000/svg'><text x='270' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14.5px;font-weight:bold;fill:var(--ink)'>把「都怪对方」拆成一张图</text><rect x='20' y='48' width='150' height='50' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='95' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>上游审批改了两次</text><text x='95' y='88' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-faint)'>可改:提前同步变更</text><rect x='195' y='48' width='150' height='50' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='270' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>对接资料晚三天</text><text x='270' y='88' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-faint)'>可改:第一天就预警</text><rect x='370' y='48' width='150' height='50' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='445' y='70' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>没人喊停</text><text x='445' y='88' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-faint)'>可改:明确谁有权喊停</text><line x1='95' y1='98' x2='95' y2='128' style='stroke:var(--ink-faint);stroke-width:1.1'/><line x1='270' y1='98' x2='270' y2='128' style='stroke:var(--ink-faint);stroke-width:1.1'/><line x1='445' y1='98' x2='445' y2='128' style='stroke:var(--ink-faint);stroke-width:1.1'/><rect x='90' y='128' width='360' height='44' rx='7' style='fill:none;stroke:var(--azure);stroke-width:1.5'/><text x='270' y='155' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>上次喊停的人被说「太死板」→ 大家默认先做起来</text><line x1='270' y1='172' x2='270' y2='196' style='stroke:var(--ink-faint);stroke-width:1.1'/><rect x='150' y='196' width='240' height='40' rx='7' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='270' y='221' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>稳定产出:每次交付前通宵</text></svg>",
+   "caption": "图里没有一个坏人,却有四五个可以动手改的地方——这就是「贡献」相对「归罪」的实际产出差别。"
+  },
+  {
+   "type": "pull",
+   "text": "先说出自己那一份,不是姿态,是破局——它示范了这场对话不是审判。"
+  },
+  {
+   "type": "p",
+   "text": "第一层的三个陷阱到这里就拆完了:别急着认定真相在自己这边,别替对方发明动机,别把对话组织成找罪魁。三条合起来其实是同一件事——**放下「我来断案」的位置**。做到这一步,你已经能让很多对话不至于一开口就崩。但真正难的那部分还在后面:下一章要谈的是那些从头到尾没被说出口、却全程在起作用的情绪。"
+  },
+  {
+   "type": "quote",
+   "original": "忍了半年才爆发,那半年也是问题的一部分。",
+   "translation": "四种难看见的贡献里最普遍的一种。沉默在当事人眼里是忍让,在系统里却是让问题得以持续的条件——因为对方在这段时间里既不知情,也就没有机会改。"
+  }
+ ]
+}

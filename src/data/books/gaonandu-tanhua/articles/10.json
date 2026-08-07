@@ -1,0 +1,136 @@
+{
+ "title": "为自己说话,然后一起想办法",
+ "subtitle": "把自己那半边讲清楚,把卡住的循环摊到桌面上,以及这套方法的边界",
+ "centralIdea": "最后一章处理两件事:怎么说,和怎么收。说的部分,作者先给了一个前提——你有资格开这个口,很多人真正的障碍不是不会说,而是觉得自己的事不值得占用别人时间;然后给了四条要领:把最要紧的先说、别把结论说成真相、把结论的来路一起交出来、少用「你总是」这类升级为人身判决的话。收的部分靠重新框定和「把循环本身摊到桌面上」,并且承认谈不拢也有正当结局。最后是这套方法的边界:它对开口一方要求极高、在权力不对等时慎用、证据来自咨询实践而非对照实验——把它当一副镜片,不是一套公式。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "前面九章讲的都是「怎么看」和「怎么听」,轮到自己开口的部分反而放到了最后。这个顺序本身就是作者的主张:**表达的效果,九成取决于表达之前做了什么**。不过顺序靠后不等于不重要——恰恰相反,他们观察到很多人卡在一个更前置的地方:不是不知道怎么说,是心里觉得自己压根没资格说。所以这一章要从一个看起来不像方法的地方开始。"
+  },
+  {
+   "type": "h2",
+   "text": "先解决一件事:你有资格开这个口"
+  },
+  {
+   "type": "p",
+   "text": "作者发现,相当一部分人在高难度谈话里的困境不是「说不好」,而是「说不出」。他们心里有一套自动运行的劝阻:这点小事也值得提吗、人家最近也不容易、我是不是太计较了、说了会不会显得矫情。这套劝阻听起来像体谅别人,实际上是**把自己的感受降级成不值得占用他人时间的东西**。"
+  },
+  {
+   "type": "p",
+   "text": "他们的态度很明确:**你的看法和感受本身就构成开口的资格,不需要先证明自己受了多大委屈**。这一点并不是鸡汤——它有很实际的后果:一个觉得自己没资格开口的人,一旦终于开口,措辞往往会失控。因为他必须先把事情说得足够严重,才能给自己拿到发言权;而说得越严重,对方越会觉得小题大做。**长期不说,和一次说过头,通常是同一个问题的两端。**"
+  },
+  {
+   "type": "quote",
+   "original": "长期不说,和一次说过头,通常是同一个问题的两端。",
+   "translation": "「觉得自己没资格开口」的实际后果:因为需要先把事情说得够严重才拿得到发言权,忍了很久之后的那一次表达,几乎必然过量——于是对方看到的是小题大做,更不理解他到底在气什么。"
+  },
+  {
+   "type": "h2",
+   "text": "把话说清楚的四条"
+  },
+  {
+   "type": "steps",
+   "items": [
+    { "title": "把最要紧的先说", "text": "很多人开口先绕三圈铺垫,等真正想说的那句出来时,气氛已经绷了。作者的建议是反过来:第一句就说核心——「我想聊聊上周那个会,那件事我到现在还搁在心里。」直接不等于粗鲁,拐弯抹角反而更容易让人紧张。", "state": "done" },
+    { "title": "别把结论说成真相", "text": "「事实就是你根本没考虑我」和「在我看来,那件事像是没把我算进去」,信息量一样,后果天差地别。前者宣布争议已经结束,对方只能反驳;后者留了余地,对方可以补充。差别只在一个前缀。", "state": "done" },
+    { "title": "把结论的来路一起交出来", "text": "只给结论最刺人,也最容易被驳倒。把中间那段路讲出来:我看到了什么、由此想到了什么——「我看到方案昨天还没交,而客户今早又追问了一次,我就开始担心这次又要拖到最后。」这样对方有具体的接口可以回应。", "state": "now" },
+    { "title": "少用「你总是」「你从来」", "text": "这两个词把一件具体的事升级成对整个人的判决,直接打到身份层。而且它们几乎总是不准确的——只要对方能举出一个反例,你的整段话就废了。把它换成具体的一次:「上周三那次」比「你每次都这样」有力得多。", "state": "todo" }
+   ]
+  },
+  {
+   "type": "figure",
+   "ftype": "对比",
+   "svg": "<svg viewBox='0 0 540 250' xmlns='http://www.w3.org/2000/svg'><text x='270' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14.5px;font-weight:bold;fill:var(--ink)'>同一件事,两种说法</text><rect x='24' y='46' width='230' height='176' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='139' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>推回防守的说法</text><text x='139' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>「事实就是你不上心」</text><text x='139' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>「你总是这样」</text><text x='139' y='148' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>只给结论,不给来路</text><line x1='60' y1='166' x2='218' y2='166' style='stroke:var(--line);stroke-width:1'/><text x='139' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>对方能做的:反驳</text><text x='139' y='212' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--cinnabar-pure)'>打到身份层</text><rect x='286' y='46' width='230' height='176' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='401' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--cinnabar-pure)'>接得住的说法</text><text x='401' y='100' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>「在我看来像是……」</text><text x='401' y='124' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>「上周三那次」</text><text x='401' y='148' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>结论 + 我是怎么想到的</text><line x1='322' y1='166' x2='480' y2='166' style='stroke:var(--line);stroke-width:1'/><text x='401' y='190' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>对方能做的:补充信息</text><text x='401' y='212' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>停在事实层</text></svg>",
+   "caption": "四条要领落到一句话上的差别:左边那种把对方逼到只能反驳,右边那种给他留了补充信息的接口——而信息才是能改变局面的东西。"
+  },
+  {
+   "type": "p",
+   "text": "作者还提了一个很有用的收尾动作:讲完之后,主动请对方复述一下——「我不太确定我讲清楚了没有,你听到的是什么?」这句话看起来多此一举,实际非常有效:一是你经常会发现对方听到的和你说的差得离谱;二是它把「让对方理解」这件事从单向输出变成了双向校准。"
+  },
+  {
+   "type": "h2",
+   "text": "从对峙转到一起想办法"
+  },
+  {
+   "type": "p",
+   "text": "说完听完,还剩最后一段:怎么把对话推到解法上。作者给了两个动作。"
+  },
+  {
+   "type": "p",
+   "text": "**第一个是重新框定。**在对话中途,只要发现话题又滑回老路,就当场把它拨回来:对方说「这明明就是你的问题」,你可以接一句「我们可能各自看到的不一样,你那边看到的是什么?」——把「谁对」重新框成「各自怎么看」;对方说「所以你是怪我咯」,你可以接「我不是想追究谁的错,我更想弄明白这套流程哪里出了问题」——把「谁的错」重新框成「哪里出了问题」。这个动作可以重复很多次,而且不需要对方配合,单方面就能做。"
+  },
+  {
+   "type": "p",
+   "text": "**第二个更有意思:把卡住的循环本身摊到桌面上。**当你发现每次谈到某个点就必定绕开,不妨直接说出这个观察:「我发现每次我一提这件事,我们就会绕到别的地方去,我不知道为什么,你有没有同感?」这句话的特别之处在于,**它把「我们的互动方式」变成了对话的对象**,而不是继续在那个话题上死磕。很多长期僵局就是这样破的:真正需要谈的不是那件事,是「我们为什么谈不了这件事」。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意",
+   "svg": "<svg viewBox='0 0 540 240' xmlns='http://www.w3.org/2000/svg'><text x='270' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14.5px;font-weight:bold;fill:var(--ink)'>三种重新框定</text><rect x='24' y='48' width='210' height='44' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='129' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>「这明明就是你的问题」</text><line x1='234' y1='70' x2='300' y2='70' style='stroke:var(--ink-faint);stroke-width:1.2'/><rect x='300' y='48' width='216' height='44' rx='7' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='408' y='76' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>「你那边看到的是什么?」</text><rect x='24' y='108' width='210' height='44' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='129' y='136' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>「所以你是怪我咯」</text><line x1='234' y1='130' x2='300' y2='130' style='stroke:var(--ink-faint);stroke-width:1.2'/><rect x='300' y='108' width='216' height='44' rx='7' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='408' y='136' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>「哪个环节出了问题?」</text><rect x='24' y='168' width='210' height='44' rx='7' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='129' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>又一次绕开同一个话题</text><line x1='234' y1='190' x2='300' y2='190' style='stroke:var(--ink-faint);stroke-width:1.2'/><rect x='300' y='168' width='216' height='44' rx='7' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='408' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink)'>「我们好像每次都会绕开」</text></svg>",
+   "caption": "三种拨回动作,都不需要对方配合:前两种把话题从判决拉回信息,第三种把互动方式本身变成话题。"
+  },
+  {
+   "type": "h2",
+   "text": "谈不拢也有正当结局"
+  },
+  {
+   "type": "p",
+   "text": "作者不承诺这套方法一定能达成共识。他们说,一场对话的成功标准不是「最后达成一致」,而是「双方都清楚地知道了对方的理由,并且据此决定接下来怎么办」。有时候结论就是:我们对这件事的看法确实不同,那么在这个前提下,分工怎么调整、边界划在哪里、哪些事以后不再一起做。"
+  },
+  {
+   "type": "p",
+   "text": "这个态度很重要,因为它拆掉了一个隐藏的压力:如果你认定「谈开了就必须和好」,那么每一次对话都背着必须成功的包袱,反而更容易在中途为了息事宁人而妥协——而那种妥协撑不了多久。承认「谈完可以不一致」,你才敢真正把话说完。"
+  },
+  {
+   "type": "h2",
+   "text": "把全书串成一场对话的四步"
+  },
+  {
+   "type": "p",
+   "text": "十章讲完,作者把它压成一条可以照着走的路。它不是脚本,是四个阶段——每一段结束再进下一段,顺序错了,后面几乎必然作废。"
+  },
+  {
+   "type": "figure",
+   "ftype": "流程图",
+   "svg": "<svg viewBox='0 0 540 300' xmlns='http://www.w3.org/2000/svg'><text x='270' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:14.5px;font-weight:bold;fill:var(--ink)'>一场对话的四步</text><rect x='60' y='44' width='420' height='50' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='270' y='66' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>零 · 准备</text><text x='270' y='86' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>拆三层 · 写下三个目的 · 替对方写一遍他的版本</text><line x1='270' y1='94' x2='270' y2='110' style='stroke:var(--ink-faint);stroke-width:1.1'/><rect x='60' y='110' width='420' height='50' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='270' y='132' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--cinnabar-pure)'>一 · 从第三个故事开场</text><text x='270' y='152' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>中立描述差异 + 一句双向邀请</text><line x1='270' y1='160' x2='270' y2='176' style='stroke:var(--ink-faint);stroke-width:1.1'/><rect x='60' y='176' width='420' height='50' rx='8' style='fill:none;stroke:var(--azure);stroke-width:1.5'/><text x='270' y='198' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>二 · 两边的故事都摊开</text><text x='270' y='218' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>先听(提问 · 复述 · 承认),再说(来路 + 结论)</text><line x1='270' y1='226' x2='270' y2='242' style='stroke:var(--ink-faint);stroke-width:1.1'/><rect x='60' y='242' width='420' height='50' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='270' y='264' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;font-weight:bold;fill:var(--ink)'>三 · 一起想办法</text><text x='270' y='284' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-soft)'>重新框定 · 摊开循环 · 谈不拢就明确接下来怎么办</text></svg>",
+   "caption": "四步的顺序不能调:准备不足会在中途变形,开场站错位后面全是拉锯,没听完就说等于白说,前三步没做完就跳到方案会被当成敷衍。"
+  },
+  {
+   "type": "h2",
+   "text": "最后:这套方法的边界"
+  },
+  {
+   "type": "p",
+   "text": "读完全书最容易生出的念头是「这太对了,明天就用」。但有三处需要先打上问号,而且它们和方法本身同样值得记住。"
+  },
+  {
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "**成本极不对称。**这套方法对开口的一方要求非常高:拆三层、认自己的贡献、把来路交出来、先听完再讲。双方都做,它确实能把一场恶战变成一次合作;可现实里往往只有一方在做,长期下来,「讲道理的那个」很容易变成「永远在让的那个」。作者对此的信念偏乐观——他们相信一方的转变会带动另一方。这在长期关系里常常成立,在一次性的、对方就是想占便宜的场合,恐怕不成立。",
+    "**权力落差时慎用。**书里的例子大多假设双方大致平等。可当对面是能决定你去留的人,或者一个明确在利用位置压人的对象,「学习型对话」有时是一件奢侈品。此时更实际的顺序,可能是先保护自己、先留证据、先想清退路,再考虑要不要谈。作者划了「虐待情形不适用贡献框架」这条红线,但对日常职场里温和而持续的权力压迫,着墨不多。",
+    "**证据的分量。**这本书的材料主要来自哈佛谈判项目的咨询实践和大量真实案例,写法精彩、说服力强,但它更接近一批经验丰富的从业者对方法论的系统整理,而不是经过大样本对照实验检验的结论。这不意味着它不管用,只意味着读的时候留一份分寸。"
+   ]
+  },
+  {
+   "type": "callout",
+   "tone": "mute",
+   "items": [
+    "还有一层文化落差值得留意:「从第三个故事讲起」「把感受直接命名说出口」带着明显的英美式直接沟通底色。在更讲究含蓄、更依赖情境暗示的语境里,一句字正腔圆的「我注意到我们对这件事的看法不太一样」有时会显得刻意。方法的内核——先弄清对方看到了什么、别把结论当真相——是通用的;句式则需要按各自的语言习惯重新翻译一遍,而不是照搬。"
+   ]
+  },
+  {
+   "type": "pull",
+   "text": "把它当一副看对话的镜片,而不是一套包治百病的公式。"
+  },
+  {
+   "type": "p",
+   "text": "全书到此收束。回头看,它给的其实不是一套话术,而是一个习惯:每当一场对话开始变味,先在心里问三句——**我们现在争的到底是什么事实?我此刻真正的感受是哪一种?这件事让我担心它说明了我是个什么样的人?**这三句问完,你多半已经比刚才冷静得多,而且知道下一句该往哪一层去接。至于对方会不会配合、这场对话最后能不能谈成,那从来不完全在你手上——而这本书最实在的一点,恰恰是它从不假装那在你手上。"
+  },
+  {
+   "type": "quote",
+   "original": "成功不是最后达成一致,是双方都清楚了对方的理由。",
+   "translation": "作者对「谈成」的重新定义。抱着「谈开了就必须和好」的期待,人反而更容易在中途为了息事宁人而妥协;承认谈完可以不一致,才敢把话真正说完。"
+  }
+ ]
+}

@@ -1,0 +1,150 @@
+{
+ "title": "开始行动:别让对话停在「聊得挺好」",
+ "subtitle": "谁拍板没说清,谁来做没定死——一场好对话就这样蒸发了",
+ "centralIdea": "对话完了不等于事情办了。书里点出两种最常见的烂尾:一是不清楚这件事到底谁拍板,散会时人人点头、事后人人不动;二是定了却没人跟进,「大家看着办」等于没人办。对第一种,书里列了四种决策方式——命令、顾问、投票、共识,四种都正当,错的是用错场合;挑法靠四问:谁关心、谁懂行、谁必须点头、值得让多少人进来。还有一条常被忽略的分界:让人参与讨论,不等于给人决定权。对第二种,要求很具体:谁做、做什么、什么时候之前、怎么检查——四件缺一,这事就有理由不了了之。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "一场难得的好对话:该说的都说了,情绪也顺过来了,双方握手言和,散场时都觉得舒畅。三周后,事情原封不动。你有点意外,又有点恼火——明明都谈好了,他怎么没做?而对方心里想的是:那天不是随便聊聊吗,又没说定谁去做。**两个人都没有撒谎,只是那场对话从来没有落地过。**《关键对话》最后一块拼图讲的就是这件事:怎么把一次成功的对话,变成一件真的被完成的事。"
+  },
+  {
+   "type": "h2",
+   "text": "两种最常见的烂尾"
+  },
+  {
+   "type": "p",
+   "text": "书里把对话之后的失败归成两类。**第一类是决策方式没说清**:这件事到底谁拍板?是我们商量着来,还是最后你定?每个人都以为轮不到自己决定,或者相反——有人以为自己有一票,结果发现没有。于是散会时人人点头,事后人人不动;或者更糟,有人按自己的理解动了,和别人的理解对不上。"
+  },
+  {
+   "type": "p",
+   "text": "**第二类是执行没落死**:决策方式清楚了,可具体到谁做、什么时候做完、怎么算完成,一律含糊。「大家多留意一下」「这块我们尽快推进」——这类句子在会议纪要里比比皆是,它们的共同特征是**没有主语,也没有期限**。没有主语的事,等于没人负责;没有期限的事,永远可以再等一等。"
+  },
+  {
+   "type": "pull",
+   "text": "「大家看着办」等于没人办;「尽快推进」等于永远可以再等一等。"
+  },
+  {
+   "type": "h2",
+   "text": "四种定法,按参与度排开"
+  },
+  {
+   "type": "p",
+   "text": "针对第一类失败,书里列了四种决策方式,并且反复强调:**四种都正当,错的是用错场合**。"
+  },
+  {
+   "type": "list",
+   "items": [
+    "**命令**:由一个人定,其他人执行。适用于没有争议的事、来不及商量的事,或者决定权本来就不在这个屋子里的事(比如上级已经定了)。",
+    "**顾问**:广泛听取意见,最后由一个人拍板。这是最常用、也最容易被误会的一种——听意见的动作看起来像共识,决定的方式其实是命令。",
+    "**投票**:在几个选项都可接受的前提下,用票数决定。它的优点是快,代价是必然产生少数派,所以不适合分量很重、需要全员真心执行的事。",
+    "**共识**:所有人都要同意才推进。质量最高,成本也最高;适合兹事体大、且必须齐心的少数决定,用滥了会让所有人开会开到崩溃。"
+   ]
+  },
+  {
+   "type": "figure",
+   "ftype": "决策表",
+   "svg": "<svg viewBox='0 0 520 240' xmlns='http://www.w3.org/2000/svg'><text x='260' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>四种定法,按参与度排开</text><text x='260' y='58' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>四问定法:谁关心 · 谁懂行 · 谁必须点头 · 值得让多少人进来</text><line x1='30' y1='170' x2='490' y2='170' style='stroke:var(--ink-faint);stroke-width:1'/><text x='30' y='192' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>参与少 · 快</text><text x='490' y='192' text-anchor='end' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>参与多 · 慢</text><rect x='30' y='94' width='104' height='60' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='82' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>命令</text><text x='82' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-soft)'>无争议或来不及</text><rect x='148' y='94' width='104' height='60' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='200' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>顾问</text><text x='200' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-soft)'>广听意见,一人拍板</text><rect x='266' y='94' width='104' height='60' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='318' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>投票</text><text x='318' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-soft)'>选项都可接受时</text><rect x='384' y='94' width='104' height='60' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='436' y='118' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>共识</text><text x='436' y='140' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-soft)'>事大且须齐心</text><text x='260' y='224' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>顾问式最常被误当成共识式 —— 这一处误会,埋掉了大量团队的信任</text></svg>",
+   "caption": "四种都正当。真正的错误只有一种:事前不说清用哪一种,事后各自按自己以为的那一种去理解。"
+  },
+  {
+   "type": "p",
+   "text": "怎么挑?书里给了四个问题:**谁真正关心这件事?谁真正懂行?谁必须点头才推得动?值得让多少人参与?**四问过一遍,答案通常自己就出来了。比如一件只影响两个人、其中一个人是专家的事,拉十个人开共识会是浪费;而一件需要全组齐心才能落地的事,老板一个人拍板必留后患。"
+  },
+  {
+   "type": "h2",
+   "text": "参与讨论,不等于有决定权"
+  },
+  {
+   "type": "p",
+   "text": "这一节是全章最值钱的一条,也是最容易造成误会的一处。书里明确指出:**让人参与讨论,不等于给人决定权**。很多管理者出于善意广泛征求意见,员工自然理解为「我们一起定」;等到决定和自己的意见不一致,失望就变成了「原来是走过场」。"
+  },
+  {
+   "type": "p",
+   "text": "问题不在于用了顾问式,而在于**没有事先说明用的是顾问式**。同样一场会,开场若加一句「这件事最后由我来定,但在定之前我想尽可能多听大家的看法,尤其是反对的」,后面的失望就不会发生。这句话既不削弱决定权,又保住了参与的诚意——**代价只是十秒钟,收益是省掉后面几个月的暗流**。"
+  },
+  {
+   "type": "callout",
+   "tone": "note",
+   "label": "留意用字",
+   "items": [
+    "「大家商量一下」——这句话在中文语境里含义极模糊,可以是共识,可以是投票,更多时候其实是顾问。",
+    "把它换成一句准确的:「我想听听大家的意见,最后这件事由我拍板」,或者「这件事我们必须都同意才做」。",
+    "含糊的措辞省了当下的尴尬,但把误会推给了未来,而未来的误会通常要贵得多。"
+   ]
+  },
+  {
+   "type": "h2",
+   "text": "落地的四件事"
+  },
+  {
+   "type": "p",
+   "text": "针对第二类失败,书里给的清单短而硬,四件事必须当场敲死:**谁做、做什么、什么时候之前做完、怎么检查**。缺一件,这件事就有理由不了了之。"
+  },
+  {
+   "type": "steps",
+   "items": [
+    { "title": "谁做", "text": "必须是一个具体的人,不是一个部门、不是「大家」。责任一旦分散到两个人以上而没有主责,它就等于分散到零。", "state": "done" },
+    { "title": "做什么", "text": "要具体到可以判断有没有做完。「改进沟通」不是任务,「每周五之前把进度同步到群里」才是。", "state": "done" },
+    { "title": "什么时候之前", "text": "有明确的日期,不是「尽快」。没有期限的任务,永远输给有期限的任务——这不是态度问题,是排序的必然。", "state": "now" },
+    { "title": "怎么检查", "text": "提前约好复查的时间与方式。不是不信任,是把「想起来了才问」变成「到点自然会问」,免得每次追问都像是在质疑对方。", "state": "todo" }
+   ]
+  },
+  {
+   "type": "p",
+   "text": "书里还强调一件事:**写下来**。很多人抗拒记录,觉得对熟人这样做显得生分。但写下来的真正作用不是留证据,是**把记忆从人脑里挪出去**——人脑对自己承诺过什么的记忆,会随时间朝有利于自己的方向漂移,这几乎是不可避免的。有一份共同的记录,后面的复查就不必先争论「当时到底说的是什么」。"
+  },
+  {
+   "type": "figure",
+   "ftype": "清单图",
+   "svg": "<svg viewBox='0 0 520 230' xmlns='http://www.w3.org/2000/svg'><text x='260' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>缺哪一件,这事就有理由不了了之</text><rect x='24' y='52' width='110' height='96' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='79' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>谁做</text><text x='79' y='108' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-soft)'>一个具体的人</text><text x='79' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-faint)'>缺:分散到零</text><rect x='146' y='52' width='110' height='96' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='201' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>做什么</text><text x='201' y='108' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-soft)'>可判断做没做完</text><text x='201' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-faint)'>缺:各自解释</text><rect x='268' y='52' width='110' height='96' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='323' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>何时之前</text><text x='323' y='108' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-soft)'>明确日期</text><text x='323' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-faint)'>缺:永远排最后</text><rect x='390' y='52' width='110' height='96' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='445' y='82' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>怎么检查</text><text x='445' y='108' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-soft)'>约好复查方式</text><text x='445' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:9.5px;fill:var(--ink-faint)'>缺:追问像质疑</text><text x='260' y='186' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink)'>四件齐 + 写下来 = 把记忆从人脑里挪出去</text><text x='260' y='212' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-faint)'>人对自己承诺过什么的记忆,会朝有利于自己的方向漂移</text></svg>",
+   "caption": "第四件最常被省略,而它恰恰是让复查不伤感情的关键:约好了就不必再由谁主动去催。"
+  },
+  {
+   "type": "quote",
+   "original": "「聊得挺好」是所有自我欺骗里最舒服的一种。",
+   "translation": "它把一场没有结论、没有分工、没有期限的对话,记成了一次成功——而三周后事情原封不动时,双方都会觉得是对方失约。"
+  },
+  {
+   "type": "h2",
+   "text": "复查那一步,才是关系的分水岭"
+  },
+  {
+   "type": "p",
+   "text": "四件事里,最常被省略的是最后一件——怎么检查。它看起来最不重要,实际上决定了这套东西能不能长期跑下去。原因在于:**没有约定复查方式,任何一次追问都会显得像质疑**。你三周后问一句「那件事怎么样了」,语气再轻,对方听到的也是「你在查我岗」;而如果一开始就说好「我们两周后再对一次」,同样一句话就成了走流程,谁也不必尴尬。"
+  },
+  {
+   "type": "p",
+   "text": "书里还提醒一点:**复查的时候,先假设是流程出了问题,而不是人出了问题**。如果事情没做,先问「是不是中间遇到了什么」,而不是「你怎么又没做」。前者留出了「我理解错了」「我被别的事压住了」这类真实答案的空间,后者只会得到一句敷衍的道歉,而下一次照旧。**复查是修流程的机会,不是追责的场合**——把它用成后者,人就会开始在承诺阶段留后手,少答应、模糊答应,你反而更难拿到真实的执行意愿。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照图",
+   "svg": "<svg viewBox='0 0 520 220' xmlns='http://www.w3.org/2000/svg'><text x='260' y='26' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>复查:修流程,还是追责</text><rect x='24' y='50' width='212' height='124' rx='8' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='130' y='78' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>追责式</text><text x='130' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>「你怎么又没做」</text><text x='130' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>换来一句敷衍的道歉</text><text x='130' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>下次承诺时开始留后手</text><rect x='284' y='50' width='212' height='124' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='390' y='78' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;font-weight:bold;fill:var(--ink)'>修流程式</text><text x='390' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>「中间是不是遇到了什么」</text><text x='390' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:10.5px;fill:var(--ink-soft)'>换来真实的卡点</text><text x='390' y='154' text-anchor='middle' style='font-family:var(--font-serif);font-size:10px;fill:var(--ink-faint)'>下次承诺更实在</text><text x='260' y='204' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>约好复查方式,追问才不像查岗</text></svg>",
+   "caption": "同一次追问,两种框架。用错框架的代价不在这一次,在下一次——人会开始在承诺阶段就留余地。"
+  },
+  {
+   "type": "h2",
+   "text": "在家里怎么用:别把生活变成项目管理"
+  },
+  {
+   "type": "p",
+   "text": "这一章的味道最像管理手册,搬进家庭生活时需要调音。把「谁做、做什么、什么时候之前、怎么检查」原样用在伴侣身上,大概率会换来一句「你是在跟我开会吗」。**分寸在于保留内核,舍弃形式**:内核是「具体到人、具体到时间」,形式上完全可以是一句轻松的话。"
+  },
+  {
+   "type": "p",
+   "text": "比如与其说「我们要改善家务分工」,不如说「垃圾以后你倒,周三周日,我来盯洗碗」——后者不像制度,却把四件事说全了三件半。至于「怎么检查」,家里通常不需要正式复查,但可以换成一个更柔和的版本:「过两周我们再说说这样行不行。」这句话给了修改的余地,也预告了会有一次回头看,免得日后一方憋不住突然发作。"
+  },
+  {
+   "type": "h2",
+   "text": "为什么这一步不能省"
+  },
+  {
+   "type": "p",
+   "text": "最后说说这一章在全书里的分量。前面八章的功夫,全都用在让双方敢说、说得清、听得进;如果最后没有落地,这些功夫会以一种特别伤人的方式被浪费掉——**因为双方都会觉得自己已经努力过了,而结果证明「谈了也没用」**。这个结论一旦形成,下一次开口的意愿会明显降低。"
+  },
+  {
+   "type": "p",
+   "text": "换句话说,落地不只是效率问题,更是**信任的账本**。每一次谈完就落实的对话,都在给这段关系存一笔「谈是有用的」;每一次谈完不了了之的对话,都在取一笔。存得多了,下一次哪怕话题再难,双方也愿意坐下来;取空了,再好的技巧也叫不动人——因为对方已经学会了,和你谈话是一件不会产生后果的事。"
+  }
+ ]
+}
