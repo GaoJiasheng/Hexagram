@@ -12,23 +12,29 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { chapterParts } from '../src/features/reader/chapterParts.js'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const WRITE = process.argv.includes('--write')
 
-// 名句的长度窗口:短于此不成句(「无为」),长于此不是句是段,分享卡也放不下
-const MIN = 6, MAX = 22
+// 名句的长度窗口:短于此不成句(「无为」),长于此不是句是段,分享卡也放不下。
+// 争鸣/概念两源是机器全量扫的,窗口收紧;人工选目(源③)是一条条挑过的,放宽到 30——
+// 词曲一句长过诗句(「一曲新词酒一杯，去年天气旧池台，夕阳西下几时回」),卡上放得下。
+const MIN = 6, MAX = 22, MAX_PICKED = 30
+let picking = false
 
 const seen = new Map()   // 归一后的句子 → 条目(去重:同一句在多辩被引很常见)
 const norm = (s) => s.replace(/[\s，。、；：！？「」『』（）()]/g, '')
 
-function add(q, label, corpus, slug, ch, from) {
+function add(q, label, corpus, slug, ch, from, seg) {
   const t = String(q || '').trim()
   const n = norm(t)
-  if (n.length < MIN || n.length > MAX) return
+  if (n.length < MIN || n.length > (picking ? MAX_PICKED : MAX)) return
   const k = n
   if (seen.has(k)) { seen.get(k).cited += 1; return }
-  seen.set(k, { q: t, label, corpus, slug, ch, from, cited: 1 })
+  const e = { q: t, label, corpus, slug, ch, from, cited: 1 }
+  if (Number.isInteger(seg)) e.seg = seg
+  seen.set(k, e)
 }
 
 // ① 争鸣引文
@@ -48,6 +54,21 @@ const cj = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/concepts.json'),
 for (const cl of cj.clusters || []) {
   for (const l of cl.loci || []) {
     if (l.quote) add(l.quote, l.label || `${l.slug}·${l.ch}`, l.corpus, l.slug, l.ch, null)
+  }
+}
+
+// ③ 人工选目(中医/谋略/唐诗/宋词/元曲五组**按设计不入争鸣**,概念聚类也没收它们,
+//    于是这五组在 /mingju 里一句都没有)。料出自**白话层的 quote 块**——那些引文
+//    check-data 逐条校过是原文精确子串,与争鸣 cite 同级可信;候选由
+//    `scripts/harvest-mingju.mjs` 机器拉出,挑哪几句写在这里,仍是人的事。
+//    这一源同样不新写一个字,落盘前照走下面的逐字复核。
+const EX = path.join(ROOT, 'scripts/authored/mingju-extra')
+picking = true
+if (fs.existsSync(EX)) {
+  for (const f of fs.readdirSync(EX).filter((x) => x.endsWith('.json'))) {
+    for (const e of JSON.parse(fs.readFileSync(path.join(EX, f), 'utf8'))) {
+      add(e.q, e.label, e.corpus, e.slug, e.ch, null, e.seg)
+    }
   }
 }
 
@@ -82,6 +103,32 @@ for (const e of byLen) {
 }
 items.length = 0
 items.push(...kept)
+
+// 深链:唐诗一卷含几十首、长短经一卷含数篇,只链到「卷」等于把人扔进几百段里。
+// 带 seg 的条目算出段锚 + 该段落在第几屏(长章拆屏见 chapterParts),链接直落那一首。
+const metaCache = {}
+function metaOf(corpus, slug) {
+  const k = `${corpus}/${slug}`
+  if (!(k in metaCache)) {
+    const f = path.join(ROOT, `src/data/${corpus}/texts.json`)
+    const list = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : []
+    metaCache[k] = (Array.isArray(list) ? list : list.texts || []).find((x) => x.slug === slug) || null
+  }
+  return metaCache[k]
+}
+for (const e of items) {
+  if (!Number.isInteger(e.seg)) continue
+  const book = chCache[`${e.corpus}/${e.slug}`]
+  const chap = book?.chapters?.find((x) => String(x.no) === String(e.ch))
+  if (!chap) { delete e.seg; continue }
+  e.hash = `seg-${e.ch}-${e.seg}`
+  const parts = chapterParts(chap, metaOf(e.corpus, e.slug))
+  if (parts) {
+    const i = parts.findIndex((p) => e.seg >= p.from && e.seg < p.to)
+    if (i > 0) e.part = i + 1   // ?p= 是 1 起(ClassicReader 的 part 默认 1)
+  }
+  delete e.seg
+}
 
 // 被引次数多的排前(多辩都拿它立论 = 更有分量),同次数按出处稳定排序
 items.sort((a, b) => b.cited - a.cited || a.label.localeCompare(b.label, 'zh'))

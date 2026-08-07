@@ -11,6 +11,7 @@ import ITEMS from '../data/mingju.json'
 const GROUPS = [
   ['ru', '儒'], ['dao', '道'], ['fo', '释'], ['xin', '心学'],
   ['fa', '法'], ['mo', '墨'], ['bing', '兵'], ['zong', '纵横'], ['yijing', '易'],
+  ['zhongyi', '医'], ['moulue', '谋略'], ['tangshi', '唐诗'], ['songci', '宋词'], ['yuanqu', '元曲'],
 ]
 
 // 今日一句:与「今日一卦 / 每日一辩」同一套确定性做法(日期 hash),同一天刷新不变。
@@ -23,7 +24,11 @@ function pickDaily(list, date = new Date()) {
 
 function hrefOf(e) {
   const book = bookBySlug(e.slug)
-  return book ? chapterHref(book, e.ch) : null
+  if (!book) return null
+  const base = chapterHref(book, e.ch)
+  // 唐诗一卷几十首、长短经一卷数篇:带段锚的条目直落那一首(part 是长章拆屏后的屏号)
+  if (!e.hash) return base
+  return `${base}${e.part ? `?p=${e.part}` : ''}#${e.hash}`
 }
 
 function Card({ e, big = false }) {

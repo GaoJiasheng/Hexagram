@@ -142,17 +142,21 @@ export default function ClassicReader({
     setEditing(null)
   }
 
-  // hash 锚点定位(目录跳章 / 旧 #seg-章-段 / 新分享卡 #p段);rAF 等布局完成再定位,长经更稳。
+  // hash 锚点定位(目录跳章 / 旧 #seg-章-段 / 分享卡 #p段 / 名句集深链)。
+  // **不用 rAF**:后台标签页与 headless 里 rAF 被节流,定位会静默失效(全站踩过两次)。
+  // 改成短间隔重试——目标段可能还没渲染(拆屏、异步载书),找到即停,到点即弃。
   useEffect(() => {
     if (!hash) return
-    let raf2 = 0
-    const raf1 = requestAnimationFrame(() => {
-      raf2 = requestAnimationFrame(() => {
-        const el = document.getElementById(decodeURIComponent(hash.slice(1)))
-        if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' })
-      })
-    })
-    return () => { cancelAnimationFrame(raf1); cancelAnimationFrame(raf2) }
+    const id = decodeURIComponent(hash.slice(1))
+    let timer = 0
+    const deadline = Date.now() + 2000
+    const tick = () => {
+      const el = document.getElementById(id)
+      if (el) { el.scrollIntoView({ behavior: 'auto', block: 'start' }); return }
+      if (Date.now() < deadline) timer = setTimeout(tick, 60)
+    }
+    timer = setTimeout(tick, 0)
+    return () => clearTimeout(timer)
   }, [single, hash])
 
   // 逐章模式 ←→ 键翻章(移植卦页交互);有浮层打开时让位

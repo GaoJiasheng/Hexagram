@@ -63,6 +63,15 @@
   "cited": 3
  },
  {
+  "q": "善战者，求之于势，不责于人",
+  "label": "孙子·兵势",
+  "corpus": "bing",
+  "slug": "sunzi",
+  "ch": 5,
+  "from": "bingjia",
+  "cited": 3
+ },
+ {
   "q": "天行有常，不为尧存，不为桀亡",
   "label": "荀子·天论",
   "corpus": "ru",
@@ -288,6 +297,15 @@
   "cited": 2
  },
  {
+  "q": "天时不如地利，地利不如人和",
+  "label": "孟子·公孙丑下",
+  "corpus": "ru",
+  "slug": "mengzi",
+  "ch": 4,
+  "from": "shishi",
+  "cited": 2
+ },
+ {
   "q": "君子深造之以道，欲其自得之也",
   "label": "孟子·离娄下",
   "corpus": "ru",
@@ -396,15 +414,6 @@
   "cited": 2
  },
  {
-  "q": "善战者，求之于势，不责于人",
-  "label": "孙子·兵势",
-  "corpus": "bing",
-  "slug": "sunzi",
-  "ch": 5,
-  "from": "bingjia",
-  "cited": 2
- },
- {
   "q": "上兵伐谋，其次伐交，其次伐兵，其下攻城",
   "label": "孙子·谋攻",
   "corpus": "bing",
@@ -438,6 +447,15 @@
   "slug": "xunzi",
   "ch": 20,
   "from": "jieyong",
+  "cited": 2
+ },
+ {
+  "q": "君子生非异也，善假于物也",
+  "label": "荀子·劝学",
+  "corpus": "ru",
+  "slug": "xunzi",
+  "ch": 1,
+  "from": "shishi",
   "cited": 2
  },
  {
@@ -585,6 +603,281 @@
   "cited": 1
  },
  {
+  "q": "侬家鹦鹉洲边住，是个不识字渔父。",
+  "label": "白贲《鹦鹉曲》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 60,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-60-2"
+ },
+ {
+  "q": "算从前错怨天公，甚也有安排我处。",
+  "label": "白贲《鹦鹉曲》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 60,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-60-2"
+ },
+ {
+  "q": "野火烧不尽，春风吹又生。",
+  "label": "白居易《赋得古原草送别》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-72",
+  "part": 2
+ },
+ {
+  "q": "别有幽愁恨生，此时无声胜有声。",
+  "label": "白居易《琵琶行》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-83",
+  "part": 2
+ },
+ {
+  "q": "同是天涯沦落人，相逢何必曾相识。",
+  "label": "白居易《琵琶行》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-100",
+  "part": 2
+ },
+ {
+  "q": "晚来天欲雪，能饮一杯无？",
+  "label": "白居易《问刘十九》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-24"
+ },
+ {
+  "q": "回眸一笑百媚生，六宫粉黛无颜色。",
+  "label": "白居易《长恨歌》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-9"
+ },
+ {
+  "q": "在天愿作比翼鸟，在地愿为连理枝。",
+  "label": "白居易《长恨歌》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-64"
+ },
+ {
+  "q": "天长地久有时尽，此恨緜緜无绝期。",
+  "label": "白居易《长恨歌》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-65"
+ },
+ {
+  "q": "黄芦岸白苹渡口，绿杨隄红蓼滩头。",
+  "label": "白朴《沉醉东风》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 22,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-22-0"
+ },
+ {
+  "q": "傲杀人间万户侯，不识字烟波钓叟。",
+  "label": "白朴《沉醉东风》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 22,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-22-0"
+ },
+ {
+  "q": "糟腌两个功名字，醅渰千古兴亡事，曲埋万丈虹霓志。",
+  "label": "白朴《寄生草》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 21,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-21-0"
+ },
+ {
+  "q": "千古是非心，一夕渔樵话。",
+  "label": "白朴《庆东原》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 24,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-24-1"
+ },
+ {
+  "q": "可怜不惯害相思，则被你个肯字儿，拖逗我许多时。",
+  "label": "白朴《阳春曲》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 23,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-23-0"
+ },
+ {
+  "q": "叵奈挥毫李白，觑著娇态，洒松烟点破桃腮。",
+  "label": "白朴《醉中天》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 25,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-25-0"
+ },
+ {
+  "q": "闲时节笑咱，醉时节睡咱，今日里无是无非快活煞！",
+  "label": "孛罗御史《一枝花·辞官》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 58,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-58-7"
+ },
+ {
+  "q": "宁可身卧糟丘，赛强如命悬君手。",
+  "label": "不忽木《点绛唇·辞朝》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 59,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-59-3"
+ },
+ {
+  "q": "人生减省一分、便超脱一分。",
+  "label": "菜根谭",
+  "corpus": "moulue",
+  "slug": "caigentan",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-131",
+  "part": 3
+ },
+ {
+  "q": "家庭有个真佛，日用有种真道。",
+  "label": "菜根谭",
+  "corpus": "moulue",
+  "slug": "caigentan",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-21"
+ },
+ {
+  "q": "人生原是一傀儡。只要根蒂在手。",
+  "label": "菜根谭",
+  "corpus": "moulue",
+  "slug": "caigentan",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-127",
+  "part": 3
+ },
+ {
+  "q": "天地寂然不动，而气机无一息少停",
+  "label": "菜根谭",
+  "corpus": "moulue",
+  "slug": "caigentan",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-8"
+ },
+ {
+  "q": "夜深人静，独坐观心，始觉妄穷而真独露",
+  "label": "菜根谭",
+  "corpus": "moulue",
+  "slug": "caigentan",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-9"
+ },
+ {
+  "q": "栖守道德者，寂寞一时；依附权势者，凄凉万古。",
+  "label": "菜根谭",
+  "corpus": "moulue",
+  "slug": "caigentan",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-1"
+ },
+ {
+  "q": "盖世功劳，当不得一个矜字；弥天罪过，当不得一个悔字。",
+  "label": "菜根谭",
+  "corpus": "moulue",
+  "slug": "caigentan",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-18"
+ },
+ {
+  "q": "处世不必邀功，无过便是功；与人不求感德，无怨便是德。",
+  "label": "菜根谭",
+  "corpus": "moulue",
+  "slug": "caigentan",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-28"
+ },
+ {
+  "q": "钓水逸事也、尚持生杀之柄。奕棋清戏也、且动战争之心。",
+  "label": "菜根谭",
+  "corpus": "moulue",
+  "slug": "caigentan",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-2"
+ },
+ {
+  "q": "趋炎附势之祸、甚惨亦甚速。栖恬守逸之味、最淡亦最长。",
+  "label": "菜根谭",
+  "corpus": "moulue",
+  "slug": "caigentan",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-21"
+ },
+ {
   "q": "巨胜尚延年，还丹可入口",
   "label": "参同契·第十一章",
   "corpus": "dao",
@@ -619,6 +912,122 @@
   "ch": 11,
   "from": "changsheng",
   "cited": 1
+ },
+ {
+  "q": "忽如一夜春风来，千树万树梨花开。",
+  "label": "岑参《白雪歌送武判官归京》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-133",
+  "part": 3
+ },
+ {
+  "q": "山回路转不见君，雪上空留马行处。",
+  "label": "岑参《白雪歌送武判官归京》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-140",
+  "part": 3
+ },
+ {
+  "q": "马上相逢无纸笔，凭君传语报平安。",
+  "label": "岑参《逢入京使》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-30"
+ },
+ {
+  "q": "百事不成羞又赧。闲，一梦残。干，两鬓斑。",
+  "label": "曾瑞《山坡羊·自叹》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 63,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-63-0"
+ },
+ {
+  "q": "曲径通幽处，禅房花木深。",
+  "label": "常建《题破山寺后禅院》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-313",
+  "part": 8
+ },
+ {
+  "q": "恨芳菲世界，游人未赏，都付与莺和燕。",
+  "label": "陈亮《水龙吟》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 166,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-166-3"
+ },
+ {
+  "q": "可怜无定河边骨，犹是深闺梦里人。",
+  "label": "陈陶《陇西行》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-163",
+  "part": 4
+ },
+ {
+  "q": "二十余年如一梦，此身虽在堪惊。",
+  "label": "陈与义《临江仙》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 139,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-139-3"
+ },
+ {
+  "q": "长沟流月去无声，杏花疏影里，吹笛到天明。",
+  "label": "陈与义《临江仙》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 139,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-139-2"
+ },
+ {
+  "q": "前不见古人，后不见来者。",
+  "label": "陈子昂《登幽州台歌》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-375",
+  "part": 8
+ },
+ {
+  "q": "念天地之悠悠，独怆然而涕下。",
+  "label": "陈子昂《登幽州台歌》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-376",
+  "part": 8
  },
  {
   "q": "意之所在便是物",
@@ -871,6 +1280,39 @@
   "ch": 2,
   "from": "shifa",
   "cited": 1
+ },
+ {
+  "q": "黄鹤一去不复返，白云千载空悠悠。",
+  "label": "崔颢《黄鹤楼》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-235",
+  "part": 6
+ },
+ {
+  "q": "日暮乡关何处是？烟波江上使人愁。",
+  "label": "崔颢《黄鹤楼》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-237",
+  "part": 6
+ },
+ {
+  "q": "君家何处住？妾住在横塘。",
+  "label": "崔颢《长干行·其一》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-305",
+  "part": 7
  },
  {
   "q": "物格而后知致，知致而后意诚",
@@ -1242,6 +1684,342 @@
   "cited": 1
  },
  {
+  "q": "功盖三分国，名成八阵图。",
+  "label": "杜甫《八阵图》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-52",
+  "part": 2
+ },
+ {
+  "q": "君不见青海头，古来白骨无人收。",
+  "label": "杜甫《兵车行》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-228",
+  "part": 5
+ },
+ {
+  "q": "国破山河在，城春草木深。",
+  "label": "杜甫《春望》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-185",
+  "part": 5
+ },
+ {
+  "q": "烽火连三月，家书抵万金。",
+  "label": "杜甫《春望》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-187",
+  "part": 5
+ },
+ {
+  "q": "无边落木萧萧下，不尽长江滚滚来。",
+  "label": "杜甫《登高》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-164",
+  "part": 4
+ },
+ {
+  "q": "万里悲秋常作客，百年多病独登台。",
+  "label": "杜甫《登高》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-166",
+  "part": 4
+ },
+ {
+  "q": "锦江春色来天地，玉垒浮云变古今。",
+  "label": "杜甫《登楼》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-172",
+  "part": 5
+ },
+ {
+  "q": "吴楚东南坼，乾坤日夜浮。",
+  "label": "杜甫《登岳阳楼》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-142",
+  "part": 4
+ },
+ {
+  "q": "志士幽人莫怨嗟，古来材大难为用。",
+  "label": "杜甫《古柏行》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-349",
+  "part": 7
+ },
+ {
+  "q": "在山泉水清，出山泉水浊。",
+  "label": "杜甫《佳人》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-112",
+  "part": 3
+ },
+ {
+  "q": "正是江南好风景，落花时节又逢君。",
+  "label": "杜甫《江南逢李龟年》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-79",
+  "part": 2
+ },
+ {
+  "q": "星垂平野阔，月涌大江流。",
+  "label": "杜甫《旅夜书怀》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-157",
+  "part": 4
+ },
+ {
+  "q": "冠盖满京华，斯人独憔悴。",
+  "label": "杜甫《梦李白·其二》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-131",
+  "part": 4
+ },
+ {
+  "q": "千秋万岁名，寂寞身后事。",
+  "label": "杜甫《梦李白·其二》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-133",
+  "part": 4
+ },
+ {
+  "q": "出师未捷身先死",
+  "label": "杜甫《蜀相》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-182",
+  "part": 5
+ },
+ {
+  "q": "长使英雄泪满襟",
+  "label": "杜甫《蜀相》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-183",
+  "part": 5
+ },
+ {
+  "q": "文章憎命达，魑魅喜人过。",
+  "label": "杜甫《天末怀李白》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-177",
+  "part": 5
+ },
+ {
+  "q": "会当凌绝顶，一览众山小。",
+  "label": "杜甫《望岳》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-89",
+  "part": 3
+ },
+ {
+  "q": "剑外忽传收蓟北，初闻涕泪满衣裳。",
+  "label": "杜甫《闻官军收河南河北》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-143",
+  "part": 4
+ },
+ {
+  "q": "一去紫台连朔漠，独留青冢向黄昏。",
+  "label": "杜甫《咏怀古迹·其三》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-129",
+  "part": 4
+ },
+ {
+  "q": "露从今夜白，月是故乡明。",
+  "label": "杜甫《月夜忆舍弟》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-171",
+  "part": 5
+ },
+ {
+  "q": "人生不相见，动如参与商。",
+  "label": "杜甫《赠卫八处士》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-91",
+  "part": 3
+ },
+ {
+  "q": "明日隔山岳，世事两茫茫。",
+  "label": "杜甫《赠卫八处士》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-102",
+  "part": 3
+ },
+ {
+  "q": "东风不与周郎便，铜雀春深锁二乔。",
+  "label": "杜牧《赤壁》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-115",
+  "part": 3
+ },
+ {
+  "q": "二十四桥明月夜，玉人何处教吹箫？",
+  "label": "杜牧《寄扬州韩绰判官》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-98",
+  "part": 3
+ },
+ {
+  "q": "商女不知亡国恨",
+  "label": "杜牧《泊秦淮》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-118",
+  "part": 3
+ },
+ {
+  "q": "铁球儿漾在江心内，实指望团圆到底。",
+  "label": "杜仁杰《耍孩儿·庄家不识构阑》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-12"
+ },
+ {
+  "q": "春慵恰似春塘水，一片縠纹愁。",
+  "label": "范成大《眼儿媚》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 168,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-168-3"
+ },
+ {
+  "q": "碧云天，黄叶地，秋色连波，波上寒烟翠。",
+  "label": "范仲淹《苏幕遮》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-0"
+ },
+ {
+  "q": "明月楼高休独倚，酒入愁肠，化作相思泪。",
+  "label": "范仲淹《苏幕遮》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-3"
+ },
+ {
+  "q": "都来此事，眉间心上，无计相回避。",
+  "label": "范仲淹《御街行》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-5"
+ },
+ {
   "q": "若乐众者，则受众恼",
   "label": "佛遗教经",
   "corpus": "fo",
@@ -1276,6 +2054,137 @@
   "ch": 1,
   "from": "zaijia",
   "cited": 1
+ },
+ {
+  "q": "战士军前半死生，美人帐下犹歌舞。",
+  "label": "高适《燕歌行》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-295",
+  "part": 7
+ },
+ {
+  "q": "忧则忧鸾孤凤单，愁则愁月缺花残。",
+  "label": "关汉卿《沉醉东风》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 14,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-14-4"
+ },
+ {
+  "q": "本利对相思若不还，则告与那能索债愁眉泪眼。",
+  "label": "关汉卿《沉醉东风》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 14,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-14-6"
+ },
+ {
+  "q": "子规啼，不如归，道是春归人未归。",
+  "label": "关汉卿《大德歌》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 15,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-15-0"
+ },
+ {
+  "q": "秋蝉儿噪罢寒蛩儿叫，淅零零细雨打芭蕉。",
+  "label": "关汉卿《大德歌》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 15,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-15-8"
+ },
+ {
+  "q": "溪又斜，山又遮，人去也！",
+  "label": "关汉卿《四块玉·别情》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 12,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-12-2"
+ },
+ {
+  "q": "自送别，心难舍，一点相思几时绝？",
+  "label": "关汉卿《四块玉·别情》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 12,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-12-2"
+ },
+ {
+  "q": "意马收，心猿锁，跳出红尘恶风波，槐阴午梦谁惊破？",
+  "label": "关汉卿《四块玉·闲适》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 13,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-13-7"
+ },
+ {
+  "q": "我是个普天下郎君领袖，盖世界浪子班头。",
+  "label": "关汉卿《一枝花·不伏老》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 11,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-11-3"
+ },
+ {
+  "q": "我是个蒸不烂、煮不熟、捶不匾、炒不爆响当当一粒铜豌豆",
+  "label": "关汉卿《一枝花·不伏老》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 11,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-11-5"
+ },
+ {
+  "q": "兀良，望钱塘江万顷玻璃。",
+  "label": "关汉卿《一枝花·杭州景》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 17,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-17-3"
+ },
+ {
+  "q": "百十里街衢整齐，万余家楼阁参差，并无半答儿闲田地。",
+  "label": "关汉卿《一枝花·杭州景》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 17,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-17-3"
+ },
+ {
+  "q": "展花笺欲写几句知心事，空教我停霜毫半晌无才思。",
+  "label": "贯云石《塞鸿秋·代人作》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 69,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-69-0"
  },
  {
   "q": "捭阖者，天地之道",
@@ -1368,6 +2277,15 @@
   "cited": 1
  },
  {
+  "q": "夫以妻之近与子之亲而犹不可信，则其余无可信者",
+  "label": "韩非子·备内",
+  "corpus": "fa",
+  "slug": "hanfeizi",
+  "ch": 17,
+  "from": "junzikeshi",
+  "cited": 1
+ },
+ {
   "q": "君无术则弊于上，臣无法则乱于下",
   "label": "韩非子·定法",
   "corpus": "fa",
@@ -1386,12 +2304,30 @@
   "cited": 1
  },
  {
+  "q": "夫有材而无势，虽贤不能制不肖",
+  "label": "韩非子·功名",
+  "corpus": "fa",
+  "slug": "hanfeizi",
+  "ch": 28,
+  "from": "shishi",
+  "cited": 1
+ },
+ {
   "q": "有令不听从谓之「勇」",
   "label": "韩非子·诡使",
   "corpus": "fa",
   "slug": "hanfeizi",
   "ch": 45,
   "from": "yong",
+  "cited": 1
+ },
+ {
+  "q": "恃人之以爱为我者危矣，恃吾不可不为者安矣",
+  "label": "韩非子·奸劫弑臣",
+  "corpus": "fa",
+  "slug": "hanfeizi",
+  "ch": 14,
+  "from": "junzikeshi",
   "cited": 1
  },
  {
@@ -1422,12 +2358,30 @@
   "cited": 1
  },
  {
+  "q": "吾所为言势者，言人之所设也",
+  "label": "韩非子·难势",
+  "corpus": "fa",
+  "slug": "hanfeizi",
+  "ch": 40,
+  "from": "shishi",
+  "cited": 1
+ },
+ {
   "q": "释贤而专任势，足以为治乎？则吾未得见也",
   "label": "韩非子·难势",
   "corpus": "fa",
   "slug": "hanfeizi",
   "ch": 40,
   "from": "fashushi",
+  "cited": 1
+ },
+ {
+  "q": "夫有云雾之势而能乘游之者，龙蛇之材美也",
+  "label": "韩非子·难势",
+  "corpus": "fa",
+  "slug": "hanfeizi",
+  "ch": 40,
+  "from": "shishi",
   "cited": 1
  },
  {
@@ -1446,6 +2400,15 @@
   "slug": "hanfeizi",
   "ch": 31,
   "from": "shijun",
+  "cited": 1
+ },
+ {
+  "q": "故恃鬼神者慢于法，恃诸侯者危其国",
+  "label": "韩非子·饰邪",
+  "corpus": "fa",
+  "slug": "hanfeizi",
+  "ch": 19,
+  "from": "junzikeshi",
   "cited": 1
  },
  {
@@ -1584,6 +2547,15 @@
   "cited": 1
  },
  {
+  "q": "是以圣人不期修古，不法常可，论世之事，因为之备",
+  "label": "韩非子·五蠹",
+  "corpus": "fa",
+  "slug": "hanfeizi",
+  "ch": 49,
+  "from": "faxianwang",
+  "cited": 1
+ },
+ {
   "q": "夫古之让天子者，是去监门之养而离臣虏之劳也",
   "label": "韩非子·五蠹",
   "corpus": "fa",
@@ -1599,6 +2571,15 @@
   "slug": "hanfeizi",
   "ch": 49,
   "from": "luanqi",
+  "cited": 1
+ },
+ {
+  "q": "国法不可失，而所治非一人也",
+  "label": "韩非子·显学",
+  "corpus": "fa",
+  "slug": "hanfeizi",
+  "ch": 50,
+  "from": "junzikeshi",
   "cited": 1
  },
  {
@@ -1644,6 +2625,15 @@
   "slug": "hanfeizi",
   "ch": 50,
   "from": "wangba",
+  "cited": 1
+ },
+ {
+  "q": "故治民无常，唯治为治。法与时转则治，治与世宜则有功",
+  "label": "韩非子·心度",
+  "corpus": "fa",
+  "slug": "hanfeizi",
+  "ch": 54,
+  "from": "faxianwang",
   "cited": 1
  },
  {
@@ -1728,6 +2718,180 @@
   "cited": 1
  },
  {
+  "q": "春城无处不飞花，寒食东风御柳斜。",
+  "label": "韩翃《寒食》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-197",
+  "part": 5
+ },
+ {
+  "q": "忽闻疏雨打新荷，有梦都惊破。",
+  "label": "盍西村《小桃红·临川八景》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 65,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-65-18"
+ },
+ {
+  "q": "少小离家老大回，乡音无改鬓毛衰，儿童相见不相识，笑问客从何处来。",
+  "label": "贺知章《回乡偶书》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-168",
+  "part": 4
+ },
+ {
+  "q": "物情惟有醉中真",
+  "label": "贺铸《浣溪沙》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 122,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-122-1"
+ },
+ {
+  "q": "试问闲愁都几许？",
+  "label": "贺铸《青玉案》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 119,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-119-4"
+ },
+ {
+  "q": "一川烟草，满城风絮，梅子黄时雨。",
+  "label": "贺铸《青玉案》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 119,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-119-5"
+ },
+ {
+  "q": "芭蕉不展丁香结。",
+  "label": "贺铸《石州慢》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 124,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-124-7"
+ },
+ {
+  "q": "松下问童子，言师采药去。",
+  "label": "贾岛《寻隐者不遇》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-80",
+  "part": 2
+ },
+ {
+  "q": "只在此山中，云深不知处。",
+  "label": "贾岛《寻隐者不遇》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-81",
+  "part": 2
+ },
+ {
+  "q": "旧时月色，算几番照我，梅边吹笛？",
+  "label": "姜夔《暗香》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 193,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-193-1"
+ },
+ {
+  "q": "数峰清苦，商略黄昏雨。",
+  "label": "姜夔《点绛唇》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 182,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-182-2"
+ },
+ {
+  "q": "淮南皓月冷千山，冥冥归去无人管。",
+  "label": "姜夔《踏莎行》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 184,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-184-5"
+ },
+ {
+  "q": "过春风十里，尽荠麦青青。",
+  "label": "姜夔《扬州慢》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 190,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-190-2"
+ },
+ {
+  "q": "二十四桥仍在，波心荡冷月无声。",
+  "label": "姜夔《扬州慢》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 190,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-190-7"
+ },
+ {
+  "q": "阅人多矣，谁得似长亭树？",
+  "label": "姜夔《长亭怨慢》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 191,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-191-3"
+ },
+ {
+  "q": "肥水东流无尽期，当初不合种相思。",
+  "label": "姜夔《鹧鸪天》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 183,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-183-1"
+ },
+ {
+  "q": "而今灯漫挂，不是暗尘明月，那时元夜。",
+  "label": "蒋捷《女冠子》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 262,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-262-3"
+ },
+ {
   "q": "若菩萨有我相、人相、众生相、寿者相，即非菩萨",
   "label": "金刚经·大乘正宗分",
   "corpus": "fo",
@@ -1789,6 +2953,36 @@
   "ch": 32,
   "from": "shengsi",
   "cited": 1
+ },
+ {
+  "q": "千般疢难，不越三条",
+  "label": "金匮要略·脏腑经络先后病脉证第一",
+  "corpus": "zhongyi",
+  "slug": "jinkui",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-2"
+ },
+ {
+  "q": "如水能浮舟，亦能覆舟",
+  "label": "金匮要略·脏腑经络先后病脉证第一",
+  "corpus": "zhongyi",
+  "slug": "jinkui",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-2"
+ },
+ {
+  "q": "若五脏元真通畅，人即安和",
+  "label": "金匮要略·脏腑经络先后病脉证第一",
+  "corpus": "zhongyi",
+  "slug": "jinkui",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-2"
  },
  {
   "q": "道之外无物，物之外无道",
@@ -2034,6 +3228,15 @@
   "cited": 1
  },
  {
+  "q": "故以智治国，国之贼，不以智治国，国之福",
+  "label": "老子·六十五章",
+  "corpus": "dao",
+  "slug": "daodejing",
+  "ch": 65,
+  "from": "junzikeshi",
+  "cited": 1
+ },
+ {
   "q": "治大国，若烹小鲜",
   "label": "老子·六十章",
   "corpus": "dao",
@@ -2058,6 +3261,15 @@
   "slug": "daodejing",
   "ch": 60,
   "from": "guishen",
+  "cited": 1
+ },
+ {
+  "q": "民之难治，以其上之有为，是以难治",
+  "label": "老子·七十五章",
+  "corpus": "dao",
+  "slug": "daodejing",
+  "ch": 75,
+  "from": "junzikeshi",
   "cited": 1
  },
  {
@@ -2124,6 +3336,15 @@
   "cited": 1
  },
  {
+  "q": "功成事遂，百姓皆谓：我自然",
+  "label": "老子·十七章",
+  "corpus": "dao",
+  "slug": "daodejing",
+  "ch": 17,
+  "from": "junzikeshi",
+  "cited": 1
+ },
+ {
   "q": "是以圣人不行而知，不见而名",
   "label": "老子·四十七章",
   "corpus": "dao",
@@ -2158,6 +3379,402 @@
   "ch": 45,
   "from": "qiaozhuo",
   "cited": 1
+ },
+ {
+  "q": "总为浮云能蔽日，长安不见使人愁。",
+  "label": "李白《登金陵凤凰台》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-49",
+  "part": 2
+ },
+ {
+  "q": "山随平野尽，江入大荒流。",
+  "label": "李白《渡荆门送别》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-102",
+  "part": 3
+ },
+ {
+  "q": "天生我材必有用，千金散尽还复来。",
+  "label": "李白《将进酒》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-86",
+  "part": 3
+ },
+ {
+  "q": "君不见，黄河之水天上来，奔流到海不复回！",
+  "label": "李白《将进酒》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-83",
+  "part": 3
+ },
+ {
+  "q": "五岳寻仙不辞远，一生好入名山游。",
+  "label": "李白《庐山谣寄卢侍御虚舟》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-144",
+  "part": 3
+ },
+ {
+  "q": "安能摧眉折腰事权贵，使我不得开心颜。",
+  "label": "李白《梦游天姥吟留别》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-178",
+  "part": 4
+ },
+ {
+  "q": "云想衣裳花想容，春风拂槛露华浓。",
+  "label": "李白《清平调》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-74",
+  "part": 2
+ },
+ {
+  "q": "蜀道之难，难于上青天！",
+  "label": "李白《蜀道难》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-154",
+  "part": 4
+ },
+ {
+  "q": "剑阁峥嵘而崔嵬，一夫当关，万夫莫开。",
+  "label": "李白《蜀道难》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-172",
+  "part": 4
+ },
+ {
+  "q": "故人西辞黄鹤楼，烟花三月下扬州。",
+  "label": "李白《送孟浩然之广陵》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-31"
+ },
+ {
+  "q": "浮云游子意，落日故人情。",
+  "label": "李白《送友人》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-108",
+  "part": 3
+ },
+ {
+  "q": "两岸猿声啼不尽，轻舟已过万重山。",
+  "label": "李白《下江陵》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-36"
+ },
+ {
+  "q": "长风破浪会有时，直挂云帆济沧海。",
+  "label": "李白《行路难》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-117",
+  "part": 3
+ },
+ {
+  "q": "弃我去者，昨日之日不可留。",
+  "label": "李白《宣州谢朓楼饯别校书叔云》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-184",
+  "part": 4
+ },
+ {
+  "q": "抽刀断水水更流，举杯销愁愁更愁。",
+  "label": "李白《宣州谢朓楼饯别校书叔云》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-189",
+  "part": 4
+ },
+ {
+  "q": "举杯邀明月，对影成三人。",
+  "label": "李白《月下独酌》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-75",
+  "part": 2
+ },
+ {
+  "q": "郎骑竹马来，遶床弄青梅。",
+  "label": "李白《长干行》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-138",
+  "part": 4
+ },
+ {
+  "q": "同居长干里，两小无嫌猜。",
+  "label": "李白《长干行》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-139",
+  "part": 4
+ },
+ {
+  "q": "长安一片月，万户捣衣声。",
+  "label": "李白《子夜吴歌·秋歌》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-188",
+  "part": 5
+ },
+ {
+  "q": "欲黄昏，雨打梨花深闭门。",
+  "label": "李甲《忆王孙》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 145,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-145-1"
+ },
+ {
+  "q": "新来瘦，非干病酒，不是悲秋。",
+  "label": "李清照《凤凰台上忆吹箫》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 279,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-279-3"
+ },
+ {
+  "q": "生怕离怀别苦，多少事、欲说还休。",
+  "label": "李清照《凤凰台上忆吹箫》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 279,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-279-2"
+ },
+ {
+  "q": "这次第，怎一个愁字了得！",
+  "label": "李清照《声声慢》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 281,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-281-7"
+ },
+ {
+  "q": "寻寻觅觅，冷冷清清，凄凄惨惨戚戚。",
+  "label": "李清照《声声慢》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 281,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-281-0"
+ },
+ {
+  "q": "不如向帘儿底下，听人笑语。",
+  "label": "李清照《永遇乐》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 283,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-283-7"
+ },
+ {
+  "q": "落日熔金，暮云合璧，人在何处？",
+  "label": "李清照《永遇乐》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 283,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-283-0"
+ },
+ {
+  "q": "帘卷西风，人比黄花瘦。",
+  "label": "李清照《醉花阴》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 280,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-280-4"
+ },
+ {
+  "q": "东篱把酒黄昏后，有暗香盈袖。",
+  "label": "李清照《醉花阴》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 280,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-280-2"
+ },
+ {
+  "q": "碧海青天夜夜心",
+  "label": "李商隐《嫦娥》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-61",
+  "part": 2
+ },
+ {
+  "q": "夕阳无限好　只是近黄昏",
+  "label": "李商隐《登乐游原》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-42",
+  "part": 2
+ },
+ {
+  "q": "可怜夜半虚前席，不问苍生问鬼神。",
+  "label": "李商隐《贾生》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-46",
+  "part": 2
+ },
+ {
+  "q": "此情可待成追忆，只是当时已惘然。",
+  "label": "李商隐《锦瑟》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-69",
+  "part": 2
+ },
+ {
+  "q": "春心莫共花争发，一寸相思一寸灰。",
+  "label": "李商隐《无题·飒飒东风细雨来》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-88",
+  "part": 3
+ },
+ {
+  "q": "相见时难别亦难，东风无力百花残。",
+  "label": "李商隐《无题·相见时难别亦难》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-51",
+  "part": 2
+ },
+ {
+  "q": "春蚕到死丝方尽，蜡炬成灰泪始乾。",
+  "label": "李商隐《无题·相见时难别亦难》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-52",
+  "part": 2
+ },
+ {
+  "q": "身无彩凤双飞翼，心有灵犀一点通。",
+  "label": "李商隐《无题·昨夜星辰昨夜风》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-100",
+  "part": 3
+ },
+ {
+  "q": "何当共剪西窗烛",
+  "label": "李商隐《夜雨寄北》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-65",
+  "part": 2
  },
  {
   "q": "故善用兵者，奇正在人而已",
@@ -2196,12 +3813,72 @@
   "cited": 1
  },
  {
+  "q": "早知潮有信，嫁与弄潮儿。",
+  "label": "李益《江南曲》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-204",
+  "part": 5
+ },
+ {
+  "q": "不知何处吹芦管，一夜征人尽望乡。",
+  "label": "李益《夜上受降城闻笛》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-43",
+  "part": 2
+ },
+ {
+  "q": "只愿君心似我心，定不负相思意。",
+  "label": "李之仪《卜算子》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 96,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-96-4"
+ },
+ {
+  "q": "我住长江头，君住长江尾；日日思君不见君，共饮长江水。",
+  "label": "李之仪《卜算子》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 96,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-96-0"
+ },
+ {
   "q": "独往独来，独出独入，孰能碍之",
   "label": "列子·力命篇",
   "corpus": "dao",
   "slug": "liezi",
   "ch": 6,
   "from": "duqun",
+  "cited": 1
+ },
+ {
+  "q": "生非贵之所能存，身非爱之所能厚",
+  "label": "列子·杨朱",
+  "corpus": "dao",
+  "slug": "liezi",
+  "ch": 7,
+  "from": "shesheng",
+  "cited": 1
+ },
+ {
+  "q": "腐骨一矣，孰知其异？且趣当生，奚遑死后",
+  "label": "列子·杨朱",
+  "corpus": "dao",
+  "slug": "liezi",
+  "ch": 7,
+  "from": "shesheng",
   "cited": 1
  },
  {
@@ -2295,6 +3972,331 @@
   "cited": 1
  },
  {
+  "q": "因虑而处物，谓之智。",
+  "label": "灵枢·本神",
+  "corpus": "zhongyi",
+  "slug": "lingshu",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-11"
+ },
+ {
+  "q": "凡刺之法，先必本于神",
+  "label": "灵枢·本神",
+  "corpus": "zhongyi",
+  "slug": "lingshu",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-0"
+ },
+ {
+  "q": "天之在我者，德也，地之在我者，气也，德流气薄而生者也。",
+  "label": "灵枢·本神",
+  "corpus": "zhongyi",
+  "slug": "lingshu",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-1"
+ },
+ {
+  "q": "得顺者生，得逆者败，知调者利，不知调者害。",
+  "label": "灵枢·海论",
+  "corpus": "zhongyi",
+  "slug": "lingshu",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-9"
+ },
+ {
+  "q": "骨为干，脉为营，筋为刚，肉为墙",
+  "label": "灵枢·经脉",
+  "corpus": "zhongyi",
+  "slug": "lingshu",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-1"
+ },
+ {
+  "q": "经脉十二者，伏行分肉之间，深而不见。",
+  "label": "灵枢·经脉",
+  "corpus": "zhongyi",
+  "slug": "lingshu",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-22"
+ },
+ {
+  "q": "经脉者，所以能决死生，处百病，调虚实，不可不通。",
+  "label": "灵枢·经脉",
+  "corpus": "zhongyi",
+  "slug": "lingshu",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-3"
+ },
+ {
+  "q": "言不可治者，未得其术也。",
+  "label": "灵枢·九针十二原",
+  "corpus": "zhongyi",
+  "slug": "lingshu",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-44"
+ },
+ {
+  "q": "其来不可逢，其往不可追",
+  "label": "灵枢·九针十二原",
+  "corpus": "zhongyi",
+  "slug": "lingshu",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-2"
+ },
+ {
+  "q": "小针之要，易陈而难入，麤守形，上守神",
+  "label": "灵枢·九针十二原",
+  "corpus": "zhongyi",
+  "slug": "lingshu",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-2"
+ },
+ {
+  "q": "入国问俗，入家问讳，上堂问礼，临病人问所便",
+  "label": "灵枢·师传",
+  "corpus": "zhongyi",
+  "slug": "lingshu",
+  "ch": 8,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-8-3"
+ },
+ {
+  "q": "余闻先师，有所心藏，弗著于方，余愿闻而藏之，则而行之",
+  "label": "灵枢·师传",
+  "corpus": "zhongyi",
+  "slug": "lingshu",
+  "ch": 8,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-8-0"
+ },
+ {
+  "q": "上焦如雾，中焦如沤，下焦如渎",
+  "label": "灵枢·营卫生会",
+  "corpus": "zhongyi",
+  "slug": "lingshu",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-18"
+ },
+ {
+  "q": "营周不休，五十而复大会，阴阳相贯，如环无端",
+  "label": "灵枢·营卫生会",
+  "corpus": "zhongyi",
+  "slug": "lingshu",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-1"
+ },
+ {
+  "q": "营卫者，精气也，血者，神气也，故血之与气，异名同类焉",
+  "label": "灵枢·营卫生会",
+  "corpus": "zhongyi",
+  "slug": "lingshu",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-13"
+ },
+ {
+  "q": "送春去，春去人间无路。",
+  "label": "刘辰翁《兰陵王》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 251,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-251-1"
+ },
+ {
+  "q": "欲买桂花同载酒，终不似，少年游。",
+  "label": "刘过《唐多令》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 200,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-200-6"
+ },
+ {
+  "q": "年年跃马长安市，客舍似家家似寄。",
+  "label": "刘克庄《木兰花》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 217,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-217-1"
+ },
+ {
+  "q": "男儿西北有神州，莫滴水西桥畔泪。",
+  "label": "刘克庄《木兰花》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 217,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-217-4"
+ },
+ {
+  "q": "太行如砺，黄河如带，等是尘埃。",
+  "label": "刘因《人月圆》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 56,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-56-3"
+ },
+ {
+  "q": "飞入寻常百姓家。",
+  "label": "刘禹锡《乌衣巷》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-185",
+  "part": 5
+ },
+ {
+  "q": "人世几回伤往事，山形依旧枕寒流。",
+  "label": "刘禹锡《西塞山怀古》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-271",
+  "part": 7
+ },
+ {
+  "q": "渐霜风凄紧，关河冷落，残照当楼。",
+  "label": "柳永《八声甘州》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 42,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-42-1"
+ },
+ {
+  "q": "想佳人、妆楼颙望，误几回、天际识归舟？",
+  "label": "柳永《八声甘州》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 42,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-42-6"
+ },
+ {
+  "q": "衣带渐宽终不悔。为伊消得人憔悴。",
+  "label": "柳永《蝶恋花》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 34,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-34-3"
+ },
+ {
+  "q": "伫倚危楼风细细，望极春愁，黯黯生天际。",
+  "label": "柳永《蝶恋花》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 34,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-34-0"
+ },
+ {
+  "q": "今宵酒醒何处？杨柳岸、晓风残月。",
+  "label": "柳永《雨霖铃》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 33,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-33-0"
+ },
+ {
+  "q": "多情自古伤离别，更那堪、冷落清秋节！",
+  "label": "柳永《雨霖铃》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 33,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-33-4"
+ },
+ {
+  "q": "黯相望，断鸿声里，立尽斜阳。",
+  "label": "柳永《玉蝴蝶》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 41,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-41-11"
+ },
+ {
+  "q": "千山鸟飞绝，万径人踪灭。",
+  "label": "柳宗元《江雪》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-64",
+  "part": 2
+ },
+ {
+  "q": "孤舟蓑笠翁，独钓寒江雪。",
+  "label": "柳宗元《江雪》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-65",
+  "part": 2
+ },
+ {
+  "q": "烟销日出不见人，欸乃一声山水绿。",
+  "label": "柳宗元《渔翁》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-372",
+  "part": 8
+ },
+ {
   "q": "大智不智，大谋不谋，大勇不勇",
   "label": "六韬·发启",
   "corpus": "bing",
@@ -2358,6 +4360,77 @@
   "cited": 1
  },
  {
+  "q": "月黑雁飞高，单于夜遁逃。",
+  "label": "卢纶《塞下曲·其三》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-321",
+  "part": 7
+ },
+ {
+  "q": "桑柘外秋千女儿，髻双鸦斜插花枝。",
+  "label": "卢挚《蟾宫曲·寒食新野道中》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 44,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-44-2"
+ },
+ {
+  "q": "挂绝壁松枯倒倚，落残霞孤鹜齐飞。",
+  "label": "卢挚《沉醉东风·秋景》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 40,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-40-2"
+ },
+ {
+  "q": "直吃的欠欠答答。醉了山童不劝咱，白头上黄花乱插。",
+  "label": "卢挚《沉醉东风·闲居》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 41,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-41-3"
+ },
+ {
+  "q": "画船儿载将春去也，空留下半江明月。",
+  "label": "卢挚《寿阳曲·别珠帘秀》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 46,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-46-2"
+ },
+ {
+  "q": "无意苦争春，一任群芳妒。",
+  "label": "陆游《卜算子》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 165,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-165-3"
+ },
+ {
+  "q": "零落成泥碾作尘，只有香如故。",
+  "label": "陆游《卜算子》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 165,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-165-4"
+ },
+ {
   "q": "人而不仁，如礼何？",
   "label": "论语·八佾",
   "corpus": "ru",
@@ -2391,6 +4464,15 @@
   "slug": "lunyu",
   "ch": 3,
   "from": "shijun",
+  "cited": 1
+ },
+ {
+  "q": "周监于二代，郁郁乎文哉！吾从周",
+  "label": "论语·八佾第三",
+  "corpus": "ru",
+  "slug": "lunyu",
+  "ch": 3,
+  "from": "faxianwang",
   "cited": 1
  },
  {
@@ -2436,6 +4518,15 @@
   "slug": "lunyu",
   "ch": 7,
   "from": "youhuan",
+  "cited": 1
+ },
+ {
+  "q": "述而不作，信而好古，窃比于我老彭",
+  "label": "论语·述而第七",
+  "corpus": "ru",
+  "slug": "lunyu",
+  "ch": 7,
+  "from": "faxianwang",
   "cited": 1
  },
  {
@@ -2943,6 +5034,194 @@
   "cited": 1
  },
  {
+  "q": "成也萧何，败也萧何，醉了由他。",
+  "label": "马致远《蟾宫曲·叹世》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 30,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-30-2"
+ },
+ {
+  "q": "咸阳百二山河，两字功名，几阵干戈。",
+  "label": "马致远《蟾宫曲·叹世》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 30,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-30-2"
+ },
+ {
+  "q": "天将暮，雪乱舞，半梅花半飘柳絮。",
+  "label": "马致远《寿阳曲·江天暮雪》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 36,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-36-2"
+ },
+ {
+  "q": "渔灯暗，客梦回，一声声滴人心碎。",
+  "label": "马致远《寿阳曲·潇湘夜雨》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 35,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-35-2"
+ },
+ {
+  "q": "不借时恶了弟兄，不借时反了面皮。",
+  "label": "马致远《耍孩儿·借马》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 38,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-38-8"
+ },
+ {
+  "q": "柔肠寸寸因他断，侧耳频频听你嘶。",
+  "label": "马致远《耍孩儿·借马》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 38,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-38-9"
+ },
+ {
+  "q": "枯藤、老树、昏鸦。",
+  "label": "马致远《天净沙·秋思》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 26,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-26-0"
+ },
+ {
+  "q": "夕阳西下，断肠人在天涯。",
+  "label": "马致远《天净沙·秋思》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 26,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-26-3"
+ },
+ {
+  "q": "百岁光阴一梦蝶，重回首往事堪嗟。",
+  "label": "马致远《夜行船·百岁光阴》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 27,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-27-2"
+ },
+ {
+  "q": "看密匝匝蚁排兵，乱纷纷蜂酿蜜，急攘攘蝇争血。",
+  "label": "马致远《夜行船·百岁光阴》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 27,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-27-8"
+ },
+ {
+  "q": "春眠不觉晓，处处闻啼鸟。",
+  "label": "孟浩然《春晓》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-58",
+  "part": 2
+ },
+ {
+  "q": "夜来风雨声，花落知多少。",
+  "label": "孟浩然《春晓》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-59",
+  "part": 2
+ },
+ {
+  "q": "故人具鸡黍，邀我至田家。",
+  "label": "孟浩然《过故人庄》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-243",
+  "part": 6
+ },
+ {
+  "q": "气蒸云梦泽，波撼岳阳城。",
+  "label": "孟浩然《临洞庭赠张丞相》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-254",
+  "part": 7
+ },
+ {
+  "q": "野旷天低树，江清月近人。",
+  "label": "孟浩然《宿建德江》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-56",
+  "part": 2
+ },
+ {
+  "q": "人事有代谢，往来成古今。",
+  "label": "孟浩然《与诸子登岘山》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-258",
+  "part": 7
+ },
+ {
+  "q": "慈母手中线，游子身上衣。",
+  "label": "孟郊《游子吟》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-285",
+  "part": 7
+ },
+ {
+  "q": "谁言寸草心，报得三春晖。",
+  "label": "孟郊《游子吟》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-287",
+  "part": 7
+ },
+ {
   "q": "人性之善也，犹水之就下也",
   "label": "孟子·告子上",
   "corpus": "ru",
@@ -3159,12 +5438,30 @@
   "cited": 1
  },
  {
-  "q": "天时不如地利，地利不如人和",
+  "q": "虽有智慧，不如乘势；虽有镃基，不如待时",
+  "label": "孟子·公孙丑上",
+  "corpus": "ru",
+  "slug": "mengzi",
+  "ch": 3,
+  "from": "shishi",
+  "cited": 1
+ },
+ {
+  "q": "以不忍人之心，行不忍人之政，治天下可运之掌上",
+  "label": "孟子·公孙丑上",
+  "corpus": "ru",
+  "slug": "mengzi",
+  "ch": 3,
+  "from": "junzikeshi",
+  "cited": 1
+ },
+ {
+  "q": "五百年必有王者兴，其间必有名世者",
   "label": "孟子·公孙丑下",
   "corpus": "ru",
   "slug": "mengzi",
   "ch": 4,
-  "from": "zhanzheng",
+  "from": "shishi",
   "cited": 1
  },
  {
@@ -3318,6 +5615,42 @@
   "slug": "mengzi",
   "ch": 7,
   "from": "junmin",
+  "cited": 1
+ },
+ {
+  "q": "遵先王之法而过者，未之有也",
+  "label": "孟子·离娄上",
+  "corpus": "ru",
+  "slug": "mengzi",
+  "ch": 7,
+  "from": "faxianwang",
+  "cited": 1
+ },
+ {
+  "q": "徒善不足以为政，徒法不能以自行",
+  "label": "孟子·离娄上",
+  "corpus": "ru",
+  "slug": "mengzi",
+  "ch": 7,
+  "from": "junzikeshi",
+  "cited": 1
+ },
+ {
+  "q": "惟大人为能格君心之非。君仁莫不仁",
+  "label": "孟子·离娄上",
+  "corpus": "ru",
+  "slug": "mengzi",
+  "ch": 7,
+  "from": "junzikeshi",
+  "cited": 1
+ },
+ {
+  "q": "离娄之明，公输子之巧，不以规矩，不能成方员",
+  "label": "孟子·离娄上",
+  "corpus": "ru",
+  "slug": "mengzi",
+  "ch": 7,
+  "from": "faxianwang",
   "cited": 1
  },
  {
@@ -3510,6 +5843,33 @@
   "cited": 1
  },
  {
+  "q": "天下之为父母者众，而仁者寡",
+  "label": "墨子·法仪",
+  "corpus": "mo",
+  "slug": "mozi",
+  "ch": 4,
+  "from": "junzikeshi",
+  "cited": 1
+ },
+ {
+  "q": "天之行广而无私，其施厚而不德",
+  "label": "墨子·法仪",
+  "corpus": "mo",
+  "slug": "mozi",
+  "ch": 4,
+  "from": "junzikeshi",
+  "cited": 1
+ },
+ {
+  "q": "然则奚以为治法而可？故曰：莫若法天",
+  "label": "墨子·法仪",
+  "corpus": "mo",
+  "slug": "mozi",
+  "ch": 4,
+  "from": "faxianwang",
+  "cited": 1
+ },
+ {
   "q": "天必欲人之相爱相利，而不欲人之相恶相贼也",
   "label": "墨子·法仪",
   "corpus": "mo",
@@ -3672,6 +6032,15 @@
   "cited": 1
  },
  {
+  "q": "且其所循，人必或作之，然则其所循皆小人道也",
+  "label": "墨子·非儒下",
+  "corpus": "mo",
+  "slug": "mozi",
+  "ch": 31,
+  "from": "faxianwang",
+  "cited": 1
+ },
+ {
   "q": "所为贵良宝者，为其可以利民也",
   "label": "墨子·耕柱",
   "corpus": "mo",
@@ -3717,12 +6086,30 @@
   "cited": 1
  },
  {
+  "q": "今天下莫为义，则子如劝我者也，何故止我",
+  "label": "墨子·贵义",
+  "corpus": "mo",
+  "slug": "mozi",
+  "ch": 39,
+  "from": "shesheng",
+  "cited": 1
+ },
+ {
   "q": "吾言足用矣，舍言革思者，是犹舍获而攈粟也",
   "label": "墨子·贵义",
   "corpus": "mo",
   "slug": "mozi",
   "ch": 39,
   "from": "wuyong",
+  "cited": 1
+ },
+ {
+  "q": "则天下不若身之贵也。争一言以相杀，是贵义于其身也",
+  "label": "墨子·贵义",
+  "corpus": "mo",
+  "slug": "mozi",
+  "ch": 39,
+  "from": "shesheng",
   "cited": 1
  },
  {
@@ -4104,6 +6491,15 @@
   "cited": 1
  },
  {
+  "q": "中吾规者谓之圜，不中吾规者谓之不圜",
+  "label": "墨子·天志中",
+  "corpus": "mo",
+  "slug": "mozi",
+  "ch": 24,
+  "from": "junzikeshi",
+  "cited": 1
+ },
+ {
   "q": "以类取，以类予",
   "label": "墨子·小取",
   "corpus": "mo",
@@ -4129,6 +6525,147 @@
   "ch": 37,
   "from": "tonglei",
   "cited": 1
+ },
+ {
+  "q": "双燕归来细雨中",
+  "label": "欧阳修《采桑子》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 23,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-23-1"
+ },
+ {
+  "q": "庭院深深深几许？",
+  "label": "欧阳修《蝶恋花》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 26,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-26-0"
+ },
+ {
+  "q": "泪眼问花花不语，乱红飞过秋千去。",
+  "label": "欧阳修《蝶恋花》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 26,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-26-4"
+ },
+ {
+  "q": "今年花胜去年红，可惜明年花更好，知与谁同？",
+  "label": "欧阳修《浪淘沙》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 30,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-30-3"
+ },
+ {
+  "q": "渐行渐远渐无书，水阔鱼沉何处问？",
+  "label": "欧阳修《木兰花》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 29,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-29-1"
+ },
+ {
+  "q": "离愁渐远渐无穷，迢迢不断如春水。",
+  "label": "欧阳修《踏莎行》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 25,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-25-1"
+ },
+ {
+  "q": "平芜尽处是春山，行人更在春山外。",
+  "label": "欧阳修《踏莎行》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 25,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-25-3"
+ },
+ {
+  "q": "倚危亭、恨如芳草，萋萋划尽还生。",
+  "label": "秦观《八六子》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 74,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-74-0"
+ },
+ {
+  "q": "无端天与娉婷，夜月一帘幽梦，春风十里柔情。",
+  "label": "秦观《八六子》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 74,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-74-2"
+ },
+ {
+  "q": "漠漠轻寒上小楼，晓阴无赖似穷秋，淡烟流水画屏幽。",
+  "label": "秦观《浣溪沙》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 78,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-78-0"
+ },
+ {
+  "q": "自在飞花轻似梦，无边丝雨细如愁，宝帘闲挂小银钩。",
+  "label": "秦观《浣溪沙》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 78,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-78-1"
+ },
+ {
+  "q": "斜阳外，寒鸦万点，流水绕孤村。",
+  "label": "秦观《满庭芳》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 75,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-75-3"
+ },
+ {
+  "q": "山抹微云，天黏衰草，画角声断谯门。",
+  "label": "秦观《满庭芳》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 75,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-75-0"
+ },
+ {
+  "q": "苦恨年年压金线，为他人作嫁衣裳。",
+  "label": "秦韬玉《贫女》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-222",
+  "part": 6
  },
  {
   "q": "柔能制刚，弱能制强",
@@ -4165,6 +6702,26 @@
   "ch": 1,
   "from": "rougang",
   "cited": 1
+ },
+ {
+  "q": "上工望而知之，中工问而知之，下工脉而知之",
+  "label": "伤寒论·平脉法第二",
+  "corpus": "zhongyi",
+  "slug": "shanghanlun",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-1"
+ },
+ {
+  "q": "夫智者之举错也，常审以慎；愚者之动作也，必果而速。",
+  "label": "伤寒论·伤寒例第三",
+  "corpus": "zhongyi",
+  "slug": "shanghanlun",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-24"
  },
  {
   "q": "法令者，民之命也，为治之本也",
@@ -4293,6 +6850,15 @@
   "cited": 1
  },
  {
+  "q": "腾蛇游雾，飞龙乘云，云罢雾霁，与蚯蚓同，则失其所乘也",
+  "label": "慎子·威德",
+  "corpus": "fa",
+  "slug": "shenzi",
+  "ch": 1,
+  "from": "shishi",
+  "cited": 1
+ },
+ {
   "q": "法之功，莫大使私不行；君之功，莫大使民不争",
   "label": "慎子·逸文",
   "corpus": "fa",
@@ -4318,6 +6884,57 @@
   "ch": 2,
   "from": "gongsi",
   "cited": 1
+ },
+ {
+  "q": "记当日门掩梨花，翦灯深夜语。",
+  "label": "史达祖《绮罗香》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 205,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-205-8"
+ },
+ {
+  "q": "做冷欺花，将烟困柳，千里偷催春暮。",
+  "label": "史达祖《绮罗香》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 205,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-205-1"
+ },
+ {
+  "q": "还相雕梁藻井，又软语商量不定。",
+  "label": "史达祖《双双燕》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 206,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-206-3"
+ },
+ {
+  "q": "浮生只合樽前老，雪满长安道。",
+  "label": "舒亶《虞美人》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 88,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-88-2"
+ },
+ {
+  "q": "雨中黄叶树，灯下白头人。",
+  "label": "司空曙《喜外弟卢纶见宿》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-62",
+  "part": 2
  },
  {
   "q": "以战去战，虽战可也",
@@ -4354,6 +6971,308 @@
   "ch": 1,
   "from": "yizhan",
   "cited": 1
+ },
+ {
+  "q": "绿杨烟外晓云轻，红杏枝头春意闹。",
+  "label": "宋祁《木兰花》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 22,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-22-1"
+ },
+ {
+  "q": "拣尽寒枝不肯栖，寂寞沙洲冷。",
+  "label": "苏轼《卜算子》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 67,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-67-4"
+ },
+ {
+  "q": "竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生。",
+  "label": "苏轼《定风波》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 70,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-70-2"
+ },
+ {
+  "q": "回首向来萧瑟处，归去，也无风雨也无晴。",
+  "label": "苏轼《定风波》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 70,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-70-4"
+ },
+ {
+  "q": "相顾无言，惟有泪千行。",
+  "label": "苏轼《江城子》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 71,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-71-5"
+ },
+ {
+  "q": "十年生死两茫茫，不思量，自难忘。",
+  "label": "苏轼《江城子》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 71,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-71-1"
+ },
+ {
+  "q": "夜阑风静縠纹平，小舟从此逝，江海寄余生。",
+  "label": "苏轼《临江仙》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 69,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-69-3"
+ },
+ {
+  "q": "明月几时有，把酒问青天。",
+  "label": "苏轼《水调歌头》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 63,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-63-1"
+ },
+ {
+  "q": "但愿人长久，千里共婵娟。",
+  "label": "苏轼《水调歌头》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 63,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-63-8"
+ },
+ {
+  "q": "春色三分，二分尘土，一分流水。",
+  "label": "苏轼《水龙吟》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 64,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-64-8"
+ },
+ {
+  "q": "细看来不是杨花，点点是离人泪。",
+  "label": "苏轼《水龙吟》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 64,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-64-9"
+ },
+ {
+  "q": "肝者，将军之官，谋虑出焉。",
+  "label": "素问·灵兰秘典论",
+  "corpus": "zhongyi",
+  "slug": "suwen",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-4"
+ },
+ {
+  "q": "胆者，中正之官，决断出焉。",
+  "label": "素问·灵兰秘典论",
+  "corpus": "zhongyi",
+  "slug": "suwen",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-5"
+ },
+ {
+  "q": "心者，君主之官也，神明出焉。",
+  "label": "素问·灵兰秘典论",
+  "corpus": "zhongyi",
+  "slug": "suwen",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-2"
+ },
+ {
+  "q": "是故持脉有道，虚静为保。",
+  "label": "素问·脉要精微论",
+  "corpus": "zhongyi",
+  "slug": "suwen",
+  "ch": 9,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-9-33"
+ },
+ {
+  "q": "故美其食，任其服，乐其俗，高下不相慕，其民故曰朴。",
+  "label": "素问·上古天真论",
+  "corpus": "zhongyi",
+  "slug": "suwen",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-5"
+ },
+ {
+  "q": "所以能年皆度百岁，而动作不衰者，以其德全不危也。",
+  "label": "素问·上古天真论",
+  "corpus": "zhongyi",
+  "slug": "suwen",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-7"
+ },
+ {
+  "q": "阴者，藏精而起亟也；阳者，卫外而为固也。",
+  "label": "素问·生气通天论",
+  "corpus": "zhongyi",
+  "slug": "suwen",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-13"
+ },
+ {
+  "q": "道者，圣人行之，愚者佩之。",
+  "label": "素问·四气调神大论",
+  "corpus": "zhongyi",
+  "slug": "suwen",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-11"
+ },
+ {
+  "q": "夫四时阴阳者，万物之根本也。",
+  "label": "素问·四气调神大论",
+  "corpus": "zhongyi",
+  "slug": "suwen",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-10"
+ },
+ {
+  "q": "是故圣人不治已病治未病，不治已乱治未乱，此之谓也。",
+  "label": "素问·四气调神大论",
+  "corpus": "zhongyi",
+  "slug": "suwen",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-12"
+ },
+ {
+  "q": "病为本，工为标。标本不得，邪气不服。",
+  "label": "素问·汤液醪醴论",
+  "corpus": "zhongyi",
+  "slug": "suwen",
+  "ch": 8,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-8-13"
+ },
+ {
+  "q": "故圣人杂合以治，各得其所宜。",
+  "label": "素问·异法方宜论",
+  "corpus": "zhongyi",
+  "slug": "suwen",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-7"
+ },
+ {
+  "q": "故治所以异，而病皆愈者；得病之情，知治之大体也。",
+  "label": "素问·异法方宜论",
+  "corpus": "zhongyi",
+  "slug": "suwen",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-8"
+ },
+ {
+  "q": "阳化气，阴成形。",
+  "label": "素问·阴阳应象大论",
+  "corpus": "zhongyi",
+  "slug": "suwen",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-2"
+ },
+ {
+  "q": "智者察同，愚者察异",
+  "label": "素问·阴阳应象大论",
+  "corpus": "zhongyi",
+  "slug": "suwen",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-28"
+ },
+ {
+  "q": "阴在内，阳之守也；阳在外，阴之使也。",
+  "label": "素问·阴阳应象大论",
+  "corpus": "zhongyi",
+  "slug": "suwen",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-20"
+ },
+ {
+  "q": "天地之大纪，人神之通应也。",
+  "label": "素问·至真要大论",
+  "corpus": "zhongyi",
+  "slug": "suwen",
+  "ch": 15,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-15-1"
+ },
+ {
+  "q": "无问其数，以平为期，此其道也。",
+  "label": "素问·至真要大论",
+  "corpus": "zhongyi",
+  "slug": "suwen",
+  "ch": 15,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-15-131",
+  "part": 4
+ },
+ {
+  "q": "知其要者，一言而终，不知其要，流散无穷",
+  "label": "素问·至真要大论",
+  "corpus": "zhongyi",
+  "slug": "suwen",
+  "ch": 15,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-15-48",
+  "part": 2
  },
  {
   "q": "凡战者，以正合，以奇胜",
@@ -4443,6 +7362,15 @@
   "slug": "sunzi",
   "ch": 3,
   "from": "zhanzheng",
+  "cited": 1
+ },
+ {
+  "q": "势者，因利而制权也",
+  "label": "孙子·始计",
+  "corpus": "bing",
+  "slug": "sunzi",
+  "ch": 1,
+  "from": "shishi",
   "cited": 1
  },
  {
@@ -4635,6 +7563,507 @@
   "cited": 1
  },
  {
+  "q": "翠荷残，苍梧坠。千山应瘦，万木皆稀。蜗角名，蝇头利。",
+  "label": "滕斌《普天乐》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 66,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-66-12"
+ },
+ {
+  "q": "不肯画堂朱户，春风自在杨花。",
+  "label": "王安国《清平乐》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 47,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-47-3"
+ },
+ {
+  "q": "千里澄江似练，翠峰如簇。",
+  "label": "王安石《桂枝香》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 45,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-45-1"
+ },
+ {
+  "q": "六朝旧事随流水，但寒烟、芳草凝绿。",
+  "label": "王安石《桂枝香》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 45,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-45-6"
+ },
+ {
+  "q": "梦阑时，酒醒后，思量著。",
+  "label": "王安石《千秋岁引》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 46,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-46-5"
+ },
+ {
+  "q": "羞归西楚亲求救，耻向东吴再起兵。",
+  "label": "王伯成《哨遍·项羽自刎》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 64,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-64-13"
+ },
+ {
+  "q": "海内存知己，天涯若比隣。",
+  "label": "王勃《送杜少府之任蜀州》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-3"
+ },
+ {
+  "q": "秦时明月汉时关，万里长征人未还。",
+  "label": "王昌龄《出塞》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-6"
+ },
+ {
+  "q": "但使龙城飞将在，不教胡马度阴山。",
+  "label": "王昌龄《出塞》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-7"
+ },
+ {
+  "q": "洛阳亲友如相问，一片冰心在玉壶。",
+  "label": "王昌龄《芙蓉楼送辛渐》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-2"
+ },
+ {
+  "q": "忽见陌头杨柳色，悔教夫婿觅封侯。",
+  "label": "王昌龄《闺怨》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-5"
+ },
+ {
+  "q": "醉卧沙场君莫笑，古来征战几人回。",
+  "label": "王翰《凉州词》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-14"
+ },
+ {
+  "q": "连荒道一句：君子人不见头面！",
+  "label": "王和卿《天净沙·咏秃》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 8,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-8-2"
+ },
+ {
+  "q": "蝉破庄周梦，两翅架东风。三百座名园一采个空。",
+  "label": "王和卿《醉中天》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-4"
+ },
+ {
+  "q": "裙系鸳鸯锦，钗插凤凰金。俊的是庞儿，俏的是心。",
+  "label": "王和卿《醉中天》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-6"
+ },
+ {
+  "q": "今春，香肌瘦几分，搂带宽三寸。",
+  "label": "王实甫《十二月过尧民歌·别情》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 54,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-54-5"
+ },
+ {
+  "q": "海日生残夜，江春入旧年。",
+  "label": "王湾《次北固山下》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-53",
+  "part": 2
+ },
+ {
+  "q": "江流天地外，山色有无中。",
+  "label": "王维《汉江临眺》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-12"
+ },
+ {
+  "q": "漠漠水田飞白鹭，阴阴夏木啭黄鹂。",
+  "label": "王维《积雨辋川庄作》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-32"
+ },
+ {
+  "q": "独在异乡为异客，每逢佳节倍思亲。",
+  "label": "王维《九月九日忆山东兄弟》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-10"
+ },
+ {
+  "q": "空山不见人，但闻人语响。",
+  "label": "王维《鹿柴》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-16"
+ },
+ {
+  "q": "明月松间照，清泉石上流。",
+  "label": "王维《山居秋暝》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-42",
+  "part": 2
+ },
+ {
+  "q": "春草明年绿，王孙归不归。",
+  "label": "王维《送别·山中相送罢》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-23"
+ },
+ {
+  "q": "但去莫复问，白云无尽时。",
+  "label": "王维《送别·下马饮君酒》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-31"
+ },
+ {
+  "q": "劝君更尽一杯酒，西出阳关无故人。",
+  "label": "王维《渭城曲》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-25"
+ },
+ {
+  "q": "红豆生南国，春来发几枝。",
+  "label": "王维《相思》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-10"
+ },
+ {
+  "q": "愿君多采撷，此物最相思。",
+  "label": "王维《相思》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-11"
+ },
+ {
+  "q": "行到水穷处，坐看云起时。",
+  "label": "王维《终南别业》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-18"
+ },
+ {
+  "q": "独坐幽篁里，弹琴复长啸。",
+  "label": "王维《竹里馆》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-19"
+ },
+ {
+  "q": "千古盈亏休问，叹慢磨玉斧，难补金镜。",
+  "label": "王沂孙《眉妩》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 270,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-270-5"
+ },
+ {
+  "q": "病翼惊秋，枯形阅世，消得斜阳几度？",
+  "label": "王沂孙《齐天乐》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 271,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-271-7"
+ },
+ {
+  "q": "黄河远上白云间，一片孤城万仞山。",
+  "label": "王之涣《出塞》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-0"
+ },
+ {
+  "q": "羌笛何须怨杨柳，春风不度玉门关。",
+  "label": "王之涣《出塞》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-3"
+ },
+ {
+  "q": "白日依山尽，黄河入海流。",
+  "label": "王之涣《登鹳雀楼》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-4"
+ },
+ {
+  "q": "欲穷千里目，更上一层楼。",
+  "label": "王之涣《登鹳雀楼》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-5"
+ },
+ {
+  "q": "世事波上舟，沿洄安得住。",
+  "label": "韦应物《初发扬子寄元大校书》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-187",
+  "part": 5
+ },
+ {
+  "q": "春潮带雨晚来急，野渡无人舟自横。",
+  "label": "韦应物《滁州西涧》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-135",
+  "part": 4
+ },
+ {
+  "q": "身多疾病思田里，邑有流亡愧俸钱。",
+  "label": "韦应物《寄李儋元锡》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-211",
+  "part": 5
+ },
+ {
+  "q": "落叶满空山，何处寻行迹。",
+  "label": "韦应物《寄全椒山中道士》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-192",
+  "part": 5
+ },
+ {
+  "q": "贫贱非辱，贫贱而谄求于人者为辱",
+  "label": "围炉夜话",
+  "corpus": "moulue",
+  "slug": "weiluyehua",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-17"
+ },
+ {
+  "q": "富贵非荣，富贵而利济于世者为荣",
+  "label": "围炉夜话",
+  "corpus": "moulue",
+  "slug": "weiluyehua",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-18"
+ },
+ {
+  "q": "须使人不忍欺我，勿使人不敢欺我",
+  "label": "围炉夜话",
+  "corpus": "moulue",
+  "slug": "weiluyehua",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-62",
+  "part": 2
+ },
+ {
+  "q": "教子弟求显荣，不如教子弟立品行",
+  "label": "围炉夜话",
+  "corpus": "moulue",
+  "slug": "weiluyehua",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-169",
+  "part": 5
+ },
+ {
+  "q": "敬他人，即是敬自己。靠自己，胜于靠他人",
+  "label": "围炉夜话",
+  "corpus": "moulue",
+  "slug": "weiluyehua",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-160",
+  "part": 5
+ },
+ {
+  "q": "博学笃志，切问近思，此八字，是收放心的工夫",
+  "label": "围炉夜话",
+  "corpus": "moulue",
+  "slug": "weiluyehua",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-2"
+ },
+ {
+  "q": "神闲气静，智深勇沉，此八字，是干大事的本领",
+  "label": "围炉夜话",
+  "corpus": "moulue",
+  "slug": "weiluyehua",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-3"
+ },
+ {
+  "q": "不必于世事件件皆能，惟求与古人心心相印",
+  "label": "围炉夜话",
+  "corpus": "moulue",
+  "slug": "weiluyehua",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-9"
+ },
+ {
+  "q": "打算精明，自谓得计，然败祖父之家声者，必此人也",
+  "label": "围炉夜话",
+  "corpus": "moulue",
+  "slug": "weiluyehua",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-54",
+  "part": 2
+ },
+ {
+  "q": "朴实浑厚，初无甚奇，然培子孙之元气者，必此人也",
+  "label": "围炉夜话",
+  "corpus": "moulue",
+  "slug": "weiluyehua",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-55",
+  "part": 2
+ },
+ {
   "q": "示有妻子常修梵行",
   "label": "维摩诘经·方便品",
   "corpus": "fo",
@@ -4759,6 +8188,77 @@
   "ch": 1,
   "from": "wuwei",
   "cited": 1
+ },
+ {
+  "q": "花开堪折直须折，莫待无花空折枝。",
+  "label": "无名氏《金缕衣》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-273",
+  "part": 7
+ },
+ {
+  "q": "听风听雨过清明，愁草瘗花铭。",
+  "label": "吴文英《风入松》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 234,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-234-0"
+ },
+ {
+  "q": "黄蜂频扑秋千索，有当时纤手香凝。",
+  "label": "吴文英《风入松》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 234,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-234-4"
+ },
+ {
+  "q": "东风临夜冷于秋",
+  "label": "吴文英《浣溪沙》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 228,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-228-1"
+ },
+ {
+  "q": "落絮无声春堕泪，行云有影月含羞",
+  "label": "吴文英《浣溪沙》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 228,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-228-1"
+ },
+ {
+  "q": "离人心上秋，纵芭蕉、不雨也飕飕。",
+  "label": "吴文英《唐多令》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 246,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-246-1"
+ },
+ {
+  "q": "都道晚凉天气好，有明月、怕登楼。",
+  "label": "吴文英《唐多令》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 246,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-246-2"
  },
  {
   "q": "必内修文德，外治武备",
@@ -4941,6 +8441,307 @@
   "cited": 1
  },
  {
+  "q": "花看半开，酒饮微醉。",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 9,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-9-17"
+ },
+ {
+  "q": "才以气雄，品由心定。",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 10,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-10-56",
+  "part": 2
+ },
+ {
+  "q": "宁为真士夫，不为假道学",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-8"
+ },
+ {
+  "q": "填不满贪海，攻不破疑城。",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-18"
+ },
+ {
+  "q": "伏久者，飞必高；开先者，谢独早。",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-36"
+ },
+ {
+  "q": "闭门即是深山，读书随处净土。",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-71",
+  "part": 2
+ },
+ {
+  "q": "理之所必无，安知非情之所或有？",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-1"
+ },
+ {
+  "q": "宇宙内事，要力担当，又要善摆脱",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-37"
+ },
+ {
+  "q": "观山水亦如读书，随其见趣高下。",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-75",
+  "part": 2
+ },
+ {
+  "q": "枕边梦去心亦去，醒后梦还心不还",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-12"
+ },
+ {
+  "q": "事遇快意处当转，言遇快意处当住。",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-2"
+ },
+ {
+  "q": "逢人不说人间事，便是人间无事人。",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-96",
+  "part": 3
+ },
+ {
+  "q": "大豪杰，舍己为人，小丈夫，因人利己。",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 8,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-8-20"
+ },
+ {
+  "q": "不恨我不见古人，惟恨古人不见我。",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 10,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-10-30"
+ },
+ {
+  "q": "敢于世上放开眼，不向人间浪皱眉。",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 10,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-10-77",
+  "part": 2
+ },
+ {
+  "q": "一心可以交万友，二心不可以交一友。",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 11,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-11-1"
+ },
+ {
+  "q": "支笻散步，觉数十年尘土肺肠，俱为洗净。",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-47",
+  "part": 2
+ },
+ {
+  "q": "野花艳目，不必牡丹；村酒醉人，何须绿蚁。",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 9,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-9-22"
+ },
+ {
+  "q": "立身高一步方超达，处世退一步方安乐。",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 11,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-11-21"
+ },
+ {
+  "q": "人之恩可念不可忘，人之仇可忘不可念。",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 11,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-11-74",
+  "part": 2
+ },
+ {
+  "q": "山以虚而受，水以实而流，读书当作如是观。",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-91",
+  "part": 3
+ },
+ {
+  "q": "纸窗竹屋，夏葛冬裘，饭后黑甜，日中白醉，足矣！",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 12,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-12-6"
+ },
+ {
+  "q": "士人有百折不回之真心，才有万变不穷之妙用",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-30"
+ },
+ {
+  "q": "凡名易居，只有清名难居；凡福易享，只有清福难享。",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-142",
+  "part": 4
+ },
+ {
+  "q": "松间明月，槛外青山，未常拒人，而人人自拒者何哉？",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-0"
+ },
+ {
+  "q": "一段世情，全凭冷眼觑破；几番幽趣，半从热肠换来。",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 8,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-8-21"
+ },
+ {
+  "q": "千载奇逢，无如好书良友；一生清福，只在茗碗炉烟。",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 8,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-8-40",
+  "part": 2
+ },
+ {
+  "q": "鄙吝一消，白云亦可赠客；渣滓尽化，明月亦来照人。",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 12,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-12-32"
+ },
+ {
+  "q": "山居有四法：树无行次，石无位置，屋无宏肆，心无机事。",
+  "label": "小窗幽记",
+  "corpus": "moulue",
+  "slug": "xiaochuangyouji",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-53",
+  "part": 2
+ },
+ {
   "q": "夫孝，德之本也，教之所由生也",
   "label": "孝经·开宗明义",
   "corpus": "ru",
@@ -5040,6 +8841,116 @@
   "cited": 1
  },
  {
+  "q": "更能消几番风雨，匆匆春又归去。",
+  "label": "辛弃疾《摸鱼儿》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 175,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-175-1"
+ },
+ {
+  "q": "休去倚危阑，斜阳正在，烟柳断肠处。",
+  "label": "辛弃疾《摸鱼儿》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 175,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-175-12"
+ },
+ {
+  "q": "青山遮不住，毕竟江流去。",
+  "label": "辛弃疾《菩萨蛮》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 181,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-181-3"
+ },
+ {
+  "q": "郁孤台下清江水，中间多少行人泪。",
+  "label": "辛弃疾《菩萨蛮》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 181,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-181-1"
+ },
+ {
+  "q": "东风夜放花千树，更吹落、星如雨。",
+  "label": "辛弃疾《青玉案》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 179,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-179-1"
+ },
+ {
+  "q": "众里寻他千百度；蓦然回首，那人却在，灯火阑珊处。",
+  "label": "辛弃疾《青玉案》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 179,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-179-4"
+ },
+ {
+  "q": "楚天千里清秋，水随天去秋无际。",
+  "label": "辛弃疾《水龙吟》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 174,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-174-1"
+ },
+ {
+  "q": "倩何人唤取，红巾翠袖。揾英雄泪？",
+  "label": "辛弃疾《水龙吟》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 174,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-174-0"
+ },
+ {
+  "q": "凭谁问，廉颇老矣，尚能饭否？",
+  "label": "辛弃疾《永遇乐》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 176,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-176-8"
+ },
+ {
+  "q": "想当年，金戈铁马，气吞万里如虎。",
+  "label": "辛弃疾《永遇乐》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 176,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-176-4"
+ },
+ {
+  "q": "是他春带愁来，春归何处？",
+  "label": "辛弃疾《祝英台近》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 178,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-178-5"
+ },
+ {
   "q": "至道无难  唯嫌拣择",
   "label": "信心铭",
   "corpus": "fo",
@@ -5076,6 +8987,26 @@
   "cited": 1
  },
  {
+  "q": "平生不会相思，才会相思，便害相思。",
+  "label": "徐再思《折桂令·春情》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 70,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-70-0"
+ },
+ {
+  "q": "证候来时，正是何时？灯半昏时，月半明时。",
+  "label": "徐再思《折桂令·春情》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 70,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-70-0"
+ },
+ {
   "q": "君子养心莫善于诚",
   "label": "荀子·不苟篇",
   "corpus": "ru",
@@ -5109,6 +9040,24 @@
   "slug": "xunzi",
   "ch": 27,
   "from": "xuesi",
+  "cited": 1
+ },
+ {
+  "q": "略法先王而不知其统，犹然而材剧志大，闻见杂博",
+  "label": "荀子·非十二子篇",
+  "corpus": "ru",
+  "slug": "xunzi",
+  "ch": 6,
+  "from": "faxianwang",
+  "cited": 1
+ },
+ {
+  "q": "古今一度也。类不悖，虽久同理",
+  "label": "荀子·非相篇",
+  "corpus": "ru",
+  "slug": "xunzi",
+  "ch": 5,
+  "from": "faxianwang",
   "cited": 1
  },
  {
@@ -5229,6 +9178,15 @@
   "cited": 1
  },
  {
+  "q": "法者、治之端也；君子者、法之原也",
+  "label": "荀子·君道",
+  "corpus": "ru",
+  "slug": "xunzi",
+  "ch": 12,
+  "from": "junzikeshi",
+  "cited": 1
+ },
+ {
   "q": "公道达而私门塞矣，公义明而私事息矣",
   "label": "荀子·君道",
   "corpus": "ru",
@@ -5253,6 +9211,15 @@
   "slug": "xunzi",
   "ch": 12,
   "from": "luanqi",
+  "cited": 1
+ },
+ {
+  "q": "故法不能独立，类不能自行；得其人则存，失其人则亡",
+  "label": "荀子·君道",
+  "corpus": "ru",
+  "slug": "xunzi",
+  "ch": 12,
+  "from": "junzikeshi",
   "cited": 1
  },
  {
@@ -5343,15 +9310,6 @@
   "slug": "xunzi",
   "ch": 19,
   "from": "kongyou",
-  "cited": 1
- },
- {
-  "q": "君子生非异也，善假于物也",
-  "label": "荀子·劝学",
-  "corpus": "ru",
-  "slug": "xunzi",
-  "ch": 1,
-  "from": "xuesi",
   "cited": 1
  },
  {
@@ -5523,6 +9481,15 @@
   "slug": "xunzi",
   "ch": 17,
   "from": "bushi",
+  "cited": 1
+ },
+ {
+  "q": "禹以治，桀以乱；治乱非时也",
+  "label": "荀子·天论",
+  "corpus": "ru",
+  "slug": "xunzi",
+  "ch": 17,
+  "from": "shishi",
   "cited": 1
  },
  {
@@ -5778,6 +9745,24 @@
   "cited": 1
  },
  {
+  "q": "故君子博学、深谋、修身、端行以俟其时",
+  "label": "荀子·宥坐",
+  "corpus": "ru",
+  "slug": "xunzi",
+  "ch": 28,
+  "from": "shishi",
+  "cited": 1
+ },
+ {
+  "q": "夫贤不肖者，材也；为不为者，人也；遇不遇者，时也",
+  "label": "荀子·宥坐",
+  "corpus": "ru",
+  "slug": "xunzi",
+  "ch": 28,
+  "from": "shishi",
+  "cited": 1
+ },
+ {
   "q": "一物失称，乱之端也",
   "label": "荀子·正论",
   "corpus": "ru",
@@ -5922,6 +9907,156 @@
   "cited": 1
  },
  {
+  "q": "宁可少活十年，休得一日无权，大丈夫时乖命蹇。",
+  "label": "严忠济《天净沙》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 10,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-10-2"
+ },
+ {
+  "q": "去年春恨却来时，落花人独立，微雨燕双飞。",
+  "label": "晏几道《临江仙》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 48,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-48-1"
+ },
+ {
+  "q": "琵琶弦上说相思，当时明月在，曾照彩云归。",
+  "label": "晏几道《临江仙》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 48,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-48-3"
+ },
+ {
+  "q": "梦魂纵有也成虚，那堪和梦无。",
+  "label": "晏几道《阮郎归》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 56,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-56-3"
+ },
+ {
+  "q": "两鬓可怜青，只为相思老。",
+  "label": "晏几道《生查子》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 52,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-52-1"
+ },
+ {
+  "q": "舞低杨柳楼心月，歌尽桃花扇底风。",
+  "label": "晏几道《鹧鸪天》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 51,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-51-1"
+ },
+ {
+  "q": "今宵剩把银釭照，犹恐相逢是梦中。",
+  "label": "晏几道《鹧鸪天》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 51,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-51-3"
+ },
+ {
+  "q": "一曲新词酒一杯，去年天气旧池台，夕阳西下几时回？",
+  "label": "晏殊《浣溪沙》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 11,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-11-0"
+ },
+ {
+  "q": "无可奈何花落去，似曾相识燕归来，小园香径独徘徊。",
+  "label": "晏殊《浣溪沙》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 11,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-11-1"
+ },
+ {
+  "q": "满目山河空念远，落花风雨更伤春，不如怜取眼前人。",
+  "label": "晏殊《浣溪沙》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 12,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-12-1"
+ },
+ {
+  "q": "无情不似多情苦，一寸还成千万缕。",
+  "label": "晏殊《木兰花》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 17,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-17-2"
+ },
+ {
+  "q": "天涯地角有穷时，只有相思无尽处。",
+  "label": "晏殊《木兰花》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 17,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-17-3"
+ },
+ {
+  "q": "寄与不寄间，妾身千万难！",
+  "label": "姚燧《凭阑人·寄征衣》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 50,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-50-2"
+ },
+ {
+  "q": "欲寄君衣君不还，不寄君衣君又寒。",
+  "label": "姚燧《凭阑人·寄征衣》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 50,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-50-2"
+ },
+ {
+  "q": "十年燕月歌声，几点吴霜鬓影。",
+  "label": "姚燧《醉高歌·感怀》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 51,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-51-2"
+ },
+ {
   "q": "三石，实也；九石，名也",
   "label": "尹文子·大道上",
   "corpus": "fa",
@@ -5949,6 +10084,76 @@
   "cited": 1
  },
  {
+  "q": "一春长费买花钱，日日醉湖边。",
+  "label": "俞国宝《风入松》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 202,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-202-0"
+ },
+ {
+  "q": "梅残玉靥香犹在，柳破金梢眼未开，东风和气满楼台。",
+  "label": "元好问《喜春来·春宴》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-3"
+ },
+ {
+  "q": "骤雨过，珍珠乱糁，打遍新荷。",
+  "label": "元好问《骤雨打新荷》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-1"
+ },
+ {
+  "q": "诚知此恨人人有，贫贱夫妻百事哀。",
+  "label": "元稹《遣悲怀·其二》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-9"
+ },
+ {
+  "q": "白头宫女在，闲坐说玄宗。",
+  "label": "元稹《行宫》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-2"
+ },
+ {
+  "q": "莫等闲、白了少年头，空悲切。",
+  "label": "岳飞《满江红》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 154,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-154-3"
+ },
+ {
+  "q": "三十功名尘与土，八千里路云和月。",
+  "label": "岳飞《满江红》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 154,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-154-2"
+ },
+ {
   "q": "何前倨而后卑也",
   "label": "战国策·秦策",
   "corpus": "zong",
@@ -5965,6 +10170,540 @@
   "ch": 1,
   "from": "buxiu",
   "cited": 1
+ },
+ {
+  "q": "月落乌啼霜满天，江枫渔火对愁眠。",
+  "label": "张继《枫桥夜泊》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-159",
+  "part": 4
+ },
+ {
+  "q": "岂伊地气暖，自有岁寒心。",
+  "label": "张九龄《感遇·江南有丹橘》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-246",
+  "part": 6
+ },
+ {
+  "q": "草木有本心，何求美人折。",
+  "label": "张九龄《感遇·兰叶春葳蕤》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-238",
+  "part": 6
+ },
+ {
+  "q": "海上生明月，天涯共此时。",
+  "label": "张九龄《望月怀远》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-317",
+  "part": 8
+ },
+ {
+  "q": "百年浑似醉，满怀都是春，高卧东山一片云。",
+  "label": "张可久《金字经·乐闲》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 71,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-71-0"
+ },
+ {
+  "q": "多情只有春庭月，犹为离人照落花。",
+  "label": "张泌《寄人》",
+  "corpus": "tangshi",
+  "slug": "tangshi300",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-141",
+  "part": 4
+ },
+ {
+  "q": "天不老，情难绝，心似双丝网，中有千千结。",
+  "label": "张先《千秋岁》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-4"
+ },
+ {
+  "q": "沙上并禽池上暝，云破月来花弄影。",
+  "label": "张先《天仙子》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 9,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-9-3"
+ },
+ {
+  "q": "沉恨细思，不如桃杏，犹解嫁东风。",
+  "label": "张先《一丛花》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 8,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-8-5"
+ },
+ {
+  "q": "使行人到此，忠愤气填膺，有泪如倾。",
+  "label": "张孝祥《六州歌头》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 157,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-157-10"
+ },
+ {
+  "q": "怡然心会，妙处难与君说。",
+  "label": "张孝祥《念奴娇》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 158,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-158-3"
+ },
+ {
+  "q": "素月分辉，银河共影，表里俱澄澈。",
+  "label": "张孝祥《念奴娇》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 158,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-158-2"
+ },
+ {
+  "q": "折芦花赠远，零落一身秋。",
+  "label": "张炎《八声甘州》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 265,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-265-6"
+ },
+ {
+  "q": "莫开帘，怕见飞花，怕听啼鹃。",
+  "label": "张炎《高阳台》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 263,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-263-10"
+ },
+ {
+  "q": "写不成书，只寄得相思一点。",
+  "label": "张炎《解连环》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 266,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-266-3"
+ },
+ {
+  "q": "骊山四顾，阿房一炬，当时奢侈今何处？",
+  "label": "张养浩《山坡羊·骊山怀古》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 68,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-68-0"
+ },
+ {
+  "q": "列国周齐秦汉楚。赢，都变做了土；输，都变做了土。",
+  "label": "张养浩《山坡羊·骊山怀古》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 68,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-68-0"
+ },
+ {
+  "q": "兴，百姓苦；亡，百姓苦。",
+  "label": "张养浩《山坡羊·潼关怀古》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 67,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-67-2"
+ },
+ {
+  "q": "峰峦如聚，波涛如怒，山河表里潼关路。",
+  "label": "张养浩《山坡羊·潼关怀古》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 67,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-67-0"
+ },
+ {
+  "q": "旧游无处不堪寻，无寻处，惟有少年心。",
+  "label": "章良能《小重山》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 199,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-199-4"
+ },
+ {
+  "q": "成康之隆也，刑措四十余年而不用",
+  "label": "长短经·霸图十七",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-1"
+ },
+ {
+  "q": "壮士不死则已，死则举大名。侯王将相，宁有种乎？",
+  "label": "长短经·霸图十七",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-4"
+ },
+ {
+  "q": "虽屈于一人之下，则申于万人之上，唯贤人而后能为之。",
+  "label": "长短经·霸图十七",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 5,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-5-1"
+ },
+ {
+  "q": "所贵圣人之理者，不贵其独治，贵其能与众共治也。",
+  "label": "长短经·卑政三三",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 9,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-9-105",
+  "part": 3
+ },
+ {
+  "q": "是知圣人之用兵也，非好乐之，将以诛暴讨乱。",
+  "label": "长短经·出军四一",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 10,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-10-5"
+ },
+ {
+  "q": "将不知兵，以其主与敌也；君不择将，以其国与敌也。",
+  "label": "长短经·出军四一",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 10,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-10-6"
+ },
+ {
+  "q": "亡国之主似智，亡国之臣似忠",
+  "label": "长短经·大体第一",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-28"
+ },
+ {
+  "q": "以言信行，失之宰予；以貌度性，失之子羽",
+  "label": "长短经·大体第一",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-120",
+  "part": 2
+ },
+ {
+  "q": "巧诈不如拙诚。",
+  "label": "长短经·反经十三",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-104"
+ },
+ {
+  "q": "故仁者，所以博施于物，亦所以生偏私。",
+  "label": "长短经·反经十三",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-3"
+ },
+ {
+  "q": "臣闻三代之亡，非法亡也；御法者，非其人矣。",
+  "label": "长短经·反经十三",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 4,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-4-2"
+ },
+ {
+  "q": "然而战胜者，以丧礼处之。将军缟素，请罪于君。",
+  "label": "长短经·还师六四",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 10,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-10-213",
+  "part": 5
+ },
+ {
+  "q": "观物之智，而为反身之察，则能恕而自鉴",
+  "label": "长短经·昏智三二",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 9,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-9-97",
+  "part": 3
+ },
+ {
+  "q": "利人者，天下启之；害人者，天下闭之。",
+  "label": "长短经·惧戒二十",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 8,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-8-2"
+ },
+ {
+  "q": "野兽尽而猎狗烹，敌国破而谋臣亡。",
+  "label": "长短经·惧戒二十",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 8,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-8-26"
+ },
+ {
+  "q": "天下者，非一人之天下也，天下之天下也。",
+  "label": "长短经·惧戒二十",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 8,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-8-76"
+ },
+ {
+  "q": "仁莫大于爱人，智莫大于知人。",
+  "label": "长短经·君德第九",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-102"
+ },
+ {
+  "q": "理国之本，刑与德也。二者相须而行，相待而成也。",
+  "label": "长短经·君德第九",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-11"
+ },
+ {
+  "q": "凡人之道，心欲小，志欲大，智欲圆，行欲方，能欲多，事欲少。",
+  "label": "长短经·君德第九",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 3,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-3-203",
+  "part": 3
+ },
+ {
+  "q": "帝者与师处，王者与友处，霸者与臣处，亡国与厮役处。",
+  "label": "长短经·论士第七",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 2,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-2-126",
+  "part": 3
+ },
+ {
+  "q": "宁为鸡口，无为牛后。",
+  "label": "长短经·七雄略十八",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-17"
+ },
+ {
+  "q": "积羽沉舟，群轻折轴，众口铄金。",
+  "label": "长短经·七雄略十八",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-28"
+ },
+ {
+  "q": "古之善制事者，转祸而为福，因败而为功。",
+  "label": "长短经·七雄略十八",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 6,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-6-8"
+ },
+ {
+  "q": "智者之虑，必杂于利害",
+  "label": "长短经·三国权十九",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-1"
+ },
+ {
+  "q": "地利不如人和，在德不在险",
+  "label": "长短经·三国权十九",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-76",
+  "part": 2
+ },
+ {
+  "q": "为国之本，唯道义而已，君若不修德，舟中之人尽敌国也",
+  "label": "长短经·三国权十九",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 7,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-7-112",
+  "part": 2
+ },
+ {
+  "q": "匠成舆者，忧人不贵；作箭者，恐人不伤。",
+  "label": "长短经·序",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-1"
+ },
+ {
+  "q": "三代不同礼，五霸不同法，非其相反，盖以救弊也。",
+  "label": "长短经·序",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-2"
+ },
+ {
+  "q": "管子曰：「圣人能辅时，不能违时。智者善谋，不如当时。」",
+  "label": "长短经·序",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-2"
+ },
+ {
+  "q": "夫命之在德，则吉凶祸福不由天也",
+  "label": "长短经·运命二九",
+  "corpus": "moulue",
+  "slug": "changduanjing",
+  "ch": 9,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-9-76",
+  "part": 2
+ },
+ {
+  "q": "天遥地远，万水千山，知他故宫何处？",
+  "label": "赵佶《宴山亭·北行见杏花》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 1,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-1-0"
+ },
+ {
+  "q": "断送一生憔悴，只消几个黄昏？",
+  "label": "赵令畤《清平乐》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 83,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-83-3"
  },
  {
   "q": "诚则明矣；明则诚矣",
@@ -6057,6 +10796,66 @@
   "cited": 1
  },
  {
+  "q": "执手霜风吹鬓影，去意徊徨，别语愁难听。",
+  "label": "周邦彦《蝶恋花》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 108,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-108-2"
+ },
+ {
+  "q": "柳阴直，烟里丝丝弄碧。",
+  "label": "周邦彦《兰陵王》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 99,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-99-0"
+ },
+ {
+  "q": "登临望故国，谁识、京华倦客。",
+  "label": "周邦彦《兰陵王》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 99,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-99-2"
+ },
+ {
+  "q": "且莫思身外，长近樽前。",
+  "label": "周邦彦《满庭芳》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 103,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-103-6"
+ },
+ {
+  "q": "风老莺雏，雨肥梅子，午阴嘉树清圆。",
+  "label": "周邦彦《满庭芳》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 103,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-103-1"
+ },
+ {
+  "q": "最关情、折尽梅花，难寄相思。",
+  "label": "周密《高阳台》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 255,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-255-8"
+ },
+ {
   "q": "拟之而后言，议之而后动",
   "label": "周易·系辞上",
   "corpus": "yijing",
@@ -6091,6 +10890,36 @@
   "ch": 5,
   "from": "tonglei",
   "cited": 1
+ },
+ {
+  "q": "梧桐叶上三更雨，叶叶声声是别离。",
+  "label": "周紫芝《鹧鸪天》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 142,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-142-1"
+ },
+ {
+  "q": "寄语东阳沽酒市，拚一醉，而今乐事他年泪。",
+  "label": "朱服《渔家傲》",
+  "corpus": "songci",
+  "slug": "songci300",
+  "ch": 89,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-89-4"
+ },
+ {
+  "q": "倚篷窗一身儿活受苦，恨不得随大江东去。",
+  "label": "珠帘秀《寿阳曲·答卢疏斋》",
+  "corpus": "yuanqu",
+  "slug": "yuanqu",
+  "ch": 49,
+  "from": null,
+  "cited": 1,
+  "hash": "seg-49-3"
  },
  {
   "q": "夫道，有情有信，无为无形",
@@ -6450,6 +11279,15 @@
   "slug": "zhuangzi-waipian",
   "ch": 3,
   "from": "shengzhi",
+  "cited": 1
+ },
+ {
+  "q": "能尊生者，虽贵富不以养伤身，虽贫贱不以利累形",
+  "label": "庄子·让王",
+  "corpus": "dao",
+  "slug": "zhuangzi-zapian",
+  "ch": 6,
+  "from": "shesheng",
   "cited": 1
  },
  {
