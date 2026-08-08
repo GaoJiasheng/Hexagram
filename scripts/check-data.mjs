@@ -913,6 +913,52 @@ if (fs.existsSync(glossaryPath)) {
   if (!nOrd) infos.push('导读「第 N 篇〈名〉」序号自核: 全数相符')
 }
 
+// ---------- 7b5. 全层覆盖审计:哪一部书缺哪一层 ----------
+// 加书要补的层是固定的(原文/译文/注疏/延伸/白话/书级导读/篇幅档),但**漏补不会报错**
+// ——数据缺了页面就少一块,静悄悄的。已经这么漏过两次:
+//   ① 悟真篇的 332 条注疏因 daoAnchored 漏登记而从未渲染(2026-08-08 才发现);
+//   ② 道藏修心三种装配完译文后**忘了 re-run fetch-dao**,译文躺在 authored 里没并进 classics,
+//      三本书的译文开关点开是空的(同日发现)。第 ② 类正是本节要挡的。
+// 缺层一律**软警告**(owner 明确不做的除外),不拦构建。
+{
+  const SKIP = new Set(['zhongyi/nanjing'])   // owner 定不铺白话
+  const missing = []
+  for (const d of fs.readdirSync(path.join(ROOT, 'src/data'), { withFileTypes: true })) {
+    if (!d.isDirectory()) continue
+    const tf = path.join(ROOT, `src/data/${d.name}/texts.json`)
+    if (!fs.existsSync(tf)) continue
+    const yanyi = (() => {
+      const p = path.join(ROOT, `src/data/${d.name}/yanyi.json`)
+      return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, 'utf8')) : {}
+    })()
+    for (const b of JSON.parse(fs.readFileSync(tf, 'utf8'))) {
+      const key = `${d.name}/${b.slug}`
+      const cf = path.join(ROOT, `src/data/${d.name}/classics/${b.slug}.json`)
+      if (!fs.existsSync(cf)) { missing.push(`${key}: 无原文`); continue }
+      if (b.status !== 'done') continue        // 尚未做完的书不算缺
+      const chs = JSON.parse(fs.readFileSync(cf, 'utf8')).chapters || []
+      const nPara = chs.reduce((a, c) => a + c.paragraphs.length, 0)
+      const nTr = chs.reduce((a, c) => a + c.paragraphs.filter((p) => p.translation).length, 0)
+      const gaps = []
+      // 译文比例低多半意味着「装配了但忘了 re-run fetch-dao / fetch-corpus」
+      if (!nTr) gaps.push('无译文(装配后是否忘了重跑 fetch-dao / fetch-corpus?)')
+      else if (nTr < nPara * 0.5) gaps.push(`译文仅 ${nTr}/${nPara}`)
+      for (const [name, p] of [
+        ['注疏', `src/data/${d.name}/zhushi-anchored/${b.slug}.json`],
+        ['白话', `src/data/${d.name}/baihua/${b.slug}.json`],
+        ['书级导读', `src/data/${d.name}/daodu/${b.slug}.json`],
+      ]) {
+        if (name === '白话' && SKIP.has(key)) continue
+        if (!fs.existsSync(path.join(ROOT, p))) gaps.push(`无${name}`)
+      }
+      if (!yanyi[b.slug]) gaps.push('无延伸')
+      if (gaps.length) missing.push(`${key}: ${gaps.join(' · ')}`)
+    }
+  }
+  for (const m of missing) warn(`层缺口 ${m}`)
+  infos.push(`全层覆盖: ${missing.length ? `${missing.length} 部有缺(见上方警告)` : '每部书原文/译文/注疏/延伸/白话/导读齐备'}`)
+}
+
 // ---------- 7c. 诸子拓扑图 ----------
 // 图的价值全在「每根线都点得开、看得到出处」——引文一旦不是站内原文,整张图就是编的。
 // 故引文逐字校验(同 debate cite),校验池收窄到该 cite 所指的那一章:跨章拼接即判错。
