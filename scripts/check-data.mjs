@@ -831,6 +831,88 @@ if (fs.existsSync(glossaryPath)) {
   if (nSchool) infos.push(`家级导读: ${nSchool}/${Object.keys(FLOOR).length} 篇 · ${nBad} 坏引文`)
 }
 
+// ---------- 7b4. 导读里的「第 N 篇〈名〉」序号自核 ----------
+// 机器校验一向只管「引文是不是原文子串」,管不了**事实性主张**。2026-08-08 人读逮到
+// 《坐忘论》导读把「七条的序数」与「章号」混为一谈(底本小序占第 1 章,故章号比条序大一位),
+// 同一篇里自相矛盾了六处;顺着这条线还在《定观经》导读里查出同一个错。
+//
+// 可机器化的正是这一小类:**序数后面紧跟着一个真实章题**时,该序数是可核的。
+// 判据放宽到两种数法皆可(章号 or 不计序言的条序),**只在两种都对不上时才报**——
+// 故噪声极低(全站 349 处「第 N 单位」候选,只有真错的那一处会响)。
+// 单位词决定按哪种数法:章/篇/卷/首/品/分 → 章号;条/则 → 条序(不计小序)。
+{
+  const CN = { 一: 1, 二: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10 }
+  const num = (s) => {
+    if (/^\d+$/.test(s)) return Number(s)
+    if (s === '十') return 10
+    if (s.length === 2 && s[0] === '十') return 10 + (CN[s[1]] || 0)
+    if (s.length === 2 && s[1] === '十') return (CN[s[0]] || 0) * 10
+    if (s.length === 3 && s[1] === '十') return (CN[s[0]] || 0) * 10 + (CN[s[2]] || 0)
+    return CN[s]
+  }
+  const PRE = /^(小?序|序[言文]?|前言|自序|题解)$/
+  // ⚠️ **选本要排除**:站内是从原书里挑了若干篇,站内章号与原书篇次本就不同
+  // ——灵枢《本神》在原书是第八篇、在站内选目里是第 2 章,导读说「第八篇」是对的。
+  const PICKED = new Set(['zhongyi/suwen', 'zhongyi/lingshu', 'zong/zhanguoce', 'yuanqu/yuanqu'])
+  // corpus → [{slug, byTitle: Map<章题, {no, ord}>}];ord = 不计序言的序号
+  const idx = {}
+  for (const d of fs.readdirSync(path.join(ROOT, 'src/data'), { withFileTypes: true })) {
+    if (!d.isDirectory()) continue
+    const dir = path.join(ROOT, `src/data/${d.name}/classics`)
+    if (!fs.existsSync(dir)) continue
+    idx[d.name] = []
+    for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.json'))) {
+      const bslug = f.replace(/\.json$/, '')
+      if (PICKED.has(`${d.name}/${bslug}`)) continue
+      const chs = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')).chapters || []
+      const titled = chs.filter((c) => c.title && !PRE.test(c.title))
+      const byTitle = new Map()
+      for (const c of chs) {
+        const t = (c.title || '').trim()
+        if (!t || byTitle.has(t)) continue
+        const o = titled.indexOf(c)
+        byTitle.set(t, { no: c.no, ord: o >= 0 ? o + 1 : null })
+      }
+      idx[d.name].push({ slug: bslug, byTitle })
+    }
+  }
+  const PAT = /第([一二三四五六七八九十百\d]+)(章|篇|卷|首|条|则|品|分)[〈《「【]?([^〉》」】，。；、（()]{2,10})?/g
+  let nOrd = 0
+  const scan = (label, corpus, txt) => {
+    for (const m of txt.matchAll(PAT)) {
+      const n = num(m[1]); const unit = m[2]
+      const name = (m[3] || '').replace(/[*〉》」】]/g, '').trim()
+      if (!n || !name) continue
+      for (const b of idx[corpus] || []) {
+        let done = false
+        for (const [t, { no, ord }] of b.byTitle) {
+          if (t.length < 2 || !name.startsWith(t)) continue
+          const want = '章篇卷首品分'.includes(unit) ? no : (ord ?? no)
+          if (n !== want) {
+            nOrd++
+            err(`${label}: 「第${m[1]}${unit}${t}」序号对不上 —— ${b.slug}《${t}》是第 ${no} 章` +
+              (ord && ord !== no ? `(不计序言则为第 ${ord})` : ''))
+          }
+          done = true; break
+        }
+        if (done) break
+      }
+    }
+  }
+  for (const d of fs.readdirSync(path.join(ROOT, 'src/data'), { withFileTypes: true })) {
+    if (!d.isDirectory()) continue
+    const dd = path.join(ROOT, `src/data/${d.name}/daodu`)
+    if (fs.existsSync(dd)) {
+      for (const f of fs.readdirSync(dd).filter((x) => x.endsWith('.json'))) {
+        scan(`daodu ${f.replace(/\.json$/, '')}`, d.name, fs.readFileSync(path.join(dd, f), 'utf8'))
+      }
+    }
+    const sf = path.join(ROOT, `src/data/${d.name}/school.json`)
+    if (fs.existsSync(sf)) scan(`school ${d.name}`, d.name, fs.readFileSync(sf, 'utf8'))
+  }
+  if (!nOrd) infos.push('导读「第 N 篇〈名〉」序号自核: 全数相符')
+}
+
 // ---------- 7c. 诸子拓扑图 ----------
 // 图的价值全在「每根线都点得开、看得到出处」——引文一旦不是站内原文,整张图就是编的。
 // 故引文逐字校验(同 debate cite),校验池收窄到该 cite 所指的那一章:跨章拼接即判错。
