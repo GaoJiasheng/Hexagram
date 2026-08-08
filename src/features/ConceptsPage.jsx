@@ -21,7 +21,11 @@ export default function ConceptsPage() {
 
       <div className="concepts-list">
         {concepts.clusters.map((c) => {
-          const debate = DEBATES.find((t) => t.concept === c.term)
+          // 概念名与辩题的 concept 同名即自动挂链;名字不同但确指同一题的,
+          // 由聚类显式写 debate: '<辩题 id>'(如「心与静」↔ 工夫入手)。
+          const debate = c.debate
+            ? DEBATES.find((t) => t.id === c.debate)
+            : DEBATES.find((t) => t.concept === c.term)
           return (
           <section key={c.term} className="concept-card">
             <h2 className="concept-card__term">{c.term}{debate && <Link to={`/debates/${debate.id}`} className="concept-card__debate">→ 入争鸣</Link>}</h2>

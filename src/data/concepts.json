@@ -1,51 +1,249 @@
 {
-  "_note": "义理概念互见(#141/B2)——跨派核心概念聚类,每聚类列各书代表性章节(loci)。所有 locus 均经原文 grep 验证含该概念。一表喂三处:章末「义理互见」see-also(已用)、后续术语表(#151)、义理专题(#150)。loci.ch 对应阅读路由的章号(c.no)。新增聚类务必 grep 确认目标章确含该概念,且取该书该概念最经典之篇。",
-  "clusters": [
+ "_note": "义理概念互见(#141/B2)——跨派核心概念聚类,每聚类列各书代表性章节(loci)。所有 locus 均经原文 grep 验证含该概念。一表喂三处:章末「义理互见」see-also(已用)、后续术语表(#151)、义理专题(#150)。loci.ch 对应阅读路由的章号(c.no)。新增聚类务必 grep 确认目标章确含该概念,且取该书该概念最经典之篇。",
+ "clusters": [
+  {
+   "term": "人性之辨",
+   "gloss": "性善(孟子)、性恶(荀子)、良知即性(阳明)——先秦至宋明对人性善恶的三种判教。",
+   "loci": [
     {
-      "term": "人性之辨",
-      "gloss": "性善(孟子)、性恶(荀子)、良知即性(阳明)——先秦至宋明对人性善恶的三种判教。",
-      "loci": [
-        { "corpus": "ru", "slug": "mengzi", "ch": 11, "label": "孟子·告子上" },
-        { "corpus": "ru", "slug": "xunzi", "ch": 23, "label": "荀子·性恶篇" },
-        { "corpus": "xin", "slug": "chuanxilu", "ch": 2, "label": "传习录·卷中" }
-      ]
+     "corpus": "ru",
+     "slug": "mengzi",
+     "ch": 11,
+     "label": "孟子·告子上"
     },
     {
-      "term": "格物致知",
-      "gloss": "《大学》八条目之始。朱子主即物穷理,阳明主正心致良知,工夫入手处分歧由此。",
-      "loci": [
-        { "corpus": "ru", "slug": "daxue", "ch": 1, "label": "大学·经" },
-        { "corpus": "ru", "slug": "jinsilu", "ch": 3, "label": "近思录·致知" },
-        { "corpus": "xin", "slug": "daxuewen", "ch": 1, "label": "大学问" },
-        { "corpus": "xin", "slug": "chuanxilu", "ch": 1, "label": "传习录·卷上" }
-      ]
+     "corpus": "ru",
+     "slug": "xunzi",
+     "ch": 23,
+     "label": "荀子·性恶篇"
     },
     {
-      "term": "兼爱与仁爱",
-      "gloss": "墨家兼爱、爱无差等;儒家仁爱、亲亲有杀。孟子辟墨「无父」之讥即由此出。",
-      "loci": [
-        { "corpus": "mo", "slug": "mozi", "ch": 14, "label": "墨子·兼爱上" },
-        { "corpus": "ru", "slug": "lunyu", "ch": 12, "label": "论语·颜渊" },
-        { "corpus": "ru", "slug": "mengzi", "ch": 6, "label": "孟子·滕文公下" }
-      ]
-    },
-    {
-      "term": "无为",
-      "gloss": "道家政治与修养的枢机。老子「道常无为而无不为」,庄子言无为而治,黄老《文子》承之。",
-      "loci": [
-        { "corpus": "dao", "slug": "daodejing", "ch": 37, "label": "道德经·三十七章" },
-        { "corpus": "dao", "slug": "zhuangzi-neipian", "ch": 7, "label": "庄子·应帝王" },
-        { "corpus": "dao", "slug": "wenzi", "ch": 1, "label": "文子·卷一" }
-      ]
-    },
-    {
-      "term": "仁与四端",
-      "gloss": "孔子言仁(克己复礼、爱人),孟子推四端(恻隐为仁之端),程朱归于克己复礼。",
-      "loci": [
-        { "corpus": "ru", "slug": "lunyu", "ch": 4, "label": "论语·里仁" },
-        { "corpus": "ru", "slug": "mengzi", "ch": 3, "label": "孟子·公孙丑上" },
-        { "corpus": "ru", "slug": "jinsilu", "ch": 5, "label": "近思录·克己" }
-      ]
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 2,
+     "label": "传习录·卷中"
     }
-  ]
+   ]
+  },
+  {
+   "term": "格物致知",
+   "gloss": "《大学》八条目之始。朱子主即物穷理,阳明主正心致良知,工夫入手处分歧由此。",
+   "loci": [
+    {
+     "corpus": "ru",
+     "slug": "daxue",
+     "ch": 1,
+     "label": "大学·经"
+    },
+    {
+     "corpus": "ru",
+     "slug": "jinsilu",
+     "ch": 3,
+     "label": "近思录·致知"
+    },
+    {
+     "corpus": "xin",
+     "slug": "daxuewen",
+     "ch": 1,
+     "label": "大学问"
+    },
+    {
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 1,
+     "label": "传习录·卷上"
+    }
+   ]
+  },
+  {
+   "term": "兼爱与仁爱",
+   "gloss": "墨家兼爱、爱无差等;儒家仁爱、亲亲有杀。孟子辟墨「无父」之讥即由此出。",
+   "loci": [
+    {
+     "corpus": "mo",
+     "slug": "mozi",
+     "ch": 14,
+     "label": "墨子·兼爱上"
+    },
+    {
+     "corpus": "ru",
+     "slug": "lunyu",
+     "ch": 12,
+     "label": "论语·颜渊"
+    },
+    {
+     "corpus": "ru",
+     "slug": "mengzi",
+     "ch": 6,
+     "label": "孟子·滕文公下"
+    }
+   ]
+  },
+  {
+   "term": "无为",
+   "gloss": "道家政治与修养的枢机。老子「道常无为而无不为」,庄子言无为而治,黄老《文子》承之。",
+   "loci": [
+    {
+     "corpus": "dao",
+     "slug": "daodejing",
+     "ch": 37,
+     "label": "道德经·三十七章"
+    },
+    {
+     "corpus": "dao",
+     "slug": "zhuangzi-neipian",
+     "ch": 7,
+     "label": "庄子·应帝王"
+    },
+    {
+     "corpus": "dao",
+     "slug": "wenzi",
+     "ch": 1,
+     "label": "文子·卷一"
+    }
+   ]
+  },
+  {
+   "term": "仁与四端",
+   "gloss": "孔子言仁(克己复礼、爱人),孟子推四端(恻隐为仁之端),程朱归于克己复礼。",
+   "loci": [
+    {
+     "corpus": "ru",
+     "slug": "lunyu",
+     "ch": 4,
+     "label": "论语·里仁"
+    },
+    {
+     "corpus": "ru",
+     "slug": "mengzi",
+     "ch": 3,
+     "label": "孟子·公孙丑上"
+    },
+    {
+     "corpus": "ru",
+     "slug": "jinsilu",
+     "ch": 5,
+     "label": "近思录·克己"
+    }
+   ]
+  },
+  {
+   "term": "心之本体",
+   "gloss": "心的本来面目是什么。禅宗说本自清净、无一物可染；孟子说尽心可以知性知天；程朱说「性即理」，把根据安在性上；阳明说「心即理」，把根据收回心上。同一个「本体」，四家指的不是同一处。",
+   "loci": [
+    {
+     "corpus": "fo",
+     "slug": "tanjing",
+     "ch": 1,
+     "label": "坛经·行由品",
+     "quote": "本来无一物，何处惹尘埃"
+    },
+    {
+     "corpus": "ru",
+     "slug": "mengzi",
+     "ch": 13,
+     "label": "孟子·尽心上",
+     "quote": "尽其心者，知其性也"
+    },
+    {
+     "corpus": "ru",
+     "slug": "jinsilu",
+     "ch": 1,
+     "label": "近思录·道体",
+     "quote": "性即理也"
+    },
+    {
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 1,
+     "label": "传习录·卷上",
+     "quote": "心即理也"
+    }
+   ]
+  },
+  {
+   "term": "心与静",
+   "gloss": "三教都要人把心安下来，路子却各不相同：庄子要「虚」（心斋、坐忘），禅宗要「无念」而非死坐，僧璨说毛病出在拣择，道教说遣欲则心自静，儒家的定静从「知止」来、以敬为工夫。都讲静，落脚处不是一个。",
+   "loci": [
+    {
+     "corpus": "dao",
+     "slug": "zhuangzi-neipian",
+     "ch": 4,
+     "label": "庄子·人间世",
+     "quote": "是祭祀之斋，非心斋也"
+    },
+    {
+     "corpus": "dao",
+     "slug": "zhuangzi-neipian",
+     "ch": 6,
+     "label": "庄子·大宗师",
+     "quote": "离形去知，同于大通，此谓坐忘"
+    },
+    {
+     "corpus": "fo",
+     "slug": "tanjing",
+     "ch": 4,
+     "label": "坛经·定慧品",
+     "quote": "先立无念为宗，无相为体，无住为本"
+    },
+    {
+     "corpus": "fo",
+     "slug": "xinxinming",
+     "ch": 1,
+     "label": "信心铭",
+     "quote": "至道无难"
+    },
+    {
+     "corpus": "dao",
+     "slug": "qingjingjing",
+     "ch": 1,
+     "label": "清静经",
+     "quote": "人能常清静，天地悉皆归"
+    },
+    {
+     "corpus": "ru",
+     "slug": "daxue",
+     "ch": 1,
+     "label": "大学·经",
+     "quote": "知止而后有定，定而后能静"
+    },
+    {
+     "corpus": "ru",
+     "slug": "jinsilu",
+     "ch": 4,
+     "label": "近思录·存养",
+     "quote": "所谓敬者，主一之谓敬"
+    }
+   ],
+   "debate": "gongfu"
+  },
+  {
+   "term": "未发之中",
+   "gloss": "《中庸》说喜怒哀乐没发出来时叫「中」，发出来而都合节度叫「和」。这一句成了宋明理学争了几百年的题目：未发时那个「中」到底是什么、能不能体认、要不要在未发上做工夫。程颐、朱子与阳明各给了不同的答法。",
+   "loci": [
+    {
+     "corpus": "ru",
+     "slug": "zhongyong",
+     "ch": 1,
+     "label": "中庸",
+     "quote": "喜怒哀乐之未发，谓之中"
+    },
+    {
+     "corpus": "ru",
+     "slug": "jinsilu",
+     "ch": 1,
+     "label": "近思录·道体",
+     "quote": "中也者，言「寂然不动」者也"
+    },
+    {
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 2,
+     "label": "传习录·卷中",
+     "quote": "良知，心之本体，即所谓性善也"
+    }
+   ],
+   "debate": "qingyu"
+  }
+ ]
 }
