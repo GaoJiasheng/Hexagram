@@ -2,20 +2,15 @@
 // 但无 ref 机制(模块不互链,不引易经全局词表)。
 // v8:条目可带 hex/to 桥字段,解析为气泡内指向易经的单向链接——
 // 「模块不互链」的唯一例外(v4 §3.7),仅道藏侧出现。取卦名是代码层复用,不构成 UI 互链。
-import daodejing from '../../data/dao/zhushi-anchored/daodejing.json'
-import qingjingjing from '../../data/dao/zhushi-anchored/qingjingjing.json'
-import ganyingpian from '../../data/dao/zhushi-anchored/ganyingpian.json'
-import yinfujing from '../../data/dao/zhushi-anchored/yinfujing.json'
-import zhuangziNeipian from '../../data/dao/zhushi-anchored/zhuangzi-neipian.json'
-import zhuangziWaipian from '../../data/dao/zhushi-anchored/zhuangzi-waipian.json'
-import zhuangziZapian from '../../data/dao/zhushi-anchored/zhuangzi-zapian.json'
-import liezi from '../../data/dao/zhushi-anchored/liezi.json'
-import wenzi from '../../data/dao/zhushi-anchored/wenzi.json'
-import huangting from '../../data/dao/zhushi-anchored/huangting.json'
-import cantongqi from '../../data/dao/zhushi-anchored/cantongqi.json'
 import { getHexagram } from '../yijing/data.js'
 
-const BOOKS = { daodejing, qingjingjing, ganyingpian, yinfujing, 'zhuangzi-neipian': zhuangziNeipian, 'zhuangzi-waipian': zhuangziWaipian, 'zhuangzi-zapian': zhuangziZapian, liezi, wenzi, huangting, cantongqi }
+// 原先是十一条手写 import + 一张手写映射表。**加书时漏登记不报错、注疏静默不渲染**
+// ——悟真篇(Wave 7)就这么漏了一整波,332 条注疏一直没出现在页面上,直到 2026-08-08 才发现。
+// 改 glob 自动收录:目录里有什么就挂什么,加书零改动,这一类坑从此不存在。
+const MODULES = import.meta.glob('../../data/dao/zhushi-anchored/*.json', { eager: true })
+const BOOKS = Object.fromEntries(
+  Object.entries(MODULES).map(([p, m]) => [p.slice(p.lastIndexOf('/') + 1, -5), m.default ?? m]),
+)
 
 function resolve(entries) {
   if (!entries?.length) return null

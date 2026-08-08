@@ -114,6 +114,29 @@ const BOOKS = [
     continueSubHeadingRe: /^([一二三四五六七八九十百]+|又一首)$/, // 组内逐首编号是装饰性子标题,续入所属组章
     exactChapters: 6,
   },
+  // ══ 修心三种(owner 2026-08-05 点)══
+  // 道藏此前只有丹经一路(参同契/黄庭/悟真篇)与义理一路(老庄列文子),
+  // **唐代那一支「安心」的道书一部没有** —— 它们讲的是收心、去欲、止念,
+  // 与佛家禅定、儒家主敬同属心性工夫,正是站内「心与静」概念聚类缺的道家那一角。
+  //
+  // ⚠️ 三书均含工法与成仙语(天隐子有节食、坐向；定观经列「得道七候」直至「延数万岁」)。
+  // 原典照录照译是本站规矩,**注疏与延伸守道组铁律**:不宣化、不下成仙/长生断语、
+  // 不演工法(不写几时行、如何坐、如何食),只作思想史与字词训诂——同黄庭内景经的处理。
+  //
+  // 坐忘论:司马承祯撰,单页 7 个 === 小节 === + 无题小序。不设 dropPreface,
+  // 小序自成第 1 章(title null),故 8 章。
+  { slug: 'zuowanglun', title: '坐忘论', pages: ['坐忘論'], exactChapters: 8, chapterTitles: ['小序'] },
+  // 天隐子:同为司马承祯撰,8 节。页首 ==序== 是 {{:天隱子序}} 转写壳,fetch-dao 不解转写、
+  // clean 后为空章而被滤掉;chapterHeaderRe 只认八节,序不入(已在 authorNote 说明)。
+  {
+    slug: 'tianyinzi',
+    title: '天隐子',
+    pages: ['天隱子'],
+    chapterHeaderRe: /^(神仙|易简|渐门|斋戒|安处|存想|坐忘|神解)$/,
+    exactChapters: 8,
+  },
+  // 洞玄灵宝定观经:短经,单页无小节,全篇一章(末附七言颂)。
+  { slug: 'dingguanjing', title: '洞玄灵宝定观经', pages: ['洞玄靈寶定觀經'], mergeChapters: true, exactChapters: 1 },
 ]
 
 // ---------- 单页解析 ----------
@@ -218,6 +241,11 @@ async function main() {
       }))
     }
     chapters = chapters.map((c, i) => ({ no: i + 1, title: c.title, paragraphs: c.paragraphs }))
+    // chapterTitles:按序补/改章题(坐忘论首章是无题小序,源页给不出题名)。
+    // 只补空位不覆盖已有题,越界与多余项一律忽略。
+    if (book.chapterTitles) {
+      chapters.forEach((c, i) => { if (!c.title && book.chapterTitles[i]) c.title = book.chapterTitles[i] })
+    }
 
     if (book.exactChapters && chapters.length !== book.exactChapters) {
       errors.push(`${book.title}: 应恰 ${book.exactChapters} 章,实得 ${chapters.length}`)

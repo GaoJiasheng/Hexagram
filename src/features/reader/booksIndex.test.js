@@ -3,10 +3,16 @@ import { ALL_BOOKS, bookByTitle, globalBookRefs } from './booksIndex.js'
 import { linkifyBooks } from './linkifyBooks.jsx'
 
 describe('booksIndex 全站书目索引(#139 底座)', () => {
-  it('枚举全部 corpus 书 + 道藏 12 部 + 易经总目(≥56)', () => {
+  // 数量用下界不用等号:加书是常态,写死数字等于每加一本书就红一次(已因加书红过一次)。
+  // 真正要守的是「道藏这一路确实被枚举进来了」——故另点名抽查几部,加书不受影响。
+  it('枚举全部 corpus 书 + 道藏 + 易经总目', () => {
     expect(ALL_BOOKS.length).toBeGreaterThanOrEqual(56)
     expect(ALL_BOOKS.some((b) => b.corpus === 'yijing' && b.title === '易经')).toBe(true)
-    expect(ALL_BOOKS.filter((b) => b.corpus === 'dao')).toHaveLength(12)
+    const dao = ALL_BOOKS.filter((b) => b.corpus === 'dao')
+    expect(dao.length).toBeGreaterThanOrEqual(12)
+    for (const t of ['道德经', '庄子内篇', '列子', '黄庭内景经']) {
+      expect(dao.some((b) => b.title === t)).toBe(true)
+    }
   })
 
   it('书名全站唯一(自动链的前提)', () => {
