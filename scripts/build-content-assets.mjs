@@ -494,30 +494,92 @@ function indexConceptsAndDebates(records) {
   }
 }
 
-// 逐页分享卡(OG)索引:href → [标题, 副标]。
+// 逐页分享卡(OG)索引:href → [标题, 副标, 正文摘录]。
 // 复用搜索索引的同一批 records —— 标题/副标/链接本来就是同一套,另建一份必然走样。
 // 消费者是 functions/_middleware.js:只有爬虫 UA 才会读它,普通访客不受影响。
 // 只收「分享出去有意义」的页(有 subtitle 或属内容页),纯功能页不收。
+//
+// 第三项「正文摘录」是给**搜索引擎收录**用的(2026-08-08 加):
+// 本站是纯前端 SPA,爬虫拿到的 <body> 只有一个空 <div id="root">,正文要执行 JS 才出得来。
+// Google 会渲染 JS,但**百度基本不渲染**——一个中文古籍站放弃百度不合算。
+// 故中间件把这段摘录直接写进 body,让「不执行 JS 也能读到正文」。
+// 长度取 `SEO_BODY_MAX`:够表达这一章讲什么,又不至于把分片撑爆(实测约 3–4 倍)。
+const SEO_BODY_MAX = 600
+// 分片方式 2026-08-08 由「按路径首段」改为「**按整条路径哈希**」。
+// 原因:加了正文摘录后,按首段分的片涨到 1.1MB(ru/songci),
+// 而中间件每来一个爬虫就要 parse 一整片 —— 会撞 Worker 的 CPU 限额,
+// 失败后 try/catch 静默回退,**把现在好用的逐页 meta 一起弄丢**(得不偿失)。
+// 哈希分成 256 片后每片约 25KB,取一条的代价与它的价值才匹配。
+// ⚠️ 哈希函数与片数必须与 functions/_middleware.js 里那份**逐字一致**,改一处必改两处。
+const OG_SHARDS = 256
+const ogShardKey = (p) => {
+  let h = 2166136261
+  for (const ch of p) { h ^= ch.codePointAt(0); h = Math.imul(h, 16777619) }
+  return (h >>> 0) % OG_SHARDS
+}
+const normHref = (p) => (p.length > 1 ? p.replace(/\/$/, '') : p)
 function buildOgIndex(records) {
-  // 按路径首段分片(og/ru.json、og/debates.json…):中间件每次只取它要的那一片。
-  // 不分片就是单文件 500KB+,而一次爬虫请求只用得上其中一条。
   const shards = {}
   let n = 0
   for (const r of records) {
     if (!r.href || !r.title) continue
     if (r.href.includes('#')) continue          // 段锚共用整页的卡,不单列
-    const seg = r.href.split('/')[1] || '_root'
+    const href = normHref(r.href)
     // 副标常常就是站名(章页尤其),那样的卡等于没信息 —— 退回用正文开头当预览。
     const sub = (r.subtitle || '').trim()
+    const body = compact(r.text).slice(0, SEO_BODY_MAX)
     const desc = (sub && sub !== r.siteTitle ? sub : (r.text || '').trim()).slice(0, 70)
     const site = r.siteTitle && r.siteTitle !== '观象' ? ` · ${r.siteTitle}` : ''
-    ;(shards[seg] ??= {})[r.href] = [`${r.title}${site}`, desc]
+    ;(shards[ogShardKey(href)] ??= {})[href] = [`${r.title}${site}`, desc, body]
     n++
   }
-  for (const [seg, map] of Object.entries(shards)) {
-    writeJson(path.join(OUT_ROOT, 'og', `${seg}.json`), map)
+  cleanOutDir(path.join(OUT_ROOT, 'og'))
+  for (const [k, map] of Object.entries(shards)) {
+    writeJson(path.join(OUT_ROOT, 'og', `${k}.json`), map)
   }
   console.log(`og index: ${n} 条 / ${Object.keys(shards).length} 片`)
+}
+
+// ── sitemap.xml + robots.txt ────────────────────────────────────────────────
+// 没有 sitemap,五千个内容页只能靠爬虫从首页一层层摸链接,发现极慢、深页几乎摸不到。
+// 这是本站可发现性上**最便宜也最见效**的一件,数据源仍是同一批 records(不另建一份)。
+//
+// ⚠️ **观书 `/books/*` 一律不收** —— 它是隐藏入口(CLAUDE.md 明写不入公共搜索),
+// 收进 sitemap 等于亲手把它交给搜索引擎。og 索引本就不含它,这里再挡一道,
+// 因为「哪些页该公开」这件事值得写两遍。
+const SITE_ORIGIN = 'https://hexa.gavin.pub'
+function buildSitemap(records) {
+  const seen = new Set()
+  for (const r of records) {
+    if (!r.href || !r.title) continue
+    if (r.href.includes('#')) continue
+    if (r.href.startsWith('/books')) continue    // 隐藏书房,不进 sitemap
+    seen.add(r.href)
+  }
+  const urls = [...seen].sort()
+  const xml = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemap.org/schemas/sitemap/0.9">'.replace('www.sitemap.org', 'www.sitemaps.org'),
+    ...urls.map((u) => `<url><loc>${SITE_ORIGIN}${u.replace(/&/g, '&amp;')}</loc></url>`),
+    '</urlset>',
+  ].join('\n')
+  fs.writeFileSync(path.join(ROOT, 'public/sitemap.xml'), `${xml}\n`)
+
+  fs.writeFileSync(path.join(ROOT, 'public/robots.txt'), [
+    '# 观象 · https://hexa.gavin.pub',
+    '# 生成物,勿手改 —— 改 scripts/build-content-assets.mjs 的 buildSitemap()',
+    'User-agent: *',
+    'Allow: /',
+    '',
+    '# 观书是隐藏书房(个人读书笔记),不入公共搜索',
+    'Disallow: /books',
+    '# 个人足迹页与推演工作台无收录价值',
+    'Disallow: /me',
+    '',
+    `Sitemap: ${SITE_ORIGIN}/sitemap.xml`,
+  ].join('\n') + '\n')
+
+  console.log(`sitemap: ${urls.length} 条 URL(已排除 /books 隐藏书房)`)
 }
 
 cleanOutDir(OUT_BAIHUA)
@@ -536,6 +598,7 @@ buildSchoolAssets(manifest, records)
 writeJson(path.join(OUT_ROOT, 'manifest.json'), manifest)
 buildSearchAssets(records)
 buildOgIndex(records)
+buildSitemap(records)
 
 const baihuaCount = Object.values(manifest.baihua)
   .flatMap((books) => Object.values(books))

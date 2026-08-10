@@ -33,6 +33,8 @@ export default function ClassicsReadPage() {
   if (loading) return <div className="page-loading">加载中…</div>
   if (!classics) return <div className="page-content"><p className="text-faint">经传文件未找到: {book}</p></div>
 
+  // 章末牌记不传 attribution:经传无确切撰人(旧题孔子作十翼,不可坐实)。
+  // 底本由牌记里「据维基文库通行本」那句通例覆盖,不该在撰人位再重复一遍。
   return (
     <ClassicReader
       mode="paged"

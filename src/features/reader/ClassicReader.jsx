@@ -5,6 +5,7 @@ import QuoteCard from './QuoteCard.jsx'
 import { useSettings } from '../yijing/SettingsContext.jsx'
 import { FONT_SCALE_STEPS, getCorpusMarks, toggleCorpusMark, getCorpusNotes, saveCorpusNote, saveReadPos, getReadPos} from '../yijing/storage.js'
 import CommentSection from '../comments/CommentSection.jsx'
+import ChapterColophon from './ChapterColophon.jsx'
 
 // 本章注疏一览(Tier 1):遍历该章各段 anchors,折叠列出,替逐词悬停。
 function ChapterNotes({ chapter, getAnchors }) {
@@ -61,12 +62,14 @@ export default function ClassicReader({
   header = null,
   sectionUnit = '章',
   verse = false,    // 诗体经按句读换行(黄庭等,#143)
-  bookTitle = '',   // 金句卡署名用(#147)
+  bookTitle = '',   // 金句卡署名用(#147);也用于章末牌记的引用格式
+  attribution = '',  // 撰人/编者(texts.json),章末牌记自报家门用
+  bookHref = '',     // 该书题解页,牌记里指往「择本要点」
   markCtx = null,   // {corpus, slug}:启用读经站段落收藏/笔记(Tier 2);null 则关闭
   commentCtx = null, // {corpus, slug}:仅 paged 模式在章末启用评论区
 }) {
   const { settings, setSettings } = useSettings()
-  const { hash, pathname } = useLocation()
+  const { hash, pathname, search } = useLocation()
   const navigate = useNavigate()
   const single = mode === 'single'
   const multi = chapters.length > 1
@@ -434,6 +437,13 @@ export default function ClassicReader({
               <ChapterNotes chapter={c} getAnchors={getAnchors} />
               {renderYanyi(c.no)}
               {renderBaihua(c.no)}
+              <ChapterColophon
+                bookTitle={bookTitle}
+                chapterLabel={multi ? chapterLabel(c) : ''}
+                attribution={attribution}
+                bookHref={bookHref}
+                path={`${pathname}${multi ? `#${anchorId(c.no)}` : ''}`}
+              />
             </section>
           ))
         ) : (() => {
@@ -491,6 +501,17 @@ export default function ClassicReader({
               {lastPart && <ChapterNotes chapter={cur} getAnchors={getAnchors} />}
               {lastPart && renderYanyi(cur.no)}
               {lastPart && renderBaihua(cur.no)}
+              {/* 牌记与注疏不同,**不限最后一屏**:每一屏都是读者能引用、能发现错误的页面。
+                  引用仍用章的规范地址(拆屏只拆显示不拆数据,章才是可引用的单位),
+                  报错则带上当前这一屏的完整地址,方便定位。 */}
+              <ChapterColophon
+                bookTitle={bookTitle}
+                chapterLabel={multi ? chapterLabel(cur) : ''}
+                attribution={attribution}
+                bookHref={bookHref}
+                path={pathname}
+                here={`${pathname}${search || ''}`}
+              />
               {commentCtx && (
                 <CommentSection
                   key={`${commentCtx.corpus}:${commentCtx.slug}:${cur.no}`}

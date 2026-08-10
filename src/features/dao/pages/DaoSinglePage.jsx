@@ -57,6 +57,8 @@ export default function DaoSinglePage({ slug, text }) {
       renderYanyi={(no) => <YanyiBlock slug={slug} chapter={no} />}
       renderBaihua={(no) => <BaihuaBlock corpus="dao" slug={slug} chapter={no} bookTitle={meta.title} sectionUnit={meta.sectionUnit || '章'} />}
       bookTitle={meta.title}
+      attribution={meta.attribution || ''}
+      bookHref={`/dao/${slug}`}
       markCtx={{ corpus: 'dao', slug }}
       header={header}
     />

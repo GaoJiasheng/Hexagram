@@ -4243,3 +4243,61 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .mingju-card--big .mingju-card__src { text-align: center; }
 .mingju-card__cited { margin-left: 6px; color: var(--cinnabar-pure); }
 .mingju-empty { color: var(--ink-faint); text-align: center; padding: 30px 0; }
+
+/* ── 章末牌记(2026-08-08):引用格式 · 底本 · 报错 ──────────────────────────
+   三件回答同一个问题:「这段文字凭什么可信,不可信我怎么办」。
+   低调收在章末,不与注疏/延伸/白话抢注意力 —— 它是查证时才找的东西。 */
+.colophon {
+  margin: 2.4rem 0 0.6rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+.colophon__row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.colophon__label {
+  flex: none;
+  color: var(--ink-faint);
+  letter-spacing: 0.08em;
+}
+.colophon__cite {
+  flex: 1 1 18rem;
+  min-width: 0;
+  font-family: var(--font-serif);
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  word-break: break-all;      /* 长 URL 不撑破正文栏 */
+}
+.colophon__btn {
+  flex: none;
+  padding: 0.16rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: none;
+  font-size: 0.76rem;
+  color: var(--ink-soft);
+}
+.colophon__btn:hover { border-color: var(--cinnabar); color: var(--cinnabar); }
+.colophon__foot {
+  margin: 0.7rem 0 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: baseline;
+  font-size: 0.78rem;
+}
+.colophon__base { color: var(--ink-faint); }
+.colophon__report { color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--line); }
+.colophon__report:hover { color: var(--cinnabar); border-bottom-color: var(--cinnabar); }
+@media (max-width: 640px) {
+  .colophon__row { flex-direction: column; align-items: stretch; }
+  .colophon__btn { align-self: flex-start; }
+}
+.colophon__link { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.colophon__link:hover { color: var(--cinnabar); }

@@ -104,6 +104,8 @@ export default function CorpusReadPage({ corpus }) {
       sectionUnit={meta.sectionUnit}
       verse={!!meta.verse}
       bookTitle={meta.title}
+      attribution={meta.attribution || ''}
+      bookHref={`${site.home}/${slug}`}
       tocBack={<Link to={`${site.home}/${slug}`} className="read-toc__back">{book.title}</Link>}
       chapterLabel={label}
       chapterHref={(no) => `${site.home}/${slug}/${no}`}

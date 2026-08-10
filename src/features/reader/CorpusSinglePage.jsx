@@ -64,6 +64,8 @@ export default function CorpusSinglePage({ corpus, slug, text }) {
       renderBaihua={(no) => <BaihuaBlock corpus={corpus} slug={slug} chapter={no} bookTitle={meta.title} sectionUnit={meta.sectionUnit || '章'} />}
       paraLabel={paraLabel}
       bookTitle={meta.title}
+      attribution={meta.attribution || ''}
+      bookHref={`${site.home}/${slug}`}
       markCtx={{ corpus, slug }}
       header={header}
     />
