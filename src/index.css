@@ -4301,3 +4301,114 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 }
 .colophon__link { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 .colophon__link:hover { color: var(--cinnabar); }
+
+/* ── 首页介绍层(2026-08-08,只在 `/` 出;/hexagram 仍是纯书架) ────────────
+   门户原本只有一面卡片墙 —— 那是导航页不是首页。这一层负责先回答
+   「这是什么、有什么别处没有的、凭什么信」。 */
+.master-portal--landing { max-width: 900px; }
+/* 门户容器是 flex column + align-items:center —— 子元素默认被压成「内容宽」,
+   各段就会 291 / 461 / 711 参差不齐(owner 早先嫌过门户「宽高参差」,同一个根因)。
+   介绍层各段一律拉满并统一收在同一栏宽内,左右边界对齐。 */
+.master-portal--landing > * { align-self: stretch; }
+.landing-hero, .landing-paths, .landing-show, .landing-recent, .landing-trust {
+  width: 100%; max-width: 640px; margin-left: auto; margin-right: auto;
+}
+.landing-hero { max-width: 700px; }
+
+.landing-hero { text-align: center; padding: 1.2rem 0 2.2rem; }
+.landing-hero__eyebrow {
+  margin: 0 0 0.9rem; font-size: 0.82rem; letter-spacing: 0.4em;
+  color: var(--ink-faint); text-indent: 0.4em;
+}
+.landing-hero__claim {
+  margin: 0 0 0.9rem; font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 4.2vw, 2.3rem); font-weight: 600;
+  line-height: 1.45; color: var(--ink);
+}
+.landing-hero__sub {
+  margin: 0 auto 1.4rem; max-width: 30em;
+  font-size: 0.95rem; line-height: 1.9; color: var(--ink-soft);
+}
+.landing-hero__stats {
+  margin: 0 0 1rem; display: flex; justify-content: center; flex-wrap: wrap;
+  gap: 0.5rem 1.6rem; font-size: 0.86rem; color: var(--ink-soft);
+}
+.landing-hero__stats b {
+  font-family: var(--font-serif); font-size: 1.12rem; font-weight: 600;
+  color: var(--cinnabar-pure); margin-right: 0.24em;
+}
+.landing-hero__note { margin: 0; font-size: 0.8rem; color: var(--ink-faint); }
+
+/* 三条路径:按读者状态分,不按分类分 */
+.landing-paths {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem;
+  margin: 0 auto 2.4rem;   /* auto 不能省:上面统一栏宽那条在前,写 0 会把它盖掉 */
+}
+.landing-path {
+  display: flex; flex-direction: column; gap: 0.3rem;
+  padding: 0.85rem 1rem; border: 1px solid var(--line); border-radius: 4px;
+  text-decoration: none; background: var(--paper-raised);
+  transition: border-color 0.15s;
+}
+.landing-path:hover { border-color: var(--cinnabar-pure); }
+.landing-path__k { font-family: var(--font-serif); font-size: 0.95rem; color: var(--ink); }
+.landing-path__v { font-size: 0.78rem; color: var(--ink-faint); line-height: 1.6; }
+
+.landing-h2 {
+  margin: 2.6rem 0 1rem; font-family: var(--font-serif);
+  font-size: 1.05rem; font-weight: 600; color: var(--ink);
+  display: flex; align-items: baseline; gap: 0.7rem;
+}
+
+/* 招牌样例:一句具体的话胜过一段形容 */
+.landing-show__list { display: flex; flex-direction: column; gap: 0.6rem; }
+.landing-show__item {
+  display: grid; grid-template-columns: auto 1fr; gap: 0.2rem 0.8rem;
+  padding: 0.9rem 1rem; border: 1px solid var(--line); border-radius: 4px;
+  text-decoration: none; transition: border-color 0.15s, background 0.15s;
+}
+.landing-show__item:hover { border-color: var(--cinnabar-pure); background: var(--paper-raised); }
+.landing-show__tag {
+  grid-row: span 2; align-self: center; flex: none;
+  padding: 0.2rem 0.45rem; border-radius: 3px;
+  background: color-mix(in srgb, var(--cinnabar-pure) 12%, transparent);
+  color: var(--cinnabar-pure); font-size: 0.74rem; letter-spacing: 0.08em;
+}
+.landing-show__line { font-family: var(--font-serif); font-size: 0.94rem; line-height: 1.8; color: var(--ink); }
+.landing-show__sub { font-size: 0.76rem; color: var(--ink-faint); }
+
+/* 最近新收:冷启动阶段「这站还活着」的信号 */
+.landing-recent__rss {
+  font-size: 0.7rem; letter-spacing: 0.1em; color: var(--ink-faint);
+  text-decoration: none; border: 1px solid var(--line); border-radius: 3px;
+  padding: 0.06rem 0.36rem;
+}
+.landing-recent__rss:hover { color: var(--cinnabar-pure); border-color: var(--cinnabar-pure); }
+.landing-recent__list { list-style: none; margin: 0; padding: 0; }
+.landing-recent__list li {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+  padding: 0.44rem 0; border-bottom: 1px dashed var(--line); font-size: 0.88rem;
+}
+.landing-recent__list a { color: var(--ink); text-decoration: none; }
+.landing-recent__list a:hover { color: var(--cinnabar-pure); }
+.landing-recent__meta { flex: none; font-size: 0.75rem; color: var(--ink-faint); }
+
+/* 凭什么信:把章末牌记那套提到站级 */
+.landing-trust__list { margin: 0; }
+.landing-trust__list > div {
+  display: grid; grid-template-columns: 3.4rem 1fr; gap: 0.8rem;
+  padding: 0.42rem 0; font-size: 0.85rem; line-height: 1.8;
+}
+.landing-trust__list dt { color: var(--ink-faint); font-family: var(--font-serif); }
+.landing-trust__list dd { margin: 0; color: var(--ink-soft); }
+.landing-trust__list a { color: var(--cinnabar-pure); }
+.landing-trust__more { margin: 1rem 0 0; font-size: 0.84rem; }
+.landing-trust__more a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--line); }
+.landing-trust__more a:hover { color: var(--cinnabar-pure); }
+
+@media (max-width: 640px) {
+  .landing-paths { grid-template-columns: 1fr; }
+  .landing-show__item { grid-template-columns: 1fr; }
+  .landing-show__tag { grid-row: auto; justify-self: start; }
+  .landing-recent__list li { flex-direction: column; gap: 0.1rem; }
+}

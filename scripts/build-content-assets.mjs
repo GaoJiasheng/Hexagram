@@ -600,6 +600,32 @@ buildSearchAssets(records)
 buildOgIndex(records)
 buildSitemap(records)
 
+// 首页要亮的那几个数(2026-08-08)。**构建期算,前端不手写** ——
+// 手写的数字必然过时:门户卡片描述当年就是因为手写才长期显示错的书目数(v1.40.0 修过一次)。
+// 只出计数,不出清单,几百字节。
+{
+  const nBooks = fs.readdirSync(SRC_DATA)
+    .map((c) => path.join(SRC_DATA, c, 'classics'))
+    .filter(exists)
+    .reduce((n, d) => n + fs.readdirSync(d).filter((f) => f.endsWith('.json')).length, 0)
+  const nBaihua = Object.values(manifest.baihua)
+    .flatMap((books) => Object.values(books))
+    .reduce((n, b) => n + b.count, 0)
+  const debFile = path.join(SRC_DATA, 'debates/index.json')
+  const mjFile = path.join(SRC_DATA, 'mingju.json')
+  const cpFile = path.join(SRC_DATA, 'concepts.json')
+  const mj = exists(mjFile) ? readJson(mjFile) : null
+  const cp = exists(cpFile) ? readJson(cpFile) : null
+  writeJson(path.join(OUT_ROOT, 'stats.json'), {
+    books: nBooks,
+    baihua: nBaihua,
+    debates: exists(debFile) ? (readJson(debFile).topics || []).length : 0,
+    mingju: Array.isArray(mj) ? mj.length : (mj?.items?.length || 0),
+    concepts: Array.isArray(cp) ? cp.length : (cp?.clusters?.length || 0),
+    groups: new Set(SITES.map((s) => s.group)).size,
+  })
+}
+
 const baihuaCount = Object.values(manifest.baihua)
   .flatMap((books) => Object.values(books))
   .reduce((n, b) => n + b.count, 0)

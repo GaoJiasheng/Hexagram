@@ -123,4 +123,14 @@ const xml = [
 ].filter(Boolean).join('\n')
 
 fs.writeFileSync(path.join(ROOT, 'public/feed.xml'), `${xml}\n`)
+
+// 首页「最近新收」复用同一批条目 —— 与 RSS 同源同序,不另算一套,
+// 否则两处迟早对不上(而对不上的那天没人会发现)。
+fs.mkdirSync(path.join(ROOT, 'public/content'), { recursive: true })
+fs.writeFileSync(
+  path.join(ROOT, 'public/content/recent.json'),
+  JSON.stringify(latest.slice(0, 8).map((it) => ({
+    title: it.title, href: it.link.replace(ORIGIN, ''), cat: it.cat, at: it.when.slice(0, 10),
+  }))),
+)
 console.log(`feed: ${latest.length} 条(候选 ${items.length},观书不入)`)
