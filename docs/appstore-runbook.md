@@ -88,6 +88,61 @@
 
 ---
 
+
+## 附录 B · 2026-08-11 被拒实录:2.1.0 App Completeness(已修,待重交)
+
+**发生了什么**:1.32.0(build 50)排队 7 天后被拒,附图是审核员在 App 内注册,界面报
+「Load failed」。
+
+**根因不是注册逻辑,是服务端缺 CORS。** 壳里的页面从本地包加载,origin 是
+`capacitor://localhost`,调 `https://hexa.gavin.pub/api/*` 属跨源;请求带 `X-Client` 与
+JSON body,浏览器必先发 OPTIONS 预检 —— 而 API **没有注册 OPTIONS,预检 404**,
+真正的 POST 根本没发出去。代码里当时写着「前端与 API 同源,不需要 CORS」,
+**那句话对网页成立,却漏了 iOS/安卓壳是第二个 origin**。
+
+**因此 App 内的登录/注册/评论/云同步自上线起就没通过**,只有阅读能用
+(内容打包在本地、不走网络),所以自测时从没暴露 —— 审核员做的恰恰是我们没在真机试过的那件事。
+
+**修复**(2026-08-12,`functions/api/[[route]].js`):白名单放行两个 origin、预检在路由匹配前答掉、
+**不发 `Access-Control-Allow-Credentials`**(原生走 Bearer,网页那条 httpOnly Cookie 的路不被削弱)。
+`functions/api/cors.test.js` 6 例钉住。
+
+**验证**:生产预检返回 204;iOS 模拟器实机注册成功;同账号 curl 登录 200、
+token 43 字符、Bearer 走 `/api/me` 200。
+
+**为什么重交同一个 build 50**:客户端一行没改,问题在服务端且已修复 —— 换包不解决任何事,
+还多一轮风险。
+
+### 可粘贴的回复(解决中心 → Reply)
+
+> Thank you for the detailed report and the screenshot — it pinpointed the problem exactly.
+>
+> **Root cause.** The failure was not in the sign-up logic but in our server configuration.
+> The app's web view is served from the local bundle (`capacitor://localhost`), so its calls to
+> our API at `https://hexa.gavin.pub` are cross-origin. Our API did not answer the CORS
+> preflight (`OPTIONS`) request, so the browser rejected the request before it was ever sent,
+> which surfaced in the UI as "Load failed".
+>
+> **Fix.** We have added an explicit CORS allow-list for the app's origin and deployed it to
+> production. **No change to the binary was required**, so we are resubmitting the same build (50).
+> We have verified on an iOS simulator running this exact build that account registration,
+> sign-in, and cloud sync now complete successfully.
+>
+> **To verify:** open Settings (gear icon, top right) → Account → Register. You may also sign in
+> with this test account: `<邮箱>` / `<密码>`.
+>
+> Please note that an account is entirely optional — all 74 classical texts and their
+> translations, annotations and commentary are bundled with the app and fully readable offline
+> without signing in. The account only adds cross-device sync of personal study marks and
+> access to the chapter discussion threads.
+>
+> Thank you for your time.
+
+⚠️ **贴之前把 `<邮箱>`/`<密码>` 换成真的测试账号** —— 审核员刚在这一步栽过,
+给一个能直接用的账号比让他再注册一次稳妥。
+
+---
+
 ## 一页速查(最短路径:先发海外)
 
 1. 【我】wrangler 发 CF → 验证 `/privacy` 打开
