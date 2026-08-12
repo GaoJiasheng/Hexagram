@@ -463,11 +463,52 @@ function validateBeat(body) {
   }
 }
 
-// The frontend and API are same-origin on Pages, so no CORS middleware is
-// needed. If a second trusted origin is added later, configure an explicit
-// allow-list rather than reflecting arbitrary origins.
+// ── CORS:只为原生壳开,且只开给固定的几个 origin ──────────────────────────
+//
+// 这里原本写着「前端与 API 同源,不需要 CORS」—— 那句话对**网页**成立,
+// 却漏了 **iOS/安卓壳是第二个 origin** 这件事:壳里的页面从本地包加载,
+// origin 是 `capacitor://localhost`,调 `https://hexa.gavin.pub/api/*` 是**跨源**。
+//
+// 后果是 2026-08-11 被 App Store 以 **2.1.0 App Completeness** 拒了:
+// 审核员在 App 里注册,界面报「Load failed」。根因不是注册逻辑,而是
+// **浏览器发的 OPTIONS 预检打到这里是 404**(带了 X-Client 与 JSON body 必触发预检),
+// 预检一失败,真正的 POST 根本不会发出去。
+// 也就是说:**App 里的登录/注册/评论/同步从上线起就没通过**,
+// 只有阅读能用(内容打包在本地、不走网络),所以一直没被发现。
+//
+// 分寸:
+// · **白名单固定几个 origin,绝不反射任意 Origin**(反射等于对全网开放)。
+// · **不发 `Access-Control-Allow-Credentials`** —— 原生端用 Bearer token、
+//   请求本就 `credentials:'omit'`;不开这个,浏览器就永远不会把带 Cookie 的响应
+//   跨源交出去,网页那条 httpOnly Cookie 的路一点没被削弱。
+// · 允许的请求头只列原生端真会发的三个,不含 X-Admin-Passphrase(后台是网页专用)。
+const NATIVE_ORIGINS = new Set([
+  'capacitor://localhost',  // iOS(Capacitor 默认 scheme)
+  'http://localhost',       // 安卓(Capacitor 默认)
+])
+const CORS_HEADERS = 'Content-Type, Authorization, X-Client'
+
 app.use('*', async (c, next) => {
+  const origin = c.req.header('Origin')
+  const allowed = !!origin && NATIVE_ORIGINS.has(origin)
+
+  // 预检必须在路由匹配之前答掉 —— 没有任何路由注册 OPTIONS,落到路由层就是 404。
+  if (c.req.method === 'OPTIONS') {
+    if (!allowed) return c.body(null, 404)
+    return c.body(null, 204, {
+      'Access-Control-Allow-Origin': origin,
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': CORS_HEADERS,
+      'Access-Control-Max-Age': '86400',
+      Vary: 'Origin',
+    })
+  }
+
   await next()
+  if (allowed) {
+    c.header('Access-Control-Allow-Origin', origin)
+    c.header('Vary', 'Origin')   // 免得中间层把某个 origin 的响应喂给另一个
+  }
   c.header('Cache-Control', 'no-store')
 })
 
