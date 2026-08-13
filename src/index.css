@@ -4305,17 +4305,26 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 /* ── 首页介绍层(2026-08-08,只在 `/` 出;/hexagram 仍是纯书架) ────────────
    门户原本只有一面卡片墙 —— 那是导航页不是首页。这一层负责先回答
    「这是什么、有什么别处没有的、凭什么信」。 */
-.master-portal--landing { max-width: 900px; }
-/* 门户容器是 flex column + align-items:center —— 子元素默认被压成「内容宽」,
-   各段就会 291 / 461 / 711 参差不齐(owner 早先嫌过门户「宽高参差」,同一个根因)。
-   介绍层各段一律拉满并统一收在同一栏宽内,左右边界对齐。 */
-.master-portal--landing > * { align-self: stretch; }
-.landing-hero, .landing-paths, .landing-show, .landing-recent, .landing-trust {
-  width: 100%; max-width: 640px; margin-left: auto; margin-right: auto;
+/* ── 首页栏宽:全站一个数,别再各自为政 ────────────────────────────────
+   踩过两次的坑,记在这:
+   ① 初版给 `> *` 加 `align-self:stretch`,把所有直接子元素拉满 900px ——
+      而「争鸣横幅」「我的研读」原本是靠 .master-portal 的 align-items:center
+      按自然宽居中的,一拉满就贴到最左,与按 640 居中的新段落**左边界对不上**,看着就是歪。
+   ② 书架被包进 <div id="portal-shelf"> 后,**居中与 26px 间距原本由 .master-portal
+      那层 flex 提供**,多包一层就全丢了 —— 易道行与卡片墙于是黏在一起还错位。
+   现在的做法:**不拉满**,让 align-items:center 继续管居中;所有块共用 --portal-col;
+   #portal-shelf 自己补上一层同样的 flex,把丢掉的居中与间距还回去。
+   栏宽 698px 不是随手取的 = 卡片墙 3×222 + 2×16,与书架天然等宽。 */
+.master-portal--landing { max-width: 900px; --portal-col: 698px; }
+.master-portal--landing > * { width: 100%; max-width: var(--portal-col); }
+/* 书架被多包了一层,这里把 .master-portal 原有的 flex 语义补回来 */
+#portal-shelf {
+  display: flex; flex-direction: column; align-items: center; gap: 26px;
 }
-.landing-hero { max-width: 700px; }
 
 .landing-hero { text-align: center; padding: 1.2rem 0 2.2rem; }
+/* 主张一行字较长,允许略宽于栏宽,视觉上更舒展 */
+.master-portal--landing > .landing-hero { max-width: 760px; }
 .landing-hero__eyebrow {
   margin: 0 0 0.9rem; font-size: 0.82rem; letter-spacing: 0.4em;
   color: var(--ink-faint); text-indent: 0.4em;
@@ -4342,7 +4351,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 /* 三条路径:按读者状态分,不按分类分 */
 .landing-paths {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem;
-  margin: 0 auto 2.4rem;   /* auto 不能省:上面统一栏宽那条在前,写 0 会把它盖掉 */
+  margin: 0 0 2.4rem;
 }
 .landing-path {
   display: flex; flex-direction: column; gap: 0.3rem;
