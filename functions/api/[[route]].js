@@ -8,6 +8,7 @@ import {
   validateGoogleIdToken,
 } from '../../server/google-auth.js'
 import { sendCommentNotification } from '../../server/comment-notification.js'
+import { isAdminUser } from '../../server/admin.js'
 import { AUTO_HIDE_REPORTS, screenComment } from '../../server/content-filter.js'
 import {
   mergeCollectionEntry,
@@ -214,7 +215,9 @@ function googleAuthErrorPage(c, status, message, requestedReturnTo = '/') {
 </html>`, status)
 }
 
-function publicUser(row) {
+// env 可选:不传则不下发 isAdmin(旧调用点不至于报错,只是拿不到该字段)。
+// 前端用 isAdmin 决定观书入口给不给看 —— 见 functions/_middleware.js 的同款判据。
+function publicUser(row, env) {
   return {
     id: row.id,
     displayName: row.display_name,
@@ -222,6 +225,7 @@ function publicUser(row) {
     avatarUrl: null,
     email: row.email,
     isOwner: !!row.is_owner,
+    isAdmin: env ? isAdminUser(row, env) : !!row.is_owner,
   }
 }
 
@@ -521,7 +525,7 @@ app.use('/admin/*', async (c, next) => {
     return c.json({ ok: false, error: 'service unavailable' }, 503)
   }
 
-  if (sessionUser?.is_owner) {
+  if (isAdminUser(sessionUser, c.env)) {
     await next()
     return
   }
@@ -706,7 +710,7 @@ app.post('/auth/register', async (c) => {
         avatar_seed: avatarSeed,
         email,
         is_owner: 0,
-      }),
+      }, c.env),
       ...(wantsToken(c) ? { token: rawSession } : {}),
     }, 201)
   } catch (error) {
@@ -751,7 +755,7 @@ app.post('/auth/login', async (c) => {
       .run()
     const rawSession = await createSession(db, row.id)
     setSessionCookie(c, rawSession)
-    return c.json({ ok: true, user: publicUser(row), ...(wantsToken(c) ? { token: rawSession } : {}) })
+    return c.json({ ok: true, user: publicUser(row, c.env), ...(wantsToken(c) ? { token: rawSession } : {}) })
   } catch (error) {
     if (error instanceof RequestError) {
       return c.json({ ok: false, error: error.message }, error.status)
@@ -783,7 +787,7 @@ app.patch('/me', async (c) => {
     if (flagged) throw new RequestError(400, `昵称${flagged.message},请换一个`)
 
     await getDb(c).prepare('UPDATE users SET display_name = ? WHERE id = ?').bind(name, user.id).run()
-    return c.json({ ok: true, user: publicUser({ ...user, display_name: name }) })
+    return c.json({ ok: true, user: publicUser({ ...user, display_name: name }, c.env) })
   } catch (error) {
     if (error instanceof RequestError) return c.json({ ok: false, error: error.message }, error.status)
     console.error('Rename failed', error)
@@ -834,7 +838,7 @@ app.post('/auth/logout', async (c) => {
 app.get('/me', async (c) => {
   try {
     const row = await getSessionUser(c)
-    return c.json({ user: row ? publicUser(row) : null })
+    return c.json({ user: row ? publicUser(row, c.env) : null })
   } catch (error) {
     console.error('Session lookup failed', error)
     return c.json({ ok: false, error: 'service unavailable' }, 503)

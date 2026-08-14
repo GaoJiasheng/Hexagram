@@ -21,6 +21,54 @@
 // · **canonical** —— 同一章可能被带上 ?p=、?from= 等参数分享出去,
 //   不指 canonical 会被当成多个重复页,权重分散。
 
+// ── 观书鉴权(2026-08-13)────────────────────────────────────────────────
+// owner 定:观书只给管理员看。此前它是**假隐藏** —— 书目静态打进 JS 包、
+// 每篇文章都是可按 URL 直取的 chunk,光不给链接等于掩耳盗铃。
+// 数据已搬到 /content/books/,这里是**真正起作用的那道闸**。
+//
+// 三条分寸:
+// ① **回 404 不回 403** —— 403 等于告诉对方「这儿有东西,只是你没权限」;
+//    404 什么都不说。隐藏书房就该像不存在。
+// ② **页面与数据都要挡**:只挡 /books 页面而放行 /content/books/*,
+//    等于把门锁了窗户开着。
+// ③ 判据与 server/admin.js 的 isAdminUser 一致(is_owner 或 ADMIN_EMAILS)。
+//    ⚠️ 那边改了这边要跟 —— 边缘中间件跑在 Worker 里,不便直接 import D1 逻辑,
+//    故会话查询在此重写了一遍;字段与 SQL 必须与 API 侧保持一致。
+const BOOKS_PATH = /^\/books(\/|$)/
+const BOOKS_DATA = /^\/content\/books\//
+
+async function sha256Hex(text) {
+  const d = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text))
+  return Array.from(new Uint8Array(d), (b) => b.toString(16).padStart(2, '0')).join('')
+}
+
+function sessionToken(request) {
+  const cookie = request.headers.get('Cookie') || ''
+  const m = /(?:^|;\s*)gx_session=([^;]+)/.exec(cookie)
+  if (m) return decodeURIComponent(m[1])
+  const auth = request.headers.get('Authorization') || ''
+  const b = /^Bearer\s+(.+)$/i.exec(auth.trim())
+  return b ? b[1].trim() : null
+}
+
+async function isAdminRequest(context) {
+  const raw = sessionToken(context.request)
+  if (!raw) return false
+  const db = context.env?.DB
+  if (!db?.prepare) return false
+  const row = await db.prepare(`
+    SELECT s.expires_at, u.email, u.is_owner
+    FROM sessions s JOIN users u ON u.id = s.user_id
+    WHERE s.id = ?
+  `).bind(await sha256Hex(raw)).first()
+  if (!row || Number(row.expires_at) <= Date.now()) return false
+  if (row.is_owner) return true
+  const list = String(context.env?.ADMIN_EMAILS || '')
+    .split(',').map((x) => x.trim().toLowerCase()).filter(Boolean)
+  const email = String(row.email || '').trim().toLowerCase()
+  return !!email && list.includes(email)
+}
+
 const BOTS = /(facebookexternalhit|Twitterbot|Slackbot|Discordbot|WhatsApp|LinkedInBot|TelegramBot|Pinterest|redditbot|Applebot|bingbot|Googlebot|DuckDuckBot|Baiduspider|YisouSpider|Sogou|360Spider|embedly|quora link preview|vkShare|W3C_Validator)/i
 
 const esc = (s) => String(s || '')
@@ -37,6 +85,19 @@ const normPath = (p) => (p.length > 1 ? p.replace(/\/$/, '') : p)
 
 export async function onRequest(context) {
   const { request, next } = context
+
+  // ⚠️ 观书这道闸**必须在下面那个 try 之外** —— 那个 try 的 catch 是 `return next()`
+  //(分享卡失败不该拖累访问,那是对的),但安全闸套进去就成了**失败即放行**。
+  // 这里反过来:任何异常都 404,失败关闭。
+  let gatePath = '/'
+  try { gatePath = new URL(request.url).pathname } catch { return new Response('Not Found', { status: 404 }) }
+  if (BOOKS_PATH.test(gatePath) || BOOKS_DATA.test(gatePath)) {
+    let ok = false
+    try { ok = await isAdminRequest(context) } catch { ok = false }
+    if (!ok) return new Response('Not Found', { status: 404 })
+    return next()
+  }
+
   try {
     if (request.method !== 'GET') return next()
 

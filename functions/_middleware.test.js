@@ -80,9 +80,12 @@ describe('边缘中间件', () => {
     expect(html).toBe(SHELL)
   })
 
-  it('观书是隐藏书房:即便爬虫来问也不给卡', async () => {
-    const html = await (await run('/books/zhangkong-tanpan', GOOGLEBOT)).text()
-    expect(html).toBe(SHELL)
+  // 2026-08-13 起观书由「不给分享卡」升级为「整个 404」——
+  // 此前爬虫至少还能拿到页面外壳,现在连页面本身都不存在了。
+  it('观书对爬虫直接 404,连外壳都不给', async () => {
+    const res = await run('/books/zhangkong-tanpan', GOOGLEBOT)
+    expect(res.status).toBe(404)
+    expect(await res.text()).not.toContain('observ')
   })
 
   it('查不到、非 GET、静态资源、接口 —— 一律安静放行,不拖累正常访问', async () => {
@@ -105,5 +108,69 @@ describe('边缘中间件', () => {
     })
     expect(res.status).toBe(200)
     expect(await res.text()).toBe(SHELL)
+  })
+})
+
+// ── 观书鉴权(2026-08-13)──────────────────────────────────────────────────
+// 这是安全闸,必须有测试:它的失败方向是「放行」还是「404」,肉眼看不出来,
+// 而一旦写成失败即放行,私人读书笔记就静悄悄地公开了。
+describe('观书只给管理员', () => {
+  const SHA = 'x'.repeat(64)
+  // 造一个能被 isAdminRequest 查到的会话;email/is_owner 由用例给
+  const dbWith = (row) => ({ prepare: () => ({ bind: () => ({ first: async () => row }) }) })
+  const future = () => Date.now() + 60_000
+  const call = (pathname, { env = {}, cookie } = {}) =>
+    onRequest({
+      request: new Request(`https://hexa.gavin.pub${pathname}`, {
+        headers: cookie ? { Cookie: `gx_session=${cookie}` } : {},
+      }),
+      env,
+      next: async () => new Response('SECRET', { status: 200 }),
+    })
+
+  it('未登录:页面与数据都 404,且不透露存在与否', async () => {
+    for (const p of ['/books', '/books/chensi-lu', '/books/chensi-lu/1', '/content/books/index.json']) {
+      const res = await call(p)
+      expect(res.status).toBe(404)
+      expect(await res.text()).not.toContain('SECRET')
+    }
+  })
+
+  it('普通登录用户同样 404(登录 ≠ 管理员)', async () => {
+    const env = { DB: dbWith({ expires_at: future(), email: 'someone@example.com', is_owner: 0 }) }
+    expect((await call('/books', { env, cookie: SHA })).status).toBe(404)
+    expect((await call('/content/books/index.json', { env, cookie: SHA })).status).toBe(404)
+  })
+
+  it('is_owner = 1 放行', async () => {
+    const env = { DB: dbWith({ expires_at: future(), email: 'a@b.c', is_owner: 1 }) }
+    const res = await call('/books', { env, cookie: SHA })
+    expect(res.status).toBe(200)
+    expect(await res.text()).toBe('SECRET')
+  })
+
+  it('邮箱在 ADMIN_EMAILS 里放行,且大小写/空白不敏感', async () => {
+    const env = {
+      DB: dbWith({ expires_at: future(), email: 'Gavin@Example.COM', is_owner: 0 }),
+      ADMIN_EMAILS: ' other@x.com , gavin@example.com ',
+    }
+    expect((await call('/books', { env, cookie: SHA })).status).toBe(200)
+  })
+
+  it('会话过期不放行', async () => {
+    const env = { DB: dbWith({ expires_at: Date.now() - 1, email: 'a@b.c', is_owner: 1 }) }
+    expect((await call('/books', { env, cookie: SHA })).status).toBe(404)
+  })
+
+  it('**查库抛异常也要 404** —— 安全闸必须失败关闭,不能失败放行', async () => {
+    const env = { DB: { prepare: () => { throw new Error('D1 down') } } }
+    expect((await call('/books', { env, cookie: SHA })).status).toBe(404)
+    expect((await call('/content/books/index.json', { env, cookie: SHA })).status).toBe(404)
+  })
+
+  it('不误伤别的路径', async () => {
+    for (const p of ['/booksomething', '/content/baihua/dao/daodejing.json', '/ru/lunyu/1']) {
+      expect((await call(p)).status).toBe(200)
+    }
   })
 })

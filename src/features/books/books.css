@@ -143,3 +143,11 @@
   .mm-hint { display: none; }
   .mm-bar { justify-content: flex-end; }
 }
+
+/* 观书门面(2026-08-13):未获准访问时的提示。刻意朴素 —— 不摆书房招牌、不列书名 */
+.books-gate { max-width: 26rem; margin: 18vh auto; text-align: center; }
+.books-gate__line { margin: 0 0 0.5rem; font-family: var(--font-serif); font-size: 1.05rem; color: var(--ink); }
+.books-gate__sub { margin: 0 0 1.6rem; font-size: 0.86rem; color: var(--ink-faint); }
+.books-gate__acts { display: flex; gap: 1rem; justify-content: center; align-items: center; margin: 0; }
+.books-gate__home { font-size: 0.84rem; color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--line); }
+.books-gate__home:hover { color: var(--cinnabar-pure); }

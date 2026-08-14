@@ -5,22 +5,24 @@ import MindTree from './MindTree.jsx'
 import BookCover from './BookCover.jsx'
 import ArticleDrawer from '../reader/ArticleDrawer.jsx'
 import HomeSeal from './HomeSeal.jsx'
+import { useBookAccess, useBook } from './useBooks.js'
+import BooksGate from './BooksGate.jsx'
 import CommentSection from '../comments/CommentSection.jsx'
-import books from '../../data/books/index.json'
 import { loadArticle, loadMindmap, loadOverview } from './bookContent.js'
 import './books.css'
 
 export default function BookHomePage() {
   const { slug } = useParams()
   const nav = useNavigate()
-  const book = books.find((b) => b.slug === slug)
+  const access = useBookAccess()
+  const { book, state } = useBook(slug, access)
   // 正文按需拉取:140 本全量打包曾把单个 chunk 顶到 29.7 MiB、超 Cloudflare 25 MiB 上限
   const [mind, setMind] = useState(null)
   // 入口条要显示总览的 hero 标题,所以总览也提前取一次(它只有几十 KB,且与脑图并行)
   const [overview, setOverview] = useState(null)
   const [loading, setLoading] = useState(true)
   const [drawer, setDrawer] = useState(null)
-  usePageTitle(book ? `${book.title} · 观书` : '观书')
+  usePageTitle(state === 'ready' && book ? `${book.title} · 观书` : null, state === 'ready' ? '观象' : '观象 · 古籍研读站')
 
   useEffect(() => {
     let alive = true
@@ -31,6 +33,10 @@ export default function BookHomePage() {
     loadOverview(slug).then((d) => { if (alive) setOverview(d) })
     return () => { alive = false }
   }, [slug])
+
+  // 门面必须放在**所有 hook 之后** —— 提前 return 会让下次渲染的 hook 数量对不上
+  // (「Rendered more hooks than during the previous render」,整页白屏,站里踩过)。
+  if (state !== 'ready') return <BooksGate state={state} />
 
   if (book && loading) {
     return <div className="book-home" data-site="portal"><div className="books-topbar books-topbar--end"><HomeSeal /></div><p className="route-loading">⋯</p></div>

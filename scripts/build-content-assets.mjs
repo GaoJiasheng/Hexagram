@@ -582,6 +582,34 @@ function buildSitemap(records) {
   console.log(`sitemap: ${urls.length} 条 URL(已排除 /books 隐藏书房)`)
 }
 
+// ── 观书:从 JS 包搬到 /content/books,好让它能被鉴权 ────────────────────────
+// 2026-08-13 owner 定「观书只给管理员看」。此前它是**假隐藏**:
+// 书目 index.json 静态 import 进 books-*.js(150KB,任何访客一进站就下载),
+// 每篇文章又各是一个可按 URL 直取的 chunk —— 光拦路由等于掩耳盗铃。
+//
+// 搬到 public/content/books/ 之后:
+//   · **Web** 走边缘,由 functions/_middleware.js 鉴权(非管理员 404)
+//   · **iOS** 由 Capacitor 本地直供同一条 fetch 路径 —— 天然离线可用、天然不经鉴权
+//     (owner 明确要这个:本地内容 + 登录才看 + 离线放开)
+// 同一份前端代码,不必分支 —— 白话当初已经趟过这条路。
+function buildBooksAssets() {
+  const src = path.join(SRC_DATA, 'books')
+  if (!exists(src)) return
+  const out = path.join(OUT_ROOT, 'books')
+  cleanOutDir(out)
+  let n = 0, arts = 0
+  fs.cpSync(src, out, { recursive: true })
+  for (const f of fs.readdirSync(out)) {
+    const d = path.join(out, f)
+    if (fs.statSync(d).isDirectory()) {
+      n += 1
+      const ad = path.join(d, 'articles')
+      if (exists(ad)) arts += fs.readdirSync(ad).filter((x) => x.endsWith('.json')).length
+    }
+  }
+  console.log(`books assets: ${n} 本 / ${arts} 篇(已移出 JS 包,受中间件鉴权)`)
+}
+
 cleanOutDir(OUT_BAIHUA)
 cleanOutDir(OUT_SEARCH)
 
@@ -599,6 +627,7 @@ writeJson(path.join(OUT_ROOT, 'manifest.json'), manifest)
 buildSearchAssets(records)
 buildOgIndex(records)
 buildSitemap(records)
+buildBooksAssets()
 
 // 首页要亮的那几个数(2026-08-08)。**构建期算,前端不手写** ——
 // 手写的数字必然过时:门户卡片描述当年就是因为手写才长期显示错的书目数(v1.40.0 修过一次)。

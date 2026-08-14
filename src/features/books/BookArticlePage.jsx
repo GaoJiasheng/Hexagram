@@ -5,13 +5,15 @@ import { BaihuaArticle } from '../reader/BaihuaBlock.jsx'
 import FontScaleControl from '../reader/FontScaleControl.jsx'
 import FontFamilyControl from '../reader/FontFamilyControl.jsx'
 import HomeSeal from './HomeSeal.jsx'
-import books from '../../data/books/index.json'
+import { useBookAccess, useBook } from './useBooks.js'
+import BooksGate from './BooksGate.jsx'
 import { loadArticle, loadOverview } from './bookContent.js'
 import './books.css'
 
 export default function BookArticlePage({ kind }) {
   const { slug, chapter } = useParams()
-  const book = books.find((b) => b.slug === slug)
+  const access = useBookAccess()
+  const { book, state } = useBook(slug, access)
   const isOverview = kind === 'overview'
   // 正文按需拉取(见 bookContent.js:全量打包曾超 Cloudflare 单文件上限)
   const [data, setData] = useState(null)
@@ -23,7 +25,11 @@ export default function BookArticlePage({ kind }) {
     return () => { alive = false }
   }, [slug, chapter, isOverview])
   const ch = book && !isOverview && (book.chapters || []).find((c) => String(c.no) === String(chapter))
-  usePageTitle(book ? `${isOverview ? '全书总览' : (ch ? ch.title : '第' + chapter + '章')} · ${book.title}` : '观书')
+  usePageTitle(state === 'ready' && book ? `${isOverview ? '全书总览' : (ch ? ch.title : '第' + chapter + '章')} · ${book.title}` : null, state === 'ready' ? '观象' : '观象 · 古籍研读站')
+
+  // 门面必须放在**所有 hook 之后** —— 提前 return 会让下次渲染的 hook 数量对不上
+  // (「Rendered more hooks than during the previous render」,整页白屏,站里踩过)。
+  if (state !== 'ready') return <BooksGate state={state} />
 
   if (!book) return <div className="book-home" data-site="portal"><div className="books-topbar books-topbar--end"><HomeSeal /></div><p className="books-empty">没有这本书。<Link to="/books">返回书房</Link></p></div>
 

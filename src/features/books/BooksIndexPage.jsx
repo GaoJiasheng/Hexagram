@@ -3,15 +3,21 @@ import { Link } from 'react-router-dom'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import BookCover from './BookCover.jsx'
 import HomeSeal from './HomeSeal.jsx'
-import books from '../../data/books/index.json'
+import { useBookAccess, useBooksIndex } from './useBooks.js'
+import BooksGate from './BooksGate.jsx'
 import './books.css'
 
 // 私人书房索引:all-in-one 一个总索引 + 标签筛选(owner 决定)。隐藏入口 /books。
 const TAGS = ['哲学', '人生', '管理', '心理', '经济', '政治', '健康', '历史', '运营', '科学', '文学', '环境', '社会']
 
 export default function BooksIndexPage() {
-  usePageTitle('观书 · Gavin 的书房')
+  // 未获准时标题也不多嘴:既不显示书名,也不摆出「Gavin 的书房」
+  usePageTitle(null, '观象 · 古籍研读站')
   const [active, setActive] = useState(null)
+  const access = useBookAccess()
+  const { books, state } = useBooksIndex(access)
+  // 放在所有 hook 之后(提前 return 会让 hook 数量对不上,整页白屏 —— 站里踩过)
+  if (state !== 'ready') return <BooksGate state={state} />
   const list = active ? books.filter((b) => (b.tags || []).includes(active)) : books
 
   return (
