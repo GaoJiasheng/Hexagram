@@ -10,3 +10,14 @@
 
 /manifest.webmanifest
   Cache-Control: no-cache
+
+# 观书是管理员专属内容(functions/_middleware.js 鉴权)。
+# 必须 private + no-store:否则一旦被 CDN / 代理 / 浏览器共享缓存留下副本,
+# 后续匿名请求可能直接命中缓存、根本不经过那道闸 —— 鉴权就白做了。
+/content/books/*
+  Cache-Control: private, no-store
+  X-Robots-Tag: noindex, nofollow
+
+/books/*
+  Cache-Control: private, no-store
+  X-Robots-Tag: noindex, nofollow

@@ -53,38 +53,33 @@ iOS **build 50** / 版本 **1.32.0 正在等待审核** · 生产 `hexa.gavin.pu
 > **那是 owner 定的不做,不是缺口**。除它之外,**站内每一本该有白话的书都满了**。
 > (脚本只判「文件在不在」、不判满没满;满没满另跑 §2.2 那张表。)
 
-## 0.4 ⏸ 压着没发的:观书鉴权(2026-08-13 完成,**等 iOS 审批后再上**)
+## 0.4 ✅ 观书已改为管理员专属(2026-08-13 完成并上线)
 
-owner 定:**iOS 1.32.0 审批出结果之前,不做任何部署**。
-理由成立 —— 审核员是拿真机连**生产 API** 测的,这时候动服务端,
-万一哪里坏了就是第二次被拒(第一次正是服务端 CORS 害的)。
+此前是**假隐藏**:书目静态打进 `books-*.js`(150KB,任何访客一进站就下载),
+每篇文章又各是可按 URL 直取的 chunk —— 光不给链接等于掩耳盗铃。
 
-代码已全部提交(`1c7e979`),本地全绿,**只差两步,而这两步有先后**:
+**三件一起做才算数**:数据搬到 `/content/books/`(146 本 1287 篇,已验证
+正文与书目在 `dist/assets/*.js` 里**查无**,`books-*.js` 150KB → 3KB)·
+`functions/_middleware.js` 边缘鉴权 · `_headers` 给该路径 `private, no-store`。
 
-```bash
-# ① 先设 secret(值走 stdin,别当参数传 —— 第一个参数是变量名,而变量名不加密)
-npx wrangler pages secret put ADMIN_EMAILS --project-name=hexa-gavin-pub
-#    值:gaojiasheng.him@gmail.com   (owner 2026-08-13 确认,就是他登录本站的 Google 账号)
+**线上实测(全过)**:
+| 验的 | 结果 |
+|---|---|
+| 匿名 `/books` `/books/:slug` `/content/books/index.json` | 三处均 **404** |
+| 已登录但非管理员(演示账号,持有效 token) | **404** —— 登录 ≠ 管理员 |
+| owner 账号 | `/api/me` 的 `isAdmin: true`,`/books` 书架正常 |
+| 管理员取数据时的缓存头 | **`private, no-store`** ✓ |
+| 审核链路(CORS 预检 / 演示账号登录) | 204 / ok=true —— **没被碰坏** |
 
-# ② 再部署
-npm run build && npx wrangler pages deploy dist --project-name=hexa-gavin-pub
-```
-
-> ⚠️ **顺序不能反,反了会把自己锁在门外。**
-> 新代码对 `/books` 与 `/content/books/*` 一律要求管理员,判据是
-> `users.is_owner = 1` **或** 邮箱在 `ADMIN_EMAILS`。
-> 若先部署、secret 还没设,而 D1 里又恰好没有 `is_owner = 1` 的账号 ——
-> **那就没有任何人能进观书了**,包括 owner 自己。
-> (D1 里到底有没有 owner 账号,至今没查过,所以别赌。)
-
-**上线后要验的三件**(别只看界面):
-1. 未登录 `curl -i https://hexa.gavin.pub/content/books/index.json` → 应 **404**
-2. 登录 owner 账号后浏览器开 `/books` → 应正常出书架
-3. `/api/me` 返回的 `user.isAdmin` 应为 `true`
-
-**iOS 侧**:观书内容随包本地直供,离线可用;在线时前端要求管理员。
-⚠️ 这层是**观感而非安全** —— 关掉网络即可绕过,IPA 解包也能取到内容,owner 知情并接受。
-
+**几条留给日后的**:
+- 判据在 `server/admin.js`:`is_owner = 1` **或**邮箱在 `ADMIN_EMAILS`(逗号分隔)。
+  加人只改 secret,不必碰数据库。**中间件里那份会话查询是重写的第二实现,改判据要改两处。**
+- 事后发现 owner 账号**本来就有 `is_owner = 1`** —— 当初担心的「锁在门外」并不会发生。
+  但当时无从得知,先设 secret 再部署仍是对的顺序。
+- 响应上的 `Access-Control-Allow-Origin: *` 是 Pages 给静态资源的默认头,**不是漏洞**:
+  `*` 按规范不能与凭证共存,跨源带 cookie 来取会被浏览器拒;不带凭证来取则被闸挡成 404。
+- ⚠️ **iOS 侧是观感而非安全**:内容随包本地直供(离线可用是 owner 要的),
+  **关掉网络即可绕过,IPA 解包也能取到内容**。owner 知情并接受。
 
 ---
 
