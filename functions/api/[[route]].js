@@ -361,7 +361,12 @@ async function verifyTurnstile(c, token) {
       body: new URLSearchParams({ secret, response: token }),
     })
     const result = await response.json().catch(() => null)
-    return result?.success === true
+    if (result?.success === true) return true
+    // 把 Cloudflare 给的原因记下来 —— 不记的话,前端只看到一个光秃秃的 403,
+    // 而「token 过期/重复用」(timeout-or-duplicate)与「secret 配错了」
+    // (invalid-input-secret)这两种病因的修法完全不同,靠猜要来回好几轮。
+    console.error('Turnstile 校验未通过:', JSON.stringify(result?.['error-codes'] || result))
+    return false
   } catch {
     return false
   }

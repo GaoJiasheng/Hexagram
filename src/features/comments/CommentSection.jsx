@@ -110,6 +110,10 @@ export default function CommentSection({ corpus, slug, chapter }) {
         widgetIdRef.current = turnstile.render(turnstileContainerRef.current, {
           sitekey: TURNSTILE_SITE_KEY,
           theme: 'auto',
+          // token 约 5 分钟过期。不挂这两个回调,控件会一直显示绿色「成功!」,
+          // 而手里的 token 早已失效 —— 用户看着「已验证」却怎么发都被回 403。
+          'expired-callback': () => window.turnstile?.reset(widgetIdRef.current),
+          'error-callback': () => window.turnstile?.reset(widgetIdRef.current),
         })
         setTurnstileReady(true)
       })
@@ -152,11 +156,16 @@ export default function CommentSection({ corpus, slug, chapter }) {
       if (!response.ok) throw new Error(data?.error || '评论发布失败,请稍后重试')
       setComments((current) => [data.comment, ...current])
       setBody('')
-      if (widgetIdRef.current !== null) window.turnstile?.reset(widgetIdRef.current)
     } catch (submitError) {
       setError(submitError.message)
     } finally {
       setSubmitting(false)
+      // ⚠️ **无论成败都要重置控件**,别只在成功时重置(2026-08-15 修)。
+      // Turnstile 的 token 是**一次性、约 5 分钟过期**的。原先只在成功分支 reset,
+      // 于是一旦失败(token 过期或已被消费),控件仍显示绿色「成功!」——
+      // **界面在骗人**:用户看着验证已通过,却拿着一个废 token 反复重试,
+      // 每次都被服务端回 403,永远发不出去。owner 就是这么卡住的。
+      if (widgetIdRef.current !== null) window.turnstile?.reset(widgetIdRef.current)
     }
   }
 
