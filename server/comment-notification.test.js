@@ -56,7 +56,8 @@ describe('comment notification request', () => {
       },
     })
     expect(email).toMatchObject({
-      from: '观象 <notify@gavin.pub>',
+      // 必须是 Resend 已验证的子域(见 comment-notification.js 的注释)
+      from: '观象 <notify@send.gavin.pub>',
       to: 'owner@example.com',
       subject: '观象新评论 · ru/lunyu/1',
     })

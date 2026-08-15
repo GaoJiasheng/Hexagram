@@ -1,6 +1,11 @@
 const SITE_ORIGIN = 'https://hexa.gavin.pub'
 const RESEND_EMAILS_URL = 'https://api.resend.com/emails'
-const NOTIFICATION_FROM = '观象 <notify@gavin.pub>'
+// ⚠️ 必须是 **Resend 已验证的那个域**下的地址。
+// 2026-08-13 在 Resend 里验的是子域 `send.gavin.pub`(而非根域 gavin.pub)——
+// 走子域是为了避开与 ImprovMX 的冲突:根域的 MX 归 ImprovMX 收信(hexa@gavin.pub),
+// Resend 若也要根域 MX 就会顶掉它。子域自带一套 MX/DKIM/SPF,两边互不干涉。
+// 改这里之前先确认目标域在 Resend 里是 verified,否则发信会被拒。
+const NOTIFICATION_FROM = '观象 <notify@send.gavin.pub>'
 const UTC_8_MS = 8 * 60 * 60 * 1000
 
 export function commentPageUrl(corpus, slug, chapter) {
