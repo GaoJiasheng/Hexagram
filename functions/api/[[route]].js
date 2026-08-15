@@ -350,9 +350,16 @@ function commentItem(row, sessionUser, includeStatus = false) {
   }
 }
 
+// 返回 null 表示通过;不通过则返回**一句给人看的话**。
+// 原先只返回 true/false、错误一律回「人机验证未通过,请重试」——
+// 而最常见的真因是 token 过期(约 5 分钟),此时「请重试」是最没用的指引:
+// 用户看着绿色的「成功!」,再点多少次都是同一个废 token。
 async function verifyTurnstile(c, token) {
   const secret = c.env?.TURNSTILE_SECRET_KEY
-  if (typeof secret !== 'string' || secret.length < 1) return false
+  if (typeof secret !== 'string' || secret.length < 1) {
+    console.error('Turnstile: 未配置 TURNSTILE_SECRET_KEY')
+    return '服务端未配置人机验证,请联系站长'
+  }
 
   try {
     const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
@@ -361,14 +368,20 @@ async function verifyTurnstile(c, token) {
       body: new URLSearchParams({ secret, response: token }),
     })
     const result = await response.json().catch(() => null)
-    if (result?.success === true) return true
-    // 把 Cloudflare 给的原因记下来 —— 不记的话,前端只看到一个光秃秃的 403,
-    // 而「token 过期/重复用」(timeout-or-duplicate)与「secret 配错了」
-    // (invalid-input-secret)这两种病因的修法完全不同,靠猜要来回好几轮。
-    console.error('Turnstile 校验未通过:', JSON.stringify(result?.['error-codes'] || result))
-    return false
+    if (result?.success === true) return null
+
+    const codes = result?.['error-codes'] || []
+    console.error('Turnstile 校验未通过:', JSON.stringify(codes))
+    // 这两种是**站长要修的配置问题**,不是访客能「重试」好的,得说实话
+    if (codes.includes('invalid-input-secret') || codes.includes('bad-request')) {
+      return '人机验证配置有误,请联系站长(secret 与 site key 不匹配)'
+    }
+    if (codes.includes('timeout-or-duplicate')) {
+      return '人机验证已过期,已重新验证,请再点一次发布'
+    }
+    return '人机验证未通过,请重新验证后再试'
   } catch {
-    return false
+    return '人机验证服务连接失败,请稍后重试'
   }
 }
 
@@ -913,8 +926,9 @@ app.post('/comments', async (c) => {
       throw new RequestError(400, '请完成人机验证')
     }
 
-    if (!await verifyTurnstile(c, input.turnstileToken)) {
-      throw new RequestError(403, '人机验证未通过,请重试')
+    const turnstileError = await verifyTurnstile(c, input.turnstileToken)
+    if (turnstileError) {
+      throw new RequestError(403, turnstileError)
     }
 
     // 内容过滤(App Store 1.2 四件套之一)。只拦最露骨的一层,其余靠举报 + owner 复核 ——
