@@ -48,6 +48,7 @@ export default function DaoSinglePage({ slug, text }) {
   return (
     <ClassicReader
       mode="single"
+      commentCtx={{ corpus: 'dao', slug }}
       chapters={book.chapters}
       tocBack={<Link to="/dao" className="read-toc__back">← 道藏</Link>}
       chapterLabel={label}

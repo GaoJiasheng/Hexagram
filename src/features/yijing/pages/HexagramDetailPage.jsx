@@ -28,6 +28,7 @@ import BaihuaBlock from '../../reader/BaihuaBlock.jsx'
 import QuoteCard from '../../reader/QuoteCard.jsx'
 import { useSettings } from '../SettingsContext.jsx'
 import { usePageTitle } from '../hooks/usePageTitle.js'
+import CommentSection from '../../comments/CommentSection.jsx'
 
 const MARK_CORPUS = 'yijing'
 const MARK_SLUG = 'hexagrams'
@@ -548,7 +549,10 @@ export default function HexagramDetailPage() {
         {/* 白话深读（design-v22:一卦一厚文 + 周边关联 + 五至八图）——有该卦白话才显示 */}
         <BaihuaBlock corpus="yijing" slug="hexagrams" chapter={hex.id} bookTitle="易经" sectionUnit="卦" chapterLabel={`${hex.name}卦（第${hex.id}卦）`} />
 
-        {/* 整卦笔记入口已下线(#158,原位置留给后续的评论功能) */}
+        {/* 评论区。锚点与上面的白话模块同一套(yijing/hexagrams/卦号)。
+            #158 下线整卦笔记时就把这个位置留出来了,但一直没接上 ——
+            于是 64 卦(易经最主要的阅读面)始终没有评论入口,而其他经典都有。 */}
+        <CommentSection corpus="yijing" slug="hexagrams" chapter={String(hex.id)} />
 
         {/* prev/next */}
         <div className="detail-nav">

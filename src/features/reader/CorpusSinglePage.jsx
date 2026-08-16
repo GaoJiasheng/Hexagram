@@ -54,6 +54,7 @@ export default function CorpusSinglePage({ corpus, slug, text }) {
   return (
     <ClassicReader
       mode="single"
+      commentCtx={{ corpus, slug }}
       chapters={book.chapters}
       tocBack={<Link to={site.home} className="read-toc__back">← {site.portalTitle}</Link>}
       chapterLabel={label}

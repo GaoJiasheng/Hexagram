@@ -430,7 +430,8 @@ export default function ClassicReader({
         {Toolbar}
 
         {single ? (
-          chapters.map((c) => (
+          <>
+          {chapters.map((c) => (
             <section key={c.no} id={anchorId(c.no)} data-no={c.no} className="dao-single__chapter">
               {multi && <h2 className="read-chapter-title">{chapterLabel(c)}</h2>}
               {c.paragraphs.map((p, i) => Para(c.no, p, i))}
@@ -445,7 +446,19 @@ export default function ClassicReader({
                 path={`${pathname}${multi ? `#${anchorId(c.no)}` : ''}`}
               />
             </section>
-          ))
+          ))}
+          {/* 单页短经全书铺一页,故整页末尾挂**一条**讨论串(章键固定 'all'),
+              不像分章书那样每章一条。此前 single 分支漏了评论区,
+              心经/金刚经/大学/中庸等 16 部短经一直没有评论入口。 */}
+          {commentCtx && (
+            <CommentSection
+              key={`${commentCtx.corpus}:${commentCtx.slug}:all`}
+              corpus={commentCtx.corpus}
+              slug={commentCtx.slug}
+              chapter="all"
+            />
+          )}
+          </>
         ) : (() => {
           const cur = chapters.find((c) => c.no === chapter)
           if (!cur) return (
