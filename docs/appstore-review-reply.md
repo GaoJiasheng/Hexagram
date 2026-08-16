@@ -8,19 +8,14 @@
 
 ---
 
-## 拦路的:build 50 不在 TestFlight 里,手机上装不到
+## build 50 已经能装(2026-08-16 owner 实机确认)
 
-录屏要求「physical device」,而 `builds/50/betaGroups` 查下来是**空的** ——
-CLAUDE.md 记过这个坑:`altool` 上传成功的 build 只是 `VALID`,
-**不会自动进测试组**,于是 TestFlight 里看不到、装不了。
+TestFlight 里可见 **1.32.0 (50)**,直接装上录屏即可。
 
-补救(一条命令,不发新版本、不重新构建,只是把已有的 build 50 加进内部测试组):
-
-```bash
-node scripts/tf-attach.mjs 50
-```
-
-内部测试组加组即可安装,**无需 Apple 审核**。装上后即可录屏。
+> 我一度按 `builds/50/betaGroups` 返回空判成「装不到」,**判错了** ——
+> 该 App 有内部测试组「内部测试」,而**内部测试员(ASC 账号用户)自动可见所有 build**,
+> 不需要显式加组,所以那个关系查询本来就是空的。
+> **下次判 TestFlight 可见性别只看 `betaGroups` 关系**,以设备上看到的为准。
 
 ---
 
@@ -153,7 +148,7 @@ by reviewers or users.
 
 ## 交之前的检查清单
 
-- [ ] `node scripts/tf-attach.mjs 50` → 手机 TestFlight 装上 build 50
+- [x] ~~装 build 50~~ —— TestFlight 里已可见 1.32.0 (50)
 - [ ] 自己先发一条评论,确认 2026-08-16 的修复在 App 里也生效(壳走的是同一个生产 API)
 - [ ] 按上面十步录屏(真机 + 最新系统)
 - [ ] 补上两处 `【待填】`:测试设备型号与系统、演示账号密码
