@@ -4,7 +4,11 @@
 > 必须 owner 本人做,其余六项的答案已写好,**直接粘贴**到 App Store Connect →
 > 「App 审核信息」→「备注 / Notes」,然后在解决中心回复。
 >
-> ⚠️ 两处 `【待填】` 必须先补,别原样交上去。
+> ⚠️ 一处 `【待填】`(演示账号密码)必须粘贴时补上,别原样交上去。
+>
+> 🔒 **密码不写进这个文件 —— 本仓库在 GitHub 上是 PUBLIC 的。**
+> 它的唯一存放处是 App Store Connect →「App 审核信息」的密码字段(那里本来就有)。
+> 2026-08-16 已验过 `appreview@hexa.gavin.pub` **可正常登录**(非 owner、非管理员,权限正合适)。
 
 ---
 
@@ -34,8 +38,17 @@ TestFlight 里可见 **1.32.0 (50)**,直接装上录屏即可。
 **建议维持只读,不要为这次审核临时开放发布** —— 开了要多担一层 UGC 审核面,
 而 Apple 要的「reporting and blocking mechanisms」现在就能演示。
 
-> ✅ 演示素材已就绪:`/dao/daodejing/1` 上有一条他人评论(测试账号发的
-> 「道可道,非常道。」),正好用来演举报与屏蔽。**录屏前别删那条,也别删那个测试账号。**
+> ✅ 演示素材已就绪:`/dao/daodejing/1` 上有一条他人评论(`test@gmail.com` 发的
+> 「道可道,非常道。」),正好用来演举报与屏蔽。**录屏前别删那条,也别删那个账号。**
+
+**生产库现有 4 个账号**(2026-08-16 查):
+
+| 邮箱 | 用途 | 能删吗 |
+|---|---|---|
+| `gaojiasheng.him@gmail.com` | owner(Google 登录) | 不能 |
+| `appreview@hexa.gavin.pub` | **交给 Apple 的演示账号** | 不能 |
+| `test@gmail.com` | 发了道德经那条评论 | **录屏前不能删** —— 删了评论会被级联清掉 |
+| `review-probe-0812@example.com` | 上一轮排查时建的 | 可删(录完再说) |
 
 ---
 
@@ -105,7 +118,7 @@ immediately on launch, offline.
 An account is only needed to post comments and to sync study data across devices.
 Demo account (email/password sign-in):
   Email:    appreview@hexa.gavin.pub
-  Password: 【待填:那个演示账号的密码】
+  Password: 【粘贴时填 —— 见下方说明,本仓库是公开的,密码不写进文件】
 
 USER-GENERATED CONTENT — PLEASE NOTE: the iOS app is intentionally READ-ONLY for
 comments. Comments posted on the website are displayed inside the app, and the
@@ -190,8 +203,8 @@ by reviewers or users.
 - [ ] **在 App 里打开 `道藏研读 → 道德经 → 第一章`,确认底部能看到那条评论**
       (App 只读,发布框不出是正常的;要确认的是「看得到 + 举报/屏蔽点得动」)
 - [ ] 按上面十步录屏(真机 + 最新系统)
-- [ ] 补上剩下那处 `【待填】`:演示账号密码(设备型号已填 iPhone 16 Pro Max / iOS 26.6)
-- [ ] 确认 `appreview@hexa.gavin.pub` 这个演示账号**现在还能登录**(上次填的,隔了几天)
+- [x] ~~确认演示账号可登录~~ —— 2026-08-16 实测 `appreview@hexa.gavin.pub` 登录正常
+- [ ] 粘贴 Notes 时把密码补进第 4 项(**密码从 ASC 的密码字段取,别从本文件找**)
 - [ ] **别删** `/dao/daodejing/1` 那条评论、**别删**发它的测试账号 —— 那是录屏素材
 - [ ] Notes 粘贴进「App 审核信息」,录屏在解决中心回复里附上
 - [ ] **build 50 一行代码没改就够** —— 两次被拒都是服务端/材料问题,客户端无需重新构建
