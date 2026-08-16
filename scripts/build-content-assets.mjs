@@ -1,6 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
+import { ogShardKey, normPath } from '../server/og-index.js'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const SRC_DATA = path.join(ROOT, 'src/data')
@@ -510,21 +511,14 @@ const SEO_BODY_MAX = 600
 // 而中间件每来一个爬虫就要 parse 一整片 —— 会撞 Worker 的 CPU 限额,
 // 失败后 try/catch 静默回退,**把现在好用的逐页 meta 一起弄丢**(得不偿失)。
 // 哈希分成 256 片后每片约 25KB,取一条的代价与它的价值才匹配。
-// ⚠️ 哈希函数与片数必须与 functions/_middleware.js 里那份**逐字一致**,改一处必改两处。
-const OG_SHARDS = 256
-const ogShardKey = (p) => {
-  let h = 2166136261
-  for (const ch of p) { h ^= ch.codePointAt(0); h = Math.imul(h, 16777619) }
-  return (h >>> 0) % OG_SHARDS
-}
-const normHref = (p) => (p.length > 1 ? p.replace(/\/$/, '') : p)
+// 分片规则来自 server/og-index.js(唯一一份,中间件与通知邮件都用它)
 function buildOgIndex(records) {
   const shards = {}
   let n = 0
   for (const r of records) {
     if (!r.href || !r.title) continue
     if (r.href.includes('#')) continue          // 段锚共用整页的卡,不单列
-    const href = normHref(r.href)
+    const href = normPath(r.href)
     // 副标常常就是站名(章页尤其),那样的卡等于没信息 —— 退回用正文开头当预览。
     const sub = (r.subtitle || '').trim()
     const body = compact(r.text).slice(0, SEO_BODY_MAX)

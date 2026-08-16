@@ -34,6 +34,8 @@
 // ③ 判据与 server/admin.js 的 isAdminUser 一致(is_owner 或 ADMIN_EMAILS)。
 //    ⚠️ 那边改了这边要跟 —— 边缘中间件跑在 Worker 里,不便直接 import D1 逻辑,
 //    故会话查询在此重写了一遍;字段与 SQL 必须与 API 侧保持一致。
+import { ogShardKey, normPath } from '../server/og-index.js'
+
 const BOOKS_PATH = /^\/books(\/|$)/
 const BOOKS_DATA = /^\/content\/books\//
 
@@ -74,14 +76,8 @@ const BOTS = /(facebookexternalhit|Twitterbot|Slackbot|Discordbot|WhatsApp|Linke
 const esc = (s) => String(s || '')
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
-// ⚠️ 与 scripts/build-content-assets.mjs 的 ogShardKey / OG_SHARDS / normHref 必须逐字一致
-const OG_SHARDS = 256
-const ogShardKey = (p) => {
-  let h = 2166136261
-  for (const ch of p) { h ^= ch.codePointAt(0); h = Math.imul(h, 16777619) }
-  return (h >>> 0) % OG_SHARDS
-}
-const normPath = (p) => (p.length > 1 ? p.replace(/\/$/, '') : p)
+// 分片规则收敛在 server/og-index.js 一处(此前这里与构建脚本各抄一份,
+// 不一致的表现是**静默查不到**,没有任何报错)
 
 export async function onRequest(context) {
   const { request, next } = context
