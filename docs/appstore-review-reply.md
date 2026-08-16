@@ -19,31 +19,52 @@ TestFlight 里可见 **1.32.0 (50)**,直接装上录屏即可。
 
 ---
 
+## ⚠️ 先纠正一处:**App 里的评论是只读的**(2026-08-02 有意为之)
+
+`CommentSection.jsx:361` 有 `IS_NATIVE` 分支 —— 原生壳里**不显示发表框**,
+只显示「App 内暂不支持发表评论,可在网页版参与讨论」。
+理由见提交 `876290c`:**不在 App 里开 UGC 发布**,但云端已有的评论照常展示、
+**举报与屏蔽照常可用**(「只要 App『展示』UGC 就落进指南 1.2,不是只有能发才算」)。
+
+**这推翻了两条我先前的判断:**
+1. 录屏脚本里「注册 → 发评论 → 举报 → 屏蔽」的第 5 步在 App 里做不到,已重写(见下)。
+2. 「上一轮审核员大概率卡在评论 403」**是错的** —— App 里根本没有发表入口,
+   审核员碰不到那个 403(那是网页侧的 bug)。第二次被拒纯粹是要材料。
+
+**建议维持只读,不要为这次审核临时开放发布** —— 开了要多担一层 UGC 审核面,
+而 Apple 要的「reporting and blocking mechanisms」现在就能演示。
+
+> ✅ 演示素材已就绪:`/dao/daodejing/1` 上有一条他人评论(测试账号发的
+> 「道可道,非常道。」),正好用来演举报与屏蔽。**录屏前别删那条,也别删那个测试账号。**
+
+---
+
 ## 第 1 项:真机录屏(**owner 做**)
 
 要求:真机 + 最新系统 · **从启动 App 开始** · 走完核心流程 ·
-必须包含**账号注册、登录、注销**与**用户生成内容及其举报/屏蔽机制**。
+须含**注册、登录、注销账号**与**UGC 的举报/屏蔽机制**。
 
-建议一镜到底,约 3–4 分钟,按下面顺序走。**边走边停两秒**,让画面看得清。
+一镜到底约 3–4 分钟。**每步停两秒**让画面看清。
 
-| # | 做什么 | 为什么必须有 |
+| # | 做什么 | 对应 Apple 哪条 |
 |---|---|---|
-| 1 | 从桌面点图标启动,停在门户首页 | 要求「begin with launching the app」 |
-| 2 | 进一个组(如「儒典研读」)→ 开《论语》第一篇 | 核心功能:读经 |
-| 3 | 点开某段的**注释气泡**、切**译文**、拉到章末点开**白话深读** | 展示这不是空壳套壳 |
-| 4 | 章末点「评论」→ **注册**一个新账号(当场注册,别用已登录态) | Account registration flow |
-| 5 | 发一条评论 → 显示它出现在列表里 | User-generated content |
-| 6 | 点该评论的「**举报**」→ 走完弹窗 | content reporting mechanism |
-| 7 | 点「**屏蔽此人**」→ 显示该用户内容消失 | content blocking mechanism |
-| 8 | 退出登录 → **用同一账号重新登录** | Login flow |
-| 9 | 设置 → 「**注销账号**」→ 抄邮箱确认 → 完成 | Account deletion flow(5.1.1(v) 硬要求) |
-| 10 | 回到首页,展示易经卦页与推演工作台各一眼 | 核心功能全貌 |
+| 1 | 桌面点图标启动,停在门户首页 | 「begin with launching the app」 |
+| 2 | 进「儒典研读」→ 开《论语》第一篇 | 核心功能:读经 |
+| 3 | 点注释气泡 · 切译文 · 章末点开**白话深读** | 证明不是空壳套壳 |
+| 4 | 设置(齿轮)→ **注册**一个新账号 A(当场注册) | Account registration |
+| 5 | 去 `道藏研读 → 道德经 → 第一章` 章末,**展示已有的那条评论** | User-generated content |
+| 6 | 点该评论的「**举报**」→ 选理由 → 提交 | content **reporting** |
+| 7 | 点「**屏蔽此人**」→ 该评论消失 | content **blocking** |
+| 8 | 同一处**停两秒展示只读提示**「App 内暂不支持发表评论…」 | 主动交代为何无发布框 |
+| 9 | 退出登录 → **用账号 A 重新登录** | Login flow |
+| 10 | 设置 → 「**注销账号**」→ 抄邮箱确认 → 完成 | Account deletion(5.1.1(v) 硬要求) |
+| 11 | 回首页,易经卦页与推演工作台各一眼 | 核心功能全貌 |
 
-> ⚠️ **第 4–7 步以前是走不通的** —— 评论功能自 2026-08-02 上线起一直被 Turnstile
-> 挡在 403(secret 配错),**2026-08-16 才修好**。录屏前先自己发一条试试,确认能发出来。
-> 上一轮审核员大概率就是卡在这里。
+> ⚠️ **顺序不能乱**:第 10 步注销的是**新注册的账号 A**,不是发评论的那个测试账号
+> —— 删了测试账号,它那条评论会被级联删掉,第 5–7 步就没素材了。
 >
-> ⚠️ 录屏用的测试账号,录完记得删(第 9 步正好把它删掉,一举两得)。
+> ⚠️ **Google 登录在 App 里是隐藏的**(`AuthSheet.jsx:110` 的 `!IS_NATIVE`),
+> 录屏只演邮箱密码这一条路即可,不必解释。
 
 ---
 
@@ -53,7 +74,9 @@ TestFlight 里可见 **1.32.0 (50)**,直接装上录屏即可。
 Thank you for the review. Below is the information requested.
 
 2. DEVICES AND OS TESTED
-【待填:例如 iPhone 15 Pro (iOS 26.x) — 真机;iPhone 17 Simulator (iOS 26.x) — 模拟器】
+- iPhone 16 Pro Max, iOS 26.6 — physical device (primary test device; the submitted
+  screen recording was captured on this device)
+- iPhone 17, iOS 26 — iOS Simulator (development)
 
 3. APP FUNCTION AND TARGET AUDIENCE
 Guanxiang (观象) is a reading and study app for classical Chinese texts.
@@ -84,10 +107,24 @@ Demo account (email/password sign-in):
   Email:    appreview@hexa.gavin.pub
   Password: 【待填:那个演示账号的密码】
 
-To reach the comment feature: open any chapter (for example the Confucian section ->
-Analects -> Chapter 1), scroll to the bottom of the chapter, and tap "评论" (Comments).
-Sign in there, post a comment, and the report ("举报") and block ("屏蔽此人") controls
-appear on each comment.
+USER-GENERATED CONTENT — PLEASE NOTE: the iOS app is intentionally READ-ONLY for
+comments. Comments posted on the website are displayed inside the app, and the
+report and block controls are fully functional there, but the app itself does not
+offer a way to post a comment. Where the composer would be, the app shows:
+"App 内暂不支持发表评论,可在网页版 hexa.gavin.pub 参与讨论"
+(commenting is not available in the app; you may join the discussion on the website).
+This is a deliberate product decision, not a defect.
+
+To see user-generated content and its moderation controls in the app:
+open 道藏研读 (Taoist section) -> 道德经 (Tao Te Ching) -> Chapter 1, and scroll to
+the bottom of the chapter. An existing comment is shown there. Each comment carries
+a report control ("举报", with a reason picker) and a block control ("屏蔽此人").
+A comment reported by three different users is automatically hidden pending review;
+blocking is one-way and affects only the blocking user's own view.
+
+Sign-in inside the app uses email and password. Google Sign-In is available on the
+website only and is deliberately hidden in the app, so there is no non-functional
+button to encounter.
 
 Account deletion: Settings (gear icon in the navigation bar) -> "注销账号"
 (Delete account). The user must retype their own email to confirm. Deletion is
@@ -99,9 +136,10 @@ There is only one account type. There are no sample files to install.
 5. EXTERNAL SERVICES USED
 - Cloudflare Pages / Workers / D1 — web hosting, API backend and database
   (hexa.gavin.pub). This is the only backend.
-- Google Sign-In (OAuth 2.0) — optional third-party sign-in, alongside the app's
-  own email/password sign-in.
-- Cloudflare Turnstile — bot protection on the comment form only.
+- Google Sign-In (OAuth 2.0) — optional third-party sign-in on the website only;
+  hidden inside the app, which uses email/password sign-in.
+- Cloudflare Turnstile — bot protection on the website's comment form only
+  (not reachable from the app, which cannot post comments).
 - Resend — transactional email; used solely to notify the developer when a new
   comment is posted. No marketing email is sent to users.
 
@@ -149,10 +187,12 @@ by reviewers or users.
 ## 交之前的检查清单
 
 - [x] ~~装 build 50~~ —— TestFlight 里已可见 1.32.0 (50)
-- [ ] 自己先发一条评论,确认 2026-08-16 的修复在 App 里也生效(壳走的是同一个生产 API)
+- [ ] **在 App 里打开 `道藏研读 → 道德经 → 第一章`,确认底部能看到那条评论**
+      (App 只读,发布框不出是正常的;要确认的是「看得到 + 举报/屏蔽点得动」)
 - [ ] 按上面十步录屏(真机 + 最新系统)
-- [ ] 补上两处 `【待填】`:测试设备型号与系统、演示账号密码
+- [ ] 补上剩下那处 `【待填】`:演示账号密码(设备型号已填 iPhone 16 Pro Max / iOS 26.6)
 - [ ] 确认 `appreview@hexa.gavin.pub` 这个演示账号**现在还能登录**(上次填的,隔了几天)
+- [ ] **别删** `/dao/daodejing/1` 那条评论、**别删**发它的测试账号 —— 那是录屏素材
 - [ ] Notes 粘贴进「App 审核信息」,录屏在解决中心回复里附上
 - [ ] **build 50 一行代码没改就够** —— 两次被拒都是服务端/材料问题,客户端无需重新构建
 
