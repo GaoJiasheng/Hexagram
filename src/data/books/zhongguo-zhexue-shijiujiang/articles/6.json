@@ -1,0 +1,293 @@
+{
+ "title": "名家与墨家：被低估的那一支",
+ "subtitle": "两把尺量出两个结论，分歧在尺，不在史实",
+ "centralIdea": "先秦有一支走上了纯粹思辨的路（名家），还有一支同时讲逻辑与实用（墨家）。牟宗三对两支评价都不高：名家止于辩、辩完没有下文，墨家把道德的根据放在外面的天志与利害账上，所以「大本不立」。但后来不少学者认为这个评价偏颇——《墨经》六篇里有先秦最系统的逻辑学，还有几何、光学、力学的记载，这些在牟那套尺子里几乎没有位置。分歧在于用哪把尺，不在于谁把史实弄错了。",
+ "blocks": [
+  {
+   "type": "lead",
+   "text": "先秦诸子里，有两支的处境很特别。一支专门跟概念本身较劲，不谈治国也不谈修身，只问「一个名到底管多大范围」——后人叫它名家。另一支两头都占：一面讲兼爱、非攻这类实打实的主张，一面在自家典籍的角落里留下了先秦最系统的逻辑学，还有一批几何、光学、力学的条目——这是墨家。在牟宗三那套评价里，这两支都排在边上；而在近百年的研究里，它们恰恰是被重新翻出来的宝藏。同一批材料，两个结论。这一章要讲的，就是这个落差是从哪儿来的。"
+  },
+  {
+   "type": "h2",
+   "text": "名家在做什么"
+  },
+  {
+   "type": "p",
+   "text": "先说清楚，「名家」这个名字是汉代人追认的，不是当时的自称。《汉书·艺文志》整理先秦典籍时，把一批专门跟名称、概念打交道的人归成一类，叫名家。代表人物两位：惠施和公孙龙。他们留下的东西都不全，惠施的书早就散佚，今天能看到的主要是《庄子》里转述的十条命题，后人称作「历物十事」。"
+  },
+  {
+   "type": "p",
+   "text": "「历物十事」讲成人话，是十条挑战常识的命题。开头两条给「最大」和「最小」下定义：大到外面再没有东西能包住它，这叫「大一」；小到里面再没有东西可分，这叫「小一」。注意这个做法——它不靠尺寸，靠边界：最大不是「很大很大」，而是「没有外面」。中间几条讲相对：天和地一样低，山和沼泽一样平——站得足够远看，那点高差算不上什么。最后一条落在伦理上：既然天地本是一体，那就该泛爱万物。"
+  },
+  {
+   "type": "p",
+   "text": "公孙龙留下的三篇最有名：《白马论》《坚白论》《指物论》。《坚白论》问的是，一块又坚又白的石头，眼睛只能得到白、手只能得到坚，那么「坚」和「白」算不算同时在这块石头上。这些题目有一个共同点：**它们不问世界是什么样，只问我们用来说世界的那套名称是怎么运作的。**"
+  },
+  {
+   "type": "h2",
+   "text": "「白马非马」讲成人话"
+  },
+  {
+   "type": "p",
+   "text": "这句话最常见的下场，是被当成抬杠的标本：白马当然是马，你说不是，不是抬杠是什么。这个印象要先放下。"
+  },
+  {
+   "type": "p",
+   "text": "公孙龙的意思是这样的：「马」这个名管的是形状——它规定的是一个东西长成什么样才算马；「白马」这个名管两件事——既管形状，又管颜色。两个名管的范围不一样，所以「白马」这个名并不等于「马」这个名。他句子里的那个「非」，是「不等于」，不是「不属于」。"
+  },
+  {
+   "type": "p",
+   "text": "他自己给的理由是这样一个场景（这是转述）：有人要马，你牵黄马去、牵黑马去，都算交了差；有人指名要白马，你牵黄马黑马去，交不了差。同一批马，在两个名底下算不算数，答案不一样。既然可取的范围不同，这两个名就不能划等号。"
+  },
+  {
+   "type": "figure",
+   "ftype": "示意图",
+   "svg": "<svg viewBox='0 0 620 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><text x='310' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>两个名管的范围不一样</text><rect x='28' y='42' width='262' height='202' rx='9' style='fill:none;stroke:var(--ink-soft);stroke-width:1.4'/><text x='159' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:17px;font-weight:bold;fill:var(--ink)'>「马」</text><text x='159' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>这个名只管一件事：形</text><text x='159' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>有人来求马，牵哪一匹都算交差</text><text x='92' y='150' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>黄马</text><text x='196' y='150' text-anchor='end' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink-soft)'>可</text><text x='92' y='180' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>黑马</text><text x='196' y='180' text-anchor='end' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink-soft)'>可</text><text x='92' y='210' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>白马</text><text x='196' y='210' text-anchor='end' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink-soft)'>可</text><rect x='330' y='42' width='262' height='202' rx='9' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='461' y='72' text-anchor='middle' style='font-family:var(--font-serif);font-size:17px;font-weight:bold;fill:var(--cinnabar-pure)'>「白马」</text><text x='461' y='94' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>这个名管两件事：形 ＋ 色</text><text x='461' y='116' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>有人指名求白马，只有一种算数</text><text x='394' y='150' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>黄马</text><text x='498' y='150' text-anchor='end' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink-faint)'>不可</text><text x='394' y='180' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>黑马</text><text x='498' y='180' text-anchor='end' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink-faint)'>不可</text><text x='394' y='210' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>白马</text><text x='498' y='210' text-anchor='end' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>可</text><text x='310' y='272' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>可取的范围不同 → 「白马」这个<tspan style='font-weight:bold'>名</tspan>并不等于「马」这个<tspan style='font-weight:bold'>名</tspan></text><text x='310' y='292' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>他说的是两个名之间的关系，不是说白马不属于马</text></svg>",
+   "caption": "「马」只管形，「白马」既管形又管色。两个名圈住的东西不一样多，所以两个名不等值——这是关于名的判断，不是关于马的判断。"
+  },
+  {
+   "type": "p",
+   "text": "换成今天的例子，这件事一秒钟就清楚。「员工」只管一件事：在这家公司上班；「北京籍员工」管两件事：上班，并且籍贯是北京。你说「北京籍员工不等于员工」，没人会觉得你在抬杠，因为谁都看得出这两个词圈住的人不一样多。公孙龙那句话的形式跟它一模一样，坏就坏在用了「非」字，而「非」在日常汉语里太容易被读成「不是、不属于」。"
+  },
+  {
+   "type": "p",
+   "text": "所以要紧的是这一句：**他分析的是概念本身，不是在描述世界。**他从头到尾没有说过白马不是一种马——那是事实层面的事，他不管；他要指出的是「白马」和「马」这两个语词圈的范围不重合，这是概念层面的事。先秦诸子里，把语词本身当成研究对象、暂时跟世界的事实脱钩来讨论的，只有这一支。"
+  },
+  {
+   "type": "callout",
+   "tone": "mute",
+   "label": "解读不止一种",
+   "items": [
+    "《公孙龙子》原文极短又难读，历代对这几篇的解释不止一种：有人读成上面这种「名所管范围」的分析，也有人读成「白」与「马」两个共相不能相加。这里取的是最便于讲清楚的一种，不是唯一定论。",
+    "《公孙龙子》不在站内，以上论证过程为转述，不是引文。"
+   ]
+  },
+  {
+   "type": "h2",
+   "text": "牟宗三的判词：止于辩"
+  },
+  {
+   "type": "p",
+   "text": "牟宗三对名家先有一句承认，分量不轻：先秦诸子里，真正把「概念的分解」当正事来做的，只有这一支；它也是最接近西方哲学里逻辑与知识论那条路的。这个评价并不低。"
+  },
+  {
+   "type": "p",
+   "text": "然后是那句重的：**它止于辩。**辩完就没有下文了。这话得拆开说。一套概念分析要往前走，通常有两个去处。一个是往上收成知识论——追问什么叫知识、知识凭什么成立、判准在哪里，把零散的分析拧成一套讲得通的体系。另一个是回头接上人自身——分析清楚了，对人怎么活、怎么安顿自己有什么交代。名家这两个去处都没去成：它留下的是一批漂亮的、互不统属的命题，没长成体系，也没有回头处。"
+  },
+  {
+   "type": "p",
+   "text": "这个判语的前提得说明白，不然读来会觉得苛刻。这本书的主线是回答「中国到底有没有哲学」：答案是有，但重心跟西方不同——西方的主问题偏在客体那边，存在究竟是什么；中国的主问题偏在主体这边，生命如何安顿。主线一定，谁在线上谁就是主干。名家不在这条线上，自然靠边。这不等于说它不好，是说它不在这条脉络里。"
+  },
+  {
+   "type": "h2",
+   "text": "墨家：十条主张，和「大本不立」"
+  },
+  {
+   "type": "p",
+   "text": "墨家的情况不一样。它是战国时与儒家并称的显学，主张明确、组织严密，还有一支能上城墙守城的队伍。它的主张后人归纳成十条，每条在《墨子》里都有专篇："
+  },
+  {
+   "type": "list",
+   "items": [
+    "兼爱——爱人不分亲疏远近",
+    "非攻——反对侵略性的战争，但主张帮人守城",
+    "尚贤——用人只看能力，不看出身",
+    "尚同——下级的是非标准统一到上级，层层上同",
+    "节用——一切开销以够用为限",
+    "节葬——反对厚葬久丧",
+    "非乐——反对耗费民力的礼乐排场",
+    "天志——天有意志，它要人相爱相利",
+    "明鬼——鬼神存在，而且能赏善罚暴",
+    "非命——否认命定，人的处境是做出来的"
+   ]
+  },
+  {
+   "type": "p",
+   "text": "牟宗三的批评集中在两点，都不是冲着这些主张去的，而是冲着它们的**根据**。"
+  },
+  {
+   "type": "p",
+   "text": "第一点，论证的落点是「利」。墨子说兼爱好，理由是天下人相爱则天下得利；说侵略战争不对，理由是把打仗这笔账从头算一遍，得不偿失。整条论证链的终点是效果、是算账。第二点，「天志」被拿来当外部权威：人为什么该兼爱？因为天要人这样。道德的根据被安放在人之外的一个意志上。"
+  },
+  {
+   "type": "p",
+   "text": "「大本立不立」这句判语，讲成人话就是问一件事：**道德的根子长在哪儿。**孟子那一路说，长在你自己心里——看见小孩快掉进井里，那一下的紧张不是算出来的，也不是谁下令的，它自己就冒出来了，那就是根。墨子那一路说，根在外面：一头是天的意志，一头是利害的账本。牟宗三说这叫大本不立，意思是：外面那个权威一旦不再被人相信，或者账算下来不划算了，这套道德就没有立脚的地方。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对比图",
+   "svg": "<svg viewBox='0 0 620 268' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><text x='310' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>道德的根子长在哪儿</text><rect x='26' y='38' width='264' height='214' rx='9' style='fill:none;stroke:var(--ink-soft);stroke-width:1.4'/><text x='158' y='64' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--ink)'>根在里面 · 孟子一路</text><circle cx='158' cy='140' r='52' style='fill:none;stroke:var(--ink-soft);stroke-width:1.4'/><circle cx='158' cy='140' r='19' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.8'/><text x='158' y='145' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--cinnabar-pure)'>心</text><path d='M158 121 L158 100' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><path d='M154 106 L158 98 L162 106' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='158' y='215' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>见孺子入井，那一下的紧张</text><text x='158' y='234' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>不是算出来的，也不是谁下令的</text><rect x='330' y='38' width='264' height='214' rx='9' style='fill:none;stroke:var(--ink-soft);stroke-width:1.4'/><text x='462' y='64' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--ink)'>根在外面 · 墨子一路</text><rect x='346' y='78' width='104' height='30' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='398' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--cinnabar-pure)'>天志</text><rect x='474' y='78' width='104' height='30' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='526' y='98' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;fill:var(--cinnabar-pure)'>利 · 算账</text><circle cx='462' cy='166' r='40' style='fill:none;stroke:var(--ink-soft);stroke-width:1.4'/><text x='462' y='171' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;fill:var(--ink-soft)'>人</text><path d='M404 110 L444 138' style='fill:none;stroke:var(--ink-faint);stroke-width:1.3'/><path d='M434 132 L446 140 L436 143' style='fill:none;stroke:var(--ink-faint);stroke-width:1.3'/><path d='M520 110 L480 138' style='fill:none;stroke:var(--ink-faint);stroke-width:1.3'/><path d='M490 132 L478 140 L488 143' style='fill:none;stroke:var(--ink-faint);stroke-width:1.3'/><text x='462' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>权威不再被信、账算下来不划算，</text><text x='462' y='249' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>这套道德就没有立脚的地方</text></svg>",
+   "caption": "两路的差别不在主张，在根据落在哪里：一路把根扎在人自己心里，一路把根系在外面的权威和利害账上。"
+  },
+  {
+   "type": "p",
+   "text": "有一件常被混在一起的事得分开。孟子当年骂墨家「无父」，针对的是「爱无差等」——爱天下人和爱自己父亲一样多，那父亲这个特殊位置就没有了。那是伦理主张上的分歧。牟宗三讲的「大本不立」，问的是根据放在哪儿。两件事方向相近，但不是同一件，不要当成一句话来记。"
+  },
+  {
+   "type": "h2",
+   "text": "今天要打的折扣"
+  },
+  {
+   "type": "p",
+   "text": "上面那套判语，有一大块材料没有被算进去。"
+  },
+  {
+   "type": "p",
+   "text": "《墨子》这部书里有六篇跟其余部分完全不像：《经》上、《经》下、《经说》上、《经说》下、《大取》《小取》。后人合称《墨经》，也叫墨辩。《兼爱》《非攻》那些篇是说理文章，有头有尾有例子；《墨经》是词条，一条一句，极简，《经说》是给《经》逐条作的解释。"
+  },
+  {
+   "type": "figure",
+   "ftype": "结构图",
+   "svg": "<svg viewBox='0 0 640 320' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><rect x='196' y='12' width='248' height='50' rx='9' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.6'/><text x='320' y='34' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--cinnabar-pure)'>《墨经》六篇</text><text x='320' y='53' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>经上 · 经下 · 经说上 · 经说下 · 大取 · 小取</text><path d='M320 62 L320 86' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M95 86 L560 86' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><path d='M95 86 L95 112 M250 86 L250 112 M405 86 L405 112 M560 86 L560 112' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><rect x='30' y='112' width='130' height='186' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><text x='95.0' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>逻辑与辩学</text><text x='95.0' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>辩的六项任务</text><text x='95.0' y='188' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>七种推理方式</text><text x='95.0' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>同异、坚白之辨</text><text x='95.0' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>「是而然」与</text><text x='95.0' y='254' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>「是而不然」的分类</text><rect x='185' y='112' width='130' height='186' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><text x='250.0' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>几何</text><text x='250.0' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>端 —— 点</text><text x='250.0' y='188' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>直 —— 三点共线</text><text x='250.0' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>圜 —— 一中同长</text><text x='250.0' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>平 —— 同高</text><rect x='340' y='112' width='130' height='186' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><text x='405.0' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>光学</text><text x='405.0' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>小孔成像：像倒立</text><text x='405.0' y='188' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>因光线在孔处交叉</text><text x='405.0' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>平面镜成像</text><text x='405.0' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>凹面镜成像</text><rect x='495' y='112' width='130' height='186' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><text x='560.0' y='138' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>力学</text><text x='560.0' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>杠杆：本与标两端</text><text x='560.0' y='188' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>与重量的关系</text><text x='560.0' y='210' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>浮力</text><text x='560.0' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-soft)'>「力」的定义</text></svg>",
+   "caption": "《墨经》六篇里装着四类东西：辩学、几何、光学、力学。这是先秦典籍里绝无仅有的一份配置。"
+  },
+  {
+   "type": "p",
+   "text": "先看逻辑那一支。《小取》开篇就给「辩」写了一份任务书："
+  },
+  {
+   "type": "quote",
+   "original": "夫辩者，将以明是非之分，审治乱之纪，明同异之处，察名实之理，处利害，决嫌疑焉。"
+  },
+  {
+   "type": "p",
+   "text": "讲成人话：辩不是吵赢，是六件正事——分清是非、看清治乱的条理、弄明白同和异分在哪里、把名称与实际的关系理清楚、权衡利害、判定拿不准的事。紧接着，它列了七种推理方式："
+  },
+  {
+   "type": "list",
+   "items": [
+    "或——只对一部分成立，不是全都如此",
+    "假——假设，眼下并不是这样",
+    "效——立一个标准，合标准就对，不合就错",
+    "辟——举别的东西来说明这件事，也就是打比方",
+    "侔——两个句子平行地一起推",
+    "援——你能这么说，我为什么不能",
+    "推——把你不肯接受的和你已接受的归为一类，逼你保持一致"
+   ]
+  },
+  {
+   "type": "p",
+   "text": "更要紧的是，《小取》列完这七种，自己紧接着泼冷水：说这几种辞用着用着会跑偏——推得远了会失、顺流下去会离开本意，所以不可以当成万能工具常用。**这是在讲推理方法的有效边界。**知道一种方法在什么条件下成立、什么时候会失效，这是逻辑意识，不是修辞技巧。"
+  },
+  {
+   "type": "p",
+   "text": "而且《小取》里有一句，正好跟公孙龙对着来："
+  },
+  {
+   "type": "quote",
+   "original": "白马，马也；乘白马，乘马也。"
+  },
+  {
+   "type": "p",
+   "text": "白马是马，骑白马就是骑马。这是《小取》分出的一类，叫「是而然」：主词加了限定，谓词跟着照样成立。它后面还列了「是而不然」的一类：车是木头做的，坐车却不叫坐木头。也就是说，墨辩不但知道「加限定」这回事，还在系统地分类：什么情况下加了限定推理照旧成立，什么情况下不成立。这已经不是「辩得赢辩不赢」的层次了。"
+  },
+  {
+   "type": "p",
+   "text": "再看几何那一支。《经上》里有一串定义，写法像极了后世公理体系的开头："
+  },
+  {
+   "type": "quote",
+   "original": "日中，正南也。直，参也。圜，一中同长也。"
+  },
+  {
+   "type": "p",
+   "text": "「直」的定义是「参」，三点排在一条线上；「圜」就是圆，定义是「一中同长」——一个中心，到边处处等长。旁边还有：「端」是一条线分到不能再分、排在最前面的那个东西，相当于点；「平」是同高。这些定义都不诉诸经验，不说「你看车轮就是圆的」，而是直接从概念上作规定。这个路数，和欧几里得开篇那几条定义是同一类做法。"
+  },
+  {
+   "type": "p",
+   "text": "光学那一支，《经下》里有一条："
+  },
+  {
+   "type": "quote",
+   "original": "景到，在午有端与景长，说在端。"
+  },
+  {
+   "type": "p",
+   "text": "「景」是影，也就是像；「到」是倒；「午」是交叉。整条说的是：像之所以是倒过来的，因为光在一个小孔那里交叉了——这就是小孔成像。同一批条目里还分了平面镜和凹面镜成像的不同情形，讨论像的大小与正倒随位置怎么变。力学那边有杠杆（讲两端与重量的关系）、有浮力，还给「力」下过定义。"
+  },
+  {
+   "type": "p",
+   "text": "这些内容在牟那套评价里几乎没有位置。这不是说他不知道有这几篇——他的问题设定是「中国哲学的主流形态是什么」，在那个问题底下，一串几何定义、一条小孔成像，确实无话可说。"
+  },
+  {
+   "type": "h2",
+   "text": "两把尺"
+  },
+  {
+   "type": "p",
+   "text": "所以这里发生的事，不是谁把史实弄错了。惠施的十事、公孙龙的三论、《墨经》六篇，双方看的是同一份材料。差别在于拿什么去量。"
+  },
+  {
+   "type": "figure",
+   "ftype": "对照图",
+   "svg": "<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><text x='320' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>两把尺量的不是同一件事</text><path d='M320 44 L320 262' style='fill:none;stroke:var(--line);stroke-width:1.2'/><text x='166' y='68' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--ink)'>牟宗三这把尺 · 量三件事</text><rect x='38' y='84' width='16' height='4' style='fill:var(--ink-faint)'/><text x='64' y='92' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>有没有立起主体</text><rect x='38' y='114' width='16' height='4' style='fill:var(--ink-faint)'/><text x='64' y='122' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>有没有接上生命的安顿</text><rect x='38' y='144' width='16' height='4' style='fill:var(--ink-faint)'/><text x='64' y='152' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>有没有长成一套系统</text><rect x='38' y='180' width='250' height='58' rx='7' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><text x='163' y='203' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>名家止于辩、墨家根据在外</text><text x='163' y='224' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>结论：两支都靠边</text><text x='474' y='68' text-anchor='middle' style='font-family:var(--font-serif);font-size:13.5px;font-weight:bold;fill:var(--cinnabar-pure)'>近百年这把尺 · 量另三件事</text><rect x='350' y='84' width='16' height='4' style='fill:var(--cinnabar-pure)'/><text x='376' y='92' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>有没有分析概念本身</text><rect x='350' y='114' width='16' height='4' style='fill:var(--cinnabar-pure)'/><text x='376' y='122' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>有没有推理形式的自觉</text><rect x='350' y='144' width='16' height='4' style='fill:var(--cinnabar-pure)'/><text x='376' y='152' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>有没有可检验的自然知识</text><rect x='350' y='180' width='250' height='58' rx='7' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='475' y='203' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>先秦拿得出东西的只此两支</text><text x='475' y='224' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>结论：分量极重</text><text x='320' y='282' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>同一批材料，两个结论 —— 差别在尺，不在史实</text></svg>",
+   "caption": "左边这把尺问的是「有没有立起主体、有没有接上生命」，右边这把尺问的是「有没有分析概念、有没有可检验的知识」。"
+  },
+  {
+   "type": "p",
+   "text": "牟宗三那把尺量三件事：有没有立起主体（道德的根子在不在人自己身上）、有没有接上生命的安顿、有没有长成一套自己的系统。按这把尺，名家止于辩、没长成系统，墨家的根据放在外面、主体没立起来，两支都得靠边。"
+  },
+  {
+   "type": "p",
+   "text": "近百年那把尺量的是另外三件事：有没有把概念本身当对象来分析、有没有对推理形式条件的自觉、有没有可检验的自然知识。按这把尺，先秦拿得出东西的只有这两支，分量极重。梁启超、胡适、谭戒甫、沈有鼎这几代人做的正是这件事——把《墨经》从两千年的冷板凳上搬回来，逐条校勘、逐条讲通。由此不少学者认为，中国逻辑思想的价值被严重低估了。"
+  },
+  {
+   "type": "p",
+   "text": "方法上最可议的一点在这里：牟那把尺里有「有没有长成系统」这一格，而名墨是一支早夭的传统。"
+  },
+  {
+   "type": "figure",
+   "ftype": "时间线",
+   "svg": "<svg viewBox='0 0 660 250' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><text x='330' y='22' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>先秦思辨这一支的断线</text><path d='M40 130 L250 130' style='fill:none;stroke:var(--ink-soft);stroke-width:2'/><path d='M250 130 L470 130' style='fill:none;stroke:var(--ink-faint);stroke-width:1.6;stroke-dasharray:6 7'/><path d='M470 130 L622 130' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2'/><circle cx='110' cy='130' r='6' style='fill:var(--ink-soft)'/><circle cx='250' cy='130' r='6' style='fill:var(--ink-faint)'/><circle cx='490' cy='130' r='6' style='fill:var(--cinnabar-pure)'/><circle cx='600' cy='130' r='6' style='fill:var(--cinnabar-pure)'/><text x='110' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>战国中后期</text><text x='110' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>惠施 · 公孙龙</text><text x='110' y='158' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>墨家与儒并称显学</text><text x='250' y='176' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--ink)'>秦汉以后</text><text x='250' y='196' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>组织散、文本讹误</text><text x='250' y='213' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>肯作注的人屈指可数</text><text x='360' y='108' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>约两千年，基本无人接续</text><text x='490' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>清 · 乾嘉</text><text x='490' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>重新校订《墨经》</text><text x='600' y='104' text-anchor='middle' style='font-family:var(--font-serif);font-size:12.5px;font-weight:bold;fill:var(--cinnabar-pure)'>近代</text><text x='600' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>当作逻辑学重读</text><text x='545' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-soft)'>梁启超 · 胡适 · 谭戒甫 · 沈有鼎</text><text x='330' y='240' text-anchor='middle' style='font-family:var(--font-serif);font-size:11.5px;fill:var(--ink-faint)'>没长成系统，可能是内在不行，也可能是还没来得及长就断了</text></svg>",
+   "caption": "这一支在秦汉之后就断了，中间隔着近两千年几乎无人接续，直到清代乾嘉学者重新校订、近代才被当作逻辑学来读。"
+  },
+  {
+   "type": "p",
+   "text": "战国中后期，墨家还是与儒并称的显学——《韩非子》里的《显学》篇开门就把世上最显赫的学问点为儒、墨两家。秦汉之后这一支基本断了，中间隔着近两千年几乎无人接续。一支传统没长成系统，可能是它内在不行，也可能是它还没来得及长就断了。**用结果去判潜力**，是这套评价最容易被质疑的地方。"
+  },
+  {
+   "type": "p",
+   "text": "但也要公道地说牟宗三这一边。他关心的并不是「先秦有没有人研究逻辑」——这个问题他不必否认，《墨经》的存在也不构成对他的反驳。他关心的是：中国哲学两千年里真正被反复讲、被接着往下做的，是哪一条脉络。在这个问题设定底下，答案确实是儒释道那三条线，名墨不是主干。"
+  },
+  {
+   "type": "pull",
+   "text": "分歧在于用哪把尺，不在于谁把史实弄错了。"
+  },
+  {
+   "type": "p",
+   "text": "读者能记住这一点就够用了：以后再遇到「某某低估了某某」这类说法，先别急着站队，先问一句两边各自在量什么。量的不是同一件事的时候，两个结论是可以同时成立的。"
+  },
+  {
+   "type": "h2",
+   "text": "顺带说一句法家"
+  },
+  {
+   "type": "p",
+   "text": "法家的路子跟以上几支都不一样：它干脆不修周代那套礼乐制度了，另起一套——用成文的法、可核验的赏罚、不看亲疏的统一标准，建一套客观秩序。这一路有它实打实的正面意义：它把「治」从个别人身上挪到了制度上。"
+  },
+  {
+   "type": "p",
+   "text": "牟宗三对法家有一个观察值得记：法家里渗进了道家的术。《韩非子》里有《解老》《喻老》两篇，是现存最早的《老子》注解；韩非把老子那套虚静、无为拿了过去，变成君主驾驭臣下的技术——君主不露好恶、不显意图，臣下无从迎合，只能照法办事。"
+  },
+  {
+   "type": "p",
+   "text": "转述牟宗三的批评：老子讲的虚静无为，本是一个主体所达到的境界——人把执着和造作放下，万物才如其所是地呈现；到了法家手上，它成了一个位置上的人操作别人的手法。语言一字未改，道的客观性却随之丧失，被降格成一套权术。这一笔值得单记：哲学的语言被搬到另一个用途上，字面可以不动，意思已经反了。"
+  },
+  {
+   "type": "h2",
+   "text": "想接着读原文的话"
+  },
+  {
+   "type": "p",
+   "text": "站内《墨子》收的是全本，《经》上下、《经说》上下、《大取》《小取》六篇都在，原文、译文、注疏齐全。《小取》全篇只有二十条，条条都短，值得从头读一遍；《兼爱》《非攻》《天志》也在，可以对照看它论证的落点。法家那边《韩非子》全书在站内，《解老》《喻老》就在其中；《尹文子》也在，讲名实讲得相当细。公孙龙那三篇站内没有收，得另找版本。"
+  },
+  {
+   "type": "refs",
+   "items": [
+    "引文四条均出自站内《墨子》并逐字核对：《小取》二条、《经上》一条、《经下》一条。",
+    "惠施「历物十事」与公孙龙的论证过程均为转述，其著作不在站内。",
+    "牟宗三本人的判语一律转述，未作直引。"
+   ]
+  }
+ ]
+}
