@@ -1,0 +1,461 @@
+{
+  "title": "一篇文章读懂《中国哲学十九讲》",
+  "subtitle": "牟宗三 · 1983",
+  "centralIdea": "「中国有没有哲学」之所以是个刺人的问题,是因为「哲学」这把尺是跟着西方一起借来的。牟宗三既不把中国思想硬塞进那把尺,也不赌气说我们不需要尺 —— 他说:两边问的从头就不是同一个问题。西方追问世界是什么,中国追问生命如何安顿。要衡量后者得另找一把尺,而这把尺他最后是向康德借的;借完,又当面顶了康德一句。",
+  "featured": true,
+  "hero": {
+    "badge": "全书 · 核心",
+    "headline": "中国哲学问的不是世界由什么构成,是生命如何安顿",
+    "tagline": "十九次课,一个问题:中国到底有没有哲学。他的答案是有 —— 但要先承认,它问的从来就不是同一道题。"
+  },
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "《中国哲学十九讲》是牟宗三在台湾大学的课堂讲录,由学生整理,一九八三年出版。因为是讲课,它口语、有重复,讲到激动处还会岔开去驳两句。但它的骨架比许多正襟危坐写出来的书都清楚:十九次课,只为回答一个被追问了一百年的问题 —— **中国到底有没有哲学。**"
+    },
+    {
+      "type": "p",
+      "text": "先说清楚这本书的难点在哪:难不在字,难在**它默认你已经知道很多**。它一开口就是「外延真理」「境界形态」「两层存有论」「智的直觉」,而这些词全都不是日常语言。下面这篇文章要做的事只有一件 —— **把这些词换成人话**,让没读过原书的人也能跟着他的思路走一遍。"
+    },
+    {
+      "type": "h2",
+      "text": "「中国有没有哲学」为什么是个刺人的问题"
+    },
+    {
+      "type": "p",
+      "text": "今天听到这句话,第一反应可能是不快。但在牟宗三讲课的年代,这不是挑衅,是学界的实际处境。黑格尔在他的哲学史里就把中国摆在正式哲学之外,认为那里只有些实用的道德教训;这类判断在二十世纪的西方哲学界相当普遍。"
+    },
+    {
+      "type": "p",
+      "text": "问题的要害在于:**「哲学」这个词本身是外来的。** 它是近代经日本转译进来的新词,中国传统的学问分类里原本没有这一格。跟着这个词一起进来的,还有一整套判准 —— 要有明确的概念、要有可检查的论证、要能组成系统。拿这套判准去量《论语》,《论语》当然不合格:它没有定义,没有推论,只有一句一句的对话。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "打个比方",
+      "items": [
+        "这就像用体检表去量一位厨师:身高体重血压都填得出来,但表上没有一栏叫「做菜好不好吃」。填完之后说这个人「不合格」,问题不在厨师,在表。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "面对这张表,当时常见两种反应。一种是**硬塞** —— 把中国思想剪成西方哲学的形状,凑出「本体论」「认识论」「伦理学」几个抽屉,不合形状的就削掉。另一种是**赌气** —— 索性说我们不需要哲学,中国有的是智慧,比哲学高。牟宗三两条都不走。他说:哲学不是西方的专利,凡有文化生命的民族都有它的哲学;差别不在有没有,**在于问的是什么问题。**"
+    },
+    {
+      "type": "p",
+      "text": "为了说清这个差别,他分开了两种真理。**外延真理**是逻辑、数学、科学讲的那种:一加一等于二,水在标准气压下一百度沸腾 —— 谁来验都一样,验的人是谁完全不重要。**内容真理**关乎生命:什么叫仁,什么叫安身立命,什么叫放下 —— 这些话你可以背得一字不差,但没有在自己身上兑现过,就等于没懂。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "两种真理:差别不在真不真,在「验证它需不需要你这个人在场」",
+      "svg": "<svg viewBox='0 0 640 240' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><g style='font-family:var(--font-serif)'><text x='158' y='28' text-anchor='middle' style='font-size:15px;fill:var(--ink-soft)'>外延真理</text><rect x='40' y='46' width='236' height='120' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1' /><text x='158' y='76' text-anchor='middle' style='font-size:13px;fill:var(--ink-soft)'>逻辑 · 数学 · 科学</text><text x='158' y='104' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>谁来验都一样</text><text x='158' y='128' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>验的人是谁,不重要</text><text x='158' y='152' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>「知道」就是全部</text><path d='M320 40 L320 200' style='stroke:var(--line);stroke-width:1;stroke-dasharray:4 4' /><text x='482' y='28' text-anchor='middle' style='font-size:15px;fill:var(--cinnabar-pure)'>内容真理</text><rect x='364' y='46' width='236' height='120' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3' /><text x='482' y='76' text-anchor='middle' style='font-size:13px;fill:var(--ink-soft)'>仁 · 安身立命 · 放下</text><text x='482' y='104' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>要你自己活过才算数</text><text x='482' y='128' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>验的人是谁,决定一切</text><text x='482' y='152' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>「知道」不等于「懂得」</text><text x='320' y='214' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>中国哲学做的是右边这一路 —— 不是不够严格,是任务不同</text></g></svg>"
+    },
+    {
+      "type": "p",
+      "text": "牟宗三说,内容真理也有普遍性,但那是**具体的普遍性** —— 它不像公式那样悬在半空谁都能取用,它要落在一个个具体的人身上才现出来。说白了:关于「仁」的道理,你在一个真正厚道的人身上看得见,在教科书的定义里看不见。"
+    },
+    {
+      "type": "h2",
+      "text": "全书的坐标轴:客体性与主体性"
+    },
+    {
+      "type": "p",
+      "text": "顺着上面那条分界,牟宗三给中西哲学画了一根轴。西方哲学的重心在**客体**:它从世界问起 —— 万物由什么构成?我们凭什么说自己认识了它?这条路走下去,长出了逻辑、知识论,最后长出了科学。中国哲学的重心在**主体**:它从人问起 —— 人该怎么活?这颗心为什么会不安?怎样才算成为一个人?这条路走下去,长出的是工夫、修养、体证。"
+    },
+    {
+      "type": "p",
+      "text": "一个粗糙但管用的说法:西方哲学的典型姿势是**盯着世界看**,中国哲学的典型姿势是**回头看自己**。所以西方哲学的成果可以写进教科书交给下一代,中国哲学的成果却更像手艺 —— 讲得再清楚,不自己做一遍还是不会。"
+    },
+    {
+      "type": "p",
+      "text": "这里要先防一个误会:牟宗三说的「主体性」**不是「主观」**。主观是各人各的意见,你觉得好我觉得不好,谁也说服不了谁。他说的主体性,指的是道德实践的根据落在人这里 —— 而这个根据人人相同:你我心里那一点不忍,不是你我的私见。这正是前面那句「具体的普遍性」要顶住的地方:**从一个个具体的人身上出发,却不落进个人的偏好。**"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "这条轴要小心",
+      "items": [
+        "「西方重客体、中国重主体」是**牟宗三的概括**,不是一句中立的历史描述。它抓住了大势,却也压平了不少东西 —— 西方哲学里从来不缺讲主体与实践的人,中国也不是没有客观思辨的传统。",
+        "这个框架是有代价的:凡不合这条轴的支流,在他手里都要吃亏。名家、墨家、荀子被判得低,根子就在这里。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "全书最结实的一段:周文疲弊"
+    },
+    {
+      "type": "p",
+      "text": "如果这本书只能带走一个概念,我建议带走这个。它回答的是一个老问题:**先秦诸子为什么会在同一段时间里一起冒出来?**"
+    },
+    {
+      "type": "p",
+      "text": "旧的答案是《汉书·艺文志》给的「诸子出于王官」:儒家出于司徒之官,道家出于史官,各家各有来历。牟宗三不取此说。他说那顶多算职业来源,不是**问题来源** —— 它解释不了这些人为什么都急,为什么都在同一个时间点上发言。"
+    },
+    {
+      "type": "p",
+      "text": "他给的答案是四个字:**周文疲弊。**「周文」指周公制礼作乐建立起来的那一整套东西 —— 典章、制度、仪式、身份规矩,大到祭祀征伐,小到婚丧穿什么、见了谁行什么礼。它曾经是活的,整个社会靠它运转。「疲弊」不是说它被谁打倒了,而是说:**它还在,只是没人当真了。**"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "打个比方",
+      "items": [
+        "像一家运转了几百年的老公司,规章制度一条没删,流程照走,会照开,但所有人都知道那只是走个过场。制度还在,支撑制度的那口气没了。春秋战国的礼乐,就是这个状态。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "牟宗三的洞见在于:**诸子百家不是各说各话,他们是同一道题的四份答卷。** 题目就是「周文疲弊了,怎么办」。"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**儒家说:周文没有错,错在它没有根。** 礼乐要有真情实感贯注在里面才是礼乐,否则只是一套姿势。所以要给它补一个内在的根据 —— 那就是仁。",
+        "**道家说:周文本身就是病。** 一切人为的规矩都是造作,造作就是束缚。所以要往回退,退到没有造作的自然状态。",
+        "**墨家说:周文太繁太费。** 厚葬久丧、钟鼓礼乐,都是活人耗在死规矩上的成本。所以主张节用、节葬、非乐,一切以有用无用来衡量。",
+        "**法家说:别修了。** 周文既然撑不住,就另起一套 —— 用赏罚、法令、权术重建一个不靠人品也能运转的客观秩序。"
+      ]
+    },
+    {
+      "type": "quote",
+      "original": "人而不仁,如礼何?人而不仁,如乐何?"
+    },
+    {
+      "type": "p",
+      "text": "这是《论语·八佾》里的话,正是儒家那份答卷的题眼:一个人心里没有仁,礼拿他怎么办呢?乐拿他怎么办呢?**先有那个东西,才谈得上这些形式。**(站内儒典有《论语》原文与译注,可对读。)"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "周文疲弊:一道题,四份答卷 —— 诸子的分歧从这里开始",
+      "svg": "<svg viewBox='0 0 660 320' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><g style='font-family:var(--font-serif)'><rect x='230' y='16' width='200' height='42' rx='4' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2' /><text x='330' y='36' text-anchor='middle' style='font-size:14px;fill:var(--ink-soft)'>周文</text><text x='330' y='52' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>礼乐典章 · 曾经是活的</text><path d='M330 58 L330 84' style='stroke:var(--ink-faint);stroke-width:1' /><path d='M330 84 l-4 -8 l8 0 z' style='fill:var(--ink-faint)' /><rect x='230' y='84' width='200' height='42' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4' /><text x='330' y='104' text-anchor='middle' style='font-size:14px;fill:var(--cinnabar-pure)'>疲弊</text><text x='330' y='120' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>还在,只是没人当真了</text><path d='M330 126 L330 148 M90 148 L570 148' style='stroke:var(--ink-faint);stroke-width:1' /><path d='M90 148 L90 170 M250 148 L250 170 M410 148 L410 170 M570 148 L570 170' style='stroke:var(--ink-faint);stroke-width:1' /><g text-anchor='middle'><rect x='24' y='170' width='132' height='76' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1' /><text x='90' y='192' style='font-size:13px;fill:var(--ink-soft)'>儒家</text><text x='90' y='214' style='font-size:11px;fill:var(--ink-faint)'>没错,是没有根</text><text x='90' y='234' style='font-size:12px;fill:var(--cinnabar-pure)'>补上「仁」</text><rect x='184' y='170' width='132' height='76' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1' /><text x='250' y='192' style='font-size:13px;fill:var(--ink-soft)'>道家</text><text x='250' y='214' style='font-size:11px;fill:var(--ink-faint)'>它本身就是病</text><text x='250' y='234' style='font-size:12px;fill:var(--cinnabar-pure)'>退到「无」</text><rect x='344' y='170' width='132' height='76' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1' /><text x='410' y='192' style='font-size:13px;fill:var(--ink-soft)'>墨家</text><text x='410' y='214' style='font-size:11px;fill:var(--ink-faint)'>太繁太费</text><text x='410' y='234' style='font-size:12px;fill:var(--cinnabar-pure)'>节用 · 兼爱</text><rect x='504' y='170' width='132' height='76' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1' /><text x='570' y='192' style='font-size:13px;fill:var(--ink-soft)'>法家</text><text x='570' y='214' style='font-size:11px;fill:var(--ink-faint)'>不修了,另起一套</text><text x='570' y='234' style='font-size:12px;fill:var(--cinnabar-pure)'>法 · 术 · 势</text></g><text x='330' y='284' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>不是各说各话 —— 是同一道题的四份答卷</text><text x='330' y='306' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>牟宗三不取「诸子出于王官」:那是职业来源,不是问题来源</text></g></svg>"
+    },
+    {
+      "type": "pull",
+      "text": "诸子不是从图书馆里长出来的,是从一场危机里长出来的。"
+    },
+    {
+      "type": "h2",
+      "text": "儒家:把根找回来"
+    },
+    {
+      "type": "p",
+      "text": "儒家那份答卷的关键,在于孔子指点「仁」的方式。他从不给仁下定义 —— 全本《论语》里,同一个问题问十次,他答十种。牟宗三提醒我们注意他常用的一个入口:**不安。**"
+    },
+    {
+      "type": "p",
+      "text": "宰我觉得三年之丧太长,一年就够了。孔子没有搬制度、没有引古人,只问了一句:这样你心里安不安?宰我说安。孔子便说:你安,你就去做吧。**这一句极重。** 它把判断权原样交还给宰我自己 —— 意思是:守不守丧不是靠规矩压出来的,是靠你心里那点不忍。你若真不觉得有什么,规矩再严也是空的。"
+    },
+    {
+      "type": "p",
+      "text": "孟子接着把这一点落实成「本心」:看见小孩快掉进井里,人会「怵惕恻隐」 —— 那一下不假思索,不图任何回报。所谓性善,不是乐观地断言人都是好人,而是**指出道德的根据长在哪里**:它不在天上,不在神那里,不在外面的规矩里,就在你自己身上。"
+    },
+    {
+      "type": "p",
+      "text": "牟宗三把这叫作「**主体的挺立**」,并给儒家一个名号:「道德的形上学」。这个词唬人,意思其实不难 —— 别的体系是先讲清世界的构造,再从里面推出人该怎么活;儒家反过来,**从道德实践本身站起来,一直站到天道那里去**。「诚者天之道」讲的就是这件事:人做工夫做到极处所体证的那个东西,同时就是天地运行的那个东西。"
+    },
+    {
+      "type": "h2",
+      "text": "道家:「无」不是一个东西"
+    },
+    {
+      "type": "p",
+      "text": "这是全书最有名、也最有争议的一节。"
+    },
+    {
+      "type": "p",
+      "text": "先说最容易读岔的地方:很多人把老子的「无」当成一个神秘的本源 —— 好像宇宙背后有一台叫「道」的发动机,万物从那里被造出来。牟宗三说,**不是这样。**「无」首先不是一个东西,而是一个动作:无掉造作,无掉执着,无掉那个「非要怎样不可」的心。所以「绝圣弃智」不是反对智慧,是反对**有心为之** —— 反对那种摆好姿势去做圣人的做法。"
+    },
+    {
+      "type": "p",
+      "text": "于是他给道家的形上学起了个名字:**境界形态的形上学**。与之相对的是**实有形态**。这一组对照是理解全书的钥匙,说白了就是:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**实有形态**:「道」是一个真实存在的实体,它像发动机一样运转,把万物造出来。这是我们比较熟悉的思路,西方的上帝、第一因大致属于这一类。",
+        "**境界形态**:「道」不是摆在那里的东西,而是人做工夫(致虚、守静)之后,心境所显出来的那个样子。是先有那颗虚静的心,才有「道」这个境界可言。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "那老子讲的「生」怎么办?牟宗三的解释是**不生之生**:道生万物,不是母鸡生蛋那样真的生出一个东西来,而是**不去挡着** —— 不堵住它的源头、不拗着它的性子,万物就自己长起来了。老子自己那句话说得最清楚 ——"
+    },
+    {
+      "type": "quote",
+      "original": "生而不有,为而不恃,长而不宰。"
+    },
+    {
+      "type": "p",
+      "text": "生了它却不占有,做了事却不居功,让它长大却不去主宰。**注意这三句的重心全在后半截** —— 道的本事不在「能生」,在「生了之后能不插手」。所以牟宗三说道家的讲法是「纵贯横讲」:形态上看像是自上而下的创生(纵),实际讲的却是主体境界的朗现(横)。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "实有形态与境界形态:一个是「造出万物」,一个是「不去挡着万物」",
+      "svg": "<svg viewBox='0 0 640 260' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><g style='font-family:var(--font-serif)'><text x='150' y='26' text-anchor='middle' style='font-size:15px;fill:var(--ink-soft)'>实有形态</text><rect x='96' y='46' width='108' height='36' rx='4' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2' /><text x='150' y='70' text-anchor='middle' style='font-size:13px;fill:var(--ink-soft)'>道(实体)</text><path d='M150 82 L150 128' style='stroke:var(--ink-soft);stroke-width:1.2' /><path d='M150 128 l-4 -9 l8 0 z' style='fill:var(--ink-soft)' /><text x='196' y='110' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>创生</text><g style='font-size:12px;fill:var(--ink-faint)'><text x='104' y='150'>万</text><text x='134' y='150'>物</text><text x='164' y='150'>万</text><text x='192' y='150'>物</text></g><text x='150' y='190' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>像一台发动机</text><text x='150' y='210' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>真的造出东西来</text><path d='M320 36 L320 224' style='stroke:var(--line);stroke-width:1;stroke-dasharray:4 4' /><text x='480' y='26' text-anchor='middle' style='font-size:15px;fill:var(--cinnabar-pure)'>境界形态</text><rect x='420' y='46' width='120' height='36' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3' /><text x='480' y='70' text-anchor='middle' style='font-size:13px;fill:var(--cinnabar-pure)'>虚静的心</text><path d='M480 82 L480 106' style='stroke:var(--cinnabar-pure);stroke-width:1;stroke-dasharray:3 3' /><text x='480' y='122' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>显出「无」的境界</text><path d='M424 132 L536 132' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:3 3' /><g style='font-size:12px;fill:var(--ink-faint)'><text x='430' y='154'>万</text><text x='458' y='154'>物</text><text x='488' y='154'>自</text><text x='516' y='154'>生</text></g><text x='480' y='190' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>不生之生 —— 不塞其源</text><text x='480' y='210' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>不是造出万物,是不去挡着万物</text><text x='320' y='246' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>牟宗三判道家属右边 —— 这是全书争议最大的判断之一</text></g></svg>"
+    },
+    {
+      "type": "callout",
+      "tone": "mute",
+      "label": "争议在这里",
+      "items": [
+        "这个解读并非定论。《老子》「道生一,一生二」这类句子,历来也有实实在在的宇宙生成论读法;批评者认为牟宗三的讲法等于把道家的形上学**取消**掉了,只剩下一套心境修养。",
+        "站内道藏收《道德经》《庄子》《文子》等原文与译注,可以自己去看那些句子,再判断这一解读贴不贴。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "被他判低的那几家,和魏晋这一段"
+    },
+    {
+      "type": "p",
+      "text": "对名家和墨家,牟宗三讲得不多,评价也低。他承认名家(惠施、公孙龙)是先秦唯一真正走上概念思辨的一支 —— 这是中国最接近西方逻辑的路子;但他认为它止步于「辩」,上不通形上学,下不通科学,终究没有长成一个系统。墨家在他看来则以「利」为衡量一切的标准,天志明鬼那一套宗教色彩也不够深。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "这里要打折扣",
+      "items": [
+        "《墨经》里的逻辑、几何与光学讨论,在后来的研究中评价明显提高,不是「不成系统」四个字能打发的。",
+        "更根本的问题是判准:用「有没有长成一个系统」来衡量一支早早断掉的传统,本身对它就不公平。这一段最能看出**一把好尺被用过头之后的样子**。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "魏晋玄学那一段则讲得精彩。他不把玄学看作道家的重复,而看作道家的推进:王弼主张「以无为本」;裴頠反问,无怎么可能生出有;郭象干脆说万物「块然自生」,连那个「无」也不必要了 —— 每一物就在自己的位置上独自完成自己。牟宗三认为郭象把境界形态推到了极处:连一个本体都不必再立。"
+    },
+    {
+      "type": "p",
+      "text": "这一段还留下一个极漂亮的说法:**圣人体无。** 既然「无」一说出口就变成了一个「有」,那么真到了那个境界的人反而不谈它。所以王弼说孔子才是真正体无的人 —— 他不讲;老子成天讲「无」,恰恰说明他还站在「有」的这一头。这种机锋就是玄学的味道:**它不是在描述一个东西,是在指点一种火候。**"
+    },
+    {
+      "type": "h2",
+      "text": "佛教给了他一副骨架:两层存有论"
+    },
+    {
+      "type": "p",
+      "text": "佛教传入带来的不只是信仰,还有一整套中国原本没有的精密分析:**心识是怎么把世界构造出来的。** 唯识讲的「遍计执、依他起、圆成实」,天台讲的「二谛」,都是这类工具。牟宗三借它们搭起了自己最重要的架子。"
+    },
+    {
+      "type": "p",
+      "text": "关键的字是「**执**」。我们看见的世界之所以是一件件界限分明、可以命名、可以计算的东西,不全是世界本来的样子,里面有我们这颗心加工的成分 —— 是「执」出来的。桌子当然在那里,但把它切成一个独立的、叫作「桌子」的对象,是认知活动做的事。"
+    },
+    {
+      "type": "p",
+      "text": "于是有了「**两层存有论**」。这个词看着吓人,拆开就是两句话:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**执的存有论** —— 讲的是我们平常这个世界:有分别、有对象、可测量。**科学知识就在这一层成立**,而且只能在这一层成立。",
+        "**无执的存有论** —— 讲的是不带这层加工时的样子,也就是康德说的「物自身」。它由后面要讲的「智的直觉」来朗现。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "这里有个很要紧的分寸,常被误会:**牟宗三不是在贬低科学。** 恰恰相反,他费这么大力气分出两层,正是为了给科学一个正当而稳固的位置 —— 科学在它那一层完全成立,不必被形上学指指点点;形上学也不必假装自己能替科学发言。**两层各归各位,谁也不必压谁。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "两层存有论:科学不是被贬低,是被安放在它该在的那一层",
+      "svg": "<svg viewBox='0 0 640 280' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><g style='font-family:var(--font-serif)'><rect x='120' y='26' width='400' height='68' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3' /><text x='320' y='54' text-anchor='middle' style='font-size:14px;fill:var(--cinnabar-pure)'>无执的存有论</text><text x='320' y='78' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>物自身 · 不加那层加工的样子 · 智的直觉所对</text><path d='M240 94 L240 176' style='stroke:var(--ink-faint);stroke-width:1' /><path d='M240 176 l-4 -9 l8 0 z' style='fill:var(--ink-faint)' /><text x='196' y='140' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>自我坎陷</text><path d='M404 176 L404 94' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:3 3' /><path d='M404 94 l-4 9 l8 0 z' style='fill:var(--ink-faint)' /><text x='452' y='140' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>转识成智</text><rect x='120' y='176' width='400' height='68' rx='4' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2' /><text x='320' y='204' text-anchor='middle' style='font-size:14px;fill:var(--ink-soft)'>执的存有论</text><text x='320' y='228' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>现象 · 有分别有对象 · 科学知识在这里成立</text><text x='320' y='268' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>两层各归各位 —— 形上学不替科学发言,科学也不必背形上学的债</text></g></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "「圆教」:判准不是谁讲得高,是谁一个都不丢"
+    },
+    {
+      "type": "p",
+      "text": "佛教这一段的另一个重头是判教 —— 给各宗各派排座次。牟宗三采用的判准很特别:**「圆」不等于「高」。** 不是谁讲得最玄妙最超越就最圆,而是谁能**一个法都不舍弃** —— 连烦恼、连恶、连最不堪的凡夫处境都保得住,才叫圆。"
+    },
+    {
+      "type": "p",
+      "text": "按这把尺,华严宗气象极大,是从佛的境界往下讲的,但它「缘理断九」 —— 要断掉九法界才成佛,等于把凡夫那一头丢下了。天台宗讲「一念三千」「性具善恶」,主张「不断断」:不必断掉九法界也能成佛,烦恼当下就是菩提。所以牟宗三判**天台最圆**。至于禅宗,他认为那是「作用见性」,是修行上的圆,不是判教义理上的圆。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "打个比方",
+      "items": [
+        "像评价一套救生方案:判准不是它能把最壮的那个人送多高,而是它有没有把最弱的那个人也算进去。天台的「圆」,圆在连烦恼、连恶、连最不堪的处境都不丢下。"
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "mute",
+      "items": [
+        "要说明的是:这套判教基本沿着天台一系(智顗、湛然、知礼)的立场讲,不是一位中立裁判的裁定。华严宗当然不会同意自己被判为「未圆」。读的时候把它当作**一个有立场的强论证**,而不是佛教史的定案。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "宋明理学:他说是三系,不是二系"
+    },
+    {
+      "type": "p",
+      "text": "教科书讲了一百年的分法是二系:程朱理学对陆王心学。牟宗三说这不对,应该是**三系**:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**五峰蕺山系**(胡宏、刘宗周):以心著性 —— 拿心来彰显性体。",
+        "**象山阳明系**(陆九渊、王阳明):心即理 —— 心本身就是理。",
+        "**伊川朱子系**(程颐、朱熹):心静理明 —— 心去认知那个摆在那里的理。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "分界线在哪?牟宗三给了一句极重的判词:朱子的「理」是**只存有而不活动**的。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "打个比方",
+      "items": [
+        "朱子的「理」像一本摊在桌上的说明书:内容全对,但它自己不会动,得靠人去读、去查、去照着做 —— 所以要格物、要穷理,是一条**认知**的路子。",
+        "前两系的「理」不是说明书,更像人身上的一股劲:它自己会动,会当场推着你去做那件该做的事。这就是「即存有即活动」。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "会动的本体才能直接创生、直贯下来,牟宗三称之为「纵贯」;朱子那条是心去认知理,他称之为「横摄」。于是有了全书最重的一句判词:朱子是「**别子为宗**」 —— 意思是:朱子并非孔孟嫡传的正宗,而是一个旁支,后来被抬成了正统。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "caption": "二系说与三系说:牟宗三真正在意的不是分几系,是「理会不会自己动」",
+      "svg": "<svg viewBox='0 0 660 280' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><g style='font-family:var(--font-serif)'><text x='140' y='26' text-anchor='middle' style='font-size:15px;fill:var(--ink-soft)'>通行的二系说</text><rect x='40' y='48' width='200' height='44' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1' /><text x='140' y='76' text-anchor='middle' style='font-size:13px;fill:var(--ink-soft)'>程朱理学</text><rect x='40' y='108' width='200' height='44' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1' /><text x='140' y='136' text-anchor='middle' style='font-size:13px;fill:var(--ink-soft)'>陆王心学</text><text x='140' y='190' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>简明好记</text><text x='140' y='210' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>但牟说它遮住了真正的分界</text><path d='M320 30 L320 250' style='stroke:var(--line);stroke-width:1;stroke-dasharray:4 4' /><text x='490' y='26' text-anchor='middle' style='font-size:15px;fill:var(--cinnabar-pure)'>牟宗三的三系说</text><rect x='372' y='48' width='240' height='38' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2' /><text x='492' y='72' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>五峰蕺山系 · 以心著性</text><rect x='372' y='94' width='240' height='38' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2' /><text x='492' y='118' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>象山阳明系 · 心即理</text><text x='492' y='152' text-anchor='middle' style='font-size:11px;fill:var(--cinnabar-pure)'>↑ 纵贯:理自己会动</text><rect x='372' y='166' width='240' height='38' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 3' /><text x='492' y='190' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>伊川朱子系 · 心静理明</text><text x='492' y='222' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>横摄:理只存有而不活动 →「别子为宗」</text><text x='330' y='268' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>这句判词是全书最重的一句,也是学界最不接受的一句</text></g></svg>"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "不是通说",
+      "items": [
+        "「三系说」与「别子为宗」都不是宋明理学研究的定论,而是牟宗三一家之言。钱穆等学者有明确异议,今天多数研究者也不采这个分法。",
+        "但要公道地说:即便不接受结论,他提的那个问题是真问题 —— **本体到底会不会自己动?** 这一问确实逼出了朱子与陆王之间一个此前讲得不够清楚的差别。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "康德那把尺,和顶回去的那一句"
+    },
+    {
+      "type": "p",
+      "text": "全书行到这里,那个一直隐在背后的人终于走到台前:**康德。** 牟宗三翻译过康德的三大批判,不是道听途说地用他。为什么偏偏是康德?两个理由。第一,康德把道德建立在「自律」上 —— 道德法则不是神颁下来的,是理性自己给自己立的;这与儒家「本心即天理」离得最近。第二,康德把「现象」与「物自身」分开,正好给两层存有论留了位置。"
+    },
+    {
+      "type": "p",
+      "text": "但康德走到一个地方停住了。他认为自由意志、灵魂不朽、上帝存在这三样东西,人永远无法认识,只能作为道德实践的「**设准**」 —— 必须假定它们成立,否则道德讲不通;但它们永远不会呈现在你面前。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "设准是什么",
+      "items": [
+        "有点像记账:为了让这本账算得平,必须假设有这么一笔款项存在。你不能不假设它,但你也永远看不到那笔钱。康德说的「自由」就是这样一笔款项。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "牟宗三这一生的方向,据他自述,是被一句当面的呵斥定下来的。冯友兰把良知当作一个「假定」来讲,他的老师熊十力当场斥责:良知怎么会是假定?**良知是真实的呈现。** 牟宗三说这一句他一辈子忘不了。"
+    },
+    {
+      "type": "p",
+      "text": "所以到了这里,他与康德分道扬镳。而分手处的那句话,是全书最大胆的一句 ——"
+    },
+    {
+      "type": "quote",
+      "original": "人虽有限而可无限。"
+    },
+    {
+      "type": "h2",
+      "text": "智的直觉:全书的赌注"
+    },
+    {
+      "type": "p",
+      "text": "要看懂这一步,得先知道康德所谓「智的直觉」(intellectual intuition)是什么意思。人的认识都要经过感官,先接收材料,再由概念整理 —— 这叫感触直觉。**智的直觉不同:它是创造性的,直觉到什么就同时创造出什么。** 用一个粗的说法:上帝的「看」就是「造」,他不需要先看见才知道,他知道即是使之存在。正因如此,康德说智的直觉只属于上帝,人没有;而人没有它,就永远认识不到物自身。"
+    },
+    {
+      "type": "p",
+      "text": "牟宗三顶了回去。他说:中国哲学三教都肯定人可以有智的直觉 —— 儒家的良知、道家的玄智、佛家的般若,讲的都是这回事。**如果人不能有,那么成圣、成佛、成真人这些话,全都是空的。** 而这三教两千年来并不是在说空话。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "康德画了一条界,把人挡在下面;牟宗三说这条界人可以跨过去",
+      "svg": "<svg viewBox='0 0 640 260' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><g style='font-family:var(--font-serif)'><text x='300' y='24' text-anchor='middle' style='font-size:15px;fill:var(--ink-soft)'>康德的界线</text><text x='300' y='58' text-anchor='middle' style='font-size:13px;fill:var(--ink-soft)'>上帝:有智的直觉</text><text x='300' y='80' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>「看」即是「造」——知道它,就使它存在</text><path d='M60 104 L540 104' style='stroke:var(--ink-soft);stroke-width:1.4' /><text x='580' y='108' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>界线</text><text x='300' y='140' text-anchor='middle' style='font-size:13px;fill:var(--ink-soft)'>人:只有感触直觉</text><text x='300' y='162' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>要先接收,再整理 —— 所以物自身不可知</text><path d='M110 150 C110 118,110 118,110 96' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.6' /><path d='M110 92 l-5 10 l10 0 z' style='fill:var(--cinnabar-pure)' /><text x='300' y='206' text-anchor='middle' style='font-size:13px;fill:var(--cinnabar-pure)'>牟宗三:人虽有限而可无限</text><text x='300' y='230' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>儒之良知 · 道之玄智 · 佛之般若 —— 三教都说人能到</text><text x='300' y='250' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>否则成圣成佛全是空话</text></g></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这一跨的后果有两个。其一,「物自身」变了性质:它不再是一个认识论上够不着的谜,而成了一个**带价值意味**的概念 —— 是万物在不被我们的执着切割时,本来的那个样子。其二,两层存有论就此撑住了:上层无执,由智的直觉朗现;下层有执,由认知心成就科学。"
+    },
+    {
+      "type": "p",
+      "text": "还有一个衍生的说法叫「**良知的自我坎陷**」。「坎陷」是他自造的词,意思是往下沉一层:良知自己主动退一步,暂时把那种当下即知即行的状态收起来,转出一个冷静的、把世界当对象来研究的「认知的我」。他用这个说法回答一个老问题:既然中国有这么高明的心性之学,为什么没有开出科学与民主?他的答复是 —— 不是不能,是需要良知自己完成这个「退一步」的动作。"
+    },
+    {
+      "type": "callout",
+      "tone": "warn",
+      "label": "这一步的代价",
+      "items": [
+        "在康德自己的体系里,人若有智的直觉,几乎等于人成了上帝 —— 这一步是不是仍在康德的框架内,历来争论不休。牟宗三对分量是清楚的,他是**有意**跨过去的,不是没读懂。",
+        "「自我坎陷」也常被批评为一种事后的哲学建构:它讲得通一个道理上的可能,却解释不了科学与民主在历史上究竟怎样从制度、经济、社会里长出来。"
+      ]
+    },
+    {
+      "type": "figure",
+      "ftype": "金句卡",
+      "caption": "全书的赌注,就压在这八个字上",
+      "svg": "<svg viewBox='0 0 640 200' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><g style='font-family:var(--font-serif)'><rect x='70' y='26' width='500' height='148' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.6' /><rect x='82' y='38' width='476' height='124' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:0.8' /><text x='320' y='104' text-anchor='middle' style='font-size:30px;fill:var(--cinnabar-pure);letter-spacing:6px'>人虽有限而可无限</text><text x='320' y='140' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>赌赢了,中国哲学有自己的形上学;赌输了,它只是一厢情愿</text></g></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "争议与限度:这本书不该怎么读"
+    },
+    {
+      "type": "p",
+      "text": "牟宗三的分量在华语哲学界少有人及,但他的书**不该当权威判决来读**。有几条主要的争议,最好在开读之前就记住:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**「以西格中」。** 这是最常见也最要害的一条批评:他把康德当作衡量中国哲学的标尺,不合这把尺的部分就被判低。荀子被判为「大本不立」,名家墨家被轻轻放过,都可以从这里解释。辩护的一方则说:不进入现代哲学的论域,中国哲学就只能自说自话 —— 这个工作总得有人先做。",
+        "**判教不是中立的。** 佛教那几讲基本站在天台一系的立场;宋明那几讲则以陆王一路为正宗。他从不掩饰立场,读者却容易把有立场的论证当成公断。",
+        "**具体论断多不是通说。** 「三系说」「别子为宗」在宋明理学研究中并未被普遍接受;道家「境界形态」的判定也争论不休。",
+        "**讲录体的限制。** 口语、重复、有些断语来不及展开论证。要看完整的推理过程,得去读他的大部头 ——《心体与性体》《才性与玄理》《佛性与般若》《现象与物自身》。这本书是纲领,不是全部。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "话说回来,这些争议一条也没能把他绕过去。他做的那件事至今没有第二个人做成:**用一套严格的哲学语言,把中国哲学的问题从头到尾重排了一遍。** 在他之前,谈中国哲学要么是文献考据,要么是文化情怀;在他之后,你可以不同意他的任何一个结论,却很难绕开他设定的问题 —— 中国哲学的形上学是什么形态?道德的根据在哪里?人到底能不能有智的直觉?**这些问题现在是所有人的问题了。**"
+    },
+    {
+      "type": "h2",
+      "text": "怎么读这本书"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**先抓「周文疲弊」。** 全书最结实、最好懂的一段。抓住它,先秦诸子从一堆人名变成一场辩论,后面所有讲法都有了落点。",
+        "**把每个术语翻成一句人话再往下走。** 境界形态 =「道是心境不是发动机」;两层存有论 =「科学一层,物自身一层」;只存有而不活动 =「理是说明书还是那股劲」。翻不出来,就是还没懂,不要硬往下读。",
+        "**当作一个极强的对手,不当权威。** 他的判词下得极重,重到会伤人。读他最好的姿势,是每读到一句判词就问一句:凭什么?站内诸子、儒典、释典、道藏都有原文与译注,可以直接去核对他讲的是不是那么回事。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "最后说一句体例:原书是**十九讲**,顺序与本站的分章并不相同。本站按主题重新编为十三章,是为了便于分题细读 —— **这是本站的编次,不是牟宗三的目录**,读原书时不必去找这些标题。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "牟宗三《中国哲学十九讲 —— 中国哲学之简述及其所涵蕴之问题》,课堂讲录整理,一九八三年初版。本文为原创消化,不复述原书文字。",
+        "文中所引《论语·八佾》「人而不仁,如礼何」、《老子》「生而不有,为而不恃,长而不宰」两句,站内儒典与道藏各有原文与译注,可对读。",
+        "延伸:牟宗三《心体与性体》(宋明理学)、《佛性与般若》(判教与圆教)、《现象与物自身》(两层存有论与智的直觉),是本书各讲背后的完整论证。"
+      ]
+    }
+  ]
+}
