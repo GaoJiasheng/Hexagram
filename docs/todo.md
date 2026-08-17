@@ -139,7 +139,7 @@ owner 用测试账号评论 → `gaojiasheng.him@foxmail.com` **收到邮件**,W
 | ~~3~~ | ~~**配 Resend,打通评论通知**~~ | — | — | ✅ **2026-08-16 完成并端到端验毕** |
 | 4 | **以 `hexa@` 身份发信** | 你 | 10 分钟 | 不卡了(Resend 域名已验) |
 | 5 | **个人 ICP 备案(网站)** | 你 | 提交 1 小时 · 审批数周 | 不卡,**越早交越好** |
-| 6 | **安卓端** | 我 | 半天 | 需你本机装 Java + Android SDK |
+| 6 | **安卓端 → 出可安装 APK** | 我 | 2–3 天 | **只差 JDK 21**(SDK 早装好了);计划见 [android-plan.md](./android-plan.md) |
 | 7 | **质量债人眼通校** | 我们 | 长期 | 不卡,无期限 |
 
 > **2026-08-08 owner 去掉两件**(别再捡回来):
@@ -335,10 +335,27 @@ owner 2026-08-08 定:**iOS 不上中国大陆区**。原 D1–D4(拿 APP 备案�
 
 ---
 
-## 1.4 安卓端(队列 #6)—— 优先级最低
+## 1.4 安卓端(队列 #6)—— **2026-08-17 已立计划**
 
-需本机装 **Java + Android SDK**。Capacitor 壳复用 100% web 代码,方案见
-[mobile-app-plan.md](./mobile-app-plan.md)。iOS 那条路已跑通,安卓是同一条。
+**执行计划:[android-plan.md](./android-plan.md)**(现状盘点 / 三个要写代码的地方 /
+分阶段 / 安卓与 iOS 的差异清单)。总规划仍在 [mobile-app-plan.md](./mobile-app-plan.md)。
+
+owner 拍板两条边界:**① 只做到「可安装的 APK」,不上 Google Play**;
+**② 先走模拟器**,真机过两天到手再补一轮。
+
+⚠️ **订正**:此前这里写「需本机装 Java + Android SDK」—— **SDK 那半是错的**,
+`~/Library/Android/sdk` 早已装好(platforms 35/36、build-tools 35/36、cmdline-tools)。
+**唯一缺的是 JDK 21**(`brew install openjdk@21`;Android SDK 不含 JDK,两回事)。
+
+三个真正要写代码的地方(不是把 iOS 抄一遍):
+1. **硬件返回键** —— 现在代码里一行没有,不处理就是按一下直接退出 App;
+   且浮层(白话抽屉/搜索/设置/每日一辩)都 portal 到 body,返回键默认不认它们。
+2. **观书隐藏入口** —— `appShortcuts.js:7` 写死 `!== 'ios'` 直接返回,安卓没有。优先级低。
+3. **签名 keystore** —— **丢了不可恢复**(iOS 证书能重签,安卓不能),必须备份到
+   本机之外,且 `.gitignore` 先加 `*.keystore`/`*.jks` —— **本仓库是 PUBLIC 的**。
+
+> Google Play 若日后要上:个人账号需 **12 测试员 × 连续 14 天**封闭测试才能申请正式发布
+>(政策改过几次,届时先在 Play Console 确认)。**出 APK 几天,上 Play 至少两周起。**
 
 ---
 
