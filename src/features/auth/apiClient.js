@@ -51,3 +51,20 @@ export function apiFetch(path, options = {}) {
     headers,
   })
 }
+
+// fetch 本身失败时,err.message 是浏览器给的**原始英文串**
+//(Chrome/安卓 WebView 是 "Failed to fetch",Safari/WKWebView 是 "Load failed")。
+// 直接把它 setError 出去,用户看到的就是一句英文 —— 2026-08-17 安卓横屏走查时
+// 在评论区底部逮到「Failed to fetch」。
+//
+// ⚠️ 这与 2026-08-11 那次 App Store 被拒是**同一个病**:审核员在 App 内注册时看到的
+// 「Load failed」正是这个原始错误(根因是服务端缺 CORS)。原始错误既不该给用户看,
+// 也让人无从判断到底是网断了还是功能坏了。
+//
+// 服务端返回的 message 本就是中文,照原样透传;只把网络层的原始错误换成人话。
+const NETWORK_ERR = /failed to fetch|load failed|networkerror|network request failed/i
+export function friendlyError(err, fallback = '出错了,请稍后重试') {
+  const msg = err?.message || ''
+  if (!msg) return fallback
+  return NETWORK_ERR.test(msg) ? '网络连接失败,请检查网络后重试' : msg
+}

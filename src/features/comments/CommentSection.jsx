@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import SchoolAvatar from '../auth/SchoolAvatar.jsx'
 import { useAuth } from '../auth/AuthContext.jsx'
 import { TURNSTILE_SITE_KEY } from './config.js'
-import { apiFetch, IS_NATIVE } from '../auth/apiClient.js'
+import { apiFetch, friendlyError, IS_NATIVE } from '../auth/apiClient.js'
 
 const REPORT_REASONS = [
   ['abuse', '辱骂'],
@@ -90,7 +90,7 @@ export default function CommentSection({ corpus, slug, chapter }) {
       .catch((fetchError) => {
         if (fetchError.name === 'AbortError') return
         requestedRef.current = false
-        setError(fetchError.message)
+        setError(friendlyError(fetchError, '评论加载失败,请稍后重试'))
       })
       .finally(() => {
         if (!controller.signal.aborted) setLoading(false)
@@ -157,7 +157,7 @@ export default function CommentSection({ corpus, slug, chapter }) {
       setComments((current) => [data.comment, ...current])
       setBody('')
     } catch (submitError) {
-      setError(submitError.message)
+      setError(friendlyError(submitError, '发布失败,请稍后重试'))
     } finally {
       setSubmitting(false)
       // ⚠️ **无论成败都要重置控件**,别只在成功时重置(2026-08-15 修)。
@@ -181,7 +181,7 @@ export default function CommentSection({ corpus, slug, chapter }) {
       }
       setComments((current) => current.filter((comment) => comment.id !== id))
     } catch (deleteError) {
-      setError(deleteError.message)
+      setError(friendlyError(deleteError, '删除失败,请稍后重试'))
     } finally {
       setDeletingId(null)
     }
@@ -205,7 +205,7 @@ export default function CommentSection({ corpus, slug, chapter }) {
         item.id === comment.id ? { ...item, status } : item
       )))
     } catch (moderateError) {
-      setError(moderateError.message)
+      setError(friendlyError(moderateError, '操作失败,请稍后重试'))
     } finally {
       setModeratingId(null)
     }
@@ -232,7 +232,7 @@ export default function CommentSection({ corpus, slug, chapter }) {
         ? '已收到举报,该评论已暂时隐藏待复核。'
         : '已收到举报,我们会尽快处理。')
     } catch (reportError) {
-      setError(reportError.message)
+      setError(friendlyError(reportError, '举报失败,请稍后重试'))
     } finally {
       setActingId(null)
     }
@@ -255,7 +255,7 @@ export default function CommentSection({ corpus, slug, chapter }) {
       setComments((current) => current.filter((item) => item.user.displayName !== comment.user.displayName))
       setNotice('已屏蔽。对方不会收到通知;可在「设置 · 已屏蔽的人」里解除。')
     } catch (blockError) {
-      setError(blockError.message)
+      setError(friendlyError(blockError, '操作失败,请稍后重试'))
     } finally {
       setActingId(null)
     }

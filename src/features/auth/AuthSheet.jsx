@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { saveAuthHint } from '../yijing/storage.js'
 import { useAuth } from './AuthContext.jsx'
-import { IS_NATIVE } from './apiClient.js'
+import { friendlyError, IS_NATIVE } from './apiClient.js'
 
 export default function AuthSheet({ open, initialMode = 'login', onClose }) {
   const { login, register } = useAuth()
@@ -57,7 +57,7 @@ export default function AuthSheet({ open, initialMode = 'login', onClose }) {
       else await login({ email, password })
       onClose()
     } catch (requestError) {
-      setError(requestError.message)
+      setError(friendlyError(requestError, '登录失败,请稍后重试'))
     } finally {
       submittingRef.current = false
       setSubmitting(false)
