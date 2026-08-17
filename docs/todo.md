@@ -580,6 +580,29 @@ owner 2026-08-08 点名补《念奴娇·赤壁怀古》《钗头凤》。**没�
 
 ---
 
+# 二·五、我能自己推进的(不等 owner)
+
+> 2026-08-17 立。**都不需要 owner 做任何事**,按价值排序。
+> 安卓相关的细节在 [android-plan.md](./android-plan.md)。
+
+- [ ] **修 🖼 金句卡「下载图片」在原生壳里静默失效** ★ ——
+      安卓实测点了**毫无反应**(无日志、Downloads/Pictures 无文件)。
+      `QuoteCard.jsx:119` 用 `<a download>` + blob URL,**Capacitor WebView 不接**。
+      **iOS 大概率同病**,但 1.32.0 在审核中,不宜为此重打包验,等这轮过了再验。
+      修法:`@capacitor/filesystem` 写文件 + `@capacitor/share`,或原生端换成诚实说明。
+      ⚠️ 这是「界面在骗人」的第三例(前两例是今天的 Turnstile)—— **按钮在、点了没反应、不报错**。
+- [ ] **安卓 release 构建 dry run**(未签名)—— 确认 release 也能编译、看体积与 minify 影响。
+      不需要 keystore(没有 keystore.properties 时会退回未签名)。
+- [ ] **离线走查** —— 飞行模式下开 App 能不能正常读。content 随包发理论上可以,但**没验过**。
+- [ ] **补完安卓走查** —— 白话抽屉 · 全站搜索 · 设置浮层 · 深色模式 · 横屏 · 安全区。
+      已走查:首页四屏 / 门户 / 书架 / 单页短经 / 段操作 / 金句卡,**均正常**。
+- [ ] **观书快捷入口的安卓版** —— `appShortcuts.js:7` 写死 `!== 'ios'` 即返回。
+      插件支持安卓,但要 drawable + shortcuts.xml。优先级低。
+- [ ] **安卓 App Links**(可选)—— 现在传 URL 打开 App 会落回首页、不认路径,
+      即「分享链接 → 打开对应章节」在安卓上不存在。要加 intent-filter + `assetlinks.json`。
+
+---
+
 # 三、质量债(机器产出,未经人眼通校)
 
 内容由并发 workflow 产出 + 程序化装配,经第二代理校验但**未人眼通读**,横跨 67 部书。
