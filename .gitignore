@@ -58,3 +58,10 @@ scripts/.bold-*
 
 # 观书并发产出的中转文件(由 scripts/merge-books.mjs 合并进 index.json 后删除)
 src/data/books/*/_entry.json
+
+# 安卓签名密钥 —— 本仓库是 PUBLIC 的,keystore 一旦推上去等于把签名权公开;
+# 而它丢了也不可恢复(iOS 证书能让 Apple 重签,安卓不能),必须备份到本机之外。
+*.keystore
+*.jks
+android/keystore.properties
+android/app/*.keystore

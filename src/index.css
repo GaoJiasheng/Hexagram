@@ -4425,3 +4425,20 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   .landing-show__tag { grid-row: auto; justify-self: start; }
   .landing-recent__list li { flex-direction: column; gap: 0.1rem; }
 }
+
+/* 安卓「再按一次退出」的浮动提示(src/native/backButton.js)。
+   只有安卓返回键会触发,web/iOS 上永不出现。 */
+.back-hint {
+  position: fixed;
+  left: 50%;
+  bottom: calc(28px + env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  z-index: 2000;
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ink) 82%, transparent);
+  color: var(--paper);
+  font-size: 0.86rem;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+}

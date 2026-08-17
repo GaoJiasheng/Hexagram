@@ -19,6 +19,18 @@ export default function DailyDebate() {
 
   useEffect(() => { if (open) markDailyDebateSeen(today) }, [open, today])  // 弹出即记,当日只弹一次
 
+  // Esc 关闭 + 锁滚动 —— 与站内其他模态浮层同一约定(2026-08-17 并入)。
+  // 安卓返回键靠「body 锁了滚动」判断有浮层开着,漏掉这里,
+  // 首页一进来弹出本框时按返回就会**直接退出 App**(见 src/native/backButton.js)。
+  useEffect(() => {
+    if (!open) return undefined
+    const onKey = (e) => { if (e.key === 'Escape') setOpen(false) }
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', onKey)
+    return () => { document.body.style.overflow = prev; window.removeEventListener('keydown', onKey) }
+  }, [open])
+
   if (!open || !topic) return null
   const go = () => { setOpen(false); navigate(`/debates/${topic.id}`) }
 

@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import QRCode from 'qrcode'
 import { DEFAULT_SETTINGS, getQuoteTheme, saveQuoteTheme } from '../yijing/storage.js'
@@ -62,6 +62,18 @@ export function qrPathFor(value) {
 }
 
 export default function QuoteCard({ original, translation, source, href, onClose }) {
+  // Esc 关闭 + 锁滚动 —— 站内**所有模态浮层**都守这个约定(2026-08-17 并入)。
+  // 不只是桌面端顺手:安卓的硬件返回键就是靠「body 锁了滚动」判断有浮层开着,
+  // 再派发一次 Esc 把它关掉(见 src/native/backButton.js)。漏掉一个,
+  // 安卓上按返回就会**直接退出 App**而不是关掉这张卡。
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === 'Escape') onClose() }
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', onKey)
+    return () => { document.body.style.overflow = prev; window.removeEventListener('keydown', onKey) }
+  }, [onClose])
+
   const [busy, setBusy] = useState(false)
   const [themeId, setThemeId] = useState(getQuoteTheme)
   const svgRef = useRef(null)

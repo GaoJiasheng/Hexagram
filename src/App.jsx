@@ -7,6 +7,7 @@ import SchoolAvatar from './features/auth/SchoolAvatar.jsx'
 import ErrorBoundary from './features/ErrorBoundary.jsx'
 import { siteForPath, activeGroup, sitesInGroup, HOST_GROUPS, MASTER_PORTAL_PATH } from './sites/registry.js'
 import { registerBookShortcut } from './native/appShortcuts.js'
+import { setupBackButton } from './native/backButton.js'
 import { useTelemetry } from './features/telemetry.js'
 
 // 全站搜索面板按需加载:搜索页面、经典、正文、白话、注疏、专题。
@@ -279,6 +280,7 @@ function AppContent() {
   const openColophon = useCallback(() => setColophonOpen(true), [])
   const location = useLocation()
   const navigate = useNavigate()
+  const [backHint, setBackHint] = useState('')   // 安卓「再按一次退出」的提示
   useTelemetry(location)
 
   const module = siteForPath(location.pathname)
@@ -296,6 +298,14 @@ function AppContent() {
   useEffect(() => {
     let dispose
     registerBookShortcut(() => navigate('/books')).then((d) => { dispose = d })
+    return () => { dispose?.() }
+  }, [navigate])
+
+  // 安卓硬件返回键(web/iOS 无操作)。不接管的话按一下就是**直接退出 App**。
+  // 三层:有浮层先关浮层 → 有历史回上一页 → 栈底「再按一次退出」。
+  useEffect(() => {
+    let dispose
+    setupBackButton(navigate, setBackHint).then((d) => { dispose = d })
     return () => { dispose?.() }
   }, [navigate])
 
@@ -327,8 +337,16 @@ function AppContent() {
     }
   }, [location.pathname, module.group, navigate])
 
+  // 「再按一次退出」两秒后自动消失
+  useEffect(() => {
+    if (!backHint) return undefined
+    const t = setTimeout(() => setBackHint(''), 2000)
+    return () => clearTimeout(t)
+  }, [backHint])
+
   return (
     <div className="app-shell" data-site={isPortal ? 'portal' : module.key}>
+      {backHint && <div className="back-hint" role="status">{backHint}</div>}
       {/* 中立枢纽也要能改主题/登录/搜索——这些本就是全局功能,不属于任何分站,故给一条精简顶栏(印+搜索+设置+头像) */}
       <Nav module={module} canSwitch={canSwitch} otherSite={otherSite} onSearch={openSearch} onPortal={openPortal} onSettings={openSettings} neutral={isPortal} />
       <main className="app-main page-fade-in">
