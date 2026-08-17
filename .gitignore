@@ -65,3 +65,6 @@ src/data/books/*/_entry.json
 *.jks
 android/keystore.properties
 android/app/*.keystore
+
+# agent 走查时用的临时文件,别再误提交
+.tmp-*

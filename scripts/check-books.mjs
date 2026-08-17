@@ -17,7 +17,8 @@ import path from 'node:path'
 const ROOT = path.resolve(import.meta.dirname, '..')
 const BOOKS = path.join(ROOT, 'src/data/books')
 
-const BLOCK_TYPES = new Set(['lead', 'h2', 'p', 'quote', 'figure', 'list', 'callout', 'pull', 'steps', 'refs'])
+// `table` 是站里真在用的块型(存量 50 处),初版漏列了 —— 不是它不合法,是我没查全
+const BLOCK_TYPES = new Set(['lead', 'h2', 'p', 'quote', 'figure', 'list', 'callout', 'pull', 'steps', 'refs', 'table'])
 const TONES = new Set(['note', 'warn', 'mute'])
 
 // 红线(SOP §1 / §7 / §8)
@@ -102,6 +103,14 @@ function checkArticle(file, o, { isOverview }) {
     if (/\s(?:fill|stroke)="(?!none")/.test(svg)) E(`${f} 图${i + 1}`, '用了 fill/stroke 属性,必须改 style=')
     if (/#[0-9a-fA-F]{3,6}\b/.test(svg)) E(`${f} 图${i + 1}`, '写死了色值,须用 var(--…)')
     if (!/viewBox=/.test(svg)) E(`${f} 图${i + 1}`, '缺 viewBox')
+  }
+  // ftype 是**直接渲染给读者看的标签**(BaihuaBlock 的 .baihua-figure__tag),
+  // 写成英文读者就会看到一串 structure/compare。全站惯例是中文(结构图/对比图/金句卡…)。
+  // 2026-08-17 并发产《人间词话》时十章里 37 处写成了英文 —— 规格没说清,已补。
+  for (const [i, b] of o.blocks.entries()) {
+    if (b.type === 'figure' && b.ftype && !/[\u4e00-\u9fff]/.test(b.ftype)) {
+      E(`${f} blocks[${i}]`, `figure.ftype 须为中文标签(读者可见),现为「${b.ftype}」`)
+    }
   }
 }
 
