@@ -591,6 +591,25 @@ owner 2026-08-08 点名补《念奴娇·赤壁怀古》《钗头凤》。**没�
       **iOS 大概率同病**,但 1.32.0 在审核中,不宜为此重打包验,等这轮过了再验。
       修法:`@capacitor/filesystem` 写文件 + `@capacitor/share`,或原生端换成诚实说明。
       ⚠️ 这是「界面在骗人」的第三例(前两例是今天的 Turnstile)—— **按钮在、点了没反应、不报错**。
+- [ ] **iOS 左边缘右滑返回**(owner 2026-08-17 提;**安卓侧已可用,无需再做**)——
+      安卓是今天接返回键时**顺带做成的**:系统手势会触发 `backButton` 事件,
+      而处理器把它变成 `navigate(-1)`。**模拟器已实测**:
+      · 左边缘(x=5)右滑 → **返回上一页** ✅
+      · 屏幕中间(x=400)右滑 → **仍是上一卦**(卦页翻页没被破坏)✅
+      —— 两个手势天然共存,因为系统在边缘区就把触摸截走了,页面的 touch 处理器收不到。
+
+      **iOS 还没有。** Capacitor 没内建这个开关(`grep allowsBackForwardNavigationGestures`
+      在 @capacitor/ios 里零命中),工程里也只有 AppDelegate.swift、没有自定义 ViewController。
+      两条路:
+      ① **原生**(推荐,与安卓一致都走平台自身机制):子类化 `CAPBridgeViewController`,
+         在 `viewDidLoad` 里 `webView?.allowsBackForwardNavigationGestures = true`,
+         storyboard 指向该子类。⚠️ 已知隐患:WKWebView 的返回手势会播放**上一页快照**的
+         动画,SPA 里那张快照可能是空白或错位的,要实测。
+      ② **JS 自己实现**:touchstart 落在左侧 ~20px 内才认,松手时 `navigate(-1)`。
+         两端行为完全一致、可控,但没有原生动画;且**必须让卦页的翻页手势跳过这个边缘区**
+         (`HexagramDetailPage.jsx:163` 的 `onTouchStart` 加一条 `if (touch.clientX < 20) return`),
+         否则会与 `dx > 0 → goPrev` 打架。
+      ⚠️ **1.32.0 正在审核,这个改动要等审核有结果再发**。
 - [ ] **安卓 release 构建 dry run**(未签名)—— 确认 release 也能编译、看体积与 minify 影响。
       不需要 keystore(没有 keystore.properties 时会退回未签名)。
 - [ ] **离线走查** —— 飞行模式下开 App 能不能正常读。content 随包发理论上可以,但**没验过**。
