@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
+import { IS_NATIVE } from '../auth/apiClient.js'
 import QRCode from 'qrcode'
 import { DEFAULT_SETTINGS, getQuoteTheme, saveQuoteTheme } from '../yijing/storage.js'
 
@@ -75,6 +76,7 @@ export default function QuoteCard({ original, translation, source, href, onClose
   }, [onClose])
 
   const [busy, setBusy] = useState(false)
+  const [err, setErr] = useState('')
   const [themeId, setThemeId] = useState(getQuoteTheme)
   const svgRef = useRef(null)
   const theme = THEMES[themeId] || THEMES[DEFAULT_QUOTE_THEME]
@@ -114,16 +116,43 @@ export default function QuoteCard({ original, translation, source, href, onClose
       ctx.scale(scale, scale)
       ctx.drawImage(img, 0, 0)
       URL.revokeObjectURL(url)
-      canvas.toBlob((blob) => {
-        if (!blob) return
-        const a = document.createElement('a')
-        a.href = URL.createObjectURL(blob)
-        a.download = '观象金句.png'
-        a.click()
-        setTimeout(() => URL.revokeObjectURL(a.href), 1000)
-      }, 'image/png')
-    } catch { /* 静默:截图兜底 */ }
+      const blob = await new Promise((res) => canvas.toBlob(res, 'image/png'))
+      if (!blob) throw new Error('生成图片失败')
+      await deliver(blob)
+    } catch (err) {
+      // 原先这里是 `catch { /* 静默 */ }` —— 正因为静默,
+      // 「原生壳里下载毫无反应」这个 bug 藏了很久(2026-08-17 在安卓模拟器上才逮到)。
+      console.error('金句卡导出失败', err)
+      setErr('导出失败,可直接截图本卡分享')
+    }
     setBusy(false)
+  }
+
+  // web 用 <a download>;**原生壳里那条路是死的** —— WebView 不处理 blob 下载,
+  // 点了毫无反应、也不报错(安卓实测:无日志、Downloads/Pictures 均无文件)。
+  // 故原生改为「写进缓存目录 → 调系统分享」,用户可存相册或直接发出去。
+  async function deliver(blob) {
+    if (!IS_NATIVE) {
+      const a = document.createElement('a')
+      a.href = URL.createObjectURL(blob)
+      a.download = '观象金句.png'
+      a.click()
+      setTimeout(() => URL.revokeObjectURL(a.href), 1000)
+      return
+    }
+    const [{ Filesystem, Directory }, { Share }] = await Promise.all([
+      import('@capacitor/filesystem'), import('@capacitor/share'),
+    ])
+    const base64 = await new Promise((res, rej) => {
+      const fr = new FileReader()
+      fr.onload = () => res(String(fr.result).split(',')[1])
+      fr.onerror = rej
+      fr.readAsDataURL(blob)
+    })
+    // 文件名带时间戳:同名文件在部分机型上会被分享面板缓存住,导致老是分享出上一张
+    const path = `guanxiang-${Date.now()}.png`
+    const { uri } = await Filesystem.writeFile({ path, data: base64, directory: Directory.Cache })
+    await Share.share({ title: '观象金句', files: [uri] })
   }
 
   const FF = "'Noto Serif SC', serif"
@@ -180,10 +209,10 @@ export default function QuoteCard({ original, translation, source, href, onClose
           </g>
         </svg>
         <div className="quote-modal__actions">
-          <button className="btn btn--secondary" onClick={download} disabled={busy}>{busy ? '生成中…' : '下载图片'}</button>
+          <button className="btn btn--secondary" onClick={download} disabled={busy}>{busy ? '生成中…' : (IS_NATIVE ? '保存 / 分享' : '下载图片')}</button>
           <button className="btn btn--ghost" onClick={onClose}>关闭</button>
         </div>
-        <p className="quote-modal__hint text-faint">下载图片,或直接截图本卡分享。</p>
+        <p className="quote-modal__hint text-faint">{err || (IS_NATIVE ? '保存或分享这张卡片,也可直接截图。' : '下载图片,或直接截图本卡分享。')}</p>
       </div>
     </div>,
     document.body,
