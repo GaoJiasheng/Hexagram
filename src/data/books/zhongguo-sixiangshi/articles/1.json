@@ -1,0 +1,180 @@
+{
+  "title": "导论:思想史该怎么写",
+  "subtitle": "第 1 章导读 —— 旧写法默认了什么、它由此漏掉了什么、以及他打算换掉的那三件事",
+  "centralIdea": "葛兆光对既有思想史写法的不满,可以归成一句话:它像一条精英的链子,孔孟接老庄、程朱接陆王,链子之外大段留白,仿佛没有大思想家的年代就没有人思考。他要换的是这门学问的提问方式——补上人人默认、无须论证的那一层,承认平缓的年代同样有思想史,并把材料从经典扩到类书、日书、碑刻、图像与出土文献。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "翻开一部旧式的中国思想史,目录像一份接力赛的名单:孔子、孟子、老子、庄子,往下是董仲舒、王充,再往下是二程、朱熹、陆九渊、王阳明。棒子在几十个人手里传了两千年。葛兆光这部书正式动笔之前,先用极长的篇幅问了一个别扭的问题:**这份名单之外的那些年月、那些人,难道就没有思想?** 整部书是从这一问开始的。"
+    },
+    {
+      "type": "h2",
+      "text": "旧写法本身没错,错在它默认了一件事"
+    },
+    {
+      "type": "p",
+      "text": "先把话说公道。按大思想家依次排下来写,理由是充足的:这些人想得最深,留下的文字最多、也最经得起分析,后世的争论确实大都围着他们打转。任何一部中国思想史都绕不开他们。葛兆光要动的并不是这份名单——他一个人也没打算赶下去。"
+    },
+    {
+      "type": "p",
+      "text": "他盯住的是这种写法背后一个从没被说出口的前提:**思想史等于大思想家的历史。** 一旦接受了这个前提,后面所有的安排都顺理成章——没出大思想家的年代就没什么可写,没写成著作的想法就不算思想,没进经典的文献就不算材料。前提本身从来不被讨论,因为它压根就没被当成一个可以讨论的东西。而一部书真正的骨架,往往就藏在这种不被讨论的地方。"
+    },
+    {
+      "type": "p",
+      "text": "还有一层筛子架得更靠前。近代以来写「中国哲学史」的路数,是先借一副从西方哲学来的框子,拿它到中国古书里挑:能对上本体论、认识论的留下,对不上的放回去。于是数术、方技、祭祀这些在当时的文献里占了大量篇幅的东西,被判为「不算哲学」而出局。两道筛子叠在一起,能留下的自然只剩很窄的一条。"
+    },
+    {
+      "type": "p",
+      "text": "要紧的是,这两道筛子筛掉的并不只是「比较次要的人」,而是**一整个层次**——那些没有作者、没有论证、也从没打算成为学说的东西。一个时代最普遍的想法,往往正因为太普遍,反而没人肯费笔墨去写它。结果就出现一种颠倒:**文献留得越多的,影响的人常常越少;支配了大多数人日子的那些念头,纸面上几乎不留痕迹。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "同一段历史的两种画法:上面是一条链子加两截空白,下面是链子照旧、底下补上一层。",
+      "svg": "<svg viewBox='0 0 640 360' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><text x='320' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>同一段历史,两种画法</text><text x='24' y='72' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink-soft)'>旧写法</text><rect x='250' y='84' width='150' height='56' rx='3' style='fill:var(--ink-faint);opacity:0.25'/><rect x='470' y='84' width='90' height='56' rx='3' style='fill:var(--ink-faint);opacity:0.25'/><line x1='96' y1='112' x2='606' y2='112' style='stroke:var(--line);stroke-width:1;stroke-dasharray:3 4'/><circle cx='120' cy='112' r='7' style='fill:var(--ink-soft)'/><circle cx='230' cy='112' r='7' style='fill:var(--ink-soft)'/><circle cx='420' cy='112' r='7' style='fill:var(--ink-soft)'/><circle cx='580' cy='112' r='7' style='fill:var(--ink-soft)'/><text x='120' y='136' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>孔孟</text><text x='230' y='136' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>老庄</text><text x='420' y='136' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>程朱</text><text x='580' y='136' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>陆王</text><text x='325' y='106' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--cinnabar-pure)'>空白页</text><text x='515' y='106' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--cinnabar-pure)'>空白页</text><text x='320' y='166' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>没出大思想家的年月,一笔带过</text><line x1='24' y1='196' x2='616' y2='196' style='stroke:var(--line);stroke-width:1'/><text x='24' y='230' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink-soft)'>新写法</text><line x1='96' y1='258' x2='606' y2='258' style='stroke:var(--line);stroke-width:1;stroke-dasharray:3 4'/><circle cx='120' cy='258' r='6' style='fill:var(--ink-soft)'/><circle cx='230' cy='258' r='6' style='fill:var(--ink-soft)'/><circle cx='420' cy='258' r='6' style='fill:var(--ink-soft)'/><circle cx='580' cy='258' r='6' style='fill:var(--ink-soft)'/><text x='350' y='246' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>链子照旧,一个也不删</text><rect x='96' y='286' width='510' height='46' rx='4' style='fill:var(--cinnabar-pure);opacity:0.14'/><rect x='96' y='286' width='510' height='46' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1'/><text x='351' y='314' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>人人默认、无须论证的那一层 —— 一直都在,只是从没被写进去</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "由此长出来的三个毛病"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**只写留下了名字的那几十个人。** 两千年的思想史,主角凑不满一间教室。这不是编者偷懒,是那把筛子的孔就只有这么大。",
+        "**两个高峰之间的几百年成了空白页。** 从先秦到魏晋、从魏晋到宋明,中间那些没冒出「大人物」的年头被一笔带过,读起来像是那几百年里没有人想过任何事情。可那些年代照样有人活着、有人做决定、有人相信某些说法。",
+        "**写出来的东西像一份获奖名单。** 只记胜出者,不记当时同样在场、后来落败的那些说法,更不记大多数人心里默认着什么。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "第三条最要命,因为它悄悄换掉了「思想史」这三个字的意思。名单可以列得极准确,但一份再准确的获奖名单,也说不出那一年赛场上到底有多少人、他们在争什么、评委的口味又是怎么一点点变的。**它记录了结果,却把过程整个删掉了。**"
+    },
+    {
+      "type": "p",
+      "text": "还有一个连带的损失容易被忽略:**这么写,连那几十位大思想家自己也被写窄了。** 他们不是在真空里想问题的——面对的是当时人的常识,回应的是当时人的困惑,反驳的也是当时确实有人在讲的话。把这层背景整个抽掉,他们的话就成了几句悬空的格言:看不出针对谁,也就看不出它当年有多大分量。所以补上背景并不是要把他们降一格,恰恰是为了看清他们究竟在跟什么较劲。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "这就像一张只标山峰的地图。海拔最高的那几处标得清清楚楚,山峰与山峰之间是一片空白——可人是住在平原上的,路是从平原上过的,粮食也长在平原上。地图没有画错,它只是从一开始就没打算画那一部分。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "他要换的三件事"
+    },
+    {
+      "type": "p",
+      "text": "针对这三个毛病,葛兆光提出的调整也正好是三件,而且互相咬合:少了哪一件,另外两件都做不成。"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**补上底下那一层。** 除了少数人苦思出来的学说,还有一层东西是当时人人默认、根本无须论证的:一年从哪天算起、哪天不宜动土、房子该朝哪边开门、病是怎么来的、天上地下都住着些什么。它往往没有作者,也不写成著作,却实实在在支配着绝大多数人的日子。他给这一层起了个拗口的名字——一般知识、思想与信仰世界。这个概念另有专门的讨论,此处只需先记住他要补的是哪一层。",
+        "**平缓的年代同样有思想史。** 思想有加速的时候,也有平缓的时候,平缓不等于停止。恰恰是在没有大人物的年月里,上一轮吵得很凶的新说法慢慢沉下去,变成下一代人不假思索的常识。所谓空白页,不是历史真的空了,是筛子把这一整段都漏掉了。",
+        "**材料的范围必须跟着扩。** 要写的东西变了,能用的材料就不能只剩那几十部经典。这是三件事里最实在、后来影响也最大的一件。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "这三件事合起来,等于把「什么算思想」重新划了一遍。打个比方:一部音乐史如果只写贝多芬这一级的人物,写得再精彩,也说不清当年街上的人到底在哼什么;而一个时代大多数人耳朵里反复循环的那些调子,往往更能说明那个时代的听觉底色。思想史的处境是一样的——**最有影响力的想法,未必就是最有创造性的那一批。** 有创造性的进了经典,有影响力的进了日子。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "左边只画露出水面的部分,连成一条线就是一部思想史;右边把水面以下也画出来,峰与峰之间其实从未断开。",
+      "svg": "<svg viewBox='0 0 640 320' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><text x='160' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>只画露出来的部分</text><text x='480' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:14px;font-weight:bold;fill:var(--ink)'>把水面以下也画出来</text><line x1='320' y1='40' x2='320' y2='300' style='stroke:var(--line);stroke-width:1;stroke-dasharray:3 4'/><line x1='30' y1='180' x2='290' y2='180' style='stroke:var(--line);stroke-width:1.5'/><path d='M60 180 L82 132 L104 180 Z' style='fill:var(--ink-soft)'/><path d='M140 180 L166 118 L192 180 Z' style='fill:var(--ink-soft)'/><path d='M228 180 L250 140 L272 180 Z' style='fill:var(--ink-soft)'/><polyline points='82,132 166,118 250,140' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5;stroke-dasharray:4 4'/><text x='160' y='206' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>三座孤峰,中间什么也没有</text><text x='160' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--cinnabar-pure)'>把峰顶连起来 = 一部思想史</text><path d='M350 260 L392 132 L434 260 Z' style='fill:var(--ink-faint);opacity:0.45'/><path d='M440 260 L486 118 L532 260 Z' style='fill:var(--ink-faint);opacity:0.45'/><path d='M520 260 L560 140 L600 260 Z' style='fill:var(--ink-faint);opacity:0.45'/><path d='M376 180 L392 132 L408 180 Z' style='fill:var(--ink-soft)'/><path d='M462 180 L486 118 L510 180 Z' style='fill:var(--ink-soft)'/><path d='M538 180 L560 140 L582 180 Z' style='fill:var(--ink-soft)'/><line x1='340' y1='180' x2='614' y2='180' style='stroke:var(--cinnabar-pure);stroke-width:1.5'/><line x1='340' y1='260' x2='614' y2='260' style='stroke:var(--line);stroke-width:1.5'/><text x='477' y='232' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink)'>山根连成一片,峰与峰其实不孤立</text><text x='477' y='282' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>平缓的年代 = 水面以下,不是没有</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "材料一换,能看见的东西就变了"
+    },
+    {
+      "type": "p",
+      "text": "他把手伸向了传统上不算「思想」的文献:古人分类编排的类书、随葬的挑日子手册一类的日书、给孩子发蒙的读物、墓志与碑刻、墓室壁画一类的图像、大量的佛道文献、出土的简帛,还有历书、家训、族谱。这些东西过去要么归给文献学,要么归给民俗,总之不进思想史的门。"
+    },
+    {
+      "type": "p",
+      "text": "它们有一个共同点:**不是为了立说而写的。** 类书是为了查检方便,日书是为了赶紧决定明天动不动土,碑刻是为了给死者一个体面的交代。正因为不打算说服谁,它们反倒如实地留下了当时人默认些什么——一个人替自己辩护的时候会挑话说,记账的时候不会。"
+    },
+    {
+      "type": "p",
+      "text": "这里有一层方法上的讲究值得单独点出:**读这类材料,要读的常常不是它说了什么,而是它没说什么。** 一本挑日子的手册不会先论证天地之间存在某种感应,它上来就平铺直叙地列哪天不宜出行;正是这份不加解释的笃定,泄露了写它的人和用它的人共享着怎样一套世界图景。凡是被当作前提的,都不会被写成论点——今天也一样,没有哪篇文章会先证明一周有七天再往下写。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "材料的扩展:右边这些原本不算「思想」,而它们恰恰是那一层常识留下的痕迹。",
+      "svg": "<svg viewBox='0 0 640 320' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><text x='320' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>思想史能用的材料</text><rect x='24' y='96' width='150' height='120' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='99' y='128' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>原来只有这些</text><text x='99' y='158' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>经 · 史</text><text x='99' y='182' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>诸子文集</text><text x='99' y='206' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>学派语录</text><line x1='186' y1='156' x2='232' y2='156' style='stroke:var(--cinnabar-pure);stroke-width:1.5'/><path d='M232 156 L222 151 L222 161 Z' style='fill:var(--cinnabar-pure)'/><text x='209' y='142' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--cinnabar-pure)'>扩</text><rect x='246' y='62' width='108' height='34' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='300' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>类书</text><rect x='368' y='62' width='108' height='34' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='422' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>日书 · 历书</text><rect x='490' y='62' width='120' height='34' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='550' y='84' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>碑刻 · 墓志</text><rect x='246' y='110' width='108' height='34' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='300' y='132' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>图像 · 壁画</text><rect x='368' y='110' width='108' height='34' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='422' y='132' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>佛道文献</text><rect x='490' y='110' width='120' height='34' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='550' y='132' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>出土简帛</text><rect x='246' y='158' width='108' height='34' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='300' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>蒙学读物</text><rect x='368' y='158' width='108' height='34' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='422' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>家训 · 族谱</text><rect x='490' y='158' width='120' height='34' rx='4' style='fill:none;stroke:var(--line);stroke-width:1'/><text x='550' y='180' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-soft)'>方技 · 医方</text><line x1='246' y1='226' x2='610' y2='226' style='stroke:var(--line);stroke-width:1'/><text x='428' y='254' text-anchor='middle' style='font-family:var(--font-serif);font-size:13px;fill:var(--ink)'>共同点:都不是为了立说而写的</text><text x='428' y='280' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--cinnabar-pure)'>正因为不打算说服谁,才如实留下了「默认什么」</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "这副眼光是从哪儿借来的"
+    },
+    {
+      "type": "p",
+      "text": "他并不讳言方法上的来路。西方史学里有过关于长时段的讨论:历史像水,水面上是浪花——某场战争、某个人物的生死、某年的一道诏令;水面下是深流,变得极慢,几十年上百年才挪动一点点。浪花看得见也记得住,深流几乎不动声色,却决定了整条河往哪边去。他认为思想史同样有这两层,而以往写的几乎全是浪花。"
+    },
+    {
+      "type": "p",
+      "text": "要紧的是他怎么用这副眼光。**理论在这部书里只负责提供提问的角度,不负责给出结论。** 真正在跑的还是中国自己的材料:一块碑上怎么称呼死者,一本历书上哪几天被涂黑,一座墓里器物摆成什么方位。这与同时期另一种做法——先搬来一套框架,再到中国古书里找例子填进去——是两条路数。"
+    },
+    {
+      "type": "callout",
+      "tone": "mute",
+      "items": [
+        "顺带说一句分寸:借眼光和套框架的区别,在于谁服从谁。前者是拿一副新眼镜去看老材料,看不见的地方老实说看不见;后者是先画好格子,再把材料剪成能塞进格子的形状。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "还要把「失踪者」找回来"
+    },
+    {
+      "type": "p",
+      "text": "最后一层意思,是三个毛病里那个「获奖名单」的正面回应。后人写史,总是顺着最终胜出的那一支往回追认:因为知道了结局,写起来自然把通向结局的那条线画得又粗又直。可在当时,同样有力、甚至一度更有势力的说法往往不止一种。它们后来被淘汰、被冷落、被斥为异端,于是从思想史的叙述里彻底消失了。"
+    },
+    {
+      "type": "p",
+      "text": "问题是:**被淘汰的东西恰恰最能说明当时人在想什么、在争什么。** 一个说法能被人认真反驳,本身就证明它当时够分量;把败方整个删掉,胜方的胜利就成了理所当然,读者会误以为历史从来只有一条路可走。事实上多数时候是几条路一起在走,只不过后来有几条断了。"
+    },
+    {
+      "type": "p",
+      "text": "换个角度说:**历史的现场,总比后来整理出来的目录要乱得多。** 当时的人并不知道谁会赢,他们是在几种同样像模像样的说法之间选边、犹豫、改主意,甚至同时信着互相打架的两套东西。把这份乱还原一点,才谈得上追问一个更实在的问题——某个说法后来占上风,靠的到底是它更有道理,还是靠了别的:时势、权力,或者仅仅因为它被传抄得更广、更容易背。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "当时并存的几种说法,只有一支走到了后世;后人回望,看见的却是一条笔直的独路。",
+      "svg": "<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><text x='320' y='24' text-anchor='middle' style='font-family:var(--font-serif);font-size:15px;font-weight:bold;fill:var(--ink)'>当时并存的几支,与后人看见的那一支</text><line x1='70' y1='232' x2='600' y2='232' style='stroke:var(--line);stroke-width:1'/><text x='70' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>当时</text><text x='596' y='252' text-anchor='middle' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>后世</text><path d='M84 168 C 200 168, 380 160, 590 156' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:2.5'/><circle cx='84' cy='168' r='5' style='fill:var(--cinnabar-pure)'/><text x='598' y='142' text-anchor='end' style='font-family:var(--font-serif);font-size:12px;fill:var(--cinnabar-pure)'>唯一被记住的一支</text><path d='M84 116 C 180 114, 240 112, 300 110' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5;stroke-dasharray:5 4'/><circle cx='84' cy='116' r='5' style='fill:var(--ink-soft)'/><line x1='294' y1='104' x2='306' y2='116' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='306' y1='104' x2='294' y2='116' style='stroke:var(--ink-soft);stroke-width:1.5'/><text x='318' y='114' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>被斥为异端</text><path d='M84 196 C 190 198, 300 200, 400 202' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5;stroke-dasharray:5 4'/><circle cx='84' cy='196' r='5' style='fill:var(--ink-soft)'/><line x1='394' y1='196' x2='406' y2='208' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='406' y1='196' x2='394' y2='208' style='stroke:var(--ink-soft);stroke-width:1.5'/><text x='418' y='206' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>书亡人散</text><path d='M84 142 C 150 142, 190 140, 220 138' style='fill:none;stroke:var(--ink-soft);stroke-width:1.5;stroke-dasharray:5 4'/><circle cx='84' cy='142' r='5' style='fill:var(--ink-soft)'/><line x1='214' y1='132' x2='226' y2='144' style='stroke:var(--ink-soft);stroke-width:1.5'/><line x1='226' y1='132' x2='214' y2='144' style='stroke:var(--ink-soft);stroke-width:1.5'/><text x='238' y='142' style='font-family:var(--font-serif);font-size:11px;fill:var(--ink-faint)'>一时得势,后归沉寂</text><line x1='590' y1='270' x2='96' y2='270' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 4'/><path d='M96 270 L108 265 L108 275 Z' style='fill:var(--ink-faint)'/><text x='344' y='290' text-anchor='middle' style='font-family:var(--font-serif);font-size:12px;fill:var(--ink-faint)'>后人回望:只看得见那条粗线,于是以为历史只有一条路</text></svg>"
+    },
+    {
+      "type": "pull",
+      "text": "思想史不该只是一份获奖名单 —— 名单只记谁赢了,不记那一年赛场上还站着谁。"
+    },
+    {
+      "type": "h2",
+      "text": "这篇导论后来单独成了一本书"
+    },
+    {
+      "type": "p",
+      "text": "有一件事值得专门交代:这篇导论篇幅极长,长到后来被单独抽出来成册印行,书名点明的正是思想史的写法。此后它常常被当成一篇独立的方法论文章来读、来引、来吵,影响甚至超过了正文本身。"
+    },
+    {
+      "type": "p",
+      "text": "这件事本身就说明了他真正想动的是什么。**他要改的不是某一段历史的结论,而是这门学问的写法**——从哪里提问、什么算材料、谁有资格进入叙述、以及一个没出大思想家的年代该不该占篇幅。结论可以一条条辩,写法一旦被换掉,后来的人就是在新的问题里工作了,哪怕他们并不同意他的具体判断。"
+    },
+    {
+      "type": "p",
+      "text": "也正因为改的是提问方式,这些主张后来的命运才格外值得留意。两卷正文在多大程度上兑现了导论许下的承诺,学界一直有讨论;有看法认为重心仍旧偏向经典与精英文本。「一般知识」的边界究竟划在哪里、怎样才算把它操作出来,这一点至今没有公认的答案。但有一件事争议不大:**经过这场讨论,思想史能用的材料范围被永久地扩大了,平缓的年代也不再理所当然地是一页空白。**"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "版本与范围:葛兆光《中国思想史》两卷本,复旦大学出版社,第一卷一九九八年、第二卷二〇〇〇年出版;第一卷大致处理七世纪之前,第二卷大致从七世纪写到十九世纪。导论另有单行本印行。",
+        "站内可对读:本篇提到的精英链条,站内已有原文与译注可查——儒典(论语/孟子/大学/中庸/荀子/近思录)、道藏(道德经/庄子/列子/文子)、阳明心学(传习录/大学问),以及易经六十四卦与经传。"
+      ]
+    }
+  ]
+}
