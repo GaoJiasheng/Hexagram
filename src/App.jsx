@@ -8,6 +8,7 @@ import ErrorBoundary from './features/ErrorBoundary.jsx'
 import { siteForPath, activeGroup, sitesInGroup, HOST_GROUPS, MASTER_PORTAL_PATH } from './sites/registry.js'
 import { registerBookShortcut } from './native/appShortcuts.js'
 import { setupBackButton } from './native/backButton.js'
+import { setupDeepLinks } from './native/deepLink.js'
 import { useTelemetry } from './features/telemetry.js'
 
 // 全站搜索面板按需加载:搜索页面、经典、正文、白话、注疏、专题。
@@ -306,6 +307,14 @@ function AppContent() {
   useEffect(() => {
     let dispose
     setupBackButton(navigate, setBackHint).then((d) => { dispose = d })
+    return () => { dispose?.() }
+  }, [navigate])
+
+  // 深链:外部打开的 hexa.gavin.pub 链接落到对应章节(web 无操作 —— 浏览器自己会路由)。
+  // 不接这个的话,原生壳里点分享出去的链接只会停在首页、路径被丢掉。
+  useEffect(() => {
+    let dispose
+    setupDeepLinks((path) => navigate(path)).then((d) => { dispose = d })
     return () => { dispose?.() }
   }, [navigate])
 

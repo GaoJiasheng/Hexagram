@@ -18,6 +18,20 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <!-- App Links:让分享出去的 hexa.gavin.pub 链接能在 App 里打开对应章节。
+                 配合 src/native/deepLink.js 的 appUrlOpen 监听把路径喂给路由。
+
+                 ⚠️ autoVerify 要真正生效,还需服务端 /.well-known/assetlinks.json 里
+                 登记**发布签名证书的 SHA-256 指纹** —— 而 keystore 还没生成(阶段 4)。
+                 在那之前:链接不会被自动接管,但用户仍可从「打开方式」里选本 App,
+                 选了之后路由能正确落到该章节(这一半现在就能用)。 -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" android:host="hexa.gavin.pub" />
+            </intent-filter>
         </activity>
 
         <provider
