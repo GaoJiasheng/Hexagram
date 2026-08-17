@@ -1,0 +1,206 @@
+{
+  "title": "中西哲学的分野:主体性与客体性",
+  "subtitle": "一边问「世界是什么」,一边问「人该怎么活」——这不是高下之分,是入手处不同",
+  "centralIdea": "西方哲学从追问「存在是什么」出发,问的对象摆在我之外,于是长出定义、逻辑、知识论,最后长出近代科学;中国哲学从「这世道该怎么办、人该怎么活」出发,问的对象是自己的生命,于是工夫、修养、体证成了必需品。牟宗三把这两个重心叫客体性与主体性。最要紧的一句是:这说的是入手处与重心的不同,不是谁高谁低——西方不缺主体,中国也不缺客观建制;两条路各有所得,也各有账单。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "「中国到底有没有哲学」,牟宗三的答案是有,但不能拿西方的模子去套着找。那么不同在哪里?他给了一根轴:西方哲学的重心在**客体性**,中国哲学的重心在**主体性**。这两个词听着吓人,说的其实是一件很朴素的事——**两边一开始问的问题不一样。**一边问「世界是什么」,一边问「人该怎么活」。问题不同,往下长出来的东西就不同。这一章要讲的就是这根轴,以及一件必须先说在前头的事:**它讲的是入手处不同,不是谁高谁低。**"
+    },
+    {
+      "type": "h2",
+      "text": "两个起手式"
+    },
+    {
+      "type": "p",
+      "text": "西方那条路的起手式,在古希腊就定了调。最早那批人问的是「万物的本原是什么」:有人说是水,有人说是火,有人说是一颗颗不可再分的原子。问法一路往前推——柏拉图问,眼前这些会变会坏的东西背后,有没有一个不变的样式(他称之为理型);亚里士多德把问题收得更紧,干脆问「存在之为存在」:不问这张桌子是什么、那棵树是什么,而问凡是存在的东西,单就它「存在」这一点,有什么可说。"
+    },
+    {
+      "type": "p",
+      "text": "这些问题有一个共同点:**问的对象摆在我之外。**既然在外面,要把它说清楚,就得有一套硬手续——先给词下定义,免得你我说的根本不是同一件事;再把概念之间的关系理顺;再讲究从前提走到结论怎么走才算数。逻辑因此在这条路上极早就发达,知识论(追问「我们凭什么说自己知道」)后来成了大宗;近代科学,正是从这条路上长出来的。"
+    },
+    {
+      "type": "p",
+      "text": "中国这条路的起手式完全是另一件事。先秦那批人一开口就在问:**这世道该怎么办,人该怎么活。**孔子讲仁,不是给「仁」下一个定义,而是在具体的人、具体的事上指点那一点不忍与不安;孟子往里再推一层,说这点不忍不是外面学来的,是本心;老子庄子从反面讲,说毛病出在造作,要把人为加上去的东西一层层无掉;佛教进来以后,追问的是这颗心究竟怎样把世界执成了眼前这个样子。"
+    },
+    {
+      "type": "p",
+      "text": "这些问题也有一个共同点:**问的对象就是自己的生命。**对象是自己,学问的样子就跟着变了:光把道理说清楚不算完,还得问你做不做得到。所以这条路上必然有工夫、有修养、有体证。这里要特别说一句:**工夫论在中国哲学里不是附加物,是必需品。**它不是道理讲完之后再加的一段励志尾巴,而是这门学问能不能成立的关键——道理讲得再圆,若没有人真能做出来,它就悬在半空。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "两个起手式往下长出的东西不同:一边是定义、推论、知识论,一边是工夫、修养、体证。",
+      "svg": "<svg viewBox='0 0 660 380' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><g style='font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' style='font-size:15px;font-weight:bold;fill:var(--ink)'>两个起手式,长出两片不同的东西</text><rect x='40' y='44' width='250' height='46' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.4'/><text x='165' y='68' text-anchor='middle' style='font-size:14px;font-weight:bold;fill:var(--ink)'>「世界是什么」</text><text x='165' y='85' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>问的对象在我之外</text><rect x='370' y='44' width='250' height='46' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='495' y='68' text-anchor='middle' style='font-size:14px;font-weight:bold;fill:var(--cinnabar-pure)'>「人该怎么活」</text><text x='495' y='85' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>问的对象就是自己</text><path d='M165 90 L165 110 M160 103 L165 112 L170 103 M495 90 L495 110 M490 103 L495 112 L500 103' style='fill:none;stroke:var(--line);stroke-width:1.3'/><rect x='40' y='112' width='250' height='56' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.1'/><text x='165' y='136' text-anchor='middle' style='font-size:12.5px;fill:var(--ink)'>本原 · 理型 · 存在之为存在</text><text x='165' y='157' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>从泰勒斯到亚里士多德</text><rect x='370' y='112' width='250' height='56' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.1'/><text x='495' y='136' text-anchor='middle' style='font-size:12.5px;fill:var(--ink)'>仁 · 本心 · 无 · 心识</text><text x='495' y='157' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>从孔孟老庄到佛教</text><path d='M165 168 L165 188 M160 181 L165 190 L170 181 M495 168 L495 188 M490 181 L495 190 L500 181' style='fill:none;stroke:var(--line);stroke-width:1.3'/><rect x='40' y='190' width='250' height='56' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.1'/><text x='165' y='214' text-anchor='middle' style='font-size:12.5px;fill:var(--ink)'>要把它说清楚</text><text x='165' y='235' text-anchor='middle' style='font-size:11.5px;fill:var(--ink-soft)'>定义 · 概念 · 推论</text><rect x='370' y='190' width='250' height='56' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.1'/><text x='495' y='214' text-anchor='middle' style='font-size:12.5px;fill:var(--ink)'>要自己做得到</text><text x='495' y='235' text-anchor='middle' style='font-size:11.5px;fill:var(--ink-soft)'>工夫 · 修养 · 体证</text><path d='M165 246 L165 266 M160 259 L165 268 L170 259 M495 246 L495 266 M490 259 L495 268 L500 259' style='fill:none;stroke:var(--line);stroke-width:1.3'/><rect x='40' y='268' width='250' height='58' rx='6' style='fill:none;stroke:var(--ink-soft);stroke-width:1.4'/><text x='165' y='293' text-anchor='middle' style='font-size:13px;font-weight:bold;fill:var(--ink)'>逻辑 · 知识论</text><text x='165' y='314' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>近代科学从这条路长出来</text><rect x='370' y='268' width='250' height='58' rx='6' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='495' y='293' text-anchor='middle' style='font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>心性之学</text><text x='495' y='314' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>讲工夫,讲成德</text><text x='330' y='358' text-anchor='middle' style='font-size:12.5px;fill:var(--ink-soft)'>差的是重心与入手处 —— 不是有无之别</text></g></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "三个词先讲成人话"
+    },
+    {
+      "type": "p",
+      "text": "这一路的讲法里有三个词最常出现,也最容易被误会。一个一个说。"
+    },
+    {
+      "type": "p",
+      "text": "**客体性**,说白了就是:把对象摆在那里,当作独立于我的东西来研究。这里有一个很要紧的性质——**研究它的人是谁,不影响结论。**水的沸点不因为你是好人还是坏人而改变;一道证明,张三写出来和李四写出来一样有效。正因为如此,这种知识可以写下来、可以互相检验、可以一代一代累积。"
+    },
+    {
+      "type": "p",
+      "text": "**主体性**,先说它不是什么:它**不是**「主观」,不是「随便我怎么想都行」。主观是各人各的意见,你觉得好我觉得不好,谁也说服不了谁——那是意见,不是学问。牟宗三说的主体性,是指这门学问的根据落在**能实践的这个人**身上:道理要靠人做出来才立得住。它同样要求普遍,只是普遍性的落点不同——你心里那一点不忍,不是你一个人的偏好,是人人身上都能找见的东西。一句话:从一个个具体的人身上出发,却不落进个人的偏好。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "最常见的误读要先画掉:主体性不等于主观。主观是意见各异,主体性讲的是学问的根据落在能实践的人身上。",
+      "svg": "<svg viewBox='0 0 660 260' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><g style='font-family:var(--font-serif)'><text x='330' y='26' text-anchor='middle' style='font-size:15px;font-weight:bold;fill:var(--ink)'>主体性 不等于 主观</text><rect x='30' y='46' width='280' height='152' rx='8' style='fill:none;stroke:var(--ink-faint);stroke-width:1.2'/><text x='170' y='74' text-anchor='middle' style='font-size:13.5px;font-weight:bold;fill:var(--ink-soft)'>常被误读成:主观</text><text x='170' y='106' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>各人各的意见</text><text x='170' y='134' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>你觉得好,我觉得不好</text><text x='170' y='162' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>谁也说服不了谁</text><text x='170' y='186' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>那是意见,不是学问</text><path d='M46 184 L294 60' style='stroke:var(--cinnabar-pure);stroke-width:2.4;opacity:0.6'/><rect x='350' y='46' width='280' height='152' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='490' y='74' text-anchor='middle' style='font-size:13.5px;font-weight:bold;fill:var(--cinnabar-pure)'>他说的主体性</text><text x='490' y='106' text-anchor='middle' style='font-size:12px;fill:var(--ink)'>根据落在能实践的人身上</text><text x='490' y='134' text-anchor='middle' style='font-size:12px;fill:var(--ink)'>道理要靠人做出来才立得住</text><text x='490' y='162' text-anchor='middle' style='font-size:12px;fill:var(--ink)'>那一点不忍,人人身上都有</text><text x='490' y='186' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>所以它同样要求普遍</text><text x='330' y='234' text-anchor='middle' style='font-size:12.5px;fill:var(--ink-soft)'>从一个个具体的人出发,却不落进个人的偏好</text></g></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**内在道德性**:道德的根不在外面。不在一个发号施令的神那里,不在一套外在的规范条文那里,也不在赏罚那里——不是因为做了会挨罚才不做。它在人自己心里。这也是为什么在中国这条路上,道德不靠信仰兜底、不靠立法兜底,而要靠一个人自己去认那一点不安。"
+    },
+    {
+      "type": "h2",
+      "text": "两盏灯"
+    },
+    {
+      "type": "p",
+      "text": "打个比方。客体性那条路,像是把手里的灯照向外面:照亮桌子,照亮星空,照亮细胞,一样一样看清楚、记下来,交给别人接着照。主体性那条路,像是把灯转过来照自己:看这颗心什么时候动,什么时候躲,什么时候明明知道却不肯做。"
+    },
+    {
+      "type": "p",
+      "text": "这个比方要用得住,得补一句最要紧的:**两盏都是灯,照的方向不同。**不是一盏亮一盏暗,也不是照外面的粗、照自己的细。而且方向不同,活儿也就不同:照外面的灯,可以架好了让所有人一起看,你看到的和我看到的能对得上;照自己的灯,谁也没办法替谁照。"
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "两盏都是灯,不是一盏亮一盏暗。照外面的灯可以架好了大家一起看,照自己的灯谁也替不了谁。",
+      "svg": "<svg viewBox='0 0 660 280' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><g style='font-family:var(--font-serif)'><text x='165' y='28' text-anchor='middle' style='font-size:14px;font-weight:bold;fill:var(--ink)'>把灯照向外面</text><text x='495' y='28' text-anchor='middle' style='font-size:14px;font-weight:bold;fill:var(--cinnabar-pure)'>把灯转过来照自己</text><path d='M75 138 L215 106 L215 194 L75 162 Z' style='fill:var(--ink-soft);opacity:0.16'/><circle cx='60' cy='150' r='15' style='fill:none;stroke:var(--ink-soft);stroke-width:1.6'/><path d='M60 165 L60 184' style='stroke:var(--ink-soft);stroke-width:1.4'/><rect x='238' y='110' width='28' height='28' rx='3' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><circle cx='252' cy='170' r='14' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><path d='M238 218 L266 218 L252 194 Z' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><text x='252' y='244' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>世界</text><path d='M565 138 L455 112 L455 190 L565 162 Z' style='fill:var(--cinnabar-pure);opacity:0.13'/><circle cx='580' cy='150' r='15' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.6'/><path d='M580 165 L580 184' style='stroke:var(--cinnabar-pure);stroke-width:1.4'/><circle cx='418' cy='128' r='13' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><path d='M418 141 L418 178 M400 154 L436 154 M418 178 L406 204 M418 178 L430 204' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.5'/><text x='418' y='230' text-anchor='middle' style='font-size:12px;fill:var(--cinnabar-pure)'>自己</text><path d='M330 96 L330 214' style='stroke:var(--line);stroke-width:1;stroke-dasharray:4 5'/><text x='330' y='268' text-anchor='middle' style='font-size:12.5px;fill:var(--ink-soft)'>两盏都是灯 —— 不是一盏亮一盏暗,是照的方向不同</text></g></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "一边可以交接,一边只能自己重做"
+    },
+    {
+      "type": "p",
+      "text": "顺着这个差别,两条路上的「学会了」是两回事。"
+    },
+    {
+      "type": "p",
+      "text": "客体性那条路上,前人做出来的东西可以直接交给后人:牛顿的定律不必每个人重新发现一遍,学会了拿来用就是。**知识可以累积**,是这条路最了不起的地方——今天一个大学生手上的物理学,超过两千年里所有人的总和。"
+    },
+    {
+      "type": "p",
+      "text": "主体性那条路上,**「听懂了」不算数。**讲仁、讲诚、讲无,道理都不复杂,一节课能讲完;可讲完之后,该急的时候照样急,该占便宜的时候手照样伸出去。这条路上的东西更像手艺:游泳的原理十分钟能说明白,不下水还是不会;弹琴的指法讲得再清楚,不练还是弹不出来。所以这条路必须配一整套工夫——静坐、省察、事上磨炼,各家开的方子不同,但没有一家能把这一步省掉。"
+    },
+    {
+      "type": "quote",
+      "original": "人能弘道，非道弘人。"
+    },
+    {
+      "type": "p",
+      "text": "这句在《论语·卫灵公》。意思是:道要靠人去把它撑开、行出来,不是道自己会把人抬起来。**担子在人这一边**——主体性这个词,说的正是这件事。"
+    },
+    {
+      "type": "quote",
+      "original": "学问之道无他，求其放心而已矣。"
+    },
+    {
+      "type": "p",
+      "text": "这句在《孟子·告子上》。「放心」是跑掉的心:孟子说,鸡跑了狗跑了人都知道去找,心跑了倒不知道找;做学问没有别的,就是把跑掉的那颗心找回来。这句话若出现在西方哲学的语境里会显得很怪——做学问怎么会是找自己的心?但放在这根轴上就顺了:**这门学问的对象,本来就是这个人自己。**"
+    },
+    {
+      "type": "h2",
+      "text": "必须说清楚:这不是高下之分"
+    },
+    {
+      "type": "p",
+      "text": "这根轴最容易被读歪的地方就在这里,所以要把话说死。"
+    },
+    {
+      "type": "p",
+      "text": "**西方不是没有主体。**近代哲学从笛卡尔起就在大讲主体——他把一切确定性的落脚点收到「正在思考的这个我」身上;康德讲实践理性,讲人为自己立法,分量一点不轻;此后德国观念论几乎整个是围着主体转的;二十世纪的存在主义更是直接把「人该怎么活」端上了台面。"
+    },
+    {
+      "type": "p",
+      "text": "**中国也不是没有客观面。**礼制是一整套极精密的公共秩序;历代律法条文之细、判例之繁,是货真价实的客观建制;天文历算的连续观测记录之长,世界少有;史学从《春秋》到二十四史,体例、义例、考据自成一套硬功夫;算学、目录学、音韵学也都有严整的门径。说中国人不讲客观、不讲条理,不合事实。"
+    },
+    {
+      "type": "p",
+      "text": "那么牟宗三说的到底是什么?是**重心**和**入手处**,不是有无。一个文明在最要紧的问题上把力气花在哪儿,长期下来就长出不同的形状。谁要是把这条轴读成「西方肤浅」或者「中国肤浅」,就是把它读反了。"
+    },
+    {
+      "type": "pull",
+      "text": "这根轴说的是重心与入手处,不是有无;把它读成谁比谁深刻,就已经读反了。"
+    },
+    {
+      "type": "h2",
+      "text": "两条路各自的所得,和各自的账单"
+    },
+    {
+      "type": "p",
+      "text": "一条路走得久,好处和代价是一起来的。要对称地看。"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**客体性那条路的所得**:一套可以互相检验、可以累积的公共知识。它不依赖某个圣人还在不在世,写下来就传得下去,后人踩着前人往上走。",
+        "**它的账单**:「人该怎么活」这件事,在它那里长期没有着落。世界被讲得越来越清楚,人自己反倒空着;这个缺口后来才由伦理学、道德哲学、存在主义等一支支去补,而且至今争论不休。",
+        "**主体性那条路的所得**:它把生命本身当成学问的对象,直接处理人怎么安顿的问题,而且要求验之于身——不是说了就算。",
+        "**它的账单**:结论难以公共检验。你说你心安了,我怎么知道?两个人讲的境界孰高孰低,常常只能靠人品和口碑去判。更要紧的是,**科学与知识论这一支,始终没有从这条路上独立长出来。**"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "最后一条不是外人的挑剔。牟宗三自己就承认这是中国哲学的欠缺,而且不肯用「我们本来也有,只是没写成公式」这类话去搪塞——那种话要么牵强附会,要么把自己讲成了一门落后的科学。他后半生花了极大的力气去处理这个欠缺:一面承认科学的成立自有它的条件,不必替它在古书里找一个中国替身;一面又不肯把心性这一层交出去。这件工作做得成不成、代价有多大,是另一个话题;但他没有回避这个欠缺,这一点该记下来。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "caption": "对称地看两条路:所得与账单是一起来的。右下角那一条,牟宗三自己也承认是中国哲学的欠缺。",
+      "svg": "<svg viewBox='0 0 660 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><g style='font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' style='font-size:15px;font-weight:bold;fill:var(--ink)'>两条路的所得,和各自的账单</text><text x='225' y='58' text-anchor='middle' style='font-size:13.5px;font-weight:bold;fill:var(--ink)'>客体性一路</text><text x='510' y='58' text-anchor='middle' style='font-size:13.5px;font-weight:bold;fill:var(--cinnabar-pure)'>主体性一路</text><text x='50' y='122' text-anchor='middle' style='font-size:12.5px;fill:var(--ink-soft)'>所得</text><text x='50' y='232' text-anchor='middle' style='font-size:12.5px;fill:var(--ink-soft)'>账单</text><rect x='90' y='70' width='270' height='90' rx='7' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><text x='225' y='100' text-anchor='middle' style='font-size:12px;fill:var(--ink)'>可互相检验、可累积的公共知识</text><text x='225' y='124' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>写下来就传得下去</text><text x='225' y='148' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>后人踩着前人往上走</text><rect x='380' y='70' width='260' height='90' rx='7' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='510' y='100' text-anchor='middle' style='font-size:12px;fill:var(--ink)'>直接处理人怎么安顿</text><text x='510' y='124' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>要求验之于身</text><text x='510' y='148' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>不是说了就算</text><rect x='90' y='176' width='270' height='100' rx='7' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><text x='225' y='206' text-anchor='middle' style='font-size:12px;fill:var(--ink)'>「人该怎么活」长期没有着落</text><text x='225' y='232' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>世界越讲越清楚</text><text x='225' y='256' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>人自己反倒空着</text><rect x='380' y='176' width='260' height='100' rx='7' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='510' y='206' text-anchor='middle' style='font-size:12px;fill:var(--ink)'>结论难以公共检验</text><text x='510' y='232' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>你说你心安了,我怎么知道</text><text x='510' y='256' text-anchor='middle' style='font-size:12px;fill:var(--cinnabar-pure)'>科学与知识论没有独立长出来</text></g></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "这是一个概括,不是一份中立的描述"
+    },
+    {
+      "type": "p",
+      "text": "还有一层得如实写下来。这根轴是牟宗三的**概括**,里面带着他的判断,并不是谁都会同意的历史描述。"
+    },
+    {
+      "type": "p",
+      "text": "最常见的批评是:它太整齐了。西方两千多年里的分歧、中国两千多年里的分歧,都被熨成了两条线。真去看细处,西方从来不缺讲实践、讲怎么活的传统——古希腊的伦理学本来就是教人过日子的学问;中国也从来不缺硬邦邦的客观学问。用一根轴去概括两大文明,能抓住大势,也一定会漏掉很多。"
+    },
+    {
+      "type": "p",
+      "text": "代价还更具体:凡是不合这根轴的支流,在这个框架里都要吃亏。荀子讲性恶,讲礼义是圣人制作出来的,道德的根据不落在人的本心上,于是被判为「大本不立」——这是牟宗三的用语,意思是主干没有立起来。名家专门研究名与实、同与异,那是关于概念本身的学问,被说成没有接上生命的问题;墨家讲兼爱、讲功利,还发展出一整套逻辑(墨辩那一支尤其成体系),同样被放在偏的位置上。批评者的说法很直接:这是**先立好标准,再回头给各家评分**——标准既然定为「从内在的本心讲起」,那么不从本心讲起的,当然都低。"
+    },
+    {
+      "type": "p",
+      "text": "这话有没有道理,读者自己判断,此处不作裁断,只把两边都摆出来。要提醒的只有一点:**读这根轴的时候,记住它是一副眼镜,不是一张照片。**戴上它能看清一些东西,也会挡住一些东西。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "caption": "这根轴不是免费的:判准一旦定为「是否从人内在的本心讲起」,不合判准的支流就都要往下掉。",
+      "svg": "<svg viewBox='0 0 660 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><g style='font-family:var(--font-serif)'><text x='330' y='24' text-anchor='middle' style='font-size:15px;font-weight:bold;fill:var(--ink)'>这根轴不是免费的</text><rect x='40' y='44' width='580' height='90' rx='8' style='fill:none;stroke:var(--ink-soft);stroke-width:1.3'/><text x='330' y='70' text-anchor='middle' style='font-size:13px;font-weight:bold;fill:var(--ink)'>合于这根轴 —— 判为正宗</text><text x='160' y='100' text-anchor='middle' style='font-size:12.5px;fill:var(--ink)'>孔子 · 孟子</text><text x='160' y='120' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>从本心讲起</text><text x='330' y='100' text-anchor='middle' style='font-size:12.5px;fill:var(--ink)'>老子 · 庄子</text><text x='330' y='120' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>从松开造作讲起</text><text x='500' y='100' text-anchor='middle' style='font-size:12.5px;fill:var(--ink)'>佛教</text><text x='500' y='120' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>从剖析心识讲起</text><path d='M40 158 L226 158 M434 158 L620 158' style='stroke:var(--line);stroke-width:1'/><text x='330' y='162' text-anchor='middle' style='font-size:11.5px;fill:var(--ink-soft)'>判准:是否从人内在的本心讲起</text><rect x='40' y='176' width='580' height='90' rx='8' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4'/><text x='330' y='202' text-anchor='middle' style='font-size:13px;font-weight:bold;fill:var(--cinnabar-pure)'>不合这根轴 —— 判为偏、为低</text><text x='160' y='232' text-anchor='middle' style='font-size:12.5px;fill:var(--ink)'>荀子</text><text x='160' y='252' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>被判「大本不立」</text><text x='330' y='232' text-anchor='middle' style='font-size:12.5px;fill:var(--ink)'>名家</text><text x='330' y='252' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>说它只在概念上打转</text><text x='500' y='232' text-anchor='middle' style='font-size:12.5px;fill:var(--ink)'>墨家</text><text x='500' y='252' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>说它根据落在外面</text><text x='330' y='288' text-anchor='middle' style='font-size:12.5px;fill:var(--ink-soft)'>批评者说:这是先立好标准,再回头给各家评分</text></g></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "想自己验一验的话"
+    },
+    {
+      "type": "p",
+      "text": "这根轴的好处是可以拿原文去试。站内儒典收了《论语》《孟子》《荀子》全文,道藏收了《道德经》与《庄子》(内、外、杂齐全),都配有译文与字词注疏。可以做一个很小的实验:随手翻十段,看它究竟在问什么——是在问一个摆在外面的东西是什么,还是在问人该怎么办、这颗心是怎么回事。翻《荀子》时尤其值得留意:它讲礼、讲法、讲名实的那些篇章,客观意味明显重得多,而牟宗三判它「大本不立」,恰恰是这根轴照不太到的地方。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本篇讲的是《中国哲学十九讲》开头几讲反复申说的那根轴——客体性与主体性、内在道德性;牟宗三本人的论述另见《中国哲学的特质》与《现象与物自身》。",
+        "文中除两条古典引文外,一律用大白话转述,未引原书文字。「大本不立」为牟宗三评荀子的用语,此处转述其意。",
+        "两条古典引文出自站内《论语·卫灵公》与《孟子·告子上》原文,逐字核对。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "title": "季氏到尧曰:晚出诸篇的疑问",
+  "subtitle": "怀疑是本分,删削不是",
+  "centralIdea": "《论语》后五篇的面貌确实与前面不同,历来有人疑其晚出。钱穆的做法是承认差异、追问原因,却不肯据此把文字剔出去——**怀疑是注家的本分,删削不是。**这一章讲的其实是文献学的分寸:证据有等级,疑要有据,存疑不等于失职。",
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "把《论语》从头读到尾,读到第十六篇季氏,多数人会有一点说不上来的异样:文字忽然整齐了,句子忽然长了,一条一条排比着往下走,像是有人整理过。再往后,微子篇几乎全是故事,子张篇里孔子一句话都没说,到最后的尧曰篇,开头那一大段读起来根本不像《论语》,像《尚书》。**这不是错觉。**这几篇的面貌确实不一样,而这件事从唐代就有人提出来了。"
+    },
+    {
+      "type": "p",
+      "text": "问题在于:接下来怎么办。是把可疑的部分标出来、甚至剔出去,还是留着?这是一个注家最能暴露分寸的地方——**因为删削比保留更省事,也更显得有学问。**"
+    },
+    {
+      "type": "h2",
+      "text": "先老实承认:后五篇确实不一样"
+    },
+    {
+      "type": "p",
+      "text": "所谓「后五篇」,指季氏第十六、阳货第十七、微子第十八、子张第十九、尧曰第二十。它们与前面十五篇的差别,主要有三处:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**文体变了。**前面多是三言两语的短章,后面长章明显增多,而且出现大量整齐的排比:益者三友损者三友、益者三乐损者三乐、君子有三戒、君子有三畏、君子有九思。这种「几件事凑成一条」的写法,前十五篇里少见,倒像是后人便于记诵而编的。",
+        "**称谓变了。**前面绝大多数记言以「子曰」起头,季氏篇却多用「孔子曰」。「子」是弟子对老师的称呼,「孔子」是外人的称呼——一字之差,透露出记录者与孔子的距离不同。",
+        "**内容的性质变了。**子张篇通篇是弟子们各自说的话,孔子本人不出场;微子篇几乎全是孔子与隐者遭遇的故事,情节完整、对话生动,笔法近于寓言;尧曰篇只有三章,头一章是尧命舜、舜命禹的一长串训辞,和全书完全不搭。"
+      ]
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "后五篇与前十五篇的三处差别 —— 这些是可以核对的事实,不是印象",
+      "svg": "<svg viewBox='0 0 640 268' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><g style='font-family:var(--font-serif)'><text x='158' y='34' text-anchor='middle' style='font-size:14px;fill:var(--ink-soft)'>前十五篇</text><text x='482' y='34' text-anchor='middle' style='font-size:14px;fill:var(--cinnabar-pure)'>后五篇</text><path d='M320 44 L320 240' style='stroke:var(--line);stroke-width:1;stroke-dasharray:4 4' /><g style='font-size:12px'><text x='30' y='84' style='fill:var(--ink-faint)'>文体</text><rect x='72' y='66' width='226' height='34' rx='3' style='fill:none;stroke:var(--ink-faint);stroke-width:1' /><text x='185' y='88' text-anchor='middle' style='fill:var(--ink-soft)'>短章为主，随问随答</text><rect x='344' y='66' width='226' height='34' rx='3' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.1' /><text x='457' y='88' text-anchor='middle' style='fill:var(--cinnabar-pure)'>长章多，三友三戒三畏</text><text x='30' y='144' style='fill:var(--ink-faint)'>称谓</text><rect x='72' y='126' width='226' height='34' rx='3' style='fill:none;stroke:var(--ink-faint);stroke-width:1' /><text x='185' y='148' text-anchor='middle' style='fill:var(--ink-soft)'>多作「子曰」</text><rect x='344' y='126' width='226' height='34' rx='3' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.1' /><text x='457' y='148' text-anchor='middle' style='fill:var(--cinnabar-pure)'>季氏篇多作「孔子曰」</text><text x='30' y='204' style='fill:var(--ink-faint)'>内容</text><rect x='72' y='186' width='226' height='34' rx='3' style='fill:none;stroke:var(--ink-faint);stroke-width:1' /><text x='185' y='208' text-anchor='middle' style='fill:var(--ink-soft)'>师弟问答，就事而言</text><rect x='344' y='186' width='226' height='34' rx='3' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.1' /><text x='457' y='208' text-anchor='middle' style='fill:var(--cinnabar-pure)'>故事、弟子语、尚书残文</text></g><text x='320' y='256' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>三处差别可以逐条核对 —— 承认它，才谈得上解释它</text></g></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "这本书本来就有一部编纂史"
+    },
+    {
+      "type": "p",
+      "text": "要理解上面那些差别,先得知道一件常被忽略的事:**《论语》不是一次写成的,也不是从头到尾只有一个本子。**"
+    },
+    {
+      "type": "p",
+      "text": "《汉书·艺文志》记载,汉代同时流传着三个系统的《论语》:鲁人所传的《鲁论》二十篇、齐人所传的《齐论》二十二篇(比鲁论多〈问王〉〈知道〉两篇)、以及从孔子旧宅墙壁中发现的《古论》。今天读的这个本子,大体是西汉末年张禹以《鲁论》为主、参酌《齐论》整理定下来的,当时称《张侯论》。也就是说,**从最早的记录到今天的二十篇,中间隔着几百年的传抄、拼合与取舍。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "谱系图",
+      "caption": "汉代三个系统的《论语》与今本的由来 —— 差别的来源,首先要到这条线上去找",
+      "svg": "<svg viewBox='0 0 640 230' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><g style='font-family:var(--font-serif)'><rect x='24' y='40' width='150' height='40' rx='3' style='fill:none;stroke:var(--ink-faint);stroke-width:1.1' /><text x='99' y='58' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>鲁论 · 二十篇</text><text x='99' y='74' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>鲁人所传</text><rect x='24' y='96' width='150' height='40' rx='3' style='fill:none;stroke:var(--ink-faint);stroke-width:1.1' /><text x='99' y='114' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>齐论 · 二十二篇</text><text x='99' y='130' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>多问王、知道两篇</text><rect x='24' y='152' width='150' height='40' rx='3' style='fill:none;stroke:var(--ink-faint);stroke-width:1.1' /><text x='99' y='170' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>古论</text><text x='99' y='186' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>出孔子旧宅壁中</text><path d='M178 60 L246 108 M178 116 L246 116 M178 172 L246 124' style='stroke:var(--ink-faint);stroke-width:1' /><rect x='250' y='92' width='150' height='48' rx='3' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2' /><text x='325' y='114' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>张侯论</text><text x='325' y='132' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>西汉末 · 张禹合定</text><path d='M404 116 L466 116' style='stroke:var(--cinnabar-pure);stroke-width:1.2' /><path d='M470 116 l-9 -4 l0 8 z' style='fill:var(--cinnabar-pure)' /><rect x='474' y='92' width='142' height='48' rx='3' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3' /><text x='545' y='114' text-anchor='middle' style='font-size:12px;fill:var(--cinnabar-pure)'>今本二十篇</text><text x='545' y='132' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>我们读的这一本</text><text x='320' y='214' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>几百年的传抄、拼合与取舍，足以解释相当一部分「不一样」</text></g></svg>"
+    },
+    {
+      "type": "p",
+      "text": "怀疑本身也早有传统。唐代柳宗元就推测《论语》最后成书于曾子门人之手;清代崔述作《洙泗考信录》,对后几篇的可靠性提出过相当尖锐的质疑;日本江户时代的伊藤仁斋把全书分成「上论」「下论」两截,认为后十篇成立在后。到了近代疑古思潮兴起,这条路走得更远,有人索性把《论语》看成层层累积的杂凑,可信的只剩一小部分。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "items": [
+        "要分清两件事:**文体不同是观察,晚出是推论,伪造是指控。**三者之间隔着两道坎。从「读起来不一样」直接跳到「这是后人假造的」,中间该补的证据一条都没有补。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "一处该改的字,和一处不该改的断句"
+    },
+    {
+      "type": "p",
+      "text": "季氏篇头一章「季氏将伐颛臾」,是全书最有戏的段落之一。冉有替主家找理由,被孔子当面拆穿:说什么「不是我们想打」,君子最讨厌的就是明明自己想要,还非要给它编一套说辞。那句流传最广的「祸起萧墙」,也是从这一章的结尾来的——他说季孙真正的忧患不在颛臾,在自家的屏墙之内。"
+    },
+    {
+      "type": "p",
+      "text": "而这一章里有一处极出名的校勘问题。孔子说:"
+    },
+    {
+      "type": "quote",
+      "original": "不患寡而患不均,不患贫而患不安。盖均无贫,和无寡,安无倾。"
+    },
+    {
+      "type": "p",
+      "text": "读快了没什么问题,读慢了就发现对不上:上句「患不均」,下句解释成「均无贫」——**均对应的是贫,不是寡**;上句「患不安」,下句「和无寡,安无倾」——寡对应的是和。前后两截的搭配错了位。清儒俞樾等人因此推断,「寡」「贫」两字是传抄时倒了,原文当作「不患贫而患不均,不患寡而患不安」,这样与下句就严丝合缝。"
+    },
+    {
+      "type": "p",
+      "text": "**这是一个有内证的校改。**证据不在读者的感觉里,在文本自己身上:同一章的下文对不上上文。这类校改,历代注家大多接受。"
+    },
+    {
+      "type": "p",
+      "text": "把它和前面泰伯篇那处著名的改断放在一起看,分别就出来了。「民可使由之,不可使知之」,近代有人改断成「民可,使由之;不可,使知之」——一改,孔子立刻从一个被指为愚民的人,变成了主张因材施教的启蒙者。**读着舒服多了,可是拿不出任何内证:上下文不支持,古本异文不支持,训诂也不支持。**它唯一的依据,是今人希望孔子是这样的。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "同样是「改经」,一处有文本内证,一处只有今人的愿望 —— 分歧不在改不改,在凭什么改",
+      "svg": "<svg viewBox='0 0 640 262' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><g style='font-family:var(--font-serif)'><rect x='24' y='40' width='276' height='176' rx='4' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2' /><text x='162' y='66' text-anchor='middle' style='font-size:13px;fill:var(--ink-soft)'>有内证的校改</text><text x='162' y='94' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>季氏篇 · 寡贫二字疑倒</text><text x='162' y='124' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>依据：同章下文对不上</text><text x='162' y='148' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>均无贫 · 和无寡 · 安无倾</text><path d='M60 164 L264 164' style='stroke:var(--line);stroke-width:1;stroke-dasharray:3 3' /><text x='162' y='190' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>证据在文本自己身上</text><rect x='340' y='40' width='276' height='176' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2' /><text x='478' y='66' text-anchor='middle' style='font-size:13px;fill:var(--cinnabar-pure)'>无据的改断</text><text x='478' y='94' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>泰伯篇 · 民可使由之</text><text x='478' y='124' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>依据：改了以后更好听</text><text x='478' y='148' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>无异文 · 无上下文 · 无训诂</text><path d='M376 164 L580 164' style='stroke:var(--line);stroke-width:1;stroke-dasharray:3 3' /><text x='478' y='190' text-anchor='middle' style='font-size:12px;fill:var(--cinnabar-pure)'>证据在今人的愿望里</text><text x='320' y='244' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>注家不反对改字，注家反对没有证据地改字</text></g></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "微子篇的隐者:像寓言,不等于是寓言"
+    },
+    {
+      "type": "p",
+      "text": "微子篇里连着几个故事,都是孔子一行在路上碰见的隐者。长沮、桀溺两人并排耕地,子路去问渡口在哪,被顶了回来:天下到处都是这样滔滔的乱水,你们跟谁去改?与其跟着一个躲某些人的人,不如跟着我们这些躲整个世道的人。子路回去转告,孔子怅然说:"
+    },
+    {
+      "type": "quote",
+      "original": "鸟兽不可与同群!吾非斯人之徒与而谁与?"
+    },
+    {
+      "type": "p",
+      "text": "总不能跟鸟兽合群过日子;我不跟这些人待在一起,还能跟谁待在一起?这一句是他对全部隐者的总答复:退到山林里去当然清静,但人只能活在人中间。还有那位挑着除草工具的丈人,丢下一句「四体不勤,五谷不分」;还有唱着歌从孔子车边走过的楚狂接舆,说凤鸟啊凤鸟,你的德怎么衰成了这样。"
+    },
+    {
+      "type": "p",
+      "text": "这几段情节完整、对答漂亮,笔法确实近于《庄子》里的寓言,与全书那种零碎的记言很不一样——这正是疑其晚出的一条理由。但要注意,「四体不勤,五谷不分」这八个字本身就有两种读法:一说是丈人在责子路(你这种人手脚不劳动、五谷分不清);一说是丈人自谓(我成天忙着种地,哪里认得你的老师)。**连一句话的主语都还有两说,凭「笔法像寓言」这种感觉去判定真伪,分量显然不够。**"
+    },
+    {
+      "type": "h2",
+      "text": "尧曰篇:最不像《论语》的一篇"
+    },
+    {
+      "type": "p",
+      "text": "全书最后一篇只有三章,而头一章尤其扎眼:"
+    },
+    {
+      "type": "quote",
+      "original": "咨!尔舜!天之历数在尔躬,允执其中!"
+    },
+    {
+      "type": "p",
+      "text": "「咨」是叹词,「历数」指帝王更替的次序,「允执其中」是切实地把住那个中。这是尧禅位给舜时说的话,后面接着舜命禹、商汤祷天、周初分封的一串训辞——通篇是三代的政治文告,孔子和弟子一个都没出现。放在一部语录的末尾,像是有人把一份别的材料附了进来。"
+    },
+    {
+      "type": "p",
+      "text": "这里还牵着一段更复杂的文献公案:「允执厥中」四个字也见于《尚书·大禹谟》,而《大禹谟》属于晚出的伪古文《尚书》,清代阎若璩已经把它的作伪坐实了。要紧的是**方向别弄反**:不是《论语》抄了《大禹谟》,而是后人造《大禹谟》时,把《论语》这一句采了进去。宋儒讲了几百年的「十六字心传」,源头正在这里。**分辨这个先后,靠的不是感觉,是版本与年代的实证。**"
+    },
+    {
+      "type": "p",
+      "text": "而尧曰篇的末章,倒是全书一个极妥帖的收尾:不知命,无以为君子;不知礼,无以立;不知言,无以知人。命、礼、言三样,恰好把全书讲过的东西收拢了一遍。"
+    },
+    {
+      "type": "h2",
+      "text": "存疑而不轻削:证据是分等级的"
+    },
+    {
+      "type": "p",
+      "text": "把上面的材料摆齐,钱穆的做法就清楚了。他不像卫道者那样否认差异——差异是可以逐条核对的事实,赖不掉;他也不跟疑古派走到底,不肯凭文体上的异样把文字剔出去。他做的是**把证据分等级**:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**最弱的一等是文体感觉。**「读着不像」只能提出问题,不能解答问题。同一个人不同场合的话本来就可以不一样,何况这是几十个弟子几百年间陆续记下来的。",
+        "**中间一等是文本内证。**下文与上文对不上、同一件事两处记载相抵、篇中出现了孔子身后才有的人和事——这些能把怀疑落到实处,像季氏篇「寡」「贫」二字那样。",
+        "**最硬的一等是版本与异文。**古本怎么写、汉代三家《论语》有无出入、后世引用作何形态。这一等最难得,也最说得响。"
+      ]
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "怀疑的三级证据 —— 后五篇的疑问大多停在最下面一级,所以只够挂着,不够结案",
+      "svg": "<svg viewBox='0 0 640 268' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><g style='font-family:var(--font-serif)'><rect x='170' y='44' width='300' height='54' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.4' /><text x='320' y='68' text-anchor='middle' style='font-size:13px;fill:var(--cinnabar-pure)'>版本与异文</text><text x='320' y='88' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>古本怎么写 · 三家有无出入 · 后世如何征引</text><rect x='120' y='110' width='400' height='54' rx='4' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2' /><text x='320' y='134' text-anchor='middle' style='font-size:13px;fill:var(--ink-soft)'>文本内证</text><text x='320' y='154' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>下文对不上上文 · 两处记载相抵 · 出现身后的人事</text><rect x='70' y='176' width='500' height='54' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1.1' /><text x='320' y='200' text-anchor='middle' style='font-size:13px;fill:var(--ink-soft)'>文体感觉</text><text x='320' y='220' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>读着不像 · 句式太整齐 · 笔法近寓言</text><text x='36' y='72' style='font-size:11px;fill:var(--ink-faint)'>硬</text><text x='36' y='208' style='font-size:11px;fill:var(--ink-faint)'>软</text><path d='M48 84 L48 190' style='stroke:var(--ink-faint);stroke-width:1' /><path d='M48 190 l-4 -9 l8 0 z' style='fill:var(--ink-faint)' /><text x='320' y='254' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>只有最下一级的理由，就只能提出问题，不能作出判决</text></g></svg>"
+    },
+    {
+      "type": "p",
+      "text": "分了等级,就不会拿第一等的理由做第三等的判决。**「可疑」是一个可以长期挂着的状态,不必急着结案。**注本该做的是把疑点标出来、把各家的说法交代清楚,让读者知道这里地基松;至于要不要拆房子,证据不到那一步,就不拆。"
+    },
+    {
+      "type": "pull",
+      "text": "怀疑是注家的本分,删削不是——地基有多松,如实标出来就够了。"
+    },
+    {
+      "type": "p",
+      "text": "这份克制还有一层实际考虑。后五篇里有的是最要紧的材料:季氏将伐颛臾是孔子论政最完整的一段,微子篇的隐者是他一生处境的写照,「不知命无以为君子」是全书的结句。**把它们按可疑一概剥掉,剩下的孔子会变得更纯粹,也更单薄——那不是一个更真实的孔子,只是一个更合注家心意的孔子。**"
+    },
+    {
+      "type": "p",
+      "text": "这一章因此不只是《论语》的问题。**面对一份来路复杂、真伪掺杂的材料,怎么既不轻信、也不轻疑,这是一门可以带走的手艺:**先把差异说清楚,再把可能的原因列全,然后看手上的证据够到哪一级,最后老实交代自己停在了哪里。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "《论语》原文据站内儒典底本,篇章为季氏第十六、微子第十八、尧曰第二十,并及泰伯篇相关章句。",
+        "三家《论语》与《张侯论》之说见《汉书·艺文志》;柳宗元、崔述《洙泗考信录》、伊藤仁斋分上下论,均为历代关于成书的旧说。",
+        "「寡」「贫」二字疑倒之说出清儒(俞樾《群经平议》一路);伪古文《尚书·大禹谟》之辨定,见阎若璩《尚书古文疏证》。",
+        "文中所述钱穆的取舍为转述与概括,未直引原书文字。"
+      ]
+    }
+  ]
+}

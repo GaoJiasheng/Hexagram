@@ -106,7 +106,12 @@ function checkArticle(file, o, { isOverview }) {
   for (const [i, svg] of figs.entries()) {
     // SVG 的 presentation 属性不认 var(),必须写 style —— 写错了暗色模式下会瞎
     if (/\s(?:fill|stroke)="(?!none")/.test(svg)) E(`${f} 图${i + 1}`, '用了 fill/stroke 属性,必须改 style=')
-    if (/#[0-9a-fA-F]{3,6}\b/.test(svg)) E(`${f} 图${i + 1}`, '写死了色值,须用 var(--…)')
+    // ⚠️ 必须排除 HTML 实体:`&#183;`(·)、`&#8212;`(—)这类里也有 `#数字`,
+    // 初版正则把它们全当成了十六进制色值 —— 实测 69 处误报 vs 44 处真问题,
+    // **误报比真问题还多的闸门会让人不再信它**。故要求 # 前不是 &,且只认 3/6 位十六进制。
+    if (/(?<!&)#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})\b/.test(svg)) {
+      E(`${f} 图${i + 1}`, '写死了色值,须用 var(--…)')
+    }
     if (!/viewBox=/.test(svg)) E(`${f} 图${i + 1}`, '缺 viewBox')
     // ⚠️ 观书走**中立外壳**(App.jsx 的 isNeutralPath 含 /books),
     // 而 [data-site="portal"] 把 --cinnabar 重绑成了 --ink-soft ——
