@@ -16,10 +16,34 @@ android {
             ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+    // 发布签名:配置从 android/keystore.properties 读(该文件与 *.keystore 都已 gitignore)。
+    // 没有这个文件时**照常能构建 debug**,只是 assembleRelease 会退回未签名 ——
+    // 这样 CI 或换一台机器 clone 下来不会因为缺密钥直接构建失败。
+    //
+    // ⚠️ keystore 丢了**不可恢复**:iOS 的证书能让 Apple 重签,安卓不能。
+    // 一旦丢失,pub.gavin.hexa 这个包名就再也发不了更新,只能换包名重新上架。
+    // 生成后务必备份到这台机器之外(密码管理器/加密盘),口令与文件分开存。
+    signingConfigs {
+        release {
+            def propsFile = rootProject.file('keystore.properties')
+            if (propsFile.exists()) {
+                def props = new Properties()
+                props.load(new FileInputStream(propsFile))
+                storeFile file(props['storeFile'])
+                storePassword props['storePassword']
+                keyAlias props['keyAlias']
+                keyPassword props['keyPassword']
+            }
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            if (rootProject.file('keystore.properties').exists()) {
+                signingConfig signingConfigs.release
+            }
         }
     }
 }

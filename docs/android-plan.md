@@ -72,12 +72,39 @@ if (!Capacitor?.isNativePlatform?.() || Capacitor.getPlatform() !== 'ios') retur
 
 | 阶段 | 内容 | 谁 | 需要 JDK? |
 |---|---|---|---|
-| **0** | 装 JDK 21 并配 `JAVA_HOME` | **owner** | — |
-| 1 | `cap add android` 生成 `android/` 工程 | 我 | 否 |
-| 2 | 返回键 + 浮层拦截 · 状态栏 · 启动屏 · 图标 | 我 | 否 |
-| 3 | 下 system-image → 建 AVD → 模拟器走查 | 我 | **是** |
-| 4 | keystore + 签名出 release APK | owner 签,我配 | **是** |
-| — | *(真机走查:owner 拿到设备后补)* | 我+owner | 是 |
+| ~~0~~ | ~~装 JDK 21~~ | owner | ✅ 2026-08-17(brew `openjdk@21`,**keg-only 不在 PATH**,构建时显式指 `JAVA_HOME`) |
+| ~~1~~ | ~~`cap add android`~~ | 我 | ✅ |
+| ~~2~~ | ~~返回键 + 浮层拦截 · 图标 · 启动屏~~ | 我 | ✅ |
+| ~~3~~ | ~~建 AVD + 模拟器走查~~ | 我 | ✅ 2026-08-17,四条返回键行为全过 |
+| **4** | keystore + 签名出 release APK | **owner 签**,我已配好 gradle | 待 owner 生成密钥 |
+| — | *(真机走查:owner 拿到设备后补)* | 我+owner | 待设备 |
+
+### 已跑通的环境(下次直接用)
+
+```bash
+export JAVA_HOME=/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home
+export ANDROID_HOME=$HOME/Library/Android/sdk
+cd android && ./gradlew assembleDebug     # 首次约 1 分 15 秒
+$ANDROID_HOME/emulator/emulator -avd hexa-test    # AVD 名 hexa-test
+$ANDROID_HOME/platform-tools/adb install -r android/app/build/outputs/apk/debug/app-debug.apk
+```
+
+模拟器:Pixel 7 · **Android 15 · WebView 124**(`content-visibility`/`color-mix`/`:has()` 都够用)。
+Debug APK **95 MB** —— 大头是内容本身(content 2122 个文件解压后 145 MB + web 包 40 MB),
+砍不掉,iOS 那边同量。⚠️ 日后若上 Play:**APK 上限正好 100 MB,已贴边**,得走 AAB(基础包 150 MB)。
+
+### 模拟器实测:返回键四条行为(2026-08-17)
+
+| 场景 | 实测 |
+|---|---|
+| 首页弹着每日一辩 → 返回 | ✅ 关弹窗,App 不退 |
+| 首页 → 返回 | ✅ 出「再按一次退出」 |
+| 首页 → 两秒内连按两次 | ✅ 退出 |
+| 论语章页 → 返回 | ✅ 回上一页 |
+
+> ⚠️ **判「App 退没退」不能用 `pidof`** —— 安卓退出后进程仍留在缓存里,`pidof` 照样有值。
+> 要看 `dumpsys activity activities` 的 `topResumedActivity` 是不是回到了桌面。
+> 我第一次就是被这个判据骗了,以为「连按两次没退出」,其实早退了。
 
 **阶段 1、2 现在就能做**(scaffold 与写代码不需要 JDK,只有**编译**才需要),
 所以 owner 装 JDK 与我写代码可以并行。
