@@ -33,11 +33,16 @@ const warns = []
 const E = (f, m) => errs.push(`${f}: ${m}`)
 const W = (f, m) => warns.push(`${f}: ${m}`)
 
+// ⚠️ 篇幅按**汉字**计,不是按字符计。
+// 中文语境里「5000 字」指的就是五千个汉字;把 ASCII 标点、`**` 加粗记号、
+// 数字字母都算成「字」会凭空多出两三成,与产出规格(2500–4500 汉字)对不上。
+// 2026-08-17 初版就是这么算的,把两篇本来合规的文章误判为超限。
 const textOf = (b) => {
   let n = (b.text || '') + (b.original || '') + (b.translation || '') + (b.caption || '')
   for (const it of b.items || []) n += typeof it === 'string' ? it : `${it.title || ''}${it.text || ''}`
   return n
 }
+const hanCount = (s) => (s.match(/[\u4e00-\u9fff]/g) || []).length
 
 function checkArticle(file, o, { isOverview }) {
   const f = path.relative(ROOT, file)
@@ -52,10 +57,10 @@ function checkArticle(file, o, { isOverview }) {
     E(f, '章文章不该有 hero / featured')
   }
 
-  const chars = o.blocks.reduce((n, b) => n + textOf(b).length, 0)
+  const chars = o.blocks.reduce((n, b) => n + hanCount(textOf(b)), 0)
   const cap = isOverview ? OVERVIEW_MAX_CHARS : ARTICLE_MAX_CHARS
-  if (chars > cap) E(f, `正文 ${chars} 字,超上限 ${cap}`)
-  if (!isOverview && chars < 1500) W(f, `正文仅 ${chars} 字,偏薄`)
+  if (chars > cap) E(f, `正文 ${chars} 汉字,超上限 ${cap}`)
+  if (!isOverview && chars < 1500) W(f, `正文仅 ${chars} 汉字,偏薄`)
 
   const quotes = [], figs = []
   let pulls = 0
@@ -93,7 +98,7 @@ function checkArticle(file, o, { isOverview }) {
     if ([...q].length > QUOTE_MAX_CHARS) E(f, `引文超 ${QUOTE_MAX_CHARS} 字(${[...q].length}): ${q.slice(0, 20)}…`)
   }
   // 版权红线的粗筛:引文占正文比例过高 = 有靠拼引文还原原文的嫌疑
-  const qChars = quotes.reduce((n, q) => n + [...q].length, 0)
+  const qChars = quotes.reduce((n, q) => n + hanCount(q), 0)
   if (chars && qChars / chars > 0.15) W(f, `引文占正文 ${(qChars / chars * 100).toFixed(0)}%,偏高,复核是否靠引文撑篇幅`)
 
   const need = isOverview ? [5, 8] : [3, 6]

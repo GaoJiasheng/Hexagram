@@ -1,0 +1,322 @@
+{
+  "title": "一篇文章读懂《中国思想史》",
+  "subtitle": "葛兆光 · 1998 / 2000",
+  "centralIdea": "传统的思想史是一条精英的链子——孔孟老庄、程朱陆王,一个接一个往下传。葛兆光说这条链子漏掉了最要紧的东西:那些当时人人默认、根本无须论证的常识。真正支配大多数人生活的,恰恰是后者。",
+  "featured": true,
+  "hero": {
+    "badge": "全书 · 核心",
+    "headline": "思想史不能只写那几十个人",
+    "tagline": "两卷近百万字,只为把一层被历代写史者跳过去的东西请回来:普通人默认的常识。"
+  },
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "《中国思想史》两卷,一九九八与二〇〇〇年先后出版,合起来近百万字。它常被当成一部可查的通史,但只当通史用会错过它真正的分量——**这首先是一部方法之书**。在动笔写「中国人想过什么」之前,它先用极长的篇幅追问了一个更别扭的问题:思想史这门学问,到底应该写谁?"
+    },
+    {
+      "type": "h2",
+      "text": "他在跟什么较劲"
+    },
+    {
+      "type": "p",
+      "text": "翻开一部旧式的中国思想史,目录大致是一串人名:孔子、孟子、老子、庄子,往下是董仲舒、王充,再往下是二程、朱熹、陆九渊、王阳明。一个人接一个人,像一场接力赛,棒子在几十个人手里传了两千年。"
+    },
+    {
+      "type": "p",
+      "text": "这样写有它的道理——这些人确实想得最深,也留下了最多可读的文字。但葛兆光指出,这条链子上有两个洞,而且是硬伤。"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**没有大思想家的年代,就成了空白页。** 可那些年代照样有人活着、有人做决定、有人相信某些事情。历史不会因为没出思想家就停摆。",
+        "**写出来的思想史,和当时绝大多数人的生活对不上。** 一个宋代农民的一生里,朱熹可能一次也没出现过;真正管着他的,是历书上的宜忌、祠堂里的次序、生病时该请谁来看。"
+      ]
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "打个比方",
+      "items": [
+        "这就像写一部星空的历史,却只画出最亮的七八颗星。画出来当然好看,可夜空真正的样子——那片弥漫的、说不清边界的微光——反而不见了。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "还有一层筛子架在更前面。近代以来写「中国哲学史」的路数,是先拿一副从西方哲学借来的框子去中国古书里挑:能对上本体论、认识论的留下,对不上的放回去。于是数术、方技、祭祀这些在当时占了大量篇幅的东西,被判为「不算哲学」。哲学史有它的用处,但**被筛掉的那部分,恰恰是当时多数人真正在用的那部分**。"
+    },
+    {
+      "type": "p",
+      "text": "他要做的不是把这几十个人赶下去。链子还在,他只是**在链子底下把那片微光补上**。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对比图",
+      "caption": "两种写法:不是换掉精英,是在精英底下补一层",
+      "svg": "<svg viewBox='0 0 640 300' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><g style='font-family:var(--font-serif)'><text x='42' y='30' style='font-size:14px;fill:var(--ink-soft)'>旧写法:只有一条链子</text><path d='M70 68 L250 68' style='stroke:var(--ink-faint);stroke-width:1'/><path d='M250 68 L370 68' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:4 5'/><path d='M370 68 L570 68' style='stroke:var(--ink-faint);stroke-width:1'/><circle cx='70' cy='68' r='5' style='fill:var(--ink-soft)'/><circle cx='140' cy='68' r='5' style='fill:var(--ink-soft)'/><circle cx='190' cy='68' r='5' style='fill:var(--ink-soft)'/><circle cx='250' cy='68' r='5' style='fill:var(--ink-soft)'/><circle cx='370' cy='68' r='5' style='fill:var(--ink-soft)'/><circle cx='450' cy='68' r='5' style='fill:var(--ink-soft)'/><circle cx='510' cy='68' r='5' style='fill:var(--ink-soft)'/><circle cx='570' cy='68' r='5' style='fill:var(--ink-soft)'/><text x='310' y='58' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>空白</text><text x='42' y='104' style='font-size:12px;fill:var(--ink-faint)'>没有大思想家的年代,写不进去</text><path d='M42 126 L600 126' style='stroke:var(--line);stroke-width:1;stroke-dasharray:4 4'/><text x='42' y='160' style='font-size:14px;fill:var(--cinnabar-pure)'>他的写法:链子照旧,底下补上一层</text><path d='M70 196 L570 196' style='stroke:var(--ink-faint);stroke-width:1'/><circle cx='70' cy='196' r='5' style='fill:var(--ink-soft)'/><circle cx='140' cy='196' r='5' style='fill:var(--ink-soft)'/><circle cx='190' cy='196' r='5' style='fill:var(--ink-soft)'/><circle cx='250' cy='196' r='5' style='fill:var(--ink-soft)'/><circle cx='370' cy='196' r='5' style='fill:var(--ink-soft)'/><circle cx='450' cy='196' r='5' style='fill:var(--ink-soft)'/><circle cx='510' cy='196' r='5' style='fill:var(--ink-soft)'/><circle cx='570' cy='196' r='5' style='fill:var(--ink-soft)'/><path d='M140 202 L140 222 M370 202 L370 222 M510 202 L510 222' style='stroke:var(--ink-faint);stroke-width:1;stroke-dasharray:2 3'/><rect x='50' y='224' width='540' height='46' rx='4' style='fill:var(--cinnabar-pure);opacity:0.12'/><rect x='50' y='224' width='540' height='46' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1'/><text x='320' y='253' text-anchor='middle' style='font-size:13px;fill:var(--cinnabar-pure)'>一般知识、思想与信仰世界 —— 缓慢 · 连续 · 不必论证</text></g></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "那片微光叫什么"
+    },
+    {
+      "type": "p",
+      "text": "他给它起了一个拗口的名字:**一般知识、思想与信仰世界**。名字长,但每个字都在干活,值得拆开看。"
+    },
+    {
+      "type": "p",
+      "text": "先看「一般」。这个词有两层意思叠在一起:一是**普遍**,大多数人共享;二是**平均**,它不是那个时代最高、最精微的那一层,而是中间的那一层。过去的思想史只盯着最高处,他要写的是中位数。"
+    },
+    {
+      "type": "p",
+      "text": "再看后面三个词。「知识」多半指技术性的、常识性的东西;「思想」是从知识里长出来的观念;「信仰」是人相信而不去追问的部分。三者并排放着,本身就是一个主张——**它们不是主次关系,是同一层里的三种东西**。一套宇宙图式,先是历算和数术,后来才被讲成义理。"
+    },
+    {
+      "type": "p",
+      "text": "那么这一层具体是什么?大致是这些:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**历法与节气**:哪天宜嫁娶,哪天不宜动土,一年从什么时候算起。",
+        "**风水堪舆**:房子朝哪边开门,坟地怎么选,祖坟动了会怎样。",
+        "**医方与禁忌**:病是怎么来的,除了吃药还该做什么。",
+        "**神灵谱系**:天上地下有哪些神,各管什么,该按什么次序拜。",
+        "**日常仪礼**:红白事的规矩,称呼的讲究,座次的先后。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "这些东西在当时的文献里往往连解释都没有——**因为没人觉得需要解释**。今天也一样:没有哪篇文章会先论证「一周有七天」再往下写。凡是被当作前提的,都不会被写成论点。"
+    },
+    {
+      "type": "p",
+      "text": "于是出现一个反常的局面:**越是支配生活的东西,在文献里留下的痕迹越浅**。精英的争论吵得响亮、记得详尽;人人默认的那一层安静地铺在底下,反倒要费很大力气才能看见。"
+    },
+    {
+      "type": "pull",
+      "text": "真正牢固的东西从不需要论证 —— 也正因为不需要,它最难被撼动。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构图",
+      "caption": "三层地层:留下文字最多的那一层,影响的人最少",
+      "svg": "<svg viewBox='0 0 640 270' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><g style='font-family:var(--font-serif)'><rect x='210' y='34' width='230' height='46' rx='3' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><text x='325' y='55' text-anchor='middle' style='font-size:13px;fill:var(--ink-soft)'>少数哲人的经典与论辩</text><text x='325' y='73' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>旧思想史几乎只写这一层</text><rect x='140' y='94' width='370' height='46' rx='3' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><text x='325' y='115' text-anchor='middle' style='font-size:13px;fill:var(--ink-soft)'>士人的一般教养</text><text x='325' y='133' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>读过书的人共享的那套说法</text><rect x='50' y='154' width='550' height='58' rx='3' style='fill:var(--cinnabar-pure);opacity:0.12'/><rect x='50' y='154' width='550' height='58' rx='3' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='325' y='178' text-anchor='middle' style='font-size:13px;fill:var(--cinnabar-pure)'>日常常识:历法 · 风水 · 医方 · 神灵 · 仪礼</text><text x='325' y='198' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>人人默认,无须论证,几乎不被写下来</text><path d='M24 40 L24 206' style='stroke:var(--ink-faint);stroke-width:1'/><path d='M24 206 l-4 -9 l8 0 z' style='fill:var(--ink-faint)'/><text x='34' y='120' style='font-size:11px;fill:var(--ink-faint)'>文</text><text x='34' y='136' style='font-size:11px;fill:var(--ink-faint)'>献</text><text x='34' y='152' style='font-size:11px;fill:var(--ink-faint)'>渐</text><text x='34' y='168' style='font-size:11px;fill:var(--ink-faint)'>少</text><text x='325' y='244' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>越往下,涉及的人越多,留下的文字越少</text></g></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "材料因此也得换"
+    },
+    {
+      "type": "p",
+      "text": "要写的东西变了,能用的材料就不能只是那几十部经典。这是全书最实在的一处改变,也是它对后来影响最大的地方。"
+    },
+    {
+      "type": "p",
+      "text": "他把手伸向了传统上不算「思想」的文献:官修与私修的**类书**(古人的分类资料汇编)、随葬的**日书**(挑日子的手册)、给孩子发蒙的**蒙书**、墓志与**碑刻**、墓室壁画一类的**图像**、大量的**佛道文献**,以及二十世纪以来陆续出土的**简帛**。"
+    },
+    {
+      "type": "p",
+      "text": "这些材料有一个共同点:**它们不是为了立说而写的**。类书是为了查检方便,日书是为了赶紧决定明天动不动土,碑刻是为了给死者一个体面的交代。正因为不打算说服谁,它们反而如实地留下了当时人默认什么。"
+    },
+    {
+      "type": "p",
+      "text": "举个可感的例子:一本挑日子的手册,不会先写「我相信天地之间有某种感应」,它只会平铺直叙地列出哪天不宜出行。可正是这份不加解释的笃定,泄露了写它的人和用它的人共享着怎样一套世界图景。**思想史要读的,常常不是文本说了什么,而是文本没觉得需要说什么。**"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照图",
+      "caption": "材料的扩展:右边这些,原本不被算作「思想」",
+      "svg": "<svg viewBox='0 0 640 240' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><g style='font-family:var(--font-serif)'><text x='150' y='30' text-anchor='middle' style='font-size:14px;fill:var(--ink-soft)'>原来只读这些</text><rect x='40' y='46' width='220' height='134' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><g style='font-size:13px;fill:var(--ink-soft)' text-anchor='middle'><text x='150' y='76'>经 · 传</text><text x='150' y='104'>子书 · 语录</text><text x='150' y='132'>文集 · 史书</text></g><text x='150' y='164' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>都是为了立说而写的</text><path d='M282 112 L332 112' style='stroke:var(--cinnabar-pure);stroke-width:1.2'/><path d='M332 112 l-9 -4 l0 8 z' style='fill:var(--cinnabar-pure)'/><text x='490' y='30' text-anchor='middle' style='font-size:14px;fill:var(--cinnabar-pure)'>他又加上这些</text><rect x='350' y='46' width='250' height='134' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2'/><g style='font-size:13px;fill:var(--ink-soft)' text-anchor='middle'><text x='475' y='72'>类书 · 日书 · 蒙书</text><text x='475' y='98'>碑刻 · 墓志 · 图像</text><text x='475' y='124'>佛道文献 · 出土简帛</text></g><text x='475' y='158' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>没打算说服谁,所以更诚实</text><text x='320' y='216' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>要看的不是当时人争什么,而是当时人默认什么</text></g></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "这副眼光是从哪儿借的"
+    },
+    {
+      "type": "p",
+      "text": "他并不讳言方法上的来路。一是长时段的史学眼光:历史有表层的事件、中层的制度,还有一层变化极慢、几乎看不出动静的深层结构——他要写的那一般知识与信仰,正在最深的那一层。二是把知识本身当作研究对象的思路:不问一个说法对不对,只问它凭什么在那个时代被当成理所当然。"
+    },
+    {
+      "type": "p",
+      "text": "但他没有把理论搬来当结论用。**书里真正在跑的是中国材料**,理论只提供了提问的角度。这也是这部书与同期一批「以西释中」的著作最不一样的地方。"
+    },
+    {
+      "type": "p",
+      "text": "还有一个连带的主张值得单说:思想史不该只是一份获奖名单。后人写史,总是顺着胜出的那一支往回追认;而在当时同样有力、后来被淘汰掉的说法,往往就此从叙述里消失。**把这些「失踪者」找回来,历史的现场才不至于被整理得过分整齐。**"
+    },
+    {
+      "type": "h2",
+      "text": "没有高峰的年代,也有思想史"
+    },
+    {
+      "type": "p",
+      "text": "第二个主张同样重要,而且更容易被忽略:**思想史不该只有高峰。**"
+    },
+    {
+      "type": "p",
+      "text": "旧写法把历史切成一段一段的亮点:先秦、魏晋、宋明。亮点之间的漫长年月被默认为「思想的低谷」,一笔带过。葛兆光反对这种切法。他认为思想有加速的时候,也有平缓的时候,而**平缓不等于停止**——恰恰是在平缓期,前一轮的新说法慢慢沉降下去,变成不必再说的常识。"
+    },
+    {
+      "type": "callout",
+      "tone": "note",
+      "label": "换个比方",
+      "items": [
+        "看一条河,只盯着落差最大的那几处瀑布当然壮观;但河水在平原上那段看似不动的流淌,才把泥沙一层层铺成了河床。后来所有的水,都在这个河床上流。"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "这个主张还有一个连带的好处:**思想史因此才有连续性可言。** 精英的思想常常是断裂的——一个学派衰了,另一个学派起来,中间未必有传承;而一般的知识与信仰是缓慢延续的,改朝换代也未必立刻改变一户人家怎么办丧事。把这一层写进来,历史才不再是一段一段互不相干的亮点。"
+    },
+    {
+      "type": "p",
+      "text": "这也解释了为什么这部书在时间上铺得那么长、写得那么细:如果平缓期也算数,篇幅就省不下来。"
+    },
+    {
+      "type": "h2",
+      "text": "两卷大致做了什么"
+    },
+    {
+      "type": "p",
+      "text": "先交代结构。两卷以**七世纪**为界:第一卷处理七世纪以前,第二卷从七世纪写到十九世纪。这个分法不是说七世纪出了什么断裂,只是编排上的一个落点。"
+    },
+    {
+      "type": "p",
+      "text": "下面按大的时段说个梗概。**这里只讲脉络,不复述具体篇目**——这部书体量极大、编次繁密,真要查某一段的细节,还是得回原书。"
+    },
+    {
+      "type": "figure",
+      "ftype": "时间线",
+      "caption": "两卷的时间跨度:以七世纪为界,一直写到十九世纪",
+      "svg": "<svg viewBox='0 0 640 210' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><g style='font-family:var(--font-serif)'><path d='M40 120 L600 120' style='stroke:var(--ink-faint);stroke-width:1.2'/><path d='M330 46 L330 168' style='stroke:var(--cinnabar-pure);stroke-width:1.2;stroke-dasharray:4 4'/><text x='330' y='40' text-anchor='middle' style='font-size:12px;fill:var(--cinnabar-pure)'>七世纪</text><path d='M40 78 L318 78' style='stroke:var(--ink-faint);stroke-width:1'/><path d='M40 78 L40 90 M318 78 L318 90' style='stroke:var(--ink-faint);stroke-width:1'/><text x='179' y='68' text-anchor='middle' style='font-size:13px;fill:var(--ink-soft)'>第一卷</text><path d='M342 78 L600 78' style='stroke:var(--ink-faint);stroke-width:1'/><path d='M342 78 L342 90 M600 78 L600 90' style='stroke:var(--ink-faint);stroke-width:1'/><text x='471' y='68' text-anchor='middle' style='font-size:13px;fill:var(--ink-soft)'>第二卷</text><g style='font-size:12px;fill:var(--ink-soft)' text-anchor='middle'><circle cx='75' cy='120' r='4' style='fill:var(--ink-soft)'/><text x='75' y='146'>上古</text><circle cx='165' cy='120' r='4' style='fill:var(--ink-soft)'/><text x='165' y='146'>春秋战国</text><circle cx='250' cy='120' r='4' style='fill:var(--ink-soft)'/><text x='250' y='146'>秦汉</text><circle cx='310' cy='120' r='4' style='fill:var(--ink-soft)'/><text x='305' y='166'>魏晋—唐</text><circle cx='400' cy='120' r='4' style='fill:var(--ink-soft)'/><text x='400' y='146'>宋</text><circle cx='490' cy='120' r='4' style='fill:var(--ink-soft)'/><text x='490' y='146'>明清</text><circle cx='585' cy='120' r='4' style='fill:var(--cinnabar-pure)'/><text x='578' y='166' style='fill:var(--cinnabar-pure)'>十九世纪</text></g><text x='320' y='198' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>分卷是编排上的落点,不是思想上的断裂</text></g></svg>"
+    },
+    {
+      "type": "p",
+      "text": "**上古**这一段最难写,因为没有成体系的著作可读。他改用器物、墓葬、方位、数字来看观念的雏形:玉器的形制、随葬品的摆法、对四方与中央的执着,里面已经含着一套关于秩序的想法。同时,巫觋与卜筮构成了最早的知识垄断——**谁能通天,谁就握着解释权**。要留意的是,这一段材料稀薄,不少结论出于推断,他自己也把话说得留有余地。"
+    },
+    {
+      "type": "p",
+      "text": "**春秋战国**这一段,他关心的不是「百家争鸣」本身,而是诸子共同站着的那块地面。诸子并非凭空冒出来:王官之学下移,数术方技(历、卜、医、兵、农)流散民间,他们共享着一套更早的知识背景。出土的日书则告诉我们,同一时期普通人真正关心的是哪天出门、哪天下葬。**分歧发生在共同前提之上**——这是他反复强调的一点。顺带一提,「百家」这个整齐的图景是后人整理出来的,当时并没有那么清楚的学派边界。"
+    },
+    {
+      "type": "p",
+      "text": "**秦汉**这一段最能看出他的主张管不管用。天下一统之后,思想也跟着一统,但统一不是靠消灭异见完成的,而是靠给出一套人人都用的通用语言——阴阳五行就是那套公共语法。落地则靠三条路:经学取得官方地位,国家祭祀确定拜什么,灾异与谶纬把天意接进政治。到最后,朝廷的礼制与民间的历忌用的是同一套道理。**这才叫思想进入了常识。**"
+    },
+    {
+      "type": "p",
+      "text": "**魏晋到唐**,先是旧的解释力下降:汉代那套宇宙论渐渐兜不住现实,玄学是在重问那些被搁置的前提。接着是外来的冲击——佛教带来另一套世界图像与来世观念,译经的同时也带进了天文、医学、语言学的知识;道教则把散在民间的信仰整理成有经典、有教团的宗教。三教并存并不等于和解,它们竞争的是解释权与仪式空间;而普通人的信仰向来是混着用的,今天拜这个、明天拜那个,并不觉得有什么矛盾。站内的释典与道藏诸经,可与这一段对读。"
+    },
+    {
+      "type": "h2",
+      "text": "最见功力的一段:理学怎么变成常识"
+    },
+    {
+      "type": "p",
+      "text": "第二卷讲宋代时,他换了一个问题。别人问的是理学如何产生——周敦颐、二程、朱熹如何一步步把义理讲出来;他问的是:**这套学说后来是怎么变成常识的?**"
+    },
+    {
+      "type": "p",
+      "text": "这两个问题的距离比看上去大得多。一套学说被少数人讲出来,和它变成大多数人不假思索的判断标准,完全是两回事。前者可能只花几十年,后者要几代人。"
+    },
+    {
+      "type": "p",
+      "text": "下沉靠的是几条很具体的渠道:"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**科举**:把某一路解释定为必读,读书人不服气也得先背下来。",
+        "**家礼与乡约**:把抽象的义理变成可执行的动作——冠婚丧祭该怎么办,乡里有事该怎么议。",
+        "**蒙学、家训与族谱**:让它在孩子识字的第一天就进门,并写进一个家族对自己的叙述里。"
+      ]
+    },
+    {
+      "type": "figure",
+      "ftype": "流程图",
+      "caption": "学说要变成常识,得先变成制度和动作",
+      "svg": "<svg viewBox='0 0 640 250' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><g style='font-family:var(--font-serif)'><rect x='24' y='96' width='110' height='58' rx='4' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><text x='79' y='120' text-anchor='middle' style='font-size:13px;fill:var(--ink-soft)'>一套学说</text><text x='79' y='140' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>少数人在讲</text><path d='M138 125 L176 125' style='stroke:var(--ink-faint);stroke-width:1'/><path d='M176 125 l-9 -4 l0 8 z' style='fill:var(--ink-faint)'/><rect x='182' y='36' width='150' height='48' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><text x='257' y='58' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>科举</text><text x='257' y='75' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>定为必读</text><rect x='182' y='101' width='150' height='48' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><text x='257' y='123' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>家礼 · 乡约</text><text x='257' y='140' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>变成动作</text><rect x='182' y='166' width='150' height='48' rx='4' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><text x='257' y='188' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>蒙学 · 家训 · 族谱</text><text x='257' y='205' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>从小就在</text><path d='M336 60 L396 112 M336 125 L396 125 M336 190 L396 138' style='stroke:var(--ink-faint);stroke-width:1'/><rect x='402' y='96' width='140' height='58' rx='4' style='fill:var(--cinnabar-pure);opacity:0.12'/><rect x='402' y='96' width='140' height='58' rx='4' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.3'/><text x='472' y='120' text-anchor='middle' style='font-size:13px;fill:var(--cinnabar-pure)'>不假思索的常识</text><text x='472' y='140' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>不必再论证</text><text x='560' y='120' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>历时</text><text x='560' y='138' text-anchor='middle' style='font-size:11px;fill:var(--ink-faint)'>几代人</text><text x='320' y='240' text-anchor='middle' style='font-size:12px;fill:var(--ink-faint)'>宋人立说,普及要到元明以后 —— 常识的变化以世代计</text></g></svg>"
+    },
+    {
+      "type": "p",
+      "text": "所以在他的叙述里,宋人立说是一回事,真正普及要到元明以后才完成。**常识的变化以世代计,不以朝代计。**"
+    },
+    {
+      "type": "p",
+      "text": "这里还有一个不易察觉的副产品:一套说法一旦变成常识,就不再被论证;而不再被论证,也就意味着**它同时失去了被认真怀疑的机会**。理学后来所受的僵化之讥,有一部分正来自这场成功。"
+    },
+    {
+      "type": "h2",
+      "text": "明清:动摇发生在地基"
+    },
+    {
+      "type": "p",
+      "text": "**明代**这一段,学说走到了边上:讲学下沉到市井,听众换了人;思想的多元同时意味着失序,士人开始不安。到**清代**是一次明显的转向——义理之争转成了文字、音韵、名物的考据,求真取代了论道。这常被说成思想的收缩,但换个角度看,它也是另一种严格:**思想变成了知识**。"
+    },
+    {
+      "type": "p",
+      "text": "更深的一层变化来自外面。传教士带来的历算与舆图,第一次让「天下之中」这个位置成了可以被追问的问题。到十九世纪,冲击最厉害的其实不在器物层面——**器物可以学,难的是常识失效**。当一个人从小默认的天地格局、四方位置、华夷次序统统对不上了,思想才真正开始动摇。这也是全书写到十九世纪就收住的原因:那之后是另一个故事了。"
+    },
+    {
+      "type": "h2",
+      "text": "争议:这套方法的难处"
+    },
+    {
+      "type": "p",
+      "text": "这部书出版后影响极大,争论也从未停过。**如实说明这些争论,比替它辩护更有用。**"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**「一般知识」这个范围不好划。** 什么算「一般」、什么算「精英」,中间是连续的,没有清楚的界线;界线不清,就很难变成一套可操作的研究步骤。",
+        "**史料本身有个绕不开的循环。** 留下文字的人基本都是识字的少数;用他们写的东西去还原不识字者的常识,方法上先天吃力。日书、碑刻确实近一些,但仍是被书写、被挑选过的。",
+        "**主张与实践之间有落差。** 导论立得极高,两卷正文在多大程度上兑现了它,学界一直有讨论;也有看法认为,正文的重心仍偏在经典与精英文本上,变化更多是在材料范围,而不在叙述重心。",
+        "**体量带来取舍问题。** 近百万字仍然写不完两千多年,详略之间必有偏重,某些时段被认为处理偏薄。",
+        "**还有一个边界始终悬着。** 如果历法、风水、医方都算思想史,那么思想史与文化史、社会史的分界在哪里?写得越宽,越难说清自己在写什么。"
+      ]
+    },
+    {
+      "type": "figure",
+      "ftype": "示意图",
+      "caption": "方法上最硬的一道坎:我们只能透过一道窄口去看那一层",
+      "svg": "<svg viewBox='0 0 640 250' xmlns='http://www.w3.org/2000/svg' style='width:100%;height:auto'><g style='font-family:var(--font-serif)'><rect x='60' y='30' width='520' height='40' rx='3' style='fill:var(--cinnabar-pure);opacity:0.12'/><rect x='60' y='30' width='520' height='40' rx='3' style='fill:none;stroke:var(--cinnabar-pure);stroke-width:1.2'/><text x='320' y='55' text-anchor='middle' style='font-size:13px;fill:var(--cinnabar-pure)'>当时人人默认的常识(要看的就是这一层)</text><path d='M300 74 L320 90 L340 74' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><rect x='150' y='94' width='340' height='36' rx='3' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><text x='320' y='117' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>只有识字的少数人写下了一部分</text><path d='M300 134 L320 150 L340 134' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><rect x='215' y='154' width='210' height='36' rx='3' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><text x='320' y='177' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>其中又只有一部分幸存</text><path d='M300 194 L320 210 L340 194' style='fill:none;stroke:var(--ink-faint);stroke-width:1'/><rect x='255' y='214' width='130' height='30' rx='3' style='fill:none;stroke:var(--ink-soft);stroke-width:1.2'/><text x='320' y='234' text-anchor='middle' style='font-size:12px;fill:var(--ink-soft)'>我们今天看到的</text></g></svg>"
+    },
+    {
+      "type": "p",
+      "text": "这些质疑都成立,但它们并不构成对这部书的否定。**一个提问方式的价值,不在于它一次把答案给全,而在于它让后来的人不得不面对新的问题。** 今天写中国思想史的人,即便不同意他的具体判断,也很难再假装那一层不存在——这本身就是它的成绩。"
+    },
+    {
+      "type": "p",
+      "text": "具体说,它至少留下了三样东西:思想史的材料范围被永久地扩大了;「平缓期」不再被理所当然地跳过;那篇导论成了后来者共同使用的方法论资源,连不同意它的人也得先从它谈起。"
+    },
+    {
+      "type": "callout",
+      "tone": "mute",
+      "items": [
+        "顺带一提:葛兆光此后仍在追问相关的问题,把关注点转向了「中国」这个历史空间本身是怎么形成的。想接着往下读的话,那是一条自然的延长线。"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "今天怎么用这部书"
+    },
+    {
+      "type": "list",
+      "items": [
+        "**先读导论。** 全书最锋利的部分在最前面。把「思想史该写谁」这个问题意识拿走,比记住任何一个具体结论都值。",
+        "**正文按需查阅,不必线性读完。** 近百万字,当工具书用最合理:想了解某个时段的知识与信仰底色时再翻回来。",
+        "**把它当一种提问方式,不当一份定论。** 往后遇到任何「古人认为……」的说法,都可以追问一句:这是哪一层人的看法?是需要论证的主张,还是不必论证的常识?"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "最后交代一句体例:本站把这部书分成九章,是按**卷与大时段**的骨架分的,**不是原书的目录**。原书篇目繁复,分卷之内另有细密的编次,读原书时不必去对应这里的标题。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "葛兆光《中国思想史》两卷,1998、2000 年先后出版。第一卷处理七世纪以前,第二卷自七世纪至十九世纪;卷首另有长篇导论专论思想史的写法,常被单独抽出来当方法论文章读。",
+        "本文为原创转述,不复述原书文字,亦不展开原书的具体篇目结构,以免以讹传讹。文中提到的儒典、释典、道藏诸经,站内均有原文与译注可对读。"
+      ]
+    }
+  ]
+}
