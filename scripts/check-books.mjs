@@ -103,6 +103,13 @@ function checkArticle(file, o, { isOverview }) {
     if (/\s(?:fill|stroke)="(?!none")/.test(svg)) E(`${f} 图${i + 1}`, '用了 fill/stroke 属性,必须改 style=')
     if (/#[0-9a-fA-F]{3,6}\b/.test(svg)) E(`${f} 图${i + 1}`, '写死了色值,须用 var(--…)')
     if (!/viewBox=/.test(svg)) E(`${f} 图${i + 1}`, '缺 viewBox')
+    // ⚠️ 观书走**中立外壳**(App.jsx 的 isNeutralPath 含 /books),
+    // 而 [data-site="portal"] 把 --cinnabar 重绑成了 --ink-soft ——
+    // 在观书里写 var(--cinnabar) 朱色会**渲染成灰墨**,点睛全废。
+    // 书内朱色一律用 --cinnabar-pure。2026-08-17 全库扫出 5 本共 712 处中招。
+    if (/var\(--cinnabar\)/.test(svg)) {
+      E(`${f} 图${i + 1}`, '观书里的朱色须用 var(--cinnabar-pure);--cinnabar 在中立外壳下会变灰')
+    }
   }
   // ftype 是**直接渲染给读者看的标签**(BaihuaBlock 的 .baihua-figure__tag),
   // 写成英文读者就会看到一串 structure/compare。全站惯例是中文(结构图/对比图/金句卡…)。
