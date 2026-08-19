@@ -134,6 +134,14 @@
   git 追踪的是小写名,`git add docs/TODO.md` 会什么都没暂存。
 - **改数据要改真源不改生成物**:译文真源在 `scripts/authored/<corpus>-translations.json`,
   只改 `src/data/*/classics/*.json` 会被下次 `fetch-corpus` 覆盖。
+- **部署「退出码 0」不等于上线了。** 2026-08-19 后台跑的 `wrangler pages deploy` 报了
+  exit 0,但 `wrangler pages deployment list` 里最新一条仍是两天前 —— 线上一直在发旧包。
+  **发完必须核对线上与本地的入口 bundle 哈希**:
+  `curl -s https://hexa.gavin.pub/ | grep -o 'assets/index-[A-Za-z0-9_-]*\.js'`
+  与 `dist/index.html` 里那行一致才算发出去了。同理,`/content/books/` 线上返回 404
+  **是对的**(观书改管理员专属后走边缘鉴权,`functions/_middleware.test.js` 有断言),
+  别把它当成部署缺文件。
+
 - **`check-links` 不查 JSX 里手写的 `<Link to=...>`**,只查白话资源/路由/搜索索引。
   它的路由正则曾只认 `\d+`,导致细粒度白话(「组-序」「卷-序」键)误报 428 条坏链
   ——**加新键形态时记得同步放开正则,且不可再 `Number()`**(`Number('3-9')` 是 NaN)。
