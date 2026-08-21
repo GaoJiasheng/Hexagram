@@ -174,7 +174,7 @@ owner 用测试账号评论 → `gaojiasheng.him@foxmail.com` **收到邮件**,W
 | ~~1~~ | ~~**把 sitemap 交给搜索引擎**~~ | — | — | ✅ **2026-08-13 完成**(Google + Bing;百度不做) |
 | ~~2~~ | ~~**App Store 上架**~~ | — | — | ✅ **2026-08-18 已上架**(三次提交、两次被拒) |
 | ~~3~~ | ~~**配 Resend,打通评论通知**~~ | — | — | ✅ **2026-08-16 完成并端到端验毕** |
-| 4 | **以 `hexa@` 身份发信** | 你 | 10 分钟 | 不卡了(Resend 域名已验)—— **现在最该顺手做掉的一件** |
+| 4 | **以 `hexa@` 身份发信** | 你 | 20 分钟 | **比原先估的多一步**:Resend 里验的是子域 `send.gavin.pub`,授权不到 `hexa@gavin.pub` —— 要先把根域 `gavin.pub` 也加进 Resend(return-path 子域记得改名避让)。见 §1.2 |
 | 4.5 | **确认欧盟区是不是真要一直下架** | 你 | 5 分钟 | 2026-08-21 查 iTunes:us/sg/hk/tw/jp/gb/au/ca/kr 都在售,**只有 `de` 查不到**。与 §1.1 C4「DSA 那条跳过」对得上,但**当时是「不查了」不是「确认移除」**——若你以为欧盟还在卖,得去 ASC 看一眼 |
 | 5 | **个人 ICP 备案(网站)** | 你 | 提交 1 小时 · 审批数周 | 不卡,**越早交越好** |
 | 6 | **安卓端 → 出可安装 APK** | 我做完了 → **你签** | 你 10 分钟 | 阶段 1–3 全完(能装能跑、走查全过),**卡在你生成签名 keystore**;见 [android-plan.md](./android-plan.md) |
@@ -369,15 +369,41 @@ XML 合法 · 3699 条无重复 · 240KB(上限 50MB/5万条)· 无 `/books` 无
       **验的是子域 `send.gavin.pub` 而非根域** —— 根域 MX 归 ImprovMX 收信(`hexa@`),
       Resend 若也要根域 MX 会顶掉它;子域自带一套 MX/DKIM/SPF,两边互不干涉。
       发件地址 `观象 <notify@send.gavin.pub>`。邮件标题与正文见 §0.3。
-- [ ] **以 `hexa@gavin.pub` 的身份回信**(**不卡了**,Resend 域名已验)—— ImprovMX 免费版**只能收不能发**,
+- [ ] **以 `hexa@gavin.pub` 的身份回信** —— ImprovMX 免费版**只能收不能发**,
       现在从 foxmail 点回复,对方看到的是 `gaojiasheng.him@foxmail.com`,
       **专门弄这个地址就是为了不露个人邮箱,一回复就露了**。
-      不必买付费版:Resend 验完域名后用它的 SMTP 在邮箱里加「以此地址发信」——
-      `smtp.resend.com:587`,用户名 `resend`,密码即 API key。**在那之前先别用 hexa@ 回信。**
 
-> ⚠️ **SPF 一个域只能有一条**。(本次走子域绕开了这个问题:`send.gavin.pub`
-> 有自己的 SPF,根域那条 ImprovMX 的不动。若日后要在**根域**发信才需要合并成
-> `v=spf1 include:spf.improvmx.com include:_spf.resend.com ~all`,**不能加两条**。)
+      ⚠️ **此前这里写「不卡了,Resend 域名已验」—— 那是错的**(2026-08-21 查 DNS 纠正)。
+      Resend 里验的是**子域 `send.gavin.pub`**,它只授权 `xxx@send.gavin.pub`,
+      **覆盖不到 `hexa@gavin.pub`**。现在直接拿 Resend SMTP 发 `hexa@` 会被拒。
+      DNS 实据:
+      · `resend._domainkey.send.gavin.pub` 有 DKIM ✓(所以 `notify@send.` 能发)
+      · `resend._domainkey.gavin.pub` **一条都没有**,根域连别的选择器也没有 ✗
+      · 根域 MX/SPF 都还是 ImprovMX 的(收信靠它,**别动**)
+
+      **要做成,三步**:
+      1. Resend 后台**再加一个域名 `gavin.pub`**(与现有的 `send.gavin.pub` 并存)。
+         ⚠️ **Resend 默认把 return-path 放在 `send.<域名>`,而这个名字已经被现有域名占了**
+         —— 加根域时进 Advanced options 把 return-path 子域**改成别的**(如 `bounce`)。
+      2. 按它给的记录加 DNS:DKIM 落 `resend._domainkey.gavin.pub`,
+         return-path 的 MX + SPF 落 `bounce.gavin.pub`。
+         ✅ **根域 SPF 不用动**(下面那条老警告的前提是错的,见↓)。
+      3. foxmail 里加「以此地址发信」:`smtp.resend.com:587` · 用户名 `resend` ·
+         密码填 API key。**另开一把新 key 给邮件客户端用**,别复用 Worker 那把 ——
+         客户端里存的密钥要能单独吊销(这个仓库已经因为密钥踩过一次)。
+
+      **在那之前先别用 hexa@ 回信。**
+
+> ✅ **订正一条老警告**:此前写「若要在根域发信,SPF 得合并成
+> `include:spf.improvmx.com include:_spf.resend.com`」—— **实际不必**。
+> Resend 把 SPF 放在**return-path 子域**上,不放根域:现有的
+> `send.send.gavin.pub` 就带着 `v=spf1 include:amazonses.com ~all`,
+> 而根域 SPF 至今只有 ImprovMX 一条、`notify@send.` 照样发得出去。
+> DMARC 靠 **DKIM 对齐**过(From 域上有 DKIM 即可),不靠 SPF。
+> 「一个域只能有一条 SPF」本身仍然对,只是这件事用不上它。
+>
+> ⚠️ `wrangler pages secret put` 的**第一个参数是变量名不是值**,而**变量名不加密**
+> (`secret list` 明文打出来)。传错等于密钥泄露 —— 踩过一次,已轮换。
 >
 > ⚠️ `wrangler pages secret put` 的**第一个参数是变量名不是值**,而**变量名不加密**
 > (`secret list` 明文打出来)。传错等于密钥泄露 —— 踩过一次,已轮换。
