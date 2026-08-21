@@ -19,7 +19,11 @@ function snippet(text, q, ctx = 12) {
 
 const cache = {}   // corpus -> { paras, notes, yanyi }
 
-/** 懒建索引:载入该 corpus 全部非 pending 书的章节正文 + 注疏 + 延伸。 */
+/** 懒建索引:载入该 corpus 全部非 pending 书的章节正文 + 注疏 + 延伸。
+ *  注疏/延伸现由 corpus.js 的 getAnchors/getYanyi 同步读取一份模块级缓存(见该文件顶部注释)——
+ *  这里能这样直接同步调用,是因为下面 `await loadText(corpus, m.slug)` 本身已经把该书的
+ *  注疏、该组的延伸一并取回并写入了那份缓存,每次 getAnchors/getYanyi 调用都排在它自己那次
+ *  loadText 的 await 之后,不存在"索引已建但注疏未到"的空窗。 */
 export async function ensureCorpusIndexed(corpus) {
   if (cache[corpus]) return
   const metas = corpusTexts(corpus).filter((t) => t.status !== 'pending')

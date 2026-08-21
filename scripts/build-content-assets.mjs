@@ -74,6 +74,17 @@ function cleanOutDir(dir) {
   fs.mkdirSync(dir, { recursive: true })
 }
 
+// 白话章键有两种形态:整章纯数字,细粒度「组-序」/「卷-序」(诗经一诗一篇、传习录一条一篇、
+// 长短经一篇一篇——见 CLAUDE.md「细粒度白话的两套机制」)。落盘前必须校验能安全当文件名用,
+// 不能直接信任数据里写的字符串;只放行数字与连字符,别的一律炸出来让人看见而不是悄悄写坏文件。
+function chapterFileKey(ch) {
+  const key = String(ch)
+  if (!/^[0-9]+(-[0-9]+)?$/.test(key)) {
+    throw new Error(`白话章键含不安全字符,无法用作文件名: ${JSON.stringify(key)}`)
+  }
+  return key
+}
+
 function chapterHref(corpus, slug, ch, meta) {
   if (corpus === 'dao') return meta?.singlePage ? `/dao/${slug}#dao-ch-${ch}` : `/dao/${slug}/${ch}`
   return meta?.singlePage ? `/${corpus}/${slug}#${corpus}-ch-${ch}` : `/${corpus}/${slug}/${ch}`
@@ -162,9 +173,12 @@ function indexBaihuaArticle(records, manifest, corpus, slug, ch, article, bookTi
     title: article.title || '',
     subtitle: article.subtitle || '',
     featured: !!article.featured || !!article.hero,
-    // 按书一文件:同书各章共用此 path（前端 loadBook 缓存整本，首开载全书、之后秒开），
-    // 文件数从「一章一文件」收回「一书一文件」，便于 CF 后台拖拽（≤1000 文件）。
-    path: `/content/baihua/${corpus}/${slug}.json`,
+    // 按章一文件:public/content/baihua/<corpus>/<slug>/<章号>.json，内容即该章 article 本身。
+    // 2026-08 由「按书一文件」改回「按章一文件」——当初收成一书一文件是为了迁就 CF 后台
+    // 拖拽上传（≤1000 文件），但部署早已改用 `wrangler pages deploy` CLI（限 2 万文件，见
+    // CLAUDE.md「部署」节），这层迁就已无必要，反而让打开任意一章白话都要先拉整本书
+    // （最大的书 7MB+）。改回一章一文件后单次请求只取这一章，其余不受影响。
+    path: `/content/baihua/${corpus}/${slug}/${chapterFileKey(ch)}.json`,
   }
   manifest.baihua[corpus] ??= {}
   manifest.baihua[corpus][slug] ??= { chapters: {}, count: 0 }
@@ -180,11 +194,11 @@ function buildBaihuaAssets(records, manifest) {
       const slug = file.replace(/\.json$/, '')
       const book = readJson(path.join(dir, file))
       const bookTitle = titleForBook(corpus, slug)
-      for (const ch of Object.keys(book).sort((a, b) => Number(a) - Number(b))) {
+      for (const ch of Object.keys(book).sort()) {
         indexBaihuaArticle(records, manifest, corpus, slug, ch, book[ch], bookTitle)
+        // 按章写一个文件 = article 本身
+        writeJson(path.join(OUT_BAIHUA, corpus, slug, `${chapterFileKey(ch)}.json`), book[ch])
       }
-      // 按书写一个文件 = { 章号: article }（源 baihua json 本就是这个结构，直接落盘）
-      writeJson(path.join(OUT_BAIHUA, corpus, `${slug}.json`), book)
     }
   }
 }
