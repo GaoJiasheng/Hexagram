@@ -54,9 +54,9 @@ export default function HomePage({ onSearch }) {
         </div>
       </section>
 
-      {/* 今日一卦 */}
+      {/* 今日一卦(窄屏隐藏,见 index.css 的 .home-section--today) */}
       {todayHex && (
-        <section className="home-section">
+        <section className="home-section home-section--today">
           <Link to={`/hexagram/${todayHex.id}`} className="today-card" aria-label={`今日一卦：${todayHex.name}`}>
             <div className="today-card__badge">今日一卦 · {formatDateChinese(today)}</div>
             <div className="today-card__body">

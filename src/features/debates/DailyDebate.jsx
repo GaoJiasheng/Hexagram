@@ -11,11 +11,21 @@ function todayStr() {
   return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`
 }
 
+// 窄屏不弹(owner 2026-08-21:「手机上必要性不大,有点干扰」)。
+// ⚠️ 判断要写进 useState 的**初始化函数**,不能改成「渲染完再 return null」——
+// 后者 open 仍会是 true,那个 effect 照样把「今日已见」写进 localStorage,
+// 于是手机上看一眼就把当天的弹窗给桌面端一起消掉了。
+// 争鸣仍可从门户链接与概念页进入,只是不再主动拦人。
+const HIDE_ON_NARROW = '(max-width: 768px)'
+function narrowScreen() {
+  return typeof window !== 'undefined' && !!window.matchMedia?.(HIDE_ON_NARROW).matches
+}
+
 export default function DailyDebate() {
   const navigate = useNavigate()
   const today = todayStr()
   const topic = pickDailyDebate()
-  const [open, setOpen] = useState(() => !!topic && getDailyDebateSeen() !== today)
+  const [open, setOpen] = useState(() => !!topic && !narrowScreen() && getDailyDebateSeen() !== today)
 
   useEffect(() => { if (open) markDailyDebateSeen(today) }, [open, today])  // 弹出即记,当日只弹一次
 

@@ -3642,7 +3642,10 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 
 /* 道藏文本框架页 */
 .dao-text-page { max-width: var(--read-w); margin: 0 auto; }
-.dao-text-header { margin-bottom: 32px; }
+/* 原先 header 的 32px 下边距负责「题解 → 目录」之间的留白;小传/导读拆成兄弟节点后
+   改由 .dao-text-sections 的上边距负责,桌面端视觉不变。 */
+.dao-text-header { margin-bottom: 0; }
+.dao-text-sections { margin-top: 32px; }
 .dao-text-title { font-family: var(--font-serif); font-size: calc(2rem * var(--read-scale)); color: var(--ink); margin: 0 0 8px; }
 .dao-text-meta { color: var(--ink-soft); font-size: calc(0.85rem * var(--read-scale)); margin: 0 0 12px; }
 .dao-text-brief { font-size: calc(0.95rem * var(--read-scale)); line-height: 1.9; color: var(--ink); }
@@ -4441,4 +4444,22 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   font-size: 0.86rem;
   letter-spacing: 0.04em;
   pointer-events: none;
+}
+
+/* ── 窄屏两处调整(owner 2026-08-21 反馈)────────────────────────────────
+   ① 目录优先:手机上「撰人小传」折行后高达 167~353px,实测把「组目/篇目」推到
+      0.88~1.27 屏之外(诗经、罗织经最甚),真正要读的人未必有耐心翻到。
+      故窄屏下把小传与导读卡排到目录之后 —— 它们是参考资料,不是入口。
+      一句话简介(70px)与「继续读」留在上面:前者是定位信息,后者是主入口。
+   ② 关掉「每日/今日」诸条:手机屏窄,它们占的是本该给正文的地方,
+      每日一辩还会主动弹窗拦人。桌面端一律不受影响。 */
+@media (max-width: 768px) {
+  .dao-text-page { display: flex; flex-direction: column; }
+  .dao-text-resume { order: 1; align-self: flex-start; }
+  .dao-text-sections { order: 2; margin-top: 20px; }
+  .dao-text-aside { order: 3; }
+
+  .shelf-today,
+  .mingju-daily,
+  .home-section--today { display: none; }
 }

@@ -54,14 +54,19 @@ export default function DaoTextPage() {
         <p className="dao-text-meta">{text.alias} · {text.era} · {text.attribution}</p>
         <p className="dao-text-brief">{text.brief}</p>
         {text.caveat && <p className="caveat-badge">⚠ {text.caveat}——详见撰人小传，本站作文献存疑研读。</p>}
+      </div>
+
+      {/* 见 CorpusTextPage 同处注释:窄屏把小传/导读排到目录之后 */}
+      <div className="dao-text-aside">
         {text.authorNote && <p className="dao-text-authornote">{text.authorNote}</p>}
         <DaoduEntry corpus="dao" slug={text.slug} bookTitle={text.title} />
-        {resumeCh > 0 && (
-          <Link to={`/dao/${text.slug}/${resumeCh}`} className="dao-text-resume">
-            继续读 · 第 {resumeCh} {text.sectionUnit} →
-          </Link>
-        )}
       </div>
+
+      {resumeCh > 0 && (
+        <Link to={`/dao/${text.slug}/${resumeCh}`} className="dao-text-resume">
+          继续读 · 第 {resumeCh} {text.sectionUnit} →
+        </Link>
+      )}
 
       <section className="dao-text-sections">
         <h2 className="dao-text-sections__title">{text.sectionUnit}目</h2>

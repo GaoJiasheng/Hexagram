@@ -58,14 +58,21 @@ export default function CorpusTextPage({ corpus }) {
         <p className="dao-text-brief">{text.brief}</p>
         {text.dubious && <p className="dubious-badge">⚠ 托名·真伪存疑：学界多判为现代伪作。本站作文献批判材料研读，非处世权术教程。</p>}
         {text.caveat && !text.dubious && <p className="caveat-badge">⚠ {text.caveat}——详见撰人小传，本站作文献存疑研读。</p>}
+      </div>
+
+      {/* 小传与导读挪出 header 单独成块 —— 窄屏下它俩最占地方(小传 167~353px,
+          实测把「组目/篇目」推到 0.88~1.27 屏外),故移动端用 order 把它们排到目录之后。
+          桌面端 DOM 顺序与原来的视觉顺序完全一致,不受影响。 */}
+      <div className="dao-text-aside">
         {text.authorNote && <p className="dao-text-authornote">{text.authorNote}</p>}
         <DaoduEntry corpus={corpus} slug={text.slug} bookTitle={text.title} />
-        {resumeCh > 0 && (
-          <Link to={`${site.home}/${slug}/${resumeCh}`} className="dao-text-resume">
-            继续读 · 第 {resumeCh} {text.sectionUnit} →
-          </Link>
-        )}
       </div>
+
+      {resumeCh > 0 && (
+        <Link to={`${site.home}/${slug}/${resumeCh}`} className="dao-text-resume">
+          继续读 · 第 {resumeCh} {text.sectionUnit} →
+        </Link>
+      )}
 
       <section className="dao-text-sections">
         <h2 className="dao-text-sections__title">{text.sectionUnit}目</h2>
