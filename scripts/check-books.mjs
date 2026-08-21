@@ -25,7 +25,12 @@ const TONES = new Set(['note', 'warn', 'mute'])
 const QUOTE_MAX_CHARS = 100
 const QUOTE_MAX_PER_ARTICLE = 16
 const OVERVIEW_MAX_CHARS = 10000
-const ARTICLE_MAX_CHARS = 5000
+// ⚠️ 章文章的**写作目标**仍是 2500–4500 汉字(SOP §四),但这里的硬闸放在 8000 ——
+// owner 2026-08-21 拍板:超一点没关系,不为凑数去砍好文章。
+// 当时全站 1369 篇里超 5000 的只有 12 篇(《呐喊》整本 9 篇均 5573、卡拉马佐夫 3 篇擦线,
+// 最少的超 3 个字),中位数才 3206、99 分位 4851 —— 读者毫无感觉,砍反而伤内容。
+// 留 8000 这道闸是防**生成失控**(比如 agent 把整本书倒进一篇),不是管文风。
+const ARTICLE_MAX_CHARS = 8000
 const LABEL_MAX = 12
 
 const errs = []
@@ -59,7 +64,7 @@ function checkArticle(file, o, { isOverview }) {
 
   const chars = o.blocks.reduce((n, b) => n + hanCount(textOf(b)), 0)
   const cap = isOverview ? OVERVIEW_MAX_CHARS : ARTICLE_MAX_CHARS
-  if (chars > cap) E(f, `正文 ${chars} 汉字,超上限 ${cap}`)
+  if (chars > cap) E(f, `正文 ${chars} 汉字,超上限 ${cap} —— 这么长多半是生成失控,该看一眼`)
   if (!isOverview && chars < 1500) W(f, `正文仅 ${chars} 汉字,偏薄`)
 
   const quotes = [], figs = []
