@@ -174,7 +174,7 @@ owner 用测试账号评论 → `gaojiasheng.him@foxmail.com` **收到邮件**,W
 | ~~1~~ | ~~**把 sitemap 交给搜索引擎**~~ | — | — | ✅ **2026-08-13 完成**(Google + Bing;百度不做) |
 | ~~2~~ | ~~**App Store 上架**~~ | — | — | ✅ **2026-08-18 已上架**(三次提交、两次被拒) |
 | ~~3~~ | ~~**配 Resend,打通评论通知**~~ | — | — | ✅ **2026-08-16 完成并端到端验毕** |
-| 4 | **以 `hexa@` 身份发信** | 你 | 20 分钟 | **比原先估的多一步**:Resend 里验的是子域 `send.gavin.pub`,授权不到 `hexa@gavin.pub` —— 要先把根域 `gavin.pub` 也加进 Resend(return-path 子域记得改名避让)。见 §1.2 |
+| ~~4~~ | ~~**以 `hexa@` 身份发信**~~ | — | — | ❌ **2026-08-21 owner 定:不做,删掉**。理由见 §1.2 —— 个人邮箱早已公开在每章牌记与隐私页,配了也保护不了什么 |
 | 5 | **个人 ICP 备案(网站)** | 你 | 提交 1 小时 · 审批数周 | 不卡,**越早交越好** |
 | 6 | **安卓端 → 出可安装 APK** | 我做完了 → **你签** | 你 10 分钟 | 阶段 1–3 全完(能装能跑、走查全过),**卡在你生成签名 keystore**;见 [android-plan.md](./android-plan.md) |
 | 7 | **质量债人眼通校** | 我们 | 长期 | 不卡,无期限 |
@@ -375,30 +375,20 @@ XML 合法 · 3699 条无重复 · 240KB(上限 50MB/5万条)· 无 `/books` 无
       **验的是子域 `send.gavin.pub` 而非根域** —— 根域 MX 归 ImprovMX 收信(`hexa@`),
       Resend 若也要根域 MX 会顶掉它;子域自带一套 MX/DKIM/SPF,两边互不干涉。
       发件地址 `观象 <notify@send.gavin.pub>`。邮件标题与正文见 §0.3。
-- [ ] **以 `hexa@gavin.pub` 的身份回信** —— ImprovMX 免费版**只能收不能发**,
-      现在从 foxmail 点回复,对方看到的是 `gaojiasheng.him@foxmail.com`,
-      **专门弄这个地址就是为了不露个人邮箱,一回复就露了**。
+- [x] ❌ ~~**以 `hexa@gavin.pub` 的身份回信**~~ —— **owner 2026-08-21 定:不做。**
 
-      ⚠️ **此前这里写「不卡了,Resend 域名已验」—— 那是错的**(2026-08-21 查 DNS 纠正)。
-      Resend 里验的是**子域 `send.gavin.pub`**,它只授权 `xxx@send.gavin.pub`,
-      **覆盖不到 `hexa@gavin.pub`**。现在直接拿 Resend SMTP 发 `hexa@` 会被拒。
-      DNS 实据:
-      · `resend._domainkey.send.gavin.pub` 有 DKIM ✓(所以 `notify@send.` 能发)
-      · `resend._domainkey.gavin.pub` **一条都没有**,根域连别的选择器也没有 ✗
-      · 根域 MX/SPF 都还是 ImprovMX 的(收信靠它,**别动**)
+      理由不是"懒得配",是**这件事保护的东西早就不存在了**:
+      `gaojiasheng.him@foxmail.com` 已经印在
+      · `src/data/colophon.json` 的 contacts → **每一章末尾的牌记**(已打进线上 JS 包,
+        `dist/assets/Colophon-*.js` 里 grep 得到)
+      · `src/features/PrivacyPage.jsx:90` 隐私政策页「(备用 …@foxmail.com)」
+      · 关于 / 凭信页(同一份 colophon 数据)
+      原来的理由是「专门弄 hexa@ 就是为了不露个人邮箱,一回复就露」——
+      但**根本不用等回复,翻到任意一章底部就看得见**。花 20 分钟改根域 DNS
+      (那条 MX 是 `hexa@` 收信的命根子)去换 0 隐私收益,不值。
 
-      **要做成,三步**:
-      1. Resend 后台**再加一个域名 `gavin.pub`**(与现有的 `send.gavin.pub` 并存)。
-         ⚠️ **Resend 默认把 return-path 放在 `send.<域名>`,而这个名字已经被现有域名占了**
-         —— 加根域时进 Advanced options 把 return-path 子域**改成别的**(如 `bounce`)。
-      2. 按它给的记录加 DNS:DKIM 落 `resend._domainkey.gavin.pub`,
-         return-path 的 MX + SPF 落 `bounce.gavin.pub`。
-         ✅ **根域 SPF 不用动**(下面那条老警告的前提是错的,见↓)。
-      3. foxmail 里加「以此地址发信」:`smtp.resend.com:587` · 用户名 `resend` ·
-         密码填 API key。**另开一把新 key 给邮件客户端用**,别复用 Worker 那把 ——
-         客户端里存的密钥要能单独吊销(这个仓库已经因为密钥踩过一次)。
-
-      **在那之前先别用 hexa@ 回信。**
+      ⚠️ **日后若真要做,顺序是反的**:先把站内那两处地址换成 `hexa@gavin.pub`,
+      **再**配 SMTP。先配 SMTP 是白配。做法(已查证)留在下面那条订正里。
 
 > ✅ **订正一条老警告**:此前写「若要在根域发信,SPF 得合并成
 > `include:spf.improvmx.com include:_spf.resend.com`」—— **实际不必**。
