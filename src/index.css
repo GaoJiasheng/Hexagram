@@ -4639,3 +4639,9 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .mc-locus { display: inline-flex; align-items: baseline; gap: 7px; padding: 5px 12px 5px 6px; border: 1px solid var(--line); border-radius: 7px; background: var(--paper-raised); font-size: 0.88rem; color: var(--ink); text-decoration: none; }
 .mc-locus:hover { border-color: var(--cinnabar); color: var(--cinnabar); }
 .mc-locus__book { font-size: 0.7rem; padding: 0 6px; border-radius: 4px; background: color-mix(in srgb, var(--cinnabar) 10%, transparent); color: var(--cinnabar); }
+
+/* 观数 · 底本与凡例 */
+.mingli-fanli { margin: 40px auto 0; max-width: 760px; border-top: 1px solid var(--line); padding-top: 14px; font-size: 0.88rem; color: var(--ink-soft); }
+.mingli-fanli summary { cursor: pointer; font-family: var(--font-serif); font-size: 1rem; color: var(--ink); padding: 4px 0; }
+.mingli-fanli ul { margin: 10px 0 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 8px; line-height: 1.85; }
+.mingli-fanli strong { color: var(--ink); font-weight: 600; }
