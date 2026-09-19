@@ -863,7 +863,9 @@ if (fs.existsSync(glossaryPath)) {
 {
   // 诗词曲三组(集部)同 C 类:讲的是「这一体怎么成的」而非流派谱系,字数同 bing/fa 档。
   const FLOOR = { ru: 11000, dao: 11000, fo: 10000, fa: 9000, bing: 9000, zhongyi: 9000, moulue: 9000, mo: 8000, zong: 8000, xin: 8000,
-    tangshi: 9000, songci: 9000, yuanqu: 9000 }
+    tangshi: 9000, songci: 9000, yuanqu: 9000,
+    // 观数同 C 类:讲「子平这门学问怎么一步步成形、三派怎么分出来」,不是流派颂
+    mingli: 9000 }
   let nSchool = 0, nBad = 0
   for (const corpus of Object.keys(FLOOR)) {
     const f = path.join(ROOT, `src/data/${corpus}/school.json`)
@@ -1094,7 +1096,7 @@ if (fs.existsSync(glossaryPath)) {
 
 // ---------- 8c. 白话模块(design-v22)校验 ----------
 {
-  const corpora = ['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'yijing', 'tangshi', 'songci', 'yuanqu']
+  const corpora = ['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'yijing', 'tangshi', 'songci', 'yuanqu', 'mingli']
   const chCache = {}
   // 一卦全经传原文(卦辞+彖+大象+爻辞+小象+用九六+文言+序卦杂卦)——易经引文子串校验池
   const hexAllOriginal = (q) => {
@@ -1158,6 +1160,8 @@ if (fs.existsSync(glossaryPath)) {
     yijing: /(预示你|预示着你|你的运势|你将.{0,4}(大吉|大凶|有难)|必有.{0,3}之(灾|祸)|趋吉避凶之法|算出你|占得此卦.{0,8}(宜|忌|大吉|大凶)|你的命运)/,
     // 诗词曲三组第一红线是「不鸡汤」——给诗写「人生启示」比译错一个字更糟(见 poetry-production-standard.md §6)
     tangshi: RED_SHI, songci: RED_SHI, yuanqu: RED_SHI,
+    // 观数第一红线是「研习不断命」:我方文字不得对读者下断语、不得教人拿去套(原典断语在 quote 里照录不算)
+    mingli: /(你的命|你的八字|你命中|你这个命|命中注定|必定(发财|升官|离婚|克)|可以断定此人|据此可断|照此断命|学会了就能(算|断)|教你(算|断|看)命|(大吉|大凶)之命|改运|转运方法|旺夫|克夫|克妻)/,
   }
   let nArt = 0, nFig = 0, nBadCite = 0
   let nWidget = 0

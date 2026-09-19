@@ -209,7 +209,7 @@ export default function JieqiRing({ year: yearProp }) {
               title={`${m.name} · ${fmtFull(m.ms)}`}
               aria-label={`跳到${m.name},${fmtFull(m.ms)}`}
             >
-              {m.kind === 'lichun' && <span className="jq-mark__label">{m.name}</span>}
+              <span className="jq-mark__label">{m.name}</span>
             </button>
           ))}
         </div>

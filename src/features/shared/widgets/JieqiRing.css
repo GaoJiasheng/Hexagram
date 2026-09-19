@@ -94,3 +94,8 @@
   .jq { padding: 12px 8px 8px; }
   .jq-pillar__ch { font-size: 1.4rem; }
 }
+
+/* 十二节都标名字(原先只标立春,其余只有一道竖线,读者不知道月柱是在哪个节换的)。
+   普通节用更小更淡的字;窄屏十二个名字排不开,隔一个藏一个(立春恒显)。 */
+.jq-mark--jie .jq-mark__label { font-size: 0.56rem; color: var(--ink-faint); }
+@media (max-width: 560px) { .jq-mark--jie:nth-of-type(even) .jq-mark__label { display: none; } }
