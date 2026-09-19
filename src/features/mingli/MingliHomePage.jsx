@@ -104,6 +104,8 @@ export default function MingliHomePage() {
   const texts = corpusTexts('mingli')
   const entry = texts.find((t) => t.tier === '入门')
   const advanced = ADVANCED_ORDER.map((slug) => texts.find((t) => t.slug === slug)).filter(Boolean)
+  const jicheng = texts.filter((t) => t.tier === '集成')
+  const yuantou = texts.filter((t) => t.tier === '源头')
 
   return (
     <div className="dao-home">
@@ -167,16 +169,20 @@ export default function MingliHomePage() {
 
         <div className="mingli-path__level">
           <div className="mingli-path__row">
-            <PlaceholderCard stage={PLACEHOLDER_STAGES[0]} />
+            {jicheng.length ? jicheng.map((t) => <BookCard key={t.slug} t={t} />) : <PlaceholderCard stage={PLACEHOLDER_STAGES[0]} />}
           </div>
+          <p className="mingli-path__note">明代万民英把此前各路说法汇成一部类书。当百科查,不必通读。</p>
         </div>
 
         <Connector />
 
         <div className="mingli-path__level">
-          <div className="mingli-path__row">
-            <PlaceholderCard stage={PLACEHOLDER_STAGES[1]} />
+          <div className="mingli-path__row mingli-path__row--quad">
+            {yuantou.length ? yuantou.map((t) => <BookCard key={t.slug} t={t} />) : <PlaceholderCard stage={PLACEHOLDER_STAGES[1]} />}
           </div>
+          <p className="mingli-path__note">
+            想知道这套东西从哪来的,再读这几部:五行干支之说的渊薮,和「以年为主」的早期禄命术——子平法就是从它们那里转出来的。
+          </p>
         </div>
       </div>
 

@@ -3652,6 +3652,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .mingli-path__row { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; width: 100%; }
 .mingli-path__cell { display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 420px; }
 .mingli-path__row--triple .mingli-path__cell { flex: 1 1 240px; max-width: 300px; }
+.mingli-path__row--quad .mingli-path__cell { flex: 1 1 200px; max-width: 250px; }
 .mingli-path__card { width: 100%; flex: 1; }
 .mingli-path__shape { align-self: stretch; display: flex; align-items: center; gap: 8px; padding: 7px 12px; border: 1px dashed color-mix(in srgb, var(--cinnabar) 45%, transparent); border-radius: 8px; font-size: 0.86rem; color: var(--cinnabar); text-decoration: none; background: color-mix(in srgb, var(--cinnabar) 4%, transparent); }
 .mingli-path__shape:hover { background: color-mix(in srgb, var(--cinnabar) 10%, transparent); border-style: solid; }
