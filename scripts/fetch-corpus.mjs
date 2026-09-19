@@ -9,6 +9,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { t2s, clean, isJunk as isJunkBase, createFetcher } from './lib/wikisource.mjs'
+import { isValidGanZhi, monthGan, hourGan } from '../src/features/shared/ganzhi/index.js'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const CACHE_FILE = path.join(ROOT, 'scripts/.cache/wikisource.json') // 与易经/道藏管线共享缓存
@@ -139,6 +140,19 @@ const SOURCE_TYPOS = [
 ]
 const fixTypos = (slug, text) => SOURCE_TYPOS.reduce(
   (t, r) => (r.book === slug ? t.replaceAll(r.from, r.to) : t), text)
+
+// 整页级 wikitext 预处理(按页名精确匹配,发生在切段/切章之前;与 fixTypos 对称,但作用于原始
+// wikitext 而非清洗后的文本)。目前仅《滴天髓阐微》一页用到:该页用 {{*|原注：…}} 包裹原书原注、
+// {{annotate|任氏曰：…}} 包裹任铁樵阐微——前者与战国策等书里 {{*|…}} 表「剔除的校注」语义相反
+// (这里的原注是正文的一部分，要保留)，后者全站无他处使用。经核实两种模板在该页均不嵌套、且
+// 100% 以「原注」「任氏曰」开头,故用非贪婪正则整体解包(保留内容、去模板壳)即可,不需要
+// stripStarTemplates 那样的花括号配平。按页名精确匹配,不影响其余任何页面(它们的 wikitext
+// 不含这两种模板)。
+const PAGE_PRETREAT = {
+  '滴天髓闡微': (text) => text
+    .replace(/\{\{\*\|(原注[：:][^{}]*)\}\}/g, '$1')
+    .replace(/\{\{annotate\|(任氏曰[：:][^{}]*)\}\}/g, '$1'),
+}
 
 // 行清洗 → 简体正文;若为导航/标题/标记/空行返回 null
 function cleanLine(raw) {
@@ -309,14 +323,18 @@ function parsePageParas(wikitext, warnings, pageName) {
 }
 
 // 单页按 == 标题 == 切多章(金刚经 32 分):标题去『…』夹注;跳过「正文/外部链接」等非经文标题;
-// 首个有效标题前的内容(开经偈、礼佛文等)丢弃。
+// 首个有效标题前的内容(开经偈、礼佛文等)丢弃——除非 book.leadTitle 指定,见下。
 function parsePageChapters(wikitext, warnings, pageName, book = {}) {
   // mergeHeadingRe:匹配的标题不另起章,内容并入上一章(如金匮附方并入前篇);
   // dropChapterRe:切章后丢弃标题匹配的整章(如六韬卷题章「文韬」等只含卷标无正文)。
   const mergeRe = book.mergeHeadingRe ? new RegExp(book.mergeHeadingRe) : null
   const dropRe = book.dropChapterRe ? new RegExp(book.dropChapterRe) : null
   const chapters = []
-  let cur = null
+  // leadTitle(渊海子平用):首个 == 标题 == 之前若已有实质内容(该页开篇「基础」一节,十神对照表,
+  // 无 wiki 标题包裹),默认会被丢弃——设此项则把这段内容收作第一章,标题即此值。不设则行为不变
+  // (cur 仍从 null 起,他书零影响)。
+  let cur = book.leadTitle ? { title: book.leadTitle, paragraphs: [] } : null
+  if (cur) chapters.push(cur)
   for (const raw of stripHeaderBlock(stripStarTemplates(wikitext)).split('\n')) {
     if (STOP_RE.test(raw)) break
     const h = raw.trim().match(/^=+\s*(.+?)\s*=+$/)
@@ -338,6 +356,108 @@ function parsePageChapters(wikitext, warnings, pageName, book = {}) {
   return kept
 }
 
+// 本地纯文本源专用切章(穷通宝鉴/子平真诠):这两本书维基文库没有,殆知阁电子本是纯文本,
+// 原文里没有任何机器可稳定识别的分章标记(子平真诠正文甚至完全不重复 48 篇篇目——已人工
+// 逐段核对确认)。故切章边界是人工读原文核实后写死的行号(book.localBreaks,1 起、含该行本身;
+// 相邻两个断点之间的所有行归为一章,最后一个断点到文件末尾归为末章),而不是靠猜测性正则—— 这与
+// pickHeadings/groupPages 等其他「人工在 config 里点名章节」的既有做法同一性质,只是落到行号
+// 而非标题字符串。断点行本身(如「论木」「三春乙木总论」「一、论十干十二支」)照样当作正文的
+// 第一段保留,不被吞作纯标题——与「小节题行保留为独立段」的要求一致。每行仍走 cleanLine(),
+// 与维基页面同一套清洗逻辑,只是没有 wiki 语法可剥。
+function parseLocalBreaks(text, breaks, warnings, pageName) {
+  const lines = text.split('\n')
+  const chapters = []
+  for (let i = 0; i < breaks.length; i++) {
+    const from = breaks[i] - 1
+    const to = i + 1 < breaks.length ? breaks[i + 1] - 1 : lines.length
+    const paragraphs = []
+    for (const raw of lines.slice(from, to)) {
+      const simp = cleanLine(raw)
+      if (simp) paragraphs.push({ original: simp, translation: null })
+    }
+    if (paragraphs.length) chapters.push({ no: chapters.length + 1, title: null, paragraphs })
+    else warnings.push(`${pageName}: 第 ${breaks[i]} 行起的一章解析后无内容`)
+  }
+  if (!chapters.length) warnings.push(`${pageName}: localBreaks 切章后无内容`)
+  return chapters
+}
+
+// 命例竖排合并(滴天髓阐微专用,book.mergeGanzhiRuns 开关):维基文库把命例的四柱与大运竖排,
+// 每柱/每步大运各占一段(个别相邻两柱因源页版式挤在同一行,如"丙子丙申"=时柱丙子+首运丙申),
+// 拆散成一堆 2–4 字的碎段,前后夹着长篇分析文字。合并规则(2026-09-19 owner 追加 + 复核后补丁):
+//   · 逐段判定"是否纯干支"——去空白/顿号/逗号后按 2 字一组核验每组都是合法干支(甲子表 60 组之一,
+//     用 isValidGanZhi,与易经纳甲、中医五行同一张表,不是本管线另起的判断);
+//   · 连续 ≥5 段且都纯干支 → 判定为一处命例(数量必然 ≥5,含四柱+大运);
+//   · 或单独一段恰好 4 个合法干支(有无分隔符皆可)→ 判定为"只录四柱、未录大运"的命例;
+//   · 或**恰好连续 4 个单干支段**(每段仅 1 个干支,无大运可认)——单凭"4 段"本身信号太弱,
+//     须再核**双重自洽**才收:月柱干支合五虎遁(monthGan(年干,月支)===月干)**且**时柱干支合
+//     五鼠遁(hourGan(日干,时支)===时干)。两条规则各自独立成立的概率很低,同时成立基本排除误判。
+//   · 都不满足的(如 2–4 段的短串、混了别的字)不合并、原样保留,记入 warnings 供人工复核——
+//     宁可漏合并,不可错合并。
+// 合并只做拼接:original 用单个半角空格顺序连接原段文字,**不增删一字**;另附 pillars(前 4 个,即
+// 年月日时四柱)与 dayun(其余,大运,可能为空数组)两个结构化字段,及 kind:'mingli' 标记供阅读器识别。
+function splitGanzhiChunks(text) {
+  const compact = text.replace(/[\s、，,]/g, '')
+  if (!compact || compact.length % 2 !== 0) return null
+  const chunks = []
+  for (let i = 0; i < compact.length; i += 2) {
+    const gz = compact.slice(i, i + 2)
+    if (!isValidGanZhi(gz)) return null
+    chunks.push(gz)
+  }
+  return chunks
+}
+// 四柱自洽:月柱干支须合五虎遁(年上起月)、时柱干支须合五鼠遁(日上起时)。仅当四段都恰为
+// 单个干支(runLen===4===allChunks.length,即无大运、无并行)时才需要这重校验——凑够 4 段
+// 本身信号太弱,双重排盘自洽同时成立才够可信。
+function fourPillarSelfConsistent(chunks) {
+  if (chunks.length !== 4) return false
+  const [year, month, day, hour] = chunks
+  return monthGan(year[0], month[1]) === month[0] && hourGan(day[0], hour[1]) === hour[0]
+}
+function mergeGanzhiRuns(chapters, warnings, pageName) {
+  let nMerged = 0
+  let nWithDayun = 0
+  for (const c of chapters) {
+    const paras = c.paragraphs
+    const out = []
+    let i = 0
+    while (i < paras.length) {
+      const firstChunks = splitGanzhiChunks(paras[i].original)
+      if (!firstChunks) { out.push(paras[i]); i++; continue }
+      let j = i + 1
+      const allChunks = [...firstChunks]
+      while (j < paras.length) {
+        const next = splitGanzhiChunks(paras[j].original)
+        if (!next) break
+        allChunks.push(...next)
+        j++
+      }
+      const runLen = j - i
+      const qualifies = (runLen >= 5 && allChunks.length >= 4) || (runLen === 1 && allChunks.length === 4)
+        || (runLen === 4 && allChunks.length === 4 && fourPillarSelfConsistent(allChunks))
+      if (qualifies) {
+        out.push({
+          original: allChunks.join(' '),
+          translation: null,
+          kind: 'mingli',
+          pillars: allChunks.slice(0, 4),
+          dayun: allChunks.slice(4),
+        })
+        nMerged++
+        if (allChunks.length > 4) nWithDayun++
+        i = j
+      } else {
+        warnings.push(`${pageName} 第${c.no}${c.title ? '(' + c.title + ')' : ''}章 段${i}起: 连续 ${runLen} 段共 ${allChunks.length} 个干支,不满足命例合并条件(需连续≥5段,或单段恰4个干支,或4段四柱月时自洽),原样保留,请人工复核`)
+        for (let k = i; k < j; k++) out.push(paras[k])
+        i = j
+      }
+    }
+    c.paragraphs = out
+  }
+  return { nMerged, nWithDayun }
+}
+
 async function main() {
   const { BOOKS } = await import(path.join(ROOT, `scripts/corpus/${key}.config.mjs`))
   const OUT_DIR = path.join(ROOT, `src/data/${key}/classics`)
@@ -346,10 +466,34 @@ async function main() {
   const trPath = path.join(ROOT, `scripts/authored/${key}-translations.json`)
   const translations = fs.existsSync(trPath) ? JSON.parse(fs.readFileSync(trPath, 'utf8')) : {}
 
-  const allPages = BOOKS.flatMap((b) => b.groupPages
+  // localFile 的书不走维基文库抓取(见下),从 allPages 里排除。
+  const allPages = BOOKS.flatMap((b) => (b.localFile ? [] : b.groupPages
     ? b.groupPages.flatMap((g) => g.pages.map((p) => (typeof p === 'string' ? p : p.page)))
-    : b.pages)
+    : b.pages))
   const pages = await fetchPages(allPages)
+
+  // 页面级预处理(见 PAGE_PRETREAT 定义处的说明),先于转写壳解析、切段/切章。
+  for (const [pageName, fn] of Object.entries(PAGE_PRETREAT)) {
+    if (pageName in pages) pages[pageName] = fn(pages[pageName])
+  }
+
+  // 本地文本源(书在维基文库没有,取殆知阁等纯文本电子本):不经 wikisource API,直接读本地文件,
+  // 以文件路径本身作为 pages 的键——此后即与维基页面走同一套 cleanLine()/parsePageParas() 等
+  // 清洗逻辑(该文本已是纯文本、无 wiki 语法,wiki 专属的正则替换在它身上多数是 no-op)。
+  // t2s() 是 cleanLine() 里对每行都会做的一步;这里额外整体跑一次只是为了在写盘前**核实并报告**
+  // 是否真的是 no-op(殆知阁简体电子本理论上应当是),而不是让它悄悄改字却没人知道。
+  for (const book of BOOKS) {
+    if (!book.localFile) continue
+    const filePath = path.join(ROOT, book.localFile)
+    const raw = fs.readFileSync(filePath, 'utf8')
+    const converted = t2s(raw)
+    if (converted !== raw) {
+      let diff = 0
+      for (let i = 0; i < Math.max(raw.length, converted.length); i++) if (raw[i] !== converted[i]) diff++
+      warnings.push(`${book.localFile}: t2s() 对本地文本并非 no-op,约 ${diff} 处字符差异——已按 t2s 转换结果继续处理(与其余管线一致),但请人工复核这些差异是否为繁体残留而非底本原有的异体字`)
+    }
+    pages[book.localFile] = raw
+  }
 
   // 转写壳 {{:页名}}:维基文库常把一篇正文放在独立页,合集页只写一行转写指令。
   // 不解开的话那一章只剩个小标题(《宋词三百首》第 179 首辛弃疾《青玉案·元夕》整首曾因此全阙)。
@@ -382,8 +526,14 @@ async function main() {
   const summary = []
 
   for (const book of BOOKS) {
-    const single = !book.groupPages && book.pages.length === 1 && !book.splitHeadings
+    const single = !book.groupPages && !book.localFile && book.pages?.length === 1 && !book.splitHeadings
     const chapters = []
+    // 本地文本源切章(穷通宝鉴/子平真诠:维基文库没有,殆知阁电子本按人工核实的行号切,见 parseLocalBreaks)
+    if (book.localFile) {
+      for (const c of parseLocalBreaks(pages[book.localFile], book.localBreaks, warnings, book.localFile)) {
+        chapters.push(c)
+      }
+    } else
     // 内联卷题切章(韬晦术:单页无 == 标题,卷题「隐晦卷一」等内联成行,按 markPattern 切)
     if (book.markPattern) {
       const re = new RegExp(book.markPattern)
@@ -446,6 +596,26 @@ async function main() {
       for (const c of chapters) { const idx = c.paragraphs.findIndex((p) => re.test(p.original)); if (idx >= 0) c.paragraphs = c.paragraphs.slice(0, idx) }
     }
 
+    // fixes([{from,to,reason}]):底本错字精确整段勘误,须在 mergeGanzhiRuns 之前生效——
+    // from 必须与某段 original **整段完全相等**才替换(不是子串替换,防误伤),每条命中打日志、
+    // 未命中则报 warning(防条目本身写错、静默失效)。仅少数条目有确证时才加,不凭语感改。
+    if (book.fixes) {
+      for (const fix of book.fixes) {
+        let hit = 0
+        for (const c of chapters) for (const p of c.paragraphs) {
+          if (p.original === fix.from) { p.original = fix.to; hit++ }
+        }
+        if (hit) console.log(`  勘误「${fix.from}」→「${fix.to}」(${fix.reason}): 命中 ${hit} 处`)
+        else warnings.push(`${book.title}: 勘误条目「${fix.from}」→「${fix.to}」未命中任何段落,请检查`)
+      }
+    }
+
+    // mergeGanzhiRuns(滴天髓阐微专用):命例竖排碎段合并,见函数定义处说明
+    let ganzhiStat = null
+    if (book.mergeGanzhiRuns) {
+      ganzhiStat = mergeGanzhiRuns(chapters, warnings, book.pages?.[0] ?? book.localFile ?? book.slug)
+    }
+
     // 子页书友好章名覆盖(罗织经 01..12 → 阅人卷一 等),按序赋予
     if (book.chapterTitles) chapters.forEach((c, i) => { if (book.chapterTitles[i]) c.title = book.chapterTitles[i] })
 
@@ -470,7 +640,8 @@ async function main() {
     const out = { book: book.slug, title: book.title, chapters }
     fs.writeFileSync(path.join(OUT_DIR, `${book.slug}.json`), JSON.stringify(out, null, 2) + '\n')
     const paraTotal = chapters.reduce((n, c) => n + c.paragraphs.length, 0)
-    summary.push(`${book.title}: ${chapters.length} 章,${paraTotal} 段,译文 ${trCount} 段`)
+    const ganzhiInfo = ganzhiStat ? `,命例 ${ganzhiStat.nMerged} 处(${ganzhiStat.nWithDayun} 带大运)` : ''
+    summary.push(`${book.title}: ${chapters.length} 章,${paraTotal} 段,译文 ${trCount} 段${ganzhiInfo}`)
   }
 
   for (const w of warnings) console.warn('⚠', w)

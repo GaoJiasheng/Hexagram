@@ -35,7 +35,9 @@ export default function MasterPortalPage({ onSearch }) {
 
   // 所有卡同一形态、同一固定宽——单站组直接成卡;多站组(易道)的两站亦是普通卡,
   // 只是同居首行、以小太极桥相连(相系而不并合)。
-  const groups = allGroups()
+  // portalHidden 组(骨架期、内容未铺满,如观数)从「列全部组」的枚举里跳过——只影响本页,
+  // 该组仍可直连 URL 访问,不影响它自己的路由/搜索/数据注册。
+  const groups = allGroups().filter((g) => !sitesInGroup(g).some((s) => s.portalHidden))
   const featuredGroup = groups.find(g => sitesInGroup(g).length > 1) // 易道
   const singleGroups = groups.filter(g => sitesInGroup(g).length === 1)
   const renderCard = (s) => (

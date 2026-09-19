@@ -230,6 +230,30 @@ const bingBooks = checkReadingCorpus('兵家', 'bing', '篇')
 const zongBooks = checkReadingCorpus('纵横', 'zong', '篇')
 const zhongyiBooks = checkReadingCorpus('中医', 'zhongyi', '篇')
 const moulueBooks = checkReadingCorpus('谋略', 'moulue', '篇')
+const mingliBooks = checkReadingCorpus('观数', 'mingli', '章')
+
+// ---------- 3z. 观数(mingli)组版权闸(2026-09-19 立项)----------
+// 四部命理典籍里,子平真诠/穷通宝鉴维基文库没有,取殆知阁电子本(scripts/sources/mingli/,
+// 详见该目录 SOURCES.md);两书作者均清人,理论上不该混进 20 世纪评注,但殆知阁本无版本说明、
+// 来源不可考,须留一道机器闸门防将来再加殆知阁本的书时不小心把仍在版权期内的民国评注也抓了进来。
+// 词表覆盖三类已知风险人物(徐乐吾——子平真诠评注者,1948 卒,评注 1936 年成;韦千里/袁树珊——
+// 民国命理评注家)及时代标志词(民国纪年、总统/督军等民国政制词、"科学""西历"等现代话语标志)。
+// 命中即 error(不是 warn)——这是版权红线,不留"人工复核"的余地。原文一律来自数据管线,
+// 若此处报错说明源文件本身混入了不该收的内容,须回到 scripts/corpus/mingli.config.mjs 加
+// dropParaRe 等剔除并重跑 fetch-corpus,而不是手改生成物。
+{
+  const BANNED_WORDS = ['徐乐吾', '乐吾', '徐注', '徐氏曰', '韦千里', '袁树珊', '民国', '总统', '督军', '伍廷芳', '段祺瑞', '张作霖', '黎元洪', '科学', '西历']
+  const dir = path.join(ROOT, 'src/data/mingli/classics')
+  if (fs.existsSync(dir)) {
+    for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.json'))) {
+      const book = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'))
+      const text = (book.chapters || []).flatMap((c) => c.paragraphs.map((p) => p.original)).join('')
+      for (const w of BANNED_WORDS) {
+        if (text.includes(w)) err(`观数版权闸 ${f}: 原文命中现代评注痕迹词「${w}」——疑混入 20 世纪评注(仍在版权期内),须从 scripts/corpus/mingli.config.mjs 加剔除规则、重跑 fetch-corpus,而非手改生成物`)
+      }
+    }
+  }
+}
 
 // ---------- 4c. 筮例(v9 §1) ----------
 {
@@ -513,6 +537,7 @@ if (fs.existsSync(glossaryPath)) {
   checkCorpusAnchors('纵横', 'zong', zongBooks, false)
   checkCorpusAnchors('中医', 'zhongyi', zhongyiBooks, false)
   checkCorpusAnchors('谋略', 'moulue', moulueBooks, false)
+  checkCorpusAnchors('观数', 'mingli', mingliBooks, false)
 
   // 覆盖率报告(信息项,断点续作的进度仪表;分母为可注单元总数)
   const xiaoxiangTotal = 64 * 6 + 2

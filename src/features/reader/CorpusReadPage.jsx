@@ -1,5 +1,5 @@
 import { useParams, Link, useLocation, useNavigate, useSearchParams} from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, lazy, Suspense } from 'react'
 import { saveReadingProgress, getReadPos} from '../yijing/storage.js'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import { SITE_MAP } from '../../sites/registry.js'
@@ -8,6 +8,9 @@ import ClassicReader from './ClassicReader.jsx'
 import YanyiBlock from './YanyiBlock.jsx'
 import BaihuaBlock from './BaihuaBlock.jsx'
 import { chapterParts, chapterAnchors } from './chapterParts.js'
+
+// 命例成图只有观数组用得到:懒加载,别让读《论语》的人也下这一块
+const ParaPillars = lazy(() => import('../mingli/ParaPillars.jsx'))
 
 // 通用逐章阅读器(v16 §1)——佛/儒共用,薄包装通用 ClassicReader 的 paged 模式。
 export default function CorpusReadPage({ corpus }) {
@@ -112,6 +115,7 @@ export default function CorpusReadPage({ corpus }) {
       getAnchors={(no, i) => getAnchors(corpus, slug, no, i)}
       renderYanyi={(no) => <YanyiBlock corpus={corpus} slug={slug} chapter={no} />}
       renderBaihua={(no) => <BaihuaBlock corpus={corpus} slug={slug} chapter={no} bookTitle={meta.title} sectionUnit={meta.sectionUnit || '章'} />}
+      renderParaExtra={corpus === 'mingli' ? (no, p) => <Suspense fallback={null}><ParaPillars paragraph={p} /></Suspense> : undefined}
       renderPoemHead={poemBook ? (no, i, p) => {
         const ord = poemOrdinals[i]
         if (!ord) return null

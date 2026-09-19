@@ -12,7 +12,7 @@ const OUT_SCHOOL = path.join(OUT_ROOT, 'school')
 const OUT_SEARCH = path.join(OUT_ROOT, 'search')
 const SEARCH_SHARDS = 128
 
-const CORPORA = ['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'tangshi', 'songci', 'yuanqu']
+const CORPORA = ['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'tangshi', 'songci', 'yuanqu', 'mingli']
 const YIJING_CLASSICS = [
   ['xici-shang', '系辞上传'],
   ['xici-xia', '系辞下传'],

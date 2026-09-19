@@ -79,10 +79,12 @@ const NAYIN_30 = [
 export const nayin = (gz) => NAYIN_30[Math.floor(jiaziIndex(gz) / 2)]
 
 // ── 遁干:年上起月(五虎遁)、日上起时(五鼠遁)──────────────────
-// 五虎遁:甲己之年丙作首,乙庚之岁戊为头,丙辛必定寻庚起,丁壬壬位顺行流,戊癸何方发,甲寅之上好追求。
+// 口诀取《三命通会·论遁月时》原文(不用坊间通行的异文):
+// 五虎遁:甲己之年丙作首,乙庚之岁戊为头,丙辛之岁寻庚上,丁壬壬位顺行流,更有戊癸何处起?甲寅之上好追求。
 //   —— 正月建寅,寅月之干 = (年干下标 % 5) * 2 + 2,其后逐月顺推。
-// 五鼠遁:甲己还加甲,乙庚丙作初,丙辛从戊起,丁壬庚子居,戊癸何方发,壬子是真途。
+// 五鼠遁:甲己还加甲,乙庚丙作初,丙辛从戊起,丁壬庚子居,戊癸何方发?壬子是直途。
 //   —— 子时之干 = (日干下标 % 5) * 2,其后逐时顺推。
+// 同篇:「月时之法,取天干合数」—— 起法相同的两干恰是天干五合的两干,故十干只有五种起法。
 /** 月干:给年干与月支(寅=正月)。 */
 export function monthGan(yearGan, monthZhi) {
   const first = (ganIdx(yearGan) % 5) * 2 + 2             // 寅月之干
@@ -219,9 +221,12 @@ export function analyzePillars(input) {
   return { dayGan, dayWuxing: ganWuxing(dayGan), pillars, wuxingCount: count }
 }
 
-// 正文里的四柱串识别(管线「命例识别」与阅读器共用)。全角/半角空格、无空格都认。
+// 正文里的四柱串识别(管线「命例识别」与阅读器共用)。
+// 分隔认:全角/半角空格、顿号、逗号、或不分隔 ——《滴天髓阐微》用空格,《穷通宝鉴》行文内嵌用顿号
+// (「若庚申、戊寅、甲寅、丙寅。」)。**至多一个分隔符**:免得把隔着一句话的四个干支误连成命例。
 const GZ = `[${GAN.join('')}][${ZHI.join('')}]`
-export const PILLARS_RE = new RegExp(`(${GZ})[\\s　]*(${GZ})[\\s　]*(${GZ})[\\s　]*(${GZ})`, 'g')
+const SEP = '[\\s　、,，]?'
+export const PILLARS_RE = new RegExp(`(${GZ})${SEP}(${GZ})${SEP}(${GZ})${SEP}(${GZ})`, 'g')
 
 /** 从一段文字里找出所有合法四柱(干支阴阳须相配,否则不算)。 */
 export function findPillars(text) {

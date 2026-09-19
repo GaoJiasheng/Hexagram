@@ -31,6 +31,8 @@
   --tangshi: #9c4a3f;
   --songci: #4a7a86;
   --yuanqu: #4d5f6b;
+  /* 命理学组(观数,二十五期骨架)。星夜靛蓝,与既有诸色区分度高、不与任何现有 accent 撞色。 */
+  --mingli: #3f4577;
   --ochre: #b08d57;
   --line: #e4ddce;
   --font-serif: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
@@ -98,6 +100,7 @@
   --zongheng: #c2a955;
   --zhongyi: #c89274;
   --moulue: #9b96a8;
+  --mingli: #979ed4;
   --ochre: #c2a36e;
   --line: #37322a;
 }
@@ -126,6 +129,7 @@
     --zongheng: #c2a955;
     --zhongyi: #c89274;
     --moulue: #9b96a8;
+    --mingli: #979ed4;
     --ochre: #c2a36e;
     --line: #37322a;
   }
@@ -3603,6 +3607,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 [data-site="tangshi"] { --cinnabar: var(--tangshi); --cinnabar-bg: color-mix(in srgb, var(--tangshi) 9%, transparent); }
 [data-site="songci"] { --cinnabar: var(--songci); --cinnabar-bg: color-mix(in srgb, var(--songci) 9%, transparent); }
 [data-site="yuanqu"] { --cinnabar: var(--yuanqu); --cinnabar-bg: color-mix(in srgb, var(--yuanqu) 9%, transparent); }
+[data-site="mingli"] { --cinnabar: var(--mingli); --cinnabar-bg: color-mix(in srgb, var(--mingli) 9%, transparent); }
 /* 总门户:中立全组枢纽,主色取墨调,不偏向任一分站 */
 [data-site="portal"] { --cinnabar: var(--ink-soft); --cinnabar-bg: color-mix(in srgb, var(--ink-soft) 8%, transparent); }
 /* 伪书真伪徽标(谋略杂纂):题解/书架卡片显著标「托名·疑现代伪作」 */
@@ -3639,6 +3644,46 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .book-tier--long { color: #9a6b4f; border-color: color-mix(in srgb, #9a6b4f 40%, var(--line)); }
 .dao-book__status { position: absolute; top: 14px; right: 14px; font-size: calc(0.68rem * var(--read-scale)); padding: 1px 7px; border-radius: 3px; border: 1px solid var(--line); color: var(--ink-faint); }
 .dao-book__status--done { color: var(--cinnabar); border-color: currentColor; }
+
+/* 观数(命理研习)组首页——学习路径图,不是书架:学堂 → 入门 → 进阶三书(格局/旺衰/调候)分叉
+   → 汇合 → 集大成 → 源头,书卡沿用 .dao-book 系列;新增的只是「路」本身的骨架与连接线。 */
+.mingli-path { display: flex; flex-direction: column; align-items: center; margin-top: 8px; }
+.mingli-path__level { display: flex; flex-direction: column; align-items: center; width: 100%; }
+.mingli-path__row { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; width: 100%; }
+.mingli-path__row--triple .mingli-path__card { flex: 1 1 240px; max-width: 300px; }
+.mingli-path__card { width: 100%; }
+/* 学堂入口:圆角药丸,不与下方的书卡同形——它是「门」不是「书」 */
+.mingli-path__gate { display: flex; align-items: center; gap: 10px; padding: 12px 24px; border: 1px solid var(--line); border-radius: 22px; background: var(--paper-raised); text-decoration: none; transition: border-color 0.15s, transform 0.15s; }
+.mingli-path__gate:hover { border-color: var(--cinnabar); transform: translateY(-1px); }
+.mingli-path__gate-tag { font-size: calc(0.7rem * var(--read-scale)); color: var(--ink-faint); }
+.mingli-path__gate-title { font-family: var(--font-serif); font-size: calc(1.05rem * var(--read-scale)); color: var(--ink); }
+.mingli-path__gate-arrow { color: var(--cinnabar); }
+/* 「格局/旺衰/调候」镜头标签——书卡左上角 */
+/* 流派标签(格局/旺衰/调候):原先绝对定位在左上角,正好压在书名上 —— 改成书名上方的一行 */
+.mingli-path__lens { display: inline-block; margin: 0 0 8px; font-size: calc(0.72rem * var(--read-scale)); padding: 2px 10px; border-radius: 10px; background: var(--cinnabar-bg); color: var(--cinnabar); letter-spacing: 0.08em; }
+.mingli-path__note { max-width: 640px; margin: 14px auto 0; text-align: center; font-size: calc(0.82rem * var(--read-scale)); line-height: 1.8; color: var(--ink-soft); }
+/* 连接线:普通一段(单书 → 单书)是一条竖线;分叉/汇合段是一条内联 SVG(桌面),
+   窄屏隐藏 SVG 改回简单竖线(见下方 media query)——「相应简化」而不是消失。 */
+.mingli-path__connector { display: flex; justify-content: center; }
+.mingli-path__connector-line { width: 2px; height: 30px; background: var(--line); }
+.mingli-path__connector--branch { position: relative; width: 100%; }
+.mingli-path__fork { display: block; width: min(100%, 560px); height: 56px; margin: 0 auto; }
+
+@media (max-width: 768px) {
+  .mingli-path__fork { display: none; }
+  .mingli-path__connector--branch::before { content: ''; display: block; width: 2px; height: 30px; background: var(--line); margin: 0 auto; }
+  .mingli-path__row--triple { flex-direction: column; align-items: center; }
+  .mingli-path__row--triple .mingli-path__card { max-width: 420px; width: 100%; }
+}
+
+/* 观数 · 学堂单篇:上一篇/下一篇并排接力(learn-next 默认靠右单条,这里左右各一) */
+.learn-next--between { display: flex; justify-content: space-between; align-items: center; gap: 12px; text-align: left; }
+.mingli-topic-num { margin: 0 0 4px; font-size: calc(0.78rem * var(--read-scale)); color: var(--ink-faint); }
+.mingli-topic-loading { min-height: 320px; margin: 24px 0; border: 1px dashed var(--line); border-radius: 8px; }
+/* 学堂正文借用白话的块样式,但不在抽屉里:给它与白话整页同款的阅读宽度 */
+.mingli-topic-body { max-width: var(--read-w); margin: 8px auto 0; }
+.mingli-topic-body .quiz-card { margin-top: 36px; }
+.mingli-topic-placeholder { margin: 24px 0; padding: 36px 24px; border: 1px dashed var(--line); border-radius: 8px; text-align: center; color: var(--ink-faint); font-size: calc(0.88rem * var(--read-scale)); line-height: 1.8; }
 
 /* 道藏文本框架页 */
 .dao-text-page { max-width: var(--read-w); margin: 0 auto; }
@@ -4463,3 +4508,46 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   .mingju-daily,
   .home-section--today { display: none; }
 }
+
+/* ── 观数 · 段下命例图(ParaPillars)────────────────────────────
+   落在 .read-para__body 之内,故不受段的 content-visibility paint 包含裁剪(件不往段框外溢)。 */
+.para-pillars { margin: 10px 0 4px; display: flex; flex-direction: column; gap: 8px; }
+.para-pillars__toggle {
+  display: inline-flex; align-items: baseline; gap: 10px; padding: 4px 12px; border-radius: 14px;
+  border: 1px solid var(--line); background: var(--paper-raised); color: var(--ink-soft);
+  font-size: calc(0.8rem * var(--read-scale)); cursor: pointer;
+}
+.para-pillars__toggle:hover { border-color: var(--cinnabar); color: var(--cinnabar); }
+.para-pillars__gz { font-family: var(--font-serif); letter-spacing: 0.08em; color: var(--ink); }
+.para-pillars__hint { font-size: calc(0.72rem * var(--read-scale)); }
+.para-pillars__item .wg { margin: 10px 0 6px; }
+.para-pillars__dayun { margin: 0 0 6px; font-size: calc(0.8rem * var(--read-scale)); color: var(--ink-soft); font-family: var(--font-serif); letter-spacing: 0.06em; }
+.para-pillars__dayun span { margin-right: 10px; font-family: var(--font-sans); font-size: 0.72rem; color: var(--ink-faint); letter-spacing: 0; }
+
+/* ── 观数 · 排盘台(design-v23 §9)───────────────────────────── */
+.paipan-page { max-width: 640px; margin: 0 auto; }
+.paipan-form { display: flex; flex-direction: column; gap: 16px; margin: 20px 0 28px; padding: 20px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper-raised); }
+.paipan-field { display: flex; flex-direction: column; gap: 6px; border: 0; padding: 0; margin: 0; font-size: 0.85rem; color: var(--ink-soft); }
+.paipan-field legend { padding: 0; margin-bottom: 6px; }
+.paipan-field legend em { font-style: normal; color: var(--ink-faint); font-size: 0.78rem; margin-left: 6px; }
+.paipan-field input[type='date'], .paipan-field input[type='time'], .paipan-field input[type='number'] {
+  font: inherit; font-size: 1rem; padding: 9px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--ink); max-width: 260px;
+}
+.paipan-field--seg { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 8px; }
+.paipan-field--seg legend { float: left; width: 100%; }
+.paipan-seg { padding: 7px 18px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--ink-soft); cursor: pointer; font-size: 0.9rem; }
+.paipan-seg.is-on { border-color: var(--cinnabar); color: var(--cinnabar); background: var(--cinnabar-bg); }
+.paipan-opts { border-top: 1px dashed var(--line); padding-top: 12px; display: flex; flex-direction: column; gap: 12px; }
+.paipan-opts summary { cursor: pointer; font-size: 0.82rem; color: var(--ink-faint); }
+.paipan-opts[open] summary { margin-bottom: 12px; }
+.paipan-check { display: flex; gap: 8px; align-items: baseline; font-size: 0.85rem; color: var(--ink-soft); margin: 10px 0; }
+.paipan-err { margin: 0; color: var(--cinnabar); font-size: 0.85rem; }
+.paipan-result__title { font-family: var(--font-serif); font-size: 1.15rem; margin: 28px 0 6px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+.paipan-result__meta { margin: 8px 0; font-size: 0.85rem; color: var(--ink-soft); line-height: 1.8; }
+.paipan-yun { list-style: none; padding: 0; margin: 12px 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 8px; }
+.paipan-yun li { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 10px 6px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper-raised); }
+.paipan-yun b { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 500; color: var(--ink); letter-spacing: 0.06em; }
+.paipan-yun span { font-size: 0.7rem; color: var(--ink-faint); }
+.paipan-note { margin: 14px 0; font-size: 0.82rem; line-height: 1.9; color: var(--ink-soft); }
+.paipan-next { margin: 20px 0 40px; }
+.paipan-next a { color: var(--cinnabar); text-decoration: none; }

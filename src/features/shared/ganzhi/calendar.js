@@ -48,6 +48,18 @@ export async function jieBoundaries(year) {
 }
 
 /**
+ * 某公历年里三个常被混为一谈的「新年」:元旦、春节(农历正月初一)、立春。
+ * 「节气年轮」用它演示:八字的年柱只认立春。
+ * @returns {Promise<{yuandan:string, chunjie:string, lichun:string}>} 形如 '2024-02-10'/'2024-02-04 16:27:07'
+ */
+export async function newYearMarks(year) {
+  const { Lunar, Solar } = await lib()
+  const chunjie = Lunar.fromYmd(year, 1, 1).getSolar().toYmd()
+  const lichun = Solar.fromYmd(year, 6, 15).getLunar().getJieQiTable()['立春'].toYmdHms()
+  return { yuandan: `${year}-01-01`, chunjie, lichun }
+}
+
+/**
  * 大运排列(排盘台用;**只给排列,不作任何吉凶判断**)。
  * @param {object} t 同 pillarsFromDate
  * @param {'男'|'女'} gender 顺逆由年干阴阳与性别共同决定,库内已按通行之法处理

@@ -51,6 +51,7 @@ export default function ClassicReader({
   renderBaihua = () => null,   // 白话模块入口条（design-v22），挂在章题之下
   renderPoemHead = () => null, // 一章多首的书(诗经):诗题段升格为诗头 + 诗级白话入口
   renderPieceHead = () => null, // 一章多条的书(传习录):无标题段可认,故在某段之前插入「条头」
+  renderParaExtra = () => null, // 段内附加件(观数:命例段下挂四柱图)。落在 .read-para__body 之内,故不受段的 paint 包含裁剪
   // 长章拆页(owner 2026-07-30):章仍是第 N 章(全站译文/注疏/白话/收藏/锚点皆按章号索引,
   // 不可动),只在「显示层」把超长章分屏。partOf(章) → [{from,to,label}] 或 null(不拆)。
   posCtx = null,               // {slug} —— 记段级续读位置;不传则不记
@@ -284,7 +285,7 @@ export default function ClassicReader({
         <div key={i} id={single ? `seg-${no}-${i}` : `p${i + 1}`} className="read-para read-para--markable">
           {!single && <span id={`seg-${no}-${i}`} className="read-para__legacy-anchor" aria-hidden="true" />}
           {label && <span className="read-para__num">{label}</span>}
-          <div className="read-para__body">{text}</div>
+          <div className="read-para__body">{text}{renderParaExtra(no, p, i)}</div>
           <div className="para-actions">
             <button
               className="para-act"
@@ -308,6 +309,7 @@ export default function ClassicReader({
         {label && <span className="read-para__num">{label}</span>}
         <div className="read-para__body">
           {text}
+          {renderParaExtra(no, p, i)}
           {note && !isEditing && (
             <button className="para-note" onClick={() => openEdit(key, note.text)} title="点击编辑批注">
               <span className="para-note__icon" aria-hidden="true">✎</span>{note.text}

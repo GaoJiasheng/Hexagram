@@ -231,6 +231,30 @@ export const SITES = [
     mobileNav: [{ to: '/yuanqu', label: '经典', icon: '☷', exact: false }],
     mobileSwitch: false,
   },
+  {
+    key: 'mingli',
+    group: 'mingli',       // 命理学:独立单站组(二十五期骨架),收子平八字典籍(渊海子平/子平真诠/滴天髓阐微/穷通宝鉴…)
+    brand: '观数',
+    portalTitle: '命理研读',
+    portalDesc: '渊海子平 · 子平真诠 · 滴天髓阐微 · 穷通宝鉴（命理典籍研读 · 研习不断命）',
+    home: '/mingli',
+    prefix: '/mingli',
+    accent: 'mingli',
+    switchLabel: '数',
+    hasSearch: true,
+    // 骨架期:内容与交互远未铺满,总门户/首页书架暂不露出;直连 URL 仍可进(docs/todo.md §0.1)。
+    // portalHidden 组只影响「列全部组」的枚举面(MasterPortalPage),不改路由/搜索/数据注册。
+    portalHidden: true,
+    nav: [
+      { to: '/mingli', label: '路径' },
+      { to: '/mingli/learn', label: '学堂' },
+    ],
+    mobileNav: [
+      { to: '/mingli', label: '路径', icon: '☰', exact: true },
+      { to: '/mingli/learn', label: '学堂', icon: '☲', exact: false },
+    ],
+    mobileSwitch: false,
+  },
 ]
 
 export const SITE_MAP = Object.fromEntries(SITES.map(s => [s.key, s]))

@@ -13,7 +13,7 @@ const err = (msg) => errors.push(msg)
 const { SITES } = await import(pathToFileURL(path.join(ROOT, 'src/sites/registry.js')).href)
 
 const SITE_KEYS = new Set(SITES.map((s) => s.key))
-const CORPUS_KEYS = new Set(['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'tangshi', 'songci', 'yuanqu'])
+const CORPUS_KEYS = new Set(['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'tangshi', 'songci', 'yuanqu', 'mingli'])
 // 下面几条路由正则里的 corpus 分支一律由 CORPUS_KEYS 派生 —— 别再手写第二份清单。
 // (加诗词曲三组时踩过:这个 Set 加了、正则里那三份写死的清单忘了加,整组章链全被判坏链。)
 const CORPUS_ALT = [...CORPUS_KEYS].join('|')

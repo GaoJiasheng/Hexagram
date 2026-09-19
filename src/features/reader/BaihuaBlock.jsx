@@ -6,6 +6,7 @@ import FontScaleControl from './FontScaleControl.jsx'
 import FontFamilyControl from './FontFamilyControl.jsx'
 import { useAutoHideHeader } from './useAutoHideHeader.js'
 import { SITE_MAP } from '../../sites/registry.js'
+import WidgetBlock from '../shared/widgets/WidgetBlock.jsx'
 
 // 内联富文本:把 **加粗** 渲染成 <strong>(React 安全的 split，不用 dangerouslySetInnerHTML)。
 // 只认成对的 **…**;落单的 ** 原样保留。无 ** 时直接返回原串（零开销）。
@@ -94,6 +95,10 @@ function Block({ block }) {
         </figure>
       )
     }
+    case 'widget':
+      // 「活的块」(design-v23 §5):带参数的交互件,按 kind 懒加载。与 figure 的区别 ——
+      // 管线只写参数不画图,参数可被 check-data 校验;件坏了由 WidgetBlock 内部兜底,不连坐整篇。
+      return <WidgetBlock block={block} />
     case 'pull':
       // 全章最要紧的一句:粗左竖条、无底色,与 callout 的「框」区分开
       return <p className="baihua-pull">{rich(block.text)}</p>
@@ -140,7 +145,10 @@ export function BaihuaArticle({ data }) {
         </div>
       )}
       {data.blocks.map((b, i) => <Block key={i} block={b} />)}
-      <p className="baihua-drawer__foot">— 白话研读，重在体会思想；引文出处见上。—</p>
+      {/* 尾注默认是白话那一句;别的文体(学堂篇等)可用 data.foot 换掉,false 则不出 */}
+      {data.foot !== false && (
+        <p className="baihua-drawer__foot">{data.foot || '— 白话研读，重在体会思想；引文出处见上。—'}</p>
+      )}
     </div>
   )
 }

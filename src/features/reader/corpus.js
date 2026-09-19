@@ -28,12 +28,13 @@ import moulueTexts from '../../data/moulue/texts.json'
 import tangshiTexts from '../../data/tangshi/texts.json'
 import songciTexts from '../../data/songci/texts.json'
 import yuanquTexts from '../../data/yuanqu/texts.json'
+import mingliTexts from '../../data/mingli/texts.json'
 
-const TEXTS = { fo: foTexts, ru: ruTexts, xin: xinTexts, fa: faTexts, mo: moTexts, bing: bingTexts, zong: zongTexts, zhongyi: zhongyiTexts, moulue: moulueTexts, tangshi: tangshiTexts, songci: songciTexts, yuanqu: yuanquTexts }
+const TEXTS = { fo: foTexts, ru: ruTexts, xin: xinTexts, fa: faTexts, mo: moTexts, bing: bingTexts, zong: zongTexts, zhongyi: zhongyiTexts, moulue: moulueTexts, tangshi: tangshiTexts, songci: songciTexts, yuanqu: yuanquTexts, mingli: mingliTexts }
 
-const classicsLoaders = import.meta.glob('../../data/{fo,ru,xin,fa,mo,bing,zong,zhongyi,moulue,tangshi,songci,yuanqu}/classics/*.json')
-const anchoredLoaders = import.meta.glob('../../data/{fo,ru,xin,fa,mo,bing,zong,zhongyi,moulue,tangshi,songci,yuanqu}/zhushi-anchored/*.json')
-const yanyiLoaders = import.meta.glob('../../data/{fo,ru,xin,fa,mo,bing,zong,zhongyi,moulue,tangshi,songci,yuanqu}/yanyi.json')
+const classicsLoaders = import.meta.glob('../../data/{fo,ru,xin,fa,mo,bing,zong,zhongyi,moulue,tangshi,songci,yuanqu,mingli}/classics/*.json')
+const anchoredLoaders = import.meta.glob('../../data/{fo,ru,xin,fa,mo,bing,zong,zhongyi,moulue,tangshi,songci,yuanqu,mingli}/zhushi-anchored/*.json')
+const yanyiLoaders = import.meta.glob('../../data/{fo,ru,xin,fa,mo,bing,zong,zhongyi,moulue,tangshi,songci,yuanqu,mingli}/yanyi.json')
 
 const textCache = {}      // `${corpus}/${slug}` → Promise<classics book>
 const anchorsData = {}    // `${corpus}/${slug}` → 已解析的锚定注疏 book(或 null),供 getAnchors 同步读

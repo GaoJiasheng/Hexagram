@@ -21,8 +21,11 @@ function shuffleQuestions(questions) {
   })
 }
 
-export default function QuizCard({ topic }) {
-  const quiz = quizByTopic.get(topic)
+// `quiz` 选填:不传则按 topic 查易经题库(原行为);传入 `{ title, questions }` 则直接用它 ——
+// 观数学堂等别的板块复用本卡时走这条路。此时 topic 应带命名空间(如 `mingli:jiazi`),
+// 进度同存 progress.quiz,随「导出数据」一起走,且不与易经篇目撞键。
+export default function QuizCard({ topic, quiz: quizProp }) {
+  const quiz = quizProp ?? quizByTopic.get(topic)
   const [session, setSession] = useState(null)   // null | { questions }
   const [cur, setCur] = useState(0)
   const [chosen, setChosen] = useState(null)     // 本题已选索引

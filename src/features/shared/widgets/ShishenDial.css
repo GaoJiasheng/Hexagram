@@ -1,0 +1,67 @@
+/* ShishenDial(shishen)的样式。通用 token(--wx-* 五行色、.wg-*、.sz-char--*)在 widgets.css。 */
+
+.ss { border: 1px solid var(--line); border-radius: 10px; background: var(--paper-raised); padding: 16px 14px 10px; }
+
+.ss-daybar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px dashed var(--line); }
+.ss-daybar__label { font-size: 0.76rem; color: var(--ink-faint); letter-spacing: 0.1em; }
+.ss-daybar__list { display: flex; gap: 5px; flex-wrap: wrap; justify-content: center; }
+
+.ss-daybtn {
+  font-family: var(--font-serif); font-size: 1.05rem; width: 34px; height: 34px; line-height: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--wx); background: color-mix(in srgb, var(--wx) 8%, var(--paper));
+  border: 1px solid color-mix(in srgb, var(--wx) 32%, transparent); border-radius: 50%;
+  cursor: pointer; transition: transform 0.12s, box-shadow 0.12s, background 0.12s;
+}
+.ss-daybtn:hover { transform: translateY(-1px); }
+.ss-daybtn.is-active { background: var(--wx); color: var(--paper); box-shadow: 0 0 0 2px color-mix(in srgb, var(--wx) 45%, transparent); }
+.ss-daybtn:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 2px; }
+
+.ss-cols { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+.ss-col { display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 6px 2px 8px; border-radius: 8px; }
+.ss-col--day { background: color-mix(in srgb, var(--cinnabar) 7%, transparent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cinnabar) 22%, transparent); }
+
+.ss-col__head { min-height: 2.4em; display: flex; align-items: center; justify-content: center; text-align: center; }
+.ss-col__rel {
+  font-size: clamp(0.66rem, 2.4vw, 0.78rem); font-weight: 600; color: var(--ink-soft);
+  border-radius: 4px; padding: 1px 4px;
+  animation: ss-relabel 0.6s ease-out;
+}
+.ss-col--day .ss-col__rel { color: var(--cinnabar); }
+
+.ss-gan {
+  width: 100%; display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 6px 1px; border-radius: 8px; cursor: pointer;
+  color: var(--wx); background: color-mix(in srgb, var(--wx) 8%, var(--paper));
+  border: 1px solid color-mix(in srgb, var(--wx) 30%, transparent);
+  transition: background 0.12s, box-shadow 0.12s;
+}
+.ss-gan:hover { background: color-mix(in srgb, var(--wx) 16%, var(--paper)); }
+.ss-gan.is-active { box-shadow: 0 0 0 2px var(--wx); background: color-mix(in srgb, var(--wx) 20%, var(--paper)); }
+.ss-gan:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 2px; }
+.ss-gan__char { font-family: var(--font-serif); font-size: clamp(1.1rem, 4.5vw, 1.4rem); line-height: 1.1; }
+.ss-gan__name {
+  font-size: clamp(0.6rem, 2.2vw, 0.72rem); color: var(--ink-soft); white-space: nowrap;
+  animation: ss-name-flash 0.6s ease-out;
+}
+
+@keyframes ss-relabel {
+  0% { background: color-mix(in srgb, var(--cinnabar) 35%, transparent); color: var(--cinnabar); }
+  100% { background: transparent; }
+}
+@keyframes ss-name-flash {
+  0% { color: var(--cinnabar); }
+  100% { color: var(--ink-soft); }
+}
+
+.ss-detail { margin-top: 12px; padding: 10px 12px; min-height: 58px; border-radius: 8px; background: var(--paper); border: 1px solid var(--line); }
+.ss-detail__body { margin: 0; font-size: 0.88rem; line-height: 1.85; color: var(--ink); }
+.ss-detail__body strong { color: var(--cinnabar); font-weight: 700; }
+.ss-detail__hint { margin: 0; font-size: 0.84rem; line-height: 1.85; color: var(--ink-faint); text-align: center; }
+
+.ss-foot { margin: 8px 0 0; font-size: 0.7rem; color: var(--ink-faint); text-align: right; letter-spacing: 0.04em; }
+
+@media (max-width: 400px) {
+  .ss-daybtn { width: 28px; height: 28px; font-size: 0.9rem; }
+  .ss-gan { padding: 5px 0; }
+}

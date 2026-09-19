@@ -1,0 +1,48 @@
+/* WuxingWheel(wuxing)的样式。通用 token(--wx-* 五行色、.wg-*、.sz-char--*)在 widgets.css。 */
+
+.wx { border: 1px solid var(--line); border-radius: 10px; background: var(--paper-raised); padding: 16px 14px 10px; max-width: 380px; margin: 0 auto; }
+
+.wx-figure { position: relative; width: 100%; max-width: 300px; aspect-ratio: 1 / 1; margin: 0 auto; }
+.wx-svg { display: block; width: 100%; height: 100%; overflow: visible; }
+
+.wx-edge { stroke: var(--ink-faint); fill: none; transition: stroke 0.15s, opacity 0.15s, stroke-width 0.15s; }
+.wx-edge--sheng { stroke-width: 1.6; opacity: 0.75; }
+.wx-edge--ke { stroke-width: 1.3; stroke-dasharray: 3.5 3.5; opacity: 0.55; }
+.wx-edge.is-active { stroke: var(--cinnabar); stroke-width: 2.6; opacity: 1; }
+.wx-edge.is-dim { opacity: 0.12; }
+
+.wx-arrow { fill: var(--ink-faint); }
+.wx-arrow--active { fill: var(--cinnabar); }
+
+.wx-node__circle {
+  fill: color-mix(in srgb, var(--wx) 10%, var(--paper));
+  stroke: var(--wx);
+  stroke-width: 1.6;
+  transition: fill 0.15s, stroke-width 0.15s;
+}
+.wx-node.is-active .wx-node__circle { fill: color-mix(in srgb, var(--wx) 26%, var(--paper)); stroke-width: 3; }
+.wx-node__ring { fill: none; stroke: var(--wx); stroke-width: 1.4; stroke-dasharray: 2.5 3; opacity: 0.7; }
+.wx-node__char { font-family: var(--font-serif); font-size: 26px; fill: var(--wx); text-anchor: middle; dominant-baseline: middle; pointer-events: none; }
+.wx-node__label { font-size: 10px; fill: var(--ink-soft); text-anchor: middle; dominant-baseline: middle; pointer-events: none; }
+
+.wx-hit { position: absolute; inset: 0; }
+.wx-hitbtn {
+  position: absolute; transform: translate(-50%, -50%);
+  border-radius: 50%; border: none; background: transparent; cursor: pointer; padding: 0;
+}
+.wx-hitbtn:hover { background: color-mix(in srgb, var(--ink) 5%, transparent); }
+.wx-hitbtn:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 2px; }
+
+.wx-detail { margin-top: 12px; padding: 10px 12px; min-height: 58px; border-radius: 8px; background: var(--paper); border: 1px solid var(--line); }
+.wx-detail__head { margin: 0 0 4px; font-family: var(--font-serif); font-size: 1rem; font-weight: 600; color: var(--cinnabar); }
+.wx-detail__list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 3px; }
+.wx-detail__list li { font-size: 0.86rem; line-height: 1.7; color: var(--ink); }
+.wx-detail__list b { margin-right: 6px; font-weight: 600; color: var(--ink-soft); }
+.wx-detail__hint { margin: 0; font-size: 0.84rem; line-height: 1.85; color: var(--ink-faint); text-align: center; }
+
+.wx-foot { margin: 8px 0 0; font-size: 0.7rem; color: var(--ink-faint); text-align: right; letter-spacing: 0.04em; }
+
+@media (max-width: 360px) {
+  .wx { padding: 12px 8px 8px; }
+  .wx-node__char { font-size: 22px; }
+}

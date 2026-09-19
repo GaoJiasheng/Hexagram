@@ -123,6 +123,10 @@ describe('四柱解析', () => {
     expect(hits).toHaveLength(1)
     expect(hits[0].pillars).toEqual(['辛卯', '丁酉', '庚午', '丙子'])
   })
+  it('顿号分隔的行文内嵌命例也认(穷通宝鉴的写法);隔着别的字的不连', () => {
+    expect(findPillars('若庚申、戊寅、甲寅、丙寅。一行金水运,发进士。')[0].pillars).toEqual(['庚申', '戊寅', '甲寅', '丙寅'])
+    expect(findPillars('甲子年生,乙丑月,丙寅日,丁卯时')).toHaveLength(0)
+  })
 })
 
 // ── oracle 交叉验证:自写规则层 vs lunar-javascript 的 EightChar ──
