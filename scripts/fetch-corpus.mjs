@@ -152,6 +152,87 @@ const PAGE_PRETREAT = {
   '滴天髓闡微': (text) => text
     .replace(/\{\{\*\|(原注[：:][^{}]*)\}\}/g, '$1')
     .replace(/\{\{annotate\|(任氏曰[：:][^{}]*)\}\}/g, '$1'),
+  // 《珞琭子三命消息賦注》(宋徐子平注,已句读的非四庫页):赋文一行、注文一行,注包在 {{*|…}} 里。
+  // 与战国策等书 {{*|姚本…}} 表「该剔的校注」语义相反——这里的注就是本书的主体(全书=赋 77 节 + 注 77
+  // 段),故按页名解包保留。经核实该页只有 Header 与 77 个 {{*|}},无嵌套,非贪婪正则即可。
+  '珞琭子三命消息賦注': (text) => text.replace(/\{\{\*\|([^{}]*)\}\}/g, '$1'),
+}
+
+// ---------- 四庫全書本(SKQS)专用预处理 ----------
+// 维基文库的「X (四庫全書本)」系列页用一套自有模板承载四庫写本的版式(观数组的三命通会/李虚中命书/
+// 玉照定真经三书皆是),通用 clean() 会把模板连同**内容**一起剔掉,故须先解包:
+//   · {{SK anchor|篇题}}   —— 篇/子目的标题(四庫写本里顶格或另起的小标题)。解包后独占一行,
+//                             再由 book.sections 的判据决定它是「篇」(切章)还是普通行(留作正文段)。
+//   · {{SK notes|小字}}    —— 四庫写本的双行小字:或为撰者自注(万民英的夹注、命例),或为注家的注文
+//                             (李虚中命书的「命入贵格明暗取官」、玉照定真经张颙注)。**内容是书的一部分,
+//                             不能剔**。book.skNotes 决定它落成独立段('para',注文自成一层的书用)
+//                             还是留在原行('inline',夹注混在正文句中的书用——拆出去反而把句子切碎)。
+//   · {{SKchar|编号}}      —— 字库缺字。编号查 Module:SKchar(维基文库自有的 4591 条对照表,随页面一同
+//                             抓取、不另建数据文件):有「本字」则还原本字;只有「描述字」(异体字或部首
+//                             组合 IDS)而无本字的,按下面 skcharResolve 的规则谨慎还原,仍还原不了的
+//                             写作缺字符「□」并计数报告——**宁可显标缺字,不可静默吞字**。
+//   · {{YL|乾隆四十四年}}  —— 年号模板,解包取字面。
+// 只对 book.skqs 为真的书生效,其余 60 余部书零影响。
+const SKCHAR_MOD = 'Module:SKchar'
+// 解析 Module:SKchar 的 skchars 表:['编号']={"本字"} 或 ['编号']={nil, "描述字"}。
+function parseSkCharTable(moduleText) {
+  const map = {}
+  for (const m of moduleText.matchAll(/\['(\d+)'\]=\{\s*(?:nil|"([^"]*)")\s*(?:,\s*"([^"]*)")?\s*\}/g)) {
+    map[m[1]] = { ben: m[2] ?? null, desc: m[3] ?? null }
+  }
+  return map
+}
+// 单个汉字(含扩展区)判定:排除 IDS 表意文字描述符 ⿰⿱… (U+2FF0–U+2FFF,表里偶有把 IDS 串
+// 误填进「本字」栏的,如编号 2025 本字栏只有一个「⿰」)。
+const isOneHan = (s) => !!s && [...s].length === 1 && /[㐀-䶿一-鿿豈-﫿]|[\u{20000}-\u{2fa1f}]/u.test(s)
+// 缺字还原:①有本字且是单个汉字 → 用本字(四庫原字,最忠实)。
+// ②否则看描述字:它的写法有「异体字」「⿰部件组合」「⿰部件组合 -- 通行字」「通行字 --（形状说明）」
+//   几种,以 ` -- ` 切开后取**第一个恰为单汉字**的片段(即维基编者判定的该字通行写法)。
+// ③再不成(描述字只有 IDS 串或整句说明)→ 「□」,并记入 warnings 供人工复核。
+function skcharResolve(entry) {
+  if (!entry) return null
+  if (isOneHan(entry.ben)) return { ch: entry.ben, exact: true }
+  // 分隔符写法不齐(「⿳亠口⿱冖至 -- 臺」「揚 --（『昜』上『旦』之『日』與『一』相連）」),故用宽松切分。
+  for (const seg of (entry.desc ?? '').split(/\s*--\s*/)) {
+    const s = seg.trim()
+    if (isOneHan(s)) return { ch: s, exact: false }
+  }
+  return null
+}
+// SKQS 页 wikitext → 供通用 parsePageChapters 消费的 wikitext(篇题化为 == 标题 ==)。
+// isSection(title, wasAnchor) 由调用方按 book.sections[页序] 提供。
+function skqsTransform(wikitext, { skMap, notes, isSection, pageName, warnings, stat, needSections }) {
+  let t = wikitext
+    // 页首的 HTML 注释(「請根據四庫全書掃描版校對本頁…加標點請另外建立頁面。」——给维基编者的校对说明)。
+    // 通用 clean() 按行剥标签,剥不掉这种跨行注释:注释中间那几行不含 < >,会当正文漏出来
+    // (李虚中命书卷上首段、玉照定真经首段都中过)。故整块剔除。
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/\{\{SKQS (?:header|footer)\|[^{}]*\}\}/g, '')
+    .replace(/\{\{SK list\|[\s\S]*?\}\}\s*$/g, '')
+    .replace(/\{\{YL\|([^{}|]*)(?:\|[^{}]*)?\}\}/g, '$1')
+    .replace(/\{\{SKchar\|(\d+)[^{}]*\}\}/g, (whole, id) => {
+      const r = skcharResolve(skMap[id])
+      if (!r) { stat.skcharLost++; stat.lostIds.add(id); return '□' }
+      stat.skchar++
+      if (!r.exact) stat.skcharApprox++
+      return r.ch
+    })
+    .replace(/\{\{SK notes\|([^{}]*)\}\}/g, notes === 'para' ? '\n$1\n' : '$1')
+    // 用  包住 anchor 文本,使下面逐行判定时能区分「它原本是 anchor」还是普通行
+    .replace(/\{\{SK anchor\|([^{}|]*)\}\}/g, '\n$1\n')
+  const out = []
+  let nSec = 0
+  for (const line of t.split('\n')) {
+    const m = line.trim().match(/^([\s\S]*)$/)
+    const wasAnchor = !!m
+    const bare = wasAnchor ? m[1] : line
+    const title = t2s(clean(bare)).trim()
+    if (title && isSection(title, wasAnchor)) { out.push(`== ${bare} ==`); nSec++; continue }
+    out.push(wasAnchor ? bare : line)
+  }
+  stat.sections += nSec
+  if (!nSec && needSections) warnings.push(`${pageName}: SKQS 切篇后无任何篇题,请检查 sections 判据`)
+  return out.join('\n')
 }
 
 // 行清洗 → 简体正文;若为导航/标题/标记/空行返回 null
@@ -341,7 +422,9 @@ function parsePageChapters(wikitext, warnings, pageName, book = {}) {
     if (h) {
       const rawTitle = h[1].replace(/<ref[^>]*>[\s\S]*?<\/ref>/gi, '').replace(/<ref[^>]*\/>/gi, '')  // 剔标题内 <ref> 校勘
       const title = t2s(clean(rawTitle).replace(/『[^』]*』/g, '').replace(/「[^」]*」/g, '')).trim()
-      if (!title || HEADING_SKIP_RE.test(title)) { cur = null; continue }
+      // keepHeadingRe:白名单,压过 HEADING_SKIP_RE(五行大义首页的「五行大义序」是萧吉自序、是正文,
+      // 但通用规则把凡以「序」收尾的标题都当非经文跳过——那条规则本为心经 djvu 页的明太祖序而设)。
+      if (!title || (HEADING_SKIP_RE.test(title) && !(book.keepHeadingRe && new RegExp(book.keepHeadingRe).test(title)))) { cur = null; continue }
       if (mergeRe && mergeRe.test(title) && chapters.length) { cur = chapters[chapters.length - 1]; continue }
       cur = { title, paragraphs: [] }
       chapters.push(cur)
@@ -470,7 +553,12 @@ async function main() {
   const allPages = BOOKS.flatMap((b) => (b.localFile ? [] : b.groupPages
     ? b.groupPages.flatMap((g) => g.pages.map((p) => (typeof p === 'string' ? p : p.page)))
     : b.pages))
-  const pages = await fetchPages(allPages)
+  // 四庫全書本的书另需抓一张缺字对照表(维基文库自有的 Module:SKchar,见 skqsTransform 说明);
+  // 它与经文页走同一个缓存,不另建数据文件。没有 skqs 书时不抓。
+  const needSkChar = BOOKS.some((b) => b.skqs)
+  const pages = await fetchPages(needSkChar ? [...allPages, SKCHAR_MOD] : allPages)
+  const skMap = needSkChar ? parseSkCharTable(pages[SKCHAR_MOD]) : {}
+  if (needSkChar) console.log(`已载入 ${SKCHAR_MOD} 缺字表 ${Object.keys(skMap).length} 条`)
 
   // 页面级预处理(见 PAGE_PRETREAT 定义处的说明),先于转写壳解析、切段/切章。
   for (const [pageName, fn] of Object.entries(PAGE_PRETREAT)) {
@@ -528,6 +616,7 @@ async function main() {
   for (const book of BOOKS) {
     const single = !book.groupPages && !book.localFile && book.pages?.length === 1 && !book.splitHeadings
     const chapters = []
+    const skqsStat = { sections: 0, skchar: 0, skcharApprox: 0, skcharLost: 0, lostIds: new Set() }
     // 本地文本源切章(穷通宝鉴/子平真诠:维基文库没有,殆知阁电子本按人工核实的行号切,见 parseLocalBreaks)
     if (book.localFile) {
       for (const c of parseLocalBreaks(pages[book.localFile], book.localBreaks, warnings, book.localFile)) {
@@ -570,15 +659,42 @@ async function main() {
         else warnings.push(`${group.title}: 分组无内容`)
       }
     } else
-    for (const page of book.pages) {
+    // 单页按段落切章(珞琭子:全书一页、无 == 标题,四庫本分卷上卷下,以卷下首句为界切两章)。
+    // 与 markPattern 的差别:首个匹配之前的内容自成第一章,而不是被丢弃;章名由 chapterTitles 给。
+    if (book.breakParaRe) {
+      const re = new RegExp(book.breakParaRe)
+      let cur = { no: 1, title: null, paragraphs: [] }
+      chapters.push(cur)
+      for (const p of parsePageParas(pages[book.pages[0]], warnings, book.pages[0])) {
+        if (re.test(p.original) && cur.paragraphs.length) { cur = { no: chapters.length + 1, title: null, paragraphs: [] }; chapters.push(cur) }
+        cur.paragraphs.push(p)
+      }
+    } else
+    for (const [pi, page] of book.pages.entries()) {
+      // skqs:四庫全書本的模板解包 + 篇题判定(见 skqsTransform);产出的 wikitext 仍交通用切章器处理
+      const wikitext = book.skqs ? skqsTransform(pages[page], {
+        skMap,
+        notes: book.skNotes ?? 'para',
+        pageName: page,
+        warnings,
+        stat: skqsStat,
+        needSections: !!book.splitHeadings,
+        isSection: (title, wasAnchor) => {
+          const rule = book.sections?.[pi]
+          if (!rule) return wasAnchor            // 未给判据的书:每个 anchor 即一篇
+          if (rule.extra?.includes(title)) return true   // 未加 anchor 的篇题(整行精确相等)
+          return wasAnchor && new RegExp(rule.keep).test(title)
+        },
+      }) : pages[page]
       if (book.splitHeadings) {
         // 单页按标题切多章(金刚经 32 分)
-        for (const c of parsePageChapters(pages[page], warnings, page, book)) {
-          chapters.push({ no: chapters.length + 1, title: c.title, paragraphs: c.paragraphs })
+        for (const c of parsePageChapters(wikitext, warnings, page, book)) {
+          const prefix = book.titlePrefix?.[pi]
+          chapters.push({ no: chapters.length + 1, title: prefix ? `${prefix} · ${c.title}` : c.title, paragraphs: c.paragraphs })
         }
         continue
       }
-      const paras = parsePageParas(pages[page], warnings, page)
+      const paras = parsePageParas(wikitext, warnings, page)
       const seg = page.includes('/') ? page.slice(page.indexOf('/') + 1) : page
       const title = single ? null : t2s(seg)
       if (paras.length) chapters.push({ no: chapters.length + 1, title, paragraphs: paras })
@@ -703,7 +819,15 @@ async function main() {
     fs.writeFileSync(path.join(OUT_DIR, `${book.slug}.json`), JSON.stringify(out, null, 2) + '\n')
     const paraTotal = chapters.reduce((n, c) => n + c.paragraphs.length, 0)
     const ganzhiInfo = ganzhiStat ? `,命例 ${ganzhiStat.nMerged} 处(${ganzhiStat.nWithDayun} 带大运)` : ''
-    summary.push(`${book.title}: ${chapters.length} 章,${paraTotal} 段,译文 ${trCount} 段${ganzhiInfo}`)
+    let skqsInfo = ''
+    if (book.skqs) {
+      skqsInfo = `,缺字还原 ${skqsStat.skchar}(其中按描述字定 ${skqsStat.skcharApprox})`
+      if (skqsStat.skcharLost) {
+        skqsInfo += `、仍缺 ${skqsStat.skcharLost} 作□`
+        warnings.push(`${book.title}: ${skqsStat.skcharLost} 处缺字无法还原,已写作「□」(SKchar 编号 ${[...skqsStat.lostIds].join('/')})`)
+      }
+    }
+    summary.push(`${book.title}: ${chapters.length} 章,${paraTotal} 段,译文 ${trCount} 段${ganzhiInfo}${skqsInfo}`)
   }
 
   for (const w of warnings) console.warn('⚠', w)
