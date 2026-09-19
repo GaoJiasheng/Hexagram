@@ -45,6 +45,10 @@ const units = []
 // 切片首末段的开头几个字:写进提示语当**锚**。只说「下标 50 到 99」时,个别代理按 1 起理解,整片译文错一段
 // (2026-09-19 渊海第 57/58 篇、穷通第 7 章共 4 个切片中招);给了锚就没有歧义。
 const headOf = (c, i) => [...(c.paragraphs[i]?.original || '')].slice(0, 12).join('')
+// 本片段的原文直接排进提示语(2026-09-19):此前让代理自己 Read 整本 classics json(三命通会 1.8MB),
+// 每个代理光翻文件就要十几万 token。内嵌后拿到的就是要译的这几十段。
+const parasOf = (c, from, to) => c.paragraphs.slice(from, to + 1).map((p, k) =>
+  `[${from + k}] ${p.original}` + (p.pillars ? '〔命例段:四柱 ' + p.pillars.join(' ') + ',留空不译〕' : '')).join('\n')
 for (const [corpus, slug] of SEL) {
   const book = JSON.parse(fs.readFileSync(path.join(ROOT, `src/data/${corpus}/classics/${slug}.json`), 'utf8'))
   for (const c of book.chapters) {
@@ -52,10 +56,10 @@ for (const [corpus, slug] of SEL) {
     const n = c.paragraphs.length
     const title = c.title || `第${c.no}章`
     if (n <= 55) {
-      units.push({ corpus, book: slug, no: c.no, title, start: 0, end: n - 1, yanyi: true, punct: PUNCT_BOOKS.has(slug), head: headOf(c, 0), tail: headOf(c, n - 1) })
+      units.push({ corpus, book: slug, no: c.no, title, start: 0, end: n - 1, yanyi: true, punct: PUNCT_BOOKS.has(slug), head: headOf(c, 0), tail: headOf(c, n - 1), paras: parasOf(c, 0, n - 1) })
     } else {
       for (let s = 0; s < n; s += SPLIT) {
-        units.push({ corpus, book: slug, no: c.no, title, start: s, end: Math.min(s + SPLIT, n) - 1, yanyi: s === 0, punct: PUNCT_BOOKS.has(slug), head: headOf(c, s), tail: headOf(c, Math.min(s + SPLIT, n) - 1) })
+        units.push({ corpus, book: slug, no: c.no, title, start: s, end: Math.min(s + SPLIT, n) - 1, yanyi: s === 0, punct: PUNCT_BOOKS.has(slug), head: headOf(c, s), tail: headOf(c, Math.min(s + SPLIT, n) - 1), paras: parasOf(c, s, Math.min(s + SPLIT, n) - 1) })
       }
     }
   }
@@ -221,7 +225,7 @@ function translatePrompt(u) {
     ? ('本章共 ' + len + ' 段全译:translations[i] 对应原文第 i 段。')
     : ('本片段只译 paragraphs 数组里**从 0 数起**下标 ' + u.start + ' 到 ' + u.end + ' 的段(共 ' + len + ' 段):translations[0] 对应 paragraphs[' + u.start + '],依次类推。**对位锚:paragraphs[' + u.start + '] 以「' + u.head + '」开头,paragraphs[' + u.end + '] 以「' + u.tail + '」开头——动笔前先核对这两段,translations 的第一条译的必须是前者、最后一条译的必须是后者。**')
   return '你在为古籍研习站做《' + CN[u.book] + '·' + u.title + '》的白话译注。' + styleRule(u) + '\\n\\n' +
-    '第一步:用 Read 读 ' + FILE(u.corpus, u.book) + ',找到 chapters 里 no===' + u.no + ' 的那一章(其 paragraphs 为原文段,每段含 original)。' + rangeDesc + '\\n\\n' +
+    '**要译的原文已为你取好,见下(方括号里是它在本章 paragraphs 数组中的 0 起下标);不必去读数据文件——那个文件很大,读它是浪费。**' + rangeDesc + '\\n<原文>\\n' + u.paras + '\\n</原文>\\n(方括号下标与〔命例段…〕标记不是原文,term/punctuated 里不要带上。)\\n\\n' +
     (u.punct ? ('**本书底本是四库白文,一个标点都没有。** 先断句:\\n0) punctuated:数组,长度恰为 ' + len + ',与 translations 同序。把每段 original **只加标点、不增不删不改任何一个字**(繁简异体照旧,「□」缺字符照旧,原有的全角空格可去掉);用全角标点(，。；：？！、「」《》)。程序会逐段核对「去标点后与底本逐字相等」,不等的段整段作废——所以**务必逐字照抄,宁可少断不可错字**;很长的段尤其要当心漏字。kind 为 mingli 的命例段与纯干支行原样照抄即可。译文与注疏都据你的断句本来作;**zhushi 的 term 须是你 punctuated 对应段的精确连续子串**(尽量取不跨标点的词)。\\n') : '') +
     '按 schema 产出:\\n' +
     '1) translations:数组,长度必须恰为 ' + len + ',与本片段各段下标对应。平实直译、一段对一段;不增义、不删、不合并、不臆解;禁鸡汤/拔高/现代政治影射/权术发挥口吻。\\n' +
@@ -251,7 +255,7 @@ function verifyPrompt(u, draft) {
           : isRealMoulue ? '权术施用教程或成功学鸡汤式发挥'
             : '现实政治影射'
   return '校对修正《' + CN[u.book] + '·' + u.title + '》(原文第 ' + u.start + '–' + u.end + ' 段)译注草稿,返回修正后完整结构。' + styleRule(u) + '\\n\\n' +
-    '先 Read ' + FILE(u.corpus, u.book) + ' 中 no===' + u.no + ' 的章,核对其第 ' + u.start + '..' + u.end + ' 段。草稿:\\n' + JSON.stringify(draft) + '\\n\\n' +
+    '原文如下(已取好,**不必去读数据文件**;方括号里是 0 起下标):\\n<原文>\\n' + u.paras + '\\n</原文>\\n\\n草稿:\\n' + JSON.stringify(draft) + '\\n\\n' +
     '**先核对位**:translations[0] 译的必须是 paragraphs[' + u.start + '](以「' + u.head + '」开头),最后一条译的必须是 paragraphs[' + u.end + '](以「' + u.tail + '」开头);若草稿整体错开了一段,先整体挪回来、补上缺的那一段,再做其余校对。\\n' +
     '逐项改正后按 schema 返回:\\n' +
     (u.punct ? ('- punctuated:长度恰为 ' + len + ';逐段核对**去掉标点与空白后与 original 逐字相等**(可写一小段脚本核:读 json 取该段 original,两边都删去标点空白后比较),有增删改字的改回;断句有误(破句、误属上下)的改正;term 须是 punctuated 对应段的精确子串。\\n') : '') +
