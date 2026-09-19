@@ -6,6 +6,7 @@
 //   - src/data/<corpus>/yanyi.json                  (合并新书 slug,章号→延伸段)
 // 校验(对齐 check-data):term 须为原文子串(否则弃)、note≤40字(句读处截断)、同段锚点不重叠(重叠弃)、剔 ref。
 // 区间单元(start/end):译文按 start+i 落位;zhushi 局部段下标 +start 还原全局。原文严禁改,只读取以校验 term。
+import { validPunctuated } from './lib/punct-layer.mjs'
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -45,7 +46,8 @@ const trAcc = {}    // corpus -> slug -> {chNo: [seg...]}
 const zhAcc = {}    // corpus -> slug -> {chNo: {globalIdx: [entry...]}}
 const yyAcc = {}    // corpus -> slug -> {chNo: [para...]}
 const stat = {}
-const drop = { term: 0, note: 0, overlap: 0 }
+const puAcc = {}    // corpus -> slug -> {chNo: {globalIdx: punctuated}}
+const drop = { term: 0, note: 0, overlap: 0, punct: 0 }
 
 for (const u of units) {
   const { corpus, book: slug, no, start = 0, data = {} } = u
@@ -55,6 +57,21 @@ for (const u of units) {
   const paras = chapter.paragraphs
   const sk = `${corpus}/${slug}`
   stat[sk] ??= { tr: 0, zh: 0, yy: 0, chs: chapter ? chs.length : 0 }
+
+  // 断句层(四库白文):punctuated[i] → 全局段 start+i;过「去标点后逐字相等」才收(scripts/lib/punct-layer.mjs)。
+  // 收下的断句本即该段日后的 original(fetch-corpus 合并),所以下面注疏锚点要对着它匹配。
+  const punctOf = {}
+  if (Array.isArray(data.punctuated)) {
+    puAcc[corpus] ??= {}; puAcc[corpus][slug] ??= {}
+    const puArr = (puAcc[corpus][slug][no] ??= {})
+    data.punctuated.forEach((pu, i) => {
+      const g = start + i
+      if (g >= paras.length || paras[g].pillars) return
+      const t = t2s(String(pu || ''))
+      if (validPunctuated(t, paras[g].original)) { puArr[g] = t; punctOf[g] = t; stat[sk].pu = (stat[sk].pu || 0) + 1 }
+      else if (t) drop.punct++
+    })
+  }
 
   // 译文:tr[i] → 全局段 start+i
   trAcc[corpus] ??= {}; trAcc[corpus][slug] ??= {}
@@ -68,7 +85,7 @@ for (const u of units) {
   zhAcc[corpus] ??= {}; zhAcc[corpus][slug] ??= {}
   for (const [localIdx, entries] of Object.entries(data.zhushi || {})) {
     const g = start + Number(localIdx)
-    const orig = paras[g]?.original
+    const orig = punctOf[g] ?? paras[g]?.original
     if (orig == null || !Array.isArray(entries)) continue
     const ranges = []
     const kept = []
@@ -133,6 +150,20 @@ for (const corpus of Object.keys(zhAcc)) {
     fs.writeFileSync(zp, JSON.stringify(out, null, 2) + '\n')
   }
 }
+// 断句层恒为合并写入(按段下标填,不整章覆盖):同一章可能分片、也可能只有部分段过了不变式
+for (const corpus of Object.keys(puAcc)) {
+  mergeJson(`scripts/authored/${corpus}-punct.json`, (cur) => {
+    for (const [slug, byCh] of Object.entries(puAcc[corpus])) {
+      cur[slug] ??= {}
+      for (const [no, byIdx] of Object.entries(byCh)) {
+        const n = chapters(corpus, slug).find((c) => String(c.no) === String(no)).paragraphs.length
+        const arr = Array.isArray(cur[slug][no]) ? cur[slug][no] : new Array(n).fill(null)
+        for (const [g, t] of Object.entries(byIdx)) arr[Number(g)] = t
+        cur[slug][no] = arr
+      }
+    }
+  })
+}
 for (const corpus of Object.keys(yyAcc)) {
   mergeJson(`src/data/${corpus}/yanyi.json`, (cur) => {
     for (const [slug, byCh] of Object.entries(yyAcc[corpus])) cur[slug] = MERGE ? { ...(cur[slug] || {}), ...byCh } : byCh
@@ -140,5 +171,5 @@ for (const corpus of Object.keys(yyAcc)) {
 }
 
 console.log('装配完成。各书统计(译文段/注疏条/延伸章/总章):')
-for (const [sk, s] of Object.entries(stat)) console.log(`  ${sk}: 译 ${s.tr} · 注 ${s.zh} · 延 ${s.yy}/${s.chs}`)
-console.log(`丢弃锚点: term未命中 ${drop.term} · note空 ${drop.note} · 区间重叠 ${drop.overlap}`)
+for (const [sk, s] of Object.entries(stat)) console.log(`  ${sk}: 译 ${s.tr} · 注 ${s.zh} · 延 ${s.yy}/${s.chs}` + (s.pu ? ` · 断句 ${s.pu} 段` : ''))
+console.log(`丢弃锚点: term未命中 ${drop.term} · note空 ${drop.note} · 区间重叠 ${drop.overlap}` + (drop.punct ? ` · 断句不过不变式 ${drop.punct} 段(保留白文)` : ''))

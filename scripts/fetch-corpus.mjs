@@ -5,6 +5,7 @@
 //   每个源页 = 一章;页内 ==标题== 行、章号标记行(论语「一之X」)、导航链接行一律剔除,
 //   余下文本行各为一段。原文一律来自抓取,严禁手改、严禁凭记忆补。
 
+import { validPunctuated } from './lib/punct-layer.mjs'
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -548,6 +549,8 @@ async function main() {
   const errors = []
   const trPath = path.join(ROOT, `scripts/authored/${key}-translations.json`)
   const translations = fs.existsSync(trPath) ? JSON.parse(fs.readFileSync(trPath, 'utf8')) : {}
+  const puPath = path.join(ROOT, `scripts/authored/${key}-punct.json`)
+  const punctLayer = fs.existsSync(puPath) ? JSON.parse(fs.readFileSync(puPath, 'utf8')) : {}
 
   // localFile 的书不走维基文库抓取(见下),从 allPages 里排除。
   const allPages = BOOKS.flatMap((b) => (b.localFile ? [] : b.groupPages
@@ -804,6 +807,25 @@ async function main() {
     // 底本讹字校正(SOURCE_TYPOS):须在合并译文之前,且不改段数
     for (const c of chapters) for (const p of c.paragraphs) p.original = fixTypos(book.slug, p.original)
 
+    // 断句层(punctLayer,四库白文专用):见 scripts/lib/punct-layer.mjs。过不了「去标点后逐字相等」的段保留白文。
+    // 须在合并译文之前:译文、注疏锚点都是对着断句后的文本做的。
+    let punctInfo = ''
+    if (book.punctLayer) {
+      const bookPu = punctLayer[book.slug] ?? {}
+      let nOk = 0, nBad = 0, nTotal = 0
+      for (const c of chapters) {
+        const ps = bookPu[String(c.no)] || []
+        c.paragraphs.forEach((p, i) => {
+          if (p.pillars) return
+          nTotal++
+          if (!ps[i]) return
+          if (validPunctuated(ps[i], p.original)) { p.original = ps[i]; nOk++ } else nBad++
+        })
+      }
+      if (nBad) warnings.push(`${book.title}: 断句层有 ${nBad} 段去标点后与底本不等,已弃用(保留白文)`)
+      punctInfo = `,断句 ${nOk}/${nTotal} 段`
+    }
+
     // 合并人工译文(章号 → 段序数组)
     const bookTr = translations[book.slug] ?? {}
     let trCount = 0
@@ -827,7 +849,7 @@ async function main() {
         warnings.push(`${book.title}: ${skqsStat.skcharLost} 处缺字无法还原,已写作「□」(SKchar 编号 ${[...skqsStat.lostIds].join('/')})`)
       }
     }
-    summary.push(`${book.title}: ${chapters.length} 章,${paraTotal} 段,译文 ${trCount} 段${ganzhiInfo}${skqsInfo}`)
+    summary.push(`${book.title}: ${chapters.length} 章,${paraTotal} 段,译文 ${trCount} 段${ganzhiInfo}${skqsInfo}${punctInfo}`)
   }
 
   for (const w of warnings) console.warn('⚠', w)

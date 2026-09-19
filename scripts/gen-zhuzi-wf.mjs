@@ -23,6 +23,7 @@ const BOOKS = [
   ['tangshi', 'tangshi300'], ['songci', 'songci300'], ['yuanqu', 'yuanqu'],
   // 观数(命理学,2026-09-19 立项)。四部底本见 scripts/corpus/mingli.config.mjs;守【研习不断命】铁律。
   ['mingli', 'yuanhai'], ['mingli', 'zhenquan'], ['mingli', 'ditiansui'], ['mingli', 'qiongtong'],
+  ['mingli', 'sanming'], ['mingli', 'wuxingdayi'], ['mingli', 'lixuzhong'], ['mingli', 'luoluzi'], ['mingli', 'yuzhao'],
 ]
 const ONLY = process.argv[2]          // 可选:只为某 slug 或某 corpus 生成(逗号可多选,如 liutao,jinkui)
 // 可选:--models=<译>,<校>(如 --models=opus,sonnet)。不给则两段都继承主会话模型(原行为)。
@@ -31,6 +32,8 @@ const MODELS_ARG = (process.argv.find((a) => a.startsWith('--models=')) || '').s
 const [MODEL_T, MODEL_V] = MODELS_ARG ? MODELS_ARG.split(',') : []
 const ONLY_SET = ONLY ? new Set(ONLY.split(',')) : null
 const SEL = ONLY_SET ? BOOKS.filter(([c, s]) => ONLY_SET.has(s) || ONLY_SET.has(c)) : BOOKS
+// 四库白文(无标点)的书:译注代理须先断句,产出 punctuated(见 scripts/lib/punct-layer.mjs 的硬不变式)
+const PUNCT_BOOKS = new Set(['sanming', 'lixuzhong', 'yuzhao'])
 const SPLIT = 50 // 单元最大段;>55 段的章按此切片
 // 可选:--chapters=4,7 只为这几章生成(补译/重译用;须与单个 slug 连用)
 const CH_ARG = (process.argv.find((a) => a.startsWith('--chapters=')) || '').slice('--chapters='.length)
@@ -43,10 +46,10 @@ for (const [corpus, slug] of SEL) {
     const n = c.paragraphs.length
     const title = c.title || `第${c.no}章`
     if (n <= 55) {
-      units.push({ corpus, book: slug, no: c.no, title, start: 0, end: n - 1, yanyi: true })
+      units.push({ corpus, book: slug, no: c.no, title, start: 0, end: n - 1, yanyi: true, punct: PUNCT_BOOKS.has(slug) })
     } else {
       for (let s = 0; s < n; s += SPLIT) {
-        units.push({ corpus, book: slug, no: c.no, title, start: s, end: Math.min(s + SPLIT, n) - 1, yanyi: s === 0 })
+        units.push({ corpus, book: slug, no: c.no, title, start: s, end: Math.min(s + SPLIT, n) - 1, yanyi: s === 0, punct: PUNCT_BOOKS.has(slug) })
       }
     }
   }
@@ -65,6 +68,7 @@ const SCHEMA = {
   type: 'object', additionalProperties: false, required: ['translations', 'zhushi', 'yanyi'],
   properties: {
     translations: { type: 'array', items: { type: 'string' } },
+    punctuated: { type: 'array', items: { type: 'string' } },   // 仅四库白文:断句本,与 translations 同长同序
     zhushi: { type: 'object', additionalProperties: { type: 'array', items: {
       type: 'object', additionalProperties: false, required: ['term', 'note'],
       properties: { term: { type: 'string' }, reading: { type: 'string' }, note: { type: 'string' } } } } },
@@ -77,7 +81,8 @@ const UNITS = ${JSON.stringify(units, null, 0)}
 const CN = { hanfeizi: '韩非子', shangjunshu: '商君书', shenzi: '慎子', yinwenzi: '尹文子', wenzi: '文子', mozi: '墨子', sunzi: '孙子兵法', wuzi: '吴子', simafa: '司马法', weiliaozi: '尉缭子', sanlue: '三略', guiguzi: '鬼谷子', zhanguoce: '战国策', suwen: '黄帝内经·素问', lingshu: '黄帝内经·灵枢', shanghanlun: '伤寒论', bencaojing: '神农本草经', luozhijing: '罗织经', rongkujian: '小人经', quanmou: '权谋术', taohuishu: '韬晦术', zhixue: '止学', liutao: '六韬', jinkui: '金匮要略', nanjing: '难经', 'zhuangzi-waipian': '庄子外篇', 'zhuangzi-zapian': '庄子杂篇', liezi: '列子', yijiaojing: '佛遗教经', badaren: '八大人觉经', amituojing: '阿弥陀经', xinxinming: '信心铭', zhengdaoge: '永嘉证道歌', daxuewen: '大学问', xunzi: '荀子', yanshi: '颜氏家训', jinsilu: '近思录', weimojie: '维摩诘经', huangting: '黄庭内景经', shijing: '诗经', wuzhenpian: '悟真篇',
   changduanjing: '长短经', caigentan: '菜根谭', weiluyehua: '围炉夜话', xiaochuangyouji: '小窗幽记', weigongwendui: '李卫公问对',
   tangshi300: '唐诗三百首', songci300: '宋词三百首', yuanqu: '元曲选',
-  yuanhai: '渊海子平', zhenquan: '子平真诠', ditiansui: '滴天髓阐微', qiongtong: '穷通宝鉴' }
+  yuanhai: '渊海子平', zhenquan: '子平真诠', ditiansui: '滴天髓阐微', qiongtong: '穷通宝鉴',
+  sanming: '三命通会', wuxingdayi: '五行大义', lixuzhong: '李虚中命书', luoluzi: '珞琭子三命消息赋', yuzhao: '玉照定真经' }
 const REF = {
   fa: '陈奇猷《韩非子集释》、王先慎《韩非子集解》、蒋礼鸿《商君书锥指》',
   mo: '孙诒让《墨子间诂》、吴毓江《墨子校注》',
@@ -179,6 +184,11 @@ function styleRule(u) {
     if (u.book === 'yuanhai') return base + ' 渊海子平多歌诀赋体(四言/七言韵语夹杂散论),译文求**达意**、不为凑韵而硬译或增字删字;十神(比肩/劫财/食神/伤官/偏财/正财/偏官/正官/偏印/正印)、十二长生(长生/沐浴/冠带/临官/帝旺/衰/病/死/墓/绝/胎/养)等术语注疏释之。'
     if (u.book === 'zhenquan') return base + ' **底本说明:本站真诠已据三种白文本逐段对校,剔除了民国徐乐吾《评注》一系增益的文字——包括著名的「取用之法约略归纳为五种:扶抑、病药、调候、专旺、通关」一段、「旺衰强弱四字……党众为强,助寡为弱」一段与书末「附论杂格取运」整篇。这些都不是沈孝瞻的话:注疏与延伸里不得把它们当作沈氏原文来引述或据以立论;如需提及,只能如实说「此为后世评注本所增,不见于白文本」。** 子平真诠为论说体(设问自答、层层递进),译文取议论文笔调、逻辑连词(何谓/盖/然/是故)照译不省;格局/用神/相神/月令等术语前后统一译法,不同章节不得改换译语。全书数十篇命造实例(如「甲午、乙酉、丙戌、丁亥」+ 具体人物或宦称)属沈孝瞻原文举证,照译;不得引入徐乐吾等后人评注例证。'
     if (u.book === 'ditiansui') return base + ' 滴天髓阐微逐章分四类段落:①原文纲领(简短韵语,如「欲识三元万法宗」)②原注(旧题刘基注,以「原注：」开头)③任氏曰(任铁樵阐发,以「任氏曰：」开头)④命例——命例已由管线结构化合并为单独一段(kind:"mingli",original 为四柱与大运干支以空格相连、pillars/dayun 为结构化字段),**该类段的 translations 对应位置留空字符串""(不译、不注)**,真正需要译注延的是命例段之后紧跟的那段分析文字(任氏就该命例的议论)。十干十二支、十神、通根、清浊、真假、中和等术语注疏释之。'
+    if (u.book === 'sanming') return base + ' 《三命通会》为明万民英所辑类书,十二卷,体例驳杂:卷一至卷三论五行干支纳音与神煞,卷四至卷六论十干十二月与格局,卷七论女命六亲等,卷八卷九为「六十日 × 十二时」逐条断语(每段以「某某日某某时」起首,断语照译,不加评判),卷十至卷十二收录歌赋(消息赋、玉井奥诀等,韵语求达意)。万氏多引旧说而后下按语,译文须分清「引旧说」与「万氏自己的话」。延伸讲这一篇在全书中的位置、所采旧说的来历、与站内他书(渊海子平/子平真诠/滴天髓阐微/穷通宝鉴)的异同;本书是类书,**延伸每篇 1 段即可(80–140 字)**,短篇可更短。'
+    if (u.book === 'wuxingdayi') return base + ' 《五行大义》隋萧吉撰,汇集先秦两汉五行说,广引经传纬书(许多所引之书今已亡佚),是五行干支学说的渊薮而**非命书**——不谈个人禄命。译文须分清萧吉自己的话与他引的书;所引佚书只据上下文作解,不臆补。延伸讲该篇所论在五行学说史上的位置及其与后世命书术语的渊源。'
+    if (u.book === 'lixuzhong') return base + ' 《李虚中命书》旧题鬼谷子撰、唐李虚中注,四库馆臣已疑其依托,今多认为出宋人之手。体例为正文(简古韵语)与注文相间。其法以年为主、重纳音与禄马贵人,与子平法以日为主不同——注疏与延伸须点明这一区别,不要用子平术语硬套。'
+    if (u.book === 'luoluzi') return base + ' 《珞琭子三命消息赋》撰人不详,本站取宋徐子平注本:赋文一行、注文一行相间。赋为骈俪韵语,译文求达意;注文照译。此赋是早期禄命术的纲领性文献,以年为主,延伸可讲其与后世子平法的承转。'
+    if (u.book === 'yuzhao') return base + ' 《玉照定真经》旧题晋郭璞撰、张颙注,依托之书,经注疑出一手。经文为极简的断语式短句,其下为注;多以卦象、神煞、纳音立说。断语照译不评;延伸讲其术语来历与在禄命术史上的位置,真伪如实交代。'
     if (u.book === 'qiongtong') return base + ' 穷通宝鉴以「五行总论」开篇,其后十干各章内有「三春甲木总论」「三春甲木」等小节题行(原书自身的小标题,不是维基文库或本站另加的)——**这类小节题行段的 translations 对应位置留空字符串""(不译、不注)**,真正的译文从其后的正文句开始;书中命例已由管线结构化为单独一段(original 形如「丙午 庚寅 丙午 庚寅」四个干支以空格相连,即年月日时四柱),**命例段同样留空字符串""**,其后紧跟的短案语(如「两间不杂，按察」「庚运夺魁」)是原书对该命例的评语,须照译;**译文数组必须与原文段一一对位——交稿前逐段核对:第 i 条译文译的必须是第 i 段原文,留空的位置不得被后文顶上**;调候用神的「先用某,次用某」表述须严格按原文次序译准(先取谁调候、次取谁辅佐,顺序不可颠倒或省略),十干喜某忌某的判断照译不改写为判断句之外的语气。'
     return base
   }
@@ -204,6 +214,7 @@ function translatePrompt(u) {
     : ('本片段只译下标 ' + u.start + ' 到 ' + u.end + ' 的段(共 ' + len + ' 段):translations[0] 对应原文第 ' + u.start + ' 段,依次类推。')
   return '你在为古籍研习站做《' + CN[u.book] + '·' + u.title + '》的白话译注。' + styleRule(u) + '\\n\\n' +
     '第一步:用 Read 读 ' + FILE(u.corpus, u.book) + ',找到 chapters 里 no===' + u.no + ' 的那一章(其 paragraphs 为原文段,每段含 original)。' + rangeDesc + '\\n\\n' +
+    (u.punct ? ('**本书底本是四库白文,一个标点都没有。** 先断句:\\n0) punctuated:数组,长度恰为 ' + len + ',与 translations 同序。把每段 original **只加标点、不增不删不改任何一个字**(繁简异体照旧,「□」缺字符照旧,原有的全角空格可去掉);用全角标点(，。；：？！、「」《》)。程序会逐段核对「去标点后与底本逐字相等」,不等的段整段作废——所以**务必逐字照抄,宁可少断不可错字**;很长的段尤其要当心漏字。kind 为 mingli 的命例段与纯干支行原样照抄即可。译文与注疏都据你的断句本来作;**zhushi 的 term 须是你 punctuated 对应段的精确连续子串**(尽量取不跨标点的词)。\\n') : '') +
     '按 schema 产出:\\n' +
     '1) translations:数组,长度必须恰为 ' + len + ',与本片段各段下标对应。平实直译、一段对一段;不增义、不删、不合并、不臆解;禁鸡汤/拔高/现代政治影射/权术发挥口吻。\\n' +
     '2) zhushi:对象,key 为**本片段内的相对下标字符串**("0".."' + (len - 1) + '",即 translations 的下标,不是原文绝对下标)。每段挑 0–4 个值得注的词(生僻字、人名地名、典故、名物制度、术语、通假;长词专名优先),{term, reading?, note}。**term 必须是对应段 original 的精确连续子串**;note≤40 汉字,训诂体;不加 ref/链接字段。无可注的段不出 key。\\n' +
@@ -234,6 +245,7 @@ function verifyPrompt(u, draft) {
   return '校对修正《' + CN[u.book] + '·' + u.title + '》(原文第 ' + u.start + '–' + u.end + ' 段)译注草稿,返回修正后完整结构。' + styleRule(u) + '\\n\\n' +
     '先 Read ' + FILE(u.corpus, u.book) + ' 中 no===' + u.no + ' 的章,核对其第 ' + u.start + '..' + u.end + ' 段。草稿:\\n' + JSON.stringify(draft) + '\\n\\n' +
     '逐项改正后按 schema 返回:\\n' +
+    (u.punct ? ('- punctuated:长度恰为 ' + len + ';逐段核对**去掉标点与空白后与 original 逐字相等**(可写一小段脚本核:读 json 取该段 original,两边都删去标点空白后比较),有增删改字的改回;断句有误(破句、误属上下)的改正;term 须是 punctuated 对应段的精确子串。\\n') : '') +
     '- translations 长度必须恰为 ' + len + ',与第 ' + u.start + '.. 段逐一对齐;漏译/臆增/错解/把注混入译文者改正;' + fixT + ';口吻平实。\\n' +
     '- zhushi:key 为片段内相对下标("0".."' + (len - 1) + '");每条 term 必须是对应段 original 的精确子串,否则删或改;note≤40;删 ref/链接;每段≤4 条。\\n' +
     '- yanyi:' + (u.yanyi ? ('保持 1–2 段,删空泛说教与' + fixY + ',确保实质、出处可靠。') : '空数组 []。') + '\\n\\n' +

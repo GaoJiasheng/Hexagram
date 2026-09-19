@@ -185,6 +185,7 @@ export const BOOKS = [
   // skNotes 取 'inline':本书的双行小字是**夹在句中**的自注(「{{SK notes|一云}}髙{{SK notes|一云}}身孤」)
   // 与附在断语后的命例表,拆成独立段会把句子切碎;独占一行的那些(卷八九的命例表)本来就自成一段。
   {
+    punctLayer: true,   // 四库白文无标点 → 走断句层(scripts/lib/punct-layer.mjs:去标点后须与底本逐字相等)
     slug: 'sanming', title: '三命通会', pages: SANMING_PAGES,
     skqs: true, skNotes: 'inline', splitHeadings: true,
     sections: SANMING_SECTIONS, titlePrefix: SANMING_VOLS,
@@ -205,6 +206,7 @@ export const BOOKS = [
   // skNotes 取 'para':本书的双行小字是**注文自成一层**(卷上每条六十甲子之后缀「命入贵格明暗取官」
   // 之类八字断语、卷中卷下大段注文),让它各自成段,正文与注文才分得开——inline 会把整卷粘成一两段。
   {
+    punctLayer: true,   // 四库白文无标点 → 走断句层(scripts/lib/punct-layer.mjs:去标点后须与底本逐字相等)
     slug: 'lixuzhong', title: '李虚中命书',
     pages: ['李虛中命書 (四庫全書本)/卷上', '李虛中命書 (四庫全書本)/卷中', '李虛中命書 (四庫全書本)/卷下'],
     skqs: true, skNotes: 'para', dropParaRe: SKQS_FRONT_RE + '|' + SKQS_TIYAO_RE,
@@ -226,6 +228,7 @@ export const BOOKS = [
   // skNotes 取 'para':注文即本书主体(全页 264 处小字注),须与经文分段,否则整卷只剩两三段。
   // 页首是四庫提要(即「盖晚出依托之本…疑书与注文均出自张[颙顒]一人之手而假名于璞」那一篇),剔除。
   {
+    punctLayer: true,   // 四库白文无标点 → 走断句层(scripts/lib/punct-layer.mjs:去标点后须与底本逐字相等)
     slug: 'yuzhao', title: '玉照定真经', pages: ['玉照定真經 (四庫全書本)'],
     skqs: true, skNotes: 'para', dropParaRe: SKQS_FRONT_RE + '|' + SKQS_TIYAO_RE,
   },
