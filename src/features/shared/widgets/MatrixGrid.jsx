@@ -67,7 +67,7 @@ export default function MatrixGrid({ rows, cols, cells = {}, rowLabel, colLabel,
                         {explain ? (
                           <button
                             type="button"
-                            className={`mx-cellbtn${active ? ' is-active' : ''}`}
+                            className={`mx-cellbtn${active ? ' is-active' : ''}${cell.caveat ? ' mx-cellbtn--caveat' : ''}`}
                             aria-pressed={active}
                             onClick={() => toggle(r, c)}
                           >
@@ -93,6 +93,7 @@ export default function MatrixGrid({ rows, cols, cells = {}, rowLabel, colLabel,
               <p className="mx-detail__head">{pick.row} × {pick.col}{picked.sub ? <span className="mx-detail__sub">{picked.sub}</span> : null}</p>
               {picked.quote && <blockquote className="mx-detail__quote">{picked.quote}</blockquote>}
               {picked.note && <p className="mx-detail__body">{picked.note}</p>}
+              {picked.caveat && <p className="mx-detail__caveat"><span className="mx-detail__caveat-tag">原书此处有出入</span>{picked.caveat}</p>}
               {picked.href && <p className="mx-detail__link"><Link to={picked.href}>{linkLabel}</Link></p>}
             </>
           ) : (

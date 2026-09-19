@@ -47,6 +47,7 @@ export default function QiongtongMatrixPage() {
         quote: c.quote,
         note: c.gist,
         sub: c.shared ? `原书与「${c.shared}」合论` : undefined,
+        caveat: typeof c.unsure === 'string' ? c.unsure : undefined,
         href: hrefOf(c.gan, c.para),
       }
     }
@@ -55,7 +56,7 @@ export default function QiongtongMatrixPage() {
       props: {
         rows: GAN, cols: MONTHS, cells, colorGan: true,
         rowLabel: '日主(十天干)', colLabel: '生在哪个月(以节气分月,正月 = 寅月)',
-        foot: '一格 = 此干生于此月,原书先取什么、次取什么。',
+        foot: '一格 = 此干生于此月,原书先取什么、次取什么。右上带小点的格,是原书自己前后说法不一之处,点开有说明。',
       },
     }
   }, [state, meta])

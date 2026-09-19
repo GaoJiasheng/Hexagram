@@ -52,3 +52,9 @@ button.mx-cellbtn:hover { border-color: color-mix(in srgb, var(--ink) 25%, trans
 .mx-detail__link { margin: 8px 0 0; font-size: 0.82rem; }
 .mx-detail__link a { color: var(--cinnabar); text-decoration: none; }
 .mx-detail__link a:hover { text-decoration: underline; }
+
+/* 原书自身前后说法不一的格:右上角一粒小点,点开面板里有说明(如实标出,不替原书拍板) */
+.mx-cellbtn--caveat { position: relative; }
+.mx-cellbtn--caveat::after { content: ''; position: absolute; top: 3px; right: 3px; width: 5px; height: 5px; border-radius: 50%; background: var(--ochre, #b07a2a); }
+.mx-detail__caveat { margin: 10px 0 0; padding: 8px 10px; font-size: 0.86rem; line-height: 1.7; color: var(--ink-soft); background: color-mix(in srgb, var(--ochre, #b07a2a) 9%, transparent); border-radius: 6px; }
+.mx-detail__caveat-tag { display: inline-block; margin-right: 8px; font-size: 0.74rem; letter-spacing: 0.06em; color: var(--ochre, #b07a2a); border: 1px solid currentColor; border-radius: 3px; padding: 0 5px; }

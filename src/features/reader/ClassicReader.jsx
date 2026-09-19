@@ -51,6 +51,9 @@ export default function ClassicReader({
   renderBaihua = () => null,   // 白话模块入口条（design-v22），挂在章题之下
   renderPoemHead = () => null, // 一章多首的书(诗经):诗题段升格为诗头 + 诗级白话入口
   renderPieceHead = () => null, // 一章多条的书(传习录):无标题段可认,故在某段之前插入「条头」
+  hiddenHint = '',             // paraClass 把当前屏的段全部隐藏时显示的一句话
+  toolbarExtra = null,         // 工具条末尾的附加控件(观数·滴天髓的分层档位)
+  paraClass = () => '',        // 段的附加类名(观数·滴天髓:按 纲领/原注/任氏 分层,供折叠与着重)
   renderParaExtra = () => null, // 段内附加件(观数:命例段下挂四柱图)。落在 .read-para__body 之内,故不受段的 paint 包含裁剪
   // 长章拆页(owner 2026-07-30):章仍是第 N 章(全站译文/注疏/白话/收藏/锚点皆按章号索引,
   // 不可动),只在「显示层」把超长章分屏。partOf(章) → [{from,to,label}] 或 null(不拆)。
@@ -225,6 +228,7 @@ export default function ClassicReader({
           </button>
         </label>
       )}
+      {toolbarExtra}
     </div>
   )
 
@@ -282,7 +286,7 @@ export default function ClassicReader({
     const text = <ClassicText original={p.original} translation={p.translation} anchors={getAnchors(no, i)} verse={verse} />
     if (!markCtx) {
       return (
-        <div key={i} id={single ? `seg-${no}-${i}` : `p${i + 1}`} className="read-para read-para--markable">
+        <div key={i} id={single ? `seg-${no}-${i}` : `p${i + 1}`} className={`read-para read-para--markable ${paraClass(no, p, i)}`}>
           {!single && <span id={`seg-${no}-${i}`} className="read-para__legacy-anchor" aria-hidden="true" />}
           {label && <span className="read-para__num">{label}</span>}
           <div className="read-para__body">{text}{renderParaExtra(no, p, i)}</div>
@@ -304,7 +308,7 @@ export default function ClassicReader({
     const isEditing = editing === key
     const copied = copiedSeg === `${no}-${i}`
     return (
-      <div key={i} id={single ? `seg-${no}-${i}` : `p${i + 1}`} className={`read-para read-para--markable ${marked ? 'read-para--marked' : ''}`}>
+      <div key={i} id={single ? `seg-${no}-${i}` : `p${i + 1}`} className={`read-para read-para--markable ${marked ? 'read-para--marked' : ''} ${paraClass(no, p, i)}`}>
         {!single && <span id={`seg-${no}-${i}`} className="read-para__legacy-anchor" aria-hidden="true" />}
         {label && <span className="read-para__num">{label}</span>}
         <div className="read-para__body">
@@ -512,6 +516,10 @@ export default function ClassicReader({
                 </div>
               )}
               {slice.map(([p, i]) => Para(cur.no, p, i))}
+              {/* 分层档位把这一屏的段全藏了(滴天髓有两屏整屏是任氏命例、没有纲领)→ 给一句话,别留白屏 */}
+              {hiddenHint && slice.length > 0 && slice.every(([p, i]) => /--hidden\b/.test(paraClass(cur.no, p, i))) && (
+                <p className="read-hidden-hint">{hiddenHint}</p>
+              )}
               {/* 注疏/延伸/白话只挂在最后一部分,不逐屏重复 */}
               {lastPart && <ChapterNotes chapter={cur} getAnchors={getAnchors} />}
               {lastPart && renderYanyi(cur.no)}

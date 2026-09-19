@@ -4558,3 +4558,14 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .qt-matrix-page .wg { margin-top: 26px; }
 .qt-matrix-next { margin: 26px 0 48px; }
 .qt-matrix-next a { color: var(--cinnabar); text-decoration: none; }
+
+/* ── 观数 · 滴天髓阐微三层(纲领 / 原注 / 任氏阐发)──────────────
+   纲领是全章的骨头:放大、加朱线;原注次之;任氏的阐发与命例是正文常态。
+   「只看纲领」档把下两层藏起来,一眼看到这一章到底说了几句话。 */
+.read-para.dts--hidden { display: none; }
+.read-para.dts--gang .classic-text__original { font-size: 1.12em; font-weight: 600; letter-spacing: 0.04em; }
+.read-para.dts--gang { border-left: 3px solid var(--cinnabar); padding-left: 14px; margin-top: 28px; }
+.read-para.dts--zhu .classic-text__original { color: var(--ink-soft); }
+.dts-modes { margin-left: auto; }
+@media (max-width: 768px) { .dts-modes { margin-left: 0; } }
+.read-hidden-hint { margin: 32px 0; padding: 14px 16px; border: 1px dashed var(--line); border-radius: 8px; color: var(--ink-soft); font-size: 0.92rem; text-align: center; }

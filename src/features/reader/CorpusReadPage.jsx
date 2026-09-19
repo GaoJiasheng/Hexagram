@@ -8,6 +8,7 @@ import ClassicReader from './ClassicReader.jsx'
 import YanyiBlock from './YanyiBlock.jsx'
 import BaihuaBlock from './BaihuaBlock.jsx'
 import { chapterParts, chapterAnchors } from './chapterParts.js'
+import { ditiansuiLayers, LAYER_MODES } from '../mingli/ditiansuiLayers.js'
 
 // 命例成图只有观数组用得到:懒加载,别让读《论语》的人也下这一块
 const ParaPillars = lazy(() => import('../mingli/ParaPillars.jsx'))
@@ -24,6 +25,8 @@ export default function CorpusReadPage({ corpus }) {
   const { slug, chapter: chapterParam } = useParams()
   const [book, setBook] = useState(null)
   const [loading, setLoading] = useState(true)
+  // 观数·滴天髓阐微的三层档位(纲领 / +原注 / 全部)。Hook 须在任何提前 return 之前。
+  const [dtsMode, setDtsMode] = useState('all')
   const chapter = Number(chapterParam) || 1
   const meta = getMeta(corpus, slug)
   usePageTitle(meta ? `${meta.title}·第${chapterParam}${meta.sectionUnit || '章'}` : null, site?.brand)
@@ -92,6 +95,9 @@ export default function CorpusReadPage({ corpus }) {
   const pieceHeads = {}   // 段下标 → piece
   for (const pc of meta.pieces || []) { if (pc.ch === chapter) pieceHeads[pc.from] = pc }
 
+  // 《滴天髓阐微》:纲领 / 原注 / 任氏阐发 三层混排,按段首标记自动分层(design-v23 §7)
+  const dtsLayers = corpus === 'mingli' && slug === 'ditiansui' && curChapter ? ditiansuiLayers(curChapter.paragraphs) : null
+
   const poemParaLabel = (no, i) => {
     if (!curChapter) return null
     let n = 0
@@ -115,6 +121,20 @@ export default function CorpusReadPage({ corpus }) {
       getAnchors={(no, i) => getAnchors(corpus, slug, no, i)}
       renderYanyi={(no) => <YanyiBlock corpus={corpus} slug={slug} chapter={no} />}
       renderBaihua={(no) => <BaihuaBlock corpus={corpus} slug={slug} chapter={no} bookTitle={meta.title} sectionUnit={meta.sectionUnit || '章'} />}
+      paraClass={dtsLayers ? (no, p, i) => {
+        const L = dtsLayers[i]
+        const hidden = (dtsMode === 'gang' && L !== 'gang') || (dtsMode === 'zhu' && L === 'ren')
+        return `dts dts--${L}${hidden ? ' dts--hidden' : ''}`
+      } : undefined}
+      hiddenHint={dtsLayers && dtsMode !== 'all' ? '这一屏全是任氏的阐发与命例，没有纲领句。切到「全部」即可看到。' : ''}
+      toolbarExtra={dtsLayers ? (
+        <div className="seg-control dts-modes" role="group" aria-label="显示层次">
+          {LAYER_MODES.map((m) => (
+            <button key={m.key} type="button" className={`seg-btn ${dtsMode === m.key ? 'seg-btn--active' : ''}`}
+              aria-pressed={dtsMode === m.key} title={m.hint} onClick={() => setDtsMode(m.key)}>{m.label}</button>
+          ))}
+        </div>
+      ) : null}
       renderParaExtra={corpus === 'mingli' ? (no, p) => <Suspense fallback={null}><ParaPillars paragraph={p} /></Suspense> : undefined}
       renderPoemHead={poemBook ? (no, i, p) => {
         const ord = poemOrdinals[i]
