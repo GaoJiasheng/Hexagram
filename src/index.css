@@ -3650,8 +3650,13 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .mingli-path { display: flex; flex-direction: column; align-items: center; margin-top: 8px; }
 .mingli-path__level { display: flex; flex-direction: column; align-items: center; width: 100%; }
 .mingli-path__row { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; width: 100%; }
-.mingli-path__row--triple .mingli-path__card { flex: 1 1 240px; max-width: 300px; }
-.mingli-path__card { width: 100%; }
+.mingli-path__cell { display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 420px; }
+.mingli-path__row--triple .mingli-path__cell { flex: 1 1 240px; max-width: 300px; }
+.mingli-path__card { width: 100%; flex: 1; }
+.mingli-path__shape { align-self: stretch; display: flex; align-items: center; gap: 8px; padding: 7px 12px; border: 1px dashed color-mix(in srgb, var(--cinnabar) 45%, transparent); border-radius: 8px; font-size: 0.86rem; color: var(--cinnabar); text-decoration: none; background: color-mix(in srgb, var(--cinnabar) 4%, transparent); }
+.mingli-path__shape:hover { background: color-mix(in srgb, var(--cinnabar) 10%, transparent); border-style: solid; }
+.mingli-path__shape-tag { font-size: 0.68rem; letter-spacing: 0.08em; border: 1px solid currentColor; border-radius: 3px; padding: 0 5px; }
+.mingli-path__gate--tool { border-style: dashed; }
 /* 学堂入口:圆角药丸,不与下方的书卡同形——它是「门」不是「书」 */
 .mingli-path__gate { display: flex; align-items: center; gap: 10px; padding: 12px 24px; border: 1px solid var(--line); border-radius: 22px; background: var(--paper-raised); text-decoration: none; transition: border-color 0.15s, transform 0.15s; }
 .mingli-path__gate:hover { border-color: var(--cinnabar); transform: translateY(-1px); }
@@ -3673,7 +3678,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   .mingli-path__fork { display: none; }
   .mingli-path__connector--branch::before { content: ''; display: block; width: 2px; height: 30px; background: var(--line); margin: 0 auto; }
   .mingli-path__row--triple { flex-direction: column; align-items: center; }
-  .mingli-path__row--triple .mingli-path__card { max-width: 420px; width: 100%; }
+  .mingli-path__row--triple .mingli-path__cell { max-width: 420px; width: 100%; flex: none; }
 }
 
 /* 观数 · 学堂单篇:上一篇/下一篇并排接力(learn-next 默认靠右单条,这里左右各一) */

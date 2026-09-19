@@ -41,9 +41,19 @@ function BookCard({ t }) {
       </span>
     </>
   )
-  return pending
-    ? <div className="dao-book dao-book--pending mingli-path__card" aria-disabled="true">{inner}</div>
-    : <Link to={`/mingli/${t.slug}`} className="dao-book mingli-path__card">{inner}</Link>
+  // 卡片本身是一个链接,「这本书的形状」入口不能嵌在里面(a 套 a 不合法)→ 作为同格的第二个链接挂在卡片下
+  return (
+    <div className="mingli-path__cell">
+      {pending
+        ? <div className="dao-book dao-book--pending mingli-path__card" aria-disabled="true">{inner}</div>
+        : <Link to={`/mingli/${t.slug}`} className="dao-book mingli-path__card">{inner}</Link>}
+      {t.shape && !pending && (
+        <Link to={t.shape.href} className="mingli-path__shape">
+          <span className="mingli-path__shape-tag">动手</span>{t.shape.label} →
+        </Link>
+      )}
+    </div>
+  )
 }
 
 function PlaceholderCard({ stage }) {
@@ -144,6 +154,16 @@ export default function MingliHomePage() {
         </div>
 
         <Connector variant="merge" />
+
+        <div className="mingli-path__level">
+          <Link to="/mingli/paipan" className="mingli-path__gate mingli-path__gate--tool">
+            <span className="mingli-path__gate-tag">读到这里,自己排一个 · 只排结构,不作断语</span>
+            <span className="mingli-path__gate-title">排盘台</span>
+            <span className="mingli-path__gate-arrow" aria-hidden="true">→</span>
+          </Link>
+        </div>
+
+        <Connector />
 
         <div className="mingli-path__level">
           <div className="mingli-path__row">
