@@ -65,6 +65,7 @@ const ZhenquanGejuPage = lazy(() => import('./features/mingli/ZhenquanGejuPage.j
 const DitiansuiCasesPage = lazy(() => import('./features/mingli/DitiansuiCasesPage.jsx'))
 const MingliConceptsPage = lazy(() => import('./features/mingli/MingliConceptsPage.jsx'))
 const YuanhaiGejuePage = lazy(() => import('./features/mingli/YuanhaiGejuePage.jsx'))
+const SanmingRishiPage = lazy(() => import('./features/mingli/SanmingRishiPage.jsx'))
 const CorpusTextPage = lazy(() => import('./features/reader/CorpusTextPage.jsx'))
 const CorpusReadPage = lazy(() => import('./features/reader/CorpusReadPage.jsx'))
 const BaihuaPage = lazy(() => import('./features/reader/BaihuaPage.jsx'))
@@ -473,6 +474,7 @@ function AppContent() {
           <Route path="/mingli/zhenquan/geju" element={<ZhenquanGejuPage />} />
           <Route path="/mingli/concepts" element={<MingliConceptsPage />} />
           <Route path="/mingli/yuanhai/gejue" element={<YuanhaiGejuePage />} />
+          <Route path="/mingli/sanming/rishi" element={<SanmingRishiPage />} />
           <Route path="/mingli/ditiansui/cases" element={<DitiansuiCasesPage />} />
           <Route path="/mingli/ditiansui/cases/:id" element={<DitiansuiCasesPage />} />
           <Route path="/mingli/paipan" element={<PaipanPage />} />

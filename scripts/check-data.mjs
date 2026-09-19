@@ -360,6 +360,25 @@ const mingliBooks = checkReadingCorpus('观数', 'mingli', '章')
   }
 }
 
+// ---------- 4b⁵. 观数 · 三命通会日时索引(design-v23 §7)----------
+// 索引由 gen-sanming-rishi.mjs 生成;这里守住「每格指向的那一段,段首确是这个日柱」——底本重抓后段号若移位,这里会响。
+{
+  const ip = path.join(ROOT, 'src/data/mingli/matrix/sanming-rishi.json')
+  const bp = path.join(ROOT, 'src/data/mingli/classics/sanming.json')
+  if (fs.existsSync(ip) && fs.existsSync(bp)) {
+    const idx = JSON.parse(fs.readFileSync(ip, 'utf8'))
+    const book = JSON.parse(fs.readFileSync(bp, 'utf8'))
+    const byNo = new Map(book.chapters.map((c) => [c.no, c]))
+    let bad = 0
+    for (const c of idx.cells || []) {
+      const p = byNo.get(c.ch)?.paragraphs[c.para]
+      const head = p ? p.original.replace(/[\s\u3000\uFF0C\u3002\u3001]/g, '').replace(/夘/g, '卯') : ''
+      if (!head.startsWith(c.day + '日')) { bad++; if (bad <= 5) err(`三命通会日时索引 ${c.day}日${c.hour}时: 第 ${c.ch} 章第 ${c.para} 段段首不是「${c.day}日」—— 重跑 node scripts/gen-sanming-rishi.mjs`) }
+    }
+    infos.push(`三命通会日时索引: ${(idx.cells || []).length}/720 格 · 缺 ${(idx.missing || []).length} · 段首不符 ${bad}`)
+  }
+}
+
 // ---------- 4c. 筮例(v9 §1) ----------
 {
   const shiliPath = path.join(ROOT, 'src/data/yijing/shili.json')
