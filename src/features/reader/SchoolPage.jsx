@@ -9,7 +9,7 @@ import { SITE_MAP } from '../../sites/registry.js'
 export default function SchoolPage({ corpus }) {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
-  usePageTitle(data?.title || '一家之来路')
+  usePageTitle(data?.title || '一家之来路', SITE_MAP[corpus]?.brand)
 
   useEffect(() => {
     let alive = true

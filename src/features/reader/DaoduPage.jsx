@@ -10,7 +10,7 @@ export default function DaoduPage({ corpus }) {
   const { slug } = useParams()
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
-  usePageTitle(data?.title || '书级导读')
+  usePageTitle(data?.title || '书级导读', SITE_MAP[corpus]?.brand)   // 各组缀各自的品牌(原先一律落到默认的「观象」)
 
   useEffect(() => {
     let alive = true
