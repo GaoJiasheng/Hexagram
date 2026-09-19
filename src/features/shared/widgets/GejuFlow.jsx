@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { GAN, ZHI, ganWuxing } from '../ganzhi/index.js'
-import { determineGeju, SHUN_NI_QUOTE } from '../ganzhi/geju.js'
+import { determineGeju, SHUN_NI_QUOTE, GEJU_NOTES as NOTE } from '../ganzhi/geju.js'
 import './GejuFlow.css'
 
 // 格局判定流程图(kind: geju)—— 《子平真诠》全书的「入口」。
@@ -17,18 +17,6 @@ const MONTH_ZHI = ['寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌'
 const ZHI_WX = { 子: '水', 丑: '土', 寅: '木', 卯: '木', 辰: '土', 巳: '火', 午: '火', 未: '土', 申: '金', 酉: '金', 戌: '土', 亥: '水' }
 
 const BASE = '/mingli/zhenquan'
-// 每条说明 = 一句人话 + 原书的话 + 出处章。引文逐字取自站内底本(geju.test.js 有断言)。
-const NOTE = {
-  'zaqi-butou': { say: '辰戌丑未是「杂气」月,一个地支里藏着三样东西。原书的办法是看谁透出来;都不透,就暂按本气论,但格不算清。', quote: '四墓者，杂气也……透干会取其清者用之，杂而不杂也。', ch: 17, title: '论杂气如何取用' },
-  'zaqi-tou': { say: '杂气月,透出来的那个作主。', quote: '一透则一用，兼透则兼用，透而又会，则透与会并用。', ch: 17, title: '论杂气如何取用' },
-  bianhua: { say: '月令本气没透、别的藏干透了——于是透出来的那个说了算。这就是原书说的「用神变化」。', quote: '假使寅月为提，不透甲而透丙，则如知府不临郡，而同知得以作主。', ch: 11, title: '论用神变化' },
-  jiange: { say: '本气透了,别的藏干也透了:格仍按本气定,另一个算兼格。', quote: '变之而不失本格者', ch: 11, title: '论用神变化' },
-  'jiantou-zaqi': { say: '杂气月里不止一个透出来,就都要用上;它们之间是相成还是相背,原书分「有情」「无情」去讲。', quote: '其合而有情者吉，其合而无情者则不吉。', ch: 17, title: '论杂气如何取用' },
-  'lujie-lingqu': { say: '月令和日主是同一种五行——自己不能拿自己当用神。原书的办法是到四柱里另找财官煞食;那需要整个八字,这个件到此为止。', quote: '日与月同，本身不可为用，必看四柱有无财官煞食透干会支，另取用神', ch: 9, title: '论用神' },
-  'wu-wu': { say: '戊的本气在午是丁火(印),但原书明文把戊生午月当阳刃讲。', quote: '若戊生午月，干透丙火，支会火局，则化刃为印', ch: 44, title: '论阳刃' },
-  'lu-tu': { say: '按「禄」的位置,戊禄在巳、己禄在午(火土同宫),此月也算得上建禄;但月令本气对日主是印。原书没有单独举这个例子,这里从本气,如实记下这一处。', quote: '建禄者，月建逢禄堂也，禄即是劫。', ch: 46, title: '论建禄月劫' },
-  'yin-jie': { say: '阴干遇劫财不叫「刃」,归在月劫里。', quote: '禄前一位，惟五阳有之，故为阳刃。', ch: 44, title: '论阳刃' },
-}
 const REASON = {
   'benqi-default': '没有标透干 → 按月令本气论',
   'benqi-tou': '本气透出 → 本气作主',

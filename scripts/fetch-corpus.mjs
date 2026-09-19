@@ -595,6 +595,8 @@ async function main() {
       const re = new RegExp(book.stopParaRe)
       for (const c of chapters) { const idx = c.paragraphs.findIndex((p) => re.test(p.original)); if (idx >= 0) c.paragraphs = c.paragraphs.slice(0, idx) }
     }
+    // 剔段/截断后整章为空的,连章一起去掉(子平真诠末篇「附论杂格取运」整篇系徐乐吾所补,截断后即空)
+    for (let k = chapters.length - 1; k >= 0; k--) if (!chapters[k].paragraphs.length) chapters.splice(k, 1)
 
     // fixes([{from,to,reason}]):底本错字精确整段勘误,须在 mergeGanzhiRuns 之前生效——
     // from 必须与某段 original **整段完全相等**才替换(不是子串替换,防误伤),每条命中打日志、
@@ -614,6 +616,39 @@ async function main() {
     let ganzhiStat = null
     if (book.mergeGanzhiRuns) {
       ganzhiStat = mergeGanzhiRuns(chapters, warnings, book.pages?.[0] ?? book.localFile ?? book.slug)
+    }
+
+    // mergeCaseTables(穷通宝鉴专用):底本把命例排成横表——
+    //   「时日月年」/「庚丙庚丙」(四柱天干,时→年)/「寅午寅午」(四柱地支)/「两间不杂，按察<TAB>时日月年」…
+    // 一个命例被拆成三段,案语还和下一个表头用制表符粘在同一段。这不只是难看:译注代理被这些
+    // 碎行带偏,整单元译文错位一段(2026-09-19 实测穷通第 4、7 章三个单元中招)。
+    // 这里:①按制表符拆段 ②表头+天干行+地支行 → 一个结构化命例段(pillars 按 年月日时 排,
+    // 与滴天髓同构,阅读器直接出四柱图)。四柱不合六十甲子的(底本讹字)原样保留三行并报 warning。
+    let caseTableStat = null
+    if (book.mergeCaseTables) {
+      const GAN_S = '甲乙丙丁戊己庚辛壬癸', ZHI_S = '子丑寅卯辰巳午未申酉戌亥'
+      const strip = (t) => t.replace(/[\s\u3000]/g, '')
+      const isHead = (t) => strip(t) === '时日月年'
+      const isRow = (t, set) => { const x = strip(t); return [...x].length === 4 && [...x].every((c) => set.includes(c)) }
+      let merged = 0, broken = 0
+      for (const c of chapters) {
+        const flat = c.paragraphs.flatMap((p) => p.original.split('\t').map((t) => t.trim()).filter(Boolean).map((t) => ({ ...p, original: t })))
+        const out = []
+        for (let i = 0; i < flat.length; i++) {
+          if (isHead(flat[i].original) && flat[i + 1] && flat[i + 2] && isRow(flat[i + 1].original, GAN_S) && isRow(flat[i + 2].original, ZHI_S)) {
+            const g = [...strip(flat[i + 1].original)], z = [...strip(flat[i + 2].original)]
+            const pillars = [3, 2, 1, 0].map((k) => g[k] + z[k])        // 底本 时日月年 → 年月日时
+            const ok = pillars.every((gz) => GAN_S.indexOf(gz[0]) % 2 === ZHI_S.indexOf(gz[1]) % 2)
+            if (ok) { out.push({ original: pillars.join(' '), translation: null, kind: 'mingli', pillars }); merged++; i += 2; continue }
+            broken++
+            warnings.push(`${book.title} 第${c.no}章: 命例表「${flat[i + 1].original}/${flat[i + 2].original}」四柱不合六十甲子(底本讹字),原样保留`)
+          }
+          out.push(flat[i])
+        }
+        c.paragraphs = out
+      }
+      caseTableStat = { merged, broken }
+      console.log(`  命例横表合并: ${merged} 处${broken ? `,${broken} 处干支不合法原样保留` : ''}`)
     }
 
     // typoFixes([{from,to,reason,expect}]):底本**形讹**的子串勘误(区别于上面整段相等的 fixes)。

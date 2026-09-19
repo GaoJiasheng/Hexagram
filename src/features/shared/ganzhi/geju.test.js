@@ -1,22 +1,23 @@
 import { describe, it, expect } from 'vitest'
-import { determineGeju, YANGREN, SHUN_NI_QUOTE } from './geju.js'
+import { determineGeju, YANGREN, SHUN_NI_QUOTE, GEJU_NOTES } from './geju.js'
 import { GAN, ZHI } from './index.js'
 import zhenquan from '../../../data/mingli/classics/zhenquan.json'
 
-const para = (ch, i) => zhenquan.chapters.find((c) => c.no === ch).paragraphs[i].original
+// 按章取全文、不按段下标:底本净化(剔除评注本一系的增益文字)会让段号移位,引文在哪一章才是稳定的
+const para = (ch) => zhenquan.chapters.find((c) => c.no === ch).paragraphs.map((p) => p.original).join('\n')
 
 describe('子平真诠取格 · 以原书自己举的例子为验', () => {
   // 《论杂气如何取用》17·1:「如甲生辰月,透戊则用偏财,透癸则用正印,透乙则用月劫是也」
   it('甲生辰月:透戊→财、透癸→印、透乙→月劫', () => {
-    expect(para(17, 1)).toContain('甲生辰月，透戊则用偏财，透癸则用正印，透乙则用月劫')
+    expect(para(17)).toContain('甲生辰月，透戊则用偏财，透癸则用正印，透乙则用月劫')
     expect(determineGeju('甲', '辰', ['戊']).geju.name).toBe('财格')
     expect(determineGeju('甲', '辰', ['癸']).geju.name).toBe('印绶格')
     expect(determineGeju('甲', '辰', ['乙']).geju.name).toBe('建禄月劫格')
   })
   // 《论用神变化》11·2:「辛生寅月,逢丙而化财为官」;11·4:「透丙化官,而又透甲,格成正财,正官乃其兼格也」
   it('辛生寅月:本为财;透丙化官;丙甲并透仍是财、官为兼格', () => {
-    expect(para(11, 2)).toContain('辛生寅月，逢丙而化财为官')
-    expect(para(11, 4)).toContain('格成正财，正官乃其兼格也')
+    expect(para(11)).toContain('辛生寅月，逢丙而化财为官')
+    expect(para(11)).toContain('格成正财，正官乃其兼格也')
     expect(determineGeju('辛', '寅').geju.name).toBe('财格')
     const r = determineGeju('辛', '寅', ['丙'])
     expect(r.geju.name).toBe('正官格'); expect(r.reason).toBe('other-tou')
@@ -40,14 +41,14 @@ describe('子平真诠取格 · 以原书自己举的例子为验', () => {
   })
   // 《论阳刃》44·0「禄前一位,惟五阳有之」;44·1「丙生午月」;44·4「若戊生午月…则化刃为印」
   it('阳刃只有五阳干;戊生午月是刃(原书明文)', () => {
-    expect(para(44, 0)).toContain('禄前一位，惟五阳有之')
-    expect(para(44, 4)).toContain('若戊生午月')
+    expect(para(44)).toContain('禄前一位，惟五阳有之')
+    expect(para(44)).toContain('若戊生午月')
     for (const [g, z] of Object.entries(YANGREN)) expect(determineGeju(g, z).geju.name).toBe('阳刃格')
     expect(determineGeju('戊', '午').notes).toContain('wu-wu')
     expect(determineGeju('乙', '寅').kind).toBe('lujie')      // 阴干劫财不称刃
   })
   it('建禄:甲寅、乙卯、庚申、癸子…皆归建禄月劫一格', () => {
-    expect(para(46, 0)).toContain('建禄与月劫，可同一格，不必加分')
+    expect(para(46)).toContain('建禄与月劫，可同一格，不必加分')
     for (const [g, z] of [['甲', '寅'], ['乙', '卯'], ['庚', '申'], ['辛', '酉'], ['壬', '亥'], ['癸', '子']]) {
       const r = determineGeju(g, z)
       expect(r.geju.name).toBe('建禄月劫格'); expect(r.lu).toBe(true)
@@ -60,12 +61,19 @@ describe('子平真诠取格 · 以原书自己举的例子为验', () => {
     }
   })
   it('全部 120 种日主×月令都有格名、章号;顺逆引文逐字出自《论用神》', () => {
-    const src = para(9, 7)
+    const src = para(9)
     for (const q of Object.values(SHUN_NI_QUOTE)) expect(src).toContain(q)
     for (const g of GAN) for (const z of ZHI) {
       const r = determineGeju(g, z)
       expect(r.geju.name).toBeTruthy(); expect(r.geju.ch).toBeGreaterThan(30)
       expect(SHUN_NI_QUOTE[r.geju.name]).toBeTruthy()
+    }
+  })
+  // 页面上每条说明引的原话,都必须真在它所标的那一章里(「……」是中略,两头各自命中即可)。
+  // 这条断言在底本净化(剔除评注本增益文字)那天救过场:引文若出自被剔的段,这里立刻红。
+  it('说明里引的原话逐条命中所标之章', () => {
+    for (const [k, n] of Object.entries(GEJU_NOTES)) {
+      for (const piece of n.quote.split('……')) expect(para(n.ch), `${k} → 第 ${n.ch} 章`).toContain(piece)
     }
   })
   it('透干不在藏干里 → 抛错', () => {

@@ -39,7 +39,7 @@ const ZHENQUAN_TITLES = [
   '论墓库刑冲之说', '论四吉神能破格', '论四凶神能成格', '论生克先后分吉凶', '论星辰无关格局',
   '论外格用舍', '论宫分用神配六亲', '论妻子', '论行运', '论行运成格变格', '论喜忌干支有别',
   '论支中喜忌逢运透清', '论时说拘泥格局', '论时说以讹传讹', '论正官', '论正官取运', '论财',
-  '论财取运', '论印绶', '论绶印取运', '论食神', '论食神取运', '论偏官', '论偏官取运', '论伤官',
+  '论财取运', '论印绶', '论印绶取运', '论食神', '论食神取运', '论偏官', '论偏官取运', '论伤官',
   '论伤官取运', '论阳刃', '论阳刃取运', '论建禄月劫', '论建禄月劫取运', '论杂格', '论杂格取运',
 ]
 
@@ -71,15 +71,35 @@ const DITIANSUI_TYPOS = [
   { from: '荆山荆山', to: '荆山', expect: 1, reason: '叠字衍文' },
 ]
 
+// 《穷通宝鉴》殆知阁本命例横表里的三处讹字(合并命例表时因四柱不成立而露出来)。
+// 每条都用起柱规则反推坐实,不凭字形猜:
+const QIONGTONG_FIXES = [
+  { from: '丑辰未戍\t时日月年', to: '丑辰未戌\t时日月年', reason: '「戍」非地支,形讹;改后四柱 戊戌 己未 戊辰 癸丑,五虎遁(戊年未月=己未)、五鼠遁(戊日丑时=癸丑)俱合' },
+  { from: '甲寅亥申\t时日月年', to: '申寅亥申\t时日月年', reason: '地支行首字「甲」非地支;时干庚、日干戊,五鼠遁戊日唯申时起庚申,故必为「申」' },
+  { from: '辛壬戊两', to: '辛壬戊丙', reason: '「两」非天干;月柱戊戌须丙/辛年(五虎遁),年支寅为阳支,故年干必为「丙」' },
+]
+
 export const BOOKS = [
   // 渊海子平:维基文库单页,72 处 ==标题== + 1 处误标为 === 的诗体子标题(先看月令，次看浅深。,
   // 内容完整、非误植,原样保留),splitHeadings 天然按小节切(数百至数千字一章,合乎「宁可章多」原则)。
   // 页首「基础」一节(十神对照表,无 == 包裹)靠 leadTitle 收作首章,否则会被 splitHeadings 丢弃。
   { slug: 'yuanhai', title: '渊海子平', pages: ['淵海子平'], splitHeadings: true, leadTitle: '基础' },
   // 子平真诠:殆知阁本,localBreaks 见上。
-  { slug: 'zhenquan', title: '子平真诠', localFile: 'scripts/sources/mingli/zhenquan.txt', localBreaks: ZHENQUAN_BREAKS, chapterTitles: ZHENQUAN_TITLES, exactChapters: 49,
-    // 两处「徐注：」(民国徐乐吾评注,行643/645)与一处纯句读残行(行61「。」)剔除,见文件头版权闸说明。
-    dropParaRe: '^徐注[：:]|^[。，、；：！？]+$' },
+  { slug: 'zhenquan', title: '子平真诠', localFile: 'scripts/sources/mingli/zhenquan.txt', localBreaks: ZHENQUAN_BREAKS, chapterTitles: ZHENQUAN_TITLES, exactChapters: 48,
+    // ⚠ 2026-09-19 二次核查:此前「通读确认基本是沈氏原文、只夹两处徐注」的结论是**错的**。
+    // 殆知阁此本出自民国徐乐吾《子平真诠评注》(1936),剥去了「徐注:」标签却留下了一部分徐氏文字。
+    // 以三个互相独立的白文本(算准网「沈孝瞻原文」· anhappy PDF「沈孝瞻原著」· 新浪博客录文)逐段对校,
+    // **只收见于白文本者**:
+    //   · 末篇「四十八、附论杂格取运」整篇为徐氏所补(篇中自称「详《滴天髓征义》」——那是徐氏自己的书)→ stopParaRe 截掉,空章自动去除
+    //   · 另 12 段只见于评注本一系(含著名的「取用之法不一,约略归纳,可分为下列五种:扶抑/病药/调候/专旺/通关」,
+    //     措辞与编号体例皆非乾隆间语)→ dropParaRe 逐段剔除。其中「今人不知命理，动以本身之合……」一段评注本标作原文,
+    //     而三种白文本皆无,**存疑不收**(宁缺毋滥;版权与真伪两头都站得住)。
+    // 对校脚本与见证本存于会话 scratchpad,结论记入 scripts/sources/mingli/SOURCES.md。
+    stopParaRe: '^四十八、附论杂格取运',
+    dropParaRe: '^徐注[：:]|^[。，、；：！？]+$'
+      + '|^用神之情，不向日主|^今人不知命理，动以本身之合|^旺衰强弱四字，昔人论命'
+      + '|^取用之法不一，约略归纳|^（[一二三四五]）(扶抑|病药|调候|专旺|通关)。'
+      + '|^财旺生官者，月令星旺|^成中之败，亦变化万端|^以上举官星为例' },
   // 滴天髓阐微:维基文库单页,==通神论==/==六亲论== 两个大类标题下无自身正文(紧接子标题),
   // splitHeadings 按段落数自动过滤为空即丢弃,天然只留 63 个「一、天道」级子标题成章,无需 dropChapterRe。
   // 该页原注/任氏曰分别包在 {{*|原注：…}}/{{annotate|任氏曰：…}} 模板里,由 fetch-corpus.mjs 的
@@ -88,5 +108,5 @@ export const BOOKS = [
   // mergeGanzhiRuns 函数说明;2026-09-19 owner 追加要求)。
   { slug: 'ditiansui', title: '滴天髓阐微', pages: ['滴天髓闡微'], splitHeadings: true, exactChapters: 63, mergeGanzhiRuns: true, fixes: DITIANSUI_FIXES, typoFixes: DITIANSUI_TYPOS, tidyPunct: true },
   // 穷通宝鉴:殆知阁本,localBreaks 见上。
-  { slug: 'qiongtong', title: '穷通宝鉴', localFile: 'scripts/sources/mingli/qiongtong.txt', localBreaks: QIONGTONG_BREAKS, chapterTitles: QIONGTONG_TITLES, exactChapters: 11 },
+  { slug: 'qiongtong', title: '穷通宝鉴', localFile: 'scripts/sources/mingli/qiongtong.txt', localBreaks: QIONGTONG_BREAKS, chapterTitles: QIONGTONG_TITLES, exactChapters: 11, fixes: QIONGTONG_FIXES, mergeCaseTables: true },
 ]

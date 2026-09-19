@@ -251,9 +251,41 @@ const mingliBooks = checkReadingCorpus('观数', 'mingli', '章')
     for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.json'))) {
       const book = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'))
       const text = (book.chapters || []).flatMap((c) => c.paragraphs.map((p) => p.original)).join('')
+      // 《子平真诠》专项:殆知阁本出自徐乐吾评注本一系,剥了标签的徐氏增益文字词表扫不出来
+      // (2026-09-19 已据三种白文本逐段对校剔除,见 SOURCES.md)。这几处是那批文字的指纹,防回潮。
+      if (f === 'zhenquan.json') {
+        for (const w of ['约略归纳', '下列五种', '旺衰强弱四字', '滴天髓征义', '参观', '曲直仁寿格']) {
+          if (text.includes(w)) err(`观数版权闸 ${f}: 原文命中评注本增益文字的指纹「${w}」——疑剔除规则失效,查 scripts/corpus/mingli.config.mjs 的 dropParaRe/stopParaRe`)
+        }
+      }
       for (const w of BANNED_WORDS) {
         if (text.includes(w)) err(`观数版权闸 ${f}: 原文命中现代评注痕迹词「${w}」——疑混入 20 世纪评注(仍在版权期内),须从 scripts/corpus/mingli.config.mjs 加剔除规则、重跑 fetch-corpus,而非手改生成物`)
       }
+    }
+  }
+}
+
+// ---------- 4b'+. 观数 · 译文对位探测 ----------
+// 装配器只核「译文条数 = 段数」,查不出**整单元错位一段**(2026-09-19 穷通第 4、7 章实测中招:
+// 命例碎行把代理带偏,第 i 条译文译的是第 i-1 段)。这里用三条便宜的形状判据兜一道,报 warn 供人看:
+// 长正文配空译 / 长正文配过短的译 / 短标题配长译。连着出现几条,基本就是错位。
+{
+  const dir = path.join(ROOT, 'src/data/mingli/classics')
+  if (fs.existsSync(dir)) {
+    for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.json'))) {
+      const book = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'))
+      const sus = []
+      for (const c of book.chapters || []) {
+        if (!c.paragraphs.some((p) => p.translation)) continue          // 整章未译,不算
+        c.paragraphs.forEach((p, i) => {
+          if (p.pillars) return
+          const o = [...p.original].length, t = [...(p.translation || '')].length
+          if (o >= 25 && t === 0) sus.push(`${c.no}·${i} 正文无译`)
+          else if (o >= 25 && t < o * 0.6) sus.push(`${c.no}·${i} 译过短`)
+          else if (o <= 8 && t >= 40) sus.push(`${c.no}·${i} 标题配长译`)
+        })
+      }
+      if (sus.length) warn(`观数译文对位 ${f}: ${sus.length} 处形状可疑(疑错位): ${sus.slice(0, 8).join(' · ')}${sus.length > 8 ? ' …' : ''}`)
     }
   }
 }

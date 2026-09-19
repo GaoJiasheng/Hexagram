@@ -32,10 +32,14 @@ const [MODEL_T, MODEL_V] = MODELS_ARG ? MODELS_ARG.split(',') : []
 const ONLY_SET = ONLY ? new Set(ONLY.split(',')) : null
 const SEL = ONLY_SET ? BOOKS.filter(([c, s]) => ONLY_SET.has(s) || ONLY_SET.has(c)) : BOOKS
 const SPLIT = 50 // 单元最大段;>55 段的章按此切片
+// 可选:--chapters=4,7 只为这几章生成(补译/重译用;须与单个 slug 连用)
+const CH_ARG = (process.argv.find((a) => a.startsWith('--chapters=')) || '').slice('--chapters='.length)
+const CH_SET = CH_ARG ? new Set(CH_ARG.split(',').map(Number)) : null
 const units = []
 for (const [corpus, slug] of SEL) {
   const book = JSON.parse(fs.readFileSync(path.join(ROOT, `src/data/${corpus}/classics/${slug}.json`), 'utf8'))
   for (const c of book.chapters) {
+    if (CH_SET && !CH_SET.has(c.no)) continue
     const n = c.paragraphs.length
     const title = c.title || `第${c.no}章`
     if (n <= 55) {
@@ -175,7 +179,7 @@ function styleRule(u) {
     if (u.book === 'yuanhai') return base + ' 渊海子平多歌诀赋体(四言/七言韵语夹杂散论),译文求**达意**、不为凑韵而硬译或增字删字;十神(比肩/劫财/食神/伤官/偏财/正财/偏官/正官/偏印/正印)、十二长生(长生/沐浴/冠带/临官/帝旺/衰/病/死/墓/绝/胎/养)等术语注疏释之。'
     if (u.book === 'zhenquan') return base + ' 子平真诠为论说体(设问自答、层层递进),译文取议论文笔调、逻辑连词(何谓/盖/然/是故)照译不省;格局/用神/相神/月令等术语前后统一译法,不同章节不得改换译语。全书数十篇命造实例(如「甲午、乙酉、丙戌、丁亥」+ 具体人物或宦称)属沈孝瞻原文举证,照译;不得引入徐乐吾等后人评注例证。'
     if (u.book === 'ditiansui') return base + ' 滴天髓阐微逐章分四类段落:①原文纲领(简短韵语,如「欲识三元万法宗」)②原注(旧题刘基注,以「原注：」开头)③任氏曰(任铁樵阐发,以「任氏曰：」开头)④命例——命例已由管线结构化合并为单独一段(kind:"mingli",original 为四柱与大运干支以空格相连、pillars/dayun 为结构化字段),**该类段的 translations 对应位置留空字符串""(不译、不注)**,真正需要译注延的是命例段之后紧跟的那段分析文字(任氏就该命例的议论)。十干十二支、十神、通根、清浊、真假、中和等术语注疏释之。'
-    if (u.book === 'qiongtong') return base + ' 穷通宝鉴以「五行总论」开篇,其后十干各章内有「三春甲木总论」「三春甲木」等小节题行(原书自身的小标题,不是维基文库或本站另加的)——**这类小节题行段的 translations 对应位置留空字符串""(不译、不注)**,真正的译文从其后的正文句开始;调候用神的「先用某,次用某」表述须严格按原文次序译准(先取谁调候、次取谁辅佐,顺序不可颠倒或省略),十干喜某忌某的判断照译不改写为判断句之外的语气。'
+    if (u.book === 'qiongtong') return base + ' 穷通宝鉴以「五行总论」开篇,其后十干各章内有「三春甲木总论」「三春甲木」等小节题行(原书自身的小标题,不是维基文库或本站另加的)——**这类小节题行段的 translations 对应位置留空字符串""(不译、不注)**,真正的译文从其后的正文句开始;书中命例已由管线结构化为单独一段(original 形如「丙午 庚寅 丙午 庚寅」四个干支以空格相连,即年月日时四柱),**命例段同样留空字符串""**,其后紧跟的短案语(如「两间不杂，按察」「庚运夺魁」)是原书对该命例的评语,须照译;**译文数组必须与原文段一一对位——交稿前逐段核对:第 i 条译文译的必须是第 i 段原文,留空的位置不得被后文顶上**;调候用神的「先用某,次用某」表述须严格按原文次序译准(先取谁调候、次取谁辅佐,顺序不可颠倒或省略),十干喜某忌某的判断照译不改写为判断句之外的语气。'
     return base
   }
   if (u.corpus === 'dao') {
