@@ -4645,3 +4645,8 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .mingli-fanli summary { cursor: pointer; font-family: var(--font-serif); font-size: 1rem; color: var(--ink); padding: 4px 0; }
 .mingli-fanli ul { margin: 10px 0 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 8px; line-height: 1.85; }
 .mingli-fanli strong { color: var(--ink); font-weight: 600; }
+
+/* 原书自带的小节题行(穷通宝鉴「正月甲木:」一类):排成小标题,不编段号、不出段操作 */
+.read-para.read-para--subhead { margin-top: 30px; margin-bottom: 4px; }
+.read-para.read-para--subhead .classic-text__original { font-family: var(--font-serif); font-weight: 700; font-size: 1.05em; color: var(--cinnabar); letter-spacing: 0.06em; }
+.read-para.read-para--subhead .read-para__num, .read-para.read-para--subhead .para-actions { display: none; }

@@ -95,6 +95,8 @@ export default function CorpusReadPage({ corpus }) {
   const pieceHeads = {}   // 段下标 → piece
   for (const pc of meta.pieces || []) { if (pc.ch === chapter) pieceHeads[pc.from] = pc }
 
+  // 《穷通宝鉴》:原书自带的小节题行(「正月甲木:」「三春甲木总论」…,无译文的短段)排成小标题,别和正文一个样
+  const isQiongtong = corpus === 'mingli' && slug === 'qiongtong'
   // 《滴天髓阐微》:纲领 / 原注 / 任氏阐发 三层混排,按段首标记自动分层(design-v23 §7)
   const dtsLayers = corpus === 'mingli' && slug === 'ditiansui' && curChapter ? ditiansuiLayers(curChapter.paragraphs) : null
 
@@ -121,7 +123,7 @@ export default function CorpusReadPage({ corpus }) {
       getAnchors={(no, i) => getAnchors(corpus, slug, no, i)}
       renderYanyi={(no) => <YanyiBlock corpus={corpus} slug={slug} chapter={no} />}
       renderBaihua={(no) => <BaihuaBlock corpus={corpus} slug={slug} chapter={no} bookTitle={meta.title} sectionUnit={meta.sectionUnit || '章'} />}
-      paraClass={dtsLayers ? (no, p, i) => {
+      paraClass={isQiongtong ? (no, p) => (!p.pillars && !p.translation && [...p.original].length <= 12 ? 'read-para--subhead' : '') : dtsLayers ? (no, p, i) => {
         const L = dtsLayers[i]
         const hidden = (dtsMode === 'gang' && L !== 'gang') || (dtsMode === 'zhu' && L === 'ren')
         return `dts dts--${L}${hidden ? ' dts--hidden' : ''}`
