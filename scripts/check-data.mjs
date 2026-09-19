@@ -7,6 +7,7 @@
 import fs from 'node:fs'
 import { validateWidget } from '../src/features/shared/widgets/schema.js'
 import { validateMatrixCell, MATRIX_MONTHS } from './lib/mingli-matrix.mjs'
+import { validateCase } from './lib/mingli-cases.mjs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { TRIGRAMS, buildHexagramIndex, lineTitle } from './lib/hexagram-table.mjs'
@@ -275,6 +276,24 @@ const mingliBooks = checkReadingCorpus('观数', 'mingli', '章')
     const total = 10 * MATRIX_MONTHS.length
     if (seen.size && seen.size < total) warn(`调候矩阵: 仅 ${seen.size}/${total} 格`)
     infos.push(`调候矩阵(穷通宝鉴): ${seen.size}/${total} 格 · 标 unsure ${(matrix.cells || []).filter((c) => c.unsure).length}`)
+  }
+}
+
+// ---------- 4b'''. 观数 · 滴天髓命例走读(design-v23 §7)----------
+{
+  const cp = path.join(ROOT, 'src/data/mingli/cases/ditiansui.json')
+  const bp = path.join(ROOT, 'src/data/mingli/classics/ditiansui.json')
+  if (fs.existsSync(cp) && fs.existsSync(bp)) {
+    const data = JSON.parse(fs.readFileSync(cp, 'utf8'))
+    const book = JSON.parse(fs.readFileSync(bp, 'utf8'))
+    const seen = new Set()
+    for (const c of data.cases || []) {
+      if (c.id !== `${c.ch}-${c.para}`) err(`命例走读 ${c.id}: id 须为「章-段」`)
+      if (seen.has(c.id)) err(`命例走读 ${c.id}: 重复`)
+      seen.add(c.id)
+      for (const m of validateCase(c, book)) err(`命例走读 ${c.id}: ${m}`)
+    }
+    infos.push(`命例走读(滴天髓阐微): ${seen.size} 例 · ${(data.cases || []).reduce((a, c) => a + c.steps.length, 0)} 步`)
   }
 }
 

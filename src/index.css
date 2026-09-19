@@ -4578,3 +4578,46 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .book-shape__desc { grid-column: 1 / -1; font-size: 0.86rem; line-height: 1.75; color: var(--ink-soft); }
 /* 手机上页面是 flex 列、目录 order:2:入口与「继续读」同排在目录之前(order 相同按 DOM 序) */
 @media (max-width: 768px) { .book-shape { order: 1; } }
+
+/* ── 观数 · 滴天髓命例走读(design-v23 §7)────────────────────── */
+.dc-list { list-style: none; margin: 20px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
+.dc-card { display: flex; flex-direction: column; gap: 6px; height: 100%; padding: 14px 15px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper-raised); text-decoration: none; color: var(--ink); transition: border-color 0.15s, transform 0.15s; }
+.dc-card:hover { border-color: color-mix(in srgb, var(--cinnabar) 50%, transparent); transform: translateY(-1px); }
+.dc-card__concept, .dc-walk__concept { align-self: flex-start; font-size: 0.72rem; letter-spacing: 0.08em; color: var(--cinnabar); border: 1px solid currentColor; border-radius: 3px; padding: 0 6px; }
+.dc-walk__concept { display: inline-block; margin: 0 0 6px; }
+.dc-card__title { font-family: var(--font-serif); font-size: 1.12rem; }
+.dc-card__why { font-size: 0.84rem; line-height: 1.7; color: var(--ink-soft); }
+.dc-pillars { display: inline-flex; gap: 8px; font-family: var(--font-serif); font-size: 1rem; }
+.dc-pillars__gan { color: var(--wx); } .dc-pillars__zhi { color: var(--ink-soft); }
+.dc-walk__src { margin-left: 6px; font-size: 0.86rem; color: var(--cinnabar); white-space: nowrap; }
+
+.dc-steps { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.dc-step__btn { width: 100%; display: flex; gap: 12px; align-items: flex-start; text-align: left; padding: 10px 12px; border: 1px solid transparent; border-radius: 9px; background: transparent; color: var(--ink-soft); cursor: pointer; font: inherit; opacity: 0.62; transition: opacity 0.15s, background 0.15s; }
+.dc-step__btn:hover { opacity: 0.9; }
+.dc-step.is-cur .dc-step__btn { opacity: 1; border-color: color-mix(in srgb, var(--cinnabar) 40%, transparent); background: color-mix(in srgb, var(--cinnabar) 6%, var(--paper-raised)); color: var(--ink); }
+.dc-step__btn:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 2px; }
+.dc-step__no { flex: none; width: 1.7em; height: 1.7em; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; font-family: var(--font-serif); font-size: 0.86rem; border: 1px solid currentColor; }
+.dc-step.is-cur .dc-step__no { background: var(--cinnabar); border-color: var(--cinnabar); color: var(--paper-raised); }
+.dc-step__body { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.dc-step__quote { font-family: var(--font-serif); font-size: calc(1.02rem * var(--read-scale, 1)); line-height: 1.8; }
+.dc-step__say { font-size: calc(0.9rem * var(--read-scale, 1)); line-height: 1.8; }
+.dc-step--record .dc-step__quote { color: var(--ink-soft); }
+.dc-step__say--record { font-size: 0.78rem; color: var(--ink-faint); }
+.dc-nav { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 12px 0 0; }
+.dc-nav__btn { padding: 7px 14px; border: 1px solid var(--line); border-radius: 7px; background: var(--paper-raised); color: var(--ink); cursor: pointer; font: inherit; font-size: 0.88rem; }
+.dc-nav__btn--next:not(:disabled) { border-color: var(--cinnabar); color: var(--cinnabar); }
+.dc-nav__btn:disabled { opacity: 0.4; cursor: default; }
+.dc-nav__pos { font-size: 0.8rem; color: var(--ink-faint); }
+
+.dc-lens { margin: 36px 0 8px; padding-top: 22px; border-top: 1px solid var(--line); }
+.dc-lens__title { margin: 0 0 6px; font-family: var(--font-serif); font-size: 1.2rem; }
+.dc-lens__intro { margin: 0 0 14px; font-size: 0.88rem; line-height: 1.8; color: var(--ink-soft); }
+.dc-lens__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.dc-lens__card { display: flex; flex-direction: column; gap: 6px; padding: 13px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper-raised); font-size: 0.86rem; line-height: 1.75; }
+.dc-lens__card--self { background: color-mix(in srgb, var(--cinnabar) 5%, var(--paper-raised)); }
+.dc-lens__card p { margin: 0; }
+.dc-lens__tag { font-size: 0.74rem; letter-spacing: 0.06em; color: var(--ink-faint); }
+.dc-lens__main { font-family: var(--font-serif); font-size: 1.08rem; color: var(--ink); }
+.dc-lens__body { color: var(--ink-soft); flex: 1; }
+.dc-lens__card a { color: var(--cinnabar); font-size: 0.84rem; }
+@media (max-width: 768px) { .dc-lens__grid { grid-template-columns: 1fr; } }

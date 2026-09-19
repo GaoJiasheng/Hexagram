@@ -1,14 +1,25 @@
-import { Link } from 'react-router-dom'
+import { useMemo } from 'react'
+import { Link, useSearchParams } from 'react-router-dom'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import WidgetBlock from '../shared/widgets/WidgetBlock.jsx'
 
 // 《子平真诠》的「形状」:一条从月令走到格名的路(design-v23 §7)。
 // 穷通宝鉴是一张表,子平真诠是一道流程——全书四十九章,前三十一章讲这条路怎么走、
 // 后十八章一格一格讲走到了之后怎么办。这一页把前半截做成可以亲手走的样子。
-const BLOCK = { type: 'widget', kind: 'geju', props: { dayGan: '甲', monthZhi: '辰' } }
+import { GAN, ZHI, cangGan } from '../shared/ganzhi/index.js'
+
+// 走读页「换个镜头」会带着某个命例的日主/月令/透干跳过来:?d=乙&z=亥&t=丙戊。参数不合法就回退默认。
+function blockFrom(sp) {
+  const d = sp.get('d'), z = sp.get('z')
+  const ok = GAN.includes(d) && ZHI.includes(z)
+  const tou = ok ? [...(sp.get('t') || '')].filter((g) => cangGan(z).includes(g)) : []
+  return { type: 'widget', kind: 'geju', props: ok ? { dayGan: d, monthZhi: z, tou } : { dayGan: '甲', monthZhi: '辰' } }
+}
 
 export default function ZhenquanGejuPage() {
   usePageTitle('格局怎么定 · 子平真诠', '观数')
+  const [sp] = useSearchParams()
+  const block = useMemo(() => blockFrom(sp), [sp])
   return (
     <div className="qt-matrix-page">
       <div className="basics-breadcrumb">
@@ -31,7 +42,7 @@ export default function ZhenquanGejuPage() {
         格名本身也不含好坏——原书说「当顺而顺，当逆而逆，配合得宜，皆为贵格」,成败全在后面的配合。
       </div>
 
-      <WidgetBlock block={BLOCK} />
+      <WidgetBlock key={sp.toString()} block={block} />
 
       <p className="qt-matrix-next">
         <Link to="/mingli/zhenquan/9">从《论用神》读起 →</Link>

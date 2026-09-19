@@ -111,7 +111,7 @@ export default function CorpusReadPage({ corpus }) {
       chapters={book.chapters}
       chapter={chapter}
       sectionUnit={meta.sectionUnit}
-      verse={!!meta.verse}
+      verse={!!meta.verse || !!meta.verseChapters?.includes(curChapter?.no)}
       bookTitle={meta.title}
       attribution={meta.attribution || ''}
       bookHref={`${site.home}/${slug}`}

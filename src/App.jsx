@@ -62,6 +62,7 @@ const MingliLearnTopicPage = lazy(() => import('./features/mingli/learn/MingliLe
 const PaipanPage = lazy(() => import('./features/mingli/PaipanPage.jsx'))
 const QiongtongMatrixPage = lazy(() => import('./features/mingli/QiongtongMatrixPage.jsx'))
 const ZhenquanGejuPage = lazy(() => import('./features/mingli/ZhenquanGejuPage.jsx'))
+const DitiansuiCasesPage = lazy(() => import('./features/mingli/DitiansuiCasesPage.jsx'))
 const CorpusTextPage = lazy(() => import('./features/reader/CorpusTextPage.jsx'))
 const CorpusReadPage = lazy(() => import('./features/reader/CorpusReadPage.jsx'))
 const BaihuaPage = lazy(() => import('./features/reader/BaihuaPage.jsx'))
@@ -468,6 +469,8 @@ function AppContent() {
           <Route path="/mingli" element={<MingliHomePage />} />
           <Route path="/mingli/qiongtong/matrix" element={<QiongtongMatrixPage />} />
           <Route path="/mingli/zhenquan/geju" element={<ZhenquanGejuPage />} />
+          <Route path="/mingli/ditiansui/cases" element={<DitiansuiCasesPage />} />
+          <Route path="/mingli/ditiansui/cases/:id" element={<DitiansuiCasesPage />} />
           <Route path="/mingli/paipan" element={<PaipanPage />} />
           <Route path="/mingli/learn" element={<MingliLearnIndexPage />} />
           <Route path="/mingli/learn/:topic" element={<MingliLearnTopicPage />} />
