@@ -1011,18 +1011,22 @@ if (fs.existsSync(glossaryPath)) {
       const name = (m[3] || '').replace(/[*〉》」】]/g, '').trim()
       if (!n || !name) continue
       for (const b of idx[corpus] || []) {
-        let done = false
-        for (const [t, { no, ord }] of b.byTitle) {
+        // **取最长匹配**:《子平真诠》里「论用神」是「论用神变化」「论用神成败救应」等数篇的前缀,
+        // 按插入序取第一个命中会把「第 11 篇《论用神变化》」误判成第 9 篇(2026-09-19 写导读时撞上)。
+        let best = null
+        for (const [t, v] of b.byTitle) {
           if (t.length < 2 || !name.startsWith(t)) continue
-          const want = '章篇卷首品分'.includes(unit) ? no : (ord ?? no)
-          if (n !== want) {
-            nOrd++
-            err(`${label}: 「第${m[1]}${unit}${t}」序号对不上 —— ${b.slug}《${t}》是第 ${no} 章` +
-              (ord && ord !== no ? `(不计序言则为第 ${ord})` : ''))
-          }
-          done = true; break
+          if (!best || t.length > best.t.length) best = { t, ...v }
         }
-        if (done) break
+        if (!best) continue
+        const { t, no, ord } = best
+        const want = '章篇卷首品分'.includes(unit) ? no : (ord ?? no)
+        if (n !== want) {
+          nOrd++
+          err(`${label}: 「第${m[1]}${unit}${t}」序号对不上 —— ${b.slug}《${t}》是第 ${no} 章` +
+            (ord && ord !== no ? `(不计序言则为第 ${ord})` : ''))
+        }
+        break
       }
     }
   }
