@@ -86,6 +86,31 @@ iOS **build 51** / 版本 **1.33.0 —— 2026-08-19 已提交审核(WAITING_FOR
 - [x] **F5** 管线:`fetch-corpus` 加**本地文本源**分支(现只认维基文库)· **命例识别**(正文里的四柱串 → 自动挂 `sizhu` 件)
 - 内部检查点:单测全绿 · 明/暗/移动端走查 · **旧 2031 篇白话零回归**
 
+### ⏸ 暂停点(2026-09-19 晚 · owner:「搞完这一批就停,等周额度恢复再接着做」)
+
+当天两次打满账号用量上限(约 1.1 亿 subagent token)。**没有任何在跑的后台任务**;工作区干净,全部已 push。
+
+**已完成**:底座 F 全部 · 学堂六篇 · 九个交互件 · 五种「书的形状」页 · 三派镜头 · 概念索引 · 排盘台 ·
+四部核心书 原文 + 译注延(0 错位)+ 书级导读 ×4 + 家级导读 · 五部新书原文入库 · 三命通会日时查表 ·
+白话 **39/196**(渊海子平第 1–39 篇)。
+
+**续跑次序(都是串行,一次只起一个 workflow)**:
+1. **白话余下 157 章**(渊海 40–74 → 真诠 48 → 滴天髓 63 → 穷通 11):
+   `node scripts/baihua-step.mjs` → 它会打印 `LAUNCH scripts/.baihua-mingli-<书>-wf.js` → 用 Workflow 起它 →
+   完成后把结果文件路径喂回 `node scripts/baihua-step.mjs <result.json>`(自动装配 / 校验 / 提交 / 出下一批)。每批 12 章、约 420 万 token、40 分钟。
+2. **四部源头书译注延**(约 12 万字):`node scripts/gen-zhuzi-wf.mjs wuxingdayi,lixuzhong,luoluzi,yuzhao --models=opus,sonnet`
+   → Workflow → `node scripts/assemble-newtexts.mjs <result>` → `node scripts/fetch-corpus.mjs mingli` → `npm run check-data`。
+   (李虚中命书、玉照定真经是四库白文,同一趟产出断句,管线自动过「去标点后逐字相等」的闸。)
+3. **三命通会译注延 + 断句**(约 43 万字,最大的一块,估 2000–2500 万 token):脚本有 512KB 上限,须**按卷分批**
+   `node scripts/gen-zhuzi-wf.mjs sanming --chapters=<该卷章号,逗号分隔> --models=opus,sonnet`,每批装配带 `--merge`。
+   可以先只做卷一至卷七(论说部分),卷八九(七百二十条断语)与卷十至十二(歌赋)看额度再定。
+4. 五部新书的书级导读(照 `docs/daodu-production-standard.md`,一书一个 opus 代理,只许新建自己那一个文件);三命通会白话只做精选。
+5. **Z 收口**:全站回归(明暗 / 手机 / iOS 与安卓模拟器)→ 补 `docs/mingli-review.md` → **Cloudflare 预览部署**给 owner review
+   (不碰生产、不发 iOS;review 通过后去掉 registry 里 mingli 的 `portalHidden`,门户 / sitemap / RSS / 站外搜索四处自动放开)。
+
+**省额度的几条**(今天踩出来的):大 workflow 一次只跑一个;译 / 起草用 opus、校对用 sonnet;提示语已内嵌原文(不让代理翻整本 json);
+别用阻塞式 TaskOutput 等 workflow;打满后 workflow 用 `resumeFromRunId`、代理用 SendMessage 续跑,不丢活。
+
 ### S · 观数组
 - [x] **S0** `docs/design-v23.md`(规格 + 规则表 + 验收清单)· CLAUDE.md 加组铁律与「如何加一个 widget」
 - [x] **S1** 组骨架:7 处注册点(`registry` / `index.css` / `corpus.js` / `booksIndex` / `check-links` / `build-content-assets` / `App.jsx`)· 首页 = **学习路径图**(非书架)· `/mingli/learn/*` 路由排在 `/<组>/<slug>` 之前
