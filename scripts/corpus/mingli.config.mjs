@@ -154,7 +154,9 @@ export const BOOKS = [
   // 渊海子平:维基文库单页,72 处 ==标题== + 1 处误标为 === 的诗体子标题(先看月令，次看浅深。,
   // 内容完整、非误植,原样保留),splitHeadings 天然按小节切(数百至数千字一章,合乎「宁可章多」原则)。
   // 页首「基础」一节(十神对照表,无 == 包裹)靠 leadTitle 收作首章,否则会被 splitHeadings 丢弃。
-  { slug: 'yuanhai', title: '渊海子平', pages: ['淵海子平'], splitHeadings: true, leadTitle: '基础' },
+  // 源页在四处分部交界留有「【渊海子平】神煞 / 六亲 / 女命 / 赋论」一类的分部标记,不带 == 包裹,
+  // 于是被收成了前一篇的最后一段(译注代理也认出来了:「此为页眉书名与下一部篇题,窜入本章」)。它们不是正文,剔除。
+  { slug: 'yuanhai', title: '渊海子平', pages: ['淵海子平'], splitHeadings: true, leadTitle: '基础', dropParaRe: '^【渊海子平】' },
   // 子平真诠:殆知阁本,localBreaks 见上。
   { slug: 'zhenquan', title: '子平真诠', localFile: 'scripts/sources/mingli/zhenquan.txt', localBreaks: ZHENQUAN_BREAKS, chapterTitles: ZHENQUAN_TITLES, exactChapters: 48,
     // ⚠ 2026-09-19 二次核查:此前「通读确认基本是沈氏原文、只夹两处徐注」的结论是**错的**。

@@ -8,6 +8,7 @@ import fs from 'node:fs'
 import { validateWidget } from '../src/features/shared/widgets/schema.js'
 import { validateMatrixCell, MATRIX_MONTHS } from './lib/mingli-matrix.mjs'
 import { validateCase } from './lib/mingli-cases.mjs'
+import { scanMisalign } from './lib/align-scan.mjs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { TRIGRAMS, buildHexagramIndex, lineTitle } from './lib/hexagram-table.mjs'
@@ -291,6 +292,8 @@ const mingliBooks = checkReadingCorpus('观数', 'mingli', '章')
         })
       }
       if (sus.length) warn(`观数译文对位 ${f}: ${sus.length} 处形状可疑(疑错位): ${sus.slice(0, 8).join(' · ')}${sus.length > 8 ? ' …' : ''}`)
+      // 更强的一道(scripts/lib/align-scan.mjs):原文用字在「邻段译文」里的留存率连续 ≥3 段高于本段 → 整段错位,判 error
+      for (const r of scanMisalign(book)) err(`观数译文错位 ${f}: 第 ${r.ch} 章 #${r.from}–${r.to} 译文整体${r.dir > 0 ? '后' : '前'}移一段 —— 重跑该切片(gen-zhuzi-wf --units=${r.ch}:<切片起始段>)并 --merge 装配`)
     }
   }
 }

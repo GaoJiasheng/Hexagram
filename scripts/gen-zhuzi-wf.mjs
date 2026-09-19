@@ -38,7 +38,13 @@ const SPLIT = 50 // 单元最大段;>55 段的章按此切片
 // 可选:--chapters=4,7 只为这几章生成(补译/重译用;须与单个 slug 连用)
 const CH_ARG = (process.argv.find((a) => a.startsWith('--chapters=')) || '').slice('--chapters='.length)
 const CH_SET = CH_ARG ? new Set(CH_ARG.split(',').map(Number)) : null
+// 可选:--units=57:50,57:300,58:50 只生成这几个切片(章号:起始段;补跑错位切片用,装配须带 --merge)
+const UN_ARG = (process.argv.find((a) => a.startsWith('--units=')) || '').slice('--units='.length)
+const UN_SET = UN_ARG ? new Set(UN_ARG.split(',')) : null
 const units = []
+// 切片首末段的开头几个字:写进提示语当**锚**。只说「下标 50 到 99」时,个别代理按 1 起理解,整片译文错一段
+// (2026-09-19 渊海第 57/58 篇、穷通第 7 章共 4 个切片中招);给了锚就没有歧义。
+const headOf = (c, i) => [...(c.paragraphs[i]?.original || '')].slice(0, 12).join('')
 for (const [corpus, slug] of SEL) {
   const book = JSON.parse(fs.readFileSync(path.join(ROOT, `src/data/${corpus}/classics/${slug}.json`), 'utf8'))
   for (const c of book.chapters) {
@@ -46,14 +52,16 @@ for (const [corpus, slug] of SEL) {
     const n = c.paragraphs.length
     const title = c.title || `第${c.no}章`
     if (n <= 55) {
-      units.push({ corpus, book: slug, no: c.no, title, start: 0, end: n - 1, yanyi: true, punct: PUNCT_BOOKS.has(slug) })
+      units.push({ corpus, book: slug, no: c.no, title, start: 0, end: n - 1, yanyi: true, punct: PUNCT_BOOKS.has(slug), head: headOf(c, 0), tail: headOf(c, n - 1) })
     } else {
       for (let s = 0; s < n; s += SPLIT) {
-        units.push({ corpus, book: slug, no: c.no, title, start: s, end: Math.min(s + SPLIT, n) - 1, yanyi: s === 0, punct: PUNCT_BOOKS.has(slug) })
+        units.push({ corpus, book: slug, no: c.no, title, start: s, end: Math.min(s + SPLIT, n) - 1, yanyi: s === 0, punct: PUNCT_BOOKS.has(slug), head: headOf(c, s), tail: headOf(c, Math.min(s + SPLIT, n) - 1) })
       }
     }
   }
 }
+
+if (UN_SET) { for (let i = units.length - 1; i >= 0; i--) if (!UN_SET.has(`${units[i].no}:${units[i].start}`)) units.splice(i, 1) }
 
 const script = `export const meta = {
   name: 'zhuzi-translate',
@@ -211,7 +219,7 @@ function translatePrompt(u) {
   const len = u.end - u.start + 1
   const rangeDesc = u.start === 0 && len > 0
     ? ('本章共 ' + len + ' 段全译:translations[i] 对应原文第 i 段。')
-    : ('本片段只译下标 ' + u.start + ' 到 ' + u.end + ' 的段(共 ' + len + ' 段):translations[0] 对应原文第 ' + u.start + ' 段,依次类推。')
+    : ('本片段只译 paragraphs 数组里**从 0 数起**下标 ' + u.start + ' 到 ' + u.end + ' 的段(共 ' + len + ' 段):translations[0] 对应 paragraphs[' + u.start + '],依次类推。**对位锚:paragraphs[' + u.start + '] 以「' + u.head + '」开头,paragraphs[' + u.end + '] 以「' + u.tail + '」开头——动笔前先核对这两段,translations 的第一条译的必须是前者、最后一条译的必须是后者。**')
   return '你在为古籍研习站做《' + CN[u.book] + '·' + u.title + '》的白话译注。' + styleRule(u) + '\\n\\n' +
     '第一步:用 Read 读 ' + FILE(u.corpus, u.book) + ',找到 chapters 里 no===' + u.no + ' 的那一章(其 paragraphs 为原文段,每段含 original)。' + rangeDesc + '\\n\\n' +
     (u.punct ? ('**本书底本是四库白文,一个标点都没有。** 先断句:\\n0) punctuated:数组,长度恰为 ' + len + ',与 translations 同序。把每段 original **只加标点、不增不删不改任何一个字**(繁简异体照旧,「□」缺字符照旧,原有的全角空格可去掉);用全角标点(，。；：？！、「」《》)。程序会逐段核对「去标点后与底本逐字相等」,不等的段整段作废——所以**务必逐字照抄,宁可少断不可错字**;很长的段尤其要当心漏字。kind 为 mingli 的命例段与纯干支行原样照抄即可。译文与注疏都据你的断句本来作;**zhushi 的 term 须是你 punctuated 对应段的精确连续子串**(尽量取不跨标点的词)。\\n') : '') +
@@ -244,6 +252,7 @@ function verifyPrompt(u, draft) {
             : '现实政治影射'
   return '校对修正《' + CN[u.book] + '·' + u.title + '》(原文第 ' + u.start + '–' + u.end + ' 段)译注草稿,返回修正后完整结构。' + styleRule(u) + '\\n\\n' +
     '先 Read ' + FILE(u.corpus, u.book) + ' 中 no===' + u.no + ' 的章,核对其第 ' + u.start + '..' + u.end + ' 段。草稿:\\n' + JSON.stringify(draft) + '\\n\\n' +
+    '**先核对位**:translations[0] 译的必须是 paragraphs[' + u.start + '](以「' + u.head + '」开头),最后一条译的必须是 paragraphs[' + u.end + '](以「' + u.tail + '」开头);若草稿整体错开了一段,先整体挪回来、补上缺的那一段,再做其余校对。\\n' +
     '逐项改正后按 schema 返回:\\n' +
     (u.punct ? ('- punctuated:长度恰为 ' + len + ';逐段核对**去掉标点与空白后与 original 逐字相等**(可写一小段脚本核:读 json 取该段 original,两边都删去标点空白后比较),有增删改字的改回;断句有误(破句、误属上下)的改正;term 须是 punctuated 对应段的精确子串。\\n') : '') +
     '- translations 长度必须恰为 ' + len + ',与第 ' + u.start + '.. 段逐一对齐;漏译/臆增/错解/把注混入译文者改正;' + fixT + ';口吻平实。\\n' +

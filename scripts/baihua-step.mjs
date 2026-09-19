@@ -10,8 +10,8 @@ import { execSync } from 'node:child_process'
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const sh = (cmd) => execSync(cmd, { cwd: ROOT, encoding: 'utf8' })
 
-const CORPORA = ['moulue', 'bing']   // owner 2026-07-21:谋略组新扩 4 部真书(长短经/菜根谭/围炉夜话/小窗幽记)+ 兵组新扩李卫公问对,补白话(普通档);两组既有书 baihua 已满故自动跳过
-const CAP = 6                                 // 每批最多章数→单 workflow 并发(实际同时跑数由 runtime 封顶 min(16,核数-2))。owner 2026-06-23:服务端限流,降并发到 6 缓解(批次更多但更稳);限流过去可再调回 14
+const CORPORA = ['mingli']   // owner 2026-09-19:观数四部核心书(渊海/真诠/滴天髓/穷通)铺白话,普通档;三命通会与源头诸书 status partial,自动跳过
+const CAP = 12                                 // 每批最多章数→单 workflow 并发(实际同时跑数由 runtime 封顶 min(16,核数-2))。owner 2026-06-23:服务端限流,降并发到 6 缓解(批次更多但更稳);限流过去可再调回 14
 const MAXATT = 3                              // 单章最多重试次数(防顽固章死循环)
 const ATT_FILE = path.join(ROOT, 'scripts/.baihua-attempts.json')
 
@@ -49,7 +49,7 @@ if (resultPath && fs.existsSync(resultPath)) {
     const subject = `feat(baihua): ${books} 白话 ${Math.min(...nos)}–${Math.max(...nos)}(产出 ${units.length} 章,落盘以 check-data 为准)`
     sh('git add -A')
     try {
-      sh(`git commit -q -m ${JSON.stringify(subject)} -m ${JSON.stringify('Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>')}`)
+      sh(`git commit -q -m ${JSON.stringify(subject)} -m ${JSON.stringify('Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>')}`)
       console.error('已提交:', subject)
     } catch { console.error('提交跳过(无变更)') }
   } catch (e) { console.error('提交步骤出错:', e.message) }
@@ -104,7 +104,7 @@ fs.writeFileSync(ATT_FILE, JSON.stringify(att, null, 0) + '\n')
 // ── ⑤ gen 下一个 workflow 脚本 ──
 const from = next.batch[0], to = next.batch[next.batch.length - 1]
 try {
-  const out = sh(`node ${ROOT}/scripts/gen-baihua-wf.mjs ${next.corpus} ${next.slug} ${from} ${to}`)
+  const out = sh(`node ${ROOT}/scripts/gen-baihua-wf.mjs ${next.corpus} ${next.slug} ${from} ${to} --verify-model=sonnet`)   // 起草 opus、校对 sonnet(owner:用量搭配着用)
   console.error(out.trim())
 } catch (e) { console.error('gen 出错:', e.stdout || e.message); process.exit(3) }
 console.log(`LAUNCH scripts/.baihua-${next.corpus}-${next.slug}-wf.js`)

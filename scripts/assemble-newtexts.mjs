@@ -46,6 +46,10 @@ const trAcc = {}    // corpus -> slug -> {chNo: [seg...]}
 const zhAcc = {}    // corpus -> slug -> {chNo: {globalIdx: [entry...]}}
 const yyAcc = {}    // corpus -> slug -> {chNo: [para...]}
 const stat = {}
+const MERGE = process.argv.includes('--merge')
+const touchedRanges = {}   // corpus/slug -> [{no,start,end}]:merge 时只清这些区间里的旧注疏
+const _trCache = {}
+const existingTr = (corpus) => (_trCache[corpus] ??= (() => { const f = path.join(ROOT, `scripts/authored/${corpus}-translations.json`); return fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : {} })())
 const puAcc = {}    // corpus -> slug -> {chNo: {globalIdx: punctuated}}
 const drop = { term: 0, note: 0, overlap: 0, punct: 0 }
 
@@ -75,7 +79,15 @@ for (const u of units) {
 
   // 译文:tr[i] → 全局段 start+i
   trAcc[corpus] ??= {}; trAcc[corpus][slug] ??= {}
-  const trArr = (trAcc[corpus][slug][no] ??= new Array(paras.length).fill(null))
+  // --merge 时从既有译文起步,只覆盖本单元 [start..end] 的段(补跑单个切片不伤同章其他切片)
+  const trArr = (trAcc[corpus][slug][no] ??= (() => {
+    const old = MERGE ? existingTr(corpus)?.[slug]?.[String(no)] : null
+    const arr = new Array(paras.length).fill(null)
+    if (Array.isArray(old)) old.forEach((t, i) => { if (i < arr.length) arr[i] = t })
+    return arr
+  })())
+  if (MERGE) for (let g = start; g <= (u.end ?? paras.length - 1) && g < paras.length; g++) trArr[g] = null
+  ;(touchedRanges[`${corpus}/${slug}`] ??= []).push({ no: String(no), start, end: u.end ?? paras.length - 1 })
   ;(data.translations || []).forEach((t, i) => {
     const g = start + i
     if (g < paras.length && t) { trArr[g] = t2s(String(t)); stat[sk].tr++ }
@@ -130,7 +142,6 @@ function mergeJson(file, mutate) {
 // 默认按 slug **整体覆写**(一本书的所有批次须合成一份 result 一次装配,见 CLAUDE.md 诗经那条教训)。
 // --merge:只替换 result 里出现的那几章,其余章原样保留——补译/重译个别章时用
 // (2026-09-19 穷通第 4、7 章错位重译、真诠净化后五章重出延伸)。被替换的章是整章替换,不与旧数据逐段混合。
-const MERGE = process.argv.includes('--merge')
 for (const corpus of Object.keys(trAcc)) {
   mergeJson(`scripts/authored/${corpus}-translations.json`, (cur) => {
     for (const [slug, byCh] of Object.entries(trAcc[corpus])) cur[slug] = MERGE ? { ...(cur[slug] || {}), ...byCh } : byCh
@@ -144,8 +155,12 @@ for (const corpus of Object.keys(zhAcc)) {
     let out = byCh
     if (MERGE && fs.existsSync(zp)) {
       out = JSON.parse(fs.readFileSync(zp, 'utf8'))
-      for (const no of touchedCh[`${corpus}/${slug}`] || []) delete out[no]
-      Object.assign(out, byCh)
+      // 只清被重跑的那些段区间里的旧注疏,同章其他切片的注疏原样保留
+      for (const r of touchedRanges[`${corpus}/${slug}`] || []) {
+        const cur = out[r.no]; if (!cur) continue
+        for (const k of Object.keys(cur)) if (Number(k) >= r.start && Number(k) <= r.end) delete cur[k]
+      }
+      for (const [no, byIdx] of Object.entries(byCh)) out[no] = { ...(out[no] || {}), ...byIdx }
     }
     fs.writeFileSync(zp, JSON.stringify(out, null, 2) + '\n')
   }
