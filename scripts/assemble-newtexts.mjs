@@ -110,19 +110,32 @@ function mergeJson(file, mutate) {
   fs.writeFileSync(p, JSON.stringify(cur, null, 2) + '\n')
 }
 
+// 默认按 slug **整体覆写**(一本书的所有批次须合成一份 result 一次装配,见 CLAUDE.md 诗经那条教训)。
+// --merge:只替换 result 里出现的那几章,其余章原样保留——补译/重译个别章时用
+// (2026-09-19 穷通第 4、7 章错位重译、真诠净化后五章重出延伸)。被替换的章是整章替换,不与旧数据逐段混合。
+const MERGE = process.argv.includes('--merge')
 for (const corpus of Object.keys(trAcc)) {
   mergeJson(`scripts/authored/${corpus}-translations.json`, (cur) => {
-    for (const [slug, byCh] of Object.entries(trAcc[corpus])) cur[slug] = byCh
+    for (const [slug, byCh] of Object.entries(trAcc[corpus])) cur[slug] = MERGE ? { ...(cur[slug] || {}), ...byCh } : byCh
   })
 }
+const touchedCh = {}   // corpus/slug -> Set(章号):merge 模式下,这些章的旧注疏要先清掉(新一轮可能某段不再出注)
+for (const u of units) (touchedCh[`${u.corpus}/${u.book}`] ??= new Set()).add(String(u.no))
 for (const corpus of Object.keys(zhAcc)) {
   for (const [slug, byCh] of Object.entries(zhAcc[corpus])) {
-    fs.writeFileSync(path.join(ROOT, `src/data/${corpus}/zhushi-anchored/${slug}.json`), JSON.stringify(byCh, null, 2) + '\n')
+    const zp = path.join(ROOT, `src/data/${corpus}/zhushi-anchored/${slug}.json`)
+    let out = byCh
+    if (MERGE && fs.existsSync(zp)) {
+      out = JSON.parse(fs.readFileSync(zp, 'utf8'))
+      for (const no of touchedCh[`${corpus}/${slug}`] || []) delete out[no]
+      Object.assign(out, byCh)
+    }
+    fs.writeFileSync(zp, JSON.stringify(out, null, 2) + '\n')
   }
 }
 for (const corpus of Object.keys(yyAcc)) {
   mergeJson(`src/data/${corpus}/yanyi.json`, (cur) => {
-    for (const [slug, byCh] of Object.entries(yyAcc[corpus])) cur[slug] = byCh
+    for (const [slug, byCh] of Object.entries(yyAcc[corpus])) cur[slug] = MERGE ? { ...(cur[slug] || {}), ...byCh } : byCh
   })
 }
 
