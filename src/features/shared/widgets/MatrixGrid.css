@@ -44,3 +44,11 @@ button.mx-cellbtn:hover { border-color: color-mix(in srgb, var(--ink) 25%, trans
 .mx-detail__hint { margin: 0; font-size: 0.84rem; line-height: 1.85; color: var(--ink-faint); text-align: center; }
 
 .mx-foot { margin: 8px 0 0; font-size: 0.7rem; color: var(--ink-faint); text-align: right; letter-spacing: 0.04em; }
+
+/* 格内天干着色(colorGan)与面板里的原文引句 / 副题 / 链接 */
+.mx-gan { color: var(--wx); }
+.mx-detail__sub { margin-left: 8px; font-weight: 400; font-size: 0.74rem; color: var(--ink-faint); }
+.mx-detail__quote { margin: 6px 0; padding: 4px 0 4px 12px; border-left: 2px solid var(--cinnabar); font-family: var(--font-serif); font-size: 0.95rem; line-height: 1.8; color: var(--ink); }
+.mx-detail__link { margin: 8px 0 0; font-size: 0.82rem; }
+.mx-detail__link a { color: var(--cinnabar); text-decoration: none; }
+.mx-detail__link a:hover { text-decoration: underline; }

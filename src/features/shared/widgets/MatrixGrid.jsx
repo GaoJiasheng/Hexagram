@@ -5,15 +5,21 @@ import './MatrixGrid.css'
 
 // 通用可点矩阵(kind: matrix)—— 《穷通宝鉴》十干×十二月调候表、《本草经》6×3 等按行列排布的表格
 // 都走这一件。**通用,不写死命理/中医内容**:行列与格子内容全由 props 给。
-// 有 href 的格整格可点跳转;无 href 有 note 的格点开面板讲这格为什么是这个答案。
+// 点格的三种情形:只有 href → 整格直接跳转;有 note(或 quote)→ 点开下方面板讲这格为什么是这个答案,
+// 面板里再给「读原文」链接(若同时有 href)——**先让人看懂,再让人跳走**;什么都没有 → 静态文字。
+// colorGan:格内文字里的天干字按五行着色(《穷通宝鉴》调候表每格就是两三个天干)。
 
 const WX_CLASS = { 木: 'mu', 火: 'huo', 土: 'tu', 金: 'jin', 水: 'shui' }
 const cellKey = (r, c) => `${r}|${c}`
 
-export default function MatrixGrid({ rows, cols, cells = {}, rowLabel, colLabel }) {
+export default function MatrixGrid({ rows, cols, cells = {}, rowLabel, colLabel, colorGan = false, foot, linkLabel = '读原文这一节 →' }) {
   const [pick, setPick] = useState(null) // { row, col }
 
-  const hasNotes = Object.values(cells).some((c) => c && c.note)
+  const hasNotes = Object.values(cells).some((c) => c && (c.note || c.quote))
+  // 格内文字:colorGan 时逐字看,是天干就套五行色
+  const cellText = (text) => (!colorGan ? text : [...text].map((ch, i) => (
+    isGan(ch) ? <span key={i} className={`sz-char--${WX_CLASS[ganWuxing(ch)]} mx-gan`}>{ch}</span> : ch
+  )))
   const picked = pick ? cells[cellKey(pick.row, pick.col)] : null
   const wide = cols.length > 6
 
@@ -47,27 +53,28 @@ export default function MatrixGrid({ rows, cols, cells = {}, rowLabel, colLabel 
                   {cols.map((c) => {
                     const cell = cells[cellKey(r, c)]
                     if (!cell) return <td key={c} className="mx-cell mx-cell--empty" aria-hidden="true" />
-                    if (cell.href) {
+                    const explain = cell.note || cell.quote
+                    if (cell.href && !explain) {
                       return (
                         <td key={c} className="mx-cell">
-                          <Link to={cell.href} className="mx-cellbtn mx-cellbtn--link">{cell.text}</Link>
+                          <Link to={cell.href} className="mx-cellbtn mx-cellbtn--link">{cellText(cell.text)}</Link>
                         </td>
                       )
                     }
                     const active = pick && pick.row === r && pick.col === c
                     return (
                       <td key={c} className="mx-cell">
-                        {cell.note ? (
+                        {explain ? (
                           <button
                             type="button"
                             className={`mx-cellbtn${active ? ' is-active' : ''}`}
                             aria-pressed={active}
                             onClick={() => toggle(r, c)}
                           >
-                            {cell.text}
+                            {cellText(cell.text)}
                           </button>
                         ) : (
-                          <span className="mx-cellbtn mx-cellbtn--static">{cell.text}</span>
+                          <span className="mx-cellbtn mx-cellbtn--static">{cellText(cell.text)}</span>
                         )}
                       </td>
                     )
@@ -81,17 +88,19 @@ export default function MatrixGrid({ rows, cols, cells = {}, rowLabel, colLabel 
 
       {hasNotes && (
         <div className="mx-detail" aria-live="polite">
-          {picked && picked.note ? (
+          {picked && (picked.note || picked.quote) ? (
             <>
-              <p className="mx-detail__head">{pick.row} × {pick.col}</p>
-              <p className="mx-detail__body">{picked.note}</p>
+              <p className="mx-detail__head">{pick.row} × {pick.col}{picked.sub ? <span className="mx-detail__sub">{picked.sub}</span> : null}</p>
+              {picked.quote && <blockquote className="mx-detail__quote">{picked.quote}</blockquote>}
+              {picked.note && <p className="mx-detail__body">{picked.note}</p>}
+              {picked.href && <p className="mx-detail__link"><Link to={picked.href}>{linkLabel}</Link></p>}
             </>
           ) : (
             <p className="mx-detail__hint">点有内容的格,看具体解释。</p>
           )}
         </div>
       )}
-      <p className="mx-foot">横是一类,竖是另一类——交叉处才是答案。</p>
+      <p className="mx-foot">{foot || '横是一类,竖是另一类——交叉处才是答案。'}</p>
     </div>
   )
 }

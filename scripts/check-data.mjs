@@ -5,6 +5,8 @@
 // 错误 → 退出码 1;译文缺失等只作为信息项报告。
 
 import fs from 'node:fs'
+import { validateWidget } from '../src/features/shared/widgets/schema.js'
+import { validateMatrixCell, MATRIX_MONTHS } from './lib/mingli-matrix.mjs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { TRIGRAMS, buildHexagramIndex, lineTitle } from './lib/hexagram-table.mjs'
@@ -252,6 +254,27 @@ const mingliBooks = checkReadingCorpus('观数', 'mingli', '章')
         if (text.includes(w)) err(`观数版权闸 ${f}: 原文命中现代评注痕迹词「${w}」——疑混入 20 世纪评注(仍在版权期内),须从 scripts/corpus/mingli.config.mjs 加剔除规则、重跑 fetch-corpus,而非手改生成物`)
       }
     }
+  }
+}
+
+// ---------- 4b''. 观数 · 穷通宝鉴调候矩阵(design-v23 §7)----------
+// 每格的取用之干必须挂着原文子串 —— 与 assemble-matrix 共用同一份校验,落盘后的文件仍受它看守。
+{
+  const mp = path.join(ROOT, 'src/data/mingli/matrix/qiongtong.json')
+  const bp = path.join(ROOT, 'src/data/mingli/classics/qiongtong.json')
+  if (fs.existsSync(mp) && fs.existsSync(bp)) {
+    const matrix = JSON.parse(fs.readFileSync(mp, 'utf8'))
+    const book = JSON.parse(fs.readFileSync(bp, 'utf8'))
+    const seen = new Set()
+    for (const c of matrix.cells || []) {
+      const key = `${c.gan}|${c.month}`
+      if (seen.has(key)) err(`调候矩阵 ${key}: 重复的格`)
+      seen.add(key)
+      for (const m of validateMatrixCell(c, book)) err(`调候矩阵 ${key}: ${m}`)
+    }
+    const total = 10 * MATRIX_MONTHS.length
+    if (seen.size && seen.size < total) warn(`调候矩阵: 仅 ${seen.size}/${total} 格`)
+    infos.push(`调候矩阵(穷通宝鉴): ${seen.size}/${total} 格 · 标 unsure ${(matrix.cells || []).filter((c) => c.unsure).length}`)
   }
 }
 
@@ -1118,6 +1141,7 @@ if (fs.existsSync(glossaryPath)) {
     tangshi: RED_SHI, songci: RED_SHI, yuanqu: RED_SHI,
   }
   let nArt = 0, nFig = 0, nBadCite = 0
+  let nWidget = 0
   const cover = {}
   for (const corpus of corpora) {
     const dir = path.join(ROOT, `src/data/${corpus}/baihua`)
@@ -1152,6 +1176,13 @@ if (fs.existsSync(glossaryPath)) {
             warn(`${tag}: figure SVG 疑写死颜色(应用 var()/currentColor)`)
           }
         }
+        // widget 块(design-v23 §5):参数过与浏览器同一份的 schema 校验 —— 死 SVG 画错了机器查不出,
+        // 参数错了查得出,这正是用 widget 取代手画图的意义。不合法即 error。
+        for (const b of blocks) {
+          if (b.type !== 'widget') continue
+          nWidget++
+          for (const m of validateWidget(b)) err(`${tag}: widget(${b.kind}) ${m}`)
+        }
         // 富文本块(v22.1):pull 每章至多一处;label 只许短签;list/callout/steps 不许空
         const pulls = blocks.filter((b) => b.type === 'pull').length
         if (pulls > 1) err(`${tag}: pull 块 ${pulls} 处(每章至多 1 处)`)
@@ -1171,7 +1202,7 @@ if (fs.existsSync(glossaryPath)) {
   }
   if (nArt) {
     const parts = Object.entries(cover).sort().map(([k, n]) => `${k} ${n}`).join(' · ')
-    infos.push(`白话覆盖: ${nArt} 章 · ${nFig} 图 · ${nBadCite} 坏引文 | ${parts}`)
+    infos.push(`白话覆盖: ${nArt} 章 · ${nFig} 图 · ${nWidget} 交互件 · ${nBadCite} 坏引文 | ${parts}`)
   }
 }
 

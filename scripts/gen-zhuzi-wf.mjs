@@ -25,6 +25,10 @@ const BOOKS = [
   ['mingli', 'yuanhai'], ['mingli', 'zhenquan'], ['mingli', 'ditiansui'], ['mingli', 'qiongtong'],
 ]
 const ONLY = process.argv[2]          // 可选:只为某 slug 或某 corpus 生成(逗号可多选,如 liutao,jinkui)
+// 可选:--models=<译>,<校>(如 --models=opus,sonnet)。不给则两段都继承主会话模型(原行为)。
+// owner 2026-09-19:大批量内容生产时分摊用量——翻译要质量用 opus,校对是核对型的活用 sonnet。
+const MODELS_ARG = (process.argv.find((a) => a.startsWith('--models=')) || '').slice('--models='.length)
+const [MODEL_T, MODEL_V] = MODELS_ARG ? MODELS_ARG.split(',') : []
 const ONLY_SET = ONLY ? new Set(ONLY.split(',')) : null
 const SEL = ONLY_SET ? BOOKS.filter(([c, s]) => ONLY_SET.has(s) || ONLY_SET.has(c)) : BOOKS
 const SPLIT = 50 // 单元最大段;>55 段的章按此切片
@@ -235,10 +239,10 @@ function verifyPrompt(u, draft) {
 phase('Translate')
 const results = await pipeline(
   UNITS,
-  (u) => agent(translatePrompt(u), { label: '译:' + CN[u.book] + '·' + u.title + '#' + u.start, phase: 'Translate', schema: SCHEMA }),
+  (u) => agent(translatePrompt(u), { label: '译:' + CN[u.book] + '·' + u.title + '#' + u.start, phase: 'Translate', schema: SCHEMA${MODEL_T ? `, model: '${MODEL_T}'` : ''} }),
   (draft, u) => {
     if (!draft) return { ...u, data: null }
-    return agent(verifyPrompt(u, draft), { label: '校:' + CN[u.book] + '·' + u.title + '#' + u.start, phase: 'Verify', schema: SCHEMA })
+    return agent(verifyPrompt(u, draft), { label: '校:' + CN[u.book] + '·' + u.title + '#' + u.start, phase: 'Verify', schema: SCHEMA${MODEL_V ? `, model: '${MODEL_V}'` : ''} })
       .then((v) => ({ ...u, data: v || draft }))
   },
 )

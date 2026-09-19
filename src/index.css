@@ -4551,3 +4551,10 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .paipan-note { margin: 14px 0; font-size: 0.82rem; line-height: 1.9; color: var(--ink-soft); }
 .paipan-next { margin: 20px 0 40px; }
 .paipan-next a { color: var(--cinnabar); text-decoration: none; }
+
+/* ── 观数 · 穷通宝鉴调候矩阵页 ─────────────────────────────── */
+.qt-matrix-page { max-width: 980px; margin: 0 auto; }
+.qt-matrix-intro { margin: 8px 0 18px; font-size: calc(0.95rem * var(--read-scale)); line-height: 1.95; color: var(--ink); max-width: var(--read-w); }
+.qt-matrix-page .wg { margin-top: 26px; }
+.qt-matrix-next { margin: 26px 0 48px; }
+.qt-matrix-next a { color: var(--cinnabar); text-decoration: none; }

@@ -80,8 +80,11 @@ const VALIDATORS = {
         if (extra !== undefined || !p.rows.includes(r) || !p.cols.includes(col)) e.push(`cells 的键不在行列之内: ${k}`)
         if (!c || !isStr(c.text)) e.push(`cells[${k}] 缺 text`)
         if (c && c.href !== undefined && !(isStr(c.href) && c.href.startsWith('/'))) e.push(`cells[${k}].href 须为站内路径`)
+        for (const f of ['note', 'quote', 'sub']) if (c && c[f] !== undefined && typeof c[f] !== 'string') e.push(`cells[${k}].${f} 须为字符串`)
       }
     }
+    if (p.colorGan !== undefined && typeof p.colorGan !== 'boolean') e.push('colorGan 须为布尔')
+    for (const f of ['foot', 'linkLabel', 'rowLabel', 'colLabel']) if (p[f] !== undefined && typeof p[f] !== 'string') e.push(`${f} 须为字符串`)
     return e
   },
 }
