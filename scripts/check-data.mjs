@@ -258,8 +258,13 @@ const mingliBooks = checkReadingCorpus('观数', 'mingli', '章')
           if (text.includes(w)) err(`观数版权闸 ${f}: 原文命中评注本增益文字的指纹「${w}」——疑剔除规则失效,查 scripts/corpus/mingli.config.mjs 的 dropParaRe/stopParaRe`)
         }
       }
+      // 古义豁免:词表里有两个词在明以前的文言里本有别义,逐条核实后按**精确上下文**豁免
+      // (只挖掉这几个确定的串,不放宽词表本身——同一个词换个上下文出现,照样报错)。
+      //   · 「中央总统之气」(《三命通会》卷一论纳音):总统=总领统摄,非民国政制词。
+      //   · 「丙子科学正闽人」(卷八命例):是「丙子科」+「学正」(明代府州县儒学官)断在一处,非现代「科学」。
+      const scanText = ['中央总统之气', '科学正'].reduce((t, ok) => t.split(ok).join(''), text)
       for (const w of BANNED_WORDS) {
-        if (text.includes(w)) err(`观数版权闸 ${f}: 原文命中现代评注痕迹词「${w}」——疑混入 20 世纪评注(仍在版权期内),须从 scripts/corpus/mingli.config.mjs 加剔除规则、重跑 fetch-corpus,而非手改生成物`)
+        if (scanText.includes(w)) err(`观数版权闸 ${f}: 原文命中现代评注痕迹词「${w}」——疑混入 20 世纪评注(仍在版权期内),须从 scripts/corpus/mingli.config.mjs 加剔除规则、重跑 fetch-corpus,而非手改生成物`)
       }
     }
   }
