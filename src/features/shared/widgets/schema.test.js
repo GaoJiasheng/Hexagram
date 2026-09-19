@@ -20,6 +20,6 @@ describe('widget 块校验', () => {
     expect(validateWidget(w('nope', {}))[0]).toMatch(/未知 widget kind/)
   })
   it('kind 清单稳定(加件要同步 registry 与规格)', () => {
-    expect(WIDGET_KINDS).toEqual(['sizhu', 'wuxing', 'jiazi', 'shishen', 'dizhi', 'qizhu', 'jieqi', 'matrix'])
+    expect(WIDGET_KINDS).toEqual(['sizhu', 'wuxing', 'jiazi', 'shishen', 'dizhi', 'qizhu', 'jieqi', 'matrix', 'geju'])
   })
 })

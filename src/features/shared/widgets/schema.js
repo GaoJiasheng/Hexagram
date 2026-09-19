@@ -6,7 +6,7 @@
 //
 // 加一个 widget:① 这里登记 kind 与校验 ② registry.jsx 登记懒加载组件 ③ design-v23 §5 补 props 契约。
 
-import { GAN, ZHI, WUXING, isValidGanZhi, isGan, isZhi } from '../ganzhi/index.js'
+import { GAN, ZHI, WUXING, isValidGanZhi, isGan, isZhi, cangGan } from '../ganzhi/index.js'
 
 const isStr = (v) => typeof v === 'string' && v.length > 0
 const isArr = Array.isArray
@@ -85,6 +85,17 @@ const VALIDATORS = {
     }
     if (p.colorGan !== undefined && typeof p.colorGan !== 'boolean') e.push('colorGan 须为布尔')
     for (const f of ['foot', 'linkLabel', 'rowLabel', 'colLabel']) if (p[f] !== undefined && typeof p[f] !== 'string') e.push(`${f} 须为字符串`)
+    return e
+  },
+  // 格局判定流程(子平真诠):日主 × 月令 → 藏干十神 → 谁透谁作主 → 格名。tou 须是该月令的藏干。
+  geju(p) {
+    const e = []
+    if (p.dayGan !== undefined && !GAN.includes(p.dayGan)) e.push(`dayGan 不是天干: ${p.dayGan}`)
+    if (p.monthZhi !== undefined && !ZHI.includes(p.monthZhi)) e.push(`monthZhi 不是地支: ${p.monthZhi}`)
+    if (p.tou !== undefined) {
+      if (!isArr(p.tou) || !p.tou.every((g) => GAN.includes(g))) e.push('tou 须为天干数组')
+      else if (!e.length && !p.tou.every((g) => cangGan(p.monthZhi || '辰').includes(g))) e.push(`tou 里有不在 ${p.monthZhi || '辰'} 藏干中的字`)
+    }
     return e
   },
 }

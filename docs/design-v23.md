@@ -40,10 +40,11 @@
 | `/mingli/learn` · `/mingli/learn/:topic` | 学堂目录 · 单篇 |
 | `/mingli/:slug` · `/:slug/:chapter` · `/:slug/baihua/:chapter` · `/:slug/daodu` | 通用 corpus 页(现成) |
 | `/mingli/qiongtong/matrix` | 《穷通宝鉴》调候矩阵导航(§7) |
+| `/mingli/zhenquan/geju` | 《子平真诠》格局判定流程(§7) |
 | `/mingli/paipan` | 排盘台(§9) |
 | `/mingli/school` · `/mingli/me` | 家级导读 · 我的(现成) |
 
-`texts.json` 新增字段:`tier`(入门 / 进阶 / 集成 / 源头)、`lens`(格局 / 旺衰 / 调候,仅进阶三书)、`system`。
+`texts.json` 新增字段:`shape`(`{href,label,desc}`,书页目录之上出「这本书的形状」入口)、`tier`(入门 / 进阶 / 集成 / 源头)、`lens`(格局 / 旺衰 / 调候,仅进阶三书)、`system`。
 
 ---
 
@@ -122,7 +123,7 @@
 每个件只有一条验收标准:**「读者动什么 → 悟什么」在页面上真的成立。**讲推导过程,不只给结论;不输出断语;
 明暗两套;320px 不横向溢出(矩阵除外);键盘可操作;规则一律调 `ganzhi`,**件内不许手写规则表**。
 
-### props 契约(v1,八件)
+### props 契约(v1,九件)
 
 | kind | props | 动什么 → 悟什么 |
 |---|---|---|
@@ -134,8 +135,10 @@
 | `qizhu` 起柱演示 | `which?`(`month/hour`)· `gan?` | 选年干 → 十二月干自动排出。口诀只是取余,十干只有五种起法 |
 | `jieqi` 节气年轮 | `year?` | 拖日期 → 年柱在立春那一刻变,不在元旦、不在春节 |
 | `matrix` 可点矩阵 | `rows` · `cols` · `cells{'行\|列':{text,href?,note?}}` · `rowLabel?` · `colLabel?` | 一眼看全局,点格下钻。通用件(穷通 10×12、本草 6×3……) |
+| `geju` 格局判定 | `dayGan?` · `monthZhi?` · `tou?`(须是该月令的藏干) | 日主 → 月令 → 藏干十神 → **谁透谁作主** → 格名 + 讲这一格的章。规则层 `ganzhi/geju.js`,单测以原书自举之例为验;**到格名为止**(成败高低要整个八字,不建模) |
+| `matrix` 的 `cells` 另可带 | `quote?` · `sub?` · `caveat?` | `caveat` = 原书自身前后说法不一处的如实标注(格角小点 + 面板说明),不替原书拍板 |
 
-后续件(各自立项时补契约):`tree` 判定流程图 · `stepper` 案例步进走读 · `timeline` · `graph` · `lens` 视角切换。
+后续件(各自立项时补契约):`stepper` 案例步进走读 · `timeline` · `graph` · `lens` 视角切换。
 
 ---
 
@@ -184,7 +187,7 @@
 |---|---|---|
 | **穷通宝鉴** | 十干 × 十二月的矩阵 | `/mingli/qiongtong/matrix`:`matrix` 件,格内显示调候用神,点格跳该节。**数据 `matrix/qiongtong.json` 每格挂原文子串,`check-data` 校验命中**——不凭记忆填 |
 | **滴天髓阐微** | 纲领 / 阐微 / 命例三层;命例约千处 | 阅读器识别正文四柱串(`findPillars`)→ 段下挂 `sizhu` 件;精选命例另做步进走读 |
-| **子平真诠** | 取格判定树 | `tree` 件:每个节点挂原文出处 |
+| **子平真诠** | 取格判定流程 | `/mingli/zhenquan/geju`:`geju` 件,四步走到格名,每条规则挂原文出处与章链接 |
 | **渊海子平** | 歌诀 | `verse` 断行 + 歌诀闪卡 |
 
 贯通件:**三派对读**(同一命例切 格局 / 旺衰 / 调候 三个镜头)· **概念索引**(十神 / 格局 / 用神 / 通根…… → 各书章,扩 `concepts.json`)。

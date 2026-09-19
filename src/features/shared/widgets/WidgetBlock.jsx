@@ -19,6 +19,7 @@ const REGISTRY = {
   qizhu: lazy(() => import('./QizhuDemo.jsx')),
   jieqi: lazy(() => import('./JieqiRing.jsx')),
   matrix: lazy(() => import('./MatrixGrid.jsx')),
+  geju: lazy(() => import('./GejuFlow.jsx')),
 }
 
 class WidgetBoundary extends Component {

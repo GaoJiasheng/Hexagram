@@ -1,0 +1,48 @@
+/* 格局判定流程图(kind: geju) */
+.gj { border: 1px solid var(--line); border-radius: 10px; background: var(--paper-raised); padding: 16px 14px 12px; }
+.gj-step { padding: 4px 0 14px; border-bottom: 1px dashed var(--line); margin-bottom: 12px; }
+.gj-step__head { margin: 0 0 10px; font-size: 0.9rem; color: var(--ink); display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.gj-step__no { display: inline-flex; align-items: center; justify-content: center; width: 1.5em; height: 1.5em; border-radius: 50%; font-family: var(--font-serif); font-size: 0.82rem; color: var(--paper-raised); background: var(--cinnabar); }
+.gj-step__aside { font-size: 0.76rem; color: var(--ink-faint); }
+
+.gj-picks { display: flex; flex-wrap: wrap; gap: 6px; }
+.gj-pick {
+  font-family: var(--font-serif); font-size: 1.15rem; line-height: 1; min-width: 2.3em; padding: 8px 6px;
+  color: var(--wx); background: color-mix(in srgb, var(--wx) 7%, var(--paper));
+  border: 1px solid color-mix(in srgb, var(--wx) 30%, transparent); border-radius: 7px; cursor: pointer;
+}
+.gj-pick--zhi { display: inline-flex; flex-direction: column; align-items: center; gap: 3px; padding: 6px 4px 5px; }
+.gj-pick small { font-family: var(--font-sans, inherit); font-size: 0.62rem; color: var(--ink-faint); letter-spacing: 0.02em; }
+.gj-pick.is-active { background: color-mix(in srgb, var(--wx) 20%, var(--paper)); box-shadow: 0 0 0 2px var(--wx); }
+.gj-pick:focus-visible, .gj-cangbtn:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 2px; }
+
+.gj-cang { display: flex; gap: 8px; flex-wrap: wrap; }
+.gj-cangbtn {
+  flex: 1 1 88px; max-width: 150px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 8px 6px;
+  background: var(--paper); border: 1px solid var(--line); border-radius: 8px; cursor: pointer; color: var(--ink-soft);
+}
+.gj-cangbtn__role { font-size: 0.68rem; letter-spacing: 0.1em; color: var(--ink-faint); }
+.gj-cangbtn__gan { font-family: var(--font-serif); font-size: 1.6rem; line-height: 1.1; color: var(--wx); }
+.gj-cangbtn__ss { font-size: 0.82rem; color: var(--ink); }
+.gj-cangbtn__tou { font-size: 0.68rem; padding: 0 7px; border-radius: 9px; border: 1px solid var(--line); color: var(--ink-faint); }
+.gj-cangbtn.is-tou { border-color: color-mix(in srgb, var(--wx) 55%, transparent); background: color-mix(in srgb, var(--wx) 8%, var(--paper)); }
+.gj-cangbtn.is-tou .gj-cangbtn__tou { color: var(--wx); border-color: currentColor; }
+.gj-cangbtn.is-main { box-shadow: 0 0 0 2px var(--cinnabar); }
+.gj-reason { margin: 10px 0 0; font-size: 0.86rem; color: var(--ink-soft); line-height: 1.7; }
+.gj-reason b { color: var(--ink); }
+
+.gj-result { padding: 2px 0 6px; }
+.gj-result__name { margin: 0 0 4px; font-family: var(--font-serif); font-size: 1.55rem; color: var(--cinnabar); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.gj-result__use { font-family: var(--font-sans, inherit); font-size: 0.72rem; letter-spacing: 0.08em; padding: 1px 8px; border-radius: 10px; border: 1px solid currentColor; }
+.gj-result__use--shun { color: var(--wx-mu); } .gj-result__use--ni { color: var(--wx-huo); }
+.gj-result__jian { margin: 0 0 6px; font-size: 0.84rem; color: var(--ink-soft); }
+.gj-quote { margin: 10px 0 8px; padding: 8px 12px; border-left: 3px solid color-mix(in srgb, var(--cinnabar) 50%, transparent); font-family: var(--font-serif); font-size: 0.98rem; line-height: 1.8; color: var(--ink); }
+.gj-quote cite { display: block; margin-top: 2px; font-family: var(--font-sans, inherit); font-style: normal; font-size: 0.72rem; color: var(--ink-faint); }
+.gj-result__link { margin: 0; font-size: 0.88rem; }
+.gj-result__link a, .gj-note a { color: var(--cinnabar); }
+
+.gj-notes { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.gj-note { padding: 9px 11px; border-radius: 7px; background: color-mix(in srgb, var(--ink) 4%, transparent); }
+.gj-note__say { margin: 0 0 4px; font-size: 0.86rem; line-height: 1.75; color: var(--ink); }
+.gj-note__quote { margin: 0; font-size: 0.8rem; line-height: 1.7; color: var(--ink-soft); font-family: var(--font-serif); }
+.gj-foot { margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed var(--line); font-size: 0.78rem; line-height: 1.75; color: var(--ink-faint); }

@@ -68,6 +68,16 @@ export default function CorpusTextPage({ corpus }) {
         <DaoduEntry corpus={corpus} slug={text.slug} bookTitle={text.title} />
       </div>
 
+      {/* 书的形状(design-v23 §7):有的书本来就不是一条线——穷通宝鉴是张表、子平真诠是道流程。
+          texts.json 给了 shape 就在目录之上放一个入口;手机上排在目录之前(它比题解更值得先看)。 */}
+      {text.shape && (
+        <Link to={text.shape.href} className="book-shape">
+          <span className="book-shape__tag">这本书的形状</span>
+          <span className="book-shape__label">{text.shape.label} →</span>
+          <span className="book-shape__desc">{text.shape.desc}</span>
+        </Link>
+      )}
+
       {resumeCh > 0 && (
         <Link to={`${site.home}/${slug}/${resumeCh}`} className="dao-text-resume">
           继续读 · 第 {resumeCh} {text.sectionUnit} →
