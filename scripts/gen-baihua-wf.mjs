@@ -103,6 +103,7 @@ if (IS_HEX) {
       title: c.title || `第${c.no}${unit}`,
       chars: c.paragraphs.map((p) => p.original).join('').length,
       featured: c.no === firstNo,        // 书首章 = 总纲,给 hero
+      text: inlineText(c),
     }))
   }
 }
@@ -136,6 +137,19 @@ const RED = {
   mingli: TIELU_MINGLI,
 }
 const FILE = (c, b) => `${ROOT}/src/data/${c}/classics/${b}.json`
+
+// 把一章的原文与站内译文直接排进提示语(2026-09-19)。此前让代理自己去 Read 整本书的 classics json
+// (渊海 600KB、滴天髓 1.1MB、三命通会 1.8MB):一章要二十多次工具调用、上下文反复重发,实测每章 ~37 万 token,
+// 一个下午两次打满账号用量上限。内嵌后代理拿到的就是这一章,不必翻大文件。
+// 超长章(>2.4 万字符)不内嵌,退回「自己去读」的老路,免得提示语过大。
+function inlineText(c) {
+  const lines = c.paragraphs.map((p, i) => {
+    const tag = p.pillars ? '〔命例·四柱 ' + p.pillars.join(' ') + (p.dayun?.length ? ' · 大运 ' + p.dayun.join(' ') : '') + '〕' : ''
+    return `[${i}] ${p.original}${tag}` + (p.translation ? `\n    译:${p.translation}` : '')
+  })
+  const t = lines.join('\n')
+  return t.length <= 24000 ? t : null
+}
 
 const SPEC = [
   '这是为古籍研习站写的「白话」深读 —— **首先是一篇公众号文章,不是逐句翻译作业**。',
@@ -368,7 +382,9 @@ const draftPrompt = (u) => {
     : '\n\n【本章较短——全文逐句】**全文逐句展开**:每个原文句子都引(quote)并讲透,不漏句。'
   const bookStyle = BOOK_STYLE[`${corpus}/${slug}`] ? `\n\n${BOOK_STYLE[`${corpus}/${slug}`]}` : ''
   return `你在为研习站写《${bookTitle}·${u.title}》的「白话」整章深读。${RED[corpus] || ''}${bookStyle}\n\n${spec}\n\n${figspec}\n\n${RICHSPEC}${WIDGETSPEC ? '\n\n' + WIDGETSPEC : ''}${approach}\n\n` +
-    `第一步:用 Read 读 ${FILE(corpus, slug)},找到 chapters 里 no===${u.no} 的那一章(paragraphs 为原文段,每段含 original 与 translation)。以这章原文为底成文。\n\n` +
+    (u.text
+      ? `**本章原文与站内译文已为你取好,见下(方括号里是段下标)。不必再去读数据文件——那个文件很大,读它是浪费。** quote.original 必须是下面某段原文的精确连续子串(逐字照抄,含全角标点;不要带上方括号下标与「译:」行)。\n\n<本章原文>\n${u.text}\n</本章原文>\n\n`
+      : `第一步:用 Read 读 ${FILE(corpus, slug)},找到 chapters 里 no===${u.no} 的那一章(paragraphs 为原文段,每段含 original 与 translation)。以这章原文为底成文。\n\n`) +
     `篇幅:${band}。\n\n按 schema 产出一篇白话文章:\n` +
     `- title:"白话${bookTitle} · ${u.title}";subtitle:一句副题;centralIdea:一句话中心思想。\n` +
     `- blocks:有序数组,块类型 lead(导语)/p(段落)/h2(小节标题)/quote{original,translation}(引文,original 必为该章原文段精确子串、translation 与站内译文一致)/figure{ftype,svg,caption}(内联 SVG 图)/refs{items:[…]}(出处与参考),外加富文本块 list/callout/pull/steps(见上「富文本块」,按分寸用、不硬凑)。按脊柱顺序铺;走读用 quote+p 穿插;金句卡等图穿插在合适处;末尾一个 refs 块。\n` +
@@ -377,7 +393,9 @@ const draftPrompt = (u) => {
 }
 
 const verifyPrompt = (u, draft) => IS_HEX ? yijingVerify(u, draft) : IS_JZ ? jzVerify(u, draft) : `校对修正《${bookTitle}·${u.title}》白话草稿,返回修正后完整结构。${RED[corpus] || ''}${BOOK_STYLE[`${corpus}/${slug}`] ? `\n${BOOK_STYLE[`${corpus}/${slug}`]}` : ''}\n\n` +
-  `先 Read ${FILE(corpus, slug)} 中 no===${u.no} 的章核对。草稿:\n${draft}\n\n` +
+  (u.text
+    ? `本章原文与站内译文如下(已取好,**不必去读数据文件**;核引文就拿它逐字比):\n<本章原文>\n${u.text}\n</本章原文>\n\n草稿:\n${draft}\n\n`
+    : `先 Read ${FILE(corpus, slug)} 中 no===${u.no} 的章核对。草稿:\n${draft}\n\n`) +
   `逐项改正:\n- 每个 quote.original 必须是该章某原文段的精确连续子串,否则改对或删;translation 与站内译文一致。\n` +
   `- 守红线:删去违红线的措辞(${corpus === 'zhongyi' ? '诊疗/功效用法用量/疗效断语' : corpus === 'mingli' ? '对命例中人的吉凶评判、教读者拿去断命的套用指引、预测性断语(原典自身断语属照译范围不删)' : (corpus === 'moulue' && !MOULUE_REAL_BOOKS.has(slug)) ? '为伪书张目/教施用' : corpus === 'moulue' ? '权术施用教程/成功学鸡汤式发挥' : corpus === 'fo' ? '果报/往生劝信' : '鸡汤/成功学/权术/政治影射'})。\n` +
   `- 每张 figure 的 svg:颜色只用 var(--…)/currentColor,**不得写死 #hex**;有 viewBox 与 caption。${IS_THICK ? '本书按加厚标准,应有 5–8 张图、每处义理都落到日常场景+比喻;' : ''}\n` +
@@ -419,7 +437,7 @@ const SCHEMA = {
   },
 }
 
-const UNITS = ${JSON.stringify(units, null, 0)}
+const UNITS = ${JSON.stringify(units.map(({ text, ...u }) => u), null, 0)}
 const DRAFT = ${JSON.stringify(Object.fromEntries(units.map((u) => [u.no, draftPrompt(u)])))}
 const VERIFY_HEAD = ${JSON.stringify(Object.fromEntries(units.map((u) => [u.no, verifyPrompt(u, '__DRAFT__')])))}
 
