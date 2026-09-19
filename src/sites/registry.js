@@ -248,10 +248,14 @@ export const SITES = [
     nav: [
       { to: '/mingli', label: '路径' },
       { to: '/mingli/learn', label: '学堂' },
+      { to: '/mingli/concepts', label: '概念' },
+      { to: '/mingli/paipan', label: '排盘' },
     ],
     mobileNav: [
       { to: '/mingli', label: '路径', icon: '☰', exact: true },
       { to: '/mingli/learn', label: '学堂', icon: '☲', exact: false },
+      { to: '/mingli/concepts', label: '概念', icon: '☵', exact: false },
+      { to: '/mingli/paipan', label: '排盘', icon: '☷', exact: false },
     ],
     mobileSwitch: false,
   },

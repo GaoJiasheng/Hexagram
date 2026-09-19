@@ -297,6 +297,32 @@ const mingliBooks = checkReadingCorpus('观数', 'mingli', '章')
   }
 }
 
+// ---------- 4b''''. 观数 · 概念索引(design-v23 §7)----------
+// 每个落点挂一个 kw:该章(标题+原文)里确有的字样。指章不凭记忆——kw 查不到就是指错了章。
+{
+  const cp = path.join(ROOT, 'src/data/mingli/concepts.json')
+  if (fs.existsSync(cp)) {
+    const data = JSON.parse(fs.readFileSync(cp, 'utf8'))
+    const books = {}
+    let nLoci = 0
+    for (const cl of data.clusters || []) {
+      if (!cl.term || !cl.gloss) err(`观数概念 ${cl.term || '(无名)'}: 缺 term/gloss`)
+      if (/[吉凶贵贱富贫寿夭祸福]/.test(cl.gloss || '')) err(`观数概念 ${cl.term}: gloss 含断语用字`)
+      for (const l of cl.loci || []) {
+        nLoci++
+        const bp = path.join(ROOT, `src/data/mingli/classics/${l.slug}.json`)
+        if (!fs.existsSync(bp)) { err(`观数概念 ${cl.term}: 无此书 ${l.slug}`); continue }
+        books[l.slug] ||= JSON.parse(fs.readFileSync(bp, 'utf8'))
+        const ch = books[l.slug].chapters.find((c) => c.no === l.ch)
+        if (!ch) { err(`观数概念 ${cl.term}: ${l.slug} 无第 ${l.ch} 章`); continue }
+        const txt = ch.title + ch.paragraphs.map((p) => p.original).join('')
+        if (!l.kw || !txt.includes(l.kw)) err(`观数概念 ${cl.term}: ${l.slug}#${l.ch} 原文中查不到「${l.kw}」`)
+      }
+    }
+    infos.push(`观数概念索引: ${(data.clusters || []).length} 个概念 · ${nLoci} 个落点`)
+  }
+}
+
 // ---------- 4c. 筮例(v9 §1) ----------
 {
   const shiliPath = path.join(ROOT, 'src/data/yijing/shili.json')

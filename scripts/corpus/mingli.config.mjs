@@ -56,6 +56,21 @@ const DITIANSUI_FIXES = [
   { from: '午辰庚戌', to: '壬辰庚戌', reason: '日柱辛未,时柱依五鼠遁(丙辛日起戊子顺数)辰时必壬辰;「午辰」非合法干支' },
 ]
 
+// 《滴天髓阐微》维基文库录入本的形讹(2026-09-19 策展命例时由两路校读报出)。
+// 只收有内证的;「态生季秋」「动尝不旺」「互相兹护」「日地为终」等疑讹而无确证者**不改**,留待对校影印本。
+const DITIANSUI_TYPOS = [
+  { from: '仁至', to: '仕至', expect: 8, reason: '「仁至尚书/观察」不辞;同书「仕至」69 见' },
+  { from: '瞹', to: '暖', expect: 5, reason: '「寒之甚，瞹之至」与同段「暖」并出,形讹' },
+  { from: '刽刃', to: '羊刃', expect: 1, reason: '同书「羊刃」18 见,无「刽刃」一词' },
+  { from: '铁身透丙', to: '贴身透丙', expect: 1, reason: '同书「贴身」8 见' },
+  { from: '荫疪', to: '荫庇', expect: 5, reason: '同书「荫庇」10 见' },
+  { from: '十干体象去', to: '十干体象云', expect: 1, reason: '引书之辞,「去」为「云」之讹' },
+  { from: '日地，生于', to: '日元，生于', expect: 2, reason: '命例解说起句定式「某某日元，生于某月」,同书「日元」103 见' },
+  { from: '日无，生于', to: '日元，生于', expect: 1, reason: '同上' },
+  { from: '癸黄甲', to: '登黄甲', expect: 1, reason: '同书「登黄甲」2 见;「癸黄甲」不辞' },
+  { from: '荆山荆山', to: '荆山', expect: 1, reason: '叠字衍文' },
+]
+
 export const BOOKS = [
   // 渊海子平:维基文库单页,72 处 ==标题== + 1 处误标为 === 的诗体子标题(先看月令，次看浅深。,
   // 内容完整、非误植,原样保留),splitHeadings 天然按小节切(数百至数千字一章,合乎「宁可章多」原则)。
@@ -71,7 +86,7 @@ export const BOOKS = [
   // PAGE_PRETREAT 按页名解包保留(此页专属处理,不影响其他书)。命例(约千处)在源页里竖排,
   // 四柱/大运每柱各占一段,mergeGanzhiRuns 合并成结构化「命例段」(见 fetch-corpus.mjs 的
   // mergeGanzhiRuns 函数说明;2026-09-19 owner 追加要求)。
-  { slug: 'ditiansui', title: '滴天髓阐微', pages: ['滴天髓闡微'], splitHeadings: true, exactChapters: 63, mergeGanzhiRuns: true, fixes: DITIANSUI_FIXES },
+  { slug: 'ditiansui', title: '滴天髓阐微', pages: ['滴天髓闡微'], splitHeadings: true, exactChapters: 63, mergeGanzhiRuns: true, fixes: DITIANSUI_FIXES, typoFixes: DITIANSUI_TYPOS, tidyPunct: true },
   // 穷通宝鉴:殆知阁本,localBreaks 见上。
   { slug: 'qiongtong', title: '穷通宝鉴', localFile: 'scripts/sources/mingli/qiongtong.txt', localBreaks: QIONGTONG_BREAKS, chapterTitles: QIONGTONG_TITLES, exactChapters: 11 },
 ]

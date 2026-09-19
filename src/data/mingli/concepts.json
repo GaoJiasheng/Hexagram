@@ -1,0 +1,625 @@
+{
+ "_note": "观数概念索引(design-v23 §7 贯通件)。每个落点的 kw 是该章原文中确有的字样,check-data 逐条回查——不凭记忆指章。",
+ "clusters": [
+  {
+   "term": "日主",
+   "gloss": "八字以日干为「我」,其余七个字都拿它当基准来称呼——子平法区别于更早的「以年为主」之处。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "yuanhai",
+     "ch": 4,
+     "label": "渊海子平·论日为主",
+     "kw": "以日为主"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "zhenquan",
+     "ch": 9,
+     "label": "子平真诠·论用神",
+     "kw": "以日干配月令"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 13,
+     "label": "滴天髓阐微·体用",
+     "kw": "日主"
+    }
+   ]
+  },
+  {
+   "term": "月令",
+   "gloss": "月支。一年十二个月的寒暖、五行当令与否都系于此,三派都把它放在最前面看,只是看法不同。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "yuanhai",
+     "ch": 5,
+     "label": "渊海子平·论月令",
+     "kw": "月令"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "zhenquan",
+     "ch": 9,
+     "label": "子平真诠·论用神",
+     "kw": "专求月令"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 15,
+     "label": "滴天髓阐微·月令",
+     "kw": "月令"
+    }
+   ]
+  },
+  {
+   "term": "用神",
+   "gloss": "八字里最要紧、最倚重的那个字。三派分歧的总枢纽:真诠从月令里取,滴天髓从旺衰里取,穷通从寒暖里取。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "zhenquan",
+     "ch": 9,
+     "label": "子平真诠·论用神",
+     "kw": "用神"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 13,
+     "label": "滴天髓阐微·体用",
+     "kw": "用神"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "qiongtong",
+     "ch": 2,
+     "label": "穷通宝鉴·论甲木",
+     "kw": "用"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "yuanhai",
+     "ch": 5,
+     "label": "渊海子平·论月令",
+     "kw": "用神"
+    }
+   ]
+  },
+  {
+   "term": "格局",
+   "gloss": "按月令(或特殊气势)给八字归的类。真诠以此立全书;滴天髓只认八个正格,对杂格多有批评。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "zhenquan",
+     "ch": 13,
+     "label": "子平真诠·论用神格局高低",
+     "kw": "格局"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 12,
+     "label": "滴天髓阐微·八格",
+     "kw": "格"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "yuanhai",
+     "ch": 73,
+     "label": "渊海子平·格局生死引用",
+     "kw": "格"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "zhenquan",
+     "ch": 48,
+     "label": "子平真诠·论杂格",
+     "kw": "杂格"
+    }
+   ]
+  },
+  {
+   "term": "藏干",
+   "gloss": "地支里藏着的天干(人元)。十神、透干、通根都从这里查起。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "yuanhai",
+     "ch": 3,
+     "label": "渊海子平·又地支藏遁歌",
+     "kw": "子宫癸水"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "zhenquan",
+     "ch": 11,
+     "label": "子平真诠·论用神变化",
+     "kw": "月令所藏不一"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 8,
+     "label": "滴天髓阐微·地支",
+     "kw": "支"
+    }
+   ]
+  },
+  {
+   "term": "旺衰",
+   "gloss": "日主与各字力量的强弱消长。滴天髓一路的入手处。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 17,
+     "label": "滴天髓阐微·衰旺",
+     "kw": "旺"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 18,
+     "label": "滴天髓阐微·中和",
+     "kw": "中和"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "zhenquan",
+     "ch": 7,
+     "label": "子平真诠·论十干得时不旺失时不弱",
+     "kw": "得时不旺"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "yuanhai",
+     "ch": 67,
+     "label": "渊海子平·身弱论",
+     "kw": "身弱"
+    }
+   ]
+  },
+  {
+   "term": "寒暖燥湿",
+   "gloss": "生在什么季节、局里是冷是热是干是润,先调过来再谈别的——后人称「调候」。穷通宝鉴全书以此立论。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "qiongtong",
+     "ch": 1,
+     "label": "穷通宝鉴·五行总论",
+     "kw": "寒"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 29,
+     "label": "滴天髓阐微·寒暖",
+     "kw": "寒"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 30,
+     "label": "滴天髓阐微·燥湿",
+     "kw": "燥"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "zhenquan",
+     "ch": 15,
+     "label": "子平真诠·论用神配气候得失",
+     "kw": "气候"
+    }
+   ]
+  },
+  {
+   "term": "正官",
+   "gloss": "克我而阴阳相异者。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "yuanhai",
+     "ch": 15,
+     "label": "渊海子平·正官论",
+     "kw": "正官"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "zhenquan",
+     "ch": 32,
+     "label": "子平真诠·论正官",
+     "kw": "官"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 21,
+     "label": "滴天髓阐微·官杀",
+     "kw": "官"
+    }
+   ]
+  },
+  {
+   "term": "七杀",
+   "gloss": "克我而阴阳相同者,又称偏官、七煞。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "yuanhai",
+     "ch": 16,
+     "label": "渊海子平·论七杀",
+     "kw": "七杀"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "zhenquan",
+     "ch": 40,
+     "label": "子平真诠·论偏官",
+     "kw": "煞"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 21,
+     "label": "滴天髓阐微·官杀",
+     "kw": "杀"
+    }
+   ]
+  },
+  {
+   "term": "财",
+   "gloss": "我克者。真诠不分正偏,同为一格。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "yuanhai",
+     "ch": 14,
+     "label": "渊海子平·论正财",
+     "kw": "财"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "zhenquan",
+     "ch": 34,
+     "label": "子平真诠·论财",
+     "kw": "财"
+    }
+   ]
+  },
+  {
+   "term": "印绶",
+   "gloss": "生我者。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "yuanhai",
+     "ch": 19,
+     "label": "渊海子平·论印绶",
+     "kw": "印绶"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "zhenquan",
+     "ch": 36,
+     "label": "子平真诠·论印绶",
+     "kw": "印绶"
+    }
+   ]
+  },
+  {
+   "term": "食神",
+   "gloss": "我生而阴阳相同者。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "yuanhai",
+     "ch": 13,
+     "label": "渊海子平·论食神",
+     "kw": "食神"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "zhenquan",
+     "ch": 38,
+     "label": "子平真诠·论食神",
+     "kw": "食神"
+    }
+   ]
+  },
+  {
+   "term": "伤官",
+   "gloss": "我生而阴阳相异者。诸书着墨最多、说法也最歧的一个十神。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "yuanhai",
+     "ch": 11,
+     "label": "渊海子平·论伤官",
+     "kw": "伤官"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "yuanhai",
+     "ch": 12,
+     "label": "渊海子平·伤官说",
+     "kw": "伤官"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "zhenquan",
+     "ch": 42,
+     "label": "子平真诠·论伤官",
+     "kw": "伤官"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 22,
+     "label": "滴天髓阐微·伤官",
+     "kw": "伤官"
+    }
+   ]
+  },
+  {
+   "term": "阳刃",
+   "gloss": "阳干的「禄前一位」。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "yuanhai",
+     "ch": 22,
+     "label": "渊海子平·论阳刃",
+     "kw": "阳刃"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "zhenquan",
+     "ch": 44,
+     "label": "子平真诠·论阳刃",
+     "kw": "阳刃"
+    }
+   ]
+  },
+  {
+   "term": "建禄月劫",
+   "gloss": "月令与日主同类,自身不能作用神,须另取。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "zhenquan",
+     "ch": 46,
+     "label": "子平真诠·论建禄月劫",
+     "kw": "建禄"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "yuanhai",
+     "ch": 21,
+     "label": "渊海子平·论劫财",
+     "kw": "劫财"
+    }
+   ]
+  },
+  {
+   "term": "刑冲会合",
+   "gloss": "地支之间的六合、三合、六冲、相刑。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "zhenquan",
+     "ch": 8,
+     "label": "子平真诠·论刑冲会合解法",
+     "kw": "刑冲"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 8,
+     "label": "滴天髓阐微·地支",
+     "kw": "冲"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 11,
+     "label": "滴天髓阐微·方局",
+     "kw": "方"
+    }
+   ]
+  },
+  {
+   "term": "十干性情",
+   "gloss": "十个天干各自的质性。滴天髓「甲木参天」一组韵语最为人熟知;穷通宝鉴十章即以十干分篇。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 7,
+     "label": "滴天髓阐微·天干",
+     "kw": "甲木参天"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "zhenquan",
+     "ch": 5,
+     "label": "子平真诠·论十干配合性情",
+     "kw": "十干"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "qiongtong",
+     "ch": 2,
+     "label": "穷通宝鉴·论甲木",
+     "kw": "甲木"
+    }
+   ]
+  },
+  {
+   "term": "阴阳生死",
+   "gloss": "十二长生「阳顺阴逆、阳生阴死」之说。真诠主之,任铁樵在滴天髓阐微里明确反对——体系内部一处公开的分歧。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "zhenquan",
+     "ch": 4,
+     "label": "子平真诠·论阴阳生死",
+     "kw": "生旺墓绝"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 9,
+     "label": "滴天髓阐微·干支总论",
+     "kw": "阴阳生死"
+    }
+   ]
+  },
+  {
+   "term": "清浊",
+   "gloss": "八字配合得干净不干净。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 23,
+     "label": "滴天髓阐微·清气",
+     "kw": "清"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 24,
+     "label": "滴天髓阐微·浊气",
+     "kw": "浊"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "zhenquan",
+     "ch": 12,
+     "label": "子平真诠·论用神纯杂",
+     "kw": "纯杂"
+    }
+   ]
+  },
+  {
+   "term": "从格",
+   "gloss": "日主极弱、无可扶助,索性顺从局中旺神。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 46,
+     "label": "滴天髓阐微·从象",
+     "kw": "从"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 48,
+     "label": "滴天髓阐微·假从",
+     "kw": "假从"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "yuanhai",
+     "ch": 68,
+     "label": "渊海子平·弃命从杀论",
+     "kw": "弃命从杀"
+    }
+   ]
+  },
+  {
+   "term": "化气",
+   "gloss": "日干与邻干相合而化为另一行。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 47,
+     "label": "滴天髓阐微·化象",
+     "kw": "化"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 49,
+     "label": "滴天髓阐微·假化",
+     "kw": "假化"
+    }
+   ]
+  },
+  {
+   "term": "通关",
+   "gloss": "两行相战,取中间一行引通。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 20,
+     "label": "滴天髓阐微·通关",
+     "kw": "通关"
+    }
+   ]
+  },
+  {
+   "term": "行运",
+   "gloss": "大运、流年。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "yuanhai",
+     "ch": 8,
+     "label": "渊海子平·论大运",
+     "kw": "大运"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "zhenquan",
+     "ch": 26,
+     "label": "子平真诠·论行运",
+     "kw": "行运"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 62,
+     "label": "滴天髓阐微·岁运",
+     "kw": "岁运"
+    }
+   ]
+  },
+  {
+   "term": "六亲",
+   "gloss": "以十神配父母、兄弟、妻、子。",
+   "loci": [
+    {
+     "corpus": "mingli",
+     "slug": "yuanhai",
+     "ch": 28,
+     "label": "渊海子平·六亲总篇",
+     "kw": "六亲"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "zhenquan",
+     "ch": 24,
+     "label": "子平真诠·论宫分用神配六亲",
+     "kw": "六亲"
+    },
+    {
+     "corpus": "mingli",
+     "slug": "ditiansui",
+     "ch": 35,
+     "label": "滴天髓阐微·夫妻",
+     "kw": "夫妻"
+    }
+   ]
+  }
+ ]
+}

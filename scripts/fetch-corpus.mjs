@@ -616,6 +616,33 @@ async function main() {
       ganzhiStat = mergeGanzhiRuns(chapters, warnings, book.pages?.[0] ?? book.localFile ?? book.slug)
     }
 
+    // typoFixes([{from,to,reason,expect}]):底本**形讹**的子串勘误(区别于上面整段相等的 fixes)。
+    // 只作用于非命例段;每条必须写明 expect(预期命中处数),实际不符即报 warning——
+    // 这道闸是为了防「子串替换误伤」:条目写宽了、或上游页面改了,都会在这里露出来。
+    // 只收有内证的(同书同词正写占压倒多数、或与该例四柱相校必为某字),拿不准的宁可留讹。
+    if (book.typoFixes) {
+      for (const fix of book.typoFixes) {
+        let hit = 0
+        for (const c of chapters) for (const p of c.paragraphs) {
+          if (p.pillars || !p.original.includes(fix.from)) continue
+          hit += p.original.split(fix.from).length - 1
+          p.original = p.original.split(fix.from).join(fix.to)
+        }
+        if (hit === fix.expect) console.log(`  形讹「${fix.from}」→「${fix.to}」: ${hit} 处`)
+        else warnings.push(`${book.title}: 形讹条目「${fix.from}」预期 ${fix.expect} 处、实际 ${hit} 处,请检查`)
+      }
+    }
+    // tidyPunct:正文里混入的半角逗号转全角、连续逗号并为一个(OCR/录入残留,不涉字)
+    if (book.tidyPunct) {
+      let n = 0
+      for (const c of chapters) for (const p of c.paragraphs) {
+        if (p.pillars) continue
+        const t = p.original.replace(/,/g, '\uFF0C').replace(/\uFF0C{2,}/g, '\uFF0C')
+        if (t !== p.original) { p.original = t; n++ }
+      }
+      if (n) console.log(`  标点归一: ${n} 段`)
+    }
+
     // 子页书友好章名覆盖(罗织经 01..12 → 阅人卷一 等),按序赋予
     if (book.chapterTitles) chapters.forEach((c, i) => { if (book.chapterTitles[i]) c.title = book.chapterTitles[i] })
 

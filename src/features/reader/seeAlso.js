@@ -1,4 +1,5 @@
 import concepts from '../../data/concepts.json'
+import mingliConcepts from '../../data/mingli/concepts.json'
 import { bookBySlug, chapterHref } from './booksIndex.js'
 
 // 义理互见(#141/B2)——给定某书某章,若它是某概念聚类的代表章,返回同聚类「其他书」的代表章。
@@ -9,7 +10,8 @@ import { bookBySlug, chapterHref } from './booksIndex.js'
 export function seeAlsoFor(corpus, slug, ch) {
   const n = String(ch)
   const out = []
-  for (const cluster of concepts.clusters) {
+  // 观数的概念索引单独成表(不进 /concepts 跨派专题页——那页讲的是诸子义理),但章末互见同一套机制
+  for (const cluster of [...concepts.clusters, ...mingliConcepts.clusters]) {
     const inThis = cluster.loci.some((l) => l.corpus === corpus && l.slug === slug && String(l.ch) === n)
     if (!inThis) continue
     const items = cluster.loci
