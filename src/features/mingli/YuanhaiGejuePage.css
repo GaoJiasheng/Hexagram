@@ -1,0 +1,76 @@
+/* 渊海子平·地支藏干歌诀卡 —— 只用站内 token,五行色走 widgets.css 的 --wx 钩子
+   (元素挂 .sz-char--mu|huo|tu|jin|shui,这里的类只管 color:var(--wx) 与排版)。 */
+
+.gjk-page { max-width: 640px; margin: 0 auto; }
+
+.gjk-card {
+  border: 1px solid var(--line); border-radius: 12px; background: var(--paper-raised);
+  padding: 20px 18px 22px; margin: 18px 0 28px;
+}
+
+.gjk-progress { margin: 0 0 14px; font-size: 0.8rem; letter-spacing: 0.04em; color: var(--ink-faint); text-align: center; }
+
+.gjk-face { text-align: center; margin-bottom: 18px; }
+.gjk-zhi {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 88px; height: 88px; margin: 0 auto 10px; border-radius: 50%;
+  font-family: var(--font-serif); font-size: 3rem; line-height: 1;
+  color: var(--wx); background: color-mix(in srgb, var(--wx) 10%, var(--paper));
+  border: 1px solid color-mix(in srgb, var(--wx) 38%, transparent);
+}
+.gjk-ask { margin: 0; font-size: 0.92rem; color: var(--ink-soft); }
+
+.gjk-gans { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 0 0 4px; }
+.gjk-gan {
+  font-family: var(--font-serif); font-size: 1.3rem; width: 44px; height: 44px;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--wx); background: color-mix(in srgb, var(--wx) 8%, var(--paper));
+  border: 1px solid color-mix(in srgb, var(--wx) 32%, transparent); border-radius: 8px;
+  cursor: pointer; transition: transform 0.12s, box-shadow 0.12s, background 0.12s, opacity 0.12s;
+}
+.gjk-gan:hover:not(:disabled) { transform: translateY(-1px); }
+.gjk-gan:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 2px; }
+.gjk-gan.is-picked { background: color-mix(in srgb, var(--wx) 22%, var(--paper)); box-shadow: 0 0 0 2px var(--wx); }
+.gjk-gan.is-right { background: color-mix(in srgb, var(--wx) 26%, var(--paper)); box-shadow: 0 0 0 2px var(--wx); }
+.gjk-gan.is-missed { opacity: 0.55; border-style: dashed; box-shadow: 0 0 0 2px var(--cinnabar); }
+.gjk-gan.is-wrong { text-decoration: line-through; box-shadow: 0 0 0 2px var(--cinnabar); }
+.gjk-gan:disabled { cursor: default; }
+
+.gjk-live { min-height: 1.4em; margin: 6px 0 0; text-align: center; font-size: 0.86rem; color: var(--cinnabar); }
+
+.gjk-reveal { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--line); }
+.gjk-cang { list-style: none; margin: 0 0 12px; padding: 0; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.gjk-cang__item { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.gjk-cang__label { font-size: 0.68rem; color: var(--ink-faint); letter-spacing: 0.05em; }
+.gjk-cang__char { font-family: var(--font-serif); font-size: 1.3rem; color: var(--wx); }
+
+.gjk-line {
+  margin: 0 0 6px; padding: 0 6px; border: none;
+  font-family: var(--font-serif); font-size: 0.98rem; line-height: 1.8; color: var(--ink); text-align: center;
+}
+.gjk-cite { margin: 0; font-size: 0.78rem; color: var(--ink-faint); text-align: center; }
+.gjk-cite a { color: var(--cinnabar); text-decoration: none; }
+.gjk-cite a:hover { text-decoration: underline; }
+
+.gjk-actions { display: flex; justify-content: center; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
+.gjk-btn {
+  font-size: 0.88rem; padding: 8px 18px; border-radius: 8px; border: 1px solid var(--line);
+  background: var(--paper); color: var(--ink-soft); cursor: pointer;
+}
+.gjk-btn:hover { color: var(--ink); border-color: color-mix(in srgb, var(--cinnabar) 30%, var(--line)); }
+.gjk-btn:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 2px; }
+.gjk-btn--primary {
+  background: color-mix(in srgb, var(--cinnabar) 10%, var(--paper));
+  border-color: color-mix(in srgb, var(--cinnabar) 40%, transparent); color: var(--cinnabar); font-weight: 600;
+}
+
+.gjk-summary {
+  max-width: 520px; margin: 24px 0; padding: 22px 18px; text-align: center;
+  border: 1px solid var(--line); border-radius: 12px; background: var(--paper-raised);
+}
+.gjk-summary__text { margin: 0; font-size: 0.98rem; color: var(--ink); line-height: 1.8; }
+
+@media (max-width: 480px) {
+  .gjk-zhi { width: 72px; height: 72px; font-size: 2.4rem; }
+  .gjk-gan { width: 38px; height: 38px; font-size: 1.1rem; }
+}

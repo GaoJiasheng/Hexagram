@@ -139,7 +139,7 @@ export default function YuanhaiGejuePage() {
 
       <div className="shelf-disclaimer">
         ⚠ 歌诀只讲「藏了谁」:像「辰藏乙戊三分癸」这类措辞,各藏干各管几天(司令)历来诸书说法不一,
-        这里不涉及、也不比较。这是一张记规则的卡,不判吉凶。
+        这里不涉及、也不比较。这是一张记规则的卡,只管记住,不涉及任何判断。
       </div>
 
       {load.status === 'loading' && <div className="mingli-topic-loading" aria-busy="true" />}

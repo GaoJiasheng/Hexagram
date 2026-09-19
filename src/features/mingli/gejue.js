@@ -11,7 +11,7 @@ const GAN_SET = new Set(GAN)
 const ZHI_SET = new Set(ZHI)
 
 // 全角标点须转义写 \uXXXX——工具链会把字面量全角标点悄悄转成半角(CLAUDE.md 已踩过的坑)。
-const SEP_RE = /[，；。]/ // ，；。
+const SEP_RE = /[\uFF0C\uFF1B\u3002]/ // ，；。
 
 /**
  * 歌诀原文 → 十二句,顺序照歌诀原序。
