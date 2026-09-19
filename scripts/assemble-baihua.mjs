@@ -2,6 +2,7 @@
 // 用法: node scripts/assemble-baihua.mjs <result.json>
 //   result.json = workflow 返回的数组 [{corpus, book, no, featured, data:{title,subtitle,centralIdea,blocks,hero?}}…]
 //   按 corpus/book 合并写入 src/data/<corpus>/baihua/<slug>.json(保留其它章),并自校引文逐字命中原文、报坏 cite。
+import { validateWidget } from '../src/features/shared/widgets/schema.js'
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -70,6 +71,7 @@ for (const u of units) {
 }
 
 let nCh = 0, nFig = 0, nBadCite = 0
+const droppedWidgets = []
 for (const [key, list] of Object.entries(byBook)) {
   const [corpus, slug] = key.split('/')
   const outFile = path.join(ROOT, `src/data/${corpus}/baihua/${slug}.json`)
@@ -91,6 +93,15 @@ for (const [key, list] of Object.entries(byBook)) {
         b.original = snapped
       }
       if (b.type === 'figure') figHere++
+      // widget 块(design-v23 §5):与浏览器共用同一份参数校验;不合法的丢弃(件坏了不连坐整篇)。
+      // sizhu 另加一道:四柱八个字必须都出自本章原文——不许文章自编命例。
+      if (b.type === 'widget') {
+        const errs = validateWidget(b)
+        const pz = b.kind === 'sizhu' && Array.isArray(b.props?.pillars) ? b.props.pillars : null
+        const foreign = pz && text ? pz.filter((gz) => !text.includes(gz)) : []
+        if (errs.length || foreign.length) { droppedWidgets.push(`${u.no}: ${b.kind} ${errs.join(';')}${foreign.length ? ' 四柱不见于本章原文:' + foreign.join(' ') : ''}`); continue }
+        figHere++
+      }
       // 富文本块(v22.1)归一:steps 的项是对象,schema 里单开了 steps 字段(items 被约束为字符串数组)
       if (b.type === 'steps' && Array.isArray(b.steps)) { b.items = b.steps; delete b.steps }
       // 空块不落盘(模型偶尔给 {type:'list'} 却没 items)
@@ -126,4 +137,5 @@ for (const [key, list] of Object.entries(byBook)) {
   console.log(`写 ${outFile}  (${list.length} 章)`)
 }
 
+if (droppedWidgets.length) { console.log(`\n丢弃 widget ${droppedWidgets.length} 个:`); for (const w of droppedWidgets) console.log('  ✗ ' + w) }
 console.log(`\n装配完成:写入 ${nCh} 章 · ${nFig} 图。坏引文丢弃 ${nBadCite} 处(对应章未写,gen 重跑会自动补)。`)

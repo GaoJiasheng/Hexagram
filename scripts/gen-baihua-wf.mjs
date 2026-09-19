@@ -168,6 +168,21 @@ const RICHSPEC = [
   '一整章一个新块都不加也正常,**绝不为了用新块而硬拆段落**。',
 ].join('\n')
 
+// 观数专用:富文本里「活的块」(design-v23 §5)。管线只写参数不画图——省 token、明暗自适应、
+// 参数错了装配时机器查得出(死 SVG 画错了谁也查不出)。**讲到命例一律用 sizhu 件,不许手画四柱 SVG。**
+const WIDGETSPEC = corpus !== 'mingli' ? '' : [
+  '活的块 widget(本组专用,**优先于手画 SVG**):{ "type":"widget", "kind":"…", "props":{…}, "caption":"一句话:让读者动什么、看什么" }',
+  '- sizhu 四柱图 —— props { "pillars":["丙子","己亥","乙亥","丙子"], "focus":["丙"] }。pillars 为 年月日时 四个干支,**必须逐字取自本章原文里的那个命例**(不许自编命例);',
+  '  focus 是希望读者先看的干/支单字(须在这八个字之内)。读者可点任何一个字看它的十神、藏干。**凡讲到书里的命例,用它,不要手画四柱。**',
+  '- wuxing 五行生克图 —— props { "center":"木", "mode":"sheng|ke|both" }(都可省)。讲生克制化时用。',
+  '- shishen 十神盘 —— props { "dayGan":"甲" }。讲「同一个字对不同日主是不同十神」时用。',
+  '- dizhi 十二支盘 —— props { "show":["chong","sanhe"], "focus":["子","午"] }(show 取 liuhe/sanhe/sanhui/chong/xing/hai)。讲合冲刑害时用。',
+  '- jiazi 六十甲子盘 —— props { "highlight":["甲子","乙丑"] }。',
+  slug === 'zhenquan' ? '- geju 格局判定流程 —— props { "dayGan":"辛", "monthZhi":"寅", "tou":["丙"] }(tou 须是该月支的藏干)。讲原书某个取格之例(如「辛生寅月,逢丙而化财为官」)时用,让读者亲手走一遍。' : '',
+  '分寸:一章 0–3 个 widget,**与 figure 合计仍须满足本档的图数要求**(widget 算一张图);caption 必写;件本身不出任何判断,你的 caption 也不要下断语。',
+  '除上述情形外(时间线、对照、结构、金句卡)照常用 figure + SVG。',
+].filter(Boolean).join('\n')
+
 // ── corpus 加厚档(owner:佛经按易经标准——更厚、更多图、更多生活场景;短章逐句、长章摘录精华)──
 const THICK = new Set([])   // 整组走加厚档的 corpus(空:当前无整组加厚;按书加厚见 THICK_BOOKS)
 // 按「书」加厚(只某 corpus 里的部分书走加厚,其余书普通档)——owner 2026-06-22:道只道德经、纵横只鬼谷子(战国策选普通档)
@@ -240,6 +255,8 @@ const BOOK_STYLE = {
   ].join('\n'),
 }
 
+// 可选:--verify-model=sonnet(校对是核对型的活,大批量时分摊用量;默认两段都 opus)
+const VERIFY_MODEL = (process.argv.find((a) => a.startsWith('--verify-model=')) || '').slice('--verify-model='.length) || 'opus'
 const THICK_BOOKS = new Set(['dao/daodejing', 'zong/guiguzi', 'xin/chuanxilu', 'xin/daxuewen', 'fo/xinjing', 'fo/tanjing', 'fo/jingangjing'])
 const IS_THICK = THICK.has(corpus) || THICK_BOOKS.has(`${corpus}/${slug}`)
 const THICK_EXTRA = [
@@ -281,7 +298,7 @@ const yijingDraft = (u) => {
     `   - 错综卦:错卦=六爻阴阳全反、综卦=整体上下颠倒;可在 hexagrams.json 里按 binary 找出对应卦名,点出本卦与哪些卦相反相成(拿不准只讲卦象本身,勿编卦名)。\n` +
     `   - 卦序:用 xugua/zagua 讲此卦为何排在第 ${u.no} 位、与前后卦怎样承接。\n` +
     `   - 成语典故:由本卦/爻生出的成语(确有才写,如乾「飞龙在天/亢龙有悔」、谦「谦谦君子」),勾连今天语用。八宫/纳甲拿不准不要写。\n\n` +
-    SPEC_Y + '\n\n' + FIGSPEC_Y + '\n\n' + RICHSPEC + '\n\n' +
+    SPEC_Y + '\n\n' + FIGSPEC_Y + '\n\n' + RICHSPEC + (WIDGETSPEC ? '\n\n' + WIDGETSPEC : '') + '\n\n' +
     `篇幅:${band}。\n\n按 schema 产出文章:\n` +
     `- title:"白话易经 · ${u.title}";subtitle:一句副题;centralIdea:一句话中心思想。\n` +
     `- 块类型:lead/h2/p/quote/figure/refs + 富文本块 list/callout/pull/steps(见上「富文本块」,按分寸用,不硬凑)。\n` +
@@ -319,7 +336,7 @@ const jzDraft = (u) => {
   return `你在为「观象」易经研习站写《${bookTitle}·${u.title}》的「白话」整章加厚深读 —— 这是易经「十翼」之经传(义理散论/取象/卦序),不是某一卦的卦爻。${RED.yijing}\n\n` +
     `第一步:用 Read 读 ${JZ_FILE(slug)},找到 chapters 里 no===${u.no} 的那一章(paragraphs 为原文段,每段含 original 与 translation)。以这章原文为底成文。\n` +
     (slug !== 'xici-shang' && slug !== 'xici-xia' ? `如需卦名/卦象/取象/卦序,可 Grep ${Y_FILE} 查证(name/binary/upperTrigram/lowerTrigram/xugua/zagua),八卦符号与卦名务必与原文一致,勿凭记忆编造。\n` : '') +
-    `\n${SPEC}\n${THICK_EXTRA}\n\n${FIGSPEC_THICK}\n${JZ_FIG[slug] || ''}\n\n${RICHSPEC}${approach}\n\n` +
+    `\n${SPEC}\n${THICK_EXTRA}\n\n${FIGSPEC_THICK}\n${JZ_FIG[slug] || ''}\n\n${RICHSPEC}${WIDGETSPEC ? '\n\n' + WIDGETSPEC : ''}${approach}\n\n` +
     `篇幅:${band}。\n\n按 schema 产出文章:\n` +
     `- title:"白话${bookTitle} · ${u.title}";subtitle:一句副题;centralIdea:一句话中心思想。\n` +
     `- blocks:lead/p/h2/quote{original,translation}/figure{ftype,svg,caption}/refs,外加富文本块 list/callout/pull/steps(见上,按分寸用)。quote.original 必为该章原文段精确连续子串、translation 与站内译文一致。脊柱顺序铺;走读用 quote+p 穿插;金句卡每章必出;末尾一个 refs 块。\n` +
@@ -350,7 +367,7 @@ const draftPrompt = (u) => {
     ? '\n\n【本章较长——分段摘录】把本章**分成几段**,每段挑出**精华/关键的句子**(quote)逐一深读解释;次要的叙述/重复句可并讲带过,**不必逐句翻每一句**。引文仍须精确子串。'
     : '\n\n【本章较短——全文逐句】**全文逐句展开**:每个原文句子都引(quote)并讲透,不漏句。'
   const bookStyle = BOOK_STYLE[`${corpus}/${slug}`] ? `\n\n${BOOK_STYLE[`${corpus}/${slug}`]}` : ''
-  return `你在为研习站写《${bookTitle}·${u.title}》的「白话」整章深读。${RED[corpus] || ''}${bookStyle}\n\n${spec}\n\n${figspec}\n\n${RICHSPEC}${approach}\n\n` +
+  return `你在为研习站写《${bookTitle}·${u.title}》的「白话」整章深读。${RED[corpus] || ''}${bookStyle}\n\n${spec}\n\n${figspec}\n\n${RICHSPEC}${WIDGETSPEC ? '\n\n' + WIDGETSPEC : ''}${approach}\n\n` +
     `第一步:用 Read 读 ${FILE(corpus, slug)},找到 chapters 里 no===${u.no} 的那一章(paragraphs 为原文段,每段含 original 与 translation)。以这章原文为底成文。\n\n` +
     `篇幅:${band}。\n\n按 schema 产出一篇白话文章:\n` +
     `- title:"白话${bookTitle} · ${u.title}";subtitle:一句副题;centralIdea:一句话中心思想。\n` +
@@ -384,7 +401,9 @@ const SCHEMA = {
     blocks: { type: 'array', items: {
       type: 'object', additionalProperties: false, required: ['type'],
       properties: {
-        type: { enum: ['lead', 'p', 'h2', 'quote', 'figure', 'refs', 'list', 'callout', 'pull', 'steps'] },
+        type: { enum: ['lead', 'p', 'h2', 'quote', 'figure', 'refs', 'list', 'callout', 'pull', 'steps', 'widget'] },
+        // widget 块(design-v23 §5):kind + 自由形状的 props;装配时用 shared/widgets/schema.js 逐个校验,不合法的丢弃
+        kind: { type: 'string' }, props: { type: 'object' },
         text: { type: 'string' }, original: { type: 'string' }, translation: { type: 'string' },
         ftype: { type: 'string' }, svg: { type: 'string' }, caption: { type: 'string' },
         items: { type: 'array', items: { type: 'string' } },
@@ -411,7 +430,7 @@ const results = await pipeline(
   (draft, u) => {
     if (!draft) return { ...u, data: null }
     const vp = VERIFY_HEAD[u.no].replace('__DRAFT__', JSON.stringify(draft).slice(0, 60000))
-    return agent(vp, { label: '校:${bookTitle}·' + u.title, phase: 'Verify', schema: SCHEMA, model: 'opus' })
+    return agent(vp, { label: '校:${bookTitle}·' + u.title, phase: 'Verify', schema: SCHEMA, model: '${VERIFY_MODEL}' })
       .then((v) => ({ ...u, data: v || draft }))
   },
 )
