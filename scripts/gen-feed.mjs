@@ -60,6 +60,7 @@ for (const corpus of fs.readdirSync(SRC_DATA).sort()) {
   const textsFile = path.join(SRC_DATA, corpus, 'texts.json')
   if (!exists(textsFile)) continue
   const site = SITES.find((s) => s.key === corpus)
+  if (site?.portalHidden) continue   // 门户暂不露出的组(review 前的观数)不进 RSS——与门户/sitemap/站外搜索同一口径
   const home = site?.home || `/${corpus}`
   for (const t of readJson(textsFile)) {
     // 书的「入库时间」以它的原文文件为准 —— texts.json 是全组共用的,先有它不代表这本已收

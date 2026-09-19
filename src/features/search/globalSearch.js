@@ -1,3 +1,4 @@
+import { SITES } from '../../sites/registry.js'
 const BASE = (import.meta.env.BASE_URL || '/').replace(/\/$/, '')
 const urlFor = (p) => `${BASE}${p.startsWith('/') ? p : `/${p}`}`
 
@@ -117,7 +118,14 @@ export async function searchGlobal(query) {
     }
   }
 
+  // 门户暂不露出的组(registry portalHidden,如 review 前的观数):站外搜不到,人在该组里才搜得到自家内容。
+  // 与「门户不列、sitemap 不收」同一道口径——要么都露,要么都不露。
+  const here = typeof location !== 'undefined' ? location.pathname : ''
+  const hiddenPrefixes = SITES.filter((x) => x.portalHidden && x.prefix).map((x) => x.prefix)
+  const blocked = (href) => hiddenPrefixes.some((pre) => (href === pre || href.startsWith(pre + '/')) && !(here === pre || here.startsWith(pre + '/')))
+
   const list = [...hits.values()]
+    .filter(({ index }) => !blocked(records[index].href || ''))
     .map(({ index, score }) => {
       const r = records[index]
       return {

@@ -556,12 +556,14 @@ function buildOgIndex(records) {
 // 收进 sitemap 等于亲手把它交给搜索引擎。og 索引本就不含它,这里再挡一道,
 // 因为「哪些页该公开」这件事值得写两遍。
 const SITE_ORIGIN = 'https://hexa.gavin.pub'
+const HIDDEN_PREFIXES = SITES.filter((x) => x.portalHidden && x.prefix).map((x) => x.prefix)
 function buildSitemap(records) {
   const seen = new Set()
   for (const r of records) {
     if (!r.href || !r.title) continue
     if (r.href.includes('#')) continue
     if (r.href.startsWith('/books')) continue    // 隐藏书房,不进 sitemap
+    if (HIDDEN_PREFIXES.some((pre) => r.href === pre || r.href.startsWith(pre + '/'))) continue   // 门户暂不露出的组(registry portalHidden),review 通过、去掉标记后自动纳入
     seen.add(r.href)
   }
   const urls = [...seen].sort()
