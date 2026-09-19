@@ -5,7 +5,7 @@ import { loadText, getMeta } from '../reader/corpus.js'
 import { chapterParts } from '../reader/chapterParts.js'
 import { ganWuxing } from '../shared/ganzhi/index.js'
 import WidgetBlock from '../shared/widgets/WidgetBlock.jsx'
-import { gejuLens, tiaohouLens } from './lenses.js'
+import LensCards from './LensCards.jsx'
 
 // 《滴天髓阐微》命例走读(design-v23 §7)。
 // 这本书约五百个命例,任铁樵每个例后面都有一段解说——但解说是一整段文言,读者看不出他的眼睛
@@ -96,18 +96,6 @@ function CaseWalk({ c, book, cases }) {
   const cur = c.steps[step]
   const meta = getMeta('mingli', 'ditiansui')
 
-  // 调候镜头要查穷通的矩阵与底本(算分屏),懒加载;格局镜头纯计算
-  const [qt, setQt] = useState(null)
-  useEffect(() => {
-    let alive = true
-    Promise.all([import('../../data/mingli/matrix/qiongtong.json'), loadText('mingli', 'qiongtong')])
-      .then(([m, b]) => alive && setQt({ matrix: m.default, book: b }))
-      .catch(() => {})
-    return () => { alive = false }
-  }, [])
-  const geju = useMemo(() => gejuLens(pillars), [pillars])
-  const tiaohou = useMemo(() => (qt ? tiaohouLens(pillars, qt.matrix, qt.book, getMeta('mingli', 'qiongtong')) : null), [qt, pillars])
-
   const srcHref = useMemo(() => {
     const parts = chapterParts(ch, meta)
     const pi = parts ? parts.findIndex((pt) => c.para >= pt.from && c.para < pt.to) : -1
@@ -155,33 +143,17 @@ function CaseWalk({ c, book, cases }) {
       <section className="dc-lens">
         <h2 className="dc-lens__title">换个镜头</h2>
         <p className="dc-lens__intro">同一个八字,另外两本书会从别的地方下手。下面两格<strong>完全是按各书的规则算出来的</strong>,没有一个字的判断;三家说法未必一致,这里不替它们裁断。</p>
-        <div className="dc-lens__grid">
-          <div className="dc-lens__card dc-lens__card--self">
-            <p className="dc-lens__tag">旺衰 · 《滴天髓》</p>
-            <p className="dc-lens__main">上面走的就是这个镜头</p>
-            <p className="dc-lens__body">任铁樵先掂量日主与各字的强弱、有根无根,再谈取舍。</p>
-            <Link to={srcHref}>回原文读整段 →</Link>
-          </div>
-          <div className="dc-lens__card">
-            <p className="dc-lens__tag">格局 · 《子平真诠》</p>
-            <p className="dc-lens__main">{geju.geju.name}</p>
-            <p className="dc-lens__body">
-              先看月令:{geju.monthZhi}里藏{geju.cang.map((x) => `${x.gan}(${x.shishen})`).join('、')};
-              {geju.tou.length ? `其中${geju.tou.join('、')}透干` : '都没有透干'} → 以{geju.main.gan}({geju.main.shishen})论。
-            </p>
-            <Link to={geju.flowHref}>在流程图里走一遍 →</Link>
-          </div>
-          <div className="dc-lens__card">
-            <p className="dc-lens__tag">调候 · 《穷通宝鉴》</p>
-            {tiaohou ? (
-              <>
-                <p className="dc-lens__main">{tiaohou.dayGan}生{tiaohou.monthName}:{tiaohou.yong.join('、')}</p>
-                <p className="dc-lens__body">先问寒暖燥湿:原书此月说「{tiaohou.quote}」。</p>
-                <Link to={tiaohou.href}>读原文这一节 →</Link>
-              </>
-            ) : <p className="dc-lens__body">载入中…</p>}
-          </div>
-        </div>
+        <LensCards
+          pillars={pillars}
+          self={(
+            <>
+              <p className="dc-lens__tag">旺衰 · 《滴天髓》</p>
+              <p className="dc-lens__main">上面走的就是这个镜头</p>
+              <p className="dc-lens__body">任铁樵先掂量日主与各字的强弱、有根无根,再谈取舍。</p>
+              <Link to={srcHref}>回原文读整段 →</Link>
+            </>
+          )}
+        />
       </section>
 
       <div className="read-nav">

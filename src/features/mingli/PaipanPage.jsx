@@ -4,6 +4,7 @@ import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import WidgetBlock from '../shared/widgets/WidgetBlock.jsx'
 import { pillarsFromDate, daYun } from '../shared/ganzhi/calendar.js'
 import { yinYang } from '../shared/ganzhi/index.js'
+import LensCards from './LensCards.jsx'
 
 // 排盘台(design-v23 §9)—— 学堂之后的**练手工具**,不上首屏。
 // 学完「四柱怎么排」,自己排一个,用学到的东西读它的结构。
@@ -139,6 +140,24 @@ export default function PaipanPage() {
             阴男阳女,大运以生日前过去节气日时为数,逆而行之。」起运岁数按「折除以三日为年」折算。
             ——这里只排出次序;大运「怎么看」,各书说法不同,请去读书。
           </p>
+          <h2 className="paipan-result__title">从这张盘去读书</h2>
+          <p className="paipan-result__meta">
+            同一个八字,三本书会从三个不同的地方下手。下面三格<strong>不是结论,是三本书的目录</strong>:
+            告诉你拿着这张盘,该翻到哪一章去读。后两格完全按各书的规则算出,没有一个字的判断;三家说法未必一致,本站不替它们裁断。
+          </p>
+          <LensCards
+            pillars={result.pillars}
+            self={(
+              <>
+                <p className="dc-lens__tag">旺衰 · 《滴天髓》</p>
+                <p className="dc-lens__main">先掂量日主</p>
+                <p className="dc-lens__body">这一路不查表:先看日主{result.pillars[2][0]}在月令{result.pillars[1][1]}上得不得时,再看四柱里有没有根、有没有帮扶——得自己读。</p>
+                <Link to="/mingli/ditiansui/15">《月令》→</Link>
+                <Link to="/mingli/ditiansui/17">《衰旺》→</Link>
+                <Link to="/mingli/ditiansui/cases">看任铁樵怎么读一张盘 →</Link>
+              </>
+            )}
+          />
           <p className="paipan-next"><Link to="/mingli">回到读书路径 →</Link></p>
         </section>
       )}
