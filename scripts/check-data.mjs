@@ -4,6 +4,7 @@
 // 3) 卦变自检:互/错/综的推演结果必须命中已知事实(如屯互剥、屯错鼎、屯综蒙)
 // 错误 → 退出码 1;译文缺失等只作为信息项报告。
 
+import { core as punctCore } from './lib/punct-layer.mjs'
 import fs from 'node:fs'
 import { validateWidget } from '../src/features/shared/widgets/schema.js'
 import { validateMatrixCell, MATRIX_MONTHS } from './lib/mingli-matrix.mjs'
@@ -863,7 +864,10 @@ if (fs.existsSync(glossaryPath)) {
         const book = fs.existsSync(cf) ? JSON.parse(fs.readFileSync(cf, 'utf8')) : null
         const c = book?.chapters?.find((x) => String(x.no) === String(b.cite.ch))
         if (!c) { err(`daodu ${slug}: quote 指向不存在的章 ${b.cite.slug || slug}#${b.cite.ch}`); nBadQ++; continue }
-        if (!c.paragraphs.map((p) => p.original).join('').includes(b.original)) {
+        const chText = c.paragraphs.map((p) => p.original).join('')
+        // 四库白文走断句层的书(三命通会等):导读写成时某章还是白文、引的也是白文,日后该章断了句,
+        // original 里就多了标点。标点是本站另加的一层、不是底本,所以退一步按「去标点后」比,仍是逐字命中。
+        if (!chText.includes(b.original) && !punctCore(chText).includes(punctCore(b.original))) {
           err(`daodu ${slug}: 引文非 ${b.cite.slug || slug}#${b.cite.ch} 原文子串「${b.original.slice(0, 14)}…」`); nBadQ++
         }
       }

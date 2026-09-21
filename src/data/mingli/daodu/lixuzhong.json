@@ -1,0 +1,535 @@
+{
+  "title": "《李虚中命书》的前世今生",
+  "subtitle": "一个唐朝人被后世追认成祖师，一部不是他写的书顶着他的名字传了下来",
+  "centralIdea": "《李虚中命书》题「鬼谷子撰、唐李虚中注」，两个名字都靠不住。真实的李虚中是唐宪宗时的殿中侍御史，韩愈为他写过墓志铭，说他以人出生的年、月、日所值干支推人寿夭贵贱，「百不失一二」——铭里数到的是三样。而这部书的正文写着「四柱者，胎、月、日、时」，小字注里举的是北宋末年宰执王安中的八字，讲富贵用的是两制、两省、两府那一套宋朝官阶，卷上后半更是逐段标着《广录》《阎东叟书》等七种旧书的出处。四库馆臣据「兼用生时」与「杂有宋人语」断它是宋人依托，存其书而不认其题。它的位置恰在转折点上：日已抬为主，年仍是本，纳音、贵神、胎都还在。这篇讲它的来路与去路——谁的名字、什么年代、被明人怎样引用（《三命通会》五处「李虚中云」与今本一字不合，却另有千余字逐字重合）、今天这三卷从哪里辑出。书里那套推法讲了什么，末尾几百字点到为止。",
+  "hero": {
+    "badge": "书级导读 · 前世今生",
+    "headline": "年为本则日为主",
+    "tagline": "一句话站在两个时代的交界上：日已经抬起来了，年一点没有放下"
+  },
+  "blocks": [
+    {
+      "type": "lead",
+      "text": "一部书的封面上有两个名字，可能一个也不是它的作者。《李虚中命书》题作「鬼谷子撰、李虚中注」：前一个是战国的说客，后一个是唐朝的御史，两人相隔一千年，谁也没有见过这部书。真实的李虚中确有其人，韩愈给他写过墓志铭，说他推人的寿夭贵贱「百不失一二」——铭里数到的是年、月、日三样。而这部书的正文里明明白白写着四柱，小字注里还举了北宋末年宰执的八字作例。这篇讲的是这部书本身的来路：它顶着谁的名字、它其实是什么年代的东西、它在明代被怎样称引、在清代又是怎样被收存下来的。书里那套推法讲了什么，末尾几百字点到为止，各卷另有逐段译文与注疏可读。"
+    },
+    {
+      "type": "h2",
+      "text": "韩愈笔下的那个人"
+    },
+    {
+      "type": "p",
+      "text": "先把人和书分开。李虚中是唐朝实有的人，字常容，宪宗时人，官做到殿中侍御史。他之所以在命理史上被反复提起，靠的不是自己的著述，而是一篇别人写的墓志——韩愈的《殿中侍御史李君墓志铭》。铭里说他最精于五行之书，用人出生的年、月、日所值的干支，参合相生、相胜与衰、死、王、相诸般关系，斟酌推断人的寿夭贵贱、利与不利，往往先说出年月，「百不失一二」。这几句是站外材料，本篇只作转述，不作站内引文。"
+    },
+    {
+      "type": "p",
+      "text": "这条材料的分量不在说得多灵，而在它的出处。它不是术家的自说自话，是一位同时代的大文章家在墓志里写下的行状，白纸黑字进了《昌黎文集》。命理这一门后来追述自己的来历，总要回到这几句——因为再往前，就只剩下传说了。"
+    },
+    {
+      "type": "p",
+      "text": "要留意的是铭里数到的是三样：年、月、日。至于其中「日辰」二字能不能读出「时辰」来，后人读法不一，历来有争论，本篇不代为裁断；只如实说：铭文摆在那里数得出来的，是三样。这一点后面会一再回来——因为从唐到明，李虚中手里的东西被一次次地加。"
+    },
+    {
+      "type": "h2",
+      "text": "封面上还有一个更大的名字"
+    },
+    {
+      "type": "p",
+      "text": "这部书的题署是「鬼谷子撰、李虚中注」。鬼谷子在古书里是个箭垛，纵横、兵法、相术、遁甲，什么都有人往他身上挂；挂到禄命书上，等于说「这套东西古得不能再古」。四库馆臣对这一层几乎不予置辩，只说上托鬼谷子一事更无所据。"
+    },
+    {
+      "type": "p",
+      "text": "有意思的是，书的形制正好把这个题署演了一遍。三卷自始至终是两层：一段正文，接一段双行小字注，相间到底。卷上开头就是这个样子——一条六十甲子的断语，下面缀一句十个字的注。"
+    },
+    {
+      "type": "quote",
+      "original": "甲子天官蔵，是子旺母衰之金，溺于水下而韬光，湏假火革，有旺盛之气，方可以扬名显用。",
+      "translation": "甲子名为「天官藏」，是子旺而母衰的金，沉没在水下而收敛光芒，必须借火来锻炼变革，有了旺盛之气，才可以扬名而显用于世。",
+      "cite": {
+        "corpus": "mingli",
+        "slug": "lixuzhong",
+        "ch": 1,
+        "label": "卷上 · 六十甲子第一条（正文）"
+      }
+    },
+    {
+      "type": "quote",
+      "original": "命入贵格，明暗取官。",
+      "translation": "命入于贵格，明处与暗处都取官来论。",
+      "cite": {
+        "corpus": "mingli",
+        "slug": "lixuzhong",
+        "ch": 1,
+        "label": "卷上 · 紧接上条的小字注"
+      }
+    },
+    {
+      "type": "p",
+      "text": "照题署，上面那条是鬼谷子的话，下面那句是李虚中的注。小字层也确实照着这个身份说话——它提到鬼谷子时，用的是提第三个人的口气。"
+    },
+    {
+      "type": "quote",
+      "original": "鬼谷子以此十二音五行分轻重之用，以推通变之妙者",
+      "translation": "鬼谷子用这十二音五行分别轻重的用法，来推究通变的奥妙。",
+      "cite": {
+        "corpus": "mingli",
+        "slug": "lixuzhong",
+        "ch": 1,
+        "label": "卷上 · 小字注"
+      }
+    },
+    {
+      "type": "p",
+      "text": "更周到的是，小字层还替正文校字。卷下有一段正文讲「发扬妙旨，神鬼何诛」，注家读着别扭，就在下面提了个疑："
+    },
+    {
+      "type": "quote",
+      "original": "疑「诛」为「殊」，乃鬼谷自谓临于神鬼之妙，岂鬼神之所见诛也。",
+      "translation": "疑心「诛」字当作「殊」，这是鬼谷自称已到了与神鬼相临的精妙境地，哪里是被鬼神所诛责呢。",
+      "cite": {
+        "corpus": "mingli",
+        "slug": "lixuzhong",
+        "ch": 3,
+        "label": "卷下 · 小字注"
+      }
+    },
+    {
+      "type": "p",
+      "text": "一个注家替另一个人的书改字，还说明改的理由——这是一部有作者、有注者、有校勘的书该有的样子。问题是，这个样子本身也是可以做出来的。同一类书里，《玉照定真经》题「郭璞撰、张顒注」，也是经一段、注一段，四库馆臣就疑心经与注出于一人之手，假郭璞之名以行。对《李虚中命书》，馆臣没有走到这一步；本篇也只把形制摆出来，不替它下这个判断。"
+    },
+    {
+      "type": "h2",
+      "text": "馆臣读出来的破绽"
+    },
+    {
+      "type": "p",
+      "text": "《四库全书总目》对这部书的处置，是存其书而不认其题。理由有两条落在实处：一是此书论命已经兼用生时，与韩愈所记的三柱之法对不上；二是文中杂有宋人语气。合起来，断为宋人依托李虚中之名而作；至于上头那个鬼谷子，更无可据。"
+    },
+    {
+      "type": "p",
+      "text": "第一条在书里坐得极实，不必费力去找。卷中有一句话，短得像字典里的一个词条："
+    },
+    {
+      "type": "quote",
+      "original": "四柱者，胎、月、日、时。",
+      "translation": "四柱，指胎、月、日、时。",
+      "cite": {
+        "corpus": "mingli",
+        "slug": "lixuzhong",
+        "ch": 2,
+        "label": "卷中 · 正文"
+      }
+    },
+    {
+      "type": "p",
+      "text": "九个字，就把韩愈那三样撑成了四样——而且多出来的不止一个「时」，还多了一个「胎」。这句话是正文，不是注；也就是说，连题作鬼谷子的那一层，说的也是四柱。"
+    },
+    {
+      "type": "h2",
+      "text": "书自己留下的时代指纹"
+    },
+    {
+      "type": "p",
+      "text": "「文中杂有宋人语气」这一条，馆臣说得笼统。究竟杂在哪里，其实对着底本可以自己数出来，而且不止一处。下面三样都在站内原文里，谁都可以复核。"
+    },
+    {
+      "type": "p",
+      "text": "第一样是人。卷中论「时居日禄」的那一段注里，连举了两个命例，第二个直接报了姓名与官称："
+    },
+    {
+      "type": "quote",
+      "original": "如王安中左丞，乙卯年、丁亥月、乙巳日、丁亥时是也。",
+      "translation": "如左丞王安中，乙卯年、丁亥月、乙巳日、丁亥时就是。",
+      "cite": {
+        "corpus": "mingli",
+        "slug": "lixuzhong",
+        "ch": 2,
+        "label": "卷中 · 小字注"
+      }
+    },
+    {
+      "type": "p",
+      "text": "王安中是北宋徽宗朝人，官做到尚书左丞——这是站外的常识，本篇只作转述。同一段前头还有一个「敏少宰」，姓名已不可考，但「少宰」这个官名本身就是标尺：它是徽宗政和年间改制之后才有的称呼，前后行用不过十几年。一个唐宪宗时的御史，注文里举的是北宋末年的宰执，这件事不需要再多解释。"
+    },
+    {
+      "type": "p",
+      "text": "顺带说一句这两条命例的成色。按五虎遁推，乙年的十月正是丁亥月，己年的四月正是己巳月；按五鼠遁推，乙巳日的亥时正是丁亥时，己巳日的午时正是庚午时——两条八字的月柱与时柱都自洽，不是随手编的。倒是「敏少宰」那条里「己己日」的第二个「己」当是「巳」之误，形近而讹；底本如此，本站照录不改。"
+    },
+    {
+      "type": "p",
+      "text": "第二样是官阶。卷上后半有一段讲贵人格的三等，把每一等对应的仕途一路排下来："
+    },
+    {
+      "type": "quote",
+      "original": "须作两制、两省，少年登科，当居清要华近之选；更有福神相助，为两府矣。",
+      "translation": "该做两制、两省之官，少年登科，当居清要而亲近君前的职任；若再有福神相助，便入两府了。",
+      "cite": {
+        "corpus": "mingli",
+        "slug": "lixuzhong",
+        "ch": 1,
+        "label": "卷上 · 贵人格三等"
+      }
+    },
+    {
+      "type": "p",
+      "text": "两制、两省、两府，再往下是正郎、员郎、京朝官、州县卑冗之官——这一串是宋朝文官的阶梯，不是唐朝的。一部书里的富贵想象，总是照着它自己那个时代的官制长出来的。"
+    },
+    {
+      "type": "p",
+      "text": "第三样最露，是书自己标的出处。"
+    },
+    {
+      "type": "figure",
+      "ftype": "结构",
+      "caption": "卷上后半不是一个人在讲话，是一段一段摘来的，每段末尾用双行小字标出处——而那层小字，正是题作「李虚中注」的一层。",
+      "svg": "<svg viewBox=\"0 0 660 366\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><text x=\"330\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">卷上后半：一段摘录，一行出处</text><text x=\"330\" y=\"46\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">左边是摘来的内容，右边是小字注所标的书名</text><rect x=\"34\" y=\"62\" width=\"352\" height=\"28\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"50\" y=\"81\" style=\"fill:var(--ink)\" font-size=\"12.5\">贵人命的遁法，以及「所以牛羊为贵」的道理</text><path d=\"M390 76 L410 76\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"416\" y=\"81\" style=\"fill:var(--cinnabar)\" font-size=\"12.5\">《广录》</text><rect x=\"34\" y=\"98\" width=\"352\" height=\"28\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"50\" y=\"117\" style=\"fill:var(--ink)\" font-size=\"12.5\">天乙贵人者，三命中最吉之神也</text><path d=\"M390 112 L410 112\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"416\" y=\"117\" style=\"fill:var(--cinnabar)\" font-size=\"12.5\">《三命指掌》</text><rect x=\"34\" y=\"134\" width=\"352\" height=\"28\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"50\" y=\"153\" style=\"fill:var(--ink)\" font-size=\"12.5\">论贵神优劣：逐位列出六十甲子的贵神名目</text><path d=\"M390 148 L410 148\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"416\" y=\"153\" style=\"fill:var(--cinnabar)\" font-size=\"12.5\">并同《金书命诀》</text><rect x=\"34\" y=\"170\" width=\"352\" height=\"28\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"50\" y=\"189\" style=\"fill:var(--ink)\" font-size=\"12.5\">贵人格分三等，各配一路仕途</text><path d=\"M390 184 L410 184\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"416\" y=\"189\" style=\"fill:var(--cinnabar)\" font-size=\"12.5\">《林开五命》</text><rect x=\"34\" y=\"206\" width=\"352\" height=\"28\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"50\" y=\"225\" style=\"fill:var(--ink)\" font-size=\"12.5\">紫虚局：贵人交互人多贵</text><path d=\"M390 220 L410 220\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"416\" y=\"225\" style=\"fill:var(--cinnabar)\" font-size=\"12.5\">《寸珠尺璧》</text><rect x=\"34\" y=\"242\" width=\"352\" height=\"28\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"50\" y=\"261\" style=\"fill:var(--ink)\" font-size=\"12.5\">贵合、贵食的配法</text><path d=\"M390 256 L410 256\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"416\" y=\"261\" style=\"fill:var(--cinnabar)\" font-size=\"12.5\">《阎东叟书》</text><rect x=\"34\" y=\"278\" width=\"352\" height=\"28\" rx=\"5\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"50\" y=\"297\" style=\"fill:var(--ink)\" font-size=\"12.5\">天乙贵神合，遇两合以上者主贵</text><path d=\"M390 292 L410 292\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><text x=\"416\" y=\"297\" style=\"fill:var(--cinnabar)\" font-size=\"12.5\">《三命提举》</text><text x=\"330\" y=\"336\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">七种书今天大半不传，书名只在后来的命书里还看得见</text></svg>"
+    },
+    {
+      "type": "p",
+      "text": "「并同《金书命诀》」里的「并同」二字最说明问题：那是编书人在交代来历，不是注家在解字。卷上后半这一大片，与其说是一部书，不如说是一个书架——把当时通行的几种禄命书里讲贵人的段落摘在一处，每段末尾记上从哪儿来的。"
+    },
+    {
+      "type": "p",
+      "text": "这几个书名也不是孤证。明代万民英的《三命通会》里，《广录》《阎东叟书》《林开五命》都还在被引；更要紧的是，被引的常常就是同几段话。拿《三命通会》卷三「论天乙贵人」与本书卷上后半对读，逐字相同的有三百字上下（按连续十字以上的相同块累加，最长一块四十八字），而相同的地方恰恰落在标着《广录》《三命指掌》《阎东叟书》的那几段上——更妙的是，《三命通会》引那几句时，报的出处也是《广录》、也是阎东叟。两部书各自报出同一个来历，这更像是它们从同一批旧书里取材，而不是谁抄了谁；站内没有《广录》可对校，本篇只记其同，不判先后。"
+    },
+    {
+      "type": "h2",
+      "text": "谈命是那个时代的一门功课"
+    },
+    {
+      "type": "p",
+      "text": "这七个书名顺带交代了一件事：写这部书的人，手边有一架子禄命书。《广录》《三命指掌》《金书命诀》《林开五命》《寸珠尺璧》《阎东叟书》《三命提举》，单是讲贵人一个题目就摘了七家，而这还只是他用得上的那几种。一门冷僻的技艺不会同时有七八部专书在流通。这些书今天大半不传，书名却靠着被人一段段摘引，留在了别人的书里。"
+    },
+    {
+      "type": "p",
+      "text": "再看这部书对「贵」的想象，那个时代的轮廓就更清楚了。它讲到顶的富贵不是封侯拜将，是两制、两省，是「少年登科」，是「清要华近之选」，再上去是「为两府矣」；讲到底的是「州县卑冗之官」，纵然改官换任也「寿不永矣」。整段话是一张文官升迁表。一部推命的书把人生的最高处写成「入两府」，说明它的读者就是在这条路上走的人——预备应举的、已经做了京朝官的、盼着从员外郎挪到郎中的。"
+    },
+    {
+      "type": "p",
+      "text": "命例也印证这一点。把当朝执政的八字拿出来当例子，前提是这些人的生辰在士人圈子里打听得到、传抄得开。谈命在那时不只是市井的营生，也是书房里的谈资。六百多年后，《子平真诠》的那篇原序里写的还是同一幅光景：两个在京城当官学教习的同乡，课余谈命，彼此辩难。这门学问从头到尾长在读书人这一头，它的题目、它的比喻、它对好命的定义，都是从那一头长出来的。"
+    },
+    {
+      "type": "h2",
+      "text": "三卷书，三个形状"
+    },
+    {
+      "type": "p",
+      "text": "把三卷摊开来比，会发现它们不像出自同一个体例。卷上是条目，卷中是赋，卷下前半是赋、后半是表。更值得看的是两层的比例："
+    },
+    {
+      "type": "table",
+      "caption": "段数与字数都按站内底本统计：段数取本站切分，正文与小字注的归属据四库写本的双行小字标记，逐段可复核。",
+      "head": [
+        "卷",
+        "段数",
+        "正文 / 小字注",
+        "注文字数",
+        "这一卷长什么样"
+      ],
+      "rows": [
+        [
+          "卷上",
+          "167",
+          "84 / 83",
+          "658",
+          "六十甲子逐条论性质，每条缀十字短注；后半是七种旧书的摘录"
+        ],
+        [
+          "卷中",
+          "290",
+          "145 / 145",
+          "7752",
+          "四六韵语一段、长注一段相间，与《珞琭子》赋注同一体裁"
+        ],
+        [
+          "卷下",
+          "292",
+          "146 / 146",
+          "4344",
+          "前半仍是赋与注，后半是干支两两配对，每对系一句格名"
+        ],
+        [
+          "合计",
+          "749",
+          "375 / 374",
+          "12754",
+          "注文占全书近六成"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "卷上的注一共只有六百多字，平均一条八个字，短得像批语；卷中的注却是正文的两倍半有余。同一部书里，注与正文的关系前后如此不同，很难说是一手一时之作。尤其卷中，与其说是注家在解释一篇旧赋，不如说是注家借着赋句在讲自己的一套——那篇赋本身只有两千九百字，撑起来的却是七千七百字的议论。"
+    },
+    {
+      "type": "p",
+      "text": "卷中那层四六韵语值得单说一句。它的句法与《珞琭子三命消息赋》是一路：四字六字骈偶，句句提纲，底下靠注去落实。书里也两次称引珞琭子，一次引「见不见之形，无时不有」，一次引「根在苗先，实从花后」。禄命这一门在宋代的标准著作形态就是这样：一篇赋，加一家注。"
+    },
+    {
+      "type": "h2",
+      "text": "年为本，日为主"
+    },
+    {
+      "type": "p",
+      "text": "那么这部书到底站在哪儿？它的骨架是「三元」加「四柱」。三元不是三根柱子，是一根柱子的三层："
+    },
+    {
+      "type": "quote",
+      "original": "元命胜负。三元者，干禄、支命、纳音身，各分衰旺之地。",
+      "translation": "元与命的胜负。三元，是指天干之禄、地支之命、纳音之身，各自分属衰旺之地。",
+      "cite": {
+        "corpus": "mingli",
+        "slug": "lixuzhong",
+        "ch": 2,
+        "label": "卷中 · 正文"
+      }
+    },
+    {
+      "type": "p",
+      "text": "干、支、纳音各管一摊：天干主名位禄秩，地支主贫富得失，纳音主才能器识与六亲。这是禄命旧法的老家当——尤其纳音那一层，后来的子平几乎整个丢掉了。四柱则是胎、月、日、时，连上作为根本的年，实际是五个位置在推；书里另一处说得更直白，叫「年月日时胎五马」。"
+    },
+    {
+      "type": "p",
+      "text": "主位在哪一根上？书里有一句十四个字的话，把全书的位置一次说尽："
+    },
+    {
+      "type": "quote",
+      "original": "大抵年为本则日为主，月为使则时为辅。",
+      "translation": "大体上年为本、日为主，月为使、时为辅。",
+      "cite": {
+        "corpus": "mingli",
+        "slug": "lixuzhong",
+        "ch": 2,
+        "label": "卷中 · 正文"
+      }
+    },
+    {
+      "type": "p",
+      "text": "紧接着它又补了一句：年是日的本，日是命的主，好比君之有臣、父之有子。这两句放在一起看，「过渡」二字才有了实际的内容——日已经被抬起来当主了，可年一点没有放下，它仍是根；纳音还在，贵神还在，胎还在。它既不是韩愈铭里那三样，也不是后来子平的那四柱。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照",
+      "caption": "三种数法。中间一栏是这部书自己的说法，两头分别是它之前与之后。朱色标出的是各自的主位。",
+      "svg": "<svg viewBox=\"0 0 660 296\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><text x=\"330\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">从三样到四柱，中间还隔着一步</text><rect x=\"16\" y=\"46\" width=\"196\" height=\"198\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"114\" y=\"74\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">韩愈铭里的李虚中</text><line x1=\"38\" y1=\"86\" x2=\"190\" y2=\"86\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"61\" y=\"104\" width=\"30\" height=\"30\" rx=\"4\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"76\" y=\"125\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">年</text><rect x=\"99\" y=\"104\" width=\"30\" height=\"30\" rx=\"4\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"114\" y=\"125\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">月</text><rect x=\"137\" y=\"104\" width=\"30\" height=\"30\" rx=\"4\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"152\" y=\"125\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">日</text><text x=\"114\" y=\"160\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">铭里数到的就是这三样</text><text x=\"114\" y=\"180\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">「时」是后来的书替他添的</text><text x=\"114\" y=\"222\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">唐 · 元和间</text><rect x=\"232\" y=\"46\" width=\"196\" height=\"198\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.3\"/><text x=\"330\" y=\"74\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"14\">这部书</text><line x1=\"254\" y1=\"86\" x2=\"406\" y2=\"86\" style=\"stroke:var(--cinnabar)\" stroke-width=\"1\"/><rect x=\"239\" y=\"104\" width=\"30\" height=\"30\" rx=\"4\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"254\" y=\"125\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">年</text><rect x=\"277\" y=\"104\" width=\"30\" height=\"30\" rx=\"4\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"292\" y=\"125\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">胎</text><rect x=\"315\" y=\"104\" width=\"30\" height=\"30\" rx=\"4\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"330\" y=\"125\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">月</text><rect x=\"353\" y=\"104\" width=\"30\" height=\"30\" rx=\"4\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.4\"/><text x=\"368\" y=\"125\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"14\">日</text><rect x=\"391\" y=\"104\" width=\"30\" height=\"30\" rx=\"4\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"406\" y=\"125\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">时</text><text x=\"330\" y=\"160\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">四柱者，胎、月、日、时</text><text x=\"330\" y=\"180\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">年为本则日为主 —— 年仍是根</text><text x=\"330\" y=\"222\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">三元：干禄 · 支命 · 纳音身</text><rect x=\"448\" y=\"46\" width=\"196\" height=\"198\" rx=\"8\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"546\" y=\"74\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">后起的子平</text><line x1=\"470\" y1=\"86\" x2=\"622\" y2=\"86\" style=\"stroke:var(--line)\" stroke-width=\"1\"/><rect x=\"474\" y=\"104\" width=\"30\" height=\"30\" rx=\"4\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"489\" y=\"125\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">年</text><rect x=\"512\" y=\"104\" width=\"30\" height=\"30\" rx=\"4\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"527\" y=\"125\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">月</text><rect x=\"550\" y=\"104\" width=\"30\" height=\"30\" rx=\"4\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.4\"/><text x=\"565\" y=\"125\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"14\">日</text><rect x=\"588\" y=\"104\" width=\"30\" height=\"30\" rx=\"4\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"603\" y=\"125\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"14\">时</text><text x=\"546\" y=\"160\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">以日干为主，月令为提纲</text><text x=\"546\" y=\"180\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">胎不再算一柱，纳音也让位</text><text x=\"546\" y=\"222\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11\">宋以后 · 见《渊海子平》诸书</text><text x=\"330\" y=\"274\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">中间这一栏最容易被两头吞掉：说它是旧法，它已抬日；说它是子平，它还守着年与纳音</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "一张词汇表就能看出它的年纪"
+    },
+    {
+      "type": "p",
+      "text": "要判断一部命书站在哪一侧，还有一个笨而可靠的办法：数词。术语是会换代的，旧法讲纳音、禄马、贵神、胎，子平讲用神、月令、十神。下面这张表是在站内底本上用脚本数出来的，四部书里有三部字数相近，可以直接比。"
+    },
+    {
+      "type": "table",
+      "caption": "数字是各书全文（正文连注）里该词出现的次数，以站内底本为准，可复核。空格多的那一半与满格的那一半，恰好分在两个时代。",
+      "head": [
+        "词",
+        "李虚中命书（2.1 万字）",
+        "珞琭子赋注（2.1 万字）",
+        "渊海子平（4.6 万字）",
+        "子平真诠（2.0 万字）"
+      ],
+      "rows": [
+        [
+          "纳音",
+          "37",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "禄马",
+          "25",
+          "27",
+          "39",
+          "0"
+        ],
+        [
+          "贵神",
+          "69",
+          "0",
+          "5",
+          "0"
+        ],
+        [
+          "胎",
+          "28",
+          "8",
+          "20",
+          "4"
+        ],
+        [
+          "用神",
+          "3（其中两处是「所用神煞」被断开）",
+          "0",
+          "15",
+          "42"
+        ],
+        [
+          "月令",
+          "0",
+          "2",
+          "43",
+          "44"
+        ],
+        [
+          "伤官",
+          "0",
+          "0",
+          "193",
+          "83"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "左边一列干干净净：全书没有一个子平意义上的「用神」，没有一个「月令」，十神的名目一个也不见，连「格局」二字都零见。它讲的是另一套话。"
+    },
+    {
+      "type": "p",
+      "text": "有一处最容易看走眼。全书确实出现过两次「日主」——可那不是子平的那个名词。原句是「日主未得气者十分，主事者八分」，与上下文的「胎主父母祖宗者十分」「月主时气者十分」「时主用度进退向背……皆十分」是一排的：胎主什么、月主什么、日主什么、时主什么。那个「主」是动词。把它读成后来的「日主」，就是拿后面的眼睛去看前面的字——这部书的命运里，这类事发生过不止一次。"
+    },
+    {
+      "type": "h2",
+      "text": "明朝人引的「李虚中云」，这部书里一句也对不上"
+    },
+    {
+      "type": "p",
+      "text": "这部书传到明代，出现了一件很怪的事。万民英编《三命通会》，全书提到李虚中十三处，其中五处是直接称引他的话（「李虚中云」），而这五处里有四处挤在卷一「释六十甲子性质吉凶」一篇中，夹在阎东叟、《五行要论》《玉霄宝鉴》《烛神经》《鬼谷遗文》之间。那正是本书卷上的题目，两边讲的也正是同一件事——六十甲子的性质。"
+    },
+    {
+      "type": "quote",
+      "original": "李虚中云甲午金伤强悍壬子木失之柔",
+      "translation": "李虚中说：甲午这一位金伤在强悍，壬子这一位木失于柔弱。（四库写本白文，未断句）",
+      "cite": {
+        "corpus": "mingli",
+        "slug": "sanming",
+        "ch": 10,
+        "label": "三命通会 · 卷一《释六十甲子性质吉凶》"
+      }
+    },
+    {
+      "type": "p",
+      "text": "可是把这五条拿回今本《李虚中命书》里逐字比对，一句也对不上——脚本按连续八字的窗口扫过全书，五条命中皆为零。以上面这条为例：本书卷上讲甲午的那一条作「甲午天符禄，乃沙汰之金，志大而有节操」，卷中另有一处注称甲午是「强悍砂洑之金」——意思与「金伤强悍」相去不远，字面却一处也搭不上。"
+    },
+    {
+      "type": "p",
+      "text": "更耐人寻味的是同一段里的邻居。万民英在引「李虚中云」之前，先引了「烛神经云：甲午金伤强悍」——同一句话，在同一段里被安在了两个名下；再往前一句是「鬼谷遗文云：甲午爱官鬼」，而本书卷中的正文恰好有一句「甲午爱官旺」，只差一个字。这些话像是漂在术家之间的公共财产，谁都可以取用，取用时随手报一个来历。"
+    },
+    {
+      "type": "p",
+      "text": "但有一处是对得上的，不是字面，是路数。《三命通会》卷十一讲「李虚中论支干合全格，年月日时胎五位能合干支全」——年、月、日、时、胎五位一起看，正是本书的算法（书里叫「年月日时胎五马」）。也就是说，明人挂在李虚中名下的那一套，与这部挂他名字的书，路数是同一路；只是具体的句子换过了。"
+    },
+    {
+      "type": "p",
+      "text": "这可以有两种解释：或者万民英手上另有一部挂着李虚中名字的书，与今本不是一种；或者那些话本就是术家口耳相沿的成说，后人随手安在他名下。孰是孰非，本篇不下断语——材料只够说到这里。"
+    },
+    {
+      "type": "p",
+      "text": "但另一头的事实同样清楚：这部书与《三命通会》确有大片逐字重合。按连续十字以上的相同块累加，两书共有一千一百字上下相同，最长的一块五十九字；这些重合集中在《三命通会》卷一「释六十甲子性质吉凶」与卷三「论天乙贵人」两篇——恰恰就是本书卷上的两个题目。是谁取了谁，还是两边同出一个更早的本子（比如两边都标过的《广录》），本篇同样不下断语。"
+    },
+    {
+      "type": "pull",
+      "text": "书上署的「李虚中」是一个名目，明朝人引的「李虚中云」是另一个；两个都不是韩愈笔下的那个人。"
+    },
+    {
+      "type": "h2",
+      "text": "后人替他补上的那个「时」"
+    },
+    {
+      "type": "p",
+      "text": "与此同时，李虚中本人的形象也在一步步被加厚。《渊海子平》开篇讲「论日为主」，追述这门学问的来历时说：曾看唐代史书所载，有李虚中者，取人所生年、月、日、时的干支生克来论贵贱寿夭——「时」字就这样被补了进去。到了《三命通会》卷七的《子平说辩》，追述得更整齐："
+    },
+    {
+      "type": "quote",
+      "original": "珞琭以年虚中以日其法至是一变",
+      "translation": "《珞琭子》以年为主，李虚中以日为主，这门推法到这里变了一次。（四库写本白文，未断句）",
+      "cite": {
+        "corpus": "mingli",
+        "slug": "sanming",
+        "ch": 256,
+        "label": "三命通会 · 卷七《子平说辩》"
+      }
+    },
+    {
+      "type": "p",
+      "text": "同书卷二《论年月日时》里讲得更明白：唐李虚中独以日干为主，却把年、月、时合看，取立格局——说他「发前贤所未发」。于是一位只在墓志里留下三样东西的唐朝御史，到明代已经被追认为「以日为主」的那一位。"
+    },
+    {
+      "type": "p",
+      "text": "有意思的是，这句追认和那部挂他名字的书，对得上半句。书里确实说「日为主」，但那个「日」是从「年」手里分来的主位，年仍是本；后来的子平则是把年整个降成一根普通的柱子。半句而已，却足够让这个名字在谱系的那个位置上坐稳。这条线索如何一路延伸到子平，家级导读《这门学问接的不是人，是一个名字》另有交代，这里不重复——那篇的题目，用在这部书上也刚好合适。"
+    },
+    {
+      "type": "figure",
+      "ftype": "对照",
+      "caption": "观数组几部源头书的题署与实在。题署靠不住，不等于书没有价值——只是材料的年代要重新定过。",
+      "svg": "<svg viewBox=\"0 0 660 316\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><text x=\"330\" y=\"28\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"16\">题署，与实在</text><text x=\"150\" y=\"52\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">封面上写的</text><text x=\"500\" y=\"52\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">考出来的</text><rect x=\"26\" y=\"66\" width=\"252\" height=\"58\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--cinnabar)\" stroke-width=\"1.3\"/><text x=\"152\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--cinnabar)\" font-size=\"13.5\">《李虚中命书》</text><text x=\"152\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">鬼谷子撰 · 唐李虚中注</text><path d=\"M282 95 L318 95\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/><path d=\"M312 91 L320 95 L312 99\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/><rect x=\"324\" y=\"66\" width=\"300\" height=\"58\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"474\" y=\"90\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12.5\">四库馆臣断为宋人依托</text><text x=\"474\" y=\"110\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">书中命例举北宋末年的宰执</text><rect x=\"26\" y=\"144\" width=\"252\" height=\"58\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"152\" y=\"168\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13.5\">《玉照定真经》</text><text x=\"152\" y=\"188\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">晋郭璞撰 · 张顒注</text><path d=\"M282 173 L318 173\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/><path d=\"M312 169 L320 173 L312 177\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/><rect x=\"324\" y=\"144\" width=\"300\" height=\"58\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"474\" y=\"168\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12.5\">四库馆臣断为依托</text><text x=\"474\" y=\"188\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">并疑经文与注文出于一手</text><rect x=\"26\" y=\"222\" width=\"252\" height=\"58\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"152\" y=\"246\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"13.5\">《珞琭子三命消息赋》</text><text x=\"152\" y=\"266\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">宋人或以为太子晋所作</text><path d=\"M282 251 L318 251\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/><path d=\"M312 247 L320 251 L312 255\" fill=\"none\" style=\"stroke:var(--line)\" stroke-width=\"1.1\"/><rect x=\"324\" y=\"222\" width=\"300\" height=\"58\" rx=\"6\" style=\"fill:var(--paper-raised);stroke:var(--line)\" stroke-width=\"1\"/><text x=\"474\" y=\"246\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"12.5\">撰人不详，皆无可考</text><text x=\"474\" y=\"266\" text-anchor=\"middle\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">今本文字亦已非原貌</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "今天读到的这三卷"
+    },
+    {
+      "type": "p",
+      "text": "这部书没有宋元的传本流到今天。今传的三卷出自《四库全书》；据四库的著录，是馆臣从《永乐大典》里辑出来的——这一条本站底本上不载（四库提要本站不收），是站外的通行说法，附此备核。换句话说，它是在被判定为伪托的同时，被抄进四库保存下来的：馆臣不信它的题署，却认它的材料。"
+    },
+    {
+      "type": "p",
+      "text": "四库写本是白文，没有标点。本站底本一字不改，标点是本站另加的一层，逐段经程序核对「去掉标点后与底本逐字相同」；卷下末尾那四十行干支配对本来就不需要断句，仍作白文呈现。写本的异体字（蔵、湏、㑹、冇之类）照录不改。书中另有二十二处四库字库的缺字，本站按维基文库的对照表还原了二十一处，剩下一处实在还原不了，写作「□」，在卷下论十二神的那一段里：「丁巳为螣蛇之神……多荧惑之忧，冇□稽之性」。宁可显标一个缺字，不静默吞掉一个字。"
+    },
+    {
+      "type": "figure",
+      "ftype": "时间线",
+      "caption": "这条线上有两个地方最要紧：书里能看见的最晚人事是在北宋末年，而它被保存下来却要等到清乾隆——中间六百多年，它一直顶着一个唐朝人的名字。",
+      "svg": "<svg viewBox=\"0 0 680 452\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:var(--font-serif)\"><text x=\"340\" y=\"26\" text-anchor=\"middle\" style=\"fill:var(--ink)\" font-size=\"17\">一部书的来路</text><line x1=\"206\" y1=\"54\" x2=\"206\" y2=\"426\" style=\"stroke:var(--line)\" stroke-width=\"1.2\"/><circle cx=\"206\" cy=\"68\" r=\"4.5\" style=\"fill:var(--ink-soft)\"/><text x=\"188\" y=\"73\" text-anchor=\"end\" style=\"fill:var(--ink-soft)\" font-size=\"12\">唐 · 元和间</text><text x=\"224\" y=\"73\" style=\"fill:var(--ink)\" font-size=\"13.5\">李虚中官殿中侍御史</text><text x=\"224\" y=\"91\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">韩愈为撰墓志铭，铭中数的是年、月、日</text><circle cx=\"206\" cy=\"132\" r=\"5\" style=\"fill:var(--cinnabar)\"/><text x=\"188\" y=\"137\" text-anchor=\"end\" style=\"fill:var(--ink-soft)\" font-size=\"12\">北宋 · 徽宗朝</text><text x=\"224\" y=\"137\" style=\"fill:var(--cinnabar)\" font-size=\"13.5\">书中所见最晚的人事</text><text x=\"224\" y=\"155\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">注里举王安中的八字，又称「少宰」</text><circle cx=\"206\" cy=\"196\" r=\"4.5\" style=\"fill:var(--ink-soft)\"/><text x=\"188\" y=\"201\" text-anchor=\"end\" style=\"fill:var(--ink-soft)\" font-size=\"12\">此后某时</text><text x=\"224\" y=\"201\" style=\"fill:var(--ink)\" font-size=\"13.5\">三卷本成书，题作鬼谷子撰、李虚中注</text><text x=\"224\" y=\"219\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">卷上后半仍留着七种旧书的出处</text><circle cx=\"206\" cy=\"260\" r=\"4.5\" style=\"fill:var(--ink-soft)\"/><text x=\"188\" y=\"265\" text-anchor=\"end\" style=\"fill:var(--ink-soft)\" font-size=\"12\">明</text><text x=\"224\" y=\"265\" style=\"fill:var(--ink)\" font-size=\"13.5\">《三命通会》五引「李虚中云」</text><text x=\"224\" y=\"283\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">与今本一字不合，另有千余字逐字重合</text><circle cx=\"206\" cy=\"324\" r=\"5\" style=\"fill:var(--cinnabar)\"/><text x=\"188\" y=\"329\" text-anchor=\"end\" style=\"fill:var(--ink-soft)\" font-size=\"12\">清 · 乾隆</text><text x=\"224\" y=\"329\" style=\"fill:var(--cinnabar)\" font-size=\"13.5\">四库著录，断为宋人依托</text><text x=\"224\" y=\"347\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">存其书而不认其题，三卷得以保全</text><circle cx=\"206\" cy=\"388\" r=\"4.5\" style=\"fill:var(--ink-soft)\"/><text x=\"188\" y=\"393\" text-anchor=\"end\" style=\"fill:var(--ink-soft)\" font-size=\"12\">今</text><text x=\"224\" y=\"393\" style=\"fill:var(--ink)\" font-size=\"13.5\">本站底本即四库本</text><text x=\"224\" y=\"411\" style=\"fill:var(--ink-soft)\" font-size=\"11.5\">白文无标点，断句为本站另加的一层</text></svg>"
+    },
+    {
+      "type": "h2",
+      "text": "书里究竟讲了什么"
+    },
+    {
+      "type": "p",
+      "text": "说到这里才轮到内容，而且只说个大概。全书的骨架前面已经拆开过：三元是一根柱子的三层（干禄、支命、纳音身——按禄命旧法是就年柱说的；书中并未明言取自哪一柱，「年为本」一句可为旁证），四柱是胎、月、日、时，三元四柱再加禄马，合称「九命」，彼此往来生克、刑冲德合，定出清浊高下。落到具体，卷上是六十甲子逐条的性质与宜忌，每条先取一个名目（天官蔵、禄自守、神头禄之类），再说它是什么样的金、什么样的火，喜什么、忌什么；卷中从天地生成、纳音起数讲起，讲三元四柱各主几分、彼此怎样相扶相制；卷下讲衰旺取时、六亲、行运的各种「限」，末尾把干支两两配起来，每对系一句格名。"
+    },
+    {
+      "type": "p",
+      "text": "有一处不妨一提。卷中讲空亡时说，凡响之有声，都因为中间是空的，钟鼓中虚才敲得响、传得远，填实了就不出声，所以「大人之命要虚中」。这个「虚中」是书里的一个术语，讲的是空处有用；它和书名上那个人名同字，纯是字面上的巧合，本篇不由此作任何推断。"
+    },
+    {
+      "type": "p",
+      "text": "最后要说明的，也是本站在这一组上的底线：书中那些「必贵」「至死不贵」「寿福不永」的断语，是原典的话，照录照译，不删不讳，但不代表本站的判断。这一整套说法无从验证，本篇不为它背书，也不教任何人拿去推断谁的境遇。这部书今天的价值，在于它是一段过渡的标本——一门术在改换主位的时候，留下的中间状态。"
+    },
+    {
+      "type": "h2",
+      "text": "从哪读起"
+    },
+    {
+      "type": "p",
+      "text": "这部书不好从头读。卷上一上来就是六十条断语，名目密集而无铺垫，读十条就会腻。建议先去卷中找那一小片讲三元四柱的文字——从「元命胜负」那一段起，到「主本保合，未有贫贱之人」为止，不过二十来段，却是全书的纲。看明白了三元是哪三层、四柱是哪四位、谁主几分，再回头看卷上那些「天官蔵」「禄自守」，才知道它们是挂在哪个架子上的。"
+    },
+    {
+      "type": "p",
+      "text": "然后读卷上开头十条，看正文与小字注的两层形制是怎么回事；再跳到卷上后半（从「本家贵人命者」起到末尾），看它作为「书架」的那一面，把七个书名与所摘内容对着看一遍。卷下末尾的干支配对可以当索引翻，不必通读。"
+    },
+    {
+      "type": "p",
+      "text": "想知道这门学问后来往哪里去，接着读《珞琭子三命消息赋》——卷中那层骈语的体裁，在那里能看到更完整的样子；再读《渊海子平》开头几篇，主位是怎么彻底挪到日干上的，那里写得最清楚。想看这部书在明代是怎样被收编的，读《三命通会》卷一的《释六十甲子性质吉凶》，本书卷上的材料有相当一部分就在里面。"
+    },
+    {
+      "type": "refs",
+      "items": [
+        "本篇是《李虚中命书》的**书级导读**，讲其人、其书、成书与流传，不逐卷展开义理——逐段译文与注疏见各卷。",
+        "所引《李虚中命书》原文均逐字出自本站底本（《四库全书》本三卷），卷次即站内卷次；所标「正文 / 小字注」依四库写本的双行小字标记，可复核。另引《三命通会》两条，亦为站内底本原文；该书四库写本为白文，引文未断句，译文为本篇所拟。",
+        "**站外材料一律只作转述，不作站内引文**：韩愈《殿中侍御史李君墓志铭》（铭中数的是年、月、日，「百不失一二」一语出此）、《四库全书总目》对本书为宋人依托的考订与对《玉照定真经》经注出于一手的疑议，均不引其文字。",
+        "**李虚中的生平**只取「字常容、唐宪宗时人、官至殿中侍御史、韩愈为撰墓志」数事；生卒年、籍贯、其他仕历本篇一概不给，手边没有可坐实的材料。墓志所记是否及于「时辰」，历来有不同读法，本篇不作裁断。",
+        "**王安中为北宋徽宗朝人、官至尚书左丞**，与**「少宰」为徽宗政和年间改制后所设、行用不久**，均为站外通行说法，本篇据以判断书中人事的下限，请以专书复核。「敏少宰」为何人，不可考，本篇不作推测。",
+        "**今传三卷系四库馆臣自《永乐大典》辑出**——这一条出自四库的著录，属站外通行说法；本站底本不收四库提要，未能就本站材料复核，附此备查。本书在宋代的著录情形（见于何家书目、卷数几何），手边材料不足以坐实，本篇一概不给。",
+        "**文中所有次数、字数与重合量，均为在本站底本上以脚本统计所得，可复核**：段数与正文／小字注的分层、注文一万二千余字占全书近六成、词汇表中各词的出现次数、《三命通会》五处「李虚中云」与今本连续八字命中为零、两书连续十字以上相同块累加约一千一百字（最长一块五十九字）。",
+        "**「谁取用了谁」本篇不下断语**：本书与《三命通会》的重合，以及两边都标作《广录》的那一段，都只记其同，不判其先后——宋明之间的禄命书辗转传抄，站内没有可对校的第三个本子。",
+        "底本的择取、四库写本三种模板的处理、缺字还原与未能还原的一处「□」，详见 `scripts/sources/mingli/SOURCES.md`；原文照录不改，标点为本站另加的一层。",
+        "本站作命理典籍的**文献研读，研习不断命**：原典中的贵贱、寿夭、官阶断语一概照录为文献，不删不讳，也不代表本站的判断；这一整套说法无从验证，本篇不为其背书，不教读者据以推断任何人的境遇。"
+      ]
+    }
+  ]
+}

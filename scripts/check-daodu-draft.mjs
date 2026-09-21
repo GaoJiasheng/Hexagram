@@ -3,6 +3,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { core } from './lib/punct-layer.mjs'
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const [corpus, slug, file] = process.argv.slice(2)
 if (!corpus || !slug || !file) { console.log('用法: node scripts/check-daodu-draft.mjs <corpus> <slug> <draft.json>'); process.exit(2) }
@@ -24,7 +25,8 @@ blocks.forEach((b, i) => {
     const book = (cache[cf] ??= fs.existsSync(cf) ? JSON.parse(fs.readFileSync(cf, 'utf8')) : null)
     const c = book?.chapters?.find((x) => String(x.no) === String(b.cite.ch))
     if (!c) return bad.push(`blocks[${i}] quote 指向不存在的章 ${b.cite.slug || slug}#${b.cite.ch}`)
-    if (!c.paragraphs.map((p) => p.original).join('').includes(b.original)) bad.push(`blocks[${i}] 引文不是 ${b.cite.slug || slug}#${b.cite.ch} 的原文子串:「${b.original.slice(0, 20)}…」(用脚本从数据里切,不要手打)`)
+    const chText = c.paragraphs.map((p) => p.original).join('')
+    if (!chText.includes(b.original) && !core(chText).includes(core(b.original))) bad.push(`blocks[${i}] 引文不是 ${b.cite.slug || slug}#${b.cite.ch} 的原文子串:「${b.original.slice(0, 20)}…」(用脚本从数据里切,不要手打)`)
     if (!b.cite.label) soft.push(`blocks[${i}] cite 没有 label`)
   }
   if (b.type === 'figure') {
