@@ -189,6 +189,8 @@ export const BOOKS = [
   {
     punctLayer: true,   // 四库白文无标点 → 走断句层(scripts/lib/punct-layer.mjs:去标点后须与底本逐字相等)
     slug: 'sanming', title: '三命通会', pages: SANMING_PAGES,
+    // 卷七「论疾病」篇:四库页把书名《烛神经》的「烛」字单独排成一行,「神经曰…」另起一段——版式事故,并回(只并段不动字)。
+    joinParas: [{ ch: 258, heads: ['烛', '神经曰'], reason: '书名《烛神经》的「烛」字被单独排成一段' }],
     skqs: true, skNotes: 'inline', splitHeadings: true,
     sections: SANMING_SECTIONS, titlePrefix: SANMING_VOLS,
     dropParaRe: SKQS_FRONT_RE,
