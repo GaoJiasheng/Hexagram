@@ -257,6 +257,15 @@ function styleRule(u) {
   return base + ' 捭阖/反应/内揵等术语译文取主流一解、注疏可「一说」备异。'
 }
 
+// 自查命令(scripts/check-unit.mjs):卷六实跑每个代理 9–16 轮工具调用,大半在摸数据结构、自写比对脚本,
+// 而每一轮都要重读十几万 token 上下文。给现成的尺子,把轮数压下来。
+function specOf(u) { return u.parts ? u.parts.map((p) => p.no + ':0-' + (p.n - 1)).join(',') : (u.no + ':' + u.start + '-' + u.end) }
+function selfCheck(u) {
+  return '**自查只用这一条命令——别去摸数据文件的结构、别读装配脚本、别另写比对脚本(那些都是白花轮数):** 把你的完整结果(与 schema 同形的一个 json)存到你的 scratchpad 目录下(文件名带上章号 ' + u.no + ' 以免与别的代理撞车),然后跑\\n' +
+    '\`cd /Users/gavin/work/hexagram && node scripts/check-unit.mjs ' + u.corpus + ' ' + u.book + ' ' + specOf(u) + ' <你的文件>\`\\n' +
+    '它核:条数、' + (u.punct ? '断句本去标点后与底本逐字相等(不等会报出第几个字起不同、两边各是什么)、' : '') + 'zhushi 的 term 是否为该段精确子串 / note 是否超 40 字 / 是否重叠、延伸条数。照它报的改,报「✓ 全过」就提交;**整段直接写、写完用它核,不要逐字拼装**。\\n\\n'
+}
+
 function translatePrompt(u) {
   const len = u.end - u.start + 1
   const rangeDesc = u.parts
@@ -271,6 +280,7 @@ function translatePrompt(u) {
     '1) translations:数组,长度必须恰为 ' + len + ',与本片段各段下标对应。平实直译、一段对一段;不增义、不删、不合并、不臆解;禁鸡汤/拔高/现代政治影射/权术发挥口吻。\\n' +
     '2) zhushi:对象,key 为**本片段内的相对下标字符串**("0".."' + (len - 1) + '",即 translations 的下标,不是原文绝对下标)。每段挑 0–4 个值得注的词(生僻字、人名地名、典故、名物制度、术语、通假;长词专名优先),{term, reading?, note}。**term 必须是对应段 original 的精确连续子串**;note≤40 汉字,训诂体;不加 ref/链接字段。无可注的段不出 key。\\n' +
     '3) yanyi:' + (u.parts ? ('**数组长度恰为 ' + u.parts.length + ',第 k 条对应第 k 篇**(按上面〔篇〕分界的次序,一篇一段,不可合并、不可漏篇)。每条讲该篇在全书中的位置、所采旧说的来历或与站内他书的异同(参' + REF[u.corpus] + ');60–140 字,极短的篇可更短;守铁律,不空泛说教。') : u.yanyi ? ('1–2 段本章/篇级延伸,讲此篇义理要点、著名文句、相关人物与源流(参' + REF[u.corpus] + ');脱锚分级,守思想史铁律不作现实政治影射/权术发挥,不空泛说教。每段 80–160 字。') : '本片段不出延伸,返回空数组 []。') + '\\n\\n' +
+    selfCheck(u) +
     '只返回结构化结果。'
 }
 
@@ -298,12 +308,22 @@ function verifyPrompt(u, draft) {
     '原文如下(已取好,**不必去读数据文件**;方括号里是 0 起下标):\\n<原文>\\n' + u.paras + '\\n</原文>\\n\\n草稿:\\n' + JSON.stringify(draft) + '\\n\\n' +
     '**先核对位**:translations[0] 译的必须是 paragraphs[' + u.start + '](以「' + u.head + '」开头),最后一条译的必须是 paragraphs[' + u.end + '](以「' + u.tail + '」开头);若草稿整体错开了一段,先整体挪回来、补上缺的那一段,再做其余校对。\\n' +
     '逐项改正后按 schema 返回:\\n' +
-    (u.punct ? ('- punctuated:长度恰为 ' + len + ';逐段核对**去掉标点与空白后与 original 逐字相等**(可写一小段脚本核:读 json 取该段 original,两边都删去标点空白后比较),有增删改字的改回;断句有误(破句、误属上下)的改正;term 须是 punctuated 对应段的精确子串。\\n') : '') +
+    (u.punct ? ('- punctuated:长度恰为 ' + len + ';逐段核对**去掉标点与空白后与 original 逐字相等**(用下面的自查命令核,不必自己写脚本),有增删改字的改回;断句有误(破句、误属上下)的改正;term 须是 punctuated 对应段的精确子串。\\n') : '') +
     '- translations 长度必须恰为 ' + len + ',与第 ' + u.start + '.. 段逐一对齐;漏译/臆增/错解/把注混入译文者改正;' + fixT + ';口吻平实。\\n' +
     '- zhushi:key 为片段内相对下标("0".."' + (len - 1) + '");每条 term 必须是对应段 original 的精确子串,否则删或改;note≤40;删 ref/链接;每段≤4 条。\\n' +
     (u.parts ? ('- **这是合包(' + u.parts.length + ' 篇连排,〔第 k 篇…〕分界行不是原文)**:下标在包内连续编号;逐篇核对译文没有因换篇而错位——每篇首段的译文必须对得上该篇首段。\\n') : '') +
     '- yanyi:' + (u.parts ? ('数组长度恰为 ' + u.parts.length + ',第 k 条对应第 k 篇,缺的补、多的删、错配的挪回;删空泛说教与' + fixY + '。') : u.yanyi ? ('保持 1–2 段,删空泛说教与' + fixY + ',确保实质、出处可靠。') : '空数组 []。') + '\\n\\n' +
+    selfCheck(u) +
     '只返回修正后的结构化结果。'
+}
+
+// 校对稿条数不对(卷六实跑有一包校对返回了空 translations)而草稿条数对时,译文退回草稿,其余字段仍取校对稿。
+function pick(v, draft, u) {
+  const len = u.end - u.start + 1
+  const okT = (d) => d && Array.isArray(d.translations) && d.translations.length === len
+  if (okT(v) || !okT(draft)) return v || draft
+  if (!v) return draft
+  return { ...v, translations: draft.translations, punctuated: Array.isArray(v.punctuated) && v.punctuated.length === len ? v.punctuated : draft.punctuated }
 }
 
 phase('Translate')
@@ -313,7 +333,7 @@ const results = await pipeline(
   (draft, u) => {
     if (!draft) return { ...u, data: null }
     return agent(verifyPrompt(u, draft), { label: '校:' + CN[u.book] + '·' + u.title + '#' + u.start, phase: 'Verify', schema: SCHEMA${MODEL_V ? `, model: '${MODEL_V}'` : ''} })
-      .then((v) => ({ ...u, data: v || draft }))
+      .then((v) => ({ ...u, data: pick(v, draft, u) }))
   },
 )
 const ok = results.filter(Boolean)
