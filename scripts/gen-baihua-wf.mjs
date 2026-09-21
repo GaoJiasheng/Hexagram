@@ -383,7 +383,7 @@ const draftPrompt = (u) => {
   const bookStyle = BOOK_STYLE[`${corpus}/${slug}`] ? `\n\n${BOOK_STYLE[`${corpus}/${slug}`]}` : ''
   return `你在为研习站写《${bookTitle}·${u.title}》的「白话」整章深读。${RED[corpus] || ''}${bookStyle}\n\n${spec}\n\n${figspec}\n\n${RICHSPEC}${WIDGETSPEC ? '\n\n' + WIDGETSPEC : ''}${approach}\n\n` +
     (u.text
-      ? `**本章原文与站内译文已为你取好,见下(方括号里是段下标)。不必再去读数据文件——那个文件很大,读它是浪费。** quote.original 必须是下面某段原文的精确连续子串(逐字照抄,含全角标点;不要带上方括号下标与「译:」行)。\n\n<本章原文>\n${u.text}\n</本章原文>\n\n`
+      ? `**本章原文与站内译文已为你取好,见下(方括号里是段下标)。不必再去读数据文件——那个文件很大,读它是浪费。** quote.original 必须是下面某段原文的精确连续子串(逐字照抄,含全角标点;不要带上方括号下标与「译:」行)。\n\n<本章原文>\n__CHTEXT__\n</本章原文>\n\n`
       : `第一步:用 Read 读 ${FILE(corpus, slug)},找到 chapters 里 no===${u.no} 的那一章(paragraphs 为原文段,每段含 original 与 translation)。以这章原文为底成文。\n\n`) +
     `篇幅:${band}。\n\n按 schema 产出一篇白话文章:\n` +
     `- title:"白话${bookTitle} · ${u.title}";subtitle:一句副题;centralIdea:一句话中心思想。\n` +
@@ -394,7 +394,7 @@ const draftPrompt = (u) => {
 
 const verifyPrompt = (u, draft) => IS_HEX ? yijingVerify(u, draft) : IS_JZ ? jzVerify(u, draft) : `校对修正《${bookTitle}·${u.title}》白话草稿,返回修正后完整结构。${RED[corpus] || ''}${BOOK_STYLE[`${corpus}/${slug}`] ? `\n${BOOK_STYLE[`${corpus}/${slug}`]}` : ''}\n\n` +
   (u.text
-    ? `本章原文与站内译文如下(已取好,**不必去读数据文件**;核引文就拿它逐字比):\n<本章原文>\n${u.text}\n</本章原文>\n\n草稿:\n${draft}\n\n`
+    ? `本章原文与站内译文如下(已取好,**不必去读数据文件**;核引文就拿它逐字比):\n<本章原文>\n__CHTEXT__\n</本章原文>\n\n草稿:\n${draft}\n\n`
     : `先 Read ${FILE(corpus, slug)} 中 no===${u.no} 的章核对。草稿:\n${draft}\n\n`) +
   `逐项改正:\n- 每个 quote.original 必须是该章某原文段的精确连续子串,否则改对或删;translation 与站内译文一致。\n` +
   `- 守红线:删去违红线的措辞(${corpus === 'zhongyi' ? '诊疗/功效用法用量/疗效断语' : corpus === 'mingli' ? '对命例中人的吉凶评判、教读者拿去断命的套用指引、预测性断语(原典自身断语属照译范围不删)' : (corpus === 'moulue' && !MOULUE_REAL_BOOKS.has(slug)) ? '为伪书张目/教施用' : corpus === 'moulue' ? '权术施用教程/成功学鸡汤式发挥' : corpus === 'fo' ? '果报/往生劝信' : '鸡汤/成功学/权术/政治影射'})。\n` +
@@ -438,16 +438,18 @@ const SCHEMA = {
 }
 
 const UNITS = ${JSON.stringify(units.map(({ text, ...u }) => u), null, 0)}
+const TEXT = ${JSON.stringify(Object.fromEntries(units.filter((u) => u.text).map((u) => [u.no, u.text])))}
+const withText = (p, no) => p.split('__CHTEXT__').join(TEXT[no] || '')
 const DRAFT = ${JSON.stringify(Object.fromEntries(units.map((u) => [u.no, draftPrompt(u)])))}
 const VERIFY_HEAD = ${JSON.stringify(Object.fromEntries(units.map((u) => [u.no, verifyPrompt(u, '__DRAFT__')])))}
 
 phase('Draft')
 const results = await pipeline(
   UNITS,
-  (u) => agent(DRAFT[u.no], { label: '草:${bookTitle}·' + u.title, phase: 'Draft', schema: SCHEMA, model: 'opus' }),
+  (u) => agent(withText(DRAFT[u.no], u.no), { label: '草:${bookTitle}·' + u.title, phase: 'Draft', schema: SCHEMA, model: 'opus' }),
   (draft, u) => {
     if (!draft) return { ...u, data: null }
-    const vp = VERIFY_HEAD[u.no].replace('__DRAFT__', JSON.stringify(draft).slice(0, 60000))
+    const vp = withText(VERIFY_HEAD[u.no], u.no).replace('__DRAFT__', JSON.stringify(draft).slice(0, 60000))
     return agent(vp, { label: '校:${bookTitle}·' + u.title, phase: 'Verify', schema: SCHEMA, model: '${VERIFY_MODEL}' })
       .then((v) => ({ ...u, data: v || draft }))
   },
