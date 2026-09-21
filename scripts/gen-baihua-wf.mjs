@@ -389,8 +389,16 @@ const draftPrompt = (u) => {
     `- title:"白话${bookTitle} · ${u.title}";subtitle:一句副题;centralIdea:一句话中心思想。\n` +
     `- blocks:有序数组,块类型 lead(导语)/p(段落)/h2(小节标题)/quote{original,translation}(引文,original 必为该章原文段精确子串、translation 与站内译文一致)/figure{ftype,svg,caption}(内联 SVG 图)/refs{items:[…]}(出处与参考),外加富文本块 list/callout/pull/steps(见上「富文本块」,按分寸用、不硬凑)。按脊柱顺序铺;走读用 quote+p 穿插;金句卡等图穿插在合适处;末尾一个 refs 块。\n` +
     (u.featured ? `- 这是全书开篇总纲章:额外给 featured:true 和 hero:{badge:"开篇 · 全书总纲",headline:本章关键句,tagline:一句题词};正文不必再单列与 hero 重复的金句卡。\n` : `- 本章非开篇,**不要**输出 featured 或 hero 字段。\n`) +
+    selfCheck(u) +
     `\n只返回结构化结果。`
 }
+
+// 自查命令(scripts/check-baihua-draft.mjs,2026-09-21):代理每多一轮工具调用就重读十几万 token 上下文,
+// 而实跑里校对代理大半轮数花在找 widget schema、读 check-data、翻设计稿上。给一把现成的尺子。只对 corpus 形态的书给(易经两条支线数据形态不同)。
+const selfCheck = (u) => (IS_HEX || IS_JZ || String(u.no).includes('-')) ? '' :
+  `\n**自查只用这一条命令——别去找 widget 的 schema、别读 check-data 或装配脚本、别翻设计稿(都是白花轮数):** 把完整结果(与 schema 同形的一个 json)存到你的 scratchpad 目录下(文件名带上「${slug}-${u.no}」以免与别的代理撞车),跑\n` +
+  `\`cd /Users/gavin/work/hexagram && node scripts/check-baihua-draft.mjs ${corpus} ${slug} ${u.no} <你的文件>\`\n` +
+  `它核:每条 quote.original 是否为本章原文子串(不是会报出第几个字起对不上)、widget 参数合不合法、sizhu 的四柱是否出自本章原文、svg 有无写死颜色/缺 viewBox/误用 fill="var()" 属性、pull 是否超过 1 处、callout label 是否超长、有无空块。照它报的改,「✓ 硬项全过」就提交;**至多跑两三次,不要为了「提示」项反复跑**。\n`
 
 const verifyPrompt = (u, draft) => IS_HEX ? yijingVerify(u, draft) : IS_JZ ? jzVerify(u, draft) : `校对修正《${bookTitle}·${u.title}》白话草稿,返回修正后完整结构。${RED[corpus] || ''}${BOOK_STYLE[`${corpus}/${slug}`] ? `\n${BOOK_STYLE[`${corpus}/${slug}`]}` : ''}\n\n` +
   (u.text
@@ -401,7 +409,7 @@ const verifyPrompt = (u, draft) => IS_HEX ? yijingVerify(u, draft) : IS_JZ ? jzV
   `- 每张 figure 的 svg:颜色只用 var(--…)/currentColor,**不得写死 #hex**;有 viewBox 与 caption。${IS_THICK ? '本书按加厚标准,应有 5–8 张图、每处义理都落到日常场景+比喻;' : ''}\n` +
   (IS_THICK && u.chars >= 1500 ? `- 本章较长:应是「分段 + 摘录精华句逐一深读」,不必逐句翻全篇;确认未遗漏关键句、也未沦为流水账。\n` : IS_THICK ? `- 本章较短:应「全文逐句展开」,确认无漏句。\n` : '') +
   `- 富文本块:list 项内不留「一、」这类行首序号;callout 的 label 只在正文没自报家门时才留(正文已是「打个比方：」就删签)、且 ≤8 字;pull 每章至多 1 处;空的 list/callout/steps 一律删。**不许为了用新块而硬拆段落**,该不用就不用。\n` +
-  `- 中心思想突出、脑回路与比喻到位、不沦为逐字翻译清单;篇幅合宜。\n- 末尾保留 refs 块。\n\n只返回修正后的结构化结果。`
+  `- 中心思想突出、脑回路与比喻到位、不沦为逐字翻译清单;篇幅合宜。\n- 末尾保留 refs 块。\n` + selfCheck(u) + `\n只返回修正后的结构化结果。`
 
 const script = `export const meta = {
   name: 'baihua-${corpus}-${slug}',
