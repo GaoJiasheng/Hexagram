@@ -226,12 +226,18 @@ export const BOOKS = [
     chapterTitles: ['卷上', '卷下'], exactChapters: 2,
     dropParaRe: '^三命消息赋二卷|' + SKQS_TIYAO_RE,
   },
-  // 玉照定真经(旧题晋郭璞撰、张[颙顒]注,一卷):四庫全書本单页,经文四言韵语与张[颙顒]注逐句相间。
+  // 玉照定真经(旧题晋郭璞撰、张[颙顒]注,一卷):四庫全書本单页,经文(四言六言相间的短句断语,不入韵;卷末另有七言《正道歌》)与张[颙顒]注逐句相间。
   // skNotes 取 'para':注文即本书主体(全页 264 处小字注),须与经文分段,否则整卷只剩两三段。
   // 页首是四庫提要(即「盖晚出依托之本…疑书与注文均出自张[颙顒]一人之手而假名于璞」那一篇),剔除。
   {
     punctLayer: true,   // 四库白文无标点 → 走断句层(scripts/lib/punct-layer.mjs:去标点后须与底本逐字相等)
     slug: 'yuzhao', title: '玉照定真经', pages: ['玉照定真經 (四庫全書本)'],
     skqs: true, skNotes: 'para', dropParaRe: SKQS_FRONT_RE + '|' + SKQS_TIYAO_RE,
+    // 四库页一处版式事故(见 fetch-corpus joinParas 注):先并经文那三段,再并上一条注的两截——次序不能反,
+    // heads 按白文写(管线此时还没合断句层)。
+    joinParas: [
+      { ch: 1, heads: ['旺相休', '囚', '问于进退'], reason: '经文「旺相休囚问于进退」一句被「囚」字的小字位切成三段' },
+      { ch: 1, heads: ['五行胎伐地也', '同耳'], reason: '注文末二字「同耳」被另起一行' },
+    ],
   },
 ]

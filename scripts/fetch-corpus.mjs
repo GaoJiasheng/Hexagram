@@ -731,6 +731,22 @@ async function main() {
       }
     }
 
+    // joinParas([{ch, heads:[…], reason}]):把**相邻**几段并回一段(2026-09-22,玉照定真经)。
+    // 四库页把经文「旺相休囚,问于进退」的「囚」字误排进双行小字位,上一条注的末二字「同耳」又另起一行,
+    // 管线按「小字即注、另行即段」忠实照切,一句经碎成三段、一条注断成两截。这是版式事故不是文字异同,
+    // 故只并段、不动字。heads 是这几段各自的开头几个字(逐段前缀相等才并),任何一条对不上就报 warning 不动手。
+    if (book.joinParas) {
+      const bare = (t) => t.replace(/[\s\u3000]/g, '')
+      for (const j of book.joinParas) {
+        const c = chapters.find((x) => x.no === j.ch)
+        const at = c ? c.paragraphs.findIndex((p, i) => j.heads.every((h, k) => c.paragraphs[i + k] && bare(c.paragraphs[i + k].original).startsWith(h))) : -1
+        if (at < 0) { warnings.push(`${book.title}: joinParas「${j.heads.join(' / ')}」未命中,请检查`); continue }
+        const run = c.paragraphs.splice(at, j.heads.length)
+        c.paragraphs.splice(at, 0, { ...run[0], original: run.map((p) => p.original).join('') })
+        console.log(`  并段 第${j.ch}章 @${at}: ${j.heads.length} 段 → 1(${j.reason})`)
+      }
+    }
+
     // mergeGanzhiRuns(滴天髓阐微专用):命例竖排碎段合并,见函数定义处说明
     let ganzhiStat = null
     if (book.mergeGanzhiRuns) {
