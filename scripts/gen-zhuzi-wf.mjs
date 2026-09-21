@@ -263,7 +263,7 @@ function specOf(u) { return u.parts ? u.parts.map((p) => p.no + ':0-' + (p.n - 1
 function selfCheck(u) {
   return '**自查只用这一条命令——别去摸数据文件的结构、别读装配脚本、别另写比对脚本(那些都是白花轮数):** 把你的完整结果(与 schema 同形的一个 json)存到你的 scratchpad 目录下(文件名带上章号 ' + u.no + ' 以免与别的代理撞车),然后跑\\n' +
     '\`cd /Users/gavin/work/hexagram && node scripts/check-unit.mjs ' + u.corpus + ' ' + u.book + ' ' + specOf(u) + ' <你的文件>\`\\n' +
-    '它核:条数、' + (u.punct ? '断句本去标点后与底本逐字相等(不等会报出第几个字起不同、两边各是什么)、' : '') + 'zhushi 的 term 是否为该段精确子串 / note 是否超 40 字 / 是否重叠、延伸条数。照它报的改,报「✓ 全过」就提交;**整段直接写、写完用它核,不要逐字拼装**。\\n\\n'
+    '它核:条数、' + (u.punct ? '断句本去标点后与底本逐字相等(不等会报出第几个字起不同、两边各是什么)、' : '') + 'zhushi 的 term 是否为该段精确子串 / note 是否超 40 字 / 是否重叠、延伸条数。照它报的改,报「✓ 全过」就提交;**整段直接写、写完用它核,不要逐字拼装**。\\n**存文件只是为了自查:最后仍必须把完整结果按 schema 原样交回——不能只交一段「已完成、见某文件」的说明,装配器不会去读你的文件。**\\n\\n'
 }
 
 function translatePrompt(u) {

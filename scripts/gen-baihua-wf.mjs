@@ -398,7 +398,7 @@ const draftPrompt = (u) => {
 const selfCheck = (u) => (IS_HEX || IS_JZ || String(u.no).includes('-')) ? '' :
   `\n**自查只用这一条命令——别去找 widget 的 schema、别读 check-data 或装配脚本、别翻设计稿(都是白花轮数):** 把完整结果(与 schema 同形的一个 json)存到你的 scratchpad 目录下(文件名带上「${slug}-${u.no}」以免与别的代理撞车),跑\n` +
   `\`cd /Users/gavin/work/hexagram && node scripts/check-baihua-draft.mjs ${corpus} ${slug} ${u.no} <你的文件>\`\n` +
-  `它核:每条 quote.original 是否为本章原文子串(不是会报出第几个字起对不上)、widget 参数合不合法、sizhu 的四柱是否出自本章原文、svg 有无写死颜色/缺 viewBox/误用 fill="var()" 属性、pull 是否超过 1 处、callout label 是否超长、有无空块。照它报的改,「✓ 硬项全过」就提交;**至多跑两三次,不要为了「提示」项反复跑**。\n`
+  `它核:每条 quote.original 是否为本章原文子串(不是会报出第几个字起对不上)、widget 参数合不合法、sizhu 的四柱是否出自本章原文、svg 有无写死颜色/缺 viewBox/误用 fill="var()" 属性、pull 是否超过 1 处、callout label 是否超长、有无空块。照它报的改,「✓ 硬项全过」就提交;**至多跑两三次,不要为了「提示」项反复跑**。\n**存文件只是为了自查:最后仍必须把完整文章按 schema 原样交回(blocks 里是文章本身)——不能只交一段「已完成、见某文件」的说明,装配器不会去读你的文件。**\n`
 
 const verifyPrompt = (u, draft) => IS_HEX ? yijingVerify(u, draft) : IS_JZ ? jzVerify(u, draft) : `校对修正《${bookTitle}·${u.title}》白话草稿,返回修正后完整结构。${RED[corpus] || ''}${BOOK_STYLE[`${corpus}/${slug}`] ? `\n${BOOK_STYLE[`${corpus}/${slug}`]}` : ''}\n\n` +
   (u.text
