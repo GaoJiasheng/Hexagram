@@ -41,6 +41,10 @@ const CH_SET = CH_ARG ? new Set(CH_ARG.split(',').map(Number)) : null
 // 可选:--units=57:50,57:300,58:50 只生成这几个切片(章号:起始段;补跑错位切片用,装配须带 --merge)
 const UN_ARG = (process.argv.find((a) => a.startsWith('--units=')) || '').slice('--units='.length)
 const UN_SET = UN_ARG ? new Set(UN_ARG.split(',')) : null
+// 可选:--bundle=3200 小篇合包(2026-09-21):相邻的短章(单章 ≤55 段)攒到约 N 字/≤50 段/≤12 篇交给**一个**代理,
+// 产出后在 workflow 里按篇拆回普通单元,装配器无感。为三命通会卷六(150 篇、每篇两百来字)而设——
+// 一篇一个代理时,每个代理的固定开销(系统提示 + CLAUDE.md)远大于正文,合包省掉约八成。
+const BUNDLE = Number((process.argv.find((a) => a.startsWith('--bundle=')) || '').slice('--bundle='.length)) || 0
 const units = []
 // 切片首末段的开头几个字:写进提示语当**锚**。只说「下标 50 到 99」时,个别代理按 1 起理解,整片译文错一段
 // (2026-09-19 渊海第 57/58 篇、穷通第 7 章共 4 个切片中招);给了锚就没有歧义。
@@ -56,7 +60,7 @@ for (const [corpus, slug] of SEL) {
     const n = c.paragraphs.length
     const title = c.title || `第${c.no}章`
     if (n <= 55) {
-      units.push({ corpus, book: slug, no: c.no, title, start: 0, end: n - 1, yanyi: true, punct: PUNCT_BOOKS.has(slug), head: headOf(c, 0), tail: headOf(c, n - 1), paras: parasOf(c, 0, n - 1) })
+      units.push({ corpus, book: slug, no: c.no, title, start: 0, end: n - 1, yanyi: true, punct: PUNCT_BOOKS.has(slug), head: headOf(c, 0), tail: headOf(c, n - 1), paras: parasOf(c, 0, n - 1), _c: c })
     } else {
       for (let s = 0; s < n; s += SPLIT) {
         units.push({ corpus, book: slug, no: c.no, title, start: s, end: Math.min(s + SPLIT, n) - 1, yanyi: s === 0, punct: PUNCT_BOOKS.has(slug), head: headOf(c, s), tail: headOf(c, Math.min(s + SPLIT, n) - 1), paras: parasOf(c, s, Math.min(s + SPLIT, n) - 1) })
@@ -64,6 +68,40 @@ for (const [corpus, slug] of SEL) {
     }
   }
 }
+
+// 小篇合包:把相邻的整章单元(带 _c)并成一个 bundle 单元。段下标在包内连续编号,〔篇〕标记行只是分界、不是原文。
+if (BUNDLE) {
+  const out = []
+  let cur = null
+  const flush = () => {
+    if (!cur) return
+    if (cur.parts.length === 1) { out.push(cur.parts[0].u) } else {
+      let o = 0
+      const lines = []
+      for (const p of cur.parts) {
+        lines.push('〔第 ' + (lines.filter((l) => l.startsWith('〔第')).length + 1) + ' 篇:《' + p.u.title + '》,共 ' + p.n + ' 段〕')
+        p.u._c.paragraphs.forEach((para, k) => lines.push(`[${o + k}] ${para.original}` + (para.pillars ? '〔命例段:四柱 ' + para.pillars.join(' ') + ',留空不译〕' : '')))
+        o += p.n
+      }
+      const first = cur.parts[0].u, last = cur.parts[cur.parts.length - 1].u
+      out.push({ corpus: first.corpus, book: first.book, no: first.no, title: first.title + ' 等 ' + cur.parts.length + ' 篇', start: 0, end: o - 1, yanyi: true, punct: first.punct,
+        head: first.head, tail: last.tail, paras: lines.join('\n'), parts: cur.parts.map((p) => ({ no: p.u.no, title: p.u.title, n: p.n })) })
+    }
+    cur = null
+  }
+  for (const u of units) {
+    if (!u._c) { flush(); out.push(u); continue }
+    const n = u.end + 1
+    const chars = u._c.paragraphs.reduce((a, p) => a + p.original.length, 0)
+    if (cur && (cur.book !== u.book || cur.chars + chars > BUNDLE || cur.paras + n > 50 || cur.parts.length >= 12)) flush()
+    if (chars > BUNDLE) { flush(); out.push(u); continue }
+    cur ??= { book: u.book, chars: 0, paras: 0, parts: [] }
+    cur.parts.push({ u, n }); cur.chars += chars; cur.paras += n
+  }
+  flush()
+  units.length = 0; units.push(...out)
+}
+for (const u of units) delete u._c
 
 if (UN_SET) { for (let i = units.length - 1; i >= 0; i--) if (!UN_SET.has(`${units[i].no}:${units[i].start}`)) units.splice(i, 1) }
 
@@ -221,7 +259,9 @@ function styleRule(u) {
 
 function translatePrompt(u) {
   const len = u.end - u.start + 1
-  const rangeDesc = u.start === 0 && len > 0
+  const rangeDesc = u.parts
+    ? ('**这是一个合包:下面连排了 ' + u.parts.length + ' 篇短文,以「〔第 k 篇:《篇名》,共 n 段〕」分界(分界行不是原文、不占下标)。** 合计 ' + len + ' 段全译,方括号里是包内连续下标:translations[i] 对应下标 i 的那一段,跨篇照排、不要因为换篇而重新从 0 数。')
+    : u.start === 0 && len > 0
     ? ('本章共 ' + len + ' 段全译:translations[i] 对应原文第 i 段。')
     : ('本片段只译 paragraphs 数组里**从 0 数起**下标 ' + u.start + ' 到 ' + u.end + ' 的段(共 ' + len + ' 段):translations[0] 对应 paragraphs[' + u.start + '],依次类推。**对位锚:paragraphs[' + u.start + '] 以「' + u.head + '」开头,paragraphs[' + u.end + '] 以「' + u.tail + '」开头——动笔前先核对这两段,translations 的第一条译的必须是前者、最后一条译的必须是后者。**')
   return '你在为古籍研习站做《' + CN[u.book] + '·' + u.title + '》的白话译注。' + styleRule(u) + '\\n\\n' +
@@ -230,7 +270,7 @@ function translatePrompt(u) {
     '按 schema 产出:\\n' +
     '1) translations:数组,长度必须恰为 ' + len + ',与本片段各段下标对应。平实直译、一段对一段;不增义、不删、不合并、不臆解;禁鸡汤/拔高/现代政治影射/权术发挥口吻。\\n' +
     '2) zhushi:对象,key 为**本片段内的相对下标字符串**("0".."' + (len - 1) + '",即 translations 的下标,不是原文绝对下标)。每段挑 0–4 个值得注的词(生僻字、人名地名、典故、名物制度、术语、通假;长词专名优先),{term, reading?, note}。**term 必须是对应段 original 的精确连续子串**;note≤40 汉字,训诂体;不加 ref/链接字段。无可注的段不出 key。\\n' +
-    '3) yanyi:' + (u.yanyi ? ('1–2 段本章/篇级延伸,讲此篇义理要点、著名文句、相关人物与源流(参' + REF[u.corpus] + ');脱锚分级,守思想史铁律不作现实政治影射/权术发挥,不空泛说教。每段 80–160 字。') : '本片段不出延伸,返回空数组 []。') + '\\n\\n' +
+    '3) yanyi:' + (u.parts ? ('**数组长度恰为 ' + u.parts.length + ',第 k 条对应第 k 篇**(按上面〔篇〕分界的次序,一篇一段,不可合并、不可漏篇)。每条讲该篇在全书中的位置、所采旧说的来历或与站内他书的异同(参' + REF[u.corpus] + ');60–140 字,极短的篇可更短;守铁律,不空泛说教。') : u.yanyi ? ('1–2 段本章/篇级延伸,讲此篇义理要点、著名文句、相关人物与源流(参' + REF[u.corpus] + ');脱锚分级,守思想史铁律不作现实政治影射/权术发挥,不空泛说教。每段 80–160 字。') : '本片段不出延伸,返回空数组 []。') + '\\n\\n' +
     '只返回结构化结果。'
 }
 
@@ -261,7 +301,8 @@ function verifyPrompt(u, draft) {
     (u.punct ? ('- punctuated:长度恰为 ' + len + ';逐段核对**去掉标点与空白后与 original 逐字相等**(可写一小段脚本核:读 json 取该段 original,两边都删去标点空白后比较),有增删改字的改回;断句有误(破句、误属上下)的改正;term 须是 punctuated 对应段的精确子串。\\n') : '') +
     '- translations 长度必须恰为 ' + len + ',与第 ' + u.start + '.. 段逐一对齐;漏译/臆增/错解/把注混入译文者改正;' + fixT + ';口吻平实。\\n' +
     '- zhushi:key 为片段内相对下标("0".."' + (len - 1) + '");每条 term 必须是对应段 original 的精确子串,否则删或改;note≤40;删 ref/链接;每段≤4 条。\\n' +
-    '- yanyi:' + (u.yanyi ? ('保持 1–2 段,删空泛说教与' + fixY + ',确保实质、出处可靠。') : '空数组 []。') + '\\n\\n' +
+    (u.parts ? ('- **这是合包(' + u.parts.length + ' 篇连排,〔第 k 篇…〕分界行不是原文)**:下标在包内连续编号;逐篇核对译文没有因换篇而错位——每篇首段的译文必须对得上该篇首段。\\n') : '') +
+    '- yanyi:' + (u.parts ? ('数组长度恰为 ' + u.parts.length + ',第 k 条对应第 k 篇,缺的补、多的删、错配的挪回;删空泛说教与' + fixY + '。') : u.yanyi ? ('保持 1–2 段,删空泛说教与' + fixY + ',确保实质、出处可靠。') : '空数组 []。') + '\\n\\n' +
     '只返回修正后的结构化结果。'
 }
 
@@ -277,7 +318,28 @@ const results = await pipeline(
 )
 const ok = results.filter(Boolean)
 log('完成 ' + ok.filter((r) => r.data).length + '/' + UNITS.length + ' 单元')
-return ok
+// 合包拆回逐篇单元(装配器只认普通单元);译文条数对不上的包整包作废(data:null),之后按篇单跑补齐。
+const flat = []
+for (const r of ok) {
+  if (!r.parts) { flat.push(r); continue }
+  const d = r.data
+  const good = d && Array.isArray(d.translations) && d.translations.length === r.end + 1
+    && (!d.punctuated || d.punctuated.length === r.end + 1)
+  if (!good) log('合包作废(条数不符):' + r.title)
+  let o = 0
+  r.parts.forEach((p, k) => {
+    const base = { corpus: r.corpus, book: r.book, no: p.no, title: p.title, start: 0, end: p.n - 1, yanyi: true, punct: r.punct }
+    if (!good) { flat.push({ ...base, data: null }); o += p.n; return }
+    const z = {}
+    for (const [key, arr] of Object.entries(d.zhushi || {})) { const i = Number(key); if (i >= o && i < o + p.n) z[String(i - o)] = arr }
+    const data = { translations: d.translations.slice(o, o + p.n), zhushi: z,
+      yanyi: Array.isArray(d.yanyi) && d.yanyi.length === r.parts.length && d.yanyi[k] ? [d.yanyi[k]] : [] }
+    if (d.punctuated) data.punctuated = d.punctuated.slice(o, o + p.n)
+    flat.push({ ...base, data })
+    o += p.n
+  })
+}
+return flat
 `
 
 const outName = `scripts/.${ONLY || 'zhuzi'}-translate-wf.js`
