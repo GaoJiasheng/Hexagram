@@ -88,14 +88,14 @@ iOS **build 51** / 版本 **1.33.0 —— 2026-08-19 已提交审核(WAITING_FOR
 
 ### ⏸ 2026-09-22 凌晨收工(owner:「继续吧,周额度跑到 50」—— 已到线)
 
-**这一轮做成的**:四部核心书白话 **196/196 全成** · 四部源头书译注延 + 五部新书书级导读全成 · 三命通会译注延卷一、二、五、六、七(1066/6250 段;卷三在跑,见记忆)。
+**这一轮做成的**:四部核心书白话 **196/196 全成** · 四部源头书译注延 + 五部新书书级导读全成 · 三命通会译注延卷一、二、三、五、六、七(1551/6250 段)。
 全部已 commit + push;没有发布(生产 / iOS 都没碰),`portalHidden` 仍在。
 
 **下一轮接着做(按这个次序)**:
-1. **三命通会余卷译注延**:卷四、八、九、十、十一、十二(卷三若已落库则略)。每卷一条命令生成、一个 Workflow、一次装配:
+1. **三命通会余卷译注延**:卷四、八、九、十、十一、十二(卷四脚本 `scripts/.sanming-j4-translate-wf.js` 已生成,是 gitignore 的临时文件,丢了就重生)。每卷一条命令生成、一个 Workflow、一次装配:
    `node scripts/gen-zhuzi-wf.mjs sanming --models=opus,sonnet --bundle=3200 --chapters=<该卷章号列表>` → Workflow `scripts/.sanming-translate-wf.js`
    → `node scripts/assemble-newtexts.mjs <result> --merge` → `node scripts/fetch-corpus.mjs mingli` → `npm run check-data` → 显式路径 commit。
-   卷→章号:3:42-68 · 4:69-91 · 8:269-328 · 9:329-388 · 10:389-391 · 11:392-399 · 12:400-414。一卷约 370 万 token ≈ 周额度 2.5–3 点;可三卷并发。
+   卷→章号:4:69-91 · 8:269-328 · 9:329-388 · 10:389-391 · 11:392-399 · 12:400-414。一卷约 370 万 token ≈ 周额度 2.5–3 点;可三卷并发。
    全书译完后 texts.json 里 sanming `status` → `done`,重跑 `gen-book-sizes`。
 2. **待 owner 定**:① 滴天髓底本 OCR 讹字(80 多组)要不要找第二见证本对校 / 内证标准放多宽;② 四部源头书白话做不做、做哪几部;③ 三命通会白话精选的选目。
 3. **Z 收口**:全站回归(明暗 / 手机 / iOS 与安卓模拟器)→ 更新 `docs/mingli-review.md` → **Cloudflare 预览部署**(不碰生产、不发 iOS)→ owner 统一 review;通过后才去掉 `portalHidden`。
