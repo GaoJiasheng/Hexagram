@@ -128,10 +128,18 @@ node scripts/gen-zhuzi-wf.mjs sanming --models=opus,sonnet --bundle=3200 --chapt
 卷八九是断语 + 命例横表(列序已乱,代理照录并标「原表错行」,见 SOURCES.md);万氏身后人事(「明帝天启」等)注为后人增补。
 **成后收尾**:`src/data/mingli/texts.json` sanming `status: "partial" → "done"`;`node scripts/gen-book-sizes.mjs`;`src/data/mingli/daodu/sanming.json` 里若有「按卷推进 / 尚未译完 / 部分卷」类措辞改掉(grep 推进、未译、部分);`npm run check-data`;更新本手册 + `docs/mingli-review.md` §五 + CLAUDE.md 观数行(「十一卷 4898/6250,只余卷九」→「全书 6250 段译注延全成」)。
 
-**2. 滴天髓白话「底本存疑」callout 清理**(零 subagent 成本,主会话脚本活;可穿插在任何时候做)
-- 讹字表 `scripts/corpus/mingli.config.mjs` 的 `DITIANSUI_TYPOS`(`{from,to,expect,reason}`,已生效 379 条);白话 `src/data/mingli/baihua/ditiansui.json`(`mingli-status.mjs` 粗数含误报,以脚本逐条判为准)。
-- 做法:脚本遍历各章 callout / p 块,凡文字提到「底本作 X / 字形如此 / 照录不改 / 疑为 Y 之讹」且 X 已在表里 → 改成「底本原作 X,已据见证本校正为 Y(见 SOURCES.md 校勘记)」,整块只说这一个字的就删;未入表的(C 档留讹)保留原措辞。改完 `npm run check-data` + `npm run content:build`,人读抽 5 章。commit `src/data/mingli/baihua/ditiansui.json`。
-- 顺带三件**待 owner 定**(见 `docs/mingli-review.md` §四,**不问不动**):C 档长段脱衍/错简(35–37、62、20.1、53.12)动不动;4.7–4.8「(新增)」命例与 46.0 后人补纲领删不删;代理最没把握的 9 处采不采。
+**2. 滴天髓收尾——owner 2026-09-25 已定六项(「1A 2删留 3删 4留 5采 6改」),全是脚本活、零 subagent 成本(仅 2a 补文后几段要重译,一个 opus 代理)**
+材料都在 `scripts/sources/mingli/ditiansui-collation/`:`ditiansui-collation.tsv`(全表,列:章/章题/段/上下文/本站/劝学/古诗文/类型/内证/来源/判定/依据/建议 typoFix)· `witness-excerpts.json`(待改各章两见证本整章段落)· `tools/`(对校与重锚脚本,`reanchor-zhushi.mjs` = 原文改后按 LCS 重锚注疏)。
+改字一律走 `scripts/corpus/mingli.config.mjs` 的 `DITIANSUI_TYPOS`(`{from,to,expect,reason}`,按序生效、`expect` 按已改过的文本计数,from 用书内唯一的上下文锚),然后 `node scripts/fetch-corpus.mjs mingli` 重生原文。**顺序:2a → 2b → 2c → 2e 一起入表、一次重生**,再做连锁同步(2f),最后 2d、2g、6。
+- **2a(1A)长段脱文按见证本补入**:35.2 夫妻 / 36.2、36.4 子女 / 37.2 父母 共 10 处「脱文(长)」「异文(长)」(TSV 判定 C、类型含「长」),两本一致。每处一条:`from` = 本站现有的脱文前后锚文(8–12 字、书内唯一),`to` = 锚文 + 补文(照 witness-excerpts 该段抄,标点随本站体例);37.2 一段里 秎→伤 / 景→主 / 劫→伤 / 衍「年印月劫」与脱文交错,**整段一条**(from = 本站整段讹文,to = 见证本整段)。补完这 4 段的译文缺了补文那部分 → 一个 opus 代理按 `scripts/check-unit.mjs` 重译这几段(`gen-zhuzi-wf ditiansui --units=35:0,36:0,37:0 --models=opus,sonnet`,或直接 Agent 派),装配 `--merge`。
+- **2b(2 删)重出衍文删**:20.1 原注段内「必得引用无合之神及刑冲所间之物…明见暗会岁运相逢，乃为通关也。」重出两遍,**删讹写的第一遍**(「授引」、少逗号的那句,from = 该句原样,to = 空,expect 1);62.25 涉上文衍出的 24 字「头遇甲丙，则凶。如午运子年谓这岁冲运，日主喜午要午之」删(**此条要排在 2e 的 62.25 这→之 诸条之前**,否则 from 对不上)。53.12 错简**留**(只有古诗文本移位,证据单薄,白话已标)。
+- **2c(3 删)4.7–4.8「(新增)」命例删**:ch4 第 7 段(四柱 辛酉 辛丑 己酉 丙寅,已并成 pillars 段)与第 8 段(「此造与上造异曲同工之妙…（新增）」)整段剔除。管线现有 `dropParaRe` 跑在 `mergeGanzhiRuns` 之前(fetch-corpus.mjs 708 行 vs 752 行),剔不到已合并的四柱段——**仿 joinParas 加一个合并后生效的 `dropParas:[{ch:4, match:'（新增）'},{ch:4, pillars:'辛酉 辛丑 己酉 丙寅'}]`**(十几行,只剔匹配段、他书无感)。剔后 ch4 14→12 段,**下标连锁**:`scripts/authored/mingli-translations.json` ditiansui 第 4 章数组删下标 7、8;`src/data/mingli/zhushi-anchored/ditiansui.json` 第 4 章段键 ≥9 各减 2;`src/data/mingli/cases/ditiansui.json` 走读例 `4-9` 的 para 9→7、commentPara 10→8(id 可留);白话第 4 章没引这两段,不动;`concepts.json` 落点按 kw 回查,跑 check-data 看有无报。SOURCES.md 记一笔「后人增补命例,据 owner 决定删,理由:非任氏文字且对在世者作预言」。
+- **2d(4 留)46.0 后人补纲领留**:原文自注已在;只在该章注疏/白话补一句「辑要本此处纲领作『从得真者只论从，从神又有吉和凶』」——不改原文。
+- **2e(5 采)9 处最没把握的校改采**:TSV 里 章.段 = 9.43 / 11.0 / 17.16 / 18.2 / 29.2 / 37.0 / 39.18 / 58.16 / 62.25 的 A、B 档各条(共 22 条;29.2「竟四时之序」是 C 档不动),按「建议 typoFix」列写入 `DITIANSUI_TYPOS`(带 expect;9.43 阳乘阴位→阴乘阴位、11.0 补「兮」、17.16 己未→乙未、18.2 却→去/地→无/量→旺/遇→无、29.2 这→之、37.0 降→隆、39.18 删「贫」、58.16 当火土→全金木、62.25 进→者/运→年/关→头/这→之×3/补「干」/九→必/补「余」)。
+- **2f 连锁同步(每次重生原文后必做)**:`node scripts/fetch-corpus.mjs mingli` → `npm run check-data` 会列出白话坏引文与注疏坏锚 → 白话 `quote.original` 按表替换(小脚本按 from→to 扫 `src/data/mingli/baihua/ditiansui.json`),注疏跑 `tools/reanchor-zhushi.mjs`(LCS 对齐,改前/改后段落各一份 json 进、重锚结果出),给讹字作的「当为某之讹」注随字改而删 → 再 check-data 到 0 坏 → `npm run content:build`。
+- **2g 白话「底本存疑」callout 清理**(改字全部落定后再做,免得做两遍):脚本遍历各章 callout / p 块,凡提到「底本作 X / 字形如此 / 照录不改 / 疑为 Y 之讹」且 X 已在表里 → 改「底本原作 X,已据见证本校正为 Y(见 SOURCES.md 校勘记)」,整块只说这一个字的就删;C 档留讹的保留原措辞。`mingli-status.mjs` 的粗数含误报,以逐条判为准。人读抽 5 章。
+- **6(改)渊海白话口径统一**:`src/data/mingli/baihua/yuanhai.json` 里「明代杨淙校正、唐锦池刊行」一类(grep 唐锦池、校正)改成导读口径「明竹亭杨淙增校、书坊重刊」(题署里有杨淙,可点名;唐锦池刊行未核过原刊本,不写)。这是我方文字,直接改;改完 check-data + content:build。
+- commit 路径:`scripts/corpus/mingli.config.mjs scripts/fetch-corpus.mjs scripts/authored/mingli-translations.json src/data/mingli/classics/ditiansui.json src/data/mingli/baihua/ditiansui.json src/data/mingli/baihua/yuanhai.json src/data/mingli/zhushi-anchored/ditiansui.json src/data/mingli/cases/ditiansui.json scripts/sources/mingli/SOURCES.md docs/mingli-review.md`。
 
 **3. 四部源头书白话**(普通档,不在 THICK_BOOKS;≈21M ≈ 12–17 点)
 - 3a **五行大义 41 章**(段目章 2/6/12/17/28/43/46 只有一行「第 X 论就此分为 N 段」,不写):
