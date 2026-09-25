@@ -4517,6 +4517,8 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .landing-trust__more { margin: 1rem 0 0; font-size: 0.84rem; }
 .landing-trust__more a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--line); }
 .landing-trust__more a:hover { color: var(--cinnabar-pure); }
+.colophon-block--trust .landing-trust__list > div { padding: 0.3rem 0; font-size: 0.82rem; }
+.colophon-block--trust .landing-trust__more { margin-top: 0.7rem; }
 
 @media (max-width: 640px) {
   .landing-paths { grid-template-columns: 1fr; }

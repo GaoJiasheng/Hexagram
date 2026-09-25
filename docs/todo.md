@@ -88,7 +88,7 @@ iOS **build 51** / 版本 **1.33.0 —— 2026-08-19 已提交审核(WAITING_FOR
 
 ### ⏸ 2026-09-25 待开工(owner 三项已定;**owner 说「我让你开工再开」——没开口前不起任何代理**)
 
-**上一轮(9-21/22)做成的**:四部核心书白话 196/196 · 四部源头书译注延 + 五部新书书级导读 · 三命通会译注延卷一、二、三、五、六、七(1551/6250 段)。全部已 push;没有发布,`portalHidden` 仍在。
+**上一轮(9-21/22)做成的**:四部核心书白话 196/196 · 四部源头书译注延 + 五部新书书级导读 · 三命通会译注延卷一、二、三、五、六、七(1551/6250 段)。全部已 push;没有发布。(`portalHidden` 已于 09-25 放开:owner review 时要看「最近新收」里的命理,门户 / 时间轴 / RSS / sitemap 四处随之露出;要再藏加回 registry 一行。)
 
 **owner 2026-09-25 拍板**:① 滴天髓底本讹字——**找第二个电子本对校**;② 四部源头书白话——**都做**;③ 三命通会白话——**精选,由我定选目**(选目见下)。
 
@@ -116,7 +116,7 @@ iOS **build 51** / 版本 **1.33.0 —— 2026-08-19 已提交审核(WAITING_FOR
    - 每书完成后 `npm run content:build`,浏览器看整页路由;pieces 键是「卷-序」,`check-links` 正则已放开。
 4. **三命通会白话精选 · 甲档**(第一周若还有余量;每章 ≈ 33 万 token)——见下表甲档。
 
-**第二周**:甲档余下 + 乙档 → Z 收口:全站回归(明暗 / 手机 / iOS 与安卓模拟器)→ 更新 `docs/mingli-review.md` → **Cloudflare 预览部署**(不碰生产、不发 iOS)→ owner 统一 review;通过后才去掉 `portalHidden`。
+**第二周**:甲档余下 + 乙档 → Z 收口:全站回归(明暗 / 手机 / iOS 与安卓模拟器)→ 更新 `docs/mingli-review.md` → **Cloudflare 预览部署**(不碰生产、不发 iOS)→ owner 统一 review(`portalHidden` 已提前放开,见上)。
 
 **三命通会白话精选选目**(我定,共 75 章 / 414;卷八九查表页与卷六一百多个短格不铺;卷四、十至十二须等译注延落库后再写):
 - **甲档 · 先做(43 章,学命理绕不开的那些)**
@@ -159,7 +159,7 @@ iOS **build 51** / 版本 **1.33.0 —— 2026-08-19 已提交审核(WAITING_FOR
    可以先只做卷一至卷七(论说部分),卷八九(七百二十条断语)与卷十至十二(歌赋)看额度再定。
 4. 五部新书的书级导读(照 `docs/daodu-production-standard.md`,一书一个 opus 代理,只许新建自己那一个文件);三命通会白话只做精选。
 5. **Z 收口**:全站回归(明暗 / 手机 / iOS 与安卓模拟器)→ 补 `docs/mingli-review.md` → **Cloudflare 预览部署**给 owner review
-   (不碰生产、不发 iOS;review 通过后去掉 registry 里 mingli 的 `portalHidden`,门户 / sitemap / RSS / 站外搜索四处自动放开)。
+   (不碰生产、不发 iOS;`portalHidden` 已于 09-25 放开)。
 
 **省额度的几条**(今天踩出来的):大 workflow 一次只跑一个;译 / 起草用 opus、校对用 sonnet;提示语已内嵌原文(不让代理翻整本 json);
 别用阻塞式 TaskOutput 等 workflow;打满后 workflow 用 `resumeFromRunId`、代理用 SendMessage 续跑,不丢活。

@@ -242,9 +242,8 @@ export const SITES = [
     accent: 'mingli',
     switchLabel: '数',
     hasSearch: true,
-    // 骨架期:内容与交互远未铺满,总门户/首页书架暂不露出;直连 URL 仍可进(docs/todo.md §0.1)。
-    // portalHidden 组只影响「列全部组」的枚举面(MasterPortalPage),不改路由/搜索/数据注册。
-    portalHidden: true,
+    // 2026-09-19 立项到 09-25 走的是 portalHidden(门户/时间轴/最近新收/RSS/sitemap/站外搜索一并不露出);
+    // owner 2026-09-25 review 时问「最近新收里怎么没有命理」→ 放开。要再藏起来加回 `portalHidden: true` 即可,四处自动跟。
     nav: [
       { to: '/mingli', label: '路径' },
       { to: '/mingli/learn', label: '学堂' },

@@ -1,7 +1,7 @@
 # 观数 · review 清单
 
 > 给 owner 统一 review 用。入口 **`/mingli`**(门户暂不露出,sitemap / RSS / 站外搜索也都挡着;review 通过后去掉
-> `src/sites/registry.js` 里 mingli 的 `portalHidden: true` 一个标记,四处自动放开)。
+> `src/sites/registry.js` 里 mingli 的 `portalHidden: true` 一个标记,四处自动放开)。**2026-09-25 已放开**(你 review 时要看最近新收里的命理);要再藏加回那一行。
 > 规格 `docs/design-v23.md` · 全量 TODO `docs/todo.md` §0.1 · 底本与校勘 `scripts/sources/mingli/SOURCES.md`。
 
 ## 一、先看这五分钟(最能说明「不是只看文字看译注」)

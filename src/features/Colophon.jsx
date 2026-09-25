@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import colophon from '../data/colophon.json'
 import { usePageTitle } from './yijing/hooks/usePageTitle.js'
+import TrustList from './TrustList.jsx'
 
 const appVersion = __APP_VERSION__
 const buildTimestamp = __BUILD_DATE__
@@ -19,7 +20,7 @@ function ContactValue({ contact }) {
   )
 }
 
-export function ColophonContent() {
+export function ColophonContent({ onNavigate } = {}) {
   return (
     <div className="colophon-content">
       <section className="colophon-block colophon-block--author">
@@ -31,11 +32,11 @@ export function ColophonContent() {
         <p className="colophon-block__text">{colophon.author.role}</p>
       </section>
 
-      {/* 「关于本站」并入跋(owner 2026-09-25):门户底下那行单独的链接撤掉,由这里收——落款就是全站的收口 */}
-      <section className="colophon-block">
-        <h2 className="colophon-block__title">关于本站</h2>
-        <p className="colophon-block__text">一个人做的古籍学习站:原文一律取自公版通行本,译注、延伸与白话由人工与机器协同整理,<strong>仅供研习参考</strong>,非权威定本,亦非宗教、医疗或处世指导。各组各守一条研读铁律(释典研习不宣化、中医研习不诊疗、谋略不为伪书张目……),数据只存本机、不设账号追踪。</p>
-        <Link className="colophon-license" to="/about">研读铁律与数据说明 →</Link>
+      {/* 「凭什么信」+「关于本站」并入跋(owner 2026-09-25):门户底下那行单独的链接撤掉,由这里收——落款就是全站的收口。
+          牌记本体与首页 PortalLanding 共用 TrustList,改一处两处同步。 */}
+      <section className="colophon-block colophon-block--trust">
+        <h2 className="colophon-block__title">凭什么信</h2>
+        <TrustList onNavigate={onNavigate} />
       </section>
 
       <section className="colophon-block">
@@ -127,7 +128,7 @@ export default function Colophon({ open, onClose }) {
           </span>
           <button className="search-palette__close" onClick={onClose} aria-label="关闭">Esc</button>
         </div>
-        <ColophonContent />
+        <ColophonContent onNavigate={onClose} />
         <div className="colophon-sheet__foot">
           <Link to="/ba" onClick={onClose}>打开独立页 →</Link>
         </div>

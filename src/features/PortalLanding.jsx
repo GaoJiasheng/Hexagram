@@ -19,6 +19,7 @@
 
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import TrustList from './TrustList.jsx'
 
 const num = (n) => (n >= 1000 ? n.toLocaleString('en-US') : String(n))
 
@@ -141,17 +142,7 @@ export default function PortalLanding({ shelf }) {
       {/* 凭什么信 —— 把章末牌记那套提到站级 */}
       <section className="landing-trust" aria-label="凭什么信">
         <h2 className="landing-h2">凭什么信</h2>
-        <dl className="landing-trust__list">
-          <div><dt>底本</dt><dd>一律取维基文库通行本,逐书择本要点写在各书题解</dd></div>
-          <div><dt>译注</dt><dd>白话、注疏、延伸均为本站原创,非转录他处译本</dd></div>
-          <div><dt>校验</dt><dd>引文逐字核为原文精确子串,不过则不落库</dd></div>
-          <div><dt>纠错</dt><dd>每章末尾都有报错入口,写信给 <a href="mailto:hexa@gavin.pub">hexa@gavin.pub</a></dd></div>
-          {/* 与仓库里两份 LICENSE 一致:原创内容 CC BY-NC 4.0、源代码 MIT。别只写一半 */}
-          <div><dt>转载</dt><dd>原创内容 CC BY-NC 4.0(署名、非商用即可自由使用);源代码 MIT</dd></div>
-        </dl>
-        <p className="landing-trust__more">
-          <Link to="/about">关于本站 · 研读铁律与数据说明 →</Link>
-        </p>
+        <TrustList />
       </section>
     </>
   )

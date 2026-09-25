@@ -128,10 +128,24 @@ fs.writeFileSync(path.join(ROOT, 'public/feed.xml'), `${xml}\n`)
 // 首页「最近新收」复用同一批条目 —— 与 RSS 同源同序,不另算一套,
 // 否则两处迟早对不上(而对不上的那天没人会发现)。
 fs.mkdirSync(path.join(ROOT, 'public/content'), { recursive: true })
+// 只是首页那 8 行要折一下:同一组同一天一口气收进来的书(一组立项常是九部同日入库)折成一行
+// 「新收《X》等 N 部」链到该组首页,不然一组新书能把整块「最近新收」占满,别的动静全被挤掉。RSS 仍一书一条。
+const folded = []
+for (const it of latest) {
+  const day = it.when.slice(0, 10)
+  const last = folded[folded.length - 1]
+  const isBook = it.title.startsWith('新收《')
+  if (last && isBook && last.isBook && last.cat === it.cat && last.at === day) { last.n++; continue }
+  const site = isBook ? SITES.find((x) => x.portalTitle === it.cat) : null
+  folded.push({ title: it.title, href: it.link.replace(ORIGIN, ''), home: site?.home || null, cat: it.cat, at: day, isBook, n: 1 })
+  if (folded.length >= 8) break
+}
 fs.writeFileSync(
   path.join(ROOT, 'public/content/recent.json'),
-  JSON.stringify(latest.slice(0, 8).map((it) => ({
-    title: it.title, href: it.link.replace(ORIGIN, ''), cat: it.cat, at: it.when.slice(0, 10),
+  JSON.stringify(folded.map((f) => ({
+    title: f.n > 1 ? `${f.title.replace(/》$/, '》')}等 ${f.n} 部` : f.title,
+    href: f.n > 1 && f.home ? f.home : f.href,
+    cat: f.cat, at: f.at,
   }))),
 )
 console.log(`feed: ${latest.length} 条(候选 ${items.length},观书不入)`)
