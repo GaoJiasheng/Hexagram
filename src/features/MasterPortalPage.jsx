@@ -5,7 +5,6 @@ import { usePageTitle } from './yijing/hooks/usePageTitle.js'
 import { corpusTexts } from './reader/corpus.js'
 import daoTexts from '../data/dao/texts.json'
 import PortalStudyTrail from './reader/PortalStudyTrail.jsx'
-import DailyDebate from './debates/DailyDebate.jsx'
 import PortalLanding from './PortalLanding.jsx'
 
 // 卡片描述由 texts.json 派生(已收书目+计数),根治「加书忘改 portalDesc 文案」;
@@ -89,11 +88,11 @@ export default function MasterPortalPage({ onSearch }) {
       <p className="master-portal__links">
         <Link to="/concepts" className="master-portal__about-link">义理专题 · 跨派概念</Link>
         <Link to="/mingju" className="master-portal__about-link">名句集 · 每日一句</Link>
+        <Link to="/timeline" className="master-portal__about-link">全站时间轴 · 诸书成书年代</Link>
       </p>
       <p className="master-portal__about">
         <Link to="/about" className="master-portal__about-link">关于本站 · 研读铁律与数据说明</Link>
       </p>
-      <DailyDebate />
     </div>
   )
 }

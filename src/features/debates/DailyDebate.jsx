@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom'
 import { pickDailyDebate, groupAccent, schoolSeal } from './debates.js'
 import { getDailyDebateSeen, markDailyDebateSeen } from '../yijing/storage.js'
 
-// 每日一辩弹窗(v21 §3.4)——首页/门户当日首访自动弹一次(纸色卡 + 遮罩)。
+// 每日一辩弹窗(v21 §3.4)——**只在进入百家争鸣(/debates)时**当日首访弹一次(纸色卡 + 遮罩)。
+// 原挂首页与总门户,owner 2026-09-25:「刚进网站首页就弹,不太友好」→ 挪到争鸣列表页,首页/门户不再拦人。
 // 日期 hash 定题(确定性、每日变);弹出即记当日已见,当天不再叨扰(× 或进去看皆可关)。
 function todayStr() {
   const d = new Date()

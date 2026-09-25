@@ -118,6 +118,7 @@
   否则 `school` 被当书名去查 texts.json)。**教训:机器校验一条事实错误都抓不到**——
   兵篇自查揪出 8 处、谋略篇反过来纠正了派工里两处凭记忆写的托名对象。**扩这一层务必人读一遍。**
 
+- [x] 全站时间轴 + 每日一辩弹窗挪位(2026-09-25,零内容变化)——① **每日一辩弹窗只在进入百家争鸣(`/debates`)时弹**(owner:「刚进网站首页就弹,不太友好」):`DailyDebate` 从 HomePage / MasterPortalPage 卸下,挂到 `DebateListPage`;当日一次、窄屏不弹的规则不变。② **全站时间轴 `/timeline`**(中立外壳,门户链接「全站时间轴 · 诸书成书年代」):数据 `src/data/timeline.json`(**一书一条**:from/to 公元年只作定位、label 显示年代、`c` = sure/approx/disputed/pseudo、note 一句来路——**只写各书撰人小传与 SOURCES.md 已交代过的事,拿不准的确数不给**;托名伪作 5 部 `pseudo` 不上轴,列末尾「今人托古」),书名/链接/撰人/分组/主色由 `booksIndex` + registry 派生,`portalHidden` 的组不露出。页面 `src/features/TimelinePage.jsx`:横轴总览(**朝代等宽非等时**,一书一条 from→to 横条,贪心分泳道,存疑虚线,点一下滚到该条)+ 竖轴按朝代分节 + 分组 chips / 「只看年代确定」(状态存 URL)。`check-data` 加 7e 段(slug 存在 / from≤to / c 合法 / 落在朝代带内;书目有而轴上没有的 warning),`timeline.test.js` 4 例(含「书目每一部都上了轴」——**加书须补一条 json**)。og 索引与 check-links 已登记。
 - [ ] **观数 · 命理典籍研读组(第十五组 `mingli`,2026-09-19 立项,进行中;规格 `docs/design-v23.md`,全量 TODO 见 `docs/todo.md` §0.1)**——
   与诸子百家平行的一个总目录,第一部分做中国八字命理。**这不是算命站,是知识学习站**:核心是命理学的知识本体
   (《渊海子平》《子平真诠》《滴天髓阐微》《穷通宝鉴》,后续《三命通会》与源头诸书),在其上用**交互与富文本**让人学得进去,

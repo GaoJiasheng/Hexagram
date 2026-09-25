@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
+import DailyDebate from './DailyDebate.jsx'
 import {
   TOPICS, PLANNED, EPIGRAPH, DIVISIONS, FORMATS, SCHOOL_GROUPS, THINKERS,
   categoriesOf, groupsOf, thinkersOf, groupAccent, schoolSeal,
@@ -73,6 +74,7 @@ export default function DebateListPage() {
   return (
     <div className="debates-list page-content">
       <div className="basics-breadcrumb"><Link to="/hexagram" className="basics-breadcrumb__link">← 诸学门户</Link></div>
+      <DailyDebate />
       <div className="page-header">
         <h1 className="page-title">赛博 · 百家争鸣</h1>
         <p className="page-subtitle text-soft">诸家就同一题目各执一词,点入看其对辩。会讲而已,不评输赢。</p>

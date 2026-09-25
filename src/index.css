@@ -3439,6 +3439,40 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .concept-card__locus:hover { border-bottom-style: solid; }
 .concepts-page__note { margin-top: 22px; font-size: 0.8rem; line-height: 1.7; text-align: center; }
 
+/* ---- 全站时间轴(/timeline,2026-09-25)---- */
+.timeline-page { max-width: 820px; margin: 0 auto; }
+.tl-filters { display: flex; flex-direction: column; gap: 10px; margin: 6px 0 14px; }
+.tl-filters__sure { font-size: 0.82rem; color: var(--ink-soft); display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.tl-ruler { margin: 0 0 22px; padding: 10px 8px 6px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper-raised); }
+.tl-ruler svg { display: block; width: 100%; height: auto; }
+.tl-ruler figcaption { font-size: 0.76rem; line-height: 1.6; margin-top: 4px; }
+.tl-ruler__dot:hover line { opacity: 1 !important; stroke-width: 6; }
+.tl-sections { display: flex; flex-direction: column; gap: 6px; }
+.tl-section__head { display: flex; align-items: baseline; gap: 12px; margin: 18px 0 6px; padding-bottom: 6px; border-bottom: 1px solid var(--line); font-weight: normal; }
+.tl-section__era { font-family: var(--font-serif); font-size: calc(1.15rem * var(--read-scale)); color: var(--ink); }
+.tl-section__years, .tl-section__n { font-size: 0.78rem; }
+.tl-section__n { margin-left: auto; }
+.tl-list { list-style: none; margin: 0; padding: 0 0 0 4px; border-left: 1px solid var(--line); }
+.tl-item { position: relative; display: flex; gap: 14px; padding: 10px 0 12px 14px; }
+.tl-item__dot { position: absolute; left: -6px; top: 16px; width: 11px; height: 11px; border-radius: 50%; border: 1.5px solid; background: var(--paper); box-sizing: border-box; flex: none; }
+.tl-item--disputed .tl-item__dot { border-style: dashed; }
+.tl-item__dot--x { font-size: 9px; line-height: 8px; text-align: center; border-style: dotted; }
+.tl-item__body { min-width: 0; flex: 1; }
+.tl-item__head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.tl-item__year { font-size: 0.76rem; color: var(--ink-soft); border: 1px solid var(--line); border-radius: 3px; padding: 1px 6px; flex: none; }
+.tl-item__title { font-family: var(--font-serif); font-size: calc(1.02rem * var(--read-scale)); color: var(--ink); text-decoration: none; border-bottom: 1px dotted var(--line); }
+.tl-item__title:hover { border-bottom-color: var(--cinnabar-pure); color: var(--cinnabar-pure); }
+.tl-item__group { font-size: 0.72rem; border: 1px solid; border-radius: 999px; padding: 0 7px; opacity: 0.85; }
+.tl-item__flag { font-size: 0.72rem; color: var(--ink-faint); border: 1px dashed var(--line); border-radius: 3px; padding: 0 6px; }
+.tl-item__flag--pseudo { color: var(--cinnabar-pure); border-color: color-mix(in srgb, var(--cinnabar-pure) 50%, var(--line)); border-style: solid; }
+.tl-item__meta { font-size: 0.8rem; margin-top: 3px; }
+.tl-item__note { font-size: calc(0.86rem * var(--read-scale)); line-height: 1.75; color: var(--ink-soft); margin: 4px 0 0; }
+.tl-section--pseudo .tl-list { border-left-style: dotted; }
+@media (max-width: 640px) {
+  .tl-ruler { padding: 6px 4px 4px; }
+  .tl-item { gap: 10px; padding-left: 12px; }
+}
+
 /* ── 《赛博:百家争鸣》(v21)─────────────────────────────── */
 .debates-list, .debate-page { max-width: 740px; margin: 0 auto; }
 .debates-epigraph { text-align: center; font-size: 0.85rem; color: var(--ink-faint); letter-spacing: 0.06em; margin: -2px 0 22px; }

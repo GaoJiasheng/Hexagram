@@ -1322,6 +1322,42 @@ if (fs.existsSync(glossaryPath)) {
   }
 }
 
+// ---------- 7e. 全站时间轴(src/data/timeline.json)----------
+// 一书一条:slug 须真有其书、from≤to、c 合法、有年代的落在朝代带内;书目里有而时间轴漏掉的报 warning(加书提醒)。
+{
+  const tf = path.join(ROOT, 'src/data/timeline.json')
+  if (fs.existsSync(tf)) {
+    const tl = JSON.parse(fs.readFileSync(tf, 'utf8'))
+    const CS = new Set(['sure', 'approx', 'disputed', 'pseudo'])
+    const lo = Math.min(...tl.bands.map((b) => b.from)), hi = Math.max(...tl.bands.map((b) => b.to))
+    const known = new Map()   // corpus → Set(slug)
+    for (const d of fs.readdirSync(path.join(ROOT, 'src/data'), { withFileTypes: true })) {
+      if (!d.isDirectory()) continue
+      const f = path.join(ROOT, `src/data/${d.name}/texts.json`)
+      if (!fs.existsSync(f)) continue
+      const t = JSON.parse(fs.readFileSync(f, 'utf8'))
+      known.set(d.name, new Set((t.texts || t).map((b) => b.slug)))
+    }
+    const seen = new Set()
+    let nDated = 0, nPseudo = 0
+    for (const it of tl.items) {
+      const key = `${it.corpus}/${it.slug}`
+      if (seen.has(key)) err(`timeline: ${key} 重复`)
+      seen.add(key)
+      if (!CS.has(it.c)) err(`timeline: ${key} 的 c「${it.c}」不合法`)
+      if (it.corpus === 'yijing') { if (it.slug !== null) err('timeline: 易经总目 slug 应为 null') }
+      else if (!known.get(it.corpus)?.has(it.slug)) err(`timeline: ${key} 在 texts.json 里没有这部书`)
+      if (it.c === 'pseudo') { nPseudo++; continue }
+      nDated++
+      if (typeof it.from !== 'number' || typeof it.to !== 'number' || it.from > it.to) err(`timeline: ${key} 的 from/to 不合法(${it.from}–${it.to})`)
+      else if (it.from < lo || it.from >= hi) err(`timeline: ${key} 的 from=${it.from} 落在朝代带之外`)
+      if (!it.label) err(`timeline: ${key} 缺 label`)
+    }
+    for (const [corpus, slugs] of known) for (const slug of slugs) if (!seen.has(`${corpus}/${slug}`)) warn(`timeline: ${corpus}/${slug} 还没上时间轴(加书后补一条 src/data/timeline.json)`)
+    infos.push(`全站时间轴: ${nDated} 部有年代 · ${nPseudo} 部托名不上轴`)
+  }
+}
+
 // ---------- 8. 信息项 ----------
 const translated = hexagrams.filter((h) => h.judgment?.translation).length
 infos.push(`译文覆盖: ${translated}/64 卦(其余待补,见 scripts/authored/translations.json)`)

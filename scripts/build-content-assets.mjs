@@ -292,6 +292,16 @@ function indexPages(records) {
     text: '义理专题 跨派概念 人性 格物 兼爱 无为 仁 四端',
   })
   addRecord(records, {
+    id: 'page:timeline',
+    kind: '专题',
+    site: 'portal',
+    siteTitle: '全站时间轴',
+    title: '全站时间轴',
+    subtitle: '诸书成书年代',
+    href: '/timeline',
+    text: '全站时间轴 成书年代 西周 春秋 战国 秦汉 魏晋 隋唐 宋 元 明 清 各书先后 同时代',
+  })
+  addRecord(records, {
     id: 'page:debates',
     kind: '专题',
     site: 'portal',
