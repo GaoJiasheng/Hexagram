@@ -3381,7 +3381,12 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .portal-trail__meta { margin-left: auto; font-size: 0.74rem; color: var(--ink-faint); flex: none; }
 .portal-trail__stats { display: flex; gap: 16px; justify-content: center; font-size: 0.8rem; color: var(--ink-soft); margin: 4px 0 18px; }
 .portal-trail__hint { color: var(--ink-faint); }
-.master-portal__links { margin-top: 18px; text-align: center; }
+.master-portal__links { margin-top: 18px; display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 6px 0; }
+.master-portal__links .master-portal__about-link + .master-portal__about-link::before { content: '｜'; color: var(--ink-faint); opacity: 0.55; margin: 0 14px; }
+@media (max-width: 640px) {
+  .master-portal__links { flex-direction: column; align-items: center; gap: 10px; }
+  .master-portal__links .master-portal__about-link + .master-portal__about-link::before { content: none; margin: 0; }
+}
 
 /* 招牌入口:赛博·百家争鸣(会持续增补内容,单列醒目横幅;用真朱砂 --cinnabar-pure 跳出门户 muted 调) */
 .master-portal__debates {
@@ -3468,6 +3473,12 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .tl-item__meta { font-size: 0.8rem; margin-top: 3px; }
 .tl-item__note { font-size: calc(0.86rem * var(--read-scale)); line-height: 1.75; color: var(--ink-soft); margin: 4px 0 0; }
 .tl-section--pseudo .tl-list { border-left-style: dotted; }
+.tl-filters__row { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.tl-item--person .tl-item__dot { border-radius: 2px; transform: rotate(45deg); width: 9px; height: 9px; left: -5px; top: 17px; }
+.tl-item__title--person { border-bottom: 0; }
+.tl-item__books { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 4px; }
+.tl-item__book { font-size: 0.78rem; color: var(--ink-soft); text-decoration: none; border-bottom: 1px dotted var(--line); }
+.tl-item__book:hover { color: var(--cinnabar-pure); border-bottom-color: var(--cinnabar-pure); }
 @media (max-width: 640px) {
   .tl-ruler { padding: 6px 4px 4px; }
   .tl-item { gap: 10px; padding-left: 12px; }

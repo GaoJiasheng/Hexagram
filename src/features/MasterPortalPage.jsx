@@ -90,9 +90,6 @@ export default function MasterPortalPage({ onSearch }) {
         <Link to="/mingju" className="master-portal__about-link">名句集 · 每日一句</Link>
         <Link to="/timeline" className="master-portal__about-link">全站时间轴 · 诸书成书年代</Link>
       </p>
-      <p className="master-portal__about">
-        <Link to="/about" className="master-portal__about-link">关于本站 · 研读铁律与数据说明</Link>
-      </p>
     </div>
   )
 }

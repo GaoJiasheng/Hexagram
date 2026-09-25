@@ -1354,7 +1354,20 @@ if (fs.existsSync(glossaryPath)) {
       if (!it.label) err(`timeline: ${key} 缺 label`)
     }
     for (const [corpus, slugs] of known) for (const slug of slugs) if (!seen.has(`${corpus}/${slug}`)) warn(`timeline: ${corpus}/${slug} 还没上时间轴(加书后补一条 src/data/timeline.json)`)
-    infos.push(`全站时间轴: ${nDated} 部有年代 · ${nPseudo} 部托名不上轴`)
+    // 人物:生卒/活动区间合法、组存在、所系之书真有其书
+    const names = new Set()
+    for (const p of tl.people || []) {
+      const who = `timeline 人物「${p.name}」`
+      if (names.has(p.name)) err(`${who} 重复`)
+      names.add(p.name)
+      if (!['sure', 'approx', 'disputed'].includes(p.c)) err(`${who} 的 c「${p.c}」不合法`)
+      if (typeof p.from !== 'number' || typeof p.to !== 'number' || p.from > p.to) err(`${who} 的 from/to 不合法`)
+      else if (p.from < lo || p.from >= hi) err(`${who} 的 from=${p.from} 落在朝代带之外`)
+      if (p.group !== 'yijing' && !known.has(p.group)) err(`${who} 的 group「${p.group}」不是站内的组`)
+      for (const slug of p.books || []) if (p.group !== 'yijing' && !known.get(p.group)?.has(slug)) err(`${who} 所系之书 ${p.group}/${slug} 不存在`)
+      if (!p.label || !p.note) err(`${who} 缺 label 或 note`)
+    }
+    infos.push(`全站时间轴: ${nDated} 部有年代 · ${nPseudo} 部托名不上轴 · ${(tl.people || []).length} 位人物`)
   }
 }
 

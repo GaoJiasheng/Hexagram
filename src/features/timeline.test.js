@@ -32,4 +32,15 @@ describe('全站时间轴数据(src/data/timeline.json)', () => {
     const missing = ALL_BOOKS.filter((b) => !keys.has(`${b.corpus}/${b.slug}`)).map((b) => `${b.corpus}/${b.slug}`)
     expect(missing).toEqual([])
   })
+  it('人物:生卒合法、组与所系之书都存在', () => {
+    const lo = Math.min(...data.bands.map((b) => b.from)), hi = Math.max(...data.bands.map((b) => b.to))
+    const names = new Set()
+    for (const p of data.people) {
+      expect(names.has(p.name), p.name).toBe(false)
+      names.add(p.name)
+      expect(['sure', 'approx', 'disputed']).toContain(p.c)
+      expect(p.from <= p.to && p.from >= lo && p.from < hi, `${p.name} ${p.from}–${p.to}`).toBe(true)
+      for (const slug of p.books) expect(ALL_BOOKS.some((b) => b.corpus === p.group && b.slug === slug), `${p.name} → ${p.group}/${slug}`).toBe(true)
+    }
+  })
 })
