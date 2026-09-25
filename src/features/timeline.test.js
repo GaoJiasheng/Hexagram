@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import data from '../data/timeline.json'
+import renwu from '../data/renwu.json'
 import { ALL_BOOKS } from './reader/booksIndex.js'
 
 describe('全站时间轴数据(src/data/timeline.json)', () => {
@@ -35,9 +36,9 @@ describe('全站时间轴数据(src/data/timeline.json)', () => {
   it('人物:生卒合法、组与所系之书都存在', () => {
     const lo = Math.min(...data.bands.map((b) => b.from)), hi = Math.max(...data.bands.map((b) => b.to))
     const names = new Set()
-    for (const p of data.people) {
-      expect(names.has(p.name), p.name).toBe(false)
-      names.add(p.name)
+    for (const p of renwu.people) {
+      expect(names.has(p.id), p.id).toBe(false)
+      names.add(p.id)
       expect(['sure', 'approx', 'disputed']).toContain(p.c)
       expect(p.from <= p.to && p.from >= lo && p.from < hi, `${p.name} ${p.from}–${p.to}`).toBe(true)
       for (const slug of p.books) expect(ALL_BOOKS.some((b) => b.corpus === p.group && b.slug === slug), `${p.name} → ${p.group}/${slug}`).toBe(true)

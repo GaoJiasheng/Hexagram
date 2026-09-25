@@ -1356,7 +1356,15 @@ if (fs.existsSync(glossaryPath)) {
     for (const [corpus, slugs] of known) for (const slug of slugs) if (!seen.has(`${corpus}/${slug}`)) warn(`timeline: ${corpus}/${slug} 还没上时间轴(加书后补一条 src/data/timeline.json)`)
     // 人物:生卒/活动区间合法、组存在、所系之书真有其书
     const names = new Set()
-    for (const p of tl.people || []) {
+    const rw = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/renwu.json'), 'utf8'))
+    const yjIds = new Set(JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/yijing/renwu.json'), 'utf8')).map((x) => x.id))
+    const pids = new Set()
+    for (const p of rw.people) {
+      if (!p.id || pids.has(p.id)) err(`timeline 人物「${p.name}」id 缺失或重复`)
+      pids.add(p.id)
+      if (p.yijing && !yjIds.has(p.yijing)) err(`人物志「${p.name}」yijing 指向不存在的易学人物 ${p.yijing}`)
+      if (!p.yijing && (!Array.isArray(p.paragraphs) || p.paragraphs.length !== 2)) warn(`人物志「${p.name}」小传未齐(应两段)`)
+      for (const para of p.paragraphs || []) { const n = [...para].length; if (n < 80 || n > 300) warn(`人物志「${p.name}」一段小传 ${n} 字,宜在 120–220`) }
       const who = `timeline 人物「${p.name}」`
       if (names.has(p.name)) err(`${who} 重复`)
       names.add(p.name)
@@ -1367,7 +1375,7 @@ if (fs.existsSync(glossaryPath)) {
       for (const slug of p.books || []) if (p.group !== 'yijing' && !known.get(p.group)?.has(slug)) err(`${who} 所系之书 ${p.group}/${slug} 不存在`)
       if (!p.label || !p.note) err(`${who} 缺 label 或 note`)
     }
-    infos.push(`全站时间轴: ${nDated} 部有年代 · ${nPseudo} 部托名不上轴 · ${(tl.people || []).length} 位人物`)
+    infos.push(`全站时间轴: ${nDated} 部有年代 · ${nPseudo} 部托名不上轴 · 人物志 ${rw.people.length} 人(${rw.people.filter((p) => p.yijing || p.paragraphs?.length === 2).length} 有小传)`)
   }
 }
 

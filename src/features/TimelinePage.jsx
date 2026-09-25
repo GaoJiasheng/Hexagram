@@ -1,9 +1,11 @@
 import { useMemo } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import data from '../data/timeline.json'
+import renwu from '../data/renwu.json'
 import { ALL_BOOKS } from './reader/booksIndex.js'
 import { SITE_MAP } from '../sites/registry.js'
 import { usePageTitle } from './yijing/hooks/usePageTitle.js'
+import { useHashScroll } from './RenwuPage.jsx'
 
 // 全站时间轴(2026-09-25,owner:「做一下全站的时间轴,我看看」「人也放上去」)——把十几组七十多部书
 // 与五十来位撰人/译者/注家摆到同一条轴上,看谁与谁同时、谁接谁。数据在 src/data/timeline.json
@@ -74,11 +76,11 @@ export default function TimelinePage() {
       books.push({ ...t, kind: 'book', book, site, name: book.title, group: GROUP_LABEL(site), accent: accentOf(site), id: `tl-${t.corpus}-${t.slug || 'all'}` })
     }
     const people = []
-    for (const t of data.people || []) {
+    for (const t of renwu.people) {
       const site = visibleSite(t.group)
       if (!site) continue
       const links = (t.books || []).map((slug) => bookOf(t.group, slug)).filter(Boolean)
-      people.push({ ...t, kind: 'person', site, siteKey: t.group, links, group: GROUP_LABEL(site), accent: accentOf(site), id: `tl-p-${t.group}-${t.name}` })
+      people.push({ ...t, kind: 'person', site, siteKey: t.group, links, group: GROUP_LABEL(site), accent: accentOf(site), pid: t.id, id: `tl-p-${t.id}` })
     }
     return { books, people }
   }, [])
@@ -114,6 +116,7 @@ export default function TimelinePage() {
     setParam('g', next.length ? next.join(',') : null)
   }
   const jumpTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  useHashScroll([dated.length, vPeople.length])
 
   // 竖轴按朝代分节;书与人按起点混排(书按成书上限、人按生年),某朝代什么都没有就不出节
   const sections = data.bands
@@ -227,7 +230,7 @@ export default function TimelinePage() {
                       <span className="tl-item__year">{it.label}</span>
                       {it.kind === 'book'
                         ? <Link to={it.book.href} className="tl-item__title">{it.name}</Link>
-                        : <span className="tl-item__title tl-item__title--person">{it.name}</span>}
+                        : <Link to={`/renwu#${it.pid}`} className="tl-item__title tl-item__title--person" title="看人物志">{it.name} ↗</Link>}
                       <span className="tl-item__group" style={{ color: it.accent, borderColor: it.accent }}>{it.group}</span>
                       {it.c === 'disputed' && <span className="tl-item__flag">{it.kind === 'book' ? '成书存疑' : '生卒不详'}</span>}
                     </div>

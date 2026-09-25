@@ -302,6 +302,37 @@ function indexPages(records) {
     text: '全站时间轴 成书年代 西周 春秋 战国 秦汉 魏晋 隋唐 宋 元 明 清 各书先后 同时代',
   })
   addRecord(records, {
+    id: 'page:renwu',
+    kind: '专题',
+    site: 'portal',
+    siteTitle: '人物志',
+    title: '人物志',
+    subtitle: '诸书背后的人',
+    href: '/renwu',
+    text: '人物志 撰人 译者 注家 编者 生平 小传',
+  })
+  {
+    // 人物志一人一条(2026-09-25):搜「朱熹」「鸠摩罗什」能直落人物志;易学十家的小传取 yijing/renwu.json
+    const rw = readJson(path.join(SRC_DATA, 'renwu.json'))
+    const yj = Object.fromEntries(readJson(path.join(SRC_DATA, 'yijing/renwu.json')).map((x) => [x.id, x]))
+    for (const p of rw.people) {
+      const site = SITES.find((x) => x.key === p.group)
+      if (site?.portalHidden) continue
+      if (p.yijing) continue   // 易学十家已由上面的 renwu:<id>(易学源流页)收录,不重复建条
+      const paras = p.paragraphs || []
+      addRecord(records, {
+        id: `people:${p.id}`,
+        kind: '人物',
+        site: 'portal',
+        siteTitle: '人物志',
+        title: p.name,
+        subtitle: p.label,
+        href: `/renwu#${p.id}`,
+        text: uniqText(p.name, p.note, ...paras),
+      })
+    }
+  }
+  addRecord(records, {
     id: 'page:debates',
     kind: '专题',
     site: 'portal',

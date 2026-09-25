@@ -89,6 +89,7 @@ export default function MasterPortalPage({ onSearch }) {
         <Link to="/concepts" className="master-portal__about-link">义理专题 · 跨派概念</Link>
         <Link to="/mingju" className="master-portal__about-link">名句集 · 每日一句</Link>
         <Link to="/timeline" className="master-portal__about-link">全站时间轴 · 诸书成书年代</Link>
+        <Link to="/renwu" className="master-portal__about-link">人物志 · 诸书背后的人</Link>
       </p>
     </div>
   )

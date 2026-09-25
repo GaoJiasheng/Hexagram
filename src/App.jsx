@@ -75,6 +75,7 @@ const AboutPage = lazy(() => import('./features/AboutPage.jsx'))
 const PrivacyPage = lazy(() => import('./features/PrivacyPage.jsx'))
 const ConceptsPage = lazy(() => import('./features/ConceptsPage.jsx'))
 const TimelinePage = lazy(() => import('./features/TimelinePage.jsx'))
+const RenwuPage = lazy(() => import('./features/RenwuPage.jsx'))
 const MingjuPage = lazy(() => import('./features/MingjuPage.jsx'))
 const DebateListPage = lazy(() => import('./features/debates/DebateListPage.jsx'))
 const DebatePage = lazy(() => import('./features/debates/DebatePage.jsx'))
@@ -91,7 +92,7 @@ const AdminStatsPage = lazy(() => import('./features/admin/AdminStatsPage.jsx'))
 
 // 中立外壳路径(总门户 / 义理专题 / 百家争鸣):不套分站 nav/搜索/底栏,域名着陆豁免
 function isNeutralPath(p) {
-  return p === '/' || p === MASTER_PORTAL_PATH || p === '/concepts' || p === '/timeline' || p === '/mingju' || p === '/privacy' || p === '/ba' || p === '/legal' || p === '/admin/stats' || p === '/debates' || p.startsWith('/debates/') || p === '/zhuzi' || p === '/books' || p.startsWith('/books/')
+  return p === '/' || p === MASTER_PORTAL_PATH || p === '/concepts' || p === '/timeline' || p === '/renwu' || p === '/mingju' || p === '/privacy' || p === '/ba' || p === '/legal' || p === '/admin/stats' || p === '/debates' || p.startsWith('/debates/') || p === '/zhuzi' || p === '/books' || p.startsWith('/books/')
 }
 // 全站设置浮层(Tier 0):任何站 nav 齿轮就地打开(主题/字号/译文 + 数据导出导入)
 const SettingsSheet = lazy(() => import('./features/SettingsSheet.jsx'))
@@ -497,6 +498,7 @@ function AppContent() {
           <Route path={MASTER_PORTAL_PATH} element={<MasterPortalPage onSearch={openSearch} />} />
           <Route path="/concepts" element={<ConceptsPage />} />
           <Route path="/timeline" element={<TimelinePage />} />
+          <Route path="/renwu" element={<RenwuPage />} />
           <Route path="/mingju" element={<MingjuPage />} />
           <Route path="/debates" element={<DebateListPage />} />
           <Route path="/debates/map" element={<ZhuziTopologyPage />} />

@@ -39,6 +39,7 @@ const STATIC_ROUTES = new Set([
   '/me',
   '/concepts',
   '/timeline',
+  '/renwu',
   '/debates',
   '/about',
 ])

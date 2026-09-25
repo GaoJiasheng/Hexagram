@@ -3458,7 +3458,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .tl-section__years, .tl-section__n { font-size: 0.78rem; }
 .tl-section__n { margin-left: auto; }
 .tl-list { list-style: none; margin: 0; padding: 0 0 0 4px; border-left: 1px solid var(--line); }
-.tl-item { position: relative; display: flex; gap: 14px; padding: 10px 0 12px 14px; }
+.tl-item { position: relative; display: flex; gap: 14px; padding: 10px 0 12px 14px; scroll-margin-top: 80px; }
 .tl-item__dot { position: absolute; left: -6px; top: 16px; width: 11px; height: 11px; border-radius: 50%; border: 1.5px solid; background: var(--paper); box-sizing: border-box; flex: none; }
 .tl-item--disputed .tl-item__dot { border-style: dashed; }
 .tl-item__dot--x { font-size: 9px; line-height: 8px; text-align: center; border-style: dotted; }
@@ -3479,6 +3479,17 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .tl-item__books { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 4px; }
 .tl-item__book { font-size: 0.78rem; color: var(--ink-soft); text-decoration: none; border-bottom: 1px dotted var(--line); }
 .tl-item__book:hover { color: var(--cinnabar-pure); border-bottom-color: var(--cinnabar-pure); }
+.tl-item__title--person { border-bottom: 1px dotted var(--line); }
+/* 人物志(/renwu) */
+.renwu-page { max-width: 760px; margin: 0 auto; }
+.renwu-page .renwu-entry { padding: 16px 0 14px; scroll-margin-top: 80px; }
+.renwu-page .renwu-entry__head { flex-wrap: wrap; gap: 8px 10px; }
+.renwu-entry__tl { margin-left: auto; font-size: 0.76rem; color: var(--ink-faint); text-decoration: none; }
+.renwu-entry__tl:hover { color: var(--cinnabar-pure); }
+.renwu-entry__para { font-size: calc(0.9rem * var(--read-scale)); line-height: 1.85; color: var(--ink); margin: 0 0 8px; }
+.renwu-entry__links { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 4px; }
+.renwu-entry--disputed .renwu-entry__name { color: var(--ink-soft); }
+:target.renwu-entry, :target.tl-item { background: color-mix(in srgb, var(--cinnabar-pure) 6%, transparent); border-radius: 6px; }
 @media (max-width: 640px) {
   .tl-ruler { padding: 6px 4px 4px; }
   .tl-item { gap: 10px; padding-left: 12px; }
