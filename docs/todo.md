@@ -88,7 +88,7 @@ iOS **build 51** / 版本 **1.33.0 —— 2026-08-19 已提交审核(WAITING_FOR
 
 ### ⏸ 2026-09-25 待开工(owner 三项已定;**观数各批 owner 说「我让你开工再开」——没开口前不起**;人物志已获准,先做)
 
-**上一轮(9-21/22)做成的**:四部核心书白话 196/196 · 四部源头书译注延 + 五部新书书级导读 · 三命通会译注延卷一、二、三、五、六、七(1551/6250 段)。全部已 push;没有发布。(`portalHidden` 已于 09-25 放开:owner review 时要看「最近新收」里的命理,门户 / 时间轴 / RSS / sitemap 四处随之露出;要再藏加回 registry 一行。)
+**上一轮(9-21/22)做成的**:四部核心书白话 196/196 · 四部源头书译注延 + 五部新书书级导读 · 三命通会译注延十卷(3635/6250 段,只余卷八九)。全部已 push;没有发布。(`portalHidden` 已于 09-25 放开:owner review 时要看「最近新收」里的命理,门户 / 时间轴 / RSS / sitemap 四处随之露出;要再藏加回 registry 一行。)
 
 **owner 2026-09-25 拍板**:① 滴天髓底本讹字——**找第二个电子本对校**;② 四部源头书白话——**都做**;③ 三命通会白话——**精选,由我定选目**(选目见下)。
 
@@ -101,7 +101,7 @@ iOS **build 51** / 版本 **1.33.0 —— 2026-08-19 已提交审核(WAITING_FOR
 **次序与预算**(实测 120–140 万 subagent token ≈ 周 1 点;下面合计约 57 点,**一周装不下,分两周**;每周仍守「起批前读 get_usage、周 ≥47% 不起新批、5 小时窗口 ≥85% 不起新批」):
 
 **第一周(≈37 点 + 甲档白话到线)**
-1. **三命通会余卷译注延**(卷四、八、九、十、十一、十二;≈18 点)——每卷一条命令生成、一个 Workflow、一次装配,可三卷并发:
+1. **三命通会余卷译注延**(✅ 09-25 卷四、十、十一、十二已落库;**只余卷八、卷九**,≈9 点)——每卷一条命令生成、一个 Workflow、一次装配,可三卷并发:
    `node scripts/gen-zhuzi-wf.mjs sanming --models=opus,sonnet --bundle=3200 --chapters=<该卷章号>` → Workflow `scripts/.sanming-translate-wf.js`
    → `node scripts/assemble-newtexts.mjs <result> --merge` → `node scripts/fetch-corpus.mjs mingli` → `npm run check-data` → 显式路径 commit。
    卷→章号:4:69-91 · 8:269-328 · 9:329-388 · 10:389-391 · 11:392-399 · 12:400-414(卷四脚本 `scripts/.sanming-j4-translate-wf.js` 已生成,gitignore 临时文件,丢了就重生)。
