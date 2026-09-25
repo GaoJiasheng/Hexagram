@@ -6,6 +6,7 @@ import { validateWidget } from '../src/features/shared/widgets/schema.js'
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { isSubKey, subChapter } from './lib/sub-chapter.mjs'
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 
 const resultPath = process.argv[2]
@@ -58,6 +59,10 @@ const chapterText = (corpus, slug, no) => {
   if (!(k in chCache)) {
     const f = path.join(ROOT, `src/data/${corpus}/classics/${slug}.json`)
     chCache[k] = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null
+  }
+  if (isSubKey(no)) {   // 「组-序」子章(pieces / 《诗题》):引文校验池收窄到那一篇
+    const sub = chCache[k] ? subChapter(ROOT, corpus, slug, chCache[k], no) : null
+    return sub ? sub.paragraphs.map((p) => p.original).join('') : null
   }
   const c = chCache[k]?.chapters.find((x) => x.no === Number(no))
   return c ? c.paragraphs.map((p) => p.original).join('') : null

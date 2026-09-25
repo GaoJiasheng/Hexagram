@@ -6,13 +6,16 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { isSubKey, subChapter } from './lib/sub-chapter.mjs'
 import { validateWidget } from '../src/features/shared/widgets/schema.js'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const [corpus, slug, no, file] = process.argv.slice(2)
 if (!corpus || !slug || !no || !file) { console.log('用法: node scripts/check-baihua-draft.mjs <corpus> <slug> <章号> <draft.json>'); process.exit(2) }
 const book = JSON.parse(fs.readFileSync(path.join(ROOT, `src/data/${corpus}/classics/${slug}.json`), 'utf8'))
-const ch = book.chapters.find((c) => c.no === Number(no))
+// 章号可以是「组-序」子章键(pieces / 《诗题》细粒度,scripts/lib/sub-chapter.mjs):引文校验池收窄到那一篇
+const sub = isSubKey(no) ? subChapter(ROOT, corpus, slug, book, no) : null
+const ch = sub ? { ...sub.chapter, paragraphs: sub.paragraphs } : book.chapters.find((c) => c.no === Number(no))
 if (!ch) { console.log(`✗ ${corpus}/${slug} 没有第 ${no} 章`); process.exit(2) }
 const text = ch.paragraphs.map((p) => p.original).join('')
 const d = JSON.parse(fs.readFileSync(file, 'utf8'))

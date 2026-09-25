@@ -9,11 +9,19 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 
-const corpus = process.argv[2]
-const slug = process.argv[3]
-const chFrom = process.argv[4] ? Number(process.argv[4]) : null
-const chTo = process.argv[5] ? Number(process.argv[5]) : null
-if (!corpus || !slug) { console.error('用法: node scripts/gen-baihua-wf.mjs <corpus> <slug> [chFrom] [chTo]'); process.exit(1) }
+// 位置参数只取不带 -- 的(--verify-model= / --chapters= / --skip= 等旗标可放任意位置)
+const POS = process.argv.slice(2).filter((a) => !a.startsWith('--'))
+const corpus = POS[0]
+const slug = POS[1]
+const chFrom = POS[2] ? Number(POS[2]) : null
+const chTo = POS[3] ? Number(POS[3]) : null
+if (!corpus || !slug) { console.error('用法: node scripts/gen-baihua-wf.mjs <corpus> <slug> [chFrom] [chTo] [--chapters=1,9,11] [--skip=2,6]'); process.exit(1) }
+// 可选(2026-09-25,为三命通会精选白话 / 五行大义跳段目章而加;只作用于 corpus 分章书,不影响易经与诗级粒度):
+//   --chapters=1,9,11  只为这几章生成(精选选目;与 from/to 可并用,取交集)
+//   --skip=2,6,12      这几章不生成(段目章、查表章等不值得写的)
+const pickArg = (k) => (process.argv.find((a) => a.startsWith(`--${k}=`)) || '').slice(k.length + 3)
+const CH_ONLY = pickArg('chapters') ? new Set(pickArg('chapters').split(',').map((x) => x.trim()).filter(Boolean)) : null
+const CH_SKIP = new Set(pickArg('skip').split(',').map((x) => x.trim()).filter(Boolean))
 
 const IS_YIJING = corpus === 'yijing'
 const IS_HEX = IS_YIJING && slug === 'hexagrams'   // 64 卦(hexagrams.json,形态特殊),走整卦加厚支线
@@ -94,9 +102,33 @@ if (IS_HEX) {
         })
       })
     }
+  } else if (meta.pieces) {
+    // 人工策展的细粒度(传习录 / 李虚中命书一类:一章几百段连续问答,无标题段可认):
+    // texts.json 显式列 pieces:[{key:'1-1',ch:1,from,to,title}](from 含、to 不含、下标 0 起,可不连续),一篇一单元。
+    // 键与 check-data / assemble-baihua / check-baihua-draft 共用一套规则(scripts/lib/sub-chapter.mjs)。
+    // --chapters= 可给篇键(1-3)或整章号(1 = 该章全部篇);原文内联时段下标用**章内绝对下标**,与阅读器段号一致。
+    units = []
+    for (const pc of meta.pieces) {
+      const c = book.chapters.find((x) => x.no === pc.ch)
+      if (!c) { console.warn(`pieces ${pc.key}: 无第 ${pc.ch} 章,跳过`); continue }
+      if ((chFrom != null && pc.ch < chFrom) || (chTo != null && pc.ch > chTo)) continue
+      if (CH_ONLY && !CH_ONLY.has(pc.key) && !CH_ONLY.has(String(pc.ch))) continue
+      if (CH_SKIP.has(pc.key) || done.has(pc.key)) continue
+      const body = c.paragraphs.slice(pc.from, pc.to)
+      if (!body.length) { console.warn(`pieces ${pc.key}: 区间 [${pc.from},${pc.to}) 为空,跳过`); continue }
+      units.push({
+        corpus, book: slug, no: pc.key,
+        title: `${c.title ? c.title + ' · ' : ''}${pc.title}`,
+        chars: body.map((p) => p.original).join('').length,
+        featured: pc === meta.pieces[0] && c.no === firstNo,   // 全书第一篇 = 总纲,给 hero
+        text: inlineText({ paragraphs: body }, pc.from),
+      })
+    }
   } else {
   units = book.chapters
     .filter((c) => (chFrom == null || c.no >= chFrom) && (chTo == null || c.no <= chTo))
+    .filter((c) => !CH_ONLY || CH_ONLY.has(String(c.no)))
+    .filter((c) => !CH_SKIP.has(String(c.no)))
     .filter((c) => !done.has(String(c.no)))
     .map((c) => ({
       corpus, book: slug, no: c.no,
@@ -142,10 +174,10 @@ const FILE = (c, b) => `${ROOT}/src/data/${c}/classics/${b}.json`
 // (渊海 600KB、滴天髓 1.1MB、三命通会 1.8MB):一章要二十多次工具调用、上下文反复重发,实测每章 ~37 万 token,
 // 一个下午两次打满账号用量上限。内嵌后代理拿到的就是这一章,不必翻大文件。
 // 超长章(>2.4 万字符)不内嵌,退回「自己去读」的老路,免得提示语过大。
-function inlineText(c) {
+function inlineText(c, offset = 0) {   // offset:pieces 切片时给章内绝对下标
   const lines = c.paragraphs.map((p, i) => {
     const tag = p.pillars ? '〔命例·四柱 ' + p.pillars.join(' ') + (p.dayun?.length ? ' · 大运 ' + p.dayun.join(' ') : '') + '〕' : ''
-    return `[${i}] ${p.original}${tag}` + (p.translation ? `\n    译:${p.translation}` : '')
+    return `[${i + offset}] ${p.original}${tag}` + (p.translation ? `\n    译:${p.translation}` : '')
   })
   const t = lines.join('\n')
   return t.length <= 24000 ? t : null
@@ -395,7 +427,7 @@ const draftPrompt = (u) => {
 
 // 自查命令(scripts/check-baihua-draft.mjs,2026-09-21):代理每多一轮工具调用就重读十几万 token 上下文,
 // 而实跑里校对代理大半轮数花在找 widget schema、读 check-data、翻设计稿上。给一把现成的尺子。只对 corpus 形态的书给(易经两条支线数据形态不同)。
-const selfCheck = (u) => (IS_HEX || IS_JZ || String(u.no).includes('-')) ? '' :
+const selfCheck = (u) => (IS_HEX || IS_JZ) ? '' :   // 「组-序」子章键 check-baihua-draft 也认(2026-09-25 起走 scripts/lib/sub-chapter.mjs)
   `\n**自查只用这一条命令——别去找 widget 的 schema、别读 check-data 或装配脚本、别翻设计稿(都是白花轮数):** 把完整结果(与 schema 同形的一个 json)存到你的 scratchpad 目录下(文件名带上「${slug}-${u.no}」以免与别的代理撞车),跑\n` +
   `\`cd /Users/gavin/work/hexagram && node scripts/check-baihua-draft.mjs ${corpus} ${slug} ${u.no} <你的文件>\`\n` +
   `它核:每条 quote.original 是否为本章原文子串(不是会报出第几个字起对不上)、widget 参数合不合法、sizhu 的四柱是否出自本章原文、svg 有无写死颜色/缺 viewBox/误用 fill="var()" 属性、pull 是否超过 1 处、callout label 是否超长、有无空块。照它报的改,「✓ 硬项全过」就提交;**至多跑两三次,不要为了「提示」项反复跑**。\n**存文件只是为了自查:最后仍必须把完整文章按 schema 原样交回(blocks 里是文章本身)——不能只交一段「已完成、见某文件」的说明,装配器不会去读你的文件。**\n`

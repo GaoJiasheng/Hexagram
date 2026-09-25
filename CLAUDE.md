@@ -144,6 +144,7 @@
   **译注延十一卷已成 4898/6250 段,只余卷九**(六十日×十二时断语后半,已有查表页;一卷约 370–970 万 token,卷八九最贵)。三部四库白文走**断句层**(标点当编辑内容另存,逐段核「去标点后与底本逐字相等」)。
   **生产工具(本轮新增,续跑直接用)**:`gen-zhuzi-wf.mjs --bundle=3200` 小篇合包(三命通会 451 单元→205)· `scripts/check-unit.mjs` / `check-baihua-draft.mjs` / `check-daodu-draft.mjs`
   三把给代理用的自查尺子(已写进提示语;译注延省约三成 token,白话几乎不省)· `fetch-corpus` 的 `joinParas`(四库版式事故并段,只并段不动字)。
+  **2026-09-25 晚归档,owner 转做别的:剩余(卷九译注延 → 源头书白话 → 三命通会精选白话 75 章 → 收口)约周额度 45–50 点,续跑手册在 `docs/todo.md` §0.1「▶ 续跑手册」,接手先 `node scripts/mingli-status.mjs`;他不开口不起代理。**
   **改/扩观数内容守「研习不断命」铁律;命例/矩阵/概念/走读四类策展数据各有校验闸(`scripts/lib/mingli-*.mjs`),逐批 check-data 过才 commit。**
 
 ## 工程上踩过的坑(会重复踩的那几个)
@@ -211,6 +212,9 @@
 两者的章键都是「数字-数字」(组-序 / 卷-序),`check-data` 的 `chapterText` 遇此键
 **先查 pieces 区间、没有再退回《诗题》识别**,引文校验池因此收窄到单首/单条。
 渲染分别走 `renderPoemHead`(替换标题段)与 `renderPieceHead`(在段前插入)。
+**生产端同一套规则在 `scripts/lib/sub-chapter.mjs`**(2026-09-25):`gen-baihua-wf` 见 texts.json 有 `pieces` 即一篇一单元
+(原文按章内绝对下标内联)、`assemble-baihua` / `check-baihua-draft` 认「章-序」键;另 gen 支持 `--chapters=1,9,11`(精选)与
+`--skip=2,6`(段目章),旗标可放任意位置。
 
 ## 常用命令
 

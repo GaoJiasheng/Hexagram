@@ -86,45 +86,86 @@ iOS **build 51** / 版本 **1.33.0 —— 2026-08-19 已提交审核(WAITING_FOR
 - [x] **F5** 管线:`fetch-corpus` 加**本地文本源**分支(现只认维基文库)· **命例识别**(正文里的四柱串 → 自动挂 `sizhu` 件)
 - 内部检查点:单测全绿 · 明/暗/移动端走查 · **旧 2031 篇白话零回归**
 
-### ⏸ 2026-09-25 待开工(owner 三项已定;**观数各批 owner 说「我让你开工再开」——没开口前不起**;人物志已获准,先做)
+### ▶ 观数 · 续跑手册(2026-09-25 晚归档;**任何会话、任何模型从这里接手,不必读历史**)
 
-**上一轮(9-21/22)做成的**:四部核心书白话 196/196 · 四部源头书译注延 + 五部新书书级导读 · 三命通会译注延十一卷(4898/6250 段,只余卷九)。全部已 push;没有发布。(`portalHidden` 已于 09-25 放开:owner review 时要看「最近新收」里的命理,门户 / 时间轴 / RSS / sitemap 四处随之露出;要再藏加回 registry 一行。)
+> owner 原话(09-25 18:00):「观数开工吧。能外包给 Opus 和 Sonnet 的,在保证质量的情况下,你是可以外包的。确保我的周额度给我留 20%」;
+> 当晚收工:「把 to-do 整理好、归档好,我准备先做一点别的,确保切换模型随时都能捞得回来」。
+> **他没再开口前,不起任何代理 / workflow。** 他一说「继续观数」,就从下面第 0 步开始。
+> 剩余合计约周额度 **45–50 点**(卷九 5–8 · 源头书白话 12–17 · 精选白话 14–20 · 编排与收口 4–6),周额度每周一 09:00(SGT)重置,一周装得下。
 
-**owner 2026-09-25 拍板**:① 滴天髓底本讹字——**找第二个电子本对校**;② 四部源头书白话——**都做**;③ 三命通会白话——**精选,由我定选目**(选目见下)。
+#### 0 · 接手先跑(以磁盘为准,不信文档里的数字)
+```bash
+cd /Users/gavin/work/hexagram && git status -sb && node scripts/mingli-status.mjs
+```
+它打印:逐书 章/段/译/断句/白话/导读 · 三命通会逐卷译注(译 < 段 即未做)· 精选白话甲乙档已做/未做(**直接给出 `--chapters=` 串**)· 源头书 pieces 定没定 · 滴天髓遗留 callout 数。
+然后读额度:`ToolSearch select:mcp__ccd_session_mgmt__get_usage` → 调用 → 看 `Weekly · all models` 与 `5-hour limit` 的 percentUsed。
 
-**0. ✅ 全站人物志 `/renwu`(2026-09-25 当日做完:61 人 · 51 篇新小传 · 4 代理 ≈1.05M token,已 push,未部署)**
-- 数据 `src/data/renwu.json`:一人一条 `{id, name, from, to, label, c, group, books, note, paragraphs[2], yijing?}`——时间轴的人物层改读这一份(timeline.json 不再存 people);易学十家(`src/data/yijing/renwu.json`)以 `yijing: '<id>'` 引用、小传不重写;程颐、朱熹、王弼三人两处都有,取易学那份文字。
-- 小传两段(生平;与站内哪几部书的关系、真伪存疑处如实标),120–220 字/段,守站内四级分级(共识直写 / 考证标出处 / 存疑明示 / 拿不准不写),不引 20 世纪注家,命理人物不作验否之评;代理分片写、主会话逐条人读。
-- 页面 `/renwu`(中立外壳):按朝代分节、分组 chips,每条 name + 生卒 + 组 + 小传 + 所系之书 + 家级导读链 + 「在时间轴上看 ↗」;时间轴人物 → `/renwu#<id>`。门户链接、og 索引(一人一条,可搜)、check-links、check-data(id 唯一 / 组与书存在 / 两段小传字数)、测试。
-- 做完顺带:时间轴「书 / 人」视图切换(可选)。
+#### 规矩(owner 定,不商量)
+- **额度**:每起一批前读;周 all-models **≥77% 不起新批,80% 硬线**(给他留 20%);5 小时窗口 ≥85% 不起。校准:120–190 万 subagent token ≈ 周 1 点。
+- **串行**:一次只跑一个 workflow(两大 workflow 齐发必撞限流,实测丢 45% 单元);单批 ≤10 章 / 单元。译与起草用 opus、校对用 sonnet(`--models=opus,sonnet` / `--verify-model=sonnet`)。
+- **铁律「研习不断命」**:原典断语照译、不删不讳、不加强不软化;我方文字(注疏/延伸/白话/导读)只讲「书里怎么说、为什么这么说」,不背书、不教套用、不下预测性断语;诸家分歧标出不拍板;真伪与底本如实(托名、辑本、讹字)。
+- **数据**:原文不手改——改 `scripts/corpus/mingli.config.mjs` 的 typoFixes 后 `node scripts/fetch-corpus.mjs mingli` 重生;译文真源 `scripts/authored/mingli-translations.json`、断句真源 `scripts/authored/mingli-punct.json`;每批 `npm run check-data` 过才 commit;commit 用显式路径;push 卡住照 CLAUDE.md 踩坑节清 SSH mux 重推。
+- **只 commit + push**:不部署生产、不发 iOS、**预览部署也等他开口**。
+- 别用阻塞式 TaskOutput 等 workflow(完成时把几十万字倒进上下文);等完成通知,进度读 journal.jsonl 行数。
 
-**次序与预算**(实测 120–140 万 subagent token ≈ 周 1 点;下面合计约 57 点,**一周装不下,分两周**;每周仍守「起批前读 get_usage、周 ≥47% 不起新批、5 小时窗口 ≥85% 不起新批」):
+#### 每批通用工序(译注延与白话一样)
+1. 生成脚本(各步命令见下)→ 打印 `scripts/.xxx-wf.js`(gitignore 临时文件,丢了就重生)。
+2. `Workflow({scriptPath:'scripts/.xxx-wf.js'})` 起,记下 taskId / runId。**会话里没有 Workflow 工具时**照记忆 `baihua-no-workflow-tool-fallback`:从脚本 `DRAFT` / `VERIFY_HEAD` 取提示语,用 Agent 工具派(opus 起草、sonnet 校对),各代理写**独立分片文件**,主会话逐片校验后合并成一份 result。
+3. 完成通知到 → 结果在 `/private/tmp/claude-501/-Users-gavin-work-hexagram/<会话id>/tasks/<taskId>.output`(与该会话 scratchpad 同级的 `tasks/`),`cp` 到 scratchpad 改名 `<批名>.result.json`。journal 在 `~/.claude/projects/-Users-gavin-work-hexagram/<会话id>/subagents/workflows/<runId>/journal.jsonl`。
+4. **译注延**:`node scripts/scan-units.mjs <result>`(`problems` 必须为空;null / 译文过短单元 → 去该代理 scratch 文件救,或 `gen-zhuzi-wf … --units=章:起始段` 补跑)→ `node scripts/assemble-newtexts.mjs <result> --merge` → `node scripts/fetch-corpus.mjs mingli` → `npm run check-data`(报「对位…短标题配长译」先看是不是四库版式切碎,修法 CLAUDE.md 踩坑节 joinParas)。
+   **白话**:`node scripts/assemble-baihua.mjs <result>`(坏引文块剔除、0 有效引文整章丢弃)→ `npm run check-data` → 缺章直接重跑 gen(自动只补缺)。
+5. commit 显式路径 + push。
+6. 波动:个别单元失败 → 重跑 gen 或 `Workflow({scriptPath, resumeFromRunId})`(已成单元有缓存);整批空转 → 直接重跑;服务端「temporarily limiting · not your usage limit」→ 拆更小批;会话额度打满 → 等重置后 resumeFromRunId 续,不丢活。
 
-**第一周(≈37 点 + 甲档白话到线)**
-1. **三命通会余卷译注延**(✅ 09-25 卷四、八、十、十一、十二已落库;**只余卷九**,实测卷八 9.7M ≈ 7–8 点,卷九同量)——每卷一条命令生成、一个 Workflow、一次装配,可三卷并发:
-   `node scripts/gen-zhuzi-wf.mjs sanming --models=opus,sonnet --bundle=3200 --chapters=<该卷章号>` → Workflow `scripts/.sanming-translate-wf.js`
-   → `node scripts/assemble-newtexts.mjs <result> --merge` → `node scripts/fetch-corpus.mjs mingli` → `npm run check-data` → 显式路径 commit。
-   卷→章号:4:69-91 · 8:269-328 · 9:329-388 · 10:389-391 · 11:392-399 · 12:400-414(卷四脚本 `scripts/.sanming-j4-translate-wf.js` 已生成,gitignore 临时文件,丢了就重生)。
-   卷八九是 720 条日时断语 + 命例横表(列序已乱,见 SOURCES.md),译时只译断语、命例行照录;卷十一《消息赋》与站内《珞琭子》同赋,译文可参照但引文各自独立。
-   装配前先扫 null / 译文过短单元;check-data 报「对位…短标题配长译」先看是不是四库版式切碎(修法 CLAUDE.md 踩坑节 joinParas)。
-   全书译完:texts.json `sanming.status → done`、重跑 `gen-book-sizes`、书级导读里「译注按卷推进」一句改掉。
-2. ✅ **滴天髓阐微第二见证本对校**(09-25 已做:379 条改入 typoFixes,过程见 SOURCES.md 末节;**遗留小活**:白话 `ditiansui.json` 里 49 处「底本存疑」callout 有一部分说的字已改正,措辞要改成「底本原作 X,已据见证本校正」或删——写个脚本按 typoFixes 表扫一遍即可)——
-   ① 找源:候选 殆知阁(注意它的《阐微》可能是徐乐吾增注一系,须先剥 20 世纪文字,与真诠同一坑)、维基文库其他录入本、其他公版电子本;**ctext 禁爬不用**。存到 `scripts/sources/mingli/`(公版原文可入库,20 世纪注家文字一律不留)。
-   ② 对校:只留汉字、逐段 8 字窗命中比(同 `SOURCES.md` 真诠那套),差异逐条列表:本站/见证本/任氏后文是否复述/形近否。
-   ③ 判定三档:**双证**(见证本 + 内证)→ `typoFixes`(带 `expect`)直接改;**单证形近且文义唯一**(如「衰右→衰中」「任氏日→曰」)→ 也改,SOURCES.md 校勘记逐条登记;其余**留讹**、译注里注「当为某之讹」。
-   ④ 改字之后的连锁:`fetch-corpus mingli` 重生原文 → **白话引文会失配**(quote.original 含讹字的那些),写一个小脚本按 typoFixes 表同步替换 `baihua/ditiansui.json` 里的 quote.original / 白话正文里点明讹字的 callout(那些「底本存疑」块要改成「底本已校正」或删),再 check-data。注疏 term 若含讹字同样按表替换。
-   ⑤ 三层都过 check-data 后一次 commit;`docs/mingli-review.md` 四节那条更新。
-3. **四部源头书白话**(≈17 点,普通档;都不在 THICK_BOOKS)——
-   - 五行大义 **41 章**(48 章里 7 个段目章只有一行「第 X 论某某就此分为 N 段」,**不写**:第 2/6/12/17/28/43/46 章;`gen-baihua-wf` 只认 from–to 区间,按区间避开这 7 章分几段跑,或给 gen 加 `--skip=`)。第 1 章(自序)是 featured。红线:讲五行学说史,**明确它不是命书**、不把它讲成命理入门。
-   - 李虚中命书 **约 10 篇**(3 卷各 167/290/292 段,一卷一篇太薄)——走 `pieces` 机制:texts.json 列 `pieces:[{key:'1-1',ch:1,from,to,title}…]`,卷上切「六十甲子逐条」「旧书摘录(自『本家贵人命者』起)」2 篇、卷中按赋注义段切 4 篇、卷下赋注 3 篇 + 「干支配对表」1 篇(表那篇讲体例即可)。**切点在开工时读原文定,写进 texts.json 后 check-data 的引文池自动收窄**。
-   - 珞琭子 **约 5 篇**(卷上 64 段 / 卷下 90 段,赋注相间)——同上 pieces,按赋文义段切(元一气/干禄支命/岁运出入/神煞/收尾)。第 1 篇 featured。
-   - 玉照定真经 **约 5 篇**(517 段单章)——pieces 按主题切:开篇卦逢生气至尊卑五位 / 六亲 / 疾病刑伤 / 干支天将 / 《正道歌》。**红线最严**(断语密且多涉寿夭疾病):只讲体例、词汇、来路,不出任何可套用的指引。
-   - 每书完成后 `npm run content:build`,浏览器看整页路由;pieces 键是「卷-序」,`check-links` 正则已放开。
-4. **三命通会白话精选 · 甲档**(第一周若还有余量;每章 ≈ 33 万 token)——见下表甲档。
+#### 剩余工作(按此顺序)
 
-**第二周**:甲档余下 + 乙档 → Z 收口:全站回归(明暗 / 手机 / iOS 与安卓模拟器)→ 更新 `docs/mingli-review.md` → **Cloudflare 预览部署**(不碰生产、不发 iOS)→ owner 统一 review(`portalHidden` 已提前放开,见上)。
+**1. 三命通会卷九译注延**(篇 329–388,60 篇六己至六癸日×十二时断语;≈9.7M token ≈ 5–8 点)
+```bash
+node scripts/gen-zhuzi-wf.mjs sanming --models=opus,sonnet --bundle=3200 --chapters=$(seq -s, 329 388)
+```
+→ `scripts/.sanming-translate-wf.js` → Workflow → 工序 3–5。commit 路径:
+`scripts/authored/mingli-punct.json scripts/authored/mingli-translations.json src/data/mingli/classics/sanming.json src/data/mingli/yanyi.json src/data/mingli/zhushi-anchored/sanming.json`(message 仿卷八 commit 789d7c1)。
+卷八九是断语 + 命例横表(列序已乱,代理照录并标「原表错行」,见 SOURCES.md);万氏身后人事(「明帝天启」等)注为后人增补。
+**成后收尾**:`src/data/mingli/texts.json` sanming `status: "partial" → "done"`;`node scripts/gen-book-sizes.mjs`;`src/data/mingli/daodu/sanming.json` 里若有「按卷推进 / 尚未译完 / 部分卷」类措辞改掉(grep 推进、未译、部分);`npm run check-data`;更新本手册 + `docs/mingli-review.md` §五 + CLAUDE.md 观数行(「十一卷 4898/6250,只余卷九」→「全书 6250 段译注延全成」)。
 
-**三命通会白话精选选目**(我定,共 75 章 / 414;卷八九查表页与卷六一百多个短格不铺;卷四、十至十二须等译注延落库后再写):
+**2. 滴天髓白话「底本存疑」callout 清理**(零 subagent 成本,主会话脚本活;可穿插在任何时候做)
+- 讹字表 `scripts/corpus/mingli.config.mjs` 的 `DITIANSUI_TYPOS`(`{from,to,expect,reason}`,已生效 379 条);白话 `src/data/mingli/baihua/ditiansui.json`(`mingli-status.mjs` 粗数含误报,以脚本逐条判为准)。
+- 做法:脚本遍历各章 callout / p 块,凡文字提到「底本作 X / 字形如此 / 照录不改 / 疑为 Y 之讹」且 X 已在表里 → 改成「底本原作 X,已据见证本校正为 Y(见 SOURCES.md 校勘记)」,整块只说这一个字的就删;未入表的(C 档留讹)保留原措辞。改完 `npm run check-data` + `npm run content:build`,人读抽 5 章。commit `src/data/mingli/baihua/ditiansui.json`。
+- 顺带三件**待 owner 定**(见 `docs/mingli-review.md` §四,**不问不动**):C 档长段脱衍/错简(35–37、62、20.1、53.12)动不动;4.7–4.8「(新增)」命例与 46.0 后人补纲领删不删;代理最没把握的 9 处采不采。
+
+**3. 四部源头书白话**(普通档,不在 THICK_BOOKS;≈21M ≈ 12–17 点)
+- 3a **五行大义 41 章**(段目章 2/6/12/17/28/43/46 只有一行「第 X 论就此分为 N 段」,不写):
+  ```bash
+  node scripts/gen-baihua-wf.mjs mingli wuxingdayi 1 12 --skip=2,6,12,17,28,43,46 --verify-model=sonnet   # 分 1–12 / 13–24 / 25–36 / 37–48 四批,每批 ≤10 章
+  ```
+  第 1 章(自序)自动 featured。红线:讲隋人萧吉的五行学说史,**明说它不是命书**、不把它讲成命理入门(它与命理是源头关系)。commit `src/data/mingli/baihua/wuxingdayi.json`。
+- 3b **三部走 pieces(先定切点,再生成)**。切点怎么定——先把段首打出来读:
+  ```bash
+  node -e 'const b=require("./src/data/mingli/classics/lixuzhong.json");for(const c of b.chapters){console.log("== 第"+c.no+"章 "+(c.title||"")+" "+c.paragraphs.length+"段");c.paragraphs.forEach((p,i)=>console.log(i,p.original.slice(0,28)))}' > /tmp/heads.txt
+  ```
+  按义段定边界,写进 `src/data/mingli/texts.json` 该书条目:`"pieces":[{"key":"1-1","ch":1,"from":0,"to":40,"title":"六十甲子逐条(上)"},…]`(**from 含、to 不含、下标 0 起、可不连续;key = 章号-序,序从 1 起连续**;样例见 `src/data/xin/texts.json` 传习录)。建议篇目:
+  - 李虚中命书 ≈10 篇:卷上「六十甲子逐条」按干支段落切 2 篇 + 「旧书摘录」(自「本家贵人命者」起)1 篇;卷中按赋注义段 4 篇;卷下赋注 3 篇 +「干支配对表」1 篇(讲体例即可)。
+  - 珞琭子 ≈5 篇(卷上 64 段 / 卷下 90 段,赋注相间):元一气 / 干禄支命 / 岁运出入 / 神煞 / 收尾。全书第一篇自动 featured。
+  - 玉照定真经 ≈5 篇(517 段单章):开篇「卦逢生气」至尊卑五位 / 六亲 / 疾病刑伤 / 干支天将 / 《正道歌》。**红线最严**(断语密、涉寿夭疾病):只讲体例、词汇、来路,不给任何可套用指引。
+  写完 `npm run check-data`(pieces 区间合法性);阅读器自动出篇头(`renderPieceHead`)与药丸入口。
+- 3c 生成:`node scripts/gen-baihua-wf.mjs mingli luoluzi --verify-model=sonnet`(pieces → 一篇一单元;`--chapters=1-2,1-3` 可点篇、`--chapters=2` 取整章的篇)→ Workflow → `assemble-baihua` → check-data → commit `src/data/mingli/texts.json src/data/mingli/baihua/<slug>.json`。
+  **基建已就绪(09-25 加,端到端测过)**:gen 有 pieces 分支(原文按章内绝对下标内联)、`assemble-baihua` / `check-baihua-draft` 认「章-序」键(`scripts/lib/sub-chapter.mjs`,引文池收窄到那一篇)、check-data 早已认。
+- 每书完成后 `npm run content:build`,浏览器看 `/mingli/<slug>/baihua/1-1` 与章内入口。
+
+**4. 三命通会精选白话 甲档 43 → 乙档 32**(≈26M ≈ 14–20 点;选目见下表,`mingli-status.mjs` 直接打印未做的 `--chapters=` 串)
+```bash
+node scripts/gen-baihua-wf.mjs mingli sanming --chapters=1,9,11,13,18,25,28,33,34,36 --verify-model=sonnet   # 每批 ≤10 章,按 status 打印的未做列表切
+```
+→ Workflow → `assemble-baihua` → check-data → commit `src/data/mingli/baihua/sanming.json`。
+提示:第 1 章「原造化之始」全书首章自动 featured(其余不给 hero);261 论女命(1.7 万字)、391 玉井奥诀(1.9 万字)gen 按字数自动走「分段摘录」;卷六格局章点明万氏自己存疑处(「试思之」「年月日时多不足凭」);395 消息赋与站内《珞琭子》同赋,写「同一篇赋万氏怎么解」,引文各引各的(check-data 只认本章原文)。卷四、十至十二译注延已落库,乙档可直接写。
+
+**5. Z 收口**(主会话,≈2–4 点)
+- Z1 `npm run check-data && npm run check-links && npm test && npm run build`;明/暗/手机各走 `/mingli` 学堂 / 矩阵 / 走读 / 排盘 / 白话整页;iOS 模拟器(`npm run cap:ios`)走一遍。
+- Z2 人读抽查:每本书抽 1 篇白话 + 各交互件对规则表(机器一条事实错误都抓不到)。
+- Z3 文档:CLAUDE.md 观数行、本手册、`docs/mingli-review.md` §五、design-v23 验收清单逐条。
+- Z4 review 包:**owner 开口后**才 `npm run build && npx wrangler pages deploy dist --project-name=hexa-gavin-pub --branch=preview-mingli`(非生产分支 = 预览 URL,以 wrangler 输出为准;发完核对线上 `assets/index-*.js` 哈希),把 URL + 一页 review 清单给他。上生产 / 发 iOS 另等开口。
+
+**三命通会白话精选选目**(我定,共 75 章 / 414;卷八九查表页与卷六一百多个短格不铺;改选目须同改 `scripts/mingli-status.mjs` 的 `SANMING_JIA` / `SANMING_YI`):
 - **甲档 · 先做(43 章,学命理绕不开的那些)**
   - 卷一(3):1 原造化之始 · 9 论纳音取象 · 11 论五行
   - 卷二(8):13 论天干阴阳生死 · 18 论人元司事 · 25 论年月日时 · 28 论大运 · 33 论十干合 · 34 论十干化气 · 36 论支元三合 · 40 论三刑
@@ -132,7 +173,7 @@ iOS **build 51** / 版本 **1.33.0 —— 2026-08-19 已提交审核(WAITING_FOR
   - 卷五(12):92 论古人立印食官财名义 · 93 论正官 · 94 论偏官 · 95 官煞去留 · 96 论正财 · 97 论偏财 · 99 论印绶 · 100 论倒食 · 101 论杂气 · 103 论伤官 · 104 论阳刃 · 105 论建禄
   - 卷六(5):106 井栏斜义(万氏「试思之」)· 121 日禄归时 · 184 合化成局 · 191 从象 · 255 十干十二年生大贵人例(「年月日时多不足凭」)
   - 卷七(7):256 子平说辩 · 257 论性情相貌 · 258 论疾病 · 260 论寿夭 · 261 论女命(1.7 万字,分段摘录)· 262 论小儿 · 263 论六亲
-  - 卷十一(4):395 消息赋(与《珞琭子》同赋,写「同一篇赋万氏怎么解」)· 397 明通赋 · 398 喜忌篇 · 399 继善篇
+  - 卷十一(4):395 消息赋 · 397 明通赋 · 398 喜忌篇 · 399 继善篇
 - **乙档 · 后做(32 章)**
   - 卷一(2):2 论五行生成 · 8 纳音之法同类娶妻隔八生子
   - 卷二(6):15 十干分配天文 · 16 十二支分配地理 · 19 论四时节气 · 26 论胎元 · 35 论支元六合 · 41 论冲击
@@ -143,51 +184,32 @@ iOS **build 51** / 版本 **1.33.0 —— 2026-08-19 已提交审核(WAITING_FOR
   - 卷十(2):389 看命口诀 · 391 玉井奥诀(1.9 万字,分段摘录)
   - 卷十一(1):392 气象篇
   - 卷十二(4):400 元理赋 · 402 金声玉振赋 · 408 人鉴论 · 414 四言独步(「年干为主 / 日干为主」异文)
-- 生产:`node scripts/gen-baihua-wf.mjs mingli sanming <from> <to> --verify-model=sonnet` 只认连续区间,精选要么按区间分段跑、要么给 gen 加 `--chapters=` 列表(改动小,开工时顺手加);装配 `assemble-baihua.mjs`,普通档、无 hero(全书首章 1 原造化之始 featured)。红线同组:照译断语、不背书、不教套用;卷六格局章点明「万氏自己也存疑」处。
 
-### ⏸ 暂停点(2026-09-19 晚 · owner:「搞完这一批就停,等周额度恢复再接着做」)
-
-当天两次打满账号用量上限(约 1.1 亿 subagent token)。**没有任何在跑的后台任务**;工作区干净,全部已 push。
-
-**已完成**:底座 F 全部 · 学堂六篇 · 九个交互件 · 五种「书的形状」页 · 三派镜头 · 概念索引 · 排盘台 ·
-四部核心书 原文 + 译注延(0 错位)+ 书级导读 ×4 + 家级导读 · 五部新书原文入库 · 三命通会日时查表 ·
-白话 **39/196**(渊海子平第 1–39 篇)。
-
-**续跑次序(都是串行,一次只起一个 workflow)**:
-1. **白话余下 157 章**(渊海 40–74 → 真诠 48 → 滴天髓 63 → 穷通 11):
-   `node scripts/baihua-step.mjs` → 它会打印 `LAUNCH scripts/.baihua-mingli-<书>-wf.js` → 用 Workflow 起它 →
-   完成后把结果文件路径喂回 `node scripts/baihua-step.mjs <result.json>`(自动装配 / 校验 / 提交 / 出下一批)。每批 12 章、约 420 万 token、40 分钟。
-2. **四部源头书译注延**(约 12 万字):`node scripts/gen-zhuzi-wf.mjs wuxingdayi,lixuzhong,luoluzi,yuzhao --models=opus,sonnet`
-   → Workflow → `node scripts/assemble-newtexts.mjs <result>` → `node scripts/fetch-corpus.mjs mingli` → `npm run check-data`。
-   (李虚中命书、玉照定真经是四库白文,同一趟产出断句,管线自动过「去标点后逐字相等」的闸。)
-3. **三命通会译注延 + 断句**(约 43 万字,最大的一块,估 2000–2500 万 token):脚本有 512KB 上限,须**按卷分批**
-   `node scripts/gen-zhuzi-wf.mjs sanming --chapters=<该卷章号,逗号分隔> --models=opus,sonnet`,每批装配带 `--merge`。
-   可以先只做卷一至卷七(论说部分),卷八九(七百二十条断语)与卷十至十二(歌赋)看额度再定。
-4. 五部新书的书级导读(照 `docs/daodu-production-standard.md`,一书一个 opus 代理,只许新建自己那一个文件);三命通会白话只做精选。
-5. **Z 收口**:全站回归(明暗 / 手机 / iOS 与安卓模拟器)→ 补 `docs/mingli-review.md` → **Cloudflare 预览部署**给 owner review
-   (不碰生产、不发 iOS;`portalHidden` 已于 09-25 放开)。
-
-**省额度的几条**(今天踩出来的):大 workflow 一次只跑一个;译 / 起草用 opus、校对用 sonnet;提示语已内嵌原文(不让代理翻整本 json);
-别用阻塞式 TaskOutput 等 workflow;打满后 workflow 用 `resumeFromRunId`、代理用 SendMessage 续跑,不丢活。
+#### 已做完的(09-19 → 09-25,全部已 push,没有发布)
+底座 F 全部 · 学堂六篇 · 九个交互件 · 五种「书的形状」页 · 三派镜头 · 概念索引 · 排盘台 · 四部核心书四层全成(白话 196/196)+ 书级导读 ×4 + 家级导读 ·
+四部源头书 原文 + 译注延 + 书级导读 · 三命通会 原文 + 日时查表 + 书级导读 + **译注延十一卷 4898/6250 段** · 滴天髓第二见证本对校(379 条讹字入 typoFixes)·
+全站人物志 `/renwu`(61 人)与时间轴 `/timeline` · `portalHidden` 已放开(owner 要在「最近新收」里看到命理;要再藏加回 registry 一行)。
+生产工具:`gen-zhuzi-wf --bundle=3200` 合包 · `gen-baihua-wf --chapters= / --skip= / pieces` · `scan-units.mjs` · `check-unit.mjs` / `check-baihua-draft.mjs` / `check-daodu-draft.mjs` 三把自查尺 · `fetch-corpus` 的 `joinParas` · `mingli-status.mjs`。
+派工共用规格留档:`docs/mingli-daodu-brief.md`(书级导读)· `docs/renwu-production-brief.md`(人物小传)。
 
 ### S · 观数组
 - [x] **S0** `docs/design-v23.md`(规格 + 规则表 + 验收清单)· CLAUDE.md 加组铁律与「如何加一个 widget」
 - [x] **S1** 组骨架:7 处注册点(`registry` / `index.css` / `corpus.js` / `booksIndex` / `check-links` / `build-content-assets` / `App.jsx`)· 首页 = **学习路径图**(非书架)· `/mingli/learn/*` 路由排在 `/<组>/<slug>` 之前
 - [x] **S2 学堂六篇**(每篇 = 富文本正文 + 交互件 + 小测):① 六十甲子盘 ② **节气年轮**(年从立春换、月从节气换)③ 五行生克 ④ 起柱演示(五虎遁)⑤ **十神盘**(换日主全盘重标)⑥ 十二支盘(藏干 + 合冲刑连线)
-- [~] **S3《穷通宝鉴》**(~3.3 万字 · 11 章)—— 原文入库 · 译注延 · 白话 11 篇 · 书级导读(《栏江网》→《穷通宝鉴》)· —— 进度:原文 ✅(命例横表已结构化,183 例出图)· 调候矩阵 ✅ 120 格 · 译注延 ✅ · 白话 ⏳ · 导读 ⏳
+- [x] **S3《穷通宝鉴》**(~3.3 万字 · 11 章)—— 原文 ✅(命例横表已结构化,183 例出图)· 调候矩阵 ✅ 120 格 · 译注延 ✅ · 白话 ✅ 11 · 导读 ✅
       **10×12 调候矩阵导航**(约 120 格,每格的用神**逐格挂原文子串、check-data 校验**,不凭记忆填)
-- [~] **S4《渊海子平》**(~5.8 万字)—— 四层全做 · 书级导读 · **歌诀断行**(`verse`)+ **歌诀闪卡** —— 进度:原文 ✅ · 歌诀断行 ✅ · 歌诀卡 ✅ · 译注延 🏃 workflow 在跑 · 白话 ⏳ · 导读 ⏳
-- [~] **S5《子平真诠》**(~2.9 万字 · 48 篇)—— 四层全做 · 书级导读 · **格局判定流程图**(每个节点挂原文出处,读者自己走一遍取格) —— 进度:原文 ✅(**已净化,48 篇**)· 格局判定流程 ✅ · 译注延 ✅(受净化影响的五篇在重出)· 白话 ⏳ · 导读 ⏳
-- [~] **S6《滴天髓阐微》**(~14 万字 · 约 60 章)—— 四层全做 · 书级导读 · **经 / 注 / 例 三层折叠** · **命例图**(约千处四柱串自动成图)· 精选命例做**步进走读** —— 进度:原文 ✅(十条形讹已校)· 三层折叠 ✅ · 命例图 ✅ 513 处 · 命例走读 ✅ 17 例 · 译注延 🏃 · 白话 ⏳ · 导读 ⏳
-- [~] **S7 贯通件**:**三派对读**(同一命例切 格局 / 旺衰 / 调候 三个镜头)· 家级导读「子平法怎么从一条路走成三条路」· **概念索引**(十神 / 格局 / 用神 / 通根… → 各书章,扩 `concepts.json`) —— 进度:三派镜头对读 ✅(挂在命例走读每例末尾)· 概念索引 ✅ 24 概念 68 落点 · 家级导读 ⏳
-- [~] **S8《三命通会》**(~46 万字 · 12 卷,**最大的一块**)—— 原文 · 译注延 · 书级导读 · **卷八九 60×12 查表盘** · 白话**只做精选**(全铺不划算,选目另定) —— 进度:底本入库 🏃(worktree 代理)
-- [~] **S9 源头诸书**:《五行大义》《李虚中命书》《珞琭子三命消息赋》《玉照定真经》—— 四层 + 导读;依托之书走 `caveat` —— 进度:原文 ✅ · 译注延 ✅ · 书级导读 ✅(2026-09-22)· 白话 ⏳(待 owner 定做不做)
+- [x] **S4《渊海子平》**(~5.8 万字)—— 原文 ✅ · 歌诀断行 ✅ · 歌诀卡 ✅ · 译注延 ✅ · 白话 ✅ 74 · 导读 ✅
+- [x] **S5《子平真诠》**(~2.9 万字 · 48 篇)—— 原文 ✅(已净化,48 篇)· 格局判定流程 ✅ · 译注延 ✅ · 白话 ✅ 48 · 导读 ✅
+- [x] **S6《滴天髓阐微》**(~14 万字 · 63 章)—— 原文 ✅(第二见证本对校 379 条讹字已改)· 三层折叠 ✅ · 命例图 ✅ 513 处 · 命例走读 ✅ 17 例 · 译注延 ✅ · 白话 ✅ 63(遗留 callout 措辞清理见手册第 2 步)· 导读 ✅
+- [x] **S7 贯通件**:三派镜头对读 ✅ · 概念索引 ✅ 24 概念 68 落点 · 家级导读 ✅
+- [~] **S8《三命通会》**(~46 万字 · 12 卷,**最大的一块**)—— 原文 ✅ · 日时查表 ✅ · 导读 ✅ · 译注延 十一卷 ✅ **卷九 ⏳**(手册第 1 步)· 白话精选 75 章 ⏳(手册第 4 步)
+- [~] **S9 源头诸书**:《五行大义》《李虚中命书》《珞琭子三命消息赋》《玉照定真经》—— 原文 ✅ · 译注延 ✅ · 书级导读 ✅ · **白话 ⏳(owner 定都做,手册第 3 步)**
 - [x] **S10 排盘台**(练手工具,放学堂之后):输入生辰 → 四柱 / 藏干 / 十神 / 五行分布 / 大运排列,**止于结构、不出断语**;早晚子时 / 真太阳时给开关不替用户拍板
 - [ ] **S11 收尾**:门户卡片 · 搜索 / og / sitemap 纳入 · 「底本与凡例」· 重跑 `gen-book-sizes` · App 送审备注补一段(命理典籍 = 古籍研读,不算命)
 - 备选(本轮不做,先记着):《神峰通考》《五行精纪》《三命指迷赋》《星命总括》· 紫微斗数(《紫微斗数全书》维基文库有)· 西方占星 / 塔罗
 
 ### X · 其他典籍与流派的交互化改造
-- [ ] **X1 全站 · 典籍时间轴** —— 74 部 + 人物,门户级入口(`era` 字段现成,成本最低)
+- [x] **X1 全站 · 典籍时间轴** —— ✅ 09-25 `/timeline`(书 + 人物)+ 人物志 `/renwu`
 - [ ] **X2 中医** —— **五行藏象图**(木 → 肝胆 / 春 / 风 / 酸…,每条对应**挂素问原文出处**)· 《伤寒论》**六经传变图**作导航 · 《本草经》**6 部 × 3 品矩阵**作导航。
       守研习不诊疗:呈现的是**文本的结构**,不是诊疗路径
 - [ ] **X3 儒 / 心学** —— **学脉图**(复用 `graph` 件,数据取自家级导读)· 《论语》**人物出场索引**(孔门弟子 × 出场章)
