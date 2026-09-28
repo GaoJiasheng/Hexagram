@@ -141,7 +141,7 @@ node scripts/gen-zhuzi-wf.mjs sanming --models=opus,sonnet --bundle=3200 --chapt
 - **6 ✅ 09-29 已做完(commit 92aabba)(改)渊海白话口径统一**:`src/data/mingli/baihua/yuanhai.json` 里「明代杨淙校正、唐锦池刊行」一类(grep 唐锦池、校正)改成导读口径「明竹亭杨淙增校、书坊重刊」(题署里有杨淙,可点名;唐锦池刊行未核过原刊本,不写)。这是我方文字,直接改;改完 check-data + content:build。
 - commit 路径:`scripts/corpus/mingli.config.mjs scripts/fetch-corpus.mjs scripts/authored/mingli-translations.json src/data/mingli/classics/ditiansui.json src/data/mingli/baihua/ditiansui.json src/data/mingli/baihua/yuanhai.json src/data/mingli/zhushi-anchored/ditiansui.json src/data/mingli/cases/ditiansui.json scripts/sources/mingli/SOURCES.md docs/mingli-review.md`。
 
-**3. 四部源头书白话**(普通档,不在 THICK_BOOKS;≈21M ≈ 12–17 点)
+**3. ✅ 09-29/30 全成(五行大义 41 · 珞琭子 6 · 玉照 9 · 李虚中 13;四批+三个 workflow,≈23M token)四部源头书白话**(普通档,不在 THICK_BOOKS)
 - 3a **五行大义 41 章**(段目章 2/6/12/17/28/43/46 只有一行「第 X 论就此分为 N 段」,不写):
   ```bash
   node scripts/gen-baihua-wf.mjs mingli wuxingdayi 1 12 --skip=2,6,12,17,28,43,46 --verify-model=sonnet   # 分 1–12 / 13–24 / 25–36 / 37–48 四批,每批 ≤10 章
@@ -160,7 +160,7 @@ node scripts/gen-zhuzi-wf.mjs sanming --models=opus,sonnet --bundle=3200 --chapt
   **基建已就绪(09-25 加,端到端测过)**:gen 有 pieces 分支(原文按章内绝对下标内联)、`assemble-baihua` / `check-baihua-draft` 认「章-序」键(`scripts/lib/sub-chapter.mjs`,引文池收窄到那一篇)、check-data 早已认。
 - 每书完成后 `npm run content:build`,浏览器看 `/mingli/<slug>/baihua/1-1` 与章内入口。
 
-**4. (09-29 进度:甲档 30/43 已落库,第四批 10 章在跑;乙档 0/32;源头书白话 珞琭子/玉照/李虚中 ✅、五行大义 31/41 末批在跑——断点与装配法见记忆 platform-mingli-pause-point)三命通会精选白话 甲档 43 → 乙档 32**(≈26M ≈ 14–20 点;选目见下表,`mingli-status.mjs` 直接打印未做的 `--chapters=` 串)
+**4. (09-30 进度:甲档 40/43 已落库;甲档余 3 + 乙档 32 分四批〔b5 主脚本 / b6 / b7 / b8 各自文件〕在跑——断点与装配法见记忆 platform-mingli-pause-point)三命通会精选白话 甲档 43 → 乙档 32**(≈26M ≈ 14–20 点;选目见下表,`mingli-status.mjs` 直接打印未做的 `--chapters=` 串)
 ```bash
 node scripts/gen-baihua-wf.mjs mingli sanming --chapters=1,9,11,13,18,25,28,33,34,36 --verify-model=sonnet   # 每批 ≤10 章,按 status 打印的未做列表切
 ```
