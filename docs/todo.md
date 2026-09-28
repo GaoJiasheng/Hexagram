@@ -119,7 +119,7 @@ cd /Users/gavin/work/hexagram && git status -sb && node scripts/mingli-status.mj
 
 #### 剩余工作(按此顺序)
 
-**1. 三命通会卷九译注延**(篇 329–388,60 篇六己至六癸日×十二时断语;≈9.7M token ≈ 5–8 点)
+**1. ✅ 09-29 已做完(9.9M token,62 代理 0 错,译 1352 · 注 2674 · 延 60 · 断句 1352;全书 6250/6250,status done)——三命通会卷九译注延**(篇 329–388)
 ```bash
 node scripts/gen-zhuzi-wf.mjs sanming --models=opus,sonnet --bundle=3200 --chapters=$(seq -s, 329 388)
 ```
