@@ -128,7 +128,7 @@ node scripts/gen-zhuzi-wf.mjs sanming --models=opus,sonnet --bundle=3200 --chapt
 卷八九是断语 + 命例横表(列序已乱,代理照录并标「原表错行」,见 SOURCES.md);万氏身后人事(「明帝天启」等)注为后人增补。
 **成后收尾**:`src/data/mingli/texts.json` sanming `status: "partial" → "done"`;`node scripts/gen-book-sizes.mjs`;`src/data/mingli/daodu/sanming.json` 里若有「按卷推进 / 尚未译完 / 部分卷」类措辞改掉(grep 推进、未译、部分);`npm run check-data`;更新本手册 + `docs/mingli-review.md` §五 + CLAUDE.md 观数行(「十一卷 4898/6250,只余卷九」→「全书 6250 段译注延全成」)。
 
-**2. 滴天髓收尾——owner 2026-09-25 已定六项(「1A 2删留 3删 4留 5采 6改」),全是脚本活、零 subagent 成本(仅 2a 补文后几段要重译,一个 opus 代理)**
+**2. ✅ 09-29 已做完(commit 92aabba;62.25 那 24 字复核为见证本脱文未删,见 SOURCES.md)——滴天髓收尾,owner 2026-09-25 已定六项(「1A 2删留 3删 4留 5采 6改」)**
 材料都在 `scripts/sources/mingli/ditiansui-collation/`:`ditiansui-collation.tsv`(全表,列:章/章题/段/上下文/本站/劝学/古诗文/类型/内证/来源/判定/依据/建议 typoFix)· `witness-excerpts.json`(待改各章两见证本整章段落)· `tools/`(对校与重锚脚本,`reanchor-punct.mjs` = 原文改后按 LCS 把断句层重铺到新底本(白文书用;注疏 term 按表替换即可))。
 改字一律走 `scripts/corpus/mingli.config.mjs` 的 `DITIANSUI_TYPOS`(`{from,to,expect,reason}`,按序生效、`expect` 按已改过的文本计数,from 用书内唯一的上下文锚),然后 `node scripts/fetch-corpus.mjs mingli` 重生原文。**顺序:2a → 2b → 2c → 2e 一起入表、一次重生**,再做连锁同步(2f),最后 2d、2g、6。
 - **2a(1A)长段脱文按见证本补入**:35.2 夫妻 / 36.2、36.4 子女 / 37.2 父母 共 10 处「脱文(长)」「异文(长)」(TSV 判定 C、类型含「长」),两本一致。每处一条:`from` = 本站现有的脱文前后锚文(8–12 字、书内唯一),`to` = 锚文 + 补文(照 witness-excerpts 该段抄,标点随本站体例);37.2 一段里 秎→伤 / 景→主 / 劫→伤 / 衍「年印月劫」与脱文交错,**整段一条**(from = 本站整段讹文,to = 见证本整段)。补完这 4 段的译文缺了补文那部分 → 一个 opus 代理按 `scripts/check-unit.mjs` 重译这几段(`gen-zhuzi-wf ditiansui --units=35:0,36:0,37:0 --models=opus,sonnet`,或直接 Agent 派),装配 `--merge`。
@@ -147,7 +147,7 @@ node scripts/gen-zhuzi-wf.mjs sanming --models=opus,sonnet --bundle=3200 --chapt
   node scripts/gen-baihua-wf.mjs mingli wuxingdayi 1 12 --skip=2,6,12,17,28,43,46 --verify-model=sonnet   # 分 1–12 / 13–24 / 25–36 / 37–48 四批,每批 ≤10 章
   ```
   第 1 章(自序)自动 featured。红线:讲隋人萧吉的五行学说史,**明说它不是命书**、不把它讲成命理入门(它与命理是源头关系)。commit `src/data/mingli/baihua/wuxingdayi.json`。
-- 3b **三部走 pieces(先定切点,再生成)**。切点怎么定——先把段首打出来读:
+- 3b ✅ 09-29 切点已定并落库(commit 6d09840:李虚中 13 / 珞琭子 6 / 玉照 9 篇)。**三部走 pieces(先定切点,再生成)**。切点怎么定——先把段首打出来读:
   ```bash
   node -e 'const b=require("./src/data/mingli/classics/lixuzhong.json");for(const c of b.chapters){console.log("== 第"+c.no+"章 "+(c.title||"")+" "+c.paragraphs.length+"段");c.paragraphs.forEach((p,i)=>console.log(i,p.original.slice(0,28)))}' > /tmp/heads.txt
   ```
