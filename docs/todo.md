@@ -160,7 +160,7 @@ node scripts/gen-zhuzi-wf.mjs sanming --models=opus,sonnet --bundle=3200 --chapt
   **基建已就绪(09-25 加,端到端测过)**:gen 有 pieces 分支(原文按章内绝对下标内联)、`assemble-baihua` / `check-baihua-draft` 认「章-序」键(`scripts/lib/sub-chapter.mjs`,引文池收窄到那一篇)、check-data 早已认。
 - 每书完成后 `npm run content:build`,浏览器看 `/mingli/<slug>/baihua/1-1` 与章内入口。
 
-**4. 三命通会精选白话 甲档 43 → 乙档 32**(≈26M ≈ 14–20 点;选目见下表,`mingli-status.mjs` 直接打印未做的 `--chapters=` 串)
+**4. (09-29 进度:甲档 30/43 已落库,第四批 10 章在跑;乙档 0/32;源头书白话 珞琭子/玉照/李虚中 ✅、五行大义 31/41 末批在跑——断点与装配法见记忆 platform-mingli-pause-point)三命通会精选白话 甲档 43 → 乙档 32**(≈26M ≈ 14–20 点;选目见下表,`mingli-status.mjs` 直接打印未做的 `--chapters=` 串)
 ```bash
 node scripts/gen-baihua-wf.mjs mingli sanming --chapters=1,9,11,13,18,25,28,33,34,36 --verify-model=sonnet   # 每批 ≤10 章,按 status 打印的未做列表切
 ```
