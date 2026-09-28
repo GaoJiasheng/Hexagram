@@ -144,7 +144,7 @@
   **译注延 2026-09-29 全成 6250/6250 段(十二卷,status done)**;一卷约 370–990 万 token,卷八九日时断语最贵。三部四库白文走**断句层**(标点当编辑内容另存,逐段核「去标点后与底本逐字相等」)。
   **生产工具(本轮新增,续跑直接用)**:`gen-zhuzi-wf.mjs --bundle=3200` 小篇合包(三命通会 451 单元→205)· `scripts/check-unit.mjs` / `check-baihua-draft.mjs` / `check-daodu-draft.mjs`
   三把给代理用的自查尺子(已写进提示语;译注延省约三成 token,白话几乎不省)· `fetch-corpus` 的 `joinParas`(四库版式事故并段,只并段不动字)。
-  **2026-09-29 owner 说「命理学那部分先搞完」并放开额度:卷九 ✅、滴天髓六项 ✅、pieces ✅ 已落库;余 源头书白话 → 三命通会精选白话 75 章 → 收口,续跑手册在 `docs/todo.md` §0.1「▶ 续跑手册」,接手先 `node scripts/mingli-status.mjs`。**
+  **2026-09-30 观数内容全部收官**(owner 09-29「先搞完」+ 放开额度):三命通会译注延 6250/6250 · 滴天髓六项校勘 · 四部源头书白话 69 篇(五行大义 41 / 李虚中 13 / 珞琭子 6 / 玉照 9,后三部走 pieces)· 三命通会精选白话 75/75(甲 43 乙 32)。共 15 个白话 workflow ≈ 55M token,校对代理「只交说明」的单元由 `scripts/salvage-baihua.mjs` 从其自查文件救回。**待 owner 开口:Cloudflare 预览部署 → review → 上生产 / 发 iOS。**
   **改/扩观数内容守「研习不断命」铁律;命例/矩阵/概念/走读四类策展数据各有校验闸(`scripts/lib/mingli-*.mjs`),逐批 check-data 过才 commit。**
 
 ## 工程上踩过的坑(会重复踩的那几个)

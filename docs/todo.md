@@ -160,14 +160,14 @@ node scripts/gen-zhuzi-wf.mjs sanming --models=opus,sonnet --bundle=3200 --chapt
   **基建已就绪(09-25 加,端到端测过)**:gen 有 pieces 分支(原文按章内绝对下标内联)、`assemble-baihua` / `check-baihua-draft` 认「章-序」键(`scripts/lib/sub-chapter.mjs`,引文池收窄到那一篇)、check-data 早已认。
 - 每书完成后 `npm run content:build`,浏览器看 `/mingli/<slug>/baihua/1-1` 与章内入口。
 
-**4. (09-30 进度:甲档 40/43 已落库;甲档余 3 + 乙档 32 分四批〔b5 主脚本 / b6 / b7 / b8 各自文件〕在跑——断点与装配法见记忆 platform-mingli-pause-point)三命通会精选白话 甲档 43 → 乙档 32**(≈26M ≈ 14–20 点;选目见下表,`mingli-status.mjs` 直接打印未做的 `--chapters=` 串)
+**4. ✅ 09-30 全成(8 批 workflow,甲 43 · 乙 32;≈32M token;6 条红线软警告人读均为原典「克妻」照录误报)三命通会精选白话 甲档 43 → 乙档 32**(≈26M ≈ 14–20 点;选目见下表,`mingli-status.mjs` 直接打印未做的 `--chapters=` 串)
 ```bash
 node scripts/gen-baihua-wf.mjs mingli sanming --chapters=1,9,11,13,18,25,28,33,34,36 --verify-model=sonnet   # 每批 ≤10 章,按 status 打印的未做列表切
 ```
 → Workflow → `assemble-baihua` → check-data → commit `src/data/mingli/baihua/sanming.json`。
 提示:第 1 章「原造化之始」全书首章自动 featured(其余不给 hero);261 论女命(1.7 万字)、391 玉井奥诀(1.9 万字)gen 按字数自动走「分段摘录」;卷六格局章点明万氏自己存疑处(「试思之」「年月日时多不足凭」);395 消息赋与站内《珞琭子》同赋,写「同一篇赋万氏怎么解」,引文各引各的(check-data 只认本章原文)。卷四、十至十二译注延已落库,乙档可直接写。
 
-**5. Z 收口**(主会话,≈2–4 点)
+**5. Z 收口**(主会话;09-30 已做 Z1 build/test/check-links/check-data + 浏览器走查白话整页与分篇入口、Z2 抽查玉照 9 篇与三命通会红线警告、Z3 文档;**Z4 预览部署等 owner 开口**)
 - Z1 `npm run check-data && npm run check-links && npm test && npm run build`;明/暗/手机各走 `/mingli` 学堂 / 矩阵 / 走读 / 排盘 / 白话整页;iOS 模拟器(`npm run cap:ios`)走一遍。
 - Z2 人读抽查:每本书抽 1 篇白话 + 各交互件对规则表(机器一条事实错误都抓不到)。
 - Z3 文档:CLAUDE.md 观数行、本手册、`docs/mingli-review.md` §五、design-v23 验收清单逐条。
