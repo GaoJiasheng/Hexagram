@@ -137,8 +137,8 @@ node scripts/gen-zhuzi-wf.mjs sanming --models=opus,sonnet --bundle=3200 --chapt
 - **2d(4 留)46.0 后人补纲领留**:原文自注已在;只在该章注疏/白话补一句「辑要本此处纲领作『从得真者只论从，从神又有吉和凶』」——不改原文。
 - **2e(5 采)9 处最没把握的校改采**:TSV 里 章.段 = 9.43 / 11.0 / 17.16 / 18.2 / 29.2 / 37.0 / 39.18 / 58.16 / 62.25 的 A、B 档各条(共 22 条;29.2「竟四时之序」是 C 档不动),按「建议 typoFix」列写入 `DITIANSUI_TYPOS`(带 expect;9.43 阳乘阴位→阴乘阴位、11.0 补「兮」、17.16 己未→乙未、18.2 却→去/地→无/量→旺/遇→无、29.2 这→之、37.0 降→隆、39.18 删「贫」、58.16 当火土→全金木、62.25 进→者/运→年/关→头/这→之×3/补「干」/九→必/补「余」)。
 - **2f 连锁同步(每次重生原文后必做)**:`node scripts/fetch-corpus.mjs mingli` → `npm run check-data` 会列出白话坏引文与注疏坏锚 → 白话 `quote.original` 按表替换(小脚本按 from→to 扫 `src/data/mingli/baihua/ditiansui.json`),注疏 term 同样按表替换,找不到的删并记录(reanchor-punct.mjs 只管断句层),给讹字作的「当为某之讹」注随字改而删 → 再 check-data 到 0 坏 → `npm run content:build`。
-- **2g 白话「底本存疑」callout 清理**(改字全部落定后再做,免得做两遍):脚本遍历各章 callout / p 块,凡提到「底本作 X / 字形如此 / 照录不改 / 疑为 Y 之讹」且 X 已在表里 → 改「底本原作 X,已据见证本校正为 Y(见 SOURCES.md 校勘记)」,整块只说这一个字的就删;C 档留讹的保留原措辞。`mingli-status.mjs` 的粗数含误报,以逐条判为准。人读抽 5 章。
-- **6(改)渊海白话口径统一**:`src/data/mingli/baihua/yuanhai.json` 里「明代杨淙校正、唐锦池刊行」一类(grep 唐锦池、校正)改成导读口径「明竹亭杨淙增校、书坊重刊」(题署里有杨淙,可点名;唐锦池刊行未核过原刊本,不写)。这是我方文字,直接改;改完 check-data + content:build。
+- **2g ✅ 09-29 已做完(两轮 opus 代理:60 处 callout 措辞 + 62 处正文照抄旧讹字,commit b17876a / 88c08a5)白话「底本存疑」callout 清理**(改字全部落定后再做,免得做两遍):脚本遍历各章 callout / p 块,凡提到「底本作 X / 字形如此 / 照录不改 / 疑为 Y 之讹」且 X 已在表里 → 改「底本原作 X,已据见证本校正为 Y(见 SOURCES.md 校勘记)」,整块只说这一个字的就删;C 档留讹的保留原措辞。`mingli-status.mjs` 的粗数含误报,以逐条判为准。人读抽 5 章。
+- **6 ✅ 09-29 已做完(commit 92aabba)(改)渊海白话口径统一**:`src/data/mingli/baihua/yuanhai.json` 里「明代杨淙校正、唐锦池刊行」一类(grep 唐锦池、校正)改成导读口径「明竹亭杨淙增校、书坊重刊」(题署里有杨淙,可点名;唐锦池刊行未核过原刊本,不写)。这是我方文字,直接改;改完 check-data + content:build。
 - commit 路径:`scripts/corpus/mingli.config.mjs scripts/fetch-corpus.mjs scripts/authored/mingli-translations.json src/data/mingli/classics/ditiansui.json src/data/mingli/baihua/ditiansui.json src/data/mingli/baihua/yuanhai.json src/data/mingli/zhushi-anchored/ditiansui.json src/data/mingli/cases/ditiansui.json scripts/sources/mingli/SOURCES.md docs/mingli-review.md`。
 
 **3. 四部源头书白话**(普通档,不在 THICK_BOOKS;≈21M ≈ 12–17 点)
