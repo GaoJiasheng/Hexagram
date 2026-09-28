@@ -147,7 +147,7 @@ export default function CorpusReadPage({ corpus }) {
             <span className="poem-head__title">《{title}》<span className="poem-head__ord">其{ord}</span></span>
             <BaihuaBlock
               corpus={corpus} slug={slug} chapter={`${no}-${ord}`} variant="inline"
-              bookTitle={meta.title} chapterLabel={`${curChapter?.title || ''} · ${title}`}
+              bookTitle={meta.title} chapterLabel={[curChapter?.title, title].filter(Boolean).join(' · ')}
             />
           </>
         )
@@ -160,7 +160,7 @@ export default function CorpusReadPage({ corpus }) {
             <span className="piece-head__title">{pc.title}</span>
             <BaihuaBlock
               corpus={corpus} slug={slug} chapter={pc.key} variant="inline"
-              bookTitle={meta.title} chapterLabel={`${curChapter?.title || ''} · ${pc.title}`}
+              bookTitle={meta.title} chapterLabel={[curChapter?.title, pc.title].filter(Boolean).join(' · ')}
             />
           </>
         )
