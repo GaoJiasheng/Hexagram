@@ -753,6 +753,19 @@ async function main() {
       ganzhiStat = mergeGanzhiRuns(chapters, warnings, book.pages?.[0] ?? book.localFile ?? book.slug)
     }
 
+    // dropParas([{ch, match?, pillars?, reason}]):**合并之后**剔整段(2026-09-29,滴天髓 4.7–4.8 后人增补命例,owner 定删)。
+    // dropParaRe 跑在 mergeGanzhiRuns 之前,剔不到已并成 pillars 段的四柱行,故另设此项;按章号 + 子串 / 四柱串匹配,
+    // 每条须恰命中 1 段,否则 warning 不动手(防条目写错误伤)。剔段会移动其后各段下标,译文/注疏/走读例须同步。
+    if (book.dropParas) {
+      for (const d of book.dropParas) {
+        const c = chapters.find((x) => x.no === d.ch)
+        const hits = c ? c.paragraphs.filter((p) => (!d.match || p.original.includes(d.match)) && (!d.pillars || (p.pillars || []).join(' ') === d.pillars)) : []
+        if (hits.length !== 1) { warnings.push(`${book.title}: dropParas 第${d.ch}章「${d.match || d.pillars}」命中 ${hits.length} 段(须恰 1),未剔`); continue }
+        c.paragraphs = c.paragraphs.filter((p) => p !== hits[0])
+        console.log(`  剔段 第${d.ch}章「${d.match || d.pillars}」(${d.reason})`)
+      }
+    }
+
     // mergeCaseTables(穷通宝鉴专用):底本把命例排成横表——
     //   「时日月年」/「庚丙庚丙」(四柱天干,时→年)/「寅午寅午」(四柱地支)/「两间不杂，按察<TAB>时日月年」…
     // 一个命例被拆成三段,案语还和下一个表头用制表符粘在同一段。这不只是难看:译注代理被这些
