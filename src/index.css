@@ -3337,43 +3337,41 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .master-portal { min-height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; padding: 48px 24px; }
 .master-portal__hint { font-size: 0.74rem; color: var(--ink-faint); letter-spacing: 0.22em; text-indent: 0.22em; text-transform: none; text-align: center; }
 /* 门户不放搜索按钮(owner 觉得突兀);搜索靠 / 或 ⌘K,各分站顶栏亦有图标 */
-/* ── 书架按门类分行(2026-09-30):左侧竖排门类签 + 右侧一行横向卡片 ──
-   宽屏:每个门类恰好一行(诸子五组也是一行),整面书架撑满 1120px,不再是窄塔 + 悬一张孤卡;
-   窄屏:门类签转横向,卡片自动折成两列 / 一列。卡片横向(印章左、题与书目右)比竖排卡矮一半,信息密度更像书架。 */
-.master-portal__shelf { width: 100%; max-width: 1120px; display: flex; flex-direction: column; gap: 22px; }
-.master-portal__family { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 0 20px; align-items: stretch; }
-.master-portal__family-head { display: flex; flex-direction: column; align-items: center; gap: 8px; padding-top: 8px; border-right: 1px solid var(--line); }
-.master-portal__family-label { writing-mode: vertical-rl; font-family: var(--font-serif); font-size: 1.02rem; letter-spacing: 0.3em; color: var(--ink); }
-.master-portal__family-rule { width: 1px; height: 14px; background: var(--cinnabar-pure); opacity: 0.7; }
-.master-portal__family-note { writing-mode: vertical-rl; font-size: 0.66rem; letter-spacing: 0.18em; color: var(--ink-faint); }
-/* 每行列数 = 该门类的组数(--n 由组件给),一行铺满;组数多的门类卡片自然窄些 */
-.master-portal__family-cards { display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: 14px; }
-/* 易道:两卡之间夹小太极桥(相系而不并合) */
-.master-portal__family--bond .master-portal__family-cards { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; }
-.master-portal__bond { display: flex; align-items: center; gap: 6px; padding: 0 6px; flex-shrink: 0; }
-.master-portal__bond-line { display: block; width: 14px; height: 1px; background: var(--line); }
-.master-portal__bond-node { display: flex; align-items: center; justify-content: center; width: 27px; height: 27px; border: 1px solid var(--line); border-radius: 50%; background: var(--paper-raised); color: var(--ink-soft); font-size: 0.85rem; font-style: normal; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-.master-portal__card { --card-accent: var(--ink-soft); display: flex; align-items: center; gap: 14px; min-height: 104px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 11px; background: var(--paper-raised); text-decoration: none; transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; }
+/* ── 书架 = 5 列等宽等高的卡片矩阵(2026-09-30 第二版) ──
+   题签(易道 / 儒释 / 诸子 / 方术 / 集部)是 grid 里显式定位的一行,横跨该组的几列;卡片逐个定位到它下面一行。
+   于是十五组排成 2+3 / 5 / 2+3 三整行,列线上下贯通、卡片同宽同高——不再是每行自成一格的宽窄不一。
+   section / .cards 用 display:contents 让题签与卡片都成为矩阵的直接成员;≤1080 时它们变回普通块,各门类一段自动折行。 */
+.master-portal__shelf { width: 100%; max-width: 1120px; display: flex; flex-direction: column; gap: 18px; }
+.master-portal__grid { display: grid; grid-template-columns: repeat(var(--cols, 5), minmax(0, 1fr)); gap: 12px 18px; align-items: stretch; }
+.master-portal__family, .master-portal__cards { display: contents; }
+.master-portal__cap { grid-column: var(--c) / span var(--s); grid-row: var(--r); margin: 26px 0 0; display: flex; align-items: baseline; gap: 12px; font-weight: normal; min-width: 0; }
+.master-portal__cap--first { margin-top: 0; }
+.master-portal__cap-label { font-family: var(--font-serif); font-size: 1.25rem; letter-spacing: 0.14em; color: var(--ink); white-space: nowrap; }
+.master-portal__cap-bond { font-size: 0.92rem; color: var(--ink-soft); }
+.master-portal__cap-rule { flex: 1; height: 1px; background: var(--line); align-self: center; position: relative; min-width: 24px; }
+.master-portal__cap-rule::before { content: ''; position: absolute; left: 0; top: -1px; width: 22px; height: 3px; border-radius: 2px; background: var(--cinnabar-pure); opacity: 0.75; }
+.master-portal__cap-note { font-size: 0.74rem; letter-spacing: 0.12em; color: var(--ink-faint); white-space: nowrap; }
+.master-portal__card { --card-accent: var(--ink-soft); grid-column: var(--c); grid-row: var(--r); display: flex; flex-direction: column; align-items: flex-start; gap: 11px; min-height: 152px; padding: 18px 16px 16px; border: 1px solid var(--line); border-radius: 11px; background: var(--paper-raised); text-decoration: none; transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; }
 .master-portal__card:hover { border-color: var(--card-accent); transform: translateY(-2px); box-shadow: 0 8px 22px -12px color-mix(in srgb, var(--card-accent) 55%, transparent); }
 /* 朱印式徽章:每组自有的沉静色;印文用纸色,随明暗自动反转保对比 */
-.master-portal__seal { flex: none; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: var(--card-accent); color: var(--paper-raised); font-family: var(--font-serif); font-size: 0.98rem; letter-spacing: 0.04em; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1), 0 1px 2px rgba(0,0,0,0.12); }
-.master-portal__body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
-.master-portal__titles { font-family: var(--font-serif); font-size: 0.98rem; color: var(--ink); letter-spacing: 0.03em; }
+.master-portal__seal { flex: none; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; background: var(--card-accent); color: var(--paper-raised); font-family: var(--font-serif); font-size: 0.95rem; letter-spacing: 0.04em; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1), 0 1px 2px rgba(0,0,0,0.12); }
+.master-portal__body { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.master-portal__titles { font-family: var(--font-serif); font-size: 1rem; color: var(--ink); letter-spacing: 0.03em; }
 .master-portal__desc { font-size: 0.74rem; color: var(--ink-faint); line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-/* 中宽(平板 / 窄窗):五组一行塞不下,退回固定三列;门类签仍竖排 */
+/* 中宽(平板 / 窄窗):矩阵拆成「每门类一段」,题签占整行,卡片自动折行 */
 @media (max-width: 1080px) {
-  .master-portal__family-cards { grid-template-columns: repeat(auto-fill, minmax(188px, 1fr)); }   /* 平板 768(扣滚动条)仍得三列,诸子 3+2 不悬单卡 */
-  .master-portal__family--bond .master-portal__family-cards { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
+  .master-portal__grid { display: flex; flex-direction: column; gap: 28px; }
+  .master-portal__family { display: block; }
+  .master-portal__cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(188px, 1fr)); gap: 12px; }
+  .master-portal__cap { margin: 0 0 10px; }
+  .master-portal__card { grid-column: auto; grid-row: auto; }
 }
-/* 窄屏:门类签转横向作小标题,卡片单列,太极桥转竖向 */
+/* 窄屏:单列横向卡(印章左、题与书目右),一屏能扫到更多组 */
 @media (max-width: 640px) {
-  .master-portal__family { grid-template-columns: minmax(0, 1fr); gap: 10px 0; }
-  .master-portal__family-head { flex-direction: row; align-items: baseline; gap: 10px; padding: 0 0 6px; border-right: 0; border-bottom: 1px solid var(--line); }
-  .master-portal__family-label, .master-portal__family-note { writing-mode: horizontal-tb; letter-spacing: 0.18em; }
-  .master-portal__family-rule { width: 18px; height: 1px; align-self: center; }
-  .master-portal__family-cards, .master-portal__family--bond .master-portal__family-cards { grid-template-columns: minmax(0, 1fr); }
-  .master-portal__bond { flex-direction: column; padding: 4px 0; justify-self: center; }
-  .master-portal__bond-line { width: 1px; height: 12px; }
+  .master-portal { padding: 32px 16px; }
+  .master-portal__cards { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .master-portal__card { flex-direction: row; align-items: center; min-height: 0; padding: 14px 16px; gap: 14px; }
+  .master-portal__cap-label { font-size: 1.12rem; }
 }
 .master-portal__about { margin-top: 28px; text-align: center; }
 .master-portal__about-link { font-size: 0.82rem; color: var(--ink-faint); text-decoration: none; }
@@ -3464,6 +3462,18 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .tl-ruler svg { display: block; width: 100%; height: auto; }
 .tl-ruler figcaption { font-size: 0.76rem; line-height: 1.6; margin-top: 4px; }
 .tl-ruler__dot:hover line { opacity: 1 !important; stroke-width: 6; }
+/* 横轴总览:＋/－ 放大(横向滚动细看)、全屏(固定层铺满视口,Esc 退出)——owner 2026-09-30 */
+.tl-ruler__bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 0 0 8px; flex-wrap: wrap; }
+.tl-ruler__hint { font-size: 0.74rem; }
+.tl-ruler__tools { display: flex; gap: 6px; }
+.tl-ctl { font: inherit; font-size: 0.78rem; line-height: 1; padding: 6px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); color: var(--ink-soft); cursor: pointer; }
+.tl-ctl:hover { border-color: var(--cinnabar-pure); color: var(--ink); }
+.tl-ctl--fs { color: var(--cinnabar-pure); }
+.tl-ruler__canvas { overflow: auto; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
+.tl-ruler__canvas svg { display: block; height: auto; }
+.tl-ruler--fs { position: fixed; inset: 0; z-index: 1200; margin: 0; border: 0; border-radius: 0; padding: calc(10px + env(safe-area-inset-top)) 16px 12px; background: var(--paper); display: flex; flex-direction: column; }
+.tl-ruler--fs .tl-ruler__canvas { flex: 1; min-height: 0; }
+.tl-ruler--fs figcaption { flex: none; }
 .tl-sections { display: flex; flex-direction: column; gap: 6px; }
 .tl-section__head { display: flex; align-items: baseline; gap: 12px; margin: 18px 0 6px; padding-bottom: 6px; border-bottom: 1px solid var(--line); font-weight: normal; }
 .tl-section__era { font-family: var(--font-serif); font-size: calc(1.15rem * var(--read-scale)); color: var(--ink); }
@@ -4483,21 +4493,6 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 }
 
 /* 招牌样例:一句具体的话胜过一段形容 */
-.landing-show__list { display: flex; flex-direction: column; gap: 0.6rem; }
-.landing-show__item {
-  display: grid; grid-template-columns: auto 1fr; gap: 0.2rem 0.8rem;
-  padding: 0.9rem 1rem; border: 1px solid var(--line); border-radius: 4px;
-  text-decoration: none; transition: border-color 0.15s, background 0.15s;
-}
-.landing-show__item:hover { border-color: var(--cinnabar-pure); background: var(--paper-raised); }
-.landing-show__tag {
-  grid-row: span 2; align-self: center; flex: none;
-  padding: 0.2rem 0.45rem; border-radius: 3px;
-  background: color-mix(in srgb, var(--cinnabar-pure) 12%, transparent);
-  color: var(--cinnabar-pure); font-size: 0.74rem; letter-spacing: 0.08em;
-}
-.landing-show__line { font-family: var(--font-serif); font-size: 0.94rem; line-height: 1.8; color: var(--ink); }
-.landing-show__sub { font-size: 0.76rem; color: var(--ink-faint); }
 
 /* 最近新收:冷启动阶段「这站还活着」的信号 */
 .landing-recent__rss {
@@ -4531,8 +4526,6 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .colophon-block--trust .landing-trust__more { margin-top: 0.7rem; }
 
 @media (max-width: 640px) {
-  .landing-show__item { grid-template-columns: 1fr; }
-  .landing-show__tag { grid-row: auto; justify-self: start; }
   .landing-recent__list li { flex-direction: column; gap: 0.1rem; }
 }
 

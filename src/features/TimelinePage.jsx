@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import data from '../data/timeline.json'
 import renwu from '../data/renwu.json'
@@ -117,6 +117,19 @@ export default function TimelinePage() {
   }
   const jumpTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
   useHashScroll([dated.length, vPeople.length])
+  // 横轴总览的放大 / 全屏(owner 2026-09-30):放大 = svg 宽度按倍数撑开、容器横向滚动;全屏 = 固定层铺满视口,Esc / 按钮退出。
+  const [zoom, setZoom] = useState(1)
+  const [fs, setFs] = useState(false)
+  const zoomBy = (f) => setZoom((z) => Math.min(6, Math.max(1, Math.round(z * f * 100) / 100)))
+  useEffect(() => {
+    if (!fs) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    const onKey = (e) => { if (e.key === 'Escape') setFs(false) }
+    window.addEventListener('keydown', onKey)
+    return () => { document.body.style.overflow = prev; window.removeEventListener('keydown', onKey) }
+  }, [fs])
+  const onDot = (id) => { if (fs) { setFs(false); setTimeout(() => jumpTo(id), 60) } else jumpTo(id) }
 
   // 竖轴按朝代分节;书与人按起点混排(书按成书上限、人按生年),某朝代什么都没有就不出节
   const sections = data.bands
@@ -170,8 +183,18 @@ export default function TimelinePage() {
       </div>
 
       {/* 横轴总览:朝代等宽;上半是书(from→to 横条),下半是人(生卒横条 + 名字);点一下滚到下面那一条 */}
-      <figure className="tl-ruler">
-        <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="各书成书年代与诸人生卒总览">
+      <figure className={`tl-ruler ${fs ? 'tl-ruler--fs' : ''}`}>
+        <div className="tl-ruler__bar">
+          <span className="tl-ruler__hint text-faint">横轴总览 · 放大后左右拖动细看 · 点一条跳到下面</span>
+          <span className="tl-ruler__tools">
+            <button type="button" className="tl-ctl" onClick={() => zoomBy(1 / 1.25)} aria-label="缩小" title="缩小">－</button>
+            <button type="button" className="tl-ctl" onClick={() => zoomBy(1.25)} aria-label="放大" title="放大">＋</button>
+            <button type="button" className="tl-ctl" onClick={() => setZoom(1)} title="回到一屏宽">复位</button>
+            <button type="button" className="tl-ctl tl-ctl--fs" onClick={() => setFs((v) => !v)}>{fs ? '✕ 退出全屏' : '⤢ 全屏'}</button>
+          </span>
+        </div>
+        <div className="tl-ruler__canvas">
+        <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="各书成书年代与诸人生卒总览" style={{ width: `${zoom * 100}%` }}>
           {data.bands.map((b, i) => (
             <g key={b.key}>
               <rect x={PAD + i * bw} y={TOP - 4} width={bw} height={H - TOP - 8} rx="2" style={{ fill: i % 2 ? 'color-mix(in srgb, var(--ink) 4%, transparent)' : 'transparent' }} />
@@ -183,7 +206,7 @@ export default function TimelinePage() {
           {bookLanes.spans.map(({ it, x1, x2, lane }) => {
             const y = bookTop + lane * LANE_H
             return (
-              <g key={it.id} className="tl-ruler__dot" onClick={() => jumpTo(it.id)} style={{ cursor: 'pointer' }}>
+              <g key={it.id} className="tl-ruler__dot" onClick={() => onDot(it.id)} style={{ cursor: 'pointer' }}>
                 <title>{it.name} · {it.label}</title>
                 <line x1={x1} y1={y} x2={x2} y2={y} style={lineStyle(it)} />
                 <circle cx={x1} cy={y} r={3.2} style={dotStyle(it)} />
@@ -197,7 +220,7 @@ export default function TimelinePage() {
               {peopleLanes.spans.map(({ it, x1, x2, lane, nameRight }) => {
                 const y = peopleTop + lane * LANE_H
                 return (
-                  <g key={it.id} className="tl-ruler__dot" onClick={() => jumpTo(it.id)} style={{ cursor: 'pointer' }}>
+                  <g key={it.id} className="tl-ruler__dot" onClick={() => onDot(it.id)} style={{ cursor: 'pointer' }}>
                     <title>{it.name} · {it.label}</title>
                     <line x1={x1} y1={y} x2={x2} y2={y} style={lineStyle(it)} />
                     <text
@@ -210,6 +233,7 @@ export default function TimelinePage() {
             </>
           )}
         </svg>
+        </div>
         <figcaption className="text-faint">刻度按朝代等宽,不按年数。上半每条横线是一部书从成书上限到下限的跨度,下半是各人的生卒;实线年代大致有共识,虚线为存疑。点一下跳到下面那一条。</figcaption>
       </figure>
 

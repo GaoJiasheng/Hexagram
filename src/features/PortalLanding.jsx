@@ -19,38 +19,10 @@
 
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import TrustList from './TrustList.jsx'
 
 const num = (n) => (n >= 1000 ? n.toLocaleString('en-US') : String(n))
 
-// 招牌样例:挑「别处没有」的具体条目,而不是形容词。
-// 一句「孟子荀子王阳明同席对辩」比一句「内容丰富」有说服力得多。
-// ⚠️ 改这里前先点开链接确认页面还在、说法还对 —— 这是首页,错了最丢人。
-// ⚠️ 每条都必须与它指向的那一页**说法一致**。初版三条全部翻车,教训记在这:
-//    · 写「阳明说两位都执于一端」—— 而该辩的收束明写「非争对错,乃各就一节」
-//    · 写「『床』不是睡的床」—— 而该篇明写睡床/井栏/胡床三说并陈、不作判定
-//    · 链接写 6-1(《行宫》),静夜思其实是 6-11
-//    替文章下它自己拒绝下的结论,恰恰砸的是这个站唯一的招牌。改这里前先打开那一页读一遍。
-const SHOWCASE = [
-  {
-    href: '/debates/renxing',
-    tag: '对辩',
-    line: '孟子言性之端绪,荀子言性之资质,阳明言性之本体 —— 同一个「性」字,三家指的不是一回事。',
-    sub: '诸子同席对辩 · 不评输赢,每句引文逐字校过是该章原文',
-  },
-  {
-    href: '/tangshi/tangshi300/baihua/6-11',
-    tag: '深读',
-    line: '「床前明月光」的「床」,睡床、井栏、胡床三说并存 —— 本站并陈,不替你拍板。',
-    sub: '唐诗三百首 320 首,一首一篇深读',
-  },
-  {
-    href: '/concepts',
-    tag: '互见',
-    line: '同一个「格物」,朱子主即物穷理,阳明主正心致良知 —— 工夫入手处的分歧由此而分。',
-    sub: '八组跨派概念,每条都标出处章节',
-  },
-]
+// 2026-09-30 owner review:首页去掉「这些书里有些东西别处没有」招牌样例与「凭什么信」两段(后者仍在跋里),首页只留 主张 → 书架 → 最近新收。
 
 export default function PortalLanding({ shelf }) {
   const [stats, setStats] = useState(null)
@@ -92,20 +64,6 @@ export default function PortalLanding({ shelf }) {
       {/* ── 第二屏:书架(原有的卡片墙整体挪到这里) ─────────────── */}
       <div id="portal-shelf">{shelf}</div>
 
-      {/* ── 第三屏:招牌样例 —— 挑「别处没有」的具体条目,不用形容词 ── */}
-      <section className="landing-show" aria-label="站里有什么">
-        <h2 className="landing-h2">这些书里,有些东西别处没有</h2>
-        <div className="landing-show__list">
-          {SHOWCASE.map((s) => (
-            <Link key={s.href} to={s.href} className="landing-show__item">
-              <span className="landing-show__tag">{s.tag}</span>
-              <span className="landing-show__line">{s.line}</span>
-              <span className="landing-show__sub">{s.sub}</span>
-            </Link>
-          ))}
-        </div>
-      </section>
-
       {recent?.length > 0 && (
         <section className="landing-recent" aria-label="最近新收">
           <h2 className="landing-h2">
@@ -123,11 +81,6 @@ export default function PortalLanding({ shelf }) {
         </section>
       )}
 
-      {/* 凭什么信 —— 把章末牌记那套提到站级 */}
-      <section className="landing-trust" aria-label="凭什么信">
-        <h2 className="landing-h2">凭什么信</h2>
-        <TrustList />
-      </section>
     </>
   )
 }
