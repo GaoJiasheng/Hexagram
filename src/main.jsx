@@ -6,6 +6,7 @@ import '@fontsource/noto-serif-sc/400.css'
 import '@fontsource/noto-serif-sc/500.css'
 import '@fontsource/noto-serif-sc/600.css'
 import './index.css'
+import { setupPwaAutoReload } from './pwaUpdate.js'
 
 // 懒加载 chunk 预载失败(发版后旧 hash 已失效):自动刷新取最新资源,带循环保护。
 const CHUNK_RELOAD_KEY = 'guanxiang.v1.chunk-reloaded'
@@ -22,6 +23,9 @@ window.addEventListener('vite:preloadError', (event) => {
 window.addEventListener('load', () => {
   setTimeout(() => { try { sessionStorage.removeItem(CHUNK_RELOAD_KEY) } catch { /* noop */ } }, 5000)
 })
+
+// PWA 新版自动重载(见 pwaUpdate.js 头注:刚打开即刷、读到一半等下一次导航、慢网超时照旧用旧文件)
+setupPwaAutoReload()
 
 // This is where React "mounts" onto the page.
 // It finds the <div id="root"> in index.html and renders <App /> inside it.

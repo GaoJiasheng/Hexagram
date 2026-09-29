@@ -164,6 +164,7 @@
   git 追踪的是小写名,`git add docs/TODO.md` 会什么都没暂存。
 - **改数据要改真源不改生成物**:译文真源在 `scripts/authored/<corpus>-translations.json`,
   只改 `src/data/*/classics/*.json` 会被下次 `fetch-corpus` 覆盖。
+- **PWA 旧版缓存(2026-09-30 已治)**:autoUpdate 只让新 SW 接管,已打开的页面仍跑旧版,不刷新永远是上一版——`src/pwaUpdate.js` 在 controllerchange 后自动 reload(刚打开即刷、读到一半等下一次站内导航 / 回到标签页,60s 防环),并 30 分钟 + 回标签页时 `reg.update()`。**慢网超时不需要额外逻辑**:更新全在后台,拿不到就照旧用缓存里的旧文件。review 预览域名若仍看到旧版,是首次安装 SW 那一次,再刷一次即可。
 - **部署「退出码 0」不等于上线了。** 2026-08-19 后台跑的 `wrangler pages deploy` 报了
   exit 0,但 `wrangler pages deployment list` 里最新一条仍是两天前 —— 线上一直在发旧包。
   **发完必须核对线上与本地的入口 bundle 哈希**:
