@@ -16,12 +16,12 @@
 ### A · 本周(我能直接做)
 | # | 事 | 备注 |
 |---|---|---|
-| A1 | **PWA 旧版缓存提示** | 装了 PWA 的浏览器第一次打开永远是上一版(今天 review 每轮都撞到)。`vite-plugin-pwa` 改 `registerType:'prompt'` + 页脚一条「有新版本,点此刷新」,或 autoUpdate 后自动 reload |
+| ~~A1~~ | ~~PWA 旧版缓存~~ ✅ 09-30 | 做成 autoUpdate 后自动 reload(`src/pwaUpdate.js`:刚打开即刷、读中等下一次站内导航,60s 防环;慢网拿不到新包就照旧用缓存)。预览分支实测两条路径通过;**生产尚未发,等 owner 开口** |
 | A2 | **观数白话人读抽查(Z2)** | 331 篇(核心 196 + 源头 69 + 精选 75)只过了机器闸;每书抽 1–2 篇人读,重点玉照 9 篇(红线最严)、三命通会 论女命/论疾病/论寿夭、五行大义 论五常 |
 | A3 | **观数「未完成」措辞复核** | 三命通会已 done:查 `/mingli` 首页学习路径图、`texts.json` brief/authorNote、导读、review 清单里有没有「推进中/部分卷」旧话 |
 | A4 | **check-data 红线软警告白名单** | 8 条(滴天髓/三命通会)人读均为原典断语照录误报,给这些章加「已人工复核」标记,免得每次刷屏淹没真警告 |
 | A5 | **暗色 + 手机复查新首页** | 矩阵第三版、争鸣段、索引段只在明色 1440/375 走过,暗色与平板 768 再过一遍 |
-| A6 | 文档收口 | §0.1 的 S/X/Z 状态刷成收官;CLAUDE.md 部署节写明「预览分支 `preview-portal` = review 通道,生产另发」;删 `scripts/.baihua-mingli-*-b6/b7/b8-wf.js` 临时脚本 |
+| ~~A6~~ | ~~文档收口~~ ✅ 09-30 | §0.1 Z4 刷成已上生产;CLAUDE.md 部署节已写预览分支流程 + 哈希核对;b6/b7/b8 临时 wf 脚本已删(其余 `.baihua-mingli-*-wf.js` 同为 gitignore 的产物,可随时 `rm`) |
 
 ### B · 等 owner 一句话(内容)
 | # | 事 | 量级 |
@@ -204,7 +204,7 @@ node scripts/gen-baihua-wf.mjs mingli sanming --chapters=1,9,11,13,18,25,28,33,3
 → Workflow → `assemble-baihua` → check-data → commit `src/data/mingli/baihua/sanming.json`。
 提示:第 1 章「原造化之始」全书首章自动 featured(其余不给 hero);261 论女命(1.7 万字)、391 玉井奥诀(1.9 万字)gen 按字数自动走「分段摘录」;卷六格局章点明万氏自己存疑处(「试思之」「年月日时多不足凭」);395 消息赋与站内《珞琭子》同赋,写「同一篇赋万氏怎么解」,引文各引各的(check-data 只认本章原文)。卷四、十至十二译注延已落库,乙档可直接写。
 
-**5. Z 收口**(主会话;09-30 已做 Z1 build/test/check-links/check-data + 浏览器走查白话整页与分篇入口、Z2 抽查玉照 9 篇与三命通会红线警告、Z3 文档;**Z4 预览部署等 owner 开口**)
+**5. Z 收口**(主会话;09-30 已做 Z1 build/test/check-links/check-data + 浏览器走查白话整页与分篇入口、Z2 抽查玉照 9 篇与三命通会红线警告、Z3 文档;Z4 已上生产 hexa.gavin.pub,09-30 两次发版)
 - Z1 `npm run check-data && npm run check-links && npm test && npm run build`;明/暗/手机各走 `/mingli` 学堂 / 矩阵 / 走读 / 排盘 / 白话整页;iOS 模拟器(`npm run cap:ios`)走一遍。
 - Z2 人读抽查:每本书抽 1 篇白话 + 各交互件对规则表(机器一条事实错误都抓不到)。
 - Z3 文档:CLAUDE.md 观数行、本手册、`docs/mingli-review.md` §五、design-v23 验收清单逐条。
