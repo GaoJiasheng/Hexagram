@@ -9,12 +9,20 @@ import PortalLanding from './PortalLanding.jsx'
 // 卡片描述由 texts.json 派生(已收书目+计数),根治「加书忘改 portalDesc 文案」;
 // 易经非书目制(64 卦 + 工具),保留其 portalDesc tagline。
 function siteDesc(site) {
-  if (site.key === 'yijing') return site.portalDesc
+  if (site.key === 'yijing') return '六十四卦 · 经传十翼 · 推演工作台 · 学堂'
   const texts = site.key === 'dao' ? daoTexts : corpusTexts(site.key)
   const done = (texts || []).filter(t => t.status === 'done')
   if (!done.length) return site.portalDesc
-  const titles = done.slice(0, 4).map(t => t.title).join(' · ')
-  return done.length > 4 ? `${titles} 等 ${done.length} 部` : titles
+  // 两行放得下、不截词:按长度贪心取前几部(至少 2 部),余数写「等 N 部」
+  const picked = []
+  let len = 0
+  for (const t of done) {
+    const add = t.title.length + (picked.length ? 3 : 0)
+    if (picked.length >= 2 && len + add > 20) break
+    picked.push(t.title); len += add
+  }
+  const titles = picked.join(' · ')
+  return done.length > picked.length ? `${titles} 等 ${done.length} 部` : titles
 }
 
 // 每组以自有的沉静色驱动徽章/悬停(--card-accent);易经的 cinnabar 在门户外壳被映射为墨色。
@@ -64,13 +72,12 @@ export default function MasterPortalPage({ onSearch }) {
     col += n
     if (col > COLS) { col = 1; row += 1 }
   }
+  const lastRow = Math.max(...families.map((f) => f.pos.row))
   const renderCard = (s) => (
     <a key={s.key} href={siteEntryHref(s, protocol, hostname)} className="master-portal__card" style={accentStyle(s)}>
       <span className="master-portal__seal">{s.brand}</span>
-      <span className="master-portal__body">
-        <span className="master-portal__titles">{s.portalTitle}</span>
-        <span className="master-portal__desc">{siteDesc(s)}</span>
-      </span>
+      <span className="master-portal__titles">{s.portalTitle}</span>
+      <span className="master-portal__desc">{siteDesc(s)}</span>
     </a>
   )
   const Heading = landing ? 'h2' : 'h1'
@@ -83,7 +90,7 @@ export default function MasterPortalPage({ onSearch }) {
       </header>
       <div className="master-portal__grid">
         {families.map((f) => (
-          <section key={f.key} className={`master-portal__family ${f.pos.cont ? 'master-portal__family--cont' : ''}`} aria-label={f.label}
+          <section key={f.key} className={`master-portal__family ${f.pos.cont ? 'master-portal__family--cont' : ''} ${f.pos.row === lastRow ? 'master-portal__family--last' : ''}`} aria-label={f.label}
             style={{ '--c': f.pos.col, '--s': f.pos.span, '--r': f.pos.row }}>
             <h3 className="master-portal__cap">
               <span className="master-portal__cap-bar" aria-hidden="true" />
@@ -100,7 +107,7 @@ export default function MasterPortalPage({ onSearch }) {
 
   return (
     <div className={`master-portal ${landing ? 'master-portal--landing' : ''}`}>
-      {landing ? <PortalLanding shelf={shelf} /> : shelf}
+      {landing ? <PortalLanding shelf={shelf} groupCount={sites.length} /> : shelf}
       {/* 招牌入口:赛博·百家争鸣——/hexagram 上是一条紧凑横幅;首页 `/` 已展开成与书架平行的一段(DebatesShowcase),不重复 */}
       {!landing && (
       <Link to="/debates" className="master-portal__debates" aria-label="赛博 · 百家争鸣">
@@ -113,12 +120,15 @@ export default function MasterPortalPage({ onSearch }) {
       </Link>
       )}
       <PortalStudyTrail />
-      <p className="master-portal__links">
-        <Link to="/concepts" className="master-portal__about-link">义理专题 · 跨派概念</Link>
-        <Link to="/mingju" className="master-portal__about-link">名句集 · 每日一句</Link>
-        <Link to="/timeline" className="master-portal__about-link">全站时间轴 · 诸书成书年代</Link>
-        <Link to="/renwu" className="master-portal__about-link">人物志 · 诸书背后的人</Link>
-      </p>
+      {/* 首页 `/` 的这四个入口已提成「索引」段(PortalLanding),这里只在 /hexagram 出 */}
+      {!landing && (
+        <p className="master-portal__links">
+          <Link to="/concepts" className="master-portal__about-link">义理专题 · 跨派概念</Link>
+          <Link to="/mingju" className="master-portal__about-link">名句集 · 每日一句</Link>
+          <Link to="/timeline" className="master-portal__about-link">全站时间轴 · 诸书成书年代</Link>
+          <Link to="/renwu" className="master-portal__about-link">人物志 · 诸书背后的人</Link>
+        </p>
+      )}
     </div>
   )
 }

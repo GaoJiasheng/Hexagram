@@ -25,7 +25,7 @@ const num = (n) => (n >= 1000 ? n.toLocaleString('en-US') : String(n))
 
 // 2026-09-30 owner review:首页去掉「这些书里有些东西别处没有」招牌样例与「凭什么信」两段(后者仍在跋里),首页只留 主张 → 书架 → 最近新收。
 
-export default function PortalLanding({ shelf }) {
+export default function PortalLanding({ shelf, groupCount }) {
   const [stats, setStats] = useState(null)
   const [recent, setRecent] = useState([])
 
@@ -42,12 +42,12 @@ export default function PortalLanding({ shelf }) {
     <>
       {/* ── 第一屏:说清楚这是什么 ───────────────────────────────── */}
       <section className="landing-hero">
-        <p className="landing-hero__eyebrow">观象</p>
+        <span className="landing-hero__seal" aria-hidden="true">观象</span>
         <h1 className="landing-hero__claim">
           {stats ? `${num(stats.books)} 部典籍,` : ''}逐字校过的白话
         </h1>
         <p className="landing-hero__sub">
-          原文、白话译注、每章延伸与深读。经、子、集三部,十三组同站。
+          原文、白话译注、每章延伸与深读。经、子、集三部,{groupCount ? `${groupCount} 组同站` : '诸组同站'}。
         </p>
         {stats && (
           <p className="landing-hero__stats">
@@ -68,12 +68,38 @@ export default function PortalLanding({ shelf }) {
       {/* ── 第三屏:赛博 · 百家争鸣(与书架平行的大段,owner 2026-09-30) ── */}
       <DebatesShowcase />
 
+      {/* ── 第四段:索引——换一条路进书(与书架 / 争鸣同款页头;原页脚四个小链接提上来) ── */}
+      <section className="idx" aria-label="索引">
+        <header className="master-portal__head">
+          <h2 className="master-portal__title">索引</h2>
+          <p className="master-portal__sub">不从书进,从概念、名句、年代、人进</p>
+        </header>
+        <div className="idx__doors">
+          <Link to="/concepts" className="door">
+            <span className="door__head"><span className="door__name">义理专题</span>{stats && <span className="door__n">{stats.concepts} 组概念</span>}</span>
+            <span className="door__desc">同一个「格物」「无为」「性」,各家各说——跨派概念对读,每条标出处章节</span>
+          </Link>
+          <Link to="/mingju" className="door">
+            <span className="door__head"><span className="door__name">名句集</span>{stats && <span className="door__n">{num(stats.mingju)} 条</span>}</span>
+            <span className="door__desc">十四组名句,每日一句;每句都能点回它在原文里的那一章</span>
+          </Link>
+          <Link to="/timeline" className="door">
+            <span className="door__head"><span className="door__name">全站时间轴</span>{stats?.timeline > 0 && <span className="door__n">{stats.timeline} 部</span>}</span>
+            <span className="door__desc">诸书成书年代与诸人生卒摆在同一条轴上:谁与谁同时,谁接着谁</span>
+          </Link>
+          <Link to="/renwu" className="door">
+            <span className="door__head"><span className="door__name">人物志</span>{stats?.people > 0 && <span className="door__n">{stats.people} 人</span>}</span>
+            <span className="door__desc">撰人、译者、注家、编者,一人一篇小传:哪些说法靠得住,哪些只是相传</span>
+          </Link>
+        </div>
+      </section>
+
       {recent?.length > 0 && (
         <section className="landing-recent" aria-label="最近新收">
-          <h2 className="landing-h2">
-            最近新收
-            <a className="landing-recent__rss" href="/feed.xml" title="订阅更新">RSS</a>
-          </h2>
+          <header className="master-portal__head">
+            <h2 className="master-portal__title">最近新收</h2>
+            <p className="master-portal__sub">新入库的书 · <a className="landing-recent__rss" href="/feed.xml" title="订阅更新">RSS</a></p>
+          </header>
           <ul className="landing-recent__list">
             {recent.map((r) => (
               <li key={r.href}>

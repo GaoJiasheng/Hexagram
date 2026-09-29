@@ -15,7 +15,11 @@ export default function DebatesShowcase() {
     <section className="dshow" aria-label="赛博 · 百家争鸣">
       <header className="master-portal__head">
         <h2 className="master-portal__title">赛博 · 百家争鸣</h2>
-        <p className="master-portal__sub">{TOPICS.length} 场跨派对辩 · 四门八类 · 会讲而已，不评输赢 · 每句引文逐字校过是原文</p>
+        <p className="master-portal__sub">{TOPICS.length} 场跨派对辩 · 四门八类 · 会讲而已，不评输赢</p>
+        <span className="master-portal__head-links">
+          <Link to="/debates" className="master-portal__head-link">全部 {TOPICS.length} 辩 ›</Link>
+          <Link to="/debates/map" className="master-portal__head-link">诸子拓扑图 ›</Link>
+        </span>
       </header>
       <p className="dshow__epigraph">{EPIGRAPH.text} ——《{EPIGRAPH.source}》</p>
       <div className="dshow__grid">
@@ -34,17 +38,13 @@ export default function DebatesShowcase() {
           <span className="dshow__go">进去看 ›</span>
         </Link>
         <div className="dshow__right">
-          <div className="dshow__doors">
+          <div className="doors">
             {divItems.map((x) => (
-              <Link key={x.key} to={`/debates?div=${x.key}`} className="dshow__door">
-                <span className="dshow__door-head"><span className="dshow__door-name">{x.label}</span><span className="dshow__door-n">{x.count} 辩</span></span>
-                <span className="dshow__door-desc">{x.desc}</span>
+              <Link key={x.key} to={`/debates?div=${x.key}`} className="door">
+                <span className="door__head"><span className="door__name">{x.label}</span><span className="door__n">{x.count} 辩</span></span>
+                <span className="door__desc">{x.desc}</span>
               </Link>
             ))}
-          </div>
-          <div className="dshow__links">
-            <Link to="/debates" className="dshow__link">全部 {TOPICS.length} 辩 ›</Link>
-            <Link to="/debates/map" className="dshow__link">诸子拓扑图 · 他们历史上真的怎么说彼此 ›</Link>
           </div>
         </div>
       </div>
