@@ -3334,34 +3334,46 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .module-portal__close:hover { color: var(--ink); }
 
 /* 三教门户(v15 隐藏入口 /hexagram)——仅 owner 入口,简素卡片跨域跳转 */
-.master-portal { --portal-card-w: 222px; min-height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; padding: 48px 24px; }
-.master-portal__hint { font-size: 0.74rem; color: var(--ink-faint); letter-spacing: 0.22em; text-indent: 0.22em; text-transform: none; }
+.master-portal { min-height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; padding: 48px 24px; }
+.master-portal__hint { font-size: 0.74rem; color: var(--ink-faint); letter-spacing: 0.22em; text-indent: 0.22em; text-transform: none; text-align: center; }
 /* 门户不放搜索按钮(owner 觉得突兀);搜索靠 / 或 ⌘K,各分站顶栏亦有图标 */
-/* 首行:易经 / 道藏 两枚同宽卡居中,中以小太极桥相系而不并合 */
-.master-portal__featured { display: flex; justify-content: center; align-items: center; gap: 0; }
-.master-portal__bond { display: flex; align-items: center; gap: 6px; padding: 0 12px; flex-shrink: 0; }
-.master-portal__bond-line { display: block; width: 16px; height: 1px; background: var(--line); }
+/* ── 书架按门类分行(2026-09-30):左侧竖排门类签 + 右侧一行横向卡片 ──
+   宽屏:每个门类恰好一行(诸子五组也是一行),整面书架撑满 1120px,不再是窄塔 + 悬一张孤卡;
+   窄屏:门类签转横向,卡片自动折成两列 / 一列。卡片横向(印章左、题与书目右)比竖排卡矮一半,信息密度更像书架。 */
+.master-portal__shelf { width: 100%; max-width: 1120px; display: flex; flex-direction: column; gap: 22px; }
+.master-portal__family { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 0 20px; align-items: stretch; }
+.master-portal__family-head { display: flex; flex-direction: column; align-items: center; gap: 8px; padding-top: 8px; border-right: 1px solid var(--line); }
+.master-portal__family-label { writing-mode: vertical-rl; font-family: var(--font-serif); font-size: 1.02rem; letter-spacing: 0.3em; color: var(--ink); }
+.master-portal__family-rule { width: 1px; height: 14px; background: var(--cinnabar-pure); opacity: 0.7; }
+.master-portal__family-note { writing-mode: vertical-rl; font-size: 0.66rem; letter-spacing: 0.18em; color: var(--ink-faint); }
+/* 每行列数 = 该门类的组数(--n 由组件给),一行铺满;组数多的门类卡片自然窄些 */
+.master-portal__family-cards { display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: 14px; }
+/* 易道:两卡之间夹小太极桥(相系而不并合) */
+.master-portal__family--bond .master-portal__family-cards { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; }
+.master-portal__bond { display: flex; align-items: center; gap: 6px; padding: 0 6px; flex-shrink: 0; }
+.master-portal__bond-line { display: block; width: 14px; height: 1px; background: var(--line); }
 .master-portal__bond-node { display: flex; align-items: center; justify-content: center; width: 27px; height: 27px; border: 1px solid var(--line); border-radius: 50%; background: var(--paper-raised); color: var(--ink-soft); font-size: 0.85rem; font-style: normal; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
-/* 等宽等高网格:所有块(含易经/道藏)同一固定宽,彻底齐整 */
-.master-portal__cards { display: grid; grid-template-columns: repeat(3, var(--portal-card-w)); gap: 16px; justify-content: center; margin: 0 auto; }
-/* 601–759px(平板竖屏/窄窗)三列塞不下(222×3+16×2+边距 ≈ 738)会横向溢出、右列被裁。
-   原先只有 3 列与 ≤600 单列两档,中间这段是缺口。补两列档,不动两端。 */
-@media (min-width: 601px) and (max-width: 759px) {
-  .master-portal__cards { grid-template-columns: repeat(2, var(--portal-card-w)); }
-}
-.master-portal__card { --card-accent: var(--ink-soft); width: var(--portal-card-w); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 13px; min-height: 172px; padding: 26px 20px; border: 1px solid var(--line); border-radius: 11px; background: var(--paper-raised); text-decoration: none; transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; }
-.master-portal__card:hover { border-color: var(--card-accent); transform: translateY(-3px); box-shadow: 0 8px 22px -12px color-mix(in srgb, var(--card-accent) 55%, transparent); }
-.master-portal__seals { display: flex; gap: 8px; }
+.master-portal__card { --card-accent: var(--ink-soft); display: flex; align-items: center; gap: 14px; min-height: 104px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 11px; background: var(--paper-raised); text-decoration: none; transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; }
+.master-portal__card:hover { border-color: var(--card-accent); transform: translateY(-2px); box-shadow: 0 8px 22px -12px color-mix(in srgb, var(--card-accent) 55%, transparent); }
 /* 朱印式徽章:每组自有的沉静色;印文用纸色,随明暗自动反转保对比 */
-.master-portal__seal { width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; background: var(--card-accent); color: var(--paper-raised); font-family: var(--font-serif); font-size: 1rem; letter-spacing: 0.04em; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1), 0 1px 2px rgba(0,0,0,0.12); }
+.master-portal__seal { flex: none; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: var(--card-accent); color: var(--paper-raised); font-family: var(--font-serif); font-size: 0.98rem; letter-spacing: 0.04em; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1), 0 1px 2px rgba(0,0,0,0.12); }
+.master-portal__body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .master-portal__titles { font-family: var(--font-serif); font-size: 0.98rem; color: var(--ink); letter-spacing: 0.03em; }
-.master-portal__desc { font-size: 0.75rem; color: var(--ink-faint); line-height: 1.55; text-align: center; max-width: 15em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-/* 窄屏:网格与首行均转单列,太极桥转竖向 */
-@media (max-width: 600px) {
-  .master-portal { --portal-card-w: 100%; }
-  .master-portal__cards { grid-template-columns: minmax(0, 1fr); width: 100%; max-width: 320px; }
-  .master-portal__featured { flex-direction: column; width: 100%; max-width: 320px; }
-  .master-portal__bond { flex-direction: column; padding: 12px 0; }
+.master-portal__desc { font-size: 0.74rem; color: var(--ink-faint); line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+/* 中宽(平板 / 窄窗):五组一行塞不下,退回固定三列;门类签仍竖排 */
+@media (max-width: 1080px) {
+  .master-portal__family-cards { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+  .master-portal__family--bond .master-portal__family-cards { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
+}
+/* 窄屏:门类签转横向作小标题,卡片单列,太极桥转竖向 */
+@media (max-width: 640px) {
+  .master-portal__family { grid-template-columns: minmax(0, 1fr); gap: 10px 0; }
+  .master-portal__family-head { flex-direction: row; align-items: baseline; gap: 10px; padding: 0 0 6px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .master-portal__family-label, .master-portal__family-note { writing-mode: horizontal-tb; letter-spacing: 0.18em; }
+  .master-portal__family-rule { width: 18px; height: 1px; align-self: center; }
+  .master-portal__family-cards, .master-portal__family--bond .master-portal__family-cards { grid-template-columns: minmax(0, 1fr); }
+  .master-portal__bond { flex-direction: column; padding: 4px 0; justify-self: center; }
+  .master-portal__bond-line { width: 1px; height: 12px; }
 }
 .master-portal__about { margin-top: 28px; text-align: center; }
 .master-portal__about-link { font-size: 0.82rem; color: var(--ink-faint); text-decoration: none; }
@@ -4429,7 +4441,9 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
    不会替子元素居中。只写 max-width 的结果是整块靠左贴边(实测偏 166px)。
    **这个错犯过一次没查出来**:当时只比了「各段之间边界是否一致」,
    都一致、但整体是歪的。以后验居中一律拿**视口中心**作参照,别只比段与段。 */
-.master-portal--landing { max-width: 900px; margin-inline: auto; --portal-col: 698px; }
+.master-portal--landing { max-width: 1180px; margin-inline: auto; --portal-col: 698px; }
+/* 书架比其他段宽(按门类分行后一行五组),其余段仍按 --portal-col 居中 */
+.master-portal--landing > #portal-shelf { max-width: 1120px; }
 .master-portal--landing > * { width: 100%; max-width: var(--portal-col); }
 /* 书架被多包了一层,这里把 .master-portal 原有的 flex 语义补回来 */
 #portal-shelf {

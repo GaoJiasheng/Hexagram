@@ -32,44 +32,65 @@ export default function MasterPortalPage({ onSearch }) {
   const protocol = typeof window !== 'undefined' ? window.location.protocol : 'https:'
   const hostname = typeof window !== 'undefined' ? window.location.hostname : ''
 
-  // 所有卡同一形态、同一固定宽——单站组直接成卡;多站组(易道)的两站亦是普通卡,
-  // 只是同居首行、以小太极桥相连(相系而不并合)。
-  // portalHidden 组(骨架期、内容未铺满,如观数)从「列全部组」的枚举里跳过——只影响本页,
-  // 该组仍可直连 URL 访问,不影响它自己的路由/搜索/数据注册。
+  // 2026-09-30 门户重排(owner:「三列等宽卡在宽屏上丑」):
+  // 十五个组不再摊成一面等宽卡片墙,而是**按门类分行**——左侧竖排的门类标签(易道 / 儒释 / 诸子 / 方术 / 集部)
+  // 像书架的分类签,每行放该门类的几组;卡片改横向(印章在左、题与书目在右),宽屏一行铺满、窄屏自动折行,
+  // 手机上门类签转横向、卡片单列。易道两卡仍以小太极桥相系(「桥」需同组)。
+  // 门类是门户的**呈现分组**,不动 registry 的 group(隔离/域名语义不变);不在表里的新组落到「其他」行。
+  // portalHidden 组(骨架期)仍跳过——只影响本页,该组仍可直连 URL。
   const groups = allGroups().filter((g) => !sitesInGroup(g).some((s) => s.portalHidden))
-  const featuredGroup = groups.find(g => sitesInGroup(g).length > 1) // 易道
-  const singleGroups = groups.filter(g => sitesInGroup(g).length === 1)
+  const sites = groups.flatMap((g) => sitesInGroup(g))
+  const byKey = Object.fromEntries(sites.map((s) => [s.key, s]))
+  const FAMILIES = [
+    { key: 'yidao', label: '易道', note: '一体两翼', keys: ['yijing', 'dao'], bond: true },
+    { key: 'rushi', label: '儒释', note: '三家心性', keys: ['ru', 'fo', 'xin'] },
+    { key: 'zhuzi', label: '诸子', note: '百家之言', keys: ['fa', 'mo', 'bing', 'zong', 'moulue'] },
+    { key: 'fangshu', label: '方术', note: '医经术数', keys: ['zhongyi', 'mingli'] },
+    { key: 'jibu', label: '集部', note: '诗词曲', keys: ['tangshi', 'songci', 'yuanqu'] },
+  ]
+  const placed = new Set(FAMILIES.flatMap((f) => f.keys))
+  const rest = sites.filter((s) => !placed.has(s.key)).map((s) => s.key)
+  const families = [...FAMILIES, ...(rest.length ? [{ key: 'qita', label: '其他', note: '', keys: rest }] : [])]
+    .map((f) => ({ ...f, sites: f.keys.map((k) => byKey[k]).filter(Boolean) }))
+    .filter((f) => f.sites.length)
   const renderCard = (s) => (
     <a key={s.key} href={siteEntryHref(s, protocol, hostname)} className="master-portal__card" style={accentStyle(s)}>
-      <span className="master-portal__seals"><span className="master-portal__seal">{s.brand}</span></span>
-      <span className="master-portal__titles">{s.portalTitle}</span>
-      <span className="master-portal__desc">{siteDesc(s)}</span>
+      <span className="master-portal__seal">{s.brand}</span>
+      <span className="master-portal__body">
+        <span className="master-portal__titles">{s.portalTitle}</span>
+        <span className="master-portal__desc">{siteDesc(s)}</span>
+      </span>
     </a>
+  )
+  const bond = (
+    <span className="master-portal__bond" aria-hidden="true">
+      <span className="master-portal__bond-line" />
+      <span className="master-portal__bond-node">☯</span>
+      <span className="master-portal__bond-line" />
+    </span>
   )
 
   const shelf = (
-    <>
+    <div className="master-portal__shelf">
       <p className="master-portal__hint">观象 · 诸学门户</p>
-      {featuredGroup && (
-        <div className="master-portal__featured">
-          {sitesInGroup(featuredGroup).map((s, i) => (
-            <Fragment key={s.key}>
-              {i > 0 && (
-                <span className="master-portal__bond" aria-hidden="true">
-                  <span className="master-portal__bond-line" />
-                  <span className="master-portal__bond-node">☯</span>
-                  <span className="master-portal__bond-line" />
-                </span>
-              )}
-              {renderCard(s)}
-            </Fragment>
-          ))}
-        </div>
-      )}
-      <div className="master-portal__cards">
-        {singleGroups.map(g => renderCard(sitesInGroup(g)[0]))}
-      </div>
-    </>
+      {families.map((f) => (
+        <section key={f.key} className={`master-portal__family ${f.bond ? 'master-portal__family--bond' : ''}`} aria-label={f.label}>
+          <div className="master-portal__family-head">
+            <span className="master-portal__family-label">{f.label}</span>
+            <span className="master-portal__family-rule" aria-hidden="true" />
+            {f.note && <span className="master-portal__family-note">{f.note}</span>}
+          </div>
+          <div className="master-portal__family-cards" style={{ '--n': f.sites.length }}>
+            {f.sites.map((s, i) => (
+              <Fragment key={s.key}>
+                {f.bond && i > 0 && bond}
+                {renderCard(s)}
+              </Fragment>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
   )
 
   return (
