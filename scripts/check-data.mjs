@@ -5,6 +5,7 @@
 // 错误 → 退出码 1;译文缺失等只作为信息项报告。
 
 import { core as punctCore } from './lib/punct-layer.mjs'
+import { redlineHits } from './lib/redline.mjs'
 import fs from 'node:fs'
 import { validateWidget } from '../src/features/shared/widgets/schema.js'
 import { validateMatrixCell, MATRIX_MONTHS } from './lib/mingli-matrix.mjs'
@@ -15,6 +16,10 @@ import { fileURLToPath } from 'node:url'
 import { TRIGRAMS, buildHexagramIndex, lineTitle } from './lib/hexagram-table.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
+// 人读复核过、确认为误报的白话章(A4,2026-09-30):key 形如 dao/daodejing#33,值 {sig, words, at, by, note, advice?}。
+// sig 是命中片段的签名(scripts/lib/redline.mjs),章文一改即失效重报;advice 是中医「用药建议句」检查里已复核的命中词。
+const rvPath = path.join(ROOT, 'scripts/lib/redline-reviewed.json')
+const REDLINE_REVIEWED = fs.existsSync(rvPath) ? JSON.parse(fs.readFileSync(rvPath, 'utf8')) : {}
 const errors = []
 const infos = []
 const warns = []
@@ -936,6 +941,8 @@ if (fs.existsSync(glossaryPath)) {
         while ((m = ADVICE.exec(text))) {
           const ctx = text.slice(Math.max(0, m.index - 45), m.index + 45)
           if (!NEG.test(ctx)) {
+            const rv = REDLINE_REVIEWED[`zhongyi/${file.replace('.json', '')}#${ch}`]
+            if ((rv?.advice || []).includes(m[0])) continue   // 人读复核过的命中词(否定/研读语境),不再刷屏
             warn(`中医白话 ${file.replace('.json', '')}#${ch}: 疑似以本文口吻给用药建议「${m[0]}」,请人工复核`)
             nAdvice++
           }
@@ -1243,21 +1250,9 @@ if (fs.existsSync(glossaryPath)) {
     const c = book.chapters.find((x) => x.no === Number(ch))
     return c ? c.paragraphs.map((p) => p.original).join('') : null
   }
-  // 各组红线触发词(软警告,人工复核;workflow 校对 agent 是主防线)
-  const RED_SHI = /(人生启示|人生哲理|处世哲理|给我们的启示|告诉我们一个道理|励志|正能量|心灵鸡汤|这首诗教我们|启示我们要|值得我们学习)/
-  const REDLINE = {
-    zhongyi: /(包治|药到病除|立竿见影|疗效显著|可治愈|用法用量为|每日.{0,4}服用|建议服用|对照自诊|照方自疗)/,
-    moulue: /(教你如何驭|实操技巧|职场必备|学会这招|驭人之术值得|照着用就能)/,
-    dao: /(长生不老|羽化登仙|修炼成仙|包你成仙|烧符念咒可)/,
-    fo: /(消业障|保佑你|必得往生|皈依方能|烧香拜佛即可)/,
-    yijing: /(预示你|预示着你|你的运势|你将.{0,4}(大吉|大凶|有难)|必有.{0,3}之(灾|祸)|趋吉避凶之法|算出你|占得此卦.{0,8}(宜|忌|大吉|大凶)|你的命运)/,
-    // 诗词曲三组第一红线是「不鸡汤」——给诗写「人生启示」比译错一个字更糟(见 poetry-production-standard.md §6)
-    tangshi: RED_SHI, songci: RED_SHI, yuanqu: RED_SHI,
-    // 观数第一红线是「研习不断命」:我方文字不得对读者下断语、不得教人拿去套(原典断语在 quote 里照录不算)
-    mingli: /(你的命|你的八字|你命中|你这个命|命中注定|必定(发财|升官|离婚|克)|可以断定此人|据此可断|照此断命|学会了就能(算|断)|教你(算|断|看)命|(大吉|大凶)之命|改运|转运方法|旺夫|克夫|克妻)/,
-  }
   let nArt = 0, nFig = 0, nBadCite = 0
   let nWidget = 0
+  let nRedReviewed = 0
   const cover = {}
   for (const corpus of corpora) {
     const dir = path.join(ROOT, `src/data/${corpus}/baihua`)
@@ -1310,15 +1305,20 @@ if (fs.existsSync(glossaryPath)) {
             err(`${tag}: ${b.type} 块无 items`)
           }
         }
-        // 红线软扫描(整篇)
-        const re = REDLINE[corpus]
-        if (re && re.test(JSON.stringify(a))) warn(`${tag}: 疑触组红线词,请人工复核`)
+        // 红线软扫描(整篇,scripts/lib/redline.mjs):报命中片段;人读复核过且签名未变的章不再刷屏(仍计数)
+        const { hits, sig } = redlineHits(corpus, a)
+        if (hits.length) {
+          const key = tag.replace(/^白话 /, '')
+          const rv = REDLINE_REVIEWED[key]
+          if (rv && rv.sig === sig) nRedReviewed++
+          else warn(`${tag}: 疑触组红线词,请人工复核${rv ? '(复核后命中已变,重看)' : ''} —— ${hits.slice(0, 3).map((h) => `…${h.ctx}…`).join(' | ')}`)
+        }
       }
     }
   }
   if (nArt) {
     const parts = Object.entries(cover).sort().map(([k, n]) => `${k} ${n}`).join(' · ')
-    infos.push(`白话覆盖: ${nArt} 章 · ${nFig} 图 · ${nWidget} 交互件 · ${nBadCite} 坏引文 | ${parts}`)
+    infos.push(`白话覆盖: ${nArt} 章 · ${nFig} 图 · ${nWidget} 交互件 · ${nBadCite} 坏引文 | ${parts}` + (nRedReviewed ? ` · 红线已人读复核 ${nRedReviewed} 章` : ''))
   }
 }
 
@@ -1376,6 +1376,39 @@ if (fs.existsSync(glossaryPath)) {
       if (!p.label || !p.note) err(`${who} 缺 label 或 note`)
     }
     infos.push(`全站时间轴: ${nDated} 部有年代 · ${nPseudo} 部托名不上轴 · 人物志 ${rw.people.length} 人(${rw.people.filter((p) => p.yijing || p.paragraphs?.length === 2).length} 有小传)`)
+  }
+}
+
+// ---------- 7f. 二十四期 · 交互化改造的校验闸(design-v24 §0.2) ----------
+// 每件一个模块 scripts/lib/check-<name>.mjs,默认导出 check(ctx);模块不存在即跳过(代理逐件交付,主会话逐件接)。
+// ctx.chapterText(corpus, slug, ch) 返回「章题 + 全部段落原文」拼接,凡指章必回查 kw / quote。
+{
+  const gates = [
+    'check-hanfeizi-chushuo', 'check-lunyu-people', 'check-cantongqi-moon', 'check-fo-concepts',
+    'check-ru-lineage', 'check-zhuangzi-fables', 'check-rhyme', 'check-shijing-map', 'check-zhanguoce-map',
+  ]
+  const chCache = {}
+  const chapterText = (corpus, slug, ch) => {
+    const k = `${corpus}/${slug}`
+    if (!(k in chCache)) {
+      const f = path.join(ROOT, `src/data/${corpus}/classics/${slug}.json`)
+      chCache[k] = fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : null
+    }
+    const book = chCache[k]
+    if (!book) return null
+    const c = (book.chapters || book).find((x) => x.no === ch)
+    return c ? (c.title || '') + c.paragraphs.map((p) => (typeof p === 'string' ? p : p.original)).join('') : null
+  }
+  const readJson = (f) => JSON.parse(fs.readFileSync(f, 'utf8'))
+  for (const g of gates) {
+    const f = path.join(ROOT, `scripts/lib/${g}.mjs`)
+    if (!fs.existsSync(f)) continue
+    try {
+      const mod = await import(f)
+      await mod.default({ ROOT, err, warn, info: (m) => infos.push(m), readJson, chapterText })
+    } catch (e) {
+      err(`${g}: 闸本身抛错——${e.message}`)
+    }
   }
 }
 
