@@ -311,6 +311,77 @@ function indexPages(records) {
     href: '/renwu',
     text: '人物志 撰人 译者 注家 编者 生平 小传',
   })
+  // 二十四期 · 交互化改造的页面(design-v24 §11):分享出去有题有摘要,全站搜索可命中
+  addRecord(records, {
+    id: 'page:lunyu-renwu',
+    kind: '专题',
+    site: 'ru',
+    siteTitle: '儒典研读',
+    title: '孔门弟子出场索引',
+    subtitle: '《论语》按人切开',
+    href: '/ru/lunyu/renwu',
+    text: '论语 孔门弟子 子贡 子路 颜渊 曾子 子夏 子张 冉有 宰我 樊迟 子游 出场 索引',
+  })
+  addRecord(records, {
+    id: 'page:shijing-map',
+    kind: '专题',
+    site: 'ru',
+    siteTitle: '儒典研读',
+    title: '十五国风示意图',
+    subtitle: '诗经采诗之地',
+    href: '/ru/shijing/map',
+    text: '诗经 国风 周南 召南 邶 鄘 卫 王 郑 齐 魏 唐 秦 陈 桧 曹 豳 示意图',
+  })
+  addRecord(records, {
+    id: 'page:ru-lineage',
+    kind: '专题',
+    site: 'ru',
+    siteTitle: '儒典研读',
+    title: '儒门学脉图',
+    subtitle: '孔孟荀到程朱陆王',
+    href: '/ru/lineage',
+    text: '儒门 学脉 孔子 曾子 子思 孟子 荀子 董仲舒 周敦颐 程颢 程颐 朱熹 陆九渊 王阳明 理学 心学',
+  })
+  addRecord(records, {
+    id: 'page:cantongqi-moon',
+    kind: '专题',
+    site: 'dao',
+    siteTitle: '道藏研读',
+    title: '月相纳甲盘',
+    subtitle: '参同契的月体纳甲',
+    href: '/dao/cantongqi/moon',
+    text: '参同契 月相 纳甲 震庚 兑丁 乾甲 巽辛 艮丙 坤乙 坎离 戊己 取象',
+  })
+  addRecord(records, {
+    id: 'page:zhuangzi-fables',
+    kind: '专题',
+    site: 'dao',
+    siteTitle: '道藏研读',
+    title: '庄子寓言索引',
+    subtitle: '庖丁解牛到浑沌之死',
+    href: '/dao/zhuangzi/fables',
+    text: '庄子 寓言 庖丁解牛 庄周梦蝶 浑沌 鲲鹏 朝三暮四 邯郸学步 涸辙之鲋 成语 索引',
+  })
+  addRecord(records, {
+    id: 'page:fo-concepts',
+    kind: '专题',
+    site: 'fo',
+    siteTitle: '释典研读',
+    title: '佛名相索引',
+    subtitle: '五蕴 十二因缘 四谛 六度',
+    href: '/fo/concepts',
+    text: '佛 名相 五蕴 十二处 十八界 十二因缘 四谛 八正道 六度 三法印 空 般若 涅槃 菩提 自性 不二 索引',
+  })
+  addRecord(records, {
+    id: 'page:zhanguoce-map',
+    kind: '专题',
+    site: 'zong',
+    siteTitle: '纵横研读',
+    title: '七国图与合纵时间轴',
+    subtitle: '战国策十八篇的国与年代',
+    href: '/zong/zhanguoce/map',
+    text: '战国策 七国 秦 楚 齐 燕 赵 魏 韩 合纵 连横 苏秦 张仪 示意图 时间轴',
+  })
   {
     // 人物志一人一条(2026-09-25):搜「朱熹」「鸠摩罗什」能直落人物志;易学十家的小传取 yijing/renwu.json
     const rw = readJson(path.join(SRC_DATA, 'renwu.json'))

@@ -20,6 +20,8 @@ const REGISTRY = {
   jieqi: lazy(() => import('./JieqiRing.jsx')),
   matrix: lazy(() => import('./MatrixGrid.jsx')),
   geju: lazy(() => import('./GejuFlow.jsx')),
+  moon: lazy(() => import('./MoonDial.jsx')),   // 二十四期 I6
+  ring: lazy(() => import('./RingChart.jsx')),  // 二十四期 I7
 }
 
 class WidgetBoundary extends Component {

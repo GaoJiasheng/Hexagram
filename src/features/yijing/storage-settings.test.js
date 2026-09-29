@@ -72,3 +72,26 @@ describe('font scale settings migration', () => {
     })
   })
 })
+
+describe('prosody(诗词曲格律层开关,design-v24 §7.3)', () => {
+  beforeEach(() => {
+    Object.defineProperty(globalThis, 'localStorage', {
+      value: memoryStorage(),
+      configurable: true,
+    })
+  })
+
+  it('默认关,开关持久', () => {
+    expect(DEFAULT_SETTINGS.prosody).toBe(false)
+    expect(getSettings().prosody).toBe(false)
+    saveSettings({ ...getSettings(), prosody: true })
+    expect(getSettings().prosody).toBe(true)
+  })
+
+  it('损坏值归为布尔', () => {
+    saveSettings({ ...DEFAULT_SETTINGS, prosody: 'yes' })
+    expect(getSettings().prosody).toBe(true)
+    saveSettings({ ...DEFAULT_SETTINGS, prosody: 0 })
+    expect(getSettings().prosody).toBe(false)
+  })
+})

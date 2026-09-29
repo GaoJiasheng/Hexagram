@@ -1,0 +1,6 @@
+/* 书架页头副标题里的一行入口(儒 / 心两组首页共用) */
+.lineage-entry { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; margin-top: 8px; }
+.lineage-entry__link { font-family: var(--font-serif); color: var(--cinnabar); text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--cinnabar) 45%, transparent); }
+.lineage-entry__link:hover { border-bottom-color: var(--cinnabar); }
+.lineage-entry__hint { font-size: 0.82em; color: var(--ink-soft); }

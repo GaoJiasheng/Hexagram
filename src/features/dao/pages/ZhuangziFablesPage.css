@@ -1,0 +1,132 @@
+/* 庄子寓言索引(design-v24 §6)—— 只用站内 token,明暗随主题;道藏站下 --cinnabar 即玄青主色。
+   320px 不横向溢出:网格用 minmax(min(100%, …)),长串原文可断行。 */
+
+.zf-page { max-width: 1040px; margin: 0 auto; }
+
+.zf-crumb { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.zf-crumb__books { display: inline-flex; flex-wrap: wrap; gap: 4px 12px; }
+
+.zf-intro {
+  margin: 8px 0 20px; max-width: var(--read-w, 720px);
+  font-size: calc(0.95rem * var(--read-scale, 1)); line-height: 1.95; color: var(--ink);
+}
+.zf-intro strong { font-weight: 600; color: var(--cinnabar); }
+
+/* ── 成语速查 ─────────────────────────────────────── */
+.zf-search {
+  margin: 0 0 18px; padding: 14px 16px 12px;
+  border: 1px solid var(--line); border-radius: 12px; background: var(--paper-raised);
+}
+.zf-search__label { display: block; margin-bottom: 6px; font-size: 0.8rem; letter-spacing: 0.08em; color: var(--ink-faint); }
+.zf-search__input {
+  box-sizing: border-box; width: 100%; max-width: 420px; padding: 8px 12px;
+  font: inherit; font-size: 0.95rem; color: var(--ink);
+  background: var(--paper); border: 1px solid var(--line); border-radius: 8px;
+}
+.zf-search__input:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 1px; border-color: transparent; }
+.zf-search__status { margin: 8px 0 10px; font-size: 0.8rem; color: var(--ink-soft); line-height: 1.6; }
+
+.zf-cloud { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.zf-more {
+  margin-top: 10px; padding: 3px 12px; border-radius: 12px; cursor: pointer;
+  font: inherit; font-size: 0.8rem; color: var(--ink-soft); background: transparent; border: 1px solid var(--line);
+}
+.zf-more:hover { color: var(--cinnabar); border-color: var(--cinnabar); }
+.zf-more:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 2px; }
+.zf-chip {
+  display: inline-block; padding: 2px 10px; border-radius: 12px;
+  font-family: var(--font-serif); font-size: 0.88rem; line-height: 1.6; text-decoration: none;
+  color: var(--ink); background: var(--paper); border: 1px solid color-mix(in srgb, var(--cinnabar) 30%, var(--line));
+}
+.zf-chip--later { border-style: dashed; color: var(--ink-soft); }
+.zf-chip:hover { color: var(--cinnabar); border-color: var(--cinnabar); }
+.zf-chip:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 2px; }
+
+.zf-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ── 分部速跳 ─────────────────────────────────────── */
+.zf-jump { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 8px; }
+.zf-jump__item {
+  display: inline-flex; align-items: baseline; gap: 6px; padding: 4px 14px; border-radius: 16px;
+  font-size: 0.9rem; text-decoration: none; color: var(--ink-soft); border: 1px solid var(--line);
+}
+.zf-jump__item:hover { color: var(--cinnabar); border-color: color-mix(in srgb, var(--cinnabar) 40%, var(--line)); }
+.zf-jump__item:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 2px; }
+.zf-jump__n { font-size: 0.75rem; color: var(--ink-faint); }
+
+/* ── 分部 / 篇 ─────────────────────────────────────── */
+.zf-book { margin-top: 28px; scroll-margin-top: 72px; }
+.zf-book__title {
+  display: flex; align-items: baseline; gap: 10px; margin: 0 0 4px; padding-bottom: 8px;
+  font-family: var(--font-serif); font-size: 1.35rem; font-weight: 600; color: var(--ink);
+  border-bottom: 2px solid color-mix(in srgb, var(--cinnabar) 45%, var(--line));
+}
+.zf-book__n { font-size: 0.8rem; font-weight: 400; color: var(--ink-faint); font-family: inherit; }
+.zf-empty { margin: 10px 0; font-size: 0.85rem; color: var(--ink-faint); }
+
+.zf-pian { margin-top: 18px; }
+.zf-pian__title {
+  display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; margin: 0 0 10px;
+  font-family: var(--font-serif); font-size: 1.05rem; font-weight: 600; color: var(--cinnabar);
+}
+.zf-pian__read { font-family: inherit; font-size: 0.78rem; font-weight: 400; color: var(--ink-faint); text-decoration: none; }
+.zf-pian__read:hover { color: var(--cinnabar); text-decoration: underline; }
+
+.zf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 290px), 1fr)); gap: 12px; }
+
+.zf-card {
+  display: flex; flex-direction: column; min-width: 0; padding: 14px 16px 12px;
+  border: 1px solid var(--line); border-radius: 10px; background: var(--paper-raised);
+  scroll-margin-top: 80px; transition: box-shadow 0.2s, border-color 0.2s;
+}
+.zf-card:target { border-color: var(--cinnabar); box-shadow: 0 0 0 2px color-mix(in srgb, var(--cinnabar) 35%, transparent); }
+.zf-card__title { margin: 0 0 6px; font-family: var(--font-serif); font-size: 1.08rem; font-weight: 600; color: var(--ink); }
+.zf-card__gist {
+  margin: 0 0 10px; font-size: calc(0.88rem * var(--read-scale, 1)); line-height: 1.85; color: var(--ink-soft);
+  overflow-wrap: anywhere;
+}
+.zf-card__read {
+  margin-top: auto; align-self: flex-end; padding-top: 6px;
+  font-size: 0.82rem; color: var(--cinnabar); text-decoration: none;
+}
+.zf-card__read:hover { text-decoration: underline; }
+.zf-card__read:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 2px; border-radius: 3px; }
+
+/* ── 成语 pill + 注记 ─────────────────────────────── */
+.zf-pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 4px; }
+.zf-pill {
+  display: inline-flex; align-items: center; gap: 5px; padding: 2px 10px; border-radius: 12px; cursor: pointer;
+  font: inherit; font-family: var(--font-serif); font-size: 0.86rem; line-height: 1.6;
+  color: var(--cinnabar); background: color-mix(in srgb, var(--cinnabar) 8%, var(--paper));
+  border: 1px solid color-mix(in srgb, var(--cinnabar) 35%, transparent);
+}
+.zf-pill--later { color: var(--ink-soft); background: var(--paper); border-style: dashed; border-color: var(--line); }
+.zf-pill:hover, .zf-pill.is-open { border-color: var(--cinnabar); }
+.zf-pill.is-open { background: color-mix(in srgb, var(--cinnabar) 16%, var(--paper)); color: var(--ink); }
+.zf-pill:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 2px; }
+.zf-pill__tag {
+  font-family: var(--font-sans); font-size: 0.66rem; letter-spacing: 0.02em; padding: 0 5px; border-radius: 6px;
+  color: var(--ink-faint); border: 1px solid var(--line);
+}
+
+.zf-note:empty { display: none; }
+.zf-note__body {
+  margin: 6px 0 2px; padding: 7px 10px; border-left: 3px solid var(--cinnabar); border-radius: 0 6px 6px 0;
+  background: color-mix(in srgb, var(--cinnabar) 6%, transparent);
+  font-family: var(--font-serif); font-size: 0.84rem; line-height: 1.8; color: var(--ink); overflow-wrap: anywhere;
+}
+.zf-note__src { margin-right: 4px; font-family: var(--font-sans); font-size: 0.72rem; color: var(--ink-faint); }
+.zf-note__txt { display: block; margin-top: 2px; font-family: var(--font-sans); font-size: 0.8rem; color: var(--ink-soft); }
+
+/* ── 凡例 ─────────────────────────────────────────── */
+.zf-fanli {
+  margin: 36px 0 12px; padding-top: 14px; border-top: 1px dashed var(--line); max-width: var(--read-w, 720px);
+  font-size: 0.8rem; line-height: 1.85; color: var(--ink-faint);
+}
+.zf-fanli strong { margin-right: 8px; color: var(--ink-soft); font-weight: 600; }
+
+@media (max-width: 480px) {
+  .zf-search { padding: 12px; }
+  .zf-card { padding: 12px 13px 10px; }
+  .zf-book__title { font-size: 1.2rem; }
+}

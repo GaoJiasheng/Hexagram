@@ -12,6 +12,7 @@
     "preview": "vite preview",
     "test": "vitest run --passWithNoTests",
     "data:fetch": "node scripts/fetch-data.mjs",
+    "data:fetch-rhyme": "node scripts/fetch-rhyme.mjs",
     "check-data": "node scripts/check-data.mjs",
     "data:fetch-dao": "node scripts/fetch-dao.mjs",
     "data:fetch-ru": "node scripts/fetch-corpus.mjs ru",

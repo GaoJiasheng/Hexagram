@@ -1,0 +1,4 @@
+/* 释典首页:书架之下的「名相索引」入口(design-v24 §4)。入口本身沿用全局 .daodu-entry 样式。 */
+.fo-home-extra { margin-top: 28px; }
+.fo-home-extra__entry { margin-top: 0; border-color: color-mix(in srgb, var(--cinnabar) 26%, var(--line)); border-left-color: var(--cinnabar); }
+.fo-home-extra__entry .daodu-entry__tag { background: color-mix(in srgb, var(--cinnabar) 12%, transparent); color: var(--cinnabar); }

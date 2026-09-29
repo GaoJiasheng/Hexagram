@@ -73,6 +73,8 @@ export const DEFAULT_SETTINGS = {
   // 'sans' = 系统无衬线栈(苹方/冬青黑…,不打包字体文件、无分发授权问题)。默认跟站内一致。
   readFont: 'serif', // 'serif'(字体一·宋) | 'sans'(字体二·黑)
   quoteTheme: 'classic', // 'classic'(朱印经典) | 'ink'(水墨留白) | 'moon'(暗夜月白)
+  // 诗词曲格律层(design-v24 §7.3):唐诗/宋词/元曲阅读页原文下标 平仄 ○●◐ 与句末韵部。默认关——开了才载韵书。
+  prosody: false,
 }
 const VALID_THEMES = ['light', 'paper-white', 'dark', 'system']
 const VALID_FONT_SCALES = FONT_SCALE_STEPS.map(([value]) => value)
@@ -107,6 +109,7 @@ export function getSettings() {
   if (!VALID_READ_FONTS.includes(s.readFont)) s.readFont = DEFAULT_SETTINGS.readFont
   s.quoteTheme = getQuoteTheme()
   s.showTranslation = !!s.showTranslation
+  s.prosody = !!s.prosody
   delete s.fontScaleTier
   return s
 }

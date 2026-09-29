@@ -13,6 +13,15 @@ import { ditiansuiLayers, LAYER_MODES } from '../mingli/ditiansuiLayers.js'
 // 命例成图只有观数组用得到:懒加载,别让读《论语》的人也下这一块
 const ParaPillars = lazy(() => import('../mingli/ParaPillars.jsx'))
 
+// 诗词曲格律层(design-v24 §7.3):唐诗近体(第 4–7 章 五律/七律/五绝/七绝)标平仄 + 韵脚,
+// 古诗乐府(第 1–3 章)只标韵脚,均依《平水韵》;宋词韵脚依《词林正韵》,元曲依《中原音韵》。其余书 null(无开关)。
+function prosodyFor(corpus, chapter) {
+  if (corpus === 'tangshi') return { scheme: 'pingshui', tones: chapter >= 4 && chapter <= 7 }
+  if (corpus === 'songci') return { scheme: 'cilin', tones: false }
+  if (corpus === 'yuanqu') return { scheme: 'zhongyuan', tones: false }
+  return null
+}
+
 // 通用逐章阅读器(v16 §1)——佛/儒共用,薄包装通用 ClassicReader 的 paged 模式。
 export default function CorpusReadPage({ corpus }) {
   // 长章拆页(owner 2026-07-30):?p= 驱动,章号语义不变
@@ -29,6 +38,16 @@ export default function CorpusReadPage({ corpus }) {
   const [dtsMode, setDtsMode] = useState('all')
   const chapter = Number(chapterParam) || 1
   const meta = getMeta(corpus, slug)
+  // 《韩非子》储说六篇(30–35 章)的经—说联动(design-v24 §1):件与对应表同在一个懒加载模块里,
+  // 只有读韩非子时才下载,读别的书零开销。Hook 须在任何提前 return 之前。
+  const isChushuoBook = corpus === 'fa' && slug === 'hanfeizi'
+  const [chushuoMod, setChushuoMod] = useState(null)
+  useEffect(() => {
+    if (!isChushuoBook) return
+    let live = true
+    import('../fa/ChushuoLinks.jsx').then((m) => { if (live) setChushuoMod(m) }).catch(() => {})
+    return () => { live = false }
+  }, [isChushuoBook])
   usePageTitle(meta ? `${meta.title}·第${chapterParam}${meta.sectionUnit || '章'}` : null, site?.brand)
 
   // 单页书被章路由深链命中(如 /fo/jingangjing/5):重定向到单页阅读器,保单一阅读形态
@@ -95,6 +114,20 @@ export default function CorpusReadPage({ corpus }) {
   const pieceHeads = {}   // 段下标 → piece
   for (const pc of meta.pieces || []) { if (pc.ch === chapter) pieceHeads[pc.from] = pc }
 
+  // 储说经—说:本章若是储说六篇之一,cs = { chapter, byPara(经条段→条), byShuo(说组首段→条), anchors }
+  const CS = isChushuoBook ? chushuoMod : null
+  const cs = CS && curChapter ? CS.chushuoIndex(chapter) : null
+  // 跳转目标可能在另一屏(长章拆页):连屏带锚拼链接。第 1 屏也显式带 ?p=1,
+  // 否则无 ?p 时会按续读记位落回读者正在读的那一屏,锚点就找不到了。
+  const chushuoHref = (i, id) => {
+    const pi = partsCur ? partsCur.findIndex((pt) => i >= pt.from && i < pt.to) : -1
+    return `${site.home}/${slug}/${chapter}${pi >= 0 ? `?p=${pi + 1}` : ''}#${id}`
+  }
+  // 拆屏链接一律显式带 ?p=(第 1 屏也带):无 ?p 时 resumePart 按续读记位选屏,
+  // 读者在第 2 屏读过再点「← 第 1 部分」会被送回第 2 屏,侧栏章内锚点跳第 1 屏同理落空。
+  // ClassicReader 只在章有拆屏时才调 partHref,不拆屏的章不受影响。
+  const partHref = (no, p) => `${site.home}/${slug}/${no}?p=${p}`
+
   // 《穷通宝鉴》:原书自带的小节题行(「正月甲木:」「三春甲木总论」…,无译文的短段)排成小标题,别和正文一个样
   const isQiongtong = corpus === 'mingli' && slug === 'qiongtong'
   // 《滴天髓阐微》:纲领 / 原注 / 任氏阐发 三层混排,按段首标记自动分层(design-v23 §7)
@@ -137,7 +170,9 @@ export default function CorpusReadPage({ corpus }) {
           ))}
         </div>
       ) : null}
-      renderParaExtra={corpus === 'mingli' ? (no, p) => <Suspense fallback={null}><ParaPillars paragraph={p} /></Suspense> : undefined}
+      renderParaExtra={corpus === 'mingli' ? (no, p) => <Suspense fallback={null}><ParaPillars paragraph={p} /></Suspense>
+        : cs ? (no, p, i) => (cs.byPara[i] ? <CS.ChushuoTag ch={no} jing={cs.byPara[i]} hrefFor={chushuoHref} /> : null)
+        : undefined}
       renderPoemHead={poemBook ? (no, i, p) => {
         const ord = poemOrdinals[i]
         if (!ord) return null
@@ -152,7 +187,12 @@ export default function CorpusReadPage({ corpus }) {
           </>
         )
       } : undefined}
-      renderPieceHead={meta.pieces ? (no, i) => {
+      renderPieceHead={cs ? (no, i) => {
+        // 经部上方导语(第 0 段之前)+ 每个说组首段之前的条头
+        if (i === 0) return <CS.ChushuoIntro idx={cs} hrefFor={chushuoHref} />
+        const j = cs.byShuo[i]
+        return j ? <CS.ChushuoHead ch={no} jing={j} jingText={curChapter.paragraphs[j.para].original} hrefFor={chushuoHref} /> : null
+      } : meta.pieces ? (no, i) => {
         const pc = pieceHeads[i]
         if (!pc) return null
         return (
@@ -166,13 +206,14 @@ export default function CorpusReadPage({ corpus }) {
         )
       } : undefined}
       partsOf={(c) => chapterParts(c, meta)}
-      anchorsOf={(c) => chapterAnchors(c, meta)}
+      anchorsOf={(c) => (cs && c.no === chapter ? cs.anchors : chapterAnchors(c, meta))}
       part={resumePart}
-      partHref={(no, p) => `${site.home}/${slug}/${no}${p > 1 ? `?p=${p}` : ''}`}
+      partHref={partHref}
       paraLabel={poemBook ? poemParaLabel : (numberParas ? (no, i) => String(i + 1) : undefined)}
       posCtx={{ slug }}
       markCtx={{ corpus, slug }}
       commentCtx={{ corpus, slug }}
+      prosody={prosodyFor(corpus, chapter)}
     />
   )
 }

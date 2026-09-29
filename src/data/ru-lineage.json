@@ -1,0 +1,870 @@
+{
+ "title": "儒门学脉图",
+ "subtitle": "孔孟荀 · 周程朱 · 陆王——谁接谁、谁驳谁,每根线都点得开",
+ "intro": "默认只亮**师承**这副骨架:孔子经曾子、子思到孟子,隔一千多年由周敦颐、二程接上,再在程颢、程颐之后分成**朱熹**与**陆九渊—王守仁**两路。这条「道统」大半是宋儒排出来的,图上凡属旧说的线都画成点线、标「存疑」。打开「指摘」「推许」两类线,看得见同一门里的互相辩驳:荀子斥子思孟轲却立孔子为标准,阳明驳朱子格物,又说「吾之心与晦庵之心，未尝异也」。点一个人只亮他的线,点一根线看出处原文、跳原章。",
+ "note": "横轴是朝代,不是年份。曾子、子思、陆九渊、董仲舒,人物志未列确切生卒,图上只写朝代;其余年代取人物志口径。箭头方向:师承线由前指向后;指摘、推许由说话的人指向被说的人。",
+ "companion": {
+  "label": "与「诸子拓扑图」的分工",
+  "href": "/debates/map",
+  "text": "诸子拓扑图画的是**先秦诸家互相怎么说**,孔子、子思、孟子、荀子在那张图里只是「儒」一行;这张图把儒门单独拉出来,**纵向看两千年**:谁接谁,又在哪一步转了向。两图在这四人身上重叠,荀子斥思孟、孟子尊孔几根线也相同,引文互通。"
+ },
+ "layout": {
+  "stack": 54
+ },
+ "eras": [
+  {
+   "key": "xianqin",
+   "label": "先秦",
+   "when": "约前6世纪—前3世纪",
+   "w": 330
+  },
+  {
+   "key": "han",
+   "label": "汉",
+   "when": "前206—220",
+   "w": 120
+  },
+  {
+   "key": "beisong",
+   "label": "北宋",
+   "when": "960—1127",
+   "w": 220
+  },
+  {
+   "key": "nansong",
+   "label": "南宋",
+   "when": "1127—1279",
+   "w": 170
+  },
+  {
+   "key": "ming",
+   "label": "明",
+   "when": "1368—1644",
+   "w": 140
+  }
+ ],
+ "schools": [
+  {
+   "key": "ru",
+   "label": "儒",
+   "group": "ru",
+   "color": "var(--confucian)"
+  },
+  {
+   "key": "xin",
+   "label": "心学",
+   "group": "xin",
+   "color": "var(--xinxue)"
+  },
+  {
+   "key": "li",
+   "label": "理学",
+   "group": "ru",
+   "color": "color-mix(in srgb, var(--confucian) 55%, var(--ink-soft))"
+  }
+ ],
+ "edgeTypes": [
+  {
+   "key": "lineage",
+   "label": "师承 · 传述",
+   "color": "var(--ink-soft)",
+   "dash": "5 4"
+  },
+  {
+   "key": "criticize",
+   "label": "指摘 · 辨难",
+   "color": "var(--cinnabar-pure)"
+  },
+  {
+   "key": "praise",
+   "label": "推许 · 称引",
+   "color": "var(--azure)"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "kongzi",
+   "label": "孔子",
+   "era": "xianqin",
+   "school": "ru",
+   "k": 0,
+   "when": "前551—前479",
+   "note": "儒门之源,图上每一路线最后都回指到他。孟子推为有生民以来第一人,荀子在《非十二子》里只立他(与子弓)为标准;两千年后阳明为复《大学》古本辩护,自承「过信孔子」,却又说学贵得之于心,连孔子的话也要过心这一关。",
+   "book": {
+    "corpus": "ru",
+    "slug": "lunyu",
+    "title": "论语"
+   },
+   "renwu": "kongzi",
+   "debateKey": "kong"
+  },
+  {
+   "id": "yanhui",
+   "label": "颜回",
+   "era": "xianqin",
+   "school": "ru",
+   "k": 0,
+   "dx": 112,
+   "when": "春秋末,孔子弟子,早卒",
+   "note": "《论语》里孔子唯一许为「好学」的弟子,早卒,无书传世。宋儒道统从曾子一路排下去;周敦颐却教人「学颜子之所学」,阳明更说「见圣道之全者惟颜子」、颜子一死「圣学之正派遂不尽传」——同在儒门,认的嫡传不一样。"
+  },
+  {
+   "id": "zengzi",
+   "label": "曾子",
+   "era": "xianqin",
+   "school": "ru",
+   "k": 1,
+   "dx": -112,
+   "when": "春秋末—战国初,孔子晚年弟子",
+   "note": "名参。《论语》记孔子对他说「吾道一以贯之」。宋儒排道统,以他上承孔子、下传子思;《大学》旧题其作。",
+   "caveat": "《大学》旧题曾子作,本站撰人小传已说明其实成于战国秦汉之间;以曾子为传道正宗亦是宋儒之说。",
+   "book": {
+    "corpus": "ru",
+    "slug": "daxue",
+    "title": "大学"
+   }
+  },
+  {
+   "id": "zisi",
+   "label": "子思",
+   "era": "xianqin",
+   "school": "ru",
+   "k": 2,
+   "dx": -112,
+   "when": "战国初,孔子之孙",
+   "note": "名伋,孔子之孙。《孟子》屡记他与鲁缪公往来,不肯以臣道自屈;《中庸》旧题其作。荀子把他和孟子绑作一组来批,反倒把「思孟」这一系记了下来。",
+   "caveat": "《中庸》旧题子思作,如实存疑;生卒不详,人物志未列。",
+   "book": {
+    "corpus": "ru",
+    "slug": "zhongyong",
+    "title": "中庸"
+   }
+  },
+  {
+   "id": "xunzi",
+   "label": "荀子",
+   "era": "xianqin",
+   "school": "ru",
+   "k": 2,
+   "dx": 112,
+   "when": "约前313—前238",
+   "note": "性恶、隆礼、明于天人之分。《非十二子》把子思、孟轲同罪并斥,却立孔子为标准。宋儒排道统把他排在外面——《近思录》录二程语「荀卿才高，其过多」;阳明倒替他一句话辩护过。",
+   "book": {
+    "corpus": "ru",
+    "slug": "xunzi",
+    "title": "荀子"
+   },
+   "renwu": "xunzi",
+   "debateKey": "xun"
+  },
+  {
+   "id": "mengzi",
+   "label": "孟子",
+   "era": "xianqin",
+   "school": "ru",
+   "k": 3,
+   "when": "约前372—前289",
+   "note": "自称「私淑」孔子——没赶上做孔子的学生。性善、四端、仁政。二程说「性之」「反之」之分「只孟子分别出来」,又录韩愈「孟子醇乎醇」之断;宋以后,他在儒门的地位节节上升。",
+   "book": {
+    "corpus": "ru",
+    "slug": "mengzi",
+    "title": "孟子"
+   },
+   "renwu": "mengzi",
+   "debateKey": "meng"
+  },
+  {
+   "id": "dongzhongshu",
+   "label": "董仲舒",
+   "era": "han",
+   "school": "ru",
+   "when": "西汉武帝时",
+   "note": "汉儒。武帝时对策,请推明孔氏、抑黜百家(《汉书》,站外),儒学自此立为官学。站内未收他的书(《春秋繁露》、天人三策皆不在书目),图上只挂得出宋儒怎么评他。",
+   "caveat": "站内无其著述,生卒人物志未列。"
+  },
+  {
+   "id": "zhoudunyi",
+   "label": "周敦颐",
+   "era": "beisong",
+   "school": "li",
+   "k": 1,
+   "dx": -62,
+   "when": "1017—1073",
+   "note": "濂溪先生。《近思录》开卷第一条就是他的「无极而太极」。朱熹一系尊为理学开山;但二程得于他几何,宋人已有异词——见「周敦颐 → 程颐」线的说明。",
+   "book": {
+    "corpus": "ru",
+    "slug": "jinsilu",
+    "title": "近思录"
+   },
+   "renwu": "zhoudunyi"
+  },
+  {
+   "id": "chenghao",
+   "label": "程颢",
+   "era": "beisong",
+   "school": "li",
+   "k": 2,
+   "dx": 62,
+   "when": "1032—1085",
+   "note": "明道先生。十五六岁闻周敦颐论道,遂厌科举(伊川撰行状语)。与弟程颐并称二程,气象却不同:阳明屡引明道以证己说,又把象山排在「濂溪、明道之后」——后世讲心学源流,常从他这里接到陆九渊。",
+   "book": {
+    "corpus": "ru",
+    "slug": "jinsilu",
+    "title": "近思录"
+   },
+   "renwu": "chenghao"
+  },
+  {
+   "id": "chengyi",
+   "label": "程颐",
+   "era": "beisong",
+   "school": "li",
+   "k": 0,
+   "dx": 62,
+   "when": "1033—1107",
+   "note": "伊川先生。「性即理也」「涵养须用敬，进学则在致知」皆其语(见《近思录》)。程门立雪即游酢、杨时侍立其门;杨时一系三传至朱熹,程朱之学由此相续。阳明于二程分得清楚:引明道多,驳伊川多。",
+   "book": {
+    "corpus": "ru",
+    "slug": "jinsilu",
+    "title": "近思录"
+   },
+   "renwu": "chengyi",
+   "debateKey": "cheng"
+  },
+  {
+   "id": "zhuxi",
+   "label": "朱熹",
+   "era": "nansong",
+   "school": "li",
+   "when": "1130—1200",
+   "note": "集理学之大成。与吕祖谦同辑《近思录》(1175),取周、张、二程之语——这本书本身就是他排出来的学脉。同年鹅湖之会与陆九渊论为学之方不合,此后两家书信往复,「尊德性」「道问学」之辨延续多年;这些一手文字均不在站内,只有《传习录》里阳明转述的一句。",
+   "book": {
+    "corpus": "ru",
+    "slug": "jinsilu",
+    "title": "近思录"
+   },
+   "renwu": "zhuxi",
+   "debateKey": [
+    "zhu",
+    "cheng"
+   ]
+  },
+  {
+   "id": "lujiuyuan",
+   "label": "陆九渊",
+   "era": "nansong",
+   "school": "xin",
+   "dx": -30,
+   "when": "南宋,与朱熹同时",
+   "note": "象山先生,字子静。主「心即理」,与朱熹为学之方相左。他自谓读《孟子》而自得(站外),并不以程门为师;把他排在明道之后,是阳明一系的讲法。",
+   "caveat": "站内未收其书(《象山语录》底本缺),图上关于他的线全部出自《传习录》里阳明的转述;生卒人物志未列。"
+  },
+  {
+   "id": "wangshouren",
+   "label": "王守仁",
+   "era": "ming",
+   "school": "xin",
+   "when": "1472—1529",
+   "note": "阳明先生。心即理、知行合一、致良知。早年照朱子「格物」去格亭前竹子,七日致疾;龙场之后翻转为「格物之功只在身心上做」。对朱子是驳而不废——「吾之心与晦庵之心，未尝异也」。",
+   "book": {
+    "corpus": "xin",
+    "slug": "chuanxilu",
+    "title": "传习录"
+   },
+   "alsoBooks": [
+    {
+     "corpus": "xin",
+     "slug": "daxuewen",
+     "title": "大学问"
+    }
+   ],
+   "renwu": "wangshouren",
+   "debateKey": "yangming"
+  }
+ ],
+ "edges": [
+  {
+   "from": "kongzi",
+   "to": "yanhui",
+   "type": "lineage",
+   "gist": "孔子唯一许为「好学」的弟子",
+   "cites": [
+    {
+     "quote": "有颜回者好学，不幸短命死矣",
+     "corpus": "ru",
+     "slug": "lunyu",
+     "ch": 11,
+     "label": "论语 · 先进"
+    }
+   ]
+  },
+  {
+   "from": "kongzi",
+   "to": "zengzi",
+   "type": "lineage",
+   "c": "disputed",
+   "gist": "「吾道一以贯之」——孔子晚年弟子",
+   "note": "师生关系《论语》可证,无疑;存疑的是「独得其传」——以曾子为传道正宗、上承孔子下传子思,是宋儒的道统说。阳明另认颜子为「圣学之正派」。",
+   "cites": [
+    {
+     "quote": "参乎！吾道一以贯之",
+     "corpus": "ru",
+     "slug": "lunyu",
+     "ch": 4,
+     "label": "论语 · 里仁"
+    },
+    {
+     "quote": "曾子传圣人学",
+     "corpus": "ru",
+     "slug": "jinsilu",
+     "ch": 14,
+     "label": "近思录 · 观圣贤"
+    }
+   ]
+  },
+  {
+   "from": "zengzi",
+   "to": "zisi",
+   "type": "lineage",
+   "c": "disputed",
+   "gist": "旧说子思受业于曾子",
+   "note": "先秦没有子思从曾子受业的明文,《孟子》只说二人「同道」。「曾子传之子思，子思传之孟子」是宋儒道统说——站内见《近思录·观圣贤》卷首提要(注本所加,非朱熹原文)。",
+   "cites": [
+    {
+     "quote": "曾子、子思同道",
+     "corpus": "ru",
+     "slug": "mengzi",
+     "ch": 8,
+     "label": "孟子 · 离娄下"
+    },
+    {
+     "quote": "孔子传之颜曾，曾子传之子思，子思传之孟子，遂无传焉",
+     "corpus": "ru",
+     "slug": "jinsilu",
+     "ch": 14,
+     "label": "近思录 · 观圣贤(卷首提要)"
+    }
+   ]
+  },
+  {
+   "from": "zisi",
+   "to": "mengzi",
+   "type": "lineage",
+   "c": "disputed",
+   "gist": "思孟一系:子思唱之,孟轲和之",
+   "note": "《史记》说孟子「受业子思之门人」(站外),是再传而非亲炙。站内能把二人连成一系的,反倒是批评者荀子;《近思录》所录二程语也说《中庸》「成于子思孟子」。",
+   "cites": [
+    {
+     "quote": "子思唱之，孟轲和之",
+     "corpus": "ru",
+     "slug": "xunzi",
+     "ch": 6,
+     "label": "荀子 · 非十二子"
+    },
+    {
+     "quote": "中庸之书，是孔门传授，成于子思孟子",
+     "corpus": "ru",
+     "slug": "jinsilu",
+     "ch": 3,
+     "label": "近思录 · 致知"
+    }
+   ]
+  },
+  {
+   "from": "zhoudunyi",
+   "to": "chenghao",
+   "type": "lineage",
+   "gist": "十五六岁闻濂溪论道,遂厌科举;受教「寻孔颜乐处」",
+   "note": "前一条出自程颐所撰《明道先生行状》;「寻颜子仲尼乐处」一条,《近思录》列在明道语下。",
+   "cites": [
+    {
+     "quote": "自十五六时，闻汝南周茂叔论道，遂厌科举之业",
+     "corpus": "ru",
+     "slug": "jinsilu",
+     "ch": 14,
+     "label": "近思录 · 观圣贤(伊川撰明道行状)"
+    },
+    {
+     "quote": "昔受学于周茂叔，每令寻颜子仲尼乐处，所乐何事",
+     "corpus": "ru",
+     "slug": "jinsilu",
+     "ch": 2,
+     "label": "近思录 · 为学"
+    }
+   ]
+  },
+  {
+   "from": "zhoudunyi",
+   "to": "chengyi",
+   "type": "lineage",
+   "c": "disputed",
+   "gist": "少年随兄受学于濂溪",
+   "note": "二程少年同从周敦颐问学(《宋史》,站外);但二程言及他多称「周茂叔」,得于他几何,宋人已有异词,清人全祖望更谓二程之学实不由濂溪(站外)。「周子唱之，二程子张子推广之」是朱熹一系的排法。",
+   "cites": [
+    {
+     "quote": "周子唱之，二程子张子推广之",
+     "corpus": "ru",
+     "slug": "jinsilu",
+     "ch": 14,
+     "label": "近思录 · 观圣贤(卷首提要)"
+    }
+   ]
+  },
+  {
+   "from": "chengyi",
+   "to": "zhuxi",
+   "type": "lineage",
+   "gist": "伊川 → 杨时 → 罗从彦 → 李侗 → 朱熹",
+   "note": "图上省为一边:杨时先后师事二程(程门立雪即游酢、杨时侍立伊川之门),南归传罗从彦,罗传李侗(延平),朱熹受学于李侗。中间三人站内无书。",
+   "cites": [
+    {
+     "quote": "游杨初见伊川，伊川瞑目而坐。二子侍立",
+     "corpus": "ru",
+     "slug": "jinsilu",
+     "ch": 14,
+     "label": "近思录 · 观圣贤"
+    },
+    {
+     "quote": "就如朱子亦尊信程子",
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 1,
+     "label": "传习录 · 卷上"
+    }
+   ]
+  },
+  {
+   "from": "chenghao",
+   "to": "lujiuyuan",
+   "type": "lineage",
+   "c": "disputed",
+   "gist": "阳明排的统绪:濂溪、明道之后,是象山",
+   "note": "陆九渊自谓读《孟子》而自得,未尝师事程门(站外)。从明道接到象山,是后世讲心学源流的排法——这句话即其一例,出自阳明,不出自陆九渊本人。",
+   "cites": [
+    {
+     "quote": "濂溪、明道之后，还是象山",
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 3,
+     "label": "传习录 · 卷下"
+    }
+   ]
+  },
+  {
+   "from": "lujiuyuan",
+   "to": "wangshouren",
+   "type": "lineage",
+   "c": "disputed",
+   "gist": "非师承:隔近三百年,阳明接过象山之说",
+   "note": "阳明生于陆九渊身后近三百年,并无授受;后世并称「陆王」,是因阳明自己把象山排进这条统绪,又接过他「在人情事变上做工夫」一类说法。",
+   "cites": [
+    {
+     "quote": "澄尝问象山在人情事变上做工夫之说",
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 1,
+     "label": "传习录 · 卷上"
+    },
+    {
+     "quote": "除了人情事变，则无事矣",
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 1,
+     "label": "传习录 · 卷上"
+    }
+   ]
+  },
+  {
+   "from": "xunzi",
+   "to": "zisi",
+   "type": "criticize",
+   "gist": "斥其造「五行」之说,僻违无类",
+   "cites": [
+    {
+     "quote": "案往旧造说，谓之五行，甚僻违而无类",
+     "corpus": "ru",
+     "slug": "xunzi",
+     "ch": 6,
+     "label": "荀子 · 非十二子"
+    },
+    {
+     "quote": "是则子思、孟轲之罪也",
+     "corpus": "ru",
+     "slug": "xunzi",
+     "ch": 6,
+     "label": "荀子 · 非十二子"
+    }
+   ]
+  },
+  {
+   "from": "xunzi",
+   "to": "mengzi",
+   "type": "criticize",
+   "gist": "与子思同罪并斥;《性恶》逐条驳性善",
+   "note": "儒门内部批得最重的一处——批人的和被批的,后世同列孔庙。",
+   "cites": [
+    {
+     "quote": "子思唱之，孟轲和之",
+     "corpus": "ru",
+     "slug": "xunzi",
+     "ch": 6,
+     "label": "荀子 · 非十二子"
+    },
+    {
+     "quote": "孟子曰：「人之性善。」曰：是不然",
+     "corpus": "ru",
+     "slug": "xunzi",
+     "ch": 23,
+     "label": "荀子 · 性恶"
+    }
+   ]
+  },
+  {
+   "from": "chengyi",
+   "to": "xunzi",
+   "type": "criticize",
+   "c": "disputed",
+   "gist": "「只一句性恶，大本已失」",
+   "note": "《近思录·观圣贤》此两条未署明道、伊川,旧多归伊川(站外),图上从之,归属存疑。",
+   "cites": [
+    {
+     "quote": "荀子极偏驳。只一句性恶，大本已失",
+     "corpus": "ru",
+     "slug": "jinsilu",
+     "ch": 14,
+     "label": "近思录 · 观圣贤"
+    },
+    {
+     "quote": "荀卿才高，其过多",
+     "corpus": "ru",
+     "slug": "jinsilu",
+     "ch": 14,
+     "label": "近思录 · 观圣贤"
+    }
+   ]
+  },
+  {
+   "from": "zhuxi",
+   "to": "lujiuyuan",
+   "type": "criticize",
+   "gist": "说子静以「尊德性」教人,自家则「道问学」多些——朱陆异同的纲领",
+   "note": "朱陆之争的一手文字——鹅湖之会(1175)、往复书信、「无极」「太极」之辩——都不在站内;这一句是《传习录》里阳明转述的朱子语,原信(《答项平父》,站外)是两家对举长短、也自省己偏,并非一味贬陆。",
+   "cites": [
+    {
+     "quote": "晦翁言子静以『尊德性』诲人，某教人岂不是『道问学』处多了些子",
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 3,
+     "label": "传习录 · 卷下(阳明转述)"
+    }
+   ]
+  },
+  {
+   "from": "wangshouren",
+   "to": "zhuxi",
+   "type": "criticize",
+   "gist": "驳朱子「格物」:即物穷理,是析心与理为二",
+   "note": "早年照朱子的说法去格亭前竹子,七日致疾——这是他后来翻转格物之说的起点。《大学》古本之争(朱子改本补传、阳明复古本)也在这条线上。",
+   "cites": [
+    {
+     "quote": "即物穷理是就事事物物上求其所谓定理者也，是以吾心而求理于事事物物之中，析心与理为二矣",
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 2,
+     "label": "传习录 · 卷中"
+    },
+    {
+     "quote": "众人只说『格物』要依晦翁，何曾把他的说去用？我著实曾用来",
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 3,
+     "label": "传习录 · 卷下"
+    },
+    {
+     "quote": "以为事事物物皆有定理也，而求至善于事事物物之中",
+     "corpus": "xin",
+     "slug": "daxuewen",
+     "ch": 1,
+     "label": "大学问"
+    }
+   ]
+  },
+  {
+   "from": "wangshouren",
+   "to": "chengyi",
+   "type": "criticize",
+   "gist": "说伊川论《春秋》「未得圣人作经之意」",
+   "note": "阳明于二程分得很清:屡引明道以证己说,对伊川则多辩驳。",
+   "cites": [
+    {
+     "quote": "伊川此言，恐亦是相沿世儒之说，未得圣人作经之意",
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 1,
+     "label": "传习录 · 卷上"
+    },
+    {
+     "quote": "伊川却是把作效验看了",
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 2,
+     "label": "传习录 · 卷中"
+    }
+   ]
+  },
+  {
+   "from": "mengzi",
+   "to": "kongzi",
+   "type": "praise",
+   "gist": "推为有生民以来第一人,自陈私淑",
+   "cites": [
+    {
+     "quote": "自有生民以来，未有孔子也",
+     "corpus": "ru",
+     "slug": "mengzi",
+     "ch": 3,
+     "label": "孟子 · 公孙丑上"
+    },
+    {
+     "quote": "乃所愿，则学孔子也",
+     "corpus": "ru",
+     "slug": "mengzi",
+     "ch": 3,
+     "label": "孟子 · 公孙丑上"
+    },
+    {
+     "quote": "予未得为孔子徒也，予私淑诸人也",
+     "corpus": "ru",
+     "slug": "mengzi",
+     "ch": 8,
+     "label": "孟子 · 离娄下"
+    }
+   ]
+  },
+  {
+   "from": "xunzi",
+   "to": "kongzi",
+   "type": "praise",
+   "gist": "斥思孟,却把孔子立为标准",
+   "cites": [
+    {
+     "quote": "下则法仲尼、子弓之义",
+     "corpus": "ru",
+     "slug": "xunzi",
+     "ch": 6,
+     "label": "荀子 · 非十二子"
+    },
+    {
+     "quote": "孔子仁知且不蔽",
+     "corpus": "ru",
+     "slug": "xunzi",
+     "ch": 21,
+     "label": "荀子 · 解蔽"
+    }
+   ]
+  },
+  {
+   "from": "chenghao",
+   "to": "mengzi",
+   "type": "praise",
+   "gist": "「性之」「反之」之分,自古只孟子讲得出",
+   "cites": [
+    {
+     "quote": "孟子言性之反之，自古无人如此说。只孟子分别出来",
+     "corpus": "ru",
+     "slug": "jinsilu",
+     "ch": 14,
+     "label": "近思录 · 观圣贤"
+    }
+   ]
+  },
+  {
+   "from": "chengyi",
+   "to": "dongzhongshu",
+   "type": "praise",
+   "c": "disputed",
+   "gist": "推其「正其义，不谋其利」度越诸子,又说他见道不甚分明",
+   "note": "《近思录·观圣贤》此两条未署明道、伊川,旧多归伊川(站外),图上从之,归属存疑。",
+   "cites": [
+    {
+     "quote": "董仲舒曰：「正其义，不谋其利。明其道，不计其功。」此董子所以度越诸子",
+     "corpus": "ru",
+     "slug": "jinsilu",
+     "ch": 14,
+     "label": "近思录 · 观圣贤"
+    },
+    {
+     "quote": "汉儒如毛苌董仲舒，最得圣贤之意。然见道不甚分明",
+     "corpus": "ru",
+     "slug": "jinsilu",
+     "ch": 14,
+     "label": "近思录 · 观圣贤"
+    }
+   ]
+  },
+  {
+   "from": "zhoudunyi",
+   "to": "yanhui",
+   "type": "praise",
+   "gist": "立颜子为学者所学的榜样",
+   "note": "他教二程「寻颜子仲尼乐处」(见「周敦颐 → 程颢」线),孔颜之乐自此成为理学一大话头。",
+   "cites": [
+    {
+     "quote": "伊尹颜渊，大贤也",
+     "corpus": "ru",
+     "slug": "jinsilu",
+     "ch": 2,
+     "label": "近思录 · 为学"
+    },
+    {
+     "quote": "志伊尹之所志，学颜子之所学",
+     "corpus": "ru",
+     "slug": "jinsilu",
+     "ch": 2,
+     "label": "近思录 · 为学"
+    }
+   ]
+  },
+  {
+   "from": "wangshouren",
+   "to": "yanhui",
+   "type": "praise",
+   "gist": "「见圣道之全者惟颜子」",
+   "note": "与宋儒道统从曾子排下去的讲法不同。",
+   "cites": [
+    {
+     "quote": "见圣道之全者惟颜子",
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 1,
+     "label": "传习录 · 卷上"
+    },
+    {
+     "quote": "颜子没，而圣学之正派遂不尽传矣",
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 1,
+     "label": "传习录 · 卷上"
+    }
+   ]
+  },
+  {
+   "from": "wangshouren",
+   "to": "kongzi",
+   "type": "praise",
+   "gist": "自承「过信孔子」,又立下「求之于心」这一关",
+   "note": "一种特别的尊法:为复《大学》古本辩护,说自己若有失是失在过信孔子;接着又说学贵得之于心,连孔子之言也要过这一关。推许与立界,出自同一段书信。",
+   "cites": [
+    {
+     "quote": "失在于过信孔子则有之",
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 2,
+     "label": "传习录 · 卷中"
+    },
+    {
+     "quote": "夫学贵得之心。求之于心而非也，虽其言之出于孔子，不敢以为是也",
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 2,
+     "label": "传习录 · 卷中"
+    }
+   ]
+  },
+  {
+   "from": "wangshouren",
+   "to": "zhuxi",
+   "type": "praise",
+   "gist": "驳其格物,却说「吾之心与晦庵之心，未尝异也」",
+   "note": "同一个人身上一根朱线、一根青线——辩的是入门下手处,不是人。",
+   "cites": [
+    {
+     "quote": "吾说与晦庵时有不同者，为入门下手处有毫厘千里之分，不得不辩",
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 1,
+     "label": "传习录 · 卷上"
+    },
+    {
+     "quote": "然吾之心与晦庵之心，未尝异也",
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 1,
+     "label": "传习录 · 卷上"
+    }
+   ]
+  },
+  {
+   "from": "wangshouren",
+   "to": "lujiuyuan",
+   "type": "praise",
+   "gist": "许为濂溪、明道之后一人,又嫌他「粗些」",
+   "note": "在座的陈九川当场不服:看他论学篇篇说出骨髓,「却不见他粗」。",
+   "cites": [
+    {
+     "quote": "濂溪、明道之后，还是象山，只是粗些",
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 3,
+     "label": "传习录 · 卷下"
+    }
+   ]
+  },
+  {
+   "from": "wangshouren",
+   "to": "chenghao",
+   "type": "praise",
+   "gist": "屡引明道语以证己说",
+   "cites": [
+    {
+     "quote": "故明道云：「君子之学，莫若廓然而大公，物来而顺应。」",
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 2,
+     "label": "传习录 · 卷中"
+    },
+    {
+     "quote": "明道说『以诚敬存之』，亦是此意",
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 1,
+     "label": "传习录 · 卷上"
+    }
+   ]
+  },
+  {
+   "from": "wangshouren",
+   "to": "xunzi",
+   "type": "praise",
+   "gist": "替荀子「养心莫善于诚」一句辩护",
+   "note": "推许得有保留:先说「固多病」,再说不可一例吹毛求疵。问者所谓「先儒非之」,指宋儒对这句话的批评。",
+   "cites": [
+    {
+     "quote": "荀子云『养心莫善于诚』，先儒非之",
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 1,
+     "label": "传习录 · 卷上"
+    },
+    {
+     "quote": "荀子之言固多病，然不可一例吹毛求疵",
+     "corpus": "xin",
+     "slug": "chuanxilu",
+     "ch": 1,
+     "label": "传习录 · 卷上"
+    }
+   ]
+  }
+ ],
+ "end": {
+  "label": "此后:清代的转向",
+  "items": [
+   {
+    "when": "清",
+    "label": "考据代义理",
+    "note": "清儒转向训诂、校勘,以汉儒经说为据重读经书;宋明「道统」与理学、心学之争,退为考据的对象。"
+   }
+  ],
+  "note": "清儒著述不在站内书目,这一格只作时间标记,不挂原文。"
+ }
+}

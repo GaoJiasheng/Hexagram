@@ -1,12 +1,18 @@
 import { useState, useMemo, useRef, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
-import {
+import DATA from '../../data/zhuzi-topology.json'
+import { makeTopology, GUTTER, ERA_W, NODE_W, NODE_H, HEADER_H } from './topology.js'
+
+const {
   topology, computeLayout, edgeGeometry, nodeById, typeById, schoolById,
-  citeHref, relationsOf, debatesOf, GUTTER, ERA_W, NODE_W, NODE_H, HEADER_H,
-} from './topology.js'
+  citeHref, relationsOf, debatesOf,
+} = makeTopology(DATA)
 
 const ALL_TYPES = topology.edgeTypes.map((t) => t.key)
+// 边的查找按 from|to|type,不按引用:edgeGeometry 返回的是带几何的副本,indexOf 恒为 -1(存量 bug:点边无详情、且全部边被高亮;2026-09-30 修)
+const edgeKey = (e) => `${e.from}|${e.to}|${e.type}`
+const EDGE_INDEX = new Map(topology.edges.map((e, i) => [edgeKey(e), i]))
 // 默认只亮「师承·取用」骨架 —— 37 条边全画上去是毛线球,先给骨架,其余按类型开。
 const DEFAULT_ON = ['lineage']
 
@@ -161,7 +167,7 @@ export default function ZhuziTopologyPage() {
                 {/* 关系线 —— 画在节点之下 */}
                 {visible.map((e, i) => {
                   const t = typeById[e.type]
-                  const active = sel?.kind === 'edge' && sel.i === topology.edges.indexOf(e)
+                  const active = sel?.kind === 'edge' && sel.i === EDGE_INDEX.get(edgeKey(e))
                   const near = !hover || e.from === hover || e.to === hover
                   return (
                     <path key={`${e.from}-${e.to}-${e.type}-${i}`}
@@ -170,7 +176,7 @@ export default function ZhuziTopologyPage() {
                       strokeWidth={active ? 2.2 : 1.1}
                       strokeDasharray={t.dash || undefined}
                       markerEnd="url(#topo-arrow)"
-                      onClick={() => setSel({ kind: 'edge', i: topology.edges.indexOf(e) })}>
+                      onClick={() => setSel({ kind: 'edge', i: EDGE_INDEX.get(edgeKey(e)) })}>
                       <title>{`${nodeById[e.from].label} → ${nodeById[e.to].label}:${t.label}`}</title>
                     </path>
                   )

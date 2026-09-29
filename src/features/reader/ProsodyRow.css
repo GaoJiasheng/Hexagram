@@ -1,0 +1,118 @@
+/* 诗词曲格律层(design-v24 §7.3)。符号全由 CSS 画;色轮取站内既有主题 token(明暗两套由 index.css 统一切换)。 */
+
+.prosody,
+.prosody-legend {
+  /* 韵部色轮 6 色:同部同色。取与各站主色拉开的六个站内 token,暗色档由 index.css 自动换成亮一档的值 */
+  --rh-1: var(--azure);
+  --rh-2: var(--military);
+  --rh-3: var(--confucian);
+  --rh-4: var(--gold);
+  --rh-5: var(--xinxue);
+  --rh-6: var(--mohist);
+  --rh-plain: var(--ink-faint);
+  --pz-ink: var(--ink-soft);
+}
+
+.prosody {
+  margin: 6px 0 10px;
+  font-family: var(--font-serif);
+  font-size: 0.8rem; /* 界面元件:不随正文字号放大,免挤坏窄屏 */
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.prosody--tones { display: flex; flex-direction: column; gap: 3px; }
+.prosody__line { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; min-width: 0; }
+.prosody__marks { display: inline-flex; align-items: center; gap: 5px; flex-shrink: 0; }
+.prosody--feet { display: flex; flex-wrap: wrap; gap: 6px 8px; }
+
+/* 平仄符号:○ 平(空心)● 仄(实心)◐ 可平可仄(半实)◌ 韵书未收(虚线) */
+.pz {
+  display: inline-block;
+  width: 0.72em;
+  height: 0.72em;
+  border-radius: 50%;
+  border: 1.5px solid var(--pz-ink);
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+.pz--ping { background: transparent; }
+.pz--ze { background: var(--pz-ink); }
+.pz--duo { background: linear-gradient(90deg, var(--pz-ink) 50%, transparent 50%); }
+.pz--none { border-style: dotted; border-color: var(--ink-faint); }
+/* 入韵句句末那一符:描成本部的颜色,与句末签呼应 */
+.pz--end { --pz-ink: var(--rh, var(--ink-soft)); }
+
+.rhyme-c1 { --rh: var(--rh-1); }
+.rhyme-c2 { --rh: var(--rh-2); }
+.rhyme-c3 { --rh: var(--rh-3); }
+.rhyme-c4 { --rh: var(--rh-4); }
+.rhyme-c5 { --rh: var(--rh-5); }
+.rhyme-c6 { --rh: var(--rh-6); }
+
+/* 句末韵部小签 */
+.rhyme-tag {
+  --rh: var(--rh-plain);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  padding: 0 6px;
+  border-radius: 3px;
+  border: 1px solid color-mix(in srgb, var(--rh) 45%, transparent);
+  background: color-mix(in srgb, var(--rh) 14%, transparent);
+  color: var(--rh);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.rhyme-tag__char { font-weight: 600; color: var(--ink); }
+.rhyme-tag__part { letter-spacing: 0.02em; }
+.rhyme-tag:not(.rhyme-tag--plain) .rhyme-tag__part { font-weight: 600; }
+.rhyme-tag--c1 { --rh: var(--rh-1); }
+.rhyme-tag--c2 { --rh: var(--rh-2); }
+.rhyme-tag--c3 { --rh: var(--rh-3); }
+.rhyme-tag--c4 { --rh: var(--rh-4); }
+.rhyme-tag--c5 { --rh: var(--rh-5); }
+.rhyme-tag--c6 { --rh: var(--rh-6); }
+.rhyme-tag--plain { background: transparent; color: var(--ink-faint); }
+.rhyme-tag--plain .rhyme-tag__char { color: var(--ink-soft); font-weight: 400; }
+.rhyme-tag--none { border-style: dashed; }
+/* 一字多部:虚下划线提示「韵书两收」,细目见悬停 */
+.rhyme-tag--multi .rhyme-tag__part { text-decoration: underline dotted; text-underline-offset: 3px; }
+
+/* 工具条下的图例与凡例 */
+.prosody-legend {
+  margin: -8px 0 22px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper-raised);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+.prosody-legend p { margin: 0; }
+.prosody-legend__keys { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; }
+.prosody-legend__key { display: inline-flex; align-items: center; gap: 5px; }
+.prosody-legend__fanli { margin-top: 4px !important; color: var(--ink-faint); }
+.prosody-legend__status { color: var(--cinnabar); }
+
+/* 读屏器文本(页面上不可见) */
+.prosody-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+.rhyme-tag, .prosody__line { position: relative; }
+
+/* ClassicText 的原文列(有格律层时才出现):左右对照网格里作一格,防长签撑破 */
+.classic-text__orig-col { min-width: 0; }
+.classic-text__orig-col > .classic-text__original { margin-bottom: 0; }

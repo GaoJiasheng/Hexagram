@@ -1,0 +1,170 @@
+/* 战国策七国示意图 + 合纵连横时间轴(design-v24 §9)—— 只用站内 token;组色走 [data-site="zong"] 的 --cinnabar。 */
+
+.zgm-page { max-width: 980px; margin: 0 auto; }
+.zgm-crumb-sep { margin: 0 8px; font-size: 0.85rem; }
+
+.zgm-intro {
+  margin: 8px 0 20px; max-width: var(--read-w);
+  font-size: calc(0.95rem * var(--read-scale)); line-height: 1.95; color: var(--ink);
+}
+.zgm-intro strong { color: var(--cinnabar); font-weight: 600; }
+
+.zgm-h2 {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px;
+  margin: 34px 0 12px; font-family: var(--font-serif); font-size: 1.15rem; font-weight: 600; color: var(--ink);
+}
+.zgm-h2__filter { font-family: var(--font-sans); font-size: 0.8rem; font-weight: 400; }
+
+.zgm-cap { margin: 8px 0 0; font-size: 0.78rem; line-height: 1.7; }
+
+/* ---------- 地图 ---------- */
+.zgm-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; margin-bottom: 10px; }
+.zgm-toolbar__label { font-size: 0.8rem; }
+.zgm-seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.zgm-seg__btn {
+  padding: 5px 14px; font-size: 0.85rem; font-family: var(--font-serif);
+  background: var(--paper); color: var(--ink-soft); border: none; cursor: pointer;
+}
+.zgm-seg__btn + .zgm-seg__btn { border-left: 1px solid var(--line); }
+.zgm-seg__btn:hover { color: var(--ink); }
+.zgm-seg__btn.is-on { background: var(--cinnabar-bg); color: var(--cinnabar); font-weight: 600; }
+.zgm-seg__btn:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: -2px; }
+
+.zgm-map__body { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+.zgm-map__fig { margin: 0; min-width: 0; }
+.zgm-map__svg {
+  display: block; width: 100%; height: auto;
+  border: 1px solid var(--line); border-radius: 12px; background: var(--paper-raised);
+}
+
+.zgm-state { cursor: pointer; transition: fill 0.15s; }
+.zgm-state:hover { filter: brightness(0.97); }
+.zgm-state:focus { outline: none; }
+.zgm-state:focus-visible { stroke: var(--ink); stroke-width: 1.2; }
+.zgm-state-label, .zgm-river, .zgm-axis-line { pointer-events: none; }
+.zgm-place { cursor: pointer; }
+.zgm-place:focus { outline: none; }
+.zgm-place:focus-visible circle:last-of-type { stroke: var(--ink); stroke-width: 2; }
+
+.zgm-axis-line { stroke-dasharray: 400; stroke-dashoffset: 0; animation: zgm-draw 0.6s ease-out both; }
+@keyframes zgm-draw { from { stroke-dashoffset: 400; } to { stroke-dashoffset: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .zgm-axis-line { animation: none; }
+}
+
+/* 右栏 */
+.zgm-panel {
+  border: 1px solid var(--line); border-radius: 12px; background: var(--paper-raised);
+  padding: 14px 14px 12px; min-width: 0;
+}
+.zgm-panel__hint { margin: 0 0 12px; font-size: 0.86rem; line-height: 1.8; }
+.zgm-panel__kicker { font-size: 0.76rem; margin-bottom: 2px; }
+.zgm-panel__title { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600; color: var(--ink); }
+.zgm-panel__states { margin: 6px 0 4px; font-size: 0.82rem; color: var(--ink-soft); }
+.zgm-panel__note { margin: 6px 0 12px; font-size: 0.84rem; line-height: 1.8; color: var(--ink); }
+.zgm-panel__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; margin-bottom: 8px; font-size: 0.8rem; }
+.zgm-panel__list { list-style: none; margin: 0 0 12px; padding: 0; }
+.zgm-panel__list li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; padding: 4px 0; border-bottom: 1px dashed var(--line); }
+.zgm-panel__link { font-family: var(--font-serif); font-size: 0.95rem; color: var(--ink); text-decoration: none; }
+.zgm-panel__link:hover, .zgm-panel__link:focus-visible { color: var(--cinnabar); }
+.zgm-panel__no {
+  display: inline-block; min-width: 1.6em; margin-right: 4px; font-family: var(--font-sans);
+  font-size: 0.72rem; color: var(--ink-faint); text-align: right;
+}
+.zgm-panel__yr { font-size: 0.74rem; }
+.zgm-panel__yr.is-disputed { font-style: italic; }
+
+.zgm-clear {
+  margin-left: auto; padding: 1px 8px; font-size: 0.74rem; border-radius: 6px;
+  border: 1px solid var(--line); background: var(--paper); color: var(--ink-soft); cursor: pointer;
+}
+.zgm-h2__filter .zgm-clear { margin-left: 8px; }
+.zgm-clear:hover { color: var(--cinnabar); }
+
+.zgm-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.zgm-chip {
+  display: inline-flex; align-items: baseline; gap: 4px;
+  padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--paper); color: var(--ink); cursor: pointer;
+  font-family: var(--font-serif); font-size: 0.9rem;
+}
+.zgm-chip--place { font-size: 0.8rem; padding: 2px 9px; color: var(--ink-soft); }
+.zgm-chip__n { font-family: var(--font-sans); font-size: 0.68rem; color: var(--ink-faint); }
+.zgm-chip:hover { border-color: color-mix(in srgb, var(--cinnabar) 45%, var(--line)); }
+.zgm-chip.is-on { background: var(--cinnabar-bg); border-color: var(--cinnabar); color: var(--cinnabar); }
+.zgm-chip:focus-visible, .zgm-mini:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 1px; }
+
+/* 合纵 / 连横 说明 */
+.zgm-axis {
+  margin-top: 14px; padding: 12px 16px; border-radius: 10px;
+  border-left: 3px solid var(--azure); background: color-mix(in srgb, var(--azure) 7%, var(--paper));
+  font-size: 0.86rem; line-height: 1.85; color: var(--ink);
+}
+.zgm-axis--heng { border-left-color: var(--cinnabar-pure); background: color-mix(in srgb, var(--cinnabar-pure) 6%, var(--paper)); }
+.zgm-axis__head { margin-bottom: 4px; }
+.zgm-axis__name { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 600; margin-right: 10px; }
+.zgm-axis__cites { list-style: none; margin: 4px 0 8px; padding: 0; }
+.zgm-axis__cites li { margin: 2px 0; }
+.zgm-q { font-family: var(--font-serif); quotes: '「' '」'; }
+.zgm-axis__src { margin-left: 8px; font-size: 0.78rem; color: var(--cinnabar); text-decoration: none; white-space: nowrap; }
+.zgm-axis__src:hover { text-decoration: underline; }
+.zgm-axis__def { margin: 0; color: var(--ink-soft); }
+
+/* ---------- 时间轴 ---------- */
+.zgm-tl__canvas {
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--line); border-radius: 12px; background: var(--paper-raised);
+}
+.zgm-tl__svg { display: block; width: 100%; min-width: 720px; height: auto; }
+.zgm-tl__swipe { display: none; }
+.zgm-bar:focus { outline: none; }
+.zgm-bar { transition: opacity 0.15s; }
+
+/* ---------- 推定表 ---------- */
+.zgm-list { list-style: none; margin: 0; padding: 0; }
+.zgm-item {
+  padding: 12px 12px 12px 14px; margin: 0 0 8px; border-radius: 10px;
+  border: 1px solid var(--line); border-left: 3px solid var(--cinnabar); background: var(--paper);
+  transition: background 0.15s;
+}
+.zgm-item--disputed { border-left-style: dashed; }
+.zgm-item.is-hot { background: var(--cinnabar-bg); }
+.zgm-item__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.zgm-item__year { font-size: 0.8rem; color: var(--ink-soft); }
+.zgm-item__title { font-family: var(--font-serif); font-size: 1.02rem; font-weight: 600; color: var(--ink); text-decoration: none; }
+.zgm-item__title:hover, .zgm-item__title:focus-visible { color: var(--cinnabar); }
+.zgm-item__flag {
+  font-size: 0.72rem; padding: 0 7px; border-radius: 999px;
+  border: 1px dashed var(--ink-faint); color: var(--ink-soft);
+}
+.zgm-item__states { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin: 6px 0 2px; }
+.zgm-mini {
+  padding: 0 7px; font-size: 0.8rem; font-family: var(--font-serif); line-height: 1.6;
+  border-radius: 4px; border: 1px solid var(--line); background: var(--paper-raised); color: var(--ink-soft); cursor: pointer;
+}
+.zgm-mini.is-main { color: var(--ink); border-color: color-mix(in srgb, var(--cinnabar) 40%, var(--line)); }
+.zgm-mini.is-on { background: var(--cinnabar-bg); color: var(--cinnabar); border-color: var(--cinnabar); }
+.zgm-item__kw { font-size: 0.74rem; margin-left: 4px; }
+.zgm-item__note { margin: 6px 0 0; font-size: calc(0.86rem * var(--read-scale)); line-height: 1.85; color: var(--ink); }
+.zgm-item__caveat { margin: 6px 0 0; font-size: 0.82rem; line-height: 1.8; color: var(--ink-soft); }
+.zgm-item__caveat-tag {
+  display: inline-block; margin-right: 6px; padding: 0 6px; font-size: 0.7rem; border-radius: 4px;
+  color: var(--ink-soft); background: color-mix(in srgb, var(--ink) 9%, var(--paper)); border: 1px solid var(--line); vertical-align: 1px;
+}
+
+.zgm-fanli { margin: 26px 0 8px; font-size: 0.78rem; line-height: 1.85; }
+
+/* ---------- 窄屏 ---------- */
+@media (max-width: 760px) {
+  .zgm-map__body { grid-template-columns: minmax(0, 1fr); }
+  .zgm-axis__src { white-space: normal; }
+  .zgm-tl__swipe { display: inline; }
+}
+/* 手机上地名字太小、挤在一起:只留点,选中 / 被牵动的那处才出字(地名在下方按钮里都有) */
+@media (max-width: 480px) {
+  .zgm-place:not(.is-on) text { display: none; }
+}
+@media (max-width: 420px) {
+  .zgm-seg__btn { padding: 5px 10px; }
+  .zgm-item { padding: 10px 10px 10px 12px; }
+}

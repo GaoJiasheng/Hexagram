@@ -1,0 +1,88 @@
+/* 《韩非子》储说「经—说」联动(design-v24 §1)。只用既有 tokens,明暗自动随主题;
+   法组 [data-site="fa"] 下 --cinnabar 即法家黛色。 */
+
+/* 经部导语:借用阅读器的 .piece-head 容器插在第 0 段之前,但不要条头那条底线与大上边距 */
+.piece-head:has(> .chushuo-intro) { display: block; margin: 6px 0 20px; padding: 0; border-bottom: 0; }
+.chushuo-intro {
+  padding: 10px 14px 12px;
+  border-left: 3px solid var(--cinnabar);
+  border-radius: 0 6px 6px 0;
+  background: var(--cinnabar-bg);
+  scroll-margin-top: calc(76px + env(safe-area-inset-top));
+}
+.chushuo-intro__lead { margin: 0; font-family: var(--font-serif); font-size: 1rem; line-height: 1.75; color: var(--ink); }
+.chushuo-intro__how { margin: 4px 0 0; font-size: 0.8rem; line-height: 1.6; color: var(--ink-soft); }
+.chushuo-intro__nav { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-top: 10px; }
+.chushuo-chip {
+  padding: 1px 10px;
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  text-decoration: none;
+  white-space: nowrap;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.chushuo-chip:hover { color: var(--cinnabar); border-color: var(--cinnabar); }
+
+/* 经条段末小签 */
+.chushuo-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+  padding: 1px 11px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: var(--cinnabar);
+  text-decoration: none;
+  background: var(--cinnabar-bg);
+  border: 1px solid color-mix(in srgb, var(--cinnabar) 35%, transparent);
+  border-radius: 999px;
+  transition: background 0.15s;
+}
+.chushuo-tag:hover { background: color-mix(in srgb, var(--cinnabar) 16%, transparent); }
+
+/* 说组条头(在 .piece-head 的 flex 里:左题右链) */
+.chushuo-head {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1 1 auto;
+  min-width: 0;
+  scroll-margin-top: calc(76px + env(safe-area-inset-top));
+}
+.chushuo-head__title { font-family: var(--font-serif); font-size: 1.1rem; color: var(--ink); }
+.chushuo-head__title::before { content: '◇'; margin-right: 7px; color: var(--cinnabar); font-size: 0.8em; }
+.chushuo-head__cue { font-size: 0.8rem; line-height: 1.6; color: var(--ink-soft); overflow-wrap: anywhere; }
+.chushuo-back {
+  flex: 0 0 auto;
+  font-size: 0.8rem;
+  color: var(--cinnabar);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.chushuo-back:hover { text-decoration: underline; }
+
+.chushuo-chip:focus-visible,
+.chushuo-tag:focus-visible,
+.chushuo-back:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 2px; }
+
+/* 落位着色:跳过去后那一段 / 那一条头短暂泛色。只用背景色——.read-para 带 content-visibility:auto,
+   往框外溢的 box-shadow / outline 会被 paint 包含裁掉 */
+.chushuo-flash { animation: chushuo-flash 1.8s ease-out; border-radius: 4px; }
+@keyframes chushuo-flash {
+  0%, 35% { background-color: var(--cinnabar-bg); }
+  100% { background-color: transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chushuo-flash { animation: none; background-color: var(--cinnabar-bg); }
+}
+
+@media (max-width: 640px) {
+  .chushuo-intro { padding: 9px 11px 11px; }
+  .chushuo-head__title { font-size: 1.02rem; }
+}

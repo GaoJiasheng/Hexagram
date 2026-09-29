@@ -1,0 +1,35 @@
+/* 儒门学脉图(design-v24 §5)。骨架与交互沿用诸子拓扑图的 .topo-* 全局样式,这里只补本页差异。 */
+
+.ru-lineage .page-header { margin-bottom: 10px; }
+.ru-lineage .topo-intro { margin-top: 4px; }
+.ru-lineage__crumb-sep { margin: 0 8px; color: var(--ink-faint); font-size: 0.85rem; }
+.ru-lineage__companion { color: var(--cinnabar); text-decoration: none; border-bottom: 1px dotted var(--cinnabar); }
+
+/* 线色走 token(明暗各自有值),不需要诸子图给写死 hex 的那层暗色提亮滤镜——否则暗色下过曝 */
+.ru-lineage .topo-canvas .topo-svg .topo-edge,
+.ru-lineage .topo-bar .topo-types .topo-type__dash { filter: none; }
+
+/* 缩放钮挪到右下:右上角是「明」与「此后」两格的表头 */
+.ru-lineage .topo-zoom { top: auto; bottom: 10px; }
+
+/* 节点左缘一道学派色:儒 / 心学 / 理学 */
+.ru-lineage__bar { pointer-events: none; }
+
+.ru-lineage__legend { display: inline-flex; align-items: center; gap: 6px; }
+.ru-lineage__legend svg { display: block; }
+
+.ru-lineage__disputed { display: inline-block; padding: 0 7px; margin-right: 6px; font-size: 0.7rem; line-height: 1.6;
+  border: 1px dashed var(--ink-faint); border-radius: 999px; color: var(--ink-soft); vertical-align: 1px; }
+.ru-lineage__edge-note { margin: 4px 0 0; font-size: calc(0.78rem * var(--read-scale)); line-height: 1.75; color: var(--ink-soft); }
+
+.ru-lineage__books { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+
+.ru-lineage__fanli { margin: 22px 0 0; padding-top: 12px; border-top: 1px dotted var(--line);
+  font-size: calc(0.76rem * var(--read-scale)); line-height: 1.8; color: var(--ink-soft); }
+.ru-lineage__fanli b { color: var(--ink); font-weight: 600; margin-right: 6px; }
+
+/* 窄屏:引文链接允许折行,免得「近思录 · 观圣贤(伊川撰明道行状) · 读原文 ›」把 320px 撑出横向滚动 */
+@media (max-width: 480px) {
+  .ru-lineage .topo-cite__src { white-space: normal; }
+  .ru-lineage .topo-rel__gist { display: block; margin: 4px 0 0; }
+}

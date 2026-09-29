@@ -6,6 +6,8 @@ import { useSettings } from '../yijing/SettingsContext.jsx'
 import { FONT_SCALE_STEPS, getCorpusMarks, toggleCorpusMark, getCorpusNotes, saveCorpusNote, saveReadPos, getReadPos} from '../yijing/storage.js'
 import CommentSection from '../comments/CommentSection.jsx'
 import ChapterColophon from './ChapterColophon.jsx'
+import ProsodyRow, { ProsodyLegend } from './ProsodyRow.jsx'
+import { loadProsodyBooks, analyzeParagraphs, getRhymeBook } from './prosody.js'
 
 // 本章注疏一览(Tier 1):遍历该章各段 anchors,折叠列出,替逐词悬停。
 function ChapterNotes({ chapter, getAnchors }) {
@@ -71,6 +73,9 @@ export default function ClassicReader({
   bookHref = '',     // 该书题解页,牌记里指往「择本要点」
   markCtx = null,   // {corpus, slug}:启用读经站段落收藏/笔记(Tier 2);null 则关闭
   commentCtx = null, // {corpus, slug}:仅 paged 模式在章末启用评论区
+  // 诗词曲格律层(design-v24 §7.3):{ scheme:'pingshui'|'cilin'|'zhongyuan', tones:boolean } 或 null。
+  // 非 null 时工具条出「格律」开关(settings.prosody);开启才动态载入韵书,在每个韵文段原文之下挂 ProsodyRow。
+  prosody = null,
 }) {
   const { settings, setSettings } = useSettings()
   const { hash, pathname, search } = useLocation()
@@ -107,6 +112,34 @@ export default function ClassicReader({
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => { window.removeEventListener('scroll', onScroll); if (raf) cancelAnimationFrame(raf) }
   }, [single, chapters])
+  // 格律层:开关开 → 载韵书 → 按首分析本屏涉及的章(逐章模式只算当前章,单页模式算全部)。
+  // 结果按 章号 → 段下标 → lines 存;关掉即不渲染(已载的韵书留在模块缓存,再开不重载)。
+  const prosodyOn = !!(prosody && verse && settings.prosody)
+  const prosodyScheme = prosody?.scheme
+  const prosodyTones = !!prosody?.tones
+  const [prosodyState, setProsodyState] = useState({ status: 'idle', key: '', map: null })
+  useEffect(() => {
+    if (!prosodyOn) return
+    let alive = true
+    const key = `${prosodyScheme}|${prosodyTones}|${single ? 'all' : chapter}`
+    const target = single ? chapters : chapters.filter((c) => c.no === chapter)
+    const compute = () => {
+      const map = {}
+      for (const c of target) {
+        map[c.no] = analyzeParagraphs(c.paragraphs.map((p) => p.original), { scheme: prosodyScheme, tones: prosodyTones })
+      }
+      setProsodyState({ status: 'ready', key, map })
+    }
+    // 韵书已在模块缓存(翻章、关了再开)→ 直接算,不闪「载入中」
+    if (getRhymeBook(prosodyScheme) && (!prosodyTones || getRhymeBook('pingshui'))) { compute(); return }
+    setProsodyState({ status: 'loading', key, map: null })
+    loadProsodyBooks({ scheme: prosodyScheme, tones: prosodyTones })
+      .then(() => { if (alive) compute() })
+      .catch(() => { if (alive) setProsodyState({ status: 'error', key, map: null }) })
+    return () => { alive = false }
+  }, [prosodyOn, prosodyScheme, prosodyTones, single, chapters, chapter])
+  const prosodyLines = (no, i) => (prosodyOn && prosodyState.status === 'ready' ? prosodyState.map?.[no]?.[i] || null : null)
+
   // 长目录(道德经/难经 81 章…)章变化时把侧栏当前章滚入视野,免手动找高亮项。
   // ref 挂在 <nav> 上(plain DOM 稳),querySelector 取 active 项;直接算容器 scrollTop
   // (避免 scrollIntoView 的窗口副作用),仅在不可见时居中。useLayoutEffect 于 DOM commit 后、
@@ -228,6 +261,19 @@ export default function ClassicReader({
           </button>
         </label>
       )}
+      {prosody && verse && (
+        <label className="toggle-label">
+          <span>格律</span>
+          <button
+            className={`toggle-btn ${settings.prosody ? 'toggle-btn--on' : ''}`}
+            onClick={() => setSettings({ prosody: !settings.prosody })}
+            aria-pressed={!!settings.prosody}
+            title="标出韵书所记的平仄与句末韵部(不判合律与否)"
+          >
+            {settings.prosody ? '开' : '关'}
+          </button>
+        </label>
+      )}
       {toolbarExtra}
     </div>
   )
@@ -283,7 +329,16 @@ export default function ClassicReader({
 
   const ParaBody = (no, p, i) => {
     const label = paraLabel(no, i)
-    const text = <ClassicText original={p.original} translation={p.translation} anchors={getAnchors(no, i)} verse={verse} />
+    const pLines = prosodyLines(no, i)
+    const text = (
+      <ClassicText
+        original={p.original}
+        translation={p.translation}
+        anchors={getAnchors(no, i)}
+        verse={verse}
+        afterOriginal={pLines ? <ProsodyRow lines={pLines} tones={prosodyTones} /> : null}
+      />
+    )
     if (!markCtx) {
       return (
         <div key={i} id={single ? `seg-${no}-${i}` : `p${i + 1}`} className={`read-para read-para--markable ${paraClass(no, p, i)}`}>
@@ -434,6 +489,7 @@ export default function ClassicReader({
           </div>
         )}
         {Toolbar}
+        {prosodyOn && <ProsodyLegend scheme={prosodyScheme} tones={prosodyTones} status={prosodyState.status} />}
 
         {single ? (
           <>

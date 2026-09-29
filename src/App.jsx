@@ -82,6 +82,14 @@ const DebatePage = lazy(() => import('./features/debates/DebatePage.jsx'))
 const DebateArticlePage = lazy(() => import('./features/debates/DebateArticlePage.jsx'))
 const ZhuziTopologyPage = lazy(() => import('./features/zhuzi/ZhuziTopologyPage.jsx'))
 const SchoolPage = lazy(() => import('./features/reader/SchoolPage.jsx'))
+// 二十四期 · 交互化改造(design-v24):具体路径须排在各组 /:slug、/:slug/:chapter 之前
+const ShijingMapPage = lazy(() => import('./features/ru/ShijingMapPage.jsx'))
+const LunyuPeoplePage = lazy(() => import('./features/ru/LunyuPeoplePage.jsx'))
+const FoConceptsPage = lazy(() => import('./features/fo/FoConceptsPage.jsx'))
+const ZhuangziFablesPage = lazy(() => import('./features/dao/pages/ZhuangziFablesPage.jsx'))
+const CantongqiMoonPage = lazy(() => import('./features/dao/pages/CantongqiMoonPage.jsx'))
+const ZhanguoceMapPage = lazy(() => import('./features/zong/ZhanguoceMapPage.jsx'))
+const RuLineagePage = lazy(() => import('./features/ru/RuLineagePage.jsx'))
 const DaoduPage = lazy(() => import('./features/reader/DaoduPage.jsx'))
 const BooksIndexPage = lazy(() => import('./features/books/BooksIndexPage.jsx'))
 const BookHomePage = lazy(() => import('./features/books/BookHomePage.jsx'))
@@ -405,17 +413,23 @@ function AppContent() {
           <Route path="/me" element={<MePage />} />
           {/* 道藏研读 */}
           <Route path="/dao" element={<DaoHomePage />} />
+          <Route path="/dao/zhuangzi/fables" element={<ZhuangziFablesPage />} />
+          <Route path="/dao/cantongqi/moon" element={<CantongqiMoonPage />} />
           <Route path="/dao/:slug" element={<DaoTextPage />} />
           <Route path="/dao/school" element={<SchoolPage corpus="dao" />} />
           <Route path="/dao/:slug/daodu" element={<DaoduPage corpus="dao" />} />
           <Route path="/dao/:slug/:chapter" element={<DaoReadPage />} />
           {/* 释典 / 儒典(v15:经文阅读路由待内容期接 ClassicReader) */}
           <Route path="/fo" element={<FoHomePage />} />
+          <Route path="/fo/concepts" element={<FoConceptsPage />} />
           <Route path="/fo/:slug" element={<CorpusTextPage corpus="fo" />} />
           <Route path="/fo/school" element={<SchoolPage corpus="fo" />} />
           <Route path="/fo/:slug/daodu" element={<DaoduPage corpus="fo" />} />
           <Route path="/fo/:slug/:chapter" element={<CorpusReadPage corpus="fo" />} />
           <Route path="/ru" element={<RuHomePage />} />
+          <Route path="/ru/shijing/map" element={<ShijingMapPage />} />
+          <Route path="/ru/lunyu/renwu" element={<LunyuPeoplePage />} />
+          <Route path="/ru/lineage" element={<RuLineagePage />} />
           <Route path="/ru/:slug" element={<CorpusTextPage corpus="ru" />} />
           <Route path="/ru/school" element={<SchoolPage corpus="ru" />} />
           <Route path="/ru/:slug/daodu" element={<DaoduPage corpus="ru" />} />
@@ -441,6 +455,7 @@ function AppContent() {
           <Route path="/bing/:slug/daodu" element={<DaoduPage corpus="bing" />} />
           <Route path="/bing/:slug/:chapter" element={<CorpusReadPage corpus="bing" />} />
           <Route path="/zong" element={<ZongHomePage />} />
+          <Route path="/zong/zhanguoce/map" element={<ZhanguoceMapPage />} />
           <Route path="/zong/:slug" element={<CorpusTextPage corpus="zong" />} />
           <Route path="/zong/school" element={<SchoolPage corpus="zong" />} />
           <Route path="/zong/:slug/daodu" element={<DaoduPage corpus="zong" />} />

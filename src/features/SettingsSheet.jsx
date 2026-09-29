@@ -318,6 +318,18 @@ export default function SettingsSheet({ open, onClose }) {
         </div>
 
         <div className="settings-section">
+          <h3 className="settings-section__title">诗词格律</h3>
+          <button
+            className={`toggle-btn ${settings.prosody ? 'toggle-btn--on' : ''}`}
+            onClick={() => setSettings({ prosody: !settings.prosody })}
+            aria-pressed={settings.prosody}
+            title="唐诗 / 宋词 / 元曲阅读页:原文下标韵书所记的平仄与韵部"
+          >
+            {settings.prosody ? '开' : '关'}
+          </button>
+        </div>
+
+        <div className="settings-section">
           <h3 className="settings-section__title">正文字体</h3>
           <FontFamilyControl />
         </div>

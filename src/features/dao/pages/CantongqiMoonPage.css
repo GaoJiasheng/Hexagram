@@ -1,0 +1,117 @@
+/* 参同契 · 月相纳甲盘页(/dao/cantongqi/moon)。主色 --cinnabar 在道藏站为玄青;五行色走 widgets.css 的 --wx 钩子。 */
+
+.ctqm-page { max-width: 1040px; margin: 0 auto; }
+
+.ctqm-lead { margin: 0 0 12px; max-width: var(--read-w); font-size: calc(0.95rem * var(--read-scale)); line-height: 1.95; color: var(--ink); }
+.ctqm-how {
+  margin: 0 0 22px; max-width: var(--read-w); padding: 10px 14px;
+  border-left: 3px solid var(--cinnabar); border-radius: 0 6px 6px 0;
+  background: color-mix(in srgb, var(--cinnabar) 6%, transparent);
+  font-size: calc(0.86rem * var(--read-scale)); line-height: 1.85; color: var(--ink-soft);
+}
+.ctqm-how b { color: var(--ink); }
+
+.ctqm-main { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; align-items: start; }
+@media (min-width: 900px) {
+  .ctqm-main { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 24px; }
+  .ctqm-day { position: sticky; top: 76px; }
+}
+.ctqm-dial { min-width: 0; scroll-margin-top: 72px; }
+
+/* ── 这一日 ─────────────────────────────────────────────── */
+.ctqm-day {
+  min-width: 0; padding: 14px 16px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper-raised);
+}
+.ctqm-day__eyebrow { margin: 0 0 2px; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--ink-faint); }
+.ctqm-day__title { margin: 0 0 12px; font-family: var(--font-serif); font-size: 1.35rem; font-weight: 600; color: var(--cinnabar); }
+.ctqm-day__tri { margin-left: 8px; font-size: 1.1rem; color: var(--ink-soft); font-weight: 400; }
+
+.ctqm-day__body { display: flex; gap: 18px; align-items: flex-start; margin-bottom: 12px; }
+.ctqm-day__fig { flex: none; padding-top: 4px; }
+.ctqm-day__body--pair { gap: 28px; justify-content: flex-start; }
+.ctqm-day__pairitem { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.ctqm-day__pairitem p { margin: 0; font-family: var(--font-serif); font-size: 1rem; color: var(--ink); }
+
+.ctqm-day__facts { margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 5px 12px; font-size: 0.9rem; min-width: 0; }
+.ctqm-day__facts dt { color: var(--ink-faint); font-size: 0.8rem; padding-top: 2px; white-space: nowrap; }
+.ctqm-day__facts dd { margin: 0; color: var(--ink); font-family: var(--font-serif); min-width: 0; }
+
+.ctqm-tag { display: inline-block; margin-left: 6px; font-family: var(--font-sans); font-size: 0.72rem; color: var(--ink-faint); line-height: 1.5; }
+.ctqm-gan { color: var(--wx); font-family: var(--font-serif); font-weight: 700; margin: 0 2px; }
+
+.ctqm-day__block { margin: 10px 0 0; padding-top: 10px; border-top: 1px dashed var(--line); }
+.ctqm-day__label { margin: 0 0 4px; font-size: 0.72rem; letter-spacing: 0.06em; color: var(--ink-faint); }
+
+.ctqm-quote { margin: 0 0 4px; font-size: calc(0.95rem * var(--read-scale)); line-height: 1.85; color: var(--ink); }
+.ctqm-quote q, .ctqm-table__q q, .ctqm-sec__foot q { font-family: var(--font-serif); quotes: '「' '」'; }
+.ctqm-quote__src { margin-left: 4px; font-size: 0.74rem; color: var(--ink-faint); }
+.ctqm-quote__go { margin-left: 8px; font-size: 0.78rem; color: var(--cinnabar); text-decoration: none; white-space: nowrap; }
+.ctqm-quote__go:hover { text-decoration: underline; }
+
+.ctqm-day__note { margin: 10px 0 0; font-size: calc(0.84rem * var(--read-scale)); line-height: 1.8; color: var(--ink-soft); }
+
+.ctqm-bridges { display: flex; flex-wrap: wrap; gap: 8px; }
+.ctqm-bridge {
+  display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 6px; margin-top: 12px;
+  padding: 7px 12px; border-radius: 8px; border: 1px solid color-mix(in srgb, var(--cinnabar) 40%, var(--line));
+  background: color-mix(in srgb, var(--cinnabar) 6%, var(--paper)); color: var(--cinnabar);
+  font-size: 0.86rem; text-decoration: none; transition: box-shadow 0.15s;
+}
+.ctqm-bridge:hover { box-shadow: 0 2px 10px color-mix(in srgb, var(--cinnabar) 16%, transparent); }
+.ctqm-bridge:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 2px; }
+.ctqm-bridge__name { font-family: var(--font-serif); color: var(--ink-soft); font-size: 0.82rem; }
+
+/* ── 六卦一览 / 凡例 ─────────────────────────────────────── */
+.ctqm-sec { margin-top: 32px; }
+.ctqm-sec__title { margin: 0 0 10px; font-family: var(--font-serif); font-size: 1.12rem; font-weight: 600; color: var(--ink); }
+.ctqm-sec__foot { margin: 8px 0 0; font-size: 0.8rem; line-height: 1.8; color: var(--ink-soft); }
+
+.ctqm-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.ctqm-table th { text-align: left; font-weight: 500; font-size: 0.74rem; color: var(--ink-faint); padding: 6px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.ctqm-table td { padding: 8px; border-bottom: 1px solid var(--line); vertical-align: middle; color: var(--ink); }
+.ctqm-table td:nth-child(-n+5), .ctqm-table td:last-child { white-space: nowrap; }
+.ctqm-table tr.is-on td { background: color-mix(in srgb, var(--cinnabar) 7%, transparent); }
+.ctqm-table__day {
+  display: inline-flex; align-items: center; gap: 6px; padding: 3px 8px 3px 4px; border-radius: 6px;
+  border: 1px solid var(--line); background: var(--paper); color: var(--ink); font-family: var(--font-serif); font-size: 0.9rem;
+  cursor: pointer; white-space: nowrap;
+}
+.ctqm-table__day:hover { border-color: color-mix(in srgb, var(--cinnabar) 45%, var(--line)); }
+.ctqm-table__day[aria-pressed='true'] { border-color: var(--cinnabar); color: var(--cinnabar); }
+.ctqm-table__day:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 2px; }
+.ctqm-moonicon { display: block; flex: none; }
+.ctqm-table__hex { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-serif); font-size: 1rem; white-space: nowrap; }
+.ctqm-table__hex .hexagram-figure { display: inline-block; }
+.ctqm-table__tri { color: var(--ink-soft); font-size: 0.9rem; }
+.ctqm-table__q { font-size: calc(0.86rem * var(--read-scale)); line-height: 1.7; }
+.ctqm-table__mark { color: var(--cinnabar); margin-left: 1px; }
+.ctqm-table__go { color: var(--cinnabar); text-decoration: none; white-space: nowrap; font-size: 0.82rem; }
+.ctqm-table__go:hover { text-decoration: underline; }
+
+.ctqm-fanli ul { margin: 0; padding-left: 1.2em; max-width: var(--read-w); }
+.ctqm-fanli li { margin: 0 0 6px; font-size: calc(0.84rem * var(--read-scale)); line-height: 1.8; color: var(--ink-soft); }
+.ctqm-fanli li::marker { color: var(--ink-faint); }
+
+/* 窄屏:表格改卡片——日与卦一行、纳甲方位见月一行、两句原文各占整行;每格前挂列名 */
+@media (max-width: 760px) {
+  .ctqm-table thead { display: none; }
+  .ctqm-table, .ctqm-table tbody { display: block; width: 100%; }
+  .ctqm-table tr {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px;
+    padding: 10px 12px; margin-bottom: 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper-raised);
+  }
+  .ctqm-table tr.is-on { border-color: var(--cinnabar); }
+  .ctqm-table tr.is-on td { background: transparent; }
+  .ctqm-table td { display: inline-flex; align-items: baseline; gap: 6px; padding: 0; border-bottom: 0; min-width: 0; }
+  .ctqm-table td::before { content: attr(data-label); flex: none; font-size: 0.7rem; color: var(--ink-faint); }
+  .ctqm-table td[data-label='日']::before, .ctqm-table td[data-label='卦']::before { content: none; }
+  .ctqm-table td[data-label='日'], .ctqm-table td[data-label='卦'] { align-items: center; }
+  .ctqm-table td.ctqm-table__q { flex: 1 1 100%; white-space: normal; }
+  .ctqm-table__hex .hexagram-figure { width: 30px; height: auto; }
+}
+
+@media (max-width: 480px) {
+  .ctqm-day { padding: 12px 12px 14px; }
+  .ctqm-day__body { gap: 12px; }
+  .ctqm-day__body--pair { gap: 18px; }
+}

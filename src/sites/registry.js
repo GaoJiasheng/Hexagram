@@ -59,8 +59,8 @@ export const SITES = [
     accent: 'buddha',
     switchLabel: '佛',
     hasSearch: true,
-    nav: [{ to: '/fo', label: '经典' }],
-    mobileNav: [{ to: '/fo', label: '经典', icon: '☵', exact: false }],
+    nav: [{ to: '/fo', label: '经典' }, { to: '/fo/concepts', label: '名相' }],   // 名相索引(二十四期 I7)
+    mobileNav: [{ to: '/fo', label: '经典', icon: '☵', exact: true }, { to: '/fo/concepts', label: '名相', icon: '☱', exact: false }],
     mobileSwitch: false,   // 单站组无可切换对象
   },
   {
@@ -74,8 +74,8 @@ export const SITES = [
     accent: 'confucian',
     switchLabel: '儒',
     hasSearch: true,
-    nav: [{ to: '/ru', label: '经典' }],
-    mobileNav: [{ to: '/ru', label: '经典', icon: '☶', exact: false }],
+    nav: [{ to: '/ru', label: '经典' }, { to: '/ru/lineage', label: '学脉' }],   // 儒门学脉图(二十四期 I8)
+    mobileNav: [{ to: '/ru', label: '经典', icon: '☶', exact: true }, { to: '/ru/lineage', label: '学脉', icon: '☴', exact: false }],
     mobileSwitch: false,
   },
   {

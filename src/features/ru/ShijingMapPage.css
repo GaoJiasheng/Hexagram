@@ -1,0 +1,138 @@
+/* 诗经十五国风示意图(design-v24 §8)—— 只用站内 token;SVG 着色全走 CSS 属性(不用 fill= 属性),
+   明暗两套随 token 自动翻转。组色 --cinnabar 在 [data-site="ru"] 下即儒典的苍绿。 */
+
+.sjm-page { max-width: 1120px; margin: 0 auto; }
+
+.sjm-crumbs { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.sjm-crumbs__sep { color: var(--ink-faint); font-size: 0.85rem; }
+
+.sjm-intro {
+  margin: 8px 0 20px; max-width: var(--read-w);
+  font-size: calc(0.95rem * var(--read-scale)); line-height: 1.95; color: var(--ink);
+}
+
+.sjm-layout {
+  display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+  gap: 24px; align-items: start;
+}
+
+.sjm-map { margin: 0; min-width: 0; }
+.sjm-svg { display: block; width: 100%; height: auto; max-width: 100%; }
+
+/* ── 底图 ─────────────────────────────── */
+.sjm-bg { fill: var(--paper-raised); stroke: var(--line); stroke-width: 2; }
+
+.sjm-river {
+  fill: none; stroke: var(--azure); stroke-opacity: 0.4;
+  stroke-width: 7; stroke-linecap: round; stroke-linejoin: round;
+}
+.sjm-river-label {
+  fill: var(--azure); fill-opacity: 0.9;
+  font-family: var(--font-serif); font-size: 19px; letter-spacing: 0.15em;
+}
+
+.sjm-cluster { fill: none; stroke: var(--ink-faint); stroke-width: 1.5; stroke-dasharray: 7 6; }
+.sjm-cluster-label { fill: var(--ink-soft); font-size: 16px; letter-spacing: 0.04em; }
+
+.sjm-compass__arrow { fill: var(--ink-soft); }
+.sjm-compass__line { stroke: var(--ink-soft); stroke-width: 2; }
+.sjm-compass__label { fill: var(--ink-soft); font-family: var(--font-serif); font-size: 20px; }
+.sjm-stamp { fill: var(--ink-faint); font-size: 15px; letter-spacing: 0.08em; }
+
+/* ── 国(节点)───────────────────────── */
+.sjm-node { cursor: pointer; }
+.sjm-node:focus { outline: none; }
+.sjm-node__ring { fill: none; stroke: transparent; stroke-width: 3; }
+.sjm-node:focus-visible .sjm-node__ring { stroke: var(--cinnabar); stroke-dasharray: 4 4; }
+.sjm-node__disc {
+  fill: color-mix(in srgb, var(--cinnabar) 10%, var(--paper));
+  stroke: color-mix(in srgb, var(--cinnabar) 55%, transparent); stroke-width: 2;
+  transition: fill 0.15s, stroke-width 0.15s;
+}
+.sjm-node:hover .sjm-node__disc { fill: color-mix(in srgb, var(--cinnabar) 22%, var(--paper)); stroke-width: 3; }
+.sjm-node.is-active .sjm-node__disc { fill: var(--cinnabar); stroke: var(--cinnabar); }
+.sjm-node__name {
+  fill: var(--ink); font-family: var(--font-serif); font-size: 30px; font-weight: 600;
+  pointer-events: none; user-select: none;
+}
+.sjm-node__name--two { font-size: 23px; letter-spacing: 0.02em; }
+.sjm-node.is-active .sjm-node__name { fill: var(--paper); }
+.sjm-node__count { fill: var(--ink-soft); font-size: 17px; pointer-events: none; }
+.sjm-node.is-active .sjm-node__count { fill: var(--cinnabar); font-weight: 600; }
+
+/* ── 图下:按编次选国 ─────────────────── */
+.sjm-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.sjm-chip {
+  display: inline-flex; align-items: baseline; gap: 4px;
+  padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line);
+  background: var(--paper); color: var(--ink-soft);
+  font-family: var(--font-serif); font-size: 0.9rem; cursor: pointer;
+}
+.sjm-chip:hover { color: var(--ink); border-color: color-mix(in srgb, var(--cinnabar) 35%, var(--line)); }
+.sjm-chip:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 2px; }
+.sjm-chip.is-on { background: var(--cinnabar); border-color: var(--cinnabar); color: var(--paper); }
+.sjm-chip__n { font-family: var(--font-sans); font-size: 0.72rem; opacity: 0.75; }
+
+/* ── 右侧:note + 诗题 ──────────────────── */
+.sjm-panel {
+  position: sticky; top: 84px;
+  max-height: calc(100vh - 104px); overflow: auto;
+  padding: 18px 18px 20px; border: 1px solid var(--line); border-radius: 12px;
+  background: var(--paper-raised);
+}
+.sjm-panel__eyebrow { margin: 0 0 4px; font-size: 0.78rem; letter-spacing: 0.06em; color: var(--ink-faint); }
+.sjm-panel__name {
+  display: flex; align-items: baseline; gap: 10px; margin: 0 0 10px;
+  font-family: var(--font-serif); font-size: 1.5rem; font-weight: 600; color: var(--ink);
+}
+.sjm-panel__name--plain { font-size: 1.2rem; }
+.sjm-panel__count { font-family: var(--font-sans); font-size: 0.85rem; font-weight: 400; color: var(--cinnabar); }
+.sjm-panel__note { margin: 0 0 14px; font-size: 0.92rem; line-height: 1.85; color: var(--ink-soft); }
+.sjm-panel__hint { margin: 0 0 12px; font-size: 0.85rem; color: var(--ink-faint); }
+
+.sjm-poems {
+  list-style: none; margin: 0 0 16px; padding: 12px 0 0; border-top: 1px dashed var(--line);
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(8.5em, 1fr)); gap: 4px 10px;
+  counter-reset: sjm;
+}
+.sjm-poems li { counter-increment: sjm; display: flex; align-items: baseline; gap: 4px; min-width: 0; }
+.sjm-poems li::before {
+  content: counter(sjm); flex: none; min-width: 1.4em; text-align: right;
+  font-size: 0.72rem; color: var(--ink-faint);
+}
+.sjm-poem {
+  font-family: var(--font-serif); font-size: 0.95rem; color: var(--ink);
+  text-decoration: none; overflow-wrap: anywhere;
+}
+.sjm-poem:hover { color: var(--cinnabar); text-decoration: underline; }
+.sjm-poem:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 2px; border-radius: 2px; }
+
+.sjm-panel__read {
+  display: inline-block; padding: 7px 16px; border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--cinnabar) 40%, transparent);
+  background: color-mix(in srgb, var(--cinnabar) 10%, var(--paper));
+  color: var(--cinnabar); font-weight: 600; font-size: 0.9rem; text-decoration: none;
+}
+.sjm-panel__read:hover { background: color-mix(in srgb, var(--cinnabar) 18%, var(--paper)); }
+.sjm-panel__read:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 2px; }
+
+.sjm-fanli {
+  margin: 28px 0 48px; padding-top: 14px; border-top: 1px solid var(--line);
+  max-width: var(--read-w); font-size: 0.82rem; line-height: 1.85; color: var(--ink-faint);
+}
+.sjm-fanli strong { color: var(--ink-soft); font-weight: 600; }
+
+/* ── 窄屏:图在上、列表在下 ─────────────── */
+@media (max-width: 860px) {
+  .sjm-layout { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .sjm-panel { position: static; max-height: none; overflow: visible; }
+}
+@media (max-width: 560px) {
+  /* 图缩到 1/3 上下,首数小字看不清,交给图下的国名签与右侧面板 */
+  .sjm-node__count { display: none; }
+  .sjm-cluster-label, .sjm-stamp { font-size: 22px; }
+  .sjm-river-label { font-size: 24px; }
+  .sjm-node__name { font-size: 36px; }
+  .sjm-node__name--two { font-size: 26px; }
+  .sjm-panel { padding: 14px; }
+}

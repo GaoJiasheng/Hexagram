@@ -62,6 +62,16 @@ export default function DaoTextPage() {
         <DaoduEntry corpus="dao" slug={text.slug} bookTitle={text.title} />
       </div>
 
+      {/* 书的形状(design-v23 §7 / v24 §3):与 CorpusTextPage 同款入口——texts.json 给了 shape
+          就在目录之上放一个入口(参同契的月相纳甲盘、庄子的寓言索引…);手机上排在目录之前。 */}
+      {text.shape && (
+        <Link to={text.shape.href} className="book-shape">
+          <span className="book-shape__tag">这本书的形状</span>
+          <span className="book-shape__label">{text.shape.label} →</span>
+          <span className="book-shape__desc">{text.shape.desc}</span>
+        </Link>
+      )}
+
       {resumeCh > 0 && (
         <Link to={`/dao/${text.slug}/${resumeCh}`} className="dao-text-resume">
           继续读 · 第 {resumeCh} {text.sectionUnit} →

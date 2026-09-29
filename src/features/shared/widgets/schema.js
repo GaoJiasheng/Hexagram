@@ -13,6 +13,9 @@ const isArr = Array.isArray
 const oneOf = (list) => (v) => list.includes(v)
 
 // 每个 kind 一个校验函数:收 props,返回错误信息数组(空 = 合法)。
+import { validateMoon } from './moon.schema.js'
+import { validateRing } from './ring.schema.js'
+
 const VALIDATORS = {
   // 四柱图。pillars 必填;focus 是要高亮的干/支字;show 控制显示哪几层。
   sizhu(p) {
@@ -98,6 +101,9 @@ const VALIDATORS = {
     }
     return e
   },
+  // 二十四期(design-v24 §3/§4):月相纳甲盘 · 通用环形序列
+  moon: validateMoon,
+  ring: validateRing,
 }
 
 export const WIDGET_KINDS = Object.keys(VALIDATORS)

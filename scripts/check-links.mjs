@@ -42,6 +42,14 @@ const STATIC_ROUTES = new Set([
   '/renwu',
   '/debates',
   '/about',
+  // 二十四期 · 交互化改造(design-v24 §11)
+  '/ru/lunyu/renwu',
+  '/dao/cantongqi/moon',
+  '/fo/concepts',
+  '/ru/lineage',
+  '/dao/zhuangzi/fables',
+  '/ru/shijing/map',
+  '/zong/zhanguoce/map',
 ])
 for (const s of SITES) {
   STATIC_ROUTES.add(s.home)

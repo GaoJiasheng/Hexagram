@@ -1,0 +1,57 @@
+/* RingChart(ring)的样式。只用全站 token(--ink/--paper/--line/--cinnabar…),
+   明暗两套随 token 自动切换;组站着色随 [data-site] 对 --cinnabar 的重映射走(佛组即缁黄)。 */
+
+.ring { border: 1px solid var(--line); border-radius: 10px; background: var(--paper-raised); padding: 12px 12px 10px; min-width: 0; }
+
+.ring-svg { display: block; width: 100%; max-width: 360px; height: auto; margin: 0 auto; }
+.ring-rim { stroke: var(--line); stroke-width: 1.2; }
+.ring-rim--faint { stroke-dasharray: 1 4; opacity: 0.7; }
+
+.ring-arc__line { stroke: var(--ink-faint); stroke-width: 1.4; transition: stroke 0.15s; }
+.ring-arc__head { fill: var(--ink-faint); transition: fill 0.15s; }
+.ring-arc--open .ring-arc__line { stroke-dasharray: 3 3; }
+.ring-arc--open .ring-arc__head { opacity: 0.55; }
+.ring-arc.is-out .ring-arc__line, .ring-arc.is-in .ring-arc__line { stroke: var(--cinnabar); stroke-width: 2.2; }
+.ring-arc.is-out .ring-arc__head, .ring-arc.is-in .ring-arc__head { fill: var(--cinnabar); }
+
+.ring-center__disc { fill: color-mix(in srgb, var(--cinnabar) 5%, var(--paper)); stroke: color-mix(in srgb, var(--cinnabar) 30%, var(--line)); stroke-width: 1; stroke-dasharray: 3 3; transition: fill 0.15s; }
+.ring-center__ch { font-family: var(--font-serif); fill: var(--ink); letter-spacing: 0.08em; }
+.ring-center.is-clickable { cursor: pointer; }
+.ring-center.is-clickable:hover .ring-center__disc { fill: color-mix(in srgb, var(--cinnabar) 11%, var(--paper)); }
+.ring-center.is-active .ring-center__disc { fill: color-mix(in srgb, var(--cinnabar) 16%, var(--paper)); stroke: var(--cinnabar); stroke-dasharray: none; stroke-width: 1.8; }
+.ring-center.is-active .ring-center__ch { fill: var(--cinnabar); }
+.ring-center:focus { outline: none; }
+.ring-center:focus-visible .ring-center__disc { stroke: var(--cinnabar); stroke-width: 2.4; stroke-dasharray: none; }
+
+.ring-node { cursor: pointer; }
+.ring-node:focus { outline: none; }
+.ring-node__disc { fill: color-mix(in srgb, var(--cinnabar) 7%, var(--paper)); stroke: color-mix(in srgb, var(--cinnabar) 42%, var(--line)); stroke-width: 1.3; transition: fill 0.15s, stroke-width 0.15s; }
+.ring-node__ch { font-family: var(--font-serif); fill: var(--ink); pointer-events: none; }
+.ring-node__dot { fill: color-mix(in srgb, var(--cinnabar) 70%, var(--ink-faint)); pointer-events: none; }
+.ring-node:hover .ring-node__disc { fill: color-mix(in srgb, var(--cinnabar) 15%, var(--paper)); }
+.ring-node.is-active .ring-node__disc { fill: color-mix(in srgb, var(--cinnabar) 24%, var(--paper)); stroke: var(--cinnabar); stroke-width: 2.4; }
+.ring-node.is-active .ring-node__ch { fill: var(--cinnabar); font-weight: 600; }
+/* focus = 调用方指着要读者先看的那一项:虚线描边,与「点选」的实线区分 */
+.ring-node.is-focus .ring-node__disc { stroke-dasharray: 3 2; }
+.ring-node:focus-visible .ring-node__disc { stroke: var(--cinnabar); stroke-width: 3; }
+
+.ring-detail { margin-top: 10px; padding: 10px 12px; min-height: 76px; border-radius: 8px; background: var(--paper); border: 1px solid var(--line); overflow-wrap: anywhere; }
+.ring-detail__head { display: flex; align-items: baseline; gap: 10px; margin: 0 0 4px; }
+.ring-detail__label { font-family: var(--font-serif); font-size: 1.02rem; font-weight: 600; color: var(--cinnabar); }
+.ring-detail__pos { font-size: 0.72rem; color: var(--ink-faint); }
+.ring-detail__flow { margin: 0 0 6px; font-size: 0.8rem; color: var(--ink-soft); }
+.ring-detail__flow b { color: var(--ink); }
+.ring-detail__end { color: var(--ink-faint); font-size: 0.74rem; }
+.ring-detail__note { margin: 0 0 6px; font-size: 0.88rem; line-height: 1.85; color: var(--ink); }
+.ring-detail__quote { margin: 0 0 6px; padding: 4px 0 4px 10px; border-left: 2px solid color-mix(in srgb, var(--cinnabar) 55%, var(--line)); font-family: var(--font-serif); font-size: 0.9rem; line-height: 1.8; color: var(--ink-soft); }
+.ring-detail__cite { display: inline-block; font-size: 0.8rem; color: var(--cinnabar); text-decoration: none; }
+.ring-detail__cite:hover { text-decoration: underline; }
+.ring-detail__cite--plain { margin: 0; color: var(--ink-faint); }
+.ring-detail__hint { margin: 0; font-size: 0.84rem; line-height: 1.8; color: var(--ink-faint); text-align: center; }
+
+.ring-steps { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.ring-step { font: inherit; font-size: 0.78rem; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--paper); color: var(--ink-soft); cursor: pointer; }
+.ring-step:hover { color: var(--ink); border-color: color-mix(in srgb, var(--cinnabar) 45%, var(--line)); }
+.ring-step:focus-visible { outline: 2px solid var(--cinnabar); outline-offset: 2px; }
+
+.ring-foot { margin: 8px 0 0; font-size: 0.72rem; line-height: 1.7; color: var(--ink-faint); }
