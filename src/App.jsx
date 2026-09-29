@@ -166,12 +166,12 @@ function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings, neu
 
   return (
     <nav className={`app-nav ${neutral ? 'app-nav--neutral' : ''} ${scrolled ? 'app-nav--scrolled' : ''} ${navHidden ? 'app-nav--hidden' : ''}`} role="navigation" aria-label="主导航">
-      {/* 左上角 logo → 诸学总门户(公开总入口,全站可达;列全部分组) */}
+      {/* 左上角 logo → 首页(即诸学门户;/hexagram 已并入首页) */}
       <NavLink
-        to={neutral ? '/' : MASTER_PORTAL_PATH}
+        to="/"
         className="app-nav__brand"
-        aria-label={neutral ? '观象 · 首页' : '诸学门户·全部分组'}
-        title={neutral ? '观象 · 首页' : '诸学门户 · 全部分组'}
+        aria-label="观象 · 首页 · 诸学门户"
+        title="观象 · 首页 · 诸学门户"
       >
         <span className="brand-seal" aria-hidden="true">{neutral ? '观象' : module.brand}</span>
       </NavLink>
@@ -376,7 +376,7 @@ function AppContent() {
         <Suspense fallback={<div className="route-loading" aria-label="加载中">⋯</div>}>
         <Routes>
           {/* 网站入口 = 诸学门户(owner:/ 不再直接进易经);易经首页挪到 /yijing */}
-          <Route path="/" element={<MasterPortalPage onSearch={openSearch} />} />
+          <Route path="/" element={<MasterPortalPage />} />
           {/* 易经研习 */}
           <Route path="/yijing" element={<HomePage onSearch={openSearch} />} />
           <Route path="/hexagrams" element={<HexagramsPage />} />
@@ -495,7 +495,8 @@ function AppContent() {
             <Route key={`${c}-baihua`} path={`/${c}/:slug/baihua/:chapter`} element={<BaihuaPage corpus={c} />} />
           ))}
           {/* 诸学总门户(v15):左上角 logo 全站可达的公开总入口,列全部分组 */}
-          <Route path={MASTER_PORTAL_PATH} element={<MasterPortalPage onSearch={openSearch} />} />
+          {/* 2026-09-30 owner:「/hexagram 直接指向首页即可」——总门户与首页合一;老链接 / 已分享地址仍通 */}
+          <Route path={MASTER_PORTAL_PATH} element={<Navigate to="/" replace />} />
           <Route path="/concepts" element={<ConceptsPage />} />
           <Route path="/timeline" element={<TimelinePage />} />
           <Route path="/renwu" element={<RenwuPage />} />

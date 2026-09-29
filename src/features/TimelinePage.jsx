@@ -142,7 +142,7 @@ export default function TimelinePage() {
   return (
     <div className="timeline-page page-content">
       <div className="basics-breadcrumb">
-        <Link to="/hexagram" className="basics-breadcrumb__link">← 诸学门户</Link>
+        <Link to="/" className="basics-breadcrumb__link">← 诸学门户</Link>
       </div>
       <div className="page-header">
         <h1 className="page-title">全站时间轴 · 诸书与诸人</h1>

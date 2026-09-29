@@ -219,7 +219,7 @@ export default function ZhuziTopologyPage() {
         <p className="topo-note">{topology.end.note}</p>
       </section>
 
-      <p className="topo-back"><Link to="/debates">← 回辩题库</Link> · <Link to="/hexagram">诸学门户</Link></p>
+      <p className="topo-back"><Link to="/debates">← 回辩题库</Link> · <Link to="/">诸学门户</Link></p>
     </main>
   )
 }

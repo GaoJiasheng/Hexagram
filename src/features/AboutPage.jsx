@@ -70,7 +70,7 @@ export default function AboutPage() {
       </section>
 
       <div className="about-back">
-        <Link to="/hexagram" className="btn btn--secondary">← 诸学门户</Link>
+        <Link to="/" className="btn btn--secondary">← 诸学门户</Link>
       </div>
     </div>
   )

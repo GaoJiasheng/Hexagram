@@ -67,7 +67,7 @@ export default function RenwuPage() {
   return (
     <div className="renwu-page page-content">
       <div className="basics-breadcrumb">
-        <Link to="/hexagram" className="basics-breadcrumb__link">← 诸学门户</Link>
+        <Link to="/" className="basics-breadcrumb__link">← 诸学门户</Link>
       </div>
       <div className="page-header">
         <h1 className="page-title">人物志 · 诸书背后的人</h1>

@@ -1,4 +1,3 @@
-import { Link, useLocation } from 'react-router-dom'
 import { allGroups, sitesInGroup, siteEntryHref } from '../sites/registry.js'
 import { usePageTitle } from './yijing/hooks/usePageTitle.js'
 import { corpusTexts } from './reader/corpus.js'
@@ -30,12 +29,10 @@ const accentStyle = (site) => ({ '--card-accent': `var(--${site.accent})` })
 
 // 诸学门户(总入口)——左上角 logo 全站可达,列全部分组(易道/儒/佛/心/法/墨/兵/纵横/中医/谋略)。
 // 生产域名上卡片链向各组绝对 URL(跨域),dev 用相对路径。
-export default function MasterPortalPage({ onSearch }) {
-  const { pathname } = useLocation()
-  // `/` 是**首页**(第一次来的人),要先说清这是什么;
-  // `/hexagram` 是站内 logo 的回跳点,人到那儿是**要换一组书**的 —— 只给书架,不铺介绍。
-  const landing = pathname === '/'
-  usePageTitle(landing ? '古籍研读站' : '门户')
+// 诸学门户 = 首页(2026-09-30 起 /hexagram 跳转到 /,不再有「精简版门户」):首屏主张 → 书架 → 争鸣 → 索引 → 最近新收 → 我的研读。
+// 生产域名上卡片链向各组绝对 URL(跨域),dev 用相对路径。
+export default function MasterPortalPage() {
+  usePageTitle('古籍研读站')
   const protocol = typeof window !== 'undefined' ? window.location.protocol : 'https:'
   const hostname = typeof window !== 'undefined' ? window.location.hostname : ''
 
@@ -80,12 +77,11 @@ export default function MasterPortalPage({ onSearch }) {
       <span className="master-portal__desc">{siteDesc(s)}</span>
     </a>
   )
-  const Heading = landing ? 'h2' : 'h1'
 
   const shelf = (
     <div className="master-portal__shelf" style={{ '--cols': COLS }}>
       <header className="master-portal__head">
-        <Heading className="master-portal__title">诸学门户</Heading>
+        <h2 className="master-portal__title">诸学门户</h2>
         <p className="master-portal__sub">{sites.length} 组书架 · 经、子、集三部 · 择一组进去,组内自成一站</p>
       </header>
       <div className="master-portal__grid">
@@ -106,29 +102,9 @@ export default function MasterPortalPage({ onSearch }) {
   )
 
   return (
-    <div className={`master-portal ${landing ? 'master-portal--landing' : ''}`}>
-      {landing ? <PortalLanding shelf={shelf} groupCount={sites.length} /> : shelf}
-      {/* 招牌入口:赛博·百家争鸣——/hexagram 上是一条紧凑横幅;首页 `/` 已展开成与书架平行的一段(DebatesShowcase),不重复 */}
-      {!landing && (
-      <Link to="/debates" className="master-portal__debates" aria-label="赛博 · 百家争鸣">
-        <span className="master-portal__debates-seal" aria-hidden="true">争鸣</span>
-        <span className="master-portal__debates-body">
-          <span className="master-portal__debates-title">赛博 · 百家争鸣</span>
-          <span className="master-portal__debates-sub">诸子隔空对辩 · 另附拓扑图:他们历史上真的怎么说彼此</span>
-        </span>
-        <span className="master-portal__debates-go" aria-hidden="true">›</span>
-      </Link>
-      )}
+    <div className="master-portal master-portal--landing">
+      <PortalLanding shelf={shelf} groupCount={sites.length} />
       <PortalStudyTrail />
-      {/* 首页 `/` 的这四个入口已提成「索引」段(PortalLanding),这里只在 /hexagram 出 */}
-      {!landing && (
-        <p className="master-portal__links">
-          <Link to="/concepts" className="master-portal__about-link">义理专题 · 跨派概念</Link>
-          <Link to="/mingju" className="master-portal__about-link">名句集 · 每日一句</Link>
-          <Link to="/timeline" className="master-portal__about-link">全站时间轴 · 诸书成书年代</Link>
-          <Link to="/renwu" className="master-portal__about-link">人物志 · 诸书背后的人</Link>
-        </p>
-      )}
     </div>
   )
 }

@@ -12,7 +12,7 @@ export default function ConceptsPage() {
   return (
     <div className="concepts-page page-content">
       <div className="basics-breadcrumb">
-        <Link to="/hexagram" className="basics-breadcrumb__link">← 诸学门户</Link>
+        <Link to="/" className="basics-breadcrumb__link">← 诸学门户</Link>
       </div>
       <div className="page-header">
         <h1 className="page-title">义理专题 · 跨派概念</h1>
