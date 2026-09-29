@@ -52,19 +52,20 @@ export default function MasterPortalPage({ onSearch }) {
   const families = [...FAMILIES, ...(rest.length ? [{ key: 'qita', label: '其他', note: '', keys: rest }] : [])]
     .map((f) => ({ ...f, sites: f.keys.map((k) => byKey[k]).filter(Boolean) }))
     .filter((f) => f.sites.length)
-  // 按 COLS 列贪心装行:一个门类不拆行;每装满一行换行。每行占两条 grid 行(题签行 + 卡片行)。
+  // 按 COLS 列贪心装行:一个门类不拆行;每装满一行换行。每个门类是外层网格里跨 n 列的一个格子,
+  // 内层再分 n 等列(与外层同一个列距,故各门类的卡片列线上下贯通)。同一排是一层「书架板」(行底一道板线),
+  // 同排第二个门类左侧一道竖向隔线;题签 = 朱色签条 + 大字门类名 + 右端小注。
   const COLS = 5
   let col = 1, row = 1
   for (const f of families) {
     const n = f.sites.length
-    if (col > 1 && col + n - 1 > COLS) { col = 1; row += 2 }
-    f.pos = { col, span: Math.min(n, COLS), capRow: row, cardRow: row + 1 }
+    if (col > 1 && col + n - 1 > COLS) { col = 1; row += 1 }
+    f.pos = { col, span: Math.min(n, COLS), row, cont: col > 1 }
     col += n
-    if (col > COLS) { col = 1; row += 2 }
+    if (col > COLS) { col = 1; row += 1 }
   }
-  const renderCard = (s, i, f) => (
-    <a key={s.key} href={siteEntryHref(s, protocol, hostname)} className="master-portal__card"
-      style={{ ...accentStyle(s), '--c': f.pos.col + i, '--r': f.pos.cardRow }}>
+  const renderCard = (s) => (
+    <a key={s.key} href={siteEntryHref(s, protocol, hostname)} className="master-portal__card" style={accentStyle(s)}>
       <span className="master-portal__seal">{s.brand}</span>
       <span className="master-portal__body">
         <span className="master-portal__titles">{s.portalTitle}</span>
@@ -72,23 +73,25 @@ export default function MasterPortalPage({ onSearch }) {
       </span>
     </a>
   )
+  const Heading = landing ? 'h2' : 'h1'
 
   const shelf = (
     <div className="master-portal__shelf" style={{ '--cols': COLS }}>
-      <p className="master-portal__hint">观象 · 诸学门户</p>
+      <header className="master-portal__head">
+        <Heading className="master-portal__title">诸学门户</Heading>
+        <p className="master-portal__sub">{sites.length} 组书架 · 经、子、集三部 · 择一组进去,组内自成一站</p>
+      </header>
       <div className="master-portal__grid">
         {families.map((f) => (
-          <section key={f.key} className="master-portal__family" aria-label={f.label}>
-            <h2 className={`master-portal__cap ${f.pos.capRow === 1 ? 'master-portal__cap--first' : ''}`}
-              style={{ '--c': f.pos.col, '--s': f.pos.span, '--r': f.pos.capRow }}>
+          <section key={f.key} className={`master-portal__family ${f.pos.cont ? 'master-portal__family--cont' : ''}`} aria-label={f.label}
+            style={{ '--c': f.pos.col, '--s': f.pos.span, '--r': f.pos.row }}>
+            <h3 className="master-portal__cap">
+              <span className="master-portal__cap-bar" aria-hidden="true" />
               <span className="master-portal__cap-label">{f.label}</span>
               {f.bond && <span className="master-portal__cap-bond" aria-hidden="true" title="易道同组,注疏内有卦名桥">☯</span>}
-              <span className="master-portal__cap-rule" aria-hidden="true" />
               {f.note && <span className="master-portal__cap-note">{f.note}</span>}
-            </h2>
-            <div className="master-portal__cards">
-              {f.sites.map((s, i) => renderCard(s, i, f))}
-            </div>
+            </h3>
+            <div className="master-portal__cards">{f.sites.map(renderCard)}</div>
           </section>
         ))}
       </div>
