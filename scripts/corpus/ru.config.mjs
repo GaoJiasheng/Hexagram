@@ -71,7 +71,8 @@ const SHIJING_GROUPS = [
 ]
 
 export const BOOKS = [
-  { slug: 'lunyu', title: '论语', pages: LUNYU_PAGES, exactChapters: 20 },
+  // 论语:雍也页泄漏一段维基整理者注解(「注解：『女』有『汝、你』的意思…」),非原文,dropParaRe 剔(2026-09-30,I5 代理发现)
+  { slug: 'lunyu', title: '论语', pages: LUNYU_PAGES, exactChapters: 20, dropParaRe: '^注解：' },
   { slug: 'mengzi', title: '孟子', pages: MENGZI_PAGES, exactChapters: 14 },
   { slug: 'daxue', title: '大学', pages: ['禮記/大學'], exactChapters: 1 },
   { slug: 'zhongyong', title: '中庸', pages: ['禮記/中庸'], exactChapters: 1 },
