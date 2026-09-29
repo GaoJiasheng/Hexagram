@@ -19,6 +19,7 @@
 
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import DebatesShowcase from './debates/DebatesShowcase.jsx'
 
 const num = (n) => (n >= 1000 ? n.toLocaleString('en-US') : String(n))
 
@@ -63,6 +64,9 @@ export default function PortalLanding({ shelf }) {
 
       {/* ── 第二屏:书架(原有的卡片墙整体挪到这里) ─────────────── */}
       <div id="portal-shelf">{shelf}</div>
+
+      {/* ── 第三屏:赛博 · 百家争鸣(与书架平行的大段,owner 2026-09-30) ── */}
+      <DebatesShowcase />
 
       {recent?.length > 0 && (
         <section className="landing-recent" aria-label="最近新收">

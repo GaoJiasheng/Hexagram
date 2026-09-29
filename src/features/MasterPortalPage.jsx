@@ -101,7 +101,8 @@ export default function MasterPortalPage({ onSearch }) {
   return (
     <div className={`master-portal ${landing ? 'master-portal--landing' : ''}`}>
       {landing ? <PortalLanding shelf={shelf} /> : shelf}
-      {/* 招牌入口:赛博·百家争鸣(诸子跨派对辩,内容持续增补)——单列醒目横幅,不再混在小字链里 */}
+      {/* 招牌入口:赛博·百家争鸣——/hexagram 上是一条紧凑横幅;首页 `/` 已展开成与书架平行的一段(DebatesShowcase),不重复 */}
+      {!landing && (
       <Link to="/debates" className="master-portal__debates" aria-label="赛博 · 百家争鸣">
         <span className="master-portal__debates-seal" aria-hidden="true">争鸣</span>
         <span className="master-portal__debates-body">
@@ -110,6 +111,7 @@ export default function MasterPortalPage({ onSearch }) {
         </span>
         <span className="master-portal__debates-go" aria-hidden="true">›</span>
       </Link>
+      )}
       <PortalStudyTrail />
       <p className="master-portal__links">
         <Link to="/concepts" className="master-portal__about-link">义理专题 · 跨派概念</Link>
