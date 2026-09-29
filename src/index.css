@@ -3362,7 +3362,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .master-portal__desc { font-size: 0.74rem; color: var(--ink-faint); line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 /* 中宽(平板 / 窄窗):五组一行塞不下,退回固定三列;门类签仍竖排 */
 @media (max-width: 1080px) {
-  .master-portal__family-cards { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }   /* 平板 ~768 得三列,诸子 3+2 不悬单卡 */
+  .master-portal__family-cards { grid-template-columns: repeat(auto-fill, minmax(188px, 1fr)); }   /* 平板 768(扣滚动条)仍得三列,诸子 3+2 不悬单卡 */
   .master-portal__family--bond .master-portal__family-cards { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
 }
 /* 窄屏:门类签转横向作小标题,卡片单列,太极桥转竖向 */
