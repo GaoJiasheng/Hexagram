@@ -4462,21 +4462,6 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 }
 .landing-hero__note { margin: 0; font-size: 0.8rem; color: var(--ink-faint); }
 
-/* 三条路径:按读者状态分,不按分类分 */
-.landing-paths {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem;
-  margin: 0 0 2.4rem;
-}
-.landing-path {
-  display: flex; flex-direction: column; gap: 0.3rem;
-  padding: 0.85rem 1rem; border: 1px solid var(--line); border-radius: 4px;
-  text-decoration: none; background: var(--paper-raised);
-  transition: border-color 0.15s;
-}
-.landing-path:hover { border-color: var(--cinnabar-pure); }
-.landing-path__k { font-family: var(--font-serif); font-size: 0.95rem; color: var(--ink); }
-.landing-path__v { font-size: 0.78rem; color: var(--ink-faint); line-height: 1.6; }
-
 .landing-h2 {
   margin: 2.6rem 0 1rem; font-family: var(--font-serif);
   font-size: 1.05rem; font-weight: 600; color: var(--ink);
@@ -4532,7 +4517,6 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .colophon-block--trust .landing-trust__more { margin-top: 0.7rem; }
 
 @media (max-width: 640px) {
-  .landing-paths { grid-template-columns: 1fr; }
   .landing-show__item { grid-template-columns: 1fr; }
   .landing-show__tag { grid-row: auto; justify-self: start; }
   .landing-recent__list li { flex-direction: column; gap: 0.1rem; }

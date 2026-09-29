@@ -89,22 +89,6 @@ export default function PortalLanding({ shelf }) {
         </p>
       </section>
 
-      {/* ── 第二屏之前:三条路径(按读者状态分,而不是按分类) ───────── */}
-      <section className="landing-paths" aria-label="从哪儿开始">
-        <Link to="/debates" className="landing-path">
-          <span className="landing-path__k">随便看看</span>
-          <span className="landing-path__v">每日一辩 · 名句集 · 今日一卦</span>
-        </Link>
-        <a href="#portal-shelf" className="landing-path landing-path--mid">
-          <span className="landing-path__k">想读某一本</span>
-          <span className="landing-path__v">十三组书架 ↓</span>
-        </a>
-        <Link to="/concepts" className="landing-path">
-          <span className="landing-path__k">想弄懂一个问题</span>
-          <span className="landing-path__v">义理专题 · 跨派概念</span>
-        </Link>
-      </section>
-
       {/* ── 第二屏:书架(原有的卡片墙整体挪到这里) ─────────────── */}
       <div id="portal-shelf">{shelf}</div>
 
