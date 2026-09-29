@@ -1,7 +1,8 @@
 // 纳甲干支 — 京房体系，全算法生成
-// 依赖 bagong.js 的宫五行
+// 依赖 bagong.js 的宫五行；地支五行表吃 shared/ganzhi 共享底座（全站干支/五行唯一来源）
 
 import { getPalace, PALACE_ELEMENT } from './bagong.js'
+import { ZHI as ZHI12, zhiWuxing, shengOf, keOf } from '../../shared/ganzhi/index.js'
 
 // 天干：内卦（下卦）用 inner，外卦（上卦）用 outer
 const GAN = {
@@ -28,26 +29,16 @@ const ZHI = {
   dui:  ['巳','卯','丑','亥','酉','未'],
 }
 
-// 地支五行
-const ZHI_ELEMENT = {
-  子: '水', 亥: '水',
-  寅: '木', 卯: '木',
-  巳: '火', 午: '火',
-  申: '金', 酉: '金',
-  辰: '土', 戌: '土', 丑: '土', 未: '土',
-}
+// 地支五行 — 由 ganzhi 共享底座派生（与手写表逐一核对一致，见 najia.test.js）
+const ZHI_ELEMENT = Object.fromEntries(ZHI12.map((z) => [z, zhiWuxing(z)]))
 
-// 五行相生：key 生 value
-const SHENG = { 水: '木', 木: '火', 火: '土', 土: '金', 金: '水' }
-// 五行相克：key 克 value
-const KE = { 水: '火', 火: '金', 金: '木', 木: '土', 土: '水' }
-
+// 五行相生相克 — 由 ganzhi 共享底座派生（shengOf/keOf，与手写表逐一核对一致）
 function getLiuqin(yaoEl, gongEl) {
   if (yaoEl === gongEl) return '兄弟'
-  if (SHENG[yaoEl] === gongEl) return '父母'   // 爻五行生宫五行 → 生我 → 父母
-  if (SHENG[gongEl] === yaoEl) return '子孙'   // 宫五行生爻五行 → 我生 → 子孙
-  if (KE[yaoEl] === gongEl) return '官鬼'      // 爻五行克宫五行 → 克我 → 官鬼
-  if (KE[gongEl] === yaoEl) return '妻财'      // 宫五行克爻五行 → 我克 → 妻财
+  if (shengOf(yaoEl) === gongEl) return '父母'   // 爻五行生宫五行 → 生我 → 父母
+  if (shengOf(gongEl) === yaoEl) return '子孙'   // 宫五行生爻五行 → 我生 → 子孙
+  if (keOf(yaoEl) === gongEl) return '官鬼'      // 爻五行克宫五行 → 克我 → 官鬼
+  if (keOf(gongEl) === yaoEl) return '妻财'      // 宫五行克爻五行 → 我克 → 妻财
   return '未知'
 }
 

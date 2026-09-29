@@ -10,8 +10,8 @@ import SchoolEntry from '../reader/SchoolEntry.jsx'
 //   学堂(前置知识) → 《渊海子平》入门 → 三条不同的路(《子平真诠》格局 /
 //   《滴天髓阐微》旺衰 / 《穷通宝鉴》调候)→ 汇合 → 《三命通会》集大成 → 源头诸书
 //
-// 《三命通会》与源头诸书目前不在 texts.json(尚未立项收书),先摆两个静态占位节点;
-// 等对应书真正入库后改走 corpusTexts('mingli') 数据驱动,和前四书一致。
+// 全部节点走 corpusTexts('mingli') 数据驱动(《三命通会》与源头四书 2026-09 已入库、全 done);
+// PLACEHOLDER_STAGES 只在某档一时没书时兜底,正常不会渲染。
 const STATUS_LABEL = { pending: '整理中', partial: '可读·译注中', done: '可阅读' }
 
 // 进阶三书固定按「格局 / 旺衰 / 调候」次序陈列,不依赖 texts.json 的书写顺序

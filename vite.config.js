@@ -86,6 +86,10 @@ export default defineConfig({
       },
     })]),
   ],
+  // vitest:排除 .claude/worktrees(app 为隔离代理建的镜像目录,不排除会把全部测试跑两遍)与 iOS 壳目录
+  test: {
+    exclude: ['**/node_modules/**', '**/dist/**', '**/.claude/**', '**/ios/**', '**/android/**'],
+  },
   define: {
     __APP_VERSION__: JSON.stringify(version),
     __BUILD_DATE__: JSON.stringify(buildDate),

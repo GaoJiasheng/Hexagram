@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest'
-import { getNajia } from '../najia.js'
+import { getNajia, ZHI_ELEMENT } from '../najia.js'
+import { ZHI, zhiWuxing } from '../../../shared/ganzhi/index.js'
 
 // 乾卦自检：甲子水·子孙 / 甲寅木·妻财 / 甲辰土·父母 / 壬午火·官鬼 / 壬申金·兄弟 / 壬戌土·父母
 describe('乾卦纳甲六爻', () => {
@@ -63,6 +64,14 @@ describe('getNajia 基础结构', () => {
       const najia = getNajia(b)
       expect(najia).not.toBeNull()
       expect(najia).toHaveLength(6)
+    }
+  })
+})
+
+describe('ZHI_ELEMENT 与 shared/ganzhi 底座一致（I13 重构回归）', () => {
+  it('十二地支五行逐一与 zhiWuxing 对齐', () => {
+    for (const z of ZHI) {
+      expect(ZHI_ELEMENT[z]).toBe(zhiWuxing(z))
     }
   })
 })
