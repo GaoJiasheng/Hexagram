@@ -4,6 +4,7 @@
 //   draft.json = 与白话 schema 同形的一个对象 {title, subtitle, centralIdea, blocks:[…]}
 // 判据与 scripts/assemble-baihua.mjs / check-data 的 checkBaihua 一致;只读不写。
 import fs from 'node:fs'
+import { paraRefs } from './lib/para-refs.mjs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { isSubKey, subChapter } from './lib/sub-chapter.mjs'
@@ -21,6 +22,21 @@ const text = ch.paragraphs.map((p) => p.original).join('')
 const d = JSON.parse(fs.readFileSync(file, 'utf8'))
 const blocks = Array.isArray(d.blocks) ? d.blocks : []
 const bad = [], soft = []
+// 段号引用越界(与 check-data 同一把尺子):「站内/本站/原文/本章 第 N 段」的 N 须在 1..本章段数之内(章内绝对段号,与阅读页一致)
+{
+  const fullCh = book.chapters.find((c) => c.no === Number(String(no).split('-')[0]))
+  const total = fullCh ? fullCh.paragraphs.length : 0
+  const own = [d.subtitle, d.centralIdea]
+  for (const b of blocks) {
+    if (b.type === 'quote' || b.type === 'widget') continue
+    if (typeof b.text === 'string') own.push(b.text)
+    if (typeof b.caption === 'string') own.push(b.caption)
+    if (Array.isArray(b.items)) for (const it of b.items) own.push(typeof it === 'string' ? it : (it?.text || ''))
+  }
+  const refs = paraRefs(own.filter(Boolean).join('\n'))
+  const out = refs.filter((n) => n === 0 || (total && n > total))
+  if (out.length) bad.push(`段号引用越界 ${[...new Set(out)].join('/')}:本章共 ${total} 段,段号按 1 起算(与原文切片方括号里的数字一致);0 一定是按 0 起算数错了`)
+}
 for (const k of ['title', 'centralIdea']) if (!String(d[k] || '').trim()) bad.push(`缺 ${k}`)
 if (!blocks.some((b) => b.type === 'h2')) bad.push('没有 h2 小节标题')
 const isCJK = (c) => c >= '一' && c <= '鿿'
