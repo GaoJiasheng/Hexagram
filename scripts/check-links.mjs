@@ -335,6 +335,7 @@ async function main() {
     '/dao/zhuangzi/fables',
     '/ru/shijing/map',
     '/zong/zhanguoce/map',
+  '/rhyme',
   ])
   for (const s of SITES) {
     STATIC_ROUTES.add(s.home)

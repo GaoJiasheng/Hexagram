@@ -39,7 +39,7 @@
 | ~~M5~~ | ~~日时查表缺 2 格~~ ✅ 已核:底本本身缺(己酉日无戊辰时、丁巳日无戊申时,四库本此二条阙),页面早已标「空着的格是底本本身缺的」,无事可做 |
 | ~~M6~~ | ~~og 逐页动态~~ ✅ 早已实现:`functions/_middleware.js` 对爬虫 UA(Googlebot/facebook/微信等)按路径哈希取 `/content/og/<n>.json` 分片、HTMLRewriter 注入逐页 og(实测 `/ru/lunyu/1` → 「论语 · 学而第一 · 儒典研读」,`/dao/cantongqi/moon` → 「月相纳甲盘 · 道藏研读」);普通浏览器看到站点级是设计如此。此行原是记漏 |
 | ~~M7~~ | ~~CLAUDE.md 状态节瘦身~~ ✅ 10-01 | 原节 84 条 104KB 一字不删归档到 `docs/status-archive.md`(archive §N);CLAUDE.md 换成「里程碑一览」45 行 + 「必守的规矩(按组)」(52 条加粗祈使句 50 条原样搬入,另 28 条扩展语气规则也搬;过时的加〔注〕或列入「已废止」块);整文件 123KB→45KB。**新进度:里程碑加一行、细节追加 archive、新规矩进规矩节** |
-| M8 | 韵书维基页小缺(平水韵漏「啼」等)按规矩不补;但可加一份「韵书未收字清单」页给读者查 | 半天 | 低 |
+| ~~M8~~ | ~~韵书与未收字页~~ ✅ 10-01 | `/rhyme`(中立外壳):三部韵书各一卡 + 三组未收字表(字 / 次数 / 句末 / 例句直落段落)+ 凡例;格律图例末尾「韵书说明 →」;`gen-rhyme-unlisted.mjs` → `unlisted.json`,check-rhyme 加闸(与现文重算不一致即报,**改诗词原文或重抓韵书后须重跑**)。顺带修 prosody.js:曲牌题头后接正文的套数(74 段)与「　　」分句的六十首古诗原先被当非韵文跳过、「：」不断句——现已计入;`build-mingju` 首屏也显式带 `?p=`(原无 ?p 会落回续读屏) |
 | ~~M9~~ | ~~check-links 扩到 JSX 手写链接~~ ✅ 10-01 | 路由从 App.jsx 实时解析(含 map 展开的 /me、baihua 路由),react-router 式匹配(静态段优先),按命中路由查实体存在(texts.json / manifest / hexagrams / debates / cases / learnTopics / books);扫 `src/**/*.jsx` 的 `to=`/`href=`/静态对象字面量,131 条静态链 0 坏;文档里的路径只 warn。未覆盖:`navigate('/x')`、`.js` 里的链接表、数据驱动的 href(如 shape) |
 
 ### D · 长期(不排期)

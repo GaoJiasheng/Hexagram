@@ -382,6 +382,16 @@ function indexPages(records) {
     href: '/zong/zhanguoce/map',
     text: '战国策 七国 秦 楚 齐 燕 赵 魏 韩 合纵 连横 苏秦 张仪 示意图 时间轴',
   })
+  addRecord(records, {
+    id: 'page:rhyme',
+    kind: '专题',
+    site: 'portal',
+    siteTitle: '韵书与未收字',
+    title: '韵书与未收字',
+    subtitle: '平水韵 · 词林正韵 · 中原音韵',
+    href: '/rhyme',
+    text: '韵书 平水韵 词林正韵 中原音韵 格律 平仄 韵脚 未收字 唐诗 宋词 元曲 只统计不补字',
+  })
   {
     // 人物志一人一条(2026-09-25):搜「朱熹」「鸠摩罗什」能直落人物志;易学十家的小传取 yijing/renwu.json
     const rw = readJson(path.join(SRC_DATA, 'renwu.json'))

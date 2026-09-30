@@ -98,6 +98,8 @@
 .prosody-legend__key { display: inline-flex; align-items: center; gap: 5px; }
 .prosody-legend__fanli { margin-top: 4px !important; color: var(--ink-faint); }
 .prosody-legend__status { color: var(--cinnabar); }
+.prosody-legend__more { margin-left: 8px; color: var(--ink-soft); white-space: nowrap; text-decoration: underline dotted; text-underline-offset: 3px; }
+.prosody-legend__more:hover { color: var(--cinnabar); }
 
 /* 读屏器文本(页面上不可见) */
 .prosody-sr {

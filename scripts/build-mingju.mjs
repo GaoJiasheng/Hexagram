@@ -125,7 +125,7 @@ for (const e of items) {
   const parts = chapterParts(chap, metaOf(e.corpus, e.slug))
   if (parts) {
     const i = parts.findIndex((p) => e.seg >= p.from && e.seg < p.to)
-    if (i > 0) e.part = i + 1   // ?p= 是 1 起(ClassicReader 的 part 默认 1)
+    if (i >= 0) e.part = i + 1   // ?p= 是 1 起;第 1 屏也显式带——无 ?p 时阅读器按续读记位选屏,锚会落空(2026-10-01)
   }
   delete e.seg
 }

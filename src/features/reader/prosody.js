@@ -131,13 +131,17 @@ export function rhymePart(char, scheme = 'pingshui', book) {
 // ---------- 切句 ----------
 const HAN = /\p{Script=Han}/u
 // 与阅读器 verse 断行同一套句读(ClassicText / AnnotatedText):逢 ，。；！？ 断
-const SENT_SPLIT = /(?<=[\uFF0C\u3002\uFF1B\uFF01\uFF1F])/ // ，。；！？
-const HAS_PUNCT = /[\uFF0C\u3002\uFF1B\uFF01\uFF1F]/
+// 2026-10-01(M8 复核):加「：」与全角空格——唐诗第 2 类六十首(如《韩碑》)以「　　」分句无句读,元曲「却有忘机友：」以冒号收句,原先都被当非韵文跳过
+const SENT_SPLIT = /(?<=[\uFF0C\u3002\uFF1B\uFF01\uFF1F\uFF1A])|\u3000+/ // ，。；！？： 或全角空格
+const HAS_PUNCT = /[\uFF0C\u3002\uFF1B\uFF01\uFF1F\uFF1A\u3000]/
+// 曲牌题头「【中吕】」「【六煞】」:整段只有题头者不是韵文;题头后接正文者剥掉题头再算(套数每支曲子都这样起头,原先整段被跳过)
+const QUPAI_HEAD = /^【[^】]+】/
+const QUPAI_ONLY = /^【[^】]+】[^\uFF0C\u3002\uFF1B\uFF01\uFF1F\uFF1A\u3000]*$/
 /** 是否韵文段:含句读,且不是诗题(《…》)/曲牌题(【…】…)一类的标题段。 */
 export function isVerseText(text) {
   const t = String(text || '').trim()
   if (!t || !HAS_PUNCT.test(t)) return false
-  if (/^《[^》]+》$/.test(t) || /^【/.test(t)) return false
+  if (/^《[^》]+》$/.test(t) || QUPAI_ONLY.test(t)) return false
   return true
 }
 
@@ -150,7 +154,7 @@ export function isVerseText(text) {
 export function analyzeLine(text, opts = {}) {
   const { scheme = 'pingshui', tones = true, books = {} } = opts
   const out = []
-  for (const seg of String(text || '').split(SENT_SPLIT)) {
+  for (const seg of String(text || '').replace(QUPAI_HEAD, '').split(SENT_SPLIT)) {
     const cs = [...seg].filter((c) => HAN.test(c))
     if (!cs.length) continue
     const chars = cs.map((c) => (tones ? { c, tone: toneOf(c, books.pingshui), ru: isRusheng(c, books.pingshui) } : { c, tone: undefined }))

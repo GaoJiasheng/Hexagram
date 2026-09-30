@@ -1,0 +1,197 @@
+/* 韵书与未收字(M8)。只用站内 token,明暗两套随 token 自动翻转;320px 不横向溢出。
+   符号(.pz / .rhyme-tag)沿用 ProsodyRow.css,这里补上它们在 .prosody 作用域外所需的变量。 */
+
+.rb-page {
+  max-width: 880px;
+  margin: 0 auto;
+  --rh-1: var(--azure);
+  --rh-2: var(--military);
+  --rh-3: var(--confucian);
+  --rh-4: var(--gold);
+  --rh-5: var(--xinxue);
+  --rh-6: var(--mohist);
+  --rh-plain: var(--ink-faint);
+  --pz-ink: var(--ink-soft);
+  --rb-accent: var(--ink-soft);
+}
+.rb-accent--tangshi { --rb-accent: var(--tangshi); }
+.rb-accent--songci { --rb-accent: var(--songci); }
+.rb-accent--yuanqu { --rb-accent: var(--yuanqu); }
+
+.rb-intro {
+  margin: -12px 0 28px;
+  font-size: calc(0.95rem * var(--read-scale));
+  line-height: 1.95;
+  color: var(--ink);
+}
+
+.rb-h2 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* ── 三部韵书 ─────────────────────────── */
+.rb-books {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+@media (max-width: 860px) {
+  .rb-books { grid-template-columns: minmax(0, 1fr); }
+}
+
+.rb-book {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 16px 16px 14px;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--rb-accent);
+  border-radius: 8px;
+  background: var(--paper-raised);
+  scroll-margin-top: 80px;
+  font-size: 0.86rem;
+  line-height: 1.75;
+  color: var(--ink-soft);
+}
+.rb-book__head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.rb-book__seal {
+  display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+  width: 2rem; height: 2rem; border-radius: 4px;
+  /* 描边印:--tangshi 等组色没有暗色档,实底反白在暗色下对比不足,故取淡底 + 深色字 */
+  border: 1.5px solid var(--rb-accent);
+  background: color-mix(in srgb, var(--rb-accent) 12%, transparent);
+  color: color-mix(in srgb, var(--rb-accent) 55%, var(--ink));
+  font-family: var(--font-serif); font-size: 1.05rem; font-weight: 600;
+}
+.rb-book__title { margin: 0; font-size: 1.12rem; font-weight: 600; color: var(--ink); line-height: 1.3; }
+.rb-book__src { margin: 2px 0 0; font-size: 0.76rem; color: var(--ink-faint); }
+.rb-book__what { margin: 0 0 10px; color: var(--ink); }
+
+.rb-facts {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 2px 10px;
+  margin: 0 0 10px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--rb-accent) 7%, transparent);
+}
+.rb-facts dt { color: var(--ink-faint); white-space: nowrap; }
+.rb-facts dd { margin: 0; color: var(--ink); overflow-wrap: anywhere; }
+
+.rb-book__use { margin: 0 0 4px; }
+.rb-book__group { color: var(--ink); font-weight: 600; text-decoration: underline; text-decoration-color: var(--rb-accent); text-underline-offset: 3px; }
+.rb-book__how { margin: 0 0 10px; padding-left: 1.2em; }
+.rb-book__how li { margin: 2px 0; }
+.rb-book__jump {
+  margin-top: auto;
+  align-self: flex-start;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--rb-accent);
+}
+.rb-book__jump:hover { color: var(--ink); }
+
+/* ── 符号图例 ─────────────────────────── */
+.rb-legend {
+  margin-bottom: 32px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+.rb-legend .rb-h2 { font-size: 0.95rem; margin-bottom: 6px; }
+.rb-legend__keys { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; margin: 4px 0 0; }
+.rb-legend__key { display: inline-flex; align-items: center; gap: 6px; }
+
+/* ── 未收字 ───────────────────────────── */
+.rb-unlisted__head { display: flex; align-items: center; justify-content: space-between; gap: 8px 12px; flex-wrap: wrap; }
+.rb-unlisted__note { margin: 8px 0 20px; font-size: 0.84rem; line-height: 1.8; }
+
+.rb-group { margin-bottom: 32px; scroll-margin-top: 80px; }
+.rb-group__title {
+  display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 10px;
+  margin: 0 0 6px; padding-left: 10px;
+  border-left: 3px solid var(--rb-accent);
+  font-size: 1.05rem; font-weight: 600; color: var(--ink);
+}
+.rb-group__by { font-size: 0.8rem; font-weight: 400; color: var(--ink-faint); }
+.rb-group__stats { margin: 0 0 12px; font-size: 0.84rem; line-height: 1.8; color: var(--ink-soft); }
+.rb-group__stats strong { color: var(--ink); font-weight: 600; }
+.rb-group__more { margin-top: 10px; }
+
+.rb-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+}
+.rb-table__c-char { width: 3em; }
+.rb-table__c-num { width: 3.4em; }
+.rb-table th, .rb-table td {
+  padding: 7px 6px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  text-align: left;
+}
+.rb-table thead th {
+  font-weight: 400;
+  font-size: 0.76rem;
+  color: var(--ink-faint);
+  border-bottom-color: var(--ink-faint);
+}
+.rb-table .rb-num { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-soft); }
+.rb-zero { color: var(--ink-faint); }
+.rb-table__char {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.rb-examples { margin: 0; padding: 0; list-style: none; }
+.rb-examples li + li { margin-top: 4px; }
+.rb-example {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+}
+.rb-example:hover .rb-example__line { text-decoration: underline; text-decoration-color: var(--rb-accent); text-underline-offset: 3px; }
+.rb-example__line { font-family: var(--font-serif); margin-right: 6px; }
+.rb-example__src { font-size: 0.76rem; color: var(--ink-faint); }
+.rb-example__end {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 0 4px;
+  border: 1px dashed var(--ink-faint);
+  border-radius: 3px;
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+.rb-hit {
+  font-weight: 600;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--rb-accent) 20%, transparent);
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
+.rb-fanli { margin-top: 8px; font-size: 0.8rem; line-height: 1.8; }
+
+@media (max-width: 480px) {
+  .rb-table { font-size: 0.82rem; }
+  .rb-table__c-char { width: 2.4em; }
+  .rb-table__c-num { width: 2.6em; }
+  .rb-table th, .rb-table td { padding: 6px 3px; }
+  .rb-table__char { font-size: 1.15rem; }
+  .rb-book { padding: 14px 12px 12px; }
+}

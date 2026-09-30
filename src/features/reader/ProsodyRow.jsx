@@ -1,4 +1,5 @@
 import './ProsodyRow.css'
+import { Link } from 'react-router-dom'
 import { SCHEME_TITLE } from './prosody.js'
 
 // 格律层(design-v24 §7.3):韵文段原文之下,每句一行 ○ 平 / ● 仄 / ◐ 可平可仄 + 句末韵部小签。
@@ -100,6 +101,7 @@ export function ProsodyLegend({ scheme, tones, status }) {
       </p>
       <p className="prosody-legend__fanli">
         凡例：{toneBook}；{tones ? '多音字标 ◐ 不硬判' : '一字多部者并列、不硬判'}；今音不同者以韵书为准。本页只标韵书所记，不判合律与否。
+        <Link to={`/rhyme#rb-${scheme}`} className="prosody-legend__more">韵书说明 →</Link>
       </p>
     </div>
   )
