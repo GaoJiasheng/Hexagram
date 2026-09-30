@@ -1,6 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
+import { ogShardKey } from '../server/og-index.js'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const DATA = path.join(ROOT, 'src/data')
@@ -160,41 +161,115 @@ export function splitHref(raw) {
 
 const isSiteAbs = (s) => s.startsWith('/') && !s.startsWith('//')
 
+// 三个提取器(JSX / navigate() / .js 链接表)共用的收集器:
+// 路径部分(截掉 #锚 ?查询 后)含 `${` → 只计 dynamic;完全静态且以 / 起头(非 //)→ 收;其余(#锚、http、相对)不收也不计。
+function linkCollector(src) {
+  const lineOf = lineIndexer(src)
+  const out = { links: [], dynamic: 0 }
+  out.take = (raw, idx, kind) => {
+    const p = splitHref(raw)
+    if (p.includes('${')) {
+      if (isSiteAbs(p) || p.startsWith('${')) out.dynamic++
+      return
+    }
+    if (!isSiteAbs(p)) return
+    out.links.push({ path: p, raw, line: lineOf(idx), kind })
+  }
+  return out
+}
+
+// 字符串字面量(单 / 双引号不跨行;模板可跨行、可带插值 —— 插值交给 take 计 dynamic)
+const STR_LIT = `'[^'\\n]*'|"[^"\\n]*"|\`[^\`]*\``
+const PURE_STR_ARRAY = new RegExp(`(?<![\\w$)\\].])\\[\\s*((?:(?:${STR_LIT})\\s*,\\s*)*(?:${STR_LIT})\\s*,?\\s*)\\]`, 'g')
+
+/**
+ * 「纯字符串数组」里以 / 起头的项:['/basics/yinyang', '学阴阳八卦'] · match: ['/hexagrams', '/hexagram/']。
+ * 只认整个数组都是字符串字面量的(混了变量 / 对象 / 注释的不认)—— 宁漏勿把函数实参误当链接。
+ * `[` 紧贴在标识符 / ) / ] / . 之后的是成员访问(obj[`${a}/${b}`]),不是数组,不认。
+ */
+function takeArrayItems(src, c) {
+  for (const m of src.matchAll(PURE_STR_ARRAY)) {
+    const base = m.index + m[0].indexOf(m[1])
+    for (const e of m[1].matchAll(new RegExp(STR_LIT, 'g'))) c.take(e[0].slice(1, -1), base + e.index, '[数组项]')
+  }
+}
+
 /**
  * 从一份 .jsx 源码里抽「完全静态」的站内链接,返回 { links: [{path, raw, line, kind}], dynamic }。
  *   JSX 属性:to="/x" · to='/x' · to={'/x'} · to={`/x`}(无插值)· href= 同上
- *     —— 等号两侧不许有空格,所以 `const to = '/x'` 这类变量赋值不算
+ *     —— 等号两侧不许有空格,所以 `const to = '/x'` 这类变量赋值不算;
+ *     <Navigate to="/x" /> 也走这条(kind 记作 <Navigate>,汇总里单列条数)
  *   对象字面量:to: '/x' · href: '/x'(导航表、入口卡片数组;只收静态字符串,不计动态)
+ *   纯字符串数组项:['/basics/yinyang', '…'](见 takeArrayItems)
  * 插值落在路径段里的(`/hexagram/${id}`)、整个是表达式的(to={site.home})→ 只计入 dynamic;
  * 插值只在 #锚 / ?查询 里的(`/dao/x/4#p${n}`)→ 路径部分仍是静态,照收。
  * 非站内(#锚、http、mailto、//cdn、相对路径)不收也不计。
  */
 export function extractJsxLinks(src) {
-  const lineOf = lineIndexer(src)
-  const links = []
-  let dynamic = 0
-  const take = (raw, idx, kind) => {
-    const p = splitHref(raw)
-    if (p.includes('${')) {
-      if (isSiteAbs(p) || p.startsWith('${')) dynamic++
-      return
-    }
-    if (!isSiteAbs(p)) return
-    links.push({ path: p, raw, line: lineOf(idx), kind })
+  const c = linkCollector(src)
+  // 属性所在的标签名:往回找最近的 `<`(属性值里一般不含 <;偶有误判只影响 kind 标注)
+  const tagOf = (idx) => {
+    const lt = src.lastIndexOf('<', idx)
+    return lt < 0 ? null : /^<([\w.]+)/.exec(src.slice(lt, lt + 40))?.[1] ?? null
   }
   const ATTR = /(?<![\w.$-])(to|href)=(?:"([^"]*)"|'([^']*)'|\{\s*(?:"([^"]*)"|'([^']*)'|`([^`]*)`)\s*\}|\{)/g
   for (const m of src.matchAll(ATTR)) {
     const [, attr, d1, s1, d2, s2, tpl] = m
     const raw = d1 ?? s1 ?? d2 ?? s2 ?? tpl
-    if (raw === undefined) dynamic++
-    else take(raw, m.index, attr)
+    if (raw === undefined) c.dynamic++
+    else c.take(raw, m.index, tagOf(m.index) === 'Navigate' ? '<Navigate>' : attr)
   }
   const PROP = /(?<![\w.$-])(to|href):\s*(?:'([^']*)'|"([^"]*)"|`([^`$]*)`)/g
   for (const m of src.matchAll(PROP)) {
     const [, attr, s1, d1, tpl] = m
-    take(s1 ?? d1 ?? tpl, m.index, `${attr}:`)
+    c.take(s1 ?? d1 ?? tpl, m.index, `${attr}:`)
   }
-  return { links, dynamic }
+  takeArrayItems(src, c)
+  return { links: c.links, dynamic: c.dynamic }
+}
+
+/**
+ * useNavigate() 返回函数的调用:navigate('/ru') · navigate(`/dao`) · navigate(`/hexagrams?view=${v}`)(插值只在查询里 → 静态)。
+ * 函数名默认认 navigate,另从本文件的 `const X = useNavigate()` 收别名(如 BookHomePage 的 nav)。
+ * 返回 { links, dynamic, calls }:
+ *   首参是静态站内路径 → links;带路径插值的模板 / 变量 / 表达式(navigate(r.to))→ dynamic 只计数;
+ *   navigate(-1) 这类数字(历史回退)与 navigate(`#锚`) 不收也不计。
+ * <Navigate to="/x" /> 组件不在这里,归 extractJsxLinks 的 to= 扫描。
+ */
+export function extractNavigateCalls(src) {
+  const c = linkCollector(src)
+  const names = new Set(['navigate'])
+  for (const m of src.matchAll(new RegExp(`\\b(?:const|let|var)\\s+(${IDENT})\\s*=\\s*useNavigate\\s*\\(`, 'g'))) names.add(m[1])
+  const alt = [...names].map(escapeRe).join('|')
+  // 排除 obj.navigate(…)(别家的同名方法)与 function navigate(…)(定义,不是调用)
+  const CALL = new RegExp(`(?<![\\w.$]|\\bfunction\\s+)(?:${alt})\\(\\s*(?:'([^'\\n]*)'|"([^"\\n]*)"|\`([^\`]*)\`|(-?\\d+)|([^\\s)]))`, 'g')
+  let calls = 0
+  for (const m of src.matchAll(CALL)) {
+    const [, s1, d1, tpl, num] = m
+    calls++
+    if (num !== undefined) continue
+    const raw = s1 ?? d1 ?? tpl
+    if (raw === undefined) c.dynamic++
+    else c.take(raw, m.index, 'navigate()')
+  }
+  return { links: c.links, dynamic: c.dynamic, calls }
+}
+
+/**
+ * .js 里的链接表(学堂注册表、registry 的 nav/home、书目索引、镜头的 flowHref…),返回 { links, dynamic }:
+ *   对象字面量键 to / href / home / path / xxxHref(flowHref、chapterHref)后跟字符串或模板
+ *   纯字符串数组项(见 takeArrayItems)
+ * 只认完全静态的 /… 路径;路径段里带 ${} 的模板只计 dynamic;插值只在 #锚 / ?查询 里的照收路径部分。
+ */
+export function extractJsLinks(src) {
+  const c = linkCollector(src)
+  const PROP = /(?<![\w.$-])(to|href|home|path|[a-z]\w*Href):\s*(?:'([^'\n]*)'|"([^"\n]*)"|`([^`]*)`)/g
+  for (const m of src.matchAll(PROP)) {
+    const [, key, s1, d1, tpl] = m
+    c.take(s1 ?? d1 ?? tpl, m.index, `${key}:`)
+  }
+  takeArrayItems(src, c)
+  return { links: c.links, dynamic: c.dynamic }
 }
 
 /** 从 Markdown 文档的反引号里抽 /… 路径(只作 warn:文档里的路径可能是参数示例) */
@@ -286,8 +361,25 @@ export function makeSitePathChecker({ ranked, checkEntity, fileExists = () => tr
   }
 }
 
+/**
+ * og 索引一片的校验:{ 路径: [标题, 摘要, 正文] } 的每个键 —— 片号对不对(中间件按 shardKey(路径) 取片,
+ * 放错片即静默查不到)、是不是站内绝对路径、过路由 + 实体检查。返回坏的 [{ href, why }]。
+ */
+export function checkOgShard(shardNo, entries, checkSitePath, shardKey = ogShardKey) {
+  const bad = []
+  for (const href of Object.keys(entries)) {
+    const want = shardKey(href)
+    const whys = [
+      want !== shardNo ? `应在第 ${want} 片,中间件按路径哈希取片,放错即查不到` : null,
+      isSiteAbs(href) ? checkSitePath(splitHref(href)) : '不是站内绝对路径',
+    ].filter(Boolean)
+    if (whys.length) bad.push({ href, why: whys.join(';') })
+  }
+  return bad
+}
+
 // ═══════════════════════════════════════════════════════════════════════
-// main:白话资源 / 搜索索引 / JSX 手写链接 / 文档路径
+// main:白话资源 / 搜索索引 / JSX 手写链接 / navigate() / .js 链接表 / og 索引 / 文档路径
 // ═══════════════════════════════════════════════════════════════════════
 
 async function main() {
@@ -502,29 +594,65 @@ async function main() {
     ranked, checkEntity, fileExists: (p) => exists(path.join(ROOT, 'public', p)),
   })
 
+  // 源码按扩展名分两份:.jsx 走 JSX 扫描,.js 走链接表扫描;navigate() 两份都扫。测试文件一律不扫。
   const jsxFiles = []
+  const jsFiles = []
   const walk = (dir) => {
     for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
       const p = path.join(dir, e.name)
       if (e.isDirectory()) walk(p)
       else if (e.name.endsWith('.jsx') && !e.name.endsWith('.test.jsx')) jsxFiles.push(p)
+      else if (e.name.endsWith('.js') && !e.name.endsWith('.test.js')) jsFiles.push(p)
     }
   }
   walk(path.join(ROOT, 'src'))
-  let jsxLinks = 0
-  let jsxDynamic = 0
-  let jsxBad = 0
-  for (const file of jsxFiles.sort()) {
-    const { links, dynamic } = extractJsxLinks(fs.readFileSync(file, 'utf8'))
-    jsxLinks += links.length
-    jsxDynamic += dynamic
-    for (const l of links) {
-      const why = checkSitePath(l.path)
-      if (why) {
-        jsxBad++
-        err(`JSX 坏链: ${path.relative(ROOT, file)}:${l.line} → ${l.raw}(${why})`)
+  jsxFiles.sort()
+  jsFiles.sort()
+  const srcOf = new Map([...jsxFiles, ...jsFiles].map((f) => [f, fs.readFileSync(f, 'utf8')]))
+
+  // 一类源码链接的统一过一遍:逐文件提取 → checkSitePath → 坏的进 errors(文件:行 → 路径(原因 · 命中路由))
+  const scanSource = (label, files, extract) => {
+    const st = { files: 0, links: 0, dynamic: 0, bad: 0, calls: 0, navigateTo: 0 }
+    for (const file of files) {
+      const r = extract(srcOf.get(file))
+      if (r.links.length || r.dynamic || r.calls) st.files++
+      st.links += r.links.length
+      st.dynamic += r.dynamic
+      st.calls += r.calls || 0
+      for (const l of r.links) {
+        if (l.kind === '<Navigate>') st.navigateTo++
+        const why = checkSitePath(l.path)
+        if (why) {
+          st.bad++
+          err(`${label}坏链: ${path.relative(ROOT, file)}:${l.line} → ${l.raw}(${why})`)
+        }
       }
     }
+    return st
+  }
+  const jsx = scanSource('JSX ', jsxFiles, extractJsxLinks)
+  const nav = scanSource('navigate() ', [...jsxFiles, ...jsFiles], extractNavigateCalls)
+  const jsTable = scanSource('.js 链接表', jsFiles, extractJsLinks)
+
+  // ── og 索引(public/content/og/<片号>.json,{ 路径: [标题, 摘要, 正文] })────────
+  // 键即分享卡 / SEO 正文所对应的页面路径:同样过路由 + 实体检查,另核片号(见 checkOgShard)。
+  const ogDir = path.join(CONTENT, 'og')
+  const og = { shards: 0, paths: 0, bad: 0 }
+  if (!exists(ogDir)) {
+    err('og 索引目录缺失: public/content/og(先跑 npm run content:build)')
+  } else {
+    const shardFiles = fs.readdirSync(ogDir).filter((f) => /^\d+\.json$/.test(f)).sort((x, y) => parseInt(x) - parseInt(y))
+    for (const f of shardFiles) {
+      og.shards++
+      const no = parseInt(f)
+      const entries = readJson(path.join(ogDir, f))
+      og.paths += Object.keys(entries).length
+      for (const { href, why } of checkOgShard(no, entries, checkSitePath)) {
+        og.bad++
+        err(`og 坏链: 片 ${no} → ${href}(${why})`)
+      }
+    }
+    if (!shardFiles.length) err('og 索引为空: public/content/og 下没有分片')
   }
 
   // ── 文档里反引号中的路径:只 warn(可能是参数示例)────────────────────
@@ -552,7 +680,13 @@ async function main() {
     }
   }
 
-  const jsxSummary = `JSX 手写链接: ${jsxFiles.length} 个文件 · ${jsxLinks} 条静态链接(坏 ${jsxBad})· ${jsxDynamic} 处动态拼接未校 · App 路由 ${routes.length} 条;文档路径 ${docPaths} 条(示例跳过 ${docSkipped})`
+  const summaries = [
+    `JSX 手写链接: ${jsxFiles.length} 个文件 · ${jsx.links} 条静态链接(坏 ${jsx.bad};含 <Navigate to> ${jsx.navigateTo} 条)· ${jsx.dynamic} 处动态拼接未校 · App 路由 ${routes.length} 条`,
+    `navigate() 调用: ${nav.files} 个文件 · ${nav.calls} 处调用 → ${nav.links} 条静态路径(坏 ${nav.bad})· ${nav.dynamic} 处动态未校(扫 ${jsxFiles.length + jsFiles.length} 个 .jsx/.js)`,
+    `.js 链接表: ${jsTable.files} 个文件 · ${jsTable.links} 条静态路径(坏 ${jsTable.bad})· ${jsTable.dynamic} 处模板拼接未校(扫 ${jsFiles.length} 个 .js)`,
+    `og 索引: ${og.shards} 片 · ${og.paths} 条路径(坏 ${og.bad})`,
+    `文档路径: ${docPaths} 条(示例跳过 ${docSkipped};只 warn)`,
+  ]
 
   if (warnings.length) {
     console.warn(`⚠ ${warnings.length} 条提示(不算失败):`)
@@ -562,12 +696,12 @@ async function main() {
   if (errors.length) {
     console.error(`✗ 链接校验失败, ${errors.length} 个错误:`)
     for (const e of errors) console.error(`- ${e}`)
-    console.error(jsxSummary)
+    for (const line of summaries) console.error(line)
     process.exit(1)
   }
 
   console.log(`✓ 链接校验通过: ${Object.keys(manifest.baihua || {}).length} 组白话, ${searchRecords.length} 条搜索记录, ${search.shards?.length || 0} 个搜索分片`)
-  console.log(`✓ ${jsxSummary}`)
+  for (const line of summaries) console.log(`✓ ${line}`)
 }
 
 const isMain = !!process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)
