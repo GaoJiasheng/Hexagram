@@ -33,13 +33,6 @@ export function ColophonContent({ onNavigate } = {}) {
         <p className="colophon-block__text">{colophon.author.role}</p>
       </section>
 
-      {/* 「凭什么信」+「关于本站」并入跋(owner 2026-09-25):门户底下那行单独的链接撤掉,由这里收——落款就是全站的收口。
-          牌记本体与首页 PortalLanding 共用 TrustList,改一处两处同步。 */}
-      <section className="colophon-block colophon-block--trust">
-        <h2 className="colophon-block__title">凭什么信</h2>
-        <TrustList onNavigate={onNavigate} />
-      </section>
-
       <section className="colophon-block">
         <h2 className="colophon-block__title">缘起</h2>
         <div className="colophon-origin">
@@ -59,6 +52,13 @@ export function ColophonContent({ onNavigate } = {}) {
             </div>
           ))}
         </dl>
+      </section>
+
+      {/* 「说明」(原题「凭什么信」,owner 2026-10-01 改名并挪到联系方式之后):底本/译注/纠错/协议/关于本站 一览,
+          与「关于本站」并入跋(owner 2026-09-25)——落款就是全站的收口。牌记本体是 TrustList,改一处即可。 */}
+      <section className="colophon-block colophon-block--trust">
+        <h2 className="colophon-block__title">说明</h2>
+        <TrustList onNavigate={onNavigate} />
       </section>
 
       <section className="colophon-block">
