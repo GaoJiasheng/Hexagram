@@ -23,6 +23,12 @@
 4. 全成后:`npm run build` → `npx --yes wrangler pages deploy dist --project-name=hexa-gavin-pub --commit-dirty=true` → 核入口哈希;再 `node scripts/harvest-mingju.mjs guwen` 看新候选名句,挑几条补进 `scripts/authored/mingju-extra/guwen.json` → `node scripts/build-mingju.mjs --write`。
 5. 途中撞会话/周额度上限:等重置或 owner reset,`baihua-step.mjs` 不带参数直接续(它只看缺哪些章)。`.baihua-attempts.json` 记失败次数,≥3 次的章会被放弃并在进度行列出。
 
+**续跑 ④ 观数白话代理复核(O9 续,owner 10-01 深夜定;白话铺完后跑,与白话 workflow 串行)**
+1. `node scripts/mingli-review-prep.mjs` → 329 章输入分片到 `scripts/.mingli-review/in/`(已跳过 09-30 人读的玉照 9 + 三命 261 + 五行大义 44)
+2. `Workflow({ scriptPath: 'scripts/.mingli-review-wf.js', args: { units: <scripts/.mingli-review/units.json 的内容> } })`(每章一个 opus 代理,只读输入 / 只写输出)
+3. 完成后 `node scripts/mingli-review-apply.mjs <该 workflow 的 .output>` → 逐片校验合并、写 `docs/mingli-baihua-review-<日期>.md` → `npm run check-data` → commit → 发版
+4. **代理改的对不对仍须 owner 抽看**汇报里的修正条目(机器闸只保证没改坏)
+
 **续跑 ② 等 owner 定**
 
 **续跑 ③ 研读统计 —— ✅ 2026-10-01 ①–⑤ 全部落地并上生产**(方案 `docs/reading-stats-plan.md` §7):`src/features/reading/readClock.js`(活跃时长:可见 + 60 秒内有操作才计,单次封顶 1800 秒,换章/隐藏/pagehide 结清,满 300 秒先交「部分」)· `readDays`(入同步,键 `day|corpus|slug|ch|dev`,本机 400 天 / 2500 键封顶)· `readRecent`(本机)· telemetry 只订阅 `gx:read-session` 发 beat · `readStats.js` + `/stats` 页(四窗 / 热力 / 常读 / 最近看过)· 设置浮层「研读统计」三数 + 账号「把我的研读时长计入账号」开关(关 → `DELETE /api/me/reading`)· 各组 /me 一行 · 服务端 `readDays` 入 DATA_KEYS(MAP)+ `/admin/readers(/:id)` + `/admin/stats?window=`(活跃/回访/中位数/直方图/按时长 Top)· 后台读者栏(昵称 + 头像,不显示邮箱,点开热力 + 章级明细)· 隐私页新 §五 / 关于页 / 设置 / 页尾同口径。

@@ -68,3 +68,7 @@ android/app/*.keystore
 
 # agent 走查时用的临时文件,别再误提交
 .tmp-*
+
+# 观数白话代理复核的分片输入 / 输出与 workflow 脚本(scripts/mingli-review-prep.mjs 生成)
+scripts/.mingli-review/
+scripts/.mingli-review-wf.js
