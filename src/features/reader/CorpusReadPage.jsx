@@ -48,7 +48,9 @@ export default function CorpusReadPage({ corpus }) {
     import('../fa/ChushuoLinks.jsx').then((m) => { if (live) setChushuoMod(m) }).catch(() => {})
     return () => { live = false }
   }, [isChushuoBook])
-  usePageTitle(meta ? `${meta.title}·第${chapterParam}${meta.sectionUnit || '章'}` : null, site?.brand)
+  // 古文观止一类带出处的书(章对象有 source):标题用篇题(「滕王阁序 · 古文观止」),别的书照旧「书名·第N章」
+  const srcCh = book?.chapters?.find((c) => c.no === chapter)
+  usePageTitle(meta ? (srcCh?.source && srcCh?.title ? `${srcCh.title} · ${meta.title}` : `${meta.title}·第${chapterParam}${meta.sectionUnit || '章'}`) : null, site?.brand)
 
   // 单页书被章路由深链命中(如 /fo/jingangjing/5):重定向到单页阅读器,保单一阅读形态
   useEffect(() => {
@@ -86,6 +88,10 @@ export default function CorpusReadPage({ corpus }) {
 
   const multi = book.chapters.length > 1
   const label = (c) => c.title ?? (multi ? `第${c.no}${meta.sectionUnit}` : '全文')
+  // 章题下的出处小字(古文观止:管线 chapterMeta 并入的 source):经史类标「出自《左传》」,作者标人名,「西汉文」一类断代标签照显
+  const SOURCE_BOOK_RE = /(传|策|记|语|辞)$/
+  const sourceLabel = (s) => (SOURCE_BOOK_RE.test(s) && s.length <= 4 ? `出自《${s}》` : /文$/.test(s) ? s : s)
+  const chapterSub = (c) => (c.source ? sourceLabel(c.source) : null)
   // 段号:论语逐章语录素来编号;其余书的长章(>3 段,如伤寒论/坛经)默认编号,便于定位/引用
   const isLunyu = corpus === 'ru' && slug === 'lunyu'
   const curChapter = book.chapters.find((c) => c.no === chapter)
@@ -152,6 +158,7 @@ export default function CorpusReadPage({ corpus }) {
       bookHref={`${site.home}/${slug}`}
       tocBack={<Link to={`${site.home}/${slug}`} className="read-toc__back">{book.title}</Link>}
       chapterLabel={label}
+      chapterSub={chapterSub}
       chapterHref={(no) => `${site.home}/${slug}/${no}`}
       getAnchors={(no, i) => getAnchors(corpus, slug, no, i)}
       renderYanyi={(no) => <YanyiBlock corpus={corpus} slug={slug} chapter={no} />}

@@ -2015,6 +2015,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .read-parts__item:hover { border-color: var(--cinnabar); color: var(--cinnabar); }
 .read-parts__item--active { border-color: var(--cinnabar); background: var(--cinnabar); color: var(--paper-raised); }
 
+.read-chapter-sub { margin: -6px 0 18px; font-size: 0.85rem; color: var(--ink-soft); letter-spacing: 0.04em; }
 .read-chapter-title {
   text-align: center;
   font-size: 0.875rem;

@@ -33,7 +33,7 @@ function statsMeta() {
       const s = read()
       const books = s?.books ? `${s.books} 部典籍` : '诸多典籍'
       const shelves = s?.shelves ? `${s.shelves} 组书架` : '诸组书架'
-      const long = `${books}的原文、白话译注、每章延伸与深读。易经、道藏、儒释、诸子百家、中医、谋略、命理、唐诗宋词元曲，${shelves}同站。引文逐字校验为原文精确子串。`
+      const long = `${books}的原文、白话译注、每章延伸与深读。易经、道藏、儒释、诸子百家、中医、谋略、命理、唐诗宋词元曲、古文，${shelves}同站。引文逐字校验为原文精确子串。`
       const short = `${books}的原文、白话译注与深读，${shelves}同站。引文逐字校验。`
       return html.replaceAll('__STATS_DESC_SHORT__', short).replaceAll('__STATS_DESC__', long)
     },

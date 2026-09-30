@@ -47,6 +47,7 @@ export default function ClassicReader({
   chapter,
   tocBack,
   chapterLabel,
+  chapterSub = null,       // (c) => 章题下一行小字(古文观止:出处/作者「王勃」「出自《左传》」),无则不渲染
   chapterHref,
   anchorId = (no) => `ch-${no}`,
   getAnchors = () => null,
@@ -524,6 +525,7 @@ export default function ClassicReader({
           {chapters.map((c) => (
             <section key={c.no} id={anchorId(c.no)} data-no={c.no} className="dao-single__chapter">
               {multi && <h2 className="read-chapter-title">{chapterLabel(c)}</h2>}
+              {multi && chapterSub?.(c) && <p className="read-chapter-sub">{chapterSub(c)}</p>}
               {c.paragraphs.map((p, i) => Para(c.no, p, i))}
               <ChapterNotes chapter={c} getAnchors={getAnchors} />
               {renderYanyi(c.no)}
@@ -581,6 +583,7 @@ export default function ClassicReader({
           return (
             <>
               <h2 className="read-chapter-title">{chapterLabel(cur)}</h2>
+              {chapterSub?.(cur) && <p className="read-chapter-sub">{chapterSub(cur)}</p>}
               {parts && (
                 <div className="read-parts">
                   <span className="read-parts__label">
