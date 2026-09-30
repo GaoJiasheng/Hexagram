@@ -20,7 +20,7 @@
     <link rel="alternate" type="application/rss+xml" title="观象 · 新收" href="/feed.xml" />
     <title>观象 · 古籍研读站</title>
     <meta name="description" content="七十四部典籍的原文、白话译注、每章延伸与深读。易经、道藏、儒释佛道、诸子百家、中医、谋略、唐诗宋词元曲十三组同站。引文逐字校验为原文精确子串。" />
-    <!-- 分享卡 meta(#147,站点级静态;分享任一页链接皆出此卡。逐页动态需预渲染,后续再议) -->
+    <!-- 分享卡 meta(#147,站点级静态兜底);逐页 og 由 functions/_middleware.js 对爬虫 UA 在边缘注入 -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="观象" />
     <meta property="og:title" content="观象 · 古籍研读站" />
@@ -34,6 +34,35 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- 入口模块自愈(2026-10-01):装了 PWA 的老访客在发版后回来,旧 service worker 会用预缓存的旧 index.html 起页,
+         它引用的入口 chunk 已不在服务器上(404 → SPA 回退成 HTML → "MIME type text/html")→ 入口模块根本没执行,
+         main.jsx 里的 preloadError / pwaUpdate 自愈都没机会跑,页面永远空白。这段是经典脚本,模块加载失败也照跑:
+         捕获入口 script 的 error → 催 SW 更新 → 新 worker 接管(controllerchange)即重载,4 秒兜底也重载;sessionStorage 防环。 -->
+    <script>
+      (function () {
+        var KEY = 'guanxiang.v1.entry-reloaded'
+        var done = false
+        function reload() {
+          if (done) return
+          done = true
+          try { if (sessionStorage.getItem(KEY)) return; sessionStorage.setItem(KEY, '1') } catch (e) {}
+          location.reload()
+        }
+        window.addEventListener('error', function (e) {
+          var t = e && e.target
+          if (!t || t.tagName !== 'SCRIPT' || t.type !== 'module' || !t.src) return
+          var sw = navigator.serviceWorker
+          if (sw) {
+            sw.addEventListener('controllerchange', reload)
+            sw.getRegistration().then(function (r) { return r && r.update() }).catch(function () {})
+            setTimeout(reload, 4000)
+          } else setTimeout(reload, 800)
+        }, true)
+        window.addEventListener('load', function () {
+          setTimeout(function () { try { sessionStorage.removeItem(KEY) } catch (e) {} }, 8000)
+        })
+      })()
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

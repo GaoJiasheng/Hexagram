@@ -659,7 +659,8 @@ function buildOgIndex(records) {
     const sub = (r.subtitle || '').trim()
     const body = compact(r.text).slice(0, SEO_BODY_MAX)
     const desc = (sub && sub !== r.siteTitle ? sub : (r.text || '').trim()).slice(0, 70)
-    const site = r.siteTitle && r.siteTitle !== '观象' ? ` · ${r.siteTitle}` : ''
+    // 站级页(时间轴 / 人物志 / 韵书…)的 siteTitle 就是自己的标题,再拼一遍会出「人物志 · 人物志」→ 这类改缀站名
+    const site = r.siteTitle && r.siteTitle !== '观象' && r.siteTitle !== r.title ? ` · ${r.siteTitle}` : ' · 观象'
     ;(shards[ogShardKey(href)] ??= {})[href] = [`${r.title}${site}`, desc, body]
     n++
   }

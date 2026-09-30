@@ -14,7 +14,9 @@
 // 另:浏览器只在整页导航时查 sw.js,SPA 长开一页不会查——加一个 30 分钟一次 + 回到标签页时的 update()。
 const RELOAD_AT_KEY = 'guanxiang.v1.pwa-reload-at'
 const MIN_GAP_MS = 60_000
-const FRESH_MS = 4_000
+// 原 4s 太短:sw.js 拉取 + 预缓存 22 条 + 激活常超过 4s,刚打开的页也被判成「读到一半」而等下一次导航
+// (2026-10-01 预览分支实测)。15s 内刷一下读者几乎无感。
+const FRESH_MS = 15_000
 const CHECK_EVERY_MS = 30 * 60_000
 
 export function setupPwaAutoReload() {

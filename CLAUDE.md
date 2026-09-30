@@ -149,7 +149,7 @@
   git 追踪的是小写名,`git add docs/TODO.md` 会什么都没暂存。
 - **改数据要改真源不改生成物**:译文真源在 `scripts/authored/<corpus>-translations.json`,
   只改 `src/data/*/classics/*.json` 会被下次 `fetch-corpus` 覆盖。
-- **PWA 旧版缓存(2026-09-30 已治)**:autoUpdate 只让新 SW 接管,已打开的页面仍跑旧版,不刷新永远是上一版——`src/pwaUpdate.js` 在 controllerchange 后自动 reload(刚打开即刷、读到一半等下一次站内导航 / 回到标签页,60s 防环),并 30 分钟 + 回标签页时 `reg.update()`。**慢网超时不需要额外逻辑**:更新全在后台,拿不到就照旧用缓存里的旧文件。review 预览域名若仍看到旧版,是首次安装 SW 那一次,再刷一次即可。**已在 preview-portal 实测两条路径**(2026-09-30,连发三包):刚打开的页 ≈2s 内自动刷到新包;读到一半的页 controllerchange 后原地不动,点站内链接那一刻刷新、落在新包且 URL 不丢。
+- **PWA 旧版缓存(2026-09-30 已治)**:autoUpdate 只让新 SW 接管,已打开的页面仍跑旧版,不刷新永远是上一版——`src/pwaUpdate.js` 在 controllerchange 后自动 reload(刚打开即刷、读到一半等下一次站内导航 / 回到标签页,60s 防环),并 30 分钟 + 回标签页时 `reg.update()`。**慢网超时不需要额外逻辑**:更新全在后台,拿不到就照旧用缓存里的旧文件。review 预览域名若仍看到旧版,是首次安装 SW 那一次,再刷一次即可。 **两处补丁(2026-10-01 预览分支两轮实测)**:① `FRESH_MS` 4s→15s——sw.js 拉取 + 预缓存 + 激活常超 4s,刚打开的页会被误判成「读到一半」而不刷;② `index.html` 加一段**经典脚本**「入口模块自愈」:老访客回来时旧 SW 用预缓存的旧 index 起页,其入口 chunk 已不在服务器(404→SPA 回退 HTML→MIME 错)→ 入口模块根本没执行,main.jsx 里所有自愈都跑不到,页面永远空白;该脚本捕获入口 script 的 error → 催 SW 更新 → controllerchange 即重载(4s 兜底),sessionStorage 防环。**发版后老 PWA 客户端的三种状态都验过**:入口失效(自愈重载)、刚打开(15s 内换新包)、读到一半(等下一次导航)。**已在 preview-portal 实测两条路径**(2026-09-30,连发三包):刚打开的页 ≈2s 内自动刷到新包;读到一半的页 controllerchange 后原地不动,点站内链接那一刻刷新、落在新包且 URL 不丢。
 - **部署「退出码 0」不等于上线了。** 2026-08-19 后台跑的 `wrangler pages deploy` 报了
   exit 0,但 `wrangler pages deployment list` 里最新一条仍是两天前 —— 线上一直在发旧包。
   **发完必须核对线上与本地的入口 bundle 哈希**:
