@@ -1440,6 +1440,7 @@ const guideCiteText = (corpus, slug, ch) => {
   const gates = [
     'check-hanfeizi-chushuo', 'check-lunyu-people', 'check-cantongqi-moon', 'check-fo-concepts',
     'check-ru-lineage', 'check-zhuangzi-fables', 'check-rhyme', 'check-shijing-map', 'check-zhanguoce-map',
+    'check-zhongyi-shapes', 'check-mengzi-people', 'check-chuanxilu-people', 'check-fo-lineage', 'check-tangshi-poets',
   ]
   const chCache = {}
   const chapterText = (corpus, slug, ch) => {

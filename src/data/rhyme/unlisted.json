@@ -1,6 +1,6 @@
 {
  "note": "韵书未收字统计:与阅读器「格律」开关同一套查法(prosody.js),只统计、不补字。由 scripts/gen-rhyme-unlisted.mjs 生成,不手改。",
- "books": {"pingshui":{"scheme":"pingshui","title":"平水韵","page":"平水韻","parts":106,"indexKeys":9811,"variants":35,"sheng":{"上平":15,"下平":15,"上":29,"去":30,"入":17},"chars":7663,"ciChars":1550},"cilin":{"scheme":"cilin","title":"词林正韵","page":"詞林正韻","parts":19,"indexKeys":6794,"variants":28,"shu":14,"ru":5,"chars":5055},"zhongyuan":{"scheme":"zhongyuan","title":"中原音韵","page":"中原音韻","parts":19,"indexKeys":7008,"variants":21,"chars":5265}},
+ "books": {"pingshui":{"scheme":"pingshui","title":"平水韵","page":"平水韻","parts":106,"indexKeys":9628,"variants":35,"sheng":{"上平":15,"下平":15,"上":29,"去":30,"入":17},"chars":7663,"ciChars":1550},"cilin":{"scheme":"cilin","title":"词林正韵","page":"詞林正韻","parts":19,"indexKeys":6790,"variants":28,"shu":14,"ru":5,"chars":5055},"zhongyuan":{"scheme":"zhongyuan","title":"中原音韵","page":"中原音韻","parts":19,"indexKeys":6944,"variants":21,"chars":5265}},
  "groups": [
   {"corpus":"tangshi","label":"唐诗","scheme":"pingshui","slugs":["tangshi300"],"stats":{"chars":18698,"lines":3074,"unlisted":57,"distinct":28,"rate":0.00305,"endUnlisted":16,"endDistinct":9,"viaVariant":86,"viaCi":177}, "items": [
    {"char":"啼","count":18,"endCount":3,"examples":[{"slug":"tangshi300","ch":2,"title":"梦游天姥吟留别","line":"渌水荡漾清猨啼","para":163,"end":true,"part":4},{"slug":"tangshi300","ch":6,"title":"春怨 (金昌绪)","line":"莫教枝上啼","para":61,"end":true,"part":2},{"slug":"tangshi300","ch":7,"title":"杂诗 (无名氏)","line":"杜鹃休向耳边啼","para":166,"end":true,"part":4}]},
@@ -36,9 +36,9 @@
    {"char":"汀","count":9,"endCount":1,"examples":[{"slug":"songci300","ch":240,"title":"八声甘州（吴文英）","line":"送乱鸦斜日落渔汀","para":7,"end":true},{"slug":"songci300","ch":32,"title":"曲玉管（柳永）","line":"冉冉飞下汀洲","para":3,"end":false},{"slug":"songci300","ch":109,"title":"解连环（周邦彦）","line":"汀洲渐生杜若","para":4,"end":false}]},
    {"char":"拚","count":8,"endCount":0,"examples":[{"slug":"songci300","ch":51,"title":"鹧鸪天（晏几道）","line":"当年拚却醉颜红","para":0,"end":false},{"slug":"songci300","ch":89,"title":"渔家傲（朱服）","line":"拚一醉","para":4,"end":false},{"slug":"songci300","ch":109,"title":"解连环（周邦彦）","line":"拚今生对花对酒","para":7,"end":false}]},
    {"char":"簇","count":7,"endCount":2,"examples":[{"slug":"songci300","ch":43,"title":"迷神引（柳永）","line":"烟敛寒林簇","para":4,"end":true},{"slug":"songci300","ch":45,"title":"桂枝香（王安石）","line":"翠峰如簇","para":1,"end":true},{"slug":"songci300","ch":40,"title":"夜半乐（柳永）","line":"一簇烟村","para":4,"end":false}]},
-   {"char":"𫛞","count":5,"endCount":5,"examples":[{"slug":"songci300","ch":5,"title":"千秋岁（张先）","line":"数声𫛸𫛞","para":0,"end":true},{"slug":"songci300","ch":141,"title":"柳梢青（蔡伸）","line":"数声𫛸𫛞","para":0,"end":true},{"slug":"songci300","ch":170,"title":"贺新郎（辛弃疾）","line":"绿树听鹈𫛞","para":1,"end":true}]},
+   {"char":"鴃","count":5,"endCount":5,"examples":[{"slug":"songci300","ch":5,"title":"千秋岁（张先）","line":"数声鶗鴃","para":0,"end":true},{"slug":"songci300","ch":141,"title":"柳梢青（蔡伸）","line":"数声鶗鴃","para":0,"end":true},{"slug":"songci300","ch":170,"title":"贺新郎（辛弃疾）","line":"绿树听鹈鴃","para":1,"end":true}]},
    {"char":"砧","count":5,"endCount":1,"examples":[{"slug":"songci300","ch":46,"title":"千秋岁引（王安石）","line":"别馆寒砧","para":0,"end":true},{"slug":"songci300","ch":127,"title":"天香（贺铸）","line":"齐应和几声砧杵","para":2,"end":false},{"slug":"songci300","ch":186,"title":"齐天乐（姜夔）","line":"相和砧杵","para":5,"end":false}]},
-   {"char":"𣨼","count":4,"endCount":0,"examples":[{"slug":"songci300","ch":36,"title":"浪淘沙慢（柳永）","line":"𣨼云尤雨","para":6,"end":false},{"slug":"songci300","ch":150,"title":"贺新郎（李玉）","line":"镇无聊𣨼酒厌厌病","para":3,"end":false},{"slug":"songci300","ch":177,"title":"木兰花慢（辛弃疾）","line":"道愁肠𣨼酒只依然","para":7,"end":false}]},
+   {"char":"殢","count":4,"endCount":0,"examples":[{"slug":"songci300","ch":36,"title":"浪淘沙慢（柳永）","line":"殢云尤雨","para":6,"end":false},{"slug":"songci300","ch":150,"title":"贺新郎（李玉）","line":"镇无聊殢酒厌厌病","para":3,"end":false},{"slug":"songci300","ch":177,"title":"木兰花慢（辛弃疾）","line":"道愁肠殢酒只依然","para":7,"end":false}]},
    {"char":"檥","count":3,"endCount":2,"examples":[{"slug":"songci300","ch":128,"title":"望湘人（贺铸）","line":"青翰棹檥","para":6,"end":true},{"slug":"songci300","ch":276,"title":"六丑（彭元逊）","line":"瓜洲曾檥","para":6,"end":true},{"slug":"songci300","ch":238,"title":"高阳台（吴文英）","line":"怕檥游船","para":7,"end":false}]},
    {"char":"砌","count":3,"endCount":1,"examples":[{"slug":"songci300","ch":4,"title":"御街行（范仲淹）","line":"纷纷堕叶飘香砌","para":0,"end":true},{"slug":"songci300","ch":227,"title":"花犯（吴文英）","line":"临砌影","para":7,"end":false},{"slug":"songci300","ch":257,"title":"玉京秋（周密）","line":"砌虫能说","para":4,"end":false}]},
    {"char":"屡","count":3,"endCount":0,"examples":[{"slug":"songci300","ch":41,"title":"玉蝴蝶（柳永）","line":"屡变星霜","para":7,"end":false},{"slug":"songci300","ch":128,"title":"望湘人（贺铸）","line":"屡约非烟游伴","para":3,"end":false},{"slug":"songci300","ch":251,"title":"兰陵王（刘辰翁）","line":"咸阳送客屡回顾","para":9,"end":false}]},
@@ -48,7 +48,7 @@
    {"char":"菽","count":2,"endCount":2,"examples":[{"slug":"songci300","ch":106,"title":"大酺（周邦彦）","line":"门外荆桃如菽","para":8,"end":true},{"slug":"songci300","ch":261,"title":"贺新郎（蒋捷）","line":"正过雨荆桃如菽","para":2,"end":true}]},
    {"char":"忧","count":2,"endCount":0,"examples":[{"slug":"songci300","ch":36,"title":"浪淘沙慢（柳永）","line":"陡顿翻成忧戚","para":3,"end":false},{"slug":"songci300","ch":174,"title":"水龙吟（辛弃疾）","line":"忧愁风雨","para":6,"end":false}]},
    {"char":"飙","count":2,"endCount":0,"examples":[{"slug":"songci300","ch":115,"title":"瑞鹤仙（周邦彦）","line":"惊飙动幕","para":5,"end":false},{"slug":"songci300","ch":224,"title":"霜叶飞（吴文英）","line":"惊飙从卷乌纱去","para":7,"end":false}]},
-   {"char":"𫛸","count":2,"endCount":0,"examples":[{"slug":"songci300","ch":5,"title":"千秋岁（张先）","line":"数声𫛸𫛞","para":0,"end":false},{"slug":"songci300","ch":141,"title":"柳梢青（蔡伸）","line":"数声𫛸𫛞","para":0,"end":false}]},
+   {"char":"鶗","count":2,"endCount":0,"examples":[{"slug":"songci300","ch":5,"title":"千秋岁（张先）","line":"数声鶗鴃","para":0,"end":false},{"slug":"songci300","ch":141,"title":"柳梢青（蔡伸）","line":"数声鶗鴃","para":0,"end":false}]},
    {"char":"倅","count":1,"endCount":1,"examples":[{"slug":"songci300","ch":9,"title":"天仙子（张先）","line":"时为嘉禾小倅","para":0,"end":true}]},
    {"char":"哢","count":1,"endCount":1,"examples":[{"slug":"songci300","ch":152,"title":"薄幸（吕滨老）","line":"乍听得鸦啼莺哢","para":1,"end":true}]},
    {"char":"搁","count":1,"endCount":1,"examples":[{"slug":"songci300","ch":46,"title":"千秋岁引（王安石）","line":"无奈被他情担搁","para":3,"end":true}]},
@@ -88,11 +88,15 @@
    {"char":"磁","count":1,"endCount":0,"examples":[{"slug":"songci300","ch":269,"title":"天香（王沂孙）","line":"红磁候火","para":3,"end":false}]},
    {"char":"秾","count":1,"endCount":0,"examples":[{"slug":"songci300","ch":72,"title":"贺新郎（苏轼）","line":"秾艳一枝细看取","para":5,"end":false}]},
    {"char":"箑","count":1,"endCount":0,"examples":[{"slug":"songci300","ch":233,"title":"澡兰香（吴文英）","line":"彩箑云窗","para":2,"end":false}]},
+   {"char":"紞","count":1,"endCount":0,"examples":[{"slug":"songci300","ch":65,"title":"永遇乐（苏轼）","line":"紞如三鼓","para":3,"end":false}]},
+   {"char":"綀","count":1,"endCount":0,"examples":[{"slug":"songci300","ch":215,"title":"贺新郎（刘克庄）","line":"画帘开綀衣纨扇","para":1,"end":false}]},
    {"char":"縢","count":1,"endCount":0,"examples":[{"slug":"songci-buyi","ch":2,"title":"钗头凤（陆游）","line":"黄縢酒","para":0,"end":false}]},
    {"char":"罥","count":1,"endCount":0,"examples":[{"slug":"songci300","ch":133,"title":"虞美人（叶梦得）","line":"惟有游丝千丈罥晴空","para":2,"end":false}]},
+   {"char":"艣","count":1,"endCount":0,"examples":[{"slug":"songci-buyi","ch":1,"title":"念奴娇·赤壁怀古（苏轼）","line":"谈笑处樯艣灰飞烟灭","para":5,"end":false}]},
    {"char":"菖","count":1,"endCount":0,"examples":[{"slug":"songci300","ch":233,"title":"澡兰香（吴文英）","line":"应翦菖蒲自酌","para":7,"end":false}]},
    {"char":"袯","count":1,"endCount":0,"examples":[{"slug":"songci300","ch":195,"title":"翠楼吟（姜夔）","line":"仗酒袯清愁","para":7,"end":false}]},
    {"char":"裛","count":1,"endCount":0,"examples":[{"slug":"songci300","ch":276,"title":"六丑（彭元逊）","line":"为君裛泪","para":9,"end":false}]},
+   {"char":"轣","count":1,"endCount":0,"examples":[{"slug":"songci300","ch":108,"title":"蝶恋花（周邦彦）","line":"轣辘牵金井","para":0,"end":false}]},
    {"char":"辋","count":1,"endCount":0,"examples":[{"slug":"songci300","ch":68,"title":"青玉案（苏轼）","line":"辋川图上看春暮","para":3,"end":false}]},
    {"char":"辩","count":1,"endCount":0,"examples":[{"slug":"songci300","ch":236,"title":"惜黄花慢（吴文英）","line":"九辩难招","para":6,"end":false}]},
    {"char":"这","count":1,"endCount":0,"examples":[{"slug":"songci300","ch":281,"title":"声声慢（李清照）","line":"这次第","para":7,"end":false}]},
@@ -101,11 +105,7 @@
    {"char":"酺","count":1,"endCount":0,"examples":[{"slug":"songci300","ch":195,"title":"翠楼吟（姜夔）","line":"今年汉酺初赐","para":1,"end":false}]},
    {"char":"靸","count":1,"endCount":0,"examples":[{"slug":"songci300","ch":240,"title":"八声甘州（吴文英）","line":"时靸双鸳响","para":4,"end":false}]},
    {"char":"颙","count":1,"endCount":0,"examples":[{"slug":"songci300","ch":42,"title":"八声甘州（柳永）","line":"想佳人妆楼颙望","para":6,"end":false}]},
-   {"char":"饧","count":1,"endCount":0,"examples":[{"slug":"songci300","ch":146,"title":"三台（万俟咏）","line":"饧香更酒冷踏青路","para":7,"end":false}]},
-   {"char":"𦈌","count":1,"endCount":0,"examples":[{"slug":"songci300","ch":215,"title":"贺新郎（刘克庄）","line":"画帘开𦈌衣纨扇","para":1,"end":false}]},
-   {"char":"𫇛","count":1,"endCount":0,"examples":[{"slug":"songci-buyi","ch":1,"title":"念奴娇·赤壁怀古（苏轼）","line":"谈笑处樯𫇛灰飞烟灭","para":5,"end":false}]},
-   {"char":"𫐆","count":1,"endCount":0,"examples":[{"slug":"songci300","ch":108,"title":"蝶恋花（周邦彦）","line":"𫐆辘牵金井","para":0,"end":false}]},
-   {"char":"𬘘","count":1,"endCount":0,"examples":[{"slug":"songci300","ch":65,"title":"永遇乐（苏轼）","line":"𬘘如三鼓","para":3,"end":false}]}
+   {"char":"饧","count":1,"endCount":0,"examples":[{"slug":"songci300","ch":146,"title":"三台（万俟咏）","line":"饧香更酒冷踏青路","para":7,"end":false}]}
   ]},
   {"corpus":"yuanqu","label":"元曲","scheme":"zhongyuan","slugs":["yuanqu"],"stats":{"chars":13937,"lines":2530,"unlisted":270,"distinct":137,"rate":0.01937,"endUnlisted":37,"endDistinct":33,"viaVariant":14}, "items": [
    {"char":"这","count":18,"endCount":0,"examples":[{"slug":"yuanqu","ch":5,"title":"耍孩儿·庄家不识构阑","line":"枉被这驴颓笑杀我","para":9,"end":false},{"slug":"yuanqu","ch":7,"title":"一半儿 (王和卿)·题情","line":"这样病儿谁惯耽","para":2,"end":false},{"slug":"yuanqu","ch":11,"title":"一枝花·不伏老","line":"天赐与我这几般儿歹症候","para":5,"end":false}]},
@@ -127,7 +127,7 @@
    {"char":"葫","count":4,"endCount":0,"examples":[{"slug":"yuanqu","ch":27,"title":"夜行船·百岁光阴","line":"葫芦提一向装呆","para":6,"end":false},{"slug":"yuanqu","ch":32,"title":"清江引·野兴","line":"一枕葫芦架","para":9,"end":false},{"slug":"yuanqu","ch":57,"title":"山坡羊 (陈草庵)","line":"柴门斜搭葫芦架","para":24,"end":false}]},
    {"char":"喂","count":3,"endCount":1,"examples":[{"slug":"yuanqu","ch":38,"title":"耍孩儿·借马","line":"将青青嫩草频频的喂","para":4,"end":true},{"slug":"yuanqu","ch":38,"title":"耍孩儿·借马","line":"喂饲得漂息胖肥","para":2,"end":false},{"slug":"yuanqu","ch":38,"title":"耍孩儿·借马","line":"饥时节喂些草","para":5,"end":false}]},
    {"char":"坞","count":3,"endCount":1,"examples":[{"slug":"yuanqu","ch":66,"title":"普天乐 (滕斌)·财","line":"黄金坞","para":7,"end":true},{"slug":"yuanqu","ch":17,"title":"一枝花·杭州景","line":"竹坞梅溪","para":3,"end":false},{"slug":"yuanqu","ch":53,"title":"集贤宾·退隐","line":"到夏来锁松阴竹坞亭","para":7,"end":false}]},
-   {"char":"澹","count":3,"endCount":1,"examples":[{"slug":"yuanqu","ch":55,"title":"人月圆 (赵孟𫖯)","line":"春山澹澹","para":2,"end":true},{"slug":"yuanqu","ch":4,"title":"乾荷叶 (刘秉忠)","line":"惨澹烟霞洞","para":6,"end":false}]},
+   {"char":"澹","count":3,"endCount":1,"examples":[{"slug":"yuanqu","ch":55,"title":"人月圆 (赵孟頫)","line":"春山澹澹","para":2,"end":true},{"slug":"yuanqu","ch":4,"title":"乾荷叶 (刘秉忠)","line":"惨澹烟霞洞","para":6,"end":false}]},
    {"char":"虀","count":3,"endCount":1,"examples":[{"slug":"yuanqu","ch":66,"title":"普天乐 (滕斌)·气","line":"淡饭黄虀","para":20,"end":true},{"slug":"yuanqu","ch":57,"title":"山坡羊 (陈草庵)","line":"虀盐贫过","para":3,"end":false},{"slug":"yuanqu","ch":66,"title":"普天乐 (滕斌)·气","line":"乐虀盐稚子山妻","para":18,"end":false}]},
    {"char":"搦","count":3,"endCount":0,"examples":[{"slug":"yuanqu","ch":14,"title":"沉醉东风 (关汉卿)","line":"六幅湘裙一搦腰","para":8,"end":false},{"slug":"yuanqu","ch":18,"title":"碧玉箫 (关汉卿)","line":"一搦腰肢细","para":4,"end":false},{"slug":"yuanqu","ch":18,"title":"碧玉箫 (关汉卿)","line":"一搦腰围","para":6,"end":false}]},
    {"char":"昨","count":3,"endCount":0,"examples":[{"slug":"yuanqu","ch":4,"title":"乾荷叶 (刘秉忠)","line":"都因昨夜一场霜","para":2,"end":false},{"slug":"yuanqu","ch":39,"title":"青哥儿·十二月·四月","line":"东风园林昨暮","para":10,"end":false},{"slug":"yuanqu","ch":57,"title":"山坡羊 (陈草庵)","line":"似昨宵一枕南柯梦","para":5,"end":false}]},
@@ -184,6 +184,7 @@
    {"char":"嘴","count":1,"endCount":0,"examples":[{"slug":"yuanqu","ch":11,"title":"一枝花·不伏老","line":"你便是落了我牙歪了我嘴瘸了我腿折了我手","para":5,"end":false}]},
    {"char":"囫","count":1,"endCount":0,"examples":[{"slug":"yuanqu","ch":63,"title":"山坡羊·自叹","line":"几曾得觉囫囵睡","para":1,"end":false}]},
    {"char":"囵","count":1,"endCount":0,"examples":[{"slug":"yuanqu","ch":63,"title":"山坡羊·自叹","line":"几曾得觉囫囵睡","para":1,"end":false}]},
+   {"char":"圞","count":1,"endCount":0,"examples":[{"slug":"yuanqu","ch":5,"title":"耍孩儿·庄家不识构阑","line":"见层层叠叠团圞坐","para":4,"end":false}]},
    {"char":"套","count":1,"endCount":0,"examples":[{"slug":"yuanqu","ch":11,"title":"一枝花·不伏老","line":"恁子弟每谁教你钻入他锄不断斫不下解不开顿不脱慢腾腾千层锦套头","para":5,"end":false}]},
    {"char":"媳","count":1,"endCount":0,"examples":[{"slug":"yuanqu","ch":4,"title":"乾荷叶 (刘秉忠)","line":"你问当家中有媳妇","para":8,"end":false}]},
    {"char":"它","count":1,"endCount":0,"examples":[{"slug":"yuanqu","ch":69,"title":"塞鸿秋·代人作","line":"心肝児般敬重将它占","para":1,"end":false}]},
@@ -243,8 +244,7 @@
    {"char":"靠","count":1,"endCount":0,"examples":[{"slug":"yuanqu","ch":62,"title":"塞鸿秋 (郑光祖)","line":"庄儿紧靠白苹渡","para":2,"end":false}]},
    {"char":"鬅","count":1,"endCount":0,"examples":[{"slug":"yuanqu","ch":7,"title":"一半儿 (王和卿)·题情","line":"一半儿鬅松一半儿歪","para":2,"end":false}]},
    {"char":"麄","count":1,"endCount":0,"examples":[{"slug":"yuanqu","ch":38,"title":"耍孩儿·借马","line":"著皮肤休使麄毡屈","para":5,"end":false}]},
-   {"char":"齁","count":1,"endCount":0,"examples":[{"slug":"yuanqu","ch":57,"title":"山坡羊 (陈草庵)","line":"不由他醉了齁睡","para":22,"end":false}]},
-   {"char":"𪢮","count":1,"endCount":0,"examples":[{"slug":"yuanqu","ch":5,"title":"耍孩儿·庄家不识构阑","line":"见层层叠叠团𪢮坐","para":4,"end":false}]}
+   {"char":"齁","count":1,"endCount":0,"examples":[{"slug":"yuanqu","ch":57,"title":"山坡羊 (陈草庵)","line":"不由他醉了齁睡","para":22,"end":false}]}
   ]}
  ]
 }

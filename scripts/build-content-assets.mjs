@@ -372,6 +372,58 @@ function indexPages(records) {
     href: '/fo/concepts',
     text: '佛 名相 五蕴 十二处 十八界 十二因缘 四谛 八正道 六度 三法印 空 般若 涅槃 菩提 自性 不二 索引',
   })
+  // 可选件三件(design-v24 §13)
+  addRecord(records, {
+    id: 'page:mengzi-renwu', kind: '专题', site: 'ru', siteTitle: '儒典研读',
+    title: '《孟子》问答人物索引', subtitle: '国君 弟子 论敌 按人切开', href: '/ru/mengzi/renwu',
+    text: '孟子 人物 索引 梁惠王 齐宣王 滕文公 公孙丑 万章 公都子 告子 许行 淳于髡 出场',
+  })
+  addRecord(records, {
+    id: 'page:chuanxilu-renwu', kind: '专题', site: 'xin', siteTitle: '阳明心学',
+    title: '《传习录》问学人物索引', subtitle: '徐爱 陆澄 薛侃 钱德洪 王畿', href: '/xin/chuanxilu/renwu',
+    text: '传习录 人物 索引 徐爱 陆澄 薛侃 陈九川 黄直 钱德洪 王畿 欧阳崇一 聂文蔚 罗整庵 问学 出场',
+  })
+  addRecord(records, {
+    id: 'page:fo-lineage', kind: '专题', site: 'fo', siteTitle: '释典研读',
+    title: '禅宗传灯图', subtitle: '达摩到惠能与曹溪门下', href: '/fo/lineage',
+    text: '禅宗 传灯 达摩 慧可 僧璨 道信 弘忍 惠能 神秀 神会 怀让 行思 玄觉 法海 坛经 付嘱品 南能北秀',
+  })
+  addRecord(records, {
+    id: 'page:tangshi-matrix', kind: '专题', site: 'tangshi', siteTitle: '唐诗',
+    title: '体裁 × 诗人矩阵', subtitle: '唐诗三百首七十七家', href: '/tangshi/tangshi300/matrix',
+    text: '唐诗三百首 诗人 体裁 矩阵 杜甫 李白 王维 李商隐 孟浩然 五古 七古 乐府 五律 七律 五绝 七绝',
+  })
+  // 中医三件(design-v24 §13)
+  addRecord(records, {
+    id: 'page:bencao-matrix',
+    kind: '专题',
+    site: 'zhongyi',
+    siteTitle: '中医典籍',
+    title: '六部三品矩阵',
+    subtitle: '神农本草经的十八类',
+    href: '/zhongyi/bencaojing/matrix',
+    text: '神农本草经 本草 六部 三品 玉石 草 木 果菜 米谷 虫兽 上品 中品 下品 矩阵 目录',
+  })
+  addRecord(records, {
+    id: 'page:suwen-zangxiang',
+    kind: '专题',
+    site: 'zhongyi',
+    siteTitle: '中医典籍',
+    title: '五行藏象图',
+    subtitle: '阴阳应象大论的取象体系',
+    href: '/zhongyi/suwen/zangxiang',
+    text: '素问 阴阳应象大论 五行 藏象 肝心脾肺肾 五味 五色 五音 五志 东方生风 取象',
+  })
+  addRecord(records, {
+    id: 'page:shanghan-liujing',
+    kind: '专题',
+    site: 'zhongyi',
+    siteTitle: '中医典籍',
+    title: '六经目录',
+    subtitle: '伤寒论二十二篇的骨架',
+    href: '/zhongyi/shanghanlun/liujing',
+    text: '伤寒论 六经 太阳 阳明 少阳 太阴 少阴 厥阴 伤寒例 受病 篇目 目录',
+  })
   addRecord(records, {
     id: 'page:zhanguoce-map',
     kind: '专题',

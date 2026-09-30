@@ -428,6 +428,15 @@ async function main() {
     '/dao/zhuangzi/fables',
     '/ru/shijing/map',
     '/zong/zhanguoce/map',
+    // 中医三件(design-v24 §13)
+    '/zhongyi/bencaojing/matrix',
+    '/zhongyi/suwen/zangxiang',
+    '/zhongyi/shanghanlun/liujing',
+    // 可选件三件(design-v24 §13)
+    '/ru/mengzi/renwu',
+    '/xin/chuanxilu/renwu',
+    '/fo/lineage',
+    '/tangshi/tangshi300/matrix',
   '/rhyme',
   ])
   for (const s of SITES) {

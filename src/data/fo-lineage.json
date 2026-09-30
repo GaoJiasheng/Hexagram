@@ -1,0 +1,97 @@
+{
+  "title": "禅宗传灯图",
+  "subtitle": "达摩到惠能,再到曹溪门下——一部《坛经》自己讲出来的传法谱系。",
+  "intro": "《坛经》讲了两次「传」:**行由品**里五祖弘忍三更为惠能说《金刚经》、传顿教与衣钵,「汝为第六代祖」;**付嘱品**末尾惠能临终列出西天二十八祖、东土六祖,「惠能是为三十三祖」。这张图只画《坛经》本文写到的人:默认亮的是**传衣·付法**一线,打开「门下·参礼」看曹溪座下诸人各是怎样来的(行思、怀让「径来参礼」,神会十三岁「自玉泉来」,惠明是追衣钵追到大庾岭反而受法的那一位),打开「南北·顿渐」看惠能与神秀——书里说「人皆称南能北秀」,南北二宗之分从这里起。",
+  "note": "横轴是朝代,不是年份。除惠能(本经付嘱品自记先天二年八月入灭、「春秋七十有六」)外,余人只写朝代、不给确数;达摩以上西天诸祖与「以心传心」的传法之说,依《坛经》照录,史实真伪不在此判。箭头方向:传法线由前指向后;门下线由师指向徒;顿渐一线由惠能指向神秀,只表并立,不表高下。",
+  "companion": {
+    "label": "与「诸子拓扑图」「儒门学脉图」的分工",
+    "href": "/ru/lineage",
+    "linkLabel": "去看儒门学脉图 ›",
+    "text": "诸子拓扑图画先秦诸家互相怎么说,儒门学脉图画孔孟到程朱陆王两千年的接续;这张图只取《坛经》一书,画它**自己叙述的**传法谱系——材料单一,所以每根线都能落到本经的一句原文上,也因此不画《坛经》没写的事(如青原、南岳两系下开五家七宗)。"
+  },
+  "layout": { "stack": 54 },
+  "eras": [
+    { "key": "nanbei", "label": "南北朝", "when": "5—6 世纪", "w": 150 },
+    { "key": "sui", "label": "隋", "when": "581—618", "w": 130 },
+    { "key": "tang", "label": "唐", "when": "618—907", "w": 620 }
+  ],
+  "schools": [
+    { "key": "zu", "label": "祖师", "group": "fo", "color": "var(--buddha)" },
+    { "key": "nan", "label": "南宗", "group": "fo", "color": "color-mix(in srgb, var(--buddha) 55%, var(--cinnabar-pure))" },
+    { "key": "bei", "label": "北宗", "group": "fo", "color": "color-mix(in srgb, var(--buddha) 55%, var(--ink-soft))" }
+  ],
+  "edgeTypes": [
+    { "key": "lineage", "label": "传衣 · 付法", "color": "var(--ink-soft)", "dash": "5 4" },
+    { "key": "disciple", "label": "门下 · 参礼", "color": "var(--azure)" },
+    { "key": "contrast", "label": "南北 · 顿渐", "color": "var(--cinnabar-pure)" }
+  ],
+  "nodes": [
+    { "id": "damo", "label": "达摩", "era": "nanbei", "school": "zu", "k": 0, "when": "南北朝(相传梁时来华)", "note": "《坛经》两处说到他:五祖付衣时说「昔达摩大师,初来此土,人未之信,故传此衣,以为信体,代代相承」;疑问品里韦刺史转述他答梁武帝「实无功德」。付嘱品列为西天第二十八祖。来华年代诸书不一,图上只写朝代。" },
+    { "id": "huike", "label": "慧可", "era": "nanbei", "school": "zu", "k": 1, "when": "南北朝—隋", "note": "付嘱品所列东土二祖(「第二十九、慧可大师」)。《坛经》本文只在这份祖序里提到他,立雪断臂之事出自后世灯录,不入图。" },
+    { "id": "sengcan", "label": "僧璨", "era": "sui", "school": "zu", "k": 0, "when": "隋", "note": "付嘱品所列东土三祖(「第三十、僧璨大师」)。站内《信心铭》旧题其作;《坛经》本文仅见于祖序。", "book": { "corpus": "fo", "slug": "xinxinming", "title": "信心铭" }, "caveat": "《信心铭》题僧璨作,是旧题;《坛经》并未提及此书。" },
+    { "id": "daoxin", "label": "道信", "era": "sui", "school": "zu", "k": 1, "when": "隋—唐初", "note": "付嘱品所列东土四祖(「第三十一、道信大师」)。《坛经》本文仅见于祖序。" },
+    { "id": "hongren", "label": "弘忍", "era": "tang", "school": "zu", "k": 0, "dx": -230, "when": "唐初", "note": "黄梅五祖。行由品里,一位客人告诉惠能「其寺是五祖忍大师在彼主化,门人一千有余」,惠能因此往黄梅;后来「三更受法,人尽不知」,弘忍把顿教与衣钵传给了这个舂米的行者。付嘱品列为东土五祖(「第三十二、弘忍大师」)。" },
+    { "id": "huineng", "label": "惠能", "era": "tang", "school": "nan", "k": 0, "dx": -230, "when": "638—713(据本经)", "note": "六祖,《坛经》的主角与说法者。行由品自述从岭南卖柴到黄梅碓坊、三更受法、南行避难、法性寺论风幡;付嘱品自记先天二年八月入灭,「春秋七十有六」,并自称「惠能是为三十三祖」。全站争鸣里的「惠能·顿」一席即他。", "book": { "corpus": "fo", "slug": "tanjing", "title": "坛经" }, "renwu": "huineng", "debateKey": "huineng" },
+    { "id": "shenxiu", "label": "神秀", "era": "tang", "school": "bei", "k": 0, "dx": -230, "when": "唐", "note": "黄梅门下的教授师:行由品里众人说「神秀上座,现为教授师,必是他得」,他题在南廊的「身是菩提树」一偈,五祖谓「未见本性」。顿渐品说他后来住荆南玉泉寺,「人皆称南能北秀」,南北二宗顿渐之分由此而起;书中写他遣志诚到曹溪听法,又对门人说惠能「得无师之智,深悟上乘,吾不如也」——这是《坛经》一方的叙述。", "debateKey": "jian" },
+    { "id": "fahai", "label": "法海", "era": "tang", "school": "nan", "k": 0, "dx": -80, "when": "唐", "note": "韶州曲江人,机缘品第一位问「即心即佛」的弟子;付嘱品惠能唤门人时列在首位,临终由他问「和尚留何教法」。《坛经》通行本相传即由他集记,书中自身未明言。" },
+    { "id": "shenhui", "label": "神会", "era": "tang", "school": "nan", "k": 0, "dx": 40, "when": "唐", "note": "顿渐品说他「襄阳高氏子,年十三,自玉泉来参礼」,来自神秀所住的玉泉寺;问「亦见亦不见」被打三下,后为惠能「侍者」。付嘱品记惠能预告入灭时「惟有神会,神情不动,亦无涕泣」。" },
+    { "id": "huairang", "label": "怀让", "era": "tang", "school": "nan", "k": 0, "dx": 160, "when": "唐", "note": "机缘品:「金州杜氏子也。初谒嵩山安国师,安发之曹溪参扣。」惠能问「甚处来」「什么物,恁么来」,八年乃悟,「说似一物即不中」。后世南岳一系尊他为祖,《坛经》本文只写到他在曹溪问答。" },
+    { "id": "xingsi", "label": "行思", "era": "tang", "school": "nan", "k": 1, "dx": -80, "when": "唐", "note": "机缘品:「生吉州安城刘氏,闻曹溪法席盛化,径来参礼」,问「当何所务,即不落阶级」。后世青原一系尊他为祖;《坛经》本文写他得法后回吉州青原山。" },
+    { "id": "xuanjue", "label": "玄觉", "era": "tang", "school": "nan", "k": 1, "dx": 40, "when": "唐", "note": "永嘉人,「少习经论,精天台止观法门」,因《维摩经》发明心地,由玄策引至曹溪,与惠能一番问答后「言下大悟」,住一宿即去,时称「一宿觉」。站内《永嘉证道歌》题其作。", "book": { "corpus": "fo", "slug": "zhengdaoge", "title": "永嘉证道歌" } },
+    { "id": "fada", "label": "法达", "era": "tang", "school": "nan", "k": 1, "dx": 160, "when": "唐", "note": "洪州人,「七岁出家,常诵法华经」,来礼惠能而「头不至地」,被点破「礼不投地,何如不礼」;惠能为他讲《法华》,「心迷法华转,心悟转法华」一偈即为他说。" },
+    { "id": "zhicheng", "label": "志诚", "era": "tang", "school": "nan", "k": 2, "dx": -80, "when": "唐", "note": "本是神秀门人,顿渐品记神秀命他「到曹溪听法,若有所闻,尽心记取」;到曹溪后自陈来意,转而师事惠能,「戒定慧」一段问答由此而来。付嘱品所列门人之一。" },
+    { "id": "huiming", "label": "惠明", "era": "tang", "school": "nan", "k": 2, "dx": 40, "when": "唐", "note": "「俗姓陈,先是四品将军」,惠能南行时率众追到大庾岭欲夺衣钵,衣钵提不动,转而求法:「望行者为我说法」,惠能一句「不思善,不思恶,正与么时,那个是明上座本来面目」使他言下大悟。" }
+  ],
+  "edges": [
+    { "from": "damo", "to": "huike", "type": "lineage", "gist": "付嘱品祖序:二十八祖达摩,二十九祖慧可", "cites": [
+      { "quote": "第二十八、菩提达摩尊者", "corpus": "fo", "slug": "tanjing", "ch": 10, "label": "坛经 · 付嘱品" },
+      { "quote": "第二十九、慧可大师", "corpus": "fo", "slug": "tanjing", "ch": 10, "label": "坛经 · 付嘱品" } ] },
+    { "from": "huike", "to": "sengcan", "type": "lineage", "gist": "付嘱品祖序:三十祖僧璨", "cites": [
+      { "quote": "第三十、僧璨大师", "corpus": "fo", "slug": "tanjing", "ch": 10, "label": "坛经 · 付嘱品" } ] },
+    { "from": "sengcan", "to": "daoxin", "type": "lineage", "gist": "付嘱品祖序:三十一祖道信", "cites": [
+      { "quote": "第三十一、道信大师", "corpus": "fo", "slug": "tanjing", "ch": 10, "label": "坛经 · 付嘱品" } ] },
+    { "from": "daoxin", "to": "hongren", "type": "lineage", "gist": "付嘱品祖序:三十二祖弘忍", "cites": [
+      { "quote": "第三十二、弘忍大师", "corpus": "fo", "slug": "tanjing", "ch": 10, "label": "坛经 · 付嘱品" } ] },
+    { "from": "hongren", "to": "huineng", "type": "lineage", "gist": "三更受法,传顿教及衣钵,「汝为第六代祖」", "cites": [
+      { "quote": "三更受法，人尽不知，便传顿教及衣钵", "corpus": "fo", "slug": "tanjing", "ch": 1, "label": "坛经 · 行由品" },
+      { "quote": "汝为第六代祖，善自护念", "corpus": "fo", "slug": "tanjing", "ch": 1, "label": "坛经 · 行由品" },
+      { "quote": "惠能是为三十三祖", "corpus": "fo", "slug": "tanjing", "ch": 10, "label": "坛经 · 付嘱品" } ] },
+    { "from": "damo", "to": "huineng", "type": "lineage", "gist": "达摩所传之衣到惠能为止:「衣为争端,止汝勿传」", "note": "不是师徒,是同一件衣:五祖付衣时追述达摩「传此衣,以为信体,代代相承」,又嘱惠能到此为止。图上画成传法线的旁支,点线示意。", "c": "disputed", "cites": [
+      { "quote": "昔达摩大师，初来此土，人未之信，故传此衣，以为信体，代代相承", "corpus": "fo", "slug": "tanjing", "ch": 1, "label": "坛经 · 行由品" },
+      { "quote": "衣为争端，止汝勿传", "corpus": "fo", "slug": "tanjing", "ch": 1, "label": "坛经 · 行由品" } ] },
+    { "from": "hongren", "to": "shenxiu", "type": "disciple", "gist": "黄梅门下教授师,题偈南廊", "cites": [
+      { "quote": "神秀上座，现为教授师，必是他得", "corpus": "fo", "slug": "tanjing", "ch": 1, "label": "坛经 · 行由品" },
+      { "quote": "祖已知神秀入门未得，不见自性", "corpus": "fo", "slug": "tanjing", "ch": 1, "label": "坛经 · 行由品" } ] },
+    { "from": "huineng", "to": "shenxiu", "type": "contrast", "gist": "南能北秀,顿渐之分", "cites": [
+      { "quote": "人皆称南能北秀；故有南北二宗顿渐之分", "corpus": "fo", "slug": "tanjing", "ch": 8, "label": "坛经 · 顿渐品" } ] },
+    { "from": "shenxiu", "to": "zhicheng", "type": "disciple", "gist": "遣志诚到曹溪听法", "cites": [
+      { "quote": "命门人志诚曰：「汝聪明多智，可为吾到曹溪听法", "corpus": "fo", "slug": "tanjing", "ch": 8, "label": "坛经 · 顿渐品" } ] },
+    { "from": "huineng", "to": "zhicheng", "type": "disciple", "gist": "自玉泉来而留于曹溪,付嘱品所列门人", "cites": [
+      { "quote": "唤门人法海、志诚、法达、神会", "corpus": "fo", "slug": "tanjing", "ch": 10, "label": "坛经 · 付嘱品" } ] },
+    { "from": "huineng", "to": "fahai", "type": "disciple", "gist": "机缘品首位问法者,门人之首", "cites": [
+      { "quote": "僧法海，韶州曲江人也。初参祖师", "corpus": "fo", "slug": "tanjing", "ch": 7, "label": "坛经 · 机缘品" },
+      { "quote": "法海白言：『和尚留何教法", "corpus": "fo", "slug": "tanjing", "ch": 10, "label": "坛经 · 付嘱品" } ] },
+    { "from": "huineng", "to": "shenhui", "type": "disciple", "gist": "十三岁自玉泉来参礼", "cites": [
+      { "quote": "有一童子，名神会，襄阳高氏子，年十三，自玉泉来参礼", "corpus": "fo", "slug": "tanjing", "ch": 8, "label": "坛经 · 顿渐品" },
+      { "quote": "惟有神会，神情不动，亦无涕泣", "corpus": "fo", "slug": "tanjing", "ch": 10, "label": "坛经 · 付嘱品" } ] },
+    { "from": "huineng", "to": "huairang", "type": "disciple", "gist": "由嵩山安国师发之曹溪", "cites": [
+      { "quote": "怀让禅师，金州杜氏子也。初谒嵩山安国师，安发之曹溪参扣", "corpus": "fo", "slug": "tanjing", "ch": 7, "label": "坛经 · 机缘品" } ] },
+    { "from": "huineng", "to": "xingsi", "type": "disciple", "gist": "闻曹溪法席盛化,径来参礼", "cites": [
+      { "quote": "行思禅师，生吉州安城刘氏，闻曹溪法席盛化，径来参礼", "corpus": "fo", "slug": "tanjing", "ch": 7, "label": "坛经 · 机缘品" } ] },
+    { "from": "huineng", "to": "xuanjue", "type": "disciple", "gist": "永嘉一宿觉", "cites": [
+      { "quote": "永嘉玄觉禅师，温州戴氏子", "corpus": "fo", "slug": "tanjing", "ch": 7, "label": "坛经 · 机缘品" } ] },
+    { "from": "huineng", "to": "fada", "type": "disciple", "gist": "诵法华三千部而礼不投地", "cites": [
+      { "quote": "僧法达，洪洲人，七岁出家，常诵法华经，来礼祖师", "corpus": "fo", "slug": "tanjing", "ch": 7, "label": "坛经 · 机缘品" } ] },
+    { "from": "huineng", "to": "huiming", "type": "disciple", "gist": "大庾岭追衣钵,反而受法", "cites": [
+      { "quote": "一僧俗姓陈，名惠明，先是四品将军", "corpus": "fo", "slug": "tanjing", "ch": 1, "label": "坛经 · 行由品" },
+      { "quote": "惠明作礼云：「望行者为我说法。」", "corpus": "fo", "slug": "tanjing", "ch": 1, "label": "坛经 · 行由品" } ] }
+  ],
+  "end": {
+    "label": "此后:曹溪之外",
+    "items": [
+      { "when": "中晚唐—五代", "label": "五家分灯", "note": "后世灯录说怀让、行思两系下开临济、沩仰、曹洞、云门、法眼五家,宋又分黄龙、杨岐为七宗。这些《坛经》没有写到,只作时间标记。" },
+      { "when": "宋以后", "label": "灯录体", "note": "《景德传灯录》等把「传灯」编成整部谱系,本图的祖序即出自《坛经》付嘱品那一份最早的清单。" }
+    ],
+    "note": "灯录诸书不在站内书目,这一格不挂原文。"
+  }
+}

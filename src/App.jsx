@@ -64,6 +64,15 @@ const MingliLearnIndexPage = lazy(() => import('./features/mingli/learn/MingliLe
 const MingliLearnTopicPage = lazy(() => import('./features/mingli/learn/MingliLearnTopicPage.jsx'))
 const PaipanPage = lazy(() => import('./features/mingli/PaipanPage.jsx'))
 const QiongtongMatrixPage = lazy(() => import('./features/mingli/QiongtongMatrixPage.jsx'))
+// 中医三件(design-v24 §13,2026-10-01 owner 定做):本草矩阵 / 素问藏象图 / 伤寒六经目录
+const BencaoMatrixPage = lazy(() => import('./features/zhongyi/BencaoMatrixPage.jsx'))
+const SuwenZangxiangPage = lazy(() => import('./features/zhongyi/SuwenZangxiangPage.jsx'))
+const ShanghanLiujingPage = lazy(() => import('./features/zhongyi/ShanghanLiujingPage.jsx'))
+// 可选件三件(design-v24 §13,2026-10-01 owner 定做):孟子 / 传习录人物索引、禅宗传灯图、唐诗体裁×诗人矩阵
+const MengziPeoplePage = lazy(() => import('./features/ru/MengziPeoplePage.jsx'))
+const ChuanxiluPeoplePage = lazy(() => import('./features/xin/ChuanxiluPeoplePage.jsx'))
+const FoLineagePage = lazy(() => import('./features/fo/FoLineagePage.jsx'))
+const TangshiMatrixPage = lazy(() => import('./features/tangshi/TangshiMatrixPage.jsx'))
 const ZhenquanGejuPage = lazy(() => import('./features/mingli/ZhenquanGejuPage.jsx'))
 const DitiansuiCasesPage = lazy(() => import('./features/mingli/DitiansuiCasesPage.jsx'))
 const MingliConceptsPage = lazy(() => import('./features/mingli/MingliConceptsPage.jsx'))
@@ -447,6 +456,10 @@ function AppContent() {
           <Route path="/ru/shijing/map" element={<ShijingMapPage />} />
           <Route path="/ru/lunyu/renwu" element={<LunyuPeoplePage />} />
           <Route path="/ru/lineage" element={<RuLineagePage />} />
+          <Route path="/ru/mengzi/renwu" element={<MengziPeoplePage />} />
+          <Route path="/xin/chuanxilu/renwu" element={<ChuanxiluPeoplePage />} />
+          <Route path="/fo/lineage" element={<FoLineagePage />} />
+          <Route path="/tangshi/tangshi300/matrix" element={<TangshiMatrixPage />} />
           <Route path="/ru/:slug" element={<CorpusTextPage corpus="ru" />} />
           <Route path="/ru/school" element={<SchoolPage corpus="ru" />} />
           <Route path="/ru/:slug/daodu" element={<DaoduPage corpus="ru" />} />
@@ -511,6 +524,9 @@ function AppContent() {
           {/* 观数(命理学,骨架期):学堂两条路由排在 /mingli/:slug 之前(与 school 同一道理,免被当书名去查 texts.json) */}
           <Route path="/mingli" element={<MingliHomePage />} />
           <Route path="/mingli/qiongtong/matrix" element={<QiongtongMatrixPage />} />
+          <Route path="/zhongyi/bencaojing/matrix" element={<BencaoMatrixPage />} />
+          <Route path="/zhongyi/suwen/zangxiang" element={<SuwenZangxiangPage />} />
+          <Route path="/zhongyi/shanghanlun/liujing" element={<ShanghanLiujingPage />} />
           <Route path="/mingli/zhenquan/geju" element={<ZhenquanGejuPage />} />
           <Route path="/mingli/concepts" element={<MingliConceptsPage />} />
           <Route path="/mingli/yuanhai/gejue" element={<YuanhaiGejuePage />} />

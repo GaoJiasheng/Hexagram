@@ -69,6 +69,7 @@
 - [x] 易经首页改版 + 两层导读(2026-10-01,owner review)—— 去今日一卦/道藏入口,四模块首页展开;家级「易学的来路」(Fable 手写 11000 字:经/传 · 象数/义理 · 占/学三对张力,不重排源流页年表)+ 书级「《周易》的前世今生」(7300 字);check-data 导读引文闸认 `cite.slug:'hexagrams'`(ch=卦序);路由 `/yijing/school` `/yijing/zhouyi/daodu`(一站一书,slug 由路由传)· SOP docs/school-intro-standard.md 易经节
 - [x] 古文研读组(第十六组 `guwen`,观文/绛紫,集部第四组,2026-10-01「老师首次打开」T6,owner 定)—— **一组两本书**:《古文观止》222 篇(维基文库卷页 splitHeadings,管线新选项 `dropSpaceLines` 剔篇末吴氏总评 / `stripInnerSpaces` 去夹注残留空格 / `splitLongParas` 长篇按句末分段 / `chapterMeta` 并出处;`gen-guwen-meta.mjs` 从目录页推导 12 卷 222 篇 + 出处)+「课本古文补编」23 篇(本站按统编版初高中课本选目、非传世选本,`excerpts` 摘录模式:起止标记/整页/joinLines/charMap;preResolve 解包 專/參/YL/命名空间管道链接;owner 定:不收史记与人物传记、礼记二则,加与妻书、洛神赋)。三层:译注延全成(opus 译 + opus/sonnet 校,0 丢弃锚点)、家级导读「这本选本是怎么编出来的」(C 类,选本谱系非流派史)+ 两篇书级导读、白话全铺中(起草校对皆 opus,课本 46 篇先行,余由 baihua-step 自驱 CAP 24)。首页 SingleBookHome `volumes` 按卷分组 + `beforeToc` 插槽把补编按学段列在前、篇题旁标出处;阅读页 `chapterSub` 题下显「出自《左传》」「王勃」。**全站索引已同步**:名句集 79 条(`mingju-extra/guwen.json` 人工选目,底本异文如实)、时间轴两书 + 人物志二吴、义理专题(原道→仁与四端、尊经阁记→心之本体)、关于页底本凡例、新收 feed/搜索/og/书目/篇幅档(构建期自动)。课本篇目盘点 `docs/guwen-textbook-list.md`。owner 10-01 定:课本索引页不做、孙权劝学不去;白话由 baihua-step 自驱续铺(59/245,周额度到线暂停)。
 - [x] 老师首次打开 + 古文研读组 + 研读统计(2026-10-01)—— T4 首屏文案/T7 触屏段钮/T9 构建期计数;**古文组 `guwen`**(观文/绛紫,《古文观止》222 篇 + 课本古文补编 23 篇 excerpts 摘录,译注延导读全成,白话铺至 59/245 由 `baihua-step.mjs` 自驱续);跋「说明」挪位、logo 朱砂、联系邮箱统一 hexa@gavin.pub、正文衬线阅读页按需加载、顶栏「跋」;**研读统计**:`src/features/reading/readClock.js` 活跃时长时钟(可见 + 60 秒内有操作,单次封顶 1800 秒)→ 本机 `readDays`(入云同步,键 `day|corpus|slug|ch|dev`)/`readRecent`(本机)/匿名 beat 三处消费,`/stats` 中立页 + 设置浮层三数 + 账号开关「把我的研读时长计入账号」(默认开,关 → `DELETE /api/me/reading`)+ 各组 /me 一行,后台 `/admin/stats?window=` 加活跃/回访/中位数/直方图/按时长 Top + `/admin/readers(/:id)` 读者栏(不显示邮箱);隐私页 §五 · 方案 docs/reading-stats-plan.md §7 · 清单 docs/teacher-first-visit-plan.md · 细节 docs/todo.md ⏸ 与 R'
+- [x] 中医三件 + 可选件三件 + 扩展区字根治 ①(2026-10-01 深夜,owner 定)—— **I1–I3**:本草六部三品矩阵 `/zhongyi/bencaojing/matrix`(十八类题名派生,格内药名从段首切,零策展)、素问五行藏象图 `/zhongyi/suwen/zangxiang`(《阴阳应象大论》五段排比 15 行 × 5,每格 kw 回查)、伤寒六经目录 `/zhongyi/shanghanlun/liujing`(22 篇归六经 + 三组,受病次第引《伤寒例》);一闸 `check-zhongyi-shapes`。**I14–I16**:人物索引推广到孟子(53 人)/ 传习录(24 人,短称呼格 + `?p=` 落屏)——派生器抽 `scripts/lib/people-index.mjs`、页抽 `ru/PeopleIndexPage.jsx`,论语输出逐字不变;禅宗传灯图 `/fo/lineage`(儒门学脉图视图抽 `ru/LineageView.jsx`,`fo-lineage.json` 15 人 17 边 25 引文全出《坛经》);唐诗体裁 × 诗人矩阵 `/tangshi/tangshi300/matrix`(诗人从抓取缓存诗页 `author` 派生,77 家 320 首)。**O12 ①**:`t2s` 保留简体落在 BMP 外的繁体原字(蹻 駉 鑪 絺…155 字 492 处,逐字试转判定),存量以映射脚本改字、不重抓 · 规格 docs/design-v24.md §13–§14 · 细节 docs/todo.md R'
 - [ ] 观数 · 命理典籍研读组(第十五组 `mingli`,2026-09-19 立项)—— 八字命理知识学习站(非算命站):核心四书 + 源头四书 + 三命通会 原文/译注延/导读/白话,ganzhi 底座、9 个 widget、调候矩阵/格局流程/命例走读/歌诀卡/概念索引/学堂/排盘台;
   2026-09-30 内容全部收官(原记待 owner review → 上生产 / 发 iOS,进度以 `docs/todo.md` 为准) · 规格 docs/design-v23.md · 全量 TODO docs/todo.md §0.1 · 细节 archive §84
 
@@ -99,7 +100,7 @@
 - 谋略·真书(长短经/菜根谭/围炉夜话/小窗幽记):owner 明确要求不套伪书批判框架——`texts.json` 均不置 `dubious`,`gen-zhuzi-wf.mjs`/`gen-baihua-wf.mjs` 按书名 allowlist(`MOULUE_REAL_BOOKS`/`MOULUE_FAKE_BOOKS`)分派两套红线(真书取思想史/处世研习视角,伪书仍守批判框架)
 - **中医**:改中医内容守研习不诊疗铁律,逐批 check-data 过才 commit。守 v19 §0「研习不诊疗」铁律(首页+各书小传「⚠ 非医疗建议」声明;本草经「主治…」、伤寒论方剂属原典照译,但注疏/延伸不述功效用法用量、不下病症/疗效断语、不教自疗)
 - 金匮守研习不诊疗铁律(方剂照原典录,注疏/延伸只作字词训诂、医史源流,不述功效用法用量、不下疗效断语;延伸均带「宜作医史文献训读、非为对照自诊」);伤寒/金匮方剂只录名
-- 白话:难经 81 章 owner 定不铺(封关)〔素问/灵枢/伤寒/本草/金匮已铺〕;争鸣中医不入场;中医 I1–I3(本草矩阵 / 素问藏象图 / 伤寒六经目录)owner 定暂不做,方案在 interactive-plan 第一梯队备用。
+- 白话:难经 81 章 owner 定不铺(封关)〔素问/灵枢/伤寒/本草/金匮已铺〕;争鸣中医不入场;中医 I1–I3(本草矩阵 / 素问藏象图 / 伤寒六经目录)2026-10-01 已做:只排原书结构、每格挂原文、不画传变路径、不述功效,页带「⚠ 非医疗建议」(design-v24 §13)
 - **古文**:文章学与文献研习视角(`TIELU_WEN`/`RED.guwen`):不作心灵鸡汤/励志格言/人生启示,史传文不作现代政治影射,论说文不替古人站队;补编照原文全录不依课本删节,底本与课本异文在延伸/导读里如实标出;名句集选目须为底本精确子串(底本作「宁知白首之心」「逸豫可以忘身」即照录)
 - **诗词曲**:诗体新书设 `verse:true` 即生效(dao 已接;corpus 走 CorpusReadPage 时同样一行 `verse={!!meta.verse}` 待接)〔corpus 已于 v1.50.0 接上〕
 - 格律层(I10):只标韵书所记不判出律,多音字 ◐,韵书开开关才动态载
@@ -124,6 +125,7 @@
 - 时间轴/人物志:一书一条;只写各书撰人小传与 SOURCES.md 已交代过的事,拿不准的确数不给;托名伪作 `pseudo` 不上轴;加人:补一条 json 即上时间轴与人物志;书目每一部的撰人若不在,不强求。易学十家以 `yijing:'<id>'` 引用、小传不重写
 - **交互化(二十四期)**:加同类件:照 design-v24 §0 三步(自己的文件 + 闸模块 + 主会话接线);共享文件(App 路由 / schema·WidgetBlock 登记 / check-data 闸挂载点 7f / check-links / og 索引 / texts.json `shape` / registry nav)由主会话接;闸模块 `scripts/lib/check-<name>.mjs` 默认导出 `check(ctx)`,7f 段自动挂载
 - 佛名相各经分歧并陈不裁断;庄子寓言「后人概括」如实标;战国策年代只据篇中人物在位推定;拆屏链接首屏也显式带 `?p=1`
+- 人物索引再推广一本书 = 一份人名表脚本(`gen-<book>-people.mjs`,派生走 `scripts/lib/people-index.mjs`,短称呼格字集按书给)+ 薄包装页(`PeopleIndexPage` 的 `spec`)+ 薄包装闸;学脉 / 传灯类图再加一份 = 一份 `*-lineage.json` + `LineageView` 薄包装 + `checkLineage` 薄包装;禅宗传灯图只画《坛经》本文写到的人,灯录之事只进说明
 - 新增页面/重交互组件:互动信息勿仅挂 hover(补 click/键盘);新读经站搜索由 registry `searchKind` 驱动;长页优先 content-visibility;新增懒加载页天然受 ErrorBoundary 兜底〔`searchKind` 已不驱动面板:现为全站统一 `GlobalSearchPalette`,registry `hasSearch` 只管显不显搜索钮〕
 - **平台工程(部署 / PWA / 搜索 / check-data / 阅读器)**:加新站照 CLAUDE.md 头部「如何加一个新站」六步,平台代码零改动;新增页面必须接 usePageTitle;新增重数据组件优先懒加载;新增设置项加 `DEFAULT_SETTINGS`+白名单;读经新交互走 markCtx 锚;新读经站自动获 /me(App 路由表数组加 key)
 - 阅读器:新单页长经自动获 scroll-spy(走 ClassicReader single 模式即可);新读经站走 ClassicReader 即自动获金句卡;OG:index.html 只有站点级 og,逐页 og 由 `functions/_middleware.js` 对爬虫 UA 用 HTMLRewriter 注入(按路径哈希取 `/content/og/<n>.json` 分片,哈希与 `server/og-index.js` 逐字一致);普通浏览器看到站点级是设计如此;新读经站 disclaimer 走 ScriptureShelf prop;备份/里程碑各 /me 自动生效(走 getStudyStats);新读经站默认接搜索(hasSearch+CORPUS_SEARCH_SITES);新分章书篇目自动显示 title〔CORPUS_SEARCH_SITES 已随统一搜索删除,只剩 hasSearch〕
@@ -140,6 +142,8 @@
 
 ## 工程上踩过的坑(会重复踩的那几个)
 
+- **整站重抓原文会把管线后来的改动一并带进旧书**(2026-10-01 扩展区字根治时踩到):`fetch-corpus` 全跑一遍,诗经冒出「缩略图|雎鸠」(文件链接残留)、慎子多出「元緆」、悟真篇序多出年号、三命通会断句层因用字不同而整段失配……
+  **改字一类的全局订正走映射脚本直接改生成物,不重抓**;真要重抓,逐书 `git diff` 核对只有预期变化再收。`t2s` 现保留简体落在 BMP 外的繁体原字(`keptTraditional()` 可列),新抓的书自动如此。
 - **`requestAnimationFrame` 在 headless/后台标签页会被节流**,用它做节流的逻辑会**静默失效**。
   已踩两次:目录自动滚入视野(#138)、段级续读记位。**一律改时间戳节流**。
 - **Hook 必须在任何提前 `return` 之前**。`useSearchParams` 插在 `if (loading) return` 之后

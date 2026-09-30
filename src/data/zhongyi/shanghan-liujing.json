@@ -1,0 +1,19 @@
+{
+  "_readme": "I3 · 伤寒论六经目录(docs/design-v24.md §13)。22 篇按原书篇次分组:六经各挂篇;受病次第引《伤寒例》(第 3 篇)原文,quote 是该段(para,0 起算)的精确子串,check-data 逐条回查。只是目录,不画「传变路径」;研习不诊疗。",
+  "source": { "corpus": "zhongyi", "slug": "shanghanlun", "ch": 3, "title": "伤寒例" },
+  "channels": [
+    { "key": "taiyang", "label": "太阳", "yin": false, "chapters": [5, 6, 7], "para": 12, "quote": "尺寸俱浮者，太阳受病也，当一二日发" },
+    { "key": "yangming", "label": "阳明", "yin": false, "chapters": [8], "para": 13, "quote": "尺寸俱长者，阳明受病也，当二三日发" },
+    { "key": "shaoyang", "label": "少阳", "yin": false, "chapters": [9], "para": 14, "quote": "尺寸俱弦者，少阳受病也，当三四日发" },
+    { "key": "taiyin", "label": "太阴", "yin": true, "chapters": [10], "para": 15, "quote": "尺寸俱沉细者，太阴受病也，当四五日发" },
+    { "key": "shaoyin", "label": "少阴", "yin": true, "chapters": [11], "para": 16, "quote": "尺寸俱沉者，少阴受病也，当五六日发" },
+    { "key": "jueyin", "label": "厥阴", "yin": true, "chapters": [12], "para": 17, "quote": "尺寸俱微缓者，厥阴受病也，当六七日发" }
+  ],
+  "sanyang": { "label": "三阳", "para": 14, "quote": "此三经皆受病，未入于府者" },
+  "sanyin": { "label": "三阴", "para": 17, "quote": "此三经皆受病，已入于府" },
+  "groups": [
+    { "key": "qian", "label": "总论与脉法", "chapters": [1, 2, 3, 4], "note": "辨脉法、平脉法两篇讲脉;《伤寒例》总说六经受病之次;痉湿暍一篇辨与伤寒相似之病。" },
+    { "key": "hou", "label": "六经之外", "chapters": [13, 14], "note": "霍乱、阴阳易差后劳复两篇,列在六经之后。" },
+    { "key": "zhifa", "label": "可与不可", "chapters": [15, 16, 17, 18, 19, 20, 21, 22], "note": "末八篇不按经、按法排:不可发汗／可发汗／发汗后,不可吐／可吐,不可下／可下,发汗吐下后——是原书自己的另一套目录。" }
+  ]
+}

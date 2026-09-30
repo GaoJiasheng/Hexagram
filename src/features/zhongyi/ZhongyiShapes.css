@@ -1,0 +1,44 @@
+/* 中医三件(design-v24 §13):本草矩阵 / 素问藏象图 / 伤寒六经目录 共用的页面样式。着色只走 token。 */
+.zy-shape { max-width: 980px; margin: 0 auto; }
+.zy-shape__intro { margin: 8px 0 18px; font-size: calc(0.95rem * var(--read-scale)); line-height: 1.95; color: var(--ink); max-width: var(--read-w); }
+.zy-shape .wg { margin-top: 22px; }
+.zy-shape__section { margin-top: 30px; }
+.zy-shape__h2 { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin: 0 0 10px; }
+.zy-shape__fanli { margin-top: 28px; padding-top: 14px; border-top: 1px dashed var(--line); font-size: 0.8rem; line-height: 1.8; color: var(--ink-faint); }
+.zy-shape__fanli b { color: var(--ink-soft); font-weight: 600; margin-right: 6px; }
+.zy-shape__next { margin-top: 18px; font-size: 0.9rem; }
+.zy-shape__next a { color: var(--cinnabar); text-decoration: none; }
+.zy-shape__crumb-sep { margin: 0 8px; color: var(--ink-faint); }
+
+/* 藏象图:五段原文列表 */
+.zy-para { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.zy-para li { padding: 10px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper-raised); font-size: 0.88rem; line-height: 1.9; color: var(--ink-soft); }
+.zy-para__wx { display: inline-block; min-width: 1.6em; margin-right: 8px; font-family: var(--font-serif); font-weight: 600; color: var(--cinnabar-pure); }
+.zy-para__text { color: var(--ink); }
+.zy-para a { margin-left: 8px; white-space: nowrap; color: var(--cinnabar); text-decoration: none; font-size: 0.8rem; }
+
+/* 六经目录:六块 */
+.zy-liujing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.zy-liujing__row-label { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 12px; margin-top: 6px; font-size: 0.82rem; color: var(--ink-faint); }
+.zy-liujing__row-label b { font-family: var(--font-serif); font-size: 0.95rem; color: var(--ink-soft); font-weight: 600; }
+.zy-liujing__row-label q { quotes: none; }
+.zy-liujing__row-label a { color: var(--cinnabar); text-decoration: none; white-space: nowrap; }
+.zy-jing { padding: 14px 16px 12px; border: 1px solid var(--line); border-radius: 9px; background: var(--paper-raised); display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.zy-jing--yin { border-style: dashed; }
+.zy-jing__head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.zy-jing__name { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; color: var(--cinnabar-pure); }
+.zy-jing__count { font-size: 0.74rem; color: var(--ink-faint); white-space: nowrap; }
+.zy-jing__quote { margin: 0; font-size: 0.82rem; line-height: 1.7; color: var(--ink-soft); }
+.zy-jing__quote q { quotes: none; color: var(--ink); }
+.zy-jing__quote a { margin-left: 6px; color: var(--cinnabar); text-decoration: none; white-space: nowrap; font-size: 0.76rem; }
+.zy-jing__list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.zy-jing__list a { display: flex; justify-content: space-between; gap: 8px; font-size: 0.86rem; color: var(--ink); text-decoration: none; padding: 4px 0; border-top: 1px dashed var(--line); }
+.zy-jing__list a:hover { color: var(--cinnabar); }
+.zy-jing__list small { color: var(--ink-faint); font-size: 0.72rem; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.zy-groups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.zy-group { padding: 12px 14px; border: 1px solid var(--line); border-radius: 9px; min-width: 0; }
+.zy-group__name { font-family: var(--font-serif); font-size: 0.98rem; font-weight: 600; color: var(--ink); margin: 0 0 4px; }
+.zy-group__note { margin: 0 0 8px; font-size: 0.78rem; line-height: 1.7; color: var(--ink-faint); }
+@media (max-width: 720px) {
+  .zy-liujing, .zy-groups { grid-template-columns: 1fr; }
+}

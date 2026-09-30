@@ -25,6 +25,14 @@ export default function FoHomePage() {
           </span>
           <span className="daodu-entry__go" aria-hidden="true">›</span>
         </Link>
+        <Link to="/fo/lineage" className="daodu-entry fo-home-extra__entry">
+          <span className="daodu-entry__tag">传灯图</span>
+          <span className="daodu-entry__text">
+            <span className="daodu-entry__title">达摩 · 弘忍 · 惠能 · 神秀 · 曹溪门下</span>
+            <span className="daodu-entry__sub">《坛经》自己讲出来的传法谱系:谁传谁、谁并立、门下诸人各是怎么来的,每根线挂本经原文。</span>
+          </span>
+          <span className="daodu-entry__go" aria-hidden="true">›</span>
+        </Link>
       </div>
     </>
   )

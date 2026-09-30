@@ -15,8 +15,12 @@ const NODE_W = 88
 const NODE_H = 30
 const EDGE_C = new Set(['disputed'])
 
-export default function check({ ROOT, err, warn, info, readJson, chapterText }) {
-  const tag = '儒门学脉图'
+// 禅宗传灯图(§14)同一把尺子:换 DATA_PATH / tag 即可
+export default function check(ctx) {
+  return checkLineage(ctx, { DATA_PATH, tag: '儒门学脉图' })
+}
+
+export function checkLineage({ ROOT, err, warn, info, readJson, chapterText }, { DATA_PATH, tag }) {
   const file = path.join(ROOT, DATA_PATH)
   if (!fs.existsSync(file)) { err(`${tag}: ${DATA_PATH} 不存在`); return }
   const T = readJson(file)

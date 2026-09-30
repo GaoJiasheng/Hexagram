@@ -1,0 +1,25 @@
+/* 唐诗 体裁 × 诗人 矩阵(design-v24 §14)。只用 token,明暗自适应。 */
+.ts-matrix { max-width: 980px; margin: 0 auto; }
+.ts-matrix__crumb-sep { margin: 0 8px; color: var(--ink-faint); }
+.ts-matrix__intro { margin: 8px 0 18px; font-size: calc(0.95rem * var(--read-scale)); line-height: 1.95; color: var(--ink); max-width: var(--read-w); }
+.ts-matrix .wg { margin-top: 22px; }
+.ts-matrix .mx-table .mx-rowhead { white-space: nowrap; }
+.ts-matrix__section { margin-top: 30px; }
+.ts-matrix__h2 { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin: 0 0 10px; }
+.ts-poets { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px 16px; }
+.ts-poet { border-top: 1px dashed var(--line); padding: 6px 0; min-width: 0; }
+.ts-poet summary { display: flex; justify-content: space-between; gap: 10px; cursor: pointer; font-size: 0.9rem; color: var(--ink); list-style: none; }
+.ts-poet summary::-webkit-details-marker { display: none; }
+.ts-poet summary::before { content: '▸'; margin-right: 6px; color: var(--ink-faint); font-size: 0.75rem; }
+.ts-poet[open] summary::before { content: '▾'; }
+.ts-poet summary b { font-weight: 500; flex: 1; }
+.ts-poet summary span { color: var(--ink-faint); font-size: 0.76rem; font-variant-numeric: tabular-nums; }
+.ts-poet ul { list-style: none; margin: 6px 0 4px 18px; padding: 0; display: flex; flex-direction: column; gap: 3px; }
+.ts-poet li { display: flex; justify-content: space-between; gap: 8px; font-size: 0.84rem; }
+.ts-poet li a { color: var(--ink); text-decoration: none; }
+.ts-poet li a:hover { color: var(--cinnabar); }
+.ts-poet li small { color: var(--ink-faint); font-size: 0.7rem; white-space: nowrap; }
+.ts-matrix__fanli { margin-top: 28px; padding-top: 14px; border-top: 1px dashed var(--line); font-size: 0.8rem; line-height: 1.8; color: var(--ink-faint); }
+.ts-matrix__fanli b { color: var(--ink-soft); font-weight: 600; margin-right: 6px; }
+.ts-matrix__next { margin-top: 18px; font-size: 0.9rem; }
+.ts-matrix__next a { color: var(--cinnabar); text-decoration: none; }

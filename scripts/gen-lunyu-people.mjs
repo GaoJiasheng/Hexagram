@@ -16,6 +16,7 @@
 import { readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
+import { matchPersonIn, deriveIndex } from './lib/people-index.mjs'
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
 export const SRC = 'src/data/ru/classics/lunyu.json'
@@ -128,112 +129,10 @@ export const EXCLUDE = [
 // 2026-09-30 已在管线 ru config 用 dropParaRe 剔除(原文 29→28 段),故现为空;再遇同类情形优先修管线,这里只是最后兜底。
 export const SKIP_PARA = []
 
-const SENT_END = new Set([P.period, P.q, P.bang])
-const CLOSE = new Set([P.rq, P.rq2])
-const LEFT_STOP = new Set([P.comma, P.period, P.colon, P.semi, P.q, P.bang, P.dun, P.lq, P.rq, P.lq2, P.rq2])
-
-const EV_MAX = 20 // evidence 上限(字)
-const HEAD_MIN = 14 // 首句太短(「宪问「耻」。」)就续一句
-const HEAD_MAX = 56
-
-// 不在代理对(扩展区汉字,如「𦰏」)中间下刀
-const isLow = (text, i) => { const c = text.charCodeAt(i); return c >= 0xdc00 && c <= 0xdfff }
-const OPEN = new Set([P.lq, P.lq2])
-
-// 命中处前后取一段作 evidence:左边退到最近的句读(至多 8 字),右边延到句末,总长 ≤20。
-// 太短(「子贡。」「于子张。」)就向左并入前一个整分句——不越过句号、总长仍 ≤20;开头残留的句读剥掉
-const CLAUSE = new Set([P.comma, P.colon, P.semi, P.dun])
-function evidenceAt(text, at, len) {
-  let s = at
-  while (s > 0 && at - s < 8 && !LEFT_STOP.has(text[s - 1])) s--
-  let e = at + len
-  while (e < text.length && e - s < EV_MAX && !SENT_END.has(text[e])) e++
-  if (e < text.length && e - s < EV_MAX && SENT_END.has(text[e])) e++
-  while (s > 0 && e - s < 10) {
-    let p = s
-    while (p > 0 && LEFT_STOP.has(text[p - 1]) && !SENT_END.has(text[p - 1])) p--
-    while (p > 0 && !CLAUSE.has(text[p - 1]) && !SENT_END.has(text[p - 1])) p--
-    if (p === s || e - p > EV_MAX) break
-    s = p
-  }
-  while (s < at && LEFT_STOP.has(text[s]) && !OPEN.has(text[s])) s++
-  if (isLow(text, s)) s--
-  if (isLow(text, e)) e--
-  while (e - s > EV_MAX) { e--; if (isLow(text, e)) e-- }
-  return { evidence: text.slice(s, e), mark: at - s }
-}
-
-// 段落开头一两句(页面列表用)。返回原文精确前缀;cut 表示后面还有
-function headOf(text) {
-  let e = 0
-  while (e < text.length) {
-    while (e < text.length && !SENT_END.has(text[e])) e++
-    if (e < text.length) e++
-    while (e < text.length && CLOSE.has(text[e])) e++
-    if (e >= HEAD_MIN) break
-  }
-  if (e > HEAD_MAX) e = HEAD_MAX - 4
-  if (isLow(text, e)) e--
-  return { head: text.slice(0, e), cut: e < text.length }
-}
-
-function allIndexes(text, needle) {
-  const out = []
-  for (let i = text.indexOf(needle); i !== -1; i = text.indexOf(needle, i + 1)) out.push(i)
-  return out
-}
-
-// 一段原文里某人的全部命中(已剔排除表),按位置先后排序
-export function matchPerson(person, text) {
-  const spans = []
-  for (const f of person.full) for (const at of allIndexes(text, f)) spans.push({ at, term: f, kind: 'full' })
-  for (const c of person.solo) {
-    const re = new RegExp(`${c}(?=[${VOCATIVE_NEXT}])`, 'g')
-    for (const m of text.matchAll(re)) spans.push({ at: m.index, term: c, kind: 'solo' })
-  }
-  for (const x of person.extra) {
-    const off = x.phrase.indexOf(x.term)
-    for (const at of allIndexes(text, x.phrase)) spans.push({ at: at + off, term: x.term, kind: 'extra' })
-  }
-  const blocked = []
-  for (const ex of EXCLUDE) for (const at of allIndexes(text, ex.phrase)) blocked.push([at, at + ex.phrase.length])
-  const kept = spans.filter((s) => !blocked.some(([a, b]) => s.at >= a && s.at + s.term.length <= b))
-  // 按位置先后(证据尽量落在段首,页面列表的首句里就能标出来);同位置取长
-  kept.sort((a, b) => a.at - b.at || b.term.length - a.term.length)
-  // 单字名若落在某全称之内(「冉求」里的「求」),不重复算
-  return kept.filter((s, i) => !kept.some((t, j) => j !== i && t.kind === 'full' && t.term.length > s.term.length
-    && s.at >= t.at && s.at + s.term.length <= t.at + t.term.length))
-}
-
-export function derive(lunyu) {
-  const chapters = lunyu.chapters.map((c) => ({ ch: c.no, title: c.title }))
-  const people = PEOPLE.map((p) => {
-    const hits = []
-    const used = new Set()
-    for (const c of lunyu.chapters) {
-      c.paragraphs.forEach((para, i) => {
-        const text = para.original
-        if (SKIP_PARA.some((x) => x.test(text))) return
-        const spans = matchPerson(p, text)
-        if (!spans.length) return
-        spans.forEach((s) => used.add(s.term))
-        const best = spans[0]
-        const { evidence, mark } = evidenceAt(text, best.at, best.term.length)
-        const { head, cut } = headOf(text)
-        hits.push({ ch: c.no, para: i, term: best.term, evidence, mark, head, ...(cut ? { cut: true } : {}) })
-      })
-    }
-    // aliases 只收原文实际命中过的称呼(按表内顺序)
-    const order = [...p.full, ...p.solo, ...p.extra.map((x) => x.term)]
-    const aliases = [...new Set(order)].filter((t) => used.has(t) && t !== p.name)
-    return { id: p.id, name: p.name, aliases, note: p.note, pian: new Set(hits.map((h) => h.ch)).size, hits }
-  })
-    .filter((p) => p.hits.length > 0) // 0 hit 的人从表里删(§2)
-  // 出场篇数降序 → 段数降序 → 首次出场先后
-  people.sort((a, b) => b.pian - a.pian || b.hits.length - a.hits.length
-    || (a.hits[0].ch - b.hits[0].ch) || (a.hits[0].para - b.hits[0].para))
-  return { book: 'lunyu', source: SRC, chapters, people }
-}
+// 通用派生器抽到 scripts/lib/people-index.mjs(2026-10-01,§13 推广到孟子 / 传习录);这里只留本书的人名表与排除表
+const CFG = { PEOPLE, EXCLUDE, SKIP_PARA, vocativeNext: VOCATIVE_NEXT, book: 'lunyu', src: SRC }
+export const matchPerson = (person, text) => matchPersonIn(person, text, CFG)
+export const derive = (lunyu) => deriveIndex(lunyu, CFG)
 
 function main() {
   const lunyu = JSON.parse(readFileSync(join(ROOT, SRC), 'utf8'))

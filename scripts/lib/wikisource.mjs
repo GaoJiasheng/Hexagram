@@ -13,7 +13,31 @@ const API = 'https://zh.wikisource.org/w/api.php'
 // 占位符用私用区 U+E000 显式转义,避免工具链吞掉不可见字符。
 const OpenCC = OpenCCNS.Converter ? OpenCCNS : OpenCCNS.default
 const t2sRaw = OpenCC.Converter({ from: 't', to: 'cn' })
-export const t2s = (s) => t2sRaw(s.replaceAll('乾', '\uE000')).replaceAll('\uE000', '乾').replaceAll('遯', '遁').replaceAll('隂', '阴')
+// 扩展区汉字方块根治·方案 ①(2026-10-01,owner 定):OpenCC 把一些 BMP 里的繁体字转成《通用规范汉字表》编在扩展 B–F 区的简体字
+//(蹻→𫏋、駉→𬳶、鑪→𬬻、絺→𫄨……全站 155 字 492 处),多数设备没有字体,显示成方块。这类字一律**保留繁体原字**
+//(仍在 BMP,任何 CJK 字体都有;代价是简体正文混几十个繁体僻字)。判定不靠人工名单:逐字试转,输出落在 BMP 之外的
+// 即受保护——转换前换成私用区占位符,转完还原。底本自身就是扩展区的字(四库白文的 𤣥 𠫵 之类)不在此列,那要靠字体(方案 ②)。
+const KEEP_TRAD = new Map()   // 繁体原字 → 占位符
+const KEEP_BACK = new Map()   // 占位符 → 繁体原字
+{
+  let i = 0
+  for (let cp = 0x3400; cp <= 0x9fff; cp++) {
+    const ch = String.fromCodePoint(cp)
+    const out = t2sRaw(ch)
+    if (out === ch) continue
+    if ([...out].some((c) => c.codePointAt(0) > 0xffff)) {
+      const ph = String.fromCodePoint(0xe100 + i++)
+      KEEP_TRAD.set(ch, ph)
+      KEEP_BACK.set(ph, ch)
+    }
+  }
+}
+const KEEP_RE = new RegExp(`[${[...KEEP_TRAD.keys()].join('')}]`, 'g')
+const BACK_RE = /[\ue100-\ue4ff]/g
+export const t2s = (s) => t2sRaw(s.replaceAll('乾', '\uE000').replace(KEEP_RE, (c) => KEEP_TRAD.get(c)))
+  .replace(BACK_RE, (c) => KEEP_BACK.get(c) || c)
+  .replaceAll('\uE000', '乾').replaceAll('遯', '遁').replaceAll('隂', '阴')
+export const keptTraditional = () => [...KEEP_TRAD.keys()]
 
 // ---------- wikitext 清洗 ----------
 export function clean(raw) {

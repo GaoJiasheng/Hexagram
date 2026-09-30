@@ -243,3 +243,40 @@ gloss 只讲「这个词在经里指什么、哪几部经怎么用」,**不含�
 - [x] I12 18 篇、年代在范围、kw 全过、时间轴与地图联动
 - [x] I13 najia 测试原样全过、导出零变化
 - [x] 全站 build / check-data / check-links / 测试全绿;明暗 / 375 走查;CLAUDE.md + todo 更新
+
+---
+
+## §13 中医三件 I1–I3(2026-10-01 owner 定做;原「先不做」改口)
+
+守中医组「研习不诊疗」铁律:三件都**只排原书的结构**,每格挂原文出处、闸回查;不画传变路径、不述功效用法、每页带「⚠ 非医疗建议」。
+
+**I1 本草六部三品矩阵** `/zhongyi/bencaojing/matrix` `BencaoMatrixPage`:行 = 玉石/草/木/果菜/米谷/虫兽 六部,列 = 上/中/下 三品,
+十八格由十八类题名派生;格文「N 味」,note = 该类药名(段首「药名 + 全角空格」切出,`shapes.js` `parseBencao`),href 下钻到章。**零策展数据文件**。
+**I2 素问五行藏象图** `/zhongyi/suwen/zangxiang` `SuwenZangxiangPage`:数据 `src/data/zhongyi/suwen-zangxiang.json`——《阴阳应象大论》五段排比(段 14–18)
+摊成 15 行 × 5 列(五方 / 在天 / 在地 / 在味 / 在藏 / 在体 / 藏之所生 / 在窍 / 在志 / 在色 / 在音 / 在声 / 在变动 / 志之所伤 / 志之相胜),
+每格 `kw` 是该段原文精确字样;页顶 `wuxing` 件挂 `labels`(木肝 火心 土脾 金肺 水肾);页尾列五段原文。
+**I3 伤寒六经目录** `/zhongyi/shanghanlun/liujing` `ShanghanLiujingPage`:数据 `src/data/zhongyi/shanghan-liujing.json`——六经各挂篇(太阳 5–7、阳明 8、少阳 9、太阴 10、少阴 11、厥阴 12),
+受病次第六句引《伤寒例》(第 3 篇段 12–17)原文;三阳 / 三阴分行;前四篇 / 六经之外两篇 / 可与不可八篇另列三组,二十二篇各归一处不重不漏。
+**闸** `scripts/lib/check-zhongyi-shapes.mjs`(一模块三件):题名合「某部某品」且六部三品齐全、每段切得出药名;藏象每行 5 格 5 kw 逐格回查、五段各含「某方生」;
+六经二十二篇归位、篇题含经名、引文为所指段子串、组 note 无断语字。`shape` 入口:本草 / 素问 / 伤寒三书 texts.json。
+
+## §14 可选件三件(2026-10-01 owner 定做,原 O10)
+
+**I14 人物索引推广到孟子 / 传习录** `/ru/mengzi/renwu` `MengziPeoplePage` · `/xin/chuanxilu/renwu` `ChuanxiluPeoplePage`:
+论语版(§2)的派生器抽到 `scripts/lib/people-index.mjs`(`deriveIndex` / `matchPersonIn` / `checkPeopleIndex`),页面抽到 `ru/PeopleIndexPage.jsx`(`spec` 传数据与文案),
+论语改为薄包装、输出逐字不变。人名表各一份(`gen-mengzi-people.mjs` 53 人、`gen-chuanxilu-people.mjs` 24 人);
+《孟子》几乎全用全称,单称只收旧注所定的六个(章子 / 子敖 / 徐子 / 许子 / 夷子 / 陈子);《传习录》多用短称,`vocativeNext` 换成「问曰因又请对在尝举谓」。
+传习录三卷各三四百段,链接经 `chapterParts` 带 `?p=` 落屏。闸:`check-mengzi-people` / `check-chuanxilu-people`(同一把尺子,≥30 / ≥15 人)。
+**I15 禅宗传灯图** `/fo/lineage` `FoLineagePage`:儒门学脉图的视图抽成 `ru/LineageView.jsx`(数据经 context 下发,儒门页改薄包装、测试原样全过),
+换一份 `src/data/fo-lineage.json`:三行(祖师 / 南宗 / 北宗)三带(南北朝 / 隋 / 唐),15 人 17 边 25 引文,**只画《坛经》本文写到的人**——
+祖序(付嘱品「第二十八、菩提达摩尊者」…「惠能是为三十三祖」)、弘忍传惠能(行由品)、曹溪门下八人各是怎么来的(机缘品 / 顿渐品)、南能北秀(顿渐品);
+达摩→惠能「衣为争端,止汝勿传」画点线存疑。年代除惠能(本经自记)外只写朝代。闸 `check-fo-lineage`(`checkLineage` 与儒门同源)。释典首页加入口。
+**I16 唐诗体裁 × 诗人矩阵** `/tangshi/tangshi300/matrix` `TangshiMatrixPage`:数据 `src/data/tangshi/tangshi-poets.json` 由 `gen-tangshi-poets.mjs`
+从抓取缓存各诗页 header 的 `author` 派生(单行 / 多行两种 header,子页取末段),77 家 320 首与站内诗题段逐首对齐;`matrix` 件行 = 诗人(按首数)列 = 七体裁,
+格文首数、note 篇目、href 第一首(经 `chapterParts` 带 `?p=`);下方按诗人列全部篇目。闸 `check-tangshi-poets`:每首落点确为诗题段、一首不漏不重。
+
+### §14.1 验收(2026-10-01)
+- [ ] I1 18 格 358 味、点格列名、无功效字样;I2 75 格全过、点格跳段;I3 22/22 归位、六句引文全过
+- [ ] I14 论语 JSON 零变化、孟子 ≥30 人、传习录 ≥15 人、传习录链接带 ?p=
+- [ ] I15 25 引文 0 坏、儒门测试原样过、释典首页有入口;I16 320 首对齐、点格跳第一首
+- [ ] build / check-data / check-links / 测试全绿;浏览器走查六页
