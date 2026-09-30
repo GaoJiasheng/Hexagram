@@ -22,7 +22,7 @@ const BOOKS = [
   // 宋词元曲一首即一章。作业标准见 docs/poetry-production-standard.md。
   ['tangshi', 'tangshi300'], ['songci', 'songci300'], ['yuanqu', 'yuanqu'],
   // 古文研读(集部第四组,2026-10-01 T6):《古文观止》一篇一章,散文/骈文/史传,文章学视角。
-  ['guwen', 'guwenguanzhi'],
+  ['guwen', 'guwenguanzhi'], ['guwen', 'kewen'],
   // 观数(命理学,2026-09-19 立项)。四部底本见 scripts/corpus/mingli.config.mjs;守【研习不断命】铁律。
   ['mingli', 'yuanhai'], ['mingli', 'zhenquan'], ['mingli', 'ditiansui'], ['mingli', 'qiongtong'],
   ['mingli', 'sanming'], ['mingli', 'wuxingdayi'], ['mingli', 'lixuzhong'], ['mingli', 'luoluzi'], ['mingli', 'yuzhao'],
@@ -132,7 +132,7 @@ const UNITS = ${JSON.stringify(units, null, 0)}
 
 const CN = { hanfeizi: '韩非子', shangjunshu: '商君书', shenzi: '慎子', yinwenzi: '尹文子', wenzi: '文子', mozi: '墨子', sunzi: '孙子兵法', wuzi: '吴子', simafa: '司马法', weiliaozi: '尉缭子', sanlue: '三略', guiguzi: '鬼谷子', zhanguoce: '战国策', suwen: '黄帝内经·素问', lingshu: '黄帝内经·灵枢', shanghanlun: '伤寒论', bencaojing: '神农本草经', luozhijing: '罗织经', rongkujian: '小人经', quanmou: '权谋术', taohuishu: '韬晦术', zhixue: '止学', liutao: '六韬', jinkui: '金匮要略', nanjing: '难经', 'zhuangzi-waipian': '庄子外篇', 'zhuangzi-zapian': '庄子杂篇', liezi: '列子', yijiaojing: '佛遗教经', badaren: '八大人觉经', amituojing: '阿弥陀经', xinxinming: '信心铭', zhengdaoge: '永嘉证道歌', daxuewen: '大学问', xunzi: '荀子', yanshi: '颜氏家训', jinsilu: '近思录', weimojie: '维摩诘经', huangting: '黄庭内景经', shijing: '诗经', wuzhenpian: '悟真篇',
   changduanjing: '长短经', caigentan: '菜根谭', weiluyehua: '围炉夜话', xiaochuangyouji: '小窗幽记', weigongwendui: '李卫公问对',
-  tangshi300: '唐诗三百首', songci300: '宋词三百首', yuanqu: '元曲选', guwenguanzhi: '古文观止',
+  tangshi300: '唐诗三百首', songci300: '宋词三百首', yuanqu: '元曲选', guwenguanzhi: '古文观止', kewen: '课本古文补编',
   yuanhai: '渊海子平', zhenquan: '子平真诠', ditiansui: '滴天髓阐微', qiongtong: '穷通宝鉴',
   sanming: '三命通会', wuxingdayi: '五行大义', lixuzhong: '李虚中命书', luoluzi: '珞琭子三命消息赋', yuzhao: '玉照定真经' }
 const REF = {
@@ -189,6 +189,12 @@ const FILE = (c, b) => '/Users/gavin/work/hexagram/src/data/' + c + '/classics/'
 
 function styleRule(u) {
   if (u.corpus === 'guwen') {
+    if (u.book === 'kewen') {
+      return TIELU_WEN + ' 参各书通行注本。'
+        + ' 《课本古文补编》是本站为对照中学语文课本编的选目(非传世选本),一篇一章;底本取维基文库通行本、照原文全录不依课本删节(核舟记末段、记承天寺夜游末句「黄州团练副使苏某书」等课本所无者亦在)。'
+        + ' 延伸(每篇 1–2 段)第一段讲作者、本事与文体,第二段讲章法名句与流传;篇中若有课本常见的异文或删节处如实指出(如与朱元思书底本作「宋元思」、穿井得一人底本作「求能之若此」),分清底本与课本。'
+        + ' 《与妻书》为 1911 年林觉民广州起义前夕遗书,按原文直译,史事如实,不作现代政治发挥。'
+    }
     return TIELU_WEN + ' 参' + REF.guwen + '。'
       + ' 《古文观止》一篇一章,章题即篇题(个别带作者名,如「李斯谏逐客书」);底本已剔去二吴的夹注与篇末总评,只存原文,长篇按句末分段。'
       + ' 延伸(每篇 1–2 段)第一段讲这篇的作者、本事与文体,第二段讲章法名句与流传;篇中出处(左传某公某年/史记某篇)如实标出。'

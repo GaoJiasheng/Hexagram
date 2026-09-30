@@ -56,6 +56,11 @@ const preResolve = (s) => s
   .replace(/<\/?onlyinclude>/gi, '')                                          // 罗织经等 <onlyinclude> 包裹标记
   .replace(/__[A-Z]+__/g, '')                                                 // __TOC__/__NOTOC__ 魔术字(行内)
   .replace(/\{\{ProperNoun\|([^|}]*)(?:\|[^}]*)?\}\}/gi, '$1')                 // {{ProperNoun|左丘明}} → 左丘明
+  // 课本古文补编(2026-10-01)各页常见的另外几种「参数即正文」模板,不解包就整段丢字(卖油翁「康肃」、六国论「秦」、湖心亭「沆」):
+  .replace(/\[\[[A-Za-z]+:[^\]|]*\|([^\]]*)\]\]/g, '$1')                            // [[w:陳堯咨|堯咨]] 一类命名空间管道链接先取显示文本(它夹在模板参数里,晚了就随模板一起被删)
+  .replace(/\{\{\s*[專专]\s*\|([^|{}]*)\}\}/g, '$1')                                   // {{專|康肅}} 专名号
+  .replace(/\{\{\s*[參参]\s*\|([^|{}]*)(?:\|[^{}]*)?\}\}/g, '$1')                      // {{參|慆|一作「淫」}} 校勘:首参是底本字,其余是校记
+  .replace(/\{\{\s*YL\s*\|([^|{}]*)(?:\|[^{}]*)?\}\}/g, '$1')                         // {{YL|崇禎五年|1633年}} 年号链接(两参形式;单参的 wikisource.mjs 已解)
   .replace(/\{\{(?:Novel|footer|header2?|Textquality|PD-old|NoteTA|检索|檢索|gap|reflist|DEFAULTSORT)[^{}]*\}\}/gi, '')  // 元/导航模板
   .replace(/\{\{[^{}]*?作品\}\}/g, '')                                         // {{唐朝作品}} 等版权模板
   .replace(/\[\[(?:File|Image):[^\]]*\]\]/gi, '')
@@ -558,6 +563,7 @@ async function main() {
   // localFile 的书不走维基文库抓取(见下),从 allPages 里排除。
   const allPages = BOOKS.flatMap((b) => (b.localFile ? [] : b.groupPages
     ? b.groupPages.flatMap((g) => g.pages.map((p) => (typeof p === 'string' ? p : p.page)))
+    : b.excerpts ? [...new Set(b.excerpts.map((x) => x.page))]
     : b.pages))
   // 四庫全書本的书另需抓一张缺字对照表(维基文库自有的 Module:SKchar,见 skqsTransform 说明);
   // 它与经文页走同一个缓存,不另建数据文件。没有 skqs 书时不抓。
@@ -636,6 +642,52 @@ async function main() {
       for (const p of parsePageParas(pages[book.pages[0]], warnings, book.pages[0])) {
         if (re.test(p.original)) { cur = { no: chapters.length + 1, title: p.original, paragraphs: [] }; chapters.push(cur) }
         else if (cur) cur.paragraphs.push(p)
+      }
+    } else
+    // 摘录式二(课本古文补编,2026-10-01):一篇一条 excerpt {title, page, start?, end?, joinLines?, source, grade}。
+    // 页是整篇的(誡子書/賣油翁…)不给 start/end,取全页;篇在大页里的(世说新语一则、资治通鉴一段、聊斋一则)
+    // 给起止标记——标记按**清洗后的简体文本**匹配(与 fetch-shili 同法),起始须唯一、终止取起始之后首个命中,
+    // 落在段中间就把那一段从标记处切开。joinLines:诗体排版(<poem> 一行一句、洛神赋「::」一行一句)按空行归段。
+    // 出处/作者(source)与学段(grade)直接写进章对象,目录与阅读页题下用。
+    if (book.excerpts) {
+      for (const ex of book.excerpts) {
+        const wt = pages[ex.page]
+        if (!wt) { errors.push(`${book.title}: 页「${ex.page}」未取到`); continue }
+        const groups = []
+        let cur = null
+        for (const raw of stripHeaderBlock(stripStarTemplates(wt)).split('\n')) {
+          if (STOP_RE.test(raw)) break
+          if (/^=+.*=+$/.test(raw.trim())) { cur = null; continue }
+          if (!raw.trim()) { cur = null; continue }
+          const simp = cleanLine(raw)
+          if (!simp) continue
+          if (ex.joinLines && cur) cur.push(simp)
+          else { cur = [simp]; groups.push(cur) }
+        }
+        let paras = groups.map((g) => g.join(''))
+        const text = paras.join('\n')
+        const start = ex.start ? t2s(ex.start) : null
+        const end = ex.end ? t2s(ex.end) : null
+        let si = 0, ei = text.length
+        if (start) {
+          si = text.indexOf(start)
+          if (si < 0) { errors.push(`${book.title}·${ex.title}: 起始标记未命中「${start}」`); continue }
+          if (text.indexOf(start, si + 1) >= 0) warnings.push(`${book.title}·${ex.title}: 起始标记不唯一「${start}」,取第一处`)
+        }
+        if (end) {
+          const k = text.indexOf(end, si)
+          if (k < 0) { errors.push(`${book.title}·${ex.title}: 终止标记未命中「${end}」`); continue }
+          ei = k + end.length
+        }
+        paras = text.slice(si, ei).split('\n').map((x) => x.trim()).filter(Boolean)
+        if (!paras.length) { errors.push(`${book.title}·${ex.title}: 摘录为空`); continue }
+        // charMap:本篇底本的转写怪字 → 通行字([['骵','体'],…]),只换字形不改文字(与妻书扫描页的「骵/畄/霛」、
+        // 三峡 -{}- 取到的扩展区「𪩘」改回可显示的「巘」、洛神赋 t2s 出的「𬴂」改回「騑」、项脊轩志「閤子」被简化成「合子」改回「阁子」)。
+        if (ex.charMap) for (const [a, b] of ex.charMap) paras = paras.map((x) => x.split(a).join(b))
+        const c = { no: chapters.length + 1, title: t2s(ex.title), paragraphs: paras.map((original) => ({ original, translation: null })) }
+        if (ex.source) c.source = ex.source
+        if (ex.grade) c.grade = ex.grade
+        chapters.push(c)
       }
     } else
     // 摘录式(战国策):跨卷切章后,按 pickHeadings 顺序挑选指定章并改用友好标题(v18 §1 纵横)
