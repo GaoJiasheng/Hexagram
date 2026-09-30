@@ -23,16 +23,25 @@ function boundaries(chapter, meta) {
   return [...out].sort((a, b) => a - b)
 }
 
-// 段范围 → 该屏的标题。有自然边界时用那一段的题名,否则用「第 X 部分」+ 段号区间。
-function labelFor(chapter, from, to, meta, i) {
-  const first = chapter.paragraphs[from]
-  // pieces 优先:人工策展的标题比自动取的《篇题》更准(两者并用时同一处可能都命中)
+// 某一段若是自然边界(诗题段 / pieces 条首),给出它的题名;否则 null。
+function titleAt(chapter, meta, from) {
   const pc = meta?.pieces?.find((x) => x.ch === chapter.no && x.from === from)
   if (pc) return pc.title
-  if (meta?.poemTitles && /^《[^》]+》$/.test(first.original.trim())) {
+  const first = chapter.paragraphs[from]
+  if (meta?.poemTitles && first && /^《[^》]+》$/.test(first.original.trim())) {
     return first.original.trim().replace(/^《|》$/g, '')
   }
-  return `第 ${i + 1} 部分（${from + 1}–${to} 段）`
+  return null
+}
+
+// 段范围 → 该屏的标题。有自然边界时写成**范围**「首题 – 末题」(owner 2026-10-01:只写首题像一首诗的名字,
+// 与侧栏逐首列出的目录对不上,读者以为是另一套索引);否则用「第 X 部分」+ 段号区间。
+function labelFor(chapter, from, to, meta, i, bs = []) {
+  const first = titleAt(chapter, meta, from)
+  if (!first) return `第 ${i + 1} 部分（${from + 1}–${to} 段）`
+  const inner = bs.filter((b) => b > from && b < to)
+  const last = inner.length ? titleAt(chapter, meta, inner[inner.length - 1]) : null
+  return last && last !== first ? `${first} – ${last}` : first
 }
 
 // 章内锚点(2026-08-02):侧栏 TOC 原先只到篇/卷/品,进了章就只能滚 ——
@@ -47,11 +56,14 @@ export function chapterAnchors(chapter, meta) {
   // 锚点 id 两种形态,由书的机制决定(渲染层就是这么给的,不能一律写 p{n}):
   //   诗经一类:诗题段**升格为诗头**,那个 div 的 id 是 seg-<章>-<段>,原段号不再挂在它身上
   //   传习录一类:条头是**插在段前**的独立 div,段落本身照常带 id p<段+1>
-  const idOf = (from) => (meta?.poemTitles ? `seg-${chapter.no}-${from}` : `p${from + 1}`)
+  //   条头本身带 id piece-<章>-<段>(2026-10-01 起),锚到条头而不是它下面那一段,标题才不会被工具条挡住
+  const isPoemAt = (from) => meta?.poemTitles && /^《[^》]+》$/.test(chapter.paragraphs[from]?.original.trim() || '')
+  const isPieceAt = (from) => !!meta?.pieces?.find((x) => x.ch === chapter.no && x.from === from)
+  const idOf = (from) => (isPoemAt(from) ? `seg-${chapter.no}-${from}` : isPieceAt(from) ? `piece-${chapter.no}-${from}` : `p${from + 1}`)
   return froms.map((from, i) => ({
     from,
     id: idOf(from),
-    label: labelFor(chapter, from, froms[i + 1] ?? n, meta, i),
+    label: titleAt(chapter, meta, from) || labelFor(chapter, from, froms[i + 1] ?? n, meta, i),
   }))
 }
 
@@ -74,6 +86,6 @@ export function chapterParts(chapter, meta) {
   if (cuts.length < 2) return null
   return cuts.map((from, i) => {
     const to = i + 1 < cuts.length ? cuts[i + 1] : n
-    return { from, to, label: labelFor(chapter, from, to, meta, i) }
+    return { from, to, label: labelFor(chapter, from, to, meta, i, bs) }
   })
 }

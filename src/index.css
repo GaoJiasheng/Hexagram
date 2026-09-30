@@ -1891,7 +1891,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 
 .read-toc {
   flex-shrink: 0;
-  width: 140px;
+  width: 196px;   /* 140→196(2026-10-01):诗题/条目名够长,原宽度大半被省略号吃掉 */
   position: sticky;
   top: 72px;
   max-height: calc(100vh - 100px);
@@ -1921,8 +1921,11 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 /* 章内子目录(2026-08-02):当前章下展开它的诗题/条目。TOC 原先只到篇/卷级,
    诗经一章十余首、传习录一卷数百段,进了章只能滚。缩进 + 细左线表示从属。 */
 .read-toc__sub { margin: 2px 0 8px 10px; padding-left: 9px; border-left: 1px solid var(--line); display: flex; flex-direction: column; }
-.read-toc__subitem { display: block; padding: 3px 6px; font-size: 0.82rem; line-height: 1.5; color: var(--ink-faint);
-  text-decoration: none; border-radius: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.read-toc__subitem { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; padding: 3px 6px; font-size: 0.82rem; line-height: 1.45; color: var(--ink-faint);
+  text-decoration: none; border-radius: 4px; overflow: hidden; white-space: normal; word-break: break-all; }
+/* 拆屏章的屏分隔(第 N 屏):与正文上方的屏条一一对应,当前屏着主色 */
+.read-toc__part { display: block; margin: 8px 0 2px; padding: 0 6px; font-size: .7rem; letter-spacing: .06em; color: var(--ink-faint); text-decoration: none; }
+.read-toc__part--active { color: var(--cinnabar); }
 .read-toc__subitem:hover { color: var(--cinnabar); background: var(--paper-raised); }
 
 .read-toc__item:hover { color: var(--ink); }
@@ -3820,12 +3823,12 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 
 /* ════ 白话模块(design-v22):章内折叠入口条 → 侧抽屉/全屏浮层 ════ */
 /* 诗头(诗经一类一章多首的书):诗题不占段号、自成一行小标题,右侧挂诗级白话入口 */
-.poem-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 30px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+.poem-head { scroll-margin-top: 84px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 30px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
 .poem-head:first-child { margin-top: 4px; }
 .poem-head__title { font-family: var(--font-serif); font-size: 1.16rem; color: var(--ink); }
 .poem-head__ord { margin-left: 8px; font-size: .74rem; color: var(--ink-faint); }
 /* 条头(传习录一类一章多条的书):原文无标题段,故由 pieces 人工策展、在条首段之前插一行 */
-.piece-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 34px 0 14px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+.piece-head { scroll-margin-top: 84px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 34px 0 14px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
 .piece-head:first-child { margin-top: 4px; }
 .piece-head__title { font-family: var(--font-serif); font-size: 1.1rem; color: var(--ink); }
 .piece-head__title::before { content: '◇'; margin-right: 7px; color: var(--cinnabar); font-size: .8em; }

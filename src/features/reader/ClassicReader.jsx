@@ -320,7 +320,7 @@ export default function ClassicReader({
     if (pieceHead || resumeMark) return (
       <Fragment key={`pc${i}`}>
         {resumeMark}
-        {pieceHead && <div className="piece-head">{pieceHead}</div>}
+        {pieceHead && <div id={`piece-${no}-${i}`} className="piece-head">{pieceHead}</div>}
         {ParaBody(no, p, i)}
       </Fragment>
     )
@@ -451,15 +451,26 @@ export default function ClassicReader({
                 const anchors = anchorsOf(c)
                 if (!anchors || anchors.length < 2) return null
                 const ps = partsOf(c)
+                // 拆屏的章:在每屏第一首/第一条之前插一行「第 N 屏」分隔,侧栏与正文上方的屏条一一对应
+                // (owner 2026-10-01:一横一纵两套索引对不上,看着像两回事)
+                const curPart = ps ? Math.min(Math.max(1, part), ps.length) : 1
                 return (
                   <div className="read-toc__sub">
                     {anchors.map((a) => {
                       const pi = ps ? ps.findIndex((x) => a.from >= x.from && a.from < x.to) : -1
                       const base = pi >= 0 ? partHref(c.no, pi + 1) : chapterHref(c.no)
+                      const partStart = ps && pi >= 0 && a.from === ps[pi].from
                       return (
-                        <Link key={a.from} to={`${base}#${a.id}`} className="read-toc__subitem">
-                          {a.label}
-                        </Link>
+                        <Fragment key={a.from}>
+                          {partStart && (
+                            <Link to={partHref(c.no, pi + 1)} className={`read-toc__part ${pi + 1 === curPart ? 'read-toc__part--active' : ''}`}>
+                              第 {pi + 1} 屏
+                            </Link>
+                          )}
+                          <Link to={`${base}#${a.id}`} className="read-toc__subitem">
+                            {a.label}
+                          </Link>
+                        </Fragment>
                       )
                     })}
                   </div>
@@ -556,7 +567,7 @@ export default function ClassicReader({
               {parts && (
                 <div className="read-parts">
                   <span className="read-parts__label">
-                    第 {cur.no} {sectionUnit} · 共 {parts.length} 部分
+                    第 {cur.no} {sectionUnit}太长,分 {parts.length} 屏读;每屏按首末题名标出(侧栏目录同一顺序)
                   </span>
                   <div className="read-parts__list">
                     {parts.map((pt, i) => (
