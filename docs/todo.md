@@ -24,7 +24,9 @@
 5. 途中撞会话/周额度上限:等重置或 owner reset,`baihua-step.mjs` 不带参数直接续(它只看缺哪些章)。`.baihua-attempts.json` 记失败次数,≥3 次的章会被放弃并在进度行列出。
 
 **续跑 ② 等 owner 定**
-- **研读统计**(个人页时长统计 + 管理员跨用户 / 按用户):分析与三层方案在 `docs/reading-stats-plan.md`,§6 五个问题待你定(尤其第三层要改隐私承诺、建议做成默认关的自愿开关)。
+
+**续跑 ③ 研读统计(owner 10-01 已定:A + B + C,开关默认开,「仅收集阅读时长数据,用作网站优化」;先盘 TODO 后一起做)**
+方案定稿 `docs/reading-stats-plan.md` §7,六步:① `readClock` 活跃时长时钟 + 本机 `readDays`(同步)/`readRecent`(本机)+ telemetry 改为只发送 ② `readStats` + `/stats` 页 + 设置节 + 各组 /me 一行 ③ 服务端 `readDays` 入 DATA_KEYS + `DELETE /me/reading` + `/admin/readers(/:id)` + `/admin/stats?window=` ④ 管理员页扩展(时间窗 / 人数 / 中位数 / 直方图 / 按时长 Top / 读者栏,不显示邮箱)⑤ 文案四处同口径(隐私页 §一/§二/新 §五、关于页、设置开关旁、/stats 页尾)⑥(可后置)`reading_events` 90 天滚存表。约 3–3.5 天。
 - 「课本文言文索引」页(`/guwen/textbook` 一类:按七上→高选必下列课本篇目,每篇指到站内所在处——古文观止 / 补编 / 论语孟子庄子列子…,方案 `docs/guwen-textbook-list.md` §四第 2 条)。
 - 补编里的《孙权劝学》去不去(资治通鉴一则,非人物传;暂留)。
 - 老师清单剩余各条(`docs/teacher-first-visit-plan.md`):T1 大陆实测(只有你能做)→ 视结果做 T2 字体方案 A/B;T3 关 Web Analytics(你一键);T5 跋顶栏入口;T8 手机顶栏去 ☯;T10 评论链路复测(Turnstile 大陆可达性);T11 邮箱统一;S3 二维码。
