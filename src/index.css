@@ -1434,7 +1434,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .detail-quotable { position: relative; display: flex; align-items: flex-start; gap: 8px; }
 .detail-quotable > *:first-child { flex: 1 1 auto; min-width: 0; }
 .detail-quotable:hover .para-actions, .detail-quotable:focus-within .para-actions { opacity: 1; }
-@media (hover: none) { .detail-quotable .para-actions { opacity: 0.55; } }
+@media (hover: none) { .detail-quotable .para-actions { opacity: 1; } }
 
 .detail-section__title {
   margin: 0;
@@ -1932,7 +1932,17 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .read-para--markable:target { background: var(--cinnabar-bg); border-radius: 4px; transition: background 0.4s; scroll-margin-top: 76px; }
 .para-actions { flex: 0 0 auto; display: flex; gap: 4px; align-self: flex-start; opacity: 0; transition: opacity 0.15s; }
 .read-para--markable:hover .para-actions, .read-para--markable:focus-within .para-actions, .read-para--marked .para-actions { opacity: 1; }
-@media (hover: none) { .para-actions { opacity: 0.55; } }
+/* 触屏(T7,2026-10-01):四个按钮不再常显(蒙卦页一屏二十几组,像工具条压在纸上);
+   段尾只留一个 6px 小点,点它才展开、再点收起;鼠标端小点不出现、仍是 hover 出按钮。
+   不用长按——长按会触发系统选字菜单。 */
+.para-dot { display: none; }
+@media (hover: none) {
+  .para-actions { opacity: 1; }
+  .para-dot { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; flex: none; border: 0; background: none; color: var(--ink-faint); cursor: pointer; }
+  .para-dot::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  .para-actions--open .para-dot { color: var(--cinnabar); }
+  .para-actions:not(.para-actions--open) .para-act { display: none; }
+}
 /* 触屏/窄屏:操作按钮不再挤在正文右侧,换到段落下方一行、右对齐(不占正文宽、不压字) */
 @media (hover: none), (max-width: 640px) {
   .read-para--markable { flex-wrap: wrap; }
@@ -1954,6 +1964,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 }
 .para-act { position: relative; width: 26px; height: 26px; flex: none; border: 1px solid var(--line); border-radius: 5px; background: var(--paper-raised); color: var(--ink-faint); cursor: pointer; font-size: 0.82rem; line-height: 1; display: inline-flex; align-items: center; justify-content: center; }
 .para-act:hover { border-color: var(--cinnabar); color: var(--cinnabar); }
+.para-act svg { display: block; margin: auto; }
 /* 即时悬停提示:浮于按钮左侧(横向越过正文、纵向居中),故在段内不被 content-visibility 裁剪 */
 .para-act::after { content: attr(data-tip); position: absolute; right: calc(100% + 6px); top: 50%; transform: translateY(-50%); white-space: nowrap; background: var(--ink); color: var(--paper-raised); font-size: 0.68rem; line-height: 1.4; padding: 3px 7px; border-radius: 4px; opacity: 0; pointer-events: none; transition: opacity 0.12s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.18); z-index: 6; }
 .para-act:hover::after, .para-act:focus-visible::after { opacity: 1; }
@@ -4486,6 +4497,17 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   color: var(--cinnabar-pure); margin-right: 0.24em;
 }
 .landing-hero__note { margin: 0; font-size: 0.8rem; color: var(--ink-faint); }
+/* 首屏「缘起」一段(T4,2026-10-01):跋里那段话的第一段,左侧一道朱线,衬线,不抢主张的字号 */
+.landing-hero__origin { margin: 18px 0 14px; padding: 2px 0 2px 16px; border-left: 2px solid var(--cinnabar-pure); max-width: 640px; }
+.landing-hero__origin p { margin: 0; font-family: var(--font-serif); font-size: 0.98rem; line-height: 1.95; color: var(--ink-soft); }
+.landing-hero__origin-more { margin: 6px 0 0; padding: 0; border: 0; background: none; font: inherit; font-size: 0.85rem; color: var(--cinnabar-pure); cursor: pointer; }
+.landing-hero__origin-more:hover { text-decoration: underline; }
+.landing-hero__enter { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; margin: 0 0 12px; font-size: 0.9rem; }
+.landing-hero__enter-label { color: var(--ink-faint); font-size: 0.82rem; }
+.landing-hero__enter a { color: var(--cinnabar-pure); text-decoration: none; }
+.landing-hero__enter a:hover { text-decoration: underline; }
+/* 四个计数从首屏挪到「索引」段头(那里本来就是计数区),小字弱色 */
+.idx__stats { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 4px 0 0; font-size: 0.8rem; color: var(--ink-faint); }
 
 .landing-h2 {
   margin: 2.6rem 0 1rem; font-family: var(--font-serif);

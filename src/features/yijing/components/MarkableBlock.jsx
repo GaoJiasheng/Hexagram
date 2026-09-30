@@ -1,3 +1,6 @@
+import { useState } from 'react'
+import { StarIcon, PenIcon, LinkIcon, CheckIcon, CardIcon } from '../../reader/ActIcons.jsx'
+
 export default function MarkableBlock({
   markKey,
   itemId,
@@ -24,12 +27,20 @@ export default function MarkableBlock({
   const note = notes[markKey]
   const isEditing = editingKey === markKey
   const copied = copiedKey === anchorId
+  const [actsOpen, setActsOpen] = useState(false)   // 触屏:点段尾小点才展开操作(T7)
 
   return (
     <>
       <div className="detail-quotable" id={anchorOnParent ? undefined : anchorId}>
         {children}
-        <div className="para-actions">
+        <div className={`para-actions ${actsOpen ? 'para-actions--open' : ''}`}>
+          <button
+            type="button"
+            className="para-dot"
+            aria-label={actsOpen ? '收起段落操作' : '段落操作'}
+            aria-expanded={actsOpen}
+            onClick={() => setActsOpen((v) => !v)}
+          />
           <button
             type="button"
             className={`para-act ${marked ? 'para-act--on' : ''}`}
@@ -37,28 +48,28 @@ export default function MarkableBlock({
             aria-label={marked ? '取消收藏' : '收藏此段'}
             aria-pressed={marked}
             data-tip={marked ? '取消收藏' : '收藏此段'}
-          >★</button>
+          ><StarIcon on={marked} /></button>
           <button
             type="button"
             className={`para-act ${note ? 'para-act--on' : ''}`}
             onClick={() => onOpenEdit(markKey, note?.text || '')}
             aria-label="批注"
             data-tip={note ? '编辑批注' : '写批注'}
-          >✎</button>
+          ><PenIcon /></button>
           <button
             type="button"
             className={`para-act ${copied ? 'para-act--on' : ''}`}
             onClick={() => onCopyLink(anchorId)}
             aria-label="复制本段链接"
             data-tip={copied ? '已复制链接' : '复制本段链接'}
-          >{copied ? '✓' : '🔗'}</button>
+          >{copied ? <CheckIcon /> : <LinkIcon />}</button>
           <button
             type="button"
             className="para-act"
             onClick={() => onQuote(original, translation, sourceLabel)}
             aria-label="生成金句卡"
             data-tip="生成金句卡"
-          >🖼</button>
+          ><CardIcon /></button>
         </div>
       </div>
       {note && !isEditing && (

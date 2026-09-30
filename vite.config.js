@@ -1,7 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
-import { readFileSync } from 'node:fs'
+import { readFileSync, existsSync } from 'node:fs'
+import { execSync } from 'node:child_process'
 
 // Vite config — https://vite.dev/config/
 // The React plugin enables JSX and Fast Refresh (instant updates while you edit).
@@ -11,6 +12,33 @@ const isCapacitor = process.env.VITE_CAP === '1'
 const { version } = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8'))
 const licenseSource = readFileSync(new URL('./LICENSE', import.meta.url), 'utf8')
 const buildDate = new Date().toISOString()
+// 跋里显示的不再是 package.json 的版本号(它停在 1.34.0 很久了、tag 也停在 v1.68.0,都不是真的),
+// 改显示当次构建的提交号:零维护、永远真。取不到(无 git)则空,跋里那一格不渲染。
+let appCommit = ''
+try { appCommit = execSync('git rev-parse --short HEAD', { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim() } catch { /* 无 git 时留空 */ }
+
+// index.html 的 description / og:description 数字(N 部典籍、N 组书架)由 stats.json 注入 ——
+// 手写的那份从「七十四部…十三组」一路过期到 83 部 / 15 组没人改(2026-10-01 T9)。
+// stats.json 由 build-content-assets 生成,dev / build 都前置跑了 content:build;取不到就写不带数字的句子。
+function statsMeta() {
+  const read = () => {
+    try {
+      const f = new URL('./public/content/stats.json', import.meta.url)
+      return existsSync(f) ? JSON.parse(readFileSync(f, 'utf8')) : null
+    } catch { return null }
+  }
+  return {
+    name: 'stats-meta',
+    transformIndexHtml(html) {
+      const s = read()
+      const books = s?.books ? `${s.books} 部典籍` : '诸多典籍'
+      const shelves = s?.shelves ? `${s.shelves} 组书架` : '诸组书架'
+      const long = `${books}的原文、白话译注、每章延伸与深读。易经、道藏、儒释、诸子百家、中医、谋略、命理、唐诗宋词元曲，${shelves}同站。引文逐字校验为原文精确子串。`
+      const short = `${books}的原文、白话译注与深读，${shelves}同站。引文逐字校验。`
+      return html.replaceAll('__STATS_DESC_SHORT__', short).replaceAll('__STATS_DESC__', long)
+    },
+  }
+}
 
 function licenseAsset() {
   return {
@@ -31,6 +59,7 @@ function licenseAsset() {
 
 export default defineConfig({
   plugins: [
+    statsMeta(),
     licenseAsset(),
     react(),
     // PWA(v10 §7):纯静态站,precache 构建产物,首访后全站离线。原生构建跳过。
@@ -104,5 +133,6 @@ export default defineConfig({
   define: {
     __APP_VERSION__: JSON.stringify(version),
     __BUILD_DATE__: JSON.stringify(buildDate),
+    __APP_COMMIT__: JSON.stringify(appCommit),
   },
 })

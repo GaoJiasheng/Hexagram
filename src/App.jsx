@@ -293,6 +293,12 @@ function AppContent() {
   const openPortal = useCallback(() => setPortalOpen(true), [])
   const openSettings = useCallback(() => setSettingsOpen(true), [])
   const openColophon = useCallback(() => setColophonOpen(true), [])
+  // 首页「缘起」块的「全文 → 跋」:PortalLanding 在路由树深处、拿不到这里的 state,走一个自定义事件
+  useEffect(() => {
+    const on = () => setColophonOpen(true)
+    window.addEventListener('guanxiang:colophon', on)
+    return () => window.removeEventListener('guanxiang:colophon', on)
+  }, [])
   const location = useLocation()
   const navigate = useNavigate()
   const [backHint, setBackHint] = useState('')   // 安卓「再按一次退出」的提示

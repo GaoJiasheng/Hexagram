@@ -20,6 +20,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import DebatesShowcase from './debates/DebatesShowcase.jsx'
+import colophon from '../data/colophon.json'
 
 const num = (n) => (n >= 1000 ? n.toLocaleString('en-US') : String(n))
 
@@ -43,22 +44,31 @@ export default function PortalLanding({ shelf, groupCount }) {
       {/* ── 第一屏:说清楚这是什么 ───────────────────────────────── */}
       <section className="landing-hero">
         <span className="landing-hero__seal" aria-hidden="true">观象</span>
-        <h1 className="landing-hero__claim">
-          {stats ? `${num(stats.books)} 部典籍,` : ''}逐字校过的白话
-        </h1>
+        {/* 2026-10-01 owner:首屏是「灯」不是「仪表盘」——第一眼给外人看的话,不给同行看的数字。
+            布局不动(印章 → 主张 → 一行说明 → 一段 → 一行小字),只换内容:四个计数下移到「索引」段,
+            这里换成跋里「缘起」的第一段 + 全文链接;大模型的事只在跋里说。 */}
+        <h1 className="landing-hero__claim">古书原文，一句一句读明白</h1>
         <p className="landing-hero__sub">
-          原文、白话译注、每章延伸与深读。经、子、集三部,{groupCount ? `${groupCount} 组同站` : '诸组同站'}。
+          原文在上，译注在旁，每一章都有一篇讲透的白话。经、子、集三部，{groupCount ? `${groupCount} 组书架` : '诸组书架'}同站。
         </p>
-        {stats && (
-          <p className="landing-hero__stats">
-            <span><b>{num(stats.books)}</b> 部典籍</span>
-            <span><b>{num(stats.baihua)}</b> 章白话深读</span>
-            <span><b>{num(stats.debates)}</b> 场跨派对辩</span>
-            <span><b>{num(stats.mingju)}</b> 条名句</span>
-          </p>
-        )}
+        <blockquote className="landing-hero__origin">
+          <p>{(Array.isArray(colophon.origin) ? colophon.origin : [colophon.origin])[0]}</p>
+          <button
+            type="button"
+            className="landing-hero__origin-more"
+            onClick={() => window.dispatchEvent(new CustomEvent('guanxiang:colophon'))}
+          >
+            全文 → 跋
+          </button>
+        </blockquote>
+        <p className="landing-hero__enter">
+          <span className="landing-hero__enter-label">第一次来，可以从这里读起</span>
+          <Link to="/tangshi">一首唐诗 →</Link>
+          <Link to="/ru/lunyu/1">一章《论语》→</Link>
+          <Link to="/hexagram/1">一卦《周易》→</Link>
+        </p>
         <p className="landing-hero__note">
-          引文全部逐字校验为原文精确子串 —— 校验不过的不落库。
+          书里每一句引文，都能点回它在原文里的那一章。
         </p>
       </section>
 
@@ -73,6 +83,14 @@ export default function PortalLanding({ shelf, groupCount }) {
         <header className="master-portal__head">
           <h2 className="master-portal__title">索引</h2>
           <p className="master-portal__sub">不从书进,从概念、名句、年代、人进</p>
+          {stats && (
+            <p className="idx__stats" aria-label="全站计数">
+              <span>{num(stats.books)} 部典籍</span>
+              <span>{num(stats.baihua)} 章白话深读</span>
+              <span>{num(stats.debates)} 场跨派对辩</span>
+              <span>{num(stats.mingju)} 条名句</span>
+            </p>
+          )}
         </header>
         <div className="idx__doors">
           <Link to="/concepts" className="door">
@@ -81,7 +99,7 @@ export default function PortalLanding({ shelf, groupCount }) {
           </Link>
           <Link to="/mingju" className="door">
             <span className="door__head"><span className="door__name">名句集</span>{stats && <span className="door__n">{num(stats.mingju)} 条</span>}</span>
-            <span className="door__desc">十四组名句,每日一句;每句都能点回它在原文里的那一章</span>
+            <span className="door__desc">各组名句,每日一句;每句都能点回它在原文里的那一章</span>
           </Link>
           <Link to="/timeline" className="door">
             <span className="door__head"><span className="door__name">全站时间轴</span>{stats?.timeline > 0 && <span className="door__n">{stats.timeline} 部</span>}</span>

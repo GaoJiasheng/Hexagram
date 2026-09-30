@@ -5,6 +5,7 @@ import QuoteCard from './QuoteCard.jsx'
 import { useSettings } from '../yijing/SettingsContext.jsx'
 import { FONT_SCALE_STEPS, getCorpusMarks, toggleCorpusMark, getCorpusNotes, saveCorpusNote, saveReadPos, getReadPos} from '../yijing/storage.js'
 import CommentSection from '../comments/CommentSection.jsx'
+import { StarIcon, PenIcon, LinkIcon, CheckIcon, CardIcon } from './ActIcons.jsx'
 import ChapterColophon from './ChapterColophon.jsx'
 import ProsodyRow, { ProsodyLegend } from './ProsodyRow.jsx'
 import { loadProsodyBooks, analyzeParagraphs, getRhymeBook } from './prosody.js'
@@ -89,6 +90,8 @@ export default function ClassicReader({
   const [editing, setEditing] = useState(null)
   const [draft, setDraft] = useState('')
   const [copiedSeg, setCopiedSeg] = useState(null)
+  // 触屏:段落操作按钮默认收起,点段尾小点才展开(一次只开一段);鼠标端仍是 hover 出、此 state 不起作用
+  const [actsOpen, setActsOpen] = useState(null)
   const [cardSeg, setCardSeg] = useState(null)   // 金句卡(#147):{original, translation, source, href}
   // 单页长经(金刚经 32 分/黄庭 36 章铺一页)scroll-spy:点亮侧栏当前章 + 回显移动端 select(#145)。
   // 当前章 = 顶部已越过工具条线(130px)的最后一章;rAF 节流,挂载即同步算一次(不依赖后台 rAF)。
@@ -345,13 +348,20 @@ export default function ClassicReader({
           {!single && <span id={`seg-${no}-${i}`} className="read-para__legacy-anchor" aria-hidden="true" />}
           {label && <span className="read-para__num">{label}</span>}
           <div className="read-para__body">{text}{renderParaExtra(no, p, i)}</div>
-          <div className="para-actions">
+          <div className={`para-actions ${actsOpen === `${no}:${i}` ? 'para-actions--open' : ''}`}>
+            <button
+              type="button"
+              className="para-dot"
+              aria-label={actsOpen === `${no}:${i}` ? '收起段落操作' : '段落操作'}
+              aria-expanded={actsOpen === `${no}:${i}`}
+              onClick={() => setActsOpen((k) => (k === `${no}:${i}` ? null : `${no}:${i}`))}
+            />
             <button
               className="para-act"
               onClick={() => openQuoteCard(no, i, p)}
               aria-label="生成金句卡"
               data-tip="生成金句卡"
-            >🖼</button>
+            ><CardIcon /></button>
           </div>
         </div>
       )
@@ -391,32 +401,39 @@ export default function ClassicReader({
             </div>
           )}
         </div>
-        <div className="para-actions">
+        <div className={`para-actions ${actsOpen === key ? 'para-actions--open' : ''}`}>
+          <button
+            type="button"
+            className="para-dot"
+            aria-label={actsOpen === key ? '收起段落操作' : '段落操作'}
+            aria-expanded={actsOpen === key}
+            onClick={() => setActsOpen((k) => (k === key ? null : key))}
+          />
           <button
             className={`para-act ${marked ? 'para-act--on' : ''}`}
             onClick={() => toggleMark(no, i, p.original)}
             aria-label={marked ? '取消收藏' : '收藏此段'}
             aria-pressed={marked}
             data-tip={marked ? '取消收藏' : '收藏此段'}
-          >★</button>
+          ><StarIcon on={marked} /></button>
           <button
             className={`para-act ${note ? 'para-act--on' : ''}`}
             onClick={() => openEdit(key, note?.text || '')}
             aria-label="批注"
             data-tip={note ? '编辑批注' : '写批注'}
-          >✎</button>
+          ><PenIcon /></button>
           <button
             className={`para-act ${copied ? 'para-act--on' : ''}`}
             onClick={() => copyLink(no, i)}
             aria-label="复制本段链接"
             data-tip={copied ? '已复制链接' : '复制本段链接'}
-          >{copied ? '✓' : '🔗'}</button>
+          >{copied ? <CheckIcon /> : <LinkIcon />}</button>
           <button
             className="para-act"
             onClick={() => openQuoteCard(no, i, p)}
             aria-label="生成金句卡"
             data-tip="生成金句卡"
-          >🖼</button>
+          ><CardIcon /></button>
         </div>
       </div>
     )

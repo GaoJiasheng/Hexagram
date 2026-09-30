@@ -55,7 +55,7 @@ describe('MarkableBlock', () => {
     const p = props({ itemId: 'daxiang', anchorId: 'xiang', anchorOnParent: true })
     const tree = MarkableBlock(p)
     const block = tree.props.children[0]
-    const buttons = block.props.children[1].props.children
+    const buttons = block.props.children[1].props.children.filter((b) => b.props.className !== 'para-dot')
 
     expect(block.props.id).toBeUndefined()
     buttons[0].props.onClick()
@@ -75,12 +75,12 @@ describe('MarkableBlock', () => {
       copiedKey: 'line1',
     })
     const tree = MarkableBlock(p)
-    const buttons = tree.props.children[0].props.children[1].props.children
+    const buttons = tree.props.children[0].props.children[1].props.children.filter((b) => b.props.className !== 'para-dot')
     const preview = tree.props.children[1]
 
     expect(buttons[0].props.className).toContain('para-act--on')
     expect(buttons[1].props.className).toContain('para-act--on')
-    expect(buttons[2].props.children).toBe('✓')
+    expect(buttons[2].props.children.type.name).toBe('CheckIcon')   // 复制完成:链接图标换成对勾(线性 SVG,T7)
     preview.props.onClick()
     expect(p.onOpenEdit).toHaveBeenCalledWith(markKey, note.text)
   })

@@ -785,6 +785,7 @@ buildBooksAssets()
     mingju: Array.isArray(mj) ? mj.length : (mj?.items?.length || 0),
     concepts: Array.isArray(cp) ? cp.length : (cp?.clusters?.length || 0),
     groups: new Set(SITES.map((s) => s.group)).size,
+    shelves: SITES.filter((s) => !s.portalHidden).length,   // 门户书架数(首页 hero / meta description 用)
     // 首页「索引」段用(人物志 / 时间轴计数),与其余数字一样从数据读、不手写
     people: exists(path.join(SRC_DATA, 'renwu.json')) ? (readJson(path.join(SRC_DATA, 'renwu.json')).people || []).length : 0,
     timeline: exists(path.join(SRC_DATA, 'timeline.json')) ? (readJson(path.join(SRC_DATA, 'timeline.json')).items || []).length : 0,

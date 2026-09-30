@@ -19,16 +19,17 @@
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#191713" />
     <link rel="alternate" type="application/rss+xml" title="观象 · 新收" href="/feed.xml" />
     <title>观象 · 古籍研读站</title>
-    <meta name="description" content="七十四部典籍的原文、白话译注、每章延伸与深读。易经、道藏、儒释佛道、诸子百家、中医、谋略、唐诗宋词元曲十三组同站。引文逐字校验为原文精确子串。" />
+    <!-- 数字一律由构建期从 public/content/stats.json 注入(vite.config statsMeta 插件),这里只放占位符;check-data 有闸 -->
+    <meta name="description" content="__STATS_DESC__" />
     <!-- 分享卡 meta(#147,站点级静态兜底);逐页 og 由 functions/_middleware.js 对爬虫 UA 在边缘注入 -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="观象" />
     <meta property="og:title" content="观象 · 古籍研读站" />
-    <meta property="og:description" content="七十四部典籍的原文、白话译注与深读,十三组同站。引文逐字校验。" />
+    <meta property="og:description" content="__STATS_DESC_SHORT__" />
     <meta property="og:image" content="/pwa-512.png" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="观象 · 古籍研读站" />
-    <meta name="twitter:description" content="七十四部典籍的原文、白话译注与深读,十三组同站。" />
+    <meta name="twitter:description" content="__STATS_DESC_SHORT__" />
     <meta name="twitter:image" content="/pwa-512.png" />
     <!-- 正文衬线字体自托管(v11 §1),@fontsource 在 main.jsx 引入 -->
   </head>

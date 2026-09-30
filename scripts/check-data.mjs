@@ -838,6 +838,17 @@ if (fs.existsSync(glossaryPath)) {
   if (nName) infos.push(`章名(chapterNames): ${nName} 条 · ${nBadName} 条非原文`)
 }
 
+// ---------- 7b2. index.html 的数字须由构建期注入(T9,2026-10-01)----------
+// meta description 里手写的「七十四部…十三组」从 74 部一路过期到 83 部没人改。
+// 现在只许放占位符 __STATS_DESC__ / __STATS_DESC_SHORT__(vite.config statsMeta 注入),
+// 出现「N 部典籍」「N 组」一类的数目字即报错。
+{
+  const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8')
+  if (!html.includes('__STATS_DESC__') || !html.includes('__STATS_DESC_SHORT__')) err('index.html: description 须用 __STATS_DESC__ / __STATS_DESC_SHORT__ 占位,由构建期注入')
+  const m = html.match(/[一二三四五六七八九十百\d]+\s*(部典籍|组同站|组书架)/)
+  if (m) err(`index.html: 手写了计数「${m[0]}」——数字一律由 stats.json 注入`)
+}
+
 // ---------- 7b3. 书级导读(前世今生)----------
 // 导读引文的取章:一般书按 classics/<slug>.json;易经卦爻辞(cite.slug === 'hexagrams',ch = 卦序 1–64)
 // 没有 classics 文件,取该卦全部经传原文(卦辞+彖+象+爻辞+小象+用九六+文言+序卦杂卦)作子串池——与 8c 白话同一口径。
