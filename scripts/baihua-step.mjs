@@ -10,8 +10,8 @@ import { execSync } from 'node:child_process'
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const sh = (cmd) => execSync(cmd, { cwd: ROOT, encoding: 'utf8' })
 
-const CORPORA = ['mingli']   // owner 2026-09-19:观数四部核心书(渊海/真诠/滴天髓/穷通)铺白话,普通档;三命通会与源头诸书 status partial,自动跳过
-const CAP = 12                                 // 每批最多章数→单 workflow 并发(实际同时跑数由 runtime 封顶 min(16,核数-2))。owner 2026-06-23:服务端限流,降并发到 6 缓解(批次更多但更稳);限流过去可再调回 14
+const CORPORA = ['guwen']   // 2026-10-01 owner:古文组(古文观止 222 + 课本古文补编 23)白话全铺,普通档;先前 mingli 已成
+const CAP = 24                                 // 每批最多章数→单 workflow 并发(实际同时跑数由 runtime 封顶 min(16,核数-2))。owner 2026-06-23:服务端限流,降并发到 6 缓解(批次更多但更稳);限流过去可再调回 14
 const MAXATT = 3                              // 单章最多重试次数(防顽固章死循环)
 const ATT_FILE = path.join(ROOT, 'scripts/.baihua-attempts.json')
 
@@ -104,7 +104,7 @@ fs.writeFileSync(ATT_FILE, JSON.stringify(att, null, 0) + '\n')
 // ── ⑤ gen 下一个 workflow 脚本 ──
 const from = next.batch[0], to = next.batch[next.batch.length - 1]
 try {
-  const out = sh(`node ${ROOT}/scripts/gen-baihua-wf.mjs ${next.corpus} ${next.slug} ${from} ${to} --verify-model=sonnet`)   // 起草 opus、校对 sonnet(owner:用量搭配着用)
+  const out = sh(`node ${ROOT}/scripts/gen-baihua-wf.mjs ${next.corpus} ${next.slug} ${from} ${to} --verify-model=opus`)   // 2026-10-01 owner:古文组「都用 Opus 5.5」,起草校对皆 opus(此前 mingli 批次校对用 sonnet 搭配用量)
   console.error(out.trim())
 } catch (e) { console.error('gen 出错:', e.stdout || e.message); process.exit(3) }
 console.log(`LAUNCH scripts/.baihua-${next.corpus}-${next.slug}-wf.js`)
