@@ -18,7 +18,8 @@ import DaoduEntry from './DaoduEntry.jsx'
 // 组里若还有别的书(宋词补遗),在末尾一行「另收」列出,不与主书争版面。
 // volumes(古文观止):一篇一章但原书分十二卷,目录按卷分段列篇 [{no,title,from,to}](章号区间,闭区间);
 // 章对象若带 source(出处/作者,管线 chapterMeta 并入),篇题旁以小字显出。
-export default function SingleBookHome({ corpus, slug, title, subtitle, basePath, brand, disclaimer, texts, volumes }) {
+// beforeToc:插在题解之后、目录之前的自定义块(古文组用它把「课本古文补编」按学段列出——老师最先找的是课本篇目)
+export default function SingleBookHome({ corpus, slug, title, subtitle, basePath, brand, disclaimer, texts, volumes, beforeToc = null }) {
   usePageTitle(null, brand)
   const meta = getMeta(corpus, slug)
   const [chapters, setChapters] = useState(null)
@@ -80,6 +81,8 @@ export default function SingleBookHome({ corpus, slug, title, subtitle, basePath
           )}
         </section>
       )}
+
+      {beforeToc}
 
       <section className="dao-text-sections book-home__toc">
         <h2 className="dao-text-sections__title">

@@ -4744,6 +4744,8 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .book-toc__no { flex: none; display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; padding: 0 5px; margin-right: 4px; border-radius: 11px; font-size: .72rem; color: var(--ink-faint); background: var(--paper-raised); border: 1px solid var(--line); }
 .book-toc__name { font-family: var(--font-serif); font-size: calc(1.05rem * var(--read-scale)); }
 .book-toc__head--static { cursor: default; }
+.book-home__kewen { margin-bottom: 28px; }
+.book-home__kewen .dao-text-brief { margin: 4px 0 12px; font-size: 0.86rem; }
 .book-toc__src { margin-left: 8px; font-size: 0.74em; color: var(--ink-faint); }
 .book-toc__count { margin-left: auto; font-size: .78rem; color: var(--ink-faint); }
 .book-toc__poems { list-style: none; margin: 8px 0 0; padding: 0; columns: 3; column-gap: 28px; }
