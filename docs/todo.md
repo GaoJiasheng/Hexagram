@@ -11,6 +11,24 @@
 
 ## ▶ 当前待办(2026-10-01 N 表收口后重列)
 
+### ⏸ 2026-10-01 暂停点(额度到线,owner:「没做完的整理好 todo,后面续上」)
+
+**已上生产**:老师首次打开 T4/T7/T9 · 易经首页改版 + 两层导读 · 古文研读组(《古文观止》222 篇 + 课本古文补编 23 篇,译注延/导读全成,白话 46/245)· 全站索引已同步(名句 79 / 时间轴两书 + 二吴 / 义理专题两处 / 关于页凡例 / feed·搜索·og·书目·篇幅档自动)。
+
+**续跑 ① 古文白话铺完(剩 199 章:古文观止 176 + 补编 23,owner 定「都跑完」,起草校对皆 opus)**
+1. 起批前 `get_usage` 看额度:一批 12 章 ≈ 3.2M token(≈周额度 3 个点),24 章 ≈ 6.4M;5 小时窗口 ≥85% 或周 ≥97% 就别起(中途撞线会丢代理)。
+2. 现成脚本 `scripts/.baihua-guwen-guwenguanzhi-wf.js`(第 1–14 篇,13 单元,已生成未起跑)→ `Workflow({scriptPath})`。
+3. 每批完成:`node scripts/baihua-step.mjs <该 workflow 的 .output 文件>` → 自动装配 / check-data / 提交 / 算下一批(CAP 24)/ gen 下一个脚本并打印 `LAUNCH …` → 再 `Workflow`。打印 `DONE` 即全成。
+   要小批就手动 `node scripts/gen-baihua-wf.mjs guwen guwenguanzhi <from> <to> --verify-model=opus`(gen 自动跳过已有章;补编是 `guwen kewen`)。
+4. 全成后:`npm run build` → `npx --yes wrangler pages deploy dist --project-name=hexa-gavin-pub --commit-dirty=true` → 核入口哈希;再 `node scripts/harvest-mingju.mjs guwen` 看新候选名句,挑几条补进 `scripts/authored/mingju-extra/guwen.json` → `node scripts/build-mingju.mjs --write`。
+5. 途中撞会话/周额度上限:等重置或 owner reset,`baihua-step.mjs` 不带参数直接续(它只看缺哪些章)。`.baihua-attempts.json` 记失败次数,≥3 次的章会被放弃并在进度行列出。
+
+**续跑 ② 等 owner 定**
+- 「课本文言文索引」页(`/guwen/textbook` 一类:按七上→高选必下列课本篇目,每篇指到站内所在处——古文观止 / 补编 / 论语孟子庄子列子…,方案 `docs/guwen-textbook-list.md` §四第 2 条)。
+- 补编里的《孙权劝学》去不去(资治通鉴一则,非人物传;暂留)。
+- 老师清单剩余各条(`docs/teacher-first-visit-plan.md`):T1 大陆实测(只有你能做)→ 视结果做 T2 字体方案 A/B;T3 关 Web Analytics(你一键);T5 跋顶栏入口;T8 手机顶栏去 ☯;T10 评论链路复测(Turnstile 大陆可达性);T11 邮箱统一;S3 二维码。
+
+
 > **现状**:A / M / N 三张单全清,全部在生产 `hexa.gavin.pub`(入口哈希核过,568 测试 / check-data / check-links 全绿)。**我这边没有不等你就能开的活了**,下面全是要你看、要你拍板、要你动手的。
 
 ### O · owner 的(按顺序做,每条一句话就够)
