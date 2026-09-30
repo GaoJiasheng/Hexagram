@@ -4720,3 +4720,29 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .read-para.read-para--subhead .classic-text__original { font-family: var(--font-serif); font-weight: 700; font-size: 1.05em; color: var(--cinnabar); letter-spacing: 0.06em; }
 .read-para.read-para--subhead .read-para__num, .read-para.read-para--subhead .para-actions { display: none; }
 .qt-matrix-note { margin: 14px 0 0; font-size: 0.82rem; line-height: 1.8; color: var(--ink-faint); }
+
+/* ── 一组一本书的首页(SingleBookHome:唐诗 / 宋词 / 元曲)──────────────────
+   书架卡换成书的题解 + 展开的目录。目录:一章多首(唐诗)按类分段、逐首列;一首一章(宋词元曲)平铺多列。 */
+.book-home__book { margin: 6px 0 26px; padding: 18px 20px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper-raised); }
+.book-home__title { margin: 0 0 8px; font-family: var(--font-serif); font-size: calc(1.35rem * var(--read-scale)); font-weight: 500; }
+.book-home__title a { color: var(--ink); text-decoration: none; }
+.book-home__title a:hover { color: var(--cinnabar); }
+.book-home__book .dao-text-meta .book-tier { margin-left: 8px; vertical-align: 1px; }
+.book-home__toc { margin-top: 8px; }
+.book-toc__group { margin: 18px 0 6px; }
+.book-toc__head { display: flex; align-items: baseline; gap: 10px; padding: 6px 0; text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--line); }
+.book-toc__head:hover .book-toc__name { color: var(--cinnabar); }
+.book-toc__head--current .book-toc__name { color: var(--cinnabar); }
+.book-toc__no { flex: none; display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; padding: 0 5px; margin-right: 4px; border-radius: 11px; font-size: .72rem; color: var(--ink-faint); background: var(--paper-raised); border: 1px solid var(--line); }
+.book-toc__name { font-family: var(--font-serif); font-size: calc(1.05rem * var(--read-scale)); }
+.book-toc__count { margin-left: auto; font-size: .78rem; color: var(--ink-faint); }
+.book-toc__poems { list-style: none; margin: 8px 0 0; padding: 0; columns: 3; column-gap: 28px; }
+.book-toc__poems li { break-inside: avoid; padding: 3px 0; font-size: calc(.92rem * var(--read-scale)); line-height: 1.5; }
+.book-toc__poems a { color: var(--ink-soft); text-decoration: none; }
+.book-toc__poems a:hover, .book-toc__link--current { color: var(--cinnabar); }
+.book-toc__poems--flat { margin-top: 12px; }
+.book-toc__poems--flat .book-toc__no { min-width: 26px; }
+.book-home__others { margin: 26px 0 0; padding-top: 14px; border-top: 1px solid var(--line); font-size: .9rem; color: var(--ink-soft); }
+.book-home__others a { color: var(--ink); }
+@media (max-width: 900px) { .book-toc__poems { columns: 2; } }
+@media (max-width: 560px) { .book-toc__poems { columns: 1; } .book-home__book { padding: 14px 14px 12px; } }
