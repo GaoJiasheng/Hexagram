@@ -10,6 +10,7 @@ import { registerBookShortcut } from './native/appShortcuts.js'
 import { setupBackButton } from './native/backButton.js'
 import { setupDeepLinks } from './native/deepLink.js'
 import { useTelemetry } from './features/telemetry.js'
+import { ensureSerifFont } from './features/fonts.js'
 
 // 全站搜索面板按需加载:搜索页面、经典、正文、白话、注疏、专题。
 const GlobalSearchPalette = lazy(() => import('./features/search/GlobalSearchPalette.jsx'))
@@ -150,7 +151,7 @@ const switchTargetName = (site) => site.portalTitle.replace(/(研读|研习)$/, 
 // 只在窄屏生效——CSS 媒体查询兜底,宽屏即使算出 hidden 也不会有视觉变化。
 const NAV_HIDE_THRESHOLD = 8, NAV_TOP_SAFE = 12, NAV_BOTTOM_SAFE = 24
 
-function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings, neutral = false }) {
+function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings, onColophon, neutral = false }) {
   const { user } = useAuth()
   const [scrolled, setScrolled] = useState(false)
   const [navHidden, setNavHidden] = useState(false)
@@ -209,6 +210,8 @@ function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings, neu
             <line x1="11.5" y1="11.5" x2="16" y2="16" />
           </svg>
         </button>
+        {/* 「跋」文字入口(2026-10-01「老师首次打开」T5):页脚那枚小字手机上难发现;桌面顶栏给一个字,手机靠首页缘起块的「全文 → 跋」 */}
+        <button className="nav-icon-btn nav-text-btn nav-colophon-btn" onClick={onColophon} aria-label="跋 · 落款" title="跋 · 落款">跋</button>
         <button className="nav-icon-btn" onClick={onSettings} aria-label="设置" title="设置">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="3" />
@@ -229,7 +232,7 @@ function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings, neu
         {!neutral && module.hasSearch && (
           <NavLink
             to={module.key === 'yijing' ? '/me' : `${module.home}/me`}
-            className={({ isActive }) => `nav-icon-btn ${isActive ? 'active' : ''}`}
+            className={({ isActive }) => `nav-icon-btn nav-me-btn ${isActive ? 'active' : ''}`}
             aria-label="我的"
             style={{ textDecoration: 'none', fontSize: '1.1rem' }}
           >
@@ -249,7 +252,9 @@ function MobileNav({ module, canSwitch, otherSite, onPortal, onSearch }) {
   return (
     <div className="mobile-nav" role="navigation" aria-label="底部导航">
       <div className="mobile-nav__inner">
-        {module.mobileNav.map(({ to, label, icon, exact, match }) => {
+        {/* 底栏若没列「我的」(诗词曲/古文等只列了「经典」),自动补一项——手机顶栏的 ☯ 已隐藏(T8),入口统一在底栏 */}
+        {[...module.mobileNav, ...(module.hasSearch && !module.mobileNav.some((m) => m.label === '我的')
+          ? [{ to: module.key === 'yijing' ? '/me' : `${module.home}/me`, label: '我的', icon: '☯', exact: false }] : [])].map(({ to, label, icon, exact, match }) => {
           const isActive = match
             ? match.some((p) => location.pathname === p || location.pathname.startsWith(p))
             : exact ? location.pathname === to : location.pathname.startsWith(to)
@@ -304,6 +309,12 @@ function AppContent() {
   const navigate = useNavigate()
   const [backHint, setBackHint] = useState('')   // 安卓「再按一次退出」的提示
   useTelemetry(location)
+  // 正文衬线字体按需加载(T2 方案 A):首页、门户与各组首页不下 Noto,进任何别的页才载
+  useEffect(() => {
+    const p = location.pathname
+    if (isNeutralPath(p) || SITES.some((s) => s.home === p)) return
+    ensureSerifFont()
+  }, [location.pathname])
 
   const module = siteForPath(location.pathname)
   const group = activeGroup(location.pathname, typeof window !== 'undefined' ? window.location.hostname : '')
@@ -378,7 +389,7 @@ function AppContent() {
     <div className="app-shell" data-site={isPortal ? 'portal' : module.key}>
       {backHint && <div className="back-hint" role="status">{backHint}</div>}
       {/* 中立枢纽也要能改主题/登录/搜索——这些本就是全局功能,不属于任何分站,故给一条精简顶栏(印+搜索+设置+头像) */}
-      <Nav module={module} canSwitch={canSwitch} otherSite={otherSite} onSearch={openSearch} onPortal={openPortal} onSettings={openSettings} neutral={isPortal} />
+      <Nav module={module} canSwitch={canSwitch} otherSite={otherSite} onSearch={openSearch} onPortal={openPortal} onSettings={openSettings} onColophon={openColophon} neutral={isPortal} />
       <main className="app-main page-fade-in">
         <ErrorBoundary key={location.pathname}>
         <Suspense fallback={<div className="route-loading" aria-label="加载中">⋯</div>}>

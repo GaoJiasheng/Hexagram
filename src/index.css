@@ -339,6 +339,11 @@ button { cursor: pointer; font-family: var(--font-serif); color: inherit; }
 }
 
 .nav-icon-btn:hover { color: var(--ink); background: var(--cinnabar-bg); }
+.nav-text-btn { width: auto; padding: 0 8px; font-family: var(--font-serif); font-size: 0.95rem; letter-spacing: 0.05em; }
+/* 手机(≤640):顶栏只留 印章 / 搜索 / 设置;「跋」走首页缘起块的链接,「我的」走底栏(T5/T8,2026-10-01) */
+@media (max-width: 640px) {
+  .nav-colophon-btn, .nav-me-btn { display: none; }
+}
 
 .nav-search-expanded {
   display: flex;

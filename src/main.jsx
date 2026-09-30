@@ -1,10 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
-// 正文衬线字体自托管(v11 §1):unicode-range 分片,同源按需加载
-import '@fontsource/noto-serif-sc/400.css'
-import '@fontsource/noto-serif-sc/500.css'
-import '@fontsource/noto-serif-sc/600.css'
+// 正文衬线字体自托管(v11 §1):unicode-range 分片。2026-10-01 起不在这里静态引入——
+// 首页/门户/组首页走系统衬线,进阅读页才由 src/features/fonts.js 动态加载(见 App.jsx)。
 import './index.css'
 import { setupPwaAutoReload } from './pwaUpdate.js'
 
