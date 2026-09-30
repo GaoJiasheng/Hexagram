@@ -5,7 +5,7 @@ import ArticleDrawer from './ArticleDrawer.jsx'
 import { SITE_MAP } from '../../sites/registry.js'
 
 // 家级导读入口(挂组首页书架之上)。点开走与白话/书级导读同款的右侧抽屉,⤢ 再进整页。
-// 位置在书架前、今日一章后:先知道这一架书是怎么来的,再挑一本读。
+// 位置在书架前:先知道这一架书是怎么来的,再挑一本读。
 // 没写该组导读时返回 null —— 组首页保持原样,不留空壳。
 export default function SchoolEntry({ corpus }) {
   const [meta, setMeta] = useState(null)

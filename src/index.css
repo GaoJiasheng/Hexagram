@@ -3722,12 +3722,6 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 
 /* 道藏书架 */
 .dao-home { max-width: var(--content-w); margin: 0 auto; }
-/* 今日一章卡(读经站/道藏首页) */
-.shelf-today { display: flex; align-items: center; gap: 12px; margin: 0 0 22px; padding: 13px 18px; border: 1px solid var(--cinnabar); border-radius: 8px; background: var(--cinnabar-bg); text-decoration: none; transition: transform 0.15s; }
-.shelf-today:hover { transform: translateY(-1px); }
-.shelf-today__badge { flex: none; font-size: calc(0.72rem * var(--read-scale)); padding: 3px 10px; border-radius: 12px; background: var(--cinnabar); color: #fdfbf6; letter-spacing: 0.04em; }
-.shelf-today__book { font-family: var(--font-serif); font-size: calc(1rem * var(--read-scale)); color: var(--ink); }
-.shelf-today__arrow { margin-left: auto; color: var(--cinnabar); font-size: calc(1.1rem * var(--read-scale)); }
 .dao-shelf { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
 .dao-book { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 22px 24px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper-raised); text-decoration: none; transition: border-color 0.15s, transform 0.15s; }
 .dao-book:hover { border-color: var(--cinnabar); transform: translateY(-2px); }
@@ -4582,7 +4576,6 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   .dao-text-sections { order: 2; margin-top: 20px; }
   .dao-text-aside { order: 3; }
 
-  .shelf-today,
   .mingju-daily,
   .home-section--today { display: none; }
 }
