@@ -65,6 +65,17 @@ export default defineConfig({
         cleanupOutdatedCaches: true,
         runtimeCaching: [
           {
+            // 白话 / 导读 / 搜索分片 / og 分片等构建期拆出的小文件(/content/):运行时 SWR 缓存——
+            // 装了 PWA 的手机离线也能翻已读过的白话与搜索(原只预缓存 app 壳,离线开白话是白屏;M2,2026-10-01)
+            urlPattern: ({ url, sameOrigin }) => sameOrigin && url.pathname.startsWith('/content/'),
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'content',
+              expiration: { maxEntries: 1200, maxAgeSeconds: 30 * 24 * 3600 },
+              cacheableResponse: { statuses: [0, 200] },
+            },
+          },
+          {
             urlPattern: ({ url, sameOrigin }) => sameOrigin && url.pathname.endsWith('.woff2'),
             handler: 'CacheFirst',
             options: {

@@ -177,7 +177,8 @@ const FILE = (c, b) => `${ROOT}/src/data/${c}/classics/${b}.json`
 function inlineText(c, offset = 0) {   // offset:pieces 切片时给章内绝对下标
   const lines = c.paragraphs.map((p, i) => {
     const tag = p.pillars ? '〔命例·四柱 ' + p.pillars.join(' ') + (p.dayun?.length ? ' · 大运 ' + p.dayun.join(' ') : '') + '〕' : ''
-    return `[${i + offset}] ${p.original}${tag}` + (p.translation ? `\n    译:${p.translation}` : '')
+    // 段号从 1 起算,与阅读页显示的段号一致(2026-10-01 前按 0 起算,玉照白话因此 55 处差 1——见 todo A2)
+    return `[${i + offset + 1}] ${p.original}${tag}` + (p.translation ? `\n    译:${p.translation}` : '')
   })
   const t = lines.join('\n')
   return t.length <= 24000 ? t : null
@@ -439,7 +440,7 @@ const draftPrompt = (u) => {
   const bookStyle = BOOK_STYLE[`${corpus}/${slug}`] ? `\n\n${BOOK_STYLE[`${corpus}/${slug}`]}` : ''
   return `你在为研习站写《${bookTitle}·${u.title}》的「白话」整章深读。${RED[corpus] || ''}${bookStyle}\n\n${spec}\n\n${figspec}\n\n${RICHSPEC}${WIDGETSPEC ? '\n\n' + WIDGETSPEC : ''}${approach}\n\n` +
     (u.text
-      ? `**本章原文与站内译文已为你取好,见下(方括号里是段下标)。不必再去读数据文件——那个文件很大,读它是浪费。** quote.original 必须是下面某段原文的精确连续子串(逐字照抄,含全角标点;不要带上方括号下标与「译:」行)。\n\n<本章原文>\n__CHTEXT__\n</本章原文>\n\n`
+      ? `**本章原文与站内译文已为你取好,见下(方括号里是段号,与阅读页显示一致、从 1 起算;文中若引「站内第 N 段」,N 即此数)。不必再去读数据文件——那个文件很大,读它是浪费。** quote.original 必须是下面某段原文的精确连续子串(逐字照抄,含全角标点;不要带上方括号下标与「译:」行)。\n\n<本章原文>\n__CHTEXT__\n</本章原文>\n\n`
       : `第一步:用 Read 读 ${FILE(corpus, slug)},找到 chapters 里 no===${u.no} 的那一章(paragraphs 为原文段,每段含 original 与 translation)。以这章原文为底成文。\n\n`) +
     `篇幅:${band}。\n\n按 schema 产出一篇白话文章:\n` +
     `- title:"白话${bookTitle} · ${u.title}";subtitle:一句副题;centralIdea:一句话中心思想。\n` +
