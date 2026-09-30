@@ -155,7 +155,8 @@ export default function QuoteCard({ original, translation, source, href, onClose
     await Share.share({ title: '观象金句', files: [uri] })
   }
 
-  const FF = "'Noto Serif SC', serif"
+  // 与 index.css --font-serif 同栈:自托管字体不含扩展区汉字,靠后面的系统字体接(否则卡上是方块)
+  const FF = "'Noto Serif SC', 'Songti SC', 'STSong', 'SimSun', 'SimSun-ExtB', 'MingLiU-ExtB', 'Noto Serif CJK SC', 'PingFang SC', 'PingFang HK', 'PingFang TC', 'Noto Sans CJK SC', serif"
   // createPortal 到 body:逃出阅读器里带 content-visibility/transform 的祖先，
   // 否则 .quote-overlay 的 position:fixed 遮罩盖不满视口、按钮区会透出页面正文（与注释气泡/白话抽屉同款修法）。
   return createPortal(

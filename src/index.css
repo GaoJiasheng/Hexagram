@@ -35,11 +35,24 @@
   --mingli: #3f4577;
   --ochre: #b08d57;
   --line: #e4ddce;
-  --font-serif: 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+  /* 正文衬线。自托管的 Noto Serif SC(@fontsource 分片)一个 CJK 扩展 B–I 区的字都不含,
+     原文里的扩展区字(𫛞 𣨼 𤣥…,node scripts/scan-astral-chars.mjs 可复查)只能靠后面的字体;
+     浏览器逐字回退,前面的字有字形就轮不到后面,故补在末尾的字体只接扩展区的缺字、不改常用字字形
+     (2026-09-30 在 macOS 上核过:站内用到的 BMP 字无一因此换字体)。括号内 = 站内 338 个扩展区字中该字体新接住几个:
+       macOS / iOS(本机 fontTools 读 cmap 实测):Songti SC·STSong 14 → PingFang SC +72 → PingFang HK +2 → PingFang TC +1,
+         合计 89(只算原文 283 字则 78);其余 249 字苹果系统里没有任何字体有字形(连 𫛞 𣨼 都没有),仍是方块,
+         要根治得自托管一份覆盖扩展区的开源字体子集;
+       Windows(按公开资料,本机未核):SimSun-ExtB / MingLiU-ExtB 覆盖扩展 B,SimSun-ExtG 为 Win11 新增;
+       Linux / Android(按公开资料):Noto Serif / Sans CJK SC(本机一份 Noto Sans CJK SC 2.004 实测 81)。 */
+  --font-serif: 'Noto Serif SC', 'Songti SC', 'STSong', 'SimSun',
+                'SimSun-ExtB', 'MingLiU-ExtB', 'SimSun-ExtG', 'Noto Serif CJK SC',
+                'PingFang SC', 'PingFang HK', 'PingFang TC', 'Noto Sans CJK SC', serif;
   /* 白话层专用无衬线:系统字优先(iOS/macOS 得苹方,零下载),与原文的衬线形成
-     古今对照——衬线承经文,黑体讲白话。 */
+     古今对照——衬线承经文,黑体讲白话。末尾几项同上,只为接住扩展区的缺字。 */
   --font-sans: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB',
-               'Microsoft YaHei', 'Noto Sans SC', system-ui, sans-serif;
+               'Microsoft YaHei', 'Noto Sans SC',
+               'PingFang HK', 'PingFang TC', 'Noto Sans CJK SC',
+               'SimSun-ExtB', 'MingLiU-ExtB', 'SimSun-ExtG', system-ui, sans-serif;
   --font-mono: ui-monospace, monospace;
   --font-scale: 1.15;              /* 用户字号档位(SettingsContext 内联设于 :root):1/1.15/1.35/1.55 */
   --read-boost: 1;                 /* 窄屏默认略大(见下方 media query);桌面为 1 */
