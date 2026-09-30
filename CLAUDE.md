@@ -66,6 +66,7 @@
 - [x] 全站时间轴 `/timeline` + 每日一辩挪位(2026-09-25)—— 朝代等宽横轴,书+人物两层 · 细节 archive §81
 - [x] 全站人物志 `/renwu`(2026-09-25)—— 61 人一人一条,时间轴人物层改读 renwu.json · 细节 archive §82
 - [x] 二十四期 全站交互化 I4–I13(2026-09-30)—— 储说经说联动、论语弟子索引、月相纳甲盘、佛名相、儒门学脉、庄子寓言、格律层、国风图、战国七国图 · 规格 docs/design-v24.md · 排期 docs/interactive-plan.md · 细节 archive §83
+- [x] 易经首页改版 + 两层导读(2026-10-01,owner review)—— 去今日一卦/道藏入口,四模块首页展开;家级「易学的来路」(Fable 手写 11000 字:经/传 · 象数/义理 · 占/学三对张力,不重排源流页年表)+ 书级「《周易》的前世今生」(7300 字);check-data 导读引文闸认 `cite.slug:'hexagrams'`(ch=卦序);路由 `/yijing/school` `/yijing/zhouyi/daodu`(一站一书,slug 由路由传)· SOP docs/school-intro-standard.md 易经节
 - [ ] 观数 · 命理典籍研读组(第十五组 `mingli`,2026-09-19 立项)—— 八字命理知识学习站(非算命站):核心四书 + 源头四书 + 三命通会 原文/译注延/导读/白话,ganzhi 底座、9 个 widget、调候矩阵/格局流程/命例走读/歌诀卡/概念索引/学堂/排盘台;
   2026-09-30 内容全部收官(原记待 owner review → 上生产 / 发 iOS,进度以 `docs/todo.md` 为准) · 规格 docs/design-v23.md · 全量 TODO docs/todo.md §0.1 · 细节 archive §84
 

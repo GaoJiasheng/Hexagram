@@ -379,7 +379,10 @@ function AppContent() {
           {/* 网站入口 = 诸学门户(owner:/ 不再直接进易经);易经首页挪到 /yijing */}
           <Route path="/" element={<MasterPortalPage />} />
           {/* 易经研习 */}
-          <Route path="/yijing" element={<HomePage onSearch={openSearch} />} />
+          <Route path="/yijing" element={<HomePage />} />
+          {/* 易经两层导读(2026-10-01):家级「易学的来路」+ 书级「《周易》的前世今生」,与各读经站同款页 */}
+          <Route path="/yijing/school" element={<SchoolPage corpus="yijing" back={{ to: '/yijing', label: '← 易经首页' }} />} />
+          <Route path="/yijing/zhouyi/daodu" element={<DaoduPage corpus="yijing" slug="zhouyi" back={{ to: '/hexagrams', label: '← 六十四卦' }} />} />
           <Route path="/hexagrams" element={<HexagramsPage />} />
           <Route path="/hexagram/:id" element={<HexagramDetailPage />} />
           {/* 易经白话整页研读(design-v22:一卦一厚文)——3 段路由,更具体于 /hexagram/:id */}

@@ -839,6 +839,28 @@ if (fs.existsSync(glossaryPath)) {
 }
 
 // ---------- 7b3. 书级导读(前世今生)----------
+// 导读引文的取章:一般书按 classics/<slug>.json;易经卦爻辞(cite.slug === 'hexagrams',ch = 卦序 1–64)
+// 没有 classics 文件,取该卦全部经传原文(卦辞+彖+象+爻辞+小象+用九六+文言+序卦杂卦)作子串池——与 8c 白话同一口径。
+const hexAllOriginal = (q) => {
+  const parts = [q.judgment?.original, q.tuan?.original, q.daxiang?.original]
+  for (const l of q.lines || []) { parts.push(l.original, l.xiaoxiang?.original) }
+  if (q.extra?.use) { parts.push(q.extra.use.original, q.extra.use.xiaoxiang?.original) }
+  for (const w of q.extra?.wenyan || []) parts.push(w.original)
+  parts.push(q.xugua, q.zagua)
+  return parts.filter(Boolean).join('')
+}
+let hexagramsCache = null
+const guideCiteText = (corpus, slug, ch) => {
+  if (corpus === 'yijing' && slug === 'hexagrams') {
+    hexagramsCache ??= JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/yijing/hexagrams.json'), 'utf8'))
+    const q = hexagramsCache.find((x) => x.id === Number(ch))
+    return q ? hexAllOriginal(q) : null
+  }
+  const cf = path.join(ROOT, `src/data/${corpus}/classics/${slug}.json`)
+  const book = fs.existsSync(cf) ? JSON.parse(fs.readFileSync(cf, 'utf8')) : null
+  const c = book?.chapters?.find((x) => String(x.no) === String(ch))
+  return c ? c.paragraphs.map((p) => p.original).join('') : null
+}
 // 体裁与章级白话不同:讲其人/其时/成书/流传,义理只末尾几百字带过。
 // 引文规矩:**引本书原文的 quote 必须逐字命中该章**(带 cite 即校验);
 // 站外材料(《史记》、出土简帛)只许在正文里转述并标出处,不许伪装成站内引文。
@@ -866,11 +888,8 @@ if (fs.existsSync(glossaryPath)) {
         if (!b.cite) { err(`daodu ${slug}: quote 缺 cite(站外材料请在正文转述并标出处,不要作 quote 块)`); nBadQ++; continue }
         // 按 cite 自身的 corpus/slug 取章 —— 一书拆多文件时(庄子内/外/杂、内经素问/灵枢)
         // 导读会引到同书的别一部分,拿文章 slug 去查必然落空。
-        const cf = path.join(ROOT, `src/data/${b.cite.corpus || d.name}/classics/${b.cite.slug || slug}.json`)
-        const book = fs.existsSync(cf) ? JSON.parse(fs.readFileSync(cf, 'utf8')) : null
-        const c = book?.chapters?.find((x) => String(x.no) === String(b.cite.ch))
-        if (!c) { err(`daodu ${slug}: quote 指向不存在的章 ${b.cite.slug || slug}#${b.cite.ch}`); nBadQ++; continue }
-        const chText = c.paragraphs.map((p) => p.original).join('')
+        const chText = guideCiteText(b.cite.corpus || d.name, b.cite.slug || slug, b.cite.ch)
+        if (chText == null) { err(`daodu ${slug}: quote 指向不存在的章 ${b.cite.slug || slug}#${b.cite.ch}`); nBadQ++; continue }
         // 四库白文走断句层的书(三命通会等):导读写成时某章还是白文、引的也是白文,日后该章断了句,
         // original 里就多了标点。标点是本站另加的一层、不是底本,所以退一步按「去标点后」比,仍是逐字命中。
         if (!chText.includes(b.original) && !punctCore(chText).includes(punctCore(b.original))) {
@@ -956,10 +975,10 @@ if (fs.existsSync(glossaryPath)) {
 
 // ---------- 8f. 家级导读「一家之来路」校验(docs/school-intro-standard.md)----------
 // 与书级同源但更严:体裁要求散文,故**禁用 callout/list/steps**(那三种会把散文剁碎);
-// 字数按 owner 定的加厚档分组;易经不做(那一层已由学堂/源流页覆盖)。
+// 字数按 owner 定的加厚档分组;易经原不做(学堂/源流页已覆盖),owner 2026-10-01 改口要加厚版:换一根轴讲经/传、象数/义理、占/学三对张力,不重述源流页的年表。
 {
   // 诗词曲三组(集部)同 C 类:讲的是「这一体怎么成的」而非流派谱系,字数同 bing/fa 档。
-  const FLOOR = { ru: 11000, dao: 11000, fo: 10000, fa: 9000, bing: 9000, zhongyi: 9000, moulue: 9000, mo: 8000, zong: 8000, xin: 8000,
+  const FLOOR = { yijing: 11000, ru: 11000, dao: 11000, fo: 10000, fa: 9000, bing: 9000, zhongyi: 9000, moulue: 9000, mo: 8000, zong: 8000, xin: 8000,
     tangshi: 9000, songci: 9000, yuanqu: 9000,
     // 观数同 C 类:讲「子平这门学问怎么一步步成形、三派怎么分出来」,不是流派颂
     mingli: 9000 }
@@ -985,11 +1004,9 @@ if (fs.existsSync(glossaryPath)) {
     for (const b of blocks) {
       if (b.type !== 'quote' || !b.original) continue
       if (!b.cite) { err(`school ${corpus}: quote 缺 cite(站外材料请在正文转述并标出处)`); nBad++; continue }
-      const cf = path.join(ROOT, `src/data/${b.cite.corpus || corpus}/classics/${b.cite.slug}.json`)
-      const book = fs.existsSync(cf) ? JSON.parse(fs.readFileSync(cf, 'utf8')) : null
-      const c = book?.chapters?.find((x) => String(x.no) === String(b.cite.ch))
-      if (!c) { err(`school ${corpus}: quote 指向不存在的章 ${b.cite.slug}#${b.cite.ch}`); nBad++; continue }
-      if (!c.paragraphs.map((p) => p.original).join('').includes(b.original)) {
+      const chText = guideCiteText(b.cite.corpus || corpus, b.cite.slug, b.cite.ch)
+      if (chText == null) { err(`school ${corpus}: quote 指向不存在的章 ${b.cite.slug}#${b.cite.ch}`); nBad++; continue }
+      if (!chText.includes(b.original)) {
         err(`school ${corpus}: 引文非 ${b.cite.slug}#${b.cite.ch} 原文子串「${b.original.slice(0, 14)}…」`); nBad++
       }
     }
@@ -1199,15 +1216,7 @@ if (fs.existsSync(glossaryPath)) {
 {
   const corpora = ['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'yijing', 'tangshi', 'songci', 'yuanqu', 'mingli']
   const chCache = {}
-  // 一卦全经传原文(卦辞+彖+大象+爻辞+小象+用九六+文言+序卦杂卦)——易经引文子串校验池
-  const hexAllOriginal = (q) => {
-    const parts = [q.judgment?.original, q.tuan?.original, q.daxiang?.original]
-    for (const l of q.lines || []) { parts.push(l.original, l.xiaoxiang?.original) }
-    if (q.extra?.use) { parts.push(q.extra.use.original, q.extra.use.xiaoxiang?.original) }
-    for (const w of q.extra?.wenyan || []) parts.push(w.original)
-    parts.push(q.xugua, q.zagua)
-    return parts.filter(Boolean).join('')
-  }
+  // 一卦全经传原文作引文子串池:hexAllOriginal 已提到 7b3 之前(导读引文同用)
   const pieceCache = {}
   const bookPieces = (corpus, slug) => {
     if (!(corpus in pieceCache)) {

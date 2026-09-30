@@ -6,7 +6,7 @@ import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import { SITE_MAP } from '../../sites/registry.js'
 
 // 家级导读整页(可收藏 / 分享 / 刷新保留)。抽屉里的 ⤢ 落到这里。
-export default function SchoolPage({ corpus }) {
+export default function SchoolPage({ corpus, back }) {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
   usePageTitle(data?.title || '一家之来路', SITE_MAP[corpus]?.brand)
@@ -22,7 +22,7 @@ export default function SchoolPage({ corpus }) {
   return (
     <div className="baihua-page">
       <div className="baihua-page__bar">
-        <Link to={home} className="baihua-page__back">← 回书架</Link>
+        <Link to={back?.to || home} className="baihua-page__back">{back?.label || '← 回书架'}</Link>
       </div>
       {loading && <p className="route-loading">⋯</p>}
       {!loading && !data && <p className="baihua-page__empty">这一组还没有家级导读。</p>}

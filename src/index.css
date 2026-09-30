@@ -1043,64 +1043,6 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   margin: 0 0 16px;
 }
 
-/* 今日一卦 */
-.today-card {
-  display: block;
-  padding: 20px 24px;
-  background: var(--paper-raised);
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  text-decoration: none !important;
-  color: var(--ink);
-  transition: border-color 0.15s;
-  position: relative;
-}
-
-.today-card:hover { border-color: var(--ochre); }
-
-.today-card__badge {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  font-size: 0.7rem;
-  color: var(--ink-faint);
-}
-
-.today-card__body {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.today-card__info { flex: 1; }
-
-.today-card__name {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-
-.today-card__hanzi { font-size: 2rem; font-weight: 600; }
-.today-card__full { font-size: 1rem; color: var(--ink-soft); }
-.today-card__no { font-size: 0.75rem; color: var(--ink-faint); }
-
-.today-card__text {
-  margin: 0 0 4px;
-  font-size: 1rem;
-  color: var(--ink);
-  line-height: 1.8;
-}
-
-.today-card__summary {
-  margin: 0;
-  font-size: 0.8rem;
-  color: var(--ink-soft);
-}
-.today-card__actions { display: flex; justify-content: flex-end; margin-top: 10px; }
-.today-card__action { font-size: 0.85rem; color: var(--cinnabar); text-decoration: none; padding: 4px 2px; }
-.today-card__action:hover { text-decoration: underline; }
-
 /* 继续研习 */
 .history-row {
   display: flex;
@@ -1121,36 +1063,76 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 
 .history-chip:hover { border-color: var(--azure); color: var(--azure); }
 
-/* 四个入口 */
-.home-entries {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-}
+/* 首页四个模块展开(2026-10-01,替代原「四个入口」卡):
+   六十四卦全列 / 六法 / 五部经传 / 八经卦 + 学堂十二篇 */
+.home-guides { display: flex; flex-direction: column; gap: 0; }
+.home-guides .school-entry { margin-bottom: 10px; }
+.home-guides .daodu-entry:not(.school-entry) { margin-top: 0; }
 
-.home-entry {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 20px 16px;
-  background: var(--paper-raised);
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  text-decoration: none !important;
-  color: var(--ink);
-  transition: border-color 0.15s;
-}
+.home-block { padding-top: 22px; border-top: 1px solid var(--line); }
+.home-block__head { display: grid; grid-template-columns: 1fr auto; column-gap: 16px; row-gap: 6px; align-items: baseline; margin-bottom: 16px; }
+.home-block__title { grid-column: 1; margin: 0; font-family: var(--font-serif); font-size: 1.35rem; font-weight: 600; letter-spacing: 0.06em; color: var(--ink); }
+.home-block__more { grid-column: 2; grid-row: 1; font-size: 0.85rem; color: var(--cinnabar); text-decoration: none; white-space: nowrap; }
+.home-block__more:hover { text-decoration: underline; }
+.home-block__note { grid-column: 1 / -1; margin: 0; font-size: 0.86rem; line-height: 1.75; color: var(--ink-soft); }
+.home-block__sub { margin: 14px 0 8px; font-size: 0.92rem; font-weight: 600; color: var(--ink); }
+.home-block__sub-note { margin-left: 8px; font-size: 0.76rem; font-weight: 400; color: var(--ink-faint); }
+.home-block__chips { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; }
+.home-block__chips-label { font-size: 0.76rem; color: var(--ink-faint); margin-right: 4px; }
 
-.home-entry:hover { border-color: var(--ochre); }
+/* ① 六十四卦格 */
+.home-hexgrid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 6px; }
+.home-hexcell { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 4px 8px;
+  background: var(--paper-raised); border: 1px solid var(--line); border-radius: 6px; text-decoration: none !important; color: var(--ink);
+  transition: border-color 0.15s, transform 0.15s; position: relative; }
+.home-hexcell:hover { border-color: var(--ochre); transform: translateY(-1px); }
+.home-hexcell__name { font-family: var(--font-serif); font-size: 0.95rem; line-height: 1.2; }
+.home-hexcell__no { position: absolute; top: 4px; right: 6px; font-size: 0.62rem; color: var(--ink-faint); }
 
-.home-entry__icon { font-size: 1.4rem; color: var(--ink-soft); }
-.home-entry__title { font-size: 0.9375rem; font-weight: 600; }
-.home-entry__desc { font-size: 0.75rem; color: var(--ink-faint); }
+/* ② 六法 */
+.home-methods { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.home-method { display: flex; flex-direction: column; gap: 4px; padding: 14px 14px 12px; background: var(--paper-raised); border: 1px solid var(--line); border-radius: 6px;
+  text-decoration: none !important; color: var(--ink); transition: border-color 0.15s; }
+.home-method:hover { border-color: var(--ochre); }
+.home-method__kind { font-size: 0.68rem; letter-spacing: 0.1em; color: var(--ink-faint); }
+.home-method__title { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 600; }
+.home-method__desc { font-size: 0.78rem; line-height: 1.6; color: var(--ink-soft); }
+.home-method__learn { margin-top: 4px; font-size: 0.7rem; color: var(--azure); }
+
+/* ③ 五部经传 */
+.home-classics { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.home-classic { display: flex; flex-direction: column; gap: 3px; padding: 14px 16px; background: var(--paper-raised); border: 1px solid var(--line); border-radius: 6px;
+  text-decoration: none !important; color: var(--ink); transition: border-color 0.15s; }
+.home-classic:hover { border-color: var(--ochre); }
+.home-classic--aside { border-style: dashed; }
+.home-classic__title { font-family: var(--font-serif); font-size: 1rem; font-weight: 600; }
+.home-classic__meta { font-size: 0.72rem; color: var(--ink-faint); }
+.home-classic__desc { margin-top: 2px; font-size: 0.78rem; line-height: 1.65; color: var(--ink-soft); }
+
+/* ④ 八经卦 + 学堂 */
+.home-trigrams { display: grid; grid-template-columns: repeat(8, 1fr); gap: 6px; margin-bottom: 18px; }
+.home-trigram { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 10px 4px 8px; background: var(--paper-raised); border: 1px solid var(--line); border-radius: 6px;
+  text-decoration: none !important; color: var(--ink); transition: border-color 0.15s; }
+.home-trigram:hover { border-color: var(--ochre); }
+.home-trigram__symbol { font-size: 1.5rem; line-height: 1; color: var(--ink); }
+.home-trigram__name { font-family: var(--font-serif); font-size: 0.95rem; font-weight: 600; }
+.home-trigram__nature { font-size: 0.78rem; color: var(--ink-soft); }
+.home-trigram__attr { font-size: 0.66rem; color: var(--ink-faint); white-space: nowrap; }
+.home-topics { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 16px; }
+.home-topic { display: flex; align-items: baseline; gap: 10px; padding: 7px 8px; border-radius: 4px; text-decoration: none !important; color: var(--ink); transition: background 0.15s; }
+.home-topic:hover { background: var(--paper-raised); }
+.home-topic__no { font-size: 0.7rem; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+.home-topic__title { flex: 1; font-size: 0.9rem; }
+.home-topic__time { font-size: 0.7rem; color: var(--ink-faint); white-space: nowrap; }
+.home-topic--read .home-topic__title::after { content: ' ✓'; color: var(--azure); font-size: 0.75rem; }
 
 @media (max-width: 600px) {
-  .home-entries { grid-template-columns: repeat(2, 1fr); }
   .home-hero__title { font-size: 2.2rem; }
-  .today-card__body { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .home-block__head { grid-template-columns: 1fr; }
+  .home-block__more { grid-column: 1; grid-row: auto; }
+  .home-methods, .home-classics, .home-topics { grid-template-columns: 1fr; }
+  .home-hexgrid { grid-template-columns: repeat(4, 1fr); }
+  .home-trigrams { grid-template-columns: repeat(4, 1fr); }
 }
 
 /* ── HexagramsPage ──────────────────────────────────────────── */
