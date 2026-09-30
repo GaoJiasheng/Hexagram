@@ -50,7 +50,7 @@ export default function MasterPortalPage() {
     { key: 'rushi', label: '儒释', note: '三家心性', keys: ['ru', 'fo', 'xin'] },
     { key: 'zhuzi', label: '诸子', note: '百家之言', keys: ['fa', 'mo', 'bing', 'zong', 'moulue'] },
     { key: 'fangshu', label: '方术', note: '医经术数', keys: ['zhongyi', 'mingli'] },
-    { key: 'jibu', label: '集部', note: '诗词曲', keys: ['tangshi', 'songci', 'yuanqu'] },
+    { key: 'jibu', label: '集部', note: '诗词曲文', keys: ['tangshi', 'songci', 'yuanqu', 'guwen'] },
   ]
   const placed = new Set(FAMILIES.flatMap((f) => f.keys))
   const rest = sites.filter((s) => !placed.has(s.key)).map((s) => s.key)

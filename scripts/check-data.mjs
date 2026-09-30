@@ -991,6 +991,7 @@ const guideCiteText = (corpus, slug, ch) => {
   // 诗词曲三组(集部)同 C 类:讲的是「这一体怎么成的」而非流派谱系,字数同 bing/fa 档。
   const FLOOR = { yijing: 11000, ru: 11000, dao: 11000, fo: 10000, fa: 9000, bing: 9000, zhongyi: 9000, moulue: 9000, mo: 8000, zong: 8000, xin: 8000,
     tangshi: 9000, songci: 9000, yuanqu: 9000,
+    guwen: 9000,   // C 类:讲「这本选本是怎么编出来的」(吴氏叔侄、康熙、与《文选》《古文辞类纂》的关系),不是流派史
     // 观数同 C 类:讲「子平这门学问怎么一步步成形、三派怎么分出来」,不是流派颂
     mingli: 9000 }
   let nSchool = 0, nBad = 0
@@ -1225,7 +1226,7 @@ const guideCiteText = (corpus, slug, ch) => {
 
 // ---------- 8c. 白话模块(design-v22)校验 ----------
 {
-  const corpora = ['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'yijing', 'tangshi', 'songci', 'yuanqu', 'mingli']
+  const corpora = ['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'yijing', 'tangshi', 'songci', 'yuanqu', 'guwen', 'mingli']
   const chCache = {}
   // 一卦全经传原文作引文子串池:hexAllOriginal 已提到 7b3 之前(导读引文同用)
   const pieceCache = {}

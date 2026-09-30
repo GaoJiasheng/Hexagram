@@ -31,6 +31,8 @@
   --tangshi: #9c4a3f;
   --songci: #4a7a86;
   --yuanqu: #4d5f6b;
+  /* 古文研读(集部第四组):绛紫(紫檀书匣),与观唐绛红、观心藕紫、儒的苍绿都拉得开 */
+  --guwen: #7d3b63;
   /* 命理学组(观数,二十五期骨架)。星夜靛蓝,与既有诸色区分度高、不与任何现有 accent 撞色。 */
   --mingli: #3f4577;
   --ochre: #b08d57;
@@ -3702,6 +3704,7 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 [data-site="tangshi"] { --cinnabar: var(--tangshi); --cinnabar-bg: color-mix(in srgb, var(--tangshi) 9%, transparent); }
 [data-site="songci"] { --cinnabar: var(--songci); --cinnabar-bg: color-mix(in srgb, var(--songci) 9%, transparent); }
 [data-site="yuanqu"] { --cinnabar: var(--yuanqu); --cinnabar-bg: color-mix(in srgb, var(--yuanqu) 9%, transparent); }
+[data-site="guwen"] { --cinnabar: var(--guwen); --cinnabar-bg: color-mix(in srgb, var(--guwen) 9%, transparent); }
 [data-site="mingli"] { --cinnabar: var(--mingli); --cinnabar-bg: color-mix(in srgb, var(--mingli) 9%, transparent); }
 /* 总门户:中立全组枢纽,主色取墨调,不偏向任一分站 */
 [data-site="portal"] { --cinnabar: var(--ink-soft); --cinnabar-bg: color-mix(in srgb, var(--ink-soft) 8%, transparent); }
@@ -4739,6 +4742,8 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .book-toc__head--current .book-toc__name { color: var(--cinnabar); }
 .book-toc__no { flex: none; display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; padding: 0 5px; margin-right: 4px; border-radius: 11px; font-size: .72rem; color: var(--ink-faint); background: var(--paper-raised); border: 1px solid var(--line); }
 .book-toc__name { font-family: var(--font-serif); font-size: calc(1.05rem * var(--read-scale)); }
+.book-toc__head--static { cursor: default; }
+.book-toc__src { margin-left: 8px; font-size: 0.74em; color: var(--ink-faint); }
 .book-toc__count { margin-left: auto; font-size: .78rem; color: var(--ink-faint); }
 .book-toc__poems { list-style: none; margin: 8px 0 0; padding: 0; columns: 3; column-gap: 28px; }
 .book-toc__poems li { break-inside: avoid; padding: 3px 0; font-size: calc(.92rem * var(--read-scale)); line-height: 1.5; }

@@ -11,7 +11,7 @@ import ITEMS from '../data/mingju.json'
 const GROUPS = [
   ['ru', '儒'], ['dao', '道'], ['fo', '释'], ['xin', '心学'],
   ['fa', '法'], ['mo', '墨'], ['bing', '兵'], ['zong', '纵横'], ['yijing', '易'],
-  ['zhongyi', '医'], ['moulue', '谋略'], ['tangshi', '唐诗'], ['songci', '宋词'], ['yuanqu', '元曲'],
+  ['zhongyi', '医'], ['moulue', '谋略'], ['tangshi', '唐诗'], ['songci', '宋词'], ['yuanqu', '元曲'], ['guwen', '古文'],
 ]
 
 // 今日一句:与「今日一卦 / 每日一辩」同一套确定性做法(日期 hash),同一天刷新不变。

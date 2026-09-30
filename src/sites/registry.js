@@ -231,6 +231,23 @@ export const SITES = [
     mobileNav: [{ to: '/yuanqu', label: '经典', icon: '☷', exact: false }],
     mobileSwitch: false,
   },
+  // 古文研读(集部第四组,2026-10-01「老师首次打开」T6):一组一本书《古文观止》(吴楚材、吴调侯,1695),
+  // 十二卷二百二十二篇,一篇一章。与唐诗三百首同形态(SingleBookHome 直接展开目录)。
+  {
+    key: 'guwen',
+    group: 'guwen',
+    brand: '观文',
+    portalTitle: '古文研读',
+    portalDesc: '',
+    home: '/guwen',
+    prefix: '/guwen',
+    accent: 'guwen',
+    switchLabel: '文',
+    hasSearch: true,
+    nav: [{ to: '/guwen', label: '经典' }],
+    mobileNav: [{ to: '/guwen', label: '经典', icon: '☷', exact: false }],
+    mobileSwitch: false,
+  },
   {
     key: 'mingli',
     group: 'mingli',       // 命理学:独立单站组(二十五期骨架),收子平八字典籍(渊海子平/子平真诠/滴天髓阐微/穷通宝鉴…)

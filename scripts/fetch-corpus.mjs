@@ -419,6 +419,9 @@ function parsePageChapters(wikitext, warnings, pageName, book = {}) {
   if (cur) chapters.push(cur)
   for (const raw of stripHeaderBlock(stripStarTemplates(wikitext)).split('\n')) {
     if (STOP_RE.test(raw)) break
+    // dropSpaceLines(古文观止):以**一个半角空格**起头的行是 wikitext 预格式化行,该书用它排每篇篇末的吴氏总评
+    // (卷内 18 篇即 18 行,逐卷核过),不是原文;正文段以全角空格「　　」缩进,不受影响。
+    if (book.dropSpaceLines && /^ \S/.test(raw)) continue
     const h = raw.trim().match(/^=+\s*(.+?)\s*=+$/)
     if (h) {
       const rawTitle = h[1].replace(/<ref[^>]*>[\s\S]*?<\/ref>/gi, '').replace(/<ref[^>]*\/>/gi, '')  // 剔标题内 <ref> 校勘
@@ -713,6 +716,50 @@ async function main() {
     if (book.stopParaRe) {
       const re = new RegExp(book.stopParaRe)
       for (const c of chapters) { const idx = c.paragraphs.findIndex((p) => re.test(p.original)); if (idx >= 0) c.paragraphs = c.paragraphs.slice(0, idx) }
+    }
+    // stripInnerSpaces(古文观止):吴氏评注以 {{*|…}} 内联夹在字与字之间,模板剔掉后留下半角空格,
+    // 落在词中间(「遂恶 之」「亟 请于武公」「大 叔」),译注的 term 子串会被它切断。汉字/中文标点之间的
+    // 半角空格在文言里没有任何意义,整段去掉;拉丁字母、数字之间的空格不动。
+    if (book.stripInnerSpaces) {
+      const CJK = '[\\u3400-\\u9fff\\u{20000}-\\u{2ffff}\\u3000-\\u303f\\uff00-\\uffef\\u2018-\\u201f「」『』!?:;,.]'
+      const re = new RegExp(`(?<=${CJK})[ \\t]+(?=${CJK})`, 'gu')
+      for (const c of chapters) for (const p of c.paragraphs) p.original = p.original.replace(re, '')
+    }
+    // splitLongParas(N):底本把一整篇排成一段(报任安书 2800 余字一段),译文/白话/收藏都按段索引,一段太长就没法读。
+    // 按句末标点(。！？及其后紧随的」』)切成句子,再贪心攒成 ≤N 字的段;单句超 N 不硬拆。**只分段不动字**,
+    // 与断句层同理:段界是本站的编辑层,底本文字一个不改。他书不设此项则零影响。
+    if (book.splitLongParas) {
+      const N = book.splitLongParas
+      let nSplit = 0
+      for (const c of chapters) {
+        const out = []
+        for (const p of c.paragraphs) {
+          if (p.original.length <= N) { out.push(p); continue }
+          const sents = p.original.match(/[^。！？]*[。！？]+[」』]*|[^。！？]+$/g) || [p.original]
+          const chunks = []
+          let cur = ''
+          for (const sen of sents) {
+            if (cur && cur.length + sen.length > N) { chunks.push(cur); cur = '' }
+            cur += sen
+          }
+          if (cur) chunks.push(cur)
+          if (chunks.length > 1) nSplit++
+          for (const t of chunks) out.push({ ...p, original: t })
+        }
+        c.paragraphs = out
+      }
+      if (nSplit) console.log(`  长段分段(>${N} 字):${nSplit} 段被拆`)
+    }
+    // chapterMeta(古文观止):目录页推导的「出处/作者」(scripts/gen-guwen-meta.mjs 产出)按篇序并进章对象的 source 字段,
+    // 目录与阅读页题下可显「左传 · 韩愈 · 苏轼」。文件不存在则跳过(首次抓取时它还没生成——它反过来要拿 classics 核篇题)。
+    if (book.chapterMeta) {
+      const mf = path.join(ROOT, book.chapterMeta)
+      if (fs.existsSync(mf)) {
+        const meta = JSON.parse(fs.readFileSync(mf, 'utf8'))
+        let hit = 0
+        for (const pc of meta.pieces || []) { const c = chapters[pc.no - 1]; if (c && c.title === pc.title && pc.source) { c.source = pc.source; hit++ } }
+        console.log(`  篇目出处并入:${hit}/${(meta.pieces || []).length}`)
+      }
     }
     // 剔段/截断后整章为空的,连章一起去掉(子平真诠末篇「附论杂格取运」整篇系徐乐吾所补,截断后即空)
     for (let k = chapters.length - 1; k >= 0; k--) if (!chapters[k].paragraphs.length) chapters.splice(k, 1)

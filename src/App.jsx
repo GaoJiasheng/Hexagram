@@ -55,6 +55,7 @@ const MoulueHomePage = lazy(() => import('./features/moulue/pages/MoulueHomePage
 const TangshiHomePage = lazy(() => import('./features/tangshi/pages/TangshiHomePage.jsx'))
 const SongciHomePage = lazy(() => import('./features/songci/pages/SongciHomePage.jsx'))
 const YuanquHomePage = lazy(() => import('./features/yuanqu/pages/YuanquHomePage.jsx'))
+const GuwenHomePage = lazy(() => import('./features/guwen/pages/GuwenHomePage.jsx'))
 // Pages — 观数(命理学,二十五期骨架)
 const MingliHomePage = lazy(() => import('./features/mingli/MingliHomePage.jsx'))
 const MingliLearnIndexPage = lazy(() => import('./features/mingli/learn/MingliLearnIndexPage.jsx'))
@@ -477,6 +478,12 @@ function AppContent() {
           <Route path="/tangshi/school" element={<SchoolPage corpus="tangshi" />} />
           <Route path="/tangshi/:slug/daodu" element={<DaoduPage corpus="tangshi" />} />
           <Route path="/tangshi/:slug/:chapter" element={<CorpusReadPage corpus="tangshi" />} />
+          {/* 古文研读(集部第四组,T6):一组一本《古文观止》 */}
+          <Route path="/guwen" element={<GuwenHomePage />} />
+          <Route path="/guwen/:slug" element={<CorpusTextPage corpus="guwen" />} />
+          <Route path="/guwen/school" element={<SchoolPage corpus="guwen" />} />
+          <Route path="/guwen/:slug/daodu" element={<DaoduPage corpus="guwen" />} />
+          <Route path="/guwen/:slug/:chapter" element={<CorpusReadPage corpus="guwen" />} />
           <Route path="/songci" element={<SongciHomePage />} />
           <Route path="/songci/:slug" element={<CorpusTextPage corpus="songci" />} />
           <Route path="/songci/school" element={<SchoolPage corpus="songci" />} />
@@ -504,11 +511,11 @@ function AppContent() {
           <Route path="/mingli/:slug/daodu" element={<DaoduPage corpus="mingli" />} />
           <Route path="/mingli/:slug/:chapter" element={<CorpusReadPage corpus="mingli" />} />
           {/* 读经站「我的」(Tier 2):续读 + 收藏 + 批注;静态段优先于 /:slug,顺序无关 */}
-          {['fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'dao', 'tangshi', 'songci', 'yuanqu', 'mingli'].map((c) => (
+          {['fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'dao', 'tangshi', 'songci', 'yuanqu', 'guwen', 'mingli'].map((c) => (
             <Route key={c} path={`/${c}/me`} element={<CorpusMePage corpus={c} />} />
           ))}
           {/* 白话「整页研读」(design-v22 A2):/<corpus>/:slug/baihua/:chapter,4 段路由不与逐章 :chapter(3 段)冲突 */}
-          {['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'tangshi', 'songci', 'yuanqu', 'mingli'].map((c) => (
+          {['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'tangshi', 'songci', 'yuanqu', 'guwen', 'mingli'].map((c) => (
             <Route key={`${c}-baihua`} path={`/${c}/:slug/baihua/:chapter`} element={<BaihuaPage corpus={c} />} />
           ))}
           {/* 诸学总门户(v15):左上角 logo 全站可达的公开总入口,列全部分组 */}

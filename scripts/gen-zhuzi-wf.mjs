@@ -21,6 +21,8 @@ const BOOKS = [
   // 诗词曲三组(二十四期)。唐诗按七类分章、章内以《诗题》段分首(同诗经/长短经);
   // 宋词元曲一首即一章。作业标准见 docs/poetry-production-standard.md。
   ['tangshi', 'tangshi300'], ['songci', 'songci300'], ['yuanqu', 'yuanqu'],
+  // 古文研读(集部第四组,2026-10-01 T6):《古文观止》一篇一章,散文/骈文/史传,文章学视角。
+  ['guwen', 'guwenguanzhi'],
   // 观数(命理学,2026-09-19 立项)。四部底本见 scripts/corpus/mingli.config.mjs;守【研习不断命】铁律。
   ['mingli', 'yuanhai'], ['mingli', 'zhenquan'], ['mingli', 'ditiansui'], ['mingli', 'qiongtong'],
   ['mingli', 'sanming'], ['mingli', 'wuxingdayi'], ['mingli', 'lixuzhong'], ['mingli', 'luoluzi'], ['mingli', 'yuzhao'],
@@ -130,7 +132,7 @@ const UNITS = ${JSON.stringify(units, null, 0)}
 
 const CN = { hanfeizi: '韩非子', shangjunshu: '商君书', shenzi: '慎子', yinwenzi: '尹文子', wenzi: '文子', mozi: '墨子', sunzi: '孙子兵法', wuzi: '吴子', simafa: '司马法', weiliaozi: '尉缭子', sanlue: '三略', guiguzi: '鬼谷子', zhanguoce: '战国策', suwen: '黄帝内经·素问', lingshu: '黄帝内经·灵枢', shanghanlun: '伤寒论', bencaojing: '神农本草经', luozhijing: '罗织经', rongkujian: '小人经', quanmou: '权谋术', taohuishu: '韬晦术', zhixue: '止学', liutao: '六韬', jinkui: '金匮要略', nanjing: '难经', 'zhuangzi-waipian': '庄子外篇', 'zhuangzi-zapian': '庄子杂篇', liezi: '列子', yijiaojing: '佛遗教经', badaren: '八大人觉经', amituojing: '阿弥陀经', xinxinming: '信心铭', zhengdaoge: '永嘉证道歌', daxuewen: '大学问', xunzi: '荀子', yanshi: '颜氏家训', jinsilu: '近思录', weimojie: '维摩诘经', huangting: '黄庭内景经', shijing: '诗经', wuzhenpian: '悟真篇',
   changduanjing: '长短经', caigentan: '菜根谭', weiluyehua: '围炉夜话', xiaochuangyouji: '小窗幽记', weigongwendui: '李卫公问对',
-  tangshi300: '唐诗三百首', songci300: '宋词三百首', yuanqu: '元曲选',
+  tangshi300: '唐诗三百首', songci300: '宋词三百首', yuanqu: '元曲选', guwenguanzhi: '古文观止',
   yuanhai: '渊海子平', zhenquan: '子平真诠', ditiansui: '滴天髓阐微', qiongtong: '穷通宝鉴',
   sanming: '三命通会', wuxingdayi: '五行大义', lixuzhong: '李虚中命书', luoluzi: '珞琭子三命消息赋', yuzhao: '玉照定真经' }
 const REF = {
@@ -147,6 +149,7 @@ const REF = {
   tangshi: '清·蘅塘退士原选;喻守真《唐诗三百首详析》、金性尧《唐诗三百首新注》、《全唐诗》',
   songci: '朱孝臧原选;唐圭璋《宋词三百首笺注》、龙榆生《唐宋词格律》、《全宋词》',
   yuanqu: '隋树森《全元散曲》、王季思《元散曲选注》、《太平乐府》《阳春白雪》',
+  guwen: '吴楚材、吴调侯原评(本站底本已剔,可参其意);杜预《左传》注、韦昭《国语》注、裴骃/司马贞/张守节《史记》三家注、李善《文选》注、各家文集通行注本',
   // 命理三家(旺衰/格局/调候)原注家;不得引用徐乐吾、韦千里、袁树珊等民国以后人的评注(版权与站规双重考量)。
   mingli: '任铁樵(《滴天髓阐微》)、沈孝瞻(《子平真诠》)、余春台(《穷通宝鉴》整理);不得引用徐乐吾、韦千里、袁树珊等民国以后人的评注',
 }
@@ -172,9 +175,24 @@ const TIELU_SHI = '【铁律·诗词曲研习】唐诗/宋词/元曲取文学与
   + '延伸:讲创作本事(须分清史实与传说,相传者标「相传」)、意象源流(「杨柳」何以关送别)、声律安排、后世化用、同题异作对读。'
   + '**⛔ 全程不作心灵鸡汤、不作励志格言、不作人生启示与处世哲理发挥**(给诗写「人生启示」比译错一个字更糟);'
   + '不把作者生平当诗意的唯一解;不作现实影射(边塞诗不读成当代国际关系);不把传说当史实。'
+// 古文(集部,2026-10-01 T6)。与诗词曲同属文学研习,但它是散文:讲清楚这篇说了什么事、怎么说的(章法/句法/对仗/用典),
+// 史传文按史事训读,不作现代政治影射;论说文如实呈现其主张(韩愈《原道》辟佛老、苏洵《六国论》等),不替古人站队。
+const TIELU_WEN = '【铁律·古文研习】古文取文章学与文献研习视角。'
+  + '译文:**一段对一段,句意对句意**,不缩写、不合并、不臆补;骈文(滕王阁序/北山移文/阿房宫赋)的对仗句译文也两两对着译,保留意象与铺陈,不把四六句压成一句大白话;'
+  + '典故直译出字面、考释放注疏(「冯唐易老,李广难封」译「冯唐容易老去,李广难得封侯」,不在译文里塞「用《汉书》典」);'
+  + '「之乎者也」语气词照语气译出;称谓、官名、地名、年号照直译,注疏释之;歧解取通行说、分歧写进注疏。'
+  + '注疏:只注**读不懂的**(僻字、通假、专名、典故、名物、职官、地理、文体术语),**不注情感、不注主旨**;每条 ≤40 字、term 须原文精确子串、无 ref。'
+  + '延伸:讲作者与写作本事(须分清史实与传说,相传者标「相传」)、文体(记/序/书/表/说/论/铭/赋/祭文各自的体例)、章法与名句、后世评价与流传(哪几句成了成语);'
+  + '史传类(左传/国语/战国策/史记)延伸讲史事背景与叙事笔法,**不作现代政治影射**;论说类如实呈现其立场,不替古人站队、不作今日是非评判。'
+  + '**⛔ 全程不作心灵鸡汤、不作励志格言、不作人生启示与处世哲理发挥**(给《岳阳楼记》写「职场启示」比译错一个字更糟);不把作者生平当文意的唯一解;不把传说当史实。'
 const FILE = (c, b) => '/Users/gavin/work/hexagram/src/data/' + c + '/classics/' + b + '.json'
 
 function styleRule(u) {
+  if (u.corpus === 'guwen') {
+    return TIELU_WEN + ' 参' + REF.guwen + '。'
+      + ' 《古文观止》一篇一章,章题即篇题(个别带作者名,如「李斯谏逐客书」);底本已剔去二吴的夹注与篇末总评,只存原文,长篇按句末分段。'
+      + ' 延伸(每篇 1–2 段)第一段讲这篇的作者、本事与文体,第二段讲章法名句与流传;篇中出处(左传某公某年/史记某篇)如实标出。'
+  }
   if (u.corpus === 'tangshi' || u.corpus === 'songci' || u.corpus === 'yuanqu') {
     const base = TIELU_SHI + ' 参' + REF[u.corpus] + '。'
     if (u.corpus === 'tangshi') {
@@ -290,7 +308,7 @@ function verifyPrompt(u, draft) {
   const len = u.end - u.start + 1
   const isFakeMoulue = u.corpus === 'moulue' && MOULUE_FAKE_BOOKS.has(u.book)
   const isRealMoulue = u.corpus === 'moulue' && !MOULUE_FAKE_BOOKS.has(u.book)
-  const isShi = u.corpus === 'tangshi' || u.corpus === 'songci' || u.corpus === 'yuanqu'
+  const isShi = u.corpus === 'tangshi' || u.corpus === 'songci' || u.corpus === 'yuanqu' || u.corpus === 'guwen'   // 古文同诗:不鸡汤、不注主旨
   const fixT = isShi
     ? '译文里凡属解读(点明情怀、主旨、寓意、艺术效果)的半截一律删去,只留字面直译;典故解释从译文移入注疏;注疏里凡注情感/主旨者删;词牌曲牌首见而未注明「调名,与内容无关」者补注'
     : u.corpus === 'zhongyi' ? '注疏/延伸中删去诊疗指导、方药功效用法用量、病症/疗效断语、养生医嘱'

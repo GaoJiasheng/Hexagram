@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { StarIcon, PenIcon, LinkIcon, CheckIcon, CardIcon } from '../../reader/ActIcons.jsx'
 
 export default function MarkableBlock({
@@ -27,19 +26,26 @@ export default function MarkableBlock({
   const note = notes[markKey]
   const isEditing = editingKey === markKey
   const copied = copiedKey === anchorId
-  const [actsOpen, setActsOpen] = useState(false)   // 触屏:点段尾小点才展开操作(T7)
+  // 触屏:点段尾小点才展开操作(T7)。**不用 useState**——MarkableBlock.test.jsx 把本组件当普通函数直接调用来检查返回的树,
+  // 组件里一有 hook 就抛 Invalid hook call;这里的展开/收起只是一个 class 的开关,直接在 DOM 上翻即可(桌面端该按钮不显示)。
+  const toggleActs = (e) => {
+    const box = e.currentTarget.parentElement
+    const open = box.classList.toggle('para-actions--open')
+    e.currentTarget.setAttribute('aria-expanded', open ? 'true' : 'false')
+    e.currentTarget.setAttribute('aria-label', open ? '收起段落操作' : '段落操作')
+  }
 
   return (
     <>
       <div className="detail-quotable" id={anchorOnParent ? undefined : anchorId}>
         {children}
-        <div className={`para-actions ${actsOpen ? 'para-actions--open' : ''}`}>
+        <div className="para-actions">
           <button
             type="button"
             className="para-dot"
-            aria-label={actsOpen ? '收起段落操作' : '段落操作'}
-            aria-expanded={actsOpen}
-            onClick={() => setActsOpen((v) => !v)}
+            aria-label="段落操作"
+            aria-expanded="false"
+            onClick={toggleActs}
           />
           <button
             type="button"

@@ -16,7 +16,9 @@ import DaoduEntry from './DaoduEntry.jsx'
 //     点诗题直落那一首(连同它所在的屏 ?p= 一起带上,与阅读页侧栏同一套锚点);
 //   · 一首一章的书(宋词三百首、元曲选):章即是首,平铺成多列列表。
 // 组里若还有别的书(宋词补遗),在末尾一行「另收」列出,不与主书争版面。
-export default function SingleBookHome({ corpus, slug, title, subtitle, basePath, brand, disclaimer, texts }) {
+// volumes(古文观止):一篇一章但原书分十二卷,目录按卷分段列篇 [{no,title,from,to}](章号区间,闭区间);
+// 章对象若带 source(出处/作者,管线 chapterMeta 并入),篇题旁以小字显出。
+export default function SingleBookHome({ corpus, slug, title, subtitle, basePath, brand, disclaimer, texts, volumes }) {
   usePageTitle(null, brand)
   const meta = getMeta(corpus, slug)
   const [chapters, setChapters] = useState(null)
@@ -30,6 +32,14 @@ export default function SingleBookHome({ corpus, slug, title, subtitle, basePath
   const tier = sizeTier(slug)
   const others = (texts || []).filter((t) => t.slug !== slug)
   const poemBook = !!meta?.poemTitles
+  const renderFlat = (c) => (
+    <li key={c.no}>
+      <Link to={`${basePath}/${slug}/${c.no}`} className={c.no === resumeCh ? 'book-toc__link--current' : ''}>
+        <span className="book-toc__no">{c.no}</span>{c.title || `第 ${c.no} ${meta.sectionUnit}`}
+        {c.source && <span className="book-toc__src">{c.source}</span>}
+      </Link>
+    </li>
+  )
   const totalPoems = chapters
     ? (poemBook ? chapters.reduce((n, c) => n + (chapterAnchors(c, meta)?.length || 0), 0) : chapters.length)
     : null
@@ -73,7 +83,7 @@ export default function SingleBookHome({ corpus, slug, title, subtitle, basePath
 
       <section className="dao-text-sections book-home__toc">
         <h2 className="dao-text-sections__title">
-          目录{chapters ? (poemBook ? ` · ${chapters.length} ${meta.sectionUnit} ${totalPoems} 首` : ` · ${chapters.length} 首`) : ''}
+          目录{chapters ? (poemBook ? ` · ${chapters.length} ${meta.sectionUnit} ${totalPoems} 首` : ` · ${chapters.length} ${meta.sectionUnit || '首'}`) : ''}
         </h2>
         {!chapters ? (
           <div className="dao-section-grid" aria-label="目录载入中" aria-busy="true">
@@ -106,15 +116,21 @@ export default function SingleBookHome({ corpus, slug, title, subtitle, basePath
               </div>
             )
           })
+        ) : volumes?.length ? (
+          volumes.map((v) => (
+            <div key={v.no} className="book-toc__group">
+              <div className="book-toc__head book-toc__head--static">
+                <span className="book-toc__name">{v.title}</span>
+                <span className="book-toc__count">{v.to - v.from + 1} {meta.sectionUnit}</span>
+              </div>
+              <ul className="book-toc__poems book-toc__poems--flat">
+                {chapters.filter((c) => c.no >= v.from && c.no <= v.to).map((c) => renderFlat(c))}
+              </ul>
+            </div>
+          ))
         ) : (
           <ul className="book-toc__poems book-toc__poems--flat">
-            {chapters.map((c) => (
-              <li key={c.no}>
-                <Link to={`${basePath}/${slug}/${c.no}`} className={c.no === resumeCh ? 'book-toc__link--current' : ''}>
-                  <span className="book-toc__no">{c.no}</span>{c.title || `第 ${c.no} ${meta.sectionUnit}`}
-                </Link>
-              </li>
-            ))}
+            {chapters.map((c) => renderFlat(c))}
           </ul>
         )}
       </section>
