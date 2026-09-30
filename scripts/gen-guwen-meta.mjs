@@ -24,8 +24,8 @@ for (const raw of wt.split('\n')) {
   const h = line.match(/^==\s*\[\[\/卷(\d+)\|([^\]]+)\]\]\s*==$/)
   if (h) {
     // 「卷一　周文」→ title「卷一 · 周文」
-    const [zh, era] = t2s(h[2]).split(/[\s　]+/)
-    vol = { no: Number(h[1]), title: era ? `${zh} · ${era}` : zh, from: pieces.length + 1, to: pieces.length }
+    const [zh, ...era] = t2s(h[2]).split(/[\s　]+/)   // 「卷七　六朝　唐文」是三段,余下的全并入(曾只取一段,卷七丢了「唐文」)
+    vol = { no: Number(h[1]), title: era.length ? `${zh} · ${era.join(' ')}` : zh, from: pieces.length + 1, to: pieces.length }
     volumes.push(vol)
     continue
   }

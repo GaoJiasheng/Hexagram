@@ -723,7 +723,8 @@ async function main() {
     if (book.stripInnerSpaces) {
       const CJK = '[\\u3400-\\u9fff\\u{20000}-\\u{2ffff}\\u3000-\\u303f\\uff00-\\uffef\\u2018-\\u201f「」『』!?:;,.]'
       const re = new RegExp(`(?<=${CJK})[ \\t]+(?=${CJK})`, 'gu')
-      for (const c of chapters) for (const p of c.paragraphs) p.original = p.original.replace(re, '')
+      // 夹注剔掉后还会留下「、。」「，。」一类双标点(底本把注放在顿号之后、句号之前:「今天下三分、{{*|蜀吴魏}}。益州」),并成句末那一个
+      for (const c of chapters) for (const p of c.paragraphs) p.original = p.original.replace(re, '').replace(/[、，]([。！？；])/g, '$1')
     }
     // splitLongParas(N):底本把一整篇排成一段(报任安书 2800 余字一段),译文/白话/收藏都按段索引,一段太长就没法读。
     // 按句末标点(。！？及其后紧随的」』)切成句子,再贪心攒成 ≤N 字的段;单句超 N 不硬拆。**只分段不动字**,
