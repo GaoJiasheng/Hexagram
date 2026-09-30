@@ -235,16 +235,8 @@ function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings, neu
             ☯
           </NavLink>
         )}
-        {neutral ? null : otherSite ? (
-          // 恰两站的组(易道):直接互切到另一站,钮上显目标站名(道藏 ⇄ / 易经 ⇄)
-          <NavLink to={otherSite.home} className="module-switch" title={`切到${switchTargetName(otherSite)}`}>
-            {switchTargetName(otherSite)} ⇄
-          </NavLink>
-        ) : canSwitch && (
-          <button className="module-switch" onClick={onPortal} aria-label="切换站点" title="切换站点">
-            {module.switchLabel} ⇄
-          </button>
-        )}
+        {/* 桌面右上角的组内互切钮(易经 ⇄ / 道藏 ⇄)2026-10-01 按 owner 意见去掉:首页门户与易经首页的「道藏研读」格已够用。
+            手机底栏的同款项仍在(MobileNav),要一起去掉删 registry 里 mobileSwitch 即可。 */}
       </div>
     </nav>
   )

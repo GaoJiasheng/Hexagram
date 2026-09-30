@@ -123,7 +123,7 @@
 - 新增页面/重交互组件:互动信息勿仅挂 hover(补 click/键盘);新读经站搜索由 registry `searchKind` 驱动;长页优先 content-visibility;新增懒加载页天然受 ErrorBoundary 兜底〔`searchKind` 已不驱动面板:现为全站统一 `GlobalSearchPalette`,registry `hasSearch` 只管显不显搜索钮〕
 - **平台工程(部署 / PWA / 搜索 / check-data / 阅读器)**:加新站照 CLAUDE.md 头部「如何加一个新站」六步,平台代码零改动;新增页面必须接 usePageTitle;新增重数据组件优先懒加载;新增设置项加 `DEFAULT_SETTINGS`+白名单;读经新交互走 markCtx 锚;新读经站自动获 /me(App 路由表数组加 key)
 - 阅读器:新单页长经自动获 scroll-spy(走 ClassicReader single 模式即可);新读经站走 ClassicReader 即自动获金句卡;OG:index.html 只有站点级 og,逐页 og 由 `functions/_middleware.js` 对爬虫 UA 用 HTMLRewriter 注入(按路径哈希取 `/content/og/<n>.json` 分片,哈希与 `server/og-index.js` 逐字一致);普通浏览器看到站点级是设计如此;新读经站 disclaimer 走 ScriptureShelf prop;备份/里程碑各 /me 自动生效(走 getStudyStats);新读经站默认接搜索(hasSearch+CORPUS_SEARCH_SITES);新分章书篇目自动显示 title〔CORPUS_SEARCH_SITES 已随统一搜索删除,只剩 hasSearch〕
-- 门户:`FAMILIES` 只是门户呈现分组,不动 registry `group`,新组不在表里落「其他」;组卡片印章/悬停色走 registry.accent;恰两站的组(易道)Nav 切换钮直达另一站
+- 门户:`FAMILIES` 只是门户呈现分组,不动 registry `group`,新组不在表里落「其他」;组卡片印章/悬停色走 registry.accent;恰两站的组(易道)手机底栏切换项直达另一站〔桌面右上角的切换钮 2026-10-01 按 owner 意见已去掉〕
 - 前端:勿用 rAF——headless 后台 rAF 被节流;勿依赖 RR `<Link>` 的 ref 转发;教训:content-visibility:auto 的 paint 包含会裁溢出子元素——浮层/tooltip 必须 portal 出去或保证落在元素框内(横向溢出安全、纵向溢出被裁);弹窗经 `createPortal` 渲染到 `document.body`
 - 内容资源:`src/data/*/baihua/*.json` 仍是唯一真源,`public/content/` 是构建产物(gitignore);搜索恒全站(原「本站/全站」开关取消)
 - 部署:改 web 代码后上线 = `npm run build` → `npx wrangler pages deploy dist --project-name=hexa-gavin-pub`(owner 2026-07-14 改口用 CLI,不再拖后台;阿里云 `./deploy.sh` 已废弃);改完发 iOS 新版 `./ship-ios.sh`〔发不发等 owner 开口;详见「部署」节〕
