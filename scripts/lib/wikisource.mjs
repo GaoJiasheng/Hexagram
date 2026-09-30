@@ -17,6 +17,8 @@ export const t2s = (s) => t2sRaw(s.replaceAll('乾', '\uE000')).replaceAll('\uE0
 
 // ---------- wikitext 清洗 ----------
 export function clean(raw) {
+  // 维基文库缺字记法「■{X}」(黑方块 + 花括号里的替代字,如《庄子·天运》「柤■{梨}橘柚」):取替代字,去方块(2026-10-01,M4 抽查发现)
+  raw = raw.replace(/■\{([^{}]{1,3})\}/g, '$1')
   let s = raw
   s = s.replace(/-\{([^{}]*?)\}-/g, (_, inner) => inner.replace(/^[A-Za-z]\|/, '')) // -{乾}- / -{T|xx}-
   s = s.replace(/(.)\{\{[另别別]\|\1\|[^{}]*\}\}/g, '$1') // 校注式「另作」:模板首参与前字相同时是对前字的校注(如「三君{{另|君|聖}}」),去重不增字
