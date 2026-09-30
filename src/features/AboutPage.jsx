@@ -55,7 +55,7 @@ export default function AboutPage() {
       <section className="about-section">
         <h2 className="about-section__title">你的数据</h2>
         <p><strong>不登录</strong>时,收藏、笔记、推演历史、研习进度<strong>只存于此浏览器的 localStorage,不上传任何服务器</strong>;清缓存或换设备会丢失,请在<strong>设置 → 数据管理</strong>里定期「导出全部数据」做备份。</p>
-        <p><strong>登录后</strong>,这些足迹会同步到服务器,以便换设备接着读;账号本身只保存一个邮箱地址。随时可以退出登录,导出/清空本地数据的按钮照常可用。详见 <Link to="/privacy">隐私政策</Link>。</p>
+        <p><strong>登录后</strong>,这些足迹会同步到服务器,以便换设备接着读;账号本身只保存一个邮箱地址。随时可以退出登录,导出/清空本地数据的按钮照常可用。登录后还会默认记录<strong>阅读时长</strong>(读了哪本书哪一章、读了多久),仅用作网站优化,可在设置里关闭,自己的记录可在 <Link to="/stats">研读统计</Link> 查看。详见 <Link to="/privacy">隐私政策</Link>。</p>
       </section>
 
       <section className="about-section" id="community">

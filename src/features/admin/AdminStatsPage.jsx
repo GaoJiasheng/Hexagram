@@ -10,6 +10,13 @@ import bingTexts from '../../data/bing/texts.json'
 import zongTexts from '../../data/zong/texts.json'
 import zhongyiTexts from '../../data/zhongyi/texts.json'
 import moulueTexts from '../../data/moulue/texts.json'
+import guwenTexts from '../../data/guwen/texts.json'
+import tangshiTexts from '../../data/tangshi/texts.json'
+import songciTexts from '../../data/songci/texts.json'
+import yuanquTexts from '../../data/yuanqu/texts.json'
+import mingliTexts from '../../data/mingli/texts.json'
+import SchoolAvatar from '../auth/SchoolAvatar.jsx'
+import ReadHeatmap from '../reading/ReadHeatmap.jsx'
 import { useAuth } from '../auth/AuthContext.jsx'
 import { commentPageUrl } from '../comments/commentPageUrl.js'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
@@ -17,6 +24,8 @@ import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 const PASSPHRASE_KEY = 'guanxiang.admin.passphrase'
 const STATS_URL = '/api/admin/stats'
 const COMMENTS_URL = '/api/admin/comments'
+const READERS_URL = '/api/admin/readers'
+const STAT_WINDOWS = [['today', '今天'], ['d7', '近 7 天'], ['d30', '近 30 天'], ['all', '全部']]
 const ADMIN_HEADER = 'X-Admin-Passphrase'
 
 const SITE_BY_KEY = Object.fromEntries(SITES.map((site) => [site.key, site]))
@@ -33,6 +42,11 @@ const BOOK_BY_SLUG = new Map([
   ...zongTexts,
   ...zhongyiTexts,
   ...moulueTexts,
+  ...guwenTexts,
+  ...tangshiTexts,
+  ...songciTexts,
+  ...yuanquTexts,
+  ...mingliTexts,
 ].map((book) => [book.slug, book]))
 const YIJING_CLASSICS = {
   'xici-shang': '系辞上传',
@@ -110,6 +124,27 @@ function normalizeStats(raw) {
   if (!raw || typeof raw !== 'object') throw new Error('invalid stats response')
 
   return {
+    window: typeof raw.window === 'string' ? raw.window : 'd7',
+    windowEvents: safeNumber(raw.windowEvents),
+    activeClients: safeNumber(raw.activeClients),
+    returningClients: safeNumber(raw.returningClients),
+    medianDwellMs: safeNumber(raw.medianDwellMs),
+    dwellHistogram: Array.isArray(raw.dwellHistogram)
+      ? raw.dwellHistogram
+        .filter((row) => row && typeof row.label === 'string')
+        .map((row) => ({ id: String(row.id || row.label), label: row.label, count: safeNumber(row.count) }))
+      : [],
+    topByDwell: Array.isArray(raw.topByDwell)
+      ? raw.topByDwell
+        .filter((row) => row && row.corpus != null && row.slug != null && row.chapter != null)
+        .map((row) => ({
+          corpus: String(row.corpus),
+          slug: String(row.slug),
+          chapter: String(row.chapter),
+          totalMs: safeNumber(row.totalMs),
+          count: safeNumber(row.count),
+        }))
+      : [],
     totalEvents: safeNumber(raw.totalEvents),
     dailyCounts: Array.isArray(raw.dailyCounts)
       ? raw.dailyCounts
@@ -366,11 +401,12 @@ function topChapterLabel(row) {
   }
 }
 
-function TopChapters({ rows }) {
-  const visible = rows.filter((row) => row.count > 0).slice(0, 10)
+function TopChapters({ rows, byDwell = false }) {
+  const metric = (row) => (byDwell ? row.totalMs : row.count)
+  const visible = rows.filter((row) => metric(row) > 0).slice(0, 10)
   if (!visible.length) return <EmptyState label="暂无读经章节数据" />
 
-  const maximum = Math.max(...visible.map((row) => row.count), 1)
+  const maximum = Math.max(...visible.map(metric), 1)
   return (
     <ol className="admin-top-list">
       {visible.map((row, index) => {
@@ -381,12 +417,12 @@ function TopChapters({ rows }) {
             <div className="admin-top-list__body">
               <div className="admin-top-list__line">
                 <span><strong>{label.book}</strong><span className="admin-top-list__chapter"> / {label.chapter}</span></span>
-                <span className="admin-top-list__count">{NUMBER.format(row.count)} 次</span>
+                <span className="admin-top-list__count">{byDwell ? `${formatDwell(row.totalMs)} · ${NUMBER.format(row.count)} 次` : `${NUMBER.format(row.count)} 次`}</span>
               </div>
               <span className="admin-top-list__track" aria-hidden="true">
                 <span
                   className="admin-top-list__bar"
-                  style={{ width: `${Math.max(2, (row.count / maximum) * 100)}%`, background: corpusColor(row.corpus) }}
+                  style={{ width: `${Math.max(2, (metric(row) / maximum) * 100)}%`, background: corpusColor(row.corpus) }}
                 />
               </span>
             </div>
@@ -401,12 +437,169 @@ function formatDwell(milliseconds) {
   const seconds = Math.round(milliseconds / 1000)
   if (seconds < 60) return `${seconds} 秒`
   const minutes = Math.floor(seconds / 60)
+  if (minutes >= 60) {
+    const hours = Math.floor(minutes / 60)
+    const rest = minutes % 60
+    return rest ? `${hours} 小时 ${rest} 分` : `${hours} 小时`
+  }
   const remainder = seconds % 60
   return remainder ? `${minutes} 分 ${remainder} 秒` : `${minutes} 分`
 }
 
 function EmptyState({ label = '暂无数据' }) {
   return <div className="admin-stats__empty">{label}</div>
+}
+
+function formatSec(sec) {
+  return formatDwell((Number(sec) || 0) * 1000)
+}
+
+function localDay(ms = Date.now()) {
+  const d = new Date(ms)
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+}
+
+function DwellHistogram({ rows }) {
+  const total = rows.reduce((sum, row) => sum + row.count, 0)
+  if (!total) return <EmptyState />
+  const maximum = Math.max(...rows.map((row) => row.count), 1)
+  return (
+    <ol className="admin-hist">
+      {rows.map((row) => (
+        <li key={row.id} className="admin-hist__row">
+          <span className="admin-hist__label">{row.label}</span>
+          <span className="admin-hist__track" aria-hidden="true"><span className="admin-hist__bar" style={{ width: `${Math.max(1, (row.count / maximum) * 100)}%` }} /></span>
+          <span className="admin-hist__count">{NUMBER.format(row.count)} · {Math.round((row.count / total) * 100)}%</span>
+        </li>
+      ))}
+    </ol>
+  )
+}
+
+function bookTitle(corpus, slug) {
+  if (corpus === 'yijing') return slug === 'hexagrams' ? '易经' : (YIJING_CLASSICS[slug] || slug)
+  return BOOK_BY_SLUG.get(slug)?.title || slug
+}
+
+// 读者详情:从其 readDays 原图算 近一年热力 + 章级明细(不引 booksIndex,后台保持轻量)
+function aggregateReader(days, today) {
+  const heatMap = new Map()
+  const chapters = new Map()
+  for (const [k, e] of Object.entries(days || {})) {
+    const [day, corpus, slug, ch] = k.split('|')
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(day) || !e || typeof e !== 'object') continue
+    const sec = Number(e.sec) || 0
+    const n = Number(e.n) || 0
+    heatMap.set(day, (heatMap.get(day) || 0) + sec)
+    if (corpus && slug) {
+      const id = `${corpus}|${slug}|${ch || ''}`
+      const cur = chapters.get(id) || { corpus, slug, chapter: ch || '', sec: 0, n: 0, lastDay: '' }
+      cur.sec += sec
+      cur.n += n
+      if (day > cur.lastDay) cur.lastDay = day
+      chapters.set(id, cur)
+    }
+  }
+  const heat = []
+  const base = new Date(`${today}T00:00:00`)
+  for (let i = 364; i >= 0; i--) {
+    const d = new Date(base)
+    d.setDate(d.getDate() - i)
+    const day = localDay(d.getTime())
+    heat.push({ day, sec: heatMap.get(day) || 0 })
+  }
+  const rows = [...chapters.values()].sort((a, b) => b.sec - a.sec).slice(0, 60)
+  return { heat, rows }
+}
+
+function ReaderDetail({ userId, credential }) {
+  const [state, setState] = useState({ loading: true, error: '', data: null })
+  useEffect(() => {
+    const controller = new AbortController()
+    const options = { method: 'GET', credentials: 'same-origin', cache: 'no-store', signal: controller.signal }
+    if (credential) options.headers = { [ADMIN_HEADER]: credential }
+    setState({ loading: true, error: '', data: null })
+    fetch(`${READERS_URL}/${encodeURIComponent(userId)}`, options)
+      .then(async (response) => {
+        const data = await response.json().catch(() => null)
+        if (!response.ok) throw new Error(data?.error || '读者明细读取失败')
+        setState({ loading: false, error: '', data: aggregateReader(data.readDays, localDay()) })
+      })
+      .catch((error) => { if (error.name !== 'AbortError') setState({ loading: false, error: error.message, data: null }) })
+    return () => controller.abort()
+  }, [userId, credential])
+  if (state.loading) return <p className="admin-comments__state">正在读取…</p>
+  if (state.error) return <p className="admin-comments__state" role="alert">{state.error}</p>
+  const { heat, rows } = state.data
+  return (
+    <div className="admin-reader-detail">
+      <ReadHeatmap heat={heat} />
+      {rows.length === 0 ? <EmptyState label="没有章级记录" /> : (
+        <table className="admin-reader-table">
+          <thead><tr><th>书 / 章</th><th>时长</th><th>次</th><th>最近</th></tr></thead>
+          <tbody>
+            {rows.map((row) => {
+              const label = topChapterLabel(row)
+              return (
+                <tr key={`${row.corpus}|${row.slug}|${row.chapter}`}>
+                  <td><strong>{label.book}</strong>{row.chapter ? <span className="admin-top-list__chapter"> / {label.chapter}</span> : null}</td>
+                  <td>{formatSec(row.sec)}</td>
+                  <td>{NUMBER.format(row.n)}</td>
+                  <td>{row.lastDay}</td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      )}
+    </div>
+  )
+}
+
+function Readers({ readers, loading, error, win, credential, onRetry }) {
+  const [openId, setOpenId] = useState(null)
+  const winId = win === 'all' ? 'all' : win
+  return (
+    <section className="admin-comments admin-readers" aria-labelledby="admin-readers-title">
+      <div className="admin-comments__head">
+        <div>
+          <h2 id="admin-readers-title">读者</h2>
+          <p>开着「把我的研读时长计入账号」的登录用户;只看昵称与时长,不显示邮箱。按最近活跃排序。</p>
+        </div>
+        <span>{readers.length} 人</span>
+      </div>
+      {loading && <p className="admin-comments__state">正在读取读者…</p>}
+      {!loading && error && (
+        <p className="admin-comments__state" role="alert">{error} <button type="button" className="btn-text" onClick={onRetry}>重试</button></p>
+      )}
+      {!loading && !error && readers.length === 0 && <p className="admin-comments__state">还没有用户上传阅读时长。</p>}
+      {!loading && !error && readers.length > 0 && (
+        <ol className="admin-readers__list">
+          {readers.map((r) => {
+            const open = openId === r.userId
+            return (
+              <li key={r.userId} className={`admin-readers__item${open ? ' admin-readers__item--open' : ''}`}>
+                <button type="button" className="admin-readers__row" onClick={() => setOpenId(open ? null : r.userId)} aria-expanded={open}>
+                  <SchoolAvatar seed={r.avatarSeed} size={30} />
+                  <span className="admin-readers__name">
+                    <strong>{r.displayName}</strong>
+                    <small>最近 {r.lastDay || '—'} · 活跃 {r.activeDays} 天</small>
+                  </span>
+                  <span className="admin-readers__nums">
+                    <b>{formatSec(r.sec[winId] ?? r.sec.all)}</b>
+                    <small>{win === 'all' ? '累计' : STAT_WINDOWS.find(([id]) => id === win)?.[1]} · 累计 {formatSec(r.sec.all)}</small>
+                  </span>
+                  <span className="admin-readers__books">{r.top.slice(0, 3).map((b) => bookTitle(b.corpus, b.slug)).join(' · ') || '—'}</span>
+                  <span aria-hidden="true" className="admin-readers__chev">{open ? '▾' : '▸'}</span>
+                </button>
+                {open && <ReaderDetail userId={r.userId} credential={credential} />}
+              </li>
+            )
+          })}
+        </ol>
+      )}
+    </section>
+  )
 }
 
 function PassphraseForm({ draft, error, onChange, onSubmit }) {
@@ -527,6 +720,11 @@ export default function AdminStatsPage() {
   const [commentsActionError, setCommentsActionError] = useState('')
   const [commentsRetryKey, setCommentsRetryKey] = useState(0)
   const [moderatingCommentId, setModeratingCommentId] = useState(null)
+  const [win, setWin] = useState('d7')
+  const [readers, setReaders] = useState([])
+  const [readersLoading, setReadersLoading] = useState(false)
+  const [readersError, setReadersError] = useState('')
+  const [readersRetryKey, setReadersRetryKey] = useState(0)
   const { user, openAuth } = useAuth()
   const retriedUserId = useRef(null)
 
@@ -545,7 +743,7 @@ export default function AdminStatsPage() {
       }
       if (passphrase) options.headers = { [ADMIN_HEADER]: passphrase }
 
-      const response = await fetch(STATS_URL, options)
+      const response = await fetch(`${STATS_URL}?window=${encodeURIComponent(win)}`, options)
       const data = await response.json().catch(() => null)
       return { response, data }
     }
@@ -624,7 +822,7 @@ export default function AdminStatsPage() {
 
     loadStats()
     return () => controller.abort()
-  }, [credential, retryKey])
+  }, [credential, retryKey, win])
 
   useEffect(() => {
     const userId = user?.id ?? null
@@ -669,6 +867,24 @@ export default function AdminStatsPage() {
 
     return () => controller.abort()
   }, [mode, credential, commentsRetryKey])
+
+  useEffect(() => {
+    if (mode !== 'stats') return undefined
+    const controller = new AbortController()
+    const options = { method: 'GET', credentials: 'same-origin', cache: 'no-store', signal: controller.signal }
+    if (credential) options.headers = { [ADMIN_HEADER]: credential }
+    setReadersLoading(true)
+    setReadersError('')
+    fetch(`${READERS_URL}?today=${localDay()}`, options)
+      .then(async (response) => {
+        const data = await response.json().catch(() => null)
+        if (!response.ok) throw new Error(data?.error || '读者列表读取失败,请稍后重试')
+        setReaders(Array.isArray(data?.readers) ? data.readers : [])
+      })
+      .catch((error) => { if (error.name !== 'AbortError') setReadersError(error.message) })
+      .finally(() => { if (!controller.signal.aborted) setReadersLoading(false) })
+    return () => controller.abort()
+  }, [mode, credential, readersRetryKey])
 
   function submitPassphrase(event) {
     event.preventDefault()
@@ -770,12 +986,33 @@ export default function AdminStatsPage() {
         <>
           <div className="admin-stats__summary">
             累计 <strong>{NUMBER.format(stats.totalEvents)}</strong> 条阅读事件
+            <span className="admin-stats__summary-win"> · 当前窗口 <strong>{NUMBER.format(stats.windowEvents)}</strong> 条</span>
+          </div>
+
+          <div className="seg-control admin-stats__win" role="tablist" aria-label="时间窗">
+            {STAT_WINDOWS.map(([id, label]) => (
+              <button key={id} role="tab" aria-selected={win === id} className={`seg-btn ${win === id ? 'seg-btn--active' : ''}`} onClick={() => setWin(id)}>{label}</button>
+            ))}
+          </div>
+
+          <div className="admin-metrics">
+            <div className="admin-metric"><strong>{NUMBER.format(stats.activeClients)}</strong><span>活跃人数(去重匿名编号)</span></div>
+            <div className="admin-metric"><strong>{NUMBER.format(stats.returningClients)}</strong><span>回访人数(≥ 2 次)</span></div>
+            <div className="admin-metric"><strong>{stats.windowEvents ? formatDwell(stats.medianDwellMs) : '—'}</strong><span>停留中位数</span></div>
           </div>
 
           <div className="admin-stats__grid">
             <section className="admin-stat-card admin-stat-card--wide">
               <div className="admin-stat-card__head">
-                <h2>七日曲线</h2>
+                <h2>停留分布</h2>
+                <span>当前窗口最近 2 万条</span>
+              </div>
+              <DwellHistogram rows={stats.dwellHistogram} />
+            </section>
+
+            <section className="admin-stat-card admin-stat-card--wide">
+              <div className="admin-stat-card__head">
+                <h2>{stats.dailyCounts.length > 7 ? '三十日曲线' : '七日曲线'}</h2>
                 <span>事件数 / 日</span>
               </div>
               <DailyChart rows={stats.dailyCounts} />
@@ -791,10 +1028,18 @@ export default function AdminStatsPage() {
 
             <section className="admin-stat-card admin-stat-card--wide">
               <div className="admin-stat-card__head">
-                <h2>书 / 章 Top 10</h2>
+                <h2>书 / 章 Top 10 · 按次数</h2>
                 <span>仅含读经页面</span>
               </div>
               <TopChapters rows={stats.topChapters} />
+            </section>
+
+            <section className="admin-stat-card admin-stat-card--wide">
+              <div className="admin-stat-card__head">
+                <h2>书 / 章 Top 10 · 按时长</h2>
+                <span>活跃时长合计</span>
+              </div>
+              <TopChapters rows={stats.topByDwell} byDwell />
             </section>
 
             <section className="admin-stat-card admin-stat-card--wide">
@@ -816,9 +1061,9 @@ export default function AdminStatsPage() {
             <section className="admin-stat-card admin-stat-card--dwell">
               <div className="admin-stat-card__head">
                 <h2>平均停留</h2>
-                <span>每条阅读事件</span>
+                <span>当前窗口每条事件</span>
               </div>
-              {stats.totalEvents > 0 ? (
+              {stats.windowEvents > 0 ? (
                 <div className="admin-dwell">
                   <strong>{formatDwell(stats.avgDwellMs)}</strong>
                   <span>{NUMBER.format(Math.round(stats.avgDwellMs))} ms</span>
@@ -826,6 +1071,15 @@ export default function AdminStatsPage() {
               ) : <EmptyState />}
             </section>
           </div>
+
+          <Readers
+            readers={readers}
+            loading={readersLoading}
+            error={readersError}
+            win={win}
+            credential={credential}
+            onRetry={() => setReadersRetryKey((key) => key + 1)}
+          />
 
           <RecentComments
             comments={recentComments}

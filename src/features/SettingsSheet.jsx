@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import FontFamilyControl from './reader/FontFamilyControl.jsx'
 import { useSettings } from './yijing/SettingsContext.jsx'
-import { FONT_SCALE_STEPS, exportData, importData, clearAllData, getLastSyncAt } from './yijing/storage.js'
+import { FONT_SCALE_STEPS, exportData, importData, clearAllData, getLastSyncAt, getReadDays, saveSettings } from './yijing/storage.js'
+import { computeStats, fmtSec } from './reading/readStats.js'
+import { READ_STATS_NOTE } from './StatsPage.jsx'
 import { useAuth } from './auth/AuthContext.jsx'
 import { syncNow } from './auth/sync.js'
 import { apiFetch } from './auth/apiClient.js'
@@ -36,6 +38,12 @@ export default function SettingsSheet({ open, onClose }) {
   const [closing, setClosing] = useState(false)
   const [closeConfirm, setCloseConfirm] = useState('')
   const [lastSyncAt, setLastSyncAt] = useState(getLastSyncAt)
+  // 研读统计三数(今天 / 近 7 天 / 累计)——浮层打开时算一次即可,数据在本机
+  const [readSummary, setReadSummary] = useState(null)
+  useEffect(() => {
+    if (!open) return
+    try { const s = computeStats(getReadDays(), []); setReadSummary({ today: s.windows.today.sec, d7: s.windows.d7.sec, all: s.windows.all.sec }) } catch { setReadSummary(null) }
+  }, [open])
 
   // 锁背景滚动 + Esc 关闭 + 关闭还原焦点
   useEffect(() => {
@@ -111,6 +119,21 @@ export default function SettingsSheet({ open, onClose }) {
       setLastSyncAt(getLastSyncAt())
     } finally {
       setSyncing(false)
+    }
+  }
+
+  // 「把我的研读时长计入账号」:关 → 立刻删服务端那一行、此后同步不再带;开 → 下次同步把本机记录补上去
+  async function toggleShareReading() {
+    const next = settings.shareReading === false
+    // 先落盘再同步:setSettings 的写入在 React 更新器里跑,不是同步的;getSyncSnapshot 读的是 storage
+    saveSettings({ ...settings, shareReading: next })
+    setSettings({ shareReading: next })
+    if (!user) return
+    try {
+      if (next) await syncNow()
+      else await apiFetch('/api/me/reading', { method: 'DELETE' })
+    } catch {
+      setAccountError(next ? '同步失败,稍后会自动重试' : '云端记录删除失败,请稍后再关一次')
     }
   }
 
@@ -231,6 +254,19 @@ export default function SettingsSheet({ open, onClose }) {
                     {syncing ? '同步中…' : '立即同步'}
                   </button>
                 </div>
+                <div className="settings-account__share">
+                  <label>
+                    <span><strong>把我的研读时长计入账号</strong><small>{READ_STATS_NOTE}关闭后只留在本机。</small></span>
+                    <button
+                      type="button"
+                      className={`toggle-btn ${settings.shareReading !== false ? 'toggle-btn--on' : ''}`}
+                      aria-pressed={settings.shareReading !== false}
+                      onClick={toggleShareReading}
+                    >
+                      {settings.shareReading !== false ? '开' : '关'}
+                    </button>
+                  </label>
+                </div>
                 {/* owner 才出这一行。它只是**入口**,不是权限本身 —— /admin/stats 的内容
                     全部来自 /api/admin/stats,服务端逐次校验会话是不是 owner,
                     藏起这个链接不等于保护,露出来也不等于放行。 */}
@@ -296,6 +332,17 @@ export default function SettingsSheet({ open, onClose }) {
             {accountError && <p className="auth-sheet__error" role="alert">{accountError}</p>}
           </div>
         )}
+
+        <div className="settings-section settings-read">
+          <h3 className="settings-section__title">研读统计</h3>
+          <div className="settings-read__row">
+            {[['今天', readSummary?.today], ['近 7 天', readSummary?.d7], ['累计', readSummary?.all]].map(([l, v]) => (
+              <span key={l} className="settings-read__cell"><strong>{readSummary ? fmtSec(v) : '—'}</strong><small>{l}</small></span>
+            ))}
+            <Link to="/stats" className="btn-text settings-read__more" onClick={onClose}>查看详情 →</Link>
+          </div>
+          <p className="settings-privacy settings-read__note">{READ_STATS_NOTE}</p>
+        </div>
 
         <div className="settings-section">
           <h3 className="settings-section__title">主题</h3>

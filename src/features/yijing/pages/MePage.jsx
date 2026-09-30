@@ -8,6 +8,8 @@ import { useSettings } from '../SettingsContext.jsx'
 import { lineTitle } from '../engine/transforms.js'
 import { LEARN_TOPICS, topicStatus } from '../learnTopics.js'
 import { usePageTitle } from '../hooks/usePageTitle.js'
+import { getReadDays } from '../storage.js'
+import { computeStats, fmtSec } from '../../reading/readStats.js'
 
 const TABS = ['收藏', '笔记', '逐句标记', '推演历史', '研习', '设置']
 
@@ -170,6 +172,7 @@ export default function MePage() {
     <div className="me-page">
       <div className="page-header">
         <h1 className="page-title">我的</h1>
+        {(() => { const rs = computeStats(getReadDays(), [], { corpus: 'yijing' }).windows; return rs.all.sec > 0 ? <p className="me-read-line text-faint">本组累计 {fmtSec(rs.all.sec)} · 近 7 天 {fmtSec(rs.d7.sec)} · <Link to="/stats">研读统计 →</Link></p> : null })()}
       </div>
 
       <div className="tabs">

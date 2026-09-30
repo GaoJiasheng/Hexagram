@@ -9,6 +9,7 @@ import {
 } from '../../server/google-auth.js'
 import { sendCommentNotification } from '../../server/comment-notification.js'
 import { isAdminUser } from '../../server/admin.js'
+import { summarizeReadDays, dwellHistogram, median, isDayString } from '../../server/read-stats.js'
 import { AUTO_HIDE_REPORTS, screenComment } from '../../server/content-filter.js'
 import {
   mergeCollectionEntry,
@@ -34,10 +35,11 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 // Keep this backend allow-list in sync with DATA_KEYS in
 // src/features/yijing/storage.js. It is intentionally duplicated so the API
 // never trusts a client-provided key as a D1 row key.
-const DATA_KEYS = ['settings', 'quoteTheme', 'bookmarks', 'notes', 'divinations', 'reading', 'recentHexagrams', 'progress', 'corpusMarks', 'corpusNotes']
+const DATA_KEYS = ['settings', 'quoteTheme', 'bookmarks', 'notes', 'divinations', 'reading', 'readPos', 'recentHexagrams', 'progress', 'corpusMarks', 'corpusNotes', 'readDays']
 const DATA_KEY_SET = new Set(DATA_KEYS)
-const SCALAR_DATA_KEYS = new Set(['settings', 'quoteTheme', 'reading', 'recentHexagrams', 'notes'])
-const MAP_DATA_KEYS = new Set(['corpusMarks', 'corpusNotes', 'bookmarks'])
+// readPos(段级续读,客户端 2026-07-30 起就在发)此前漏登记 → 服务端整包拒收 400、云同步两个月静默失效;2026-10-01 补上,按整体最新胜出(同 reading)
+const SCALAR_DATA_KEYS = new Set(['settings', 'quoteTheme', 'reading', 'readPos', 'recentHexagrams', 'notes'])
+const MAP_DATA_KEYS = new Set(['corpusMarks', 'corpusNotes', 'bookmarks', 'readDays'])
 const SYNC_DEFAULTS = {
   settings: null,
   quoteTheme: null,
@@ -45,10 +47,12 @@ const SYNC_DEFAULTS = {
   notes: null,
   divinations: [],
   reading: null,
+  readPos: {},
   recentHexagrams: [],
   progress: {},
   corpusMarks: {},
   corpusNotes: {},
+  readDays: {},   // 阅读时长日聚合(研读统计):day|corpus|slug|ch|dev → {sec, n, at};用户关掉「计入账号」即 DELETE /me/reading
 }
 
 // Pages Functions receives the original /api/* URL, so keep the public prefix
@@ -818,6 +822,19 @@ app.patch('/me', async (c) => {
 // users 上挂的外键都是 ON DELETE CASCADE,删一行即连带清掉:
 // identities(登录方式)/ sessions(会话)/ user_data(云同步足迹)/ comments(评论)
 // / comment_reports(其发出的举报)/ user_blocks(其屏蔽名单)。
+// 「把我的研读时长计入账号」关掉时调:只删 readDays 这一行,其余足迹不动。开回来由下次 /sync 自然补上。
+app.delete('/me/reading', async (c) => {
+  try {
+    const user = await requireUser(c)
+    await getDb(c).prepare("DELETE FROM user_data WHERE user_id = ? AND key = 'readDays'").bind(user.id).run()
+    return c.json({ ok: true })
+  } catch (error) {
+    if (error instanceof RequestError) return c.json({ ok: false, error: error.message }, error.status)
+    console.error('Reading data deletion failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
 app.delete('/me', async (c) => {
   try {
     const user = await requireUser(c)
@@ -1323,14 +1340,90 @@ app.post('/beat', async (c) => {
   return c.body(null, 204)
 })
 
+// 读者(研读统计 2026-10-01,docs/reading-stats-plan.md §7.2 ④):开着「把我的研读时长计入账号」的用户,
+// 昵称 + 头像种子,**不返回邮箱**;四窗时长 / 次数、最近活跃日、常读的书(前 5)。today 由客户端传本地日期。
+function readerToday(c) {
+  const q = c.req.query('today')
+  return isDayString(q) ? q : new Date().toISOString().slice(0, 10)
+}
+
+app.get('/admin/readers', async (c) => {
+  const today = readerToday(c)
+  try {
+    const result = await getDb(c).prepare(`
+      SELECT d.user_id, d.value, d.updated_at, u.display_name, u.avatar_seed
+      FROM user_data d JOIN users u ON u.id = d.user_id
+      WHERE d.key = 'readDays'
+    `).all()
+    const readers = []
+    for (const row of resultRows(result)) {
+      let days
+      try { days = JSON.parse(row.value) } catch { continue }
+      const s = summarizeReadDays(days, today)
+      if (s.sec.all <= 0) continue
+      readers.push({
+        userId: row.user_id,
+        displayName: row.display_name,
+        avatarSeed: row.avatar_seed,
+        updatedAt: Number(row.updated_at) || 0,
+        lastDay: s.lastDay,
+        activeDays: s.days,
+        sec: s.sec,
+        n: s.n,
+        top: s.top,
+      })
+    }
+    readers.sort((a, b) => (b.lastDay || '').localeCompare(a.lastDay || '') || b.sec.all - a.sec.all)
+    return c.json({ today, readers })
+  } catch (error) {
+    console.error('Admin readers query failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
+// 单个读者:原样返回其 readDays(客户端用同一套 computeStats 画热力图与章级明细)
+app.get('/admin/readers/:id', async (c) => {
+  const userId = c.req.param('id')
+  try {
+    const row = await getDb(c).prepare(`
+      SELECT d.value, d.updated_at, u.display_name, u.avatar_seed
+      FROM user_data d JOIN users u ON u.id = d.user_id
+      WHERE d.key = 'readDays' AND d.user_id = ?
+    `).bind(userId).first()
+    if (!row) return c.json({ ok: false, error: 'not found' }, 404)
+    let days = {}
+    try { days = JSON.parse(row.value) } catch { days = {} }
+    return c.json({
+      userId,
+      displayName: row.display_name,
+      avatarSeed: row.avatar_seed,
+      updatedAt: Number(row.updated_at) || 0,
+      readDays: days && typeof days === 'object' && !Array.isArray(days) ? days : {},
+    })
+  } catch (error) {
+    console.error('Admin reader query failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
+// 时间窗(研读统计 2026-10-01):today / d7 / d30 / all。窗口作用于分组热度、Top、停留、地理与新指标;
+// 「累计事件数」恒为全部;七日曲线在 d30 时拉成 30 天。
+const STATS_WINDOW_DAYS = { today: 1, d7: 7, d30: 30, all: 0 }
+const MEDIAN_SAMPLE_LIMIT = 20_000
+
 app.get('/admin/stats', async (c) => {
+  const windowId = Object.hasOwn(STATS_WINDOW_DAYS, c.req.query('window')) ? c.req.query('window') : 'd7'
+  const windowDays = STATS_WINDOW_DAYS[windowId]
   const todayStart = utcDayStart(Date.now())
-  const rangeStart = todayStart - (6 * DAY_MS)
+  const chartDays = windowId === 'd30' ? 30 : 7
+  const rangeStart = todayStart - ((chartDays - 1) * DAY_MS)
   const rangeEnd = todayStart + DAY_MS
+  // 窗口下界:all → 0(不限)
+  const winStart = windowDays > 0 ? todayStart - ((windowDays - 1) * DAY_MS) : 0
 
   try {
     const db = getDb(c)
-    const [totalResult, dailyResult, corpusResult, chaptersResult, dwellResult, geoResult] = await db.batch([
+    const [totalResult, dailyResult, corpusResult, chaptersResult, dwellResult, geoResult, activeResult, returningResult, dwellTopResult, dwellSampleResult] = await db.batch([
       db.prepare('SELECT COUNT(*) AS count FROM reading_events'),
       db.prepare(`
         SELECT date(ts / 1000.0, 'unixepoch') AS date, COUNT(*) AS count
@@ -1342,39 +1435,71 @@ app.get('/admin/stats', async (c) => {
       db.prepare(`
         SELECT corpus, COUNT(*) AS count
         FROM reading_events
+        WHERE ts >= ?
         GROUP BY corpus
         ORDER BY count DESC
-      `),
+      `).bind(winStart),
       db.prepare(`
         SELECT corpus, slug, chapter, COUNT(*) AS count
         FROM reading_events
-        WHERE corpus IS NOT NULL
+        WHERE ts >= ?
+          AND corpus IS NOT NULL
           AND slug IS NOT NULL
           AND chapter IS NOT NULL
         GROUP BY corpus, slug, chapter
         ORDER BY count DESC
         LIMIT 10
-      `),
-      db.prepare('SELECT AVG(dwell_ms) AS average FROM reading_events'),
+      `).bind(winStart),
+      db.prepare('SELECT AVG(dwell_ms) AS average, COUNT(*) AS count FROM reading_events WHERE ts >= ?').bind(winStart),
       // Grouped by (country, region) so the response can be re-aggregated two
       // ways: country-only for the world ranking, region-level for China.
       db.prepare(`
         SELECT country, region, COUNT(*) AS count
         FROM reading_events
-        WHERE country IS NOT NULL
+        WHERE ts >= ? AND country IS NOT NULL
         GROUP BY country, region
         ORDER BY count DESC
         LIMIT 500
-      `),
+      `).bind(winStart),
+      db.prepare('SELECT COUNT(DISTINCT client_id) AS count FROM reading_events WHERE ts >= ?').bind(winStart),
+      db.prepare(`
+        SELECT COUNT(*) AS count FROM (
+          SELECT client_id FROM reading_events WHERE ts >= ? GROUP BY client_id HAVING COUNT(*) >= 2
+        )
+      `).bind(winStart),
+      db.prepare(`
+        SELECT corpus, slug, chapter, SUM(dwell_ms) AS total, COUNT(*) AS count
+        FROM reading_events
+        WHERE ts >= ?
+          AND corpus IS NOT NULL
+          AND slug IS NOT NULL
+          AND chapter IS NOT NULL
+        GROUP BY corpus, slug, chapter
+        ORDER BY total DESC
+        LIMIT 10
+      `).bind(winStart),
+      db.prepare('SELECT dwell_ms FROM reading_events WHERE ts >= ? ORDER BY ts DESC LIMIT ?').bind(winStart, MEDIAN_SAMPLE_LIMIT),
     ])
 
     const dailyByDate = new Map(
       resultRows(dailyResult).map((row) => [row.date, countValue(row.count)]),
     )
-    const dailyCounts = Array.from({ length: 7 }, (_, index) => {
+    const dailyCounts = Array.from({ length: chartDays }, (_, index) => {
       const date = new Date(rangeStart + (index * DAY_MS)).toISOString().slice(0, 10)
       return { date, count: dailyByDate.get(date) ?? 0 }
     })
+
+    const dwellSample = resultRows(dwellSampleResult).map((row) => Number(row.dwell_ms))
+    const windowEvents = countValue(resultRows(dwellResult)[0]?.count)
+    const activeClients = countValue(resultRows(activeResult)[0]?.count)
+    const returningClients = countValue(resultRows(returningResult)[0]?.count)
+    const topByDwell = resultRows(dwellTopResult).map((row) => ({
+      corpus: row.corpus,
+      slug: row.slug,
+      chapter: row.chapter,
+      totalMs: countValue(row.total),
+      count: countValue(row.count),
+    }))
 
     const corpusCounts = new Map()
     for (const row of resultRows(corpusResult)) {
@@ -1415,6 +1540,13 @@ app.get('/admin/stats', async (c) => {
       .slice(0, 40)
 
     return c.json({
+      window: windowId,
+      windowEvents,
+      activeClients,
+      returningClients,
+      medianDwellMs: median(dwellSample),
+      dwellHistogram: dwellHistogram(dwellSample),
+      topByDwell,
       totalEvents: countValue(resultRows(totalResult)[0]?.count),
       dailyCounts,
       corpusHeat,

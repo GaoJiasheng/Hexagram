@@ -4,7 +4,7 @@ const PREFIX = 'guanxiang.v1.'
 
 // Keep this client list in sync with the independent backend allow-list in
 // functions/api/[[route]].js.
-export const DATA_KEYS = ['settings', 'quoteTheme', 'bookmarks', 'notes', 'divinations', 'reading', 'readPos', 'recentHexagrams', 'progress', 'corpusMarks', 'corpusNotes']
+export const DATA_KEYS = ['settings', 'quoteTheme', 'bookmarks', 'notes', 'divinations', 'reading', 'readPos', 'recentHexagrams', 'progress', 'corpusMarks', 'corpusNotes', 'readDays']
 const DATA_KEY_SET = new Set(DATA_KEYS)
 const SYNC_DEFAULTS = {
   settings: null,
@@ -13,10 +13,12 @@ const SYNC_DEFAULTS = {
   notes: null,
   divinations: [],
   reading: null,
+  readPos: {},   // 段级续读(2026-07-30 起入 DATA_KEYS 却漏了默认值:没读过段的用户会发 value=undefined → 服务端 400)
   recentHexagrams: [],
   progress: {},
   corpusMarks: {},
   corpusNotes: {},
+  readDays: {},   // 阅读时长日聚合(研读统计,2026-10-01):day|corpus|slug|ch|dev → {sec, n, at}
 }
 let applyingSyncResult = false
 
@@ -75,6 +77,8 @@ export const DEFAULT_SETTINGS = {
   quoteTheme: 'classic', // 'classic'(朱印经典) | 'ink'(水墨留白) | 'moon'(暗夜月白)
   // 诗词曲格律层(design-v24 §7.3):唐诗/宋词/元曲阅读页原文下标 平仄 ○●◐ 与句末韵部。默认关——开了才载韵书。
   prosody: false,
+  // 研读统计(2026-10-01 owner 定默认开):登录后把阅读时长日聚合随同步计入账号,仅收阅读时长、用于网站优化;关了只留本机
+  shareReading: true,
 }
 const VALID_THEMES = ['light', 'paper-white', 'dark', 'system']
 const VALID_FONT_SCALES = FONT_SCALE_STEPS.map(([value]) => value)
@@ -343,6 +347,8 @@ export function getSyncSnapshot(now = Date.now()) {
   if (metaChanged) {
     try { localStorage.setItem(key('syncMeta'), JSON.stringify(nextMeta)) } catch { /* best effort */ }
   }
+  // 「把我的研读时长计入账号」关着:阅读时长只留本机,不上传
+  if (getSettings()?.shareReading === false) delete snapshot.readDays
   return snapshot
 }
 
@@ -353,6 +359,7 @@ export function applySyncSnapshot(data, syncedAt = Date.now()) {
   applyingSyncResult = true
   try {
     for (const dataKey of DATA_KEYS) {
+      if (dataKey === 'readDays' && getSettings()?.shareReading === false) continue   // 开关关着:本机的时长记录不被云端(可能已清空)覆盖
       const entry = data?.[dataKey]
       const value = entry && Object.hasOwn(entry, 'value') ? entry.value : SYNC_DEFAULTS[dataKey]
       if (!set(dataKey, value)) {
@@ -405,4 +412,48 @@ export function importData(data) {
 
 export function clearAllData() {
   for (const k of DATA_KEYS) remove(k)
+}
+
+// ── 阅读时长(研读统计,2026-10-01;算法在 src/features/reading/readStats.js)──────
+// readDays(入同步):day|corpus|slug|ch|dev → {sec, n, at}。dev 是本浏览器随机 id,与匿名埋点的 cid 无关、永不相连;
+// 键含设备,跨设备合并零冲突(newest-wins 只发生在同一设备的自增上)。本机保留 400 天。
+// readRecent(不同步):最近 300 次会话,给「最近看过」。
+const READ_KEEP_DAYS = 400
+const READ_MAX_KEYS = 2500
+export function getReadDeviceId() {
+  const cur = get('readDev', null)
+  if (typeof cur === 'string' && cur.length >= 8) return cur
+  const id = (globalThis.crypto?.randomUUID?.() || `${Date.now().toString(36)}${Math.random().toString(36).slice(2)}`).replace(/-/g, '').slice(0, 16)
+  try { localStorage.setItem(key('readDev'), JSON.stringify(id)) } catch { /* best effort */ }
+  return id
+}
+function localDayOf(ms) {
+  const d = new Date(ms)
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+}
+export function getReadDays() { const v = get('readDays', {}); return v && typeof v === 'object' && !Array.isArray(v) ? v : {} }
+export function getReadRecent() { const v = get('readRecent', []); return Array.isArray(v) ? v : [] }
+export function recordReadSession(ev) {
+  if (!ev || !(ev.sec >= 0)) return
+  const days = getReadDays()
+  const k = `${localDayOf(ev.t)}|${ev.corpus || ''}|${ev.slug || ''}|${ev.ch || ''}|${getReadDeviceId()}`
+  const e = days[k] && typeof days[k] === 'object' ? days[k] : { sec: 0, n: 0 }
+  e.sec = Math.round((Number(e.sec) || 0) + ev.sec)
+  if (!ev.partial) e.n = (Number(e.n) || 0) + 1
+  e.at = new Date().toISOString()
+  days[k] = e
+  const floor = localDayOf(Date.now() - READ_KEEP_DAYS * 86400000)
+  for (const kk of Object.keys(days)) if (kk.slice(0, 10) < floor) delete days[kk]
+  // 键数封顶(云同步单值上限 200 KB,≈3000 键):超了从最早的日子起丢
+  let keys = Object.keys(days)
+  if (keys.length > READ_MAX_KEYS) {
+    keys.sort()
+    for (const kk of keys.slice(0, keys.length - READ_MAX_KEYS)) delete days[kk]
+  }
+  set('readDays', days)
+  const list = getReadRecent()
+  const i = list.findIndex((r) => r && r.id === ev.id)
+  if (i >= 0) list[i] = { ...list[i], sec: Math.round((list[i].sec || 0) + ev.sec) }
+  else list.unshift({ id: ev.id, t: ev.t, corpus: ev.corpus || null, slug: ev.slug || null, ch: ev.ch || null, sec: Math.round(ev.sec) })
+  set('readRecent', list.slice(0, 300))
 }

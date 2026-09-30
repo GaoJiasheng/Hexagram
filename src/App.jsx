@@ -11,6 +11,7 @@ import { setupBackButton } from './native/backButton.js'
 import { setupDeepLinks } from './native/deepLink.js'
 import { useTelemetry } from './features/telemetry.js'
 import { ensureSerifFont } from './features/fonts.js'
+import { useReadClock } from './features/reading/readClock.js'
 
 // 全站搜索面板按需加载:搜索页面、经典、正文、白话、注疏、专题。
 const GlobalSearchPalette = lazy(() => import('./features/search/GlobalSearchPalette.jsx'))
@@ -103,11 +104,12 @@ const AdminStatsPage = lazy(() => import('./features/admin/AdminStatsPage.jsx'))
 
 // 中立外壳路径(总门户 / 义理专题 / 百家争鸣):不套分站 nav/搜索/底栏,域名着陆豁免
 function isNeutralPath(p) {
-  return p === '/' || p === MASTER_PORTAL_PATH || p === '/concepts' || p === '/timeline' || p === '/renwu' || p === '/mingju' || p === '/rhyme' || p === '/privacy' || p === '/ba' || p === '/legal' || p === '/admin/stats' || p === '/debates' || p.startsWith('/debates/') || p === '/zhuzi' || p === '/books' || p.startsWith('/books/')
+  return p === '/' || p === MASTER_PORTAL_PATH || p === '/concepts' || p === '/stats' || p === '/timeline' || p === '/renwu' || p === '/mingju' || p === '/rhyme' || p === '/privacy' || p === '/ba' || p === '/legal' || p === '/admin/stats' || p === '/debates' || p.startsWith('/debates/') || p === '/zhuzi' || p === '/books' || p.startsWith('/books/')
 }
 // 全站设置浮层(Tier 0):任何站 nav 齿轮就地打开(主题/字号/译文 + 数据导出导入)
 const SettingsSheet = lazy(() => import('./features/SettingsSheet.jsx'))
 const Colophon = lazy(() => import('./features/Colophon.jsx'))
+const StatsPage = lazy(() => import('./features/StatsPage.jsx'))
 
 // 站点注册迁至 src/sites/registry.js(v14):平台读 manifest,加站零改平台代码
 
@@ -308,7 +310,8 @@ function AppContent() {
   const location = useLocation()
   const navigate = useNavigate()
   const [backHint, setBackHint] = useState('')   // 安卓「再按一次退出」的提示
-  useTelemetry(location)
+  useReadClock(location)   // 活跃时长时钟(研读统计);匿名埋点订阅它的事件
+  useTelemetry()
   // 正文衬线字体按需加载(T2 方案 A):首页、门户与各组首页不下 Noto,进任何别的页才载
   useEffect(() => {
     const p = location.pathname
@@ -533,6 +536,7 @@ function AppContent() {
           {/* 2026-09-30 owner:「/hexagram 直接指向首页即可」——总门户与首页合一;老链接 / 已分享地址仍通 */}
           <Route path={MASTER_PORTAL_PATH} element={<Navigate to="/" replace />} />
           <Route path="/concepts" element={<ConceptsPage />} />
+          <Route path="/stats" element={<StatsPage />} />
           <Route path="/rhyme" element={<RhymeBooksPage />} />
           <Route path="/timeline" element={<TimelinePage />} />
           <Route path="/renwu" element={<RenwuPage />} />

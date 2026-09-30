@@ -13,11 +13,11 @@
 
 ### ⏸ 2026-10-01 暂停点(额度到线,owner:「没做完的整理好 todo,后面续上」)
 
-**已上生产**:老师首次打开 T4/T7/T9 · 易经首页改版 + 两层导读 · 古文研读组(《古文观止》222 篇 + 课本古文补编 23 篇,译注延/导读全成,白话 46/245)· 全站索引已同步(名句 79 / 时间轴两书 + 二吴 / 义理专题两处 / 关于页凡例 / feed·搜索·og·书目·篇幅档自动)。
+**已上生产**:老师首次打开 T4/T7/T9 · 易经首页改版 + 两层导读 · 古文研读组(《古文观止》222 篇 + 课本古文补编 23 篇,译注延/导读全成,白话 **59/245**)· 全站索引已同步(名句 79 / 时间轴两书 + 二吴 / 义理专题两处 / 关于页凡例 / feed·搜索·og·书目·篇幅档自动)· **10-01 续:B8 邮箱统一 hexa@gavin.pub · B9 字体方案 A(阅读页按需加载)· A4 跋顶栏入口 + 手机顶栏去 ☯、底栏补「我的」· A6 二维码卡已交 · A2 研读统计全套(见续跑 ③,已落地)**。
 
-**续跑 ① 古文白话铺完(剩 199 章:古文观止 176 + 补编 23,owner 定「都跑完」,起草校对皆 opus)**
+**续跑 ① 古文白话铺完(剩 186 章:古文观止 163 + 补编 23,owner 定「都跑完」,起草校对皆 opus;10-01 周额度打到 99% 停在这里,等 owner reset)**
 1. 起批前 `get_usage` 看额度:一批 12 章 ≈ 3.2M token(≈周额度 3 个点),24 章 ≈ 6.4M;5 小时窗口 ≥85% 或周 ≥97% 就别起(中途撞线会丢代理)。
-2. 现成脚本 `scripts/.baihua-guwen-guwenguanzhi-wf.js`(第 1–14 篇,13 单元,已生成未起跑)→ `Workflow({scriptPath})`。
+2. 现成脚本 `scripts/.baihua-guwen-guwenguanzhi-wf.js`(**第 15–39 篇,24 单元**,baihua-step 已生成未起跑)→ `Workflow({scriptPath})`。
 3. 每批完成:`node scripts/baihua-step.mjs <该 workflow 的 .output 文件>` → 自动装配 / check-data / 提交 / 算下一批(CAP 24)/ gen 下一个脚本并打印 `LAUNCH …` → 再 `Workflow`。打印 `DONE` 即全成。
    要小批就手动 `node scripts/gen-baihua-wf.mjs guwen guwenguanzhi <from> <to> --verify-model=opus`(gen 自动跳过已有章;补编是 `guwen kewen`)。
 4. 全成后:`npm run build` → `npx --yes wrangler pages deploy dist --project-name=hexa-gavin-pub --commit-dirty=true` → 核入口哈希;再 `node scripts/harvest-mingju.mjs guwen` 看新候选名句,挑几条补进 `scripts/authored/mingju-extra/guwen.json` → `node scripts/build-mingju.mjs --write`。
@@ -25,11 +25,11 @@
 
 **续跑 ② 等 owner 定**
 
-**续跑 ③ 研读统计(owner 10-01 已定:A + B + C,开关默认开,「仅收集阅读时长数据,用作网站优化」;先盘 TODO 后一起做)**
-方案定稿 `docs/reading-stats-plan.md` §7,六步:① `readClock` 活跃时长时钟 + 本机 `readDays`(同步)/`readRecent`(本机)+ telemetry 改为只发送 ② `readStats` + `/stats` 页 + 设置节 + 各组 /me 一行 ③ 服务端 `readDays` 入 DATA_KEYS + `DELETE /me/reading` + `/admin/readers(/:id)` + `/admin/stats?window=` ④ 管理员页扩展(时间窗 / 人数 / 中位数 / 直方图 / 按时长 Top / 读者栏,不显示邮箱)⑤ 文案四处同口径(隐私页 §一/§二/新 §五、关于页、设置开关旁、/stats 页尾)⑥(可后置)`reading_events` 90 天滚存表。约 3–3.5 天。
-- 「课本文言文索引」页(`/guwen/textbook` 一类:按七上→高选必下列课本篇目,每篇指到站内所在处——古文观止 / 补编 / 论语孟子庄子列子…,方案 `docs/guwen-textbook-list.md` §四第 2 条)。
-- 补编里的《孙权劝学》去不去(资治通鉴一则,非人物传;暂留)。
-- 老师清单剩余各条(`docs/teacher-first-visit-plan.md`):T1 大陆实测(只有你能做)→ 视结果做 T2 字体方案 A/B;T3 关 Web Analytics(你一键);T5 跋顶栏入口;T8 手机顶栏去 ☯;T10 评论链路复测(Turnstile 大陆可达性);T11 邮箱统一;S3 二维码。
+**续跑 ③ 研读统计 —— ✅ 2026-10-01 ①–⑤ 全部落地并上生产**(方案 `docs/reading-stats-plan.md` §7):`src/features/reading/readClock.js`(活跃时长:可见 + 60 秒内有操作才计,单次封顶 1800 秒,换章/隐藏/pagehide 结清,满 300 秒先交「部分」)· `readDays`(入同步,键 `day|corpus|slug|ch|dev`,本机 400 天 / 2500 键封顶)· `readRecent`(本机)· telemetry 只订阅 `gx:read-session` 发 beat · `readStats.js` + `/stats` 页(四窗 / 热力 / 常读 / 最近看过)· 设置浮层「研读统计」三数 + 账号「把我的研读时长计入账号」开关(关 → `DELETE /api/me/reading`)· 各组 /me 一行 · 服务端 `readDays` 入 DATA_KEYS(MAP)+ `/admin/readers(/:id)` + `/admin/stats?window=`(活跃/回访/中位数/直方图/按时长 Top)· 后台读者栏(昵称 + 头像,不显示邮箱,点开热力 + 章级明细)· 隐私页新 §五 / 关于页 / 设置 / 页尾同口径。
+- **顺手修了一个两个月的生产 bug**:客户端 DATA_KEYS 自 07-30(段级续读)起就带 `readPos`,服务端白名单没加 → 每次 `/sync` 整包 400「unknown sync key: readPos」,登录用户的云同步一直静默失效;现服务端已登记(SCALAR)、客户端补默认值 `{}`。
+- 剩 ⑥(可后置)`reading_events` 90 天滚存表——量起来再做。
+- 「课本文言文索引」页 —— owner 10-01 定**不做**。补编《孙权劝学》—— owner 定**不去**。
+- 老师清单剩余:T1 大陆实测(只有你能做)· T3 关 Web Analytics(你一键)· A5/T10 评论链路复测(注册 + 评论 + Turnstile + 微信内置浏览器,**须 owner 用手机在生产上测**,我不能在生产注册账号)。T5/T8/T11/S3 已做。
 
 
 > **现状**:A / M / N 三张单全清,全部在生产 `hexa.gavin.pub`(入口哈希核过,568 测试 / check-data / check-links 全绿)。**我这边没有不等你就能开的活了**,下面全是要你看、要你拍板、要你动手的。
@@ -57,6 +57,8 @@
 - [ ] **O8 ICP 备案**:一通电话问清护照持有人怎么做人脸核验。
 
 ### R' · review 意见已改(owner 边看边提,即改即发)
+- 10-01 **A2 研读统计**(owner 定 C:默认开、明说「仅收集阅读时长数据,用作网站优化」):一个活跃时长时钟三处消费(本机统计 / 云同步 / 匿名埋点),`/stats` 四窗 + 近一年热力 + 常读 + 最近看过,设置浮层三数 + 账号开关(关即删服务端那行),各组 /me 一行,后台加时间窗 / 活跃回访 / 中位数 / 停留分布 / 按时长 Top / 读者栏(不显示邮箱,点开热力 + 章级明细),隐私页新 §五。本地 wrangler + D1 全链路验过(注册 → 同步 → 后台看到 → 关开关行删除 → 再开补传)。**顺手抓到云同步两个月静默失效的 400(`readPos` 漏登记)并修掉。**
+- 10-01 B8 联系邮箱统一 hexa@gavin.pub;B9 字体方案 A(正文衬线只在阅读页按需 import,首页/门户/组首页系统衬线);A4 桌面顶栏加「跋」、手机顶栏隐藏 ☯、底栏各站补「我的」;A6 二维码卡片(1600² PNG)已交;A3 课本索引页 owner 定不做;B7 孙权劝学不去。
 - 10-01 门户外壳左上角「观象」印章改真朱砂(原随门户墨调变灰)。
 - 10-01 跋:「凭什么信」改题「说明」并挪到联系方式之后(署名 → 缘起 → 联系方式 → 说明 → 协议 → 版本 → 鸣谢)。
 - 10-01 「老师首次打开」清单三件(owner 圈定 T4/T7/T9,方案见 `docs/teacher-first-visit-plan.md`):**T4** 首页首屏改文案不改布局——主张改「古书原文,一句一句读明白」、四个计数下移到「索引」段、首屏加跋里「缘起」第一段 + 「全文 → 跋」(自定义事件开落款浮层)+ 三条「第一次来从这里读起」入口,大模型只在跋里说;**T7** 段落操作按钮触屏默认收起、段尾 6px 小点点开(不用长按),★ ✎ 🔗 🖼 四枚换同一套线性 SVG(`reader/ActIcons.jsx`);**T9** index.html 的 description 数字改构建期从 stats.json 注入(vite `statsMeta` 插件 + check-data 闸,stats 加 `shelves`)、名句门牌「十四组」改「各组」、跋里版本号(停在 1.34.0 的假数)改显示构建提交号。T6《古文观止》新组开工中。

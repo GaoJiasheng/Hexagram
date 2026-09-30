@@ -14,7 +14,7 @@ export default function PrivacyPage() {
     <div className="basics-page about-page">
       <div className="page-header">
         <h1 className="page-title">隐私政策</h1>
-        <p className="page-subtitle text-soft">观象 · 个人学习站 · 更新于 2026-08-03</p>
+        <p className="page-subtitle text-soft">观象 · 个人学习站 · 更新于 2026-10-01</p>
       </div>
 
       <section className="about-section">
@@ -33,7 +33,7 @@ export default function PrivacyPage() {
           <li>昵称(默认取邮箱 @ 前半段,<strong>可自行修改</strong>)与头像编号;</li>
           <li>登录会话凭证。</li>
         </ul>
-        <p><strong>二、云端同步的研习数据(仅当你登录时)</strong>:收藏、批注、阅读与研习进度、推演历史、偏好设置。用途只有一个 —— 让你换设备后接着读。<strong>不做分析、不做画像、不出售、不共享。</strong></p>
+        <p><strong>二、云端同步的研习数据(仅当你登录时)</strong>:收藏、批注、阅读与研习进度、推演历史、偏好设置,以及阅读时长记录(见第五条)。用途只有一个 —— 让你换设备后接着读。<strong>不做分析、不做画像、不出售、不共享。</strong></p>
         <p><strong>三、评论与治理记录(仅当你发表或操作时)</strong>:评论正文、发表时间与所在章节;你提交的举报;你的屏蔽名单。<strong>评论与昵称是公开的</strong>,任何访客都能看到 —— 请不要在评论里写个人敏感信息。</p>
         <p><strong>四、匿名阅读统计</strong>(网页版,与账号<strong>不</strong>关联):</p>
         <ul className="about-list">
@@ -43,6 +43,13 @@ export default function PrivacyPage() {
           <li>粗粒度地理位置(国家/地区,部分情况精确到省/州级)——由 Cloudflare 在边缘节点根据连接 IP 自动解析后附加在请求上,<strong>本站服务端不读取、不记录、不存储原始 IP 地址本身</strong>,只保留解析后的国家/地区名称。</li>
         </ul>
         <p>该事件不含姓名、账号、邮箱、IP 或 User-Agent 指纹,<strong>也不与登录账号关联</strong>——即使你已登录,阅读埋点仍是匿名的、无法回溯到你。仅用于查看聚合阅读趋势与地区分布。数据存放在本站的 Cloudflare D1,不用于广告、画像或出售。</p>
+        <p><strong>五、阅读时长统计</strong>(登录后默认开启,可关):</p>
+        <ul className="about-list">
+          <li><strong>收什么</strong>:按「日 × 书 × 章」累计的阅读秒数与次数(例如「10 月 1 日 · 论语 · 学而 · 12 分钟 · 2 次」),以及一个本浏览器的随机设备编号,用来在多台设备间合并。<strong>不含</strong>具体时刻、页面路径、地理位置,也不与上一条的匿名编号(cid)相连。</li>
+          <li><strong>怎么算</strong>:只在页面可见、且最近一分钟内有过滚动或点击时计时;单次最多记 30 分钟。</li>
+          <li><strong>谁看得到</strong>:你自己(「研读统计」页与设置浮层);站长在后台可看到<strong>汇总趋势</strong>与<strong>按用户的时长视图</strong>(昵称、常读的书、逐日时长),不显示邮箱。仅用于了解哪些内容被读、读多久,以改进网站;<strong>不做画像、不出售、不共享</strong>。</li>
+          <li><strong>怎么关</strong>:设置 → 账号 → 关闭「把我的研读时长计入账号」。关闭后服务器上的这份记录<strong>立即删除</strong>,此后只留在本机;重新打开则从本机补传。不登录时这份记录始终只在本机。</li>
+        </ul>
       </section>
 
       <section className="about-section">

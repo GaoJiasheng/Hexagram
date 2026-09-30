@@ -1,4 +1,5 @@
 import { renderToStaticMarkup } from 'react-dom/server'
+import { MemoryRouter } from 'react-router-dom'
 import { describe, expect, it, vi } from 'vitest'
 import { SettingsProvider } from '../yijing/SettingsContext.jsx'
 
@@ -24,9 +25,11 @@ const { default: SettingsSheet } = await import('../SettingsSheet.jsx')
 describe('Settings cloud sync status', () => {
   it('shows status and the manual sync action only for a signed-in account', () => {
     const html = renderToStaticMarkup(
-      <SettingsProvider>
-        <SettingsSheet open onClose={() => {}} />
-      </SettingsProvider>,
+      <MemoryRouter>
+        <SettingsProvider>
+          <SettingsSheet open onClose={() => {}} />
+        </SettingsProvider>
+      </MemoryRouter>,
     )
     expect(html).toContain('云同步')
     expect(html).toContain('尚未同步过')

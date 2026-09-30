@@ -415,6 +415,7 @@ async function main() {
     '/shili',
     '/me',
     '/concepts',
+    '/stats',
     '/timeline',
     '/renwu',
     '/debates',

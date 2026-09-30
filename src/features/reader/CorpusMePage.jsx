@@ -3,7 +3,8 @@ import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import { SITE_MAP } from '../../sites/registry.js'
 import { corpusTexts } from './corpus.js'
 import { DAO_TEXTS } from '../dao/data.js'
-import { getCorpusMarks, getCorpusNotes, getReadingProgress, getStudyStats } from '../yijing/storage.js'
+import { getCorpusMarks, getCorpusNotes, getReadingProgress, getStudyStats, getReadDays } from '../yijing/storage.js'
+import { computeStats, fmtSec } from '../reading/readStats.js'
 
 // 收藏/批注累积里程碑文案(#149)——按总数给一句鼓励,温故之意
 function milestoneText(total) {
@@ -31,6 +32,7 @@ export default function CorpusMePage({ corpus }) {
   const notes = Object.values(getCorpusNotes()).filter((n) => n.corpus === corpus).sort((a, b) => (b.at || '').localeCompare(a.at || ''))
   const stats = getStudyStats()
   const progress = getReadingProgress()
+  const rs = computeStats(getReadDays(), [], { corpus }).windows
   const resume = metas
     .filter((t) => t.status !== 'pending' && !t.singlePage && t.sections > 1 && progress[t.slug] > 0)
     .map((t) => ({ slug: t.slug, ch: progress[t.slug] }))
@@ -45,6 +47,9 @@ export default function CorpusMePage({ corpus }) {
       <div className="page-header">
         <h1 className="page-title">我的 · {site.portalTitle}</h1>
         <p className="page-subtitle text-soft">本站的续读、收藏与批注(仅存本机)。</p>
+        {rs.all.sec > 0 && (
+          <p className="me-read-line text-faint">本组累计 {fmtSec(rs.all.sec)} · 近 7 天 {fmtSec(rs.d7.sec)} · <Link to="/stats">研读统计 →</Link></p>
+        )}
         {milestoneText(stats.total) && <p className="me-milestone">{milestoneText(stats.total)}</p>}
       </div>
 

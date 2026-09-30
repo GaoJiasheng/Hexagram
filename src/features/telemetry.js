@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { SITES } from '../sites/registry.js'
 
 const CID_KEY = 'guanxiang.v1.cid'
@@ -98,78 +98,22 @@ function pageFromLocation(location) {
   }
 }
 
-export function useTelemetry(location) {
+// 匿名埋点只做发送(2026-10-01 起):计时统一交给 src/features/reading/readClock.js(活跃时长口径,见 docs/reading-stats-plan.md §4),
+// 这里订阅它派发的 gx:read-session 事件,把 sec 作 dwell_ms 发 /api/beat。cid 与账号无关的承诺不变。
+export function useTelemetry() {
   const enabledRef = useRef(supportsTelemetryOrigin())
   const cidRef = useRef(null)
-  const latestPageRef = useRef(pageFromLocation(location))
-  const sessionRef = useRef(null)
-
-  latestPageRef.current = pageFromLocation(location)
-
-  const startSession = useCallback(() => {
-    if (!enabledRef.current || cidRef.current === null || document.visibilityState === 'hidden') return
-    sessionRef.current = {
-      page: latestPageRef.current,
-      startedAt: Date.now(),
-    }
-  }, [])
-
-  const flushSession = useCallback(() => {
-    const session = sessionRef.current
-    if (!session) return
-
-    // Clear first: visibilitychange(hidden) and pagehide commonly arrive back
-    // to back, and only the first event should produce a row.
-    sessionRef.current = null
-    navigator.sendBeacon(BEAT_URL, JSON.stringify({
-      cid: cidRef.current,
-      path: session.page.path,
-      corpus: session.page.corpus,
-      slug: session.page.slug,
-      chapter: session.page.chapter,
-      dwell_ms: Math.max(0, Date.now() - session.startedAt),
-    }))
-  }, [])
-
-  // Report the previous route in the new route's effect body. Deliberately do
-  // not report from cleanup: React StrictMode runs an extra setup/cleanup pass
-  // in development and would otherwise create a false initial event.
-  useEffect(() => {
-    if (!enabledRef.current) return
-    if (cidRef.current === null) cidRef.current = getOrCreateClientId()
-
-    const nextPage = latestPageRef.current
-    if (sessionRef.current?.page.key !== nextPage.key) {
-      flushSession()
-      startSession()
-    } else if (!sessionRef.current) {
-      startSession()
-    }
-  }, [location.pathname, location.hash, flushSession, startSession])
-
   useEffect(() => {
     if (!enabledRef.current) return undefined
-
-    function onVisibilityChange() {
-      if (document.visibilityState === 'hidden') flushSession()
-      else if (!sessionRef.current) startSession()
+    if (cidRef.current === null) cidRef.current = getOrCreateClientId()
+    const onSession = (e) => {
+      const ev = e.detail
+      if (!ev || !(ev.sec > 0)) return
+      navigator.sendBeacon(BEAT_URL, JSON.stringify({
+        cid: cidRef.current, path: ev.path, corpus: ev.corpus, slug: ev.slug, chapter: ev.ch, dwell_ms: Math.round(ev.sec * 1000),
+      }))
     }
-
-    function onPageHide() {
-      flushSession()
-    }
-
-    function onPageShow() {
-      if (!sessionRef.current) startSession()
-    }
-
-    document.addEventListener('visibilitychange', onVisibilityChange)
-    window.addEventListener('pagehide', onPageHide)
-    window.addEventListener('pageshow', onPageShow)
-    return () => {
-      document.removeEventListener('visibilitychange', onVisibilityChange)
-      window.removeEventListener('pagehide', onPageHide)
-      window.removeEventListener('pageshow', onPageShow)
-    }
-  }, [flushSession, startSession])
+    window.addEventListener('gx:read-session', onSession)
+    return () => window.removeEventListener('gx:read-session', onSession)
+  }, [])
 }
