@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { summarizeReadDays, dwellHistogram, median, windowStarts } from './read-stats.js'
+import { summarizeReadDays, dwellHistogram, median, windowStarts, mergeRankRows, mergeCorpusRows } from './read-stats.js'
 
 describe('summarizeReadDays', () => {
   it('四窗累加、跨设备键相加、未来日期与坏键忽略', () => {
@@ -38,5 +38,17 @@ describe('dwellHistogram / median', () => {
     expect(median([])).toBe(0)
     expect(median([5, 1, 3])).toBe(3)
     expect(median([4, 1, 3, 2])).toBe(2.5)
+  })
+})
+
+describe('90 天滚存合并', () => {
+  it('同键相加、按字段排名、空值归 other', () => {
+    const raw = [{ corpus: 'ru', slug: 'lunyu', chapter: '1', count: 3, totalMs: 100 }, { corpus: 'dao', slug: 'ddj', chapter: '1', count: 1, totalMs: 900 }]
+    const roll = [{ corpus: 'ru', slug: 'lunyu', chapter: '1', count: 10, totalMs: 50 }, { corpus: 'fo', slug: 'xj', chapter: '2', count: 2, totalMs: 10 }]
+    const byCount = mergeRankRows([raw, roll], 'count', 2)
+    expect(byCount.map((r) => [r.slug, r.count])).toEqual([['lunyu', 13], ['xj', 2]])
+    const byDwell = mergeRankRows([raw, roll], 'totalMs', 10)
+    expect(byDwell[0]).toMatchObject({ slug: 'ddj', totalMs: 900 })
+    expect(mergeCorpusRows([[{ corpus: null, count: 2 }], [{ corpus: '', count: 3 }, { corpus: 'ru', count: 1 }]])).toEqual([{ corpus: 'other', count: 5 }, { corpus: 'ru', count: 1 }])
   })
 })

@@ -146,6 +146,8 @@ function normalizeStats(raw) {
         }))
       : [],
     totalEvents: safeNumber(raw.totalEvents),
+    rolledUp: safeNumber(raw.rolledUp),
+    rollupSince: typeof raw.rollupSince === 'string' ? raw.rollupSince : '',
     dailyCounts: Array.isArray(raw.dailyCounts)
       ? raw.dailyCounts
         .filter((row) => row && typeof row.date === 'string')
@@ -987,6 +989,9 @@ export default function AdminStatsPage() {
           <div className="admin-stats__summary">
             累计 <strong>{NUMBER.format(stats.totalEvents)}</strong> 条阅读事件
             <span className="admin-stats__summary-win"> · 当前窗口 <strong>{NUMBER.format(stats.windowEvents)}</strong> 条</span>
+            {stats.rolledUp > 0 && (
+              <span className="admin-stats__summary-win"> · 其中 {NUMBER.format(stats.rolledUp)} 条(90 天前,{stats.rollupSince} 起)已按日滚存,只进「全部」窗口的总数与榜单</span>
+            )}
           </div>
 
           <div className="seg-control admin-stats__win" role="tablist" aria-label="时间窗">

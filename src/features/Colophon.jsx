@@ -4,7 +4,8 @@ import colophon from '../data/colophon.json'
 import { usePageTitle } from './yijing/hooks/usePageTitle.js'
 import TrustList from './TrustList.jsx'
 
-// 版本号已不显示(package.json 与 tag 都早停了、不是真的),改显示构建时的提交号(vite define,无 git 时为空)
+// 版本号显示 package.json 的 version(owner 2026-10-01 定:每次发版 bump,CLAUDE.md「部署」节有规矩);提交号作辅助(vite define,无 git 时为空)
+const appVersion = typeof __APP_VERSION__ !== 'undefined' ? __APP_VERSION__ : ''
 const appCommit = typeof __APP_COMMIT__ !== 'undefined' ? __APP_COMMIT__ : ''
 const buildTimestamp = __BUILD_DATE__
 const buildDate = buildTimestamp.slice(0, 10)
@@ -70,7 +71,8 @@ export function ColophonContent({ onNavigate } = {}) {
       <section className="colophon-block">
         <h2 className="colophon-block__title">版本与更新</h2>
         <div className="colophon-version">
-          {appCommit && <span>提交 <strong>{appCommit}</strong></span>}
+          {appVersion && <span>版本 <strong>{appVersion}</strong></span>}
+          {appCommit && <span>提交 {appCommit}</span>}
           <span>构建 <time dateTime={buildTimestamp} title={buildTimestamp}>{buildDate}</time></span>
         </div>
         <p className="colophon-block__text">{colophon.update.summary}</p>

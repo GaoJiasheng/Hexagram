@@ -135,7 +135,7 @@
 - 前端:勿用 rAF——headless 后台 rAF 被节流;勿依赖 RR `<Link>` 的 ref 转发;教训:content-visibility:auto 的 paint 包含会裁溢出子元素——浮层/tooltip 必须 portal 出去或保证落在元素框内(横向溢出安全、纵向溢出被裁);弹窗经 `createPortal` 渲染到 `document.body`
 - 内容资源:`src/data/*/baihua/*.json` 仍是唯一真源,`public/content/` 是构建产物(gitignore);搜索恒全站(原「本站/全站」开关取消)
 - 云同步:**客户端 `DATA_KEYS` 加键必须同步加到 `functions/api/[[route]].js` 的 `DATA_KEYS`(并归 SCALAR / MAP)**,服务端见未知键整包 400、云同步静默失效(`readPos` 2026-07-30 漏加,到 10-01 才发现);研读统计只读 `readDays`,匿名 beat 的 cid 与账号永不相连;`baihua-step.mjs` 会 `git add -A`,工作区有未提交的代码改动时先 stash 再跑
-- 部署:改 web 代码后上线 = `npm run build` → `npx wrangler pages deploy dist --project-name=hexa-gavin-pub`(owner 2026-07-14 改口用 CLI,不再拖后台;阿里云 `./deploy.sh` 已废弃);改完发 iOS 新版 `./ship-ios.sh`〔发不发等 owner 开口;详见「部署」节〕
+- 部署:**每次发生产先 `npm version patch --no-git-tag-version`(跋显示 package.json 版本,owner 2026-10-01 定每次 bump;iOS 发版沿用同一版本号,App Store 的 train 一旦发布即关闭、下一版必须更高)**,再 `npm run build` → `npx wrangler pages deploy dist --project-name=hexa-gavin-pub`(owner 2026-07-14 改口用 CLI,不再拖后台;阿里云 `./deploy.sh` 已废弃);改完发 iOS 新版 `./ship-ios.sh`〔发不发等 owner 开口;详见「部署」节〕
 - iOS:Capacitor 构建 `VITE_CAP=1` 禁用 PWA service worker(SW 冲突致白屏);`altool` 上传成功的 build 只是 VALID,不会自动进 TestFlight 测试组 → 用户列表里看不到、装不了,故 `ship-ios.sh` 末尾 `node scripts/tf-attach.mjs` 自动加内部测试组,漏发可手动 `node scripts/tf-attach.mjs <build号>` 补加;加原生插件后须 `cap sync ios` + 重发版 `./ship-ios.sh` 才到 owner 手机
 
 - **已废止(原文只留 archive)**:阿里云云主机 + `./deploy.sh` 一键发布(§48)→ Cloudflare Pages / wrangler;搜索「默认本站(隔离保留),全站为 opt-in,与 owner「放弃硬隔离」一致;新 corpus 站自动纳入 ALL_CORPORA 需手加键」、「易经走自己的 SearchPalette 暂不并入」、daoSearch 动态 import 分 chunk(§31)→ 全站统一搜索(§54)

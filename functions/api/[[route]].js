@@ -9,7 +9,7 @@ import {
 } from '../../server/google-auth.js'
 import { sendCommentNotification } from '../../server/comment-notification.js'
 import { isAdminUser } from '../../server/admin.js'
-import { summarizeReadDays, dwellHistogram, median, isDayString } from '../../server/read-stats.js'
+import { summarizeReadDays, dwellHistogram, median, isDayString, mergeRankRows, mergeCorpusRows } from '../../server/read-stats.js'
 import { AUTO_HIDE_REPORTS, screenComment } from '../../server/content-filter.js'
 import {
   mergeCollectionEntry,
@@ -1406,6 +1406,64 @@ app.get('/admin/readers/:id', async (c) => {
   }
 })
 
+// 90 天滚存(研读统计 ⑥,migrations/0004):原始 reading_events 只留 90 天,更早的按「UTC 日 × corpus/slug/chapter」累进
+// reading_rollup_daily 后删除。Pages Functions 没有定时任务,所以在 /admin/stats 被访问时懒触发,一天至多一次(状态记在 reading_rollup_state)。
+// 失败只记日志,不影响统计页。
+const ROLLUP_KEEP_DAYS = 90
+const ROLLUP_MIN_INTERVAL_MS = DAY_MS
+async function maybeRollup(db, now) {
+  const state = await db.prepare("SELECT value FROM reading_rollup_state WHERE key = 'last'").first().catch(() => null)
+  const last = Number(state?.value) || 0
+  if (now - last < ROLLUP_MIN_INTERVAL_MS) return null
+  const cutoff = utcDayStart(now) - ROLLUP_KEEP_DAYS * DAY_MS
+  const pending = await db.prepare('SELECT COUNT(*) AS count FROM reading_events WHERE ts < ?').bind(cutoff).first()
+  const n = countValue(pending?.count)
+  const statements = [
+    db.prepare("INSERT INTO reading_rollup_state (key, value) VALUES ('last', ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value").bind(String(now)),
+  ]
+  if (n > 0) {
+    statements.unshift(
+      db.prepare(`
+        INSERT INTO reading_rollup_daily (day, corpus, slug, chapter, events, dwell_ms, clients)
+        SELECT date(ts / 1000.0, 'unixepoch'), COALESCE(corpus, ''), COALESCE(slug, ''), COALESCE(chapter, ''),
+               COUNT(*), COALESCE(SUM(dwell_ms), 0), COUNT(DISTINCT client_id)
+        FROM reading_events WHERE ts < ?
+        GROUP BY 1, 2, 3, 4
+        ON CONFLICT(day, corpus, slug, chapter) DO UPDATE SET
+          events = events + excluded.events,
+          dwell_ms = dwell_ms + excluded.dwell_ms,
+          clients = clients + excluded.clients
+      `).bind(cutoff),
+      db.prepare('DELETE FROM reading_events WHERE ts < ?').bind(cutoff),
+    )
+  }
+  await db.batch(statements)
+  return n
+}
+
+// 「全部」窗口的汇总:滚存表的总数 / 分组 / 章级,再加原始行的章级全量(不设 LIMIT),交给 mergeRankRows 合并排名
+async function rollupSummary(db, wantAll) {
+  const empty = { total: 0, since: null, corpus: [], chapters: [], rawChapters: [] }
+  try {
+    const [totalRow, sinceRow] = await Promise.all([
+      db.prepare('SELECT COALESCE(SUM(events), 0) AS count FROM reading_rollup_daily').first(),
+      db.prepare('SELECT MIN(day) AS day FROM reading_rollup_daily').first(),
+    ])
+    const out = { ...empty, total: countValue(totalRow?.count), since: sinceRow?.day || null }
+    if (!wantAll || out.total === 0) return out
+    const [corpusRes, chRes, rawRes] = await db.batch([
+      db.prepare('SELECT corpus, SUM(events) AS count FROM reading_rollup_daily GROUP BY corpus'),
+      db.prepare("SELECT corpus, slug, chapter, SUM(events) AS count, SUM(dwell_ms) AS total FROM reading_rollup_daily WHERE corpus <> '' AND slug <> '' AND chapter <> '' GROUP BY corpus, slug, chapter"),
+      db.prepare('SELECT corpus, slug, chapter, COUNT(*) AS count, SUM(dwell_ms) AS total FROM reading_events WHERE corpus IS NOT NULL AND slug IS NOT NULL AND chapter IS NOT NULL GROUP BY corpus, slug, chapter'),
+    ])
+    const rows = (res) => resultRows(res).map((r) => ({ corpus: r.corpus, slug: r.slug, chapter: r.chapter, count: countValue(r.count), totalMs: countValue(r.total) }))
+    return { ...out, corpus: resultRows(corpusRes).map((r) => ({ corpus: r.corpus, count: countValue(r.count) })), chapters: rows(chRes), rawChapters: rows(rawRes) }
+  } catch (error) {
+    console.error('Rollup summary failed', error)
+    return empty
+  }
+}
+
 // 时间窗(研读统计 2026-10-01):today / d7 / d30 / all。窗口作用于分组热度、Top、停留、地理与新指标;
 // 「累计事件数」恒为全部;七日曲线在 d30 时拉成 30 天。
 const STATS_WINDOW_DAYS = { today: 1, d7: 7, d30: 30, all: 0 }
@@ -1423,6 +1481,9 @@ app.get('/admin/stats', async (c) => {
 
   try {
     const db = getDb(c)
+    let rolledNow = null
+    try { rolledNow = await maybeRollup(db, Date.now()) } catch (error) { console.error('Reading rollup failed', error) }
+    const rollup = await rollupSummary(db, windowId === 'all')
     const [totalResult, dailyResult, corpusResult, chaptersResult, dwellResult, geoResult, activeResult, returningResult, dwellTopResult, dwellSampleResult] = await db.batch([
       db.prepare('SELECT COUNT(*) AS count FROM reading_events'),
       db.prepare(`
@@ -1546,11 +1607,14 @@ app.get('/admin/stats', async (c) => {
       returningClients,
       medianDwellMs: median(dwellSample),
       dwellHistogram: dwellHistogram(dwellSample),
-      topByDwell,
-      totalEvents: countValue(resultRows(totalResult)[0]?.count),
+      topByDwell: rollup.total && windowId === 'all' ? mergeRankRows([rollup.rawChapters, rollup.chapters], 'totalMs') : topByDwell,
+      totalEvents: countValue(resultRows(totalResult)[0]?.count) + rollup.total,
+      rolledUp: rollup.total,
+      rollupSince: rollup.since,
+      rolledNow,
       dailyCounts,
-      corpusHeat,
-      topChapters,
+      corpusHeat: rollup.total && windowId === 'all' ? mergeCorpusRows([resultRows(corpusResult), rollup.corpus]) : corpusHeat,
+      topChapters: rollup.total && windowId === 'all' ? mergeRankRows([rollup.rawChapters, rollup.chapters], 'count') : topChapters,
       avgDwellMs: Number.isFinite(average) && average > 0 ? Math.round(average) : 0,
       countryHeat,
       chinaProvinceHeat,

@@ -85,3 +85,28 @@ export function median(values) {
   const mid = Math.floor(arr.length / 2)
   return arr.length % 2 ? arr[mid] : (arr[mid - 1] + arr[mid]) / 2
 }
+
+// 90 天滚存(migrations/0004):「全部」窗口要把原始行与 reading_rollup_daily 的汇总合在一起再排名。
+// rows 形如 {corpus, slug, chapter, count, totalMs};key 取 corpus|slug|chapter,同键相加,按 field 降序取前 limit
+export function mergeRankRows(lists, field, limit = 10) {
+  const m = new Map()
+  for (const rows of lists) {
+    for (const r of rows || []) {
+      const k = `${r.corpus ?? ''}|${r.slug ?? ''}|${r.chapter ?? ''}`
+      const cur = m.get(k) || { corpus: r.corpus, slug: r.slug, chapter: r.chapter, count: 0, totalMs: 0 }
+      cur.count += Number(r.count) || 0
+      cur.totalMs += Number(r.totalMs) || 0
+      m.set(k, cur)
+    }
+  }
+  return [...m.values()].filter((r) => r[field] > 0).sort((a, b) => b[field] - a[field]).slice(0, limit)
+}
+
+export function mergeCorpusRows(lists) {
+  const m = new Map()
+  for (const rows of lists) for (const r of rows || []) {
+    const c = r.corpus == null || r.corpus === '' ? 'other' : String(r.corpus)
+    m.set(c, (m.get(c) || 0) + (Number(r.count) || 0))
+  }
+  return [...m.entries()].map(([corpus, count]) => ({ corpus, count })).sort((a, b) => b.count - a.count || a.corpus.localeCompare(b.corpus))
+}
