@@ -117,7 +117,7 @@ if (report.rejected.length) {
   for (const [label, why] of report.rejected) lines.push(`- ${label}:${why}`)
   lines.push('')
 }
-const docFile = path.join(ROOT, `docs/mingli-baihua-review-${day}.md`)
+const docFile = path.join(ROOT, process.env.MINGLI_REVIEW_DOC || `docs/mingli-baihua-review-${day}.md`)   // 跨章核那轮另起文件名,免得覆盖主汇报
 fs.writeFileSync(docFile, lines.join('\n'))
 console.log(lines.slice(5, 6).join('\n'))
 console.log(`汇报 → ${docFile}`)

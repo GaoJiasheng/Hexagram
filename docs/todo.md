@@ -29,7 +29,9 @@
 3. 完成后 `node scripts/mingli-review-apply.mjs <该 workflow 的 .output>` → 逐片校验合并、写 `docs/mingli-baihua-review-<日期>.md` → `npm run check-data` → commit → 发版
 4. **代理改的对不对仍须 owner 抽看**汇报里的修正条目(机器闸只保证没改坏)
 
-**续跑 ⑤ 观数译文层复核(复核代理顺手指出的)**
+**续跑 ⑤ 观数译文层复核 + 存疑跨章核 —— ✅ 10-01 两轮都跑完:译文层 126 章核、83 章 169 段改(`docs/mingli-translation-review-2026-10-01.md`);跨章核 129 章 231 条:成立 162 · 要改 191(97 章 350 处合并)· 仍存疑 68(`docs/mingli-doubt-review-2026-10-01.md`)。两份汇报等 owner 抽看。全书口径待定:多章写「徐乐吾整理刊行《滴天髓阐微》」,代理与底本框注均指向袁树珊 1933 年刊行,见下面 owner 清单。**
+
+**续跑 ⑤′ 原稿(已完成,留作记录)**
 - 111 章的代理附注提到**站内译文**(`scripts/authored/mingli-translations.json`,随原文一起显示的那一层)有可疑译错(如滴天髓 3「中受饥寒」译作「中年饥寒」、五行大义 4「解」译作「解散」);这一层本轮没动。做法:从两份 .output 的 note / findings 里 grep「站内译文|译文真源|一并核改」抽出条目 → 逐条核 → 改真源 → `node scripts/fetch-corpus.mjs mingli`(只重抓 mingli,逐书 diff 核只有预期变化)。
 - 代理拿不准没改的 233 处(汇报里标「未改(存疑)」)多数是引他章 / 他书的说法,本章原文核不了:可按书另起一轮「跨章核」,给代理整本原文而不是单章。
 
