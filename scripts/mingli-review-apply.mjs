@@ -80,7 +80,13 @@ function validate(out, orig) {
   // 交互件只比 kind + props(caption 是说明文字,允许改)
   const wkey = (b) => JSON.stringify({ kind: b.kind, props: b.props })
   const ow = orig.blocks.filter((b) => b.type === 'widget').map(wkey), nw = out.blocks.filter((b) => b.type === 'widget').map(wkey)
-  if (JSON.stringify(ow) !== JSON.stringify(nw)) return 'widget 块的 kind/props 被改动(交互件参数不在复核范围)'
+  if (ow.length !== nw.length) return 'widget 块数变了(交互件不许增删)'
+  // 参数被代理动了:交互件不在复核范围,按次序把原稿的 kind/props 放回去(caption 仍取修正稿),其余修正照收
+  if (JSON.stringify(ow) !== JSON.stringify(nw)) {
+    const origW = orig.blocks.filter((b) => b.type === 'widget')
+    let wi = 0
+    out.blocks = out.blocks.map((b) => (b.type === 'widget' ? { ...b, kind: origW[wi].kind, props: origW[wi++].props } : b))
+  }
   const shrink = out.blocks.length < orig.blocks.length * 0.8
   if (shrink) return `块数缩水过多 ${orig.blocks.length}→${out.blocks.length}`
   return null

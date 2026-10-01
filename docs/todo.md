@@ -13,9 +13,9 @@
 
 ### ⏸ 2026-10-01 暂停点(额度到线,owner:「没做完的整理好 todo,后面续上」)
 
-**已上生产**:老师首次打开 T4/T7/T9 · 易经首页改版 + 两层导读 · 古文研读组(《古文观止》222 篇 + 课本古文补编 23 篇,译注延/导读全成,白话 **59/245**)· 全站索引已同步(名句 79 / 时间轴两书 + 二吴 / 义理专题两处 / 关于页凡例 / feed·搜索·og·书目·篇幅档自动)· **10-01 续:B8 邮箱统一 hexa@gavin.pub · B9 字体方案 A(阅读页按需加载)· A4 跋顶栏入口 + 手机顶栏去 ☯、底栏补「我的」· A6 二维码卡已交 · A2 研读统计全套(见续跑 ③,已落地)**。
+**已上生产**:老师首次打开 T4/T7/T9 · 易经首页改版 + 两层导读 · 古文研读组(《古文观止》222 篇 + 课本古文补编 23 篇,译注延/导读全成,白话 **59/245**)· 全站索引已同步(名句 79 / 时间轴两书 + 二吴 / 义理专题两处 / 关于页凡例 / feed·搜索·og·书目·篇幅档自动)· **10-01 续:B8 邮箱统一 hexa@gavin.pub · B9 字体方案 A(阅读页按需加载)· A4 跋顶栏入口 + 手机顶栏去 ☯、底栏补「我的」· A6 二维码卡已交 · A2 研读统计全套(见续跑 ③,已落地)· **10-01 深夜:古文白话全成 245/245 · 中医三件 · 可选件三件 · O12 ① · 观数复核 329 章 · iOS v1.35.0 build 54 上 TestFlight**。
 
-**续跑 ① 古文白话铺完(owner 10-01 深夜 renew 额度后续跑:83/245 已成,第 40–64 篇批次运行中,其后 baihua-step 自驱;起草校对皆 opus)**
+**续跑 ① 古文白话铺完 —— ✅ 10-01 全成 245/245(古文观止 222 + 补编 23),已上生产;名句补 40 条 → 119**
 1. 起批前 `get_usage` 看额度:一批 12 章 ≈ 3.2M token(≈周额度 3 个点),24 章 ≈ 6.4M;5 小时窗口 ≥85% 或周 ≥97% 就别起(中途撞线会丢代理)。
 2. 现成脚本 `scripts/.baihua-guwen-guwenguanzhi-wf.js`(**第 15–39 篇,24 单元**,baihua-step 已生成未起跑)→ `Workflow({scriptPath})`。
 3. 每批完成:`node scripts/baihua-step.mjs <该 workflow 的 .output 文件>` → 自动装配 / check-data / 提交 / 算下一批(CAP 24)/ gen 下一个脚本并打印 `LAUNCH …` → 再 `Workflow`。打印 `DONE` 即全成。
@@ -23,11 +23,15 @@
 4. 全成后:`npm run build` → `npx --yes wrangler pages deploy dist --project-name=hexa-gavin-pub --commit-dirty=true` → 核入口哈希;再 `node scripts/harvest-mingju.mjs guwen` 看新候选名句,挑几条补进 `scripts/authored/mingju-extra/guwen.json` → `node scripts/build-mingju.mjs --write`。
 5. 途中撞会话/周额度上限:等重置或 owner reset,`baihua-step.mjs` 不带参数直接续(它只看缺哪些章)。`.baihua-attempts.json` 记失败次数,≥3 次的章会被放弃并在进度行列出。
 
-**续跑 ④ 观数白话代理复核(O9 续,owner 10-01 深夜定;白话铺完后跑,与白话 workflow 串行)**
+**续跑 ④ 观数白话代理复核 —— ✅ 10-01 全部跑完:329 章 324 章有修正、2382 处采纳、233 处代理存疑未改(列在汇报里),43M token;汇报 `docs/mingli-baihua-review-2026-10-01.md` 等 owner 抽看。衍生待办 → 续跑 ⑤**
 1. `node scripts/mingli-review-prep.mjs` → 329 章输入分片到 `scripts/.mingli-review/in/`(已跳过 09-30 人读的玉照 9 + 三命 261 + 五行大义 44)
 2. `Workflow({ scriptPath: 'scripts/.mingli-review-wf.js', args: { units: <scripts/.mingli-review/units.json 的内容> } })`(每章一个 opus 代理,只读输入 / 只写输出)
 3. 完成后 `node scripts/mingli-review-apply.mjs <该 workflow 的 .output>` → 逐片校验合并、写 `docs/mingli-baihua-review-<日期>.md` → `npm run check-data` → commit → 发版
 4. **代理改的对不对仍须 owner 抽看**汇报里的修正条目(机器闸只保证没改坏)
+
+**续跑 ⑤ 观数译文层复核(复核代理顺手指出的)**
+- 111 章的代理附注提到**站内译文**(`scripts/authored/mingli-translations.json`,随原文一起显示的那一层)有可疑译错(如滴天髓 3「中受饥寒」译作「中年饥寒」、五行大义 4「解」译作「解散」);这一层本轮没动。做法:从两份 .output 的 note / findings 里 grep「站内译文|译文真源|一并核改」抽出条目 → 逐条核 → 改真源 → `node scripts/fetch-corpus.mjs mingli`(只重抓 mingli,逐书 diff 核只有预期变化)。
+- 代理拿不准没改的 233 处(汇报里标「未改(存疑)」)多数是引他章 / 他书的说法,本章原文核不了:可按书另起一轮「跨章核」,给代理整本原文而不是单章。
 
 **续跑 ② 等 owner 定**
 
