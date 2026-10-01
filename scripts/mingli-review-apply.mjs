@@ -59,13 +59,14 @@ for (const r of results) {
       continue
     }
   }
-  const before = JSON.stringify(orig), after = JSON.stringify(merged)
-  if (before === after) { report.ok++; continue }
-  book[r.key] = merged
-  applied.add(r.slug)
+  // 通过校验即计入汇报(重跑时已合并过的章 before===after,汇报仍要列它的修正条目);只有真有变化才写盘
   report.fixed++
   report.changes += findings.length
   report.findings.push({ label: u.label, slug: r.slug, key: r.key, findings, note: r.result?.note })
+  const before = JSON.stringify(orig), after = JSON.stringify(merged)
+  if (before === after) continue
+  book[r.key] = merged
+  applied.add(r.slug)
 }
 
 function validate(out, orig) {
