@@ -34,10 +34,14 @@ const KEEP_BACK = new Map()   // 占位符 → 繁体原字
 }
 const KEEP_RE = new RegExp(`[${[...KEEP_TRAD.keys()].join('')}]`, 'g')
 const BACK_RE = /[\ue100-\ue4ff]/g
-export const t2s = (s) => t2sRaw(s.replaceAll('乾', '\uE000').replace(KEEP_RE, (c) => KEEP_TRAD.get(c)))
+export const t2s = (s) => bmpForm(t2sRaw(s.replaceAll('乾', '\uE000').replace(KEEP_RE, (c) => KEEP_TRAD.get(c)))
   .replace(BACK_RE, (c) => KEEP_BACK.get(c) || c)
-  .replaceAll('\uE000', '乾').replaceAll('遯', '遁').replaceAll('隂', '阴')
+  .replaceAll('\uE000', '乾').replaceAll('遯', '遁').replaceAll('隂', '阴'))
 export const keptTraditional = () => [...KEEP_TRAD.keys()]
+// 反向表:OpenCC 会把某个 BMP 繁体字转成的扩展区简体字 → 那个繁体字。给「字已经是扩展区形」的入口用
+//(四库本的 SKchar 缺字表直接给出 𡒄 这类本字;源页里偶有编者手打的扩展区字),与 t2s 的保留规则一致。
+const EXT_TO_TRAD = new Map([...KEEP_TRAD.keys()].map((ch) => [t2sRaw(ch), ch]).filter(([a]) => [...a].length === 1))
+export const bmpForm = (s) => [...s].map((c) => EXT_TO_TRAD.get(c) || c).join('')
 
 // ---------- wikitext 清洗 ----------
 export function clean(raw) {

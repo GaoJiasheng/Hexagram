@@ -347,10 +347,10 @@ function parsePoemPage(wikitext, warnings, pageName, sectionFilter = null, prefe
   // (如秦风《黄鸟》叠唱「彼苍者天」)不受影响——那是部分重复,不构成整倍。
   for (let unit = 1; unit <= paras.length / 2; unit++) {
     if (paras.length % unit) continue
-    const head = paras.slice(0, unit).map((p) => p.original).join(' ')
+    const head = paras.slice(0, unit).map((p) => p.original).join('\u0000')
     let allSame = true
     for (let k = unit; k < paras.length; k += unit) {
-      if (paras.slice(k, k + unit).map((p) => p.original).join(' ') !== head) { allSame = false; break }
+      if (paras.slice(k, k + unit).map((p) => p.original).join('\u0000') !== head) { allSame = false; break }
     }
     if (allSame) {
       if (unit < paras.length) warnings.push(`${pageName}: 正文整倍重复 ${paras.length / unit} 遍,已截为 ${unit} 段`)
