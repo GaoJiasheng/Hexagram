@@ -72,7 +72,7 @@
 - [x] **O13 review `docs/teacher-first-visit-plan.md`**(owner 10-01 答:1 B · 2 不做课本筛选但古文观止与滕王阁序要做〔已成〕· 3 A · 4 统一并去掉跋里括号〔已改〕· 5 每次 bump 跋版本〔规矩入 CLAUDE.md〕· 6 文案不改、Turnstile 不可达可降级邮箱验证码 · 7 二维码不要):另一个 agent 出的 T1–T11 已逐条对线上核过(4 条与现状不符已标),我的方案与 7 个待拍板问题在文末 §4;T1(大陆 4G 实测,含评论 Turnstile、微信内打开)只有你能做。**未开工**,等你圈。
 
 **③ 动手**(外部账号 / 设备)
-- [~] **O5 iOS 发版**:10-01 深夜 v1.35.0 build 54 已上 TestFlight 内部测试组(1.34.0 train 已关,升版重传)。**App Store 送审未做**——你说送我就 `node scripts/asc-release.mjs 1.35.0 notes.md`(先写更新说明)。
+- [x] **O5 iOS 发版**:10-01 v1.35.4 build 55 已送审(WAITING_FOR_REVIEW,过审自动上架;含观数三轮修正、账号体验第一批)。1.35.0 的提交用 `scripts/asc-withdraw.mjs` 撤回后复用草稿改名,流程:`./ship-ios.sh` → 若有在审版本 `node scripts/asc-withdraw.mjs` → `node scripts/asc-release.mjs <版本> docs/release-notes/<版本>.md`。
 - [ ] **O6 登录 + 评论 Phase 2 三项前置**:Google OAuth 凭据 / Turnstile 站点密钥 / Resend 域名验证(代码八批次已完成)。
 - [ ] **O7 安卓 keystore**:你生成(10 分钟,备份到本机之外)→ 我出包 → Play 内测。
 - [ ] **O8 ICP 备案**:一通电话问清护照持有人怎么做人脸核验。
