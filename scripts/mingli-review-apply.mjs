@@ -12,9 +12,11 @@ import { WORK } from './mingli-review-prep.mjs'
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const BLOCK_TYPES = new Set(['lead', 'p', 'h2', 'quote', 'figure', 'refs', 'list', 'callout', 'pull', 'steps', 'widget'])
 
-const [, , outputFile] = process.argv
-if (!outputFile) { console.log('用法: node scripts/mingli-review-apply.mjs <workflow.output>'); process.exit(2) }
-const results = JSON.parse(fs.readFileSync(outputFile, 'utf8'))
+// 可传多个 .output(复核分两半跑);合并是幂等的,最后一次把全部文件一起传,汇报才齐
+const outputFiles = process.argv.slice(2)
+if (!outputFiles.length) { console.log('用法: node scripts/mingli-review-apply.mjs <workflow.output> [more.output…]'); process.exit(2) }
+// workflow 的 .output 是 {summary, result:[…], …} 一个对象;也兼容直接给结果数组
+const results = outputFiles.flatMap((f) => { const j = JSON.parse(fs.readFileSync(f, 'utf8')); return Array.isArray(j) ? j : (j.result || []) })
 const units = JSON.parse(fs.readFileSync(path.join(WORK, 'units.json'), 'utf8'))
 const byKey = new Map(units.map((u) => [`${u.slug}:${u.key}`, u]))
 
@@ -48,9 +50,14 @@ for (const r of results) {
   try {
     execFileSync('node', ['scripts/check-baihua-draft.mjs', 'mingli', r.slug, String(r.key), tmp], { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] })
   } catch (e) {
-    const msg = String(e.stdout || e.stderr || e.message).trim().split('\n').slice(-4).join(' / ')
-    report.rejected.push([u.label, `check-baihua-draft 未过: ${msg.slice(0, 300)}`])
-    continue
+    const text = String(e.stdout || e.stderr || e.message)
+    // 只剩「figure 的 svg 写死颜色」一类的失败,而 svg 是从原稿原样还原的 → 是原稿既有问题,不是复核改坏,放行
+    const items = text.split('\n').filter((l) => /^\s*- /.test(l))
+    const onlyFigureSvg = items.length > 0 && items.every((l) => /\(figure\) svg/.test(l))
+    if (!onlyFigureSvg) {
+      report.rejected.push([u.label, `check-baihua-draft 未过: ${text.trim().split('\n').slice(-4).join(' / ').slice(0, 300)}`])
+      continue
+    }
   }
   const before = JSON.stringify(orig), after = JSON.stringify(merged)
   if (before === after) { report.ok++; continue }
@@ -69,8 +76,10 @@ function validate(out, orig) {
   const of = orig.blocks.filter((b) => b.type === 'figure'), nf = out.blocks.filter((b) => b.type === 'figure')
   if (of.length !== nf.length) return `figure 块数变了 ${of.length}→${nf.length}(图不许增删)`
   for (let i = 0; i < nf.length; i++) if (nf[i].svg !== '__SVG__' && nf[i].svg !== of[i].svg) return `第 ${i + 1} 张图的 svg 被改写`
-  const ow = orig.blocks.filter((b) => b.type === 'widget'), nw = out.blocks.filter((b) => b.type === 'widget')
-  if (JSON.stringify(ow) !== JSON.stringify(nw)) return 'widget 块被改动(交互件参数不在复核范围)'
+  // 交互件只比 kind + props(caption 是说明文字,允许改)
+  const wkey = (b) => JSON.stringify({ kind: b.kind, props: b.props })
+  const ow = orig.blocks.filter((b) => b.type === 'widget').map(wkey), nw = out.blocks.filter((b) => b.type === 'widget').map(wkey)
+  if (JSON.stringify(ow) !== JSON.stringify(nw)) return 'widget 块的 kind/props 被改动(交互件参数不在复核范围)'
   const shrink = out.blocks.length < orig.blocks.length * 0.8
   if (shrink) return `块数缩水过多 ${orig.blocks.length}→${out.blocks.length}`
   return null
