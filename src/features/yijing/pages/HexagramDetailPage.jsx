@@ -343,11 +343,14 @@ export default function HexagramDetailPage() {
           <label className="toggle-label">
             <span>显示译文</span>
             <button
-              className={`toggle-btn ${settings.showTranslation ? 'toggle-btn--on' : ''}`}
+              type="button"
+              role="switch"
+              className={`switch switch--sm ${settings.showTranslation ? 'switch--on' : ''}`}
+              aria-checked={!!settings.showTranslation}
+              aria-label="显示译文"
               onClick={() => setSettings({ showTranslation: !settings.showTranslation })}
-              aria-pressed={settings.showTranslation}
             >
-              {settings.showTranslation ? '译' : '原'}
+              <span className="switch__knob" aria-hidden="true" />
             </button>
           </label>
         </div>

@@ -366,11 +366,14 @@ export default function MePage() {
             <div className="settings-section">
               <h3 className="settings-section__title">显示译文</h3>
               <button
-                className={`toggle-btn ${settings.showTranslation ? 'toggle-btn--on' : ''}`}
+                type="button"
+                role="switch"
+                className={`switch ${settings.showTranslation ? 'switch--on' : ''}`}
+                aria-checked={!!settings.showTranslation}
+                aria-label="显示译文"
                 onClick={() => setSettings({ showTranslation: !settings.showTranslation })}
-                aria-pressed={settings.showTranslation}
               >
-                {settings.showTranslation ? '开' : '关'}
+                <span className="switch__knob" aria-hidden="true" />
               </button>
             </div>
 

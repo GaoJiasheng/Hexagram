@@ -247,10 +247,14 @@ export default function ClassicReader({
       <label className="toggle-label">
         <span>译文</span>
         <button
-          className={`toggle-btn ${settings.showTranslation ? 'toggle-btn--on' : ''}`}
+          type="button"
+          role="switch"
+          className={`switch switch--sm ${settings.showTranslation ? 'switch--on' : ''}`}
+          aria-checked={!!settings.showTranslation}
+          aria-label="译文"
           onClick={() => setSettings({ showTranslation: !settings.showTranslation })}
         >
-          {settings.showTranslation ? '开' : '关'}
+          <span className="switch__knob" aria-hidden="true" />
         </button>
       </label>
       {settings.showTranslation && (
@@ -269,12 +273,15 @@ export default function ClassicReader({
         <label className="toggle-label">
           <span>格律</span>
           <button
-            className={`toggle-btn ${settings.prosody ? 'toggle-btn--on' : ''}`}
+            type="button"
+            role="switch"
+            className={`switch switch--sm ${settings.prosody ? 'switch--on' : ''}`}
+            aria-checked={!!settings.prosody}
+            aria-label="格律"
             onClick={() => setSettings({ prosody: !settings.prosody })}
-            aria-pressed={!!settings.prosody}
             title="标出韵书所记的平仄与句末韵部(不判合律与否)"
           >
-            {settings.prosody ? '开' : '关'}
+            <span className="switch__knob" aria-hidden="true" />
           </button>
         </label>
       )}

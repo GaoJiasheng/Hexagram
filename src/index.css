@@ -12,6 +12,7 @@
   --cinnabar: #c3272b;
   --cinnabar-bg: #c3272b14;
   --cinnabar-pure: #c3272b;  /* 不被门户 muted 覆盖的真朱砂——招牌入口用 */
+  --switch-knob: #ffffff;    /* 滑动开关关态的钮:深色主题另给,免得钮与轨都是深灰 */
   --gold: #8a6608;           /* 赤金——批注标记/延伸标题(WCAG AA 达标的深赤金) */
   --yanyi-border: var(--cinnabar); /* 延伸区块侧边线——朱批 */
   --yanyi-tag: var(--gold);        /* 延伸区块标题——赤金 */
@@ -95,6 +96,7 @@
      (yanyi-border/yanyi-tag/annotation-mark 均照旧指回原有 azure/ink-faint,像素不变)。 */
   --paper: #191713;
   --paper-raised: #211e19;
+  --switch-knob: #d9d2c5;
   --ink: #f1ece1;
   --ink-soft: #a89f93;
   --ink-faint: #6b6157;
@@ -125,6 +127,7 @@
   :root:not([data-theme]) {
     --paper: #191713;
     --paper-raised: #211e19;
+  --switch-knob: #d9d2c5;
     --ink: #f1ece1;
     --ink-soft: #a89f93;
     --ink-faint: #6b6157;
@@ -4803,7 +4806,44 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .settings-account__share label > span { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .settings-account__share strong { color: var(--ink-soft); font-size: 0.8rem; font-weight: 600; }
 .settings-account__share small { color: var(--ink-faint); font-size: 0.72rem; line-height: 1.6; }
-.settings-account__share .toggle-btn { flex: none; }
+.settings-account__share .switch { flex: none; }
+
+/* 滑动开关(role=switch):拨到右、朱砂底 = 开;关时灰轨白钮。状态只靠位置与颜色,不写字。
+   开态绑 --cinnabar-pure:设置浮层也在门户(--cinnabar 被 muted 成灰褐)上开,「开」必须一眼是红。 */
+.switch {
+  position: relative;
+  width: 44px;
+  height: 26px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  background: var(--line);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.switch__knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--switch-knob);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+}
+.switch--on {
+  background: var(--cinnabar-pure);
+  border-color: var(--cinnabar-pure);
+}
+.switch--on .switch__knob {
+  transform: translateX(18px);
+  background: #fff;
+}
+/* 工具栏里的小号(阅读页「译文 / 格律」、卦页「显示译文」、韵书页「只看句末」) */
+.switch--sm { width: 36px; height: 20px; border-radius: 10px; }
+.switch--sm .switch__knob { top: 1px; left: 1px; width: 16px; height: 16px; }
+.switch--sm.switch--on .switch__knob { transform: translateX(16px); }
 @media (max-width: 560px) {
   .read-stats__grid { grid-template-columns: repeat(2, 1fr); }
 }

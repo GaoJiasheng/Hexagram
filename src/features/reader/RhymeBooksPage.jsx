@@ -252,14 +252,19 @@ export default function RhymeBooksPage() {
       <section className="rb-unlisted" aria-labelledby="rb-unlisted-h">
         <div className="rb-unlisted__head">
           <h2 id="rb-unlisted-h" className="rb-h2">站内诗词里的未收字</h2>
-          <button
-            type="button"
-            className={`toggle-btn ${endOnly ? 'toggle-btn--on' : ''}`}
-            onClick={() => setEndOnly((v) => !v)}
-            aria-pressed={endOnly}
-          >
-            只看句末 {endOnly ? '开' : '关'}
-          </button>
+          <label className="toggle-label">
+            <span>只看句末</span>
+            <button
+              type="button"
+              role="switch"
+              className={`switch switch--sm ${endOnly ? 'switch--on' : ''}`}
+              aria-checked={endOnly}
+              aria-label="只看句末"
+              onClick={() => setEndOnly((v) => !v)}
+            >
+              <span className="switch__knob" aria-hidden="true" />
+            </button>
+          </label>
         </div>
         <p className="rb-unlisted__note text-soft">
           {'「次数」是该字在韵文里出现的总次数,「句末」是其中落在句末的次数——阅读器在每句末挂一枚韵部签,签上标「未收」的就是这些;句中的字只在近体诗逐字标平仄时才标出。'}

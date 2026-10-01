@@ -257,13 +257,17 @@ export default function SettingsSheet({ open, onClose }) {
                 <div className="settings-account__share">
                   <label>
                     <span><strong>把我的研读时长计入账号</strong><small>{READ_STATS_NOTE}关闭后只留在本机。</small></span>
+                    {/* 滑动开关:状态只靠位置与颜色表达(拨到右、朱砂底 = 开),不再写「开 / 关」
+                        —— 一个字说不清「现在是开」还是「点了会开」(owner 2026-10-01) */}
                     <button
                       type="button"
-                      className={`toggle-btn ${settings.shareReading !== false ? 'toggle-btn--on' : ''}`}
-                      aria-pressed={settings.shareReading !== false}
+                      role="switch"
+                      className={`switch ${settings.shareReading !== false ? 'switch--on' : ''}`}
+                      aria-checked={settings.shareReading !== false}
+                      aria-label="把我的研读时长计入账号"
                       onClick={toggleShareReading}
                     >
-                      {settings.shareReading !== false ? '开' : '关'}
+                      <span className="switch__knob" aria-hidden="true" />
                     </button>
                   </label>
                 </div>
@@ -356,23 +360,29 @@ export default function SettingsSheet({ open, onClose }) {
         <div className="settings-section">
           <h3 className="settings-section__title">显示译文</h3>
           <button
-            className={`toggle-btn ${settings.showTranslation ? 'toggle-btn--on' : ''}`}
+            type="button"
+            role="switch"
+            className={`switch ${settings.showTranslation ? 'switch--on' : ''}`}
             onClick={() => setSettings({ showTranslation: !settings.showTranslation })}
-            aria-pressed={settings.showTranslation}
+            aria-checked={!!settings.showTranslation}
+            aria-label="显示译文"
           >
-            {settings.showTranslation ? '开' : '关'}
+            <span className="switch__knob" aria-hidden="true" />
           </button>
         </div>
 
         <div className="settings-section">
           <h3 className="settings-section__title">诗词格律</h3>
           <button
-            className={`toggle-btn ${settings.prosody ? 'toggle-btn--on' : ''}`}
+            type="button"
+            role="switch"
+            className={`switch ${settings.prosody ? 'switch--on' : ''}`}
             onClick={() => setSettings({ prosody: !settings.prosody })}
-            aria-pressed={settings.prosody}
+            aria-checked={!!settings.prosody}
+            aria-label="诗词格律"
             title="唐诗 / 宋词 / 元曲阅读页:原文下标韵书所记的平仄与韵部"
           >
-            {settings.prosody ? '开' : '关'}
+            <span className="switch__knob" aria-hidden="true" />
           </button>
         </div>
 
