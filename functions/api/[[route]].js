@@ -10,6 +10,7 @@ import {
 import { sendCommentNotification } from '../../server/comment-notification.js'
 import { isAdminUser } from '../../server/admin.js'
 import { summarizeReadDays, dwellHistogram, median, isDayString, mergeRankRows, mergeCorpusRows } from '../../server/read-stats.js'
+import { generateCode, hashCode, verifyCodeRow, sentRecently, codeSendRequest, codeTarget, isCodeShape, CODE_TTL_MS, CODE_PURPOSES } from '../../server/auth-code.js'
 import { AUTO_HIDE_REPORTS, screenComment } from '../../server/content-filter.js'
 import {
   mergeCollectionEntry,
@@ -853,6 +854,98 @@ app.delete('/me', async (c) => {
   }
 })
 
+// ── 邮箱验证码(续跑 ⑥ 大陆账号体验,2026-10-01;纯函数在 server/auth-code.js)──
+// reset:找回密码(此前只有注销没有找回);comment:评论时 Turnstile 加载不了的降级。
+// 表 auth_codes:target 主键(purpose:邮箱 / purpose:userId)、存哈希、10 分钟有效、错 5 次作废、60 秒内不重发。
+async function issueCode(db, env, target, to, purpose, now) {
+  const existing = await db.prepare('SELECT expires_at FROM auth_codes WHERE target = ?').bind(target).first()
+  if (sentRecently(existing, now)) throw new RequestError(429, '验证码刚发过,一分钟后再试')
+  const req0 = codeSendRequest(env, to, purpose, '000000')
+  if (!req0) throw new RequestError(503, '邮件服务未配置,请联系站长')
+  const code = generateCode()
+  const hash = await hashCode(target, code)
+  await db.prepare(`
+    INSERT INTO auth_codes (target, code_hash, expires_at, attempts) VALUES (?, ?, ?, 0)
+    ON CONFLICT(target) DO UPDATE SET code_hash = excluded.code_hash, expires_at = excluded.expires_at, attempts = 0
+  `).bind(target, hash, now + CODE_TTL_MS).run()
+  const req = codeSendRequest(env, to, purpose, code)
+  const response = await fetch(req.url, req.init)
+  if (!response.ok) {
+    console.error('Auth code mail failed', { status: response.status, purpose })
+    throw new RequestError(503, '验证码邮件发送失败,请稍后再试')
+  }
+}
+
+async function consumeCode(db, target, code, now) {
+  const row = await db.prepare('SELECT code_hash, expires_at, attempts FROM auth_codes WHERE target = ?').bind(target).first()
+  const state = verifyCodeRow(row, await hashCode(target, code), now)
+  if (state === 'ok') {
+    await db.prepare('DELETE FROM auth_codes WHERE target = ?').bind(target).run()
+    return
+  }
+  if (state === 'mismatch') await db.prepare('UPDATE auth_codes SET attempts = attempts + 1 WHERE target = ?').bind(target).run()
+  throw new RequestError(400, state === 'locked' ? '错误次数过多,请重新获取验证码' : '验证码错误或已过期')
+}
+
+app.post('/auth/code/send', async (c) => {
+  try {
+    const input = await readJsonBody(c)
+    const purpose = input?.purpose
+    if (!CODE_PURPOSES.has(purpose)) throw new RequestError(400, 'invalid purpose')
+    const db = getDb(c)
+    const now = Date.now()
+    if (purpose === 'comment') {
+      const user = await requireUser(c)
+      if (!user.email) throw new RequestError(400, '账号没有邮箱,无法发送验证码')
+      await issueCode(db, c.env, codeTarget('comment', user.id), user.email, 'comment', now)
+      return c.json({ ok: true, ttl: CODE_TTL_MS })
+    }
+    const email = normalizeEmail(input?.email)
+    if (!email) throw new RequestError(400, '请输入邮箱')
+    // 不泄露「该邮箱是否注册过」:没有密码登录方式的邮箱同样回 ok,只是不发信
+    const identity = await db.prepare("SELECT 1 AS found FROM identities WHERE provider = 'email' AND provider_uid = ? LIMIT 1").bind(email).first()
+    if (identity) await issueCode(db, c.env, codeTarget('reset', email), email, 'reset', now)
+    return c.json({ ok: true, ttl: CODE_TTL_MS })
+  } catch (error) {
+    if (error instanceof RequestError) return c.json({ ok: false, error: error.message }, error.status)
+    console.error('Auth code send failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
+// 凭验证码设新密码,随即登录(旧会话全部作废)
+app.post('/auth/password/reset', async (c) => {
+  try {
+    const input = await readJsonBody(c)
+    const email = normalizeEmail(input?.email)
+    if (!email) throw new RequestError(400, '请输入邮箱')
+    if (!isCodeShape(input?.code)) throw new RequestError(400, '验证码为 6 位数字')
+    const password = input?.password
+    if (typeof password !== 'string' || password.length < 8 || password.length > 72) throw new RequestError(400, '密码长度须为 8–72 位')
+    if (input?.password2 !== password) throw new RequestError(400, '两次输入的密码不一致')
+    const db = getDb(c)
+    const row = await db.prepare(`
+      SELECT u.id, u.display_name, u.avatar_seed, u.email, u.is_owner
+      FROM identities i JOIN users u ON u.id = i.user_id
+      WHERE i.provider = 'email' AND i.provider_uid = ? LIMIT 1
+    `).bind(email).first()
+    if (!row) throw new RequestError(400, '验证码错误或已过期')
+    await consumeCode(db, codeTarget('reset', email), input.code, Date.now())
+    const secret = await hashPassword(password)
+    await db.batch([
+      db.prepare("UPDATE identities SET secret = ? WHERE provider = 'email' AND provider_uid = ?").bind(secret, email),
+      db.prepare('DELETE FROM sessions WHERE user_id = ?').bind(row.id),
+    ])
+    const rawSession = await createSession(db, row.id)
+    setSessionCookie(c, rawSession)
+    return c.json({ ok: true, user: publicUser(row, c.env), ...(wantsToken(c) ? { token: rawSession } : {}) })
+  } catch (error) {
+    if (error instanceof RequestError) return c.json({ ok: false, error: error.message }, error.status)
+    console.error('Password reset failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
 app.post('/auth/logout', async (c) => {
   clearSessionCookie(c)
   try {
@@ -935,17 +1028,20 @@ app.post('/comments', async (c) => {
     if (body.length > 500) {
       throw new RequestError(400, '评论最长 500 字')
     }
-    if (
-      typeof input.turnstileToken !== 'string'
-      || input.turnstileToken.length < 1
-      || input.turnstileToken.length > 2048
-    ) {
+    // 人机验证两条路:Turnstile token;或 Turnstile 加载不了时(大陆网络常见)的邮箱验证码(续跑 ⑥,2026-10-01)
+    const hasToken = typeof input.turnstileToken === 'string' && input.turnstileToken.length >= 1 && input.turnstileToken.length <= 2048
+    const hasCode = isCodeShape(input.emailCode)
+    if (!hasToken && !hasCode) {
       throw new RequestError(400, '请完成人机验证')
     }
 
-    const turnstileError = await verifyTurnstile(c, input.turnstileToken)
-    if (turnstileError) {
-      throw new RequestError(403, turnstileError)
+    if (hasToken) {
+      const turnstileError = await verifyTurnstile(c, input.turnstileToken)
+      if (turnstileError) {
+        throw new RequestError(403, turnstileError)
+      }
+    } else {
+      await consumeCode(getDb(c), codeTarget('comment', user.id), input.emailCode, Date.now())
     }
 
     // 内容过滤(App Store 1.2 四件套之一)。只拦最露骨的一层,其余靠举报 + owner 复核 ——

@@ -4844,3 +4844,15 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   .admin-readers__books { display: none; }
   .admin-reader-detail { padding-left: 0; }
 }
+
+/* ── 续跑 ⑥ 大陆账号体验(2026-10-01):找回密码 / Google 提示 / 评论验证码降级 ── */
+.auth-sheet__links { display: flex; gap: 14px; justify-content: flex-end; margin: 8px 0 0; }
+.auth-sheet__links .btn-text { font-size: 0.78rem; color: var(--ink-faint); }
+.auth-sheet__links .btn-text:hover { color: var(--cinnabar); }
+.auth-sheet__info { margin: 0 0 8px; font-size: 0.78rem; line-height: 1.6; color: var(--ink-soft); }
+.auth-sheet__hint { margin: 8px 0 0; font-size: 0.74rem; line-height: 1.6; color: var(--ink-faint); text-align: center; }
+.comment-section__fallback { margin: 8px 0 10px; padding: 10px 12px; border: 1px dashed var(--line); border-radius: 8px; }
+.comment-section__fallback-text { margin: 0 0 8px; font-size: 0.78rem; line-height: 1.6; color: var(--ink-soft); }
+.comment-section__fallback-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.comment-section__fallback-row input { flex: 1 1 120px; min-width: 0; padding: 6px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); color: var(--ink); font-size: 0.9rem; letter-spacing: 2px; }
+.comment-section__fallback-row input:focus { outline: none; border-color: var(--cinnabar); }

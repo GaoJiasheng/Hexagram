@@ -35,8 +35,11 @@
 - 111 章的代理附注提到**站内译文**(`scripts/authored/mingli-translations.json`,随原文一起显示的那一层)有可疑译错(如滴天髓 3「中受饥寒」译作「中年饥寒」、五行大义 4「解」译作「解散」);这一层本轮没动。做法:从两份 .output 的 note / findings 里 grep「站内译文|译文真源|一并核改」抽出条目 → 逐条核 → 改真源 → `node scripts/fetch-corpus.mjs mingli`(只重抓 mingli,逐书 diff 核只有预期变化)。
 - 代理拿不准没改的 233 处(汇报里标「未改(存疑)」)多数是引他章 / 他书的说法,本章原文核不了:可按书另起一轮「跨章核」,给代理整本原文而不是单章。
 
-**续跑 ⑥ 大陆登录 / 账号 / 邮箱体验深度优化(owner 10-01 记)**
-- 大陆环境下:Google 登录不可达 → 邮箱注册为主路径;Turnstile 不可达 → 降级邮箱验证码(owner 可接受);验证邮件(Resend)到达率与进垃圾箱;登录态在微信内置浏览器 / iOS 壳里的保持;改密 / 找回密码 / 注销全链路。先等 T1 实测数据,再按痛点排。
+**续跑 ⑥ 大陆登录 / 账号 / 邮箱体验 —— 10-01 下午第一批已上线(web 1.35.4)**
+- ✅ 登录浮层:邮箱为主路径,Google 放后并明示「大陆网络通常打不开」;新增「忘记密码」:邮箱 → 6 位验证码(10 分钟、错 5 次作废、60 秒不重发)→ 新密码并登录,旧会话全部作废(`POST /auth/code/send` purpose=reset、`POST /auth/password/reset`,纯函数 `server/auth-code.js`,表 auth_codes 存哈希)
+- ✅ 评论:Turnstile 脚本 8 秒内加载不了 → 自动降级「发验证码到登录邮箱」,`POST /comments` 收 `emailCode` 替代 turnstileToken(同一枚码一次性)。本地 wrangler + D1 全链路验过(错码 / 重用 / 无验证 / 正码)
+- 验证码邮件走 Resend 已验证的 send.gavin.pub,与评论通知同一发件域;生产只要 RESEND_API_KEY 在就能发
+- 待 T1 实测数据再排:验证邮件到达率与进垃圾箱(发件人名 / 主题 / SPF 已有);微信内置浏览器里的登录态;Google 登录在大陆的真实失败形态(是超时还是报错)→ 要不要干脆按 IP 地区隐藏按钮
 
 **续跑 ② 等 owner 定**
 
