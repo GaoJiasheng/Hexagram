@@ -35,7 +35,7 @@ export default function ScriptureShelf({ texts, title, subtitle, basePath, brand
         <div className="shelf-outlines">
           {texts.map((t) => (
             <div key={t.slug} className="shelf-outline">
-              <BookOutline corpus={corpus} slug={t.slug} basePath={basePath} />
+              <BookOutline corpus={corpus} slug={t.slug} basePath={basePath} named />
             </div>
           ))}
         </div>

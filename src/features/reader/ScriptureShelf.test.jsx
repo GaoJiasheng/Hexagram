@@ -20,7 +20,8 @@ describe('书架首页:书少的组直接展开目录', () => {
     expect(html.match(/book-home__book/g)).toHaveLength(zongTexts.length)
     expect(html).toContain('href="/zong/guiguzi"')
     expect(html).toContain('href="/zong/zhanguoce"')
-    expect(html).toContain('目录')   // 章名异步载入前先出骨架,标题已在
+    expect(html).toContain('《鬼谷子》目录')   // 章名异步载入前先出骨架,带书名的标题已在
+    expect(html).toContain('《战国策（选）》目录')
   })
   it('短经(大学问)不列目录,只给「读全文」', () => {
     const html = shelf('xin', xinTexts)

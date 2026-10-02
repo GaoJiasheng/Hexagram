@@ -16,7 +16,9 @@ import DaoduEntry from './DaoduEntry.jsx'
 //   · 其余:章即一篇,平铺多列
 //   · singlePage 短经(大学问):没有目录可列,只给一条「读全文」
 // beforeToc:插在题解之后、目录之前的自定义块(古文组用它把「课本古文补编」按学段列出)
-export default function BookOutline({ corpus, slug, basePath, volumes, beforeToc = null }) {
+// named:目录标题带书名「《传习录》目录 · 3 卷 34 条」——一页摊开两本书时,滚到目录处头上只剩「卷上 / 卷中」,
+//   读者分不清是哪本(owner 2026-10-02);一书一首页的组不带,书名就在上面
+export default function BookOutline({ corpus, slug, basePath, volumes, beforeToc = null, named = false }) {
   const meta = getMeta(corpus, slug)
   const [chapters, setChapters] = useState(null)
   useEffect(() => {
@@ -82,7 +84,7 @@ export default function BookOutline({ corpus, slug, basePath, volumes, beforeToc
       {!single && (
         <section className="dao-text-sections book-home__toc">
           <h2 className="dao-text-sections__title">
-            目录{chapters ? (grouped ? ` · ${chapters.length} ${meta.sectionUnit} ${totalAnchors} ${anchorUnit}` : ` · ${chapters.length} ${meta.sectionUnit || '首'}`) : ''}
+            {named ? `《${meta.title}》` : ''}目录{chapters ? (grouped ? ` · ${chapters.length} ${meta.sectionUnit} ${totalAnchors} ${anchorUnit}` : ` · ${chapters.length} ${meta.sectionUnit || '首'}`) : ''}
           </h2>
           {!chapters ? (
             <div className="dao-section-grid" aria-label="目录载入中" aria-busy="true">
