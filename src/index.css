@@ -4766,6 +4766,8 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .book-toc__poems--flat .book-toc__no { min-width: 26px; }
 .book-home__others { margin: 26px 0 0; padding-top: 14px; border-top: 1px solid var(--line); font-size: .9rem; color: var(--ink-soft); }
 .book-home__others a { color: var(--ink); }
+/* 书少的组(≤ EXPAND_MAX_BOOKS 本)书架首页直接展开每本书:两本之间一道虚线隔开 */
+.shelf-outline + .shelf-outline { margin-top: 34px; padding-top: 12px; border-top: 1px dashed var(--line); }
 @media (max-width: 900px) { .book-toc__poems { columns: 2; } }
 @media (max-width: 560px) { .book-toc__poems { columns: 1; } .book-home__book { padding: 14px 14px 12px; } }
 
