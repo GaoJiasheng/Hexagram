@@ -399,6 +399,8 @@ button { cursor: pointer; font-family: var(--font-serif); color: inherit; }
 }
 
 .mobile-nav__item.active { color: var(--cinnabar); }
+/* 「搜索」项是 button,不重置就带浏览器默认的灰底方框,与旁边两项不一个样 */
+button.mobile-nav__item { border: 0; background: none; font-family: inherit; line-height: inherit; cursor: pointer; }
 
 .mobile-nav__icon { font-size: 1.1rem; }
 
@@ -422,7 +424,8 @@ button { cursor: pointer; font-family: var(--font-serif); color: inherit; }
 .app-footer--neutral { justify-content: center; }
 
 @media (max-width: 600px) {
-  .app-footer { justify-content: center; padding: 8px 16px calc(72px + env(safe-area-inset-bottom)); border-top: none; }
+  /* 底栏实高 ≈77px(两行:图标 + 字),原来只留 72px,跋印被压住下半截(owner 2026-10-02 手机截图);留 96px 稳妥 */
+  .app-footer { justify-content: center; padding: 8px 16px calc(96px + env(safe-area-inset-bottom)); border-top: none; }
   .app-footer--neutral { padding-bottom: calc(16px + env(safe-area-inset-bottom)); }
   .app-footer__copy { display: none; }
   .mobile-nav { display: block; }
