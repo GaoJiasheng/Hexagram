@@ -3740,11 +3740,15 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .dao-book:hover { border-color: var(--cinnabar); transform: translateY(-2px); }
 .dao-book__title { font-family: var(--font-serif); font-size: calc(1.3rem * var(--read-scale)); color: var(--ink); }
 .dao-book__alias { font-size: calc(0.78rem * var(--read-scale)); color: var(--ink-soft); }
-.dao-book__meta { display: flex; gap: 12px; align-items: center; font-size: calc(0.74rem * var(--read-scale)); color: var(--ink-faint); }
+.dao-book__meta { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; font-size: calc(0.74rem * var(--read-scale)); color: var(--ink-faint); }
+/* 窄屏下「8 篇」「长篇」不许在词中间折行(owner 2026-10-03 手机截图:8 / 篇、长 / 篇各占两行);
+   整项挪到下一行可以,朝代/撰者那一项可长,允许自身换行 */
+.dao-book__meta > span { white-space: nowrap; }
+.dao-book__meta > span:first-child { white-space: normal; }
 .dao-book__brief { font-size: calc(0.84rem * var(--read-scale)); line-height: 1.7; color: var(--ink); margin: 6px 0 0; }
 
 /* 篇幅档 pill(#148)——短/中/长 读时信号,弱色描边,不抢主色 */
-.book-tier { font-size: calc(0.66rem * var(--read-scale)); padding: 0 6px; border-radius: 8px; border: 1px solid var(--line); line-height: 1.5; }
+.book-tier { font-size: calc(0.66rem * var(--read-scale)); padding: 0 6px; border-radius: 8px; border: 1px solid var(--line); line-height: 1.5; white-space: nowrap; }
 .book-tier--short { color: #5b8a5b; border-color: color-mix(in srgb, #5b8a5b 40%, var(--line)); }
 .book-tier--mid { color: var(--ink-soft); }
 .book-tier--long { color: #9a6b4f; border-color: color-mix(in srgb, #9a6b4f 40%, var(--line)); }
