@@ -8,7 +8,15 @@ const KIND_ORDER = ['页面', '经典', '来路', '导读', '易经', '正文', 
 let indexPromise = null
 let records = []
 let shardPath = '/content/search/shards/{key}.json'
+let textPath = ''                 // 原文预览桶路径模板(index.json 给;没有就不出预览)
+let textSoloPath = ''             // 超长章单独成文件的路径模板(记录带 pv:'s')
+let textShards = 1024
+let previewKinds = new Set()
 const shardCache = new Map()
+const textCache = new Map()
+
+// 分片与预览桶的文件名都带构建版本号,由 index.json 指路:分片里存的是记录位置,
+// 必须与同一次构建的 index.json 配对(PWA 的 SWR 缓存曾让新索引配上旧分片,错位 11 条)
 
 function normalize(s) {
   return String(s || '').replace(/\s+/g, ' ').trim().toLowerCase()
@@ -18,14 +26,17 @@ function compactSearch(s) {
   return normalize(s).replace(/\s+/g, '')
 }
 
-function shardKey(token) {
+function fnv(s, mask) {
   let h = 2166136261
-  for (const ch of token) {
+  for (const ch of s) {
     h ^= ch.codePointAt(0)
     h = Math.imul(h, 16777619)
   }
-  return (h & 127).toString(16).padStart(2, '0')
+  return h & mask
 }
+const shardKey = (token) => fnv(token, 127).toString(16).padStart(2, '0')
+const textKey = (id) => fnv(id, textShards - 1).toString(16).padStart(3, '0')
+const soloKey = (id) => (fnv(id, 0xffffffff) >>> 0).toString(16).padStart(8, '0')
 
 function queryTokens(query) {
   const chars = [...compactSearch(query)]
@@ -51,6 +62,59 @@ async function loadShard(key) {
   return shardCache.get(key)
 }
 
+async function loadTextBucket(key, solo = false) {
+  const tpl = solo ? textSoloPath : textPath
+  if (!tpl) return {}
+  const cacheKey = solo ? `solo:${key}` : key
+  if (!textCache.has(cacheKey)) {
+    textCache.set(
+      cacheKey,
+      fetch(urlFor(tpl.replace('{key}', key)))
+        .then((r) => (r.ok ? r.json() : { texts: {} }))
+        .then((data) => data.texts || {})
+        .catch(() => ({})),
+    )
+  }
+  return textCache.get(cacheKey)
+}
+
+const PUNCT_RE = /[\s\p{P}\p{S}]/u
+
+// 原文预览:在正文里找到查询命中的位置,截前 18 字 / 后 36 字,命中段单独交回给渲染层标红。
+// 查询里的标点与正文未必一致(「知其白守其黑」对「知其白，守其黑」),所以先按「去标点」的影子串找位置,
+// 再映射回原文下标;整句找不到(命中的是零散的二字组合)就退到第一个二字组合;再找不到就给开头。
+export function makeSnippet(text, query) {
+  const src = String(text || '')
+  if (!src) return null
+  const q = compactSearch(query)
+  const chars = [...src]
+  const map = []            // 影子串下标 → 原文(字符数组)下标
+  const shadow = []
+  chars.forEach((ch, i) => { if (!PUNCT_RE.test(ch)) { shadow.push(ch.toLowerCase()); map.push(i) } })
+  const shadowStr = shadow.join('')
+  const needles = [[...q].filter((ch) => !PUNCT_RE.test(ch)).join(''), ...queryTokens(q)].filter((n) => n.length >= 2)
+  let s = -1, e = -1
+  for (const needle of needles) {
+    const at = shadowStr.indexOf(needle)
+    if (at === -1) continue
+    s = map[at]
+    e = map[at + [...needle].length - 1] + 1
+    break
+  }
+  const BEFORE = 18, AFTER = 36, OPEN = 54
+  if (s === -1) {
+    const head = chars.slice(0, OPEN).join('')
+    return { before: head, match: '', after: chars.length > OPEN ? '…' : '' }
+  }
+  const from = Math.max(0, s - BEFORE)
+  const to = Math.min(chars.length, e + AFTER)
+  return {
+    before: (from > 0 ? '…' : '') + chars.slice(from, s).join(''),
+    match: chars.slice(s, e).join(''),
+    after: chars.slice(e, to).join('') + (to < chars.length ? '…' : ''),
+  }
+}
+
 export async function ensureGlobalSearchIndexed() {
   if (!indexPromise) {
     indexPromise = fetch(urlFor('/content/search/index.json'))
@@ -58,6 +122,10 @@ export async function ensureGlobalSearchIndexed() {
       .then((data) => {
         records = Array.isArray(data.records) ? data.records : []
         shardPath = data.shardPath || shardPath
+        textPath = data.textPath || ''
+        textSoloPath = data.textSoloPath || ''
+        textShards = Number(data.textShardCount) || 1024
+        previewKinds = new Set(Array.isArray(data.previewKinds) ? data.previewKinds : [])
         return records
       })
       .catch(() => {
@@ -130,9 +198,10 @@ export async function searchGlobal(query) {
       const r = records[index]
       return {
         id: r.id,
+        index,
         kind: r.kind || '页面',
         label: r.title,
-        sub: [r.siteTitle, r.subtitle].filter(Boolean).join(' · '),
+        sub: [...new Set([r.siteTitle, r.subtitle].filter(Boolean))].join(' · '),   // 正文记录的 subtitle 就是站名,去重
         snippet: score < 3 ? (r.subtitle || '') : '',
         to: r.href,
         score,
@@ -150,6 +219,16 @@ export async function searchGlobal(query) {
     const bucket = groups.get(h.kind)
     if (bucket.length < GROUP_CAP) bucket.push(h)
   }
+
+  // 只给真正要显示的那几条取原文预览(每组最多 GROUP_CAP 条),桶按 id 哈希、取过的留缓存
+  const shown = [...groups.values()].flat().filter((h) => previewKinds.has(h.kind))
+  await Promise.all(shown.map(async (h) => {
+    const solo = records[h.index]?.pv === 's'
+    const texts = await loadTextBucket(solo ? soloKey(h.id) : textKey(h.id), solo)
+    const preview = makeSnippet(texts[h.id], q)
+    if (preview) h.preview = preview
+  }))
+
   return [...groups.entries()]
     .sort(([a], [b]) => KIND_ORDER.indexOf(a) - KIND_ORDER.indexOf(b))
     .map(([key, items]) => ({ key, label: key, items }))

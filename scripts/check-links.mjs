@@ -504,10 +504,12 @@ async function main() {
     // 必须排在下面那条 /<组>/<slug> 之前,否则 school 会被当成书名去查 texts.json。
     // 组名一律从 CORPUS_ALT 派生,**不再手写第二份清单**:诗词曲三组上线时这两条曾漏掉,
     // 而 build-content-assets 是自动发现 daodu/school 的,于是新组的导读被判成坏链(同 93e906e)。
-    m = href.match(new RegExp(`^/(${CORPUS_ALT})/school$`))
+    // 易经不是 corpus 站,但 10-01 起也有 /yijing/school 与 /yijing/zhouyi/daodu(App.jsx 显式路由)
+    const DAODU_ALT = `${CORPUS_ALT}|yijing`
+    m = href.match(new RegExp(`^/(${DAODU_ALT})/school$`))
     if (m) return !!manifest.school?.[m[1]]
 
-    m = href.match(new RegExp(`^/(${CORPUS_ALT})/([^/]+)/daodu$`))
+    m = href.match(new RegExp(`^/(${DAODU_ALT})/([^/]+)/daodu$`))
     if (m) return !!manifest.daodu?.[m[1]]?.[m[2]]
 
     m = href.match(new RegExp(`^/(${CORPUS_ALT})/([^/]+)$`))
@@ -555,8 +557,10 @@ async function main() {
   if (!Array.isArray(search.shards) || !search.shards.length) {
     err('搜索分片目录缺失')
   } else {
+    // 分片文件名由 index.json 的 shardPath 模板给出(带版本号,见 build-content-assets),不再写死
+    const shardRel = String(search.shardPath || '/content/search/shards/{key}.json').replace(/^\/content\//, '')
     for (const key of search.shards) {
-      const file = path.join(CONTENT, 'search/shards', `${key}.json`)
+      const file = path.join(CONTENT, shardRel.replace('{key}', key))
       if (!exists(file)) {
         err(`搜索分片缺失: ${key}`)
         continue
@@ -572,6 +576,24 @@ async function main() {
             err(`搜索分片记录越界: ${key}/${token} -> ${idx}`)
           }
         }
+      }
+    }
+  }
+
+  // 原文预览桶:每桶里的 id 都得是索引里的记录
+  if (search.textPath) {
+    const textRel = String(search.textPath).replace(/^\/content\//, '')
+    const dir = path.join(CONTENT, path.dirname(textRel))
+    const files = exists(dir) ? fs.readdirSync(dir).filter((f) => f.endsWith('.json')) : []
+    if (!files.length) err('搜索原文预览桶缺失')
+    for (const f of files) {
+      const key = f.split('.')[0]
+      const soloRel = String(search.textSoloPath || '').replace(/^\/content\//, '')
+      const okName = path.join(CONTENT, textRel.replace('{key}', key)) === path.join(dir, f)
+        || (soloRel && path.join(CONTENT, soloRel.replace('{key}', key.replace(/^solo-/, ''))) === path.join(dir, f))
+      if (!okName) err(`搜索预览桶文件名与模板不符: ${f}`)
+      for (const id of Object.keys(readJson(path.join(dir, f)).texts || {})) {
+        if (!ids.has(id)) err(`搜索预览桶里的记录不在索引: ${f}/${id}`)
       }
     }
   }

@@ -11,6 +11,9 @@ const OUT_DAODU = path.join(OUT_ROOT, 'daodu')
 const OUT_SCHOOL = path.join(OUT_ROOT, 'school')
 const OUT_SEARCH = path.join(OUT_ROOT, 'search')
 const SEARCH_SHARDS = 128
+const TEXT_SHARDS = 1024  // 预览原文桶(正文 / 易经等 kind 的 preview 字段),按记录 id 哈希分桶,一桶 ≈ 6k 字
+const TEXT_SOLO_MIN = 24000   // 超过这个字数的章(长短经整卷 14 万字、传习录一卷 7 万)单独成文件,不拖累同桶的短章
+const PREVIEW_KINDS = new Set(['正文', '易经'])   // 只有这两类记录带 preview(原文);别的 kind 不去取桶
 
 const CORPORA = ['dao', 'fo', 'ru', 'xin', 'fa', 'mo', 'bing', 'zong', 'zhongyi', 'moulue', 'tangshi', 'songci', 'yuanqu', 'guwen', 'mingli']
 const YIJING_CLASSICS = [
@@ -44,6 +47,8 @@ const textOf = (value) => {
   return ''
 }
 const compact = (s) => String(s || '').replace(/\s+/g, ' ').trim()
+// 段落数组只取原文字段(搜索结果预览用;textOf 会把译文一并串进来)
+const originalOf = (paras) => (Array.isArray(paras) ? paras : []).map((p) => (typeof p === 'string' ? p : p?.original || '')).filter(Boolean).join('\n')
 const uniqText = (...parts) => [...new Set(parts.map(compact).filter(Boolean))].join('\n')
 const siteOf = (corpus) => SITES.find((s) => s.key === corpus)
 const siteLabel = (corpus) => siteOf(corpus)?.portalTitle || corpus
@@ -110,7 +115,14 @@ function addRecord(records, item) {
     subtitle: compact(item.subtitle),
     href,
     text: compact(item.text),
+    preview: compact(item.preview || ''),   // 搜索结果里的原文预览(只有正文一类才给;白话/页面不给)
   })
+}
+
+const fnv = (s, mask) => {
+  let h = 2166136261
+  for (const ch of s) { h ^= ch.codePointAt(0); h = Math.imul(h, 16777619) }
+  return (h & mask) >>> 0   // >>> 0:掩码到 32 位时 & 会给负数,文件名里不能带负号
 }
 
 function buildSearchAssets(records) {
@@ -123,6 +135,11 @@ function buildSearchAssets(records) {
     subtitle: r.subtitle,
     href: r.href,
   }))
+  // 分片文件名带版本号(记录 id 序列的哈希):分片里存的是记录在 index.json 里的**位置**,
+  // 两边必须是同一次构建的产物。PWA 对 /content/ 是 StaleWhileRevalidate,发版后客户端曾拿到
+  // 新 index.json + 旧分片 → 位置错位 11 条,「知其白守其黑」搜出三十九章(owner 2026-10-03)。
+  // 现在 index.json 里写明分片路径,新索引只会去取新名字的分片,旧索引配旧分片,永远自洽。
+  const ver = fnv(records.map((r) => r.id).join('\n'), 0xffffffff).toString(16).padStart(8, '0')
   const shards = new Map()
   for (let i = 0; i < SEARCH_SHARDS; i += 1) {
     const key = i.toString(16).padStart(2, '0')
@@ -144,15 +161,47 @@ function buildSearchAssets(records) {
         .sort(([a], [b]) => a.localeCompare(b))
         .map(([token, ids]) => [token, ids.sort((a, b) => a - b)]),
     )
-    writeJson(path.join(OUT_SEARCH, 'shards', `${key}.json`), { version: 1, tokens })
+    writeJson(path.join(OUT_SEARCH, 'shards', `${key}.${ver}.json`), { version: 1, tokens })
     shardKeys.push(key)
   }
 
+  // 原文预览桶:{ 记录 id: 原文 },按 id 哈希分 256 桶,结果列表只取命中的那几桶
+  const textBuckets = new Map()
+  const solo = new Set()        // 单独成文件的记录 id(index.json 记录上标 pv:'s',客户端据此换路径)
+  let previewChars = 0
+  fs.mkdirSync(path.join(OUT_SEARCH, 'text'), { recursive: true })
+  for (const r of records) {
+    if (!PREVIEW_KINDS.has(r.kind) || !r.preview) continue
+    previewChars += r.preview.length
+    if (r.preview.length > TEXT_SOLO_MIN) {
+      solo.add(r.id)
+      const key = fnv(r.id, 0xffffffff).toString(16).padStart(8, '0')
+      fs.writeFileSync(path.join(OUT_SEARCH, 'text', `solo-${key}.${ver}.json`), JSON.stringify({ version: 1, texts: { [r.id]: r.preview } }))
+      continue
+    }
+    const key = fnv(r.id, TEXT_SHARDS - 1).toString(16).padStart(3, '0')
+    if (!textBuckets.has(key)) textBuckets.set(key, {})
+    textBuckets.get(key)[r.id] = r.preview
+  }
+  let maxBucket = 0
+  for (const [key, bucket] of textBuckets) {
+    const json = JSON.stringify({ version: 1, texts: bucket })
+    maxBucket = Math.max(maxBucket, json.length)
+    fs.writeFileSync(path.join(OUT_SEARCH, 'text', `${key}.${ver}.json`), json)
+  }
+  for (const r of indexRecords) if (solo.has(r.id)) r.pv = 's'
+  console.log(`search preview: ${textBuckets.size} buckets + ${solo.size} solo, ${previewChars} chars, largest bucket ${Math.round(maxBucket / 1024)} K chars`)
+
   writeJson(path.join(OUT_SEARCH, 'index.json'), {
-    version: 2,
+    version: 3,
+    ver,
     count: indexRecords.length,
     shardCount: SEARCH_SHARDS,
-    shardPath: '/content/search/shards/{key}.json',
+    shardPath: `/content/search/shards/{key}.${ver}.json`,
+    textShardCount: TEXT_SHARDS,
+    textPath: `/content/search/text/{key}.${ver}.json`,
+    textSoloPath: `/content/search/text/solo-{key}.${ver}.json`,
+    previewKinds: [...PREVIEW_KINDS],
     shards: shardKeys,
     records: indexRecords,
   })
@@ -537,6 +586,7 @@ function indexYijing(records) {
         textOf(h.judgment), textOf(h.tuan), textOf(h.daxiang),
         textOf(h.lines), textOf(h.extra), h.xugua, h.zagua,
       ),
+      preview: uniqText(h.judgment?.original || textOf(h.judgment), ...(Array.isArray(h.lines) ? h.lines : []).map((l) => l?.original || textOf(l))),
     })
   }
 
@@ -560,6 +610,7 @@ function indexYijing(records) {
         subtitle: '易经经传',
         href: `/classics/${slug}/${ch.no}`,
         text: uniqText(ch.title, textOf(ch.paragraphs)),
+        preview: originalOf(ch.paragraphs),
       })
     }
   }
@@ -645,6 +696,7 @@ function indexCorpus(records, corpus) {
         subtitle: siteLabel(corpus),
         href: chapterHref(corpus, m.slug, ch.no, m),
         text: uniqText(ch.title, textOf(ch.paragraphs), noteText, yanyiText),
+        preview: originalOf(ch.paragraphs),
       })
     }
   }

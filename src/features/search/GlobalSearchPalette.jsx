@@ -133,6 +133,13 @@ export default function GlobalSearchPalette({ open, onClose }) {
                         {r.sub}
                         {r.snippet && <span className="search-result__snippet"> · {highlight(r.snippet, deferredQuery)}</span>}
                       </span>
+                      {r.preview && (
+                        <span className="search-result__preview">
+                          {r.preview.before}
+                          {r.preview.match && <mark>{r.preview.match}</mark>}
+                          {r.preview.after}
+                        </span>
+                      )}
                     </li>
                   )
                 })}

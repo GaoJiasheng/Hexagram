@@ -977,19 +977,34 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 
 .search-result {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  gap: 2px 12px;
   padding: 10px 16px;
   cursor: pointer;
   transition: background 0.1s;
 }
+/* 原文预览(owner 2026-10-03:搜出来的目录带上原文,好决定点哪一个):独占一行、衬线、命中段标朱 */
+.search-result__preview {
+  flex-basis: 100%;
+  font-family: var(--font-serif);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.search-result__preview mark { background: var(--cinnabar-bg); color: var(--cinnabar); padding: 0 1px; }
 
 .search-result:hover, .search-result--selected { background: var(--cinnabar-bg); }
 
 .search-result__label { font-size: 0.9rem; color: var(--ink); flex: 1; min-width: 0; }
 .search-result__sub {
   max-width: 56%;
+  margin-left: auto;
   font-size: 0.75rem;
   color: var(--ink-faint);
   overflow: hidden;
