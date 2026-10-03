@@ -12,6 +12,7 @@ import { setupDeepLinks } from './native/deepLink.js'
 import { useTelemetry } from './features/telemetry.js'
 import { ensureSerifFont } from './features/fonts.js'
 import { useReadClock } from './features/reading/readClock.js'
+import { useSearchFlash } from './features/search/searchFlash.js'
 
 // 全站搜索面板按需加载:搜索页面、经典、正文、白话、注疏、专题。
 const GlobalSearchPalette = lazy(() => import('./features/search/GlobalSearchPalette.jsx'))
@@ -314,6 +315,7 @@ function AppContent() {
   const navigate = useNavigate()
   const [backHint, setBackHint] = useState('')   // 安卓「再按一次退出」的提示
   useReadClock(location)   // 活跃时长时钟(研读统计);匿名埋点订阅它的事件
+  useSearchFlash(location) // 搜索结果点进来:高亮并闪几下命中处(?hl=)
   useTelemetry()
   // 正文衬线字体按需加载(T2 方案 A):首页、门户与各组首页不下 Noto,进任何别的页才载
   useEffect(() => {

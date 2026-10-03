@@ -47,8 +47,9 @@ const textOf = (value) => {
   return ''
 }
 const compact = (s) => String(s || '').replace(/\s+/g, ' ').trim()
-// 段落数组只取原文字段(搜索结果预览用;textOf 会把译文一并串进来)
-const originalOf = (paras) => (Array.isArray(paras) ? paras : []).map((p) => (typeof p === 'string' ? p : p?.original || '')).filter(Boolean).join('\n')
+// 段落数组只取原文字段(搜索结果预览用;textOf 会把译文一并串进来)。保持「一段一项」不滤空——
+// 下标即段号,客户端靠它算出命中在第几段(跳转时带 seg=,长章据此落到对应那一屏)
+const originalOf = (paras) => (Array.isArray(paras) ? paras : []).map((p) => (typeof p === 'string' ? p : p?.original || ''))
 const uniqText = (...parts) => [...new Set(parts.map(compact).filter(Boolean))].join('\n')
 const siteOf = (corpus) => SITES.find((s) => s.key === corpus)
 const siteLabel = (corpus) => siteOf(corpus)?.portalTitle || corpus
@@ -115,7 +116,7 @@ function addRecord(records, item) {
     subtitle: compact(item.subtitle),
     href,
     text: compact(item.text),
-    preview: compact(item.preview || ''),   // 搜索结果里的原文预览(只有正文一类才给;白话/页面不给)
+    preview: Array.isArray(item.preview) ? item.preview.map(compact) : [],   // 原文预览,一段一项(只有正文 / 易经两类给)
   })
 }
 
@@ -171,9 +172,10 @@ function buildSearchAssets(records) {
   let previewChars = 0
   fs.mkdirSync(path.join(OUT_SEARCH, 'text'), { recursive: true })
   for (const r of records) {
-    if (!PREVIEW_KINDS.has(r.kind) || !r.preview) continue
-    previewChars += r.preview.length
-    if (r.preview.length > TEXT_SOLO_MIN) {
+    const len = r.preview.reduce((n, s) => n + s.length, 0)
+    if (!PREVIEW_KINDS.has(r.kind) || !len) continue
+    previewChars += len
+    if (len > TEXT_SOLO_MIN) {
       solo.add(r.id)
       const key = fnv(r.id, 0xffffffff).toString(16).padStart(8, '0')
       fs.writeFileSync(path.join(OUT_SEARCH, 'text', `solo-${key}.${ver}.json`), JSON.stringify({ version: 1, texts: { [r.id]: r.preview } }))
@@ -586,7 +588,7 @@ function indexYijing(records) {
         textOf(h.judgment), textOf(h.tuan), textOf(h.daxiang),
         textOf(h.lines), textOf(h.extra), h.xugua, h.zagua,
       ),
-      preview: uniqText(h.judgment?.original || textOf(h.judgment), ...(Array.isArray(h.lines) ? h.lines : []).map((l) => l?.original || textOf(l))),
+      preview: [h.judgment?.original || textOf(h.judgment), ...(Array.isArray(h.lines) ? h.lines : []).map((l) => l?.original || textOf(l))],
     })
   }
 

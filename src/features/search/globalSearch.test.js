@@ -23,4 +23,11 @@ describe('搜索结果原文预览', () => {
     expect(makeSnippet(long, '丙丁').match).toBe('')
     expect(makeSnippet('', '知其')).toBeNull()
   })
+  it('一段一项的数组:交回命中所在段下标', () => {
+    const paras = ['知其雄，守其雌，为天下谿。', '为天下谿，常德不离。', '知其白，守其黑，为天下式。']
+    const s = makeSnippet(paras, '知其白守其黑')
+    expect(s.seg).toBe(2)
+    expect(s.match).toBe('知其白，守其黑')
+    expect(makeSnippet('知其白', '知其').seg).toBeUndefined()
+  })
 })

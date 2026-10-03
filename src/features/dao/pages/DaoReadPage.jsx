@@ -54,7 +54,13 @@ export default function DaoReadPage() {
   const curChapter = book.chapters.find((c) => c.no === chapter)
   const savedPos = getReadPos()[slug]
   const partsCur = curChapter ? chapterParts(curChapter, meta) : null
+  // 搜索结果点进来带 seg=<段下标>:长章落到那一段所在的屏(优先于上次读到的位置)
+  const segParam = sp.get('seg') !== null ? Number(sp.get('seg')) : NaN
   const resumePart = partParam || (() => {
+    if (partsCur && Number.isInteger(segParam)) {
+      const j = partsCur.findIndex((pt) => segParam >= pt.from && segParam < pt.to)
+      if (j >= 0) return j + 1
+    }
     if (!partsCur || !savedPos || savedPos.ch !== chapter) return 1
     const i = partsCur.findIndex((pt) => savedPos.seg >= pt.from && savedPos.seg < pt.to)
     return i >= 0 ? i + 1 : 1

@@ -80,12 +80,23 @@ async function loadTextBucket(key, solo = false) {
 
 const PUNCT_RE = /[\s\p{P}\p{S}]/u
 
+function withFlash(href, q, seg) {
+  if (!href) return href
+  const [base, hash = ''] = href.split('#')
+  const params = new URLSearchParams(base.includes('?') ? base.slice(base.indexOf('?') + 1) : '')
+  params.set('hl', q)
+  if (seg !== null && seg !== undefined) params.set('seg', String(seg))
+  return `${base.split('?')[0]}?${params.toString()}${hash ? `#${hash}` : ''}`
+}
+
 // 原文预览:在正文里找到查询命中的位置,截前 18 字 / 后 36 字,命中段单独交回给渲染层标红。
 // 查询里的标点与正文未必一致(「知其白守其黑」对「知其白，守其黑」),所以先按「去标点」的影子串找位置,
 // 再映射回原文下标;整句找不到(命中的是零散的二字组合)就退到第一个二字组合;再找不到就给开头。
+// text 可以是一段一项的数组(构建期保留段界),此时多交回 seg = 命中所在段的下标
 export function makeSnippet(text, query) {
-  const src = String(text || '')
-  if (!src) return null
+  const paras = Array.isArray(text) ? text : null
+  const src = paras ? paras.join('\n') : String(text || '')
+  if (!src.replace(/\s/g, '')) return null
   const q = compactSearch(query)
   const chars = [...src]
   const map = []            // 影子串下标 → 原文(字符数组)下标
@@ -108,7 +119,9 @@ export function makeSnippet(text, query) {
   }
   const from = Math.max(0, s - BEFORE)
   const to = Math.min(chars.length, e + AFTER)
+  const seg = paras ? chars.slice(0, s).filter((ch) => ch === '\n').length : undefined
   return {
+    seg,
     before: (from > 0 ? '…' : '') + chars.slice(from, s).join(''),
     match: chars.slice(s, e).join(''),
     after: chars.slice(e, to).join('') + (to < chars.length ? '…' : ''),
@@ -228,6 +241,11 @@ export async function searchGlobal(query) {
     const preview = makeSnippet(texts[h.id], q)
     if (preview) h.preview = preview
   }))
+
+  // 点进去之后高亮并闪几下命中处(SearchFlash 读 hl);正文命中带 seg,长章据此落到对应那一屏
+  for (const h of [...groups.values()].flat()) {
+    h.to = withFlash(h.to, q, h.kind === '正文' && Number.isInteger(h.preview?.seg) && h.preview.match ? h.preview.seg : null)
+  }
 
   return [...groups.entries()]
     .sort(([a], [b]) => KIND_ORDER.indexOf(a) - KIND_ORDER.indexOf(b))

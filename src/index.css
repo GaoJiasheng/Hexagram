@@ -998,6 +998,15 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   -webkit-box-orient: vertical;
 }
 .search-result__preview mark { background: var(--cinnabar-bg); color: var(--cinnabar); padding: 0 1px; }
+/* 搜索结果点进来后命中处的闪烁色块(searchFlash.js 绝对定位盖在文字上,不改正文 DOM):闪 4 下,停一会儿淡出 */
+.search-flash {
+  position: absolute; z-index: 40; pointer-events: none; border-radius: 3px;
+  background: color-mix(in srgb, var(--cinnabar-pure) 30%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--cinnabar-pure) 45%, transparent);
+  animation: search-flash-blink 0.55s ease-in-out 0s 4, search-flash-fade 1.2s ease 5s forwards;
+}
+@keyframes search-flash-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.15; } }
+@keyframes search-flash-fade { to { opacity: 0; } }
 
 .search-result:hover, .search-result--selected { background: var(--cinnabar-bg); }
 
