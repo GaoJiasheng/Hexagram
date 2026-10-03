@@ -31,7 +31,7 @@ function BookCard({ t }) {
       {t.alias && <div className="dao-book__alias">{t.alias}</div>}
       <div className="dao-book__meta">
         <span>{t.era}</span>
-        <span>{t.attribution}</span>
+        <span className="dao-book__meta-long">{t.attribution}</span>
       </div>
       <p className="dao-book__brief">{t.brief}</p>
       {t.dubious && <div className="dao-book__dubious">⚠ 托名·疑现代伪作</div>}

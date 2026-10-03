@@ -3759,7 +3759,8 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 /* 窄屏下「8 篇」「长篇」不许在词中间折行(owner 2026-10-03 手机截图:8 / 篇、长 / 篇各占两行);
    整项挪到下一行可以,朝代/撰者那一项可长,允许自身换行 */
 .dao-book__meta > span { white-space: nowrap; }
-.dao-book__meta > span:first-child { white-space: normal; }
+.dao-book__meta > span:first-child, .dao-book__meta > .dao-book__meta-long { white-space: normal; }
+.dao-book__meta > .dao-book__meta-long { flex: 1 1 100%; }   /* 撰注者一长串(旧题鬼谷子 撰 · 李虚中 注)整行另起,不挤在朝代旁成窄栏 */
 .dao-book__brief { font-size: calc(0.84rem * var(--read-scale)); line-height: 1.7; color: var(--ink); margin: 6px 0 0; }
 
 /* 篇幅档 pill(#148)——短/中/长 读时信号,弱色描边,不抢主色 */
@@ -3767,7 +3768,9 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .book-tier--short { color: #5b8a5b; border-color: color-mix(in srgb, #5b8a5b 40%, var(--line)); }
 .book-tier--mid { color: var(--ink-soft); }
 .book-tier--long { color: #9a6b4f; border-color: color-mix(in srgb, #9a6b4f 40%, var(--line)); }
-.dao-book__status { position: absolute; top: 14px; right: 14px; font-size: calc(0.68rem * var(--read-scale)); padding: 1px 7px; border-radius: 3px; border: 1px solid var(--line); color: var(--ink-faint); }
+/* 状态标签不再绝对定位在右上角(owner 2026-10-03:长书名会压到它、或被挤得折在书名中间);
+   改为书名上方的一枚小标签,随文流排,书名永远占满整行 */
+.dao-book__status { order: -1; align-self: flex-start; margin-bottom: 2px; line-height: 1.5; font-size: calc(0.68rem * var(--read-scale)); padding: 1px 7px; border-radius: 3px; border: 1px solid var(--line); color: var(--ink-faint); }
 .dao-book__status--done { color: var(--cinnabar); border-color: currentColor; }
 
 /* 观数(命理研习)组首页——学习路径图,不是书架:学堂 → 入门 → 进阶三书(格局/旺衰/调候)分叉
