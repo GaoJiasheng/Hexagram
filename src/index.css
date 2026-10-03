@@ -4521,8 +4521,6 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 /* 首屏「缘起」一段(T4,2026-10-01):跋里那段话的第一段,左侧一道朱线,衬线,不抢主张的字号 */
 .landing-hero__origin { margin: 18px 0 14px; padding: 2px 0 2px 16px; border-left: 2px solid var(--cinnabar-pure); max-width: 640px; }
 .landing-hero__origin p { margin: 0; font-family: var(--font-serif); font-size: 0.98rem; line-height: 1.95; color: var(--ink-soft); }
-.landing-hero__origin-more { margin: 6px 0 0; padding: 0; border: 0; background: none; font: inherit; font-size: 0.85rem; color: var(--cinnabar-pure); cursor: pointer; }
-.landing-hero__origin-more:hover { text-decoration: underline; }
 .landing-hero__enter { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; margin: 0 0 12px; font-size: 0.9rem; }
 .landing-hero__enter-label { color: var(--ink-faint); font-size: 0.82rem; }
 .landing-hero__enter a { color: var(--cinnabar-pure); text-decoration: none; }

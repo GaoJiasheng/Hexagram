@@ -46,20 +46,14 @@ export default function PortalLanding({ shelf, groupCount }) {
         <span className="landing-hero__seal" aria-hidden="true">观象</span>
         {/* 2026-10-01 owner:首屏是「灯」不是「仪表盘」——第一眼给外人看的话,不给同行看的数字。
             布局不动(印章 → 主张 → 一行说明 → 一段 → 一行小字),只换内容:四个计数下移到「索引」段,
-            这里换成跋里「缘起」的第一段 + 全文链接;大模型的事只在跋里说。 */}
+            这里换成跋里「缘起」的第一段(全文链接 10-03 去掉);大模型的事只在跋里说。 */}
         <h1 className="landing-hero__claim">古书原文，一句一句读明白</h1>
         <p className="landing-hero__sub">
           原文在上，译注在旁，每一章都有一篇讲透的白话。经、子、集三部，{groupCount ? `${groupCount} 组书架` : '诸组书架'}同站。
         </p>
+        {/* 「全文 → 跋」链接 2026-10-03 按 owner 意见去掉(首屏不用再显眼地指向跋;顶栏与页脚两处入口足够) */}
         <blockquote className="landing-hero__origin">
           <p>{(Array.isArray(colophon.origin) ? colophon.origin : [colophon.origin])[0]}</p>
-          <button
-            type="button"
-            className="landing-hero__origin-more"
-            onClick={() => window.dispatchEvent(new CustomEvent('guanxiang:colophon'))}
-          >
-            全文 → 跋
-          </button>
         </blockquote>
         <p className="landing-hero__enter">
           <span className="landing-hero__enter-label">第一次来，可以从这里读起</span>

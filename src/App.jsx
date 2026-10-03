@@ -221,7 +221,7 @@ function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings, onC
             <line x1="11.5" y1="11.5" x2="16" y2="16" />
           </svg>
         </button>
-        {/* 「跋」文字入口(2026-10-01「老师首次打开」T5):页脚那枚小字手机上难发现;桌面顶栏给一个字,手机靠首页缘起块的「全文 → 跋」 */}
+        {/* 「跋」文字入口(2026-10-01「老师首次打开」T5):桌面顶栏给一个字;手机靠页脚那枚印(首页缘起块的「全文 → 跋」10-03 按 owner 意见去掉) */}
         <button className="nav-icon-btn nav-text-btn nav-colophon-btn" onClick={onColophon} aria-label="跋 · 落款" title="跋 · 落款">跋</button>
         <button className="nav-icon-btn" onClick={onSettings} aria-label="设置" title="设置">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -310,12 +310,6 @@ function AppContent() {
   const openPortal = useCallback(() => setPortalOpen(true), [])
   const openSettings = useCallback(() => setSettingsOpen(true), [])
   const openColophon = useCallback(() => setColophonOpen(true), [])
-  // 首页「缘起」块的「全文 → 跋」:PortalLanding 在路由树深处、拿不到这里的 state,走一个自定义事件
-  useEffect(() => {
-    const on = () => setColophonOpen(true)
-    window.addEventListener('guanxiang:colophon', on)
-    return () => window.removeEventListener('guanxiang:colophon', on)
-  }, [])
   const location = useLocation()
   const navigate = useNavigate()
   const [backHint, setBackHint] = useState('')   // 安卓「再按一次退出」的提示
