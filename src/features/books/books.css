@@ -50,7 +50,12 @@
 /* 脑图 */
 .mm-wrap { margin: 20px 0 8px; }
 .mm-canvas { position: relative; background: var(--paper-raised); border: 0.5px solid var(--line); border-radius: 14px; overflow: hidden; }
-.mm-svg { width: 100%; height: auto; display: block; cursor: grab; touch-action: none; }
+/* 画布定高(页内)/占满(全屏);树按 1:1 像素画在里面,大了就拖着看——不再按整棵树缩放塞进来 */
+/* 页内画布高度固定(不随展开/退出全屏被撑大,owner 2026-10-05);右下角可手动拖高拖矮(resize),画布尺寸由 ResizeObserver 跟上 */
+.mm-canvas { height: clamp(420px, 62vh, 680px); min-height: 300px; max-height: 92vh; resize: vertical; }
+.mm-wrap--fs .mm-canvas { height: auto; max-height: none; resize: none; }
+.mm-svg { width: 100%; height: 100%; display: block; cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; }
+.mm-zoom { align-self: center; min-width: 3.2em; text-align: right; font-size: .78rem; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
 .mm-svg:active { cursor: grabbing; }
 .mm-tap { cursor: pointer; }
 
