@@ -111,6 +111,7 @@
 - 底座:口诀用《三命通会》原文而非坊间流传版;`geju.js` 单测以原书自举之例为验;加一个 widget = schema.js 登记校验 → WidgetBlock 登记懒加载 → design-v23 §5 补 props 契约;管线只写参数不画图,参数错了机器查得出
 - 概念索引每个落点挂 `kw` 由 check-data 回查原文;学堂正文里的可算断言全部由引擎验过;三派镜头只摆入手处不裁断;排盘台只排结构,不存不传;四库白文走断句层(标点当编辑内容另存,逐段核「去标点后与底本逐字相等」);整组要再藏,registry 加回 `portalHidden: true` 一行即可
 - 续跑工具:`gen-zhuzi-wf.mjs --bundle=3200` 小篇合包 · `scripts/check-unit.mjs` / `check-baihua-draft.mjs` / `check-daodu-draft.mjs` 给代理的自查尺子 · `fetch-corpus` 的 `joinParas` · `scripts/salvage-baihua.mjs` 救「只交说明」的单元;续跑办法见 `docs/todo.md` §0.1
+- **观书(`/books`)** 入口:除 iOS 长按图标外,**底栏第一项连点 3 次 / 桌面页脚空白处连点 3 次**(`books/booksSecretTap.js`,仅管理员生效、非管理员无任何反应;owner 2026-10-05),真正的闸仍是边缘 404 + `useBookAccess`。
 - **观书(`/books`)**:中立外壳(`data-site="portal"`,隐藏入口、不入数据导入导出/公共搜索、与读经诸站互不链接);书内朱色、金句竖条须用 `--cinnabar-pure`(那里 `--cinnabar` 被 muted)
 - 版权红线:原书全文绝不入库、文章原创消化非全文复制、引文 `quote.original` ≤100字/条且 ≤16条/篇(目前人工把关,不走 check-data);生成式书封颜色写死不随明暗反色,零版权:不用任何出版社封面素材
 - 做新书唯一作业标准(SOP)见 `docs/books-production-standard.md`;产品设计 `docs/study-feature-design.md`。加新书照 SOP 十步清单,新母题在 BookCover 加 motif 分支。

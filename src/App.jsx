@@ -13,6 +13,7 @@ import { useTelemetry } from './features/telemetry.js'
 import { ensureSerifFont } from './features/fonts.js'
 import { useReadClock } from './features/reading/readClock.js'
 import { useSearchFlash } from './features/search/searchFlash.js'
+import { useBooksSecretTap } from './features/books/booksSecretTap.js'
 
 // 全站搜索面板按需加载:搜索页面、经典、正文、白话、注疏、专题。
 const GlobalSearchPalette = lazy(() => import('./features/search/GlobalSearchPalette.jsx'))
@@ -260,13 +261,14 @@ function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings, onC
 
 function MobileNav({ module, canSwitch, otherSite, onPortal, onSearch }) {
   const location = useLocation()
+  const booksTap = useBooksSecretTap()   // 第一项连点 3 次 → 观书(仅管理员;见 booksSecretTap.js)
 
   return (
     <div className="mobile-nav" role="navigation" aria-label="底部导航">
       <div className="mobile-nav__inner">
         {/* 底栏若没列「我的」(诗词曲/古文等只列了「经典」),自动补一项——手机顶栏的 ☯ 已隐藏(T8),入口统一在底栏 */}
         {[...module.mobileNav, ...(module.hasSearch && !module.mobileNav.some((m) => m.label === '我的')
-          ? [{ to: module.key === 'yijing' ? '/me' : `${module.home}/me`, label: '我的', icon: '☯', exact: false }] : [])].map(({ to, label, icon, exact, match }) => {
+          ? [{ to: module.key === 'yijing' ? '/me' : `${module.home}/me`, label: '我的', icon: '☯', exact: false }] : [])].map(({ to, label, icon, exact, match }, idx) => {
           const isActive = match
             ? match.some((p) => location.pathname === p || location.pathname.startsWith(p))
             : exact ? location.pathname === to : location.pathname.startsWith(to)
@@ -276,6 +278,7 @@ function MobileNav({ module, canSwitch, otherSite, onPortal, onSearch }) {
               to={to}
               className={`mobile-nav__item ${isActive ? 'active' : ''}`}
               aria-label={label}
+              onClick={idx === 0 ? booksTap : undefined}
             >
               <span className="mobile-nav__icon" aria-hidden="true">{icon}</span>
               <span>{label}</span>
@@ -316,6 +319,7 @@ function AppContent() {
   const [backHint, setBackHint] = useState('')   // 安卓「再按一次退出」的提示
   useReadClock(location)   // 活跃时长时钟(研读统计);匿名埋点订阅它的事件
   useSearchFlash(location) // 搜索结果点进来:高亮并闪几下命中处(?hl=)
+  const booksTap = useBooksSecretTap()   // 页脚空白处连点 3 次 → 观书(桌面网页无底栏;仅管理员)
   useTelemetry()
   // 正文衬线字体按需加载(T2 方案 A):首页、门户与各组首页不下 Noto,进任何别的页才载
   useEffect(() => {
@@ -580,7 +584,7 @@ function AppContent() {
         </Suspense>
         </ErrorBoundary>
       </main>
-      <footer className={`app-footer ${isPortal ? 'app-footer--neutral' : ''}`}>
+      <footer className={`app-footer ${isPortal ? 'app-footer--neutral' : ''}`} onClick={(e) => { if (!e.target.closest('a, button')) booksTap(e) }}>
         {!isPortal && (
           <div className="app-footer__copy">
             <span>观象 · 个人学习站</span>
