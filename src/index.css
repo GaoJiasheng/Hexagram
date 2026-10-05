@@ -201,6 +201,8 @@ button { cursor: pointer; font-family: var(--font-serif); color: inherit; }
   padding: 40px 24px 80px;
   width: 100%;
 }
+/* 观书书架索引:卡片网格页,不受正文阅读宽度限制,宽屏能多放几列(owner 2026-10-05) */
+.app-main--wide { max-width: min(1680px, 100%); }
 
 /* iPad 竖屏缩小页面留白,把增加的视口宽度留给正文；手机区间保持原样。 */
 @media (min-width: 641px) and (max-width: 1024px) {

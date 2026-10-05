@@ -402,7 +402,7 @@ function AppContent() {
       {backHint && <div className="back-hint" role="status">{backHint}</div>}
       {/* 中立枢纽也要能改主题/登录/搜索——这些本就是全局功能,不属于任何分站,故给一条精简顶栏(印+搜索+设置+头像) */}
       <Nav module={module} canSwitch={canSwitch} otherSite={otherSite} onSearch={openSearch} onPortal={openPortal} onSettings={openSettings} onColophon={openColophon} neutral={isPortal} />
-      <main className="app-main page-fade-in">
+      <main className={`app-main page-fade-in ${location.pathname === '/books' ? 'app-main--wide' : ''}`}>
         <ErrorBoundary key={location.pathname}>
         <Suspense fallback={<div className="route-loading" aria-label="加载中">⋯</div>}>
         <Routes>
