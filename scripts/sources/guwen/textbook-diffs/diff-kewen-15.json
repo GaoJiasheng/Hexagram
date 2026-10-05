@@ -1,0 +1,98 @@
+{
+ "book": "kewen",
+ "no": 15,
+ "siteTitle": "核舟记",
+ "volume": "8b",
+ "textbookTitle": "核舟记",
+ "printedPage": 68,
+ "imagePages": [
+  75,
+  76,
+  77
+ ],
+ "sourceNote": "选自《虞初新志》卷十（清代张潮编，文学古籍刊行社1954年版）。略有删节。",
+ "excerpt": {
+  "startsWith": "明有奇巧人曰王叔远",
+  "endsWith": "嘻，技亦灵怪矣哉！"
+ },
+ "paragraphStarts": [
+  "明有奇巧人曰王叔",
+  "舟首尾长约八分有",
+  "船头坐三人，中峨",
+  "舟尾横卧一楫。楫",
+  "其船背稍夷，则题",
+  "通计一舟，为人五"
+ ],
+ "edits": [
+  {
+   "base": "篛篷覆之",
+   "textbook": "箬篷覆之"
+  },
+  {
+   "base": "右刻「山高",
+   "textbook": "右刻“山高"
+  },
+  {
+   "base": "石出」，左刻「清风",
+   "textbook": "石出”，左刻“清风"
+  },
+  {
+   "base": "不兴」，石青",
+   "textbook": "不兴”，石青"
+  },
+  {
+   "base": "苏黄共阅一手卷；东坡",
+   "textbook": "苏、黄共阅一手卷。东坡"
+  },
+  {
+   "base": "鲁直背;鲁直",
+   "textbook": "鲁直背。鲁直"
+  },
+  {
+   "base": "身各微侧；其两膝",
+   "textbook": "各微侧，其两膝"
+  },
+  {
+   "base": "与苏黄不属",
+   "textbook": "与苏、黄不属"
+  },
+  {
+   "base": "倚之，珠可",
+   "textbook": "倚之——珠可"
+  },
+  {
+   "base": "文曰「天启",
+   "textbook": "文曰“天启"
+  },
+  {
+   "base": "甫刻」，细",
+   "textbook": "甫刻”，细"
+  },
+  {
+   "base": "文曰「初平山人」",
+   "textbook": "文曰“初平山人”"
+  },
+  {
+   "base": "一舟：为人者五，为窗者八，为篛篷",
+   "textbook": "一舟，为人五；为窗八；为箬篷"
+  },
+  {
+   "base": "念珠者各一;对联",
+   "textbook": "念珠各一；对联"
+  },
+  {
+   "base": "三十有四：而计其长，曾不盈寸，盖简",
+   "textbook": "三十有四。而计其长曾不盈寸。盖简"
+  },
+  {
+   "base": "修狭者为之。",
+   "textbook": "修狭者为之。嘻，技亦灵怪矣哉！"
+  }
+ ],
+ "uncertain": [
+  {
+   "snippet": "修狭者为之。",
+   "note": "Not a reading doubt: textbook is 略有删节 — it omits base paragraph [7] (魏子详瞩…) entirely and ends paragraph 6 with an inserted closing sentence 嘻，技亦灵怪矣哉！ (taken from the end of [7]); handled by the last edit + excerpt.endsWith."
+  }
+ ]
+}

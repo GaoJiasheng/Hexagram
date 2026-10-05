@@ -1,0 +1,16 @@
+{ "book": "kewen", "no": 6, "siteTitle": "孙权劝学", "volume": "7b", "textbookTitle": "孙权劝学",
+  "printedPage": 20, "imagePages": [27, 28],
+  "sourceNote": "节选自《资治通鉴》卷六十六（中华书局1956年版）。",
+  "excerpt": { "startsWith": "初，权谓吕蒙曰", "endsWith": "肃遂拜蒙母，结友而别。" },
+  "paragraphStarts": ["初，权谓吕蒙曰："],
+  "edits": [
+    {"base":"吕蒙曰：「卿今","textbook":"吕蒙曰：“卿今"},
+    {"base":"不可不学。」蒙辞","textbook":"不可不学！”蒙辞"},
+    {"base":"权曰：「孤岂","textbook":"权曰：“孤岂"},
+    {"base":"孰若孤！孤常","textbook":"孰若孤？孤常"},
+    {"base":"所益。」蒙乃","textbook":"所益。”蒙乃"},
+    {"base":"惊曰：「卿今者","textbook":"惊曰：“卿今者"},
+    {"base":"阿蒙！」蒙曰：「士别","textbook":"阿蒙！”蒙曰：“士别"},
+    {"base":"晚乎！」肃遂","textbook":"晚乎！”肃遂"}
+  ],
+  "uncertain": [] }

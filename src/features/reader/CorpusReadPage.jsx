@@ -91,7 +91,12 @@ export default function CorpusReadPage({ corpus }) {
   // 章题下的出处小字(古文观止:管线 chapterMeta 并入的 source):经史类标「出自《左传》」,作者标人名,「西汉文」一类断代标签照显
   const SOURCE_BOOK_RE = /(传|策|记|语|辞)$/
   const sourceLabel = (s) => (SOURCE_BOOK_RE.test(s) && s.length <= 4 ? `出自《${s}》` : /文$/.test(s) ? s : s)
-  const chapterSub = (c) => (c.source ? sourceLabel(c.source) : null)
+  // 课本收录的篇(古文组 textbookOverride,owner 2026-10-05:「课文版本按课本来」):题下注明文字依哪一册统编版课本
+  const TEXTBOOK_VOL = { '7a': '七年级上册', '7b': '七年级下册', '8a': '八年级上册', '8b': '八年级下册', '9a': '九年级上册', '9b': '九年级下册', h1a: '高中必修上册', h1b: '高中必修下册', h2a: '高中选择性必修上册', h2m: '高中选择性必修中册', h2b: '高中选择性必修下册' }
+  const chapterSub = (c) => {
+    const parts = [c.source ? sourceLabel(c.source) : null, c.textbook ? `文字依统编版语文${TEXTBOOK_VOL[c.textbook.volume] || '课本'}` : null].filter(Boolean)
+    return parts.length ? parts.join(' · ') : null
+  }
   // 段号:论语逐章语录素来编号;其余书的长章(>3 段,如伤寒论/坛经)默认编号,便于定位/引用
   const isLunyu = corpus === 'ru' && slug === 'lunyu'
   const curChapter = book.chapters.find((c) => c.no === chapter)

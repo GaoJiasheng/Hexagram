@@ -814,6 +814,25 @@ async function main() {
         console.log(`  篇目出处并入:${hit}/${(meta.pieces || []).length}`)
       }
     }
+    // textbookOverride(古文组,owner 2026-10-05:「课文版本按课本来」):凡统编版初高中语文课本收录的篇目,
+    // 原文整篇换成课本文本(字句、分段、节选范围都照课本)。课本文本由 scripts/gen-guwen-textbook.mjs 从
+    // 国家中小学智慧教育平台公开的电子课本页图逐篇转录、并与底本逐字对校复核后写入该文件——不是手打、不凭记忆。
+    // 章对象挂 textbook:{volume, title, printedPage, sourceNote},阅读页题下与凡例据此标「本篇依统编版课本」。
+    if (book.textbookOverride) {
+      const tf = path.join(ROOT, book.textbookOverride)
+      if (fs.existsSync(tf)) {
+        const tb = JSON.parse(fs.readFileSync(tf, 'utf8'))[book.slug] || {}
+        let hit = 0
+        for (const [no, t] of Object.entries(tb)) {
+          const c = chapters.find((x) => x.no === Number(no)) || chapters[Number(no) - 1]
+          if (!c || !Array.isArray(t.paragraphs) || !t.paragraphs.length || (t.siteTitle && c.title !== t.siteTitle)) { errors.push(`${book.title}: 课本文本第 ${no} 篇(${t.siteTitle || '?'})对不上章(实为「${c?.title}」)`); continue }
+          c.paragraphs = t.paragraphs.map((original) => ({ original }))
+          c.textbook = { volume: t.volume, title: t.title, printedPage: t.printedPage, sourceNote: t.sourceNote }
+          hit++
+        }
+        if (hit) console.log(`  课本文本替换:${hit} 篇`)
+      }
+    }
     // 剔段/截断后整章为空的,连章一起去掉(子平真诠末篇「附论杂格取运」整篇系徐乐吾所补,截断后即空)
     for (let k = chapters.length - 1; k >= 0; k--) if (!chapters[k].paragraphs.length) chapters.splice(k, 1)
 

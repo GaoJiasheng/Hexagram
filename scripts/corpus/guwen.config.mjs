@@ -54,6 +54,7 @@ export const BOOKS = [
     splitLongParas: 360,       // 一篇排成一段的(报任安书 2800 字)按句末标点分段,只分不改字
     chapterMeta: 'src/data/guwen/guwenguanzhi-meta.json',   // 出处/作者并进各章 source 字段
     exactChapters: 222,
+    textbookOverride: 'scripts/sources/guwen/textbook.json',   // 课本收录的篇:原文照统编版课本(owner 10-05)
   },
-  { slug: 'kewen', title: '课本古文补编', excerpts: KEWEN, exactChapters: KEWEN.length },
+  { slug: 'kewen', title: '课本古文补编', excerpts: KEWEN, exactChapters: KEWEN.length, textbookOverride: 'scripts/sources/guwen/textbook.json' },
 ]
