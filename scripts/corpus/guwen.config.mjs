@@ -55,6 +55,8 @@ export const BOOKS = [
     chapterMeta: 'src/data/guwen/guwenguanzhi-meta.json',   // 出处/作者并进各章 source 字段
     exactChapters: 222,
     textbookOverride: 'scripts/sources/guwen/textbook.json',   // 课本收录的篇:原文照统编版课本(owner 10-05)
+    // 归去来辞:卷页无序,课本有序——序从《歸去來辭》单页切出加在前面(owner 10-05)
+    prefaceExcerpts: [{ no: 107, title: '归去来辞', page: '歸去來辭', start: '余家贫，耕植不足以自给', end: '十一月也。' }],
   },
   { slug: 'kewen', title: '课本古文补编', excerpts: KEWEN, exactChapters: KEWEN.length, textbookOverride: 'scripts/sources/guwen/textbook.json' },
 ]

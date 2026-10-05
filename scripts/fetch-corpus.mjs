@@ -550,6 +550,44 @@ function mergeGanzhiRuns(chapters, warnings, pageName) {
   return { nMerged, nWithDayun }
 }
 
+// 摘录切取(excerpts 与 prefaceExcerpts 共用):整页按空行/标题分段 → cleanLine → 起止标记截取 → charMap。
+// 返回 { paras, warn } 或 { error }。
+function extractExcerpt(wt, ex) {
+  let warn = null
+    const groups = []
+    let cur = null
+    for (const raw of stripHeaderBlock(stripStarTemplates(wt)).split('\n')) {
+      if (STOP_RE.test(raw)) break
+      if (/^=+.*=+$/.test(raw.trim())) { cur = null; continue }
+      if (!raw.trim()) { cur = null; continue }
+      const simp = cleanLine(raw)
+      if (!simp) continue
+      if (ex.joinLines && cur) cur.push(simp)
+      else { cur = [simp]; groups.push(cur) }
+    }
+    let paras = groups.map((g) => g.join(''))
+    const text = paras.join('\n')
+    const start = ex.start ? t2s(ex.start) : null
+    const end = ex.end ? t2s(ex.end) : null
+    let si = 0, ei = text.length
+    if (start) {
+      si = text.indexOf(start)
+      if (si < 0) { return { error: `起始标记未命中「${start}」` } }
+      if (text.indexOf(start, si + 1) >= 0) warn = `起始标记不唯一「${start}」,取第一处`
+    }
+    if (end) {
+      const k = text.indexOf(end, si)
+      if (k < 0) { return { error: `终止标记未命中「${end}」` } }
+      ei = k + end.length
+    }
+    paras = text.slice(si, ei).split('\n').map((x) => x.trim()).filter(Boolean)
+    if (!paras.length) { return { error: '摘录为空' } }
+    // charMap:本篇底本的转写怪字 → 通行字([['骵','体'],…]),只换字形不改文字(与妻书扫描页的「骵/畄/霛」、
+    // 三峡 -{}- 取到的扩展区「𪩘」改回可显示的「巘」、洛神赋 t2s 出的「𬴂」改回「騑」、项脊轩志「閤子」被简化成「合子」改回「阁子」)。
+    if (ex.charMap) for (const [a, b] of ex.charMap) paras = paras.map((x) => x.split(a).join(b))
+  return { paras, warn }
+}
+
 async function main() {
   const { BOOKS } = await import(path.join(ROOT, `scripts/corpus/${key}.config.mjs`))
   const OUT_DIR = path.join(ROOT, `src/data/${key}/classics`)
@@ -564,7 +602,7 @@ async function main() {
   const allPages = BOOKS.flatMap((b) => (b.localFile ? [] : b.groupPages
     ? b.groupPages.flatMap((g) => g.pages.map((p) => (typeof p === 'string' ? p : p.page)))
     : b.excerpts ? [...new Set(b.excerpts.map((x) => x.page))]
-    : b.pages))
+    : b.pages).concat((b.prefaceExcerpts || []).map((x) => x.page)))
   // 四庫全書本的书另需抓一张缺字对照表(维基文库自有的 Module:SKchar,见 skqsTransform 说明);
   // 它与经文页走同一个缓存,不另建数据文件。没有 skqs 书时不抓。
   const needSkChar = BOOKS.some((b) => b.skqs)
@@ -653,37 +691,10 @@ async function main() {
       for (const ex of book.excerpts) {
         const wt = pages[ex.page]
         if (!wt) { errors.push(`${book.title}: 页「${ex.page}」未取到`); continue }
-        const groups = []
-        let cur = null
-        for (const raw of stripHeaderBlock(stripStarTemplates(wt)).split('\n')) {
-          if (STOP_RE.test(raw)) break
-          if (/^=+.*=+$/.test(raw.trim())) { cur = null; continue }
-          if (!raw.trim()) { cur = null; continue }
-          const simp = cleanLine(raw)
-          if (!simp) continue
-          if (ex.joinLines && cur) cur.push(simp)
-          else { cur = [simp]; groups.push(cur) }
-        }
-        let paras = groups.map((g) => g.join(''))
-        const text = paras.join('\n')
-        const start = ex.start ? t2s(ex.start) : null
-        const end = ex.end ? t2s(ex.end) : null
-        let si = 0, ei = text.length
-        if (start) {
-          si = text.indexOf(start)
-          if (si < 0) { errors.push(`${book.title}·${ex.title}: 起始标记未命中「${start}」`); continue }
-          if (text.indexOf(start, si + 1) >= 0) warnings.push(`${book.title}·${ex.title}: 起始标记不唯一「${start}」,取第一处`)
-        }
-        if (end) {
-          const k = text.indexOf(end, si)
-          if (k < 0) { errors.push(`${book.title}·${ex.title}: 终止标记未命中「${end}」`); continue }
-          ei = k + end.length
-        }
-        paras = text.slice(si, ei).split('\n').map((x) => x.trim()).filter(Boolean)
-        if (!paras.length) { errors.push(`${book.title}·${ex.title}: 摘录为空`); continue }
-        // charMap:本篇底本的转写怪字 → 通行字([['骵','体'],…]),只换字形不改文字(与妻书扫描页的「骵/畄/霛」、
-        // 三峡 -{}- 取到的扩展区「𪩘」改回可显示的「巘」、洛神赋 t2s 出的「𬴂」改回「騑」、项脊轩志「閤子」被简化成「合子」改回「阁子」)。
-        if (ex.charMap) for (const [a, b] of ex.charMap) paras = paras.map((x) => x.split(a).join(b))
+        const got = extractExcerpt(wt, ex)
+        if (got.error) { errors.push(`${book.title}·${ex.title}: ${got.error}`); continue }
+        if (got.warn) warnings.push(`${book.title}·${ex.title}: ${got.warn}`)
+        const paras = got.paras
         const c = { no: chapters.length + 1, title: t2s(ex.title), paragraphs: paras.map((original) => ({ original, translation: null })) }
         if (ex.source) c.source = ex.source
         if (ex.grade) c.grade = ex.grade
@@ -813,6 +824,16 @@ async function main() {
         for (const pc of meta.pieces || []) { const c = chapters[pc.no - 1]; if (c && c.title === pc.title && pc.source) { c.source = pc.source; hit++ } }
         console.log(`  篇目出处并入:${hit}/${(meta.pieces || []).length}`)
       }
+    }
+    // prefaceExcerpts(古文观止·归去来辞,owner 2026-10-05):底本卷页只录辞、不录序,而课本「归去来兮辞并序」带序。
+    // 序从另一页按起止标记切出(与 excerpts 同一套清洗),加在该章正文之前;课本替换(下一步)再据对校记录统一成课本文字。
+    for (const pe of book.prefaceExcerpts || []) {
+      const c = chapters.find((x) => x.no === pe.no)
+      if (!c || (pe.title && c.title !== pe.title)) { errors.push(`${book.title}: 序摘录第 ${pe.no} 篇(${pe.title})对不上章`); continue }
+      const got = extractExcerpt(pages[pe.page] || '', pe)
+      if (got.error) { errors.push(`${book.title}·${pe.title} 序: ${got.error}`); continue }
+      c.paragraphs = [...got.paras.map((original) => ({ original, translation: null })), ...c.paragraphs]
+      console.log(`  序摘录:${pe.title} 前加 ${got.paras.length} 段(${pe.page})`)
     }
     // textbookOverride(古文组,owner 2026-10-05:「课文版本按课本来」):凡统编版初高中语文课本收录的篇目,
     // 原文整篇换成课本文本(字句、分段、节选范围都照课本)。课本文本由 scripts/gen-guwen-textbook.mjs 从
