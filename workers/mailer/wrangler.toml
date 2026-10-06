@@ -1,0 +1,7 @@
+# hexa-mailer:Pages 站点的发信小 Worker(见 index.js 顶注)。部署:cd workers/mailer && npx wrangler deploy
+name = "hexa-mailer"
+main = "index.js"
+compatibility_date = "2026-07-01"
+workers_dev = false          # 不开 *.workers.dev 公网入口,只给服务绑定调用
+preview_urls = false
+send_email = [{ name = "EMAIL" }]

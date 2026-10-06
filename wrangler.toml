@@ -2,12 +2,15 @@ name = "hexa-gavin-pub"
 pages_build_output_dir = "dist"
 compatibility_date = "2026-07-01"
 
+# 发信:Pages 配置不支持 send_email 绑定(2026-10-06 部署校验拒),改由独立小 Worker hexa-mailer(workers/mailer/)持有
+# Email Service 绑定,这里用服务绑定调它;server/mailer.js 先走它,失败退 Resend。
+# ⚠️ 顶层键必须写在任何 [[表]] 之前,写在后面会被 TOML 并进上一张表(2026-10-06 踩过)
+
+[[services]]
+binding = "MAILER"
+service = "hexa-mailer"
+
 [[d1_databases]]
 binding = "DB"
 database_name = "hexagram-db"
 database_id = "86b4edc6-b944-4ce1-9dbe-a1fb2a706782"
-
-# Cloudflare Email Service 发信绑定(2026-10-06):env.EMAIL.send(),不需要 API 密钥。
-# 发件域 mail.gavin.pub 须先在 Email Service → 邮件发送 里接入并激活;未激活时发送会抛 E_SENDER_NOT_VERIFIED,
-# server/mailer.js 自动退到 Resend,所以先部署代码、后激活域名也不会断信。
-send_email = [{ name = "EMAIL" }]

@@ -1,5 +1,6 @@
 // 发信统一出口(owner 2026-10-06:Cloudflare 已开 Workers 付费,含每月 3000 封 Email Service)。
-// 顺序:① Cloudflare Email Service 绑定 env.EMAIL(wrangler.toml 的 send_email,不需要任何 API 密钥)
+// 顺序:⓪ 服务绑定 env.MAILER → 小 Worker hexa-mailer(它持有 Email Service 绑定;Pages 配置本身不支持 send_email,2026-10-06)
+//      ① Cloudflare Email Service 绑定 env.EMAIL(若将来 Pages 支持了,直接用;现在 Pages 上不会有)
 //      ② Cloudflare REST(配了 CF_EMAIL_API_TOKEN + CF_ACCOUNT_ID 才用,备用)③ Resend(RESEND_API_KEY)。
 // 前面的失败(域名未激活 E_SENDER_NOT_VERIFIED / 限额 / 网络)自动退到后面;都没有 → 调用方报「邮件服务未配置」。
 // 本地开发设 DEV_MAIL_LOG=1:不真发,把整封信打到控制台(wrangler pages dev 的日志里看验证码)。
@@ -13,6 +14,7 @@ const str = (v) => (typeof v === 'string' ? v.trim() : '')
 export function mailProviders(env) {
   if (str(env?.DEV_MAIL_LOG) === '1') return [{ name: 'dev-log', dev: true }]
   const list = []
+  if (typeof env?.MAILER?.fetch === 'function') list.push({ name: 'cloudflare-worker', service: env.MAILER })
   if (typeof env?.EMAIL?.send === 'function') list.push({ name: 'cloudflare-binding', binding: env.EMAIL })
   const cfToken = str(env?.CF_EMAIL_API_TOKEN), cfAccount = str(env?.CF_ACCOUNT_ID)
   if (cfToken && cfAccount) list.push({
@@ -44,6 +46,20 @@ export async function sendMail(env, mail, fetchImpl = fetch) {
   const full = { from: MAIL_FROM, ...mail }
   for (const p of mailProviders(env)) {
     if (p.dev) { console.log(`[dev-mail] to=${full.to} subject=${full.subject}\n${full.text}`); return { ok: true, provider: p.name } }
+    if (p.service) {
+      try {
+        const res = await p.service.fetch('https://hexa-mailer/send', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ to: full.to, subject: full.subject, text: full.text, ...(full.html ? { html: full.html } : {}) }),
+        })
+        if (res.ok) return { ok: true, provider: p.name }
+        const detail = await res.json().catch(() => ({}))
+        console.error('Mail provider failed', { provider: p.name, status: res.status, code: detail?.code })
+      } catch (error) {
+        console.error('Mail provider error', { provider: p.name, message: String(error?.message || error) })
+      }
+      continue
+    }
     if (p.binding) {
       try {
         await p.binding.send({ from: CF_MAIL_FROM, to: full.to, subject: full.subject, text: full.text, ...(full.html ? { html: full.html } : {}) })

@@ -50,6 +50,16 @@ describe('发信通道', () => {
     expect(mailProviders({ DEV_MAIL_LOG: '1' }).map((p) => p.name)).toEqual(['dev-log'])
     expect(mailProviders({ DEV_MAIL_LOG: '1', RESEND_API_KEY: 'k' }).map((p) => p.name)).toEqual(['dev-log'])   // 本地显式要日志就只打日志
     expect(mailProviders({ EMAIL: { send() {} }, RESEND_API_KEY: 'k' }).map((p) => p.name)).toEqual(['cloudflare-binding', 'resend'])
+    expect(mailProviders({ MAILER: { fetch() {} }, RESEND_API_KEY: 'k' }).map((p) => p.name)).toEqual(['cloudflare-worker', 'resend'])
+  })
+  it('服务绑定发件:Worker 回 502(域名未激活等)退 Resend;回 200 即成', async () => {
+    const mail = { to: 'u@example.com', subject: 's', text: 't', html: '<b>h</b>' }
+    let body
+    const bad = { fetch: async () => Response.json({ ok: false, code: 'E_SENDER_NOT_VERIFIED' }, { status: 502 }) }
+    expect(await sendMail({ MAILER: bad, RESEND_API_KEY: 'k' }, mail, async () => new Response('{}'))).toEqual({ ok: true, provider: 'resend' })
+    const good = { fetch: async (_u, init) => { body = JSON.parse(init.body); return Response.json({ ok: true }) } }
+    expect(await sendMail({ MAILER: good, RESEND_API_KEY: 'k' }, mail, async () => { throw new Error('no resend') })).toEqual({ ok: true, provider: 'cloudflare-worker' })
+    expect(body).toEqual({ to: 'u@example.com', subject: 's', text: 't', html: '<b>h</b>' })
   })
   it('绑定发件:域名未激活(抛 E_SENDER_NOT_VERIFIED)时退到 Resend;激活后走绑定、发件人为 mail.gavin.pub', async () => {
     const mail = { to: 'u@example.com', subject: 's', text: 't' }
