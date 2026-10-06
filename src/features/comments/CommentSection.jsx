@@ -56,7 +56,9 @@ async function responseData(response) {
 }
 
 export default function CommentSection({ corpus, slug, chapter }) {
-  const { user, openAuth } = useAuth()
+  const { user, openAuth, refresh } = useAuth()
+  // 已验证邮箱的账号免人机验证(2026-10-06,服务端同规则):不加载 Turnstile,直接发
+  const verified = !!user?.emailVerified
   const [expanded, setExpanded] = useState(false)
   const [comments, setComments] = useState([])
   const [loading, setLoading] = useState(false)
@@ -105,7 +107,7 @@ export default function CommentSection({ corpus, slug, chapter }) {
   }, [expanded, corpus, slug, chapter])
 
   useEffect(() => {
-    if (!expanded || !user || !turnstileContainerRef.current) return undefined
+    if (!expanded || !user || verified || !turnstileContainerRef.current) return undefined
     let disposed = false
     setTurnstileReady(false)
 
@@ -137,7 +139,7 @@ export default function CommentSection({ corpus, slug, chapter }) {
       widgetIdRef.current = null
       setTurnstileReady(false)
     }
-  }, [expanded, user?.id])
+  }, [expanded, user?.id, verified])
 
   async function sendCommentCode() {
     setSendingCode(true)
@@ -164,14 +166,14 @@ export default function CommentSection({ corpus, slug, chapter }) {
     const trimmed = body.trim()
     if (trimmed.length < 1 || body.length > 500 || submitting) return
 
-    const turnstileToken = verifyMode === 'turnstile' && widgetIdRef.current !== null
+    const turnstileToken = !verified && verifyMode === 'turnstile' && widgetIdRef.current !== null
       ? window.turnstile?.getResponse(widgetIdRef.current) || ''
       : ''
-    if (verifyMode === 'turnstile' && !turnstileToken) {
+    if (!verified && verifyMode === 'turnstile' && !turnstileToken) {
       setError('请先完成人机验证')
       return
     }
-    if (verifyMode === 'email' && !/^\d{6}$/.test(emailCode.trim())) {
+    if (!verified && verifyMode === 'email' && !/^\d{6}$/.test(emailCode.trim())) {
       setError(codeSent ? '请输入邮件里的 6 位验证码' : '请先发送验证码到邮箱')
       return
     }
@@ -182,12 +184,13 @@ export default function CommentSection({ corpus, slug, chapter }) {
       const response = await apiFetch('/api/comments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ corpus, slug, chapter, body: trimmed, ...(verifyMode === 'email' ? { emailCode: emailCode.trim() } : { turnstileToken }) }),
+        body: JSON.stringify({ corpus, slug, chapter, body: trimmed, ...(verified ? {} : verifyMode === 'email' ? { emailCode: emailCode.trim() } : { turnstileToken }) }),
       })
       const data = await responseData(response)
       if (!response.ok) throw new Error(data?.error || '评论发布失败,请稍后重试')
       setComments((current) => [data.comment, ...current])
       setBody('')
+      if (!verified && verifyMode === 'email') refresh?.().catch(() => {})   // 凭邮箱码发出 = 邮箱已验证,刷新后下一条就免验证
       setEmailCode('')
       setCodeSent(false)
     } catch (submitError) {
@@ -407,8 +410,11 @@ export default function CommentSection({ corpus, slug, chapter }) {
                 placeholder="写下你的研读心得…"
                 onChange={(event) => setBody(event.target.value)}
               />
-              <div ref={turnstileContainerRef} className="comment-section__turnstile" style={verifyMode === 'email' ? { display: 'none' } : undefined} />
-              {verifyMode === 'email' && (
+              <div ref={turnstileContainerRef} className="comment-section__turnstile" style={verified || verifyMode === 'email' ? { display: 'none' } : undefined} />
+              {!verified && verifyMode === 'turnstile' && (
+                <p className="comment-section__fallback-text">验证邮箱后发评论不再需要这一步(设置 · 账号)。</p>
+              )}
+              {!verified && verifyMode === 'email' && (
                 <div className="comment-section__fallback">
                   <p className="comment-section__fallback-text">人机验证组件没能加载(中国大陆网络常见),改用邮箱验证码:</p>
                   <div className="comment-section__fallback-row">
@@ -428,7 +434,7 @@ export default function CommentSection({ corpus, slug, chapter }) {
                 <button
                   type="submit"
                   className="comment-section__submit"
-                  disabled={submitting || (verifyMode === 'turnstile' ? !turnstileReady : emailCode.trim().length !== 6) || body.trim().length < 1 || body.length > 500}
+                  disabled={submitting || (!verified && (verifyMode === 'turnstile' ? !turnstileReady : emailCode.trim().length !== 6)) || body.trim().length < 1 || body.length > 500}
                 >
                   {submitting ? '发布中…' : '发布'}
                 </button>

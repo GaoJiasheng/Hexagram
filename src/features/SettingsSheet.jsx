@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import EmailVerifyPanel from './auth/EmailVerifyPanel.jsx'
 import FontFamilyControl from './reader/FontFamilyControl.jsx'
 import { useSettings } from './yijing/SettingsContext.jsx'
 import { FONT_SCALE_STEPS, exportData, importData, clearAllData, getLastSyncAt, getReadDays, saveSettings } from './yijing/storage.js'
@@ -242,12 +243,21 @@ export default function SettingsSheet({ open, onClose }) {
                         </button>
                       </strong>
                     )}
-                    <span>{user.email}</span>
+                    <span>{user.email}{user.email && (user.emailVerified
+                      ? <em className="settings-account__verified" title="邮箱已验证">✓ 已验证</em>
+                      : <em className="settings-account__unverified">未验证</em>)}</span>
                   </div>
                   {!renaming && (
                     <button className="btn-text settings-account__logout" onClick={handleLogout}>退出登录</button>
                   )}
                 </div>
+                {/* 邮箱验证(2026-10-06):未验证时在这里补验——验过的账号发评论免人机验证,忘记密码也能找回 */}
+                {user.email && !user.emailVerified && (
+                  <div className="settings-account__verify">
+                    <p className="settings-privacy">验证邮箱后,发评论不再需要人机验证,忘记密码也能凭邮件找回。</p>
+                    <EmailVerifyPanel compact />
+                  </div>
+                )}
                 <div className="settings-account__sync">
                   <span><strong>云同步</strong> · {syncTimeLabel(lastSyncAt)}</span>
                   <button className="btn-text" onClick={handleSyncNow} disabled={syncing}>

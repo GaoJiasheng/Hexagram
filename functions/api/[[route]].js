@@ -10,7 +10,8 @@ import {
 import { sendCommentNotification } from '../../server/comment-notification.js'
 import { isAdminUser } from '../../server/admin.js'
 import { summarizeReadDays, dwellHistogram, median, isDayString, mergeRankRows, mergeCorpusRows } from '../../server/read-stats.js'
-import { generateCode, hashCode, verifyCodeRow, sentRecently, codeSendRequest, codeTarget, isCodeShape, CODE_TTL_MS, CODE_PURPOSES } from '../../server/auth-code.js'
+import { generateCode, hashCode, verifyCodeRow, sentRecently, buildCodeEmail, codeTarget, isCodeShape, CODE_TTL_MS, CODE_PURPOSES } from '../../server/auth-code.js'
+import { sendMail, mailConfigured } from '../../server/mailer.js'
 import { AUTO_HIDE_REPORTS, screenComment } from '../../server/content-filter.js'
 import {
   mergeCollectionEntry,
@@ -231,6 +232,8 @@ function publicUser(row, env) {
     email: row.email,
     isOwner: !!row.is_owner,
     isAdmin: env ? isAdminUser(row, env) : !!row.is_owner,
+    // 邮箱是否验证过(2026-10-06):Google 账号恒为真;邮箱注册的账号凭验证码 / 找回密码 / 评论验证码坐实
+    emailVerified: !!row.email_verified_at,
   }
 }
 
@@ -254,7 +257,7 @@ async function getSessionUser(c) {
   const db = getDb(c)
   const sessionId = await sha256Hex(raw)
   const row = await db.prepare(`
-    SELECT s.expires_at, u.id, u.display_name, u.avatar_seed, u.email, u.is_owner
+    SELECT s.expires_at, u.id, u.display_name, u.avatar_seed, u.email, u.is_owner, u.email_verified_at
     FROM sessions s
     JOIN users u ON u.id = s.user_id
     WHERE s.id = ?
@@ -665,6 +668,7 @@ app.get('/auth/google/callback', async (c) => {
     const email = normalizeEmail(payload.email)
     const db = getDb(c)
     const user = await resolveGoogleAccount(db, { sub, email })
+    if (payload.email_verified !== false) await markEmailVerified(db, user.id)   // Google 担保的邮箱
 
     await db
       .prepare('DELETE FROM sessions WHERE user_id = ? AND expires_at < ?')
@@ -725,14 +729,20 @@ app.post('/auth/register', async (c) => {
 
     const rawSession = await createSession(db, id)
     setSessionCookie(c, rawSession)
+    // 注册即发一枚邮箱验证码(尽力而为:发不出去不影响注册,前端可在设置里补验)
+    let verifySent = false
+    try { await issueCode(db, c.env, codeTarget('verify', id), email, 'verify', Date.now()); verifySent = true }
+    catch (error) { console.error('Register verify mail failed', String(error?.message || error)) }
     return c.json({
       ok: true,
+      verifySent,
       user: publicUser({
         id,
         display_name: displayName,
         avatar_seed: avatarSeed,
         email,
         is_owner: 0,
+        email_verified_at: null,
       }, c.env),
       ...(wantsToken(c) ? { token: rawSession } : {}),
     }, 201)
@@ -750,7 +760,7 @@ app.post('/auth/login', async (c) => {
     const { email, password } = validateLogin(await readJsonBody(c))
     const db = getDb(c)
     const row = await db.prepare(`
-      SELECT i.secret, u.id, u.display_name, u.avatar_seed, u.email, u.is_owner
+      SELECT i.secret, u.id, u.display_name, u.avatar_seed, u.email, u.is_owner, u.email_verified_at
       FROM identities i
       JOIN users u ON u.id = i.user_id
       WHERE i.provider = 'email' AND i.provider_uid = ?
@@ -860,20 +870,25 @@ app.delete('/me', async (c) => {
 async function issueCode(db, env, target, to, purpose, now) {
   const existing = await db.prepare('SELECT expires_at FROM auth_codes WHERE target = ?').bind(target).first()
   if (sentRecently(existing, now)) throw new RequestError(429, '验证码刚发过,一分钟后再试')
-  const req0 = codeSendRequest(env, to, purpose, '000000')
-  if (!req0) throw new RequestError(503, '邮件服务未配置,请联系站长')
+  if (!mailConfigured(env)) throw new RequestError(503, '邮件服务未配置,请联系站长')
   const code = generateCode()
   const hash = await hashCode(target, code)
   await db.prepare(`
     INSERT INTO auth_codes (target, code_hash, expires_at, attempts) VALUES (?, ?, ?, 0)
     ON CONFLICT(target) DO UPDATE SET code_hash = excluded.code_hash, expires_at = excluded.expires_at, attempts = 0
   `).bind(target, hash, now + CODE_TTL_MS).run()
-  const req = codeSendRequest(env, to, purpose, code)
-  const response = await fetch(req.url, req.init)
-  if (!response.ok) {
-    console.error('Auth code mail failed', { status: response.status, purpose })
+  const sent = await sendMail(env, buildCodeEmail(to, purpose, code))
+  if (!sent.ok) {
+    // 发不出去就把这枚码作废,免得 60 秒冷却把用户的「重发」也挡住
+    await db.prepare('DELETE FROM auth_codes WHERE target = ?').bind(target).run()
+    console.error('Auth code mail failed', { purpose })
     throw new RequestError(503, '验证码邮件发送失败,请稍后再试')
   }
+}
+
+// 把账号的邮箱标为已验证(幂等;已验证的保留最早时刻)
+async function markEmailVerified(db, userId, now = Date.now()) {
+  await db.prepare('UPDATE users SET email_verified_at = COALESCE(email_verified_at, ?) WHERE id = ?').bind(now, userId).run()
 }
 
 async function consumeCode(db, target, code, now) {
@@ -894,10 +909,11 @@ app.post('/auth/code/send', async (c) => {
     if (!CODE_PURPOSES.has(purpose)) throw new RequestError(400, 'invalid purpose')
     const db = getDb(c)
     const now = Date.now()
-    if (purpose === 'comment') {
+    if (purpose === 'comment' || purpose === 'verify') {
       const user = await requireUser(c)
       if (!user.email) throw new RequestError(400, '账号没有邮箱,无法发送验证码')
-      await issueCode(db, c.env, codeTarget('comment', user.id), user.email, 'comment', now)
+      if (purpose === 'verify' && user.email_verified_at) throw new RequestError(400, '邮箱已经验证过了')
+      await issueCode(db, c.env, codeTarget(purpose, user.id), user.email, purpose, now)
       return c.json({ ok: true, ttl: CODE_TTL_MS })
     }
     const email = normalizeEmail(input?.email)
@@ -925,23 +941,45 @@ app.post('/auth/password/reset', async (c) => {
     if (input?.password2 !== password) throw new RequestError(400, '两次输入的密码不一致')
     const db = getDb(c)
     const row = await db.prepare(`
-      SELECT u.id, u.display_name, u.avatar_seed, u.email, u.is_owner
+      SELECT u.id, u.display_name, u.avatar_seed, u.email, u.is_owner, u.email_verified_at
       FROM identities i JOIN users u ON u.id = i.user_id
       WHERE i.provider = 'email' AND i.provider_uid = ? LIMIT 1
     `).bind(email).first()
     if (!row) throw new RequestError(400, '验证码错误或已过期')
     await consumeCode(db, codeTarget('reset', email), input.code, Date.now())
     const secret = await hashPassword(password)
+    const now = Date.now()
     await db.batch([
       db.prepare("UPDATE identities SET secret = ? WHERE provider = 'email' AND provider_uid = ?").bind(secret, email),
       db.prepare('DELETE FROM sessions WHERE user_id = ?').bind(row.id),
+      // 能收到重设验证码,就证明邮箱是本人的——顺带记为已验证
+      db.prepare('UPDATE users SET email_verified_at = COALESCE(email_verified_at, ?) WHERE id = ?').bind(now, row.id),
     ])
     const rawSession = await createSession(db, row.id)
     setSessionCookie(c, rawSession)
-    return c.json({ ok: true, user: publicUser(row, c.env), ...(wantsToken(c) ? { token: rawSession } : {}) })
+    return c.json({ ok: true, user: publicUser({ ...row, email_verified_at: row.email_verified_at || now }, c.env), ...(wantsToken(c) ? { token: rawSession } : {}) })
   } catch (error) {
     if (error instanceof RequestError) return c.json({ ok: false, error: error.message }, error.status)
     console.error('Password reset failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
+// 凭验证码验证邮箱(已登录;码由 /auth/code/send purpose=verify 发出,注册时也会自动发一枚)
+app.post('/auth/email/verify', async (c) => {
+  try {
+    const user = await requireUser(c)
+    if (user.email_verified_at) return c.json({ ok: true, user: publicUser(user, c.env) })
+    const input = await readJsonBody(c)
+    if (!isCodeShape(input?.code)) throw new RequestError(400, '验证码为 6 位数字')
+    const db = getDb(c)
+    const now = Date.now()
+    await consumeCode(db, codeTarget('verify', user.id), input.code, now)
+    await markEmailVerified(db, user.id, now)
+    return c.json({ ok: true, user: publicUser({ ...user, email_verified_at: now }, c.env) })
+  } catch (error) {
+    if (error instanceof RequestError) return c.json({ ok: false, error: error.message }, error.status)
+    console.error('Email verify failed', error)
     return c.json({ ok: false, error: 'service unavailable' }, 503)
   }
 })
@@ -1029,19 +1067,21 @@ app.post('/comments', async (c) => {
       throw new RequestError(400, '评论最长 500 字')
     }
     // 人机验证两条路:Turnstile token;或 Turnstile 加载不了时(大陆网络常见)的邮箱验证码(续跑 ⑥,2026-10-01)
+    // 已验证邮箱的账号免人机验证(2026-10-06):邮箱本身就是一道「真人」门槛,也绕开大陆网络打不开 Turnstile 的老问题
     const hasToken = typeof input.turnstileToken === 'string' && input.turnstileToken.length >= 1 && input.turnstileToken.length <= 2048
     const hasCode = isCodeShape(input.emailCode)
-    if (!hasToken && !hasCode) {
+    if (user.email_verified_at) {
+      // 放行
+    } else if (!hasToken && !hasCode) {
       throw new RequestError(400, '请完成人机验证')
-    }
-
-    if (hasToken) {
+    } else if (hasToken) {
       const turnstileError = await verifyTurnstile(c, input.turnstileToken)
       if (turnstileError) {
         throw new RequestError(403, turnstileError)
       }
     } else {
       await consumeCode(getDb(c), codeTarget('comment', user.id), input.emailCode, Date.now())
+      await markEmailVerified(getDb(c), user.id)   // 凭邮箱码发评论,同样证明邮箱是本人的
     }
 
     // 内容过滤(App Store 1.2 四件套之一)。只拦最露骨的一层,其余靠举报 + owner 复核 ——

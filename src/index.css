@@ -4837,6 +4837,13 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .settings-read__cell small { font-size: 0.72rem; color: var(--ink-faint); }
 .settings-read__more { margin-left: auto; font-size: 0.8rem; color: var(--cinnabar); text-decoration: none; }
 .settings-read__note { margin: 10px 0 0; }
+.settings-account__verified, .settings-account__unverified { margin-left: 8px; font-style: normal; font-size: 0.72rem; padding: 0 6px; border-radius: 8px; border: 1px solid var(--line); }
+.settings-account__verified { color: #5b8a5b; border-color: color-mix(in srgb, #5b8a5b 40%, var(--line)); }
+.settings-account__unverified { color: var(--cinnabar-pure); border-color: color-mix(in srgb, var(--cinnabar-pure) 40%, var(--line)); }
+.settings-account__verify { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); }
+.settings-account__verify .settings-privacy { margin: 0 0 6px; }
+.email-verify--compact .auth-field input { max-width: 12em; letter-spacing: 0.3em; }
+.email-verify--compact .auth-sheet__submit { width: auto; padding-left: 20px; padding-right: 20px; }
 .settings-account__share { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); }
 .settings-account__share label { display: flex; align-items: center; justify-content: space-between; gap: 14px; cursor: pointer; }
 .settings-account__share label > span { display: flex; flex-direction: column; gap: 2px; min-width: 0; }

@@ -85,13 +85,24 @@ export function AuthProvider({ children }) {
     return data.user
   }, [enabled])
 
+  // 注册成功后服务端顺手发一枚邮箱验证码,verifySent 告诉界面要不要进「填验证码」那一步
   const register = useCallback(async (credentials) => {
     if (!enabled) return null
     const data = await authRequest('/api/auth/register', credentials)
     setUser(data.user)
     saveAuthHint()
-    return data.user
+    return { ...data.user, verifySent: !!data.verifySent }
   }, [enabled])
+
+  // 邮箱验证(2026-10-06):发码 / 凭码验证;验证成功即更新 user.emailVerified
+  const sendVerifyCode = useCallback(async () => {
+    await authRequest('/api/auth/code/send', { purpose: 'verify' })
+  }, [])
+  const verifyEmail = useCallback(async (code) => {
+    const data = await authRequest('/api/auth/email/verify', { code })
+    if (data?.user) setUser(data.user)
+    return data?.user || null
+  }, [])
 
   const logout = useCallback(async () => {
     if (!enabled) return
@@ -119,10 +130,12 @@ export function AuthProvider({ children }) {
     refresh,
     login,
     register,
+    sendVerifyCode,
+    verifyEmail,
     logout,
     openAuth,
     closeAuth,
-  }), [user, loading, enabled, refresh, login, register, logout, openAuth, closeAuth])
+  }), [user, loading, enabled, refresh, login, register, sendVerifyCode, verifyEmail, logout, openAuth, closeAuth])
 
   return (
     <AuthContext.Provider value={value}>

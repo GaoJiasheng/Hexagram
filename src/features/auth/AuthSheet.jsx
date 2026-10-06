@@ -2,10 +2,12 @@ import { useEffect, useRef, useState } from 'react'
 import { saveAuthHint } from '../yijing/storage.js'
 import { useAuth } from './AuthContext.jsx'
 import { apiFetch, friendlyError, IS_NATIVE } from './apiClient.js'
+import EmailVerifyPanel from './EmailVerifyPanel.jsx'
 
 // 登录 / 注册 / 找回密码 浮层。
 // 续跑 ⑥(2026-10-01,大陆账号体验):邮箱是主路径,Google 放在后面并提示大陆网络可能打不开;
 // 新增「忘记密码」——邮箱 → 验证码(10 分钟)→ 新密码,成功即登录(服务端 /auth/code/send + /auth/password/reset)。
+// 2026-10-06:注册成功后不直接关,进「验证邮箱」一步(服务端注册时已发码);可「稍后再验证」,设置里随时补。
 export default function AuthSheet({ open, initialMode = 'login', onClose }) {
   const { login, register } = useAuth()
   const [mode, setMode] = useState(initialMode)
@@ -64,8 +66,10 @@ export default function AuthSheet({ open, initialMode = 'login', onClose }) {
     submittingRef.current = true
     setSubmitting(true)
     try {
-      if (mode === 'register') await register({ email, password, password2 })
-      else await login({ email, password })
+      if (mode === 'register') {
+        const created = await register({ email, password, password2 })
+        if (created?.verifySent) { setMode('verify'); return }
+      } else await login({ email, password })
       onClose()
     } catch (requestError) {
       setError(friendlyError(requestError, '登录失败,请稍后重试'))
@@ -132,26 +136,29 @@ export default function AuthSheet({ open, initialMode = 'login', onClose }) {
   }
 
   const isReset = mode === 'reset'
+  const isVerify = mode === 'verify'
 
   return (
     <div className="settings-overlay auth-overlay" onClick={(event) => { if (event.target === event.currentTarget && !submitting) onClose() }}>
       <div className="settings-sheet auth-sheet" role="dialog" aria-modal="true" aria-label="登录观象">
         <div className="settings-sheet__head auth-sheet__head">
           <div>
-            <h2 className="settings-sheet__title auth-sheet__title">{isReset ? '找回密码' : '登录观象'}</h2>
-            <p className="auth-sheet__subtitle">{isReset ? '用注册邮箱收一枚验证码,设一个新密码。' : '云端保存足迹、参与评论。不登录不影响任何浏览。'}</p>
+            <h2 className="settings-sheet__title auth-sheet__title">{isVerify ? '验证邮箱' : isReset ? '找回密码' : '登录观象'}</h2>
+            <p className="auth-sheet__subtitle">{isVerify ? '账号已建好、已登录。验证邮箱后,发评论不再需要人机验证,忘记密码也能找回。' : isReset ? '用注册邮箱收一枚验证码,设一个新密码。' : '云端保存足迹、参与评论。不登录不影响任何浏览。'}</p>
           </div>
           <button className="search-palette__close" onClick={onClose} aria-label="关闭" disabled={submitting}>Esc</button>
         </div>
 
-        {!isReset && (
+        {isVerify && <EmailVerifyPanel sentInitially onDone={onClose} onSkip={onClose} />}
+
+        {!isReset && !isVerify && (
           <div className="auth-sheet__tabs" role="tablist" aria-label="账号操作">
             <button type="button" role="tab" aria-selected={mode === 'login'} className={`auth-sheet__tab ${mode === 'login' ? 'auth-sheet__tab--active' : ''}`} onClick={() => switchMode('login')}>登录</button>
             <button type="button" role="tab" aria-selected={mode === 'register'} className={`auth-sheet__tab ${mode === 'register' ? 'auth-sheet__tab--active' : ''}`} onClick={() => switchMode('register')}>注册</button>
           </div>
         )}
 
-        {isReset ? (
+        {isVerify ? null : isReset ? (
           <form className="auth-sheet__form" onSubmit={codeSent ? submitReset : sendResetCode} noValidate>
             <label className="auth-field">
               <span>注册邮箱</span>

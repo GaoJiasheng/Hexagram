@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { generateCode, hashCode, verifyCodeRow, sentRecently, buildCodeEmail, codeSendRequest, codeTarget, isCodeShape, CODE_TTL_MS, CODE_MAX_ATTEMPTS } from './auth-code.js'
+import { generateCode, hashCode, verifyCodeRow, sentRecently, buildCodeEmail, codeTarget, isCodeShape, CODE_TTL_MS, CODE_MAX_ATTEMPTS, CODE_PURPOSES } from './auth-code.js'
+import { mailProviders, sendMail } from './mailer.js'
 
 describe('邮箱验证码', () => {
   it('六位数字、哈希与目标绑定', async () => {
@@ -28,14 +29,39 @@ describe('邮箱验证码', () => {
     expect(sentRecently({ expires_at: now + CODE_TTL_MS - 61_000 }, now)).toBe(false) // 61 秒前发的
     expect(sentRecently(null, now)).toBe(false)
   })
-  it('邮件与请求', () => {
-    const mail = buildCodeEmail('u@example.com', 'reset', '111222')
-    expect(mail.subject).toContain('111222')
-    expect(mail.text).toContain('重设密码')
-    expect(mail.from).toContain('send.gavin.pub')
-    expect(codeSendRequest({}, 'u@example.com', 'reset', '111222')).toBeNull()
-    const req = codeSendRequest({ RESEND_API_KEY: 'k' }, 'u@example.com', 'comment', '111222')
-    expect(req.url).toBe('https://api.resend.com/emails')
-    expect(JSON.parse(req.init.body).subject).toContain('评论验证码')
+  it('三种用途的邮件:主题带码、正文与 HTML 都有码', () => {
+    expect([...CODE_PURPOSES]).toEqual(['reset', 'comment', 'verify'])
+    for (const [p, word] of [['reset', '重设密码'], ['comment', '评论验证码'], ['verify', '邮箱验证码']]) {
+      const mail = buildCodeEmail('u@example.com', p, '111222')
+      expect(mail.subject).toContain('111222')
+      expect(mail.subject).toContain(word)
+      expect(mail.text).toContain('111222')
+      expect(mail.html).toContain('111222')
+    }
+  })
+})
+
+describe('发信通道', () => {
+  const mail = { to: 'u@example.com', subject: 's', text: 't' }
+  it('Cloudflare 优先,其次 Resend;都没配为空;DEV_MAIL_LOG 只在都没配时生效', () => {
+    expect(mailProviders({}).map((p) => p.name)).toEqual([])
+    expect(mailProviders({ RESEND_API_KEY: 'k' }).map((p) => p.name)).toEqual(['resend'])
+    expect(mailProviders({ RESEND_API_KEY: 'k', CF_EMAIL_API_TOKEN: 't', CF_ACCOUNT_ID: 'a' }).map((p) => p.name)).toEqual(['cloudflare', 'resend'])
+    expect(mailProviders({ DEV_MAIL_LOG: '1' }).map((p) => p.name)).toEqual(['dev-log'])
+    expect(mailProviders({ DEV_MAIL_LOG: '1', RESEND_API_KEY: 'k' }).map((p) => p.name)).toEqual(['resend'])
+  })
+  it('Cloudflare 失败自动退到 Resend', async () => {
+    const calls = []
+    const fake = async (url) => { calls.push(url); return url.includes('cloudflare') ? new Response(JSON.stringify({ success: false }), { status: 403 }) : new Response('{}', { status: 200 }) }
+    const r = await sendMail({ RESEND_API_KEY: 'k', CF_EMAIL_API_TOKEN: 't', CF_ACCOUNT_ID: 'a' }, mail, fake)
+    expect(r).toEqual({ ok: true, provider: 'resend' })
+    expect(calls[0]).toContain('/accounts/a/email/sending/send')
+    expect(calls[1]).toBe('https://api.resend.com/emails')
+  })
+  it('请求体带发件人与 HTML', async () => {
+    let body
+    await sendMail({ RESEND_API_KEY: 'k' }, { ...mail, html: '<b>h</b>' }, async (_u, init) => { body = JSON.parse(init.body); return new Response('{}') })
+    expect(body.from).toContain('send.gavin.pub')
+    expect(body.html).toBe('<b>h</b>')
   })
 })
