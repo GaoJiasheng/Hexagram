@@ -164,7 +164,7 @@ describe('oracle 交叉验证(lunar-javascript)', () => {
       expect(changsheng(d[0], y[1]), where).toBe(ec.getYearDiShi())
       expect(changsheng(d[0], m[1]), where).toBe(ec.getMonthDiShi())
     }
-  })
+  }, 30_000)   // 种子固定、样本确定;单跑约 3 秒,与全量测试并发时会超过默认 5 秒(只是慢,不是错)
 
   it('五行归属与库一致', () => {
     const { LunarUtil } = lunarLib
