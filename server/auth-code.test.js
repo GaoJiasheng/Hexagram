@@ -48,7 +48,19 @@ describe('发信通道', () => {
     expect(mailProviders({ RESEND_API_KEY: 'k' }).map((p) => p.name)).toEqual(['resend'])
     expect(mailProviders({ RESEND_API_KEY: 'k', CF_EMAIL_API_TOKEN: 't', CF_ACCOUNT_ID: 'a' }).map((p) => p.name)).toEqual(['cloudflare', 'resend'])
     expect(mailProviders({ DEV_MAIL_LOG: '1' }).map((p) => p.name)).toEqual(['dev-log'])
-    expect(mailProviders({ DEV_MAIL_LOG: '1', RESEND_API_KEY: 'k' }).map((p) => p.name)).toEqual(['resend'])
+    expect(mailProviders({ DEV_MAIL_LOG: '1', RESEND_API_KEY: 'k' }).map((p) => p.name)).toEqual(['dev-log'])   // 本地显式要日志就只打日志
+    expect(mailProviders({ EMAIL: { send() {} }, RESEND_API_KEY: 'k' }).map((p) => p.name)).toEqual(['cloudflare-binding', 'resend'])
+  })
+  it('绑定发件:域名未激活(抛 E_SENDER_NOT_VERIFIED)时退到 Resend;激活后走绑定、发件人为 mail.gavin.pub', async () => {
+    const mail = { to: 'u@example.com', subject: 's', text: 't' }
+    const fail = { send: async () => { const e = new Error('sender not verified'); e.code = 'E_SENDER_NOT_VERIFIED'; throw e } }
+    const r1 = await sendMail({ EMAIL: fail, RESEND_API_KEY: 'k' }, mail, async () => new Response('{}'))
+    expect(r1).toEqual({ ok: true, provider: 'resend' })
+    let sent
+    const ok = { send: async (m) => { sent = m; return { messageId: 'x' } } }
+    const r2 = await sendMail({ EMAIL: ok, RESEND_API_KEY: 'k' }, mail, async () => { throw new Error('should not call resend') })
+    expect(r2).toEqual({ ok: true, provider: 'cloudflare-binding' })
+    expect(sent.from).toEqual({ email: 'notify@mail.gavin.pub', name: '观象' })
   })
   it('Cloudflare 失败自动退到 Resend', async () => {
     const calls = []

@@ -6,3 +6,8 @@ compatibility_date = "2026-07-01"
 binding = "DB"
 database_name = "hexagram-db"
 database_id = "86b4edc6-b944-4ce1-9dbe-a1fb2a706782"
+
+# Cloudflare Email Service 发信绑定(2026-10-06):env.EMAIL.send(),不需要 API 密钥。
+# 发件域 mail.gavin.pub 须先在 Email Service → 邮件发送 里接入并激活;未激活时发送会抛 E_SENDER_NOT_VERIFIED,
+# server/mailer.js 自动退到 Resend,所以先部署代码、后激活域名也不会断信。
+send_email = [{ name = "EMAIL" }]
