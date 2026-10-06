@@ -11,6 +11,11 @@
 
 ## ▶ 当前待办(2026-10-01 N 表收口后重列)
 
+### 2026-10-07 现状
+- web **1.35.15** 在线(10-06:邮箱验证 + 找回密码改进 · 发信走 Cloudflare Email Service〔hexa-mailer Worker,owner 实收 foxmail 验过,发件 notify@mail.gavin.pub〕· 换头像〔随机线条几何 / 流派印记,不收上传〕· 脑图鼠标修复 · 观书书架自适应)。
+- iOS **1.35.11 已上架**(READY_FOR_SALE,10-07 查);上面 web 1.35.12–1.35.15 的改动 iOS 还没有,owner 开口即 `./ship-ios.sh`。
+- O6 已全(生产 secrets 有 GOOGLE_CLIENT_ID/SECRET、TURNSTILE_SECRET_KEY、RESEND_API_KEY)。
+
 ### ✅ 2026-10-01 批次收官(owner:「这一批次接近收官」)
 **10-05**:web **1.35.12** 在线(观书书架列数自适应,只发 web;下次 `./ship-ios.sh` 取 package.json 即为 1.35.12,与 web 对齐);iOS 1.35.8 已上架,**1.35.11 build 57 已送审**(WAITING_FOR_REVIEW,过审自动上架;含古文 44 篇依课本、归去来兮辞补序、观书三连击入口)。
 剩下的全部是 owner 的事或等数据:① 抽看观数三份汇报 ② O1 review 九月底那批 ③ 定《滴天髓阐微》刊行者口径(徐乐吾→袁树珊)④ 68 条「仍核不到」留不留 ⑤ 其他组要不要照观数跑代理复核 ⑥ A5 评论手机复测 / T1 大陆实测 / T3 关 Web Analytics / O6 三项凭据 / O7 keystore / O8 ICP ⑦ iOS 1.35.0 审核结果 ⑧ 续跑 ⑥ 第二批(等 T1 数据)⑨ 研读统计攒数据后看后台。O11 可选书目不强求。
@@ -74,7 +79,7 @@
 
 **③ 动手**(外部账号 / 设备)
 - [x] **O5 iOS 发版**:v1.35.4 build 55 **10-03 已过审上架**(10-01 送审;含观数三轮修正、账号体验第一批)。1.35.0 的提交用 `scripts/asc-withdraw.mjs` 撤回后复用草稿改名,流程:`./ship-ios.sh` → 若有在审版本 `node scripts/asc-withdraw.mjs` → `node scripts/asc-release.mjs <版本> docs/release-notes/<版本>.md`。
-- [ ] **O6 登录 + 评论 Phase 2 三项前置**:Google OAuth 凭据 / Turnstile 站点密钥 / Resend 域名验证(代码八批次已完成)。
+- [x] **O6 登录 + 评论 Phase 2 三项前置**(10-07 核:三项 secrets 均在生产,Google 登录 / 评论 / 发信均已实用):Google OAuth 凭据 / Turnstile 站点密钥 / Resend 域名验证(代码八批次已完成)。
 - [ ] **O7 安卓 keystore**:你生成(10 分钟,备份到本机之外)→ 我出包 → Play 内测。
 - [ ] **O8 ICP 备案**:一通电话问清护照持有人怎么做人脸核验。
 
@@ -100,7 +105,7 @@
 |---|---|---|
 | N5 | 按 review 意见改 | O1 |
 | N6 | 中医三件 I1–I3 | O3 |
-| N7 | 渊海第 45 章拆章 + 全链同步 | O4 |
+| ~~N7~~ | ~~渊海第 45 章拆章~~(owner 10-01:不拆) | — |
 | N8 | 观数白话下一轮抽查 15 篇 | O9 |
 | N9 | 可选交互件 | O10 |
 | N10 | 扩展区字根治(方案 ① 改管线 + 全数据映射 / 方案 ② 切字体子集自托管) | O12 |
