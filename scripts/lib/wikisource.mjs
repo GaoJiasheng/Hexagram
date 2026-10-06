@@ -34,7 +34,14 @@ const KEEP_BACK = new Map()   // 占位符 → 繁体原字
 }
 const KEEP_RE = new RegExp(`[${[...KEEP_TRAD.keys()].join('')}]`, 'g')
 const BACK_RE = /[\ue100-\ue4ff]/g
-export const t2s = (s) => bmpForm(t2sRaw(s.replaceAll('乾', '\uE000').replace(KEEP_RE, (c) => KEEP_TRAD.get(c)))
+// 维基文库源页里编者用私用区码位打的缺字(任何字体都没有,显示成方块)。逐个查过独立见证本才收进来,
+// 只认这三个出处,别的私用区码位照旧留着让 scan-astral-chars 报出来(2026-10-07,N11):
+//   U+F6E3 → 無:《左传》襄九年「是以雖隨□咎」,同书襄二十五/二十七年「棠□咎」即棠無咎;《左传正义》《太平御览》作「無咎」
+//   U+E789 → 昺:《参同契》「煥若星經漢兮，□如水宗海」,四库彭晓/陈显微/俞琰三本、《喻林》《图书集成》作「昺」
+//   U+F069 → 啘:《难经》十六难「掌中熱而□」,《图书集成》引滑寿本义四处、《难经悬解》作「啘」(滑注:啘,乾嘔也)
+const PUA_FIX = new Map([['\uF6E3', '無'], ['\uE789', '昺'], ['\uF069', '啘']])
+const PUA_FIX_RE = /[\uF6E3\uE789\uF069]/g
+export const t2s = (s) => bmpForm(t2sRaw(s.replace(PUA_FIX_RE, (c) => PUA_FIX.get(c)).replaceAll('乾', '\uE000').replace(KEEP_RE, (c) => KEEP_TRAD.get(c)))
   .replace(BACK_RE, (c) => KEEP_BACK.get(c) || c)
   .replaceAll('\uE000', '乾').replaceAll('遯', '遁').replaceAll('隂', '阴'))
 export const keptTraditional = () => [...KEEP_TRAD.keys()]
