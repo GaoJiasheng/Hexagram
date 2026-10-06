@@ -12,6 +12,7 @@ import { isAdminUser } from '../../server/admin.js'
 import { summarizeReadDays, dwellHistogram, median, isDayString, mergeRankRows, mergeCorpusRows } from '../../server/read-stats.js'
 import { generateCode, hashCode, verifyCodeRow, sentRecently, buildCodeEmail, codeTarget, isCodeShape, CODE_TTL_MS, CODE_PURPOSES } from '../../server/auth-code.js'
 import { sendMail, mailConfigured } from '../../server/mailer.js'
+import { AVATAR_SEED_RE } from '../../src/features/auth/avatarArt.js'
 import { AUTO_HIDE_REPORTS, screenComment } from '../../server/content-filter.js'
 import {
   mergeCollectionEntry,
@@ -806,6 +807,14 @@ app.patch('/me', async (c) => {
   try {
     const user = await requireUser(c)
     const input = await readJsonBody(c)
+    // 换头像(2026-10-06):**不收上传**,只收一个种子——头像是前端由种子算出来的线条几何图 / 流派印记,
+    // 服务端只核形态(g:随机串 / m:印记名),所以不存在「传一张不该传的图」这回事。
+    if (typeof input?.avatarSeed === 'string' && input.displayName === undefined) {
+      const seed = input.avatarSeed.trim()
+      if (!AVATAR_SEED_RE.test(seed)) throw new RequestError(400, '头像参数不对,请刷新后重选')
+      await getDb(c).prepare('UPDATE users SET avatar_seed = ? WHERE id = ?').bind(seed, user.id).run()
+      return c.json({ ok: true, user: publicUser({ ...user, avatar_seed: seed }, c.env) })
+    }
     const raw = typeof input?.displayName === 'string' ? input.displayName : ''
     // 归一化:压掉连续空白、剔除零宽字符与换行 —— 否则可以用空白字符冒充别人的名字,
     // 或者用超长零宽串把评论区的版式撑坏。

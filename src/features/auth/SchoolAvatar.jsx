@@ -1,4 +1,7 @@
-// 用户头像:十一枚**流派印记**,按 avatarSeed 稳定分配。
+import { useId } from 'react'
+import { artForSeed, seedHash } from './avatarArt.js'
+
+// 用户头像:十一枚**流派印记** + 生成式线条几何图案(2026-10-06,种子形态见 avatarArt.js)。
 //
 // 取代原先的 PixelAvatar —— 那是 identicon 式的随机像素块,像二维码,与站点气质不搭。
 // 这一组每枚对应站内一个组,用最少的线条取其意象,并各披本组主色
@@ -71,23 +74,17 @@ const MARKS = [
   },
 ]
 
-// FNV-1a:与原 PixelAvatar 同一套散列,换头像不改既有用户的「身份感」来源。
-function seedHash(seed) {
-  let hash = 2166136261
-  for (const character of String(seed)) {
-    hash ^= character.codePointAt(0)
-    hash = Math.imul(hash, 16777619)
-  }
-  return hash >>> 0
-}
-
+// 'm:<key>' 指定一枚;其余(老账号的 UUID)按 FNV-1a 散列分配——与原 PixelAvatar 同一套散列,
+// 换头像功能上线前注册的人,头像一枚不变。
 export function markForSeed(seed) {
-  return MARKS[seedHash(seed) % MARKS.length]
+  const key = typeof seed === 'string' && seed.startsWith('m:') ? seed.slice(2) : null
+  return (key && MARKS.find((m) => m.key === key)) || MARKS[seedHash(seed) % MARKS.length]
 }
 
 export const AVATAR_MARKS = MARKS
 
 export default function SchoolAvatar({ seed, size = 32 }) {
+  if (typeof seed === 'string' && seed.startsWith('g:')) return <ArtAvatar seed={seed} size={size} />
   const mark = markForSeed(seed)
   const color = `var(--${mark.accent})`
   return (
@@ -115,6 +112,35 @@ export default function SchoolAvatar({ seed, size = 32 }) {
       {(mark.dots || []).map(([cx, cy, r]) => (
         <circle key={`d${cx}-${cy}`} cx={cx} cy={cy} r={r} style={{ fill: color }} />
       ))}
+    </svg>
+  )
+}
+
+// 生成式图案:纹理(次色、细)在下,结构(主色)在上,都裁进内圈;点为实心小圆。
+function ArtAvatar({ seed, size }) {
+  const clipId = `av${useId().replace(/[^a-zA-Z0-9]/g, '')}`
+  const art = artForSeed(seed)
+  const color = `var(--${art.accent})`
+  const color2 = `color-mix(in srgb, var(--${art.accent2}) 55%, transparent)`
+  const { texture, structure } = art
+  return (
+    <svg className="school-avatar" width={size} height={size} viewBox="0 0 32 32" role="img" aria-label="头像 · 图案">
+      <defs><clipPath id={clipId}><circle cx="16" cy="16" r="12.6" /></clipPath></defs>
+      <circle cx="16" cy="16" r="15.2" style={{ fill: `color-mix(in srgb, ${color} 12%, var(--paper-raised))` }} />
+      <circle cx="16" cy="16" r="15.2" fill="none" style={{ stroke: `color-mix(in srgb, ${color} 34%, transparent)` }} strokeWidth="1" />
+      <g clipPath={`url(#${clipId})`}>
+        <g fill="none" style={{ stroke: color2 }} strokeWidth="1.2" strokeLinecap="round" strokeDasharray={texture.dashed ? '1.6 2.4' : undefined}>
+          {(texture.paths || []).map((d) => <path key={d} d={d} />)}
+          {(texture.circles || []).map(([cx, cy, r]) => <circle key={`c${cx}-${cy}-${r}`} cx={cx} cy={cy} r={r} />)}
+        </g>
+        {(texture.dots || []).map(([cx, cy, r]) => <circle key={`t${cx}-${cy}`} cx={cx} cy={cy} r={r} style={{ fill: color2 }} />)}
+        <g fill="none" style={{ stroke: color }} strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+          {(structure.paths || []).map((d) => <path key={d} d={d} />)}
+          {(structure.circles || []).map(([cx, cy, r]) => <circle key={`c${cx}-${cy}-${r}`} cx={cx} cy={cy} r={r} />)}
+          {(structure.rects || []).map(([x, y, w]) => <rect key={`r${x}-${y}`} x={x} y={y} width={w} height={w} />)}
+        </g>
+        {art.dots.map(([cx, cy, r]) => <circle key={`d${cx}-${cy}`} cx={cx} cy={cy} r={r} style={{ fill: color }} />)}
+      </g>
     </svg>
   )
 }

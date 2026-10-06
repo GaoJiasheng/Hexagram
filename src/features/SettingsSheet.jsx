@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { lazy, Suspense, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import EmailVerifyPanel from './auth/EmailVerifyPanel.jsx'
 import FontFamilyControl from './reader/FontFamilyControl.jsx'
@@ -10,6 +10,7 @@ import { useAuth } from './auth/AuthContext.jsx'
 import { syncNow } from './auth/sync.js'
 import { apiFetch } from './auth/apiClient.js'
 import SchoolAvatar from './auth/SchoolAvatar.jsx'
+const AvatarPicker = lazy(() => import('./auth/AvatarPicker.jsx'))
 
 function syncTimeLabel(timestamp) {
   if (!timestamp) return '尚未同步过'
@@ -33,6 +34,7 @@ export default function SettingsSheet({ open, onClose }) {
   const [blocks, setBlocks] = useState(null)
   // 改名:默认昵称是注册邮箱的 @ 前半段,等于把邮箱前缀挂在每条评论上,该给个改的口子
   const [renaming, setRenaming] = useState(false)
+  const [pickingAvatar, setPickingAvatar] = useState(false)
   const [nameDraft, setNameDraft] = useState('')
   const [savingName, setSavingName] = useState(false)
   // 注销账号:App Store 5.1.1(v) 要求支持注册的 App 必须提供删除入口,光有「退出登录」不算
@@ -215,7 +217,21 @@ export default function SettingsSheet({ open, onClose }) {
             ) : user ? (
               <>
                 <div className="settings-account__user">
-                  <SchoolAvatar seed={user.avatarSeed} size={38} />
+                  <button
+                    type="button"
+                    className="settings-account__avatar"
+                    onClick={() => setPickingAvatar(true)}
+                    aria-label="换头像"
+                    title="换头像"
+                  >
+                    <SchoolAvatar seed={user.avatarSeed} size={38} />
+                    <span aria-hidden="true">换</span>
+                  </button>
+                  {pickingAvatar && (
+                    <Suspense fallback={null}>
+                      <AvatarPicker onClose={() => setPickingAvatar(false)} />
+                    </Suspense>
+                  )}
                   <div className="settings-account__identity">
                     {renaming ? (
                       <form className="settings-account__rename" onSubmit={saveName}>
