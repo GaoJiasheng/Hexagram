@@ -13,7 +13,7 @@
 
 ### 2026-10-07 现状
 - web **1.35.15** 在线(10-06:邮箱验证 + 找回密码改进 · 发信走 Cloudflare Email Service〔hexa-mailer Worker,owner 实收 foxmail 验过,发件 notify@mail.gavin.pub〕· 换头像〔随机线条几何 / 流派印记,不收上传〕· 脑图鼠标修复 · 观书书架自适应)。
-- iOS **1.35.11 已上架**(READY_FOR_SALE,10-07 查);上面 web 1.35.12–1.35.15 的改动 iOS 还没有,owner 开口即 `./ship-ios.sh`。
+- iOS **1.35.11 已上架**;**1.35.15 build 58 已送审**(10-07,WAITING_FOR_REVIEW,过审自动上架;含邮箱验证 / 换头像 / 脑图修复 / 观书书架)。N11 三处定字在其后,随下一版。
 - O6 已全(生产 secrets 有 GOOGLE_CLIENT_ID/SECRET、TURNSTILE_SECRET_KEY、RESEND_API_KEY)。
 
 ### ✅ 2026-10-01 批次收官(owner:「这一批次接近收官」)
