@@ -4961,3 +4961,44 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .comment-section__fallback-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 .comment-section__fallback-row input { flex: 1 1 120px; min-width: 0; padding: 6px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); color: var(--ink); font-size: 0.9rem; letter-spacing: 2px; }
 .comment-section__fallback-row input:focus { outline: none; border-color: var(--cinnabar); }
+
+/* ---------- 典籍目录页美化(2026-10-07,docs/book-page-proposal.md;BookPage.jsx) ---------- */
+.book-head { display: grid; grid-template-columns: 1fr auto; gap: 12px 28px; align-items: start; }
+.book-head__art { padding-top: 6px; }
+.book-howto { display: flex; gap: 10px; align-items: baseline; margin: 6px 0 0; font-size: calc(0.86rem * var(--read-scale)); line-height: 1.75; color: var(--ink-soft); }
+.book-howto__tag { flex: none; font-size: 0.7rem; letter-spacing: 0.1em; color: var(--gold); border: 1px solid currentColor; border-radius: 3px; padding: 0 5px; line-height: 1.6; }
+.book-resume { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 6px 8px; }
+.book-resume__tag { font-size: 0.7rem; letter-spacing: 0.1em; border: 1px solid currentColor; border-radius: 3px; padding: 0 5px; line-height: 1.6; }
+.book-resume__snippet { color: var(--ink-soft); font-size: 0.92em; }
+/* 形状行:既有 shape + 名句 / 人物志 / 时间轴,一行排开 */
+.book-shapes { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 18px 0 4px; }
+.book-shapes__title { flex: none; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--ink-faint); margin-right: 4px; }
+.book-shapes__item { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px 5px 7px; border: 1px solid color-mix(in srgb, var(--cinnabar) 35%, transparent); border-radius: 999px; background: color-mix(in srgb, var(--cinnabar) 5%, var(--paper-raised)); color: var(--ink); text-decoration: none; font-size: 0.86rem; transition: border-color 0.15s, box-shadow 0.15s; }
+.book-shapes__item:hover { border-color: var(--cinnabar); box-shadow: 0 2px 10px color-mix(in srgb, var(--cinnabar) 12%, transparent); }
+.book-shapes__tag { font-size: 0.68rem; letter-spacing: 0.08em; color: var(--cinnabar); border: 1px solid currentColor; border-radius: 3px; padding: 0 4px; line-height: 1.6; }
+.book-shapes__label { font-family: var(--font-serif); }
+/* 透镜 */
+.book-lens { display: flex; align-items: flex-start; gap: 10px; margin: 0 0 14px; }
+.book-lens__title { flex: none; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--ink-faint); line-height: 2; }
+/* 分段目录 */
+.toc-part + .toc-part { margin-top: 16px; }
+.toc-part__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; margin: 0 0 8px; }
+.toc-part__name { font-family: var(--font-serif); font-size: calc(1rem * var(--read-scale)); color: var(--ink); }
+.toc-part__range { font-size: 0.78rem; color: var(--ink-faint); }
+.toc-part__note { font-size: 0.78rem; color: var(--ink-soft); }
+/* 章格:篇幅刻度 / 读过 / 透镜未命中 */
+.dao-section-cell--link { position: relative; }
+.dao-section-cell__tick { position: absolute; right: 3px; bottom: 3px; width: 2px; border-radius: 1px; background: color-mix(in srgb, var(--ink-faint) 55%, transparent); height: 0; }
+.dao-section-cell--t1 .dao-section-cell__tick { height: 5px; }
+.dao-section-cell--t2 .dao-section-cell__tick { height: 10px; }
+.dao-section-cell--t3 .dao-section-cell__tick { height: 16px; }
+.dao-section-cell--read { background: color-mix(in srgb, var(--ink) 7%, var(--paper-raised)); }
+.dao-section-cell--dim { opacity: 0.32; }
+.dao-section-cell--dim:hover { opacity: 0.7; }
+.book-toc__legend { margin-top: 12px; font-size: 0.76rem; }
+@media (max-width: 640px) {
+  .book-head { grid-template-columns: 1fr; }
+  .book-head__art { order: -1; display: flex; justify-content: center; padding-top: 0; }
+  .book-head__art .book-art { width: 150px !important; height: 150px !important; }
+  .book-lens { flex-direction: column; gap: 4px; }
+}

@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { usePageTitle } from './yijing/hooks/usePageTitle.js'
 import { bookBySlug, chapterHref } from './reader/booksIndex.js'
 import ITEMS from '../data/mingju.json'
@@ -49,8 +49,10 @@ function Card({ e, big = false }) {
 
 export default function MingjuPage() {
   usePageTitle('名句集')
-  const [group, setGroup] = useState('')
-  const [q, setQ] = useState('')
+  // 目录页「名句 N 条」入口带 ?group=<组>&q=<书名> 进来,直接落到那本书的名句(label 含书名)
+  const [params] = useSearchParams()
+  const [group, setGroup] = useState(() => params.get('group') || '')
+  const [q, setQ] = useState(() => params.get('q') || '')
 
   const daily = useMemo(() => pickDaily(ITEMS), [])
   const counts = useMemo(() => {

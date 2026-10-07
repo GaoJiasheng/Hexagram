@@ -1,0 +1,25 @@
+/* 目录页透镜选词条。只用 token,三套主题自动跟随;主色 --cinnabar 随分站换肤。 */
+
+.toc-lens { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; min-width: 0; }
+
+.toc-lens__chip {
+  display: inline-flex; align-items: baseline; gap: 3px;
+  max-width: 100%;
+  padding: 3px 9px;
+  border: 1px solid var(--line); border-radius: 999px;
+  background: var(--paper-raised); color: var(--ink-soft);
+  font-family: var(--font-serif); font-size: calc(0.84rem * var(--read-scale, 1)); line-height: 1.4;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.toc-lens__chip:hover { border-color: var(--cinnabar); }
+.toc-lens__chip:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--cinnabar); }
+.toc-lens__chip--on { border-color: var(--cinnabar); background: var(--cinnabar-bg); color: var(--cinnabar); }
+
+/* 长词在窄屏也不撑破一行 */
+.toc-lens__w { overflow-wrap: anywhere; }
+.toc-lens__n { color: var(--ink-faint); font-size: 0.85em; font-variant-numeric: tabular-nums; }
+.toc-lens__chip--on .toc-lens__n { color: inherit; opacity: 0.75; }
+
+.toc-lens__clear { margin-left: 2px; font-size: calc(0.8rem * var(--read-scale, 1)); }

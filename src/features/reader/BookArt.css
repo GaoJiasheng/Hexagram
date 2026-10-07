@@ -1,0 +1,25 @@
+/* 书的题头插图:alpha PNG 当遮罩,底色走 token,明暗主题自动跟随。
+   -webkit- 前缀给 iOS Safari / Capacitor WebView。 */
+
+.book-art {
+  display: inline-block;
+  flex: none;
+  max-width: 100%;
+  background: var(--ink-soft);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+.book-art--ink { background: var(--ink); }
+.book-art--accent { background: color-mix(in srgb, var(--cinnabar) 70%, var(--ink-soft)); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .book-art { animation: book-art-in 0.3s ease both; }
+}
+@keyframes book-art-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

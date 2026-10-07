@@ -1,0 +1,31 @@
+{
+  "_readme": "典籍目录页插图(docs/book-page-proposal.md §3)。每本书若干候选 prompt,gen-book-art.mjs 逐条调 Codex 出图进 scripts/.cache/book-art/,人眼挑一张(pick = 候选下标)后落 public/book-art/<组>/<slug>.png(只留 alpha 通道、800²,当 CSS 遮罩用)。prompt 守 §3.1:单色白描 / 减笔水墨、透明底、无字无印无框无人脸、主体占三分之一偏一侧、上方留白。",
+  "_style": "Chinese baimiao (白描) ink line drawing with restrained light ink wash, SINGLE black ink only, on a FULLY TRANSPARENT background (alpha channel, nothing behind the strokes), no paper texture, no text, no Chinese characters, no seal, no border, no frame, no signature. Composition: the subject occupies about one third of the canvas and sits in the lower part, leaving the upper half mostly empty. Square 1024x1024.",
+  "dao/daodejing": {
+    "alt": "青牛向关:老者骑牛背影,远处山间一座关隘",
+    "motif": "青牛向关(老子西出函谷,小传已交代此传说)",
+    "pick": 0,
+    "prompts": [
+      "An old man seen entirely from behind, riding a water buffalo slowly away from the viewer toward a small distant mountain-pass gate; the buffalo and rider are small, placed in the lower-left third; a few sparse rocks; the gate is tiny and faint in the far distance; vast empty space above.",
+      "A single water buffalo seen from behind, walking leftward along a faint path toward a distant mountain pass with a small gate tower; no rider; a few wisps of mist; subject small in the lower-left third; the rest of the canvas empty."
+    ]
+  },
+  "ru/lunyu": {
+    "alt": "杏坛:一株老杏树下铺着一领席,旁有几卷简册",
+    "motif": "杏坛(孔子讲学处的传说;画树与席,不画人)",
+    "pick": 0,
+    "prompts": [
+      "An old apricot tree with a gnarled trunk and a few blossoming branches, beneath it a low wooden platform with a woven mat and two or three bundles of bamboo-slip scrolls lying on it; no people; the tree stands in the lower-right third with branches reaching up into empty space.",
+      "Three bundles of ancient bamboo-slip scrolls (简册) tied with cord, one partly unrolled, lying beside a small writing brush; drawn small in the lower-left third of the canvas; everything else empty."
+    ]
+  },
+  "bing/sunzi": {
+    "alt": "风中的四面旌旗",
+    "motif": "四面旗(「其疾如风,其徐如林,侵掠如火,不动如山」)",
+    "pick": 0,
+    "prompts": [
+      "Four tall ancient Chinese military banners on bamboo poles, planted on a low ridge, all streaming in a strong wind toward the right; the banners are plain cloth with NO characters or symbols; small figures absent; the group of banners is placed in the lower-right third, sky above left entirely empty.",
+      "A rugged mountain pass with a narrow river winding through it and a single small watchtower on the ridge; drawn with sparse dry-brush strokes; the scene sits in the lower third, the upper two thirds empty."
+    ]
+  }
+}
