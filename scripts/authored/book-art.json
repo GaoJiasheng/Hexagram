@@ -225,5 +225,500 @@
       "A pair of small water birds (ospreys) standing on a sandy islet in a river, a few reeds and ripple lines; drawn small in the lower-left third; the rest empty.",
       "Two water birds on a river bank among reeds, one calling; sparse; lower-right third."
     ]
+  },
+  "fo/xinjing": {
+    "alt": "一叶小舟渡河(到彼岸)",
+    "motif": "一叶舟渡河(波罗蜜)",
+    "pick": 0,
+    "prompts": [
+      "A single small empty boat crossing a wide calm river toward the far bank, a few ripple lines, the far shore a faint line; the boat small in the lower-left third; the rest of the canvas empty.",
+      "A narrow skiff with one oar resting in it, moored at a quiet shore, reeds; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "fo/jingangjing": {
+    "alt": "草叶上的露珠",
+    "motif": "露珠(「如露亦如电」)",
+    "pick": 0,
+    "prompts": [
+      "A single blade of grass bending under one large dew drop at its tip, the drop catching light, drawn with a few lines; lower-left third; the rest of the canvas empty.",
+      "Two or three dew drops on a slender leaf, a faint flash of lightning drawn as one thin zigzag line far above; sparse; the rest of the canvas empty."
+    ]
+  },
+  "fo/tanjing": {
+    "alt": "风中的幡",
+    "motif": "风幡(「风动幡动」)",
+    "pick": 0,
+    "prompts": [
+      "A tall plain banner on a bamboo pole fluttering in wind beside the corner of a temple eave drawn with two lines; no text on the banner; lower-right third; the rest of the canvas empty.",
+      "A single long narrow prayer banner streaming sideways from a pole on a hill, no characters; lower-left third; the rest of the canvas empty."
+    ]
+  },
+  "fo/sishierzhang": {
+    "alt": "白马负箧",
+    "motif": "白马负箧(白马驮经)",
+    "pick": 0,
+    "prompts": [
+      "A white horse seen from the side walking slowly, carrying a wooden book-chest strapped to its back, no rider; drawn in the lower-left third; the rest of the canvas empty.",
+      "A horse with a bundle of scrolls on its back walking away along a road toward a distant city gate; lower third; the rest of the canvas empty."
+    ]
+  },
+  "fo/yijiaojing": {
+    "alt": "双树",
+    "motif": "沙罗双树",
+    "pick": 1,
+    "prompts": [
+      "Two tall sal trees standing side by side with their crowns touching, a few falling petals, no figures; lower-right third; the rest of the canvas empty.",
+      "Two slender trees growing close together on flat ground, petals drifting down; sparse; lower-left third; the rest of the canvas empty."
+    ]
+  },
+  "fo/badaren": {
+    "alt": "一盏灯",
+    "motif": "一盏灯(觉)",
+    "pick": 0,
+    "prompts": [
+      "A single small oil lamp with a steady flame on a plain stand, drawn with a few lines; lower-left third; the rest of the canvas empty.",
+      "A lotus-shaped oil lamp with one flame, a faint halo of light around it; small, lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "fo/amituojing": {
+    "alt": "莲池",
+    "motif": "莲池",
+    "pick": 0,
+    "prompts": [
+      "A quiet pond with three lotus flowers at different heights and a few floating leaves, ripples; lower third; the rest of the canvas empty.",
+      "Lotus flowers and leaves rising from still water seen from a low angle, mist above; lower-left third; the rest of the canvas empty."
+    ]
+  },
+  "fo/xinxinming": {
+    "alt": "一滴水落入海",
+    "motif": "一滴水入海(「一即一切」)",
+    "pick": 0,
+    "prompts": [
+      "A single drop of water falling toward the surface of a vast sea, a small crown of ripples where it lands, the horizon a faint line; the drop in the lower-left third; the rest of the canvas empty.",
+      "Concentric ripples spreading on wide water from a single point, nothing else; sparse; lower third; the rest of the canvas empty."
+    ]
+  },
+  "fo/zhengdaoge": {
+    "alt": "游方僧的杖与笠",
+    "motif": "游方杖笠(永嘉玄觉)",
+    "pick": 1,
+    "prompts": [
+      "A monk's walking staff with rings at its top and a wide bamboo rain hat leaning together against a rock, no person; lower-right third; the rest of the canvas empty.",
+      "A straw hat and a staff laid on the ground beside a pair of straw sandals; sparse; lower-left third; the rest of the canvas empty."
+    ]
+  },
+  "fo/weimojie": {
+    "alt": "落花",
+    "motif": "落花(天女散花)",
+    "pick": 0,
+    "prompts": [
+      "A scatter of flower petals drifting down through empty air and settling on a low stone platform, no figures; petals in the lower-right third; the rest of the canvas empty.",
+      "Petals falling in a loose spiral toward a small empty seat drawn with a few lines; sparse; lower third; the rest of the canvas empty."
+    ]
+  },
+  "xin/chuanxilu": {
+    "alt": "岩中花树",
+    "motif": "岩中花树(「你未看此花时」)",
+    "pick": 0,
+    "prompts": [
+      "A small flowering tree growing out of a cleft in a rock face, a few blossoms, drawn sparsely; lower-left third; the rest of the canvas empty.",
+      "A single flowering branch reaching out from between two boulders on a mountainside; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "xin/daxuewen": {
+    "alt": "桥与月(天泉证道)",
+    "motif": "桥与月(天泉桥)",
+    "pick": 0,
+    "prompts": [
+      "A small stone bridge over a stream with a full moon above it, no people, drawn with a few lines; lower-right third; the rest of the canvas empty.",
+      "A simple arched bridge reflected in still water under a crescent moon; sparse; lower third; the rest of the canvas empty."
+    ]
+  },
+  "fa/hanfeizi": {
+    "alt": "树桩与兔(守株待兔)",
+    "motif": "树桩与兔(守株待兔)",
+    "pick": 0,
+    "prompts": [
+      "A single tree stump in a field with a hare lying beside it, a few stalks of grain, drawn with a few lines; lower-left third; the rest of the canvas empty.",
+      "A tree stump at the edge of a field, a small hare running past it; sparse; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "fa/shangjunshu": {
+    "alt": "城门与木(徙木立信)",
+    "motif": "城门与木(徙木立信)",
+    "pick": 0,
+    "prompts": [
+      "A tall wooden post standing upright before a city gate drawn with a few lines, no people; lower-right third; the rest of the canvas empty.",
+      "A city gate tower in the distance and a single wooden pole planted in the open ground before it; sparse; lower third; the rest of the canvas empty."
+    ]
+  },
+  "fa/shenzi": {
+    "alt": "云中龙(飞龙乘云)",
+    "motif": "云中龙(「飞龙乘云」)",
+    "pick": 0,
+    "prompts": [
+      "The coils of a dragon mostly hidden inside a mass of cloud, only one claw and part of the back showing, drawn in ink-wash; the cloud in the lower-right third; the rest of the canvas empty.",
+      "Layers of rolling cloud with one dragon's whiskered head emerging, sparse; lower-left third; the rest of the canvas empty."
+    ]
+  },
+  "fa/yinwenzi": {
+    "alt": "铜镜照物(名实)",
+    "motif": "铜镜照物(名实)",
+    "pick": 0,
+    "prompts": [
+      "A round bronze mirror on a stand with a small vase in front of it and the vase's reflection in the mirror; lower-left third; the rest of the canvas empty.",
+      "A bronze mirror reflecting a single branch placed before it; sparse; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "mo/mozi": {
+    "alt": "云梯与城墙(止楚攻宋)",
+    "motif": "云梯与城(止楚攻宋)",
+    "pick": 0,
+    "prompts": [
+      "A section of city wall with a tall siege ladder leaning against it, no people, drawn with a few lines; lower-right third; the rest of the canvas empty.",
+      "A city wall corner with battlements and one siege ladder propped below, sparse; lower-left third; the rest of the canvas empty."
+    ]
+  },
+  "zong/guiguzi": {
+    "alt": "幽谷",
+    "motif": "幽谷(鬼谷)",
+    "pick": 0,
+    "prompts": [
+      "A deep narrow valley between two steep cliffs with mist filling the gap and a single cave mouth in one wall; the valley in the lower third; the rest of the canvas empty.",
+      "Two cliffs leaning toward each other with mist between them, a few pines on the ledges; sparse; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "zong/zhanguoce": {
+    "alt": "六枚印绶(苏秦)",
+    "motif": "六枚印绶(苏秦佩六国相印)",
+    "pick": 0,
+    "prompts": [
+      "Six small official seals with hanging silk cords laid in a row on a cloth, drawn with a few lines; lower-left third; the rest of the canvas empty.",
+      "Six seals with tassels piled loosely on a low table; sparse; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "bing/wuzi": {
+    "alt": "一辆战车",
+    "motif": "战车",
+    "pick": 0,
+    "prompts": [
+      "An ancient Chinese two-wheeled war chariot standing empty with its shaft on the ground, no horses or people; lower-left third; the rest of the canvas empty.",
+      "A war chariot drawn by two horses seen from the side at a standstill, no riders; sparse; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "bing/simafa": {
+    "alt": "钲与鼓",
+    "motif": "钲鼓(金鼓)",
+    "pick": 0,
+    "prompts": [
+      "A war drum on a wooden stand beside a bronze bell (钲) hung from a frame, no people; lower-right third; the rest of the canvas empty.",
+      "A large drum with two drumsticks resting on it and a small bronze gong beside it; sparse; lower-left third; the rest of the canvas empty."
+    ]
+  },
+  "bing/weiliaozi": {
+    "alt": "虎符",
+    "motif": "虎符",
+    "pick": 0,
+    "prompts": [
+      "A bronze tiger-shaped tally (虎符) split into two halves lying slightly apart on a cloth, drawn with a few lines; lower-left third; the rest of the canvas empty.",
+      "Two halves of a tiger tally fitted together, seen from above; sparse; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "bing/sanlue": {
+    "alt": "圯桥与一只履(黄石公)",
+    "motif": "圯桥与履(圯上老人)",
+    "pick": 0,
+    "prompts": [
+      "A plain wooden bridge over a stream and a single shoe lying on the bank below it, no people; lower-right third; the rest of the canvas empty.",
+      "A single old cloth shoe lying at the foot of a bridge post; sparse; lower-left third; the rest of the canvas empty."
+    ]
+  },
+  "bing/liutao": {
+    "alt": "直钩钓竿(渭水)",
+    "motif": "直钩钓竿(太公渭水)",
+    "pick": 0,
+    "prompts": [
+      "A fishing rod planted on a riverbank with its line hanging straight down into calm water, the hook straight, no person; lower-left third; the rest of the canvas empty.",
+      "A long fishing rod resting on a rock by a wide river, a straight line to the water; sparse; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "bing/weigongwendui": {
+    "alt": "阵图方格",
+    "motif": "阵图方格(六花阵)",
+    "pick": 1,
+    "prompts": [
+      "A diagram of a military formation drawn as a grid of small squares and circles on an unrolled scroll, no characters; lower-right third; the rest of the canvas empty.",
+      "A six-petal formation diagram (circles around a center) drawn with thin lines on a scroll, no text; sparse; lower-left third; the rest of the canvas empty."
+    ]
+  },
+  "zhongyi/suwen": {
+    "alt": "四季草木",
+    "motif": "四季草木(四气调神)",
+    "pick": 0,
+    "prompts": [
+      "Four small plants in a row showing spring sprout, summer leaf, autumn seed-head and winter bare stem, drawn with a few lines; lower third; the rest of the canvas empty.",
+      "A single branch passing through four seasons from left to right: bud, leaf, fruit, bare; sparse; lower-left third; the rest of the canvas empty."
+    ]
+  },
+  "zhongyi/lingshu": {
+    "alt": "九针",
+    "motif": "九针",
+    "pick": 0,
+    "prompts": [
+      "Nine ancient acupuncture needles of different shapes and lengths laid side by side on a cloth, no body; lower-left third; the rest of the canvas empty.",
+      "A set of nine fine needles fanned out in a small case; sparse; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "zhongyi/shanghanlun": {
+    "alt": "一束桂枝",
+    "motif": "桂枝",
+    "pick": 0,
+    "prompts": [
+      "A small bundle of cinnamon twigs (桂枝) tied with string, a few leaves, drawn with a few lines; lower-left third; the rest of the canvas empty.",
+      "Three cinnamon twigs with leaves laid across each other; sparse; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "zhongyi/bencaojing": {
+    "alt": "芝草",
+    "motif": "芝草(灵芝)",
+    "pick": 0,
+    "prompts": [
+      "A single lingzhi mushroom (芝草) growing from the base of an old tree root, drawn with a few lines; lower-right third; the rest of the canvas empty.",
+      "Two lingzhi fungi on a mossy rock; sparse; lower-left third; the rest of the canvas empty."
+    ]
+  },
+  "zhongyi/jinkui": {
+    "alt": "书匮",
+    "motif": "金匮(书匮)",
+    "pick": 1,
+    "prompts": [
+      "A small ornate wooden chest (匮) with its lid slightly open and the edge of a scroll showing, drawn with a few lines; lower-left third; the rest of the canvas empty.",
+      "A closed bronze-cornered book chest on a low table; sparse; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "zhongyi/nanjing": {
+    "alt": "脉枕",
+    "motif": "脉枕",
+    "pick": 0,
+    "prompts": [
+      "A small cloth pulse-pillow (脉枕) on a low table beside a folded cloth, no hands, drawn with a few lines; lower-left third; the rest of the canvas empty.",
+      "A tiny embroidered pulse-pillow alone on a desk corner; sparse; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "moulue/luozhijing": {
+    "alt": "罗网",
+    "motif": "罗网(罗织)",
+    "pick": 0,
+    "prompts": [
+      "A loose net spread on the ground with one small bird caught at its edge, drawn with thin lines; lower-left third; the rest of the canvas empty.",
+      "A tangled fishing net hanging from a post; sparse; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "moulue/rongkujian": {
+    "alt": "半荣半枯之树",
+    "motif": "半荣半枯之树(荣枯)",
+    "pick": 0,
+    "prompts": [
+      "A single tree whose left half is in full leaf and whose right half is bare and dead, drawn with a few lines; lower-right third; the rest of the canvas empty.",
+      "One tree with one green bough and one withered bough on a bare slope; sparse; lower-left third; the rest of the canvas empty."
+    ]
+  },
+  "moulue/quanmou": {
+    "alt": "残局",
+    "motif": "残局(棋局)",
+    "pick": 0,
+    "prompts": [
+      "A corner of a go board with a few stones in an unfinished position and one stone fallen off the edge, drawn with thin lines; lower-left third; the rest of the canvas empty.",
+      "A go board seen at an angle with scattered stones and an empty bowl; sparse; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "moulue/taohuishu": {
+    "alt": "云遮月",
+    "motif": "云遮月(韬晦)",
+    "pick": 0,
+    "prompts": [
+      "A full moon half covered by a drifting band of cloud, a bare branch in the lower corner; the moon in the upper-right, mostly empty",
+      "A thin crescent almost hidden behind layered cloud, sparse; upper-left, the rest empty"
+    ]
+  },
+  "moulue/zhixue": {
+    "alt": "舟泊岸",
+    "motif": "舟泊岸(止)",
+    "pick": 0,
+    "prompts": [
+      "A small boat pulled up onto a sandy bank with its oar laid aside, calm water, drawn with a few lines; lower-left third; the rest of the canvas empty.",
+      "A moored boat with its rope tied to a stake on the shore; sparse; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "moulue/changduanjing": {
+    "alt": "一杆秤",
+    "motif": "秤(长短权衡)",
+    "pick": 0,
+    "prompts": [
+      "A traditional Chinese steelyard balance (秤) hanging from a hook with its weight and a small pan, drawn with a few lines; lower-right third; the rest of the canvas empty.",
+      "A steelyard scale lying on a table with its sliding weight; sparse; lower-left third; the rest of the canvas empty."
+    ]
+  },
+  "moulue/caigentan": {
+    "alt": "菜根",
+    "motif": "菜根",
+    "pick": 0,
+    "prompts": [
+      "A single radish with its leafy top and long root pulled from the soil, a little earth clinging, drawn with a few lines; lower-left third; the rest of the canvas empty.",
+      "Two root vegetables with leaves laid on a bare table; sparse; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "moulue/weiluyehua": {
+    "alt": "炉火",
+    "motif": "炉火(围炉夜话)",
+    "pick": 0,
+    "prompts": [
+      "A small clay brazier with glowing coals and a kettle on it, a wisp of steam, drawn with a few lines; lower-left third; the rest of the canvas empty.",
+      "A charcoal stove with flames and two low stools beside it, no people; sparse; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "moulue/xiaochuangyouji": {
+    "alt": "小窗与梅",
+    "motif": "小窗与梅",
+    "pick": 0,
+    "prompts": [
+      "A small lattice window with one plum branch in blossom reaching past it, drawn with thin lines; lower-right third; the rest of the canvas empty.",
+      "A round window in a wall framing a single plum branch; sparse; lower-left third; the rest of the canvas empty."
+    ]
+  },
+  "mingli/yuanhai": {
+    "alt": "海平如镜",
+    "motif": "海平如镜(渊海子平)",
+    "pick": 0,
+    "prompts": [
+      "A wide calm sea with a perfectly flat horizon and one tiny sail far away, drawn with a few lines; the horizon low, mostly empty",
+      "Still water with a faint reflection of a crescent moon and no waves; sparse; lower third; the rest of the canvas empty."
+    ]
+  },
+  "mingli/zhenquan": {
+    "alt": "窗格",
+    "motif": "窗格(格局)",
+    "pick": 0,
+    "prompts": [
+      "A wooden lattice window with a regular grid of panes, seen straight on, drawn with thin lines; lower-right third; the rest of the canvas empty.",
+      "A corner of a latticed window with one pane open; sparse; lower-left third; the rest of the canvas empty."
+    ]
+  },
+  "mingli/ditiansui": {
+    "alt": "一滴水",
+    "motif": "一滴水(滴天髓)",
+    "pick": 0,
+    "prompts": [
+      "A single drop of water hanging from the tip of a bare twig about to fall, drawn with a few lines; lower-left third; the rest of the canvas empty.",
+      "One water drop falling through empty air with a faint trail; sparse; lower third; the rest of the canvas empty."
+    ]
+  },
+  "mingli/qiongtong": {
+    "alt": "日晷",
+    "motif": "日晷(调候)",
+    "pick": 0,
+    "prompts": [
+      "A stone sundial on a short pedestal with its gnomon casting a thin shadow, drawn with a few lines; lower-right third; the rest of the canvas empty.",
+      "A round sundial face seen at an angle with hour marks and a shadow; sparse; lower-left third; the rest of the canvas empty."
+    ]
+  },
+  "mingli/sanming": {
+    "alt": "一摞书",
+    "motif": "一摞书(三命通会)",
+    "pick": 0,
+    "prompts": [
+      "A tall stack of thread-bound books with one book open on top, drawn with a few lines; lower-left third; the rest of the canvas empty.",
+      "Several thread-bound volumes stacked unevenly beside a brush; sparse; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "mingli/wuxingdayi": {
+    "alt": "五物:木火土金水",
+    "motif": "五物(五行)",
+    "pick": 1,
+    "prompts": [
+      "Five small objects in a loose ring: a sprig of wood, a flame, a mound of earth, a bronze ingot, a wave of water, drawn with a few lines; lower third; the rest of the canvas empty.",
+      "A small branch, a flame, a clod of earth, a metal bell and a ripple of water arranged in a circle; sparse; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "mingli/lixuzhong": {
+    "alt": "算筹",
+    "motif": "算筹",
+    "pick": 1,
+    "prompts": [
+      "A scattering of thin counting rods (算筹) arranged in groups on a table, drawn with thin lines; lower-left third; the rest of the canvas empty.",
+      "A bundle of counting rods tied with cord and a few rods laid out beside it; sparse; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "mingli/luoluzi": {
+    "alt": "一块璞玉",
+    "motif": "璞玉(珞琭)",
+    "pick": 1,
+    "prompts": [
+      "A rough uncut jade stone with one polished face showing, resting on a cloth, drawn with a few lines; lower-left third; the rest of the canvas empty.",
+      "Two jade pebbles, one rough and one polished, side by side; sparse; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "mingli/yuzhao": {
+    "alt": "玉镜",
+    "motif": "玉镜(玉照)",
+    "pick": 0,
+    "prompts": [
+      "A round jade disc (璧) with a central hole hanging from a cord, catching light, drawn with a few lines; lower-right third; the rest of the canvas empty.",
+      "A jade mirror-disc on a stand reflecting a faint moon; sparse; lower-left third; the rest of the canvas empty."
+    ]
+  },
+  "guwen/guwenguanzhi": {
+    "alt": "笔架与笔",
+    "motif": "笔架与笔",
+    "pick": 0,
+    "prompts": [
+      "A wooden brush rack with three brushes hanging from it and an ink stone below, drawn with a few lines; lower-left third; the rest of the canvas empty.",
+      "A single brush resting on a brush rest beside an ink stone and a sheet of paper; sparse; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "guwen/kewen": {
+    "alt": "窗前书桌",
+    "motif": "窗前书桌",
+    "pick": 0,
+    "prompts": [
+      "A plain desk beneath a window with an open book, a brush and a small lamp, no person; lower-right third; the rest of the canvas empty.",
+      "A wooden school desk with a stack of books and a window frame behind it; sparse; lower-left third; the rest of the canvas empty."
+    ]
+  },
+  "tangshi/tangshi300": {
+    "alt": "月与酒杯",
+    "motif": "月与酒杯(举杯邀明月)",
+    "pick": 0,
+    "prompts": [
+      "A single wine cup on a stone table with a full moon above it, drawn with a few lines; the cup lower-left, the moon upper-right, mostly empty",
+      "A wine jar and a cup beside a bare branch under a crescent moon; sparse; lower third; the rest of the canvas empty."
+    ]
+  },
+  "songci/songci300": {
+    "alt": "柳岸残月",
+    "motif": "柳岸残月(杨柳岸晓风残月)",
+    "pick": 0,
+    "prompts": [
+      "A willow tree trailing its branches over a river bank with a thin waning moon low in the sky, drawn with a few lines; lower-left third; the rest of the canvas empty.",
+      "Willow fronds in a light breeze beside water and a sliver of moon; sparse; lower-right third; the rest of the canvas empty."
+    ]
+  },
+  "songci/songci-buyi": {
+    "alt": "荷",
+    "motif": "荷",
+    "pick": 0,
+    "prompts": [
+      "A single lotus leaf and one bud on a long stem above still water, drawn with a few lines; lower-right third; the rest of the canvas empty.",
+      "Two lotus leaves, one curled, with a dragonfly resting on the bud; sparse; lower-left third; the rest of the canvas empty."
+    ]
+  },
+  "yuanqu/yuanqu": {
+    "alt": "枯藤老树昏鸦",
+    "motif": "枯藤老树昏鸦",
+    "pick": 0,
+    "prompts": [
+      "An old gnarled tree with a withered vine twisted around it and two crows perched on a bare branch at dusk, drawn with a few lines; lower-right third; the rest of the canvas empty.",
+      "A leafless tree wrapped in dry vine, one crow on top, a thin line of road below; sparse; lower-left third; the rest of the canvas empty."
+    ]
   }
 }
