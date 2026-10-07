@@ -27,5 +27,203 @@
       "Four tall ancient Chinese military banners on bamboo poles, planted on a low ridge, all streaming in a strong wind toward the right; the banners are plain cloth with NO characters or symbols; small figures absent; the group of banners is placed in the lower-right third, sky above left entirely empty.",
       "A rugged mountain pass with a narrow river winding through it and a single small watchtower on the ridge; drawn with sparse dry-brush strokes; the scene sits in the lower third, the upper two thirds empty."
     ]
+  },
+  "dao/qingjingjing": {
+    "alt": "清泉石上",
+    "motif": "清泉石上(澄其心而神自清)",
+    "pick": null,
+    "prompts": [
+      "A small clear spring flowing over a few smooth rocks, thin ripples, two reeds; drawn very sparsely in the lower-left third; everything else empty.",
+      "A still mountain pool with one fallen leaf on the water and faint ripples spreading, a single rock at the edge; lower-right third; the rest empty."
+    ]
+  },
+  "dao/ganyingpian": {
+    "alt": "一株树与它的影子(如影随形)",
+    "motif": "树与树影(「如影随形」)",
+    "pick": null,
+    "prompts": [
+      "A single bare old tree standing on flat ground with its long shadow stretched across the ground beside it; the tree small in the lower-right third; sky empty.",
+      "A lone pine on a low rise, its shadow cast long toward the left on bare ground; sparse strokes; lower third only."
+    ]
+  },
+  "dao/zhuangzi-neipian": {
+    "alt": "鲲鹏:一只大鸟扶摇而上,下方是海",
+    "motif": "鲲鹏(逍遥游)",
+    "pick": null,
+    "prompts": [
+      "A huge bird with vast wings rising upward in a spiral over a faint sea horizon, seen from far away, the bird small against immense empty sky, a few wave lines at the very bottom.",
+      "The silhouette of an enormous fish just beneath the surface of a dark sea and, above it, a great bird lifting off; both small, placed in the lower-left third; the rest empty."
+    ]
+  },
+  "dao/yinfujing": {
+    "alt": "日月与星轨",
+    "motif": "日月星轨(「观天之道,执天之行」)",
+    "pick": null,
+    "prompts": [
+      "A crescent moon and a small sun drawn as simple circles, with a few long thin arcs of star trails sweeping across; sparse, geometric, lower-right third; the rest empty.",
+      "An ancient Chinese armillary-like ring instrument (浑仪) drawn with a few thin lines, standing small in the lower-left third; a faint arc of stars above; the rest empty."
+    ]
+  },
+  "dao/cantongqi": {
+    "alt": "丹炉与一弯月",
+    "motif": "鼎炉与月相",
+    "pick": null,
+    "prompts": [
+      "A small three-legged bronze cauldron (鼎) with a faint wisp of smoke rising, and a thin crescent moon above it; the cauldron small in the lower-left third; the rest empty.",
+      "A round alchemical furnace with a domed lid, a few flames at its base, and eight tiny moon phases arranged in a faint arc above; sparse; lower third."
+    ]
+  },
+  "dao/zhuangzi-waipian": {
+    "alt": "濠梁之上观鱼:桥下几尾游鱼",
+    "motif": "濠梁之鱼(秋水)",
+    "pick": null,
+    "prompts": [
+      "A small arched stone footbridge over a stream, and beneath it three fish swimming, drawn with a few lines; no people; the bridge small in the lower-right third; the rest empty.",
+      "Several small fish gliding in clear water among water-weeds, seen from above, drawn with minimal strokes; lower-left third; everything else empty."
+    ]
+  },
+  "dao/zhuangzi-zapian": {
+    "alt": "渔父之舟:一叶小舟泊在芦苇边",
+    "motif": "渔父之舟(渔父篇)",
+    "pick": null,
+    "prompts": [
+      "A single small fishing skiff moored among a few reeds at a river bank, a fishing rod resting across it, no people; the boat small in the lower-left third; the rest empty.",
+      "A lone narrow boat drifting on wide still water with a few reed stalks at the edge; sparse dry-brush; lower third."
+    ]
+  },
+  "dao/liezi": {
+    "alt": "御风而行:长袖与流云",
+    "motif": "御风(列子御风而行)",
+    "pick": null,
+    "prompts": [
+      "A few long flowing ribbon-like cloth sleeves and wisps of wind-driven cloud sweeping diagonally, suggesting someone riding the wind, no body or face visible; drawn in the lower-right third; the rest empty.",
+      "Several thin curling lines of wind and a few small cloud puffs drifting across a low ridge; very sparse; lower third."
+    ]
+  },
+  "dao/wenzi": {
+    "alt": "几枚残断的竹简",
+    "motif": "残简(定州汉简)",
+    "pick": null,
+    "prompts": [
+      "A few broken fragments of ancient bamboo slips, some cords frayed, lying scattered on bare ground; drawn small in the lower-left third; the rest empty.",
+      "Three damaged bamboo slips with worn edges, one cracked in half, placed loosely together in the lower-right third; the rest empty."
+    ]
+  },
+  "dao/huangting": {
+    "alt": "庭中一株桂树与一轮月",
+    "motif": "庭中桂树与月(黄庭)",
+    "pick": null,
+    "prompts": [
+      "A small courtyard corner with a single osmanthus tree and a full moon above it, a low wall suggested with two lines; the tree in the lower-right third; the rest empty.",
+      "A round moon gate in a garden wall with one tree branch reaching through it; sparse; lower-left third."
+    ]
+  },
+  "dao/wuzhenpian": {
+    "alt": "一枝莲",
+    "motif": "一枝莲(悟真)",
+    "pick": null,
+    "prompts": [
+      "A single lotus flower on a tall stem rising from still water with one leaf, drawn with a few lines; lower-left third; the rest empty.",
+      "A lotus bud and one unfurled leaf above calm water, two small ripples; sparse; lower-right third."
+    ]
+  },
+  "dao/zuowanglun": {
+    "alt": "松下一个空蒲团",
+    "motif": "空蒲团与松(坐忘)",
+    "pick": null,
+    "prompts": [
+      "An empty round straw meditation cushion on a flat rock beneath a leaning pine, no person; drawn small in the lower-right third; the rest empty.",
+      "A single pine tree bending over a bare rock ledge, a few needles falling; very sparse; lower-left third."
+    ]
+  },
+  "dao/tianyinzi": {
+    "alt": "山中茅庐与云",
+    "motif": "山中茅庐与云(天隐)",
+    "pick": null,
+    "prompts": [
+      "A tiny thatched hut half hidden among mountain folds with mist drifting across, drawn with sparse strokes; the hut small in the lower-right third; the rest empty.",
+      "A thatched hermit hut beside a single tall pine on a slope, clouds below the slope; sparse; lower-left third."
+    ]
+  },
+  "dao/dingguanjing": {
+    "alt": "一面古镜",
+    "motif": "古镜(定观)",
+    "pick": null,
+    "prompts": [
+      "An ancient round bronze mirror on a simple wooden stand, its face blank and bright, drawn with a few lines; small in the lower-left third; the rest empty.",
+      "A round bronze mirror lying flat, reflecting a thin crescent moon; sparse; lower-right third."
+    ]
+  },
+  "ru/mengzi": {
+    "alt": "牛山:一座光秃的山上几株新芽",
+    "motif": "牛山之木(告子上)",
+    "pick": null,
+    "prompts": [
+      "A rounded bare hill with only a few small tree sprouts on its slope and two tiny grazing oxen far away, drawn sparsely; the hill in the lower third; the rest empty.",
+      "A bald mountain outline with one surviving tree on the ridge and a few sprouting shoots at its foot; sparse; lower-right third."
+    ]
+  },
+  "ru/daxue": {
+    "alt": "八级石阶",
+    "motif": "八级石阶(八条目)",
+    "pick": null,
+    "prompts": [
+      "A flight of eight plain stone steps rising diagonally into empty space, a small pine at the bottom; drawn in the lower-left third; the rest empty.",
+      "Eight stone steps leading up to a simple gate drawn with a few lines; sparse; lower-right third."
+    ]
+  },
+  "ru/zhongyong": {
+    "alt": "鸢飞鱼跃",
+    "motif": "鸢与鱼(「鸢飞鱼跃」)",
+    "pick": null,
+    "prompts": [
+      "A kite (bird of prey) soaring high with wings spread, and far below a fish leaping from the water with a few splash lines; both small, the fish in the lower-left, the bird in the upper-right quadrant with lots of empty space between.",
+      "A single hawk gliding above a calm river where one fish breaks the surface; very sparse; the scene in the lower half."
+    ]
+  },
+  "ru/xiaojing": {
+    "alt": "反哺之乌",
+    "motif": "反哺之乌(慈乌)",
+    "pick": null,
+    "prompts": [
+      "A crow perched on a bare branch feeding another older crow beside it, drawn with a few strokes; the branch enters from the lower-right corner; the rest empty.",
+      "Two crows on a leafless bough, one leaning toward the other; sparse; lower-left third."
+    ]
+  },
+  "ru/xunzi": {
+    "alt": "蓝草与染缸(青出于蓝)",
+    "motif": "蓝草与染缸(「青出于蓝」)",
+    "pick": null,
+    "prompts": [
+      "A clump of indigo plants beside a wide earthen dye vat, a dipped length of cloth hanging from a pole above the vat; drawn small in the lower-left third; the rest empty.",
+      "A large earthen dye vat with a long strip of cloth draped out of it and a few indigo leaves on the ground; sparse; lower-right third."
+    ]
+  },
+  "ru/yanshi": {
+    "alt": "书案与一盏灯",
+    "motif": "书案与灯(家中夜读)",
+    "pick": null,
+    "prompts": [
+      "A low wooden writing desk with an oil lamp, an open book and a brush, no person; drawn small in the lower-right third; the rest empty.",
+      "A single oil lamp burning on a desk corner next to a stack of three books; sparse; lower-left third."
+    ]
+  },
+  "ru/jinsilu": {
+    "alt": "雨后一轮月(光风霁月)",
+    "motif": "雨后月(「光风霁月」)",
+    "pick": null,
+    "prompts": [
+      "A full moon emerging above a low bank of thinning rain clouds, a few bamboo leaves dripping in the lower corner; drawn sparsely; the moon in the upper-right, the bamboo in the lower-left, mostly empty.",
+      "A bright moon over a quiet pond after rain, one lotus leaf holding a drop of water; sparse; lower third."
+    ]
+  },
+  "ru/shijing": {
+    "alt": "河洲上的雎鸠",
+    "motif": "雎鸠于河洲(关雎)",
+    "pick": null,
+    "prompts": [
+      "A pair of small water birds (ospreys) standing on a sandy islet in a river, a few reeds and ripple lines; drawn small in the lower-left third; the rest empty.",
+      "Two water birds on a river bank among reeds, one calling; sparse; lower-right third."
+    ]
   }
 }

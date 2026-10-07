@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import BookArt from './BookArt.jsx'
 import { useState, useEffect } from 'react'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import { SITE_MAP } from '../../sites/registry.js'
@@ -37,11 +38,20 @@ export default function CorpusSinglePage({ corpus, slug, text }) {
   const label = (c) => c.title ?? (multi ? `第${c.no}${meta.sectionUnit}` : '全文')
 
   const header = (
-    <div className="dao-text-header">
+    <div className={`dao-text-header ${text.art ? 'book-head' : ''}`}>
+      <div className="book-head__text">
       <h1 className="dao-text-title">{text.title}</h1>
       <p className="dao-text-meta">{text.alias} · {text.era} · {text.attribution}</p>
       <p className="dao-text-brief">{text.brief}</p>
+      {text.howto && <p className="book-howto"><span className="book-howto__tag">读法</span>{text.howto}</p>}
       {text.authorNote && <p className="dao-text-authornote">{text.authorNote}</p>}
+      </div>
+      {/* 题头插图(目录页美化,与 BookPage 同款):短经没有目录页,插图直接落在单页阅读器的题头 */}
+      {text.art && (
+        <div className="book-head__art">
+          <BookArt src={`/book-art/${corpus}/${text.art.file}`} alt={text.art.alt} size={160} />
+        </div>
+      )}
     </div>
   )
 
