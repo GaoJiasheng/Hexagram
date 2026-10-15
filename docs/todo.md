@@ -11,6 +11,10 @@
 
 ## ▶ 当前待办(2026-10-01 N 表收口后重列)
 
+### 2026-10-15 推广第一档上线(web 1.35.18)
+owner 要求「不费我精力、尽量自动化」。已做:AI 检索爬虫拿正文 · JSON-LD 面包屑 / 书 / 章 · 章页卦页 SEO 标题(前后端同源)· 81 张分享卡 · sitemap 索引 + lastmod + 图片 · llms.txt · IndexNow(发版后 `npm run indexnow`)。
+**待 owner 挑**:第二档 ⑦ 百度站长平台(owner 验证一次 + 自己填推送密钥)⑧ 每周流量周报(Search Console 只读授权一次);第三档 ⑨ 社区首发帖(V2EX / 即刻 / 豆瓣 / 知乎,我写稿他发)⑩ GitHub awesome 列表 PR ⑪ 国学导航站提交。建议上线两三周看收录与来源数据再定。
+
 ### 2026-10-07 现状
 - web **1.35.15** 在线(10-06:邮箱验证 + 找回密码改进 · 发信走 Cloudflare Email Service〔hexa-mailer Worker,owner 实收 foxmail 验过,发件 notify@mail.gavin.pub〕· 换头像〔随机线条几何 / 流派印记,不收上传〕· 脑图鼠标修复 · 观书书架自适应)。
 - iOS **1.35.11 已上架**;**1.35.15 build 58 已送审**(10-07,WAITING_FOR_REVIEW,过审自动上架;含邮箱验证 / 换头像 / 脑图修复 / 观书书架)。N11 三处定字在其后,随下一版。

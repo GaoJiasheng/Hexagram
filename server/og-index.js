@@ -38,7 +38,8 @@ export async function lookupPageTitle(env, pathname, origin = 'https://hexa.gavi
     const res = await env.ASSETS.fetch(new URL(`/content/og/${ogShardKey(key)}.json`, origin))
     if (!res.ok) return null
     const hit = (await res.json())[key]
-    return hit?.[0] ? stripSiteSuffix(hit[0]) : null
+    // 第 4 项的 n 是站内短名(「道德经 · 一章」);第 1 项自 2026-10-15 起是给搜索引擎看的长标题(「…原文 · 译文 · 注释」),邮件里用它啰嗦
+    return hit?.[3]?.n || (hit?.[0] ? stripSiteSuffix(hit[0]) : null)
   } catch {
     return null
   }

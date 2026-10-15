@@ -1,4 +1,5 @@
 import { useParams, useSearchParams } from 'react-router-dom'
+import { chapterSeoTitle } from '../../reader/seoTitle.js'
 import { useState, useEffect } from 'react'
 import { saveReadingProgress, getReadPos } from '../../yijing/storage.js'
 import { loadDaoText, getDaoMeta } from '../data.js'
@@ -22,7 +23,9 @@ export default function DaoReadPage() {
   const [loading, setLoading] = useState(true)
   const chapter = Number(chapterParam) || 1
   const meta = getDaoMeta(slug)
-  usePageTitle(meta ? `${meta.title}·第${chapterParam}${meta.sectionUnit || '章'}` : null, '观道')
+  // 标题与爬虫看到的同一份(seoTitle.js):章名要等章节载入才有,先用「第 N 章」占位
+  const daoCh = book?.chapters?.find((c) => c.no === chapter)
+  usePageTitle(meta ? chapterSeoTitle({ bookTitle: meta.title, chapterTitle: daoCh?.title, no: chapter, unit: meta.sectionUnit || '章' }) : null, '观道')
 
   useEffect(() => {
     setLoading(true)

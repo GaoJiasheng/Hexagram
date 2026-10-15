@@ -1,4 +1,5 @@
 import fs from 'node:fs'
+import { execFileSync } from 'node:child_process'
 import path from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import { ogShardKey, normPath } from '../server/og-index.js'
@@ -25,6 +26,8 @@ const YIJING_CLASSICS = [
 ]
 
 const { SITES } = await import(pathToFileURL(path.join(ROOT, 'src/sites/registry.js')).href)
+// 页面标题与前端 document.title 共用一份(推广第一档,2026-10-15)
+const { chapterSeoTitle, hexagramSeoTitle } = await import(pathToFileURL(path.join(ROOT, 'src/features/reader/seoTitle.js')).href)
 const { LEARN_TOPICS } = await import(pathToFileURL(path.join(ROOT, 'src/features/yijing/learnTopics.js')).href)
 
 const readJson = (file) => JSON.parse(fs.readFileSync(file, 'utf8'))
@@ -117,6 +120,7 @@ function addRecord(records, item) {
     href,
     text: compact(item.text),
     preview: Array.isArray(item.preview) ? item.preview.map(compact) : [],   // 原文预览,一段一项(只有正文 / 易经两类给)
+    seo: item.seo || null,   // 只给 og 索引 / sitemap 用:{ title, type, book:[名,url], corpus, slug }(不进搜索索引)
   })
 }
 
@@ -583,6 +587,7 @@ function indexYijing(records) {
       title: `${h.fullName} 第${h.id}卦`,
       subtitle: h.summary || '',
       href: `/hexagram/${h.id}`,
+      seo: { title: hexagramSeoTitle({ fullName: h.fullName, id: h.id }), type: 'hexagram', corpus: 'yijing', slug: 'hexagrams' },
       text: uniqText(
         h.name, h.fullName, h.pinyin, h.summary, h.imagery,
         textOf(h.judgment), textOf(h.tuan), textOf(h.daxiang),
@@ -611,6 +616,7 @@ function indexYijing(records) {
         title: `${book.title || fallbackTitle} · 第${ch.no}章`,
         subtitle: '易经经传',
         href: `/classics/${slug}/${ch.no}`,
+        seo: { title: chapterSeoTitle({ bookTitle: book.title || fallbackTitle, chapterTitle: ch.title, no: ch.no }), type: 'chapter', book: [book.title || fallbackTitle, `/classics/${slug}/1`], corpus: 'yijing', slug },
         text: uniqText(ch.title, textOf(ch.paragraphs)),
         preview: originalOf(ch.paragraphs),
       })
@@ -680,6 +686,7 @@ function indexCorpus(records, corpus) {
       subtitle: m.authorNote || siteLabel(corpus),
       href: `/${corpus}/${m.slug}`,
       text: uniqText(m.title, m.alias, m.authorNote, m.portalDesc),
+      seo: { title: `${m.title} 原文 · 译文 · 注释(全书 ${m.sections}${m.sectionUnit || '章'})`, type: 'book', author: m.attribution || '', desc: m.brief || '', corpus, slug: m.slug },
     })
 
     const bookFile = path.join(SRC_DATA, corpus, `classics/${m.slug}.json`)
@@ -698,6 +705,7 @@ function indexCorpus(records, corpus) {
         subtitle: siteLabel(corpus),
         href: chapterHref(corpus, m.slug, ch.no, m),
         text: uniqText(ch.title, textOf(ch.paragraphs), noteText, yanyiText),
+        seo: { title: chapterSeoTitle({ bookTitle: book.title || m.title, chapterTitle: ch.title, no: ch.no, unit: m.sectionUnit || '章', source: !!ch.source }), type: 'chapter', book: [m.title, `/${corpus}/${m.slug}`], author: m.attribution || '', corpus, slug: m.slug },
         preview: originalOf(ch.paragraphs),
       })
     }
@@ -756,7 +764,7 @@ const SEO_BODY_MAX = 600
 // 分片规则来自 server/og-index.js(唯一一份,中间件与通知邮件都用它)
 function buildOgIndex(records) {
   const shards = {}
-  let n = 0
+  let n = 0, nCard = 0
   for (const r of records) {
     if (!r.href || !r.title) continue
     if (r.href.includes('#')) continue          // 段锚共用整页的卡,不单列
@@ -767,14 +775,26 @@ function buildOgIndex(records) {
     const desc = (sub && sub !== r.siteTitle ? sub : (r.text || '').trim()).slice(0, 70)
     // 站级页(时间轴 / 人物志 / 韵书…)的 siteTitle 就是自己的标题,再拼一遍会出「人物志 · 人物志」→ 这类改缀站名
     const site = r.siteTitle && r.siteTitle !== '观象' && r.siteTitle !== r.title ? ` · ${r.siteTitle}` : ' · 观象'
-    ;(shards[ogShardKey(href)] ??= {})[href] = [`${r.title}${site}`, desc, body]
+    // 第 4 项(2026-10-15 推广第一档):给中间件拼 JSON-LD 与分享图 —— 页面类型、站内短名、所属组、所属书、分享卡
+    const seo = r.seo || {}
+    const home = siteOf(r.site)?.home
+    const card = seo.corpus && seo.slug ? `/og/books/${seo.corpus}/${seo.slug}.jpg` : null
+    const extra = {
+      t: seo.type || 'page',
+      n: r.title,
+      ...(home && r.siteTitle ? { g: [r.siteTitle, home] } : {}),
+      ...(seo.book ? { b: seo.book } : {}),
+      ...(card && exists(path.join(ROOT, 'public', card)) ? { i: card } : {}),
+    }
+    if (extra.i) nCard++
+    ;(shards[ogShardKey(href)] ??= {})[href] = [`${seo.title || r.title}${site}`, desc, body, extra]
     n++
   }
   cleanOutDir(path.join(OUT_ROOT, 'og'))
   for (const [k, map] of Object.entries(shards)) {
     writeJson(path.join(OUT_ROOT, 'og', `${k}.json`), map)
   }
-  console.log(`og index: ${n} 条 / ${Object.keys(shards).length} 片`)
+  console.log(`og index: ${n} 条 / ${Object.keys(shards).length} 片 · 带分享卡 ${nCard} 条`)
 }
 
 // ── sitemap.xml + robots.txt ────────────────────────────────────────────────
@@ -786,23 +806,78 @@ function buildOgIndex(records) {
 // 因为「哪些页该公开」这件事值得写两遍。
 const SITE_ORIGIN = 'https://hexa.gavin.pub'
 const HIDDEN_PREFIXES = SITES.filter((x) => x.portalHidden && x.prefix).map((x) => x.prefix)
+// 2026-10-15 推广第一档:① 按站拆成 sitemaps/<站>.xml,/sitemap.xml 改为索引(单文件五千多条,哪组收录慢一眼看不出);
+// ② 每条带 <lastmod>(取该页数据文件在 git 里最后一次提交的日期 —— 搜索引擎据此决定先回访哪些页);
+// ③ 书页带 <image:image> 指向分享卡(图片搜索也能进来)。git 不可用就不写 lastmod,其余照旧。
+function gitLastmodMap() {
+  const map = new Map()
+  try {
+    const out = execFileSync('git', ['log', '--format=%cI', '--name-only', '--', 'src/data'], { cwd: ROOT, encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 })
+    let date = null
+    for (const line of out.split('\n')) {
+      if (/^\d{4}-\d\d-\d\dT/.test(line)) { date = line.slice(0, 10); continue }
+      if (line && date && !map.has(line)) map.set(line, date)   // git log 新到旧,先见到的就是最近一次
+    }
+  } catch { /* 不在 git 仓库里(或 git 不可用)就不写 lastmod */ }
+  return map
+}
+
+// 一条记录对应哪个数据文件(决定它的 lastmod);认不出的返回 null(不写 lastmod,不是错误)
+function dataFileOf(r) {
+  const [kind, corpus, slug] = String(r.id || '').split(':')
+  const cand = []
+  if (r.seo?.type === 'hexagram') cand.push('src/data/yijing/hexagrams.json')
+  else if (r.seo?.corpus && r.seo?.slug) cand.push(`src/data/${r.seo.corpus}/classics/${r.seo.slug}.json`)
+  else if (kind === 'baihua') cand.push(`src/data/${corpus}/baihua/${slug}.json`)
+  else if (kind === 'daodu') cand.push(`src/data/${corpus}/daodu/${slug}.json`)
+  else if (kind === 'school') cand.push(`src/data/${corpus}/school.json`)
+  return cand.find((f) => exists(path.join(ROOT, f))) || null
+}
+
 function buildSitemap(records) {
-  const seen = new Set()
+  const lastmod = gitLastmodMap()
+  const byUrl = new Map()
   for (const r of records) {
     if (!r.href || !r.title) continue
     if (r.href.includes('#')) continue
     if (r.href.startsWith('/books')) continue    // 隐藏书房,不进 sitemap
     if (HIDDEN_PREFIXES.some((pre) => r.href === pre || r.href.startsWith(pre + '/'))) continue   // 门户暂不露出的组(registry portalHidden),review 通过、去掉标记后自动纳入
-    seen.add(r.href)
+    if (byUrl.has(r.href)) continue
+    const f = dataFileOf(r)
+    const card = r.seo?.type === 'book' && r.seo.corpus && r.seo.slug ? `/og/books/${r.seo.corpus}/${r.seo.slug}.jpg` : null
+    byUrl.set(r.href, {
+      site: r.site && /^[a-z]+$/.test(r.site) ? r.site : 'portal',
+      mod: f ? lastmod.get(f) : null,
+      img: card && exists(path.join(ROOT, 'public', card)) ? card : null,
+    })
   }
-  const urls = [...seen].sort()
-  const xml = [
+  const xmlEsc = (u) => u.replace(/&/g, '&amp;')
+  const groups = {}
+  for (const [u, v] of [...byUrl.entries()].sort((a, b) => a[0].localeCompare(b[0]))) (groups[v.site] ??= []).push([u, v])
+
+  const outDir = path.join(ROOT, 'public/sitemaps')
+  fs.rmSync(outDir, { recursive: true, force: true })
+  fs.mkdirSync(outDir, { recursive: true })
+  const index = []
+  for (const [site, list] of Object.entries(groups).sort()) {
+    const xml = [
+      '<?xml version="1.0" encoding="UTF-8"?>',
+      '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">',
+      ...list.map(([u, v]) => `<url><loc>${SITE_ORIGIN}${xmlEsc(u)}</loc>${v.mod ? `<lastmod>${v.mod}</lastmod>` : ''}${v.img ? `<image:image><image:loc>${SITE_ORIGIN}${v.img}</image:loc></image:image>` : ''}</url>`),
+      '</urlset>',
+    ].join('\n')
+    fs.writeFileSync(path.join(outDir, `${site}.xml`), `${xml}\n`)
+    const newest = list.map(([, v]) => v.mod).filter(Boolean).sort().pop()
+    index.push(`<sitemap><loc>${SITE_ORIGIN}/sitemaps/${site}.xml</loc>${newest ? `<lastmod>${newest}</lastmod>` : ''}</sitemap>`)
+  }
+  fs.writeFileSync(path.join(ROOT, 'public/sitemap.xml'), [
     '<?xml version="1.0" encoding="UTF-8"?>',
-    '<urlset xmlns="http://www.sitemap.org/schemas/sitemap/0.9">'.replace('www.sitemap.org', 'www.sitemaps.org'),
-    ...urls.map((u) => `<url><loc>${SITE_ORIGIN}${u.replace(/&/g, '&amp;')}</loc></url>`),
-    '</urlset>',
-  ].join('\n')
-  fs.writeFileSync(path.join(ROOT, 'public/sitemap.xml'), `${xml}\n`)
+    '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...index,
+    '</sitemapindex>',
+  ].join('\n') + '\n')
+  // IndexNow 推送(scripts/indexnow.mjs)要拿全量 URL 比对增量,另出一份纯文本清单
+  fs.writeFileSync(path.join(ROOT, 'public/sitemaps/urls.txt'), [...byUrl.keys()].sort().map((u) => SITE_ORIGIN + u).join('\n') + '\n')
 
   fs.writeFileSync(path.join(ROOT, 'public/robots.txt'), [
     '# 观象 · https://hexa.gavin.pub',
@@ -818,7 +893,52 @@ function buildSitemap(records) {
     `Sitemap: ${SITE_ORIGIN}/sitemap.xml`,
   ].join('\n') + '\n')
 
-  console.log(`sitemap: ${urls.length} 条 URL(已排除 /books 隐藏书房)`)
+  const nMod = [...byUrl.values()].filter((v) => v.mod).length
+  const nImg = [...byUrl.values()].filter((v) => v.img).length
+  console.log(`sitemap: ${byUrl.size} 条 URL / ${index.length} 个分站文件 · lastmod ${nMod} 条 · 图片 ${nImg} 条(已排除 /books 隐藏书房)`)
+}
+
+// ── llms.txt(2026-10-15 推广第一档)────────────────────────────────────────
+// 给 AI 检索 / 问答工具一份「这个站有什么、怎么引用」的纯文本目录(llmstxt.org 约定的格式)。
+// 书目、题解全从 texts.json 派生,不手写 —— 加书自动纳入;托名伪书照实标出,别让 AI 把它们当真书转述。
+function buildLlmsTxt() {
+  const lines = [
+    '# 观象 · 古籍研读站',
+    '',
+    `> 免费的中文古籍研读站。${SITES.filter((s) => !s.portalHidden).length} 个研读组、八十余部典籍(易经、道德经、论语、孙子兵法、黄帝内经、古文观止、唐诗宋词……),原文逐段配白话译文、字词注释、每章延伸与白话长文;另有名句集、人物志、时间轴、义理专题与百家争鸣。`,
+    '',
+    '引用说明:原文底本多取自维基文库等公版通行本(繁转简);译文、注释、延伸、白话为本站编写。引用请附该章链接(形如 https://hexa.gavin.pub/dao/daodejing/28)。站点地图:https://hexa.gavin.pub/sitemap.xml',
+    '',
+    '## 易经研习',
+    '',
+    `- [周易六十四卦](${SITE_ORIGIN}/hexagrams): 卦辞、爻辞、彖传、象传逐条原文与译文,八宫纳甲与起卦推演`,
+    `- [易经经传](${SITE_ORIGIN}/classics): 系辞、说卦、序卦、杂卦等十翼`,
+    '',
+  ]
+  for (const site of SITES) {
+    if (site.portalHidden || !CORPORA.includes(site.key)) continue
+    const f = path.join(SRC_DATA, site.key, 'texts.json')
+    if (!exists(f)) continue
+    const books = readJson(f).filter((t) => t.status !== 'pending')
+    if (!books.length) continue
+    lines.push(`## ${site.portalTitle || siteLabel(site.key)}`, '')
+    for (const t of books) {
+      const note = t.dubious ? '(托名之作,学界多判为现代伪作;本站作文献批判材料研读)' : ''
+      lines.push(`- [${t.title}](${SITE_ORIGIN}/${site.key}/${t.slug}): ${compact(t.brief || '')}${note}`)
+    }
+    lines.push('')
+  }
+  lines.push('## 索引',
+    '',
+    `- [名句集](${SITE_ORIGIN}/mingju): 全站典籍名句,每句链回原文所在章`,
+    `- [人物志](${SITE_ORIGIN}/renwu): 各书撰人与书中人物小传`,
+    `- [时间轴](${SITE_ORIGIN}/timeline): 典籍与人物的成书 / 生卒年代`,
+    `- [义理专题](${SITE_ORIGIN}/concepts): 同一概念在各家典籍中的落点`,
+    `- [百家争鸣](${SITE_ORIGIN}/debates): 诸家就同一题目的离线对辩,每句锚原文`,
+    `- [关于本站](${SITE_ORIGIN}/about): 底本凡例与编写说明`,
+    '')
+  fs.writeFileSync(path.join(ROOT, 'public/llms.txt'), lines.join('\n'))
+  console.log(`llms.txt: ${lines.filter((l) => l.startsWith('- [')).length} 条`)
 }
 
 // ── 观书:从 JS 包搬到 /content/books,好让它能被鉴权 ────────────────────────
@@ -866,6 +986,7 @@ writeJson(path.join(OUT_ROOT, 'manifest.json'), manifest)
 buildSearchAssets(records)
 buildOgIndex(records)
 buildSitemap(records)
+buildLlmsTxt()
 buildBooksAssets()
 
 // 首页要亮的那几个数(2026-08-08)。**构建期算,前端不手写** ——

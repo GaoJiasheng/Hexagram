@@ -1,4 +1,5 @@
 import { useParams, Link, useNavigate, useLocation } from 'react-router-dom'
+import { hexagramSeoTitle } from '../../reader/seoTitle.js'
 import { useState, useEffect, useRef } from 'react'
 import HexagramFigure from '../components/HexagramFigure.jsx'
 import TrigramBadge from '../components/TrigramBadge.jsx'
@@ -94,7 +95,7 @@ function NajiaSection({ binary }) {
 export default function HexagramDetailPage() {
   const { id } = useParams()
   const hex = getHexagram(Number(id))
-  usePageTitle(hex?.fullName)
+  usePageTitle(hex ? hexagramSeoTitle({ fullName: hex.fullName, id: hex.id }) : null)
   const navigate = useNavigate()
   const { hash } = useLocation()
   const { settings, setSettings } = useSettings()

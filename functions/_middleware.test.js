@@ -21,6 +21,8 @@ const SHELL = `<!doctype html><html><head>
 <meta property="og:description" content="站点级" />
 <meta name="twitter:title" content="观象" />
 <meta name="twitter:description" content="站点级" />
+<meta property="og:image" content="/pwa-512.png" />
+<meta name="twitter:card" content="summary" />
 </head><body><div id="root"></div></body></html>`
 
 const GOOGLEBOT = 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
@@ -55,6 +57,43 @@ describe('边缘中间件', () => {
     // 站点级的几条必须被换掉而不是并存 —— 留着抓取方取哪条不定
     expect(html.match(/property="og:title"/g)).toHaveLength(1)
     expect(html.match(/name="description"/g)).toHaveLength(1)
+  })
+
+  it('AI 搜索 / 问答的爬虫同样拿到正文(推广第一档,2026-10-15)', async () => {
+    for (const ua of ['Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.2; +https://openai.com/gptbot)',
+      'Mozilla/5.0 (compatible; ClaudeBot/1.0; +claudebot@anthropic.com)',
+      'Mozilla/5.0 (Linux; Android 5.0) AppleWebKit/537.36 (KHTML, like Gecko) Mobile Safari/537.36 (compatible; Bytespider; spider-feedback@bytedance.com)',
+      'Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; PerplexityBot/1.0; +https://perplexity.ai/perplexitybot)']) {
+      expect(await (await run('/ru/lunyu/1', ua)).text()).toContain('学而时习之')
+    }
+  })
+
+  it('章页标题照读者的搜法写,且与前端 document.title 同一份(seoTitle.js)', async () => {
+    const html = await (await run('/dao/daodejing/28')).text()
+    expect(html).toMatch(/<title>道德经 [^<]*原文 · 译文 · 注释 · 道藏研读<\/title>/)
+  })
+
+  it('结构化数据:面包屑 观象 › 组 › 书 › 章,章挂在书下;合法 JSON、不写作者', async () => {
+    const html = await (await run('/ru/lunyu/1')).text()
+    const m = /<script type="application\/ld\+json">([\s\S]*?)<\/script>/.exec(html)
+    expect(m).toBeTruthy()
+    const data = JSON.parse(m[1])
+    const crumbs = data['@graph'].find((x) => x['@type'] === 'BreadcrumbList').itemListElement.map((x) => x.name)
+    expect(crumbs[0]).toBe('观象')
+    expect(crumbs).toContain('论语')
+    const ch = data['@graph'].find((x) => x['@type'] === 'Chapter')
+    expect(ch.isPartOf.name).toBe('论语')
+    expect(ch.url).toBe('https://hexa.gavin.pub/ru/lunyu/1')
+    expect(JSON.stringify(data)).not.toContain('"author"')
+  })
+
+  it('有分享卡的书换成大图卡,站点级 og:image 不并存', async () => {
+    const card = path.join(ROOT, 'public/og/books/ru/lunyu.jpg')
+    if (!fs.existsSync(card)) return   // 卡由 scripts/gen-og-cards.mjs 生成;没生成时这一条不适用
+    const html = await (await run('/ru/lunyu/1')).text()
+    expect(html).toContain('og/books/ru/lunyu.jpg')
+    expect(html.match(/property="og:image"/g)).toHaveLength(1)
+    expect(html).toContain('summary_large_image')
   })
 
   it('正文摘录写进 #root —— 不执行 JS 的爬虫(百度)也读得到这一章', async () => {

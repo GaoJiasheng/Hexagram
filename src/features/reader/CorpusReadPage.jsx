@@ -1,4 +1,5 @@
 import { useParams, Link, useLocation, useNavigate, useSearchParams} from 'react-router-dom'
+import { chapterSeoTitle } from './seoTitle.js'
 import { useState, useEffect, lazy, Suspense } from 'react'
 import { saveReadingProgress, getReadPos} from '../yijing/storage.js'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
@@ -50,7 +51,8 @@ export default function CorpusReadPage({ corpus }) {
   }, [isChushuoBook])
   // 古文观止一类带出处的书(章对象有 source):标题用篇题(「滕王阁序 · 古文观止」),别的书照旧「书名·第N章」
   const srcCh = book?.chapters?.find((c) => c.no === chapter)
-  usePageTitle(meta ? (srcCh?.source && srcCh?.title ? `${srcCh.title} · ${meta.title}` : `${meta.title}·第${chapterParam}${meta.sectionUnit || '章'}`) : null, site?.brand)
+  // 标题与爬虫看到的同一份(seoTitle.js);带出处的单篇篇题打头
+  usePageTitle(meta ? chapterSeoTitle({ bookTitle: meta.title, chapterTitle: srcCh?.title, no: chapter, unit: meta.sectionUnit || '章', source: !!srcCh?.source }) : null, site?.brand)
 
   // 单页书被章路由深链命中(如 /fo/jingangjing/5):重定向到单页阅读器,保单一阅读形态
   useEffect(() => {

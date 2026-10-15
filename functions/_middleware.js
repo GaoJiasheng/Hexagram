@@ -71,10 +71,34 @@ async function isAdminRequest(context) {
   return !!email && list.includes(email)
 }
 
-const BOTS = /(facebookexternalhit|Twitterbot|Slackbot|Discordbot|WhatsApp|LinkedInBot|TelegramBot|Pinterest|redditbot|Applebot|bingbot|Googlebot|DuckDuckBot|Baiduspider|YisouSpider|Sogou|360Spider|embedly|quora link preview|vkShare|W3C_Validator)/i
+// 2026-10-15 推广第一档:补上 AI 搜索 / 问答的爬虫。此前它们拿到的是空 <div id="root">,
+// 有人问豆包、Kimi、ChatGPT「知其白守其黑什么意思」,回答里不可能引用本站。
+// (只列「检索 / 问答时抓页」与主流搜索引擎;训练语料爬虫要不要放行另议,不在这里一并决定。)
+const BOTS = /(facebookexternalhit|Twitterbot|Slackbot|Discordbot|WhatsApp|LinkedInBot|TelegramBot|Pinterest|redditbot|Applebot|bingbot|Googlebot|Google-InspectionTool|DuckDuckBot|Baiduspider|YisouSpider|Sogou|360Spider|Bytespider|PetalBot|YandexBot|SeznamBot|Yeti|OAI-SearchBot|ChatGPT-User|GPTBot|ClaudeBot|Claude-User|Claude-SearchBot|PerplexityBot|Perplexity-User|Amazonbot|MistralAI-User|embedly|quora link preview|vkShare|W3C_Validator)/i
 
 const esc = (s) => String(s || '')
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+
+// 结构化数据(schema.org JSON-LD,2026-10-15):面包屑 + 书 / 章。搜索结果里能显示「观象 › 道藏研读 › 道德经」这样的层级。
+// 只写站内确有的事实(书名、所属组、URL、语言),**不写作者**——texts.json 的 attribution 里有「旧题」「托名」「辑」,
+// 硬塞进 author 字段等于替伪书背书。`</` 转义防正文里的字样提前闭合 <script>。
+function jsonLd(extra, title, desc, canonical, origin) {
+  const abs = (u) => (u && u.startsWith('/') ? origin + u : u)
+  const crumbs = [['观象', '/']]
+  if (extra.g) crumbs.push(extra.g)
+  if (extra.b && extra.t === 'chapter') crumbs.push(extra.b)
+  crumbs.push([extra.n || title, canonical])
+  const graph = [{
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map(([name, u], i) => ({ '@type': 'ListItem', position: i + 1, name, item: abs(u) })),
+  }]
+  const base = { name: extra.n || title, headline: title, description: desc, url: canonical, inLanguage: 'zh-Hans',
+    publisher: { '@type': 'Organization', name: '观象', url: origin }, ...(extra.i ? { image: origin + extra.i } : {}) }
+  if (extra.t === 'book') graph.push({ '@type': 'Book', ...base })
+  else if (extra.t === 'chapter') graph.push({ '@type': 'Chapter', ...base, ...(extra.b ? { isPartOf: { '@type': 'Book', name: extra.b[0], url: abs(extra.b[1]) } } : {}) })
+  else if (extra.t === 'hexagram') graph.push({ '@type': 'CreativeWork', ...base, isPartOf: { '@type': 'Book', name: '周易' } })
+  return JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c')
+}
 
 // 分片规则收敛在 server/og-index.js 一处(此前这里与构建脚本各抄一份,
 // 不一致的表现是**静默查不到**,没有任何报错)
@@ -118,7 +142,8 @@ export async function onRequest(context) {
     const ct = res.headers.get('content-type') || ''
     if (!ct.includes('text/html')) return res
 
-    const [title, desc, body] = hit
+    const [title, desc, body, extra = {}] = hit
+    const canonical = url.origin + key
     let html = await res.text()
     // 覆盖站点级那几条(留着会与新注入的重复,抓取方取哪条不定)
     html = html
@@ -127,6 +152,7 @@ export async function onRequest(context) {
       .replace(/\s*<meta name="twitter:title"[^>]*>/g, '')
       .replace(/\s*<meta name="twitter:description"[^>]*>/g, '')
       .replace(/\s*<meta name="description"[^>]*>/g, '')
+      .replace(extra.i ? /\s*<meta (property="og:image(:width|:height)?"|name="twitter:card"|name="twitter:image")[^>]*>/g : /$^/, '')
       .replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(title)}</title>`)
 
     const tags = [
@@ -137,7 +163,16 @@ export async function onRequest(context) {
       `<meta name="twitter:title" content="${esc(title)}" />`,
       `<meta name="twitter:description" content="${esc(desc)}" />`,
       // 同一章带 ?p=/?from= 分享出去不指 canonical 会被当成多个重复页,权重分散
-      `<link rel="canonical" href="${esc(url.origin + key)}" />`,
+      `<link rel="canonical" href="${esc(canonical)}" />`,
+      // 有题图的书(及其各章)换用「题图 + 书名 + 题解」的分享卡;其余页沿用 index.html 的站点卡
+      ...(extra.i ? [
+        `<meta property="og:image" content="${esc(url.origin + extra.i)}" />`,
+        `<meta property="og:image:width" content="1200" />`,
+        `<meta property="og:image:height" content="630" />`,
+        `<meta name="twitter:card" content="summary_large_image" />`,
+        `<meta name="twitter:image" content="${esc(url.origin + extra.i)}" />`,
+      ] : []),
+      `<script type="application/ld+json">${jsonLd(extra, title, desc, canonical, url.origin)}</script>`,
     ].join('\n    ')
     html = html.replace('</head>', `  ${tags}\n  </head>`)
 
