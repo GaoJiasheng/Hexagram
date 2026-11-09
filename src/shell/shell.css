@@ -12,6 +12,8 @@ html[data-shell='app'] {
   overscroll-behavior-y: none;                /* 整页被拉出回弹 */
 }
 html[data-shell='app'] body { -webkit-touch-callout: none; }
+/* 图片仍可长按(金句卡要靠长按存图) */
+html[data-shell='app'] img { -webkit-touch-callout: default; }
 /* 界面元素不可选(长按不出「拷贝 / 查询」);正文、译文、注疏、白话仍可选可复制 */
 html[data-shell='app'] :is(.app-nav, .app-tabs, .mobile-nav, button, .btn, .seg-btn, .switch,
   .dao-section-grid, .dao-shelf, .book-shapes, .toc-lens, .read-toc, .read-toc-mobile, .basics-breadcrumb,
@@ -28,7 +30,7 @@ html[data-shell='app'] :is(.app-tabs__item, .app-home__site, .app-home__resume-m
 html[data-shell='app']:is([data-form='tablet'], [data-form='wide']) .app-tabs {
   display: flex;
   position: fixed;
-  z-index: 110;
+  z-index: 100;   /* 与顶栏同层;金句卡等浮层也是 100,但 portal 到 body、排在后面,盖得住标签栏 */
   background: var(--paper);
 }
 .app-tabs__item {
@@ -68,7 +70,8 @@ html[data-shell='app'][data-form='wide'] .app-shell { padding-left: calc(var(--a
 html[data-shell='app']:is([data-form='tablet'], [data-form='wide']) :is(.nav-search-btn, .nav-colophon-btn) { display: none; }
 .nav-back-btn { margin-right: 4px; margin-left: -8px; }
 /* 可点区域放到 44:顶栏图标、分站栏目、阅读工具条、章格、透镜、面包屑 */
-html[data-shell='app']:is([data-form='tablet'], [data-form='wide']) .nav-icon-btn { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+html[data-shell='app']:is([data-form='tablet'], [data-form='wide']) .nav-icon-btn:not(.nav-search-btn):not(.nav-colophon-btn) { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+html[data-shell='app']:is([data-form='tablet'], [data-form='wide']) .app-nav__brand { display: inline-flex; align-items: center; min-height: 44px; }
 html[data-shell='app']:is([data-form='tablet'], [data-form='wide']) .nav-link { padding-top: 12px; padding-bottom: 12px; }
 html[data-shell='app']:is([data-form='tablet'], [data-form='wide']) :is(.dao-section-cell, .seg-btn, .toc-lens__chip) { min-height: 44px; }
 html[data-shell='app']:is([data-form='tablet'], [data-form='wide']) .dao-section-cell { min-width: 44px; }
@@ -110,7 +113,7 @@ html[data-form='wide'] .app-home__side { grid-template-columns: 1fr; grid-templa
 .app-home__daily-q { margin: 0; font-family: var(--font-serif); font-size: 1.08rem; line-height: 1.75; color: var(--ink); text-decoration: none;
   display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .app-home__daily-src { margin: auto 0 0; display: flex; justify-content: space-between; gap: 12px; font-size: 0.78rem; color: var(--ink-faint); }
-.app-home__daily-more { color: var(--cinnabar-pure); text-decoration: none; white-space: nowrap; }
+.app-home__daily-more { color: var(--cinnabar-pure); text-decoration: none; white-space: nowrap; padding: 10px 0 10px 12px; margin: -10px 0; }
 
 .app-home__shelf {
   display: grid; gap: 12px; min-height: 0;
@@ -118,12 +121,20 @@ html[data-form='wide'] .app-home__side { grid-template-columns: 1fr; grid-templa
   grid-auto-rows: minmax(0, 1fr);
 }
 .app-home__site {
+  position: relative;
   display: flex; flex-direction: column; gap: 6px; min-width: 0; min-height: 0; overflow: hidden;
   padding: 14px 14px 12px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper-raised);
   color: var(--ink); text-decoration: none;
   transition: border-color 0.15s, opacity 0.1s;
 }
 .app-home__site:hover { border-color: var(--card-accent); }
+/* 卡片右下角压一幅淡墨题图(单通道遮罩染色,明暗主题自动成立);文字在上层 */
+.app-home__site-art, .app-home__site-gua {
+  position: absolute; right: 6px; bottom: 6px; height: 62%; aspect-ratio: 1; max-width: 80%; opacity: 0.5; pointer-events: none;
+}
+.app-home__site-art { background: var(--ink-soft); -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: right bottom; mask-position: right bottom; }
+.app-home__site-gua { height: 30%; opacity: 0.26; right: 12px; bottom: 10px; }
+.app-home__site > :not(.app-home__site-art):not(.app-home__site-gua) { position: relative; }
 .app-home__seal {
   align-self: flex-start; padding: 3px 7px; border-radius: 5px;
   background: var(--card-accent); color: var(--paper); font-family: var(--font-serif); font-size: 0.86rem; letter-spacing: 0.06em;
@@ -136,7 +147,6 @@ html[data-form='wide'] .app-home__side { grid-template-columns: 1fr; grid-templa
 .app-page { max-width: 760px; margin: 0 auto; }
 .app-page__list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 26px; }
 .app-page__row { width: 100%; margin: 0; min-height: 60px; text-align: left; font-family: inherit; cursor: pointer; text-decoration: none; }
-button.app-page__row { border: 1px solid var(--line); }
 .app-page__account { gap: 14px; }
 .app-page__empty { color: var(--ink-soft); font-size: 0.92rem; line-height: 1.9; }
 .app-page__empty a { color: var(--cinnabar-pure); text-decoration: none; }

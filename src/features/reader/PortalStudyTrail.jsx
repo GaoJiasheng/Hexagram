@@ -14,7 +14,8 @@ function siteTag(book) {
 }
 const byAtDesc = (a, b) => (b.at || '').localeCompare(a.at || '')
 
-export default function PortalStudyTrail() {
+// hideResume:App 外壳的「接着读」页自己列了最近在读,这里只要收藏与批注
+export default function PortalStudyTrail({ hideResume = false }) {
   const progress = getReadingProgress()
   const resume = Object.entries(progress)
     .map(([slug, ch]) => ({ book: bookBySlug(slug), ch }))
@@ -23,13 +24,13 @@ export default function PortalStudyTrail() {
   const marks = Object.values(getCorpusMarks()).filter((m) => bookBySlug(m.slug)).sort(byAtDesc)
   const notes = Object.values(getCorpusNotes()).filter((n) => bookBySlug(n.slug)).sort(byAtDesc)
 
-  if (!resume.length && !marks.length && !notes.length) return null
+  if ((hideResume || !resume.length) && !marks.length && !notes.length) return null
 
   return (
     <section className="portal-trail" aria-label="我的研读">
       <h2 className="portal-trail__heading">我的研读</h2>
 
-      {resume.length > 0 && (
+      {!hideResume && resume.length > 0 && (
         <div className="portal-trail__group">
           <h3 className="portal-trail__label">继续读</h3>
           <div className="portal-trail__list">

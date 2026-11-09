@@ -29,6 +29,13 @@ function siteDesc(site) {
   return done.length > picked.length ? `${titles} 等 ${done.length} 部` : titles
 }
 
+// App 书房的书架格里压一幅该组的题图:取组内第一本有图的真书(托名伪书不当一组的门面);易经没有题图,AppHome 画卦
+function siteArt(site) {
+  const texts = site.key === 'dao' ? daoTexts : corpusTexts(site.key)
+  const t = (texts || []).find((x) => x.art && !x.dubious)
+  return t ? `/book-art/${site.key}/${t.art.file}` : null
+}
+
 // 每组以自有的沉静色驱动徽章/悬停(--card-accent);易经的 cinnabar 在门户外壳被映射为墨色。
 const accentStyle = (site) => ({ '--card-accent': `var(--${site.accent})` })
 
@@ -61,7 +68,7 @@ export default function MasterPortalPage() {
   // App 外壳(平板 / 宽屏):一屏看全的「书房」,不出主张文案与长书架(docs/ipad-app-plan.md §4.1)
   if (appLayout) {
     const ordered = [...FAMILIES.flatMap((f) => f.keys.map((k) => byKey[k]).filter(Boolean)), ...sites.filter((s) => !FAMILIES.some((f) => f.keys.includes(s.key)))]
-    return <Suspense fallback={<div className="route-loading" aria-label="加载中">⋯</div>}><AppHome sites={ordered} siteDesc={siteDesc} /></Suspense>
+    return <Suspense fallback={<div className="route-loading" aria-label="加载中">⋯</div>}><AppHome sites={ordered} siteDesc={siteDesc} siteArt={siteArt} /></Suspense>
   }
   const placed = new Set(FAMILIES.flatMap((f) => f.keys))
   const rest = sites.filter((s) => !placed.has(s.key)).map((s) => s.key)

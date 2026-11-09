@@ -45,7 +45,7 @@ export function ContinuePage() {
         </div>
       )}
       {/* 收藏与批注:沿用门户「我的研读」那一段(它自己判空) */}
-      <PortalStudyTrail />
+      <PortalStudyTrail hideResume />
     </div>
   )
 }

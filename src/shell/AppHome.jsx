@@ -7,7 +7,19 @@ import { agoLabel, pickDaily, recentBooks } from './recent.js'
 // 左(竖屏在上):接着读 + 今日一句;右(竖屏在下):全部书架,等分铺满剩余高度。
 // 网页首页那段给新访客的主张文案(「古书原文,一句一句读明白」+ 缘起)这里不出——装了 App 的人不需要被说服。
 // 书架格子由 MasterPortalPage 按 registry 算好传进来(加组自动多一格),这里只管摆。
-export default function AppHome({ sites, siteDesc }) {
+// 易经一格没有题图,画一卦(地天泰:三阴在上、三阳在下);走 style 上色,SVG 属性不认 var()
+function Gua() {
+  const lines = [0, 0, 0, 1, 1, 1]
+  return (
+    <svg className="app-home__site-gua" viewBox="0 0 100 100" aria-hidden="true">
+      {lines.map((yang, i) => (yang
+        ? <rect key={i} x="12" y={10 + i * 14} width="76" height="8" style={{ fill: 'var(--ink-soft)' }} />
+        : <g key={i} style={{ fill: 'var(--ink-soft)' }}><rect x="12" y={10 + i * 14} width="32" height="8" /><rect x="56" y={10 + i * 14} width="32" height="8" /></g>))}
+    </svg>
+  )
+}
+
+export default function AppHome({ sites, siteDesc, siteArt }) {
   const recent = recentBooks(4)
   const [first, ...others] = recent
   const daily = pickDaily(ITEMS)
@@ -56,13 +68,17 @@ export default function AppHome({ sites, siteDesc }) {
       </div>
 
       <section className="app-home__shelf" style={{ '--cols': cols }} aria-label="书架">
-        {sites.map((s) => (
+        {sites.map((s) => {
+          const art = siteArt?.(s)
+          return (
           <Link key={s.key} to={s.home} className="app-home__site" style={{ '--card-accent': `var(--${s.accent})` }}>
+            {art ? <span className="app-home__site-art" style={{ WebkitMaskImage: `url(${art})`, maskImage: `url(${art})` }} aria-hidden="true" /> : s.key === 'yijing' && <Gua />}
             <span className="app-home__seal">{s.brand}</span>
             <span className="app-home__site-title">{s.portalTitle}</span>
             <span className="app-home__site-desc">{siteDesc(s)}</span>
           </Link>
-        ))}
+          )
+        })}
       </section>
     </div>
   )
