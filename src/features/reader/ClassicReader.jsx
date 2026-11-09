@@ -7,6 +7,8 @@ import { FONT_SCALE_STEPS, getCorpusMarks, toggleCorpusMark, getCorpusNotes, sav
 import CommentSection from '../comments/CommentSection.jsx'
 import { StarIcon, PenIcon, LinkIcon, CheckIcon, CardIcon } from './ActIcons.jsx'
 import ChapterColophon from './ChapterColophon.jsx'
+import ChapterSheet from './ChapterSheet.jsx'
+import { useShell } from '../../shell/shell.js'
 import ProsodyRow, { ProsodyLegend } from './ProsodyRow.jsx'
 import { loadProsodyBooks, analyzeParagraphs, getRhymeBook } from './prosody.js'
 
@@ -97,6 +99,8 @@ export default function ClassicReader({
   // 单页长经(金刚经 32 分/黄庭 36 章铺一页)scroll-spy:点亮侧栏当前章 + 回显移动端 select(#145)。
   // 当前章 = 顶部已越过工具条线(130px)的最后一章;rAF 节流,挂载即同步算一次(不依赖后台 rAF)。
   const [activeAnchor, setActiveAnchor] = useState(null)
+  const [sheetOpen, setSheetOpen] = useState(false)
+  const { shell } = useShell()
   useEffect(() => {
     if (!single) return
     let raf = 0
@@ -510,6 +514,18 @@ export default function ClassicReader({
         {header}
         {multi && (
           <div className="read-toc-mobile">
+            {/* App 外壳:系统下拉框换成滑出的目录面板(ChapterSheet);网页端仍是下拉框 */}
+            {shell === 'app' && (
+              <button type="button" className="read-toc-mobile__open" onClick={() => setSheetOpen(true)}>
+                <span className="read-toc-mobile__open-label">目录</span>
+                <span className="read-toc-mobile__open-cur">{(() => { const cur = chapters.find((c) => String(c.no) === String(single ? activeAnchor : chapter)); return cur ? chapterLabel(cur) : '选择章节' })()}</span>
+                <span aria-hidden="true">›</span>
+              </button>
+            )}
+            {sheetOpen && (
+              <ChapterSheet chapters={chapters} current={single ? activeAnchor : chapter} label={chapterLabel} title={bookTitle}
+                onPick={(no) => jumpTo(Number(no))} onClose={() => setSheetOpen(false)} />
+            )}
             <label htmlFor="read-toc-select" className="read-toc-mobile__label">{single ? '跳转章节' : '章节'}</label>
             <select
               id="read-toc-select"

@@ -14,6 +14,9 @@ import { ensureSerifFont } from './features/fonts.js'
 import { useReadClock } from './features/reading/readClock.js'
 import { useSearchFlash } from './features/search/searchFlash.js'
 import { useBooksSecretTap } from './features/books/booksSecretTap.js'
+import { useShell } from './shell/shell.js'
+import AppTabs from './shell/AppTabs.jsx'
+import './shell/shell.css'
 
 // 全站搜索面板按需加载:搜索页面、经典、正文、白话、注疏、专题。
 const GlobalSearchPalette = lazy(() => import('./features/search/GlobalSearchPalette.jsx'))
@@ -111,10 +114,14 @@ const BookArticlePage = lazy(() => import('./features/books/BookArticlePage.jsx'
 const ColophonPage = lazy(() => import('./features/Colophon.jsx').then((module) => ({ default: module.ColophonPage })))
 const LicensePage = lazy(() => import('./features/LicensePage.jsx'))
 const AdminStatsPage = lazy(() => import('./features/admin/AdminStatsPage.jsx'))
+// App 外壳固定导航的三个落点页(接着读 / 索引 / 我的),见 shell/AppPages.jsx
+const AppContinuePage = lazy(() => import('./shell/AppPages.jsx').then((m) => ({ default: m.ContinuePage })))
+const AppIndexPage = lazy(() => import('./shell/AppPages.jsx').then((m) => ({ default: m.IndexPage })))
+const AppMePage = lazy(() => import('./shell/AppPages.jsx').then((m) => ({ default: m.MePage })))
 
 // 中立外壳路径(总门户 / 义理专题 / 百家争鸣):不套分站 nav/搜索/底栏,域名着陆豁免
 function isNeutralPath(p) {
-  return p === '/' || p === MASTER_PORTAL_PATH || p === '/concepts' || p === '/stats' || p === '/timeline' || p === '/renwu' || p === '/mingju' || p === '/rhyme' || p === '/privacy' || p === '/ba' || p === '/legal' || p === '/admin/stats' || p === '/debates' || p.startsWith('/debates/') || p === '/zhuzi' || p === '/books' || p.startsWith('/books/')
+  return p === '/' || p === MASTER_PORTAL_PATH || p === '/concepts' || p === '/stats' || p === '/timeline' || p === '/renwu' || p === '/mingju' || p === '/rhyme' || p === '/privacy' || p === '/ba' || p === '/legal' || p === '/admin/stats' || p === '/debates' || p.startsWith('/debates/') || p === '/zhuzi' || p === '/books' || p.startsWith('/books/') || p.startsWith('/app/')
 }
 // 全站设置浮层(Tier 0):任何站 nav 齿轮就地打开(主题/字号/译文 + 数据导出导入)
 const SettingsSheet = lazy(() => import('./features/SettingsSheet.jsx'))
@@ -163,7 +170,7 @@ const switchTargetName = (site) => site.portalTitle.replace(/(研读|研习)$/, 
 // 只在窄屏生效——CSS 媒体查询兜底,宽屏即使算出 hidden 也不会有视觉变化。
 const NAV_HIDE_THRESHOLD = 8, NAV_TOP_SAFE = 12, NAV_BOTTOM_SAFE = 24
 
-function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings, onColophon, neutral = false }) {
+function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings, onColophon, onBack = null, neutral = false }) {
   const { user } = useAuth()
   const [scrolled, setScrolled] = useState(false)
   const [navHidden, setNavHidden] = useState(false)
@@ -189,6 +196,12 @@ function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings, onC
 
   return (
     <nav className={`app-nav ${neutral ? 'app-nav--neutral' : ''} ${scrolled ? 'app-nav--scrolled' : ''} ${navHidden ? 'app-nav--hidden' : ''}`} role="navigation" aria-label="主导航">
+      {/* App 外壳(平板 / 宽屏)里进了下一层才出:返回上一页。网页端不出——浏览器自己有返回键 */}
+      {onBack && (
+        <button className="nav-icon-btn nav-back-btn" onClick={onBack} aria-label="返回" title="返回">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+        </button>
+      )}
       {/* 左上角 logo → 首页(即诸学门户;/hexagram 已并入首页) */}
       <NavLink
         to="/"
@@ -212,7 +225,7 @@ function Nav({ module, canSwitch, otherSite, onSearch, onPortal, onSettings, onC
       </div>
       <div className="app-nav__actions">
         <button
-          className="nav-icon-btn"
+          className="nav-icon-btn nav-search-btn"
           onClick={onSearch}
           aria-label="全站搜索（/ 或 ⌘K）"
           title="全站搜索（/ 或 ⌘K）"
@@ -319,6 +332,7 @@ function AppContent() {
   useReadClock(location)   // 活跃时长时钟(研读统计);匿名埋点订阅它的事件
   useSearchFlash(location) // 搜索结果点进来:高亮并闪几下命中处(?hl=)
   const booksTap = useBooksSecretTap()   // 页脚空白处连点 3 次 → 观书(桌面网页无底栏;仅管理员)
+  const { appLayout } = useShell()       // App 外壳的平板 / 宽屏形态:固定导航 + 书房首页,不出版权页脚
   useTelemetry()
   // 正文衬线字体按需加载(T2 方案 A):首页、门户与各组首页不下 Noto,进任何别的页才载
   useEffect(() => {
@@ -337,6 +351,17 @@ function AppContent() {
   const isPortal = isNeutralPath(location.pathname)
   // 路由切换关闭搜索/切站/设置/落款浮层,避免状态在跨站导航后残留
   useEffect(() => { setSearchOpen(false); setPortalOpen(false); setSettingsOpen(false); setColophonOpen(false) }, [location.pathname])
+
+  // 「我的」页等处要开设置浮层:派发 gx:open-settings(浮层状态在这里,页面够不着)
+  useEffect(() => {
+    window.addEventListener('gx:open-settings', openSettings)
+    return () => window.removeEventListener('gx:open-settings', openSettings)
+  }, [openSettings])
+
+  // App 外壳里的返回键:站内有上一页、且不在固定导航的根页时才出
+  const TAB_ROOTS = ['/', '/app/continue', '/app/index', '/app/me']
+  const canBack = appLayout && !TAB_ROOTS.includes(location.pathname) && (window.history.state?.idx ?? 0) > 0
+  const goBack = useCallback(() => navigate(-1), [navigate])
 
   // iOS「App 图标长按 → 书房」快捷入口 → 观书隐藏入口 /books(web/Android 无操作)
   useEffect(() => {
@@ -400,7 +425,7 @@ function AppContent() {
     <div className="app-shell" data-site={isPortal ? 'portal' : module.key}>
       {backHint && <div className="back-hint" role="status">{backHint}</div>}
       {/* 中立枢纽也要能改主题/登录/搜索——这些本就是全局功能,不属于任何分站,故给一条精简顶栏(印+搜索+设置+头像) */}
-      <Nav module={module} canSwitch={canSwitch} otherSite={otherSite} onSearch={openSearch} onPortal={openPortal} onSettings={openSettings} onColophon={openColophon} neutral={isPortal} />
+      <Nav module={module} canSwitch={canSwitch} otherSite={otherSite} onSearch={openSearch} onPortal={openPortal} onSettings={openSettings} onColophon={openColophon} onBack={canBack ? goBack : null} neutral={isPortal} />
       <main className={`app-main page-fade-in ${location.pathname === '/books' ? 'app-main--wide' : ''}`}>
         <ErrorBoundary key={location.pathname}>
         <Suspense fallback={<div className="route-loading" aria-label="加载中">⋯</div>}>
@@ -568,6 +593,10 @@ function AppContent() {
           <Route path="/legal" element={<LicensePage />} />
           {/* Owner 阅读统计工具(隐藏入口,不挂任一分站导航)。 */}
           <Route path="/admin/stats" element={<AdminStatsPage />} />
+          {/* App 外壳固定导航的落点(网页端不链到这里,但直接访问也无妨) */}
+          <Route path="/app/continue" element={<AppContinuePage />} />
+          <Route path="/app/index" element={<AppIndexPage />} />
+          <Route path="/app/me" element={<AppMePage />} />
           {/* 私人书房「观书」(隐藏入口,不外链,中性外壳):all-in-one 书架 + 书主页放射脑图 + 逐章详读 */}
           <Route path="/books" element={<BooksIndexPage />} />
           <Route path="/books/:slug" element={<BookHomePage />} />
@@ -583,7 +612,8 @@ function AppContent() {
         </Suspense>
         </ErrorBoundary>
       </main>
-      <footer className={`app-footer ${isPortal ? 'app-footer--neutral' : ''}`} onClick={(e) => { if (!e.target.closest('a, button')) booksTap(e) }}>
+      {appLayout && <AppTabs onSearch={openSearch} />}
+      {!appLayout && <footer className={`app-footer ${isPortal ? 'app-footer--neutral' : ''}`} onClick={(e) => { if (!e.target.closest('a, button')) booksTap(e) }}>
         {!isPortal && (
           <div className="app-footer__copy">
             <span>观象 · 个人学习站</span>
@@ -594,7 +624,7 @@ function AppContent() {
           <span className="colophon-trigger__seal" aria-hidden="true">跋</span>
           <span className="colophon-trigger__label" aria-hidden="true">落款</span>
         </button>
-      </footer>
+      </footer>}
       {!isPortal && <MobileNav module={module} canSwitch={canSwitch} otherSite={otherSite} onPortal={openPortal} onSearch={openSearch} />}
       {searchOpen && (
         <Suspense fallback={null}>

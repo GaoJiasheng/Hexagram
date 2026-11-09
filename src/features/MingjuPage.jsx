@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom'
 import { usePageTitle } from './yijing/hooks/usePageTitle.js'
 import { bookBySlug, chapterHref } from './reader/booksIndex.js'
 import ITEMS from '../data/mingju.json'
+import { pickDaily } from '../shell/recent.js'
 
 // 名句集(§四)。**一句不是新写的** —— 全部取自站内已逐字校验的引文
 // (争鸣各家立论所引 + 概念聚类代表章),生成见 scripts/build-mingju.mjs。
@@ -14,13 +15,7 @@ const GROUPS = [
   ['zhongyi', '医'], ['moulue', '谋略'], ['tangshi', '唐诗'], ['songci', '宋词'], ['yuanqu', '元曲'], ['guwen', '古文'],
 ]
 
-// 今日一句:与「今日一卦 / 每日一辩」同一套确定性做法(日期 hash),同一天刷新不变。
-function pickDaily(list, date = new Date()) {
-  const k = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
-  let h = 0
-  for (let i = 0; i < k.length; i++) h = (h * 31 + k.charCodeAt(i)) >>> 0
-  return list[h % list.length]
-}
+// 今日一句的取法(日期 hash,同一天刷新不变)在 shell/recent.js,与 App 书房首页共用
 
 function hrefOf(e) {
   const book = bookBySlug(e.slug)

@@ -4,6 +4,11 @@ import { corpusTexts } from './reader/corpus.js'
 import daoTexts from '../data/dao/texts.json'
 import PortalStudyTrail from './reader/PortalStudyTrail.jsx'
 import PortalLanding from './PortalLanding.jsx'
+import { lazy, Suspense } from 'react'
+import { useShell } from '../shell/shell.js'
+
+// App 外壳的「书房」首页另成一块懒加载(它带名句数据,网页首页不该为它多下一份)
+const AppHome = lazy(() => import('../shell/AppHome.jsx'))
 
 // 卡片描述由 texts.json 派生(已收书目+计数),根治「加书忘改 portalDesc 文案」;
 // 易经非书目制(64 卦 + 工具),保留其 portalDesc tagline。
@@ -33,6 +38,7 @@ const accentStyle = (site) => ({ '--card-accent': `var(--${site.accent})` })
 // 生产域名上卡片链向各组绝对 URL(跨域),dev 用相对路径。
 export default function MasterPortalPage() {
   usePageTitle('古籍研读站')
+  const { appLayout } = useShell()
   const protocol = typeof window !== 'undefined' ? window.location.protocol : 'https:'
   const hostname = typeof window !== 'undefined' ? window.location.hostname : ''
 
@@ -52,6 +58,11 @@ export default function MasterPortalPage() {
     { key: 'fangshu', label: '方术', note: '医经术数', keys: ['zhongyi', 'mingli'] },
     { key: 'jibu', label: '集部', note: '诗词曲文', keys: ['tangshi', 'songci', 'yuanqu', 'guwen'] },
   ]
+  // App 外壳(平板 / 宽屏):一屏看全的「书房」,不出主张文案与长书架(docs/ipad-app-plan.md §4.1)
+  if (appLayout) {
+    const ordered = [...FAMILIES.flatMap((f) => f.keys.map((k) => byKey[k]).filter(Boolean)), ...sites.filter((s) => !FAMILIES.some((f) => f.keys.includes(s.key)))]
+    return <Suspense fallback={<div className="route-loading" aria-label="加载中">⋯</div>}><AppHome sites={ordered} siteDesc={siteDesc} /></Suspense>
+  }
   const placed = new Set(FAMILIES.flatMap((f) => f.keys))
   const rest = sites.filter((s) => !placed.has(s.key)).map((s) => s.key)
   const families = [...FAMILIES, ...(rest.length ? [{ key: 'qita', label: '其他', note: '', keys: rest }] : [])]

@@ -5,6 +5,10 @@ import App from './App.jsx'
 // 首页/门户/组首页走系统衬线,进阅读页才由 src/features/fonts.js 动态加载(见 App.jsx)。
 import './index.css'
 import { setupPwaAutoReload } from './pwaUpdate.js'
+import { initShell } from './shell/shell.js'
+
+// App 外壳的形态(data-shell / data-form)在挂载前定好,首帧就是对的(见 shell/shell.js)
+initShell()
 
 // 懒加载 chunk 预载失败(发版后旧 hash 已失效):自动刷新取最新资源,带循环保护。
 const CHUNK_RELOAD_KEY = 'guanxiang.v1.chunk-reloaded'
