@@ -4,6 +4,7 @@ import { getReadingProgress } from '../../yijing/storage.js'
 import { usePageTitle } from '../../yijing/hooks/usePageTitle.js'
 import { sizeTier } from '../../reader/bookSizes.js'
 import SchoolEntry from '../../reader/SchoolEntry.jsx'
+import ShelfHome, { homePlan } from '../../reader/ShelfHome.jsx'
 
 const STATUS_LABEL = { pending: '整理中', partial: '可读·译注中', done: '可阅读' }
 
@@ -11,6 +12,11 @@ const STATUS_LABEL = { pending: '整理中', partial: '可读·译注中', done:
 export default function DaoHomePage() {
   usePageTitle(null, '观道')
   const progress = getReadingProgress()
+  // 排了「从哪里读起」就走新版首页(道藏主线之后分三路);数据撤掉即回到下面的平铺书架
+  if (homePlan('dao')) {
+    return <ShelfHome corpus="dao" texts={texts} title="道藏研读" basePath="/dao"
+      subtitle={`道德经、庄子、列子、参同契等 ${texts.length} 部道家经典——原文、白话译注、每章延伸俱全。`} />
+  }
   return (
     <div className="dao-home">
       <div className="page-header">

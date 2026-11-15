@@ -4,6 +4,7 @@ import { getReadingProgress } from '../yijing/storage.js'
 import { sizeTier } from './bookSizes.js'
 import SchoolEntry from './SchoolEntry.jsx'
 import BookOutline from './BookOutline.jsx'
+import ShelfHome, { homePlan } from './ShelfHome.jsx'
 
 const STATUS_LABEL = { pending: '整理中', partial: '可读·译注中', done: '可阅读' }
 
@@ -20,6 +21,10 @@ export default function ScriptureShelf({ texts, title, subtitle, basePath, brand
   usePageTitle(null, brand)
   const progress = getReadingProgress()
   const expanded = expand ?? (!!corpus && texts.length > 0 && texts.length <= EXPAND_MAX_BOOKS && texts.every((t) => t.status !== 'pending'))
+  // 排了「从哪里读起」的组(src/data/reading-home.json)走新版首页;其余照旧平铺书架
+  if (!expanded && corpus && homePlan(corpus)) {
+    return <ShelfHome corpus={corpus} texts={texts} title={title} subtitle={subtitle} basePath={basePath} disclaimer={disclaimer} />
+  }
   return (
     <div className={`dao-home ${expanded ? 'book-home' : ''}`}>
       <div className="page-header">
