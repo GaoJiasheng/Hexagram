@@ -87,7 +87,7 @@ export default function check({ ROOT, err, warn, info, readJson }) {
         const L = b.lens
         if (!Array.isArray(L)) err(`${tag}: lens 须为数组`)
         else {
-          if (L.length < 2 || L.length > 12) err(`${tag}: lens 须 2–12 个,实为 ${L.length}`)
+          if (L.length < 2 || L.length > 8) err(`${tag}: lens 须 2–8 个,实为 ${L.length}`)
           if (new Set(L).size !== L.length) err(`${tag}: lens 有重复词`)
           const chs = chaptersOf(b.slug)
           if (!chs) warn(`${tag}: 找不到 classics/${b.slug}.json,无法核 lens 命中`)

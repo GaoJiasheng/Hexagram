@@ -16,6 +16,7 @@ import { useSearchFlash } from './features/search/searchFlash.js'
 import { useBooksSecretTap } from './features/books/booksSecretTap.js'
 import { useShell } from './shell/shell.js'
 import AppTabs from './shell/AppTabs.jsx'
+import { useRouteTransition, useScrollMemory, useAppKeys, TAB_ROOTS } from './shell/appNav.js'
 import './shell/shell.css'
 
 // 全站搜索面板按需加载:搜索页面、经典、正文、白话、注疏、专题。
@@ -332,7 +333,10 @@ function AppContent() {
   useReadClock(location)   // 活跃时长时钟(研读统计);匿名埋点订阅它的事件
   useSearchFlash(location) // 搜索结果点进来:高亮并闪几下命中处(?hl=)
   const booksTap = useBooksSecretTap()   // 页脚空白处连点 3 次 → 观书(桌面网页无底栏;仅管理员)
-  const { appLayout } = useShell()       // App 外壳的平板 / 宽屏形态:固定导航 + 书房首页,不出版权页脚
+  const { shell, appLayout } = useShell()   // App 外壳的平板 / 宽屏形态:固定导航 + 书房首页,不出版权页脚
+  // 第二、三档(docs/ipad-app-plan.md §4.2–4.3):转场方向、返回回到原位置、外接键盘——App 外壳里才开
+  const routeAnim = useRouteTransition(shell === 'app')
+  useScrollMemory(shell === 'app')
   useTelemetry()
   // 正文衬线字体按需加载(T2 方案 A):首页、门户与各组首页不下 Noto,进任何别的页才载
   useEffect(() => {
@@ -359,9 +363,9 @@ function AppContent() {
   }, [openSettings])
 
   // App 外壳里的返回键:站内有上一页、且不在固定导航的根页时才出
-  const TAB_ROOTS = ['/', '/app/continue', '/app/index', '/app/me']
   const canBack = appLayout && !TAB_ROOTS.includes(location.pathname) && (window.history.state?.idx ?? 0) > 0
   const goBack = useCallback(() => navigate(-1), [navigate])
+  useAppKeys(shell === 'app', { navigate, onSearch: openSearch, onSettings: openSettings })
 
   // iOS「App 图标长按 → 书房」快捷入口 → 观书隐藏入口 /books(web/Android 无操作)
   useEffect(() => {
@@ -427,6 +431,7 @@ function AppContent() {
       {/* 中立枢纽也要能改主题/登录/搜索——这些本就是全局功能,不属于任何分站,故给一条精简顶栏(印+搜索+设置+头像) */}
       <Nav module={module} canSwitch={canSwitch} otherSite={otherSite} onSearch={openSearch} onPortal={openPortal} onSettings={openSettings} onColophon={openColophon} onBack={canBack ? goBack : null} neutral={isPortal} />
       <main className={`app-main page-fade-in ${location.pathname === '/books' ? 'app-main--wide' : ''}`}>
+        <div key={location.pathname} className={routeAnim}>
         <ErrorBoundary key={location.pathname}>
         <Suspense fallback={<div className="route-loading" aria-label="加载中">⋯</div>}>
         <Routes>
@@ -611,6 +616,7 @@ function AppContent() {
         </Routes>
         </Suspense>
         </ErrorBoundary>
+        </div>
       </main>
       {appLayout && <AppTabs onSearch={openSearch} />}
       {!appLayout && <footer className={`app-footer ${isPortal ? 'app-footer--neutral' : ''}`} onClick={(e) => { if (!e.target.closest('a, button')) booksTap(e) }}>

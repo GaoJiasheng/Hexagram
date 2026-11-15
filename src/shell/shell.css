@@ -79,7 +79,7 @@ html[data-shell='app']:is([data-form='tablet'], [data-form='wide']) .basics-brea
 html[data-shell='app']:is([data-form='tablet'], [data-form='wide']) .book-shapes__item { min-height: 40px; }
 
 /* ── 书房(App 首页):一屏看全,不滚动 ─────────────────────────────── */
-html[data-shell='app']:is([data-form='tablet'], [data-form='wide']) .app-main:has(> .app-home) {
+html[data-shell='app']:is([data-form='tablet'], [data-form='wide']) .app-main:has(.app-home) {
   max-width: none; width: 100%; padding-top: 0; padding-bottom: 0;
 }
 .app-home {
@@ -180,3 +180,37 @@ html[data-shell='app'] .read-toc-mobile__open {
 .chapter-sheet__item.is-current { background: var(--cinnabar-bg); color: var(--cinnabar); }
 .chapter-sheet__no { flex: none; min-width: 28px; text-align: right; font-size: 0.78rem; color: var(--ink-faint); }
 .chapter-sheet__name { flex: 1; min-width: 0; font-family: var(--font-serif); }
+
+/* ── 第二档:转场(shell/appNav.js 的 useRouteTransition)──────────────────
+   页面外包一层按路径换 key 的 div:网页端它是 display: contents,对排版零影响;App 里挂载时播一次动画。
+   只用 backwards 填充——动画结束后不留 transform,不会让里面的 position: fixed 认它当包含块。 */
+.route-anim-off { display: contents; }
+.route-anim { animation-duration: 0.24s; animation-timing-function: cubic-bezier(0.2, 0.7, 0.2, 1); animation-fill-mode: backwards; }
+.route-anim--push { animation-name: route-push; }
+.route-anim--pop { animation-name: route-pop; }
+.route-anim--fade { animation-name: route-fade; animation-duration: 0.16s; }
+@keyframes route-push { from { opacity: 0; transform: translateX(32px); } }
+@keyframes route-pop { from { opacity: 0; transform: translateX(-32px); } }
+@keyframes route-fade { from { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .route-anim { animation: none; } }
+
+/* ── 第二档:iPad 横屏的书页两栏 ──────────────────────────────────────
+   宽屏(≥1024)下目录页左栏放题头 / 读法 / 形状 / 版本流变,右栏放整张目录,一屏看得到全书结构;
+   进了阅读页本来就有左侧目录栏(ClassicReader ≥1024)。 */
+html[data-shell='app'][data-form='wide'] .dao-text-page:has(> .dao-text-sections) {
+  max-width: min(1240px, 100%);
+  display: grid; grid-template-columns: minmax(300px, 380px) minmax(0, 1fr); column-gap: 40px; align-items: start;
+  /* 左栏各块各占一行;右栏整张目录跨全部行。最后一行是 1fr——右栏比左栏高出来的部分全落在那一行,左栏各块之间不被撑开 */
+  grid-template-rows: repeat(10, max-content) 1fr;
+}
+html[data-shell='app'][data-form='wide'] .dao-text-page:has(> .dao-text-sections) > * { grid-column: 1; min-width: 0; }
+html[data-shell='app'][data-form='wide'] .dao-text-page:has(> .dao-text-sections) > .dao-text-sections { grid-column: 2; grid-row: 1 / -1; margin-top: 0; }
+html[data-shell='app'][data-form='wide'] .dao-text-page .book-head { grid-template-columns: 1fr; }
+html[data-shell='app'][data-form='wide'] .dao-text-page .book-head__art { order: -1; padding-top: 0; }
+html[data-shell='app'][data-form='wide'] .dao-text-page .book-head__art .book-art { width: 160px !important; height: 160px !important; }
+
+/* 触控板 / 鼠标悬停(第三档):标签栏也给悬停态 */
+@media (hover: hover) {
+  .app-tabs__item:hover { color: var(--ink-soft); }
+  .app-tabs__item.active:hover { color: var(--cinnabar-pure); }
+}

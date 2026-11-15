@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
+import { tapFeedback } from '../../shell/appNav.js'
 
 // 选章面板(App 外壳用,docs/ipad-app-plan.md §4.1 ④):窄于 1024 时阅读页没有目录侧栏,网页端用的是系统下拉框——
 // 表单控件的观感;App 外壳里换成从右侧滑出的目录面板。守全站模态浮层的约定(锁 body 滚动 + 监听 Escape),
@@ -31,7 +32,7 @@ export default function ChapterSheet({ chapters, current, label, title, onPick, 
                 <button type="button" ref={on ? curRef : undefined}
                   className={`chapter-sheet__item ${on ? 'is-current' : ''}`}
                   aria-current={on ? 'true' : undefined}
-                  onClick={() => { onPick(c.no); onClose() }}>
+                  onClick={() => { tapFeedback(); onPick(c.no); onClose() }}>
                   <span className="chapter-sheet__no">{c.no}</span>
                   <span className="chapter-sheet__name">{label(c)}</span>
                 </button>

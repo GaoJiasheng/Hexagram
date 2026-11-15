@@ -1,0 +1,22 @@
+/* 组首页展开版(BookOutline)目录里「章即一篇」两支(平铺 / 按卷)的读过与透镜标记。
+   与典籍目录页章格的 .dao-section-cell--read / --dim 同义,但这里是列表项,不是格子。
+   类名避开 .book-toc__item(观书 books.css 已占用)。 */
+
+/* 读过:篇题底色略深(只铺在链接文字上,不铺满一栏) */
+.book-outline__item--read > a {
+  background: color-mix(in srgb, var(--ink) 7%, transparent);
+  border-radius: 3px;
+  padding: 1px 4px;
+  margin: 0 -4px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* 透镜未命中:变淡,悬停 / 聚焦时回一点 */
+.book-outline__item--dim { opacity: 0.32; transition: opacity 0.15s; }
+.book-outline__item--dim:hover,
+.book-outline__item--dim:focus-within { opacity: 0.7; }
+
+/* 分段目录:段头与篇目之间不再叠 flat 列表自带的上边距 */
+.book-outline__part .book-toc__poems--flat { margin-top: 4px; }
+.book-outline__part { margin-top: 12px; }

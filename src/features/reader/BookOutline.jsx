@@ -1,10 +1,13 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { getReadingProgress } from '../yijing/storage.js'
+import { getReadingProgress, getReadDays } from '../yijing/storage.js'
 import { getMeta, loadText } from './corpus.js'
 import { chapterAnchors, chapterParts } from './chapterParts.js'
 import { sizeTier } from './bookSizes.js'
 import DaoduEntry from './DaoduEntry.jsx'
+import BookArt from './BookArt.jsx'
+import TocLens, { useLens } from './TocLens.jsx'
+import './BookOutline.css'
 
 // 一本书的「展开版」:题解 + 书级导读 + 续读 + **全部篇目**,直接摆在首页上。
 // 两处共用:SingleBookHome(一组一书:唐诗 / 宋词 / 元曲 / 古文)与 ScriptureShelf 的展开模式
@@ -18,14 +21,39 @@ import DaoduEntry from './DaoduEntry.jsx'
 // beforeToc:插在题解之后、目录之前的自定义块(古文组用它把「课本古文补编」按学段列出)
 // named:目录标题带书名「《传习录》目录 · 3 卷 34 条」——一页摊开两本书时,滚到目录处头上只剩「卷上 / 卷中」,
 //   读者分不清是哪本(owner 2026-10-02);一书一首页的组不带,书名就在上面
+// 与典籍目录页(BookPage)同用 texts.json 的四个可选字段(2026-11-15):`art` 题头插图、`howto` 读法、
+// `lens` 透镜(只给平铺 / 按卷两支——章即一篇;按首 / 按条的书条目太多不给)、`parts` 分段(只给平铺支;
+// 按卷支的分卷已由 volumes 摆出,古文观止的 parts 正是 volumes 的镜像,不重复)。没写这些字段的书渲染与原来一样。
+// 平铺 / 按卷两支另标本机读过的篇(研读统计日聚合键 day|corpus|slug|ch|dev,同 BookPage)。
+const NO_WORDS = []
+// 观数三本书有一个同名旧字段 lens(字符串,三派镜头),不是透镜词表
+const lensWords = (t) => (Array.isArray(t?.lens) && t.lens.length ? t.lens : null)
+
+function readChapters(corpus, slug) {
+  const set = new Set()
+  for (const k of Object.keys(getReadDays())) {
+    const [, c, s, ch] = k.split('|')
+    if (c === corpus && s === slug && ch) set.add(ch)
+  }
+  return set
+}
+
 export default function BookOutline({ corpus, slug, basePath, volumes, beforeToc = null, named = false }) {
   const meta = getMeta(corpus, slug)
   const [chapters, setChapters] = useState(null)
+  const [lensActive, setLensActive] = useState(NO_WORDS)
   useEffect(() => {
     let alive = true
+    setLensActive(NO_WORDS)
     loadText(corpus, slug).then((b) => { if (alive) setChapters(b?.chapters || null) })
     return () => { alive = false }
   }, [corpus, slug])
+
+  // 透镜只给「章即一篇」的两支(平铺 / 按卷);hook 须在提前 return 之前
+  const flatLike = !!meta && !meta.poemTitles && !meta.pieces && !meta.singlePage
+  const words = flatLike ? lensWords(meta) : null
+  const { activeSet } = useLens(chapters || NO_WORDS, words || NO_WORDS, lensActive)
+  const read = useMemo(() => readChapters(corpus, slug), [corpus, slug])
 
   if (!meta) return null
 
@@ -35,33 +63,54 @@ export default function BookOutline({ corpus, slug, basePath, volumes, beforeToc
   const grouped = poemBook || !!meta.pieces          // 章内有自然边界的书:章名下逐首 / 逐条列
   const anchorUnit = poemBook ? '首' : '条'
   const single = !!meta.singlePage
+  const itemClass = (c) => [
+    read.has(String(c.no)) ? 'book-outline__item--read' : '',
+    activeSet && !activeSet.has(c.no) ? 'book-outline__item--dim' : '',
+  ].filter(Boolean).join(' ') || undefined
   const renderFlat = (c) => (
-    <li key={c.no}>
+    <li key={c.no} className={itemClass(c)}>
       <Link to={`${basePath}/${slug}/${c.no}`} className={c.no === resumeCh ? 'book-toc__link--current' : ''}>
         <span className="book-toc__no">{c.no}</span>{c.title || `第 ${c.no} ${meta.sectionUnit}`}
         {c.source && <span className="book-toc__src">{c.source}</span>}
       </Link>
     </li>
   )
+  const parts = Array.isArray(meta.parts) && meta.parts.length ? meta.parts : null
+  const litIn = (from, to) => (activeSet ? chapters.filter((c) => c.no >= from && c.no <= to && activeSet.has(c.no)).length : null)
+  const anyRead = !!chapters && flatLike && chapters.some((c) => read.has(String(c.no)))
   const totalAnchors = chapters
     ? (grouped ? chapters.reduce((n, c) => n + (chapterAnchors(c, meta)?.length || 0), 0) : chapters.length)
     : null
 
+  const headText = (
+    <>
+      <h2 className="book-home__title">
+        <Link to={`${basePath}/${slug}`}>{meta.title}</Link>
+      </h2>
+      <p className="dao-text-meta">
+        {[meta.era, meta.attribution, `${meta.sections} ${meta.sectionUnit}`, totalAnchors && grouped ? `${totalAnchors} ${anchorUnit}` : null]
+          .filter(Boolean).join(' · ')}
+        {tier && <span className={`book-tier book-tier--${tier.cls}`}>{tier.label}</span>}
+      </p>
+      <p className="dao-text-brief">{meta.brief}</p>
+      {meta.howto && <p className="book-howto"><span className="book-howto__tag">读法</span>{meta.howto}</p>}
+      {meta.dubious && <p className="dubious-badge">⚠ 托名·真伪存疑：学界多判为现代伪作。本站作文献批判材料研读，非处世权术教程。</p>}
+      {meta.caveat && !meta.dubious && <p className="caveat-badge">⚠ {meta.caveat}——详见撰人小传，本站作文献存疑研读。</p>}
+    </>
+  )
+
   return (
     <>
       <section className="book-home__book">
-        <div className="book-home__head">
-          <h2 className="book-home__title">
-            <Link to={`${basePath}/${slug}`}>{meta.title}</Link>
-          </h2>
-          <p className="dao-text-meta">
-            {[meta.era, meta.attribution, `${meta.sections} ${meta.sectionUnit}`, totalAnchors && grouped ? `${totalAnchors} ${anchorUnit}` : null]
-              .filter(Boolean).join(' · ')}
-            {tier && <span className={`book-tier book-tier--${tier.cls}`}>{tier.label}</span>}
-          </p>
-          <p className="dao-text-brief">{meta.brief}</p>
-          {meta.dubious && <p className="dubious-badge">⚠ 托名·真伪存疑：学界多判为现代伪作。本站作文献批判材料研读，非处世权术教程。</p>}
-          {meta.caveat && !meta.dubious && <p className="caveat-badge">⚠ {meta.caveat}——详见撰人小传，本站作文献存疑研读。</p>}
+        <div className={`book-home__head ${meta.art ? 'book-head' : ''}`.trim()}>
+          {meta.art ? (
+            <>
+              <div className="book-head__text">{headText}</div>
+              <div className="book-head__art">
+                <BookArt src={`/book-art/${corpus}/${meta.art.file}`} alt={meta.art.alt} size={180} />
+              </div>
+            </>
+          ) : headText}
         </div>
         <div className="dao-text-aside">
           {meta.authorNote && <p className="dao-text-authornote">{meta.authorNote}</p>}
@@ -86,6 +135,12 @@ export default function BookOutline({ corpus, slug, basePath, volumes, beforeToc
           <h2 className="dao-text-sections__title">
             {named ? `《${meta.title}》` : ''}目录{chapters ? (grouped ? ` · ${chapters.length} ${meta.sectionUnit} ${totalAnchors} ${anchorUnit}` : ` · ${chapters.length} ${meta.sectionUnit || '首'}`) : ''}
           </h2>
+          {words && chapters && (
+            <div className="book-lens">
+              <span className="book-lens__title">透镜</span>
+              <TocLens chapters={chapters} words={words} active={lensActive} onChange={setLensActive} />
+            </div>
+          )}
           {!chapters ? (
             <div className="dao-section-grid" aria-label="目录载入中" aria-busy="true">
               {Array.from({ length: Math.min(meta.sections || 8, 24) }, (_, i) => (
@@ -122,10 +177,23 @@ export default function BookOutline({ corpus, slug, basePath, volumes, beforeToc
               <div key={v.no} className="book-toc__group">
                 <div className="book-toc__head book-toc__head--static">
                   <span className="book-toc__name">{v.title}</span>
-                  <span className="book-toc__count">{v.to - v.from + 1} {meta.sectionUnit}</span>
+                  <span className="book-toc__count">{v.to - v.from + 1} {meta.sectionUnit}{activeSet ? ` · 命中 ${litIn(v.from, v.to)}` : ''}</span>
                 </div>
                 <ul className="book-toc__poems book-toc__poems--flat">
                   {chapters.filter((c) => c.no >= v.from && c.no <= v.to).map((c) => renderFlat(c))}
+                </ul>
+              </div>
+            ))
+          ) : parts ? (
+            parts.map((p) => (
+              <div key={p.title} className="toc-part book-outline__part">
+                <div className="toc-part__head">
+                  <span className="toc-part__name">{p.title}</span>
+                  <span className="toc-part__range">{p.from}–{p.to}{activeSet ? ` · 命中 ${litIn(p.from, p.to)}` : ''}</span>
+                  {p.note && <span className="toc-part__note">{p.note}</span>}
+                </div>
+                <ul className="book-toc__poems book-toc__poems--flat">
+                  {chapters.filter((c) => c.no >= p.from && c.no <= p.to).map((c) => renderFlat(c))}
                 </ul>
               </div>
             ))
@@ -133,6 +201,11 @@ export default function BookOutline({ corpus, slug, basePath, volumes, beforeToc
             <ul className="book-toc__poems book-toc__poems--flat">
               {chapters.map((c) => renderFlat(c))}
             </ul>
+          )}
+          {(anyRead || activeSet) && (
+            <p className="dao-section-note book-toc__legend text-faint">
+              {[anyRead && `底色略深的是读过的${meta.sectionUnit}`, activeSet && `灰掉的是未命中透镜的${meta.sectionUnit}`].filter(Boolean).join('；')}。
+            </p>
           )}
         </section>
       )}

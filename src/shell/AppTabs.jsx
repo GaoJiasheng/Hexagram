@@ -1,4 +1,6 @@
+import { useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
+import { tapFeedback } from './appNav.js'
 import { useBooksSecretTap } from '../features/books/booksSecretTap.js'
 
 // App 外壳的固定导航(docs/ipad-app-plan.md §4.1):平板竖屏是底部标签栏,宽屏(iPad 横屏 / 13 吋 / Mac)是左侧栏。
@@ -8,6 +10,13 @@ import { useBooksSecretTap } from '../features/books/booksSecretTap.js'
 
 const INDEX_PATHS = ['/app/index', '/mingju', '/renwu', '/timeline', '/concepts', '/rhyme']
 const ME_PATHS = ['/app/me', '/stats', '/about', '/privacy', '/ba', '/legal']
+
+// 每个标签记住自己最后停在哪一页(第二档):从「索引」切到「书房」再切回来,还在刚才那一页。
+// 点的是当前所在的标签 → 回到这个标签的根页(iOS 的习惯)。只记在本次会话里。
+const MEM_KEY = 'guanxiang.v1.tabMemory'
+function readMem() { try { return JSON.parse(sessionStorage.getItem(MEM_KEY) || '{}') } catch { return {} } }
+function writeMem(m) { try { sessionStorage.setItem(MEM_KEY, JSON.stringify(m)) } catch { /* 存不下就不记 */ } }
+const ROOTS = { home: '/', resume: '/app/continue', index: '/app/index', me: '/app/me' }
 
 const Icon = ({ children }) => (
   <svg className="app-tabs__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -29,9 +38,18 @@ export default function AppTabs({ onSearch }) {
   const inResume = pathname === '/app/continue'
   // 进了任何一本书、任何一个分站,都算还在「书房」这一格里
   const inHome = !inIndex && !inMe && !inResume
+  const current = inIndex ? 'index' : inMe ? 'me' : inResume ? 'resume' : 'home'
+  const { search } = useLocation()
+  useEffect(() => {
+    const m = readMem()
+    m[current] = pathname + search
+    writeMem(m)
+  }, [current, pathname, search])
+  const targetOf = (key) => (key === current ? ROOTS[key] : readMem()[key] || ROOTS[key])
 
   const item = (to, key, label, active, onClick) => (
-    <NavLink to={to} className={`app-tabs__item ${active ? 'active' : ''}`} aria-current={active ? 'page' : undefined} onClick={onClick}>
+    <NavLink to={to} className={`app-tabs__item ${active ? 'active' : ''}`} aria-current={active ? 'page' : undefined}
+      onClick={(e) => { tapFeedback(); onClick?.(e) }}>
       {ICONS[key]}
       <span className="app-tabs__label">{label}</span>
     </NavLink>
@@ -39,14 +57,14 @@ export default function AppTabs({ onSearch }) {
 
   return (
     <nav className="app-tabs" aria-label="全站导航">
-      {item('/', 'home', '书房', inHome, booksTap)}
-      {item('/app/continue', 'resume', '接着读', inResume)}
-      <button type="button" className="app-tabs__item" onClick={onSearch} aria-label="全站搜索">
+      {item(targetOf('home'), 'home', '书房', inHome, booksTap)}
+      {item(targetOf('resume'), 'resume', '接着读', inResume)}
+      <button type="button" className="app-tabs__item" onClick={() => { tapFeedback(); onSearch() }} aria-label="全站搜索">
         {ICONS.search}
         <span className="app-tabs__label">搜索</span>
       </button>
-      {item('/app/index', 'index', '索引', inIndex)}
-      {item('/app/me', 'me', '我的', inMe)}
+      {item(targetOf('index'), 'index', '索引', inIndex)}
+      {item(targetOf('me'), 'me', '我的', inMe)}
     </nav>
   )
 }
