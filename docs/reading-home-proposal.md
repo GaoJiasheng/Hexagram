@@ -2,7 +2,7 @@
 
 > owner 10-01:「不要做这种每日一章,这个页面做得更好一些」。「今日一章」已去,本稿回答「书架之外该有什么」。
 > **等你圈**:文末 Q1–Q6,回编号 + 选项即可。圈完我照做,先在预览分支给你看。
-> **状态(2026-11-15)**:owner 未圈,先按 Q1 B / Q2 A / Q3 A / Q4 A / Q5 交互件 + 名句 + 人物志 + 时间轴 / Q6 A 做了**儒、道两组样板**,在分支 `reading-home-sample`、只发预览分支,生产未动。实现:`reader/ShelfHome.jsx` + `src/data/reading-home.json` + 闸 `check-reading-home`(儒家主线四步的理由与依据都是站内《大学》《中庸》导读原文)。推到其余组 = 在 reading-home.json 加一组条目。
+> **状态(2026-11-15)**:owner 未圈,先按 Q1 B / Q2 A / Q3 A / Q4 A / Q5 交互件 + 名句 + 人物志 + 时间轴 / Q6 A 做了**儒、道两组样板**,owner 看过预览后说「上线吧」,**已合 main、随 web 1.35.21 上线**;其余组未推。实现:`reader/ShelfHome.jsx` + `src/data/reading-home.json` + 闸 `check-reading-home`(儒家主线四步的理由与依据都是站内《大学》《中庸》导读原文)。推到其余组 = 在 reading-home.json 加一组条目。
 
 ## 一、现在的样子与毛病
 
