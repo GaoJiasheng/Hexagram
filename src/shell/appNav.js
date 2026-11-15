@@ -2,7 +2,8 @@
 // 全部只在 data-shell="app" 下生效(调用方传 enabled);网页端行为一行不变——浏览器有自己的返回、查找与滚动恢复。
 import { useEffect, useLayoutEffect, useRef } from 'react'
 import { useLocation, useNavigationType } from 'react-router-dom'
-import { Capacitor, registerPlugin } from '@capacitor/core'
+import { Capacitor } from '@capacitor/core'
+import { Haptics, ImpactStyle } from '@capacitor/haptics'
 
 // 固定导航的五个根页:在根页之间切换是「换标签」,用淡入,不用推入
 export const TAB_ROOTS = ['/', '/app/continue', '/app/index', '/app/me']
@@ -146,10 +147,9 @@ export function useAppKeys(enabled, { navigate, onSearch, onSettings }) {
 }
 
 // ── 触感反馈 ──────────────────────────────────────────────────────
-// 只在原生壳里、且装了 @capacitor/haptics 原生插件时有效;没装时调用会被拒,这里吞掉,什么都不发生。
-// (插件要 npm 装一次 + `npx cap sync ios` + 重新打包才到手机上,见 docs/ipad-app-plan.md §4.3。)
-const Haptics = registerPlugin('Haptics')
+// 原生插件 @capacitor/haptics(2026-11-15 装,iOS 走 UIImpactFeedbackGenerator)。只在原生壳里震;网页端什么都不做
+// (插件的网页实现会调 navigator.vibrate,安卓浏览器里会真震,不要)。任何失败都吞掉——震不震不能影响点按本身。
 export function tapFeedback() {
   if (!Capacitor.isNativePlatform()) return
-  try { Haptics.impact({ style: 'LIGHT' })?.catch?.(() => {}) } catch { /* 插件未装 */ }
+  try { Haptics.impact({ style: ImpactStyle.Light })?.catch?.(() => {}) } catch { /* 无震动马达的设备 */ }
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import SingleBookHome from '../../reader/SingleBookHome.jsx'
 import { loadText } from '../../reader/corpus.js'
+import BookArt from '../../reader/BookArt.jsx'
 import texts from '../../../data/guwen/texts.json'
 import meta from '../../../data/guwen/guwenguanzhi-meta.json'
 
@@ -25,6 +26,9 @@ function KewenToc() {
       <h2 className="dao-text-sections__title">
         <Link to="/guwen/kewen">课本古文补编</Link> · {chapters.length} 篇
       </h2>
+      {/* 题图与读法(目录页美化的同款字段;这一块是本页自己的组件,不走 BookOutline) */}
+      {kewen.art && <div className="book-home__kewen-art"><BookArt src={`/book-art/guwen/${kewen.art.file}`} alt={kewen.art.alt} size={132} /></div>}
+      {kewen.howto && <p className="book-howto"><span className="book-howto__tag">读法</span>{kewen.howto}</p>}
       <p className="dao-text-brief">
         课本上的文言文，站内别处已有的不重出（《古文观止》里的岳阳楼记、醉翁亭记、出师表、师说、赤壁赋等见下方目录；论语、孟子、荀子、庄子、列子见各组），其余按学段收在这里。篇目以现行统编版为参照，各版本有出入。
       </p>

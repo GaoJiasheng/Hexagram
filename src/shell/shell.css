@@ -214,3 +214,11 @@ html[data-shell='app'][data-form='wide'] .dao-text-page .book-head__art .book-ar
   .app-tabs__item:hover { color: var(--ink-soft); }
   .app-tabs__item.active:hover { color: var(--cinnabar-pure); }
 }
+
+/* 小链接的可点高度(2026-11-15 收尾):不改字号,只加上下留白把可点区撑到 ≥40。
+   行内链接 → inline-block + 上下 padding;本来就成行(flex)的 → 只加 padding,不动 display(动了会打乱行内对齐) */
+html[data-shell='app'] :is(.lineage-entry__link, .app-footer__link, .read-toc__back, .settings-read__more, .book-toc__poems a) { display: inline-block; padding-top: 10px; padding-bottom: 10px; }
+html[data-shell='app'] :is(.portal-trail__row, .book-toc__head) { padding-top: 11px; padding-bottom: 11px; }
+html[data-shell='app'] .dao-text-resume { min-height: 40px; padding-top: 9px; padding-bottom: 9px; box-sizing: border-box; }
+.book-home__kewen-art { float: right; margin: -6px 0 6px 18px; }
+@media (max-width: 640px) { .book-home__kewen-art { float: none; margin: 0 0 8px; } }
