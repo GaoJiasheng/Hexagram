@@ -5,6 +5,8 @@ import ScriptureShelf, { EXPAND_MAX_BOOKS } from './ScriptureShelf.jsx'
 import zongTexts from '../../data/zong/texts.json'
 import xinTexts from '../../data/xin/texts.json'
 import ruTexts from '../../data/ru/texts.json'
+import foTexts from '../../data/fo/texts.json'
+import { homePlan } from './ShelfHome.jsx'
 
 const shelf = (corpus, texts, extra = {}) => renderToStaticMarkup(
   <MemoryRouter>
@@ -28,10 +30,20 @@ describe('书架首页:书少的组直接展开目录', () => {
     expect(html).toContain('读全文')
     expect(html.match(/book-home__toc/g)).toHaveLength(1)   // 只有传习录有目录段
   })
-  it('书多的组(儒)仍是书架卡;expand 可强制', () => {
-    expect(ruTexts.length).toBeGreaterThan(EXPAND_MAX_BOOKS)
-    expect(shelf('ru', ruTexts)).toContain('class="dao-book"')
-    expect(shelf('ru', ruTexts, { expand: true })).not.toContain('class="dao-book"')
+  it('书多、没排路径的组(佛)仍是书架卡;expand 可强制', () => {
+    expect(foTexts.length).toBeGreaterThan(EXPAND_MAX_BOOKS)
+    expect(homePlan('fo')).toBe(null)
+    expect(shelf('fo', foTexts)).toContain('class="dao-book"')
+    expect(shelf('fo', foTexts, { expand: true })).not.toContain('class="dao-book"')
     expect(shelf('zong', zongTexts, { expand: false })).toContain('class="dao-book"')
+  })
+  it('排了「从哪里读起」的组(儒)走新版首页:主线四步、全组的书都在、依据引导读原文', () => {
+    const html = shelf('ru', ruTexts)
+    expect(html).not.toContain('class="dao-book"')
+    expect(html.match(/class="shelf-step"/g)).toHaveLength(4)
+    for (const t of ruTexts) expect(html).toContain(`href="/ru/${t.slug}"`)
+    expect(html).toContain('定其规模')
+    expect(html).toContain('href="/ru/daxue/daodu"')
+    expect(html).toContain('href="/ru/lineage"')   // 学脉图进了「门道」行
   })
 })

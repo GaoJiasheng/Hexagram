@@ -1,0 +1,36 @@
+{
+  "_readme": "读经站组首页的「从哪里读起」(docs/reading-home-proposal.md,2026-11-15 先做儒、道两组样板)。有这一组的条目,组首页就从平铺书架换成 ShelfHome(接着读 / 从哪里读起 / 再往外读 / 这一家的门道);没有的组照旧。main = 主线(画箭头);branches = 主线之后分出的几路;more = 再往外读。why ≤ 14 字;带 cite 的 why 与 basis.quote 必须是该组书级导读的精确子串(闸 check-reading-home 回查),不带 cite 的是本站的话,页面上标「本站建议」。一本书只出现一次,全组的书都要排到。",
+  "ru": {
+    "main": [
+      { "slug": "daxue", "why": "定其规模", "cite": "zhongyong" },
+      { "slug": "lunyu", "why": "立其根本", "cite": "zhongyong" },
+      { "slug": "mengzi", "why": "观其发越", "cite": "zhongyong" },
+      { "slug": "zhongyong", "why": "求古人之微妙处", "cite": "zhongyong" }
+    ],
+    "basis": {
+      "label": "朱熹定的读四书次第",
+      "quote": "朱熹给出的读书次序是：先《大学》，次《论语》，再《孟子》，最后《中庸》。",
+      "cite": "daxue"
+    },
+    "more": {
+      "note": "四书之外：先秦另一路儒者、家训、理学入门与五经之一。",
+      "slugs": ["xunzi", "xiaojing", "jinsilu", "yanshi", "shijing"]
+    }
+  },
+  "dao": {
+    "main": [
+      { "slug": "daodejing", "why": "先读源头" },
+      { "slug": "zhuangzi-neipian", "why": "再读庄子七篇" }
+    ],
+    "basis": { "label": "本站建议" },
+    "branches": [
+      { "title": "哲思一路", "note": "接着老庄往下读的子书。", "slugs": ["zhuangzi-waipian", "zhuangzi-zapian", "liezi", "wenzi"] },
+      { "title": "丹道一路", "note": "借卦象与隐语讲炼养；本站只读取象，不演工法。", "slugs": ["cantongqi", "wuzhenpian", "huangting"] },
+      { "title": "修心劝善一路", "note": "唐宋以来的修心短论与劝善书。", "slugs": ["qingjingjing", "zuowanglun", "tianyinzi", "dingguanjing", "ganyingpian"] }
+    ],
+    "more": {
+      "note": "三百余言，兵家、道家、丹家各取其义。",
+      "slugs": ["yinfujing"]
+    }
+  }
+}
