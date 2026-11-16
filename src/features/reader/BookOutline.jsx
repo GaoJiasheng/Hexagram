@@ -38,7 +38,8 @@ function readChapters(corpus, slug) {
   return set
 }
 
-export default function BookOutline({ corpus, slug, basePath, volumes, beforeToc = null, named = false }) {
+// hideResume:组首页顶上已经有「接着读」(落到段)指向这本书时,书头里那条章级的「继续读」就不重复出
+export default function BookOutline({ corpus, slug, basePath, volumes, beforeToc = null, named = false, hideResume = false }) {
   const meta = getMeta(corpus, slug)
   const [chapters, setChapters] = useState(null)
   const [lensActive, setLensActive] = useState(NO_WORDS)
@@ -116,7 +117,7 @@ export default function BookOutline({ corpus, slug, basePath, volumes, beforeToc
           {meta.authorNote && <p className="dao-text-authornote">{meta.authorNote}</p>}
           <DaoduEntry corpus={corpus} slug={slug} bookTitle={meta.title} />
         </div>
-        {resumeCh > 0 && (
+        {resumeCh > 0 && !hideResume && (
           <Link to={`${basePath}/${slug}/${resumeCh}`} className="dao-text-resume">
             继续读 · 第 {resumeCh} {meta.sectionUnit} →
           </Link>

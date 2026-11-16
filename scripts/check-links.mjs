@@ -379,7 +379,7 @@ export function checkOgShard(shardNo, entries, checkSitePath, shardKey = ogShard
 }
 
 // ═══════════════════════════════════════════════════════════════════════
-// main:白话资源 / 搜索索引 / JSX 手写链接 / navigate() / .js 链接表 / og 索引 / 文档路径
+// main:白话资源 / 搜索索引 / JSX 手写链接 / navigate() / .js 链接表 / 数据里的链接 / og 索引 / 文档路径
 // ═══════════════════════════════════════════════════════════════════════
 
 async function main() {
@@ -666,6 +666,31 @@ async function main() {
   const nav = scanSource('navigate() ', [...jsxFiles, ...jsFiles], extractNavigateCalls)
   const jsTable = scanSource('.js 链接表', jsFiles, extractJsLinks)
 
+  // ── 数据里写的站内链接(2026-11-16)──────────────────────────────────
+  // 源码里的链接上面三类都扫了,但有两处链接写在数据里、由页面原样渲染,此前没人核:
+  //   · 各组 texts.json 的 shape.href(目录页「这本书的形状」与组首页「这一家的门道」的入口)
+  //   · src/data/reading-home.json 的 basis.cite(组首页「见《X》导读 →」= /<组>/<cite>/daodu)
+  const dataLinks = { links: 0, bad: 0 }
+  const checkDataLink = (where, href) => {
+    dataLinks.links++
+    const why = checkSitePath(splitHref(href))
+    if (why) { dataLinks.bad++; err(`数据坏链: ${where} → ${href}(${why})`) }
+  }
+  for (const g of fs.readdirSync(path.join(ROOT, 'src/data')).sort()) {
+    const tf = path.join(ROOT, 'src/data', g, 'texts.json')
+    if (!exists(tf)) continue
+    const texts = readJson(tf)
+    if (!Array.isArray(texts)) continue
+    for (const t of texts) if (t?.shape?.href) checkDataLink(`src/data/${g}/texts.json ${t.slug}.shape.href`, t.shape.href)
+  }
+  const homePlans = path.join(ROOT, 'src/data/reading-home.json')
+  if (exists(homePlans)) {
+    for (const [g, plan] of Object.entries(readJson(homePlans))) {
+      if (g.startsWith('_') || !plan?.basis?.cite) continue
+      checkDataLink(`src/data/reading-home.json ${g}.basis.cite`, `/${g}/${plan.basis.cite}/daodu`)
+    }
+  }
+
   // ── og 索引(public/content/og/<片号>.json,{ 路径: [标题, 摘要, 正文] })────────
   // 键即分享卡 / SEO 正文所对应的页面路径:同样过路由 + 实体检查,另核片号(见 checkOgShard)。
   const ogDir = path.join(CONTENT, 'og')
@@ -716,6 +741,7 @@ async function main() {
     `JSX 手写链接: ${jsxFiles.length} 个文件 · ${jsx.links} 条静态链接(坏 ${jsx.bad};含 <Navigate to> ${jsx.navigateTo} 条)· ${jsx.dynamic} 处动态拼接未校 · App 路由 ${routes.length} 条`,
     `navigate() 调用: ${nav.files} 个文件 · ${nav.calls} 处调用 → ${nav.links} 条静态路径(坏 ${nav.bad})· ${nav.dynamic} 处动态未校(扫 ${jsxFiles.length + jsFiles.length} 个 .jsx/.js)`,
     `.js 链接表: ${jsTable.files} 个文件 · ${jsTable.links} 条静态路径(坏 ${jsTable.bad})· ${jsTable.dynamic} 处模板拼接未校(扫 ${jsFiles.length} 个 .js)`,
+    `数据里的链接: ${dataLinks.links} 条(texts.json shape.href + 组首页导读出处;坏 ${dataLinks.bad})`,
     `og 索引: ${og.shards} 片 · ${og.paths} 条路径(坏 ${og.bad})`,
     `文档路径: ${docPaths} 条(示例跳过 ${docSkipped};只 warn)`,
   ]

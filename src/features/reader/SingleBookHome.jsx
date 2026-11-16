@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import SchoolEntry from './SchoolEntry.jsx'
 import BookOutline from './BookOutline.jsx'
+import { groupRecent, ShelfResume, ShelfDoors } from './ShelfHome.jsx'
 
 // 「一组就是一本书」的首页(owner 2026-10-01:唐诗只有《唐诗三百首》,不会再扩,
 // 首页放一张书架卡再点进去看目录是多此一举——直接在首页把这本书的目录展开)。
@@ -12,6 +13,8 @@ import BookOutline from './BookOutline.jsx'
 export default function SingleBookHome({ corpus, slug, title, subtitle, basePath, brand, disclaimer, texts, volumes, beforeToc = null }) {
   usePageTitle(null, brand)
   const others = (texts || []).filter((t) => t.slug !== slug)
+  // 顶上「接着读」(落到段,组里另一本书读得更近也会排在前头)、目录前「这一家的门道」一行;与书多的组首页同款
+  const recent = groupRecent(corpus)
 
   return (
     <div className="dao-home book-home">
@@ -22,9 +25,13 @@ export default function SingleBookHome({ corpus, slug, title, subtitle, basePath
 
       {disclaimer && <div className="shelf-disclaimer" role="note">⚠ {disclaimer}</div>}
 
+      <ShelfResume recent={recent} />
+
       <SchoolEntry corpus={corpus} />
 
-      <BookOutline corpus={corpus} slug={slug} basePath={basePath} volumes={volumes} beforeToc={beforeToc} />
+      <ShelfDoors corpus={corpus} texts={texts || []} basePath={basePath} compact />
+
+      <BookOutline corpus={corpus} slug={slug} basePath={basePath} volumes={volumes} beforeToc={beforeToc} hideResume={recent[0]?.book.slug === slug} />
 
       {others.length > 0 && (
         <p className="book-home__others">

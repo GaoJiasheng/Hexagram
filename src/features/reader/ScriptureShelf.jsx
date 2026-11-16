@@ -4,7 +4,7 @@ import { getReadingProgress } from '../yijing/storage.js'
 import { sizeTier } from './bookSizes.js'
 import SchoolEntry from './SchoolEntry.jsx'
 import BookOutline from './BookOutline.jsx'
-import ShelfHome, { homePlan } from './ShelfHome.jsx'
+import ShelfHome, { homePlan, groupRecent, ShelfResume, ShelfDoors } from './ShelfHome.jsx'
 
 const STATUS_LABEL = { pending: '整理中', partial: '可读·译注中', done: '可阅读' }
 
@@ -25,6 +25,8 @@ export default function ScriptureShelf({ texts, title, subtitle, basePath, brand
   if (!expanded && corpus && homePlan(corpus)) {
     return <ShelfHome corpus={corpus} texts={texts} title={title} subtitle={subtitle} basePath={basePath} disclaimer={disclaimer} />
   }
+  // 书少、直接展开目录的组(心 / 墨 / 纵横):目录照旧,顶上加「接着读」、目录前加「这一家的门道」一行
+  const recent = expanded && corpus ? groupRecent(corpus) : []
   return (
     <div className={`dao-home ${expanded ? 'book-home' : ''}`}>
       <div className="page-header">
@@ -34,13 +36,17 @@ export default function ScriptureShelf({ texts, title, subtitle, basePath, brand
 
       {disclaimer && <div className="shelf-disclaimer" role="note">⚠ {disclaimer}</div>}
 
+      <ShelfResume recent={recent} />
+
       {corpus && <SchoolEntry corpus={corpus} />}
+
+      {expanded && corpus && <ShelfDoors corpus={corpus} texts={texts} basePath={basePath} compact />}
 
       {expanded ? (
         <div className="shelf-outlines">
           {texts.map((t) => (
             <div key={t.slug} className="shelf-outline">
-              <BookOutline corpus={corpus} slug={t.slug} basePath={basePath} named />
+              <BookOutline corpus={corpus} slug={t.slug} basePath={basePath} named hideResume={recent[0]?.book.slug === t.slug} />
             </div>
           ))}
         </div>
