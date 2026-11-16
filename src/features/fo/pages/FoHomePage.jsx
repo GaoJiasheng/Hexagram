@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom'
 import ScriptureShelf from '../../reader/ScriptureShelf.jsx'
 import texts from '../../../data/fo/texts.json'
+import { homePlan } from '../../reader/ShelfHome.jsx'
 import './FoHomePage.css'
 
 // 释典书架。立意取「佛教与中国思想」,研习不宣化。
 // 书架之下一行接「名相索引」(design-v24 §4):按名相横切十部经,顶部有十二因缘、八正道两件可点的环。
+// 新版组首页(reading-home.json 有 fo 条目)把名相索引、传灯图收进了「这一家的门道」一行,下面这两条就不再重复。
 export default function FoHomePage() {
   return (
     <>
@@ -12,11 +14,11 @@ export default function FoHomePage() {
         corpus="fo"
         texts={texts}
         title="释典研读"
-        subtitle="心经、金刚经、坛经、四十二章经——原文、白话译注、每章延伸俱全。研习不宣化。"
+        subtitle="心经、金刚经、坛经、维摩诘经等十部——原文、白话译注、每章延伸俱全。研习不宣化。"
         basePath="/fo"
         brand="观空"
       />
-      <div className="dao-home fo-home-extra">
+      {!homePlan('fo') && <div className="dao-home fo-home-extra">
         <Link to="/fo/concepts" className="daodu-entry fo-home-extra__entry">
           <span className="daodu-entry__tag">名相索引</span>
           <span className="daodu-entry__text">
@@ -33,7 +35,7 @@ export default function FoHomePage() {
           </span>
           <span className="daodu-entry__go" aria-hidden="true">›</span>
         </Link>
-      </div>
+      </div>}
     </>
   )
 }

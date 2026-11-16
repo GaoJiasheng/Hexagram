@@ -36,14 +36,23 @@
 .shelf-mini__title { font-family: var(--font-serif); font-size: 1.04rem; }
 .shelf-mini__brief { font-size: 0.78rem; line-height: 1.6; color: var(--ink-soft); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .shelf-mini__caveat { padding: 0 5px; border: 1px solid var(--line); border-radius: 3px; }
+.shelf-mini__dubious { color: var(--cinnabar); font-weight: 600; }
 .shelf-more { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
 
 /* 分路:三列,每列一个题签 + 一摞小卡 */
-.shelf-branches { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.shelf-branches { display: grid; grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr)); gap: 20px; }
 .shelf-branch { min-width: 0; padding-top: 10px; border-top: 2px solid color-mix(in srgb, var(--cinnabar) 45%, var(--line)); }
 .shelf-branch__title { margin: 0; font-family: var(--font-serif); font-size: 1rem; font-weight: 500; color: var(--ink); }
 .shelf-branch__note { margin: 4px 0 10px; min-height: 2.6em; font-size: 0.78rem; line-height: 1.65; color: var(--ink-soft); }
 .shelf-branch__books { display: flex; flex-direction: column; gap: 10px; }
+
+/* 分区(谋略:不排次序,真书 / 托名伪书各一区) */
+.shelf-basis--top { margin: -2px 0 6px; }
+.shelf-zone { margin-top: 16px; padding-top: 10px; border-top: 2px solid color-mix(in srgb, var(--cinnabar) 45%, var(--line)); }
+.shelf-zone--dubious { border-top-style: dashed; }
+.shelf-zone__title { margin: 0; font-family: var(--font-serif); font-size: 1rem; font-weight: 500; color: var(--ink); }
+.shelf-zone__note { margin: 4px 0 12px; font-size: 0.8rem; line-height: 1.7; color: var(--ink-soft); }
+.shelf-zone--dubious .shelf-mini { border-style: dashed; }
 
 .shelf-doors { margin: 0; }
 

@@ -1,11 +1,27 @@
 {
-  "_readme": "读经站组首页的「从哪里读起」(docs/reading-home-proposal.md,2026-11-15 先做儒、道两组样板)。有这一组的条目,组首页就从平铺书架换成 ShelfHome(接着读 / 从哪里读起 / 再往外读 / 这一家的门道);没有的组照旧。main = 主线(画箭头);branches = 主线之后分出的几路;more = 再往外读。why ≤ 14 字;带 cite 的 why 与 basis.quote 必须是该组书级导读的精确子串(闸 check-reading-home 回查),不带 cite 的是本站的话,页面上标「本站建议」。一本书只出现一次,全组的书都要排到。",
+  "_readme": "读经站组首页的「从哪里读起」(docs/reading-home-proposal.md;2026-11-15 儒、道两组先上,11-16 推到佛 / 兵 / 法 / 中医 / 谋略)。有这一组的条目,组首页就从平铺书架换成 ShelfHome(接着读 / 从哪里读起 / 再往外读 / 这一家的门道);没有的组照旧。main = 主线(画箭头);branches = 主线之外的几路(branchesTitle 是那一段的标题);more = 再往外读;zones = 不排次序、只分区(谋略:真书 / 托名伪书,伪书区标 dubious:true,闸核两类不混排),有 zones 可以没有 main。why ≤ 14 字;带 cite 的 why 与 basis.quote 必须是该组书级导读的精确子串(闸 check-reading-home 回查),不带 cite 的是本站的话,basis.label 须标「本站建议」;basis.note(≤ 90 字)是本站对这个排法的一句交代,替掉页面上的默认说明。一本书只出现一次,全组的书都要排到。",
   "ru": {
     "main": [
-      { "slug": "daxue", "why": "定其规模", "cite": "zhongyong" },
-      { "slug": "lunyu", "why": "立其根本", "cite": "zhongyong" },
-      { "slug": "mengzi", "why": "观其发越", "cite": "zhongyong" },
-      { "slug": "zhongyong", "why": "求古人之微妙处", "cite": "zhongyong" }
+      {
+        "slug": "daxue",
+        "why": "定其规模",
+        "cite": "zhongyong"
+      },
+      {
+        "slug": "lunyu",
+        "why": "立其根本",
+        "cite": "zhongyong"
+      },
+      {
+        "slug": "mengzi",
+        "why": "观其发越",
+        "cite": "zhongyong"
+      },
+      {
+        "slug": "zhongyong",
+        "why": "求古人之微妙处",
+        "cite": "zhongyong"
+      }
     ],
     "basis": {
       "label": "朱熹定的读四书次第",
@@ -14,23 +30,235 @@
     },
     "more": {
       "note": "四书之外：先秦另一路儒者、家训、理学入门与五经之一。",
-      "slugs": ["xunzi", "xiaojing", "jinsilu", "yanshi", "shijing"]
+      "slugs": [
+        "xunzi",
+        "xiaojing",
+        "jinsilu",
+        "yanshi",
+        "shijing"
+      ]
     }
   },
   "dao": {
     "main": [
-      { "slug": "daodejing", "why": "先读源头" },
-      { "slug": "zhuangzi-neipian", "why": "再读庄子七篇" }
+      {
+        "slug": "daodejing",
+        "why": "先读源头"
+      },
+      {
+        "slug": "zhuangzi-neipian",
+        "why": "再读庄子七篇"
+      }
     ],
-    "basis": { "label": "本站建议" },
+    "basis": {
+      "label": "本站建议"
+    },
     "branches": [
-      { "title": "哲思一路", "note": "接着老庄往下读的子书。", "slugs": ["zhuangzi-waipian", "zhuangzi-zapian", "liezi", "wenzi"] },
-      { "title": "丹道一路", "note": "借卦象与隐语讲炼养；本站只读取象，不演工法。", "slugs": ["cantongqi", "wuzhenpian", "huangting"] },
-      { "title": "修心劝善一路", "note": "唐宋以来的修心短论与劝善书。", "slugs": ["qingjingjing", "zuowanglun", "tianyinzi", "dingguanjing", "ganyingpian"] }
+      {
+        "title": "哲思一路",
+        "note": "接着老庄往下读的子书。",
+        "slugs": [
+          "zhuangzi-waipian",
+          "zhuangzi-zapian",
+          "liezi",
+          "wenzi"
+        ]
+      },
+      {
+        "title": "丹道一路",
+        "note": "借卦象与隐语讲炼养；本站只读取象，不演工法。",
+        "slugs": [
+          "cantongqi",
+          "wuzhenpian",
+          "huangting"
+        ]
+      },
+      {
+        "title": "修心劝善一路",
+        "note": "唐宋以来的修心短论与劝善书。",
+        "slugs": [
+          "qingjingjing",
+          "zuowanglun",
+          "tianyinzi",
+          "dingguanjing",
+          "ganyingpian"
+        ]
+      }
     ],
     "more": {
       "note": "三百余言，兵家、道家、丹家各取其义。",
-      "slugs": ["yinfujing"]
+      "slugs": [
+        "yinfujing"
+      ]
+    },
+    "branchesTitle": "读完这两部，分三路"
+  },
+  "fo": {
+    "main": [
+      {
+        "slug": "xinjing",
+        "why": "最短，先见般若"
+      },
+      {
+        "slug": "jingangjing",
+        "why": "般若展开来讲"
+      },
+      {
+        "slug": "tanjing",
+        "why": "禅宗立宗之书"
+      },
+      {
+        "slug": "weimojie",
+        "why": "居士说法，谈不二"
+      }
+    ],
+    "basis": {
+      "label": "本站建议",
+      "note": "由短到长、由般若到禅，是照篇幅和文本之间的关系排的，不是修学次第；本站只作文本研习。"
+    },
+    "branchesTitle": "主线之外，三组短篇",
+    "branches": [
+      {
+        "title": "教诫短经三部",
+        "note": "篇幅都短，讲持戒、少欲与精进，旧时合称「佛遗教三经」。",
+        "slugs": [
+          "sishierzhang",
+          "yijiaojing",
+          "badaren"
+        ]
+      },
+      {
+        "title": "禅门两篇韵文",
+        "note": "可以接着《坛经》读：一篇四言铭，一篇长歌。",
+        "slugs": [
+          "xinxinming",
+          "zhengdaoge"
+        ]
+      },
+      {
+        "title": "净土一部",
+        "note": "净土三经之一；本站只读文本，不作劝信。",
+        "slugs": [
+          "amituojing"
+        ]
+      }
+    ]
+  },
+  "bing": {
+    "main": [
+      {
+        "slug": "sunzi",
+        "why": "现存最早的兵书"
+      },
+      {
+        "slug": "wuzi",
+        "why": "与孙子并称「孙吴」"
+      },
+      {
+        "slug": "weigongwendui",
+        "why": "回头评议诸家兵说"
+      }
+    ],
+    "basis": {
+      "label": "本站建议",
+      "note": "先读孙、吴两部，再读《问对》看后人怎么评议它们；这是本站的排法，不是武经七书的原次第。"
+    },
+    "more": {
+      "note": "武经七书的其余四部；《三略》《六韬》是托名之作，成书年代存疑。",
+      "slugs": [
+        "simafa",
+        "weiliaozi",
+        "sanlue",
+        "liutao"
+      ]
     }
+  },
+  "fa": {
+    "main": [
+      {
+        "slug": "hanfeizi",
+        "why": "法术势合成一套"
+      },
+      {
+        "slug": "shangjunshu",
+        "why": "回头看「法」这一支"
+      },
+      {
+        "slug": "shenzi",
+        "why": "回头看「势」这一支"
+      }
+    ],
+    "basis": {
+      "label": "本站建议",
+      "note": "韩非把法、术、势合成一套，所以先读他看全貌，再回头读「法」「势」各自的来处；这是倒着读的次序，不是成书先后。"
+    },
+    "more": {
+      "note": "辨形名、核名实的一部小书，介于道、名、法之间。",
+      "slugs": [
+        "yinwenzi"
+      ]
+    }
+  },
+  "zhongyi": {
+    "main": [
+      {
+        "slug": "suwen",
+        "why": "黄帝与岐伯的问答"
+      },
+      {
+        "slug": "lingshu",
+        "why": "《内经》的另一半"
+      },
+      {
+        "slug": "shanghanlun",
+        "why": "由问答转到条文"
+      },
+      {
+        "slug": "jinkui",
+        "why": "与《伤寒论》原为一书"
+      }
+    ],
+    "basis": {
+      "label": "本站建议",
+      "note": "先医经、后方书，是按书的体裁和成书先后排的，不是学医的次第；本站只作文献研习。"
+    },
+    "more": {
+      "note": "一部药名目录，一部设问解经的短书。",
+      "slugs": [
+        "bencaojing",
+        "nanjing"
+      ]
+    }
+  },
+  "moulue": {
+    "zonesTitle": "两类书，分开读",
+    "basis": {
+      "label": "不排次序",
+      "note": "这一组是杂纂，书与书之间没有先后；只把来历可考的和托名的分开摆。"
+    },
+    "zones": [
+      {
+        "title": "来历可考的四部",
+        "note": "一部唐人论权变的《长短经》，三部明清的处世清言；取思想史与处世研习的视角读。",
+        "slugs": [
+          "changduanjing",
+          "caigentan",
+          "weiluyehua",
+          "xiaochuangyouji"
+        ]
+      },
+      {
+        "title": "托名伪书五部",
+        "dubious": true,
+        "note": "《天下无谋》一系，学界多判为后世托名或现代伪作；当作伪书的标本批判着读，不作权术教程。",
+        "slugs": [
+          "luozhijing",
+          "rongkujian",
+          "quanmou",
+          "taohuishu",
+          "zhixue"
+        ]
+      }
+    ]
   }
 }

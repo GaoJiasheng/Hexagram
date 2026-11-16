@@ -6,6 +6,10 @@ import zongTexts from '../../data/zong/texts.json'
 import xinTexts from '../../data/xin/texts.json'
 import ruTexts from '../../data/ru/texts.json'
 import foTexts from '../../data/fo/texts.json'
+import bingTexts from '../../data/bing/texts.json'
+import faTexts from '../../data/fa/texts.json'
+import zhongyiTexts from '../../data/zhongyi/texts.json'
+import moulueTexts from '../../data/moulue/texts.json'
 import { homePlan } from './ShelfHome.jsx'
 
 const shelf = (corpus, texts, extra = {}) => renderToStaticMarkup(
@@ -30,12 +34,35 @@ describe('书架首页:书少的组直接展开目录', () => {
     expect(html).toContain('读全文')
     expect(html.match(/book-home__toc/g)).toHaveLength(1)   // 只有传习录有目录段
   })
-  it('书多、没排路径的组(佛)仍是书架卡;expand 可强制', () => {
+  it('没排路径时仍是书架卡;expand 可强制', () => {
     expect(foTexts.length).toBeGreaterThan(EXPAND_MAX_BOOKS)
-    expect(homePlan('fo')).toBe(null)
-    expect(shelf('fo', foTexts)).toContain('class="dao-book"')
     expect(shelf('fo', foTexts, { expand: true })).not.toContain('class="dao-book"')
     expect(shelf('zong', zongTexts, { expand: false })).toContain('class="dao-book"')
+    expect(shelf(undefined, foTexts)).toContain('class="dao-book"')   // 不传 corpus = 老用法,平铺书架
+  })
+  it('佛 / 兵 / 法 / 中医都排了主线:全组的书都在,次序标「本站建议」', () => {
+    for (const [corpus, texts] of [['fo', foTexts], ['bing', bingTexts], ['fa', faTexts], ['zhongyi', zhongyiTexts]]) {
+      const plan = homePlan(corpus)
+      const html = shelf(corpus, texts)
+      expect(html).not.toContain('class="dao-book"')
+      expect(html.match(/class="shelf-step"/g)).toHaveLength(plan.main.length)
+      for (const t of texts) expect(html).toContain(`href="/${corpus}/${t.slug}"`)
+      expect(html).toContain('本站建议')
+      expect(html).toContain(plan.basis.note)
+    }
+  })
+  it('谋略不排次序:没有主线,真书与托名伪书分两区,伪书卡带「托名」', () => {
+    const html = shelf('moulue', moulueTexts)
+    expect(html).not.toContain('class="shelf-step"')
+    expect(html.match(/class="shelf-zone /g)).toHaveLength(2)
+    expect(html.match(/shelf-zone--dubious/g)).toHaveLength(1)
+    const [real, fake] = html.split('shelf-zone--dubious')
+    for (const t of moulueTexts) {
+      expect(html).toContain(`href="/moulue/${t.slug}"`)
+      expect((t.dubious ? fake : real)).toContain(`href="/moulue/${t.slug}"`)
+    }
+    expect(fake.match(/shelf-mini__dubious/g)).toHaveLength(moulueTexts.filter((t) => t.dubious).length)
+    expect(real).not.toContain('shelf-mini__dubious')
   })
   it('排了「从哪里读起」的组(儒)走新版首页:主线四步、全组的书都在、依据引导读原文', () => {
     const html = shelf('ru', ruTexts)

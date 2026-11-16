@@ -9,7 +9,7 @@ export default function ZhongyiHomePage() {
       corpus="zhongyi"
       texts={texts}
       title="中医典籍"
-      subtitle="黄帝内经、伤寒论、神农本草经——医经与经方之祖，以医学史与文献视角研读。"
+      subtitle="黄帝内经、伤寒论、金匮要略、神农本草经、难经——以医学史与文献视角研读。"
       disclaimer="古籍研习，非医疗建议;脉法方药不作诊疗依据，身体不适请就医。"
       basePath="/zhongyi"
       brand="观和"

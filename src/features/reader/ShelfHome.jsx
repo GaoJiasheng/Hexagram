@@ -8,11 +8,12 @@ import { agoLabel, recentBooks } from '../../shell/recent.js'
 import PLANS from '../../data/reading-home.json'
 import './ShelfHome.css'
 
-// 读经站组首页的新版(docs/reading-home-proposal.md;2026-11-15 先做儒、道两组样板):
+// 读经站组首页的新版(docs/reading-home-proposal.md;2026-11-15 儒、道两组先上,11-16 推到佛 / 兵 / 法 / 中医 / 谋略):
 // 平铺书架回答不了「从哪本读起」,本组的交互件与索引又散在各处。这里自上而下四段——
 //   接着读(本组最近读的书,落到段)· 从哪里读起(主线带箭头,道藏主线后分三路)· 再往外读 · 这一家的门道。
 // 路径数据在 src/data/reading-home.json(闸 check-reading-home:理由凡标出处的必须是站内导读原文);
 // 那里没有条目的组不走这里,仍是 ScriptureShelf 的平铺书架。不做随机 / 每日 / 热门——那是替读者挑。
+// 谋略组不排次序(杂纂,书与书之间没有先后):数据里没有 main,只有 zones——真书一区、托名伪书一区,伪书卡带「⚠ 托名」。
 export const homePlan = (corpus) => PLANS[corpus] || null
 
 const unit = (t) => t.sectionUnit || '章'
@@ -44,7 +45,8 @@ function MiniCard({ t, basePath, progress }) {
       <span className="shelf-mini__meta">
         <span>{t.era}</span>
         {tier && <span className={`book-tier book-tier--${tier.cls}`}>{tier.label}</span>}
-        {t.caveat && <span className="shelf-mini__caveat">存疑</span>}
+        {t.dubious && <span className="shelf-mini__dubious">⚠ 托名</span>}
+        {t.caveat && !t.dubious && <span className="shelf-mini__caveat">存疑</span>}
         {done > 0 && t.sections > 1 && <span className="shelf-step__done">读至第 {done} {unit(t)}</span>}
       </span>
     </Link>
@@ -69,7 +71,7 @@ export default function ShelfHome({ corpus, texts, title, subtitle, basePath, di
         setCounts({
           mingju: list.filter((m) => m.corpus === corpus).length,
           renwu: ((rw.default || rw).people || []).filter((p) => p.group === corpus).length,
-          timeline: ((tl.default || tl).items || []).filter((x) => x.corpus === corpus).length,
+          timeline: ((tl.default || tl).items || []).filter((x) => x.corpus === corpus && x.c !== 'pseudo').length,   // 托名伪作不上轴,不计
         })
       }).catch(() => {})
     return () => { alive = false }
@@ -112,30 +114,32 @@ export default function ShelfHome({ corpus, texts, title, subtitle, basePath, di
 
       <SchoolEntry corpus={corpus} />
 
-      <section className="shelf-sec" aria-label="从哪里读起">
-        <h2 className="shelf-sec__title">从哪里读起</h2>
-        <div className="shelf-path" style={{ '--n': plan.main.length }}>
-          {plan.main.map((s, i) => {
-            const t = by(s.slug)
-            return t ? <StepCard key={s.slug} t={t} basePath={basePath} no={i + 1} why={s.why} cited={!!s.cite} progress={progress} /> : null
-          })}
-        </div>
-        <p className="shelf-basis">
-          <span className="shelf-basis__label">{plan.basis.label}</span>
-          {plan.basis.quote && (
-            <>
-              {plan.basis.quote}
-              <Link to={`${basePath}/${plan.basis.cite}/daodu`} className="shelf-basis__src">见《{by(plan.basis.cite)?.title}》导读 →</Link>
-            </>
-          )}
-          {!plan.basis.quote && '这个次序是本站排的，不是古人成说；想先读哪本，直接点进去就是。'}
-        </p>
-      </section>
+      {plan.main?.length > 0 && (
+        <section className="shelf-sec" aria-label="从哪里读起">
+          <h2 className="shelf-sec__title">从哪里读起</h2>
+          <div className="shelf-path" style={{ '--n': plan.main.length }}>
+            {plan.main.map((s, i) => {
+              const t = by(s.slug)
+              return t ? <StepCard key={s.slug} t={t} basePath={basePath} no={i + 1} why={s.why} cited={!!s.cite} progress={progress} /> : null
+            })}
+          </div>
+          <p className="shelf-basis">
+            <span className="shelf-basis__label">{plan.basis.label}</span>
+            {plan.basis.quote && (
+              <>
+                {plan.basis.quote}
+                <Link to={`${basePath}/${plan.basis.cite}/daodu`} className="shelf-basis__src">见《{by(plan.basis.cite)?.title}》导读 →</Link>
+              </>
+            )}
+            {!plan.basis.quote && (plan.basis.note || '这个次序是本站排的，不是古人成说；想先读哪本，直接点进去就是。')}
+          </p>
+        </section>
+      )}
 
       {plan.branches?.length > 0 && (
         <section className="shelf-sec" aria-label="主线之后">
-          <h2 className="shelf-sec__title">读完这两部，分三路</h2>
-          <div className="shelf-branches">
+          <h2 className="shelf-sec__title">{plan.branchesTitle || '主线之外'}</h2>
+          <div className="shelf-branches" style={{ '--n': plan.branches.length }}>
             {plan.branches.map((b) => (
               <div key={b.title} className="shelf-branch">
                 <h3 className="shelf-branch__title">{b.title}</h3>
@@ -149,6 +153,22 @@ export default function ShelfHome({ corpus, texts, title, subtitle, basePath, di
         </section>
       )}
 
+      {plan.zones?.length > 0 && (
+        <section className="shelf-sec" aria-label="分区">
+          <h2 className="shelf-sec__title">{plan.zonesTitle || '分开读'}</h2>
+          {plan.basis?.note && <p className="shelf-basis shelf-basis--top"><span className="shelf-basis__label">{plan.basis.label}</span>{plan.basis.note}</p>}
+          {plan.zones.map((z) => (
+            <div key={z.title} className={`shelf-zone ${z.dubious ? 'shelf-zone--dubious' : ''}`}>
+              <h3 className="shelf-zone__title">{z.title}</h3>
+              {z.note && <p className="shelf-zone__note">{z.note}</p>}
+              <div className="shelf-more">
+                {z.slugs.map((slug) => { const t = by(slug); return t ? <MiniCard key={slug} t={t} basePath={basePath} progress={progress} /> : null })}
+              </div>
+            </div>
+          ))}
+        </section>
+      )}
+
       {plan.more?.slugs?.length > 0 && (
         <section className="shelf-sec" aria-label="再往外读">
           <h2 className="shelf-sec__title">再往外读</h2>
@@ -159,6 +179,7 @@ export default function ShelfHome({ corpus, texts, title, subtitle, basePath, di
         </section>
       )}
 
+      {(doors.length > 0 || !counts || counts.mingju + counts.renwu + counts.timeline > 0) && (
       <section className="shelf-sec" aria-label="这一家的门道">
         <h2 className="shelf-sec__title">这一家的门道</h2>
         <nav className="book-shapes shelf-doors">
@@ -173,6 +194,7 @@ export default function ShelfHome({ corpus, texts, title, subtitle, basePath, di
           {counts?.timeline > 0 && <Link to={`/timeline?g=${corpus}`} className="book-shapes__item"><span className="book-shapes__tag">时间轴</span><span className="book-shapes__label">{counts.timeline} 部</span></Link>}
         </nav>
       </section>
+      )}
     </div>
   )
 }
