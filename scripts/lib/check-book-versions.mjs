@@ -3,6 +3,7 @@
 //   每个节点的 cite.quote 必须是站内书级导读的精确子串——条上只写导读里讲过的事,导读没讲的不上条。
 //   导读按 cite.daodu(可选,逐条覆盖)或数据顶层 source.daodu 取,组用书所在的组;导读若是 { aliasOf } 壳则跟过去。
 //   导读全文 = 所有 block 的 text / original / translation 字段拼接。
+//   比对前去掉导读里的 `**` 加粗记号(2026-11-16):引文本身不许带 `**`。
 //   同一份数据被几本书共用(庄子内 / 外 / 杂三篇共挂 zhuangzi-versions)只核一次。
 import fs from 'node:fs'
 import path from 'node:path'
@@ -28,7 +29,8 @@ export default function check({ ROOT, err, warn, info, readJson }) {
       whole = (d.blocks || [])
         .flatMap((b) => [b.text, b.original, b.translation])
         .filter((s) => typeof s === 'string' && s)
-        .join('\n') || null
+        .join('\n')
+        .replace(/\*\*/g, '') || null   // 加粗记号不算字:条上的引文是纯文本,「**朱熹**的《集注》」可以整句引成「朱熹的《集注》」
       break
     }
     wholeCache.set(key, whole)
@@ -82,6 +84,7 @@ export default function check({ ROOT, err, warn, info, readJson }) {
         for (const c of cites) {
           nCite++
           const q = c?.quote
+          if (typeof q === 'string' && q.includes('**')) { nBad++; err(`${at}: quote 不许带加粗记号「${q}」`); continue }
           if (typeof q !== 'string' || q.length < QUOTE_MIN || q.length > QUOTE_MAX) {
             nBad++
             err(`${at}: quote 长度须 ${QUOTE_MIN}–${QUOTE_MAX},实为 ${typeof q === 'string' ? q.length : '非字符串'}「${q}」`)
