@@ -100,6 +100,16 @@ function jsonLd(extra, title, desc, canonical, origin) {
   return JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c')
 }
 
+// 写进 #root 的那段 HTML:标题 + 面包屑(观象 › 组 › 书)+ 正文摘录 + 站内链接(extra.l,构建期算好:
+// 首页 → 各组与各书,组 → 各书,书 → 各章,章 → 上一章 / 下一章 / 白话)。链接在真页面上本来就有,只是要执行 JS 才出得来。
+function botBody(title, body, extra) {
+  const crumbs = [['/', '观象'], extra.g && [extra.g[1], extra.g[0]], extra.b && [extra.b[1], extra.b[0]]].filter(Boolean)
+  const a = ([href, label]) => `<a href="${esc(href)}">${esc(label)}</a>`
+  const nav = extra.t === 'home' ? '' : `<nav>${crumbs.map(a).join(' › ')}</nav>`
+  const links = extra.l?.length ? `<nav><ul>${extra.l.map((x) => `<li>${a(x)}</li>`).join('')}</ul></nav>` : ''
+  return `<article><h1>${esc(title)}</h1>${nav}${body ? `<p>${esc(body)}</p>` : ''}${links}</article>`
+}
+
 // 分片规则收敛在 server/og-index.js 一处(此前这里与构建脚本各抄一份,
 // 不一致的表现是**静默查不到**,没有任何报错)
 
@@ -129,8 +139,6 @@ export async function onRequest(context) {
     // 只处理页面路由:有扩展名的是静态资源,/api 是接口
     if (p.startsWith('/api/') || /\.[a-z0-9]+$/i.test(p)) return next()
 
-    if (p === '/') return next()   // 首页用 index.html 自带的站点级卡即可
-
     const key = normPath(p)
     const idx = await context.env.ASSETS.fetch(new URL(`/content/og/${ogShardKey(key)}.json`, url))
     if (!idx.ok) return next()
@@ -145,6 +153,11 @@ export async function onRequest(context) {
     const [title, desc, body, extra = {}] = hit
     const canonical = url.origin + key
     let html = await res.text()
+    // 首页:站点级的标题 / 分享卡用 index.html 自带的那一套,只补正文与站内链接(此前对 `/` 直接放行,爬虫拿到空壳)
+    if (extra.t === 'home') {
+      html = html.replace('<div id="root"></div>', `<div id="root">${botBody(title, body, extra)}</div>`)
+      return new Response(html, { status: res.status, headers: res.headers })
+    }
     // 覆盖站点级那几条(留着会与新注入的重复,抓取方取哪条不定)
     html = html
       .replace(/\s*<meta property="og:title"[^>]*>/g, '')
@@ -178,11 +191,9 @@ export async function onRequest(context) {
 
     // 正文摘录写进 #root:不执行 JS 的爬虫(百度)也能读到这一章讲什么。
     // React 挂载时会把 #root 清空重绘,而这条路径只有爬虫走得到,访客看不见。
-    if (body) {
-      html = html.replace(
-        '<div id="root"></div>',
-        `<div id="root"><article><h1>${esc(title)}</h1><p>${esc(body)}</p></article></div>`,
-      )
+    // 2026-11-17:另带面包屑与站内链接——此前这段 HTML 里一条 <a> 都没有,页与页之间没有链接关系可循。
+    if (body || extra.l?.length) {
+      html = html.replace('<div id="root"></div>', `<div id="root">${botBody(title, body, extra)}</div>`)
     }
 
     return new Response(html, { status: res.status, headers: res.headers })

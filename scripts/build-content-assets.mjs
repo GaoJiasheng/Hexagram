@@ -755,7 +755,7 @@ function indexConceptsAndDebates(records) {
 // Google 会渲染 JS,但**百度基本不渲染**——一个中文古籍站放弃百度不合算。
 // 故中间件把这段摘录直接写进 body,让「不执行 JS 也能读到正文」。
 // 长度取 `SEO_BODY_MAX`:够表达这一章讲什么,又不至于把分片撑爆(实测约 3–4 倍)。
-const SEO_BODY_MAX = 600
+const SEO_BODY_MAX = 1200   // 2026-11-17 由 600 加到 1200:收录粗查谷歌零条,正文给厚一点(每片约 80KB,仍远低于当初出事的 1.1MB)
 // 分片方式 2026-08-08 由「按路径首段」改为「**按整条路径哈希**」。
 // 原因:加了正文摘录后,按首段分的片涨到 1.1MB(ru/songci),
 // 而中间件每来一个爬虫就要 parse 一整片 —— 会撞 Worker 的 CPU 限额,
@@ -763,8 +763,10 @@ const SEO_BODY_MAX = 600
 // 哈希分成 256 片后每片约 25KB,取一条的代价与它的价值才匹配。
 // 分片规则来自 server/og-index.js(唯一一份,中间件与通知邮件都用它)
 function buildOgIndex(records) {
-  const shards = {}
-  let n = 0, nCard = 0
+  const entries = new Map()   // href → [标题, 摘要, 正文, extra]
+  const recOf = new Map()     // href → record(后面连链接用)
+  let nCard = 0
+  const dupHref = new Set()
   for (const r of records) {
     if (!r.href || !r.title) continue
     if (r.href.includes('#')) continue          // 段锚共用整页的卡,不单列
@@ -786,15 +788,136 @@ function buildOgIndex(records) {
       ...(seo.book ? { b: seo.book } : {}),
       ...(card && exists(path.join(ROOT, 'public', card)) ? { i: card } : {}),
     }
+    // 同一个地址有多条记录(义理专题各概念都落在 /concepts):先到的那条是这一页自己的,后面的只把正文续上。
+    // 此前是后到的覆盖先到的 —— /concepts 的标题因此成了最后一个概念的名字(「未发之中 · 义理专题」)。
+    const had = entries.get(href)
+    if (had) { dupHref.add(href); had[2] = compact(`${had[2]} ${r.text || ''}`).slice(0, SEO_BODY_MAX); continue }
     if (extra.i) nCard++
-    ;(shards[ogShardKey(href)] ??= {})[href] = [`${seo.title || r.title}${site}`, desc, body, extra]
-    n++
+    entries.set(href, [`${seo.title || r.title}${site}`, desc, body, extra])
+    recOf.set(href, r)
   }
+  if (dupHref.size) console.log(`og index: ${dupHref.size} 个地址有多条记录,正文已并入首条:${[...dupHref].slice(0, 8).join(' ')}`)
+
+  // `/hexagram` 现在只是跳回首页的旧地址(App.jsx <Navigate to="/">),不该有自己的卡,更不该被链到
+  entries.delete('/hexagram'); recOf.delete('/hexagram')
+
+  // ── 站内链接(2026-11-17)──────────────────────────────────────────
+  // 收录粗查:谷歌 site: 零条。爬虫拿到的 HTML 里此前**一条站内链接都没有**(正文只有一个 <p>),
+  // 首页更是空壳——五千多个内容页只能靠 sitemap 被发现,页与页之间没有任何链接关系可循。
+  // 这里给每页的 extra 加 l: [[href, 文字]…],中间件渲染成 <nav>:首页 → 各组 → 各书 → 各章,章页带上一章 / 下一章。
+  // 这些链接在真页面上本来就有(目录、翻章、书架),只是要执行 JS 才出得来。
+  const link = (href, label) => [href, label]
+  const addLinks = (href, links) => {
+    const e = entries.get(href)
+    const ok = links.filter((x) => x && x[0] !== href && (entries.has(x[0]) || x[0] === '/'))
+    if (e && ok.length) e[3].l = [...(e[3].l || []), ...ok]
+  }
+  const shortOf = (r) => { const t = String(r.title || ''); const i = t.indexOf(' · '); return i > 0 ? t.slice(i + 3) : t }
+
+  // 书 → 各章;章 → 上一章 / 下一章(+ 这一章的白话)
+  const bookHref = new Map()            // corpus/slug → 书页 href
+  const chaptersOf = new Map()          // corpus/slug → [章页 href…](按 records 次序 = 章序)
+  const hexagrams = []
+  for (const [href, r] of recOf) {
+    const seo = r.seo || {}
+    if (seo.type === 'book') bookHref.set(`${seo.corpus}/${seo.slug}`, href)
+    else if (seo.type === 'chapter') { const k = `${seo.corpus}/${seo.slug}`; if (!chaptersOf.has(k)) chaptersOf.set(k, []); chaptersOf.get(k).push(href) }
+    else if (seo.type === 'hexagram') hexagrams.push(href)
+  }
+  const seq = (list, hubHref, hubLabel) => list.forEach((href, i) => addLinks(href, [
+    i > 0 && link(list[i - 1], `上一篇：${shortOf(recOf.get(list[i - 1]))}`),
+    i < list.length - 1 && link(list[i + 1], `下一篇：${shortOf(recOf.get(list[i + 1]))}`),
+    hubHref && link(hubHref, hubLabel),
+  ]))
+  for (const [k, list] of chaptersOf) {
+    const bh = bookHref.get(k)
+    if (bh) addLinks(bh, list.map((h) => link(h, shortOf(recOf.get(h)))))
+    seq(list)
+  }
+  seq(hexagrams, '/hexagrams', '六十四卦总览')
+  addLinks('/hexagrams', hexagrams.map((h) => link(h, recOf.get(h).title)))
+
+  // 白话页 ↔ 所属的书与章
+  for (const href of entries.keys()) {
+    const m = href.match(/^(\/[a-z]+\/[a-z0-9-]+)\/baihua\/(\d+)(?:-\d+)?$/)
+    if (!m) continue
+    const bh = m[1]; const ch = `${m[1]}/${m[2]}`
+    addLinks(href, [entries.has(ch) && link(ch, `原文与译注：${recOf.get(ch).title}`), entries.has(bh) && link(bh, recOf.get(bh).title)])
+    // 章页 → 它的白话(细粒度「章-序」键的一首一篇也挂在所属那一章下)
+    addLinks(ch, [link(href, `白话深读：${shortOf(recOf.get(href)) || recOf.get(href).title}`)])
+  }
+
+  // 一类页的总览 → 各条(争鸣 / 易经经传)
+  const hub = (hubHref, re, back) => {
+    const kids = [...entries.keys()].filter((h) => re.test(h))
+    addLinks(hubHref, kids.map((h) => link(h, recOf.get(h).title)))
+    if (back) kids.forEach((h) => addLinks(h, [link(hubHref, back)]))
+  }
+  hub('/debates', /^\/debates\/[^/]+$/, '百家争鸣 · 全部辩题')
+  hub('/classics', /^\/classics\/[^/]+\/\d+$/, null)
+
+  // 组首页 → 本组各书;顺手把它的标题、摘要、正文换成有信息的(原先是导航栏的「经典」二字)
+  const booksOfSite = new Map()
+  for (const [k, href] of bookHref) { const c = k.split('/')[0]; if (!booksOfSite.has(c)) booksOfSite.set(c, []); booksOfSite.get(c).push(href) }
+  const visibleSites = SITES.filter((x) => !x.portalHidden)
+  for (const site of visibleSites) {
+    const e = entries.get(site.home)
+    if (!e) continue
+    const books = booksOfSite.get(site.key) || []
+    const names = books.map((h) => recOf.get(h).title)
+    if (books.length) {
+      const briefs = books.map((h) => { const r = recOf.get(h); return `${r.title}：${(r.seo?.desc || '').trim()}` }).join(' ')
+      e[0] = `${site.portalTitle} · 观象`
+      e[1] = (site.portalDesc || names.join(' · ')).slice(0, 70)
+      e[2] = compact(`${site.portalTitle}，收 ${books.length} 部：${names.join('、')}。每部都有原文、白话译文、字词注疏与每章延伸。${briefs}`).slice(0, SEO_BODY_MAX)
+      e[3].n = site.portalTitle
+    }
+    addLinks(site.home, books.map((h) => link(h, recOf.get(h).title)))
+  }
+  addLinks('/yijing', ['/hexagrams', '/classics', '/basics', '/shili', '/workbench'].filter((h) => entries.has(h)).map((h) => link(h, recOf.get(h).title)))
+
+  // 首页:原先中间件对 `/` 直接放行,爬虫拿到的是空壳。这里给它一条(t: 'home' → 中间件只写正文与链接,不动站点级 meta)
+  const allBooks = [...bookHref.values()]
+  const hubs = ['/timeline', '/renwu', '/mingju', '/concepts', '/debates', '/hexagrams', '/classics', '/about'].filter((h) => entries.has(h))
+  entries.set('/', [
+    '观象 · 古籍研读站', '',
+    compact(`观象是一个古籍研读站。${allBooks.length + 1} 部典籍，每部都有原文、白话译文、字词注疏、每章延伸与白话深读，分 ${visibleSites.length} 个分站：`
+      + visibleSites.map((x) => `${x.portalTitle}（${(booksOfSite.get(x.key) || []).map((h) => recOf.get(h).title).join('、') || x.portalDesc}）`).join('；') + '。'),
+    { t: 'home', n: '观象', l: [
+      ...visibleSites.filter((x) => entries.has(x.home)).map((x) => link(x.home, x.portalTitle)),
+      ...allBooks.map((h) => link(h, recOf.get(h).title)),
+      ...hubs.map((h) => link(h, recOf.get(h).title)),
+    ] },
+  ])
+
+  // 兜底:还没有任何页链到它的(书级导读、家级导读、各书的交互件、筮例、学堂各篇、卦的白话……),
+  // 挂到路径上最近的那个上级页,并让它链回去。跑完这一步,索引里每一页都至少有一条入链。
+  const inbound = () => {
+    const set = new Set(['/'])
+    for (const e of entries.values()) { for (const [h] of e[3].l || []) set.add(h); if (e[3].g) set.add(e[3].g[1]); if (e[3].b) set.add(e[3].b[1]) }
+    return set
+  }
+  const linked = inbound()
+  let nOrphan = 0
+  for (const href of [...entries.keys()]) {
+    if (linked.has(href)) continue
+    let up = href
+    do { up = up.slice(0, up.lastIndexOf('/')) || '/' } while (up !== '/' && !entries.has(up))
+    addLinks(up, [link(href, recOf.get(href).title)])
+    if (up !== '/') addLinks(href, [link(up, recOf.get(up)?.title || entries.get(up)[3].n)])
+    nOrphan++
+  }
+  const still = [...entries.keys()].filter((h) => !inbound().has(h))
+  if (still.length) throw new Error(`og 索引:仍有 ${still.length} 页没有任何入链,如 ${still.slice(0, 5).join(' ')}`)
+
+  const shards = {}
+  let nLinks = 0
+  for (const [href, e] of entries) { (shards[ogShardKey(href)] ??= {})[href] = e; nLinks += e[3].l?.length || 0 }
   cleanOutDir(path.join(OUT_ROOT, 'og'))
   for (const [k, map] of Object.entries(shards)) {
     writeJson(path.join(OUT_ROOT, 'og', `${k}.json`), map)
   }
-  console.log(`og index: ${n} 条 / ${Object.keys(shards).length} 片 · 带分享卡 ${nCard} 条`)
+  console.log(`og index: ${entries.size} 条 / ${Object.keys(shards).length} 片 · 带分享卡 ${nCard} 条 · 站内链接 ${nLinks} 条(兜底挂上级 ${nOrphan} 页;每页都有入链)`)
 }
 
 // ── sitemap.xml + robots.txt ────────────────────────────────────────────────

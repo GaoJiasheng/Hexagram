@@ -102,6 +102,39 @@ describe('边缘中间件', () => {
     expect(html).toContain('学而时习之')
   })
 
+  // 2026-11-17:收录粗查谷歌零条——此前写进 #root 的只有一个 <p>,一条站内链接都没有,首页更是空壳
+  it('站内链接:章页有面包屑与上一章 / 下一章 / 白话,书页列出各章,组首页列出各书', async () => {
+    const links = (html) => [...html.matchAll(/<a href="([^"]+)">/g)].map((m) => m[1])
+    const ch = links(await (await run('/dao/daodejing/2')).text())
+    for (const h of ['/', '/dao', '/dao/daodejing', '/dao/daodejing/1', '/dao/daodejing/3', '/dao/daodejing/baihua/2']) expect(ch).toContain(h)
+    const book = links(await (await run('/dao/daodejing')).text())
+    expect(book.filter((h) => /^\/dao\/daodejing\/\d+$/.test(h))).toHaveLength(81)
+    expect(book).toContain('/dao/daodejing/daodu')
+    const group = links(await (await run('/fo')).text())
+    for (const h of ['/fo/xinjing', '/fo/tanjing', '/fo/weimojie', '/fo/school']) expect(group).toContain(h)
+  })
+
+  it('首页不再是空壳:有正文、有到各组与各书的链接;站点级的标题与分享卡原样不动', async () => {
+    const html = await (await run('/')).text()
+    expect(html).not.toContain('<div id="root"></div>')
+    expect(html).toContain('古籍研读站')
+    for (const h of ['/dao', '/ru', '/dao/daodejing', '/ru/lunyu', '/timeline']) expect(html).toContain(`<a href="${h}">`)
+    expect(html).toContain('<title>观象 · 易经研习</title>')          // 外壳里的站点级标题没被改写
+    expect(html.match(/property="og:title"/g)).toHaveLength(1)
+    expect(html).not.toContain('<a href="/hexagram">')                 // 只是跳回首页的旧地址,不链
+  })
+
+  it('索引里每一页都至少被另一页链到(不靠 sitemap 也摸得到)', () => {
+    const all = {}
+    for (const f of fs.readdirSync(OG_DIR)) Object.assign(all, JSON.parse(fs.readFileSync(path.join(OG_DIR, f), 'utf8')))
+    const inbound = new Set(['/'])
+    for (const e of Object.values(all)) { for (const [h] of e[3].l || []) inbound.add(h); if (e[3].g) inbound.add(e[3].g[1]); if (e[3].b) inbound.add(e[3].b[1]) }
+    expect(Object.keys(all).filter((k) => !inbound.has(k))).toEqual([])
+    // 链出去的目标都在索引里(或是首页)
+    const dead = Object.values(all).flatMap((e) => (e[3].l || []).map(([h]) => h)).filter((h) => h !== '/' && !all[h])
+    expect(dead).toEqual([])
+  })
+
   it('带上 canonical,且指向去掉查询参数的规范路径', async () => {
     const html = await (await run('/songci/songci300/6?p=2')).text()
     expect(html).toContain('<link rel="canonical" href="https://hexa.gavin.pub/songci/songci300/6" />')
@@ -133,7 +166,6 @@ describe('边缘中间件', () => {
       ['/ru/lunyu/1', GOOGLEBOT, 'POST'],      // 非 GET
       ['/assets/index-abc.js', GOOGLEBOT, 'GET'],
       ['/api/me', GOOGLEBOT, 'GET'],
-      ['/', GOOGLEBOT, 'GET'],                 // 首页用自带的站点级卡
     ]) {
       expect(await (await run(p, ua, m)).text()).toBe(SHELL)
     }
