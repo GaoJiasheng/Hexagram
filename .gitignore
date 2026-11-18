@@ -53,6 +53,8 @@ scripts/.baihua-*-wf.js
 # 白话通宵编排尝试计数(run-state,可重生)
 scripts/.baihua-attempts.json
 .ios-ship.env
+.baidu.env
+.search-console.json
 .polish-*
 scripts/.polish-*
 
@@ -74,3 +76,9 @@ android/app/*.keystore
 # 观数白话代理复核的分片输入 / 输出与 workflow 脚本(scripts/mingli-review-prep.mjs 生成)
 scripts/.mingli-review/
 scripts/.mingli-*-wf*.js
+
+# 白话代理复核(各组通用,scripts/baihua-review-prep.mjs 生成)的分片输入 / 输出
+scripts/.baihua-review/
+
+# 每周流量周报(scripts/weekly-report.mjs)输出:流量与地区数据,公开仓库不入库
+reports/

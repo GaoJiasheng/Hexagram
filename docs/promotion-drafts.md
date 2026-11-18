@@ -187,11 +187,11 @@ https://hexa.gavin.pub
 
 按格式写好的条目：
 
-**1c7/chinese-independent-developer**（加在 README 最新日期下面）
+**1c7/chinese-independent-developer**（2026-11-18 核过其 CONTRIBUTING：现在**提 Issue** 即可，自动流程查链接后收录；介绍要「先定性，再加分」；App Store 链接须能在国区下载——本站 App 未上国区，**不放 App 链接**）
 
 ```
-#### 【站长署名，可用 GitHub 用户名】 - [GitHub](https://github.com/【用户名】)
-* :white_check_mark: [观象](https://hexa.gavin.pub)：免费读中国古籍，81 部书原文逐段配白话译文，难字点开有注释，章末有延伸和白话长文；另有时间轴、人物志、诸子对辩，无需登录、无广告
+#### 【署名】 - [Github](https://github.com/【用户名】)
+* :white_check_mark: [观象](https://hexa.gavin.pub)：中国古籍研读网站，81 部典籍原文逐段配白话译文，难字点开有注释，另有朝代时间轴、人物志与诸子对辩，免费免登录无广告
 ```
 
 **timqian/chinese-independent-blogs**(`blogs-original.csv` 一行，字段为 Introduction, Address, RSS feed, tags)
