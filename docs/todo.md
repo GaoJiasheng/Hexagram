@@ -36,7 +36,7 @@
 12. **O8** ICP 备案:先打一通电话,问清护照持有人怎么做人脸核验。
 
 **E · 在途(11-18 起)**
-- **B5 白话代理复核,推到其余 15 组 2276 章**:通用脚本 `scripts/baihua-review-prep.mjs` → `scripts/baihua-review-wf.js`(每章一个 opus 代理,只读输入 / 只写输出,另报站内译文疑误、不改译文)→ `scripts/baihua-review-apply.mjs`(结构 / 图块 / 引文子串 / check-baihua-draft 逐片校验,按原文件缩进与键序写回)。红线抽成 `scripts/lib/baihua-redlines.mjs`,生成与复核共用。分批按风险排:**b1 中医 / 谋略 / 佛 / 纵横 318 章 ✅ 11-18**(308 章 2012 处修正、0 拒收、站内译文疑误 415 条;36M token ≈ 周额度 11 个点)→ **b2 法 / 兵 / 墨 / 心 279 章 ✅ 11-18**(265 章 1534 处、0 拒收、译文疑误 225 条)→ b3 儒 425 章(11-18 在跑) → b4 道 / 易 → b5 古文 → b6 唐诗 / 宋词 / 元曲。每章约 11 万 token;每批起跑前看额度——本周额度够跑到 b5,b6 诗词曲 677 章留到 11-23 额度重置后。汇报 `docs/baihua-review-<批>-<日期>.md`,**改得对不对须 owner 抽看**。
+- **B5 白话代理复核,推到其余 15 组 2276 章**:通用脚本 `scripts/baihua-review-prep.mjs` → `scripts/baihua-review-wf.js`(每章一个 opus 代理,只读输入 / 只写输出,另报站内译文疑误、不改译文)→ `scripts/baihua-review-apply.mjs`(结构 / 图块 / 引文子串 / check-baihua-draft 逐片校验,按原文件缩进与键序写回)。红线抽成 `scripts/lib/baihua-redlines.mjs`,生成与复核共用。分批按风险排:**b1 中医 / 谋略 / 佛 / 纵横 318 章 ✅ 11-18**(308 章 2012 处修正、0 拒收、站内译文疑误 415 条;36M token ≈ 周额度 11 个点)→ **b2 法 / 兵 / 墨 / 心 279 章 ✅ 11-18**(265 章 1534 处、0 拒收、译文疑误 225 条)→ **b3 儒 425 章 ✅ 11-18**(389 章 1993 处、0 拒收、译文疑误 219 条) → b4 道 / 易 → b5 古文 → b6 唐诗 / 宋词 / 元曲。每章约 11 万 token;每批起跑前看额度——本周额度够跑到 b5,b6 诗词曲 677 章留到 11-23 额度重置后。汇报 `docs/baihua-review-<批>-<日期>.md`,**改得对不对须 owner 抽看**。
 - **B6 推广**:百度主动推送 `npm run baidu-push`(按层级先推首页 / 各组 / 各书,每天推到配额用完,没 token 时自动跳过)· 每周流量周报 `npm run weekly-report`(Search Console + 站内匿名研读 + 推送状态,出 `reports/`,已 gitignore),排成每周一 9:00 的定时任务「观象 · 每周流量周报」。首份周报:近 7 天读满 30 秒的真人读者 4 个;另有约 625 个美国来源的单次访问,像是会跑脚本的爬虫。
 - **B7 iOS 1.35.24**:✅ 11-18 build 65 已上 TestFlight(内部测试组)并送审,WAITING_FOR_REVIEW,过审自动上架(发版说明 `docs/release-notes/1.35.24.md`)。
 
