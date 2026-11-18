@@ -19,7 +19,7 @@ export const GROUP_NAME = {
   zong: '纵横家', zhongyi: '中医典籍', moulue: '谋略杂纂', tangshi: '唐诗', songci: '宋词', yuanqu: '元曲', guwen: '古文研读',
 }
 
-// 易经六十四卦的原文在 hexagrams.json(不在 classics/),按卦辞 → 彖 → 大象 → 六爻(各带小象)→ 用九用六 → 文言 排成段
+// 易经六十四卦的原文在 hexagrams.json(不在 classics/),按卦辞 → 彖 → 大象 → 六爻(各带小象)→ 用九用六 → 文言 → 序卦 → 杂卦 排成段
 export function hexagramParas(hex) {
   const out = []
   const push = (label, x) => { if (x?.original) out.push({ original: `${label ? label + '　' : ''}${x.original}`, translation: x.translation || '' }) }
@@ -27,6 +27,9 @@ export function hexagramParas(hex) {
   for (const l of hex.lines || []) { push(l.title, l); push('', l.xiaoxiang) }
   if (hex.extra?.use) { push(hex.extra.use.title, hex.extra.use); push('', hex.extra.use.xiaoxiang) }
   for (const w of hex.extra?.wenyan || []) push('文言', w)
+  // 序卦、杂卦里讲本卦的那一句(与 check-data 8c 白话引文池同一口径)
+  if (hex.xugua) out.push({ original: `序卦　${hex.xugua}`, translation: '' })
+  if (hex.zagua) out.push({ original: `杂卦　${hex.zagua}`, translation: '' })
   return out
 }
 
