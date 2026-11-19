@@ -26,10 +26,10 @@
 5. **App 外壳二、三档的真机手感**(转场、返回回原位、标签记位、触感、外接键盘),iPad / iPhone 上用 1.35.24 走一遍。
 
 **B · 要 owner 拍板**
-6. **复核留下的两堆**:代理存疑未改的 1741 条(页面里标黄)、站内译文疑误 1056 条(页面切到「站内译文疑误」)。处理与否、怎么处理(人工挑 / 再起一轮)——**再起一轮之前先报总 token 与周额度点数**。
-7. **App 跟不跟 1.35.25**。
-8. **GitHub 三处提交**:署名用什么、HelloGitHub 提不提;稿子在 `docs/promotion-drafts.md`(1c7 独立开发者列表 Issue / 阮一峰周刊自荐 Issue / HelloGitHub)。他回了我就提交。
-9. **两个导航站**(HeyBlog / Hacking Chinese)提不提:都要注册账号、对口程度一般,我建议不提。
+6. ~~复核留下的两堆(存疑 1741 / 译文疑误 1056)~~ → **owner 11-19:不做**。留在 `reports/baihua-review-2026-11.html`,日后人眼通校时顺手参考。
+7. ~~App 跟不跟 1.35.25~~ → **owner 11-19:跟进**。iOS 1.35.25 打包送审中(发版说明 `docs/release-notes/1.35.25.md`)。
+8. ~~GitHub 提交~~ → **owner 11-19:署名 Gao Jiasheng**。✅ 已提:[1c7/chinese-independent-developer#1883](https://github.com/1c7/chinese-independent-developer/issues/1883) · [ruanyf/weekly#13544](https://github.com/ruanyf/weekly/issues/13544)(去掉草稿里「纯前端静态站」「人工译注」两处不实说法,写明译注与白话主要由大模型生成、本人审校)。HelloGitHub owner 没答,未提。
+9. ~~两个导航站~~ → **owner 11-19:不提**。
 
 **C · 只有 owner 能做的外部事**
 10. **百度**:在百度搜索资源平台验证站点,推送 token 写进仓库根目录 `.baidu.env`(`BAIDU_PUSH_TOKEN=…`);之后每次发版 `npm run baidu-push` 自动推。
