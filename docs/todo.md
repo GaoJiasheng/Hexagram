@@ -27,7 +27,7 @@
 
 **B · 要 owner 拍板**
 6. ~~复核留下的两堆(存疑 1741 / 译文疑误 1056)~~ → **owner 11-19:不做**。留在 `reports/baihua-review-2026-11.html`,日后人眼通校时顺手参考。
-7. ~~App 跟不跟 1.35.25~~ → **owner 11-19:跟进**。iOS 1.35.25 打包送审中(发版说明 `docs/release-notes/1.35.25.md`)。
+7. ~~App 跟不跟 1.35.25~~ → **owner 11-19:跟进**。✅ 11-19 build 66 已上 TestFlight 并送审,WAITING_FOR_REVIEW,过审自动上架(发版说明 `docs/release-notes/1.35.25.md`)。
 8. ~~GitHub 提交~~ → **owner 11-19:署名 Gao Jiasheng**。✅ 已提:[1c7/chinese-independent-developer#1883](https://github.com/1c7/chinese-independent-developer/issues/1883) · [ruanyf/weekly#13544](https://github.com/ruanyf/weekly/issues/13544)(去掉草稿里「纯前端静态站」「人工译注」两处不实说法,写明译注与白话主要由大模型生成、本人审校)。HelloGitHub owner 没答,未提。
 9. ~~两个导航站~~ → **owner 11-19:不提**。
 
