@@ -49,7 +49,10 @@ const VERIFY = (dir, book, id) => `你是《${book}》详注的核查者。另�
 只用 Read / Edit(确需整段重排时才用 Write)与这条命令;不要读仓库里别的文件;不要委派。最后按 schema 交回:notes = 核后的总条数,changed = 你改动或删除的条数,note 里一句话说主要改了什么。`
 
 // 两种传参:{dir, book, ids}(一本书)或 {jobs: [{dir, book, id}]}(跨书,抽查时用)
-const jobs = args.jobs || args.ids.map((id) => ({ dir: args.dir, book: args.book, id }))
+// jobs 里的一项可以写成 {dir, book, n}:展开成 n 个单元 u001…
+const uid = (i) => 'u' + String(i + 1).padStart(3, '0')
+const jobs = (args.jobs || args.ids.map((id) => ({ dir: args.dir, book: args.book, id })))
+  .flatMap((j) => (j.n ? Array.from({ length: j.n }, (_, i) => ({ dir: j.dir, book: j.book, id: uid(i) })) : [j]))
 log(`详注:${jobs.length} 个单元(${[...new Set(jobs.map((j) => j.book))].join('、')})`)
 // args.verifyOnly:起草已由别处完成(如本机 Codex 写好了 out/<单元>.json),这里只跑核查
 const results = await pipeline(
