@@ -16,6 +16,10 @@ const SPEC = `每条注四个字段:
 **外部说法从严**:版本异文(帛书、竹简、别本)、某注家怎么讲、某事见于某书某篇——只写你十分确定的;拿不准就不点名、不加引号,改用「一说」「旧注多解作」这类转述,或干脆不写。绝不凭印象把他书的原话放进引号。
 文字用简体中文、全角标点,平实。`
 
+// 工作目录形如 <仓库>/scripts/.desk-notes/<corpus>--<slug>:从它推出仓库根与书的 id(自查命令要用)
+const rootOf = (dir) => dir.split('/scripts/.desk-notes/')[0]
+const bookIdOf = (dir) => dir.split('/').pop().replace('--', '/')
+
 const DRAFT = (dir, book, id) => `你在给古籍学习 App「观象 · 书桌」写《${book}》的详注。读者是成年的自学者:点一个带虚线的词,先看到一句话释义,下面再有一段展开。
 
 输入文件(用 Read 读,JSON):${dir}/in/${id}.json
@@ -25,8 +29,10 @@ const DRAFT = (dir, book, id) => `你在给古籍学习 App「观象 · 书桌�
 ${SPEC}
 
 把结果用 Write 写到 ${dir}/out/${id}.json,格式:{"<章号>": {"<段下标或部位键>": [ {"k":"…","d":"…","x":"…"}, … ]}}(章号、段下标 / 部位键都是字符串,照抄 item 的 ch 与 seg;只写有注的段)。
-写完后自查一遍:每条 k 是否确为该段 o 的子串、同段是否重叠、字数是否合规,有问题就改文件。
-只用 Read / Write;不要读仓库里别的文件;不要委派。最后按 schema 交回:notes = 你写的总条数,note 里一句话说有无拿不准处。`
+写完后用 Bash 跑自查(在 ${rootOf(dir)} 目录下):
+  node scripts/desk/notes-check.mjs ${bookIdOf(dir)} ${id}
+它按入库的同一套规则逐条核(k 是否原文子串、同段是否重叠 / 重复、d 与 x 的字数、文件是不是合法 JSON),并算密度:**每百字不到 12 条算未通过**,会告诉你还差几条、哪些段一条都没有。照它改 out 文件(用 Edit 局部改或补),再跑,直到最后一行是「通过」;最多四轮。补条目时仍守上面的口径,不要为凑数去注不值得注的虚字。
+除了上述两个文件与这条自查命令,不要读写别的文件,不要委派。最后按 schema 交回:notes = 你写的总条数,note 里一句话说自查是否通过、有无拿不准处。`
 
 const VERIFY = (dir, book, id) => `你是《${book}》详注的核查者。另一个代理已把详注写到了 ${dir}/out/${id}.json;原文与译文在 ${dir}/in/${id}.json(items 里每段的 o 是底本原文,seg 是段下标、周易六十四卦里是部位键如 judgment / l1 / x1 / w0;redline 是本书红线)。两个文件都用 Read 读。
 
@@ -39,7 +45,8 @@ const VERIFY = (dir, book, id) => `你是《${book}》详注的核查者。另�
 4. 红线:违反 redline 的措辞改掉。
 5. 字数:d ≤ 30 字,x 不超过 120 字。x 偏短(45 字以上)但说清楚了的**不必补长**——不要为了凑字数去改写。
 不要为改而改:写得对的一个字不动;不新增条目,除非某段明显该注却一条都没有。
-只用 Read / Edit(确需整段重排时才用 Write);不要读仓库里别的文件;不要委派。最后按 schema 交回:notes = 核后的总条数,changed = 你改动或删除的条数,note 里一句话说主要改了什么。`
+改完后用 Bash 跑一遍(在 ${rootOf(dir)} 目录下):node scripts/desk/notes-check.mjs ${bookIdOf(dir)} ${id} —— 文件必须仍是合法 JSON、没有「不合格」条目;若它只报密度不够而你并没有删条目,不必理会(密度是起草的事)。
+只用 Read / Edit(确需整段重排时才用 Write)与这条命令;不要读仓库里别的文件;不要委派。最后按 schema 交回:notes = 核后的总条数,changed = 你改动或删除的条数,note 里一句话说主要改了什么。`
 
 // 两种传参:{dir, book, ids}(一本书)或 {jobs: [{dir, book, id}]}(跨书,抽查时用)
 const jobs = args.jobs || args.ids.map((id) => ({ dir: args.dir, book: args.book, id }))

@@ -22,9 +22,10 @@ const PROMPT = (root, book, id) => `你在把古籍学习 App「观象 · 书桌
 要点:字一个不改、不补、不删;图注 caption 里的字不许抄进 fig;卦符号、纯箭头、角上的「观」「象」印章不收;拿不准版式用 rows 或 notes。
 除了上述两个文件与自查命令,不要读写别的文件,不要委派。最后按 schema 交回:total = 本单元图数,passed = 自查通过的张数,note 一句话(有没过的就列 key)。`
 
-// args: { root, books: [{ book, ids: [...] }] }
-const jobs = args.books.flatMap((b) => b.ids.map((id) => ({ book: b.book, id })))
-log(`图解转换:${jobs.length} 个单元(${args.books.map((b) => b.book + ' ' + b.ids.length).join('、')})`)
+// args: { root, books: [{ book, ids: [...] } 或 { book, n }(n 个单元:u001…)] }
+const idsOf = (b) => b.ids || Array.from({ length: b.n }, (_, i) => 'u' + String(i + 1).padStart(3, '0'))
+const jobs = args.books.flatMap((b) => idsOf(b).map((id) => ({ book: b.book, id })))
+log(`图解转换:${jobs.length} 个单元(${args.books.map((b) => b.book + ' ' + idsOf(b).length).join('、')})`)
 const results = await parallel(jobs.map((j) => () =>
   agent(PROMPT(args.root, j.book, j.id), { label: `图:${j.book} ${j.id}`, phase: 'Convert', schema: SCHEMA, model: args.model || 'sonnet' })
     .then((r) => ({ ...j, total: r?.total ?? 0, passed: r?.passed ?? 0, note: r?.note || '' }))))
