@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // 「观象 · 书桌」内容包构建(docs/desk-app-plan.md §4)。只读 src/data,产出 public/desk/v1/:
 //   manifest.json                  可订的书:书名、体裁模板、章数、字数、主题色、包文件名(带内容哈希)
-//   <id>.<hash>.json               一本书的核心包:各章原文 / 译文 / 注释 / 延伸(白话深读与插画另成包,M5)
+//   <id>.<hash>.json               一本书的核心包:各章原文 / 译文 / 注释 / 延伸
+//   <id>.baihua.<hash>.json        这本书的白话深读(格式见 docs/desk-baihua-spec.md;图解是结构化数据,不带 SVG)
 // 书桌 App 与网站、现有 App 的构建互不依赖,唯一的共同点是 src/data 这份内容。
 // 约定:
 //   · 书桌里的「一本书」可以由站内几个 slug 拼成(庄子 = 内 / 外 / 杂篇);每章带 src {corpus, slug, ch},
@@ -12,6 +13,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import crypto from 'node:crypto'
 import { fileURLToPath } from 'node:url'
+import { figKey, checkFig } from './desk/fig-gate.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const OUT = path.join(ROOT, 'public/desk/v1')
@@ -117,6 +119,78 @@ function buildBook(spec) {
   return finish(spec, meta0, chapters, parts, chars)
 }
 
+// ── 白话深读 ──────────────────────────────────────────────────────────
+// 按每章的 src 去站内白话(src/data/<corpus>/baihua/<slug>.json)里取,块归一成 docs/desk-baihua-spec.md §1 的十种。
+// 图解:scripts/authored/desk-figs/<id>.json 里有、且过闸的才带 fig;其余只带 cap。
+const baihuaCache = new Map()
+const baihuaOf = (corpus, slug) => {
+  const p = `src/data/${corpus}/baihua/${slug}.json`
+  if (!baihuaCache.has(p)) baihuaCache.set(p, exists(p) ? read(p) : null)
+  return baihuaCache.get(p)
+}
+function buildBaihua(spec, chapters) {
+  const figs = exists(`scripts/authored/desk-figs/${spec.id}.json`) ? read(`scripts/authored/desk-figs/${spec.id}.json`) : {}
+  const out = {}
+  let nFig = 0, nDone = 0
+  const strs = (v, where) => (Array.isArray(v) ? v : [v]).map((x) => (typeof x === 'string' ? x : x?.text)).filter((x) => {
+    if (typeof x !== 'string') { err(`${where}:items 里有非文字项`); return false }
+    return x.trim().length > 0
+  })
+  for (const c of chapters) {
+    const src = baihuaOf(c.src.corpus, c.src.slug)?.[String(c.src.ch)]
+    if (!src?.blocks?.length) continue
+    const where = `${spec.id} 白话第 ${c.no} 章`
+    const blocks = []
+    for (const b of src.blocks) {
+      const x = typeof b.text === 'string' ? b.text.trim() : ''
+      const tail = () => { if (b.items?.length) blocks.push({ t: 'list', ordered: false, items: strs(b.items, where) }) }
+      switch (b.type) {
+        case 'lead': case 'h2': case 'p': case 'pull':
+          if (x) blocks.push({ t: b.type, x })
+          if (b.type === 'p' && (b.original || b.translation)) blocks.push({ t: 'quote', ...(b.original ? { o: b.original } : {}), ...(b.translation ? { tr: b.translation } : {}) })
+          tail()
+          break
+        case 'quote': {
+          if (!b.original && !b.translation) break
+          blocks.push({ t: 'quote', ...(b.original ? { o: b.original } : {}), ...(b.translation ? { tr: b.translation } : {}) })
+          break
+        }
+        case 'callout': blocks.push({ t: 'callout', tone: b.tone || 'note', ...(b.label ? { label: b.label } : {}), items: strs(b.items || [], where) }); break
+        case 'steps': blocks.push({ t: 'steps', items: strs(b.items || [], where) }); break
+        case 'list': blocks.push({ t: 'list', ordered: !!b.ordered, items: strs(b.items || [], where) }); break
+        case 'refs': blocks.push({ t: 'refs', items: strs(b.items || (b.text ? [b.text] : []), where) }); break
+        case 'figure': {
+          nFig++
+          const blk = { t: 'fig', cap: b.caption || '' }
+          const fig = b.svg ? figs[figKey(b.svg)] : null
+          if (fig) {
+            const bad = checkFig(fig, b.svg)
+            if (bad.length) err(`${where}:图解 ${figKey(b.svg)} 未过闸 —— ${bad[0]}`)
+            else { blk.fig = fig; nDone++ }
+          }
+          blocks.push(blk)
+          break
+        }
+        default: err(`${where}:不认识的块类型「${b.type}」`)
+      }
+    }
+    for (const b of blocks) for (const s of [b.x, ...(b.items || [])]) if (typeof s === 'string' && (s.match(/\*\*/g) || []).length % 2) err(`${where}:加粗记号 ** 不成对`)
+    out[String(c.no)] = {
+      title: src.title || c.title,
+      ...(src.subtitle ? { subtitle: src.subtitle } : {}),
+      ...(src.centralIdea ? { idea: src.centralIdea } : {}),
+      ...(src.hero ? { hero: src.hero } : {}),
+      blocks,
+    }
+  }
+  const n = Object.keys(out).length
+  if (!n) return null
+  const json = JSON.stringify({ v: 1, id: spec.id, chapters: out })
+  const file = `${spec.id}.baihua.${crypto.createHash('sha1').update(json).digest('hex').slice(0, 10)}.json`
+  fs.writeFileSync(path.join(OUT, file), json)
+  return { file, bytes: Buffer.byteLength(json), chapters: n, figs: nFig, figsDone: nDone }
+}
+
 // 写出一本书的包,返回 manifest 条目(meta0:站内 texts.json 的书目元数据;易经没有,用 spec 里的字段)
 function finish(spec, meta0, chapters, parts, chars) {
   const body = { id: spec.id, chapters }
@@ -124,6 +198,7 @@ function finish(spec, meta0, chapters, parts, chars) {
   const version = crypto.createHash('sha1').update(json).digest('hex').slice(0, 10)
   const file = `${spec.id}.${version}.json`
   fs.writeFileSync(path.join(OUT, file), JSON.stringify({ ...body, version }))
+  const baihua = buildBaihua(spec, chapters)
   return {
     id: spec.id,
     title: spec.title || meta0.title,
@@ -143,6 +218,7 @@ function finish(spec, meta0, chapters, parts, chars) {
     version,
     file,
     bytes: Buffer.byteLength(json),
+    ...(baihua ? { baihua } : {}),
   }
 }
 
@@ -287,4 +363,5 @@ for (const b of books) { const a = scanArt(b.id); if (a) b.art = a }
 if (errors.length) { console.error(errors.slice(0, 30).join('\n')); console.error(`✗ ${errors.length} 处校验未过`); process.exit(1) }
 fs.writeFileSync(path.join(OUT, 'manifest.json'), JSON.stringify({ v: 1, books }, null, 1))
 for (const b of books) console.log(`${b.title}  ${b.chapters} ${b.unit} · ${b.segs} 段 · ${b.chars} 字 · ${(b.bytes / 1024).toFixed(0)} KB · ${b.file}`)
+for (const b of books) if (b.baihua) console.log(`  白话 ${b.title}  ${b.baihua.chapters} 章 · ${(b.baihua.bytes / 1024).toFixed(0)} KB · 图解 ${b.baihua.figsDone}/${b.baihua.figs} · ${b.baihua.file}`)
 console.log(`→ ${path.relative(ROOT, OUT)}/manifest.json(${books.length} 本)`)
