@@ -55,6 +55,7 @@ struct Note: Codable, Hashable {
     var k: String      // 被注的字词(该段原文的子串)
     var d: String      // 释义
     var r: String?     // 读音
+    var x: String?     // 展开的一段(详注才有)
 }
 
 struct Seg: Codable, Hashable {
