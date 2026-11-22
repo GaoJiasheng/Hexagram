@@ -38,6 +38,35 @@ const BOOKS = [
 const errors = []
 const err = (m) => errors.push(m)
 
+// 书桌自己的详注(scripts/authored/desk-notes/<书 id>.json:章号〔书桌里的序号〕→ 段下标 → [{k,d,x,r?}]):
+// 比站内简注多、且带一段展开 x。有详注的词用详注;与详注位置不重叠的简注照留。
+function applyDeskNotes(id, deskNotes, chNo, i, seg) {
+  const dn = deskNotes?.[String(chNo)]?.[String(i)]
+  if (!Array.isArray(dn) || !dn.length) return
+  const o = seg.o
+  const spans = []
+  const place = (k, what) => {
+    const at = o.indexOf(k)
+    if (at < 0) { err(`${id} 第 ${chNo} 章第 ${i + 1} 段:${what}「${k}」不是该段原文子串`); return null }
+    return [at, at + k.length]
+  }
+  const hit = (r) => spans.some(([a, b]) => r[0] < b && a < r[1])
+  const merged = []
+  for (const x of dn) {
+    const r = place(x.k, '详注')
+    if (!r) continue
+    if (hit(r)) { err(`${id} 第 ${chNo} 章第 ${i + 1} 段:详注「${x.k}」与同段另一条位置重叠`); continue }
+    if ([...x.d].length > 40) err(`${id} 第 ${chNo} 章第 ${i + 1} 段:详注「${x.k}」的释义超过 40 字`)
+    spans.push(r)
+    merged.push({ k: x.k, d: x.d, ...(x.r ? { r: x.r } : {}), ...(x.x ? { x: x.x } : {}) })
+  }
+  for (const n of seg.n || []) {
+    const r = place(n.k, '注释')
+    if (r && !hit(r)) { spans.push(r); merged.push(n) }
+  }
+  seg.n = merged
+}
+
 function buildBook(spec) {
   const deskNotes = exists(`scripts/authored/desk-notes/${spec.id}.json`) ? read(`scripts/authored/desk-notes/${spec.id}.json`) : null
   const chapters = []
@@ -68,32 +97,7 @@ function buildBook(spec) {
             return n
           })
         }
-        // 书桌自己的详注(scripts/authored/desk-notes/<书 id>.json:章号〔书桌里的序号〕→ 段下标 → [{k,d,x,r?}]):
-        // 比站内简注多、且带一段展开 x。有详注的词用详注;与详注位置不重叠的简注照留。
-        const dn = deskNotes?.[String(chapters.length + 1)]?.[String(i)]
-        if (Array.isArray(dn) && dn.length) {
-          const spans = []
-          const place = (k, what) => {
-            const at = o.indexOf(k)
-            if (at < 0) { err(`${spec.id} 第 ${chapters.length + 1} 章第 ${i + 1} 段:${what}「${k}」不是该段原文子串`); return null }
-            return [at, at + k.length]
-          }
-          const hit = (r) => spans.some(([a, b]) => r[0] < b && a < r[1])
-          const merged = []
-          for (const x of dn) {
-            const r = place(x.k, '详注')
-            if (!r) continue
-            if (hit(r)) { err(`${spec.id} 第 ${chapters.length + 1} 章第 ${i + 1} 段:详注「${x.k}」与同段另一条位置重叠`); continue }
-            if ([...x.d].length > 40) err(`${spec.id} 第 ${chapters.length + 1} 章第 ${i + 1} 段:详注「${x.k}」的释义超过 40 字`)
-            spans.push(r)
-            merged.push({ k: x.k, d: x.d, ...(x.r ? { r: x.r } : {}), ...(x.x ? { x: x.x } : {}) })
-          }
-          for (const n of seg.n || []) {
-            const r = place(n.k, '注释')
-            if (r && !hit(r)) { spans.push(r); merged.push(n) }
-          }
-          seg.n = merged
-        }
+        applyDeskNotes(spec.id, deskNotes, chapters.length + 1, i, seg)
         chars += o.length
         return seg
       })
@@ -268,7 +272,10 @@ function buildYijing(spec) {
     parts.push({ title: book.title, from, to: chapters.length })
   }
   for (const p of parts) if (p.to < p.from) err(`易经:部「${p.title}」是空的`)
-  console.log(`  易经注释:卦辞爻辞词典 ${stats.dict} 条 · 卦内传文锚注 ${stats.anchHex} 条 · 十翼五种锚注 ${stats.anchText} 条`)
+  const deskNotes = exists(`scripts/authored/desk-notes/${spec.id}.json`) ? read(`scripts/authored/desk-notes/${spec.id}.json`) : null
+  let detailed = 0
+  if (deskNotes) for (const c of chapters) c.segs.forEach((seg, i) => { applyDeskNotes(spec.id, deskNotes, c.no, i, seg); detailed += (seg.n || []).filter((n) => n.x).length })
+  console.log(`  易经注释:卦辞爻辞词典 ${stats.dict} 条 · 卦内传文锚注 ${stats.anchHex} 条 · 十翼五种锚注 ${stats.anchText} 条 · 并入详注 ${detailed} 条`)
   return finish(spec, {}, chapters, parts, chars)
 }
 
