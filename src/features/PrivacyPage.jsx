@@ -14,7 +14,7 @@ export default function PrivacyPage() {
     <div className="basics-page about-page">
       <div className="page-header">
         <h1 className="page-title">隐私政策</h1>
-        <p className="page-subtitle text-soft">观象 · 个人学习站 · 更新于 2026-10-01</p>
+        <p className="page-subtitle text-soft">观象 · 个人学习站 · 更新于 2026-11-22</p>
       </div>
 
       <section className="about-section">
@@ -64,6 +64,19 @@ export default function PrivacyPage() {
           <li>「今日一辩 / 今日一卦」等当日一次性提示的标记。</li>
         </ul>
         <p>这些数据你可随时在<strong>设置 → 数据管理</strong>中「导出备份」或「导入」。卸载应用、清除应用数据即会将本机副本永久删除;<strong>云端副本随账号注销一并删除</strong>(见下「你的权利」)。</p>
+      </section>
+
+      <section className="about-section">
+        <h2 className="about-section__title">观象 · 书桌(iPhone / iPad App)</h2>
+        <p>「观象 · 书桌」是本站的另一个 App,与本站<strong>共用同一个账号</strong>,本政策同样适用。它与上文的区别只有这几处:</p>
+        <ul className="about-list">
+          <li><strong>不登录也能用</strong>:阅读进度、学习时长、划线与批注只存在这台设备上,不上传。</li>
+          <li><strong>登录后同步的内容</strong>:阅读进度、学习时长(按天、按章)、划线与批注、学过 / 学完的标记。它们与你在本站网页端的记录是同一份。</li>
+          <li><strong>登录方式</strong>:邮箱、通过 Apple 登录、Google 登录。用 Apple 登录并选择隐藏邮箱时,我们只拿到 Apple 提供的中转地址。</li>
+          <li><strong>换账号</strong>:同一台设备换另一个账号登录时,App 会先问你要不要把本机的记录并入新账号,不会自行合并。</li>
+          <li><strong>注销账号</strong>:在 App 的账号页里可直接注销,云端数据随之删除;用 Apple 登录的账号,注销时一并向 Apple 撤销授权。</li>
+          <li>App 内没有广告,没有第三方统计或追踪代码。</li>
+        </ul>
       </section>
 
       <section className="about-section">
