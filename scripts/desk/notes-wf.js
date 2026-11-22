@@ -42,9 +42,10 @@ const VERIFY = (dir, book, id) => `你是《${book}》详注的核查者。另�
 
 const { dir, book, ids } = args
 log(`《${book}》详注:${ids.length} 个单元`)
+// args.verifyOnly:起草已由别处完成(如本机 Codex 写好了 out/<单元>.json),这里只跑核查
 const results = await pipeline(
   ids,
-  (id) => agent(DRAFT(dir, book, id), { label: `注:${id}`, phase: 'Draft', schema: SCHEMA, model: 'sonnet' }),
+  (id) => args.verifyOnly ? Promise.resolve({ notes: 0 }) : agent(DRAFT(dir, book, id), { label: `注:${id}`, phase: 'Draft', schema: SCHEMA, model: 'sonnet' }),
   (draft, id) => agent(VERIFY(dir, book, id), { label: `核:${id}`, phase: 'Verify', schema: SCHEMA, model: 'opus' })
     .then((v) => ({ id, draft: draft?.notes ?? 0, kept: v?.notes ?? 0, changed: v?.changed ?? 0, note: v?.note || '' })),
 )
