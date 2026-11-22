@@ -5,7 +5,6 @@ struct DeskApp: App {
     var body: some Scene {
         WindowGroup {
             Root()
-                .preferredColorScheme(.light)   // M0 先只做浅色;深色在 M6 一并做
                 .tint(Ink.cinnabar)
                 .environment(\.locale, Locale(identifier: "zh_CN"))
         }

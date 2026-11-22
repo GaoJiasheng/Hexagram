@@ -28,7 +28,7 @@ final class TextPageController: UIViewController, UITextViewDelegate, UIGestureR
         tv.delegate = self
         // 注释词的样子:字色不变,只在下面加一道主题色的点线
         tv.linkTextAttributes = [
-            .foregroundColor: UIColor(hex: "#2A2623"),
+            .foregroundColor: UIColor.inkText,
             .underlineStyle: NSUnderlineStyle.single.rawValue | NSUnderlineStyle.patternDot.rawValue,
             .underlineColor: layout.accent,
         ]

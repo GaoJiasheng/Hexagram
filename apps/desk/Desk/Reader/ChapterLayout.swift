@@ -42,9 +42,9 @@ struct ReaderStyle: Equatable {
     var pageWidth: CGFloat = 0
     var pageHeight: CGFloat = 0
     var accent: UIColor = .systemTeal
-    var text = UIColor(hex: "#2A2623")
-    var soft = UIColor(hex: "#6F675E")
-    var faint = UIColor(hex: "#A79F94")
+    var text = UIColor.inkText
+    var soft = UIColor.inkSoft
+    var faint = UIColor.inkFaint
 }
 
 /// 一章的排版与分页:整章排成一条文字流,按页面大小切进一个个文字容器(TextKit 1 的多容器分页)。

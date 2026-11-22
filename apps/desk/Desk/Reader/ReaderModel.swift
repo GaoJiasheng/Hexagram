@@ -35,7 +35,7 @@ final class ReaderModel {
         s.showTranslation = showTranslation
         s.fontSize = fontSize
         s.bookID = book.id
-        s.accent = UIColor(book.theme.accentColor)
+        s.accent = book.theme.accentUI
         return s
     }
 

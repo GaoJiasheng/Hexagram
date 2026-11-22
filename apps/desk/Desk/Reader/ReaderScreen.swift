@@ -7,6 +7,7 @@ struct ReaderScreen: View {
     @State private var showTOC = false
     @State private var showFinish = false
     @AppStorage("desk.showArt") private var showArt = true
+    @Environment(\.colorScheme) private var scheme
 
     var theme: BookTheme { model.book.theme }
 
@@ -48,7 +49,7 @@ struct ReaderScreen: View {
                     Image(uiImage: img).resizable().scaledToFill()
                         .frame(width: geo.size.width, height: geo.size.height * 0.46)
                         .clipped()
-                        .opacity(model.current.page == 0 ? 0.42 : 0.2)
+                        .opacity((model.current.page == 0 ? 0.42 : 0.2) * (scheme == .dark ? 0.6 : 1))   // 夜里再压暗一些
                         .mask(LinearGradient(stops: [.init(color: .black, location: 0), .init(color: .black.opacity(0.75), location: 0.35), .init(color: .clear, location: 1)],
                                              startPoint: .top, endPoint: .bottom))
                         .id(model.current.ch)
