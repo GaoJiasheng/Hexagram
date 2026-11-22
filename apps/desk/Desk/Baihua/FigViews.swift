@@ -594,7 +594,9 @@ struct FigGuaView: View {
     }
 
     private func yaoView(_ g: FigGua, _ bits: [Character]) -> some View {
-        let lineW: CGFloat = ctx.wide ? 150 : 92
+        // 手机上爻画收窄(92 → 56)、爻题栏与间距收紧,把宽度让给右边的字(此前一行只排得下四五个字)
+        let lineW: CGFloat = ctx.wide ? 150 : 56
+        let gap: CGFloat = ctx.wide ? 14 : 10
         // 六爻全标朱色(原图整幅都是朱字)等于没有强调:线照样上主色,不再逐行加底
         let all = yao.allSatisfy(\.accent)
         // 爻题短(「上九」)放左边一栏;长的(「上六——收尾·过头」)与字排在一起
@@ -603,12 +605,12 @@ struct FigGuaView: View {
             ForEach(0..<6, id: \.self) { i in
                 let y = yao[i]
                 let hot = y.accent && !all
-                HStack(alignment: .center, spacing: 14) {
+                HStack(alignment: .center, spacing: gap) {
                     if shortLabels {
                         Text(y.head).font(Fonts.song(15, bold: true)).foregroundStyle(y.accent ? ctx.accent : Ink.soft)
-                            .frame(width: 44, alignment: .trailing)
+                            .frame(width: ctx.wide ? 44 : 36, alignment: .trailing)
                     }
-                    GuaGlyph(binary: String(bits[5 - i]), width: lineW, lineHeight: ctx.wide ? 15 : 12)
+                    GuaGlyph(binary: String(bits[5 - i]), width: lineW, lineHeight: ctx.wide ? 15 : 9)
                         .foregroundStyle(y.accent ? ctx.accent : Ink.text.opacity(0.82))
                         .shadow(color: hot ? ctx.accent.opacity(0.35) : .clear, radius: 6)
                     VStack(alignment: .leading, spacing: 2) {
@@ -622,7 +624,7 @@ struct FigGuaView: View {
                     .fixedSize(horizontal: false, vertical: true)
                     Spacer(minLength: 0)
                 }
-                .padding(.vertical, 8).padding(.horizontal, 6)
+                .padding(.vertical, 8).padding(.horizontal, ctx.wide ? 6 : 4)
                 .background(hot ? ctx.accent.opacity(0.08) : .clear, in: RoundedRectangle(cornerRadius: 10))
             }
             if g.head != nil || !g.lines.isEmpty {

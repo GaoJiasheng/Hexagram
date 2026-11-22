@@ -161,7 +161,8 @@ struct PagedReader: UIViewControllerRepresentable {
                 guard let s = c.shown, c.shownVersion == version else { return .forward }
                 return (model.current.ch, model.current.page) < (s.ch, s.page) ? .reverse : .forward
             }()
-            let animated = c.shownVersion == version && c.shown != nil
+            // 跳章、跳到划线等程序翻页:开了「减弱动态效果」就直接换页,不滑过去(手指翻页照常跟手)
+            let animated = c.shownVersion == version && c.shown != nil && !UIAccessibility.isReduceMotionEnabled
             c.shownVersion = version
             c.shown = model.current
             pvc.setViewControllers([c.controller(for: model.current)], direction: dir, animated: animated)

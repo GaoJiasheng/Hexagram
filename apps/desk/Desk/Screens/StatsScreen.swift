@@ -195,6 +195,8 @@ struct StatsScreen: View {
                 Text("共 \(stats.totalDays) 天").font(Fonts.num(13, weight: .medium)).foregroundStyle(Ink.soft)
             }
             HeatMap(width: width - 32)
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel("这一年的学习热力图,共 \(stats.totalDays) 天有学习记录")
                 .padding(16)
                 .background(Ink.card, in: RoundedRectangle(cornerRadius: 20))
         }
@@ -383,6 +385,7 @@ struct WeekRing: View {
     var line: CGFloat = 9
     var showPercent = false
     @State private var shown = 0.0
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     var body: some View {
         let p = min(max(progress, 0), 1)
         ZStack {
@@ -404,8 +407,10 @@ struct WeekRing: View {
             }
         }
         .frame(width: size, height: size)
-        .onAppear { withAnimation(.spring(duration: 1.0, bounce: 0.15).delay(0.15)) { shown = p } }
-        .onChange(of: p) { _, v in withAnimation(.spring(duration: 0.7)) { shown = v } }
+        .onAppear { if reduceMotion { shown = p } else { withAnimation(.spring(duration: 1.0, bounce: 0.15).delay(0.15)) { shown = p } } }
+        .onChange(of: p) { _, v in if reduceMotion { shown = v } else { withAnimation(.spring(duration: 0.7)) { shown = v } } }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("本周目标完成 \(Int((p * 100).rounded(.down)))%")
     }
 }
 
@@ -463,5 +468,6 @@ struct GoalSheet: View {
         }
         .disabled(!enabled)
         .buttonRepeatBehavior(.enabled)
+        .accessibilityLabel(icon == "minus" ? "减少 30 分钟" : "增加 30 分钟")
     }
 }

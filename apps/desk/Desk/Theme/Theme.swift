@@ -90,3 +90,30 @@ struct BookArt: View {
         }
     }
 }
+
+/// 阅读字号:四档,阅读页与白话深读共用。只存本机(不进同步的 settings——那个键与网站共用、整值新者胜)。
+/// 「标准」就是按屏宽自适应算出来的那个字号,其余三档在它上面乘一个系数。
+enum TextSize: Int, CaseIterable, Identifiable {
+    case small, standard, large, xlarge
+    static let key = "desk.textSize"
+    var id: Int { rawValue }
+    var scale: CGFloat { [0.88, 1, 1.14, 1.3][rawValue] }
+    var label: String { ["小", "标准", "大", "特大"][rawValue] }
+    static func of(_ raw: Int) -> TextSize { TextSize(rawValue: raw) ?? .standard }
+}
+
+/// 工具栏上的「字号」按钮:点开四档单选。
+struct TextSizeMenu<Label: View>: View {
+    @AppStorage(TextSize.key) private var raw = TextSize.standard.rawValue
+    var onChange: () -> Void = {}
+    @ViewBuilder let label: () -> Label
+    var body: some View {
+        Menu {
+            Picker("字号", selection: Binding(get: { raw }, set: { raw = $0; onChange() })) {
+                ForEach(TextSize.allCases) { t in Text(t.label).tag(t.rawValue) }
+            }
+            .pickerStyle(.inline)
+        } label: { label() }
+        .accessibilityLabel("字号:\(TextSize.of(raw).label)")
+    }
+}

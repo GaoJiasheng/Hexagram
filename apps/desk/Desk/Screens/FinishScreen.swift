@@ -12,6 +12,7 @@ struct FinishScreen: View {
     @Environment(\.dismiss) private var dismiss
     @State private var stage = 0
     @Environment(\.horizontalSizeClass) private var hSize
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     private var pad: Bool { hSize == .regular }
     private var k: CGFloat { pad ? 1.45 : 1 }
 
@@ -23,7 +24,7 @@ struct FinishScreen: View {
                     .frame(width: geo.size.width, height: geo.size.height * (pad ? 0.56 : 0.48))
                     .clipped()
                     .mask(LinearGradient(colors: [.black, .black, .clear], startPoint: .top, endPoint: .bottom))
-                    .scaleEffect(stage >= 1 ? 1 : 1.12, anchor: .top)
+                    .scaleEffect(stage >= 1 || reduceMotion ? 1 : 1.12, anchor: .top)
                     .opacity(stage >= 1 ? 1 : 0)
             }
             .ignoresSafeArea()
@@ -38,13 +39,13 @@ struct FinishScreen: View {
                     }
                     .padding(.horizontal, pad ? 110 : 54)
                     .opacity(stage >= 2 ? 1 : 0)
-                    .offset(y: stage >= 2 ? 0 : 14)
+                    .offset(y: stage >= 2 || reduceMotion ? 0 : 14)
 
                     Seal(text: "学完")
                         .frame(width: pad ? 96 : 66, height: pad ? 96 : 66)
                         .background { if let t = burst { InkBurst(start: t, accent: book.theme.accentColor).frame(width: pad ? 520 : 360, height: pad ? 520 : 360).allowsHitTesting(false) } }
                         .rotationEffect(.degrees(-9))
-                        .scaleEffect(stage >= 3 ? 1 : 2.4)
+                        .scaleEffect(stage >= 3 || reduceMotion ? 1 : 2.4)
                         .opacity(stage >= 3 ? 1 : 0)
                         .offset(x: pad ? 6 : 12, y: pad ? -26 : -18)
                 }
@@ -69,7 +70,7 @@ struct FinishScreen: View {
                 .padding(.horizontal, 24)
                 .padding(.top, 36 * k)
                 .opacity(stage >= 4 ? 1 : 0)
-                .offset(y: stage >= 4 ? 0 : 20)
+                .offset(y: stage >= 4 || reduceMotion ? 0 : 20)
 
                 if stats.sample {
                     Text("示例数字(这本书还没有学习记录)").font(.system(size: 11 * k)).foregroundStyle(Ink.faint).padding(.top, 8).opacity(stage >= 4 ? 1 : 0)
@@ -86,6 +87,12 @@ struct FinishScreen: View {
             .frame(maxWidth: pad ? 640 : 560)
         }
         .task {
+            if reduceMotion {
+                // 减弱动态效果:不放大、不落印、不散墨,整页一次淡入;留一下成功的触感
+                withAnimation(.easeInOut(duration: 0.4)) { stage = 4 }
+                UINotificationFeedbackGenerator().notificationOccurred(.success)
+                return
+            }
             withAnimation(.easeOut(duration: 0.9)) { stage = 1 }
             try? await Task.sleep(for: .milliseconds(500))
             withAnimation(.spring(duration: 0.6)) { stage = 2 }

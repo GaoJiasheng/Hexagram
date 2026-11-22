@@ -159,6 +159,14 @@ final class HighlightStore {
         save(changed: [id])
     }
 
+    /// 换账号时选了「不并入」:本机的划线连同墓碑全部清掉(不推云,另一个账号的云端不受影响)。
+    func resetAll() {
+        items = []
+        dirty.removeAll()
+        version += 1
+        write()
+    }
+
     #if DEBUG
     /// 调试入口用:按固定 id 写入(重复启动不累积)。
     func upsertDemo(_ h: Highlight) {

@@ -35,6 +35,10 @@ struct DeskHome: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 26 * (pad ? 1.2 : 1)) {
                     greeting
+                    // 第一次打开就没网 / 服务器连不上:书目取不到,先说清楚、给重试
+                    if library.manifest == nil, let e = library.loadError {
+                        OfflineCard(message: e, busy: library.refreshing, note: nil) { Task { await library.refresh() } }
+                    }
                     if twoCol {
                         HStack(alignment: .top, spacing: 32) {
                             VStack(alignment: .leading, spacing: 34) {
@@ -53,13 +57,12 @@ struct DeskHome: View {
                     } else {
                         if let b = recent { resumeCard(b) }
                         if library.shelf.isEmpty { emptyDesk; addButton } else {
-                            week(wide: pad)
+                            week(wide: pad && contentW >= 720)      // iPad mini 竖屏放不下右边三句(会截成「1 小时 2…」)
                             shelf
                             today
                         }
-                        if !pad { addButton }
+                        if !pad && !library.shelf.isEmpty { addButton }     // 书桌空着时上面已经有一个「添书」了(此前手机上会出两个)
                     }
-                    if let e = library.loadError { Text(e).font(.system(size: 13)).foregroundStyle(Ink.cinnabar) }
                 }
                 .frame(maxWidth: contentW, alignment: .leading)
                 .padding(.horizontal, pad ? 0 : 22).padding(.top, pad ? 28 : 12).padding(.bottom, 40)
@@ -74,6 +77,7 @@ struct DeskHome: View {
         #if DEBUG
         .task { if ProcessInfo.processInfo.environment["DESK_ACCOUNT"] == "1" { try? await Task.sleep(nanoseconds: 800_000_000); showAccount = true } }
         .task { if ProcessInfo.processInfo.environment["DESK_OPEN"] == "stats" { try? await Task.sleep(nanoseconds: 900_000_000); showStats = true } }
+        .task { if ProcessInfo.processInfo.environment["DESK_OPEN"] == "catalog" { try? await Task.sleep(nanoseconds: 900_000_000); showCatalog = true } }
         #endif
         .fullScreenCover(item: $reading) { o in
             if let pack = library.pack(o.book) {
@@ -197,7 +201,7 @@ struct DeskHome: View {
 
     private func weekFact(_ v: String, _ label: String) -> some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text(v).font(Fonts.num(22)).foregroundStyle(Ink.text).lineLimit(1)
+            Text(v).font(Fonts.num(22)).foregroundStyle(Ink.text).lineLimit(1).minimumScaleFactor(0.7)
             Text(label).font(.system(size: 12)).foregroundStyle(Ink.soft)
         }
     }
@@ -383,6 +387,30 @@ struct CatalogSheet: View {
     @Environment(\.dismiss) private var dismiss
     var body: some View {
         NavigationStack {
+            Group {
+                if library.manifest == nil {
+                    // 第一次打开、还没拉到书目:转圈;拉不到:说明 + 重试。不留空白页
+                    VStack(spacing: 14) {
+                        if library.refreshing || library.loadError == nil {
+                            ProgressView()
+                            Text("正在取书目…").font(.system(size: 14)).foregroundStyle(Ink.soft)
+                        } else {
+                            OfflineCard(message: library.loadError ?? "书目取不到", busy: false, note: library.shelf.isEmpty ? nil : "已经放上书桌的书,没网也照样能读。") { Task { await library.refresh() } }
+                        }
+                    }
+                    .padding(24)
+                    .frame(maxWidth: 460, maxHeight: .infinity)
+                    .frame(maxWidth: .infinity)
+                    .background(Ink.paper)
+                    .task { if !library.refreshing { await library.refresh() } }
+                } else { list }
+            }
+            .navigationTitle("添书").navigationBarTitleDisplayMode(.inline)
+            .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("好了") { dismiss() } } }
+        }
+    }
+
+    private var list: some View {
             List {
                 ForEach(library.manifest?.books ?? []) { b in
                     HStack(spacing: 14) {
@@ -403,8 +431,15 @@ struct CatalogSheet: View {
                         Spacer()
                         if library.shelf.contains(b.id) {
                             Image(systemName: "checkmark.circle.fill").foregroundStyle(b.theme.accentColor).font(.system(size: 22))
+                                .accessibilityLabel("已在书桌上")
                         } else if library.downloading.contains(b.id) {
                             ProgressView()
+                        } else if library.failed.contains(b.id) {
+                            VStack(alignment: .trailing, spacing: 4) {
+                                Button("重试") { Task { await library.add(b) } }
+                                    .buttonStyle(.bordered).tint(b.theme.accentColor).controlSize(.small)
+                                Text("没下下来").font(.system(size: 11)).foregroundStyle(Ink.cinnabar)
+                            }
                         } else {
                             Button("放上书桌") { Task { await library.add(b) } }
                                 .buttonStyle(.borderedProminent).tint(b.theme.accentColor).controlSize(.small)
@@ -413,9 +448,37 @@ struct CatalogSheet: View {
                     .padding(.vertical, 6)
                 }
             }
-            .navigationTitle("添书").navigationBarTitleDisplayMode(.inline)
-            .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("好了") { dismiss() } } }
+    }
+}
+
+/// 连不上时的那张卡:一句说明 + 重试。书桌首页与书目页共用。
+struct OfflineCard: View {
+    let message: String
+    var busy = false
+    var note: String? = "已经放上书桌的书,没网也照样能读。"
+    let retry: () -> Void
+    var body: some View {
+        HStack(alignment: .top, spacing: 14) {
+            Image(systemName: "wifi.exclamationmark").font(.system(size: 22, weight: .medium)).foregroundStyle(Ink.faint)
+                .accessibilityHidden(true)
+            VStack(alignment: .leading, spacing: 10) {
+                Text(message).font(.system(size: 15)).foregroundStyle(Ink.text).fixedSize(horizontal: false, vertical: true)
+                if let note { Text(note).font(.system(size: 13)).foregroundStyle(Ink.soft) }
+                Button(action: retry) {
+                    HStack(spacing: 6) {
+                        if busy { ProgressView().controlSize(.small) }
+                        Text(busy ? "正在重试…" : "重试")
+                    }
+                    .font(.system(size: 15, weight: .semibold)).foregroundStyle(Ink.cinnabar)
+                    .padding(.horizontal, 18).padding(.vertical, 8).background(Ink.cinnabar.opacity(0.1), in: Capsule())
+                }
+                .disabled(busy)
+            }
+            Spacer(minLength: 0)
         }
+        .padding(18)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Ink.card, in: RoundedRectangle(cornerRadius: 20))
     }
 }
 

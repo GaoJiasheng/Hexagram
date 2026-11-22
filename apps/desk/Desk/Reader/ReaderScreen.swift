@@ -31,9 +31,11 @@ struct ReaderScreen: View {
     @State private var finishReplay = false
     @AppStorage("desk.hlColor") private var lastColor = 0
     @AppStorage("desk.showArt") private var showArt = true
+    @AppStorage(TextSize.key) private var textSize = TextSize.standard.rawValue
     @Environment(\.colorScheme) private var scheme
     @Environment(\.scenePhase) private var phase
     @Environment(\.horizontalSizeClass) private var hSize
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     /// iPad 上轻点划线:不用整张表单,在页面下方浮一张合身的小卡片。
     @State private var hlCard: String?
     /// 正开着的白话深读(全屏盖在阅读页上)。
@@ -55,7 +57,8 @@ struct ReaderScreen: View {
                     let cols = avail >= 900 && geo.size.width > geo.size.height ? 2 : 1
                     let gutter: CGFloat = 56
                     let colAvail = (avail - gutter) / 2
-                    let font = cols == 2 ? min(30, max(22, floor(colAvail / 18))) : min(34, max(22, floor(geo.size.width / 22)))
+                    let auto = cols == 2 ? min(30, max(22, floor(colAvail / 18))) : min(34, max(22, floor(geo.size.width / 22)))
+                    let font = floor(auto * TextSize.of(textSize).scale)        // 字号四档(本机设置)
                     let w = cols == 2 ? floor(min(colAvail, font * 20)) * 2 + gutter : min(avail, font * 24)
                     let size = CGSize(width: floor(w), height: floor(geo.size.height - 8))
                     PagedReader(model: model, version: model.layoutVersion, onNote: { model.touch(); sheet = .note($0) },
@@ -72,6 +75,7 @@ struct ReaderScreen: View {
                                 onMenu: { r, a in model.touch(); menu(r, a) })
                         .onAppear { model.relayout(size: size, fontSize: font, columns: cols) }
                         .onChange(of: size) { _, s in model.relayout(size: s, fontSize: font, columns: cols) }
+                        .onChange(of: font) { _, f in model.relayout(size: size, fontSize: f, columns: cols) }   // 换字号:重排,落回同一段
                 }
                 footer
             }
@@ -102,7 +106,7 @@ struct ReaderScreen: View {
     @ViewBuilder private func sheetView(_ s: ReaderSheet) -> some View {
         switch s {
         case .note(let n):
-            NoteSheet(note: n, accent: theme.accentColor).presentationDetents(n.x == nil ? [.height(200)] : [.height(380), .large])
+            NoteSheet(note: n, accent: theme.accentColor)     // 表单高度按内容定(此前写死 200 / 380,短注下面空一大块)
         case .toc:
             TOCSheet(model: model) { ch in sheet = nil; model.jump(toChapter: ch) }
         case .marks:
@@ -118,8 +122,7 @@ struct ReaderScreen: View {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { open(hit) }
             }
         case .hl(let id):
-            HighlightPanel(id: id) { sheet = .editNote(id) }
-                .presentationDetents([.height(HighlightStore.shared.get(id)?.hasNote == true ? 290 : 220)])
+            HighlightPanel(id: id) { sheet = .editNote(id) }      // 表单高度由面板按内容自己定
         case .editNote(let id):
             NoteEditor(id: id).presentationDetents([.medium, .large])
         }
@@ -229,6 +232,10 @@ struct ReaderScreen: View {
             if env["DESK_OPEN"] == "baihua" { openDeep(model.current.ch, block: env["DESK_BLOCK"].flatMap(Int.init)) }
             else if let q = env["DESK_FIND"], !q.isEmpty { sheet = .find(q) }
             else if env["DESK_MARKS"] == "1" { sheet = .marks }
+            else if env["DESK_OPEN"] == "toc" { sheet = .toc }
+            else if env["DESK_OPEN"] == "end" { model.jumpToEnd() }
+            else if env["DESK_OPEN"] == "trans" { model.toggleTranslation() }
+            else if env["DESK_OPEN"] == "note", let n = model.chapter(model.current.ch).segs.lazy.compactMap({ $0.n?.first(where: { $0.x != nil }) ?? $0.n?.first }).first { sheet = .note(n) }
             else if env["DESK_HLTAP"] == "1", let h = HighlightStore.shared.inChapter(book: model.book.id, no: model.current.ch).first(where: \.hasNote) { sheet = .hl(h.id) }
             else if let j = env["DESK_GOHL"], let k = Int(j) {      // 跳到本书第 k 条划线(测跳转与闪动)
                 let all = HighlightStore.shared.alive(book: model.book.id)
@@ -295,6 +302,11 @@ struct ReaderScreen: View {
                     .background(model.showTranslation ? AnyShapeStyle(theme.accentColor) : AnyShapeStyle(.ultraThinMaterial), in: Circle())
             }
             .accessibilityLabel(model.showTranslation ? "收起全部译文" : "展开全部译文")
+            TextSizeMenu(onChange: { model.touch() }) {
+                Image(systemName: "textformat.size").font(.system(size: 15, weight: .semibold)).frame(width: 38, height: 38)
+                    .foregroundStyle(Ink.text)
+                    .background(.ultraThinMaterial, in: Circle())
+            }
             float("highlighter", label: "划线与批注") { sheet = .marks }
             float("list.bullet", label: "目录") { sheet = .toc }
         }
@@ -317,7 +329,7 @@ struct ReaderScreen: View {
             Text(model.caption(model.current.ch)).font(.system(size: 12, weight: .medium)).foregroundStyle(theme.accentColor)
             if model.learnedFlash == model.current.ch {
                 LearnedStamp(color: theme.accentColor)
-                    .transition(.asymmetric(insertion: .scale(scale: 2.2).combined(with: .opacity), removal: .opacity))
+                    .transition(reduceMotion ? .opacity : .asymmetric(insertion: .scale(scale: 2.2).combined(with: .opacity), removal: .opacity))   // 减弱动态效果:不盖印,只淡入
             }
             Spacer()
             if !model.showTranslation && model.current.page == 0 && !model.isEndPageSafe && model.learnedFlash != model.current.ch {
@@ -394,6 +406,7 @@ extension Note: Identifiable { var id: String { k + d } }
 struct NoteSheet: View {
     let note: Note
     let accent: Color
+    @State private var measured: CGFloat = 0
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
@@ -412,9 +425,11 @@ struct NoteSheet: View {
             }
             .frame(maxWidth: 640, alignment: .leading)
             .padding(24)
+            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { measured = $0 + 12 }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .background(Ink.paper)
+        .modifier(FitDetent(height: measured, fallback: note.x == nil ? 200 : 380, cap: 560))
     }
 }
 
@@ -435,7 +450,7 @@ struct TOCSheet: View {
                                         Text(Numerals.chinese(c.no)).font(Fonts.num(13, weight: .medium)).foregroundStyle(Ink.faint).frame(width: 44, alignment: .leading)
                                         Text(c.title).font(Fonts.song(17)).foregroundStyle(Ink.text)
                                         Spacer()
-                                        if c.no == model.current.ch { Image(systemName: "bookmark.fill").foregroundStyle(model.book.theme.accentColor) }
+                                        if c.no == model.current.ch { Image(systemName: "bookmark.fill").foregroundStyle(model.book.theme.accentColor).accessibilityLabel("读到这里") }
                                         ChapterMark(sec: stats.sec(c.src), color: model.book.theme.accentColor)
                                     }
                                 }

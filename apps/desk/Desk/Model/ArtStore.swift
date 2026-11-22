@@ -97,7 +97,7 @@ final class ArtStore {
         let url = Library.base.appendingPathComponent("art/\(id)/\(kind.fileName)")
         Task {
             defer { inflight.remove(tag) }
-            guard let (data, resp) = try? await URLSession.shared.data(from: url),
+            guard let (data, resp) = try? await Library.session.data(from: url),
                   (resp as? HTTPURLResponse)?.statusCode == 200,
                   UIImage(data: data) != nil else { return }          // 失败静默,下次再试
             guard checkedV[id] == v else { return }                  // 下载途中清单换了批图,丢掉

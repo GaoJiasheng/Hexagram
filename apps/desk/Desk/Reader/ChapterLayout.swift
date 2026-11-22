@@ -298,7 +298,7 @@ final class ChapterLayout {
             let c = NSTextContainer(size: CGSize(width: pageSize.width, height: cuts[containers.count] ?? pageSize.height))
             c.lineFragmentPadding = 0
             manager.addTextContainer(c)
-            let tv = UITextView(frame: CGRect(origin: .zero, size: c.size), textContainer: c)
+            let tv = TightTextView(frame: CGRect(origin: .zero, size: c.size), textContainer: c)
             tv.isEditable = false
             tv.isScrollEnabled = false
             tv.isSelectable = true

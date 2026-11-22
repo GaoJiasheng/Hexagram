@@ -31,6 +31,7 @@ struct BaihuaScreen: View {
     @Environment(\.scenePhase) private var phase
     @Environment(\.colorScheme) private var scheme
     @AppStorage("desk.hlColor") private var lastColor = 0
+    @AppStorage(TextSize.key) private var textSize = TextSize.standard.rawValue
     @State private var top: Int?
     @State private var sheet: BHSheet?
     @State private var clock = ReadClock()
@@ -55,7 +56,7 @@ struct BaihuaScreen: View {
             let margin: CGFloat = w > 600 ? 48 : 22
             let col = min(w - margin * 2, 680)
             let sideTOC = w >= 1100 && (bh?.sections.count ?? 0) > 1
-            let fs: CGFloat = col >= 600 ? 20 : 18
+            let fs: CGFloat = (col >= 600 ? 20 : 18) * TextSize.of(textSize).scale     // 字号四档(本机设置,与阅读页同一档)
             ZStack(alignment: .top) {
                 theme.paperColor.ignoresSafeArea()
                 if let c = bh {
@@ -79,15 +80,23 @@ struct BaihuaScreen: View {
                         // 跳到某一块时让它落在状态栏与悬浮按钮之下:顶上留一段内容边距,题图用负边距顶回去照样通到屏顶
                         .contentMargins(.top, inset(geo), for: .scrollContent)
                         .onAppear { restore(proxy, c, anchor(geo)) }
+                        .onChange(of: textSize) { _, _ in
+                            // 换字号后各块变高变矮:落回原来最上面那一块
+                            guard let t = top, t >= 0 else { return }
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.12) { proxy.scrollTo(t, anchor: anchor(geo)) }
+                        }
                         .overlay(alignment: .topTrailing) {
                             if sideTOC { sideTOCView(c, proxy, anchor(geo), width: (w - col) / 2 - 28).padding(.top, 70).padding(.trailing, 20) }
                         }
                         .sheet(item: $sheet) { s in sheetView(s, c, proxy, anchor(geo)) }
                     }
                     // 滚过题图后,状态栏与悬浮按钮那一条垫一层纸色,字不从按钮底下穿过
-                    LinearGradient(stops: [.init(color: theme.paperColor, location: 0), .init(color: theme.paperColor, location: 0.55), .init(color: theme.paperColor.opacity(0), location: 1)],
+                    // 实色要铺到悬浮按钮的下沿(安全区 + 4 + 38),再往下 26 点淡出;此前实色只到 55%,按钮那一段是半透明的,字隐约透上来
+                    let band = geo.safeAreaInsets.top + 72
+                    LinearGradient(stops: [.init(color: theme.paperColor, location: 0), .init(color: theme.paperColor, location: (geo.safeAreaInsets.top + 46) / band),
+                                           .init(color: theme.paperColor.opacity(0), location: 1)],
                                    startPoint: .top, endPoint: .bottom)
-                        .frame(height: geo.safeAreaInsets.top + 64)
+                        .frame(height: band)
                         .offset(y: -geo.safeAreaInsets.top)
                         .allowsHitTesting(false)
                         .opacity((top ?? -1) >= 0 ? 1 : 0)
@@ -95,9 +104,22 @@ struct BaihuaScreen: View {
                     progressBar(c).padding(.top, 0)
                 } else {
                     VStack(spacing: 12) {
-                        ProgressView()
-                        Text(BaihuaStore.shared.offered(book) ? "白话深读正在取…" : "这一\(book.unit)还没有白话深读").font(.system(size: 14)).foregroundStyle(Ink.soft)
+                        if !BaihuaStore.shared.offered(book) {
+                            Text("这一\(book.unit)还没有白话深读").font(.system(size: 14)).foregroundStyle(Ink.soft)
+                        } else if BaihuaStore.shared.failed.contains(book.id) {
+                            Image(systemName: "wifi.exclamationmark").font(.system(size: 28)).foregroundStyle(Ink.faint).accessibilityHidden(true)
+                            Text("白话深读没取到").font(Fonts.song(18, bold: true)).foregroundStyle(Ink.text)
+                            Text("检查一下网络,或者稍后再试。原文不受影响。").font(.system(size: 14)).foregroundStyle(Ink.soft)
+                            Button("重试") { Task { await BaihuaStore.shared.retry(book) } }
+                                .font(.system(size: 15, weight: .semibold)).foregroundStyle(theme.accentColor)
+                                .padding(.horizontal, 20).padding(.vertical, 9).background(theme.accentColor.opacity(0.1), in: Capsule())
+                                .padding(.top, 4)
+                        } else {
+                            ProgressView()
+                            Text("白话深读正在取…").font(.system(size: 14)).foregroundStyle(Ink.soft)
+                        }
                     }
+                    .padding(.horizontal, 32)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .task { await BaihuaStore.shared.ensure(book) }
                 }
@@ -430,6 +452,12 @@ struct BaihuaScreen: View {
         HStack(spacing: 10) {
             float("chevron.left", label: "回到原文") { dismiss() }
             Spacer()
+            TextSizeMenu(onChange: { touch() }) {
+                Image(systemName: "textformat.size").font(.system(size: 15, weight: .semibold)).frame(width: 38, height: 38)
+                    .foregroundStyle(Ink.text)
+                    .background(.ultraThinMaterial, in: Circle())
+                    .shadow(color: .black.opacity(0.08), radius: 4, y: 1)
+            }
             if let c = bh, !c.sections.isEmpty, !sideTOC {
                 float("list.bullet", label: "目录") { sheet = .toc }
             }
@@ -483,7 +511,9 @@ struct BaihuaScreen: View {
             }
         }
         .frame(width: min(width, 240), alignment: .leading)
-        .opacity((top ?? -1) >= 0 ? 1 : 0)
+        // 还停在题图上时也显示(此前要先滚一下才出来):压在题图上,垫一层纸色卡片免得字看不清
+        .padding((top ?? -1) >= 0 ? 0 : 12)
+        .background { if (top ?? -1) < 0 { RoundedRectangle(cornerRadius: 14).fill(theme.paperColor.opacity(0.88)) } }
         .animation(.easeInOut(duration: 0.25), value: (top ?? -1) >= 0)
         .animation(.easeInOut(duration: 0.2), value: cur)
     }
@@ -491,8 +521,7 @@ struct BaihuaScreen: View {
     @ViewBuilder private func sheetView(_ s: BHSheet, _ c: BHChapter, _ proxy: ScrollViewProxy, _ a: UnitPoint) -> some View {
         switch s {
         case .hl(let id):
-            HighlightPanel(id: id) { sheet = .editNote(id) }
-                .presentationDetents([.height(HighlightStore.shared.get(id)?.hasNote == true ? 290 : 220)])
+            HighlightPanel(id: id) { sheet = .editNote(id) }      // 表单高度由面板按内容自己定
         case .editNote(let id):
             NoteEditor(id: id).presentationDetents([.medium, .large])
         case .toc:
@@ -506,7 +535,7 @@ struct BaihuaScreen: View {
                             HStack {
                                 Text(s.title).font(Fonts.song(16)).foregroundStyle(Ink.text)
                                 Spacer()
-                                if s.index == currentSection(c) { Image(systemName: "bookmark.fill").foregroundStyle(theme.accentColor) }
+                                if s.index == currentSection(c) { Image(systemName: "bookmark.fill").foregroundStyle(theme.accentColor).accessibilityLabel("读到这里") }
                             }
                         }
                     }

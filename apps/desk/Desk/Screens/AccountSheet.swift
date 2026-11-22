@@ -30,6 +30,7 @@ struct AccountButton: View {
 /// 账号面板。未登录:邮箱登录 / 注册 / 忘记密码,下面 Apple、Google;已登录:昵称、邮箱、同步状态、登出、注销。
 struct AccountSheet: View {
     @Environment(\.dismiss) private var dismiss
+    @State private var showAbout = false
     private var account: AccountStore { .shared }
 
     var body: some View {
@@ -38,6 +39,7 @@ struct AccountSheet: View {
                 VStack(spacing: 22) {
                     StatsLinkRow()
                     if account.user != nil { SignedInView() } else { SignInView() }
+                    AboutLinkRow().padding(.top, 8)
                 }
                 .frame(maxWidth: 440)
                 .padding(.horizontal, 24).padding(.vertical, 20)
@@ -47,8 +49,91 @@ struct AccountSheet: View {
             .background(Ink.paper.ignoresSafeArea())
             .navigationTitle(account.user == nil ? "登录观象" : "我的账号").navigationBarTitleDisplayMode(.inline)
             .toolbar { ToolbarItem(placement: .cancellationAction) { Button("关闭") { dismiss() } } }
+            .navigationDestination(isPresented: $showAbout) { AboutScreen() }
         }
         .presentationDetents([.large])
+        #if DEBUG
+        .task { if ProcessInfo.processInfo.environment["DESK_OPEN"] == "about" { try? await Task.sleep(nanoseconds: 500_000_000); showAbout = true } }
+        #endif
+        .interactiveDismissDisabled(account.pendingSwitch != nil)
+        .sheet(item: Binding(get: { account.pendingSwitch }, set: { _ in })) { p in
+            AccountSwitchSheet(pending: p)
+        }
+        #if DEBUG
+        .task { if ProcessInfo.processInfo.environment["DESK_FAKESWITCH"] == "1" { try? await Task.sleep(nanoseconds: 600_000_000); account.debugFakeSwitch() } }
+        #endif
+    }
+}
+
+/// 换账号:这台设备上的学习记录属于上一个账号,这次登录的是另一个。选之前什么都不上传;不能划掉,只能三选一。
+struct AccountSwitchSheet: View {
+    let pending: AccountStore.PendingSwitch
+    @State private var confirmDiscard = false
+    @State private var working = false
+    private var account: AccountStore { .shared }
+
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 18) {
+                Image(systemName: "person.2.badge.gearshape").font(.system(size: 30, weight: .medium)).foregroundStyle(Ink.cinnabar)
+                    .accessibilityHidden(true)
+                Text("这台设备上留着上一个账号的学习记录").font(Fonts.song(22, bold: true)).foregroundStyle(Ink.text)
+                    .fixedSize(horizontal: false, vertical: true)
+                Text(intro).font(.system(size: 15)).foregroundStyle(Ink.soft).lineSpacing(5).fixedSize(horizontal: false, vertical: true)
+
+                choice("并入现在这个账号", "本机的划线、批注、学习时长、进度并进「\(who(pending.user))」,以后跟着这个账号走。", icon: "arrow.triangle.merge", primary: true) {
+                    Task { working = true; await account.resolveSwitch(.merge); working = false }
+                }
+                choice("不并入", "本机改用这个账号云端的记录;本机现在这一份会被丢弃。", icon: "icloud.and.arrow.down") {
+                    confirmDiscard = true
+                }
+                choice("取消登录", "退回未登录,本机的记录原样不动。", icon: "xmark.circle") {
+                    Task { working = true; await account.resolveSwitch(.cancel); working = false }
+                }
+            }
+            .frame(maxWidth: 460, alignment: .leading)
+            .padding(.horizontal, 24).padding(.vertical, 28)
+            .frame(maxWidth: .infinity)
+        }
+        .background(Ink.paper.ignoresSafeArea())
+        .disabled(working)
+        .interactiveDismissDisabled(true)
+        .presentationDetents([.large])
+        .confirmationDialog("丢弃本机这一份记录?", isPresented: $confirmDiscard, titleVisibility: .visible) {
+            Button("丢弃本机记录,用云端的", role: .destructive) {
+                Task { working = true; await account.resolveSwitch(.discard); working = false }
+            }
+            Button("再想想", role: .cancel) {}
+        } message: {
+            Text("本机的划线、批注、学习时长、学完记录与各书进度会全部删掉,不能恢复。上一个账号云端的那份不受影响。")
+        }
+    }
+
+    private var intro: String {
+        let prev = pending.previousName.map { "「\($0)」" } ?? "上一个账号"
+        return "这台设备上的记录上次是跟\(prev)同步的,这次登录的是「\(who(pending.user))」。选好之前,什么都不会上传。"
+    }
+
+    private func who(_ u: DeskUser) -> String { u.email ?? u.displayName }
+
+    private func choice(_ title: String, _ sub: String, icon: String, primary: Bool = false, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            HStack(alignment: .top, spacing: 14) {
+                Image(systemName: icon).font(.system(size: 18, weight: .semibold)).frame(width: 26)
+                    .foregroundStyle(primary ? .white : Ink.cinnabar)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(title).font(.system(size: 17, weight: .semibold)).foregroundStyle(primary ? .white : Ink.text)
+                    Text(sub).font(.system(size: 13)).foregroundStyle(primary ? .white.opacity(0.85) : Ink.soft)
+                        .multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true)
+                }
+                Spacer(minLength: 0)
+            }
+            .padding(16)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(primary ? AnyShapeStyle(Ink.cinnabar) : AnyShapeStyle(Ink.card), in: RoundedRectangle(cornerRadius: 16))
+            .overlay(RoundedRectangle(cornerRadius: 16).stroke(primary ? .clear : Ink.line, lineWidth: 1))
+        }
+        .buttonStyle(.plain)
     }
 }
 
@@ -86,6 +171,8 @@ private struct SignInView: View {
     @State private var codeSent = false
     @State private var error: String?
     @State private var info: String?
+    /// 这一次 Apple 登录请求用的原始 nonce(按一次按钮换一个)。
+    @State private var appleNonce: String?
     @Environment(\.colorScheme) private var scheme
     private var account: AccountStore { .shared }
 
@@ -161,6 +248,9 @@ private struct SignInView: View {
 
                 SignInWithAppleButton(.signIn) { req in
                     req.requestedScopes = [.fullName, .email]
+                    let n = AccountStore.newAppleNonce()
+                    appleNonce = n.raw
+                    req.nonce = n.hashed
                 } onCompletion: { result in
                     Task { await apple(result) }
                 }
@@ -233,7 +323,8 @@ private struct SignInView: View {
         switch result {
         case .success(let auth):
             guard let cred = auth.credential as? ASAuthorizationAppleIDCredential else { error = "Apple 登录没成功"; return }
-            do { try await account.signInWithApple(cred) } catch { show(error) }
+            do { try await account.signInWithApple(cred, nonce: appleNonce) } catch { show(error) }
+            appleNonce = nil
         case .failure(let e):
             if (e as? ASAuthorizationError)?.code == .canceled { return }
             error = "Apple 登录没成功:\(e.localizedDescription)"
@@ -284,8 +375,6 @@ private struct SignedInView: View {
     @State private var error: String?
     @State private var info: String?
     @State private var askDelete = false
-    @State private var confirmText = ""
-    @State private var deleteError: String?
     private var account: AccountStore { .shared }
     private var sync: SyncEngine { .shared }
 
@@ -345,12 +434,12 @@ private struct SignedInView: View {
                 }
                 Text("登出后,这台设备上的进度与划线照样留着。").font(.system(size: 12)).foregroundStyle(Ink.faint).frame(maxWidth: .infinity)
 
-                Button { confirmText = ""; deleteError = nil; askDelete = true } label: {
+                Button { askDelete = true } label: {
                     Text("注销账号").font(.system(size: 14)).foregroundStyle(Ink.cinnabar).frame(maxWidth: .infinity)
                 }
                 .padding(.top, 12)
             }
-            .sheet(isPresented: $askDelete) { deleteSheet(u) }
+            .sheet(isPresented: $askDelete) { DeleteAccountSheet(user: u) }
         }
     }
 
@@ -391,9 +480,26 @@ private struct SignedInView: View {
         }
     }
 
-    private func deleteSheet(_ u: DeskUser) -> some View {
+    private func card<C: View>(@ViewBuilder _ c: () -> C) -> some View {
+        VStack(alignment: .leading, spacing: 14) { c() }
+            .padding(18)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Ink.card, in: RoundedRectangle(cornerRadius: 18))
+    }
+}
+
+/// 注销账号:抄一遍邮箱(没有邮箱的账号输入「注销账号」)再永久注销。「我的账号」与「关于」两处都能进(App 审核要求注销入口好找)。
+struct DeleteAccountSheet: View {
+    let user: DeskUser
+    @Environment(\.dismiss) private var dismiss
+    @State private var confirmText = ""
+    @State private var deleteError: String?
+    private var account: AccountStore { .shared }
+
+    var body: some View {
+        let u = user
         let want = u.email ?? "注销账号"
-        return NavigationStack {
+        NavigationStack {
             VStack(alignment: .leading, spacing: 16) {
                 Text("注销后,这个账号和云端的进度、划线、批注、学习时长都会删掉,网站上也登不进来了,不能恢复。这台设备上的数据还留着。")
                     .font(.system(size: 15)).foregroundStyle(Ink.text).lineSpacing(4).fixedSize(horizontal: false, vertical: true)
@@ -409,7 +515,7 @@ private struct SignedInView: View {
                 Button(role: .destructive) {
                     Task {
                         deleteError = nil
-                        do { try await account.deleteAccount(confirm: confirmText.trimmingCharacters(in: .whitespaces)); askDelete = false }
+                        do { try await account.deleteAccount(confirm: confirmText.trimmingCharacters(in: .whitespaces)); dismiss() }
                         catch { deleteError = (error as? API.Failure)?.message ?? error.localizedDescription }
                     }
                 } label: {
@@ -425,15 +531,8 @@ private struct SignedInView: View {
             .frame(maxWidth: .infinity)
             .background(Ink.paper.ignoresSafeArea())
             .navigationTitle("注销账号").navigationBarTitleDisplayMode(.inline)
-            .toolbar { ToolbarItem(placement: .cancellationAction) { Button("取消") { askDelete = false } } }
+            .toolbar { ToolbarItem(placement: .cancellationAction) { Button("取消") { dismiss() } } }
         }
         .presentationDetents([.medium, .large])
-    }
-
-    private func card<C: View>(@ViewBuilder _ c: () -> C) -> some View {
-        VStack(alignment: .leading, spacing: 14) { c() }
-            .padding(18)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Ink.card, in: RoundedRectangle(cornerRadius: 18))
     }
 }

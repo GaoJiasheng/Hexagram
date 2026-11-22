@@ -13,6 +13,8 @@ struct DeskApp: App {
                     await AccountStore.shared.bootstrap()
                     #if DEBUG
                     if let g = ProcessInfo.processInfo.environment["DESK_GOAL"], let m = Int(g) { DeskSettings.shared.setGoal(m) }
+                    if let h = ProcessInfo.processInfo.environment["DESK_GOALHIST"] { DeskSettings.shared.seedHistory(h) }
+                    if let t = ProcessInfo.processInfo.environment["DESK_TEXTSIZE"], let v = Int(t) { UserDefaults.standard.set(v, forKey: TextSize.key) }
                     #endif
                     SyncEngine.shared.appActive()
                 }

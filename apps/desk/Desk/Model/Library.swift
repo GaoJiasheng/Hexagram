@@ -10,7 +10,11 @@ final class Library {
     var manifest: Manifest?
     var shelf: [String] = []                 // 我订的书(按加入次序)
     var downloading: Set<String> = []
+    /// 下载失败的书(书目里那一行显示「没下下来 · 重试」)。
+    var failed: Set<String> = []
     var loadError: String?
+    /// 正在拉书目(没有缓存的书目时,书目页显示转圈而不是空白)。
+    var refreshing = false
     @ObservationIgnored private var packs: [String: BookPack] = [:]
 
     #if DEBUG
@@ -38,16 +42,28 @@ final class Library {
 
     /// 拉最新清单;拉不到就用上次存下的(离线可用)。
     func refresh() async {
+        refreshing = true
+        defer { refreshing = false }
         do {
-            let (data, _) = try await URLSession.shared.data(from: Self.base.appendingPathComponent("manifest.json"))
+            let (data, resp) = try await Self.session.data(from: Self.base.appendingPathComponent("manifest.json"))
+            guard (resp as? HTTPURLResponse)?.statusCode == 200 else { throw URLError(.badServerResponse) }
             let m = try JSONDecoder().decode(Manifest.self, from: data)
             manifest = m
             try? data.write(to: manifestFile, options: .atomic)
             loadError = nil
         } catch {
-            if manifest == nil { loadError = "书目取不到,检查一下网络" }
+            if manifest == nil { loadError = "书目取不到。检查一下网络,或者稍后再试。" }
         }
     }
+
+    /// 取书目与内容包用:连不上时 20 秒内报错(不让转圈一直转下去),不等网络恢复。
+    static let session: URLSession = {
+        let c = URLSessionConfiguration.default
+        c.timeoutIntervalForRequest = 20
+        c.timeoutIntervalForResource = 120
+        c.waitsForConnectivity = false
+        return URLSession(configuration: c)
+    }()
 
     func isDownloaded(_ b: BookInfo) -> Bool { FileManager.default.fileExists(atPath: dir.appendingPathComponent(b.file).path) }
 
@@ -55,13 +71,15 @@ final class Library {
     func add(_ b: BookInfo) async {
         guard !downloading.contains(b.id) else { return }
         downloading.insert(b.id)
+        failed.remove(b.id)
         defer { downloading.remove(b.id) }
         if !isDownloaded(b) {
             do {
-                let (data, _) = try await URLSession.shared.data(from: Self.base.appendingPathComponent(b.file))
+                let (data, resp) = try await Self.session.data(from: Self.base.appendingPathComponent(b.file))
+                guard (resp as? HTTPURLResponse)?.statusCode == 200 else { throw URLError(.badServerResponse) }
                 _ = try JSONDecoder().decode(BookPack.self, from: data)   // 坏包不落盘
                 try data.write(to: dir.appendingPathComponent(b.file), options: .atomic)
-            } catch { loadError = "《\(b.title)》没下下来,稍后再试"; return }
+            } catch { failed.insert(b.id); return }
         }
         if !shelf.contains(b.id) { shelf.append(b.id); UserDefaults.standard.set(shelf, forKey: "desk.shelf") }
         Task { await BaihuaStore.shared.prefetch(b) }     // 白话深读包随书拉;没拉到不碍事,第一次打开时再补
@@ -116,6 +134,9 @@ final class ProgressStore {
         pos[book] = ReadPos(ch: ch, seg: seg, at: at)
         save()
     }
+
+    /// 换账号时选了「不并入」:本机各书的位置清掉,登录后从云端取。
+    func resetAll() { pos = [:]; dirty.removeAll(); save() }
 
     func markAllDirty(_ books: some Sequence<String>) { for b in books where pos[b] != nil { dirty.mark(b) }; save() }
     func clearDirty(_ snap: [String: Int]) { dirty.clear(snap); save() }

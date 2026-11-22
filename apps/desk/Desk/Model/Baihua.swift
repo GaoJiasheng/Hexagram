@@ -354,6 +354,8 @@ final class BaihuaStore {
     /// 每载入一本加一;界面读它,包到了自动刷新。
     private(set) var version = 0
     @ObservationIgnored private var loading: Set<String> = []
+    /// 最近一次没取到白话包的书(白话深读页据此给「没取到 · 重试」,不一直转圈)。
+    private(set) var failed: Set<String> = []
     @ObservationIgnored private var files: [String: (name: String, file: BHFile)] = [:]
 
     private let dir: URL = {
@@ -371,7 +373,7 @@ final class BaihuaStore {
     func file(_ b: BookInfo) -> BHFile? {
         _ = version
         if let f = files[b.id] { if f.name != b.baihua?.file { Task { await ensure(b) } }; return f.file }
-        Task { await ensure(b) }
+        if !failed.contains(b.id) { Task { await ensure(b) } }     // 失败过的等用户点重试(或下次启动),免得每次重画都去连
         return nil
     }
 
@@ -389,8 +391,12 @@ final class BaihuaStore {
         if let f = await Self.read(want) { adopt(b.id, info.file, f); return }
         // 2) 先把上次那份顶上,再去下新的
         if files[b.id] == nil, let old = lastGood(b.id), old != info.file, let f = await Self.read(dir.appendingPathComponent(old)) { adopt(b.id, old, f) }
-        if let f = await download(info.file) { adopt(b.id, info.file, f) }
+        if let f = await download(info.file) { if failed.contains(b.id) { failed.remove(b.id) }; adopt(b.id, info.file, f) }
+        else if files[b.id] == nil, !failed.contains(b.id) { failed.insert(b.id) }
     }
+
+    /// 重试(白话深读页的「重试」)。
+    func retry(_ b: BookInfo) async { failed.remove(b.id); await ensure(b) }
 
     /// 加到书桌时顺手拉(失败不算加书失败,打开时再补)。
     func prefetch(_ b: BookInfo) async {
@@ -411,7 +417,7 @@ final class BaihuaStore {
     }
 
     private func download(_ name: String) async -> BHFile? {
-        guard let (data, resp) = try? await URLSession.shared.data(from: Library.base.appendingPathComponent(name)),
+        guard let (data, resp) = try? await Library.session.data(from: Library.base.appendingPathComponent(name)),
               (resp as? HTTPURLResponse)?.statusCode == 200 else { return nil }
         guard let f = await Self.decode(data) else { return nil }        // 坏包不落盘
         try? data.write(to: dir.appendingPathComponent(name), options: .atomic)

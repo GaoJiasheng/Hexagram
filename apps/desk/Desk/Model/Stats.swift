@@ -46,7 +46,7 @@ struct FinishStats: Equatable {
 /// 口径:
 /// - 学过:某一章(按站内坐标 Src)累计活跃秒数 ≥ 180,跨天、跨设备合计。
 /// - 书:日聚合的 corpus/slug/ch 用本机已下载内容包里各章的 `Chapter.src` 归到书桌的书与章;归不上的(网站上读的别的书)只进总数和「其他」一行。
-/// - 周:周一起。连续周数:从上周往回数连续达标的周,本周已达标再加一。目标按现在设的值算(不留历史目标)。
+/// - 周:周一起。连续周数:从上周往回数连续达标的周,本周已达标再加一。过去的周按那一周生效的目标判(本机留目标改动史)。
 @MainActor
 @Observable
 final class Stats {
@@ -229,15 +229,17 @@ final class Stats {
         return (0..<7).map { (perDay[Self.dayString(Self.add($0, to: m))]?.sec ?? 0) > 0 }
     }
 
-    /// 连续达成的周数:从上周往回数,连续达标;本周已达标也算上。
+    /// 某一周(周一)要达到的秒数:按那一周生效的目标(DeskSettings 的本机改动史),不按现在的目标。
+    func goalSec(monday: Date) -> Int { DeskSettings.shared.goal(weekEnding: Self.dayString(Self.add(6, to: monday))) * 60 }
+
+    /// 连续达成的周数:从上周往回数,连续达标(每周按当周的目标判);本周已达标也算上。
     var streakWeeks: Int {
-        let goal = goalSec
-        guard goal > 0 else { return 0 }
+        guard goalSec > 0 else { return 0 }
         let first = perDay.keys.min().flatMap(Self.date) ?? Date()
         var m = Self.add(-7, to: Self.monday(of: Date()))
         var n = 0
-        while m >= Self.monday(of: first), weekSec(monday: m) >= goal { n += 1; m = Self.add(-7, to: m) }
-        if thisWeekSec >= goal { n += 1 }
+        while m >= Self.monday(of: first), weekSec(monday: m) >= max(goalSec(monday: m), 60) { n += 1; m = Self.add(-7, to: m) }
+        if thisWeekSec >= goalSec { n += 1 }
         return n
     }
 

@@ -135,7 +135,7 @@ struct BHMarkableText: UIViewRepresentable {
         tc.widthTracksTextView = true
         tc.lineFragmentPadding = 0
         lm.addTextContainer(tc)
-        let tv = UITextView(frame: .zero, textContainer: tc)
+        let tv = TightTextView(frame: .zero, textContainer: tc)
         tv.isEditable = false
         tv.isSelectable = true
         tv.isScrollEnabled = false
@@ -196,4 +196,31 @@ struct BHMarkableText: UIViewRepresentable {
         let s = uiView.sizeThatFits(CGSize(width: w, height: .greatestFiniteMagnitude))
         return CGSize(width: w, height: ceil(s.height))
     }
+}
+
+/// 选字时系统画的底色按整个行框画:行距大时比字高出一截(下一行的字像被盖住一半)。这里把每一块收到字的上下沿,
+/// 与划线底色同高;拖柄跟着这些框走。阅读页与白话深读的可选字文本框都用它。
+final class TightTextView: UITextView {
+    override func selectionRects(for range: UITextRange) -> [UITextSelectionRect] {
+        let rects = super.selectionRects(for: range)
+        guard textStorage.length > 0 else { return rects }
+        let loc = min(max(offset(from: beginningOfDocument, to: range.start), 0), textStorage.length - 1)
+        guard let font = textStorage.attribute(.font, at: loc, effectiveRange: nil) as? UIFont else { return rects }
+        let h = ceil(font.lineHeight) + 2
+        return rects.map { r in
+            guard !r.isVertical, r.rect.height > h + 1 else { return r }
+            return TightSelectionRect(base: r, rect: CGRect(x: r.rect.minX, y: r.rect.minY, width: r.rect.width, height: h))
+        }
+    }
+}
+
+private final class TightSelectionRect: UITextSelectionRect {
+    private let base: UITextSelectionRect
+    private let r: CGRect
+    init(base: UITextSelectionRect, rect: CGRect) { self.base = base; r = rect }
+    override var rect: CGRect { r }
+    override var writingDirection: NSWritingDirection { base.writingDirection }
+    override var containsStart: Bool { base.containsStart }
+    override var containsEnd: Bool { base.containsEnd }
+    override var isVertical: Bool { base.isVertical }
 }

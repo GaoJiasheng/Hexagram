@@ -295,6 +295,15 @@ final class ReaderModel {
         remember()
     }
 
+    #if DEBUG
+    /// 调试:跳到这一章的章末页(出样张)。
+    func jumpToEnd() {
+        guard pageSize != .zero else { return }
+        current = PageRef(ch: current.ch, page: layout(current.ch).pageCount)
+        layoutVersion += 1
+    }
+    #endif
+
     /// 全书进度 0…1(按章 + 章内页)。
     var bookProgress: Double {
         guard pageSize != .zero else { return 0 }

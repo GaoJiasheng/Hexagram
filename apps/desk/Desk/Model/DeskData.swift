@@ -120,6 +120,8 @@ final class ReadDaysStore {
     }
     func markAllDirty() { for k in days.keys { dirty.mark(k) }; write() }
     func clearDirty(_ snap: [String: Int]) { dirty.clear(snap); write() }
+    /// 换账号时选了「不并入」:本机的时长记录全部清掉(设备号不变)。
+    func resetAll() { days = [:]; dirty.removeAll(); counted = [:]; write() }
 
     #if DEBUG
     /// 调试入口用:整批写入(键已带日期与设备号),只写本机、不标脏(不推上云)。
@@ -181,6 +183,8 @@ final class FinishedStore {
     }
     func markAllDirty() { for k in recs.keys { dirty.mark(k) }; save() }
     func clearDirty(_ snap: [String: Int]) { dirty.clear(snap); save() }
+    func resetAll() { recs = [:]; dirty.removeAll(); save() }
+    var hasAny: Bool { recs.values.contains { !$0.deleted } }
 
     func applyRemote(_ map: [String: Any]) {
         var changed = false
@@ -210,11 +214,29 @@ final class DeskSettings {
     @ObservationIgnored private(set) var at: Date
     @ObservationIgnored private(set) var dirty: Bool
 
+    /// 目标的改动史(只存本机,不进同步的 settings):哪天起改成多少分钟。连续周数按「那一周生效的目标」判,
+    /// 不拿现在的目标去量过去的周。第一次改目标时先补一条「此前一直是旧目标」(day = "0000-00-00")。
+    struct GoalChange: Codable, Equatable { var day: String; var min: Int }
+    @ObservationIgnored private(set) var history: [GoalChange]
+
     init() {
         let u = UserDefaults.standard
         deskGoal = u.object(forKey: "desk.goal") as? Int ?? 120
         at = u.object(forKey: "desk.goal.at") as? Date ?? .distantPast
         dirty = u.bool(forKey: "desk.goal.dirty")
+        history = (u.data(forKey: "desk.goal.history")).flatMap { try? JSONDecoder().decode([GoalChange].self, from: $0) } ?? []
+    }
+
+    /// 某一周(给这一周的周日)生效的目标(分钟):这一周结束前最后一次改成的值;没有改动史就是现在的目标。
+    func goal(weekEnding sunday: String) -> Int {
+        history.last { $0.day <= sunday }?.min ?? history.first?.min ?? deskGoal
+    }
+
+    private func record(_ m: Int, from old: Int, on day: String) {
+        if history.isEmpty { history.append(GoalChange(day: "0000-00-00", min: old)) }
+        if let i = history.lastIndex(where: { $0.day <= day }), history[i].day == day { history[i].min = m }
+        else { history.append(GoalChange(day: day, min: m)); history.sort { $0.day < $1.day } }
+        if history.count > 200 { history.removeFirst(history.count - 200) }
     }
 
     /// 用户自己设过目标没有(没设过时首页卡上给「设定目标」入口)。
@@ -225,6 +247,7 @@ final class DeskSettings {
 
     func setGoal(_ m: Int) {
         guard m != deskGoal || at == .distantPast else { return }
+        if m != deskGoal { record(m, from: deskGoal, on: ReadDaysStore.day(Date())) }
         deskGoal = m; at = Date(); dirty = true
         save()
         SyncEngine.shared.noteChange()
@@ -236,12 +259,29 @@ final class DeskSettings {
     /// 云端 settings 里有书桌的字段、且比本机新:用云端的。
     func applyRemote(_ settings: [String: Any], at cloudAt: Date) {
         guard !dirty, cloudAt > at, let g = (settings["deskGoal"] as? NSNumber)?.intValue, g > 0 else { return }
+        if g != deskGoal { record(g, from: deskGoal, on: ReadDaysStore.day(cloudAt)) }
         deskGoal = g; at = cloudAt
         save()
     }
 
+    /// 换账号时选了「不并入」:目标回到默认、改动史清空,登录后从云端取。
+    func resetAll() { deskGoal = 120; at = .distantPast; dirty = false; history = []; save() }
+
     private func save() {
         let u = UserDefaults.standard
         u.set(deskGoal, forKey: "desk.goal"); u.set(at, forKey: "desk.goal.at"); u.set(dirty, forKey: "desk.goal.dirty")
+        if let d = try? JSONEncoder().encode(history) { u.set(d, forKey: "desk.goal.history") }
     }
+
+    #if DEBUG
+    /// 调试:DESK_GOALHIST=2026-10-01:60,2026-11-10:300 直接写入改动史(测连续周数按当周目标判)。
+    func seedHistory(_ spec: String) {
+        history = spec.split(separator: ",").compactMap { p in
+            let kv = p.split(separator: ":"); guard kv.count == 2, let m = Int(kv[1]) else { return nil }
+            return GoalChange(day: String(kv[0]), min: m)
+        }.sorted { $0.day < $1.day }
+        if let last = history.last { deskGoal = last.min; if at == .distantPast { at = Date() } }
+        save()
+    }
+    #endif
 }

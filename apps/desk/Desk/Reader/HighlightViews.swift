@@ -26,6 +26,8 @@ struct HighlightPanel: View {
     /// 浮卡片(iPad)用:给了就按内容定高、用它收起,不撑满整张表单。
     var close: (() -> Void)? = nil
     @Environment(\.dismiss) private var dismiss
+    /// 量出来的内容高度:表单按它定高(此前写死 220 / 290,手机上下面空出一大块)。
+    @State private var measured: CGFloat = 0
     private func shut() { if let close { close() } else { dismiss() } }
     private var store: HighlightStore { .shared }
 
@@ -59,12 +61,30 @@ struct HighlightPanel: View {
                 }
             }
             .frame(maxWidth: 640, alignment: .leading)
-            .padding(24)
+            .padding(.horizontal, 24).padding(.top, 24).padding(.bottom, close == nil ? 8 : 24)
+            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { measured = $0 }
             .frame(maxWidth: .infinity, maxHeight: close == nil ? .infinity : nil, alignment: .topLeading)
             .background(close == nil ? Ink.paper : Color.clear)
+            .modifier(FitDetent(height: measured, enabled: close == nil))
         } else {
             Color.clear.frame(height: 1).onAppear { shut() }
         }
+    }
+}
+
+/// 表单按内容定高(量到高度之前先给一个估值,免得第一帧弹得过高)。
+struct FitDetent: ViewModifier {
+    let height: CGFloat
+    var enabled = true
+    var fallback: CGFloat = 220
+    /// 内容太长时封顶(再往下靠表单里的滚动),并允许再拉到全屏。
+    var cap: CGFloat? = nil
+    func body(content: Content) -> some View {
+        if enabled {
+            let h = height > 0 ? ceil(height) : fallback
+            if let cap { content.presentationDetents(h > cap ? [.height(cap), .large] : [.height(h)]) }
+            else { content.presentationDetents([.height(h)]) }
+        } else { content }
     }
 }
 
