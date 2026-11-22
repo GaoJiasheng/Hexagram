@@ -37,6 +37,22 @@ const BOOKS = Object.fromEntries(DESK_BOOKS.map((b) => [b.id,
     : b.sources.length > 1 ? { group: b.sources[0][0], slug: b.id, parts: b.sources.map((s) => s[1]) }
       : { group: b.sources[0][0], slug: b.sources[0][1] }]))
 
+// 各门类另加的画面红线(与站内题图规矩一致:佛道不画像、中医不画诊疗、命理不画算命、伪书不画气派;时代按书)
+const CAT_RULES = {
+  佛: '- This is a Buddhist text: NEVER draw a Buddha, bodhisattva, arhat, monk portrait, statue, halo, or any devotional image or temple altar. Use the plain objects and scenes the text itself mentions (an alms bowl, a robe on a rock, a raft, a lamp, a lotus leaf, a mountain path, a sal grove) — things, not holy figures. Period may be later than Han (Six Dynasties to Tang) where the text is.',
+  道: '- This is a Daoist text: NEVER draw immortals, deities, talismans, alchemical furnaces with elixirs, or ritual altars as objects of worship. Use natural imagery and plain objects from the text.',
+  中医: '- This is a classical medical text read as history of thought: NEVER draw diagnosis or treatment (no pulse-taking, no acupuncture needles, no moxa, no patients, no body charts, no pharmacy drawers or prepared medicines). Use nature and seasons, the four directions, water, mountains, plants growing in the wild (not as remedies), bamboo slips.',
+  命理: '- This is a text on calendrical cosmology read as a historical document: NEVER draw fortune-telling (no diviner stalls, almanacs, birth charts, bagua mirrors, coins, palm or face reading, zodiac animals as mascots). Use the sky, seasons, the sun and moon, stars, water clocks, farming through the year, the five materials as plain natural things (wood, fire, earth, metal, water).',
+  谋略: '- NEVER glorify scheming or power: no thrones, courts in splendour, armies in triumph, assassins, bribes. Keep it small and sober: an empty hall, a closed door seen from outside, a chessboard-like weiqi board left mid-game, footprints, a lamp in a study.',
+  兵: '- A text on strategy read as thought, not as spectacle: no gore, no heroic battle scenes or commanders in glory; prefer terrain, weather, rivers and passes, camps at a distance, signal fires, maps on a table, drums and banners at rest.',
+  法: '- No scenes of punishment, torture or execution; prefer instruments of measure and order (scales, measures, tallies, sealed documents, a city gate at dawn).',
+  诗词曲: '- Period follows the text (Tang, Song or Yuan where it is): architecture, boats, dress at a distance and objects of that era. One concrete scene from the poem, not a generic landscape.',
+  古文: '- Period follows the text (from pre-Qin up to Ming–Qing): architecture and objects of the era the piece was written in or describes.',
+  心学: '- Period is Ming: a scholar\'s study, an academy courtyard, bamboo, a mountain path — plain and quiet.',
+  儒: '- No portraits of Confucius or disciples and no temple worship scenes; prefer the school courtyard, the apricot terrace, ritual vessels at rest, a zither, a cart on the road, fields and seasons.',
+}
+const catRules = (id) => { const c = DESK_BOOKS.find((b) => b.id === id)?.category; return c && CAT_RULES[c] ? '\n' + CAT_RULES[c] : '' }
+
 function bhText(b) {
   if (!b) return ''
   return (b.blocks || []).filter((x) => ['p', 'h2', 'quote', 'lead'].includes(x.type) && x.text).map((x) => x.text).join('\n').replace(/\*\*/g, '')
@@ -114,7 +130,7 @@ PROMPT: <the final English image prompt, which must begin with the fixed art sty
 == STEP 2: generate ==
 Use your image generation tool to create exactly ONE image from that PROMPT and save it in the current directory as out.png (landscape 3:2, 1536x1024).
 
-${COMMON_RULES}${yj}
+${COMMON_RULES}${yj}${catRules(bk.id)}
 
 When finished, print only the absolute path of out.png. Do nothing else.`
 }
@@ -149,7 +165,7 @@ PROMPT: <the final English image prompt, beginning with the fixed art style sent
 == STEP 2: generate ==
 Use your image generation tool to create exactly ONE image from that PROMPT and save it in the current directory as out.png (${banner ? 'landscape 3:2, 1536x1024' : 'portrait 2:3, 1024x1536'}).
 
-${COMMON_RULES}${yj}
+${COMMON_RULES}${yj}${catRules(bk.id)}
 
 When finished, print only the absolute path of out.png. Do nothing else.`
 }
