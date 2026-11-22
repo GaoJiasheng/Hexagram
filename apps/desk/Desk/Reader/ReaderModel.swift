@@ -41,6 +41,20 @@ final class ReaderModel {
 
     func chapter(_ no: Int) -> Chapter { pack.chapters[no - 1] }
 
+    /// 页角水印:卦用卦名,十翼的篇章不放,其余用章号。
+    func watermark(_ no: Int) -> String {
+        let c = chapter(no)
+        if let g = c.gua { return g.name }
+        return c.kind == "text" ? "" : Numerals.chinese(no)
+    }
+
+    /// 页脚那一行:「道德经 · 第八章」「周易 · 乾为天」「周易 · 系辞上 · 第一章」
+    func caption(_ no: Int) -> String {
+        let c = chapter(no)
+        if c.gua != nil || c.kind == "text" { return "\(book.title) · \(c.title)" }
+        return "\(book.title) · 第 \(Numerals.chinese(no)) \(book.unit)"
+    }
+
     func layout(_ ch: Int) -> ChapterLayout {
         if let l = layouts[ch] { return l }
         var st = style

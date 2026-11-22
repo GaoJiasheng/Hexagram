@@ -28,7 +28,11 @@ const BOOKS = [
   { id: 'zhuangzi', template: 'pianzhang', title: '庄子', unit: '篇',
     sources: [['dao', 'zhuangzi-neipian', '内篇'], ['dao', 'zhuangzi-waipian', '外篇'], ['dao', 'zhuangzi-zapian', '杂篇']],
     theme: { accent: '#3F7A4E', accent2: '#D08A2E', paper: '#F6F6EC' } },
-  // 易经(六十四卦 + 十翼)数据形态不同,M1 接入
+  // 易经:六十四卦(hexagrams.json)+ 独立成篇的十翼五种(classics/),数据形态不同,走 buildYijing
+  { id: 'yijing', template: 'gua', title: '周易', unit: '卦', build: 'yijing',
+    era: '先秦', attribution: '旧题伏羲画卦、文王系辞、孔子作传', summary: '六十四卦 · 十翼',
+    brief: '六十四卦卦爻辞与十翼传文,以阴阳爻画说变化之理的群经之首。',
+    theme: { accent: '#7A4E9A', accent2: '#C9892B', paper: '#F6F4EE' } },
 ]
 
 const errors = []
@@ -79,6 +83,11 @@ function buildBook(spec) {
     if (partTitle) parts.push({ title: partTitle, from, to: chapters.length })
     else for (const p of meta.parts || []) parts.push({ title: p.title, from: p.from, to: p.to, ...(p.note ? { note: p.note } : {}) })
   }
+  return finish(spec, meta0, chapters, parts, chars)
+}
+
+// 写出一本书的包,返回 manifest 条目(meta0:站内 texts.json 的书目元数据;易经没有,用 spec 里的字段)
+function finish(spec, meta0, chapters, parts, chars) {
   const body = { id: spec.id, chapters }
   const json = JSON.stringify(body)
   const version = crypto.createHash('sha1').update(json).digest('hex').slice(0, 10)
@@ -88,13 +97,14 @@ function buildBook(spec) {
     id: spec.id,
     title: spec.title || meta0.title,
     alias: spec.title ? '' : (meta0.alias || ''),
-    era: meta0.era || '',
-    attribution: meta0.attribution || '',
-    brief: meta0.brief || '',
-    howto: meta0.howto || '',
+    era: spec.era || meta0.era || '',
+    attribution: spec.attribution || meta0.attribution || '',
+    brief: spec.brief || meta0.brief || '',
+    howto: spec.howto || meta0.howto || '',
     template: spec.template,
     unit: spec.unit || meta0.sectionUnit || '章',
     chapters: chapters.length,
+    ...(spec.summary ? { summary: spec.summary } : {}),   // 章数说不清的书(周易 = 64 卦 + 传文 35 章)给一句现成的
     segs: chapters.reduce((n, c) => n + c.segs.length, 0),
     chars,
     parts,
@@ -105,9 +115,127 @@ function buildBook(spec) {
   }
 }
 
+// ── 易经 ──────────────────────────────────────────────────────────────
+// 第 1–64 章 = 六十四卦(kind 'gua'),第 65 章起 = 系辞上 / 系辞下 / 说卦 / 序卦 / 杂卦各章(kind 'text')。
+// 一卦的段次:卦辞 → 彖 → 大象 → 六爻(爻辞 + 小象)→ 用九 / 用六(乾坤)→ 文言(乾坤,逐段)。
+// 注释照网站的挂法:卦辞、爻辞走 zhushi.json 词典(最长优先扫描,同 AnnotatedText.segment);
+// 彖 / 大象 / 小象 / 文言与十翼五种走 zhushi-anchored(逐段锚定,ref 条目从词典取释义)。
+// binary 自下而上(下标 0 = 初爻),与全项目约定一致。
+const YJ_TEXTS = ['xici-shang', 'xici-xia', 'shuogua', 'xugua', 'zagua']
+
+function buildYijing(spec) {
+  const Y = 'src/data/yijing'
+  const hexes = read(`${Y}/hexagrams.json`)
+  const trigrams = new Map(read(`${Y}/trigrams.json`).map((t) => [t.id, t.name]))
+  const dict = read(`${Y}/zhushi.json`)
+  const dictByTerm = new Map(dict.map((z) => [z.term, z]))
+  const byFirst = new Map()
+  for (const z of dict) { if (!byFirst.has(z.term[0])) byFirst.set(z.term[0], []); byFirst.get(z.term[0]).push(z) }
+  for (const l of byFirst.values()) l.sort((a, b) => b.term.length - a.term.length)
+  const hexAnch = read(`${Y}/zhushi-anchored/hexagrams.json`)
+
+  const toNote = (x) => { const n = { k: x.term, d: x.note }; if (x.reading) n.r = x.reading; return n }
+  // 词典模式:与网站 AnnotatedText 同一扫描,命中的词去重后挂上
+  const dictNotes = (o) => {
+    const out = [], seen = new Set()
+    for (let i = 0; i < o.length;) {
+      const hit = (byFirst.get(o[i]) || []).find((z) => o.startsWith(z.term, i))
+      if (hit) { if (!seen.has(hit.term)) { seen.add(hit.term); out.push(toNote(hit)) } i += hit.term.length } else i++
+    }
+    return out
+  }
+  // 锚定模式:ref 条目从词典取释义,取不到的丢弃(同 zhushiAnchored.resolve)
+  const anchNotes = (list) => (list || []).map((e) => (e.ref ? dictByTerm.get(e.term) : e)).filter(Boolean).map(toNote)
+
+  const stats = { dict: 0, anchHex: 0, anchText: 0 }
+  let chars = 0
+  const chapters = []
+  const mkSeg = (where, o, t, notes, extra, kind) => {
+    if (typeof o !== 'string' || !o) { err(`易经 ${where}:原文缺`); return null }
+    const seg = { o }
+    if (t) seg.t = t
+    if (notes.length) {
+      for (const n of notes) if (!o.includes(n.k)) err(`易经 ${where}:注释「${n.k}」不是该段原文子串`)
+      seg.n = notes
+      stats[kind] += notes.length
+    }
+    Object.assign(seg, extra)
+    chars += o.length
+    return seg
+  }
+
+  // 六十四卦
+  if (hexes.length !== 64) err(`易经:hexagrams.json 有 ${hexes.length} 卦,应为 64`)
+  const sorted = [...hexes].sort((a, b) => a.id - b.id)
+  sorted.forEach((h, i) => {
+    const where = `第 ${h.id} 卦${h.name}`
+    if (h.id !== i + 1) err(`易经:卦序不连续,第 ${i + 1} 位是 ${h.id}`)
+    if (!/^[01]{6}$/.test(h.binary || '')) err(`易经 ${where}:binary「${h.binary}」不是 6 位 0/1`)
+    if (!Array.isArray(h.lines) || h.lines.length !== 6) { err(`易经 ${where}:爻数不是 6`); return }
+    const upper = trigrams.get(h.upperTrigram), lower = trigrams.get(h.lowerTrigram)
+    if (!upper || !lower) err(`易经 ${where}:上下卦 ${h.upperTrigram}/${h.lowerTrigram} 在 trigrams.json 里找不到`)
+    const A = hexAnch[String(h.id)] || {}
+    // [源原文, seg] 成对记下,末尾逐段核一字不差
+    const pairs = []
+    const push = (src, seg) => { if (seg) { pairs.push([src, seg]); segs.push(seg) } }
+    const segs = []
+    push(h.judgment?.original, mkSeg(`${where} 卦辞`, h.judgment?.original, h.judgment?.translation, dictNotes(h.judgment?.original || ''), { label: '卦辞' }, 'dict'))
+    push(h.tuan?.original, mkSeg(`${where} 彖`, h.tuan?.original, h.tuan?.translation, anchNotes(A.tuan), { label: '彖' }, 'anchHex'))
+    push(h.daxiang?.original, mkSeg(`${where} 大象`, h.daxiang?.original, h.daxiang?.translation, anchNotes(A.daxiang), { label: '象' }, 'anchHex'))
+    const lineSegs = (ln, key, lineNo) => {
+      push(ln.original, mkSeg(`${where} ${ln.title}`, ln.original, ln.translation, dictNotes(ln.original || ''), { label: ln.title, line: lineNo }, 'dict'))
+      const xx = ln.xiaoxiang
+      if (!xx) { err(`易经 ${where} ${ln.title}:缺小象`); return }
+      push(xx.original, mkSeg(`${where} ${ln.title} 小象`, xx.original, xx.translation, anchNotes(A.xiaoxiang?.[key]), { label: '象', line: lineNo }, 'anchHex'))
+    }
+    h.lines.forEach((ln, j) => lineSegs(ln, String(j + 1), j + 1))
+    if (h.extra?.use) lineSegs(h.extra.use, 'use', 7)
+    ;(h.extra?.wenyan || []).forEach((p, j) => push(p.original, mkSeg(`${where} 文言第 ${j + 1} 段`, p.original, p.translation, anchNotes(A.wenyan?.[String(j)]), { label: '文言' }, 'anchHex')))
+    for (const [src, seg] of pairs) if (seg.o !== src) err(`易经 ${where}:有一段原文与源数据不一致`)
+    chapters.push({
+      no: chapters.length + 1,
+      title: h.fullName || h.name,
+      kind: 'gua',
+      gua: { name: h.name, fullName: h.fullName, pinyin: h.pinyin, binary: h.binary, upper, lower },
+      src: { corpus: 'yijing', slug: 'hexagrams', ch: h.id },
+      segs,
+    })
+  })
+  const parts = [{ title: '上经', from: 1, to: 30 }, { title: '下经', from: 31, to: 64 }]
+
+  // 十翼五种
+  for (const slug of YJ_TEXTS) {
+    const book = read(`${Y}/classics/${slug}.json`)
+    const notes = exists(`${Y}/zhushi-anchored/${slug}.json`) ? read(`${Y}/zhushi-anchored/${slug}.json`) : {}
+    const from = chapters.length + 1
+    for (const c of book.chapters) {
+      const cn = notes[String(c.no)] || {}
+      const where = `${book.title} 第 ${c.no} 章`
+      const segs = c.paragraphs.map((p, i) => {
+        const o = typeof p === 'string' ? p : p.original
+        const seg = mkSeg(`${where}第 ${i + 1} 段`, o, p.translation, anchNotes(cn[String(i)]), {}, 'anchText')
+        if (seg && seg.o !== o) err(`易经 ${where}第 ${i + 1} 段:原文与源数据不一致`)
+        return seg
+      }).filter(Boolean)
+      chapters.push({
+        no: chapters.length + 1,
+        // 文件只有一章(杂卦)就只用书名;否则「系辞上 · 第一章」
+        title: book.chapters.length === 1 ? book.title : `${book.title} · ${c.title || `第 ${c.no} 章`}`,
+        kind: 'text',
+        src: { corpus: 'yijing', slug, ch: c.no },
+        segs,
+      })
+    }
+    parts.push({ title: book.title, from, to: chapters.length })
+  }
+  for (const p of parts) if (p.to < p.from) err(`易经:部「${p.title}」是空的`)
+  console.log(`  易经注释:卦辞爻辞词典 ${stats.dict} 条 · 卦内传文锚注 ${stats.anchHex} 条 · 十翼五种锚注 ${stats.anchText} 条`)
+  return finish(spec, {}, chapters, parts, chars)
+}
+
 fs.rmSync(OUT, { recursive: true, force: true })
 fs.mkdirSync(OUT, { recursive: true })
-const books = BOOKS.map(buildBook)
+const books = BOOKS.map((b) => (b.build === 'yijing' ? buildYijing(b) : buildBook(b)))
 if (errors.length) { console.error(errors.slice(0, 30).join('\n')); console.error(`✗ ${errors.length} 处校验未过`); process.exit(1) }
 fs.writeFileSync(path.join(OUT, 'manifest.json'), JSON.stringify({ v: 1, books }, null, 1))
 for (const b of books) console.log(`${b.title}  ${b.chapters} ${b.unit} · ${b.segs} 段 · ${b.chars} 字 · ${(b.bytes / 1024).toFixed(0)} KB · ${b.file}`)

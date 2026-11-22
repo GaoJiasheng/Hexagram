@@ -35,7 +35,7 @@ struct FinishScreen: View {
                     VStack(spacing: 10) {
                         Text("学完了").font(.system(size: 14, weight: .semibold)).kerning(6).foregroundStyle(book.theme.accentColor)
                         Text(book.title).font(Fonts.song(46, bold: true)).foregroundStyle(Ink.text)
-                        Text("\(book.chapters) \(book.unit) · \(book.chars) 字").font(.system(size: 14)).foregroundStyle(Ink.soft)
+                        Text("\(book.sizeLabel) · \(book.chars) 字").font(.system(size: 14)).foregroundStyle(Ink.soft)
                     }
                     .padding(.horizontal, 54)
                     .opacity(stage >= 2 ? 1 : 0)

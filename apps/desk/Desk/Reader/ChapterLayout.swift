@@ -114,14 +114,30 @@ final class ChapterLayout {
 
     static func typeset(_ ch: Chapter, unit: String, style: ReaderStyle) -> NSAttributedString {
         let out = NSMutableAttributedString()
-        // 章题:小字序号 + 大字题名
+        // 章题:小字序号 + 大字题名。卦:序号后带「下卦 · 上卦」,题名前画卦画;十翼的篇章不标序号。
         let cap = NSMutableParagraphStyle(); cap.paragraphSpacing = 6
-        out.append(NSAttributedString(string: "第 \(Numerals.chinese(ch.no)) \(unit)\n", attributes: [
-            .font: UIFont.systemFont(ofSize: max(13, style.fontSize * 0.5), weight: .semibold), .foregroundColor: style.accent, .kern: 4, .paragraphStyle: cap, .deskSeg: -1]))
+        let capAttrs: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: max(13, style.fontSize * 0.5), weight: .semibold), .foregroundColor: style.accent, .kern: 4, .paragraphStyle: cap, .deskSeg: -1]
+        if let g = ch.gua {
+            out.append(NSAttributedString(string: "第 \(Numerals.chinese(ch.no)) 卦 · \(g.lower)下\(g.upper)上\n", attributes: capAttrs))
+        } else if ch.kind != "text" {
+            out.append(NSAttributedString(string: "第 \(Numerals.chinese(ch.no)) \(unit)\n", attributes: capAttrs))
+        }
         if !ch.title.isEmpty {
             let ts = NSMutableParagraphStyle(); ts.paragraphSpacing = style.fontSize * 1.3
-            out.append(NSAttributedString(string: ch.title + "\n", attributes: [
-                .font: Fonts.uiSong(style.fontSize * 1.5, bold: true), .foregroundColor: style.text, .paragraphStyle: ts, .deskSeg: -1]))
+            let titleFont = Fonts.uiSong(style.fontSize * 1.5, bold: true)
+            let line = NSMutableAttributedString()
+            if let g = ch.gua {
+                let side = titleFont.capHeight * 1.25
+                let att = NSTextAttachment()
+                att.image = Hexagram.image(binary: g.binary, side: side, color: style.accent)
+                att.bounds = CGRect(x: 0, y: -side * 0.1, width: side, height: side)
+                line.append(NSAttributedString(attachment: att))
+                line.append(NSAttributedString(string: "  "))
+            }
+            line.append(NSAttributedString(string: ch.title + "\n"))
+            line.addAttributes([.font: titleFont, .foregroundColor: style.text, .paragraphStyle: ts, .deskSeg: -1], range: NSRange(location: 0, length: line.length))
+            out.append(line)
         }
         let gap = style.fontSize * 1.0                  // 段与段之间
         let tsy = NSMutableParagraphStyle()             // 译文块:左右缩进留出底色的边
@@ -134,11 +150,16 @@ final class ChapterLayout {
             let os = NSMutableParagraphStyle()
             os.lineSpacing = style.fontSize * 0.5
             os.paragraphSpacing = open ? style.fontSize * 0.45 : gap
-            let para = NSMutableAttributedString(string: s.o + "\n", attributes: [
+            // 爻题(初九、六二…用九)排在爻辞前面,用主题色;彖、象的原文自带「彖曰」「象曰」,不另标
+            let tag = (s.line != nil && s.label != nil && s.label != "象") ? s.label! + "　" : ""
+            let para = NSMutableAttributedString(string: tag + s.o + "\n", attributes: [
                 .font: Fonts.uiSong(style.fontSize), .foregroundColor: style.text, .paragraphStyle: os, .kern: 0.6, .deskSeg: i])
+            let lead = (tag as NSString).length
+            if lead > 0 { para.addAttributes([.font: Fonts.uiSong(style.fontSize, bold: true), .foregroundColor: style.accent], range: NSRange(location: 0, length: lead)) }
             for (j, n) in (s.n ?? []).enumerated() {
-                let r = (s.o as NSString).range(of: n.k)
+                var r = (s.o as NSString).range(of: n.k)
                 guard r.location != NSNotFound else { continue }
+                r.location += lead
                 // 带注释的字词做成「链接」:系统文本框对链接的点按最可靠(自己加点按手势会被选字手势吃掉)
                 para.addAttributes([.deskNote: "\(i):\(j)", .link: URL(string: "desk-note://n/\(i)/\(j)")!], range: r)
             }
@@ -174,6 +195,27 @@ extension UIImage {
             let scale = max(size.width / self.size.width, size.height / self.size.height)
             let w = self.size.width * scale, h = self.size.height * scale
             draw(in: CGRect(x: (size.width - w) / 2, y: (size.height - h) / 2, width: w, height: h))
+        }
+    }
+}
+
+/// 卦画:六爻自下而上(binary 下标 0 是初爻),阳爻一横、阴爻断开。
+enum Hexagram {
+    static func image(binary: String, side: CGFloat, color: UIColor) -> UIImage {
+        let bits = Array(binary)
+        return UIGraphicsImageRenderer(size: CGSize(width: side, height: side)).image { _ in
+            color.setFill()
+            let h = side / 11                       // 六横五空,等分
+            for (i, b) in bits.enumerated() where i < 6 {
+                let y = side - h * CGFloat(i * 2 + 1)
+                if b == "1" {
+                    UIBezierPath(roundedRect: CGRect(x: 0, y: y, width: side, height: h), cornerRadius: h * 0.25).fill()
+                } else {
+                    let w = side * 0.42
+                    UIBezierPath(roundedRect: CGRect(x: 0, y: y, width: w, height: h), cornerRadius: h * 0.25).fill()
+                    UIBezierPath(roundedRect: CGRect(x: side - w, y: y, width: w, height: h), cornerRadius: h * 0.25).fill()
+                }
+            }
         }
     }
 }

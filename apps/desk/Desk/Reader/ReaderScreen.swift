@@ -40,32 +40,35 @@ struct ReaderScreen: View {
         .fullScreenCover(isPresented: $showFinish) { FinishScreen(book: model.book, stats: .sample) }
     }
 
-    /// 页面底子:纸色 + 这一章的插画淡淡铺在顶上(可关)+ 右下角的章号水印。插画只做背景,不占正文的位置。
+    /// 页面底子:纸色 + 顶上一抹主题色 + 这一章的插画铺在页面底部、自下而上淡出(可关)。
+    /// 插画只做背景:短章下半页本来空着,正好落在那里;正文长的页再调淡。没有插画时右下角放章号水印。
     private var backdrop: some View {
-        ZStack {
+        let art = showArt ? UIImage(named: "art-\(model.book.id)-\(model.current.ch)") : nil
+        return ZStack {
             theme.paperColor
             GeometryReader { geo in
-                if showArt, let img = UIImage(named: "art-\(model.book.id)-\(model.current.ch)") {
+                LinearGradient(colors: [theme.accentColor.opacity(0.14), theme.accent2Color.opacity(0.05), .clear], startPoint: .top, endPoint: .center)
+                    .frame(height: geo.size.height * 0.5)
+                if let img = art {
                     Image(uiImage: img).resizable().scaledToFill()
-                        .frame(width: geo.size.width, height: geo.size.height * 0.46)
+                        .frame(width: geo.size.width, height: min(geo.size.height * 0.52, geo.size.width * 0.8), alignment: .bottom)
                         .clipped()
-                        .opacity((model.current.page == 0 ? 0.42 : 0.2) * (scheme == .dark ? 0.6 : 1))   // 夜里再压暗一些
-                        .mask(LinearGradient(stops: [.init(color: .black, location: 0), .init(color: .black.opacity(0.75), location: 0.35), .init(color: .clear, location: 1)],
+                        .opacity((model.current.page == 0 ? 0.62 : 0.26) * (scheme == .dark ? 0.55 : 1))
+                        .mask(LinearGradient(stops: [.init(color: .clear, location: 0), .init(color: .black.opacity(0.8), location: 0.5), .init(color: .black, location: 1)],
                                              startPoint: .top, endPoint: .bottom))
+                        .frame(maxHeight: .infinity, alignment: .bottom)
                         .id(model.current.ch)
                         .transition(.opacity)
                 } else {
-                    LinearGradient(colors: [theme.accentColor.opacity(0.14), theme.accent2Color.opacity(0.05), .clear], startPoint: .top, endPoint: .center)
-                        .frame(height: geo.size.height * 0.5)
+                    Text(model.watermark(model.current.ch))
+                        .font(Fonts.song(min(geo.size.width * 0.42, 340), bold: true))
+                        .foregroundStyle(theme.accentColor.opacity(0.05))
+                        .lineLimit(1).minimumScaleFactor(0.3)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+                        .padding(.trailing, geo.size.width * 0.04).padding(.bottom, geo.size.height * 0.05)
+                        .id("n\(model.current.ch)")
+                        .transition(.opacity)
                 }
-                Text(Numerals.chinese(model.current.ch))
-                    .font(Fonts.song(min(geo.size.width * 0.42, 340), bold: true))
-                    .foregroundStyle(theme.accentColor.opacity(0.05))
-                    .lineLimit(1).minimumScaleFactor(0.3)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
-                    .padding(.trailing, geo.size.width * 0.04).padding(.bottom, geo.size.height * 0.05)
-                    .id("n\(model.current.ch)")
-                    .transition(.opacity)
             }
         }
         .ignoresSafeArea()
@@ -105,7 +108,7 @@ struct ReaderScreen: View {
     private var footer: some View {
         let n = model.pageSize == .zero ? 1 : model.pageCount(model.current.ch)
         return HStack(spacing: 10) {
-            Text("\(model.book.title) · 第 \(Numerals.chinese(model.current.ch)) \(model.book.unit)").font(.system(size: 12, weight: .medium)).foregroundStyle(theme.accentColor)
+            Text(model.caption(model.current.ch)).font(.system(size: 12, weight: .medium)).foregroundStyle(theme.accentColor)
             Spacer()
             if !model.showTranslation && model.current.page == 0 && !model.isEndPageSafe {
                 Label("轻点一段看译文", systemImage: "hand.tap").font(.system(size: 12)).foregroundStyle(Ink.faint)

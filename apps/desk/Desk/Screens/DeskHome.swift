@@ -212,7 +212,7 @@ struct CatalogSheet: View {
                             .overlay(Text(String(b.title.prefix(1))).font(Fonts.song(22, bold: true)).foregroundStyle(.white))
                         VStack(alignment: .leading, spacing: 4) {
                             Text(b.title).font(Fonts.song(18, bold: true))
-                            Text("\(b.chapters) \(b.unit) · \(b.chars) 字").font(.system(size: 12)).foregroundStyle(Ink.soft)
+                            Text("\(b.sizeLabel) · \(b.chars) 字").font(.system(size: 12)).foregroundStyle(Ink.soft)
                             Text(b.brief).font(.system(size: 13)).foregroundStyle(Ink.soft).lineLimit(2)
                         }
                         Spacer()
