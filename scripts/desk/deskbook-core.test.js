@@ -4,7 +4,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
-  validate, zip, unzip, summarize, checkInline, checkFigShape, checkPath, readImageInfo, readMp4Info, crc32, textLen,
+  validate, zip, unzip, summarize, readDirectory, extractEntry, entryRange, ZipError, checkInline, checkFigShape, checkPath, readImageInfo, readMp4Info, crc32, textLen,
   LIMITS, HEXAGRAM_NAMES, TRIGRAM_NAMES, DISCLAIMER_VOCAB,
 } from './deskbook-core.mjs'
 import { TABLE, TRIGRAMS } from '../lib/hexagram-table.mjs'
@@ -134,6 +134,10 @@ const BROKEN = [
   ['video 超 60 秒', (f) => blocks(f, [{ t: 'video', src: 'media/v.mp4', poster: 'media/p.jpg', w: 10, h: 10, sec: 61 }]), 'chapters/001.json', '超过 60 秒'],
   ['digest 引文超 100 字', (f) => blocks(edit(f, 'book.json', (b) => { b.source = { type: 'digest', of: { title: '原书', author: '某' } } }), [{ t: 'quote', x: '引'.repeat(101), by: '原书' }]), 'chapters/001.json', '至多 100 字'],
   ['digest 一章 17 条引文', (f) => blocks(edit(f, 'book.json', (b) => { b.source = { type: 'digest', of: { title: '原书', author: '某' } } }), Array.from({ length: 17 }, () => ({ t: 'quote', x: '引一句', by: '原书' }))), 'chapters/001.json', '至多 16 条'],
+  ['digest 金句 pull 超 100 字', (f) => blocks(edit(f, 'book.json', (b) => { b.source = { type: 'digest', of: { title: '原书', author: '某' } } }), [{ t: 'pull', x: '引'.repeat(101) }]), 'chapters/001.json', '至多 100 字'],
+  ['digest 金句卡超 100 字', (f) => blocks(edit(f, 'book.json', (b) => { b.source = { type: 'digest', of: { title: '原书', author: '某' } } }), [{ t: 'fig', fig: { kind: 'quote', text: '引'.repeat(101) } }]), 'chapters/001.json', '至多 100 字'],
+  ['digest quote + pull + 金句卡合计 17 条', (f) => blocks(edit(f, 'book.json', (b) => { b.source = { type: 'digest', of: { title: '原书', author: '某' } } }), [
+    ...Array.from({ length: 15 }, () => ({ t: 'quote', x: '引一句', by: '原书' })), { t: 'pull', x: '金句' }, { t: 'fig', fig: { kind: 'quote', text: '卡上一句' } }]), 'chapters/001.json', '至多 16 条'],
   ['健身书没带医学声明', (f) => edit(f, 'book.json', (b) => { b.category = '健身' }), 'book.json', 'medical'],
   ['英文 fitness 标签没带声明', (f) => edit(f, 'book.json', (b) => { b.tags = ['Fitness'] }), 'book.json', 'medical'],
   ['八字书没带占卜声明', (f) => edit(f, 'book.json', (b) => { b.tags = ['八字入门'] }), 'book.json', 'divination'],
@@ -182,13 +186,26 @@ describe('坏样本逐条报对', () => {
     expect(r.ok).toBe(true)
     expect(r.warnings.some((w) => w.file === 'media/a.png' && w.msg.includes('没有任何地方引用'))).toBe(true)
   })
-  it('同时命中两个领域:填其一即可,另一条只提示', () => {
+  it('同时命中两个领域:只带一个报错,两个都带才过', () => {
     const r = validate(edit(base(), 'book.json', (b) => { b.tags = ['中医', '风水']; b.disclaimer = 'medical' }))
-    expect(r.ok).toBe(true)
-    expect(r.warnings.some((w) => w.msg.includes('两个领域'))).toBe(true)
+    expect(r.errors.map((e) => e.msg).join()).toMatch(/divination/)
+    expect(msgs(edit(base(), 'book.json', (b) => { b.tags = ['中医', '风水']; b.disclaimer = ['medical', 'divination'] }))).toBe('')
+  })
+  it('disclaimer 数组:可混自写一句;空数组、重复、超长报错', () => {
+    expect(msgs(edit(base(), 'book.json', (b) => { b.category = '健身'; b.disclaimer = ['medical', '本书动作均需在教练指导下练习。'] }))).toBe('')
+    expect(msgs(edit(base(), 'book.json', (b) => { b.disclaimer = [] }))).toMatch(/不能为空/)
+    expect(msgs(edit(base(), 'book.json', (b) => { b.disclaimer = ['medical', 'medical'] }))).toMatch(/disclaimer\[1\].*重复/)
+    expect(msgs(edit(base(), 'book.json', (b) => { b.disclaimer = ['medical', '声'.repeat(121)] }))).toMatch(/disclaimer\[1\].*超过 120 字/)
+    expect(msgs(edit(base(), 'book.json', (b) => { b.disclaimer = ['medical', 3] }))).toMatch(/disclaimer\[1\]/)
+    expect(summarize(edit(base(), 'book.json', (b) => { b.disclaimer = ['medical', 'divination'] })).disclaimer).toEqual(['medical', 'divination'])
   })
   it('宽词不误伤:「五四运动」「天文星座」不要求声明', () => {
     expect(msgs(edit(base(), 'book.json', (b) => { b.tags = ['五四运动', '天文星座', 'Fortune 500'] }))).toBe('')
+  })
+  it('非 digest 书不卡引文数与长度;digest 16 条正好通过', () => {
+    expect(msgs(blocks(base(), [...Array.from({ length: 20 }, () => ({ t: 'quote', x: '引'.repeat(120) })), { t: 'fig', fig: { kind: 'quote', text: '引'.repeat(110) } }]))).toBe('')
+    const d = edit(base(), 'book.json', (b) => { b.source = { type: 'digest', of: { title: '原书', author: '某' } } })
+    expect(msgs(blocks(d, [...Array.from({ length: 14 }, () => ({ t: 'quote', x: '引一句' })), { t: 'pull', x: '金句' }, { t: 'fig', fig: { kind: 'quote', text: '卡' } }]))).toBe('')
   })
   it('词表只在一处、中英都有', () => {
     for (const d of Object.values(DISCLAIMER_VOCAB)) { expect(d.zh.length).toBeGreaterThan(10); expect(d.en.length).toBeGreaterThan(5) }
@@ -364,6 +381,8 @@ describe('JSON Schema 与校验器一致', () => {
     expect(bySchema('chapter.json', ch([{ t: 'fig', fig: { kind: 'cols', cols: [{ head: 'a', lines: [] }] } }]))).not.toEqual([])
     expect(bySchema('book.json', { ...J(sample('sample-book'), 'book.json'), source: { type: 'digest' } })).not.toEqual([])
     expect(bySchema('book.json', { ...J(sample('sample-book'), 'book.json'), id: 'Bad' })).not.toEqual([])
+    expect(bySchema('book.json', { ...J(sample('sample-book'), 'book.json'), disclaimer: ['medical', '自写一句'] })).toEqual([])
+    expect(bySchema('book.json', { ...J(sample('sample-book'), 'book.json'), disclaimer: [] })).not.toEqual([])
   })
   it('schema 里的上限与 LIMITS 相同', () => {
     const b = schemas['book.json'].properties
@@ -376,5 +395,51 @@ describe('JSON Schema 与校验器一致', () => {
     expect(n.d['x-deskbook-maxChars']).toBe(LIMITS.noteD)
     expect(n.x['x-deskbook-maxChars']).toBe(LIMITS.noteXMax)
     expect(schemas['fig.json'].$defs.text['x-deskbook-maxChars']).toBe(LIMITS.figString)
+  })
+})
+
+describe('按范围读取:readDirectory + extractEntry', () => {
+  const PKG = path.join(HERE, '../../public/desk/standard/samples')
+  for (const name of ['sample-book', 'sample-collection', 'sample-classic', 'sample-fitness']) {
+    it(`${name}:只取末尾若干字节列出条目,再按条目范围解出 book.json 与每个文件`, async () => {
+      const whole = new Uint8Array(fs.readFileSync(path.join(PKG, `${name}.deskbook`)))
+      const files = await unzip(whole)
+      const tailLen = Math.min(whole.length, 66 * 1024)
+      const entries = readDirectory(whole.subarray(whole.length - tailLen), whole.length)
+      expect(entries.map((e) => e.path).sort()).toEqual([...files.keys()].sort())
+      for (const e of entries) {
+        expect(Object.keys(e).sort()).toEqual(['compressedSize', 'crc', 'localHeaderOffset', 'method', 'path', 'size'])
+        const { start, end } = entryRange(e)
+        const data = await extractEntry(whole.subarray(start, Math.min(end, whole.length)), e)
+        expect(Buffer.from(data).equals(Buffer.from(files.get(e.path))), e.path).toBe(true)
+      }
+      const book = JSON.parse(dec.decode(await extractEntry(whole.subarray(entries.find((e) => e.path === 'book.json').localHeaderOffset), entries.find((e) => e.path === 'book.json'))))
+      expect(book.format).toBe('deskbook')
+    })
+  }
+  it('末尾字节不够时给出 needBytes,补足后成功', async () => {
+    const whole = new Uint8Array(fs.readFileSync(path.join(PKG, 'sample-book.deskbook')))
+    let need
+    try { readDirectory(whole.subarray(whole.length - 200), whole.length); expect.unreachable() } catch (e) { expect(e).toBeInstanceOf(ZipError); need = e.needBytes }
+    expect(need).toBeGreaterThan(200)
+    expect(readDirectory(whole.subarray(whole.length - need), whole.length).length).toBeGreaterThan(5)
+  })
+  it('extractEntry:字节不够报 needBytes,位置不对、炸弹都拒绝', async () => {
+    const whole = new Uint8Array(fs.readFileSync(path.join(PKG, 'sample-classic.deskbook')))
+    const entries = readDirectory(whole, whole.length)
+    const e = entries.find((x) => x.path === 'chapters/001.json')
+    await expect(extractEntry(whole.subarray(e.localHeaderOffset, e.localHeaderOffset + 40), e)).rejects.toMatchObject({ needBytes: expect.any(Number) })
+    await expect(extractEntry(whole.subarray(e.localHeaderOffset + 1), e)).rejects.toThrow(/本地文件头/)
+    await expect(extractEntry(whole.subarray(e.localHeaderOffset), { ...e, path: 'chapters/002.json' })).rejects.toThrow(/不一致/)
+    // 谎报大小:目录说 100 字节,实际 6 MB
+    const big = new Uint8Array(LIMITS.chapterBytes - 10).fill(32)
+    const z = await zip(new Map([['chapters/001.json', big]]))
+    const [entry] = readDirectory(z, z.length)
+    expect(entry.compressedSize).toBeLessThan(10000)
+    await expect(extractEntry(z, { ...entry, size: 100 })).rejects.toThrow(/超过上限/)
+  })
+  it('readDirectory 与 unzip 同样拒绝不合规的路径', async () => {
+    const z = await zip(new Map([['book.json', enc.encode('{}')], ['../x.json', enc.encode('x')]]))
+    expect(() => readDirectory(z, z.length)).toThrow(/路径不合规/)
   })
 })

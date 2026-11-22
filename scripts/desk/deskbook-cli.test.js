@@ -28,8 +28,12 @@ describe('生成物与源同步(改了源须跑 npm run desk:standard)', () => {
     expect(built).not.toMatch(/from '\.\/deskbook-core\.mjs'/)
   })
   it('skill 里的标准、CLI 是最新的', () => {
-    const std = fs.readFileSync(path.join(ROOT, 'docs/deskbook-standard.md'), 'utf8').trimEnd()
-    expect(fs.readFileSync(path.join(ROOT, 'skills/deskbook/standard.md'), 'utf8').includes(std)).toBe(true)
+    const full = fs.readFileSync(path.join(ROOT, 'docs/deskbook-standard.md'), 'utf8')
+    const std = full.slice(0, full.indexOf('## 附录 A')).trimEnd()
+    const copy = fs.readFileSync(path.join(ROOT, 'skills/deskbook/standard.md'), 'utf8')
+    expect(copy.includes(std)).toBe(true)
+    expect(copy).toMatch(/## 附录 A · 图解 fig 的字段[\s\S]*### 公共字段[\s\S]*`notes` 兜底/)
+    expect(copy).not.toMatch(/### 闸/)
     expect(fs.readFileSync(path.join(ROOT, 'skills/deskbook/deskbook.mjs'), 'utf8')).toBe(fs.readFileSync(CLI, 'utf8'))
   })
   it('index.json 列出的文件都在、大小相符', () => {

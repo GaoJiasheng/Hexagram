@@ -39,7 +39,14 @@
       "if": { "properties": { "type": { "enum": ["digest", "licensed"] } } },
       "then": { "required": ["type", "of"] }
     },
-    "disclaimer": { "$ref": "#/$defs/text", "description": "medical | divination | 自写一句", "x-deskbook-maxChars": 120 },
+    "disclaimer": {
+      "description": "medical | divination | 自写一句(每句 ≤ 120 字),或其中几项的数组。命中医学 / 命理领域须含对应值,两个都命中两个都要带(§6)",
+      "x-deskbook-maxChars": 120,
+      "anyOf": [
+        { "$ref": "#/$defs/text" },
+        { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/text" } }
+      ]
+    },
     "unit": { "$ref": "#/$defs/text" },
     "theme": {
       "type": "object",

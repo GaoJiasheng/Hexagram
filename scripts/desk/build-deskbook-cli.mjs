@@ -56,14 +56,18 @@ function buildCli() {
 
 // ── 2. 标准正文(附 fig 字段) ──
 function buildStandard() {
-  const std = fs.readFileSync(R('docs/deskbook-standard.md'), 'utf8').trimEnd()
+  // 标准原文末尾的「附录 A」只是一句占位,这里换成从 desk-baihua-spec §2 摘出的全文
+  const full = fs.readFileSync(R('docs/deskbook-standard.md'), 'utf8')
+  const cut = full.indexOf('## 附录 A')
+  if (cut < 0) throw new Error('docs/deskbook-standard.md 里找不到「## 附录 A」')
+  const std = full.slice(0, cut).trimEnd()
   const spec = fs.readFileSync(R('docs/desk-baihua-spec.md'), 'utf8')
   const a = spec.indexOf('### 公共字段')
   const b = spec.indexOf('### 闸')
   if (a < 0 || b < 0) throw new Error('desk-baihua-spec.md §2 的结构变了:找不到「### 公共字段」或「### 闸」')
   const appendix = [
     '',
-    '## 附录 · 图解 fig 的字段',
+    '## 附录 A · 图解 fig 的字段',
     '',
     '> 摘自 `docs/desk-baihua-spec.md` §2(书桌白话图解的格式,本标准的 `fig` 块原样沿用;机器可读版见 `schema/fig.json`)。',
     '> 那份说明写的是「把站内的 SVG 图转成结构化数据」,文中的「原图」指转换的来源图;自己做书时,理解成「你想画的那张图」即可。',

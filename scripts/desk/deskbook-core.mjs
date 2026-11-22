@@ -57,6 +57,9 @@ export const DISCLAIMERS = Object.freeze({
   divination: '本书为文化与文献研习，不作预测与决断依据',
 })
 
+// 把 disclaimer 字段(一个值或数组)统一成数组;没有就是空数组
+export const disclaimerList = (v) => (v === undefined || v === null ? [] : Array.isArray(v) ? v.filter((x) => typeof x === 'string') : typeof v === 'string' ? [v] : [])
+
 // §6 两个领域的词表(唯一一处定义)。中文按「包含」匹配,英文按整词、不分大小写。
 // 有意不收的宽词:「运动」(五四运动)、「训练」(思维训练)、「星座」(天文)、fortune(财经)、exercise(习题)。
 // 「易经」「周易」不在占卜表里:它们首先是典籍;讲用《易》占断的书,标签里自然会有「占卜」「卜筮」「六爻」一类词。
@@ -236,13 +239,18 @@ export class ZipError extends Error {
 const ZIP_MAGIC = [0x50, 0x4b, 0x03, 0x04]
 const startsWith = (b, sig) => sig.every((x, i) => b[i] === x)
 
-// 读 zip(存储 / deflate)。拒绝:加密、分卷、超限的 zip64、嵌套 zip、违反路径规则的条目、符号链接、
-// 重名、数据区重叠(重叠式炸弹)、解压超限(边解边判)。目录条目忽略。
-export async function unzip(bytes) {
-  if (!(bytes instanceof Uint8Array)) throw new ZipError('输入应为 Uint8Array')
-  if (bytes.length > LIMITS.totalBytes) throw new ZipError(`书包文件超过 ${LIMITS.totalBytes / MB} MB`)
-  if (bytes.length < 22) throw new ZipError('不是 zip:文件太短')
+// 解析中央目录。bytes 是 zip 文件末尾的一段(或整个文件),base 是它在整个文件里的起点,total 是整个文件的长度。
+// 中央目录不全在这一段里时抛 ZipError,并在 err.needBytes 里给出需要从末尾取多少字节。
+function parseDirectory(bytes, base, total) {
+  if (total > LIMITS.totalBytes) throw new ZipError(`书包文件超过 ${LIMITS.totalBytes / MB} MB`)
+  if (total < 22 || bytes.length < 22) throw new ZipError('不是 zip:文件太短')
   const dv = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength)
+  const at = (abs, len) => {
+    const i = abs - base
+    if (abs < base) { const e = new ZipError('中央目录不全在给出的末尾字节里'); e.needBytes = total - abs; throw e }
+    if (i < 0 || i + len > bytes.length) throw new ZipError('中央目录越界')
+    return i
+  }
   const u16 = (o) => dv.getUint16(o, true)
   const u32 = (o) => dv.getUint32(o, true)
   const u64 = (o) => { const v = dv.getBigUint64(o, true); if (v > BigInt(Number.MAX_SAFE_INTEGER)) throw new ZipError('zip64 数值过大'); return Number(v) }
@@ -250,7 +258,7 @@ export async function unzip(bytes) {
   // 找中央目录结尾(EOCD)
   let eocd = -1
   for (let i = bytes.length - 22; i >= Math.max(0, bytes.length - 22 - 65535); i--) {
-    if (u32(i) === 0x06054b50 && i + 22 + u16(i + 20) === bytes.length) { eocd = i; break }
+    if (u32(i) === 0x06054b50 && base + i + 22 + u16(i + 20) === total) { eocd = i; break }
   }
   if (eocd < 0) throw new ZipError('不是 zip:找不到中央目录结尾')
   if (u16(eocd + 4) !== 0 || u16(eocd + 6) !== 0) throw new ZipError('不支持分卷 zip')
@@ -260,17 +268,18 @@ export async function unzip(bytes) {
   if (count === 0xffff || cdSize === 0xffffffff || cdOff === 0xffffffff) {
     const loc = eocd - 20
     if (loc < 0 || u32(loc) !== 0x07064b50) throw new ZipError('zip64 结构不完整')
-    const z = u64(loc + 8)
-    if (z + 56 > bytes.length || u32(z) !== 0x06064b50) throw new ZipError('zip64 结构不完整')
+    const z = at(u64(loc + 8), 56)
+    if (u32(z) !== 0x06064b50) throw new ZipError('zip64 结构不完整')
     count = u64(z + 32); cdSize = u64(z + 40); cdOff = u64(z + 48)
   }
   if (count > LIMITS.entries) throw new ZipError(`条目超过 ${LIMITS.entries} 个`)
-  if (cdOff + cdSize > bytes.length) throw new ZipError('中央目录越界')
+  if (cdOff + cdSize > total) throw new ZipError('中央目录越界')
+  at(cdOff, cdSize)
 
   const entries = []
   const names = new Set()
   let declaredTotal = 0
-  let p = cdOff
+  let p = cdOff - base
   for (let i = 0; i < count; i++) {
     if (p + 46 > bytes.length || u32(p) !== 0x02014b50) throw new ZipError(`中央目录第 ${i + 1} 条损坏`)
     const flags = u16(p + 8)
@@ -313,10 +322,69 @@ export async function unzip(bytes) {
     const max = perFileLimit(name)
     if (usize > max) throw new ZipError(`「${name}」解开后 ${usize} 字节,超过上限 ${max}`)
     if (method === 0 && csize !== usize) throw new ZipError(`「${name}」存储条目的大小前后不一`)
+    if (off + 30 + csize > cdOff) throw new ZipError(`「${name}」的数据越界`)
     declaredTotal += usize
     if (declaredTotal > LIMITS.totalBytes) throw new ZipError(`解开后总量超过 ${LIMITS.totalBytes / MB} MB`)
     entries.push({ name, method, crc, csize, usize, off, max })
   }
+  return entries
+}
+
+// 给存在对象存储里、不便整包读进内存的书包用(如 Worker 按范围读取):
+// 传入文件末尾的若干字节(建议先取 66 KB;条目多时不够会抛 ZipError,err.needBytes 是该取的字节数)与文件总长,
+// 返回条目列表 [{ path, method, compressedSize, size, crc, localHeaderOffset }](目录条目不列)。
+// 与 unzip 同样按路径规则、加密、单文件上限、嵌套压缩包把关。
+export function readDirectory(tail, totalSize) {
+  if (!(tail instanceof Uint8Array)) throw new ZipError('输入应为 Uint8Array')
+  if (!Number.isInteger(totalSize) || totalSize < tail.length) throw new ZipError('totalSize 应为整个文件的字节数(≥ 给出的末尾字节数)')
+  return parseDirectory(tail, totalSize - tail.length, totalSize).map((e) => ({
+    path: e.name, method: e.method, compressedSize: e.csize, size: e.usize, crc: e.crc, localHeaderOffset: e.off,
+  }))
+}
+
+// 某条目该读的字节范围 [start, end):本地文件头 + 文件名 + 额外字段(按 extraAllowance 预留) + 压缩数据。
+// 额外字段实际更长时 extractEntry 会抛 ZipError,err.needBytes 给出确切长度,再取一次即可。
+export function entryRange(entry, extraAllowance = 1024) {
+  const start = entry.localHeaderOffset
+  return { start, end: start + 30 + utf8(entry.path).length + extraAllowance + entry.compressedSize }
+}
+
+// 解出单个条目:bytes 从该条目的本地文件头开始(至少含头、文件名、额外字段与压缩数据)。
+// 边解边按上限判、核 CRC 与大小、拒绝嵌套 zip。返回解开后的字节。
+export async function extractEntry(bytes, entry) {
+  if (!(bytes instanceof Uint8Array)) throw new ZipError('输入应为 Uint8Array')
+  if (!entry || typeof entry.path !== 'string') throw new ZipError('entry 应为 readDirectory 返回的条目')
+  const name = entry.path
+  if (bytes.length < 30) { const e = new ZipError(`「${name}」给出的字节不够`); e.needBytes = 30; throw e }
+  const dv = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength)
+  if (dv.getUint32(0, true) !== 0x04034b50) throw new ZipError(`「${name}」的本地文件头损坏(给出的字节要从本地文件头开始)`)
+  if (dv.getUint16(6, true) & 0x0001) throw new ZipError(`「${name}」是加密条目,书包不许加密`)
+  const lnLen = dv.getUint16(26, true), lxLen = dv.getUint16(28, true)
+  const start = 30 + lnLen + lxLen
+  if (start + entry.compressedSize > bytes.length) { const e = new ZipError(`「${name}」给出的字节不够`); e.needBytes = start + entry.compressedSize; throw e }
+  let lname
+  try { lname = decodeUtf8(bytes.subarray(30, 30 + lnLen)) } catch { lname = null }
+  if (lname !== name) throw new ZipError(`「${name}」本地文件头里的文件名与目录不一致`)
+  return inflateEntry(bytes.subarray(start, start + entry.compressedSize), { name, method: entry.method, crc: entry.crc, usize: entry.size, max: perFileLimit(name) }, LIMITS.totalBytes)
+}
+
+async function inflateEntry(raw, e, budget) {
+  if (e.method !== 0 && e.method !== 8) throw new ZipError(`「${e.name}」的压缩方式 ${e.method} 不支持(只认存储与 deflate)`)
+  const data = e.method === 0 ? raw.slice() : await inflateRaw(raw, Math.min(e.max, budget, e.usize), e.crc, e.usize) // 超过目录记载的原长即停
+  if (data.length !== e.usize) throw new ZipError(`「${e.name}」解开后的大小与目录记载不符`)
+  if (crc32(data) !== e.crc) throw new ZipError(`「${e.name}」CRC 校验不过,文件已损坏`)
+  if (startsWith(data, ZIP_MAGIC)) throw new ZipError(`「${e.name}」内容是一个 zip,书包里不许嵌套压缩包`)
+  return data
+}
+
+// 读 zip(存储 / deflate)。拒绝:加密、分卷、超限的 zip64、嵌套 zip、违反路径规则的条目、符号链接、
+// 重名、数据区重叠(重叠式炸弹)、解压超限(边解边判)。目录条目忽略。
+export async function unzip(bytes) {
+  if (!(bytes instanceof Uint8Array)) throw new ZipError('输入应为 Uint8Array')
+  const entries = parseDirectory(bytes, 0, bytes.length)
+  const dv = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength)
+  const u16 = (o) => dv.getUint16(o, true)
+  const u32 = (o) => dv.getUint32(o, true)
 
   // 本地文件头,数据区不许重叠
   const ranges = []
@@ -337,11 +405,7 @@ export async function unzip(bytes) {
   const out = new Map()
   let total = 0
   for (const e of entries) {
-    const raw = bytes.subarray(e.start, e.start + e.csize)
-    const data = e.method === 0 ? raw.slice() : await inflateRaw(raw, Math.min(e.max, LIMITS.totalBytes - total), e.crc, e.usize)
-    if (data.length !== e.usize) throw new ZipError(`「${e.name}」解开后的大小与目录记载不符`)
-    if (crc32(data) !== e.crc) throw new ZipError(`「${e.name}」CRC 校验不过,文件已损坏`)
-    if (startsWith(data, ZIP_MAGIC)) throw new ZipError(`「${e.name}」内容是一个 zip,书包里不许嵌套压缩包`)
+    const data = await inflateEntry(bytes.subarray(e.start, e.start + e.csize), e, LIMITS.totalBytes - total)
     total += data.length
     if (total > LIMITS.totalBytes) throw new ZipError(`解开后总量超过 ${LIMITS.totalBytes / MB} MB`)
     out.set(e.name, data)
@@ -751,20 +815,28 @@ export function validate(files) {
   }
 
   // disclaimer(§6)
+  // 一个值,或几个值的数组(medical / divination / 自写一句)
   const disc = book.disclaimer
+  const discList = disclaimerList(disc)
   if (disc !== undefined) {
-    if (!isStr(disc)) err(B, 'disclaimer', '应为 medical / divination 或自写的一句话')
-    else if (!DISCLAIMERS[disc] && textLen(disc) > LIMITS.disclaimer) err(B, 'disclaimer', `自写声明 ${textLen(disc)} 字,超过 ${LIMITS.disclaimer} 字`)
+    if (Array.isArray(disc) && !disc.length) err(B, 'disclaimer', '数组不能为空(没有声明就删掉这个字段)')
+    const seen = new Set()
+    ;(Array.isArray(disc) ? disc : [disc]).forEach((d, i) => {
+      const w = Array.isArray(disc) ? `disclaimer[${i}]` : 'disclaimer'
+      if (!isStr(d)) err(B, w, '应为 medical / divination 或自写的一句话')
+      else if (!DISCLAIMERS[d] && textLen(d) > LIMITS.disclaimer) err(B, w, `自写声明 ${textLen(d)} 字,超过 ${LIMITS.disclaimer} 字`)
+      else if (seen.has(d)) err(B, w, `「${d.slice(0, 20)}」重复`)
+      seen.add(d)
+    })
   }
   const terms = [book.category, ...(Array.isArray(book.tags) ? book.tags : [])]
   const need = {}
   for (const d of Object.keys(DISCLAIMERS)) { const h = vocabHit(d, terms); if (h) need[d] = h }
   const needed = Object.keys(need)
-  if (needed.length && !needed.includes(disc)) {
-    for (const d of needed) err(B, 'disclaimer', `分类 / 标签「${need[d]}」属于${d === 'medical' ? '医学 / 养生 / 健身' : '命理 / 占卜'}领域,须带 "disclaimer": "${d}"`)
-  } else if (needed.length > 1) {
-    const other = needed.find((d) => d !== disc)
-    warn(B, 'disclaimer', `分类 / 标签同时命中 ${needed.join(' 与 ')} 两个领域;disclaimer 只能填一个,已填 ${disc},${other} 的内容约束(§6)仍须守`)
+  const missing = needed.filter((d) => !discList.includes(d))
+  for (const d of missing) {
+    const want = needed.length > 1 ? `["${needed.join('", "')}"]` : `"${d}"`
+    err(B, 'disclaimer', `分类 / 标签「${need[d]}」属于${d === 'medical' ? '医学 / 养生 / 健身' : '命理 / 占卜'}领域,须带 "disclaimer": ${want}`)
   }
 
   // theme
@@ -921,7 +993,13 @@ export function validate(files) {
     a.blocks.forEach((b, j) => checkBlock(b, `article.blocks[${j}]`, st))
     if (!st.hasBody) err(F, 'article.blocks', '每章至少一个 p 或 lead')
     if (st.pull > LIMITS.pullPerChapter) err(F, 'article.blocks', `pull 金句 ${st.pull} 处,一章至多 ${LIMITS.pullPerChapter} 处`)
-    if (digest && st.quotes > LIMITS.quotesPerChapter) err(F, 'article.blocks', `讲别人的书(digest)每章直接引用至多 ${LIMITS.quotesPerChapter} 条,本章 ${st.quotes} 条`)
+    if (digest && st.quotes > LIMITS.quotesPerChapter) err(F, 'article.blocks', `讲别人的书(digest)每章直接引用(quote / pull / 金句卡)至多 ${LIMITS.quotesPerChapter} 条,本章 ${st.quotes} 条`)
+
+    // §5.1 直接引用:quote 块、pull 金句、fig 金句卡(kind quote 的 text)一并计数;digest 时每条 ≤ 100 字
+    function cite(q, w) {
+      st.quotes++
+      if (digest && textLen(q) > LIMITS.quoteChars) err(F, w, `讲别人的书(digest)每条直接引用至多 ${LIMITS.quoteChars} 字,这条 ${textLen(q)} 字`)
+    }
 
     function strItems(b, w) {
       if (!Array.isArray(b.items) || !b.items.length) { err(F, `${w}.items`, '应为非空数组'); return }
@@ -943,16 +1021,13 @@ export function validate(files) {
       switch (t) {
         case 'lead': case 'p': if (text('x')) st.hasBody = true; break
         case 'h2': case 'h3': text('x'); break
-        case 'pull': text('x'); st.pull++; break
+        case 'pull': if (text('x')) cite(b.x, w); st.pull++; break
         case 'quote': {
           for (const k of ['o', 'tr', 'x', 'by']) optText(k)
           if (!isStr(b.o) && !isStr(b.x) && !isStr(b.tr)) { err(F, w, '引文块至少要有 o(原文)或 x(引的话)'); break }
           if (!isStr(b.o) && !isStr(b.x)) warn(F, w, '只有 tr 的引文块:书桌按提示语显示')
-          stats.quotes++; st.quotes++
-          if (digest) {
-            const q = isStr(b.x) ? b.x : b.o
-            if (q && textLen(q) > LIMITS.quoteChars) err(F, w, `讲别人的书(digest)每条直接引用至多 ${LIMITS.quoteChars} 字,这条 ${textLen(q)} 字`)
-          }
+          stats.quotes++
+          if (isStr(b.x) || isStr(b.o)) cite(isStr(b.x) ? b.x : b.o, w)
           break
         }
         case 'callout':
@@ -987,6 +1062,7 @@ export function validate(files) {
           const probs = checkFigShape(b.fig)
           for (const pr of probs) err(F, `${w}.fig`, pr)
           if (isObj(b.fig) && FIG_KINDS.includes(b.fig.kind)) stats.figs[b.fig.kind] = (stats.figs[b.fig.kind] || 0) + 1
+          if (isObj(b.fig) && b.fig.kind === 'quote' && isStr(b.fig.text)) cite(b.fig.text, `${w}.fig.text`)
           break
         }
         case 'img':
