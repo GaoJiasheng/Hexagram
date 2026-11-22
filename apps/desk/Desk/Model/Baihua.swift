@@ -12,6 +12,10 @@ struct BaihuaInfo: Codable, Hashable {
     var chapters: Int
     var figs: Int?
     var figsDone: Int?
+    var essays: Int?      // 章级白话篇数(有细粒度白话时才写)
+    var subs: Int?        // 细粒度白话篇数(诗经一首一篇、传习录一条一篇…)
+    /// 一共几篇白话
+    var total: Int { (essays ?? chapters) + (subs ?? 0) }
 }
 
 /// 任意 JSON 值:图解的字段形态多变(字符串 / 数组 / 对象混用),先整个吃进来再按需取。
@@ -354,6 +358,11 @@ struct BHChapter: Hashable {
     var idea: String?
     var hero: BHHero?
     var blocks: [BHBlock]
+    /// 细粒度白话(一章里的一首 / 一条)的键,如「3-1」;章级白话为 nil。划线层、阅读位置按它分开记。
+    var sub: String? = nil
+
+    /// 白话划线记在哪一层:章级 "b",细粒度 "b:<key>"。
+    var layer: String { sub.map { "b:" + $0 } ?? "b" }
 
     /// 小标题:(块下标, 文字)
     var sections: [(index: Int, title: String)] {
@@ -397,23 +406,47 @@ extension BHChapter {
     }
 }
 
+/// 一章里的一篇细粒度白话(诗经的一首、传习录的一条):name 是原文里的题名,from..<to 是它在本章的段下标。
+struct BHSub: Hashable, Identifiable {
+    var key: String
+    var name: String
+    var from: Int
+    var to: Int
+    var essay: BHChapter
+    var id: String { key }
+}
+
 struct BHFile {
     var id: String
     var chapters: [Int: BHChapter]
+    /// 章号 → 这一章的细粒度白话(按序号)。见 docs/desk-baihua-spec.md §1.1。
+    var subs: [Int: [BHSub]] = [:]
 
     init(data: Data) throws {
         let root = try JSONDecoder().decode(JSONValue.self, from: data)
         guard case .object(let chs)? = root["chapters"] else { throw CocoaError(.coderReadCorrupt) }
         id = root["id"]?.string ?? ""
         var out: [Int: BHChapter] = [:]
-        for (k, v) in chs {
-            guard let no = Int(k) else { continue }
+        func essay(_ v: JSONValue, no: Int, sub: String?) -> BHChapter {
             let blocks = (v["blocks"]?.array ?? []).compactMap { BHBlock($0) }
             let hero = v["hero"].flatMap { h -> BHHero? in
                 guard case .object = h else { return nil }
                 return BHHero(badge: h["badge"]?.string, headline: h["headline"]?.string, tagline: h["tagline"]?.string)
             }
-            out[no] = BHChapter(no: no, title: v["title"]?.string ?? "", subtitle: v["subtitle"]?.string, idea: v["idea"]?.string, hero: hero, blocks: blocks)
+            return BHChapter(no: no, title: v["title"]?.string ?? "", subtitle: v["subtitle"]?.string, idea: v["idea"]?.string, hero: hero, blocks: blocks, sub: sub)
+        }
+        for (k, v) in chs {
+            guard let no = Int(k) else { continue }
+            let e = essay(v, no: no, sub: nil)
+            if !e.blocks.isEmpty { out[no] = e }       // 只有细粒度白话的章没有章级那一篇
+            let ss: [BHSub] = (v["subs"]?.array ?? []).compactMap { x in
+                guard let key = x["key"]?.string, !key.isEmpty else { return nil }
+                let e = essay(x, no: no, sub: key)
+                guard !e.blocks.isEmpty else { return nil }
+                let num: (String) -> Int = { Int(x[$0]?.string ?? "") ?? 0 }
+                return BHSub(key: key, name: x["name"]?.string ?? e.title, from: num("from"), to: num("to"), essay: e)
+            }
+            if !ss.isEmpty { subs[no] = ss }
         }
         chapters = out
     }
@@ -554,7 +587,18 @@ final class BaihuaStore {
         if b.isDeskbook { return DeskbookStore.shared.article(b.id, no) }
         return file(b)?.chapters[no]
     }
-    func has(_ b: BookInfo, _ no: Int) -> Bool { chapter(b, no) != nil }
+    /// 一篇白话:sub 为 nil 是章级那篇,否则是这一章里的那一首 / 一条。
+    func chapter(_ b: BookInfo, _ no: Int, sub: String?) -> BHChapter? {
+        guard let sub else { return chapter(b, no) }
+        return subs(b, no).first { $0.key == sub }?.essay
+    }
+    /// 这一章的细粒度白话(没有为空)。
+    func subs(_ b: BookInfo, _ no: Int) -> [BHSub] {
+        if b.isDeskbook { return [] }
+        return file(b)?.subs[no] ?? []
+    }
+    /// 这一章有没有白话(章级或细粒度,有一篇就算)。
+    func has(_ b: BookInfo, _ no: Int) -> Bool { chapter(b, no) != nil || !subs(b, no).isEmpty }
 
     /// 确保这本书的白话在内存里:本机有就读,清单上的新包没有就下。
     func ensure(_ b: BookInfo) async {
@@ -621,6 +665,15 @@ final class BaihuaStore {
 enum BaihuaPos {
     private static var map: [String: Int] = (UserDefaults.standard.dictionary(forKey: "desk.baihuaPos") as? [String: Int]) ?? [:]
     static func get(_ book: String, _ no: Int) -> Int? { map["\(book)|\(no)"] }
+    /// 细粒度白话各篇分开记:键「书|章|篇」。
+    static func get(_ book: String, _ no: Int, sub: String?) -> Int? { sub.map { map["\(book)|\(no)|\($0)"] } ?? get(book, no) }
+    static func set(_ book: String, _ no: Int, sub: String?, _ block: Int) {
+        guard let sub else { set(book, no, block); return }
+        let k = "\(book)|\(no)|\(sub)"
+        guard map[k] != block else { return }
+        map[k] = block
+        UserDefaults.standard.set(map, forKey: "desk.baihuaPos")
+    }
     static func clear(_ book: String) {
         map = map.filter { !$0.key.hasPrefix("\(book)|") }
         UserDefaults.standard.set(map, forKey: "desk.baihuaPos")

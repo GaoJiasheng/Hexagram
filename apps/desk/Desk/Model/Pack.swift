@@ -3,7 +3,47 @@ import Foundation
 /// 内容包清单(public/desk/v1/manifest.json,由 scripts/build-desk-packs.mjs 生成)。
 struct Manifest: Codable {
     var v: Int
+    /// 门类次序(添书 → 典籍按它分栏);老清单没有。
+    var categories: [String]?
     var books: [BookInfo]
+
+    init(v: Int, categories: [String]? = nil, books: [BookInfo]) { self.v = v; self.categories = categories; self.books = books }
+
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        v = try c.decode(Int.self, forKey: .v)
+        categories = try c.decodeIfPresent([String].self, forKey: .categories)
+        // 一本书解不开不连累整份书目(清单是新加字段最多的地方)
+        books = (try c.decode([Lenient<BookInfo>].self, forKey: .books)).compactMap(\.value)
+        // 官方典籍的声明:清单写的是 medical / divination / 自写一句,换成要显示的句子(与书包同一套,标准 §6)
+        for i in books.indices where books[i].disclaimers == nil {
+            if let d = books[i].disclaimer?.lines, !d.isEmpty { books[i].disclaimers = d.map { DeskbookInstaller.disclaimerText[$0] ?? String($0.prefix(120)) } }
+        }
+    }
+}
+
+/// 解不开就是 nil(不抛)。
+struct Lenient<T: Decodable>: Decodable {
+    var value: T?
+    init(from decoder: Decoder) throws { value = try? T(from: decoder) }
+}
+
+/// 清单里的声明:一个值或几个值的数组。
+struct DisclaimerValue: Codable, Hashable {
+    var lines: [String]
+    init(from decoder: Decoder) throws {
+        let c = try decoder.singleValueContainer()
+        if let s = try? c.decode(String.self) { lines = [s] } else { lines = (try? c.decode([String].self)) ?? [] }
+        lines = lines.map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty }
+    }
+    func encode(to encoder: Encoder) throws { var c = encoder.singleValueContainer(); try c.encode(lines) }
+}
+
+/// 有几章带译文 / 注释 / 详注(书目页一行小字)。
+struct BookLayers: Codable, Hashable {
+    var trans: Int
+    var notes: Int
+    var xiang: Int
 }
 
 struct BookPart: Codable, Hashable {
@@ -34,6 +74,11 @@ struct BookInfo: Codable, Identifiable, Hashable {
     var bytes: Int
     var art: ArtInfo?         // 插画(可选;老清单没有,一张图都没有的书也没有)
     var baihua: BaihuaInfo?   // 白话深读包(可选;没有白话的书没有)
+    // —— 官方典籍的清单字段(老清单没有,解码为 nil)——
+    var disclaimer: DisclaimerValue?   // 原样的声明值;解码后换成 disclaimers
+    var verse: Bool?          // 韵文书:按句读断行排
+    var bundled: Bool?        // 随 App 带核心包
+    var layers: BookLayers?
 
     // —— 以下只有书包(deskbook)才有;官方典籍的清单里没有这些键,解码为 nil ——
     var origin: BookOrigin?   // nil = 官方典籍 · shelf 书房 · imported 自己导入
@@ -85,6 +130,7 @@ struct Seg: Codable, Hashable {
     var n: [Note]?
     var label: String?   // 段名(易经):卦辞 · 彖 · 象 · 初九… · 用九 · 文言
     var line: Int?       // 易经爻辞与其小象:1…6(初爻为 1),用九 / 用六为 7
+    var kind: String?    // "title":诗题段(诗经、唐诗的《X》),排成章内小标题
 }
 
 /// 一卦的卦画信息(易经 kind == "gua" 的章才有)。binary 自下而上,下标 0 是初爻。
@@ -106,6 +152,7 @@ struct Chapter: Codable, Identifiable, Hashable {
     var segs: [Seg]
     var yanyi: [String]?
     var meta: ChapterMeta?   // 书包的章才有:副题、作者、日期、分钟、题头图、字数、一句话、有无文章
+    var verse: Bool?         // 只有部分章是韵文的书:这一章按句读断行排
     var id: Int { no }
 }
 
@@ -141,6 +188,10 @@ extension BookInfo {
     var kindLabel: String {
         switch kind { case "book": "现代书"; case "collection": "文集"; default: "典籍" }
     }
-    /// 分栏用的门类:书包取 category,没有的归「其他」;官方典籍是「典籍」。
-    var shelfCategory: String { isDeskbook ? ((category ?? "").isEmpty ? "其他" : category!) : "典籍" }
+    /// 分栏用的门类:书包取 category,没有的归「其他」;官方典籍取清单的门类,老清单没有就是「典籍」。
+    var shelfCategory: String { (category ?? "").isEmpty ? (isDeskbook ? "其他" : "典籍") : category! }
+    /// 这一章按韵文排(书是韵文,或只这一章是)。
+    func isVerse(_ c: Chapter) -> Bool { (verse ?? false) || (c.verse ?? false) }
+    /// 核心包 + 白话包的大小(书目页显示)。
+    var totalBytes: Int { bytes + (baihua?.bytes ?? 0) }
 }

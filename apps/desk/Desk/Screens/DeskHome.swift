@@ -14,6 +14,9 @@ struct DeskHome: View {
     @State private var home: BookInfo?
     @State private var catalogFocus: String?
     @State private var importer = ImportCenter.shared
+    /// 书桌上的书多了(典籍八十来本可以都放上来):默认只摆最近在读的十来本,其余收在「全部 N 本」里。
+    @State private var showAllShelf = false
+    private static let shelfCap = 12
     private var stats: Stats { .shared }
     @Environment(\.horizontalSizeClass) private var hSize
     private var pad: Bool { hSize == .regular }
@@ -241,12 +244,35 @@ struct DeskHome: View {
         }
     }
 
+    /// 摆在书桌上的那几本:不多时照加入次序全摆;多了按最近读过的在前,只摆前十来本(展开后全摆,次序不变)。
+    private var shelfShown: [BookInfo] {
+        let all = library.shelfBooks
+        guard all.count > Self.shelfCap else { return all }
+        let order = Dictionary(uniqueKeysWithValues: all.enumerated().map { ($1.id, $0) })
+        let sorted = all.sorted {
+            let a = progress.pos[$0.id]?.at, b = progress.pos[$1.id]?.at
+            if a != b { return (a ?? .distantPast) > (b ?? .distantPast) }
+            return order[$0.id]! < order[$1.id]!
+        }
+        return showAllShelf ? sorted : Array(sorted.prefix(Self.shelfCap - 1))
+    }
+
     private var shelf: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            sectionTitle("我的书")
+        let shown = shelfShown
+        let total = library.shelfBooks.count
+        return VStack(alignment: .leading, spacing: 14) {
+            HStack(alignment: .firstTextBaseline) {
+                sectionTitle("我的书")
+                if total > Self.shelfCap {
+                    Text("\(total) 本").font(Fonts.num(13, weight: .medium)).foregroundStyle(Ink.faint)
+                    Spacer()
+                    Button(showAllShelf ? "只看最近的" : "全部 \(total) 本") { withAnimation(.easeInOut(duration: 0.25)) { showAllShelf.toggle() } }
+                        .font(.system(size: 14, weight: .semibold)).foregroundStyle(Ink.cinnabar)
+                }
+            }
             if pad {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 180, maximum: 210), spacing: 20, alignment: .top)], alignment: .leading, spacing: 22) {
-                    ForEach(library.shelfBooks) { b in
+                    ForEach(shown) { b in
                         shelfCard(b, grid: true)
                     }
                     Button { showCatalog = true } label: {
@@ -260,8 +286,8 @@ struct DeskHome: View {
                 }
             } else {
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 14) {
-                        ForEach(library.shelfBooks) { b in shelfCard(b, grid: false) }
+                    LazyHStack(spacing: 14) {
+                        ForEach(shown) { b in shelfCard(b, grid: false) }
                     }
                     .padding(.vertical, 4)
                 }
@@ -307,7 +333,7 @@ struct DeskHome: View {
         if !items.isEmpty {
             VStack(alignment: .leading, spacing: 12 * (pad ? 1.15 : 1)) {
                 sectionTitle("今日一章")
-                ForEach(items, id: \.book.id) { it in todayRow(it.book, it.no) }
+                ForEach(items.prefix(3), id: \.book.id) { it in todayRow(it.book, it.no) }      // 书多了也只给三本,不铺满一屏
             }
         }
     }

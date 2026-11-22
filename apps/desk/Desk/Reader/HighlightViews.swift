@@ -152,9 +152,9 @@ struct HighlightsSheet: View {
 
     var body: some View {
         let all = store.alive(book: book.id)
-        let shown = all.filter { (!onlyNotes || $0.hasNote) && (layer == "all" || $0.layer == layer) }
+        let shown = all.filter { (!onlyNotes || $0.hasNote) && (layer == "all" || $0.layer == layer || (layer == "b" && $0.isBaihua)) }
         // 按章分组;白话深读的划线在本章原文 / 译文之后另成一组(键 = 章号 × 2 + 是否白话)
-        let groups = Dictionary(grouping: shown, by: { $0.no * 2 + ($0.layer == "b" ? 1 : 0) }).sorted { $0.key < $1.key }
+        let groups = Dictionary(grouping: shown, by: { $0.no * 2 + ($0.isBaihua ? 1 : 0) }).sorted { $0.key < $1.key }
         NavigationStack {
             List {
                 Section {
@@ -215,8 +215,8 @@ struct HighlightsSheet: View {
 
     private func row(_ h: Highlight) -> some View {
         // 白话的划线按白话深读那一章核(白话包还没载入时不报「已改」)
-        let bh = h.layer == "b" ? BaihuaStore.shared.chapter(book, h.no) : nil
-        let stale = h.layer == "b" ? (bh.map { $0.locate(h) == nil } ?? false)
+        let bh = h.isBaihua ? BaihuaStore.shared.chapter(book, h.no, sub: h.baihuaSub) : nil
+        let stale = h.isBaihua ? (bh.map { $0.locate(h) == nil } ?? false)
             : pack.chapters.indices.contains(h.no - 1) ? pack.chapters[h.no - 1].locate(h) == nil : true
         return HStack(alignment: .top, spacing: 12) {
             RoundedRectangle(cornerRadius: 2).fill(HLColor.markColor(h.color)).frame(width: 4)
@@ -232,13 +232,14 @@ struct HighlightsSheet: View {
                 }
                 HStack(spacing: 8) {
                     Text(h.layer == "o" ? "原文" : h.layer == "t" ? "译文" : "白话")
-                    if h.layer == "b" {
+                    if h.isBaihua {
+                        if let s = h.baihuaSub, let name = BaihuaStore.shared.subs(book, h.no).first(where: { $0.key == s })?.name { Text(name).lineLimit(1) }
                         if let sec = bh?.section(of: bh?.locate(h)?.seg ?? h.seg) { Text(sec).lineLimit(1) }
                     } else {
                         Text("第 \(h.seg + 1) 段")
                     }
                     Text(Self.date.string(from: h.at))
-                    if stale { Text(h.layer == "b" ? "白话已改" : "原文已改").foregroundStyle(Ink.cinnabar) }
+                    if stale { Text(h.isBaihua ? "白话已改" : "原文已改").foregroundStyle(Ink.cinnabar) }
                 }
                 .font(.system(size: 12)).foregroundStyle(Ink.faint)
             }

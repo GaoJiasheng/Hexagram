@@ -107,6 +107,7 @@ struct TOCSheet: View {
                 if deepEverywhere {
                     Label(mixed ? "每一篇都有白话深读" : "每\(book.unit)都有白话深读", systemImage: "book.pages").font(.system(size: 12)).foregroundStyle(Ink.soft)
                 }
+                DisclaimerBanner(lines: book.disclaimers ?? [], compact: true)
             }
             .padding(.horizontal, 20).padding(.bottom, 6)
         }
@@ -312,7 +313,7 @@ struct TOCSheet: View {
 
     private func computeMarks() -> [Int: Marks] {
         var out: [Int: Marks] = [:]
-        for h in HighlightStore.shared.alive(book: book.id) where h.layer != "b" {
+        for h in HighlightStore.shared.alive(book: book.id) where !h.isBaihua {
             out[h.no, default: Marks()].hl += 1
             if h.hasNote { out[h.no, default: Marks()].notes += 1 }
         }

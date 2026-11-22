@@ -2,9 +2,10 @@ import SwiftUI
 
 /// 阅读页上弹出的各种面板(同一时刻只有一个)。
 enum ReaderSheet: Identifiable {
-    case note(Note), toc, marks, find(String), hl(String), editNote(String)
+    case note(Note), toc, marks, find(String), hl(String), editNote(String), subs(Int)
     var id: String {
         switch self {
+        case .subs(let n): return "subs:\(n)"
         case .note(let n): return "note:" + n.id
         case .toc: return "toc"
         case .marks: return "marks"
@@ -109,7 +110,7 @@ struct ReaderScreen: View {
         .fullScreenCover(isPresented: $showFinish) { FinishScreen(book: model.book, stats: Stats.shared.finishStats(model.book), replay: finishReplay,
                                                                      onDone: finishReplay ? nil : { showFinish = false; DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { dismiss() } }) }
         .background { Color.clear.fullScreenCover(item: $other) { o in ReaderScreen(model: o.model) } }
-        .background { Color.clear.fullScreenCover(item: $deep) { t in BaihuaScreen(target: t) } }
+        .background { Color.clear.fullScreenCover(item: $deep) { t in DeepScreen(target: t) } }
         .task { await BaihuaStore.shared.ensure(model.book) }
         .onChange(of: HighlightStore.shared.version) { _, _ in model.syncHighlights() }
         .onAppear { model.resume() }
@@ -134,7 +135,7 @@ struct ReaderScreen: View {
             HighlightsSheet(book: model.book, pack: model.pack) { h in
                 sheet = nil
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
-                    if h.layer == "b" { openDeep(h.no, flash: h.id) } else { model.go(to: h) }
+                    if h.isBaihua { openDeep(h.no, sub: h.baihuaSub, flash: h.id) } else { model.go(to: h) }
                 }
             }
         case .find(let q):
@@ -146,6 +147,13 @@ struct ReaderScreen: View {
             HighlightPanel(id: id) { sheet = .editNote(id) }      // 表单高度由面板按内容自己定
         case .editNote(let id):
             NoteEditor(id: id).presentationDetents([.medium, .large])
+        case .subs(let no):
+            SubEssaySheet(book: model.book, chapter: model.chapter(no), seg: no == model.current.ch ? model.currentSeg : nil) { key in
+                sheet = nil
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+                    deep = BaihuaTarget(book: model.book, chapter: model.chapter(no), sub: key, block: nil, flash: nil)
+                }
+            }
         }
     }
 
@@ -259,9 +267,13 @@ struct ReaderScreen: View {
     }
 
     /// 打开某一章的白话深读(可落到某一块、闪某一条划线)。
-    private func openDeep(_ no: Int, block: Int? = nil, flash: String? = nil) {
+    private func openDeep(_ no: Int, sub: String? = nil, block: Int? = nil, flash: String? = nil) {
         guard model.pack.chapters.indices.contains(no - 1) else { return }
-        deep = BaihuaTarget(book: model.book, chapter: model.chapter(no), block: block, flash: flash)
+        // 只有细粒度白话的章(诗经的一组、唐诗的一类):没指定哪一篇就先问
+        if sub == nil, BaihuaStore.shared.chapter(model.book, no) == nil, !BaihuaStore.shared.subs(model.book, no).isEmpty {
+            sheet = .subs(no); return
+        }
+        deep = BaihuaTarget(book: model.book, chapter: model.chapter(no), sub: sub, block: block, flash: flash)
     }
 
     #if DEBUG
@@ -271,7 +283,12 @@ struct ReaderScreen: View {
         ReaderScreen.debugDone = true
         let env = ProcessInfo.processInfo.environment
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            if env["DESK_OPEN"] == "baihua" { openDeep(model.current.ch, block: env["DESK_BLOCK"].flatMap(Int.init)) }
+            if env["DESK_OPEN"] == "baihua" {
+                // DESK_SUB=1-2 打开这一章的那一篇细粒度白话;DESK_BLOCK=-1 落到最后一块(看篇末)
+                let sub = env["DESK_SUB"], b = env["DESK_BLOCK"].flatMap(Int.init)
+                let last = BaihuaStore.shared.chapter(model.book, model.current.ch, sub: sub).map { $0.blocks.count - 1 }
+                openDeep(model.current.ch, sub: sub, block: b == -1 ? last : b)
+            }
             else if let q = env["DESK_FIND"], !q.isEmpty { sheet = .find(q) }
             else if env["DESK_MARKS"] == "1" { sheet = .marks }
             else if env["DESK_OPEN"] == "toc" { if wide { tocPanel = true } else { sheet = .toc } }
@@ -343,7 +360,11 @@ struct ReaderScreen: View {
             float("chevron.left", label: "返回书桌") { dismiss() }
             Spacer()
             if BaihuaStore.shared.has(model.book, model.current.ch) {
-                float("book.pages", label: model.book.deepLabel) { model.touch(); openDeep(model.current.ch) }
+                float("book.pages", label: model.book.deepLabel) {
+                    model.touch()
+                    // 有细粒度白话的章:先给选单(正读到的那一首标出来)
+                    if !BaihuaStore.shared.subs(model.book, model.current.ch).isEmpty { sheet = .subs(model.current.ch) } else { openDeep(model.current.ch) }
+                }
             }
             if ArtStore.shared.has(model.book, .head(model.current.ch)) {
                 float(showArt ? "photo.fill" : "photo", label: showArt ? "隐藏插画" : "显示插画", on: showArt) { showArt.toggle() }
@@ -417,7 +438,9 @@ struct ReaderScreen: View {
                     Spacer()
                     ChapterLearnedTag(src: ch.src, color: theme.accentColor)
                 }
-                DeepReadCard(book: model.book, chapter: ch) { model.touch(); openDeep(r.ch) }
+                DeepReadCard(book: model.book, chapter: ch, open: { model.touch(); openDeep(r.ch) },
+                             openSub: { k in model.touch(); openDeep(r.ch, sub: k) },
+                             showAll: { model.touch(); sheet = .subs(r.ch) })
                 if let y = ch.yanyi, !y.isEmpty {
                     Text("延伸").font(.system(size: 12, weight: .semibold)).foregroundStyle(theme.accentColor).kerning(2)
                     ForEach(y, id: \.self) { p in

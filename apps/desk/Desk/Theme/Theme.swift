@@ -85,9 +85,61 @@ struct BookArt: View {
         if let img = ArtStore.shared.image(book, kind) {
             Image(uiImage: img).resizable().scaledToFill()
         } else {
-            LinearGradient(colors: [theme.accentColor.opacity(0.85), theme.accent2Color.opacity(0.7), theme.paperColor],
-                           startPoint: .topLeading, endPoint: .bottomTrailing)
+            DefaultArt(title: book.title, theme: theme, kind: kind)
         }
+    }
+}
+
+/// 没有插画的书:主题色的底子 + 宋体书名。
+/// 封面仿线装书:左上一条纸色题签,书名竖排;横版题图(上面另有书名叠字)只铺底子与一个淡淡的大字(书名首字),不重复书名。
+struct DefaultArt: View {
+    let title: String
+    let theme: BookTheme
+    var kind: ArtKind = .banner
+    /// 题签上的书名:去掉括注(「战国策(选)」→ 战国策)、间隔号(「黄帝内经·素问」照竖排),最多八个字
+    private var label: String {
+        var t = title
+        if let i = t.firstIndex(where: { "（(".contains($0) }) { t = String(t[..<i]) }
+        return String(t.replacingOccurrences(of: "·", with: "・").prefix(8))
+    }
+    var body: some View {
+        GeometryReader { g in
+            let w = g.size.width, h = g.size.height
+            ZStack(alignment: .topLeading) {
+                LinearGradient(colors: [theme.accentColor, theme.accentColor.opacity(0.78), theme.accent2Color.opacity(0.55)],
+                               startPoint: .topLeading, endPoint: .bottomTrailing)
+                // 纸纹:几道极淡的横线,免得一块平涂
+                VStack(spacing: max(h / 9, 6)) {
+                    ForEach(0..<10, id: \.self) { _ in Rectangle().fill(.white.opacity(0.035)).frame(height: 1) }
+                }
+                .frame(width: w, height: h, alignment: .top)
+                if case .cover = kind {
+                    let chars = Array(label)
+                    let n = CGFloat(max(chars.count, 3))
+                    let fs = min(w * 0.13, h * 0.72 / (n * 1.12 + 1.1))     // 每字占 1.12 字高,上下各留半字
+                    let stripH = fs * (n * 1.12 + 1.1)
+                    VStack(spacing: fs * 0.12) {
+                        ForEach(Array(chars.enumerated()), id: \.offset) { _, c in
+                            Text(String(c)).font(Fonts.song(fs, bold: true)).foregroundStyle(theme.accentColor)
+                        }
+                    }
+                    .frame(width: fs * 1.75, height: stripH, alignment: .top)
+                    .padding(.top, fs * 0.5)
+                    .background(theme.paperColor.opacity(0.96))
+                    .overlay(Rectangle().stroke(theme.accentColor.opacity(0.35), lineWidth: max(w / 160, 0.6)).padding(max(w / 70, 2)))
+                    .shadow(color: .black.opacity(0.12), radius: 3, y: 1)
+                    .offset(x: w * 0.12, y: h * 0.1)
+                } else {
+                    Text(String(label.prefix(1)))
+                        .font(Fonts.song(min(h * 0.9, w * 0.5), bold: true))
+                        .foregroundStyle(.white.opacity(0.12))
+                        .frame(width: w * 0.92, height: h, alignment: .trailing)
+                }
+            }
+            .frame(width: w, height: h)
+            .clipped()
+        }
+        .accessibilityHidden(true)
     }
 }
 

@@ -1,6 +1,7 @@
 import SwiftUI
 
-/// 添书:典籍(官方)/ 书房(只有管理员看得到)/ 我的导入,只列有书的几栏。书房与我的导入按门类分栏,栏可收放、标本数;
+/// 添书:典籍(官方)/ 书房(只有管理员看得到)/ 我的导入,只列有书的几栏。三栏都按门类分栏,栏可收放、标本数
+/// (典籍按清单的门类次序:易、道、儒、佛……;书房与我的导入按书多的在前);
 /// 顶上一个搜索框(书名、作者、门类、标签都搜)。书多了(书房一百五十本上下)也一眼清楚:List 懒加载,栏默认收着。
 struct CatalogSheet: View {
     let library: Library
@@ -74,7 +75,15 @@ struct CatalogSheet: View {
     }
 
     private var officialBooks: [BookInfo] {
-        (library.manifest?.books ?? []).filter { hit([$0.title, $0.alias, $0.attribution, $0.brief]) }
+        (library.manifest?.books ?? []).filter { hit([$0.title, $0.alias, $0.attribution, $0.brief, $0.category]) }
+    }
+
+    /// 典籍按门类分栏,次序照清单的 categories(站内门户的次序);清单里没有次序的门类排在后面。
+    private var officialGroups: [(String, [BookInfo])] {
+        let order = library.manifest?.categories ?? []
+        let rank: (String) -> Int = { order.firstIndex(of: $0) ?? order.count }
+        return Dictionary(grouping: officialBooks, by: \.shelfCategory).map { ($0.key, $0.value) }
+            .sorted { (rank($0.0), $0.0) < (rank($1.0), $1.0) }
     }
 
     private var shelfGroups: [(String, [ShelfItem])] {
@@ -98,12 +107,20 @@ struct CatalogSheet: View {
     private var list: some View {
         ScrollViewReader { proxy in
             List {
-                let off = officialBooks
-                if !off.isEmpty {
+                let og = officialGroups
+                let off = og.flatMap(\.1)
+                if og.count == 1 {
                     Section {
                         ForEach(off) { officialRow($0) }
                     } header: { bigHeader("典籍", off.count, sub: "观象的研读底本,所有人都有") }
                     .id("official")
+                } else if !og.isEmpty {
+                    Section { anchor("official", "观象的研读底本,所有人都有。按门类分栏,点栏头收放。") } header: { bigHeader("典籍", off.count, sub: nil) }
+                    ForEach(og, id: \.0) { cat, books in
+                        Section {
+                            if isOpen("o|" + cat) { ForEach(books) { officialRow($0) } }
+                        } header: { catHeader("o|" + cat, cat, books.count, onDesk: books.filter { library.shelf.contains($0.id) }.count) }
+                    }
                 }
                 let sg = shelfGroups
                 if !sg.isEmpty {
@@ -136,6 +153,8 @@ struct CatalogSheet: View {
                     // 书多时各门类先收着,只看栏头;少时全展开
                     let sg = shelfGroups
                     if sg.reduce(0, { $0 + $1.1.count }) > 24 { collapsed.formUnion(sg.map { "s|" + $0.0 }) }
+                    let og = officialGroups
+                    if og.reduce(0, { $0 + $1.1.count }) > 24 { collapsed.formUnion(og.map { "o|" + $0.0 }) }
                 }
                 if let f = focus { focus = nil; DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { withAnimation { proxy.scrollTo(f, anchor: .top) } } }
             }
@@ -160,7 +179,7 @@ struct CatalogSheet: View {
         .accessibilityAddTraits(.isHeader)
     }
 
-    private func catHeader(_ key: String, _ cat: String, _ n: Int) -> some View {
+    private func catHeader(_ key: String, _ cat: String, _ n: Int, onDesk: Int = 0) -> some View {
         Button {
             withAnimation(.easeInOut(duration: 0.2)) { if collapsed.contains(key) { collapsed.remove(key) } else { collapsed.insert(key) } }
         } label: {
@@ -169,6 +188,10 @@ struct CatalogSheet: View {
                 Text(cat).font(.system(size: 14, weight: .semibold))
                 Text("\(n)").font(Fonts.num(12, weight: .medium)).foregroundStyle(Ink.faint)
                 Spacer()
+                if onDesk > 0 {
+                    Label("\(onDesk)", systemImage: "checkmark.circle").font(Fonts.num(11, weight: .medium)).foregroundStyle(Ink.faint)
+                        .labelStyle(.titleAndIcon)
+                }
             }
             .foregroundStyle(Ink.soft)
             .contentShape(Rectangle())
@@ -176,7 +199,7 @@ struct CatalogSheet: View {
         .buttonStyle(.plain)
         .textCase(nil)
         .disabled(!q.isEmpty)
-        .accessibilityLabel("\(cat),\(n) 本," + (isOpen(key) ? "已展开" : "已收起"))
+        .accessibilityLabel("\(cat),\(n) 本," + (onDesk > 0 ? "\(onDesk) 本在书桌上," : "") + (isOpen(key) ? "已展开" : "已收起"))
     }
 
     // MARK: 行
@@ -197,9 +220,14 @@ struct CatalogSheet: View {
         HStack(spacing: 14) {
             thumb(ArtStore.shared.image(b, .cover), title: b.title, theme: b.theme)
             VStack(alignment: .leading, spacing: 4) {
-                Text(b.title).font(Fonts.song(18, bold: true))
-                Text("\(b.sizeLabel) · \(b.chars) 字").font(.system(size: 12)).foregroundStyle(Ink.soft)
-                Text(b.brief).font(.system(size: 13)).foregroundStyle(Ink.soft).lineLimit(2)
+                Text(b.title).font(Fonts.song(18, bold: true)).lineLimit(2)
+                Text("\(b.sizeLabel) · \(b.chars >= 10000 ? Fmt.charsText(b.chars) : "\(b.chars) 字") · \(ByteCountFormatter.string(fromByteCount: Int64(b.totalBytes), countStyle: .file))")
+                    .font(.system(size: 12)).foregroundStyle(Ink.soft)
+                if !b.brief.isEmpty { Text(b.brief).font(.system(size: 13)).foregroundStyle(Ink.soft).lineLimit(2) }
+                if let has = layersLine(b) { Text(has).font(.system(size: 11)).foregroundStyle(Ink.faint).lineLimit(1) }
+                if let d = b.disclaimers?.first {
+                    Label(d, systemImage: "info.circle").font(.system(size: 11)).foregroundStyle(Ink.faint).lineLimit(1).labelStyle(.titleAndIcon)
+                }
             }
             Spacer()
             if library.shelf.contains(b.id) {
@@ -219,6 +247,22 @@ struct CatalogSheet: View {
             }
         }
         .padding(.vertical, 6)
+    }
+
+    /// 这本书有什么:译注 / 详注 / 白话各几章(没有的不写;每章都有的只写名字)。
+    private func layersLine(_ b: BookInfo) -> String? {
+        var p: [String] = []
+        let n = b.chapters
+        let say: (String, Int) -> String = { name, k in k >= n ? name : "\(name) \(k) \(b.unit)" }
+        if let l = b.layers {
+            if l.trans > 0 || l.notes > 0 { p.append(say("译注", max(l.trans, l.notes))) }
+            if l.xiang > 0 { p.append(say("详注", l.xiang)) }
+        }
+        if let bh = b.baihua {
+            p.append(bh.subs.map { s in (bh.essays ?? 0) > 0 ? "白话 \(bh.essays!) \(b.unit) + \(s) 篇" : "白话 \(s) 篇" } ?? say("白话", bh.chapters))
+            if (bh.figsDone ?? 0) > 0 { p.append("图解 \(bh.figsDone!)") }
+        }
+        return p.isEmpty ? nil : p.joined(separator: " · ")
     }
 
     private func meta(_ kind: String, _ chapters: Int?, _ unit: String?, _ bytes: Int?) -> String {

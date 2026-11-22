@@ -8,34 +8,37 @@
 //   · 书桌里的「一本书」可以由站内几个 slug 拼成(庄子 = 内 / 外 / 杂篇);每章带 src {corpus, slug, ch},
 //     进度、时长、划线一律按 src 记,与网站的 readPos / readDays 同一套坐标。
 //   · 段下标 0 起,与 src/data 里 paragraphs 的次序一致——构建时逐段核原文一字不差、注释 term 是该段原文子串。
+//   · 书单在 scripts/desk/books.mjs:首发六本(bundled,随 App 带核心包)照旧写死,其余全站各书从站内数据派生。
 //   node scripts/build-desk-packs.mjs
+//
+// 清单(manifest.json)`{ v: 1, categories: [门类次序], books: [...] }`,每本书一条:
+//   id title alias era attribution brief howto template unit chapters summary? segs chars parts theme version file bytes art? baihua?
+//   category        门类(书目分栏用,次序见 categories):易 / 道 / 儒 / 佛 / 心学 / 法 / 墨 / 兵 / 纵横 / 谋略 / 中医 / 命理 / 诗词曲 / 古文
+//   disclaimer?     声明,语义同 docs/deskbook-standard.md §6:medical | divination | 自写一句,或其中几项的数组(中医 medical、观数 divination、
+//                   谋略托名伪书一句定性、站内有 caveat 的照录)
+//   verse?          韵文书(诗词曲、黄庭…):App 按句读断行排
+//   bundled?        随 App 带核心包的那几本(首发六本)
+//   layers          { trans, notes, xiang }:有译文 / 注释 / 详注的章数
+//   baihua          { file, bytes, chapters, figs, figsDone, essays?, subs? }:essays = 章级白话篇数、subs = 细粒度白话篇数(有细粒度时才写)
+// 核心包 `{ id, verse?, chapters: [{ no, title, src, kind?, gua?, verse?, segs: [{ o, t?, n?, label?, line?, kind? }], yanyi? }], version }`:
+//   seg.kind 'title'  诗题段(texts.json 设 poemTitles 的书里独立成段的《X》),App 排成章内小标题;原文照旧一字不差
+//   chapter.verse     只有部分章是韵文的书(texts.json 的 verseChapters)
+// 白话包见 docs/desk-baihua-spec.md;细粒度白话(「章-序」键:诗经一首一篇、传习录一条一篇)挂在所属章的 `subs` 里(§1.1)。
 import fs from 'node:fs'
 import path from 'node:path'
 import crypto from 'node:crypto'
 import { fileURLToPath } from 'node:url'
 import { figKey, checkFig } from './desk/fig-gate.mjs'
+import { DESK_BOOKS, CATEGORIES, COLLISIONS } from './desk/books.mjs'
+import { subChapter, isSubKey } from './lib/sub-chapter.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const OUT = path.join(ROOT, 'public/desk/v1')
 const read = (p) => JSON.parse(fs.readFileSync(path.join(ROOT, p), 'utf8'))
 const exists = (p) => fs.existsSync(path.join(ROOT, p))
 
-// 体裁模板:duanzhang 短章 · yulu 语录 · gua 卦 · pianzhang 篇章(编在 App 里,书只声明用哪种)
-// 主题色先各给一组(主色 / 辅色 / 纸色),M0 画风定了以后从题图里取色再调。
-const BOOKS = [
-  { id: 'daodejing', template: 'duanzhang', sources: [['dao', 'daodejing']], theme: { accent: '#2E7D86', accent2: '#C7673F', paper: '#F7F5EE' } },
-  { id: 'lunyu', template: 'yulu', sources: [['ru', 'lunyu']], theme: { accent: '#A65A2E', accent2: '#3F6F5A', paper: '#F8F4EA' } },
-  { id: 'sunzi', template: 'pianzhang', sources: [['bing', 'sunzi']], theme: { accent: '#8C3B2F', accent2: '#3D5A6C', paper: '#F6F3EC' } },
-  { id: 'guiguzi', template: 'pianzhang', sources: [['zong', 'guiguzi']], theme: { accent: '#5B4B8A', accent2: '#B8862F', paper: '#F5F3EE' } },
-  { id: 'zhuangzi', template: 'pianzhang', title: '庄子', unit: '篇',
-    sources: [['dao', 'zhuangzi-neipian', '内篇'], ['dao', 'zhuangzi-waipian', '外篇'], ['dao', 'zhuangzi-zapian', '杂篇']],
-    theme: { accent: '#3F7A4E', accent2: '#D08A2E', paper: '#F6F6EC' } },
-  // 易经:六十四卦(hexagrams.json)+ 独立成篇的十翼五种(classics/),数据形态不同,走 buildYijing
-  { id: 'yijing', template: 'gua', title: '周易', unit: '卦', build: 'yijing',
-    era: '先秦', attribution: '旧题伏羲画卦、文王系辞、孔子作传', summary: '六十四卦 · 十翼',
-    brief: '六十四卦卦爻辞与十翼传文,以阴阳爻画说变化之理的群经之首。',
-    theme: { accent: '#7A4E9A', accent2: '#C9892B', paper: '#F6F4EE' } },
-]
+// 书单在 scripts/desk/books.mjs(首发六本照旧写死,其余从站内数据派生);体裁模板编在 App 里,书只声明用哪种。
+const BOOKS = DESK_BOOKS
 
 const errors = []
 const err = (m) => errors.push(m)
@@ -74,11 +77,16 @@ function applyDeskNotes(id, dn, chNo, i, seg) {
   seg.n = merged
 }
 
+// 每本书打包时的零碎统计(打包后逐书一行报出来)
+const report = new Map()
+const rep = (id) => { if (!report.has(id)) report.set(id, { titles: 0, verseCh: 0, dropped: {}, orphans: [], subs: 0 }); return report.get(id) }
+
 function buildBook(spec) {
   const chapters = []
   const parts = []
   let meta0 = null
   let chars = 0
+  const R = rep(spec.id)
   for (const [corpus, slug, partTitle] of spec.sources) {
     const meta = read(`src/data/${corpus}/texts.json`).find((t) => t.slug === slug)
     if (!meta) { err(`${corpus}/${slug}: texts.json 里没有`); continue }
@@ -89,12 +97,16 @@ function buildBook(spec) {
     const yanyi = yanyiAll[slug] || {}
     const from = chapters.length + 1
     const xz = xiangzhuOf(corpus, slug) || {}
+    // 诗题段(poemTitles:独立成段的《X》是一首之首):段上标 kind 'title',App 排成章内小标题
+    const isTitle = (o) => !!meta.poemTitles && /^《[^》]+》$/.test(o.trim())
+    const verseCh = new Set((meta.verseChapters || []).map(Number))
     for (const c of book.chapters) {
       const cn = notes[String(c.no)] || {}
       const segs = c.paragraphs.map((p, i) => {
         const o = typeof p === 'string' ? p : p.original
         const seg = { o }
         if (p.translation) seg.t = p.translation
+        if (isTitle(o)) { seg.kind = 'title'; R.titles++ }
         const ns = cn[String(i)]   // 注释按「章 → 段下标(0 起)」挂
         if (Array.isArray(ns) && ns.length) {
           seg.n = ns.map((x) => {
@@ -105,6 +117,8 @@ function buildBook(spec) {
           })
         }
         applyDeskNotes(spec.id, xz[String(c.no)]?.[String(i)], chapters.length + 1, i, seg)
+        // 原文逐字核对:书桌里的段与站内数据一字不差
+        if (seg.o !== (typeof p === 'string' ? p : p.original)) err(`${spec.id} 第 ${chapters.length + 1} 章第 ${i + 1} 段:原文与源数据不一致`)
         chars += o.length
         return seg
       })
@@ -114,6 +128,8 @@ function buildBook(spec) {
         src: { corpus, slug, ch: c.no },
         segs,
       }
+      // 只有部分章是韵文的书(verseChapters):那几章自己带 verse
+      if (!meta.verse && verseCh.has(c.no)) { ch.verse = true; R.verseCh++ }
       const y = yanyi[String(c.no)]
       if (Array.isArray(y) && y.length) ch.yanyi = y
       chapters.push(ch)
@@ -133,77 +149,139 @@ const baihuaOf = (corpus, slug) => {
   if (!baihuaCache.has(p)) baihuaCache.set(p, exists(p) ? read(p) : null)
   return baihuaCache.get(p)
 }
-function buildBaihua(spec, chapters) {
-  const figs = exists(`scripts/authored/desk-figs/${spec.id}.json`) ? read(`scripts/authored/desk-figs/${spec.id}.json`) : {}
-  const out = {}
-  let nFig = 0, nDone = 0
-  const strs = (v, where) => (Array.isArray(v) ? v : [v]).map((x) => (typeof x === 'string' ? x : x?.text)).filter((x) => {
+// 站内白话的块 → 书桌的十种(docs/desk-baihua-spec.md §1)。书桌渲染不了的块(观数的交互件 widget 等)丢掉、逐书计数。
+function normBlocks(srcBlocks, where, figs, R, fc) {
+  const strs = (v) => (Array.isArray(v) ? v : [v]).map((x) => (typeof x === 'string' ? x : x?.text)).filter((x) => {
     if (typeof x !== 'string') { err(`${where}:items 里有非文字项`); return false }
     return x.trim().length > 0
   })
-  for (const c of chapters) {
-    const src = baihuaOf(c.src.corpus, c.src.slug)?.[String(c.src.ch)]
-    if (!src?.blocks?.length) continue
-    const where = `${spec.id} 白话第 ${c.no} 章`
-    const blocks = []
-    for (const b of src.blocks) {
-      const x = typeof b.text === 'string' ? b.text.trim() : ''
-      const tail = () => { if (b.items?.length) blocks.push({ t: 'list', ordered: false, items: strs(b.items, where) }) }
-      switch (b.type) {
-        case 'lead': case 'h2': case 'p': case 'pull':
-          if (x) blocks.push({ t: b.type, x })
-          if (b.type === 'p' && (b.original || b.translation)) blocks.push({ t: 'quote', ...(b.original ? { o: b.original } : {}), ...(b.translation ? { tr: b.translation } : {}) })
-          tail()
-          break
-        case 'quote': {
-          if (!b.original && !b.translation) break
-          blocks.push({ t: 'quote', ...(b.original ? { o: b.original } : {}), ...(b.translation ? { tr: b.translation } : {}) })
-          break
-        }
-        case 'callout': blocks.push({ t: 'callout', tone: b.tone || 'note', ...(b.label ? { label: b.label } : {}), items: strs(b.items || [], where) }); break
-        case 'steps': blocks.push({ t: 'steps', items: strs(b.items || [], where) }); break
-        case 'list': blocks.push({ t: 'list', ordered: !!b.ordered, items: strs(b.items || [], where) }); break
-        case 'refs': blocks.push({ t: 'refs', items: strs(b.items || (b.text ? [b.text] : []), where) }); break
-        case 'figure': {
-          nFig++
-          const blk = { t: 'fig', cap: b.caption || '' }
-          const fig = b.svg ? figs[figKey(b.svg)] : null
-          if (fig) {
-            const bad = checkFig(fig, b.svg)
-            if (bad.length) err(`${where}:图解 ${figKey(b.svg)} 未过闸 —— ${bad[0]}`)
-            else { blk.fig = fig; nDone++ }
-          }
-          blocks.push(blk)
-          break
-        }
-        default: err(`${where}:不认识的块类型「${b.type}」`)
+  const blocks = []
+  for (const b of srcBlocks) {
+    const x = typeof b.text === 'string' ? b.text.trim() : ''
+    const tail = () => { if (b.items?.length) blocks.push({ t: 'list', ordered: false, items: strs(b.items) }) }
+    switch (b.type) {
+      case 'lead': case 'h2': case 'p': case 'pull':
+        if (x) blocks.push({ t: b.type, x })
+        if (b.type === 'p' && (b.original || b.translation)) blocks.push({ t: 'quote', ...(b.original ? { o: b.original } : {}), ...(b.translation ? { tr: b.translation } : {}) })
+        tail()
+        break
+      case 'quote': {
+        if (!b.original && !b.translation) break
+        blocks.push({ t: 'quote', ...(b.original ? { o: b.original } : {}), ...(b.translation ? { tr: b.translation } : {}) })
+        break
       }
-    }
-    for (const b of blocks) for (const s of [b.x, ...(b.items || [])]) if (typeof s === 'string' && (s.match(/\*\*/g) || []).length % 2) err(`${where}:加粗记号 ** 不成对`)
-    out[String(c.no)] = {
-      title: src.title || c.title,
-      ...(src.subtitle ? { subtitle: src.subtitle } : {}),
-      ...(src.centralIdea ? { idea: src.centralIdea } : {}),
-      ...(src.hero ? { hero: src.hero } : {}),
-      blocks,
+      case 'callout': blocks.push({ t: 'callout', tone: b.tone || 'note', ...(b.label ? { label: b.label } : {}), items: strs(b.items || []) }); break
+      case 'steps': blocks.push({ t: 'steps', items: strs(b.items || []) }); break
+      case 'list': blocks.push({ t: 'list', ordered: !!b.ordered, items: strs(b.items || []) }); break
+      case 'refs': blocks.push({ t: 'refs', items: strs(b.items || (b.text ? [b.text] : [])) }); break
+      case 'figure': {
+        fc.n++
+        const blk = { t: 'fig', cap: b.caption || '' }
+        const fig = b.svg ? figs[figKey(b.svg)] : null
+        if (fig) {
+          const bad = checkFig(fig, b.svg)
+          if (bad.length) err(`${where}:图解 ${figKey(b.svg)} 未过闸 —— ${bad[0]}`)
+          else { blk.fig = fig; fc.done++ }
+        }
+        blocks.push(blk)
+        break
+      }
+      // widget(观数的排盘 / 矩阵等交互件):书桌没有对应件,说明文字又是「点一格、拖时间轴」一类操作说明,单留它会误导——整块不收
+      default: { const k = b.type + (b.kind ? `:${b.kind}` : ''); R.dropped[k] = (R.dropped[k] || 0) + 1 }
     }
   }
+  for (const b of blocks) for (const s of [b.x, ...(b.items || [])]) if (typeof s === 'string' && (s.match(/\*\*/g) || []).length % 2) err(`${where}:加粗记号 ** 不成对`)
+  return blocks
+}
+
+// 一篇白话 → 书桌的一篇(题目缺了用 fallback)
+const essayOf = (src, blocks, fallback) => ({
+  title: src.title || fallback,
+  ...(src.subtitle ? { subtitle: src.subtitle } : {}),
+  ...(src.centralIdea ? { idea: src.centralIdea } : {}),
+  ...(src.hero ? { hero: src.hero } : {}),
+  blocks,
+})
+
+function buildBaihua(spec, chapters) {
+  const figs = exists(`scripts/authored/desk-figs/${spec.id}.json`) ? read(`scripts/authored/desk-figs/${spec.id}.json`) : {}
+  const R = rep(spec.id)
+  const out = {}
+  const fc = { n: 0, done: 0 }
+  let nSubs = 0
+  const used = new Map()   // 白话文件 → 用上的键(没用上的报出来)
+  for (const c of chapters) {
+    const file = baihuaOf(c.src.corpus, c.src.slug)
+    if (!file) continue
+    const key = `${c.src.corpus}/${c.src.slug}`
+    if (!used.has(key)) used.set(key, new Set())
+    const src = file[String(c.src.ch)]
+    const where = `${spec.id} 白话第 ${c.no} 章`
+    let entry = null
+    if (src?.blocks?.length) {
+      used.get(key).add(String(c.src.ch))
+      entry = essayOf(src, normBlocks(src.blocks, where, figs, R, fc), c.title)
+    }
+    // 细粒度白话(「章-序」键:诗经一首一篇、传习录一条一篇、长短经一篇一篇):挂成这一章的 subs,按序号排
+    const subKeys = Object.keys(file).filter((k) => isSubKey(k) && k.split('-')[0] === String(c.src.ch))
+      .sort((a, b) => Number(a.split('-')[1]) - Number(b.split('-')[1]))
+    if (subKeys.length) {
+      const classic = classicOf(c.src.corpus, c.src.slug)
+      const subs = []
+      for (const k of subKeys) {
+        const sc = file[k]
+        if (!sc?.blocks?.length) continue
+        const piece = subChapter(ROOT, c.src.corpus, c.src.slug, classic, k)
+        if (!piece) { err(`${where}:细粒度白话「${k}」在原文里找不到对应的段`); continue }
+        used.get(key).add(k)
+        const sub = { key: k, name: piece.title, from: piece.from, to: piece.to, ...essayOf(sc, normBlocks(sc.blocks, `${where}「${k}」`, figs, R, fc), piece.title) }
+        subs.push(sub)
+      }
+      if (subs.length) {
+        entry ||= { title: c.title }
+        entry.subs = subs
+        nSubs += subs.length
+      }
+    }
+    if (entry) out[String(c.no)] = entry
+  }
+  for (const [key, keys] of used) {
+    const [corpus, slug] = key.split('/')
+    for (const k of Object.keys(baihuaOf(corpus, slug))) if (!keys.has(k)) R.orphans.push(`${key}#${k}`)
+  }
+  R.subs = nSubs
   const n = Object.keys(out).length
   if (!n) return null
   const json = JSON.stringify({ v: 1, id: spec.id, chapters: out })
   const file = `${spec.id}.baihua.${crypto.createHash('sha1').update(json).digest('hex').slice(0, 10)}.json`
   fs.writeFileSync(path.join(OUT, file), json)
-  return { file, bytes: Buffer.byteLength(json), chapters: n, figs: nFig, figsDone: nDone }
+  const essays = Object.values(out).filter((e) => e.blocks).length
+  return { file, bytes: Buffer.byteLength(json), chapters: n, figs: fc.n, figsDone: fc.done, ...(nSubs ? { essays, subs: nSubs } : {}) }
+}
+
+const classicCache = new Map()
+const classicOf = (corpus, slug) => {
+  const p = `src/data/${corpus}/classics/${slug}.json`
+  if (!classicCache.has(p)) classicCache.set(p, read(p))
+  return classicCache.get(p)
 }
 
 // 写出一本书的包,返回 manifest 条目(meta0:站内 texts.json 的书目元数据;易经没有,用 spec 里的字段)
 function finish(spec, meta0, chapters, parts, chars) {
-  const body = { id: spec.id, chapters }
+  const verse = !!meta0.verse
+  const body = { id: spec.id, ...(verse ? { verse: true } : {}), chapters }
   const json = JSON.stringify(body)
   const version = crypto.createHash('sha1').update(json).digest('hex').slice(0, 10)
   const file = `${spec.id}.${version}.json`
   fs.writeFileSync(path.join(OUT, file), JSON.stringify({ ...body, version }))
   const baihua = buildBaihua(spec, chapters)
+  const disclaimer = disclaimerOf(spec, meta0)
+  // 有几章带译文 / 注释 / 详注(书目页一行小字用)
+  const layers = {
+    trans: chapters.filter((c) => c.segs.some((g) => g.t)).length,
+    notes: chapters.filter((c) => c.segs.some((g) => g.n?.length)).length,
+    xiang: chapters.filter((c) => c.segs.some((g) => g.n?.some((n) => n.x))).length,
+  }
   return {
     id: spec.id,
     title: spec.title || meta0.title,
@@ -220,11 +298,30 @@ function finish(spec, meta0, chapters, parts, chars) {
     chars,
     parts,
     theme: spec.theme,
+    category: spec.category,
+    ...(disclaimer ? { disclaimer } : {}),
+    ...(verse ? { verse: true } : {}),
+    ...(spec.bundled ? { bundled: true } : {}),
+    layers,
     version,
     file,
     bytes: Buffer.byteLength(json),
     ...(baihua ? { baihua } : {}),
   }
+}
+
+// 书的声明(docs/deskbook-standard.md §6 同一套:medical / divination / 自写一句,或其中几项的数组)。
+// 中医一律 medical(守「研习不诊疗」);观数一律 divination(守「研习不断命」);谋略里的托名伪书用站内的定性;
+// 站内 texts.json 有 caveat(真伪 / 撰人存疑一类)的照录那一句。
+const DUBIOUS_LINE = '托名·疑现代伪作\uFF0C取文献批判视角'
+function disclaimerOf(spec, meta) {
+  const corpus = spec.sources?.[0]?.[0]
+  const out = []
+  if (corpus === 'zhongyi') out.push('medical')
+  if (corpus === 'mingli') out.push('divination')
+  if (meta.dubious) out.push(DUBIOUS_LINE)
+  else if (meta.caveat) out.push(meta.caveat)
+  return out.length === 0 ? null : out.length === 1 ? out[0] : out
 }
 
 // 插画:扫 public/desk/v1/art/<id>/(cover.jpg 竖版封面 · banner.jpg 横版题图 · head-<章>.jpg 章题头图)。
@@ -371,10 +468,32 @@ function buildYijing(spec) {
 // 只清包文件与清单;art/(gen-art.mjs --export 的产物)保留
 fs.mkdirSync(OUT, { recursive: true })
 for (const f of fs.readdirSync(OUT)) if (f.endsWith('.json')) fs.rmSync(path.join(OUT, f))
+const ids = new Set()
+for (const b of BOOKS) { if (ids.has(b.id)) err(`书 id「${b.id}」重复`); ids.add(b.id) }
 const books = BOOKS.map((b) => (b.build === 'yijing' ? buildYijing(b) : buildBook(b)))
 for (const b of books) { const a = scanArt(b.id); if (a) b.art = a }
 if (errors.length) { console.error(errors.slice(0, 30).join('\n')); console.error(`✗ ${errors.length} 处校验未过`); process.exit(1) }
-fs.writeFileSync(path.join(OUT, 'manifest.json'), JSON.stringify({ v: 1, books }, null, 1))
-for (const b of books) console.log(`${b.title}  ${b.chapters} ${b.unit} · ${b.segs} 段 · ${b.chars} 字 · ${(b.bytes / 1024).toFixed(0)} KB · ${b.file}`)
-for (const b of books) if (b.baihua) console.log(`  白话 ${b.title}  ${b.baihua.chapters} 章 · ${(b.baihua.bytes / 1024).toFixed(0)} KB · 图解 ${b.baihua.figsDone}/${b.baihua.figs} · ${b.baihua.file}`)
+fs.writeFileSync(path.join(OUT, 'manifest.json'), JSON.stringify({ v: 1, categories: CATEGORIES.filter((c) => books.some((b) => b.category === c)), books }, null, 1))
+
+// 逐书一行:章数 / 段 / 字 / 包大小;白话章数(细粒度的篇数)、图解、丢掉的块、没挂上的白话键
+const kb = (n) => `${(n / 1024).toFixed(0)} KB`
+for (const b of books) {
+  const R = rep(b.id)
+  const bits = [`${b.chapters} ${b.unit}`, `${b.segs} 段`, `${b.chars} 字`, kb(b.bytes), `译 ${b.layers.trans} · 注 ${b.layers.notes} · 详注 ${b.layers.xiang}`]
+  if (b.baihua) bits.push(`白话 ${b.baihua.essays ?? b.baihua.chapters} 章${b.baihua.subs ? ` + ${b.baihua.subs} 篇细分` : ''} ${kb(b.baihua.bytes)} 图解 ${b.baihua.figsDone}/${b.baihua.figs}`)
+  else bits.push('无白话')
+  if (R.titles) bits.push(`诗题 ${R.titles}`)
+  if (b.verse) bits.push('韵文')
+  if (R.verseCh) bits.push(`韵文章 ${R.verseCh}`)
+  const dr = Object.entries(R.dropped)
+  if (dr.length) bits.push(`丢块 ${dr.map(([k, n]) => `${k}×${n}`).join(' ')}`)
+  if (R.orphans.length) bits.push(`未挂白话 ${R.orphans.length}(${R.orphans.slice(0, 3).join('、')}${R.orphans.length > 3 ? '…' : ''})`)
+  if (b.disclaimer) bits.push(`声明 ${JSON.stringify(b.disclaimer)}`)
+  console.log(`${b.bundled ? '★' : ' '} ${b.category} ${b.id} ${b.title}  ${bits.join(' · ')}`)
+}
+const total = books.reduce((n, b) => n + b.bytes + (b.baihua?.bytes || 0), 0)
+const byCat = CATEGORIES.map((c) => { const xs = books.filter((b) => b.category === c); return `${c} ${xs.length}` }).join(' · ')
+console.log(`门类:${byCat}`)
+if (COLLISIONS.length) console.log(`id 撞名:${COLLISIONS.join(';')}`)
+console.log(`合计 ${books.length} 本 · 核心包 ${(books.reduce((n, b) => n + b.bytes, 0) / 1048576).toFixed(1)} MB · 白话包 ${(books.reduce((n, b) => n + (b.baihua?.bytes || 0), 0) / 1048576).toFixed(1)} MB · 共 ${(total / 1048576).toFixed(1)} MB;随 App 带 ${books.filter((b) => b.bundled).length} 本(${(books.filter((b) => b.bundled).reduce((n, b) => n + b.bytes, 0) / 1048576).toFixed(1)} MB)`)
 console.log(`→ ${path.relative(ROOT, OUT)}/manifest.json(${books.length} 本)`)

@@ -52,10 +52,10 @@ targets:
               public.filename-extension: [deskbook]
               public.mime-type: [application/vnd.deskbook+zip]
         LSSupportsOpeningDocumentsInPlace: false
-    # 六部典籍的核心包随 App 带(第一次打开没网也能读);每次构建从 public/desk/v1 现拷,不进仓库的 apps/desk。
-    # 白话、插画、字体仍按需下载。拷不到(仓库外单独构建)就跳过,App 照旧联网取。
+    # 随 App 带的典籍核心包(清单里 bundled: true 的那几本,即首发六部;第一次打开没网也能读)。每次构建从 public/desk/v1 现拷,不进仓库的 apps/desk。
+    # 清单整份带上(书目页没网也看得到全部典籍),其余各书的核心包、白话、插画、字体仍按需下载。拷不到(仓库外单独构建)就跳过,App 照旧联网取。
     preBuildScripts:
-      - name: 拷入六部典籍的内容包
+      - name: 拷入随 App 带的典籍内容包
         basedOnDependencyAnalysis: false
         script: |
           SRC="$SRCROOT/../../public/desk/v1"
@@ -63,7 +63,10 @@ targets:
           rm -rf "$DST"; mkdir -p "$DST"
           if [ ! -f "$SRC/manifest.json" ]; then echo "warning: 找不到 $SRC/manifest.json,不带内置内容包"; exit 0; fi
           cp "$SRC/manifest.json" "$DST/"
-          for f in $(grep -o '"file": *"[^"]*"' "$SRC/manifest.json" | sed 's/.*"\([^"]*\)"$/\1/' | grep -v '\.baihua\.'); do
+          # 清单里 bundled: true 的书的核心包文件名(用系统自带的 JavaScript 读 JSON,不依赖 node / python)
+          FILES=$(/usr/bin/osascript -l JavaScript -e 'function run(a){ObjC.import("Foundation");var s=$.NSString.stringWithContentsOfFileEncodingError(a[0],$.NSUTF8StringEncoding,null).js;return JSON.parse(s).books.filter(function(b){return b.bundled}).map(function(b){return b.file}).join("\n")}' "$SRC/manifest.json")
+          if [ -z "$FILES" ]; then echo "warning: 清单里没有 bundled 的书,不带内置内容包"; fi
+          for f in $FILES; do
             cp "$SRC/$f" "$DST/" || { echo "warning: 缺 $f"; }
           done
           echo "{\"at\": $(date +%s)}" > "$DST/bundled.json"

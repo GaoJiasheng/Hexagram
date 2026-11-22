@@ -65,6 +65,7 @@ final class ReaderModel {
         s.face = face
         s.bookID = book.id
         s.template = book.template
+        s.verse = book.verse ?? false
         s.accent = book.theme.accentUI
         return s
     }

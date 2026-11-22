@@ -3,17 +3,13 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { figKey } from './fig-gate.mjs'
+import { DESK_BOOKS, baihuaSources } from './books.mjs'
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 
-// 书 id → 站内白话文件(corpus/slug,对应 src/data/<corpus>/baihua/<slug>.json)
+// 书 id → 站内白话文件(corpus/slug,对应 src/data/<corpus>/baihua/<slug>.json):书单在 books.mjs,这里只留有白话文件的
 export const FIG_SOURCES = {
-  daodejing: ['dao/daodejing'],
-  lunyu: ['ru/lunyu'],
-  sunzi: ['bing/sunzi'],
-  guiguzi: ['zong/guiguzi'],
-  zhuangzi: ['dao/zhuangzi-neipian', 'dao/zhuangzi-waipian', 'dao/zhuangzi-zapian'],
-  yijing: ['yijing/hexagrams', 'yijing/xici-shang', 'yijing/xici-xia', 'yijing/shuogua', 'yijing/xugua', 'yijing/zagua'],
+  ...Object.fromEntries(DESK_BOOKS.map((b) => [b.id, baihuaSources(b).filter((s) => fs.existsSync(path.join(ROOT, `src/data/${s}`.replace(/\/([^/]+)$/, '/baihua/$1.json'))))])),
   books: [],   // 观书 153 本(collectFigs 里单独走 src/data/books)
 }
 

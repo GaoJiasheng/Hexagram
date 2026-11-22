@@ -5,12 +5,13 @@
 //   node scripts/desk/gen-art.mjs <book> [--kind head|cover|banner|all] [--chapters 1-10,25] [--limit N] [--force] [--concurrency 3] [--hint "封面 / 题图的额外约束"]
 //   node scripts/desk/gen-art.mjs --contact <book>   # 样张 scripts/.cache/desk-art/<book>/contact-N.jpg
 //   node scripts/desk/gen-art.mjs --export <book>    # → public/desk/v1/art/<book>/head-<章>.jpg(1536 宽,q82)与 cover.jpg(1024 宽)
-// books: daodejing lunyu sunzi guiguzi zhuangzi yijing
+// books: scripts/desk/books.mjs 里的全部书 id(daodejing lunyu sunzi guiguzi zhuangzi yijing mengzi shijing …)
 import fs from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
 import { spawn, execFileSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
+import { DESK_BOOKS } from './books.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const D = (p) => path.join(ROOT, 'src/data', p)
@@ -29,15 +30,12 @@ const book = opt('--contact') || opt('--export') || positional[0]
 // ---------- 固定画风(全站同一段,保证成套)----------
 const STYLE = 'Chinese ink-wash painting with light translucent color washes (淡彩水墨): soft ink lines and wet brush gradients, tinted with pale mineral blue-green, warm ochre and a touch of cinnabar; warm off-white rice-paper ground; airy, luminous, lots of breathing space.'
 
-// ---------- 六本书的数据 ----------
-const BOOKS = {
-  daodejing: { group: 'dao', slug: 'daodejing' },
-  lunyu: { group: 'ru', slug: 'lunyu' },
-  sunzi: { group: 'bing', slug: 'sunzi' },
-  guiguzi: { group: 'zong', slug: 'guiguzi' },
-  zhuangzi: { group: 'dao', slug: 'zhuangzi', parts: ['zhuangzi-neipian', 'zhuangzi-waipian', 'zhuangzi-zapian'] },
-  yijing: { yijing: true },
-}
+// ---------- 书目(scripts/desk/books.mjs 那一份书单)----------
+// 单一来源的书 { group, slug };几个 slug 拼成的(庄子)带 parts;周易单走 yijing
+const BOOKS = Object.fromEntries(DESK_BOOKS.map((b) => [b.id,
+  b.build === 'yijing' ? { yijing: true }
+    : b.sources.length > 1 ? { group: b.sources[0][0], slug: b.id, parts: b.sources.map((s) => s[1]) }
+      : { group: b.sources[0][0], slug: b.sources[0][1] }]))
 
 function bhText(b) {
   if (!b) return ''

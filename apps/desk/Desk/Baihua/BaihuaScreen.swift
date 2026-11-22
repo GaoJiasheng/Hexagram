@@ -5,6 +5,8 @@ struct BaihuaTarget: Identifiable {
     let id = UUID()
     let book: BookInfo
     let chapter: Chapter
+    /// 细粒度白话(这一章里的一首 / 一条)的键;nil = 章级那一篇。
+    var sub: String? = nil
     var block: Int?
     var flash: String?          // 划线 id
     /// 书 / 文集:文章就是正文(不是原文的「深读」),页末给上下章、学过与学完,顶上是全书目录。
@@ -58,11 +60,28 @@ struct ArticleBookScreen: View {
     }
 }
 
+/// 典籍的白话深读(全屏盖在阅读页上):一章有几篇细粒度白话时,篇末可以就地换到上一篇 / 下一篇,不叠新页。
+struct DeepScreen: View {
+    @State private var cur: BaihuaTarget
+    init(target: BaihuaTarget) { _cur = State(initialValue: target) }
+    var body: some View {
+        BaihuaScreen(target: cur, subNav: { key in
+            withAnimation(.easeInOut(duration: 0.25)) {
+                cur = BaihuaTarget(book: cur.book, chapter: cur.chapter, sub: key, block: nil, flash: nil)
+            }
+        })
+        .id(cur.id)
+        .transition(.opacity)
+    }
+}
+
 /// 白话深读:一章一篇长文,纵向滚动。题头插画淡入纸色 → 题目 / 副题 / 「一句话」→ 正文十种块。
 /// 时长计入同一章(ReadClock,口径与阅读器一致);滚到哪一块记在本机,下次打开落回去。
 struct BaihuaScreen: View {
     let target: BaihuaTarget
     var nav: ArticleNav? = nil
+    /// 细粒度白话换篇(DeepScreen 给;nil 就不出上一篇 / 下一篇)
+    var subNav: ((String) -> Void)? = nil
     @State private var pendingLink: URL?
     @State private var showFinish = false
     @State private var finishReplay = false
@@ -89,8 +108,11 @@ struct BaihuaScreen: View {
         #if DEBUG
         if let f = target.fixture { return f }
         #endif
-        return BaihuaStore.shared.chapter(book, no)
+        return BaihuaStore.shared.chapter(book, no, sub: target.sub)
     }
+    /// 这一章的细粒度白话(换篇、题头小字用)
+    private var subs: [BHSub] { BaihuaStore.shared.subs(book, no) }
+    private var subIndex: Int? { target.sub.flatMap { k in subs.firstIndex { $0.key == k } } }
 
     var body: some View {
         GeometryReader { geo in
@@ -170,7 +192,7 @@ struct BaihuaScreen: View {
         }
         .onAppear {
             clock.start(target.chapter.src)
-            if bookMode { ProgressStore.shared.set(book.id, ch: no, seg: max(0, target.block ?? BaihuaPos.get(book.id, no) ?? 0)) }
+            if bookMode { ProgressStore.shared.set(book.id, ch: no, seg: max(0, target.block ?? BaihuaPos.get(book.id, no, sub: target.sub) ?? 0)) }
         }
         .onDisappear { clock.stop() }
         .environment(\.openURL, OpenURLAction { url in askLink(url); return .handled })
@@ -187,7 +209,7 @@ struct BaihuaScreen: View {
         .onChange(of: top) { _, t in
             touch()
             if restored, let t, t >= 0 {
-                BaihuaPos.set(book.id, no, t)
+                BaihuaPos.set(book.id, no, sub: target.sub, t)
                 if bookMode { ProgressStore.shared.set(book.id, ch: no, seg: t); countChars(through: t) }
             }
         }
@@ -223,7 +245,7 @@ struct BaihuaScreen: View {
 
     /// 打开时落位:给了块就到那一块(并闪划线),否则回到上次读到的那一块。
     private func restore(_ proxy: ScrollViewProxy, _ c: BHChapter, _ a: UnitPoint) {
-        var to: Int? = target.block ?? BaihuaPos.get(book.id, no)
+        var to: Int? = target.block ?? BaihuaPos.get(book.id, no, sub: target.sub)
         if let id = target.flash, let h = HighlightStore.shared.get(id), let p = c.locate(h) {
             to = p.seg; flashAt = (p.seg, p.start, p.end)
         }
@@ -336,6 +358,7 @@ struct BaihuaScreen: View {
             return parts.isEmpty ? (book.unit) : parts.joined(separator: " · ")
         }
         if bookMode { return "第 \(Numerals.chinese(c.no)) \(book.unit)" }
+        if let i = subIndex { return BookSearch.chapterLabel(c, unit: book.unit) + " · \(i + 1) / \(subs.count)" }
         return BookSearch.chapterLabel(c, unit: book.unit)
     }
 
@@ -539,7 +562,7 @@ struct BaihuaScreen: View {
     private func marks(_ c: BHChapter) -> [Int: [BHMarkableText.BHMark]] {
         _ = HighlightStore.shared.version
         var out: [Int: [BHMarkableText.BHMark]] = [:]
-        for h in HighlightStore.shared.inChapter(book: book.id, no: no).sorted(by: { $0.at < $1.at }) where h.layer == "b" {
+        for h in HighlightStore.shared.inChapter(book: book.id, no: no).sorted(by: { $0.at < $1.at }) where h.layer == c.layer {
             guard let p = c.locate(h) else { continue }
             out[p.seg, default: []].append(.init(id: h.id, start: p.start, end: p.end, color: h.color, note: h.hasNote))
         }
@@ -549,11 +572,13 @@ struct BaihuaScreen: View {
     private func menu(_ a: BHMenuAction) {
         clock.touch()
         switch a {
-        case .mark(let p, let c):
+        case .mark(var p, let c):
+            p.layer = bh?.layer ?? p.layer      // 细粒度白话的划线记在 "b:<篇键>" 层
             lastColor = c
             UIImpactFeedbackGenerator(style: .light).impactOccurred()
             HighlightStore.shared.add(book: book.id, chapter: target.chapter, pieces: [p], color: c)
-        case .annotate(let p):
+        case .annotate(var p):
+            p.layer = bh?.layer ?? p.layer
             if let h = HighlightStore.shared.add(book: book.id, chapter: target.chapter, pieces: [p], color: lastColor).last { sheet = .editNote(h.id) }
         }
     }
@@ -618,6 +643,30 @@ struct BaihuaScreen: View {
     private var deepEnding: some View {
         VStack(spacing: 14) {
             Text("— 本篇完 —").font(Fonts.song(14)).foregroundStyle(Ink.faint).kerning(2)
+            // 细粒度白话:同一章里的下一篇 / 上一篇
+            if let i = subIndex, let go = subNav {
+                if let n = subs[safe: i + 1] {
+                    Button { go(n.key) } label: {
+                        HStack(spacing: 12) {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text("下一篇 · \(i + 2) / \(subs.count)").font(.system(size: 12)).opacity(0.85)
+                                Text(n.name).font(Fonts.song(18, bold: true)).multilineTextAlignment(.leading)
+                                if let s = n.essay.subtitle, !s.isEmpty { Text(s).font(.system(size: 13)).opacity(0.85).lineLimit(2).multilineTextAlignment(.leading) }
+                            }
+                            Spacer()
+                            Image(systemName: "arrow.right")
+                        }
+                        .padding(18).frame(maxWidth: 560, alignment: .leading)
+                        .background(theme.accentColor, in: RoundedRectangle(cornerRadius: 16)).foregroundStyle(.white)
+                    }
+                    .buttonStyle(.plain)
+                    .padding(.horizontal, 22)
+                }
+                if let p = subs[safe: i - 1] {
+                    Button { go(p.key) } label: { Label("上一篇:\(p.name)", systemImage: "arrow.left").lineLimit(1) }
+                        .font(.system(size: 14, weight: .medium)).foregroundStyle(theme.accentColor)
+                }
+            }
             Button { dismiss() } label: {
                 Label("回到原文", systemImage: "arrow.uturn.backward")
                     .font(.system(size: 15, weight: .semibold)).foregroundStyle(theme.accentColor)
@@ -724,7 +773,7 @@ struct BaihuaScreen: View {
             if let pack {
                 HighlightsSheet(book: book, pack: pack) { h in
                     sheet = nil
-                    if h.no == no, let p = c.locate(h) {
+                    if h.no == no, h.layer == c.layer, let p = c.locate(h) {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { flashAt = (p.seg, p.start, p.end); top = p.seg; flashToken += 1 }
                     } else {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { nav?.go(h.no, nil, h.id) }
@@ -762,11 +811,58 @@ extension BHChapter {
 }
 
 /// 章末页的白话深读入口:一张请人往里读的卡片。白话包还没到时先空着,到了自己出现。
+/// 一章有几篇细粒度白话(诗经一首一篇、传习录一条一篇)时,下面再列几篇,「全部 N 篇」开选单。
 struct DeepReadCard: View {
     let book: BookInfo
     let chapter: Chapter
     let open: () -> Void
+    var openSub: (String) -> Void = { _ in }
+    var showAll: () -> Void = {}
     var body: some View {
+        VStack(spacing: 14) {
+            chapterCard
+            subsCard
+        }
+    }
+
+    @ViewBuilder private var subsCard: some View {
+        let subs = BaihuaStore.shared.subs(book, chapter.no)
+        if !subs.isEmpty {
+            let theme = book.theme
+            let shown = Array(subs.prefix(5))
+            VStack(alignment: .leading, spacing: 0) {
+                HStack(spacing: 6) {
+                    Image(systemName: "book.pages").font(.system(size: 11, weight: .bold))
+                    Text("往深里读 · 本\(book.unit) \(subs.count) 篇\(book.deepLabel)").font(.system(size: 12, weight: .bold)).kerning(1.5)
+                }
+                .foregroundStyle(theme.accentColor)
+                .padding(.bottom, 8)
+                ForEach(shown) { s in
+                    Button { openSub(s.key) } label: { SubEssayRow(book: book, chapter: chapter.no, sub: s, compact: true) }
+                        .buttonStyle(.plain)
+                    if s.key != shown.last?.key { Divider().overlay(Ink.line) }
+                }
+                if subs.count > shown.count {
+                    Button(action: showAll) {
+                        HStack(spacing: 4) {
+                            Text("全部 \(subs.count) 篇").font(.system(size: 14, weight: .semibold))
+                            Image(systemName: "chevron.right").font(.system(size: 12, weight: .bold))
+                        }
+                        .foregroundStyle(theme.accentColor)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.top, 12)
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+            .padding(18)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Ink.card, in: RoundedRectangle(cornerRadius: 18))
+            .overlay(RoundedRectangle(cornerRadius: 18).stroke(theme.accentColor.opacity(0.3), lineWidth: 1))
+        }
+    }
+
+    @ViewBuilder private var chapterCard: some View {
         if let c = BaihuaStore.shared.chapter(book, chapter.no) {
             let theme = book.theme
             Button(action: open) {
@@ -815,6 +911,90 @@ struct DeepReadCard: View {
             .buttonStyle(.plain)
             .accessibilityLabel("\(book.deepLabel):\(c.title)")
         }
+    }
+}
+
+/// 细粒度白话的一行:原文题名(大)+ 白话题目 / 副题(小)+ 分钟;有划线标个数。
+struct SubEssayRow: View {
+    let book: BookInfo
+    let chapter: Int
+    let sub: BHSub
+    var compact = false
+    var current = false
+    var body: some View {
+        let marks = HighlightStore.shared.inChapter(book: book.id, no: chapter).filter { $0.layer == sub.essay.layer }.count
+        HStack(alignment: .top, spacing: 10) {
+            VStack(alignment: .leading, spacing: 3) {
+                Text(sub.name).font(Fonts.song(compact ? 16 : 17, bold: true)).foregroundStyle(current ? book.theme.accentColor : Ink.text)
+                    .multilineTextAlignment(.leading).lineLimit(2)
+                if let s = sub.essay.subtitle, !s.isEmpty {
+                    Text(s).font(.system(size: 13)).foregroundStyle(Ink.soft).lineLimit(compact ? 1 : 2).multilineTextAlignment(.leading)
+                }
+            }
+            Spacer(minLength: 6)
+            if marks > 0 {
+                HStack(spacing: 2) {
+                    Image(systemName: "highlighter").font(.system(size: 10, weight: .medium))
+                    Text("\(marks)").font(Fonts.num(11, weight: .semibold))
+                }
+                .foregroundStyle(HLColor.markColor(0)).padding(.top, 3)
+            }
+            Text("\(max(1, sub.essay.charCount / 450)) 分").font(Fonts.num(11, weight: .medium)).foregroundStyle(Ink.faint).padding(.top, 3)
+        }
+        .padding(.vertical, compact ? 9 : 4)
+        .contentShape(Rectangle())
+        .accessibilityElement(children: .combine)
+    }
+}
+
+/// 一章的白话选单:章级那篇(有就在最上面)+ 各篇细粒度白话;正读到的那一首标出来、滚到它。
+struct SubEssaySheet: View {
+    let book: BookInfo
+    let chapter: Chapter
+    /// 正读到的段(落在哪一篇的段区间里,那一篇标「正在读」)
+    var seg: Int?
+    let pick: (String?) -> Void
+    @State private var query = ""
+    @Environment(\.dismiss) private var dismiss
+    var body: some View {
+        let subs = BaihuaStore.shared.subs(book, chapter.no)
+        let whole = BaihuaStore.shared.chapter(book, chapter.no)
+        let q = query.trimmingCharacters(in: .whitespaces)
+        let shown = q.isEmpty ? subs : subs.filter { $0.name.contains(q) || $0.essay.title.contains(q) }
+        let here = seg.flatMap { s in subs.first { s >= $0.from && s < $0.to }?.key }
+        NavigationStack {
+            ScrollViewReader { proxy in
+                List {
+                    if let whole, q.isEmpty {
+                        Section {
+                            Button { pick(nil) } label: {
+                                VStack(alignment: .leading, spacing: 3) {
+                                    Text(whole.title).font(Fonts.song(17, bold: true)).foregroundStyle(Ink.text)
+                                    Text("本\(book.unit)总说 · 约 \(max(1, whole.charCount / 450)) 分钟").font(.system(size: 12)).foregroundStyle(Ink.faint)
+                                }
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                    Section {
+                        ForEach(shown) { s in
+                            Button { pick(s.key) } label: { SubEssayRow(book: book, chapter: chapter.no, sub: s, current: s.key == here) }
+                                .buttonStyle(.plain)
+                                .listRowBackground(s.key == here ? book.theme.accentColor.opacity(0.08) : nil)
+                                .id(s.key)
+                        }
+                    } header: {
+                        Text("\(subs.count) 篇").font(.system(size: 12, weight: .semibold)).foregroundStyle(Ink.soft).textCase(nil)
+                    }
+                }
+                .listStyle(.insetGrouped)
+                .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .automatic), prompt: "篇名")
+                .onAppear { if let here { DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { proxy.scrollTo(here, anchor: .center) } } }
+            }
+            .navigationTitle(chapter.title.isEmpty ? book.deepLabel : "\(chapter.title) · \(book.deepLabel)").navigationBarTitleDisplayMode(.inline)
+            .toolbar { ToolbarItem(placement: .cancellationAction) { Button("关闭") { dismiss() } } }
+        }
+        .presentationDetents([.medium, .large])
     }
 }
 

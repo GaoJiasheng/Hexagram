@@ -345,7 +345,7 @@ enum MarkdownExport {
             let head = c.map { b.isCollection ? $0.title : BookSearch.chapterLabel($0, unit: b.unit) } ?? "第 \(no) \(b.unit)"
             out += "## \(head)\n\n"
             for (k, name) in layers {
-                let r = rows.filter { $0.layer == k }.sorted { ($0.seg, $0.start) < ($1.seg, $1.start) }
+                let r = rows.filter { k == "b" ? $0.isBaihua : $0.layer == k }.sorted { ($0.seg, $0.start) < ($1.seg, $1.start) }
                 guard !r.isEmpty else { continue }
                 if !b.isArticleBook { out += "### \(name)\n\n" }
                 for h in r {

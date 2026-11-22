@@ -25,6 +25,9 @@ struct Highlight: Codable, Identifiable, Hashable {
     var deleted: Bool = false   // 墓碑:删除不真删,留给云同步合并
 
     var hasNote: Bool { !(note ?? "").trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
+    /// 白话里的划线:章级白话的层是 "b",细粒度白话(一首 / 一条一篇)是 "b:<篇键>"。
+    var isBaihua: Bool { layer == "b" || layer.hasPrefix("b:") }
+    var baihuaSub: String? { layer.hasPrefix("b:") ? String(layer.dropFirst(2)) : nil }
 }
 
 /// 划线里的一段:在第几段、哪一层、从第几个字到第几个字(字符数)、是哪几个字。
