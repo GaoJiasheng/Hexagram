@@ -56,7 +56,11 @@ node scripts/desk/notes-apply.mjs <corpus>/<slug>                     # 机器�
 
 - 易经的写法:`yijing/hexagrams`、`yijing/xici-shang`……
 - 单元里每个 item 带站内坐标(`ch` + `seg`,易经卦为 `ch` + 部位键)。
-- **核查分两档**:默认 Codex 核查全量 + 主会话按书抽 Opus 核查(`Workflow scripts/desk/notes-wf.js`,`verifyOnly`,抽约一成单元);抽查改动率明显偏高(> 3%)的书,整本补跑 Opus 核查。红线重的组(中医、观数、谋略伪书)抽查比例加倍。
+- **核查(owner 2026-11-22 晚定「中间那档,质量不必拉太高」)**:Codex 起草 → Codex 核查全量 → 机器闸 → 入库;之后主会话再用 Opus 复核一部分:
+  - 中医、佛、谋略伪书(`dubious` 的五部)三类**整本**过 Opus(红线重:不述功效、不宣化、不为伪书张目);
+  - 观数(91.5 万字)抽两成;其余各组抽一成;抽查改动率 > 3% 的书整本补跑。
+  - 做法:`node scripts/desk/notes-sample.mjs <corpus>/<slug> [--frac 0.1|--all]` 选单元并备份现稿 → `Workflow scripts/desk/notes-wf.js`(`verifyOnly`)→ `notes-sample.mjs … --report` 看改动率 → `notes-apply.mjs` 重新并入。
+  - 起草一直用 Codex;Codex 额度用完再改 Sonnet 起草(`notes-wf.js` 不带 `verifyOnly` 即 Sonnet 起草 + Opus 核查)。
 - 全站连跑:`scripts/desk/notes-run-all.mjs`(按 §6 的顺序一本一本跑,可中断续跑,状态记在 `scripts/.desk-notes/run-all.json`)。
 
 ## 5 · 谁在用

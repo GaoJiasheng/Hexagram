@@ -40,15 +40,16 @@ const VERIFY = (dir, book, id) => `你是《${book}》详注的核查者。另�
 不要为改而改:写得对的一个字不动;不新增条目,除非某段明显该注却一条都没有。
 只用 Read / Edit(确需整段重排时才用 Write);不要读仓库里别的文件;不要委派。最后按 schema 交回:notes = 核后的总条数,changed = 你改动或删除的条数,note 里一句话说主要改了什么。`
 
-const { dir, book, ids } = args
-log(`《${book}》详注:${ids.length} 个单元`)
+// 两种传参:{dir, book, ids}(一本书)或 {jobs: [{dir, book, id}]}(跨书,抽查时用)
+const jobs = args.jobs || args.ids.map((id) => ({ dir: args.dir, book: args.book, id }))
+log(`详注:${jobs.length} 个单元(${[...new Set(jobs.map((j) => j.book))].join('、')})`)
 // args.verifyOnly:起草已由别处完成(如本机 Codex 写好了 out/<单元>.json),这里只跑核查
 const results = await pipeline(
-  ids,
-  (id) => args.verifyOnly ? Promise.resolve({ notes: 0 }) : agent(DRAFT(dir, book, id), { label: `注:${id}`, phase: 'Draft', schema: SCHEMA, model: 'sonnet' }),
-  (draft, id) => agent(VERIFY(dir, book, id), { label: `核:${id}`, phase: 'Verify', schema: SCHEMA, model: 'opus' })
-    .then((v) => ({ id, draft: draft?.notes ?? 0, kept: v?.notes ?? 0, changed: v?.changed ?? 0, note: v?.note || '' })),
+  jobs,
+  (j) => args.verifyOnly ? Promise.resolve({ notes: 0 }) : agent(DRAFT(j.dir, j.book, j.id), { label: `注:${j.book} ${j.id}`, phase: 'Draft', schema: SCHEMA, model: 'sonnet' }),
+  (draft, j) => agent(VERIFY(j.dir, j.book, j.id), { label: `核:${j.book} ${j.id}`, phase: 'Verify', schema: SCHEMA, model: 'opus' })
+    .then((v) => ({ book: j.book, id: j.id, draft: draft?.notes ?? 0, kept: v?.notes ?? 0, changed: v?.changed ?? 0, note: v?.note || '' })),
 )
 const ok = results.filter(Boolean)
-log(`完成 ${ok.length}/${ids.length} 个单元 · 注 ${ok.reduce((a, r) => a + r.kept, 0)} 条 · 核查改动 ${ok.reduce((a, r) => a + r.changed, 0)} 条`)
+log(`完成 ${ok.length}/${jobs.length} 个单元 · 注 ${ok.reduce((a, r) => a + r.kept, 0)} 条 · 核查改动 ${ok.reduce((a, r) => a + r.changed, 0)} 条`)
 return ok

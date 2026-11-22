@@ -8,7 +8,7 @@ A=(-allowProvisioningUpdates -authenticationKeyPath "$KEY" -authenticationKeyID 
 VERSION=$(node -p "require('./package.json').version")
 echo "▶ 同步版本号 → $VERSION + bump build 号"
 (cd ios/App && xcrun agvtool new-marketing-version "$VERSION" >/dev/null && xcrun agvtool next-version -all >/dev/null)
-echo "▶ 构建 web(原生档)+ sync"; npm run build:cap >/dev/null && npx cap sync ios >/dev/null
+echo "▶ 构建 web(原生档)+ sync"; npm run build:cap >/dev/null && rm -rf dist/desk && npx cap sync ios >/dev/null   # dist/desk 是「观象 · 书桌」的内容包与插画(约 78 MB),只由网站托管,不进本 App
 echo "▶ 归档"; rm -rf /tmp/Hexa.xcarchive
 xcodebuild -project ios/App/App.xcodeproj -scheme App -configuration Release -destination 'generic/platform=iOS' -archivePath /tmp/Hexa.xcarchive archive "${A[@]}" DEVELOPMENT_TEAM="$ASC_TEAM" CODE_SIGN_STYLE=Automatic -quiet
 echo "▶ 导出 .ipa"; rm -rf /tmp/HexaExport
