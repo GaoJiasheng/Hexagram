@@ -41,8 +41,11 @@ const bag = (strs) => {
 
 // 多重集之差:返回 { missing: 'SVG 有、fig 没有的字', extra: 'fig 有、SVG 没有的字' }
 export function diffText(fig, svg) {
-  const a = bag(svgTexts(svg)), b = bag(figStrings(fig))
-  if (fig.kind === 'quote') for (const c of '观象') if ((a.get(c) || 0) > (b.get(c) || 0)) a.set(c, a.get(c) - 1)   // 印章
+  // 角上的「观象」印章:SVG 里单独成一个 <text> 的「观」「象」(或「观象」)不比
+  const texts = svgTexts(svg)
+  const seal = texts.includes('观象') ? ['观象'] : (texts.includes('观') && texts.includes('象') ? ['观', '象'] : [])
+  for (const t of seal) texts.splice(texts.indexOf(t), 1)
+  const a = bag(texts), b = bag(figStrings(fig))
   let missing = '', extra = ''
   for (const [c, n] of a) { const d = n - (b.get(c) || 0); if (d > 0) missing += c.repeat(d) }
   for (const [c, n] of b) { const d = n - (a.get(c) || 0); if (d > 0) extra += c.repeat(d) }

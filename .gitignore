@@ -90,3 +90,6 @@ apps/desk/Desk/Info.plist
 
 # 书桌详注生产的分片输入 / 输出(scripts/desk/notes-prep.mjs 生成)
 scripts/.desk-notes/
+
+# 书桌图解转换中间产物
+scripts/.desk-figs/
