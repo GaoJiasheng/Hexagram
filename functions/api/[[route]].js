@@ -7,6 +7,24 @@ import {
   resolveGoogleAccount,
   validateGoogleIdToken,
 } from '../../server/google-auth.js'
+import {
+  AppleIdTokenError,
+  appleBool,
+  appleEmail,
+  parseAudiences,
+  resolveAppleAccount,
+  verifyAppleIdentityToken,
+} from '../../server/apple-auth.js'
+import {
+  NATIVE_CODE_TTL_MS,
+  NATIVE_REDIRECT_URL,
+  challengeFromVerifier,
+  generateNativeCode,
+  isCodeChallenge,
+  isCodeVerifier,
+  nativeCodeHash,
+  parseNativeCode,
+} from '../../server/native-auth.js'
 import { sendCommentNotification } from '../../server/comment-notification.js'
 import { isAdminUser } from '../../server/admin.js'
 import { summarizeReadDays, dwellHistogram, median, isDayString, mergeRankRows, mergeCorpusRows } from '../../server/read-stats.js'
@@ -24,8 +42,11 @@ import {
 
 const MAX_BODY_BYTES = 4096
 const COMMENTS_MAX_BODY_BYTES = 8192
-const SYNC_MAX_BODY_BYTES = 1_000_000
+// 整包上限:highlights 单键 1MB + 其余 13 键各 200KB ≈ 3.6MB,取 4MB(Workers 请求体上限 100MB,远够)
+const SYNC_MAX_BODY_BYTES = 4_000_000
 const SYNC_MAX_VALUE_BYTES = 200_000
+// 单键另设上限:原生 App 的划线与批注(highlights)会比别的键大得多
+const SYNC_MAX_VALUE_BYTES_BY_KEY = { highlights: 1_000_000 }
 const ADMIN_PASSPHRASE_HEADER = 'X-Admin-Passphrase'
 const DAY_MS = 24 * 60 * 60 * 1000
 const SESSION_COOKIE = 'gx_session'
@@ -38,11 +59,12 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 // Keep this backend allow-list in sync with DATA_KEYS in
 // src/features/yijing/storage.js. It is intentionally duplicated so the API
 // never trusts a client-provided key as a D1 row key.
-const DATA_KEYS = ['settings', 'quoteTheme', 'bookmarks', 'notes', 'divinations', 'reading', 'readPos', 'recentHexagrams', 'progress', 'corpusMarks', 'corpusNotes', 'readDays']
+const DATA_KEYS = ['settings', 'quoteTheme', 'bookmarks', 'notes', 'divinations', 'reading', 'readPos', 'recentHexagrams', 'progress', 'corpusMarks', 'corpusNotes', 'readDays', 'highlights', 'finished']
 const DATA_KEY_SET = new Set(DATA_KEYS)
 // readPos(段级续读,客户端 2026-07-30 起就在发)此前漏登记 → 服务端整包拒收 400、云同步两个月静默失效;2026-10-01 补上,按整体最新胜出(同 reading)
 const SCALAR_DATA_KEYS = new Set(['settings', 'quoteTheme', 'reading', 'readPos', 'recentHexagrams', 'notes'])
-const MAP_DATA_KEYS = new Set(['corpusMarks', 'corpusNotes', 'bookmarks', 'readDays'])
+// highlights / finished(2026-11-22,原生 App「观象 · 书桌」):逐条按记录内 at 新者胜,删除走 {deleted:true, at} 墓碑
+const MAP_DATA_KEYS = new Set(['corpusMarks', 'corpusNotes', 'bookmarks', 'readDays', 'highlights', 'finished'])
 const SYNC_DEFAULTS = {
   settings: null,
   quoteTheme: null,
@@ -56,6 +78,8 @@ const SYNC_DEFAULTS = {
   corpusMarks: {},
   corpusNotes: {},
   readDays: {},   // 阅读时长日聚合(研读统计):day|corpus|slug|ch|dev → {sec, n, at};用户关掉「计入账号」即 DELETE /me/reading
+  highlights: {}, // 划线与批注:记录 id → {book, corpus, slug, ch, no, layer, seg, start, end, text, color, note?, at} 或墓碑
+  finished: {},   // 学完的书:'corpus:slug' → {at} 或墓碑
 }
 
 // Pages Functions receives the original /api/* URL, so keep the public prefix
@@ -394,6 +418,19 @@ async function verifyTurnstile(c, token) {
   }
 }
 
+// 用户自报的昵称(Apple 首次授权给的全名):不合格就当没给,由调用方退回默认名
+function normalizeDisplayName(value) {
+  if (typeof value !== 'string') return null
+  const name = value
+    .replace(/[\u200b-\u200f\u2028\u2029\ufeff]/g, '')
+    .replace(/[\u0000-\u001f\u007f]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+  if (name.length < 1 || [...name].length > 24) return null
+  if (screenComment(name)) return null
+  return name
+}
+
 function normalizeEmail(value) {
   if (typeof value !== 'string') throw new RequestError(400, '邮箱格式不正确')
   const email = value.trim().toLowerCase()
@@ -452,7 +489,7 @@ function validateSync(body) {
     if (serialized === undefined) {
       throw new RequestError(400, `invalid sync value: ${dataKey}`)
     }
-    if (new TextEncoder().encode(serialized).byteLength > SYNC_MAX_VALUE_BYTES) {
+    if (new TextEncoder().encode(serialized).byteLength > (SYNC_MAX_VALUE_BYTES_BY_KEY[dataKey] ?? SYNC_MAX_VALUE_BYTES)) {
       throw new RequestError(400, `sync value too large: ${dataKey}`)
     }
     entries.set(dataKey, { value: entry.value, at: entry.at })
@@ -585,7 +622,16 @@ app.use('/admin/*', async (c, next) => {
 app.get('/auth/google/start', (c) => {
   const returnTo = normalizeOAuthReturnTo(c.req.query('return_to'))
   const state = crypto.randomUUID()
-  setCookie(c, OAUTH_COOKIE, JSON.stringify({ state, returnTo }), {
+  // 原生 App(?native=1):callback 不种 cookie,改发一次性短码跳回 App;可选 PKCE code_challenge(S256)
+  const native = c.req.query('native') === '1'
+  const challenge = c.req.query('code_challenge')
+  if (native && challenge !== undefined && !isCodeChallenge(challenge)) {
+    return c.json({ ok: false, error: 'invalid code_challenge' }, 400)
+  }
+  const attempt = native
+    ? { state, returnTo, native: true, ...(challenge ? { challenge } : {}) }
+    : { state, returnTo }
+  setCookie(c, OAUTH_COOKIE, JSON.stringify(attempt), {
     httpOnly: true,
     secure: true,
     sameSite: 'Lax',
@@ -618,6 +664,8 @@ app.get('/auth/google/callback', async (c) => {
         attempt = {
           state: typeof parsed.state === 'string' ? parsed.state : '',
           returnTo: normalizeOAuthReturnTo(parsed.returnTo),
+          native: parsed.native === true,
+          challenge: isCodeChallenge(parsed.challenge) ? parsed.challenge : '',
         }
       }
     } catch {
@@ -632,9 +680,14 @@ app.get('/auth/google/callback', async (c) => {
     return googleAuthErrorPage(c, 400, '登录请求已失效或校验失败,请返回后重试。', returnTo)
   }
 
+  // 原生模式下出错也跳回 App(带 error=),让 App 的登录浮窗自己收起、给出提示
+  const fail = (status, message, reason) => (attempt.native
+    ? c.redirect(`${NATIVE_REDIRECT_URL}?error=${encodeURIComponent(reason)}`, 302)
+    : googleAuthErrorPage(c, status, message, returnTo))
+
   const code = c.req.query('code')
   if (!code) {
-    return googleAuthErrorPage(c, 400, 'Google 没有返回授权码,请返回后重试。', returnTo)
+    return fail(400, 'Google 没有返回授权码,请返回后重试。', c.req.query('error') === 'access_denied' ? 'cancelled' : 'no_code')
   }
 
   try {
@@ -675,6 +728,19 @@ app.get('/auth/google/callback', async (c) => {
       .prepare('DELETE FROM sessions WHERE user_id = ? AND expires_at < ?')
       .bind(user.id, Date.now())
       .run()
+    if (attempt.native) {
+      // 不种 cookie、不建会话:发一枚 2 分钟一次性短码,App 拿去 /auth/native/exchange 换 token
+      const nativeCode = generateNativeCode(user.id)
+      await db.prepare(`
+        INSERT INTO auth_codes (target, code_hash, expires_at, attempts) VALUES (?, ?, ?, 0)
+        ON CONFLICT(target) DO UPDATE SET code_hash = excluded.code_hash, expires_at = excluded.expires_at, attempts = 0
+      `).bind(
+        nativeCode.target,
+        await nativeCodeHash(nativeCode.target, nativeCode.secret, attempt.challenge),
+        Date.now() + NATIVE_CODE_TTL_MS,
+      ).run()
+      return c.redirect(`${NATIVE_REDIRECT_URL}?code=${encodeURIComponent(nativeCode.code)}`, 302)
+    }
     const rawSession = await createSession(db, user.id)
     setSessionCookie(c, rawSession)
     // 回跳带 ?auth=google:前端挂载时只在本地有「登录痕迹」标记才会去问 /api/me
@@ -686,10 +752,87 @@ app.get('/auth/google/callback', async (c) => {
     return c.redirect(`${dest.pathname}${dest.search}${dest.hash}`, 302)
   } catch (error) {
     if (error instanceof RequestError || error instanceof GoogleIdTokenError) {
-      return googleAuthErrorPage(c, error.status, error.message, returnTo)
+      return fail(error.status, error.message, 'google_failed')
     }
     console.error('Google OAuth callback failed', error)
-    return googleAuthErrorPage(c, 503, '登录服务暂时不可用,请稍后重试。', returnTo)
+    return fail(503, '登录服务暂时不可用,请稍后重试。', 'unavailable')
+  }
+})
+
+// 原生 App 用 Google 回跳带回的一次性短码换会话(只回 token,不种 cookie)。
+// 请求体 {code, verifier?}:start 时带过 code_challenge 的,这里必须交出对应的 code_verifier。
+app.post('/auth/native/exchange', async (c) => {
+  try {
+    const input = await readJsonBody(c)
+    const parsed = parseNativeCode(input?.code)
+    const verifier = input?.verifier
+    if (verifier !== undefined && !isCodeVerifier(verifier)) throw new RequestError(400, 'invalid verifier')
+    if (!parsed) throw new RequestError(400, '登录码无效或已过期,请重新登录')
+    const db = getDb(c)
+    const now = Date.now()
+    const challenge = verifier ? await challengeFromVerifier(verifier) : ''
+    const hash = await nativeCodeHash(parsed.target, parsed.secret, challenge)
+    const row = await db.prepare('SELECT code_hash, expires_at, attempts FROM auth_codes WHERE target = ?').bind(parsed.target).first()
+    const state = verifyCodeRow(row, hash, now)
+    if (state === 'mismatch') {
+      await db.prepare('UPDATE auth_codes SET attempts = attempts + 1 WHERE target = ?').bind(parsed.target).run()
+    }
+    if (state !== 'ok') throw new RequestError(400, '登录码无效或已过期,请重新登录')
+    // 条件删除兼作「只能用一次」的闸:两个请求同时拿同一枚码来,只有删到那一行的那个算数
+    const deleted = await db
+      .prepare('DELETE FROM auth_codes WHERE target = ? AND code_hash = ? AND expires_at > ?')
+      .bind(parsed.target, hash, now)
+      .run()
+    if (Number(deleted?.meta?.changes) !== 1) throw new RequestError(400, '登录码无效或已过期,请重新登录')
+
+    const user = await db.prepare(`
+      SELECT id, display_name, avatar_seed, email, is_owner, email_verified_at FROM users WHERE id = ?
+    `).bind(parsed.userId).first()
+    if (!user) throw new RequestError(400, '登录码无效或已过期,请重新登录')
+    const rawSession = await createSession(db, user.id)
+    return c.json({ ok: true, user: publicUser(user, c.env), token: rawSession })
+  } catch (error) {
+    if (error instanceof RequestError) return c.json({ ok: false, error: error.message }, error.status)
+    console.error('Native code exchange failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
+  }
+})
+
+// 通过 Apple 登录(原生 App)。请求体 {identityToken, displayName?};displayName 只在苹果首次授权时给得出,可缺。
+// 校验与账号解析在 server/apple-auth.js;成功后与邮箱登录一致:建会话,X-Client: native 回 token,否则种 cookie。
+app.post('/auth/apple', async (c) => {
+  try {
+    const input = await readJsonBody(c, 16_384)
+    if (typeof input?.identityToken !== 'string' || !input.identityToken) throw new RequestError(400, '缺少 Apple 身份凭证')
+    const payload = await verifyAppleIdentityToken(input.identityToken, {
+      audiences: parseAudiences(c.env?.APPLE_AUDIENCES),
+    })
+    const db = getDb(c)
+    const emailVerified = appleBool(payload.email_verified)
+    const { user } = await resolveAppleAccount(db, {
+      sub: payload.sub,
+      email: appleEmail(payload),
+      emailVerified,
+      displayName: normalizeDisplayName(input.displayName),
+    })
+    if (emailVerified && user.email && user.email === appleEmail(payload) && !user.email_verified_at) {
+      await markEmailVerified(db, user.id)
+      user.email_verified_at = Date.now()
+    }
+    await db
+      .prepare('DELETE FROM sessions WHERE user_id = ? AND expires_at < ?')
+      .bind(user.id, Date.now())
+      .run()
+    const rawSession = await createSession(db, user.id)
+    if (wantsToken(c)) return c.json({ ok: true, user: publicUser(user, c.env), token: rawSession })
+    setSessionCookie(c, rawSession)
+    return c.json({ ok: true, user: publicUser(user, c.env) })
+  } catch (error) {
+    if (error instanceof RequestError || error instanceof AppleIdTokenError) {
+      return c.json({ ok: false, error: error.message }, error.status)
+    }
+    console.error('Apple sign-in failed', error)
+    return c.json({ ok: false, error: 'service unavailable' }, 503)
   }
 })
 
@@ -855,12 +998,17 @@ app.delete('/me/reading', async (c) => {
   }
 })
 
+const DELETE_CONFIRM_NO_EMAIL = '注销账号'
+
 app.delete('/me', async (c) => {
   try {
     const user = await requireUser(c)
     const input = await readJsonBody(c)
-    // 要求把自己的邮箱抄一遍再删 —— 不可撤销的操作不该一键完成
-    if (typeof input?.confirm !== 'string' || normalizeEmail(input.confirm) !== normalizeEmail(user.email || '')) {
+    // 要求把自己的邮箱抄一遍再删 —— 不可撤销的操作不该一键完成。
+    // 没有邮箱的账号(通过 Apple 登录且未共享邮箱)抄不了邮箱,改为输入「注销账号」四个字
+    if (!user.email) {
+      if (input?.confirm !== DELETE_CONFIRM_NO_EMAIL) throw new RequestError(400, `请输入「${DELETE_CONFIRM_NO_EMAIL}」以确认注销`)
+    } else if (typeof input?.confirm !== 'string' || normalizeEmail(input.confirm) !== normalizeEmail(user.email)) {
       throw new RequestError(400, '请输入本账号的邮箱以确认注销')
     }
     await getDb(c).prepare('DELETE FROM users WHERE id = ?').bind(user.id).run()
@@ -996,7 +1144,8 @@ app.post('/auth/email/verify', async (c) => {
 app.post('/auth/logout', async (c) => {
   clearSessionCookie(c)
   try {
-    const raw = getCookie(c, SESSION_COOKIE)
+    // cookie 与 Bearer 都认:原生端登出也要把服务端会话删掉,不能只在本机丢 token
+    const raw = readSessionToken(c)
     if (raw) {
       await getDb(c)
         .prepare('DELETE FROM sessions WHERE id = ?')

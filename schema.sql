@@ -11,7 +11,8 @@ CREATE TABLE users (
   ),
   created_at INTEGER NOT NULL DEFAULT (unixepoch() * 1000),
   is_owner INTEGER NOT NULL DEFAULT 0 CHECK (is_owner IN (0, 1)),
-  email TEXT
+  email TEXT,
+  email_verified_at INTEGER
 );
 
 CREATE UNIQUE INDEX idx_users_email
@@ -20,7 +21,7 @@ CREATE UNIQUE INDEX idx_users_email
 CREATE TABLE identities (
   user_id TEXT NOT NULL,
   provider TEXT NOT NULL CHECK (
-    provider IN ('google', 'email', 'phone', 'wechat')
+    provider IN ('google', 'email', 'phone', 'wechat', 'apple')
   ),
   provider_uid TEXT NOT NULL CHECK (length(provider_uid) > 0),
   created_at INTEGER NOT NULL DEFAULT (unixepoch() * 1000),

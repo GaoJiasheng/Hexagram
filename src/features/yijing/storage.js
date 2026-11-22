@@ -4,7 +4,7 @@ const PREFIX = 'guanxiang.v1.'
 
 // Keep this client list in sync with the independent backend allow-list in
 // functions/api/[[route]].js.
-export const DATA_KEYS = ['settings', 'quoteTheme', 'bookmarks', 'notes', 'divinations', 'reading', 'readPos', 'recentHexagrams', 'progress', 'corpusMarks', 'corpusNotes', 'readDays']
+export const DATA_KEYS = ['settings', 'quoteTheme', 'bookmarks', 'notes', 'divinations', 'reading', 'readPos', 'recentHexagrams', 'progress', 'corpusMarks', 'corpusNotes', 'readDays', 'highlights', 'finished']
 const DATA_KEY_SET = new Set(DATA_KEYS)
 const SYNC_DEFAULTS = {
   settings: null,
@@ -19,6 +19,9 @@ const SYNC_DEFAULTS = {
   corpusMarks: {},
   corpusNotes: {},
   readDays: {},   // 阅读时长日聚合(研读统计,2026-10-01):day|corpus|slug|ch|dev → {sec, n, at}
+  // 以下两键由原生 App「观象 · 书桌」写入(2026-11-22);网页端暂不使用,只原样收发、保住云端那份
+  highlights: {}, // 划线与批注:记录 id(UUID) → {book, corpus, slug, ch, no, layer, seg, start, end, text, color, note?, at} 或 {deleted:true, at}
+  finished: {},   // 学完的书:'corpus:slug' → {at} 或 {deleted:true, at}
 }
 let applyingSyncResult = false
 
