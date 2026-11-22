@@ -75,11 +75,14 @@ struct BookTheme: Codable, Hashable {
 }
 
 /// 题图:内容包里的插画还没接入时(M0),先用随 App 带的样张;没有样张的书用主题色渐变。
+/// 书的题图:kind 取 .banner(横版,书桌大卡片 / 学完页)或 .cover(竖版,书目 / 「我的书」小卡)。
+/// 图从 ArtStore 取(按需下载),取不到时用主题色渐变;下完 ArtStore.version 变,这里自动重画。
 struct BookArt: View {
-    let bookID: String
-    let theme: BookTheme
+    let book: BookInfo
+    var kind: ArtKind = .banner
+    private var theme: BookTheme { book.theme }
     var body: some View {
-        if let img = UIImage(named: "art-\(bookID)") {
+        if let img = ArtStore.shared.image(book, kind) {
             Image(uiImage: img).resizable().scaledToFill()
         } else {
             LinearGradient(colors: [theme.accentColor.opacity(0.85), theme.accent2Color.opacity(0.7), theme.paperColor],

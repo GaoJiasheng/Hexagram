@@ -115,6 +115,18 @@ function finish(spec, meta0, chapters, parts, chars) {
   }
 }
 
+// 插画:扫 public/desk/v1/art/<id>/(cover.jpg 竖版封面 · banner.jpg 横版题图 · head-<章>.jpg 章题头图)。
+// v = 文件名 + 字节数的短哈希,App 见 v 变了就清该书的插画缓存。一张都没有返回 null(清单不写 art)。
+function scanArt(id) {
+  const dir = path.join(OUT, 'art', id)
+  if (!fs.existsSync(dir)) return null
+  const files = fs.readdirSync(dir).filter((f) => /^(cover|banner|head-\d+)\.jpg$/.test(f)).sort()
+  if (!files.length) return null
+  const heads = files.map((f) => f.match(/^head-(\d+)\.jpg$/)).filter(Boolean).map((m) => +m[1]).sort((a, b) => a - b)
+  const sig = files.map((f) => `${f}:${fs.statSync(path.join(dir, f)).size}`).join('\n')
+  return { cover: files.includes('cover.jpg'), banner: files.includes('banner.jpg'), heads, v: crypto.createHash('sha1').update(sig).digest('hex').slice(0, 8) }
+}
+
 // ── 易经 ──────────────────────────────────────────────────────────────
 // 第 1–64 章 = 六十四卦(kind 'gua'),第 65 章起 = 系辞上 / 系辞下 / 说卦 / 序卦 / 杂卦各章(kind 'text')。
 // 一卦的段次:卦辞 → 彖 → 大象 → 六爻(爻辞 + 小象)→ 用九 / 用六(乾坤)→ 文言(乾坤,逐段)。
@@ -233,9 +245,11 @@ function buildYijing(spec) {
   return finish(spec, {}, chapters, parts, chars)
 }
 
-fs.rmSync(OUT, { recursive: true, force: true })
+// 只清包文件与清单;art/(gen-art.mjs --export 的产物)保留
 fs.mkdirSync(OUT, { recursive: true })
+for (const f of fs.readdirSync(OUT)) if (f.endsWith('.json')) fs.rmSync(path.join(OUT, f))
 const books = BOOKS.map((b) => (b.build === 'yijing' ? buildYijing(b) : buildBook(b)))
+for (const b of books) { const a = scanArt(b.id); if (a) b.art = a }
 if (errors.length) { console.error(errors.slice(0, 30).join('\n')); console.error(`✗ ${errors.length} 处校验未过`); process.exit(1) }
 fs.writeFileSync(path.join(OUT, 'manifest.json'), JSON.stringify({ v: 1, books }, null, 1))
 for (const b of books) console.log(`${b.title}  ${b.chapters} ${b.unit} · ${b.segs} 段 · ${b.chars} 字 · ${(b.bytes / 1024).toFixed(0)} KB · ${b.file}`)

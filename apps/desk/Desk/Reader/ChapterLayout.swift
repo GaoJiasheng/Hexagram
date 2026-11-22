@@ -39,6 +39,7 @@ struct ReaderStyle: Equatable {
     var showTranslation = false       // 全部展开译文
     var revealed: Set<Int> = []       // 单独点开译文的段
     var bookID = ""
+    var template = ""                 // duanzhang 短章 · yulu 语录 · gua 卦 · pianzhang 篇章
     var pageWidth: CGFloat = 0
     var pageHeight: CGFloat = 0
     var accent: UIColor = .systemTeal
@@ -54,6 +55,9 @@ final class ChapterLayout {
     let storage: NSTextStorage
     let manager = DeskLayoutManager()
     private(set) var containers: [NSTextContainer] = []
+    /// 每页一个文本框,分页时就建好、屏上显示的也是它——文本框一接上文字容器就会影响排版(行高、容器大小),
+    /// 所以「算分页」和「显示」必须用同一套对象,否则屏上每页排进去的行数会和算出来的对不上。
+    private(set) var textViews: [UITextView] = []
     private(set) var firstSeg: [Int] = []     // 每页第一个字所属的段
     let accent: UIColor
 
@@ -66,18 +70,74 @@ final class ChapterLayout {
         manager.tint = style.accent
         storage = NSTextStorage(attributedString: Self.typeset(chapter, unit: unit, style: style))
         storage.addLayoutManager(manager)
+        paginate(pageSize)
+        // 一段(连同它展开的译文)尽量不拆到两页:排完看哪一段正好跨在页缝上,只要它不算长,
+        // 就把那一页的文字区截短到这一段的上沿,让它整段落到下一页,再重排。
+        // 用排版器自己的结果判断,不靠估算;特别长的段(超过大半页)照旧自然跨页。
+        var rounds = 0
+        while rounds < 400, let cut = straddle(pageSize) {
+            cuts[cut.page] = cut.height
+            paginate(pageSize)
+            rounds += 1
+        }
+    }
+
+    private var cuts: [Int: CGFloat] = [:]      // 页 → 截短后的高度
+
+    /// 第几页文字区的高度。文本框必须照这个高度摆——它会把自己的大小写回文字容器,摆高了被截短的那一页又会多排进一行。
+    func height(ofPage p: Int, full: CGFloat) -> CGFloat { cuts[p] ?? full }
+
+    private func paginate(_ pageSize: CGSize) {
+        while !manager.textContainers.isEmpty { manager.removeTextContainer(at: manager.textContainers.count - 1) }
+        textViews.forEach { $0.removeFromSuperview() }
+        containers.removeAll(); firstSeg.removeAll(); textViews.removeAll()
         let total = manager.numberOfGlyphs
         var laid = 0
         while laid < total && containers.count < 2000 {
-            let c = NSTextContainer(size: pageSize)
+            let c = NSTextContainer(size: CGSize(width: pageSize.width, height: cuts[containers.count] ?? pageSize.height))
             c.lineFragmentPadding = 0
             manager.addTextContainer(c)
+            let tv = UITextView(frame: CGRect(origin: .zero, size: c.size), textContainer: c)
+            tv.isEditable = false
+            tv.isScrollEnabled = false
+            tv.isSelectable = true
+            tv.backgroundColor = .clear
+            tv.textContainerInset = .zero
+            tv.contentInsetAdjustmentBehavior = .never
+            // 注释词的样子:字色不变,只在下面加一道主题色的点线
+            tv.linkTextAttributes = [.foregroundColor: UIColor.inkText,
+                                     .underlineStyle: NSUnderlineStyle.single.rawValue | NSUnderlineStyle.patternDot.rawValue,
+                                     .underlineColor: accent]
+            c.lineFragmentPadding = 0
+            c.size = CGSize(width: pageSize.width, height: cuts[containers.count] ?? pageSize.height)
             let r = manager.glyphRange(for: c)
             if r.length == 0 { manager.removeTextContainer(at: manager.textContainers.count - 1); break }
             containers.append(c)
+            textViews.append(tv)
             laid = NSMaxRange(r)
             firstSeg.append(seg(atGlyph: r.location, upTo: NSMaxRange(r)))
         }
+    }
+
+    /// 找第一处「同一段被页缝切开」且这段不长的地方,返回(第几页, 这一段在该页的上沿);没有就返回 nil。
+    private func straddle(_ pageSize: CGSize) -> (page: Int, height: CGFloat)? {
+        guard containers.count > 1 else { return nil }
+        for p in 0..<(containers.count - 1) where cuts[p] == nil {
+            let a = manager.glyphRange(for: containers[p]), b = manager.glyphRange(for: containers[p + 1])
+            guard a.length > 0, b.length > 0 else { continue }
+            let lastChar = manager.characterIndexForGlyph(at: NSMaxRange(a) - 1)
+            let nextChar = manager.characterIndexForGlyph(at: b.location)
+            var range = NSRange()
+            guard let s1 = storage.attribute(.deskSeg, at: lastChar, longestEffectiveRange: &range, in: NSRange(location: 0, length: storage.length)) as? Int,
+                  s1 >= 0, NSLocationInRange(nextChar, range) else { continue }
+            let g = manager.glyphRange(forCharacterRange: range, actualCharacterRange: nil)
+            guard g.location > a.location else { continue }             // 这一段从页首就开始了,本身比一页长,拆是应该的
+            let top = manager.lineFragmentRect(forGlyphAt: g.location, effectiveRange: nil).minY
+            let h1 = manager.boundingRect(forGlyphRange: NSIntersectionRange(g, a), in: containers[p]).height
+            let h2 = manager.boundingRect(forGlyphRange: NSIntersectionRange(g, b), in: containers[p + 1]).height
+            if top > pageSize.height * 0.25, h1 + h2 <= pageSize.height * 0.7 { return (p, ceil(top) + 1) }   // 向上取整再留一点:取小了上一段的最后一行也会被挤走
+        }
+        return nil
     }
 
     var pageCount: Int { containers.count }
@@ -146,16 +206,24 @@ final class ChapterLayout {
         tsy.paragraphSpacing = 12 + gap
         tsy.firstLineHeadIndent = 18; tsy.headIndent = 18; tsy.tailIndent = -14
         for (i, s) in ch.segs.enumerated() {
+            let block = NSMutableAttributedString()
             let open = (style.showTranslation || style.revealed.contains(i)) && !(s.t ?? "").isEmpty
             let os = NSMutableParagraphStyle()
             os.lineSpacing = style.fontSize * 0.5
             os.paragraphSpacing = open ? style.fontSize * 0.45 : gap
             // 爻题(初九、六二…用九)排在爻辞前面,用主题色;彖、象的原文自带「彖曰」「象曰」,不另标
-            let tag = (s.line != nil && s.label != nil && s.label != "象") ? s.label! + "　" : ""
+            // 语录体(论语)每条前面标条号,小一号、主题色,方便「某篇第几条」这样指认
+            let isLine = s.line != nil && s.label != nil && s.label != "象"
+            let tag = isLine ? s.label! + "　" : (style.template == "yulu" ? "\(i + 1)  " : "")
             let para = NSMutableAttributedString(string: tag + s.o + "\n", attributes: [
                 .font: Fonts.uiSong(style.fontSize), .foregroundColor: style.text, .paragraphStyle: os, .kern: 0.6, .deskSeg: i])
             let lead = (tag as NSString).length
-            if lead > 0 { para.addAttributes([.font: Fonts.uiSong(style.fontSize, bold: true), .foregroundColor: style.accent], range: NSRange(location: 0, length: lead)) }
+            if lead > 0, isLine {
+                para.addAttributes([.font: Fonts.uiSong(style.fontSize, bold: true), .foregroundColor: style.accent], range: NSRange(location: 0, length: lead))
+            } else if lead > 0 {
+                para.addAttributes([.font: UIFont.systemFont(ofSize: style.fontSize * 0.5, weight: .semibold).rounded, .foregroundColor: style.accent,
+                                    .baselineOffset: style.fontSize * 0.28, .kern: 0], range: NSRange(location: 0, length: lead))
+            }
             for (j, n) in (s.n ?? []).enumerated() {
                 var r = (s.o as NSString).range(of: n.k)
                 guard r.location != NSNotFound else { continue }
@@ -163,11 +231,12 @@ final class ChapterLayout {
                 // 带注释的字词做成「链接」:系统文本框对链接的点按最可靠(自己加点按手势会被选字手势吃掉)
                 para.addAttributes([.deskNote: "\(i):\(j)", .link: URL(string: "desk-note://n/\(i)/\(j)")!], range: r)
             }
-            out.append(para)
+            block.append(para)
             if open, let t = s.t {
-                out.append(NSAttributedString(string: t + "\n", attributes: [
+                block.append(NSAttributedString(string: t + "\n", attributes: [
                     .font: UIFont.systemFont(ofSize: max(15, style.fontSize * 0.62)), .foregroundColor: style.soft, .paragraphStyle: tsy, .deskSeg: i, .deskTrans: gap]))
             }
+            out.append(block)
         }
         return out
     }
@@ -219,3 +288,14 @@ enum Hexagram {
         }
     }
 }
+
+extension UIFont {
+    /// 同字号的圆体(数字用)
+    var rounded: UIFont {
+        guard let d = fontDescriptor.withDesign(.rounded) else { return self }
+        return UIFont(descriptor: d, size: pointSize)
+    }
+}
+
+
+

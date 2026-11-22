@@ -43,7 +43,7 @@ struct ReaderScreen: View {
     /// 页面底子:纸色 + 顶上一抹主题色 + 这一章的插画铺在页面底部、自下而上淡出(可关)。
     /// 插画只做背景:短章下半页本来空着,正好落在那里;正文长的页再调淡。没有插画时右下角放章号水印。
     private var backdrop: some View {
-        let art = showArt ? UIImage(named: "art-\(model.book.id)-\(model.current.ch)") : nil
+        let art = showArt ? ArtStore.shared.image(model.book, .head(model.current.ch)) : nil
         return ZStack {
             theme.paperColor
             GeometryReader { geo in
@@ -74,6 +74,9 @@ struct ReaderScreen: View {
         .ignoresSafeArea()
         .animation(.easeInOut(duration: 0.45), value: model.current)
         .animation(.easeInOut(duration: 0.3), value: showArt)
+        .onChange(of: model.current.ch, initial: true) { _, ch in
+            ArtStore.shared.prefetch(model.book, chapters: [ch + 1, ch + 2])   // 翻到这一章时先把后两章的题头图拉下来
+        }
     }
 
     /// 悬浮按钮:左上返回,右上三个工具。没有整条顶栏。
@@ -81,7 +84,7 @@ struct ReaderScreen: View {
         HStack(spacing: 10) {
             float("chevron.left", label: "返回书桌") { dismiss() }
             Spacer()
-            if UIImage(named: "art-\(model.book.id)-\(model.current.ch)") != nil {
+            if ArtStore.shared.has(model.book, .head(model.current.ch)) {
                 float(showArt ? "photo.fill" : "photo", label: showArt ? "隐藏插画" : "显示插画", on: showArt) { showArt.toggle() }
             }
             Button { model.toggleTranslation() } label: {

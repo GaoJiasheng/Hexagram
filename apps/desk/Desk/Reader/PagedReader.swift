@@ -19,24 +19,15 @@ final class TextPageController: UIViewController, UITextViewDelegate, UIGestureR
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .clear
-        let tv = UITextView(frame: CGRect(origin: .zero, size: pageSize), textContainer: layout.containers[ref.page])
-        tv.isEditable = false
-        tv.isScrollEnabled = false
-        tv.backgroundColor = .clear
-        tv.textContainerInset = .zero
-        tv.isSelectable = true
+        let tv = layout.textViews[ref.page]      // 分页时建好的那一个(见 ChapterLayout)
         tv.delegate = self
-        // 注释词的样子:字色不变,只在下面加一道主题色的点线
-        tv.linkTextAttributes = [
-            .foregroundColor: UIColor.inkText,
-            .underlineStyle: NSUnderlineStyle.single.rawValue | NSUnderlineStyle.patternDot.rawValue,
-            .underlineColor: layout.accent,
-        ]
-        view.addSubview(tv)
-        textView = tv
+        tv.gestureRecognizers?.filter { $0.name == "desk.tap" }.forEach { tv.removeGestureRecognizer($0) }
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapped(_:)))
+        tap.name = "desk.tap"
         tap.delegate = self
         tv.addGestureRecognizer(tap)
+        view.addSubview(tv)
+        textView = tv
     }
 
     func gestureRecognizer(_ g: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith other: UIGestureRecognizer) -> Bool { true }
@@ -55,7 +46,8 @@ final class TextPageController: UIViewController, UITextViewDelegate, UIGestureR
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        textView.frame = CGRect(x: (view.bounds.width - pageSize.width) / 2, y: 0, width: pageSize.width, height: pageSize.height)
+        textView.frame = CGRect(x: (view.bounds.width - pageSize.width) / 2, y: 0, width: pageSize.width,
+                                height: layout.height(ofPage: ref.page, full: pageSize.height))
     }
 
     /// 点到带注释的字词就出注(不走系统的「打开链接」)。

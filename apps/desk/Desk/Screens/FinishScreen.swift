@@ -20,7 +20,7 @@ struct FinishScreen: View {
         ZStack {
             book.theme.paperColor.ignoresSafeArea()
             GeometryReader { geo in
-                BookArt(bookID: book.id, theme: book.theme)
+                BookArt(book: book, kind: .banner)
                     .frame(width: geo.size.width, height: geo.size.height * 0.48)
                     .clipped()
                     .mask(LinearGradient(colors: [.black, .black, .clear], startPoint: .top, endPoint: .bottom))

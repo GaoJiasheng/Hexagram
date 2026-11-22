@@ -57,7 +57,7 @@ struct DeskHome: View {
         let title = library.pack(b)?.chapters[safe: ch - 1]?.title ?? ""
         return Button { open(b) } label: {
             ZStack(alignment: .bottomLeading) {
-                BookArt(bookID: b.id, theme: b.theme).frame(height: 210).clipped()
+                BookArt(book: b, kind: .banner).frame(height: 210).clipped()
                 LinearGradient(colors: [.clear, .black.opacity(0.55)], startPoint: .center, endPoint: .bottom)
                 HStack(alignment: .bottom) {
                     VStack(alignment: .leading, spacing: 5) {
@@ -183,7 +183,7 @@ struct BookCard: View {
     let pos: ReadPos?
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            BookArt(bookID: book.id, theme: book.theme).frame(width: 150, height: 104).clipped()
+            BookArt(book: book, kind: .cover).frame(width: 150, height: 150).clipped()
             VStack(alignment: .leading, spacing: 6) {
                 Text(book.title).font(Fonts.song(17, bold: true)).foregroundStyle(Ink.text).lineLimit(1)
                 let done = Double((pos?.ch ?? 1) - 1) / Double(max(book.chapters, 1))
@@ -208,8 +208,15 @@ struct CatalogSheet: View {
             List {
                 ForEach(library.manifest?.books ?? []) { b in
                     HStack(spacing: 14) {
-                        RoundedRectangle(cornerRadius: 10).fill(b.theme.accentColor.gradient).frame(width: 44, height: 58)
-                            .overlay(Text(String(b.title.prefix(1))).font(Fonts.song(22, bold: true)).foregroundStyle(.white))
+                        Group {
+                            if let img = ArtStore.shared.image(b, .cover) {
+                                Image(uiImage: img).resizable().scaledToFill()
+                            } else {
+                                RoundedRectangle(cornerRadius: 10).fill(b.theme.accentColor.gradient)
+                                    .overlay(Text(String(b.title.prefix(1))).font(Fonts.song(22, bold: true)).foregroundStyle(.white))
+                            }
+                        }
+                        .frame(width: 44, height: 58).clipShape(RoundedRectangle(cornerRadius: 10))
                         VStack(alignment: .leading, spacing: 4) {
                             Text(b.title).font(Fonts.song(18, bold: true))
                             Text("\(b.sizeLabel) · \(b.chars) 字").font(.system(size: 12)).foregroundStyle(Ink.soft)

@@ -32,6 +32,16 @@ struct BookInfo: Codable, Identifiable, Hashable {
     var version: String
     var file: String
     var bytes: Int
+    var art: ArtInfo?         // 插画(可选;老清单没有,一张图都没有的书也没有)
+}
+
+/// 一本书有哪些插画(public/desk/v1/art/<id>/):cover 竖版封面 · banner 横版题图 · heads 有题头图的章号。
+/// v 是这批图的指纹,变了就清本机缓存重下。
+struct ArtInfo: Codable, Hashable {
+    var cover: Bool
+    var banner: Bool
+    var heads: [Int]
+    var v: String
 }
 
 /// 一章在观象站内的坐标;进度、时长、划线都按它记,与网站同一套。

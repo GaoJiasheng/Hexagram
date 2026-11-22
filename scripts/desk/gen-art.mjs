@@ -121,7 +121,7 @@ ${COMMON_RULES}${yj}
 When finished, print only the absolute path of out.png. Do nothing else.`
 }
 
-function instructionCover(bk) {
+function instructionCover(bk, banner = false) {
   const first = bk.chapters[0]
   const yj = bk.id === 'yijing' ? '\n- This is the Book of Changes: NEVER draw fortune-telling props (diviner stalls, tube of sticks, bagua mirrors, coins, hexagram diagrams). Use natural imagery (heaven and earth, dragon, water, mountain, thunder…).' : ''
   return `You will create ONE book-cover illustration for a classical Chinese book, in two steps.
@@ -138,7 +138,7 @@ ${first.bh ? `First chapter plain-language central idea: ${first.bh.centralIdea}
 Chapter titles: ${clip(bk.chapters.map((c) => c.title).join('、'), 500)}
 
 == WHAT THIS IMAGE IS ==
-A book cover, portrait 2:3 (1024x1536). Complete picture with a clear, definite main subject. The bottom third must be left clean and quiet (paper-colored, only faint washes) because the app will typeset the book title there. Keep the upper two thirds as the picture.
+${banner ? 'A wide banner for the home-screen card of this book, landscape 3:2 (1536x1024). Complete picture with a clear main subject placed in the right or central part; the lower-left area must stay calm (soft washes only) because the app overlays the book title there in white on a dark gradient. BANNER-ONLY NOTE, ignore the cover sentences that follow:' : ''} A book cover, portrait 2:3 (1024x1536). Complete picture with a clear, definite main subject. The bottom third must be left clean and quiet (paper-colored, only faint washes) because the app will typeset the book title there. Keep the upper two thirds as the picture.
 
 == STEP 1: design the picture (English) ==
 From the blurb and first chapter, pull out 3-5 of the most representative CONCRETE images of the whole book (things, scenes, metaphors the book actually uses). Pick one or two to make a single memorable, iconic composition — not a generic mood landscape. Write into prompt.txt in the current directory:
@@ -147,7 +147,7 @@ CHOSEN: <the one or two you picked and why>
 PROMPT: <the final English image prompt, beginning with the fixed art style sentence above, then the scene, then layout notes and hard rules>
 
 == STEP 2: generate ==
-Use your image generation tool to create exactly ONE image from that PROMPT and save it in the current directory as out.png (portrait 2:3, 1024x1536).
+Use your image generation tool to create exactly ONE image from that PROMPT and save it in the current directory as out.png (${banner ? 'landscape 3:2, 1536x1024' : 'portrait 2:3, 1024x1536'}).
 
 ${COMMON_RULES}${yj}
 
@@ -194,10 +194,10 @@ function runCodex(instruction) {
 }
 
 async function makeOne(bk, kind, ch, dir, force, timing, failed) {
-  const stem = kind === 'cover' ? 'cover' : `head-${ch.n}`
+  const stem = kind === 'cover' ? 'cover' : kind === 'banner' ? 'banner' : `head-${ch.n}`
   const png = path.join(dir, `${stem}.png`), txt = path.join(dir, `${stem}.txt`)
   if (!force && fs.existsSync(png)) return 'skip'
-  const instruction = kind === 'cover' ? instructionCover(bk) : instructionHead(bk, ch)
+  const instruction = kind === 'cover' ? instructionCover(bk) : kind === 'banner' ? instructionCover(bk, true) : instructionHead(bk, ch)
   let why = '', total = 0, toks = [], r
   for (let attempt = 1; attempt <= 2; attempt++) {
     r = await runCodex(instruction)
@@ -247,6 +247,7 @@ from PIL import Image, ImageDraw
 d = sys.argv[1]
 items = []
 if os.path.exists(os.path.join(d, 'cover.png')): items.append(('cover', os.path.join(d, 'cover.png')))
+if os.path.exists(os.path.join(d, 'banner.png')): items.append(('banner', os.path.join(d, 'banner.png')))
 heads = []
 for f in glob.glob(os.path.join(d, 'head-*.png')):
     m = re.search(r'head-(\\d+)\\.png$', f)
@@ -280,7 +281,7 @@ src, dest = sys.argv[1], sys.argv[2]
 n = 0
 for f in sorted(glob.glob(os.path.join(src, '*.png'))):
     b = os.path.basename(f)[:-4]
-    if not (b == 'cover' or re.fullmatch(r'head-\\d+', b)): continue
+    if not (b in ('cover', 'banner') or re.fullmatch(r'head-\\d+', b)): continue
     W = 1024 if b == 'cover' else 1536
     im = Image.open(f).convert('RGB')
     if im.width > W: im = im.resize((W, round(im.height * W / im.width)), Image.LANCZOS)
@@ -295,7 +296,7 @@ print(n)
 if (!book) { console.error('用法:node scripts/desk/gen-art.mjs <book> [--kind head|cover|all] [--chapters 1-10,25] [--limit N] [--force] [--concurrency 3]\n书:' + Object.keys(BOOKS).join(' ')); process.exit(1) }
 const bk = loadBook(book)
 const kind = opt('--kind', 'all')
-if (!['head', 'cover', 'all'].includes(kind)) { console.error('--kind 须为 head|cover|all'); process.exit(1) }
+if (!['head', 'cover', 'banner', 'all'].includes(kind)) { console.error('--kind 须为 head|cover|banner|all'); process.exit(1) }
 const conc = Math.max(1, +opt('--concurrency', 3))
 const limit = opt('--limit') ? +opt('--limit') : Infinity
 const only = parseChapters(opt('--chapters'), bk.chapters.length)
@@ -304,11 +305,12 @@ const dir = path.join(CACHE, book)
 fs.mkdirSync(dir, { recursive: true })
 
 const jobs = []
-if (kind !== 'head') jobs.push({ kind: 'cover' })
-if (kind !== 'cover') for (const ch of bk.chapters) if (!only || only.has(ch.n)) jobs.push({ kind: 'head', ch })
+if (kind === 'cover' || kind === 'all') jobs.push({ kind: 'cover' })
+if (kind === 'banner' || kind === 'all') jobs.push({ kind: 'banner' })
+if (kind === 'head' || kind === 'all') for (const ch of bk.chapters) if (!only || only.has(ch.n)) jobs.push({ kind: 'head', ch })
 const todo = []
 for (const j of jobs) {
-  const stem = j.kind === 'cover' ? 'cover' : `head-${j.ch.n}`
+  const stem = j.kind === 'cover' ? 'cover' : j.kind === 'banner' ? 'banner' : `head-${j.ch.n}`
   if (!force && fs.existsSync(path.join(dir, `${stem}.png`))) continue
   if (todo.length < limit) todo.push(j)
 }
