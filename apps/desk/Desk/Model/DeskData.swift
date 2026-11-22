@@ -52,6 +52,14 @@ final class ReadDaysStore {
         return String(format: "%04d-%02d-%02d", c.year ?? 0, c.month ?? 0, c.day ?? 0)
     }
 
+    /// 某一章累计秒数(全部日子、全部设备),直接扫日聚合;阅读页每拍判断「学过」用。
+    func totalSec(_ src: Src) -> Int {
+        let needle = "|\(src.corpus)|\(src.slug)|\(src.ch)|"
+        var n = 0
+        for (k, e) in days where k.dropFirst(10).hasPrefix(needle) { n += e.sec }
+        return n
+    }
+
     func key(_ src: Src, at d: Date = Date()) -> String { "\(Self.day(d))|\(src.corpus)|\(src.slug)|\(src.ch)|\(dev)" }
 
     /// 记一段时长。final = 一次阅读结清(次数 +1);false = 中途先存一笔(防闪退丢)。
@@ -113,6 +121,14 @@ final class ReadDaysStore {
     func markAllDirty() { for k in days.keys { dirty.mark(k) }; write() }
     func clearDirty(_ snap: [String: Int]) { dirty.clear(snap); write() }
 
+    #if DEBUG
+    /// 调试入口用:整批写入(键已带日期与设备号),只写本机、不标脏(不推上云)。
+    func seedDemo(_ map: [String: ReadDay]) {
+        for (k, v) in map { days[k] = v }
+        write()
+    }
+    #endif
+
     func applyRemote(_ map: [String: Any]) {
         var changed = false
         for (k, raw) in map {
@@ -155,6 +171,10 @@ final class FinishedStore {
         SyncEngine.shared.noteChange()
     }
 
+    #if DEBUG
+    func seedDemo(_ pack: BookPack, at: Date) { for k in Self.keys(pack) where recs[k] == nil { recs[k] = Rec(at: at) }; save() }
+    #endif
+
     func wire(_ k: String) -> [String: Any]? {
         guard let r = recs[k] else { return nil }
         return r.deleted ? ["deleted": true, "at": API.iso(r.at)] : ["at": API.iso(r.at)]
@@ -181,7 +201,7 @@ final class FinishedStore {
 }
 
 /// 书桌自己的设置:跟着账号走,写在网站 settings 里自己的字段上(其余字段是网站的,原样带回)。
-/// 目前只有每周目标 deskGoal(分钟,默认 120);界面在 M4。
+/// 目前只有每周目标 deskGoal(分钟,默认 120);在统计页里设。
 @MainActor
 @Observable
 final class DeskSettings {
@@ -197,11 +217,14 @@ final class DeskSettings {
         dirty = u.bool(forKey: "desk.goal.dirty")
     }
 
+    /// 用户自己设过目标没有(没设过时首页卡上给「设定目标」入口)。
+    var isGoalSet: Bool { at != .distantPast }
+
     /// 推上去时写进 settings 的字段。
     var fields: [String: Any] { ["deskGoal": deskGoal] }
 
     func setGoal(_ m: Int) {
-        guard m != deskGoal else { return }
+        guard m != deskGoal || at == .distantPast else { return }
         deskGoal = m; at = Date(); dirty = true
         save()
         SyncEngine.shared.noteChange()

@@ -35,7 +35,8 @@ struct AccountSheet: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                Group {
+                VStack(spacing: 22) {
+                    StatsLinkRow()
                     if account.user != nil { SignedInView() } else { SignInView() }
                 }
                 .frame(maxWidth: 440)
@@ -48,6 +49,28 @@ struct AccountSheet: View {
             .toolbar { ToolbarItem(placement: .cancellationAction) { Button("关闭") { dismiss() } } }
         }
         .presentationDetents([.large])
+    }
+}
+
+/// 账号面板顶上一行:去统计页(本周已学 · 连续周数)。
+private struct StatsLinkRow: View {
+    private var stats: Stats { .shared }
+    var body: some View {
+        NavigationLink { StatsScreen() } label: {
+            HStack(spacing: 14) {
+                WeekRing(progress: Double(stats.thisWeekSec) / Double(max(stats.goalSec, 1)), size: 40, line: 5)
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("学习统计").font(.system(size: 16, weight: .semibold)).foregroundStyle(Ink.text)
+                    Text("本周 \(Fmt.dur(stats.thisWeekSec)) / \(Fmt.dur(stats.goalSec))" + (stats.streakWeeks > 0 ? " · 连续 \(stats.streakWeeks) 周" : ""))
+                        .font(.system(size: 13)).foregroundStyle(Ink.soft)
+                }
+                Spacer(minLength: 0)
+                Image(systemName: "chevron.right").font(.system(size: 13, weight: .semibold)).foregroundStyle(Ink.faint)
+            }
+            .padding(16)
+            .background(Ink.card, in: RoundedRectangle(cornerRadius: 18))
+        }
+        .buttonStyle(.plain)
     }
 }
 

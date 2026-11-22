@@ -4,10 +4,13 @@ import SwiftUI
 struct DeskHome: View {
     @State private var library = Library.shared
     @State private var progress = ProgressStore.shared
-    @State private var reading: BookInfo?
-    @State private var startAt: ReadPos?
+    /// 要打开的书与落点放在同一个值里:落点单独存一份 @State 时,封面里那份闭包会读到旧值(首开总落在第一章)。
+    @State private var reading: Opening?
     @State private var showCatalog = false
     @State private var showAccount = false
+    @State private var showStats = false
+    @State private var showGoal = false
+    private var stats: Stats { .shared }
     @Environment(\.horizontalSizeClass) private var hSize
     private var pad: Bool { hSize == .regular }
     /// iPad 放大系数
@@ -18,6 +21,14 @@ struct DeskHome: View {
     }
 
     var body: some View {
+        NavigationStack {
+            page
+                .toolbar(.hidden, for: .navigationBar)
+                .navigationDestination(isPresented: $showStats) { StatsScreen() }
+        }
+    }
+
+    private var page: some View {
         GeometryReader { geo in
             let contentW = pad ? min(geo.size.width - 96, 1100) : min(geo.size.width, 720)
             let twoCol = pad && contentW >= 880
@@ -33,7 +44,7 @@ struct DeskHome: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             if !library.shelf.isEmpty {
                                 VStack(alignment: .leading, spacing: 30) {
-                                    week
+                                    week(wide: false)
                                     today
                                 }
                                 .frame(width: 340)
@@ -42,7 +53,7 @@ struct DeskHome: View {
                     } else {
                         if let b = recent { resumeCard(b) }
                         if library.shelf.isEmpty { emptyDesk; addButton } else {
-                            week
+                            week(wide: pad)
                             shelf
                             today
                         }
@@ -59,12 +70,14 @@ struct DeskHome: View {
         .task { await library.refresh() }
         .sheet(isPresented: $showCatalog) { CatalogSheet(library: library) }
         .sheet(isPresented: $showAccount) { AccountSheet() }
+        .sheet(isPresented: $showGoal) { GoalSheet() }
         #if DEBUG
         .task { if ProcessInfo.processInfo.environment["DESK_ACCOUNT"] == "1" { try? await Task.sleep(nanoseconds: 800_000_000); showAccount = true } }
+        .task { if ProcessInfo.processInfo.environment["DESK_OPEN"] == "stats" { try? await Task.sleep(nanoseconds: 900_000_000); showStats = true } }
         #endif
-        .fullScreenCover(item: $reading) { b in
-            if let pack = library.pack(b) {
-                ReaderScreen(model: ReaderModel(book: b, pack: pack, start: startAt))
+        .fullScreenCover(item: $reading) { o in
+            if let pack = library.pack(o.book) {
+                ReaderScreen(model: ReaderModel(book: o.book, pack: pack, start: o.start))
             }
         }
     }
@@ -79,8 +92,7 @@ struct DeskHome: View {
     }
 
     private func open(_ b: BookInfo, chapter: Int? = nil) {
-        startAt = chapter.map { ReadPos(ch: $0, seg: 0, at: Date()) } ?? progress.pos[b.id]
-        reading = b
+        reading = Opening(book: b, start: chapter.map { ReadPos(ch: $0, seg: 0, at: Date()) } ?? progress.pos[b.id])
     }
 
     private var greeting: some View {
@@ -119,38 +131,75 @@ struct DeskHome: View {
         .buttonStyle(.plain)
     }
 
-    /// 本周目标。M0 是样张:数字为示例,M4 接真实时长。
-    private var wk: CGFloat { pad ? 1.0 : 1 }
-    private var week: some View {
-        HStack(spacing: 16 * wk) {
-            ZStack {
-                Circle().stroke(Ink.line, lineWidth: 9)
-                Circle().trim(from: 0, to: 0.62).stroke(Ink.cinnabar, style: StrokeStyle(lineWidth: 9, lineCap: .round)).rotationEffect(.degrees(-90))
-                VStack(spacing: 0) {
-                    Text("62%").font(Fonts.num(17 * wk))
-                    Text("示例").font(.system(size: 9)).foregroundStyle(Ink.faint)
-                }
-            }
-            .frame(width: 78 * wk, height: 78 * wk)
-            VStack(alignment: .leading, spacing: 8) {
-                Text("本周目标").font(.system(size: 12 * wk, weight: .semibold)).kerning(2).foregroundStyle(Ink.soft)
-                HStack(alignment: .firstTextBaseline, spacing: 4) {
-                    Text("1 小时 14 分").font(Fonts.song(21 * wk, bold: true)).minimumScaleFactor(0.8).lineLimit(1)
-                    Text("/ 2 小时").font(.system(size: 13)).foregroundStyle(Ink.soft)
-                }
-                HStack(spacing: 4) {
-                    ForEach(Array(zip(["一", "二", "三", "四", "五", "六", "日"], [true, true, false, true, false, false, false])), id: \.0) { d, on in
-                        Text(d).font(.system(size: 11, weight: .medium))
-                            .frame(width: 23 * wk, height: 23 * wk)
-                            .background(on ? Ink.cinnabar.opacity(0.14) : Ink.line.opacity(0.5), in: Circle())
-                            .foregroundStyle(on ? Ink.cinnabar : Ink.faint)
+    /// 本周目标:进度环、已学 / 目标、周一到周日哪几天学过(今天描一圈)。点卡进统计页;没设过目标给「设定目标」。
+    private func week(wide: Bool) -> some View {
+        let goal = DeskSettings.shared.deskGoal * 60
+        let done = stats.thisWeekSec
+        let days = stats.thisWeekDays
+        let todayIdx = (Calendar.current.component(.weekday, from: Date()) + 5) % 7
+        let streak = stats.streakWeeks
+        return Button { showStats = true } label: {
+            HStack(spacing: 16) {
+                WeekRing(progress: Double(done) / Double(max(goal, 1)), size: 78, line: 9, showPercent: true)
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack(spacing: 8) {
+                        Text("本周目标").font(.system(size: 12, weight: .semibold)).kerning(2).foregroundStyle(Ink.soft)
+                        if streak > 0 {
+                            Label("连续 \(streak) 周", systemImage: "flame.fill").font(.system(size: 11, weight: .semibold)).labelStyle(.titleAndIcon)
+                                .foregroundStyle(Color(UIColor.pair("#B7791F", "#E0A84E")))
+                                .padding(.horizontal, 7).padding(.vertical, 2)
+                                .background(Color(UIColor.pair("#B7791F", "#E0A84E")).opacity(0.12), in: Capsule())
+                        }
+                    }
+                    HStack(alignment: .firstTextBaseline, spacing: 4) {
+                        Text(done > 0 ? Fmt.dur(done) : "还没开始").font(Fonts.song(21, bold: true)).foregroundStyle(Ink.text).minimumScaleFactor(0.8).lineLimit(1)
+                        Text("/ \(Fmt.dur(goal))").font(.system(size: 13)).foregroundStyle(Ink.soft).lineLimit(1)
+                    }
+                    HStack(spacing: 4) {
+                        ForEach(0..<7, id: \.self) { i in
+                            let on = days[i]
+                            Text(["一", "二", "三", "四", "五", "六", "日"][i]).font(.system(size: 11, weight: i == todayIdx ? .bold : .medium))
+                                .frame(width: 23, height: 23)
+                                .background(on ? Ink.cinnabar.opacity(0.16) : Ink.line.opacity(0.5), in: Circle())
+                                .overlay { if i == todayIdx { Circle().stroke(Ink.cinnabar, lineWidth: 1.5) } }
+                                .foregroundStyle(on ? Ink.cinnabar : (i == todayIdx ? Ink.text : Ink.faint))
+                        }
                     }
                 }
+                Spacer(minLength: 0)
+                if wide {
+                    // iPad 竖屏整行宽:右边再摆两句,不留一大片空
+                    HStack(spacing: 28) {
+                        weekFact(done >= goal ? "已达成" : Fmt.dur(goal - done), done >= goal ? "本周目标" : "本周还差")
+                        weekFact(Fmt.dur(stats.window(.today).sec), "今天")
+                        weekFact("\(stats.totalDays) 天", "总学习天数")
+                    }
+                    .padding(.trailing, 36)
+                }
             }
-            Spacer()
+            .overlay(alignment: .topTrailing) {
+                if !DeskSettings.shared.isGoalSet {
+                    Button("设定目标") { showGoal = true }
+                        .font(.system(size: 12, weight: .semibold)).foregroundStyle(Ink.cinnabar)
+                        .padding(.horizontal, 10).padding(.vertical, 5).background(Ink.cinnabar.opacity(0.1), in: Capsule())
+                        .offset(x: 4, y: -6)
+                } else {
+                    Image(systemName: "chevron.right").font(.system(size: 13, weight: .semibold)).foregroundStyle(Ink.faint)
+                }
+            }
+            .padding(18)
+            .background(Ink.card, in: RoundedRectangle(cornerRadius: 22))
+            .contentShape(RoundedRectangle(cornerRadius: 22))
         }
-        .padding(18 * wk)
-        .background(Ink.card, in: RoundedRectangle(cornerRadius: 22))
+        .buttonStyle(.plain)
+        .accessibilityLabel("本周目标,已学 \(Fmt.dur(done)),目标 \(Fmt.dur(goal)),打开统计")
+    }
+
+    private func weekFact(_ v: String, _ label: String) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(v).font(Fonts.num(22)).foregroundStyle(Ink.text).lineLimit(1)
+            Text(label).font(.system(size: 12)).foregroundStyle(Ink.soft)
+        }
     }
 
     private var shelf: some View {
@@ -183,38 +232,72 @@ struct DeskHome: View {
     }
 
     private func shelfCard(_ b: BookInfo, grid: Bool) -> some View {
-        BookCard(book: b, pos: progress.pos[b.id], label: progress.pos[b.id].map { "读到" + chapterLabel(b, $0.ch, withNo: false) }, flexible: grid)
+        BookCard(book: b, pos: progress.pos[b.id], learned: stats.learnedCount(b.id), total: library.pack(b)?.chapters.count ?? b.chapters,
+                 finished: library.pack(b).map { FinishedStore.shared.isFinished($0) } ?? false, flexible: grid)
             .contentShape(RoundedRectangle(cornerRadius: 18))
             .onTapGesture { open(b) }
             .contextMenu { Button("从书桌收起", systemImage: "tray.and.arrow.down") { library.remove(b.id) } }
             .accessibilityAddTraits(.isButton)
     }
 
-    /// 今日一章:订阅的每本书各给下一章。
-    private var today: some View {
-        VStack(alignment: .leading, spacing: 12 * (pad ? 1.15 : 1)) {
-            sectionTitle("今日一章")
-            ForEach(library.shelfBooks) { b in
-                let next = min(progress.pos[b.id]?.ch ?? 1, b.chapters)   // M0:接着当前这一章;M4 有了「学过」再改成下一章没学过的
-                let c = library.pack(b)?.chapters[safe: next - 1]
-                let isText = c?.kind == "text"
-                let title = c?.title ?? ""
-                Button { open(b, chapter: next) } label: {
-                    HStack(spacing: 14 * k) {
-                        Text(isText ? String(title.prefix(1)) : Numerals.chinese(next)).font(Fonts.song(17 * k, bold: true)).foregroundStyle(b.theme.accentColor)
-                            .frame(width: 46 * k, height: 46 * k).background(b.theme.accentColor.opacity(0.12), in: RoundedRectangle(cornerRadius: 13 * k))
-                        VStack(alignment: .leading, spacing: 3) {
-                            Text(title).font(Fonts.song(18 * (pad ? 1.15 : 1), bold: true)).foregroundStyle(Ink.text).lineLimit(2)
-                            Text(isText ? b.title : "\(b.title) · 第 \(Numerals.chinese(next)) \(b.unit)").font(.system(size: 12 * (pad ? 1.15 : 1))).foregroundStyle(Ink.soft)
-                        }
-                        Spacer(minLength: 4)
-                        Image(systemName: "chevron.right").font(.system(size: 13 * k, weight: .semibold)).foregroundStyle(Ink.faint)
-                    }
-                    .padding(14 * (pad ? 1.15 : 1)).background(Ink.card, in: RoundedRectangle(cornerRadius: 18))
-                }
-                .buttonStyle(.plain)
+    /// 今日一章:订阅且最近 30 天读过的书(都没有就取书桌上的全部),每本给「下一章没学过的」——
+    /// 从上次读到的那一章起往后找第一个没学过的,到书尾再从头绕回;全学过了就不出这本。
+    private var todayItems: [(book: BookInfo, no: Int)] {
+        _ = stats.rev
+        let cutoff = Stats.dayString(Stats.add(-29, to: Date()))
+        let recentAt = Date().addingTimeInterval(-30 * 86400)
+        let shelf = library.shelfBooks
+        let recent = shelf.filter { b in (stats.lastDay(b.id).map { $0 >= cutoff } ?? false) || (progress.pos[b.id].map { $0.at >= recentAt } ?? false) }
+        let pool = (recent.isEmpty ? shelf : recent)
+            .sorted { (progress.pos[$0.id]?.at ?? .distantPast) > (progress.pos[$1.id]?.at ?? .distantPast) }
+        return pool.compactMap { b in
+            guard let p = library.pack(b), !p.chapters.isEmpty else { return nil }
+            let n = p.chapters.count
+            let from = min(max(progress.pos[b.id]?.ch ?? 1, 1), n)
+            let order = Array(from...n) + Array(1..<from)
+            return order.first { !stats.learned(p.chapters[$0 - 1].src) }.map { (b, $0) }
+        }
+    }
+
+    @ViewBuilder private var today: some View {
+        let items = todayItems
+        if !items.isEmpty {
+            VStack(alignment: .leading, spacing: 12 * (pad ? 1.15 : 1)) {
+                sectionTitle("今日一章")
+                ForEach(items, id: \.book.id) { it in todayRow(it.book, it.no) }
             }
         }
+    }
+
+    private func todayRow(_ b: BookInfo, _ next: Int) -> some View {
+        let c = library.pack(b)?.chapters[safe: next - 1]
+        let isText = c?.kind == "text"
+        let title = c?.title ?? ""
+        let chars = stats.chapterChars(b.id, next)
+        let est = max(1, Int((Double(chars) / 120).rounded(.up)))       // 原文连读带看译文,一分钟一百来字
+        let spent = c.map { stats.sec($0.src) } ?? 0
+        return Button { open(b, chapter: next) } label: {
+            HStack(spacing: 14 * k) {
+                Text(isText ? String(title.prefix(1)) : Numerals.chinese(next)).font(Fonts.song(17 * k, bold: true)).foregroundStyle(b.theme.accentColor)
+                    .lineLimit(1).minimumScaleFactor(0.6)
+                    .frame(width: 46 * k, height: 46 * k).background(b.theme.accentColor.opacity(0.12), in: RoundedRectangle(cornerRadius: 13 * k))
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(title).font(Fonts.song(18 * (pad ? 1.15 : 1), bold: true)).foregroundStyle(Ink.text).lineLimit(2)
+                    Text(isText ? b.title : "\(b.title) · 第 \(Numerals.chinese(next)) \(b.unit)").font(.system(size: 12 * (pad ? 1.15 : 1))).foregroundStyle(Ink.soft)
+                    HStack(spacing: 8) {
+                        Label("约 \(est) 分钟", systemImage: "clock").labelStyle(.titleAndIcon)
+                        if spent > 0 {
+                            Text(spent < 60 ? "已读不到 1 分钟" : "已读 \(spent / 60) 分钟").foregroundStyle(b.theme.accentColor)
+                        }
+                    }
+                    .font(Fonts.num(11 * (pad ? 1.15 : 1), weight: .medium)).foregroundStyle(Ink.faint)
+                }
+                Spacer(minLength: 4)
+                Image(systemName: "chevron.right").font(.system(size: 13 * k, weight: .semibold)).foregroundStyle(Ink.faint)
+            }
+            .padding(14 * (pad ? 1.15 : 1)).background(Ink.card, in: RoundedRectangle(cornerRadius: 18))
+        }
+        .buttonStyle(.plain)
     }
 
     private var emptyDesk: some View {
@@ -241,24 +324,41 @@ struct DeskHome: View {
     }
 }
 
+struct Opening: Identifiable {
+    let book: BookInfo
+    let start: ReadPos?
+    var id: String { book.id }
+}
+
 struct BookCard: View {
     let book: BookInfo
     let pos: ReadPos?
-    var label: String? = nil
+    var learned = 0
+    var total = 0
+    var finished = false
     var flexible = false
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            if flexible {
-                Color.clear.aspectRatio(1, contentMode: .fit)
-                    .overlay(BookArt(book: book, kind: .cover)).clipped()
-            } else {
-                BookArt(book: book, kind: .cover).frame(width: 150, height: 150).clipped()
+            Group {
+                if flexible {
+                    Color.clear.aspectRatio(1, contentMode: .fit)
+                        .overlay(BookArt(book: book, kind: .cover)).clipped()
+                } else {
+                    BookArt(book: book, kind: .cover).frame(width: 150, height: 150).clipped()
+                }
+            }
+            .overlay(alignment: .topTrailing) {
+                if finished {
+                    Seal(text: "学完").frame(width: 34, height: 34).rotationEffect(.degrees(-10))
+                        .shadow(color: .black.opacity(0.18), radius: 3, y: 1)
+                        .padding(9)
+                        .accessibilityLabel("已学完")
+                }
             }
             VStack(alignment: .leading, spacing: 6) {
                 Text(book.title).font(Fonts.song(17, bold: true)).foregroundStyle(Ink.text).lineLimit(1)
-                let done = Double((pos?.ch ?? 1) - 1) / Double(max(book.chapters, 1))
-                ProgressView(value: done).tint(book.theme.accentColor)
-                Text(pos == nil ? "还没开始" : (label ?? "读到第 \(Numerals.chinese(pos!.ch)) \(book.unit)")).font(.system(size: 11)).foregroundStyle(Ink.soft).lineLimit(1)
+                ProgressView(value: Double(learned), total: Double(max(total, 1))).tint(book.theme.accentColor)
+                Text(caption).font(.system(size: 11)).foregroundStyle(Ink.soft).lineLimit(1)
             }
             .padding(12)
         }
@@ -267,6 +367,14 @@ struct BookCard: View {
         .clipShape(RoundedRectangle(cornerRadius: 18))
         .shadow(color: .black.opacity(0.06), radius: 12, y: 6)
     }
+
+    private var caption: String {
+        if finished && learned >= total { return "学完 · \(total) \(unitWord)全学过" }
+        if pos == nil && learned == 0 { return "还没开始" }
+        return "学过 \(learned) / \(total)" + (unitWord.isEmpty ? "" : " \(unitWord)")
+    }
+    /// 周易卦与十翼混排,不写单位。
+    private var unitWord: String { book.summary == nil ? book.unit : "" }
 }
 
 /// 书目:可订的书。点一下下载并放上书桌。

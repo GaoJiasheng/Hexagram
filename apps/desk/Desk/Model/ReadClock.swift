@@ -24,6 +24,12 @@ final class ReadClock {
     }
     private var s: Session?
     private var timer: Timer?
+    /// 每拍(5 秒)走完之后调一次:阅读器据此判断这一章是不是刚满 3 分钟。
+    var tickHandler: (() -> Void)?
+
+    /// 正在计的这一章,和还没存进日聚合的秒数(已存的在 ReadDaysStore 里)。
+    var src: Src? { s?.src }
+    var unflushed: Int { s.map { Int(($0.sec - $0.flushed).rounded()) } ?? 0 }
 
     /// 开始(或换到)一章。同一章重复调用无事。
     func start(_ src: Src) {
@@ -66,6 +72,17 @@ final class ReadClock {
 
     var isRunning: Bool { s != nil }
 
+    /// 把还没存的秒数先存一笔(不结清、次数不加)。
+    func flushNow() {
+        advance(Date())
+        guard var cur = s else { return }
+        let delta = (cur.sec - cur.flushed).rounded()
+        guard delta > 0 else { return }
+        cur.flushed += delta
+        s = cur
+        ReadDaysStore.shared.addTime(cur.src, sec: Int(delta), final: false, day: cur.day)
+    }
+
     private func onTick() {
         guard s != nil else { return }
         advance(Date())
@@ -77,6 +94,7 @@ final class ReadClock {
             s = cur
             ReadDaysStore.shared.addTime(cur.src, sec: Int(delta), final: false, day: cur.day)
         }
+        tickHandler?()
     }
 
     private func advance(_ now: Date) {

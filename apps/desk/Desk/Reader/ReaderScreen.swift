@@ -27,6 +27,8 @@ struct ReaderScreen: View {
     @State private var sheet: ReaderSheet?
     @State private var other: OtherReader?
     @State private var showFinish = false
+    /// 已学完的书再看账单:不再盖一次印的那套全程,直接落定。
+    @State private var finishReplay = false
     @AppStorage("desk.hlColor") private var lastColor = 0
     @AppStorage("desk.showArt") private var showArt = true
     @Environment(\.colorScheme) private var scheme
@@ -77,7 +79,8 @@ struct ReaderScreen: View {
         .overlay(alignment: .bottomLeading) { backButton }
         .overlay { highlightCard }
         .sheet(item: $sheet) { s in sheetView(s) }
-        .fullScreenCover(isPresented: $showFinish) { FinishScreen(book: model.book, stats: .sample) }
+        .fullScreenCover(isPresented: $showFinish) { FinishScreen(book: model.book, stats: Stats.shared.finishStats(model.book), replay: finishReplay,
+                                                                     onDone: finishReplay ? nil : { showFinish = false; DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { dismiss() } }) }
         .background { Color.clear.fullScreenCover(item: $other) { o in ReaderScreen(model: o.model) } }
         .onChange(of: HighlightStore.shared.version) { _, _ in model.syncHighlights() }
         .onAppear { model.resume() }
@@ -85,6 +88,7 @@ struct ReaderScreen: View {
         .onChange(of: phase) { _, p in if p == .active { if other == nil { model.resume() } } else { model.pause() } }
         .onChange(of: other == nil) { _, none in if none { model.resume() } else { model.pause() } }   // 叠开的另一本书自己计时
         .onChange(of: sheet?.id) { _, _ in model.touch() }
+        .onChange(of: showFinish) { _, on in if !on { model.resume() } }
         #if DEBUG
         .onAppear { debugOpen() }
         #endif
@@ -294,8 +298,12 @@ struct ReaderScreen: View {
         let n = model.pageSize == .zero ? 1 : model.pageCount(model.current.ch)
         return HStack(spacing: 10) {
             Text(model.caption(model.current.ch)).font(.system(size: 12, weight: .medium)).foregroundStyle(theme.accentColor)
+            if model.learnedFlash == model.current.ch {
+                LearnedStamp(color: theme.accentColor)
+                    .transition(.asymmetric(insertion: .scale(scale: 2.2).combined(with: .opacity), removal: .opacity))
+            }
             Spacer()
-            if !model.showTranslation && model.current.page == 0 && !model.isEndPageSafe {
+            if !model.showTranslation && model.current.page == 0 && !model.isEndPageSafe && model.learnedFlash != model.current.ch {
                 Label("轻点一段看译文", systemImage: "hand.tap").font(.system(size: 12)).foregroundStyle(Ink.faint)
                 Spacer()
             }
@@ -308,6 +316,7 @@ struct ReaderScreen: View {
             }
             .animation(.spring(duration: 0.3), value: model.current.page)
         }
+        .animation(.spring(duration: 0.45, bounce: 0.4), value: model.learnedFlash)
         .frame(height: 20)      // 定高:「轻点一段看译文」只在首页出现,页脚高度一变正文区就变,会触发重排把页面弹回去
         .padding(.horizontal, 28)
         .padding(.vertical, 12)
@@ -322,6 +331,8 @@ struct ReaderScreen: View {
                 HStack(spacing: 10) {
                     RoundedRectangle(cornerRadius: 2).fill(theme.accentColor).frame(width: 4, height: 18)
                     Text("读完这一\(model.book.unit)").font(Fonts.song(19, bold: true))
+                    Spacer()
+                    ChapterLearnedTag(src: ch.src, color: theme.accentColor)
                 }
                 if let y = ch.yanyi, !y.isEmpty {
                     Text("延伸").font(.system(size: 12, weight: .semibold)).foregroundStyle(theme.accentColor).kerning(2)
@@ -330,11 +341,12 @@ struct ReaderScreen: View {
                     }
                 }
                 if last {
-                    Button { FinishedStore.shared.markFinished(model.pack); showFinish = true } label: {
-                        Label("学完这本书", systemImage: "checkmark.seal.fill")
-                            .font(Fonts.song(18, bold: true)).frame(maxWidth: .infinity).padding(.vertical, 16)
-                            .background(Ink.cinnabar, in: RoundedRectangle(cornerRadius: 16)).foregroundStyle(.white)
-                    }
+                    FinishButton(pack: model.pack, finish: {
+                        model.pause()            // 先结清这一段,账单里有它
+                        FinishedStore.shared.markFinished(model.pack)
+                        Stats.shared.recompute()
+                        finishReplay = false; showFinish = true
+                    }, replay: { model.pause(); finishReplay = true; showFinish = true })
                     .padding(.top, 8)
                 } else {
                     Button { model.jump(toChapter: r.ch + 1) } label: {
@@ -391,6 +403,7 @@ struct NoteSheet: View {
 struct TOCSheet: View {
     let model: ReaderModel
     let pick: (Int) -> Void
+    private var stats: Stats { .shared }
     var body: some View {
         NavigationStack {
             ScrollViewReader { proxy in
@@ -405,6 +418,7 @@ struct TOCSheet: View {
                                         Text(c.title).font(Fonts.song(17)).foregroundStyle(Ink.text)
                                         Spacer()
                                         if c.no == model.current.ch { Image(systemName: "bookmark.fill").foregroundStyle(model.book.theme.accentColor) }
+                                        ChapterMark(sec: stats.sec(c.src), color: model.book.theme.accentColor)
                                     }
                                 }
                                 .id(c.no)
@@ -415,6 +429,90 @@ struct TOCSheet: View {
                 .onAppear { proxy.scrollTo(model.current.ch, anchor: .center) }
             }
             .navigationTitle("目录").navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    let n = stats.learnedCount(model.book.id)
+                    Text("学过 \(n) / \(model.pack.chapters.count)").font(Fonts.num(13, weight: .medium)).foregroundStyle(Ink.soft)
+                }
+            }
         }
+    }
+}
+
+/// 目录里一章的状态:学过(满 3 分钟)一枚小印;读到一半(有时长、不足 3 分钟)空心圈;没读不标。
+struct ChapterMark: View {
+    let sec: Int
+    let color: Color
+    var body: some View {
+        Group {
+            if sec >= Stats.learnedSec {
+                Image(systemName: "checkmark").font(.system(size: 10, weight: .heavy)).foregroundStyle(.white)
+                    .frame(width: 20, height: 20)
+                    .background(color, in: RoundedRectangle(cornerRadius: 5))
+                    .rotationEffect(.degrees(-6))
+                    .accessibilityLabel("学过")
+            } else if sec > 0 {
+                Circle().stroke(color.opacity(0.6), lineWidth: 1.6).frame(width: 16, height: 16)
+                    .overlay(Circle().trim(from: 0, to: Double(sec) / Double(Stats.learnedSec)).stroke(color, style: StrokeStyle(lineWidth: 1.6, lineCap: .round)).rotationEffect(.degrees(-90)))
+                    .frame(width: 20, height: 20)
+                    .accessibilityLabel("读到一半")
+            } else {
+                Color.clear.frame(width: 20, height: 20)
+            }
+        }
+    }
+}
+
+/// 全书最后一章章末页的按钮:没学完是「学完这本书」,学完了是「已学完 · 再看一遍账单」。
+/// 单独成一个 View:章末页是预先建好的 UIHostingController,在这里读 FinishedStore 才会随它刷新。
+struct FinishButton: View {
+    let pack: BookPack
+    let finish: () -> Void
+    let replay: () -> Void
+    var body: some View {
+        if FinishedStore.shared.isFinished(pack) {
+            Button(action: replay) {
+                Label("已学完 · 再看一遍账单", systemImage: "checkmark.seal")
+                    .font(Fonts.song(18, bold: true)).frame(maxWidth: .infinity).padding(.vertical, 16)
+                    .background(Ink.cinnabar.opacity(0.1), in: RoundedRectangle(cornerRadius: 16)).foregroundStyle(Ink.cinnabar)
+                    .overlay(RoundedRectangle(cornerRadius: 16).stroke(Ink.cinnabar.opacity(0.35), lineWidth: 1))
+            }
+        } else {
+            Button(action: finish) {
+                Label("学完这本书", systemImage: "checkmark.seal.fill")
+                    .font(Fonts.song(18, bold: true)).frame(maxWidth: .infinity).padding(.vertical, 16)
+                    .background(Ink.cinnabar, in: RoundedRectangle(cornerRadius: 16)).foregroundStyle(.white)
+            }
+        }
+    }
+}
+
+/// 章末页右上:这一章学过了没有(学过 / 已读 N 分钟 · 满 3 分钟算学过)。单独成 View,随统计刷新。
+struct ChapterLearnedTag: View {
+    let src: Src
+    let color: Color
+    var body: some View {
+        let sec = Stats.shared.sec(src)
+        if sec >= Stats.learnedSec {
+            LearnedStamp(color: color)
+        } else if sec > 0 {
+            Text((sec < 60 ? "已读不到 1 分钟" : "已读 \(sec / 60) 分钟") + " · 满 3 分钟算学过").font(.system(size: 12)).foregroundStyle(Ink.faint)
+        }
+    }
+}
+
+/// 一章刚学过时,页脚章名旁落下的小印。
+struct LearnedStamp: View {
+    let color: Color
+    var body: some View {
+        HStack(spacing: 3) {
+            Image(systemName: "checkmark").font(.system(size: 8, weight: .heavy))
+            Text("学过").font(Fonts.song(10, bold: true))
+        }
+        .foregroundStyle(.white)
+        .padding(.horizontal, 6).padding(.vertical, 2.5)
+        .background(color, in: RoundedRectangle(cornerRadius: 4))
+        .rotationEffect(.degrees(-6))
+        .accessibilityLabel("这一章学过了")
     }
 }

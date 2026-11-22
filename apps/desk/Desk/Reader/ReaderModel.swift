@@ -41,6 +41,11 @@ final class ReaderModel {
     @ObservationIgnored let clock = ReadClock()
     @ObservationIgnored private var dwell: DispatchWorkItem?
     @ObservationIgnored private(set) var active = false
+    /// 刚学过(累计满 3 分钟)的那一章:页脚落一个小印,2 秒后淡去。
+    var learnedFlash: Int?
+    /// 这一章打开时还没学过:计时满 3 分钟时要给反馈。已学过的章不再给。
+    @ObservationIgnored private var armed: Src?
+    @ObservationIgnored private var armedFrom: Src?
 
     init(book: BookInfo, pack: BookPack, start: ReadPos?, reveal: Set<Int> = []) {
         self.book = book
@@ -49,6 +54,7 @@ final class ReaderModel {
         if !reveal.isEmpty { revealed[ch] = reveal }
         current = PageRef(ch: ch, page: 0)
         anchorSeg = start?.seg ?? 0
+        clock.tickHandler = { [weak self] in self?.checkLearned() }
     }
 
     var style: ReaderStyle {
@@ -209,7 +215,33 @@ final class ReaderModel {
 
     private func remember() {
         ProgressStore.shared.set(book.id, ch: current.ch, seg: anchorSeg)
-        if active { clock.start(chapter(current.ch).src); clock.touch(); armDwell() }
+        if active { clock.start(chapter(current.ch).src); clock.touch(); armDwell(); arm() }
+    }
+
+    // MARK: 学过
+
+    /// 换到一章:它还没学过就「上弦」,计时满 3 分钟那一拍给反馈。同一章在这次打开里只判一次。
+    private func arm() {
+        let src = chapter(current.ch).src
+        guard armedFrom != src else { return }
+        armedFrom = src
+        armed = ReadDaysStore.shared.totalSec(src) < Stats.learnedSec ? src : nil
+    }
+
+    /// 时钟每拍:已存的 + 还没存的 ≥ 180 秒,就是刚学过。
+    private func checkLearned() {
+        guard let a = armed, let src = clock.src, src == a else { return }
+        let total = ReadDaysStore.shared.totalSec(src) + clock.unflushed
+        guard total >= Stats.learnedSec else { return }
+        armed = nil
+        guard let no = pack.chapters.first(where: { $0.src == src })?.no else { return }
+        UIImpactFeedbackGenerator(style: .soft).impactOccurred(intensity: 0.8)
+        learnedFlash = no
+        // 先存一笔,目录、书桌立刻看得到「学过」
+        clock.flushNow()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.4) { [weak self] in
+            if self?.learnedFlash == no { self?.learnedFlash = nil }
+        }
     }
 
     // MARK: 学习时长
@@ -219,6 +251,7 @@ final class ReaderModel {
         active = true
         clock.start(chapter(current.ch).src)
         armDwell()
+        arm()
     }
 
     /// 退到后台、离开阅读器:结清。
