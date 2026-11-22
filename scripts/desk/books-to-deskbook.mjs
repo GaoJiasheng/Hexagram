@@ -118,7 +118,8 @@ function convertBlocks(src, where) {
         const o = fixBold(typeof b.original === 'string' ? b.original.trim() : '', where)
         const tr = fixBold(typeof b.translation === 'string' ? b.translation.trim() : '', where)
         if (!o && !tr) { S.emptySkipped++; break }
-        push(o ? { t: 'quote', x: o, ...(tr ? { tr } : {}) } : { t: 'quote', tr })
+        // 标准的 quote 两种形状二选一:有原话的用原文式(o 原话 + tr 释义);只有一句提示的用一般式(x)
+        push(o ? { t: 'quote', o, ...(tr ? { tr } : {}) } : { t: 'quote', x: tr })
         break
       }
       case 'callout': {
