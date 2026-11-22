@@ -20,6 +20,8 @@ export function parseKey(k) {
 
 export function bookLabel(corpus, slug) {
   if (!corpus || !slug) return { title: '（非阅读页）', href: null, unit: '章' }
+  // 「观象 · 书桌」里读的书包(导入的或书房的):网站没有对应页面,只记名、不给链接
+  if (corpus === 'deskbook') return { title: `书桌 · ${slug.replace(/^[ug]-/, '').replace(/-[0-9a-f]{8}$/, '')}`, href: null, unit: '章' }
   if (corpus === 'yijing') {
     if (slug === 'hexagrams') return { title: '易经 · 六十四卦', href: '/hexagrams', unit: '卦', chHref: (ch) => `/hexagram/${ch}` }
     const m = CLASSICS_META.find((x) => x.key === slug)

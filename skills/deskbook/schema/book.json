@@ -8,7 +8,7 @@
   "properties": {
     "format": { "const": "deskbook" },
     "version": { "const": 1 },
-    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,63}$", "description": "官方典籍用短名;自己做的 u-<名>-<8 位十六进制>;书房的 g-<名>。重出不换 id。" },
+    "id": { "type": "string", "pattern": "^[ug]-[a-z0-9-]{1,62}$", "not": { "enum": ["daodejing", "lunyu", "sunzi", "guiguzi", "zhuangzi", "yijing"] }, "description": "书包 id 必须带前缀:u-<名>-<8 位十六进制>(自己做的)或 g-<名>(书房)。不带前缀的 id 留给书桌内置的官方典籍。重出不换 id。" },
     "revision": { "type": "integer", "minimum": 1 },
     "kind": { "enum": ["classic", "book", "collection"] },
     "title": { "$ref": "#/$defs/text" },
@@ -50,14 +50,15 @@
     "unit": { "$ref": "#/$defs/text" },
     "theme": {
       "type": "object",
+      "description": "三项都可单独缺,缺的用书桌默认色",
       "properties": {
         "accent": { "$ref": "#/$defs/color" },
         "accent2": { "$ref": "#/$defs/color" },
         "paper": { "$ref": "#/$defs/color" }
       }
     },
-    "cover": { "$ref": "#/$defs/image", "description": "竖版 2:3,不带文字" },
-    "banner": { "$ref": "#/$defs/image", "description": "横版 3:2,不带文字" },
+    "cover": { "$ref": "#/$defs/image", "description": "建议竖版 2:3(偏差超 5% 校验器提示),不带文字" },
+    "banner": { "$ref": "#/$defs/image", "description": "建议横版 3:2(偏差超 5% 校验器提示),不带文字" },
     "parts": {
       "type": "array",
       "minItems": 1,
@@ -81,10 +82,11 @@
           "file": { "type": "string", "pattern": "^chapters/\\d{3,}\\.json$" },
           "title": { "$ref": "#/$defs/text" },
           "subtitle": { "$ref": "#/$defs/text" },
+          "summary": { "type": "string", "pattern": "^[^\\r\\n]*\\S[^\\r\\n]*$", "x-deskbook-maxChars": 80, "description": "一句话说这一章,一行,列表里显示" },
           "minutes": { "type": "number", "exclusiveMinimum": 0 },
           "author": { "$ref": "#/$defs/text" },
           "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
-          "head": { "$ref": "#/$defs/image", "description": "章题头图,横版,不带文字" }
+          "head": { "$ref": "#/$defs/image", "description": "章题头图,建议横版 3:2,不带文字" }
         }
       }
     },

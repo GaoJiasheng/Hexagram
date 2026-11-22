@@ -29,7 +29,7 @@ media/…              图片、视频、封面(可无)
 - 路径一律用 `/`,只许小写字母、数字、`-`、`_`、`.`;不许 `..`、绝对路径、隐藏文件。
 - 只认上面三类内容。**不收任何可执行内容**:HTML、JS、CSS、SVG、字体、脚本一概不收;文字里的尖括号按字面显示。
 - `media/` 下可以再分子目录(如 `media/ch01/a.png`)。
-- 上限:整包 ≤ 300 MB;`book.json` ≤ 2 MB;章文件 ≤ 2 MB;图片 ≤ 4 MB;视频 ≤ 24 MB;章数 ≤ 2000;zip 条目 ≤ 10000;路径 ≤ 255 字符。
+- 上限:整包 ≤ 300 MB;`book.json` ≤ 2 MB;章文件 ≤ 2 MB;图片 ≤ 4 MB;视频 ≤ 24 MB;章数 ≤ 2000;zip 条目 ≤ 10000;zip 中央目录 ≤ 16 MB;路径 ≤ 255 字符。
 
 ## 2 · book.json
 
@@ -55,21 +55,25 @@ media/…              图片、视频、封面(可无)
   },
   "disclaimer": "medical",                // 可无;medical | divination | 自写一句(≤ 120 字),或其中几项的数组。见 §6
   "unit": "章",                           // 章的叫法:章 / 篇 / 卦 / 讲 / 期…
-  "theme": { "accent": "#2E7D86", "accent2": "#C7673F", "paper": "#F7F5EE" },   // 可无,缺了用默认
-  "cover": "media/cover.jpg",             // 竖版 2:3,可无
-  "banner": "media/banner.jpg",           // 横版 3:2,可无
+  "theme": { "accent": "#2E7D86", "accent2": "#C7673F", "paper": "#F7F5EE" },   // 可无;三项都可单独缺,缺的用默认
+  "cover": "media/cover.jpg",             // 建议竖版 2:3,可无
+  "banner": "media/banner.jpg",           // 建议横版 3:2,可无
   "parts": [ { "title": "上篇", "from": 1, "to": 8 } ],   // 可无;有则须连续覆盖全部章
   "chapters": [
     { "no": 1, "file": "chapters/001.json", "title": "肩胛骨先动", "subtitle": "可无", "minutes": 9,
+      "summary": "一句话说这一章(≤ 80 字,一行,可无;列表里显示)",
       "author": "可无(文集用)", "date": "2026-10-03", "head": "media/head-001.jpg" }
   ],
   "generator": "deskbook-skill 1.0"       // 可无
 }
 ```
 
-- **id**:`[a-z0-9][a-z0-9-]{2,63}`。官方典籍用短名(`daodejing`);其余一律带前缀,避免撞名:自己做的 `u-<名>-<8 位随机十六进制>`,书房的 `g-<名>`。同一本书重出**不换 id**,只加 `revision`——阅读进度、划线按 id 记。
+- **id**:`[a-z0-9][a-z0-9-]{2,63}`,且书包里的 id 必须带前缀:任何人自己做的 `u-<名>-<8 位随机十六进制>`,站点管理员书房的 `g-<名>`。**不带前缀的 id 留给书桌内置的官方典籍**(`daodejing` `lunyu` `sunzi` `guiguzi` `zhuangzi` `yijing`…),书包用了校验器报错。同一本书重出**不换 id**,只加 `revision`——阅读进度、划线按 id 记。
 - `chapters[].no` 从 1 连续;`file` 必须存在;`minutes` 可无(书桌按字数估)。
-- `head`(章题头图,横版)可无。
+- 章文件以 `chapters[].file` 为准(书桌按它打开);它必须按约定写成 `chapters/` + 章号补零到三位 + `.json`,校验器核这条约定,不合即报错。
+- `chapters[].summary` 可无,≤ 80 字、一行(不含换行);文集宜每篇都写,书桌列目录时不必打开每个章文件。
+- `head`(章题头图)与 `banner` 建议横版 3:2,`cover` 建议竖版 2:3;比例偏差超过 5% 校验器提示(不报错)。
+- `theme` 的 `accent` `accent2` `paper` 可以只给其中几项,缺的用书桌默认色。
 
 ## 3 · 章文件
 
@@ -103,21 +107,27 @@ media/…              图片、视频、封面(可无)
 | `lead` | `x` | 导语 |
 | `h2` / `h3` | `x` | 小标题(两级) |
 | `p` | `x` | 正文段 |
-| `quote` | `o?` `tr?` `x?` `by?` | 引文。典籍:`o` 原文 + `tr` 译文;其余:`x` 引的话 + `by` 出处 |
+| `quote` | `o` `tr?` 或 `x` `by?` | 引文,两种形状取其一:原文式 `o`(必有)+ `tr` 译文(可无);一般式 `x` 引的话(必有)+ `by` 出处(可无)。`o` 与 `x` 不许同时出现,`tr` 只配 `o`、`by` 只配 `x` |
 | `callout` | `tone` `label?` `items[]` | 提示框。tone:`note` `tip` `warn` |
 | `pull` | `x` | 金句(一章至多 1 处) |
 | `steps` | `items[]` | 有先后的步骤 |
 | `list` | `ordered` `items[]` | 列举 |
 | `outline` | `items[]` | 多级提纲 / 思想脑图。每项 `{x, children?}`,最多四层 |
 | `fig` | `fig` `cap?` | 图解:结构化数据(对比 / 列举 / 流程 / 结构 / 时间线 / 表格 / 卦画 / 方位 / 金句卡),由书桌用原生版式画。字段见附录 A 与 `schema/fig.json` |
-| `img` | `src` `alt` `cap?` `w` `h` | 图片。`w` `h` 是像素尺寸(排版占位用) |
-| `video` | `src` `poster` `cap?` `w` `h` `sec` `loop?` `sound?` | 视频 / 动图。默认循环、静音、进入屏幕自动播,点一下暂停;`sound: true` 的不自动播 |
+| `img` | `src` `alt` `cap?` `w` `h` | 图片。`w` `h` 必有,是文件的像素尺寸(排版占位用,须与文件一致) |
+| `video` | `src` `poster` `cap?` `w` `h` `sec` `loop?` `sound?` | 视频 / 动图。`w` `h` 必有,同上。默认循环、静音、进入屏幕自动播,点一下暂停;`sound: true` 的不自动播 |
 | `code` | `x` `lang?` | 代码或等宽文字 |
 | `divider` | — | 分隔 |
 | `refs` | `items[]` | 文末出处、参考 |
 
 - 每章至少一个 `p` 或 `lead`;空块不许有。
 - 不认识的 `t` 书桌会跳过(以后加新块不破旧版本),但校验器当错误报——照标准写的包里不该有。
+
+### 字数怎么数
+
+书桌、网站、工具说「多少字」都按同一条规则(核心库导出 `countChars`):只数字母、数字与汉字(Unicode `\p{L}` `\p{N}`),不数标点、空白与 `**` 一类记号。
+- 典籍:数各章 `segs[].o`(只数原文);深读文章另计为「文章字数」。
+- 现代书 / 文集:数文章里 `lead` `h2` `h3` `p` `quote` `callout` `pull` `steps` `list` `outline` `refs` 的文字;图注 `cap`、`alt`、`code`、图解里的字不计。
 
 ## 4 · 媒体
 

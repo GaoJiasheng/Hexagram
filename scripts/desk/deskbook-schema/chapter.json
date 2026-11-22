@@ -62,7 +62,12 @@
       "oneOf": [
         { "properties": { "t": { "enum": ["lead", "h2", "h3", "p"] }, "x": { "$ref": "#/$defs/text" } }, "required": ["t", "x"] },
         { "properties": { "t": { "const": "pull" }, "x": { "$ref": "#/$defs/text" } }, "required": ["t", "x"] },
-        { "properties": { "t": { "const": "quote" }, "o": { "$ref": "#/$defs/text" }, "tr": { "$ref": "#/$defs/text" }, "x": { "$ref": "#/$defs/text" }, "by": { "$ref": "#/$defs/text" } }, "required": ["t"], "anyOf": [{ "required": ["o"] }, { "required": ["x"] }, { "required": ["tr"] }] },
+        { "properties": { "t": { "const": "quote" }, "o": { "$ref": "#/$defs/text" }, "tr": { "$ref": "#/$defs/text" }, "x": { "$ref": "#/$defs/text" }, "by": { "$ref": "#/$defs/text" } }, "required": ["t"],
+          "description": "两种形状取其一:原文式 o(+ tr)或一般式 x(+ by),不许混用",
+          "oneOf": [
+            { "required": ["o"], "not": { "anyOf": [{ "required": ["x"] }, { "required": ["by"] }] } },
+            { "required": ["x"], "not": { "anyOf": [{ "required": ["o"] }, { "required": ["tr"] }] } }
+          ] },
         { "properties": { "t": { "const": "callout" }, "tone": { "enum": ["note", "tip", "warn"] }, "label": { "$ref": "#/$defs/text" }, "items": { "$ref": "#/$defs/texts" } }, "required": ["t", "tone", "items"] },
         { "properties": { "t": { "enum": ["steps", "refs"] }, "items": { "$ref": "#/$defs/texts" } }, "required": ["t", "items"] },
         { "properties": { "t": { "const": "list" }, "ordered": { "type": "boolean" }, "items": { "$ref": "#/$defs/texts" } }, "required": ["t", "ordered", "items"] },

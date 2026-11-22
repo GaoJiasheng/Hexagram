@@ -33,7 +33,9 @@ export const LIMITS = Object.freeze({
   imageBytes: 4 * MB,
   videoBytes: 24 * MB,
   chapters: 2000,
-  entries: 10000, // zip 里的条目数 —— 标准未写,防目录炸弹
+  entries: 10000, // zip 里的条目数(防目录炸弹)
+  centralDirBytes: 16 * MB, // zip 中央目录
+  chapterSummary: 80, // chapters[].summary
   pathLength: 255, // 路径长度 —— 标准未写
   imageLongSide: 4096,
   videoLongSide: 1280,
@@ -63,6 +65,10 @@ export const FIG_KINDS = ['quote', 'cols', 'rows', 'flow', 'tree', 'timeline', '
 export const IMAGE_EXTS = ['jpg', 'png', 'webp']
 export const VIDEO_EXTS = ['mp4']
 export const ID_PATTERN = /^[a-z0-9][a-z0-9-]{2,63}$/
+// 书包 id 必须带的前缀:u- 任何人自己做的,g- 站点管理员书房的
+export const ID_PREFIXES = Object.freeze(['u-', 'g-'])
+// 不带前缀的 id 留给书桌内置的官方典籍;书包用了即报错(唯一一处定义)
+export const RESERVED_IDS = Object.freeze(['daodejing', 'lunyu', 'sunzi', 'guiguzi', 'zhuangzi', 'yijing'])
 
 // 书桌显示的两句声明(标准 §6)
 export const DISCLAIMERS = Object.freeze({
@@ -286,6 +292,7 @@ function parseDirectory(bytes, base, total) {
     count = u64(z + 32); cdSize = u64(z + 40); cdOff = u64(z + 48)
   }
   if (count > LIMITS.entries) throw new ZipError(`条目超过 ${LIMITS.entries} 个`)
+  if (cdSize > LIMITS.centralDirBytes) throw new ZipError(`中央目录 ${cdSize} 字节,超过上限 ${LIMITS.centralDirBytes / MB} MB`)
   if (cdOff + cdSize > total) throw new ZipError('中央目录越界')
   at(cdOff, cdSize)
 
@@ -687,7 +694,7 @@ export function checkInline(s) {
 
 const BOOK_KEYS = new Set(['format', 'version', 'id', 'revision', 'kind', 'title', 'subtitle', 'authors', 'lang', 'summary', 'description', 'category', 'tags',
   'source', 'disclaimer', 'unit', 'theme', 'cover', 'banner', 'parts', 'chapters', 'generator'])
-const CH_ENTRY_KEYS = new Set(['no', 'file', 'title', 'subtitle', 'minutes', 'author', 'date', 'head'])
+const CH_ENTRY_KEYS = new Set(['no', 'file', 'title', 'subtitle', 'summary', 'minutes', 'author', 'date', 'head'])
 const CHAPTER_KEYS = new Set(['no', 'title', 'segs', 'yanyi', 'article'])
 const BLOCK_FIELDS = {
   lead: ['x'], h2: ['x'], h3: ['x'], p: ['x'], pull: ['x'],
@@ -726,7 +733,7 @@ export function validate(files) {
   const warnings = []
   const err = (file, where, msg) => { if (errors.length < LIMITS.maxReported) errors.push({ file, where, msg }) }
   const warn = (file, where, msg) => { if (warnings.length < LIMITS.maxReported) warnings.push({ file, where, msg }) }
-  const stats = { chapters: 0, chars: 0, segs: 0, notes: 0, blocks: 0, blockTypes: {}, figs: {}, images: 0, videos: 0, mediaBytes: 0, totalBytes: 0, quotes: 0 }
+  const stats = { chapters: 0, chars: 0, articleChars: 0, segs: 0, notes: 0, blocks: 0, blockTypes: {}, figs: {}, images: 0, videos: 0, mediaBytes: 0, totalBytes: 0, quotes: 0 }
   if (!(files instanceof Map)) { err('', '', '输入应为 Map<路径, Uint8Array>'); return { ok: false, errors, warnings, book: null, stats } }
 
   // ── §1 文件与路径 ──
@@ -787,7 +794,8 @@ export function validate(files) {
     else err(B, 'version', `应为 ${FORMAT_VERSION}`)
   }
   if (typeof book.id !== 'string' || !ID_PATTERN.test(book.id)) err(B, 'id', 'id 须为 3–64 位小写字母、数字、-,以字母或数字开头')
-  else if (!/^[ug]-/.test(book.id)) warn(B, 'id', '不带前缀的短 id 留给官方典籍;自己做的书用 u-<名>-<8 位十六进制>')
+  else if (RESERVED_IDS.includes(book.id)) err(B, 'id', `「${book.id}」是书桌内置官方典籍的 id,书包不能用;自己做的书用 u-<名>-<8 位十六进制>`)
+  else if (!ID_PREFIXES.some((x) => book.id.startsWith(x)) || book.id.length < 3) err(B, 'id', '书包的 id 须以 u-(自己做的)或 g-(书房)开头;不带前缀的 id 留给官方典籍')
   if (!isInt(book.revision) || book.revision < 1) err(B, 'revision', '应为 ≥ 1 的整数,每次重出 +1')
   const kind = book.kind
   if (!KINDS.includes(kind)) err(B, 'kind', `应为 ${KINDS.join(' / ')}`)
@@ -898,6 +906,11 @@ export function validate(files) {
     listed.add(c.file)
     if (!isStr(c.title)) err(B, `${w}.title`, '缺章题')
     if (c.subtitle !== undefined && !isStr(c.subtitle)) err(B, `${w}.subtitle`, '应为非空字符串')
+    if (c.summary !== undefined) {
+      if (!isStr(c.summary)) err(B, `${w}.summary`, '应为非空字符串')
+      else if (/[\r\n]/.test(c.summary)) err(B, `${w}.summary`, '只许一行,不能换行')
+      else if (textLen(c.summary) > LIMITS.chapterSummary) err(B, `${w}.summary`, `${textLen(c.summary)} 字,超过 ${LIMITS.chapterSummary} 字`)
+    }
     if (c.minutes !== undefined && !(typeof c.minutes === 'number' && c.minutes > 0 && c.minutes < 1000)) err(B, `${w}.minutes`, '应为正数(分钟)')
     if (c.author !== undefined && !isStr(c.author)) err(B, `${w}.author`, '应为非空字符串')
     if (c.date !== undefined && !validDate(c.date)) err(B, `${w}.date`, '日期写成 YYYY-MM-DD')
@@ -960,8 +973,7 @@ export function validate(files) {
       for (const k of Object.keys(s)) if (!['o', 't', 'label', 'n'].includes(k)) warn(F, `${w}.${k}`, `标准里没有字段「${k}」`)
       stats.segs++
       if (!isStr(s.o)) { err(F, `${w}.o`, '缺原文'); return }
-      stats.chars += textLen(s.o)
-      if (s.t !== undefined) { if (!isStr(s.t)) err(F, `${w}.t`, '应为非空字符串'); else stats.chars += textLen(s.t) }
+      if (s.t !== undefined && !isStr(s.t)) err(F, `${w}.t`, '应为非空字符串')
       if (s.label !== undefined && !isStr(s.label)) err(F, `${w}.label`, '应为非空字符串')
       if (s.n === undefined) return
       if (!Array.isArray(s.n)) { err(F, `${w}.n`, '应为数组'); return }
@@ -1016,7 +1028,7 @@ export function validate(files) {
 
     function strItems(b, w) {
       if (!Array.isArray(b.items) || !b.items.length) { err(F, `${w}.items`, '应为非空数组'); return }
-      b.items.forEach((x, k) => { if (!isStr(x)) err(F, `${w}.items[${k}]`, '应为非空字符串'); else { inline(x, F, `${w}.items[${k}]`); stats.chars += textLen(x) } })
+      b.items.forEach((x, k) => { if (!isStr(x)) err(F, `${w}.items[${k}]`, '应为非空字符串'); else inline(x, F, `${w}.items[${k}]`) })
     }
     function checkBlock(b, w0, st) {
       if (!isObj(b)) { err(F, w0, '块应为对象'); return }
@@ -1026,8 +1038,8 @@ export function validate(files) {
       stats.blocks++
       stats.blockTypes[t] = (stats.blockTypes[t] || 0) + 1
       for (const k of Object.keys(b)) if (k !== 't' && !BLOCK_FIELDS[t].includes(k)) warn(F, `${w}.${k}`, `${t} 块没有字段「${k}」`)
-      const text = (k) => { if (!isStr(b[k])) { err(F, `${w}.${k}`, '缺文字(空块不许有)'); return false } inline(b[k], F, `${w}.${k}`); stats.chars += textLen(b[k]); return true }
-      const optText = (k) => { if (b[k] === undefined) return; if (!isStr(b[k])) err(F, `${w}.${k}`, '应为非空字符串'); else { inline(b[k], F, `${w}.${k}`); stats.chars += textLen(b[k]) } }
+      const text = (k) => { if (!isStr(b[k])) { err(F, `${w}.${k}`, '缺文字(空块不许有)'); return false } inline(b[k], F, `${w}.${k}`); return true }
+      const optText = (k) => { if (b[k] === undefined) return; if (!isStr(b[k])) err(F, `${w}.${k}`, '应为非空字符串'); else inline(b[k], F, `${w}.${k}`) }
       const dims = () => {
         for (const k of ['w', 'h']) if (!isInt(b[k]) || b[k] <= 0) err(F, `${w}.${k}`, '应为正整数(像素)')
       }
@@ -1036,9 +1048,13 @@ export function validate(files) {
         case 'h2': case 'h3': text('x'); break
         case 'pull': if (text('x')) cite(b.x, w); st.pull++; break
         case 'quote': {
+          // 两种形状取其一:原文式 o(+ tr),一般式 x(+ by);不许混用
           for (const k of ['o', 'tr', 'x', 'by']) optText(k)
-          if (!isStr(b.o) && !isStr(b.x) && !isStr(b.tr)) { err(F, w, '引文块至少要有 o(原文)或 x(引的话)'); break }
-          if (!isStr(b.o) && !isStr(b.x)) warn(F, w, '只有 tr 的引文块:书桌按提示语显示')
+          const hasO = b.o !== undefined, hasX = b.x !== undefined
+          if (hasO && hasX) { err(F, w, '引文块只能取一种形状:原文式 o(+ tr)或一般式 x(+ by),o 与 x 不许同时出现'); break }
+          if (!hasO && !hasX) { err(F, w, '引文块须有 o(原文,可配 tr 译文)或 x(引的话,可配 by 出处)'); break }
+          if (hasO && b.by !== undefined) err(F, `${w}.by`, 'by 只配一般式(x);原文式的出处写进 tr 或正文')
+          if (hasX && b.tr !== undefined) err(F, `${w}.tr`, 'tr 只配原文式(o)')
           stats.quotes++
           if (isStr(b.x) || isStr(b.o)) cite(isStr(b.x) ? b.x : b.o, w)
           break
@@ -1063,7 +1079,7 @@ export function validate(files) {
               if (!isObj(it)) { err(F, wi, '应为 {x, children?}'); return }
               for (const key of Object.keys(it)) if (!['x', 'children'].includes(key)) warn(F, `${wi}.${key}`, `提纲项没有字段「${key}」`)
               if (!isStr(it.x)) err(F, `${wi}.x`, '缺文字')
-              else { inline(it.x, F, `${wi}.x`); stats.chars += textLen(it.x) }
+              else inline(it.x, F, `${wi}.x`)
               if (it.children !== undefined) walk(it.children, `${wi}.children`, depth + 1)
             })
           }
@@ -1123,7 +1139,54 @@ export function validate(files) {
   }
   for (const path of media.keys()) if (!refs.has(path)) warn(path, '', '包里有这个媒体,但没有任何地方引用它')
 
+  const cc = countChars(files)
+  stats.chars = cc.chars
+  stats.articleChars = cc.articleChars
   return { ok: errors.length === 0, errors, warnings, book, stats }
+}
+
+// ── 字数(标准 §3「字数怎么数」):只数 \p{L} \p{N}(字母、数字、汉字),不数标点、空白、记号 ──
+const LETTER = /[\p{L}\p{N}]/gu
+export const countText = (s) => (typeof s === 'string' ? (s.match(LETTER) || []).length : 0)
+const ARTICLE_TEXT_BLOCKS = new Set(['lead', 'h2', 'h3', 'p', 'quote', 'callout', 'pull', 'steps', 'list', 'outline', 'refs'])
+
+// 一章文章的字数:lead h2 h3 p quote callout pull steps list outline refs 的文字;cap、alt、code、图解里的字不计
+export function countArticleChars(article) {
+  let n = 0
+  if (!isObj(article) || !Array.isArray(article.blocks)) return 0
+  const outline = (items, depth) => { if (Array.isArray(items) && depth <= 8) for (const it of items) if (isObj(it)) { n += countText(it.x); outline(it.children, depth + 1) } }
+  for (const b of article.blocks) {
+    if (!isObj(b) || !ARTICLE_TEXT_BLOCKS.has(b.t)) continue
+    if (b.t === 'outline') { outline(b.items, 1); continue }
+    for (const k of ['x', 'o', 'tr', 'by', 'label']) n += countText(b[k])
+    if (Array.isArray(b.items)) for (const it of b.items) n += countText(it)
+  }
+  return n
+}
+
+// 一章的字数:典籍 chars = 各段 o;articleChars = 深读文章。现代书 / 文集 chars = 文章,articleChars 同值
+export function countChapterChars(kind, ch) {
+  const articleChars = countArticleChars(ch?.article)
+  if (kind === 'classic') return { chars: Array.isArray(ch?.segs) ? ch.segs.reduce((a, s) => a + countText(s?.o), 0) : 0, articleChars }
+  return { chars: articleChars, articleChars }
+}
+
+// 全书字数(App、服务端、工具共用这一条规则)。files 是书包 Map;返回 { chars, articleChars, chapters: [{no, chars, articleChars}] }
+// 读不了的章按 0 计,不抛错。
+export function countChars(files) {
+  const out = { chars: 0, articleChars: 0, chapters: [] }
+  let book
+  try { book = JSON.parse(decodeUtf8(files.get('book.json')).replace(/^\uFEFF/, '')) } catch { return out }
+  if (!isObj(book) || !Array.isArray(book.chapters)) return out
+  for (const c of book.chapters) {
+    let ch = null
+    try { if (isObj(c) && typeof c.file === 'string' && files.has(c.file)) ch = JSON.parse(decodeUtf8(files.get(c.file)).replace(/^\uFEFF/, '')) } catch { ch = null }
+    const r = countChapterChars(book.kind, ch)
+    out.chapters.push({ no: isObj(c) ? c.no : null, ...r })
+    out.chars += r.chars
+    out.articleChars += r.articleChars
+  }
+  return out
 }
 
 // 给 App / 服务端看的摘要。参数:validate() 的结果,或文件 Map(会先校验)
@@ -1134,6 +1197,7 @@ export function summarize(x) {
   return {
     id: b.id ?? null, title: b.title ?? null, kind: b.kind ?? null, revision: b.revision ?? null,
     chapters: Array.isArray(b.chapters) ? b.chapters.length : 0, chars: s.chars || 0,
+    ...(b.kind === 'classic' ? { articleChars: s.articleChars || 0 } : {}),
     mediaFiles: (s.images || 0) + (s.videos || 0), mediaBytes: s.mediaBytes || 0, totalBytes: s.totalBytes || 0,
     disclaimer: b.disclaimer ?? null, ok: !!r?.ok,
   }
@@ -1215,7 +1279,7 @@ function report(r, skipped, out) {
   for (const e of r.errors) out.push(`错误  ${formatIssue(e)}`)
   for (const w of r.warnings) out.push(`提示  ${formatIssue(w)}`)
   const s = summarize(r)
-  if (r.book) out.push(`—— 《${s.title ?? '?'}》 ${s.kind ?? '?'} · ${s.chapters} ${r.book.unit || '章'} · ${s.chars} 字 · 媒体 ${s.mediaFiles} 个 ${kb(s.mediaBytes)} · 共 ${kb(s.totalBytes)}`)
+  if (r.book) out.push(`—— 《${s.title ?? '?'}》 ${s.kind ?? '?'} · ${s.chapters} ${r.book.unit || '章'} · ${s.chars} 字${s.articleChars !== undefined ? `(另有深读 ${s.articleChars} 字)` : ''} · 媒体 ${s.mediaFiles} 个 ${kb(s.mediaBytes)} · 共 ${kb(s.totalBytes)}`)
   out.push(r.ok ? `校验通过${r.warnings.length ? `(${r.warnings.length} 条提示)` : ''}。` : `校验不通过:${r.errors.length} 个错误${r.errors.length >= LIMITS.maxReported ? '(只列前 ' + LIMITS.maxReported + ' 个)' : ''}。`)
 }
 

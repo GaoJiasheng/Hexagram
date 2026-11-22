@@ -52,7 +52,7 @@ node $SKILL/deskbook.mjs gif2mp4 <a.gif> -o <目录>/media/a.mp4   # 需 ffmpeg
 | `kind` | 是什么 | 每章必有 | 不许有 |
 |---|---|---|---|
 | `book` 现代书 | 一本书的讲解、消化,或自己写的书 | `article` | `segs` `yanyi` |
-| `collection` 文集 | 若干独立文章:科普合集、一期刊物 | `article`;`book.json` 每章宜带 `author` `date` | `segs` `yanyi` |
+| `collection` 文集 | 若干独立文章:科普合集、一期刊物 | `article`;`book.json` 每章宜带 `author` `date` `summary` | `segs` `yanyi` |
 | `classic` 典籍 | 以原文为主的书 | `segs`(原文分段);`article` 可有(章末深读) | — |
 
 ### 最小的 `book.json`
@@ -70,9 +70,10 @@ node $SKILL/deskbook.mjs gif2mp4 <a.gif> -o <目录>/media/a.mp4   # 需 ffmpeg
 }
 ```
 
-可选:`subtitle` `description`(≤ 400 字)`category`(一个词,书架按它分栏)`tags`(≤ 8)`disclaimer` `theme{accent,accent2,paper}`(#RRGGBB)`cover`(竖 2:3)`banner`(横 3:2)`parts[{title,from,to}]`(须连续覆盖全部章)`generator`。章条目可选 `subtitle` `minutes` `author` `date`(YYYY-MM-DD)`head`(章题头图)。
+可选:`subtitle` `description`(≤ 400 字)`category`(一个词,书架按它分栏)`tags`(≤ 8)`disclaimer` `theme{accent,accent2,paper}`(#RRGGBB,可只给其中几项)`cover`(建议竖 2:3)`banner`(建议横 3:2)`parts[{title,from,to}]`(须连续覆盖全部章)`generator`。章条目可选 `subtitle` `summary`(一句话说这一章,≤ 80 字、一行,目录列表里显示;文集每篇都写)`minutes` `author` `date`(YYYY-MM-DD)`head`(章题头图,建议横 3:2)。
 
-- `id`:`[a-z0-9][a-z0-9-]{2,63}`,自己做的书一律 `u-<英文短名>-<8 位十六进制>`(`init` 自动生成)。
+- `id`:必须以 `u-` 开头(自己做的,`u-<英文短名>-<8 位十六进制>`,`init` 自动生成)或 `g-`(站点管理员书房)。不带前缀的 id(`daodejing` `lunyu` 等)留给书桌内置的官方典籍,用了校验报错。
+- 章文件以 `chapters[].file` 为准,但必须写成 `chapters/` + 章号补零三位 + `.json`(校验器核)。
 - `digest` / `licensed` 必须写原书:`"source": { "type": "digest", "of": { "title": "原书名", "author": "原作者", "publisher": "出版社", "year": 2019 } }`。
 - `unit`:章的叫法,章 / 篇 / 讲 / 期 / 卦…
 
@@ -118,7 +119,7 @@ node $SKILL/deskbook.mjs gif2mp4 <a.gif> -o <目录>/media/a.mp4   # 需 ffmpeg
 | `lead` | `x` | 导语 |
 | `h2` / `h3` | `x` | 小标题(两级) |
 | `p` | `x` | 正文段 |
-| `quote` | `o?` `tr?` `x?` `by?` | 引文。典籍:`o` 原文 + `tr` 译文;其余:`x` 引的话 + `by` 出处 |
+| `quote` | `o` `tr?` 或 `x` `by?` | 引文,**两种形状取其一**:原文式 `o` + 可选译文 `tr`;一般式 `x` + 可选出处 `by`。`o` 与 `x` 不许同块,`tr` 只配 `o`、`by` 只配 `x` |
 | `callout` | `tone` `label?` `items[]` | 提示框,`tone` 为 `note` / `tip` / `warn` |
 | `pull` | `x` | 金句,**一章至多 1 处** |
 | `steps` | `items[]` | 有先后的步骤 |
@@ -131,7 +132,7 @@ node $SKILL/deskbook.mjs gif2mp4 <a.gif> -o <目录>/media/a.mp4   # 需 ffmpeg
 | `divider` | — | 分隔 |
 | `refs` | `items[]` | 文末出处、参考 |
 
-规则:每章至少一个 `p` 或 `lead`;不许空块;不许自造块类型;行内只有 `**加粗**`(必须成对)、`` `等宽` ``、`[文字](https://…)`(只许 https),别的记号按字面显示——**不要写 HTML、Markdown 标题、表格语法**,结构一律用块表达。
+规则:`img` / `video` 的 `w` `h` 必填且等于文件像素;每章至少一个 `p` 或 `lead`;不许空块;不许自造块类型;行内只有 `**加粗**`(必须成对)、`` `等宽` ``、`[文字](https://…)`(只许 https),别的记号按字面显示——**不要写 HTML、Markdown 标题、表格语法**,结构一律用块表达。
 
 ### 图解 `fig` 速查
 

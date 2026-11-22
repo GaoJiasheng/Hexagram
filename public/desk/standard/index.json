@@ -18,10 +18,10 @@
       "kind": "book",
       "revision": 1,
       "chapters": 3,
-      "chars": 1727,
+      "chars": 1395,
       "mediaFiles": 9,
       "mediaBytes": 301606,
-      "totalBytes": 314018,
+      "totalBytes": 314252,
       "disclaimer": null,
       "ok": true
     },
@@ -32,10 +32,10 @@
       "kind": "collection",
       "revision": 1,
       "chapters": 3,
-      "chars": 804,
+      "chars": 720,
       "mediaFiles": 0,
       "mediaBytes": 0,
-      "totalBytes": 4951,
+      "totalBytes": 5189,
       "disclaimer": null,
       "ok": true
     },
@@ -46,7 +46,8 @@
       "kind": "classic",
       "revision": 1,
       "chapters": 3,
-      "chars": 1043,
+      "chars": 158,
+      "articleChars": 422,
       "mediaFiles": 0,
       "mediaBytes": 0,
       "totalBytes": 18028,
@@ -60,7 +61,7 @@
       "kind": "book",
       "revision": 1,
       "chapters": 2,
-      "chars": 421,
+      "chars": 342,
       "mediaFiles": 3,
       "mediaBytes": 95550,
       "totalBytes": 99018,
@@ -71,23 +72,23 @@
   "files": [
     {
       "path": "deskbook-skill.zip",
-      "bytes": 364531,
-      "sha256": "155d4bab852d30b8f3152257e7d23820d127411f112b88b4fa1065e8ac55368a"
+      "bytes": 367339,
+      "sha256": "b25165ddfb674b38ad43782111fba38c690a08d03bf7669f2152b9d77e974541"
     },
     {
       "path": "deskbook.mjs",
-      "bytes": 78147,
-      "sha256": "c16542edea36a30bf42d6f90d3e705ac2f575178af622b7fae5efdef31abaefd"
+      "bytes": 82205,
+      "sha256": "f5d1206acdc6e2437fa48bba4e373a8e3ae4f0f68273eaaa8aee1a8eed4b1b34"
     },
     {
       "path": "index.html",
-      "bytes": 29866,
-      "sha256": "1774de448bfd3c37094fe96c3aee6c65285a236c18c5eca9e23054a5c0ae4815"
+      "bytes": 31847,
+      "sha256": "6a3c1f94bd677c9fe07b0051635a72a98d00d2f4b10c39ae0ea8e0bf19d0b26e"
     },
     {
       "path": "samples/sample-book.deskbook",
-      "bytes": 309316,
-      "sha256": "359497ece8cc8c73a4550ca6bdd9343b1aa1fbf271ae38eed840c199a1591a4d"
+      "bytes": 309426,
+      "sha256": "84729914a1368d0724b21320132e6be4b44a37ea140614d1b6518249a81ea326"
     },
     {
       "path": "samples/sample-classic.deskbook",
@@ -96,8 +97,8 @@
     },
     {
       "path": "samples/sample-collection.deskbook",
-      "bytes": 3300,
-      "sha256": "a156992c978e6b30fa791b2e4724b133e5c5cdef0bfc62ad48a791096629eea1"
+      "bytes": 3455,
+      "sha256": "f1938e78e1d7ad43a2ba740189350236aac4ca824be75fe379c104690a8e8a28"
     },
     {
       "path": "samples/sample-fitness.deskbook",
@@ -106,13 +107,13 @@
     },
     {
       "path": "schema/book.json",
-      "bytes": 4562,
-      "sha256": "fa438951d71cbdd65ddcd7a3a21886646992f37acbe48ae5d4cfff9aaf836add"
+      "bytes": 5031,
+      "sha256": "726ce3b18c4f478fe7770076f0140167cff266385da85329d3ca751e6caea5e5"
     },
     {
       "path": "schema/chapter.json",
-      "bytes": 5546,
-      "sha256": "5bb37a1201aa1b4de541dec290d7bbb99e28755f7827cbe86ce8970d72541d1f"
+      "bytes": 5807,
+      "sha256": "b10e938ecaeca4388d635f37b1225dce1bb641dba339a69bdc459ce1ff67989d"
     },
     {
       "path": "schema/fig.json",

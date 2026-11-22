@@ -4,7 +4,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
-  validate, zip, unzip, summarize, readDirectory, extractEntry, entryRange, ZipError, checkInline, checkFigShape, checkPath, readImageInfo, readMp4Info, crc32, textLen,
+  validate, zip, unzip, summarize, countChars, countText, RESERVED_IDS, readDirectory, extractEntry, entryRange, ZipError, checkInline, checkFigShape, checkPath, readImageInfo, readMp4Info, crc32, textLen,
   LIMITS, HEXAGRAM_NAMES, TRIGRAM_NAMES, DISCLAIMER_VOCAB,
 } from './deskbook-core.mjs'
 import { TABLE, TRIGRAMS } from '../lib/hexagram-table.mjs'
@@ -121,7 +121,16 @@ const BROKEN = [
   ['javascript 链接', (f) => blocks(f, [{ t: 'refs', items: ['[点](javascript:alert(1))'] }]), 'chapters/001.json', '只许 https'],
   ['list 缺 ordered', (f) => blocks(f, [{ t: 'list', items: ['一'] }]), 'chapters/001.json', 'true / false'],
   ['callout tone 不对', (f) => blocks(f, [{ t: 'callout', tone: 'danger', items: ['一'] }]), 'chapters/001.json', 'note / tip / warn'],
-  ['quote 无内容', (f) => blocks(f, [{ t: 'quote', by: '某人' }]), 'chapters/001.json', '至少要有'],
+  ['quote 无内容', (f) => blocks(f, [{ t: 'quote', by: '某人' }]), 'chapters/001.json', '须有 o'],
+  ['quote 只有 tr', (f) => blocks(f, [{ t: 'quote', tr: '译文' }]), 'chapters/001.json', '须有 o'],
+  ['quote 混用 o 与 x', (f) => blocks(f, [{ t: 'quote', o: '原文', x: '引的话' }]), 'chapters/001.json', '不许同时出现'],
+  ['quote 原文式配 by', (f) => blocks(f, [{ t: 'quote', o: '原文', by: '某书' }]), 'chapters/001.json', 'by 只配一般式'],
+  ['quote 一般式配 tr', (f) => blocks(f, [{ t: 'quote', x: '引的话', tr: '译' }]), 'chapters/001.json', 'tr 只配原文式'],
+  ['id 用了官方典籍的', (f) => edit(f, 'book.json', (b) => { b.id = 'daodejing' }), 'book.json', '内置官方典籍'],
+  ['id 不带前缀', (f) => edit(f, 'book.json', (b) => { b.id = 'my-book-12345678' }), 'book.json', '须以 u-'],
+  ['id 前缀不对', (f) => edit(f, 'book.json', (b) => { b.id = 'x-my-book' }), 'book.json', '须以 u-'],
+  ['章 summary 超 80 字', (f) => edit(f, 'book.json', (b) => { b.chapters[0].summary = '字'.repeat(81) }), 'book.json', '超过 80 字'],
+  ['章 summary 换行', (f) => edit(f, 'book.json', (b) => { b.chapters[0].summary = '一行\n两行' }), 'book.json', '只许一行'],
   ['outline 五层', (f) => blocks(f, [{ t: 'outline', items: [{ x: '1', children: [{ x: '2', children: [{ x: '3', children: [{ x: '4', children: [{ x: '5' }] }] }] }] }] }]), 'chapters/001.json', '最多 4 层'],
   ['fig cols 只一栏', (f) => blocks(f, [{ t: 'fig', fig: { kind: 'cols', cols: [{ head: '甲', lines: [] }] } }]), 'chapters/001.json', '至少 2 项'],
   ['fig kind 不认识', (f) => blocks(f, [{ t: 'fig', fig: { kind: 'pie' } }]), 'chapters/001.json', '不认识'],
@@ -206,6 +215,11 @@ describe('坏样本逐条报对', () => {
     expect(msgs(blocks(base(), [...Array.from({ length: 20 }, () => ({ t: 'quote', x: '引'.repeat(120) })), { t: 'fig', fig: { kind: 'quote', text: '引'.repeat(110) } }]))).toBe('')
     const d = edit(base(), 'book.json', (b) => { b.source = { type: 'digest', of: { title: '原书', author: '某' } } })
     expect(msgs(blocks(d, [...Array.from({ length: 14 }, () => ({ t: 'quote', x: '引一句' })), { t: 'pull', x: '金句' }, { t: 'fig', fig: { kind: 'quote', text: '卡' } }]))).toBe('')
+  })
+  it('theme 可只给一项', () => { expect(msgs(edit(base(), 'book.json', (b) => { b.theme = { paper: '#FFFFFF' } }))).toBe('') })
+  it('g- 前缀(书房)合法;保留 id 表只在一处', () => {
+    expect(msgs(edit(base(), 'book.json', (b) => { b.id = 'g-neijing-daodu' }))).toBe('')
+    expect(RESERVED_IDS).toEqual(expect.arrayContaining(['daodejing', 'lunyu', 'sunzi', 'guiguzi', 'zhuangzi', 'yijing']))
   })
   it('词表只在一处、中英都有', () => {
     for (const d of Object.values(DISCLAIMER_VOCAB)) { expect(d.zh.length).toBeGreaterThan(10); expect(d.en.length).toBeGreaterThan(5) }
@@ -383,6 +397,14 @@ describe('JSON Schema 与校验器一致', () => {
     expect(bySchema('book.json', { ...J(sample('sample-book'), 'book.json'), id: 'Bad' })).not.toEqual([])
     expect(bySchema('book.json', { ...J(sample('sample-book'), 'book.json'), disclaimer: ['medical', '自写一句'] })).toEqual([])
     expect(bySchema('book.json', { ...J(sample('sample-book'), 'book.json'), disclaimer: [] })).not.toEqual([])
+    expect(bySchema('book.json', { ...J(sample('sample-book'), 'book.json'), id: 'daodejing' })).not.toEqual([])
+    expect(bySchema('book.json', { ...J(sample('sample-book'), 'book.json'), id: 'my-book' })).not.toEqual([])
+    expect(bySchema('chapter.json', ch([{ t: 'quote', o: '原文', x: '引' }]))).not.toEqual([])
+    expect(bySchema('chapter.json', ch([{ t: 'quote', x: '引', tr: '译' }]))).not.toEqual([])
+    expect(bySchema('chapter.json', ch([{ t: 'quote', o: '原文', tr: '译' }, { t: 'quote', x: '引', by: '某' }]))).toEqual([])
+    const sm = J(sample('sample-collection'), 'book.json')
+    sm.chapters[0].summary = '一\n二'
+    expect(bySchema('book.json', sm)).not.toEqual([])
   })
   it('schema 里的上限与 LIMITS 相同', () => {
     const b = schemas['book.json'].properties
@@ -391,6 +413,7 @@ describe('JSON Schema 与校验器一致', () => {
     expect(b.disclaimer['x-deskbook-maxChars']).toBe(LIMITS.disclaimer)
     expect(b.tags.maxItems).toBe(LIMITS.tags)
     expect(b.chapters.maxItems).toBe(LIMITS.chapters)
+    expect(b.chapters.items.properties.summary['x-deskbook-maxChars']).toBe(LIMITS.chapterSummary)
     const n = schemas['chapter.json'].properties.segs.items.properties.n.items.properties
     expect(n.d['x-deskbook-maxChars']).toBe(LIMITS.noteD)
     expect(n.x['x-deskbook-maxChars']).toBe(LIMITS.noteXMax)
@@ -441,5 +464,45 @@ describe('按范围读取:readDirectory + extractEntry', () => {
   it('readDirectory 与 unzip 同样拒绝不合规的路径', async () => {
     const z = await zip(new Map([['book.json', enc.encode('{}')], ['../x.json', enc.encode('x')]]))
     expect(() => readDirectory(z, z.length)).toThrow(/路径不合规/)
+  })
+})
+
+describe('字数(标准 §3「字数怎么数」)', () => {
+  it('只数 \\p{L} \\p{N}:不数标点、空白、记号', () => {
+    expect(countText('道可道，非常道。 **Ab** 12!')).toBe(10)
+  })
+  it('现代书:只数正文类块;cap、alt、code、图解里的字不计', () => {
+    const f = blocks(base(), [
+      { t: 'h2', x: '小题' }, { t: 'quote', x: '引一句', by: '某' }, { t: 'callout', tone: 'note', label: '签', items: ['提示'] },
+      { t: 'outline', items: [{ x: '甲', children: [{ x: '乙' }] }] }, { t: 'refs', items: ['出处'] },
+      { t: 'code', x: 'abcdef' }, { t: 'fig', cap: '图注', fig: { kind: 'notes', lines: ['图里的字'] } },
+    ])
+    // 正文 2 + 小题 2 + 引一句某 4 + 签提示 3 + 甲乙 2 + 出处 2 = 15
+    const r = countChars(f)
+    expect(r.chars).toBe(15)
+    expect(r.chapters).toEqual([{ no: 1, chars: 15, articleChars: 15 }])
+    expect(validate(f).stats.chars).toBe(15)
+  })
+  it('典籍:chars 只数原文 o,深读另计 articleChars;summarize 都报', () => {
+    const f = base('classic') // o = 道可道，非常道。 → 6;文章 导语。正文。 → 4
+    expect(countChars(f)).toMatchObject({ chars: 6, articleChars: 4 })
+    expect(summarize(f)).toMatchObject({ chars: 6, articleChars: 4 })
+    expect(summarize(base())).not.toHaveProperty('articleChars')
+  })
+  it('示例书包的字数与 summarize 一致', () => {
+    for (const n of ['sample-book', 'sample-classic']) {
+      const f = sample(n)
+      expect(summarize(f).chars).toBe(countChars(f).chars)
+      expect(countChars(f).chars).toBeGreaterThan(100)
+    }
+  })
+})
+
+describe('中央目录上限', () => {
+  it('EOCD 记载的中央目录超过 16 MB 即拒绝(unzip 与 readDirectory)', async () => {
+    const z = await zip(new Map([['book.json', enc.encode('{}')]]))
+    new DataView(z.buffer).setUint32(z.length - 22 + 12, LIMITS.centralDirBytes + 1, true)
+    await expect(unzip(z)).rejects.toThrow(/中央目录.*超过上限/)
+    expect(() => readDirectory(z, z.length)).toThrow(/中央目录.*超过上限/)
   })
 })

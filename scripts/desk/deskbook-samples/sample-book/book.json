@@ -22,9 +22,9 @@
     { "title": "量", "from": 3, "to": 3 }
   ],
   "chapters": [
-    { "no": 1, "file": "chapters/001.json", "title": "是什么把球拉回来", "subtitle": "单摆的受力", "minutes": 5, "head": "media/head-001.jpg" },
-    { "no": 2, "file": "chapters/002.json", "title": "周期只看摆长", "subtitle": "一条公式和它的边界", "minutes": 6 },
-    { "no": 3, "file": "chapters/003.json", "title": "在家量一次重力加速度", "subtitle": "一根线、一块表", "minutes": 6 }
+    { "no": 1, "file": "chapters/001.json", "title": "是什么把球拉回来", "summary": "重力沿弧线的那一份分力总指向最低点,球于是来回摆动。", "subtitle": "单摆的受力", "minutes": 5, "head": "media/head-001.jpg" },
+    { "no": 2, "file": "chapters/002.json", "title": "周期只看摆长", "summary": "摆角不大时,周期只由摆长和重力加速度决定。", "subtitle": "一条公式和它的边界", "minutes": 6 },
+    { "no": 3, "file": "chapters/003.json", "title": "在家量一次重力加速度", "summary": "一根线、一块表,把周期公式倒过来用。", "subtitle": "一根线、一块表", "minutes": 6 }
   ],
   "generator": "deskbook-skill 1.0"
 }
