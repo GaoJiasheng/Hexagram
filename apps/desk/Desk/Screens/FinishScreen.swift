@@ -15,13 +15,16 @@ struct FinishScreen: View {
     let stats: FinishStats
     @Environment(\.dismiss) private var dismiss
     @State private var stage = 0
+    @Environment(\.horizontalSizeClass) private var hSize
+    private var pad: Bool { hSize == .regular }
+    private var k: CGFloat { pad ? 1.45 : 1 }
 
     var body: some View {
         ZStack {
             book.theme.paperColor.ignoresSafeArea()
             GeometryReader { geo in
                 BookArt(book: book, kind: .banner)
-                    .frame(width: geo.size.width, height: geo.size.height * 0.48)
+                    .frame(width: geo.size.width, height: geo.size.height * (pad ? 0.56 : 0.48))
                     .clipped()
                     .mask(LinearGradient(colors: [.black, .black, .clear], startPoint: .top, endPoint: .bottom))
                     .scaleEffect(stage >= 1 ? 1 : 1.12, anchor: .top)
@@ -30,23 +33,23 @@ struct FinishScreen: View {
             .ignoresSafeArea()
 
             VStack(spacing: 0) {
-                Spacer().frame(minHeight: 150)
+                Spacer().frame(minHeight: pad ? 260 : 150)
                 ZStack(alignment: .topTrailing) {
-                    VStack(spacing: 10) {
-                        Text("学完了").font(.system(size: 14, weight: .semibold)).kerning(6).foregroundStyle(book.theme.accentColor)
-                        Text(book.title).font(Fonts.song(46, bold: true)).foregroundStyle(Ink.text)
-                        Text("\(book.sizeLabel) · \(book.chars) 字").font(.system(size: 14)).foregroundStyle(Ink.soft)
+                    VStack(spacing: 10 * k) {
+                        Text("学完了").font(.system(size: 14 * k, weight: .semibold)).kerning(6).foregroundStyle(book.theme.accentColor)
+                        Text(book.title).font(Fonts.song(pad ? 68 : 46, bold: true)).foregroundStyle(Ink.text)
+                        Text("\(book.sizeLabel) · \(book.chars) 字").font(.system(size: 14 * k)).foregroundStyle(Ink.soft)
                     }
-                    .padding(.horizontal, 54)
+                    .padding(.horizontal, pad ? 110 : 54)
                     .opacity(stage >= 2 ? 1 : 0)
                     .offset(y: stage >= 2 ? 0 : 14)
 
                     Seal(text: "学完")
-                        .frame(width: 66, height: 66)
+                        .frame(width: pad ? 96 : 66, height: pad ? 96 : 66)
                         .rotationEffect(.degrees(-9))
                         .scaleEffect(stage >= 3 ? 1 : 2.4)
                         .opacity(stage >= 3 ? 1 : 0)
-                        .offset(x: 12, y: -18)
+                        .offset(x: pad ? 6 : 12, y: pad ? -26 : -18)
                 }
 
                 HStack(spacing: 0) {
@@ -55,25 +58,25 @@ struct FinishScreen: View {
                     bill("\(stats.chars)", "字")
                     bill("\(stats.marks)", "处划线")
                 }
-                .padding(.vertical, 22)
-                .background(Ink.card, in: RoundedRectangle(cornerRadius: 22))
+                .padding(.vertical, 22 * k)
+                .background(Ink.card, in: RoundedRectangle(cornerRadius: 22 * k))
                 .shadow(color: .black.opacity(0.06), radius: 18, y: 8)
                 .padding(.horizontal, 24)
-                .padding(.top, 36)
+                .padding(.top, 36 * k)
                 .opacity(stage >= 4 ? 1 : 0)
                 .offset(y: stage >= 4 ? 0 : 20)
 
-                Text("示例数字").font(.system(size: 11)).foregroundStyle(Ink.faint).padding(.top, 8).opacity(stage >= 4 ? 1 : 0)
+                Text("示例数字").font(.system(size: 11 * k)).foregroundStyle(Ink.faint).padding(.top, 8).opacity(stage >= 4 ? 1 : 0)
 
                 Spacer()
                 Button { dismiss() } label: {
-                    Text("回到书桌").font(Fonts.song(18, bold: true)).frame(maxWidth: 360).padding(.vertical, 16)
-                        .background(book.theme.accentColor, in: RoundedRectangle(cornerRadius: 16)).foregroundStyle(.white)
+                    Text("回到书桌").font(Fonts.song(18 * k, bold: true)).frame(maxWidth: pad ? 420 : 360).padding(.vertical, 16 * k)
+                        .background(book.theme.accentColor, in: RoundedRectangle(cornerRadius: 16 * k)).foregroundStyle(.white)
                 }
                 .padding(.horizontal, 24).padding(.bottom, 28)
                 .opacity(stage >= 4 ? 1 : 0)
             }
-            .frame(maxWidth: 560)
+            .frame(maxWidth: pad ? 640 : 560)
         }
         .task {
             withAnimation(.easeOut(duration: 0.9)) { stage = 1 }
@@ -89,9 +92,9 @@ struct FinishScreen: View {
     }
 
     private func bill(_ value: String, _ label: String) -> some View {
-        VStack(spacing: 4) {
-            Text(value).font(Fonts.num(24)).foregroundStyle(Ink.text).contentTransition(.numericText())
-            Text(label).font(.system(size: 12)).foregroundStyle(Ink.soft)
+        VStack(spacing: 4 * k) {
+            Text(value).font(Fonts.num(pad ? 34 : 24)).foregroundStyle(Ink.text).contentTransition(.numericText())
+            Text(label).font(.system(size: 12 * k)).foregroundStyle(Ink.soft)
         }
         .frame(maxWidth: .infinity)
     }
