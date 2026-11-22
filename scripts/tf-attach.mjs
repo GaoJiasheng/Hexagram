@@ -7,7 +7,8 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
-const BUNDLE_ID = 'pub.gavin.hexa'
+// BUNDLE_ID 环境变量可换成别的 App(观象 · 书桌:BUNDLE_ID=pub.gavin.hexa.desk,此时构建号必须由命令行给)
+const BUNDLE_ID = process.env.BUNDLE_ID || 'pub.gavin.hexa'
 const env = fs.readFileSync(path.join(ROOT, '.ios-ship.env'), 'utf8')
 const get = (k) => (env.match(new RegExp(`^${k}=(.*)$`, 'm')) || [])[1]?.trim()
 const KID = get('ASC_KEY_ID'), ISS = get('ASC_ISSUER_ID')
@@ -15,6 +16,7 @@ const PEM = fs.readFileSync(`${process.env.HOME}/.appstoreconnect/private_keys/A
 
 // 目标 build 号:命令行参数,或从 pbxproj 读首个 CURRENT_PROJECT_VERSION
 const want = process.argv[2]
+  || (process.env.BUNDLE_ID ? (console.error('指定了 BUNDLE_ID 时要给构建号'), process.exit(1)) : null)
   || (fs.readFileSync(path.join(ROOT, 'ios/App/App.xcodeproj/project.pbxproj'), 'utf8').match(/CURRENT_PROJECT_VERSION = (\d+)/) || [])[1]
 
 const b64 = (b) => Buffer.from(b).toString('base64url')
