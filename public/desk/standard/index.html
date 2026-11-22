@@ -62,18 +62,19 @@ footer { margin-top: 56px; color: var(--soft); font-size: 14px; }
 
 <h2 id="download">下载</h2>
 <ul class="dl">
-<li><a href="deskbook-skill.zip" download>deskbook-skill.zip</a><span class="sz">359 KB</span><div class="note">做书用的 Claude Code skill。解压到 ~/.claude/skills/(得到 deskbook/ 目录),在任意会话里说「做一本书包」即可。内含标准、校验器、结构定义与两本示例。</div></li>
-<li><a href="deskbook.mjs" download>deskbook.mjs</a><span class="sz">80 KB</span><div class="note">校验器与打包工具:单文件、无依赖,Node 18 以上。init / validate / pack / unpack / gif2mp4。</div></li>
+<li><a href="deskbook-skill.zip" download>deskbook-skill.zip</a><span class="sz">363 KB</span><div class="note">做书用的 Claude Code skill。解压到 ~/.claude/skills/(得到 deskbook/ 目录),在任意会话里说「做一本书包」即可。内含标准、校验器、结构定义与两本示例。</div></li>
+<li><a href="deskbook.mjs" download>deskbook.mjs</a><span class="sz">84 KB</span><div class="note">校验器与打包工具:单文件、无依赖,Node 18 以上。init / validate / pack / unpack / gif2mp4。</div></li>
 <li><a href="schema/book.json" download>schema/book.json</a><span class="sz">5 KB</span><div class="note">book.json 的 JSON Schema(2020-12)。</div></li>
 <li><a href="schema/chapter.json" download>schema/chapter.json</a><span class="sz">6 KB</span><div class="note">章文件的 JSON Schema。</div></li>
 <li><a href="schema/fig.json" download>schema/fig.json</a><span class="sz">4 KB</span><div class="note">图解 fig 的 JSON Schema。</div></li>
-<li><a href="samples/sample-book.deskbook" download>sample-book.deskbook</a><span class="sz">302 KB</span><div class="note">现代书:单摆三章,用到全部块类型,带图片与两段动画。</div></li>
+<li><a href="schema/mindmap.json" download>schema/mindmap.json</a><span class="sz">3 KB</span><div class="note">全书脑图 mindmap.json 的 JSON Schema。</div></li>
+<li><a href="samples/sample-book.deskbook" download>sample-book.deskbook</a><span class="sz">303 KB</span><div class="note">现代书:单摆三章,用到全部块类型,带图片、两段动画与全书脑图。</div></li>
 <li><a href="samples/sample-collection.deskbook" download>sample-collection.deskbook</a><span class="sz">3 KB</span><div class="note">文集:三篇独立短文,各有作者与日期。</div></li>
 <li><a href="samples/sample-classic.deskbook" download>sample-classic.deskbook</a><span class="sz">7 KB</span><div class="note">典籍:《道德经》三章,原文、译文、字词注与章末深读。</div></li>
 <li><a href="samples/sample-fitness.deskbook" download>sample-fitness.deskbook</a><span class="sz">96 KB</span><div class="note">现代书 · 健身:带医学声明(disclaimer: medical)与一段动作视频。</div></li>
 </ul>
 
-<nav class="toc"><p>标准目录:<a href="#s1">0 · 三种体裁,一个格式</a><a href="#s2">1 · 书包的样子</a><a href="#s3">2 · book.json</a><a href="#s4">3 · 章文件</a><a href="#s5">4 · 媒体</a><a href="#s6">5 · 文字口径(做书的人要守的)</a><a href="#s7">6 · 红线与声明</a><a href="#s8">7 · 工具</a><a href="#s9">8 · 书怎么到书桌上</a><a href="#s10">9 · 版本</a><a href="#s11">附录 A · 图解 fig 的字段</a></p></nav>
+<nav class="toc"><p>标准目录:<a href="#s1">0 · 三种体裁,一个格式</a><a href="#s2">1 · 书包的样子</a><a href="#s3">2 · book.json</a><a href="#s4">3 · 章文件</a><a href="#s5">4 · 媒体</a><a href="#s6">5 · 文字口径(做书的人要守的)</a><a href="#s7">6 · 红线与声明</a><a href="#s8">7 · 工具</a><a href="#s9">8 · 书怎么到书桌上</a><a href="#s10">9 · 版本</a><a href="#s11">10 · 全书脑图(mindmap.json)</a><a href="#s12">附录 A · 图解 fig 的字段</a></p></nav>
 
 <h2 id="standard">标准全文</h2>
 <blockquote><p>「观象 · 书桌」读的每一本书,都是一个<strong>书包</strong>:一个 <code>.deskbook</code> 文件。</p><p>本标准公开:任何人都可以照它做一本书,导进自己的书桌。<strong>导入的书只存在自己的设备上,不上传、不收集。</strong></p><p>实现与约定以本文件为准;机器可读的结构定义在 <code>public/desk/standard/schema/</code>,校验器 <code>deskbook.mjs</code>(单文件、无依赖)。</p></blockquote>
@@ -83,10 +84,11 @@ footer { margin-top: 56px; color: var(--soft); font-size: 14px; }
 <h2 id="s2">1 · 书包的样子</h2>
 <p><code>.deskbook</code> 是一个 zip(存储或 deflate,不加密,不嵌套 zip),解开后:</p>
 <pre><code>book.json            书目清单(必有)
+mindmap.json         全书脑图(可无,见 §10)
 chapters/001.json    每章一个文件,文件名 = 章号补零到三位
 chapters/002.json
 media/…              图片、视频、封面(可无)</code></pre>
-<ul><li>路径一律用 <code>/</code>,只许小写字母、数字、<code>-</code>、<code>_</code>、<code>.</code>;不许 <code>..</code>、绝对路径、隐藏文件。</li><li>只认上面三类内容。<strong>不收任何可执行内容</strong>:HTML、JS、CSS、SVG、字体、脚本一概不收;文字里的尖括号按字面显示。</li><li><code>media/</code> 下可以再分子目录(如 <code>media/ch01/a.png</code>)。</li><li>上限:整包 ≤ 300 MB;<code>book.json</code> ≤ 2 MB;章文件 ≤ 2 MB;图片 ≤ 4 MB;视频 ≤ 24 MB;章数 ≤ 2000;zip 条目 ≤ 10000;zip 中央目录 ≤ 16 MB;路径 ≤ 255 字符。</li></ul>
+<ul><li>路径一律用 <code>/</code>,只许小写字母、数字、<code>-</code>、<code>_</code>、<code>.</code>;不许 <code>..</code>、绝对路径、隐藏文件。</li><li>只认上面这几样。<strong>不收任何可执行内容</strong>:HTML、JS、CSS、SVG、字体、脚本一概不收;文字里的尖括号按字面显示。</li><li><code>media/</code> 下可以再分子目录(如 <code>media/ch01/a.png</code>)。</li><li>上限:整包 ≤ 300 MB;<code>book.json</code> ≤ 2 MB;章文件 ≤ 2 MB;图片 ≤ 4 MB;视频 ≤ 24 MB;章数 ≤ 2000;zip 条目 ≤ 10000;zip 中央目录 ≤ 16 MB;路径 ≤ 255 字符;<code>mindmap.json</code> ≤ 1 MB、≤ 600 个节点。</li></ul>
 <h2 id="s3">2 · book.json</h2>
 <pre><code>{
   &quot;format&quot;: &quot;deskbook&quot;,
@@ -118,6 +120,7 @@ media/…              图片、视频、封面(可无)</code></pre>
       &quot;summary&quot;: &quot;一句话说这一章(≤ 80 字,一行,可无;列表里显示)&quot;,
       &quot;author&quot;: &quot;可无(文集用)&quot;, &quot;date&quot;: &quot;2026-10-03&quot;, &quot;head&quot;: &quot;media/head-001.jpg&quot; }
   ],
+  &quot;mindmap&quot;: &quot;mindmap.json&quot;,              // 可无;有全书脑图时写,路径固定。见 §10
   &quot;generator&quot;: &quot;deskbook-skill 1.0&quot;       // 可无
 }</code></pre>
 <ul><li><strong>id</strong>:<code>[a-z0-9][a-z0-9-]{2,63}</code>,且书包里的 id 必须带前缀:任何人自己做的 <code>u-&lt;名&gt;-&lt;8 位随机十六进制&gt;</code>,站点管理员书房的 <code>g-&lt;名&gt;</code>。<strong>不带前缀的 id 留给书桌内置的官方典籍</strong>(<code>daodejing</code> <code>lunyu</code> <code>sunzi</code> <code>guiguzi</code> <code>zhuangzi</code> <code>yijing</code>…),书包用了校验器报错。同一本书重出<strong>不换 id</strong>,只加 <code>revision</code>——阅读进度、划线按 id 记。</li><li><code>chapters[].no</code> 从 1 连续;<code>file</code> 必须存在;<code>minutes</code> 可无(书桌按字数估)。</li><li>章文件以 <code>chapters[].file</code> 为准(书桌按它打开);它必须按约定写成 <code>chapters/</code> + 章号补零到三位 + <code>.json</code>,校验器核这条约定,不合即报错。</li><li><code>chapters[].summary</code> 可无,≤ 80 字、一行(不含换行);文集宜每篇都写,书桌列目录时不必打开每个章文件。</li><li><code>head</code>(章题头图)与 <code>banner</code> 建议横版 3:2,<code>cover</code> 建议竖版 2:3;比例偏差超过 5% 校验器提示(不报错)。</li><li><code>theme</code> 的 <code>accent</code> <code>accent2</code> <code>paper</code> 可以只给其中几项,缺的用书桌默认色。</li></ul>
@@ -165,7 +168,12 @@ node deskbook.mjs gif2mp4 &lt;a.gif&gt; [-o media/a.mp4]         # 动图转视�
 <ul><li>自己导入的书可以再原样分享出去(还是一个 <code>.deskbook</code>);划线与批注可以导出成 Markdown。</li><li>阅读进度、时长、划线照常跟账号同步(按书的 <code>id</code>),书本身不同步:换一台设备要再导入一次。</li><li>书桌里「我的 → 自定义导入」是这份标准的入口:讲三步怎么做、给标准与工具的下载、导入按钮。</li></ul>
 <h2 id="s10">9 · 版本</h2>
 <ul><li><code>version: 1</code>。以后只加不改:加字段、加块类型、加 <code>fig</code> 的 kind;书桌遇到比自己新的 <code>version</code> 会提示升级 App,而不是硬读。</li><li>本标准、结构定义、校验器、做书用的 skill 都公开在 <code>https://hexa.gavin.pub/desk/standard/</code>。</li></ul>
-<h2 id="s11">附录 A · 图解 fig 的字段</h2>
+<h2 id="s11">10 · 全书脑图(mindmap.json)</h2>
+<p>一棵<strong>能展开全书思想的树</strong>:根是全书的中心,往下一层层分出论点、论据、例子。它不是目录——目录书桌自己会排;节点可以是整句话。任何 <code>kind</code> 都可以有,一本书至多一份。</p>
+<pre><code>{ &quot;root&quot;: { &quot;label&quot;: &quot;第二座山&quot;, &quot;note&quot;: &quot;可无:一句到一段展开&quot;, &quot;ch&quot;: 1,
+            &quot;children&quot;: [ { &quot;label&quot;: &quot;…&quot;, &quot;note&quot;: &quot;…&quot;, &quot;ch&quot;: 2, &quot;children&quot;: [ … ] } ] } }</code></pre>
+<ul><li>文件只许在包的根上、名字就叫 <code>mindmap.json</code>;<code>book.json</code> 里写 <code>&quot;mindmap&quot;: &quot;mindmap.json&quot;</code>,读的人不用翻 zip 就知道有没有。</li><li>节点只有四个字段:<code>label</code>(必有,一行,≤ 60 字)、<code>note</code>(可无,≤ 1500 字,点开展开)、<code>ch</code>(可无)、<code>children</code>(可无,非空数组)。没有 id:节点在树里的位置就是它的身份。</li><li><code>ch</code> 是本书的章号(须存在),只挂在与某一章对应的节点上;点这个节点,书桌会问要不要打开那一章。</li><li>连根至多 5 层;全树 ≤ 600 个节点;文件 ≤ 1 MB。文字的行内记号同 §3。</li><li>脑图里的字不计入全书字数(§3「字数怎么数」)。</li><li>文章里的多级提纲仍用 <code>outline</code> 块;脑图是整本书一份,不放在章里。</li></ul>
+<h2 id="s12">附录 A · 图解 fig 的字段</h2>
 <blockquote><p>摘自 <code>docs/desk-baihua-spec.md</code> §2(书桌白话图解的格式,本标准的 <code>fig</code> 块原样沿用;机器可读版见 <code>schema/fig.json</code>)。</p><p>那份说明写的是「把站内的 SVG 图转成结构化数据」,文中的「原图」指转换的来源图;自己做书时,理解成「你想画的那张图」即可。</p><p>书包里不放 SVG;那边「与 SVG 字字相等」的闸不适用于书包,其余两条(结构合法、单个字符串 ≤ 120 字)由校验器照核。</p></blockquote>
 <h3>公共字段</h3>
 <ul><li><code>kind</code>:下列十种之一。</li><li><code>title?</code>:图题(图里最上面那行大字)。</li><li><code>foot?</code>:<code>[字符串]</code>,图最下面的总结 / 说明行,一行一项。</li><li>任何「条目」都可带 <code>accent: true</code>——原图里用朱色强调的那一条。</li></ul>

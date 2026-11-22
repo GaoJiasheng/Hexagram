@@ -21,8 +21,9 @@
       "chars": 1395,
       "mediaFiles": 9,
       "mediaBytes": 301606,
-      "totalBytes": 314252,
+      "totalBytes": 316408,
       "disclaimer": null,
+      "mindmapNodes": 16,
       "ok": true
     },
     {
@@ -37,6 +38,7 @@
       "mediaBytes": 0,
       "totalBytes": 5189,
       "disclaimer": null,
+      "mindmapNodes": 0,
       "ok": true
     },
     {
@@ -52,6 +54,7 @@
       "mediaBytes": 0,
       "totalBytes": 18028,
       "disclaimer": null,
+      "mindmapNodes": 0,
       "ok": true
     },
     {
@@ -66,29 +69,30 @@
       "mediaBytes": 95550,
       "totalBytes": 99018,
       "disclaimer": "medical",
+      "mindmapNodes": 0,
       "ok": true
     }
   ],
   "files": [
     {
       "path": "deskbook-skill.zip",
-      "bytes": 367339,
-      "sha256": "b25165ddfb674b38ad43782111fba38c690a08d03bf7669f2152b9d77e974541"
+      "bytes": 371688,
+      "sha256": "588798eef229cc331c319fd973a0b7d2f63d07c230692d1d4c6f1c1629047cf4"
     },
     {
       "path": "deskbook.mjs",
-      "bytes": 82205,
-      "sha256": "f5d1206acdc6e2437fa48bba4e373a8e3ae4f0f68273eaaa8aee1a8eed4b1b34"
+      "bytes": 85562,
+      "sha256": "3c4a33636f51bb29e3a92928ce75d83a82f1a155f47f1044adf781e5f03c50a5"
     },
     {
       "path": "index.html",
-      "bytes": 31847,
-      "sha256": "6a3c1f94bd677c9fe07b0051635a72a98d00d2f4b10c39ae0ea8e0bf19d0b26e"
+      "bytes": 33869,
+      "sha256": "ccb5225d729397ae86d77222249d566f6ea38b0f280eee0f9a5a076a3cb23258"
     },
     {
       "path": "samples/sample-book.deskbook",
-      "bytes": 309426,
-      "sha256": "84729914a1368d0724b21320132e6be4b44a37ea140614d1b6518249a81ea326"
+      "bytes": 310547,
+      "sha256": "347f3fd7bd8d591dd38c6d35dbcf4bc6c63878e11f083c35613b3873a96ffb1d"
     },
     {
       "path": "samples/sample-classic.deskbook",
@@ -107,8 +111,8 @@
     },
     {
       "path": "schema/book.json",
-      "bytes": 5031,
-      "sha256": "726ce3b18c4f478fe7770076f0140167cff266385da85329d3ca751e6caea5e5"
+      "bytes": 5143,
+      "sha256": "19e2ac1a65bf17e23cc9e18920ccc8f8b4d8d0c61d41a37fbce1727adfda675f"
     },
     {
       "path": "schema/chapter.json",
@@ -119,6 +123,11 @@
       "path": "schema/fig.json",
       "bytes": 4194,
       "sha256": "c661d31d86d9ccb16447b68a368fd2bfdaa092cd83076ea50feb2a6436ef99b1"
+    },
+    {
+      "path": "schema/mindmap.json",
+      "bytes": 3561,
+      "sha256": "d173ecbfc422f249c96b4b01a6dd226a9f64100900504348414689b2094ba4e0"
     }
   ]
 }

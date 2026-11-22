@@ -334,7 +334,7 @@ describe('zip', () => {
 })
 
 // ── 结构定义:用一个极小的 JSON Schema 检查器核示例书包都满足 schema,坏样本不满足 ──
-const schemas = Object.fromEntries(['book', 'chapter', 'fig'].map((n) => [`${n}.json`, JSON.parse(fs.readFileSync(path.join(SCHEMA, `${n}.json`), 'utf8'))]))
+const schemas = Object.fromEntries(['book', 'chapter', 'fig', 'mindmap'].map((n) => [`${n}.json`, JSON.parse(fs.readFileSync(path.join(SCHEMA, `${n}.json`), 'utf8'))]))
 function schemaCheck(s, v, doc, at = '$', out = []) {
   if (s === true || s === undefined) return out
   if (s === false) { out.push(`${at}: false`); return out }
@@ -384,6 +384,7 @@ describe('JSON Schema 与校验器一致', () => {
     it(`${name} 满足 book / chapter / fig 三份 schema`, () => {
       const f = sample(name)
       expect(bySchema('book.json', J(f, 'book.json'))).toEqual([])
+      if (f.has('mindmap.json')) expect(bySchema('mindmap.json', J(f, 'mindmap.json'))).toEqual([])
       for (const p of f.keys()) if (p.startsWith('chapters/')) expect(bySchema('chapter.json', J(f, p)), p).toEqual([])
     })
   }
@@ -506,3 +507,53 @@ describe('中央目录上限', () => {
     expect(() => readDirectory(z, z.length)).toThrow(/中央目录.*超过上限/)
   })
 })
+
+describe('全书脑图(§10)', () => {
+  const mm = (root, f = base()) => { edit(f, 'book.json', (b) => { b.mindmap = 'mindmap.json' }); return put(f, 'mindmap.json', { root }) }
+  const deep = (n) => (n === 1 ? { label: `第${n}层` } : { label: `第${n}层`, children: [deep(n - 1)] })
+  it('sample-book 的脑图:16 个节点,ch 指向存在的章;summarize 报节点数;不计入字数', () => {
+    const f = sample('sample-book')
+    const s = summarize(f)
+    expect(s.mindmapNodes).toBe(16)
+    const g = new Map(f); g.delete('mindmap.json'); edit(g, 'book.json', (b) => { delete b.mindmap })
+    expect(countChars(g).chars).toBe(countChars(f).chars)
+    expect(summarize(g).mindmapNodes).toBe(0)
+  })
+  it('合法的最小脑图', () => { expect(msgs(mm({ label: '中心', ch: 1, children: [{ label: '一支', note: '展开' }] }))).toBe('') })
+  const BAD = [
+    ['book.json 写了但包里没有', (f) => edit(f, 'book.json', (b) => { b.mindmap = 'mindmap.json' }), 'book.json', '不在包里'],
+    ['包里有但 book.json 没写', (f) => put(f, 'mindmap.json', { root: { label: '中心' } }), 'mindmap.json', '没写'],
+    ['mindmap 字段写了别的路径', (f) => edit(put(f, 'mindmap.json', { root: { label: '中心' } }), 'book.json', (b) => { b.mindmap = 'media/m.json' }), 'book.json', '路径固定'],
+    ['放在子目录里', (f) => f.set('chapters/mindmap.json', enc.encode('{}')) && f, 'chapters/mindmap.json', '章文件名'],
+    ['缺 root', (f) => edit(put(f, 'mindmap.json', { label: '中心' }), 'book.json', (b) => { b.mindmap = 'mindmap.json' }), 'mindmap.json', '顶层应为'],
+    ['节点缺 label', (f) => mm({ label: '中心', children: [{ note: '只有展开' }] }, f), 'mindmap.json', '缺 label'],
+    ['label 超 60 字', (f) => mm({ label: '字'.repeat(61) }, f), 'mindmap.json', '超过 60 字'],
+    ['label 换行', (f) => mm({ label: '一\n二' }, f), 'mindmap.json', '只许一行'],
+    ['note 超长', (f) => mm({ label: '中心', note: '字'.repeat(1501) }, f), 'mindmap.json', '超过 1500 字'],
+    ['ch 不存在', (f) => mm({ label: '中心', children: [{ label: '一', ch: 9 }] }, f), 'mindmap.json', '章号'],
+    ['多余字段 id', (f) => mm({ label: '中心', id: 'root' }, f), 'mindmap.json', '没有「id」'],
+    ['空 children', (f) => mm({ label: '中心', children: [] }, f), 'mindmap.json', '非空数组'],
+    ['六层', (f) => mm(deep(6), f), 'mindmap.json', '至多 5 层'],
+    ['** 不成对', (f) => mm({ label: '中心', note: '**半边' }, f), 'mindmap.json', '不成对'],
+    ['节点太多', (f) => mm({ label: '中心', children: Array.from({ length: 600 }, (_, i) => ({ label: `支${i}` })) }, f), 'mindmap.json', '超过 600 个'],
+  ]
+  for (const [name, make, file, word] of BAD) {
+    it(name, () => {
+      const r = validate(make(base()))
+      expect(r.errors.find((e) => e.file === file && e.msg.includes(word)), r.errors.map(formatIssueLine).join('\n')).toBeTruthy()
+    })
+  }
+  it('错误指到节点路径', () => {
+    const r = validate(mm({ label: '中心', children: [{ label: '一' }, { label: '二' }, { label: '三', children: [{ label: '', note: 'x' }] }] }))
+    expect(r.errors[0]).toMatchObject({ file: 'mindmap.json', where: 'root.children[2].children[0].label' })
+  })
+  it('五层正好通过;schema 拦六层与多余字段', () => {
+    expect(msgs(mm(deep(5)))).toBe('')
+    expect(bySchema('mindmap.json', { root: deep(5) })).toEqual([])
+    expect(bySchema('mindmap.json', { root: deep(6) })).not.toEqual([])
+    expect(bySchema('mindmap.json', { root: { label: '中心', id: 'x' } })).not.toEqual([])
+    expect(schemas['mindmap.json'].$defs.label['x-deskbook-maxChars']).toBe(LIMITS.mindmapLabel)
+    expect(schemas['mindmap.json'].$defs.note['x-deskbook-maxChars']).toBe(LIMITS.mindmapNote)
+  })
+})
+const formatIssueLine = (e) => `${e.file}|${e.where}|${e.msg}`

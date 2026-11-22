@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hexa.gavin.pub/desk/standard/schema/mindmap.json",
+  "title": "deskbook · 全书脑图(mindmap.json)",
+  "description": "标准 §10。能展开全书思想的树,不是目录。根算第 1 层,至多 5 层;至多 600 个节点(校验器核);文件 ≤ 1 MB。ch 须为本书存在的章号(校验器核)。",
+  "type": "object",
+  "required": [
+    "root"
+  ],
+  "properties": {
+    "root": {
+      "$ref": "#/$defs/node1"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "label": {
+      "type": "string",
+      "pattern": "^[^\\r\\n]*\\S[^\\r\\n]*$",
+      "x-deskbook-maxChars": 60
+    },
+    "note": {
+      "type": "string",
+      "pattern": "\\S",
+      "x-deskbook-maxChars": 1500
+    },
+    "node1": {
+      "type": "object",
+      "required": [
+        "label"
+      ],
+      "properties": {
+        "label": {
+          "$ref": "#/$defs/label"
+        },
+        "note": {
+          "$ref": "#/$defs/note"
+        },
+        "ch": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "本书的章号(须存在,校验器核)"
+        },
+        "children": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/node2"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "node2": {
+      "type": "object",
+      "required": [
+        "label"
+      ],
+      "properties": {
+        "label": {
+          "$ref": "#/$defs/label"
+        },
+        "note": {
+          "$ref": "#/$defs/note"
+        },
+        "ch": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "本书的章号(须存在,校验器核)"
+        },
+        "children": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/node3"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "node3": {
+      "type": "object",
+      "required": [
+        "label"
+      ],
+      "properties": {
+        "label": {
+          "$ref": "#/$defs/label"
+        },
+        "note": {
+          "$ref": "#/$defs/note"
+        },
+        "ch": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "本书的章号(须存在,校验器核)"
+        },
+        "children": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/node4"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "node4": {
+      "type": "object",
+      "required": [
+        "label"
+      ],
+      "properties": {
+        "label": {
+          "$ref": "#/$defs/label"
+        },
+        "note": {
+          "$ref": "#/$defs/note"
+        },
+        "ch": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "本书的章号(须存在,校验器核)"
+        },
+        "children": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/node5"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "node5": {
+      "type": "object",
+      "required": [
+        "label"
+      ],
+      "properties": {
+        "label": {
+          "$ref": "#/$defs/label"
+        },
+        "note": {
+          "$ref": "#/$defs/note"
+        },
+        "ch": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "本书的章号(须存在,校验器核)"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

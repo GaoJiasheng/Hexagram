@@ -13,8 +13,8 @@ description: 做一本「观象 · 书桌」能读的书包(.deskbook 文件):�
 |---|---|
 | `standard.md` | 标准全文 + 附录「图解 fig 的字段」。**拿不准的一律查它,以它为准** |
 | `deskbook.mjs` | 校验器与打包工具:`node $SKILL/deskbook.mjs <命令>` |
-| `schema/` | `book.json` / `chapter.json` / `fig.json` 的 JSON Schema |
-| `examples/sample-book/` | 现代书示例:三章,用到全部块类型,带图片与视频 |
+| `schema/` | `book.json` / `chapter.json` / `fig.json` / `mindmap.json` 的 JSON Schema |
+| `examples/sample-book/` | 现代书示例:三章,用到全部块类型,带图片、视频与全书脑图 `mindmap.json` |
 | `examples/sample-classic/` | 典籍示例:《道德经》三章,原文 / 译文 / 注 / 深读 |
 
 命令(都在用户的工作目录里跑):
@@ -42,7 +42,7 @@ node $SKILL/deskbook.mjs gif2mp4 <a.gif> -o <目录>/media/a.mp4   # 需 ffmpeg
    - 在 `book.json` 的 `chapters` 里登记这一章(`no` / `file` / `title`,可加 `subtitle` `minutes`);
    - 跑 `validate`,**改到零错误再写下一章**。提示(warning)也逐条看,能消就消。
 6. **媒体**:图片、动画做好放 `media/`,在块里引用;`w` `h` 填文件真实像素(validate 会核对并告诉你实际尺寸)。
-7. 全书写完:`validate` 零错误 → `pack` → 按「最后检查」逐条过一遍。
+7. 全书写完,**写全书脑图**(见「全书脑图」;讲思想、论证的书都该有,纯资料汇编可省),`validate` 零错误 → `pack` → 按「最后检查」逐条过一遍。
 8. **交付**(见下文)。
 
 不要一次性生成全书再校验;一章一校验,问题不会越积越多。
@@ -158,6 +158,24 @@ node $SKILL/deskbook.mjs gif2mp4 <a.gif> -o <目录>/media/a.mp4   # 需 ffmpeg
   "steps": [ { "head": "右端", "body": "停住" }, { "head": "最低点", "body": "最快" }, { "head": "左端", "body": "停住" } ], "loop": true } }
 ```
 
+## 全书脑图(`mindmap.json`)
+
+一棵**能展开全书思想的树**,放在包的根上,`book.json` 里写 `"mindmap": "mindmap.json"`。它不是目录:根是全书的中心论点,往下分出各部分的主张、论据、例子;读者从根一路点开,就能看到整本书是怎么立起来的。
+
+```json
+{ "root": { "label": "单摆:一个能数时间的来回", "note": "一两句说全书的中心。",
+  "children": [
+    { "label": "球为什么会回来", "note": "回复力是重力沿弧线的分力。", "ch": 1,
+      "children": [ { "label": "重力拆成两份", "note": "……" } ] },
+    { "label": "周期只看摆长", "ch": 2 } ] } }
+```
+
+- 节点只有 `label`(必有,一行,≤ 60 字;可以是一整句判断)、`note`(可无,≤ 1500 字,点开后的展开)、`ch`(可无)、`children`(可无,非空)。**不要加 id 或别的字段。**
+- `ch` 只挂在与某一章对应的节点上(通常是第一层的几支),值是本书存在的章号;不要每个节点都挂。
+- 连根至多 5 层,全树 ≤ 600 个节点;一般 2–4 层、几十个节点最好读。
+- 写法:先定根(全书一句话的主张),再定第一层(三到七支,对应全书的几大块),再往下补论据与例子;label 写结论、不写「概述」「第二部分」这类空标签,细节放 note。
+- 讲别人的书时,脑图也是你自己的话,不搬原书目录。脑图里的字不计入字数。完整示例见 `examples/sample-book/mindmap.json`。
+
 ## 媒体
 
 - 图片:`.jpg`(照片,扩展名写 `.jpg` 不写 `.jpeg`)`.png` / `.webp`(线条图);长边 ≤ 4096;单张 ≤ 4 MB。`media/` 下可分子目录。
@@ -220,5 +238,6 @@ node $SKILL/deskbook.mjs gif2mp4 swing.gif -o mybook/media/swing.mp4
 - [ ] 医学 / 健身 / 命理题材带了对应 `disclaimer`(两类都沾就写成数组带两个),正文守了相应约束
 - [ ] 每张图、每段视频都在讲一件事;`cap` 写了它在讲什么;封面题图无文字
 - [ ] 视频由 `gif2mp4` 或同等参数转出,`w` `h` `sec` 与文件一致
+- [ ] 有全书脑图:`book.json` 写了 `"mindmap": "mindmap.json"`,根是中心论点而非书名重复,`ch` 只挂在对应章的节点上
 - [ ] 每章 `pull` ≤ 1;`outline` ≤ 4 层;`**` 成对;链接全是 https
 - [ ] 把 `.deskbook` 的路径和放进书桌的方法告诉了用户

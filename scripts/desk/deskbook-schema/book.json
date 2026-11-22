@@ -90,6 +90,7 @@
         }
       }
     },
+    "mindmap": { "const": "mindmap.json", "description": "有全书脑图时写这一项,路径固定(§10)" },
     "generator": { "type": "string" }
   },
   "$defs": {

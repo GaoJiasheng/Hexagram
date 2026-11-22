@@ -35,6 +35,11 @@ export const LIMITS = Object.freeze({
   chapters: 2000,
   entries: 10000, // zip 里的条目数(防目录炸弹)
   centralDirBytes: 16 * MB, // zip 中央目录
+  mindmapBytes: 1 * MB, // mindmap.json(§10)
+  mindmapNodes: 600,
+  mindmapDepth: 5, // 连根算
+  mindmapLabel: 60,
+  mindmapNote: 1500,
   chapterSummary: 80, // chapters[].summary
   pathLength: 255, // 路径长度 —— 标准未写
   imageLongSide: 4096,
@@ -141,9 +146,11 @@ export function checkPath(p) {
   return null
 }
 
-// 文件归类:book | chapter | image | video | null(不该出现)
+// 文件归类:book | mindmap | chapter | image | video | null(不该出现)
+export const MINDMAP_FILE = 'mindmap.json'
 export function classifyPath(p) {
   if (p === 'book.json') return 'book'
+  if (p === MINDMAP_FILE) return 'mindmap'
   if (/^chapters\/\d{3,}\.json$/.test(p)) return 'chapter'
   if (p.startsWith('media/') && p.length > 6) {
     const e = extOf(p)
@@ -158,6 +165,7 @@ function perFileLimit(p) {
   if (c === 'image') return LIMITS.imageBytes
   if (c === 'video') return LIMITS.videoBytes
   if (c === 'book') return LIMITS.bookJsonBytes
+  if (c === 'mindmap') return LIMITS.mindmapBytes
   return LIMITS.chapterBytes // 章文件,以及不该出现的文件(交给 validate 报)
 }
 
@@ -693,7 +701,7 @@ export function checkInline(s) {
 // ───────────────────────────── 校验 ─────────────────────────────
 
 const BOOK_KEYS = new Set(['format', 'version', 'id', 'revision', 'kind', 'title', 'subtitle', 'authors', 'lang', 'summary', 'description', 'category', 'tags',
-  'source', 'disclaimer', 'unit', 'theme', 'cover', 'banner', 'parts', 'chapters', 'generator'])
+  'source', 'disclaimer', 'unit', 'theme', 'cover', 'banner', 'parts', 'chapters', 'mindmap', 'generator'])
 const CH_ENTRY_KEYS = new Set(['no', 'file', 'title', 'subtitle', 'summary', 'minutes', 'author', 'date', 'head'])
 const CHAPTER_KEYS = new Set(['no', 'title', 'segs', 'yanyi', 'article'])
 const BLOCK_FIELDS = {
@@ -733,7 +741,7 @@ export function validate(files) {
   const warnings = []
   const err = (file, where, msg) => { if (errors.length < LIMITS.maxReported) errors.push({ file, where, msg }) }
   const warn = (file, where, msg) => { if (warnings.length < LIMITS.maxReported) warnings.push({ file, where, msg }) }
-  const stats = { chapters: 0, chars: 0, articleChars: 0, segs: 0, notes: 0, blocks: 0, blockTypes: {}, figs: {}, images: 0, videos: 0, mediaBytes: 0, totalBytes: 0, quotes: 0 }
+  const stats = { chapters: 0, chars: 0, articleChars: 0, segs: 0, notes: 0, blocks: 0, blockTypes: {}, figs: {}, images: 0, videos: 0, mediaBytes: 0, totalBytes: 0, quotes: 0, mindmapNodes: 0 }
   if (!(files instanceof Map)) { err('', '', '输入应为 Map<路径, Uint8Array>'); return { ok: false, errors, warnings, book: null, stats } }
 
   // ── §1 文件与路径 ──
@@ -750,7 +758,8 @@ export function validate(files) {
       else if (e === 'gif') err(path, '', 'GIF 不进包:用 `deskbook.mjs gif2mp4` 转成 mp4 视频')
       else if (path.startsWith('chapters/')) err(path, '', '章文件名应为 chapters/NNN.json(章号补零到三位)')
       else if (path.startsWith('media/')) err(path, '', `媒体只收 ${[...IMAGE_EXTS, ...VIDEO_EXTS].map((x) => '.' + x).join(' ')}`)
-      else err(path, '', '书包里只许有 book.json、chapters/、media/')
+      else if (/(^|\/)mindmap\.json$/.test(path)) err(path, '', `脑图只许放在包的根上,文件名就是 ${MINDMAP_FILE}`)
+      else err(path, '', `书包里只许有 book.json、${MINDMAP_FILE}、chapters/、media/`)
       continue
     }
     if (startsWith(data, ZIP_MAGIC)) { err(path, '', '内容是一个 zip,书包里不许嵌套压缩包'); continue }
@@ -937,6 +946,47 @@ export function validate(files) {
         next = pt.to + 1
       })
       if (next !== n + 1) err(B, 'parts', `各部分须覆盖全部 ${n} 章,现覆盖到第 ${next - 1} 章`)
+    }
+  }
+
+  // ── §10 全书脑图 ──
+  if (book.mindmap !== undefined && book.mindmap !== MINDMAP_FILE) err(B, 'mindmap', `应为 "${MINDMAP_FILE}"(路径固定)`)
+  if (book.mindmap === undefined && files.has(MINDMAP_FILE)) err(MINDMAP_FILE, '', `包里有 ${MINDMAP_FILE},book.json 却没写 "mindmap": "${MINDMAP_FILE}"`)
+  if (book.mindmap === MINDMAP_FILE && !files.has(MINDMAP_FILE)) err(B, 'mindmap', `「${MINDMAP_FILE}」不在包里`)
+  if (files.has(MINDMAP_FILE) && files.get(MINDMAP_FILE).length <= LIMITS.mindmapBytes) {
+    const M = MINDMAP_FILE
+    const mm = parseJson(files.get(M), M, err)
+    const nCh = chapters?.length || 0
+    if (mm !== undefined) {
+      if (!isObj(mm) || !isObj(mm.root)) err(M, 'root', '顶层应为 { "root": { "label": …, "children": [ … ] } }')
+      else {
+        for (const k of Object.keys(mm)) if (k !== 'root') err(M, k, `脑图顶层只有 root,没有「${k}」`)
+        let count = 0
+        let tooDeep = false
+        const node = (n, w, depth) => {
+          if (!isObj(n)) { err(M, w, '节点应为对象 {label, note?, ch?, children?}'); return }
+          count++
+          for (const k of Object.keys(n)) if (!['label', 'note', 'ch', 'children'].includes(k)) err(M, `${w}.${k}`, `节点只有 label / note / ch / children,没有「${k}」`)
+          if (!isStr(n.label)) err(M, `${w}.label`, '缺 label')
+          else if (/[\r\n]/.test(n.label)) err(M, `${w}.label`, 'label 只许一行')
+          else if (textLen(n.label) > LIMITS.mindmapLabel) err(M, `${w}.label`, `${textLen(n.label)} 字,超过 ${LIMITS.mindmapLabel} 字(长的话放进 note)`)
+          else inline(n.label, M, `${w}.label`)
+          if (n.note !== undefined) {
+            if (!isStr(n.note)) err(M, `${w}.note`, '应为非空字符串')
+            else if (textLen(n.note) > LIMITS.mindmapNote) err(M, `${w}.note`, `${textLen(n.note)} 字,超过 ${LIMITS.mindmapNote} 字`)
+            else inline(n.note, M, `${w}.note`)
+          }
+          if (n.ch !== undefined && !(isInt(n.ch) && n.ch >= 1 && n.ch <= nCh)) err(M, `${w}.ch`, `应为本书的章号(1–${nCh}),现为 ${JSON.stringify(n.ch)}`)
+          if (n.children !== undefined) {
+            if (!Array.isArray(n.children) || !n.children.length) { err(M, `${w}.children`, '应为非空数组(没有就删掉)'); return }
+            if (depth >= LIMITS.mindmapDepth) { if (!tooDeep) err(M, `${w}.children`, `脑图连根至多 ${LIMITS.mindmapDepth} 层`); tooDeep = true; return }
+            n.children.forEach((c, i) => node(c, `${w}.children[${i}]`, depth + 1))
+          }
+        }
+        node(mm.root, 'root', 1)
+        stats.mindmapNodes = count
+        if (count > LIMITS.mindmapNodes) err(M, '', `${count} 个节点,超过 ${LIMITS.mindmapNodes} 个`)
+      }
     }
   }
 
@@ -1199,7 +1249,7 @@ export function summarize(x) {
     chapters: Array.isArray(b.chapters) ? b.chapters.length : 0, chars: s.chars || 0,
     ...(b.kind === 'classic' ? { articleChars: s.articleChars || 0 } : {}),
     mediaFiles: (s.images || 0) + (s.videos || 0), mediaBytes: s.mediaBytes || 0, totalBytes: s.totalBytes || 0,
-    disclaimer: b.disclaimer ?? null, ok: !!r?.ok,
+    disclaimer: b.disclaimer ?? null, mindmapNodes: s.mindmapNodes || 0, ok: !!r?.ok,
   }
 }
 
@@ -1279,7 +1329,7 @@ function report(r, skipped, out) {
   for (const e of r.errors) out.push(`错误  ${formatIssue(e)}`)
   for (const w of r.warnings) out.push(`提示  ${formatIssue(w)}`)
   const s = summarize(r)
-  if (r.book) out.push(`—— 《${s.title ?? '?'}》 ${s.kind ?? '?'} · ${s.chapters} ${r.book.unit || '章'} · ${s.chars} 字${s.articleChars !== undefined ? `(另有深读 ${s.articleChars} 字)` : ''} · 媒体 ${s.mediaFiles} 个 ${kb(s.mediaBytes)} · 共 ${kb(s.totalBytes)}`)
+  if (r.book) out.push(`—— 《${s.title ?? '?'}》 ${s.kind ?? '?'} · ${s.chapters} ${r.book.unit || '章'} · ${s.chars} 字${s.articleChars !== undefined ? `(另有深读 ${s.articleChars} 字)` : ''} ${s.mindmapNodes ? `· 脑图 ${s.mindmapNodes} 个节点 ` : ''}· 媒体 ${s.mediaFiles} 个 ${kb(s.mediaBytes)} · 共 ${kb(s.totalBytes)}`)
   out.push(r.ok ? `校验通过${r.warnings.length ? `(${r.warnings.length} 条提示)` : ''}。` : `校验不通过:${r.errors.length} 个错误${r.errors.length >= LIMITS.maxReported ? '(只列前 ' + LIMITS.maxReported + ' 个)' : ''}。`)
 }
 
