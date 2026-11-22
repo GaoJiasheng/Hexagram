@@ -92,15 +92,35 @@ struct ReadPos: Codable, Equatable {
 final class ProgressStore {
     static let shared = ProgressStore()
     private(set) var pos: [String: ReadPos] = [:]
+    /// 本机改过、还没推上云的书(见 SyncEngine)。
+    @ObservationIgnored private(set) var dirty = DirtySet()
 
     init() {
         if let d = UserDefaults.standard.data(forKey: "desk.readPos"), let p = try? JSONDecoder().decode([String: ReadPos].self, from: d) { pos = p }
+        if let d = UserDefaults.standard.data(forKey: "desk.readPos.dirty"), let x = try? JSONDecoder().decode(DirtySet.self, from: d) { dirty = x }
     }
 
     func set(_ book: String, ch: Int, seg: Int) {
         let next = ReadPos(ch: ch, seg: seg, at: Date())
         if let old = pos[book], old.ch == ch, old.seg == seg { return }
         pos[book] = next
-        if let d = try? JSONEncoder().encode(pos) { UserDefaults.standard.set(d, forKey: "desk.readPos") }   // 每次翻页立即落盘
+        dirty.mark(book)
+        save()   // 每次翻页立即落盘
+        SyncEngine.shared.localMoved(book, ch: ch, seg: seg)
+        SyncEngine.shared.noteChange()
+    }
+
+    /// 云端来的位置(本机这本书还没有位置时直接用;有位置时只提示、不在这里改)。不算本机改动。
+    func adoptRemote(_ book: String, ch: Int, seg: Int, at: Date) {
+        pos[book] = ReadPos(ch: ch, seg: seg, at: at)
+        save()
+    }
+
+    func markAllDirty(_ books: some Sequence<String>) { for b in books where pos[b] != nil { dirty.mark(b) }; save() }
+    func clearDirty(_ snap: [String: Int]) { dirty.clear(snap); save() }
+
+    private func save() {
+        if let d = try? JSONEncoder().encode(pos) { UserDefaults.standard.set(d, forKey: "desk.readPos") }
+        if let d = try? JSONEncoder().encode(dirty) { UserDefaults.standard.set(d, forKey: "desk.readPos.dirty") }
     }
 }

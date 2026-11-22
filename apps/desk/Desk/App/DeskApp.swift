@@ -2,11 +2,27 @@ import SwiftUI
 
 @main
 struct DeskApp: App {
+    @Environment(\.scenePhase) private var phase
     var body: some Scene {
         WindowGroup {
             Root()
                 .tint(Ink.cinnabar)
                 .environment(\.locale, Locale(identifier: "zh_CN"))
+                .task {
+                    // 启动:用存着的令牌认一下账号,再拉一次
+                    await AccountStore.shared.bootstrap()
+                    #if DEBUG
+                    if let g = ProcessInfo.processInfo.environment["DESK_GOAL"], let m = Int(g) { DeskSettings.shared.setGoal(m) }
+                    #endif
+                    SyncEngine.shared.appActive()
+                }
+        }
+        .onChange(of: phase) { _, p in
+            switch p {
+            case .active: SyncEngine.shared.appActive()
+            case .background: SyncEngine.shared.appBackground()
+            default: break
+            }
         }
     }
 }

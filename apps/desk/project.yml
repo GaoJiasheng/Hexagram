@@ -30,6 +30,14 @@ targets:
         UIAppFonts: [NotoSerifSC-Regular.ttf, NotoSerifSC-Bold.ttf]
         CFBundleDevelopmentRegion: zh_CN
         CFBundleLocalizations: [zh-Hans]
+        # Google 登录回跳:guanxiangdesk://auth?code=…(服务端 NATIVE_REDIRECT_URL)
+        CFBundleURLTypes:
+          - CFBundleURLName: pub.gavin.hexa.desk.auth
+            CFBundleURLSchemes: [guanxiangdesk]
+    entitlements:
+      path: Desk/Desk.entitlements
+      properties:
+        com.apple.developer.applesignin: [Default]
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: pub.gavin.hexa.desk

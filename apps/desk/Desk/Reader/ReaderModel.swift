@@ -37,6 +37,10 @@ final class ReaderModel {
     @ObservationIgnored private var turnsSinceJump = 0
     /// 打开时要先跳到的地方(从别的书的查本书结果点进来)。第一次排好版后执行。
     @ObservationIgnored var initialSpot: Spot?
+    /// 学习时长时钟(见 ReadClock);字数:一页显示满 3 秒才计。
+    @ObservationIgnored let clock = ReadClock()
+    @ObservationIgnored private var dwell: DispatchWorkItem?
+    @ObservationIgnored private(set) var active = false
 
     init(book: BookInfo, pack: BookPack, start: ReadPos?, reveal: Set<Int> = []) {
         self.book = book
@@ -203,7 +207,60 @@ final class ReaderModel {
         remember()
     }
 
-    private func remember() { ProgressStore.shared.set(book.id, ch: current.ch, seg: anchorSeg) }
+    private func remember() {
+        ProgressStore.shared.set(book.id, ch: current.ch, seg: anchorSeg)
+        if active { clock.start(chapter(current.ch).src); clock.touch(); armDwell() }
+    }
+
+    // MARK: 学习时长
+
+    /// 阅读器到了前台、可见:开始计时(换章时 remember 里自动换段)。
+    func resume() {
+        active = true
+        clock.start(chapter(current.ch).src)
+        armDwell()
+    }
+
+    /// 退到后台、离开阅读器:结清。
+    func pause(leaving: Bool = false) {
+        active = false
+        dwell?.cancel(); dwell = nil
+        if leaving { clock.stop() } else { clock.settle() }
+    }
+
+    /// 点按、长按、开面板等操作。
+    func touch() { if active { clock.touch() } }
+
+    /// 当前这一页显示满 3 秒:把这页各段的原文字数计入当天(同一段一天只计一次)。
+    private func armDwell() {
+        dwell?.cancel()
+        let r = current
+        let item = DispatchWorkItem { [weak self] in
+            guard let self, self.active, self.current == r, self.pageSize != .zero, !self.isEndPage(r) else { return }
+            let c = self.chapter(r.ch)
+            let segs = self.layout(r.ch).segs(onPage: r.page).compactMap { i in c.segs[safe: i].map { (seg: i, chars: Self.charCount($0.o)) } }
+            ReadDaysStore.shared.addChars(c.src, segs: segs)
+        }
+        dwell = item
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: item)
+    }
+
+    /// 原文字数:只数字,不数标点与空白。
+    static func charCount(_ s: String) -> Int {
+        s.unicodeScalars.reduce(0) { n, u in
+            CharacterSet.punctuationCharacters.contains(u) || CharacterSet.symbols.contains(u) || CharacterSet.whitespacesAndNewlines.contains(u) ? n : n + 1
+        }
+    }
+
+    /// 跳到另一台设备读到的那一处(章、段)。
+    func jump(toChapter ch: Int, seg: Int) {
+        guard (1...pack.chapters.count).contains(ch) else { return }
+        returnPoint = nil
+        anchorSeg = seg
+        current = PageRef(ch: ch, page: pageSize == .zero ? 0 : layout(ch).page(forSeg: seg))
+        layoutVersion += 1
+        remember()
+    }
 
     /// 全书进度 0…1(按章 + 章内页)。
     var bookProgress: Double {

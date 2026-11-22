@@ -30,6 +30,11 @@ struct ReaderScreen: View {
     @AppStorage("desk.hlColor") private var lastColor = 0
     @AppStorage("desk.showArt") private var showArt = true
     @Environment(\.colorScheme) private var scheme
+    @Environment(\.scenePhase) private var phase
+    @Environment(\.horizontalSizeClass) private var hSize
+    /// iPad 上轻点划线:不用整张表单,在页面下方浮一张合身的小卡片。
+    @State private var hlCard: String?
+    private var sync: SyncEngine { .shared }
 
     var theme: BookTheme { model.book.theme }
 
@@ -49,14 +54,18 @@ struct ReaderScreen: View {
                     let font = cols == 2 ? min(30, max(22, floor(colAvail / 18))) : min(34, max(22, floor(geo.size.width / 22)))
                     let w = cols == 2 ? floor(min(colAvail, font * 20)) * 2 + gutter : min(avail, font * 24)
                     let size = CGSize(width: floor(w), height: floor(geo.size.height - 8))
-                    PagedReader(model: model, version: model.layoutVersion, onNote: { sheet = .note($0) },
+                    PagedReader(model: model, version: model.layoutVersion, onNote: { model.touch(); sheet = .note($0) },
                                 onSeg: { r, seg in
                                     UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                                    model.touch()
                                     model.toggle(seg: seg, inChapter: r.ch)
                                 },
                                 endPage: { r in AnyView(endPage(r)) },
-                                onHighlight: { sheet = .hl($0) },
-                                onMenu: { r, a in menu(r, a) })
+                                onHighlight: { id in
+                                    model.touch()
+                                    if hSize == .regular { withAnimation(.spring(duration: 0.3)) { hlCard = id } } else { sheet = .hl(id) }
+                                },
+                                onMenu: { r, a in model.touch(); menu(r, a) })
                         .onAppear { model.relayout(size: size, fontSize: font, columns: cols) }
                         .onChange(of: size) { _, s in model.relayout(size: s, fontSize: font, columns: cols) }
                 }
@@ -64,11 +73,18 @@ struct ReaderScreen: View {
             }
         }
         .overlay(alignment: .top) { chrome }
+        .overlay(alignment: .bottom) { remoteBanner }
         .overlay(alignment: .bottomLeading) { backButton }
+        .overlay { highlightCard }
         .sheet(item: $sheet) { s in sheetView(s) }
         .fullScreenCover(isPresented: $showFinish) { FinishScreen(book: model.book, stats: .sample) }
         .background { Color.clear.fullScreenCover(item: $other) { o in ReaderScreen(model: o.model) } }
         .onChange(of: HighlightStore.shared.version) { _, _ in model.syncHighlights() }
+        .onAppear { model.resume() }
+        .onDisappear { model.pause(leaving: true) }
+        .onChange(of: phase) { _, p in if p == .active { if other == nil { model.resume() } } else { model.pause() } }
+        .onChange(of: other == nil) { _, none in if none { model.resume() } else { model.pause() } }   // 叠开的另一本书自己计时
+        .onChange(of: sheet?.id) { _, _ in model.touch() }
         #if DEBUG
         .onAppear { debugOpen() }
         #endif
@@ -119,6 +135,56 @@ struct ReaderScreen: View {
         let m = ReaderModel(book: b, pack: p, start: ReadPos(ch: hit.ch, seg: hit.seg, at: Date()))
         m.initialSpot = hit.spot
         other = OtherReader(model: m)
+    }
+
+    /// 另一台设备读到了别处:页脚上方一条不打断的小提示。选过的位置不再问。
+    @ViewBuilder private var remoteBanner: some View {
+        if let p = sync.pending[model.book.id], model.pack.chapters.indices.contains(p.ch - 1) {
+            HStack(spacing: 10) {
+                Image(systemName: "ipad.and.iphone").font(.system(size: 13, weight: .semibold)).foregroundStyle(theme.accentColor)
+                Text("另一台设备读到\(remoteLabel(p))").font(.system(size: 14, weight: .medium)).foregroundStyle(Ink.text)
+                    .lineLimit(1).minimumScaleFactor(0.75)
+                Button("跳过去") {
+                    sync.resolve(model.book.id)
+                    withAnimation { model.jump(toChapter: p.ch, seg: p.seg) }
+                }
+                .font(.system(size: 14, weight: .semibold)).foregroundStyle(theme.accentColor)
+                Text("·").foregroundStyle(Ink.faint)
+                Button("留在这里") { withAnimation { sync.resolve(model.book.id) } }
+                    .font(.system(size: 14)).foregroundStyle(Ink.soft)
+            }
+            .padding(.horizontal, 16).padding(.vertical, 10)
+            .background(.regularMaterial, in: Capsule())
+            .overlay(Capsule().stroke(theme.accentColor.opacity(0.25), lineWidth: 1))
+            .shadow(color: .black.opacity(0.08), radius: 10, y: 4)
+            .padding(.horizontal, 16)
+            .padding(.bottom, model.returnPoint != nil ? 104 : 52)      // 落在页脚上方,不压章题;有「回到原处」时让到它上面
+            .transition(.move(edge: .bottom).combined(with: .opacity))
+        }
+    }
+
+    private func remoteLabel(_ p: ReadPos) -> String {
+        let c = model.chapter(p.ch)
+        if c.kind == "text" { return "「\(c.title)」" }
+        if c.gua != nil { return "第 \(Numerals.chinese(p.ch)) \(model.book.unit) · \(c.title)" }
+        return "第 \(Numerals.chinese(p.ch)) \(model.book.unit)"
+    }
+
+    /// iPad 的划线小卡片:点卡片外收起。
+    @ViewBuilder private var highlightCard: some View {
+        if let id = hlCard {
+            ZStack(alignment: .bottom) {
+                Color.black.opacity(scheme == .dark ? 0.25 : 0.08).ignoresSafeArea()
+                    .onTapGesture { withAnimation(.easeOut(duration: 0.2)) { hlCard = nil } }
+                HighlightPanel(id: id, editNote: { hlCard = nil; sheet = .editNote(id) }, close: { withAnimation(.easeOut(duration: 0.2)) { hlCard = nil } })
+                    .frame(width: 500)
+                    .background(Ink.paper, in: RoundedRectangle(cornerRadius: 22))
+                    .overlay(RoundedRectangle(cornerRadius: 22).stroke(Ink.line, lineWidth: 1))
+                    .shadow(color: .black.opacity(0.16), radius: 24, y: 10)
+                    .padding(.bottom, 64)
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
+            }
+        }
     }
 
     @ViewBuilder private var backButton: some View {
@@ -264,7 +330,7 @@ struct ReaderScreen: View {
                     }
                 }
                 if last {
-                    Button { showFinish = true } label: {
+                    Button { FinishedStore.shared.markFinished(model.pack); showFinish = true } label: {
                         Label("学完这本书", systemImage: "checkmark.seal.fill")
                             .font(Fonts.song(18, bold: true)).frame(maxWidth: .infinity).padding(.vertical, 16)
                             .background(Ink.cinnabar, in: RoundedRectangle(cornerRadius: 16)).foregroundStyle(.white)

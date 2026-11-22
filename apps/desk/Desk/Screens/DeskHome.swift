@@ -7,6 +7,7 @@ struct DeskHome: View {
     @State private var reading: BookInfo?
     @State private var startAt: ReadPos?
     @State private var showCatalog = false
+    @State private var showAccount = false
     @Environment(\.horizontalSizeClass) private var hSize
     private var pad: Bool { hSize == .regular }
     /// iPad 放大系数
@@ -57,6 +58,10 @@ struct DeskHome: View {
         .background(Ink.paper.ignoresSafeArea())
         .task { await library.refresh() }
         .sheet(isPresented: $showCatalog) { CatalogSheet(library: library) }
+        .sheet(isPresented: $showAccount) { AccountSheet() }
+        #if DEBUG
+        .task { if ProcessInfo.processInfo.environment["DESK_ACCOUNT"] == "1" { try? await Task.sleep(nanoseconds: 800_000_000); showAccount = true } }
+        #endif
         .fullScreenCover(item: $reading) { b in
             if let pack = library.pack(b) {
                 ReaderScreen(model: ReaderModel(book: b, pack: pack, start: startAt))
@@ -79,9 +84,13 @@ struct DeskHome: View {
     }
 
     private var greeting: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text(Date.now.formatted(.dateTime.month().day().weekday(.wide).locale(Locale(identifier: "zh_CN")))).font(.system(size: 13 * k)).foregroundStyle(Ink.soft)
-            Text("书桌").font(Fonts.song(34 * k, bold: true)).foregroundStyle(Ink.text)
+        HStack(alignment: .top) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(Date.now.formatted(.dateTime.month().day().weekday(.wide).locale(Locale(identifier: "zh_CN")))).font(.system(size: 13 * k)).foregroundStyle(Ink.soft)
+                Text("书桌").font(Fonts.song(34 * k, bold: true)).foregroundStyle(Ink.text)
+            }
+            Spacer()
+            AccountButton(scale: pad ? 1.15 : 1) { showAccount = true }.padding(.top, 4)
         }
     }
 

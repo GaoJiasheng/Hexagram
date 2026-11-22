@@ -56,15 +56,68 @@ final class HighlightStore {
     }()
     private static let decoder: JSONDecoder = { let d = JSONDecoder(); d.dateDecodingStrategy = .iso8601; return d }()
 
+    /// 本机改过、还没推上云的记录 id(见 SyncEngine)。
+    @ObservationIgnored private(set) var dirty = DirtySet()
+
     init() {
-        if let d = try? Data(contentsOf: file), let f = try? Self.decoder.decode(FileV1.self, from: d) { items = f.items }
+        if let d = try? Data(contentsOf: file), let f = try? Self.decoder.decode(FileV1.self, from: d) { items = f.items; dirty = f.dirty ?? DirtySet() }
     }
 
-    private struct FileV1: Codable { var v = 1; var items: [Highlight] }
+    private struct FileV1: Codable { var v = 1; var items: [Highlight]; var dirty: DirtySet? }
 
-    private func save() {
+    private func save(changed ids: [String] = []) {
         version += 1
-        if let d = try? Self.encoder.encode(FileV1(items: items)) { try? d.write(to: file, options: .atomic) }
+        for i in ids { dirty.mark(i) }
+        write()
+        if !ids.isEmpty { SyncEngine.shared.noteChange() }
+    }
+
+    private func write() {
+        if let d = try? Self.encoder.encode(FileV1(items: items, dirty: dirty)) { try? d.write(to: file, options: .atomic) }
+    }
+
+    // MARK: 云同步
+
+    /// 推上去的形状(与服务端 highlights 键一致):活的记录全字段,删了的只给墓碑。
+    func wire(_ id: String) -> [String: Any]? {
+        guard let h = items.first(where: { $0.id == id }) else { return nil }
+        if h.deleted { return ["deleted": true, "at": API.iso(h.at)] }
+        var d: [String: Any] = ["book": h.book, "corpus": h.corpus, "slug": h.slug, "ch": h.ch, "no": h.no, "layer": h.layer,
+                                "seg": h.seg, "start": h.start, "end": h.end, "text": h.text, "color": h.color, "at": API.iso(h.at)]
+        if let n = h.note { d["note"] = n }
+        return d
+    }
+
+    func markAllDirty() { for h in items { dirty.mark(h.id) }; write() }
+    func clearDirty(_ snap: [String: Int]) { dirty.clear(snap); write() }
+
+    /// 吃进云端来的整张表:逐条比 at,云端新的覆盖本机(含墓碑);本机没有的活记录加进来。改了就重绘。
+    func applyRemote(_ map: [String: Any]) {
+        var changed = false
+        var index: [String: Int] = [:]
+        for (i, h) in items.enumerated() { index[h.id] = i }
+        for (id, raw) in map {
+            guard let r = raw as? [String: Any], let at = API.date(r["at"]) else { continue }
+            if let i = index[id] {
+                guard at > items[i].at else { continue }
+                if r["deleted"] as? Bool == true {
+                    items[i].deleted = true; items[i].note = nil; items[i].at = at
+                } else if let h = Self.parse(id, r, at) { items[i] = h } else { continue }
+                changed = true
+            } else if r["deleted"] as? Bool != true, let h = Self.parse(id, r, at) {
+                items.append(h); index[id] = items.count - 1; changed = true
+            }
+        }
+        if changed { version += 1; write() }
+    }
+
+    private static func parse(_ id: String, _ r: [String: Any], _ at: Date) -> Highlight? {
+        func int(_ k: String) -> Int? { (r[k] as? NSNumber)?.intValue }
+        guard let book = r["book"] as? String, let corpus = r["corpus"] as? String, let slug = r["slug"] as? String,
+              let ch = int("ch"), let no = int("no"), let layer = r["layer"] as? String, let seg = int("seg"),
+              let start = int("start"), let end = int("end"), let text = r["text"] as? String else { return nil }
+        return Highlight(id: id, book: book, corpus: corpus, slug: slug, ch: ch, no: no, layer: layer, seg: seg, start: start, end: end,
+                         text: text, color: int("color") ?? 0, note: r["note"] as? String, at: at)
     }
 
     func get(_ id: String) -> Highlight? { items.first { $0.id == id && !$0.deleted } }
@@ -88,7 +141,7 @@ final class HighlightStore {
                       note: k == pieces.count - 1 ? note : nil, at: now)
         }
         items.append(contentsOf: made)
-        save()
+        save(changed: made.map(\.id))
         return made
     }
 
@@ -103,14 +156,15 @@ final class HighlightStore {
         guard let i = items.firstIndex(where: { $0.id == id }) else { return }
         f(&items[i])
         items[i].at = Date()
-        save()
+        save(changed: [id])
     }
 
     #if DEBUG
     /// 调试入口用:按固定 id 写入(重复启动不累积)。
     func upsertDemo(_ h: Highlight) {
-        if let i = items.firstIndex(where: { $0.id == h.id }) { items[i] = h } else { items.append(h) }
-        save()
+        guard !items.contains(where: { $0.id == h.id }) else { return }   // 已有(含删过的墓碑)就不再动,免得重启后盖掉别处的删除
+        items.append(h)
+        save(changed: [h.id])
     }
     #endif
 }

@@ -261,6 +261,16 @@ final class ChapterLayout {
         }
     }
 
+    /// 第 p 页上出现的各段(原文或译文有字落在这页就算),按段序。
+    func segs(onPage p: Int) -> [Int] {
+        guard pageChars.indices.contains(p) else { return [] }
+        var out: [Int] = []
+        storage.enumerateAttribute(.deskSeg, in: pageChars[p]) { v, _, _ in
+            if let s = v as? Int, s >= 0, !out.contains(s) { out.append(s) }
+        }
+        return out
+    }
+
     /// 第几个字落在第几页。
     func page(forCharacter i: Int) -> Int {
         pageChars.firstIndex { NSMaxRange($0) > i } ?? max(pageCount - 1, 0)

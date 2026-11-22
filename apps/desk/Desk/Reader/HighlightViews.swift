@@ -23,7 +23,10 @@ struct HLColorRow: View {
 struct HighlightPanel: View {
     let id: String
     let editNote: () -> Void
+    /// 浮卡片(iPad)用:给了就按内容定高、用它收起,不撑满整张表单。
+    var close: (() -> Void)? = nil
     @Environment(\.dismiss) private var dismiss
+    private func shut() { if let close { close() } else { dismiss() } }
     private var store: HighlightStore { .shared }
 
     var body: some View {
@@ -48,7 +51,7 @@ struct HighlightPanel: View {
                         Label(h.hasNote ? "改批注" : "写批注", systemImage: "square.and.pencil")
                     }
                     .buttonStyle(.bordered)
-                    Button(role: .destructive) { store.delete(id); dismiss() } label: {
+                    Button(role: .destructive) { store.delete(id); shut() } label: {
                         Image(systemName: "trash")
                     }
                     .buttonStyle(.bordered)
@@ -57,10 +60,10 @@ struct HighlightPanel: View {
             }
             .frame(maxWidth: 640, alignment: .leading)
             .padding(24)
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-            .background(Ink.paper)
+            .frame(maxWidth: .infinity, maxHeight: close == nil ? .infinity : nil, alignment: .topLeading)
+            .background(close == nil ? Ink.paper : Color.clear)
         } else {
-            Color.clear.onAppear { dismiss() }
+            Color.clear.frame(height: 1).onAppear { shut() }
         }
     }
 }
@@ -171,6 +174,8 @@ struct HighlightsSheet: View {
                             .font(Fonts.song(14, bold: true)).foregroundStyle(Ink.soft).textCase(nil)
                     }
                 }
+                // 筛选条件或记录一变就整组重建:List 增量更新时,整章的行都被筛掉 / 删光后,章标题偶尔会留成一个空段
+                .id("\(onlyNotes)|\(layer)|\(store.version)")
             }
             .listStyle(.insetGrouped)
             .navigationTitle("划线与批注").navigationBarTitleDisplayMode(.inline)
