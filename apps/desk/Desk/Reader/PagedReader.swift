@@ -1,12 +1,12 @@
 import SwiftUI
 import UIKit
 
-/// 一页正文:一个不可编辑的 UITextView,接在这一章共用的排版器上(每页一个文字容器)。
+/// 一页正文:一栏或并排两栏不可编辑的 UITextView,接在这一章共用的排版器上(每栏一个文字容器)。
 final class TextPageController: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate {
     let ref: PageRef
     private let layout: ChapterLayout
     private let pageSize: CGSize
-    private var textView: UITextView!
+    private var columns: [(index: Int, view: UITextView)] = []
     var onNote: ((Note) -> Void)?
     var onSeg: ((Int) -> Void)?
 
@@ -19,41 +19,53 @@ final class TextPageController: UIViewController, UITextViewDelegate, UIGestureR
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .clear
-        let tv = layout.textViews[ref.page]      // 分页时建好的那一个(见 ChapterLayout)
-        tv.delegate = self
-        tv.gestureRecognizers?.filter { $0.name == "desk.tap" }.forEach { tv.removeGestureRecognizer($0) }
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped(_:)))
-        tap.name = "desk.tap"
-        tap.delegate = self
-        tv.addGestureRecognizer(tap)
-        view.addSubview(tv)
-        textView = tv
+        for i in layout.columnIndices(ofPage: ref.page) {
+            let tv = layout.textViews[i]      // 分页时建好的那一个(见 ChapterLayout)
+            tv.delegate = self
+            tv.gestureRecognizers?.filter { $0.name == "desk.tap" }.forEach { tv.removeGestureRecognizer($0) }
+            let tap = UITapGestureRecognizer(target: self, action: #selector(tapped(_:)))
+            tap.name = "desk.tap"
+            tap.delegate = self
+            tv.addGestureRecognizer(tap)
+            view.addSubview(tv)
+            columns.append((i, tv))
+        }
     }
 
     func gestureRecognizer(_ g: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith other: UIGestureRecognizer) -> Bool { true }
 
     /// 轻点一段正文:展开 / 收起它的译文。点在注释词上的交给下面的链接处理。
     @objc private func tapped(_ g: UITapGestureRecognizer) {
-        let p = g.location(in: textView)
-        let c = layout.containers[ref.page]
+        guard let tv = g.view as? UITextView, let i = columns.first(where: { $0.view === tv })?.index else { return }
+        let p = g.location(in: tv)
+        let c = layout.containers[i]
         let glyph = layout.manager.glyphIndex(for: p, in: c)
         guard layout.manager.lineFragmentRect(forGlyphAt: glyph, effectiveRange: nil).insetBy(dx: 0, dy: -6).contains(p) else { return }
         let ch = layout.manager.characterIndexForGlyph(at: glyph)
         let box = layout.manager.boundingRect(forGlyphRange: NSRange(location: glyph, length: 1), in: c)
-        if layout.storage.attribute(.link, at: ch, effectiveRange: nil) != nil, box.insetBy(dx: -4, dy: -6).contains(p) { return }
+        if let url = layout.storage.attribute(.link, at: ch, effectiveRange: nil) as? URL, box.insetBy(dx: -4, dy: -6).contains(p) {
+            // 出注在这里做,不靠系统的链接点按:系统那套只在一章的第一个文字容器上可靠,
+            // 接在同一排版器上的其余容器(双栏的右栏、后面各页)点了没反应。
+            if let n = layout.note(for: url) { onNote?(n) }
+            return
+        }
         if let s = layout.seg(atCharacter: ch) { onSeg?(s) }
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        textView.frame = CGRect(x: (view.bounds.width - pageSize.width) / 2, y: 0, width: pageSize.width,
-                                height: layout.height(ofPage: ref.page, full: pageSize.height))
+        // 整页(一栏或两栏 + 中缝)水平居中;最后一页只有左栏时,左栏仍在原位,不挪到中间
+        let x0 = (view.bounds.width - pageSize.width) / 2
+        for (k, col) in columns.enumerated() {
+            col.view.frame = CGRect(x: x0 + CGFloat(k) * (layout.columnWidth + layout.gutter), y: 0, width: layout.columnWidth,
+                                    height: layout.height(ofColumn: col.index, full: pageSize.height))
+        }
     }
 
-    /// 点到带注释的字词就出注(不走系统的「打开链接」)。
+    /// 注释词的系统点按什么也不做(出注由上面的轻点手势负责,免得第一栏出两次),也不走系统的「打开链接」。
     func textView(_ textView: UITextView, primaryActionFor textItem: UITextItem, defaultAction: UIAction) -> UIAction? {
-        guard case .link(let url) = textItem.content, let n = layout.note(for: url) else { return nil }
-        return UIAction { [weak self] _ in self?.onNote?(n) }
+        guard case .link(let url) = textItem.content, layout.note(for: url) != nil else { return nil }
+        return UIAction { _ in }
     }
 
     /// 长按注释词不出系统的链接预览菜单。

@@ -17,10 +17,15 @@ struct ReaderScreen: View {
             VStack(spacing: 0) {
                 Color.clear.frame(height: 46)     // 给左上、右上的悬浮按钮让出一条,不设整栏
                 GeometryReader { geo in
-                    // 字号跟着屏宽走:手机 22 上下,各尺寸 iPad 30–34;一行约二十来个字,不拉成长条
-                    let font = min(34, max(22, floor(geo.size.width / 22)))
+                    // 字号跟着屏宽走:手机 22 上下,各尺寸 iPad 30–34;一行约二十来个字,不拉成长条。
+                    // iPad 横屏(正文区宽 ≥ 900 且宽 > 高)摊成左右两栏:每栏约 18–20 字,中缝 56,字号封顶 30。
                     let margin: CGFloat = geo.size.width > 600 ? 64 : 26
-                    let w = min(geo.size.width - margin * 2, font * 24)
+                    let avail = geo.size.width - margin * 2
+                    let cols = avail >= 900 && geo.size.width > geo.size.height ? 2 : 1
+                    let gutter: CGFloat = 56
+                    let colAvail = (avail - gutter) / 2
+                    let font = cols == 2 ? min(30, max(22, floor(colAvail / 18))) : min(34, max(22, floor(geo.size.width / 22)))
+                    let w = cols == 2 ? floor(min(colAvail, font * 20)) * 2 + gutter : min(avail, font * 24)
                     let size = CGSize(width: floor(w), height: floor(geo.size.height - 8))
                     PagedReader(model: model, version: model.layoutVersion, onNote: { note = $0 },
                                 onSeg: { r, seg in
@@ -28,14 +33,14 @@ struct ReaderScreen: View {
                                     model.toggle(seg: seg, inChapter: r.ch)
                                 },
                                 endPage: { r in AnyView(endPage(r)) })
-                        .onAppear { model.relayout(size: size, fontSize: font) }
-                        .onChange(of: size) { _, s in model.relayout(size: s, fontSize: font) }
+                        .onAppear { model.relayout(size: size, fontSize: font, columns: cols) }
+                        .onChange(of: size) { _, s in model.relayout(size: s, fontSize: font, columns: cols) }
                 }
                 footer
             }
         }
         .overlay(alignment: .top) { chrome }
-        .sheet(item: $note) { n in NoteSheet(note: n, accent: theme.accentColor).presentationDetents([.height(220)]) }
+        .sheet(item: $note) { n in NoteSheet(note: n, accent: theme.accentColor).presentationDetents(n.x == nil ? [.height(200)] : [.height(380), .large]) }
         .sheet(isPresented: $showTOC) { TOCSheet(model: model) { ch in showTOC = false; model.jump(toChapter: ch) } }
         .fullScreenCover(isPresented: $showFinish) { FinishScreen(book: model.book, stats: .sample) }
     }
@@ -177,20 +182,30 @@ struct ReaderScreen: View {
 
 extension Note: Identifiable { var id: String { k + d } }
 
+/// 注释气泡:上面一句话释义,下面(详注才有)一段展开。
 struct NoteSheet: View {
     let note: Note
     let accent: Color
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack(alignment: .firstTextBaseline, spacing: 10) {
-                Text(note.k).font(Fonts.song(26, bold: true))
-                if let r = note.r { Text(r).font(Fonts.num(15, weight: .medium)).foregroundStyle(accent) }
+        ScrollView {
+            VStack(alignment: .leading, spacing: 14) {
+                HStack(alignment: .firstTextBaseline, spacing: 10) {
+                    Text(note.k).font(Fonts.song(28, bold: true)).foregroundStyle(Ink.text)
+                    if let r = note.r { Text(r).font(Fonts.num(15, weight: .medium)).foregroundStyle(accent) }
+                }
+                Text(note.d).font(.system(size: 17, weight: .medium)).lineSpacing(5).foregroundStyle(Ink.text)
+                if let x = note.x {
+                    HStack(alignment: .top, spacing: 12) {
+                        RoundedRectangle(cornerRadius: 2).fill(accent.opacity(0.7)).frame(width: 3)
+                        Text(x).font(.system(size: 16)).lineSpacing(7).foregroundStyle(Ink.soft)
+                    }
+                    .padding(.top, 2)
+                }
             }
-            Text(note.d).font(.system(size: 16)).lineSpacing(6).foregroundStyle(Ink.text)
-            Spacer()
+            .frame(maxWidth: 640, alignment: .leading)
+            .padding(24)
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(24)
         .background(Ink.paper)
     }
 }

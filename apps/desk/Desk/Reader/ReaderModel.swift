@@ -17,7 +17,8 @@ final class ReaderModel {
     var fontSize: CGFloat = 22
     @ObservationIgnored private var revealed: [Int: Set<Int>] = [:]   // 章 → 点开了译文的段
     var layoutVersion = 0
-    private(set) var pageSize: CGSize = .zero
+    private(set) var pageSize: CGSize = .zero       // 整页正文区(双栏时含中缝)
+    private(set) var columns = 1                      // iPad 横屏 2 栏,其余 1 栏
     @ObservationIgnored private var layouts: [Int: ChapterLayout] = [:]
     @ObservationIgnored private var anchorSeg = 0
 
@@ -60,7 +61,7 @@ final class ReaderModel {
         if let l = layouts[ch] { return l }
         var st = style
         st.revealed = revealed[ch] ?? []
-        let l = ChapterLayout(chapter: chapter(ch), unit: book.unit, pageSize: pageSize, style: st)
+        let l = ChapterLayout(chapter: chapter(ch), unit: book.unit, pageSize: pageSize, columns: columns, style: st)
         layouts[ch] = l
         if layouts.count > 6 { for k in layouts.keys where abs(k - current.ch) > 2 { layouts[k] = nil } }
         return l
@@ -81,12 +82,13 @@ final class ReaderModel {
         return r.ch > 1 ? PageRef(ch: r.ch - 1, page: pageCount(r.ch - 1) - 1) : nil
     }
 
-    /// 页面大小或「显示译文」变了:重排,落回原来那一段。
-    func relayout(size: CGSize, fontSize: CGFloat) {
+    /// 页面大小、栏数(转屏)或「显示译文」变了:重排,落回原来那一段。
+    func relayout(size: CGSize, fontSize: CGFloat, columns: Int = 1) {
         guard size.width > 50, size.height > 50 else { return }
-        if size == pageSize && fontSize == self.fontSize && !layouts.isEmpty { return }
+        if size == pageSize && fontSize == self.fontSize && columns == self.columns && !layouts.isEmpty { return }
         pageSize = size
         self.fontSize = fontSize
+        self.columns = columns
         rebuild()
     }
 

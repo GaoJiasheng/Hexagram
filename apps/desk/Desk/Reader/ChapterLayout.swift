@@ -48,49 +48,68 @@ struct ReaderStyle: Equatable {
     var faint = UIColor.inkFaint
 }
 
-/// 一章的排版与分页:整章排成一条文字流,按页面大小切进一个个文字容器(TextKit 1 的多容器分页)。
-/// 一段太长会自然跨页;每页记得自己从哪一段开始,换字号、换设备后按段号落回同一处。
+/// 一章的排版与分页:整章排成一条文字流,按栏的大小切进一个个文字容器(TextKit 1 的多容器分页)。
+/// 每栏一个容器;一页 = 连续 `columns` 个容器(手机与竖屏 1 栏,iPad 横屏 2 栏,像摊开的书,文字从左栏流到右栏)。
+/// 一段太长会自然跨页;每页记得自己从哪一段开始,换字号、换设备、转屏后按段号落回同一处。
 final class ChapterLayout {
     let chapter: Chapter
     let storage: NSTextStorage
     let manager = DeskLayoutManager()
+    /// 每栏一个容器(第 p 页是下标 p*columns ..< (p+1)*columns,最后一页可能不满)。
     private(set) var containers: [NSTextContainer] = []
-    /// 每页一个文本框,分页时就建好、屏上显示的也是它——文本框一接上文字容器就会影响排版(行高、容器大小),
+    /// 每栏一个文本框,分页时就建好、屏上显示的也是它——文本框一接上文字容器就会影响排版(行高、容器大小),
     /// 所以「算分页」和「显示」必须用同一套对象,否则屏上每页排进去的行数会和算出来的对不上。
     private(set) var textViews: [UITextView] = []
-    private(set) var firstSeg: [Int] = []     // 每页第一个字所属的段
+    private(set) var firstSeg: [Int] = []     // 每页(第一栏)第一个字所属的段
     let accent: UIColor
+    /// 一页几栏(1 或 2)、每栏宽、栏间中缝。整页宽 = columns × columnWidth + (columns-1) × gutter。
+    let columns: Int
+    let columnWidth: CGFloat
+    let gutter: CGFloat
 
-    init(chapter: Chapter, unit: String, pageSize: CGSize, style: ReaderStyle) {
+    init(chapter: Chapter, unit: String, pageSize: CGSize, columns: Int = 1, gutter: CGFloat = 56, style: ReaderStyle) {
         self.chapter = chapter
         accent = style.accent
+        self.columns = max(1, columns)
+        self.gutter = self.columns > 1 ? gutter : 0
+        columnWidth = floor((pageSize.width - self.gutter * CGFloat(self.columns - 1)) / CGFloat(self.columns))
+        let colSize = CGSize(width: columnWidth, height: pageSize.height)
         var style = style
-        style.pageWidth = pageSize.width
-        style.pageHeight = pageSize.height
+        style.pageWidth = colSize.width
+        style.pageHeight = colSize.height
         manager.tint = style.accent
         storage = NSTextStorage(attributedString: Self.typeset(chapter, unit: unit, style: style))
         storage.addLayoutManager(manager)
-        paginate(pageSize)
-        // 一段(连同它展开的译文)尽量不拆到两页:排完看哪一段正好跨在页缝上,只要它不算长,
-        // 就把那一页的文字区截短到这一段的上沿,让它整段落到下一页,再重排。
-        // 用排版器自己的结果判断,不靠估算;特别长的段(超过大半页)照旧自然跨页。
+        paginate(colSize)
+        // 一段(连同它展开的译文)尽量不拆到两栏:排完看哪一段正好跨在栏缝上(左栏→右栏、右栏→下一页左栏、
+        // 单栏时就是页缝),只要它不算长,就把那一栏的文字区截短到这一段的上沿,让它整段落到下一栏,再重排。
+        // 用排版器自己的结果判断,不靠估算;特别长的段(超过大半栏)照旧自然跨栏。
         var rounds = 0
-        while rounds < 400, let cut = straddle(pageSize) {
+        while rounds < 400, let cut = straddle(colSize) {
             cuts[cut.page] = cut.height
-            paginate(pageSize)
+            paginate(colSize)
             rounds += 1
         }
+        // 页首字所属的段:按页(每页第一栏)取
+        firstSeg = stride(from: 0, to: containers.count, by: self.columns).map { colFirstSeg[$0] }
     }
 
-    private var cuts: [Int: CGFloat] = [:]      // 页 → 截短后的高度
+    private var cuts: [Int: CGFloat] = [:]      // 栏(容器下标)→ 截短后的高度
+    private var colFirstSeg: [Int] = []         // 每栏第一个字所属的段
 
-    /// 第几页文字区的高度。文本框必须照这个高度摆——它会把自己的大小写回文字容器,摆高了被截短的那一页又会多排进一行。
-    func height(ofPage p: Int, full: CGFloat) -> CGFloat { cuts[p] ?? full }
+    /// 第几栏(容器下标)文字区的高度。文本框必须照这个高度摆——它会把自己的大小写回文字容器,摆高了被截短的那一栏又会多排进一行。
+    func height(ofColumn i: Int, full: CGFloat) -> CGFloat { cuts[i] ?? full }
+
+    /// 第 p 页的栏(容器下标),最后一页可能只有左栏。
+    func columnIndices(ofPage p: Int) -> Range<Int> {
+        let a = p * columns
+        return a..<min(a + columns, containers.count)
+    }
 
     private func paginate(_ pageSize: CGSize) {
         while !manager.textContainers.isEmpty { manager.removeTextContainer(at: manager.textContainers.count - 1) }
         textViews.forEach { $0.removeFromSuperview() }
-        containers.removeAll(); firstSeg.removeAll(); textViews.removeAll()
+        containers.removeAll(); colFirstSeg.removeAll(); textViews.removeAll()
         let total = manager.numberOfGlyphs
         var laid = 0
         while laid < total && containers.count < 2000 {
@@ -115,11 +134,11 @@ final class ChapterLayout {
             containers.append(c)
             textViews.append(tv)
             laid = NSMaxRange(r)
-            firstSeg.append(seg(atGlyph: r.location, upTo: NSMaxRange(r)))
+            colFirstSeg.append(seg(atGlyph: r.location, upTo: NSMaxRange(r)))
         }
     }
 
-    /// 找第一处「同一段被页缝切开」且这段不长的地方,返回(第几页, 这一段在该页的上沿);没有就返回 nil。
+    /// 找第一处「同一段被栏缝切开」且这段不长的地方,返回(第几栏, 这一段在该栏的上沿);没有就返回 nil。
     private func straddle(_ pageSize: CGSize) -> (page: Int, height: CGFloat)? {
         guard containers.count > 1 else { return nil }
         for p in 0..<(containers.count - 1) where cuts[p] == nil {
@@ -140,7 +159,7 @@ final class ChapterLayout {
         return nil
     }
 
-    var pageCount: Int { containers.count }
+    var pageCount: Int { (containers.count + columns - 1) / columns }
 
     private func seg(atGlyph g: Int, upTo end: Int) -> Int {
         var i = manager.characterIndexForGlyph(at: g)
