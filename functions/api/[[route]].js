@@ -11,10 +11,19 @@ import {
   AppleIdTokenError,
   appleBool,
   appleEmail,
+  isAppleNonce,
   parseAudiences,
   resolveAppleAccount,
   verifyAppleIdentityToken,
+  verifyAppleNonce,
 } from '../../server/apple-auth.js'
+import {
+  appleSecretsConfigured,
+  exchangeAppleAuthorizationCode,
+  isAppleAuthorizationCode,
+  revokeAppleRefreshToken,
+  safeErrorMessage,
+} from '../../server/apple-token.js'
 import {
   NATIVE_CODE_TTL_MS,
   NATIVE_REDIRECT_URL,
@@ -622,14 +631,16 @@ app.use('/admin/*', async (c, next) => {
 app.get('/auth/google/start', (c) => {
   const returnTo = normalizeOAuthReturnTo(c.req.query('return_to'))
   const state = crypto.randomUUID()
-  // 原生 App(?native=1):callback 不种 cookie,改发一次性短码跳回 App;可选 PKCE code_challenge(S256)
+  // 原生 App(?native=1):callback 不种 cookie,改发一次性短码跳回 App。
+  // 原生模式 PKCE 必需(S256 code_challenge,43 位 base64url):自定义 scheme 可能被别的 App 抢注截走短码,
+  // 有了 challenge,截到短码也换不出会话。网页模式不看这个参数,行为不变。
   const native = c.req.query('native') === '1'
   const challenge = c.req.query('code_challenge')
-  if (native && challenge !== undefined && !isCodeChallenge(challenge)) {
+  if (native && !isCodeChallenge(challenge)) {
     return c.json({ ok: false, error: 'invalid code_challenge' }, 400)
   }
   const attempt = native
-    ? { state, returnTo, native: true, ...(challenge ? { challenge } : {}) }
+    ? { state, returnTo, native: true, challenge }
     : { state, returnTo }
   setCookie(c, OAUTH_COOKIE, JSON.stringify(attempt), {
     httpOnly: true,
@@ -760,17 +771,18 @@ app.get('/auth/google/callback', async (c) => {
 })
 
 // 原生 App 用 Google 回跳带回的一次性短码换会话(只回 token,不种 cookie)。
-// 请求体 {code, verifier?}:start 时带过 code_challenge 的,这里必须交出对应的 code_verifier。
+// 请求体 {code, verifier}:verifier 必需,须与 start 时的 code_challenge 配对(PKCE S256)。
+// 短码哈希里掺了 challenge,verifier 不对 → 哈希对不上 → 与输错码同样处理(计次、5 次作废)。
 app.post('/auth/native/exchange', async (c) => {
   try {
     const input = await readJsonBody(c)
     const parsed = parseNativeCode(input?.code)
     const verifier = input?.verifier
-    if (verifier !== undefined && !isCodeVerifier(verifier)) throw new RequestError(400, 'invalid verifier')
+    if (!isCodeVerifier(verifier)) throw new RequestError(400, 'invalid verifier')
     if (!parsed) throw new RequestError(400, '登录码无效或已过期,请重新登录')
     const db = getDb(c)
     const now = Date.now()
-    const challenge = verifier ? await challengeFromVerifier(verifier) : ''
+    const challenge = await challengeFromVerifier(verifier)
     const hash = await nativeCodeHash(parsed.target, parsed.secret, challenge)
     const row = await db.prepare('SELECT code_hash, expires_at, attempts FROM auth_codes WHERE target = ?').bind(parsed.target).first()
     const state = verifyCodeRow(row, hash, now)
@@ -798,15 +810,21 @@ app.post('/auth/native/exchange', async (c) => {
   }
 })
 
-// 通过 Apple 登录(原生 App)。请求体 {identityToken, displayName?};displayName 只在苹果首次授权时给得出,可缺。
+// 通过 Apple 登录(原生 App)。请求体 {identityToken, nonce, authorizationCode?, displayName?}:
+//   nonce —— 原始随机串,其 SHA-256 十六进制须等于令牌里的 nonce 声明(防重放,必需)
+//   authorizationCode —— 苹果给的一次性授权码;配了 Apple 密钥时拿去换 refresh_token 存起来,注销账号时用来撤销授权。
+//     换失败不影响登录(记日志后继续)
+//   displayName —— 只在苹果首次授权时给得出,可缺
 // 校验与账号解析在 server/apple-auth.js;成功后与邮箱登录一致:建会话,X-Client: native 回 token,否则种 cookie。
 app.post('/auth/apple', async (c) => {
   try {
     const input = await readJsonBody(c, 16_384)
     if (typeof input?.identityToken !== 'string' || !input.identityToken) throw new RequestError(400, '缺少 Apple 身份凭证')
+    if (!isAppleNonce(input?.nonce)) throw new RequestError(400, '缺少登录校验串,请更新 App 后重试')
     const payload = await verifyAppleIdentityToken(input.identityToken, {
       audiences: parseAudiences(c.env?.APPLE_AUDIENCES),
     })
+    await verifyAppleNonce(payload, input.nonce)
     const db = getDb(c)
     const emailVerified = appleBool(payload.email_verified)
     const { user } = await resolveAppleAccount(db, {
@@ -819,6 +837,7 @@ app.post('/auth/apple', async (c) => {
       await markEmailVerified(db, user.id)
       user.email_verified_at = Date.now()
     }
+    await storeAppleRefreshToken(c, db, payload, input.authorizationCode)
     await db
       .prepare('DELETE FROM sessions WHERE user_id = ? AND expires_at < ?')
       .bind(user.id, Date.now())
@@ -1000,6 +1019,48 @@ app.delete('/me/reading', async (c) => {
 
 const DELETE_CONFIRM_NO_EMAIL = '注销账号'
 
+// Apple 登录时:配了密钥且带了授权码,就换 refresh_token 存到这条 Apple identity 上(注销时撤销用)。
+// client_id = 令牌的 aud(App 的 bundle id),一并存下,撤销时要用同一个。
+// 尽力而为:没配密钥 / 没带码静默跳过;苹果拒绝、超时、写库失败都只记日志,不让登录失败。日志不写任何凭证。
+async function storeAppleRefreshToken(c, db, payload, authorizationCode) {
+  if (!appleSecretsConfigured(c.env) || !isAppleAuthorizationCode(authorizationCode)) return
+  const clientId = Array.isArray(payload.aud) ? payload.aud[0] : payload.aud
+  try {
+    const refreshToken = await exchangeAppleAuthorizationCode({ env: c.env, clientId, code: authorizationCode })
+    if (!refreshToken) return
+    await db.prepare(`
+      UPDATE identities SET refresh_token = ?, refresh_aud = ?
+      WHERE provider = 'apple' AND provider_uid = ?
+    `).bind(refreshToken, clientId, payload.sub).run()
+  } catch (error) {
+    console.error('Apple token exchange failed', safeErrorMessage(error))
+  }
+}
+
+// 注销账号前撤销该用户的 Apple 授权(App Store 审核要求)。尽力而为:失败只记日志,不挡注销;
+// 没配密钥或没存 refresh_token(密钥配上之前登录的、换码失败的)静默跳过。
+async function revokeAppleGrants(c, db, userId) {
+  if (!appleSecretsConfigured(c.env)) return
+  let rows = []
+  try {
+    const result = await db.prepare(`
+      SELECT refresh_token, refresh_aud FROM identities
+      WHERE user_id = ? AND provider = 'apple' AND refresh_token IS NOT NULL
+    `).bind(userId).all()
+    rows = result?.results || []
+  } catch (error) {
+    console.error('Apple grant lookup failed', safeErrorMessage(error))
+    return
+  }
+  for (const row of rows) {
+    try {
+      await revokeAppleRefreshToken({ env: c.env, clientId: row.refresh_aud, refreshToken: row.refresh_token })
+    } catch (error) {
+      console.error('Apple token revoke failed', safeErrorMessage(error))
+    }
+  }
+}
+
 app.delete('/me', async (c) => {
   try {
     const user = await requireUser(c)
@@ -1011,7 +1072,9 @@ app.delete('/me', async (c) => {
     } else if (typeof input?.confirm !== 'string' || normalizeEmail(input.confirm) !== normalizeEmail(user.email)) {
       throw new RequestError(400, '请输入本账号的邮箱以确认注销')
     }
-    await getDb(c).prepare('DELETE FROM users WHERE id = ?').bind(user.id).run()
+    const db = getDb(c)
+    await revokeAppleGrants(c, db, user.id)
+    await db.prepare('DELETE FROM users WHERE id = ?').bind(user.id).run()
     clearSessionCookie(c)
     return c.json({ ok: true })
   } catch (error) {

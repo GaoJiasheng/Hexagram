@@ -93,9 +93,10 @@
 1. **服务端发生产**:书桌用的接口(Apple 登录、Google 回 App、同步新键 `highlights` / `finished`、Bearer 登出)代码已在 main,**未部署**。顺序:先核对并在远端 D1 执行 `migrations/0007-apple-identity.sql`(会重建 identities 表)→ 再发代码。细节 `docs/desk-backend-notes.md`。
 2. **内容包与插画上线**:`public/desk/v1/`(清单、六本核心包、六本白话包、273 张插画,约 65 MB)随网站一起发到 `hexa.gavin.pub/desk/v1/`。发之前跑 `npm run desk:packs`。
 3. **苹果开发者后台**:App ID `pub.gavin.hexa.desk` 勾「Sign in with Apple」;在 App Store Connect 新建 App 记录(名称、主语言简体中文、bundle id、SKU)。
+   另建一把「Sign in with Apple」密钥(.p8,只能下载一次),把 `APPLE_TEAM_ID` / `APPLE_KEY_ID` / `APPLE_PRIVATE_KEY` 三个 secret 用 `wrangler pages secret put` 配到 Pages 项目——注销账号时向 Apple 撤销授权靠它(审核要求);没配时注销照常,只是不通知 Apple。步骤见 `desk-backend-notes.md`。
 4. **隐私页补一节**:`/privacy` 加「观象 · 书桌」:收集什么、存在哪、怎么注销(我可以先写好,随第 1 项一起发)。
 5. **测试账号**:在生产建一个送审用的账号(我不在生产建账号)。
-6. **挑图标**:候选在 `scripts/.cache/desk-art/icon/`。
+6. ~~挑图标~~:owner 11-22 选了 ③ 灯,已接进工程(`Assets.xcassets/AppIcon.appiconset/icon-1024.png`,Codex 写的 prompt 留在 `apps/desk/store/icon-prompt.txt`)。
 7. **定稿文案**、看一遍商店截图(`apps/desk/store/shots/`)。
 8. **真机走一遍**:TestFlight 装上后,三种登录各走一次(Apple 登录与真 Google 登录在模拟器里没法验),云同步在两台设备间对一次,注销账号走一次。
 9. 开口说「送审」。
@@ -104,7 +105,7 @@
 - App 打磨、换账号前询问、字号设置、离线与出错状态、各尺寸 iPad 版式、关于页、隐私清单、Release 配置核对。
 - `apps/desk/ship.sh`(归档 → 导出 → 上传,照 `ship-ios.sh` 的做法)写好不运行。
 - 商店截图脚本与成品(iPhone 6.9 寸、iPad 13 寸各 6 张)。
-- 服务端加固:Apple 登录核 nonce、Google 原生登录强制 PKCE、注销账号时向 Apple 撤销授权——代码与测试入库,随第 1 项一起发。
+- 服务端加固(已入库,676 项测试全过):Apple 登录必核 nonce、Google 原生登录强制 PKCE、注销账号时向 Apple 撤销授权。迁移 0007 因此多加了两列(`refresh_token` / `refresh_aud`),仍须**先上远端 D1 再发代码**。
 
 ## 5 · 版本号约定
 

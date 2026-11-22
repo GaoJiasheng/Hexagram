@@ -26,6 +26,9 @@ CREATE TABLE identities (
   provider_uid TEXT NOT NULL CHECK (length(provider_uid) > 0),
   created_at INTEGER NOT NULL DEFAULT (unixepoch() * 1000),
   secret TEXT,
+  -- 仅 provider='apple':登录时用授权码换来的 refresh_token 与换它用的 client_id(bundle id),注销账号时撤销授权用
+  refresh_token TEXT,
+  refresh_aud TEXT,
   PRIMARY KEY (provider, provider_uid),
   UNIQUE (user_id, provider),
   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE

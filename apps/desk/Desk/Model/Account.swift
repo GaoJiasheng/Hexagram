@@ -121,7 +121,9 @@ final class AccountStore {
     func signInWithApple(_ cred: ASAuthorizationAppleIDCredential, nonce: String?) async throws {
         guard let d = cred.identityToken, let idt = String(data: d, encoding: .utf8) else { throw API.Failure(status: 400, message: "没拿到 Apple 的身份凭证") }
         var body: [String: Any] = ["identityToken": idt]
-        if let nonce { body["nonce"] = nonce }      // 原始 nonce(服务端日后据此核令牌里的哈希;现在的服务端忽略未知字段)
+        if let nonce { body["nonce"] = nonce }      // 原始 nonce:服务端核 sha256(nonce) == 令牌里的 nonce 声明(必需)
+        // 一次性授权码:服务端拿去换 refresh_token 存着,注销账号时用它撤销 Apple 授权(App Store 审核要求)
+        if let c = cred.authorizationCode, let code = String(data: c, encoding: .utf8) { body["authorizationCode"] = code }
         if let n = cred.fullName {
             let s = PersonNameComponentsFormatter.localizedString(from: n, style: .default).trimmingCharacters(in: .whitespaces)
             if !s.isEmpty { body["displayName"] = s }

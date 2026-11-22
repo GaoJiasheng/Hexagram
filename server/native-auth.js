@@ -2,7 +2,7 @@
 // /auth/google/start?native=1 → Google → callback 不种 cookie,改发一枚短码并 302 到 guanxiangdesk://auth?code=…
 // → App 拿短码 POST /auth/native/exchange 换会话 token。
 // 存放复用 auth_codes 表:target = native:<userId>(一人同时只留一枚,新码顶掉旧码),只存哈希,2 分钟有效,用一次即删。
-// 可选 PKCE(S256):start 带 code_challenge 时,exchange 必须交出对应的 code_verifier ——
+// PKCE(S256)必需:start?native=1 必须带 code_challenge,exchange 必须交出对应的 code_verifier ——
 // 自定义 scheme 可能被别的 App 抢注截走短码,有了 verifier,截到短码也换不出会话。
 import { hashCode } from './auth-code.js'
 

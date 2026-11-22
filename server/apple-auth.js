@@ -144,6 +144,40 @@ export async function verifyAppleIdentityToken(token, { audiences = DEFAULT_APPL
   return payload
 }
 
+// ── nonce 防重放 ──
+// App 每次登录现生成一个随机 nonce,授权请求里放它的 SHA-256(小写十六进制),苹果把这串哈希原样写进 identityToken 的 nonce 声明;
+// App 再把**原始** nonce 随请求体发来。服务端核 sha256_hex(原始) === 声明:截到的 identityToken 没有配对的原始 nonce,重放不了。
+// 现有唯一的客户端(书桌 App)每次都带,所以这里一律必需:声明缺、请求体缺、对不上,都拒。
+const NONCE_RE = /^[\x21-\x7e]{8,256}$/
+
+export const isAppleNonce = (value) => typeof value === 'string' && NONCE_RE.test(value)
+
+export async function sha256Hex(value) {
+  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(value))
+  return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, '0')).join('')
+}
+
+function constantTimeEqual(left, right) {
+  if (typeof left !== 'string' || typeof right !== 'string') return false
+  const length = Math.max(left.length, right.length)
+  let mismatch = left.length ^ right.length
+  for (let index = 0; index < length; index += 1) {
+    mismatch |= (left.charCodeAt(index) || 0) ^ (right.charCodeAt(index) || 0)
+  }
+  return mismatch === 0
+}
+
+// 通过不返回;不通过抛 AppleIdTokenError(401)。rawNonce 的形状由调用方先核(缺 / 坏 → 400)
+export async function verifyAppleNonce(payload, rawNonce) {
+  const claim = payload?.nonce
+  if (typeof claim !== 'string' || !claim || !isAppleNonce(rawNonce)) {
+    throw new AppleIdTokenError(401, 'Apple 身份凭证校验失败,请重新登录')
+  }
+  if (!constantTimeEqual(await sha256Hex(rawNonce), claim.toLowerCase())) {
+    throw new AppleIdTokenError(401, 'Apple 身份凭证校验失败,请重新登录')
+  }
+}
+
 // 苹果把布尔放成字符串 "true"/"false" 的情形都见过
 export function appleBool(value) {
   return value === true || value === 'true'

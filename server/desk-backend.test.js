@@ -3,8 +3,9 @@
 // 接口测试跑在 node:sqlite 上的真 schema(server/test-d1.js),CHECK / UNIQUE / 外键都生效。
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { onRequest } from '../functions/api/[[route]].js'
-import { createTestD1, readRepoFile } from './test-d1.js'
-import { APPLE_KEYS_URL, resetAppleKeyCache, verifyAppleIdentityToken } from './apple-auth.js'
+import { createTestD1, readRepoFile, schemaBefore0007 } from './test-d1.js'
+import { APPLE_KEYS_URL, resetAppleKeyCache, sha256Hex, verifyAppleIdentityToken } from './apple-auth.js'
+import { APPLE_REVOKE_URL, APPLE_TOKEN_URL } from './apple-token.js'
 import { challengeFromVerifier } from './native-auth.js'
 
 const ORIGIN = 'https://hexa.gavin.pub'
@@ -165,9 +166,13 @@ async function makeAppleKeys(kid = 'test-kid') {
   return { kid, privateKey: pair.privateKey, jwk: { kty: 'RSA', kid, use: 'sig', alg: 'RS256', n: jwk.n, e: jwk.e } }
 }
 
+// App 每次登录现生成的原始 nonce;令牌里的 nonce 声明是它的 SHA-256 十六进制
+const NONCE = 'Zq3x-raw-nonce_0123456789abcdefghijklmnopq'
+
 async function appleToken(payload = {}, { keys = appleKeys, header = {} } = {}) {
   const now = Math.floor(Date.now() / 1000)
-  const body = { iss: 'https://appleid.apple.com', aud: 'pub.gavin.hexa.desk', exp: now + 600, iat: now, sub: 'apple-sub-1', ...payload }
+  const body = { iss: 'https://appleid.apple.com', aud: 'pub.gavin.hexa.desk', exp: now + 600, iat: now, sub: 'apple-sub-1', nonce: await sha256Hex(NONCE), ...payload }
+  if (body.nonce === undefined) delete body.nonce
   const head = b64u({ alg: 'RS256', kid: keys.kid, ...header })
   const data = `${head}.${b64u(body)}`
   const sig = await crypto.subtle.sign('RSASSA-PKCS1-v1_5', keys.privateKey, new TextEncoder().encode(data))
@@ -183,8 +188,17 @@ function stubAppleKeys(...keySets) {
   return fetchMock
 }
 
-const appleLogin = (identityToken, { headers = NATIVE, displayName } = {}) =>
-  call('/api/auth/apple', { method: 'POST', body: { identityToken, ...(displayName ? { displayName } : {}) }, headers })
+const appleLogin = (identityToken, { headers = NATIVE, displayName, nonce = NONCE, authorizationCode } = {}) =>
+  call('/api/auth/apple', {
+    method: 'POST',
+    body: {
+      identityToken,
+      ...(nonce !== null ? { nonce } : {}),   // 传 null = 请求体不带 nonce
+      ...(authorizationCode ? { authorizationCode } : {}),
+      ...(displayName ? { displayName } : {}),
+    },
+    headers,
+  })
 
 describe('/auth/apple', () => {
   beforeEach(async () => {
@@ -282,6 +296,23 @@ describe('/auth/apple', () => {
     await verifyAppleIdentityToken(await appleToken({}, { keys: rotated }), { fetchKeys, now: now + 120_000 })
     expect(fetchKeys).toHaveBeenCalledTimes(2)
   })
+
+  it('nonce:sha256_hex(请求体 nonce) 须等于令牌声明;缺哪边都拒', async () => {
+    stubAppleKeys(appleKeys)
+    const good = await appleToken()
+    expect((await appleLogin(good)).status).toBe(200)
+    // 截到令牌、不知道原始 nonce → 重放不了
+    expect((await appleLogin(good, { nonce: 'guessed-nonce-0123456789' })).status).toBe(401)
+    // 请求体不带 nonce → 400(先于验签)
+    expect((await appleLogin(good, { nonce: null })).status).toBe(400)
+    expect((await appleLogin(good, { nonce: 'short' })).status).toBe(400)
+    // 令牌里没有 nonce 声明、请求体却带了 → 拒
+    expect((await appleLogin(await appleToken({ nonce: undefined }))).status).toBe(401)
+    // 声明直接放原始值(没哈希)也不认
+    expect((await appleLogin(await appleToken({ nonce: NONCE }))).status).toBe(401)
+    // 声明大写十六进制也认
+    expect((await appleLogin(await appleToken({ nonce: (await sha256Hex(NONCE)).toUpperCase() }))).status).toBe(200)
+  })
 })
 
 // ── 4. Google 登录回 App ─────────────────────────────────
@@ -308,6 +339,8 @@ async function googleRoundTrip(startQuery) {
 }
 
 const exchange = (body) => call('/api/auth/native/exchange', { method: 'POST', body })
+const VERIFIER = 'v'.repeat(20) + '-._~' + 'w'.repeat(30)
+const nativeQuery = async (verifier = VERIFIER) => `native=1&code_challenge=${await challengeFromVerifier(verifier)}`
 
 describe('Google 原生回跳 + /auth/native/exchange', () => {
   it('网页流程不变:种会话 cookie,302 回站内并带 auth=google', async () => {
@@ -320,7 +353,7 @@ describe('Google 原生回跳 + /auth/native/exchange', () => {
   })
 
   it('native=1:不种 cookie,302 到 guanxiangdesk://auth?code=,短码只能换一次', async () => {
-    const { attempt, cb } = await googleRoundTrip('native=1')
+    const { attempt, cb } = await googleRoundTrip(await nativeQuery())
     expect(attempt.native).toBe(true)
     expect(cb.status).toBe(302)
     const location = new URL(cb.headers.get('Location'))
@@ -334,48 +367,59 @@ describe('Google 原生回跳 + /auth/native/exchange', () => {
     expect(row.target.startsWith('native:')).toBe(true)
     expect(JSON.stringify(row)).not.toContain(code.split('.')[1])
 
-    const first = await exchange({ code })
+    const first = await exchange({ code, verifier: VERIFIER })
     expect(first.status).toBe(200)
     const body = await first.json()
     expect(body.token).toMatch(/^[A-Za-z0-9_-]{43}$/)
     expect(body.user.email).toBe('g@example.com')
     expect((await (await call('/api/me', { headers: bearer(body.token) })).json()).user.id).toBe(body.user.id)
 
-    expect((await exchange({ code })).status).toBe(400)
+    expect((await exchange({ code, verifier: VERIFIER })).status).toBe(400)
   })
 
   it('短码 2 分钟后失效', async () => {
-    const { cb } = await googleRoundTrip('native=1')
+    const { cb } = await googleRoundTrip(await nativeQuery())
     const code = new URL(cb.headers.get('Location')).searchParams.get('code')
     const realNow = Date.now()
     vi.spyOn(Date, 'now').mockReturnValue(realNow + 121_000)
-    expect((await exchange({ code })).status).toBe(400)
+    expect((await exchange({ code, verifier: VERIFIER })).status).toBe(400)
   })
 
   it('伪造 / 篡改的短码换不出会话', async () => {
-    const { cb } = await googleRoundTrip('native=1')
+    const { cb } = await googleRoundTrip(await nativeQuery())
     const code = new URL(cb.headers.get('Location')).searchParams.get('code')
     const [uid, secret] = code.split('.')
     const flipped = `${uid}.${secret.slice(0, -1)}${secret.endsWith('A') ? 'B' : 'A'}`
-    expect((await exchange({ code: flipped })).status).toBe(400)
-    expect((await exchange({ code: 'garbage' })).status).toBe(400)
+    expect((await exchange({ code: flipped, verifier: VERIFIER })).status).toBe(400)
+    expect((await exchange({ code: 'garbage', verifier: VERIFIER })).status).toBe(400)
     expect((await exchange({})).status).toBe(400)
     expect(count('SELECT count(*) AS n FROM sessions')).toBe(0)
   })
 
-  it('带 code_challenge 时必须交出对应 verifier', async () => {
-    const verifier = 'v'.repeat(20) + '-._~' + 'w'.repeat(30)
-    const challenge = await challengeFromVerifier(verifier)
-    const { cb } = await googleRoundTrip(`native=1&code_challenge=${challenge}`)
+  it('exchange 必须交出与 challenge 配对的 verifier', async () => {
+    const { cb } = await googleRoundTrip(await nativeQuery())
     const code = new URL(cb.headers.get('Location')).searchParams.get('code')
-    expect((await exchange({ code })).status).toBe(400)
-    expect((await exchange({ code, verifier: 'x'.repeat(50) })).status).toBe(400)
-    const ok = await exchange({ code, verifier })
+    expect((await exchange({ code })).status).toBe(400)                         // 缺 verifier
+    expect((await exchange({ code, verifier: 'short' })).status).toBe(400)      // 形状不对
+    expect((await exchange({ code, verifier: 'x'.repeat(50) })).status).toBe(400) // 不配对
+    const ok = await exchange({ code, verifier: VERIFIER })
     expect(ok.status).toBe(200)
   })
 
+  it('native=1 不带 code_challenge 直接 400,不发 cookie', async () => {
+    const res = await call('/api/auth/google/start?native=1')
+    expect(res.status).toBe(400)
+    expect(res.headers.get('Set-Cookie')).toBeNull()
+  })
+
+  it('网页模式不要求 code_challenge', async () => {
+    const res = await call('/api/auth/google/start?return_to=%2F')
+    expect(res.status).toBe(302)
+    expect(new URL(res.headers.get('Location')).host).toBe('accounts.google.com')
+  })
+
   it('原生模式下用户在 Google 取消 → 跳回 App 带 error', async () => {
-    const start = await call('/api/auth/google/start?native=1')
+    const start = await call(`/api/auth/google/start?${await nativeQuery()}`)
     const oauth = /gx_oauth=([^;]*)/.exec(start.headers.get('Set-Cookie'))[1]
     const { state } = JSON.parse(decodeURIComponent(oauth))
     const cb = await call(`/api/auth/google/callback?state=${state}&error=access_denied`, { headers: { Cookie: `gx_oauth=${oauth}` } })
@@ -391,11 +435,11 @@ describe('Google 原生回跳 + /auth/native/exchange', () => {
 // ── 5. 迁移 0007 ─────────────────────────────────────────
 describe('migrations/0007-apple-identity.sql', () => {
   it('旧库重建 identities 后数据不丢、apple 可插、CHECK 仍在', () => {
-    const current = readRepoFile('schema.sql')
-    const old = current.replace(", 'apple')", ')')
-    expect(old).not.toBe(current)
-    const legacy = createTestD1(old)
+    const legacy = createTestD1(schemaBefore0007())
     const sq = legacy.sqlite
+    // 起点确是线上的样子:五列、secret 在末尾、没有 refresh 两列
+    expect(sq.prepare('PRAGMA table_info(identities)').all().map((r) => r.name))
+      .toEqual(['user_id', 'provider', 'provider_uid', 'created_at', 'secret'])
     sq.prepare("INSERT INTO users (id, display_name, avatar_seed, email) VALUES ('u1', 'a', 's', 'a@example.com')").run()
     sq.prepare("INSERT INTO identities (user_id, provider, provider_uid, created_at, secret) VALUES ('u1', 'email', 'a@example.com', 123, 'pbkdf2:x')").run()
     sq.prepare("INSERT INTO identities (user_id, provider, provider_uid, created_at) VALUES ('u1', 'google', 'g-sub', 456)").run()
@@ -412,7 +456,15 @@ describe('migrations/0007-apple-identity.sql', () => {
     // 外键与级联仍在
     sq.prepare("DELETE FROM users WHERE id = 'u1'").run()
     expect(sq.prepare('SELECT count(*) AS n FROM identities').get().n).toBe(0)
-    // 重建后表结构与 schema.sql 一致
+    // 重建后表结构与 schema.sql 新建的一致(列、索引)
+    const fresh = createTestD1().sqlite
+    const shape = (db) => ({
+      columns: db.prepare('PRAGMA table_info(identities)').all().map((r) => ({ ...r })),
+      indexes: db.prepare("SELECT name FROM sqlite_master WHERE tbl_name = 'identities' AND type = 'index' ORDER BY name").all().map((r) => r.name),
+      fks: db.prepare('PRAGMA foreign_key_list(identities)').all().map((r) => ({ ...r })),
+    })
+    expect(shape(sq)).toEqual(shape(fresh))
+    expect(shape(sq).columns.map((c) => c.name)).toContain('refresh_token')
     const rebuilt = sq.prepare("SELECT sql FROM sqlite_master WHERE name = 'identities'").get().sql
     expect(rebuilt).toContain("'apple'")
   })
@@ -429,5 +481,153 @@ describe('DELETE /me 无邮箱账号', () => {
     expect((await del('注销账号')).status).toBe(200)
     expect(count('SELECT count(*) AS n FROM users')).toBe(0)
     expect(count('SELECT count(*) AS n FROM identities')).toBe(0)
+  })
+})
+
+// ── 7. Apple 授权码换 refresh_token、注销时撤销 ─────────────
+describe('Apple 授权:登录换 refresh_token,注销撤销', () => {
+  const TEAM = 'TEAM123456'
+  const KID = 'KEY1234567'
+  const AUTH_CODE = 'c0ffee.0.abcd.authorization-code-from-apple'
+  const REFRESH = 'r.refresh-token-from-apple.0123456789'
+  let ecPair
+  let pem
+
+  beforeEach(async () => {
+    appleKeys ||= await makeAppleKeys()
+    ecPair ||= await crypto.subtle.generateKey({ name: 'ECDSA', namedCurve: 'P-256' }, true, ['sign', 'verify'])
+    if (!pem) {
+      const der = Buffer.from(await crypto.subtle.exportKey('pkcs8', ecPair.privateKey)).toString('base64')
+      pem = `-----BEGIN PRIVATE KEY-----\n${der.match(/.{1,64}/g).join('\n')}\n-----END PRIVATE KEY-----\n`
+    }
+  })
+
+  const withSecrets = (privateKey = pem) => Object.assign(env, { APPLE_TEAM_ID: TEAM, APPLE_KEY_ID: KID, APPLE_PRIVATE_KEY: privateKey })
+
+  // 按 URL 分派的 fetch 桩:公钥照给;token / revoke 由各测试决定怎么回,所有请求记下 {url, form}
+  function stubApple({ token = () => Response.json({ access_token: 'a', refresh_token: REFRESH, id_token: 'x', token_type: 'Bearer', expires_in: 3600 }), revoke = () => new Response(null, { status: 200 }) } = {}) {
+    const calls = []
+    const fetchMock = vi.fn(async (url, init = {}) => {
+      const href = String(url)
+      const form = init.body instanceof URLSearchParams ? Object.fromEntries(init.body) : null
+      calls.push({ url: href, form })
+      if (href === APPLE_KEYS_URL) return Response.json({ keys: [appleKeys.jwk] })
+      if (href === APPLE_TOKEN_URL) return token(form)
+      if (href === APPLE_REVOKE_URL) return revoke(form)
+      throw new Error(`unexpected fetch ${href}`)
+    })
+    vi.stubGlobal('fetch', fetchMock)
+    return calls
+  }
+
+  // 用测试自己的 P-256 公钥验 client_secret JWT 的 ES256 签名,并核头与声明
+  async function expectClientSecret(jwt) {
+    const [h, p, sig] = jwt.split('.')
+    expect(JSON.parse(Buffer.from(h, 'base64url'))).toEqual({ alg: 'ES256', kid: KID })
+    const claims = JSON.parse(Buffer.from(p, 'base64url'))
+    expect(claims).toMatchObject({ iss: TEAM, aud: 'https://appleid.apple.com', sub: 'pub.gavin.hexa.desk' })
+    expect(claims.exp - claims.iat).toBe(300)
+    expect(Math.abs(claims.iat - Date.now() / 1000)).toBeLessThan(60)
+    const signature = Buffer.from(sig, 'base64url')
+    expect(signature.length).toBe(64)   // JWS 要的 r‖s,不是 DER
+    const ok = await crypto.subtle.verify({ name: 'ECDSA', hash: 'SHA-256' }, ecPair.publicKey, signature, new TextEncoder().encode(`${h}.${p}`))
+    expect(ok).toBe(true)
+  }
+
+  const appleRow = (sub) => db.sqlite.prepare("SELECT refresh_token, refresh_aud FROM identities WHERE provider = 'apple' AND provider_uid = ?").get(sub)
+
+  // 日志里不许出现任何凭证
+  function expectNoSecretsLogged(spy) {
+    const logged = JSON.stringify(spy.mock.calls.map((args) => args.map(String)))
+    for (const secret of [AUTH_CODE, REFRESH, pem.split('\n')[1], 'BEGIN PRIVATE KEY']) expect(logged).not.toContain(secret)
+  }
+
+  it('登录时用授权码换 refresh_token 并存到 Apple identity 上', async () => {
+    withSecrets()
+    const calls = stubApple()
+    const res = await appleLogin(await appleToken({ sub: 'grant-1' }), { authorizationCode: AUTH_CODE })
+    expect(res.status).toBe(200)
+    const tokenCall = calls.find((c) => c.url === APPLE_TOKEN_URL)
+    expect(tokenCall.form).toMatchObject({ client_id: 'pub.gavin.hexa.desk', code: AUTH_CODE, grant_type: 'authorization_code' })
+    expect(Object.keys(tokenCall.form).sort()).toEqual(['client_id', 'client_secret', 'code', 'grant_type'])
+    await expectClientSecret(tokenCall.form.client_secret)
+    expect(appleRow('grant-1')).toEqual({ refresh_token: REFRESH, refresh_aud: 'pub.gavin.hexa.desk' })
+  })
+
+  it('PEM 里的换行被存成字面量 \\n 也认', async () => {
+    withSecrets(pem.replace(/\n/g, '\\n'))
+    stubApple()
+    expect((await appleLogin(await appleToken({ sub: 'grant-esc' }), { authorizationCode: AUTH_CODE })).status).toBe(200)
+    expect(appleRow('grant-esc').refresh_token).toBe(REFRESH)
+  })
+
+  it('换码失败(苹果拒绝 / 连不上 / 坏私钥)照常登录,只记日志且不含凭证', async () => {
+    const errors = vi.spyOn(console, 'error').mockImplementation(() => {})
+    withSecrets()
+    stubApple({ token: () => Response.json({ error: 'invalid_grant' }, { status: 400 }) })
+    let res = await appleLogin(await appleToken({ sub: 'grant-fail' }), { authorizationCode: AUTH_CODE })
+    expect(res.status).toBe(200)
+    expect((await res.json()).token).toMatch(/^[A-Za-z0-9_-]{43}$/)
+    expect(appleRow('grant-fail').refresh_token).toBeNull()
+    expect(errors).toHaveBeenCalledWith('Apple token exchange failed', 'Apple token HTTP 400 invalid_grant')
+
+    stubApple({ token: () => { throw new TypeError('network down') } })
+    res = await appleLogin(await appleToken({ sub: 'grant-fail' }), { authorizationCode: AUTH_CODE })
+    expect(res.status).toBe(200)
+
+    withSecrets('-----BEGIN PRIVATE KEY-----\nnot-a-key\n-----END PRIVATE KEY-----')
+    stubApple()
+    res = await appleLogin(await appleToken({ sub: 'grant-fail' }), { authorizationCode: AUTH_CODE })
+    expect(res.status).toBe(200)
+    expectNoSecretsLogged(errors)
+  })
+
+  it('注销:先用 refresh_token 调 revoke(字段与 client_secret 都对),再删账号', async () => {
+    withSecrets()
+    const calls = stubApple()
+    const { token } = await (await appleLogin(await appleToken({ sub: 'grant-del' }), { authorizationCode: AUTH_CODE })).json()
+    const del = await call('/api/me', { method: 'DELETE', body: { confirm: '注销账号' }, headers: bearer(token) })
+    expect(del.status).toBe(200)
+    const revokes = calls.filter((c) => c.url === APPLE_REVOKE_URL)
+    expect(revokes).toHaveLength(1)
+    expect(revokes[0].form).toMatchObject({ client_id: 'pub.gavin.hexa.desk', token: REFRESH, token_type_hint: 'refresh_token' })
+    expect(Object.keys(revokes[0].form).sort()).toEqual(['client_id', 'client_secret', 'token', 'token_type_hint'])
+    await expectClientSecret(revokes[0].form.client_secret)
+    expect(count('SELECT count(*) AS n FROM users')).toBe(0)
+    expect(count('SELECT count(*) AS n FROM identities')).toBe(0)
+  })
+
+  it('revoke 失败不挡注销,日志不含凭证', async () => {
+    const errors = vi.spyOn(console, 'error').mockImplementation(() => {})
+    withSecrets()
+    stubApple({ revoke: () => Response.json({ error: 'invalid_client' }, { status: 400 }) })
+    const { token } = await (await appleLogin(await appleToken({ sub: 'grant-del2' }), { authorizationCode: AUTH_CODE })).json()
+    const del = await call('/api/me', { method: 'DELETE', body: { confirm: '注销账号' }, headers: bearer(token) })
+    expect(del.status).toBe(200)
+    expect(count('SELECT count(*) AS n FROM users')).toBe(0)
+    expect(errors).toHaveBeenCalledWith('Apple token revoke failed', 'Apple revoke HTTP 400 invalid_client')
+    expectNoSecretsLogged(errors)
+  })
+
+  it('没存 refresh_token 的 Apple 账号、邮箱账号注销都不调 revoke', async () => {
+    withSecrets()
+    const calls = stubApple()
+    const { token } = await (await appleLogin(await appleToken({ sub: 'grant-none' }))).json()   // 没带授权码
+    expect(calls.some((c) => c.url === APPLE_TOKEN_URL)).toBe(false)
+    expect((await call('/api/me', { method: 'DELETE', body: { confirm: '注销账号' }, headers: bearer(token) })).status).toBe(200)
+    const emailToken = await registerNative('plain@example.com')
+    expect((await call('/api/me', { method: 'DELETE', body: { confirm: 'plain@example.com' }, headers: bearer(emailToken) })).status).toBe(200)
+    expect(calls.some((c) => c.url === APPLE_REVOKE_URL)).toBe(false)
+  })
+
+  it('没配密钥:带授权码登录、注销都不发任何苹果 token / revoke 请求', async () => {
+    const calls = stubApple()
+    env.APPLE_TEAM_ID = TEAM   // 只配一半也算没配
+    const { token } = await (await appleLogin(await appleToken({ sub: 'no-secrets' }), { authorizationCode: AUTH_CODE })).json()
+    expect(appleRow('no-secrets').refresh_token).toBeNull()
+    // 假装库里有旧 token,也不该去撤销
+    db.sqlite.prepare("UPDATE identities SET refresh_token = 'stale', refresh_aud = 'pub.gavin.hexa.desk' WHERE provider_uid = 'no-secrets'").run()
+    expect((await call('/api/me', { method: 'DELETE', body: { confirm: '注销账号' }, headers: bearer(token) })).status).toBe(200)
+    expect(calls.map((c) => c.url)).toEqual([APPLE_KEYS_URL])
   })
 })
