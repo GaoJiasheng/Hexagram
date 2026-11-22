@@ -84,7 +84,8 @@ scripts/.baihua-review/
 reports/
 
 # 观象 · 书桌:内容包是构建产物(scripts/build-desk-packs.mjs);Xcode 工程与 Info.plist 由 xcodegen 从 project.yml 生成
-public/desk/
+# 插画成品(public/desk/v1/art/,Codex 出图后 gen-art.mjs --export 的产物)入库,owner 2026-11-22 定
+public/desk/v1/*.json
 apps/desk/Desk.xcodeproj/
 apps/desk/Desk/Info.plist
 

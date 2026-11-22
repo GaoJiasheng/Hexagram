@@ -2,7 +2,7 @@
 // 观象 · 书桌 —— 批量出插画(题头图 head 每章一张 / 封面 cover 每书一张)。
 // 图一律由本机 Codex CLI 生成(owner 2026-10-07),本脚本不含绘图逻辑;prompt 由 Codex 读章节内容后自己设计,
 // 先写进 prompt.txt,再出 out.png。后处理(检查/样张/导出)用 python3 + PIL。
-//   node scripts/desk/gen-art.mjs <book> [--kind head|cover|all] [--chapters 1-10,25] [--limit N] [--force] [--concurrency 3]
+//   node scripts/desk/gen-art.mjs <book> [--kind head|cover|banner|all] [--chapters 1-10,25] [--limit N] [--force] [--concurrency 3] [--hint "封面 / 题图的额外约束"]
 //   node scripts/desk/gen-art.mjs --contact <book>   # 样张 scripts/.cache/desk-art/<book>/contact-N.jpg
 //   node scripts/desk/gen-art.mjs --export <book>    # → public/desk/v1/art/<book>/head-<章>.jpg(1536 宽,q82)与 cover.jpg(1024 宽)
 // books: daodejing lunyu sunzi guiguzi zhuangzi yijing
@@ -22,7 +22,7 @@ const EXPORT = path.join(ROOT, 'public/desk/v1/art')
 const argv = process.argv.slice(2)
 const flag = (n) => argv.includes(n)
 const opt = (n, d) => { const i = argv.indexOf(n); return i >= 0 ? argv[i + 1] : d }
-const VALUE_OPTS = ['--kind', '--chapters', '--limit', '--concurrency', '--contact', '--export']
+const VALUE_OPTS = ['--kind', '--chapters', '--limit', '--concurrency', '--contact', '--export', '--hint']
 const positional = argv.filter((a, i) => !a.startsWith('--') && !VALUE_OPTS.includes(argv[i - 1]))
 const book = opt('--contact') || opt('--export') || positional[0]
 
@@ -121,6 +121,8 @@ ${COMMON_RULES}${yj}
 When finished, print only the absolute path of out.png. Do nothing else.`
 }
 
+// --hint "…":只对封面 / 题图生效的一句额外约束(如「别再画门」),画面仍由 Codex 读书后自己设计
+const HINT = opt('--hint', '')
 function instructionCover(bk, banner = false) {
   const first = bk.chapters[0]
   const yj = bk.id === 'yijing' ? '\n- This is the Book of Changes: NEVER draw fortune-telling props (diviner stalls, tube of sticks, bagua mirrors, coins, hexagram diagrams). Use natural imagery (heaven and earth, dragon, water, mountain, thunder…).' : ''
@@ -140,7 +142,7 @@ Chapter titles: ${clip(bk.chapters.map((c) => c.title).join('、'), 500)}
 == WHAT THIS IMAGE IS ==
 ${banner ? 'A wide banner for the home-screen card of this book, landscape 3:2 (1536x1024). Complete picture with a clear main subject placed in the right or central part; the lower-left area must stay calm (soft washes only) because the app overlays the book title there in white on a dark gradient. BANNER-ONLY NOTE, ignore the cover sentences that follow:' : ''} A book cover, portrait 2:3 (1024x1536). Complete picture with a clear, definite main subject. The bottom third must be left clean and quiet (paper-colored, only faint washes) because the app will typeset the book title there. Keep the upper two thirds as the picture.
 
-== STEP 1: design the picture (English) ==
+${HINT ? `== EXTRA CONSTRAINT FOR THIS IMAGE (from the art director) ==\n${HINT}\n\n` : ''}== STEP 1: design the picture (English) ==
 From the blurb and first chapter, pull out 3-5 of the most representative CONCRETE images of the whole book (things, scenes, metaphors the book actually uses). Pick one or two to make a single memorable, iconic composition — not a generic mood landscape. Write into prompt.txt in the current directory:
 IMAGERY: <the 3-5 items>
 CHOSEN: <the one or two you picked and why>
