@@ -1,44 +1,50 @@
 #!/usr/bin/env node
-// 观象 · 书桌 —— 详注生产 · 合并。读 scripts/.desk-notes/<书>/out/*.json,逐条机器校验
-// (k 是该段原文子串 · 同段不重叠 · d ≤ 40 字 · x 40–150 字),不合的丢弃并计数,合的并入 scripts/authored/desk-notes/<书>.json。
-//   node scripts/desk/notes-apply.mjs <书 id>   → 之后 npm run desk:packs
+// 详注生产 · 合并(docs/xiangzhu-spec.md §4)。读 scripts/.desk-notes/<corpus>--<slug>/out/uNNN.json(不读 *.draft.json),
+// 逐条按闸的同一套规则校验(scripts/lib/xiangzhu.mjs 的 checkPlace:坐标在本批输入里、k 是该处原文子串、同处不重叠不重复、
+// d 1–40 字、x 40–150 字、r 有则非空;多余字段剥掉),合的并入 src/data/<corpus>/xiangzhu/<slug>.json(按处覆写),
+// 不合的丢弃并按原因计数。原文以 src/data 为准,不信输入分片里的 o。
+//   node scripts/desk/notes-apply.mjs <corpus>/<slug> [--dry]      --dry 只报数不写
 import fs from 'node:fs'
 import path from 'node:path'
-import { fileURLToPath } from 'node:url'
+import { ROOT, parseBookId, originalIndex, checkPlace, readTruth, writeTruth, truthFile, len } from '../lib/xiangzhu.mjs'
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
-const book = process.argv[2]
-const WORK = path.join(ROOT, 'scripts/.desk-notes', book)
-const src = {}
-for (const f of fs.readdirSync(path.join(WORK, 'in'))) for (const it of JSON.parse(fs.readFileSync(path.join(WORK, 'in', f), 'utf8')).items) src[`${it.ch}|${it.seg}`] = it.o
-const outFile = path.join(ROOT, `scripts/authored/desk-notes/${book}.json`)
-const all = fs.existsSync(outFile) ? JSON.parse(fs.readFileSync(outFile, 'utf8')) : {}
-const len = (s) => [...String(s || '')].length
-let kept = 0, dropped = 0, bad = 0
+const argv = process.argv.slice(2)
+const id = parseBookId(argv.find((a) => !a.startsWith('--')))
+const DRY = argv.includes('--dry')
+if (!id) { console.error('用法: node scripts/desk/notes-apply.mjs <corpus>/<slug> [--dry]'); process.exit(2) }
+const WORK = path.join(ROOT, 'scripts/.desk-notes', `${id.corpus}--${id.slug}`)
+const idx = originalIndex(id.corpus, id.slug)
+if (!idx) { console.error(`✗ ${id.id}:站内没有这本书的原文数据`); process.exit(2) }
+
+// 本批输入里有哪些处(只认本批备料过的坐标,免得旧输出误写别处)
+const inBatch = new Set()
+let batchChars = 0
+for (const f of fs.readdirSync(path.join(WORK, 'in')).filter((x) => x.endsWith('.json'))) {
+  for (const it of JSON.parse(fs.readFileSync(path.join(WORK, 'in', f), 'utf8')).items) { inBatch.add(`${it.ch}|${it.seg}`); batchChars += len(it.o) }
+}
+const truth = readTruth(id.corpus, id.slug)
+let kept = 0, dropped = 0, bad = 0, places = 0
 const why = {}
-const drop = (r) => { dropped++; why[r] = (why[r] || 0) + 1 }
-for (const f of fs.readdirSync(path.join(WORK, 'out')).filter((x) => x.endsWith('.json')).sort()) {
+const samples = {}
+const drop = (r, what) => { dropped++; why[r] = (why[r] || 0) + 1; (samples[r] ||= []).length < 3 && samples[r].push(what) }
+const outDir = path.join(WORK, 'out')
+const files = fs.existsSync(outDir) ? fs.readdirSync(outDir).filter((x) => /^u\d+\.json$/.test(x)).sort() : []
+for (const f of files) {
   let j
-  try { j = JSON.parse(fs.readFileSync(path.join(WORK, 'out', f), 'utf8')) } catch { bad++; console.error(`✗ ${f} 不是合法 JSON`); continue }
+  try { j = JSON.parse(fs.readFileSync(path.join(outDir, f), 'utf8')) } catch { bad++; console.error(`✗ ${f} 不是合法 JSON`); continue }
+  if (!j || typeof j !== 'object' || Array.isArray(j)) { bad++; console.error(`✗ ${f} 顶层不是对象`); continue }
   for (const [ch, segs] of Object.entries(j)) for (const [seg, notes] of Object.entries(segs || {})) {
-    const o = src[`${ch}|${seg}`]
-    if (o === undefined || !Array.isArray(notes)) { drop('章段不在本批输入里'); continue }
-    const spans = [], good = []
-    for (const n of notes) {
-      if (!n || typeof n.k !== 'string' || !n.k || typeof n.d !== 'string' || typeof n.x !== 'string') { drop('缺字段'); continue }
-      const at = o.indexOf(n.k)
-      if (at < 0) { drop('k 不是原文子串'); continue }
-      if (spans.some(([a, b]) => at < b && a < at + n.k.length)) { drop('同段重叠'); continue }
-      if (len(n.d) > 40) { drop('d 超长'); continue }
-      if (len(n.x) < 40 || len(n.x) > 150) { drop('x 字数不合'); continue }
-      spans.push([at, at + n.k.length])
-      good.push({ k: n.k, ...(n.r ? { r: String(n.r) } : {}), d: n.d, x: n.x })
-    }
-    if (good.length) { (all[ch] ||= {})[seg] = good; kept += good.length }
+    const where = `${f} ${ch}/${seg}`
+    const o = idx.get(String(ch))?.get(String(seg))
+    const list = Array.isArray(notes) ? notes : []
+    if (o === undefined || !inBatch.has(`${ch}|${seg}`)) { for (const n of list) drop('坐标不在本批输入里', `${where}「${n?.k}」`); continue }
+    const { good, bad: no } = checkPlace(o, list, { strict: false })
+    for (const b of no) drop(b.why, `${where}「${b.n?.k}」`)
+    if (good.length) { (truth[String(ch)] ||= {})[String(seg)] = good; kept += good.length; places++ }
   }
 }
-const sorted = Object.fromEntries(Object.keys(all).sort((a, b) => a - b).map((ch) => [ch, Object.fromEntries(Object.keys(all[ch]).sort((a, b) => a - b).map((s) => [s, all[ch][s]]))]))
-fs.mkdirSync(path.dirname(outFile), { recursive: true })
-fs.writeFileSync(outFile, JSON.stringify(sorted, null, 2) + '\n')
-const chars = Object.values(src).reduce((a, s) => a + s.length, 0)
-console.log(`${book}:并入 ${kept} 条(每百字 ${(kept * 100 / chars).toFixed(1)} 条)· 丢弃 ${dropped} 条 ${JSON.stringify(why)} · 坏文件 ${bad} → ${path.relative(ROOT, outFile)}`)
+if (!DRY) writeTruth(id.corpus, id.slug, truth)
+console.log(`${id.id}:并入 ${kept} 条(${places} 处 · 本批原文 ${batchChars} 字 · 每百字 ${batchChars ? (kept * 100 / batchChars).toFixed(1) : '-'} 条)· 丢弃 ${dropped} 条 · 坏文件 ${bad}${DRY ? ' · [--dry 未写]' : ` → ${path.relative(ROOT, truthFile(id.corpus, id.slug))}`}`)
+for (const [r, n] of Object.entries(why)) console.log(`  丢弃 · ${r} ${n} 条,如 ${samples[r].join(' / ')}`)
+fs.writeFileSync(path.join(WORK, 'apply-stats.json'), JSON.stringify({ kept, places, dropped, why, bad, batchChars, density: batchChars ? +(kept * 100 / batchChars).toFixed(2) : 0, dry: DRY }, null, 1) + '\n')
+if (bad) process.exitCode = 1

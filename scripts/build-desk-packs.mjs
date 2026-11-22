@@ -40,10 +40,15 @@ const BOOKS = [
 const errors = []
 const err = (m) => errors.push(m)
 
-// 书桌自己的详注(scripts/authored/desk-notes/<书 id>.json:章号〔书桌里的序号〕→ 段下标 → [{k,d,x,r?}]):
-// 比站内简注多、且带一段展开 x。有详注的词用详注;与详注位置不重叠的简注照留。
-function applyDeskNotes(id, deskNotes, chNo, i, seg) {
-  const dn = deskNotes?.[String(chNo)]?.[String(i)]
+// 详注(docs/xiangzhu-spec.md):真源 src/data/<corpus>/xiangzhu/<slug>.json,按站内坐标存(章号 → 段下标 / 卦的部位键 → [{k,d,x,r?}])。
+// 每章按它的 src {corpus, slug, ch} 去取;比站内简注多、且带一段展开 x。有详注的词用详注;与详注位置不重叠的简注照留。
+const xzCache = new Map()
+const xiangzhuOf = (corpus, slug) => {
+  const p = `src/data/${corpus}/xiangzhu/${slug}.json`
+  if (!xzCache.has(p)) xzCache.set(p, exists(p) ? read(p) : null)
+  return xzCache.get(p)
+}
+function applyDeskNotes(id, dn, chNo, i, seg) {
   if (!Array.isArray(dn) || !dn.length) return
   const o = seg.o
   const spans = []
@@ -70,7 +75,6 @@ function applyDeskNotes(id, deskNotes, chNo, i, seg) {
 }
 
 function buildBook(spec) {
-  const deskNotes = exists(`scripts/authored/desk-notes/${spec.id}.json`) ? read(`scripts/authored/desk-notes/${spec.id}.json`) : null
   const chapters = []
   const parts = []
   let meta0 = null
@@ -84,6 +88,7 @@ function buildBook(spec) {
     const yanyiAll = exists(`src/data/${corpus}/yanyi.json`) ? read(`src/data/${corpus}/yanyi.json`) : {}
     const yanyi = yanyiAll[slug] || {}
     const from = chapters.length + 1
+    const xz = xiangzhuOf(corpus, slug) || {}
     for (const c of book.chapters) {
       const cn = notes[String(c.no)] || {}
       const segs = c.paragraphs.map((p, i) => {
@@ -99,7 +104,7 @@ function buildBook(spec) {
             return n
           })
         }
-        applyDeskNotes(spec.id, deskNotes, chapters.length + 1, i, seg)
+        applyDeskNotes(spec.id, xz[String(c.no)]?.[String(i)], chapters.length + 1, i, seg)
         chars += o.length
         return seg
       })
@@ -269,6 +274,7 @@ function buildYijing(spec) {
   const stats = { dict: 0, anchHex: 0, anchText: 0 }
   let chars = 0
   const chapters = []
+  const segParts = new Map()   // 书桌章号 → 各段的部位键(只卦有)
   const mkSeg = (where, o, t, notes, extra, kind) => {
     if (typeof o !== 'string' || !o) { err(`易经 ${where}:原文缺`); return null }
     const seg = { o }
@@ -296,21 +302,23 @@ function buildYijing(spec) {
     const A = hexAnch[String(h.id)] || {}
     // [源原文, seg] 成对记下,末尾逐段核一字不差
     const pairs = []
-    const push = (src, seg) => { if (seg) { pairs.push([src, seg]); segs.push(seg) } }
-    const segs = []
-    push(h.judgment?.original, mkSeg(`${where} 卦辞`, h.judgment?.original, h.judgment?.translation, dictNotes(h.judgment?.original || ''), { label: '卦辞' }, 'dict'))
-    push(h.tuan?.original, mkSeg(`${where} 彖`, h.tuan?.original, h.tuan?.translation, anchNotes(A.tuan), { label: '彖' }, 'anchHex'))
-    push(h.daxiang?.original, mkSeg(`${where} 大象`, h.daxiang?.original, h.daxiang?.translation, anchNotes(A.daxiang), { label: '象' }, 'anchHex'))
+    // part:详注真源里的部位键(judgment / tuan / daxiang / l1… / x1… / use / xuse / w0…,见 scripts/lib/xiangzhu.mjs 的 hexParts)
+    const push = (src, seg, part) => { if (seg) { pairs.push([src, seg]); segs.push(seg); parts.push(part) } }
+    const segs = [], parts = []
+    push(h.judgment?.original, mkSeg(`${where} 卦辞`, h.judgment?.original, h.judgment?.translation, dictNotes(h.judgment?.original || ''), { label: '卦辞' }, 'dict'), 'judgment')
+    push(h.tuan?.original, mkSeg(`${where} 彖`, h.tuan?.original, h.tuan?.translation, anchNotes(A.tuan), { label: '彖' }, 'anchHex'), 'tuan')
+    push(h.daxiang?.original, mkSeg(`${where} 大象`, h.daxiang?.original, h.daxiang?.translation, anchNotes(A.daxiang), { label: '象' }, 'anchHex'), 'daxiang')
     const lineSegs = (ln, key, lineNo) => {
-      push(ln.original, mkSeg(`${where} ${ln.title}`, ln.original, ln.translation, dictNotes(ln.original || ''), { label: ln.title, line: lineNo }, 'dict'))
+      push(ln.original, mkSeg(`${where} ${ln.title}`, ln.original, ln.translation, dictNotes(ln.original || ''), { label: ln.title, line: lineNo }, 'dict'), key === 'use' ? 'use' : `l${key}`)
       const xx = ln.xiaoxiang
       if (!xx) { err(`易经 ${where} ${ln.title}:缺小象`); return }
-      push(xx.original, mkSeg(`${where} ${ln.title} 小象`, xx.original, xx.translation, anchNotes(A.xiaoxiang?.[key]), { label: '象', line: lineNo }, 'anchHex'))
+      push(xx.original, mkSeg(`${where} ${ln.title} 小象`, xx.original, xx.translation, anchNotes(A.xiaoxiang?.[key]), { label: '象', line: lineNo }, 'anchHex'), key === 'use' ? 'xuse' : `x${key}`)
     }
     h.lines.forEach((ln, j) => lineSegs(ln, String(j + 1), j + 1))
     if (h.extra?.use) lineSegs(h.extra.use, 'use', 7)
-    ;(h.extra?.wenyan || []).forEach((p, j) => push(p.original, mkSeg(`${where} 文言第 ${j + 1} 段`, p.original, p.translation, anchNotes(A.wenyan?.[String(j)]), { label: '文言' }, 'anchHex')))
+    ;(h.extra?.wenyan || []).forEach((p, j) => push(p.original, mkSeg(`${where} 文言第 ${j + 1} 段`, p.original, p.translation, anchNotes(A.wenyan?.[String(j)]), { label: '文言' }, 'anchHex'), `w${j}`))
     for (const [src, seg] of pairs) if (seg.o !== src) err(`易经 ${where}:有一段原文与源数据不一致`)
+    segParts.set(chapters.length + 1, parts)
     chapters.push({
       no: chapters.length + 1,
       title: h.fullName || h.name,
@@ -348,9 +356,14 @@ function buildYijing(spec) {
     parts.push({ title: book.title, from, to: chapters.length })
   }
   for (const p of parts) if (p.to < p.from) err(`易经:部「${p.title}」是空的`)
-  const deskNotes = exists(`scripts/authored/desk-notes/${spec.id}.json`) ? read(`scripts/authored/desk-notes/${spec.id}.json`) : null
+  // 详注按每章 src 取:卦按部位键,十翼五种按段下标(十翼各段原文都不空,书桌段下标即站内段下标)
   let detailed = 0
-  if (deskNotes) for (const c of chapters) c.segs.forEach((seg, i) => { applyDeskNotes(spec.id, deskNotes, c.no, i, seg); detailed += (seg.n || []).filter((n) => n.x).length })
+  for (const c of chapters) {
+    const xz = xiangzhuOf(c.src.corpus, c.src.slug)?.[String(c.src.ch)]
+    if (!xz) continue
+    const parts = segParts.get(c.no)
+    c.segs.forEach((seg, i) => { applyDeskNotes(spec.id, xz[parts ? parts[i] : String(i)], c.no, i, seg); detailed += (seg.n || []).filter((n) => n.x).length })
+  }
   console.log(`  易经注释:卦辞爻辞词典 ${stats.dict} 条 · 卦内传文锚注 ${stats.anchHex} 条 · 十翼五种锚注 ${stats.anchText} 条 · 并入详注 ${detailed} 条`)
   return finish(spec, {}, chapters, parts, chars)
 }

@@ -1074,6 +1074,31 @@ function buildLlmsTxt() {
 //   · **iOS** 由 Capacitor 本地直供同一条 fetch 路径 —— 天然离线可用、天然不经鉴权
 //     (owner 明确要这个:本地内容 + 登录才看 + 离线放开)
 // 同一份前端代码,不必分支 —— 白话当初已经趟过这条路。
+// 详注(docs/xiangzhu-spec.md §5):真源 src/data/<corpus>/xiangzhu/<slug>.json 按章拆成
+//   public/content/xiangzhu/<corpus>/<slug>/<章号>.json(易经卦:yijing/hexagrams/<卦序>.json),内容即真源里这一章的对象,原样不动;
+//   public/content/xiangzhu/index.json = { "<corpus>/<slug>": [章号…] }(哪本书哪些章有详注,阅读页据此决定取不取分片)
+function buildXiangzhuAssets() {
+  const out = path.join(OUT_ROOT, 'xiangzhu')
+  cleanOutDir(out)
+  const index = {}
+  let nFiles = 0
+  for (const corpus of fs.readdirSync(SRC_DATA).sort()) {
+    const dir = path.join(SRC_DATA, corpus, 'xiangzhu')
+    if (!exists(dir) || !fs.statSync(dir).isDirectory()) continue
+    for (const file of fs.readdirSync(dir).filter((f) => f.endsWith('.json')).sort()) {
+      const slug = file.replace(/\.json$/, '')
+      if (!/^[a-z0-9-]+$/.test(slug)) throw new Error(`详注文件名含不安全字符: ${corpus}/${file}`)
+      const book = readJson(path.join(dir, file))
+      const chs = Object.keys(book).filter((ch) => book[ch] && Object.keys(book[ch]).length).sort((a, b) => Number(a) - Number(b))
+      if (!chs.length) continue
+      for (const ch of chs) { writeJson(path.join(out, corpus, slug, `${chapterFileKey(ch)}.json`), book[ch]); nFiles++ }
+      index[`${corpus}/${slug}`] = chs.map(Number)
+    }
+  }
+  writeJson(path.join(out, 'index.json'), index)
+  console.log(`xiangzhu assets: ${Object.keys(index).length} 本 / ${nFiles} 章`)
+}
+
 function buildBooksAssets() {
   const src = path.join(SRC_DATA, 'books')
   if (!exists(src)) return
@@ -1111,6 +1136,7 @@ buildOgIndex(records)
 buildSitemap(records)
 buildLlmsTxt()
 buildBooksAssets()
+buildXiangzhuAssets()
 
 // 首页要亮的那几个数(2026-08-08)。**构建期算,前端不手写** ——
 // 手写的数字必然过时:门户卡片描述当年就是因为手写才长期显示错的书目数(v1.40.0 修过一次)。
