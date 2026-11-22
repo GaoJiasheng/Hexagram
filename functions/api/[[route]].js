@@ -36,6 +36,7 @@ import {
 } from '../../server/native-auth.js'
 import { sendCommentNotification } from '../../server/comment-notification.js'
 import { isAdminUser } from '../../server/admin.js'
+import { mountDeskShelf } from '../../server/desk-shelf.js'
 import { summarizeReadDays, dwellHistogram, median, isDayString, mergeRankRows, mergeCorpusRows } from '../../server/read-stats.js'
 import { generateCode, hashCode, verifyCodeRow, sentRecently, buildCodeEmail, codeTarget, isCodeShape, CODE_TTL_MS, CODE_PURPOSES } from '../../server/auth-code.js'
 import { sendMail, mailConfigured } from '../../server/mailer.js'
@@ -574,7 +575,7 @@ app.use('*', async (c, next) => {
     if (!allowed) return c.body(null, 404)
     return c.body(null, 204, {
       'Access-Control-Allow-Origin': origin,
-      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
       'Access-Control-Allow-Headers': CORS_HEADERS,
       'Access-Control-Max-Age': '86400',
       Vary: 'Origin',
@@ -586,7 +587,8 @@ app.use('*', async (c, next) => {
     c.header('Access-Control-Allow-Origin', origin)
     c.header('Vary', 'Origin')   // 免得中间层把某个 origin 的响应喂给另一个
   }
-  c.header('Cache-Control', 'no-store')
+  // 默认不缓存;个别接口(书房封面:private, max-age)自己设了的不覆盖
+  if (!c.res.headers.get('Cache-Control')) c.header('Cache-Control', 'no-store')
 })
 
 app.use('/admin/*', async (c, next) => {
@@ -1986,5 +1988,8 @@ app.onError((error, c) => {
   console.error('Unhandled API error', error)
   return c.json({ ok: false, error: 'internal server error' }, 500)
 })
+
+// 书房书架(管理员专属,见 server/desk-shelf.js)
+mountDeskShelf(app, { getSessionUser, getDb })
 
 export const onRequest = handle(app)

@@ -14,3 +14,9 @@ service = "hexa-mailer"
 binding = "DB"
 database_name = "hexagram-db"
 database_id = "86b4edc6-b944-4ce1-9dbe-a1fb2a706782"
+
+# 书房书架(2026-11-22):管理员上传的 .deskbook 书包。桶由 owner 在远端建(npx wrangler r2 bucket create hexa-desk);
+# 本地 `wrangler pages dev` 自动模拟、落盘在 .wrangler/state。
+[[r2_buckets]]
+binding = "DESK_BUCKET"
+bucket_name = "hexa-desk"

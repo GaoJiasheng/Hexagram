@@ -112,6 +112,7 @@ const DaoduPage = lazy(() => import('./features/reader/DaoduPage.jsx'))
 const BooksIndexPage = lazy(() => import('./features/books/BooksIndexPage.jsx'))
 const BookHomePage = lazy(() => import('./features/books/BookHomePage.jsx'))
 const BookArticlePage = lazy(() => import('./features/books/BookArticlePage.jsx'))
+const ShelfPage = lazy(() => import('./features/books/ShelfPage.jsx'))   // 书房 · 书包上传(管理员)
 const ColophonPage = lazy(() => import('./features/Colophon.jsx').then((module) => ({ default: module.ColophonPage })))
 const LicensePage = lazy(() => import('./features/LicensePage.jsx'))
 const AdminStatsPage = lazy(() => import('./features/admin/AdminStatsPage.jsx'))
@@ -604,6 +605,7 @@ function AppContent() {
           <Route path="/app/me" element={<AppMePage />} />
           {/* 私人书房「观书」(隐藏入口,不外链,中性外壳):all-in-one 书架 + 书主页放射脑图 + 逐章详读 */}
           <Route path="/books" element={<BooksIndexPage />} />
+          <Route path="/books/shelf" element={<ShelfPage />} />
           <Route path="/books/:slug" element={<BookHomePage />} />
           <Route path="/books/:slug/overview" element={<BookArticlePage kind="overview" />} />
           <Route path="/books/:slug/:chapter" element={<BookArticlePage />} />

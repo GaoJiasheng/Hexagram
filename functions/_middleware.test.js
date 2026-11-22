@@ -244,4 +244,22 @@ describe('观书只给管理员', () => {
       expect((await call(p)).status).toBe(200)
     }
   })
+
+  // 书包标准的公开说明页(public/desk/standard/,静态目录带 index.html):不在观书闸里,访客与爬虫都原样放行到静态文件
+  it('书包标准页 /desk/standard/ 公开:未登录、爬虫都放行', async () => {
+    for (const p of ['/desk/standard/', '/desk/standard', '/desk/standard/index.html', '/desk/standard/samples/sample-book.deskbook']) {
+      const res = await call(p)
+      expect(res.status, p).toBe(200)
+      expect(await res.text()).toBe('SECRET')
+    }
+    const bot = await run('/desk/standard/', GOOGLEBOT)
+    expect(bot.status).toBe(200)
+    expect(fs.existsSync(path.join(ROOT, 'public/desk/standard/index.html'))).toBe(true)
+  })
+
+  it('书房上传页 /books/shelf 同受观书闸:未登录与普通账号 404', async () => {
+    expect((await call('/books/shelf')).status).toBe(404)
+    const env = { DB: dbWith({ expires_at: future(), email: 'someone@example.com', is_owner: 0 }) }
+    expect((await call('/books/shelf', { env, cookie: SHA })).status).toBe(404)
+  })
 })

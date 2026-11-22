@@ -88,3 +88,53 @@ Google 短码的规则:
   - 登录接口限流。
   - 苹果的服务端通知(用户在系统设置里停用本 App 的 Apple 登录、删除 Apple ID 时推送的事件)没接。
 - 网页端会把 `highlights` 原样存进 localStorage,单键最大约 1MB,在浏览器配额内,但会占掉一部分。
+
+## 书房书架(2026-11-22,管理员专属)
+
+管理员在网站 `/books/shelf`(观书区内,边缘闸只放管理员)上传 `.deskbook` 书包,书桌 App 的「添书 → 书房」列出来让他加到书桌上。非管理员与未登录:书目接口回 200 空列表,其余一律 404,页面 404 —— 看不出书房存在。管理员判据同观书:`server/admin.js` 的 `isAdminUser`(`is_owner` 或 `ADMIN_EMAILS`)。
+
+代码:`server/desk-shelf.js`(路由)、`server/deskbook-range.js`(按区间读 zip 的中央目录与单条)、`src/features/books/ShelfPage.jsx` + `shelfClient.js`(上传页);测试 `server/desk-shelf.test.js`(R2 用 `server/test-r2.js` 内存模拟)。
+
+### 上线前 owner 要做的事(按顺序)
+
+1. **建桶**:`npx wrangler r2 bucket create hexa-desk`。`wrangler.toml` 已加绑定 `DESK_BUCKET → hexa-desk`;Pages 项目若在后台另配过绑定,核一下 Settings → Functions → R2 bindings 里有 `DESK_BUCKET`。桶保持私有,不开公共访问、不配自定义域 —— 书包只经接口下发。
+2. **先在远端 D1 执行迁移 `migrations/0008-desk-shelf.sql`,再发代码**:`npx wrangler d1 execute hexagram-db --remote --file=migrations/0008-desk-shelf.sql`。只新建一张表 `desk_shelf` 与一条索引,不碰已有表。表不在时,书目接口回空列表(书桌照常),上传等接口 503。
+3. 不需要任何新 secret。
+
+### 接口(全部在 `/api/desk/…`,cookie 或 `Authorization: Bearer`)
+
+| 接口 | 请求 | 成功 | 失败 |
+|---|---|---|---|
+| `GET /desk/shelf` | `?all=1` 连隐藏的一起(上传页用;书桌不带) | `{items:[…]}`,按 category, sort, title 排;每条见下 | 非管理员 / 未登录 / 出错:200 `{items:[]}` |
+| `GET /desk/shelf/:id/package` | 可带 `Range: bytes=…`、`If-Range`、`If-None-Match` | 200 整包 / 206 区间;`ETag: "<sha256>"`、`Content-Length`、`Accept-Ranges: bytes`、`Content-Disposition: attachment; filename="<id>-r<rev>.deskbook"; filename*=UTF-8''<书名>.deskbook`、`Cache-Control: private, no-cache` | 304 · 416(带 `Content-Range: bytes */<size>`)· 404 |
+| `GET /desk/shelf/:id/cover`、`/banner` | — | 图片,`Cache-Control: private, max-age=86400`(地址带 `?r=<revision>`,换版即换地址) | 404 |
+| `POST /desk/shelf?id=&revision=&sha256=&chars=[&replace=1]` | 请求体就是书包(≤ 90 MB),须带 `Content-Length` | 201 `{ok, item}` | 400 书包读不开 / 缺 book.json / 字段不合规 / id·revision 与声明不符 / sha256 不符 · 409 修订号不大于已存的 · 411 · 413 |
+| `POST /desk/shelf/uploads` | `{id, revision, size, sha256, chars?, replace?}` | 201 `{key, uploadId, partSize, parts}` | 400 · 409 |
+| `PUT /desk/shelf/uploads/:uploadId/:part?key=…` | 一片(≤ `partSize`,32 MB) | 200 `{partNumber, etag}` | 400 · 413 |
+| `POST /desk/shelf/uploads/:uploadId/complete` | `{key, parts:[{partNumber, etag}], replace?}` | 201 `{ok, item}` | 400(合并失败 / 校验不过,对象已删)· 409 |
+| `DELETE /desk/shelf/uploads/:uploadId?key=…` | 放弃分片上传 | 204 | — |
+| `PATCH /desk/shelf/:id` | `{category?, hidden?, sort?}`;category 为一个词(≤ 24 字、无空格),`""`/`null` 清空 | 200 `{ok, item}` | 400 · 404 |
+| `DELETE /desk/shelf/:id` | — | 204,目录行与 `shelf/<id>/` 下全部对象一起删 | 404 |
+
+以上除书目外,非管理员一律 404;改动类请求若带 `Origin` 必须同源(否则 403;原生 App 不带 Origin,不受影响)。
+
+书目里每条:`{id, revision, kind, title, subtitle, authors, summary, category, tags, unit, chapters, chars, bytes, sha256, theme, disclaimer, source, hidden, sort, cover, banner, package, uploadedAt, updatedAt}`。`cover` / `banner` / `package` 是**站内相对地址**(`/api/desk/shelf/<id>/…?r=<rev>`),App 拼上 `https://hexa.gavin.pub`、带 Bearer 去取;`cover`/`banner` 没有时为 null。App 判断本地那份是否最新:比 `revision`,再用 `sha256` 核下载结果。`disclaimer` 原样(字符串、数组或 null)。
+
+### 存储
+
+- R2 桶 `hexa-desk`:`shelf/<id>/r<revision>.deskbook`(同一修订号「覆盖上传」时另起 `r<revision>-<8 位十六进制>.deskbook`,免得没校验完就盖掉旧包;实际键记在 `desk_shelf.object_key`)、`shelf/<id>/cover.jpg`、`shelf/<id>/banner.jpg`(键名固定,包里是 png / webp 时 Content-Type 照实记)。新版落库后才删旧版对象。
+- D1 `desk_shelf`:一书一行。重传新版只更新书目字段,管理员改过的 `category` / `hidden` / `sort` 保留;`category` 首次取自 book.json。
+
+### 大文件怎么走、上限是多少
+
+- **浏览器先完整校验**(`scripts/desk/deskbook-core.mjs`,懒加载成独立 chunk,约 40 KB),同时算 SHA-256。只有校验通过的包能上传。
+- **≤ 90 MB:直传。** 请求体原样流进 R2(`put` 带 `sha256`,R2 自己核,对不上直接拒写),Worker 不缓冲、不自己算哈希。Cloudflare 的请求体上限是 100 MB(Free / Pro 计划),留了余量。
+- **> 90 MB:R2 分片上传。** 上传页建上传 → 每片 32 MB 逐片 PUT(每片失败重试 3 次)→ 合并。已传的分片记在本机 `localStorage`(键 `guanxiang.v1.shelfUpload.<sha256>`),刷新或断网后再放同一个文件进来,显示「接着上传」、跳过已传的片。R2 的未完成分片上传约 7 天后自动清理。分片路径的 sha256 是浏览器算好声明的,服务端不复算(复算 300 MB 要耗 Worker CPU),只核合并后的大小与声明一致。
+- **服务端轻校验**:对存好的对象按区间读 —— 结尾 ≤ 64 KB 找中央目录 → 中央目录(≤ 4 MB)→ `book.json`(≤ 2 MB)→ 封面 / 题图(各 ≤ 4 MB)。核 zip 结构与路径规则、`format` / `version` / `id` / `revision` / `kind` / `title` / 章文件都在包里、id·revision 与上传时声明的一致、修订号更大。不过就删掉对象。
+- **实际上限 300 MB**(标准的整包上限,服务端建分片上传时卡 `size ≤ 300 MB`)。服务端内存占用与包大小无关(最多几 MB)。瓶颈在浏览器:完整校验要把整包解开放进内存,300 MB 的包在桌面浏览器上没问题,手机浏览器可能吃不消 —— 大包请在电脑上传。
+
+### 没验证 / 没做的
+
+- 只在本地验过:vitest(内存 R2)+ `wrangler pages dev`(本地模拟的 R2 与 D1):直传、单片与两片的分片上传、Range、下载回来 sha256 一致、删除、非管理员 404 / 空列表。**没有对远端 R2 与远端 D1 跑过**;上传页的分片路径只用接口直调验过(本地没有 > 90 MB 的合规书包),页面上的分片进度条没在真实大文件上看过。
+- 原生壳(Capacitor)里打开上传页时,上传走 `apiFetch`(无进度条),「下载」链接带不上 Bearer —— 上传页按网页用。
+- 书房的书只是「可加到书桌」的目录;书桌 App 侧的「添书 → 书房」一栏另由 App 实现。

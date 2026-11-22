@@ -1,0 +1,83 @@
+/* 书房 · 书包上传页 /books/shelf —— 沿用观书外壳(data-site="portal")与 tokens;朱色用 --cinnabar-pure(门户下 --cinnabar 被 muted) */
+.shelf-page { max-width: 920px; }
+.shelf-explain { font-size: .9rem; line-height: 1.75; color: var(--ink-soft); background: var(--paper-raised);
+  border: 0.5px solid var(--line); border-radius: 12px; padding: 14px 18px; margin: 0 0 18px; }
+.shelf-explain p { margin: 0; }
+.shelf-explain p + p { margin-top: 8px; }
+.shelf-explain b { color: var(--ink); font-weight: 600; }
+.shelf-explain a { color: var(--cinnabar-pure); }
+.shelf-page code { font-family: var(--font-mono); font-size: .86em; padding: 0 3px; background: color-mix(in srgb, var(--line) 50%, transparent); border-radius: 4px; }
+
+.shelf-drop { border: 1.5px dashed var(--line); border-radius: 14px; padding: 26px 16px; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 12px; transition: border-color .15s, background .15s; }
+.shelf-drop--on { border-color: var(--cinnabar-pure); background: color-mix(in srgb, var(--cinnabar-pure) 6%, transparent); }
+.shelf-drop__line { margin: 0; color: var(--ink-soft); font-size: .92rem; }
+
+.shelf-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 34px; padding: 0 14px;
+  font-size: .84rem; font-family: var(--font-serif); border-radius: 999px; border: 0.5px solid var(--line);
+  background: var(--paper-raised); color: var(--ink-soft); cursor: pointer; text-decoration: none; white-space: nowrap; touch-action: manipulation; }
+.shelf-btn:hover { border-color: var(--cinnabar-pure); color: var(--cinnabar-pure); text-decoration: none; }
+.shelf-btn--primary { background: var(--cinnabar-pure); border-color: var(--cinnabar-pure); color: #fff; }
+.shelf-btn--primary:hover { color: #fff; filter: brightness(1.06); }
+.shelf-btn--warn { border-color: var(--gold); color: var(--gold); }
+.shelf-btn--quiet { background: transparent; }
+.shelf-btn--danger:hover { color: var(--cinnabar-pure); }
+
+.shelf-section { margin-top: 28px; }
+.shelf-section__bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.shelf-h { font-family: var(--font-serif); font-size: 1.12rem; color: var(--ink); margin: 0; }
+.shelf-count { font-size: .78rem; color: var(--ink-faint); font-family: var(--font-sans); margin-left: 4px; font-weight: 400; }
+.shelf-search { flex: 0 1 260px; min-width: 0; min-height: 34px; padding: 0 12px; border-radius: 999px; border: 0.5px solid var(--line);
+  background: var(--paper-raised); color: var(--ink); font-size: .88rem; }
+
+/* 待传 */
+.shelf-queue, .shelf-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.shelf-q { border: 0.5px solid var(--line); border-radius: 12px; padding: 12px 14px; background: var(--paper-raised); }
+.shelf-q--invalid { border-color: color-mix(in srgb, var(--cinnabar-pure) 45%, var(--line)); }
+.shelf-q--done { border-color: color-mix(in srgb, var(--confucian) 50%, var(--line)); }
+.shelf-q__head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; flex-wrap: wrap; }
+.shelf-q__name { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.shelf-q__name b { font-family: var(--font-serif); font-weight: 600; color: var(--ink); }
+.shelf-q__meta, .shelf-q__file { font-size: .78rem; color: var(--ink-faint); overflow-wrap: anywhere; }
+.shelf-q__file { margin-top: 2px; }
+.shelf-q__acts { display: flex; gap: 6px; flex-wrap: wrap; }
+.shelf-q__note { margin: 8px 0 0; font-size: .84rem; color: var(--ink-soft); }
+.shelf-q__note--ok { color: var(--confucian); }
+.shelf-q__note--err { color: var(--cinnabar-pure); }
+.shelf-q__prog { position: relative; margin-top: 10px; height: 18px; border-radius: 9px; background: var(--line); overflow: hidden; }
+.shelf-q__prog span { position: absolute; inset: 0 auto 0 0; background: var(--cinnabar-pure); transition: width .2s; }
+.shelf-q__prog em { position: relative; display: block; text-align: center; font-style: normal; font-size: .72rem; line-height: 18px; color: var(--ink); mix-blend-mode: difference; filter: invert(1); }
+.shelf-q__issues { margin-top: 8px; font-size: .8rem; color: var(--ink-soft); }
+.shelf-q__issues summary { cursor: pointer; color: var(--cinnabar-pure); }
+.shelf-q__issues--warn summary { color: var(--gold); }
+.shelf-q__issues ul { margin: 6px 0 0; padding-left: 1.2em; max-height: 240px; overflow: auto; line-height: 1.6; overflow-wrap: anywhere; }
+
+/* 分栏 */
+.shelf-group { margin-bottom: 14px; }
+.shelf-group__head { display: flex; align-items: center; gap: 6px; width: 100%; padding: 8px 2px; border: 0; border-bottom: 0.5px solid var(--line);
+  background: transparent; font-family: var(--font-serif); font-size: 1rem; color: var(--ink); cursor: pointer; text-align: left; margin-bottom: 10px; }
+.shelf-group__caret { color: var(--ink-faint); width: 1em; }
+
+.shelf-row { display: flex; gap: 14px; padding: 12px; border: 0.5px solid var(--line); border-radius: 12px; background: var(--paper-raised); }
+.shelf-row--hidden .shelf-row__cover, .shelf-row--hidden .shelf-row__title { opacity: .55; }
+.shelf-row__cover { flex: 0 0 56px; width: 56px; height: 84px; border-radius: 6px; overflow: hidden;
+  background: color-mix(in srgb, var(--row-accent) 22%, var(--paper)); display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 3px 10px -5px rgba(0,0,0,.4); }
+.shelf-row__cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.shelf-row__cover span { font-family: var(--font-serif); font-size: 1.4rem; color: var(--row-accent); }
+.shelf-row__body { min-width: 0; flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.shelf-row__title { font-family: var(--font-serif); font-size: 1.02rem; color: var(--ink); overflow-wrap: anywhere; }
+.shelf-row__sub { color: var(--ink-faint); font-size: .86rem; }
+.shelf-row__meta { font-size: .78rem; color: var(--ink-faint); }
+.shelf-row__flag { margin-left: 8px; padding: 0 7px; white-space: nowrap; color: var(--ink-soft); border-radius: 999px; border: 0.5px solid var(--line); }
+.shelf-row__ctl { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 6px; }
+.shelf-row__cat, .shelf-row__toggle { display: inline-flex; align-items: center; gap: 6px; font-size: .8rem; color: var(--ink-soft); }
+.shelf-row__cat input { width: 8.5em; min-height: 30px; padding: 0 10px; border-radius: 8px; border: 0.5px solid var(--line);
+  background: var(--paper); color: var(--ink); font-size: .85rem; }
+
+@media (max-width: 560px) {
+  .shelf-page { padding-left: 16px; padding-right: 16px; }
+  .shelf-search { flex: 1 1 100%; }
+  .shelf-row { gap: 10px; padding: 10px; }
+  .shelf-row__cover { flex-basis: 44px; width: 44px; height: 66px; }
+}

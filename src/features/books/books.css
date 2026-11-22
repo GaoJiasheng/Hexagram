@@ -158,3 +158,8 @@
 .books-gate__acts { display: flex; gap: 1rem; justify-content: center; align-items: center; margin: 0; }
 .books-gate__home { font-size: 0.84rem; color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--line); }
 .books-gate__home:hover { color: var(--cinnabar-pure); }
+
+/* 观书索引页一角:去「书房 · 书包」上传页(2026-11-22,不显眼) */
+.books-shelf-link { margin: 6px 0 0; font-size: .8rem; }
+.books-shelf-link a { color: var(--ink-faint); text-decoration: none; border-bottom: 0.5px solid var(--line); }
+.books-shelf-link a:hover { color: var(--cinnabar-pure); }

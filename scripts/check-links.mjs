@@ -354,6 +354,8 @@ export function makeSitePathChecker({ ranked, checkEntity, fileExists = () => tr
   return function checkSitePath(p) {
     const last = p.split('/').pop()
     if (/\.[A-Za-z0-9]+$/.test(last)) return fileExists(p) ? null : 'public/ 下无此静态文件'
+    // 静态目录页(如书包标准 /desk/standard/):以 / 结尾、public/ 下有该目录的 index.html,由静态托管直接服务、不走前端路由
+    if (p.length > 1 && p.endsWith('/') && fileExists(p + 'index.html')) return null
     const hits = matchRoutes(ranked, p)
     if (!hits.length) return 'App.jsx 无路由能匹配'
     const why = checkEntity(hits[0].path, hits[0].params)

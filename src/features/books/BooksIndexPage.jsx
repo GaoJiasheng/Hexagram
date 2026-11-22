@@ -28,6 +28,7 @@ export default function BooksIndexPage() {
       <div className="books-head">
         <h1 className="books-title">观书 · Gavin 的书房</h1>
         <p className="books-sub">读过的书，整理成一篇文章 + 一张脑图，随时回来复习</p>
+        <p className="books-shelf-link"><Link to="/books/shelf">书房 · 书包</Link></p>
       </div>
 
       <div className="books-tags">
