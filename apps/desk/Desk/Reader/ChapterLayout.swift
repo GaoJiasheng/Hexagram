@@ -114,18 +114,6 @@ final class ChapterLayout {
 
     static func typeset(_ ch: Chapter, unit: String, style: ReaderStyle) -> NSAttributedString {
         let out = NSMutableAttributedString()
-        // 题头插画(有才放):作为一张图排在文字流最前面,跟着一起分页
-        if style.pageWidth > 0, let img = UIImage(named: "art-\(style.bookID)-\(ch.no)") {
-            let w = style.pageWidth, h = floor(min(w * 0.5, style.pageHeight * 0.36))   // 横屏时别让插画把正文挤到下一页
-            let att = NSTextAttachment()
-            att.image = img.rounded(to: CGSize(width: w, height: h), radius: 18)
-            att.bounds = CGRect(x: 0, y: 0, width: w, height: h)
-            let ps = NSMutableParagraphStyle(); ps.paragraphSpacing = 22
-            let s = NSMutableAttributedString(attachment: att)
-            s.append(NSAttributedString(string: "\n"))
-            s.addAttributes([.paragraphStyle: ps, .deskSeg: -1], range: NSRange(location: 0, length: s.length))
-            out.append(s)
-        }
         // 章题:小字序号 + 大字题名
         let cap = NSMutableParagraphStyle(); cap.paragraphSpacing = 6
         out.append(NSAttributedString(string: "第 \(Numerals.chinese(ch.no)) \(unit)\n", attributes: [

@@ -6,6 +6,7 @@ struct ReaderScreen: View {
     @State private var note: Note?
     @State private var showTOC = false
     @State private var showFinish = false
+    @AppStorage("desk.showArt") private var showArt = true
 
     var theme: BookTheme { model.book.theme }
 
@@ -13,7 +14,7 @@ struct ReaderScreen: View {
         ZStack {
             backdrop
             VStack(spacing: 0) {
-                header
+                Color.clear.frame(height: 46)     // 给左上、右上的悬浮按钮让出一条,不设整栏
                 GeometryReader { geo in
                     // 字号跟着屏宽走:手机 22 上下,各尺寸 iPad 30–34;一行约二十来个字,不拉成长条
                     let font = min(34, max(22, floor(geo.size.width / 22)))
@@ -32,69 +33,78 @@ struct ReaderScreen: View {
                 footer
             }
         }
+        .overlay(alignment: .top) { chrome }
         .sheet(item: $note) { n in NoteSheet(note: n, accent: theme.accentColor).presentationDetents([.height(220)]) }
         .sheet(isPresented: $showTOC) { TOCSheet(model: model) { ch in showTOC = false; model.jump(toChapter: ch) } }
         .fullScreenCover(isPresented: $showFinish) { FinishScreen(book: model.book, stats: .sample) }
     }
 
-    /// 页面底子:纸色 + 顶部一抹主题色 + 右下角一个大大的章号水印。
+    /// 页面底子:纸色 + 这一章的插画淡淡铺在顶上(可关)+ 右下角的章号水印。插画只做背景,不占正文的位置。
     private var backdrop: some View {
         ZStack {
             theme.paperColor
-            LinearGradient(colors: [theme.accentColor.opacity(0.16), theme.accent2Color.opacity(0.05), .clear], startPoint: .top, endPoint: .center)
             GeometryReader { geo in
+                if showArt, let img = UIImage(named: "art-\(model.book.id)-\(model.current.ch)") {
+                    Image(uiImage: img).resizable().scaledToFill()
+                        .frame(width: geo.size.width, height: geo.size.height * 0.46)
+                        .clipped()
+                        .opacity(model.current.page == 0 ? 0.42 : 0.2)
+                        .mask(LinearGradient(stops: [.init(color: .black, location: 0), .init(color: .black.opacity(0.75), location: 0.35), .init(color: .clear, location: 1)],
+                                             startPoint: .top, endPoint: .bottom))
+                        .id(model.current.ch)
+                        .transition(.opacity)
+                } else {
+                    LinearGradient(colors: [theme.accentColor.opacity(0.14), theme.accent2Color.opacity(0.05), .clear], startPoint: .top, endPoint: .center)
+                        .frame(height: geo.size.height * 0.5)
+                }
                 Text(Numerals.chinese(model.current.ch))
                     .font(Fonts.song(min(geo.size.width * 0.42, 340), bold: true))
-                    .foregroundStyle(theme.accentColor.opacity(0.055))
+                    .foregroundStyle(theme.accentColor.opacity(0.05))
                     .lineLimit(1).minimumScaleFactor(0.3)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
                     .padding(.trailing, geo.size.width * 0.04).padding(.bottom, geo.size.height * 0.05)
-                    .id(model.current.ch)
+                    .id("n\(model.current.ch)")
                     .transition(.opacity)
             }
         }
         .ignoresSafeArea()
-        .animation(.easeInOut(duration: 0.4), value: model.current.ch)
+        .animation(.easeInOut(duration: 0.45), value: model.current)
+        .animation(.easeInOut(duration: 0.3), value: showArt)
     }
 
-    private var header: some View {
-        VStack(spacing: 8) {
-            HStack(spacing: 14) {
-                Button { dismiss() } label: { Image(systemName: "chevron.left").font(.system(size: 17, weight: .semibold)) }
-                VStack(alignment: .leading, spacing: 1) {
-                    Text(model.book.title).font(Fonts.song(15, bold: true))
-                    Text(model.chapter(model.current.ch).title).font(.system(size: 11)).foregroundStyle(Ink.soft)
-                }
-                Spacer()
-                Button { model.toggleTranslation() } label: {
-                    Text("译").font(Fonts.song(15, bold: true))
-                        .frame(width: 32, height: 32)
-                        .background(model.showTranslation ? theme.accentColor.opacity(0.14) : .clear, in: Circle())
-                        .overlay(Circle().stroke(model.showTranslation ? theme.accentColor : Ink.line))
-                }
-                .accessibilityLabel(model.showTranslation ? "收起译文" : "显示译文")
-                Button { showTOC = true } label: { Image(systemName: "list.bullet").font(.system(size: 16, weight: .semibold)).frame(width: 32, height: 32) }
-                    .accessibilityLabel("目录")
+    /// 悬浮按钮:左上返回,右上三个工具。没有整条顶栏。
+    private var chrome: some View {
+        HStack(spacing: 10) {
+            float("chevron.left", label: "返回书桌") { dismiss() }
+            Spacer()
+            if UIImage(named: "art-\(model.book.id)-\(model.current.ch)") != nil {
+                float(showArt ? "photo.fill" : "photo", label: showArt ? "隐藏插画" : "显示插画", on: showArt) { showArt.toggle() }
             }
-            .foregroundStyle(Ink.text)
-            .padding(.horizontal, 20)
-            GeometryReader { g in
-                ZStack(alignment: .leading) {
-                    Rectangle().fill(Ink.line)
-                    Rectangle().fill(theme.accentColor).frame(width: g.size.width * model.bookProgress)
-                }
+            Button { model.toggleTranslation() } label: {
+                Text("译").font(Fonts.song(15, bold: true)).frame(width: 38, height: 38)
+                    .foregroundStyle(model.showTranslation ? .white : Ink.text)
+                    .background(model.showTranslation ? AnyShapeStyle(theme.accentColor) : AnyShapeStyle(.ultraThinMaterial), in: Circle())
             }
-            .frame(height: 2)
-            .animation(.easeOut(duration: 0.3), value: model.bookProgress)
+            .accessibilityLabel(model.showTranslation ? "收起全部译文" : "展开全部译文")
+            float("list.bullet", label: "目录") { showTOC = true }
         }
-        .padding(.top, 6)
-        .padding(.bottom, 14)
+        .padding(.horizontal, 16)
+        .padding(.top, 4)
+    }
+
+    private func float(_ icon: String, label: String, on: Bool = false, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Image(systemName: icon).font(.system(size: 15, weight: .semibold)).frame(width: 38, height: 38)
+                .foregroundStyle(on ? theme.accentColor : Ink.text)
+                .background(.ultraThinMaterial, in: Circle())
+        }
+        .accessibilityLabel(label)
     }
 
     private var footer: some View {
         let n = model.pageSize == .zero ? 1 : model.pageCount(model.current.ch)
         return HStack(spacing: 10) {
-            Text("第 \(Numerals.chinese(model.current.ch)) \(model.book.unit)").font(.system(size: 12, weight: .medium)).foregroundStyle(theme.accentColor)
+            Text("\(model.book.title) · 第 \(Numerals.chinese(model.current.ch)) \(model.book.unit)").font(.system(size: 12, weight: .medium)).foregroundStyle(theme.accentColor)
             Spacer()
             if !model.showTranslation && model.current.page == 0 && !model.isEndPageSafe {
                 Label("轻点一段看译文", systemImage: "hand.tap").font(.system(size: 12)).foregroundStyle(Ink.faint)
