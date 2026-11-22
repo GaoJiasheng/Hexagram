@@ -82,3 +82,8 @@ scripts/.baihua-review/
 
 # 每周流量周报(scripts/weekly-report.mjs)输出:流量与地区数据,公开仓库不入库
 reports/
+
+# 观象 · 书桌:内容包是构建产物(scripts/build-desk-packs.mjs);Xcode 工程与 Info.plist 由 xcodegen 从 project.yml 生成
+public/desk/
+apps/desk/Desk.xcodeproj/
+apps/desk/Desk/Info.plist

@@ -1,8 +1,33 @@
 # 观象 · 书桌 —— 方案(待 owner 最终确认)
 
 > 2026-11-22 写。前面四轮对话里 owner 定的事全部收在 §1;§2 起是据此展开的做法。
-> **状态:未开工。** owner 最终确认后才动手;每个里程碑开工前再报一次预计用量。
+> **状态:owner 2026-11-22 确认,M0 已完成(见下节),M1 待开工。** 每个里程碑开工前再报一次预计用量。
 > 文中标「★ 待确认」的是我在展开时新加的具体做法,owner 没明说过,请逐条看。
+
+## M0 做完后的状态(2026-11-22)
+
+**做出来的**
+- 工程:`apps/desk/`(SwiftUI,iOS 17+,`pub.gavin.hexa.desk`);工程文件由 `xcodegen` 从 `project.yml` 生成,`apps/desk/build.sh` 一条命令编到模拟器。
+- 内容包:`npm run desk:packs` → `public/desk/v1/`(清单 + 每本一个带内容哈希的包)。五本已出包(道德经 95 KB / 论语 261 KB / 孙子 91 KB / 鬼谷子 96 KB / 庄子 731 KB),逐段核原文、注释词是原文子串。易经数据形态不同,M1 接。
+- App 已能:拉书目 → 下载一本书 → 放上书桌 → 翻页阅读(TextKit 多容器分页,记到段)→ 点注释词出注 → 轻点一段展开译文 → 目录跳章 → 章末页(延伸 + 下一章)→ 学完庆祝页。iPhone / iPad 竖屏 / iPad 横屏都能跑。
+- 字体:思源宋体(OFL)子集随 App 带,两个字重各 6.5 MB(`scripts/desk/subset-fonts.py`,留 GB2312 + 全站用到的字共 13976 字)。iOS 不预装宋体。
+- 调试:本机 `cd public && python3 -m http.server 8765` 给模拟器供包;`SIMCTL_CHILD_DESK_DEMO=seed|reader|finish` 直接进某一屏出样张。
+
+**核出来的事实(登录与同步,后端几乎不用改)**
+- 后端已有原生通道:请求带 `X-Client: native`,登录 / 注册 / 重置在响应体里回 `token`;之后 `Authorization: Bearer <token>`,查的是同一张 sessions 表。邮箱登录、注册、验证码、`/me`、`/sync` 原生端可直接用,不涉及 cookie、CORS、人机验证。
+- `/sync` 可以只传变动的键;MAP 类键(`readDays` `corpusMarks` `corpusNotes` `bookmarks`)逐条按时间戳合并、删除用墓碑;**未知键整包 400**——加 `highlights` `finished` 必须先发服务端。
+- 要改的只有:① `/auth/logout` 现在只读 cookie,Bearer 登出不删会话 ② Google 登录回调只回站内路径、不回令牌,原生要加「回到 App + 一次性码换令牌」③ Apple 登录全新。
+- 注销账号 `DELETE /me` 已有。
+
+**owner 在 M0 期间补的要求**
+- 阅读页不要电子书那一套:**字要大**(按屏宽自适应,各尺寸 iPad 约 30–34,手机 22 上下)、**纯交互**(默认只显示原文,轻点一段展开那一段的译文)、**不要素**(顶部主题色晕染、章号水印、译文色块、翻页点、题头插画)。已按此改。
+- 每本典籍一张 Codex 封面;书房(观书)那 153 本的封面也改由 Codex 出(不仿出版社封面、画面不带字),先用在新 App。
+- 要顾到 iPhone 各尺寸与 iPad 横屏。横屏现在能自适应重排;左图右文 / 双栏的专门版式放 M1。
+- 可以酌情外包给 Opus、Sonnet 和本机 Codex。
+
+**插画实测**:Codex 出一张 1536×1024 约 35–40 秒、约 2 万 Codex token,并发 3 没问题。四种画风样张在 `scripts/.cache/desk-art/samples/`(`node scripts/desk/art-samples.mjs`),**等 owner 挑**;样张里临时用的是「青绿重彩」。
+
+**M0 没做、留给后面的**:深色模式、iPad 首页与学完页的放大版式、横屏专门版式、翻页时跨章的衔接动画、易经。
 
 ## 0 · 一句话
 

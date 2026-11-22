@@ -25,7 +25,8 @@
     "cap:android": "npm run content:build && VITE_CAP=1 vite build && npx cap sync android && npx cap open android",
     "indexnow": "node scripts/indexnow.mjs",
     "baidu-push": "node scripts/baidu-push.mjs",
-    "weekly-report": "node scripts/weekly-report.mjs"
+    "weekly-report": "node scripts/weekly-report.mjs",
+    "desk:packs": "node scripts/build-desk-packs.mjs"
   },
   "dependencies": {
     "@capacitor/android": "^8.4.1",
