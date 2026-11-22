@@ -34,6 +34,7 @@ const VERIFY = (dir, book, id) => `你是《${book}》详注的核查者。另�
 核这几样:
 1. k 必须是该段 o 的精确子串;同段各条按首次出现位置不重叠、不重复。不合的改 k 或删条。
 2. 释义与展开对不对:字义、词性、句意、读音有没有错;有没有把一家之言写成定论。错的改对。
+   **读音单独再过一遍**(以往核查改得最多的就是读音):r 字段和 x 里提到的读音,凡是通假字、多音字、生僻字,你十分确定才留;拿不准的把 r 字段删掉、x 里那半句也删掉,不要猜一个填上;原稿没给读音的不必补。
 3. **外部说法**(最要紧):x 里凡是「帛书 / 竹简 / 某本作某字」「某注家说……」「见某书某篇」「某年某事」这类不在输入文件里的说法,你十分确定是对的才保留;拿不准的,改成不点名的转述(「一说」「旧注多解作」),或删掉那半句;带引号的他书原话,不能确证逐字无误就去掉引号改转述。
 4. 红线:违反 redline 的措辞改掉。
 5. 字数:d ≤ 30 字,x 不超过 120 字。x 偏短(45 字以上)但说清楚了的**不必补长**——不要为了凑字数去改写。
@@ -47,7 +48,8 @@ log(`详注:${jobs.length} 个单元(${[...new Set(jobs.map((j) => j.book))].joi
 const results = await pipeline(
   jobs,
   (j) => args.verifyOnly ? Promise.resolve({ notes: 0 }) : agent(DRAFT(j.dir, j.book, j.id), { label: `注:${j.book} ${j.id}`, phase: 'Draft', schema: SCHEMA, model: 'sonnet' }),
-  (draft, j) => agent(VERIFY(j.dir, j.book, j.id), { label: `核:${j.book} ${j.id}`, phase: 'Verify', schema: SCHEMA, model: 'opus' })
+  // args.verifyModel:整批核查用哪个模型(默认 opus);全站连跑时用 'sonnet' 做全量核查,Opus 另跑抽查(owner 2026-11-23 定)
+  (draft, j) => agent(VERIFY(j.dir, j.book, j.id), { label: `核:${j.book} ${j.id}`, phase: 'Verify', schema: SCHEMA, model: args.verifyModel || 'opus' })
     .then((v) => ({ book: j.book, id: j.id, draft: draft?.notes ?? 0, kept: v?.notes ?? 0, changed: v?.changed ?? 0, note: v?.note || '' })),
 )
 const ok = results.filter(Boolean)
