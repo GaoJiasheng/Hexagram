@@ -45,7 +45,7 @@ private struct Root: View {
     #if DEBUG
     @State private var ready = false
     // DESK_OPEN=baihua 单独给时按 reader 走(进阅读器再自动打开白话深读)
-    private let demo = ProcessInfo.processInfo.environment["DESK_DEMO"] ?? (ProcessInfo.processInfo.environment["DESK_OPEN"] == "baihua" ? "reader" : "")
+    private let demo = ProcessInfo.processInfo.environment["DESK_DEMO"] ?? (ProcessInfo.processInfo.environment["DESK_OPEN"] == "baihua" ? "reader" : ProcessInfo.processInfo.environment["DESK_OPEN"] == "mindmap" ? "mindmap" : "")
     private func env(_ k: String, _ d: String) -> String { ProcessInfo.processInfo.environment[k] ?? d }
     var body: some View {
         Group {
@@ -60,6 +60,10 @@ private struct Root: View {
                 // 图解样张:十种 kind 各一张,配这本书的主题色与第 DESK_CH 章的题头图
                 let ch = p.chapters[min(max((Int(env("DESK_CH", "8")) ?? 8) - 1, 0), p.chapters.count - 1)]
                 BaihuaScreen(target: BaihuaTarget(book: b, chapter: ch, block: env("DESK_BLOCK", "").isEmpty ? nil : Int(env("DESK_BLOCK", "")), fixture: FigDemo.chapter))
+            }
+            else if demo == "mindmap", let b = Library.shared.book(env("DESK_BOOK", "daodejing")) {
+                // DESK_OPEN=mindmap DESK_BOOK=g-xxx:直接进脑图(DESK_MAP_CH=n 聚焦第 n 章;DESK_MAP_LEVEL / DESK_MAP_NODE / DESK_MAP_Q / DESK_MAP_WALK 见 MindMapModel)
+                MindMapScreen(book: b, focusChapter: Int(env("DESK_MAP_CH", "")))
             }
             else if demo == "home", let b = Library.shared.book(env("DESK_BOOK", "daodejing")) {
                 BookHomeScreen(book: b) { _ in }

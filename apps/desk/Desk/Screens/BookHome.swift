@@ -54,6 +54,8 @@ struct ArticleTOCSheet: View {
     let current: Int
     var sections: [(index: Int, title: String)] = []
     var currentSection: Int?
+    /// 有思想脑图的书:目录最上面一行打开它
+    var openMap: (() -> Void)? = nil
     let pick: (TOCPick) -> Void
     @State private var query = ""
     @Environment(\.dismiss) private var dismiss
@@ -76,6 +78,23 @@ struct ArticleTOCSheet: View {
                         DisclaimerBanner(lines: book.disclaimers ?? [], compact: true)
                     }
                     .padding(.vertical, 4)
+                }
+                if q.isEmpty, let openMap, let t = MindMapStore.tree(book) {
+                    Section {
+                        Button(action: openMap) {
+                            HStack(spacing: 12) {
+                                Image(systemName: "point.3.connected.trianglepath.dotted").font(.system(size: 16, weight: .semibold)).foregroundStyle(accent).frame(width: 38, alignment: .leading)
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text("思想脑图").font(Fonts.song(17, bold: true)).foregroundStyle(Ink.text)
+                                    Text("\(t.branches) 条主线 · \(t.count) 个节点").font(.system(size: 12)).foregroundStyle(Ink.faint)
+                                }
+                                Spacer()
+                                Image(systemName: "chevron.right").font(.system(size: 12, weight: .bold)).foregroundStyle(Ink.faint)
+                            }
+                            .contentShape(Rectangle())
+                        }
+                        .buttonStyle(.plain)
+                    }
                 }
                 if q.isEmpty, sections.count > 1 {
                     Section("本篇") {
@@ -122,6 +141,7 @@ struct BookHomeScreen: View {
     var onRead: (Int?) -> Void
     @Environment(\.dismiss) private var dismiss
     @State private var askRemove = false
+    @State private var showMap = false
     @State private var library = Library.shared
     @Environment(\.horizontalSizeClass) private var hSize
     private var accent: Color { book.theme.accentColor }
@@ -139,6 +159,7 @@ struct BookHomeScreen: View {
                         if let a = book.about { Text(a).font(.system(size: 15)).foregroundStyle(Ink.soft).lineSpacing(5).fixedSize(horizontal: false, vertical: true) }
                         readButtons
                         facts
+                        if let t = MindMapStore.tree(book) { MindMapCard(book: book, tree: t) { showMap = true } }
                         if let pack { chapters(pack) }
                         actions
                     }
@@ -152,6 +173,10 @@ struct BookHomeScreen: View {
             .ignoresSafeArea(edges: .top)
             .toolbar { ToolbarItem(placement: .cancellationAction) { Button("关闭") { dismiss() } } }
             .toolbarBackground(.hidden, for: .navigationBar)
+            .fullScreenCover(isPresented: $showMap) { MindMapScreen(book: book) }
+            #if DEBUG
+            .task { if ProcessInfo.processInfo.environment["DESK_OPEN"] == "homemap" { try? await Task.sleep(nanoseconds: 900_000_000); showMap = true } }
+            #endif
             .confirmationDialog("从这台设备上删掉《\(book.title)》?", isPresented: $askRemove, titleVisibility: .visible) {
                 Button("删掉书,留着阅读记录") { DeskbookStore.shared.remove(book.id, records: false); dismiss() }
                 Button("连阅读记录一起删", role: .destructive) { DeskbookStore.shared.remove(book.id, records: true); dismiss() }

@@ -242,6 +242,15 @@ enum DeskbookInstaller {
         }
         info.segs = segTotal
         info.chars = charTotal
+        // 思想脑图:book.json 声明了、或根上有 mindmap.json 都读;解不开就当没有(不拒收整本书)
+        info.mindmapNodes = nil; info.mindmapNote = nil
+        if zip.entries["mindmap.json"] != nil,
+           let d = try? Data(contentsOf: dir.appendingPathComponent("mindmap.json")),
+           let m = MindMapParser.parse(d, chapters: refs.count) {
+            try JSONEncoder().encode(m).write(to: dir.appendingPathComponent(MindMapFile.storeName), options: .atomic)
+            info.mindmapNodes = m.nodes
+            info.mindmapNote = m.truncated
+        }
         refs.removeAll()
         let pack = BookPack(id: info.id, version: info.version, chapters: chapters)
         try JSONEncoder().encode(pack).write(to: dir.appendingPathComponent("index.json"), options: .atomic)

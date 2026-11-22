@@ -93,6 +93,10 @@ struct BookInfo: Codable, Identifiable, Hashable {
     var about: String?        // book.json 的 description
     var cover: String?        // 包内路径
     var banner: String?
+    /// 思想脑图(书包根目录的 mindmap.json,导入时解成 mindmap.desk.json):节点数;nil = 这本书没有脑图
+    var mindmapNodes: Int?
+    /// 脑图超限被截去时的一句说明(超深、超量);没截为 nil
+    var mindmapNote: String?
 }
 
 /// 书包从哪来。

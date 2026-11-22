@@ -16,6 +16,8 @@ struct BaihuaTarget: Identifiable {
     #endif
 }
 
+private struct MapFocus: Identifiable { let id = UUID(); let ch: Int? }
+
 private enum BHSheet: Identifiable {
     case hl(String), editNote(String), toc, bookTOC, marks
     var id: String {
@@ -98,6 +100,9 @@ struct BaihuaScreen: View {
     @State private var flashAt: (block: Int, start: Int, end: Int)?
     @State private var restored = false
     @State private var lastTouch = Date.distantPast
+    /// 打开着的脑图(聚焦哪一章;0 = 不聚焦)
+    @State private var mapFocus: MapFocus?
+    @Environment(\.mindMapReturn) private var mindMapReturn
 
     private var book: BookInfo { target.book }
     private var pack: BookPack? { Library.shared.pack(book) }
@@ -205,7 +210,13 @@ struct BaihuaScreen: View {
             FinishScreen(book: book, stats: Stats.shared.finishStats(book), replay: finishReplay,
                          onDone: finishReplay ? nil : { showFinish = false; DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { dismiss() } })
         }
-        .onChange(of: phase) { _, p in if p == .active { clock.start(target.chapter.src) } else { clock.settle() } }
+        .onChange(of: phase) { _, p in if p == .active && mapFocus == nil { clock.start(target.chapter.src) } else { clock.settle() } }
+        .fullScreenCover(item: $mapFocus, onDismiss: { clock.start(target.chapter.src) }) { f in
+            MindMapScreen(book: book, focusChapter: f.ch) { ch in
+                mapFocus = nil
+                if ch != no { DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { nav?.go(ch, nil, nil) } }
+            }
+        }
         .onChange(of: top) { _, t in
             touch()
             if restored, let t, t >= 0 {
@@ -623,6 +634,7 @@ struct BaihuaScreen: View {
                 }
                 .buttonStyle(.plain)
             }
+            ChapterInMapLink(book: book, chapter: no) { openMap(focus: no) }
             HStack {
                 if let p = pack.chapters[safe: no - 2] {
                     Button { nav?.go(p.no, nil, nil) } label: {
@@ -638,6 +650,14 @@ struct BaihuaScreen: View {
         .padding(.top, 48).padding(.bottom, 80)
         .frame(width: col, alignment: .leading)
         .frame(maxWidth: .infinity)
+    }
+
+    /// 脑图:从脑图里打开的这一章 → 退回那张脑图;否则在这一章上面盖一张(读那一章 = 退回来换章)。
+    private func openMap(focus: Int?) {
+        touch()
+        if let back = mindMapReturn, let f = focus { back(f); return }
+        clock.settle()
+        mapFocus = MapFocus(ch: focus)
     }
 
     private var deepEnding: some View {
@@ -761,7 +781,11 @@ struct BaihuaScreen: View {
             NoteEditor(id: id).presentationDetents([.medium, .large])
         case .bookTOC:
             if let pack {
-                ArticleTOCSheet(book: book, pack: pack, current: no, sections: c.sections, currentSection: currentSection(c)) { pick in
+                ArticleTOCSheet(book: book, pack: pack, current: no, sections: c.sections, currentSection: currentSection(c),
+                                openMap: book.mindmapNodes == nil ? nil : {
+                                    sheet = nil
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { openMap(focus: nil) }
+                                }) { pick in
                     sheet = nil
                     switch pick {
                     case .chapter(let n): if n != no { DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { nav?.go(n, nil, nil) } }

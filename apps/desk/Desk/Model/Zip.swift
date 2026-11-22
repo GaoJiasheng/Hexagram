@@ -14,6 +14,7 @@ enum DBRules {
     static let totalBytes = 300 * MB
     static let bookJSONBytes = 2 * MB
     static let chapterBytes = 2 * MB
+    static let mindmapBytes = 2 * MB
     static let imageBytes = 4 * MB
     static let videoBytes = 24 * MB
     static let chapters = 2000
@@ -21,7 +22,7 @@ enum DBRules {
     static let pathLength = 255
     static let formatVersion = 1
 
-    enum FileKind { case book, chapter, image, video }
+    enum FileKind { case book, chapter, image, video, mindmap }
 
     /// 路径合规就返回 nil,否则一句说明。
     static func checkPath(_ p: String) -> String? {
@@ -45,6 +46,7 @@ enum DBRules {
 
     static func classify(_ p: String) -> FileKind? {
         if p == "book.json" { return .book }
+        if p == "mindmap.json" { return .mindmap }
         if p.hasPrefix("chapters/"), p.hasSuffix(".json") {
             let mid = p.dropFirst(9).dropLast(5)
             if mid.count >= 3, mid.allSatisfy(\.isASCII), mid.allSatisfy(\.isNumber) { return .chapter }
@@ -61,6 +63,7 @@ enum DBRules {
     static func limit(_ k: FileKind) -> Int {
         switch k {
         case .book: return bookJSONBytes
+        case .mindmap: return mindmapBytes
         case .chapter: return chapterBytes
         case .image: return imageBytes
         case .video: return videoBytes
