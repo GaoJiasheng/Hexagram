@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hexa.gavin.pub/desk/standard/schema/book.json",
+  "title": "deskbook · book.json(书目清单)",
+  "description": "书包格式标准 v1 §2。字数上限(x-deskbook-maxChars)按「去掉空白与 ** 后的字数」计,由校验器 deskbook.mjs 核;JSON Schema 只表达结构。",
+  "type": "object",
+  "required": ["format", "version", "id", "revision", "kind", "title", "authors", "lang", "summary", "source", "unit", "chapters"],
+  "properties": {
+    "format": { "const": "deskbook" },
+    "version": { "const": 1 },
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,63}$", "description": "官方典籍用短名;自己做的 u-<名>-<8 位十六进制>;书房的 g-<名>。重出不换 id。" },
+    "revision": { "type": "integer", "minimum": 1 },
+    "kind": { "enum": ["classic", "book", "collection"] },
+    "title": { "$ref": "#/$defs/text" },
+    "subtitle": { "$ref": "#/$defs/text" },
+    "authors": { "type": "array", "items": { "$ref": "#/$defs/text" } },
+    "lang": { "type": "string", "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$" },
+    "summary": { "$ref": "#/$defs/text", "x-deskbook-maxChars": 60 },
+    "description": { "$ref": "#/$defs/text", "x-deskbook-maxChars": 400 },
+    "category": { "type": "string", "pattern": "^\\S+$", "description": "一个词。命中医学 / 命理领域须带对应 disclaimer(§6)" },
+    "tags": { "type": "array", "maxItems": 8, "items": { "$ref": "#/$defs/text" } },
+    "source": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": { "enum": ["original", "digest", "public-domain", "licensed"] },
+        "of": {
+          "type": "object",
+          "required": ["title", "author"],
+          "properties": {
+            "title": { "$ref": "#/$defs/text" },
+            "author": { "$ref": "#/$defs/text" },
+            "publisher": { "$ref": "#/$defs/text" },
+            "year": { "type": "integer" }
+          }
+        },
+        "note": { "$ref": "#/$defs/text" }
+      },
+      "if": { "properties": { "type": { "enum": ["digest", "licensed"] } } },
+      "then": { "required": ["type", "of"] }
+    },
+    "disclaimer": { "$ref": "#/$defs/text", "description": "medical | divination | 自写一句", "x-deskbook-maxChars": 120 },
+    "unit": { "$ref": "#/$defs/text" },
+    "theme": {
+      "type": "object",
+      "properties": {
+        "accent": { "$ref": "#/$defs/color" },
+        "accent2": { "$ref": "#/$defs/color" },
+        "paper": { "$ref": "#/$defs/color" }
+      }
+    },
+    "cover": { "$ref": "#/$defs/image", "description": "竖版 2:3,不带文字" },
+    "banner": { "$ref": "#/$defs/image", "description": "横版 3:2,不带文字" },
+    "parts": {
+      "type": "array",
+      "minItems": 1,
+      "description": "须连续覆盖全部章(校验器核)",
+      "items": {
+        "type": "object",
+        "required": ["title", "from", "to"],
+        "properties": { "title": { "$ref": "#/$defs/text" }, "from": { "type": "integer", "minimum": 1 }, "to": { "type": "integer", "minimum": 1 } }
+      }
+    },
+    "chapters": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 2000,
+      "description": "no 从 1 连续;file = chapters/ + 章号补零到三位 + .json(校验器核)",
+      "items": {
+        "type": "object",
+        "required": ["no", "file", "title"],
+        "properties": {
+          "no": { "type": "integer", "minimum": 1 },
+          "file": { "type": "string", "pattern": "^chapters/\\d{3,}\\.json$" },
+          "title": { "$ref": "#/$defs/text" },
+          "subtitle": { "$ref": "#/$defs/text" },
+          "minutes": { "type": "number", "exclusiveMinimum": 0 },
+          "author": { "$ref": "#/$defs/text" },
+          "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+          "head": { "$ref": "#/$defs/image", "description": "章题头图,横版,不带文字" }
+        }
+      }
+    },
+    "generator": { "type": "string" }
+  },
+  "$defs": {
+    "text": { "type": "string", "pattern": "\\S" },
+    "color": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+    "image": { "type": "string", "pattern": "^media/([a-z0-9_-][a-z0-9._-]*/)*[a-z0-9_-][a-z0-9._-]*\\.(jpg|png|webp)$" }
+  }
+}

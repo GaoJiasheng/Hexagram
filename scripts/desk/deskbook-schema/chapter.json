@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hexa.gavin.pub/desk/standard/schema/chapter.json",
+  "title": "deskbook · 章文件(chapters/NNN.json)",
+  "description": "书包格式标准 v1 §3。segs / yanyi 只许在典籍(classic)里、且典籍必有 segs;book / collection 必有 article——这些跨文件的规则由校验器按 book.json 的 kind 核。注 k 须为该段 o 的精确子串、同段互不重叠;每章 pull 至多 1 处;digest 书每条 quote ≤ 100 字、每章 ≤ 16 条——也由校验器核。",
+  "type": "object",
+  "required": ["no", "title"],
+  "properties": {
+    "no": { "type": "integer", "minimum": 1 },
+    "title": { "$ref": "#/$defs/text" },
+    "segs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["o"],
+        "properties": {
+          "o": { "$ref": "#/$defs/text", "description": "底本原文,一字不改" },
+          "t": { "$ref": "#/$defs/text" },
+          "label": { "$ref": "#/$defs/text" },
+          "n": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["k", "d"],
+              "properties": {
+                "k": { "$ref": "#/$defs/text" },
+                "d": { "$ref": "#/$defs/text", "x-deskbook-maxChars": 40 },
+                "x": { "$ref": "#/$defs/text", "x-deskbook-maxChars": 150 },
+                "r": { "$ref": "#/$defs/text" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "yanyi": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/text" } },
+    "article": {
+      "type": "object",
+      "required": ["blocks"],
+      "properties": {
+        "title": { "$ref": "#/$defs/text" },
+        "subtitle": { "$ref": "#/$defs/text" },
+        "idea": { "$ref": "#/$defs/text", "x-deskbook-maxChars": 200 },
+        "blocks": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/block" } }
+      }
+    }
+  },
+  "$defs": {
+    "text": { "type": "string", "pattern": "\\S" },
+    "texts": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/text" } },
+    "image": { "type": "string", "pattern": "^media/([a-z0-9_-][a-z0-9._-]*/)*[a-z0-9_-][a-z0-9._-]*\\.(jpg|png|webp)$" },
+    "video": { "type": "string", "pattern": "^media/([a-z0-9_-][a-z0-9._-]*/)*[a-z0-9_-][a-z0-9._-]*\\.mp4$" },
+    "px": { "type": "integer", "minimum": 1 },
+    "outline1": { "type": "object", "required": ["x"], "properties": { "x": { "$ref": "#/$defs/text" }, "children": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/outline2" } } } },
+    "outline2": { "type": "object", "required": ["x"], "properties": { "x": { "$ref": "#/$defs/text" }, "children": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/outline3" } } } },
+    "outline3": { "type": "object", "required": ["x"], "properties": { "x": { "$ref": "#/$defs/text" }, "children": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/outline4" } } } },
+    "outline4": { "type": "object", "required": ["x"], "properties": { "x": { "$ref": "#/$defs/text" } }, "not": { "required": ["children"] } },
+    "block": {
+      "type": "object",
+      "required": ["t"],
+      "oneOf": [
+        { "properties": { "t": { "enum": ["lead", "h2", "h3", "p"] }, "x": { "$ref": "#/$defs/text" } }, "required": ["t", "x"] },
+        { "properties": { "t": { "const": "pull" }, "x": { "$ref": "#/$defs/text" } }, "required": ["t", "x"] },
+        { "properties": { "t": { "const": "quote" }, "o": { "$ref": "#/$defs/text" }, "tr": { "$ref": "#/$defs/text" }, "x": { "$ref": "#/$defs/text" }, "by": { "$ref": "#/$defs/text" } }, "required": ["t"], "anyOf": [{ "required": ["o"] }, { "required": ["x"] }, { "required": ["tr"] }] },
+        { "properties": { "t": { "const": "callout" }, "tone": { "enum": ["note", "tip", "warn"] }, "label": { "$ref": "#/$defs/text" }, "items": { "$ref": "#/$defs/texts" } }, "required": ["t", "tone", "items"] },
+        { "properties": { "t": { "enum": ["steps", "refs"] }, "items": { "$ref": "#/$defs/texts" } }, "required": ["t", "items"] },
+        { "properties": { "t": { "const": "list" }, "ordered": { "type": "boolean" }, "items": { "$ref": "#/$defs/texts" } }, "required": ["t", "ordered", "items"] },
+        { "properties": { "t": { "const": "outline" }, "items": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/outline1" } } }, "required": ["t", "items"] },
+        { "properties": { "t": { "const": "fig" }, "fig": { "$ref": "fig.json" }, "cap": { "$ref": "#/$defs/text" } }, "required": ["t", "fig"] },
+        { "properties": { "t": { "const": "img" }, "src": { "$ref": "#/$defs/image" }, "alt": { "$ref": "#/$defs/text" }, "cap": { "$ref": "#/$defs/text" }, "w": { "$ref": "#/$defs/px" }, "h": { "$ref": "#/$defs/px" } }, "required": ["t", "src", "alt", "w", "h"] },
+        { "properties": { "t": { "const": "video" }, "src": { "$ref": "#/$defs/video" }, "poster": { "$ref": "#/$defs/image" }, "cap": { "$ref": "#/$defs/text" }, "w": { "$ref": "#/$defs/px" }, "h": { "$ref": "#/$defs/px" }, "sec": { "type": "number", "exclusiveMinimum": 0, "maximum": 60 }, "loop": { "type": "boolean" }, "sound": { "type": "boolean" } }, "required": ["t", "src", "poster", "w", "h", "sec"] },
+        { "properties": { "t": { "const": "code" }, "x": { "type": "string", "minLength": 1 }, "lang": { "$ref": "#/$defs/text" } }, "required": ["t", "x"] },
+        { "properties": { "t": { "const": "divider" } }, "required": ["t"] }
+      ]
+    }
+  }
+}

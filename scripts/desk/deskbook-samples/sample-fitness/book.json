@@ -1,0 +1,24 @@
+{
+  "format": "deskbook",
+  "version": 1,
+  "id": "u-squat-basics-sample-c3e85d17",
+  "revision": 1,
+  "kind": "book",
+  "title": "深蹲的形",
+  "subtitle": "两章讲一个动作",
+  "authors": ["观象书桌 示例"],
+  "lang": "zh-Hans",
+  "summary": "徒手深蹲由哪几个关节一起完成,练的时候怎样循序渐进。",
+  "category": "健身",
+  "tags": ["力量训练", "深蹲"],
+  "source": { "type": "original", "note": "示例内容,只讲动作结构,不作训练处方" },
+  "disclaimer": "medical",
+  "unit": "章",
+  "theme": { "accent": "#46709F", "accent2": "#D28C3C" },
+  "cover": "media/cover.jpg",
+  "chapters": [
+    { "no": 1, "file": "chapters/001.json", "title": "三个关节一起弯", "minutes": 4 },
+    { "no": 2, "file": "chapters/002.json", "title": "慢慢来", "minutes": 3 }
+  ],
+  "generator": "deskbook-skill 1.0"
+}

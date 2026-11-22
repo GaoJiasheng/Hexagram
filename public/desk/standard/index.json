@@ -1,0 +1,123 @@
+{
+  "format": "deskbook",
+  "version": 1,
+  "tool": "1.0.0",
+  "url": "https://hexa.gavin.pub/desk/standard/",
+  "limits": {
+    "totalBytes": 314572800,
+    "chapterBytes": 2097152,
+    "imageBytes": 4194304,
+    "videoBytes": 25165824,
+    "chapters": 2000
+  },
+  "samples": [
+    {
+      "path": "samples/sample-book.deskbook",
+      "id": "u-pendulum-sample-5e1c2a90",
+      "title": "摆的道理",
+      "kind": "book",
+      "revision": 1,
+      "chapters": 3,
+      "chars": 1727,
+      "mediaFiles": 9,
+      "mediaBytes": 301606,
+      "totalBytes": 314018,
+      "disclaimer": null,
+      "ok": true
+    },
+    {
+      "path": "samples/sample-collection.deskbook",
+      "id": "u-kitchen-science-sample-9a4f0e26",
+      "title": "厨房里的科学 · 第一期",
+      "kind": "collection",
+      "revision": 1,
+      "chapters": 3,
+      "chars": 804,
+      "mediaFiles": 0,
+      "mediaBytes": 0,
+      "totalBytes": 4951,
+      "disclaimer": null,
+      "ok": true
+    },
+    {
+      "path": "samples/sample-classic.deskbook",
+      "id": "u-daodejing-sample-0b7d41c3",
+      "title": "道德经 · 三章",
+      "kind": "classic",
+      "revision": 1,
+      "chapters": 3,
+      "chars": 1043,
+      "mediaFiles": 0,
+      "mediaBytes": 0,
+      "totalBytes": 18028,
+      "disclaimer": null,
+      "ok": true
+    },
+    {
+      "path": "samples/sample-fitness.deskbook",
+      "id": "u-squat-basics-sample-c3e85d17",
+      "title": "深蹲的形",
+      "kind": "book",
+      "revision": 1,
+      "chapters": 2,
+      "chars": 421,
+      "mediaFiles": 3,
+      "mediaBytes": 95550,
+      "totalBytes": 99018,
+      "disclaimer": "medical",
+      "ok": true
+    }
+  ],
+  "files": [
+    {
+      "path": "deskbook-skill.zip",
+      "bytes": 362485,
+      "sha256": "240017c7c71244e1e65c2b55e552740856b40903f204a1e9468ae2152b64723e"
+    },
+    {
+      "path": "deskbook.mjs",
+      "bytes": 73089,
+      "sha256": "176bd9ba723702ec6689c9bb472c21a9dad4fd2bb158cd38256cd425979ec559"
+    },
+    {
+      "path": "index.html",
+      "bytes": 29323,
+      "sha256": "04b639c9a4897bf4f16f8b7b2b3333a8ce4f35f76e581d9da509bfb480e59a39"
+    },
+    {
+      "path": "samples/sample-book.deskbook",
+      "bytes": 309316,
+      "sha256": "359497ece8cc8c73a4550ca6bdd9343b1aa1fbf271ae38eed840c199a1591a4d"
+    },
+    {
+      "path": "samples/sample-classic.deskbook",
+      "bytes": 7642,
+      "sha256": "adb0fba0e9fa73fa6632fe2600d070e1780e7f1842789633bfa4fea1a23a31b2"
+    },
+    {
+      "path": "samples/sample-collection.deskbook",
+      "bytes": 3300,
+      "sha256": "a156992c978e6b30fa791b2e4724b133e5c5cdef0bfc62ad48a791096629eea1"
+    },
+    {
+      "path": "samples/sample-fitness.deskbook",
+      "bytes": 98336,
+      "sha256": "0b1d726e3aea7b2db91eef5583e887ff0ead081c8dcd99496be1b6e4a9f6f502"
+    },
+    {
+      "path": "schema/book.json",
+      "bytes": 4281,
+      "sha256": "57206d3422202d23b14693e776eda4b976933445139886312bdb8e89dc513846"
+    },
+    {
+      "path": "schema/chapter.json",
+      "bytes": 5546,
+      "sha256": "5bb37a1201aa1b4de541dec290d7bbb99e28755f7827cbe86ce8970d72541d1f"
+    },
+    {
+      "path": "schema/fig.json",
+      "bytes": 4194,
+      "sha256": "c661d31d86d9ccb16447b68a368fd2bfdaa092cd83076ea50feb2a6436ef99b1"
+    }
+  ]
+}

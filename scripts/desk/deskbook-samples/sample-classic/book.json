@@ -1,0 +1,51 @@
+{
+  "format": "deskbook",
+  "version": 1,
+  "id": "u-daodejing-sample-0b7d41c3",
+  "revision": 1,
+  "kind": "classic",
+  "title": "道德经 · 三章",
+  "subtitle": "一章 · 八章 · 十一章",
+  "authors": [
+    "观象书桌 示例"
+  ],
+  "lang": "zh-Hans",
+  "summary": "从《道德经》里取三章:道与名、上善若水、有无之用,原文译文逐段对照,带字词注。",
+  "category": "道家",
+  "tags": [
+    "道德经",
+    "老子",
+    "典籍"
+  ],
+  "source": {
+    "type": "public-domain",
+    "note": "原文取维基文库《道德經》王弼本经文(王注已剔),繁转简;译文与注释为观象站内所作"
+  },
+  "unit": "章",
+  "theme": {
+    "accent": "#5B6B4E",
+    "accent2": "#A8553A",
+    "paper": "#F6F3EA"
+  },
+  "chapters": [
+    {
+      "no": 1,
+      "file": "chapters/001.json",
+      "title": "一章",
+      "subtitle": "说不出的,和说得出的"
+    },
+    {
+      "no": 2,
+      "file": "chapters/002.json",
+      "title": "八章",
+      "subtitle": "水的七种「善」"
+    },
+    {
+      "no": 3,
+      "file": "chapters/003.json",
+      "title": "十一章",
+      "subtitle": "空处的用"
+    }
+  ],
+  "generator": "make-classic.mjs"
+}

@@ -1,0 +1,380 @@
+// 书包格式(deskbook)核心库的单测:示例全过、坏样本逐条报对、zip 往返与攻击样本、结构定义与校验器一致。
+import { describe, it, expect } from 'vitest'
+import fs from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import {
+  validate, zip, unzip, summarize, checkInline, checkFigShape, checkPath, readImageInfo, readMp4Info, crc32, textLen,
+  LIMITS, HEXAGRAM_NAMES, TRIGRAM_NAMES, DISCLAIMER_VOCAB,
+} from './deskbook-core.mjs'
+import { TABLE, TRIGRAMS } from '../lib/hexagram-table.mjs'
+
+const HERE = path.dirname(fileURLToPath(import.meta.url))
+const SAMPLES = path.join(HERE, 'deskbook-samples')
+const SCHEMA = path.join(HERE, 'deskbook-schema')
+const enc = new TextEncoder()
+const dec = new TextDecoder()
+
+function readDir(dir) {
+  const m = new Map()
+  const walk = (d, r) => {
+    for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+      if (e.name.startsWith('.')) continue
+      const rr = r ? `${r}/${e.name}` : e.name
+      if (e.isDirectory()) walk(path.join(d, e.name), rr)
+      else m.set(rr, new Uint8Array(fs.readFileSync(path.join(d, e.name))))
+    }
+  }
+  walk(dir, '')
+  return m
+}
+const sample = (name) => readDir(path.join(SAMPLES, name))
+const J = (files, p) => JSON.parse(dec.decode(files.get(p)))
+const put = (files, p, obj) => { files.set(p, enc.encode(JSON.stringify(obj))); return files }
+const edit = (files, p, fn) => { const o = J(files, p); fn(o); return put(files, p, o) }
+
+// 最小的合法书包(内存里)
+function base(kind = 'book', extra = {}) {
+  const book = {
+    format: 'deskbook', version: 1, id: 'u-test-0123abcd', revision: 1, kind, title: '测试书', authors: [], lang: 'zh-Hans',
+    summary: '一句话。', source: { type: kind === 'classic' ? 'public-domain' : 'original', ...(kind === 'classic' ? { note: '底本' } : {}) }, unit: '章',
+    chapters: [{ no: 1, file: 'chapters/001.json', title: '一' }], ...extra,
+  }
+  const ch = { no: 1, title: '一', article: { blocks: [{ t: 'lead', x: '导语。' }, { t: 'p', x: '正文。' }] } }
+  if (kind === 'classic') ch.segs = [{ o: '道可道，非常道。', t: '译文。', n: [{ k: '道可道', d: '释义' }] }]
+  const files = new Map()
+  put(files, 'book.json', book)
+  put(files, 'chapters/001.json', ch)
+  return files
+}
+const blocks = (files, list) => edit(files, 'chapters/001.json', (c) => { c.article.blocks = [{ t: 'p', x: '正文。' }, ...list] })
+const errs = (files) => validate(files).errors
+const msgs = (files) => errs(files).map((e) => `${e.file}|${e.where}|${e.msg}`).join('\n')
+
+describe('示例书包', () => {
+  for (const name of ['sample-book', 'sample-collection', 'sample-classic', 'sample-fitness']) {
+    it(`${name} 校验零错误零提示`, () => {
+      const r = validate(sample(name))
+      expect(r.errors).toEqual([])
+      expect(r.warnings).toEqual([])
+      expect(r.ok).toBe(true)
+    })
+  }
+  it('sample-book 用到全部块类型、多种 fig、图片与视频', () => {
+    const r = validate(sample('sample-book'))
+    for (const t of ['lead', 'h2', 'h3', 'p', 'quote', 'callout', 'pull', 'steps', 'list', 'outline', 'fig', 'img', 'video', 'code', 'divider', 'refs']) expect(r.stats.blockTypes[t], t).toBeGreaterThan(0)
+    expect(Object.keys(r.stats.figs).length).toBeGreaterThanOrEqual(5)
+    expect(r.stats.videos).toBe(2)
+  })
+  it('summarize 给出书名、章数、字数、媒体字节', () => {
+    const s = summarize(sample('sample-fitness'))
+    expect(s).toMatchObject({ title: '深蹲的形', kind: 'book', chapters: 2, disclaimer: 'medical', ok: true })
+    expect(s.chars).toBeGreaterThan(300)
+    expect(s.mediaBytes).toBeGreaterThan(10000)
+  })
+  it('最小书包三种体裁都合法', () => {
+    for (const k of ['book', 'collection', 'classic']) expect(msgs(base(k, k === 'collection' ? { unit: '篇' } : {}))).toBe('')
+  })
+})
+
+describe('卦名表与 hexagram-table 一致', () => {
+  it('八经卦与六十四卦', () => {
+    expect(new Set(TRIGRAM_NAMES)).toEqual(new Set(Object.values(TRIGRAMS).map((t) => t.name)))
+    expect(new Set(HEXAGRAM_NAMES)).toEqual(new Set(Object.values(TABLE).flatMap((r) => Object.values(r).map(([, n]) => n))))
+  })
+})
+
+// 坏样本:[说明, 造法, 应报的文件, 错误里应含的字]
+const BROKEN = [
+  ['format 不对', (f) => edit(f, 'book.json', (b) => { b.format = 'epub' }), 'book.json', 'deskbook'],
+  ['version 更新', (f) => edit(f, 'book.json', (b) => { b.version = 2 }), 'book.json', '新'],
+  ['id 带大写', (f) => edit(f, 'book.json', (b) => { b.id = 'U-Test' }), 'book.json', 'id 须为'],
+  ['revision 为 0', (f) => edit(f, 'book.json', (b) => { b.revision = 0 }), 'book.json', '每次重出'],
+  ['kind 不认识', (f) => edit(f, 'book.json', (b) => { b.kind = 'novel' }), 'book.json', 'classic / book / collection'],
+  ['缺 lang', (f) => edit(f, 'book.json', (b) => { delete b.lang }), 'book.json', '语言标记'],
+  ['缺 unit', (f) => edit(f, 'book.json', (b) => { delete b.unit }), 'book.json', '章的叫法'],
+  ['summary 超 60 字', (f) => edit(f, 'book.json', (b) => { b.summary = '字'.repeat(61) }), 'book.json', '超过 60 字'],
+  ['tags 9 个', (f) => edit(f, 'book.json', (b) => { b.tags = '一二三四五六七八九'.split('') }), 'book.json', '至多 8 个'],
+  ['digest 没写原书', (f) => edit(f, 'book.json', (b) => { b.source = { type: 'digest' } }), 'book.json', '必须写明原书'],
+  ['theme 颜色格式', (f) => edit(f, 'book.json', (b) => { b.theme = { accent: 'red' } }), 'book.json', '#RRGGBB'],
+  ['章号不连续', (f) => edit(f, 'book.json', (b) => { b.chapters[0].no = 2 }), 'book.json', '从 1 连续'],
+  ['章文件名不补零', (f) => edit(f, 'book.json', (b) => { b.chapters[0].file = 'chapters/1.json' }), 'book.json', 'chapters/001.json'],
+  ['章文件缺', (f) => { edit(f, 'book.json', (b) => { b.chapters.push({ no: 2, file: 'chapters/002.json', title: '二' }) }); return f }, 'book.json', '不在包里'],
+  ['多出未登记的章文件', (f) => put(f, 'chapters/002.json', { no: 2, title: '二', article: { blocks: [{ t: 'p', x: '。' }] } }), 'chapters/002.json', '没有登记'],
+  ['parts 没覆盖全部章', (f) => edit(f, 'book.json', (b) => { b.chapters.push({ no: 2, file: 'chapters/002.json', title: '二' }); b.parts = [{ title: '上', from: 1, to: 1 }] }) && put(f, 'chapters/002.json', { no: 2, title: '二', article: { blocks: [{ t: 'p', x: '。' }] } }), 'book.json', '覆盖全部'],
+  ['日期不合法', (f) => edit(f, 'book.json', (b) => { b.chapters[0].date = '2026-02-30' }), 'book.json', 'YYYY-MM-DD'],
+  ['章文件 no 不对', (f) => edit(f, 'chapters/001.json', (c) => { c.no = 3 }), 'chapters/001.json', '应为 1'],
+  ['现代书出现 segs', (f) => edit(f, 'chapters/001.json', (c) => { c.segs = [{ o: '原文' }] }), 'chapters/001.json', '只许出现在典籍'],
+  ['现代书出现 yanyi', (f) => edit(f, 'chapters/001.json', (c) => { c.yanyi = ['延伸'] }), 'chapters/001.json', 'yanyi'],
+  ['现代书缺 article', (f) => edit(f, 'chapters/001.json', (c) => { delete c.article }), 'chapters/001.json', '必有 article'],
+  ['典籍缺 segs', (f) => edit(base('classic'), 'chapters/001.json', (c) => { delete c.segs }), 'chapters/001.json', '必有原文分段'],
+  ['注 k 不是子串', (f) => edit(base('classic'), 'chapters/001.json', (c) => { c.segs[0].n = [{ k: '名可名', d: '释' }] }), 'chapters/001.json', '精确子串'],
+  ['注互相重叠', (f) => edit(base('classic'), 'chapters/001.json', (c) => { c.segs[0].n = [{ k: '道可道', d: '释' }, { k: '可道', d: '释' }] }), 'chapters/001.json', '重叠'],
+  ['注 d 超 40 字', (f) => edit(base('classic'), 'chapters/001.json', (c) => { c.segs[0].n = [{ k: '道', d: '释'.repeat(41) }] }), 'chapters/001.json', '超过 40 字'],
+  ['注 x 超 150 字', (f) => edit(base('classic'), 'chapters/001.json', (c) => { c.segs[0].n = [{ k: '道', d: '释', x: '展'.repeat(151) }] }), 'chapters/001.json', '超过 150 字'],
+  ['不认识的块', (f) => blocks(f, [{ t: 'html', x: '<b>' }]), 'chapters/001.json', '不认识的块类型'],
+  ['空块', (f) => blocks(f, [{ t: 'h2', x: '  ' }]), 'chapters/001.json', '空块不许有'],
+  ['没有 p 也没有 lead', (f) => edit(f, 'chapters/001.json', (c) => { c.article.blocks = [{ t: 'h2', x: '题' }] }), 'chapters/001.json', '至少一个 p 或 lead'],
+  ['两处 pull', (f) => blocks(f, [{ t: 'pull', x: '一' }, { t: 'pull', x: '二' }]), 'chapters/001.json', '至多 1 处'],
+  ['** 不成对', (f) => blocks(f, [{ t: 'p', x: '这是**加粗' }]), 'chapters/001.json', '不成对'],
+  ['http 链接', (f) => blocks(f, [{ t: 'p', x: '[看](http://example.org)' }]), 'chapters/001.json', '只许 https'],
+  ['javascript 链接', (f) => blocks(f, [{ t: 'refs', items: ['[点](javascript:alert(1))'] }]), 'chapters/001.json', '只许 https'],
+  ['list 缺 ordered', (f) => blocks(f, [{ t: 'list', items: ['一'] }]), 'chapters/001.json', 'true / false'],
+  ['callout tone 不对', (f) => blocks(f, [{ t: 'callout', tone: 'danger', items: ['一'] }]), 'chapters/001.json', 'note / tip / warn'],
+  ['quote 无内容', (f) => blocks(f, [{ t: 'quote', by: '某人' }]), 'chapters/001.json', '至少要有'],
+  ['outline 五层', (f) => blocks(f, [{ t: 'outline', items: [{ x: '1', children: [{ x: '2', children: [{ x: '3', children: [{ x: '4', children: [{ x: '5' }] }] }] }] }] }]), 'chapters/001.json', '最多 4 层'],
+  ['fig cols 只一栏', (f) => blocks(f, [{ t: 'fig', fig: { kind: 'cols', cols: [{ head: '甲', lines: [] }] } }]), 'chapters/001.json', '至少 2 项'],
+  ['fig kind 不认识', (f) => blocks(f, [{ t: 'fig', fig: { kind: 'pie' } }]), 'chapters/001.json', '不认识'],
+  ['fig 卦名不对', (f) => blocks(f, [{ t: 'fig', fig: { kind: 'gua', guas: [{ name: '天', form: 'hex' }] } }]), 'chapters/001.json', '六十四卦'],
+  ['fig 方位重复', (f) => blocks(f, [{ t: 'fig', fig: { kind: 'ring', items: [{ at: 'N', head: '坎' }, { at: 'N', head: '离' }, { at: 'S', head: '乾' }] } }]), 'chapters/001.json', '重复'],
+  ['fig 字符串超 120 字', (f) => blocks(f, [{ t: 'fig', fig: { kind: 'notes', lines: ['字'.repeat(121)] } }]), 'chapters/001.json', '超过 120 字'],
+  ['fig table 行不等长', (f) => blocks(f, [{ t: 'fig', fig: { kind: 'table', heads: ['a', 'b'], rows: [['1']] } }]), 'chapters/001.json', '等长'],
+  ['img 引用的文件不在', (f) => blocks(f, [{ t: 'img', src: 'media/a.png', alt: '图', w: 10, h: 10 }]), 'chapters/001.json', '不在包里'],
+  ['img 缺 alt', (f) => blocks(f, [{ t: 'img', src: 'media/a.png', w: 10, h: 10 }]), 'chapters/001.json', 'alt'],
+  ['video 超 60 秒', (f) => blocks(f, [{ t: 'video', src: 'media/v.mp4', poster: 'media/p.jpg', w: 10, h: 10, sec: 61 }]), 'chapters/001.json', '超过 60 秒'],
+  ['digest 引文超 100 字', (f) => blocks(edit(f, 'book.json', (b) => { b.source = { type: 'digest', of: { title: '原书', author: '某' } } }), [{ t: 'quote', x: '引'.repeat(101), by: '原书' }]), 'chapters/001.json', '至多 100 字'],
+  ['digest 一章 17 条引文', (f) => blocks(edit(f, 'book.json', (b) => { b.source = { type: 'digest', of: { title: '原书', author: '某' } } }), Array.from({ length: 17 }, () => ({ t: 'quote', x: '引一句', by: '原书' }))), 'chapters/001.json', '至多 16 条'],
+  ['健身书没带医学声明', (f) => edit(f, 'book.json', (b) => { b.category = '健身' }), 'book.json', 'medical'],
+  ['英文 fitness 标签没带声明', (f) => edit(f, 'book.json', (b) => { b.tags = ['Fitness'] }), 'book.json', 'medical'],
+  ['八字书没带占卜声明', (f) => edit(f, 'book.json', (b) => { b.tags = ['八字入门'] }), 'book.json', 'divination'],
+  ['医学书带错声明', (f) => edit(f, 'book.json', (b) => { b.category = '中医'; b.disclaimer = 'divination' }), 'book.json', 'medical'],
+  ['自写声明超 120 字', (f) => edit(f, 'book.json', (b) => { b.disclaimer = '声'.repeat(121) }), 'book.json', '超过 120 字'],
+  ['包里有 HTML', (f) => f.set('media/x.html', enc.encode('<script>')) && f, 'media/x.html', '不收'],
+  ['包里有 SVG', (f) => f.set('media/x.svg', enc.encode('<svg/>')) && f, 'media/x.svg', '不收'],
+  ['包里有 GIF', (f) => f.set('media/x.gif', enc.encode('GIF89a')) && f, 'media/x.gif', 'gif2mp4'],
+  ['包里有别的顶层文件', (f) => f.set('readme.txt', enc.encode('hi')) && f, 'readme.txt', '只许有'],
+  ['路径带大写', (f) => f.set('media/A.png', new Uint8Array(8)) && f, 'media/A.png', '不允许的字符'],
+  ['隐藏文件', (f) => f.set('media/.ds', new Uint8Array(1)) && f, 'media/.ds', '隐藏'],
+  ['扩展名与内容不符', (f) => f.set('media/a.jpg', PNG(4, 4)) && blocks(f, [{ t: 'img', src: 'media/a.jpg', alt: '图', w: 4, h: 4 }]), 'media/a.jpg', '内容却是 png'],
+  ['img 标的尺寸不对', (f) => f.set('media/a.png', PNG(40, 30)) && blocks(f, [{ t: 'img', src: 'media/a.png', alt: '图', w: 30, h: 40 }]), 'chapters/001.json', '实际是 40×30'],
+  ['图片长边超 4096', (f) => f.set('media/a.png', PNG(5000, 10)) && blocks(f, [{ t: 'img', src: 'media/a.png', alt: '图', w: 5000, h: 10 }]), 'media/a.png', '长边超过 4096'],
+  ['媒体里藏了 zip', (f) => f.set('media/a.png', new Uint8Array([0x50, 0x4b, 3, 4, 0, 0])) && f, 'media/a.png', '嵌套'],
+  ['缺 book.json', (f) => { f.delete('book.json'); return f }, 'book.json', '缺 book.json'],
+  ['book.json 不是 JSON', (f) => f.set('book.json', enc.encode('{oops')) && f, 'book.json', 'JSON 解析失败'],
+]
+
+// 造一个只有头的 PNG(校验器只读到 IHDR)
+function PNG(w, h) {
+  const b = new Uint8Array(33)
+  b.set([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0, 0, 0, 13, 0x49, 0x48, 0x44, 0x52])
+  const dv = new DataView(b.buffer)
+  dv.setUint32(16, w); dv.setUint32(20, h)
+  return b
+}
+
+describe('坏样本逐条报对', () => {
+  for (const [name, make, file, word] of BROKEN) {
+    it(name, () => {
+      const r = validate(make(base()))
+      expect(r.ok).toBe(false)
+      const hit = r.errors.find((e) => e.file === file && e.msg.includes(word))
+      expect(hit, `应在 ${file} 报「${word}」,实际:\n${r.errors.map((e) => `${e.file}|${e.where}|${e.msg}`).join('\n')}`).toBeTruthy()
+    })
+  }
+  it('错误指到块的下标与类型', () => {
+    const e = errs(blocks(base(), [{ t: 'h2', x: '' }]))[0]
+    expect(e).toMatchObject({ file: 'chapters/001.json', where: 'article.blocks[1](h2).x' })
+  })
+  it('没人引用的媒体只提示不报错', () => {
+    const f = base()
+    f.set('media/a.png', PNG(4, 4))
+    const r = validate(f)
+    expect(r.ok).toBe(true)
+    expect(r.warnings.some((w) => w.file === 'media/a.png' && w.msg.includes('没有任何地方引用'))).toBe(true)
+  })
+  it('同时命中两个领域:填其一即可,另一条只提示', () => {
+    const r = validate(edit(base(), 'book.json', (b) => { b.tags = ['中医', '风水']; b.disclaimer = 'medical' }))
+    expect(r.ok).toBe(true)
+    expect(r.warnings.some((w) => w.msg.includes('两个领域'))).toBe(true)
+  })
+  it('宽词不误伤:「五四运动」「天文星座」不要求声明', () => {
+    expect(msgs(edit(base(), 'book.json', (b) => { b.tags = ['五四运动', '天文星座', 'Fortune 500'] }))).toBe('')
+  })
+  it('词表只在一处、中英都有', () => {
+    for (const d of Object.values(DISCLAIMER_VOCAB)) { expect(d.zh.length).toBeGreaterThan(10); expect(d.en.length).toBeGreaterThan(5) }
+  })
+})
+
+describe('行内记号、路径、字数', () => {
+  it('checkInline', () => {
+    expect(checkInline('**a** `**` [x](https://a.org/b)')).toEqual([])
+    expect(checkInline('**a')).toHaveLength(1)
+    expect(checkInline('[x](ftp://a.org)')).toHaveLength(1)
+    expect(checkInline('[](https://a.org)')).toHaveLength(1)
+  })
+  it('checkPath', () => {
+    for (const ok of ['book.json', 'chapters/001.json', 'media/sub/a-b_c.1.png']) expect(checkPath(ok)).toBeNull()
+    for (const bad of ['../x', '/etc/passwd', 'a//b', 'media/.x', 'Media/a.png', 'a\\b', 'c:/x', 'media/中.png']) expect(checkPath(bad), bad).not.toBeNull()
+  })
+  it('textLen 不计空白与 **', () => { expect(textLen(' **加粗** 字\n')).toBe(3) })
+  it('fig 结构检查与 desk-baihua-spec 一致的几条', () => {
+    expect(checkFigShape({ kind: 'gua', guas: [{ name: '乾', form: 'hex' }], yao: Array.from({ length: 6 }, (_, i) => ({ label: `爻${i}` })) })).toEqual([])
+    expect(checkFigShape({ kind: 'gua', guas: [{ name: '乾', form: 'tri' }, { name: '坤', form: 'tri' }], yao: Array.from({ length: 6 }, () => ({ label: '爻' })) })).toContain('有 yao 时 guas 应只有一个六画卦')
+    expect(checkFigShape({ kind: 'gua', guas: [{ name: '同人', form: 'tri' }] })[0]).toContain('八经卦')
+  })
+})
+
+describe('媒体头', () => {
+  it('读 png / jpg / mp4 的尺寸与时长', () => {
+    const f = sample('sample-book')
+    expect(readImageInfo(f.get('media/pendulum-geometry.png'))).toEqual({ type: 'png', w: 1200, h: 900 })
+    expect(readImageInfo(f.get('media/cover.jpg'))).toEqual({ type: 'jpg', w: 800, h: 1200 })
+    const v = readMp4Info(f.get('media/swing.mp4'))
+    expect(v).toMatchObject({ ok: true, w: 480, h: 360, video: 'avc1', audio: null, faststart: true })
+    expect(v.sec).toBeCloseTo(4, 0)
+  })
+  it('读 webp 三种头', () => {
+    const riff = (chunk, body) => { const b = new Uint8Array(40); b.set(enc.encode('RIFF'), 0); b.set(enc.encode('WEBP'), 8); b.set(enc.encode(chunk), 12); b.set(body, 20); return b }
+    expect(readImageInfo(riff('VP8X', [0, 0, 0, 0, 99, 0, 0, 49, 0, 0]))).toEqual({ type: 'webp', w: 100, h: 50 })
+    const bits = (300 - 1) | ((200 - 1) << 14)
+    expect(readImageInfo(riff('VP8L', [0x2f, bits & 255, (bits >> 8) & 255, (bits >> 16) & 255, (bits >>> 24) & 255]))).toEqual({ type: 'webp', w: 300, h: 200 })
+    expect(readImageInfo(riff('VP8 ', [0, 0, 0, 0x9d, 0x01, 0x2a, 64, 1, 32, 1]))).toEqual({ type: 'webp', w: 320, h: 288 })
+  })
+  it('认不出的不报尺寸', () => { expect(readImageInfo(new Uint8Array([1, 2, 3]))).toEqual({ type: null, w: null, h: null }) })
+})
+
+describe('zip', () => {
+  it('往返一致、确定性输出', async () => {
+    const f = sample('sample-book')
+    const a = await zip(f)
+    const b = await zip(new Map([...f].reverse()))
+    expect(Buffer.from(a).equals(Buffer.from(b))).toBe(true)
+    const u = await unzip(a)
+    expect([...u.keys()].sort()).toEqual([...f.keys()].sort())
+    for (const [k, v] of f) expect(Buffer.from(u.get(k)).equals(Buffer.from(v)), k).toBe(true)
+    expect(validate(u).ok).toBe(true)
+  })
+  it('能读系统 zip 工具打的包(含目录条目、deflate)', async () => {
+    const { execFileSync } = await import('node:child_process')
+    const os = await import('node:os')
+    const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'deskbook-zip-'))
+    const out = path.join(tmp, 'x.deskbook')
+    try { execFileSync('zip', ['-qrX', out, '.'], { cwd: path.join(SAMPLES, 'sample-classic') }) } catch { return } // 没有 zip 命令就跳过
+    const u = await unzip(new Uint8Array(fs.readFileSync(out)))
+    expect(validate(u).ok).toBe(true)
+    fs.rmSync(tmp, { recursive: true, force: true })
+  })
+  const evil = async (name) => zip(new Map([['book.json', enc.encode('{}')], [name, enc.encode('x')]]))
+  for (const name of ['../evil.json', '/etc/passwd', 'media/../../x.json', 'Book.json', 'media/.hidden', 'a\\..\\b']) {
+    it(`拒绝路径「${name}」(zip-slip 等)`, async () => { await expect(unzip(await evil(name))).rejects.toThrow(/路径不合规/) })
+  }
+  it('拒绝嵌套 zip(按扩展名与按内容)', async () => {
+    await expect(unzip(await evil('media/inner.zip'))).rejects.toThrow(/嵌套/)
+    const inner = await zip(new Map([['a.json', enc.encode('{}')]]))
+    await expect(unzip(await zip(new Map([['media/a.png', inner]])))).rejects.toThrow(/嵌套/)
+  })
+  it('拒绝超限:章文件解开超 2 MB', async () => {
+    const big = new Uint8Array(LIMITS.chapterBytes + 1).fill(32)
+    await expect(unzip(await zip(new Map([['chapters/001.json', big]])))).rejects.toThrow(/超过上限/)
+  })
+  it('拒绝谎报大小的炸弹:边解边判,不等解完', async () => {
+    const big = new Uint8Array(LIMITS.chapterBytes * 3).fill(32) // 6 MB 空格,压缩后只有几 KB
+    const z = await zip(new Map([['chapters/001.json', big]]))
+    const dv = new DataView(z.buffer)
+    dv.setUint32(22, 100, true) // 本地头里的原长
+    const cd = z.length - 22 - (46 + 'chapters/001.json'.length)
+    expect(dv.getUint32(cd, true)).toBe(0x02014b50)
+    dv.setUint32(cd + 24, 100, true) // 中央目录里的原长
+    await expect(unzip(z)).rejects.toThrow(/超过上限/)
+  })
+  it('拒绝加密条目', async () => {
+    const z = await evil('chapters/001.json')
+    const dv = new DataView(z.buffer)
+    // 改中央目录里每一条的标志位
+    for (let i = 0; i < z.length - 4; i++) if (dv.getUint32(i, true) === 0x02014b50) dv.setUint16(i + 8, 1, true)
+    await expect(unzip(z)).rejects.toThrow(/加密/)
+  })
+  it('拒绝数据区重叠 / 指向同一块数据', async () => {
+    const z = await zip(new Map([['book.json', enc.encode('{"a":1}')], ['chapters/001.json', enc.encode('{"b":2}')]]))
+    const dv = new DataView(z.buffer)
+    const cds = []
+    for (let i = 0; i < z.length - 4; i++) if (dv.getUint32(i, true) === 0x02014b50) cds.push(i)
+    dv.setUint32(cds[1] + 42, dv.getUint32(cds[0] + 42, true), true)
+    await expect(unzip(z)).rejects.toThrow()
+  })
+  it('拒绝不是 zip 的东西、CRC 不对的', async () => {
+    await expect(unzip(enc.encode('hello world, this is not a zip file'))).rejects.toThrow(/不是 zip/)
+    const z = await zip(new Map([['book.json', enc.encode('{"title":"x"}')]]))
+    const dv = new DataView(z.buffer)
+    dv.setUint32(14, crc32(enc.encode('other')), true)
+    for (let i = 0; i < z.length - 4; i++) if (dv.getUint32(i, true) === 0x02014b50) dv.setUint32(i + 16, crc32(enc.encode('other')), true)
+    await expect(unzip(z)).rejects.toThrow(/CRC/)
+  })
+})
+
+// ── 结构定义:用一个极小的 JSON Schema 检查器核示例书包都满足 schema,坏样本不满足 ──
+const schemas = Object.fromEntries(['book', 'chapter', 'fig'].map((n) => [`${n}.json`, JSON.parse(fs.readFileSync(path.join(SCHEMA, `${n}.json`), 'utf8'))]))
+function schemaCheck(s, v, doc, at = '$', out = []) {
+  if (s === true || s === undefined) return out
+  if (s === false) { out.push(`${at}: false`); return out }
+  if (s.$ref) {
+    const [file, frag] = s.$ref.split('#')
+    const target = file ? schemas[file] : doc
+    let node = target
+    if (frag) for (const k of frag.split('/').filter(Boolean)) node = node[k]
+    schemaCheck(node, v, target, at, out)
+  }
+  const T = (t) => (t === 'integer' ? Number.isInteger(v) : t === 'number' ? typeof v === 'number' : t === 'object' ? v && typeof v === 'object' && !Array.isArray(v) : t === 'array' ? Array.isArray(v) : t === 'null' ? v === null : typeof v === t)
+  if (s.type && !(Array.isArray(s.type) ? s.type.some(T) : T(s.type))) { out.push(`${at}: 应为 ${s.type}`); return out }
+  if ('const' in s && JSON.stringify(s.const) !== JSON.stringify(v)) out.push(`${at}: 应为 ${JSON.stringify(s.const)}`)
+  if (s.enum && !s.enum.some((e) => JSON.stringify(e) === JSON.stringify(v))) out.push(`${at}: 不在 enum`)
+  if (typeof v === 'string') {
+    if (s.pattern && !new RegExp(s.pattern, 'u').test(v)) out.push(`${at}: 不合 ${s.pattern}`)
+    if (s.minLength !== undefined && [...v].length < s.minLength) out.push(`${at}: 太短`)
+    if (s.maxLength !== undefined && [...v].length > s.maxLength) out.push(`${at}: 太长`)
+  }
+  if (typeof v === 'number') {
+    if (s.minimum !== undefined && v < s.minimum) out.push(`${at}: < minimum`)
+    if (s.maximum !== undefined && v > s.maximum) out.push(`${at}: > maximum`)
+    if (s.exclusiveMinimum !== undefined && v <= s.exclusiveMinimum) out.push(`${at}: <= exclusiveMinimum`)
+  }
+  if (Array.isArray(v)) {
+    if (s.minItems !== undefined && v.length < s.minItems) out.push(`${at}: 项太少`)
+    if (s.maxItems !== undefined && v.length > s.maxItems) out.push(`${at}: 项太多`)
+    if (s.items) v.forEach((x, i) => schemaCheck(s.items, x, doc, `${at}[${i}]`, out))
+  }
+  if (v && typeof v === 'object' && !Array.isArray(v)) {
+    for (const r of s.required || []) if (!(r in v)) out.push(`${at}: 缺 ${r}`)
+    for (const [k, sub] of Object.entries(s.properties || {})) if (k in v) schemaCheck(sub, v[k], doc, `${at}.${k}`, out)
+    if (s.additionalProperties !== undefined) for (const k of Object.keys(v)) if (!(k in (s.properties || {}))) schemaCheck(s.additionalProperties, v[k], doc, `${at}.${k}`, out)
+  }
+  const ok = (sub) => schemaCheck(sub, v, doc, at, []).length === 0
+  if (s.allOf) for (const sub of s.allOf) schemaCheck(sub, v, doc, at, out)
+  if (s.anyOf && !s.anyOf.some(ok)) out.push(`${at}: anyOf 都不满足`)
+  if (s.oneOf) { const n = s.oneOf.filter(ok).length; if (n !== 1) out.push(`${at}: oneOf 满足 ${n} 个`) }
+  if (s.not && ok(s.not)) out.push(`${at}: 不应满足 not`)
+  if (s.if) { if (ok(s.if)) { if (s.then) schemaCheck(s.then, v, doc, at, out) } else if (s.else) schemaCheck(s.else, v, doc, at, out) }
+  return out
+}
+const bySchema = (name, v) => schemaCheck(schemas[name], v, schemas[name])
+
+describe('JSON Schema 与校验器一致', () => {
+  for (const name of ['sample-book', 'sample-collection', 'sample-classic', 'sample-fitness']) {
+    it(`${name} 满足 book / chapter / fig 三份 schema`, () => {
+      const f = sample(name)
+      expect(bySchema('book.json', J(f, 'book.json'))).toEqual([])
+      for (const p of f.keys()) if (p.startsWith('chapters/')) expect(bySchema('chapter.json', J(f, p)), p).toEqual([])
+    })
+  }
+  it('坏样本 schema 也拦得住', () => {
+    const ch = (blocks) => ({ no: 1, title: '一', article: { blocks } })
+    expect(bySchema('chapter.json', ch([{ t: 'html', x: 'a' }]))).not.toEqual([])
+    expect(bySchema('chapter.json', ch([{ t: 'outline', items: [{ x: '1', children: [{ x: '2', children: [{ x: '3', children: [{ x: '4', children: [{ x: '5' }] }] }] }] }] }]))).not.toEqual([])
+    expect(bySchema('chapter.json', ch([{ t: 'img', src: 'media/a.svg', alt: 'a', w: 1, h: 1 }]))).not.toEqual([])
+    expect(bySchema('chapter.json', ch([{ t: 'fig', fig: { kind: 'cols', cols: [{ head: 'a', lines: [] }] } }]))).not.toEqual([])
+    expect(bySchema('book.json', { ...J(sample('sample-book'), 'book.json'), source: { type: 'digest' } })).not.toEqual([])
+    expect(bySchema('book.json', { ...J(sample('sample-book'), 'book.json'), id: 'Bad' })).not.toEqual([])
+  })
+  it('schema 里的上限与 LIMITS 相同', () => {
+    const b = schemas['book.json'].properties
+    expect(b.summary['x-deskbook-maxChars']).toBe(LIMITS.summary)
+    expect(b.description['x-deskbook-maxChars']).toBe(LIMITS.description)
+    expect(b.disclaimer['x-deskbook-maxChars']).toBe(LIMITS.disclaimer)
+    expect(b.tags.maxItems).toBe(LIMITS.tags)
+    expect(b.chapters.maxItems).toBe(LIMITS.chapters)
+    const n = schemas['chapter.json'].properties.segs.items.properties.n.items.properties
+    expect(n.d['x-deskbook-maxChars']).toBe(LIMITS.noteD)
+    expect(n.x['x-deskbook-maxChars']).toBe(LIMITS.noteXMax)
+    expect(schemas['fig.json'].$defs.text['x-deskbook-maxChars']).toBe(LIMITS.figString)
+  })
+})

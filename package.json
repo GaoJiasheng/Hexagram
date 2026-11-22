@@ -27,7 +27,8 @@
     "baidu-push": "node scripts/baidu-push.mjs",
     "weekly-report": "node scripts/weekly-report.mjs",
     "desk:packs": "node scripts/build-desk-packs.mjs",
-    "desk:art": "for b in daodejing lunyu sunzi guiguzi zhuangzi yijing; do node scripts/desk/gen-art.mjs --export $b || exit 1; done"
+    "desk:art": "for b in daodejing lunyu sunzi guiguzi zhuangzi yijing; do node scripts/desk/gen-art.mjs --export $b || exit 1; done",
+    "desk:standard": "node scripts/desk/build-deskbook-cli.mjs"
   },
   "dependencies": {
     "@capacitor/android": "^8.4.1",

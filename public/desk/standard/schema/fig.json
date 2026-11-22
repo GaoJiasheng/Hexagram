@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hexa.gavin.pub/desk/standard/schema/fig.json",
+  "title": "deskbook · 图解(fig)",
+  "description": "图解的结构化数据,由书桌用原生版式画。十种 kind。任何条目可带 accent: true(强调)。单个字符串不超过 120 字。卦名须为六十四卦或八经卦名,form 与之相符(校验器核)。",
+  "type": "object",
+  "required": ["kind"],
+  "properties": {
+    "kind": { "enum": ["quote", "cols", "rows", "flow", "tree", "timeline", "table", "gua", "ring", "notes"] },
+    "title": { "$ref": "#/$defs/text" },
+    "foot": { "type": "array", "items": { "$ref": "#/$defs/text" } }
+  },
+  "oneOf": [
+    { "properties": { "kind": { "const": "quote" }, "text": { "$ref": "#/$defs/text" }, "gloss": { "$ref": "#/$defs/text" }, "source": { "$ref": "#/$defs/text" } }, "required": ["kind", "text"] },
+    { "properties": { "kind": { "const": "cols" }, "cols": { "type": "array", "minItems": 2, "maxItems": 4, "items": { "type": "object", "required": ["head", "lines"], "properties": { "head": { "$ref": "#/$defs/text" }, "lines": { "type": "array", "items": { "anyOf": [{ "$ref": "#/$defs/text" }, { "$ref": "#/$defs/item" }] } }, "accent": { "type": "boolean" } } } } }, "required": ["kind", "cols"] },
+    { "properties": { "kind": { "const": "rows" }, "items": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/item" } } }, "required": ["kind", "items"] },
+    { "properties": { "kind": { "const": "flow" }, "steps": { "type": "array", "minItems": 2, "items": { "$ref": "#/$defs/item" } }, "result": { "$ref": "#/$defs/item" }, "loop": { "type": "boolean" } }, "required": ["kind", "steps"] },
+    { "properties": { "kind": { "const": "tree" }, "root": { "$ref": "#/$defs/item" }, "branches": { "type": "array", "minItems": 2, "items": { "allOf": [{ "$ref": "#/$defs/item" }, { "properties": { "children": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/item" } } } }] } } }, "required": ["kind", "branches"] },
+    { "properties": { "kind": { "const": "timeline" }, "points": { "type": "array", "minItems": 2, "items": { "allOf": [{ "$ref": "#/$defs/item" }, { "properties": { "when": { "$ref": "#/$defs/text" } } }] } } }, "required": ["kind", "points"] },
+    { "properties": { "kind": { "const": "table" }, "heads": { "type": "array", "items": { "type": "string" } }, "rows": { "type": "array", "minItems": 1, "items": { "type": "array", "items": { "type": "string" } } } }, "required": ["kind", "rows"] },
+    { "properties": { "kind": { "const": "gua" },
+        "guas": { "type": "array", "minItems": 1, "items": { "type": "object", "required": ["name", "form"], "properties": { "name": { "type": "string" }, "form": { "enum": ["hex", "tri"] }, "head": { "$ref": "#/$defs/text" }, "lines": { "type": "array", "items": { "$ref": "#/$defs/text" } } } } },
+        "yao": { "type": "array", "minItems": 6, "maxItems": 7, "description": "自上而下(上爻在前)", "items": { "type": "object", "required": ["label"], "properties": { "label": { "$ref": "#/$defs/text" }, "text": { "type": "string" }, "accent": { "type": "boolean" } } } } },
+      "required": ["kind", "guas"] },
+    { "properties": { "kind": { "const": "ring" }, "center": { "$ref": "#/$defs/text" }, "items": { "type": "array", "minItems": 3, "maxItems": 8, "items": { "allOf": [{ "$ref": "#/$defs/item" }, { "required": ["at"], "properties": { "at": { "enum": ["N", "NE", "E", "SE", "S", "SW", "W", "NW"] } } }] } } }, "required": ["kind", "items"] },
+    { "properties": { "kind": { "const": "notes" }, "lines": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/text" } } }, "required": ["kind", "lines"] }
+  ],
+  "$defs": {
+    "text": { "type": "string", "pattern": "\\S", "x-deskbook-maxChars": 120 },
+    "item": {
+      "type": "object",
+      "required": ["head"],
+      "properties": {
+        "head": { "$ref": "#/$defs/text" },
+        "body": { "anyOf": [{ "$ref": "#/$defs/text" }, { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/text" } }] },
+        "mark": { "$ref": "#/$defs/text" },
+        "accent": { "type": "boolean" }
+      }
+    }
+  }
+}

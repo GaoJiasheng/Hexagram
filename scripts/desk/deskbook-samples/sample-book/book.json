@@ -1,0 +1,30 @@
+{
+  "format": "deskbook",
+  "version": 1,
+  "id": "u-pendulum-sample-5e1c2a90",
+  "revision": 1,
+  "kind": "book",
+  "title": "摆的道理",
+  "subtitle": "一根绳、一个球,和三百年的钟",
+  "authors": ["观象书桌 示例"],
+  "lang": "zh-Hans",
+  "summary": "用三章讲清单摆:球为什么会回来,周期为什么只看摆长,怎样拿它量重力。",
+  "description": "这是书包格式(deskbook)的示例书,也是一本能读的小书。三章分别讲单摆的受力、周期公式和一次在家就能做的测量。每章配一段动画和若干图解,动画都由程序生成。",
+  "category": "物理",
+  "tags": ["力学", "单摆", "科普"],
+  "source": { "type": "original", "note": "示例内容,物理数据按 g = 9.8 m/s² 计算" },
+  "unit": "章",
+  "theme": { "accent": "#2E7D86", "accent2": "#C7673F", "paper": "#F7F5EE" },
+  "cover": "media/cover.jpg",
+  "banner": "media/banner.jpg",
+  "parts": [
+    { "title": "看", "from": 1, "to": 2 },
+    { "title": "量", "from": 3, "to": 3 }
+  ],
+  "chapters": [
+    { "no": 1, "file": "chapters/001.json", "title": "是什么把球拉回来", "subtitle": "单摆的受力", "minutes": 5, "head": "media/head-001.jpg" },
+    { "no": 2, "file": "chapters/002.json", "title": "周期只看摆长", "subtitle": "一条公式和它的边界", "minutes": 6 },
+    { "no": 3, "file": "chapters/003.json", "title": "在家量一次重力加速度", "subtitle": "一根线、一块表", "minutes": 6 }
+  ],
+  "generator": "deskbook-skill 1.0"
+}

@@ -1,0 +1,21 @@
+{
+  "format": "deskbook",
+  "version": 1,
+  "id": "u-kitchen-science-sample-9a4f0e26",
+  "revision": 1,
+  "kind": "collection",
+  "title": "厨房里的科学 · 第一期",
+  "authors": ["观象书桌 示例"],
+  "lang": "zh-Hans",
+  "summary": "三篇短文:切洋葱为什么流泪,面团为什么会发,鸡蛋为什么一煮就硬。",
+  "category": "科普",
+  "tags": ["化学", "食物", "厨房"],
+  "source": { "type": "original" },
+  "unit": "篇",
+  "chapters": [
+    { "no": 1, "file": "chapters/001.json", "title": "切洋葱为什么流泪", "minutes": 3, "author": "示例作者甲", "date": "2026-11-02" },
+    { "no": 2, "file": "chapters/002.json", "title": "面团为什么会发", "minutes": 3, "author": "示例作者乙", "date": "2026-11-09" },
+    { "no": 3, "file": "chapters/003.json", "title": "鸡蛋为什么一煮就硬", "minutes": 3, "author": "示例作者丙", "date": "2026-11-16" }
+  ],
+  "generator": "deskbook-skill 1.0"
+}

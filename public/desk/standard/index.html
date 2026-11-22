@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>书包格式标准</title>
+<meta name="description" content="观象 · 书桌的书包格式(.deskbook)标准 v1:结构、校验器、做书用的 skill 与示例。">
+<style>
+:root { --paper:#f7f5ee; --ink:#26292c; --soft:#6b6a66; --line:#dcd8cc; --accent:#2e7d86; --code:#efece2; }
+@media (prefers-color-scheme: dark) { :root { --paper:#1b1c1d; --ink:#e6e3da; --soft:#a19f98; --line:#3a3b3c; --accent:#6fb7bf; --code:#262729; } }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin:0; background:var(--paper); color:var(--ink); font: 17px/1.75 -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; }
+main { max-width: 760px; margin: 0 auto; padding: 32px 16px 80px; }
+h1 { font-size: 30px; line-height:1.3; margin: 8px 0 4px; letter-spacing: .02em; }
+.sub { color: var(--soft); margin: 0 0 28px; }
+h2 { font-size: 22px; margin: 44px 0 12px; padding-top: 8px; border-top: 1px solid var(--line); }
+h3 { font-size: 18px; margin: 28px 0 8px; }
+h4 { font-size: 16px; margin: 22px 0 6px; }
+p, li { overflow-wrap: anywhere; }
+a { color: var(--accent); }
+code { font: 14px/1.5 ui-monospace, "SF Mono", Menlo, Consolas, monospace; background: var(--code); padding: 1px 5px; border-radius: 4px; }
+pre { background: var(--code); padding: 12px 14px; border-radius: 8px; overflow-x: auto; }
+pre code { background: none; padding: 0; font-size: 13px; }
+blockquote { margin: 16px 0; padding: 2px 14px; border-left: 3px solid var(--line); color: var(--soft); }
+blockquote p { margin: 6px 0; }
+.tbl { overflow-x: auto; margin: 12px 0; }
+table { border-collapse: collapse; font-size: 15px; min-width: 100%; }
+th, td { border-bottom: 1px solid var(--line); padding: 6px 10px; text-align: left; vertical-align: top; }
+th { font-weight: 600; white-space: nowrap; }
+.intro p { margin: 0 0 12px; }
+ol.steps { padding-left: 22px; }
+ol.steps li { margin-bottom: 8px; }
+ul.dl { list-style: none; padding: 0; margin: 0; }
+ul.dl li { padding: 10px 0; border-bottom: 1px solid var(--line); }
+ul.dl a { font-weight: 600; }
+.sz { color: var(--soft); font-size: 14px; margin-left: 8px; }
+.note { color: var(--soft); font-size: 15px; }
+nav.toc { font-size: 15px; color: var(--soft); }
+nav.toc a { color: var(--soft); text-decoration: none; margin-right: 12px; white-space: nowrap; display: inline-block; }
+footer { margin-top: 56px; color: var(--soft); font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+<h1>书包格式标准</h1>
+<p class="sub">观象 · 书桌 · .deskbook · 第 1 版 · 工具 1.0.0</p>
+
+<section class="intro">
+<p>书包是「观象 · 书桌」读的书:一个 <code>.deskbook</code> 文件,本质是 zip,里面一份书目清单、每章一个 JSON 文件、再加图片和短视频。</p>
+<p>它只装文字结构与媒体,不装任何网页、脚本或字体;版式由书桌统一排。典籍、现代书、文集三种体裁共用同一套格式。</p>
+<p>任何人都可以照下面的标准做一本,导进自己设备上的书桌。导入的书只存在那台设备上,不上传。</p>
+</section>
+
+<h2 id="make">三步做一本</h2>
+<ol class="steps">
+<li><strong>写。</strong>用 Claude Code 装上下面的 skill,说「做一本书包」,它会先和你定提纲,再一章一章写;也可以手写 JSON,用 <code>node deskbook.mjs init 目录 --kind book --title "书名"</code> 起骨架。</li>
+<li><strong>校验与打包。</strong><code>node deskbook.mjs validate 目录</code> 查出所有不合标准的地方,改到通过,再 <code>node deskbook.mjs pack 目录</code> 得到 <code>.deskbook</code> 文件。动图先用 <code>gif2mp4</code> 转成视频。</li>
+<li><strong>放进书桌。</strong>把文件隔空投送或存进「文件」,在手机上点开,选「用书桌打开」。</li>
+</ol>
+
+<h2 id="download">下载</h2>
+<ul class="dl">
+<li><a href="deskbook-skill.zip" download>deskbook-skill.zip</a><span class="sz">354 KB</span><div class="note">做书用的 Claude Code skill。解压到 ~/.claude/skills/(得到 deskbook/ 目录),在任意会话里说「做一本书包」即可。内含标准、校验器、结构定义与两本示例。</div></li>
+<li><a href="deskbook.mjs" download>deskbook.mjs</a><span class="sz">71 KB</span><div class="note">校验器与打包工具:单文件、无依赖,Node 18 以上。init / validate / pack / unpack / gif2mp4。</div></li>
+<li><a href="schema/book.json" download>schema/book.json</a><span class="sz">4 KB</span><div class="note">book.json 的 JSON Schema(2020-12)。</div></li>
+<li><a href="schema/chapter.json" download>schema/chapter.json</a><span class="sz">5 KB</span><div class="note">章文件的 JSON Schema。</div></li>
+<li><a href="schema/fig.json" download>schema/fig.json</a><span class="sz">4 KB</span><div class="note">图解 fig 的 JSON Schema。</div></li>
+<li><a href="samples/sample-book.deskbook" download>sample-book.deskbook</a><span class="sz">302 KB</span><div class="note">现代书:单摆三章,用到全部块类型,带图片与两段动画。</div></li>
+<li><a href="samples/sample-collection.deskbook" download>sample-collection.deskbook</a><span class="sz">3 KB</span><div class="note">文集:三篇独立短文,各有作者与日期。</div></li>
+<li><a href="samples/sample-classic.deskbook" download>sample-classic.deskbook</a><span class="sz">7 KB</span><div class="note">典籍:《道德经》三章,原文、译文、字词注与章末深读。</div></li>
+<li><a href="samples/sample-fitness.deskbook" download>sample-fitness.deskbook</a><span class="sz">96 KB</span><div class="note">现代书 · 健身:带医学声明(disclaimer: medical)与一段动作视频。</div></li>
+</ul>
+
+<nav class="toc"><p>标准目录:<a href="#s1">0 · 三种体裁,一个格式</a><a href="#s2">1 · 书包的样子</a><a href="#s3">2 · book.json</a><a href="#s4">3 · 章文件</a><a href="#s5">4 · 媒体</a><a href="#s6">5 · 文字口径(做书的人要守的)</a><a href="#s7">6 · 红线与声明</a><a href="#s8">7 · 工具</a><a href="#s9">8 · 书怎么到书桌上</a><a href="#s10">9 · 版本</a><a href="#s11">附录 · 图解 fig 的字段</a></p></nav>
+
+<h2 id="standard">标准全文</h2>
+<blockquote><p>「观象 · 书桌」读的每一本书,都是一个<strong>书包</strong>:一个 <code>.deskbook</code> 文件。</p><p>本标准公开:任何人都可以照它做一本书,导进自己的书桌。<strong>导入的书只存在自己的设备上,不上传、不收集。</strong></p><p>实现与约定以本文件为准;机器可读的结构定义在 <code>public/desk/standard/schema/</code>,校验器 <code>deskbook.mjs</code>(单文件、无依赖)。</p><p>owner 2026-11-22 定的边界:公开账号只看到官方典籍;管理员账号另有「书房」一架(对象存储,含观书与管理员自己上传的);</p><p>任何用户都可以把书包导入自己的设备,只存本机。</p></blockquote>
+<h2 id="s1">0 · 三种体裁,一个格式</h2>
+<div class="tbl"><table><thead><tr><th><code>kind</code></th><th>是什么</th><th>一章里有什么</th><th>阅读方式</th></tr></thead><tbody><tr><td><code>classic</code> 典籍</td><td>以原文为主的书</td><td>原文分段(<code>segs</code>:原文、译文、注),可带一篇深读文章(<code>article</code>)</td><td>原文翻页;章末进深读</td></tr><tr><td><code>book</code> 现代书</td><td>一本书的讲解、消化,或自己写的书</td><td>一篇文章(<code>article</code>)</td><td>纵向长文</td></tr><tr><td><code>collection</code> 文集</td><td>若干独立文章:科普合集、一期刊物、专题</td><td>一篇文章(<code>article</code>),各有作者、日期、出处</td><td>目录是文章列表,纵向长文</td></tr></tbody></table></div>
+<p>三种共用同一套<strong>块</strong>(§3)与<strong>媒体</strong>规则(§4)。典籍沿用书桌现有的全部能力(详注、划线、卦画)。</p>
+<h2 id="s2">1 · 书包的样子</h2>
+<p><code>.deskbook</code> 是一个 zip(存储或 deflate,不加密,不嵌套 zip),解开后:</p>
+<pre><code>book.json            书目清单(必有)
+chapters/001.json    每章一个文件,文件名 = 章号补零到三位
+chapters/002.json
+media/…              图片、视频、封面(可无)</code></pre>
+<ul><li>路径一律用 <code>/</code>,只许小写字母、数字、<code>-</code>、<code>_</code>、<code>.</code>;不许 <code>..</code>、绝对路径、隐藏文件。</li><li>只认上面三类内容。<strong>不收任何可执行内容</strong>:HTML、JS、CSS、SVG、字体、脚本一概不收;文字里的尖括号按字面显示。</li><li>上限:整包 ≤ 300 MB;章文件 ≤ 2 MB;图片 ≤ 4 MB;视频 ≤ 24 MB;章数 ≤ 2000。</li></ul>
+<h2 id="s3">2 · book.json</h2>
+<pre><code>{
+  &quot;format&quot;: &quot;deskbook&quot;,
+  &quot;version&quot;: 1,
+  &quot;id&quot;: &quot;u-neijing-daodu-3f9a2c1b&quot;,     // 稳定标识,见下
+  &quot;revision&quot;: 3,                         // 整数,每次重出 +1;书桌据此判断是不是新版
+  &quot;kind&quot;: &quot;book&quot;,                        // classic | book | collection
+  &quot;title&quot;: &quot;运动解剖学入门&quot;,
+  &quot;subtitle&quot;: &quot;二十个动作讲清发力&quot;,       // 可无
+  &quot;authors&quot;: [&quot;某某&quot;],                    // 这本书包的作者(写讲解的人);可空数组
+  &quot;lang&quot;: &quot;zh-Hans&quot;,
+  &quot;summary&quot;: &quot;一句话说这本书讲什么(≤ 60 字)&quot;,
+  &quot;description&quot;: &quot;一段介绍(≤ 400 字,可无)&quot;,
+  &quot;category&quot;: &quot;健身&quot;,                     // 一个词,书架按它分栏;可无
+  &quot;tags&quot;: [&quot;解剖&quot;, &quot;力量训练&quot;],            // ≤ 8 个
+  &quot;source&quot;: {                             // 内容从哪来(必有)
+    &quot;type&quot;: &quot;digest&quot;,                     // original 原创 | digest 对别人的书的消化讲解 | public-domain 公版原文 | licensed 已获授权
+    &quot;of&quot;: { &quot;title&quot;: &quot;原书名&quot;, &quot;author&quot;: &quot;原作者&quot;, &quot;publisher&quot;: &quot;出版社&quot;, &quot;year&quot;: 2019 },   // digest / licensed 必有
+    &quot;note&quot;: &quot;可无&quot;
+  },
+  &quot;disclaimer&quot;: &quot;medical&quot;,                // 可无;medical | divination | 或自写一句(≤ 120 字)。见 §6
+  &quot;unit&quot;: &quot;章&quot;,                           // 章的叫法:章 / 篇 / 卦 / 讲 / 期…
+  &quot;theme&quot;: { &quot;accent&quot;: &quot;#2E7D86&quot;, &quot;accent2&quot;: &quot;#C7673F&quot;, &quot;paper&quot;: &quot;#F7F5EE&quot; },   // 可无,缺了用默认
+  &quot;cover&quot;: &quot;media/cover.jpg&quot;,             // 竖版 2:3,可无
+  &quot;banner&quot;: &quot;media/banner.jpg&quot;,           // 横版 3:2,可无
+  &quot;parts&quot;: [ { &quot;title&quot;: &quot;上篇&quot;, &quot;from&quot;: 1, &quot;to&quot;: 8 } ],   // 可无;有则须连续覆盖全部章
+  &quot;chapters&quot;: [
+    { &quot;no&quot;: 1, &quot;file&quot;: &quot;chapters/001.json&quot;, &quot;title&quot;: &quot;肩胛骨先动&quot;, &quot;subtitle&quot;: &quot;可无&quot;, &quot;minutes&quot;: 9,
+      &quot;author&quot;: &quot;可无(文集用)&quot;, &quot;date&quot;: &quot;2026-10-03&quot;, &quot;head&quot;: &quot;media/head-001.jpg&quot; }
+  ],
+  &quot;generator&quot;: &quot;deskbook-skill 1.0&quot;       // 可无
+}</code></pre>
+<ul><li><strong>id</strong>:<code>[a-z0-9][a-z0-9-]{2,63}</code>。官方典籍用短名(<code>daodejing</code>);其余一律带前缀,避免撞名:自己做的 <code>u-&lt;名&gt;-&lt;8 位随机十六进制&gt;</code>,书房的 <code>g-&lt;名&gt;</code>。同一本书重出<strong>不换 id</strong>,只加 <code>revision</code>——阅读进度、划线按 id 记。</li><li><code>chapters[].no</code> 从 1 连续;<code>file</code> 必须存在;<code>minutes</code> 可无(书桌按字数估)。</li><li><code>head</code>(章题头图,横版)可无。</li></ul>
+<h2 id="s4">3 · 章文件</h2>
+<pre><code>{
+  &quot;no&quot;: 1,
+  &quot;title&quot;: &quot;肩胛骨先动&quot;,
+  // —— 典籍层(kind = classic 必有,其余不许有)——
+  &quot;segs&quot;: [
+    { &quot;o&quot;: &quot;原文一段&quot;, &quot;t&quot;: &quot;译文(可无)&quot;, &quot;label&quot;: &quot;段名(可无)&quot;,
+      &quot;n&quot;: [ { &quot;k&quot;: &quot;被注的词&quot;, &quot;d&quot;: &quot;一句话释义(≤ 40 字)&quot;, &quot;x&quot;: &quot;展开(可无,40–150 字)&quot;, &quot;r&quot;: &quot;读音(可无)&quot; } ] }
+  ],
+  &quot;yanyi&quot;: [&quot;章后的短延伸,一段一项(可无)&quot;],
+  // —— 文章层(book / collection 必有;classic 可有,即「深读」)——
+  &quot;article&quot;: {
+    &quot;title&quot;: &quot;可无,缺则用章题&quot;, &quot;subtitle&quot;: &quot;可无&quot;, &quot;idea&quot;: &quot;一句话中心(可无,≤ 200 字)&quot;,
+    &quot;blocks&quot;: [ … ]
+  }
+}</code></pre>
+<ul><li>注 <code>n</code>:<code>k</code> 必须是该段 <code>o</code> 的精确子串;同段各条按首次出现位置互不重叠。</li><li>典籍的 <code>o</code> 是底本原文:<strong>一个字不改</strong>,来源在 <code>source</code> 里交代。</li></ul>
+<h3>块(blocks)</h3>
+<p>文字里只有三种行内记号:<code>**加粗**</code>(成对)、`<code> </code>等宽<code> </code><code>、</code><a href="https://…">文字</a>` 链接(只许 https,点了先问再用系统浏览器打开)。别的记号按字面显示。</p>
+<div class="tbl"><table><thead><tr><th><code>t</code></th><th>字段</th><th>说明</th></tr></thead><tbody><tr><td><code>lead</code></td><td><code>x</code></td><td>导语</td></tr><tr><td><code>h2</code> / <code>h3</code></td><td><code>x</code></td><td>小标题(两级)</td></tr><tr><td><code>p</code></td><td><code>x</code></td><td>正文段</td></tr><tr><td><code>quote</code></td><td><code>o?</code> <code>tr?</code> <code>x?</code> <code>by?</code></td><td>引文。典籍:<code>o</code> 原文 + <code>tr</code> 译文;其余:<code>x</code> 引的话 + <code>by</code> 出处</td></tr><tr><td><code>callout</code></td><td><code>tone</code> <code>label?</code> <code>items[]</code></td><td>提示框。tone:<code>note</code> <code>tip</code> <code>warn</code></td></tr><tr><td><code>pull</code></td><td><code>x</code></td><td>金句(一章至多 1 处)</td></tr><tr><td><code>steps</code></td><td><code>items[]</code></td><td>有先后的步骤</td></tr><tr><td><code>list</code></td><td><code>ordered</code> <code>items[]</code></td><td>列举</td></tr><tr><td><code>outline</code></td><td><code>items[]</code></td><td>多级提纲 / 思想脑图。每项 <code>{x, children?}</code>,最多四层</td></tr><tr><td><code>fig</code></td><td><code>fig</code> <code>cap?</code></td><td>图解:结构化数据(对比 / 列举 / 流程 / 结构 / 时间线 / 表格 / 卦画 / 方位 / 金句卡),由书桌用原生版式画。字段见 <code>schema/fig.json</code>,与 <code>docs/desk-baihua-spec.md</code> §2 同</td></tr><tr><td><code>img</code></td><td><code>src</code> <code>alt</code> <code>cap?</code> <code>w</code> <code>h</code></td><td>图片。<code>w</code> <code>h</code> 是像素尺寸(排版占位用)</td></tr><tr><td><code>video</code></td><td><code>src</code> <code>poster</code> <code>cap?</code> <code>w</code> <code>h</code> <code>sec</code> <code>loop?</code> <code>sound?</code></td><td>视频 / 动图。默认循环、静音、进入屏幕自动播,点一下暂停;<code>sound: true</code> 的不自动播</td></tr><tr><td><code>code</code></td><td><code>x</code> <code>lang?</code></td><td>代码或等宽文字</td></tr><tr><td><code>divider</code></td><td>—</td><td>分隔</td></tr><tr><td><code>refs</code></td><td><code>items[]</code></td><td>文末出处、参考</td></tr></tbody></table></div>
+<ul><li>每章至少一个 <code>p</code> 或 <code>lead</code>;空块不许有。</li><li>不认识的 <code>t</code> 书桌会跳过(以后加新块不破旧版本),但校验器当错误报——照标准写的包里不该有。</li></ul>
+<h2 id="s5">4 · 媒体</h2>
+<ul><li>图片:<code>.jpg</code> <code>.png</code> <code>.webp</code>;长边 ≤ 4096。照片用 jpg,线条图用 png / webp。</li><li><strong>动图一律转成视频</strong>:<code>.mp4</code>(H.264,yuv420p,<code>+faststart</code>),长边 ≤ 1280,≤ 60 秒,无声或 AAC。GIF 不进包——同样的画面,GIF 往往大十倍以上。校验器带一条转换命令:<code>deskbook.mjs gif2mp4 a.gif</code>(需本机有 ffmpeg),同时出一张封面图 <code>poster</code>。</li><li>每个 <code>img</code> / <code>video</code> 块引用的文件必须在包里;包里没人引用的媒体校验器会提示。</li><li>封面、题图、章题头图<strong>不带文字</strong>(书名由书桌用字体排上去)。</li></ul>
+<h2 id="s6">5 · 文字口径(做书的人要守的)</h2>
+<ol><li><strong>版权</strong>。<code>source.type = digest</code>(讲别人的书)时:全文绝不进包,文章是自己的话;直接引用每条 ≤ 100 字、每章 ≤ 16 条(<code>quote</code> 块里算),不得靠拼引文还原原书;不用出版社的封面与插图。校验器按这两个数卡。</li><li><strong>典籍</strong>:原文取通行底本并在 <code>source.note</code> 写明;译注讲训诂、思想、史实,有争议并陈不裁断。</li><li><strong>不编造出处</strong>。拿不准的引文、年代、数据不写,或明说「未能核实」。</li><li>一章一个中心,先说结论再展开;图解与动图是为了讲清一件事,不为装饰。</li></ol>
+<h2 id="s7">6 · 红线与声明</h2>
+<div class="tbl"><table><thead><tr><th><code>disclaimer</code></th><th>什么时候必须带</th><th>书桌显示</th><th>内容上的约束</th></tr></thead><tbody><tr><td><code>medical</code></td><td>讲医学、养生、健身、营养、心理治疗</td><td>书的首页与每章开头:「本书为知识研习,不构成医疗建议;身体不适请就医」</td><td>不给诊断、处方、剂量;不承诺疗效;健身动作写明量力而行</td></tr><tr><td><code>divination</code></td><td>讲命理、占卜、风水、相术</td><td>「本书为文化与文献研习,不作预测与决断依据」</td><td>讲「书里怎么说、为什么这么说」,不替人断命,不下吉凶断语</td></tr></tbody></table></div>
+<p>校验器:<code>category</code> / <code>tags</code> 命中上述领域而没带对应声明,报错。其余题材不需要声明。</p>
+<h2 id="s8">7 · 工具</h2>
+<p><code>deskbook.mjs</code>(Node 18+,单文件,无依赖):</p>
+<pre><code>node deskbook.mjs init &lt;目录&gt; --kind book --title &quot;…&quot;     # 起一个骨架
+node deskbook.mjs validate &lt;目录 | 书包&gt;                    # 校验:结构、引用、上限、口径上的硬数、声明
+node deskbook.mjs pack &lt;目录&gt; [-o 书名.deskbook]            # 校验通过后打包
+node deskbook.mjs unpack &lt;书包&gt; [-o 目录]
+node deskbook.mjs gif2mp4 &lt;a.gif&gt; [-o media/a.mp4]         # 动图转视频 + 封面图(需 ffmpeg)</code></pre>
+<p>校验不过不打包。错误信息指到「哪个文件、哪一块、为什么」。</p>
+<h2 id="s9">8 · 书怎么到书桌上</h2>
+<div class="tbl"><table><thead><tr><th>来路</th><th>谁能看到</th><th>怎么放</th></tr></thead><tbody><tr><td>官方典籍</td><td>所有人</td><td>随观象网站托管(<code>/desk/v1/</code>),书桌的「添书」里就有</td></tr><tr><td>书房</td><td>只有管理员账号</td><td>对象存储。在观象网站的管理页上传 <code>.deskbook</code>(或命令行 <code>npm run desk:publish &lt;书包&gt;</code>);书桌的「添书」里,管理员多一栏「书房」,按 <code>category</code> 分栏</td></tr><tr><td>自己导入</td><td>只在导入的那台设备上</td><td>把 <code>.deskbook</code> 传到手机(隔空投送、文件、分享菜单、或粘贴一个 https 链接),用书桌打开。<strong>不上传</strong></td></tr></tbody></table></div>
+<ul><li>自己导入的书可以再原样分享出去(还是一个 <code>.deskbook</code>);划线与批注可以导出成 Markdown。</li><li>阅读进度、时长、划线照常跟账号同步(按书的 <code>id</code>),书本身不同步:换一台设备要再导入一次。</li><li>书桌里「我的 → 自定义导入」是这份标准的入口:讲三步怎么做、给标准与工具的下载、导入按钮。</li></ul>
+<h2 id="s10">9 · 版本</h2>
+<ul><li><code>version: 1</code>。以后只加不改:加字段、加块类型、加 <code>fig</code> 的 kind;书桌遇到比自己新的 <code>version</code> 会提示升级 App,而不是硬读。</li><li>本标准、结构定义、校验器、做书用的 skill 都公开在 <code>https://hexa.gavin.pub/desk/standard/</code>。</li></ul>
+<h2 id="s11">附录 · 图解 fig 的字段</h2>
+<blockquote><p>摘自 <code>docs/desk-baihua-spec.md</code> §2(书桌白话图解的格式,本标准的 <code>fig</code> 块原样沿用;机器可读版见 <code>schema/fig.json</code>)。</p><p>那份说明写的是「把站内的 SVG 图转成结构化数据」,文中的「原图」指转换的来源图;自己做书时,理解成「你想画的那张图」即可。</p><p>书包里不放 SVG;那边「与 SVG 字字相等」的闸不适用于书包,其余两条(结构合法、单个字符串 ≤ 120 字)由校验器照核。</p></blockquote>
+<h3>公共字段</h3>
+<ul><li><code>kind</code>:下列十种之一。</li><li><code>title?</code>:图题(图里最上面那行大字)。</li><li><code>foot?</code>:<code>[字符串]</code>,图最下面的总结 / 说明行,一行一项。</li><li>任何「条目」都可带 <code>accent: true</code>——原图里用朱色强调的那一条。</li></ul>
+<h3>十种 kind</h3>
+<p><strong><code>quote</code> 金句卡</strong> —— 一句原文为主的卡片。</p>
+<pre><code>{ &quot;kind&quot;: &quot;quote&quot;, &quot;text&quot;: &quot;夫唯弗居，是以不去。&quot;, &quot;gloss&quot;: &quot;正因为不居功，功绩才不会离他而去。&quot;, &quot;source&quot;: &quot;《道德经 · 二章》&quot; }</code></pre>
+<p><code>gloss</code>、<code>source</code> 可选。原图角上的「观象」印章字不收。</p>
+<p><strong><code>cols</code> 并列 / 对比</strong> —— 两到四栏,每栏一个栏头和若干行。</p>
+<pre><code>{ &quot;kind&quot;: &quot;cols&quot;, &quot;title&quot;: &quot;看世界的两只眼睛,都得睁着&quot;,
+  &quot;cols&quot;: [ { &quot;head&quot;: &quot;常无欲 · 观其妙&quot;, &quot;lines&quot;: [&quot;放空功利心地看&quot;, &quot;看见整体·本源·微妙&quot;, &quot;像静静看娃玩&quot;, &quot;只用这只 → 易飘、空谈&quot;] },
+            { &quot;head&quot;: &quot;常有欲 · 观其徼&quot;, &quot;lines&quot;: [&quot;带着目的去看&quot;, &quot;看清轮廓·边界·苗头&quot;, &quot;像评估娃的能力&quot;, &quot;只用这只 → 易窄、短视&quot;] } ],
+  &quot;foot&quot;: [&quot;两个「常」字并列:不是二选一,是两副眼都常用&quot;] }</code></pre>
+<p>栏里若是「小标题 + 说明」成对出现,<code>lines</code> 的项可写成 <code>{ &quot;head&quot;: &quot;慈 → 能勇&quot;, &quot;body&quot;: &quot;有要护的人，豁得出去&quot; }</code>。</p>
+<p><strong><code>rows</code> 列举 / 层次 / 一览</strong> —— 自上而下的若干条。</p>
+<pre><code>{ &quot;kind&quot;: &quot;rows&quot;, &quot;title&quot;: &quot;「道之贵」的四层递进&quot;,
+  &quot;items&quot;: [ { &quot;mark&quot;: &quot;一&quot;, &quot;head&quot;: &quot;无所不庇&quot;, &quot;body&quot;: &quot;万物之奥 · 善人宝,不善人所保&quot; }, … ],
+  &quot;foot&quot;: [&quot;贵不在稀有难得,而在普惠不挑人&quot;] }</code></pre>
+<p><code>mark</code>(序号、标签)与 <code>body</code> 可选;<code>body</code> 可为字符串或字符串数组。</p>
+<p><strong><code>flow</code> 流程 / 推理链 / 阶梯 / 循环</strong> —— 有先后的若干步。</p>
+<pre><code>{ &quot;kind&quot;: &quot;flow&quot;, &quot;title&quot;: &quot;四句话,一条推理链&quot;,
+  &quot;steps&quot;: [ { &quot;head&quot;: &quot;天地不仁&quot;, &quot;body&quot;: &quot;天道:不偏私&quot; }, { &quot;head&quot;: &quot;圣人不仁&quot;, &quot;body&quot;: &quot;治道:别折腾&quot; }, … ],
+  &quot;result&quot;: { &quot;head&quot;: &quot;夫唯不争，故无尤&quot; }, &quot;loop&quot;: false }</code></pre>
+<p><code>result</code>(链条最后落到的结论,原图里单独画的那一格)可选;<code>loop: true</code> 表示首尾相接的循环。</p>
+<p><strong><code>tree</code> 结构</strong> —— 一个根,若干分支,分支下可再有一层。</p>
+<pre><code>{ &quot;kind&quot;: &quot;tree&quot;, &quot;title&quot;: &quot;三个「不」，堵三个钩子&quot;,
+  &quot;root&quot;: { &quot;head&quot;: &quot;…&quot; },
+  &quot;branches&quot;: [ { &quot;head&quot;: &quot;不尚贤&quot;, &quot;body&quot;: &quot;堵住「争」&quot; }, { &quot;head&quot;: &quot;不贵难得之货&quot;, &quot;body&quot;: &quot;堵住「盗」&quot; }, { &quot;head&quot;: &quot;不见可欲&quot;, &quot;body&quot;: &quot;堵住「乱」&quot; } ] }</code></pre>
+<p><code>root</code> 可省(原图只有并排的几支时);分支可带 <code>children: [{head, body?}]</code>。</p>
+<p><strong><code>timeline</code> 时间线 / 版本流变</strong></p>
+<pre><code>{ &quot;kind&quot;: &quot;timeline&quot;, &quot;title&quot;: &quot;「绝圣弃智」一句的版本流变&quot;,
+  &quot;points&quot;: [ { &quot;when&quot;: &quot;战国&quot;, &quot;head&quot;: &quot;郭店楚简本&quot;, &quot;body&quot;: &quot;多释「绝智弃辩」&quot; }, … ] }</code></pre>
+<p><code>when</code> 可省(原图没有明确时间时)。</p>
+<p><strong><code>table</code> 表格</strong> —— 有行有列、每格都短的图。</p>
+<pre><code>{ &quot;kind&quot;: &quot;table&quot;, &quot;title&quot;: &quot;…&quot;, &quot;heads&quot;: [&quot;卦&quot;, &quot;象&quot;, &quot;德&quot;], &quot;rows&quot;: [[&quot;乾&quot;, &quot;天&quot;, &quot;健&quot;], [&quot;坤&quot;, &quot;地&quot;, &quot;顺&quot;]] }</code></pre>
+<p><code>heads</code> 可省。</p>
+<p><strong><code>gua</code> 卦画</strong> —— 图里画了卦(六画卦或三画卦)的。卦画由 App 按卦名自己画,数据里只写卦名与文字。</p>
+<pre><code>{ &quot;kind&quot;: &quot;gua&quot;, &quot;title&quot;: &quot;乾卦 · 六爻自下而上（全是阳爻）&quot;,
+  &quot;guas&quot;: [ { &quot;name&quot;: &quot;乾&quot;, &quot;form&quot;: &quot;hex&quot; } ],
+  &quot;yao&quot;: [ { &quot;label&quot;: &quot;上九&quot;, &quot;text&quot;: &quot;亢龙，有悔（飞过头了）&quot; }, { &quot;label&quot;: &quot;九五&quot;, &quot;text&quot;: &quot;飞龙在天（鼎盛 · 卦主）&quot;, &quot;accent&quot;: true }, … ],
+  &quot;foot&quot;: [&quot;六条实线＝六阳爻；读卦从最下「初九」往上读到「上九」&quot;] }</code></pre>
+<ul><li><code>guas[]</code>:图里画出的每一个卦。<code>name</code> 是卦名(六十四卦名或八经卦名:乾坤震巽坎离艮兑),<code>form</code> 是 <code>hex</code>(六画)或 <code>tri</code>(三画);可带 <code>head</code>(这个卦旁边的标题,如「综卦：上下颠倒」)与 <code>lines</code>(它名下的几行说明)。</li><li><code>yao[]</code>:只画一个六画卦、且逐爻有标注时用,<strong>自上而下</strong>(上爻在前,与图同);<code>label</code> 是爻题,<code>text</code> 是那一爻旁的字。</li><li>上下卦分解图:<code>guas</code> 里放两个 <code>form: &quot;tri&quot;</code>,<code>head</code> 写「上卦 ☷ 坤 为地」里的字(符号 ☷ 不收)。</li><li>原图里的卦符号(䷀…䷿、☰…☷)不收,App 自己画。</li></ul>
+<p><strong><code>ring</code> 方位 / 环形</strong> —— 先天后天八卦方位、四时循环一类按方位摆的图。</p>
+<pre><code>{ &quot;kind&quot;: &quot;ring&quot;, &quot;title&quot;: &quot;后天八卦方位&quot;, &quot;center&quot;: &quot;…&quot;,
+  &quot;items&quot;: [ { &quot;at&quot;: &quot;S&quot;, &quot;head&quot;: &quot;离&quot;, &quot;body&quot;: &quot;火 · 夏&quot; }, { &quot;at&quot;: &quot;SW&quot;, &quot;head&quot;: &quot;坤&quot;, &quot;body&quot;: &quot;地&quot; }, … ] }</code></pre>
+<p><code>at</code> 取 <code>N NE E SE S SW W NW</code> 之一,按<strong>原图上的位置</strong>填(古图上南下北:画在正上方的填 <code>S</code> 还是 <code>N</code>,以图中文字标的方位为准,没标就按画面上方为 <code>S</code>)。<code>center</code> 可省。</p>
+<p><strong><code>notes</code> 兜底</strong> —— 以上都不合适时,只保留文字:<code>{ &quot;kind&quot;: &quot;notes&quot;, &quot;title&quot;: &quot;…&quot;, &quot;lines&quot;: [&quot;…&quot;, &quot;…&quot;] }</code>。</p>
+
+<footer>本页与下载物由 <code>scripts/desk/build-deskbook-cli.mjs</code> 从标准原文生成。</footer>
+</main>
+</body>
+</html>
