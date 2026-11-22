@@ -398,6 +398,38 @@ export default function SettingsSheet({ open, onClose }) {
         </div>
 
         <div className="settings-section">
+          <h3 className="settings-section__title">字词注释</h3>
+          <button
+            type="button"
+            role="switch"
+            className={`switch ${settings.showNotes !== false ? 'switch--on' : ''}`}
+            onClick={() => setSettings({ showNotes: settings.showNotes === false })}
+            aria-checked={settings.showNotes !== false}
+            aria-label="字词注释"
+            title="原文里带下划线的词,点按或悬停看注释;关了只出原文"
+          >
+            <span className="switch__knob" aria-hidden="true" />
+          </button>
+        </div>
+
+        {settings.showNotes !== false && (
+          <div className="settings-section">
+            <h3 className="settings-section__title">详注</h3>
+            <button
+              type="button"
+              role="switch"
+              className={`switch ${settings.showXiangzhu !== false ? 'switch--on' : ''}`}
+              onClick={() => setSettings({ showXiangzhu: settings.showXiangzhu === false })}
+              aria-checked={settings.showXiangzhu !== false}
+              aria-label="详注"
+              title="部分典籍有更密的一层详注(释义下另有一段展开);关了只留简注"
+            >
+              <span className="switch__knob" aria-hidden="true" />
+            </button>
+          </div>
+        )}
+
+        <div className="settings-section">
           <h3 className="settings-section__title">诗词格律</h3>
           <button
             type="button"

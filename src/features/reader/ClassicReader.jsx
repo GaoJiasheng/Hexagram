@@ -11,6 +11,7 @@ import ChapterSheet from './ChapterSheet.jsx'
 import { useShell } from '../../shell/shell.js'
 import ProsodyRow, { ProsodyLegend } from './ProsodyRow.jsx'
 import { loadProsodyBooks, analyzeParagraphs, getRhymeBook } from './prosody.js'
+import { useXiangzhu } from './xiangzhu.js'
 
 // 本章注疏一览(Tier 1):遍历该章各段 anchors,折叠列出,替逐词悬停。
 function ChapterNotes({ chapter, getAnchors }) {
@@ -80,6 +81,8 @@ export default function ClassicReader({
   // 诗词曲格律层(design-v24 §7.3):{ scheme:'pingshui'|'cilin'|'zhongyuan', tones:boolean } 或 null。
   // 非 null 时工具条出「格律」开关(settings.prosody);开启才动态载入韵书,在每个韵文段原文之下挂 ProsodyRow。
   prosody = null,
+  // 详注层(docs/xiangzhu-spec.md):{corpus, slug} —— 按章取分片(不按屏),与简注合并后挂在原文上;null 则只有简注
+  xiangzhu = null,
 }) {
   const { settings, setSettings } = useSettings()
   const { hash, pathname, search } = useLocation()
@@ -100,6 +103,14 @@ export default function ClassicReader({
   // 当前章 = 顶部已越过工具条线(130px)的最后一章;rAF 节流,挂载即同步算一次(不依赖后台 rAF)。
   const [activeAnchor, setActiveAnchor] = useState(null)
   const [sheetOpen, setSheetOpen] = useState(false)
+  // 详注分片:逐章模式取当前章;单页模式取当前读到的章及前后各一(随滚动补,不一次取全书)
+  const xzNos = (() => {
+    if (!xiangzhu) return []
+    if (!single) return [chapter]
+    const at = Math.max(0, chapters.findIndex((c) => c.no === activeAnchor))
+    return chapters.slice(Math.max(0, at - 1), at + 2).map((c) => c.no)
+  })()
+  const xz = useXiangzhu(xiangzhu?.corpus, xiangzhu?.slug, xzNos)
   const { shell } = useShell()
   useEffect(() => {
     if (!single) return
@@ -350,6 +361,7 @@ export default function ClassicReader({
         original={p.original}
         translation={p.translation}
         anchors={getAnchors(no, i)}
+        detail={xz[no]?.[i] || null}
         verse={verse}
         afterOriginal={pLines ? <ProsodyRow lines={pLines} tones={prosodyTones} /> : null}
       />

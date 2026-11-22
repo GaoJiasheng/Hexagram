@@ -45,6 +45,7 @@ export default function AboutPage() {
         <h2 className="about-section__title">怎么用</h2>
         <ul className="about-list">
           <li><strong>读经</strong>:经文字词可悬停看注疏;工具条可开译文 / 上下 ⇄ 左右对照、调字号;每段右侧可 ★收藏、✎批注、🔗复制本段链接。</li>
+          <li><strong>详注</strong>:部分典籍另有一层更密的详注,一句释义之下另有一段展开。详注由模型起草,机器逐条核对是否为原文所有、字数是否合规,再经人工抽查,难免疏失,欢迎指正。设置里可单独关掉详注,或把注释整个关掉。</li>
           <li><strong>搜索</strong>:顶栏放大镜或按 <kbd>/</kbd> 键,可搜经名、正文、译文、注疏、延伸;<strong>一次横跨诸组</strong>,可直接搜跨派概念(如「无为 / 格物 / 致良知」)。</li>
           <li><strong>设置</strong>:顶栏齿轮——主题(观火 / 观水 / 跟随系统)、字号、行宽、译文开关、数据导出导入。</li>
           <li><strong>我的</strong>:顶栏 ☯——本组的续读、收藏与批注汇总。</li>

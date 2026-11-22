@@ -3,7 +3,7 @@ import { analyzePosition, describePosition } from '../engine/positions.js'
 import AnnotatedText from './AnnotatedText.jsx'
 import MarkableBlock from './MarkableBlock.jsx'
 
-export default function LineRow({ line, pos, binary, onHover, isHighlighted, guazhu, xiaoxiangAnchors, onQuote, markKeyFor, markProps }) {
+export default function LineRow({ line, pos, binary, onHover, isHighlighted, guazhu, xiaoxiangAnchors, lineDetail = null, xiaoxiangDetail = null, onQuote, markKeyFor, markProps }) {
   const { settings } = useSettings()
   const analysis = analyzePosition(pos, binary)
   const { chips, desc } = describePosition(analysis)
@@ -35,7 +35,7 @@ export default function LineRow({ line, pos, binary, onHover, isHighlighted, gua
         sourceLabel={line.title}
         onQuote={onQuote}
       >
-        <p className="line-row__text"><AnnotatedText text={line.original} /></p>
+        <p className="line-row__text"><AnnotatedText text={line.original} detail={lineDetail} /></p>
       </MarkableBlock>
       {line.xiaoxiang?.original && (
         <MarkableBlock
@@ -48,8 +48,8 @@ export default function LineRow({ line, pos, binary, onHover, isHighlighted, gua
           onQuote={onQuote}
         >
           <p className="line-row__xiaoxiang">
-            {xiaoxiangAnchors?.length
-              ? <AnnotatedText text={line.xiaoxiang.original} anchors={xiaoxiangAnchors} />
+            {xiaoxiangAnchors?.length || xiaoxiangDetail?.length
+              ? <AnnotatedText text={line.xiaoxiang.original} anchors={xiaoxiangAnchors} dict={false} detail={xiaoxiangDetail} />
               : line.xiaoxiang.original}
           </p>
         </MarkableBlock>

@@ -93,6 +93,7 @@ export default function DaoReadPage() {
       posCtx={{ slug }}
       markCtx={{ corpus: 'dao', slug }}
       commentCtx={{ corpus: 'dao', slug }}
+      xiangzhu={{ corpus: 'dao', slug }}
     />
   )
 }

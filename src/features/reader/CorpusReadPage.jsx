@@ -232,6 +232,7 @@ export default function CorpusReadPage({ corpus }) {
       paraLabel={poemBook ? poemParaLabel : (numberParas ? (no, i) => String(i + 1) : undefined)}
       posCtx={{ slug }}
       markCtx={{ corpus, slug }}
+      xiangzhu={{ corpus, slug }}
       commentCtx={{ corpus, slug }}
       prosody={prosodyFor(corpus, chapter)}
     />

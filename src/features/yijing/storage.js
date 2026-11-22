@@ -82,6 +82,10 @@ export const DEFAULT_SETTINGS = {
   prosody: false,
   // 研读统计(2026-10-01 owner 定默认开):登录后把阅读时长日聚合随同步计入账号,仅收阅读时长、用于网站优化;关了只留本机
   shareReading: true,
+  // 字词注释(简注 + 详注)总开关:关了原文不标任何下划线。默认开
+  showNotes: true,
+  // 详注层(docs/xiangzhu-spec.md,每百字 12–14 条)单独可关:关了只留简注。默认开;总开关关时它不起作用
+  showXiangzhu: true,
 }
 const VALID_THEMES = ['light', 'paper-white', 'dark', 'system']
 const VALID_FONT_SCALES = FONT_SCALE_STEPS.map(([value]) => value)
@@ -117,6 +121,8 @@ export function getSettings() {
   s.quoteTheme = getQuoteTheme()
   s.showTranslation = !!s.showTranslation
   s.prosody = !!s.prosody
+  s.showNotes = s.showNotes !== false
+  s.showXiangzhu = s.showXiangzhu !== false
   delete s.fontScaleTier
   return s
 }

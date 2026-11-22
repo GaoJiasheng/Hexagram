@@ -3281,6 +3281,12 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
 .zhushi__source { color: var(--ink-faint); font-size: 0.72rem; }
 .zhushi__qiao { display: inline-block; margin-top: 2px; color: var(--cinnabar); font-size: 0.78rem; text-decoration: none; border-top: 1px dashed var(--line); padding-top: 4px; }
 .zhushi__qiao:hover { text-decoration: underline; }
+/* 详注(docs/xiangzhu-spec.md):每百字 12–14 条,比简注密得多——合了详注的段下划线整段再淡一档,先读正文、后见注释 */
+.zhushi__trigger--xz { border-bottom-color: color-mix(in srgb, var(--annotation-mark) 62%, transparent); }
+/* 气泡:不论简注详注都不高过视口,超出在气泡里滚(JS 另按触发词上下空间限高) */
+.zhushi__popover--portal { max-height: calc(100vh - 16px); overflow-y: auto; overscroll-behavior: contain; }
+.zhushi__popover--xz { max-width: min(340px, calc(100vw - 24px)); font-size: 0.86rem; }
+.zhushi__more { color: var(--ink-soft); font-size: 0.94em; line-height: 1.75; margin-top: 2px; padding-top: 6px; border-top: 1px solid var(--line); }
 
 /* ---------- 九期:春秋筮例(v9 §2) ---------- */
 .shili-page { max-width: var(--read-w, 720px); margin: 0 auto; }

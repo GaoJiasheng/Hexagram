@@ -71,6 +71,7 @@ export default function DaoSinglePage({ slug, text }) {
       attribution={meta.attribution || ''}
       bookHref={`/dao/${slug}`}
       markCtx={{ corpus: 'dao', slug }}
+      xiangzhu={{ corpus: 'dao', slug }}
       header={header}
     />
   )

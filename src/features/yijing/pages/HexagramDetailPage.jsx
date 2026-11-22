@@ -23,6 +23,7 @@ import {
   saveCorpusNote,
 } from '../storage.js'
 import { getHexAnchors } from '../zhushiAnchored.js'
+import { useXiangzhu } from '../../reader/xiangzhu.js'
 import shili from '../../../data/yijing/shili.json'
 import shishi from '../../../data/yijing/shishi.json'
 import BaihuaBlock from '../../reader/BaihuaBlock.jsx'
@@ -183,6 +184,11 @@ export default function HexagramDetailPage() {
       window.removeEventListener('touchend', onTouchEnd)
     }
   }, [id])
+
+  // 详注(docs/xiangzhu-spec.md):本卦一个分片,部位键 judgment/tuan/daxiang/l1–6/x1–6/use/xuse/w0…;
+  // 先按简注渲染,分片到了原地升级。hook 须在提前 return 之前。
+  const xzAll = useXiangzhu('yijing', 'hexagrams', hex ? [hex.id] : [])
+  const xzPart = (key) => (hex && xzAll[hex.id]?.[key]) || null
 
   if (!hex) {
     return (
@@ -369,7 +375,7 @@ export default function HexagramDetailPage() {
             sourceLabel="卦辞"
             onQuote={openQuote}
           >
-            <ClassicText original={hex.judgment.original} translation={hex.judgment.translation} annotate />
+            <ClassicText original={hex.judgment.original} translation={hex.judgment.translation} annotate detail={xzPart('judgment')} />
           </MarkableBlock>
         </section>
 
@@ -390,7 +396,7 @@ export default function HexagramDetailPage() {
               sourceLabel="彖传"
               onQuote={openQuote}
             >
-              <ClassicText original={hex.tuan.original} translation={hex.tuan.translation} anchors={getHexAnchors(hex.id, 'tuan')} />
+              <ClassicText original={hex.tuan.original} translation={hex.tuan.translation} anchors={getHexAnchors(hex.id, 'tuan')} detail={xzPart('tuan')} />
             </MarkableBlock>
           )}
         </section>
@@ -413,7 +419,7 @@ export default function HexagramDetailPage() {
               sourceLabel="象传"
               onQuote={openQuote}
             >
-              <ClassicText original={hex.daxiang.original} translation={hex.daxiang.translation} anchors={getHexAnchors(hex.id, 'daxiang')} />
+              <ClassicText original={hex.daxiang.original} translation={hex.daxiang.translation} anchors={getHexAnchors(hex.id, 'daxiang')} detail={xzPart('daxiang')} />
             </MarkableBlock>
           )}
         </section>
@@ -432,6 +438,8 @@ export default function HexagramDetailPage() {
                 isHighlighted={hoveredLine === i + 1}
                 guazhu={hex.guazhu}
                 xiaoxiangAnchors={getHexAnchors(hex.id, 'xiaoxiang', i + 1)}
+                lineDetail={xzPart(`l${i + 1}`)}
+                xiaoxiangDetail={xzPart(`x${i + 1}`)}
                 onQuote={openQuote}
                 markKeyFor={markKeyFor}
                 markProps={markProps}
@@ -452,7 +460,7 @@ export default function HexagramDetailPage() {
                   sourceLabel={hex.extra.use.title}
                   onQuote={openQuote}
                 >
-                  <p className="line-row__text"><AnnotatedText text={hex.extra.use.original} /></p>
+                  <p className="line-row__text"><AnnotatedText text={hex.extra.use.original} detail={xzPart('use')} /></p>
                 </MarkableBlock>
                 {hex.extra.use.xiaoxiang?.original && (
                   <MarkableBlock
@@ -465,8 +473,8 @@ export default function HexagramDetailPage() {
                     onQuote={openQuote}
                   >
                     <p className="line-row__xiaoxiang">
-                      {getHexAnchors(hex.id, 'xiaoxiang', 'use')
-                        ? <AnnotatedText text={hex.extra.use.xiaoxiang.original} anchors={getHexAnchors(hex.id, 'xiaoxiang', 'use')} />
+                      {getHexAnchors(hex.id, 'xiaoxiang', 'use') || xzPart('xuse')
+                        ? <AnnotatedText text={hex.extra.use.xiaoxiang.original} anchors={getHexAnchors(hex.id, 'xiaoxiang', 'use')} dict={false} detail={xzPart('xuse')} />
                         : hex.extra.use.xiaoxiang.original}
                     </p>
                   </MarkableBlock>
@@ -504,7 +512,7 @@ export default function HexagramDetailPage() {
                     sourceLabel="文言传"
                     onQuote={openQuote}
                   >
-                    <ClassicText original={para.original} translation={para.translation} anchors={getHexAnchors(hex.id, 'wenyan', i)} />
+                    <ClassicText original={para.original} translation={para.translation} anchors={getHexAnchors(hex.id, 'wenyan', i)} detail={xzPart(`w${i}`)} />
                   </MarkableBlock>
                 ))}
               </div>

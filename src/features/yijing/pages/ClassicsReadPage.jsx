@@ -56,6 +56,7 @@ export default function ClassicsReadPage() {
         />
       )}
       commentCtx={{ corpus: 'yijing', slug: book }}
+      xiangzhu={{ corpus: 'yijing', slug: book }}
     />
   )
 }
