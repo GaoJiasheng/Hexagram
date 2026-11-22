@@ -20,6 +20,26 @@ struct AboutLinkRow: View {
     }
 }
 
+/// 账号面板底部一行:去「自定义导入」(书包格式的入口)。不藏,但也不抢正文:和「关于」同样一行小字。
+struct CustomImportLinkRow: View {
+    var body: some View {
+        NavigationLink { CustomImportScreen() } label: {
+            HStack(spacing: 12) {
+                Image(systemName: "shippingbox").font(.system(size: 17, weight: .medium)).foregroundStyle(Ink.soft)
+                    .accessibilityHidden(true)
+                Text("自定义导入").font(.system(size: 15, weight: .medium)).foregroundStyle(Ink.text)
+                Spacer(minLength: 0)
+                Text("自己做书 · 书包格式").font(.system(size: 12)).foregroundStyle(Ink.faint)
+                Image(systemName: "chevron.right").font(.system(size: 12, weight: .semibold)).foregroundStyle(Ink.faint)
+                    .accessibilityHidden(true)
+            }
+            .padding(.horizontal, 16).padding(.vertical, 14)
+            .background(Ink.card, in: RoundedRectangle(cornerRadius: 16))
+        }
+        .buttonStyle(.plain)
+    }
+}
+
 /// 关于:版本、内容来源、隐私政策、联系、字体许可、注销账号入口。
 struct AboutScreen: View {
     @State private var askDelete = false

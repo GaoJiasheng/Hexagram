@@ -37,6 +37,37 @@ targets:
         CFBundleURLTypes:
           - CFBundleURLName: pub.gavin.hexa.desk.auth
             CFBundleURLSchemes: [guanxiangdesk]
+        # 书包(.deskbook,docs/deskbook-standard.md):隔空投送、文件、分享菜单里出「用书桌打开」。
+        # 不就地打开:系统把文件交到本 App 的 Inbox,导入时拷进书桌自己的目录,原文件不动
+        CFBundleDocumentTypes:
+          - CFBundleTypeName: 书包
+            CFBundleTypeRole: Viewer
+            LSHandlerRank: Owner
+            LSItemContentTypes: [pub.gavin.hexa.deskbook]
+        UTExportedTypeDeclarations:
+          - UTTypeIdentifier: pub.gavin.hexa.deskbook
+            UTTypeDescription: 书桌书包
+            UTTypeConformsTo: [public.data, public.content]
+            UTTypeTagSpecification:
+              public.filename-extension: [deskbook]
+              public.mime-type: [application/vnd.deskbook+zip]
+        LSSupportsOpeningDocumentsInPlace: false
+    # 六部典籍的核心包随 App 带(第一次打开没网也能读);每次构建从 public/desk/v1 现拷,不进仓库的 apps/desk。
+    # 白话、插画、字体仍按需下载。拷不到(仓库外单独构建)就跳过,App 照旧联网取。
+    preBuildScripts:
+      - name: 拷入六部典籍的内容包
+        basedOnDependencyAnalysis: false
+        script: |
+          SRC="$SRCROOT/../../public/desk/v1"
+          DST="$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/BundledPacks"
+          rm -rf "$DST"; mkdir -p "$DST"
+          if [ ! -f "$SRC/manifest.json" ]; then echo "warning: 找不到 $SRC/manifest.json,不带内置内容包"; exit 0; fi
+          cp "$SRC/manifest.json" "$DST/"
+          for f in $(grep -o '"file": *"[^"]*"' "$SRC/manifest.json" | sed 's/.*"\([^"]*\)"$/\1/' | grep -v '\.baihua\.'); do
+            cp "$SRC/$f" "$DST/" || { echo "warning: 缺 $f"; }
+          done
+          echo "{\"at\": $(date +%s)}" > "$DST/bundled.json"
+          echo "内置内容包:$(ls "$DST" | wc -l | tr -d ' ') 个文件,$(du -sh "$DST" | cut -f1)"
     entitlements:
       path: Desk/Desk.entitlements
       properties:
@@ -47,6 +78,7 @@ targets:
         TARGETED_DEVICE_FAMILY: "1,2"
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_USER_SCRIPT_SANDBOXING: NO
       configs:
         Debug:
           SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG

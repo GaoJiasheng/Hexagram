@@ -533,6 +533,13 @@ final class ChapterLayout {
             // 语录体(论语)每条前面标条号,小一号、主题色,方便「某篇第几条」这样指认
             let isLine = s.line != nil && s.label != nil && s.label != "象"
             let tag = isLine ? s.label! + "　" : (style.template == "yulu" ? "\(i + 1)  " : "")
+            // 书包典籍的段名(label):原文上方一行小字,主题色;不进原文层,划线偏移不受影响
+            if style.template == "deskbook", !isLine, let l = s.label, !l.isEmpty {
+                let ls = NSMutableParagraphStyle(); ls.paragraphSpacing = style.fontSize * 0.2
+                block.append(NSAttributedString(string: l + "\n", attributes: [
+                    .font: UIFont.systemFont(ofSize: max(12, style.fontSize * 0.52), weight: .semibold), .foregroundColor: style.accent,
+                    .kern: 2, .paragraphStyle: ls, .deskSeg: i]))
+            }
             let para = NSMutableAttributedString(string: tag + s.o + "\n", attributes: [
                 .font: style.face.ui(style.fontSize), .foregroundColor: style.text, .paragraphStyle: os, .kern: 0.6, .deskSeg: i])
             let lead = (tag as NSString).length

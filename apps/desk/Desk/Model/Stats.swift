@@ -82,6 +82,8 @@ final class Stats {
             _ = FinishedStore.shared.recs
             _ = Library.shared.manifest
             _ = Library.shared.shelf
+            _ = DeskbookStore.shared.version
+            _ = ShelfStore.shared.adminID
             _ = DeskSettings.shared.deskGoal
         } onChange: { [weak self] in
             Task { @MainActor in self?.schedule() }
@@ -105,14 +107,14 @@ final class Stats {
         // 书的索引:本机已下载的内容包
         var idx: [String: BookIndex] = [:]
         var bookOf: [Src: String] = [:]
-        for b in Library.shared.manifest?.books ?? [] {
+        for b in Library.shared.allBooks {
             guard let p = Library.shared.pack(b) else { continue }
             var m: [Src: Int] = [:]
             var cc: [Int] = []
             for c in p.chapters {
                 m[c.src] = c.no
                 bookOf[c.src] = b.id
-                cc.append(c.segs.reduce(0) { $0 + ReaderModel.charCount($1.o) })
+                cc.append(c.segs.isEmpty ? (c.meta?.chars ?? 0) : c.segs.reduce(0) { $0 + ReaderModel.charCount($1.o) })
             }
             idx[b.id] = BookIndex(srcNo: m, chapterChars: cc)
         }
@@ -266,7 +268,7 @@ final class Stats {
     /// 学完的书(书桌书目里的)与日期,新的在前。
     func finishedBooks() -> [(book: BookInfo, at: Date)] {
         let fin = FinishedStore.shared
-        return (Library.shared.manifest?.books ?? []).compactMap { b -> (BookInfo, Date)? in
+        return Library.shared.allBooks.compactMap { b -> (BookInfo, Date)? in
             guard let p = Library.shared.pack(b), fin.isFinished(p) else { return nil }
             let at = FinishedStore.keys(p).compactMap { fin.recs[$0]?.at }.max() ?? Date()
             return (b, at)

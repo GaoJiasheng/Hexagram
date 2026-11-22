@@ -1,6 +1,7 @@
 import Foundation
 import Observation
 import UIKit
+import ImageIO
 
 enum ArtKind: Hashable {
     case cover          // 竖版封面(书目列表、「我的书」小卡)
@@ -52,6 +53,7 @@ final class ArtStore {
     func image(_ book: BookInfo, _ kind: ArtKind) -> UIImage? {
         _ = version   // 让调用方的视图观察到 version
         guard has(book, kind), let art = book.art else { return nil }
+        if book.isDeskbook { return local(book, kind) }
         let dir = bookDir(book.id, v: art.v)
         let key = "\(book.id)/\(art.v)/\(kind.fileName)" as NSString
         if let img = memory.object(forKey: key) { return img }
@@ -64,9 +66,31 @@ final class ArtStore {
         return nil
     }
 
+    /// 书包的图在本机包里:封面 / 题图 / 章题头图按包内路径取,缩到 1600 像素以内再进内存(包里的图长边可到 4096)。
+    private func local(_ book: BookInfo, _ kind: ArtKind) -> UIImage? {
+        let path: String?
+        switch kind {
+        case .cover: path = book.cover ?? book.banner
+        case .banner: path = book.banner ?? book.cover
+        case .head(let n): path = DeskbookStore.shared.pack(book.id)?.chapters[safe: n - 1]?.meta?.head
+        }
+        guard let url = DeskbookStore.shared.media(book.id, path) else { return nil }
+        let key = "db/\(book.id)/\(book.version)/\(kind.fileName)" as NSString
+        if let img = memory.object(forKey: key) { return img }
+        guard let img = Downsample.image(url, maxPixel: 1600) else { return nil }
+        memory.setObject(img, forKey: key)
+        return img
+    }
+
+    /// 书包删了 / 换了新版:内存里它的图丢掉。
+    func forget(_ id: String) {
+        memory.removeAllObjects()
+        version += 1
+    }
+
     /// 提前拉这些章的题头图(清单里没有的跳过,已在本机的不再下)。
     func prefetch(_ book: BookInfo, chapters: [Int]) {
-        guard let art = book.art else { return }
+        guard !book.isDeskbook, let art = book.art else { return }
         let dir = bookDir(book.id, v: art.v)
         for n in chapters where art.heads.contains(n) {
             let kind = ArtKind.head(n)
@@ -104,5 +128,16 @@ final class ArtStore {
             try? data.write(to: file, options: .atomic)
             version += 1
         }
+    }
+}
+
+/// 按需缩小读图(ImageIO 直接出缩略图,不先解出整张大图)。
+enum Downsample {
+    nonisolated static func image(_ url: URL, maxPixel: CGFloat) -> UIImage? {
+        guard let src = CGImageSourceCreateWithURL(url as CFURL, [kCGImageSourceShouldCache: false] as CFDictionary) else { return nil }
+        let opts: [CFString: Any] = [kCGImageSourceCreateThumbnailFromImageAlways: true, kCGImageSourceCreateThumbnailWithTransform: true,
+                                     kCGImageSourceShouldCacheImmediately: true, kCGImageSourceThumbnailMaxPixelSize: maxPixel]
+        guard let cg = CGImageSourceCreateThumbnailAtIndex(src, 0, opts as CFDictionary) else { return nil }
+        return UIImage(cgImage: cg)
     }
 }

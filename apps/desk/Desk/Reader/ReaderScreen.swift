@@ -54,6 +54,15 @@ struct ReaderScreen: View {
             backdrop
             VStack(spacing: 0) {
                 Color.clear.frame(height: 46)     // 给左上、右上的悬浮按钮让出一条,不设整栏
+                if let d = model.book.disclaimers, !d.isEmpty {
+                    // 书包的声明:每章第一页顶上一条;别的页留着同样的高度(页面大小不变,不触发重排)
+                    DisclaimerBanner(lines: d, compact: true)
+                        .frame(maxWidth: 640)
+                        .padding(.horizontal, 24)
+                        .frame(height: CGFloat(d.count) * 18 + 16)
+                        .opacity(model.current.page == 0 ? 1 : 0)
+                        .animation(.easeInOut(duration: 0.2), value: model.current.page == 0)
+                }
                 GeometryReader { geo in
                     // 字号跟着屏宽走:手机 22 上下,各尺寸 iPad 30–34;一行约二十来个字,不拉成长条。
                     // iPad 横屏(正文区宽 ≥ 900 且宽 > 高)摊成左右两栏:每栏约 18–20 字,中缝 56,字号封顶 30。
@@ -334,7 +343,7 @@ struct ReaderScreen: View {
             float("chevron.left", label: "返回书桌") { dismiss() }
             Spacer()
             if BaihuaStore.shared.has(model.book, model.current.ch) {
-                float("book.pages", label: "白话深读") { model.touch(); openDeep(model.current.ch) }
+                float("book.pages", label: model.book.deepLabel) { model.touch(); openDeep(model.current.ch) }
             }
             if ArtStore.shared.has(model.book, .head(model.current.ch)) {
                 float(showArt ? "photo.fill" : "photo", label: showArt ? "隐藏插画" : "显示插画", on: showArt) { showArt.toggle() }

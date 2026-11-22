@@ -31,12 +31,34 @@ final class Library {
     }()
     private var manifestFile: URL { dir.appendingPathComponent("manifest.json") }
 
+    /// 随 App 带的内容包(构建时从 public/desk/v1 拷进来,见 project.yml 的 preBuildScripts):第一次打开没网也能读六部典籍。
+    static let bundled: URL? = Bundle.main.url(forResource: "BundledPacks", withExtension: nil)
+
     init() {
         shelf = UserDefaults.standard.stringArray(forKey: "desk.shelf") ?? []
-        if let d = try? Data(contentsOf: manifestFile), let m = try? JSONDecoder().decode(Manifest.self, from: d) { manifest = m }
+        let cached = (try? Data(contentsOf: manifestFile)).flatMap { try? JSONDecoder().decode(Manifest.self, from: $0) }
+        let bundledM = Self.bundled.flatMap { try? Data(contentsOf: $0.appendingPathComponent("manifest.json")) }.flatMap { try? JSONDecoder().decode(Manifest.self, from: $0) }
+        // 本机存着上次从网上拉的清单就用它;除非 App 更新后随包带的那份更新(打包时间晚于上次拉清单)
+        let fetchedAt = UserDefaults.standard.object(forKey: "desk.manifest.at") as? Date ?? .distantPast
+        if let c = cached, !(bundledM != nil && Self.bundledAt > fetchedAt) { manifest = c } else { manifest = bundledM ?? cached }
     }
 
-    func book(_ id: String) -> BookInfo? { manifest?.books.first { $0.id == id } }
+    /// 随 App 带的那批内容包是什么时候打的(bundled.json 的 at,秒)。
+    private static var bundledAt: Date {
+        guard let u = bundled?.appendingPathComponent("bundled.json"), let d = try? Data(contentsOf: u),
+              let o = try? JSONSerialization.jsonObject(with: d) as? [String: Any], let t = (o["at"] as? NSNumber)?.doubleValue else { return .distantPast }
+        return Date(timeIntervalSince1970: t)
+    }
+
+    /// 官方典籍 + 本机装着的书包(书房的书只在管理员登录时算进来)。
+    var allBooks: [BookInfo] { (manifest?.books ?? []) + DeskbookStore.shared.all.filter(Self.visible) }
+    static func visible(_ b: BookInfo) -> Bool { b.origin != .shelf || ShelfStore.shared.isAdmin }
+    func isOfficial(_ id: String) -> Bool { manifest?.books.contains { $0.id == id } ?? false || ["daodejing", "lunyu", "sunzi", "guiguzi", "zhuangzi", "yijing"].contains(id) }
+
+    func book(_ id: String) -> BookInfo? {
+        if let b = manifest?.books.first(where: { $0.id == id }) { return b }
+        return DeskbookStore.shared.info(id).flatMap { Self.visible($0) ? $0 : nil }
+    }
     var shelfBooks: [BookInfo] { shelf.compactMap { book($0) } }
     var otherBooks: [BookInfo] { (manifest?.books ?? []).filter { !shelf.contains($0.id) } }
 
@@ -50,6 +72,7 @@ final class Library {
             let m = try JSONDecoder().decode(Manifest.self, from: data)
             manifest = m
             try? data.write(to: manifestFile, options: .atomic)
+            UserDefaults.standard.set(Date(), forKey: "desk.manifest.at")
             loadError = nil
         } catch {
             if manifest == nil { loadError = "书目取不到。检查一下网络,或者稍后再试。" }
@@ -65,10 +88,25 @@ final class Library {
         return URLSession(configuration: c)
     }()
 
-    func isDownloaded(_ b: BookInfo) -> Bool { FileManager.default.fileExists(atPath: dir.appendingPathComponent(b.file).path) }
+    func isDownloaded(_ b: BookInfo) -> Bool {
+        if b.isDeskbook { return DeskbookStore.shared.info(b.id) != nil }
+        return FileManager.default.fileExists(atPath: dir.appendingPathComponent(b.file).path) || bundledFile(b) != nil
+    }
 
-    /// 加到书桌:下载这本书的内容包(已有就不再下)。
+    private func bundledFile(_ b: BookInfo) -> URL? {
+        guard let u = Self.bundled?.appendingPathComponent(b.file), FileManager.default.fileExists(atPath: u.path) else { return nil }
+        return u
+    }
+
+    /// 放上书桌(已在书桌上不动)。
+    func putOnShelf(_ id: String) {
+        guard !shelf.contains(id) else { return }
+        shelf.append(id); UserDefaults.standard.set(shelf, forKey: "desk.shelf")
+    }
+
+    /// 加到书桌:下载这本书的内容包(已有就不再下)。书包已在本机,直接放上去。
     func add(_ b: BookInfo) async {
+        if b.isDeskbook { putOnShelf(b.id); return }
         guard !downloading.contains(b.id) else { return }
         downloading.insert(b.id)
         failed.remove(b.id)
@@ -92,10 +130,31 @@ final class Library {
     }
 
     func pack(_ b: BookInfo) -> BookPack? {
+        if b.isDeskbook { return DeskbookStore.shared.pack(b.id) }
         if let p = packs[b.id], p.version == b.version { return p }
-        guard let d = try? Data(contentsOf: dir.appendingPathComponent(b.file)), let p = try? JSONDecoder().decode(BookPack.self, from: d) else { return nil }
+        // 清单上的那份:下载过的 → 随 App 带的 → 本机上一版(清单换了新包而新包还没下:先用旧的,后台补下)
+        let want = dir.appendingPathComponent(b.file)
+        var url: URL? = FileManager.default.fileExists(atPath: want.path) ? want : bundledFile(b)
+        if url == nil {
+            let older = ((try? FileManager.default.contentsOfDirectory(atPath: dir.path)) ?? [])
+                .filter { $0.hasPrefix("\(b.id).") && !$0.hasPrefix("\(b.id).baihua.") && $0.hasSuffix(".json") }
+            url = older.first.map { dir.appendingPathComponent($0) }
+            if url != nil, !downloading.contains(b.id) { Task { await self.refreshPack(b) } }
+        }
+        guard let url, let d = try? Data(contentsOf: url), let p = try? JSONDecoder().decode(BookPack.self, from: d) else { return nil }
         packs[b.id] = p
         return p
+    }
+
+    /// 后台补下清单上的新包(下好才换,换完重读)。
+    private func refreshPack(_ b: BookInfo) async {
+        guard !downloading.contains(b.id) else { return }
+        downloading.insert(b.id)
+        defer { downloading.remove(b.id) }
+        guard let (data, resp) = try? await Self.session.data(from: Self.base.appendingPathComponent(b.file)),
+              (resp as? HTTPURLResponse)?.statusCode == 200, (try? JSONDecoder().decode(BookPack.self, from: data)) != nil else { return }
+        try? data.write(to: dir.appendingPathComponent(b.file), options: .atomic)
+        packs[b.id] = nil
     }
 }
 
@@ -134,6 +193,9 @@ final class ProgressStore {
         pos[book] = ReadPos(ch: ch, seg: seg, at: at)
         save()
     }
+
+    /// 删书时连记录一起删:只清本机这本书的位置(云端那条留着;书不在,同步时找不到就不管)。
+    func forget(_ book: String) { pos[book] = nil; save() }
 
     /// 换账号时选了「不并入」:本机各书的位置清掉,登录后从云端取。
     func resetAll() { pos = [:]; dirty.removeAll(); save() }

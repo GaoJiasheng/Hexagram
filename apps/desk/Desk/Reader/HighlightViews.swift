@@ -202,7 +202,14 @@ struct HighlightsSheet: View {
             }
             .listStyle(.insetGrouped)
             .navigationTitle("划线与批注").navigationBarTitleDisplayMode(.inline)
-            .toolbar { ToolbarItem(placement: .cancellationAction) { Button("关闭") { dismiss() } } }
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) { Button("关闭") { dismiss() } }
+                if !all.isEmpty {
+                    ToolbarItem(placement: .primaryAction) {
+                        Button { Share.markdown(book) } label: { Label("导出 Markdown", systemImage: "square.and.arrow.up") }
+                    }
+                }
+            }
         }
     }
 

@@ -10,6 +10,10 @@ struct DeskHome: View {
     @State private var showAccount = false
     @State private var showStats = false
     @State private var showGoal = false
+    /// 书包的首页(第一次打开、长按「这本书」、书目里点书包那一行)。
+    @State private var home: BookInfo?
+    @State private var catalogFocus: String?
+    @State private var importer = ImportCenter.shared
     private var stats: Stats { .shared }
     @Environment(\.horizontalSizeClass) private var hSize
     private var pad: Bool { hSize == .regular }
@@ -44,6 +48,7 @@ struct DeskHome: View {
                             VStack(alignment: .leading, spacing: 34) {
                                 if let b = recent { resumeCard(b) }
                                 if library.shelf.isEmpty { emptyDesk; addButton } else { shelf }
+                                libraryStrip
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
                             if !library.shelf.isEmpty {
@@ -60,6 +65,7 @@ struct DeskHome: View {
                             week(wide: pad && contentW >= 720)      // iPad mini 竖屏放不下右边三句(会截成「1 小时 2…」)
                             shelf
                             today
+                            libraryStrip
                         }
                         if !pad && !library.shelf.isEmpty { addButton }     // 书桌空着时上面已经有一个「添书」了(此前手机上会出两个)
                     }
@@ -71,17 +77,37 @@ struct DeskHome: View {
         }
         .background(Ink.paper.ignoresSafeArea())
         .task { await library.refresh() }
-        .sheet(isPresented: $showCatalog) { CatalogSheet(library: library) }
+        .sheet(isPresented: $showCatalog) {
+            CatalogSheet(library: library, focus: $catalogFocus) { b in
+                showCatalog = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { home = b }
+            }
+        }
+        .sheet(item: $home) { b in
+            BookHomeScreen(book: b) { ch in
+                home = nil
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { read(b, chapter: ch) }
+            }
+        }
+        .onChange(of: importer.openRequest) { _, r in
+            guard let r, let b = library.book(r.id) else { return }
+            importer.openRequest = nil
+            // 先收起正开着的面板,再打开
+            let busy = showCatalog || showAccount || showGoal || home != nil || reading != nil
+            showCatalog = false; showAccount = false; showGoal = false; home = nil; reading = nil
+            DispatchQueue.main.asyncAfter(deadline: .now() + (busy ? 0.6 : 0)) { if r.home { home = b } else { read(b, chapter: r.ch) } }
+        }
         .sheet(isPresented: $showAccount) { AccountSheet() }
         .sheet(isPresented: $showGoal) { GoalSheet() }
         #if DEBUG
         .task { if ProcessInfo.processInfo.environment["DESK_ACCOUNT"] == "1" { try? await Task.sleep(nanoseconds: 800_000_000); showAccount = true } }
         .task { if ProcessInfo.processInfo.environment["DESK_OPEN"] == "stats" { try? await Task.sleep(nanoseconds: 900_000_000); showStats = true } }
-        .task { if ProcessInfo.processInfo.environment["DESK_OPEN"] == "catalog" { try? await Task.sleep(nanoseconds: 900_000_000); showCatalog = true } }
+        .task { if ProcessInfo.processInfo.environment["DESK_OPEN"] == "catalog" { try? await Task.sleep(nanoseconds: 900_000_000); catalogFocus = ProcessInfo.processInfo.environment["DESK_FOCUS"]; showCatalog = true } }
         #endif
         .fullScreenCover(item: $reading) { o in
-            if let pack = library.pack(o.book) {
-                ReaderScreen(model: ReaderModel(book: o.book, pack: pack, start: o.start))
+            if let pack = library.pack(o.book), !pack.chapters.isEmpty {
+                if o.book.isArticleBook { ArticleBookScreen(book: o.book, pack: pack, start: o.start) }
+                else { ReaderScreen(model: ReaderModel(book: o.book, pack: pack, start: o.start)) }
             }
         }
     }
@@ -95,8 +121,17 @@ struct DeskHome: View {
         return head
     }
 
+    /// 点书:书包第一次打开先看这本书的首页(声明、目录在那里);读过的直接接着读。
     private func open(_ b: BookInfo, chapter: Int? = nil) {
-        reading = Opening(book: b, start: chapter.map { ReadPos(ch: $0, seg: 0, at: Date()) } ?? progress.pos[b.id])
+        if b.isDeskbook, chapter == nil, progress.pos[b.id] == nil { home = b; return }
+        read(b, chapter: chapter)
+    }
+
+    private func read(_ b: BookInfo, chapter: Int?) {
+        var start = chapter.map { ReadPos(ch: $0, seg: 0, at: Date()) } ?? progress.pos[b.id]
+        // 文章书从目录点进某一章:落到上次在那一章读到的那一块
+        if b.isArticleBook, let ch = chapter { start = ReadPos(ch: ch, seg: BaihuaPos.get(b.id, ch) ?? 0, at: Date()) }
+        reading = Opening(book: b, start: start)
     }
 
     private var greeting: some View {
@@ -240,7 +275,11 @@ struct DeskHome: View {
                  finished: library.pack(b).map { FinishedStore.shared.isFinished($0) } ?? false, flexible: grid)
             .contentShape(RoundedRectangle(cornerRadius: 18))
             .onTapGesture { open(b) }
-            .contextMenu { Button("从书桌收起", systemImage: "tray.and.arrow.down") { library.remove(b.id) } }
+            .contextMenu {
+                if b.isDeskbook { Button("这本书", systemImage: "book.closed") { home = b } }
+                if b.isArticleBook || b.isDeskbook { Button("目录", systemImage: "list.bullet") { home = b } }
+                Button("从书桌收起", systemImage: "tray.and.arrow.down") { library.remove(b.id) }
+            }
             .accessibilityAddTraits(.isButton)
     }
 
@@ -278,7 +317,7 @@ struct DeskHome: View {
         let isText = c?.kind == "text"
         let title = c?.title ?? ""
         let chars = stats.chapterChars(b.id, next)
-        let est = max(1, Int((Double(chars) / 120).rounded(.up)))       // 原文连读带看译文,一分钟一百来字
+        let est = c?.meta?.minutes ?? max(1, Int((Double(chars) / (b.isArticleBook ? 450 : 120)).rounded(.up)))       // 原文连读带看译文,一分钟一百来字;文章四五百字
         let spent = c.map { stats.sec($0.src) } ?? 0
         return Button { open(b, chapter: next) } label: {
             HStack(spacing: 14 * k) {
@@ -302,6 +341,37 @@ struct DeskHome: View {
             .padding(14 * (pad ? 1.15 : 1)).background(Ink.card, in: RoundedRectangle(cornerRadius: 18))
         }
         .buttonStyle(.plain)
+    }
+
+    /// 书库:典籍 / 书房 / 我的导入各几本(只列有书的;只有典籍时不出,免得和「添书」重复)。点一格打开添书、落到那一栏。
+    @ViewBuilder private var libraryStrip: some View {
+        let official = library.manifest?.books.count ?? 0
+        let shelfN = ShelfStore.shared.visibleItems.count
+        let mine = DeskbookStore.shared.all.filter { $0.origin == .imported }.count
+        if shelfN > 0 || mine > 0 {
+            VStack(alignment: .leading, spacing: 12) {
+                sectionTitle("书库")
+                HStack(spacing: 10) {
+                    libTile("典籍", official, icon: "books.vertical", focus: "official")
+                    if shelfN > 0 { libTile("书房", shelfN, icon: "archivebox", focus: "shelf") }
+                    if mine > 0 { libTile("我的导入", mine, icon: "square.and.arrow.down", focus: "imported") }
+                }
+            }
+        }
+    }
+
+    private func libTile(_ t: String, _ n: Int, icon: String, focus: String) -> some View {
+        Button { catalogFocus = focus; showCatalog = true } label: {
+            VStack(alignment: .leading, spacing: 6) {
+                Image(systemName: icon).font(.system(size: 15, weight: .medium)).foregroundStyle(Ink.cinnabar)
+                Text(t).font(Fonts.song(16, bold: true)).foregroundStyle(Ink.text)
+                Text("\(n) 本").font(Fonts.num(12, weight: .medium)).foregroundStyle(Ink.soft)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(14).background(Ink.card, in: RoundedRectangle(cornerRadius: 16))
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("\(t),\(n) 本")
     }
 
     private var emptyDesk: some View {
@@ -351,6 +421,13 @@ struct BookCard: View {
                     BookArt(book: book, kind: .cover).frame(width: 150, height: 150).clipped()
                 }
             }
+            .overlay(alignment: .topLeading) {
+                if let o = book.origin {
+                    Text(o.label).font(.system(size: 10, weight: .bold)).foregroundStyle(.white)
+                        .padding(.horizontal, 6).padding(.vertical, 2.5).background(.black.opacity(0.38), in: Capsule()).padding(8)
+                        .accessibilityLabel(o == .shelf ? "书房的书" : "自己导入的书")
+                }
+            }
             .overlay(alignment: .topTrailing) {
                 if finished {
                     Seal(text: "学完").frame(width: 34, height: 34).rotationEffect(.degrees(-10))
@@ -379,76 +456,6 @@ struct BookCard: View {
     }
     /// 周易卦与十翼混排,不写单位。
     private var unitWord: String { book.summary == nil ? book.unit : "" }
-}
-
-/// 书目:可订的书。点一下下载并放上书桌。
-struct CatalogSheet: View {
-    let library: Library
-    @Environment(\.dismiss) private var dismiss
-    var body: some View {
-        NavigationStack {
-            Group {
-                if library.manifest == nil {
-                    // 第一次打开、还没拉到书目:转圈;拉不到:说明 + 重试。不留空白页
-                    VStack(spacing: 14) {
-                        if library.refreshing || library.loadError == nil {
-                            ProgressView()
-                            Text("正在取书目…").font(.system(size: 14)).foregroundStyle(Ink.soft)
-                        } else {
-                            OfflineCard(message: library.loadError ?? "书目取不到", busy: false, note: library.shelf.isEmpty ? nil : "已经放上书桌的书,没网也照样能读。") { Task { await library.refresh() } }
-                        }
-                    }
-                    .padding(24)
-                    .frame(maxWidth: 460, maxHeight: .infinity)
-                    .frame(maxWidth: .infinity)
-                    .background(Ink.paper)
-                    .task { if !library.refreshing { await library.refresh() } }
-                } else { list }
-            }
-            .navigationTitle("添书").navigationBarTitleDisplayMode(.inline)
-            .toolbar { ToolbarItem(placement: .topBarTrailing) { Button("好了") { dismiss() } } }
-        }
-    }
-
-    private var list: some View {
-            List {
-                ForEach(library.manifest?.books ?? []) { b in
-                    HStack(spacing: 14) {
-                        Group {
-                            if let img = ArtStore.shared.image(b, .cover) {
-                                Image(uiImage: img).resizable().scaledToFill()
-                            } else {
-                                RoundedRectangle(cornerRadius: 10).fill(b.theme.accentColor.gradient)
-                                    .overlay(Text(String(b.title.prefix(1))).font(Fonts.song(22, bold: true)).foregroundStyle(.white))
-                            }
-                        }
-                        .frame(width: 44, height: 58).clipShape(RoundedRectangle(cornerRadius: 10))
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(b.title).font(Fonts.song(18, bold: true))
-                            Text("\(b.sizeLabel) · \(b.chars) 字").font(.system(size: 12)).foregroundStyle(Ink.soft)
-                            Text(b.brief).font(.system(size: 13)).foregroundStyle(Ink.soft).lineLimit(2)
-                        }
-                        Spacer()
-                        if library.shelf.contains(b.id) {
-                            Image(systemName: "checkmark.circle.fill").foregroundStyle(b.theme.accentColor).font(.system(size: 22))
-                                .accessibilityLabel("已在书桌上")
-                        } else if library.downloading.contains(b.id) {
-                            ProgressView()
-                        } else if library.failed.contains(b.id) {
-                            VStack(alignment: .trailing, spacing: 4) {
-                                Button("重试") { Task { await library.add(b) } }
-                                    .buttonStyle(.bordered).tint(b.theme.accentColor).controlSize(.small)
-                                Text("没下下来").font(.system(size: 11)).foregroundStyle(Ink.cinnabar)
-                            }
-                        } else {
-                            Button("放上书桌") { Task { await library.add(b) } }
-                                .buttonStyle(.borderedProminent).tint(b.theme.accentColor).controlSize(.small)
-                        }
-                    }
-                    .padding(.vertical, 6)
-                }
-            }
-    }
 }
 
 /// 连不上时的那张卡:一句说明 + 重试。书桌首页与书目页共用。

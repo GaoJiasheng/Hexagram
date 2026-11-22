@@ -65,7 +65,7 @@ final class AccountStore {
         guard let t = token else { return }
         do {
             let r = try await API.call("GET", "me", token: t)
-            if let u = DeskUser(r["user"] as? [String: Any]) { setUser(u) } else { dropSession() }
+            if let u = DeskUser(r["user"] as? [String: Any]) { setUser(u); await ShelfStore.shared.refresh() } else { dropSession() }
         } catch let e as API.Failure where e.status == 401 {
             dropSession()
         } catch {}
@@ -237,6 +237,7 @@ final class AccountStore {
         setUser(u)
         setOwner(u)
         SyncEngine.shared.didLogin()
+        Task { await ShelfStore.shared.refresh() }      // 管理员账号:书房的书目
     }
 
     private func setUser(_ u: DeskUser) {
@@ -267,6 +268,7 @@ final class AccountStore {
         user = nil
         UserDefaults.standard.removeObject(forKey: "desk.user")
         SyncEngine.shared.didLogout()
+        ShelfStore.shared.clear()
     }
 
     private static func randomURLSafe(_ n: Int) -> String {

@@ -7,19 +7,54 @@ struct BaihuaTarget: Identifiable {
     let chapter: Chapter
     var block: Int?
     var flash: String?          // 划线 id
+    /// 书 / 文集:文章就是正文(不是原文的「深读」),页末给上下章、学过与学完,顶上是全书目录。
+    var bookMode = false
     #if DEBUG
     var fixture: BHChapter?     // 调试样张(DESK_DEMO=figs)
     #endif
 }
 
 private enum BHSheet: Identifiable {
-    case hl(String), editNote(String), toc
+    case hl(String), editNote(String), toc, bookTOC, marks
     var id: String {
         switch self {
         case .hl(let i): return "hl:" + i
         case .editNote(let i): return "edit:" + i
         case .toc: return "toc"
+        case .bookTOC: return "bookTOC"
+        case .marks: return "marks"
         }
+    }
+}
+
+/// 文章书里换章:到第几章、落到第几块、闪哪条划线。
+struct ArticleNav {
+    var go: (_ no: Int, _ block: Int?, _ flash: String?) -> Void
+}
+
+/// 书 / 文集的阅读页:一章一篇,纵向滚动;换章就地换,不叠新页。
+struct ArticleBookScreen: View {
+    let book: BookInfo
+    let pack: BookPack
+    @State private var cur: BaihuaTarget
+
+    init(book: BookInfo, pack: BookPack, start: ReadPos?) {
+        self.book = book
+        self.pack = pack
+        let no = min(max(start?.ch ?? 1, 1), max(pack.chapters.count, 1))
+        let block = (start?.seg ?? 0) > 0 ? start?.seg : nil      // 续读:落到上次读到的那一块
+        _cur = State(initialValue: BaihuaTarget(book: book, chapter: pack.chapters[no - 1], block: block, flash: nil, bookMode: true))
+    }
+
+    var body: some View {
+        BaihuaScreen(target: cur, nav: ArticleNav { no, block, flash in
+            guard pack.chapters.indices.contains(no - 1) else { return }
+            withAnimation(.easeInOut(duration: 0.25)) {
+                cur = BaihuaTarget(book: book, chapter: pack.chapters[no - 1], block: block, flash: flash, bookMode: true)
+            }
+        })
+        .id(cur.id)
+        .transition(.opacity)
     }
 }
 
@@ -27,6 +62,10 @@ private enum BHSheet: Identifiable {
 /// 时长计入同一章(ReadClock,口径与阅读器一致);滚到哪一块记在本机,下次打开落回去。
 struct BaihuaScreen: View {
     let target: BaihuaTarget
+    var nav: ArticleNav? = nil
+    @State private var pendingLink: URL?
+    @State private var showFinish = false
+    @State private var finishReplay = false
     @Environment(\.dismiss) private var dismiss
     @Environment(\.scenePhase) private var phase
     @Environment(\.colorScheme) private var scheme
@@ -42,6 +81,8 @@ struct BaihuaScreen: View {
     @State private var lastTouch = Date.distantPast
 
     private var book: BookInfo { target.book }
+    private var pack: BookPack? { Library.shared.pack(book) }
+    private var bookMode: Bool { target.bookMode && nav != nil }
     private var theme: BookTheme { book.theme }
     private var no: Int { target.chapter.no }
     private var bh: BHChapter? {
@@ -106,7 +147,7 @@ struct BaihuaScreen: View {
                 } else {
                     VStack(spacing: 12) {
                         if !BaihuaStore.shared.offered(book) {
-                            Text("这一\(book.unit)还没有白话深读").font(.system(size: 14)).foregroundStyle(Ink.soft)
+                            Text("这一\(book.unit)还没有\(book.deepLabel)").font(.system(size: 14)).foregroundStyle(Ink.soft)
                         } else if BaihuaStore.shared.failed.contains(book.id) {
                             Image(systemName: "wifi.exclamationmark").font(.system(size: 28)).foregroundStyle(Ink.faint).accessibilityHidden(true)
                             Text("白话深读没取到").font(Fonts.song(18, bold: true)).foregroundStyle(Ink.text)
@@ -127,15 +168,45 @@ struct BaihuaScreen: View {
             }
             .overlay(alignment: .top) { chrome(sideTOC: sideTOC) }
         }
-        .onAppear { clock.start(target.chapter.src) }
+        .onAppear {
+            clock.start(target.chapter.src)
+            if bookMode { ProgressStore.shared.set(book.id, ch: no, seg: max(0, target.block ?? BaihuaPos.get(book.id, no) ?? 0)) }
+        }
         .onDisappear { clock.stop() }
+        .environment(\.openURL, OpenURLAction { url in askLink(url); return .handled })
+        .alert("用浏览器打开这个链接?", isPresented: Binding(get: { pendingLink != nil }, set: { if !$0 { pendingLink = nil } }), presenting: pendingLink) { u in
+            Button("打开") { UIApplication.shared.open(u) }
+            Button("拷贝链接") { UIPasteboard.general.string = u.absoluteString }
+            Button("取消", role: .cancel) {}
+        } message: { u in Text(u.absoluteString.removingPercentEncoding ?? u.absoluteString) }
+        .fullScreenCover(isPresented: $showFinish) {
+            FinishScreen(book: book, stats: Stats.shared.finishStats(book), replay: finishReplay,
+                         onDone: finishReplay ? nil : { showFinish = false; DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { dismiss() } })
+        }
         .onChange(of: phase) { _, p in if p == .active { clock.start(target.chapter.src) } else { clock.settle() } }
         .onChange(of: top) { _, t in
             touch()
-            if restored, let t, t >= 0 { BaihuaPos.set(book.id, no, t) }
+            if restored, let t, t >= 0 {
+                BaihuaPos.set(book.id, no, t)
+                if bookMode { ProgressStore.shared.set(book.id, ch: no, seg: t); countChars(through: t) }
+            }
         }
         .onChange(of: sheet?.id) { _, _ in touch() }
         .statusBarHidden(false)
+    }
+
+    /// 链接只认 https;先问再用系统浏览器开。
+    private func askLink(_ u: URL) {
+        guard u.scheme?.lowercased() == "https" else { return }
+        touch()
+        pendingLink = u
+    }
+
+    /// 文章书:滚过的块计入当天读过的字数(同一块一天只计一次,与阅读器的「一页显示满 3 秒」同一本账)。
+    private func countChars(through t: Int) {
+        guard let c = bh, t > 0 else { return }
+        let segs = (0..<min(t, c.blocks.count)).map { (seg: $0, chars: c.blocks[$0].charCount) }.filter { $0.chars > 0 }
+        ReadDaysStore.shared.addChars(target.chapter.src, segs: segs)
     }
 
     private func touch() {
@@ -194,9 +265,10 @@ struct BaihuaScreen: View {
             VStack(alignment: .leading, spacing: 14) {
                 if let hero = c.hero { heroHead(hero) }
                 HStack(spacing: 8) {
-                    Text("白话深读").font(.system(size: 12, weight: .bold)).kerning(3).foregroundStyle(theme.accentColor)
+                    Text(bookMode ? book.title : book.deepLabel).font(.system(size: 12, weight: .bold)).kerning(bookMode ? 1 : 3).foregroundStyle(theme.accentColor)
+                        .lineLimit(1)
                     Rectangle().fill(theme.accentColor.opacity(0.35)).frame(width: 28, height: 1)
-                    Text(BookSearch.chapterLabel(target.chapter, unit: book.unit)).font(.system(size: 12, weight: .medium)).foregroundStyle(Ink.soft)
+                    Text(headLabel).font(.system(size: 12, weight: .medium)).foregroundStyle(Ink.soft).lineLimit(1)
                 }
                 Text(c.title).font(Fonts.song(col >= 600 ? 34 : 27, bold: true)).foregroundStyle(Ink.text).lineSpacing(4)
                     .fixedSize(horizontal: false, vertical: true)
@@ -205,10 +277,12 @@ struct BaihuaScreen: View {
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 HStack(spacing: 14) {
-                    Label("约 \(max(1, c.charCount / 450)) 分钟", systemImage: "clock")
+                    Label("约 \(target.chapter.meta?.minutes ?? max(1, c.charCount / 450)) 分钟", systemImage: "clock")
                     if c.figCount > 0 { Label("\(c.figCount) 张图解", systemImage: "square.grid.2x2") }
+                    if c.mediaCount > 0 { Label("\(c.mediaCount) 段动画", systemImage: "play.rectangle") }
                 }
                 .font(.system(size: 12.5)).foregroundStyle(Ink.faint)
+                DisclaimerBanner(lines: book.disclaimers ?? [], compact: true)
                 if let idea = c.idea, !idea.isEmpty { ideaCard(idea) }
             }
             .frame(width: col, alignment: .leading)
@@ -254,17 +328,32 @@ struct BaihuaScreen: View {
         .padding(.top, 8)
     }
 
+    /// 题头小字:书是「第一章」;文集是作者 · 日期;典籍的深读是「第 N 章 · 题名」。
+    private var headLabel: String {
+        let c = target.chapter
+        if bookMode && book.isCollection {
+            let parts = [c.meta?.author, c.meta?.date].compactMap { $0 }
+            return parts.isEmpty ? (book.unit) : parts.joined(separator: " · ")
+        }
+        if bookMode { return "第 \(Numerals.chinese(c.no)) \(book.unit)" }
+        return BookSearch.chapterLabel(c, unit: book.unit)
+    }
+
     // MARK: 块
 
     private func gapBefore(_ b: BHBlock, _ i: Int, _ c: BHChapter, fs: CGFloat) -> CGFloat {
         if i == 0 { return 30 }
         switch b {
         case .h2: return fs * 2.4
-        case .fig, .pull, .callout: return fs * 1.5
+        case .h3: return fs * 1.7
+        case .fig, .pull, .callout, .img, .video, .outline, .code: return fs * 1.5
+        case .divider: return fs * 2
+        case .cite: return fs * 1.3
         case .quote: return fs * 1.2
         case .refs: return fs * 2.6
         default:
             if case .h2 = c.blocks[i - 1] { return fs * 0.9 }
+            if case .h3 = c.blocks[i - 1] { return fs * 0.7 }
             return fs * 1.0
         }
     }
@@ -379,6 +468,34 @@ struct BaihuaScreen: View {
             .overlay(alignment: .top) { Rectangle().fill(Ink.line).frame(height: 1) }
         case .fig(let cap, let fig):
             FigBlockView(cap: cap, fig: fig, ctx: FigContext(accent: accent, accent2: theme.accent2Color, book: book, chapter: no, width: col))
+        case .h3(let x):
+            HStack(alignment: .firstTextBaseline, spacing: 8) {
+                RoundedRectangle(cornerRadius: 1.5).fill(theme.accent2Color.opacity(0.8)).frame(width: 3, height: fs * 0.8)
+                Text(BHAttr.text(x, accent: accent)).font(face.boldFont(fs * 1.1)).foregroundStyle(Ink.text).lineSpacing(3)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .accessibilityAddTraits(.isHeader)
+        case .cite(let x, let by):
+            VStack(alignment: .leading, spacing: 10) {
+                Image(systemName: "quote.opening").font(.system(size: fs * 0.8, weight: .bold)).foregroundStyle(accent.opacity(0.45))
+                Text(BHAttr.text(x, accent: accent)).font(face.font(fs * 1.06)).lineSpacing(fs * 0.45).foregroundStyle(Ink.text)
+                    .fixedSize(horizontal: false, vertical: true)
+                if let by {
+                    Text("— " + by).font(.system(size: fs * 0.78)).foregroundStyle(Ink.soft)
+                        .frame(maxWidth: .infinity, alignment: .trailing).fixedSize(horizontal: false, vertical: true)
+                }
+            }
+            .padding(.vertical, 6).padding(.horizontal, col >= 600 ? 24 : 8)
+        case .img(let m):
+            BHImageBlock(m: m, accent: accent, width: col)
+        case .video(let m):
+            BHVideoBlock(m: m, accent: accent)
+        case .outline(let nodes):
+            BHOutlineBlock(nodes: nodes, accent: accent, accent2: theme.accent2Color, fs: fs)
+        case .code(let x, let lang):
+            BHCodeBlock(x: x, lang: lang, fs: fs)
+        case .divider:
+            BHDivider(accent: accent)
         }
     }
 
@@ -415,7 +532,7 @@ struct BaihuaScreen: View {
         let fl = flashAt?.block == i ? flashAt : nil
         return BHMarkableText(raw: x, block: i, font: font, bold: bold, color: color, accent: theme.accentUI, lineSpacing: line, marks: marks,
                               flashToken: fl == nil ? 0 : flashToken, flashRange: fl.map { ($0.start, $0.end) },
-                              onMenu: { a in menu(a) }, onHighlight: { id in sheet = .hl(id) }, onTouch: { clock.touch() })
+                              onMenu: { a in menu(a) }, onHighlight: { id in sheet = .hl(id) }, onTouch: { clock.touch() }, onLink: { askLink($0) })
     }
 
     /// 本章白话划线 → 按块分好(按存下的字重新定位)。
@@ -443,7 +560,62 @@ struct BaihuaScreen: View {
 
     // MARK: 篇末
 
-    private func ending(_ c: BHChapter, col: CGFloat) -> some View {
+    @ViewBuilder private func ending(_ c: BHChapter, col: CGFloat) -> some View {
+        if bookMode, let pack { bookEnding(pack, col: col) } else { deepEnding }
+    }
+
+    /// 书 / 文集的篇末:学过了没有、下一章(或学完这本书)、上一章。
+    private func bookEnding(_ pack: BookPack, col: CGFloat) -> some View {
+        let last = no >= pack.chapters.count
+        let nextC = pack.chapters[safe: no]
+        return VStack(alignment: .leading, spacing: 16) {
+            HStack(spacing: 10) {
+                RoundedRectangle(cornerRadius: 2).fill(theme.accentColor).frame(width: 4, height: 18)
+                Text("读完这一\(book.unit)").font(Fonts.song(19, bold: true)).foregroundStyle(Ink.text)
+                Spacer()
+                ChapterLearnedTag(src: target.chapter.src, color: theme.accentColor)
+            }
+            if last {
+                FinishButton(pack: pack, finish: {
+                    clock.settle()
+                    FinishedStore.shared.markFinished(pack)
+                    Stats.shared.recompute()
+                    finishReplay = false; showFinish = true
+                }, replay: { clock.settle(); finishReplay = true; showFinish = true })
+            } else if let n = nextC {
+                Button { nav?.go(n.no, 0, nil) } label: {
+                    HStack(spacing: 12) {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(book.isCollection ? "下一篇" : "下一\(book.unit) · 第 \(Numerals.chinese(n.no)) \(book.unit)").font(.system(size: 12)).opacity(0.85)
+                            Text(n.title).font(Fonts.song(18, bold: true)).multilineTextAlignment(.leading)
+                            if let s = n.meta?.subtitle ?? n.meta?.idea { Text(s).font(.system(size: 13)).opacity(0.85).lineLimit(2).multilineTextAlignment(.leading) }
+                        }
+                        Spacer()
+                        Image(systemName: "arrow.right")
+                    }
+                    .padding(18).frame(maxWidth: .infinity, alignment: .leading)
+                    .background(theme.accentColor, in: RoundedRectangle(cornerRadius: 16)).foregroundStyle(.white)
+                }
+                .buttonStyle(.plain)
+            }
+            HStack {
+                if let p = pack.chapters[safe: no - 2] {
+                    Button { nav?.go(p.no, nil, nil) } label: {
+                        Label(book.isCollection ? "上一篇:\(p.title)" : "上一\(book.unit):\(p.title)", systemImage: "arrow.left").lineLimit(1)
+                    }
+                    .font(.system(size: 14, weight: .medium)).foregroundStyle(theme.accentColor)
+                }
+                Spacer()
+                Button { sheet = .bookTOC } label: { Label("目录", systemImage: "list.bullet") }
+                    .font(.system(size: 14, weight: .medium)).foregroundStyle(Ink.soft)
+            }
+        }
+        .padding(.top, 48).padding(.bottom, 80)
+        .frame(width: col, alignment: .leading)
+        .frame(maxWidth: .infinity)
+    }
+
+    private var deepEnding: some View {
         VStack(spacing: 14) {
             Text("— 本篇完 —").font(Fonts.song(14)).foregroundStyle(Ink.faint).kerning(2)
             Button { dismiss() } label: {
@@ -461,15 +633,18 @@ struct BaihuaScreen: View {
 
     private func chrome(sideTOC: Bool) -> some View {
         HStack(spacing: 10) {
-            float("chevron.left", label: "回到原文") { dismiss() }
+            float("chevron.left", label: bookMode ? "返回书桌" : "回到原文") { dismiss() }
             Spacer()
+            if bookMode { float("highlighter", label: "划线与批注") { sheet = .marks } }
             ReadingSettingsButton(paging: false, onChange: { touch() }) {
                 Image(systemName: "textformat.size").font(.system(size: 15, weight: .semibold)).frame(width: 38, height: 38)
                     .foregroundStyle(Ink.text)
                     .background(.ultraThinMaterial, in: Circle())
                     .shadow(color: .black.opacity(0.08), radius: 4, y: 1)
             }
-            if let c = bh, !c.sections.isEmpty, !sideTOC {
+            if bookMode {
+                float("list.bullet", label: "目录") { sheet = .bookTOC }
+            } else if let c = bh, !c.sections.isEmpty, !sideTOC {
                 float("list.bullet", label: "目录") { sheet = .toc }
             }
         }
@@ -535,6 +710,27 @@ struct BaihuaScreen: View {
             HighlightPanel(id: id) { sheet = .editNote(id) }      // 表单高度由面板按内容自己定
         case .editNote(let id):
             NoteEditor(id: id).presentationDetents([.medium, .large])
+        case .bookTOC:
+            if let pack {
+                ArticleTOCSheet(book: book, pack: pack, current: no, sections: c.sections, currentSection: currentSection(c)) { pick in
+                    sheet = nil
+                    switch pick {
+                    case .chapter(let n): if n != no { DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { nav?.go(n, nil, nil) } }
+                    case .section(let i): DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { withAnimation(.easeInOut(duration: 0.35)) { top = i } }
+                    }
+                }
+            }
+        case .marks:
+            if let pack {
+                HighlightsSheet(book: book, pack: pack) { h in
+                    sheet = nil
+                    if h.no == no, let p = c.locate(h) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { flashAt = (p.seg, p.start, p.end); top = p.seg; flashToken += 1 }
+                    } else {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { nav?.go(h.no, nil, h.id) }
+                    }
+                }
+            }
         case .toc:
             NavigationStack {
                 List {
@@ -560,17 +756,9 @@ struct BaihuaScreen: View {
 
 extension BHChapter {
     /// 正文字数(估读时长用)。
-    var charCount: Int {
-        blocks.reduce(0) { n, b in
-            switch b {
-            case .lead(let x), .p(let x), .h2(let x), .pull(let x): return n + x.count
-            case .quote(let o, let tr): return n + (o?.count ?? 0) + (tr?.count ?? 0)
-            case .callout(_, _, let i), .steps(let i), .list(_, let i): return n + i.reduce(0) { $0 + $1.count }
-            default: return n
-            }
-        }
-    }
+    var charCount: Int { blocks.reduce(0) { $0 + $1.charCount } }
     var figCount: Int { blocks.filter { if case .fig(_, let f) = $0 { return f != nil } else { return false } }.count }
+    var mediaCount: Int { blocks.filter { if case .video = $0 { return true } else { return false } }.count }
 }
 
 /// 章末页的白话深读入口:一张请人往里读的卡片。白话包还没到时先空着,到了自己出现。
@@ -586,7 +774,7 @@ struct DeepReadCard: View {
                     VStack(alignment: .leading, spacing: 8) {
                         HStack(spacing: 6) {
                             Image(systemName: "book.pages").font(.system(size: 11, weight: .bold))
-                            Text("往深里读 · 白话深读").font(.system(size: 12, weight: .bold)).kerning(1.5)
+                            Text("往深里读 · \(book.deepLabel)").font(.system(size: 12, weight: .bold)).kerning(1.5)
                         }
                         .foregroundStyle(theme.accentColor)
                         Text(c.title).font(Fonts.song(19, bold: true)).foregroundStyle(Ink.text).multilineTextAlignment(.leading)
@@ -625,7 +813,21 @@ struct DeepReadCard: View {
                 .shadow(color: theme.accentColor.opacity(0.12), radius: 12, y: 4)
             }
             .buttonStyle(.plain)
-            .accessibilityLabel("白话深读:\(c.title)")
+            .accessibilityLabel("\(book.deepLabel):\(c.title)")
+        }
+    }
+}
+
+extension BHBlock {
+    /// 这一块的字数(估读时长、记字数用)。
+    var charCount: Int {
+        switch self {
+        case .lead(let x), .p(let x), .h2(let x), .h3(let x), .pull(let x): return x.count
+        case .quote(let o, let tr): return (o?.count ?? 0) + (tr?.count ?? 0)
+        case .cite(let x, _): return x.count
+        case .callout(_, _, let i), .steps(let i), .list(_, let i): return i.reduce(0) { $0 + $1.count }
+        case .outline(let n): func w(_ n: [BHNode]) -> Int { n.reduce(0) { $0 + $1.x.count + w($1.children) } }; return w(n)
+        default: return 0
         }
     }
 }

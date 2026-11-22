@@ -15,6 +15,8 @@ enum BHAttr {
         for r in BHText.runs(s) {
             var a = AttributedString(r.text)
             if r.bold { a.inlinePresentationIntent = .stronglyEmphasized; a.foregroundColor = boldColor ?? accent }
+            if r.code { a.inlinePresentationIntent = r.bold ? [.code, .stronglyEmphasized] : .code; a.backgroundColor = Ink.line.opacity(0.6) }
+            if let u = r.link { a.link = u; a.foregroundColor = accent; a.underlineStyle = .single }
             out += a
         }
         return out
@@ -27,8 +29,14 @@ enum BHAttr {
         ps.lineBreakStrategy = .standard
         let out = NSMutableAttributedString()
         for r in BHText.runs(s) {
-            out.append(NSAttributedString(string: r.text, attributes: [
-                .font: r.bold ? bold : font, .foregroundColor: r.bold ? accent : color, .paragraphStyle: ps, .kern: 0.3]))
+            var at: [NSAttributedString.Key: Any] = [.font: r.bold ? bold : font, .foregroundColor: r.bold ? accent : color, .paragraphStyle: ps, .kern: 0.3]
+            if r.code {
+                at[.font] = UIFont.monospacedSystemFont(ofSize: font.pointSize * 0.88, weight: r.bold ? .semibold : .regular)
+                at[.backgroundColor] = UIColor.pair("#EFE9DE", "#34302B")
+                at[.kern] = 0
+            }
+            if let u = r.link { at[.link] = u }
+            out.append(NSAttributedString(string: r.text, attributes: at))
         }
         return out
     }
@@ -51,6 +59,8 @@ struct BHMarkableText: UIViewRepresentable {
     let onMenu: (BHMenuAction) -> Void
     let onHighlight: (String) -> Void
     let onTouch: () -> Void
+    /// 正文里的链接(书包文章才有):点了先问再开。
+    var onLink: (URL) -> Void = { _ in }
 
     struct BHMark: Hashable { var id: String; var start: Int; var end: Int; var color: Int; var note: Bool }
 
@@ -84,6 +94,13 @@ struct BHMarkableText: UIViewRepresentable {
             guard ch < tv.textStorage.length, let id = tv.textStorage.attribute(.deskHL, at: ch, effectiveRange: nil) as? String else { return }
             parent.onHighlight(id)
         }
+
+        // 链接:点了交给外面(先问再用系统浏览器开);长按不出系统的链接预览
+        func textView(_ textView: UITextView, primaryActionFor textItem: UITextItem, defaultAction: UIAction) -> UIAction? {
+            guard case .link(let url) = textItem.content else { return nil }
+            return UIAction { [weak self] _ in self?.parent.onLink(url) }
+        }
+        func textView(_ textView: UITextView, menuConfigurationFor textItem: UITextItem, defaultMenu: UIMenu) -> UITextItem.MenuConfiguration? { nil }
 
         func textView(_ textView: UITextView, editMenuForTextIn range: NSRange, suggestedActions: [UIMenuElement]) -> UIMenu? {
             parent.onTouch()
@@ -145,6 +162,7 @@ struct BHMarkableText: UIViewRepresentable {
         tv.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         tv.setContentHuggingPriority(.defaultLow, for: .horizontal)
         tv.tintColor = accent
+        tv.linkTextAttributes = [.foregroundColor: accent, .underlineStyle: NSUnderlineStyle.single.rawValue]
         let tap = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.tapped(_:)))
         tap.delegate = context.coordinator
         tv.addGestureRecognizer(tap)

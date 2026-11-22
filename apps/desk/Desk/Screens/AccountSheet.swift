@@ -31,6 +31,7 @@ struct AccountButton: View {
 struct AccountSheet: View {
     @Environment(\.dismiss) private var dismiss
     @State private var showAbout = false
+    @State private var showImport = false
     private var account: AccountStore { .shared }
 
     var body: some View {
@@ -39,7 +40,11 @@ struct AccountSheet: View {
                 VStack(spacing: 22) {
                     StatsLinkRow()
                     if account.user != nil { SignedInView() } else { SignInView() }
-                    AboutLinkRow().padding(.top, 8)
+                    VStack(spacing: 10) {
+                        CustomImportLinkRow()
+                        AboutLinkRow()
+                    }
+                    .padding(.top, 8)
                 }
                 .frame(maxWidth: 440)
                 .padding(.horizontal, 24).padding(.vertical, 20)
@@ -50,10 +55,12 @@ struct AccountSheet: View {
             .navigationTitle(account.user == nil ? "登录观象" : "我的账号").navigationBarTitleDisplayMode(.inline)
             .toolbar { ToolbarItem(placement: .cancellationAction) { Button("关闭") { dismiss() } } }
             .navigationDestination(isPresented: $showAbout) { AboutScreen() }
+            .navigationDestination(isPresented: $showImport) { CustomImportScreen() }
         }
         .presentationDetents([.large])
         #if DEBUG
         .task { if ProcessInfo.processInfo.environment["DESK_OPEN"] == "about" { try? await Task.sleep(nanoseconds: 500_000_000); showAbout = true } }
+        .task { if ProcessInfo.processInfo.environment["DESK_OPEN"] == "import" { try? await Task.sleep(nanoseconds: 500_000_000); showImport = true } }
         #endif
         .interactiveDismissDisabled(account.pendingSwitch != nil)
         .sheet(item: Binding(get: { account.pendingSwitch }, set: { _ in })) { p in

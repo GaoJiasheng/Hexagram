@@ -120,6 +120,17 @@ final class ReadDaysStore {
     }
     func markAllDirty() { for k in days.keys { dirty.mark(k) }; write() }
     func clearDirty(_ snap: [String: Int]) { dirty.clear(snap); write() }
+
+    /// 删书时连记录一起删:这本书各章的时长与字数清零(不删键:云端按并集合并,删键会被拉回来;清零的记录推上去,别的设备也跟着清零)。
+    func zero(corpus: String, slug: String) {
+        let needle = "|\(corpus)|\(slug)|"
+        var any = false
+        for (k, e) in days where k.dropFirst(10).hasPrefix(needle) && (e.sec > 0 || e.c > 0 || e.n > 0) {
+            days[k] = ReadDay(sec: 0, n: 0, at: Date(), c: 0)
+            dirty.mark(k); any = true
+        }
+        if any { write(); SyncEngine.shared.noteChange() }
+    }
     /// 换账号时选了「不并入」:本机的时长记录全部清掉(设备号不变)。
     func resetAll() { days = [:]; dirty.removeAll(); counted = [:]; write() }
 
@@ -184,6 +195,12 @@ final class FinishedStore {
     func markAllDirty() { for k in recs.keys { dirty.mark(k) }; save() }
     func clearDirty(_ snap: [String: Int]) { dirty.clear(snap); save() }
     func resetAll() { recs = [:]; dirty.removeAll(); save() }
+    /// 撤销学完(删书连记录一起删时):留墓碑,推上云。
+    func unmark(_ k: String) {
+        guard let r = recs[k], !r.deleted else { return }
+        recs[k] = Rec(at: Date(), deleted: true); dirty.mark(k); save()
+        SyncEngine.shared.noteChange()
+    }
     var hasAny: Bool { recs.values.contains { !$0.deleted } }
 
     func applyRemote(_ map: [String: Any]) {

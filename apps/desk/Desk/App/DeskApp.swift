@@ -1,4 +1,5 @@
 import SwiftUI
+import AVFoundation
 
 @main
 struct DeskApp: App {
@@ -8,7 +9,11 @@ struct DeskApp: App {
             Root()
                 .tint(Ink.cinnabar)
                 .environment(\.locale, Locale(identifier: "zh_CN"))
+                // 「用书桌打开」(隔空投送、文件、分享菜单):书包先过一遍确认卡片
+                .onOpenURL { url in if url.isFileURL { ImportCenter.shared.open(url) } }
                 .task {
+                    // 文章里的动图静音循环播,不打断别的 App 正放的声音
+                    try? AVAudioSession.sharedInstance().setCategory(.ambient, options: .mixWithOthers)
                     _ = FontStore.shared        // 本机已下的字体先注册上(阅读页取字体前)
                     // 启动:用存着的令牌认一下账号,再拉一次
                     await AccountStore.shared.bootstrap()
@@ -56,11 +61,23 @@ private struct Root: View {
                 let ch = p.chapters[min(max((Int(env("DESK_CH", "8")) ?? 8) - 1, 0), p.chapters.count - 1)]
                 BaihuaScreen(target: BaihuaTarget(book: b, chapter: ch, block: env("DESK_BLOCK", "").isEmpty ? nil : Int(env("DESK_BLOCK", "")), fixture: FigDemo.chapter))
             }
+            else if demo == "home", let b = Library.shared.book(env("DESK_BOOK", "daodejing")) {
+                BookHomeScreen(book: b) { _ in }
+            }
+            else if demo == "reader", let b = Library.shared.book(env("DESK_BOOK", "daodejing")), let p = Library.shared.pack(b), b.isArticleBook {
+                ArticleBookScreen(book: b, pack: p, start: ReadPos(ch: Int(env("DESK_CH", "1")) ?? 1, seg: Int(env("DESK_SEG", "0")) ?? 0, at: Date()))
+            }
             else if demo == "reader", let b = Library.shared.book(env("DESK_BOOK", "daodejing")), let p = Library.shared.pack(b) {
                 ReaderScreen(model: ReaderModel(book: b, pack: p, start: ReadPos(ch: Int(env("DESK_CH", "8")) ?? 8, seg: Int(env("DESK_SEG", "0")) ?? 0, at: Date()), reveal: [0]))
             } else { DeskHome() }
         }
         .task {
+            // DESK_IMPORT=路径,路径:启动时直接装这几个书包(模拟器读得到 Mac 上的路径);DESK_IMPORT_CARD=路径:走确认卡片
+            if let p = ProcessInfo.processInfo.environment["DESK_IMPORT"] { await ImportCenter.shared.importDirect(p.components(separatedBy: ",")) }
+            if let p = ProcessInfo.processInfo.environment["DESK_IMPORT_CARD"] {
+                try? await Task.sleep(nanoseconds: 1_200_000_000)
+                ImportCenter.shared.open(URL(fileURLWithPath: p))
+            }
             if env("DESK_STATS", "") == "1" { await StatsSeed.run() }
             guard !demo.isEmpty else { return }
             await Library.shared.refresh()
@@ -69,6 +86,7 @@ private struct Root: View {
                 if let b = Library.shared.book(env("DESK_BOOK", "daodejing")) { await BaihuaStore.shared.ensure(b) }
                 seedHighlights()
             }
+            if env("DESK_DEMO", "") == "home" || Library.shared.book(env("DESK_BOOK", ""))?.isDeskbook == true { ready = true; return }
             ready = true
         }
     }
