@@ -200,7 +200,7 @@ struct BHMarkableText: UIViewRepresentable {
 
 /// 选字时系统画的底色按整个行框画:行距大时比字高出一截(下一行的字像被盖住一半)。这里把每一块收到字的上下沿,
 /// 与划线底色同高;拖柄跟着这些框走。阅读页与白话深读的可选字文本框都用它。
-final class TightTextView: UITextView {
+class TightTextView: UITextView {
     override func selectionRects(for range: UITextRange) -> [UITextSelectionRect] {
         let rects = super.selectionRects(for: range)
         guard textStorage.length > 0 else { return rects }

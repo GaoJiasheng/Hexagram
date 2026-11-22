@@ -21,11 +21,36 @@ final class DeskLayoutManager: NSLayoutManager {
     /// 正在闪的范围与当前透明度(跳转后让落点闪两下)。
     var flashRange: NSRange?
     var flashAlpha: CGFloat = 0
+    /// 显示用的单页文本框(ColumnTextView)只装这一栏的字;判断「划线 / 译文块是不是在这里收尾」要回到整章的 storage 看。
+    /// source 是整章的 storage,sourceOffset 是本栏第一个字在整章里的下标;为 nil 时就是整章自己。
+    weak var source: NSTextStorage?
+    var sourceOffset = 0
 
-    override func drawBackground(forGlyphRange glyphsToShow: NSRange, at origin: CGPoint) {
-        super.drawBackground(forGlyphRange: glyphsToShow, at: origin)
+    /// 本地下标 i 处某属性在整章里的完整范围(换回本地下标;可能超出本地 storage 的两头)。
+    private func fullRange(_ key: NSAttributedString.Key, at i: Int, local ts: NSTextStorage) -> NSRange {
+        var r = NSRange()
+        if let src = source, sourceOffset + i < src.length {
+            _ = src.attribute(key, at: sourceOffset + i, longestEffectiveRange: &r, in: NSRange(location: 0, length: src.length))
+            r.location -= sourceOffset
+        } else {
+            _ = ts.attribute(key, at: i, longestEffectiveRange: &r, in: NSRange(location: 0, length: ts.length))
+        }
+        return r
+    }
+
+    /// 只在这几个字上画底色(本地下标);单栏文本框里扩出来的上下文不画。nil 不限。
+    var drawLimit: NSRange?
+
+    override func drawBackground(forGlyphRange shown: NSRange, at origin: CGPoint) {
+        super.drawBackground(forGlyphRange: shown, at: origin)
         guard let ts = textStorage else { return }
-        let chars = characterRange(forGlyphRange: glyphsToShow, actualGlyphRange: nil)
+        var chars = characterRange(forGlyphRange: shown, actualGlyphRange: nil)
+        var glyphsToShow = shown
+        if let lim = drawLimit {
+            chars = NSIntersectionRange(chars, lim)
+            guard chars.length > 0 else { return }
+            glyphsToShow = glyphRange(forCharacterRange: chars, actualCharacterRange: nil)
+        }
         defer {
             drawHighlights(ts, chars: chars, glyphsToShow: glyphsToShow, origin: origin)
             if let f = flashRange, flashAlpha > 0.01 {
@@ -45,7 +70,9 @@ final class DeskLayoutManager: NSLayoutManager {
             var box = CGRect.null
             enumerateLineFragments(forGlyphRange: g) { lf, _, _, _, _ in box = box.union(lf) }
             guard !box.isNull else { return }
+            // 只有译文真在这一栏收尾,末行才带着段后留白(要扣掉);跨到下一栏的,这一栏的末行不带
             let endsHere = NSMaxRange(g) == NSMaxRange(self.glyphRange(forCharacterRange: r, actualCharacterRange: nil))
+                && NSMaxRange(self.fullRange(.deskTrans, at: r.location, local: ts)) <= NSMaxRange(r)
             box.size.height -= endsHere ? gap : 0
             box = box.offsetBy(dx: origin.x, dy: origin.y)
             tint.withAlphaComponent(0.09).setFill()
@@ -67,8 +94,7 @@ final class DeskLayoutManager: NSLayoutManager {
             HLColor.fill(st.color).setFill()
             for b in boxes { UIBezierPath(roundedRect: b.insetBy(dx: -2, dy: 0), cornerRadius: 4).fill() }
             // 一条划线可能被同一 id 拆成几段属性(中间夹着注释词),只在真正的末尾画标记
-            var tail = NSRange()
-            _ = ts.attribute(.deskHL, at: NSMaxRange(r) - 1, longestEffectiveRange: &tail, in: NSRange(location: 0, length: ts.length))
+            let tail = fullRange(.deskHL, at: NSMaxRange(r) - 1, local: ts)       // 跨栏的划线,标记画在它真正收尾的那一栏
             if st.note, NSMaxRange(g) == NSMaxRange(full), NSMaxRange(r) == NSMaxRange(tail), let last = boxes.last {
                 let d: CGFloat = 7
                 HLColor.mark(st.color).setFill()
@@ -101,6 +127,7 @@ final class DeskLayoutManager: NSLayoutManager {
 
 struct ReaderStyle: Equatable {
     var fontSize: CGFloat = 21
+    var face: ReadingFont = .song       // 正文字体(题名、爻题见 ReadingFont.uiBold)
     var showTranslation = false       // 全部展开译文
     var revealed: Set<Int> = []       // 单独点开译文的段
     var bookID = ""
@@ -116,6 +143,7 @@ struct ReaderStyle: Equatable {
 /// 一章的排版与分页:整章排成一条文字流,按栏的大小切进一个个文字容器(TextKit 1 的多容器分页)。
 /// 每栏一个容器;一页 = 连续 `columns` 个容器(手机与竖屏 1 栏,iPad 横屏 2 栏,像摊开的书,文字从左栏流到右栏)。
 /// 一段太长会自然跨页;每页记得自己从哪一段开始,换字号、换设备、转屏后按段号落回同一处。
+@MainActor
 final class ChapterLayout {
     let chapter: Chapter
     let storage: NSTextStorage
@@ -234,7 +262,82 @@ final class ChapterLayout {
         storage.endEditing()
         manager.hlStyle = styles
         for r in dirty { manager.invalidateDisplay(forCharacterRange: r) }
+        for v in liveViews.allObjects { v.copyHighlights(from: storage, styles: styles) }
     }
+
+    // MARK: 显示用的文本框
+
+    /// 屏上正在显示的各栏文本框(弱引用):改划线、闪动时同步给它们。
+    private let liveViews = NSHashTable<ColumnTextView>.weakObjects()
+
+    /// 第 i 栏(容器下标)显示用的文本框:自己一份 storage + 自己的排版器 + 一个容器。
+    /// 不直接显示分页用的那些文本框——UIKit 的选字只认「一个排版器只接一个容器」的文本框,
+    /// 共用一个排版器、接了多个容器的文本框长按选不了字(真机上连第一页也不行)。
+    /// 独立 storage 装的是「本栏的字向两头扩到整段」:断行、标点挤压都要看整段上下文(栏首若是接着上一栏的半段,
+    /// 只拿后半段重排,「：「」这类相邻标点不再挤压,一行会少排一个字)。扩出来的上下文排在可见区之外,
+    /// 由外面一层裁切框(ColumnClipView)挡住;纵向按整章排版里本栏第一行的位置对齐。DEBUG 下可逐行核对(DESK_VERIFY=1)。
+    func makeColumnView(_ i: Int) -> ColumnTextView {
+        let c = containers[i]
+        let chars = manager.characterRange(forGlyphRange: manager.glyphRange(for: c), actualGlyphRange: nil)
+        let ns = storage.string as NSString
+        let head = ns.paragraphRange(for: NSRange(location: chars.location, length: 0))
+        let tail = ns.paragraphRange(for: NSRange(location: max(NSMaxRange(chars) - 1, chars.location), length: 0))
+        let span = NSRange(location: head.location, length: max(NSMaxRange(tail), NSMaxRange(chars)) - head.location)
+        let sub = NSMutableAttributedString(attributedString: storage.attributedSubstring(from: span))
+        let visible = NSRange(location: chars.location - span.location, length: chars.length)
+        sub.removeAttribute(.link, range: NSRange(location: 0, length: sub.length))      // 见 typeset:显示时不要系统链接
+        // 上下文只占位、不显示:字透明,去掉注释词的点线(下划线另有颜色,字透明了它还在)
+        for r in [NSRange(location: 0, length: visible.location), NSRange(location: NSMaxRange(visible), length: sub.length - NSMaxRange(visible))] where r.length > 0 {
+            sub.removeAttribute(.underlineStyle, range: r)
+            sub.addAttribute(.foregroundColor, value: UIColor.clear, range: r)
+        }
+        let v = ColumnTextView(text: sub, offset: span.location, visible: visible, source: storage, width: c.size.width, tint: accent)
+        v.layoutManagerD.hlStyle = manager.hlStyle
+        // 纵向对齐:整章排版里本栏第一行的上沿 − 独立排版里同一行的上沿
+        if chars.length > 0 {
+            let sharedTop = manager.lineFragmentRect(forGlyphAt: manager.glyphRange(for: c).location, effectiveRange: nil).minY
+            let lg = v.layoutManagerD.glyphIndexForCharacter(at: visible.location)
+            v.dy = sharedTop - v.layoutManagerD.lineFragmentRect(forGlyphAt: lg, effectiveRange: nil).minY
+        }
+        #if DEBUG
+        if ProcessInfo.processInfo.environment["DESK_VERIFY"] == "1" { verify(column: i, view: v) }
+        #endif
+        liveViews.add(v)
+        return v
+    }
+
+    #if DEBUG
+    /// 逐行核对独立排版与整章分页:本栏每一行的字范围、纵向位置都要一样。不一样就打日志。
+    func verify(column i: Int, view v: ColumnTextView) {
+        let c = containers[i]
+        var shared: [(NSRange, CGFloat)] = []
+        manager.enumerateLineFragments(forGlyphRange: manager.glyphRange(for: c)) { r, _, _, g, _ in
+            shared.append((self.manager.characterRange(forGlyphRange: g, actualGlyphRange: nil), r.minY))
+        }
+        let lm = v.layoutManagerD
+        var local: [(NSRange, CGFloat)] = []
+        lm.enumerateLineFragments(forGlyphRange: lm.glyphRange(forCharacterRange: v.visible, actualCharacterRange: nil)) { r, _, _, g, _ in
+            var cr = lm.characterRange(forGlyphRange: g, actualGlyphRange: nil); cr.location += v.offset
+            local.append((cr, r.minY + v.dy))
+        }
+        var bad = shared.count != local.count ? 1 : 0
+        var first = ""
+        for (a, b) in zip(shared, local) {
+            let same = a.0 == b.0 && abs(a.1 - b.1) <= 0.5
+            if !same {
+                bad += 1
+                if first.isEmpty {
+                    let ns = storage.string as NSString
+                    first = "\(a.0)@\(a.1) vs \(b.0)@\(b.1) shared=[\(ns.substring(with: a.0))] local=[\(ns.substring(with: b.0))]"
+                }
+            }
+        }
+        DeskVerify.record(ok: bad == 0)
+        if bad > 0 {
+            NSLog("DESKVERIFY ch=%d col=%d lines %d/%d mismatch=%d first=%@", chapter.no, i, shared.count, local.count, bad, first)
+        }
+    }
+    #endif
 
     /// 某个字上的划线 id。
     func highlightID(atCharacter i: Int) -> String? {
@@ -247,17 +350,22 @@ final class ChapterLayout {
     func flash(_ r: NSRange) {
         flashTimer?.invalidate()
         manager.flashRange = r
+        for v in liveViews.allObjects { v.layoutManagerD.flashRange = NSRange(location: r.location - v.offset, length: r.length) }
         let t0 = Date()
         let dur = 1.3
         flashTimer = Timer.scheduledTimer(withTimeInterval: 1.0 / 30, repeats: true) { [weak self] t in
             guard let self else { t.invalidate(); return }
             let x = Date().timeIntervalSince(t0) / dur
+            let views = self.liveViews.allObjects
             if x >= 1 {
                 t.invalidate(); self.manager.flashAlpha = 0; self.manager.flashRange = nil
+                for v in views { v.layoutManagerD.flashAlpha = 0; v.layoutManagerD.flashRange = nil }
             } else {
                 self.manager.flashAlpha = CGFloat(sin(x * .pi * 4 - .pi / 2) * 0.5 + 0.5) * 0.4   // 两起两落
+                for v in views { v.layoutManagerD.flashAlpha = self.manager.flashAlpha }
             }
             self.manager.invalidateDisplay(forCharacterRange: r)
+            for v in views { v.layoutManagerD.invalidateDisplay(forCharacterRange: NSRange(location: 0, length: v.textStorage.length)) }
         }
     }
 
@@ -367,6 +475,14 @@ final class ChapterLayout {
         return s
     }
 
+    /// 某个字上的注释(.deskNote 的值是「段:注」)。
+    func note(atCharacter i: Int) -> Note? {
+        guard i >= 0, i < storage.length, let k = storage.attribute(.deskNote, at: i, effectiveRange: nil) as? String else { return nil }
+        let parts = k.split(separator: ":").compactMap { Int($0) }
+        guard parts.count == 2, chapter.segs.indices.contains(parts[0]), let ns = chapter.segs[parts[0]].n, ns.indices.contains(parts[1]) else { return nil }
+        return ns[parts[1]]
+    }
+
     func note(for url: URL) -> Note? {
         guard url.scheme == "desk-note" else { return nil }
         let parts = url.pathComponents.compactMap { Int($0) }
@@ -374,7 +490,7 @@ final class ChapterLayout {
         return ns[parts[1]]
     }
 
-    static func typeset(_ ch: Chapter, unit: String, style: ReaderStyle) -> NSAttributedString {
+    @MainActor static func typeset(_ ch: Chapter, unit: String, style: ReaderStyle) -> NSAttributedString {
         let out = NSMutableAttributedString()
         // 章题:小字序号 + 大字题名。卦:序号后带「下卦 · 上卦」,题名前画卦画;十翼的篇章不标序号。
         let cap = NSMutableParagraphStyle(); cap.paragraphSpacing = 6
@@ -387,7 +503,7 @@ final class ChapterLayout {
         }
         if !ch.title.isEmpty {
             let ts = NSMutableParagraphStyle(); ts.paragraphSpacing = style.fontSize * 1.3
-            let titleFont = Fonts.uiSong(style.fontSize * 1.5, bold: true)
+            let titleFont = style.face.uiBold(style.fontSize * 1.5)
             let line = NSMutableAttributedString()
             if let g = ch.gua {
                 let side = titleFont.capHeight * 1.25
@@ -418,11 +534,11 @@ final class ChapterLayout {
             let isLine = s.line != nil && s.label != nil && s.label != "象"
             let tag = isLine ? s.label! + "　" : (style.template == "yulu" ? "\(i + 1)  " : "")
             let para = NSMutableAttributedString(string: tag + s.o + "\n", attributes: [
-                .font: Fonts.uiSong(style.fontSize), .foregroundColor: style.text, .paragraphStyle: os, .kern: 0.6, .deskSeg: i])
+                .font: style.face.ui(style.fontSize), .foregroundColor: style.text, .paragraphStyle: os, .kern: 0.6, .deskSeg: i])
             let lead = (tag as NSString).length
             para.addAttribute(.deskLayer, value: "o", range: NSRange(location: lead, length: (s.o as NSString).length))
             if lead > 0, isLine {
-                para.addAttributes([.font: Fonts.uiSong(style.fontSize, bold: true), .foregroundColor: style.accent], range: NSRange(location: 0, length: lead))
+                para.addAttributes([.font: style.face.uiBold(style.fontSize), .foregroundColor: style.accent], range: NSRange(location: 0, length: lead))
             } else if lead > 0 {
                 para.addAttributes([.font: UIFont.systemFont(ofSize: style.fontSize * 0.5, weight: .semibold).rounded, .foregroundColor: style.accent,
                                     .baselineOffset: style.fontSize * 0.28, .kern: 0], range: NSRange(location: 0, length: lead))
@@ -431,8 +547,12 @@ final class ChapterLayout {
                 var r = (s.o as NSString).range(of: n.k)
                 guard r.location != NSNotFound else { continue }
                 r.location += lead
-                // 带注释的字词做成「链接」:系统文本框对链接的点按最可靠(自己加点按手势会被选字手势吃掉)
-                para.addAttributes([.deskNote: "\(i):\(j)", .link: URL(string: "desk-note://n/\(i)/\(j)")!], range: r)
+                // 带注释的字词:主题色点线下划线 + 系统「链接」属性。链接属性只留在整章分页用的 storage 里——
+                // 分页一直是带着它算的(带不带它,UIKit 往一页里装的行数不一样),去掉会让各章页数变;
+                // 显示用的单栏文本框(ColumnTextView)里去掉它:长按链接会弹链接预览、选不了字,出注由页面的轻点手势按 .deskNote 判断
+                para.addAttributes([.deskNote: "\(i):\(j)", .link: URL(string: "desk-note://n/\(i)/\(j)")!,
+                                    .underlineStyle: NSUnderlineStyle.single.rawValue | NSUnderlineStyle.patternDot.rawValue,
+                                    .underlineColor: style.accent], range: r)
             }
             block.append(para)
             if open, let t = s.t {
@@ -510,4 +630,102 @@ extension UIFont {
 }
 
 
+/// 一栏正文的显示文本框:自己一份 storage / 排版器 / 容器(见 ChapterLayout.makeColumnView)。
+/// storage 装的是本栏的字扩到整段;offset 是它第一个字在整章 storage 里的下标——点按、选字拿到的本地下标加上它,
+/// 就是整章坐标(段号、划线偏移照旧)。visible 是本栏真正显示的那几个字(本地下标)。
+/// dy:与整章分页结果对齐的纵向偏移;文本框放在 ColumnClipView 里,frame.y = dy,上下文排在裁切框外。
+final class ColumnTextView: TightTextView {
+    let offset: Int
+    let visible: NSRange
+    var dy: CGFloat = 0
+    let layoutManagerD: DeskLayoutManager
+    /// 整段排完的高度(文本框按它定高)。
+    private(set) var fullHeight: CGFloat = 0
 
+    init(text: NSAttributedString, offset: Int, visible: NSRange, source: NSTextStorage, width: CGFloat, tint: UIColor) {
+        self.offset = offset
+        self.visible = visible
+        let st = NSTextStorage(attributedString: text)
+        let lm = DeskLayoutManager()
+        lm.tint = tint
+        lm.source = source
+        lm.sourceOffset = offset
+        lm.drawLimit = visible
+        st.addLayoutManager(lm)
+        let big: CGFloat = 1_000_000
+        let c = NSTextContainer(size: CGSize(width: width, height: big))
+        c.lineFragmentPadding = 0
+        lm.addTextContainer(c)
+        layoutManagerD = lm
+        lm.ensureLayout(for: c)
+        let h = ceil(lm.usedRect(for: c).height) + 40
+        super.init(frame: CGRect(x: 0, y: 0, width: width, height: h), textContainer: c)
+        isEditable = false
+        isScrollEnabled = false
+        isSelectable = true
+        backgroundColor = .clear
+        textContainerInset = .zero
+        contentInsetAdjustmentBehavior = .never
+        tintColor = tint
+        // 注释词的样子:字色不变,只在下面加一道主题色的点线
+        linkTextAttributes = [.foregroundColor: UIColor.inkText,
+                              .underlineStyle: NSUnderlineStyle.single.rawValue | NSUnderlineStyle.patternDot.rawValue,
+                              .underlineColor: tint]
+        c.size = CGSize(width: width, height: big)      // 文本框会把自己的大小写回容器;容器保持够高,整段都排得下
+        fullHeight = h
+    }
+    required init?(coder: NSCoder) { fatalError() }
+
+    /// 选区只留在本栏看得见的字里(拖柄拖出裁切框,不让选到上下文里去)。
+    func clampSelection() {
+        let r = selectedRange
+        guard r.length > 0 else { return }
+        let c = NSIntersectionRange(r, visible)
+        if c != r { selectedRange = c.length > 0 ? c : NSRange(location: visible.location, length: 0) }
+    }
+
+    /// 整章 storage 的划线属性抄到本栏。
+    func copyHighlights(from src: NSTextStorage, styles: [String: (color: Int, note: Bool)]) {
+        let all = NSRange(location: 0, length: textStorage.length)
+        textStorage.beginEditing()
+        textStorage.removeAttribute(.deskHL, range: all)
+        let r = NSIntersectionRange(NSRange(location: offset, length: textStorage.length), NSRange(location: 0, length: src.length))
+        src.enumerateAttribute(.deskHL, in: r) { v, rr, _ in
+            guard let id = v else { return }
+            textStorage.addAttribute(.deskHL, value: id, range: NSRange(location: rr.location - offset, length: rr.length))
+        }
+        textStorage.endEditing()
+        layoutManagerD.hlStyle = styles
+        layoutManagerD.invalidateDisplay(forCharacterRange: all)
+    }
+}
+
+/// 一栏的裁切框:栏那么大,把扩出来的上下文(上一栏 / 下一栏的字)挡在外面,也不让点按落到它们上。
+final class ColumnClipView: UIView {
+    /// 上下各多露一点:选字的拖柄圆头在首行之上,贴边裁会被切掉半个。上下文的字是透明的,露出来也看不见。
+    static let margin: CGFloat = 12
+    let text: ColumnTextView
+    init(_ t: ColumnTextView) {
+        text = t
+        super.init(frame: .zero)
+        clipsToBounds = true
+        backgroundColor = .clear
+        addSubview(t)
+    }
+    required init?(coder: NSCoder) { fatalError() }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        text.frame = CGRect(x: 0, y: text.dy + Self.margin, width: bounds.width, height: text.fullHeight)
+    }
+}
+
+#if DEBUG
+/// DESK_VERIFY=1 时累计核对结果,日志里一行汇总。
+enum DeskVerify {
+    static var ok = 0, bad = 0
+    static func record(ok good: Bool) {
+        if good { ok += 1 } else { bad += 1 }
+        if (ok + bad) % 20 == 0 { NSLog("DESKVERIFY total ok=%d bad=%d", ok, bad) }
+    }
+}
+#endif

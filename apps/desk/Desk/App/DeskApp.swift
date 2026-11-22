@@ -9,12 +9,18 @@ struct DeskApp: App {
                 .tint(Ink.cinnabar)
                 .environment(\.locale, Locale(identifier: "zh_CN"))
                 .task {
+                    _ = FontStore.shared        // 本机已下的字体先注册上(阅读页取字体前)
                     // 启动:用存着的令牌认一下账号,再拉一次
                     await AccountStore.shared.bootstrap()
                     #if DEBUG
                     if let g = ProcessInfo.processInfo.environment["DESK_GOAL"], let m = Int(g) { DeskSettings.shared.setGoal(m) }
                     if let h = ProcessInfo.processInfo.environment["DESK_GOALHIST"] { DeskSettings.shared.seedHistory(h) }
                     if let t = ProcessInfo.processInfo.environment["DESK_TEXTSIZE"], let v = Int(t) { UserDefaults.standard.set(v, forKey: TextSize.key) }
+                    if let f = ProcessInfo.processInfo.environment["DESK_FONT"] {        // 调试:DESK_FONT=kai 选字体(没下的先下)
+                        if let rf = ReadingFont(rawValue: f), rf.downloadable, !FontStore.shared.isReady(rf) { await FontStore.shared.download(rf) }
+                        UserDefaults.standard.set(f, forKey: ReadingFont.key)
+                    }
+                    if let t = ProcessInfo.processInfo.environment["DESK_TURN"] { UserDefaults.standard.set(t, forKey: PageTurn.key) }
                     #endif
                     SyncEngine.shared.appActive()
                 }

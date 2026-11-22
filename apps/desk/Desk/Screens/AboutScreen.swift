@@ -69,6 +69,11 @@ struct AboutScreen: View {
                     Text("字体").font(.system(size: 12, weight: .semibold)).kerning(2).foregroundStyle(Ink.soft)
                     Text("正文与标题用思源宋体(Noto Serif SC),依 SIL Open Font License 1.1 随 App 分发(按本 App 用到的字做了子集)。")
                         .font(.system(size: 14)).foregroundStyle(Ink.text).lineSpacing(4).fixedSize(horizontal: false, vertical: true)
+                    Text("「阅读设置」里另可选:黑体用系统自带的苹方;楷体、仿宋、手写三款按需下载(只在选用时下载,不随 App 安装),都依 SIL Open Font License 1.1 分发,按本 App 用到的字做了子集并依许可改名。")
+                        .font(.system(size: 14)).foregroundStyle(Ink.text).lineSpacing(4).fixedSize(horizontal: false, vertical: true)
+                    ForEach(Self.extraFonts, id: \.name) { f in
+                        Link(destination: f.url) { row("\(f.label) · \(f.name)", f.credit, icon: "textformat") }
+                    }
                     if Self.oflText != nil {
                         Button { showOFL = true } label: { row("查看许可全文", "SIL OFL 1.1", icon: "doc.text") }.buttonStyle(.plain)
                     }
@@ -88,6 +93,14 @@ struct AboutScreen: View {
             }
         }
     }
+
+    /// 按需下载的三款字体(许可均为 SIL OFL 1.1;来源为各自的官方仓库)。
+    struct ExtraFont { let label: String; let name: String; let credit: String; let url: URL }
+    static let extraFonts: [ExtraFont] = [
+        ExtraFont(label: "楷体", name: "霞鹜文楷 LXGW WenKai", credit: "© LXGW · SIL OFL 1.1", url: URL(string: "https://github.com/lxgw/LxgwWenKai")!),
+        ExtraFont(label: "仿宋", name: "朱雀仿宋 Zhuque Fangsong", credit: "© TrionesType · SIL OFL 1.1", url: URL(string: "https://github.com/TrionesType/zhuque")!),
+        ExtraFont(label: "手写", name: "小赖字体 Xiaolai", credit: "© LXGW · SIL OFL 1.1", url: URL(string: "https://github.com/lxgw/kose-font")!),
+    ]
 
     static var oflText: String? {
         Bundle.main.url(forResource: "OFL", withExtension: "txt").flatMap { try? String(contentsOf: $0, encoding: .utf8) }

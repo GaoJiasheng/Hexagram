@@ -24,6 +24,7 @@ final class ReaderModel {
     var current: PageRef
     var showTranslation = false
     var fontSize: CGFloat = 22
+    private(set) var face: ReadingFont = .song
     @ObservationIgnored private var revealed: [Int: Set<Int>] = [:]   // 章 → 点开了译文的段
     var layoutVersion = 0
     private(set) var pageSize: CGSize = .zero       // 整页正文区(双栏时含中缝)
@@ -61,6 +62,7 @@ final class ReaderModel {
         var s = ReaderStyle()
         s.showTranslation = showTranslation
         s.fontSize = fontSize
+        s.face = face
         s.bookID = book.id
         s.template = book.template
         s.accent = book.theme.accentUI
@@ -110,12 +112,13 @@ final class ReaderModel {
     }
 
     /// 页面大小、栏数(转屏)或「显示译文」变了:重排,落回原来那一段。
-    func relayout(size: CGSize, fontSize: CGFloat, columns: Int = 1) {
+    func relayout(size: CGSize, fontSize: CGFloat, columns: Int = 1, face: ReadingFont = .song) {
         guard size.width > 50, size.height > 50 else { return }
-        if size == pageSize && fontSize == self.fontSize && columns == self.columns && !layouts.isEmpty { return }
+        if size == pageSize && fontSize == self.fontSize && columns == self.columns && face == self.face && !layouts.isEmpty { return }
         pageSize = size
         self.fontSize = fontSize
         self.columns = columns
+        self.face = face
         rebuild()
     }
 
@@ -142,6 +145,18 @@ final class ReaderModel {
         if ProcessInfo.processInfo.environment["DESK_PAGES"] == "1" {
             let l = layout(current.ch)
             NSLog("DESKPAGES firstSeg=%@ pageForSeg=%@ landed=%d", "\(l.firstSeg)", "\((0..<chapter(current.ch).segs.count).map { l.page(forSeg: $0) })", current.page)
+        }
+        // DESK_VERIFYALL=1:整本书逐章分页,记每章页数;再给每一栏建显示用文本框逐行核对(配 DESK_VERIFY=1)
+        if ProcessInfo.processInfo.environment["DESK_VERIFYALL"] == "1" {
+            var counts: [String] = []
+            for ch in 1...pack.chapters.count {
+                var st = style; st.revealed = revealed[ch] ?? []
+                let l = ChapterLayout(chapter: chapter(ch), unit: book.unit, pageSize: pageSize, columns: columns, style: st)
+                counts.append("\(ch):\(l.pageCount)")
+                for i in 0..<(l.pageCount * columns) where l.columnIndices(ofPage: i / columns).contains(i) { _ = l.makeColumnView(i) }
+            }
+            NSLog("DESKPAGECOUNT book=%@ size=%@ cols=%d font=%.0f %@", book.id, "\(pageSize)", columns, fontSize, counts.joined(separator: " "))
+            NSLog("DESKVERIFY done ok=%d bad=%d", DeskVerify.ok, DeskVerify.bad)
         }
         #endif
     }
@@ -195,6 +210,25 @@ final class ReaderModel {
         else { current = PageRef(ch: r.ch, page: layout(r.ch).page(forSeg: returnSeg)) }
         layoutVersion += 1
         remember()
+    }
+
+    /// 从目录跳到别的章之前读到的地方(目录顶上「上次读到」用;跳回去时与当前位置对调)。
+    private(set) var lastRead: ReadSpot?
+    struct ReadSpot: Equatable { var ch: Int; var seg: Int }
+    /// 当前页首那一段。
+    var currentSeg: Int { anchorSeg }
+
+    /// 目录里点了一章:记下跳走前的位置。
+    func jumpFromTOC(toChapter ch: Int) {
+        if ch != current.ch { lastRead = ReadSpot(ch: current.ch, seg: anchorSeg) }
+        jump(toChapter: ch)
+    }
+
+    /// 目录里点「上次读到」:回去,并把现在的位置记成新的「上次读到」。
+    func returnToLastRead() {
+        guard let l = lastRead else { return }
+        lastRead = ReadSpot(ch: current.ch, seg: anchorSeg)
+        jump(toChapter: l.ch, seg: l.seg)
     }
 
     func jump(toChapter ch: Int) {

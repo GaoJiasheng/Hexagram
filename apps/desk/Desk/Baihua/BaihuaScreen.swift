@@ -32,6 +32,7 @@ struct BaihuaScreen: View {
     @Environment(\.colorScheme) private var scheme
     @AppStorage("desk.hlColor") private var lastColor = 0
     @AppStorage(TextSize.key) private var textSize = TextSize.standard.rawValue
+    @AppStorage(ReadingFont.key) private var fontRaw = ReadingFont.song.rawValue
     @State private var top: Int?
     @State private var sheet: BHSheet?
     @State private var clock = ReadClock()
@@ -268,6 +269,16 @@ struct BaihuaScreen: View {
         }
     }
 
+    /// 正文字体(阅读设置):宋体是原设计——原文、导语用宋体,白话正文用系统字;选了楷 / 仿宋 / 手写,白话正文也换成它。
+    private var face: ReadingFont { ReadingFont.resolve(fontRaw) }
+    private var proseFace: Bool { face.downloadable }
+    private func proseUI(_ size: CGFloat, bold: Bool = false) -> UIFont {
+        if proseFace { return face.ui(size) }      // 这几款没有粗体,加粗处靠主题色区分
+        if face == .hei { return bold ? face.uiBold(size) : face.ui(size) }
+        return .systemFont(ofSize: size, weight: bold ? .semibold : .regular)
+    }
+    private func prose(_ size: CGFloat) -> Font { proseFace ? face.font(size) : .system(size: size) }
+
     @ViewBuilder
     private func block(_ b: BHBlock, _ i: Int, _ c: BHChapter, col: CGFloat, fs: CGFloat) -> some View {
         let accent = theme.accentColor
@@ -275,12 +286,12 @@ struct BaihuaScreen: View {
         case .lead(let x):
             HStack(alignment: .top, spacing: 14) {
                 RoundedRectangle(cornerRadius: 2).fill(accent.opacity(0.7)).frame(width: 3)
-                markable(x, i, c, font: Fonts.uiSong(fs * 1.06), bold: Fonts.uiSong(fs * 1.06, bold: true), color: .inkText, line: fs * 0.72)
+                markable(x, i, c, font: face.ui(fs * 1.06), bold: face == .song ? Fonts.uiSong(fs * 1.06, bold: true) : face.uiBold(fs * 1.06), color: .inkText, line: fs * 0.72)
             }
             .fixedSize(horizontal: false, vertical: true)
         case .h2(let x):
             VStack(alignment: .leading, spacing: 10) {
-                Text(BHAttr.text(x, accent: accent)).font(Fonts.song(fs * 1.32, bold: true)).foregroundStyle(Ink.text).lineSpacing(4)
+                Text(BHAttr.text(x, accent: accent)).font(face.boldFont(fs * 1.32)).foregroundStyle(Ink.text).lineSpacing(4)
                     .fixedSize(horizontal: false, vertical: true)
                 HStack(spacing: 4) {
                     Capsule().fill(accent).frame(width: 22, height: 3)
@@ -288,15 +299,15 @@ struct BaihuaScreen: View {
                 }
             }
         case .p(let x):
-            markable(x, i, c, font: .systemFont(ofSize: fs), bold: .systemFont(ofSize: fs, weight: .semibold), color: .inkText, line: fs * 0.66)
+            markable(x, i, c, font: proseUI(fs), bold: proseUI(fs, bold: true), color: .inkText, line: fs * 0.66)
         case .quote(let o, let tr):
             if let o, !o.isEmpty {
                 HStack(alignment: .top, spacing: 14) {
                     RoundedRectangle(cornerRadius: 2).fill(accent).frame(width: 3.5)
                     VStack(alignment: .leading, spacing: 10) {
-                        Text(o).font(Fonts.song(fs * 1.14)).lineSpacing(fs * 0.5).kerning(0.6).foregroundStyle(Ink.text)
+                        Text(o).font(face.font(fs * 1.14)).lineSpacing(fs * 0.5).kerning(0.6).foregroundStyle(Ink.text)
                         if let tr, !tr.isEmpty {
-                            Text(BHAttr.text(tr, accent: accent)).font(.system(size: fs * 0.86)).lineSpacing(fs * 0.36).foregroundStyle(Ink.soft)
+                            Text(BHAttr.text(tr, accent: accent)).font(prose(fs * 0.86)).lineSpacing(fs * 0.36).foregroundStyle(Ink.soft)
                         }
                     }
                     .padding(.vertical, 4)
@@ -309,7 +320,7 @@ struct BaihuaScreen: View {
             } else if let tr {
                 HStack(alignment: .firstTextBaseline, spacing: 10) {
                     Image(systemName: "text.quote").font(.system(size: fs * 0.7)).foregroundStyle(accent.opacity(0.7))
-                    Text(BHAttr.text(tr, accent: accent)).font(.system(size: fs * 0.9)).lineSpacing(fs * 0.4).foregroundStyle(Ink.soft)
+                    Text(BHAttr.text(tr, accent: accent)).font(prose(fs * 0.9)).lineSpacing(fs * 0.4).foregroundStyle(Ink.soft)
                         .fixedSize(horizontal: false, vertical: true)
                 }
             }
@@ -318,7 +329,7 @@ struct BaihuaScreen: View {
         case .pull(let x):
             VStack(spacing: 14) {
                 Rectangle().fill(accent.opacity(0.5)).frame(width: 40, height: 2)
-                Text(BHAttr.text(x, accent: accent, boldColor: accent)).font(Fonts.song(fs * 1.45, bold: true)).lineSpacing(fs * 0.5)
+                Text(BHAttr.text(x, accent: accent, boldColor: accent)).font(face.boldFont(fs * 1.45)).lineSpacing(fs * 0.5)
                     .foregroundStyle(accent).multilineTextAlignment(.center).fixedSize(horizontal: false, vertical: true)
                 Rectangle().fill(accent.opacity(0.5)).frame(width: 40, height: 2)
             }
@@ -334,7 +345,7 @@ struct BaihuaScreen: View {
                                 .frame(width: 26, height: 26).background(accent, in: Circle())
                         }
                         .frame(width: 26)
-                        Text(BHAttr.text(s, accent: accent)).font(.system(size: fs * 0.95)).lineSpacing(fs * 0.55).foregroundStyle(Ink.text)
+                        Text(BHAttr.text(s, accent: accent)).font(prose(fs * 0.95)).lineSpacing(fs * 0.55).foregroundStyle(Ink.text)
                             .padding(.top, 2).padding(.bottom, 18)
                             .fixedSize(horizontal: false, vertical: true)
                     }
@@ -350,7 +361,7 @@ struct BaihuaScreen: View {
                         } else {
                             Circle().fill(accent.opacity(0.7)).frame(width: 6, height: 6).offset(y: -fs * 0.18).frame(width: 14)
                         }
-                        Text(BHAttr.text(s, accent: accent)).font(.system(size: fs * 0.95)).lineSpacing(fs * 0.55).foregroundStyle(Ink.text)
+                        Text(BHAttr.text(s, accent: accent)).font(prose(fs * 0.95)).lineSpacing(fs * 0.55).foregroundStyle(Ink.text)
                             .fixedSize(horizontal: false, vertical: true)
                     }
                 }
@@ -385,7 +396,7 @@ struct BaihuaScreen: View {
                 Label(l, systemImage: icon).font(.system(size: 12.5, weight: .bold)).foregroundStyle(tint)
             }
             ForEach(Array(items.enumerated()), id: \.offset) { _, s in
-                Text(BHAttr.text(s, accent: tint)).font(.system(size: fs * 0.93)).lineSpacing(fs * 0.55)
+                Text(BHAttr.text(s, accent: tint)).font(prose(fs * 0.93)).lineSpacing(fs * 0.55)
                     .foregroundStyle(tone == "mute" ? Ink.soft : Ink.text)
                     .fixedSize(horizontal: false, vertical: true)
             }
@@ -452,7 +463,7 @@ struct BaihuaScreen: View {
         HStack(spacing: 10) {
             float("chevron.left", label: "回到原文") { dismiss() }
             Spacer()
-            TextSizeMenu(onChange: { touch() }) {
+            ReadingSettingsButton(paging: false, onChange: { touch() }) {
                 Image(systemName: "textformat.size").font(.system(size: 15, weight: .semibold)).frame(width: 38, height: 38)
                     .foregroundStyle(Ink.text)
                     .background(.ultraThinMaterial, in: Circle())

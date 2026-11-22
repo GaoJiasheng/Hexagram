@@ -32,12 +32,17 @@ struct ReaderScreen: View {
     @AppStorage("desk.hlColor") private var lastColor = 0
     @AppStorage("desk.showArt") private var showArt = true
     @AppStorage(TextSize.key) private var textSize = TextSize.standard.rawValue
+    @AppStorage(ReadingFont.key) private var fontRaw = ReadingFont.song.rawValue
+    @AppStorage(PageTurn.key) private var turnRaw = PageTurn.slide.rawValue
     @Environment(\.colorScheme) private var scheme
     @Environment(\.scenePhase) private var phase
     @Environment(\.horizontalSizeClass) private var hSize
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     /// iPad 上轻点划线:不用整张表单,在页面下方浮一张合身的小卡片。
     @State private var hlCard: String?
+    /// iPad 横屏:目录做成右侧侧栏,不用表单。
+    @State private var tocPanel = false
+    @State private var wide = false
     /// 正开着的白话深读(全屏盖在阅读页上)。
     @State private var deep: BaihuaTarget?
     private var sync: SyncEngine { .shared }
@@ -61,7 +66,10 @@ struct ReaderScreen: View {
                     let font = floor(auto * TextSize.of(textSize).scale)        // 字号四档(本机设置)
                     let w = cols == 2 ? floor(min(colAvail, font * 20)) * 2 + gutter : min(avail, font * 24)
                     let size = CGSize(width: floor(w), height: floor(geo.size.height - 8))
-                    PagedReader(model: model, version: model.layoutVersion, onNote: { model.touch(); sheet = .note($0) },
+                    let face = ReadingFont.resolve(fontRaw)
+                    let curl = turnRaw == PageTurn.curl.rawValue && !reduceMotion     // 减弱动态效果:按滑动
+                    PagedReader(model: model, version: model.layoutVersion, curl: curl, backdrop: curl ? { r in pageBackdrop(r) } : nil,
+                                onNote: { model.touch(); sheet = .note($0) },
                                 onSeg: { r, seg in
                                     UIImpactFeedbackGenerator(style: .light).impactOccurred()
                                     model.touch()
@@ -73,9 +81,11 @@ struct ReaderScreen: View {
                                     if hSize == .regular { withAnimation(.spring(duration: 0.3)) { hlCard = id } } else { sheet = .hl(id) }
                                 },
                                 onMenu: { r, a in model.touch(); menu(r, a) })
-                        .onAppear { model.relayout(size: size, fontSize: font, columns: cols) }
-                        .onChange(of: size) { _, s in model.relayout(size: s, fontSize: font, columns: cols) }
-                        .onChange(of: font) { _, f in model.relayout(size: size, fontSize: f, columns: cols) }   // 换字号:重排,落回同一段
+                        .id(curl)       // 换翻页方式:重建翻页控制器,停在同一页
+                        .onAppear { model.relayout(size: size, fontSize: font, columns: cols, face: face) }
+                        .onChange(of: size) { _, s in model.relayout(size: s, fontSize: font, columns: cols, face: face) }
+                        .onChange(of: font) { _, f in model.relayout(size: size, fontSize: f, columns: cols, face: face) }   // 换字号:重排,落回同一段
+                        .onChange(of: face) { _, f in model.relayout(size: size, fontSize: font, columns: cols, face: f) }   // 换字体:同上
                 }
                 footer
             }
@@ -84,6 +94,8 @@ struct ReaderScreen: View {
         .overlay(alignment: .bottom) { remoteBanner }
         .overlay(alignment: .bottomLeading) { backButton }
         .overlay { highlightCard }
+        .overlay { tocSidePanel }
+        .onGeometryChange(for: Bool.self) { $0.size.width > $0.size.height && $0.size.width >= 900 } action: { wide = $0; if !$0 { tocPanel = false } }
         .sheet(item: $sheet) { s in sheetView(s) }
         .fullScreenCover(isPresented: $showFinish) { FinishScreen(book: model.book, stats: Stats.shared.finishStats(model.book), replay: finishReplay,
                                                                      onDone: finishReplay ? nil : { showFinish = false; DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { dismiss() } }) }
@@ -108,7 +120,7 @@ struct ReaderScreen: View {
         case .note(let n):
             NoteSheet(note: n, accent: theme.accentColor)     // 表单高度按内容定(此前写死 200 / 380,短注下面空一大块)
         case .toc:
-            TOCSheet(model: model) { ch in sheet = nil; model.jump(toChapter: ch) }
+            TOCSheet(model: model) { ch in sheet = nil; model.jumpFromTOC(toChapter: ch) }
         case .marks:
             HighlightsSheet(book: model.book, pack: model.pack) { h in
                 sheet = nil
@@ -201,6 +213,27 @@ struct ReaderScreen: View {
         }
     }
 
+    /// iPad 横屏的目录侧栏:从右边滑出,点外面收起。
+    @ViewBuilder private var tocSidePanel: some View {
+        if tocPanel {
+            ZStack(alignment: .trailing) {
+                Color.black.opacity(scheme == .dark ? 0.3 : 0.12).ignoresSafeArea()
+                    .onTapGesture { withAnimation(.easeOut(duration: 0.25)) { tocPanel = false } }
+                    .transition(.opacity)
+                TOCSheet(model: model, panel: true, pick: { ch in
+                    withAnimation(.easeOut(duration: 0.25)) { tocPanel = false }
+                    model.jumpFromTOC(toChapter: ch)
+                }, close: { withAnimation(.easeOut(duration: 0.25)) { tocPanel = false } })
+                .frame(width: 440)
+                .clipShape(RoundedRectangle(cornerRadius: 24))
+                .overlay(RoundedRectangle(cornerRadius: 24).stroke(Ink.line, lineWidth: 1))
+                .shadow(color: .black.opacity(0.18), radius: 28, x: -6)
+                .padding(.vertical, 12).padding(.trailing, 12)
+                .transition(.move(edge: .trailing))
+            }
+        }
+    }
+
     @ViewBuilder private var backButton: some View {
         if model.returnPoint != nil {
             Button { withAnimation { model.goBack() } } label: {
@@ -232,7 +265,7 @@ struct ReaderScreen: View {
             if env["DESK_OPEN"] == "baihua" { openDeep(model.current.ch, block: env["DESK_BLOCK"].flatMap(Int.init)) }
             else if let q = env["DESK_FIND"], !q.isEmpty { sheet = .find(q) }
             else if env["DESK_MARKS"] == "1" { sheet = .marks }
-            else if env["DESK_OPEN"] == "toc" { sheet = .toc }
+            else if env["DESK_OPEN"] == "toc" { if wide { tocPanel = true } else { sheet = .toc } }
             else if env["DESK_OPEN"] == "end" { model.jumpToEnd() }
             else if env["DESK_OPEN"] == "trans" { model.toggleTranslation() }
             else if env["DESK_OPEN"] == "note", let n = model.chapter(model.current.ch).segs.lazy.compactMap({ $0.n?.first(where: { $0.x != nil }) ?? $0.n?.first }).first { sheet = .note(n) }
@@ -245,6 +278,16 @@ struct ReaderScreen: View {
     }
     @MainActor static var debugDone = false
     #endif
+
+    /// 仿真翻页时一页的底子(与下面 backdrop 同一套画法,见 PageBackdropView)。
+    private func pageBackdrop(_ r: PageRef) -> PageBackdropSpec {
+        let art = showArt ? ArtStore.shared.image(model.book, .head(r.ch)) : nil
+        let paper = UIColor.pair(theme.paper, "#171513")
+        let a2 = UIColor(hex: theme.accent2)
+        return PageBackdropSpec(paper: paper, accent: theme.accentUI,
+                                accent2: UIColor { $0.userInterfaceStyle == .dark ? a2.lifted(0.25) : a2 },
+                                art: art, artOpacity: r.page == 0 ? 0.62 : 0.26, watermark: model.watermark(r.ch))
+    }
 
     /// 页面底子:纸色 + 顶上一抹主题色 + 这一章的插画铺在页面底部、自下而上淡出(可关)。
     /// 插画只做背景:短章下半页本来空着,正好落在那里;正文长的页再调淡。没有插画时右下角放章号水印。
@@ -302,13 +345,15 @@ struct ReaderScreen: View {
                     .background(model.showTranslation ? AnyShapeStyle(theme.accentColor) : AnyShapeStyle(.ultraThinMaterial), in: Circle())
             }
             .accessibilityLabel(model.showTranslation ? "收起全部译文" : "展开全部译文")
-            TextSizeMenu(onChange: { model.touch() }) {
+            ReadingSettingsButton(onChange: { model.touch() }) {
                 Image(systemName: "textformat.size").font(.system(size: 15, weight: .semibold)).frame(width: 38, height: 38)
                     .foregroundStyle(Ink.text)
                     .background(.ultraThinMaterial, in: Circle())
             }
             float("highlighter", label: "划线与批注") { sheet = .marks }
-            float("list.bullet", label: "目录") { sheet = .toc }
+            float("list.bullet", label: "目录") {
+                if wide { withAnimation(.spring(duration: 0.35)) { tocPanel = true } } else { sheet = .toc }
+            }
         }
         .padding(.horizontal, 16)
         .padding(.top, 4)
@@ -430,45 +475,6 @@ struct NoteSheet: View {
         }
         .background(Ink.paper)
         .modifier(FitDetent(height: measured, fallback: note.x == nil ? 200 : 380, cap: 560))
-    }
-}
-
-struct TOCSheet: View {
-    let model: ReaderModel
-    let pick: (Int) -> Void
-    private var stats: Stats { .shared }
-    var body: some View {
-        NavigationStack {
-            ScrollViewReader { proxy in
-                List {
-                    let parts = model.book.parts.isEmpty ? [BookPart(title: "", from: 1, to: model.pack.chapters.count, note: nil)] : model.book.parts
-                    ForEach(parts, id: \.self) { p in
-                        Section(p.title) {
-                            ForEach(model.pack.chapters.filter { $0.no >= p.from && $0.no <= p.to }) { c in
-                                Button { pick(c.no) } label: {
-                                    HStack {
-                                        Text(Numerals.chinese(c.no)).font(Fonts.num(13, weight: .medium)).foregroundStyle(Ink.faint).frame(width: 44, alignment: .leading)
-                                        Text(c.title).font(Fonts.song(17)).foregroundStyle(Ink.text)
-                                        Spacer()
-                                        if c.no == model.current.ch { Image(systemName: "bookmark.fill").foregroundStyle(model.book.theme.accentColor).accessibilityLabel("读到这里") }
-                                        ChapterMark(sec: stats.sec(c.src), color: model.book.theme.accentColor)
-                                    }
-                                }
-                                .id(c.no)
-                            }
-                        }
-                    }
-                }
-                .onAppear { proxy.scrollTo(model.current.ch, anchor: .center) }
-            }
-            .navigationTitle("目录").navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    let n = stats.learnedCount(model.book.id)
-                    Text("学过 \(n) / \(model.pack.chapters.count)").font(Fonts.num(13, weight: .medium)).foregroundStyle(Ink.soft)
-                }
-            }
-        }
     }
 }
 
