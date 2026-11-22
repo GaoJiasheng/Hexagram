@@ -14,6 +14,7 @@ export const FIG_SOURCES = {
   guiguzi: ['zong/guiguzi'],
   zhuangzi: ['dao/zhuangzi-neipian', 'dao/zhuangzi-waipian', 'dao/zhuangzi-zapian'],
   yijing: ['yijing/hexagrams', 'yijing/xici-shang', 'yijing/xici-xia', 'yijing/shuogua', 'yijing/xugua', 'yijing/zagua'],
+  books: [],   // 观书 153 本(collectFigs 里单独走 src/data/books)
 }
 
 export const figsFile = (book) => path.join(ROOT, 'scripts/authored/desk-figs', `${book}.json`)
@@ -22,6 +23,21 @@ export const readJson = (f, d) => (fs.existsSync(f) ? JSON.parse(fs.readFileSync
 
 // 收这本书的全部图:[{key, src, chapter, ftype, caption, svg}](不去重,按文件、章序)
 export function collectFigs(book) {
+  // 观书(src/data/books/<slug>/overview.json 与 articles/*.json):一个「书」名下收全部 153 本的图,给书房的书包用
+  if (book === 'books') {
+    const out = []
+    const dir = path.join(ROOT, 'src/data/books')
+    for (const slug of fs.readdirSync(dir).filter((d) => fs.statSync(path.join(dir, d)).isDirectory()).sort()) {
+      const files = [['overview', path.join(dir, slug, 'overview.json')]]
+      const ad = path.join(dir, slug, 'articles')
+      if (fs.existsSync(ad)) for (const f of fs.readdirSync(ad).filter((x) => x.endsWith('.json')).sort((x, y) => x.localeCompare(y, 'en', { numeric: true }))) files.push([f.replace('.json', ''), path.join(ad, f)])
+      for (const [ch, f] of files) {
+        if (!fs.existsSync(f)) continue
+        for (const b of JSON.parse(fs.readFileSync(f, 'utf8')).blocks || []) if (b.type === 'figure' && b.svg) out.push({ key: figKey(b.svg), src: `books/${slug}`, chapter: ch, ftype: b.ftype, caption: b.caption || '', svg: b.svg })
+      }
+    }
+    return out
+  }
   if (!FIG_SOURCES[book]) throw new Error(`不认识的书 ${book}(可选:${Object.keys(FIG_SOURCES).join(' / ')})`)
   const out = []
   for (const src of FIG_SOURCES[book]) {
