@@ -36,6 +36,8 @@ struct ReaderScreen: View {
     @Environment(\.horizontalSizeClass) private var hSize
     /// iPad 上轻点划线:不用整张表单,在页面下方浮一张合身的小卡片。
     @State private var hlCard: String?
+    /// 正开着的白话深读(全屏盖在阅读页上)。
+    @State private var deep: BaihuaTarget?
     private var sync: SyncEngine { .shared }
 
     var theme: BookTheme { model.book.theme }
@@ -82,11 +84,14 @@ struct ReaderScreen: View {
         .fullScreenCover(isPresented: $showFinish) { FinishScreen(book: model.book, stats: Stats.shared.finishStats(model.book), replay: finishReplay,
                                                                      onDone: finishReplay ? nil : { showFinish = false; DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { dismiss() } }) }
         .background { Color.clear.fullScreenCover(item: $other) { o in ReaderScreen(model: o.model) } }
+        .background { Color.clear.fullScreenCover(item: $deep) { t in BaihuaScreen(target: t) } }
+        .task { await BaihuaStore.shared.ensure(model.book) }
         .onChange(of: HighlightStore.shared.version) { _, _ in model.syncHighlights() }
         .onAppear { model.resume() }
         .onDisappear { model.pause(leaving: true) }
-        .onChange(of: phase) { _, p in if p == .active { if other == nil { model.resume() } } else { model.pause() } }
+        .onChange(of: phase) { _, p in if p == .active { if other == nil && deep == nil { model.resume() } } else { model.pause() } }
         .onChange(of: other == nil) { _, none in if none { model.resume() } else { model.pause() } }   // 叠开的另一本书自己计时
+        .onChange(of: deep == nil) { _, none in if none { model.resume() } else { model.pause() } }    // 白话深读自己计时(记在同一章)
         .onChange(of: sheet?.id) { _, _ in model.touch() }
         .onChange(of: showFinish) { _, on in if !on { model.resume() } }
         #if DEBUG
@@ -103,7 +108,9 @@ struct ReaderScreen: View {
         case .marks:
             HighlightsSheet(book: model.book, pack: model.pack) { h in
                 sheet = nil
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { model.go(to: h) }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+                    if h.layer == "b" { openDeep(h.no, flash: h.id) } else { model.go(to: h) }
+                }
             }
         case .find(let q):
             FindSheet(query: q, book: model.book, pack: model.pack) { hit in
@@ -206,14 +213,21 @@ struct ReaderScreen: View {
         }
     }
 
+    /// 打开某一章的白话深读(可落到某一块、闪某一条划线)。
+    private func openDeep(_ no: Int, block: Int? = nil, flash: String? = nil) {
+        guard model.pack.chapters.indices.contains(no - 1) else { return }
+        deep = BaihuaTarget(book: model.book, chapter: model.chapter(no), block: block, flash: flash)
+    }
+
     #if DEBUG
-    /// 调试入口:DESK_FIND=水 启动后直接打开查本书;DESK_MARKS=1 直接打开划线与批注;DESK_HLTAP=1 打开第一条划线的面板。
+    /// 调试入口:DESK_OPEN=baihua 直接打开这一章的白话深读(DESK_BLOCK=n 落到第 n 块);DESK_FIND=水 启动后直接打开查本书;DESK_MARKS=1 直接打开划线与批注;DESK_HLTAP=1 打开第一条划线的面板。
     private func debugOpen() {
         guard !ReaderScreen.debugDone else { return }
         ReaderScreen.debugDone = true
         let env = ProcessInfo.processInfo.environment
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            if let q = env["DESK_FIND"], !q.isEmpty { sheet = .find(q) }
+            if env["DESK_OPEN"] == "baihua" { openDeep(model.current.ch, block: env["DESK_BLOCK"].flatMap(Int.init)) }
+            else if let q = env["DESK_FIND"], !q.isEmpty { sheet = .find(q) }
             else if env["DESK_MARKS"] == "1" { sheet = .marks }
             else if env["DESK_HLTAP"] == "1", let h = HighlightStore.shared.inChapter(book: model.book.id, no: model.current.ch).first(where: \.hasNote) { sheet = .hl(h.id) }
             else if let j = env["DESK_GOHL"], let k = Int(j) {      // 跳到本书第 k 条划线(测跳转与闪动)
@@ -269,6 +283,9 @@ struct ReaderScreen: View {
         HStack(spacing: 10) {
             float("chevron.left", label: "返回书桌") { dismiss() }
             Spacer()
+            if BaihuaStore.shared.has(model.book, model.current.ch) {
+                float("book.pages", label: "白话深读") { model.touch(); openDeep(model.current.ch) }
+            }
             if ArtStore.shared.has(model.book, .head(model.current.ch)) {
                 float(showArt ? "photo.fill" : "photo", label: showArt ? "隐藏插画" : "显示插画", on: showArt) { showArt.toggle() }
             }
@@ -334,6 +351,7 @@ struct ReaderScreen: View {
                     Spacer()
                     ChapterLearnedTag(src: ch.src, color: theme.accentColor)
                 }
+                DeepReadCard(book: model.book, chapter: ch) { model.touch(); openDeep(r.ch) }
                 if let y = ch.yanyi, !y.isEmpty {
                     Text("延伸").font(.system(size: 12, weight: .semibold)).foregroundStyle(theme.accentColor).kerning(2)
                     ForEach(y, id: \.self) { p in

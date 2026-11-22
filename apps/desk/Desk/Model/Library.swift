@@ -64,6 +64,7 @@ final class Library {
             } catch { loadError = "《\(b.title)》没下下来,稍后再试"; return }
         }
         if !shelf.contains(b.id) { shelf.append(b.id); UserDefaults.standard.set(shelf, forKey: "desk.shelf") }
+        Task { await BaihuaStore.shared.prefetch(b) }     // 白话深读包随书拉;没拉到不碍事,第一次打开时再补
     }
 
     /// 从书桌收起:只是拿走,进度与内容包都留着。

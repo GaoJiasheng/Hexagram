@@ -31,7 +31,8 @@ struct DeskApp: App {
 private struct Root: View {
     #if DEBUG
     @State private var ready = false
-    private let demo = ProcessInfo.processInfo.environment["DESK_DEMO"] ?? ""
+    // DESK_OPEN=baihua 单独给时按 reader 走(进阅读器再自动打开白话深读)
+    private let demo = ProcessInfo.processInfo.environment["DESK_DEMO"] ?? (ProcessInfo.processInfo.environment["DESK_OPEN"] == "baihua" ? "reader" : "")
     private func env(_ k: String, _ d: String) -> String { ProcessInfo.processInfo.environment[k] ?? d }
     var body: some View {
         Group {
@@ -42,6 +43,11 @@ private struct Root: View {
                 let st = Stats.shared.finishStats(b)
                 FinishScreen(book: b, stats: st.sec > 0 ? st : .sample)
             }
+            else if demo == "figs", let b = Library.shared.book(env("DESK_BOOK", "daodejing")), let p = Library.shared.pack(b) {
+                // 图解样张:十种 kind 各一张,配这本书的主题色与第 DESK_CH 章的题头图
+                let ch = p.chapters[min(max((Int(env("DESK_CH", "8")) ?? 8) - 1, 0), p.chapters.count - 1)]
+                BaihuaScreen(target: BaihuaTarget(book: b, chapter: ch, block: env("DESK_BLOCK", "").isEmpty ? nil : Int(env("DESK_BLOCK", "")), fixture: FigDemo.chapter))
+            }
             else if demo == "reader", let b = Library.shared.book(env("DESK_BOOK", "daodejing")), let p = Library.shared.pack(b) {
                 ReaderScreen(model: ReaderModel(book: b, pack: p, start: ReadPos(ch: Int(env("DESK_CH", "8")) ?? 8, seg: Int(env("DESK_SEG", "0")) ?? 0, at: Date()), reveal: [0]))
             } else { DeskHome() }
@@ -51,7 +57,10 @@ private struct Root: View {
             guard !demo.isEmpty else { return }
             await Library.shared.refresh()
             for id in ["daodejing", "lunyu", env("DESK_BOOK", "daodejing")] { if let b = Library.shared.book(id) { await Library.shared.add(b) } }
-            if env("DESK_HL", "") == "1" { seedHighlights() }
+            if env("DESK_HL", "") == "1" {
+                if let b = Library.shared.book(env("DESK_BOOK", "daodejing")) { await BaihuaStore.shared.ensure(b) }
+                seedHighlights()
+            }
             ready = true
         }
     }
@@ -73,6 +82,12 @@ private struct Root: View {
         make(2, seg: last, layer: "o", 0, 3, color: 1)
         make(3, seg: last, layer: "o", 12, 3, color: 2)
         make(4, seg: last, layer: "o", 28, 4, color: 3, note: "不争,所以无过失。")
+        // 白话深读里一条(第一段正文的前 12 个字,带批注)
+        if let bh = BaihuaStore.shared.chapter(b, no), let i = bh.blocks.firstIndex(where: { if case .p = $0 { return true } else { return false } }),
+           let t = bh.blocks[i].markable, let s = t.chars(4, min(16, t.count)) {
+            HighlightStore.shared.upsertDemo(Highlight(id: "demo-\(b.id)-\(no)-b", book: b.id, corpus: c.src.corpus, slug: c.src.slug, ch: c.src.ch, no: no,
+                                                       layer: "b", seg: i, start: 4, end: 4 + s.count, text: s, color: 1, note: "白话里划的一条。", at: Date()))
+        }
     }
     #else
     var body: some View { DeskHome() }

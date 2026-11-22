@@ -133,7 +133,8 @@ struct HighlightsSheet: View {
     var body: some View {
         let all = store.alive(book: book.id)
         let shown = all.filter { (!onlyNotes || $0.hasNote) && (layer == "all" || $0.layer == layer) }
-        let groups = Dictionary(grouping: shown, by: \.no).sorted { $0.key < $1.key }
+        // 按章分组;白话深读的划线在本章原文 / 译文之后另成一组(键 = 章号 × 2 + 是否白话)
+        let groups = Dictionary(grouping: shown, by: { $0.no * 2 + ($0.layer == "b" ? 1 : 0) }).sorted { $0.key < $1.key }
         NavigationStack {
             List {
                 Section {
@@ -149,6 +150,7 @@ struct HighlightsSheet: View {
                             Text("各层").tag("all")
                             Text("原文").tag("o")
                             Text("译文").tag("t")
+                            Text("白话").tag("b")
                         }
                         .pickerStyle(.segmented)
                     }
@@ -161,7 +163,8 @@ struct HighlightsSheet: View {
                 } else if shown.isEmpty {
                     Section { Text("没有符合条件的记录").font(.system(size: 15)).foregroundStyle(Ink.soft) }
                 }
-                ForEach(groups, id: \.key) { no, rows in
+                ForEach(groups, id: \.key) { key, rows in
+                    let no = key / 2
                     Section {
                         ForEach(rows) { h in
                             Button { pick(h) } label: { row(h) }
@@ -170,7 +173,7 @@ struct HighlightsSheet: View {
                                 }
                         }
                     } header: {
-                        Text(pack.chapters.indices.contains(no - 1) ? BookSearch.chapterLabel(pack.chapters[no - 1], unit: book.unit) : "第 \(no) \(book.unit)")
+                        Text((pack.chapters.indices.contains(no - 1) ? BookSearch.chapterLabel(pack.chapters[no - 1], unit: book.unit) : "第 \(no) \(book.unit)") + (key % 2 == 1 ? " · 白话深读" : ""))
                             .font(Fonts.song(14, bold: true)).foregroundStyle(Ink.soft).textCase(nil)
                     }
                 }
@@ -184,7 +187,10 @@ struct HighlightsSheet: View {
     }
 
     private func row(_ h: Highlight) -> some View {
-        let stale = pack.chapters.indices.contains(h.no - 1) ? pack.chapters[h.no - 1].locate(h) == nil : true
+        // 白话的划线按白话深读那一章核(白话包还没载入时不报「已改」)
+        let bh = h.layer == "b" ? BaihuaStore.shared.chapter(book, h.no) : nil
+        let stale = h.layer == "b" ? (bh.map { $0.locate(h) == nil } ?? false)
+            : pack.chapters.indices.contains(h.no - 1) ? pack.chapters[h.no - 1].locate(h) == nil : true
         return HStack(alignment: .top, spacing: 12) {
             RoundedRectangle(cornerRadius: 2).fill(HLColor.markColor(h.color)).frame(width: 4)
             VStack(alignment: .leading, spacing: 7) {
@@ -199,9 +205,13 @@ struct HighlightsSheet: View {
                 }
                 HStack(spacing: 8) {
                     Text(h.layer == "o" ? "原文" : h.layer == "t" ? "译文" : "白话")
-                    Text("第 \(h.seg + 1) 段")
+                    if h.layer == "b" {
+                        if let sec = bh?.section(of: bh?.locate(h)?.seg ?? h.seg) { Text(sec).lineLimit(1) }
+                    } else {
+                        Text("第 \(h.seg + 1) 段")
+                    }
                     Text(Self.date.string(from: h.at))
-                    if stale { Text("原文已改").foregroundStyle(Ink.cinnabar) }
+                    if stale { Text(h.layer == "b" ? "白话已改" : "原文已改").foregroundStyle(Ink.cinnabar) }
                 }
                 .font(.system(size: 12)).foregroundStyle(Ink.faint)
             }

@@ -476,12 +476,19 @@ extension UIImage {
 /// 卦画:六爻自下而上(binary 下标 0 是初爻),阳爻一横、阴爻断开。
 enum Hexagram {
     static func image(binary: String, side: CGFloat, color: UIColor) -> UIImage {
+        image(binary: binary, size: CGSize(width: side, height: side), color: color)
+    }
+
+    /// 任意爻数(六画卦、三画卦、单独一爻)、任意宽高:n 横 n-1 空等分高度。白话图解的卦画也用它(画成模板图,由界面上色)。
+    static func image(binary: String, size: CGSize, color: UIColor) -> UIImage {
         let bits = Array(binary)
-        return UIGraphicsImageRenderer(size: CGSize(width: side, height: side)).image { _ in
+        let n = max(bits.count, 1)
+        return UIGraphicsImageRenderer(size: size).image { _ in
             color.setFill()
-            let h = side / 11                       // 六横五空,等分
-            for (i, b) in bits.enumerated() where i < 6 {
-                let y = side - h * CGFloat(i * 2 + 1)
+            let h = size.height / CGFloat(n * 2 - 1)
+            let side = size.width
+            for (i, b) in bits.enumerated() {
+                let y = size.height - h * CGFloat(i * 2 + 1)
                 if b == "1" {
                     UIBezierPath(roundedRect: CGRect(x: 0, y: y, width: side, height: h), cornerRadius: h * 0.25).fill()
                 } else {

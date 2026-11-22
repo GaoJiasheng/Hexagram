@@ -33,6 +33,7 @@ struct BookInfo: Codable, Identifiable, Hashable {
     var file: String
     var bytes: Int
     var art: ArtInfo?         // 插画(可选;老清单没有,一张图都没有的书也没有)
+    var baihua: BaihuaInfo?   // 白话深读包(可选;没有白话的书没有)
 }
 
 /// 一本书有哪些插画(public/desk/v1/art/<id>/):cover 竖版封面 · banner 横版题图 · heads 有题头图的章号。
