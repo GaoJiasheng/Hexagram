@@ -7,15 +7,37 @@ extension NSAttributedString.Key {
     static let deskNote = NSAttributedString.Key("desk.note")
     /// 展开的译文段:值是段后留白的高度(画底色时要扣掉)。
     static let deskTrans = NSAttributedString.Key("desk.trans")
+    /// 正文本身(不含爻题、条号等前缀和段尾换行):值是层名,"o" 原文 · "t" 译文。划线的偏移按它算。
+    static let deskLayer = NSAttributedString.Key("desk.layer")
+    /// 划线:值是划线 id。只是文字属性,不影响排版(加删划线不重新分页)。
+    static let deskHL = NSAttributedString.Key("desk.hl")
 }
 
 /// 给展开的译文画一块带左侧色条的圆角底色(TextKit 自带的背景色只能画直角、贴字)。
 final class DeskLayoutManager: NSLayoutManager {
     var tint: UIColor = .systemTeal
+    /// 划线 id → (颜色, 有无批注)。画底色时按 storage 上的 .deskHL 查这里。
+    var hlStyle: [String: (color: Int, note: Bool)] = [:]
+    /// 正在闪的范围与当前透明度(跳转后让落点闪两下)。
+    var flashRange: NSRange?
+    var flashAlpha: CGFloat = 0
+
     override func drawBackground(forGlyphRange glyphsToShow: NSRange, at origin: CGPoint) {
         super.drawBackground(forGlyphRange: glyphsToShow, at: origin)
         guard let ts = textStorage else { return }
         let chars = characterRange(forGlyphRange: glyphsToShow, actualGlyphRange: nil)
+        defer {
+            drawHighlights(ts, chars: chars, glyphsToShow: glyphsToShow, origin: origin)
+            if let f = flashRange, flashAlpha > 0.01 {
+                let r = NSIntersectionRange(f, chars)
+                if r.length > 0 {
+                    for b in lineBoxes(ts, glyphs: glyphRange(forCharacterRange: r, actualCharacterRange: nil), origin: origin) {
+                        tint.withAlphaComponent(flashAlpha).setFill()
+                        UIBezierPath(roundedRect: b.insetBy(dx: -3, dy: -1), cornerRadius: 5).fill()
+                    }
+                }
+            }
+        }
         ts.enumerateAttribute(.deskTrans, in: chars) { v, r, _ in
             guard let gap = v as? CGFloat else { return }
             let g = NSIntersectionRange(glyphRange(forCharacterRange: r, actualCharacterRange: nil), glyphsToShow)
@@ -31,6 +53,49 @@ final class DeskLayoutManager: NSLayoutManager {
             tint.withAlphaComponent(0.75).setFill()
             UIBezierPath(roundedRect: CGRect(x: box.minX, y: box.minY + 10, width: 3.5, height: max(box.height - 20, 4)), cornerRadius: 2).fill()
         }
+    }
+
+    /// 划线:每行一块圆角淡色底,高度贴着字(按字体的上下沿算,不含行距);带批注的在末行右上角点一个小圆点。
+    private func drawHighlights(_ ts: NSTextStorage, chars: NSRange, glyphsToShow: NSRange, origin: CGPoint) {
+        guard !hlStyle.isEmpty else { return }
+        ts.enumerateAttribute(.deskHL, in: chars) { v, r, _ in
+            guard let id = v as? String, let st = hlStyle[id] else { return }
+            let full = glyphRange(forCharacterRange: r, actualCharacterRange: nil)
+            let g = NSIntersectionRange(full, glyphsToShow)
+            guard g.length > 0 else { return }
+            let boxes = lineBoxes(ts, glyphs: g, origin: origin)
+            HLColor.fill(st.color).setFill()
+            for b in boxes { UIBezierPath(roundedRect: b.insetBy(dx: -2, dy: 0), cornerRadius: 4).fill() }
+            // 一条划线可能被同一 id 拆成几段属性(中间夹着注释词),只在真正的末尾画标记
+            var tail = NSRange()
+            _ = ts.attribute(.deskHL, at: NSMaxRange(r) - 1, longestEffectiveRange: &tail, in: NSRange(location: 0, length: ts.length))
+            if st.note, NSMaxRange(g) == NSMaxRange(full), NSMaxRange(r) == NSMaxRange(tail), let last = boxes.last {
+                let d: CGFloat = 7
+                HLColor.mark(st.color).setFill()
+                UIBezierPath(ovalIn: CGRect(x: last.maxX - d * 0.2, y: last.minY - d * 0.55, width: d, height: d)).fill()
+            }
+        }
+    }
+
+    /// 一段字形逐行的外框(只到字的上下沿)。
+    func lineBoxes(_ ts: NSTextStorage, glyphs g: NSRange, origin: CGPoint) -> [CGRect] {
+        var out: [CGRect] = []
+        enumerateLineFragments(forGlyphRange: g) { rect, _, container, lineRange, _ in
+            let sub = NSIntersectionRange(lineRange, g)
+            guard sub.length > 0 else { return }
+            // 行尾的换行符不算
+            var s = sub
+            let lastChar = self.characterIndexForGlyph(at: NSMaxRange(s) - 1)
+            if lastChar < ts.length, (ts.string as NSString).character(at: lastChar) == 10 { s.length -= 1 }
+            guard s.length > 0 else { return }
+            var b = self.boundingRect(forGlyphRange: s, in: container)
+            let font = ts.attribute(.font, at: self.characterIndexForGlyph(at: s.location), effectiveRange: nil) as? UIFont ?? .systemFont(ofSize: 17)
+            let base = rect.minY + self.location(forGlyphAt: s.location).y
+            b.origin.y = base - font.ascender - 1
+            b.size.height = font.ascender - font.descender + 2
+            out.append(b.offsetBy(dx: origin.x, dy: origin.y))
+        }
+        return out
     }
 }
 
@@ -67,7 +132,7 @@ final class ChapterLayout {
     let columnWidth: CGFloat
     let gutter: CGFloat
 
-    init(chapter: Chapter, unit: String, pageSize: CGSize, columns: Int = 1, gutter: CGFloat = 56, style: ReaderStyle) {
+    init(chapter: Chapter, unit: String, pageSize: CGSize, columns: Int = 1, gutter: CGFloat = 56, style: ReaderStyle, highlights: [Highlight] = []) {
         self.chapter = chapter
         accent = style.accent
         self.columns = max(1, columns)
@@ -80,6 +145,8 @@ final class ChapterLayout {
         manager.tint = style.accent
         storage = NSTextStorage(attributedString: Self.typeset(chapter, unit: unit, style: style))
         storage.addLayoutManager(manager)
+        indexLayers()
+        applyHighlights(highlights)
         paginate(colSize)
         // 一段(连同它展开的译文)尽量不拆到两栏:排完看哪一段正好跨在栏缝上(左栏→右栏、右栏→下一页左栏、
         // 单栏时就是页缝),只要它不算长,就把那一栏的文字区截短到这一段的上沿,让它整段落到下一栏,再重排。
@@ -92,6 +159,111 @@ final class ChapterLayout {
         }
         // 页首字所属的段:按页(每页第一栏)取
         firstSeg = stride(from: 0, to: containers.count, by: self.columns).map { colFirstSeg[$0] }
+        pageChars = (0..<pageCount).map { p in
+            let cols = columnIndices(ofPage: p)
+            let a = manager.glyphRange(for: containers[cols.lowerBound]), b = manager.glyphRange(for: containers[cols.upperBound - 1])
+            let c0 = manager.characterRange(forGlyphRange: a, actualGlyphRange: nil).location
+            let c1 = NSMaxRange(manager.characterRange(forGlyphRange: b, actualGlyphRange: nil))
+            return NSRange(location: c0, length: c1 - c0)
+        }
+    }
+
+    /// 每页覆盖的字(storage 下标,含两栏)。
+    private(set) var pageChars: [NSRange] = []
+    /// 每段每层正文在 storage 里的范围:键 "o3" / "t3"。
+    private var layerRanges: [String: NSRange] = [:]
+    /// 每段第一个字(含前缀)在 storage 里的下标。
+    private var segStart: [Int: Int] = [:]
+
+    private func indexLayers() {
+        let all = NSRange(location: 0, length: storage.length)
+        storage.enumerateAttribute(.deskLayer, in: all) { v, r, _ in
+            guard let l = v as? String, let s = storage.attribute(.deskSeg, at: r.location, effectiveRange: nil) as? Int else { return }
+            layerRanges["\(l)\(s)"] = r
+        }
+        storage.enumerateAttribute(.deskSeg, in: all) { v, r, _ in
+            guard let s = v as? Int, s >= 0, segStart[s] == nil else { return }
+            segStart[s] = r.location
+        }
+    }
+
+    // MARK: 划线
+
+    /// 一个选区(storage 下标)拆成「每段每层一条」;只落在章题、条号、换行上的部分不算。
+    func pieces(in sel: NSRange) -> [HLPiece] {
+        var out: [HLPiece] = []
+        storage.enumerateAttribute(.deskLayer, in: NSIntersectionRange(sel, NSRange(location: 0, length: storage.length))) { v, r, _ in
+            guard let l = v as? String, let seg = storage.attribute(.deskSeg, at: r.location, effectiveRange: nil) as? Int,
+                  let lr = layerRanges["\(l)\(seg)"], let text = chapter.text(seg: seg, layer: l) else { return }
+            let a = text.charOffset(utf16: r.location - lr.location), b = text.charOffset(utf16: NSMaxRange(r) - lr.location)
+            guard b > a, let t = text.chars(a, b), !t.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+            // 同一段同一层被注释词等切成几截的,并成一条
+            if let last = out.last, last.seg == seg, last.layer == l, last.end == a { out[out.count - 1].end = b; out[out.count - 1].text += t }
+            else { out.append(HLPiece(seg: seg, layer: l, start: a, end: b, text: t)) }
+        }
+        return out
+    }
+
+    /// 某段某层第 start…end 个字在 storage 里的范围。
+    func range(seg: Int, layer: String, start: Int, end: Int) -> NSRange? {
+        guard let lr = layerRanges["\(layer)\(seg)"], let text = chapter.text(seg: seg, layer: layer) else { return nil }
+        let a = text.utf16Offset(char: start), b = text.utf16Offset(char: end)
+        guard b > a, b <= lr.length else { return nil }
+        return NSRange(location: lr.location + a, length: b - a)
+    }
+
+    func range(of h: Highlight) -> NSRange? {
+        guard let p = chapter.locate(h) else { return nil }
+        return range(seg: h.seg, layer: h.layer, start: p.start, end: p.end)
+    }
+
+    /// 把这一章的划线画上:只改文字属性、不动排版,然后让相关文本框重绘。
+    func applyHighlights(_ hs: [Highlight]) {
+        let all = NSRange(location: 0, length: storage.length)
+        var dirty: [NSRange] = []
+        storage.enumerateAttribute(.deskHL, in: all) { v, r, _ in if v != nil { dirty.append(r) } }
+        storage.beginEditing()
+        storage.removeAttribute(.deskHL, range: all)
+        var styles: [String: (color: Int, note: Bool)] = [:]
+        for h in hs.sorted(by: { $0.at < $1.at }) {      // 重叠的,后改的盖在上面
+            guard let r = range(of: h) else { continue }
+            storage.addAttribute(.deskHL, value: h.id, range: r)
+            styles[h.id] = (h.color, h.hasNote)
+            dirty.append(r)
+        }
+        storage.endEditing()
+        manager.hlStyle = styles
+        for r in dirty { manager.invalidateDisplay(forCharacterRange: r) }
+    }
+
+    /// 某个字上的划线 id。
+    func highlightID(atCharacter i: Int) -> String? {
+        guard i >= 0, i < storage.length else { return nil }
+        return storage.attribute(.deskHL, at: i, effectiveRange: nil) as? String
+    }
+
+    private var flashTimer: Timer?
+    /// 让一段字闪两下(改底色透明度)。用定时器不用 CADisplayLink / rAF,后台也照常走完。
+    func flash(_ r: NSRange) {
+        flashTimer?.invalidate()
+        manager.flashRange = r
+        let t0 = Date()
+        let dur = 1.3
+        flashTimer = Timer.scheduledTimer(withTimeInterval: 1.0 / 30, repeats: true) { [weak self] t in
+            guard let self else { t.invalidate(); return }
+            let x = Date().timeIntervalSince(t0) / dur
+            if x >= 1 {
+                t.invalidate(); self.manager.flashAlpha = 0; self.manager.flashRange = nil
+            } else {
+                self.manager.flashAlpha = CGFloat(sin(x * .pi * 4 - .pi / 2) * 0.5 + 0.5) * 0.4   // 两起两落
+            }
+            self.manager.invalidateDisplay(forCharacterRange: r)
+        }
+    }
+
+    /// 第几个字落在第几页。
+    func page(forCharacter i: Int) -> Int {
+        pageChars.firstIndex { NSMaxRange($0) > i } ?? max(pageCount - 1, 0)
     }
 
     private var cuts: [Int: CGFloat] = [:]      // 栏(容器下标)→ 截短后的高度
@@ -171,8 +343,9 @@ final class ChapterLayout {
         return 0
     }
 
-    /// 某一段落在第几页(续读用)。
+    /// 某一段落在第几页(续读用):这一段开始的那一页(第一张含该段文字的页),不是「最后一张以它开头的页」。
     func page(forSeg seg: Int) -> Int {
+        if let c = segStart[seg] { return page(forCharacter: c) }
         var p = 0
         for (i, s) in firstSeg.enumerated() where s <= seg { p = i }
         return p
@@ -237,6 +410,7 @@ final class ChapterLayout {
             let para = NSMutableAttributedString(string: tag + s.o + "\n", attributes: [
                 .font: Fonts.uiSong(style.fontSize), .foregroundColor: style.text, .paragraphStyle: os, .kern: 0.6, .deskSeg: i])
             let lead = (tag as NSString).length
+            para.addAttribute(.deskLayer, value: "o", range: NSRange(location: lead, length: (s.o as NSString).length))
             if lead > 0, isLine {
                 para.addAttributes([.font: Fonts.uiSong(style.fontSize, bold: true), .foregroundColor: style.accent], range: NSRange(location: 0, length: lead))
             } else if lead > 0 {
@@ -252,8 +426,10 @@ final class ChapterLayout {
             }
             block.append(para)
             if open, let t = s.t {
-                block.append(NSAttributedString(string: t + "\n", attributes: [
-                    .font: UIFont.systemFont(ofSize: max(15, style.fontSize * 0.62)), .foregroundColor: style.soft, .paragraphStyle: tsy, .deskSeg: i, .deskTrans: gap]))
+                let tb = NSMutableAttributedString(string: t + "\n", attributes: [
+                    .font: UIFont.systemFont(ofSize: max(15, style.fontSize * 0.62)), .foregroundColor: style.soft, .paragraphStyle: tsy, .deskSeg: i, .deskTrans: gap])
+                tb.addAttribute(.deskLayer, value: "t", range: NSRange(location: 0, length: (t as NSString).length))
+                block.append(tb)
             }
             out.append(block)
         }

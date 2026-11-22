@@ -1,11 +1,33 @@
 import SwiftUI
 
+/// 阅读页上弹出的各种面板(同一时刻只有一个)。
+enum ReaderSheet: Identifiable {
+    case note(Note), toc, marks, find(String), hl(String), editNote(String)
+    var id: String {
+        switch self {
+        case .note(let n): return "note:" + n.id
+        case .toc: return "toc"
+        case .marks: return "marks"
+        case .find(let q): return "find:" + q
+        case .hl(let i): return "hl:" + i
+        case .editNote(let i): return "edit:" + i
+        }
+    }
+}
+
+/// 从查本书结果打开另一本书。
+struct OtherReader: Identifiable {
+    let id = UUID()
+    let model: ReaderModel
+}
+
 struct ReaderScreen: View {
     @State var model: ReaderModel
     @Environment(\.dismiss) private var dismiss
-    @State private var note: Note?
-    @State private var showTOC = false
+    @State private var sheet: ReaderSheet?
+    @State private var other: OtherReader?
     @State private var showFinish = false
+    @AppStorage("desk.hlColor") private var lastColor = 0
     @AppStorage("desk.showArt") private var showArt = true
     @Environment(\.colorScheme) private var scheme
 
@@ -27,12 +49,14 @@ struct ReaderScreen: View {
                     let font = cols == 2 ? min(30, max(22, floor(colAvail / 18))) : min(34, max(22, floor(geo.size.width / 22)))
                     let w = cols == 2 ? floor(min(colAvail, font * 20)) * 2 + gutter : min(avail, font * 24)
                     let size = CGSize(width: floor(w), height: floor(geo.size.height - 8))
-                    PagedReader(model: model, version: model.layoutVersion, onNote: { note = $0 },
+                    PagedReader(model: model, version: model.layoutVersion, onNote: { sheet = .note($0) },
                                 onSeg: { r, seg in
                                     UIImpactFeedbackGenerator(style: .light).impactOccurred()
                                     model.toggle(seg: seg, inChapter: r.ch)
                                 },
-                                endPage: { r in AnyView(endPage(r)) })
+                                endPage: { r in AnyView(endPage(r)) },
+                                onHighlight: { sheet = .hl($0) },
+                                onMenu: { r, a in menu(r, a) })
                         .onAppear { model.relayout(size: size, fontSize: font, columns: cols) }
                         .onChange(of: size) { _, s in model.relayout(size: s, fontSize: font, columns: cols) }
                 }
@@ -40,10 +64,96 @@ struct ReaderScreen: View {
             }
         }
         .overlay(alignment: .top) { chrome }
-        .sheet(item: $note) { n in NoteSheet(note: n, accent: theme.accentColor).presentationDetents(n.x == nil ? [.height(200)] : [.height(380), .large]) }
-        .sheet(isPresented: $showTOC) { TOCSheet(model: model) { ch in showTOC = false; model.jump(toChapter: ch) } }
+        .overlay(alignment: .bottomLeading) { backButton }
+        .sheet(item: $sheet) { s in sheetView(s) }
         .fullScreenCover(isPresented: $showFinish) { FinishScreen(book: model.book, stats: .sample) }
+        .background { Color.clear.fullScreenCover(item: $other) { o in ReaderScreen(model: o.model) } }
+        .onChange(of: HighlightStore.shared.version) { _, _ in model.syncHighlights() }
+        #if DEBUG
+        .onAppear { debugOpen() }
+        #endif
     }
+
+    @ViewBuilder private func sheetView(_ s: ReaderSheet) -> some View {
+        switch s {
+        case .note(let n):
+            NoteSheet(note: n, accent: theme.accentColor).presentationDetents(n.x == nil ? [.height(200)] : [.height(380), .large])
+        case .toc:
+            TOCSheet(model: model) { ch in sheet = nil; model.jump(toChapter: ch) }
+        case .marks:
+            HighlightsSheet(book: model.book, pack: model.pack) { h in
+                sheet = nil
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { model.go(to: h) }
+            }
+        case .find(let q):
+            FindSheet(query: q, book: model.book, pack: model.pack) { hit in
+                sheet = nil
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { open(hit) }
+            }
+        case .hl(let id):
+            HighlightPanel(id: id) { sheet = .editNote(id) }
+                .presentationDetents([.height(HighlightStore.shared.get(id)?.hasNote == true ? 290 : 220)])
+        case .editNote(let id):
+            NoteEditor(id: id).presentationDetents([.medium, .large])
+        }
+    }
+
+    /// 长按选字后的菜单。
+    private func menu(_ r: PageRef, _ a: ReaderMenuAction) {
+        switch a {
+        case .mark(let pieces, let c):
+            lastColor = c
+            UIImpactFeedbackGenerator(style: .light).impactOccurred()
+            model.addHighlights(pieces, inChapter: r.ch, color: c)
+        case .annotate(let pieces):
+            if let h = model.addHighlights(pieces, inChapter: r.ch, color: lastColor).last { sheet = .editNote(h.id) }
+        case .find(let q):
+            sheet = .find(String(q.prefix(40)))
+        }
+    }
+
+    /// 查本书的结果:本书就地跳、留「回到原处」;别的书打开那本的阅读器到相应位置。
+    private func open(_ hit: FindHit) {
+        if hit.book == model.book.id { model.go(to: hit.spot, keepReturn: true); return }
+        guard let b = Library.shared.book(hit.book), let p = Library.shared.pack(b) else { return }
+        let m = ReaderModel(book: b, pack: p, start: ReadPos(ch: hit.ch, seg: hit.seg, at: Date()))
+        m.initialSpot = hit.spot
+        other = OtherReader(model: m)
+    }
+
+    @ViewBuilder private var backButton: some View {
+        if model.returnPoint != nil {
+            Button { withAnimation { model.goBack() } } label: {
+                Label("回到原处", systemImage: "arrow.uturn.backward")
+                    .font(.system(size: 14, weight: .semibold))
+                    .padding(.horizontal, 14).padding(.vertical, 9)
+                    .foregroundStyle(theme.accentColor)
+                    .background(.ultraThinMaterial, in: Capsule())
+                    .overlay(Capsule().stroke(theme.accentColor.opacity(0.3), lineWidth: 1))
+            }
+            .padding(.leading, 20).padding(.bottom, 52)
+            .transition(.opacity.combined(with: .move(edge: .bottom)))
+        }
+    }
+
+    #if DEBUG
+    /// 调试入口:DESK_FIND=水 启动后直接打开查本书;DESK_MARKS=1 直接打开划线与批注;DESK_HLTAP=1 打开第一条划线的面板。
+    private func debugOpen() {
+        guard !ReaderScreen.debugDone else { return }
+        ReaderScreen.debugDone = true
+        let env = ProcessInfo.processInfo.environment
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            if let q = env["DESK_FIND"], !q.isEmpty { sheet = .find(q) }
+            else if env["DESK_MARKS"] == "1" { sheet = .marks }
+            else if env["DESK_HLTAP"] == "1", let h = HighlightStore.shared.inChapter(book: model.book.id, no: model.current.ch).first(where: \.hasNote) { sheet = .hl(h.id) }
+            else if let j = env["DESK_GOHL"], let k = Int(j) {      // 跳到本书第 k 条划线(测跳转与闪动)
+                let all = HighlightStore.shared.alive(book: model.book.id)
+                if all.indices.contains(k) { model.go(to: all[k]) }
+            }
+        }
+    }
+    @MainActor static var debugDone = false
+    #endif
 
     /// 页面底子:纸色 + 顶上一抹主题色 + 这一章的插画铺在页面底部、自下而上淡出(可关)。
     /// 插画只做背景:短章下半页本来空着,正好落在那里;正文长的页再调淡。没有插画时右下角放章号水印。
@@ -98,7 +208,8 @@ struct ReaderScreen: View {
                     .background(model.showTranslation ? AnyShapeStyle(theme.accentColor) : AnyShapeStyle(.ultraThinMaterial), in: Circle())
             }
             .accessibilityLabel(model.showTranslation ? "收起全部译文" : "展开全部译文")
-            float("list.bullet", label: "目录") { showTOC = true }
+            float("highlighter", label: "划线与批注") { sheet = .marks }
+            float("list.bullet", label: "目录") { sheet = .toc }
         }
         .padding(.horizontal, 16)
         .padding(.top, 4)
@@ -131,6 +242,7 @@ struct ReaderScreen: View {
             }
             .animation(.spring(duration: 0.3), value: model.current.page)
         }
+        .frame(height: 20)      // 定高:「轻点一段看译文」只在首页出现,页脚高度一变正文区就变,会触发重排把页面弹回去
         .padding(.horizontal, 28)
         .padding(.vertical, 12)
     }

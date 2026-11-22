@@ -7,6 +7,15 @@ struct PageRef: Hashable {
     var page: Int
 }
 
+/// 章内一处字:第几章、第几段、哪一层、第几到第几个字(字符数)。跳转、闪动用。
+struct Spot: Hashable {
+    var ch: Int
+    var seg: Int
+    var layer: String
+    var start: Int
+    var end: Int
+}
+
 @MainActor
 @Observable
 final class ReaderModel {
@@ -21,6 +30,13 @@ final class ReaderModel {
     private(set) var columns = 1                      // iPad 横屏 2 栏,其余 1 栏
     @ObservationIgnored private var layouts: [Int: ChapterLayout] = [:]
     @ObservationIgnored private var anchorSeg = 0
+    /// 「回到原处」:从查本书跳走前的位置(章、页、页首段、当时那一章的排版对象)。翻几页后自己消失。
+    private(set) var returnPoint: PageRef?
+    @ObservationIgnored private var returnSeg = 0
+    @ObservationIgnored private weak var returnLayout: ChapterLayout?
+    @ObservationIgnored private var turnsSinceJump = 0
+    /// 打开时要先跳到的地方(从别的书的查本书结果点进来)。第一次排好版后执行。
+    @ObservationIgnored var initialSpot: Spot?
 
     init(book: BookInfo, pack: BookPack, start: ReadPos?, reveal: Set<Int> = []) {
         self.book = book
@@ -61,7 +77,8 @@ final class ReaderModel {
         if let l = layouts[ch] { return l }
         var st = style
         st.revealed = revealed[ch] ?? []
-        let l = ChapterLayout(chapter: chapter(ch), unit: book.unit, pageSize: pageSize, columns: columns, style: st)
+        let l = ChapterLayout(chapter: chapter(ch), unit: book.unit, pageSize: pageSize, columns: columns, style: st,
+                              highlights: HighlightStore.shared.inChapter(book: book.id, no: ch))
         layouts[ch] = l
         if layouts.count > 6 { for k in layouts.keys where abs(k - current.ch) > 2 { layouts[k] = nil } }
         return l
@@ -110,9 +127,68 @@ final class ReaderModel {
         current = PageRef(ch: current.ch, page: layout(current.ch).page(forSeg: anchorSeg))
         layoutVersion += 1
         remember()   // 一打开就算读到这里
+        if let s = initialSpot { initialSpot = nil; go(to: s) }
+        #if DEBUG
+        if ProcessInfo.processInfo.environment["DESK_PAGES"] == "1" {
+            let l = layout(current.ch)
+            NSLog("DESKPAGES firstSeg=%@ pageForSeg=%@ landed=%d", "\(l.firstSeg)", "\((0..<chapter(current.ch).segs.count).map { l.page(forSeg: $0) })", current.page)
+        }
+        #endif
+    }
+
+    // MARK: 划线
+
+    /// 划线记录改了:把已排好的各章重新画一遍(只改属性、不重新分页)。
+    func syncHighlights() {
+        for (ch, l) in layouts { l.applyHighlights(HighlightStore.shared.inChapter(book: book.id, no: ch)) }
+    }
+
+    @discardableResult
+    func addHighlights(_ pieces: [HLPiece], inChapter ch: Int, color: Int, note: String? = nil) -> [Highlight] {
+        HighlightStore.shared.add(book: book.id, chapter: chapter(ch), pieces: pieces, color: color, note: note)
+    }
+
+    /// 跳到某一处并让它闪两下。是译文层而那段译文没展开,先把它展开。
+    /// keepReturn:记下现在的位置,阅读页左下角给「回到原处」。
+    func go(to s: Spot, keepReturn: Bool = false) {
+        guard pageSize != .zero, (1...pack.chapters.count).contains(s.ch) else { initialSpot = s; return }
+        if keepReturn {
+            returnPoint = current; returnSeg = anchorSeg; returnLayout = layouts[current.ch]; turnsSinceJump = 0
+        }
+        if s.layer == "t", !showTranslation, !(revealed[s.ch] ?? []).contains(s.seg), !(chapter(s.ch).text(seg: s.seg, layer: "t") ?? "").isEmpty {
+            revealed[s.ch, default: []].insert(s.seg)
+            layouts[s.ch] = nil
+        }
+        let l = layout(s.ch)
+        let r = l.range(seg: s.seg, layer: s.layer, start: s.start, end: s.end)
+        anchorSeg = s.seg
+        current = PageRef(ch: s.ch, page: r.map { l.page(forCharacter: $0.location) } ?? l.page(forSeg: s.seg))
+        layoutVersion += 1
+        remember()
+        if let r {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.45) { [weak l] in l?.flash(r) }
+        }
+    }
+
+    func go(to h: Highlight) {
+        let c = chapter(h.no)
+        let p = c.locate(h) ?? (start: h.start, end: h.end)
+        go(to: Spot(ch: h.no, seg: h.seg, layer: h.layer, start: p.start, end: p.end))
+    }
+
+    /// 回到查本书之前的那一页。那一章没重排过就回原页;重排过(展开了译文等)按页首段落回。
+    func goBack() {
+        guard let r = returnPoint else { return }
+        returnPoint = nil
+        anchorSeg = returnSeg
+        if let l = layouts[r.ch], l === returnLayout { current = PageRef(ch: r.ch, page: min(r.page, l.pageCount)) }
+        else { current = PageRef(ch: r.ch, page: layout(r.ch).page(forSeg: returnSeg)) }
+        layoutVersion += 1
+        remember()
     }
 
     func jump(toChapter ch: Int) {
+        returnPoint = nil
         anchorSeg = 0
         current = PageRef(ch: ch, page: 0)
         layoutVersion += 1
@@ -123,6 +199,7 @@ final class ReaderModel {
     func landed(on r: PageRef) {
         current = r
         if !isEndPage(r) { anchorSeg = layout(r.ch).firstSeg[r.page] }
+        if returnPoint != nil { turnsSinceJump += 1; if turnsSinceJump > 4 { returnPoint = nil } }
         remember()
     }
 

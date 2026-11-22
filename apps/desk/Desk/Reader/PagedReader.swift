@@ -1,6 +1,13 @@
 import SwiftUI
 import UIKit
 
+/// 长按选字后的菜单项。
+enum ReaderMenuAction {
+    case mark([HLPiece], color: Int)    // 划线
+    case annotate([HLPiece])            // 批注:先划一条默认色,再写批注
+    case find(String)                   // 查本书
+}
+
 /// 一页正文:一栏或并排两栏不可编辑的 UITextView,接在这一章共用的排版器上(每栏一个文字容器)。
 final class TextPageController: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate {
     let ref: PageRef
@@ -9,6 +16,8 @@ final class TextPageController: UIViewController, UITextViewDelegate, UIGestureR
     private var columns: [(index: Int, view: UITextView)] = []
     var onNote: ((Note) -> Void)?
     var onSeg: ((Int) -> Void)?
+    var onHighlight: ((String) -> Void)?
+    var onMenu: ((ReaderMenuAction) -> Void)?
 
     init(ref: PageRef, layout: ChapterLayout, pageSize: CGSize) {
         self.ref = ref; self.layout = layout; self.pageSize = pageSize
@@ -34,9 +43,19 @@ final class TextPageController: UIViewController, UITextViewDelegate, UIGestureR
 
     func gestureRecognizer(_ g: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith other: UIGestureRecognizer) -> Bool { true }
 
-    /// 轻点一段正文:展开 / 收起它的译文。点在注释词上的交给下面的链接处理。
+    /// 按下的时刻:按得久的是长按选字,松手时轻点手势也会报一次,要认出来丢掉。
+    private var downAt: TimeInterval = 0
+    func gestureRecognizer(_ g: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        downAt = touch.timestamp
+        return true
+    }
+
+    /// 轻点:注释词 → 出注;划线 → 划线面板;其余正文 → 展开 / 收起这一段的译文。正选着字时轻点只取消选择。
     @objc private func tapped(_ g: UITapGestureRecognizer) {
         guard let tv = g.view as? UITextView, let i = columns.first(where: { $0.view === tv })?.index else { return }
+        // 正选着字(或长按选字刚松手,轻点手势也会报一次):不出注、不展开,取消选择交给系统
+        if columns.contains(where: { $0.view.selectedRange.length > 0 }) { return }
+        if ProcessInfo.processInfo.systemUptime - downAt > 0.45 { return }
         let p = g.location(in: tv)
         let c = layout.containers[i]
         let glyph = layout.manager.glyphIndex(for: p, in: c)
@@ -49,7 +68,37 @@ final class TextPageController: UIViewController, UITextViewDelegate, UIGestureR
             if let n = layout.note(for: url) { onNote?(n) }
             return
         }
+        if let id = layout.highlightID(atCharacter: ch), box.insetBy(dx: -4, dy: -6).contains(p) {
+            onHighlight?(id)
+            return
+        }
         if let s = layout.seg(atCharacter: ch) { onSeg?(s) }
+    }
+
+    /// 长按选字后的菜单:换成我们自己的——划线(四色)、批注、查本书、拷贝。不要系统的查询、翻译、共享。
+    /// 选中的只有章题、条号等不属于任何段的字时,不给划线 / 批注。
+    func textView(_ textView: UITextView, editMenuForTextIn range: NSRange, suggestedActions: [UIMenuElement]) -> UIMenu? {
+        let all = layout.storage.string as NSString
+        guard range.length > 0, NSMaxRange(range) <= all.length else { return UIMenu(children: []) }
+        let text = all.substring(with: range)
+        let pieces = layout.pieces(in: range)
+        let done = { [weak textView] in textView?.selectedTextRange = nil }
+        var items: [UIMenuElement] = []
+        if !pieces.isEmpty {
+            let dots = (0..<4).map { c -> UIAction in
+                let a = UIAction(title: HLColor.names[c], image: HLColor.dot(c)) { [weak self] _ in self?.onMenu?(.mark(pieces, color: c)); done() }
+                a.accessibilityLabel = "划\(HLColor.names[c])线"
+                return a
+            }
+            items.append(UIMenu(title: "划线", image: UIImage(systemName: "highlighter"), options: [], preferredElementSize: .small, children: dots))
+            items.append(UIAction(title: "批注") { [weak self] _ in self?.onMenu?(.annotate(pieces)); done() })
+        }
+        let q = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        if !q.isEmpty {
+            items.append(UIAction(title: "查本书") { [weak self] _ in self?.onMenu?(.find(q)); done() })
+        }
+        items.append(UIAction(title: "拷贝") { _ in UIPasteboard.general.string = text; done() })
+        return UIMenu(children: items)
     }
 
     override func viewDidLayoutSubviews() {
@@ -90,6 +139,8 @@ struct PagedReader: UIViewControllerRepresentable {
     let onNote: (Note) -> Void
     let onSeg: (PageRef, Int) -> Void
     let endPage: (PageRef) -> AnyView
+    var onHighlight: (String) -> Void = { _ in }
+    var onMenu: (PageRef, ReaderMenuAction) -> Void = { _, _ in }
 
     func makeCoordinator() -> Coordinator { Coordinator(self) }
 
@@ -129,6 +180,8 @@ struct PagedReader: UIViewControllerRepresentable {
             let vc = TextPageController(ref: r, layout: m.layout(r.ch), pageSize: m.pageSize)
             vc.onNote = parent.onNote
             vc.onSeg = { [weak self] s in self?.parent.onSeg(r, s) }
+            vc.onHighlight = { [weak self] id in self?.parent.onHighlight(id) }
+            vc.onMenu = { [weak self] a in self?.parent.onMenu(r, a) }
             return vc
         }
 
