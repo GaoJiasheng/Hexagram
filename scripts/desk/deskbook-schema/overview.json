@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hexa.gavin.pub/desk/standard/schema/overview.json",
+  "title": "deskbook · 全书总览(overview.json)",
+  "description": "标准 §11。书一级的总览 / 总纲文章,不是章、没有章号。形状同章文件的 article,另可带 head 题头图。块规则同章:至少一个 p 或 lead、pull ≤ 1;digest 书引文每条 ≤ 100 字、本篇 ≤ 16 条(校验器核)。文件 ≤ 2 MB。",
+  "type": "object",
+  "required": [
+    "blocks"
+  ],
+  "properties": {
+    "title": {
+      "$ref": "chapter.json#/$defs/text"
+    },
+    "subtitle": {
+      "$ref": "chapter.json#/$defs/text"
+    },
+    "idea": {
+      "$ref": "chapter.json#/$defs/text",
+      "x-deskbook-maxChars": 200
+    },
+    "head": {
+      "$ref": "chapter.json#/$defs/image",
+      "description": "总览题头图,建议横版 3:2,不带文字"
+    },
+    "blocks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "chapter.json#/$defs/block"
+      }
+    }
+  }
+}

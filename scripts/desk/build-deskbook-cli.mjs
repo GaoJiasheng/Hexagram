@@ -282,7 +282,7 @@ async function main() {
   const skill = await buildSkill(cliText, banner + md)
   const size = (p) => human(fs.statSync(path.join(OUT, p)).size)
   const SAMPLE_NOTES = {
-    'sample-book': '现代书:单摆三章,用到全部块类型,带图片、两段动画与全书脑图',
+    'sample-book': '现代书:单摆三章,用到全部块类型,带图片、两段动画、全书总览与全书脑图',
     'sample-collection': '文集:三篇独立短文,各有作者与日期',
     'sample-classic': '典籍:《道德经》三章,原文、译文、字词注与章末深读',
     'sample-fitness': '现代书 · 健身:带医学声明(disclaimer: medical)与一段动作视频',
@@ -294,6 +294,7 @@ async function main() {
     { href: 'schema/chapter.json', label: 'schema/chapter.json', size: size('schema/chapter.json'), note: '章文件的 JSON Schema。' },
     { href: 'schema/fig.json', label: 'schema/fig.json', size: size('schema/fig.json'), note: '图解 fig 的 JSON Schema。' },
     { href: 'schema/mindmap.json', label: 'schema/mindmap.json', size: size('schema/mindmap.json'), note: '全书脑图 mindmap.json 的 JSON Schema。' },
+    { href: 'schema/overview.json', label: 'schema/overview.json', size: size('schema/overview.json'), note: '全书总览 overview.json 的 JSON Schema。' },
     ...samples.map((s) => ({ href: `samples/${s.name}.deskbook`, label: `${s.name}.deskbook`, size: human(s.bytes), note: `${SAMPLE_NOTES[s.name]}。` })),
   ]
   write(path.join(OUT, 'index.html'), buildIndexHtml(md, downloads))

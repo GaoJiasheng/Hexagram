@@ -80,7 +80,7 @@ function report(r, skipped, out) {
   for (const e of r.errors) out.push(`错误  ${formatIssue(e)}`)
   for (const w of r.warnings) out.push(`提示  ${formatIssue(w)}`)
   const s = summarize(r)
-  if (r.book) out.push(`—— 《${s.title ?? '?'}》 ${s.kind ?? '?'} · ${s.chapters} ${r.book.unit || '章'} · ${s.chars} 字${s.articleChars !== undefined ? `(另有深读 ${s.articleChars} 字)` : ''} ${s.mindmapNodes ? `· 脑图 ${s.mindmapNodes} 个节点 ` : ''}· 媒体 ${s.mediaFiles} 个 ${kb(s.mediaBytes)} · 共 ${kb(s.totalBytes)}`)
+  if (r.book) out.push(`—— 《${s.title ?? '?'}》 ${s.kind ?? '?'} · ${s.chapters} ${r.book.unit || '章'} · ${s.chars} 字${s.articleChars !== undefined ? `(另有深读 ${s.articleChars} 字)` : ''} ${s.overviewChars !== undefined ? `· 总览 ${s.overviewChars} 字 ` : ''}${s.mindmapNodes ? `· 脑图 ${s.mindmapNodes} 个节点 ` : ''}· 媒体 ${s.mediaFiles} 个 ${kb(s.mediaBytes)} · 共 ${kb(s.totalBytes)}`)
   out.push(r.ok ? `校验通过${r.warnings.length ? `(${r.warnings.length} 条提示)` : ''}。` : `校验不通过:${r.errors.length} 个错误${r.errors.length >= LIMITS.maxReported ? '(只列前 ' + LIMITS.maxReported + ' 个)' : ''}。`)
 }
 

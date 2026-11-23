@@ -5,9 +5,9 @@
 //
 // 每本书出一个 g-<slug>.deskbook(默认写到 scripts/.cache/deskbooks/,已 gitignore),
 // 打包后立刻用核心库 validate(unzip(bytes)) 回校;有一本不过,退出码非零。
-// 一本书的章:第 1 章「全书总览」(overview.json)· 之后每篇文章一章(文章 n → 第 n+1 章)。
-// 思想脑图(mindmap.json)→ 书包根上的 mindmap.json(标准 §10);源节点的 ref.ch(文章号)换成书包章号。
-// 插画:scripts/.cache/desk-art/books-export/<slug>/ 下有 cover.jpg / banner.jpg / head-0.jpg(总览)/ head-<n>.jpg(文章 n)
+// 书一级(标准 §11):全书总览(源 overview.json)→ 书包根上的 overview.json;思想脑图 → 根上的 mindmap.json(§10)。
+// 章一级:文章 n 就是第 n 章;chapters[].summary 取文章中心句,超 80 字在句读处截短。脑图 ref.ch = n → ch n。
+// 插画:scripts/.cache/desk-art/books-export/<slug>/ 下有 cover.jpg / banner.jpg / head-0.jpg(总览题头)/ head-<n>.jpg(第 n 章)
 //   就收进 media/,没有就不带(另一条管线在产出这个目录,可空可缺)。
 // 版本号:台账 scripts/authored/desk-shelf-revisions.json = { id: { revision, sha256(打出的书包) } };
 //   打出来的字节与台账不同就 revision +1 重打并记账,相同不动。--no-ledger 照算版本号但不写台账。
@@ -17,7 +17,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import crypto from 'node:crypto'
 import { fileURLToPath } from 'node:url'
-import { zip, unzip, validate, summarize, formatIssue, LIMITS, DISCLAIMER_VOCAB, chapterFile, textLen, checkFigShape, ID_PATTERN, MINDMAP_FILE } from './deskbook-core.mjs'
+import { zip, unzip, validate, summarize, formatIssue, LIMITS, DISCLAIMER_VOCAB, chapterFile, textLen, checkFigShape, ID_PATTERN, MINDMAP_FILE, OVERVIEW_FILE } from './deskbook-core.mjs'
 import { figKey, checkFig } from './fig-gate.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
@@ -58,6 +58,7 @@ const S = {
   ideaAsLead: 0, emptySkipped: 0, unknown: {}, stepObjItems: 0,
   mmNodes: 0, mmRefs: 0, mmBadRefs: [], mmLabelMoved: 0, mmNoteOver: [], mmTruncated: 0, mmNodesOver: [],
   art: { complete: [], partial: [], none: [] }, artFiles: 0,
+  overviews: 0, chSummary: 0, chSummaryCut: 0, chSummaryNone: [],
   rev: { same: 0, bumped: [], fresh: [] },
   figTotal: 0, figEmitted: 0, figWaiting: 0, figWaitingKeys: new Set(), figGateFail: 0, figNoCaption: 0,
   tableTotal: 0, tableAsFig: 0, tableFallback: 0,
@@ -101,6 +102,18 @@ function cutSummary(s, slug) {
   if (!best) { S.summaryUncut.push(slug); return s } // 找不到合适的边界:原样放,让校验器报出来
   S.summaryCut.push(`${slug}(${textLen(s)}→${textLen(best)})`)
   return best
+}
+
+// 章的一句话(chapters[].summary,≤ 80 字、一行):取文章中心句;超长在 ≤ 80 字的句读处截(不补字),找不到边界就不给
+function chapterSummary(idea, where) {
+  const s = typeof idea === 'string' ? idea.replace(/\s*[\r\n]+\s*/g, ' ').trim() : ''
+  if (!s) { S.chSummaryNone.push(`${where}(无中心句)`); return null }
+  S.chSummary++
+  if (textLen(s) <= LIMITS.chapterSummary && balanced(s)) return s
+  const cut = cutAt(s, LIMITS.chapterSummary)
+  if (!cut) { S.chSummary--; S.chSummaryNone.push(`${where}(找不到截断点)`); return null }
+  S.chSummaryCut++
+  return cut
 }
 
 // ── 块转换 ──
@@ -215,7 +228,7 @@ function articleChapter(no, title, a, where) {
 // label 超 60 字(源里不少节点是整句):label 取 ≤ 60 字处的句读边界前一段(找不到边界就截 59 字加「…」),
 // 整句原样放到 note 开头——字一个不丢。
 function buildMindmap(mm, entry, slug) {
-  const chOf = new Map(entry.chapters.map((c, i) => [c.no, i + 2])) // 文章号 → 书包章号(第 1 章是总览)
+  const chOf = new Map(entry.chapters.map((c, i) => [c.no, i + 1])) // 文章号 → 书包章号(总览不占章号,文章 n 就是第 n 章)
   let nodes = 0
   const conv = (n, where, depth) => {
     nodes++
@@ -292,15 +305,25 @@ async function buildBook(entry) {
   for (const d of disclaimer) S.disclaimers[d] = (S.disclaimers[d] || 0) + 1
 
   const chapters = []
-  chapters.push(articleChapter(1, '全书总览', readJson(path.join(dir, 'overview.json')), `${slug}/overview`))
+  const summaries = []
   for (const c of entry.chapters) {
     const a = readJson(path.join(dir, 'articles', `${c.no}.json`))
     chapters.push(articleChapter(chapters.length + 1, c.title || a.title, a, `${slug}/articles/${c.no}`))
+    summaries.push(chapterSummary(a.centralIdea, `${slug}/articles/${c.no}`))
+  }
+  // 全书总览:书一级,不是章(标准 §11)
+  let overview = null
+  if (fs.existsSync(path.join(dir, 'overview.json'))) {
+    const src = readJson(path.join(dir, 'overview.json'))
+    const { article } = articleChapter(0, src.title, src, `${slug}/overview`)
+    overview = { title: src.title || '全书总览', ...article }
+    S.overviews++
   }
   const mindmap = fs.existsSync(path.join(dir, 'mindmap.json')) ? buildMindmap(readJson(path.join(dir, 'mindmap.json')), entry, slug) : null
   const art = findArt(slug, entry)
   const media = (f) => (art.got.has(f) ? `media/${f}` : undefined)
-  const heads = [media('head-0.jpg'), ...entry.chapters.map((c) => media(`head-${c.no}.jpg`))]
+  const heads = entry.chapters.map((c) => media(`head-${c.no}.jpg`))
+  if (overview && media('head-0.jpg')) overview = { ...overview, head: media('head-0.jpg') }
 
   const book = {
     format: 'deskbook', version: 1, id, revision: 1, kind: 'book',
@@ -317,16 +340,23 @@ async function buildBook(entry) {
     ...(entry.accent ? { theme: { accent: entry.accent } } : {}),
     ...(media('cover.jpg') ? { cover: media('cover.jpg') } : {}),
     ...(media('banner.jpg') ? { banner: media('banner.jpg') } : {}),
-    chapters: chapters.map((c, i) => ({ no: c.no, file: chapterFile(c.no), title: c.title, ...(heads[i] ? { head: heads[i] } : {}) })),
+    chapters: chapters.map((c, i) => ({ no: c.no, file: chapterFile(c.no), title: c.title, ...(summaries[i] ? { summary: summaries[i] } : {}), ...(heads[i] ? { head: heads[i] } : {}) })),
+    ...(overview ? { overview: OVERVIEW_FILE } : {}),
     ...(mindmap ? { mindmap: MINDMAP_FILE } : {}),
     generator: GENERATOR,
   }
 
   const enc = new TextEncoder()
   const files = new Map()
-  if (mindmap) { scanLeaks(mindmap, `${slug}/mindmap.json`); files.set(MINDMAP_FILE, enc.encode(JSON.stringify(mindmap))) }
-  for (const f of art.got) files.set(`media/${f}`, new Uint8Array(fs.readFileSync(path.join(art.dir, f))))
   const digest = []
+  if (mindmap) { scanLeaks(mindmap, `${slug}/mindmap.json`); files.set(MINDMAP_FILE, enc.encode(JSON.stringify(mindmap))) }
+  if (overview) {
+    scanLeaks(overview, `${slug}/overview.json`)
+    const cs = citeStats({ article: overview })
+    if (cs.n > LIMITS.quotesPerChapter || cs.long.length) digest.push({ no: '总览', title: overview.title, n: cs.n, long: cs.long })
+    files.set(OVERVIEW_FILE, enc.encode(JSON.stringify(overview)))
+  }
+  for (const f of art.got) files.set(`media/${f}`, new Uint8Array(fs.readFileSync(path.join(art.dir, f))))
   for (const c of chapters) {
     scanLeaks(c, `${slug}/${chapterFile(c.no)}`)
     const cs = citeStats(c)
@@ -389,6 +419,7 @@ for (const r of dg) for (const d of r.digest) {
 console.log(`\n图解:共 ${S.figTotal} · 出结构化 fig ${S.figEmitted} · 待结构化数据 ${S.figWaiting}(不同 SVG ${S.figWaitingKeys.size}${S.figGateFail ? `,其中有数据但未过闸 ${S.figGateFail}` : ''}${S.figNoCaption ? `,无说明文字 ${S.figNoCaption}` : ''})${fs.existsSync(FIGS_FILE) ? '' : ' —— 尚无 ' + path.relative(ROOT, FIGS_FILE)}`)
 console.log(`\n全书脑图:${results.filter((r) => r.mindmapNodes).length} 本 · 节点共 ${S.mmNodes}(书包里 ${results.reduce((n, r) => n + (r.mindmapNodes || 0), 0)})· 带 ref 的节点 ${S.mmRefs} · 指向不存在文章的 ${S.mmBadRefs.length}${S.mmBadRefs.length ? ':' + S.mmBadRefs.slice(0, 10).join(' ') : ''}`)
 console.log(`  label 超 ${LIMITS.mindmapLabel} 字、整句移进 note ${S.mmLabelMoved} 个 · note 超 ${LIMITS.mindmapNote} 字 ${S.mmNoteOver.length}${S.mmNoteOver.length ? ':' + S.mmNoteOver.join(' ') : ''} · 超 ${LIMITS.mindmapDepth} 层截掉 ${S.mmTruncated} · 节点超 ${LIMITS.mindmapNodes} 的书 ${S.mmNodesOver.length}${S.mmNodesOver.length ? ':' + S.mmNodesOver.join(' ') : ''}`)
+console.log(`全书总览 ${S.overviews} 本 · 章简介 ${S.chSummary} 条(其中截短 ${S.chSummaryCut})${S.chSummaryNone.length ? ` · 没给简介的章 ${S.chSummaryNone.length}:${S.chSummaryNone.slice(0, 8).join(' ')}` : ''}`)
 console.log(`插画:齐全 ${S.art.complete.length} 本 · 部分 ${S.art.partial.length} 本 · 没有 ${S.art.none.length} 本(共收 ${S.artFiles} 张${fs.existsSync(ART_DIR) ? '' : ';' + path.relative(ROOT, ART_DIR) + ' 还不存在'})`)
 console.log(`版本号:未变 ${S.rev.same} · 升版 ${S.rev.bumped.length} · 台账里没有(记为第 1 版)${S.rev.fresh.length}${useLedger ? '' : '(--no-ledger:台账未写)'}`)
 console.log(`表格:共 ${S.tableTotal} · 转 fig table ${S.tableAsFig} · 退成提示框 ${S.tableFallback}`)

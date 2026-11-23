@@ -76,7 +76,8 @@
         { "properties": { "t": { "const": "img" }, "src": { "$ref": "#/$defs/image" }, "alt": { "$ref": "#/$defs/text" }, "cap": { "$ref": "#/$defs/text" }, "w": { "$ref": "#/$defs/px" }, "h": { "$ref": "#/$defs/px" } }, "required": ["t", "src", "alt", "w", "h"] },
         { "properties": { "t": { "const": "video" }, "src": { "$ref": "#/$defs/video" }, "poster": { "$ref": "#/$defs/image" }, "cap": { "$ref": "#/$defs/text" }, "w": { "$ref": "#/$defs/px" }, "h": { "$ref": "#/$defs/px" }, "sec": { "type": "number", "exclusiveMinimum": 0, "maximum": 60 }, "loop": { "type": "boolean" }, "sound": { "type": "boolean" } }, "required": ["t", "src", "poster", "w", "h", "sec"] },
         { "properties": { "t": { "const": "code" }, "x": { "type": "string", "minLength": 1 }, "lang": { "$ref": "#/$defs/text" } }, "required": ["t", "x"] },
-        { "properties": { "t": { "const": "divider" } }, "required": ["t"] }
+        { "properties": { "t": { "const": "divider" } }, "required": ["t"] },
+        { "properties": { "t": { "const": "ask" }, "q": { "type": "string", "pattern": "^[^\\r\\n]*\\S[^\\r\\n]*$", "x-deskbook-maxChars": 120 }, "a": { "$ref": "#/$defs/text", "x-deskbook-maxChars": 600 } }, "required": ["t", "q", "a"], "description": "点开才见答案的问题" }
       ]
     }
   }

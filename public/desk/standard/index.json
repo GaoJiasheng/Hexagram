@@ -18,10 +18,11 @@
       "kind": "book",
       "revision": 1,
       "chapters": 3,
-      "chars": 1395,
+      "chars": 1729,
+      "overviewChars": 255,
       "mediaFiles": 9,
       "mediaBytes": 301606,
-      "totalBytes": 316408,
+      "totalBytes": 317902,
       "disclaimer": null,
       "mindmapNodes": 16,
       "ok": true
@@ -76,23 +77,23 @@
   "files": [
     {
       "path": "deskbook-skill.zip",
-      "bytes": 371688,
-      "sha256": "588798eef229cc331c319fd973a0b7d2f63d07c230692d1d4c6f1c1629047cf4"
+      "bytes": 375677,
+      "sha256": "5868ea86c377b7af1dcdff0f6b8f653bf921d91af3aa5584ac8ef1acad41d0e2"
     },
     {
       "path": "deskbook.mjs",
-      "bytes": 85562,
-      "sha256": "3c4a33636f51bb29e3a92928ce75d83a82f1a155f47f1044adf781e5f03c50a5"
+      "bytes": 88403,
+      "sha256": "191c9ff3ab9e68bf98f8c9cd63d98c395fa0895c227d2ccefab97a0c3b18d45e"
     },
     {
       "path": "index.html",
-      "bytes": 33869,
-      "sha256": "ccb5225d729397ae86d77222249d566f6ea38b0f280eee0f9a5a076a3cb23258"
+      "bytes": 36150,
+      "sha256": "70cc3fae95a175f7a3c8636510ac2fda81e96d8b7fd3a7311f4c2021202591ac"
     },
     {
       "path": "samples/sample-book.deskbook",
-      "bytes": 310547,
-      "sha256": "347f3fd7bd8d591dd38c6d35dbcf4bc6c63878e11f083c35613b3873a96ffb1d"
+      "bytes": 311575,
+      "sha256": "707080cc022b5ad28d3ce6febfdf483e0a038be71c0d7bbdb70f2f70903e93d4"
     },
     {
       "path": "samples/sample-classic.deskbook",
@@ -111,13 +112,13 @@
     },
     {
       "path": "schema/book.json",
-      "bytes": 5143,
-      "sha256": "19e2ac1a65bf17e23cc9e18920ccc8f8b4d8d0c61d41a37fbce1727adfda675f"
+      "bytes": 5257,
+      "sha256": "9c8acd54a32ce5d996ef4f4c34527de43a01fd6140ffa04ece0d79ea2d0cbe82"
     },
     {
       "path": "schema/chapter.json",
-      "bytes": 5807,
-      "sha256": "b10e938ecaeca4388d635f37b1225dce1bb641dba339a69bdc459ce1ff67989d"
+      "bytes": 6093,
+      "sha256": "c1ec2ce13ea21f5fc7aca2fc9c2e0696524f7da10d168877f15d0db3d2104143"
     },
     {
       "path": "schema/fig.json",
@@ -128,6 +129,11 @@
       "path": "schema/mindmap.json",
       "bytes": 3561,
       "sha256": "d173ecbfc422f249c96b4b01a6dd226a9f64100900504348414689b2094ba4e0"
+    },
+    {
+      "path": "schema/overview.json",
+      "bytes": 1053,
+      "sha256": "2d61fb490af26359b068988d60a63526f5fc6d38e414382ce1cf6e1da6f34acc"
     }
   ]
 }

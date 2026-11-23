@@ -27,6 +27,9 @@ export const LIMITS = Object.freeze({
   mindmapDepth: 5, // 连根算
   mindmapLabel: 60,
   mindmapNote: 1500,
+  overviewBytes: 2 * MB, // overview.json
+  askQ: 120, // ask 块的问题
+  askA: 600, // ask 块的回答
   chapterSummary: 80, // chapters[].summary
   pathLength: 255, // 路径长度 —— 标准未写
   imageLongSide: 4096,
@@ -51,7 +54,7 @@ export const LIMITS = Object.freeze({
 
 export const KINDS = ['classic', 'book', 'collection']
 export const SOURCE_TYPES = ['original', 'digest', 'public-domain', 'licensed']
-export const BLOCK_TYPES = ['lead', 'h2', 'h3', 'p', 'quote', 'callout', 'pull', 'steps', 'list', 'outline', 'fig', 'img', 'video', 'code', 'divider', 'refs']
+export const BLOCK_TYPES = ['lead', 'h2', 'h3', 'p', 'quote', 'callout', 'pull', 'steps', 'list', 'outline', 'fig', 'img', 'video', 'code', 'divider', 'refs', 'ask']
 export const CALLOUT_TONES = ['note', 'tip', 'warn']
 export const FIG_KINDS = ['quote', 'cols', 'rows', 'flow', 'tree', 'timeline', 'table', 'gua', 'ring', 'notes']
 export const IMAGE_EXTS = ['jpg', 'png', 'webp']
@@ -135,9 +138,11 @@ export function checkPath(p) {
 
 // 文件归类:book | mindmap | chapter | image | video | null(不该出现)
 export const MINDMAP_FILE = 'mindmap.json'
+export const OVERVIEW_FILE = 'overview.json'
 export function classifyPath(p) {
   if (p === 'book.json') return 'book'
   if (p === MINDMAP_FILE) return 'mindmap'
+  if (p === OVERVIEW_FILE) return 'overview'
   if (/^chapters\/\d{3,}\.json$/.test(p)) return 'chapter'
   if (p.startsWith('media/') && p.length > 6) {
     const e = extOf(p)
@@ -153,6 +158,7 @@ function perFileLimit(p) {
   if (c === 'video') return LIMITS.videoBytes
   if (c === 'book') return LIMITS.bookJsonBytes
   if (c === 'mindmap') return LIMITS.mindmapBytes
+  if (c === 'overview') return LIMITS.overviewBytes
   return LIMITS.chapterBytes // 章文件,以及不该出现的文件(交给 validate 报)
 }
 
@@ -688,14 +694,14 @@ export function checkInline(s) {
 // ───────────────────────────── 校验 ─────────────────────────────
 
 const BOOK_KEYS = new Set(['format', 'version', 'id', 'revision', 'kind', 'title', 'subtitle', 'authors', 'lang', 'summary', 'description', 'category', 'tags',
-  'source', 'disclaimer', 'unit', 'theme', 'cover', 'banner', 'parts', 'chapters', 'mindmap', 'generator'])
+  'source', 'disclaimer', 'unit', 'theme', 'cover', 'banner', 'parts', 'chapters', 'mindmap', 'overview', 'generator'])
 const CH_ENTRY_KEYS = new Set(['no', 'file', 'title', 'subtitle', 'summary', 'minutes', 'author', 'date', 'head'])
 const CHAPTER_KEYS = new Set(['no', 'title', 'segs', 'yanyi', 'article'])
 const BLOCK_FIELDS = {
   lead: ['x'], h2: ['x'], h3: ['x'], p: ['x'], pull: ['x'],
   quote: ['o', 'tr', 'x', 'by'], callout: ['tone', 'label', 'items'], steps: ['items'], list: ['ordered', 'items'], outline: ['items'],
   fig: ['fig', 'cap'], img: ['src', 'alt', 'cap', 'w', 'h'], video: ['src', 'poster', 'cap', 'w', 'h', 'sec', 'loop', 'sound'],
-  code: ['x', 'lang'], divider: [], refs: ['items'],
+  code: ['x', 'lang'], divider: [], refs: ['items'], ask: ['q', 'a'],
 }
 
 function vocabHit(domain, terms) {
@@ -746,7 +752,8 @@ export function validate(files) {
       else if (path.startsWith('chapters/')) err(path, '', '章文件名应为 chapters/NNN.json(章号补零到三位)')
       else if (path.startsWith('media/')) err(path, '', `媒体只收 ${[...IMAGE_EXTS, ...VIDEO_EXTS].map((x) => '.' + x).join(' ')}`)
       else if (/(^|\/)mindmap\.json$/.test(path)) err(path, '', `脑图只许放在包的根上,文件名就是 ${MINDMAP_FILE}`)
-      else err(path, '', `书包里只许有 book.json、${MINDMAP_FILE}、chapters/、media/`)
+      else if (/(^|\/)overview\.json$/.test(path)) err(path, '', `全书总览只许放在包的根上,文件名就是 ${OVERVIEW_FILE}`)
+      else err(path, '', `书包里只许有 book.json、${OVERVIEW_FILE}、${MINDMAP_FILE}、chapters/、media/`)
       continue
     }
     if (startsWith(data, ZIP_MAGIC)) { err(path, '', '内容是一个 zip,书包里不许嵌套压缩包'); continue }
@@ -876,11 +883,11 @@ export function validate(files) {
     if (!refs.has(path)) refs.set(path, [])
     refs.get(path).push({ file, where, w, h })
   }
-  const aspect = (path, want, label, where) => {
+  const aspect = (path, want, label, where, file = B) => {
     const m = media.get(path)
     if (m?.info?.w && m.info.h) {
       const r = m.info.w / m.info.h
-      if (Math.abs(r - want) / want > 0.05) warn(B, where, `${label}建议 ${want > 1 ? '3:2 横版' : '2:3 竖版'},现为 ${m.info.w}×${m.info.h}`)
+      if (Math.abs(r - want) / want > 0.05) warn(file, where, `${label}建议 ${want > 1 ? '3:2 横版' : '2:3 竖版'},现为 ${m.info.w}×${m.info.h}`)
     }
   }
   if (book.cover !== undefined) { ref(book.cover, B, 'cover', 'image'); aspect(book.cover, 2 / 3, '封面', 'cover') }
@@ -1042,20 +1049,38 @@ export function validate(files) {
       if (kind === 'book' || kind === 'collection') err(F, 'article', `${kind === 'book' ? '现代书' : '文集'}每章必有 article`)
       return
     }
-    const a = ch.article
-    if (!isObj(a)) { err(F, 'article', '应为对象'); return }
-    for (const k of Object.keys(a)) if (!['title', 'subtitle', 'idea', 'blocks'].includes(k)) warn(F, `article.${k}`, `标准里没有字段「${k}」`)
-    for (const k of ['title', 'subtitle']) if (a[k] !== undefined && !isStr(a[k])) err(F, `article.${k}`, '应为非空字符串')
-    if (a.idea !== undefined) {
-      if (!isStr(a.idea)) err(F, 'article.idea', '应为非空字符串')
-      else if (textLen(a.idea) > LIMITS.idea) err(F, 'article.idea', `${textLen(a.idea)} 字,超过 ${LIMITS.idea} 字`)
+    checkArticle(ch.article, F, 'article.', '章')
+  })
+
+  // ── §11 全书总览(书一级,不是章) ──
+  if (book.overview !== undefined && book.overview !== OVERVIEW_FILE) err(B, 'overview', `应为 "${OVERVIEW_FILE}"(路径固定)`)
+  if (book.overview === undefined && files.has(OVERVIEW_FILE)) err(OVERVIEW_FILE, '', `包里有 ${OVERVIEW_FILE},book.json 却没写 "overview": "${OVERVIEW_FILE}"`)
+  if (book.overview === OVERVIEW_FILE && !files.has(OVERVIEW_FILE)) err(B, 'overview', `「${OVERVIEW_FILE}」不在包里`)
+  if (files.has(OVERVIEW_FILE) && files.get(OVERVIEW_FILE).length <= LIMITS.overviewBytes) {
+    const ov = parseJson(files.get(OVERVIEW_FILE), OVERVIEW_FILE, err)
+    if (ov !== undefined) {
+      if (isObj(ov) && ov.head !== undefined) { ref(ov.head, OVERVIEW_FILE, 'head', 'image'); aspect(ov.head, 3 / 2, '总览题头图', 'head', OVERVIEW_FILE) }
+      checkArticle(ov, OVERVIEW_FILE, '', '篇总览', ['head'])
     }
-    if (!Array.isArray(a.blocks) || !a.blocks.length) { err(F, 'article.blocks', '至少一块'); return }
+  }
+
+  function inline(s, file, where) { for (const pr of checkInline(s)) err(file, where, pr) }
+
+  // 一篇文章(章的 article,或全书总览 overview.json)的块与字段。P 是位置前缀('article.' 或 ''),unit 是报错里的叫法
+  function checkArticle(a, F, P, unit, extraKeys = []) {
+    if (!isObj(a)) { err(F, P ? P.slice(0, -1) : '', '应为对象'); return }
+    for (const k of Object.keys(a)) if (!['title', 'subtitle', 'idea', 'blocks', ...extraKeys].includes(k)) warn(F, `${P}${k}`, `标准里没有字段「${k}」`)
+    for (const k of ['title', 'subtitle']) if (a[k] !== undefined && !isStr(a[k])) err(F, `${P}${k}`, '应为非空字符串')
+    if (a.idea !== undefined) {
+      if (!isStr(a.idea)) err(F, `${P}idea`, '应为非空字符串')
+      else if (textLen(a.idea) > LIMITS.idea) err(F, `${P}idea`, `${textLen(a.idea)} 字,超过 ${LIMITS.idea} 字`)
+    }
+    if (!Array.isArray(a.blocks) || !a.blocks.length) { err(F, `${P}blocks`, '至少一块'); return }
     const st = { pull: 0, quotes: 0, hasBody: false }
-    a.blocks.forEach((b, j) => checkBlock(b, `article.blocks[${j}]`, st))
-    if (!st.hasBody) err(F, 'article.blocks', '每章至少一个 p 或 lead')
-    if (st.pull > LIMITS.pullPerChapter) err(F, 'article.blocks', `pull 金句 ${st.pull} 处,一章至多 ${LIMITS.pullPerChapter} 处`)
-    if (digest && st.quotes > LIMITS.quotesPerChapter) err(F, 'article.blocks', `讲别人的书(digest)每章直接引用(quote / pull / 金句卡)至多 ${LIMITS.quotesPerChapter} 条,本章 ${st.quotes} 条`)
+    a.blocks.forEach((b, j) => checkBlock(b, `${P}blocks[${j}]`, st))
+    if (!st.hasBody) err(F, `${P}blocks`, `每${unit}至少一个 p 或 lead`)
+    if (st.pull > LIMITS.pullPerChapter) err(F, `${P}blocks`, `pull 金句 ${st.pull} 处,${unit === '章' ? '一章' : unit}至多 ${LIMITS.pullPerChapter} 处`)
+    if (digest && st.quotes > LIMITS.quotesPerChapter) err(F, `${P}blocks`, `讲别人的书(digest)每${unit}直接引用(quote / pull / 金句卡)至多 ${LIMITS.quotesPerChapter} 条,本${unit} ${st.quotes} 条`)
 
     // §5.1 直接引用:quote 块、pull 金句、fig 金句卡(kind quote 的 text)一并计数;digest 时每条 ≤ 100 字
     function cite(q, w) {
@@ -1159,11 +1184,17 @@ export function validate(files) {
           if (b.lang !== undefined && !isStr(b.lang)) err(F, `${w}.lang`, '应为字符串')
           break
         case 'divider': break
+        case 'ask':
+          // 点开才见答案的问题;q、a 都计字数,不算引用
+          if (text('q')) {
+            if (/[\r\n]/.test(b.q)) err(F, `${w}.q`, '问题只许一行')
+            else if (textLen(b.q) > LIMITS.askQ) err(F, `${w}.q`, `问题 ${textLen(b.q)} 字,超过 ${LIMITS.askQ} 字`)
+          }
+          if (text('a') && textLen(b.a) > LIMITS.askA) err(F, `${w}.a`, `回答 ${textLen(b.a)} 字,超过 ${LIMITS.askA} 字`)
+          break
       }
     }
-  })
-
-  function inline(s, file, where) { for (const pr of checkInline(s)) err(file, where, pr) }
+  }
 
   // ── §4 媒体:尺寸核对、未被引用 ──
   for (const [path, list] of refs) {
@@ -1179,13 +1210,14 @@ export function validate(files) {
   const cc = countChars(files)
   stats.chars = cc.chars
   stats.articleChars = cc.articleChars
+  if (cc.overviewChars !== undefined) stats.overviewChars = cc.overviewChars
   return { ok: errors.length === 0, errors, warnings, book, stats }
 }
 
 // ── 字数(标准 §3「字数怎么数」):只数 \p{L} \p{N}(字母、数字、汉字),不数标点、空白、记号 ──
 const LETTER = /[\p{L}\p{N}]/gu
 export const countText = (s) => (typeof s === 'string' ? (s.match(LETTER) || []).length : 0)
-const ARTICLE_TEXT_BLOCKS = new Set(['lead', 'h2', 'h3', 'p', 'quote', 'callout', 'pull', 'steps', 'list', 'outline', 'refs'])
+const ARTICLE_TEXT_BLOCKS = new Set(['lead', 'h2', 'h3', 'p', 'quote', 'callout', 'pull', 'steps', 'list', 'outline', 'refs', 'ask'])
 
 // 一章文章的字数:lead h2 h3 p quote callout pull steps list outline refs 的文字;cap、alt、code、图解里的字不计
 export function countArticleChars(article) {
@@ -1195,7 +1227,7 @@ export function countArticleChars(article) {
   for (const b of article.blocks) {
     if (!isObj(b) || !ARTICLE_TEXT_BLOCKS.has(b.t)) continue
     if (b.t === 'outline') { outline(b.items, 1); continue }
-    for (const k of ['x', 'o', 'tr', 'by', 'label']) n += countText(b[k])
+    for (const k of ['x', 'o', 'tr', 'by', 'label', 'q', 'a']) n += countText(b[k])
     if (Array.isArray(b.items)) for (const it of b.items) n += countText(it)
   }
   return n
@@ -1208,7 +1240,7 @@ export function countChapterChars(kind, ch) {
   return { chars: articleChars, articleChars }
 }
 
-// 全书字数(App、服务端、工具共用这一条规则)。files 是书包 Map;返回 { chars, articleChars, chapters: [{no, chars, articleChars}] }
+// 全书字数(App、服务端、工具共用这一条规则)。files 是书包 Map;返回 { chars, articleChars, overviewChars?, chapters: [{no, chars, articleChars}] }
 // 读不了的章按 0 计,不抛错。
 export function countChars(files) {
   const out = { chars: 0, articleChars: 0, chapters: [] }
@@ -1223,6 +1255,15 @@ export function countChars(files) {
     out.chars += r.chars
     out.articleChars += r.articleChars
   }
+  // 全书总览(书一级):现代书 / 文集计入 chars;典籍计入 articleChars(原文之外的文章)。另报 overviewChars
+  if (book.overview === OVERVIEW_FILE && files.has(OVERVIEW_FILE)) {
+    let ov = null
+    try { ov = JSON.parse(decodeUtf8(files.get(OVERVIEW_FILE)).replace(/^\uFEFF/, '')) } catch { ov = null }
+    const n = countArticleChars(ov)
+    out.overviewChars = n
+    out.articleChars += n
+    if (book.kind !== 'classic') out.chars += n
+  }
   return out
 }
 
@@ -1235,6 +1276,7 @@ export function summarize(x) {
     id: b.id ?? null, title: b.title ?? null, kind: b.kind ?? null, revision: b.revision ?? null,
     chapters: Array.isArray(b.chapters) ? b.chapters.length : 0, chars: s.chars || 0,
     ...(b.kind === 'classic' ? { articleChars: s.articleChars || 0 } : {}),
+    ...(s.overviewChars !== undefined ? { overviewChars: s.overviewChars } : {}),
     mediaFiles: (s.images || 0) + (s.videos || 0), mediaBytes: s.mediaBytes || 0, totalBytes: s.totalBytes || 0,
     disclaimer: b.disclaimer ?? null, mindmapNodes: s.mindmapNodes || 0, ok: !!r?.ok,
   }

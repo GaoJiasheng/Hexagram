@@ -62,7 +62,7 @@ describe('示例书包', () => {
   }
   it('sample-book 用到全部块类型、多种 fig、图片与视频', () => {
     const r = validate(sample('sample-book'))
-    for (const t of ['lead', 'h2', 'h3', 'p', 'quote', 'callout', 'pull', 'steps', 'list', 'outline', 'fig', 'img', 'video', 'code', 'divider', 'refs']) expect(r.stats.blockTypes[t], t).toBeGreaterThan(0)
+    for (const t of ['lead', 'h2', 'h3', 'p', 'quote', 'callout', 'pull', 'steps', 'list', 'outline', 'fig', 'img', 'video', 'code', 'divider', 'refs', 'ask']) expect(r.stats.blockTypes[t], t).toBeGreaterThan(0)
     expect(Object.keys(r.stats.figs).length).toBeGreaterThanOrEqual(5)
     expect(r.stats.videos).toBe(2)
   })
@@ -334,7 +334,7 @@ describe('zip', () => {
 })
 
 // ── 结构定义:用一个极小的 JSON Schema 检查器核示例书包都满足 schema,坏样本不满足 ──
-const schemas = Object.fromEntries(['book', 'chapter', 'fig', 'mindmap'].map((n) => [`${n}.json`, JSON.parse(fs.readFileSync(path.join(SCHEMA, `${n}.json`), 'utf8'))]))
+const schemas = Object.fromEntries(['book', 'chapter', 'fig', 'mindmap', 'overview'].map((n) => [`${n}.json`, JSON.parse(fs.readFileSync(path.join(SCHEMA, `${n}.json`), 'utf8'))]))
 function schemaCheck(s, v, doc, at = '$', out = []) {
   if (s === true || s === undefined) return out
   if (s === false) { out.push(`${at}: false`); return out }
@@ -385,6 +385,7 @@ describe('JSON Schema 与校验器一致', () => {
       const f = sample(name)
       expect(bySchema('book.json', J(f, 'book.json'))).toEqual([])
       if (f.has('mindmap.json')) expect(bySchema('mindmap.json', J(f, 'mindmap.json'))).toEqual([])
+      if (f.has('overview.json')) expect(bySchema('overview.json', J(f, 'overview.json'))).toEqual([])
       for (const p of f.keys()) if (p.startsWith('chapters/')) expect(bySchema('chapter.json', J(f, p)), p).toEqual([])
     })
   }
@@ -557,3 +558,81 @@ describe('全书脑图(§10)', () => {
   })
 })
 const formatIssueLine = (e) => `${e.file}|${e.where}|${e.msg}`
+
+describe('ask 块', () => {
+  it('合法;q、a 都计字数,不算引用(digest 也不卡)', () => {
+    const d = edit(base(), 'book.json', (b) => { b.source = { type: 'digest', of: { title: '原书', author: '某' } } })
+    const f = blocks(d, [{ t: 'ask', q: '为什么?', a: '答'.repeat(300) }])
+    expect(msgs(f)).toBe('')
+    expect(countChars(f).chars).toBe(2 + 3 + 300)
+  })
+  const BAD = [
+    ['缺 a', { t: 'ask', q: '问' }, '缺文字'],
+    ['缺 q', { t: 'ask', a: '答' }, '缺文字'],
+    ['q 超 120 字', { t: 'ask', q: '问'.repeat(121), a: '答' }, '超过 120 字'],
+    ['q 换行', { t: 'ask', q: '一\n二', a: '答' }, '只许一行'],
+    ['a 超 600 字', { t: 'ask', q: '问', a: '答'.repeat(601) }, '超过 600 字'],
+    ['a 里 ** 不成对', { t: 'ask', q: '问', a: '**答' }, '不成对'],
+  ]
+  for (const [name, b, word] of BAD) it(name, () => { expect(msgs(blocks(base(), [b]))).toContain(word) })
+  it('schema', () => {
+    const ch = (bl) => ({ no: 1, title: '一', article: { blocks: bl } })
+    expect(bySchema('chapter.json', ch([{ t: 'ask', q: '问', a: '答' }]))).toEqual([])
+    expect(bySchema('chapter.json', ch([{ t: 'ask', q: '问' }]))).not.toEqual([])
+    expect(bySchema('chapter.json', ch([{ t: 'ask', q: '一\n二', a: '答' }]))).not.toEqual([])
+  })
+})
+
+describe('全书总览(§11)', () => {
+  const ov = (o, f = base()) => { edit(f, 'book.json', (b) => { b.overview = 'overview.json' }); return put(f, 'overview.json', o) }
+  const OK = { title: '总览', idea: '一句话', blocks: [{ t: 'lead', x: '导语。' }, { t: 'ask', q: '问', a: '答' }] }
+  it('sample-book 带总览与两处 ask;summarize 报 overviewChars 且计入 chars', () => {
+    const f = sample('sample-book')
+    const s = summarize(f)
+    expect(s.overviewChars).toBeGreaterThan(100)
+    const g = new Map(f); g.delete('overview.json'); edit(g, 'book.json', (b) => { delete b.overview })
+    expect(s.chars - countChars(g).chars).toBe(s.overviewChars)
+    expect(validate(f).stats.blockTypes.ask).toBe(2)
+  })
+  it('合法的总览;典籍的总览计入 articleChars 不计入 chars', () => {
+    expect(msgs(ov(OK))).toBe('')
+    const c = ov(OK, base('classic'))
+    expect(msgs(c)).toBe('')
+    const plain = countChars(base('classic'))
+    expect(countChars(c)).toMatchObject({ chars: plain.chars, articleChars: plain.articleChars + 4, overviewChars: 4 }) // 导语 2 + 问 1 + 答 1(title、idea 不计)
+    expect(summarize(base())).not.toHaveProperty('overviewChars')
+  })
+  const BAD = [
+    ['写了但包里没有', (f) => edit(f, 'book.json', (b) => { b.overview = 'overview.json' }), 'book.json', '不在包里'],
+    ['包里有但没写', (f) => put(f, 'overview.json', OK), 'overview.json', '没写'],
+    ['路径不对', (f) => edit(put(f, 'overview.json', OK), 'book.json', (b) => { b.overview = 'chapters/000.json' }), 'book.json', '路径固定'],
+    ['放进子目录', (f) => f.set('media/overview.json', enc.encode('{}')) && f, 'media/overview.json', '媒体只收'],
+    ['没有 p 或 lead', (f) => ov({ blocks: [{ t: 'h2', x: '题' }] }, f), 'overview.json', '至少一个 p 或 lead'],
+    ['两处 pull', (f) => ov({ blocks: [{ t: 'p', x: '正' }, { t: 'pull', x: '一' }, { t: 'pull', x: '二' }] }, f), 'overview.json', '至多 1 处'],
+    ['题头图不在包里', (f) => ov({ ...OK, head: 'media/h.jpg' }, f), 'overview.json', '不在包里'],
+    ['不认识的块', (f) => ov({ blocks: [{ t: 'p', x: '正' }, { t: 'html' }] }, f), 'overview.json', '不认识的块类型'],
+    ['digest 总览引文 17 条', (f) => ov({ blocks: [{ t: 'p', x: '正' }, ...Array.from({ length: 17 }, () => ({ t: 'quote', x: '引' }))] }, edit(f, 'book.json', (b) => { b.source = { type: 'digest', of: { title: '原书', author: '某' } } })), 'overview.json', '至多 16 条'],
+    ['digest 总览引文超 100 字', (f) => ov({ blocks: [{ t: 'p', x: '正' }, { t: 'pull', x: '引'.repeat(101) }] }, edit(f, 'book.json', (b) => { b.source = { type: 'digest', of: { title: '原书', author: '某' } } })), 'overview.json', '至多 100 字'],
+  ]
+  for (const [name, make, file, word] of BAD) {
+    it(name, () => {
+      const r = validate(make(base()))
+      expect(r.errors.find((e) => e.file === file && e.msg.includes(word)), r.errors.map(formatIssueLine).join('\n')).toBeTruthy()
+    })
+  }
+  it('错误指到 overview.json 的块下标', () => {
+    const r = validate(ov({ blocks: [{ t: 'p', x: '正' }, { t: 'h2', x: '' }] }))
+    expect(r.errors[0]).toMatchObject({ file: 'overview.json', where: 'blocks[1](h2).x' })
+  })
+  it('脑图的 ch 只指章(总览不占章号)', () => {
+    const f = ov(OK)
+    edit(f, 'book.json', (b) => { b.mindmap = 'mindmap.json' })
+    put(f, 'mindmap.json', { root: { label: '中心', ch: 2 } })
+    expect(msgs(f)).toMatch(/章号/)
+  })
+  it('schema', () => {
+    expect(bySchema('overview.json', OK)).toEqual([])
+    expect(bySchema('overview.json', { title: 'x' })).not.toEqual([])
+    expect(bySchema('overview.json', { ...OK, head: 'media/a.gif' })).not.toEqual([])
+  })
+})

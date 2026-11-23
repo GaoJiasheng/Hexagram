@@ -13,8 +13,8 @@ description: 做一本「观象 · 书桌」能读的书包(.deskbook 文件):�
 |---|---|
 | `standard.md` | 标准全文 + 附录「图解 fig 的字段」。**拿不准的一律查它,以它为准** |
 | `deskbook.mjs` | 校验器与打包工具:`node $SKILL/deskbook.mjs <命令>` |
-| `schema/` | `book.json` / `chapter.json` / `fig.json` / `mindmap.json` 的 JSON Schema |
-| `examples/sample-book/` | 现代书示例:三章,用到全部块类型,带图片、视频与全书脑图 `mindmap.json` |
+| `schema/` | `book.json` / `chapter.json` / `fig.json` / `mindmap.json` / `overview.json` 的 JSON Schema |
+| `examples/sample-book/` | 现代书示例:三章,用到全部块类型,带图片、视频、全书总览 `overview.json` 与全书脑图 `mindmap.json` |
 | `examples/sample-classic/` | 典籍示例:《道德经》三章,原文 / 译文 / 注 / 深读 |
 
 命令(都在用户的工作目录里跑):
@@ -42,7 +42,7 @@ node $SKILL/deskbook.mjs gif2mp4 <a.gif> -o <目录>/media/a.mp4   # 需 ffmpeg
    - 在 `book.json` 的 `chapters` 里登记这一章(`no` / `file` / `title`,可加 `subtitle` `minutes`);
    - 跑 `validate`,**改到零错误再写下一章**。提示(warning)也逐条看,能消就消。
 6. **媒体**:图片、动画做好放 `media/`,在块里引用;`w` `h` 填文件真实像素(validate 会核对并告诉你实际尺寸)。
-7. 全书写完,**写全书脑图**(见「全书脑图」;讲思想、论证的书都该有,纯资料汇编可省),`validate` 零错误 → `pack` → 按「最后检查」逐条过一遍。
+7. 全书写完,**写书一级的两样**:全书总览 `overview.json` 与全书脑图 `mindmap.json`(见下两节;讲思想、论证的书都该有,纯资料汇编可省),`validate` 零错误 → `pack` → 按「最后检查」逐条过一遍。
 8. **交付**(见下文)。
 
 不要一次性生成全书再校验;一章一校验,问题不会越积越多。
@@ -131,6 +131,7 @@ node $SKILL/deskbook.mjs gif2mp4 <a.gif> -o <目录>/media/a.mp4   # 需 ffmpeg
 | `code` | `x` `lang?` | 代码或等宽文字(公式也可放这里) |
 | `divider` | — | 分隔 |
 | `refs` | `items[]` | 文末出处、参考 |
+| `ask` | `q` `a` | 自问:先见问题(≤ 120 字,一行),点开才见回答(≤ 600 字)。用在读者该停下想一想的地方,一章一两处 |
 
 规则:`img` / `video` 的 `w` `h` 必填且等于文件像素;每章至少一个 `p` 或 `lead`;不许空块;不许自造块类型;行内只有 `**加粗**`(必须成对)、`` `等宽` ``、`[文字](https://…)`(只许 https),别的记号按字面显示——**不要写 HTML、Markdown 标题、表格语法**,结构一律用块表达。
 
@@ -158,7 +159,23 @@ node $SKILL/deskbook.mjs gif2mp4 <a.gif> -o <目录>/media/a.mp4   # 需 ffmpeg
   "steps": [ { "head": "右端", "body": "停住" }, { "head": "最低点", "body": "最快" }, { "head": "左端", "body": "停住" } ], "loop": true } }
 ```
 
-## 全书脑图(`mindmap.json`)
+## 书一级:全书总览(`overview.json`)
+
+一本书分两层:**书一级**(全书总览 + 全书脑图,先读、常回来看)和**章一级**(目录里的各章)。书桌分开呈现,总览不进目录、没有章号。
+
+- 什么时候写:讲思想、论证、体系的书,或章与章之间有一条主线的书,都该写;各章独立的文集可写一篇「本期导读」;纯资料汇编可省。
+- 写什么:全书讲什么、为什么值得读、几大部分怎么连起来、怎么读。先说结论。可放一个 `ask` 让读者带着问题进书。**不要把它写成第一章**,也不要在 `chapters` 里再登记一个「总览」章。
+- 放在包的根上,`book.json` 里写 `"overview": "overview.json"`。形状同章的 `article`,可多一个 `head` 题头图(建议横 3:2,不带文字):
+
+```json
+{ "title": "这本小书讲什么", "idea": "一句话中心", "head": "media/banner.jpg",
+  "blocks": [ { "t": "lead", "x": "……" }, { "t": "p", "x": "……" },
+              { "t": "ask", "q": "一个更重的球,摆得会更快吗?", "a": "不会。……" } ] }
+```
+
+- 块规则同章(至少一个 `p` 或 `lead`,`pull` ≤ 1);digest 书的引文上限对总览同样适用。完整示例见 `examples/sample-book/overview.json`。
+
+## 书一级:全书脑图(`mindmap.json`)
 
 一棵**能展开全书思想的树**,放在包的根上,`book.json` 里写 `"mindmap": "mindmap.json"`。它不是目录:根是全书的中心论点,往下分出各部分的主张、论据、例子;读者从根一路点开,就能看到整本书是怎么立起来的。
 
@@ -238,6 +255,7 @@ node $SKILL/deskbook.mjs gif2mp4 swing.gif -o mybook/media/swing.mp4
 - [ ] 医学 / 健身 / 命理题材带了对应 `disclaimer`(两类都沾就写成数组带两个),正文守了相应约束
 - [ ] 每张图、每段视频都在讲一件事;`cap` 写了它在讲什么;封面题图无文字
 - [ ] 视频由 `gif2mp4` 或同等参数转出,`w` `h` `sec` 与文件一致
+- [ ] 有全书总览:`book.json` 写了 `"overview": "overview.json"`,它不是第一章、`chapters` 里没有「总览」章
 - [ ] 有全书脑图:`book.json` 写了 `"mindmap": "mindmap.json"`,根是中心论点而非书名重复,`ch` 只挂在对应章的节点上
 - [ ] 每章 `pull` ≤ 1;`outline` ≤ 4 层;`**` 成对;链接全是 https
 - [ ] 把 `.deskbook` 的路径和放进书桌的方法告诉了用户

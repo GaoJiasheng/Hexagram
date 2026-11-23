@@ -91,6 +91,7 @@
       }
     },
     "mindmap": { "const": "mindmap.json", "description": "有全书脑图时写这一项,路径固定(§10)" },
+    "overview": { "const": "overview.json", "description": "有全书总览时写这一项,路径固定(§11)" },
     "generator": { "type": "string" }
   },
   "$defs": {
