@@ -65,7 +65,8 @@ if (/^[·\-*\s]*(新增|修复|更新|优化|改进|其他)\s*[:：]?\s*$/.test(
 }
 
 const app = await api(`/v1/apps?filter[bundleId]=${BUNDLE_ID}`)
-const APP = app.json?.data?.[0]?.id
+// filter[bundleId] 是前缀匹配(pub.gavin.hexa 也会命中 pub.gavin.hexa.desk,2026-11-23 试跑时差点把版本建到书桌 App 上),必须按 bundleId 精确挑
+const APP = (app.json?.data || []).find((a) => a.attributes?.bundleId === BUNDLE_ID)?.id
 if (!APP) die('找不到 app', BUNDLE_ID)
 
 const builds = await api(`/v1/builds?filter[app]=${APP}&limit=1&sort=-version&fields[builds]=version,processingState`)

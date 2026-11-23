@@ -33,7 +33,8 @@ const api = (p, opt = {}) => fetch('https://api.appstoreconnect.apple.com' + p, 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
 
 const app = await (await api(`/v1/apps?filter[bundleId]=${BUNDLE_ID}`)).json()
-const appId = app.data?.[0]?.id
+// filter[bundleId] 是前缀匹配(pub.gavin.hexa 也会命中 pub.gavin.hexa.desk),必须按 bundleId 精确挑
+const appId = (app.data || []).find((a) => a.attributes?.bundleId === BUNDLE_ID)?.id
 if (!appId) { console.error('找不到 app:', BUNDLE_ID); process.exit(1) }
 
 const groups = await (await api(`/v1/betaGroups?filter[app]=${appId}&fields[betaGroups]=name,isInternalGroup`)).json()
