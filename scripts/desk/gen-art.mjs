@@ -264,8 +264,19 @@ function runCodex(instruction) {
     let log = ''
     p.stdout.on('data', (d) => { log += d }); p.stderr.on('data', (d) => { log += d })
     const timer = setTimeout(() => p.kill('SIGKILL'), 12 * 60 * 1000)
+    // 图出来就收工:Codex 画完后进程常常还要挂一两分钟才退(2026-11-23 实测,白占并发位)。out.png 大小 25 秒不变即视为画完,不等它自己退。
+    let seen = '', since = 0
+    const watch = setInterval(() => {
+      try {
+        const st = fs.statSync(path.join(tmp, 'out.png'))
+        if (st.size < 100000) return
+        const sig = `${st.size}:${st.mtimeMs}`
+        if (sig !== seen) { seen = sig; since = Date.now() }
+        else if (Date.now() - since > 25000) { log += '\n[图已稳定,提前收工]'; clearInterval(watch); p.kill('SIGTERM') }
+      } catch {}
+    }, 3000)
     p.on('close', (code) => {
-      clearTimeout(timer)
+      clearTimeout(timer); clearInterval(watch)
       const sec = Math.round((Date.now() - t0) / 1000)
       const tok = /tokens used[^\d]*([\d,]+)/i.exec(log)?.[1] || ''
       const png = fs.existsSync(path.join(tmp, 'out.png')) ? 'out.png' : fs.readdirSync(tmp).find((f) => /\.png$/i.test(f))

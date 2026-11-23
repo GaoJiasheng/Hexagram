@@ -37,7 +37,7 @@ const IS_MAIN = !!process.argv[1] && fs.realpathSync(process.argv[1]) === fileUR
 const argv = IS_MAIN ? process.argv.slice(2) : []
 const flag = (n) => argv.includes(n)
 const opt = (n, d) => { const i = argv.indexOf(n); return i >= 0 && argv[i + 1] && !argv[i + 1].startsWith('--') ? argv[i + 1] : d }
-const VALUE_OPTS = ['--kind', '--chapters', '--limit', '--concurrency', '--contact', '--export', '--hint']
+const VALUE_OPTS = ['--kind', '--chapters', '--limit', '--concurrency', '--books', '--contact', '--export', '--hint']
 const positional = argv.filter((a, i) => !a.startsWith('--') && !VALUE_OPTS.includes(argv[i - 1]))
 
 // ---------- 固定画风(与古籍那一套同一句,全 App 成套)----------
@@ -278,8 +278,19 @@ function runCodex(instruction) {
     p.stdout.on('data', (d) => { log += d }); p.stderr.on('data', (d) => { log += d })
     p.on('error', (e) => { log += `\nspawn error: ${e.message}` })
     const timer = setTimeout(() => p.kill('SIGKILL'), 12 * 60 * 1000)
+    // 图出来就收工:Codex 画完后进程常常还要挂一两分钟才退(2026-11-23 实测,白占并发位)。out.png 大小 25 秒不变即视为画完,不等它自己退。
+    let seen = '', since = 0
+    const watch = setInterval(() => {
+      try {
+        const st = fs.statSync(path.join(tmp, 'out.png'))
+        if (st.size < 100000) return
+        const sig = `${st.size}:${st.mtimeMs}`
+        if (sig !== seen) { seen = sig; since = Date.now() }
+        else if (Date.now() - since > 25000) { log += '\n[图已稳定,提前收工]'; clearInterval(watch); p.kill('SIGTERM') }
+      } catch {}
+    }, 3000)
     p.on('close', (code) => {
-      clearTimeout(timer)
+      clearTimeout(timer); clearInterval(watch)
       const sec = Math.round((Date.now() - t0) / 1000)
       const tok = /tokens used[^\d]*([\d,]+)/i.exec(log)?.[1]?.replace(/,/g, '') || ''
       const png = fs.existsSync(path.join(tmp, 'out.png')) ? 'out.png' : fs.readdirSync(tmp).find((f) => /\.png$/i.test(f))
@@ -502,14 +513,19 @@ async function runBook(slug) {
   return bk
 }
 
-for (const slug of slugs) {
-  if (state.paused || budget <= 0) break
-  const bk = await runBook(slug)
-  if (all) {
-    const have = doneStems(slug)
-    if (expectedStems(bk).every((s) => have.has(s))) { const r = exportBook(slug); console.log(`  导出 ${slug}:${r}`) }
+// --books N:同时开 N 本(每本内部仍是 --concurrency 路)。一本书十来张图,只在书内并发的话每本收尾时都在等最后一两张,整体并发上不去。
+const booksPar = Math.max(1, +opt('--books', 1))
+let nextBook = 0
+await Promise.all(Array.from({ length: booksPar }, async () => {
+  while (nextBook < slugs.length && !state.paused && budget > 0) {
+    const slug = slugs[nextBook++]
+    const bk = await runBook(slug)
+    if (all) {
+      const have = doneStems(slug)
+      if (expectedStems(bk).every((s) => have.has(s))) { const r = exportBook(slug); console.log(`  导出 ${slug}:${r}`) }
+    }
   }
-}
+}))
 
 const avg = state.timing.length ? Math.round(state.timing.reduce((s, t) => s + t.sec, 0) / state.timing.length) : 0
 console.log(`本次:成功 ${state.ok},失败 ${state.fail},平均 ${avg}s/张`)
