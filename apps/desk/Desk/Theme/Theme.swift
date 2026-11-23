@@ -32,10 +32,20 @@ extension UIColor {
 enum Fonts {
     /// 原文与标题用思源宋体(随 App 带的子集,scripts/desk/subset-fonts.py);界面数字用圆体,轻一点。
     static func song(_ size: CGFloat, bold: Bool = false) -> Font {
-        .custom(bold ? "NotoSerifSC-Bold" : "NotoSerifSC-Regular", size: size)
+        // 跟随「动态字体」放大的写法(.custom)接不上回落链;题名、正文都可能出现扩展区的字,这里换成带回落链的那一款,
+        // 字号仍按动态字体缩放
+        Font(uiSong(UIFontMetrics(forTextStyle: .body).scaledValue(for: size), bold: bold) as CTFont)
     }
     static func uiSong(_ size: CGFloat, bold: Bool = false) -> UIFont {
-        UIFont(name: bold ? "NotoSerifSC-Bold" : "NotoSerifSC-Regular", size: size) ?? .systemFont(ofSize: size, weight: bold ? .bold : .regular)
+        guard let f = UIFont(name: bold ? "NotoSerifSC-Bold" : "NotoSerifSC-Regular", size: size) else { return .systemFont(ofSize: size, weight: bold ? .bold : .regular) }
+        return withExt(f)
+    }
+    /// 随带的生僻字回落(字咪子集,只有宋体子集里没有的那一两百个扩展区汉字,scripts/desk/subset-fonts.py ③)。
+    static let extName = "GuanxiangDeskExt-Regular"
+    /// 给一款字体接上生僻字回落:自己缺的字先找它,再交系统(系统没有扩展 B 区以后的字,不接就是豆腐块)。
+    static func withExt(_ f: UIFont, also: [String] = []) -> UIFont {
+        let list = (also + [extName]).map { UIFontDescriptor(name: $0, size: f.pointSize) }
+        return UIFont(descriptor: f.fontDescriptor.addingAttributes([.cascadeList: list]), size: f.pointSize)
     }
     static func num(_ size: CGFloat, weight: Font.Weight = .semibold) -> Font {
         .system(size: size, weight: weight, design: .rounded)
@@ -96,11 +106,11 @@ struct DefaultArt: View {
     let title: String
     let theme: BookTheme
     var kind: ArtKind = .banner
-    /// 题签上的书名:去掉括注(「战国策(选)」→ 战国策)、间隔号(「黄帝内经·素问」照竖排),最多八个字
+    /// 题签上的书名:去掉括注(「战国策(选)」→ 战国策)、间隔号(「黄帝内经·素问」照竖排),最多十个字(七字起分两行)
     private var label: String {
         var t = title
         if let i = t.firstIndex(where: { "（(".contains($0) }) { t = String(t[..<i]) }
-        return String(t.replacingOccurrences(of: "·", with: "・").prefix(8))
+        return String(t.replacingOccurrences(of: "·", with: "・").prefix(10))
     }
     var body: some View {
         GeometryReader { g in
@@ -114,17 +124,35 @@ struct DefaultArt: View {
                 }
                 .frame(width: w, height: h, alignment: .top)
                 if case .cover = kind {
+                    // 每个字放进固定高的格子(宋体的行高比字号高出三成,此前按字号排,五个字就顶出题签);
+                    // 七个字以上分两行竖排(右行先读),格子里的字放不下再缩
+                    // 有间隔号的(「黄帝内经・素问」)就在间隔号处分行,否则对半分
+                    let parts = label.split(separator: "・").map { Array($0) }
                     let chars = Array(label)
-                    let n = CGFloat(max(chars.count, 3))
-                    let fs = min(w * 0.13, h * 0.72 / (n * 1.12 + 1.1))     // 每字占 1.12 字高,上下各留半字
-                    let stripH = fs * (n * 1.12 + 1.1)
-                    VStack(spacing: fs * 0.12) {
-                        ForEach(Array(chars.enumerated()), id: \.offset) { _, c in
-                            Text(String(c)).font(Fonts.song(fs, bold: true)).foregroundStyle(theme.accentColor)
+                    let columns: [[Character]] = {
+                        if parts.count == 2, parts.allSatisfy({ !$0.isEmpty && $0.count <= 6 }) { return parts }
+                        let n = max(chars.count, 1), cols = n > 6 ? 2 : 1
+                        let per = Int((Double(n) / Double(cols)).rounded(.up))
+                        return (0..<cols).map { k in Array(chars.dropFirst(k * per).prefix(per)) }
+                    }()
+                    let cols = columns.count
+                    let rows = CGFloat(max(columns.map(\.count).max() ?? 1, 3))
+                    let fs = min(w * (cols == 1 ? 0.13 : 0.105), h * 0.7 / (rows * 1.12 + 1.0))
+                    let cell = fs * 1.12
+                    HStack(alignment: .top, spacing: fs * 0.18) {
+                        ForEach(Array(columns.enumerated().reversed()), id: \.offset) { _, col in
+                            VStack(spacing: 0) {
+                                ForEach(Array(col.enumerated()), id: \.offset) { _, c in
+                                    Text(String(c)).font(Fonts.song(fs, bold: true)).foregroundStyle(theme.accentColor)
+                                        .lineLimit(1).minimumScaleFactor(0.5)
+                                        .frame(width: fs * 1.2, height: cell)
+                                }
+                            }
                         }
                     }
-                    .frame(width: fs * 1.75, height: stripH, alignment: .top)
-                    .padding(.top, fs * 0.5)
+                    .padding(.vertical, fs * 0.5)
+                    .padding(.horizontal, fs * 0.28)
+                    .frame(height: rows * cell + fs, alignment: .top)
                     .background(theme.paperColor.opacity(0.96))
                     .overlay(Rectangle().stroke(theme.accentColor.opacity(0.35), lineWidth: max(w / 160, 0.6)).padding(max(w / 70, 2)))
                     .shadow(color: .black.opacity(0.12), radius: 3, y: 1)

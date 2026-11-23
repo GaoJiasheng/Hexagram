@@ -16,7 +16,13 @@
 #    OFL 规定改过的版本(子集就是改过)不得再用「保留字体名」:霞鹜文楷保留了「霞鹜」「LXGW」等名,
 #    所以三款子集一律改名为 GuanxiangDesk-*(家族名「书桌楷体」等),版权与许可证条目原样保留。
 #
-# 加了新书、出现了字体里原来没留的字,两种都重跑一遍即可。字体缺的字(朱雀仿宋还是技术预览版,只有一万多字)
+# ③ 生僻字回落(随 App 带):思源宋体全量里也没有的字(多是扩展 B 区以后的,如《庄子》的「𩐈」)从字咪(Jigmo,
+#    CC0 1.0,https://kamichikoichi.github.io/jigmo/ 官方 zip,放进 scripts/.cache/desk-fonts/ 下新建的目录)里只取这几个字,
+#    落到 apps/desk/Desk/Fonts/GuanxiangDeskExt-Regular.ttf(几十 KB)。App 里每款正文字体的回落链最后都接上它。
+#      python3 scripts/desk/subset-fonts.py --fallback scripts/.cache/desk-fonts/<目录>
+#    要先跑 ① 再跑 ③(③ 只收 ① 的子集里没有的字)。
+#
+# 加了新书、出现了字体里原来没留的字,几种都重跑一遍即可。字体缺的字(朱雀仿宋还是技术预览版,只有一万多字)
 # App 里按「回落到随带的宋体」处理(UIFontDescriptor 的 cascadeList),不会出豆腐块。
 import sys, os, glob, json, hashlib
 from fontTools import subset
@@ -33,9 +39,21 @@ def charset():
             except UnicodeDecodeError: pass
     for f in glob.glob(os.path.join(root, 'src/data/**/*.json'), recursive=True):
         with open(f, encoding='utf-8') as fh: chars.update(fh.read())
+    chars.update(pack_text())
     chars.update(chr(c) for c in range(0x20, 0x7F))
     chars.update('，。、；：？！「」『』（）《》〈〉【】〔〕—…·～“”‘’〇○●◎△▲※→←↑↓×÷°′″％‰')
     return ''.join(sorted(c for c in chars if c >= ' '))
+
+
+def pack_text():
+    """书桌内容包(public/desk/v1/*.json,核心包与白话包)里的字:有的字只在包里出现(管线后来补的),src/data 扫不到。"""
+    chars = set()
+    for f in glob.glob(os.path.join(root, 'public/desk/v1/*.json')):
+        with open(f, encoding='utf-8') as fh: raw = fh.read()
+        try: raw = json.dumps(json.loads(raw), ensure_ascii=False)     # \uXXXX 转义还原成字
+        except ValueError: pass
+        chars.update(raw)
+    return chars
 
 
 def make_subset(src_file, text, opts=None):
@@ -136,9 +154,38 @@ def ondemand(srcdir):
     print('→', os.path.relpath(os.path.join(out, 'index.json'), root))
 
 
+FALLBACK = dict(src='Jigmo2.ttf', lic='LICENSE.txt', family='GuanxiangDesk Ext', ps='GuanxiangDeskExt-Regular', zh='书桌生僻字',
+                face='字咪 Jigmo2')
+
+
+def fallback(srcdir):
+    """③ 随带宋体子集里没有的汉字(扩展区)从字咪里取。字咪是 CC0,改名只为与原版区分。"""
+    out = os.path.join(root, 'apps/desk/Desk/Fonts')
+    have = set(TTFont(os.path.join(out, 'NotoSerifSC-Regular.ttf')).getBestCmap().keys())
+    # 只收汉字(基本区、扩展 A、扩展 B 以后);卦符 ䷀ 之类交系统字体
+    han = lambda o: 0x3400 <= o <= 0x4DBF or 0x4E00 <= o <= 0x9FFF or 0x20000 <= o <= 0x323AF
+    want = sorted(c for c in charset() if han(ord(c)) and ord(c) not in have)
+    src = os.path.join(srcdir, FALLBACK['src'])
+    cmap = TTFont(src, lazy=True).getBestCmap()
+    got = ''.join(c for c in want if ord(c) in cmap)
+    lost = [c for c in want if ord(c) not in cmap]
+    font, opts = make_subset(src, got)
+    version = (font['name'].getDebugName(5) or '').split(';')[0].replace('Version ', 'v').strip()
+    rename(font, FALLBACK, version)
+    font['name'].setName(f'Subset of Jigmo2 {version} (CC0 1.0) for 观象 · 书桌', 10, 3, 1, 0x409)
+    dst = os.path.join(out, 'GuanxiangDeskExt-Regular.ttf')
+    subset.save_font(font, dst, opts)
+    with open(os.path.join(srcdir, FALLBACK['lic']), encoding='utf-8') as fh: lic = fh.read()
+    with open(os.path.join(out, 'Jigmo-LICENSE.txt'), 'w', encoding='utf-8') as fh: fh.write(lic)
+    print(f'{dst}  {os.path.getsize(dst) // 1024} KB  收 {len(got)} 字:{got}')
+    if lost: print('字咪 Jigmo2 里也没有(还会是豆腐块):', ' '.join(f'{c} U+{ord(c):X}' for c in lost))
+
+
 if __name__ == '__main__':
     if len(sys.argv) == 3 and sys.argv[1] == '--ondemand':
         ondemand(sys.argv[2])
+    elif len(sys.argv) == 3 and sys.argv[1] == '--fallback':
+        fallback(sys.argv[2])
     elif len(sys.argv) == 2:
         bundled(sys.argv[1])
     else:

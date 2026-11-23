@@ -295,8 +295,9 @@ final class SyncEngine {
 
     private func locate(slug: String, ch: Int) -> (String, Int)? {
         for b in Library.shared.allBooks {
-            guard let p = Library.shared.pack(b), let c = p.allChapters.first(where: { $0.src.slug == slug && $0.src.ch == ch }) else { continue }
-            return (b.id, c.no)
+            guard let p = PackSummaries.shared.of(b) else { continue }
+            if let o = p.overview, o.slug == slug, o.ch == ch { return (b.id, 0) }
+            if let i = p.srcs.firstIndex(where: { $0.slug == slug && $0.ch == ch }) { return (b.id, i + 1) }
         }
         return nil
     }

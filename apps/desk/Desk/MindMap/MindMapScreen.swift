@@ -92,12 +92,18 @@ struct MindMapView: View {
                 // 下沿:层级与适应屏幕
                 VStack(spacing: 10) {
                     Spacer(minLength: 0)
-                    if !model.walking { controls.frame(maxWidth: .infinity, alignment: side ? .leading : .center) }
+                    if !model.walking {
+                        controls.frame(maxWidth: .infinity, alignment: side ? .leading : .center)
+                            .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { model.chromeRects["controls"] = $0 }
+                            .onDisappear { model.chromeRects["controls"] = nil }
+                    }
                     if showCard && !side && !model.outline {
                         MindNodeCard(model: model, onRead: read)
                             .frame(maxWidth: cardW, maxHeight: h * (model.walking ? 0.46 : 0.42))
                             .fixedSize(horizontal: false, vertical: true)
                             .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { cardH = $0 }
+                            .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { model.chromeRects["card"] = $0 }
+                            .onDisappear { model.chromeRects["card"] = nil }
                             .transition(.move(edge: .bottom).combined(with: .opacity))
                     }
                 }
@@ -107,6 +113,8 @@ struct MindMapView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 if showCard && side && !model.outline {
                     MindNodeCard(model: model, onRead: read, tall: true)
+                        .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { model.chromeRects["card"] = $0 }
+                        .onDisappear { model.chromeRects["card"] = nil }
                         .frame(width: cardW)
                         .frame(maxHeight: h - 90, alignment: .top)
                         .fixedSize(horizontal: false, vertical: true)

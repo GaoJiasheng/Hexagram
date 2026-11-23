@@ -107,18 +107,17 @@ final class Stats {
         // 书的索引:本机已下载的内容包
         var idx: [String: BookIndex] = [:]
         var bookOf: [Src: String] = [:]
+        // 只读各书的轻量摘要(PackSummaries,按版本存盘),不把内容包整本读进内存
         for b in Library.shared.allBooks {
-            guard let p = Library.shared.pack(b) else { continue }
+            guard let p = PackSummaries.shared.of(b) else { continue }
             var m: [Src: Int] = [:]
-            var cc: [Int] = []
-            for c in p.chapters {
-                m[c.src] = c.no
-                bookOf[c.src] = b.id
-                cc.append(c.segs.isEmpty ? (c.meta?.chars ?? 0) : c.segs.reduce(0) { $0 + ReaderModel.charCount($1.o) })
+            for (i, src) in p.srcs.enumerated() {
+                m[src] = i + 1
+                bookOf[src] = b.id
             }
             // 全书总览(第 0 章)的时长归这本书,但不进「学过几章」
-            if let o = p.overview { bookOf[o.src] = b.id }
-            idx[b.id] = BookIndex(srcNo: m, chapterChars: cc)
+            if let o = p.overview { bookOf[o] = b.id }
+            idx[b.id] = BookIndex(srcNo: m, chapterChars: p.chars)
         }
         books = idx
 
@@ -205,6 +204,9 @@ final class Stats {
     func sec(_ src: Src) -> Int { secBySrc[src] ?? 0 }
     func learned(_ src: Src) -> Bool { sec(src) >= Self.learnedSec }
 
+    /// 一本书的章数(摘要里的;没下的书为 nil)。
+    func chapterCount(_ book: String) -> Int? { books[book]?.chapterChars.count }
+
     /// 一本书学过了几章。
     func learnedCount(_ book: String) -> Int {
         guard let b = books[book] else { return 0 }
@@ -271,8 +273,8 @@ final class Stats {
     func finishedBooks() -> [(book: BookInfo, at: Date)] {
         let fin = FinishedStore.shared
         return Library.shared.allBooks.compactMap { b -> (BookInfo, Date)? in
-            guard let p = Library.shared.pack(b), fin.isFinished(p) else { return nil }
-            let at = FinishedStore.keys(p).compactMap { fin.recs[$0]?.at }.max() ?? Date()
+            guard let p = PackSummaries.shared.of(b), !p.keys.isEmpty, p.keys.allSatisfy({ fin.recs[$0].map { !$0.deleted } ?? false }) else { return nil }
+            let at = p.keys.compactMap { fin.recs[$0]?.at }.max() ?? Date()
             return (b, at)
         }
         .sorted { $0.1 > $1.1 }
@@ -283,7 +285,7 @@ final class Stats {
         let lived = days.filter { $0.value.sec > 0 }
         let ms = marks.filter { $0.book == b.id }
         var to: Date? = nil
-        if let p = Library.shared.pack(b) { to = FinishedStore.keys(p).compactMap { FinishedStore.shared.recs[$0]?.at }.max() }
+        if let p = PackSummaries.shared.of(b) { to = p.keys.compactMap { FinishedStore.shared.recs[$0]?.at }.max() }
         return FinishStats(days: lived.count, sec: days.values.reduce(0) { $0 + $1.sec }, chars: days.values.reduce(0) { $0 + $1.chars },
                            marks: ms.count, notes: ms.filter(\.note).count,
                            from: lived.keys.min().flatMap(Self.date), to: to ?? lived.keys.max().flatMap(Self.date))

@@ -89,6 +89,8 @@ struct AboutScreen: View {
                     Text("字体").font(.system(size: 12, weight: .semibold)).kerning(2).foregroundStyle(Ink.soft)
                     Text("正文与标题用思源宋体(Noto Serif SC),依 SIL Open Font License 1.1 随 App 分发(按本 App 用到的字做了子集)。")
                         .font(.system(size: 14)).foregroundStyle(Ink.text).lineSpacing(4).fixedSize(horizontal: false, vertical: true)
+                    Text("思源宋体里没有的两百来个生僻字(多在扩展 B 区以后,如《庄子》的「𩐈」)取自字咪(Jigmo,CC0 1.0 公有领域),只取用到的字,随 App 分发。")
+                        .font(.system(size: 14)).foregroundStyle(Ink.text).lineSpacing(4).fixedSize(horizontal: false, vertical: true)
                     Text("「阅读设置」里另可选:黑体用系统自带的苹方;楷体、仿宋、手写三款按需下载(只在选用时下载,不随 App 安装),都依 SIL Open Font License 1.1 分发,按本 App 用到的字做了子集并依许可改名。")
                         .font(.system(size: 14)).foregroundStyle(Ink.text).lineSpacing(4).fixedSize(horizontal: false, vertical: true)
                     ForEach(Self.extraFonts, id: \.name) { f in

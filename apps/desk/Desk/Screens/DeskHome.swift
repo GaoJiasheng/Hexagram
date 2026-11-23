@@ -86,7 +86,7 @@ struct DeskHome: View {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { home = b }
             }
         }
-        .sheet(item: $home) { b in
+        .bookHome(item: $home) { b in
             BookHomeScreen(book: b) { ch in
                 home = nil
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { read(b, chapter: ch) }
@@ -104,6 +104,8 @@ struct DeskHome: View {
         .sheet(isPresented: $showGoal) { GoalSheet() }
         #if DEBUG
         .task { if ProcessInfo.processInfo.environment["DESK_ACCOUNT"] == "1" { try? await Task.sleep(nanoseconds: 800_000_000); showAccount = true } }
+        // DESK_OPEN=bookhome DESK_BOOK=…:走真实的弹出方式打开书首页(iPad 全屏、手机页卡)
+        .task { if ProcessInfo.processInfo.environment["DESK_OPEN"] == "bookhome", let b = library.book(ProcessInfo.processInfo.environment["DESK_BOOK"] ?? "") { try? await Task.sleep(nanoseconds: 1_200_000_000); home = b } }
         .task { if ProcessInfo.processInfo.environment["DESK_OPEN"] == "stats" { try? await Task.sleep(nanoseconds: 900_000_000); showStats = true } }
         .task { if ProcessInfo.processInfo.environment["DESK_OPEN"] == "catalog" { try? await Task.sleep(nanoseconds: 900_000_000); catalogFocus = ProcessInfo.processInfo.environment["DESK_FOCUS"]; showCatalog = true } }
         #endif
@@ -297,8 +299,9 @@ struct DeskHome: View {
     }
 
     private func shelfCard(_ b: BookInfo, grid: Bool) -> some View {
-        BookCard(book: b, pos: progress.pos[b.id], learned: stats.learnedCount(b.id), total: library.pack(b)?.chapters.count ?? b.chapters,
-                 finished: library.pack(b).map { FinishedStore.shared.isFinished($0) } ?? false, flexible: grid)
+        let sum = PackSummaries.shared.of(b)
+        return BookCard(book: b, pos: progress.pos[b.id], learned: stats.learnedCount(b.id), total: sum?.count ?? b.chapters,
+                 finished: sum.map { s in !s.keys.isEmpty && s.keys.allSatisfy { FinishedStore.shared.recs[$0].map { !$0.deleted } ?? false } } ?? false, flexible: grid)
             .contentShape(RoundedRectangle(cornerRadius: 18))
             .onTapGesture { open(b) }
             .contextMenu {
@@ -320,11 +323,11 @@ struct DeskHome: View {
         let pool = (recent.isEmpty ? shelf : recent)
             .sorted { (progress.pos[$0.id]?.at ?? .distantPast) > (progress.pos[$1.id]?.at ?? .distantPast) }
         return pool.compactMap { b in
-            guard let p = library.pack(b), !p.chapters.isEmpty else { return nil }
-            let n = p.chapters.count
+            guard let p = PackSummaries.shared.of(b), p.count > 0 else { return nil }
+            let n = p.count
             let from = min(max(progress.pos[b.id]?.ch ?? 1, 1), n)
             let order = Array(from...n) + Array(1..<from)
-            return order.first { !stats.learned(p.chapters[$0 - 1].src) }.map { (b, $0) }
+            return order.first { !stats.learned(p.srcs[$0 - 1]) }.map { (b, $0) }
         }
     }
 
@@ -473,6 +476,9 @@ struct BookCard: View {
         .background(Ink.card)
         .clipShape(RoundedRectangle(cornerRadius: 18))
         .shadow(color: .black.opacity(0.06), radius: 12, y: 6)
+        // 读屏:一本书一个元素(此前封面、角标、书名、进度条、小字各算一个,封面与进度条还没有名字,左右滑要过五下)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(([book.title, caption] + (book.origin.map { [$0 == .shelf ? "书房的书" : "自己导入的书"] } ?? []) + (finished ? ["已学完"] : [])).joined(separator: ","))
     }
 
     private var caption: String {

@@ -66,6 +66,11 @@ final class MindCanvasView: UIScrollView, UIScrollViewDelegate {
     var onTapNode: (Int) -> Void = { _ in }
     var onTapBubble: (Int) -> Void = { _ in }
     var onTapEmpty: () -> Void = {}
+    /// 屏上盖在画布上的 SwiftUI 件(节点卡片、控制条、顶栏)此刻的位置(窗口坐标)。点在它们身上的不算点画布——
+    /// SwiftUI 的按钮与画布的点按识别器会同时收到同一下点击(宿主视图的识别器收得到落在子视图上的触摸):
+    /// 曾有一次点卡片上的「读这一章」,画布先把卡片底下的节点选中、展开(并存了盘),按钮再按新卡片读了别的章。
+    /// 只靠 obscured(按卡片高度推算的留白)挡不住卡片换内容、正在动画的那一瞬。
+    var blockedRects: () -> [CGRect] = { [] }
     var onInteract: () -> Void = {}
     var onCamera: () -> Void = {}
     var onFirstLayout: (CGSize) -> Void = { _ in }
@@ -81,6 +86,10 @@ final class MindCanvasView: UIScrollView, UIScrollViewDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         delegate = self
+        // 读屏:画布上的节点是画出来的,不是一个个元素;给它一个名字,并指去「提纲」(同一张图的逐项列表,读屏可逐项读)
+        isAccessibilityElement = true
+        accessibilityLabel = "思想脑图画布"
+        accessibilityHint = "画布上的节点读屏读不到,请用顶上的「提纲」逐项阅读;选中的节点在下方卡片里"
         minimumZoomScale = Self.minZoom
         maximumZoomScale = Self.maxZoom
         bouncesZoom = true
@@ -444,7 +453,9 @@ final class MindCanvasView: UIScrollView, UIScrollViewDelegate {
     /// 点在卡片 / 控制条底下的(被挡住的那一块)不算点画布
     private func inClear(_ g: UIGestureRecognizer) -> Bool {
         let s = g.location(in: self)
-        return clearRect.contains(CGPoint(x: s.x - contentOffset.x, y: s.y - contentOffset.y))
+        guard clearRect.contains(CGPoint(x: s.x - contentOffset.x, y: s.y - contentOffset.y)) else { return false }
+        let w = g.location(in: nil)
+        return !blockedRects().contains { $0.insetBy(dx: -6, dy: -6).contains(w) }
     }
 
     @objc private func singleTap(_ g: UITapGestureRecognizer) {

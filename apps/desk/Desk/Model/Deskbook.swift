@@ -335,8 +335,17 @@ final class DeskbookStore {
     func pack(_ id: String) -> BookPack? {
         guard let rec = installed[id] else { return nil }
         if let p = packs[id], p.version == rec.info.version { return p }
-        guard let d = try? Data(contentsOf: dir(id).appendingPathComponent("index.json")), let p = try? JSONDecoder().decode(BookPack.self, from: d) else { return nil }
+        guard let p = peekPack(id) else { return nil }
+        if packs.count >= 8 { packs.removeAll() }      // 目录是小文件,但书多了也别全攒着
         packs[id] = p
+        return p
+    }
+
+    /// 读目录(index.json)但不留在内存里(算摘要用)。
+    func peekPack(_ id: String) -> BookPack? {
+        guard let rec = installed[id] else { return nil }
+        if let p = packs[id], p.version == rec.info.version { return p }
+        guard let d = try? Data(contentsOf: dir(id).appendingPathComponent("index.json")), let p = try? JSONDecoder().decode(BookPack.self, from: d) else { return nil }
         return p
     }
 
@@ -419,6 +428,7 @@ final class DeskbookStore {
             articleCache = articleCache.filter { !$0.key.hasPrefix("\(info.id)|") }
             articleOrder.removeAll { $0.hasPrefix("\(info.id)|") }
             ArtStore.shared.forget(info.id)
+            PackSummaries.shared.forget(info.id)
             // 老版(总览是第一章)→ 新版(总览单列、正文从第一章起):本机的阅读记录跟着挪一位
             let now = pack.overview != nil ? 1 : 0
             if before == 0 && now == 1 && BookRemap.looksShifted(old: oldTitles, new: pack.chapters.map(\.title)) { BookRemap.overviewShift(info.id) }
@@ -449,6 +459,7 @@ final class DeskbookStore {
         }
         if rec.info.origin == .shelf { ShelfStore.shared.forgetLocal(id) }
         ArtStore.shared.forget(id)
+        PackSummaries.shared.forget(id)
         version += 1
     }
 }

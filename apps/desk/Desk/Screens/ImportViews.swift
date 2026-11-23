@@ -394,7 +394,7 @@ struct CustomImportScreen: View {
             Button("下载并导入") { if let u = URL(string: link.trimmingCharacters(in: .whitespacesAndNewlines)) { ImportCenter.shared.fetch(u) } }
             Button("取消", role: .cancel) {}
         } message: { Text("只认 https 开头的链接。") }
-        .sheet(item: $openBook) { b in BookHomeScreen(book: b) { ch in openBook = nil; ImportCenter.shared.openRequest = .init(id: b.id, ch: ch, home: false) } }
+        .bookHome(item: $openBook) { b in BookHomeScreen(book: b) { ch in openBook = nil; ImportCenter.shared.openRequest = .init(id: b.id, ch: ch, home: false) } }
     }
 
     private var importButtons: some View {

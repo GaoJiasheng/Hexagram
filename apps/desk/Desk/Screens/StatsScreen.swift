@@ -38,6 +38,9 @@ struct StatsScreen: View {
                 .frame(width: w, alignment: .leading)
                 .padding(.vertical, 20)
                 .frame(maxWidth: .infinity)
+                #if DEBUG
+                memoryNote.padding(.bottom, 24)
+                #endif
             }
         }
         .background(Ink.paper.ignoresSafeArea())
@@ -47,6 +50,15 @@ struct StatsScreen: View {
         .onAppear { if let w = ProcessInfo.processInfo.environment["DESK_WIN"], let x = StatsWindow(rawValue: w) { win = x } }
         #endif
     }
+
+    #if DEBUG
+    /// 调试:本进程内存与本机下过几本书(量统计的内存开销用;DESK_PACKS_ALL=1 时照改之前的做法把每本书整本读进内存)。
+    private var memoryNote: some View {
+        let downloaded = library.allBooks.filter { PackSummaries.shared.of($0) != nil }.count
+        return Text("调试 · 内存 \(MemoryFootprint.bytes() / 1_048_576) MB · 本机内容包 \(downloaded) 本" + (ProcessInfo.processInfo.environment["DESK_PACKS_ALL"] == "1" ? " · 整本全读(改之前的做法)" : " · 只读摘要"))
+            .font(.system(size: 12, design: .monospaced)).foregroundStyle(Ink.faint)
+    }
+    #endif
 
     // MARK: 时间窗
 
@@ -154,7 +166,7 @@ struct StatsScreen: View {
     private func bookRow(_ r: WindowStats.BookRow, top: Int) -> some View {
         let b = library.book(r.id)
         let color = b?.theme.accentColor ?? Ink.faint
-        let total = b.flatMap { library.pack($0)?.chapters.count } ?? 0
+        let total = b.flatMap { PackSummaries.shared.of($0)?.count } ?? 0
         let learned = b.map { stats.learnedCount($0.id) } ?? 0
         return HStack(spacing: 14) {
             RoundedRectangle(cornerRadius: 3).fill(color.gradient).frame(width: 6, height: 44)

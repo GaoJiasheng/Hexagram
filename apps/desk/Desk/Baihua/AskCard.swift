@@ -57,7 +57,7 @@ struct AskCard<Answer: View>: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(spacing: 6) {
-                Image(systemName: "questionmark.bubble").font(.system(size: 12, weight: .bold))
+                Image(systemName: "questionmark.bubble").font(.system(size: 12, weight: .bold)).accessibilityHidden(true)
                 Text("想一想").font(.system(size: 12.5, weight: .bold)).kerning(2)
                 Spacer()
                 if open {

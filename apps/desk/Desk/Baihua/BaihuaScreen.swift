@@ -370,7 +370,7 @@ struct BaihuaScreen: View {
     private func ideaCard(_ idea: String) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 6) {
-                Image(systemName: "quote.opening").font(.system(size: 11, weight: .bold))
+                Image(systemName: "quote.opening").font(.system(size: 11, weight: .bold)).accessibilityHidden(true)
                 Text("一句话").font(.system(size: 12, weight: .bold)).kerning(2)
             }
             .foregroundStyle(theme.accent2Color)

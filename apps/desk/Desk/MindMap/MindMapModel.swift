@@ -21,6 +21,8 @@ final class MindMapModel {
     var query = "" { didSet { if query != oldValue { runSearch() } } }
     private(set) var matches: [Int] = []
     var matchPos = 0
+    /// 盖在画布上的件此刻的位置(窗口坐标),画布据此不理落在它们身上的点击
+    @ObservationIgnored var chromeRects: [String: CGRect] = [:]
     // 走读
     private(set) var walk: [Int]?
     var walkPos = 0
@@ -81,6 +83,7 @@ final class MindMapModel {
         c.openSet = { [weak self] in self?.open ?? [] }
         c.onTapNode = { [weak self] in self?.tapNode($0) }
         c.onTapBubble = { [weak self] in self?.toggle($0) }
+        c.blockedRects = { [weak self] in self.map { Array($0.chromeRects.values) } ?? [] }
         c.onTapEmpty = { [weak self] in
             guard let self else { return }
             if self.walk == nil { self.selected = nil; self.afterSelect(glide: false) }

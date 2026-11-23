@@ -68,12 +68,22 @@ final class DeskLayoutManager: NSLayoutManager {
             let g = NSIntersectionRange(glyphRange(forCharacterRange: r, actualCharacterRange: nil), glyphsToShow)
             guard g.length > 0 else { return }
             var box = CGRect.null
-            enumerateLineFragments(forGlyphRange: g) { lf, _, _, _, _ in box = box.union(lf) }
+            var lastUsed = CGRect.null
+            enumerateLineFragments(forGlyphRange: g) { lf, used, _, _, _ in box = box.union(lf); lastUsed = used }
             guard !box.isNull else { return }
             // 只有译文真在这一栏收尾,末行才带着段后留白(要扣掉);跨到下一栏的,这一栏的末行不带
             let endsHere = NSMaxRange(g) == NSMaxRange(self.glyphRange(forCharacterRange: r, actualCharacterRange: nil))
                 && NSMaxRange(self.fullRange(.deskTrans, at: r.location, local: ts)) <= NSMaxRange(r)
-            box.size.height -= endsHere ? gap : 0
+            if endsHere {
+                // 译文正好在栏底收尾时,排版器把段后留白截掉了(末行的行框不带它):照扣就把末行一起扣掉,底色少一行。
+                // 底色至少要盖住末行的字,再留出与平常相当的一点余白
+                let floor = lastUsed.isNull ? box.maxY - gap : lastUsed.maxY + 8
+                let bottom = max(box.maxY - gap, floor)
+                #if DEBUG
+                if box.maxY - gap < floor - 0.5 { NSLog("DESKTRANSBOX clipped gap: line bottom %.1f, box bottom was %.1f", floor, box.maxY - gap) }
+                #endif
+                box.size.height = bottom - box.minY
+            }
             box = box.offsetBy(dx: origin.x, dy: origin.y)
             tint.withAlphaComponent(0.09).setFill()
             UIBezierPath(roundedRect: box, cornerRadius: 12).fill()
@@ -347,6 +357,22 @@ final class ChapterLayout {
                 if first.isEmpty {
                     let ns = storage.string as NSString
                     first = "\(a.0)@\(a.1) vs \(b.0)@\(b.1) shared=[\(ns.substring(with: a.0))] local=[\(ns.substring(with: b.0))]"
+                }
+            }
+        }
+        // 译文在本栏栏底收尾、段后留白被截掉的(底色照扣留白会少画一行;drawBackground 已兜底,这里记下好去看)
+        let cg = manager.glyphRange(for: c)
+        if cg.length > 0 {
+            var lr = NSRange()
+            let lf = manager.lineFragmentRect(forGlyphAt: NSMaxRange(cg) - 1, effectiveRange: &lr)
+            let used = manager.lineFragmentUsedRect(forGlyphAt: NSMaxRange(cg) - 1, effectiveRange: nil)
+            let lineChars = manager.characterRange(forGlyphRange: lr, actualGlyphRange: nil)
+            if let gap = storage.attribute(.deskTrans, at: lineChars.location, effectiveRange: nil) as? CGFloat {
+                var tr = NSRange()
+                _ = storage.attribute(.deskTrans, at: lineChars.location, longestEffectiveRange: &tr, in: NSRange(location: 0, length: storage.length))
+                // 译文在本栏末行收尾,而末行的行框没带够段后留白:底色照扣会少一行(drawBackground 已兜底),记下来
+                if NSMaxRange(tr) <= NSMaxRange(lineChars), lf.maxY - gap < used.maxY - 0.5 {
+                    NSLog("DESKTRANSEND ch=%d col=%d lf=%.1f gap=%.1f used=%.1f", chapter.no, i, lf.maxY, gap, used.maxY)
                 }
             }
         }

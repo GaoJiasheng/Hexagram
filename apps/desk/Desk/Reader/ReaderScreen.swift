@@ -52,7 +52,7 @@ struct ReaderScreen: View {
 
     var body: some View {
         ZStack {
-            backdrop
+            backdrop.accessibilityHidden(true)      // 底子与插画只是装饰
             VStack(spacing: 0) {
                 Color.clear.frame(height: 46)     // 给左上、右上的悬浮按钮让出一条,不设整栏
                 if let d = model.book.disclaimers, !d.isEmpty {

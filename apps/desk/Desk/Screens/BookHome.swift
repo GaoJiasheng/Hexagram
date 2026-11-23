@@ -701,7 +701,14 @@ struct BookHomeScreen: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Ink.card, in: RoundedRectangle(cornerRadius: 14))
         .contentShape(RoundedRectangle(cornerRadius: 14))
-        .accessibilityElement(children: .combine)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(statSpoken(label, value: value, unit: unit, sub: sub, units: units))
+    }
+
+    private func statSpoken(_ label: String, value: String, unit: String, sub: String, units: [(String, String)]?) -> String {
+        let amount: String
+        if let units { amount = units.map { "\($0.0) \($0.1)" }.joined(separator: " ") } else { amount = "\(value) \(unit)" }
+        return "\(label):\(amount),\(sub)"
     }
 
     @ViewBuilder private var aboutBlock: some View {
@@ -852,5 +859,27 @@ extension UIApplication {
         var vc = scene?.windows.first { $0.isKeyWindow }?.rootViewController ?? scene?.windows.first?.rootViewController
         while let p = vc?.presentedViewController, !p.isBeingDismissed { vc = p }
         return vc
+    }
+}
+
+// MARK: 书首页的弹出方式
+
+extension View {
+    /// 书的首页:手机上是页卡(sheet);iPad 上铺满全屏——页卡在 iPad 上只有七百来点宽,
+    /// 观书类书的两栏中枢(左总纲、右分章,≥ 1000 点才出)在页卡里永远出不来。
+    func bookHome<C: View>(item: Binding<BookInfo?>, @ViewBuilder content: @escaping (BookInfo) -> C) -> some View {
+        modifier(BookHomePresenter(item: item, page: content))
+    }
+}
+
+private struct BookHomePresenter<C: View>: ViewModifier {
+    @Binding var item: BookInfo?
+    let page: (BookInfo) -> C
+    func body(content: Content) -> some View {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            content.fullScreenCover(item: $item, content: page)
+        } else {
+            content.sheet(item: $item, content: page)
+        }
     }
 }

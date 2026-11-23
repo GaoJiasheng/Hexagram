@@ -30,7 +30,7 @@ targets:
         NSAppTransportSecurity:
           NSAllowsLocalNetworking: true
         ITSAppUsesNonExemptEncryption: false
-        UIAppFonts: [NotoSerifSC-Regular.ttf, NotoSerifSC-Bold.ttf]
+        UIAppFonts: [NotoSerifSC-Regular.ttf, NotoSerifSC-Bold.ttf, GuanxiangDeskExt-Regular.ttf]
         CFBundleDevelopmentRegion: zh_CN
         CFBundleLocalizations: [zh-Hans]
         # Google 登录回跳:guanxiangdesk://auth?code=…(服务端 NATIVE_REDIRECT_URL)

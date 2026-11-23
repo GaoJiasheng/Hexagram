@@ -47,18 +47,16 @@ enum ReadingFont: String, CaseIterable, Identifiable {
     @MainActor func ui(_ size: CGFloat) -> UIFont {
         switch self {
         case .song: return Fonts.uiSong(size)
-        case .hei: return UIFont(name: "PingFangSC-Regular", size: size) ?? .systemFont(ofSize: size)
+        case .hei: return Fonts.withExt(UIFont(name: "PingFangSC-Regular", size: size) ?? .systemFont(ofSize: size))
         default:
             guard let ps = FontStore.shared.postScriptName(self), UIFont(name: ps, size: size) != nil else { return Fonts.uiSong(size) }
-            let d = UIFontDescriptor(name: ps, size: size)
-                .addingAttributes([.cascadeList: [UIFontDescriptor(name: "NotoSerifSC-Regular", size: size)]])
-            return UIFont(descriptor: d, size: size)
+            return Fonts.withExt(UIFont(descriptor: UIFontDescriptor(name: ps, size: size), size: size), also: ["NotoSerifSC-Regular"])
         }
     }
 
     /// 题名、爻题等加粗处:黑体用苹方中粗;其余几款没有粗体,题名仍用宋体粗(与正文成一对,不做假粗)。
     @MainActor func uiBold(_ size: CGFloat) -> UIFont {
-        if self == .hei { return UIFont(name: "PingFangSC-Semibold", size: size) ?? .systemFont(ofSize: size, weight: .semibold) }
+        if self == .hei { return Fonts.withExt(UIFont(name: "PingFangSC-Semibold", size: size) ?? .systemFont(ofSize: size, weight: .semibold)) }
         return Fonts.uiSong(size, bold: true)
     }
 

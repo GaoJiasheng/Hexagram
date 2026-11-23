@@ -15,6 +15,9 @@ struct DeskApp: App {
                     // 文章里的动图静音循环播,不打断别的 App 正放的声音
                     try? AVAudioSession.sharedInstance().setCategory(.ambient, options: .mixWithOthers)
                     _ = FontStore.shared        // 本机已下的字体先注册上(阅读页取字体前)
+                    #if DEBUG
+                    AXDump.schedule()
+                    #endif
                     // 启动:用存着的令牌认一下账号,再拉一次
                     await AccountStore.shared.bootstrap()
                     #if DEBUG
@@ -65,6 +68,24 @@ private struct Root: View {
                 // DESK_OPEN=mindmap DESK_BOOK=g-xxx:直接进脑图(DESK_MAP_CH=n 聚焦第 n 章;DESK_MAP_LEVEL / DESK_MAP_NODE / DESK_MAP_Q / DESK_MAP_WALK 见 MindMapModel)
                 MindMapScreen(book: b, focusChapter: Int(env("DESK_MAP_CH", "")))
             }
+            else if demo == "covers" {
+                // 默认封面样张:书名一到十个字,看题签放不放得下
+                let titles = ["易", "论语", "道德经", "宋词三百首", "唐诗三百首", "黄帝内经·素问", "战国策(选)", "古文观止七十篇", "颜氏家训与近思录", "一部十个字的很长的书名"]
+                let themes = [BookTheme(accent: "#3F6E8C", accent2: "#C7673F", paper: "#F7F5EE"), BookTheme(accent: "#7B3276", accent2: "#C7673F", paper: "#F7F5EE"),
+                              BookTheme(accent: "#2E6B4F", accent2: "#B98A2E", paper: "#F7F5EE")]
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 104), spacing: 14)], spacing: 14) {
+                        ForEach(Array(titles.enumerated()), id: \.offset) { i, t in
+                            VStack(spacing: 6) {
+                                DefaultArt(title: t, theme: themes[i % 3], kind: .cover).frame(width: 104, height: 156).clipShape(RoundedRectangle(cornerRadius: 10))
+                                Text("\(t.count) 字").font(.caption2).foregroundStyle(Ink.faint)
+                            }
+                        }
+                    }
+                    .padding(20)
+                }
+                .background(Ink.paper.ignoresSafeArea())
+            }
             else if demo == "home", let b = Library.shared.book(env("DESK_BOOK", "daodejing")) {
                 BookHomeScreen(book: b) { _ in }
             }
@@ -88,6 +109,13 @@ private struct Root: View {
             }
             if env("DESK_STATS", "") == "1" { await StatsSeed.run() }
             if env("DESK_SEEDMIG", "") == "1" { seedMigration() }
+            // DESK_ADD_N=15:把书目里前 15 本官方典籍下到本机(量内存用);DESK_PACKS_ALL=1:照改之前的统计把下过的书整本读进内存
+            if let n = Int(env("DESK_ADD_N", "")) {
+                await Library.shared.refresh()
+                for b in (Library.shared.manifest?.books ?? []).prefix(n) { await Library.shared.add(b) }
+                print("[mem] 下好 \(n) 本,内存 \(MemoryFootprint.bytes() / 1_048_576) MB")
+            }
+            if env("DESK_PACKS_ALL", "") == "1" { print("[mem] 整本读进 \(Library.shared.debugHoldAllPacks()) 本"); Stats.shared.recompute() }
             guard !demo.isEmpty else { return }
             await Library.shared.refresh()
             for id in ["daodejing", "lunyu", env("DESK_BOOK", "daodejing")] { if let b = Library.shared.book(id) { await Library.shared.add(b) } }

@@ -17,7 +17,7 @@ struct MindMapCard: View {
             HStack(alignment: .top, spacing: 10) {
                 VStack(alignment: .leading, spacing: 5) {
                     HStack(spacing: 6) {
-                        Image(systemName: "point.3.connected.trianglepath.dotted").font(.system(size: 12, weight: .bold))
+                        Image(systemName: "point.3.connected.trianglepath.dotted").font(.system(size: 12, weight: .bold)).accessibilityHidden(true)
                         Text("思想脑图").font(.system(size: 12.5, weight: .bold)).kerning(2)
                     }
                     .foregroundStyle(accent)

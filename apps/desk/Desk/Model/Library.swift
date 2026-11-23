@@ -129,9 +129,43 @@ final class Library {
         UserDefaults.standard.set(shelf, forKey: "desk.shelf")
     }
 
+    /// 读一本书的内容包。最近用过的几本留在内存里(阅读页、书首页来回切不必重读),多了就放掉最早的——
+    /// 此前读过的都留着,统计把书目里每本下过的书都读一遍,几十本书就几百 MB。
     func pack(_ b: BookInfo) -> BookPack? {
         if b.isDeskbook { return DeskbookStore.shared.pack(b.id) }
+        if let p = packs[b.id], p.version == b.version { touchPack(b.id); return p }
+        guard let p = readPack(b) else { return nil }
+        packs[b.id] = p
+        touchPack(b.id)
+        return p
+    }
+
+    @ObservationIgnored private var packOrder: [String] = []
+    private func touchPack(_ id: String) {
+        packOrder.removeAll { $0 == id }
+        packOrder.append(id)
+        while packOrder.count > Self.packCacheSize { packs[packOrder.removeFirst()] = nil }
+    }
+    static let packCacheSize = 6
+
+    /// 只为算一次摘要读包:内存里有就用,没有就读来用完即弃(不进缓存)。
+    func peekPack(_ b: BookInfo) -> BookPack? {
+        if b.isDeskbook { return DeskbookStore.shared.peekPack(b.id) }
         if let p = packs[b.id], p.version == b.version { return p }
+        return readPack(b)
+    }
+
+    #if DEBUG
+    /// 调试(DESK_PACKS_ALL=1):照改之前的做法把书目里每本下过的书都读进内存,量「改之前」的内存。
+    func debugHoldAllPacks() -> Int {
+        var n = 0
+        for b in allBooks { if let p = readPack(b) { debugHeld.append(p); n += 1 } }
+        return n
+    }
+    @ObservationIgnored private var debugHeld: [BookPack] = []
+    #endif
+
+    private func readPack(_ b: BookInfo) -> BookPack? {
         // 清单上的那份:下载过的 → 随 App 带的 → 本机上一版(清单换了新包而新包还没下:先用旧的,后台补下)
         let want = dir.appendingPathComponent(b.file)
         var url: URL? = FileManager.default.fileExists(atPath: want.path) ? want : bundledFile(b)
@@ -142,7 +176,6 @@ final class Library {
             if url != nil, !downloading.contains(b.id) { Task { await self.refreshPack(b) } }
         }
         guard let url, let d = try? Data(contentsOf: url), let p = try? JSONDecoder().decode(BookPack.self, from: d) else { return nil }
-        packs[b.id] = p
         return p
     }
 
