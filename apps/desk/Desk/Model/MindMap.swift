@@ -179,6 +179,14 @@ final class MindTree {
         return []
     }
 
+    /// 一章落在哪一支一级分支:写了这一章的节点里最靠前的那个所在的那一支(根上写的不算);脑图没提到这一章为 nil。
+    func branch(forChapter ch: Int) -> Int? {
+        for id in (byChapter[ch] ?? []).sorted() where nodes[id].branch >= 0 { return nodes[id].branch }
+        return nil
+    }
+    /// 第 b 支一级分支的题名。
+    func branchLabel(_ b: Int) -> String? { nodes[0].children[safe: b].map { nodes[$0].label } }
+
     /// 一支里涉及的章(去重):学过几章 / 共几章,画进度用。
     func chapters(inSubtree i: Int) -> Set<Int> {
         var s = Set<Int>()

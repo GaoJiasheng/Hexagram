@@ -131,6 +131,29 @@ final class ReadDaysStore {
         }
         if any { write(); SyncEngine.shared.noteChange() }
     }
+    /// 书包换了版式(章号整体挪位):本机这台设备记下的这本书的时长与字数搬到新章号上,旧键清零(清零的推上云,别处跟着清)。
+    /// 只搬本机设备号的键——别的设备的键由那台设备装上新版时自己搬,免得同一笔被搬两次。
+    func remapOwn(corpus: String, slug: String, _ f: (Int) -> Int) {
+        let needle = "|\(corpus)|\(slug)|"
+        let now = Date()
+        var moved: [String: ReadDay] = [:]
+        var olds: [String] = []
+        for (k, e) in days where k.dropFirst(10).hasPrefix(needle) && k.hasSuffix("|\(dev)") {
+            let parts = k.split(separator: "|", omittingEmptySubsequences: false)
+            guard parts.count == 5, let ch = Int(parts[3]) else { continue }
+            olds.append(k)
+            let nk = "\(parts[0])|\(corpus)|\(slug)|\(f(ch))|\(dev)"
+            var m = moved[nk] ?? ReadDay(sec: 0, n: 0, at: now, c: 0)
+            m.sec += e.sec; m.n += e.n; m.c += e.c; m.at = now
+            moved[nk] = m
+        }
+        guard !olds.isEmpty else { return }
+        for k in olds where moved[k] == nil { days[k] = ReadDay(sec: 0, n: 0, at: now, c: 0); dirty.mark(k) }
+        for (k, v) in moved { days[k] = v; dirty.mark(k) }
+        write()
+        SyncEngine.shared.noteChange()
+    }
+
     /// 换账号时选了「不并入」:本机的时长记录全部清掉(设备号不变)。
     func resetAll() { days = [:]; dirty.removeAll(); counted = [:]; write() }
 

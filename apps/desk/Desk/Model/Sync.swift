@@ -290,12 +290,12 @@ final class SyncEngine {
 
     private func chapter(book: String, no: Int) -> Chapter? {
         guard let b = Library.shared.book(book), let p = Library.shared.pack(b) else { return nil }
-        return p.chapters[safe: no - 1]
+        return p.chapter(no)
     }
 
     private func locate(slug: String, ch: Int) -> (String, Int)? {
         for b in Library.shared.allBooks {
-            guard let p = Library.shared.pack(b), let c = p.chapters.first(where: { $0.src.slug == slug && $0.src.ch == ch }) else { continue }
+            guard let p = Library.shared.pack(b), let c = p.allChapters.first(where: { $0.src.slug == slug && $0.src.ch == ch }) else { continue }
             return (b.id, c.no)
         }
         return nil

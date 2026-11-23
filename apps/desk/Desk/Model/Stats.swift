@@ -116,6 +116,8 @@ final class Stats {
                 bookOf[c.src] = b.id
                 cc.append(c.segs.isEmpty ? (c.meta?.chars ?? 0) : c.segs.reduce(0) { $0 + ReaderModel.charCount($1.o) })
             }
+            // 全书总览(第 0 章)的时长归这本书,但不进「学过几章」
+            if let o = p.overview { bookOf[o.src] = b.id }
             idx[b.id] = BookIndex(srcNo: m, chapterChars: cc)
         }
         books = idx

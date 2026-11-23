@@ -72,7 +72,7 @@ final class ArtStore {
         switch kind {
         case .cover: path = book.cover ?? book.banner
         case .banner: path = book.banner ?? book.cover
-        case .head(let n): path = DeskbookStore.shared.pack(book.id)?.chapters[safe: n - 1]?.meta?.head
+        case .head(let n): path = DeskbookStore.shared.pack(book.id)?.chapter(n)?.meta?.head
         }
         guard let url = DeskbookStore.shared.media(book.id, path) else { return nil }
         let key = "db/\(book.id)/\(book.version)/\(kind.fileName)" as NSString

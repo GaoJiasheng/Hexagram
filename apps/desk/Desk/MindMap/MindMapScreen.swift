@@ -15,6 +15,8 @@ struct MindMapScreen: View {
     let book: BookInfo
     var focusChapter: Int? = nil
     var onRead: ((Int) -> Void)? = nil
+    /// 打开就从根开始走读
+    var walk = false
     @State private var model: MindMapModel?
     @Environment(\.dismiss) private var dismiss
     var body: some View {
@@ -30,7 +32,9 @@ struct MindMapScreen: View {
         }
         .onAppear {
             guard model == nil, let t = MindMapStore.tree(book) else { return }
-            model = MindMapModel(book: book, tree: t, focusChapter: focusChapter)
+            let m = MindMapModel(book: book, tree: t, focusChapter: focusChapter)
+            if walk { m.outline = false; m.autoWalk = true }
+            model = m
         }
     }
 }

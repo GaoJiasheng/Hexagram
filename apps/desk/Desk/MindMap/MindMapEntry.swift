@@ -1,52 +1,70 @@
 import SwiftUI
 
 /// 书的首页上的「思想脑图」卡:左边一句说明与数字,下面一张活的缩略图(根 + 一级 + 二级的枝杈)。
+/// 给了 walk 就多一个「走读」:打开就从根一个节点一个节点走过去。
 struct MindMapCard: View {
     let book: BookInfo
     let tree: MindTree
     let open: () -> Void
+    var walk: (() -> Void)? = nil
     private var accent: Color { book.theme.accentColor }
 
     var body: some View {
         let pack = Library.shared.pack(book)
         let chs = tree.chapters(inSubtree: 0)
         let learned = chs.filter { ch in pack?.chapters[safe: ch - 1].map { Stats.shared.learned($0.src) } ?? false }.count
-        Button(action: open) {
-            VStack(alignment: .leading, spacing: 12) {
-                HStack(alignment: .top, spacing: 10) {
-                    VStack(alignment: .leading, spacing: 5) {
-                        HStack(spacing: 6) {
-                            Image(systemName: "point.3.connected.trianglepath.dotted").font(.system(size: 12, weight: .bold))
-                            Text("思想脑图").font(.system(size: 12.5, weight: .bold)).kerning(2)
-                        }
-                        .foregroundStyle(accent)
-                        Text("全书的骨架一张图看完").font(Fonts.song(19, bold: true)).foregroundStyle(Ink.text)
-                        Text("\(tree.branches) 条主线 · \(tree.count) 个节点" + (chs.isEmpty ? "" : " · 学过 \(learned) / \(chs.count) \(book.unit)"))
-                            .font(.system(size: 12.5)).foregroundStyle(Ink.soft)
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(alignment: .top, spacing: 10) {
+                VStack(alignment: .leading, spacing: 5) {
+                    HStack(spacing: 6) {
+                        Image(systemName: "point.3.connected.trianglepath.dotted").font(.system(size: 12, weight: .bold))
+                        Text("思想脑图").font(.system(size: 12.5, weight: .bold)).kerning(2)
                     }
-                    Spacer(minLength: 6)
-                    HStack(spacing: 4) {
-                        Text("打开").font(.system(size: 14, weight: .semibold))
-                        Image(systemName: "arrow.up.left.and.arrow.down.right").font(.system(size: 11, weight: .bold))
-                    }
-                    .foregroundStyle(.white)
-                    .padding(.horizontal, 14).padding(.vertical, 8)
-                    .background(accent, in: Capsule())
+                    .foregroundStyle(accent)
+                    Text("全书的骨架一张图看完").font(Fonts.song(19, bold: true)).foregroundStyle(Ink.text)
+                    Text("\(tree.branches) 条主线 · \(tree.count) 个节点" + (chs.isEmpty ? "" : " · 学过 \(learned) / \(chs.count) \(book.unit)"))
+                        .font(.system(size: 12.5)).foregroundStyle(Ink.soft)
                 }
-                MindPreview(book: book, tree: tree)
-                    .frame(height: MindPreview.height(tree))
-                    .accessibilityHidden(true)
-                if let n = book.mindmapNote { Text(n).font(.system(size: 11.5)).foregroundStyle(Ink.faint) }
+                Spacer(minLength: 6)
+                if walk == nil { pill("打开", icon: "arrow.up.left.and.arrow.down.right", filled: true) }
             }
-            .padding(16)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Ink.card, in: RoundedRectangle(cornerRadius: 18))
-            .overlay(RoundedRectangle(cornerRadius: 18).stroke(accent.opacity(0.28), lineWidth: 1))
-            .shadow(color: accent.opacity(0.1), radius: 10, y: 4)
+            MindPreview(book: book, tree: tree)
+                .frame(height: MindPreview.height(tree))
+                .accessibilityHidden(true)
+            if let walk {
+                HStack(spacing: 10) {
+                    Button(action: walk) { pill("走读", icon: "figure.walk", filled: true) }
+                        .buttonStyle(.plain)
+                        .accessibilityHint("从书名起,一个节点一个节点走一遍")
+                    Button(action: open) { pill("自己看", icon: "arrow.up.left.and.arrow.down.right", filled: false) }
+                        .buttonStyle(.plain)
+                    Spacer(minLength: 0)
+                }
+            }
+            if let n = book.mindmapNote { Text(n).font(.system(size: 11.5)).foregroundStyle(Ink.faint) }
         }
-        .buttonStyle(.plain)
+        .padding(16)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Ink.card, in: RoundedRectangle(cornerRadius: 18))
+        .overlay(RoundedRectangle(cornerRadius: 18).stroke(accent.opacity(0.28), lineWidth: 1))
+        .shadow(color: accent.opacity(0.1), radius: 10, y: 4)
+        .contentShape(RoundedRectangle(cornerRadius: 18))
+        .onTapGesture(perform: open)
+        .accessibilityElement(children: walk == nil ? .ignore : .contain)
         .accessibilityLabel("思想脑图,\(tree.branches) 条主线,\(tree.count) 个节点")
-        .accessibilityHint("全屏打开")
+        .accessibilityAddTraits(walk == nil ? .isButton : [])
+        .accessibilityAction(named: "全屏打开", open)
+    }
+
+    private func pill(_ t: String, icon: String, filled: Bool) -> some View {
+        HStack(spacing: 5) {
+            Image(systemName: icon).font(.system(size: 11, weight: .bold))
+            Text(t).font(.system(size: 14, weight: .semibold))
+        }
+        .foregroundStyle(filled ? .white : accent)
+        .padding(.horizontal, 14).padding(.vertical, 8)
+        .background(filled ? accent : accent.opacity(0.1), in: Capsule())
+        .contentShape(Capsule())
     }
 }
 

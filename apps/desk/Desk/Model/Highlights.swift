@@ -154,6 +154,8 @@ final class HighlightStore {
         edit(id) { $0.note = (t ?? "").isEmpty ? nil : t }
     }
     func delete(_ id: String) { edit(id) { $0.deleted = true; $0.note = nil } }
+    /// 书包换了版式、章号挪位:划线搬到新章号(记新时间,同步时新者胜)。
+    func relocate(_ id: String, ch: Int, no: Int) { edit(id) { $0.ch = ch; $0.no = no } }
 
     private func edit(_ id: String, _ f: (inout Highlight) -> Void) {
         guard let i = items.firstIndex(where: { $0.id == id }) else { return }

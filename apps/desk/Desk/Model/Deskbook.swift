@@ -40,6 +40,7 @@ enum DeskbookInstaller {
         var author: String?
         var date: String?
         var head: String?
+        var summary: String?
     }
 
     private static func str(_ v: JSONValue?) -> String? {
@@ -88,7 +89,8 @@ enum DeskbookInstaller {
             let head = DBRules.mediaPath(str(c["head"])).flatMap { zip.entries[$0] != nil && DBRules.classify($0) == .image ? $0 : nil }
             refs.append(ChapterRef(no: i + 1, file: f, title: str(c["title"]) ?? "第 \(i + 1) \(kind == "collection" ? "篇" : "章")",
                                    subtitle: str(c["subtitle"]), minutes: int(c["minutes"]).flatMap { $0 > 0 ? $0 : nil },
-                                   author: str(c["author"]), date: str(c["date"]), head: head))
+                                   author: str(c["author"]), date: str(c["date"]), head: head,
+                                   summary: str(c["summary"]).map { String($0.replacingOccurrences(of: "\n", with: " ").prefix(120)) }))
         }
         let image: (JSONValue?) -> String? = { v in
             DBRules.mediaPath(str(v)).flatMap { zip.entries[$0] != nil && DBRules.classify($0) == .image ? $0 : nil }
@@ -177,7 +179,7 @@ enum DeskbookInstaller {
                 func walk(_ v: JSONValue?) { for x in v?.array ?? [] { add(x.string ?? x["x"]?.string); walk(x["children"]) } }
                 walk(b["items"])
             default:
-                add(b["x"]?.string); add(b["o"]?.string); add(b["tr"]?.string)
+                add(b["x"]?.string); add(b["o"]?.string); add(b["tr"]?.string); add(b["q"]?.string); add(b["a"]?.string)
                 for i in b["items"]?.array ?? [] { add(i.string) }
             }
         }
@@ -236,12 +238,30 @@ enum DeskbookInstaller {
             charTotal += chars
             let yanyi = (v["yanyi"]?.array ?? []).compactMap { str($0) }
             let meta = ChapterMeta(subtitle: r.subtitle, author: r.author, date: r.date, minutes: r.minutes, head: r.head,
-                                   chars: chars, idea: str(a?["idea"]), article: hasArticle)
+                                   chars: chars, idea: str(a?["idea"]), article: hasArticle, summary: r.summary)
             chapters.append(Chapter(no: r.no, title: r.title, src: Src(corpus: corpus, slug: info.id, ch: r.no),
                                     kind: info.isCollection ? "text" : nil, gua: nil, segs: segs, yanyi: yanyi.isEmpty ? nil : yanyi, meta: meta))
         }
         info.segs = segTotal
         info.chars = charTotal
+        // 全书总览(根上的 overview.json,不是一章):宽松——解不开、没有可读的块就当没有,不拒收整本书
+        var overview: Chapter?
+        if info.isArticleBook, !info.isCollection, zip.entries["overview.json"] != nil,
+           let d = try? Data(contentsOf: dir.appendingPathComponent("overview.json")),
+           let v = try? JSONDecoder().decode(JSONValue.self, from: d), case .object = v,
+           let a = BHChapter.article(no: 0, chapterTitle: "全书总览", chapterSubtitle: nil, v, base: dir) {
+            let head = DBRules.mediaPath(str(v["head"])).flatMap { zip.entries[$0] != nil && DBRules.classify($0) == .image ? $0 : nil }
+            let chars = articleChars(v)
+            let meta = ChapterMeta(subtitle: a.subtitle, author: nil, date: nil, minutes: int(v["minutes"]).flatMap { $0 > 0 ? $0 : nil }, head: head,
+                                   chars: chars, idea: a.idea, article: true, summary: nil)
+            overview = Chapter(no: 0, title: a.title, src: Src(corpus: corpus, slug: info.id, ch: 0), kind: nil, gua: nil, segs: [], yanyi: nil, meta: meta)
+            info.chars += chars
+            if head != nil {
+                var art = info.art ?? ArtInfo(cover: false, banner: false, heads: [], v: info.version)
+                art.heads.insert(0, at: 0)
+                info.art = art
+            }
+        }
         // 思想脑图:book.json 声明了、或根上有 mindmap.json 都读;解不开就当没有(不拒收整本书)
         info.mindmapNodes = nil; info.mindmapNote = nil
         if zip.entries["mindmap.json"] != nil,
@@ -252,7 +272,7 @@ enum DeskbookInstaller {
             info.mindmapNote = m.truncated
         }
         refs.removeAll()
-        let pack = BookPack(id: info.id, version: info.version, chapters: chapters)
+        let pack = BookPack(id: info.id, version: info.version, chapters: chapters, overview: overview)
         try JSONEncoder().encode(pack).write(to: dir.appendingPathComponent("index.json"), options: .atomic)
         return (info, pack, articles)
     }
@@ -297,6 +317,15 @@ final class DeskbookStore {
         }
     }
 
+    /// 本机账:每本书装着的是哪种版式(1 = 有全书总览、记第 0 章;0 = 没有)。删书留记录时留着,再装新版时据此挪坐标。
+    private static let layoutKey = "desk.bookLayout"
+    static func layout(_ id: String) -> Int? { (UserDefaults.standard.dictionary(forKey: layoutKey) as? [String: Int])?[id] }
+    static func setLayout(_ id: String, _ v: Int?) {
+        var m = (UserDefaults.standard.dictionary(forKey: layoutKey) as? [String: Int]) ?? [:]
+        m[id] = v
+        UserDefaults.standard.set(m, forKey: layoutKey)
+    }
+
     func dir(_ id: String) -> URL { root.appendingPathComponent(id, isDirectory: true) }
     func info(_ id: String) -> BookInfo? { installed[id]?.info }
     func record(_ id: String) -> Installed? { installed[id] }
@@ -313,9 +342,17 @@ final class DeskbookStore {
 
     /// 一章的文章(读章文件、只留最近十几章在内存里)。
     func article(_ id: String, _ no: Int) -> BHChapter? {
-        guard let rec = installed[id], let c = pack(id)?.chapters[safe: no - 1], c.meta?.article == true else { return nil }
+        guard let rec = installed[id], let c = pack(id)?.chapter(no), c.meta?.article == true else { return nil }
         let key = "\(id)|\(rec.info.version)|\(no)"
         if let a = articleCache[key] { return a }
+        if no == 0 {
+            // 全书总览:根上的 overview.json,整个文件就是一篇文章
+            guard let d = try? Data(contentsOf: dir(id).appendingPathComponent("overview.json")), let v = try? JSONDecoder().decode(JSONValue.self, from: d),
+                  let a = BHChapter.article(no: 0, chapterTitle: c.title, chapterSubtitle: c.meta?.subtitle, v, base: dir(id)) else { return nil }
+            articleCache[key] = a
+            articleOrder.append(key)
+            return a
+        }
         let file = dir(id).appendingPathComponent(String(format: "chapters/%03d.json", no))
         // book.json 里写的文件名不一定是补零三位:按 index 里的次序找不到就到 book.json 里查
         let url = FileManager.default.fileExists(atPath: file.path) ? file : chapterFile(id, no)
@@ -365,6 +402,10 @@ final class DeskbookStore {
             let enc = JSONEncoder(); enc.dateEncodingStrategy = .iso8601
             try enc.encode(rec).write(to: tmp.appendingPathComponent("meta.json"), options: .atomic)
             let final = dir(info.id)
+            // 这本书原先的版式:本机账上记着的,没记(此前装的)就看旧目录里有没有总览
+            let before: Int? = Self.layout(info.id) ?? (installed[info.id] != nil ? (self.pack(info.id)?.overview != nil ? 1 : 0) : nil)
+            // 旧版各章题名(本机装着旧版时):判断新版是不是「把旧第一章抽成总览、其余前移一位」
+            let oldTitles = installed[info.id] != nil ? self.pack(info.id)?.chapters.map(\.title) : nil
             if fm.fileExists(atPath: final.path) {
                 let old = root.appendingPathComponent(".old-\(UUID().uuidString)")
                 try fm.moveItem(at: final, to: old)
@@ -378,6 +419,10 @@ final class DeskbookStore {
             articleCache = articleCache.filter { !$0.key.hasPrefix("\(info.id)|") }
             articleOrder.removeAll { $0.hasPrefix("\(info.id)|") }
             ArtStore.shared.forget(info.id)
+            // 老版(总览是第一章)→ 新版(总览单列、正文从第一章起):本机的阅读记录跟着挪一位
+            let now = pack.overview != nil ? 1 : 0
+            if before == 0 && now == 1 && BookRemap.looksShifted(old: oldTitles, new: pack.chapters.map(\.title)) { BookRemap.overviewShift(info.id) }
+            Self.setLayout(info.id, now)
             version += 1
             return info
         } catch {
@@ -399,6 +444,8 @@ final class DeskbookStore {
             BaihuaPos.clear(id)
             ReadDaysStore.shared.zero(corpus: DeskbookInstaller.corpus, slug: id)
             FinishedStore.shared.unmark("\(DeskbookInstaller.corpus):\(id)")
+            Self.setLayout(id, nil)
+            AskState.clear(id)
         }
         if rec.info.origin == .shelf { ShelfStore.shared.forgetLocal(id) }
         ArtStore.shared.forget(id)

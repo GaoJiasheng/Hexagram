@@ -193,7 +193,7 @@ struct HighlightsSheet: View {
                                 }
                         }
                     } header: {
-                        Text((pack.chapters.indices.contains(no - 1) ? BookSearch.chapterLabel(pack.chapters[no - 1], unit: book.unit) : "第 \(no) \(book.unit)") + (key % 2 == 1 ? " · 白话深读" : ""))
+                        Text((pack.chapter(no).map { BookSearch.chapterLabel($0, unit: book.unit) } ?? "第 \(no) \(book.unit)") + (key % 2 == 1 ? " · 白话深读" : ""))
                             .font(Fonts.song(14, bold: true)).foregroundStyle(Ink.soft).textCase(nil)
                     }
                 }

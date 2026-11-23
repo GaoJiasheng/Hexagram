@@ -18,6 +18,11 @@ struct BaihuaTarget: Identifiable {
 
 private struct MapFocus: Identifiable { let id = UUID(); let ch: Int? }
 
+#if DEBUG
+/// 调试入口 DESK_BH=toc(打开就开目录)/ end(打开就滚到篇末)只在第一篇生效一次
+@MainActor enum BHDebug { static var fired = false }
+#endif
+
 private enum BHSheet: Identifiable {
     case hl(String), editNote(String), toc, bookTOC, marks
     var id: String {
@@ -45,16 +50,18 @@ struct ArticleBookScreen: View {
     init(book: BookInfo, pack: BookPack, start: ReadPos?) {
         self.book = book
         self.pack = pack
-        let no = min(max(start?.ch ?? 1, 1), max(pack.chapters.count, 1))
+        // 第 0 章 = 全书总览(书包有 overview.json 时);其余夹在 1…章数
+        let want = start?.ch ?? 1
+        let no = want == 0 && pack.overview != nil ? 0 : min(max(want, 1), max(pack.chapters.count, 1))
         let block = (start?.seg ?? 0) > 0 ? start?.seg : nil      // 续读:落到上次读到的那一块
-        _cur = State(initialValue: BaihuaTarget(book: book, chapter: pack.chapters[no - 1], block: block, flash: nil, bookMode: true))
+        _cur = State(initialValue: BaihuaTarget(book: book, chapter: pack.chapter(no) ?? pack.chapters[0], block: block, flash: nil, bookMode: true))
     }
 
     var body: some View {
         BaihuaScreen(target: cur, nav: ArticleNav { no, block, flash in
-            guard pack.chapters.indices.contains(no - 1) else { return }
+            guard let c = pack.chapter(no) else { return }
             withAnimation(.easeInOut(duration: 0.25)) {
-                cur = BaihuaTarget(book: book, chapter: pack.chapters[no - 1], block: block, flash: flash, bookMode: true)
+                cur = BaihuaTarget(book: book, chapter: c, block: block, flash: flash, bookMode: true)
             }
         })
         .id(cur.id)
@@ -109,6 +116,8 @@ struct BaihuaScreen: View {
     private var bookMode: Bool { target.bookMode && nav != nil }
     private var theme: BookTheme { book.theme }
     private var no: Int { target.chapter.no }
+    /// 书包的全书总览(第 0 章):不是一章,题头不排号,篇末给「看脑图」「从第一章读起」
+    private var isOverview: Bool { bookMode && no == 0 }
     private var bh: BHChapter? {
         #if DEBUG
         if let f = target.fixture { return f }
@@ -196,6 +205,9 @@ struct BaihuaScreen: View {
             .overlay(alignment: .top) { chrome(sideTOC: sideTOC) }
         }
         .onAppear {
+            #if DEBUG
+            if ProcessInfo.processInfo.environment["DESK_BH"] == "toc", !BHDebug.fired { BHDebug.fired = true; DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) { sheet = .bookTOC } }
+            #endif
             clock.start(target.chapter.src)
             if bookMode { ProgressStore.shared.set(book.id, ch: no, seg: max(0, target.block ?? BaihuaPos.get(book.id, no, sub: target.sub) ?? 0)) }
         }
@@ -260,6 +272,15 @@ struct BaihuaScreen: View {
         if let id = target.flash, let h = HighlightStore.shared.get(id), let p = c.locate(h) {
             to = p.seg; flashAt = (p.seg, p.start, p.end)
         }
+        #if DEBUG
+        if ProcessInfo.processInfo.environment["DESK_BH"] == "end", !BHDebug.fired {
+            BHDebug.fired = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) { proxy.scrollTo(-2, anchor: .bottom) }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.6) { proxy.scrollTo(-2, anchor: .bottom) }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.6) { proxy.scrollTo(-2, anchor: .bottom) }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.4) { proxy.scrollTo(-2, anchor: .bottom) }
+        }
+        #endif
         guard let t = to, c.blocks.indices.contains(t), t > 0 else { restored = true; return }
         // 走 scrollPosition 的绑定(用 proxy.scrollTo 跳,绑定不会跟着变,进度与小目录就不知道在哪)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
@@ -315,6 +336,7 @@ struct BaihuaScreen: View {
                     if c.mediaCount > 0 { Label("\(c.mediaCount) 段动画", systemImage: "play.rectangle") }
                 }
                 .font(.system(size: 12.5)).foregroundStyle(Ink.faint)
+                if bookMode && !isOverview && !book.isCollection { mapChip }
                 DisclaimerBanner(lines: book.disclaimers ?? [], compact: true)
                 if let idea = c.idea, !idea.isEmpty { ideaCard(idea) }
             }
@@ -368,6 +390,7 @@ struct BaihuaScreen: View {
             let parts = [c.meta?.author, c.meta?.date].compactMap { $0 }
             return parts.isEmpty ? (book.unit) : parts.joined(separator: " · ")
         }
+        if isOverview { return "总纲 · 全书总览" }
         if bookMode { return "第 \(Numerals.chinese(c.no)) \(book.unit)" }
         if let i = subIndex { return BookSearch.chapterLabel(c, unit: book.unit) + " · \(i + 1) / \(subs.count)" }
         return BookSearch.chapterLabel(c, unit: book.unit)
@@ -380,7 +403,7 @@ struct BaihuaScreen: View {
         switch b {
         case .h2: return fs * 2.4
         case .h3: return fs * 1.7
-        case .fig, .pull, .callout, .img, .video, .outline, .code: return fs * 1.5
+        case .fig, .pull, .callout, .img, .video, .outline, .code, .ask: return fs * 1.5
         case .divider: return fs * 2
         case .cite: return fs * 1.3
         case .quote: return fs * 1.2
@@ -530,6 +553,32 @@ struct BaihuaScreen: View {
             BHCodeBlock(x: x, lang: lang, fs: fs)
         case .divider:
             BHDivider(accent: accent)
+        case .ask(let q, let a):
+            AskCard(book: book.id, stateID: AskState.id(no, i, q), question: q, tint: theme.accent2Color, fs: fs,
+                    questionFont: face.boldFont(fs * 1.02), reveal: flashAt?.block == i, onTouch: { touch() }) {
+                markable(a, i, c, font: proseUI(fs * 0.95), bold: proseUI(fs * 0.95, bold: true), color: .inkText, line: fs * 0.6)
+            }
+        }
+    }
+
+    /// 章首一枚安静的小签:这一章在脑图的哪一支(颜色与脑图上那一支一致),点开脑图并聚焦到这一章。
+    @ViewBuilder private var mapChip: some View {
+        if let t = MindMapStore.tree(book), let b = t.branch(forChapter: no), let name = t.branchLabel(b) {
+            Button { openMap(focus: no) } label: {
+                HStack(spacing: 7) {
+                    Circle().fill(MindPalette.hueColor(theme, branches: t.branches, branch: b)).frame(width: 7, height: 7)
+                    Text("脑图 · \(name)").font(.system(size: 12.5, weight: .medium)).lineLimit(1)
+                    Image(systemName: "chevron.right").font(.system(size: 9, weight: .bold)).opacity(0.55)
+                }
+                .foregroundStyle(Ink.soft)
+                .padding(.horizontal, 11).padding(.vertical, 6)
+                .background(MindPalette.hueColor(theme, branches: t.branches, branch: b).opacity(0.1), in: Capsule())
+                .overlay(Capsule().stroke(MindPalette.hueColor(theme, branches: t.branches, branch: b).opacity(0.3), lineWidth: 0.8))
+                .contentShape(Capsule())
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("这一\(book.unit)在思想脑图的「\(name)」一支")
+            .accessibilityHint("打开脑图并聚焦到这一\(book.unit)")
         }
     }
 
@@ -597,7 +646,8 @@ struct BaihuaScreen: View {
     // MARK: 篇末
 
     @ViewBuilder private func ending(_ c: BHChapter, col: CGFloat) -> some View {
-        if bookMode, let pack { bookEnding(pack, col: col) } else { deepEnding }
+        if isOverview, let pack { overviewEnding(pack, col: col) }
+        else if bookMode, let pack { bookEnding(pack, col: col) } else { deepEnding }
     }
 
     /// 书 / 文集的篇末:学过了没有、下一章(或学完这本书)、上一章。
@@ -634,13 +684,20 @@ struct BaihuaScreen: View {
                 }
                 .buttonStyle(.plain)
             }
-            ChapterInMapLink(book: book, chapter: no) { openMap(focus: no) }
+            if let t = MindMapStore.tree(book), !book.isCollection {
+                let here = !t.nodes(forChapter: no).isEmpty
+                endAction(here ? "回到脑图" : "看脑图", sub: here ? "这一\(book.unit)在全书骨架里的位置" : "全书的骨架一张图看完",
+                          icon: "point.3.connected.trianglepath.dotted") { openMap(focus: here ? no : nil) }
+            }
             HStack {
                 if let p = pack.chapters[safe: no - 2] {
                     Button { nav?.go(p.no, nil, nil) } label: {
                         Label(book.isCollection ? "上一篇:\(p.title)" : "上一\(book.unit):\(p.title)", systemImage: "arrow.left").lineLimit(1)
                     }
                     .font(.system(size: 14, weight: .medium)).foregroundStyle(theme.accentColor)
+                } else if no == 1, let o = pack.overview {
+                    Button { nav?.go(0, nil, nil) } label: { Label("回到总览:\(o.title)", systemImage: "arrow.left").lineLimit(1) }
+                        .font(.system(size: 14, weight: .medium)).foregroundStyle(theme.accentColor)
                 }
                 Spacer()
                 Button { sheet = .bookTOC } label: { Label("目录", systemImage: "list.bullet") }
@@ -650,6 +707,68 @@ struct BaihuaScreen: View {
         .padding(.top, 48).padding(.bottom, 80)
         .frame(width: col, alignment: .leading)
         .frame(maxWidth: .infinity)
+    }
+
+    /// 全书总览的篇末:读完了总览,下一步是看脑图(全书骨架)或从第一章读起。
+    private func overviewEnding(_ pack: BookPack, col: CGFloat) -> some View {
+        VStack(alignment: .leading, spacing: 16) {
+            HStack(spacing: 10) {
+                RoundedRectangle(cornerRadius: 2).fill(theme.accentColor).frame(width: 4, height: 18)
+                Text("读完总览").font(Fonts.song(19, bold: true)).foregroundStyle(Ink.text)
+                Spacer()
+            }
+            Text(MindMapStore.tree(book) == nil ? "全书的来龙去脉有了,接下来一章一章读。" : "全书的来龙去脉有了。可以先在脑图上把骨架走一遍,再一章一章读。")
+                .font(.system(size: 14)).foregroundStyle(Ink.soft).fixedSize(horizontal: false, vertical: true)
+            if let first = pack.chapters.first {
+                Button { nav?.go(first.no, BaihuaPos.get(book.id, first.no) ?? 0, nil) } label: {
+                    HStack(spacing: 12) {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("从第一\(book.unit)读起").font(.system(size: 12)).opacity(0.85)
+                            Text(first.title).font(Fonts.song(18, bold: true)).multilineTextAlignment(.leading)
+                            if let s = first.meta?.summary ?? first.meta?.subtitle ?? first.meta?.idea {
+                                Text(s).font(.system(size: 13)).opacity(0.85).lineLimit(2).multilineTextAlignment(.leading)
+                            }
+                        }
+                        Spacer()
+                        Image(systemName: "arrow.right")
+                    }
+                    .padding(18).frame(maxWidth: .infinity, alignment: .leading)
+                    .background(theme.accentColor, in: RoundedRectangle(cornerRadius: 16)).foregroundStyle(.white)
+                }
+                .buttonStyle(.plain)
+            }
+            if let t = MindMapStore.tree(book) {
+                endAction("看脑图", sub: "\(t.branches) 条主线 · \(t.count) 个节点", icon: "point.3.connected.trianglepath.dotted") { openMap(focus: nil) }
+            }
+            HStack {
+                Spacer()
+                Button { sheet = .bookTOC } label: { Label("目录", systemImage: "list.bullet") }
+                    .font(.system(size: 14, weight: .medium)).foregroundStyle(Ink.soft)
+            }
+        }
+        .padding(.top, 48).padding(.bottom, 80)
+        .frame(width: col, alignment: .leading)
+        .frame(maxWidth: .infinity)
+    }
+
+    /// 篇末的次要一步(回到脑图 / 看脑图):浅色整行,比「下一章」轻一档。
+    private func endAction(_ title: String, sub: String, icon: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            HStack(spacing: 12) {
+                Image(systemName: icon).font(.system(size: 16, weight: .semibold)).foregroundStyle(theme.accentColor).frame(width: 24)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(title).font(.system(size: 15.5, weight: .semibold)).foregroundStyle(Ink.text)
+                    Text(sub).font(.system(size: 12.5)).foregroundStyle(Ink.faint).lineLimit(1)
+                }
+                Spacer(minLength: 0)
+                Image(systemName: "chevron.right").font(.system(size: 12, weight: .bold)).foregroundStyle(Ink.faint)
+            }
+            .padding(.horizontal, 16).padding(.vertical, 13)
+            .background(theme.accentColor.opacity(0.07), in: RoundedRectangle(cornerRadius: 14))
+            .overlay(RoundedRectangle(cornerRadius: 14).stroke(theme.accentColor.opacity(0.18), lineWidth: 1))
+            .contentShape(RoundedRectangle(cornerRadius: 14))
+        }
+        .buttonStyle(.plain)
     }
 
     /// 脑图:从脑图里打开的这一章 → 退回那张脑图;否则在这一章上面盖一张(读那一章 = 退回来换章)。
@@ -781,14 +900,14 @@ struct BaihuaScreen: View {
             NoteEditor(id: id).presentationDetents([.medium, .large])
         case .bookTOC:
             if let pack {
-                ArticleTOCSheet(book: book, pack: pack, current: no, sections: c.sections, currentSection: currentSection(c),
+                ArticleTOCSheet(book: book, pack: pack, current: no, sections: c.sections, currentSection: currentSection(c), pinnedHub: true,
                                 openMap: book.mindmapNodes == nil ? nil : {
                                     sheet = nil
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { openMap(focus: nil) }
                                 }) { pick in
                     sheet = nil
                     switch pick {
-                    case .chapter(let n): if n != no { DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { nav?.go(n, nil, nil) } }
+                    case .chapter(let n): if n != no { DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { nav?.go(n, BaihuaPos.get(book.id, n), nil) } }
                     case .section(let i): DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { withAnimation(.easeInOut(duration: 0.35)) { top = i } }
                     }
                 }
@@ -1030,6 +1149,7 @@ extension BHBlock {
         case .quote(let o, let tr): return (o?.count ?? 0) + (tr?.count ?? 0)
         case .cite(let x, _): return x.count
         case .callout(_, _, let i), .steps(let i), .list(_, let i): return i.reduce(0) { $0 + $1.count }
+        case .ask(let q, let a): return q.count + a.count
         case .outline(let n): func w(_ n: [BHNode]) -> Int { n.reduce(0) { $0 + $1.x.count + w($1.children) } }; return w(n)
         default: return 0
         }

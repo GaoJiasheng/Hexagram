@@ -117,8 +117,8 @@ struct DeskHome: View {
 
     /// 「第 N 卦 · 题名」;周易十翼等非卦章只显示题名。
     private func chapterLabel(_ b: BookInfo, _ n: Int, withNo: Bool = true) -> String {
-        let c = library.pack(b)?.chapters[safe: n - 1]
-        if c?.kind == "text", let t = c?.title { return t }
+        let c = library.pack(b)?.chapter(n)
+        if c?.kind == "text" || n == 0, let t = c?.title { return t }
         let head = "第 \(Numerals.chinese(n)) \(b.unit)"
         if withNo, let t = c?.title, !t.isEmpty { return "\(head) · \(t)" }
         return head

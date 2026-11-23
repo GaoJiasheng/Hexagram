@@ -170,12 +170,21 @@ struct ChapterMeta: Codable, Hashable {
     var chars: Int           // 文章字数(典籍是原文字数)
     var idea: String?
     var article: Bool        // 有文章(书 / 文集的正文;典籍的深读)
+    /// 目录里的一行概要(book.json 章的 summary,≤ 80 字);老包没有
+    var summary: String? = nil
 }
 
 struct BookPack: Codable {
     var id: String
     var version: String
     var chapters: [Chapter]
+    /// 书级的全书总览(书包根上的 overview.json):不是一章、没有章号,坐标记作第 0 章。老包、典籍没有。
+    var overview: Chapter? = nil
+
+    /// 按章号取:0 = 全书总览(有的话),1… = 正文各章。
+    func chapter(_ no: Int) -> Chapter? { no == 0 ? overview : chapters[safe: no - 1] }
+    /// 总览(有的话)+ 各章:时长归书、同步找坐标用。学过 / 学完只算 chapters。
+    var allChapters: [Chapter] { (overview.map { [$0] } ?? []) + chapters }
 }
 
 extension BookInfo {

@@ -34,6 +34,8 @@ final class MindMapModel {
     @ObservationIgnored private var saved: MindMapUIState?
     @ObservationIgnored private var saveWork: DispatchWorkItem?
     @ObservationIgnored var reduceMotion = false
+    /// 打开就从根走读(书的首页点「走读」进来)
+    @ObservationIgnored var autoWalk = false
     @ObservationIgnored private var pendingFit: (CGRect, Date)?
     #if DEBUG
     @ObservationIgnored private let env = ProcessInfo.processInfo.environment
@@ -136,6 +138,7 @@ final class MindMapModel {
             c.relayout(anchor: nil, animated: false)
             c.fit(animated: false, maxZoom: 1.1)
         }
+        if autoWalk { autoWalk = false; startWalk(from: 0) }
         #if DEBUG
         debugAfterOpen()
         #endif

@@ -45,7 +45,7 @@ private struct Root: View {
     #if DEBUG
     @State private var ready = false
     // DESK_OPEN=baihua 单独给时按 reader 走(进阅读器再自动打开白话深读)
-    private let demo = ProcessInfo.processInfo.environment["DESK_DEMO"] ?? (ProcessInfo.processInfo.environment["DESK_OPEN"] == "baihua" ? "reader" : ProcessInfo.processInfo.environment["DESK_OPEN"] == "mindmap" ? "mindmap" : "")
+    private let demo = ProcessInfo.processInfo.environment["DESK_DEMO"] ?? (ProcessInfo.processInfo.environment["DESK_OPEN"] == "baihua" ? "reader" : ProcessInfo.processInfo.environment["DESK_OPEN"] == "mindmap" ? "mindmap" : ProcessInfo.processInfo.environment["DESK_OPEN"] == "overview" ? "overview" : "")
     private func env(_ k: String, _ d: String) -> String { ProcessInfo.processInfo.environment[k] ?? d }
     var body: some View {
         Group {
@@ -68,6 +68,10 @@ private struct Root: View {
             else if demo == "home", let b = Library.shared.book(env("DESK_BOOK", "daodejing")) {
                 BookHomeScreen(book: b) { _ in }
             }
+            else if demo == "overview", let b = Library.shared.book(env("DESK_BOOK", "daodejing")), let p = Library.shared.pack(b) {
+                // DESK_OPEN=overview DESK_BOOK=g-xxx:直接读这本书的全书总览(第 0 章;DESK_SEG=n 落到第 n 块)
+                ArticleBookScreen(book: b, pack: p, start: ReadPos(ch: 0, seg: Int(env("DESK_SEG", "0")) ?? 0, at: Date()))
+            }
             else if demo == "reader", let b = Library.shared.book(env("DESK_BOOK", "daodejing")), let p = Library.shared.pack(b), b.isArticleBook {
                 ArticleBookScreen(book: b, pack: p, start: ReadPos(ch: Int(env("DESK_CH", "1")) ?? 1, seg: Int(env("DESK_SEG", "0")) ?? 0, at: Date()))
             }
@@ -83,6 +87,7 @@ private struct Root: View {
                 ImportCenter.shared.open(URL(fileURLWithPath: p))
             }
             if env("DESK_STATS", "") == "1" { await StatsSeed.run() }
+            if env("DESK_SEEDMIG", "") == "1" { seedMigration() }
             guard !demo.isEmpty else { return }
             await Library.shared.refresh()
             for id in ["daodejing", "lunyu", env("DESK_BOOK", "daodejing")] { if let b = Library.shared.book(id) { await Library.shared.add(b) } }
@@ -93,6 +98,22 @@ private struct Root: View {
             if env("DESK_DEMO", "") == "home" || Library.shared.book(env("DESK_BOOK", ""))?.isDeskbook == true { ready = true; return }
             ready = true
         }
+    }
+
+    /// DESK_SEEDMIG=1:在 DESK_BOOK(文章书)第 1、3 章各造一条白话划线、续读落在第 3 章第 5 块、两章各记几分钟——验书包换版式时的坐标迁移用。
+    private func seedMigration() {
+        guard let b = Library.shared.book(env("DESK_BOOK", "")), let p = Library.shared.pack(b), b.isArticleBook else { return }
+        for no in [1, 3] {
+            guard let c = p.chapter(no), let bh = DeskbookStore.shared.article(b.id, no),
+                  let i = bh.blocks.firstIndex(where: { if case .p = $0 { return true } else { return false } }),
+                  let t = bh.blocks[i].markable, let s = t.chars(2, min(14, t.count)) else { continue }
+            HighlightStore.shared.upsertDemo(Highlight(id: "mig-\(b.id)-\(no)", book: b.id, corpus: c.src.corpus, slug: c.src.slug, ch: c.src.ch, no: no,
+                                                       layer: "b", seg: i, start: 2, end: 2 + s.count, text: s, color: no == 1 ? 2 : 0, note: "迁移前划在第 \(no) 章", at: Date()))
+            ReadDaysStore.shared.addTime(c.src, sec: no == 1 ? 200 : 240, final: true, day: Date())
+        }
+        ProgressStore.shared.set(b.id, ch: 3, seg: 5)
+        BaihuaPos.set(b.id, 3, 5)
+        print("[seedmig] \(b.id) rev \(b.revision ?? 0): 划线 2 条 · 续读 3/5 · 时长 1:200s 3:240s")
     }
 
     /// DESK_HL=1:在 DESK_BOOK 第 DESK_CH 章造几条划线(四色各一、一条带批注、一条在译文上),固定 id,重复启动不累积。

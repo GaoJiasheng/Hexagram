@@ -20,7 +20,7 @@ struct FindHit: Identifiable, Hashable, Sendable {
 enum BookSearch {
     /// 「第八章 · 上善若水」;卦与十翼只用题名。
     static func chapterLabel(_ c: Chapter, unit: String) -> String {
-        if c.gua != nil || c.kind == "text" { return c.title }
+        if c.gua != nil || c.kind == "text" || c.no == 0 { return c.title }      // 第 0 章是书包的全书总览,不排号
         let head = "第 \(Numerals.chinese(c.no)) \(unit)"
         return c.title.isEmpty ? head : "\(head) · \(c.title)"
     }

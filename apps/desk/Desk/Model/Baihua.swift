@@ -279,6 +279,8 @@ enum BHBlock: Hashable {
     case video(BHMedia)
     case code(String, lang: String?)
     case divider
+    /// 书包文章的「想一想」:先给问题,点开才见答案(答案可划线)
+    case ask(q: String, a: String)
 
     /// ctx 为 nil:官方白话包(只有十种块、只认 ** 记号);有 ctx:书包文章(另认六种块与 `等宽`、链接)。
     init?(_ v: JSONValue, ctx: BHDecodeContext? = nil) {
@@ -331,6 +333,10 @@ enum BHBlock: Hashable {
             let lang = v["lang"]?.string
             self = .code(raw, lang: (lang ?? "").isEmpty ? nil : lang)
         case "divider": guard ctx != nil else { return nil }; self = .divider
+        case "ask":
+            let q = mark(v["q"]?.string ?? ""), a = mark(v["a"]?.string ?? "")
+            guard ctx != nil, !q.isEmpty, !a.isEmpty else { return nil }
+            self = .ask(q: q, a: a)
         default: return nil
         }
     }
@@ -339,6 +345,7 @@ enum BHBlock: Hashable {
     var markable: String? {
         switch self {
         case .lead(let x), .p(let x): return BHText.plain(x)
+        case .ask(_, let a): return BHText.plain(a)
         default: return nil
         }
     }
@@ -672,6 +679,18 @@ enum BaihuaPos {
         let k = "\(book)|\(no)|\(sub)"
         guard map[k] != block else { return }
         map[k] = block
+        UserDefaults.standard.set(map, forKey: "desk.baihuaPos")
+    }
+    /// 章号整体挪位(书包换了版式):「书|章」「书|章|篇」两种键都搬。
+    static func remap(_ book: String, _ f: (Int) -> Int) {
+        var out = map.filter { !$0.key.hasPrefix("\(book)|") }
+        for (k, v) in map where k.hasPrefix("\(book)|") {
+            var parts = k.split(separator: "|", omittingEmptySubsequences: false).map(String.init)
+            guard parts.count >= 2, let n = Int(parts[1]) else { continue }
+            parts[1] = String(f(n))
+            out[parts.joined(separator: "|")] = v
+        }
+        map = out
         UserDefaults.standard.set(map, forKey: "desk.baihuaPos")
     }
     static func clear(_ book: String) {
