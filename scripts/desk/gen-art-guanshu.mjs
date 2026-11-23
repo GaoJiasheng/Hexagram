@@ -10,6 +10,9 @@
 //   node scripts/desk/gen-art-guanshu.mjs --status                 # 每本 已出/应出 与总数
 //   加 --dry:只打印第一张待出图交给 Codex 的指令,不出图
 //
+// 现成 prompt:<slug>/<stem>.ready.txt 在(art-prompts-apply.mjs 写的,Claude 预先设计好)→ Codex 只照抄进 prompt.txt 再出图,
+// 不读材料、不设计;没有就照旧让 Codex 读材料自己设计。本文件也被 art-prompts-*.mjs import(取材料 / brief),此时不跑命令行。
+//
 // 额度暂停:Codex 报用量 / 速率上限,或连续 STOP_AFTER_FAILS 张出不了图 → 不再派新活,写 books/paused.json,
 // 以退出码 75 结束;重跑即从停下处接着出(已有的图跳过)。--all 按 index.json 顺序逐本出,出齐一本即导出一本。
 import fs from 'node:fs'
@@ -17,11 +20,12 @@ import os from 'node:os'
 import path from 'node:path'
 import { spawn, execFileSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
+import { LAYOUT_PHRASE, CLOSING, SIZE, chosenOf } from './art-prompts-rules.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const BOOKS_DIR = path.join(ROOT, 'src/data/books')
 const rj = (f) => JSON.parse(fs.readFileSync(f, 'utf8'))
-const CACHE = path.join(ROOT, 'scripts/.cache/desk-art/books')
+export const CACHE = path.join(ROOT, 'scripts/.cache/desk-art/books')
 const EXPORT = path.join(ROOT, 'scripts/.cache/desk-art/books-export')
 const PAUSED = path.join(CACHE, 'paused.json')
 const EXIT_PAUSED = 75 // EX_TEMPFAIL:额度 / 限流暂停,重跑即续
@@ -29,17 +33,18 @@ const STOP_AFTER_FAILS = Math.max(1, +(process.env.GUANSHU_STOP_AFTER_FAILS || 3
 const CODEX_BIN = process.env.GUANSHU_CODEX || 'codex'
 
 // ---------- 参数 ----------
-const argv = process.argv.slice(2)
+const IS_MAIN = !!process.argv[1] && fs.realpathSync(process.argv[1]) === fileURLToPath(import.meta.url)
+const argv = IS_MAIN ? process.argv.slice(2) : []
 const flag = (n) => argv.includes(n)
 const opt = (n, d) => { const i = argv.indexOf(n); return i >= 0 && argv[i + 1] && !argv[i + 1].startsWith('--') ? argv[i + 1] : d }
 const VALUE_OPTS = ['--kind', '--chapters', '--limit', '--concurrency', '--contact', '--export', '--hint']
 const positional = argv.filter((a, i) => !a.startsWith('--') && !VALUE_OPTS.includes(argv[i - 1]))
 
 // ---------- 固定画风(与古籍那一套同一句,全 App 成套)----------
-const STYLE = 'Chinese ink-wash painting with light translucent color washes (淡彩水墨): soft ink lines and wet brush gradients, tinted with pale mineral blue-green, warm ochre and a touch of cinnabar; warm off-white rice-paper ground; airy, luminous, lots of breathing space.'
+export const STYLE = 'Chinese ink-wash painting with light translucent color washes (淡彩水墨): soft ink lines and wet brush gradients, tinted with pale mineral blue-green, warm ochre and a touch of cinnabar; warm off-white rice-paper ground; airy, luminous, lots of breathing space.'
 
 // ---------- 书目 ----------
-const INDEX = rj(path.join(BOOKS_DIR, 'index.json'))
+export const INDEX = rj(path.join(BOOKS_DIR, 'index.json'))
 const BY_SLUG = Object.fromEntries(INDEX.map((b) => [b.slug, b]))
 
 const strip = (s) => String(s || '').replace(/\*\*/g, '').replace(/<[^>]+>/g, '')
@@ -57,7 +62,7 @@ function articleText(a) {
   return out.filter(Boolean).join('\n')
 }
 
-function loadBook(slug) {
+export function loadBook(slug) {
   const meta = BY_SLUG[slug]
   if (!meta) throw new Error(`未知书 ${slug}(见 src/data/books/index.json)`)
   const dir = path.join(BOOKS_DIR, slug)
@@ -104,6 +109,18 @@ const bookLine = (m) => `Book: 《${m.title}》${m.subtitle ? `  (original title
 Tags: ${(m.tags || []).join(' / ')}
 One-line blurb: ${m.oneLine || ''}`
 
+// 指令的几块(出图指令与 art-prompts-prep 的 brief 共用,改一处两处都跟着变)
+const headMaterial = (bk, ch) => `${bookLine(bk.meta)}
+${ch.n === 0 ? 'This is the whole-book overview essay (chapter 0).' : `Chapter ${ch.n}`}: ${ch.title}
+Subtitle: ${ch.subtitle || ''}
+Central idea: ${ch.centralIdea || ''}
+Section headings: ${clip(ch.headings.join(' / '), 400)}
+Body of the notes (may be truncated):
+${clip(ch.text, 3000)}`
+const HEAD_LAYOUT = 'A chapter illustration, landscape 3:2 (1536x1024). In the app it sits at the TOP of the article as a soft head image that fades downward into the page. So: keep the top third of the canvas as nearly blank rice paper; let the scene spread across the lower two thirds and across most of the width (a real scene with a readable subject and a little setting around it, NOT one tiny object lost in an empty corner); soft, light-to-medium contrast, translucent washes, never a heavy dark full-bleed composition.'
+const NO_LOOKUP = 'Work ONLY from the material above: do not search the web, do not look up or quote the book itself or any other source, do not read any files.'
+const HEAD_DESIGN = 'First list 3-5 CONCRETE imagery items that THIS chapter itself contains — an example or story the author tells, a scene, an object, a metaphor the notes use (e.g. for a chapter built on "the man who crossed the room at the party to talk to a stranger" draw that room; for "168 Spanish soldiers meet the Inca army at Cajamarca" draw the plaza and the waiting host at a distance). For each item, quote the short phrase of the material it comes from. Then choose one or two to organize the picture, so that someone who has read this chapter recognizes which chapter it is at a glance. Do NOT make a generic mood landscape, and do NOT illustrate the abstract idea with a symbol.'
+
 function instructionHead(bk, ch) {
   return `You will create ONE illustration for a chapter of a non-fiction / literary book (reading notes in Chinese), in two steps.
 
@@ -111,20 +128,14 @@ function instructionHead(bk, ch) {
 ${STYLE}
 
 == MATERIAL ==
-${bookLine(bk.meta)}
-${ch.n === 0 ? 'This is the whole-book overview essay (chapter 0).' : `Chapter ${ch.n}`}: ${ch.title}
-Subtitle: ${ch.subtitle || ''}
-Central idea: ${ch.centralIdea || ''}
-Section headings: ${clip(ch.headings.join(' / '), 400)}
-Body of the notes (may be truncated):
-${clip(ch.text, 3000)}
+${headMaterial(bk, ch)}
 ${usedSubjects(bk, `head-${ch.n}`)}
 == WHAT THIS IMAGE IS ==
-A chapter illustration, landscape 3:2 (1536x1024). In the app it sits at the TOP of the article as a soft head image that fades downward into the page. So: keep the top third of the canvas as nearly blank rice paper; let the scene spread across the lower two thirds and across most of the width (a real scene with a readable subject and a little setting around it, NOT one tiny object lost in an empty corner); soft, light-to-medium contrast, translucent washes, never a heavy dark full-bleed composition.
+${HEAD_LAYOUT}
 
 == STEP 1: design the picture (English) ==
-Work ONLY from the material above: do not search the web, do not look up or quote the book itself or any other source, do not read any files.
-First list 3-5 CONCRETE imagery items that THIS chapter itself contains — an example or story the author tells, a scene, an object, a metaphor the notes use (e.g. for a chapter built on "the man who crossed the room at the party to talk to a stranger" draw that room; for "168 Spanish soldiers meet the Inca army at Cajamarca" draw the plaza and the waiting host at a distance). For each item, quote the short phrase of the material it comes from. Then choose one or two to organize the picture, so that someone who has read this chapter recognizes which chapter it is at a glance. Do NOT make a generic mood landscape, and do NOT illustrate the abstract idea with a symbol. Write the result into prompt.txt in the current directory, in this form:
+${NO_LOOKUP}
+${HEAD_DESIGN} Write the result into prompt.txt in the current directory, in this form:
 IMAGERY: <the 3-5 items, each with its quoted source phrase>
 CHOSEN: <the one or two you picked and why; name the era and place they belong to>
 PROMPT: <the final English image prompt, which must begin with the fixed art style sentence above, then the scene, then the layout notes and hard rules>
@@ -138,30 +149,32 @@ When finished, print only the absolute path of out.png. Do nothing else.`
 }
 
 const HINT = opt('--hint', '')
+const BANNER_LAYOUT = 'A wide banner for the home-screen card of this book, landscape 3:2 (1536x1024). Unlike the cover (which carries the book\'s governing image), the banner shows a concrete scene, example or place from inside the book. Complete picture with a clear main subject placed in the right or central part; the lower-left area must stay calm (soft washes only) because the app overlays the book title there in white on a dark gradient.'
+const COVER_LAYOUT = 'A book cover, portrait 2:3 (1024x1536). Complete picture with a clear, definite main subject. The bottom third must be left clean and quiet (paper-colored, only faint washes) because the app will typeset the book title there. Keep the upper two thirds as the picture.'
+const coverMaterial = (bk, banner) => `${bookLine(bk.meta)}
+Overview essay central idea: ${bk.overview.centralIdea || ''}
+Overview section headings: ${clip(bk.overview.headings.join(' / '), 500)}
+Chapter titles: ${clip(bk.chapters.slice(1).map((c) => c.title).join(' / '), 500)}
+Opening of the overview (truncated):
+${clip(bk.overview.text, banner ? 2500 : 1200)}`
+const COVER_DESIGN = 'From the material, pull out 3-5 of the most representative CONCRETE images of the whole book (things, scenes, examples, metaphors the book actually uses — quote the phrase each comes from). Pick one or two to make a single memorable, iconic composition that belongs to this book and no other — not a generic mood landscape, not a symbol of the abstract theme.'
+
 function instructionCover(bk, banner = false) {
-  const ov = bk.overview
-  const layout = banner
-    ? 'A wide banner for the home-screen card of this book, landscape 3:2 (1536x1024). Unlike the cover (which carries the book\'s governing image), the banner shows a concrete scene, example or place from inside the book. Complete picture with a clear main subject placed in the right or central part; the lower-left area must stay calm (soft washes only) because the app overlays the book title there in white on a dark gradient.'
-    : 'A book cover, portrait 2:3 (1024x1536). Complete picture with a clear, definite main subject. The bottom third must be left clean and quiet (paper-colored, only faint washes) because the app will typeset the book title there. Keep the upper two thirds as the picture.'
+  const layout = banner ? BANNER_LAYOUT : COVER_LAYOUT
   return `You will create ONE ${banner ? 'banner' : 'cover'} illustration for a book (non-fiction / literary, reading notes in Chinese), in two steps.
 
 == FIXED ART STYLE (identical for every image in this series) ==
 ${STYLE}
 
 == MATERIAL ==
-${bookLine(bk.meta)}
-Overview essay central idea: ${ov.centralIdea || ''}
-Overview section headings: ${clip(ov.headings.join(' / '), 500)}
-Chapter titles: ${clip(bk.chapters.slice(1).map((c) => c.title).join(' / '), 500)}
-Opening of the overview (truncated):
-${clip(ov.text, banner ? 2500 : 1200)}
+${coverMaterial(bk, banner)}
 ${usedSubjects(bk, banner ? 'banner' : 'cover')}
 == WHAT THIS IMAGE IS ==
 ${layout}
 
 ${HINT ? `== EXTRA CONSTRAINT FOR THIS IMAGE (from the art director) ==\n${HINT}\n\n` : ''}== STEP 1: design the picture (English) ==
-Work ONLY from the material above: do not search the web, do not look up or quote the book itself or any other source, do not read any files.
-From the material, pull out 3-5 of the most representative CONCRETE images of the whole book (things, scenes, examples, metaphors the book actually uses — quote the phrase each comes from). Pick one or two to make a single memorable, iconic composition that belongs to this book and no other — not a generic mood landscape, not a symbol of the abstract theme. Write into prompt.txt in the current directory:
+${NO_LOOKUP}
+${COVER_DESIGN} Write into prompt.txt in the current directory:
 IMAGERY: <the 3-5 items, each with its quoted source phrase>
 CHOSEN: <the one or two you picked and why; name the era and place they belong to>
 PROMPT: <the final English image prompt, beginning with the fixed art style sentence above, then the scene, then layout notes and hard rules>
@@ -172,6 +185,54 @@ Use your image generation tool to create exactly ONE image from that PROMPT and 
 ${COMMON_RULES}${extraRules(bk.meta)}
 
 When finished, print only the absolute path of out.png. Do nothing else.`
+}
+
+// ---------- 预先设计 prompt(art-prompts-prep 用)与现成 prompt 的出图指令 ----------
+// brief = 今天给 Codex 的指令去掉「出图」那一步:画风句 + 材料 + 这张图是什么 + 怎么设计 + 全部硬规矩,另给版式句 / 收尾句原文
+export function briefFor(bk, kind, ch) {
+  const head = kind === 'head'
+  return `ONE ${head ? 'chapter illustration' : kind} for a non-fiction / literary book (reading notes in Chinese). Size: ${SIZE[kind]}.
+
+== FIXED ART STYLE (the PROMPT must begin with exactly this sentence) ==
+${STYLE}
+
+== MATERIAL ==
+${head ? headMaterial(bk, ch) : coverMaterial(bk, kind === 'banner')}
+
+== WHAT THIS IMAGE IS ==
+${head ? HEAD_LAYOUT : kind === 'banner' ? BANNER_LAYOUT : COVER_LAYOUT}
+Layout sentence — copy it verbatim into the PROMPT, right after the scene: ${LAYOUT_PHRASE[kind]}
+
+== HOW TO DESIGN IT ==
+${NO_LOOKUP}
+${head ? HEAD_DESIGN : COVER_DESIGN}
+Give: imagery = the 3-5 items, each with its quoted source phrase; chosen = the one or two you picked and why, naming the era and place they belong to; prompt = the final English image prompt: the fixed art style sentence, then the scene (only what IS in the picture — never name forbidden things, not even as "no …"), then the layout sentence, then the closing sentence.
+
+${COMMON_RULES}${extraRules(bk.meta)}
+
+Closing sentence — the PROMPT must end with exactly this: ${CLOSING}`
+}
+
+export const readyFile = (dir, stem) => path.join(dir, `${stem}.ready.txt`)
+
+// 现成 prompt 在 → 只抄写 + 出一张图;不给材料、不让读、不让上网
+export function instructionReady(ready, kind) {
+  return `You will create ONE illustration. The picture has already been designed; do not redesign or change it.
+
+STEP 1: write a file prompt.txt in the current directory whose content is exactly the text between the two marker lines below (without the marker lines):
+<<<<<<<< BEGIN
+${ready.trim()}
+>>>>>>>> END
+
+STEP 2: use your image generation tool to create exactly ONE image from the PROMPT line above and save it in the current directory as out.png (${SIZE[kind]}).
+
+Do not read any other files, do not search the web, do not alter the prompt. When finished, print only the absolute path of out.png. Do nothing else.`
+}
+
+export function buildInstruction(bk, kind, ch, dir) {
+  const rf = readyFile(dir, stemOf(kind, ch))
+  if (fs.existsSync(rf)) return { instruction: instructionReady(fs.readFileSync(rf, 'utf8'), kind), ready: rf }
+  return { instruction: kind === 'head' ? instructionHead(bk, ch) : instructionCover(bk, kind === 'banner'), ready: null }
 }
 
 // ---------- 机器检查(python3 + PIL)----------
@@ -227,13 +288,13 @@ function runCodex(instruction) {
   })
 }
 
-const stemOf = (kind, ch) => (kind === 'head' ? `head-${ch.n}` : kind)
+export const stemOf = (kind, ch) => (kind === 'head' ? `head-${ch.n}` : kind)
 
 // 返回 { status: ok|fail|limit, sec, tokens, why }
 async function makeOne(bk, kind, ch, dir, state) {
   const stem = stemOf(kind, ch)
   const png = path.join(dir, `${stem}.png`), txt = path.join(dir, `${stem}.txt`)
-  const instruction = kind === 'head' ? instructionHead(bk, ch) : instructionCover(bk, kind === 'banner')
+  const { instruction, ready } = buildInstruction(bk, kind, ch, dir)
   let why = '', total = 0, toks = [], r, limit = null
   for (let attempt = 1; attempt <= 2; attempt++) {
     if (state.paused) { why = '已暂停,未出'; break }
@@ -249,8 +310,8 @@ async function makeOne(bk, kind, ch, dir, state) {
   const rec = { book: bk.slug, stem, sec: total, tokens: toks.join('+'), ok: !why, at: new Date().toISOString() }
   if (!why) {
     fs.copyFileSync(r.png, png)
-    if (r.promptFile) fs.copyFileSync(r.promptFile, txt); else fs.writeFileSync(txt, '(Codex 未写 prompt.txt)')
-    console.log(`✓ ${bk.slug}/${stem} ${total}s tokens=${rec.tokens || '?'}`)
+    if (r.promptFile) fs.copyFileSync(r.promptFile, txt); else fs.writeFileSync(txt, ready ? fs.readFileSync(ready, 'utf8') : '(Codex 未写 prompt.txt)')
+    console.log(`✓ ${bk.slug}/${stem}${ready ? '(现成 prompt)' : ''} ${total}s tokens=${rec.tokens || '?'}`)
   } else if (why !== '已暂停,未出') {
     rec.why = limit ? `limit: ${limit}` : why
     console.log(`✗ ${bk.slug}/${stem} ${rec.why.slice(0, 200)}`)
@@ -277,8 +338,8 @@ function mergeJson(file, update) {
   fs.writeFileSync(file, JSON.stringify(update(cur), null, 1))
 }
 
-function expectedStems(bk) { return ['cover', 'banner', ...bk.chapters.map((c) => `head-${c.n}`)] }
-function doneStems(slug) {
+export function expectedStems(bk) { return ['cover', 'banner', ...bk.chapters.map((c) => `head-${c.n}`)] }
+export function doneStems(slug) {
   const d = path.join(CACHE, slug)
   return fs.existsSync(d) ? new Set(fs.readdirSync(d).filter((f) => /^(cover|banner|head-\d+)\.png$/.test(f)).map((f) => f.slice(0, -4))) : new Set()
 }
@@ -342,17 +403,19 @@ print(n, ('超 220KB:' + ','.join(big)) if big else '')
 }
 
 function status() {
-  let done = 0, total = 0, complete = 0
+  let done = 0, total = 0, complete = 0, readyN = 0
   for (const m of INDEX) {
     const bk = loadBook(m.slug), exp = expectedStems(bk), have = doneStems(m.slug)
     const d = exp.filter((s) => have.has(s)).length
-    done += d; total += exp.length; if (d === exp.length) complete++
-    if (d) console.log(`${m.slug.padEnd(40)} ${d}/${exp.length}${d === exp.length ? ' ✓' : ''}`)
+    const rd = exp.filter((s) => !have.has(s) && fs.existsSync(readyFile(path.join(CACHE, m.slug), s))).length
+    done += d; total += exp.length; readyN += rd; if (d === exp.length) complete++
+    if (d || rd) console.log(`${m.slug.padEnd(40)} ${d}/${exp.length}${d === exp.length ? ' ✓' : ''}${rd ? `  现成 prompt ${rd}` : ''}`)
   }
-  console.log(`合计 ${done}/${total} 张;出齐 ${complete}/${INDEX.length} 本`)
+  console.log(`合计 ${done}/${total} 张;出齐 ${complete}/${INDEX.length} 本;待出 ${total - done} 张中 ${readyN} 张已有现成 prompt`)
   if (fs.existsSync(PAUSED)) console.log('暂停记录:', fs.readFileSync(PAUSED, 'utf8'))
 }
 
+async function main() {
 if (flag('--status')) { status(); process.exit(0) }
 if (argv.includes('--contact')) { const s = opt('--contact'); if (!s) { console.error('--contact <slug>'); process.exit(1) } console.log(contact(s)); process.exit(0) }
 if (argv.includes('--export')) {
@@ -379,7 +442,7 @@ const slugs = all ? INDEX.map((m) => m.slug) : [positional[0]]
 for (const s of slugs) if (!BY_SLUG[s]) { console.error(`未知书 ${s}`); process.exit(1) }
 
 fs.mkdirSync(CACHE, { recursive: true })
-if (fs.existsSync(PAUSED)) { console.log('上次暂停:', fs.readFileSync(PAUSED, 'utf8').replace(/\s+/g, ' ')); fs.rmSync(PAUSED) }
+if (fs.existsSync(PAUSED) && !flag('--dry')) { console.log('上次暂停:', fs.readFileSync(PAUSED, 'utf8').replace(/\s+/g, ' ')); fs.rmSync(PAUSED) } // --dry 不动暂停记录
 
 const state = { paused: null, consecutiveFails: 0, timing: [], ok: 0, fail: 0, last: null }
 let budget = limit
@@ -406,7 +469,7 @@ async function runBook(slug) {
   if (!todo.length) return bk
   if (flag('--dry')) { // 只打印第一张待出图的指令,不调 Codex
     const j = todo[0]
-    console.log(j.kind === 'head' ? instructionHead(bk, j.ch) : instructionCover(bk, j.kind === 'banner'))
+    console.log(buildInstruction(bk, j.kind, j.ch, dir).instruction)
     process.exit(0)
   }
   console.log(`《${bk.meta.title}》${slug}:共 ${jobs.length} 张,待出 ${todo.length} 张,并发 ${conc}`)
@@ -457,3 +520,6 @@ if (state.paused) {
   console.log(`已写 ${path.relative(ROOT, PAUSED)};重跑同一命令即续。`)
   process.exit(EXIT_PAUSED)
 }
+}
+
+if (IS_MAIN) await main()
