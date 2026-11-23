@@ -316,7 +316,9 @@ async function buildBook(entry) {
   if (fs.existsSync(path.join(dir, 'overview.json'))) {
     const src = readJson(path.join(dir, 'overview.json'))
     const { article } = articleChapter(0, src.title, src, `${slug}/overview`)
-    overview = { title: src.title || '全书总览', ...article }
+    // 书桌的总览卡片自己带「全书总览」字样,这里给一个短标题(源标题「白话《X》· 全书总览」又长又重复);没有 idea 时用书目的一句话
+    overview = { ...article, title: `一篇读懂《${entry.title}》` }
+    if (!overview.idea && typeof entry.oneLine === 'string' && entry.oneLine.trim()) overview.idea = [...entry.oneLine.trim()].slice(0, 200).join('')
     S.overviews++
   }
   const mindmap = fs.existsSync(path.join(dir, 'mindmap.json')) ? buildMindmap(readJson(path.join(dir, 'mindmap.json')), entry, slug) : null
