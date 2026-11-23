@@ -12,7 +12,7 @@ procs=$(pgrep -f 'codex exec --skip-git-repo-check.*desk-art' | wc -l | tr -d ' 
 gs_run=$(pgrep -f 'gen-art-guanshu.mjs --all' | wc -l | tr -d ' ')
 cl_run=$(pgrep -f 'scripts/desk/art-run-all.sh' | wc -l | tr -d ' ')
 echo "$(date +%H:%M) 观书 $((gs_total-gs_left))/$gs_total(差 $gs_left) · 典籍 $((cl_total-cl_left))/$cl_total(差 $cl_left) · 近3分 $m3 张 · 近10分 $m10 张 · Codex $procs 路 · 观书批 $([ $gs_run -gt 0 ] && echo 在跑 || echo 已停) · 典籍批 $([ $cl_run -gt 0 ] && echo 在跑 || echo 已停)"
-echo "Codex 周额度已用 $(scripts/desk/codex-quota.sh)%(到 89% 自动停,给 owner 留一成)$([ -f scripts/.cache/codex-guard-stopped ] && echo " · 守卫已触发:$(cat scripts/.cache/codex-guard-stopped)")"
+echo "Codex 周额度已用 $(scripts/desk/codex-quota.sh)%(到 69% 自动停,给 owner 留三成)$([ -f scripts/.cache/codex-guard-stopped ] && echo " · 守卫已触发:$(cat scripts/.cache/codex-guard-stopped)")"
 notes=$(pgrep -f 'node scripts/desk/notes-run-all' | wc -l | tr -d ' ')
 [ "$notes" -gt 0 ] && echo "详注批 在跑:$(pgrep -fl 'node scripts/desk/notes-codex' | head -1 | cut -d' ' -f2- | cut -c1-80)"
 [ -f $C/books/paused.json ] && echo "观书暂停:$(tr -s ' \n' ' ' < $C/books/paused.json | cut -c1-300)"
