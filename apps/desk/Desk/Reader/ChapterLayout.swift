@@ -5,7 +5,7 @@ extension NSAttributedString.Key {
     static let deskSeg = NSAttributedString.Key("desk.seg")
     /// 带注释的字词:值是 "段下标:注释下标"。
     static let deskNote = NSAttributedString.Key("desk.note")
-    /// 展开的译文段:值是段后留白的高度(画底色时要扣掉)。
+    /// 展开的译文段:值是底色框底边在末行字下面留出的高度。
     static let deskTrans = NSAttributedString.Key("desk.trans")
     /// 正文本身(不含爻题、条号等前缀和段尾换行):值是层名,"o" 原文 · "t" 译文。划线的偏移按它算。
     static let deskLayer = NSAttributedString.Key("desk.layer")
@@ -63,33 +63,35 @@ final class DeskLayoutManager: NSLayoutManager {
                 }
             }
         }
+        for b in transBoxes(ts, chars: chars, glyphsToShow: glyphsToShow) {
+            let box = b.offsetBy(dx: origin.x, dy: origin.y)
+            tint.withAlphaComponent(0.09).setFill()
+            UIBezierPath(roundedRect: box, cornerRadius: 12).fill()
+            tint.withAlphaComponent(0.75).setFill()
+            UIBezierPath(roundedRect: CGRect(x: box.minX, y: box.minY + 10, width: 3.5, height: max(box.height - 20, 4)), cornerRadius: 2).fill()
+        }
+    }
+
+    /// 展开译文的底色框(容器坐标,未加 origin)。chars / glyphsToShow:这次要画的字与字形。
+    func transBoxes(_ ts: NSTextStorage, chars: NSRange, glyphsToShow: NSRange) -> [CGRect] {
+        var out: [CGRect] = []
         ts.enumerateAttribute(.deskTrans, in: chars) { v, r, _ in
-            guard let gap = v as? CGFloat else { return }
+            guard let pad = v as? CGFloat else { return }
             let g = NSIntersectionRange(glyphRange(forCharacterRange: r, actualCharacterRange: nil), glyphsToShow)
             guard g.length > 0 else { return }
             var box = CGRect.null
             var lastUsed = CGRect.null
             enumerateLineFragments(forGlyphRange: g) { lf, used, _, _, _ in box = box.union(lf); lastUsed = used }
             guard !box.isNull else { return }
-            // 只有译文真在这一栏收尾,末行才带着段后留白(要扣掉);跨到下一栏的,这一栏的末行不带
+            // 只有译文真在这一栏收尾,底边才落在末行字下 pad 处;跨到下一栏的,这一栏照行框画满
             let endsHere = NSMaxRange(g) == NSMaxRange(self.glyphRange(forCharacterRange: r, actualCharacterRange: nil))
                 && NSMaxRange(self.fullRange(.deskTrans, at: r.location, local: ts)) <= NSMaxRange(r)
-            if endsHere {
-                // 译文正好在栏底收尾时,排版器把段后留白截掉了(末行的行框不带它):照扣就把末行一起扣掉,底色少一行。
-                // 底色至少要盖住末行的字,再留出与平常相当的一点余白
-                let floor = lastUsed.isNull ? box.maxY - gap : lastUsed.maxY + 8
-                let bottom = max(box.maxY - gap, floor)
-                #if DEBUG
-                if box.maxY - gap < floor - 0.5 { NSLog("DESKTRANSBOX clipped gap: line bottom %.1f, box bottom was %.1f", floor, box.maxY - gap) }
-                #endif
-                box.size.height = bottom - box.minY
-            }
-            box = box.offsetBy(dx: origin.x, dy: origin.y)
-            tint.withAlphaComponent(0.09).setFill()
-            UIBezierPath(roundedRect: box, cornerRadius: 12).fill()
-            tint.withAlphaComponent(0.75).setFill()
-            UIBezierPath(roundedRect: CGRect(x: box.minX, y: box.minY + 10, width: 3.5, height: max(box.height - 20, 4)), cornerRadius: 2).fill()
+            // 底边从末行的字(usedRect)往下量,不从行框往上扣段后留白:排版器在两种情况下不给末行带段后留白——
+            // 文字流的最后一段(单栏文本框装的字正好止于这段译文),和栏底放不下留白时。照「行框 − 留白」扣,末行就被扣掉了。
+            if endsHere, !lastUsed.isNull { box.size.height = lastUsed.maxY + pad - box.minY }
+            out.append(box)
         }
+        return out
     }
 
     /// 划线:每行一块圆角淡色底,高度贴着字(按字体的上下沿算,不含行距);带批注的在末行右上角点一个小圆点。
@@ -304,13 +306,33 @@ final class ChapterLayout {
     /// 独立 storage 装的是「本栏的字向两头扩到整段」:断行、标点挤压都要看整段上下文(栏首若是接着上一栏的半段,
     /// 只拿后半段重排,「：「」这类相邻标点不再挤压,一行会少排一个字)。扩出来的上下文排在可见区之外,
     /// 由外面一层裁切框(ColumnClipView)挡住;纵向按整章排版里本栏第一行的位置对齐。DEBUG 下可逐行核对(DESK_VERIFY=1)。
+    ///
+    /// 例外:栏首若是接着上一栏的半段、而这一行以「这类前括号起头,整章分页在新容器的首行会按段首那样挤压括号,
+    /// 比连着排多排进一两个字;带上半段上下文重排反而少排,往后的行跟着错位,挤不回来就多出一行、栏底末行被裁切框切掉(长译文跨栏时最常见)。
+    /// 所以两种排法都试:先带整段上下文,逐行与整章分页对不上就改从本栏第一个字起排,取逐行一致的那一种。
     func makeColumnView(_ i: Int) -> ColumnTextView {
+        let chars = manager.characterRange(forGlyphRange: manager.glyphRange(for: containers[i]), actualGlyphRange: nil)
+        let ns = storage.string as NSString
+        let head = ns.paragraphRange(for: NSRange(location: chars.location, length: 0))
+        var v = columnView(i, from: head.location)
+        if head.location < chars.location, !linesMatch(column: i, view: v) {
+            let alt = columnView(i, from: chars.location)
+            if linesMatch(column: i, view: alt) { v = alt }
+        }
+        #if DEBUG
+        if ProcessInfo.processInfo.environment["DESK_VERIFY"] == "1" { verify(column: i, view: v) }
+        #endif
+        liveViews.add(v)
+        return v
+    }
+
+    /// 第 i 栏的显示文本框,storage 从整章第 start 个字起、到本栏末字所在段的段尾止。
+    func columnView(_ i: Int, from start: Int) -> ColumnTextView {
         let c = containers[i]
         let chars = manager.characterRange(forGlyphRange: manager.glyphRange(for: c), actualGlyphRange: nil)
         let ns = storage.string as NSString
-        let head = ns.paragraphRange(for: NSRange(location: chars.location, length: 0))
         let tail = ns.paragraphRange(for: NSRange(location: max(NSMaxRange(chars) - 1, chars.location), length: 0))
-        let span = NSRange(location: head.location, length: max(NSMaxRange(tail), NSMaxRange(chars)) - head.location)
+        let span = NSRange(location: start, length: max(NSMaxRange(tail), NSMaxRange(chars)) - start)
         let sub = NSMutableAttributedString(attributedString: storage.attributedSubstring(from: span))
         let visible = NSRange(location: chars.location - span.location, length: chars.length)
         sub.removeAttribute(.link, range: NSRange(location: 0, length: sub.length))      // 见 typeset:显示时不要系统链接
@@ -327,11 +349,21 @@ final class ChapterLayout {
             let lg = v.layoutManagerD.glyphIndexForCharacter(at: visible.location)
             v.dy = sharedTop - v.layoutManagerD.lineFragmentRect(forGlyphAt: lg, effectiveRange: nil).minY
         }
-        #if DEBUG
-        if ProcessInfo.processInfo.environment["DESK_VERIFY"] == "1" { verify(column: i, view: v) }
-        #endif
-        liveViews.add(v)
         return v
+    }
+
+    /// 显示文本框里本栏的各行,与整章分页第 i 栏逐行的字范围是否一样。
+    func linesMatch(column i: Int, view v: ColumnTextView) -> Bool {
+        var shared: [NSRange] = []
+        manager.enumerateLineFragments(forGlyphRange: manager.glyphRange(for: containers[i])) { _, _, _, g, _ in
+            shared.append(self.manager.characterRange(forGlyphRange: g, actualGlyphRange: nil))
+        }
+        let lm = v.layoutManagerD
+        var local: [NSRange] = []
+        lm.enumerateLineFragments(forGlyphRange: lm.glyphRange(forCharacterRange: v.visible, actualCharacterRange: nil)) { _, _, _, g, _ in
+            var r = lm.characterRange(forGlyphRange: g, actualGlyphRange: nil); r.location += v.offset; local.append(r)
+        }
+        return shared == local
     }
 
     #if DEBUG
@@ -357,22 +389,6 @@ final class ChapterLayout {
                 if first.isEmpty {
                     let ns = storage.string as NSString
                     first = "\(a.0)@\(a.1) vs \(b.0)@\(b.1) shared=[\(ns.substring(with: a.0))] local=[\(ns.substring(with: b.0))]"
-                }
-            }
-        }
-        // 译文在本栏栏底收尾、段后留白被截掉的(底色照扣留白会少画一行;drawBackground 已兜底,这里记下好去看)
-        let cg = manager.glyphRange(for: c)
-        if cg.length > 0 {
-            var lr = NSRange()
-            let lf = manager.lineFragmentRect(forGlyphAt: NSMaxRange(cg) - 1, effectiveRange: &lr)
-            let used = manager.lineFragmentUsedRect(forGlyphAt: NSMaxRange(cg) - 1, effectiveRange: nil)
-            let lineChars = manager.characterRange(forGlyphRange: lr, actualGlyphRange: nil)
-            if let gap = storage.attribute(.deskTrans, at: lineChars.location, effectiveRange: nil) as? CGFloat {
-                var tr = NSRange()
-                _ = storage.attribute(.deskTrans, at: lineChars.location, longestEffectiveRange: &tr, in: NSRange(location: 0, length: storage.length))
-                // 译文在本栏末行收尾,而末行的行框没带够段后留白:底色照扣会少一行(drawBackground 已兜底),记下来
-                if NSMaxRange(tr) <= NSMaxRange(lineChars), lf.maxY - gap < used.maxY - 0.5 {
-                    NSLog("DESKTRANSEND ch=%d col=%d lf=%.1f gap=%.1f used=%.1f", chapter.no, i, lf.maxY, gap, used.maxY)
                 }
             }
         }
@@ -682,7 +698,7 @@ final class ChapterLayout {
             block.append(para)
             if open, let t = s.t {
                 let tb = NSMutableAttributedString(string: t + "\n", attributes: [
-                    .font: UIFont.systemFont(ofSize: max(15, style.fontSize * 0.62)), .foregroundColor: style.soft, .paragraphStyle: tsy, .deskSeg: i, .deskTrans: gap])
+                    .font: UIFont.systemFont(ofSize: max(15, style.fontSize * 0.62)), .foregroundColor: style.soft, .paragraphStyle: tsy, .deskSeg: i, .deskTrans: CGFloat(12)])   // 与段前留白相当
                 tb.addAttribute(.deskLayer, value: "t", range: NSRange(location: 0, length: (t as NSString).length))
                 block.append(tb)
             }

@@ -15,6 +15,8 @@ targets:
   Desk:
     type: application
     platform: iOS
+    scheme:
+      testTargets: [DeskTests]
     sources:
       - Desk
     info:
@@ -85,3 +87,15 @@ targets:
       configs:
         Debug:
           SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+  # 单元测试(版式回归等):xcodebuild test -scheme Desk -destination 'platform=iOS Simulator,id=…'
+  DeskTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - DeskTests
+    dependencies:
+      - target: Desk
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: pub.gavin.hexa.desk.tests
+        GENERATE_INFOPLIST_FILE: YES
