@@ -283,6 +283,9 @@ struct CatalogSheet: View {
                 if let s = it.summary ?? it.subtitle { Text(s).font(.system(size: 13)).foregroundStyle(Ink.soft).lineLimit(2) }
                 if let e = shelf.failed[it.id] { Text(e).font(.system(size: 11)).foregroundStyle(Ink.cinnabar).lineLimit(2) }
             }
+            .accessibilityElement(children: .combine)
+            .accessibilityAddTraits(local != nil ? .isButton : [])
+            .accessibilityAction { if let local { onHome(local) } }
             Spacer(minLength: 6)
             if let p = shelf.progress[it.id] {
                 ZStack {
@@ -317,6 +320,9 @@ struct CatalogSheet: View {
                 Text(meta(b.kindLabel, b.chapters, b.unit, DeskbookStore.shared.record(b.id)?.fileBytes) + " · 第 \(b.revision ?? 1) 版").font(.system(size: 12)).foregroundStyle(Ink.soft)
                 if !b.brief.isEmpty { Text(b.brief).font(.system(size: 13)).foregroundStyle(Ink.soft).lineLimit(2) }
             }
+            .accessibilityElement(children: .combine)
+            .accessibilityAddTraits(.isButton)
+            .accessibilityAction { onHome(b) }
             Spacer(minLength: 6)
             if library.shelf.contains(b.id) {
                 Image(systemName: "checkmark.circle.fill").foregroundStyle(b.theme.accentColor).font(.system(size: 22)).accessibilityLabel("已在书桌上")

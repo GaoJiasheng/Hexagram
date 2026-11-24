@@ -19,6 +19,10 @@ final class TextPageController: UIViewController, UITextViewDelegate, UIGestureR
     var onSeg: ((Int) -> Void)?
     var onHighlight: ((String) -> Void)?
     var onMenu: ((ReaderMenuAction) -> Void)?
+    /// 旁白翻页(三指轻扫、「上一页 / 下一页」动作):true 往后。翻得动返回 true。
+    var onTurn: ((Bool) -> Bool)?
+    /// 此刻是不是「全部展开译文」(那时单段的看译文 / 收起不起作用,不给这个动作)。
+    var translationAll: (() -> Bool)?
     /// 这一页有没有正选着的字(仿真翻页时,选着字就不让翻页手势抢走拖动)。
     var hasSelection: Bool { columns.contains { $0.view.selectedRange.length > 0 } }
 
@@ -39,6 +43,7 @@ final class TextPageController: UIViewController, UITextViewDelegate, UIGestureR
             tap.delegate = self
             tv.addGestureRecognizer(tap)
             let clip = ColumnClipView(tv)
+            installAccessibility(column: tv, clip: clip, layout: layout)
             view.addSubview(clip)
             columns.append((i, tv, clip))
         }
@@ -322,13 +327,18 @@ struct PagedReader: UIViewControllerRepresentable {
         func controller(for r: PageRef) -> UIViewController {
             let m = parent.model
             let vc: UIViewController
-            if m.isEndPage(r) { vc = EndPageController(ref: r, content: parent.endPage(r)) }
+            if m.isEndPage(r) {
+                vc = EndPageController(ref: r, content: AnyView(parent.endPage(r)
+                    .accessibilityScrollAction { [weak self] edge in _ = self?.turn(from: r, forward: edge == .trailing || edge == .bottom) }))
+            }
             else {
                 let t = TextPageController(ref: r, layout: m.layout(r.ch), pageSize: m.pageSize)
                 t.onNote = parent.onNote
                 t.onSeg = { [weak self] s in self?.parent.onSeg(r, s) }
                 t.onHighlight = { [weak self] id in self?.parent.onHighlight(id) }
                 t.onMenu = { [weak self] a in self?.parent.onMenu(r, a) }
+                t.onTurn = { [weak self] f in self?.turn(from: r, forward: f) ?? false }
+                t.translationAll = { [weak m] in m?.showTranslation ?? false }
                 vc = t
             }
             if parent.curl, let spec = parent.backdrop?(r) {
@@ -339,6 +349,18 @@ struct PagedReader: UIViewControllerRepresentable {
                 return CurlPageController(ref: r, inner: vc, backdrop: bg)
             }
             return vc
+        }
+
+        /// 旁白翻页:落到相邻一页(updateUIViewController 见 current 变了就换页),再报页码、把焦点挪到新页上。
+        func turn(from r: PageRef, forward: Bool) -> Bool {
+            let m = parent.model
+            guard let to = forward ? m.after(r) : m.before(r) else { return false }
+            m.landed(on: to)
+            let n = m.pageCount(to.ch)
+            let say = m.isEndPage(to) ? "本章完" : "第 \(to.page + 1) 页,共 \(n - 1) 页"
+            UIAccessibility.post(notification: .pageScrolled, argument: say)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { UIAccessibility.post(notification: .layoutChanged, argument: nil) }
+            return true
         }
 
         func back(of r: PageRef) -> UIViewController {

@@ -76,6 +76,7 @@ struct StatsScreen: View {
                         .contentShape(Capsule())
                 }
                 .buttonStyle(.plain)
+                .accessibilityAddTraits(win == x ? .isSelected : [])
             }
         }
         .padding(4)
@@ -127,10 +128,18 @@ struct StatsScreen: View {
                     .padding(16)
                     .background(c.3.opacity(0.08), in: RoundedRectangle(cornerRadius: 20))
                     .overlay(RoundedRectangle(cornerRadius: 20).stroke(c.3.opacity(0.14), lineWidth: 1))
+                    // 旁白一格读一句:「时长 38 分」「划线 14 处,9 条带批注」
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel(Self.tileLabel(c.0, c.1, c.4))
                 }
             }
             .animation(.spring(duration: 0.35), value: win)
         }
+    }
+
+    private static func tileLabel(_ name: String, _ parts: [(String, String)], _ note: String) -> String {
+        let v: String = parts.map { $0.0 + $0.1 }.joined()
+        return note.isEmpty ? "\(name) \(v)" : "\(name) \(v),\(note)"
     }
 
     private var emptyTitle: String {
@@ -195,6 +204,7 @@ struct StatsScreen: View {
             }
         }
         .padding(.horizontal, 16).padding(.vertical, 12)
+        .accessibilityElement(children: .combine)
     }
 
     // MARK: 这一年
@@ -207,8 +217,6 @@ struct StatsScreen: View {
                 Text("共 \(stats.totalDays) 天").font(Fonts.num(13, weight: .medium)).foregroundStyle(Ink.soft)
             }
             HeatMap(width: width - 32)
-                .accessibilityElement(children: .ignore)
-                .accessibilityLabel("这一年的学习热力图,共 \(stats.totalDays) 天有学习记录")
                 .padding(16)
                 .background(Ink.card, in: RoundedRectangle(cornerRadius: 20))
         }
@@ -254,6 +262,8 @@ struct StatsScreen: View {
             Text(note).font(.system(size: 12)).foregroundStyle(Ink.soft).lineLimit(1).minimumScaleFactor(0.8)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(note) \(v) \(unit)")
     }
 
     // MARK: 目标
@@ -372,6 +382,22 @@ struct HeatMap: View {
                 Text("少").font(.system(size: 10)).foregroundStyle(Ink.faint)
                 ForEach(0..<5, id: \.self) { i in RoundedRectangle(cornerRadius: 2.5).fill(Self.ramp[i]).frame(width: 11, height: 11) }
                 Text("多").font(.system(size: 10)).foregroundStyle(Ink.faint)
+            }
+        }
+        // 旁白:整张图一个元素;上下轻扫在有学习记录的日子之间挪,读出那一天的时长(代替点格子)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("这一年的学习热力图,共 \(stats.totalDays) 天有学习记录")
+        .accessibilityValue(picked.flatMap { p in Stats.date(p).map { "\(Fmt.md($0)),\(stats.perDay[p].map { $0.sec > 0 ? Fmt.dur($0.sec) : "没有读" } ?? "没有读")" } } ?? "")
+        .accessibilityHint("上下轻扫,逐日查看有学习记录的日子")
+        .accessibilityAdjustableAction { dir in
+            let from = Stats.dayString(start)
+            let days = stats.perDay.filter { $0.key >= from && $0.value.sec > 0 }.map(\.key).sorted()
+            guard !days.isEmpty else { return }
+            guard let p = picked, let i = days.firstIndex(of: p) else { picked = days.last; return }
+            switch dir {
+            case .increment: picked = days[min(i + 1, days.count - 1)]
+            case .decrement: picked = days[max(i - 1, 0)]
+            @unknown default: break
             }
         }
     }

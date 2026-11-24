@@ -597,6 +597,12 @@ struct MindOutlineRow: View {
                         .foregroundStyle(n.depth >= 3 ? Ink.soft : Ink.text)
                         .lineSpacing(4)
                         .fixedSize(horizontal: false, vertical: true)
+                        // 整行的轻点(选中 / 再点收起)在旁白里落在这句题名上
+                        .accessibilityAddTraits(sel ? [.isButton, .isSelected] : .isButton)
+                        .accessibilityAction {
+                            model.clock.touch()
+                            if model.selected == id, !n.children.isEmpty, id != 0 { model.toggle(id) } else { model.selected = id; model.afterSelect(glide: false) }
+                        }
                     Spacer(minLength: 4)
                     if k.learned { Image(systemName: "checkmark.circle.fill").font(.system(size: 13)).foregroundStyle(hue).accessibilityLabel("学过") }
                     if k.reading { Image(systemName: "bookmark.fill").font(.system(size: 12)).foregroundStyle(Ink.cinnabar).accessibilityLabel("正在读") }

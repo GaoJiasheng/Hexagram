@@ -391,6 +391,7 @@ private struct SignedInView: View {
                 HStack(spacing: 16) {
                     Text(u.initial).font(Fonts.song(28, bold: true)).foregroundStyle(.white)
                         .frame(width: 64, height: 64).background(Ink.cinnabar.gradient, in: Circle())
+                        .accessibilityHidden(true)
                     VStack(alignment: .leading, spacing: 4) {
                         Text(u.displayName).font(Fonts.song(22, bold: true)).foregroundStyle(Ink.text).lineLimit(1)
                         if let e = u.email {
@@ -414,6 +415,7 @@ private struct SignedInView: View {
                     HStack(spacing: 12) {
                         Image(systemName: sync.failing ? "icloud.slash" : "checkmark.icloud")
                             .font(.system(size: 20)).foregroundStyle(sync.failing ? Ink.faint : Ink.cinnabar)
+                            .accessibilityHidden(true)
                         VStack(alignment: .leading, spacing: 3) {
                             TimelineView(.periodic(from: .now, by: 20)) { ctx in
                                 Text(sync.syncing && !sync.failing ? "正在同步…" : sync.statusText(now: ctx.date))

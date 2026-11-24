@@ -29,7 +29,8 @@ enum AXDump {
                 let bad = label.trimmingCharacters(in: .whitespaces).isEmpty && (t.contains(.button) || t.contains(.image))
                 if bad { unlabeled += 1 }
                 out.append("\(bad ? "!!" : "  ") [\(tags.joined(separator: ","))] \(label.prefix(60))" + ((o.accessibilityValue ?? "").isEmpty ? "" : " = \(o.accessibilityValue!.prefix(20))")
-                           + (o.accessibilityHint.map { " (\($0.prefix(30)))" } ?? "") + " @\(Int(f.minX)),\(Int(f.minY))")
+                           + (o.accessibilityHint.map { " (\($0.prefix(30)))" } ?? "")
+                           + ((o.accessibilityCustomActions ?? []).isEmpty ? "" : " {\((o.accessibilityCustomActions ?? []).map(\.name).joined(separator: "|"))}") + " @\(Int(f.minX)),\(Int(f.minY))")
                 return
             }
             let kids: [NSObject]

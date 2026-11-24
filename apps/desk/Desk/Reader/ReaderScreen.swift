@@ -219,7 +219,10 @@ struct ReaderScreen: View {
             ZStack(alignment: .bottom) {
                 Color.black.opacity(scheme == .dark ? 0.25 : 0.08).ignoresSafeArea()
                     .onTapGesture { withAnimation(.easeOut(duration: 0.2)) { hlCard = nil } }
+                    .accessibilityHidden(true)
                 HighlightPanel(id: id, editNote: { hlCard = nil; sheet = .editNote(id) }, close: { withAnimation(.easeOut(duration: 0.2)) { hlCard = nil } })
+                    .accessibilityAddTraits(.isModal)
+                    .accessibilityAction(.escape) { withAnimation(.easeOut(duration: 0.2)) { hlCard = nil } }
                     .frame(width: 500)
                     .background(Ink.paper, in: RoundedRectangle(cornerRadius: 22))
                     .overlay(RoundedRectangle(cornerRadius: 22).stroke(Ink.line, lineWidth: 1))
@@ -236,11 +239,14 @@ struct ReaderScreen: View {
             ZStack(alignment: .trailing) {
                 Color.black.opacity(scheme == .dark ? 0.3 : 0.12).ignoresSafeArea()
                     .onTapGesture { withAnimation(.easeOut(duration: 0.25)) { tocPanel = false } }
+                    .accessibilityHidden(true)
                     .transition(.opacity)
                 TOCSheet(model: model, panel: true, pick: { ch in
                     withAnimation(.easeOut(duration: 0.25)) { tocPanel = false }
                     model.jumpFromTOC(toChapter: ch)
                 }, close: { withAnimation(.easeOut(duration: 0.25)) { tocPanel = false } })
+                .accessibilityAddTraits(.isModal)
+                .accessibilityAction(.escape) { withAnimation(.easeOut(duration: 0.25)) { tocPanel = false } }
                 .frame(width: 440)
                 .clipShape(RoundedRectangle(cornerRadius: 24))
                 .overlay(RoundedRectangle(cornerRadius: 24).stroke(Ink.line, lineWidth: 1))
@@ -332,6 +338,7 @@ struct ReaderScreen: View {
                         .mask(LinearGradient(stops: [.init(color: .clear, location: 0), .init(color: .black.opacity(0.8), location: 0.5), .init(color: .black, location: 1)],
                                              startPoint: .top, endPoint: .bottom))
                         .frame(maxHeight: .infinity, alignment: .bottom)
+                        .accessibilityHidden(true)
                         .id(model.current.ch)
                         .transition(.opacity)
                 } else {
@@ -531,6 +538,10 @@ struct ChapterMark: View {
                 Color.clear.frame(width: 20, height: 20)
             }
         }
+        // 对勾图标在旁白里会带出「已选」特征:整个标记只读一个词
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(sec >= Stats.learnedSec ? "学过" : sec > 0 ? "读到一半" : "")
+        .accessibilityHidden(sec <= 0)
     }
 }
 

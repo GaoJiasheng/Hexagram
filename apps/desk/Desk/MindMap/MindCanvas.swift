@@ -92,10 +92,10 @@ final class MindCanvasView: UIScrollView, UIScrollViewDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         delegate = self
-        // 读屏:画布上的节点是画出来的,不是一个个元素;给它一个名字,并指去「提纲」(同一张图的逐项列表,读屏可逐项读)
-        isAccessibilityElement = true
+        // 读屏:画布上的节点是画出来的,由 nodeAccessibilityElements() 逐个给出元素(MindCanvasAccessibility.swift);
+        // 同一张图的逐项列表另有顶上的「提纲」
+        isAccessibilityElement = false
         accessibilityLabel = "思想脑图画布"
-        accessibilityHint = "画布上的节点读屏读不到,请用顶上的「提纲」逐项阅读;选中的节点在下方卡片里"
         minimumZoomScale = Self.minZoom
         maximumZoomScale = Self.maxZoom
         bouncesZoom = true
@@ -120,6 +120,13 @@ final class MindCanvasView: UIScrollView, UIScrollViewDelegate {
         registerForTraitChanges([UITraitUserInterfaceStyle.self]) { (v: MindCanvasView, _) in v.rebuildPalette() }
     }
     required init?(coder: NSCoder) { fatalError() }
+
+    /// 旁白元素按节点 id 留着同一个对象(换了对象旁白的焦点会跳回开头)。
+    var axCache: [Int: MindNodeAXElement] = [:]
+    override var accessibilityElements: [Any]? {
+        get { nodeAccessibilityElements() }
+        set {}
+    }
 
     // MARK: 数据
 
@@ -207,6 +214,7 @@ final class MindCanvasView: UIScrollView, UIScrollViewDelegate {
             next = next.shifted(CGPoint(x: o.minX - n.minX, y: o.minY - n.minY))
         }
         layout = next
+        accessibilityTreeChanged()
         var b = next.bounds.insetBy(dx: -40, dy: -40)
         if hadOld { b = b.union(old.bounds.insetBy(dx: -40, dy: -40)) }   // 收起的节点滑走的那一段也在窗口里
         setContentBounds(b)

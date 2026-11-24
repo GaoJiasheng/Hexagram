@@ -73,7 +73,7 @@ struct FigCard: View {
                     VStack(alignment: .leading, spacing: 6) {
                         ForEach(Array(fig.foot.enumerated()), id: \.offset) { _, f in
                             HStack(alignment: .firstTextBaseline, spacing: 8) {
-                                Text("◆").font(.system(size: 8)).foregroundStyle(ctx.accent2)
+                                Text("◆").font(.system(size: 8)).foregroundStyle(ctx.accent2).accessibilityHidden(true)
                                 Text(f).font(.system(size: 14, weight: .medium)).lineSpacing(3).foregroundStyle(Ink.soft).fixedSize(horizontal: false, vertical: true)
                             }
                         }
@@ -149,6 +149,7 @@ struct FigQuoteCard: View {
         let img = ctx.book.flatMap { ArtStore.shared.image($0, .head(ctx.chapter)) }
         VStack(spacing: 14) {
             Text("“").font(Fonts.song(44, bold: true)).foregroundStyle(ctx.accent.opacity(0.55)).frame(height: 26).offset(y: 6)
+                .accessibilityHidden(true)
             if let t = fig.title { Text(t).font(.system(size: 12, weight: .semibold)).kerning(2).foregroundStyle(ctx.accent) }
             Text(fig.text)
                 .font(Fonts.song(ctx.wide ? 30 : 25, bold: true)).lineSpacing(8).kerning(1)
@@ -174,6 +175,7 @@ struct FigQuoteCard: View {
                     Image(uiImage: img).resizable().scaledToFill()
                         .opacity(scheme == .dark ? 0.5 : 0.85)
                         .blur(radius: 1)
+                        .accessibilityHidden(true)
                 }
                 // 柔光:四周淡、中间更淡,字压得住
                 RadialGradient(colors: [(ctx.book?.theme.paperColor ?? Ink.paper).opacity(scheme == .dark ? 0.84 : 0.72), (ctx.book?.theme.paperColor ?? Ink.paper).opacity(scheme == .dark ? 0.55 : 0.32)],
@@ -573,6 +575,8 @@ struct GuaGlyph: View {
         let h = lineHeight * CGFloat(n * 2 - 1)
         Image(uiImage: Hexagram.image(binary: binary, size: CGSize(width: width, height: h), color: .black).withRenderingMode(.alwaysTemplate))
             .resizable().frame(width: width, height: h)
+            .accessibilityLabel(n == 1 ? (binary == "1" ? "阳爻" : "阴爻")
+                                : "卦画,自下而上:" + binary.map { $0 == "1" ? "阳" : "阴" }.joined(separator: " "))
     }
 }
 

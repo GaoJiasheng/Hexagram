@@ -28,6 +28,7 @@ struct FinishScreen: View {
                     .opacity(stage >= 1 ? 1 : 0)
             }
             .ignoresSafeArea()
+            .accessibilityHidden(true)
 
             VStack(spacing: 0) {
                 Spacer().frame(minHeight: pad ? 260 : 150)
@@ -48,6 +49,7 @@ struct FinishScreen: View {
                         .scaleEffect(stage >= 3 || reduceMotion ? 1 : 2.4)
                         .opacity(stage >= 3 ? 1 : 0)
                         .offset(x: pad ? 6 : 12, y: pad ? -26 : -18)
+                        .accessibilityHidden(true)
                 }
 
                 VStack(spacing: 14 * k) {
@@ -134,6 +136,9 @@ struct FinishScreen: View {
         }
         .frame(maxWidth: .infinity)
         .padding(.horizontal, 4)
+        // 旁白一栏读一句:「学了 35 天」「共读 10 小时 47 分」
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(label + " " + parts.map { $0.0 + $0.1 }.joined())
     }
 }
 
@@ -204,5 +209,8 @@ struct Seal: View {
             }
             .frame(width: g.size.width, height: g.size.height)
         }
+        // 印上的字竖排成一个个字,旁白合成一个词读
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(text)
     }
 }

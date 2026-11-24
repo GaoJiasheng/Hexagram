@@ -16,7 +16,7 @@ targets:
     type: application
     platform: iOS
     scheme:
-      testTargets: [DeskTests]
+      testTargets: [DeskTests, DeskUITests]
     sources:
       - Desk
     info:
@@ -99,3 +99,16 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: pub.gavin.hexa.desk.tests
         GENERATE_INFOPLIST_FILE: YES
+  # 旁白(VoiceOver)自动审计:各主屏用调试钩子直接打开,跑 performAccessibilityAudit(需本机内容服务 :8765)
+  DeskUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - DeskUITests
+    dependencies:
+      - target: Desk
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: pub.gavin.hexa.desk.uitests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_TARGET_NAME: Desk

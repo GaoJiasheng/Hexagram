@@ -305,6 +305,7 @@ struct BaihuaScreen: View {
                     Image(uiImage: img).resizable().scaledToFill()
                         .frame(width: width, height: h).clipped()
                         .opacity(scheme == .dark ? 0.62 : 1)
+                        .accessibilityHidden(true)
                 } else {
                     LinearGradient(colors: [theme.accentColor.opacity(0.55), theme.accent2Color.opacity(0.35), theme.paperColor], startPoint: .topLeading, endPoint: .bottomTrailing)
                         .frame(width: width, height: h)
@@ -1041,6 +1042,7 @@ struct DeepReadCard: View {
                         Ink.card
                         if let img = ArtStore.shared.image(book, .head(chapter.no)) {
                             Image(uiImage: img).resizable().scaledToFill().frame(width: 220).clipped()
+                                .accessibilityHidden(true)
                                 .mask(LinearGradient(colors: [.clear, .black.opacity(0.55)], startPoint: .leading, endPoint: .trailing))
                                 .opacity(0.7)
                         }

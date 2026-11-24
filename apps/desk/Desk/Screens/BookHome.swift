@@ -92,6 +92,8 @@ struct DeskbookChapterRow: View {
                     Text("\(marks)").font(Fonts.num(11, weight: .semibold))
                 }
                 .foregroundStyle(HLColor.markColor(0)).padding(.top, 3)
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel("\(marks) 条划线")
             }
             ChapterMark(sec: Stats.shared.sec(c.src), color: accent).padding(.top, 1)
         }

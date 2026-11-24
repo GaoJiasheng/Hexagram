@@ -268,8 +268,12 @@ struct DeskHome: View {
                 if total > Self.shelfCap {
                     Text("\(total) 本").font(Fonts.num(13, weight: .medium)).foregroundStyle(Ink.faint)
                     Spacer()
-                    Button(showAllShelf ? "只看最近的" : "全部 \(total) 本") { withAnimation(.easeInOut(duration: 0.25)) { showAllShelf.toggle() } }
+                    // 点按区上下各放宽 13 点(不改版面:外面再收回去),够 44 点高
+                    Button { withAnimation(.easeInOut(duration: 0.25)) { showAllShelf.toggle() } } label: {
+                        Text(showAllShelf ? "只看最近的" : "全部 \(total) 本").padding(.vertical, 13).contentShape(Rectangle())
+                    }
                         .font(.system(size: 14, weight: .semibold)).foregroundStyle(Ink.cinnabar)
+                        .padding(.vertical, -13)
                 }
             }
             if pad {
@@ -310,6 +314,9 @@ struct DeskHome: View {
                 Button("从书桌收起", systemImage: "tray.and.arrow.down") { library.remove(b.id) }
             }
             .accessibilityAddTraits(.isButton)
+            // 长按菜单的旁白等价动作
+            .accessibilityAction(named: "这本书的目录") { home = b }
+            .accessibilityAction(named: "从书桌收起") { library.remove(b.id) }
     }
 
     /// 今日一章:订阅且最近 30 天读过的书(都没有就取书桌上的全部),每本给「下一章没学过的」——

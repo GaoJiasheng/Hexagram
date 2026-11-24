@@ -13,6 +13,7 @@ struct HLColorRow: View {
                 }
                 .buttonStyle(.plain)
                 .accessibilityLabel("\(HLColor.names[c])色")
+                .accessibilityAddTraits(selected == c ? .isSelected : [])
             }
         }
         .padding(.horizontal, 4)
