@@ -9,6 +9,10 @@ const MB = 1024 * 1024
 export const SINGLE_MAX = 90 * MB
 const RESUME_KEY = (sha) => `guanxiang.v1.shelfUpload.${sha}`
 
+// 文件选择器的 accept:iOS(WKWebView)认不得 .deskbook 这个扩展名,写了 accept 该文件在选择器里是灰的、选不了;
+// 原生壳里不限类型(放进来后由校验器核 zip 与清单),网页照旧
+export const SHELF_ACCEPT = IS_NATIVE ? undefined : '.deskbook,application/zip'
+
 let corePromise = null
 export const loadCore = () => (corePromise ||= import('../../../scripts/desk/deskbook-core.mjs'))
 

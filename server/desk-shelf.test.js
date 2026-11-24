@@ -177,6 +177,11 @@ describe('上传', () => {
     expect((await upload(FIT, { headers: { Origin: ORIGIN } })).status).toBe(201)
   })
 
+  it('套壳 App 的源(capacitor://localhost)可以上传;长得像的别的源不行', async () => {
+    expect((await upload(FIT, { headers: { Origin: 'capacitor://evil' } })).status).toBe(403)
+    expect((await upload(FIT, { headers: { Origin: 'capacitor://localhost' } })).status).toBe(201)
+  })
+
   it('不是 zip:拒收并清掉对象', async () => {
     const junk = new TextEncoder().encode('this is not a zip file at all, just text '.repeat(10))
     const res = await upload(junk, { id: 'u-junk-12345678', revision: 1 })

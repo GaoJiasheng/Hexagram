@@ -9,7 +9,7 @@ import { usePageTitle } from '../yijing/hooks/usePageTitle.js'
 import HomeSeal from './HomeSeal.jsx'
 import BooksGate from './BooksGate.jsx'
 import { useBookAccess } from './useBooks.js'
-import { KIND_LABEL, SINGLE_MAX, checkFile, deleteItem, fetchShelf, formatBytes, hasResume, patchItem, uploadPackage } from './shelfClient.js'
+import { KIND_LABEL, SHELF_ACCEPT, SINGLE_MAX, checkFile, deleteItem, fetchShelf, formatBytes, hasResume, patchItem, uploadPackage } from './shelfClient.js'
 import './books.css'
 import './shelf.css'
 
@@ -219,7 +219,7 @@ export default function ShelfPage() {
       >
         <p className="shelf-drop__line">把 <code>.deskbook</code> 拖到这里，可以一次放几本</p>
         <button type="button" className="shelf-btn shelf-btn--primary" onClick={() => inputRef.current?.click()}>选择书包</button>
-        <input ref={inputRef} type="file" accept=".deskbook,application/zip" multiple hidden onChange={(e) => { addFiles(e.target.files); e.target.value = '' }} />
+        <input ref={inputRef} type="file" accept={SHELF_ACCEPT} multiple hidden onChange={(e) => { addFiles(e.target.files); e.target.value = '' }} />
       </section>
 
       {queue.length > 0 && (

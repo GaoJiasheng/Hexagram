@@ -1990,6 +1990,6 @@ app.onError((error, c) => {
 })
 
 // 书房书架(管理员专属,见 server/desk-shelf.js)
-mountDeskShelf(app, { getSessionUser, getDb })
+mountDeskShelf(app, { getSessionUser, getDb, nativeOrigins: NATIVE_ORIGINS })
 
 export const onRequest = handle(app)

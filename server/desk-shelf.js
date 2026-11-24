@@ -110,7 +110,7 @@ function disposition(row) {
   return `attachment; filename="${ascii}"; filename*=UTF-8''${encodeURIComponent(nice)}`
 }
 
-export function mountDeskShelf(app, { getSessionUser, getDb }) {
+export function mountDeskShelf(app, { getSessionUser, getDb, nativeOrigins = new Set() }) {
   const bucketOf = (c) => {
     const b = c.env?.DESK_BUCKET
     if (!b || typeof b.get !== 'function') throw new Error('R2 binding "DESK_BUCKET" is unavailable')
@@ -122,10 +122,12 @@ export function mountDeskShelf(app, { getSessionUser, getDb }) {
   }
 
   // 改动类请求再加一道:带 Origin 的必须同源(浏览器跨站提交挡在这里;SameSite=Lax 的 cookie 本就不随跨站 POST 走,
-  // 这是第二道)。原生 App 不带 Origin,照常通过 —— 它用 Bearer,本来就没有 CSRF 这回事。
+  // 这是第二道)。原生 App 用 Bearer、不带 Cookie,本来就没有 CSRF 这回事:不带 Origin 的照常通过;
+  // 套壳 App 的 WKWebView 跨源 fetch 会带 `Origin: capacitor://localhost`,所以 CORS 层认可的原生源(nativeOrigins)也放行
+  // ——网页伪造不出这个源,且这类请求不带 Cookie。
   function sameOrigin(c) {
     const origin = c.req.header('Origin')
-    if (!origin) return
+    if (!origin || nativeOrigins.has(origin)) return
     if (origin !== new URL(c.req.url).origin) throw new ShelfError(403, 'cross-origin request refused')
   }
 
