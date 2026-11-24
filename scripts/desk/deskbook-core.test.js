@@ -521,6 +521,9 @@ describe('全书脑图(§10)', () => {
     expect(summarize(g).mindmapNodes).toBe(0)
   })
   it('合法的最小脑图', () => { expect(msgs(mm({ label: '中心', ch: 1, children: [{ label: '一支', note: '展开' }] }))).toBe('') })
+  it('可无的 id / full:合法写法通过,部分节点有 id 也行', () => {
+    expect(msgs(mm({ id: 'm0', label: '中心', children: [{ id: 'A_1-b', label: '长句的开头…', full: '长句的开头,和后半句', note: '长句的开头,和后半句\n\n展开' }, { label: '没 id', full: '没 id 的这一支,也可以有整句' }] }))).toBe('')
+  })
   const BAD = [
     ['book.json 写了但包里没有', (f) => edit(f, 'book.json', (b) => { b.mindmap = 'mindmap.json' }), 'book.json', '不在包里'],
     ['包里有但 book.json 没写', (f) => put(f, 'mindmap.json', { root: { label: '中心' } }), 'mindmap.json', '没写'],
@@ -532,7 +535,15 @@ describe('全书脑图(§10)', () => {
     ['label 换行', (f) => mm({ label: '一\n二' }, f), 'mindmap.json', '只许一行'],
     ['note 超长', (f) => mm({ label: '中心', note: '字'.repeat(1501) }, f), 'mindmap.json', '超过 1500 字'],
     ['ch 不存在', (f) => mm({ label: '中心', children: [{ label: '一', ch: 9 }] }, f), 'mindmap.json', '章号'],
-    ['多余字段 id', (f) => mm({ label: '中心', id: 'root' }, f), 'mindmap.json', '没有「id」'],
+    ['多余字段', (f) => mm({ label: '中心', key: 'root' }, f), 'mindmap.json', '没有「key」'],
+    ['id 字符集', (f) => mm({ label: '中心', id: '根.1' }, f), 'mindmap.json', '1–32 个字母'],
+    ['id 太长', (f) => mm({ label: '中心', id: 'a'.repeat(33) }, f), 'mindmap.json', '1–32 个字母'],
+    ['id 以 - 开头', (f) => mm({ label: '中心', id: '-a' }, f), 'mindmap.json', '1–32 个字母'],
+    ['id 重复', (f) => mm({ label: '中心', id: 'a', children: [{ label: '一', id: 'b' }, { label: '二', id: 'b' }] }, f), 'mindmap.json', '重复'],
+    ['full 不以 label 起头', (f) => mm({ label: '半句…', full: '另一句话,很长' }, f), 'mindmap.json', '起头'],
+    ['full 不比 label 长', (f) => mm({ label: '一句话', full: '一句话' }, f), 'mindmap.json', '起头'],
+    ['full 换行', (f) => mm({ label: '半句', full: '半句\n后半' }, f), 'mindmap.json', '只许一行'],
+    ['full 超长', (f) => mm({ label: '半句', full: '半句' + '字'.repeat(300) }, f), 'mindmap.json', '超过 300 字'],
     ['空 children', (f) => mm({ label: '中心', children: [] }, f), 'mindmap.json', '非空数组'],
     ['六层', (f) => mm(deep(6), f), 'mindmap.json', '至多 5 层'],
     ['** 不成对', (f) => mm({ label: '中心', note: '**半边' }, f), 'mindmap.json', '不成对'],
@@ -552,7 +563,10 @@ describe('全书脑图(§10)', () => {
     expect(msgs(mm(deep(5)))).toBe('')
     expect(bySchema('mindmap.json', { root: deep(5) })).toEqual([])
     expect(bySchema('mindmap.json', { root: deep(6) })).not.toEqual([])
-    expect(bySchema('mindmap.json', { root: { label: '中心', id: 'x' } })).not.toEqual([])
+    expect(bySchema('mindmap.json', { root: { label: '中心', key: 'x' } })).not.toEqual([])
+    expect(bySchema('mindmap.json', { root: { id: 'x', label: '中心…', full: '中心句', children: [{ id: 'y', label: '一' }] } })).toEqual([])
+    expect(bySchema('mindmap.json', { root: { label: '中心', id: '根' } })).not.toEqual([])
+    expect(schemas['mindmap.json'].$defs.full['x-deskbook-maxChars']).toBe(LIMITS.mindmapFull)
     expect(schemas['mindmap.json'].$defs.label['x-deskbook-maxChars']).toBe(LIMITS.mindmapLabel)
     expect(schemas['mindmap.json'].$defs.note['x-deskbook-maxChars']).toBe(LIMITS.mindmapNote)
   })

@@ -56,7 +56,7 @@ const sha256 = (b) => crypto.createHash('sha256').update(b).digest('hex')
 const S = {
   badId: [], summaryCut: [], summaryUncut: [], heroDropped: 0, featuredDropped: 0,
   ideaAsLead: 0, emptySkipped: 0, unknown: {}, stepObjItems: 0,
-  mmNodes: 0, mmRefs: 0, mmBadRefs: [], mmLabelMoved: 0, mmNoteOver: [], mmTruncated: 0, mmNodesOver: [],
+  mmNodes: 0, mmRefs: 0, mmBadRefs: [], mmLabelMoved: 0, mmNoteOver: [], mmFullOver: [], mmTruncated: 0, mmNodesOver: [],
   art: { complete: [], partial: [], none: [] }, artFiles: 0,
   overviews: 0, chSummary: 0, chSummaryCut: 0, chSummaryNone: [],
   rev: { same: 0, bumped: [], fresh: [] },
@@ -224,24 +224,36 @@ function articleChapter(no, title, a, where) {
 }
 
 // 思想脑图 → 书包根上的 mindmap.json(标准 §10)。
-// 源节点 {id, label, note, ref: {ch: 文章号}, children} → {label, note?, ch?(书包章号), children?};id 不要。
+// 源节点 {id, label, note, ref: {ch: 文章号}, children} → {id, label, full?, note?, ch?(书包章号), children?}。
+// id:优先用源里的 id(合标准字符集、本图内没用过时)——改了文字或挪了位置它也不变,读者的展开 / 走读记录才留得住;
+//   源 id 不合规或重复时,退回由下标路径与整句派生(sha1 取前 10 位十六进制,前缀 m),重跑不变;万一撞了就加长。
 // label 超 60 字(源里不少节点是整句):label 取 ≤ 60 字处的句读边界前一段(找不到边界就截 59 字加「…」),
-// 整句原样放到 note 开头——字一个不丢。
+// 整句写进 full(书桌优先读它);同时仍原样放到 note 开头(旧版书桌靠这个认出整句)——字一个不丢。
 function buildMindmap(mm, entry, slug) {
   const chOf = new Map(entry.chapters.map((c, i) => [c.no, i + 1])) // 文章号 → 书包章号(总览不占章号,文章 n 就是第 n 章)
   let nodes = 0
-  const conv = (n, where, depth) => {
+  const used = new Set()
+  const idOf = (pathKey, text, srcId) => {
+    if (typeof srcId === 'string' && /^[A-Za-z0-9][A-Za-z0-9_-]{0,31}$/.test(srcId) && !used.has(srcId)) { used.add(srcId); return srcId }
+    const h = crypto.createHash('sha1').update(`${pathKey}\u0000${text}`).digest('hex')
+    for (let len = 10; len <= 31; len++) { const id = 'm' + h.slice(0, len); if (!used.has(id)) { used.add(id); return id } }
+    throw new Error(`${slug}/mindmap:${pathKey} 的 id 撞得解不开`)
+  }
+  const conv = (n, where, depth, pathKey) => {
     nodes++
     let label = fixBold(String(n.label || '').replace(/\s*[\r\n]+\s*/g, ' ').trim(), where)
     let note = typeof n.note === 'string' ? fixBold(n.note.trim(), where) : ''
+    const out = { id: idOf(pathKey, label, n.id) }
     if (textLen(label) > LIMITS.mindmapLabel) {
       S.mmLabelMoved++
       const head = cutAt(label, LIMITS.mindmapLabel) || [...label].slice(0, LIMITS.mindmapLabel - 1).join('') + '…'
       note = note ? `${label}\n\n${note}` : label
+      out.label = head
+      if (textLen(label) <= LIMITS.mindmapFull) out.full = label
+      else S.mmFullOver.push(`${where}(${textLen(label)} 字)`)
       label = head
-    }
+    } else out.label = label
     if (textLen(note) > LIMITS.mindmapNote) S.mmNoteOver.push(`${where}(${textLen(note)} 字)`)
-    const out = { label }
     if (note) out.note = note
     if (n.ref && n.ref.ch !== undefined) {
       S.mmRefs++
@@ -249,12 +261,12 @@ function buildMindmap(mm, entry, slug) {
       else S.mmBadRefs.push(`${where}→文章 ${n.ref.ch}`)
     }
     if (Array.isArray(n.children) && n.children.length) {
-      if (depth < LIMITS.mindmapDepth) out.children = n.children.map((c, i) => conv(c, `${where}.children[${i}]`, depth + 1))
+      if (depth < LIMITS.mindmapDepth) out.children = n.children.map((c, i) => conv(c, `${where}.children[${i}]`, depth + 1, pathKey ? `${pathKey}.${i}` : `${i}`))
       else S.mmTruncated += n.children.length
     }
     return out
   }
-  const root = conv(mm.root || mm, `${slug}/mindmap:root`, 1)
+  const root = conv(mm.root || mm, `${slug}/mindmap:root`, 1, '')
   S.mmNodes += nodes
   if (nodes > LIMITS.mindmapNodes) S.mmNodesOver.push(`${slug}(${nodes})`)
   return { root }
@@ -420,7 +432,7 @@ for (const r of dg) for (const d of r.digest) {
 
 console.log(`\n图解:共 ${S.figTotal} · 出结构化 fig ${S.figEmitted} · 待结构化数据 ${S.figWaiting}(不同 SVG ${S.figWaitingKeys.size}${S.figGateFail ? `,其中有数据但未过闸 ${S.figGateFail}` : ''}${S.figNoCaption ? `,无说明文字 ${S.figNoCaption}` : ''})${fs.existsSync(FIGS_FILE) ? '' : ' —— 尚无 ' + path.relative(ROOT, FIGS_FILE)}`)
 console.log(`\n全书脑图:${results.filter((r) => r.mindmapNodes).length} 本 · 节点共 ${S.mmNodes}(书包里 ${results.reduce((n, r) => n + (r.mindmapNodes || 0), 0)})· 带 ref 的节点 ${S.mmRefs} · 指向不存在文章的 ${S.mmBadRefs.length}${S.mmBadRefs.length ? ':' + S.mmBadRefs.slice(0, 10).join(' ') : ''}`)
-console.log(`  label 超 ${LIMITS.mindmapLabel} 字、整句移进 note ${S.mmLabelMoved} 个 · note 超 ${LIMITS.mindmapNote} 字 ${S.mmNoteOver.length}${S.mmNoteOver.length ? ':' + S.mmNoteOver.join(' ') : ''} · 超 ${LIMITS.mindmapDepth} 层截掉 ${S.mmTruncated} · 节点超 ${LIMITS.mindmapNodes} 的书 ${S.mmNodesOver.length}${S.mmNodesOver.length ? ':' + S.mmNodesOver.join(' ') : ''}`)
+console.log(`  label 超 ${LIMITS.mindmapLabel} 字、整句写进 full 并移进 note ${S.mmLabelMoved} 个(整句超 ${LIMITS.mindmapFull} 字没写 full 的 ${S.mmFullOver.length})· note 超 ${LIMITS.mindmapNote} 字 ${S.mmNoteOver.length}${S.mmNoteOver.length ? ':' + S.mmNoteOver.join(' ') : ''} · 超 ${LIMITS.mindmapDepth} 层截掉 ${S.mmTruncated} · 节点超 ${LIMITS.mindmapNodes} 的书 ${S.mmNodesOver.length}${S.mmNodesOver.length ? ':' + S.mmNodesOver.join(' ') : ''}`)
 console.log(`全书总览 ${S.overviews} 本 · 章简介 ${S.chSummary} 条(其中截短 ${S.chSummaryCut})${S.chSummaryNone.length ? ` · 没给简介的章 ${S.chSummaryNone.length}:${S.chSummaryNone.slice(0, 8).join(' ')}` : ''}`)
 console.log(`插画:齐全 ${S.art.complete.length} 本 · 部分 ${S.art.partial.length} 本 · 没有 ${S.art.none.length} 本(共收 ${S.artFiles} 张${fs.existsSync(ART_DIR) ? '' : ';' + path.relative(ROOT, ART_DIR) + ' 还不存在'})`)
 console.log(`版本号:未变 ${S.rev.same} · 升版 ${S.rev.bumped.length} · 台账里没有(记为第 1 版)${S.rev.fresh.length}${useLedger ? '' : '(--no-ledger:台账未写)'}`)

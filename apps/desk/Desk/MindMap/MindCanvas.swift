@@ -71,6 +71,12 @@ final class MindCanvasView: UIScrollView, UIScrollViewDelegate {
     /// 曾有一次点卡片上的「读这一章」,画布先把卡片底下的节点选中、展开(并存了盘),按钮再按新卡片读了别的章。
     /// 只靠 obscured(按卡片高度推算的留白)挡不住卡片换内容、正在动画的那一瞬。
     var blockedRects: () -> [CGRect] = { [] }
+    /// 第二道:只看松手那一刻还不够——单击要等双击失败(约 0.3 秒)才触发,而按钮在松手时就已经动作了:
+    /// 「读这一章」弹出阅读页时卡片 onDisappear 把它的位置从 blockedRects 里撤掉,迟到的单击便落到卡片底下的节点上。
+    /// 所以 ① 按下那一刻就判(tapGate 的 shouldReceive:命中的必须是画布自己、且不在被挡处),判过的不再收;
+    /// ② 卡片上的按钮动作时设 ignoreTapsUntil,这段时间里到期的单击 / 双击一律丢掉。
+    var ignoreTapsUntil = Date.distantPast
+    private let tapGate = MindTapGate()
     var onInteract: () -> Void = {}
     var onCamera: () -> Void = {}
     var onFirstLayout: (CGSize) -> Void = { _ in }
@@ -108,6 +114,9 @@ final class MindCanvasView: UIScrollView, UIScrollViewDelegate {
         let tap = UITapGestureRecognizer(target: self, action: #selector(singleTap(_:)))
         tap.require(toFail: dbl)
         addGestureRecognizer(tap)
+        tapGate.canvas = self
+        tap.delegate = tapGate
+        dbl.delegate = tapGate
         registerForTraitChanges([UITraitUserInterfaceStyle.self]) { (v: MindCanvasView, _) in v.rebuildPalette() }
     }
     required init?(coder: NSCoder) { fatalError() }
@@ -451,22 +460,38 @@ final class MindCanvasView: UIScrollView, UIScrollViewDelegate {
     }
 
     /// 点在卡片 / 控制条底下的(被挡住的那一块)不算点画布
-    private func inClear(_ g: UIGestureRecognizer) -> Bool {
-        let s = g.location(in: self)
+    private func inClear(_ g: UIGestureRecognizer) -> Bool { isClear(local: g.location(in: self), window: g.location(in: nil)) }
+    private func isClear(local s: CGPoint, window w: CGPoint) -> Bool {
         guard clearRect.contains(CGPoint(x: s.x - contentOffset.x, y: s.y - contentOffset.y)) else { return false }
-        let w = g.location(in: nil)
         return !blockedRects().contains { $0.insetBy(dx: -6, dy: -6).contains(w) }
+    }
+    /// 按下那一刻:这下触摸归不归画布的点按识别器
+    fileprivate func acceptsTap(_ t: UITouch) -> Bool {
+        // 命中的是盖在上面的别的视图(SwiftUI 的卡片、按钮)而不是画布或它的子视图:不收
+        if let v = t.view, v !== self, !v.isDescendant(of: self) { tapLog("按下 不收(命中 \(type(of: v)))", nil, t); return false }
+        if Date() < ignoreTapsUntil { tapLog("按下 不收(刚点过卡片按钮)", nil, t); return false }
+        let ok = isClear(local: t.location(in: self), window: t.location(in: nil))
+        if !ok { tapLog("按下 不收(落在被挡处)", nil, t) }
+        return ok
+    }
+    /// 调试:DESK_MAP_TAPLOG=1 时把点按的去留打到控制台(验「读这一章」不穿透用)
+    private static let tapLogOn = ProcessInfo.processInfo.environment["DESK_MAP_TAPLOG"] != nil
+    private func tapLog(_ what: String, _ g: UIGestureRecognizer?, _ t: UITouch? = nil) {
+        guard Self.tapLogOn else { return }
+        let w = g?.location(in: nil) ?? t?.location(in: nil) ?? .zero
+        print("[mindmap-tap] \(what) @ \(Int(w.x)),\(Int(w.y))")
     }
 
     @objc private func singleTap(_ g: UITapGestureRecognizer) {
-        guard inClear(g) else { return }
+        guard inClear(g), Date() >= ignoreTapsUntil else { tapLog("single 丢弃(松手时被挡 / 刚点过卡片按钮)", g); return }
+        tapLog("single 生效", g)
         onInteract()
         let p = g.location(in: content)
         if let h = hit(p) { if h.bubble { onTapBubble(h.id) } else { onTapNode(h.id) } } else { onTapEmpty() }
     }
 
     @objc private func doubleTap(_ g: UITapGestureRecognizer) {
-        guard inClear(g) else { return }
+        guard inClear(g), Date() >= ignoreTapsUntil else { return }
         onInteract()
         let p = g.location(in: content)
         if let h = hit(p), !h.bubble {
@@ -520,4 +545,11 @@ struct MindCanvasRep: UIViewRepresentable {
             DispatchQueue.main.async { v.onObscuredChange() }
         }
     }
+}
+
+
+/// 画布点按识别器的代理(单独一个对象:UIScrollView 自己是它内部拖动 / 捏合识别器的代理,不去改它)。
+private final class MindTapGate: NSObject, UIGestureRecognizerDelegate {
+    weak var canvas: MindCanvasView?
+    func gestureRecognizer(_ g: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool { canvas?.acceptsTap(touch) ?? true }
 }

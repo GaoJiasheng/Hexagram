@@ -2,13 +2,18 @@ import Foundation
 import Observation
 
 // 思想脑图(书包根目录的 mindmap.json,book.json 里 "mindmap": "mindmap.json" 声明):
-// { root: { label, note?, ch?, children: [ … ] } } —— 节点没有 id,按在树里的位置(下标路径)认。
+// { root: { id?, label, full?, note?, ch?, children: [ … ] } } —— 节点写了 id 就按 id 认,没写按在树里的位置(下标路径)认(标准 §10)。
+// full:label 是长句截下的开头时的整句(有它就不必推断)。两个字段都可无,旧书包照旧。
 // 导入时宽松地解一遍(不认识的字段不管;超深、超量的截去并记一句说明,不因此拒收整本书),
 // 解好的样子写成 mindmap.desk.json 放在这本书的目录里,之后打开脑图只读这一份。
 
 /// 一个节点(存盘用,嵌套)。
 struct MindNodeFile: Codable, Hashable {
+    /// 稳定 id(标准 §10,可无;解析时已核过字符集、去了重)。旧版存下的 mindmap.desk.json 没有这一项,解码得 nil
+    var id: String? = nil
     var label: String
+    /// label 截短前的整句(可无)
+    var full: String? = nil
     var note: String?
     var ch: Int?
     var children: [MindNodeFile]
@@ -26,6 +31,16 @@ enum MindMapParser {
     static let maxNodes = 600
     static let labelMax = 120        // 标准说 ≤ 60;读的时候宽一点,再长才截
     static let noteMax = 1600
+    static let fullMax = 400         // 标准说 ≤ 300
+    static let idMax = 32
+
+    /// 标准 §10 的 id:字母数字开头,字母数字 _ -,至多 32 个字符
+    static func validID(_ s: String?) -> String? {
+        func alnum(_ c: Unicode.Scalar) -> Bool { ("a"..."z").contains(c) || ("A"..."Z").contains(c) || ("0"..."9").contains(c) }
+        guard let s, (1...idMax).contains(s.unicodeScalars.count), let f = s.unicodeScalars.first, alnum(f),
+              s.unicodeScalars.allSatisfy({ alnum($0) || $0 == "_" || $0 == "-" }) else { return nil }
+        return s
+    }
 
     private static func clean(_ s: String?, max: Int, oneLine: Bool) -> String? {
         guard var t = s?.trimmingCharacters(in: .whitespacesAndNewlines), !t.isEmpty else { return nil }
@@ -62,6 +77,7 @@ enum MindMapParser {
             }
         }
         var used: [Int: Int] = [:]
+        var seenIDs = Set<String>()      // id 重复的,后来的当没写(仍按位置认)
         func walk(_ x: JSONValue, depth: Int) -> MindNodeFile? {
             guard let label = node(x) else { return nil }
             if used[depth, default: 0] >= quota[depth, default: 0] { cutMany += 1; return nil }
@@ -76,7 +92,16 @@ enum MindMapParser {
             } else {
                 for c in raw { if let k = walk(c, depth: depth + 1) { kids.append(k) } }
             }
-            return MindNodeFile(label: label, note: clean(x["note"]?.string.map(BHText.importMarks), max: noteMax, oneLine: false), ch: ch, children: kids)
+            var id = validID(x["id"]?.string)
+            if let i = id { if seenIDs.contains(i) { id = nil } else { seenIDs.insert(i) } }
+            // full 只在它确实以 label 起头(去掉末尾「…」)、又比 label 长时才认,否则当没写、回到推断
+            var full = clean(x["full"]?.string.map(BHText.importMarks), max: fullMax, oneLine: true)
+            if let f = full {
+                let head = label.hasSuffix("…") ? String(label.dropLast()) : label
+                let pf = BHText.plain(f)
+                if !(pf.hasPrefix(head) && pf.count > head.count) { full = nil }
+            }
+            return MindNodeFile(id: id, label: label, full: full, note: clean(x["note"]?.string.map(BHText.importMarks), max: noteMax, oneLine: false), ch: ch, children: kids)
         }
         guard let root = walk(rootV, depth: 1) else { return nil }
         var note: String?
@@ -100,8 +125,11 @@ final class MindTree {
         var index: Int           // 在兄弟里的第几个
         var branch: Int          // 属于第几支一级分支;根为 -1
         var label: String
+        var full: String?
         var note: String?
         var ch: Int?
+        /// 书包里写的稳定 id(可无)
+        var key: String?
         /// 自己没写 ch 时,取最近的祖先的
         var effCh: Int?
         var path: String         // 「0.2.1」:根下第 1 支 → 第 3 项 → 第 2 项;根为 ""
@@ -114,14 +142,16 @@ final class MindTree {
     let maxDepth: Int
     /// 写了 ch 的节点:章号 → 节点
     let byChapter: [Int: [Int]]
+    /// 写了 id 的节点:id → 节点
+    let byKey: [String: Int]
 
     init(_ f: MindMapFile) {
         var out: [Node] = []
         func add(_ n: MindNodeFile, parent: Int, depth: Int, index: Int, branch: Int, inherited: Int?, path: String) -> Int {
             let id = out.count
             let eff = n.ch ?? inherited
-            out.append(Node(id: id, parent: parent, children: [], depth: depth, index: index, branch: branch, label: n.label, note: n.note,
-                            ch: n.ch, effCh: eff, path: path, subtreeEnd: id))
+            out.append(Node(id: id, parent: parent, children: [], depth: depth, index: index, branch: branch, label: n.label, full: n.full, note: n.note,
+                            ch: n.ch, key: n.id, effCh: eff, path: path, subtreeEnd: id))
             var kids: [Int] = []
             for (i, c) in n.children.enumerated() {
                 kids.append(add(c, parent: id, depth: depth + 1, index: i, branch: depth == 0 ? i : branch, inherited: eff,
@@ -139,6 +169,9 @@ final class MindTree {
         var bc: [Int: [Int]] = [:]
         for n in out { if let c = n.ch { bc[c, default: []].append(n.id) } }
         byChapter = bc
+        var bk: [String: Int] = [:]
+        for n in out { if let k = n.key, bk[k] == nil { bk[k] = n.id } }
+        byKey = bk
     }
 
     var count: Int { nodes.count }
@@ -152,6 +185,14 @@ final class MindTree {
             cur = c
         }
         return cur
+    }
+
+    /// 存本机阅读状态用的身份:有 id 记「#id」,没有记下标路径(「0.2.1」,根为 "")。
+    func stateKey(_ i: Int) -> String { nodes[i].key.map { "#" + $0 } ?? nodes[i].path }
+    /// stateKey 反查;「#id」在这一版书包里找不到(或旧状态存的是路径)时按路径认。
+    func node(stateKey k: String) -> Int? {
+        if k.hasPrefix("#") { return byKey[String(k.dropFirst())] }
+        return node(path: k)
     }
 
     /// 从根到它(含两头)。
@@ -198,7 +239,7 @@ final class MindTree {
     func search(_ q: String) -> [Int] {
         let t = q.trimmingCharacters(in: .whitespaces)
         guard !t.isEmpty else { return [] }
-        return nodes.filter { $0.label.localizedCaseInsensitiveContains(t) || ($0.note ?? "").localizedCaseInsensitiveContains(t) }.map(\.id)
+        return nodes.filter { $0.label.localizedCaseInsensitiveContains(t) || ($0.full ?? "").localizedCaseInsensitiveContains(t) || ($0.note ?? "").localizedCaseInsensitiveContains(t) }.map(\.id)
     }
 }
 
@@ -219,7 +260,8 @@ enum MindMapStore {
 }
 
 /// 一本书脑图上的阅读状态(只存本机):展开了哪些、选中哪一个、画布还是提纲、缩放与位置。
-/// 节点按下标路径存,书包更新后对不上的自然丢掉。
+/// 节点按 MindTree.stateKey 存(有 id 存「#id」,没有存下标路径);书包更新后对不上的自然丢掉。
+/// 旧版 App 存的是路径,照样读得回来;「#id」在旧版 App 里按路径解不出,只是丢掉那几项。
 struct MindMapUIState: Codable {
     var open: [String]
     var sel: String?

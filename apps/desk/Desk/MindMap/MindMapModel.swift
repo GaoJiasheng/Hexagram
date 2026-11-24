@@ -50,8 +50,8 @@ final class MindMapModel {
         self.focusChapter = focusChapter
         saved = MindMapUIState.load(book.id)
         if let s = saved {
-            open = Set(s.open.compactMap { tree.node(path: $0) }.filter { !tree[$0].children.isEmpty })
-            selected = s.sel.flatMap { tree.node(path: $0) }
+            open = Set(s.open.compactMap { tree.node(stateKey: $0) }.filter { !tree[$0].children.isEmpty })
+            selected = s.sel.flatMap { tree.node(stateKey: $0) }
             outline = s.outline
         }
         #if DEBUG
@@ -372,7 +372,7 @@ final class MindMapModel {
     }
 
     func saveNow() {
-        var s = MindMapUIState(open: open.map { tree[$0].path }.sorted(), sel: selected.map { tree[$0].path }, outline: outline)
+        var s = MindMapUIState(open: open.map { tree.stateKey($0) }.sorted(), sel: selected.map { tree.stateKey($0) }, outline: outline)
         if let cam = canvas?.camera { s.zoom = Double(cam.zoom); s.rootX = Double(cam.rx); s.rootY = Double(cam.ry) }
         else if let o = saved { s.zoom = o.zoom; s.rootX = o.rootX; s.rootY = o.rootY }
         s.save(book.id)

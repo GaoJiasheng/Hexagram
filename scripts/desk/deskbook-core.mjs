@@ -27,6 +27,7 @@ export const LIMITS = Object.freeze({
   mindmapDepth: 5, // 连根算
   mindmapLabel: 60,
   mindmapNote: 1500,
+  mindmapFull: 300, // 节点 full(截短前的整句,§10)
   overviewBytes: 2 * MB, // overview.json
   askQ: 120, // ask 块的问题
   askA: 600, // ask 块的回答
@@ -60,6 +61,8 @@ export const FIG_KINDS = ['quote', 'cols', 'rows', 'flow', 'tree', 'timeline', '
 export const IMAGE_EXTS = ['jpg', 'png', 'webp']
 export const VIDEO_EXTS = ['mp4']
 export const ID_PATTERN = /^[a-z0-9][a-z0-9-]{2,63}$/
+// 脑图节点的 id(§10,可无):字母数字开头,字母数字 _ -,至多 32 个字符;同一份 mindmap.json 里不重复
+export const MINDMAP_ID_PATTERN = /^[A-Za-z0-9][A-Za-z0-9_-]{0,31}$/
 // 书包 id 必须带的前缀:u- 任何人自己做的,g- 站点管理员书房的
 export const ID_PREFIXES = Object.freeze(['u-', 'g-'])
 // 不带前缀的 id 留给书桌内置的官方典籍;书包用了即报错(唯一一处定义)
@@ -957,10 +960,24 @@ export function validate(files) {
         for (const k of Object.keys(mm)) if (k !== 'root') err(M, k, `脑图顶层只有 root,没有「${k}」`)
         let count = 0
         let tooDeep = false
+        const ids = new Map() // id → 第一次出现的位置
         const node = (n, w, depth) => {
-          if (!isObj(n)) { err(M, w, '节点应为对象 {label, note?, ch?, children?}'); return }
+          if (!isObj(n)) { err(M, w, '节点应为对象 {id?, label, full?, note?, ch?, children?}'); return }
           count++
-          for (const k of Object.keys(n)) if (!['label', 'note', 'ch', 'children'].includes(k)) err(M, `${w}.${k}`, `节点只有 label / note / ch / children,没有「${k}」`)
+          for (const k of Object.keys(n)) if (!['id', 'label', 'full', 'note', 'ch', 'children'].includes(k)) err(M, `${w}.${k}`, `节点只有 id / label / full / note / ch / children,没有「${k}」`)
+          if (n.id !== undefined) {
+            if (!isStr(n.id) || !MINDMAP_ID_PATTERN.test(n.id)) err(M, `${w}.id`, `应为 1–32 个字母、数字、_ 或 -(字母或数字开头),现为 ${JSON.stringify(n.id)}`)
+            else if (ids.has(n.id)) err(M, `${w}.id`, `「${n.id}」与 ${ids.get(n.id)} 重复(同一份脑图里 id 不许重复)`)
+            else ids.set(n.id, w)
+          }
+          if (n.full !== undefined) {
+            const head = isStr(n.label) ? n.label.replace(/\u2026$/u, '') : null
+            if (!isStr(n.full) || !n.full.trim()) err(M, `${w}.full`, '应为非空字符串')
+            else if (/[\r\n]/.test(n.full)) err(M, `${w}.full`, 'full 只许一行')
+            else if (textLen(n.full) > LIMITS.mindmapFull) err(M, `${w}.full`, `${textLen(n.full)} 字,超过 ${LIMITS.mindmapFull} 字(full 是一句话;更长的展开放进 note)`)
+            else if (head !== null && (!n.full.startsWith(head) || textLen(n.full) <= textLen(head))) err(M, `${w}.full`, 'full 应以 label(去掉末尾的「…」)起头、比 label 长——label 是从它截下的开头')
+            else inline(n.full, M, `${w}.full`)
+          }
           if (!isStr(n.label)) err(M, `${w}.label`, '缺 label')
           else if (/[\r\n]/.test(n.label)) err(M, `${w}.label`, 'label 只许一行')
           else if (textLen(n.label) > LIMITS.mindmapLabel) err(M, `${w}.label`, `${textLen(n.label)} 字,超过 ${LIMITS.mindmapLabel} 字(长的话放进 note)`)

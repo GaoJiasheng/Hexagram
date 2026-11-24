@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://hexa.gavin.pub/desk/standard/schema/mindmap.json",
   "title": "deskbook · 全书脑图(mindmap.json)",
-  "description": "标准 §10。能展开全书思想的树,不是目录。根算第 1 层,至多 5 层;至多 600 个节点(校验器核);文件 ≤ 1 MB。ch 须为本书存在的章号(校验器核)。",
+  "description": "标准 §10。能展开全书思想的树,不是目录。根算第 1 层,至多 5 层;至多 600 个节点(校验器核);文件 ≤ 1 MB。ch 须为本书存在的章号(校验器核);id 在同一份脑图里不许重复、full 须以 label(去掉末尾「…」)起头(校验器核)。",
   "type": "object",
   "required": [
     "root"
@@ -24,14 +24,31 @@
       "pattern": "\\S",
       "x-deskbook-maxChars": 1500
     },
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,31}$",
+      "description": "可无。节点的稳定身份:同一份脑图里不重复(校验器核);书桌用它记展开 / 选中,没有时按节点在树里的位置认"
+    },
+    "full": {
+      "type": "string",
+      "pattern": "^[^\\r\\n]*\\S[^\\r\\n]*$",
+      "x-deskbook-maxChars": 300,
+      "description": "可无。label 是从一句更长的话截下的开头时,这里写那整句;须以 label(去掉末尾「…」)起头(校验器核)"
+    },
     "node1": {
       "type": "object",
       "required": [
         "label"
       ],
       "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
         "label": {
           "$ref": "#/$defs/label"
+        },
+        "full": {
+          "$ref": "#/$defs/full"
         },
         "note": {
           "$ref": "#/$defs/note"
@@ -57,8 +74,14 @@
         "label"
       ],
       "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
         "label": {
           "$ref": "#/$defs/label"
+        },
+        "full": {
+          "$ref": "#/$defs/full"
         },
         "note": {
           "$ref": "#/$defs/note"
@@ -84,8 +107,14 @@
         "label"
       ],
       "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
         "label": {
           "$ref": "#/$defs/label"
+        },
+        "full": {
+          "$ref": "#/$defs/full"
         },
         "note": {
           "$ref": "#/$defs/note"
@@ -111,8 +140,14 @@
         "label"
       ],
       "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
         "label": {
           "$ref": "#/$defs/label"
+        },
+        "full": {
+          "$ref": "#/$defs/full"
         },
         "note": {
           "$ref": "#/$defs/note"
@@ -138,8 +173,14 @@
         "label"
       ],
       "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
         "label": {
           "$ref": "#/$defs/label"
+        },
+        "full": {
+          "$ref": "#/$defs/full"
         },
         "note": {
           "$ref": "#/$defs/note"

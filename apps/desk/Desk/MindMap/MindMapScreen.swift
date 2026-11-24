@@ -143,6 +143,8 @@ struct MindMapView: View {
     // MARK: 读这一章
 
     private func read(_ ch: Int) {
+        // 这一下点按别再让画布当成点节点(见 MindCanvasView.ignoreTapsUntil)
+        model.canvas?.ignoreTapsUntil = Date().addingTimeInterval(0.8)
         model.clock.touch()
         if let onRead { model.saveNow(); onRead(ch); return }
         model.clock.settle()
@@ -312,8 +314,16 @@ struct MindNodeCard: View {
     @State private var drag: CGFloat = 0
     private var accent: Color { model.book.theme.accentColor }
 
-    /// 标签是长句截下的开头(以「…」收,或展开说明就以它起头):卡片上直接用说明里的整句当标题,不重复
+    /// 标签是长句截下的开头:卡片上用整句当标题,说明里不重复。书包写了 full(标准 §10)就用它;
+    /// 没写时推断(以「…」收,或展开说明就以它起头 → 说明里的第一句是整句)。
     static func texts(_ n: MindTree.Node) -> (head: String, body: String?) {
+        if let full = n.full {
+            guard let note = n.note else { return (full, nil) }
+            // 说明以同一句起头(做书工具为旧版书桌照顾的写法)就去掉那一句;否则说明整段照放
+            let rest: String? = note.hasPrefix(full) ? String(note.dropFirst(full.count)) : nil
+            guard let r = rest?.trimmingCharacters(in: .whitespacesAndNewlines) else { return (full, note) }
+            return (full, r.isEmpty ? nil : r)
+        }
         let lab = n.label.hasSuffix("…") ? String(n.label.dropLast()) : n.label
         if let note = n.note, BHText.plain(note).hasPrefix(lab) {
             // 整句 = 说明里从头到标签之后第一个句末标点(。!?;或换行);其余是展开

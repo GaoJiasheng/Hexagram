@@ -62,12 +62,12 @@ footer { margin-top: 56px; color: var(--soft); font-size: 14px; }
 
 <h2 id="download">下载</h2>
 <ul class="dl">
-<li><a href="deskbook-skill.zip" download>deskbook-skill.zip</a><span class="sz">367 KB</span><div class="note">做书用的 Claude Code skill。解压到 ~/.claude/skills/(得到 deskbook/ 目录),在任意会话里说「做一本书包」即可。内含标准、校验器、结构定义与两本示例。</div></li>
-<li><a href="deskbook.mjs" download>deskbook.mjs</a><span class="sz">86 KB</span><div class="note">校验器与打包工具:单文件、无依赖,Node 18 以上。init / validate / pack / unpack / gif2mp4。</div></li>
+<li><a href="deskbook-skill.zip" download>deskbook-skill.zip</a><span class="sz">368 KB</span><div class="note">做书用的 Claude Code skill。解压到 ~/.claude/skills/(得到 deskbook/ 目录),在任意会话里说「做一本书包」即可。内含标准、校验器、结构定义与两本示例。</div></li>
+<li><a href="deskbook.mjs" download>deskbook.mjs</a><span class="sz">88 KB</span><div class="note">校验器与打包工具:单文件、无依赖,Node 18 以上。init / validate / pack / unpack / gif2mp4。</div></li>
 <li><a href="schema/book.json" download>schema/book.json</a><span class="sz">5 KB</span><div class="note">book.json 的 JSON Schema(2020-12)。</div></li>
 <li><a href="schema/chapter.json" download>schema/chapter.json</a><span class="sz">6 KB</span><div class="note">章文件的 JSON Schema。</div></li>
 <li><a href="schema/fig.json" download>schema/fig.json</a><span class="sz">4 KB</span><div class="note">图解 fig 的 JSON Schema。</div></li>
-<li><a href="schema/mindmap.json" download>schema/mindmap.json</a><span class="sz">3 KB</span><div class="note">全书脑图 mindmap.json 的 JSON Schema。</div></li>
+<li><a href="schema/mindmap.json" download>schema/mindmap.json</a><span class="sz">5 KB</span><div class="note">全书脑图 mindmap.json 的 JSON Schema。</div></li>
 <li><a href="schema/overview.json" download>schema/overview.json</a><span class="sz">1 KB</span><div class="note">全书总览 overview.json 的 JSON Schema。</div></li>
 <li><a href="samples/sample-book.deskbook" download>sample-book.deskbook</a><span class="sz">304 KB</span><div class="note">现代书:单摆三章,用到全部块类型,带图片、两段动画、全书总览与全书脑图。</div></li>
 <li><a href="samples/sample-collection.deskbook" download>sample-collection.deskbook</a><span class="sz">3 KB</span><div class="note">文集:三篇独立短文,各有作者与日期。</div></li>
@@ -170,12 +170,12 @@ node deskbook.mjs gif2mp4 &lt;a.gif&gt; [-o media/a.mp4]         # 动图转视�
 <div class="tbl"><table><thead><tr><th>来路</th><th>谁能看到</th><th>怎么放</th></tr></thead><tbody><tr><td>官方典籍</td><td>所有人</td><td>随观象网站托管(<code>/desk/v1/</code>),书桌的「添书」里就有</td></tr><tr><td>书房</td><td>只有管理员账号</td><td>对象存储。管理员在观象网站的书房上传页上传 <code>.deskbook</code>(网站 <code>/books</code> 下,仅管理员可见);书桌的「添书」里,管理员多一栏「书房」,按 <code>category</code> 分栏</td></tr><tr><td>自己导入</td><td>只在导入的那台设备上</td><td>把 <code>.deskbook</code> 传到手机(隔空投送、文件、分享菜单、或粘贴一个 https 链接),用书桌打开。<strong>不上传</strong></td></tr></tbody></table></div>
 <ul><li>自己导入的书可以再原样分享出去(还是一个 <code>.deskbook</code>);划线与批注可以导出成 Markdown。</li><li>阅读进度、时长、划线照常跟账号同步(按书的 <code>id</code>),书本身不同步:换一台设备要再导入一次。</li><li>书桌里「我的 → 自定义导入」是这份标准的入口:讲三步怎么做、给标准与工具的下载、导入按钮。</li></ul>
 <h2 id="s10">9 · 版本</h2>
-<ul><li><code>version: 1</code>。以后只加不改:加字段、加块类型、加 <code>fig</code> 的 kind;书桌遇到比自己新的 <code>version</code> 会提示升级 App,而不是硬读。</li><li>本标准、结构定义、校验器、做书用的 skill 都公开在 <code>https://hexa.gavin.pub/desk/standard/</code>。</li></ul>
+<ul><li><code>version: 1</code>。以后只加不改:加字段、加块类型、加 <code>fig</code> 的 kind;书桌遇到比自己新的 <code>version</code> 会提示升级 App,而不是硬读。</li><li>变更记录(都只加不改,<code>version</code> 仍是 1)· 2026-11-24:脑图节点(§10)加两个可无的字段:<code>id</code>(稳定身份)、<code>full</code>(截短前的整句)。没有这两个字段的书包行为不变;旧版书桌不认识它们,照旧按位置认节点、按推断认整句。</li><li>本标准、结构定义、校验器、做书用的 skill 都公开在 <code>https://hexa.gavin.pub/desk/standard/</code>。</li></ul>
 <h2 id="s11">10 · 全书脑图(mindmap.json)</h2>
 <p>一棵<strong>能展开全书思想的树</strong>:根是全书的中心,往下一层层分出论点、论据、例子。它不是目录——目录书桌自己会排;节点可以是整句话。任何 <code>kind</code> 都可以有,一本书至多一份。</p>
 <pre><code>{ &quot;root&quot;: { &quot;label&quot;: &quot;第二座山&quot;, &quot;note&quot;: &quot;可无:一句到一段展开&quot;, &quot;ch&quot;: 1,
             &quot;children&quot;: [ { &quot;label&quot;: &quot;…&quot;, &quot;note&quot;: &quot;…&quot;, &quot;ch&quot;: 2, &quot;children&quot;: [ … ] } ] } }</code></pre>
-<ul><li>文件只许在包的根上、名字就叫 <code>mindmap.json</code>;<code>book.json</code> 里写 <code>&quot;mindmap&quot;: &quot;mindmap.json&quot;</code>,读的人不用翻 zip 就知道有没有。</li><li>节点只有四个字段:<code>label</code>(必有,一行,≤ 60 字)、<code>note</code>(可无,≤ 1500 字,点开展开)、<code>ch</code>(可无)、<code>children</code>(可无,非空数组)。没有 id:节点在树里的位置就是它的身份。</li><li><code>ch</code> 是本书的章号(须存在),只挂在与某一章对应的节点上;点这个节点,书桌会问要不要打开那一章。</li><li>连根至多 5 层;全树 ≤ 600 个节点;文件 ≤ 1 MB。文字的行内记号同 §3。</li><li>脑图里的字不计入全书字数(§3「字数怎么数」)。</li><li>文章里的多级提纲仍用 <code>outline</code> 块;脑图是整本书一份,不放在章里。</li></ul>
+<ul><li>文件只许在包的根上、名字就叫 <code>mindmap.json</code>;<code>book.json</code> 里写 <code>&quot;mindmap&quot;: &quot;mindmap.json&quot;</code>,读的人不用翻 zip 就知道有没有。</li><li>节点的字段:<code>label</code>(必有,一行,≤ 60 字)、<code>note</code>(可无,≤ 1500 字,点开展开)、<code>ch</code>(可无)、<code>children</code>(可无,非空数组),以及两个可无的 <code>id</code>、<code>full</code>(下两条)。别的字段校验器当错误报。</li><li><code>id</code>(可无):节点的稳定身份。1–32 个字符,只许字母、数字、<code>_</code>、<code>-</code>,字母或数字开头;同一份 <code>mindmap.json</code> 里不许重复(可以只给一部分节点)。书桌用它记这棵树上「展开了哪些、选中了哪一个」,书包更新后同一个 id 仍认得出;没有 <code>id</code> 的节点照旧以它在树里的位置(下标路径)为身份。机器生成时宜由节点的位置与文字派生(重跑不变),不要用随机数。</li><li><code>full</code>(可无):<code>label</code> 是从一句更长的话截下的开头时,这里写那整句。一行,≤ 300 字;须以 <code>label</code>(去掉末尾的「…」)起头、比它长。书桌的节点卡片以 <code>full</code> 为标题,<code>note</code> 若也以这句起头,显示时去掉重复的那一句。没有 <code>full</code> 时书桌照旧推断(<code>label</code> 以「…」收、或 <code>note</code> 以 <code>label</code> 起头,就把 <code>note</code> 的第一句当整句)。为照顾不认识 <code>full</code> 的旧版书桌,建议整句仍放在 <code>note</code> 开头。</li><li><code>ch</code> 是本书的章号(须存在),只挂在与某一章对应的节点上;点这个节点,书桌会问要不要打开那一章。</li><li>连根至多 5 层;全树 ≤ 600 个节点;文件 ≤ 1 MB。文字的行内记号同 §3。</li><li>脑图里的字不计入全书字数(§3「字数怎么数」)。</li><li>文章里的多级提纲仍用 <code>outline</code> 块;脑图是整本书一份,不放在章里。</li></ul>
 <h2 id="s12">11 · 书一级与章一级:全书总览</h2>
 <p>一本书分两层读:</p>
 <ul><li><strong>书一级(总纲)</strong>:全书总览 <code>overview.json</code> 与全书脑图 <code>mindmap.json</code>。先读它,读到中途、读完以后常回来看。</li><li><strong>章一级</strong>:<code>chapters</code> 里的各章,由目录管。</li></ul>
