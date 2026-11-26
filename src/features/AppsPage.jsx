@@ -5,7 +5,9 @@ import { usePageTitle } from './yijing/hooks/usePageTitle.js'
 // 两个 App 的介绍页(中立外壳,/apps)。书桌上架前「下载」处只写状态,上架后把 DESK_STORE 填上即可。
 const GUANXIANG_STORE = 'https://apps.apple.com/cn/app/id6782626551'
 const DESK_STORE = ''
-const STANDARD = '/desk/standard/'
+// 书包标准、skill、示例只由网站托管(观象 App 的包里不带 /desk/ 那一份),App 里一律指到线上
+const STANDARD_WEB = '/desk/standard/'
+const STANDARD_ORIGIN = 'https://hexa.gavin.pub/desk/standard/'
 
 const SHOTS = [
   { src: '/apps/desk-1.jpg', alt: '书桌首页:正在读的书、本周目标、今日一章' },
@@ -17,6 +19,8 @@ const SHOTS = [
 export default function AppsPage() {
   usePageTitle('App')
   const inApp = Capacitor.isNativePlatform()
+  const STANDARD = inApp ? STANDARD_ORIGIN : STANDARD_WEB
+  const ext = inApp ? { target: '_blank', rel: 'noreferrer' } : {}
   return (
     <div className="basics-page about-page apps-page">
       <div className="page-header">
@@ -52,7 +56,7 @@ export default function AppsPage() {
           </div>
           {DESK_STORE
             ? <a className="btn btn--primary apps-card__get" href={DESK_STORE} target="_blank" rel="noreferrer">App Store 下载</a>
-            : <span className="apps-card__state">正在准备上架</span>}
+            : !inApp && <span className="apps-card__state">正在准备上架</span>}
         </header>
         <p>书桌上不用摆很多书。从七十九部古籍里挑几部正在学的,打开就接着上次读。适合一本书从头读到尾。</p>
         <ul className="about-list">
@@ -74,7 +78,7 @@ export default function AppsPage() {
         <ol className="about-list apps-steps">
           <li>
             <strong>装上做书用的 skill。</strong>
-            下载 <a href={`${STANDARD}deskbook-skill.zip`}>deskbook-skill.zip</a>,解压得到 <code>deskbook</code> 文件夹。
+            下载 <a href={`${STANDARD}deskbook-skill.zip`} {...ext}>deskbook-skill.zip</a>,解压得到 <code>deskbook</code> 文件夹。
             用 Claude Code 的,把它放进 <code>~/.claude/skills/</code>;别的助手按它装 skill 的办法装,或者直接把文件夹里的 <code>SKILL.md</code> 与 <code>standard.md</code> 交给它。
           </li>
           <li>
@@ -90,7 +94,7 @@ export default function AppsPage() {
             首页「添书」→ 左上角「导入」→「从文件导入书包」或「粘贴书包链接」。隔空投送过来的,点开时选「用书桌打开」就行。
           </li>
         </ol>
-        <p>不用 AI 也行:照<a href={STANDARD}>书包格式标准</a>写 <code>book.json</code> 与每章的文件,用标准页上的校验器 <code>deskbook.mjs</code> 校验、打包。那一页还有四本示例书包,可以先导入一本看看样子。</p>
+        <p>不用 AI 也行:照<a href={STANDARD} {...ext}>书包格式标准</a>写 <code>book.json</code> 与每章的文件,用标准页上的校验器 <code>deskbook.mjs</code> 校验、打包。那一页还有四本示例书包,可以先导入一本看看样子。</p>
         <p className="text-soft">导入的书只存在你自己的设备上,不上传。把别人的书做成书包,只能是自己写的讲解与消化,不能照搬原文——红线写在标准里,skill 会照着守。</p>
       </section>
 
