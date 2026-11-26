@@ -544,7 +544,7 @@ function indexPages(records) {
     id: 'page:apps',
     kind: '页面',
     site: 'portal',
-    siteTitle: 'App',
+    siteTitle: '观象',
     title: '两个 App',
     subtitle: '观象 与 观象 · 书桌',
     href: '/apps',
