@@ -188,7 +188,6 @@ final class ChapterLayout {
         storage.addLayoutManager(manager)
         indexLayers()
         applyHighlights(highlights)
-        paginate(colSize)
         // 一段(连同它展开的译文)尽量不拆到两栏:排完看哪一段正好跨在栏缝上(左栏→右栏、右栏→下一页左栏、
         // 单栏时就是页缝),只要它不算长,就把那一栏的文字区截短到这一段的上沿,让它整段落到下一栏,再重排。
         // 用排版器自己的结果判断,不靠估算;特别长的段(超过大半栏)照旧自然跨栏。
@@ -456,37 +455,56 @@ final class ChapterLayout {
         return a..<min(a + columns, containers.count)
     }
 
+    /// 分页时一次预备多少栏(见 paginate)。
+    static let columnBatch = 24
+
     private func paginate(_ pageSize: CGSize) {
         while !manager.textContainers.isEmpty { manager.removeTextContainer(at: manager.textContainers.count - 1) }
         textViews.forEach { $0.removeFromSuperview() }
         containers.removeAll(); colFirstSeg.removeAll(); textViews.removeAll()
         let total = manager.numberOfGlyphs
         var laid = 0
-        // 撤掉最后一栏(栏缝要截时,连上一栏一起撤掉重排)
+        // 栏(文字容器 + 文本框)成批预备:每新接一栏文本框,系统都会把整章带链接的范围作废重排(建文本框一次、设链接样式又一次),
+        // 一栏一栏地接,前面排好的每次都得重来,栏越多越慢(平方级)——长短经第六卷 217 页曾经要排十几秒。
+        // 一次接一批,作废只在每批开头发生一次。备用栏按排版器里的次序排着,用的时候从前头取;栏缝要截时撤回前头。
+        var spareC: [NSTextContainer] = [], spareV: [UITextView] = []
+        func provision() {
+            for _ in 0..<Self.columnBatch {
+                let c = NSTextContainer(size: pageSize)
+                c.lineFragmentPadding = 0
+                manager.addTextContainer(c)
+                let tv = TightTextView(frame: CGRect(origin: .zero, size: c.size), textContainer: c)
+                tv.isEditable = false
+                tv.isScrollEnabled = false
+                tv.isSelectable = true
+                tv.backgroundColor = .clear
+                tv.textContainerInset = .zero
+                tv.contentInsetAdjustmentBehavior = .never
+                // 注释词的样子:字色不变,只在下面加一道主题色的点线(它影响行高,分页必须和屏上显示的文本框设得一样)
+                tv.linkTextAttributes = [.foregroundColor: UIColor.inkText,
+                                         .underlineStyle: NSUnderlineStyle.single.rawValue | NSUnderlineStyle.patternDot.rawValue,
+                                         .underlineColor: accent]
+                c.lineFragmentPadding = 0
+                c.size = pageSize
+                spareC.append(c); spareV.append(tv)
+            }
+        }
+        // 撤掉最后一栏(栏缝要截时,连上一栏一起撤掉重排):放回备用的最前头,它在排版器里的位置不动
         func popLast() {
-            manager.removeTextContainer(at: manager.textContainers.count - 1)
-            containers.removeLast(); textViews.removeLast().removeFromSuperview(); colFirstSeg.removeLast()
+            spareC.insert(containers.removeLast(), at: 0); spareV.insert(textViews.removeLast(), at: 0); colFirstSeg.removeLast()
             laid = containers.last.map { NSMaxRange(manager.glyphRange(for: $0)) } ?? 0
         }
+        defer {
+            // 没用上的备用栏从排版器里撤掉(都在末尾)
+            for _ in spareC { manager.removeTextContainer(at: manager.textContainers.count - 1) }
+        }
         while laid < total && containers.count < 2000 {
-            let c = NSTextContainer(size: CGSize(width: pageSize.width, height: cuts[containers.count] ?? pageSize.height))
-            c.lineFragmentPadding = 0
-            manager.addTextContainer(c)
-            let tv = TightTextView(frame: CGRect(origin: .zero, size: c.size), textContainer: c)
-            tv.isEditable = false
-            tv.isScrollEnabled = false
-            tv.isSelectable = true
-            tv.backgroundColor = .clear
-            tv.textContainerInset = .zero
-            tv.contentInsetAdjustmentBehavior = .never
-            // 注释词的样子:字色不变,只在下面加一道主题色的点线
-            tv.linkTextAttributes = [.foregroundColor: UIColor.inkText,
-                                     .underlineStyle: NSUnderlineStyle.single.rawValue | NSUnderlineStyle.patternDot.rawValue,
-                                     .underlineColor: accent]
-            c.lineFragmentPadding = 0
-            c.size = CGSize(width: pageSize.width, height: cuts[containers.count] ?? pageSize.height)
+            if spareC.isEmpty { provision() }
+            let c = spareC.removeFirst(), tv = spareV.removeFirst()
+            let size = CGSize(width: pageSize.width, height: cuts[containers.count] ?? pageSize.height)
+            if c.size != size { tv.frame.size = size; c.size = size }
             let r = manager.glyphRange(for: c)
-            if r.length == 0 { manager.removeTextContainer(at: manager.textContainers.count - 1); break }
+            if r.length == 0 { spareC.insert(c, at: 0); spareV.insert(tv, at: 0); break }
             containers.append(c)
             textViews.append(tv)
             laid = NSMaxRange(r)

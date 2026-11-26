@@ -102,9 +102,12 @@ final class Library {
     /// 这本书在某个目录里的任意一版核心包(文件名「<id>.<哈希>.json」,不含白话包)。
     private func anyPack(_ b: BookInfo, in d: URL?) -> URL? {
         guard let d else { return nil }
+        // 有几份就取最近写下的那份(文件名里是内容哈希,字典序和新旧无关)
+        let mtime = { (u: URL) in (try? u.resourceValues(forKeys: [.contentModificationDateKey]).contentModificationDate) ?? .distantPast }
         return ((try? FileManager.default.contentsOfDirectory(atPath: d.path)) ?? [])
             .filter { $0.hasPrefix("\(b.id).") && !$0.hasPrefix("\(b.id).baihua.") && $0.hasSuffix(".json") }
-            .sorted().first.map { d.appendingPathComponent($0) }
+            .map { d.appendingPathComponent($0) }
+            .max { mtime($0) < mtime($1) }
     }
 
     /// 内存里那份是「上一版」(书目已换新包、新包还没下好)时,记下它是替哪个版本顶着的——免得每次要包都把旧包重读一遍。
