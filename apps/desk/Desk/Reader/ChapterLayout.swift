@@ -334,7 +334,6 @@ final class ChapterLayout {
         let span = NSRange(location: start, length: max(NSMaxRange(tail), NSMaxRange(chars)) - start)
         let sub = NSMutableAttributedString(attributedString: storage.attributedSubstring(from: span))
         let visible = NSRange(location: chars.location - span.location, length: chars.length)
-        sub.removeAttribute(.link, range: NSRange(location: 0, length: sub.length))      // 见 typeset:显示时不要系统链接
         // 上下文只占位、不显示:字透明,去掉注释词的点线(下划线另有颜色,字透明了它还在)
         for r in [NSRange(location: 0, length: visible.location), NSRange(location: NSMaxRange(visible), length: sub.length - NSMaxRange(visible))] where r.length > 0 {
             sub.removeAttribute(.underlineStyle, range: r)
@@ -480,10 +479,6 @@ final class ChapterLayout {
                 tv.backgroundColor = .clear
                 tv.textContainerInset = .zero
                 tv.contentInsetAdjustmentBehavior = .never
-                // 注释词的样子:字色不变,只在下面加一道主题色的点线(它影响行高,分页必须和屏上显示的文本框设得一样)
-                tv.linkTextAttributes = [.foregroundColor: UIColor.inkText,
-                                         .underlineStyle: NSUnderlineStyle.single.rawValue | NSUnderlineStyle.patternDot.rawValue,
-                                         .underlineColor: accent]
                 c.lineFragmentPadding = 0
                 c.size = pageSize
                 spareC.append(c); spareV.append(tv)
@@ -584,13 +579,6 @@ final class ChapterLayout {
     func note(atCharacter i: Int) -> Note? {
         guard i >= 0, i < storage.length, let k = storage.attribute(.deskNote, at: i, effectiveRange: nil) as? String else { return nil }
         let parts = k.split(separator: ":").compactMap { Int($0) }
-        guard parts.count == 2, chapter.segs.indices.contains(parts[0]), let ns = chapter.segs[parts[0]].n, ns.indices.contains(parts[1]) else { return nil }
-        return ns[parts[1]]
-    }
-
-    func note(for url: URL) -> Note? {
-        guard url.scheme == "desk-note" else { return nil }
-        let parts = url.pathComponents.compactMap { Int($0) }
         guard parts.count == 2, chapter.segs.indices.contains(parts[0]), let ns = chapter.segs[parts[0]].n, ns.indices.contains(parts[1]) else { return nil }
         return ns[parts[1]]
     }
@@ -698,10 +686,9 @@ final class ChapterLayout {
                 r.location = shift(r.location, false)
                 r.length = e - r.location
                 r.location += lead
-                // 带注释的字词:主题色点线下划线 + 系统「链接」属性。链接属性只留在整章分页用的 storage 里——
-                // 分页一直是带着它算的(带不带它,UIKit 往一页里装的行数不一样),去掉会让各章页数变;
-                // 显示用的单栏文本框(ColumnTextView)里去掉它:长按链接会弹链接预览、选不了字,出注由页面的轻点手势按 .deskNote 判断
-                para.addAttributes([.deskNote: "\(i):\(j)", .link: URL(string: "desk-note://n/\(i)/\(j)")!,
+                // 带注释的字词:主题色点线下划线 + .deskNote 标记。不加系统「链接」属性(它拖慢分页、还让一页装的行数与显示略有出入);
+                // 点线靠 .underlineStyle,出注由页面的轻点手势按 .deskNote 判断
+                para.addAttributes([.deskNote: "\(i):\(j)",
                                     .underlineStyle: NSUnderlineStyle.single.rawValue | NSUnderlineStyle.patternDot.rawValue,
                                     .underlineColor: style.accent], range: r)
             }

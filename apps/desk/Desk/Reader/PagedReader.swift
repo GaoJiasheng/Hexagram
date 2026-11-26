@@ -125,13 +125,7 @@ final class TextPageController: UIViewController, UITextViewDelegate, UIGestureR
 
     func textViewDidChangeSelection(_ textView: UITextView) { (textView as? ColumnTextView)?.clampSelection() }
 
-    /// 注释词的系统点按什么也不做(出注由上面的轻点手势负责,免得第一栏出两次),也不走系统的「打开链接」。
-    func textView(_ textView: UITextView, primaryActionFor textItem: UITextItem, defaultAction: UIAction) -> UIAction? {
-        guard case .link(let url) = textItem.content, layout.note(for: url) != nil else { return nil }
-        return UIAction { _ in }
-    }
-
-    /// 长按注释词不出系统的链接预览菜单。
+    /// 长按不出系统的链接预览菜单(注释词已不带 .link,留着以防别处的链接)。
     func textView(_ textView: UITextView, menuConfigurationFor textItem: UITextItem, defaultMenu: UIMenu) -> UITextItem.MenuConfiguration? { nil }
 }
 
