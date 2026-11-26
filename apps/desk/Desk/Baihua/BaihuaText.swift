@@ -125,6 +125,33 @@ struct BHMarkableText: UIViewRepresentable {
             return UIMenu(children: items)
         }
 
+        /// 旁白:长按选字出菜单这条路,旁白用户走不了。给整段挂自定义动作——划线、批注(都是整段),以及这一段里已有的每条划线。
+        func axActions(_ tv: UITextView) -> [UIAccessibilityCustomAction] {
+            let text = tv.textStorage.string
+            let n = text.count
+            var out: [UIAccessibilityCustomAction] = []
+            if !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                let piece = HLPiece(seg: parent.block, layer: "b", start: 0, end: n, text: text)
+                // 整段已经划过就不再给「划线」(免得叠两条一样的)
+                if !parent.marks.contains(where: { $0.start == 0 && $0.end >= n }) {
+                    out.append(UIAccessibilityCustomAction(name: "划线") { [weak self] _ in self?.parent.onMenu(.mark(piece, color: 0)); return true })
+                }
+                out.append(UIAccessibilityCustomAction(name: "批注") { [weak self] _ in self?.parent.onMenu(.annotate(piece)); return true })
+            }
+            for m in parent.marks {
+                guard let t = text.chars(m.start, m.end) else { continue }
+                out.append(UIAccessibilityCustomAction(name: "看划线:\(t.prefix(12))") { [weak self] _ in self?.parent.onHighlight(m.id); return true })
+            }
+            // 正文里的链接(书包文章才有):整段成了一个元素,链接也给成动作
+            let st = tv.textStorage
+            st.enumerateAttribute(.link, in: NSRange(location: 0, length: st.length)) { v, r, _ in
+                guard let u = v as? URL else { return }
+                let t = (st.string as NSString).substring(with: r)
+                out.append(UIAccessibilityCustomAction(name: "打开链接:\(t.prefix(12))") { [weak self] _ in self?.parent.onLink(u); return true })
+            }
+            return out
+        }
+
         func flash(_ tv: UITextView, _ r: NSRange) {
             guard let lm = tv.layoutManager as? DeskLayoutManager else { return }
             timer?.invalidate()
@@ -166,6 +193,12 @@ struct BHMarkableText: UIViewRepresentable {
         let tap = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.tapped(_:)))
         tap.delegate = context.coordinator
         tv.addGestureRecognizer(tap)
+        // 旁白:整段一个元素,自定义动作按需现算(划线随时会变)
+        let c = context.coordinator
+        tv.makeAXActions = { [weak c, weak tv] in
+            guard let c, let tv else { return [] }
+            return c.axActions(tv)
+        }
         return tv
     }
 
@@ -219,6 +252,37 @@ struct BHMarkableText: UIViewRepresentable {
 /// 选字时系统画的底色按整个行框画:行距大时比字高出一截(下一行的字像被盖住一半)。这里把每一块收到字的上下沿,
 /// 与划线底色同高;拖柄跟着这些框走。阅读页与白话深读的可选字文本框都用它。
 class TightTextView: UITextView {
+    /// 旁白(白话深读的可划线段用;阅读页的栏另有一套按段落切的元素,不设这个):设了它,这个文本框对旁白就是**一个**元素,
+    /// 读整段、带自定义动作。不这样做的话,系统把不可编辑的文本框拆成内部的段落元素(_AXUITextViewParagraphElement),
+    /// 挂在文本框上的自定义动作到不了它们身上。
+    var makeAXActions: (() -> [UIAccessibilityCustomAction])?
+    private var axSingle: Bool { makeAXActions != nil }
+    override var isAccessibilityElement: Bool {
+        get { axSingle || super.isAccessibilityElement }
+        set { super.isAccessibilityElement = newValue }
+    }
+    override var accessibilityElements: [Any]? {
+        get { axSingle ? nil : super.accessibilityElements }
+        set { super.accessibilityElements = newValue }
+    }
+    override func accessibilityElementCount() -> Int { axSingle ? 0 : super.accessibilityElementCount() }
+    override var accessibilityLabel: String? {
+        get { axSingle ? textStorage.string : super.accessibilityLabel }
+        set { super.accessibilityLabel = newValue }
+    }
+    override var accessibilityValue: String? {
+        get { axSingle ? nil : super.accessibilityValue }
+        set { super.accessibilityValue = newValue }
+    }
+    override var accessibilityTraits: UIAccessibilityTraits {
+        get { axSingle ? .staticText : super.accessibilityTraits }
+        set { super.accessibilityTraits = newValue }
+    }
+    override var accessibilityCustomActions: [UIAccessibilityCustomAction]? {
+        get { makeAXActions?() ?? super.accessibilityCustomActions }
+        set { super.accessibilityCustomActions = newValue }
+    }
+
     override func selectionRects(for range: UITextRange) -> [UITextSelectionRect] {
         let rects = super.selectionRects(for: range)
         guard textStorage.length > 0 else { return rects }

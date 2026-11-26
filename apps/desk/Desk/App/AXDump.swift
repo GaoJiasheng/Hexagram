@@ -30,7 +30,7 @@ enum AXDump {
                 if bad { unlabeled += 1 }
                 out.append("\(bad ? "!!" : "  ") [\(tags.joined(separator: ","))] \(label.prefix(60))" + ((o.accessibilityValue ?? "").isEmpty ? "" : " = \(o.accessibilityValue!.prefix(20))")
                            + (o.accessibilityHint.map { " (\($0.prefix(30)))" } ?? "")
-                           + ((o.accessibilityCustomActions ?? []).isEmpty ? "" : " {\((o.accessibilityCustomActions ?? []).map(\.name).joined(separator: "|"))}") + " @\(Int(f.minX)),\(Int(f.minY))")
+                           + ((o.accessibilityCustomActions ?? []).isEmpty ? "" : " {\((o.accessibilityCustomActions ?? []).map(\.name).joined(separator: "|"))}") + " @\(Int(f.minX)),\(Int(f.minY))" + (label.isEmpty ? " <\(type(of: o))>" : ""))
                 return
             }
             let kids: [NSObject]
