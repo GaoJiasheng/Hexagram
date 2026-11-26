@@ -17,6 +17,8 @@ enum DeskStandard {
     static let version = DBRules.formatVersion
     static var tool: URL { base.appendingPathComponent("deskbook.mjs") }
     static var skill: URL { base.appendingPathComponent("deskbook-skill.zip") }
+    /// 给电脑上看的做书指引(网站的 App 页):永远是线上地址,发给电脑用
+    static let guide = URL(string: "https://hexa.gavin.pub/apps#make")!
     static let samples: [(file: String, title: String, kind: String)] = [
         ("sample-book.deskbook", "摆的道理", "现代书 · 动画与图解"),
         ("sample-fitness.deskbook", "深蹲的形", "现代书 · 带健身声明"),
@@ -343,14 +345,24 @@ struct CustomImportScreen: View {
                 section("书包是什么") {
                     Text("一个 zip:里面一份 book.json(书名、作者、门类、目录),每章一个 json 文件,另有图片与短视频。三种体裁:")
                         .font(.system(size: 14)).foregroundStyle(Ink.text).lineSpacing(4).fixedSize(horizontal: false, vertical: true)
-                    kindRow("典籍", "原文分段、译文、字词注,章末一篇深读;像这里的六部经典那样翻页读")
+                    kindRow("典籍", "原文分段、译文、字词注,章末一篇深读;像这里的典籍那样翻页读")
                     kindRow("现代书", "一章一篇文章,纵向长文;可带图解、图片与循环播放的动图")
                     kindRow("文集", "若干独立文章,各有作者与日期;目录是文章列表")
                 }
-                section("三步做一本") {
-                    step(1, "照标准写", "写 book.json 与每章的文件。也可以把做书用的 skill 交给 AI 助手,让它照标准帮你起草。")
+                section("让 AI 助手帮你做") {
+                    Text("做书在电脑上做。把做书用的 skill 装进 AI 助手,它会照书包标准把你的讲义、笔记、文章做成一本书。")
+                        .font(.system(size: 14)).foregroundStyle(Ink.text).lineSpacing(4).fixedSize(horizontal: false, vertical: true)
+                    step(1, "装上 skill", "在电脑上下载 deskbook-skill.zip,解压得到 deskbook 文件夹。用 Claude Code 的,把它放进 ~/.claude/skills/;别的助手,按它装 skill 的办法装,或直接把文件夹里的 SKILL.md 与 standard.md 交给它。")
+                    step(2, "说一句「做成书包」", "把材料给它,说「把这份讲义做成书包」。它先列提纲等你点头,再一章一章写,每章写完自己校验,最后打包,交给你一个 .deskbook 文件。")
+                    step(3, "传到这台设备", "隔空投送过来,或存进「文件」后点上面的「从文件导入」,或在分享菜单里选「用书桌打开」。放在网上的,点「粘贴链接」。")
+                    Divider().overlay(Ink.line)
+                    ShareLink(item: DeskStandard.guide) { linkRow("把这份指引发到电脑上", "hexa.gavin.pub/apps · 带 skill 与工具的下载", icon: "laptopcomputer", chevron: "square.and.arrow.up") }
+                        .buttonStyle(.plain)
+                }
+                section("自己动手做") {
+                    step(1, "照标准写", "写 book.json 与每章的文件,照着示例书包改最快。")
                     step(2, "校验、打包", "node deskbook.mjs validate 目录 —— 指出哪个文件、哪一块不合;通过后 node deskbook.mjs pack 目录 打成 .deskbook。")
-                    step(3, "传到这台设备", "隔空投送、「文件」、分享菜单里选「用书桌打开」,或在这里贴一个 https 链接。")
+                    step(3, "传到这台设备", "同上:隔空投送、「文件」、分享菜单,或一条 https 链接。")
                 }
                 section("标准与工具") {
                     Link(destination: DeskStandard.base) { linkRow("书包格式标准 v\(DeskStandard.version)", "全文、结构定义、红线与声明", icon: "doc.text") }

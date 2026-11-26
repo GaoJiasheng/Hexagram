@@ -422,6 +422,7 @@ async function main() {
     '/renwu',
     '/debates',
     '/about',
+    '/apps',
     // 二十四期 · 交互化改造(design-v24 §11)
     '/ru/lunyu/renwu',
     '/dao/cantongqi/moon',

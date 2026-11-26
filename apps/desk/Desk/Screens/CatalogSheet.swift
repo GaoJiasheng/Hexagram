@@ -16,6 +16,7 @@ struct CatalogSheet: View {
     @State private var picking = false
     @State private var askLink = false
     @State private var link = ""
+    @State private var showGuide = false
     private var shelf: ShelfStore { .shared }
     private var store: DeskbookStore { .shared }
 
@@ -51,10 +52,13 @@ struct CatalogSheet: View {
                             link = clip.flatMap { $0.hasPrefix("https://") ? $0 : nil } ?? ""
                             askLink = true
                         }
+                        Divider()
+                        Button("怎么做一本书包", systemImage: "questionmark.circle") { showGuide = true }
                     } label: { Label("导入", systemImage: "square.and.arrow.down") }
                 }
                 ToolbarItem(placement: .topBarTrailing) { Button("好了") { dismiss() } }
             }
+            .navigationDestination(isPresented: $showGuide) { CustomImportScreen() }
             .fileImporter(isPresented: $picking, allowedContentTypes: [.deskbook]) { r in
                 if case .success(let u) = r { ImportCenter.shared.open(u) }
             }

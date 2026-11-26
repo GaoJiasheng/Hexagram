@@ -123,6 +123,13 @@ export default function PortalLanding({ shelf, groupCount }) {
         </section>
       )}
 
+      <p className="landing-apps">
+        <Link to="/apps">
+          <span className="landing-apps__label">手机与平板上读</span>
+          <span className="landing-apps__names">观象 App · 观象 · 书桌</span>
+          <span className="landing-apps__go" aria-hidden="true">→</span>
+        </Link>
+      </p>
     </>
   )
 }

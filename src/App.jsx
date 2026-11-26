@@ -123,12 +123,13 @@ const AppMePage = lazy(() => import('./shell/AppPages.jsx').then((m) => ({ defau
 
 // 中立外壳路径(总门户 / 义理专题 / 百家争鸣):不套分站 nav/搜索/底栏,域名着陆豁免
 function isNeutralPath(p) {
-  return p === '/' || p === MASTER_PORTAL_PATH || p === '/concepts' || p === '/stats' || p === '/timeline' || p === '/renwu' || p === '/mingju' || p === '/rhyme' || p === '/privacy' || p === '/ba' || p === '/legal' || p === '/admin/stats' || p === '/debates' || p.startsWith('/debates/') || p === '/zhuzi' || p === '/books' || p.startsWith('/books/') || p.startsWith('/app/')
+  return p === '/' || p === MASTER_PORTAL_PATH || p === '/concepts' || p === '/stats' || p === '/timeline' || p === '/renwu' || p === '/mingju' || p === '/rhyme' || p === '/privacy' || p === '/apps' || p === '/ba' || p === '/legal' || p === '/admin/stats' || p === '/debates' || p.startsWith('/debates/') || p === '/zhuzi' || p === '/books' || p.startsWith('/books/') || p.startsWith('/app/')
 }
 // 全站设置浮层(Tier 0):任何站 nav 齿轮就地打开(主题/字号/译文 + 数据导出导入)
 const SettingsSheet = lazy(() => import('./features/SettingsSheet.jsx'))
 const Colophon = lazy(() => import('./features/Colophon.jsx'))
 const StatsPage = lazy(() => import('./features/StatsPage.jsx'))
+const AppsPage = lazy(() => import('./features/AppsPage.jsx'))
 
 // 站点注册迁至 src/sites/registry.js(v14):平台读 manifest,加站零改平台代码
 
@@ -595,6 +596,7 @@ function AppContent() {
           <Route path="/debates/:id/article" element={<DebateArticlePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/apps" element={<AppsPage />} />
           <Route path="/ba" element={<ColophonPage />} />
           <Route path="/legal" element={<LicensePage />} />
           {/* Owner 阅读统计工具(隐藏入口,不挂任一分站导航)。 */}
@@ -625,7 +627,7 @@ function AppContent() {
         {!isPortal && (
           <div className="app-footer__copy">
             <span>观象 · 个人学习站</span>
-            <span>本站为个人学习用途，解读内容仅供研习参考 · <NavLink to="/about" className="app-footer__link">关于本站</NavLink></span>
+            <span>本站为个人学习用途，解读内容仅供研习参考 · <NavLink to="/about" className="app-footer__link">关于本站</NavLink> · <NavLink to="/apps" className="app-footer__link">App</NavLink></span>
           </div>
         )}
         <button className="colophon-trigger" onClick={openColophon} aria-label="落款" title="落款">

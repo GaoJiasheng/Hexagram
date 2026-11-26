@@ -540,6 +540,16 @@ function indexPages(records) {
     href: '/about',
     text: '关于本站 研读铁律 数据说明 非医疗建议 不宣化 不算命',
   })
+  addRecord(records, {
+    id: 'page:apps',
+    kind: '页面',
+    site: 'portal',
+    siteTitle: 'App',
+    title: '两个 App',
+    subtitle: '观象 与 观象 · 书桌',
+    href: '/apps',
+    text: 'App 观象 书桌 iPhone iPad 下载 App Store 书包 deskbook skill 导入 自己做书',
+  })
 
   for (const site of SITES) {
     addRecord(records, {
@@ -878,7 +888,7 @@ function buildOgIndex(records) {
 
   // 首页:原先中间件对 `/` 直接放行,爬虫拿到的是空壳。这里给它一条(t: 'home' → 中间件只写正文与链接,不动站点级 meta)
   const allBooks = [...bookHref.values()]
-  const hubs = ['/timeline', '/renwu', '/mingju', '/concepts', '/debates', '/hexagrams', '/classics', '/about'].filter((h) => entries.has(h))
+  const hubs = ['/timeline', '/renwu', '/mingju', '/concepts', '/debates', '/hexagrams', '/classics', '/about', '/apps'].filter((h) => entries.has(h))
   entries.set('/', [
     '观象 · 古籍研读站', '',
     compact(`观象是一个古籍研读站。${allBooks.length + 1} 部典籍，每部都有原文、白话译文、字词注疏、每章延伸与白话深读，分 ${visibleSites.length} 个分站：`
@@ -1059,6 +1069,7 @@ function buildLlmsTxt() {
     `- [义理专题](${SITE_ORIGIN}/concepts): 同一概念在各家典籍中的落点`,
     `- [百家争鸣](${SITE_ORIGIN}/debates): 诸家就同一题目的离线对辩,每句锚原文`,
     `- [关于本站](${SITE_ORIGIN}/about): 底本凡例与编写说明`,
+    `- [两个 App](${SITE_ORIGIN}/apps): 观象(iPhone / iPad 书库)与观象 · 书桌(原生精读 App);书包格式与做书用的 skill`,
     '')
   fs.writeFileSync(path.join(ROOT, 'public/llms.txt'), lines.join('\n'))
   console.log(`llms.txt: ${lines.filter((l) => l.startsWith('- [')).length} 条`)

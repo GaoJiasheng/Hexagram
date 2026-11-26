@@ -14,7 +14,7 @@ export default function AboutPage() {
       <section className="about-section">
         <h2 className="about-section__title">这是什么</h2>
         <p>一个人做的古籍学习站,收易经、道藏、儒、佛、阳明心学、法墨兵纵横诸子、中医、谋略杂纂等十组典籍的原文、白话译注与每章延伸。内容随应用打包,<strong>不登录、不联网即可完整阅读</strong>;登录是可选的,只为换设备接着读与查看章末讨论。</p>
-        <p>网页版与 iOS App 是同一个站:<a href="https://hexa.gavin.pub" target="_blank" rel="noreferrer">hexa.gavin.pub</a>。</p>
+        <p>网页版与 iOS App 是同一个站:<a href="https://hexa.gavin.pub" target="_blank" rel="noreferrer">hexa.gavin.pub</a>。另有一个只摆几本书、专门精读的原生 App「观象 · 书桌」,两个 App 的介绍见 <Link to="/apps">App 页</Link>。</p>
         <p>解读内容由人工与机器协同整理,<strong>仅供研习参考</strong>,非权威定本,亦非宗教、医疗或处世指导。原文一律取自维基文库等公开底本。</p>
       </section>
 

@@ -5008,3 +5008,32 @@ g.yao-interactive:hover .yao-hover-bg { fill: var(--cinnabar-bg); }
   .book-head__art .book-art { width: 150px !important; height: 150px !important; }
   .book-lens { flex-direction: column; gap: 4px; }
 }
+
+/* 两个 App 的介绍页(/apps)与首页底部的小入口 */
+.landing-apps { width: 100%; margin: 0; display: flex; justify-content: center; }
+.landing-apps a { display: inline-flex; align-items: baseline; gap: 12px; padding: 10px 18px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper-raised); text-decoration: none; color: var(--ink); font-size: 0.86rem; transition: border-color 0.2s ease; }
+.landing-apps a:hover { border-color: var(--cinnabar-pure); }
+.landing-apps__label { color: var(--ink-faint); font-size: 0.78rem; }
+.landing-apps__names { font-family: var(--font-serif); letter-spacing: 0.04em; }
+.landing-apps__go { color: var(--cinnabar-pure); }
+.apps-card { padding: 22px 22px 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper-raised); }
+.apps-card__head { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+.apps-card__head > div { flex: 1; min-width: 0; }
+.apps-card__icon { width: 72px; height: 72px; border-radius: 16px; border: 1px solid var(--line); flex: none; }
+.apps-card__name { margin: 0; font-family: var(--font-serif); font-size: 1.3rem; color: var(--ink); letter-spacing: 0.04em; }
+.about-page .apps-card__meta { margin: 2px 0 0; font-size: 0.8rem; color: var(--ink-faint); line-height: 1.5; }
+.apps-card__get { flex: none; white-space: nowrap; }
+.apps-card__state { flex: none; font-size: 0.8rem; color: var(--ink-faint); padding: 6px 12px; border: 1px dashed var(--line); border-radius: 999px; white-space: nowrap; }
+.apps-shots { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
+.apps-shots img { width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); display: block; }
+.apps-steps { list-style: decimal; }
+.apps-steps li { margin-bottom: 12px; }
+.apps-page code { padding: 1px 5px; border: 1px solid var(--line); border-radius: 4px; background: var(--paper-raised); font-size: 0.86em; }
+.about-page .apps-back { margin-top: 32px; font-size: 0.86rem; }
+@media (max-width: 600px) {
+  .apps-card { padding: 18px 16px 14px; }
+  .apps-card__head { flex-wrap: wrap; }
+  .apps-card__get, .apps-card__state { margin-left: 88px; }
+  .apps-shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .landing-apps a { flex-wrap: wrap; justify-content: center; gap: 4px 10px; }
+}
