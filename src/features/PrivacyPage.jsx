@@ -75,6 +75,7 @@ export default function PrivacyPage() {
           <li><strong>登录方式</strong>:邮箱、通过 Apple 登录、Google 登录。用 Apple 登录并选择隐藏邮箱时,我们只拿到 Apple 提供的中转地址。</li>
           <li><strong>换账号</strong>:同一台设备换另一个账号登录时,App 会先问你要不要把本机的记录并入新账号,不会自行合并。</li>
           <li><strong>注销账号</strong>:在 App 的账号页里可直接注销,云端数据随之删除;用 Apple 登录的账号,注销时一并向 Apple 撤销授权。</li>
+          <li><strong>导入的书</strong>:你自己导入的书包(.deskbook)只存在这台设备上,不上传、不同步,我们看不到它的内容;删掉这本书或删掉 App,它就没了。登录后,你在这本书里的阅读进度、学习时长、划线与批注照常同步(划线会带上划中的那几句原话),书本身仍不上传。</li>
           <li>App 内没有广告,没有第三方统计或追踪代码。</li>
         </ul>
       </section>
