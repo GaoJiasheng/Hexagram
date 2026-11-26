@@ -74,6 +74,7 @@ final class Library {
             try? data.write(to: manifestFile, options: .atomic)
             UserDefaults.standard.set(Date(), forKey: "desk.manifest.at")
             loadError = nil
+            staleFor.removeAll()      // 顶着用的旧包:书目刚取到,下次要包时再试一次补下新包
         } catch {
             if manifest == nil { loadError = "书目取不到。检查一下网络,或者稍后再试。" }
         }
@@ -97,6 +98,17 @@ final class Library {
         guard let u = Self.bundled?.appendingPathComponent(b.file), FileManager.default.fileExists(atPath: u.path) else { return nil }
         return u
     }
+
+    /// 这本书在某个目录里的任意一版核心包(文件名「<id>.<哈希>.json」,不含白话包)。
+    private func anyPack(_ b: BookInfo, in d: URL?) -> URL? {
+        guard let d else { return nil }
+        return ((try? FileManager.default.contentsOfDirectory(atPath: d.path)) ?? [])
+            .filter { $0.hasPrefix("\(b.id).") && !$0.hasPrefix("\(b.id).baihua.") && $0.hasSuffix(".json") }
+            .sorted().first.map { d.appendingPathComponent($0) }
+    }
+
+    /// 内存里那份是「上一版」(书目已换新包、新包还没下好)时,记下它是替哪个版本顶着的——免得每次要包都把旧包重读一遍。
+    @ObservationIgnored private var staleFor: [String: String] = [:]
 
     /// 放上书桌(已在书桌上不动)。
     func putOnShelf(_ id: String) {
@@ -133,7 +145,7 @@ final class Library {
     /// 此前读过的都留着,统计把书目里每本下过的书都读一遍,几十本书就几百 MB。
     func pack(_ b: BookInfo) -> BookPack? {
         if b.isDeskbook { return DeskbookStore.shared.pack(b.id) }
-        if let p = packs[b.id], p.version == b.version { touchPack(b.id); return p }
+        if let p = packs[b.id], p.version == b.version || staleFor[b.id] == b.version { touchPack(b.id); return p }
         guard let p = readPack(b) else { return nil }
         packs[b.id] = p
         touchPack(b.id)
@@ -151,7 +163,7 @@ final class Library {
     /// 只为算一次摘要读包:内存里有就用,没有就读来用完即弃(不进缓存)。
     func peekPack(_ b: BookInfo) -> BookPack? {
         if b.isDeskbook { return DeskbookStore.shared.peekPack(b.id) }
-        if let p = packs[b.id], p.version == b.version { return p }
+        if let p = packs[b.id], p.version == b.version || staleFor[b.id] == b.version { return p }
         return readPack(b)
     }
 
@@ -166,16 +178,20 @@ final class Library {
     #endif
 
     private func readPack(_ b: BookInfo) -> BookPack? {
-        // 清单上的那份:下载过的 → 随 App 带的 → 本机上一版(清单换了新包而新包还没下:先用旧的,后台补下)
+        // 清单上的那份:下载过的 → 随 App 带的 → 上一版(清单换了新包而新包还没下:先用旧的,后台补下)。
+        // 上一版先找本机下载过的,再找随 App 带的——随 App 带的六本从没单独下载过,书目一换新包,本机没有旧文件可退,
+        // 此前就读不出包、点开是一屏空白(2026-11-26 走查发现)。
         let want = dir.appendingPathComponent(b.file)
         var url: URL? = FileManager.default.fileExists(atPath: want.path) ? want : bundledFile(b)
+        staleFor[b.id] = nil
         if url == nil {
-            let older = ((try? FileManager.default.contentsOfDirectory(atPath: dir.path)) ?? [])
-                .filter { $0.hasPrefix("\(b.id).") && !$0.hasPrefix("\(b.id).baihua.") && $0.hasSuffix(".json") }
-            url = older.first.map { dir.appendingPathComponent($0) }
-            if url != nil, !downloading.contains(b.id) { Task { await self.refreshPack(b) } }
+            url = anyPack(b, in: dir) ?? anyPack(b, in: Self.bundled)
+            if url != nil {
+                staleFor[b.id] = b.version
+                if !downloading.contains(b.id) { Task { await self.refreshPack(b) } }
+            }
         }
-        guard let url, let d = try? Data(contentsOf: url), let p = try? JSONDecoder().decode(BookPack.self, from: d) else { return nil }
+        guard let url, let d = try? Data(contentsOf: url), let p = try? JSONDecoder().decode(BookPack.self, from: d) else { staleFor[b.id] = nil; return nil }
         return p
     }
 
@@ -187,6 +203,7 @@ final class Library {
         guard let (data, resp) = try? await Self.session.data(from: Self.base.appendingPathComponent(b.file)),
               (resp as? HTTPURLResponse)?.statusCode == 200, (try? JSONDecoder().decode(BookPack.self, from: data)) != nil else { return }
         try? data.write(to: dir.appendingPathComponent(b.file), options: .atomic)
+        staleFor[b.id] = nil
         packs[b.id] = nil
     }
 }

@@ -113,6 +113,9 @@ struct DeskHome: View {
             if let pack = library.pack(o.book), !pack.chapters.isEmpty {
                 if o.book.isArticleBook { ArticleBookScreen(book: o.book, pack: pack, start: o.start) }
                 else { ReaderScreen(model: ReaderModel(book: o.book, pack: pack, start: o.start)) }
+            } else {
+                // 包读不出来(没下好、文件坏了):说清楚、给重试和关闭,不留一屏空白
+                PackMissingView(book: o.book, library: library) { reading = nil }
             }
         }
     }
@@ -498,6 +501,35 @@ struct BookCard: View {
 }
 
 /// 连不上时的那张卡:一句说明 + 重试。书桌首页与书目页共用。
+/// 点开一本书、内容包却读不出来时的整屏提示:重新下载,或者关掉回书桌。
+struct PackMissingView: View {
+    let book: BookInfo
+    let library: Library
+    let onClose: () -> Void
+    var body: some View {
+        let busy = library.downloading.contains(book.id)
+        VStack(spacing: 18) {
+            Image(systemName: "book.closed").font(.system(size: 34, weight: .light)).foregroundStyle(Ink.faint).accessibilityHidden(true)
+            Text("《\(book.title)》的内容没取到").font(Fonts.song(20, bold: true)).foregroundStyle(Ink.text)
+            Text(library.failed.contains(book.id) ? "下载没成功。检查一下网络,再试一次。" : "这本书的内容包不在这台设备上,需要重新下载。")
+                .font(.system(size: 15)).foregroundStyle(Ink.soft).multilineTextAlignment(.center).fixedSize(horizontal: false, vertical: true)
+            Button { Task { await library.add(book) } } label: {
+                HStack(spacing: 8) {
+                    if busy { ProgressView().tint(.white) }
+                    Text(busy ? "正在下载…" : "重新下载").font(.system(size: 16, weight: .semibold))
+                }
+                .frame(maxWidth: 260).padding(.vertical, 13)
+                .background(Ink.cinnabar, in: RoundedRectangle(cornerRadius: 14)).foregroundStyle(.white)
+            }
+            .buttonStyle(.plain).disabled(busy)
+            Button("回书桌", action: onClose).font(.system(size: 15)).foregroundStyle(Ink.soft)
+        }
+        .padding(32)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Ink.paper.ignoresSafeArea())
+    }
+}
+
 struct OfflineCard: View {
     let message: String
     var busy = false
